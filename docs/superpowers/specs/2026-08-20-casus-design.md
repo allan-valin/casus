@@ -205,7 +205,7 @@ resolve `magnam` by agreement — one decision cascades. Undo restores the parse
 ### 7.5 Chunks: glue and unglue
 
 A preposition and its governed object glue into a single outlined draggable unit — drag either,
-both move. The link icon between them ungluess and re-glues, because poets separate them
+both move. The link icon between them unglues and re-glues, because poets separate them
 (anastrophe: `quem circum`) and the reader must be able to say so.
 
 Adjective–noun agreement is a **soft link**: a connector line on hover or selection, but the
