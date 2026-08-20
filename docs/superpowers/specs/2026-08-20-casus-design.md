@@ -271,13 +271,74 @@ reading elsewhere. The translation scratch pane is v2.
 
 ## 10. Input
 
-v1 accepts pasted text and a small set of bundled public-domain passages (Caesar, Cicero,
-Vulgate) for the cold demo — so the demo never depends on OCR quality.
+### 10.1 v1 — paste and bundled passages
+
+v1 accepts pasted text and a small set of bundled passages (Caesar, Cicero, Vulgate) for the
+cold demo — so the demo never depends on OCR quality.
+
+Sourcing: the works themselves are ancient and long out of copyright, and The Latin Library
+(`thelatinlibrary.com`) is the convenient place to collect them. Two cautions, since the
+bundled texts ship inside the repo:
+
+- The site publishes no explicit licence and its texts are volunteer transcriptions of
+  varying provenance. The underlying works are public domain, but a *particular modern
+  critical edition* can carry its own rights in its apparatus and editorial choices.
+- Therefore: bundle **short passages only** (a paragraph or two each, enough for the demo),
+  record the source and edition for each in `data/samples/SOURCES.md`, and prefer texts
+  cross-checkable against Perseus, which states its licence (CC BY-SA) explicitly.
+
+This is a small, easily-satisfied obligation, and doing it wrong is the kind of thing an
+interviewer notices in a portfolio piece.
+
+### 10.2 v2 — OCR and PDF
 
 v2 adds image OCR through `tesseract.js` WASM with Latin traineddata, which requires an
 editable correction step before parsing: OCR errors feed the parser garbage, and a wrong
 character produces a confidently wrong morphological analysis. PDF intake follows, splitting
 into text-layer extraction and image-page OCR as two separate paths.
+
+### 10.3 Scriptio continua (v2, opt-in mode)
+
+Inscriptions, monuments and the earliest manuscripts are written **without word division** —
+no spaces, no lowercase, often no punctuation. If such a text ever reaches the app (pasted
+from an epigraphic corpus, or via OCR of a monument photograph), the tokenizer's basic
+assumption fails before any morphology runs.
+
+Handling it is a **word-segmentation problem solved with the assets the app already has**: the
+lexicon and the morphological analyser. The same principle as everywhere else applies — the
+app proposes, shows alternatives, and never silently commits.
+
+**Approach.** Over the unsegmented string, score every candidate split with a dynamic-programme
+pass:
+
+1. **Lexical** — does each proposed piece exist as a real inflected form in the form index?
+   Pieces with no lookup hit are heavily penalised.
+2. **Morphological** — do the resulting analyses form a plausible sequence? A run with no
+   finite verb, or an adjective agreeing with nothing, scores worse than one that parses.
+3. **Frequency** — prefer common words over rare homographs, using the frequency tag already
+   in the lemma table.
+
+The best-scoring segmentation renders as normal blocks; competing segmentations are reachable,
+because this is genuinely ambiguous and famously so. Boundaries are **draggable**: the reader
+moves a split point and everything downstream re-parses, which is the same manipulate-until-it-
+makes-sense interaction the rest of the app is built on.
+
+**Epigraphic conventions to handle in the same pass:**
+
+- all-capital text, and no `U`/`V` or `I`/`J` distinction — already covered by the
+  normalisation in §5.1
+- interpuncts (`·`) used as word separators, which are a *gift*: where present, treat them as
+  hard boundaries the segmenter may not cross
+- standard inscriptional abbreviations (`COS`, `S·P·Q·R`, `D·M`, `F`, `PONT·MAX`) — a small
+  hand-built expansion table, since they are frequent, closed-class and would otherwise
+  poison the lexical score
+- ligatures and damaged or restored text conventionally marked `[...]` — treat bracketed
+  restorations as low-confidence input and mark those blocks accordingly
+
+**Why v2, not v1:** it is a second parser with its own scoring model, and it is worthless
+until the ordinary path is solid. But the design must not preclude it — hence the tokenizer
+boundary in §5.2 stays a replaceable module, and nothing downstream may assume that a token
+came from whitespace splitting.
 
 ## 11. Testing
 
