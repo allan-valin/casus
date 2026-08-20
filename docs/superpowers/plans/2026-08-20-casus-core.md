@@ -1293,11 +1293,13 @@ describe('agreementStage', () => {
 });
 ```
 
-- [ ] **Step 3: Run it, verify it fails, then implement**
+- [ ] **Step 2: Run it, verify it fails**
 
 Run: `npx vitest run tests/disambiguate.agreement.test.js` — expected: `agreementStage is not a function`.
 
-Implement: for each adjective or participle block, keep the candidates whose case, number and gender match at least one candidate of some **noun or pronoun** block in the sentence, preferring resolved nouns; if no nominal matches at all, leave the block untouched rather than emptying it. Append a reason naming the agreeing token, e.g. `agreement: matches urbem (acc sg f)`. Only adjective, participle and pronoun blocks are narrowed by this stage — nouns are evidence, not targets, which is what the fourth test pins down.
+- [ ] **Step 3: Implement `agreementStage`**
+
+For each adjective or participle block, keep the candidates whose case, number and gender match at least one candidate of some **noun or pronoun** block in the sentence, preferring resolved nouns; if no nominal matches at all, leave the block untouched rather than emptying it. Append a reason naming the agreeing token, e.g. `agreement: matches urbem (acc sg f)`. Only adjective, participle and pronoun blocks are narrowed by this stage — nouns are evidence, not targets, which is what the fourth test pins down.
 
 Note the deliberate limitation for `docs/`: an adjective can agree with a noun it does not modify. Stage 2 narrows, it does not parse syntax, and where it is wrong the reader repins.
 
