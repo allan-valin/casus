@@ -1,0 +1,11 @@
+[project]
+name = "casus-build"
+version = "0.1.0"
+requires-python = ">=3.11"
+
+[tool.setuptools]
+packages = ["casus_build"]
+package-dir = {"" = "tools"}
+
+[tool.pytest.ini_options]
+pythonpath = ["tools"]
