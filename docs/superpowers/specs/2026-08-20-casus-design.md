@@ -124,7 +124,7 @@ Five framework-free ES modules, node-testable, importing no UI code:
 | Module | Responsibility |
 |---|---|
 | `segment.js` | Splits on `.` `?` `!` with an abbreviation and numeral guard (`Cn.`, `M.`, `a.d. III Kal.`, Roman numerals, ellipses). Sentences are the selectable units. |
-| `tokenize.js` | Words, punctuation, and enclitic splitting (`-que`, `-ve`, `-ne`) — a major source of failed lookups if skipped. |
+| `tokenize.js` | Words, punctuation, and enclitic splitting (`-que`, `-ve`, `-ne`) — a major source of failed lookups if skipped. Deliberately replaceable: nothing downstream may assume a token came from whitespace splitting (see §10.3). |
 | `lexicon.js` | Shard fetch and `form → analyses` lookup. Pure, no state. |
 | `disambiguate.js` | The §4.1 cascade as a pipeline of narrowing scorers. Returns surviving candidates with confidence and the reason each survived. |
 | `state.js` | Sentence selection, block order, pins, glue state, layer toggles, era, gloss language. Single source of truth. |
