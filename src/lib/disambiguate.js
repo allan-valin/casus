@@ -10,7 +10,9 @@ import { GOVERNMENT } from './prepositions.js';
 const LEXICON_REASON = 'lexicon: attested form';
 
 /**
- * Candidate = { analysis, reasons: string[] }
+ * Candidate = { analysis, reasons: string[], links: Array<{ kind: 'agreement' | 'government', index: number }> }
+ *   `reasons` is prose for a person; `links` names the token index of the witness
+ *   or governor so the UI never parses the prose.
  * Block = { token, candidates: Candidate[], pinned: Analysis | null, resolved: boolean }
  */
 export function buildBlocks(tokens, analysesByKey) {
@@ -21,6 +23,7 @@ export function buildBlocks(tokens, analysesByKey) {
       candidates: (analysesByKey.get(token.key) ?? []).map((analysis) => ({
         analysis,
         reasons: [LEXICON_REASON],
+        links: [],
       })),
       pinned: null,
     }));
@@ -102,8 +105,7 @@ function matchAgainst(targets, witnesses, witnessPos) {
       );
       if (match) {
         const reason = `agreement: matches ${witness.token.surface} (${describe(match.analysis)})`;
-        const reasons = candidate.reasons.includes(reason) ? candidate.reasons : [...candidate.reasons, reason];
-        kept.push({ ...candidate, reasons });
+        kept.push(withLink(withReason(candidate, reason), 'agreement', witness.token.index));
         break;
       }
     }
@@ -130,6 +132,12 @@ function governedBy(block, analysis) {
 
 function withReason(candidate, reason) {
   return candidate.reasons.includes(reason) ? candidate : { ...candidate, reasons: [...candidate.reasons, reason] };
+}
+
+function withLink(candidate, kind, index) {
+  const links = candidate.links ?? [];
+  if (links.some((l) => l.kind === kind && l.index === index)) return candidate;
+  return { ...candidate, links: [...links, { kind, index }] };
 }
 
 /**
@@ -166,12 +174,12 @@ export function governmentStage(blocks) {
       out[i] = {
         ...prep,
         candidates: prep.candidates.map((c) => (c.analysis.pos === 'prep'
-          ? withReason({ ...c, analysis: { ...c.analysis, governs: [theCase] } }, prepReason)
+          ? withLink(withReason({ ...c, analysis: { ...c.analysis, governs: [theCase] } }, prepReason), 'government', object.token.index)
           : c)),
       };
     }
     const objectReason = `government: governed by ${name} (${survivingCases.join('/')})`;
-    out[i + 1] = { ...object, candidates: kept.map((c) => withReason(c, objectReason)) };
+    out[i + 1] = { ...object, candidates: kept.map((c) => withLink(withReason(c, objectReason), 'government', prep.token.index)) };
   }
   return out;
 }
@@ -188,7 +196,7 @@ export function runCascade(tokens, analysesByKey, { pins = new Map() } = {}) {
   let blocks = buildBlocks(tokens, analysesByKey).map((block) => {
     const pinned = pins.get(block.token.index);
     if (!pinned) return block;
-    return { ...block, pinned, resolved: true, candidates: [{ analysis: pinned, reasons: [PIN_REASON] }] };
+    return { ...block, pinned, resolved: true, candidates: [{ analysis: pinned, reasons: [PIN_REASON], links: [] }] };
   });
   blocks = narrow(blocks, governmentStage);
   blocks = narrow(blocks, agreementStage);

@@ -126,3 +126,14 @@ describe('agreementStage on noun/adjective homographs', () => {
     expect(out[0].candidates[0].analysis.case).toBe('nom');
   });
 });
+
+describe('agreement links', () => {
+  it('records the witness token index on the surviving candidate', () => {
+    const out = narrow(blocksFor([['magnam', magnam], ['urbem', urbem]]), agreementStage);
+    expect(out[0].candidates[0].links).toEqual([{ kind: 'agreement', index: 1 }]);
+  });
+  it('a candidate the lexicon alone kept has no links', () => {
+    const out = narrow(blocksFor([['rosa', rosa]]), agreementStage);
+    expect(out[0].candidates[0].links).toEqual([]);
+  });
+});

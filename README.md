@@ -60,8 +60,8 @@ Known limitations, carried forward:
   CLI; the page shows one candidate per entry (`in` twice in the list).
 - A preposition's object is the next word (adjacency); anastrophe is the reader's unglue case.
 - Stage 2 narrows an adjective against any agreeing nominal, not its head; the reason names the
-  witness and the soft link lights it up, so the reader can repin. The reason names the witness
-  by its surface, so a repeated word (*Deus … Deus*) lights up every occurrence.
+  witness and the soft link lights it up, so the reader can repin. Every candidate carries the
+  witness or governor as a token index (`links`), so the UI never parses the prose reason.
 - `-que`/`-ue`/`-ne` are split by the tokenizer and rejoined by `state.js` when the whole form is
   attested; a word that is both attested whole and a host stays whole.
 - Dictionary forms print the bare genitive ending (`legio, -is`), not the stem change (`-onis`).

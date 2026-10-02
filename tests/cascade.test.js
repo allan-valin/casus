@@ -106,3 +106,11 @@ describe('runCascade with a pinned preposition', () => {
     expect(blocks[1].candidates.map((c) => c.analysis.case)).toEqual(['abl']);
   });
 });
+
+describe('runCascade links', () => {
+  it('every candidate carries a links array, pins included', () => {
+    const blocks = runCascade(tokens, analyses, { pins: new Map([[2, urbem[0]]]) });
+    for (const block of blocks) for (const c of block.candidates) expect(Array.isArray(c.links)).toBe(true);
+    expect(blocks[1].candidates[0].links).toEqual([{ kind: 'government', index: 0 }, { kind: 'agreement', index: 2 }]);
+  });
+});

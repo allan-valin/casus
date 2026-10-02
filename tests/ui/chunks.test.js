@@ -1,15 +1,15 @@
 import { describe, it, expect } from 'vitest';
 import { gluePairs, partners, items } from '../../src/app/lib/chunks.js';
 
-const b = (index, surface, pos, reasons = []) => ({
+const b = (index, surface, pos, links = []) => ({
   token: { index, surface, key: surface.toLowerCase() }, pinned: null, resolved: true,
-  candidates: [{ analysis: { pos, case: 'acc', number: 'sg', gender: 'f', governs: pos === 'prep' ? ['acc'] : undefined }, reasons: ['lexicon: attested form', ...reasons] }],
+  candidates: [{ analysis: { pos, case: 'acc', number: 'sg', gender: 'f', governs: pos === 'prep' ? ['acc'] : undefined }, reasons: ['lexicon: attested form'], links }],
 });
 const sentence = [
   b(0, 'Caesar', 'noun'),
-  b(1, 'in', 'prep', ['government: in + acc (object Galliam is accusative)']),
-  b(2, 'Galliam', 'noun', ['government: governed by in (acc)']),
-  b(3, 'magnam', 'adj', ['agreement: matches Galliam (acc sg f)']),
+  b(1, 'in', 'prep', [{ kind: 'government', index: 2 }]),
+  b(2, 'Galliam', 'noun', [{ kind: 'government', index: 1 }]),
+  b(3, 'magnam', 'adj', [{ kind: 'agreement', index: 2 }]),
   b(4, 'venit', 'verb'),
 ];
 
@@ -21,8 +21,12 @@ describe('gluePairs', () => {
     expect(gluePairs(sentence, new Set([1])).size).toBe(0);
   });
   it('glues nothing when the object was not settled by this preposition', () => {
-    const loose = sentence.map((x) => (x.token.index === 2 ? { ...x, candidates: [{ ...x.candidates[0], reasons: ['lexicon: attested form'] }] } : x));
+    const loose = sentence.map((x) => (x.token.index === 2 ? { ...x, candidates: [{ ...x.candidates[0], links: [] }] } : x));
     expect(gluePairs(loose).size).toBe(0);
+  });
+  it('glues only the adjacent object, never one two words away', () => {
+    const far = [b(0, 'in', 'prep', [{ kind: 'government', index: 2 }]), b(1, 'magnam', 'adj'), b(2, 'urbem', 'noun', [{ kind: 'government', index: 0 }])];
+    expect(gluePairs(far).size).toBe(0);
   });
 });
 
@@ -51,11 +55,11 @@ describe('items', () => {
 });
 
 describe('partners with a repeated surface', () => {
-  it('links to every block that carries the witness surface, not only the last', () => {
+  it('links exactly the witness the cascade named, by index, even when the surface repeats', () => {
     const deus = (i) => b(i, 'Deus', 'noun');
-    const bonus = { ...b(1, 'bonus', 'adj', ['agreement: matches Deus (nom sg m)']) };
-    const p = partners([deus(0), bonus, b(2, 'et', 'conj'), deus(3), b(4, 'malus', 'adj', ['agreement: matches Deus (nom sg m)'])]);
-    expect(p.get(1)).toEqual([0, 3]);
-    expect(p.get(0)).toEqual([1, 4]);
+    const p = partners([deus(0), b(1, 'bonus', 'adj', [{ kind: 'agreement', index: 0 }]), b(2, 'et', 'conj'), deus(3), b(4, 'malus', 'adj', [{ kind: 'agreement', index: 3 }])]);
+    expect(p.get(1)).toEqual([0]);
+    expect(p.get(0)).toEqual([1]);
+    expect(p.get(4)).toEqual([3]);
   });
 });

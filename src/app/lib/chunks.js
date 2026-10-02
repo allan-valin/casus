@@ -1,13 +1,11 @@
 /*
- * Glue and soft links read off the cascade's reasons (spec §7.5). The cascade
- * already says who governs whom and who agrees with whom; the UI never
- * re-derives syntax.
+ * Glue and soft links read off the cascade's `links` (spec §7.5): every candidate
+ * names the token index of its witness (agreement) or governor (government), so
+ * the UI never re-derives syntax and never parses the prose reasons.
  */
-const GOVERNED_BY = /^government: governed by (\S+) /;
-const AGREES_WITH = /^agreement: matches (\S+) /;
 
-function reasonsOf(block) {
-  return block.candidates.flatMap((c) => c.reasons);
+function linksOf(block, kind) {
+  return block.candidates.flatMap((c) => (c.links ?? []).filter((l) => l.kind === kind).map((l) => l.index));
 }
 
 /** preposition index -> object index, for adjacent pairs the cascade settled; unglued ones are skipped. */
@@ -18,34 +16,22 @@ export function gluePairs(blocks, unglued = new Set()) {
     const object = blocks[i + 1];
     if (unglued.has(prep.token.index)) continue;
     if (!prep.candidates.some((c) => c.analysis.pos === 'prep')) continue;
-    const named = reasonsOf(object).map((r) => GOVERNED_BY.exec(r)?.[1]).filter(Boolean);
-    if (named.includes(prep.token.surface)) out.set(prep.token.index, object.token.index);
+    if (linksOf(object, 'government').includes(prep.token.index)) out.set(prep.token.index, object.token.index);
   }
   return out;
 }
 
-/** token index -> token indices it agrees with, both directions. The reason names
- * the witness by surface, so every block with that surface is linked (a repeated
- * `Deus` links to both); the core would have to emit indices to do better. */
+/** token index -> token indices it agrees with, both directions, exactly as the cascade linked them. */
 export function partners(blocks) {
-  const bySurface = new Map();
-  for (const b of blocks) {
-    if (!bySurface.has(b.token.surface)) bySurface.set(b.token.surface, []);
-    bySurface.get(b.token.surface).push(b.token.index);
-  }
   const out = new Map();
   const link = (a, b) => {
     if (!out.has(a)) out.set(a, []);
     if (!out.get(a).includes(b)) out.get(a).push(b);
   };
   for (const block of blocks) {
-    for (const r of reasonsOf(block)) {
-      const target = AGREES_WITH.exec(r)?.[1];
-      for (const index of bySurface.get(target) ?? []) {
-        if (index === block.token.index) continue;
-        link(block.token.index, index);
-        link(index, block.token.index);
-      }
+    for (const index of linksOf(block, 'agreement')) {
+      link(block.token.index, index);
+      link(index, block.token.index);
     }
   }
   return out;

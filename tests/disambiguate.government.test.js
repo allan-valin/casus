@@ -94,3 +94,16 @@ describe('governmentStage', () => {
     expect(narrow(blocks, governmentStage)).toEqual(blocks);
   });
 });
+
+describe('government links', () => {
+  it('links the object to its preposition and the preposition to its object by token index', () => {
+    const out = narrow(blocksFor([['in', inPrep], ['galliam', galliam]]), governmentStage);
+    expect(out[1].candidates[0].links).toEqual([{ kind: 'government', index: 0 }]);
+    expect(out[0].candidates[0].links).toEqual([{ kind: 'government', index: 1 }]);
+  });
+  it('an object narrowed but not settling the preposition still links to it', () => {
+    const out = narrow(blocksFor([['in', inPrep], ['x', ambiguous]]), governmentStage);
+    for (const c of out[1].candidates) expect(c.links).toEqual([{ kind: 'government', index: 0 }]);
+    expect(out[0].candidates[0].links).toEqual([]);
+  });
+});
