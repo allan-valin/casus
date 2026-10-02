@@ -119,3 +119,25 @@ describe('keyboard access', () => {
     expect(reader.selected).toBe(1);
   });
 });
+
+describe('Block class badge on an ambiguous one-lemma block', () => {
+  const ALL = { nominal: true, verb: true, function: true, classes: true };
+  it('shows the class when every candidate shares one lemma, even if the case is open', () => {
+    const b = { token: { index: 0, surface: 'rosa' }, pinned: null, resolved: false,
+      candidates: [
+        { analysis: { lemma: '1', pos: 'noun', case: 'nom', number: 'sg', gender: 'f' }, reasons: [] },
+        { analysis: { lemma: '1', pos: 'noun', case: 'abl', number: 'sg', gender: 'f' }, reasons: [] },
+      ] };
+    const { container } = render(Block, { block: b, layers: ALL, lemmaOf: () => ({ pos: 'noun', decl: 1, gender: 'f' }), onhover: () => {}, onopen: () => {} });
+    expect(container.querySelector('.class').textContent).toBe('1 f');
+  });
+  it('shows nothing when the candidates come from different lemmas', () => {
+    const b = { token: { index: 0, surface: 'est' }, pinned: null, resolved: false,
+      candidates: [
+        { analysis: { lemma: '1', pos: 'verb', person: '3', number: 'sg', tense: 'pres', mood: 'ind', voice: 'act' }, reasons: [] },
+        { analysis: { lemma: '2', pos: 'verb', person: '3', number: 'sg', tense: 'pres', mood: 'ind', voice: 'act' }, reasons: [] },
+      ] };
+    const { container } = render(Block, { block: b, layers: ALL, lemmaOf: () => ({ pos: 'verb', conj: '5' }), onhover: () => {}, onopen: () => {} });
+    expect(container.querySelector('.class')).toBe(null);
+  });
+});

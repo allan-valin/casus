@@ -87,3 +87,18 @@ describe('BlockPane accessibility', () => {
     expect(container.querySelector('button.unglue').getAttribute('aria-label')).toMatch(/unglue/i);
   });
 });
+
+describe('BlockPane says how it sorted', () => {
+  it('shows a note after auto-sort naming the rule, and drops it on restore', async () => {
+    const reader = createReader({ lexicon, text: 'Caesar in Galliam magnam.' });
+    await reader.load();
+    const { container } = render(BlockPane, { reader, onhover: () => {}, onopen: () => {} });
+    expect(container.querySelector('.sort-note')).toBe(null);
+    await fireEvent.click(container.querySelector('button.autosort'));
+    await tick();
+    expect(container.querySelector('.sort-note').textContent).toMatch(/first reading/i);
+    await fireEvent.click(container.querySelector('button.restore'));
+    await tick();
+    expect(container.querySelector('.sort-note')).toBe(null);
+  });
+});

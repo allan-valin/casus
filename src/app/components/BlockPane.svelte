@@ -12,6 +12,7 @@
 
   let { reader, onhover, onopen, lemmaOf = null } = $props();
   let hovered = $state(null);
+  let sorted = $state(false);        // the pool was last arranged by auto-sort
   const flipDurationMs = 150;
 
   const blocks = $derived(reader.blocks);
@@ -29,6 +30,7 @@
   function consider(e) { items = e.detail.items; }
   function finalize(e) {
     items = e.detail.items;
+    sorted = false;
     // the reader's order is per token; the whole item (one token or a glued pair)
     // lands at the token position its new slot corresponds to
     const moved = String(e.detail.info.id);
@@ -40,8 +42,9 @@
 </script>
 
 <div class="controls">
-  <button class="restore" onclick={() => reader.restoreOrder()}>restore original order</button>
-  <button class="autosort" onclick={() => reader.autoSort()}>auto-sort by case</button>
+  <button class="restore" onclick={() => { reader.restoreOrder(); sorted = false; }}>restore original order</button>
+  <button class="autosort" onclick={() => { reader.autoSort(); sorted = true; }}>auto-sort by case</button>
+  {#if sorted}<span class="sort-note" aria-live="polite">sorted by case; an ambiguous block goes by its first reading</span>{/if}
 </div>
 
 <div class="pool" use:dndzone={{ items, flipDurationMs, dropTargetStyle: {} }} onconsider={consider} onfinalize={finalize}>
@@ -65,7 +68,8 @@
 </div>
 
 <style>
-  .controls { display: flex; gap: 8px; margin-bottom: 8px; }
+  .controls { display: flex; gap: 8px; margin-bottom: 8px; align-items: center; flex-wrap: wrap; }
+  .sort-note { font-size: 0.8em; color: #555; }
   .pool { display: flex; flex-wrap: wrap; gap: 8px; min-height: 60px; padding: 8px; border: 1px dashed #bbb; border-radius: 8px; }
   .item { display: inline-flex; align-items: center; gap: 2px; }
   .chunk { outline: 2px solid #357; outline-offset: 2px; border-radius: 14px; padding: 2px; }

@@ -31,6 +31,27 @@ def lemma_record(lemma: Lemma, rules: list[Inflection]) -> dict:
     return {k: v for k, v in record.items() if v is not None}
 
 
+_VOWELS = "aeiouy"
+
+
+def genitive_display(head: str, stem: str, ending: str) -> str:
+    """What a dictionary prints after the headword: the ending alone when the stem is
+    the headword's (urbs, -is; rosa, -ae), the changed tail when it is not — from its
+    own vowel (miles, -itis) or, when the tail starts with a consonant, from the last
+    vowel they share (legio, -onis; rex, -egis)."""
+    c = 0
+    while c < min(len(head), len(stem)) and head[c] == stem[c]:
+        c += 1
+    tail = stem[c:]
+    if not tail:
+        return f"-{ending}"
+    if tail[0] in _VOWELS:
+        return f"-{tail}{ending}"
+    shared = head[:c]
+    v = max((i for i, ch in enumerate(shared) if ch in _VOWELS), default=None)
+    return f"-{shared[v:] if v is not None else ''}{tail}{ending}"
+
+
 def _citation(lemma: Lemma, rules: list[Inflection]) -> tuple[str, str]:
     own = [r for r in rules if _class_matches(lemma, r) and _gender_fits(lemma, r)]
     fallback = lemma.stems[0] or ""
@@ -39,11 +60,11 @@ def _citation(lemma: Lemma, rules: list[Inflection]) -> tuple[str, str]:
         return (head, head) if head is not None else (fallback, fallback)
     if lemma.pos == "noun":
         head = _form(lemma, own, "noun", case="nom", number="sg")
-        gen = _ending(own, "noun", case="gen", number="sg")
+        gen = _stem_and_ending(lemma, own, "noun", case="gen", number="sg")
         if head is None:
             return fallback, fallback
         gender = f" {lemma.gender}." if lemma.gender else ""
-        return head, f"{head}, -{gen}{gender}" if gen is not None else head
+        return head, f"{head}, {genitive_display(head, *gen)}{gender}" if gen is not None else head
     if lemma.pos == "adj":
         head = _form(lemma, own, "adj", case="nom", number="sg", degree="pos", gender=("m", "c", "x"))
         if head is None:
@@ -88,6 +109,14 @@ def _form(lemma, rules, pos, **want):
         stem = _stem(lemma, r.stem_key, r.ending)
         if stem is not None:
             return normalize_form(stem + r.ending)
+    return None
+
+
+def _stem_and_ending(lemma, rules, pos, **want):
+    for r in _candidates(rules, pos, **want):
+        stem = _stem(lemma, r.stem_key, r.ending)
+        if stem is not None:
+            return stem, r.ending
     return None
 
 

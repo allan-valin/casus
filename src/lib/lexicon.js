@@ -76,6 +76,7 @@ function toAnalyses(entry) {
 export function createLexicon({ fetchShard, manifest = null }) {
   const names = manifest?.shards ? new Set(Object.keys(manifest.shards)) : null;
   const cache = new Map();
+  let warned = false;
 
   function shard(name) {
     if (!cache.has(name)) {
@@ -88,6 +89,10 @@ export function createLexicon({ fetchShard, manifest = null }) {
   }
 
   async function lookup(key) {
+    if (names === null && !warned) {
+      warned = true;
+      console.warn('createLexicon: no manifest given — using the two-letter shard rule, which misses every form in format-2 data');
+    }
     const name = shardKey(key, names);
     if (name === null) return [];
     const data = await shard(name);

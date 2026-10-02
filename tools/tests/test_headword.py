@@ -61,3 +61,13 @@ def test_record_carries_age_and_freq_and_no_gloss():
 def test_lemma_with_no_matching_rule_falls_back_to_its_first_stem():
     amass = _one(_records(), conj="8", headword="am")
     assert amass["headword"] == "am"
+
+
+def test_genitive_shows_the_stem_change_from_the_last_vowel():
+    from casus_build.headword import genitive_display
+    assert genitive_display("legio", "legion", "is") == "-onis"
+    assert genitive_display("miles", "milit", "is") == "-itis"
+    assert genitive_display("urbs", "urb", "is") == "-is"
+    assert genitive_display("caesar", "caesar", "is") == "-is"
+    assert genitive_display("rosa", "ros", "ae") == "-ae"
+    assert genitive_display("rex", "reg", "is") == "-egis"

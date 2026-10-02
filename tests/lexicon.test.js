@@ -100,3 +100,15 @@ describe('decodeAnalysis', () => {
     expect(decodeAnalysis('uasn', '5')).toEqual({ lemma: '5', pos: 'supine', case: 'acc', number: 'sg', gender: 'n' });
   });
 });
+
+describe('createLexicon without a manifest', () => {
+  it('warns once that the two-letter rule is in use (format-2 data needs the manifest)', async () => {
+    const warn = vi.spyOn(console, 'warn').mockImplementation(() => {});
+    const lex = createLexicon({ fetchShard: makeFetch() });
+    await lex.lookup('rosam');
+    await lex.lookup('urbem');
+    expect(warn).toHaveBeenCalledTimes(1);
+    expect(warn.mock.calls[0][0]).toMatch(/manifest/);
+    warn.mockRestore();
+  });
+});

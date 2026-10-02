@@ -2,6 +2,8 @@
   import { blockStyle } from '../lib/colors.js';
   let { block, layers, onhover, onopen, lemmaOf = null } = $props();
   const style = $derived(blockStyle(block, layers));
+  // the class sub-layer needs one lemma; the case may still be open (rosa nom/abl is one word)
+  const oneLemma = $derived(block.candidates.length > 0 && block.candidates.every((c) => String(c.analysis.lemma) === String(block.candidates[0].analysis.lemma)));
 </script>
 
 <!-- a div, not a button: svelte-dnd-action will not start a drag on an element with a .value -->
@@ -13,7 +15,7 @@
   <sup class="index">{block.token.index + 1}</sup>
   <span class="surface">{block.token.surface}</span>
   <span class="badge">{style.badge}</span>
-  {#if layers.classes && block.resolved && lemmaOf}
+  {#if layers.classes && oneLemma && lemmaOf}
     {@const r = lemmaOf(block.candidates[0].analysis.lemma)}
     {#if r}<span class="class">{r.pos === 'verb' ? (r.conj ?? '') : [r.decl, r.gender].filter(Boolean).join(' ')}</span>{/if}
   {/if}
