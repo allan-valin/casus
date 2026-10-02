@@ -42,3 +42,32 @@ describe('Candidates', () => {
     expect(container.textContent).toMatch(/not in lexicon/i);
   });
 });
+
+describe('Candidates folds identical readings', () => {
+  it('shows one row with a count when two lemmas give the same reading, reasons and headword', async () => {
+    const twice = {
+      lookupAll: async (keys) => new Map(keys.map((k) => [k, [
+        { lemma: '1', pos: 'prep', governs: 'acc' },
+        { lemma: '2', pos: 'prep', governs: 'acc' },
+        { lemma: '3', pos: 'noun', case: 'nom', number: 'sg', gender: 'f' },
+      ]])),
+    };
+    const reader = createReader({ lexicon: twice, text: 'In.' });
+    await reader.load();
+    reader.lexiconExtras = { lemmas: { 1: { dict_form: 'in' }, 2: { dict_form: 'in' }, 3: { dict_form: 'in, -is f.' } }, glosses: { en: null, pt: null } };
+    const { container } = render(Candidates, { block: reader.blocks[0], reader });
+    const rows = [...container.querySelectorAll('ul.candidates > li')];
+    expect(rows).toHaveLength(2);
+    expect(rows[0].textContent).toMatch(/×2/);
+    expect(rows[0].textContent).toContain('<in>');
+  });
+  it('pinning a folded row pins its first analysis', async () => {
+    const twice = { lookupAll: async (keys) => new Map(keys.map((k) => [k, [
+      { lemma: '1', pos: 'prep', governs: 'acc' }, { lemma: '2', pos: 'prep', governs: 'acc' }]])) };
+    const reader = createReader({ lexicon: twice, text: 'In.' });
+    await reader.load();
+    const { container } = render(Candidates, { block: reader.blocks[0], reader });
+    await fireEvent.click(container.querySelector('button.pin'));
+    expect(reader.blocks[0].pinned.lemma).toBe('1');
+  });
+});
