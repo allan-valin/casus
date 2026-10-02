@@ -54,9 +54,9 @@
             <Block {block} layers={reader.layers} onhover={hover} {onopen} {lemmaOf} />
           </span>
           {#if item.indices.length > 1 && i === 0}
-            <button class="unglue" title="unglue" onclick={() => reader.toggleGlue(index)}>⛓</button>
+            <button class="unglue" title="unglue" aria-label="unglue this chunk" onclick={() => reader.toggleGlue(index)}>⛓</button>
           {:else if item.indices.length === 1 && reader.unglued.has(index) && prepositions.includes(index)}
-            <button class="glue" title="glue to the next word" onclick={() => reader.toggleGlue(index)}>⛓</button>
+            <button class="glue" title="glue to the next word" aria-label="glue to the next word" onclick={() => reader.toggleGlue(index)}>⛓</button>
           {/if}
         {/if}
       {/each}

@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
-import { describe, it, expect } from 'vitest';
-import { render } from '@testing-library/svelte';
+import { describe, it, expect, vi } from 'vitest';
+import { render, fireEvent } from '@testing-library/svelte';
 import Dictionary from '../../src/app/components/Dictionary.svelte';
 import { createReader } from '../../src/app/stores/reader.svelte.js';
 
@@ -61,5 +61,17 @@ describe('Dictionary', () => {
     await reader.load();
     const { container } = render(Dictionary, { block: reader.blocks[0], reader, onclose: () => {} });
     expect(container.textContent).toMatch(/loading/i);
+  });
+});
+
+describe('Dictionary keyboard', () => {
+  it('closes on Escape and takes focus when opened', async () => {
+    const reader = await readerWith('Rosa.');
+    const onclose = vi.fn();
+    const { container } = render(Dictionary, { block: reader.blocks[0], reader, onclose });
+    const dialog = container.querySelector('.dictionary');
+    expect(document.activeElement).toBe(dialog);
+    await fireEvent.keyDown(dialog, { key: 'Escape' });
+    expect(onclose).toHaveBeenCalledTimes(1);
   });
 });

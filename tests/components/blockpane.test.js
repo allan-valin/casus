@@ -78,3 +78,12 @@ describe('BlockPane drag of a glued chunk', () => {
     expect([...container.querySelectorAll('.item')].map((e) => e.classList.contains('chunk'))).toEqual([false, false, true]);
   });
 });
+
+describe('BlockPane accessibility', () => {
+  it('names the glue buttons for screen readers', async () => {
+    const reader = createReader({ lexicon, text: 'Caesar in Galliam magnam.' });
+    await reader.load();
+    const { container } = render(BlockPane, { reader, onhover: () => {}, onopen: () => {} });
+    expect(container.querySelector('button.unglue').getAttribute('aria-label')).toMatch(/unglue/i);
+  });
+});

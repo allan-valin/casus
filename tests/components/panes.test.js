@@ -109,3 +109,13 @@ describe('Block as a drag handle', () => {
     expect(onopen).toHaveBeenCalledTimes(2);
   });
 });
+
+describe('keyboard access', () => {
+  it('selects a sentence with Space as well as Enter', async () => {
+    const reader = createReader({ lexicon, text: 'Rosa bona. Urbs magna.' });
+    await reader.load();
+    const { container } = render(TextPane, { reader, hovered: null });
+    await fireEvent.keyDown(container.querySelectorAll('.sentence')[1], { key: ' ' });
+    expect(reader.selected).toBe(1);
+  });
+});

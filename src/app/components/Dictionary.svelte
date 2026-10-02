@@ -2,6 +2,8 @@
   import Candidates from './Candidates.svelte';
   import { eraStatus, warning, AGE_LABEL } from '../lib/era.js';
   let { block, reader, onclose } = $props();
+  let dialog = $state(null);
+  $effect(() => { dialog?.focus(); });
 
   const ORDINAL = { 1: '1st', 2: '2nd', 3: '3rd', 4: '4th', 5: '5th' };
   const lemmaIds = $derived([...new Set(block.candidates.map((c) => String(c.analysis.lemma)))]);
@@ -28,7 +30,8 @@
   }
 </script>
 
-<div class="dictionary" role="dialog" aria-label="dictionary">
+<div class="dictionary" role="dialog" aria-label="dictionary" tabindex="-1" bind:this={dialog}
+     onkeydown={(e) => { if (e.key === 'Escape') onclose(); }}>
   <button class="close" onclick={onclose} aria-label="close">×</button>
   <h3>{block.token.surface}</h3>
   {#if block.candidates.length === 0}
@@ -57,6 +60,7 @@
 </div>
 
 <style>
+  .dictionary:focus { outline: none; }
   .dictionary { position: relative; border: 1px solid #999; border-radius: 8px; padding: 12px 14px; background: #fff; max-width: 420px; box-shadow: 0 4px 16px rgba(0,0,0,.15); margin-top: 12px; }
   .close { position: absolute; top: 6px; right: 8px; border: 0; background: none; font-size: 1.2em; cursor: pointer; }
   h3 { margin: 0 0 8px; font-family: Georgia, serif; }

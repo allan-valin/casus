@@ -27,14 +27,28 @@ export function createReader({ lexicon, text, saved = null }) {
     return loaded ? state.blocks() : [];
   }
 
-  /** A saved order is applied only when it names exactly this sentence's tokens. */
-  function currentOrder() {
+  /** The cascade for sentence i, with its pins, without touching the selection. */
+  function blocksFor(i) {
     void version;
-    const i = state.selected();
-    const blocks = currentBlocks();
+    if (!loaded) return [];
+    const keep = state.selected();
+    if (i === keep) return state.blocks();
+    state.select(i);
+    const out = state.blocks();
+    state.select(keep);
+    return out;
+  }
+
+  function orderFor(i, blocks) {
     const stored = orders[i];
     const valid = stored && stored.length === blocks.length && stored.every((n) => blocks.some((b) => b.token.index === n));
     return valid ? stored : initialOrder(blocks);
+  }
+
+  /** A saved order is applied only when it names exactly this sentence's tokens. */
+  function currentOrder() {
+    void version;
+    return orderFor(state.selected(), currentBlocks());
   }
 
   return {
@@ -43,6 +57,8 @@ export function createReader({ lexicon, text, saved = null }) {
     get selected() { void version; return state.selected(); },
     get blocks() { return currentBlocks(); },
     get order() { return currentOrder(); },
+    blocksOf: (i) => blocksFor(i),
+    orderOf: (i) => orderFor(i, blocksFor(i)),
     layers,
     get era() { return era; },
     set era(v) { era = v; },

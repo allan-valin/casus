@@ -35,3 +35,16 @@ describe('exporters', () => {
     expect(reader.selected).toBe(0); // export restores the selection it found
   });
 });
+
+describe('toMarkdown is read-only', () => {
+  it('never selects on the store; it reads the other sentences through blocksOf', async () => {
+    const reader = createReader({ lexicon, text: 'Rosa bona. Urbs magna.' });
+    await reader.load();
+    const selects = [];
+    const spy = new Proxy(reader, { get: (t, k) => (k === 'select' ? (i) => { selects.push(i); t.select(i); } : t[k]) });
+    const md = toMarkdown(spy);
+    expect(md).toContain('## 2. Urbs magna.');
+    expect(selects).toEqual([]);
+    expect(reader.blocksOf(1).map((b) => b.token.surface)).toEqual(['Urbs', 'magna']);
+  });
+});

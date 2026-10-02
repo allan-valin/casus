@@ -98,3 +98,28 @@ describe('App, dictionary and unload', () => {
     expect(JSON.parse([...s.map.values()][0]).pins).toHaveLength(1);
   });
 });
+
+describe('App passage switching', () => {
+  it('shows the passage chosen last even when an earlier load resolves later', async () => {
+    let release;
+    const slowOnce = { ...files };
+    const fetchSlow = (url) => {
+      if (url === '/data/forms/ro.json' && release === undefined) {
+        return new Promise((resolve) => { release = () => resolve({ ok: true, status: 200, json: async () => structuredClone(files[url]) }); });
+      }
+      return fetchImpl(url);
+    };
+    const { container } = render(App, { fetchImpl: fetchSlow, storage: storage(), ...immediate });
+    await tick(); await tick();
+    await fireEvent.input(container.querySelector('textarea'), { target: { value: 'Rosa.' } });
+    await fireEvent.click(container.querySelector('button.read'));      // stalls on the ro shard
+    await tick();
+    await fireEvent.input(container.querySelector('textarea'), { target: { value: 'Bona.' } });
+    await fireEvent.click(container.querySelector('button.read'));      // resolves first
+    for (let i = 0; i < 5; i += 1) await tick();
+    expect(container.querySelector('.pill .surface').textContent).toBe('Bona');
+    release();
+    for (let i = 0; i < 5; i += 1) await tick();
+    expect(container.querySelector('.pill .surface').textContent).toBe('Bona');
+  });
+});

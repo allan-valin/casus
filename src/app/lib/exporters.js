@@ -12,16 +12,15 @@ function line(block) {
   return `- ${block.token.surface} — ${readings}${mark}`;
 }
 
+/** Read-only: every sentence through blocksOf/orderOf, the selection untouched. */
 export function toMarkdown(reader) {
-  const keep = reader.selected;
   const out = [`# Casus — ${new Date().toISOString().slice(0, 10)}`, ''];
   reader.sentences.forEach((sentence, i) => {
-    reader.select(i);
-    const byIndex = new Map(reader.blocks.map((b) => [b.token.index, b]));
+    const blocks = reader.blocksOf(i);
+    const byIndex = new Map(blocks.map((b) => [b.token.index, b]));
     out.push(`## ${i + 1}. ${sentence.text}`, '');
-    for (const index of reader.order) out.push(line(byIndex.get(index)));
+    for (const index of reader.orderOf(i)) out.push(line(byIndex.get(index)));
     out.push('');
   });
-  reader.select(keep);
   return out.join('\n');
 }

@@ -25,7 +25,8 @@
   {#each reader.sentences as sentence, i (sentence.start)}
     <span class="sentence" class:dimmed={i !== reader.selected} data-index={i}
           role="button" tabindex="0"
-          onclick={() => reader.select(i)} onkeydown={(e) => e.key === 'Enter' && reader.select(i)}>
+          onclick={() => reader.select(i)}
+          onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); reader.select(i); } }}>
       {#if i === reader.selected}
         {#each pieces(sentence) as piece}
           {#if piece.index !== undefined}<span class="word" class:hot={piece.index === hovered}>{piece.text}</span>{:else}{piece.text}{/if}

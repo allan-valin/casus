@@ -63,3 +63,9 @@ describe('partners with a repeated surface', () => {
     expect(p.get(4)).toEqual([3]);
   });
 });
+
+describe('gluePairs without prepositions', () => {
+  it('glues nothing in a sentence that has no preposition', () => {
+    expect(gluePairs([b(0, 'Rosa', 'noun'), b(1, 'urbem', 'noun'), b(2, 'uidet', 'verb')]).size).toBe(0);
+  });
+});

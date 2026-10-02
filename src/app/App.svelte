@@ -10,9 +10,12 @@
   import PassagePicker from './components/PassagePicker.svelte';
 
   // injected for tests; the browser gets the real ones
+  function defaultStorage() {
+    try { return typeof localStorage !== 'undefined' ? localStorage : null; } catch { return null; }
+  }
   let {
     fetchImpl = (...a) => window.fetch(...a),
-    storage = typeof localStorage !== 'undefined' ? localStorage : null,
+    storage = defaultStorage(),
     schedule = (fn, ms) => setTimeout(fn, ms),
     cancel = (t) => clearTimeout(t),
   } = $props();
@@ -24,6 +27,7 @@
   let autosave = null;
   let hovered = $state(null);
   let open = $state(null);          // the block whose dictionary is open
+  let generation = 0;               // choose() calls; a slower, older load must not win
 
   $effect(() => {
     loadManifest(fetchImpl)
@@ -37,12 +41,16 @@
 
   async function choose(text, era) {
     if (!lexicon) return;
+    const mine = ++generation;
+    autosave?.flush();                // the passage being left keeps its last change
     const key = `casus:${textHash(text)}`;
-    autosave = createAutosave({ storage: storage ?? { getItem: () => null, setItem: () => {} }, key, schedule, cancel });
-    const saved = restore(autosave.loaded(), text);
+    const save = createAutosave({ storage: storage ?? { getItem: () => null, setItem: () => {} }, key, schedule, cancel });
+    const saved = restore(save.loaded(), text);
     const r = createReader({ lexicon, text, saved });
     if (!saved && era) r.era = era;
     await r.load();
+    if (mine !== generation) return;  // a newer choose() won while this one loaded
+    autosave = save;
     reader = r;
     open = null;
     r.loadExtras(fetchImpl).catch(() => {});
