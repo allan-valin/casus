@@ -98,12 +98,12 @@ Rules spell endings with `j` and `v` (`jus`, `vi`); the build normalises them to
 ## Fixtures
 
 `tools/tests/fixtures/dictline_sample.txt` — the lemmas whose first stem is one of
-`ros serv urb magn capi am reg puell bell domin audi bon et in cum ab hic un cur heu unus aliqu`
+`ros serv urbs magn capi am reg puell bell domin audi bon et in cum ab hic un cur heu unus aliqu`
 (`ab` kept only as the preposition). Covers:
 
 - 1st-declension feminine noun: `ros ros N 1 1 F` (rosa)
 - 2nd-declension masculine noun: `serv serv N 2 1 M` (servus), `domin domin N 2 1 M`
-- 3rd-declension noun: `urb urb N 3 3 F` (urbs), `ros ror N 3 1 M` (ros, roris)
+- 3rd-declension noun: `urbs urb N 3 3 F` (urbs — Whitaker spells stem 1 as the nominative for 3rd-declension nouns), `ros ror N 3 1 M` (ros, roris)
 - adjective: `magn magn maj maxi ADJ 1 1 X`, `bon bon meli opti ADJ 1 1 X`
 - 1st-conjugation verb: `am am amav amat V 1 1`
 - 3rd-conjugation `-iō` verb: `capi cap cep capt V 3 1`
@@ -127,4 +127,26 @@ Expansion (Task 6, 2026-10-02), over 38,099 merged lemmas and 1,797 rules, in 21
 | by part of speech | vpar 850,224 · verb 768,100 · noun 348,609 · adj 296,095 · supine 12,248 · adv 9,441 · num 3,009 · pron 2,344 · interj 106 · conj 99 · prep 87 |
 | most analyses on one form | `quis`, 215 |
 
-Participles are a third of everything: every verb meets 346 `VPAR` rules. Shard sizes: Task 7.
+Participles are a third of everything: every verb meets 346 `VPAR` rules.
+
+### The size gate (Task 7, 2026-10-02) — FAILED as first written
+
+Plain JSON, spelled-out keys (`{"lemma":"ros:noun:33803","pos":"noun","case":"nom",...}`),
+sharded by the first two letters, `python tools/build_index.py` in 29 s:
+
+| | measured | budget |
+|---|---|---|
+| `data/` on disk | **274 MB** (forms + lemmas 284 MB as written) | 25 MB |
+| shards | 239; median 271 KB; 17 over 3 MB | |
+| `co.json` gzipped (the largest: 147,241 forms) | **1.50 MB** | 300 KB |
+| `in.json` gzipped (68,330 forms) | 670 KB | 300 KB |
+| `pr.json` gzipped | 478 KB | 300 KB |
+| `ab.json` gzipped | 136 KB | 300 KB |
+| `lemmas.json` / `glosses.en.json` | 5.0 MB / 2.5 MB | |
+
+About 124 bytes per analysis, most of it key names and the lemma id string
+repeated on every row. Over budget by an order of magnitude, so `data/` is
+not committed (`.gitignore`). The options the plan names, in the order they
+are worth trying: shorter keys and integer lemma ids; a coarser-to-finer
+shard split so `co`/`de`/`in` stop being one file; dropping rare analyses
+behind a flag; and last, the stem+ending engine port.
