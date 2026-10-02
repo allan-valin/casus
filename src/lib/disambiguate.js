@@ -69,23 +69,32 @@ function describe(a) {
  */
 export function agreementStage(blocks) {
   return blocks.map((block, i) => {
+    const others = blocks.filter((b, j) => j !== i);
     const targets = block.candidates.filter((c) => NOMINAL_TARGETS.has(c.analysis.pos));
-    if (targets.length === 0) return block;
-    const witnesses = blocks
-      .filter((b, j) => j !== i && b.candidates.some((c) => WITNESSES.has(c.analysis.pos)));
-    const resolved = witnesses.filter((b) => b.resolved || b.pinned);
-    const kept = matchAgainst(targets, resolved) ?? matchAgainst(targets, witnesses);
-    if (!kept) return block;
-    return { ...block, candidates: kept };
+    if (targets.length > 0) {
+      const witnesses = others.filter((b) => b.candidates.some((c) => WITNESSES.has(c.analysis.pos)));
+      const resolved = witnesses.filter((b) => b.resolved || b.pinned);
+      const kept = matchAgainst(targets, resolved, WITNESSES) ?? matchAgainst(targets, witnesses, WITNESSES);
+      return kept ? { ...block, candidates: kept } : block;
+    }
+    // The other direction, resolved side only: an adjective already settled
+    // (by a preposition, a pin, or an earlier pass) narrows its noun. Two
+    // ambiguous nouns never pair, and two ambiguous words never narrow each other.
+    const nouns = block.candidates.filter((c) => c.analysis.pos === 'noun');
+    if (nouns.length < 2 || block.pinned) return block;
+    const settled = others.filter((b) => (b.resolved || b.pinned)
+      && b.candidates.some((c) => NOMINAL_TARGETS.has(c.analysis.pos)));
+    const kept = matchAgainst(nouns, settled, NOMINAL_TARGETS);
+    return kept ? { ...block, candidates: kept } : block;
   });
 }
 
-function matchAgainst(targets, witnesses) {
+function matchAgainst(targets, witnesses, witnessPos) {
   const kept = [];
   for (const candidate of targets) {
     for (const witness of witnesses) {
       const match = witness.candidates.find(
-        (w) => WITNESSES.has(w.analysis.pos) && agrees(candidate.analysis, w.analysis),
+        (w) => witnessPos.has(w.analysis.pos) && agrees(candidate.analysis, w.analysis),
       );
       if (match) {
         const reason = `agreement: matches ${witness.token.surface} (${describe(match.analysis)})`;
@@ -155,4 +164,24 @@ export function governmentStage(blocks) {
     out[i + 1] = { ...object, candidates: kept.map((c) => withReason(c, objectReason)) };
   }
   return out;
+}
+
+const PIN_REASON = 'pin: chosen by the reader';
+
+/**
+ * The whole cascade: lexicon (buildBlocks), pins as fixed facts, then
+ * government, agreement, government — resolving an object can feed agreement,
+ * which can feed another preposition. Two passes are enough for v1; a
+ * fixed-point loop is a later refinement and would need a cycle guard.
+ */
+export function runCascade(tokens, analysesByKey, { pins = new Map() } = {}) {
+  let blocks = buildBlocks(tokens, analysesByKey).map((block) => {
+    const pinned = pins.get(block.token.index);
+    if (!pinned) return block;
+    return { ...block, pinned, resolved: true, candidates: [{ analysis: pinned, reasons: [PIN_REASON] }] };
+  });
+  blocks = narrow(blocks, governmentStage);
+  blocks = narrow(blocks, agreementStage);
+  blocks = narrow(blocks, governmentStage);
+  return blocks;
 }

@@ -75,6 +75,18 @@ describe('agreementStage', () => {
     expect(out[1].candidates.map((c) => c.analysis.case)).toEqual(['acc']);
   });
 
+  it('lets a resolved adjective narrow an ambiguous noun, but not an ambiguous one', () => {
+    const urbemOrUrbibus = [
+      { lemma: 'urb:noun:1', pos: 'noun', case: 'acc', number: 'sg', gender: 'f' },
+      { lemma: 'urb:noun:1', pos: 'noun', case: 'dat', number: 'pl', gender: 'f' },
+    ];
+    const settled = narrow(blocksFor([['magnam', [magnam[0]]], ['urbem', urbemOrUrbibus]]), agreementStage);
+    expect(settled[1].candidates.map((c) => c.analysis.case)).toEqual(['acc']);
+    expect(settled[1].candidates[0].reasons.join(' ')).toMatch(/magnam/);
+    const open = narrow(blocksFor([['magnam', magnam], ['urbem', urbemOrUrbibus]]), agreementStage);
+    expect(open[1].candidates).toHaveLength(2);
+  });
+
   it('prefers a resolved noun over an ambiguous one as the witness', () => {
     const magna = [
       { lemma: 'magn:adj:1', pos: 'adj', case: 'nom', number: 'sg', gender: 'f' },
