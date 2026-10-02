@@ -19,25 +19,28 @@
   const byIndex = $derived(new Map(blocks.map((b) => [b.token.index, b])));
   const glue = $derived(gluePairs(blocks, reader.unglued));
   const links = $derived(partners(blocks));
-  // the pool's items; dndzone needs a stable `id` per item and a writable list
-  let items = $state([]);
-  $effect(() => { items = poolItems(blocks, reader.order, glue); });
+  // the pool's items derive from the reader; while a drag is in flight the library's own
+  // (reordered) list overrides them, and the override is dropped once the reader has the move
+  const derivedItems = $derived(poolItems(blocks, reader.order, glue));
+  let dragging = $state(null);
+  const items = $derived(dragging ?? derivedItems);
 
   const linked = $derived(hovered === null ? new Set() : new Set(links.get(hovered) ?? []));
   const prepositions = $derived(blocks.filter((b) => b.candidates.some((c) => c.analysis.pos === 'prep')).map((b) => b.token.index));
 
   function hover(index) { hovered = index; onhover(index); }
-  function consider(e) { items = e.detail.items; }
+  function consider(e) { dragging = e.detail.items; }
   function finalize(e) {
-    items = e.detail.items;
+    const dropped = e.detail.items;
     sorted = false;
     // the reader's order is per token; the whole item (one token or a glued pair)
     // lands at the token position its new slot corresponds to
     const moved = String(e.detail.info.id);
-    const position = items.findIndex((i) => String(i.id) === moved);
-    if (position < 0) return;
-    const indices = items[position].indices;
-    reader.moveItem(indices, items.slice(0, position).reduce((n, i) => n + i.indices.length, 0));
+    const position = dropped.findIndex((i) => String(i.id) === moved);
+    if (position >= 0) {
+      reader.moveItem(dropped[position].indices, dropped.slice(0, position).reduce((n, i) => n + i.indices.length, 0));
+    }
+    dragging = null;
   }
 </script>
 
