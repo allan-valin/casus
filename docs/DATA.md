@@ -150,3 +150,41 @@ not committed (`.gitignore`). The options the plan names, in the order they
 are worth trying: shorter keys and integer lemma ids; a coarser-to-finer
 shard split so `co`/`de`/`in` stop being one file; dropping rare analyses
 behind a flag; and last, the stem+ending engine port.
+
+### Format 2 — compact rows, prefix-split shards (measured the same morning)
+
+The first two options, built and measured (`write_assets` format 2, 33 s):
+
+* a shard maps a form to rows `[lemma, code, code…]`, one row per lemma; the lemma
+  is its DICTLINE line index (the number at the end of `Lemma.id`, the key of
+  `lemmas.json`), each code one analysis as 1–7 letters:
+  `n`oun/`a`dj/`v`erb/`p`articiple/s`u`pine/pr`o`noun/nu`m`eral/a`d`verb/p`r`eposition/`c`onj/inter`j`
+  + case `n v g l d b a x` + number `s p x` + gender `m f n c x` [+ degree `p c s x`];
+  verbs: person + number + tense `p i f r l u x` + mood `i s m n p x` + voice `a p x`
+  + conjugation `1 2 3 i 4 5 6 7 8 9 x` (`i` = 3rd -iō). `rosa` is
+  `[[33776,"pnsfrp3",…],[33803,"nnsf","nvsf","nbsf"]]`. `decode_analysis` and
+  `lexicon.js` turn a code back into the spelled-out analysis;
+* a two-letter prefix holding more than 8,000 forms splits by its third letter,
+  and so on to five; the parent keeps the forms as short as its own name, and a
+  form belongs to the **longest shard name that prefixes it** (`shard_key`).
+
+| | format 1 | **format 2** | budget |
+|---|---|---|---|
+| `data/` on disk | 274 MB | **59 MB** (forms 50.7 MB) | 25 MB |
+| all shards gzipped | — | **7.4 MB** | |
+| shards | 239 | 955 (15 one-letter, 213 two, 428 three, 198 four, 101 five) | |
+| largest shard gzipped | `co` 1.50 MB | **`circu` 150 KB**, then `inter` 50 KB | 300 KB |
+| shards over 300 KB gzipped | 17 | **0** | 0 |
+| median shard gzipped | — | 3.8 KB | |
+| `lemmas.json` | 5.0 MB | 5.2 MB raw, 0.6 MB gz | |
+| `glosses.en.json` | 2.5 MB | 2.6 MB raw, 0.9 MB gz | |
+
+So the per-shard gate passes with room, and the whole tree is twice the raw budget
+while weighing 8 MB in git (which stores it compressed). **Not committed; Allan's
+call** — the plan made the gate a design decision, not an implementation detail.
+What is left to shave, if he wants the raw figure down: the 1.2 M form keys are
+~14 MB of the 50 on their own, and the third option — rare lemmas — is big:
+lemmas tagged frequency `A`–`C` carry only **34%** of the analyses, and 784,682 of
+the 1,204,524 forms exist only through a rare lemma (`D`–`F`, `I`, `N`). The spec
+(§8) wants rarity shown, not hidden, so that is a flag for a lighter build, not
+the default.

@@ -1,6 +1,6 @@
 import json
 
-from casus_build.shard import shard_key, write_assets
+from casus_build.shard import decode_analysis, shard_key, write_assets
 
 
 def test_shard_key_uses_first_two_letters():
@@ -29,11 +29,14 @@ def test_shard_files_are_compact_json_keyed_by_form(tmp_path):
     write_assets(index, {}, tmp_path)
     raw = (tmp_path / "forms" / "ro.json").read_text()
     assert ": " not in raw and ", " not in raw
-    assert json.loads(raw) == index
+    shard = json.loads(raw)
+    decoded = {form: [decode_analysis(code, str(row[0])) for row in rows for code in row[1:]]
+               for form, rows in shard.items()}
+    assert decoded == {"rosam": [{**index["rosam"][0], "lemma": "1"}]}
 
 
 def test_every_form_lands_in_exactly_one_shard(tmp_path):
-    index = {f"form{i}": [{"lemma": "x", "pos": "noun", "case": "nom",
+    index = {f"form{i}": [{"lemma": "x:noun:3", "pos": "noun", "case": "nom",
                            "number": "sg", "gender": "m"}] for i in range(50)}
     manifest = write_assets(index, {}, tmp_path)
     assert sum(s["forms"] for s in manifest["shards"].values()) == 50
