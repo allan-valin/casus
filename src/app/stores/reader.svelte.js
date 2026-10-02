@@ -68,6 +68,7 @@ export function createReader({ lexicon, text, saved = null }) {
     toggleGlue(prepIndex) { if (unglued.has(prepIndex)) unglued.delete(prepIndex); else unglued.add(prepIndex); touch(); },
 
     toJSON() {
+      void version;   // read the counter so an effect over toJSON() re-runs after every change
       const base = state.toJSON();
       return {
         ...base,

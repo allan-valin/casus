@@ -1,0 +1,50 @@
+// Drives the dev server's page in headless Chromium: sample, chunk, dictionary, pin, drag, reload.
+// usage: npm run dev -- --port 5198 & npm install --no-save playwright && npx playwright install chromium && node tools/ui_check.mjs <screenshot-dir> [http://localhost:5198]
+import { chromium } from 'playwright';
+const sc = process.argv[2] ?? '.';
+const base = process.argv[3] ?? 'http://localhost:5198';
+const browser = await chromium.launch();
+const ctx = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+const page = await ctx.newPage();
+const errors = [];
+page.on('pageerror', (e) => errors.push(String(e)));
+page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
+await page.goto(base + '/');
+await page.waitForFunction(() => document.querySelector('.status')?.textContent.startsWith('lexicon ready'));
+console.log(await page.textContent('.status'));
+await page.click('button.sample:has-text("Caesar")');
+await page.waitForSelector('.pill');
+await page.waitForTimeout(500);
+const pills = await page.$$eval('.pill', (els) => els.map((e) => e.textContent.trim().replace(/\s+/g, ' ')));
+console.log('pills:', pills.length, pills.slice(0, 12).join(' | '));
+console.log('chunks:', await page.$$eval('.chunk', (els) => els.map((e) => e.textContent.trim().replace(/\s+/g, ' '))));
+console.log('striped:', await page.$$eval('.pill.striped', (els) => els.length), 'unknown:', await page.$$eval('.pill.unknown', (els) => els.map((e) => e.textContent.trim().replace(/\s+/g, ' '))));
+await page.click('.pill:has-text("Gallia")');
+await page.waitForSelector('.dictionary');
+await page.waitForFunction(() => !document.querySelector('.dictionary .loading'), null, { timeout: 15000 });
+console.log('dict:', (await page.textContent('.dictionary')).replace(/\s+/g, ' ').slice(0, 220));
+await page.screenshot({ path: `${sc}/casus-1.png` });
+await page.click('.dictionary button.pin >> nth=0');
+await page.waitForTimeout(300);
+console.log('pinned:', await page.$$eval('.pill.pinned', (els) => els.map((e) => e.textContent.trim().replace(/\s+/g, ' '))));
+// drag `omnis` to the front of the pool
+const omnis = await page.$('.pill:has-text("omnis")');
+const first = await page.$('.pool .item');
+const a = await omnis.boundingBox(); const b = await first.boundingBox();
+await page.mouse.move(a.x + a.width / 2, a.y + a.height / 2); await page.mouse.down();
+for (let i = 1; i <= 15; i += 1) { await page.mouse.move(a.x + (b.x - a.x) * i / 15, a.y + (b.y - a.y) * i / 15); await page.waitForTimeout(30); }
+await page.mouse.up(); await page.waitForTimeout(400);
+console.log('after drag:', await page.$$eval('.pool .pill', (els) => els.slice(0, 4).map((e) => e.querySelector('.surface').textContent)));
+await page.screenshot({ path: `${sc}/casus-2.png` });
+await page.waitForTimeout(500);
+await page.reload();
+await page.waitForFunction(() => document.querySelector('.status')?.textContent.startsWith('lexicon ready'));
+await page.click('button.sample:has-text("Caesar")');
+await page.waitForSelector('.pill');
+await page.waitForTimeout(500);
+console.log('after reload pinned:', await page.$$eval('.pill.pinned', (els) => els.map((e) => e.textContent.trim().replace(/\s+/g, ' '))), 'order:', await page.$$eval('.pool .pill', (els) => els.slice(0, 3).map((e) => e.querySelector('.surface').textContent)));
+await page.click('.sentence >> nth=1');
+await page.waitForTimeout(300);
+console.log('sentence 2 pills:', await page.$$eval('.pool .pill', (els) => els.length));
+console.log('errors:', errors);
+await browser.close();

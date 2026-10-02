@@ -11,6 +11,10 @@
   <sup class="index">{block.token.index + 1}</sup>
   <span class="surface">{block.token.surface}</span>
   <span class="badge">{style.badge}</span>
+  {#if layers.classes && block.resolved && lemmaOf}
+    {@const r = lemmaOf(block.candidates[0].analysis.lemma)}
+    {#if r}<span class="class">{r.pos === 'verb' ? (r.conj ?? '') : [r.decl, r.gender].filter(Boolean).join(' ')}</span>{/if}
+  {/if}
 </button>
 
 <style>
@@ -20,4 +24,5 @@
   .unknown { color: #666; font-style: italic; }
   .index { font-size: 0.6em; opacity: 0.7; }
   .badge { font-size: 0.7em; font-weight: 700; letter-spacing: 0.02em; opacity: 0.85; }
+  .class { font-size: 0.65em; opacity: 0.8; border-left: 1px solid rgba(0,0,0,.3); padding-left: 4px; }
 </style>

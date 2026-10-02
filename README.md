@@ -14,18 +14,58 @@ genuinely ambiguous is shown as ambiguous rather than guessed at.
 Requires Node 20+ and Python 3.11+.
 
 ```bash
-npm install                       # JS test harness (vitest)
-npm test                          # run the parser module tests
-python3 -m pytest tools/tests -q  # run the build pipeline tests
+npm install                       # with npm 10.8 the lockfile installs as is; if you add packages
+                                  # and npm dies on "edgesOut", use --legacy-peer-deps (vitest 5 peer set)
+npm test                          # vitest: parser modules, UI helpers and thin component tests
+python3 -m pytest tools/tests -q  # the build pipeline tests
+python3 tools/build_index.py      # builds data/ from vendor/ (35 s) — needed before the page runs
+npm run dev                       # the reader at http://localhost:5173
+npm run build && npm run preview  # static bundle in dist/, data/ copied beside it
 ```
 
 `vendor/` holds source data downloaded by `tools/fetch_data.sh` and is not committed. The
-derived index under `data/` is built by `python3 tools/build_index.py` (35 s) and is **not
-committed yet either**: it is twice the raw size budget the plan set (59 MB on disk, 7.4 MB
-gzipped), and whether to ship it as is, trim it, or port a stem+ending engine is an open
-decision recorded in `docs/DATA.md`.
+derived index under `data/` is built by `python3 tools/build_index.py` and is **not committed
+yet either**: it is twice the raw size budget the plan set (57 MB on disk, 7.3 MB gzipped), and
+whether to ship it as is, trim it, or port a stem+ending engine is an open decision recorded in
+`docs/DATA.md`.
 
-## Current state (2026-10-02)
+## The page (2026-10-02)
+
+The two-pane reader is built (`docs/superpowers/plans/2026-10-02-casus-ui.md`): text on the
+left, blocks on the right, every parse decision still from `src/lib/`. The thirty-second demo:
+
+1. `npm run dev`, pick **Caesar, De bello Gallico 1.1**. The first sentence is selected; its
+   21 words are pills — hue is case, paler is plural, striped with `?` is ambiguous (11 of them
+   here, which is honest), `in partes` is one glued chunk with an unglue control.
+2. Click **Gallia**: the dictionary panel shows *gallia, -ae f.*, class, the gloss with its
+   language badge, age and frequency, and every candidate with the reason it survived.
+3. **Pin** the nominative: the pill gets a dotted border and the cascade re-runs.
+4. Drag **omnis** to the front: neighbours slide, the chunk moves as one. Reload the page and
+   pick the passage again: the pin and the arrangement are back (autosave by text hash).
+
+Layers (nominal / verb / function / class) toggle independently; the era control dims entries
+attested far from the text; gloss language falls back to English with the badge flipped; export
+gives JSON and Markdown; `restore original order` and `auto-sort by case` sit above the pool.
+`tools/ui_check.mjs` drives all of the above in headless Chromium.
+
+Drag library: `svelte-dnd-action` — measured against `sortablejs` in `spikes/drag/` (spec §12 Q2).
+
+Known limitations, carried forward:
+
+- Identical readings from different Whitaker entries are folded only at display time in the
+  CLI; the page shows one candidate per entry (`in` twice in the list).
+- A preposition's object is the next word (adjacency); anastrophe is the reader's unglue case.
+- Stage 2 narrows an adjective against any agreeing nominal, not its head; the reason names the
+  witness and the soft link lights it up, so the reader can repin.
+- `-que`/`-ue`/`-ne` are split by the tokenizer and rejoined by `state.js` when the whole form is
+  attested; a word that is both attested whole and a host stays whole.
+- Dictionary forms print the bare genitive ending (`legio, -is`), not the stem change (`-onis`).
+- Packons (`quicumque`) and most proper nouns are not in Whitaker's lexicon and show as `!`.
+- Portuguese glosses are absent until core-plan Task 8 is built; the badge says `en (no pt)`.
+- The class sub-layer needs the lemma table, which loads after the first parse (5 MB raw).
+- Rarity is shown, not filtered: `est` offers *edō* beside *sum*.
+
+## The CLI (core plan, 2026-10-02)
 
 The core plan's data pipeline and parser modules are built, reviewed and tested (101 JS tests,
 83 Python tests). The end-to-end deliverable is the CLI:

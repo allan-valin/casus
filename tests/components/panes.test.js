@@ -75,3 +75,15 @@ describe('Block', () => {
     expect(onhover.mock.calls).toEqual([[2], [null]]);
   });
 });
+
+describe('Block class sub-layer', () => {
+  const ALL = { nominal: true, verb: true, function: true, classes: false };
+  const b = { token: { index: 0, surface: 'rosa' }, pinned: null, resolved: true,
+    candidates: [{ analysis: { lemma: '1', pos: 'noun', case: 'nom', number: 'sg', gender: 'f' }, reasons: [] }] };
+  it('shows the class badge only when that layer is on', () => {
+    const off = render(Block, { block: b, layers: ALL, onhover: () => {}, onopen: () => {} });
+    expect(off.container.querySelector('.class')).toBe(null);
+    const on = render(Block, { block: b, layers: { ...ALL, classes: true }, lemmaOf: () => ({ pos: 'noun', decl: 1, gender: 'f' }), onhover: () => {}, onopen: () => {} });
+    expect(on.container.querySelector('.class').textContent).toBe('1 f');
+  });
+});
