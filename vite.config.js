@@ -25,8 +25,10 @@ function serveData() {
 
 export default defineConfig({
   plugins: [svelte(), serveData()],
+  // under vitest, resolve Svelte's browser build so components mount in jsdom
+  // (component tests carry `// @vitest-environment jsdom` at the top of the file)
+  resolve: process.env.VITEST ? { conditions: ['browser'] } : undefined,
   test: {
     environment: 'node',
-    environmentMatchGlobs: [['tests/components/**', 'jsdom']],
   },
 });
