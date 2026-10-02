@@ -27,14 +27,24 @@ await page.screenshot({ path: `${sc}/casus-1.png` });
 await page.click('.dictionary button.pin >> nth=0');
 await page.waitForTimeout(300);
 console.log('pinned:', await page.$$eval('.pill.pinned', (els) => els.map((e) => e.textContent.trim().replace(/\s+/g, ' '))));
-// drag `omnis` to the front of the pool
-const omnis = await page.$('.pill:has-text("omnis")');
-const first = await page.$('.pool .item');
-const a = await omnis.boundingBox(); const b = await first.boundingBox();
-await page.mouse.move(a.x + a.width / 2, a.y + a.height / 2); await page.mouse.down();
-for (let i = 1; i <= 15; i += 1) { await page.mouse.move(a.x + (b.x - a.x) * i / 15, a.y + (b.y - a.y) * i / 15); await page.waitForTimeout(30); }
-await page.mouse.up(); await page.waitForTimeout(400);
-console.log('after drag:', await page.$$eval('.pool .pill', (els) => els.slice(0, 4).map((e) => e.querySelector('.surface').textContent)));
+async function dragTo(fromSel, toSel, { grabPadding = false } = {}) {
+  const from = await (await page.$(fromSel)).boundingBox();
+  const to = await (await page.$(toSel)).boundingBox();
+  // grab 3 px inside the left edge (the pill's padding) or its centre
+  const gx = grabPadding ? from.x + 3 : from.x + from.width / 2;
+  await page.mouse.move(gx, from.y + from.height / 2); await page.mouse.down();
+  for (let i = 1; i <= 15; i += 1) { await page.mouse.move(gx + (to.x + to.width - 2 - gx) * i / 15, from.y + (to.y - from.y) * i / 15); await page.waitForTimeout(30); }
+  await page.mouse.up(); await page.waitForTimeout(400);
+  return page.$$eval('.pool .pill .surface', (els) => els.map((e) => e.textContent));
+}
+// drag `omnis` to the front of the pool, grabbing its padding (not its text)
+console.log('after drag (padding grab):', (await dragTo('.pill:has-text("omnis")', '.pool .item', { grabPadding: true })).slice(0, 4));
+// drag the glued chunk `in partes` to the end of the pool: both halves must move
+const after = await dragTo('.pool .item.chunk', '.pool .item:last-child');
+console.log('chunk to the end:', after.slice(-3), '| chunks:', await page.$$eval('.chunk', (els) => els.map((e) => e.textContent.trim().replace(/\s+/g, ' '))));
+// a directory URL under /data must not kill the dev server
+const dirStatus = await (await page.request.get(base + '/data/forms')).status();
+console.log('GET /data/forms ->', dirStatus, '| server alive:', (await page.request.get(base + '/data/manifest.json')).ok());
 await page.screenshot({ path: `${sc}/casus-2.png` });
 await page.waitForTimeout(500);
 await page.reload();
@@ -42,9 +52,11 @@ await page.waitForFunction(() => document.querySelector('.status')?.textContent.
 await page.click('button.sample:has-text("Caesar")');
 await page.waitForSelector('.pill');
 await page.waitForTimeout(500);
-console.log('after reload pinned:', await page.$$eval('.pill.pinned', (els) => els.map((e) => e.textContent.trim().replace(/\s+/g, ' '))), 'order:', await page.$$eval('.pool .pill', (els) => els.slice(0, 3).map((e) => e.querySelector('.surface').textContent)));
+console.log('after reload pinned:', await page.$$eval('.pill.pinned', (els) => els.map((e) => e.textContent.trim().replace(/\s+/g, ' '))), 'order:', await page.$$eval('.pool .pill .surface', (els) => [...els.slice(0, 2), ...els.slice(-2)].map((e) => e.textContent)));
+await page.click('.pill:has-text("Gallia")');
+await page.waitForSelector('.dictionary');
 await page.click('.sentence >> nth=1');
 await page.waitForTimeout(300);
-console.log('sentence 2 pills:', await page.$$eval('.pool .pill', (els) => els.length));
+console.log('sentence 2 pills:', await page.$$eval('.pool .pill', (els) => els.length), '| dictionary closed:', (await page.$('.dictionary')) === null);
 console.log('errors:', errors);
 await browser.close();

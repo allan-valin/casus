@@ -87,3 +87,25 @@ describe('Block class sub-layer', () => {
     expect(on.container.querySelector('.class').textContent).toBe('1 f');
   });
 });
+
+describe('Block as a drag handle', () => {
+  const ALL = { nominal: true, verb: true, function: true, classes: false };
+  const b = { token: { index: 0, surface: 'rosa' }, pinned: null, resolved: true,
+    candidates: [{ analysis: { lemma: '1', pos: 'noun', case: 'nom', number: 'sg', gender: 'f' }, reasons: [] }] };
+  it('is not a form control (svelte-dnd-action refuses to start a drag on anything with a .value)', () => {
+    const { container } = render(Block, { block: b, layers: ALL, onhover: () => {}, onopen: () => {} });
+    const pill = container.querySelector('.pill');
+    expect(pill.tagName).not.toBe('BUTTON');
+    expect('value' in pill).toBe(false);
+    expect(pill.getAttribute('role')).toBe('button');
+    expect(pill.getAttribute('tabindex')).toBe('0');
+  });
+  it('opens on Enter and on Space from the keyboard', async () => {
+    const onopen = vi.fn();
+    const { container } = render(Block, { block: b, layers: ALL, onhover: () => {}, onopen });
+    const pill = container.querySelector('.pill');
+    await fireEvent.keyDown(pill, { key: 'Enter' });
+    await fireEvent.keyDown(pill, { key: ' ' });
+    expect(onopen).toHaveBeenCalledTimes(2);
+  });
+});

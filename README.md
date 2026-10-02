@@ -40,13 +40,17 @@ left, blocks on the right, every parse decision still from `src/lib/`. The thirt
 2. Click **Gallia**: the dictionary panel shows *gallia, -ae f.*, class, the gloss with its
    language badge, age and frequency, and every candidate with the reason it survived.
 3. **Pin** the nominative: the pill gets a dotted border and the cascade re-runs.
-4. Drag **omnis** to the front: neighbours slide, the chunk moves as one. Reload the page and
-   pick the passage again: the pin and the arrangement are back (autosave by text hash).
+4. Drag **omnis** to the front (grab it anywhere on the pill): neighbours slide. Drag the
+   **in partes** chunk to the end: both halves move. Reload the page and pick the passage again:
+   the pin and the arrangement are back (autosave by text hash; a pending write is flushed on
+   `pagehide`).
 
 Layers (nominal / verb / function / class) toggle independently; the era control dims entries
 attested far from the text; gloss language falls back to English with the badge flipped; export
 gives JSON and Markdown; `restore original order` and `auto-sort by case` sit above the pool.
-`tools/ui_check.mjs` drives all of the above in headless Chromium.
+`tools/ui_check.mjs` drives all of the above in headless Chromium, including the chunk drag, a
+grab on the pill's padding, the dictionary closing on a sentence change, and a directory URL
+under `/data` that must not kill the dev server.
 
 Drag library: `svelte-dnd-action` — measured against `sortablejs` in `spikes/drag/` (spec §12 Q2).
 
@@ -56,7 +60,8 @@ Known limitations, carried forward:
   CLI; the page shows one candidate per entry (`in` twice in the list).
 - A preposition's object is the next word (adjacency); anastrophe is the reader's unglue case.
 - Stage 2 narrows an adjective against any agreeing nominal, not its head; the reason names the
-  witness and the soft link lights it up, so the reader can repin.
+  witness and the soft link lights it up, so the reader can repin. The reason names the witness
+  by its surface, so a repeated word (*Deus … Deus*) lights up every occurrence.
 - `-que`/`-ue`/`-ne` are split by the tokenizer and rejoined by `state.js` when the whole form is
   attested; a word that is both attested whole and a host stays whole.
 - Dictionary forms print the bare genitive ending (`legio, -is`), not the stem change (`-onis`).

@@ -53,11 +53,19 @@
     if (!reader || !autosave) return;
     autosave.save(reader.toJSON());
   });
+  // the dictionary belongs to one sentence; selecting another closes it
+  $effect(() => {
+    void reader?.selected;
+    open = null;
+  });
+  // on the way out, write what is pending; the guard then only covers a storage that refused
   $effect(() => {
     if (typeof window === 'undefined') return;
-    const guard = (e) => { if (autosave?.pending()) { e.preventDefault(); e.returnValue = ''; } };
+    const flush = () => autosave?.flush();
+    const guard = (e) => { flush(); if (autosave?.pending()) { e.preventDefault(); e.returnValue = ''; } };
+    window.addEventListener('pagehide', flush);
     window.addEventListener('beforeunload', guard);
-    return () => window.removeEventListener('beforeunload', guard);
+    return () => { window.removeEventListener('pagehide', flush); window.removeEventListener('beforeunload', guard); };
   });
 
   function download(kind, text) {

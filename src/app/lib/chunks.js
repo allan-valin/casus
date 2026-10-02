@@ -24,9 +24,15 @@ export function gluePairs(blocks, unglued = new Set()) {
   return out;
 }
 
-/** token index -> token indices it agrees with, both directions, by surface name in the reason. */
+/** token index -> token indices it agrees with, both directions. The reason names
+ * the witness by surface, so every block with that surface is linked (a repeated
+ * `Deus` links to both); the core would have to emit indices to do better. */
 export function partners(blocks) {
-  const bySurface = new Map(blocks.map((b) => [b.token.surface, b.token.index]));
+  const bySurface = new Map();
+  for (const b of blocks) {
+    if (!bySurface.has(b.token.surface)) bySurface.set(b.token.surface, []);
+    bySurface.get(b.token.surface).push(b.token.index);
+  }
   const out = new Map();
   const link = (a, b) => {
     if (!out.has(a)) out.set(a, []);
@@ -35,9 +41,10 @@ export function partners(blocks) {
   for (const block of blocks) {
     for (const r of reasonsOf(block)) {
       const target = AGREES_WITH.exec(r)?.[1];
-      if (target && bySurface.has(target)) {
-        link(block.token.index, bySurface.get(target));
-        link(bySurface.get(target), block.token.index);
+      for (const index of bySurface.get(target) ?? []) {
+        if (index === block.token.index) continue;
+        link(block.token.index, index);
+        link(index, block.token.index);
       }
     }
   }

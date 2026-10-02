@@ -68,3 +68,33 @@ describe('App', () => {
     expect(container.textContent).toMatch(/no lexicon/);
   });
 });
+
+describe('App, dictionary and unload', () => {
+  it('closes the dictionary when another sentence is selected', async () => {
+    const { container } = render(App, { fetchImpl, storage: storage(), ...immediate });
+    await tick(); await tick();
+    await readPasted(container, 'Rosa bona. Rosa.');
+    await fireEvent.click(container.querySelector('.pill'));
+    await tick();
+    expect(container.querySelector('.dictionary')).not.toBe(null);
+    await fireEvent.click(container.querySelectorAll('.sentence')[1]);
+    await tick();
+    expect(container.querySelector('.dictionary')).toBe(null);
+  });
+
+  it('flushes a pending autosave on pagehide', async () => {
+    const s = storage();
+    const never = { schedule: () => 42, cancel: () => {} };   // the debounce never fires
+    const { container } = render(App, { fetchImpl, storage: s, ...never });
+    await tick(); await tick();
+    await readPasted(container, 'Rosa bona.');
+    await fireEvent.click(container.querySelector('.pill'));
+    await tick();
+    await fireEvent.click(container.querySelectorAll('button.pin')[1]);
+    await tick();
+    expect(s.map.size).toBe(0);
+    window.dispatchEvent(new Event('pagehide'));
+    expect(s.map.size).toBe(1);
+    expect(JSON.parse([...s.map.values()][0]).pins).toHaveLength(1);
+  });
+});

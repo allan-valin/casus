@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
-import { existsSync, createReadStream, cpSync } from 'node:fs';
-import { join, resolve } from 'node:path';
+import { existsSync, statSync, createReadStream, cpSync } from 'node:fs';
+import { join, resolve, sep } from 'node:path';
 
 const DATA = resolve('data');
 
@@ -12,9 +12,9 @@ function serveData() {
     configureServer(server) {
       server.middlewares.use('/data', (req, res, next) => {
         const file = join(DATA, decodeURIComponent(req.url.split('?')[0]));
-        if (!file.startsWith(DATA) || !existsSync(file)) return next();
+        if (!file.startsWith(DATA + sep) || !existsSync(file) || !statSync(file).isFile()) return next();
         res.setHeader('Content-Type', 'application/json');
-        createReadStream(file).pipe(res);
+        createReadStream(file).on('error', () => next()).pipe(res);
       });
     },
     closeBundle() {

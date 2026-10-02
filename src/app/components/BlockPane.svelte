@@ -29,11 +29,13 @@
   function consider(e) { items = e.detail.items; }
   function finalize(e) {
     items = e.detail.items;
-    // the reader's order is per token; an item's first index stands for the item
+    // the reader's order is per token; the whole item (one token or a glued pair)
+    // lands at the token position its new slot corresponds to
     const moved = String(e.detail.info.id);
     const position = items.findIndex((i) => String(i.id) === moved);
-    const first = Number(moved.split('+')[0]);
-    reader.move(first, items.slice(0, position).reduce((n, i) => n + i.indices.length, 0));
+    if (position < 0) return;
+    const indices = items[position].indices;
+    reader.moveItem(indices, items.slice(0, position).reduce((n, i) => n + i.indices.length, 0));
   }
 </script>
 

@@ -28,5 +28,5 @@ has keyboard reorder and a Svelte-native API (the reflow animation is `animate:f
 bookkeeping). `sortablejs` is uninstalled. The transient overlap on re-wrap is the flip animation
 itself and is the same for both; the app's pool keeps `flipDurationMs` short (150 ms).
 
-Re-run: `npx vite spikes/drag --config spikes/drag/vite.config.js` in one shell, then
-`npm install --no-save playwright && npx playwright install chromium && node spikes/drag/measure.mjs`.
+Re-run: `npm install --no-save sortablejs playwright && npx playwright install chromium`, then `npx vite spikes/drag --config spikes/drag/vite.config.js` in one shell, and
+`node spikes/drag/measure.mjs` in another.

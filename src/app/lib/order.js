@@ -17,6 +17,14 @@ export function move(order, from, to) {
   return out;
 }
 
+/** Move a whole item (one token, or a glued pair) so its members sit together at
+ * position `to`, counted in tokens of the order without the item. */
+export function moveItem(order, indices, to) {
+  const out = order.filter((n) => !indices.includes(n));
+  out.splice(to, 0, ...indices);
+  return out;
+}
+
 /** What a block sorts by: its case when resolved, '?' + the first candidate's case when not. */
 export function sortKey(block) {
   if (block.candidates.length === 0) return 'unknown';

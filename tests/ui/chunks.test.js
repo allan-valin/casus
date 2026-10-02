@@ -49,3 +49,13 @@ describe('items', () => {
     expect(out.map((i) => i.indices)).toEqual([[1, 2], [0], [3], [4]]);
   });
 });
+
+describe('partners with a repeated surface', () => {
+  it('links to every block that carries the witness surface, not only the last', () => {
+    const deus = (i) => b(i, 'Deus', 'noun');
+    const bonus = { ...b(1, 'bonus', 'adj', ['agreement: matches Deus (nom sg m)']) };
+    const p = partners([deus(0), bonus, b(2, 'et', 'conj'), deus(3), b(4, 'malus', 'adj', ['agreement: matches Deus (nom sg m)'])]);
+    expect(p.get(1)).toEqual([0, 3]);
+    expect(p.get(0)).toEqual([1, 4]);
+  });
+});

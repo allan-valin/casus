@@ -63,3 +63,18 @@ describe('BlockPane', () => {
     expect(reader.order).toEqual([0, 2, 3, 1]);
   });
 });
+
+describe('BlockPane drag of a glued chunk', () => {
+  it('moves both halves of a chunk when the drag library finalizes it at the end', async () => {
+    const reader = createReader({ lexicon, text: 'Caesar in Galliam magnam.' });
+    await reader.load();
+    const { container } = render(BlockPane, { reader, onhover: () => {}, onopen: () => {} });
+    await tick();
+    const pool = container.querySelector('.pool');
+    const items = [{ id: '0', indices: [0] }, { id: '3', indices: [3] }, { id: '1+2', indices: [1, 2] }];
+    pool.dispatchEvent(new CustomEvent('finalize', { detail: { items, info: { id: '1+2' } } }));
+    await tick();
+    expect(reader.order).toEqual([0, 3, 1, 2]);
+    expect([...container.querySelectorAll('.item')].map((e) => e.classList.contains('chunk'))).toEqual([false, false, true]);
+  });
+});

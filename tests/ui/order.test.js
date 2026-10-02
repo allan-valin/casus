@@ -28,3 +28,12 @@ describe('order', () => {
     expect(autoSort([0, 1, 2, 3, 4], blocks)).toEqual([2, 1, 0, 4, 3]);
   });
 });
+
+describe('moveItem', () => {
+  it('moves every index of an item together to a position counted in tokens', async () => {
+    const { moveItem } = await import('../../src/app/lib/order.js');
+    expect(moveItem([0, 1, 2, 3, 4], [1, 2], 3)).toEqual([0, 3, 4, 1, 2]);   // chunk to the end
+    expect(moveItem([0, 1, 2, 3, 4], [1, 2], 0)).toEqual([1, 2, 0, 3, 4]);   // chunk to the front
+    expect(moveItem([0, 1, 2, 3], [3], 1)).toEqual([0, 3, 1, 2]);            // single, same as move
+  });
+});

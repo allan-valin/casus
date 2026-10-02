@@ -1,5 +1,5 @@
 import { createState } from '../../lib/state.js';
-import { initialOrder, move as moveIn, autoSort as autoSortIn } from '../lib/order.js';
+import { initialOrder, move as moveIn, moveItem as moveItemIn, autoSort as autoSortIn } from '../lib/order.js';
 import { loadLemmas, loadGlosses } from '../lib/fetchers.js';
 
 const DEFAULT_LAYERS = { nominal: true, verb: true, function: true, classes: false };
@@ -63,6 +63,7 @@ export function createReader({ lexicon, text, saved = null }) {
     pin(tokenIndex, analysis) { state.pin(tokenIndex, analysis); touch(); },
     unpin(tokenIndex) { state.unpin(tokenIndex); touch(); },
     move(from, to) { orders[state.selected()] = moveIn(currentOrder(), from, to); touch(); },
+    moveItem(indices, to) { orders[state.selected()] = moveItemIn(currentOrder(), indices, to); touch(); },
     autoSort() { orders[state.selected()] = autoSortIn(currentOrder(), currentBlocks()); touch(); },
     restoreOrder() { delete orders[state.selected()]; touch(); },
     toggleGlue(prepIndex) { if (unglued.has(prepIndex)) unglued.delete(prepIndex); else unglued.add(prepIndex); touch(); },
