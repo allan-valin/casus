@@ -56,8 +56,8 @@ Drag library: `svelte-dnd-action` — measured against `sortablejs` in `spikes/d
 
 Known limitations, carried forward:
 
-- Identical readings from different Whitaker entries are folded only at display time in the
-  CLI; the page shows one candidate per entry (`in` twice in the list).
+- Identical readings from different Whitaker entries are folded at display time (CLI and the
+  candidate list show `×2`); the blocks still carry one candidate per entry.
 - A preposition's object is the next word (adjacency); anastrophe is the reader's unglue case.
 - Stage 2 narrows an adjective against any agreeing nominal, not its head; the reason names the
   witness and the soft link lights it up, so the reader can repin. Every candidate carries the
