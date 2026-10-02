@@ -118,4 +118,13 @@ comment lines.
 
 ## Measurements
 
-Filled in by Tasks 6 and 7: distinct forms, analyses, shard sizes.
+Expansion (Task 6, 2026-10-02), over 38,099 merged lemmas and 1,797 rules, in 21 s:
+
+| | |
+|---|---|
+| distinct normalised forms | 1,204,524 |
+| analyses | 2,290,362 |
+| by part of speech | vpar 850,224 · verb 768,100 · noun 348,609 · adj 296,095 · supine 12,248 · adv 9,441 · num 3,009 · pron 2,344 · interj 106 · conj 99 · prep 87 |
+| most analyses on one form | `quis`, 215 |
+
+Participles are a third of everything: every verb meets 346 `VPAR` rules. Shard sizes: Task 7.
