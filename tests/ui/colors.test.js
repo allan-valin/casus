@@ -73,3 +73,18 @@ describe('blockStyle', () => {
     expect(s.badge).toBe('!');
   });
 });
+
+import { describeAnalysis } from '../../src/app/lib/colors.js';
+
+describe('describeAnalysis', () => {
+  it('spells a nominal as pos case number gender', () => {
+    expect(describeAnalysis({ pos: 'noun', case: 'abl', number: 'sg', gender: 'f' })).toBe('noun abl sg f');
+    expect(describeAnalysis({ pos: 'adj', case: 'acc', number: 'pl', gender: 'c', degree: 'comp' })).toBe('adj acc pl c comp');
+  });
+  it('spells a verb as person number tense mood voice', () => {
+    expect(describeAnalysis({ pos: 'verb', person: '3', number: 'sg', tense: 'perf', mood: 'ind', voice: 'act', conj: '4' })).toBe('verb 3 sg perf ind act');
+  });
+  it('spells a preposition with what it governs', () => {
+    expect(describeAnalysis({ pos: 'prep', governs: ['acc', 'abl'] })).toBe('prep acc/abl');
+  });
+});

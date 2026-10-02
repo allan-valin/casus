@@ -65,3 +65,11 @@ export function blockStyle(block, layers) {
   }
   return { background: stripes(colours.length > 1 ? colours : [colours[0], NEUTRAL]), badge: '?', striped: true, unknown: false };
 }
+
+/** Same vocabulary as the CLI (tools/parse_cli.mjs): what a candidate list prints. */
+export function describeAnalysis(a) {
+  if (a.pos === 'verb') return ['verb', a.person, a.number, a.tense, a.mood, a.voice].join(' ');
+  if (a.pos === 'prep') return `prep ${Array.isArray(a.governs) ? a.governs.join('/') : (a.governs ?? '')}`.trim();
+  const parts = ['case', 'number', 'gender', 'degree'].map((k) => a[k]).filter((v) => v != null && v !== 'x');
+  return [a.pos, ...parts].join(' ');
+}
