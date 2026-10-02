@@ -80,3 +80,18 @@ def test_continuation_lines_merge_into_the_lemma_above():
 def test_interior_absent_stem_keeps_its_slot():
     deponent = [l for l in _lemmas() if l.stems[0] == "domin" and l.pos == "verb" and "" in l.stems]
     assert [l.stems for l in deponent] == [("domin", "domin", "", "dominat")]
+
+
+def test_comparison_code_is_kept_as_degree():
+    magn = next(l for l in _lemmas() if l.pos == "adj" and l.stems[0] == "magn")
+    assert magn.degree == "x"            # fully compared: magn / mai / maxi
+    re = next(l for l in _lemmas() if l.pos == "adj" and l.stems[0] == "un")
+    assert re.degree == "pos"
+    anteri = next(l for l in _lemmas() if l.pos == "adj" and l.stems[0] == "anteri")
+    assert anteri.degree == "comp" and anteri.decl == 0
+    cur = next(l for l in _lemmas() if l.pos == "adv" and l.stems[0] == "cur")
+    assert cur.degree == "pos"
+    abiecte = next(l for l in _lemmas() if l.pos == "adv" and l.stems[0] == "abiecte")
+    assert abiecte.degree == "x" and abiecte.stems == ("abiecte", "abiectius", "abiectissime")
+    rosa = next(l for l in _lemmas() if l.pos == "noun" and l.stems[0] == "ros")
+    assert rosa.degree is None

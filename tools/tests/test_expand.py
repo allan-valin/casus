@@ -96,3 +96,31 @@ def test_identical_analyses_are_not_duplicated():
     for key, analyses in _index().items():
         seen = [tuple(sorted(a.items())) for a in analyses]
         assert len(seen) == len(set(seen)), key
+
+
+def test_adverb_without_comparison_has_one_reading():
+    idx = _index()
+    cum = [a for a in idx["cum"] if a["pos"] == "adv"]
+    assert [a["degree"] for a in cum] == ["pos"]
+
+
+def test_fully_compared_adverb_takes_its_degree_from_the_stem():
+    idx = _index()
+    assert [a["degree"] for a in idx["abiecte"] if a["pos"] == "adv"] == ["pos"]
+    assert [a["degree"] for a in idx["abiectius"] if a["pos"] == "adv"] == ["comp"]
+    assert [a["degree"] for a in idx["abiectissime"] if a["pos"] == "adv"] == ["super"]
+
+
+def test_comparative_only_adjective_declines_from_its_single_stem():
+    idx = _index()
+    anteriorem = [a for a in idx["anteriorem"] if a["pos"] == "adj"]
+    assert anteriorem and all(a["degree"] == "comp" for a in anteriorem)
+    assert ("acc", "sg") in _nominal(anteriorem, "adj")
+    assert not any(a["degree"] in ("pos", "super") for a in idx.get("anteri", []) if a["pos"] == "adj")
+
+
+def test_fully_compared_adjective_builds_comparative_and_superlative():
+    idx = _index()
+    assert any(a["degree"] == "comp" and a["case"] == "acc" for a in idx["maiorem"] if a["pos"] == "adj")
+    assert any(a["degree"] == "super" and a["case"] == "nom" for a in idx["maximus"] if a["pos"] == "adj")
+    assert all(a["degree"] == "pos" for a in idx["magnam"] if a["pos"] == "adj")

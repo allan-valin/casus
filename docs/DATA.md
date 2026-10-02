@@ -98,7 +98,7 @@ Rules spell endings with `j` and `v` (`jus`, `vi`); the build normalises them to
 ## Fixtures
 
 `tools/tests/fixtures/dictline_sample.txt` — the lemmas whose first stem is one of
-`ros serv urbs magn capi am reg puell bell domin audi bon et in cum ab hic un cur heu unus aliqu`
+`ros serv urbs magn capi am reg puell bell domin audi bon et in cum ab hic un cur heu unus aliqu abjecte anteri`
 (`ab` kept only as the preposition). Covers:
 
 - 1st-declension feminine noun: `ros ros N 1 1 F` (rosa)
@@ -109,11 +109,12 @@ Rules spell endings with `j` and `v` (`jus`, `vi`); the build normalises them to
 - 3rd-conjugation `-iō` verb: `capi cap cep capt V 3 1`
 - plain 3rd: `reg reg rex rect V 3 1`; 4th: `audi aud audiv audit V 3 4`
 - preposition `in` (two lines, `ACC` and `ABL`), `cum`, `ab`; conjunction `et`;
-  interjection `heu`; pronoun `hic`; numeral `unus`; adverb `cur`.
+  interjection `heu`; pronoun `hic`; numeral `unus`; adverb `cur`; a fully compared adverb
+  `abjecte abjectius abjectissime ADV X` and a comparative-only adjective `anteri ADJ 0 0 COMP`.
 
 `tools/tests/fixtures/inflects_sample.txt` — every rule for `N 1 0/1`, `N 2 0/1/2`,
 `N 3 0/1/3`, `N 9 8/9`, `ADJ 1 0/1`, `ADJ 0 0`, `V 1 1`, `V 3 0/1/4`, `V 0 0`, the
-nominative `VPAR 1 0` and `VPAR 3 0` rules, and the `PREP`, `CONJ`, `INTERJ` rules; no
+nominative `VPAR 1 0` and `VPAR 3 0` rules, and the `ADV`, `PREP`, `CONJ`, `INTERJ` rules; no
 comment lines.
 
 ## Measurements

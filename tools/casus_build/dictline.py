@@ -31,6 +31,7 @@ _POS = {
     "NUM": "num",
 }
 _GENDER = {"M": "m", "F": "f", "N": "n", "C": "c"}
+_DEGREE = {"POS": "pos", "COMP": "comp", "SUPER": "super", "X": "x"}
 _CASE = {"NOM": "nom", "VOC": "voc", "GEN": "gen", "LOC": "loc", "DAT": "dat", "ABL": "abl", "ACC": "acc"}
 
 
@@ -47,6 +48,7 @@ class Lemma:
     freq: str               # "A" very frequent ... "F", "I", "N", "X" unknown
     gloss_en: str
     governs: str | None = None  # prepositions: the case governed
+    degree: str | None = None   # adjectives and adverbs: "pos" | "comp" | "super" | "x" (fully compared, one stem per degree)
 
 
 def parse_dictline(lines: Iterable[str]) -> list[Lemma]:
@@ -73,8 +75,8 @@ def merge_continuations(lemmas: Iterable[Lemma]) -> list[Lemma]:
 
 
 def _same_entry(a: Lemma, b: Lemma) -> bool:
-    return (a.stems, a.pos, a.decl, a.variant, a.gender, a.governs) == (
-        b.stems, b.pos, b.decl, b.variant, b.gender, b.governs
+    return (a.stems, a.pos, a.decl, a.variant, a.gender, a.governs, a.degree) == (
+        b.stems, b.pos, b.decl, b.variant, b.gender, b.governs, b.degree
     )
 
 
@@ -98,6 +100,11 @@ def _parse_line(line: str, index: int) -> Lemma:
         conj = _conj_label(decl, variant, stems)
     if pos_code == "PREP":
         governs = _CASE.get(codes[0]) if codes else None
+    degree = None
+    if pos_code == "ADJ":
+        degree = _DEGREE.get(codes[2])
+    if pos_code == "ADV":
+        degree = _DEGREE.get(codes[0]) if codes else None
 
     return Lemma(
         id=f"{stems[0]}:{pos}:{index}",
@@ -111,6 +118,7 @@ def _parse_line(line: str, index: int) -> Lemma:
         freq=_code(line[_FREQ_COL]),
         gloss_en=line[_GLOSS_COL:].strip(),
         governs=governs,
+        degree=degree,
     )
 
 

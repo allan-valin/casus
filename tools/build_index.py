@@ -20,7 +20,7 @@ from casus_build.dictline import merge_continuations, parse_dictline  # noqa: E4
 from casus_build.expand import expand  # noqa: E402
 from casus_build.headword import lemma_record  # noqa: E402
 from casus_build.inflects import parse_inflects  # noqa: E402
-from casus_build.shard import write_assets  # noqa: E402
+from casus_build.shard import _lemma_int, write_assets  # noqa: E402
 
 
 def main(argv=None) -> int:
@@ -39,8 +39,9 @@ def main(argv=None) -> int:
     print(f"{len(index)} forms, {sum(len(v) for v in index.values())} analyses "
           f"in {time.time() - t0:.0f} s", flush=True)
 
-    records = {l.id: lemma_record(l, rules) for l in lemmas}
-    glosses = {l.id: l.gloss_en for l in lemmas if l.gloss_en}
+    # keyed by the integer at the end of Lemma.id — the number the shard rows carry
+    records = {str(_lemma_int(l.id)): lemma_record(l, rules) for l in lemmas}
+    glosses = {str(_lemma_int(l.id)): l.gloss_en for l in lemmas if l.gloss_en}
 
     args.out.mkdir(parents=True, exist_ok=True)
     (args.out / "glosses.en.json").write_text(

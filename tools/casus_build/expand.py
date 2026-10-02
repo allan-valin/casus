@@ -42,7 +42,9 @@ def expand(lemmas: list[Lemma], rules: list[Inflection]) -> dict[str, list[Analy
             for rule in by_pos[rule_pos]:
                 if not _class_matches(lemma, rule) or not _gender_fits(lemma, rule):
                     continue
-                stem = _stem(lemma, rule.stem_key)
+                if not _degree_fits(lemma, rule):
+                    continue
+                stem = _stem(lemma, _stem_key_for(lemma, rule))
                 if stem is None:
                     continue
                 form = normalize_form(stem + rule.ending)
@@ -81,6 +83,33 @@ def _gender_fits(lemma: Lemma, rule: Inflection) -> bool:
     return rg == "c" and lemma.gender in ("m", "f", "c")
 
 
+_DEGREE_BY_STEM = {1: "pos", 2: "comp", 3: "super"}
+
+
+def _degree_fits(lemma: Lemma, rule: Inflection) -> bool:
+    """Whitaker's comparison code: a lemma marked X carries one stem per degree
+    and takes every rule; POS/COMP/SUPER lemmas carry one stem and take only the
+    rules of their own degree (a `COMP` adjective's single stem IS the comparative)."""
+    if lemma.degree is None:
+        return True
+    rd = rule.features.get("degree", "x")
+    if lemma.pos == "adv":
+        # ADV X k 0 serves the three-stem adverbs (stem k is the degree);
+        # ADV POS/COMP/SUPER 1 0 serve the one-stem ones of that degree.
+        return rd == lemma.degree
+    if lemma.degree == "x":
+        return True
+    return rd == lemma.degree or (lemma.degree == "pos" and rd == "x")
+
+
+def _stem_key_for(lemma: Lemma, rule: Inflection) -> int:
+    """A comparative- or superlative-only adjective keeps its one stem where the
+    rule expects stem 3 or 4."""
+    if lemma.pos == "adj" and lemma.degree in ("comp", "super"):
+        return 1
+    return rule.stem_key
+
+
 def _stem(lemma: Lemma, stem_key: int) -> str | None:
     if stem_key < 1 or stem_key > len(lemma.stems):
         return None
@@ -106,7 +135,10 @@ def _analysis(lemma: Lemma, rule: Inflection) -> Analysis:
         return {"lemma": lemma.id, "pos": "vpar", "case": f["case"], "number": f["number"],
                 "gender": f["gender"], "tense": f["tense"], "voice": f["voice"], "conj": lemma.conj}
     if rule.pos == "adv":
-        return {"lemma": lemma.id, "pos": "adv", "degree": f["degree"]}
+        degree = f["degree"]
+        if degree == "x":  # fully compared adverb: the stem says which degree this is
+            degree = _DEGREE_BY_STEM.get(rule.stem_key, "x")
+        return {"lemma": lemma.id, "pos": "adv", "degree": degree}
     if rule.pos == "prep":
         return {"lemma": lemma.id, "pos": "prep", "governs": lemma.governs}
     return {"lemma": lemma.id, "pos": rule.pos}
