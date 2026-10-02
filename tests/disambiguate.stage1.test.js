@@ -88,3 +88,15 @@ describe('narrow', () => {
     expect(blocks).toEqual(before);
   });
 });
+
+describe('narrow guards the block list itself', () => {
+  it('throws when a stage returns a different number of blocks', () => {
+    const blocks = buildBlocks(tokens, new Map([['rosa', rosa]]));
+    expect(() => narrow(blocks, () => [])).toThrow(/blocks/);
+  });
+  it('throws when a stage reorders the blocks', () => {
+    const two = [...tokens, { index: 1, surface: 'urbem', key: 'urbem', kind: 'word', enclitic: null }];
+    const blocks = buildBlocks(two, new Map([['rosa', rosa], ['urbem', [rosa[0]]]]));
+    expect(() => narrow(blocks, (bs) => [bs[1], bs[0]])).toThrow(/order/);
+  });
+});

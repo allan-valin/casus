@@ -210,9 +210,10 @@ The first two options, built and measured (`write_assets` format 2, 33 s):
 | `lemmas.json` | 5.0 MB | 4.9 MB raw, 0.5 MB gz | |
 | `glosses.en.json` | 2.5 MB | 2.1 MB raw, 0.7 MB gz | |
 
-(Re-measured after the review fixes of the same morning: 1,186,801 forms, 2,253,331
+(Re-measured after the review fixes of the same morning: 1,186,589 forms, 2,252,959
 analyses, 38,179 lemma records — deponents lost their active forms, packons left,
-*sum* and the 79 unique forms came in.)
+*sum* and the 79 unique forms came in, and the `V 0 0` perfect rules no longer reach the
+defective V 8 and undeclined V 9 verbs.)
 
 So the per-shard gate passes with room, and the whole tree is twice the raw budget
 while weighing 8 MB in git (which stores it compressed). **Not committed; Allan's

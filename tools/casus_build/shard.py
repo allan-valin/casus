@@ -51,6 +51,7 @@ _LAYOUT = {
 }
 _POS_BACK = {v: k for k, v in _POS.items()}
 _BACK = {name: {v: k for k, v in table.items() if k is not None} for layout in _LAYOUT.values() for name, table in layout}
+_BACK["conj"]["x"] = None   # a verb with no conjugation (UNIQUES `V 0 0`) decodes to None, as in JS
 
 
 def encode_analysis(a: dict) -> str:

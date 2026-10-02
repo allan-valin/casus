@@ -66,7 +66,9 @@ def _class_matches(lemma: Lemma, rule: Inflection) -> bool:
     if lemma.decl is None:
         return False
     if rule.decl == 0:
-        return True
+        # `0 0` rules (the perfect system, the comparatives) serve the regular classes;
+        # V 8 (defective, sigmatic amasso) and V 9 (undeclined) have no perfect system.
+        return not (lemma.pos == "verb" and lemma.decl in (8, 9))
     if rule.decl != lemma.decl:
         return False
     # A rule's variant 0 serves every variant of the class. A lemma's variant 0

@@ -69,3 +69,9 @@ def test_write_assets_splits_a_big_prefix(tmp_path):
     manifest = write_assets(index, {}, tmp_path, max_forms=5)
     assert "coa" in manifest["shards"] and "co" not in manifest["shards"]
     assert sum(s["forms"] for s in manifest["shards"].values()) == 30
+
+
+def test_decode_handles_a_verb_without_conjugation():
+    code = encode_analysis({**VERB, "conj": None})
+    assert code.endswith("x")
+    assert decode_analysis(code, "9")["conj"] is None

@@ -107,3 +107,14 @@ describe('government links', () => {
     expect(out[0].candidates[0].links).toEqual([]);
   });
 });
+
+describe('government and indeclinables', () => {
+  it('keeps a case-x reading beside the governed one instead of dropping it', () => {
+    const mixed = [
+      { lemma: 'x:noun:1', pos: 'noun', case: 'acc', number: 'sg', gender: 'f' },
+      { lemma: 'x:noun:9', pos: 'noun', case: 'x', number: 'x', gender: 'f' },
+    ];
+    const out = narrow(blocksFor([['in', inPrep], ['x', mixed]]), governmentStage);
+    expect(out[1].candidates.map((c) => c.analysis.case).sort()).toEqual(['acc', 'x']);
+  });
+});

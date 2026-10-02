@@ -32,6 +32,8 @@ export function buildBlocks(tokens, analysesByKey) {
 /** Apply a stage; restore any block it emptied that was not empty before. */
 export function narrow(blocks, stage) {
   const out = stage(blocks);
+  if (out.length !== blocks.length) throw new Error(`stage returned ${out.length} blocks for ${blocks.length}`);
+  out.forEach((b, i) => { if (b.token !== blocks[i].token) throw new Error('stage changed the block order'); });
   return out.map((block, i) => {
     const before = blocks[i];
     if (block.candidates.length === 0 && before.candidates.length > 0) return before;
@@ -163,10 +165,11 @@ export function governmentStage(blocks) {
     if (preps.length === 0) continue;
     const governs = [...new Set(preps.flatMap((c) => c.analysis.governs))];
     const object = out[i + 1];
-    const kept = object.candidates.filter((c) => c.analysis.case && governs.includes(c.analysis.case));
-    if (kept.length === 0) continue;
+    // an indeclinable reading (case x) says nothing about government: it stays as it is
+    const kept = object.candidates.filter((c) => c.analysis.case && (c.analysis.case === 'x' || governs.includes(c.analysis.case)));
+    if (!kept.some((c) => c.analysis.case !== 'x')) continue;
 
-    const survivingCases = [...new Set(kept.map((c) => c.analysis.case))];
+    const survivingCases = [...new Set(kept.map((c) => c.analysis.case).filter((k) => k !== 'x'))];
     const name = prep.token.surface;
     if (survivingCases.length === 1) {
       const theCase = survivingCases[0];
@@ -179,7 +182,7 @@ export function governmentStage(blocks) {
       };
     }
     const objectReason = `government: governed by ${name} (${survivingCases.join('/')})`;
-    out[i + 1] = { ...object, candidates: kept.map((c) => withLink(withReason(c, objectReason), 'government', prep.token.index)) };
+    out[i + 1] = { ...object, candidates: kept.map((c) => (c.analysis.case === 'x' ? c : withLink(withReason(c, objectReason), 'government', prep.token.index))) };
   }
   return out;
 }

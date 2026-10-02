@@ -203,3 +203,13 @@ def test_pronoun_nominatives_come_from_their_own_variant_lines():
     # but a lemma with a variant of its own keeps to it: aliqui (1 1) is not *aliquis
     aliquis = [a for a in idx["aliquis"] if a["case"] == "nom" and a["number"] == "sg"]
     assert aliquis and all(a["lemma"] != "aliqu:pron:4" for a in aliquis)  # :4 is the `1 1` line
+
+
+def test_perfect_system_rules_do_not_reach_defective_or_undeclined_verbs():
+    # `am am amass zzz V 8 1` is the sigmatic future amasso/amassim: the V 0 0 perfect
+    # rules must not build *amassi / *amassit on its stem 3
+    idx = _index()
+    assert "amassi" not in idx
+    assert not any(a["pos"] == "verb" and a["tense"] == "perf" and a["lemma"].endswith(":verb:14") for a in idx.get("amassit", []))
+    # but a regular verb's perfect still comes from the same rules
+    assert any(a["tense"] == "perf" for a in idx["amauit"] if a["pos"] == "verb")

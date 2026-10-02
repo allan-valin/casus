@@ -69,6 +69,8 @@ Known limitations, carried forward:
 - Portuguese glosses are absent until core-plan Task 8 is built; the badge says `en (no pt)`.
 - The class sub-layer needs the lemma table, which loads after the first parse (5 MB raw).
 - Rarity is shown, not filtered: `est` offers *edō* beside *sum*.
+- Sentence splitting guards Roman numerals in capitals only, so an ALL-CAPS text is one sentence;
+  a sentence-final `a` is read as the praenomen abbreviation.
 
 ## The CLI (core plan, 2026-10-02)
 

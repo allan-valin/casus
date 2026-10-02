@@ -137,3 +137,17 @@ describe('agreement links', () => {
     expect(out[0].candidates[0].links).toEqual([]);
   });
 });
+
+describe('agreement and indeclinables', () => {
+  const kal = [{ lemma: 'kal:noun:1', pos: 'noun', case: 'x', number: 'x', gender: 'm' }];
+  it('an abbreviation (case x) is never a witness', () => {
+    const out = narrow(blocksFor([['magnam', magnam], ['Kal', kal]]), agreementStage);
+    expect(out[0].candidates).toHaveLength(2);
+    expect(out[0].candidates[0].reasons).toEqual(['lexicon: attested form']);
+  });
+  it('a case-x adjective reading is never narrowed by agreement', () => {
+    const d = [{ lemma: 'd:adj:1', pos: 'adj', case: 'x', number: 'x', gender: 'x' }];
+    const out = narrow(blocksFor([['d', d], ['urbem', urbem]]), agreementStage);
+    expect(out[0].candidates[0].links).toEqual([]);
+  });
+});
