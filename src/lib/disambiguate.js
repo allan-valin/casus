@@ -1,3 +1,5 @@
+import { GOVERNMENT } from './prepositions.js';
+
 /*
  * The §4.1 cascade as narrowing stages. Everything here is pure: stages take
  * blocks and return new blocks; `narrow` is the invariant guard every stage
@@ -94,4 +96,63 @@ function matchAgainst(targets, witnesses) {
     }
   }
   return kept.length > 0 ? kept : null;
+}
+
+
+const CASE_NAME = { nom: 'nominative', voc: 'vocative', gen: 'genitive', loc: 'locative', dat: 'dative', abl: 'ablative', acc: 'accusative' };
+
+function governedBy(token, analysis) {
+  if (GOVERNMENT[token.key]) return GOVERNMENT[token.key];
+  if (analysis.governs && analysis.governs !== 'x') {
+    return Array.isArray(analysis.governs) ? analysis.governs : [analysis.governs];
+  }
+  return [];
+}
+
+function withReason(candidate, reason) {
+  return candidate.reasons.includes(reason) ? candidate : { ...candidate, reasons: [...candidate.reasons, reason] };
+}
+
+/**
+ * Stage 3. Every preposition reading is annotated with the cases it governs
+ * (the table in prepositions.js, else what the lexicon recorded). Its object
+ * is the next word block — v1 assumes adjacency; anastrophe is the reader's
+ * unglue case (spec §7.5). The object keeps the readings in a governed case,
+ * and if those select exactly one governed case the preposition narrows to it:
+ * `in urbe` settles the ablative, `in Galliam` the accusative, and when both
+ * stay open both stay striped.
+ */
+export function governmentStage(blocks) {
+  const out = blocks.map((block) => ({
+    ...block,
+    candidates: block.candidates.map((c) => (c.analysis.pos === 'prep'
+      ? { ...c, analysis: { ...c.analysis, governs: governedBy(block.token, c.analysis) } }
+      : c)),
+  }));
+
+  for (let i = 0; i < out.length - 1; i += 1) {
+    const prep = out[i];
+    const preps = prep.candidates.filter((c) => c.analysis.pos === 'prep' && c.analysis.governs.length > 0);
+    if (preps.length === 0) continue;
+    const governs = [...new Set(preps.flatMap((c) => c.analysis.governs))];
+    const object = out[i + 1];
+    const kept = object.candidates.filter((c) => c.analysis.case && governs.includes(c.analysis.case));
+    if (kept.length === 0) continue;
+
+    const survivingCases = [...new Set(kept.map((c) => c.analysis.case))];
+    const name = prep.token.surface;
+    if (survivingCases.length === 1) {
+      const theCase = survivingCases[0];
+      const prepReason = `government: ${name} + ${theCase} (object ${object.token.surface} is ${CASE_NAME[theCase]})`;
+      out[i] = {
+        ...prep,
+        candidates: prep.candidates.map((c) => (c.analysis.pos === 'prep'
+          ? withReason({ ...c, analysis: { ...c.analysis, governs: [theCase] } }, prepReason)
+          : c)),
+      };
+    }
+    const objectReason = `government: governed by ${name} (${survivingCases.join('/')})`;
+    out[i + 1] = { ...object, candidates: kept.map((c) => withReason(c, objectReason)) };
+  }
+  return out;
 }
