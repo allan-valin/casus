@@ -1,6 +1,6 @@
 <script>
   import { blockStyle } from '../lib/colors.js';
-  let { block, layers, onhover, onopen } = $props();
+  let { block, layers, onhover, onopen, lemmaOf = null } = $props();
   const style = $derived(blockStyle(block, layers));
 </script>
 
