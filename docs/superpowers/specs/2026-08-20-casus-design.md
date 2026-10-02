@@ -360,6 +360,12 @@ TDD throughout; tests precede implementation.
    engine port becomes necessary after all. **Worth a spike before the plan is written.**
 2. Which MIT drag library actually supports magnetic displacement plus glued multi-word chunks
    without fighting the library — `sortablejs` and `dnd-kit` both need a spike.
+
+   **Answered 2026-10-02 (spike in `spikes/drag/`, measured in headless Chromium):**
+   `svelte-dnd-action` and `sortablejs` tie on magnetic displacement, glued chunks and the
+   wrapping pool; `svelte-dnd-action` alone has keyboard reorder and a Svelte-native API, so it
+   is the one the UI uses. `dnd-kit` is React-only and was not spiked. `sortablejs` is not
+   installed in the app.
 3. Coverage measurement of `glosses.pt.json` against a real passage's vocabulary, to know
    whether the Portuguese layer is a headline feature or a partial convenience.
 
