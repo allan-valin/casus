@@ -78,8 +78,8 @@ def test_continuation_lines_merge_into_the_lemma_above():
 
 
 def test_interior_absent_stem_keeps_its_slot():
-    deponent = [l for l in _lemmas() if l.stems[0] == "domin" and l.pos == "verb" and "" in l.stems]
-    assert [l.stems for l in deponent] == [("domin", "domin", "", "dominat")]
+    deponent = [l for l in _lemmas() if l.stems[0] == "domin" and l.pos == "verb" and None in l.stems]
+    assert [l.stems for l in deponent] == [("domin", "domin", None, "dominat")]
 
 
 def test_comparison_code_is_kept_as_degree():
@@ -95,3 +95,28 @@ def test_comparison_code_is_kept_as_degree():
     assert abiecte.degree == "x" and abiecte.stems == ("abiecte", "abiectius", "abiectissime")
     rosa = next(l for l in _lemmas() if l.pos == "noun" and l.stems[0] == "ros")
     assert rosa.degree is None
+
+
+def test_verb_kind_is_kept():
+    hortor = next(l for l in _lemmas() if l.stems[0] == "hort" and l.pos == "verb")
+    assert hortor.kind == "dep"
+    gaudeo = next(l for l in _lemmas() if l.stems[0] == "gaud" and l.pos == "verb")
+    assert gaudeo.kind == "semidep"
+    amo = next(l for l in _lemmas() if l.stems[0] == "am" and l.pos == "verb" and l.decl == 1)
+    assert amo.kind == "x"
+    rosa = next(l for l in _lemmas() if l.stems[0] == "ros" and l.pos == "noun")
+    assert rosa.kind is None
+
+
+def test_packons_are_their_own_part_of_speech():
+    packs = [l for l in _lemmas() if l.stems[0] == "qu" and l.pos == "pack"]
+    assert packs, "fixture must hold the qu- packons"
+    assert all(l.decl == 1 for l in packs)
+
+
+def test_the_hand_written_sum_line_parses_with_an_empty_second_stem():
+    from casus_build.extras import EXTRA_DICTLINE
+    [sum_] = parse_dictline(EXTRA_DICTLINE)
+    assert sum_.stems == ("s", "", "fu", "fut")
+    assert sum_.pos == "verb" and sum_.decl == 5 and sum_.variant == 1 and sum_.kind == "to_being"
+    assert sum_.conj == "5" and sum_.freq == "A"

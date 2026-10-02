@@ -16,14 +16,15 @@ _STEM_SPANS = ((0, 19), (19, 38), (38, 57), (57, 76))
 _POS_SPAN = (76, 83)
 _CODES_SPAN = (83, 100)
 _AGE_COL, _FREQ_COL, _GLOSS_COL = 100, 106, 110
-_ABSENT_STEM = "zzz"
+_ABSENT_STEM = "zzz"   # no such stem
+_EMPTY_STEM = "."      # a stem that is the empty string (sum: `s . fu fut`, so est = "" + est)
 
 _POS = {
     "N": "noun",
     "ADJ": "adj",
     "V": "verb",
     "PRON": "pron",
-    "PACK": "pron",  # qu- words with an enclitic baked in; they decline like PRON
+    "PACK": "pack",  # qu- words with a tackon baked in (quicumque); not expanded until ADDONS.LAT is
     "ADV": "adv",
     "PREP": "prep",
     "CONJ": "conj",
@@ -31,6 +32,8 @@ _POS = {
     "NUM": "num",
 }
 _GENDER = {"M": "m", "F": "f", "N": "n", "C": "c"}
+_KIND = {"X": "x", "TRANS": "trans", "INTRANS": "intrans", "DEP": "dep", "SEMIDEP": "semidep",
+         "IMPERS": "impers", "DAT": "dat", "ABL": "abl", "TO_BEING": "to_being", "PERFDEF": "perfdef"}
 _DEGREE = {"POS": "pos", "COMP": "comp", "SUPER": "super", "X": "x"}
 _CASE = {"NOM": "nom", "VOC": "voc", "GEN": "gen", "LOC": "loc", "DAT": "dat", "ABL": "abl", "ACC": "acc"}
 
@@ -38,8 +41,8 @@ _CASE = {"NOM": "nom", "VOC": "voc", "GEN": "gen", "LOC": "loc", "DAT": "dat", "
 @dataclass(frozen=True)
 class Lemma:
     id: str                 # stable: f"{stems[0]}:{pos}:{index}"
-    stems: tuple[str, ...]  # normalised; "" marks an absent interior stem, trailing absent stems dropped
-    pos: str                # "noun" | "adj" | "verb" | "pron" | "adv" | "prep" | "conj" | "interj" | "num"
+    stems: tuple[str | None, ...]  # normalised; None = no such stem (zzz), "" = a real empty stem (sum's "."); trailing absent stems dropped
+    pos: str                # "noun" | "adj" | "verb" | "pron" | "pack" | "adv" | "prep" | "conj" | "interj" | "num"
     decl: int | None        # Whitaker's first class number, for every inflecting pos (verbs too)
     variant: int | None     # Whitaker's variant number within the class
     conj: str | None        # "1" | "2" | "3" | "3-io" | "4" | "5".."9" for verbs
@@ -48,6 +51,7 @@ class Lemma:
     freq: str               # "A" very frequent ... "F", "I", "N", "X" unknown
     gloss_en: str
     governs: str | None = None  # prepositions: the case governed
+    kind: str | None = None     # verbs: "x" | "trans" | "intrans" | "dep" | "semidep" | "impers" | "to_being" ...
     degree: str | None = None   # adjectives and adverbs: "pos" | "comp" | "super" | "x" (fully compared, one stem per degree)
 
 
@@ -96,8 +100,10 @@ def _parse_line(line: str, index: int) -> Lemma:
         decl, variant = _int(codes[0]), _int(codes[1])
     if pos_code == "N":
         gender = _GENDER.get(codes[2])
+    kind = None
     if pos_code == "V":
         conj = _conj_label(decl, variant, stems)
+        kind = _KIND.get(codes[2], "x") if len(codes) > 2 else "x"
     if pos_code == "PREP":
         governs = _CASE.get(codes[0]) if codes else None
     degree = None
@@ -118,14 +124,22 @@ def _parse_line(line: str, index: int) -> Lemma:
         freq=_code(line[_FREQ_COL]),
         gloss_en=line[_GLOSS_COL:].strip(),
         governs=governs,
+        kind=kind,
         degree=degree,
     )
 
 
 def _stems(line: str) -> tuple[str, ...]:
     raw = [line[a:b].strip() for a, b in _STEM_SPANS]
-    stems = ["" if s == _ABSENT_STEM else normalize_form(s) for s in raw]
-    while len(stems) > 1 and stems[-1] == "":
+    stems: list[str | None] = []
+    for s in raw:
+        if s == _ABSENT_STEM or s == "":
+            stems.append(None)
+        elif s == _EMPTY_STEM:
+            stems.append("")
+        else:
+            stems.append(normalize_form(s))
+    while len(stems) > 1 and stems[-1] is None:
         stems.pop()
     return tuple(stems)
 
@@ -138,7 +152,7 @@ def _conj_label(decl: int | None, variant: int | None, stems: tuple[str, ...]) -
     if decl == 3 and variant == 4:
         return "4"
     if decl == 3:
-        io = len(stems) > 1 and stems[0].endswith("i") and not stems[1].endswith("i")
+        io = len(stems) > 1 and (stems[0] or "").endswith("i") and not (stems[1] or "").endswith("i")
         return "3-io" if io else "3"
     return str(decl)
 

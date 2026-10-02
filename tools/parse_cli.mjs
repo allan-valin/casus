@@ -41,8 +41,16 @@ export function formatBlocks(blocks, lemmas = null) {
       continue;
     }
     lines.push(`${String(token.index).padStart(3)} ${mark} ${token.surface}`);
+    // Whitaker often lists one word several times (one entry per sense, per
+    // governed case, per compound); readings that print the same are shown once.
+    const seen = new Map();
     for (const c of candidates) {
-      lines.push(`       ${describe(c.analysis)}${headword(c.analysis, lemmas)}  [${c.reasons.join('; ')}]`);
+      const line = `${describe(c.analysis)}${headword(c.analysis, lemmas)}  [${c.reasons.join('; ')}]`;
+      seen.set(line, (seen.get(line) ?? 0) + 1);
+    }
+    for (const [line, n] of seen) {
+      const [reading, reasons] = line.split('  [');
+      lines.push(`       ${reading}${n > 1 ? ` ×${n}` : ''}  [${reasons}`);
     }
   }
   return lines.join('\n');

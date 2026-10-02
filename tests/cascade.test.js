@@ -81,3 +81,28 @@ describe('runCascade', () => {
     expect(blocks[1].candidates.map((c) => c.analysis)).toEqual([reading]);
   });
 });
+
+describe('runCascade with a pinned preposition', () => {
+  const inBoth = [
+    { lemma: 'in:prep:1', pos: 'prep', governs: 'abl' },
+    { lemma: 'in:prep:2', pos: 'prep', governs: 'acc' },
+  ];
+  const urbe = [
+    { lemma: 'urb:noun:1', pos: 'noun', case: 'acc', number: 'sg', gender: 'f' },
+    { lemma: 'urb:noun:1', pos: 'noun', case: 'abl', number: 'sg', gender: 'f' },
+  ];
+  const pair = ['in', 'urbe'].map((key, index) => ({ index, surface: key, key, kind: 'word', enclitic: null }));
+  const lookup = new Map([['in', inBoth], ['urbe', urbe]]);
+
+  it('leaves both open without a pin', () => {
+    const blocks = runCascade(pair, lookup);
+    expect(blocks[1].candidates.map((c) => c.analysis.case).sort()).toEqual(['abl', 'acc']);
+  });
+
+  it('a pin on the preposition settles its object', () => {
+    const blocks = runCascade(pair, lookup, { pins: new Map([[0, inBoth[0]]]) });
+    expect(blocks[0].candidates).toHaveLength(1);
+    expect(blocks[0].candidates[0].analysis.governs).toEqual(['abl']);
+    expect(blocks[1].candidates.map((c) => c.analysis.case)).toEqual(['abl']);
+  });
+});

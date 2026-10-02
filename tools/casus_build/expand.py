@@ -42,9 +42,9 @@ def expand(lemmas: list[Lemma], rules: list[Inflection]) -> dict[str, list[Analy
             for rule in by_pos[rule_pos]:
                 if not _class_matches(lemma, rule) or not _gender_fits(lemma, rule):
                     continue
-                if not _degree_fits(lemma, rule):
+                if not _degree_fits(lemma, rule) or not _voice_fits(lemma, rule):
                     continue
-                stem = _stem(lemma, _stem_key_for(lemma, rule))
+                stem = _stem(lemma, _stem_key_for(lemma, rule), rule.ending)
                 if stem is None:
                     continue
                 form = normalize_form(stem + rule.ending)
@@ -69,6 +69,9 @@ def _class_matches(lemma: Lemma, rule: Inflection) -> bool:
         return True
     if rule.decl != lemma.decl:
         return False
+    # A rule's variant 0 serves every variant of the class. A lemma's variant 0
+    # is not a wildcard: `qu PRON 1 0` is the shared oblique forms (cuius, quem),
+    # and the nominatives come from the `qu PRON 1 1/1 2/1 3` lines of their own.
     return rule.variant in (0, lemma.variant)
 
 
@@ -110,11 +113,54 @@ def _stem_key_for(lemma: Lemma, rule: Inflection) -> int:
     return rule.stem_key
 
 
-def _stem(lemma: Lemma, stem_key: int) -> str | None:
+def _stem(lemma: Lemma, stem_key: int, ending: str = "") -> str | None:
+    """The stem a rule attaches to, or None when the lemma has no such stem
+    (zzz). A real empty stem (sum's `.`) takes an ending, and only yields
+    nothing when the ending is empty too."""
     if stem_key < 1 or stem_key > len(lemma.stems):
         return None
     stem = lemma.stems[stem_key - 1]
-    return stem or None
+    if stem is None or (stem == "" and ending == ""):
+        return None
+    return stem
+
+
+_PERFECT_SYSTEM = {"perf", "plup", "futp"}
+
+
+def _voice_fits(lemma: Lemma, rule: Inflection) -> bool:
+    """Deponents have passive forms with active meaning and no active forms,
+    except the present and future active participles, the future active
+    infinitive, the gerundive and the supine. Semi-deponents (gaudeo, gavisus
+    sum) are active in the present system and passive-shaped in the perfect."""
+    if lemma.kind not in ("dep", "semidep") or rule.pos not in ("verb", "vpar"):
+        return True
+    voice, tense, mood = rule.features.get("voice"), rule.features.get("tense"), rule.features.get("mood")
+    if rule.pos == "vpar":
+        return True
+    perfect = tense in _PERFECT_SYSTEM
+    if lemma.kind == "semidep" and not perfect:
+        return voice == "act"
+    if voice == "act":
+        return tense == "fut" and mood == "inf"
+    return True
+
+
+def _label_voice(lemma: Lemma, rule: Inflection, voice: str) -> str:
+    """A deponent's passive-shaped form means active; its gerundive stays passive."""
+    if lemma.kind not in ("dep", "semidep") or voice != "pass":
+        return voice
+    if rule.pos == "vpar":
+        return "act" if rule.features.get("tense") == "perf" else voice
+    return "act"
+
+
+def add_uniques(index: dict[str, list[Analysis]], uniques) -> None:
+    """Fold UNIQUES.LAT forms into an expanded index, without duplicating a row."""
+    for u in uniques:
+        rows = index.setdefault(u.form, [])
+        if u.analysis not in rows:
+            rows.append(u.analysis)
 
 
 def _analysis(lemma: Lemma, rule: Inflection) -> Analysis:
@@ -130,10 +176,12 @@ def _analysis(lemma: Lemma, rule: Inflection) -> Analysis:
                 "gender": f["gender"]}
     if rule.pos == "verb":
         return {"lemma": lemma.id, "pos": "verb", "person": f["person"], "number": f["number"],
-                "tense": f["tense"], "mood": f["mood"], "voice": f["voice"], "conj": lemma.conj}
+                "tense": f["tense"], "mood": f["mood"], "voice": _label_voice(lemma, rule, f["voice"]),
+                "conj": lemma.conj}
     if rule.pos == "vpar":
         return {"lemma": lemma.id, "pos": "vpar", "case": f["case"], "number": f["number"],
-                "gender": f["gender"], "tense": f["tense"], "voice": f["voice"], "conj": lemma.conj}
+                "gender": f["gender"], "tense": f["tense"], "voice": _label_voice(lemma, rule, f["voice"]),
+                "conj": lemma.conj}
     if rule.pos == "adv":
         degree = f["degree"]
         if degree == "x":  # fully compared adverb: the stem says which degree this is

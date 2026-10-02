@@ -27,8 +27,8 @@ decision recorded in `docs/DATA.md`.
 
 ## Current state (2026-10-02)
 
-The core plan's data pipeline and parser modules are built and tested (95 JS tests, 68 Python
-tests). The end-to-end deliverable is the CLI:
+The core plan's data pipeline and parser modules are built, reviewed and tested (101 JS tests,
+83 Python tests). The end-to-end deliverable is the CLI:
 
 ```bash
 python3 tools/build_index.py              # once, needs vendor/ fetched
@@ -40,8 +40,7 @@ npm run parse -- "Caesar in Galliam magnam cum legione venit."
        noun nom sg m <caesar, -is m.>  [lexicon: attested form]
        noun voc sg m <caesar, -is m.>  [lexicon: attested form]
   1 ? in
-       prep acc <in>  [lexicon: attested form; government: in + acc (object Galliam is accusative)]
-       prep acc <in>  [lexicon: attested form; government: in + acc (object Galliam is accusative)]
+       prep acc <in> ×2  [lexicon: attested form; government: in + acc (object Galliam is accusative)]
   2   Galliam
        noun acc sg f <gallia, -ae f.>  [lexicon: attested form; government: governed by in (acc)]
   3   magnam
@@ -57,16 +56,16 @@ npm run parse -- "Caesar in Galliam magnam cum legione venit."
        verb 3 sg pres ind act <uenio, -ire>  [lexicon: attested form]
 ```
 
-`?` marks a block the cascade left ambiguous; `!` one the lexicon does not know. What this
+`?` marks a block the cascade left ambiguous; `!` one the lexicon does not know; `×2` folds
+readings that print the same (Whitaker lists `in` once per governed case). What this
 shows: `Galliam` resolved and pulling `in` to the accusative, `cum` governing `legione` as
 ablative, `magnam` settled by agreement with `Galliam`, and `Caesar` honestly left between
 nominative and vocative — which is the app doing its job (spec §4).
 
 Known limitations, for the UI plan:
 
-- `in` appears twice because Whitaker lists it as two entries (one per governed case); after
-  government both survive as the same reading. A display-level merge of identical readings is
-  the UI's call.
+- Identical readings from different Whitaker entries are folded only at display time; the
+  blocks still carry one candidate per entry, and the UI will want the same fold.
 - A preposition's object is the next word (adjacency); anastrophe (`quem circum`) is the
   reader's unglue case.
 - Stage 2 narrows an adjective against any agreeing nominal in the sentence, not its actual
@@ -75,3 +74,12 @@ Known limitations, for the UI plan:
   is attested (`legione`), so a word that is both attested whole and a host stays whole.
 - Dictionary forms print the bare genitive ending (`legio, -is`), not the stem change (`-onis`).
 - The Portuguese glosses (plan Task 8) are not built; the English ones are.
+- Packons (`quicumque`, `quisque`) are not in the lexicon until `ADDONS.LAT` is folded in;
+  proper nouns are thin in Whitaker (`Troiae`, `Lavinia` come back *not in lexicon*).
+- Rarity is shown, not filtered: `est` offers *edō* "eats" beside *sum*; `vis` offers *vīsō*.
+  The frequency tag on the lemma is the UI's cue (spec §8).
+
+Also parsed on the way, so the claims above are not one sentence's luck: *Quis est?* (`est`
+→ *sum* and *edō*), *Sumus et imus.* (both resolved), *Senatus populusque Romanus hortatur
+milites.* (`hortatur` *3 sg pres ind act* of the deponent, `Senatus` keeps its noun readings
+beside the agreeing adjective), and the Aeneid's first line.

@@ -26,6 +26,7 @@ def lemma_record(lemma: Lemma, rules: list[Inflection]) -> dict:
         "age": lemma.age,
         "freq": lemma.freq,
         "governs": lemma.governs,
+        "kind": lemma.kind,
     }
     return {k: v for k, v in record.items() if v is not None}
 
@@ -33,6 +34,9 @@ def lemma_record(lemma: Lemma, rules: list[Inflection]) -> dict:
 def _citation(lemma: Lemma, rules: list[Inflection]) -> tuple[str, str]:
     own = [r for r in rules if _class_matches(lemma, r) and _gender_fits(lemma, r)]
     fallback = lemma.stems[0] or ""
+    if lemma.pos in ("pron", "num"):
+        head = _form(lemma, own, lemma.pos, case="nom", number="sg")
+        return (head, head) if head is not None else (fallback, fallback)
     if lemma.pos == "noun":
         head = _form(lemma, own, "noun", case="nom", number="sg")
         gen = _ending(own, "noun", case="gen", number="sg")
@@ -52,10 +56,11 @@ def _citation(lemma: Lemma, rules: list[Inflection]) -> tuple[str, str]:
         gen = _ending(own, "adj", case="gen", number="sg", degree="pos")
         return head, f"{head}, -{gen}" if gen is not None else head
     if lemma.pos == "verb":
-        head = _form(lemma, own, "verb", person="1", number="sg", tense="pres", mood="ind", voice="act")
+        voice = "pass" if lemma.kind == "dep" else "act"  # hortor, -ari
+        head = _form(lemma, own, "verb", person="1", number="sg", tense="pres", mood="ind", voice=voice)
         if head is None:
             return fallback, fallback
-        inf = _ending(own, "verb", person="0", tense="pres", mood="inf", voice="act")
+        inf = _ending(own, "verb", person="0", tense="pres", mood="inf", voice=voice)
         return head, f"{head}, -{inf}" if inf is not None else head
     return fallback, fallback
 
@@ -80,7 +85,7 @@ def _candidates(rules, pos, **want):
 
 def _form(lemma, rules, pos, **want):
     for r in _candidates(rules, pos, **want):
-        stem = _stem(lemma, r.stem_key)
+        stem = _stem(lemma, r.stem_key, r.ending)
         if stem is not None:
             return normalize_form(stem + r.ending)
     return None

@@ -124,3 +124,82 @@ def test_fully_compared_adjective_builds_comparative_and_superlative():
     assert any(a["degree"] == "comp" and a["case"] == "acc" for a in idx["maiorem"] if a["pos"] == "adj")
     assert any(a["degree"] == "super" and a["case"] == "nom" for a in idx["maximus"] if a["pos"] == "adj")
     assert all(a["degree"] == "pos" for a in idx["magnam"] if a["pos"] == "adj")
+
+
+def _index_with_sum():
+    from casus_build.extras import EXTRA_DICTLINE
+    lemmas = merge_continuations(parse_dictline(
+        (F / "dictline_sample.txt").read_text(encoding="latin-1").splitlines() + EXTRA_DICTLINE))
+    rules = parse_inflects((F / "inflects_sample.txt").read_text(encoding="latin-1").splitlines())
+    return expand(lemmas, rules)
+
+
+def _verbs(idx, form):
+    return [a for a in idx.get(form, []) if a["pos"] == "verb"]
+
+
+def test_sum_paradigm_is_built_from_the_empty_stem():
+    idx = _index_with_sum()
+    est = [a for a in _verbs(idx, "est") if a["conj"] == "5"]
+    assert [(a["person"], a["number"], a["tense"], a["mood"], a["voice"]) for a in est] == [("3", "sg", "pres", "ind", "act")]
+    assert any(a["person"] == "1" and a["number"] == "pl" for a in _verbs(idx, "sumus"))
+    assert any(a["mood"] == "inf" and a["tense"] == "pres" for a in _verbs(idx, "esse"))
+    assert any(a["tense"] == "impf" and a["person"] == "3" for a in _verbs(idx, "erat"))
+    assert any(a["tense"] == "perf" and a["person"] == "3" for a in _verbs(idx, "fuit"))
+    assert "" not in idx and "est" in idx
+
+
+def test_deponent_has_passive_forms_with_active_voice_and_no_active_forms():
+    idx = _index()
+    hortatur = _verbs(idx, "hortatur")
+    assert hortatur and all(a["voice"] == "act" for a in hortatur)
+    assert any(a["person"] == "3" and a["tense"] == "pres" and a["mood"] == "ind" for a in hortatur)
+    assert not _verbs(idx, "hortat") and not _verbs(idx, "horto")
+    assert any(a["mood"] == "inf" and a["voice"] == "act" for a in _verbs(idx, "hortari"))
+    hortans = [a for a in idx["hortans"] if a["pos"] == "vpar"]
+    assert hortans and all(a["voice"] == "act" for a in hortans)
+    hortatus = [a for a in idx["hortatus"] if a["pos"] == "vpar"]
+    assert hortatus and all(a["voice"] == "act" and a["tense"] == "perf" for a in hortatus)
+
+
+def test_semideponent_keeps_an_active_present_and_a_passive_shaped_perfect():
+    idx = _index()
+    assert any(a["voice"] == "act" and a["tense"] == "pres" for a in _verbs(idx, "gaudet"))
+    assert not _verbs(idx, "gaudetur")
+    gauisus = [a for a in idx["gauisus"] if a["pos"] == "vpar"]
+    assert gauisus and all(a["voice"] == "act" for a in gauisus)
+
+
+def test_packons_are_not_expanded_without_their_tackon():
+    idx = _index()
+    assert not any(":pack:" in a["lemma"] for v in idx.values() for a in v)
+    assert any(":pron:" in a["lemma"] for a in idx["quem"])
+
+
+def test_absent_interior_stem_builds_nothing_but_an_empty_stem_does():
+    from casus_build.dictline import Lemma
+    from casus_build.inflects import Inflection
+    perf = Inflection(pos="verb", decl=0, variant=0, stem_key=3, ending="imus", age="X", freq="A",
+                      features={"person": "1", "number": "pl", "tense": "perf", "mood": "ind", "voice": "act"})
+    est = Inflection(pos="verb", decl=5, variant=0, stem_key=2, ending="est", age="X", freq="A",
+                     features={"person": "3", "number": "sg", "tense": "pres", "mood": "ind", "voice": "act"})
+    absent = Lemma(id="abc:verb:1", stems=("abc", "abc", None, "abct"), pos="verb", decl=1, variant=1,
+                   conj="1", gender=None, age="X", freq="A", gloss_en="", kind="x")
+    empty = Lemma(id="s:verb:2", stems=("s", "", "fu", "fut"), pos="verb", decl=5, variant=1,
+                  conj="5", gender=None, age="X", freq="A", gloss_en="", kind="to_being")
+    idx = expand([absent, empty], [perf, est])
+    assert "imus" not in idx
+    assert "est" in idx and "fuimus" in idx
+
+
+def test_pronoun_nominatives_come_from_their_own_variant_lines():
+    # `qu PRON 1 0` holds the shared oblique forms; qui / quis / quae are `qu PRON 1 1 / 1 2 / 1 3`
+    idx = _index()
+    quem = [a for a in idx["quem"] if a["pos"] == "pron"]
+    assert any(a["lemma"] == "qu:pron:91" for a in quem) or any(a["lemma"].startswith("qu:pron:") for a in quem)
+    for form in ("qui", "quis", "quae"):
+        assert any(a["pos"] == "pron" and a["case"] == "nom" and a["number"] == "sg"
+                   and a["lemma"].startswith("qu:pron:") for a in idx[form]), form
+    # but a lemma with a variant of its own keeps to it: aliqui (1 1) is not *aliquis
+    aliquis = [a for a in idx["aliquis"] if a["case"] == "nom" and a["number"] == "sg"]
+    assert aliquis and all(a["lemma"] != "aliqu:pron:4" for a in aliquis)  # :4 is the `1 1` line

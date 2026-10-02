@@ -99,3 +99,30 @@ describe('agreementStage', () => {
     expect(out[0].candidates[0].reasons.join(' ')).toMatch(/urbs/);
   });
 });
+
+describe('agreementStage on noun/adjective homographs', () => {
+  const senatus = [
+    { lemma: 'senat:noun:1', pos: 'noun', case: 'nom', number: 'sg', gender: 'm' },
+    { lemma: 'senat:noun:1', pos: 'noun', case: 'gen', number: 'sg', gender: 'm' },
+    { lemma: 'senat:adj:2', pos: 'adj', case: 'nom', number: 'sg', gender: 'm', degree: 'pos' },
+  ];
+  const populus = [{ lemma: 'popul:noun:1', pos: 'noun', case: 'nom', number: 'sg', gender: 'm' }];
+
+  it('keeps the noun readings beside the adjective reading agreement supports', () => {
+    const out = narrow(blocksFor([['senatus', senatus], ['populus', populus]]), agreementStage);
+    const kinds = out[0].candidates.map((c) => `${c.analysis.pos} ${c.analysis.case}`);
+    expect(kinds).toEqual(['adj nom', 'noun nom', 'noun gen']);
+  });
+
+  it('keeps a verb reading beside an agreeing adjective reading', () => {
+    const bona = [
+      { lemma: 'bon:adj:1', pos: 'adj', case: 'nom', number: 'sg', gender: 'f', degree: 'pos' },
+      { lemma: 'bon:adj:1', pos: 'adj', case: 'abl', number: 'sg', gender: 'f', degree: 'pos' },
+      { lemma: 'bon:verb:9', pos: 'verb', person: '2', number: 'sg', tense: 'pres', mood: 'imp', voice: 'act', conj: '1' },
+    ];
+    const rosaNom = [{ lemma: 'ros:noun:1', pos: 'noun', case: 'nom', number: 'sg', gender: 'f' }];
+    const out = narrow(blocksFor([['bona', bona], ['rosa', rosaNom]]), agreementStage);
+    expect(out[0].candidates.map((c) => c.analysis.pos)).toEqual(['adj', 'verb']);
+    expect(out[0].candidates[0].analysis.case).toBe('nom');
+  });
+});

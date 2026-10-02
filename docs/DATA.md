@@ -95,10 +95,37 @@ says `X`, or the rule says `C` and the lemma is `M`, `F` or `C`.
 
 Rules spell endings with `j` and `v` (`jus`, `vi`); the build normalises them to `i`/`u`.
 
+## What DICTLINE does not hold, and how the build fills it
+
+* **`sum, esse, fui, futurus`** is built by Whitaker's program, not listed. The comment
+  above the `V 5` rules in INFLECTS.LAT gives its stems, `s . fu fut`, with `.` an
+  **empty** stem: `est` is "" + `est`, `esse` is "" + `esse`, exactly as `adest` is
+  `ad` + `est`. `tools/casus_build/extras.py` writes that one line in DICTLINE's own
+  layout at line index 90000, and the stem parser keeps `.` as `""` (a real stem) while
+  `zzz` becomes `None` (no stem) — an ending on `None` builds nothing, an ending on `""`
+  builds the form.
+* **`UNIQUES.LAT`** — 79 forms the rules cannot build (`vult`, `vis`, `mavult`,
+  `memento`, `quisquis`, `dii`, `iusiurandum`…), three lines each: form, a code line
+  (part of speech, class, the inflection's own features, kind, age/area/geo/freq/src),
+  gloss. Each becomes one analysis under its normalised form and one lemma record
+  whose headword is the form itself, at line index 100000 + n.
+* **Deponents** (`DEP`, 777 verbs; `SEMIDEP`, 72): Whitaker marks the kind on the line
+  and the program suppresses the active forms. The build does the same: a deponent
+  takes only the passive-shaped rules (plus the present and future active participles,
+  the future active infinitive, gerundive and supine) and labels them `act`, so
+  `hortatur` is *3 sg pres ind act* of `hortor, -ari` and `horto`, `hortat` do not
+  exist. A semi-deponent is active in the present system and passive-shaped in the
+  perfect (`gaudet`, `gavisus`). The kind is kept on the lemma record (`kind`).
+* **Packons** (`PACK`, 73 lines: `quicumque`, `quisque`, `quilibet`…) are `qu-` with a
+  tackon the gloss names. The tackons live in `ADDONS.LAT`, which is not fetched yet,
+  so packons are **not expanded** (they would otherwise be read as bare `quis`); they
+  stay in `lemmas.json` with `pos: "pack"` for the popup. `quodcumque` is therefore
+  *not in lexicon* today.
+
 ## Fixtures
 
 `tools/tests/fixtures/dictline_sample.txt` — the lemmas whose first stem is one of
-`ros serv urbs magn capi am reg puell bell domin audi bon et in cum ab hic un cur heu unus aliqu abjecte anteri`
+`ros serv urbs magn capi am reg puell bell domin audi bon et in cum ab hic un cur heu unus aliqu abjecte anteri hort qu gaud`
 (`ab` kept only as the preposition). Covers:
 
 - 1st-declension feminine noun: `ros ros N 1 1 F` (rosa)
@@ -110,12 +137,15 @@ Rules spell endings with `j` and `v` (`jus`, `vi`); the build normalises them to
 - plain 3rd: `reg reg rex rect V 3 1`; 4th: `audi aud audiv audit V 3 4`
 - preposition `in` (two lines, `ACC` and `ABL`), `cum`, `ab`; conjunction `et`;
   interjection `heu`; pronoun `hic`; numeral `unus`; adverb `cur`; a fully compared adverb
-  `abjecte abjectius abjectissime ADV X` and a comparative-only adjective `anteri ADJ 0 0 COMP`.
+  `abjecte abjectius abjectissime ADV X` and a comparative-only adjective `anteri ADJ 0 0 COMP`;
+  a deponent `hort hort zzz hortat V 1 1 DEP`, a semi-deponent `gaud gaud zzz gavis V 2 1 SEMIDEP`,
+  and the `qu` pronoun and packon lines.
 
 `tools/tests/fixtures/inflects_sample.txt` — every rule for `N 1 0/1`, `N 2 0/1/2`,
-`N 3 0/1/3`, `N 9 8/9`, `ADJ 1 0/1`, `ADJ 0 0`, `V 1 1`, `V 3 0/1/4`, `V 0 0`, the
-nominative `VPAR 1 0` and `VPAR 3 0` rules, and the `ADV`, `PREP`, `CONJ`, `INTERJ` rules; no
-comment lines.
+`N 3 0/1/3`, `N 9 8/9`, `ADJ 1 0/1`, `ADJ 0 0`, `V 1 1`, `V 2 1`, `V 3 0/1/4`, `V 5 0/1`,
+`V 0 0`, every `PRON 1 x`, the nominative and accusative singular `VPAR` rules of every
+class, and the `ADV`, `PREP`, `CONJ`, `INTERJ` rules; no comment lines.
+`tools/tests/fixtures/uniques_sample.txt` is the whole of `UNIQUES.LAT`.
 
 ## Measurements
 
@@ -171,14 +201,18 @@ The first two options, built and measured (`write_assets` format 2, 33 s):
 
 | | format 1 | **format 2** | budget |
 |---|---|---|---|
-| `data/` on disk | 274 MB | **59 MB** (forms 50.7 MB) | 25 MB |
-| all shards gzipped | — | **7.4 MB** | |
-| shards | 239 | 955 (15 one-letter, 213 two, 428 three, 198 four, 101 five) | |
-| largest shard gzipped | `co` 1.50 MB | **`circu` 150 KB**, then `inter` 50 KB | 300 KB |
+| `data/` on disk | 274 MB | **57 MB** (forms 49.8 MB) | 25 MB |
+| all shards gzipped | — | **7.3 MB** | |
+| shards | 239 | 953 (15 one-letter, 214 two, 430 three, 199 four, 95 five) | |
+| largest shard gzipped | `co` 1.50 MB | **`circu` 148 KB**, then `inter` 49 KB | 300 KB |
 | shards over 300 KB gzipped | 17 | **0** | 0 |
 | median shard gzipped | — | 3.8 KB | |
-| `lemmas.json` | 5.0 MB | 5.2 MB raw, 0.6 MB gz | |
-| `glosses.en.json` | 2.5 MB | 2.6 MB raw, 0.9 MB gz | |
+| `lemmas.json` | 5.0 MB | 4.9 MB raw, 0.5 MB gz | |
+| `glosses.en.json` | 2.5 MB | 2.1 MB raw, 0.7 MB gz | |
+
+(Re-measured after the review fixes of the same morning: 1,186,801 forms, 2,253,331
+analyses, 38,179 lemma records — deponents lost their active forms, packons left,
+*sum* and the 79 unique forms came in.)
 
 So the per-shard gate passes with room, and the whole tree is twice the raw budget
 while weighing 8 MB in git (which stores it compressed). **Not committed; Allan's

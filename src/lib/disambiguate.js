@@ -69,20 +69,24 @@ function describe(a) {
  */
 export function agreementStage(blocks) {
   return blocks.map((block, i) => {
-    const others = blocks.filter((b, j) => j !== i);
+    const otherBlocks = blocks.filter((b, j) => j !== i);
     const targets = block.candidates.filter((c) => NOMINAL_TARGETS.has(c.analysis.pos));
     if (targets.length > 0) {
-      const witnesses = others.filter((b) => b.candidates.some((c) => WITNESSES.has(c.analysis.pos)));
+      const witnesses = otherBlocks.filter((b) => b.candidates.some((c) => WITNESSES.has(c.analysis.pos)));
       const resolved = witnesses.filter((b) => b.resolved || b.pinned);
       const kept = matchAgainst(targets, resolved, WITNESSES) ?? matchAgainst(targets, witnesses, WITNESSES);
-      return kept ? { ...block, candidates: kept } : block;
+      if (!kept) return block;
+      // Evidence for an adjective reading is not evidence against the noun or
+      // verb reading of the same form (senatus, bonum, Romanus): those stay.
+      const others = block.candidates.filter((c) => !NOMINAL_TARGETS.has(c.analysis.pos));
+      return { ...block, candidates: [...kept, ...others] };
     }
     // The other direction, resolved side only: an adjective already settled
     // (by a preposition, a pin, or an earlier pass) narrows its noun. Two
     // ambiguous nouns never pair, and two ambiguous words never narrow each other.
     const nouns = block.candidates.filter((c) => c.analysis.pos === 'noun');
     if (nouns.length < 2 || block.pinned) return block;
-    const settled = others.filter((b) => (b.resolved || b.pinned)
+    const settled = otherBlocks.filter((b) => (b.resolved || b.pinned)
       && b.candidates.some((c) => NOMINAL_TARGETS.has(c.analysis.pos)));
     const kept = matchAgainst(nouns, settled, NOMINAL_TARGETS);
     return kept ? { ...block, candidates: kept } : block;
@@ -110,12 +114,18 @@ function matchAgainst(targets, witnesses, witnessPos) {
 
 const CASE_NAME = { nom: 'nominative', voc: 'vocative', gen: 'genitive', loc: 'locative', dat: 'dative', abl: 'ablative', acc: 'accusative' };
 
-function governedBy(token, analysis) {
-  if (GOVERNMENT[token.key]) return GOVERNMENT[token.key];
+function ownGoverns(analysis) {
   if (analysis.governs && analysis.governs !== 'x') {
     return Array.isArray(analysis.governs) ? analysis.governs : [analysis.governs];
   }
   return [];
+}
+
+/** A pinned reading is a fixed fact and keeps what the lexicon gave it; otherwise the table fills in. */
+function governedBy(block, analysis) {
+  if (block.pinned) return ownGoverns(analysis);
+  if (GOVERNMENT[block.token.key]) return GOVERNMENT[block.token.key];
+  return ownGoverns(analysis);
 }
 
 function withReason(candidate, reason) {
@@ -135,7 +145,7 @@ export function governmentStage(blocks) {
   const out = blocks.map((block) => ({
     ...block,
     candidates: block.candidates.map((c) => (c.analysis.pos === 'prep'
-      ? { ...c, analysis: { ...c.analysis, governs: governedBy(block.token, c.analysis) } }
+      ? { ...c, analysis: { ...c.analysis, governs: governedBy(block, c.analysis) } }
       : c)),
   }));
 
