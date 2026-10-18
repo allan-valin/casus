@@ -17,6 +17,7 @@
   import { createActivity } from './lib/activity.svelte.js';
   import ActivityLog from './components/ActivityLog.svelte';
   import { describeAnalysis, blockStyle } from './lib/colors.js';
+  import { partners as partnersOf } from './lib/chunks.js';
 
   const DATA = withBase('/data');
 
@@ -138,6 +139,8 @@
     say('act.export', { kind: kind === 'json' ? 'JSON' : 'Markdown', name: a.download }, 'ok');
   }
 
+  // the hovered word's agreement partners, for the text pane (the pool computes its own)
+  const hotPartners = $derived(hovered === null || !reader ? new Set() : new Set(partnersOf(reader.blocks).get(hovered) ?? []));
   const lemmaOf = (id) => reader?.lexiconExtras.lemmas?.[String(id)] ?? null;
   const openBlock = $derived(open && reader ? (reader.blocks.find((b) => b.token.index === open.token.index) ?? open) : null);
 </script>
@@ -172,7 +175,7 @@
   {#if reader}
     <section class="card">
       <h2><span class="step">2</span> {t('sentences.heading')} <span class="hint-inline">{t('sentences.hint')}</span></h2>
-      <TextPane {reader} {hovered} />
+      <TextPane {reader} {hovered} partners={hotPartners} />
     </section>
 
     <section class="card blocks">

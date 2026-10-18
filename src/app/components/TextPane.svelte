@@ -6,7 +6,7 @@
    * between them is the original text, untouched.
    */
   import { t } from '../lib/i18n.svelte.js';
-  let { reader, hovered = null } = $props();
+  let { reader, hovered = null, partners = new Set() } = $props();
 
   function pieces(sentence) {
     const out = [];
@@ -30,7 +30,7 @@
           onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); reader.select(i); } }}>
       {#if i === reader.selected}
         {#each pieces(sentence) as piece}
-          {#if piece.index !== undefined}<span class="word" class:hot={piece.index === hovered}>{piece.text}</span>{:else}{piece.text}{/if}
+          {#if piece.index !== undefined}<span class="word" class:hot={piece.index === hovered} class:hot-partner={piece.index !== hovered && partners.has(piece.index)}>{piece.text}</span>{:else}{piece.text}{/if}
         {/each}
       {:else}
         {sentence.text}
@@ -47,5 +47,6 @@
   .current { border-color: var(--accent); border-width: 2px; background: var(--panel-hi); }
   .dimmed { opacity: 0.6; }
   .sentence::before { counter-increment: sentence; content: counter(sentence); font-size: 0.6em; color: var(--muted); margin-right: 4px; vertical-align: super; }
-  .hot { background: #ffe58a; border-radius: 3px; }
+  .hot { background: color-mix(in srgb, var(--accent) 28%, white); outline: 2px solid var(--accent); border-radius: 3px; }
+  .hot-partner { background: #ffe58a; border-radius: 3px; }
 </style>

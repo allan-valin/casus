@@ -28,9 +28,11 @@ describe('TextPane', () => {
   it('highlights the hovered word of the selected sentence and keeps its punctuation', async () => {
     const reader = createReader({ lexicon, text: 'Rosa, bona.' });
     await reader.load();
-    const { container } = render(TextPane, { reader, hovered: 2 });
+    const { container } = render(TextPane, { reader, hovered: 2, partners: new Set([0]) });
     const hot = container.querySelector('.hot');
     expect(hot.textContent).toBe('bona');
+    // the hovered word's agreement partners light up too, more softly (Allan, 2026-10-18)
+    expect(container.querySelector('.hot-partner').textContent).toBe('Rosa');
     expect(container.querySelector('.sentence').textContent.replace(/\s+/g, ' ').trim()).toBe('Rosa, bona.');
   });
 });

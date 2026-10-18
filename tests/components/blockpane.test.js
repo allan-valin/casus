@@ -57,6 +57,9 @@ describe('BlockPane', () => {
     await fireEvent.mouseEnter(magnam);
     const galliam = pills.find((p) => p.textContent.includes('Galliam'));
     expect(galliam.closest('.block').classList.contains('linked')).toBe(true);
+    // and the hovered block itself is marked, so the pair reads as a pair (Allan, 2026-10-18)
+    expect(magnam.closest('.block').classList.contains('hovered')).toBe(true);
+    expect(galliam.closest('.block').classList.contains('hovered')).toBe(false);
   });
 
   it('follows the reader order and offers restore and auto-sort', async () => {

@@ -110,7 +110,7 @@ export const LEGEND = [
   { key: 'chunk', label: 'glued chunk', badge: 'Prp', fill: tint(CASE_COLORS.abl, 'sg'), border: CASE_COLORS.abl, borderStyle: 'solid', chunk: true,
     meaning: 'a preposition and its object move as one; the ⛓ control unglues them (poets separate them)' },
   { key: 'linked', label: 'agreement partner', badge: 'Ac', fill: tint(CASE_COLORS.acc, 'sg'), border: CASE_COLORS.acc, borderStyle: 'solid', linked: true,
-    meaning: 'hovering a word lights the words that agree with it in yellow; they still move independently' },
+    meaning: 'the word under the mouse gets a purple ring; the words that agree with it get this yellow ring. They still move independently' },
 ];
 
 /** Same vocabulary as the CLI (tools/parse_cli.mjs): what a candidate list prints. */

@@ -125,7 +125,7 @@
       {#each item.indices as index, i (index)}
         {@const block = byIndex.get(index)}
         {#if block}
-          <span class="block" class:linked={linked.has(index)}>
+          <span class="block" class:linked={linked.has(index)} class:hovered={hovered === index}>
             <Block {block} layers={reader.layers} onhover={hover} onopen={open} {lemmaOf} />
           </span>
           {#if item.indices.length > 1 && i === 0}
@@ -158,7 +158,9 @@
   .item { display: inline-flex; align-items: center; gap: 2px; }
   .item.lifting { opacity: 0.35; }
   .chunk { outline: 2px solid #357; outline-offset: 3px; border-radius: 14px; padding: 2px; }
+  .block.hovered :global(.pill) { box-shadow: 0 0 0 3px var(--accent); }
   .block.linked :global(.pill) { box-shadow: 0 0 0 3px #ffd54a; }
+  .block.linked.hovered :global(.pill) { box-shadow: 0 0 0 3px var(--accent), 0 0 0 6px #ffd54a; }
   .unglue, .glue { border: 0; background: none; cursor: pointer; font-size: 0.9em; opacity: 0.7; min-height: 0; padding: 2px 4px; }
   .caret { position: absolute; width: 3px; margin-left: -1px; background: var(--accent); border-radius: 2px; box-shadow: 0 0 0 2px var(--panel); pointer-events: none; }
   .ghost { position: fixed; z-index: 60; transform: translate(-50%, -50%) rotate(-2deg); opacity: 0.9; pointer-events: none; display: inline-flex; gap: 2px; filter: drop-shadow(0 6px 10px rgba(0,0,0,.25)); }
