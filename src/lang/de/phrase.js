@@ -10,6 +10,8 @@
 const DER_WORDS = /^(der|die|das|dem|den|des|dies|jen|jed|welch|manch|solch|all|beide)/i;
 const EIN_WORDS = /^(ein|kein|mein|dein|sein|ihr|unser|euer|eur)/i;
 const MEMBER = new Set(['det', 'adj', 'num']);
+// NP2a: a contraction holds a definite article (im = in dem, zur = zu der): what follows is declined weak
+const CONTRACTIONS = new Set(['am', 'im', 'beim', 'vom', 'zum', 'zur', 'hinterm', 'überm', 'unterm', 'vorm', 'ans', 'ins', 'aufs', 'durchs', 'fürs', 'ums', 'übers', 'unters', 'vors', 'hinters']);
 
 const triple = (a) => `${a.case}|${a.number}|${a.number === 'pl' ? 'x' : a.gender}`;
 function fits(a, set) {
@@ -57,7 +59,9 @@ export function phraseStage(blocks) {
     }
     // NP2: the declension type the article word asks of the adjectives
     const det = members.map((j) => out[j]).find((b) => b.candidates.some((c) => c.analysis.pos === 'det'));
-    const infl = det ? (DER_WORDS.test(det.token.surface) ? 'weak' : EIN_WORDS.test(det.token.surface) ? 'mixed' : null) : 'strong';
+    const before = members.length ? out[members[0] - 1] : null;
+    const contracted = before && CONTRACTIONS.has(before.token.key.toLowerCase()) && members[0] > 0 && out[members[0]].token.index - before.token.index === 1;
+    const infl = det ? (DER_WORDS.test(det.token.surface) ? 'weak' : EIN_WORDS.test(det.token.surface) ? 'mixed' : null) : contracted ? 'weak' : 'strong';
     const name = head.token.surface;
     const reason = `agreement: in the phrase of ${name}`;
     out[i] = { ...head, candidates: head.candidates.filter((c) => c.analysis.pos !== 'noun' || fits(c.analysis, shared)).map((c) => (c.analysis.pos === 'noun' ? withReason(c, reason) : c)) };

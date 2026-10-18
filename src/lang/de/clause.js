@@ -6,7 +6,14 @@
  *      An imperative stands first in its clause.
  * CL3  A clause has one finite verb. Once it is certain, a clause-final word that can be an infinitive or a
  *      participle is one (the right bracket of the Satzklammer: … fand er sich verwandelt).
+ * CL4  Nebensatz (after a subordinating conjunction, or a relative pronoun opening a later clause): the finite
+ *      verb is the last word; the verbs before it are not finite (dass er kommen will).
+ * CL7  One certain nominative subject and no und/oder: the finite verb takes its number.
+ * CL8  zu right before the clause-final infinitive is the infinitive marker, not a preposition.
  */
+const SUBORDINATORS = new Set(['als', 'dass', 'weil', 'wenn', 'ob', 'obwohl', 'obgleich', 'damit', 'nachdem', 'bevor', 'ehe',
+  'während', 'da', 'falls', 'sodass', 'seit', 'seitdem', 'bis', 'indem', 'sobald', 'solange', 'sooft', 'wie', 'wo', 'wohin', 'woher', 'warum', 'wer', 'was']);
+const RELATIVES = new Set(['der', 'die', 'das', 'dem', 'den', 'deren', 'dessen', 'denen', 'welcher', 'welche', 'welches', 'welchem', 'welchen']);
 const FIRST_SECOND = new Set(['ich', 'mich', 'mir', 'wir', 'uns', 'du', 'dich', 'dir', 'ihr', 'euch']);
 const FINITE = new Set(['ind', 'sub1', 'sub2', 'imp']);
 const NONFINITE = new Set(['inf', 'ppl1', 'ppl2']);
@@ -43,6 +50,62 @@ export function clauseStage(blocks) {
         out[i] = { ...b, candidates: keep.map((c) => (isFinite(c.analysis) ? withReason(c, r) : c)) };
       }
     });
+    const last0 = members[members.length - 1];
+    // CL8: zu + clause-final infinitive
+    for (let k = 0; k + 1 < members.length; k += 1) {
+      const z = out[members[k]];
+      const v = out[members[k + 1]];
+      if (z.token.key.toLowerCase() !== 'zu' || members[k + 1] !== last0 || z.pinned) continue;
+      if (!v.candidates.some((c) => c.analysis.mood === 'inf')) continue;
+      const others = z.candidates.some((c) => c.analysis.pos === 'particle') ? z.candidates.filter((c) => c.analysis.pos === 'particle') : z.candidates.filter((c) => c.analysis.pos !== 'prep');
+      if (others.length && others.length < z.candidates.length) out[members[k]] = { ...z, candidates: others.map((c) => withReason(c, 'clause: zu before the infinitive that ends the clause')) };
+      if (!v.pinned) out[last0] = { ...v, candidates: v.candidates.filter((c) => c.analysis.mood === 'inf').map((c) => withReason(c, 'clause: infinitive with zu at the end of the clause')) };
+    }
+    // CL4: a Nebensatz ends with its finite verb
+    const firstKey = out[members[0]].token.key.toLowerCase();
+    const nebensatz = SUBORDINATORS.has(firstKey) || ((out[members[0]].token.clause ?? 0) > 0 && RELATIVES.has(firstKey));
+    if (nebensatz && members.length > 1) {
+      const lastB = out[last0];
+      if (!lastB.pinned && lastB.candidates.some((c) => isFinite(c.analysis)) && lastB.candidates.some((c) => c.analysis.pos === 'verb' && NONFINITE.has(c.analysis.mood))) {
+        out[last0] = { ...lastB, candidates: lastB.candidates.filter((c) => !(c.analysis.pos === 'verb' && NONFINITE.has(c.analysis.mood))).map((c) => withReason(c, 'clause: a subordinate clause ends with its finite verb')) };
+      }
+      if (out[last0].candidates.length && out[last0].candidates.every((c) => isFinite(c.analysis))) {
+        for (const i of members.slice(1, -1)) {
+          const b = out[i];
+          if (b.pinned || !b.candidates.some((c) => isFinite(c.analysis))) continue;
+          const keep = b.candidates.filter((c) => !isFinite(c.analysis));
+          if (keep.length) out[i] = { ...b, candidates: keep.map((c) => withReason(c, `clause: ${out[last0].token.surface} is this subordinate clause's finite verb`)) };
+        }
+      }
+    }
+    // CL5a: a clause with a certain nominative subject, or the sentence's first clause, needs a finite verb;
+    // when only one word in it can be a verb, that word is finite (Die Kinder spielen)
+    const verbish = members.filter((i) => out[i].candidates.some((c) => c.analysis.pos === 'verb'));
+    const hasSubject = members.some((i) => out[i].candidates.length && out[i].candidates.every((c) => (c.analysis.pos === 'noun' || c.analysis.pos === 'pron') && c.analysis.case === 'nom'));
+    if (verbish.length === 1 && ((out[members[0]].token.clause ?? 0) === 0 || hasSubject) && !members.some((i) => out[i].token.key.toLowerCase() === 'zu')) {
+      const b = out[verbish[0]];
+      const keep = b.candidates.filter((c) => !(c.analysis.pos === 'verb' && NONFINITE.has(c.analysis.mood)));
+      if (!b.pinned && keep.some((c) => isFinite(c.analysis)) && keep.length < b.candidates.length) {
+        out[verbish[0]] = { ...b, candidates: keep.map((c) => withReason(c, 'clause: the only verb of the clause is its finite verb')) };
+      }
+    }
+    // CL7: one certain nominative subject → the verb's number
+    if (!members.some((i) => ['und', 'oder', 'sowie'].includes(out[i].token.key.toLowerCase()))) {
+      const subjects = members.filter((i) => {
+        const cs = out[i].candidates;
+        return cs.length && cs.every((c) => (c.analysis.pos === 'noun' || c.analysis.pos === 'pron') && c.analysis.case === 'nom');
+      });
+      const numbers = new Set(subjects.map((i) => out[i].candidates[0].analysis.number));
+      if (subjects.length === 1 && numbers.size === 1 && ['sg', 'pl'].includes([...numbers][0])) {
+        const n = [...numbers][0];
+        for (const i of members) {
+          const b = out[i];
+          if (b.pinned || !b.candidates.some((c) => isFinite(c.analysis))) continue;
+          const keep = b.candidates.filter((c) => !isFinite(c.analysis) || c.analysis.number === n);
+          if (keep.length && keep.length < b.candidates.length) out[i] = { ...b, candidates: keep.map((c) => (isFinite(c.analysis) ? withReason(c, `clause: the subject ${out[subjects[0]].token.surface} is ${n === 'sg' ? 'singular' : 'plural'}`) : c)) };
+        }
+      }
+    }
     // CL3: the clause's finite verb is certain → the clause-final word is its non-finite partner
     const finite = members.find((i) => out[i].candidates.length && out[i].candidates.every((c) => isFinite(c.analysis)));
     const last = members[members.length - 1];

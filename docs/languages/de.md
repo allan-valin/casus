@@ -104,6 +104,7 @@ syntax model of design §8).
 |---|---|---|
 | NP1 | A phrase is (article word) (adjectives, participles, numerals)* noun, contiguous, no punctuation inside; every member takes the noun's case, number and gender (*in seinem Bett* → dat sg n throughout). | done |
 | NP2 | The article word decides the adjective declension: der-words (der, dieser, jener, jeder, welcher, mancher, solcher, alle) → weak; ein-words (ein, kein, mein, dein, sein, ihr, unser, euer) → mixed; none → strong. | done |
+| NP2a | A contraction carries its article (*im* = *in dem*, *zur* = *zu der*): the adjective after it is weak (*im großen Garten*). | done |
 | NP3 | Before its noun an article word is an article word, not a pronoun (*seinem Bett*: not *seiner*). | done |
 | NP4 | A word directly followed by the phrase it governs is the preposition (*in*, *zu* lose their adverb/adjective readings). | done |
 | NP5 | A preposition governs its whole phrase; a personal pronoun is a whole phrase (*mit ihm*). | done |
@@ -120,15 +121,16 @@ syntax model of design §8).
 | CL1 | Commas, semicolons, colons, dashes and brackets end a clause or an insertion; words do not agree across them. | done |
 | CL2 | A finite verb in the 1st/2nd person needs *ich, wir, du, ihr* as subject in its clause (German drops no subject pronoun); otherwise it is 3rd person. An imperative stands first in its clause. | done |
 | CL3 | A clause has one finite verb; once it is certain, the clause-final infinitive or participle is the right bracket of the **Satzklammer** (*fand … verwandelt*, *hat … gegessen*, *will … spielen*). | done |
-| CL4 | **Nebensatz**: after a subordinating conjunction (als, dass, weil, wenn, ob, obwohl, damit, nachdem, bevor, während, da, falls, sodass, seit, bis, indem) or a relative pronoun after a comma (der/die/das, welcher), the finite verb is the **last** word of the clause; its other readings drop. | next |
+| CL4 | **Nebensatz**: after a subordinating conjunction (als, dass, weil, wenn, ob, obwohl, damit, nachdem, bevor, während, da, falls, sodass, seit, bis, indem) or a relative pronoun after a comma (der/die/das, welcher), the finite verb is the **last** word of the clause; its other readings drop, and the verbs before it are not finite. | done |
+| CL5a | A clause with a certain nominative subject, or the sentence's first clause, needs a finite verb: when only one word in it can be a verb, it is finite (*Die Kinder spielen*). | done |
 | CL5 | **Hauptsatz**: the finite verb is the 2nd constituent (**V2**); in a question or command, the 1st (**V1**). | next (needs constituent boundaries = NP1) |
 | CL6 | **Separable verbs**: a particle at the end of a main clause (an, auf, aus, ab, ein, mit, vor, zu, zurück, weg, los, nach, her, hin, …) belongs to the clause's finite verb (*fängt … an* = *anfangen*); the pair is looked up as one word. | next |
-| CL7 | The finite verb agrees in number with the nominative subject (*die Kinder **spielen***): a single singular nominative phrase and no *und* → singular. | next |
-| CL8 | *zu* + infinitive at the clause end is an infinitive group (*um … zu*, *ohne … zu*, *statt … zu*); *zu* there is not a preposition. | next |
+| CL7 | The finite verb agrees in number with the nominative subject (*die Kinder **spielen***): one certain nominative subject and no *und/oder* → its number. | done |
+| CL8 | *zu* + infinitive at the clause end is an infinitive group (*um … zu*, *ohne … zu*, *statt … zu*); *zu* there is not a preposition. | done |
 | CL9 | Compound tenses and the passive: *haben/sein* + Partizip II = Perfekt; *werden* + Infinitiv = Futur; *werden* + Partizip II = Passiv. Mark the pair. | next |
 | CL10 | Verb valency: which case a verb takes for its objects (*helfen* + dat, *gedenken* + gen, *geben* + dat + acc) settles the remaining nominal cases. Needs a valency list per verb. | parser (or a valency list) |
 
 ### Order of the cascade (German)
 
-government (NP4, NP5) → noun phrases (NP1–NP3) → government again → noun phrases again → clauses (CL1–CL3).
+government (NP4, NP5) → noun phrases (NP1–NP3) → government again → noun phrases again → clauses (CL1–CL5a, CL7, CL8).
 Each stage only narrows and never empties a word; what stays open is shown open.

@@ -92,3 +92,72 @@ describe('German clauses (de.md §10, rules CL1–CL3)', () => {
     expect(b.seinem.candidates.map((c) => c.analysis.case)).toEqual(['dat']);
   });
 });
+
+describe('German clauses, second batch (de.md §10 CL4, CL7, CL8)', () => {
+  const V = (person, number, tense, mood, lemma = 'v') => ({ lemma, pos: 'verb', person, number, tense, mood });
+  const C = {
+    dass: [{ lemma: 'c', pos: 'conj' }],
+    er: [{ lemma: 'e', pos: 'pron', case: 'nom', number: 'sg', gender: 'm' }],
+    kommen: [V('0', 'x', 'x', 'inf'), V('1', 'pl', 'pres', 'ind'), V('3', 'pl', 'pres', 'ind')],
+    will: [V('1', 'sg', 'pres', 'ind', 'w'), V('3', 'sg', 'pres', 'ind', 'w')],
+    Ich: [{ lemma: 'i', pos: 'pron', case: 'nom', number: 'sg', gender: 'x' }],
+    weiß: [V('1', 'sg', 'pres', 'ind', 'k'), V('3', 'sg', 'pres', 'ind', 'k'), { lemma: 'w', pos: 'adj', case: 'x', number: 'x', gender: 'x', infl: 'x', degree: 'pos' }],
+    Kinder: [{ lemma: 'k', pos: 'noun', case: 'nom', number: 'pl', gender: 'n' }],
+    spielen: [V('0', 'x', 'x', 'inf', 's'), V('1', 'pl', 'pres', 'ind', 's'), V('3', 'pl', 'pres', 'ind', 's')],
+    Die: [{ lemma: 'd', pos: 'det', case: 'nom', number: 'pl', gender: 'x' }],
+    Kind: [{ lemma: 'k2', pos: 'noun', case: 'nom', number: 'sg', gender: 'n' }],
+    spielt: [V('3', 'sg', 'pres', 'ind', 's'), V('2', 'pl', 'pres', 'ind', 's')],
+    Das: [{ lemma: 'd', pos: 'det', case: 'nom', number: 'sg', gender: 'n' }],
+    ohne: [{ lemma: 'o', pos: 'prep', governs: 'acc' }, { lemma: 'o', pos: 'conj' }],
+    zu: [{ lemma: 'z', pos: 'prep', governs: 'dat' }, { lemma: 'z', pos: 'particle' }],
+    warten: [V('0', 'x', 'x', 'inf', 'wa'), V('1', 'pl', 'pres', 'ind', 'wa'), V('3', 'pl', 'pres', 'ind', 'wa')],
+    ging: [V('1', 'sg', 'pret', 'ind', 'g'), V('3', 'sg', 'pret', 'ind', 'g')],
+  };
+  const lx = { lookupAll: async (keys) => new Map(keys.map((k) => [k, C[k] ?? []])) };
+  async function blocks(text) {
+    const s = createState({ text, lexicon: lx, lang: de });
+    await s.load();
+    return Object.fromEntries(s.blocks().map((b) => [b.token.surface, b]));
+  }
+  const moods = (b) => [...new Set(b.candidates.map((c) => c.analysis.mood ?? c.analysis.pos))].sort();
+  it('CL4: in a dass-clause the last verb is the finite one and the one before it is not', async () => {
+    const b = await blocks('Ich weiß, dass er kommen will.');
+    expect(moods(b.will)).toEqual(['ind']);
+    expect(moods(b.kommen)).toEqual(['inf']);
+  });
+  it('CL7: a certain plural subject makes the verb plural, a singular one singular', async () => {
+    const pl = await blocks('Die Kinder spielen.');
+    expect([...new Set(pl.spielen.candidates.map((c) => c.analysis.number))]).toEqual(['pl']);
+    const sg = await blocks('Das Kind spielt.');
+    expect(sg.spielt.candidates.map((c) => `${c.analysis.person}${c.analysis.number}`)).toEqual(['3sg']);
+  });
+  it('CL8: zu right before the clause-final infinitive is the infinitive marker', async () => {
+    const b = await blocks('Er ging, ohne zu warten.');
+    expect(b.zu.candidates.map((c) => c.analysis.pos)).toEqual(['particle']);
+    expect(moods(b.warten)).toEqual(['inf']);
+  });
+});
+
+describe('contractions carry their article (NP2a) and zu before an infinitive is only the particle', () => {
+  const adj = (c, n, g, infl) => ({ lemma: 'g', pos: 'adj', case: c, number: n, gender: g, infl, degree: 'pos' });
+  const D = {
+    im: [{ lemma: 'i', pos: 'prep', governs: 'dat' }],
+    großen: [adj('dat', 'sg', 'm', 'weak'), adj('dat', 'sg', 'f', 'weak'), adj('dat', 'pl', 'x', 'strong'), adj('gen', 'sg', 'm', 'strong'), adj('acc', 'sg', 'm', 'strong')],
+    Garten: [{ lemma: 'g2', pos: 'noun', case: 'nom', number: 'sg', gender: 'm' }, { lemma: 'g2', pos: 'noun', case: 'dat', number: 'sg', gender: 'm' }, { lemma: 'g2', pos: 'noun', case: 'acc', number: 'sg', gender: 'm' }],
+    Er: [{ lemma: 'e', pos: 'pron', case: 'nom', number: 'sg', gender: 'm' }],
+    ging: [{ lemma: 'g3', pos: 'verb', person: '3', number: 'sg', tense: 'pret', mood: 'ind' }],
+    ohne: [{ lemma: 'o', pos: 'conj' }],
+    zu: [{ lemma: 'z', pos: 'prep', governs: 'dat' }, { lemma: 'z', pos: 'particle' }, { lemma: 'z', pos: 'adv', degree: 'pos' }],
+    warten: [{ lemma: 'w', pos: 'verb', person: '0', number: 'x', tense: 'x', mood: 'inf' }],
+  };
+  const lx = { lookupAll: async (keys) => new Map(keys.map((k) => [k, D[k] ?? []])) };
+  async function blocks(text) { const s = createState({ text, lexicon: lx, lang: de }); await s.load(); return Object.fromEntries(s.blocks().map((b) => [b.token.surface, b])); }
+  it('im großen Garten: großen is weak dat sg m', async () => {
+    const b = await blocks('Er ging im großen Garten.');
+    expect(b.großen.candidates.map((c) => `${c.analysis.case} ${c.analysis.number} ${c.analysis.gender} ${c.analysis.infl}`)).toEqual(['dat sg m weak']);
+  });
+  it('ohne zu warten: zu is only the particle', async () => {
+    const b = await blocks('Er ging, ohne zu warten.');
+    expect(b.zu.candidates.map((c) => c.analysis.pos)).toEqual(['particle']);
+  });
+});
