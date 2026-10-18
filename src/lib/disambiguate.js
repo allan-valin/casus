@@ -88,7 +88,9 @@ export function agreementStage(blocks, inventory = { agreement: LATIN_AGREEMENT 
   const NOMINAL_TARGETS = new Set(inventory.agreement?.targets ?? LATIN_AGREEMENT.targets);
   const WITNESSES = new Set(inventory.agreement?.witnesses ?? LATIN_AGREEMENT.witnesses);
   return blocks.map((block, i) => {
-    const otherBlocks = blocks.filter((b, j) => j !== i);
+    // agreement stays inside the clause (between , ; :) when the tokens say where clauses are
+    const clause = block.token.clause;
+    const otherBlocks = blocks.filter((b, j) => j !== i && (clause === undefined || b.token.clause === undefined || b.token.clause === clause));
     const targets = block.candidates.filter((c) => NOMINAL_TARGETS.has(c.analysis.pos));
     if (targets.length > 0) {
       const witnesses = otherBlocks.filter((b) => b.candidates.some((c) => WITNESSES.has(c.analysis.pos)));

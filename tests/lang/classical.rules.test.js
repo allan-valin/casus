@@ -85,3 +85,16 @@ describe('REL: a relative pronoun after a comma agrees in gender and number with
     expect(b[1].candidates.map((c) => `${c.analysis.case} ${c.analysis.number} ${c.analysis.gender}`)).toEqual(['nom sg f']);
   });
 });
+
+describe('agreement stays inside its clause (regression: Gallia lost its nominative to nostra three clauses later)', () => {
+  const L4 = {
+    gallia: [N('nom', 'sg', 'f'), N('abl', 'sg', 'f')], est: [{ lemma: 's', pos: 'verb', person: '3', number: 'sg', tense: 'pres', mood: 'ind', voice: 'act' }],
+    nostra: [N('abl', 'sg', 'f', 'adj')], galli: [N('nom', 'pl', 'm')], appellantur: [{ lemma: 'a', pos: 'verb', person: '3', number: 'pl', tense: 'pres', mood: 'ind', voice: 'pass' }],
+  };
+  const lx = { lookupAll: async (keys) => new Map(keys.map((k) => [k, L4[k] ?? []])) };
+  it('Gallia est, nostra Galli appellantur: Gallia keeps its nominative', async () => {
+    const s = createState({ text: 'Gallia est, nostra Galli appellantur.', lexicon: lx, lang: la });
+    await s.load();
+    expect(s.blocks()[0].candidates.map((c) => c.analysis.case).sort()).toEqual(['abl', 'nom']);
+  });
+});
