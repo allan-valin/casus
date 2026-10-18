@@ -1,10 +1,18 @@
 // @vitest-environment jsdom
-import { describe, it, expect, beforeAll } from 'vitest';
+import { describe, it, expect, beforeAll, vi } from 'vitest';
 import { render, fireEvent } from '@testing-library/svelte';
 import { tick } from 'svelte';
 
 // jsdom has no Web Animations API; animate:flip asks for it when the pool re-flows
-beforeAll(() => { Element.prototype.getAnimations ??= () => []; });
+beforeAll(() => {
+  Element.prototype.getAnimations ??= () => [];
+  // jsdom has no PointerEvent: a MouseEvent that carries pointerType and pointerId is enough for the pane
+  if (typeof window.PointerEvent === 'undefined') {
+    window.PointerEvent = class PointerEvent extends MouseEvent {
+      constructor(type, init = {}) { super(type, init); this.pointerType = init.pointerType ?? 'mouse'; this.pointerId = init.pointerId ?? 1; }
+    };
+  }
+});
 import BlockPane from '../../src/app/components/BlockPane.svelte';
 import { createReader } from '../../src/app/stores/reader.svelte.js';
 
@@ -64,18 +72,61 @@ describe('BlockPane', () => {
   });
 });
 
-describe('BlockPane drag of a glued chunk', () => {
-  it('moves both halves of a chunk when the drag library finalizes it at the end', async () => {
+describe('BlockPane drag: caret preview, move on release (feedback D17)', () => {
+  // jsdom lays nothing out: give the three items boxes on one row, 100 px apart
+  function layout(container) {
+    [...container.querySelectorAll('.item')].forEach((el, i) => {
+      el.getBoundingClientRect = () => ({ x: i * 110, y: 0, width: 100, height: 40, left: i * 110, top: 0, right: i * 110 + 100, bottom: 40 });
+    });
+    container.querySelector('.pool').getBoundingClientRect = () => ({ x: 0, y: 0, width: 400, height: 60, left: 0, top: 0, right: 400, bottom: 60 });
+  }
+  it('keeps every block still while dragging, shows a caret at the aimed gap, and moves on release', async () => {
     const reader = createReader({ lexicon, text: 'Caesar in Galliam magnam.' });
     await reader.load();
     const { container } = render(BlockPane, { reader, onhover: () => {}, onopen: () => {} });
     await tick();
-    const pool = container.querySelector('.pool');
-    const items = [{ id: '0', indices: [0] }, { id: '3', indices: [3] }, { id: '1+2', indices: [1, 2] }];
-    pool.dispatchEvent(new CustomEvent('finalize', { detail: { items, info: { id: '1+2' } } }));
+    layout(container);
+    const before = [...container.querySelectorAll('.item')].map((e) => e.textContent);
+    const chunk = container.querySelector('.item.chunk .pill');
+    await fireEvent.pointerDown(chunk, { clientX: 160, clientY: 20, pointerId: 1, pointerType: 'mouse', button: 0 });
+    await fireEvent.pointerMove(container.querySelector('.pool'), { clientX: 330, clientY: 20, pointerId: 1 });
+    await tick();
+    expect([...container.querySelectorAll('.item')].map((e) => e.textContent)).toEqual(before);   // nothing slid
+    expect(container.querySelector('.caret')).not.toBe(null);
+    expect(container.querySelector('.item.lifting')).not.toBe(null);
+    expect(reader.order).toEqual([0, 1, 2, 3]);
+    await fireEvent.pointerUp(container.querySelector('.pool'), { clientX: 330, clientY: 20, pointerId: 1 });
     await tick();
     expect(reader.order).toEqual([0, 3, 1, 2]);
+    expect(container.querySelector('.caret')).toBe(null);
     expect([...container.querySelectorAll('.item')].map((e) => e.classList.contains('chunk'))).toEqual([false, false, true]);
+  });
+  it('a press without movement is a click: the dictionary opens and nothing moves', async () => {
+    const reader = createReader({ lexicon, text: 'Caesar in Galliam magnam.' });
+    await reader.load();
+    const onopen = vi.fn();
+    const { container } = render(BlockPane, { reader, onhover: () => {}, onopen });
+    await tick();
+    layout(container);
+    const pill = container.querySelector('.pill');
+    await fireEvent.pointerDown(pill, { clientX: 50, clientY: 20, pointerId: 1, pointerType: 'mouse', button: 0 });
+    await fireEvent.pointerMove(container.querySelector('.pool'), { clientX: 52, clientY: 21, pointerId: 1 });
+    await fireEvent.pointerUp(container.querySelector('.pool'), { clientX: 52, clientY: 21, pointerId: 1 });
+    await fireEvent.click(pill);
+    expect(onopen).toHaveBeenCalledTimes(1);
+    expect(reader.order).toEqual([0, 1, 2, 3]);
+  });
+  it('moves a block with the keyboard: Alt+ArrowRight / Alt+ArrowLeft on a focused pill', async () => {
+    const reader = createReader({ lexicon, text: 'Caesar in Galliam magnam.' });
+    await reader.load();
+    const { container } = render(BlockPane, { reader, onhover: () => {}, onopen: () => {} });
+    await tick();
+    await fireEvent.keyDown(container.querySelector('.pill'), { key: 'ArrowRight', altKey: true });
+    await tick();
+    expect(reader.order).toEqual([1, 2, 0, 3]);
+    await fireEvent.keyDown([...container.querySelectorAll('.pill')].find((p) => p.textContent.includes('Caesar')), { key: 'ArrowLeft', altKey: true });
+    await tick();
+    expect(reader.order).toEqual([0, 1, 2, 3]);
   });
 });
 

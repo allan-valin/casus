@@ -157,7 +157,7 @@ describe('App page furniture (feedback D8, D14, D20)', () => {
     const help = container.querySelector('.help');
     expect(help.textContent).toMatch(/Whitaker/);
     expect(help.textContent).toMatch(/Wiktionary/);
-    expect(help.textContent).toMatch(/svelte-dnd-action/);
+    expect(help.textContent).toMatch(/Svelte/);
     expect(help.textContent).toMatch(/drag/i);
     await fireEvent.click(container.querySelector('.overlay'));
     await tick();

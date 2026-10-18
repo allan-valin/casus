@@ -6,7 +6,7 @@
   const oneLemma = $derived(block.candidates.length > 0 && block.candidates.every((c) => String(c.analysis.lemma) === String(block.candidates[0].analysis.lemma)));
 </script>
 
-<!-- a div, not a button: svelte-dnd-action will not start a drag on an element with a .value -->
+<!-- a div, not a button: the pool's pointer drag must start on it, and a button would swallow pointerdown -->
 <div class="pill" class:ambiguous={style.ambiguous} class:pinned={block.pinned} class:unknown={style.unknown}
      style:background={style.fill} style:border-color={style.border} style:border-style={style.borderStyle}
      role="button" tabindex="0" title={style.unknown ? 'not in the dictionary' : 'click: dictionary and readings · drag: move'}

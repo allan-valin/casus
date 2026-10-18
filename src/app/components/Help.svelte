@@ -38,7 +38,7 @@
         Separately licensed; see NOTICE.md.</li>
       <li><b>Sample passages</b>: Caesar, <i>De bello Gallico</i> 1.1; Cicero, <i>In Catilinam</i> 1.1; the Vulgate,
         Genesis 1 — short public-domain excerpts, provenance in <code>samples/SOURCES.md</code>.</li>
-      <li><b>svelte-dnd-action</b> (MIT): the drag-and-drop. <b>Svelte</b> and <b>Vite</b> (MIT): the page.</li>
+      <li><b>Svelte</b> and <b>Vite</b> (MIT): the page. The drag-and-drop is Casus' own (pointer events, no library): blocks stay still while you aim, a bar marks the gap, the move happens on release.</li>
       <li><b>Colours</b>: the Okabe–Ito colour-blind-safe set, checked pairwise for the three common colour
         vision deficiencies.</li>
     </ul>
