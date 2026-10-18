@@ -31,7 +31,7 @@
   const wordItems = $derived(inRange.map((f) => (direction === 'meaning' ? { prompt: f.w, answer: f.en } : { prompt: f.en, answer: f.w })));
   // phrases: everyday phrases, idioms, proverbs, or all
   let kind = $state('all');
-  const phraseItems = $derived(phrases.filter((p) => kind === 'all' || p.kind === kind).map((p) => ({ prompt: p.p, answer: p.en, lit: p.lit, kind: p.kind, literally: p.literally, more: p.more, wiki: p.wiki })));
+  const phraseItems = $derived(phrases.filter((p) => kind === 'all' || p.kind === kind).map((p) => ({ prompt: p.p, answer: p.en, lit: p.lit, kind: p.kind, literally: p.literally, more: p.more, wiki: p.wiki, note: p.note })));
   const nouns = $derived(models.filter((m) => NOMINAL.has(m.pos)));
   const verbs = $derived(models.filter((m) => m.pos === 'verb'));
   const withDrills = LANGUAGES;          // every shipped language has at least the endings drills

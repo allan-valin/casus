@@ -20,6 +20,7 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 DUMPS = {"la": "Latin", "grc": "AncientGreek", "de": "German"}
 CORE = {"la": "https://dcc.dickinson.edu/latin-core-list1", "grc": "https://dcc.dickinson.edu/greek-core-list"}
 DE_FREQ = "https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/de/de_50k.txt"
@@ -141,6 +142,11 @@ def main(code: str) -> None:
             if item and item["p"] not in seen:
                 seen.add(item["p"])
                 phrases.append(item)
+    # explanations written for Casus where no article explains a saying (tools/casus_build/notes.py)
+    from casus_build.notes import NOTES
+    for p in phrases:
+        if NOTES.get(code, {}).get(p["p"]):
+            p["note"] = NOTES[code][p["p"]]
     # Latin and Greek sayings, and German proverbs, are often explained on English Wikipedia (memento mori)
     wiki_notes([p for p in phrases if code != "de" or p["kind"] == "proverb"], out_dir / "wiki.cache.json")
     print(f"{code}: {sum(1 for p in phrases if p.get('wiki'))} phrases with a Wikipedia note")

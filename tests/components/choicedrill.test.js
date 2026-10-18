@@ -66,3 +66,15 @@ describe('ChoiceDrill: what a saying means beyond its words (Allan, 2026-10-19: 
     expect(about.querySelector('a').getAttribute('href')).toBe('https://en.wikipedia.org/wiki/Memento_mori');
   });
 });
+
+describe('ChoiceDrill: a note written for Casus is shown, labelled as such', () => {
+  it('after answering', async () => {
+    const items = [{ prompt: 'ad kalendas Graecas', answer: 'never', note: 'The Greek calendar had no calends, so that date never comes.' }, { prompt: 'x', answer: 'y' }];
+    const { container } = render(ChoiceDrill, { items, random: () => 0 });
+    await fireEvent.click(container.querySelector('button.choice'));
+    await tick();
+    const note = container.querySelector('.about .casus-note');
+    expect(note.textContent).toMatch(/no calends/);
+    expect(note.textContent).toMatch(/written for Casus/i);
+  });
+});
