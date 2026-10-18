@@ -48,3 +48,21 @@ describe('ChoiceDrill keyboard', () => {
     input.remove();
   });
 });
+
+describe('ChoiceDrill: what a saying means beyond its words (Allan, 2026-10-19: memento mori)', () => {
+  it('after answering: literally, other senses, and the Wikipedia note with its source', async () => {
+    const items = [{ prompt: 'memento mori', answer: 'Do not forget that you are only human.', literally: 'Be mindful of dying.', more: ['a reminder of death'],
+      wiki: { title: 'Memento mori', text: 'Memento mori is an artistic symbol or trope acting as a reminder of the inevitability of death.' } },
+    { prompt: 'carpe diem', answer: 'seize the day' }];
+    const { container } = render(ChoiceDrill, { items, random: () => 0 });
+    await tick();
+    expect(container.querySelector('.about')).toBe(null);
+    await fireEvent.click(container.querySelector('button.choice'));
+    await tick();
+    const about = container.querySelector('.about');
+    expect(about.textContent).toMatch(/Be mindful of dying/);
+    expect(about.textContent).toMatch(/a reminder of death/);
+    expect(about.textContent).toMatch(/inevitability of death/);
+    expect(about.querySelector('a').getAttribute('href')).toBe('https://en.wikipedia.org/wiki/Memento_mori');
+  });
+});

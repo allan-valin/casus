@@ -67,6 +67,13 @@
           {#each current.item.lit as [w, g]}<span class="lit-word"><b>{w}</b>{#if romanOf(w, romanize)}<span class="roman">{romanOf(w, romanize)}</span>{/if}<i>{g || '—'}</i></span>{/each}
         </div>
       {/if}
+      {#if current.item.literally || current.item.more?.length || current.item.wiki}
+        <div class="about">
+          {#if current.item.literally}<p><b>{t('quiz.literally')}:</b> {current.item.literally}</p>{/if}
+          {#if current.item.more?.length}<p><b>{t('quiz.also')}:</b> {current.item.more.join('; ')}</p>{/if}
+          {#if current.item.wiki}<p class="wiki">{current.item.wiki.text} <a href={`https://en.wikipedia.org/wiki/${encodeURIComponent(current.item.wiki.title.replaceAll(' ', '_'))}`} target="_blank" rel="noopener">{t('quiz.wikiSource', { title: current.item.wiki.title })}</a></p>{/if}
+        </div>
+      {/if}
       <button class="primary next" onclick={next}>{t('quiz.next')}</button>
     {/if}
     <p class="keys-hint">{t('quiz.keys')}</p>
@@ -85,6 +92,9 @@
   .choice { display: flex; gap: 10px; align-items: flex-start; }
   .key { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 1.6em; height: 1.6em; border: 1px solid var(--line); border-radius: 6px; font-size: 0.85em; font-weight: 700; color: var(--ink-2); background: var(--panel-hi); }
   .choice.selected { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent); }
+  .about { border-left: 3px solid var(--accent); padding: 4px 12px; margin: 8px 0 12px; background: var(--panel-hi); border-radius: 0 8px 8px 0; }
+  .about p { margin: 4px 0; }
+  .wiki { color: var(--ink-2); }
   .keys-hint { color: var(--muted); font-size: 0.85em; }
   .choice.right { border-color: #1e6b3a; background: #e3f4e8; }
   .choice.wrong { border-color: #c0392b; background: #fdecea; }

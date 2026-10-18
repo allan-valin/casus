@@ -28,3 +28,28 @@ def test_skips_what_teaches_nothing():
 def test_core_rows():
     html = "<table><tr><th>h</th></tr><tr><td>ā ab abs</td><td>from, by (+abl.)</td><td>Preposition</td><td>Place</td><td>21</td></tr></table>"
     assert parse_core_rows(html) == [{"w": "ā ab abs", "en": "from, by (+abl.)", "pos": "Preposition", "rank": 21}]
+
+
+def test_the_meaning_is_the_real_sense_and_the_literal_one_is_kept_apart():
+    d = {"word": "memento mori", "pos": "phrase", "senses": [
+        {"glosses": ["Be mindful of dying."], "tags": ["literally"]},
+        {"glosses": ["Do not forget that you are only human."], "tags": ["idiomatic"]}]}
+    item = phrase_item(d)
+    assert item["en"] == "Do not forget that you are only human."
+    assert item["literally"] == "Be mindful of dying."
+    assert item["kind"] == "idiom"
+
+
+def test_further_senses_are_kept_as_more():
+    d = {"word": "carpe diem", "pos": "phrase", "senses": [{"glosses": ["seize the day"]}, {"glosses": ["enjoy the present, as opposed to placing all hope in the future"]}]}
+    assert phrase_item(d)["more"] == ["enjoy the present, as opposed to placing all hope in the future"]
+
+
+def test_a_wikipedia_summary_counts_only_when_it_is_about_the_phrase():
+    from build_wordlists import wiki_note
+    good = {"type": "standard", "title": "Memento mori", "extract": "Memento mori (Latin for 'remember that you [have to] die') is an artistic or symbolic trope acting as a reminder of the inevitability of death. The concept has its roots in the philosophers of classical antiquity. A third sentence that is cut."}
+    note = wiki_note("memento mori", good)
+    assert note["title"] == "Memento mori"
+    assert note["text"].startswith("Memento mori (Latin for") and "third sentence" not in note["text"]
+    assert wiki_note("ad astra", {"type": "standard", "title": "Astra (company)", "extract": "Astra is a rocket company."}) is None
+    assert wiki_note("ad hoc", {"type": "disambiguation", "title": "Ad hoc", "extract": "Ad hoc may refer to:"}) is None

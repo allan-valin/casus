@@ -45,10 +45,75 @@ def phrase_item(d: dict) -> dict | None:
         kind = "phrase"
     else:
         return None
-    gloss = next((g for s in senses if not (set(s.get("tags") or []) & SKIP_TAGS) for g in (s.get("glosses") or [])), "").strip()
-    if not gloss or XREF.match(gloss) or gloss.lower().strip(" .!?") == word.lower().strip(" .!?"):
+    # the meaning is the first sense that is not the literal reading (memento mori: "Do not forget that you are only
+    # human", not "Be mindful of dying"); the literal sense and any further senses are kept beside it
+    usable = [(set(x.get("tags") or []), g.strip()) for x in senses if not (set(x.get("tags") or []) & SKIP_TAGS)
+              for g in (x.get("glosses") or [])[:1] if g.strip() and not XREF.match(g.strip())]
+    literal = next((g for tags, g in usable if "literally" in tags), "")
+    real = [g for tags, g in usable if "literally" not in tags]
+    gloss = real[0] if real else literal
+    if not gloss or gloss.lower().strip(" .!?") == word.lower().strip(" .!?"):
         return None
-    return {"p": word, "kind": kind, "en": gloss[:160]}
+    item = {"p": word, "kind": kind, "en": gloss[:160]}
+    if literal and literal != gloss:
+        item["literally"] = literal[:160]
+    more = [g[:160] for g in real[1:3] if g != gloss]
+    if more:
+        item["more"] = more
+    return item
+
+
+WIKI = "https://en.wikipedia.org/api/rest_v1/page/summary/"
+
+
+def _bare(text: str) -> str:
+    import unicodedata
+    d = unicodedata.normalize("NFD", text.lower())
+    return re.sub(r"[^\w ]", "", "".join(c for c in d if not unicodedata.combining(c)))
+
+
+def wiki_note(phrase: str, summary: dict | None) -> dict | None:
+    """the first two sentences of an English Wikipedia article (CC BY-SA), only when the article is about the
+    phrase: a standard page whose title or opening contains it"""
+    if not summary or summary.get("type") != "standard":
+        return None
+    text = (summary.get("extract") or "").strip()
+    if _bare(phrase) not in _bare(summary.get("title", "")) and _bare(phrase) not in _bare(text[:200]):
+        return None
+    sentences = re.split(r"(?<=[.!?])\s+(?=[A-Z\u0391-\u03a9])", text)
+    note = " ".join(sentences[:2]).strip()
+    return {"title": summary.get("title"), "text": note[:420]} if note else None
+
+
+def wiki_notes(phrases: list[dict], cache_path: Path) -> None:
+    """adds p["wiki"] where English Wikipedia has an article about the phrase; answers are cached on disk, so a
+    rebuild asks Wikipedia only for new phrases (one request a second, backing off when asked)"""
+    import time
+    import urllib.parse
+    cache = json.loads(cache_path.read_text(encoding="utf-8")) if cache_path.exists() else {}
+    for p in phrases:
+        key = p["p"]
+        if key not in cache:
+            title = key[:1].upper() + key[1:]
+            import urllib.error
+            for attempt in range(4):
+                try:
+                    cache[key] = json.loads(fetch(WIKI + urllib.parse.quote(title.replace(" ", "_"), safe="")))
+                    break
+                except urllib.error.HTTPError as e:
+                    if e.code == 404:                                  # no article: remembered
+                        cache[key] = None
+                        break
+                    time.sleep(5 * (attempt + 1))                      # 429 / 5xx: back off, never cache
+                except Exception:
+                    time.sleep(5 * (attempt + 1))
+            time.sleep(1.0)                                            # Wikimedia asks for gentle clients
+            if len(cache) % 20 == 0:
+                cache_path.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")   # progress survives a stop
+        note = wiki_note(key, cache.get(key))                        # still unknown after retries: no note this time
+        if note:
+            p["wiki"] = note
+    cache_path.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
 
 
 def parse_core_rows(page: str) -> list[dict]:
@@ -61,7 +126,7 @@ def parse_core_rows(page: str) -> list[dict]:
 
 
 def fetch(url: str) -> str:
-    req = urllib.request.Request(url, headers={"User-Agent": "casus-build (open-source reader; github.com/allan-valin/casus)"})
+    req = urllib.request.Request(url, headers={"User-Agent": "casus-build/1.0 (https://github.com/allan-valin/casus)"})
     with urllib.request.urlopen(req, timeout=60) as r:
         return r.read().decode("utf-8")
 
@@ -76,6 +141,9 @@ def main(code: str) -> None:
             if item and item["p"] not in seen:
                 seen.add(item["p"])
                 phrases.append(item)
+    # Latin and Greek sayings, and German proverbs, are often explained on English Wikipedia (memento mori)
+    wiki_notes([p for p in phrases if code != "de" or p["kind"] == "proverb"], out_dir / "wiki.cache.json")
+    print(f"{code}: {sum(1 for p in phrases if p.get('wiki'))} phrases with a Wikipedia note")
     (out_dir / "phrases.raw.json").write_text(json.dumps(phrases, ensure_ascii=False), encoding="utf-8")
     if code in CORE:
         freq = parse_core_rows(fetch(CORE[code]))

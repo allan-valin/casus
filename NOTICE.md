@@ -57,6 +57,9 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
 - **Phrases, idioms and proverbs** (`data/<code>/phrases.json`): multi-word entries of the English Wiktionary
   (via wiktextract / kaikki.org), CC BY-SA 4.0, with their meanings; the word-by-word readings come from the
   dictionaries above.
+- **Notes on sayings**: where English Wikipedia has an article about a phrase (memento mori, carpe diem), the
+  first two sentences of its summary, with a link to the article; Wikipedia text is CC BY-SA 4.0. Fetched by
+  `tools/build_wordlists.py` through the Wikimedia REST API, kept only when the article is about the phrase.
 - **Latin and Greek core vocabularies** (`data/la/frequency.json`, `data/grc/frequency.json`): Dickinson
   College Commentaries, *Latin Core Vocabulary* and *Greek Core Vocabulary* (https://dcc.dickinson.edu),
   published as CC BY-SA like the rest of DCC. The page states no separate licence for the lists; they are
