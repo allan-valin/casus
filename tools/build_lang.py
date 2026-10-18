@@ -113,7 +113,8 @@ def _dict_form(e: dict) -> str:
 
 
 def measure(out: Path) -> dict:
-    raw = sum(p.stat().st_size for p in out.rglob("*") if p.is_file())
+    # the dictionary index only: paradigm tables are counted separately (docs/DATA.md, budget ruling)
+    raw = sum(p.stat().st_size for p in out.rglob("*") if p.is_file() and "paradigms" not in p.parts)
     sizes = {}
     for p in (out / "forms").glob("*.json"):
         sizes[p.stem] = len(gzip.compress(p.read_bytes(), 6))

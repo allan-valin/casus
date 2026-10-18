@@ -112,3 +112,34 @@ def test_a_pronoun_page_without_its_own_row_in_the_shared_table_takes_none_of_it
     from casus_build.de.parse import analyses_of as an
     du = {"id": 4, "headword": "Du", "pos": "pron", "gender": None, "gloss_en": "", "ipa": [], "forms": TABLE}
     assert {f for f, _ in an(du)} == {"Du"}
+
+
+def test_a_form_of_page_with_its_own_table_is_an_entry():
+    line = '{"word": "Lehrer", "lang_code": "de", "pos": "noun", "senses": [{"glosses": ["teacher"], "tags": ["agent", "form-of", "masculine"], "form_of": [{"word": "lehren"}]}], "forms": [{"form": "strong", "tags": ["table-tags"]}, {"form": "Lehrer", "tags": ["nominative", "singular"]}, {"form": "Lehrers", "tags": ["genitive", "singular"]}]}'
+    entries = list(parse_entries([line]))
+    assert entries and entries[0]["headword"] == "Lehrer"
+    idx = build_index(entries)
+    assert has_in(idx, "Lehrers", case="gen")
+
+
+def has_in(idx, key, **want):
+    return any(all(a.get(k) == v for k, v in want.items()) for a in idx.get(key, []))
+
+
+def test_pronoun_rows_tagged_unrecognized_are_kept_but_clitic_fragments_are_not():
+    from casus_build.de.parse import analyses_of as an
+    table = [{"form": "du", "tags": ["error-unrecognized-form", "nominative", "personal", "pronoun", "singular"]},
+             {"form": "dir", "tags": ["dative", "error-unrecognized-form", "personal", "pronoun", "singular"]},
+             {"form": "-e", "tags": ["error-unrecognized-form", "nominative", "personal", "pronoun", "singular"]},
+             {"form": "ich", "tags": ["first-person", "nominative", "personal", "pronoun", "singular"]}]
+    du = {"id": 5, "headword": "du", "pos": "pron", "gender": None, "gloss_en": "", "ipa": [], "forms": table}
+    assert {(f, a["case"]) for f, a in an(du)} == {("du", "nom"), ("dir", "dat")}
+
+
+def test_a_proper_name_without_a_table_takes_the_singular_cases():
+    from casus_build.de.parse import analyses_of as an
+    berlin = {"id": 6, "headword": "Berlin", "pos": "noun", "proper": True, "gender": "n", "gloss_en": "", "ipa": [],
+              "forms": [{"form": "Berlins", "tags": ["genitive"]}, {"form": "Berlin", "tags": ["plural"]}]}
+    got = {(f, a["case"], a["number"]) for f, a in an(berlin)}
+    assert {("Berlin", "nom", "sg"), ("Berlin", "dat", "sg"), ("Berlin", "acc", "sg"), ("Berlins", "gen", "sg")} <= got
+    assert ("Berlin", "nom", "pl") not in got

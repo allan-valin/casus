@@ -79,9 +79,11 @@ def parse_entries(jsonl_lines: Iterable[str]) -> Iterator[dict]:
         if not pos:
             continue
         senses = entry.get("senses") or []
-        if senses and all(s.get("form_of") or "form-of" in (s.get("tags") or []) for s in senses) and pos != "det":
+        own_table = any("table-tags" in (f.get("tags") or []) or "inflection-template" in (f.get("tags") or []) for f in entry.get("forms") or [])
+        # a form-of page is skipped unless it declines on its own (Lehrer = agent noun of lehren, Freundin)
+        if senses and all(s.get("form_of") or "form-of" in (s.get("tags") or []) for s in senses) and pos != "det" and not own_table:
             continue
-        yield {"id": i, "headword": unicodedata.normalize("NFC", entry["word"]), "pos": pos,
+        yield {"id": i, "headword": unicodedata.normalize("NFC", entry["word"]), "pos": pos, "proper": entry.get("pos") == "name",
                "gender": _gender_of(entry) if pos == "noun" else None, "gloss_en": _gloss(entry),
                "ipa": _ipa(entry), "forms": entry.get("forms") or []}
 
@@ -145,8 +147,8 @@ def analyses_of(entry: dict) -> list[tuple[str, dict]]:
     for f in forms:
         tags = set(f.get("tags") or [])
         form = unicodedata.normalize("NFC", f.get("form", "")).strip()
-        if not form or tags & SKIP_TAGS:
-            continue
+        if not form or (tags - ({"error-unrecognized-form"} if pos == "pron" else set())) & SKIP_TAGS or form.startswith("-"):
+            continue                         # pronoun rows Wiktextract could not parse are real forms (du, dir)
         if "includes-article" in tags:
             if pos != "adj":
                 continue
@@ -174,6 +176,10 @@ def analyses_of(entry: dict) -> list[tuple[str, dict]]:
             out.append((form, {"pos": "adj", "case": "x", "number": "x", "gender": "x", "infl": "x", "degree": degree}))
             continue
         cases, numbers = _picked(tags, CASES), _picked(tags, NUMBERS)
+        if entry.get("proper") and "plural" in tags:
+            continue                         # Berlin listed as its own plural: noise
+        if entry.get("proper") and "genitive" in tags and not numbers:
+            numbers = ["sg"]
         if pos == "adj" and degree != "pos" and not cases:
             out.append((form, {"pos": "adj", "case": "x", "number": "x", "gender": "x", "infl": "x", "degree": degree}))
             continue
@@ -188,6 +194,11 @@ def analyses_of(entry: dict) -> list[tuple[str, dict]]:
                 a["infl"] = (_picked(tags, INFL) or ["x"])[0]
                 a["degree"] = degree
             out.append((form, a))
+    if entry.get("proper") and not any(a.get("case") in ("nom", "dat", "acc") for _f, a in out):
+        # a name lists only its genitive (Berlins): the bare name is nominative, dative and accusative singular
+        g = entry.get("gender") or "x"
+        out = [x for x in out if not (x[0] == head and x[1].get("number") == "pl")]
+        out += [(head, {"pos": "noun", "case": c, "number": "sg", "gender": g}) for c in ("nom", "dat", "acc")]
     if not out:
         if pos == "noun":
             out.append((head, {"pos": "noun", "case": "nom", "number": "sg", "gender": entry.get("gender") or "x"}))

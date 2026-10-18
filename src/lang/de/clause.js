@@ -13,7 +13,13 @@
  */
 const SUBORDINATORS = new Set(['als', 'dass', 'weil', 'wenn', 'ob', 'obwohl', 'obgleich', 'damit', 'nachdem', 'bevor', 'ehe',
   'während', 'da', 'falls', 'sodass', 'seit', 'seitdem', 'bis', 'indem', 'sobald', 'solange', 'sooft', 'wie', 'wo', 'wohin', 'woher', 'warum', 'wer', 'was']);
+const COPULAS = new Set(['bin', 'bist', 'ist', 'sind', 'seid', 'war', 'warst', 'waren', 'wart', 'sei', 'wäre', 'wären', 'werde', 'wirst', 'wird', 'werden', 'werdet', 'wurde', 'wurden', 'bleibe', 'bleibst', 'bleibt', 'bleiben', 'blieb', 'blieben', 'heiße', 'heißt', 'heißen', 'hieß', 'scheint', 'scheinen', 'schien', 'sein', 'gewesen', 'geworden', 'geblieben']);
+const POSTPOSITIONS = new Set(['entlang', 'gegenüber', 'zufolge', 'nach', 'wegen', 'halber', 'zuliebe', 'willen', 'hindurch', 'über']);
+const SUBJECT_PRONOUNS = { ich: ['1', 'sg'], du: ['2', 'sg'], wir: ['1', 'pl'] };
+const NOMINAL = new Set(['noun', 'pron', 'det', 'adj', 'num']);
 const RELATIVES = new Set(['der', 'die', 'das', 'dem', 'den', 'deren', 'dessen', 'denen', 'welcher', 'welche', 'welches', 'welchem', 'welchen']);
+import { DET_LIKE } from './phrase.js';
+
 const FIRST_SECOND = new Set(['ich', 'mich', 'mir', 'wir', 'uns', 'du', 'dich', 'dir', 'ihr', 'euch']);
 const FINITE = new Set(['ind', 'sub1', 'sub2', 'imp']);
 const NONFINITE = new Set(['inf', 'ppl1', 'ppl2']);
@@ -61,6 +67,18 @@ export function clauseStage(blocks) {
       if (others.length && others.length < z.candidates.length) out[members[k]] = { ...z, candidates: others.map((c) => withReason(c, 'clause: zu before the infinitive that ends the clause')) };
       if (!v.pinned) out[last0] = { ...v, candidates: v.candidates.filter((c) => c.analysis.mood === 'inf').map((c) => withReason(c, 'clause: infinitive with zu at the end of the clause')) };
     }
+    const sentenceStart = (out[members[0]].token.clause ?? 0) === 0 && members[0] === 0;
+    // C5 / NP0: a capitalised first word whose small-letter form is a pronoun, adverb, conjunction or
+    // preposition is not the noun (Ich, not das Ich; Hier, not das Hier) — the noun would need its article
+    if (sentenceStart) {
+      const b = out[members[0]];
+      if (b.token.altKey !== undefined || /^\p{Lu}/u.test(b.token.surface)) {
+        const nonNoun = b.candidates.filter((c) => ['pron', 'adv', 'conj', 'prep', 'det', 'particle'].includes(c.analysis.pos));
+        if (!b.pinned && nonNoun.length && b.candidates.some((c) => c.analysis.pos === 'noun')) {
+          out[members[0]] = { ...b, candidates: b.candidates.filter((c) => c.analysis.pos !== 'noun').map((c) => withReason(c, 'sentence start: a noun here would need its article')) };
+        }
+      }
+    }
     // CL4: a Nebensatz ends with its finite verb
     const firstKey = out[members[0]].token.key.toLowerCase();
     // CL4a: a subordinating conjunction opening its clause is the conjunction (Als, not a noun)
@@ -72,8 +90,8 @@ export function clauseStage(blocks) {
     const nebensatz = SUBORDINATORS.has(firstKey) || ((out[members[0]].token.clause ?? 0) > 0 && RELATIVES.has(firstKey));
     if (nebensatz && members.length > 1) {
       const lastB = out[last0];
-      if (!lastB.pinned && lastB.candidates.some((c) => isFinite(c.analysis)) && lastB.candidates.some((c) => c.analysis.pos === 'verb' && NONFINITE.has(c.analysis.mood))) {
-        out[last0] = { ...lastB, candidates: lastB.candidates.filter((c) => !(c.analysis.pos === 'verb' && NONFINITE.has(c.analysis.mood))).map((c) => withReason(c, 'clause: a subordinate clause ends with its finite verb')) };
+      if (!lastB.pinned && lastB.candidates.some((c) => isFinite(c.analysis)) && lastB.candidates.some((c) => !isFinite(c.analysis))) {
+        out[last0] = { ...lastB, candidates: lastB.candidates.filter((c) => isFinite(c.analysis)).map((c) => withReason(c, 'clause: a subordinate clause ends with its finite verb')) };
       }
       if (out[last0].candidates.length && out[last0].candidates.every((c) => isFinite(c.analysis))) {
         for (const i of members.slice(1, -1)) {
@@ -88,10 +106,11 @@ export function clauseStage(blocks) {
     // when only one word in it can be a verb, that word is finite (Die Kinder spielen)
     const verbish = members.filter((i) => out[i].candidates.some((c) => c.analysis.pos === 'verb'));
     const hasSubject = members.some((i) => out[i].candidates.length && out[i].candidates.every((c) => (c.analysis.pos === 'noun' || c.analysis.pos === 'pron') && c.analysis.case === 'nom'));
-    if (verbish.length === 1 && ((out[members[0]].token.clause ?? 0) === 0 || hasSubject) && !members.some((i) => out[i].token.key.toLowerCase() === 'zu')) {
+    const zuInfinitive = members.length > 1 && out[members[members.length - 2]].token.key.toLowerCase() === 'zu';
+    if (verbish.length === 1 && ((out[members[0]].token.clause ?? 0) === 0 || hasSubject) && !zuInfinitive) {
       const b = out[verbish[0]];
-      const keep = b.candidates.filter((c) => !(c.analysis.pos === 'verb' && NONFINITE.has(c.analysis.mood)));
-      if (!b.pinned && keep.some((c) => isFinite(c.analysis)) && keep.length < b.candidates.length) {
+      const keep = b.candidates.filter((c) => isFinite(c.analysis));
+      if (!b.pinned && keep.length && keep.length < b.candidates.length) {
         out[verbish[0]] = { ...b, candidates: keep.map((c) => withReason(c, 'clause: the only verb of the clause is its finite verb')) };
       }
     }
@@ -110,6 +129,75 @@ export function clauseStage(blocks) {
           const keep = b.candidates.filter((c) => !isFinite(c.analysis) || c.analysis.number === n);
           if (keep.length && keep.length < b.candidates.length) out[i] = { ...b, candidates: keep.map((c) => (isFinite(c.analysis) ? withReason(c, `clause: the subject ${out[subjects[0]].token.surface} is ${n === 'sg' ? 'singular' : 'plural'}`) : c)) };
         }
+      }
+    }
+    const noUnd = !members.some((i) => ['und', 'oder', 'sowie'].includes(out[i].token.key.toLowerCase()));
+    // C4a: an unambiguous ich/du/wir fixes the finite verb's person and number
+    const fixed = noUnd ? members.map((i) => SUBJECT_PRONOUNS[out[i].token.key.toLowerCase()]).filter(Boolean) : [];
+    if (fixed.length === 1) {
+      const [p, n] = fixed[0];
+      for (const i of members) {
+        const b = out[i];
+        if (b.pinned || !b.candidates.some((c) => isFinite(c.analysis))) continue;
+        const keep = b.candidates.filter((c) => !isFinite(c.analysis) || c.analysis.mood === 'imp' || (c.analysis.person === p && c.analysis.number === n));
+        if (keep.length && keep.length < b.candidates.length) out[i] = { ...b, candidates: keep.map((c) => (isFinite(c.analysis) ? withReason(c, `clause: the subject is ${out[members.find((k) => SUBJECT_PRONOUNS[out[k].token.key.toLowerCase()])].token.surface}`) : c)) };
+      }
+    }
+    const finiteVerb = members.find((i) => out[i].candidates.length && out[i].candidates.every((c) => isFinite(c.analysis)));
+    const copula = members.some((i) => COPULAS.has(out[i].token.key.toLowerCase()));
+    const hasNom = (i) => out[i].candidates.some((c) => NOMINAL.has(c.analysis.pos) && c.analysis.case === 'nom');
+    // D2: sie/Sie/ihr as the only possible subject takes the verb's person and number
+    if (finiteVerb !== undefined && noUnd) {
+      const vs = out[finiteVerb].candidates.map((c) => `${c.analysis.person}${c.analysis.number}`);
+      const sie = members.filter((i) => ['sie', 'ihr'].includes(out[i].token.key.toLowerCase()) && hasNom(i));
+      const otherNom = members.filter((i) => hasNom(i) && !sie.includes(i));
+      if (sie.length === 1 && !otherNom.length && new Set(vs).size === 1) {
+        const [p, n] = [vs[0][0], vs[0].slice(1)];
+        const b = out[sie[0]];
+        const keep = b.candidates.filter((c) => c.analysis.pos === 'pron' && c.analysis.case === 'nom' && c.analysis.number === n
+          && (b.token.key.toLowerCase() !== 'ihr' || p === '2'));
+        if (!b.pinned && keep.length && keep.length < b.candidates.length) out[sie[0]] = { ...b, candidates: keep.map((c) => withReason(c, `clause: the subject of ${out[finiteVerb].token.surface} (${p}${n})`)) };
+      }
+    }
+    // D1: one nominative per clause — once the subject is certain, the other phrases are not nominative
+    // (the predicate of sein, werden, bleiben, heißen is the exception)
+    if (!copula && noUnd) {
+      const subject = members.find((i) => {
+        const cs = out[i].candidates;
+        return (cs.length && cs.every((c) => (c.analysis.pos === 'pron' || c.analysis.pos === 'noun') && c.analysis.case === 'nom'))
+          || ['ich', 'du', 'wir', 'er'].includes(out[i].token.key.toLowerCase());
+      });
+      if (subject !== undefined) {
+        for (const i of members) {
+          if (i === subject) continue;
+          const b = out[i];
+          if (b.pinned || !hasNom(i)) continue;
+          const keep = b.candidates.filter((c) => !(NOMINAL.has(c.analysis.pos) && c.analysis.case === 'nom'));
+          if (keep.length && keep.some((c) => NOMINAL.has(c.analysis.pos) && c.analysis.case && c.analysis.case !== 'x')) {
+            out[i] = { ...b, candidates: keep.map((c) => withReason(c, `clause: ${out[subject].token.surface} is the subject, so this is not nominative`)) };
+          }
+        }
+      }
+    }
+    // D3 / REL1: a relative pronoun takes gender and number from its antecedent
+    const rel = out[members[0]];
+    if ((rel.token.clause ?? 0) > 0 && RELATIVES.has(rel.token.key.toLowerCase()) && members[0] > 0 && !rel.pinned) {
+      const ante = out[members[0] - 1];
+      const nouns = ante.candidates.filter((c) => c.analysis.pos === 'noun' && c.analysis.case && c.analysis.case !== 'x');
+      if (nouns.length) {
+        const gn = new Set(nouns.map((c) => `${c.analysis.number}|${c.analysis.number === 'pl' ? 'x' : c.analysis.gender}`));
+        const keep = rel.candidates.filter((c) => !c.analysis.case || c.analysis.case === 'x'
+          || gn.has(`${c.analysis.number}|${c.analysis.number === 'pl' ? 'x' : c.analysis.gender}`)
+          || (c.analysis.gender === 'x' && [...gn].some((k) => k.startsWith(`${c.analysis.number}|`))));
+        if (keep.length && keep.length < rel.candidates.length) out[members[0]] = { ...rel, candidates: keep.map((c) => withReason(c, `relative clause: agrees with ${ante.token.surface}`)) };
+      }
+    }
+    // B3 / CL6a: a clause-final word with nothing after it to govern is not a preposition (ruft … an)
+    {
+      const b = out[last0];
+      const preps = b.candidates.filter((c) => c.analysis.pos === 'prep');
+      if (!b.pinned && preps.length && preps.length < b.candidates.length && !POSTPOSITIONS.has(b.token.key.toLowerCase()) && members.length > 1) {
+        out[last0] = { ...b, candidates: b.candidates.filter((c) => c.analysis.pos !== 'prep').map((c) => withReason(c, 'clause: nothing follows to govern, so not a preposition (a separable particle)')) };
       }
     }
     // CL3: the clause's finite verb is certain → the clause-final word is its non-finite partner

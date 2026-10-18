@@ -23,7 +23,7 @@ export const german = {
   tokenize,
   // government, then the noun-phrase rules (NP1–NP3), then government again with the settled phrases;
   // the sentence-wide agreement stage is not used: German agreement lives inside the phrase
-  stages: [gov, phraseStage, gov, phraseStage, clauseStage],
+  stages: [gov, phraseStage, gov, phraseStage, clauseStage, phraseStage, clauseStage, gov],
   government: GOVERNMENT,
   governmentPhrase: true,
   arrange: WORD_ORDERS,

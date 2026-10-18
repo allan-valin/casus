@@ -178,7 +178,8 @@ function governedSpan(blocks, i, phrase) {
     // an unknown inflected word inside the phrase (an old spelling, a rare participle) does not cut it
     if (!poses.length && /^[\p{Ll}].*(en|em|er|es|e)$/u.test(blocks[j].token.surface)) { span.push(j); continue; }
     // a personal pronoun is a whole phrase on its own (mit ihm): it ends the span (review I1)
-    if (poses.includes('pron') && !poses.some((p) => p === 'det' || p === 'adj' || p === 'num')) { span.push(j); break; }
+    if (poses.includes('pron') && !poses.some((p) => p === 'det' || p === 'adj' || p === 'num') && !/^(dies|jen|jed|kein|welch|manch|solch|all|beid|mein|dein|sein|unser|euer|eur)/i.test(blocks[j].token.surface)) { span.push(j); break; }
+    if (poses.length && poses.every((p) => ['adv', 'particle'].includes(p))) { span.push(j); continue; }      // ganz, sehr: carried
     if (poses.some((p) => PHRASE_MEMBERS.has(p))) { span.push(j); continue; }
     break;
   }
@@ -202,8 +203,11 @@ export function governmentStage(blocks, government = GOVERNMENT, { phrase = fals
     const caseOk = (c, allowed) => c.analysis.case && (c.analysis.case === 'x' || allowed.includes(c.analysis.case));
     // the phrase is contiguous: a member with no reading in the governed cases ends it, it is not skipped
     const span = [];
+    const carried = [];
     for (const j of governedSpan(out, i, phrase)) {
       if (!out[j].candidates.length) continue;                    // unknown member: carried, not narrowed
+      const caseless = out[j].candidates.every((c) => !c.analysis.case || c.analysis.case === 'x');
+      if (phrase && caseless) { carried.push(j); continue; }      // a numeral, an uninflected adjective or adverb
       if (!out[j].candidates.some((c) => caseOk(c, governs) && c.analysis.case !== 'x')) break;
       span.push(j);
     }
@@ -232,11 +236,16 @@ export function governmentStage(blocks, government = GOVERNMENT, { phrase = fals
       };
     }
     const objectReason = `government: governed by ${name} (${shared.join('/')})`;
+    const fresh = (c) => ({ ...c, reasons: c.reasons.filter((r) => !r.startsWith(`government: governed by ${name} (`)) });   // a later pass replaces, not adds
     for (const j of span) {
       const object = out[j];
       const kept = object.candidates.filter((c) => caseOk(c, shared));
       if (!kept.some((c) => c.analysis.case !== 'x')) continue;
-      out[j] = { ...object, candidates: kept.map((c) => (c.analysis.case === 'x' ? c : withLink(withReason(c, objectReason), 'government', prep.token.index))) };
+      out[j] = { ...object, candidates: kept.map((c) => (c.analysis.case === 'x' ? c : withLink(withReason(fresh(c), objectReason), 'government', prep.token.index))) };
+    }
+    for (const j of carried) {
+      if (j > span[span.length - 1]) continue;
+      out[j] = { ...out[j], candidates: out[j].candidates.map((c) => withLink(c, 'government', prep.token.index)) };
     }
   }
   return out;
