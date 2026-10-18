@@ -9,8 +9,16 @@ const page = await ctx.newPage();
 const errors = [];
 page.on('pageerror', (e) => errors.push(String(e)));
 page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
+await page.goto(base + '/grc/');                       // a language not shipped yet: Latin, no error
+await page.waitForFunction(() => document.querySelector('.status')?.textContent.startsWith('dictionary ready'));
+console.log('deep link /grc/ ->', await page.textContent('nav.languages a[aria-current=page]'));
 await page.goto(base + '/');
 await page.waitForFunction(() => document.querySelector('.status')?.textContent.startsWith('dictionary ready'));
+console.log('bar current:', await page.textContent('nav.languages a[aria-current=page]'));
+// upload a text file through the picker
+await page.setInputFiles('input[type=file]', { name: 'u.txt', mimeType: 'text/plain', buffer: Buffer.from('Arma virumque cano.\r\nTroiae qui primus ab oris.') });
+await page.waitForSelector('.pill');
+console.log('uploaded pills:', await page.$$eval('.pool .pill .surface', (els) => els.map((e) => e.textContent).join(' ')));
 console.log(await page.textContent('.status'));
 await page.click('button.sample:has-text("Caesar")');
 await page.waitForSelector('.pill');
@@ -24,6 +32,11 @@ await page.waitForSelector('.dictionary');
 await page.waitForFunction(() => !document.querySelector('.dictionary .loading'), null, { timeout: 15000 });
 console.log('dict:', (await page.textContent('.dictionary')).replace(/\s+/g, ' ').slice(0, 220));
 await page.screenshot({ path: `${sc}/casus-1.png` });
+console.log('ipa:', await page.$eval('.dictionary', (d) => d.querySelector('.ipa')?.textContent ?? '-'));
+await page.waitForFunction(() => !/looking|procurando/.test(document.querySelector('button.speaker')?.title ?? 'looking'), null, { timeout: 60000 });
+await page.click('button.speaker');
+await page.waitForFunction(() => [...document.querySelectorAll('.activity .line')].some((l) => /spoken|falada/.test(l.textContent)), null, { timeout: 90000 });
+console.log('speaker:', (await page.$$eval('.activity .line', (ls) => ls.map((l) => l.textContent))).filter((l) => /spoken|falada/.test(l)).pop());
 await page.click('.dictionary button.pin >> nth=0');
 await page.waitForTimeout(300);
 await page.keyboard.press('Escape');                 // the dictionary is an overlay now; close it before dragging

@@ -58,6 +58,16 @@ still comes from `src/lib/`. The page is one column of numbered cards:
    Layer toggles beside the pool; a legend table under it.
 4. **Dictionary settings.** "Dictionary period" (dates and example authors) and "Dictionary language".
 
+**Languages (2026-10-18, phase 1).** The page is now one instance of a *language definition*
+(`src/lang/<code>/`: script, inventory of cases and other channels, segmenter, tokenizer, cascade stages,
+eras, data and sample paths, voice); colours and legend are generated from the inventory. A bar at the top
+lists the shipped languages; the path selects one (`/` Latin, `/<code>/`, `/<code>/game/` for an
+alphabet drill). Design: `docs/superpowers/specs/2026-10-18-casus-languages-design.md`; plan:
+`docs/superpowers/plans/2026-10-18-casus-languages-phase1-2.md`. Every entry now shows the **IPA**
+(Latin's from Wiktionary, the variant matching the dictionary period: Classical or Ecclesiastical), a
+**Wiktionary link**, and a **🔊 speaker**: the browser's own voice for the language, else espeak-ng
+loaded from jsDelivr on first use. **Open a text file…** reads a `.txt`/`.md` as the text.
+
 Top corner: **English ⇄ Português** (the page and the dictionary language together, remembered),
 exports (JSON to reload, Markdown to read) and **?** — what is on screen, how to use it, every
 resource and licence. Under the page, **What is happening**: one timestamped line per action and its
