@@ -112,3 +112,13 @@ describe('createLexicon without a manifest', () => {
     warn.mockRestore();
   });
 });
+
+describe('a row may carry the reading of its form (Japanese: ~reading, overnight plan 2026-10-19)', () => {
+  it('every analysis of the row gets it', async () => {
+    const codes = { POS: { v: 'verb', n: 'noun' }, LAYOUT: { verb: [['form', { m: 'polite', P: 'politepast' }]], noun: [['form', { _: 'x' }]] } };
+    const lx = createLexicon({ manifest: { shards: { b001: {} } }, codes, script: { prefixOf: () => 'b001' },
+      fetchShard: async () => ({ 食べました: [[7, '~たべました', 'vP']], 本: [[9, 'n_']] }) });
+    expect(await lx.lookup('食べました')).toEqual([{ lemma: '7', pos: 'verb', form: 'politepast', reading: 'たべました' }]);
+    expect((await lx.lookup('本'))[0].reading).toBe(undefined);
+  });
+});

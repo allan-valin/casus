@@ -19,8 +19,16 @@
   // non-Latin scripts: every word in Latin letters, small, under it (Allan, 2026-10-18); the selected sentence
   // romanises the dictionary's spellings (so a missing breathing still gives its h), the others the text as typed
   const romanize = $derived(reader.layers.roman === false ? null : (reader.lang?.script?.romanize ?? null));
+  // a script without spaces (Japanese): words come from the blocks, which carry furigana and romaji, and a small
+  // gap follows each particle and each verb or adjective form, so the grammar markers stand out (Allan, 2026-10-18)
+  const unspaced = $derived(reader.lang?.script?.spaced === false);
+  const byIndex = $derived(new Map(reader.blocks.map((b) => [b.token.index, b])));
+  const GAP = new Set(['particle', 'verb', 'adj', 'aux']);
+  const gapAfter = (i) => { const b = byIndex.get(i); return !!b && b.candidates.length > 0 && b.candidates.every((c) => GAP.has(c.analysis.pos)); };
+  const furiOf = (i) => (reader.layers.furigana === false ? null : byIndex.get(i)?.furi ?? null);
   const spellings = $derived(new Map(reader.blocks.map((b) => [b.token.index, [...new Set(b.candidates.map((c) => c.analysis.marked).filter(Boolean))]])));
   function romanOf(piece) {
+    if (byIndex.get(piece.index)?.roman !== undefined) return byIndex.get(piece.index).roman;
     const s = spellings.get(piece.index);
     return [...new Set((s?.length ? s : [piece.text]).map(romanize))].join(' / ');
   }
@@ -59,9 +67,9 @@
           onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); reader.select(i); } }}>
       {#if i === reader.selected}
         {#each pieces(sentence) as piece}
-          {#if piece.index !== undefined}{@const sup = supplied.get(piece.index)}<span class="word" class:hot={piece.index === hovered} class:hot-partner={piece.index !== hovered && partners.has(piece.index)}>{#if romanize}<span class="ilg">{#if sup}<ruby>{piece.text}<rt class="supplied">{sup}</rt></ruby>{:else}{piece.text}{/if}<span class="roman">{romanOf(piece)}</span></span>{:else if sup}<ruby>{piece.text}<rt class="supplied">{sup}</rt></ruby>{:else}{piece.text}{/if}</span>{:else}{piece.text}{/if}
+          {#if piece.index !== undefined}{@const sup = supplied.get(piece.index)}{@const fu = furiOf(piece.index)}<span class="word" class:gap={unspaced && gapAfter(piece.index)} class:hot={piece.index === hovered} class:hot-partner={piece.index !== hovered && partners.has(piece.index)}>{#if romanize}<span class="ilg">{#if fu}<span>{#each fu as [t, r]}{#if r}<ruby>{t}<rt class="furi">{r}</rt></ruby>{:else}{t}{/if}{/each}</span>{:else if sup}<ruby>{piece.text}<rt class="supplied">{sup}</rt></ruby>{:else}{piece.text}{/if}<span class="roman">{romanOf(piece)}</span></span>{:else if fu}{#each fu as [t, r]}{#if r}<ruby>{t}<rt class="furi">{r}</rt></ruby>{:else}{t}{/if}{/each}{:else if sup}<ruby>{piece.text}<rt class="supplied">{sup}</rt></ruby>{:else}{piece.text}{/if}</span>{:else}{piece.text}{/if}
         {/each}
-      {:else if romanize}
+      {:else if romanize && !unspaced}
         {#each words(sentence.text) as w}{#if w.word}<span class="ilg">{w.text}<span class="roman">{romanize(w.text)}</span></span>{:else}{w.text}{/if}{/each}
       {:else}
         {sentence.text}
@@ -83,6 +91,8 @@
   .text.romanized { line-height: 3; }
   .text.romanized .sentence { padding-top: 0.6em; padding-bottom: 0.9em; }
   .roman { font-size: 0.6em; font-style: italic; font-family: system-ui, sans-serif; color: var(--ink-2); line-height: 1.1; }
+  .word.gap { margin-right: 0.45em; }
+  rt.furi { font-size: 0.55em; color: var(--ink-2); font-family: system-ui, sans-serif; }
   rt.supplied { color: #6b4e9b; font-size: 0.62em; font-family: system-ui, sans-serif; }
   .hot-partner { background: #ffe58a; border-radius: 3px; }
 </style>

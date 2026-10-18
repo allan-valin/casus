@@ -108,7 +108,8 @@ async function main(code) {
   const frequent = new Set(raw.flatMap((r) => (r.form ? [r.form, r.form[0].toUpperCase() + r.form.slice(1)] : [r.w.split(/[ ,]/)[0]])));
   const out = [];
   for (const p of phrases) {
-    const tokens = lang.tokenize(p.p);
+    // a language without spaces cuts its phrases into dictionary words first (Japanese)
+    const tokens = lang.splitWords ? await lang.splitWords(lang.tokenize(p.p), lexicon) : lang.tokenize(p.p);
     const keys = tokens.filter((t) => t.kind === 'word').flatMap((t) => [t.key, t.altKey, ...(t.fallbackKeys ?? [])].filter(Boolean));
     out.push({ ...p, lit: literalOf(tokens, await lexicon.lookupAll(keys), glosses, lemmas, frequent, PLAIN[code] ?? {}) });
   }

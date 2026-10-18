@@ -2,14 +2,16 @@
 import { latin } from './la/index.js';
 import { greek } from './grc/index.js';
 import { german } from './de/index.js';
+import { japanese } from './ja/index.js';
 
 export const LANGUAGES = [
   { code: 'la', path: '/', name: { en: 'Latin', pt: 'Latim' } },
   { code: 'grc', path: '/grc/', name: { en: 'Ancient Greek', pt: 'Grego antigo' } },
   { code: 'de', path: '/de/', name: { en: 'German', pt: 'Alemão' } },
+  { code: 'ja', path: '/ja/', name: { en: 'Japanese', pt: 'Japonês' } },
 ];
 
-const DEFINITIONS = { la: latin, grc: greek, de: german };
+const DEFINITIONS = { la: latin, grc: greek, de: german, ja: japanese };
 
 export function getLanguage(code) {
   return DEFINITIONS[code];

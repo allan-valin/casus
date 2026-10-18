@@ -53,12 +53,15 @@ export function makeColors(inventory) {
   }
   function badge(analysis) {
     if (family(analysis) === 'nominal') return primary.badge[analysis[inventory.primary]] ?? '—';
+    if (inventory.formBadge && family(analysis) === 'verb') return inventory.formBadge[analysis.form] ?? analysis.form ?? '—';
     if (analysis.pos === 'verb') {
       const tense = TENSE_BADGE[analysis.tense] ?? analysis.tense;
       if (analysis.mood === 'inf') return `inf ${tense}`;
       return `${analysis.person}${analysis.number} ${tense}`;
     }
     if (analysis.pos === 'prep') return 'Prp';
+    // a particle that governs a role (Japanese を) shows that role's badge
+    if (Array.isArray(analysis.governs) && analysis.governs.length) return primary.badge[analysis.governs[0]] ?? '—';
     return '—';
   }
   /** border style: the primary value's own, else a secondary channel's value, else solid */
@@ -82,7 +85,7 @@ export function makeColors(inventory) {
       }
       case 'verb': return [[VERB_COLOR, paleness(analysis), borderOf(analysis) === 'dashed' ? 'dashed' : 'solid']];
       default:
-        if (analysis.pos === 'prep' && Array.isArray(analysis.governs) && analysis.governs.length) {
+        if (Array.isArray(analysis.governs) && analysis.governs.length) {
           return analysis.governs.map((c) => [ordered[c] ?? FUNCTION_COLOR, 'sg', 'solid']);
         }
         return [[FUNCTION_COLOR, 'sg', 'dotted']];

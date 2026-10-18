@@ -156,7 +156,7 @@
   const openBlock = $derived(open && reader ? (reader.blocks.find((b) => b.token.index === open.token.index) ?? open) : null);
 </script>
 
-<main>
+<main style:--font-scale={lang.script?.fontScale ?? 1}>
   {#if activity.busy}<div class="busy" role="progressbar" aria-label="loading"></div>{/if}
   <header class="top">
     <div class="brand">

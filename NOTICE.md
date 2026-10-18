@@ -70,6 +70,14 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
 - **Model words and their glosses** for the endings drills: chosen and written for Casus
   (`tools/build_drills.py`).
 
+## Japanese — CC BY-SA and MIT
+
+- Dictionary, readings, IPA, phrases: the English Wiktionary via wiktextract / kaikki.org, CC BY-SA 4.0.
+- JLPT word lists (`data/ja/frequency.json`): *open-anki-jlpt-decks* by Jam Sinclair and contributors
+  (https://github.com/jamsinclair/open-anki-jlpt-decks), MIT licence; the lists go back to Jonathan Waller's JLPT
+  resources (tanos.co.uk), published under Creative Commons BY.
+- Sample passages: Natsume Sōseki and Akutagawa Ryūnosuke, public domain (texts as in Aozora Bunko).
+
 ## Speech — espeak-ng (GPL-3.0)
 
 When the browser has no voice for a language, the speaker button loads espeak-ng compiled to

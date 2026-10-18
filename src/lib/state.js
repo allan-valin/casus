@@ -18,7 +18,9 @@ export function createState({ text, lexicon, lang, saved = null }) {
   let ctx = null;
 
   async function load() {
-    const split = sentences.map((s) => tokenize(s.text));
+    let split = sentences.map((s) => tokenize(s.text));
+    // a language written without spaces cuts its runs into dictionary words first (Japanese)
+    if (lang.splitWords) split = await Promise.all(split.map((tokens) => lang.splitWords(tokens, lexicon)));
     const keys = new Set();
     for (const tokens of split) {
       for (const [i, t] of tokens.entries()) {

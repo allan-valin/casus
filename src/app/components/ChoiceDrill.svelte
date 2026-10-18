@@ -50,7 +50,7 @@
 {:else}
   <div class="quiz">
     <p class="quiz-prompt" lang="">{current.item.prompt}</p>
-    {#if romanOf(current.item.prompt, romanize)}<p class="roman prompt-roman">{romanOf(current.item.prompt, romanize)}</p>{/if}
+    {#if current.item.roman ?? romanOf(current.item.prompt, romanize)}<p class="roman prompt-roman">{current.item.roman ?? romanOf(current.item.prompt, romanize)}</p>{/if}
     {#if current.item.hint}<p class="quiz-hint">{current.item.hint}</p>{/if}
     <div class="choices">
       {#each current.choices as c, i}

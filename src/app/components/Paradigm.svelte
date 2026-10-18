@@ -13,7 +13,7 @@
   const caseName = (c) => lang.inventory.channels.case?.name?.[ui.lang]?.[c] ?? c;
   const label = (s) => s.split(' · ').map((p) => t(`para.${p}`) === `para.${p}` ? p : t(`para.${p}`)).join(' · ');
   const colName = (c) => c.split(' ').map((p) => (t(`para.${p}`) === `para.${p}` ? p : t(`para.${p}`))).join(' ');
-  const rowName = (g, r) => (g.rowsBy === 'case' ? caseName(r) : t(`para.p${r}`));
+  const rowName = (g, r) => (g.rowsBy === 'case' ? caseName(r) : g.rowsBy === 'jform' ? t(`para.ja.${r}`) : t(`para.p${r}`));
   // readings: codes, or analyses (as the cascade leaves them on the block)
   const sig = (a) => JSON.stringify(Object.entries(a).filter(([k]) => k !== 'lemma' && k !== 'marked').sort());
   const open = $derived(new Set(readings.map((r) => (typeof r === 'string' ? r : sig(r)))));

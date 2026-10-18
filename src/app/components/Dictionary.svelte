@@ -63,7 +63,7 @@
               <a class="wiktionary" href={wiktionaryUrl(r.headword, reader.lang?.wiktionary ?? 'Latin', 'en')} target="_blank" rel="noopener" title={t('dict.wiktionary')}>Wiktionary ↗</a>
               {#if ui.lang === 'pt'}<a class="wiktionary pt" href={wiktionaryUrl(r.headword, reader.lang?.wiktionary ?? 'Latin', 'pt')} target="_blank" rel="noopener" title={t('dict.wiktionary')}>Wikcionário ↗</a>{/if}
             </div>
-            <div class="ipa-line">{#if ip}<span class="ipa" title={ip.tags.join(', ')}>{ip.ipa}</span>{/if}<Speaker text={r.headword} {voice} onspoke={(tier) => onspoke(r.headword, tier)} /></div>
+            <div class="ipa-line">{#if ip}<span class="ipa" title={ip.tags.join(', ')}>{ip.ipa}</span>{/if}<Speaker text={reader.lang?.speakForm ? reader.lang.speakForm(r) : r.headword} {voice} onspoke={(tier) => onspoke(r.headword, tier)} /></div>
             <div class="class">{classLine(r)}</div>
             {#if g !== null}<div class="gloss">{g}</div>{:else if dict}<div class="gloss missing">{t('dict.missingHere', { name: t(`settings.lang.${dict}`, { source: reader.lang?.sources?.[dict] ?? '' }) })}</div>{/if}
             {#if r.age || r.freq}<div class="meta">{#if r.age}{t('dict.age')}: {AGE_LABEL[r.age] ?? r.age}{/if}{#if r.age && r.freq} · {/if}{#if r.freq}{t('dict.freq')} {r.freq}{/if}</div>{/if}

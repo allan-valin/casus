@@ -41,7 +41,9 @@ function colRank(c) {
 export function paradigmGroups(rows, lemma, lang) {
   const codes = lang.inventory.codes;
   const caseOrder = lang.inventory.channels.case?.values ?? [];
-  const entries = rows.flatMap(([form, ...cs]) => cs.map((code) => ({ form, code, analysis: decodeAnalysis(code, String(lemma), codes) })));
+  const entries = rows.flatMap(([form, ...cs]) => cs.filter((c) => !String(c).startsWith('~')).map((code) => ({ form, code, analysis: decodeAnalysis(code, String(lemma), codes) })));
+  // a language with its own table shape (Japanese: plain/polite × positive/negative) builds it itself
+  if (lang.inventory.paradigm) return lang.inventory.paradigm(entries);
   const groups = new Map();
   const list = [];
   for (const e of entries) {

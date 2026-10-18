@@ -26,12 +26,20 @@
   const RANGES = [[1, 200], [201, 500], [501, 1000]];
   let range = $state('1-200');
   let direction = $state('meaning');
-  const ranges = $derived(RANGES.filter(([a]) => a <= Math.max(1, frequency.length)).map(([a, b]) => `${a}-${Math.min(b, frequency.length || b)}`));
-  const inRange = $derived.by(() => { const [a, b] = range.split('-').map(Number); return frequency.filter((f) => f.rank >= a && f.rank <= b); });
-  const wordItems = $derived(inRange.map((f) => (direction === 'meaning' ? { prompt: f.w, answer: f.en } : { prompt: f.en, answer: f.w })));
+  // a list with levels (Japanese: JLPT N5, N4) is drilled by level, others by rank range
+  const levels = $derived([...new Set(frequency.map((f) => f.level).filter(Boolean))]);
+  const ranges = $derived(levels.length ? levels : RANGES.filter(([a]) => a <= Math.max(1, frequency.length)).map(([a, b]) => `${a}-${Math.min(b, frequency.length || b)}`));
+  $effect(() => { if (ranges.length && !ranges.includes(range)) range = ranges[0]; });
+  const inRange = $derived.by(() => {
+    if (levels.length) return frequency.filter((f) => f.level === range);
+    const [a, b] = range.split('-').map(Number);
+    return frequency.filter((f) => f.rank >= a && f.rank <= b);
+  });
+  const romaji = (reading) => (reading && lang.script?.romanize ? lang.script.romanize(reading) : undefined);
+  const wordItems = $derived(inRange.map((f) => (direction === 'meaning' ? { prompt: f.w, answer: f.en, roman: romaji(f.reading) } : { prompt: f.en, answer: f.w })));          // no reading here: it would give the answer away
   // phrases: everyday phrases, idioms, proverbs, or all
   let kind = $state('all');
-  const phraseItems = $derived(phrases.filter((p) => kind === 'all' || p.kind === kind).map((p) => ({ prompt: p.p, answer: p.en, lit: p.lit, kind: p.kind, literally: p.literally, more: p.more, wiki: p.wiki, note: p.note })));
+  const phraseItems = $derived(phrases.filter((p) => kind === 'all' || p.kind === kind).map((p) => ({ prompt: p.p, answer: p.en, lit: p.lit, kind: p.kind, literally: p.literally, more: p.more, wiki: p.wiki, note: p.note, roman: romaji(p.reading), hint: p.reading })));
   const nouns = $derived(models.filter((m) => NOMINAL.has(m.pos)));
   const verbs = $derived(models.filter((m) => m.pos === 'verb'));
   const withDrills = LANGUAGES;          // every shipped language has at least the endings drills
@@ -48,7 +56,7 @@
     <button class="cheatsheet" onclick={() => { cheat = true; }}>{t('drills.cheatsheet')}</button>
     <div class="tabs" role="tablist">
       {#each drills as d}
-        <button class="drill-tab" class:active={d === drill} data-drill={d} role="tab" aria-selected={d === drill} onclick={() => { chosen = d; }}>{t(`drills.${d}`)}</button>
+        <button class="drill-tab" class:active={d === drill} data-drill={d} role="tab" aria-selected={d === drill} onclick={() => { chosen = d; }}>{lang.drillNames?.[d]?.[ui.lang] ?? t(`drills.${d}`)}</button>
       {/each}
     </div>
   </div>

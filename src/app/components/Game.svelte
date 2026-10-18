@@ -90,7 +90,7 @@
   <div class="modes">
     <span class="group-label">{t('game.answerBy')}</span>
     <label><input type="radio" name="answer" value="sound" bind:group={mode} onchange={restart}> {t('game.mode.sound')}</label>
-    <label><input type="radio" name="answer" value="name" bind:group={mode} onchange={restart}> {t('game.mode.name')}</label>
+    {#if lang.game.LETTERS.some((l) => l.names?.length)}<label><input type="radio" name="answer" value="name" bind:group={mode} onchange={restart}> {t('game.mode.name')}</label>{/if}
     <span class="group-label">{t('game.view')}</span>
     <label><input type="radio" name="view" value="grid" bind:group={view} onchange={restart}> {t('game.view.grid')}</label>
     <label><input type="radio" name="view" value="single" bind:group={view} onchange={restart}> {t('game.view.single')}</label>

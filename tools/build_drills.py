@@ -40,23 +40,30 @@ MODELS = {
            ("haben", "verb", "to have", "ter"), ("werden", "verb", "to become", "tornar-se"), ("machen", "verb", "to make, to do", "fazer"),
            ("gehen", "verb", "to go", "ir"), ("kommen", "verb", "to come", "vir"), ("sprechen", "verb", "to speak", "falar"),
            ("können", "verb", "can, to be able", "poder")],
+    "ja": [("高い", "adj", "high, expensive", "alto, caro"), ("いい", "adj", "good", "bom"), ("綺麗", "adj", "pretty, clean", "bonito, limpo"),
+           ("食べる", "verb", "to eat", "comer"), ("書く", "verb", "to write", "escrever"), ("泳ぐ", "verb", "to swim", "nadar"),
+           ("話す", "verb", "to speak", "falar"), ("待つ", "verb", "to wait", "esperar"), ("死ぬ", "verb", "to die", "morrer"),
+           ("遊ぶ", "verb", "to play", "brincar, jogar"), ("読む", "verb", "to read", "ler"), ("帰る", "verb", "to go home", "voltar para casa"),
+           ("買う", "verb", "to buy", "comprar"), ("行く", "verb", "to go", "ir"), ("する", "verb", "to do", "fazer"), ("来る", "verb", "to come", "vir")],
 }
 FREQ = {c: i for i, c in enumerate("ABCDEFX")}
 XREF = re.compile(r"^(synonym|alternative (form|spelling)|[\w-]+ form|abbreviation|initialism|misspelling|obsolete (form|spelling)|contraction) of\b", re.I)
 # models whose tables no other word follows: learnt by heart, so "random word" is off for them
 IRREGULAR = {"la": {"sum", "eo", "uolo", "fero", "ego", "hic", "qui"}, "grc": {"εἰμί", "ὁ", "δίδωμι"},
-             "de": {"der", "ein", "ich", "er", "sein", "haben", "werden", "können"}}
+             "de": {"der", "ein", "ich", "er", "sein", "haben", "werden", "können"},
+             "ja": {"いい", "行く", "する", "来る"}}
 POOL = 60
 
 
 def decode(rows: list) -> list:
-    """mirror of src/app/lib/paradigm.js frontDecode"""
+    """mirror of src/app/lib/paradigm.js frontDecode; a Japanese "~reading" is not a code and is left out"""
     out, prev = [], None
     for row in rows:
         if prev is None or not isinstance(row[0], int):
             form, codes = row[0], row[1:]
         else:
             form, codes = prev[: row[0]] + row[1], row[2:]
+        codes = [c for c in codes if not str(c).startswith("~")]
         out.append([form, *codes])
         prev = form
     return out
@@ -64,7 +71,8 @@ def decode(rows: list) -> list:
 
 def _plain(form: str) -> str:
     d = unicodedata.normalize("NFD", form.lower())
-    return "".join(c for c in d if not unicodedata.combining(c)).replace("ς", "σ")
+    # accents and breathings go; the kana voicing marks ゛゜ (U+3099, U+309A) are letters, not accents
+    return unicodedata.normalize("NFC", "".join(c for c in d if not unicodedata.combining(c) or c in "\u3099\u309a")).replace("ς", "σ")
 
 
 def signature(rows: list) -> frozenset:
@@ -75,12 +83,12 @@ def signature(rows: list) -> frozenset:
     return frozenset((code, f[len(stem):]) for f, codes in forms for code in codes)
 
 
-def core_endings(rows: list, headword: str, used: dict | None = None) -> dict:
+def core_endings(rows: list, headword: str, used: dict | None = None, lead_drop: int = 2) -> dict:
     """code -> set of endings, over the cells whose form keeps the headword's stem (an augmented Greek past or an
     irregular perfect does not, and is left out); the stem is what those forms share. Accents, breathings and
     umlauts are ignored (Mann/Männer declines like Wald/Wälder)."""
     hw = _plain(headword)
-    lead = hw[: max(2, len(hw) - 2)]
+    lead = hw[: max(1 if lead_drop == 1 else 2, len(hw) - lead_drop)]          # Japanese: 書く → 書
     forms = [(_plain(r[0]), r[1:]) for r in decode(rows)]
     core = [(f, codes) for f, codes in forms if f.startswith(lead)]
     if not core:
@@ -128,7 +136,7 @@ def _short(text: str) -> str:
     return first if len(first) <= 40 else first[:38].rstrip() + "…"
 
 
-def pools(models, lemmas: dict, rows_of, glosses: dict, irregular=frozenset(), rank=None, capitalised_nouns=False, used=None) -> dict:
+def pools(models, lemmas: dict, rows_of, glosses: dict, irregular=frozenset(), rank=None, capitalised_nouns=False, used=None, lead_drop=2, verb_share=0.85) -> dict:
     """model id -> [[lemma id, dict form, short meaning]…]: other words with exactly the model's table, the most
     frequent first (Whitaker's frequency letter, or a rank from the frequency list), at most POOL"""
     rank = rank or {}
@@ -144,18 +152,18 @@ def pools(models, lemmas: dict, rows_of, glosses: dict, irregular=frozenset(), r
             continue
         rows = rows_of(i)
         if rows:
-            tables[i] = (r["pos"], core_endings(rows, r["headword"]))
+            tables[i] = (r["pos"], core_endings(rows, r["headword"], lead_drop=lead_drop))
     out = {}
     for m in models:
         if m["headword"] in irregular:
             out[m["id"]] = []
             continue
-        mine = core_endings(rows_of(m["id"]), m["headword"], used)
+        mine = core_endings(rows_of(m["id"]), m["headword"], used, lead_drop=lead_drop)
         # a noun or adjective table is small: every cell must end alike; a verb table may differ in a few
-        share = 0.85 if m["pos"] == "verb" else 1.0
+        share = verb_share if m["pos"] == "verb" else 1.0
         same = [i for i, (pos, t) in tables.items() if pos == m["pos"] and i != m["id"] and same_table(mine, t, share)]
         if not same and used:                      # the everyday form fits nothing (Jungs): match the dictionary's table
-            mine = core_endings(rows_of(m["id"]), m["headword"])
+            mine = core_endings(rows_of(m["id"]), m["headword"], lead_drop=lead_drop)
             same = [i for i, (pos, t) in tables.items() if pos == m["pos"] and i != m["id"] and same_table(mine, t, share)]
         same.sort(key=lambda i: (rank.get(lemmas[i].get("dict_form"), rank.get(_plain(lemmas[i]["headword"]), rank.get(lemmas[i]["headword"], 10**6))),
                                  FREQ.get(lemmas[i].get("freq", "X"), 9), int(i)))
@@ -203,7 +211,9 @@ def main(code: str) -> None:
     used = {_plain(r["form"]): r["n"] for r in json.loads(raw.read_text(encoding="utf-8")) if "form" in r} if raw.exists() else {}
     for n in range(512):
         rows_of(str(n))                                   # load every bucket once, so the pools can look anywhere
-    by_model = pools(out, lemmas, rows_of, glosses, IRREGULAR[code], rank, capitalised_nouns=(code == "de"), used=used)   # German nouns are capitalised
+    by_model = pools(out, lemmas, rows_of, glosses, IRREGULAR[code], rank, capitalised_nouns=(code == "de"), used=used,
+                     # Japanese: short headwords (書く) keep one character of stem; generated forms match exactly
+                     lead_drop=1 if code == "ja" else 2, verb_share=1.0 if code == "ja" else 0.85)   # German nouns are capitalised
     for m in out:
         m["irregular"] = m["headword"] in IRREGULAR[code]
         m["pool"] = by_model[m["id"]]

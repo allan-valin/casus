@@ -112,3 +112,16 @@ def test_latin_names_stay_out_and_core_words_come_first():
     glosses = {"2": "Ambiorix, a chief of the Eburones", "3": "flock, herd", "4": "law"}
     out = pools([{"id": "1", "headword": "rex", "pos": "noun"}], lemmas, rows.get, glosses, rank={"lex": 50})
     assert [p[1] for p in out["1"]] == ["lex, legis f.", "grex, gregis m."]
+
+
+def test_japanese_godan_verbs_match_only_the_same_ending():
+    from build_drills import core_endings, same_table
+    kaku = core_endings([["書く", "vd"], ["書かない", "vn"], ["書きます", "vm"], ["書いて", "vt"]], "書く", lead_drop=1)
+    kiku = core_endings([["聞く", "vd"], ["聞かない", "vn"], ["聞きます", "vm"], ["聞いて", "vt"]], "聞く", lead_drop=1)
+    au = core_endings([["会う", "vd"], ["会わない", "vn"], ["会います", "vm"], ["会って", "vt"]], "会う", lead_drop=1)
+    assert same_table(kaku, kiku, 1.0) and not same_table(kaku, au, 1.0)
+
+
+def test_dakuten_are_not_accents():
+    from build_drills import _plain
+    assert _plain("泳ぐ") == "泳ぐ" and _plain("パン") == "パン" and _plain("λόγος") == "λογοσ"

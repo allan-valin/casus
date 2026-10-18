@@ -53,3 +53,16 @@ def test_a_wikipedia_summary_counts_only_when_it_is_about_the_phrase():
     assert note["text"].startswith("Memento mori (Latin for") and "third sentence" not in note["text"]
     assert wiki_note("ad astra", {"type": "standard", "title": "Astra (company)", "extract": "Astra is a rocket company."}) is None
     assert wiki_note("ad hoc", {"type": "disambiguation", "title": "Ad hoc", "extract": "Ad hoc may refer to:"}) is None
+
+
+def test_jlpt_csv_rows():
+    from build_wordlists import parse_jlpt_csv
+    text = 'expression,reading,meaning,tags,guid\n会う,あう,"to meet, to see",JLPT JLPT_N5,x\nああ,ああ,"Ah!, Oh!",JLPT,y\n'
+    assert parse_jlpt_csv(text, "N5", 0) == [{"w": "会う", "reading": "あう", "en": "to meet, to see", "level": "N5", "rank": 1},
+                                             {"w": "ああ", "en": "Ah!, Oh!", "level": "N5", "rank": 2}]
+
+
+def test_a_japanese_phrase_keeps_its_reading():
+    d = {"word": "猿も木から落ちる", "pos": "proverb", "senses": [{"glosses": ["even monkeys fall from trees"]}],
+         "head_templates": [{"expansion": "猿(さる)も木(き)から落(お)ちる • (saru mo ki kara ochiru)"}]}
+    assert phrase_item(d)["reading"] == "さるもきからおちる"

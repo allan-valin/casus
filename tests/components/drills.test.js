@@ -157,3 +157,28 @@ describe('random word of the same table (Allan, 2026-10-18)', () => {
     expect(btn.title).toMatch(/irregular/i);
   });
 });
+
+describe('Japanese drills (overnight plan 2026-10-19)', () => {
+  const words = [{ w: '会う', reading: 'あう', en: 'to meet', level: 'N5', rank: 1 }, { w: '青', reading: 'あお', en: 'blue', level: 'N5', rank: 2 },
+    { w: '赤', reading: 'あか', en: 'red', level: 'N5', rank: 3 }, { w: '朝', reading: 'あさ', en: 'morning', level: 'N5', rank: 4 },
+    { w: '味', reading: 'あじ', en: 'taste', level: 'N4', rank: 5 }];
+  const loadJa = async (n) => ({ drills: [], frequency: words, phrases: [] }[n] ?? []);
+  it('frequent words come by JLPT level, with romaji from the reading', async () => {
+    const { container } = render(Drills, { lang: getLanguage('ja'), loadData: loadJa, navigate: () => {}, random: () => 0 });
+    await tick2();
+    await fireEvent.click(container.querySelector('.drill-tab[data-drill="words"]'));
+    await tick2();
+    expect([...container.querySelector('select.word-range').options].map((o) => o.value)).toEqual(['N5', 'N4']);
+    const prompt = container.querySelector('.quiz-prompt').textContent.trim();
+    const w = words.find((x) => x.w === prompt);
+    expect(container.querySelector('.prompt-roman').textContent).toBe({ あう: 'au', あお: 'ao', あか: 'aka', あさ: 'asa' }[w.reading]);
+  });
+  it('the conjugation tabs are named for what Japanese conjugates', async () => {
+    const { container } = render(Drills, { lang: getLanguage('ja'), loadData: loadJa, navigate: () => {} });
+    await tick2();
+    const tabs = Object.fromEntries([...container.querySelectorAll('.drill-tab')].map((b) => [b.dataset.drill, b.textContent.trim()]));
+    expect(tabs.letters).toMatch(/kana/i);
+    expect(tabs.nouns).toMatch(/adjective/i);
+    expect(tabs.verbs).toMatch(/verb/i);
+  });
+});

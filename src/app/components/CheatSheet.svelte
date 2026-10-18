@@ -8,16 +8,17 @@
   let { lang, drill, models = [], words = [], phrases = [] } = $props();
   const glossOf = (m) => (typeof m.gloss === 'string' ? m.gloss : (m.gloss?.[ui.lang] ?? m.gloss?.en ?? ''));
   const romanize = lang.script?.romanize ?? null;
+  const hasNames = !!lang.game?.LETTERS?.some((l) => l.names?.length);
 </script>
 
 <div class="cheat">
   <h3>{t('drills.cheatsheet')} · {t(`drills.${drill}`)}</h3>
   {#if drill === 'letters' && lang.game}
     <table>
-      <thead><tr><th>{t('cheat.small')}</th><th>{t('cheat.capital')}</th><th>{t('cheat.name')}</th><th>{t('cheat.sound')}</th></tr></thead>
+      <thead><tr><th>{lang.game.LABELS?.small ?? t('cheat.small')}</th><th>{lang.game.LABELS?.capital ?? t('cheat.capital')}</th>{#if hasNames}<th>{t('cheat.name')}</th>{/if}<th>{t('cheat.sound')}</th></tr></thead>
       <tbody>
         {#each lang.game.LETTERS as l}
-          <tr class="letter"><td class="glyph">{l.lower}</td><td class="glyph">{l.upper}</td><td>{l.names[0]}</td><td>{l.sounds.join(', ')}</td></tr>
+          <tr class="letter"><td class="glyph">{l.lower}</td><td class="glyph">{l.upper}</td>{#if hasNames}<td>{l.names[0]}</td>{/if}<td>{l.sounds.join(', ')}</td></tr>
         {/each}
       </tbody>
     </table>

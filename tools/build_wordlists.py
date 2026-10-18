@@ -21,8 +21,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-DUMPS = {"la": "Latin", "grc": "AncientGreek", "de": "German"}
+DUMPS = {"la": "Latin", "grc": "AncientGreek", "de": "German", "ja": "Japanese"}
 CORE = {"la": "https://dcc.dickinson.edu/latin-core-list1", "grc": "https://dcc.dickinson.edu/greek-core-list"}
+# Japanese: the JLPT N5 and N4 vocabularies (open-anki-jlpt-decks, MIT; after Jonathan Waller's JLPT lists)
+JLPT = [("N5", "https://raw.githubusercontent.com/jamsinclair/open-anki-jlpt-decks/main/src/n5.csv"),
+        ("N4", "https://raw.githubusercontent.com/jamsinclair/open-anki-jlpt-decks/main/src/n4.csv")]
 DE_FREQ = "https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/de/de_50k.txt"
 SKIP_TAGS = {"vulgar", "offensive", "derogatory", "ethnic", "slur"}
 XREF = re.compile(r"^(synonym|alternative (form|spelling)|[\w-]+ form|abbreviation|misspelling|obsolete form|archaic form|initialism|contraction) of\b", re.I)
@@ -31,7 +34,9 @@ XREF = re.compile(r"^(synonym|alternative (form|spelling)|[\w-]+ form|abbreviati
 def phrase_item(d: dict) -> dict | None:
     word = (d.get("word") or "").strip()
     pos = d.get("pos")
-    if " " not in word or pos == "name":
+    japanese = bool(re.search(r"[\u3040-\u30ff\u3400-\u9fff]", word))
+    # a phrase is several words: spaced in most languages; Japanese writes none, so three characters will do
+    if (" " not in word and not (japanese and len(word) >= 3)) or pos == "name":
         return None
     senses = d.get("senses") or []
     tags = {t for s in senses for t in (s.get("tags") or [])}
@@ -56,6 +61,14 @@ def phrase_item(d: dict) -> dict | None:
     if not gloss or gloss.lower().strip(" .!?") == word.lower().strip(" .!?"):
         return None
     item = {"p": word, "kind": kind, "en": gloss[:160]}
+    # Japanese: the reading from the head line's ruby, for furigana and romaji
+    if re.search(r"[\u3040-\u30ff\u3400-\u9fff]", word):
+        from casus_build.ja.parse import furigana
+        heads = d.get("head_templates") or []
+        if heads and heads[0].get("expansion"):
+            reading = "".join(r or t for t, r in furigana(heads[0]["expansion"]))
+            if reading and reading != word and re.fullmatch(r"[\u3040-\u30ff\u30fc\s]+", reading):
+                item["reading"] = reading
     if literal and literal != gloss:
         item["literally"] = literal[:160]
     more = [g[:160] for g in real[1:3] if g != gloss]
@@ -117,6 +130,21 @@ def wiki_notes(phrases: list[dict], cache_path: Path) -> None:
     cache_path.write_text(json.dumps(cache, ensure_ascii=False), encoding="utf-8")
 
 
+def parse_jlpt_csv(text: str, level: str, start: int) -> list[dict]:
+    import csv
+    import io
+    out = []
+    for row in csv.DictReader(io.StringIO(text)):
+        w, r = (row.get("expression") or "").strip(), (row.get("reading") or "").strip()
+        if not w:
+            continue
+        item = {"w": w, "reading": r, "en": (row.get("meaning") or "").strip(), "level": level, "rank": start + len(out) + 1}
+        if not r or r == w:
+            item.pop("reading")
+        out.append(item)
+    return out
+
+
 def parse_core_rows(page: str) -> list[dict]:
     out = []
     for row in re.findall(r"<tr[^>]*>(.*?)</tr>", page, re.S):
@@ -151,7 +179,11 @@ def main(code: str) -> None:
     wiki_notes([p for p in phrases if code != "de" or p["kind"] == "proverb"], out_dir / "wiki.cache.json")
     print(f"{code}: {sum(1 for p in phrases if p.get('wiki'))} phrases with a Wikipedia note")
     (out_dir / "phrases.raw.json").write_text(json.dumps(phrases, ensure_ascii=False), encoding="utf-8")
-    if code in CORE:
+    if code == "ja":
+        freq = []
+        for level, url in JLPT:
+            freq += parse_jlpt_csv(fetch(url), level, len(freq))
+    elif code in CORE:
         freq = parse_core_rows(fetch(CORE[code]))
     else:
         freq = [{"form": w, "n": int(n)} for w, n in (l.split() for l in fetch(DE_FREQ).splitlines()[:8000] if len(l.split()) == 2)]

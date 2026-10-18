@@ -106,8 +106,9 @@
   <span class="group-label">{t('pane.arrange')}</span>
   <button class="restore" title={t('pane.restore.title')} onclick={() => { reader.restoreOrder(); sorted = false; pattern = null; }}>{t('pane.restore')}</button>
   <button class="autosort" title={t('pane.autosort.title')} onclick={() => { reader.autoSort(); sorted = true; pattern = null; }}>{t('pane.autosort')}</button>
-  <span class="group-label order-label" title={t('pane.wordorder.title')}>{t('pane.wordorder')}</span>
-  {#each WORD_ORDERS as p (p)}
+  <!-- the subject/verb/object orders read case and person; a language with no arrangements (Japanese) has none -->
+  {#if (reader.lang?.arrange ?? WORD_ORDERS).length}<span class="group-label order-label" title={t('pane.wordorder.title')}>{t('pane.wordorder')}</span>{/if}
+  {#each (reader.lang?.arrange?.length === 0 ? [] : WORD_ORDERS) as p (p)}
     <button class="word-order" class:active={pattern === p} title={t('pane.wordorder.title')}
             onclick={() => { reader.arrange(p); pattern = p; sorted = false; }}>{p}</button>
   {/each}

@@ -93,6 +93,39 @@ def build_de(src: Path, out: Path) -> dict:
     return manifest
 
 
+def build_ja(src: Path, out: Path) -> dict:
+    from casus_build.ja.codes import CODES_JSON, encode_analysis
+    from casus_build.ja.parse import build_index, parse_entries
+
+    with src.open(encoding="utf-8") as fh:
+        entries = list(parse_entries(fh))
+    index = build_index(entries)
+
+    def rows(analyses):
+        # [lemma, "~reading"?, codes…]: one row per lemma and reading of this spelling
+        groups: dict[tuple, list[str]] = {}
+        for a in analyses:
+            groups.setdefault((a["lemma"], a.get("reading")), []).append(encode_analysis({k: v for k, v in a.items() if k not in ("lemma", "reading")}))
+        return [[lemma, *(["~" + reading] if reading else []), *codes] for (lemma, reading), codes in groups.items()]
+
+    lemmas = {}
+    for e in entries:
+        rec = {"headword": e["headword"], "dict_form": e["headword"] + (f" ({e['reading']})" if e["reading"] and e["reading"] != e["headword"] else ""),
+               "pos": e["pos"], "cls": e["cls"]}
+        lemmas[str(e["id"])] = {k: v for k, v in rec.items() if v is not None}
+    out.mkdir(parents=True, exist_ok=True)
+    # shards by a hash of the first two characters (casus_build/ja/bucket.py): a few hundred files, no long list
+    from casus_build.ja.bucket import bucket
+    manifest = write_assets(index, lemmas, out, rows=rows, key_of=bucket)
+    for name, obj in (("glosses.en.json", {str(e["id"]): e["gloss_en"] for e in entries if e["gloss_en"]}),
+                      ("ipa.json", {str(e["id"]): e["ipa"] for e in entries if e["ipa"]}),
+                      ("government.json", {}), ("codes.json", CODES_JSON)):
+        (out / name).write_text(json.dumps(obj, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    manifest["key"] = "bucket"
+    (out / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8")
+    return manifest
+
+
 def _valency(entries) -> dict:
     from casus_build.de.valency import valency_by_lemma
     return valency_by_lemma({str(e["id"]): {"headword": e["headword"], "pos": e["pos"]} for e in entries})
@@ -151,7 +184,7 @@ def measure(out: Path) -> dict:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("code", choices=["grc", "de"])
+    ap.add_argument("code", choices=["grc", "de", "ja"])
     ap.add_argument("--vendor", default="vendor/wiktextract", type=Path)
     ap.add_argument("--data", default="data", type=Path)
     ap.add_argument("--drop-dialects", action="store_true", help="keep only Attic, Koine and unlabelled tables")
@@ -160,6 +193,8 @@ def main(argv=None) -> int:
     t0 = time.time()
     if args.code == "grc":
         manifest = build_grc(args.vendor / "kaikki.org-dictionary-AncientGreek.jsonl", out, args.drop_dialects)
+    elif args.code == "ja":
+        manifest = build_ja(args.vendor / "kaikki.org-dictionary-Japanese.jsonl", out)
     else:
         manifest = build_de(args.vendor / "kaikki.org-dictionary-German.jsonl", out)
     m = measure(out)

@@ -29,7 +29,7 @@
   const word = (s) => (t(`para.${s}`) === `para.${s}` ? s : t(`para.${s}`));
   const label = (s) => s.split(' · ').map(word).join(' · ');
   const colName = (c) => c.split(' ').map(word).join(' ');
-  const rowName = (r) => (table?.rowsBy === 'case' ? caseName(r) : t(`para.p${r}`));
+  const rowName = (r) => (table?.rowsBy === 'case' ? caseName(r) : table?.rowsBy === 'jform' ? t(`para.ja.${r}`) : t(`para.p${r}`));
 
   function start() {
     if (!table) { grid = null; cells = []; return; }

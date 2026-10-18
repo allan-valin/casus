@@ -63,7 +63,12 @@ function toAnalyses(entry, codes = LATIN_CODES) {
   for (const row of entry) {
     if (Array.isArray(row)) {
       const lemma = String(row[0]);
-      for (let i = 1; i < row.length; i += 1) out.push(decodeAnalysis(row[i], lemma, codes));
+      // Japanese: a "~reading" after the lemma is the kana reading of this spelling (食べました: たべました)
+      const reading = typeof row[1] === 'string' && row[1].startsWith('~') ? row[1].slice(1) : null;
+      for (let i = reading ? 2 : 1; i < row.length; i += 1) {
+        const a = decodeAnalysis(row[i], lemma, codes);
+        out.push(reading ? { ...a, reading } : a);
+      }
     } else {
       out.push(row);
     }
