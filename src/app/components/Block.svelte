@@ -29,7 +29,7 @@
      onclick={() => onopen(block)}
      onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onopen(block); } }}>
   <sup class="index">{block.token.index + 1}</sup>
-  <span class="word-stack">{#if article}<span class="article" title={t('block.article')}>{article}</span>{/if}{#if supplied.length}<span class="reading supplied" title={`${t('block.supplied')}: ${supplied.map(displayForm).join(' / ')}`}>{suppliedLabel(supplied)}</span>{/if}<span class="surface">{block.token.surface}</span></span>
+  <span class="word-stack">{#if article}<span class="article" title={t('block.article')}>{article}</span>{/if}{#if supplied.length}<span class="reading supplied" title={`${t('block.supplied')}: ${supplied.map(displayForm).join(' / ')}`}>{suppliedLabel(supplied)}</span>{/if}<span class="surface">{#if block.parts}{#each block.parts as part, k}<span class="root" class:root-b={k % 2 === 1} title={t('block.compound')}>{part}</span>{/each}{:else}{block.token.surface}{/if}</span></span>
   <span class="badge" style:color={style.ambiguous || style.unknown ? '#555' : style.border}>{style.badge}</span>
   {#if style.dots.length}<span class="dots" aria-label="possible cases">{#each style.dots as d}<i class="dot" style:background={d}></i>{/each}</span>{/if}
   {#if layers.classes && oneLemma && lemmaOf}
@@ -47,6 +47,8 @@
   .index { font-size: 0.6em; opacity: 0.7; }
   .trail { font-family: Georgia, serif; font-size: 1.3em; font-weight: 700; color: var(--ink); margin-left: 2px; align-self: flex-end; }
   .word-stack { display: inline-flex; flex-direction: column; align-items: center; line-height: 1.15; }
+  .root { color: var(--ink); }
+  .root-b { color: #6b4e9b; }
   .article { font-size: 0.72em; font-weight: 600; color: var(--ink-2); letter-spacing: 0.02em; }
   .reading { font-size: 0.82em; font-weight: 600; letter-spacing: 0.02em; }
   .reading.supplied { color: #6b4e9b; border-bottom: 1px dotted currentColor; }

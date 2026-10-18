@@ -83,12 +83,30 @@ def build_de(src: Path, out: Path) -> dict:
     for name, obj in (("glosses.en.json", {str(e["id"]): e["gloss_en"] for e in entries if e["gloss_en"]}),
                       ("ipa.json", {str(e["id"]): e["ipa"] for e in entries if e["ipa"]}),
                       ("government.json", GOVERNMENT), ("codes.json", CODES_JSON),
+                      ("compounds.json", _compounds(entries)),
                       ("expressions.json", build_expressions([*phrase_entries(src.open(encoding="utf-8")), *(e for e in entries if e["pos"] == "verb" and " " not in e["headword"])]))):
         (out / name).write_text(json.dumps(obj, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     manifest["key"] = "lower"
     manifest["expressions"] = True           # shard names come from the lower-cased form
     (out / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8")
     return manifest
+
+
+def _compounds(entries) -> dict:
+    """lemma id -> lengths of the headword's roots (Muttersprache -> [6, 7]), German nouns of 7+ letters."""
+    from casus_build.de.compounds import split_compound
+    nouns = {e["headword"].lower() for e in entries if e["pos"] == "noun" and " " not in e["headword"]}
+    other = {e["headword"].lower() for e in entries if e["pos"] in ("adj", "adv", "num") and " " not in e["headword"]}
+    other |= {e["headword"].lower()[:-2] for e in entries if e["pos"] == "verb" and e["headword"].endswith("en")}
+    out = {}
+    for e in entries:
+        w = e["headword"]
+        if e["pos"] != "noun" or " " in w or "-" in w or len(w) < 7:
+            continue
+        split = split_compound(w, nouns - {w.lower()}, other)
+        if split:
+            out[str(e["id"])] = [len(x) for x in split]
+    return out
 
 
 _DIALECTS = ("Epic", "Ionic", "Doric", "Aeolic", "Laconian", "Boeotian", "Cretan", "Arcadocypriot", "Cypriot",

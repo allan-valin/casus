@@ -155,7 +155,7 @@ syntax model of design §8).
 | CL11a | sein, werden, bleiben take no accusative: their ungoverned noun phrases are not accusative (*Es war einmal eine Dirne*). | done |
 | NP9 | Phrases joined by *und/oder* share their case (*Die deutsche Sprache oder Deutsch*). | done |
 | RNG | *bis* between two numbers is a range, not a preposition. | done |
-| CMP | **Compounds** (Allan): a compound noun is split into its dictionary roots (with linking -s-, -es-, -n-, -en-, -er-) and each root is drawn in its own ink inside the block. | next |
+| CMP | **Compounds** (Allan): a compound noun is split into its dictionary roots (with linking -s-, -es-, -n-, -en-, -er-) and each root is drawn in its own ink inside the block. | done |
 
 ### Order of the cascade (German)
 
