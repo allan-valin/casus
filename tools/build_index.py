@@ -70,6 +70,13 @@ def main(argv=None) -> int:
     biggest = sorted(manifest["shards"].items(), key=lambda kv: -kv[1]["bytes"])[:5]
     for name, s in biggest:
         print(f"  {name}: {s['forms']} forms, {s['bytes'] / 1e6:.1f} MB")
+    # the Portuguese layer, when its extract has been fetched (tools/fetch_glosses_pt.sh)
+    from build_glosses_pt import DEFAULT_SRC, build as build_pt
+    if DEFAULT_SRC.exists():
+        n, overall, common = build_pt(DEFAULT_SRC, args.out)
+        print(f"glosses.pt.json: {n} records, {overall:.1%} of all, {common:.1%} of the frequent (A–C)")
+    else:
+        print("no Portuguese extract (vendor/ptwiktionary): glosses.pt.json not built")
     return 0
 
 

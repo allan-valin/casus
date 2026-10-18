@@ -224,3 +224,13 @@ lemmas tagged frequency `A`–`C` carry only **34%** of the analyses, and 784,68
 the 1,204,524 forms exist only through a rare lemma (`D`–`F`, `I`, `N`). The spec
 (§8) wants rarity shown, not hidden, so that is a flag for a lighter build, not
 the default.
+
+### Portuguese glosses (Task 8, built 2026-10-18)
+
+Source: pt.wiktionary via Wiktextract (kaikki.org `ptwiktionary/Latim/`), 3,952 Latin entries,
+2.6 MB JSONL. Join on normalised headword + part of speech against every lemma record with that
+headword; senses joined with `; `. Result `data/glosses.pt.json`, 91 KB: **1,741 records glossed,
+4.6% of all, 12.3% of the frequent (A–C)**. So the Portuguese layer is a convenience, not a
+headline (spec §12 Q3). Richer coverage would need the Portuguese *translations* of English
+Wiktionary's Latin entries (kaikki `dictionary/Latin/`, English edition) as a second source —
+noted, not built.
