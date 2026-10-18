@@ -177,7 +177,7 @@
 
   <section class="card">
     <h2><span class="step">1</span> {t('text.heading')}</h2>
-    <PassagePicker {samples} onchoose={choose} {fetchImpl} samplesPath={lang.samplesPath} />
+    <PassagePicker {samples} onchoose={choose} {fetchImpl} samplesPath={lang.samplesPath} onerror={(error) => say('act.uploadFailed', { error }, 'err')} />
     <p class="status" aria-live="polite">{t(status.key, status.vars)}</p>
   </section>
 

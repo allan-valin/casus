@@ -36,6 +36,19 @@ describe('PassagePicker', () => {
   });
 });
 
+describe('PassagePicker upload (Allan, 2026-10-18)', () => {
+  it('offers a .txt/.md file picker and reads the chosen file as the text', async () => {
+    const onchoose = vi.fn();
+    const { container } = render(PassagePicker, { samples, onchoose, fetchImpl, samplesPath: '/samples/la' });
+    const input = container.querySelector('input[type=file]');
+    expect(input.getAttribute('accept')).toBe('.txt,.md,text/plain,text/markdown');
+    const file = new File(['Rosa bona.\r\n'], 'r.txt', { type: 'text/plain' });
+    Object.defineProperty(input, 'files', { value: [file] });
+    await fireEvent.change(input);
+    await vi.waitFor(() => expect(onchoose).toHaveBeenCalledWith('Rosa bona.', null));
+  });
+});
+
 describe('LayerToggles', () => {
   it('flips the reader layers', async () => {
     const reader = createReader({ lexicon, text: 'Rosa.' });
