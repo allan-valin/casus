@@ -1,9 +1,8 @@
 <script>
   import Candidates from './Candidates.svelte';
+  import Overlay from './Overlay.svelte';
   import { eraStatus, warning, AGE_LABEL } from '../lib/era.js';
   let { block, reader, onclose } = $props();
-  let dialog = $state(null);
-  $effect(() => { dialog?.focus(); });
 
   const ORDINAL = { 1: '1st', 2: '2nd', 3: '3rd', 4: '4th', 5: '5th' };
   const lemmaIds = $derived([...new Set(block.candidates.map((c) => String(c.analysis.lemma)))]);
@@ -30,46 +29,49 @@
   }
 </script>
 
-<div class="dictionary" role="dialog" aria-label="dictionary" tabindex="-1" bind:this={dialog}
-     onkeydown={(e) => { if (e.key === 'Escape') onclose(); }}>
-  <button class="close" onclick={onclose} aria-label="close">×</button>
-  <h3>{block.token.surface}</h3>
-  {#if block.candidates.length === 0}
-    <p class="none">not in lexicon</p>
-  {:else if !extras.lemmas}
-    <p class="loading">loading the lemma table…</p>
-  {:else}
-    {#each lemmaIds as id (id)}
-      {@const r = extras.lemmas[id]}
-      {#if r}
-        {@const status = eraStatus(r.age, reader.era)}
-        {@const g = gloss(id)}
-        <div class="entry" class:dim-near={status === 'near'} class:dim-out={status === 'out'}>
-          <div class="form">{r.dict_form ?? r.headword}</div>
-          <div class="class">{classLine(r)}</div>
-          <div class="gloss">{g.text} <span class="gloss-lang">{g.lang}</span></div>
-          <div class="meta">age: {AGE_LABEL[r.age] ?? r.age} · freq {r.freq}</div>
-          {#if warning(r.age, reader.era)}<div class="warning">{warning(r.age, reader.era)}</div>{/if}
-        </div>
-      {:else}
-        <div class="entry"><div class="form">lemma {id}</div><div class="meta">no record</div></div>
-      {/if}
-    {/each}
-  {/if}
-  <Candidates {block} {reader} />
-</div>
+<Overlay {onclose} label="dictionary" panelClass="dictionary">
+  <div class="body">
+    <h3>{block.token.surface}</h3>
+    {#if block.candidates.length === 0}
+      <p class="none">not in the dictionary — Whitaker's lexicon is thin on proper names</p>
+    {:else if !extras.lemmas}
+      <p class="loading">loading the lemma table…</p>
+    {:else}
+      <h4>Dictionary</h4>
+      {#each lemmaIds as id (id)}
+        {@const r = extras.lemmas[id]}
+        {#if r}
+          {@const status = eraStatus(r.age, reader.era)}
+          {@const g = gloss(id)}
+          <div class="entry" class:dim-near={status === 'near'} class:dim-out={status === 'out'}>
+            <div class="form">{r.dict_form ?? r.headword}</div>
+            <div class="class">{classLine(r)}</div>
+            <div class="gloss">{g.text} <span class="gloss-lang" title="language of this gloss">{g.lang}</span></div>
+            <div class="meta">age: {AGE_LABEL[r.age] ?? r.age} · freq {r.freq}</div>
+            {#if warning(r.age, reader.era)}<div class="warning">{warning(r.age, reader.era)}</div>{/if}
+          </div>
+        {:else}
+          <div class="entry"><div class="form">lemma {id}</div><div class="meta">no record</div></div>
+        {/if}
+      {/each}
+    {/if}
+    {#if block.candidates.length > 0}
+      <h4>Possible readings <span class="sub">— each with the reason it survived. Pin the one you believe; the rest of the sentence re-reads.</span></h4>
+    {/if}
+    <Candidates {block} {reader} />
+  </div>
+</Overlay>
 
 <style>
-  .dictionary:focus { outline: none; }
-  .dictionary { position: relative; border: 1px solid #999; border-radius: 8px; padding: 12px 14px; background: #fff; max-width: 420px; box-shadow: 0 4px 16px rgba(0,0,0,.15); margin-top: 12px; }
-  .close { position: absolute; top: 6px; right: 8px; border: 0; background: none; font-size: 1.2em; cursor: pointer; }
-  h3 { margin: 0 0 8px; font-family: Georgia, serif; }
+  h3 { margin: 0 0 8px; font-family: Georgia, serif; font-size: 1.4rem; }
+  h4 { margin: 12px 0 4px; font-size: 0.85rem; color: var(--ink-2); text-transform: uppercase; letter-spacing: 0.04em; }
+  .sub { text-transform: none; letter-spacing: 0; font-weight: 400; color: var(--muted); }
   .entry { padding: 6px 0; }
   .dim-near { opacity: 0.75; }
   .dim-out { opacity: 0.45; }
   .form { font-weight: 700; }
-  .class, .meta { font-size: 0.85em; color: #555; }
-  .gloss-lang { font-size: 0.7em; border: 1px solid #999; border-radius: 3px; padding: 0 3px; margin-left: 4px; }
+  .class, .meta { font-size: 0.85em; color: var(--ink-2); }
+  .gloss-lang { font-size: 0.7em; border: 1px solid var(--muted); border-radius: 3px; padding: 0 3px; margin-left: 4px; color: var(--ink-2); }
   .warning { color: #a33; font-size: 0.85em; }
   .none, .loading { color: #666; font-style: italic; }
 </style>

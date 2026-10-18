@@ -82,6 +82,29 @@ describe('App, dictionary and unload', () => {
     expect(container.querySelector('.dictionary')).toBe(null);
   });
 
+  it('closes the dictionary when the same block is clicked again (feedback D15)', async () => {
+    const { container } = render(App, { fetchImpl, storage: storage(), ...immediate });
+    await tick(); await tick();
+    await readPasted(container, 'Rosa bona.');
+    await fireEvent.click(container.querySelector('.pill'));
+    await tick();
+    expect(container.querySelector('.dictionary')).not.toBe(null);
+    await fireEvent.click(container.querySelector('.pill'));
+    await tick();
+    expect(container.querySelector('.dictionary')).toBe(null);
+  });
+
+  it('closes the dictionary from its backdrop', async () => {
+    const { container } = render(App, { fetchImpl, storage: storage(), ...immediate });
+    await tick(); await tick();
+    await readPasted(container, 'Rosa bona.');
+    await fireEvent.click(container.querySelector('.pill'));
+    await tick();
+    await fireEvent.click(container.querySelector('.overlay'));
+    await tick();
+    expect(container.querySelector('.dictionary')).toBe(null);
+  });
+
   it('flushes a pending autosave on pagehide', async () => {
     const s = storage();
     const never = { schedule: () => 42, cancel: () => {} };   // the debounce never fires
@@ -121,5 +144,31 @@ describe('App passage switching', () => {
     release();
     for (let i = 0; i < 5; i += 1) await tick();
     expect(container.querySelector('.pill .surface').textContent).toBe('Bona');
+  });
+});
+
+describe('App page furniture (feedback D8, D14, D20)', () => {
+  it('names its sections, explains the blocks, and has a help overlay listing every resource', async () => {
+    const { container } = render(App, { fetchImpl, storage: storage(), ...immediate });
+    await tick(); await tick();
+    expect(container.querySelector('button.help-button')).not.toBe(null);
+    await fireEvent.click(container.querySelector('button.help-button'));
+    await tick();
+    const help = container.querySelector('.help');
+    expect(help.textContent).toMatch(/Whitaker/);
+    expect(help.textContent).toMatch(/Wiktionary/);
+    expect(help.textContent).toMatch(/svelte-dnd-action/);
+    expect(help.textContent).toMatch(/drag/i);
+    await fireEvent.click(container.querySelector('.overlay'));
+    await tick();
+    expect(container.querySelector('.help')).toBe(null);
+    await readPasted(container, 'Rosa bona.');
+    const headings = [...container.querySelectorAll('h2')].map((h) => h.textContent);
+    expect(headings.some((h) => /text/i.test(h))).toBe(true);
+    expect(headings.some((h) => /sentence/i.test(h))).toBe(true);
+    expect(headings.some((h) => /block/i.test(h))).toBe(true);
+    expect(container.querySelector('.hint').textContent).toMatch(/click|drag/i);
+    expect(container.querySelector('button.export-json').title).toMatch(/download/i);
+    expect(container.querySelector('.legend')).not.toBe(null);
   });
 });

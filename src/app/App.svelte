@@ -2,14 +2,19 @@
   import { createLexicon } from '../lib/lexicon.js';
   import { makeFetchShard, loadManifest } from './lib/fetchers.js';
   import { withBase } from './lib/paths.js';
-  const DATA = withBase('/data');
   import { createReader } from './stores/reader.svelte.js';
   import { textHash, createAutosave, restore } from './lib/persist.js';
+  import { toJSON, toMarkdown } from './lib/exporters.js';
   import TextPane from './components/TextPane.svelte';
   import BlockPane from './components/BlockPane.svelte';
   import Dictionary from './components/Dictionary.svelte';
   import Toolbar from './components/Toolbar.svelte';
+  import LayerToggles from './components/LayerToggles.svelte';
+  import Legend from './components/Legend.svelte';
+  import Help from './components/Help.svelte';
   import PassagePicker from './components/PassagePicker.svelte';
+
+  const DATA = withBase('/data');
 
   // injected for tests; the browser gets the real ones
   function defaultStorage() {
@@ -29,13 +34,15 @@
   let autosave = null;
   let hovered = $state(null);
   let open = $state(null);          // the block whose dictionary is open
+  let help = $state(false);
+  let legendOpen = $state(typeof window === 'undefined' || window.innerWidth > 700);   // folded on a phone, open on a monitor
   let generation = 0;               // choose() calls; a slower, older load must not win
 
   $effect(() => {
     loadManifest(fetchImpl, DATA)
       .then((manifest) => {
         lexicon = createLexicon({ fetchShard: makeFetchShard(fetchImpl, DATA), manifest });
-        status = `lexicon ready: ${Object.keys(manifest.shards).length} shards, built ${manifest.built}`;
+        status = `dictionary ready: ${manifest.lemmas?.toLocaleString?.() ?? ''} entries, ${Object.keys(manifest.shards).length} shards, built ${manifest.built}`;
       })
       .catch((e) => { status = `no lexicon: ${e.message} — run python3 tools/build_index.py`; });
     fetchImpl(withBase('/samples/index.json')).then((r) => (r.ok ? r.json() : [])).then((list) => { samples = list; }).catch(() => {});
@@ -58,6 +65,11 @@
     r.loadExtras(fetchImpl, DATA).catch(() => {});
   }
 
+  // the same block clicked again closes its dictionary (feedback D15)
+  function toggleOpen(b) {
+    open = open && open.token.index === b.token.index ? null : b;
+  }
+
   // every change is written, debounced; the guard is only armed while a write is pending (§9)
   $effect(() => {
     if (!reader || !autosave) return;
@@ -78,7 +90,8 @@
     return () => { window.removeEventListener('pagehide', flush); window.removeEventListener('beforeunload', guard); };
   });
 
-  function download(kind, text) {
+  function download(kind) {
+    const text = kind === 'json' ? toJSON(reader) : toMarkdown(reader);
     const blob = new Blob([text], { type: kind === 'json' ? 'application/json' : 'text/markdown' });
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
@@ -92,30 +105,87 @@
 </script>
 
 <main>
-  <header>
-    <h1>Casus</h1>
-    <p class="status">{status}</p>
-    <PassagePicker {samples} onchoose={choose} {fetchImpl} />
+  <header class="top">
+    <div class="brand">
+      <h1>Casus</h1>
+      <p class="tagline">A reader for classical Latin: the words of a sentence become blocks coloured by case, so what agrees with what is seen, not deduced.</p>
+    </div>
+    <div class="corner">
+      <div class="exports" aria-label="export">
+        <span class="exports-label">Export this reading</span>
+        <button class="export-json" disabled={!reader} title="Download a JSON file with the text, your arrangement and your pins (reloadable, machine-readable)" onclick={() => download('json')}>JSON</button>
+        <button class="export-md" disabled={!reader} title="Download a Markdown file of the text with each word's case, to read elsewhere" onclick={() => download('md')}>Markdown</button>
+      </div>
+      <button class="help-button" title="What is on this screen, how to use it, and the dictionaries behind it" aria-label="help" onclick={() => (help = true)}>?</button>
+    </div>
   </header>
 
+  <section class="card">
+    <h2><span class="step">1</span> Text</h2>
+    <PassagePicker {samples} onchoose={choose} {fetchImpl} />
+    <p class="status" aria-live="polite">{status}</p>
+  </section>
+
   {#if reader}
-    <Toolbar {reader} onexport={download} />
-    <div class="panes">
-      <section class="left"><TextPane {reader} {hovered} /></section>
-      <section class="right">
-        <BlockPane {reader} onhover={(i) => (hovered = i)} onopen={(b) => (open = b)} {lemmaOf} />
-        {#if openBlock}
-          <Dictionary block={openBlock} {reader} onclose={() => (open = null)} />
-        {/if}
-      </section>
-    </div>
+    <section class="card">
+      <h2><span class="step">2</span> Sentences <span class="hint-inline">— click a sentence to work on it; the current one is highlighted</span></h2>
+      <TextPane {reader} {hovered} />
+    </section>
+
+    <section class="card blocks">
+      <h2><span class="step">3</span> Grammar blocks of sentence {reader.selected + 1}</h2>
+      <p class="hint">Each block is a word of the sentence, coloured by its case. <b>Click</b> a block for its dictionary entry and possible readings; <b>drag</b> it to regroup the sentence by hand. Hover a word to light the words that agree with it.</p>
+      <div class="block-controls">
+        <LayerToggles {reader} />
+      </div>
+      <BlockPane {reader} onhover={(i) => (hovered = i)} onopen={toggleOpen} {lemmaOf} />
+      <details class="legend-box" bind:open={legendOpen}>
+        <summary>Legend — what the colours, borders and badges mean</summary>
+        <Legend />
+      </details>
+    </section>
+
+    <section class="card">
+      <h2><span class="step">4</span> Dictionary settings</h2>
+      <Toolbar {reader} />
+    </section>
+
+    {#if openBlock}
+      <Dictionary block={openBlock} {reader} onclose={() => (open = null)} />
+    {/if}
   {/if}
+
+  {#if help}
+    <Help onclose={() => (help = false)} />
+  {/if}
+
+  <footer>
+    <span>Casus · open source (AGPL-3.0) · dictionary: Whitaker's WORDS · press <b>?</b> for how it works and every resource used</span>
+  </footer>
 </main>
 
 <style>
-  main { font-family: system-ui, sans-serif; max-width: 1280px; margin: 0 auto; padding: 16px; }
-  h1 { margin: 0 0 4px; font-family: Georgia, serif; }
-  .status { color: #666; font-size: 0.85em; margin: 0 0 8px; }
-  .panes { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 12px; }
-  .left { border-right: 1px solid #ddd; padding-right: 16px; }
+  main { width: min(1500px, 100% - 2 * var(--gutter)); margin: 0 auto; padding: clamp(10px, 2vw, 24px) 0 40px; display: flex; flex-direction: column; gap: clamp(12px, 1.8vw, 22px); }
+  .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
+  h1 { margin: 0; font-family: Georgia, serif; font-size: clamp(1.7rem, 1.4rem + 1.2vw, 2.4rem); letter-spacing: 0.01em; }
+  .tagline { margin: 4px 0 0; color: var(--ink-2); max-width: 60ch; }
+  .corner { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .exports { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .exports-label { color: var(--ink-2); font-size: 0.85rem; margin-right: 2px; }
+  .help-button { width: 40px; height: 40px; border-radius: 50%; font-weight: 700; font-size: 1.1rem; padding: 0; background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: clamp(12px, 1.6vw, 22px) clamp(12px, 2vw, 26px); box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+  h2 { margin: 0 0 12px; font-size: clamp(1.05rem, 1rem + 0.3vw, 1.3rem); display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .step { display: inline-flex; width: 1.6em; height: 1.6em; align-items: center; justify-content: center; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font-size: 0.8em; font-weight: 700; align-self: center; }
+  .hint-inline { font-size: 0.8em; font-weight: 400; color: var(--muted); }
+  .hint { margin: -4px 0 12px; color: var(--ink-2); font-size: 0.92rem; line-height: 1.5; }
+  .status { color: var(--muted); font-size: 0.82rem; margin: 10px 0 0; }
+  .block-controls { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
+  .legend-box { margin-top: 14px; }
+  .legend-box summary { cursor: pointer; color: var(--ink-2); font-weight: 600; font-size: 0.92rem; padding: 4px 0; }
+  .legend-box :global(.legend) { margin-top: 8px; }
+  footer { color: var(--muted); font-size: 0.8rem; text-align: center; padding-top: 8px; }
+  @media (max-width: 640px) {
+    .top { flex-direction: column; }
+    .corner { width: 100%; justify-content: space-between; }
+  }
 </style>

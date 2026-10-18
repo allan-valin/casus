@@ -47,11 +47,12 @@ describe('Block', () => {
     expect(container.querySelector('.pill').classList.contains('striped')).toBe(false);
   });
 
-  it('stripes an ambiguous block and marks a pinned one', () => {
+  it('marks an ambiguous block white with dots, and a pinned one', () => {
     const b = block([cand('nom'), cand('abl')], { pinned: { pos: 'noun', case: 'nom' } });
     const { container } = render(Block, { block: b, layers: ALL, onhover: () => {}, onopen: () => {} });
     const pill = container.querySelector('.pill');
-    expect(pill.classList.contains('striped')).toBe(true);
+    expect(pill.classList.contains('ambiguous')).toBe(true);
+    expect(container.querySelectorAll('.dot')).toHaveLength(2);
     expect(pill.classList.contains('pinned')).toBe(true);
     expect(container.querySelector('.badge').textContent).toBe('?');
   });

@@ -7,6 +7,11 @@ describe('era', () => {
     expect(ERAS.find((e) => e.id === 'classical').ages).toEqual(['C']);
     expect(ERAS.flatMap((e) => e.ages).sort()).toEqual(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']);
   });
+  it('names each period with dates and example authors, for readers outside classics (feedback D13)', () => {
+    for (const e of ERAS) { expect(e.label).toMatch(/\d/); expect(e.authors.length).toBeGreaterThan(3); }
+    expect(ERAS.find((e) => e.id === 'classical').label).toMatch(/Classical Latin/);
+    expect(ERAS.find((e) => e.id === 'classical').authors).toMatch(/Cicero/);
+  });
   it('an unknown age is never dimmed', () => {
     expect(eraStatus('X', 'classical')).toBe('unknown');
   });

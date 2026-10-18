@@ -1,9 +1,9 @@
 <script>
   /*
-   * The left pane: the source text, read-only, never reordered (spec §6).
-   * The selected sentence is rendered from the reader's blocks and their
-   * offsets, so the words carry the same indices as the pills on the right
-   * and the punctuation between them is the original text, untouched.
+   * The source text, read-only, never reordered (spec §6). Each sentence is a bordered,
+   * clickable box (feedback D11). The selected sentence is rendered from the reader's blocks
+   * and their offsets, so the words carry the same indices as the pills and the punctuation
+   * between them is the original text, untouched.
    */
   let { reader, hovered = null } = $props();
 
@@ -23,8 +23,8 @@
 
 <div class="text">
   {#each reader.sentences as sentence, i (sentence.start)}
-    <span class="sentence" class:dimmed={i !== reader.selected} data-index={i}
-          role="button" tabindex="0"
+    <span class="sentence" class:dimmed={i !== reader.selected} class:current={i === reader.selected} data-index={i}
+          role="button" tabindex="0" title={i === reader.selected ? 'this sentence is on the blocks below' : 'click to work on this sentence'}
           onclick={() => reader.select(i)}
           onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); reader.select(i); } }}>
       {#if i === reader.selected}
@@ -40,8 +40,11 @@
 </div>
 
 <style>
-  .text { line-height: 1.8; font-size: 1.1rem; font-family: Georgia, serif; }
-  .sentence { cursor: pointer; border-radius: 4px; padding: 0 2px; }
-  .dimmed { opacity: 0.4; }
+  .text { counter-reset: sentence; line-height: 2; font-size: var(--text-size); font-family: Georgia, serif; }
+  .sentence { cursor: pointer; border: 1.5px solid var(--line); border-radius: 6px; padding: 2px 6px; margin: 2px 0; display: inline; box-decoration-break: clone; -webkit-box-decoration-break: clone; background: var(--panel); }
+  .sentence:hover { border-color: var(--accent); }
+  .current { border-color: var(--accent); border-width: 2px; background: var(--panel-hi); }
+  .dimmed { opacity: 0.6; }
+  .sentence::before { counter-increment: sentence; content: counter(sentence); font-size: 0.6em; color: var(--muted); margin-right: 4px; vertical-align: super; }
   .hot { background: #ffe58a; border-radius: 3px; }
 </style>

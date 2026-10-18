@@ -1,0 +1,25 @@
+/* Design tokens: a warm paper palette, deliberately not Desembarque's colours (feedback D19).
+ * Everything scales with the viewport (feedback A2 addendum): type via clamp(), widths fluid. */
+:root {
+  --bg: #f4f1ea;
+  --panel: #fffdf8;
+  --panel-hi: #fff8e6;
+  --ink: #1d1d1b;
+  --ink-2: #4a4843;
+  --muted: #7a776f;
+  --line: #d4cfc3;
+  --line-soft: #e8e4da;
+  --accent: #6b4e9b;
+  --accent-ink: #fff;
+  --text-size: clamp(1.02rem, 0.9rem + 0.45vw, 1.3rem);
+  --pill-size: clamp(0.98rem, 0.86rem + 0.4vw, 1.2rem);
+  --gutter: clamp(12px, 2.5vw, 40px);
+}
+html { background: var(--bg); }
+body { margin: 0; color: var(--ink); font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: clamp(15px, 14px + 0.25vw, 17px); -webkit-text-size-adjust: 100%; }
+button { font: inherit; padding: 6px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); cursor: pointer; min-height: 36px; }
+button:hover { border-color: var(--accent); }
+button:disabled { opacity: 0.5; cursor: default; }
+button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; padding: 8px 18px; }
+button.primary:hover { filter: brightness(1.08); }
+select { font: inherit; padding: 5px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); min-height: 36px; }

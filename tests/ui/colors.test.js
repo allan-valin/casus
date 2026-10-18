@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { CASE_HUES, badge, family, blockStyle } from '../../src/app/lib/colors.js';
+import { CASE_COLORS, VERB_COLOR, FUNCTION_COLOR, NEUTRAL_COLOR, LEGEND, badge, family, blockStyle } from '../../src/app/lib/colors.js';
 
 const ALL = { nominal: true, verb: true, function: true, classes: false };
 const noun = (c, n = 'sg') => ({ lemma: '1', pos: 'noun', case: c, number: n, gender: 'f' });
@@ -32,45 +32,78 @@ describe('family', () => {
 });
 
 describe('blockStyle', () => {
-  it('gives a resolved nominative a solid nominative hue', () => {
+  it('uses six Okabe–Ito hues for the cases, validated colour-blind-safe pairwise (docs/FEEDBACK-2026-10-18.md B5)', () => {
+    const six = ['nom', 'gen', 'dat', 'acc', 'abl', 'voc'].map((c) => CASE_COLORS[c]);
+    expect(new Set(six).size).toBe(6);
+    expect(CASE_COLORS.loc).toBe(CASE_COLORS.abl);      // the locative is rare and historically merged into the ablative
+  });
+  it('gives a resolved nominative a solid nominative border, a tinted fill and the badge', () => {
     const s = blockStyle(block([cand(noun('nom'))]), ALL);
-    expect(s.striped).toBe(false);
-    expect(s.background).toContain(`hsl(${CASE_HUES.nom}`);
+    expect(s.ambiguous).toBe(false);
+    expect(s.border).toBe(CASE_COLORS.nom);
+    expect(s.borderStyle).toBe('solid');
+    expect(s.fill).not.toBe('#fff');
     expect(s.badge).toBe('Nm');
+    expect(s.dots).toEqual([]);
   });
-  it('dims the plural', () => {
-    const sg = blockStyle(block([cand(noun('nom', 'sg'))]), ALL).background;
-    const pl = blockStyle(block([cand(noun('nom', 'pl'))]), ALL).background;
-    expect(sg).not.toBe(pl);
-    expect(Number(/(\d+)%\)$/.exec(pl)[1])).toBeGreaterThan(Number(/(\d+)%\)$/.exec(sg)[1]));
+  it('shows the plural with a paler fill and a dashed border, so number never rides on colour alone', () => {
+    const sg = blockStyle(block([cand(noun('nom', 'sg'))]), ALL);
+    const pl = blockStyle(block([cand(noun('nom', 'pl'))]), ALL);
+    expect(sg.fill).not.toBe(pl.fill);
+    expect(pl.borderStyle).toBe('dashed');
+    expect(pl.border).toBe(sg.border);
   });
-  it('stripes an ambiguous block in every candidate hue and badges it ?', () => {
+  it('marks the locative with a double border on the ablative hue', () => {
+    const s = blockStyle(block([cand(noun('loc'))]), ALL);
+    expect(s.borderStyle).toBe('double');
+    expect(s.badge).toBe('Lc');
+  });
+  it('never blends colours: an ambiguous block is white with a ? and one dot per candidate case', () => {
     const s = blockStyle(block([cand(noun('nom')), cand(noun('abl'))]), ALL);
-    expect(s.striped).toBe(true);
-    expect(s.background).toContain('repeating-linear-gradient');
-    expect(s.background).toContain(`hsl(${CASE_HUES.nom}`);
-    expect(s.background).toContain(`hsl(${CASE_HUES.abl}`);
+    expect(s.ambiguous).toBe(true);
+    expect(s.fill).toBe('#fff');
     expect(s.badge).toBe('?');
+    expect(s.dots).toEqual([CASE_COLORS.nom, CASE_COLORS.abl]);
   });
-  it('collapses duplicate hues: two nominative readings of different lemmas are one stripe', () => {
+  it('collapses duplicate hues: two nominative readings of different lemmas are not ambiguous', () => {
     const s = blockStyle(block([cand(noun('nom')), cand({ ...noun('nom'), lemma: '2' })]), ALL);
-    expect(s.striped).toBe(false);
+    expect(s.ambiguous).toBe(false);
   });
-  it('tints a preposition with the case it governs, striped when it governs two', () => {
+  it('tints a preposition with the case it governs; two governed cases make it ambiguous', () => {
     const solid = blockStyle(block([cand({ pos: 'prep', governs: ['abl'] })]), ALL);
-    expect(solid.background).toContain(`hsl(${CASE_HUES.abl}`);
+    expect(solid.border).toBe(CASE_COLORS.abl);
     const both = blockStyle(block([cand({ pos: 'prep', governs: ['acc', 'abl'] })]), ALL);
-    expect(both.striped).toBe(true);
+    expect(both.ambiguous).toBe(true);
+    expect(both.dots).toHaveLength(2);
+  });
+  it('gives a verb the verb ink and a function word the function ink, both without a case hue', () => {
+    const v = blockStyle(block([cand({ pos: 'verb', person: '3', number: 'sg', tense: 'pres' })]), ALL);
+    expect(v.border).toBe(VERB_COLOR);
+    const f = blockStyle(block([cand({ pos: 'conj' })]), ALL);
+    expect(f.border).toBe(FUNCTION_COLOR);
+    expect(f.borderStyle).toBe('dotted');
   });
   it('renders a block whose layer is off as neutral with no badge', () => {
     const s = blockStyle(block([cand({ pos: 'verb', person: '3', number: 'sg', tense: 'pres' })]), { ...ALL, verb: false });
-    expect(s.background).toBe('hsl(0 0% 85%)');
+    expect(s.fill).toBe('#fff');
+    expect(s.border).toBe(NEUTRAL_COLOR);
     expect(s.badge).toBe('');
   });
-  it('renders an unknown word as neutral with a ! badge', () => {
+  it('renders an unknown word white with a ! badge', () => {
     const s = blockStyle(block([]), ALL);
     expect(s.unknown).toBe(true);
+    expect(s.fill).toBe('#fff');
     expect(s.badge).toBe('!');
+  });
+});
+
+describe('legend', () => {
+  it('lists every colour and border the page uses, each with its badge and meaning', () => {
+    const keys = LEGEND.map((row) => row.key);
+    for (const k of ['nom', 'gen', 'dat', 'acc', 'abl', 'voc', 'loc', 'plural', 'verb', 'function', 'unknown', 'ambiguous', 'pinned', 'chunk', 'linked']) {
+      expect(keys).toContain(k);
+    }
+    for (const row of LEGEND) { expect(row.label.length).toBeGreaterThan(3); expect(row.meaning.length).toBeGreaterThan(8); }
   });
 });
 

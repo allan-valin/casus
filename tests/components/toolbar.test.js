@@ -18,6 +18,14 @@ describe('PassagePicker', () => {
     await fireEvent.click(container.querySelector('button.read'));
     expect(onchoose).toHaveBeenCalledWith('Urbs magna.', null);
   });
+  it('calls the button "Identify grammar" and puts the demonstration samples above the text box (feedback D9, D10)', () => {
+    const { container } = render(PassagePicker, { samples, onchoose: () => {}, fetchImpl });
+    expect(container.querySelector('button.read').textContent).toMatch(/identify grammar/i);
+    expect(container.textContent).toMatch(/demonstration/i);
+    const all = [...container.querySelectorAll('button.sample, textarea')];
+    expect(all[0].tagName).toBe('BUTTON');
+    expect(all[all.length - 1].tagName).toBe('TEXTAREA');
+  });
   it('fetches a bundled sample and passes its era along', async () => {
     const onchoose = vi.fn();
     const { container } = render(PassagePicker, { samples, onchoose, fetchImpl });
@@ -41,16 +49,22 @@ describe('LayerToggles', () => {
 });
 
 describe('Toolbar', () => {
-  it('sets era and gloss language and exports', async () => {
+  it('says "Dictionary period" and "Dictionary language" and which one is active (feedback D13, D18)', async () => {
     const reader = createReader({ lexicon, text: 'Rosa.' });
     await reader.load();
-    const onexport = vi.fn();
-    const { container } = render(Toolbar, { reader, onexport });
+    const { container } = render(Toolbar, { reader });
+    expect(container.textContent).toMatch(/Dictionary period/);
+    expect(container.textContent).toMatch(/Dictionary language/);
+    expect(container.querySelector('select.era option[value=classical]').textContent).toMatch(/Classical Latin/);
+    expect(container.textContent).toMatch(/English/);
+  });
+  it('sets era and gloss language', async () => {
+    const reader = createReader({ lexicon, text: 'Rosa.' });
+    await reader.load();
+    const { container } = render(Toolbar, { reader });
     await fireEvent.change(container.querySelector('select.era'), { target: { value: 'medieval' } });
     expect(reader.era).toBe('medieval');
     await fireEvent.change(container.querySelector('select.gloss'), { target: { value: 'pt' } });
     expect(reader.glossLang).toBe('pt');
-    await fireEvent.click(container.querySelector('button.export-md'));
-    expect(onexport).toHaveBeenCalledWith('md', expect.stringContaining('## 1. Rosa.'));
   });
 });
