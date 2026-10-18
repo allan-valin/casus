@@ -229,8 +229,9 @@ the default.
 
 Source: pt.wiktionary via Wiktextract (kaikki.org `ptwiktionary/Latim/`), 3,952 Latin entries,
 2.6 MB JSONL. Join on normalised headword + part of speech against every lemma record with that
-headword; senses joined with `; `. Result `data/glosses.pt.json`, 91 KB: **1,741 records glossed,
-4.6% of all, 12.3% of the frequent (A–C)**. So the Portuguese layer is a convenience, not a
+headword; senses joined with `; `. Result `data/glosses.pt.json`, 91 KB: **1,718 records glossed,
+4.5% of all, 12.1% of the frequent (A–C)** (after dropping the inflected-form pseudo-senses,
+"vocativo singular de lingua"). So the Portuguese layer is a convenience, not a
 headline (spec §12 Q3). Richer coverage would need the Portuguese *translations* of English
 Wiktionary's Latin entries (kaikki `dictionary/Latin/`, English edition) as a second source —
 noted, not built.

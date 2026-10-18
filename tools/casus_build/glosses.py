@@ -9,6 +9,7 @@ the page distinguishes "no Portuguese, fall back to English" from a blank defini
 from __future__ import annotations
 
 import json
+import re
 from collections.abc import Iterable
 
 from casus_build.normalize import normalize_form
@@ -27,10 +28,21 @@ def _key(word: str, pos: str) -> tuple[str, str] | None:
     return normalize_form(word), p
 
 
+# pt.wiktionary files inflected forms as senses of the headword ("vocativo singular de lingua"):
+# a pointer to the lemma, not a meaning
+_FORM_OF = re.compile(r"^(nominativo|vocativo|genitivo|dativo|acusativo|ablativo|locativo|"
+                      r"primeira|segunda|terceira|infinitivo|particípio|gerúndio|supino|forma|flexão|plural|singular)"
+                      r"\b.*\b(de|do|da)\b", re.IGNORECASE)
+
+
 def _senses(entry: dict) -> list[str]:
     out: list[str] = []
     for sense in entry.get("senses", []):
+        if sense.get("form_of") or "form-of" in (sense.get("tags") or []):
+            continue
         for g in sense.get("glosses", []) or []:
+            if _FORM_OF.match(str(g).strip()):
+                continue
             g = " ".join(str(g).split())
             if g and g not in out:
                 out.append(g)

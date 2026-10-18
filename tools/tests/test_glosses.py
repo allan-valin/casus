@@ -6,6 +6,7 @@ LEMMAS = {
     "100": {"headword": "urbs", "pos": "noun", "freq": "A"},
     "200": {"headword": "amo", "pos": "verb", "freq": "A"},
     "300": {"headword": "Rosa", "pos": "noun", "freq": "D"},   # a second Whitaker entry, same headword
+    "400": {"headword": "lingua", "pos": "noun", "freq": "A"},
 }
 
 JSONL = [
@@ -14,6 +15,7 @@ JSONL = [
     '{"word": "rose", "lang_code": "en", "pos": "noun", "senses": [{"glosses": ["flor"]}]}',
     '{"word": "amō", "lang_code": "la", "pos": "verb", "senses": [{"glosses": ["amar"]}, {"glosses": ["gostar de"]}]}',
     '{"word": "urbs", "lang_code": "la", "pos": "verb", "senses": [{"glosses": ["errado: outra classe"]}]}',
+    '{"word": "lingua", "lang_code": "la", "pos": "noun", "senses": [{"glosses": ["língua"]}, {"glosses": ["vocativo singular de lingua"]}, {"glosses": ["ablativo singular de lingua"], "form_of": [{"word": "lingua"}]}]}',
 ]
 
 
@@ -35,6 +37,11 @@ def test_ignores_non_latin_entries_and_pos_mismatches():
     assert "100" not in glosses                          # urbs is only there as a verb
 
 
+def test_inflected_form_senses_are_dropped():
+    # pt.wiktionary files "vocativo singular de lingua" as a sense of the headword; that is not a meaning
+    assert build_pt_glosses(JSONL, LEMMAS)["400"] == "língua"
+
+
 def test_missing_lemmas_are_absent_not_empty():
     glosses = build_pt_glosses(JSONL, LEMMAS)
     assert "100" not in glosses
@@ -44,12 +51,12 @@ def test_missing_lemmas_are_absent_not_empty():
 def test_coverage_is_reported_overall_and_for_common_words():
     glosses = build_pt_glosses(JSONL, LEMMAS)
     overall, common = gloss_coverage(glosses, LEMMAS)
-    assert overall == 0.75                               # 3 of 4 lemma records
-    assert common == 2 / 3                               # of the freq A–C records (rosa B, urbs A, amo A), two are glossed
+    assert overall == 0.8                                # 4 of 5 lemma records
+    assert common == 0.75                                # of the freq A–C records (rosa, urbs, amo, lingua), three are glossed
 
 
 def test_coverage_counts_only_frequency_a_to_c_as_common():
     glosses = {"33803": "rosa"}
     overall, common = gloss_coverage(glosses, LEMMAS)
-    assert overall == 0.25
-    assert common == 1 / 3
+    assert overall == 0.2
+    assert common == 0.25

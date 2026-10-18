@@ -14,6 +14,9 @@
   import Help from './components/Help.svelte';
   import PassagePicker from './components/PassagePicker.svelte';
   import { t, ui, setLang } from './lib/i18n.svelte.js';
+  import { createActivity } from './lib/activity.svelte.js';
+  import ActivityLog from './components/ActivityLog.svelte';
+  import { describeAnalysis, blockStyle } from './lib/colors.js';
 
   const DATA = withBase('/data');
 
@@ -22,11 +25,14 @@
     try { return typeof localStorage !== 'undefined' ? localStorage : null; } catch { return null; }
   }
   let {
-    fetchImpl = (...a) => window.fetch(...a),
+    fetchImpl: rawFetch = (...a) => window.fetch(...a),
     storage = defaultStorage(),
     schedule = (fn, ms) => setTimeout(fn, ms),
     cancel = (t) => clearTimeout(t),
   } = $props();
+  const activity = createActivity({ slowText: () => t('activity.slow') });
+  const fetchImpl = activity.wrap(rawFetch);
+  const say = (key, vars, kind) => activity.say(t(key, vars), kind);
 
   let status = $state({ key: 'app.status.loading' });
   let lexicon = $state(null);
@@ -44,8 +50,9 @@
       .then((manifest) => {
         lexicon = createLexicon({ fetchShard: makeFetchShard(fetchImpl, DATA), manifest });
         status = { key: 'app.status.ready', vars: { entries: manifest.lemmas?.toLocaleString?.() ?? '', shards: Object.keys(manifest.shards).length, built: manifest.built } };
+        say('act.ready', status.vars, 'ok');
       })
-      .catch((e) => { status = { key: 'app.status.none', vars: { error: e.message } }; });
+      .catch((e) => { status = { key: 'app.status.none', vars: { error: e.message } }; say('act.noLexicon', { error: e.message }, 'err'); });
     fetchImpl(withBase('/samples/index.json')).then((r) => (r.ok ? r.json() : [])).then((list) => { samples = list; }).catch(() => {});
   });
 
@@ -56,21 +63,44 @@
     const key = `casus:${textHash(text)}`;
     const save = createAutosave({ storage: storage ?? { getItem: () => null, setItem: () => {} }, key, schedule, cancel });
     const saved = restore(save.loaded(), text);
-    const r = createReader({ lexicon, text, saved });
+    const r = createReader({ lexicon, text, saved, onaction: logAction });
     if (!saved && era) r.era = era;
     if (!saved) r.glossLang = ui.lang;   // the page language carries the dictionary language with it
+    const t0 = Date.now();
+    say('act.reading', { words: text.split(/\s+/).filter(Boolean).length, sentences: r.sentences.length });
     await r.load();
     if (mine !== generation) return;  // a newer choose() won while this one loaded
     autosave = save;
     reader = r;
     open = null;
-    r.loadExtras(fetchImpl, DATA).catch(() => {});
+    const blocks = r.blocks;
+    say('act.read', { words: r.sentences.reduce((n, s, i) => n + r.blocksOf(i).length, 0), sentences: r.sentences.length,
+      ambiguous: blocks.filter((b) => blockStyle(b, r.layers).ambiguous).length, unknown: blocks.filter((b) => b.candidates.length === 0).length, ms: Date.now() - t0 }, 'ok');
+    if (saved) say('act.restored');
+    r.loadExtras(fetchImpl, DATA).then(() => say('act.extras', { pt: r.lexiconExtras.glosses.pt ? t('act.extras.pt') : '' })).catch(() => {});
+  }
+
+  function logAction(kind, info = {}) {
+    const r = reader;
+    const word = (i) => r?.blocks.find((b) => b.token.index === i)?.token.surface ?? `#${i + 1}`;
+    switch (kind) {
+      case 'select': { const blocks = r?.blocks ?? []; say('act.selected', { n: info.n, words: blocks.length, ambiguous: blocks.filter((b) => blockStyle(b, r.layers).ambiguous).length }); break; }
+      case 'pin': say('act.pinned', { word: word(info.tokenIndex), reading: describeAnalysis(info.analysis) }, 'ok'); break;
+      case 'unpin': say('act.unpinned', { word: word(info.tokenIndex) }); break;
+      case 'move': say('act.moved', { word: info.indices.map(word).join(' ') }); break;
+      case 'restore': say('act.restore'); break;
+      case 'autosort': say('act.autosort'); break;
+      case 'arrange': say('act.arranged', { pattern: info.pattern }); break;
+      case 'glue': say('act.glue', { word: word(info.tokenIndex) }); break;
+      default: break;
+    }
   }
 
   // the same block clicked again closes its dictionary (feedback D15)
   function switchLang(lang) {
     setLang(lang);
     if (reader) reader.glossLang = lang;
+    say('act.lang', { lang: lang === 'pt' ? 'português (Brasil)' : 'English' });
   }
 
   function toggleOpen(b) {
@@ -105,6 +135,7 @@
     a.download = `casus-${textHash(reader.text)}.${kind === 'json' ? 'json' : 'md'}`;
     a.click();
     URL.revokeObjectURL(a.href);
+    say('act.export', { kind: kind === 'json' ? 'JSON' : 'Markdown', name: a.download }, 'ok');
   }
 
   const lemmaOf = (id) => reader?.lexiconExtras.lemmas?.[String(id)] ?? null;
@@ -112,6 +143,7 @@
 </script>
 
 <main>
+  {#if activity.busy}<div class="busy" role="progressbar" aria-label="loading"></div>{/if}
   <header class="top">
     <div class="brand">
       <h1>Casus</h1>
@@ -170,6 +202,8 @@
     <Help onclose={() => (help = false)} />
   {/if}
 
+  <ActivityLog {activity} />
+
   <footer>
     <span>{@html t('footer')}</span>
   </footer>
@@ -197,6 +231,8 @@
   .legend-box { margin-top: 14px; }
   .legend-box summary { cursor: pointer; color: var(--ink-2); font-weight: 600; font-size: 0.92rem; padding: 4px 0; }
   .legend-box :global(.legend) { margin-top: 8px; }
+  .busy { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 70; background: linear-gradient(90deg, transparent, var(--accent), transparent); background-size: 40% 100%; animation: slide 1.1s linear infinite; }
+  @keyframes slide { from { background-position: -40% 0; } to { background-position: 140% 0; } }
   footer { color: var(--muted); font-size: 0.8rem; text-align: center; padding-top: 8px; }
   @media (max-width: 640px) {
     .top { flex-direction: column; }

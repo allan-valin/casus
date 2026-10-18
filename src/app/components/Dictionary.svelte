@@ -2,7 +2,7 @@
   import Candidates from './Candidates.svelte';
   import Overlay from './Overlay.svelte';
   import { eraStatus, warning, AGE_LABEL } from '../lib/era.js';
-  import { t } from '../lib/i18n.svelte.js';
+  import { t, ui } from '../lib/i18n.svelte.js';
   let { block, reader, onclose } = $props();
 
   const ORDINAL = { 1: '1st', 2: '2nd', 3: '3rd', 4: '4th', 5: '5th' };
@@ -11,8 +11,8 @@
 
   function classLine(r) {
     const bits = [];
-    if (r.pos === 'verb') bits.push(r.conj ? `conjugation ${r.conj}` : 'verb');
-    else if (r.decl) bits.push(`${ORDINAL[r.decl] ?? r.decl} declension`);
+    if (r.pos === 'verb') bits.push(r.conj ? t('dict.conjugation', { n: r.conj }) : t('dict.verb'));
+    else if (r.decl) bits.push(t('dict.declension', { n: ui.lang === 'pt' ? `${r.decl}ª` : (ORDINAL[r.decl] ?? r.decl) }));
     else bits.push(r.pos);
     if (r.gender) bits.push(r.gender);
     if (r.kind && r.kind !== 'x') bits.push(r.kind);

@@ -90,5 +90,6 @@ await page.screenshot({ path: `${sc}/casus-4-phone.png`, fullPage: true });
 await page.setViewportSize({ width: 1920, height: 1080 });
 await page.waitForTimeout(300);
 await page.screenshot({ path: `${sc}/casus-5-wide.png` });
+console.log('activity lines:', await page.$$eval('.activity .line', (els) => els.length), '| last:', (await page.textContent('.activity .line.last')).slice(0, 120));
 console.log('errors:', errors);
 await browser.close();

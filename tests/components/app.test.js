@@ -195,3 +195,29 @@ describe('App UI language flag (decided 2026-10-18)', () => {
     expect(again.container.querySelector('h2').textContent).toMatch(/Text/);
   });
 });
+
+describe('App activity log (copied from Desembarque, feedback E)', () => {
+  it('writes a line for the dictionary, the reading, a pin and an export; the busy bar shows while a request is open', async () => {
+    let release;
+    const slow = (url) => (url === '/data/forms/bo.json' && !release)
+      ? new Promise((r) => { release = () => r({ ok: true, status: 200, json: async () => structuredClone(files[url]) }); })
+      : fetchImpl(url);
+    const { container } = render(App, { fetchImpl: slow, storage: storage(), ...immediate });
+    await tick(); await tick();
+    const log = () => [...container.querySelectorAll('.activity .line')].map((l) => l.textContent);
+    expect(log().some((l) => /dictionary loaded/.test(l))).toBe(true);
+    await fireEvent.input(container.querySelector('textarea'), { target: { value: 'Rosa bona.' } });
+    await fireEvent.click(container.querySelector('button.read'));
+    await tick();
+    expect(container.querySelector('.busy')).not.toBe(null);
+    release();
+    for (let i = 0; i < 6; i += 1) await tick();
+    expect(container.querySelector('.busy')).toBe(null);
+    expect(log().some((l) => /read: 2 words, 1 sentences/.test(l))).toBe(true);
+    await fireEvent.click(container.querySelector('.pill'));
+    await tick();
+    await fireEvent.click(container.querySelectorAll('button.pin')[1]);
+    await tick();
+    expect(log().at(-1)).toMatch(/Rosa pinned as noun abl sg f/);
+  });
+});

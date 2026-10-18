@@ -9,7 +9,7 @@ const DEFAULT_LAYERS = { nominal: true, verb: true, function: true, classes: fal
  * Parse decisions come from createState; this adds layers, era, gloss language,
  * per-sentence arrangement and unglued chunks, and serialises all of it.
  */
-export function createReader({ lexicon, text, saved = null }) {
+export function createReader({ lexicon, text, saved = null, onaction = () => {} }) {
   const state = createState({ text, lexicon, saved });
   let version = $state(0);                       // bumped after every state.* call so getters re-read
   let loaded = $state(false);
@@ -75,15 +75,15 @@ export function createReader({ lexicon, text, saved = null }) {
       ]);
       lexiconExtras = { lemmas, glosses: { en, pt } };
     },
-    select(i) { state.select(i); touch(); },
-    pin(tokenIndex, analysis) { state.pin(tokenIndex, analysis); touch(); },
-    unpin(tokenIndex) { state.unpin(tokenIndex); touch(); },
-    move(from, to) { orders[state.selected()] = moveIn(currentOrder(), from, to); touch(); },
-    moveItem(indices, to) { orders[state.selected()] = moveItemIn(currentOrder(), indices, to); touch(); },
-    autoSort() { orders[state.selected()] = autoSortIn(currentOrder(), currentBlocks()); touch(); },
-    arrange(pattern) { orders[state.selected()] = arrangeBy(currentOrder(), currentBlocks(), pattern); touch(); },
-    restoreOrder() { delete orders[state.selected()]; touch(); },
-    toggleGlue(prepIndex) { if (unglued.has(prepIndex)) unglued.delete(prepIndex); else unglued.add(prepIndex); touch(); },
+    select(i) { state.select(i); touch(); onaction('select', { n: i + 1 }); },
+    pin(tokenIndex, analysis) { state.pin(tokenIndex, analysis); touch(); onaction('pin', { tokenIndex, analysis }); },
+    unpin(tokenIndex) { state.unpin(tokenIndex); touch(); onaction('unpin', { tokenIndex }); },
+    move(from, to) { orders[state.selected()] = moveIn(currentOrder(), from, to); touch(); onaction('move', { indices: [from] }); },
+    moveItem(indices, to) { orders[state.selected()] = moveItemIn(currentOrder(), indices, to); touch(); onaction('move', { indices }); },
+    autoSort() { orders[state.selected()] = autoSortIn(currentOrder(), currentBlocks()); touch(); onaction('autosort'); },
+    arrange(pattern) { orders[state.selected()] = arrangeBy(currentOrder(), currentBlocks(), pattern); touch(); onaction('arrange', { pattern }); },
+    restoreOrder() { delete orders[state.selected()]; touch(); onaction('restore'); },
+    toggleGlue(prepIndex) { if (unglued.has(prepIndex)) unglued.delete(prepIndex); else unglued.add(prepIndex); touch(); onaction('glue', { tokenIndex: prepIndex }); },
 
     toJSON() {
       void version;   // read the counter so an effect over toJSON() re-runs after every change

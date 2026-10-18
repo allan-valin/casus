@@ -27,7 +27,7 @@ attribution and share-alike obligations and is **separately licensed** from the 
 Whitaker-derived assets. It is never blended into them: the page loads it as its own layer and
 labels every Portuguese gloss with its language badge.
 
-Coverage, measured 2026-10-18: 1,741 of the 38,179 lemma records (4.6%); 12.3% of the records
+Coverage, measured 2026-10-18: 1,718 of the 38,179 lemma records (4.5%); 12.1% of the records
 Whitaker tags as frequent (A–C). It is a convenience layer for common vocabulary, not a
 headline feature (spec §12 question 3); the page falls back to English and says so.
 
