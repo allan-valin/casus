@@ -5,7 +5,7 @@
   import { paradigmGroups } from '../lib/paradigm.js';
   import { t, ui } from '../lib/i18n.svelte.js';
   import { displayForm } from '../lib/entry.js';
-  let { rows, lemma, lang, form, readings = [] } = $props();
+  let { rows, lemma, lang, form, readings = [], openAll = false } = $props();
   const groups = $derived(paradigmGroups(rows, lemma, lang));
   const norm = (s) => lang.script.normalize(s ?? '');
   const caseName = (c) => lang.inventory.channels.case?.name?.[ui.lang]?.[c] ?? c;
@@ -26,7 +26,7 @@
 
 <div class="paradigm">
   {#each groups as g, gi (gi)}
-    <details open={hasWord(g)}>
+    <details open={openAll || hasWord(g)}>
       <summary>{g.kind === 'list' ? t('para.nonfinite') : (g.label ? label(g.label) : t('para.declension'))}</summary>
       {#if g.kind === 'table'}
         <table>

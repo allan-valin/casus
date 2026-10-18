@@ -47,3 +47,25 @@ describe('Drills page', () => {
     expect(container.querySelector('input[data-cell="3|sg"]')).not.toBe(null);
   });
 });
+
+describe('cheat sheet (Allan, 2026-10-18: a button near the top for all tables)', () => {
+  it('nouns: every model word’s table, open', async () => {
+    const { container } = render(Drills, { lang: getLanguage('la'), loadModels, navigate: () => {} });
+    await tick2();
+    await fireEvent.click(container.querySelector('button.cheatsheet'));
+    await tick();
+    const sheet = document.querySelector('.cheat');
+    expect(sheet.textContent).toMatch(/rosa, -ae f\./);
+    expect(sheet.textContent).not.toMatch(/amo/);
+    expect(sheet.querySelector('td[data-cell="gen|sg"]').textContent).toBe('rosae');
+  });
+  it('letters: the whole alphabet with names and sounds', async () => {
+    const { container } = render(Drills, { lang: getLanguage('grc'), loadModels, navigate: () => {} });
+    await tick2();
+    await fireEvent.click(container.querySelector('button.cheatsheet'));
+    await tick();
+    const rows = [...document.querySelectorAll('.cheat tr.letter')];
+    expect(rows.length).toBeGreaterThanOrEqual(24);
+    expect(rows[0].textContent).toMatch(/α.*Α.*alpha.*a/s);
+  });
+});

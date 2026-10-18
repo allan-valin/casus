@@ -7,6 +7,8 @@
   import { drillsPath } from '../lib/route.js';
   import Game from './Game.svelte';
   import EndingsDrill from './EndingsDrill.svelte';
+  import Overlay from './Overlay.svelte';
+  import CheatSheet from './CheatSheet.svelte';
   let { lang, voice = null, loadModels, navigate, random = Math.random } = $props();
 
   const NOMINAL = new Set(['noun', 'adj', 'det', 'pron']);
@@ -14,6 +16,7 @@
   let chosen = $state(null);
   const drill = $derived(chosen && drills.includes(chosen) ? chosen : drills[0]);
   let models = $state([]);
+  let cheat = $state(false);
   onMount(() => { loadModels().then((m) => { models = m ?? []; }).catch(() => { models = []; }); });
   const nouns = $derived(models.filter((m) => NOMINAL.has(m.pos)));
   const verbs = $derived(models.filter((m) => m.pos === 'verb'));
@@ -28,6 +31,7 @@
         {#each withDrills as l}<option value={l.code}>{l.name[ui.lang] ?? l.name.en}</option>{/each}
       </select>
     </label>
+    <button class="cheatsheet" onclick={() => { cheat = true; }}>{t('drills.cheatsheet')}</button>
     <div class="tabs" role="tablist">
       {#each drills as d}
         <button class="drill-tab" class:active={d === drill} data-drill={d} role="tab" aria-selected={d === drill} onclick={() => { chosen = d; }}>{t(`drills.${d}`)}</button>
@@ -35,6 +39,11 @@
     </div>
   </div>
   <p class="hint">{t(`drills.${drill}.hint`)}</p>
+  {#if cheat}
+    <Overlay onclose={() => { cheat = false; }} label={t('drills.cheatsheet')} wide>
+      <CheatSheet {lang} {drill} models={drill === 'verbs' ? verbs : nouns} />
+    </Overlay>
+  {/if}
   {#if drill === 'letters'}
     <Game {lang} {voice} />
   {:else if drill === 'nouns'}
@@ -48,6 +57,7 @@
   .bar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 8px; }
   label { display: inline-flex; gap: 6px; align-items: center; font-weight: 600; }
   select { font: inherit; padding: 6px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); }
+  .cheatsheet { font: inherit; padding: 6px 14px; border: 1.5px solid var(--accent); border-radius: 8px; background: var(--panel); color: var(--ink); cursor: pointer; font-weight: 600; }
   .tabs { display: flex; flex-wrap: wrap; gap: 4px; }
   .drill-tab { font: inherit; padding: 6px 14px; border: 1.5px solid var(--line); border-radius: 999px; background: var(--panel); color: var(--ink); cursor: pointer; }
   .drill-tab.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
