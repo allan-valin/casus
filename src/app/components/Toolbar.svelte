@@ -1,26 +1,25 @@
 <script>
   /* Dictionary settings, said in plain words (feedback D13, D18). */
   import { ERAS } from '../lib/era.js';
+  import { t } from '../lib/i18n.svelte.js';
   let { reader } = $props();
-  const LANG = { en: 'English (Whitaker)', pt: 'Português (Wikcionário)' };
-  const era = $derived(ERAS.find((e) => e.id === reader.era));
 </script>
 
 <div class="toolbar">
   <label class="field">
-    <span class="name">Dictionary period</span>
+    <span class="name">{t('settings.period')}</span>
     <select class="era" bind:value={reader.era}>
-      {#each ERAS as e (e.id)}<option value={e.id}>{e.label}</option>{/each}
+      {#each ERAS as e (e.id)}<option value={e.id}>{t(`era.${e.id}`)}</option>{/each}
     </select>
-    <span class="note">Words only attested outside this period are dimmed and flagged. {era ? `Authors: ${era.authors}.` : ''}</span>
+    <span class="note">{t('settings.period.note', { authors: t(`era.${reader.era}.authors`) })}</span>
   </label>
   <label class="field">
-    <span class="name">Dictionary language</span>
+    <span class="name">{t('settings.language')}</span>
     <select class="gloss" bind:value={reader.glossLang}>
-      <option value="en">English</option>
-      <option value="pt">Português</option>
+      <option value="en">{t('settings.lang.en')}</option>
+      <option value="pt">{t('settings.lang.pt')}</option>
     </select>
-    <span class="note">Active: {LANG[reader.glossLang]}. A word missing in Portuguese falls back to English, and the entry says so.</span>
+    <span class="note">{t('settings.language.note', { name: t(`settings.lang.${reader.glossLang}`) })}</span>
   </label>
 </div>
 

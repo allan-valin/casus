@@ -1,14 +1,15 @@
 <script>
   /* Spec §7.2: every layer toggles independently; the class sub-layer is off by default. */
+  import { t } from '../lib/i18n.svelte.js';
   let { reader } = $props();
 </script>
 
 <fieldset class="layers">
-  <legend>Colour these word kinds</legend>
-  <label title="nouns, adjectives, pronouns, participles: coloured by case"><input type="checkbox" bind:checked={reader.layers.nominal}> nouns &amp; adjectives</label>
-  <label title="finite verbs: dark border, person·number·tense badge"><input type="checkbox" bind:checked={reader.layers.verb}> verbs</label>
-  <label title="prepositions (hue of the governed case), conjunctions, particles"><input type="checkbox" bind:checked={reader.layers.function}> function words</label>
-  <label title="adds declension and gender (nouns) or conjugation (verbs) to each block"><input type="checkbox" bind:checked={reader.layers.classes}> declension / conjugation</label>
+  <legend>{t('layers.legend')}</legend>
+  <label title={t('layers.nominal.title')}><input type="checkbox" bind:checked={reader.layers.nominal}> {t('layers.nominal')}</label>
+  <label title={t('layers.verb.title')}><input type="checkbox" bind:checked={reader.layers.verb}> {t('layers.verb')}</label>
+  <label title={t('layers.function.title')}><input type="checkbox" bind:checked={reader.layers.function}> {t('layers.function')}</label>
+  <label title={t('layers.classes.title')}><input type="checkbox" bind:checked={reader.layers.classes}> {t('layers.classes')}</label>
 </fieldset>
 
 <style>

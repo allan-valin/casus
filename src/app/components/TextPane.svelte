@@ -5,6 +5,7 @@
    * and their offsets, so the words carry the same indices as the pills and the punctuation
    * between them is the original text, untouched.
    */
+  import { t } from '../lib/i18n.svelte.js';
   let { reader, hovered = null } = $props();
 
   function pieces(sentence) {
@@ -24,7 +25,7 @@
 <div class="text">
   {#each reader.sentences as sentence, i (sentence.start)}
     <span class="sentence" class:dimmed={i !== reader.selected} class:current={i === reader.selected} data-index={i}
-          role="button" tabindex="0" title={i === reader.selected ? 'this sentence is on the blocks below' : 'click to work on this sentence'}
+          role="button" tabindex="0" title={i === reader.selected ? t('textpane.current') : t('textpane.other')}
           onclick={() => reader.select(i)}
           onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); reader.select(i); } }}>
       {#if i === reader.selected}

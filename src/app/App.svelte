@@ -13,6 +13,7 @@
   import Legend from './components/Legend.svelte';
   import Help from './components/Help.svelte';
   import PassagePicker from './components/PassagePicker.svelte';
+  import { t, ui, setLang } from './lib/i18n.svelte.js';
 
   const DATA = withBase('/data');
 
@@ -27,7 +28,7 @@
     cancel = (t) => clearTimeout(t),
   } = $props();
 
-  let status = $state('loading the lexicon…');
+  let status = $state({ key: 'app.status.loading' });
   let lexicon = $state(null);
   let samples = $state([]);
   let reader = $state(null);
@@ -42,9 +43,9 @@
     loadManifest(fetchImpl, DATA)
       .then((manifest) => {
         lexicon = createLexicon({ fetchShard: makeFetchShard(fetchImpl, DATA), manifest });
-        status = `dictionary ready: ${manifest.lemmas?.toLocaleString?.() ?? ''} entries, ${Object.keys(manifest.shards).length} shards, built ${manifest.built}`;
+        status = { key: 'app.status.ready', vars: { entries: manifest.lemmas?.toLocaleString?.() ?? '', shards: Object.keys(manifest.shards).length, built: manifest.built } };
       })
-      .catch((e) => { status = `no lexicon: ${e.message} — run python3 tools/build_index.py`; });
+      .catch((e) => { status = { key: 'app.status.none', vars: { error: e.message } }; });
     fetchImpl(withBase('/samples/index.json')).then((r) => (r.ok ? r.json() : [])).then((list) => { samples = list; }).catch(() => {});
   });
 
@@ -57,6 +58,7 @@
     const saved = restore(save.loaded(), text);
     const r = createReader({ lexicon, text, saved });
     if (!saved && era) r.era = era;
+    if (!saved) r.glossLang = ui.lang;   // the page language carries the dictionary language with it
     await r.load();
     if (mine !== generation) return;  // a newer choose() won while this one loaded
     autosave = save;
@@ -66,6 +68,11 @@
   }
 
   // the same block clicked again closes its dictionary (feedback D15)
+  function switchLang(lang) {
+    setLang(lang);
+    if (reader) reader.glossLang = lang;
+  }
+
   function toggleOpen(b) {
     open = open && open.token.index === b.token.index ? null : b;
   }
@@ -108,45 +115,49 @@
   <header class="top">
     <div class="brand">
       <h1>Casus</h1>
-      <p class="tagline">A reader for classical Latin: the words of a sentence become blocks coloured by case, so what agrees with what is seen, not deduced.</p>
+      <p class="tagline">{t('app.tagline')}</p>
     </div>
     <div class="corner">
-      <div class="exports" aria-label="export">
-        <span class="exports-label">Export this reading</span>
-        <button class="export-json" disabled={!reader} title="Download a JSON file with the text, your arrangement and your pins (reloadable, machine-readable)" onclick={() => download('json')}>JSON</button>
-        <button class="export-md" disabled={!reader} title="Download a Markdown file of the text with each word's case, to read elsewhere" onclick={() => download('md')}>Markdown</button>
+      <div class="langs" role="group" aria-label="language" title={t('app.lang.title')}>
+        <button class="ui-lang" class:active={ui.lang === 'en'} data-lang="en" onclick={() => switchLang('en')}>English</button>
+        <button class="ui-lang" class:active={ui.lang === 'pt'} data-lang="pt" onclick={() => switchLang('pt')}>Português</button>
       </div>
-      <button class="help-button" title="What is on this screen, how to use it, and the dictionaries behind it" aria-label="help" onclick={() => (help = true)}>?</button>
+      <div class="exports" aria-label="export">
+        <span class="exports-label">{t('app.export')}</span>
+        <button class="export-json" disabled={!reader} title={t('app.export.json.title')} onclick={() => download('json')}>{t('app.export.json')}</button>
+        <button class="export-md" disabled={!reader} title={t('app.export.md.title')} onclick={() => download('md')}>{t('app.export.md')}</button>
+      </div>
+      <button class="help-button" title={t('app.help.title')} aria-label="help" onclick={() => (help = true)}>?</button>
     </div>
   </header>
 
   <section class="card">
-    <h2><span class="step">1</span> Text</h2>
+    <h2><span class="step">1</span> {t('text.heading')}</h2>
     <PassagePicker {samples} onchoose={choose} {fetchImpl} />
-    <p class="status" aria-live="polite">{status}</p>
+    <p class="status" aria-live="polite">{t(status.key, status.vars)}</p>
   </section>
 
   {#if reader}
     <section class="card">
-      <h2><span class="step">2</span> Sentences <span class="hint-inline">— click a sentence to work on it; the current one is highlighted</span></h2>
+      <h2><span class="step">2</span> {t('sentences.heading')} <span class="hint-inline">{t('sentences.hint')}</span></h2>
       <TextPane {reader} {hovered} />
     </section>
 
     <section class="card blocks">
-      <h2><span class="step">3</span> Grammar blocks of sentence {reader.selected + 1}</h2>
-      <p class="hint">Each block is a word of the sentence, coloured by its case. <b>Click</b> a block for its dictionary entry and possible readings; <b>drag</b> it to regroup the sentence by hand. Hover a word to light the words that agree with it.</p>
+      <h2><span class="step">3</span> {t('blocks.heading', { n: reader.selected + 1 })}</h2>
+      <p class="hint">{@html t('blocks.hint')}</p>
       <div class="block-controls">
         <LayerToggles {reader} />
       </div>
       <BlockPane {reader} onhover={(i) => (hovered = i)} onopen={toggleOpen} {lemmaOf} />
       <details class="legend-box" bind:open={legendOpen}>
-        <summary>Legend — what the colours, borders and badges mean</summary>
+        <summary>{t('legend.summary')}</summary>
         <Legend />
       </details>
     </section>
 
     <section class="card">
-      <h2><span class="step">4</span> Dictionary settings</h2>
+      <h2><span class="step">4</span> {t('settings.heading')}</h2>
       <Toolbar {reader} />
     </section>
 
@@ -160,7 +171,7 @@
   {/if}
 
   <footer>
-    <span>Casus · open source (AGPL-3.0) · dictionary: Whitaker's WORDS · press <b>?</b> for how it works and every resource used</span>
+    <span>{@html t('footer')}</span>
   </footer>
 </main>
 
@@ -171,6 +182,9 @@
   .tagline { margin: 4px 0 0; color: var(--ink-2); max-width: 60ch; }
   .corner { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
   .exports { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .langs { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .langs .ui-lang { border: 0; border-radius: 0; min-height: 34px; padding: 4px 10px; }
+  .langs .ui-lang.active { background: var(--accent); color: var(--accent-ink); }
   .exports-label { color: var(--ink-2); font-size: 0.85rem; margin-right: 2px; }
   .help-button { width: 40px; height: 40px; border-radius: 50%; font-weight: 700; font-size: 1.1rem; padding: 0; background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
   .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: clamp(12px, 1.6vw, 22px) clamp(12px, 2vw, 26px); box-shadow: 0 1px 2px rgba(0,0,0,.04); }

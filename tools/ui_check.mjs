@@ -70,6 +70,18 @@ await page.waitForSelector('.help');
 console.log('help lists Whitaker:', (await page.textContent('.help')).includes('Whitaker'));
 await page.screenshot({ path: `${sc}/casus-3-help.png` });
 await page.keyboard.press('Escape');
+// the UI language flag: Portuguese chrome, Portuguese dictionary language, back to English
+await page.click('button.ui-lang[data-lang=pt]');
+await page.waitForTimeout(200);
+console.log('pt heading:', await page.textContent('h2'), '| gloss select:', await page.inputValue('select.gloss'));
+await page.click('.pill:has-text("lingua")');
+await page.waitForSelector('.dictionary');
+await page.waitForFunction(() => !document.querySelector('.dictionary .loading'), null, { timeout: 15000 });
+console.log('pt dict for lingua:', (await page.textContent('.dictionary .gloss')).replace(/\s+/g, ' ').slice(0, 120));
+await page.screenshot({ path: `${sc}/casus-6-pt.png` });
+await page.keyboard.press('Escape');
+await page.click('button.ui-lang[data-lang=en]');
+await page.waitForTimeout(200);
 // phone width: everything must stack and stay usable (feedback A2)
 await page.setViewportSize({ width: 390, height: 844 });
 await page.waitForTimeout(300);

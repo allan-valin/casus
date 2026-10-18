@@ -1,22 +1,25 @@
 <script>
   /* Feedback B6: a legend table — every colour and border, what it means. */
   import { LEGEND } from '../lib/colors.js';
+  import { t, ui, LEGEND_PT } from '../lib/i18n.svelte.js';
+  const label = (row) => (ui.lang === 'pt' && LEGEND_PT[row.key] ? LEGEND_PT[row.key][0] : row.label);
+  const meaning = (row) => (ui.lang === 'pt' && LEGEND_PT[row.key] ? LEGEND_PT[row.key][1] : row.meaning);
 </script>
 
 <table class="legend">
-  <thead><tr><th>looks like</th><th>meaning</th></tr></thead>
+  <thead><tr><th>{t('legend.looks')}</th><th>{t('legend.meaning')}</th></tr></thead>
   <tbody>
     {#each LEGEND as row (row.key)}
       <tr class="row">
         <td>
           <span class="swatch" class:sw-pinned={row.pinned} class:sw-chunk={row.chunk} class:sw-linked={row.linked}
                 style:background={row.fill} style:border-color={row.border} style:border-style={row.borderStyle}>
-            <span class="word" class:unknown={row.key === 'unknown'}>{row.label}</span>
+            <span class="word" class:unknown={row.key === 'unknown'}>{label(row)}</span>
             <span class="badge" style:color={row.border}>{row.badge}</span>
             {#if row.dots}<span class="dots">{#each row.dots as d}<i style:background={d}></i>{/each}</span>{/if}
           </span>
         </td>
-        <td class="meaning">{row.meaning}</td>
+        <td class="meaning">{meaning(row)}</td>
       </tr>
     {/each}
   </tbody>

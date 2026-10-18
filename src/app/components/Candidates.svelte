@@ -1,5 +1,6 @@
 <script>
   import { describeAnalysis } from '../lib/colors.js';
+  import { t } from '../lib/i18n.svelte.js';
   let { block, reader } = $props();
   const index = $derived(block.token.index);
 
@@ -24,7 +25,7 @@
 </script>
 
 {#if block.candidates.length === 0}
-  <p class="none">not in lexicon</p>
+  <p class="none">{t('cand.none')}</p>
 {:else}
   <ul class="candidates">
     {#each rows as row, i (i)}
@@ -33,10 +34,10 @@
         {#if row.head}<span class="headword">&lt;{row.head}&gt;</span>{/if}
         {#if row.count > 1}<span class="count">×{row.count}</span>{/if}
         {#if block.pinned}
-          <span class="pinned">pinned</span>
-          <button class="unpin" onclick={() => reader.unpin(index)}>unpin</button>
+          <span class="pinned">{t('cand.pinned')}</span>
+          <button class="unpin" onclick={() => reader.unpin(index)}>{t('cand.unpin')}</button>
         {:else}
-          <button class="pin" onclick={() => reader.pin(index, row.candidate.analysis)}>pin</button>
+          <button class="pin" onclick={() => reader.pin(index, row.candidate.analysis)}>{t('cand.pin')}</button>
         {/if}
         <ul class="reasons">{#each row.candidate.reasons as r}<li>{r}</li>{/each}</ul>
       </li>

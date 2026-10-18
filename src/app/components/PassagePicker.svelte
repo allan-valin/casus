@@ -1,5 +1,6 @@
 <script>
   import { withBase } from '../lib/paths.js';
+  import { t } from '../lib/i18n.svelte.js';
   /* v1 input (spec §10.1): paste, or one of the bundled passages. Samples sit above the text
    * box and are named as demonstration material; the button says what it does (feedback D9, D10). */
   let { samples = [], onchoose, fetchImpl } = $props();
@@ -14,16 +15,16 @@
 
 <div class="picker">
   <div class="samples">
-    <span class="samples-label">Demonstration samples (short public-domain passages):</span>
+    <span class="samples-label">{t('picker.samples')}</span>
     {#each samples as s (s.id)}
       <button class="sample" onclick={() => choose(s)}>{s.title}</button>
     {/each}
   </div>
-  <label class="paste-label" for="paste">Or paste your own Latin text</label>
-  <textarea id="paste" rows="5" placeholder="Paste Latin here — a sentence, a paragraph, a page." bind:value={pasted}></textarea>
+  <label class="paste-label" for="paste">{t('picker.paste')}</label>
+  <textarea id="paste" rows="5" placeholder={t('picker.placeholder')} bind:value={pasted}></textarea>
   <div class="actions">
-    <span class="paste-hint">Sentences are split on . ? ! — then every word is looked up and its case worked out.</span>
-    <button class="read primary" onclick={() => pasted.trim() && onchoose(pasted.trim(), null)} disabled={!pasted.trim()}>Identify grammar</button>
+    <span class="paste-hint">{t('picker.hint')}</span>
+    <button class="read primary" onclick={() => pasted.trim() && onchoose(pasted.trim(), null)} disabled={!pasted.trim()}>{t('picker.read')}</button>
   </div>
 </div>
 

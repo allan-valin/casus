@@ -12,6 +12,7 @@
   import { blockStyle } from '../lib/colors.js';
   import { createDrag, tokenOffset } from '../lib/drag.js';
   import { WORD_ORDERS } from '../lib/order.js';
+  import { t } from '../lib/i18n.svelte.js';
 
   let { reader, onhover, onopen, lemmaOf = null } = $props();
   let hovered = $state(null);
@@ -101,17 +102,17 @@
 </script>
 
 <div class="controls">
-  <span class="group-label">Arrange</span>
-  <button class="restore" title="put every block back in the order of the text" onclick={() => { reader.restoreOrder(); sorted = false; pattern = null; }}>restore original order</button>
-  <button class="autosort" title="group blocks by case, each group in text order" onclick={() => { reader.autoSort(); sorted = true; pattern = null; }}>auto-sort by case</button>
-  <span class="group-label order-label" title="S = subject (nominative), V = verb, O = object (accusative); every other word follows in its current order">word order:</span>
+  <span class="group-label">{t('pane.arrange')}</span>
+  <button class="restore" title={t('pane.restore.title')} onclick={() => { reader.restoreOrder(); sorted = false; pattern = null; }}>{t('pane.restore')}</button>
+  <button class="autosort" title={t('pane.autosort.title')} onclick={() => { reader.autoSort(); sorted = true; pattern = null; }}>{t('pane.autosort')}</button>
+  <span class="group-label order-label" title={t('pane.wordorder.title')}>{t('pane.wordorder')}</span>
   {#each WORD_ORDERS as p (p)}
-    <button class="word-order" class:active={pattern === p} title="S = subject (nominative), V = verb, O = object (accusative); the rest follows in its current order"
+    <button class="word-order" class:active={pattern === p} title={t('pane.wordorder.title')}
             onclick={() => { reader.arrange(p); pattern = p; sorted = false; }}>{p}</button>
   {/each}
-  {#if sorted}<span class="sort-note" aria-live="polite">sorted by case; an ambiguous block goes by its first reading</span>{/if}
-  {#if pattern}<span class="sort-note" aria-live="polite">arranged {pattern}: {[...pattern].map((r) => ({ S: 'subject (nominative)', V: 'verb', O: 'object (accusative)' })[r]).join(' → ')}, then the rest; an ambiguous block goes by its first reading</span>{/if}
-  <span class="count" aria-live="polite">{blocks.length} words · {unresolved} ambiguous{unknown ? ` · ${unknown} not in the dictionary` : ''}</span>
+  {#if sorted}<span class="sort-note" aria-live="polite">{t('pane.sorted')}</span>{/if}
+  {#if pattern}<span class="sort-note" aria-live="polite">{t('pane.arranged', { pattern, roles: [...pattern].map((r) => t(`pane.role.${r}`)).join(' → ') })}</span>{/if}
+  <span class="count" aria-live="polite">{t('pane.count', { words: blocks.length, ambiguous: unresolved })}{unknown ? t('pane.count.unknown', { n: unknown }) : ''}</span>
 </div>
 
 <!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -128,9 +129,9 @@
             <Block {block} layers={reader.layers} onhover={hover} onopen={open} {lemmaOf} />
           </span>
           {#if item.indices.length > 1 && i === 0}
-            <button class="unglue" title="unglue: let the preposition and its object move apart" aria-label="unglue this chunk" onclick={() => reader.toggleGlue(index)}>⛓</button>
+            <button class="unglue" title={t('pane.unglue')} aria-label="unglue this chunk" onclick={() => reader.toggleGlue(index)}>⛓</button>
           {:else if item.indices.length === 1 && reader.unglued.has(index) && prepositions.includes(index)}
-            <button class="glue" title="glue to the next word again" aria-label="glue to the next word" onclick={() => reader.toggleGlue(index)}>⛓</button>
+            <button class="glue" title={t('pane.glue')} aria-label="glue to the next word" onclick={() => reader.toggleGlue(index)}>⛓</button>
           {/if}
         {/if}
       {/each}
@@ -141,7 +142,7 @@
 {#if ghost}
   <div class="ghost" style:left="{ghost.x}px" style:top="{ghost.y}px" aria-hidden="true">{@html ghost.html}</div>
 {/if}
-<p class="drag-hint">Drag a block: the others stay put, a bar shows where it will land, and it moves when you let go. Keyboard: focus a block, then Alt + ← / →.</p>
+<p class="drag-hint">{t('pane.draghint')}</p>
 
 <style>
   .controls { display: flex; gap: 8px; margin-bottom: 10px; align-items: center; flex-wrap: wrap; }

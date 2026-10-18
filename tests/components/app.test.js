@@ -172,3 +172,26 @@ describe('App page furniture (feedback D8, D14, D20)', () => {
     expect(container.querySelector('.legend')).not.toBe(null);
   });
 });
+
+describe('App UI language flag (decided 2026-10-18)', () => {
+  it('switches the chrome to Brazilian Portuguese and the dictionary language with it, and remembers the choice', async () => {
+    try { localStorage.removeItem('casus:ui-lang'); } catch {}
+    const { container, unmount } = render(App, { fetchImpl, storage: storage(), ...immediate });
+    await tick(); await tick();
+    expect(container.querySelector('h2').textContent).toMatch(/Text/);
+    await fireEvent.click(container.querySelector('button.ui-lang[data-lang=pt]'));
+    await tick();
+    expect(container.querySelector('h2').textContent).toMatch(/Texto/);
+    expect(container.querySelector('button.read').textContent).toMatch(/Identificar a gramática/);
+    await readPasted(container, 'Rosa bona.');
+    expect(container.querySelector('select.gloss').value).toBe('pt');
+    expect(container.querySelector('select.era option[value=classical]').textContent).toMatch(/Latim clássico/);
+    unmount();
+    const again = render(App, { fetchImpl, storage: storage(), ...immediate });
+    await tick();
+    expect(again.container.querySelector('h2').textContent).toMatch(/Texto/);
+    await fireEvent.click(again.container.querySelector('button.ui-lang[data-lang=en]'));
+    await tick();
+    expect(again.container.querySelector('h2').textContent).toMatch(/Text/);
+  });
+});

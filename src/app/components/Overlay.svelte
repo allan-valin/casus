@@ -1,6 +1,7 @@
 <script>
   /* The stylised overlay Desembarque uses for its readings box (feedback D19): a dimmed
    * backdrop, a centred panel, Escape and a click outside close it. */
+  import { t } from '../lib/i18n.svelte.js';
   let { onclose, label, panelClass = '', children } = $props();
   let panel = $state(null);
   $effect(() => { panel?.focus(); });
@@ -9,7 +10,7 @@
 <div class="overlay" role="presentation" onclick={(e) => { if (e.target === e.currentTarget) onclose(); }}>
   <div class="panel {panelClass}" role="dialog" aria-label={label} tabindex="-1" bind:this={panel}
        onkeydown={(e) => { if (e.key === 'Escape') onclose(); }}>
-    <button class="close" onclick={onclose} aria-label="close">×</button>
+    <button class="close" onclick={onclose} aria-label={t('overlay.close')}>×</button>
     {@render children()}
   </div>
 </div>

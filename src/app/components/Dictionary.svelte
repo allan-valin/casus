@@ -2,6 +2,7 @@
   import Candidates from './Candidates.svelte';
   import Overlay from './Overlay.svelte';
   import { eraStatus, warning, AGE_LABEL } from '../lib/era.js';
+  import { t } from '../lib/i18n.svelte.js';
   let { block, reader, onclose } = $props();
 
   const ORDINAL = { 1: '1st', 2: '2nd', 3: '3rd', 4: '4th', 5: '5th' };
@@ -33,11 +34,11 @@
   <div class="body">
     <h3>{block.token.surface}</h3>
     {#if block.candidates.length === 0}
-      <p class="none">not in the dictionary — Whitaker's lexicon is thin on proper names</p>
+      <p class="none">{t('dict.none')}</p>
     {:else if !extras.lemmas}
-      <p class="loading">loading the lemma table…</p>
+      <p class="loading">{t('dict.loading')}</p>
     {:else}
-      <h4>Dictionary</h4>
+      <h4>{t('dict.section')}</h4>
       {#each lemmaIds as id (id)}
         {@const r = extras.lemmas[id]}
         {#if r}
@@ -46,8 +47,8 @@
           <div class="entry" class:dim-near={status === 'near'} class:dim-out={status === 'out'}>
             <div class="form">{r.dict_form ?? r.headword}</div>
             <div class="class">{classLine(r)}</div>
-            <div class="gloss">{g.text} <span class="gloss-lang" title="language of this gloss">{g.lang}</span></div>
-            <div class="meta">age: {AGE_LABEL[r.age] ?? r.age} · freq {r.freq}</div>
+            <div class="gloss">{g.text} <span class="gloss-lang" title={t('dict.glosslang')}>{g.lang}</span></div>
+            <div class="meta">{t('dict.age')}: {AGE_LABEL[r.age] ?? r.age} · {t('dict.freq')} {r.freq}</div>
             {#if warning(r.age, reader.era)}<div class="warning">{warning(r.age, reader.era)}</div>{/if}
           </div>
         {:else}
@@ -56,7 +57,7 @@
       {/each}
     {/if}
     {#if block.candidates.length > 0}
-      <h4>Possible readings <span class="sub">— each with the reason it survived. Pin the one you believe; the rest of the sentence re-reads.</span></h4>
+      <h4>{t('dict.readings')} <span class="sub">{t('dict.readings.sub')}</span></h4>
     {/if}
     <Candidates {block} {reader} />
   </div>

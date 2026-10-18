@@ -1,5 +1,6 @@
 <script>
   import { blockStyle } from '../lib/colors.js';
+  import { t } from '../lib/i18n.svelte.js';
   let { block, layers, onhover, onopen, lemmaOf = null } = $props();
   const style = $derived(blockStyle(block, layers));
   // the class sub-layer needs one lemma; the case may still be open (rosa nom/abl is one word)
@@ -9,7 +10,7 @@
 <!-- a div, not a button: the pool's pointer drag must start on it, and a button would swallow pointerdown -->
 <div class="pill" class:ambiguous={style.ambiguous} class:pinned={block.pinned} class:unknown={style.unknown}
      style:background={style.fill} style:border-color={style.border} style:border-style={style.borderStyle}
-     role="button" tabindex="0" title={style.unknown ? 'not in the dictionary' : 'click: dictionary and readings · drag: move'}
+     role="button" tabindex="0" title={style.unknown ? t('block.unknown') : t('block.title')}
      onmouseenter={() => onhover(block.token.index)} onmouseleave={() => onhover(null)}
      onclick={() => onopen(block)}
      onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onopen(block); } }}>
