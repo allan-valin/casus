@@ -10,7 +10,7 @@ export function tokenize(sentenceText) {
   for (let m = WORD.exec(sentenceText); m; m = WORD.exec(sentenceText)) {
     const [raw, long, short] = m;
     const word = long ?? short;
-    if (!word) { push(tokens, raw, 'punct', raw, m.index); continue; }
+    if (!word) { push(tokens, raw, 'punct', raw, m.index); if (/\.$/.test(raw)) first = true; continue; }
     const key = RESPELL[word] ?? word.normalize('NFC');
     const t = push(tokens, word, 'word', key, m.index);
     if (first && /^\p{Lu}/u.test(key)) {

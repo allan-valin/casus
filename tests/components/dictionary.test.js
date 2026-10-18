@@ -165,3 +165,17 @@ describe('Dictionary names its sources per language', () => {
     expect(container.querySelector('button.dict-tab').textContent).toMatch(/Whitaker/);
   });
 });
+
+describe('Speaker says when the natural voice failed and another spoke (review I7)', () => {
+  it('shows a visible note and reports the voice that spoke', async () => {
+    const reader = await readerWith('Rosa.');
+    const onspoke = vi.fn();
+    const voice = { tier: async () => 'natural', speak: vi.fn(async () => ({ tier: 'browser', fellBack: true })) };
+    const { container } = render(Dictionary, { block: reader.blocks[0], reader, onclose: () => {}, voice, onspoke });
+    await new Promise((r) => setTimeout(r, 0));
+    await fireEvent.click(container.querySelector('button.speaker'));
+    await new Promise((r) => setTimeout(r, 0));
+    expect(container.querySelector('.voice-note').textContent).toMatch(/natural voice/i);
+    expect(onspoke).toHaveBeenCalledWith('rosa', 'browser');
+  });
+});

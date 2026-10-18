@@ -7,11 +7,12 @@
   const ARTICLE = { m: 'der', f: 'die', n: 'das' };
   const article = $derived.by(() => {
     if (!showArticle) return '';
+    // only when the word can only be a noun (sentence-initial Er/Ich also read as pronouns: review I4)
     const nouns = block.candidates.filter((c) => c.analysis.pos === 'noun');
-    if (!nouns.length) return '';
-    const sg = [...new Set(nouns.filter((c) => c.analysis.number !== 'pl').map((c) => ARTICLE[c.analysis.gender]).filter(Boolean))];
-    if (sg.length) return sg.join(' / ');
-    return 'die (Pl.)';
+    if (!nouns.length || nouns.length !== block.candidates.length) return '';
+    if (nouns.every((c) => c.analysis.number === 'pl')) return 'die (Pl.)';
+    // singular readings without a known gender get no article rather than a wrong one (review I2)
+    return [...new Set(nouns.filter((c) => c.analysis.number !== 'pl').map((c) => ARTICLE[c.analysis.gender]).filter(Boolean))].join(' / ');
   });
   const style = $derived((colors?.blockStyle ?? latinBlockStyle)(block, layers));
   // the class sub-layer needs one lemma; the case may still be open (rosa nom/abl is one word)

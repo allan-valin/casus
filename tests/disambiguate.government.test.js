@@ -160,3 +160,30 @@ describe('government over the noun phrase (German, languages phase 3 Task 4)', (
     expect(cases(out[3])).toEqual(['acc', 'dat', 'nom']);
   });
 });
+
+describe('phrase government stops where the phrase does (review I1)', () => {
+  const N = (c, n = 'sg', g = 'm', pos = 'noun') => ({ lemma: 'x', pos, case: c, number: n, gender: g });
+  const tok = (i, s) => ({ index: i, surface: s, key: s, kind: 'word' });
+  async function run(words, analyses) {
+    const { buildBlocks, governmentStage, narrow } = await import('../src/lib/disambiguate.js');
+    const blocks = buildBlocks(words.map((w, i) => tok(i, w)), new Map(Object.entries(analyses)));
+    return narrow(blocks, (b) => governmentStage(b, { mit: ['dat'], für: ['acc'] }, { phrase: true }));
+  }
+  const cases = (b) => [...new Set(b.candidates.map((c) => c.analysis.case))].sort();
+  it('mit ihm Fußball spielen: ihm is the object, Fußball keeps its cases', async () => {
+    const out = await run(['mit', 'ihm', 'Fußball', 'spielen'], {
+      mit: [{ lemma: 'p', pos: 'prep', governs: 'dat' }], ihm: [N('dat', 'sg', 'm', 'pron')],
+      Fußball: [N('nom'), N('dat'), N('acc')], spielen: [{ lemma: 'v', pos: 'verb' }],
+    });
+    expect(cases(out[1])).toEqual(['dat']);
+    expect(cases(out[2])).toEqual(['acc', 'dat', 'nom']);
+    expect(out[2].candidates.some((c) => c.links.some((l) => l.kind === 'government'))).toBe(false);
+  });
+  it('a member with no reading in the governed cases ends the phrase (it is not skipped)', async () => {
+    const out = await run(['mit', 'das', 'Buch'], {
+      mit: [{ lemma: 'p', pos: 'prep', governs: 'dat' }], das: [N('nom', 'sg', 'n', 'det'), N('acc', 'sg', 'n', 'det')],
+      Buch: [N('nom', 'sg', 'n'), N('dat', 'sg', 'n'), N('acc', 'sg', 'n')],
+    });
+    expect(cases(out[2])).toEqual(['acc', 'dat', 'nom']);
+  });
+});

@@ -107,14 +107,22 @@ export function createVoice({ bcp47, espeakVoice, natural = null, synth = global
     try { return await engineLoad; } catch (e) { engineLoad = null; throw new Error(`no voice for ${bcp47}: espeak-ng could not be loaded (${e.message})`); }
   }
   async function speak(text) {
+    let fellBack = false;
     if (naturalReady()) {
+      let p = null;
       try {
-        const p = await piper();
+        p = await piper();
         await playBlob(await p.predict({ text, voiceId: natural.voiceId }));
-        return;
+        return { tier: 'natural', fellBack: false };
       } catch {
-        // the browser evicted the model (or it never finished): forget it and use the next tier
-        try { store?.removeItem(naturalKey); } catch { /* storage refused */ }
+        fellBack = true;
+        // forget the voice only when the browser no longer has the model (review I7); otherwise keep it
+        let missing = false;
+        try { missing = !(await p?.stored?.() ?? [natural.voiceId]).includes(natural.voiceId); } catch { missing = false; }
+        if (missing) {
+          try { store?.removeItem(naturalKey); } catch { /* storage refused */ }
+          for (const fn of listeners) fn();
+        }
       }
     }
     const v = browserVoice();
@@ -128,12 +136,13 @@ export function createVoice({ bcp47, espeakVoice, natural = null, synth = global
         synth.cancel?.();
         synth.speak(u);
       });
-      return;
+      return { tier: 'browser', fellBack };
     }
     if (!espeakVoice) throw new Error(`no voice for ${bcp47}`);
     const e = await engine();
     const { audio, sampleRate } = await e.synthesize(text, espeakVoice);
     await play(audio, sampleRate);
+    return { tier: 'espeak', fellBack };
   }
   return { tier, speak, onchange, natural, naturalReady, downloadNatural, removeNatural };
 }

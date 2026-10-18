@@ -164,6 +164,8 @@ function governedSpan(blocks, i, phrase) {
   for (let j = i + 1; j < blocks.length && span.length < 5; j += 1) {
     const poses = blocks[j].candidates.map((c) => c.analysis.pos);
     if (poses.includes('noun')) { span.push(j); break; }
+    // a personal pronoun is a whole phrase on its own (mit ihm): it ends the span (review I1)
+    if (poses.includes('pron') && !poses.some((p) => p === 'det' || p === 'adj' || p === 'num')) { span.push(j); break; }
     if (poses.some((p) => PHRASE_MEMBERS.has(p))) { span.push(j); continue; }
     break;
   }
@@ -185,7 +187,12 @@ export function governmentStage(blocks, government = GOVERNMENT, { phrase = fals
     const governs = [...new Set(preps.flatMap((c) => c.analysis.governs))];
     // an indeclinable reading (case x) says nothing about government: it stays as it is
     const caseOk = (c, allowed) => c.analysis.case && (c.analysis.case === 'x' || allowed.includes(c.analysis.case));
-    const span = governedSpan(out, i, phrase).filter((j) => out[j].candidates.some((c) => caseOk(c, governs) && c.analysis.case !== 'x'));
+    // the phrase is contiguous: a member with no reading in the governed cases ends it, it is not skipped
+    const span = [];
+    for (const j of governedSpan(out, i, phrase)) {
+      if (!out[j].candidates.some((c) => caseOk(c, governs) && c.analysis.case !== 'x')) break;
+      span.push(j);
+    }
     if (span.length === 0) continue;
     // the cases every member of the phrase still allows; one shared case settles the preposition
     let shared = governs;

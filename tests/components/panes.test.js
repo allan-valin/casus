@@ -188,6 +188,13 @@ describe('German article on noun pills (languages phase 3 Task 5)', async () => 
   it('shows both when the gender is open', () => {
     expect(show(blk('See', [noun('nom', 'sg', 'm'), noun('nom', 'sg', 'f')])).querySelector('.article').textContent).toBe('der / die');
   });
+  it('no article over a singular noun whose gender is unknown (review I2)', () => {
+    expect(show(blk('Meter', [noun('nom', 'sg', 'x'), noun('acc', 'sg', 'x')])).querySelector('.article')).toBe(null);
+  });
+  it('no article when the word may be something other than a noun: sentence-initial Er, Ich (review I4)', () => {
+    const er = blk('Er', [noun('nom', 'sg', 'm'), { analysis: { lemma: '9', pos: 'pron', case: 'nom', number: 'sg', gender: 'm' }, reasons: [] }]);
+    expect(show(er).querySelector('.article')).toBe(null);
+  });
   it('never on a Latin pill or a non-noun', () => {
     const latin = render(Block, { block: blk('rosa', [noun('nom', 'sg', 'f')]), layers: ALL, onhover: () => {}, onopen: () => {} }).container;
     expect(latin.querySelector('.article')).toBe(null);

@@ -34,3 +34,18 @@ describe('German definition', () => {
     expect(words.map((w) => w.key)).toEqual(['dass', 'Maße', 'E-Mail']);
   });
 });
+
+describe('German sentences after years and abbreviations (review I6)', () => {
+  it('a year or a large number ends a sentence before a capital', () => {
+    expect(de.segment('Er wohnt seit 1990. Danach kam sie.').map((s) => s.text)).toEqual(['Er wohnt seit 1990.', 'Danach kam sie.']);
+  });
+  it('usw. and etc. end a sentence before a capital; z. B. and Dr. do not', () => {
+    expect(de.segment('Er kaufte Äpfel usw. Die Kinder aßen sie.')).toHaveLength(2);
+    expect(de.segment('Er traf Dr. Müller. Gut.')).toHaveLength(2);
+    expect(de.segment('Er traf Dr. Müller.')).toHaveLength(1);
+  });
+  it('a capitalised word right after a full stop inside a sentence also gets a small-letter key', () => {
+    const words = de.tokenize('Er traf Dr. Müller und usw. Danach').filter((t) => t.kind === 'word');
+    expect(words.find((w) => w.surface === 'Danach').altKey).toBe('danach');
+  });
+});

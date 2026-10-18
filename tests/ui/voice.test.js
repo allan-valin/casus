@@ -101,14 +101,23 @@ describe('natural voice tier (Piper, languages phase 3 Task 6)', () => {
     expect(playBlob).toHaveBeenCalledTimes(1);
     expect(store.getItem('casus:voice:de_DE-thorsten-medium')).toBe('stored');
   });
-  it('falls back to the browser voice when the stored model has gone, and forgets it', async () => {
-    const piper = { ...fakePiper(), predict: vi.fn(async () => { throw new Error('not found'); }) };
+  it('falls back to the browser voice when the stored model has gone, forgets it, tells its listeners and says which voice spoke', async () => {
+    const piper = { ...fakePiper(), predict: vi.fn(async () => { throw new Error('not found'); }), stored: vi.fn(async () => []) };
     const store = memory(); store.setItem('casus:voice:de_DE-thorsten-medium', 'stored');
     const synth = fakeSynth(['de-DE']);
     const v = createVoice({ bcp47: 'de', espeakVoice: 'de', natural, synth, loadPiper: async () => piper, playBlob: async () => {}, store });
-    await v.speak('Haus');
+    const heard = vi.fn(); v.onchange(heard);
+    expect(await v.speak('Haus')).toEqual({ tier: 'browser', fellBack: true });
     expect(synth.speak).toHaveBeenCalledTimes(1);
     expect(store.getItem('casus:voice:de_DE-thorsten-medium')).toBe(null);
+    expect(heard).toHaveBeenCalled();
+  });
+  it('keeps the downloaded voice when it fails for another reason (offline, a slow start), and says it fell back (review I7)', async () => {
+    const piper = { ...fakePiper(), predict: vi.fn(async () => { throw new Error('network'); }), stored: vi.fn(async () => ['de_DE-thorsten-medium']) };
+    const store = memory(); store.setItem('casus:voice:de_DE-thorsten-medium', 'stored');
+    const v = createVoice({ bcp47: 'de', espeakVoice: 'de', natural, synth: fakeSynth(['de-DE']), loadPiper: async () => piper, playBlob: async () => {}, store });
+    expect(await v.speak('Haus')).toEqual({ tier: 'browser', fellBack: true });
+    expect(store.getItem('casus:voice:de_DE-thorsten-medium')).toBe('stored');
   });
   it('removes the natural voice', async () => {
     const piper = fakePiper();

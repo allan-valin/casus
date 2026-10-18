@@ -77,3 +77,38 @@ def test_single_word_subordinate_clause_forms_of_separable_verbs_are_kept():
     got = [(f, a["tense"]) for f, a in an(e)]
     assert ("ansah", "pret") in got
     assert all(" " not in f for f, _ in got)
+
+
+TABLE = [{"form": "ich", "tags": ["first-person", "nominative", "personal", "pronoun", "singular"]},
+         {"form": "er", "tags": ["masculine", "nominative", "personal", "pronoun", "singular", "third-person"]},
+         {"form": "ihm", "tags": ["dative", "masculine", "personal", "pronoun", "singular", "third-person"]},
+         {"form": "mir", "tags": ["dative", "first-person", "personal", "pronoun", "singular"]},
+         {"form": "sie", "tags": ["feminine", "nominative", "personal", "pronoun", "singular", "third-person"]},
+         {"form": "sie", "tags": ["nominative", "personal", "plural", "pronoun", "third-person"]},
+         {"form": "ihnen", "tags": ["dative", "personal", "plural", "pronoun", "third-person"]}]
+
+
+def test_a_personal_pronoun_keeps_only_its_own_rows_of_the_shared_table():
+    from casus_build.de.parse import analyses_of as an
+    er = {"id": 1, "headword": "er", "pos": "pron", "gender": None, "gloss_en": "", "ipa": [], "forms": TABLE}
+    assert sorted({f for f, _ in an(er)}) == ["er", "ihm"]
+    sie = {"id": 2, "headword": "sie", "pos": "pron", "gender": None, "gloss_en": "", "ipa": [], "forms": TABLE}
+    assert sorted({f for f, _ in an(sie)}) == ["ihnen", "sie"]
+
+
+def test_the_article_table_belongs_to_der_alone():
+    index = build_index(ENTRIES.values())
+    assert {a["lemma"] for a in index["dem"] if a["pos"] == "det"} == {ENTRIES[("der", "det")]["id"]}
+
+
+def test_lowercase_noun_forms_are_not_nouns():
+    from casus_build.de.parse import analyses_of as an
+    e = {"id": 3, "headword": "E", "pos": "noun", "gender": "n", "gloss_en": "the letter E", "ipa": [], "forms": [
+        {"form": "es", "tags": ["nominative", "plural"]}, {"form": "Es", "tags": ["nominative", "plural"]}]}
+    assert [f for f, _ in an(e)] == ["Es"]
+
+
+def test_a_pronoun_page_without_its_own_row_in_the_shared_table_takes_none_of_it():
+    from casus_build.de.parse import analyses_of as an
+    du = {"id": 4, "headword": "Du", "pos": "pron", "gender": None, "gloss_en": "", "ipa": [], "forms": TABLE}
+    assert {f for f, _ in an(du)} == {"Du"}

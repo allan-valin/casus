@@ -104,6 +104,31 @@ def _mood_tense(tags: set[str]) -> tuple[str, str] | None:
     return None
 
 
+_SIG = ("first-person", "second-person", "third-person", "singular", "plural", "masculine", "feminine", "neuter")
+
+
+def _sig(tags) -> tuple:
+    return tuple(t for t in _SIG if t in tags)
+
+
+def _own_rows(entry: dict) -> list[dict] | None:
+    """Pronoun and article pages repeat a whole shared table. A personal pronoun keeps only the rows of its
+    own person/number/gender (those of its nominative row); an article page keeps the table only when it is
+    the table's own page (its masculine nominative singular row is the headword: der, ein, mein, dieser)."""
+    forms = entry["forms"]
+    if entry["pos"] == "pron":
+        sigs = {_sig(f.get("tags") or []) for f in forms
+                if f.get("form") == entry["headword"] and "nominative" in (f.get("tags") or [])}
+        if any("personal" in (f.get("tags") or []) for f in forms):
+            # the shared personal-pronoun table: only this pronoun's own rows (none when it has no row: Du)
+            return [f for f in forms if "table-tags" in (f.get("tags") or []) or (sigs and _sig(f.get("tags") or []) in sigs)]
+    if entry["pos"] == "det":
+        head = next((f.get("form") for f in forms if {"masculine", "nominative", "singular"} <= set(f.get("tags") or [])), None)
+        if head is not None and head != entry["headword"]:
+            return None
+    return forms
+
+
 def analyses_of(entry: dict) -> list[tuple[str, dict]]:
     pos = entry["pos"]
     head = entry["headword"]
@@ -114,7 +139,10 @@ def analyses_of(entry: dict) -> list[tuple[str, dict]]:
             return [(head, {"pos": "adv", "degree": "pos"})]
         return [(head, {"pos": pos})]
     out: list[tuple[str, dict]] = []
-    for f in entry["forms"]:
+    forms = _own_rows(entry)
+    if forms is None:
+        return []                            # an article page whose table belongs to der/ein
+    for f in forms:
         tags = set(f.get("tags") or [])
         form = unicodedata.normalize("NFC", f.get("form", "")).strip()
         if not form or tags & SKIP_TAGS:
@@ -125,6 +153,8 @@ def analyses_of(entry: dict) -> list[tuple[str, dict]]:
             form = form.split()[-1]          # dem guten → guten
         if not _WORD.match(form):
             continue                         # multiword cells (sah an, dass ich ansah) are syntax
+        if pos == "noun" and form[0].islower():
+            continue                         # German nouns are capitalised: es as the plural of the letter e is noise
         if pos == "verb":
             if "participle" in tags:
                 out.append((form, {"pos": "verb", "person": "0", "number": "x", "tense": "x",
