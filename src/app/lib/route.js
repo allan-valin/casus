@@ -1,12 +1,21 @@
 /* The path selects the language and the view (spec 2026-10-18 §4): `/` is Latin's reader,
- * `/<code>/` another language's reader, `/<code>/game/` its alphabet drill. Unknown → Latin. */
+ * `/<code>/` another language's reader, `/<code>/drills/` its drills (`/drills/` for Latin). The old
+ * `/<code>/game/` links land on the drills page. Unknown → Latin. */
 import { LANGUAGES } from '../../lang/registry.js';
+
+const DRILLS = new Set(['drills', 'game']);
 
 export function langFromPath(pathname, base = '/', languages = LANGUAGES) {
   const b = base.endsWith('/') ? base : `${base}/`;
   const rest = pathname.startsWith(b) ? pathname.slice(b.length) : pathname.replace(/^\//, '');
   const [code, view] = rest.split('/').filter(Boolean);
+  if (DRILLS.has(code)) return { code: 'la', view: 'drills' };
   const known = languages.find((l) => l.code === code && l.path !== '/');
   if (!known) return { code: 'la', view: 'reader' };
-  return { code, view: view === 'game' ? 'game' : 'reader' };
+  return { code, view: DRILLS.has(view) ? 'drills' : 'reader' };
+}
+
+/** the drills page of a language, without the site base */
+export function drillsPath(language) {
+  return `${language.path.replace(/\/$/, '')}/drills/`;
 }

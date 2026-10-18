@@ -65,8 +65,8 @@
   }
 </script>
 
-<section class="card game">
-  <h2>{t('game.heading')}</h2>
+<section class="game">
+  <h3>{t('game.heading')}</h3>
   <p class="hint">{view === 'grid' ? t('game.hint.grid') : t('game.hint.single')}</p>
   <fieldset class="rows">
     <legend>{t('game.rows')}</legend>

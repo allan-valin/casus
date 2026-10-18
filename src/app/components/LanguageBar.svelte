@@ -1,6 +1,7 @@
 <script>
-  /* The navigation bar: every shipped language, the current one marked; the letters drill where one exists. */
-  import { LANGUAGES, getLanguage } from '../../lang/registry.js';
+  /* The navigation bar: every shipped language, the current one marked; the drills of the current language. */
+  import { LANGUAGES } from '../../lang/registry.js';
+  import { drillsPath } from '../lib/route.js';
   import { withBase } from '../lib/paths.js';
   import { t, ui } from '../lib/i18n.svelte.js';
   let { current, view = 'reader' } = $props();
@@ -10,9 +11,7 @@
   {#each LANGUAGES as l (l.code)}
     <a href={withBase(l.path)} aria-current={l.code === current && view === 'reader' ? 'page' : undefined}>{l.name[ui.lang] ?? l.name.en}</a>
   {/each}
-  {#if getLanguage(current)?.game}
-    <a class="game-link" href={withBase(`${LANGUAGES.find((l) => l.code === current).path.replace(/\/$/, '')}/game/`)} aria-current={view === 'game' ? 'page' : undefined}>{t('nav.game')}</a>
-  {/if}
+  <a class="game-link" href={withBase(drillsPath(LANGUAGES.find((l) => l.code === current)))} aria-current={view === 'drills' ? 'page' : undefined}>{t('nav.game')}</a>
 </nav>
 
 <style>

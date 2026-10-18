@@ -25,8 +25,9 @@ function serveData() {
       const html = resolve('dist/index.html');
       if (!existsSync(html)) return;
       for (const l of LANGUAGES) {
-        if (l.path === '/') continue;
-        for (const dir of [l.path, `${l.path.replace(/\/$/, '')}/game/`]) {
+        const at = l.path.replace(/\/$/, '');
+        // the reader (Latin's is the root itself), the drills, and the old /game/ links
+        for (const dir of [...(l.path === '/' ? [] : [l.path]), `${at}/drills/`, ...(l.path === '/' ? [] : [`${at}/game/`])]) {
           const out = resolve('dist' + dir);
           mkdirSync(out, { recursive: true });
           copyFileSync(html, join(out, 'index.html'));

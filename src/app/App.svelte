@@ -20,7 +20,7 @@
   import { t, ui, setLang } from './lib/i18n.svelte.js';
   import { createActivity } from './lib/activity.svelte.js';
   import ActivityLog from './components/ActivityLog.svelte';
-  import Game from './components/Game.svelte';
+  import Drills from './components/Drills.svelte';
   import { describeAnalysis } from './lib/colors.js';
   import { partners as partnersOf } from './lib/chunks.js';
 
@@ -169,7 +169,7 @@
         <button class="ui-lang" class:active={ui.lang === 'en'} data-lang="en" onclick={() => switchLang('en')}>English</button>
         <button class="ui-lang" class:active={ui.lang === 'pt'} data-lang="pt" onclick={() => switchLang('pt')}>Português</button>
       </div>
-      {#if route.view !== 'game'}<div class="exports" aria-label="export">
+      {#if route.view !== 'drills'}<div class="exports" aria-label="export">
         <span class="exports-label">{t('app.export')}</span>
         <button class="export-json" disabled={!reader} title={t('app.export.json.title')} onclick={() => download('json')}>{t('app.export.json')}</button>
         <button class="export-md" disabled={!reader} title={t('app.export.md.title')} onclick={() => download('md')}>{t('app.export.md')}</button>
@@ -178,8 +178,8 @@
     </div>
   </header>
 
-  {#if route.view === 'game' && lang.game}
-    <Game {lang} {voice} />
+  {#if route.view === 'drills'}
+    <Drills {lang} {voice} loadModels={() => fetchImpl(`${DATA}/drills.json`).then((r) => (r.ok ? r.json() : []))} navigate={(p) => { location.href = withBase(p); }} />
   {:else}
   <section class="card">
     <h2><span class="step">1</span> {t('text.heading')}</h2>

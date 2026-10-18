@@ -124,7 +124,7 @@ await page.click('button.sample:has-text("John")'); await page.waitForSelector('
 console.log('grc after reload: pinned', await page.$$eval('.pill.pinned .surface', (e) => e.map((x) => x.textContent)), '| first:', await page.$$eval('.pool .pill .surface', (e) => e.slice(0, 2).map((x) => x.textContent).join(' ')));
 await page.click('nav.languages a:has-text("Latin")'); await page.waitForFunction(() => document.querySelector('.status')?.textContent.startsWith('dictionary ready'));
 console.log('bar -> Latin:', await page.textContent('nav.languages a[aria-current=page]'), page.url());
-await page.goto(base + '/grc/game/'); await page.waitForSelector('.grid .cell');
+await page.goto(base + '/grc/game/'); await page.waitForSelector('.grid .cell');   // the old link opens the drills page, letters first
 console.log('grc drill grid:', (await page.$$eval('.grid .glyph', (e) => e.map((x) => x.textContent))).join(' '));
 // ---- German (languages phase 3)
 await page.goto(base + '/de/');
