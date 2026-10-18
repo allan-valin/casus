@@ -152,6 +152,13 @@ from that document and reviewed against it.
   lexical + frequency score (Latin §10.3's design), boundaries draggable, competing splits
   reachable. Japanese deinflection follows rikaikun's rule table (its own, MIT-free: the table is
   rebuilt from the grammar, not copied).
+- **Marks that are easy to miss** (Allan, 2026-10-18): Greek accents and breathings, Russian
+  stress, Arabic vowels, pinyin tones, Japanese pitch accent, furigana. A block renders them in a
+  size and weight that reads at a glance (a larger "reading" line on the pill where the script
+  needs it), and when the input text lacks them (unaccented Greek, unvocalised Arabic, Russian
+  without stress marks, Chinese without pinyin) the lexicon's marked form is shown on the block and
+  in the text pane's reading layer, labelled as supplied by the dictionary, with a toggle to hide
+  the layer. An input with marks is never silently rewritten.
 - **Right-to-left** (Arabic): the text pane and the pool lay out RTL; badges and indices stay
   LTR inside the pill. Arabic case endings are mostly unwritten (no vowels), so the inventory
   records case as *usually unresolved unless written* — an honest page, not a guessed one.
