@@ -1,6 +1,11 @@
 # Casus — Latin case-block reader
 
-**Status:** design approved 2026-08-20. Not implemented. No code exists yet.
+**Status:** design approved 2026-08-20; core and page built 2026-10-02; page rebuilt from Allan's
+feedback and published 2026-10-18 (`docs/FEEDBACK-2026-10-18.md`). **Amendments decided 2026-10-18:**
+v2 OCR (§10.2) uses Desembarque's engine (kraken PP-OCRv6 + second reading), not tesseract.js; the UI
+language is a flag (English ⇄ pt-BR) covering the chrome and the dictionary; the page is phone-friendly
+and scales to any resolution (the desktop-only non-goal in §2 is revoked); the drag is the page's own
+pointer-event implementation with a caret preview, replacing the drag library chosen in §12.
 **Repo:** `/home/allan/projects/casus`
 **App #6.** See also `desembarque` (#4, OCR), `score-app` (#5).
 

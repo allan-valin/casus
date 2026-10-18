@@ -6,7 +6,9 @@ structure is visible. Colour carries case, brightness carries number, and a word
 genuinely ambiguous is shown as ambiguous rather than guessed at.
 
 - Design: `docs/superpowers/specs/2026-08-20-casus-design.md`
-- Implementation plan (core): `docs/superpowers/plans/2026-08-20-casus-core.md`
+- Implementation plans: `docs/superpowers/plans/2026-08-20-casus-core.md` (data + parser),
+  `docs/superpowers/plans/2026-10-02-casus-ui.md` (the page)
+- Feedback and status after the first hands-on session: `docs/FEEDBACK-2026-10-18.md`
 - Data provenance and field layouts: `docs/DATA.md`
 
 ## Development
@@ -18,41 +20,52 @@ npm install                       # with npm 10.8 the lockfile installs as is; i
                                   # and npm dies on "edgesOut", use --legacy-peer-deps (vitest 5 peer set)
 npm test                          # vitest: parser modules, UI helpers and thin component tests
 python3 -m pytest tools/tests -q  # the build pipeline tests
-python3 tools/build_index.py      # builds data/ from vendor/ (35 s) — needed before the page runs
+python3 tools/build_index.py      # rebuilds data/ from vendor/ (35 s); data/ is committed, so this is optional
+bash tools/fetch_glosses_pt.sh && python3 tools/build_glosses_pt.py   # the Portuguese gloss layer
 npm run dev                       # the reader at http://localhost:5173
 npm run build && npm run preview  # static bundle in dist/, data/ copied beside it
+cd dist && python3 -m http.server # or serve the built bundle offline with nothing but Python
 ```
 
-`vendor/` holds source data downloaded by `tools/fetch_data.sh` and is not committed. The
-derived index under `data/` is built by `python3 tools/build_index.py` and is **not committed
-yet either**: it is twice the raw size budget the plan set (57 MB on disk, 7.3 MB gzipped), and
-whether to ship it as is, trim it, or port a stem+ending engine is an open decision recorded in
-`docs/DATA.md`.
+`vendor/` holds source data downloaded by `tools/fetch_data.sh` and `tools/fetch_glosses_pt.sh` and
+is not committed. The derived index under `data/` **is committed** (57 MB on disk, 7.3 MB gzipped,
+every shard under 300 KB gzipped): the size gate of the core plan was settled on 2026-10-18 by the
+decision to host the page on GitHub Pages (`docs/DATA.md`, `docs/FEEDBACK-2026-10-18.md`).
 
-## The page (2026-10-02)
+## The page
 
-The two-pane reader is built (`docs/superpowers/plans/2026-10-02-casus-ui.md`): text on the
-left, blocks on the right, every parse decision still from `src/lib/`. The thirty-second demo:
+**Live:** https://allan-valin.github.io/casus/ — built and published by GitHub Actions from `main`
+(`.github/workflows/pages.yml`; Vite `base` comes from `CASUS_BASE=/casus/`). Everything runs in the
+browser from static files; it works on a phone and scales with the screen.
 
-1. `npm run dev`, pick **Caesar, De bello Gallico 1.1**. The first sentence is selected; its
-   21 words are pills — hue is case, paler is plural, striped with `?` is ambiguous (11 of them
-   here, which is honest), `in partes` is one glued chunk with an unglue control.
-2. Click **Gallia**: the dictionary panel shows *gallia, -ae f.*, class, the gloss with its
-   language badge, age and frequency, and every candidate with the reason it survived.
-3. **Pin** the nominative: the pill gets a dotted border and the cascade re-runs.
-4. Drag **omnis** to the front (grab it anywhere on the pill): neighbours slide. Drag the
-   **in partes** chunk to the end: both halves move. Reload the page and pick the passage again:
-   the pin and the arrangement are back (autosave by text hash; a pending write is flushed on
-   `pagehide`).
+The two-pane reader of 2026-10-02 (`docs/superpowers/plans/2026-10-02-casus-ui.md`) was rebuilt on
+2026-10-18 from Allan's first hands-on feedback (`docs/FEEDBACK-2026-10-18.md`): every parse decision
+still comes from `src/lib/`. The page is one column of numbered cards:
 
-Layers (nominal / verb / function / class) toggle independently; the era control dims entries
-attested far from the text; gloss language falls back to English with the badge flipped; export
-gives JSON and Markdown; `restore original order` and `auto-sort by case` sit above the pool.
-`tools/ui_check.mjs` drives all of the above in headless Chromium, including the chunk drag, a
-grab on the pill's padding, the dictionary closing on a sentence change, and a directory URL
-under `/data` that must not kill the dev server.
+1. **Text.** Demonstration samples (Caesar, Cicero, Vulgate) above a paste box; **Identify grammar**.
+2. **Sentences.** Each sentence a bordered, clickable box; the current one highlighted.
+3. **Grammar blocks.** Every word of the sentence as a block, full width. Hue = case (six Okabe–Ito
+   colours, validated colour-blind-safe pairwise), border = full hue, fill = a tint; singular solid,
+   plural dashed, locative double; verbs dark; function words grey dotted. An **ambiguous** block is
+   white with `?` and one dot per possible case — never a blended fill; an unknown word white with `!`.
+   Click a block: the dictionary overlay (entry, gloss with its language badge, age, frequency, every
+   surviving reading with its reason, pin/unpin); click it again or the backdrop or Escape to close.
+   **Drag** a block: the others stay still, a caret marks the gap, the move happens on release
+   (pointer events, no library; Alt+←/→ on a focused block too). Prep + object are a glued chunk with
+   ⛓ to unglue; hovering lights agreement partners. Arrange: restore, auto-sort by case, and the word
+   orders **SVO SOV VSO VOS OVS OSV** (S = nominative, V = verb, O = accusative, the rest follows).
+   Layer toggles beside the pool; a legend table under it.
+4. **Dictionary settings.** "Dictionary period" (dates and example authors) and "Dictionary language".
 
-Drag library: `svelte-dnd-action` — measured against `sortablejs` in `spikes/drag/` (spec §12 Q2).
+Top corner: **English ⇄ Português** (the page and the dictionary language together, remembered),
+exports (JSON to reload, Markdown to read) and **?** — what is on screen, how to use it, every
+resource and licence. Under the page, **What is happening**: one timestamped line per action and its
+outcome, a bar across the top while a request is open, a "slow" line after four seconds.
+
+`tools/ui_check.mjs` drives all of it in headless Chromium (samples, chunk, dictionary, pin, drag of a
+word and of the chunk, reload, overlay closing, help, the Portuguese switch, zero horizontal overflow
+at 390 px): `npm install --no-save playwright && npx playwright install chromium`, then
+`npm run dev -- --port 5198 &` and `node tools/ui_check.mjs <screenshot-dir>`.
 
 Known limitations, carried forward:
 
@@ -60,13 +73,14 @@ Known limitations, carried forward:
   candidate list show `×2`); the blocks still carry one candidate per entry.
 - A preposition's object is the next word (adjacency); anastrophe is the reader's unglue case.
 - Stage 2 narrows an adjective against any agreeing nominal, not its head; the reason names the
-  witness and the soft link lights it up, so the reader can repin. Every candidate carries the
-  witness or governor as a token index (`links`), so the UI never parses the prose reason.
+  witness and the soft link lights it up, so the reader can repin.
 - `-que`/`-ue`/`-ne` are split by the tokenizer and rejoined by `state.js` when the whole form is
   attested; a word that is both attested whole and a host stays whole.
 - Dictionary forms print the bare genitive ending (`legio, -is`), not the stem change (`-onis`).
 - Packons (`quicumque`) and most proper nouns are not in Whitaker's lexicon and show as `!`.
-- Portuguese glosses are absent until core-plan Task 8 is built; the badge says `en (no pt)`.
+- Portuguese glosses cover 1,718 lemma records (4.5%; 12.1% of the frequent ones) from the Portuguese
+  Wiktionary; the entry falls back to English with the badge flipped. The reasons in the candidate
+  list are the parser's and stay in English.
 - The class sub-layer needs the lemma table, which loads after the first parse (5 MB raw).
 - Rarity is shown, not filtered: `est` offers *edō* beside *sum*.
 - Sentence splitting guards Roman numerals in capitals only, so an ALL-CAPS text is one sentence;
