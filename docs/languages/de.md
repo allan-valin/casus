@@ -91,3 +91,44 @@ particle — reuniting it with its verb is syntax (S), for the parser phase.
 Subject vs object beyond what case shows, separable-verb reunion, compound tenses as one unit, the
 passive, word order (V2 / verb-final in subordinate clauses), the motion/location sense of
 Wechselpräpositionen.
+
+## 10. Grouping rules (Allan, 2026-10-18: "figure out more grammar rules for groupings")
+
+The rules a German reader applies without thinking, written so the engine can apply them. Status:
+**done** (in the engine, tested), **next** (planned, cheap with the current data), **parser** (needs the
+syntax model of design §8).
+
+### Noun phrases (Nominalphrase)
+
+| id | rule | status |
+|---|---|---|
+| NP1 | A phrase is (article word) (adjectives, participles, numerals)* noun, contiguous, no punctuation inside; every member takes the noun's case, number and gender (*in seinem Bett* → dat sg n throughout). | done |
+| NP2 | The article word decides the adjective declension: der-words (der, dieser, jener, jeder, welcher, mancher, solcher, alle) → weak; ein-words (ein, kein, mein, dein, sein, ihr, unser, euer) → mixed; none → strong. | done |
+| NP3 | Before its noun an article word is an article word, not a pronoun (*seinem Bett*: not *seiner*). | done |
+| NP4 | A word directly followed by the phrase it governs is the preposition (*in*, *zu* lose their adverb/adjective readings). | done |
+| NP5 | A preposition governs its whole phrase; a personal pronoun is a whole phrase (*mit ihm*). | done |
+| NP6 | A genitive phrase right after a noun phrase belongs to it (*das Haus **des Vaters***): glue it to the preceding phrase. | next |
+| NP7 | An adjective without a noun after its article is a noun (*der Alte*, *das Gute*): nominalised, keeps adjective endings. | next |
+| NP8 | Appositions between commas repeat the case of the phrase they explain (*Gregor, **der Reisende**,*). | next |
+| NP9 | Coordinated phrases (*mit dem Vater und der Mutter*) share the preposition and the case. | next |
+| NP10 | Postposed prepositions and circumpositions: *entlang* after its object (acc), *um … willen* (gen), *von … an*. | next |
+
+### Clauses (Satz, Hauptsatz, Nebensatz)
+
+| id | rule | status |
+|---|---|---|
+| CL1 | Commas, semicolons, colons, dashes and brackets end a clause or an insertion; words do not agree across them. | done |
+| CL2 | A finite verb in the 1st/2nd person needs *ich, wir, du, ihr* as subject in its clause (German drops no subject pronoun); otherwise it is 3rd person. An imperative stands first in its clause. | done |
+| CL3 | A clause has one finite verb; once it is certain, the clause-final infinitive or participle is the right bracket of the **Satzklammer** (*fand … verwandelt*, *hat … gegessen*, *will … spielen*). | done |
+| CL4 | **Nebensatz**: after a subordinating conjunction (als, dass, weil, wenn, ob, obwohl, damit, nachdem, bevor, während, da, falls, sodass, seit, bis, indem) or a relative pronoun after a comma (der/die/das, welcher), the finite verb is the **last** word of the clause; its other readings drop. | next |
+| CL5 | **Hauptsatz**: the finite verb is the 2nd constituent (**V2**); in a question or command, the 1st (**V1**). | next (needs constituent boundaries = NP1) |
+| CL6 | **Separable verbs**: a particle at the end of a main clause (an, auf, aus, ab, ein, mit, vor, zu, zurück, weg, los, nach, her, hin, …) belongs to the clause's finite verb (*fängt … an* = *anfangen*); the pair is looked up as one word. | next |
+| CL7 | The finite verb agrees in number with the nominative subject (*die Kinder **spielen***): a single singular nominative phrase and no *und* → singular. | next |
+| CL8 | *zu* + infinitive at the clause end is an infinitive group (*um … zu*, *ohne … zu*, *statt … zu*); *zu* there is not a preposition. | next |
+| CL9 | Compound tenses and the passive: *haben/sein* + Partizip II = Perfekt; *werden* + Infinitiv = Futur; *werden* + Partizip II = Passiv. Mark the pair. | next |
+| CL10 | Verb valency: which case a verb takes for its objects (*helfen* + dat, *gedenken* + gen, *geben* + dat + acc) settles the remaining nominal cases. Needs a valency list per verb. | parser (or a valency list) |
+
+### Order of the cascade (German)
+
+government (NP4, NP5) → noun phrases (NP1–NP3) → government again → noun phrases again → clauses (CL1–CL3).
+Each stage only narrows and never empties a word; what stays open is shown open.
