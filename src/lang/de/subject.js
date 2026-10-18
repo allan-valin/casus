@@ -4,7 +4,7 @@
  * deren/welch-) is cut out of the clause around it: "Die Frau, deren Sohn schläft, lacht" is one main clause
  * Die Frau … lacht and one relative clause deren Sohn schläft.
  * SUBJ   A clause with a finite verb has a subject: when no head is certainly nominative and exactly one could
- *        be, that one is. Skipped with copulas (CL11 handles them), coordination and comparisons.
+ *        be, that one is; when several could, the first is (word order: subject first unless case shows otherwise). Skipped with copulas (CL11 handles them), coordination and comparisons.
  * CL10   Verb valency (data/de/valency.json, lemma -> object cases): a head that is not the subject, not under
  *        a preposition and not a time phrase keeps only the cases the verb takes (plus the genitive right after a
  *        noun, which is an attribute). The participle or infinitive of the clause speaks for it, not the auxiliary.
@@ -16,6 +16,8 @@ const COPULA_LEMMAS = new Set(['sein', 'werden', 'bleiben', 'heißen', 'scheinen
 const COPULA_FORMS = new Set(['bin', 'bist', 'ist', 'sind', 'seid', 'war', 'warst', 'waren', 'wart', 'sei', 'wäre', 'wären', 'werde', 'wirst', 'wird', 'werden', 'werdet', 'wurde', 'wurden', 'bleibt', 'blieb', 'bleiben', 'blieben', 'heißt', 'hieß', 'scheint', 'schien']);
 const BREAKERS = new Set(['und', 'oder', 'sowie', 'als', 'wie', 'aber', 'sondern', 'noch', 'weder', 'sowohl']);
 const TIME = /^(tag|tage|abend|morgen|nacht|woche|monat|jahr|jahre|stunde|stunden|minute|minuten|mal|zeit|winter|sommer|herbst|frühling|sonntag|montag|dienstag|mittwoch|donnerstag|freitag|samstag)$/i;
+// a quantity noun runs into the noun it counts: 105 Millionen Menschen, ein Glas Wasser
+const MEASURE = /^(million(en)?|milliarde(n)?|tausende?|hunderte?|dutzende?|paar|glas|gläser|tasse(n)?|liter|kilo|meter|stück|flasche(n)?|reihe|menge|gruppe|zahl|anzahl|teil)$/i;
 const FINITE = new Set(['ind', 'sub1', 'sub2']);
 const withReason = (c, r) => (c.reasons.includes(r) ? c : { ...c, reasons: [...c.reasons, r] });
 const isNounish = (c) => (c.analysis.pos === 'noun' || c.analysis.pos === 'pron') && c.analysis.case && c.analysis.case !== 'x';
@@ -53,6 +55,10 @@ function narrow(out, i, keepFn, reason) {
 export function subjectStage(blocks, ctx) {
   const out = blocks.slice();
   const valency = ctx?.valency ?? null;
+  out.forEach((b, i) => {
+    if (b.candidates.some((c) => c.analysis.pos === 'pron' && c.analysis.case && c.analysis.case !== 'x'))
+      narrow(out, i, (c) => !(c.analysis.pos === 'pron' && (!c.analysis.case || c.analysis.case === 'x')), 'a pronoun: its readings with case');
+  });
   for (const group of clauseGroups(out)) {
     // INTERJ
     group.forEach((i, at) => {
@@ -76,7 +82,7 @@ export function subjectStage(blocks, ctx) {
       const next = out[i + 1];
       const prev = out[i - 1];
       const bare = !prev || !group.includes(i - 1) || (out[i].token.index - prev.token.index === 1 && !prev.candidates.some((c) => ['det', 'adj', 'num'].includes(c.analysis.pos)));   // a number between counts
-      return bare && next && group.includes(i + 1) && next.token.index - out[i].token.index === 1 && /^\p{Lu}/u.test(next.token.surface)
+      return (bare || MEASURE.test(out[i].token.key)) && next && group.includes(i + 1) && next.token.index - out[i].token.index === 1 && /^\p{Lu}/u.test(next.token.surface)
         && out[i].candidates.every((c) => c.analysis.pos === 'noun') && next.candidates.length && next.candidates.every((c) => c.analysis.pos === 'noun');
     }
     const nomOf = (i) => out[i].candidates.filter(isNounish).some((c) => c.analysis.case === 'nom');
@@ -86,6 +92,11 @@ export function subjectStage(blocks, ctx) {
       const possible = heads.filter(nomOf);
       if (!certain.length && possible.length === 1) {
         narrow(out, possible[0], (c) => !isNounish(c) || c.analysis.case === 'nom', `subject: the only word that can be the subject of ${verb.token.surface}`);
+      } else if (!certain.length && possible.length > 1) {
+        // word order (Allan, 2026-10-18): German is subject-first when case cannot tell; OVS needs case to show it
+        const first = Math.min(...possible);
+        narrow(out, first, (c) => !isNounish(c) || c.analysis.case === 'nom', `word order: case cannot tell the subject apart, so the first candidate, ${out[first].token.surface}, is the subject of ${verb.token.surface}`);
+        for (const i of possible) if (i !== first) narrow(out, i, (c) => !isNounish(c) || c.analysis.case !== 'nom', `word order: ${out[first].token.surface} comes first, so it is the subject of ${verb.token.surface}`);
       } else if (certain.length === 1) {
         for (const i of heads) if (i !== certain[0]) narrow(out, i, (c) => !isNounish(c) || c.analysis.case !== 'nom', `subject: ${out[certain[0]].token.surface} is already the subject of ${verb.token.surface}`);
       }
@@ -95,7 +106,7 @@ export function subjectStage(blocks, ctx) {
       let h = i + 1;
       while (nameRun(h)) h += 1;
       const cases = new Set(out[h].candidates.map((c) => c.analysis.case));
-      narrow(out, i, (c) => cases.has(c.analysis.case), `name: one name with ${out[h].token.surface}`);
+      narrow(out, i, (c) => cases.has(c.analysis.case), `one phrase with ${out[h].token.surface}`);
     }
     // CL10
     if (!valency || copula) continue;

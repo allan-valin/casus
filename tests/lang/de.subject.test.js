@@ -67,9 +67,11 @@ describe('CL10: verb valency', () => {
     const b = await read('Er hat der Frau geholfen.');
     expect(C(by(b, 'Frau'))).toEqual(['dat']);
   });
-  it('never guesses between two possible subjects: Sie gibt dem Kind das Buch', async () => {
+  it('word order: when case cannot tell two subjects apart, the first is the subject (Allan: Sie gibt dem Kind das Buch)', async () => {
     const b = await read('Sie gibt dem Kind das Buch.');
-    expect(C(by(b, 'Buch'))).toEqual(['acc', 'nom']);
+    expect(C(by(b, 'Buch'))).toEqual(['acc']);
+    expect(C(by(b, 'Sie'))).toEqual(['nom']);
+    expect(by(b, 'Sie').candidates[0].reasons.join(' ')).toMatch(/word order/);
     expect(C(by(b, 'Kind'))).toEqual(['dat']);
   });
 });
@@ -93,5 +95,13 @@ describe('SUBJ inside an als-clause, with a two-word name', () => {
     const b = s.blocks();
     expect(C(by(b, 'Samsa'))).toEqual(['nom']);
     expect(C(by(b, 'Gregor'))).toEqual(['nom']);
+  });
+});
+
+describe('a pronoun with case readings drops its caseless dictionary entry (polite Sie, archaic Er)', () => {
+  it('Sie gibt dem Kind das Buch: Sie is only nominative', async () => {
+    LEX.Sie = [{ lemma: 'Sie', pos: 'pron' }, ...LEX.Sie];
+    const b = await read('Sie gibt dem Kind das Buch.');
+    expect(by(b, 'Sie').candidates.every((c) => c.analysis.case === 'nom')).toBe(true);
   });
 });

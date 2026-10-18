@@ -47,7 +47,9 @@ describe('bis between two numbers is a range, not a preposition', () => {
   it('90 bis 105 Millionen Menschen: bis governs nothing', async () => {
     const b = await read('Hier leben 90 bis 105 Millionen Menschen.');
     expect(by(b, 'bis').candidates.map((c) => c.analysis.pos)).toEqual(['conj']);
-    expect(R(by(b, 'Millionen')).length).toBeGreaterThan(1);
+    // not the dative bis would force; Millionen Menschen is the subject of leben (subject rule, 2026-10-18)
+    expect(R(by(b, 'Millionen'))).toEqual(['noun nom pl f']);
+    expect(R(by(b, 'Menschen'))).toEqual(['noun nom pl m']);
   });
 });
 
