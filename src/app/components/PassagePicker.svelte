@@ -1,9 +1,10 @@
 <script>
+  import { withBase } from '../lib/paths.js';
   /* v1 input (spec §10.1): paste, or one of the bundled passages. */
   let { samples = [], onchoose, fetchImpl } = $props();
   let pasted = $state('');
   async function choose(sample) {
-    const res = await fetchImpl(`/samples/${sample.file}`);
+    const res = await fetchImpl(withBase(`/samples/${sample.file}`));
     if (!res.ok) return;
     onchoose((await res.text()).trim(), sample.era ?? null);
   }

@@ -1,6 +1,8 @@
 <script>
   import { createLexicon } from '../lib/lexicon.js';
   import { makeFetchShard, loadManifest } from './lib/fetchers.js';
+  import { withBase } from './lib/paths.js';
+  const DATA = withBase('/data');
   import { createReader } from './stores/reader.svelte.js';
   import { textHash, createAutosave, restore } from './lib/persist.js';
   import TextPane from './components/TextPane.svelte';
@@ -30,13 +32,13 @@
   let generation = 0;               // choose() calls; a slower, older load must not win
 
   $effect(() => {
-    loadManifest(fetchImpl)
+    loadManifest(fetchImpl, DATA)
       .then((manifest) => {
-        lexicon = createLexicon({ fetchShard: makeFetchShard(fetchImpl), manifest });
+        lexicon = createLexicon({ fetchShard: makeFetchShard(fetchImpl, DATA), manifest });
         status = `lexicon ready: ${Object.keys(manifest.shards).length} shards, built ${manifest.built}`;
       })
       .catch((e) => { status = `no lexicon: ${e.message} — run python3 tools/build_index.py`; });
-    fetchImpl('/samples/index.json').then((r) => (r.ok ? r.json() : [])).then((list) => { samples = list; }).catch(() => {});
+    fetchImpl(withBase('/samples/index.json')).then((r) => (r.ok ? r.json() : [])).then((list) => { samples = list; }).catch(() => {});
   });
 
   async function choose(text, era) {
@@ -53,7 +55,7 @@
     autosave = save;
     reader = r;
     open = null;
-    r.loadExtras(fetchImpl).catch(() => {});
+    r.loadExtras(fetchImpl, DATA).catch(() => {});
   }
 
   // every change is written, debounced; the guard is only armed while a write is pending (§9)

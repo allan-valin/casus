@@ -24,6 +24,8 @@ function serveData() {
 }
 
 export default defineConfig({
+  // '/' in dev and for a root deployment; the Pages workflow sets CASUS_BASE=/casus/
+  base: process.env.CASUS_BASE || '/',
   plugins: [svelte(), serveData()],
   // under vitest, resolve Svelte's browser build so components mount in jsdom
   // (component tests carry `// @vitest-environment jsdom` at the top of the file)
