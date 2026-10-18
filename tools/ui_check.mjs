@@ -9,7 +9,7 @@ const page = await ctx.newPage();
 const errors = [];
 page.on('pageerror', (e) => errors.push(String(e)));
 page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text()); });
-await page.goto(base + '/grc/');                       // a language not shipped yet: Latin, no error
+await page.goto(base + '/grc/');                       // deep link straight into a language
 await page.waitForFunction(() => document.querySelector('.status')?.textContent.startsWith('dictionary ready'));
 console.log('deep link /grc/ ->', await page.textContent('nav.languages a[aria-current=page]'));
 await page.goto(base + '/');
@@ -103,6 +103,29 @@ await page.screenshot({ path: `${sc}/casus-4-phone.png`, fullPage: true });
 await page.setViewportSize({ width: 1920, height: 1080 });
 await page.waitForTimeout(300);
 await page.screenshot({ path: `${sc}/casus-5-wide.png` });
+// ---- Ancient Greek (languages plan Task 14)
+await page.setViewportSize({ width: 1280, height: 900 });
+await page.goto(base + '/grc/');
+await page.waitForFunction(() => document.querySelector('.status')?.textContent.startsWith('dictionary ready'));
+await page.click('button.sample:has-text("John")'); await page.waitForSelector('.pill'); await page.waitForTimeout(600);
+console.log('grc pills:', await page.$$eval('.pill', (e) => e.length), '| unknown:', await page.$$eval('.pill.unknown', (e) => e.length), '| chunks:', await page.$$eval('.chunk', (els) => els.map((e) => e.textContent.trim().replace(/\s+/g, ' '))));
+await page.click('.pill:has-text("λόγος")'); await page.waitForSelector('.dictionary .ipa', { timeout: 20000 });
+console.log('grc entry ipa:', await page.textContent('.dictionary .ipa'), '| source:', await page.textContent('button.dict-tab'));
+await page.waitForFunction(() => !/looking|procurando/.test(document.querySelector('button.speaker')?.title ?? 'looking'), null, { timeout: 60000 });
+await page.click('button.speaker');
+await page.waitForFunction(() => [...document.querySelectorAll('.activity .line')].some((l) => /λόγος (spoken|falada)/.test(l.textContent)), null, { timeout: 90000 });
+console.log('grc speaker: spoke λόγος');
+await page.click('.dictionary button.pin >> nth=0'); await page.waitForTimeout(300);
+await page.keyboard.press('Escape'); await page.waitForTimeout(200);
+console.log('grc after drag:', (await dragTo('.pill:has-text("λόγος") >> nth=0', '.pool .item')).slice(0, 4).join(' '));
+await page.reload();
+await page.waitForFunction(() => document.querySelector('.status')?.textContent.startsWith('dictionary ready'));
+await page.click('button.sample:has-text("John")'); await page.waitForSelector('.pill'); await page.waitForTimeout(600);
+console.log('grc after reload: pinned', await page.$$eval('.pill.pinned .surface', (e) => e.map((x) => x.textContent)), '| first:', await page.$$eval('.pool .pill .surface', (e) => e.slice(0, 2).map((x) => x.textContent).join(' ')));
+await page.click('nav.languages a:has-text("Latin")'); await page.waitForFunction(() => document.querySelector('.status')?.textContent.startsWith('dictionary ready'));
+console.log('bar -> Latin:', await page.textContent('nav.languages a[aria-current=page]'), page.url());
+await page.goto(base + '/grc/game/'); await page.waitForSelector('.letter');
+console.log('grc drill letter:', (await page.textContent('.letter')).trim());
 console.log('activity lines:', await page.$$eval('.activity .line', (els) => els.length), '| last:', (await page.textContent('.activity .line.last')).slice(0, 120));
 console.log('errors:', errors);
 await browser.close();

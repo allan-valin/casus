@@ -68,6 +68,15 @@ alphabet drill). Design: `docs/superpowers/specs/2026-10-18-casus-languages-desi
 **Wiktionary link**, and a **🔊 speaker**: the browser's own voice for the language, else espeak-ng
 loaded from jsDelivr on first use. **Open a text file…** reads a `.txt`/`.md` as the text.
 
+**Ancient Greek (2026-10-18, phase 2)** at `/grc/`: the English Wiktionary's Ancient Greek entries
+(22,757 lemmas, 871k forms, every dialect, `data/grc/` 49 MB) on the same page. Five cases, the dual on a
+double border, the article as agreement witness, Smyth's prepositions, elided words looked up as their full
+forms, periods that choose the pronunciation (Attic, Koine, Byzantine…). Text typed **without accents**
+still finds its words: the page matches it against the accented spellings and shows the dictionary's
+spelling above the block and over the word (toggle "accents from the dictionary"). `/grc/game/` is the
+**letters drill**. Grammar notes: `docs/languages/grc.md`; build: `bash tools/fetch_wiktextract.sh
+"Ancient Greek" && python3 tools/build_lang.py grc`.
+
 Top corner: **English ⇄ Português** (the page and the dictionary language together, remembered),
 exports (JSON to reload, Markdown to read) and **?** — what is on screen, how to use it, every
 resource and licence. Under the page, **What is happening**: one timestamped line per action and its
