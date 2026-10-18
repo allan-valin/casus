@@ -71,6 +71,27 @@ function toAnalyses(entry, codes = LATIN_CODES) {
   return out;
 }
 
+// Greek mark signatures, by base-letter position (NFD): breathings ̓ ̔, accents ́ ̀ ͂
+function marks(word) {
+  const out = [];
+  let i = -1;
+  for (const ch of word.normalize('NFD')) {
+    if (/\p{M}/u.test(ch)) out.push([i, ch]); else i += 1;
+  }
+  return out;
+}
+function breathings(word) {
+  return marks(word).filter(([, m]) => m === '\u0313' || m === '\u0314').map(([p, m]) => `${p}${m}`).join(',');
+}
+function accentPositions(word) {
+  return marks(word).filter(([, m]) => m === '\u0301' || m === '\u0300' || m === '\u0342').map(([p]) => p);
+}
+function dropLastAccent(word) {
+  const d = word.normalize('NFD');
+  const at = Math.max(d.lastIndexOf('\u0301'), d.lastIndexOf('\u0300'));
+  return (d.slice(0, at) + d.slice(at + 1)).normalize('NFC');
+}
+
 /**
  * createLexicon({ fetchShard, manifest }) -> { lookup, lookupAll, loadedShards }.
  * Shard promises are cached, so concurrent lookups share one fetch; a failed
@@ -112,9 +133,26 @@ export function createLexicon({ fetchShard, manifest = null, codes = LATIN_CODES
     if (name === null) return [];
     const data = await shard(name);
     const exact = toAnalyses(data[key], codes);
-    if (!script?.hasMarks || script.hasMarks(key)) return exact;
-    const supplied = (strippedIndex(name, data).get(script.strip(key)) ?? []).filter((k) => k !== key)
-      .flatMap((k) => toAnalyses(data[k], codes).map((a) => ({ ...a, marked: k })));
+    if (!script?.strip) return exact;
+    const marked = script.hasMarks(key);
+    if (exact.length && marked) return exact;
+    // a host followed by an enclitic carries a second accent (ἄνθρωπός τις): drop the last one
+    if (!exact.length && accentPositions(key).length >= 2) {
+      const single = dropLastAccent(key);
+      if (data[single]) return toAnalyses(data[single], codes).map((a) => ({ ...a, marked: single }));
+    }
+    // otherwise every spelling of the shard with the same letters, kept when it shares the input's
+    // breathings and, if the input has accents (a monotonic keyboard, a missing enclitic accent), its
+    // accent positions — else all of them (review finding: real input is partly marked)
+    let keys = (strippedIndex(name, data).get(script.strip(key)) ?? []).filter((k) => k !== key);
+    const breath = breathings(key);
+    if (breath) keys = keys.filter((k) => breathings(k) === breath);
+    const accents = accentPositions(key).join(',');
+    if (accents) {
+      const same = keys.filter((k) => accentPositions(k).join(',') === accents);
+      if (same.length) keys = same;
+    }
+    const supplied = keys.flatMap((k) => toAnalyses(data[k], codes).map((a) => ({ ...a, marked: k })));
     return [...exact, ...supplied];
   }
 

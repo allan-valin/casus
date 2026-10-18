@@ -62,3 +62,31 @@ describe('Greek cascade: the article settles its noun', () => {
     expect(noun.candidates[0].reasons.join(' ')).toMatch(/ὁ/);
   });
 });
+
+describe('Greek lexicon fallback for real-world input (review finding)', () => {
+  const shards = {
+    αρ: { 'ἀρχῇ': [[1, 'ndsf']], 'ἀρχή': [[1, 'nnsf']], 'ἄρχη': [[2, 'v2ssma']] },
+    ανθ: { 'ἄνθρωποσ': [[3, 'nnsm']] },
+    εσ: { 'ἐστί': [[4, 'v3spiax']], 'ἐστίν': [[4, 'v3spiax']], 'ἑστία': [[5, 'nnsf']] },
+    ην: { 'ἦν': [[6, 'v3siiax']] },
+  };
+  const lexicon = () => createLexicon({ fetchShard: async (n) => shards[n] ?? {}, manifest: { shards: { αρ: {}, ανθ: {}, εσ: {}, ην: {} }, key: 'strip' }, codes: grc.inventory.codes, script: grc.script });
+  it('partly marked input (breathing, no accent) finds the accented forms that share its breathing', async () => {
+    const got = await lexicon().lookup('ἀρχη');
+    expect(got.map((a) => a.marked).sort()).toEqual(['ἀρχή', 'ἀρχῇ', 'ἄρχη'].sort());
+    expect((await lexicon().lookup('ἁρχη'))).toEqual([]);          // a rough breathing excludes the smooth ones
+  });
+  it('a host with the enclitic’s extra accent finds its form', async () => {
+    const got = await lexicon().lookup('ἄνθρωπόσ');
+    expect(got.map((a) => a.marked)).toEqual(['ἄνθρωποσ']);
+  });
+  it('an unaccented enclitic finds its accented dictionary form', async () => {
+    const got = await lexicon().lookup('ἐστιν');
+    expect(got.map((a) => a.marked)).toEqual(['ἐστίν']);
+  });
+  it('monotonic modern-keyboard input finds the polytonic forms', async () => {
+    // the accent the input does carry (on η) keeps the forms accented there
+    expect((await lexicon().lookup('αρχή')).map((a) => a.marked).sort()).toEqual(['ἀρχή', 'ἀρχῇ'].sort());
+    expect((await lexicon().lookup('ήν')).map((a) => a.marked)).toEqual(['ἦν']);
+  });
+});
