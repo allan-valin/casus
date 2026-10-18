@@ -26,7 +26,7 @@ GENDERS = {"masculine": "m", "feminine": "f", "neuter": "n"}
 PERSONS = {"first-person": "1", "second-person": "2", "third-person": "3"}
 INFL = {"strong": "strong", "weak": "weak", "mixed": "mixed"}
 SKIP_TAGS = {"canonical", "romanization", "table-tags", "inflection-template", "class", "diminutive",
-             "multiword-construction", "auxiliary", "error-unrecognized-form", "subordinate-clause",
+             "multiword-construction", "auxiliary", "error-unrecognized-form",
              "future", "future-i", "future-ii", "perfect", "pluperfect", "infinitive-zu", "negative"}
 _WORD = re.compile(r"^[\wäöüÄÖÜß][\wäöüÄÖÜß\-']*$")
 ARTICLE = {"m": "der", "f": "die", "n": "das"}
@@ -124,7 +124,7 @@ def analyses_of(entry: dict) -> list[tuple[str, dict]]:
                 continue
             form = form.split()[-1]          # dem guten → guten
         if not _WORD.match(form):
-            continue
+            continue                         # multiword cells (sah an, dass ich ansah) are syntax
         if pos == "verb":
             if "participle" in tags:
                 out.append((form, {"pos": "verb", "person": "0", "number": "x", "tense": "x",

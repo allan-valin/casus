@@ -66,3 +66,14 @@ def test_keys_that_cannot_be_words_are_dropped_even_for_uninflected_headwords():
     idx = bi([{"id": 1, "headword": "e/a", "pos": "adv", "gender": None, "gloss_en": "", "ipa": [], "forms": []},
               {"id": 2, "headword": "E-Mail", "pos": "noun", "gender": "f", "gloss_en": "", "ipa": [], "forms": []}])
     assert "e/a" not in idx and "E-Mail" in idx
+
+
+def test_single_word_subordinate_clause_forms_of_separable_verbs_are_kept():
+    from casus_build.de.parse import analyses_of as an
+    e = {"id": 9, "headword": "ansehen", "pos": "verb", "gender": None, "gloss_en": "", "ipa": [], "forms": [
+        {"form": "ansah", "tags": ["first-person", "indicative", "preterite", "singular", "subordinate-clause"]},
+        {"form": "dass ich ansah", "tags": ["first-person", "indicative", "preterite", "singular", "subordinate-clause"]},
+        {"form": "sah an", "tags": ["first-person", "indicative", "preterite", "singular"]}]}
+    got = [(f, a["tense"]) for f, a in an(e)]
+    assert ("ansah", "pret") in got
+    assert all(" " not in f for f, _ in got)

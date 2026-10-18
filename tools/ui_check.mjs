@@ -124,8 +124,17 @@ await page.click('button.sample:has-text("John")'); await page.waitForSelector('
 console.log('grc after reload: pinned', await page.$$eval('.pill.pinned .surface', (e) => e.map((x) => x.textContent)), '| first:', await page.$$eval('.pool .pill .surface', (e) => e.slice(0, 2).map((x) => x.textContent).join(' ')));
 await page.click('nav.languages a:has-text("Latin")'); await page.waitForFunction(() => document.querySelector('.status')?.textContent.startsWith('dictionary ready'));
 console.log('bar -> Latin:', await page.textContent('nav.languages a[aria-current=page]'), page.url());
-await page.goto(base + '/grc/game/'); await page.waitForSelector('.letter');
-console.log('grc drill letter:', (await page.textContent('.letter')).trim());
+await page.goto(base + '/grc/game/'); await page.waitForSelector('.grid .cell');
+console.log('grc drill grid:', (await page.$$eval('.grid .glyph', (e) => e.map((x) => x.textContent))).join(' '));
+// ---- German (languages phase 3)
+await page.goto(base + '/de/');
+await page.waitForFunction(() => document.querySelector('.status')?.textContent.startsWith('dictionary ready'));
+await page.click('button.sample:has-text("Kafka")'); await page.waitForSelector('.pill'); await page.waitForTimeout(800);
+console.log('de articles:', (await page.$$eval('.pill .article', (e) => e.map((x) => x.textContent))).join(' '), '| chunks:', JSON.stringify(await page.$$eval('.chunk', (els) => els.map((e) => e.textContent.trim().replace(/\s+/g, ' ')))));
+await page.click('.pill:has-text("Bett")'); await page.waitForSelector('.dictionary .ipa', { timeout: 20000 });
+console.log('de entry:', (await page.textContent('.dictionary .form')).replace(/\s+/g, ' ').trim(), '| ipa', await page.textContent('.dictionary .ipa'));
+await page.keyboard.press('Escape');
+console.log('de natural voice offered:', (await page.$('button.download')) !== null);
 console.log('activity lines:', await page.$$eval('.activity .line', (els) => els.length), '| last:', (await page.textContent('.activity .line.last')).slice(0, 120));
 console.log('errors:', errors);
 await browser.close();

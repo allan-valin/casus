@@ -77,6 +77,15 @@ spelling above the block and over the word (toggle "accents from the dictionary"
 **letters drill**. Grammar notes: `docs/languages/grc.md`; build: `bash tools/fetch_wiktextract.sh
 "Ancient Greek" && python3 tools/build_lang.py grc`.
 
+**German (2026-10-18, phase 3)** at `/de/`: the English Wiktionary's German entries (100,980 lemmas, 442k
+forms, `data/de/` 47 MB). Every noun shows its **article** (der / die / das, die (Pl.)) above the word,
+because gender decides the adjective endings. A preposition governs its **whole noun phrase** (`mit dem
+guten Wein` is dative throughout and moves as one chunk); Wechselpräpositionen stay two-coloured until the
+phrase settles them. A sentence-initial capital is read both ways (`Essen ist gut`: noun and verb). In the
+dictionary settings, an optional **natural voice** (Thorsten, Piper, 63 MB) downloads on request and the
+speaker uses it. Grammar notes: `docs/languages/de.md`; build: `bash tools/fetch_wiktextract.sh German &&
+python3 tools/build_lang.py de`.
+
 Top corner: **English ⇄ Português** (the page and the dictionary language together, remembered),
 exports (JSON to reload, Markdown to read) and **?** — what is on screen, how to use it, every
 resource and licence. Under the page, **What is happening**: one timestamped line per action and its
