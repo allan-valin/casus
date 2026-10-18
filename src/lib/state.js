@@ -26,12 +26,13 @@ export function createState({ text, lexicon, lang, saved = null }) {
         keys.add(t.key);
         if (t.altKey) keys.add(t.altKey);
         for (const k of t.fallbackKeys ?? []) keys.add(k);
+        for (const k of t.extraKeys ?? []) keys.add(k);
         if (t.enclitic) keys.add(wholeKey(t, tokens[i + 1], normalize));
       }
     }
     analysesByKey = await lexicon.lookupAll([...keys]);
     // language data the stages need beyond the form index (German: the fixed expressions)
-    ctx = lang.loadContext ? await lang.loadContext(lexicon) : null;
+    ctx = { ...(lang.loadContext ? await lang.loadContext(lexicon) : {}), lookups: analysesByKey };
     tokensBySentence = split.map((tokens) => withTrail(rejoinAttested(tokens, analysesByKey, normalize)));
     cache = null;
   }

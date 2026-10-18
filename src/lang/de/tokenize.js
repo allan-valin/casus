@@ -26,6 +26,17 @@ export function tokenize(sentenceText) {
     }
     first = false;
   }
+  // CL6: a word that may be a separable particle at the end of a clause; every other word of the clause
+  // is also looked up with that particle in front (ruft + an → anruft), so the stage can join them
+  const PARTICLES = new Set(['ab', 'an', 'auf', 'aus', 'bei', 'ein', 'fest', 'fort', 'her', 'hin', 'los', 'mit', 'nach', 'vor', 'weg', 'zu', 'zurück', 'zusammen', 'vorbei', 'weiter', 'heraus', 'herein', 'hinaus', 'hinein', 'herum', 'um', 'durch', 'über', 'wieder', 'statt', 'teil', 'kennen', 'frei', 'nieder', 'empor', 'entgegen']);
+  const ws = tokens.filter((x) => x.kind === 'word');
+  const byClause = new Map();
+  for (const w of ws) { if (!byClause.has(w.clause)) byClause.set(w.clause, []); byClause.get(w.clause).push(w); }
+  for (const group of byClause.values()) {
+    const last = group[group.length - 1];
+    if (group.length < 2 || !PARTICLES.has(last.key.toLowerCase())) continue;
+    for (const w of group.slice(0, -1)) if (/^\p{Ll}/u.test(w.key)) w.extraKeys = [last.key.toLowerCase() + w.key];
+  }
   // bis between two numbers is a range (90 bis 105), not a preposition
   tokens.forEach((t, k) => { if (t.kind === 'word' && t.key.toLowerCase() === 'bis' && tokens[k - 1]?.kind === 'number' && tokens[k + 1]?.kind === 'number') t.range = true; });
   // a capitalised word right before another capitalised word may be an adjective in a name

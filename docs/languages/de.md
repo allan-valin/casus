@@ -125,7 +125,7 @@ syntax model of design §8).
 | CL4a | A subordinating conjunction opening its clause is the conjunction (*Als* is not a noun there). | done |
 | CL5a | A clause with a certain nominative subject, or the sentence's first clause, needs a finite verb: when only one word in it can be a verb, it is finite (*Die Kinder spielen*). | done |
 | CL5 | **Hauptsatz**: the finite verb is the 2nd constituent (**V2**); in a question or command, the 1st (**V1**). | next (needs constituent boundaries = NP1) |
-| CL6 | **Separable verbs**: a particle at the end of a main clause (an, auf, aus, ab, ein, mit, vor, zu, zurück, weg, los, nach, her, hin, …) belongs to the clause's finite verb (*fängt … an* = *anfangen*); the pair is looked up as one word. | next |
+| CL6 | **Separable verbs**: a particle at the end of a main clause (an, auf, aus, ab, ein, mit, vor, zu, zurück, weg, los, nach, her, hin, …) belongs to the clause's finite verb (*fängt … an* = *anfangen*); the pair is looked up as one word. | done |
 | CL7 | The finite verb agrees in number with the nominative subject (*die Kinder **spielen***): one certain nominative subject and no *und/oder* → its number. | done |
 | CL8 | *zu* + infinitive at the clause end is an infinitive group (*um … zu*, *ohne … zu*, *statt … zu*); *zu* there is not a preposition. | done |
 | CL9 | Compound tenses and the passive: *haben/sein* + Partizip II = Perfekt; *werden* + Infinitiv = Futur; *werden* + Partizip II = Passiv. Mark the pair. | next |

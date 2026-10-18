@@ -278,3 +278,32 @@ export function referenceStage(blocks) {
     return b;
   });
 }
+
+/* CL6 (separable verbs): the clause-final particle joins the clause's finite verb when the joined form exists
+ * (ruft … an → anruft = anrufen): the verb takes the joined verb's readings of the same person and number and
+ * both words are linked. Never applied when the joined form is unknown. */
+export function separableStage(blocks, ctx) {
+  const lookups = ctx?.lookups;
+  if (!lookups) return blocks;
+  const out = blocks.slice();
+  const clauses = new Map();
+  out.forEach((b, i) => { const k = b.token.clause ?? 0; if (!clauses.has(k)) clauses.set(k, []); clauses.get(k).push(i); });
+  for (const members of clauses.values()) {
+    const p = members[members.length - 1];
+    const particle = out[p];
+    if (!particle || particle.candidates.some((c) => c.analysis.pos === 'prep')) continue;     // still a preposition
+    for (const i of members.slice(0, -1)) {
+      const v = out[i];
+      const joined = v.token.extraKeys?.map((k) => lookups.get(k) ?? []).flat() ?? [];
+      if (!joined.length || !v.candidates.some((c) => isFinite(c.analysis))) continue;
+      const keep = joined.filter((a) => a.pos === 'verb' && v.candidates.some((c) => isFinite(c.analysis) && c.analysis.person === a.person && c.analysis.number === a.number && c.analysis.mood === a.mood));
+      if (!keep.length) continue;
+      const r = `separable verb: ${v.token.surface} … ${particle.token.surface} (one verb)`;
+      out[i] = { ...v, candidates: keep.map((a) => ({ analysis: a, reasons: ['lexicon: attested form', r], links: [{ kind: 'expression', index: particle.token.index, contiguous: false }] })) };
+      const pc = particle.candidates.filter((c) => c.analysis.pos === 'adv' || c.analysis.pos === 'particle');
+      out[p] = { ...particle, candidates: (pc.length ? pc : particle.candidates).map((c) => ({ ...c, reasons: [...c.reasons, r], links: [...(c.links ?? []), { kind: 'expression', index: v.token.index, contiguous: false }] })) };
+      break;
+    }
+  }
+  return out;
+}

@@ -6,7 +6,7 @@ import { tokenize } from './tokenize.js';
 import { GOVERNMENT } from './prepositions.js';
 import { GERMAN_INVENTORY } from './inventory.js';
 import { phraseStage } from './phrase.js';
-import { clauseStage, referenceStage } from './clause.js';
+import { clauseStage, referenceStage, separableStage } from './clause.js';
 import { expressionStage } from './expressions.js';
 
 const gov = (blocks) => governmentStage(blocks, GOVERNMENT, { phrase: true });
@@ -24,7 +24,7 @@ export const german = {
   tokenize,
   // government, then the noun-phrase rules (NP1–NP3), then government again with the settled phrases;
   // the sentence-wide agreement stage is not used: German agreement lives inside the phrase
-  stages: [gov, phraseStage, gov, phraseStage, clauseStage, phraseStage, clauseStage, gov, phraseStage, referenceStage, expressionStage],
+  stages: [gov, phraseStage, gov, phraseStage, clauseStage, phraseStage, clauseStage, gov, phraseStage, referenceStage, expressionStage, separableStage],
   loadContext: async (lexicon) => ({ expressions: lexicon.file ? await lexicon.file('expressions.json') : null }),
   government: GOVERNMENT,
   governmentPhrase: true,
