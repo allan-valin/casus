@@ -2,7 +2,8 @@
   /* Dictionary settings, said in plain words (feedback D13, D18). */
   import { ERAS } from '../lib/era.js';
   import { t } from '../lib/i18n.svelte.js';
-  let { reader } = $props();
+  import VoiceSettings from './VoiceSettings.svelte';
+  let { reader, voice = null, onvoice = () => {} } = $props();
   const eras = $derived(reader.lang?.eras ?? ERAS);
   // a period id two languages share (classical) gets the language's own label when it has one
   const eraKey = (id) => (reader.lang?.code && reader.lang.code !== 'la' && t(`era.${reader.lang.code}.${id}`) !== `era.${reader.lang.code}.${id}` ? `era.${reader.lang.code}.${id}` : `era.${id}`);
@@ -24,6 +25,7 @@
     </select>
     <span class="note">{t('settings.language.note', { name: t(`settings.lang.${reader.glossLang}`, { source: reader.lang?.sources?.[reader.glossLang] ?? '' }) })}</span>
   </label>
+  <VoiceSettings {voice} onaction={onvoice} />
 </div>
 
 <style>

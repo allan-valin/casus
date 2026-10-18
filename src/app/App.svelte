@@ -27,7 +27,7 @@
   const route = langFromPath(typeof location !== 'undefined' ? location.pathname : '/', import.meta.env?.BASE_URL ?? '/');
   const lang = getLanguage(route.code);
   const DATA = withBase(lang.dataPath);
-  const voice = typeof window === 'undefined' ? null : createVoice({ bcp47: lang.bcp47, espeakVoice: lang.voice.espeak });
+  const voice = typeof window === 'undefined' ? null : createVoice({ bcp47: lang.bcp47, espeakVoice: lang.voice.espeak, natural: lang.voice.natural ?? null });
 
   // injected for tests; the browser gets the real ones
   function defaultStorage() {
@@ -208,7 +208,7 @@
 
     <section class="card">
       <h2><span class="step">4</span> {t('settings.heading')}</h2>
-      <Toolbar {reader} />
+      <Toolbar {reader} {voice} onvoice={(what, error) => (what === 'downloaded' ? say('act.voiceDownloaded', {}, 'ok') : what === 'removed' ? say('act.voiceRemoved') : say('voice.natural.failed', { error }, 'err'))} />
     </section>
 
     {#if openBlock}

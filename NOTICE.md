@@ -58,6 +58,13 @@ When the browser has no voice for a language, the speaker button loads espeak-ng
 WebAssembly (`@echogarden/espeak-ng-emscripten`, GPL-3.0) from jsDelivr at the moment it is first used.
 It is not bundled with Casus.
 
+## Natural voices — Piper (MIT)
+
+When the reader presses *Download* under "Natural voice", the page loads `@mintplex-labs/piper-tts-web`
+(MIT; a browser port of Rhasspy's Piper, MIT) from jsDelivr and the voice model from Hugging Face
+(`rhasspy/piper-voices`). German: **Thorsten** (`de_DE-thorsten-medium`, 63 MB), trained on the Thorsten
+dataset by Thorsten Müller, released CC0. Neither is bundled with Casus; the browser stores the model.
+
 ## Sample passages
 
 Ancient works are long out of copyright. Modern critical editions can carry rights in their
