@@ -170,3 +170,28 @@ describe('Marks supplied by the dictionary (Allan, 2026-10-18)', () => {
     expect(b.container.querySelector('.reading')).toBe(null);
   });
 });
+
+describe('German article on noun pills (languages phase 3 Task 5)', async () => {
+  const { getLanguage } = await import('../../src/lang/registry.js');
+  const { makeColors } = await import('../../src/app/lib/colors.js');
+  const de = getLanguage('de');
+  const colors = makeColors(de.inventory);
+  const noun = (c, n, g) => ({ analysis: { lemma: '1', pos: 'noun', case: c, number: n, gender: g }, reasons: [] });
+  const blk = (surface, cands) => ({ token: { index: 0, surface }, candidates: cands, pinned: null, resolved: cands.length === 1 });
+  const show = (b) => render(Block, { block: b, layers: { ...ALL, marks: true }, onhover: () => {}, onopen: () => {}, colors, showArticle: true }).container;
+  it('shows das over a neuter singular noun', () => {
+    expect(show(blk('Haus', [noun('nom', 'sg', 'n'), noun('acc', 'sg', 'n')])).querySelector('.article').textContent).toBe('das');
+  });
+  it('shows die (Pl.) over a plural', () => {
+    expect(show(blk('Häuser', [noun('nom', 'pl', 'n')])).querySelector('.article').textContent).toBe('die (Pl.)');
+  });
+  it('shows both when the gender is open', () => {
+    expect(show(blk('See', [noun('nom', 'sg', 'm'), noun('nom', 'sg', 'f')])).querySelector('.article').textContent).toBe('der / die');
+  });
+  it('never on a Latin pill or a non-noun', () => {
+    const latin = render(Block, { block: blk('rosa', [noun('nom', 'sg', 'f')]), layers: ALL, onhover: () => {}, onopen: () => {} }).container;
+    expect(latin.querySelector('.article')).toBe(null);
+    const adj = show(blk('gut', [{ analysis: { lemma: '2', pos: 'adj', case: 'x', number: 'x', gender: 'x' }, reasons: [] }]));
+    expect(adj.querySelector('.article')).toBe(null);
+  });
+});

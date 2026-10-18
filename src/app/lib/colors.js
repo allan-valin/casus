@@ -129,6 +129,9 @@ export function makeColors(inventory) {
   const acc = ordered.acc ?? ordered[order[3]] ?? ordered[first];
   const abl = ordered.abl ?? ordered[order[4]] ?? ordered[first];
   LEGEND.push(
+    ...(inventory.showArticle ? [{ key: 'article', label: 'der / die / das', labelPt: 'der / die / das', badge: primary.badge[first], fill: tint(ordered[first], 'sg'), border: ordered[first], borderStyle: 'solid',
+      meaning: 'above every noun: its article, which is its gender — der masculine, die feminine, das neuter, die (Pl.) for a plural; both when the dictionary has two',
+      meaningPt: 'acima de cada substantivo: o seu artigo, que é o seu gênero — der masculino, die feminino, das neutro, die (Pl.) no plural; os dois quando o dicionário tem dois' }] : []),
     { key: 'verb', label: 'verb', badge: '3sg pf', fill: tint(VERB_COLOR, 'sg'), border: VERB_COLOR, borderStyle: 'solid',
       meaning: 'a finite verb: dark border, badge is person·number and tense (pr im fu pf pl fp)' },
     { key: 'function', label: 'function word', badge: '—', fill: WHITE, border: FUNCTION_COLOR, borderStyle: 'dotted',
