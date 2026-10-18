@@ -90,7 +90,7 @@ describe('frequent words and phrases (Allan, 2026-10-18)', () => {
     expect(Number(prompt.slice(1))).toBeLessThanOrEqual(200);
     const choices = [...container.querySelectorAll('button.choice')];
     expect(choices).toHaveLength(4);
-    await fireEvent.click(choices.find((b) => b.textContent.trim() === `m${prompt.slice(1)}`));
+    await fireEvent.click(choices.find((b) => b.querySelector('.text').textContent.trim() === `m${prompt.slice(1)}`));
     await tick();
     expect(container.querySelector('.quiz-feedback').classList.contains('right')).toBe(true);
   });
