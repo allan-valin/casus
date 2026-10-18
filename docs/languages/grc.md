@@ -103,7 +103,7 @@ correlation, verbal aspect beyond the tense label. These are §8 (parser phase) 
 
 ## Transliteration under each word (Allan, 2026-10-18)
 
-Every non-Latin script shows the word in Latin letters, small and italic, under the block
+Every non-Latin script shows the word in Latin letters, small and italic, under the block and under every word of the sentences panel
 (`script.romanize` in the language definition; toggle "Latin letters under each word", on by default).
 Greek uses the usual scholarly scheme: η ē, ω ō, θ th, φ ph, χ ch, ψ ps, ξ x, υ y (u in diphthongs),
 γ before γ κ ξ χ = n, rough breathing h (ῥ rh), iota subscript i; accents dropped. When the input lacked
