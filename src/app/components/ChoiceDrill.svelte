@@ -4,7 +4,8 @@
    * why a saying cannot be translated word by word. A missed item comes back soon. */
   import { t } from '../lib/i18n.svelte.js';
   import { createChoiceQuiz } from '../lib/quiz.js';
-  let { items, random = Math.random } = $props();
+  import { romanOf } from '../lib/roman.js';
+  let { items, random = Math.random, romanize = null } = $props();
   let quiz = $state.raw(null);
   let current = $state.raw(null);
   let result = $state(null);
@@ -49,10 +50,11 @@
 {:else}
   <div class="quiz">
     <p class="quiz-prompt" lang="">{current.item.prompt}</p>
+    {#if romanOf(current.item.prompt, romanize)}<p class="roman prompt-roman">{romanOf(current.item.prompt, romanize)}</p>{/if}
     {#if current.item.hint}<p class="quiz-hint">{current.item.hint}</p>{/if}
     <div class="choices">
       {#each current.choices as c, i}
-        <button class="choice" class:selected={!result && i === selected} class:right={result && c === current.item.answer} class:wrong={result && c === picked && !result.correct} disabled={!!result} onclick={() => choose(c)}><span class="key" aria-hidden="true">{i + 1}</span><span class="text">{c}</span></button>
+        <button class="choice" class:selected={!result && i === selected} class:right={result && c === current.item.answer} class:wrong={result && c === picked && !result.correct} disabled={!!result} onclick={() => choose(c)}><span class="key" aria-hidden="true">{i + 1}</span><span class="text">{c}{#if romanOf(c, romanize)}<span class="roman">{romanOf(c, romanize)}</span>{/if}</span></button>
       {/each}
     </div>
     {#if result}
@@ -62,7 +64,7 @@
       {#if current.item.lit?.length}
         <div class="literal" aria-label={t('quiz.literal')}>
           <span class="lit-label">{t('quiz.literal')}:</span>
-          {#each current.item.lit as [w, g]}<span class="lit-word"><b>{w}</b><i>{g || '—'}</i></span>{/each}
+          {#each current.item.lit as [w, g]}<span class="lit-word"><b>{w}</b>{#if romanOf(w, romanize)}<span class="roman">{romanOf(w, romanize)}</span>{/if}<i>{g || '—'}</i></span>{/each}
         </div>
       {/if}
       <button class="primary next" onclick={next}>{t('quiz.next')}</button>
@@ -74,6 +76,8 @@
 
 <style>
   .quiz-prompt { font-size: 1.7rem; font-family: Georgia, serif; margin: 10px 0 4px; }
+  .roman { display: block; font-style: italic; color: var(--ink-2); font-size: 0.8em; }
+  .prompt-roman { font-size: 1rem; margin: 0 0 6px; }
   .quiz-hint { color: var(--ink-2); margin: 0 0 8px; }
   .choices { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; margin: 10px 0; }
   .choice { font: inherit; text-align: left; padding: 10px 12px; border: 1.5px solid var(--line); border-radius: 10px; background: var(--panel); color: var(--ink); cursor: pointer; }

@@ -69,7 +69,7 @@
         <select class="word-direction" bind:value={direction}><option value="meaning">{t('words.toMeaning')}</option><option value="word">{t('words.toWord')}</option></select>
       </label>
     </div>
-    {#key `${range}|${direction}|${frequency.length}`}<ChoiceDrill items={wordItems} {random} />{/key}
+    {#key `${range}|${direction}|${frequency.length}`}<ChoiceDrill items={wordItems} {random} romanize={lang.script?.romanize ?? null} />{/key}
   {:else if drill === 'phrases'}
     <div class="options">
       <label>{t('phrases.kind')}
@@ -78,7 +78,7 @@
         </select>
       </label>
     </div>
-    {#key `${kind}|${phrases.length}`}<ChoiceDrill items={phraseItems} {random} />{/key}
+    {#key `${kind}|${phrases.length}`}<ChoiceDrill items={phraseItems} {random} romanize={lang.script?.romanize ?? null} />{/key}
   {:else if drill === 'nouns'}
     {#key 'nouns'}<EndingsDrill {lang} models={nouns} {random} {loadParadigm} />{/key}
   {:else}

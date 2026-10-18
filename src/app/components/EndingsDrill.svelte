@@ -5,6 +5,7 @@
   import { t, ui } from '../lib/i18n.svelte.js';
   import { drillTables, createEndingsGrid } from '../lib/endings.js';
   import { displayForm } from '../lib/entry.js';
+  import { romanOf } from '../lib/roman.js';
   let { lang, models, random = Math.random, loadParadigm = null } = $props();
 
   let wordIndex = $state(0);
@@ -22,6 +23,7 @@
   const randomTitle = $derived(base?.irregular ? t('drill.irregular') : base?.pool?.length ? t('drill.random.title', { n: base.pool.length }) : t('drill.noPool'));
   const tables = $derived(model ? drillTables(model, lang) : []);
   const table = $derived(tables[tableIndex] ?? null);
+  const romanize = $derived(lang.script?.romanize ?? null);
   const glossOf = (m) => (typeof m.gloss === 'string' ? m.gloss : (m.gloss?.[ui.lang] ?? m.gloss?.en ?? ''));
   const caseName = (c) => lang.inventory.channels.case?.name?.[ui.lang]?.[c] ?? c;
   const word = (s) => (t(`para.${s}`) === `para.${s}` ? s : t(`para.${s}`));
@@ -70,7 +72,7 @@
   <div class="controls">
     <label>{t('drill.word')}
       <select class="drill-word-select" value={wordIndex} onchange={(e) => pick(Number(e.currentTarget.value))}>
-        {#each models as m, i}<option value={i}>{displayForm(m.dict_form)}{glossOf(m) ? ` — ${glossOf(m)}` : ''}</option>{/each}
+        {#each models as m, i}<option value={i}>{displayForm(m.dict_form)}{romanize ? ` (${romanOf(m.headword, romanize)})` : ''}{glossOf(m) ? ` — ${glossOf(m)}` : ''}</option>{/each}
       </select>
     </label>
     <button class="random-word" onclick={randomWord} disabled={!base?.pool?.length || loading} title={randomTitle}>{t('drill.random')}</button>
@@ -83,7 +85,7 @@
       </label>
     {/if}
   </div>
-  <p class="drill-word"><b>{displayForm(model.dict_form)}</b>{#if glossOf(model)} <span class="gloss">{glossOf(model)}</span>{/if}{#if model.like} <span class="like">{t(model.pos === 'verb' ? 'drill.likeVerb' : 'drill.like', { word: displayForm(model.like).split(',')[0] })}</span>{/if}{#if base?.irregular && !random_} <span class="like">{t('drill.irregularShort')}</span>{/if}</p>
+  <p class="drill-word"><b>{displayForm(model.dict_form)}</b>{#if romanize} <span class="roman">{romanOf(model.headword ?? model.dict_form.split(',')[0], romanize)}</span>{/if}{#if glossOf(model)} <span class="gloss">{glossOf(model)}</span>{/if}{#if model.like} <span class="like">{t(model.pos === 'verb' ? 'drill.likeVerb' : 'drill.like', { word: displayForm(model.like).split(',')[0] })}</span>{/if}{#if base?.irregular && !random_} <span class="like">{t('drill.irregularShort')}</span>{/if}</p>
   {#if table}
     <div class="table-scroll"><table class="drill-table">
       <thead><tr><th></th>{#each table.cols as c}<th>{colName(c)}</th>{/each}</tr></thead>
@@ -96,7 +98,7 @@
               {:else}
                 {@const cell = cells[i]}
                 <td class={cell.state} data-cell-box={`${r}|${c}`}>
-                  {#if cell.state === 'right' || cell.state === 'revealed'}<span class="answer">{displayForm(cell.shown)}</span>
+                  {#if cell.state === 'right' || cell.state === 'revealed'}<span class="answer">{displayForm(cell.shown)}</span>{#if romanize}<span class="roman">{[...new Set(cell.shown.split(', ').map((f) => romanOf(f, romanize)))].join(', ')}</span>{/if}
                   {:else}<input data-cell={`${r}|${c}`} data-index={i} aria-label={`${rowName(r)} ${colName(c)}`} autocomplete="off" autocapitalize="off" spellcheck="false"
                          value={typed[i] ?? ''} oninput={(e) => { typed[i] = e.currentTarget.value; }}
                          onkeydown={(e) => { if (e.key === 'Enter') { e.preventDefault(); check(i); } }} onblur={() => check(i)} />{/if}
@@ -123,6 +125,8 @@
   select, button { font: inherit; padding: 6px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); }
   button:hover { border-color: var(--accent); }
   .drill-word { font-size: 1.15rem; margin: 8px 0; }
+  .roman { font-style: italic; color: var(--ink-2); font-size: 0.85em; }
+  td .roman { display: block; font-size: 0.78em; }
   .like { color: #6b4e9b; font-size: 0.85em; margin-left: 0.5em; }
   .gloss { color: var(--ink-2); font-style: italic; margin-left: 0.5em; }
   .table-scroll { overflow-x: auto; max-width: 100%; }

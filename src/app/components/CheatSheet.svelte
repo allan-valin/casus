@@ -29,7 +29,7 @@
   {:else if drill === 'phrases'}
     <table>
       <thead><tr><th>{t('cheat.phrase')}</th><th>{t('cheat.meaning')}</th><th>{t('quiz.literal')}</th></tr></thead>
-      <tbody>{#each phrases as p (p.p)}<tr class="phrase"><td class="w">{p.p}</td><td>{p.en}</td><td class="lit">{p.lit.map(([w, g]) => `${w}: ${g || '—'}`).join(' · ')}</td></tr>{/each}</tbody>
+      <tbody>{#each phrases as p (p.p)}<tr class="phrase"><td class="w">{p.p}{#if romanize} <span class="roman">{romanize(p.p)}</span>{/if}</td><td>{p.en}</td><td class="lit">{p.lit.map(([w, g]) => `${w}: ${g || '—'}`).join(' · ')}</td></tr>{/each}</tbody>
     </table>
   {:else}
     {#each models as m (m.id)}
