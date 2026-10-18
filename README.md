@@ -20,7 +20,8 @@ npm install                       # with npm 10.8 the lockfile installs as is; i
                                   # and npm dies on "edgesOut", use --legacy-peer-deps (vitest 5 peer set)
 npm test                          # vitest: parser modules, UI helpers and thin component tests
 python3 -m pytest tools/tests -q  # the build pipeline tests
-python3 tools/build_index.py      # rebuilds data/ from vendor/ (35 s); data/ is committed, so this is optional
+bash tools/fetch_data_assets.sh    # downloads the built indexes (data/<code>/) from the `data` release
+python3 tools/build_index.py      # or rebuild Latin's from vendor/ (35 s); bash tools/release_data.sh la uploads it
 bash tools/fetch_glosses_pt.sh && python3 tools/build_glosses_pt.py   # the Portuguese gloss layer
 npm run dev                       # the reader at http://localhost:5173
 npm run build && npm run preview  # static bundle in dist/, data/ copied beside it
@@ -28,9 +29,9 @@ cd dist && python3 -m http.server # or serve the built bundle offline with nothi
 ```
 
 `vendor/` holds source data downloaded by `tools/fetch_data.sh` and `tools/fetch_glosses_pt.sh` and
-is not committed. The derived index under `data/` **is committed** (57 MB on disk, 7.3 MB gzipped,
-every shard under 300 KB gzipped): the size gate of the core plan was settled on 2026-10-18 by the
-decision to host the page on GitHub Pages (`docs/DATA.md`, `docs/FEEDBACK-2026-10-18.md`).
+is not committed. The derived indexes under `data/<code>/` live as archives in the repository's `data` release, not in git
+history (languages design §11.6); the Pages workflow downloads them at build time. Latin's is 57 MB on disk,
+7.3 MB gzipped, every shard under 300 KB gzipped (`docs/DATA.md`).
 
 ## The page
 

@@ -235,3 +235,11 @@ headword; senses joined with `; `. Result `data/glosses.pt.json`, 91 KB: **1,718
 headline (spec §12 Q3). Richer coverage would need the Portuguese *translations* of English
 Wiktionary's Latin entries (kaikki `dictionary/Latin/`, English edition) as a second source —
 noted, not built.
+
+### Where the built data lives (2026-10-18)
+
+`data/<code>/` per language (Latin: `data/la/`). Not in git: each language is an archive
+`data-<code>-<date>.tar.gz` on the repository's `data` release. `tools/release_data.sh <code>` uploads
+(replacing that language's older archive), `tools/fetch_data_assets.sh [code…]` downloads, and the Pages
+workflow runs the download before `npm run build`. Latin's index was committed between 2026-10-18 morning
+and this change; that history stays, nothing later adds to it.
