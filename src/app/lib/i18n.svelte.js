@@ -269,7 +269,7 @@ export const LEGEND_PT = {
   abl: ['ablativo', 'ablativo singular: a cor do ablativo, borda contínua'],
   voc: ['vocativo', 'vocativo singular: a cor do vocativo, borda contínua'],
   loc: ['locativo', 'locativo (raro: domi, Romae): a cor do ablativo com borda dupla'],
-  plural: ['plural', 'qualquer caso no plural: a mesma cor, fundo mais claro, borda tracejada'],
+  pl: ['plural', 'qualquer caso no plural: a mesma cor, fundo mais claro, borda tracejada'],
   verb: ['verbo', 'um verbo finito: borda escura, a etiqueta é pessoa·número e tempo (pr im fu pf pl fp)'],
   function: ['palavra funcional', 'conjunção, advérbio, partícula: borda cinza pontilhada. Uma preposição recebe a cor do caso que rege, etiqueta Prp'],
   unknown: ['fora do dicionário', 'a palavra não está no léxico de Whitaker (a maioria dos nomes próprios): branca, itálica, !'],

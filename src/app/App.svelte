@@ -16,7 +16,7 @@
   import { t, ui, setLang } from './lib/i18n.svelte.js';
   import { createActivity } from './lib/activity.svelte.js';
   import ActivityLog from './components/ActivityLog.svelte';
-  import { describeAnalysis, blockStyle } from './lib/colors.js';
+  import { describeAnalysis } from './lib/colors.js';
   import { partners as partnersOf } from './lib/chunks.js';
 
   const DATA = withBase('/data');
@@ -76,7 +76,7 @@
     open = null;
     const blocks = r.blocks;
     say('act.read', { words: r.sentences.reduce((n, s, i) => n + r.blocksOf(i).length, 0), sentences: r.sentences.length,
-      ambiguous: blocks.filter((b) => blockStyle(b, r.layers).ambiguous).length, unknown: blocks.filter((b) => b.candidates.length === 0).length, ms: Date.now() - t0 }, 'ok');
+      ambiguous: blocks.filter((b) => r.colors.blockStyle(b, r.layers).ambiguous).length, unknown: blocks.filter((b) => b.candidates.length === 0).length, ms: Date.now() - t0 }, 'ok');
     if (saved) say('act.restored');
     r.loadExtras(fetchImpl, DATA).then(() => say('act.extras', { pt: r.lexiconExtras.glosses.pt ? t('act.extras.pt') : '' })).catch(() => {});
   }
@@ -85,7 +85,7 @@
     const r = reader;
     const word = (i) => r?.blocks.find((b) => b.token.index === i)?.token.surface ?? `#${i + 1}`;
     switch (kind) {
-      case 'select': { const blocks = r?.blocks ?? []; say('act.selected', { n: info.n, words: blocks.length, ambiguous: blocks.filter((b) => blockStyle(b, r.layers).ambiguous).length }); break; }
+      case 'select': { const blocks = r?.blocks ?? []; say('act.selected', { n: info.n, words: blocks.length, ambiguous: blocks.filter((b) => r.colors.blockStyle(b, r.layers).ambiguous).length }); break; }
       case 'pin': say('act.pinned', { word: word(info.tokenIndex), reading: describeAnalysis(info.analysis) }, 'ok'); break;
       case 'unpin': say('act.unpinned', { word: word(info.tokenIndex) }); break;
       case 'move': say('act.moved', { word: info.indices.map(word).join(' ') }); break;
@@ -187,7 +187,7 @@
       <BlockPane {reader} onhover={(i) => (hovered = i)} onopen={toggleOpen} {lemmaOf} />
       <details class="legend-box" bind:open={legendOpen}>
         <summary>{t('legend.summary')}</summary>
-        <Legend />
+        <Legend rows={reader.colors.LEGEND} />
       </details>
     </section>
 

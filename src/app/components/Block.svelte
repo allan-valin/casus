@@ -1,8 +1,8 @@
 <script>
-  import { blockStyle } from '../lib/colors.js';
+  import { blockStyle as latinBlockStyle } from '../lib/colors.js';
   import { t } from '../lib/i18n.svelte.js';
-  let { block, layers, onhover, onopen, lemmaOf = null } = $props();
-  const style = $derived(blockStyle(block, layers));
+  let { block, layers, onhover, onopen, lemmaOf = null, colors = null } = $props();
+  const style = $derived((colors?.blockStyle ?? latinBlockStyle)(block, layers));
   // the class sub-layer needs one lemma; the case may still be open (rosa nom/abl is one word)
   const oneLemma = $derived(block.candidates.length > 0 && block.candidates.every((c) => String(c.analysis.lemma) === String(block.candidates[0].analysis.lemma)));
 </script>

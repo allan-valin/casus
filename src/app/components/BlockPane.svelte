@@ -9,7 +9,7 @@
    */
   import Block from './Block.svelte';
   import { gluePairs, partners, items as poolItems } from '../lib/chunks.js';
-  import { blockStyle } from '../lib/colors.js';
+  import { blockStyle as latinBlockStyle } from '../lib/colors.js';
   import { createDrag, tokenOffset } from '../lib/drag.js';
   import { WORD_ORDERS } from '../lib/order.js';
   import { t } from '../lib/i18n.svelte.js';
@@ -29,7 +29,8 @@
   const linked = $derived(hovered === null ? new Set() : new Set(links.get(hovered) ?? []));
   const prepositions = $derived(blocks.filter((b) => b.candidates.some((c) => c.analysis.pos === 'prep')).map((b) => b.token.index));
   // counted as the eye sees it: readings that print the same fold into one (colors.js)
-  const unresolved = $derived(blocks.filter((b) => blockStyle(b, reader.layers).ambiguous).length);
+  const colors = $derived(reader.colors ?? null);
+  const unresolved = $derived(blocks.filter((b) => (colors?.blockStyle ?? latinBlockStyle)(b, reader.layers).ambiguous).length);
   const unknown = $derived(blocks.filter((b) => b.candidates.length === 0).length);
 
   function hover(index) { hovered = index; onhover(index); }
@@ -126,7 +127,7 @@
         {@const block = byIndex.get(index)}
         {#if block}
           <span class="block" class:linked={linked.has(index)} class:hovered={hovered === index}>
-            <Block {block} layers={reader.layers} onhover={hover} onopen={open} {lemmaOf} />
+            <Block {block} layers={reader.layers} onhover={hover} onopen={open} {lemmaOf} {colors} />
           </span>
           {#if item.indices.length > 1 && i === 0}
             <button class="unglue" title={t('pane.unglue')} aria-label="unglue this chunk" onclick={() => reader.toggleGlue(index)}>⛓</button>

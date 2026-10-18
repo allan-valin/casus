@@ -2,6 +2,7 @@ import { createState } from '../../lib/state.js';
 import { initialOrder, move as moveIn, moveItem as moveItemIn, autoSort as autoSortIn, arrangeBy } from '../lib/order.js';
 import { loadLemmas, loadGlosses } from '../lib/fetchers.js';
 import { getLanguage } from '../../lang/registry.js';
+import { makeColors } from '../lib/colors.js';
 
 const DEFAULT_LAYERS = { nominal: true, verb: true, function: true, classes: false };
 
@@ -12,6 +13,7 @@ const DEFAULT_LAYERS = { nominal: true, verb: true, function: true, classes: fal
  */
 export function createReader({ lexicon, text, saved = null, onaction = () => {}, lang = getLanguage('la') }) {
   const state = createState({ text, lexicon, lang, saved });
+  const colors = makeColors(lang.inventory);
   let version = $state(0);                       // bumped after every state.* call so getters re-read
   let loaded = $state(false);
   const layers = $state({ ...DEFAULT_LAYERS, ...(saved?.layers ?? {}) });
@@ -54,6 +56,8 @@ export function createReader({ lexicon, text, saved = null, onaction = () => {},
 
   return {
     get text() { return text; },
+    get lang() { return lang; },
+    get colors() { return colors; },
     get sentences() { void version; return state.sentences(); },
     get selected() { void version; return state.selected(); },
     get blocks() { return currentBlocks(); },
@@ -81,8 +85,8 @@ export function createReader({ lexicon, text, saved = null, onaction = () => {},
     unpin(tokenIndex) { state.unpin(tokenIndex); touch(); onaction('unpin', { tokenIndex }); },
     move(from, to) { orders[state.selected()] = moveIn(currentOrder(), from, to); touch(); onaction('move', { indices: [from] }); },
     moveItem(indices, to) { orders[state.selected()] = moveItemIn(currentOrder(), indices, to); touch(); onaction('move', { indices }); },
-    autoSort() { orders[state.selected()] = autoSortIn(currentOrder(), currentBlocks()); touch(); onaction('autosort'); },
-    arrange(pattern) { orders[state.selected()] = arrangeBy(currentOrder(), currentBlocks(), pattern); touch(); onaction('arrange', { pattern }); },
+    autoSort() { orders[state.selected()] = autoSortIn(currentOrder(), currentBlocks(), colors.family); touch(); onaction('autosort'); },
+    arrange(pattern) { orders[state.selected()] = arrangeBy(currentOrder(), currentBlocks(), pattern, colors.family); touch(); onaction('arrange', { pattern }); },
     restoreOrder() { delete orders[state.selected()]; touch(); onaction('restore'); },
     toggleGlue(prepIndex) { if (unglued.has(prepIndex)) unglued.delete(prepIndex); else unglued.add(prepIndex); touch(); onaction('glue', { tokenIndex: prepIndex }); },
 

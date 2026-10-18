@@ -1,4 +1,4 @@
-import { family } from './colors.js';
+import { family as latinFamily } from './colors.js';
 
 /* Arrangement of the selected sentence's blocks (spec §7.6): reading order to
  * start, free moves, a stable auto-sort by case, and restore = drop the order. */
@@ -26,7 +26,7 @@ export function moveItem(order, indices, to) {
 }
 
 /** What a block sorts by: its case when resolved, '?' + the first candidate's case when not. */
-export function sortKey(block) {
+export function sortKey(block, family = latinFamily) {
   if (block.candidates.length === 0) return 'unknown';
   const first = block.candidates[0].analysis;
   const fam = family(first);
@@ -34,10 +34,10 @@ export function sortKey(block) {
   return block.candidates.length === 1 ? first.case : `?${first.case}`;
 }
 
-export function autoSort(order, blocks) {
+export function autoSort(order, blocks, family = latinFamily) {
   const byIndex = new Map(blocks.map((b) => [b.token.index, b]));
   const rank = (index) => {
-    const key = sortKey(byIndex.get(index)).replace(/^\?/, '');
+    const key = sortKey(byIndex.get(index), family).replace(/^\?/, '');
     return GROUP_RANK[key] ?? GROUP_RANK.unknown;
   };
   return [...order].sort((a, b) => rank(a) - rank(b) || a - b);
@@ -48,17 +48,17 @@ export function autoSort(order, blocks) {
  * kept too, so a hand-made arrangement inside a group survives. */
 export const WORD_ORDERS = ['SVO', 'SOV', 'VSO', 'VOS', 'OVS', 'OSV'];
 
-function role(block) {
-  const key = sortKey(block).replace(/^\?/, '');
+function role(block, family) {
+  const key = sortKey(block, family).replace(/^\?/, '');
   if (key === 'nom') return 'S';
   if (key === 'verb') return 'V';
   if (key === 'acc') return 'O';
   return 'rest';
 }
 
-export function arrangeBy(order, blocks, pattern) {
+export function arrangeBy(order, blocks, pattern, family = latinFamily) {
   const byIndex = new Map(blocks.map((b) => [b.token.index, b]));
   const rank = Object.fromEntries([...pattern].map((r, i) => [r, i]));
-  const rankOf = (index) => rank[role(byIndex.get(index))] ?? pattern.length;
+  const rankOf = (index) => rank[role(byIndex.get(index), family)] ?? pattern.length;
   return order.map((index, i) => [index, i]).sort((a, b) => rankOf(a[0]) - rankOf(b[0]) || a[1] - b[1]).map(([index]) => index);
 }

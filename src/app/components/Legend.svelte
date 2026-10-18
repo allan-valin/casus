@@ -1,15 +1,16 @@
 <script>
   /* Feedback B6: a legend table — every colour and border, what it means. */
-  import { LEGEND } from '../lib/colors.js';
+  import { LEGEND as LATIN_LEGEND } from '../lib/colors.js';
   import { t, ui, LEGEND_PT } from '../lib/i18n.svelte.js';
-  const label = (row) => (ui.lang === 'pt' && LEGEND_PT[row.key] ? LEGEND_PT[row.key][0] : row.label);
-  const meaning = (row) => (ui.lang === 'pt' && LEGEND_PT[row.key] ? LEGEND_PT[row.key][1] : row.meaning);
+  let { rows = LATIN_LEGEND } = $props();
+  const label = (row) => (ui.lang === 'pt' ? (row.labelPt ?? LEGEND_PT[row.key]?.[0] ?? row.label) : row.label);
+  const meaning = (row) => (ui.lang === 'pt' ? (row.meaningPt ?? LEGEND_PT[row.key]?.[1] ?? row.meaning) : row.meaning);
 </script>
 
 <table class="legend">
   <thead><tr><th>{t('legend.looks')}</th><th>{t('legend.meaning')}</th></tr></thead>
   <tbody>
-    {#each LEGEND as row (row.key)}
+    {#each rows as row (row.key)}
       <tr class="row">
         <td>
           <span class="swatch" class:sw-pinned={row.pinned} class:sw-chunk={row.chunk} class:sw-linked={row.linked}

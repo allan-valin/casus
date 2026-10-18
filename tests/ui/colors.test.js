@@ -100,7 +100,7 @@ describe('blockStyle', () => {
 describe('legend', () => {
   it('lists every colour and border the page uses, each with its badge and meaning', () => {
     const keys = LEGEND.map((row) => row.key);
-    for (const k of ['nom', 'gen', 'dat', 'acc', 'abl', 'voc', 'loc', 'plural', 'verb', 'function', 'unknown', 'ambiguous', 'pinned', 'chunk', 'linked']) {
+    for (const k of ['nom', 'gen', 'dat', 'acc', 'abl', 'voc', 'loc', 'pl', 'verb', 'function', 'unknown', 'ambiguous', 'pinned', 'chunk', 'linked']) {
       expect(keys).toContain(k);
     }
     for (const row of LEGEND) { expect(row.label.length).toBeGreaterThan(3); expect(row.meaning.length).toBeGreaterThan(8); }
