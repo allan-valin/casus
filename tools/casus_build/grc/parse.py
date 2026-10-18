@@ -127,6 +127,28 @@ def parse_entries(jsonl_lines: Iterable[str]) -> Iterator[dict]:
         }
 
 
+_GREEK = re.compile(r"[\u0370-\u03ff\u1f00-\u1fff]")
+_MOVABLE = re.compile(r"^(.*)\((\w+)\)$")
+
+
+def _usable(form: str) -> bool:
+    """A Greek word: no romanization (Latin letters only), no spaces, hyphens, apostrophes or editorial marks."""
+    return bool(_GREEK.search(form)) and not re.search(r"[\s\-'’?‡()*]", form)
+
+
+def _expanded(forms: list[dict]) -> list[dict]:
+    """Wiktionary writes movable nu as ἐστῐ́(ν): one cell, two words — ἐστί and ἐστίν."""
+    out = []
+    for f in forms:
+        m = _MOVABLE.match(f.get("form", ""))
+        if m:
+            out.append({**f, "form": m.group(1)})
+            out.append({**f, "form": m.group(1) + m.group(2)})
+        else:
+            out.append(f)
+    return out
+
+
 def analyses_of(entry: dict) -> list[tuple[str, dict]]:
     """(surface form, analysis) for every cell of the entry's tables; the headword alone when it has none."""
     pos = entry["pos"]
@@ -139,13 +161,13 @@ def analyses_of(entry: dict) -> list[tuple[str, dict]]:
             return [(entry["headword"], {"pos": "adv", "degree": "pos"})]
         return [(entry["headword"], {"pos": pos})]
     label = None
-    for f in entry["forms"]:
+    for f in _expanded(entry["forms"]):
         tags = set(f.get("tags") or [])
         form = f.get("form", "")
         if "table-tags" in tags:
             label = form
             continue
-        if tags & SKIP_TAGS or not form or " " in form or "-" in form:
+        if tags & SKIP_TAGS or not form or not _usable(form):
             continue
         cases, numbers, genders = _picked(tags, CASES), _picked(tags, NUMBERS), _picked(tags, GENDERS)
         if pos == "verb":

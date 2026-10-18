@@ -56,3 +56,17 @@ def test_uninflected_words_index_their_headword():
     index = build_index(ENTRIES.values())
     assert any(a["pos"] == "prep" for a in index["ἐν"])
     assert any(a["pos"] == "conj" for a in index["καί"])
+
+
+def test_movable_nu_written_in_parentheses_gives_both_forms():
+    index = build_index(ENTRIES.values())
+    assert any(a["pos"] == "verb" and a["person"] == "3" for a in index["ἐστί"])
+    assert any(a["pos"] == "verb" and a["person"] == "3" for a in index["ἐστίν"])
+    assert not any("(" in k for k in index)
+
+
+def test_romanizations_and_forms_with_apostrophes_or_spaces_stay_out_of_the_index():
+    index = build_index(ENTRIES.values())
+    import re
+    assert not [k for k in index if not re.search(r"[Ͱ-Ͽἀ-῿]", k)]
+    assert not [k for k in index if re.search(r"[ '’]", k)]
