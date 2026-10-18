@@ -129,7 +129,7 @@ syntax model of design §8).
 | CL7 | The finite verb agrees in number with the nominative subject (*die Kinder **spielen***): one certain nominative subject and no *und/oder* → its number. | done |
 | CL8 | *zu* + infinitive at the clause end is an infinitive group (*um … zu*, *ohne … zu*, *statt … zu*); *zu* there is not a preposition. | done |
 | CL9 | Compound tenses and the passive: *haben/sein* + Partizip II = Perfekt; *werden* + Infinitiv = Futur; *werden* + Partizip II = Passiv. Mark the pair. | next |
-| CL10 | Verb valency: which case a verb takes for its objects (*helfen* + dat, *gedenken* + gen, *geben* + dat + acc) settles the remaining nominal cases. Needs a valency list per verb. | parser (or a valency list) |
+| CL10 | Verb valency: which case a verb takes for its objects (*helfen* + dat, *gedenken* + gen, *geben* + dat + acc) settles the remaining nominal cases. Needs a valency list per verb. | done for 148 common verbs (tools/casus_build/de/valency.py) |
 
 ### Added from the German-teacher review (2026-10-18, 98 sentences)
 
@@ -150,6 +150,8 @@ syntax model of design §8).
 | NP13 | Saxon genitive (*Peters Buch*); proper names take case from article or preposition. | next |
 | NP14 | *dessen/deren* + noun: the noun is not genitive. | next |
 | CL11 | Copula predicate is nominative; *als/wie* in comparisons take the case of what they compare. | next |
+| SUBJ | A clause with a finite verb has a subject: if exactly one head can be nominative, it is; if one is certainly nominative, the others are not. A relative clause is cut out of the clause around it. Two capitalised nouns without article are one name (*Gregor Samsa*). | done |
+| INTERJ | An interjection reading needs to stand alone (first in its clause). | done |
 | EXP | **Fixed expressions** (Allan): Wiktionary's 21,000 multiword entries — a contiguous one (*es war einmal*, *gar nicht*, *auf jeden Fall*) is glued as one chunk with its gloss; a verb idiom (*Bescheid sagen*, *Recht haben*, *lieb haben*) is found with its verb inflected anywhere in the clause and linked. | done |
 | REF | **Pronoun reference** (Allan): a 3rd-person personal pronoun links to the nearest earlier noun of its gender and number (*sie* → *Großmutter*); a link and a reason, no narrowing (the referent may lie outside the sentence). | done |
 | CL11a | sein, werden, bleiben take no accusative: their ungoverned noun phrases are not accusative (*Es war einmal eine Dirne*). | done |
