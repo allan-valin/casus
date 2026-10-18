@@ -101,9 +101,11 @@
   .quiz-feedback { font-weight: 700; }
   .quiz-feedback.right { color: #1e6b3a; }
   .quiz-feedback.wrong { color: #c0392b; }
-  .literal { display: flex; flex-wrap: wrap; gap: 6px; align-items: baseline; margin: 6px 0 10px; }
+  /* a box of its own, so it is seen (Allan, 2026-10-19: the Latin word by word was easy to miss) */
+  .literal { display: flex; flex-wrap: wrap; gap: 6px; align-items: baseline; margin: 8px 0 10px; padding: 8px 10px; border: 1.5px solid #6b4e9b; border-radius: 10px; background: color-mix(in srgb, #6b4e9b 7%, var(--panel)); }
+  .lit-label { flex-basis: 100%; }
   .lit-label { color: var(--ink-2); font-weight: 600; }
-  .lit-word { display: inline-flex; flex-direction: column; border: 1px solid var(--line-soft); border-radius: 8px; padding: 3px 8px; background: var(--panel-hi); }
+  .lit-word { display: inline-flex; flex-direction: column; border: 1px solid #b9a6d6; border-radius: 8px; padding: 3px 8px; background: var(--panel-hi); }
   .lit-word i { color: var(--ink-2); font-size: 0.85em; }
   .next { font: inherit; padding: 6px 16px; border-radius: 8px; border: 1.5px solid var(--accent); background: var(--accent); color: var(--accent-ink); cursor: pointer; }
   .score { font-weight: 600; }
