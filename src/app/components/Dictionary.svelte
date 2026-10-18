@@ -2,6 +2,7 @@
   import Candidates from './Candidates.svelte';
   import Overlay from './Overlay.svelte';
   import { eraStatus, warning, AGE_LABEL } from '../lib/era.js';
+  import { pickIpa, wiktionaryUrl } from '../lib/entry.js';
   import { t, ui } from '../lib/i18n.svelte.js';
   let { block, reader, onclose } = $props();
 
@@ -54,8 +55,13 @@
         {#if r}
           {@const status = eraStatus(r.age, reader.era)}
           {@const g = gloss(id)}
+          {@const ip = pickIpa(extras.ipa?.[id], (reader.lang?.eras ?? []).find((e) => e.id === reader.era)?.ipa ?? [])}
           <div class="entry" class:dim-near={status === 'near'} class:dim-out={status === 'out'}>
-            <div class="form">{r.dict_form ?? r.headword}</div>
+            <div class="form">{r.dict_form ?? r.headword}
+              <a class="wiktionary" href={wiktionaryUrl(r.headword, reader.lang?.wiktionary ?? 'Latin', 'en')} target="_blank" rel="noopener" title={t('dict.wiktionary')}>Wiktionary ↗</a>
+              {#if ui.lang === 'pt'}<a class="wiktionary pt" href={wiktionaryUrl(r.headword, reader.lang?.wiktionary ?? 'Latin', 'pt')} target="_blank" rel="noopener" title={t('dict.wiktionary')}>Wikcionário ↗</a>{/if}
+            </div>
+            {#if ip}<div class="ipa-line"><span class="ipa" title={ip.tags.join(', ')}>{ip.ipa}</span></div>{/if}
             <div class="class">{classLine(r)}</div>
             {#if g !== null}<div class="gloss">{g}</div>{:else if dict}<div class="gloss missing">{t('dict.missingHere', { name: t(`settings.lang.${dict}`) })}</div>{/if}
             <div class="meta">{t('dict.age')}: {AGE_LABEL[r.age] ?? r.age} · {t('dict.freq')} {r.freq}</div>
@@ -82,6 +88,9 @@
   .dim-out { opacity: 0.45; }
   .form { font-weight: 700; }
   .class, .meta { font-size: 0.85em; color: var(--ink-2); }
+  .wiktionary { font-size: 0.75rem; font-weight: 400; margin-left: 8px; color: var(--accent); }
+  .ipa-line { margin: 2px 0; }
+  .ipa { font-family: 'Charis SIL', 'Doulos SIL', 'Gentium Plus', 'Noto Sans', serif; font-size: 1.05rem; color: var(--ink); }
   .dicts { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 0 0 6px; }
   .dict-tab { min-height: 30px; padding: 3px 10px; font-size: 0.85rem; border-radius: 999px; }
   .dict-tab.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }

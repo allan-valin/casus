@@ -99,3 +99,25 @@ describe('Dictionary keyboard', () => {
     expect(onclose).toHaveBeenCalledTimes(1);
   });
 });
+
+describe('Dictionary IPA and Wiktionary link (languages plan Task 6)', () => {
+  const ipaExtras = { ...extras, ipa: { 7: [{ ipa: '[ˈrɔ.sa]', tags: ['Classical-Latin'] }, { ipa: '[ˈrɔː.za]', tags: ['Ecclesiastical'] }] } };
+  it('shows the IPA variant that matches the dictionary period', async () => {
+    const reader = await readerWith('Rosa.', 'en', 'classical');
+    reader.lexiconExtras = ipaExtras;
+    const { container } = render(Dictionary, { block: reader.blocks[0], reader, onclose: () => {} });
+    expect(container.querySelector('.ipa').textContent).toBe('[ˈrɔ.sa]');
+    expect(container.querySelector('.ipa').title).toMatch(/Classical/);
+  });
+  it('switches to the Ecclesiastical variant for a medieval period', async () => {
+    const reader = await readerWith('Rosa.', 'en', 'medieval');
+    reader.lexiconExtras = ipaExtras;
+    const { container } = render(Dictionary, { block: reader.blocks[0], reader, onclose: () => {} });
+    expect(container.querySelector('.ipa').textContent).toBe('[ˈrɔː.za]');
+  });
+  it('links the entry to its Wiktionary page', async () => {
+    const reader = await readerWith('Rosa.');
+    const { container } = render(Dictionary, { block: reader.blocks[0], reader, onclose: () => {} });
+    expect(container.querySelector('a.wiktionary').getAttribute('href')).toBe('https://en.wiktionary.org/wiki/rosa#Latin');
+  });
+});

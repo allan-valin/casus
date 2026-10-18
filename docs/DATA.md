@@ -243,3 +243,11 @@ noted, not built.
 (replacing that language's older archive), `tools/fetch_data_assets.sh [code…]` downloads, and the Pages
 workflow runs the download before `npm run build`. Latin's index was committed between 2026-10-18 morning
 and this change; that history stays, nothing later adds to it.
+
+### IPA (languages plan Task 6, 2026-10-18)
+
+Latin: English Wiktionary via kaikki.org (`kaikki.org-dictionary-Latin.jsonl`, 1.2 GB, extraction of
+2026-10). Join on normalised headword + pos; inflected-form pages (all senses form-of) skipped; every
+variant kept with its tags (Classical-Latin, Ecclesiastical). **18,809 lemma records, 49.3 % of all,
+72.2 % of the frequent (A–C); `data/la/ipa.json` 2.3 MB.** The entry shows the variant whose tag the
+dictionary period prefers (classical/archaic → Classical-Latin; later → Ecclesiastical).

@@ -1,6 +1,6 @@
 import { createState } from '../../lib/state.js';
 import { initialOrder, move as moveIn, moveItem as moveItemIn, autoSort as autoSortIn, arrangeBy } from '../lib/order.js';
-import { loadLemmas, loadGlosses } from '../lib/fetchers.js';
+import { loadLemmas, loadGlosses, loadIpa } from '../lib/fetchers.js';
 import { getLanguage } from '../../lang/registry.js';
 import { makeColors } from '../lib/colors.js';
 
@@ -21,7 +21,7 @@ export function createReader({ lexicon, text, saved = null, onaction = () => {},
   let glossLang = $state(saved?.glossLang ?? 'en');
   const orders = $state(Object.fromEntries(Object.entries(saved?.order ?? {}).map(([k, v]) => [Number(k), [...v]])));
   const unglued = $state(new Set(saved?.unglued ?? []));
-  let lexiconExtras = $state({ lemmas: null, glosses: { en: null, pt: null } });
+  let lexiconExtras = $state({ lemmas: null, glosses: { en: null, pt: null }, ipa: null });
 
   function touch() { version += 1; }
 
@@ -75,10 +75,10 @@ export function createReader({ lexicon, text, saved = null, onaction = () => {},
 
     async load() { await state.load(); loaded = true; touch(); },
     async loadExtras(fetchImpl, base = '/data') {
-      const [lemmas, en, pt] = await Promise.all([
-        loadLemmas(fetchImpl, base), loadGlosses(fetchImpl, base, 'en'), loadGlosses(fetchImpl, base, 'pt'),
+      const [lemmas, en, pt, ipa] = await Promise.all([
+        loadLemmas(fetchImpl, base), loadGlosses(fetchImpl, base, 'en'), loadGlosses(fetchImpl, base, 'pt'), loadIpa(fetchImpl, base),
       ]);
-      lexiconExtras = { lemmas, glosses: { en, pt } };
+      lexiconExtras = { lemmas, glosses: { en, pt }, ipa };
     },
     select(i) { state.select(i); touch(); onaction('select', { n: i + 1 }); },
     pin(tokenIndex, analysis) { state.pin(tokenIndex, analysis); touch(); onaction('pin', { tokenIndex, analysis }); },

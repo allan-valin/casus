@@ -31,6 +31,20 @@ Coverage, measured 2026-10-18: 1,718 of the 38,179 lemma records (4.5%); 12.1% o
 Whitaker tags as frequent (A–C). It is a convenience layer for common vocabulary, not a
 headline feature (spec §12 question 3); the page falls back to English and says so.
 
+## Pronunciations (IPA) — CC BY-SA
+
+`data/<code>/ipa.json` is derived from the **English Wiktionary**, through the Wiktextract extraction
+published at kaikki.org (`tools/fetch_wiktextract.sh`, built by `tools/build_ipa.py`). Wiktionary text is
+licensed CC BY-SA 4.0 and the GFDL; the contributors are the editors of the English Wiktionary. The file
+is separately licensed from the Whitaker-derived assets and is never blended into them. Latin: fetched
+2026-10-18, 18,809 lemma records.
+
+## Speech — espeak-ng (GPL-3.0)
+
+When the browser has no voice for a language, the speaker button loads espeak-ng compiled to
+WebAssembly (`@echogarden/espeak-ng-emscripten`, GPL-3.0) from jsDelivr at the moment it is first used.
+It is not bundled with Casus.
+
 ## Sample passages
 
 Ancient works are long out of copyright. Modern critical editions can carry rights in their

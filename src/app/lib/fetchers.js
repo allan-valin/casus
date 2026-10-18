@@ -17,6 +17,15 @@ export function loadLemmas(fetchImpl, base = '/data') {
 }
 
 /** null when the language has no file (Portuguese until Task 8 of the core plan is built). */
+/** null when the language has no IPA file yet. */
+export async function loadIpa(fetchImpl, base = '/data') {
+  try {
+    return await getJSON(fetchImpl, `${base}/ipa.json`);
+  } catch {
+    return null;
+  }
+}
+
 export async function loadGlosses(fetchImpl, base = '/data', lang = 'en') {
   try {
     return await getJSON(fetchImpl, `${base}/glosses.${lang}.json`);

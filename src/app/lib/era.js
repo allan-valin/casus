@@ -1,11 +1,12 @@
 /* The dictionary period (spec §8). Labels carry dates and example authors so a reader outside
  * classics understands the control at a glance (feedback D13). */
 export const ERAS = [
-  { id: 'archaic', label: 'Archaic & early Latin (before c. 80 BC)', authors: 'Plautus, Cato, Ennius', ages: ['A', 'B'] },
-  { id: 'classical', label: 'Classical Latin (c. 80 BC – AD 120)', authors: 'Cicero, Caesar, Virgil, Ovid, Tacitus', ages: ['C'] },
-  { id: 'late', label: 'Late Latin (AD 120 – 600)', authors: 'Church Fathers, the Vulgate, Boethius', ages: ['D', 'E'] },
-  { id: 'medieval', label: 'Medieval Latin (600 – 1400)', authors: 'Bede, Aquinas, chronicles, charters', ages: ['F'] },
-  { id: 'neo', label: 'Renaissance & Neo-Latin (1400 onwards)', authors: 'Erasmus, Newton, scientific Latin', ages: ['G', 'H'] },
+  // ipa: the Wiktionary pronunciation tags that fit the period, preferred in the entry
+  { id: 'archaic', label: 'Archaic & early Latin (before c. 80 BC)', authors: 'Plautus, Cato, Ennius', ages: ['A', 'B'], ipa: ['Classical-Latin'] },
+  { id: 'classical', label: 'Classical Latin (c. 80 BC – AD 120)', authors: 'Cicero, Caesar, Virgil, Ovid, Tacitus', ages: ['C'], ipa: ['Classical-Latin'] },
+  { id: 'late', label: 'Late Latin (AD 120 – 600)', authors: 'Church Fathers, the Vulgate, Boethius', ages: ['D', 'E'], ipa: ['Ecclesiastical'] },
+  { id: 'medieval', label: 'Medieval Latin (600 – 1400)', authors: 'Bede, Aquinas, chronicles, charters', ages: ['F'], ipa: ['Ecclesiastical'] },
+  { id: 'neo', label: 'Renaissance & Neo-Latin (1400 onwards)', authors: 'Erasmus, Newton, scientific Latin', ages: ['G', 'H'], ipa: ['Ecclesiastical'] },
 ];
 
 export const AGE_LABEL = {
