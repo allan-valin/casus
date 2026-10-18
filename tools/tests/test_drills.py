@@ -125,3 +125,4 @@ def test_japanese_godan_verbs_match_only_the_same_ending():
 def test_dakuten_are_not_accents():
     from build_drills import _plain
     assert _plain("泳ぐ") == "泳ぐ" and _plain("パン") == "パン" and _plain("λόγος") == "λογοσ"
+

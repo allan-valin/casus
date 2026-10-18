@@ -47,7 +47,7 @@ export function literalOf(tokens, lookups, glosses, lemmas = {}, frequent = new 
 }
 
 /** word forms with counts -> the top dictionary words; a form's own headword wins over other lemmas */
-export function rankLemmas(rows, lookups, lemmas, glosses, top = 1000, plain = {}) {
+export function rankLemmas(rows, lookups, lemmas, glosses, top = 1000, plain = {}, bare = (x) => x) {
   // first pass: forms that can only be one word, so an ambiguous form can go to the word common elsewhere
   const sure = new Map();
   for (const { form, n } of rows) {
@@ -74,7 +74,8 @@ export function rankLemmas(rows, lookups, lemmas, glosses, top = 1000, plain = {
     const fn = best(pool.filter((a) => FUNCTION.includes(a.pos)));
     const common = [...pool].sort((x, y) => (sure.get(y.lemma) ?? 0) - (sure.get(x.lemma) ?? 0))[0];
     const UNINFLECTED = ['conj', 'prep', 'particle', 'adv', 'interj'];      // aber: the conjunction before the adverb
-    const plainWord = pool.filter((a) => lemmas[a.lemma].headword === form && UNINFLECTED.includes(a.pos)).sort((x, y) => UNINFLECTED.indexOf(x.pos) - UNINFLECTED.indexOf(y.pos))[0];
+    // bare(): a script whose dictionary writes marks the text leaves out (Arabic فِي for في) compares without them
+    const plainWord = pool.filter((a) => bare(lemmas[a.lemma].headword) === bare(form) && UNINFLECTED.includes(a.pos)).sort((x, y) => UNINFLECTED.indexOf(x.pos) - UNINFLECTED.indexOf(y.pos))[0];
     const own = plainWord ?? (sure.get(common.lemma) ? common : null) ?? fn ?? best(pool.filter((a) => lemmas[a.lemma].headword === form)) ?? best(pool.filter((a) => lemmas[a.lemma].headword.toLowerCase() === form.toLowerCase())) ?? pool[0];
     if (!real.length) continue;                                     // only form-of entries (meinem): its lemma counts elsewhere
     count.set(own.lemma, (count.get(own.lemma) ?? 0) + n);
@@ -117,7 +118,7 @@ async function main(code) {
   let freq = raw;
   if (freq[0]?.form) {
     const forms = freq.flatMap((r) => [r.form, r.form[0].toUpperCase() + r.form.slice(1)]);
-    freq = rankLemmas(freq, await lexicon.lookupAll(forms), lemmas, glosses, 1000, PLAIN[code] ?? {});
+    freq = rankLemmas(freq, await lexicon.lookupAll(forms), lemmas, glosses, 1000, PLAIN[code] ?? {}, lang.script?.strip ?? ((x) => x));
   }
   await writeFile(path.join(dir, 'frequency.json'), JSON.stringify(freq));
   console.log(`${code}: ${out.length} phrases (${out.filter((p) => p.lit.every(([, g]) => g)).length} with every word glossed), ${freq.length} frequent words`);

@@ -5,7 +5,7 @@
  */
 
 /** Gap points of a wrapped row layout: gap i sits before item i (i < n) and after the last. */
-function gaps(rects) {
+function gaps(rects, rtl = false) {
   const out = [];
   // group into rows by vertical overlap of centres
   const rows = [];
@@ -22,13 +22,14 @@ function gaps(rects) {
     let prev = null;
     for (const i of row.items) {
       const r = rects[i];
-      const x = prev ? (prev.x + prev.width + r.x) / 2 : r.x - 4;
+      // right to left (Arabic): an item's leading edge is its right side
+      const x = rtl ? (prev ? (r.x + r.width + prev.x) / 2 : r.x + r.width + 4) : (prev ? (prev.x + prev.width + r.x) / 2 : r.x - 4);
       out.push({ gap: i, x, y: row.top, height: h, row });
       prev = r;
     }
     const last = rects[row.items[row.items.length - 1]];
     const next = row.items[row.items.length - 1] + 1;
-    out.push({ gap: next, x: last.x + last.width + 4, y: row.top, height: h, row });
+    out.push({ gap: next, x: rtl ? last.x - 4 : last.x + last.width + 4, y: row.top, height: h, row });
   }
   return out;
 }
@@ -37,9 +38,9 @@ function gaps(rects) {
  * nearestGap(rects, point[, { withPoint }]) -> gap index, or { gap, x, y, height }.
  * The pointer's own row wins; inside it, the closest gap by x. Off every row, the nearest row.
  */
-export function nearestGap(rects, point, { withPoint = false } = {}) {
+export function nearestGap(rects, point, { withPoint = false, rtl = false } = {}) {
   if (rects.length === 0) return withPoint ? { gap: 0, x: 0, y: 0, height: 0 } : 0;
-  const all = gaps(rects);
+  const all = gaps(rects, rtl);
   const dy = (g) => (point.y < g.row.top ? g.row.top - point.y : point.y > g.row.bottom ? point.y - g.row.bottom : 0);
   const best = all.reduce((b, g) => {
     const d = dy(g) * 1000 + Math.abs(g.x - point.x);
@@ -54,7 +55,7 @@ export function nearestGap(rects, point, { withPoint = false } = {}) {
  * - touch: the drag starts after `holdMs` still; a move during the hold cancels it, the page scrolls
  * `rects()` returns the current item boxes (minus nothing: the dragged item stays in place, dimmed).
  */
-export function createDrag({ threshold = 6, holdMs = 200, rects = () => [] } = {}) {
+export function createDrag({ threshold = 6, holdMs = 200, rects = () => [], rtl = () => false } = {}) {
   const idle = () => ({ item: null, dragging: false, gap: null, caret: null, origin: null, pointerType: null, downAt: 0, x: 0, y: 0 });
   const state = idle();
   const report = () => ({ dragging: state.dragging, gap: state.gap, caret: state.caret, item: state.item });
@@ -64,7 +65,7 @@ export function createDrag({ threshold = 6, holdMs = 200, rects = () => [] } = {
     aim();
   }
   function aim() {
-    const c = nearestGap(rects(), { x: state.x, y: state.y }, { withPoint: true });
+    const c = nearestGap(rects(), { x: state.x, y: state.y }, { withPoint: true, rtl: rtl() });
     state.gap = c.gap;
     state.caret = c;
   }

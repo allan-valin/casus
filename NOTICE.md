@@ -78,6 +78,13 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
   resources (tanos.co.uk), published under Creative Commons BY.
 - Sample passages: Natsume Sōseki and Akutagawa Ryūnosuke, public domain (texts as in Aozora Bunko).
 
+## Arabic — CC BY-SA
+
+- Dictionary, vowelled forms, IPA, phrases: the English Wiktionary via wiktextract / kaikki.org, CC BY-SA 4.0.
+- Frequency (verb selection and frequent words): Hermit Dave, *FrequencyWords* (OpenSubtitles 2018, ar_50k),
+  CC BY-SA 4.0.
+- Sample passages: sentences written for Casus; Qur'an 1:1–2 (public domain).
+
 ## Speech — espeak-ng (GPL-3.0)
 
 When the browser has no voice for a language, the speaker button loads espeak-ng compiled to

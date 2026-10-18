@@ -37,7 +37,7 @@
 
   // ---- drag -------------------------------------------------------------
   const itemEls = () => (pool ? [...pool.querySelectorAll('.item')] : []);
-  const drag = createDrag({ threshold: 6, holdMs: 220, rects: () => itemEls().map((el) => el.getBoundingClientRect()) });
+  const drag = createDrag({ threshold: 6, holdMs: 220, rects: () => itemEls().map((el) => el.getBoundingClientRect()), rtl: () => !!reader.lang?.script?.rtl });
   let lifting = $state(null);        // position of the item being dragged
   let caret = $state(null);          // { x, y, height } relative to the pool
   let ghost = $state(null);          // { html, x, y }
@@ -118,7 +118,7 @@
 </div>
 
 <!-- svelte-ignore a11y_no_static_element_interactions -->
-<div class="pool" class:dragging={lifting !== null} bind:this={pool}
+<div class="pool" dir={reader.lang?.script?.rtl ? 'rtl' : 'ltr'} class:dragging={lifting !== null} bind:this={pool}
      onpointermove={move} onpointerup={up} onpointercancel={cancel}>
   {#each items as item, position (item.id)}
     <!-- svelte-ignore a11y_no_static_element_interactions -->

@@ -93,6 +93,42 @@ def build_de(src: Path, out: Path) -> dict:
     return manifest
 
 
+def build_ar(src: Path, out: Path, freq: Path) -> dict:
+    """Arabic: nouns, adjectives and closed classes in full; verbs only when one of their forms is among the 50,000
+    commonest subtitle words (FrequencyWords, CC BY-SA 4.0), else Wiktionary's 49,000 verbs would not fit the budget."""
+    from casus_build.ar.codes import CODES_JSON, encode_analysis
+    from casus_build.ar.normalize import strip_ar
+    from casus_build.ar.parse import build_index, parse_entries
+
+    common = {strip_ar(l.split()[0]) for l in freq.read_text(encoding="utf-8").splitlines() if l.strip()}
+    with src.open(encoding="utf-8") as fh:
+        entries = [e for e in parse_entries(fh)
+                   if e["pos"] != "verb" or any(strip_ar(t) in common for t, _a in e["cells"]) or strip_ar(e["headword"]) in common]
+    index = build_index(entries)
+
+    def rows(analyses):
+        groups: dict[int, list[str]] = {}
+        for a in analyses:
+            groups.setdefault(a["lemma"], []).append(encode_analysis({k: v for k, v in a.items() if k != "lemma"}))
+        return [[lemma, *codes] for lemma, codes in groups.items()]
+
+    lemmas = {}
+    for e in entries:
+        dict_form = e["headword"] + (f", pl. {e['plural']}" if e.get("plural") else "") + (f" ({e['gender']}.)" if e.get("gender") and e["pos"] == "noun" else "") \
+            + (f" (form {e['verb_form']})" if e.get("verb_form") else "")
+        rec = {"headword": e["headword"], "dict_form": dict_form, "pos": e["pos"], "gender": e.get("gender")}
+        lemmas[str(e["id"])] = {k: v for k, v in rec.items() if v is not None}
+    out.mkdir(parents=True, exist_ok=True)
+    manifest = write_assets(index, lemmas, out, rows=rows, key_of=strip_ar)
+    for name, obj in (("glosses.en.json", {str(e["id"]): e["gloss_en"] for e in entries if e["gloss_en"]}),
+                      ("ipa.json", {str(e["id"]): e["ipa"] for e in entries if e["ipa"]}),
+                      ("government.json", {}), ("codes.json", CODES_JSON)):
+        (out / name).write_text(json.dumps(obj, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    manifest["key"] = "strip"
+    (out / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8")
+    return manifest
+
+
 def build_ja(src: Path, out: Path) -> dict:
     from casus_build.ja.codes import CODES_JSON, encode_analysis
     from casus_build.ja.parse import build_index, parse_entries
@@ -184,7 +220,7 @@ def measure(out: Path) -> dict:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("code", choices=["grc", "de", "ja"])
+    ap.add_argument("code", choices=["grc", "de", "ja", "ar"])
     ap.add_argument("--vendor", default="vendor/wiktextract", type=Path)
     ap.add_argument("--data", default="data", type=Path)
     ap.add_argument("--drop-dialects", action="store_true", help="keep only Attic, Koine and unlabelled tables")
@@ -193,6 +229,8 @@ def main(argv=None) -> int:
     t0 = time.time()
     if args.code == "grc":
         manifest = build_grc(args.vendor / "kaikki.org-dictionary-AncientGreek.jsonl", out, args.drop_dialects)
+    elif args.code == "ar":
+        manifest = build_ar(args.vendor / "kaikki.org-dictionary-Arabic.jsonl", out, Path("vendor/wordlists/ar/ar_50k.txt"))
     elif args.code == "ja":
         manifest = build_ja(args.vendor / "kaikki.org-dictionary-Japanese.jsonl", out)
     else:

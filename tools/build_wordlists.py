@@ -21,12 +21,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-DUMPS = {"la": "Latin", "grc": "AncientGreek", "de": "German", "ja": "Japanese"}
+DUMPS = {"la": "Latin", "grc": "AncientGreek", "de": "German", "ja": "Japanese", "ar": "Arabic"}
 CORE = {"la": "https://dcc.dickinson.edu/latin-core-list1", "grc": "https://dcc.dickinson.edu/greek-core-list"}
 # Japanese: the JLPT N5 and N4 vocabularies (open-anki-jlpt-decks, MIT; after Jonathan Waller's JLPT lists)
 JLPT = [("N5", "https://raw.githubusercontent.com/jamsinclair/open-anki-jlpt-decks/main/src/n5.csv"),
         ("N4", "https://raw.githubusercontent.com/jamsinclair/open-anki-jlpt-decks/main/src/n4.csv")]
-DE_FREQ = "https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/de/de_50k.txt"
+SUBTITLE_FREQ = {code: f"https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/{code}/{code}_50k.txt"
+                 for code in ("de", "ar", "ru", "ko", "mk")}
 SKIP_TAGS = {"vulgar", "offensive", "derogatory", "ethnic", "slur"}
 XREF = re.compile(r"^(synonym|alternative (form|spelling)|[\w-]+ form|abbreviation|misspelling|obsolete form|archaic form|initialism|contraction) of\b", re.I)
 
@@ -186,7 +187,7 @@ def main(code: str) -> None:
     elif code in CORE:
         freq = parse_core_rows(fetch(CORE[code]))
     else:
-        freq = [{"form": w, "n": int(n)} for w, n in (l.split() for l in fetch(DE_FREQ).splitlines()[:8000] if len(l.split()) == 2)]
+        freq = [{"form": w, "n": int(n)} for w, n in (l.split() for l in fetch(SUBTITLE_FREQ[code]).splitlines()[:8000] if len(l.split()) == 2)]
     (out_dir / "frequency.raw.json").write_text(json.dumps(freq, ensure_ascii=False), encoding="utf-8")
     counts = ", ".join(f"{k} {sum(1 for p in phrases if p['kind'] == k)}" for k in ("phrase", "idiom", "proverb"))
     print(f"{code}: {len(phrases)} phrases ({counts}), {len(freq)} frequency rows")

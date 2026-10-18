@@ -86,3 +86,17 @@ describe('tokenOffset', () => {
     expect(tokenOffset(items, 1, '1+2')).toBe(1);    // its own gap: no move
   });
 });
+
+describe('right to left (Arabic)', () => {
+  // three items laid out right to left: item 0 rightmost
+  const rects = [{ x: 220, y: 0, width: 100, height: 40 }, { x: 110, y: 0, width: 100, height: 40 }, { x: 0, y: 0, width: 100, height: 40 }];
+  it('the gap before an item is on its right; after the last item, on its left', () => {
+    expect(nearestGap(rects, { x: 325, y: 20 }, { rtl: true })).toBe(0);
+    expect(nearestGap(rects, { x: 215, y: 20 }, { rtl: true })).toBe(1);
+    expect(nearestGap(rects, { x: -3, y: 20 }, { rtl: true })).toBe(3);
+    expect(nearestGap(rects, { x: 215, y: 20 }, { rtl: true, withPoint: true }).x).toBe(215);
+    // the caret before the first item sits at its right edge, not its left
+    expect(nearestGap(rects, { x: 330, y: 20 }, { rtl: true, withPoint: true })).toMatchObject({ gap: 0, x: 324 });
+    expect(nearestGap(rects, { x: -3, y: 20 }, { rtl: true, withPoint: true })).toMatchObject({ gap: 3, x: -4 });
+  });
+});

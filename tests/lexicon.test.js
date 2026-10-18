@@ -122,3 +122,14 @@ describe('a row may carry the reading of its form (Japanese: ~reading, overnight
     expect((await lx.lookup('本'))[0].reading).toBe(undefined);
   });
 });
+
+describe('a script can narrow the bare-letter matches (Arabic: a written hamza must match)', () => {
+  it('إلى finds إِلَى, not آلِيّ; اكل with no hamza finds أَكَلَ', async () => {
+    const { arabic } = await import('../src/lang/ar/index.js');
+    const codes = arabic.inventory.codes;
+    const shard = { 'إِلَى': [[1, 'r_']], 'آلِيّ': [[2, 'an_mx'.slice(0, 5)]], 'أَكَلَ': [[3, 'v3smpia'.replace('smpia', 'smpia')]] };
+    const lx = createLexicon({ manifest: { shards: { ال: {}, اك: {} } }, codes, script: arabic.script, fetchShard: async () => shard });
+    expect((await lx.lookup('إلى')).map((a) => a.lemma)).toEqual(['1']);
+    expect((await lx.lookup('الي')).map((a) => a.lemma).sort()).toEqual(['1', '2']);
+  });
+});

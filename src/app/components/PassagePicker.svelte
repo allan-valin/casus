@@ -35,7 +35,7 @@
     <label class="paste-label" for="paste">{t('picker.paste', { language })}</label>
     <label class="upload" title={t('picker.upload.title')}>{t('picker.upload')}<input type="file" accept=".txt,.md,text/plain,text/markdown" onchange={upload}></label>
   </div>
-  <textarea id="paste" rows="5" placeholder={t('picker.placeholder')} bind:value={pasted}></textarea>
+  <textarea id="paste" rows="5" dir="auto" placeholder={t('picker.placeholder')} bind:value={pasted}></textarea>
   <div class="actions">
     <span class="paste-hint">{t('picker.hint')}</span>
     <button class="read primary" onclick={() => pasted.trim() && onchoose(pasted.trim(), null)} disabled={!pasted.trim()}>{t('picker.read')}</button>

@@ -157,6 +157,8 @@ export function createLexicon({ fetchShard, fetchFile = null, manifest = null, c
     // breathings and, if the input has accents (a monotonic keyboard, a missing enclitic accent), its
     // accent positions — else all of them (review finding: real input is partly marked)
     let keys = (strippedIndex(name, data).get(script.strip(key)) ?? []).filter((k) => k !== key);
+    // a script may narrow the matches further (Arabic: a hamza the text writes must be there)
+    if (script.keeps) keys = keys.filter((k) => script.keeps(key, k));
     const breath = breathings(key);
     if (breath) keys = keys.filter((k) => breathings(k) === breath);
     const accents = accentPositions(key).join(',');

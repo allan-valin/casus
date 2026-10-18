@@ -15,6 +15,8 @@ import sys
 import unicodedata
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
 # (headword, part of speech, English gloss, Brazilian Portuguese gloss): model words are chosen, so are their glosses
 MODELS = {
     "la": [("rosa", "noun", "rose", "rosa"), ("dominus", "noun", "master, lord", "senhor"), ("puer", "noun", "boy", "menino"),
@@ -40,6 +42,10 @@ MODELS = {
            ("haben", "verb", "to have", "ter"), ("werden", "verb", "to become", "tornar-se"), ("machen", "verb", "to make, to do", "fazer"),
            ("gehen", "verb", "to go", "ir"), ("kommen", "verb", "to come", "vir"), ("sprechen", "verb", "to speak", "falar"),
            ("können", "verb", "can, to be able", "poder")],
+    "ar": [("كتاب", "noun", "book", "livro"), ("مدرسة", "noun", "school", "escola"), ("معلم", "noun", "teacher", "professor"),
+           ("بيت", "noun", "house", "casa"), ("كبير", "adj", "big", "grande"), ("جميل", "adj", "beautiful", "bonito"),
+           ("كتب", "verb", "to write", "escrever"), ("قال", "verb", "to say", "dizer"), ("ذهب", "verb", "to go", "ir"),
+           ("درس", "verb", "to study", "estudar"), ("رأى", "verb", "to see", "ver")],
     "ja": [("高い", "adj", "high, expensive", "alto, caro"), ("いい", "adj", "good", "bom"), ("綺麗", "adj", "pretty, clean", "bonito, limpo"),
            ("食べる", "verb", "to eat", "comer"), ("書く", "verb", "to write", "escrever"), ("泳ぐ", "verb", "to swim", "nadar"),
            ("話す", "verb", "to speak", "falar"), ("待つ", "verb", "to wait", "esperar"), ("死ぬ", "verb", "to die", "morrer"),
@@ -51,7 +57,7 @@ XREF = re.compile(r"^(synonym|alternative (form|spelling)|[\w-]+ form|abbreviati
 # models whose tables no other word follows: learnt by heart, so "random word" is off for them
 IRREGULAR = {"la": {"sum", "eo", "uolo", "fero", "ego", "hic", "qui"}, "grc": {"εἰμί", "ὁ", "δίδωμι"},
              "de": {"der", "ein", "ich", "er", "sein", "haben", "werden", "können"},
-             "ja": {"いい", "行く", "する", "来る"}}
+             "ja": {"いい", "行く", "する", "来る"}, "ar": {"رأى"}}
 POOL = 60
 
 
@@ -72,6 +78,8 @@ def decode(rows: list) -> list:
 def _plain(form: str) -> str:
     d = unicodedata.normalize("NFD", form.lower())
     # accents and breathings go; the kana voicing marks ゛゜ (U+3099, U+309A) are letters, not accents
+    # (Arabic vowel marks go too: kept, they change in every cell and the prefix comparison breaks; tried
+    # 2026-10-19 — كتاب matched حلال instead of حجاب/شهاب, its own broken-plural pattern)
     return unicodedata.normalize("NFC", "".join(c for c in d if not unicodedata.combining(c) or c in "\u3099\u309a")).replace("ς", "σ")
 
 
@@ -140,7 +148,7 @@ def pools(models, lemmas: dict, rows_of, glosses: dict, irregular=frozenset(), r
     """model id -> [[lemma id, dict form, short meaning]…]: other words with exactly the model's table, the most
     frequent first (Whitaker's frequency letter, or a rank from the frequency list), at most POOL"""
     rank = rank or {}
-    wanted = {m["pos"] for m in models if m["headword"] not in irregular}
+    wanted = {m["pos"] for m in models if m["headword"] not in irregular and m.get("irregular_key") not in irregular}
     tables: dict = {}
     for i, r in lemmas.items():
         h = r.get("headword", "")
@@ -155,7 +163,7 @@ def pools(models, lemmas: dict, rows_of, glosses: dict, irregular=frozenset(), r
             tables[i] = (r["pos"], core_endings(rows, r["headword"], lead_drop=lead_drop))
     out = {}
     for m in models:
-        if m["headword"] in irregular:
+        if m["headword"] in irregular or m.get("irregular_key") in irregular:
             out[m["id"]] = []
             continue
         mine = core_endings(rows_of(m["id"]), m["headword"], used, lead_drop=lead_drop)
@@ -172,16 +180,17 @@ def pools(models, lemmas: dict, rows_of, glosses: dict, irregular=frozenset(), r
 
 
 
-def pick_models(models, lemmas: dict, rows_of) -> list[dict]:
+def pick_models(models, lemmas: dict, rows_of, key=lambda w: w) -> list[dict]:
+    """key: how a headword is compared (Arabic: by its bare letters, the dictionary's are vowelled)"""
     out = []
     for headword, pos, en, pt in models:
-        ids = sorted((i for i, r in lemmas.items() if r.get("headword") == headword and r.get("pos") == pos and rows_of(i)),
-                     key=lambda i: (FREQ.get(lemmas[i].get("freq", "X"), 9), int(i)))
+        ids = sorted((i for i, r in lemmas.items() if key(r.get("headword") or "") == key(headword) and r.get("pos") == pos and rows_of(i)),
+                     key=lambda i: ("(form I)" not in lemmas[i].get("dict_form", "(form I)"), FREQ.get(lemmas[i].get("freq", "X"), 9), int(i)))
         if not ids:
             continue
         i = ids[0]
         r = lemmas[i]
-        out.append({"id": i, "headword": headword, "dict_form": r.get("dict_form", headword), "pos": pos,
+        out.append({"id": i, "headword": r.get("headword", headword), "dict_form": r.get("dict_form", headword), "pos": pos,
                     "gloss": {"en": en, "pt": pt}, "rows": rows_of(i)})
     return out
 
@@ -198,7 +207,14 @@ def main(code: str) -> None:
             buckets[n] = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
         return buckets[n].get(i)
 
-    out = pick_models(MODELS[code], lemmas, rows_of)
+    if code == "ar":
+        from casus_build.ar.normalize import strip_ar
+        out = pick_models(MODELS[code], lemmas, rows_of, key=strip_ar)
+        bare = {strip_ar(h): h for h, *_ in MODELS[code]}
+        for m in out:
+            m["irregular_key"] = bare.get(strip_ar(m["headword"]))      # the model's name as listed (رأى)
+    else:
+        out = pick_models(MODELS[code], lemmas, rows_of)
     glosses = json.loads((root / "glosses.en.json").read_text(encoding="utf-8"))
     freq_file = root / "frequency.json"
     rank = {}
@@ -215,10 +231,11 @@ def main(code: str) -> None:
                      # Japanese: short headwords (書く) keep one character of stem; generated forms match exactly
                      lead_drop=1 if code == "ja" else 2, verb_share=1.0 if code == "ja" else 0.85)   # German nouns are capitalised
     for m in out:
-        m["irregular"] = m["headword"] in IRREGULAR[code]
+        m["irregular"] = m["headword"] in IRREGULAR[code] or m.get("irregular_key") in IRREGULAR[code]
+        m.pop("irregular_key", None)
         m["pool"] = by_model[m["id"]]
     (root / "drills.json").write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    missing = [h for h, p, *_ in MODELS[code] if not any(m["headword"] == h and m["pos"] == p for m in out)]
+    missing = [h for h, p, *_ in MODELS[code] if not any(m["pos"] == p and (m["headword"] == h or (code == "ar" and __import__("casus_build.ar.normalize", fromlist=["strip_ar"]).strip_ar(m["headword"]) == h)) for m in out)]
     print(f"{code}: pools " + ", ".join(f"{m['headword']} {len(m['pool'])}" for m in out))
     print(f"{code}: {len(out)} model words, {(root / 'drills.json').stat().st_size // 1024} KB" + (f"; not found: {', '.join(missing)}" if missing else ""))
 

@@ -36,3 +36,14 @@ describe('Japanese display', () => {
     expect([...container.querySelectorAll('.text .roman')].map((r) => r.textContent)).toEqual(['watashi', 'wa', 'ikimasu']);
   });
 });
+
+describe('right to left (Arabic)', () => {
+  it('the sentences panel and the block pool run right to left', async () => {
+    const { default: BlockPane } = await import('../../src/app/components/BlockPane.svelte');
+    const lexicon = { lookupAll: async (keys) => new Map(keys.map((k) => [k, []])) };
+    const reader = createReader({ lexicon, text: 'في البيت.', lang: getLanguage('ar') });
+    await reader.load();
+    expect(render(TextPane, { reader }).container.querySelector('.text').getAttribute('dir')).toBe('rtl');
+    expect(render(BlockPane, { reader, onhover: () => {}, onopen: () => {} }).container.querySelector('.pool').getAttribute('dir')).toBe('rtl');
+  });
+});

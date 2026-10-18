@@ -93,3 +93,13 @@ describe('an uninflected word spelled like the form wins (mal: the particle, not
     expect(out.map((o) => o.w)).toEqual(['mal', 'malen']);
   });
 });
+
+describe('Arabic frequency: a vowelled headword counts as the bare form (في: in, not فم mouth)', () => {
+  it('compares bare letters when told how', async () => {
+    const { stripAr } = await import('../../src/lang/ar/normalize.js');
+    const lookups = new Map([['في', [{ lemma: 'fam', pos: 'noun' }, { lemma: 'fi', pos: 'prep' }]], ['فم', [{ lemma: 'fam', pos: 'noun' }]]]);
+    const lemmas = { fam: { headword: 'فَم', pos: 'noun', dict_form: 'فَم' }, fi: { headword: 'فِي', pos: 'prep', dict_form: 'فِي' } };
+    const out = rankLemmas([{ form: 'في', n: 9 }, { form: 'فم', n: 1 }], lookups, lemmas, { fam: 'mouth', fi: 'in' }, 5, {}, stripAr);
+    expect(out.map((o) => o.en)).toEqual(['in', 'mouth']);
+  });
+});

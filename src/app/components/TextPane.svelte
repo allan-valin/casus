@@ -59,7 +59,7 @@
   }
 </script>
 
-<div class="text" class:romanized={!!romanize}>
+<div class="text" dir={reader.lang?.script?.rtl ? 'rtl' : 'ltr'} class:romanized={!!romanize}>
   {#each reader.sentences as sentence, i (sentence.start)}
     <span class="sentence" class:dimmed={i !== reader.selected} class:current={i === reader.selected} data-index={i}
           role="button" tabindex="0" title={i === reader.selected ? t('textpane.current') : t('textpane.other')}
