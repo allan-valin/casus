@@ -1,4 +1,6 @@
-{
+/* Greek analysis code tables, mirrored from tools/casus_build/grc/codes.py (CODES_JSON); the fixture
+ * tests/fixtures/codes.grc.json checks both sides. A .js module so plain Node (the CLI) can import it. */
+export default {
  "POS": {
   "n": "noun",
   "a": "adj",
@@ -132,4 +134,4 @@
   "particle": [],
   "interj": []
  }
-}
+};

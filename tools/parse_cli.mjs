@@ -58,19 +58,26 @@ export function formatBlocks(blocks, lemmas = null) {
 }
 
 async function main(argv) {
-  const text = argv.slice(2).join(' ').trim();
-  if (!text) {
-    console.error('usage: node tools/parse_cli.mjs "<latin text>"');
+  const args = argv.slice(2);
+  let code = 'la';
+  const at = args.indexOf('--lang');
+  if (at >= 0) { code = args[at + 1]; args.splice(at, 2); }
+  const lang = getLanguage(code);
+  const text = args.join(' ').trim();
+  if (!text || !lang) {
+    console.error('usage: node tools/parse_cli.mjs [--lang la|grc] "<text>"');
     return 2;
   }
-  const dataDir = process.env.CASUS_DATA ?? path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', 'data');
+  const dataDir = process.env.CASUS_DATA ?? path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', 'data', code);
   const manifest = JSON.parse(await readFile(path.join(dataDir, 'manifest.json'), 'utf8'));
   const lemmas = JSON.parse(await readFile(path.join(dataDir, 'lemmas.json'), 'utf8'));
   const lexicon = createLexicon({
     manifest,
+    codes: lang.inventory.codes,
+    script: lang.script,
     fetchShard: async (name) => JSON.parse(await readFile(path.join(dataDir, 'forms', `${name}.json`), 'utf8')),
   });
-  const state = createState({ text, lexicon, lang: getLanguage('la') });
+  const state = createState({ text, lexicon, lang });
   await state.load();
   state.sentences().forEach((sentence, i) => {
     state.select(i);

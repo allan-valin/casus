@@ -62,6 +62,12 @@ def _gender_of(entry: dict) -> str | None:
         for t in sense.get("tags") or []:
             if t in GENDERS and GENDERS[t] not in found:
                 found.append(GENDERS[t])
+    if not found:
+        # grc-noun puts the gender in its arguments ('3': 'f'), not always in the sense tags
+        for ht in entry.get("head_templates") or []:
+            for g in re.findall(r"\b([mfn])\b", " ".join(str(v) for v in (ht.get("args") or {}).values() if len(str(v)) <= 5)):
+                if g not in found:
+                    found.append(g)
     if len(found) == 1:
         return found[0]
     return "c" if len(found) > 1 else None
@@ -73,6 +79,10 @@ def _decl_of(entry: dict) -> str | None:
             m = re.fullmatch(r"declension-(\d)", t)
             if m:
                 return m.group(1)
+    for ht in entry.get("head_templates") or []:
+        m = re.search(r"(first|second|third) declension", ht.get("expansion", ""))
+        if m:
+            return {"first": "1", "second": "2", "third": "3"}[m.group(1)]
     return None
 
 

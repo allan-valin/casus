@@ -68,3 +68,22 @@ describe('formatBlocks merges identical readings', () => {
     expect(out.split('\n')).toHaveLength(3);
   });
 });
+
+import { spawnSync } from 'node:child_process';
+import { existsSync } from 'node:fs';
+
+describe('npm run parse in plain Node (review finding: it crashed after the language work)', () => {
+  const run = (...args) => spawnSync(process.execPath, ['tools/parse_cli.mjs', ...args], { encoding: 'utf8' });
+  it.skipIf(!existsSync('data/la/manifest.json'))('parses Latin from data/la by default', () => {
+    const r = run('Caesar in Galliam venit.');
+    expect(r.stderr).not.toMatch(/ERR_|Error/);
+    expect(r.stdout).toMatch(/Galliam/);
+    expect(r.stdout).toMatch(/noun acc sg f/);
+  });
+  it.skipIf(!existsSync('data/grc/manifest.json'))('parses Greek with --lang grc', () => {
+    const r = run('--lang', 'grc', 'ἐν ἀρχῇ ἦν ὁ λόγος.');
+    expect(r.stderr).not.toMatch(/ERR_|Error/);
+    expect(r.stdout).toMatch(/λόγος/);
+    expect(r.stdout).toMatch(/noun dat sg f/);
+  });
+});

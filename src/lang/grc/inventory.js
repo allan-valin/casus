@@ -1,7 +1,7 @@
 /* Ancient Greek's inventory (docs/languages/grc.md). Five cases on the hue; number on the border
  * (dual double, plural dashed); gender in the class sub-layer. The article (det) is both a target and
  * the strongest agreement witness. `codes` mirrors tools/casus_build/grc/codes.py (fixture-checked). */
-import CODES from './codes.json';
+import CODES from './codes.js';
 
 function layoutPairs(json) {
   const LAYOUT = {};

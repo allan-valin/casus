@@ -1,6 +1,7 @@
 """Languages plan Task 11: Ancient Greek entries and analyses from the Wiktextract extract."""
 from pathlib import Path
 
+import sys; sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from casus_build.grc.parse import parse_entries, analyses_of, build_index
 from casus_build.grc.normalize import normalize_grc, strip_grc
 
@@ -70,3 +71,12 @@ def test_romanizations_and_forms_with_apostrophes_or_spaces_stay_out_of_the_inde
     import re
     assert not [k for k in index if not re.search(r"[Ͱ-Ͽἀ-῿]", k)]
     assert not [k for k in index if re.search(r"[ '’]", k)]
+
+
+def test_gender_comes_from_the_headword_template_when_the_senses_do_not_tag_it():
+    assert ENTRIES[("ἀρχή", "noun")]["gender"] == "f"
+
+
+def test_dictionary_form_drops_length_marks():
+    from build_lang import _dict_form
+    assert _dict_form(ENTRIES[("ἀρχή", "noun")]) == "ἀρχή, ἀρχῆς f."

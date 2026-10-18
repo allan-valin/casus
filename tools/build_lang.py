@@ -72,7 +72,9 @@ def _attic_koine_only(forms):
 
 
 def _dict_form(e: dict) -> str:
-    gen = next((f["form"] for f in e["forms"] if (f.get("tags") or []) == ["genitive"] and not f.get("source")), None)
+    import unicodedata
+    plain = lambda w: unicodedata.normalize("NFC", "".join(c for c in unicodedata.normalize("NFD", w) if c not in "\u0304\u0306"))
+    gen = next((plain(f["form"]) for f in e["forms"] if (f.get("tags") or []) == ["genitive"] and not f.get("source")), None)
     if e["pos"] == "noun" and gen:
         return f"{e['headword']}, {gen}" + (f" {e['gender']}." if e.get("gender") else "")
     return e["headword"]
