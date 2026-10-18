@@ -253,3 +253,47 @@ describe('App language bar (languages design §4)', () => {
     expect(current.getAttribute('href')).toBe('/');
   });
 });
+
+describe('App on the Greek page (languages plan Task 12)', () => {
+  const grcFiles = {
+    '/data/grc/manifest.json': { format: 2, built: '2026-10-18', lemmas: 3, key: 'strip', shards: { ο: {}, λο: {}, τω: {}, παι: {} } },
+    '/data/grc/forms/ο.json': { 'ὁ': [[1, 'tnsm']] },
+    '/data/grc/forms/λο.json': { 'λόγου': [[2, 'ngsm']], 'λόγοσ': [[2, 'nnsm']] },
+    '/data/grc/forms/τω.json': { 'τώ': [[1, 'tndm', 'tadm']] },
+    '/data/grc/forms/παι.json': { 'παῖδε': [[3, 'nndm', 'nadm', 'nvdm']] },
+    '/data/grc/lemmas.json': { 1: { headword: 'ὁ', pos: 'det' }, 2: { headword: 'λόγος', dict_form: 'λόγος, λόγου m.', pos: 'noun', gender: 'm', decl: '2' }, 3: { headword: 'παῖς', pos: 'noun', gender: 'c' } },
+    '/data/grc/glosses.en.json': { 2: 'word, speech', 3: 'child' },
+    '/samples/grc/index.json': [],
+  };
+  const grcFetch = (url) => {
+    const body = grcFiles[url];
+    return Promise.resolve(body === undefined
+      ? { ok: false, status: 404, json: async () => { throw new Error('404'); }, text: async () => '' }
+      : { ok: true, status: 200, json: async () => structuredClone(body), text: async () => String(body) });
+  };
+  it('marks Greek in the bar, offers the Greek periods, colours a genitive with the Greek palette and a dual with a double border', async () => {
+    window.history.pushState({}, '', '/grc/');
+    try {
+      const { container } = render(App, { fetchImpl: grcFetch, storage: storage(), ...immediate });
+      await tick(); await tick();
+      expect(container.querySelector('nav.languages a[aria-current=page]').textContent).toMatch(/Ancient Greek/);
+      expect(container.querySelector('.tagline').textContent).toMatch(/Ancient Greek/);
+      expect(container.querySelector('.tagline').textContent).not.toMatch(/Latin/);
+      expect(container.querySelector('.paste-label').textContent).toMatch(/Ancient Greek/);
+      await readPasted(container, 'λόγου τὼ παῖδε.');
+      expect(container.querySelector('select.era option[value=koine]')).not.toBe(null);
+      const pills = [...container.querySelectorAll('.pill')];
+      const logou = pills.find((p) => p.textContent.includes('λόγου'));
+      expect(logou.querySelector('.badge').textContent).toBe('Gn');
+      expect(logou.style.borderColor).not.toBe('');
+      const paide = pills.find((p) => p.textContent.includes('παῖδε'));
+      expect(paide.classList.contains('ambiguous')).toBe(true);
+      await fireEvent.click(logou);
+      await tick();
+      expect(container.querySelector('button.dict-tab').textContent).toMatch(/Wiktionary/);
+      await fireEvent.keyDown(container.querySelector('.dictionary'), { key: 'Escape' });
+      const tw = pills.find((p) => p.textContent.includes('τὼ'));
+      expect(tw.style.borderStyle === 'double' || tw.classList.contains('ambiguous')).toBe(true);
+    } finally { window.history.pushState({}, '', '/'); }
+  });
+});

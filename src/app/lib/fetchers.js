@@ -5,6 +5,7 @@ async function getJSON(fetchImpl, url) {
 }
 
 export function makeFetchShard(fetchImpl, base = '/data') {
+  // shard names are Greek letters for Greek; the path is encoded for the server, decoded by it
   return (name) => getJSON(fetchImpl, `${base}/forms/${name}.json`);
 }
 

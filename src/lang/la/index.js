@@ -12,8 +12,10 @@ import { LATIN_INVENTORY } from './inventory.js';
 export const latin = {
   code: 'la',
   name: { en: 'Latin', pt: 'Latim' },
+  inText: { en: 'classical Latin', pt: 'latim clássico' },
   bcp47: 'la',
   wiktionary: 'Latin',
+  sources: { en: 'Whitaker', pt: 'Wikcionário' },
   script: { normalize: normalizeForm, rtl: false, spaced: true },
   inventory: LATIN_INVENTORY,
   segment,

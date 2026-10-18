@@ -4,7 +4,7 @@
   import { readTextFile } from '../lib/upload.js';
   /* v1 input (spec §10.1): paste, or one of the bundled passages. Samples sit above the text
    * box and are named as demonstration material; the button says what it does (feedback D9, D10). */
-  let { samples = [], onchoose, fetchImpl, samplesPath = '/samples/la', onerror = () => {} } = $props();
+  let { samples = [], onchoose, fetchImpl, samplesPath = '/samples/la', onerror = () => {}, language = 'Latin' } = $props();
   async function upload(e) {
     const input = e.currentTarget;
     const file = input.files?.[0];
@@ -32,7 +32,7 @@
     {/each}
   </div>
   <div class="paste-row">
-    <label class="paste-label" for="paste">{t('picker.paste')}</label>
+    <label class="paste-label" for="paste">{t('picker.paste', { language })}</label>
     <label class="upload" title={t('picker.upload.title')}>{t('picker.upload')}<input type="file" accept=".txt,.md,text/plain,text/markdown" onchange={upload}></label>
   </div>
   <textarea id="paste" rows="5" placeholder={t('picker.placeholder')} bind:value={pasted}></textarea>

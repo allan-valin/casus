@@ -144,3 +144,11 @@ describe('Dictionary speaker (languages plan Task 7)', () => {
     expect(button.title).toMatch(/no voice/i);
   });
 });
+
+describe('Dictionary names its sources per language', () => {
+  it('calls the English source Whitaker for Latin', async () => {
+    const reader = await readerWith('Rosa.');
+    const { container } = render(Dictionary, { block: reader.blocks[0], reader, onclose: () => {} });
+    expect(container.querySelector('button.dict-tab').textContent).toMatch(/Whitaker/);
+  });
+});

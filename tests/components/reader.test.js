@@ -67,7 +67,7 @@ describe('createReader', () => {
     r.toggleGlue(0);
     const json = r.toJSON();
     expect(json).toEqual({
-      text: 'Rosa bona.', selected: 0, pins: [], layers: { nominal: true, verb: false, function: true, classes: false },
+      text: 'Rosa bona.', selected: 0, pins: [], layers: { nominal: true, verb: false, function: true, classes: false, marks: true },
       era: 'medieval', glossLang: 'en', order: { 0: [1, 0] }, unglued: [0],
     });
     const back = createReader({ lexicon, text: 'Rosa bona.', saved: json });

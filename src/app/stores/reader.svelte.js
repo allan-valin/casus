@@ -4,7 +4,7 @@ import { loadLemmas, loadGlosses, loadIpa } from '../lib/fetchers.js';
 import { getLanguage } from '../../lang/registry.js';
 import { makeColors } from '../lib/colors.js';
 
-const DEFAULT_LAYERS = { nominal: true, verb: true, function: true, classes: false };
+const DEFAULT_LAYERS = { nominal: true, verb: true, function: true, classes: false, marks: true };
 
 /**
  * The single source of truth for the page (spec §5.2 state.js + the UI state).

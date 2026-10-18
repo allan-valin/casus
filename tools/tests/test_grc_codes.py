@@ -19,3 +19,10 @@ def test_round_trip():
 
 def test_the_js_table_export_has_every_pos():
     assert set(CODES_JSON["POS"].values()) >= {"noun", "adj", "verb", "vpar", "det", "pron", "num", "adv", "prep", "conj", "particle", "interj"}
+
+
+def test_the_js_mirror_fixture_matches():
+    import json
+    from pathlib import Path
+    fixture = json.loads((Path(__file__).resolve().parents[2] / "tests/fixtures/codes.grc.json").read_text(encoding="utf-8"))
+    assert fixture == CODES_JSON

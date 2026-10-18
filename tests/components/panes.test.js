@@ -144,3 +144,29 @@ describe('Block class badge on an ambiguous one-lemma block', () => {
     expect(container.querySelector('.class')).toBe(null);
   });
 });
+
+describe('Marks supplied by the dictionary (Allan, 2026-10-18)', () => {
+  const cand = (marked) => ({ analysis: { lemma: '1', pos: 'noun', case: 'gen', number: 'sg', gender: 'm', ...(marked ? { marked } : {}) }, reasons: [] });
+  const blk = (surface, cands) => ({ token: { index: 0, surface }, candidates: cands, pinned: null, resolved: cands.length === 1 });
+  it('shows the marked spelling above an unaccented word, labelled as supplied', () => {
+    const { container } = render(Block, { block: blk('λογου', [cand('λόγου')]), layers: { ...ALL, marks: true }, onhover: () => {}, onopen: () => {} });
+    const r = container.querySelector('.reading.supplied');
+    expect(r.textContent).toBe('λόγου');
+    expect(r.title).toMatch(/dictionary/i);
+  });
+  it('lists every distinct marked spelling when they differ', () => {
+    const { container } = render(Block, { block: blk('λογου', [cand('λόγου'), cand('λογοῦ')]), layers: { ...ALL, marks: true }, onhover: () => {}, onopen: () => {} });
+    expect(container.querySelector('.reading.supplied').textContent).toBe('λόγου / λογοῦ');
+  });
+  it('writes final sigma and caps a long list at three with a count', () => {
+    const many = [cand('λόγοσ'), cand('ἕν'), cand('ἔν'), cand('ἐν'), cand('έν')];
+    const { container } = render(Block, { block: blk('λογος', many), layers: { ...ALL, marks: true }, onhover: () => {}, onopen: () => {} });
+    expect(container.querySelector('.reading.supplied').textContent).toBe('λόγος / ἕν / ἔν +2');
+  });
+  it('shows nothing when the input had its marks, or when the layer is off', () => {
+    const a = render(Block, { block: blk('λόγου', [cand()]), layers: { ...ALL, marks: true }, onhover: () => {}, onopen: () => {} });
+    expect(a.container.querySelector('.reading')).toBe(null);
+    const b = render(Block, { block: blk('λογου', [cand('λόγου')]), layers: { ...ALL, marks: false }, onhover: () => {}, onopen: () => {} });
+    expect(b.container.querySelector('.reading')).toBe(null);
+  });
+});

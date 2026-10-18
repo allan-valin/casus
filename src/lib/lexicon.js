@@ -57,13 +57,13 @@ export function shardKey(form, names = null) {
   return null;
 }
 
-function toAnalyses(entry) {
+function toAnalyses(entry, codes = LATIN_CODES) {
   if (!entry) return [];
   const out = [];
   for (const row of entry) {
     if (Array.isArray(row)) {
       const lemma = String(row[0]);
-      for (let i = 1; i < row.length; i += 1) out.push(decodeAnalysis(row[i], lemma));
+      for (let i = 1; i < row.length; i += 1) out.push(decodeAnalysis(row[i], lemma, codes));
     } else {
       out.push(row);
     }
@@ -76,9 +76,21 @@ function toAnalyses(entry) {
  * Shard promises are cached, so concurrent lookups share one fetch; a failed
  * fetch resolves to an empty shard and degrades one word, never the sentence.
  */
-export function createLexicon({ fetchShard, manifest = null }) {
+export function createLexicon({ fetchShard, manifest = null, codes = LATIN_CODES, script = null }) {
   const names = manifest?.shards ? new Set(Object.keys(manifest.shards)) : null;
   const cache = new Map();
+  // Greek: shards are named by the form without diacritics, and unaccented input is matched against
+  // every accented key of its shard (languages plan Task 11; no second key in the data)
+  const prefixOf = script?.prefixOf ?? ((f) => f);
+  const byStripped = new Map();
+  function strippedIndex(name, data) {
+    if (!byStripped.has(name)) {
+      const m = new Map();
+      for (const k of Object.keys(data)) { const s = script.strip(k); if (!m.has(s)) m.set(s, []); m.get(s).push(k); }
+      byStripped.set(name, m);
+    }
+    return byStripped.get(name);
+  }
   let warned = false;
 
   function shard(name) {
@@ -96,10 +108,14 @@ export function createLexicon({ fetchShard, manifest = null }) {
       warned = true;
       console.warn('createLexicon: no manifest given — using the two-letter shard rule, which misses every form in format-2 data');
     }
-    const name = shardKey(key, names);
+    const name = shardKey(prefixOf(key), names);
     if (name === null) return [];
     const data = await shard(name);
-    return toAnalyses(data[key]);
+    const exact = toAnalyses(data[key], codes);
+    if (!script?.hasMarks || script.hasMarks(key)) return exact;
+    const supplied = (strippedIndex(name, data).get(script.strip(key)) ?? []).filter((k) => k !== key)
+      .flatMap((k) => toAnalyses(data[k], codes).map((a) => ({ ...a, marked: k })));
+    return [...exact, ...supplied];
   }
 
   async function lookupAll(keys) {

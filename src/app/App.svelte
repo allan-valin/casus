@@ -56,7 +56,7 @@
   $effect(() => {
     loadManifest(fetchImpl, DATA)
       .then((manifest) => {
-        lexicon = createLexicon({ fetchShard: makeFetchShard(fetchImpl, DATA), manifest });
+        lexicon = createLexicon({ fetchShard: makeFetchShard(fetchImpl, DATA), manifest, codes: lang.inventory.codes, script: lang.script });
         status = { key: 'app.status.ready', vars: { entries: manifest.lemmas?.toLocaleString?.() ?? '', shards: Object.keys(manifest.shards).length, built: manifest.built } };
         say('act.ready', status.vars, 'ok');
       })
@@ -161,7 +161,7 @@
     <div class="brand">
       <h1>Casus <span class="lang-name">· {lang.name?.[ui.lang] ?? ''}</span></h1>
       <LanguageBar current={lang.code} view={route.view} />
-      <p class="tagline">{t('app.tagline')}</p>
+      <p class="tagline">{t('app.tagline', { language: lang.inText?.[ui.lang] ?? lang.name?.[ui.lang] })}</p>
     </div>
     <div class="corner">
       <div class="langs" role="group" aria-label="language" title={t('app.lang.title')}>
@@ -179,7 +179,7 @@
 
   <section class="card">
     <h2><span class="step">1</span> {t('text.heading')}</h2>
-    <PassagePicker {samples} onchoose={choose} {fetchImpl} samplesPath={lang.samplesPath} onerror={(error) => say('act.uploadFailed', { error }, 'err')} />
+    <PassagePicker {samples} onchoose={choose} {fetchImpl} samplesPath={lang.samplesPath} language={lang.inText?.[ui.lang] ?? ''} onerror={(error) => say('act.uploadFailed', { error }, 'err')} />
     <p class="status" aria-live="polite">{t(status.key, status.vars)}</p>
   </section>
 

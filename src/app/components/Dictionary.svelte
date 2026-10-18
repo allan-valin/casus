@@ -40,7 +40,7 @@
     {#if block.candidates.length > 0 && extras.lemmas}
       <div class="dicts" role="tablist" aria-label="dictionaries">
         {#each available as d (d)}
-          <button class="dict-tab" class:active={dict === d} data-dict={d} role="tab" aria-selected={dict === d} onclick={() => (chosen = d)}>{t(`settings.lang.${d}`)}</button>
+          <button class="dict-tab" class:active={dict === d} data-dict={d} role="tab" aria-selected={dict === d} onclick={() => (chosen = d)}>{t(`settings.lang.${d}`, { source: reader.lang?.sources?.[d] ?? '' })}</button>
         {/each}
         {#if available.length === 0}<span class="no-gloss">{t('dict.nogloss')}</span>{/if}
       </div>
@@ -64,8 +64,8 @@
             </div>
             <div class="ipa-line">{#if ip}<span class="ipa" title={ip.tags.join(', ')}>{ip.ipa}</span>{/if}<Speaker text={r.headword} {voice} onspoke={(tier) => onspoke(r.headword, tier)} /></div>
             <div class="class">{classLine(r)}</div>
-            {#if g !== null}<div class="gloss">{g}</div>{:else if dict}<div class="gloss missing">{t('dict.missingHere', { name: t(`settings.lang.${dict}`) })}</div>{/if}
-            <div class="meta">{t('dict.age')}: {AGE_LABEL[r.age] ?? r.age} · {t('dict.freq')} {r.freq}</div>
+            {#if g !== null}<div class="gloss">{g}</div>{:else if dict}<div class="gloss missing">{t('dict.missingHere', { name: t(`settings.lang.${dict}`, { source: reader.lang?.sources?.[dict] ?? '' }) })}</div>{/if}
+            {#if r.age || r.freq}<div class="meta">{#if r.age}{t('dict.age')}: {AGE_LABEL[r.age] ?? r.age}{/if}{#if r.age && r.freq} · {/if}{#if r.freq}{t('dict.freq')} {r.freq}{/if}</div>{/if}
             {#if warning(r.age, reader.era)}<div class="warning">{warning(r.age, reader.era)}</div>{/if}
           </div>
         {:else}

@@ -1,0 +1,135 @@
+{
+ "POS": {
+  "n": "noun",
+  "a": "adj",
+  "v": "verb",
+  "p": "vpar",
+  "o": "pron",
+  "t": "det",
+  "m": "num",
+  "d": "adv",
+  "r": "prep",
+  "c": "conj",
+  "k": "particle",
+  "j": "interj"
+ },
+ "TABLES": {
+  "case": {
+   "n": "nom",
+   "v": "voc",
+   "g": "gen",
+   "d": "dat",
+   "a": "acc",
+   "x": "x"
+  },
+  "number": {
+   "s": "sg",
+   "d": "du",
+   "p": "pl",
+   "x": "x"
+  },
+  "gender": {
+   "m": "m",
+   "f": "f",
+   "n": "n",
+   "c": "c",
+   "x": "x"
+  },
+  "degree": {
+   "p": "pos",
+   "c": "comp",
+   "s": "super",
+   "x": "x"
+  },
+  "tense": {
+   "p": "pres",
+   "i": "impf",
+   "f": "fut",
+   "a": "aor",
+   "r": "perf",
+   "l": "plup",
+   "u": "futp",
+   "x": "x"
+  },
+  "mood": {
+   "i": "ind",
+   "s": "sub",
+   "o": "opt",
+   "m": "imp",
+   "n": "inf",
+   "x": "x"
+  },
+  "voice": {
+   "a": "act",
+   "m": "mid",
+   "p": "pass",
+   "e": "mp",
+   "x": "x"
+  },
+  "person": {
+   "0": "0",
+   "1": "1",
+   "2": "2",
+   "3": "3"
+  },
+  "governs": {
+   "n": "nom",
+   "v": "voc",
+   "g": "gen",
+   "d": "dat",
+   "a": "acc",
+   "x": "x"
+  }
+ },
+ "LAYOUT": {
+  "noun": [
+   "case",
+   "number",
+   "gender"
+  ],
+  "pron": [
+   "case",
+   "number",
+   "gender"
+  ],
+  "det": [
+   "case",
+   "number",
+   "gender"
+  ],
+  "num": [
+   "case",
+   "number",
+   "gender"
+  ],
+  "adj": [
+   "case",
+   "number",
+   "gender",
+   "degree"
+  ],
+  "verb": [
+   "person",
+   "number",
+   "tense",
+   "mood",
+   "voice"
+  ],
+  "vpar": [
+   "case",
+   "number",
+   "gender",
+   "tense",
+   "voice"
+  ],
+  "adv": [
+   "degree"
+  ],
+  "prep": [
+   "governs"
+  ],
+  "conj": [],
+  "particle": [],
+  "interj": []
+ }
+}
