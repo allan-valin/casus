@@ -245,10 +245,14 @@ CC BY-SA file joined by lemma, never blended with Whitaker's data; the IPA varia
 the period setting; Mandarin keys simplified and traditional together; the dual gets its own
 border style; the bar lists only shipped languages; romanisation is off by default.
 
-**Open, Allan's:** for the languages he reads (German, Japanese, Macedonian, Portuguese), should
-the grammar document (§5) wait for his review before that language's data and inventory are
-built, or is it built straight through and reviewed when he uses the page? Default if unanswered:
-straight through, reviewed in use.
+**Grammar document review** (the reviewer's question 5): Allan approved the design on 2026-10-18
+without choosing, so the default holds — each language is built straight through and he reviews it
+in use; the grammar document is there for him to read when he does.
+
+**Added at approval (Allan, 2026-10-18): text file upload.** Beside the paste box, a file picker
+accepting `.txt` and `.md` (UTF-8; other encodings detected where the browser can) reads the file
+in the page and treats it as pasted text. PDF and images remain the v2 OCR path. Phase 1 adds it
+to Latin; every language inherits it.
 
 ## 12. Left to the builder
 
