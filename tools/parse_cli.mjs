@@ -75,6 +75,7 @@ async function main(argv) {
     manifest,
     codes: lang.inventory.codes,
     script: lang.script,
+    fetchFile: async (name) => JSON.parse(await readFile(path.join(dataDir, name), 'utf8')),
     fetchShard: async (name) => JSON.parse(await readFile(path.join(dataDir, 'forms', `${name}.json`), 'utf8')),
   });
   const state = createState({ text, lexicon, lang });

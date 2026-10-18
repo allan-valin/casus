@@ -143,7 +143,7 @@ export function makeColors(inventory) {
     { key: 'pinned', label: 'pinned by you', badge: primary.badge[first], fill: tint(ordered[first], 'sg'), border: ordered[first], borderStyle: 'solid', pinned: true,
       meaning: 'a reading you chose, not the parser’s: black dotted ring. Unpin it in the dictionary' },
     { key: 'chunk', label: 'glued chunk', badge: 'Prp', fill: tint(abl, 'sg'), border: abl, borderStyle: 'solid', chunk: true,
-      meaning: 'a preposition and its object move as one; the ⛓ control unglues them (poets separate them)' },
+      meaning: 'a preposition and its object (or a fixed expression such as es war einmal) move as one; the ⛓ control unglues them' },
     { key: 'linked', label: 'agreement partner', badge: primary.badge.acc ?? primary.badge[first], fill: tint(acc, 'sg'), border: acc, borderStyle: 'solid', linked: true,
       meaning: 'the word under the mouse gets a purple ring; the words that agree with it get this yellow ring. They still move independently' },
   );

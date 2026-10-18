@@ -493,6 +493,6 @@ export const LEGEND_PT = {
   unknown: ['fora do dicionário', 'a palavra não está no léxico de Whitaker (a maioria dos nomes próprios): branca, itálica, !'],
   ambiguous: ['ambígua', 'mais de uma leitura sobrevive: branca com ? e um ponto por caso possível. Clique e fixe a leitura em que você acredita'],
   pinned: ['fixada por você', 'uma leitura que você escolheu, não o analisador: anel preto pontilhado. Solte no dicionário'],
-  chunk: ['bloco colado', 'uma preposição e seu objeto se movem juntos; o controle ⛓ os descola (os poetas os separam)'],
+  chunk: ['bloco colado', 'uma preposição e seu objeto (ou uma expressão fixa como es war einmal) se movem juntos; o controle ⛓ os descola'],
   linked: ['parceira de concordância', 'a palavra sob o mouse ganha um anel roxo; as que concordam com ela ganham este anel amarelo. Mesmo assim se movem separadas'],
 };

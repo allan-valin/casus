@@ -237,3 +237,24 @@ def build_index(entries: Iterable[dict]) -> dict[str, list[dict]]:
             seen[form].add(sig)
             index.setdefault(form, []).append({**a, "lemma": e["id"]})
     return index
+
+
+PHRASE_POS = {"phrase", "proverb", "prep_phrase", "intj", "adv", "adj", "noun", "verb", "name"}
+
+
+def phrase_entries(jsonl_lines: Iterable[str]) -> Iterator[dict]:
+    """Multiword entries of any kind (es war einmal, auf jeden Fall), for the expression index only; ids are
+    their line numbers, as for lemmas, so a gloss can be looked up the same way."""
+    for i, line in enumerate(jsonl_lines):
+        line = line.strip()
+        if not line or '" "' in line[:0]:
+            continue
+        entry = json.loads(line)
+        word = entry.get("word", "")
+        if entry.get("lang_code") != "de" or " " not in word or entry.get("pos") not in PHRASE_POS:
+            continue
+        senses = entry.get("senses") or []
+        if senses and all(sn.get("form_of") or "form-of" in (sn.get("tags") or []) for sn in senses):
+            continue                         # kommt auf = an inflection of aufkommen, not an expression
+        pos = "verb" if entry.get("pos") == "verb" else "phrase"
+        yield {"id": i, "headword": unicodedata.normalize("NFC", word), "pos": pos, "gloss_en": _gloss(entry)}

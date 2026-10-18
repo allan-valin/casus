@@ -143,3 +143,18 @@ def test_a_proper_name_without_a_table_takes_the_singular_cases():
     got = {(f, a["case"], a["number"]) for f, a in an(berlin)}
     assert {("Berlin", "nom", "sg"), ("Berlin", "dat", "sg"), ("Berlin", "acc", "sg"), ("Berlins", "gen", "sg")} <= got
     assert ("Berlin", "nom", "pl") not in got
+
+
+def test_phrase_proverb_and_prepositional_phrase_entries_feed_the_expressions():
+    from casus_build.de.parse import phrase_entries
+    lines = ['{"word": "es war einmal", "lang_code": "de", "pos": "phrase", "senses": [{"glosses": ["once upon a time"]}]}',
+             '{"word": "auf jeden Fall", "lang_code": "de", "pos": "prep_phrase", "senses": [{"glosses": ["definitely"]}]}',
+             '{"word": "Haus", "lang_code": "de", "pos": "noun", "senses": [{"glosses": ["house"]}]}']
+    got = {(e["headword"], e["pos"], e["gloss_en"]) for e in phrase_entries(lines)}
+    assert got == {("es war einmal", "phrase", "once upon a time"), ("auf jeden Fall", "phrase", "definitely")}
+
+
+def test_form_of_multiword_entries_are_not_expressions():
+    from casus_build.de.parse import phrase_entries
+    lines = ['{"word": "kommt auf", "lang_code": "de", "pos": "verb", "senses": [{"glosses": ["inflection of aufkommen"], "form_of": [{"word": "aufkommen"}]}]}']
+    assert list(phrase_entries(lines)) == []

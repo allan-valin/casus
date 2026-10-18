@@ -209,6 +209,39 @@ export function clauseStage(blocks) {
         out[last0] = { ...b, candidates: b.candidates.filter((c) => c.analysis.pos !== 'prep').map((c) => withReason(c, 'clause: nothing follows to govern, so not a preposition (a separable particle)')) };
       }
     }
+    // range: bis between two numbers is not a preposition
+    for (const i of members) {
+      const b = out[i];
+      if (b.token.range && b.candidates.some((c) => c.analysis.pos === 'prep') && b.candidates.some((c) => c.analysis.pos !== 'prep')) {
+        out[i] = { ...b, candidates: b.candidates.filter((c) => c.analysis.pos !== 'prep').map((c) => withReason(c, 'between two numbers: a range, not a preposition')) };
+      }
+    }
+    // CL11: sein, werden, bleiben take no accusative: their ungoverned noun phrases are not accusative
+    if (copula) {
+      for (const i of members) {
+        const b = out[i];
+        if (b.pinned || b.candidates.some((c) => c.links?.some((l) => l.kind === 'government'))) continue;
+        if (!b.candidates.some((c) => NOMINAL.has(c.analysis.pos) && c.analysis.case === 'nom')) continue;
+        const keep = b.candidates.filter((c) => !(NOMINAL.has(c.analysis.pos) && c.analysis.case === 'acc'));
+        if (keep.length < b.candidates.length) out[i] = { ...b, candidates: keep.map((c) => withReason(c, 'clause: sein/werden/bleiben take no accusative')) };
+      }
+    }
+    // NP9: phrases joined by und/oder share their case
+    for (let k = 1; k + 1 < members.length; k += 1) {
+      if (!['und', 'oder', 'sowie', 'bzw'].includes(out[members[k]].token.key.toLowerCase())) continue;
+      const left = out[members[k - 1]];
+      const rightIdx = members.slice(k + 1).find((i) => out[i].candidates.some((c) => c.analysis.pos === 'noun'));
+      if (rightIdx === undefined || !left.candidates.some((c) => c.analysis.pos === 'noun')) continue;
+      const right = out[rightIdx];
+      const cases = (b) => new Set(b.candidates.filter((c) => c.analysis.pos === 'noun').map((c) => c.analysis.case));
+      const shared = [...cases(left)].filter((c) => cases(right).has(c));
+      if (!shared.length) continue;
+      for (const [i, b] of [[members[k - 1], left], [rightIdx, right]]) {
+        if (b.pinned) continue;
+        const keep = b.candidates.filter((c) => c.analysis.pos !== 'noun' || shared.includes(c.analysis.case));
+        if (keep.length < b.candidates.length) out[i] = { ...b, candidates: keep.map((c) => withReason(c, `coordination: shares its case with ${(b === left ? right : left).token.surface}`)) };
+      }
+    }
     // CL3: the clause's finite verb is certain → the clause-final word is its non-finite partner
     const finite = members.find((i) => out[i].candidates.length && out[i].candidates.every((c) => isFinite(c.analysis)));
     const last = members[members.length - 1];
@@ -221,4 +254,27 @@ export function clauseStage(blocks) {
     }
   }
   return out;
+}
+
+/* REF (Allan, 2026-10-18): a 3rd-person personal pronoun points back to the nearest earlier noun of a
+ * matching gender and number in the sentence (sie → die Großmutter). A link and a reason, never a narrowing:
+ * the referent may be outside the sentence. */
+const PERSONAL_3 = new Set(['er', 'ihn', 'ihm', 'sie', 'ihr', 'es', 'ihnen', 'seiner', 'ihrer']);
+export function referenceStage(blocks) {
+  return blocks.map((b, i) => {
+    if (!PERSONAL_3.has(b.token.key.toLowerCase()) || i === 0 && b.token.key === 'Es') return b;
+    const prons = b.candidates.filter((c) => c.analysis.pos === 'pron');
+    if (!prons.length) return b;
+    for (let j = i - 1; j >= 0; j -= 1) {
+      const nouns = blocks[j].candidates.filter((c) => c.analysis.pos === 'noun');
+      if (!nouns.length) continue;
+      const match = nouns.some((n) => prons.some((p) => (p.analysis.number === 'pl' && n.analysis.number === 'pl')
+        || (p.analysis.number === 'sg' && n.analysis.number === 'sg' && (p.analysis.gender === n.analysis.gender || p.analysis.gender === 'x'))));
+      if (!match) continue;
+      const r = `reference: refers to ${blocks[j].token.surface} (the nearest earlier noun of its gender and number)`;
+      return { ...b, candidates: b.candidates.map((c) => (c.analysis.pos !== 'pron' || c.reasons.includes(r) ? c
+        : { ...c, reasons: [...c.reasons, r], links: [...(c.links ?? []), { kind: 'reference', index: blocks[j].token.index }] })) };
+    }
+    return b;
+  });
 }

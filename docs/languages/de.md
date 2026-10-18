@@ -150,6 +150,11 @@ syntax model of design §8).
 | NP13 | Saxon genitive (*Peters Buch*); proper names take case from article or preposition. | next |
 | NP14 | *dessen/deren* + noun: the noun is not genitive. | next |
 | CL11 | Copula predicate is nominative; *als/wie* in comparisons take the case of what they compare. | next |
+| EXP | **Fixed expressions** (Allan): Wiktionary's 21,000 multiword entries — a contiguous one (*es war einmal*, *gar nicht*, *auf jeden Fall*) is glued as one chunk with its gloss; a verb idiom (*Bescheid sagen*, *Recht haben*, *lieb haben*) is found with its verb inflected anywhere in the clause and linked. | done |
+| REF | **Pronoun reference** (Allan): a 3rd-person personal pronoun links to the nearest earlier noun of its gender and number (*sie* → *Großmutter*); a link and a reason, no narrowing (the referent may lie outside the sentence). | done |
+| CL11a | sein, werden, bleiben take no accusative: their ungoverned noun phrases are not accusative (*Es war einmal eine Dirne*). | done |
+| NP9 | Phrases joined by *und/oder* share their case (*Die deutsche Sprache oder Deutsch*). | done |
+| RNG | *bis* between two numbers is a range, not a preposition. | done |
 | CMP | **Compounds** (Allan): a compound noun is split into its dictionary roots (with linking -s-, -es-, -n-, -en-, -er-) and each root is drawn in its own ink inside the block. | next |
 
 ### Order of the cascade (German)

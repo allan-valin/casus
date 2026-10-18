@@ -15,6 +15,7 @@ export function createState({ text, lexicon, lang, saved = null }) {
   let selectedIndex = saved?.selected ?? 0;
   const pins = new Map((saved?.pins ?? []).map((p) => [pinKey(p.sentence, p.tokenIndex), p.analysis]));
   let cache = null;
+  let ctx = null;
 
   async function load() {
     const split = sentences.map((s) => tokenize(s.text));
@@ -29,6 +30,8 @@ export function createState({ text, lexicon, lang, saved = null }) {
       }
     }
     analysesByKey = await lexicon.lookupAll([...keys]);
+    // language data the stages need beyond the form index (German: the fixed expressions)
+    ctx = lang.loadContext ? await lang.loadContext(lexicon) : null;
     tokensBySentence = split.map((tokens) => withTrail(rejoinAttested(tokens, analysesByKey, normalize)));
     cache = null;
   }
@@ -40,7 +43,7 @@ export function createState({ text, lexicon, lang, saved = null }) {
         const [sentence, tokenIndex] = key.split(':').map(Number);
         if (sentence === selectedIndex) sentencePins.set(tokenIndex, analysis);
       }
-      cache = runCascade(tokensBySentence[selectedIndex] ?? [], analysesByKey, { pins: sentencePins, stages });
+      cache = runCascade(tokensBySentence[selectedIndex] ?? [], analysesByKey, { pins: sentencePins, stages, ctx });
     }
     return cache;
   }

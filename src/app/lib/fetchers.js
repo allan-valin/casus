@@ -9,6 +9,10 @@ export function makeFetchShard(fetchImpl, base = '/data') {
   return (name) => getJSON(fetchImpl, `${base}/forms/${name}.json`);
 }
 
+export function makeFetchFile(fetchImpl, base = '/data') {
+  return (name) => getJSON(fetchImpl, `${base}/${name}`);
+}
+
 export function loadManifest(fetchImpl, base = '/data') {
   return getJSON(fetchImpl, `${base}/manifest.json`);
 }

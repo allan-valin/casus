@@ -16,6 +16,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from casus_build.shard import write_assets  # noqa: E402
+from casus_build.expressions import build_expressions  # noqa: E402
 
 BUDGET_RAW = 60e6
 BUDGET_SHARD_GZ = 300e3
@@ -58,7 +59,7 @@ def build_grc(src: Path, out: Path, drop_dialects: bool) -> dict:
 
 def build_de(src: Path, out: Path) -> dict:
     from casus_build.de.codes import CODES_JSON, encode_analysis
-    from casus_build.de.parse import ARTICLE, build_index, contraction_entries, parse_entries
+    from casus_build.de.parse import ARTICLE, build_index, contraction_entries, parse_entries, phrase_entries
     from casus_build.de.prepositions import GOVERNMENT
 
     with src.open(encoding="utf-8") as fh:
@@ -81,9 +82,11 @@ def build_de(src: Path, out: Path) -> dict:
     manifest = write_assets(index, lemmas, out, rows=rows, key_of=lambda f: f.lower())
     for name, obj in (("glosses.en.json", {str(e["id"]): e["gloss_en"] for e in entries if e["gloss_en"]}),
                       ("ipa.json", {str(e["id"]): e["ipa"] for e in entries if e["ipa"]}),
-                      ("government.json", GOVERNMENT), ("codes.json", CODES_JSON)):
+                      ("government.json", GOVERNMENT), ("codes.json", CODES_JSON),
+                      ("expressions.json", build_expressions([*phrase_entries(src.open(encoding="utf-8")), *(e for e in entries if e["pos"] == "verb" and " " not in e["headword"])]))):
         (out / name).write_text(json.dumps(obj, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    manifest["key"] = "lower"           # shard names come from the lower-cased form
+    manifest["key"] = "lower"
+    manifest["expressions"] = True           # shard names come from the lower-cased form
     (out / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8")
     return manifest
 

@@ -196,6 +196,7 @@ export function governmentStage(blocks, government = GOVERNMENT, { phrase = fals
 
   for (let i = 0; i < out.length - 1; i += 1) {
     const prep = out[i];
+    if (prep.token.range) continue;                          // bis between two numbers governs nothing
     const preps = prep.candidates.filter((c) => c.analysis.pos === 'prep' && c.analysis.governs.length > 0);
     if (preps.length === 0) continue;
     const governs = [...new Set(preps.flatMap((c) => c.analysis.governs))];
@@ -260,14 +261,15 @@ const PIN_REASON = 'pin: chosen by the reader';
  * fixed-point loop is a later refinement and would need a cycle guard.
  */
 /** Latin's stage order: government, agreement, government (resolving an object feeds agreement). */
-export const LATIN_STAGES = [governmentStage, agreementStage, governmentStage];
+// wrapped: a stage receives (blocks, ctx), and these two use their second parameter for their own tables
+export const LATIN_STAGES = [(b) => governmentStage(b), (b) => agreementStage(b), (b) => governmentStage(b)];
 
-export function runCascade(tokens, analysesByKey, { pins = new Map(), stages = LATIN_STAGES } = {}) {
+export function runCascade(tokens, analysesByKey, { pins = new Map(), stages = LATIN_STAGES, ctx = null } = {}) {
   let blocks = buildBlocks(tokens, analysesByKey).map((block) => {
     const pinned = pins.get(block.token.index);
     if (!pinned) return block;
     return { ...block, pinned, resolved: true, candidates: [{ analysis: pinned, reasons: [PIN_REASON], links: [] }] };
   });
-  for (const stage of stages) blocks = narrow(blocks, stage);
+  for (const stage of stages) blocks = narrow(blocks, (b) => stage(b, ctx));
   return blocks;
 }

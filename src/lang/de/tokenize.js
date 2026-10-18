@@ -11,7 +11,10 @@ export function tokenize(sentenceText) {
   for (let m = WORD.exec(sentenceText); m; m = WORD.exec(sentenceText)) {
     const [raw, long, short] = m;
     const word = long ?? short;
-    if (!word) { push(tokens, raw, 'punct', raw, m.index); if (/\.$/.test(raw)) first = true; if (/[,;:–—()\[\]]/.test(raw)) clause += 1; continue; }
+    if (!word) {
+      if (/^\d+([.,]\d+)*$/.test(raw)) { push(tokens, raw, 'number', raw, m.index); continue; }
+      push(tokens, raw, 'punct', raw, m.index); if (/\.$/.test(raw)) first = true; if (/[,;:–—()\[\]]/.test(raw)) clause += 1; continue;
+    }
     const key = RESPELL[word] ?? word.normalize('NFC');
     const t = push(tokens, word, 'word', key, m.index);
     t.clause = clause;
@@ -23,6 +26,8 @@ export function tokenize(sentenceText) {
     }
     first = false;
   }
+  // bis between two numbers is a range (90 bis 105), not a preposition
+  tokens.forEach((t, k) => { if (t.kind === 'word' && t.key.toLowerCase() === 'bis' && tokens[k - 1]?.kind === 'number' && tokens[k + 1]?.kind === 'number') t.range = true; });
   // a capitalised word right before another capitalised word may be an adjective in a name
   // (der Deutschen Einheit, das Rote Kreuz): it is looked up in small letters too
   const words = tokens.filter((x) => x.kind === 'word');

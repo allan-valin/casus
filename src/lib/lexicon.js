@@ -97,7 +97,14 @@ function dropLastAccent(word) {
  * Shard promises are cached, so concurrent lookups share one fetch; a failed
  * fetch resolves to an empty shard and degrades one word, never the sentence.
  */
-export function createLexicon({ fetchShard, manifest = null, codes = LATIN_CODES, script = null }) {
+export function createLexicon({ fetchShard, fetchFile = null, manifest = null, codes = LATIN_CODES, script = null }) {
+  const files = new Map();
+  /** another data file of the language (expressions.json…), fetched once; null when absent */
+  function file(name) {
+    if (!fetchFile) return Promise.resolve(null);
+    if (!files.has(name)) files.set(name, Promise.resolve().then(() => fetchFile(name)).catch(() => null));
+    return files.get(name);
+  }
   const names = manifest?.shards ? new Set(Object.keys(manifest.shards)) : null;
   const cache = new Map();
   // Greek: shards are named by the form without diacritics, and unaccented input is matched against
@@ -165,6 +172,7 @@ export function createLexicon({ fetchShard, manifest = null, codes = LATIN_CODES
   return {
     lookup,
     lookupAll,
+    file,
     loadedShards: () => [...cache.keys()],
   };
 }

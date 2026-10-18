@@ -21,6 +21,16 @@ export function gluePairs(blocks, unglued = new Set()) {
     if (members.length === 1) out.set(prep.token.index, members[0]);
     else if (members.length > 1) out.set(prep.token.index, members);
   }
+  // fixed expressions written in a row (es war einmal) are one chunk too, unless already glued
+  const glued = new Set([...out].flatMap(([p, m]) => [p, ...(Array.isArray(m) ? m : [m])]));
+  const exprOf = (b) => b.candidates.flatMap((c) => c.links ?? []).find((l) => l.kind === 'expression' && l.contiguous);
+  for (let i = 0; i < blocks.length; i += 1) {
+    const link = exprOf(blocks[i]);
+    if (!link || link.index !== blocks[i].token.index || glued.has(blocks[i].token.index) || unglued.has(blocks[i].token.index)) continue;
+    const members = [];
+    for (let j = i + 1; j < blocks.length && exprOf(blocks[j])?.index === link.index; j += 1) members.push(blocks[j].token.index);
+    if (members.length && !members.some((m) => glued.has(m))) out.set(blocks[i].token.index, members.length === 1 ? members[0] : members);
+  }
   return out;
 }
 
@@ -32,7 +42,8 @@ export function partners(blocks) {
     if (!out.get(a).includes(b)) out.get(a).push(b);
   };
   for (const block of blocks) {
-    for (const index of linksOf(block, 'agreement')) {
+    for (const index of [...linksOf(block, 'agreement'), ...linksOf(block, 'reference'), ...linksOf(block, 'expression')]) {
+      if (index === block.token.index) continue;
       link(block.token.index, index);
       link(index, block.token.index);
     }
