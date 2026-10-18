@@ -161,3 +161,12 @@ describe('contractions carry their article (NP2a) and zu before an infinitive is
     expect(b.zu.candidates.map((c) => c.analysis.pos)).toEqual(['particle']);
   });
 });
+
+describe('a subordinating conjunction opening its clause is the conjunction (CL4a)', () => {
+  it('Als at the start keeps only its conjunction reading', async () => {
+    const E = { Als: [{ lemma: 'n', pos: 'noun', case: 'nom', number: 'pl', gender: 'm' }], als: [{ lemma: 'c', pos: 'conj' }, { lemma: 'c2', pos: 'adv', degree: 'pos' }], Gregor: [{ lemma: 'g', pos: 'noun', case: 'nom', number: 'sg', gender: 'm' }], erwachte: [{ lemma: 'v', pos: 'verb', person: '3', number: 'sg', tense: 'pret', mood: 'ind' }] };
+    const s = createState({ text: 'Als Gregor erwachte.', lexicon: { lookupAll: async (keys) => new Map(keys.map((k) => [k, E[k] ?? []])) }, lang: de });
+    await s.load();
+    expect(s.blocks()[0].candidates.map((c) => c.analysis.pos)).toEqual(['conj']);
+  });
+});

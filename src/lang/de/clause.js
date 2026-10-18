@@ -63,6 +63,12 @@ export function clauseStage(blocks) {
     }
     // CL4: a Nebensatz ends with its finite verb
     const firstKey = out[members[0]].token.key.toLowerCase();
+    // CL4a: a subordinating conjunction opening its clause is the conjunction (Als, not a noun)
+    if (SUBORDINATORS.has(firstKey) && !['wie', 'wo', 'wer', 'was', 'da', 'bis', 'seit', 'während'].includes(firstKey)) {
+      const b = out[members[0]];
+      const conj = b.candidates.filter((c) => c.analysis.pos === 'conj');
+      if (!b.pinned && conj.length && conj.length < b.candidates.length) out[members[0]] = { ...b, candidates: conj.map((c) => withReason(c, 'clause: a subordinating conjunction opens this clause')) };
+    }
     const nebensatz = SUBORDINATORS.has(firstKey) || ((out[members[0]].token.clause ?? 0) > 0 && RELATIVES.has(firstKey));
     if (nebensatz && members.length > 1) {
       const lastB = out[last0];

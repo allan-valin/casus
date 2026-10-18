@@ -4,6 +4,7 @@
   import { eraStatus, warning, AGE_LABEL } from '../lib/era.js';
   import { pickIpa, wiktionaryUrl } from '../lib/entry.js';
   import Speaker from './Speaker.svelte';
+  import Paradigm from './Paradigm.svelte';
   import { t, ui } from '../lib/i18n.svelte.js';
   let { block, reader, onclose, voice = null, onspoke = () => {} } = $props();
 
@@ -67,6 +68,11 @@
             {#if g !== null}<div class="gloss">{g}</div>{:else if dict}<div class="gloss missing">{t('dict.missingHere', { name: t(`settings.lang.${dict}`, { source: reader.lang?.sources?.[dict] ?? '' }) })}</div>{/if}
             {#if r.age || r.freq}<div class="meta">{#if r.age}{t('dict.age')}: {AGE_LABEL[r.age] ?? r.age}{/if}{#if r.age && r.freq} · {/if}{#if r.freq}{t('dict.freq')} {r.freq}{/if}</div>{/if}
             {#if warning(r.age, reader.era)}<div class="warning">{warning(r.age, reader.era)}</div>{/if}
+            {#if reader.paradigmOf}
+              {#await reader.paradigmOf(id) then rows}
+                {#if rows?.length}<Paradigm {rows} lemma={id} lang={reader.lang} form={block.token.key} readings={block.candidates.filter((c) => String(c.analysis.lemma) === id).map((c) => c.analysis)} />{/if}
+              {/await}
+            {/if}
           </div>
         {:else}
           <div class="entry"><div class="form">lemma {id}</div><div class="meta">no record</div></div>

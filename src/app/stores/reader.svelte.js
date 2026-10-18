@@ -3,6 +3,7 @@ import { initialOrder, move as moveIn, moveItem as moveItemIn, autoSort as autoS
 import { loadLemmas, loadGlosses, loadIpa } from '../lib/fetchers.js';
 import { getLanguage } from '../../lang/registry.js';
 import { makeColors } from '../lib/colors.js';
+import { frontDecode } from '../lib/paradigm.js';
 
 const DEFAULT_LAYERS = { nominal: true, verb: true, function: true, classes: false, marks: true };
 
@@ -21,6 +22,8 @@ export function createReader({ lexicon, text, saved = null, onaction = () => {},
   let glossLang = $state(saved?.glossLang ?? 'en');
   const orders = $state(Object.fromEntries(Object.entries(saved?.order ?? {}).map(([k, v]) => [Number(k), [...v]])));
   const unglued = $state(new Set(saved?.unglued ?? []));
+  let extrasSource = null;
+  const paradigmBuckets = {};
   let lexiconExtras = $state({ lemmas: null, glosses: { en: null, pt: null }, ipa: null });
 
   function touch() { version += 1; }
@@ -74,7 +77,17 @@ export function createReader({ lexicon, text, saved = null, onaction = () => {},
     set lexiconExtras(v) { lexiconExtras = v; },
 
     async load() { await state.load(); loaded = true; touch(); },
+    /** every form of a lemma (data/<code>/paradigms/<bucket>.json), fetched once per bucket */
+    async paradigmOf(lemmaId) {
+      if (!extrasSource) return null;
+      const { fetchImpl, base } = extrasSource;
+      const n = Number(lemmaId) % 512;
+      paradigmBuckets[n] ??= fetchImpl(`${base}/paradigms/${n}.json`).then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
+      const rows = (await paradigmBuckets[n])[String(lemmaId)];
+      return rows ? frontDecode(rows) : null;
+    },
     async loadExtras(fetchImpl, base = '/data') {
+      extrasSource = { fetchImpl, base };
       const [lemmas, en, pt, ipa] = await Promise.all([
         loadLemmas(fetchImpl, base), loadGlosses(fetchImpl, base, 'en'), loadGlosses(fetchImpl, base, 'pt'), loadIpa(fetchImpl, base),
       ]);

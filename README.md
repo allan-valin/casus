@@ -77,11 +77,19 @@ spelling above the block and over the word (toggle "accents from the dictionary"
 **letters drill**. Grammar notes: `docs/languages/grc.md`; build: `bash tools/fetch_wiktextract.sh
 "Ancient Greek" && python3 tools/build_lang.py grc`.
 
+**Every dictionary entry shows its whole declension or conjugation** (all three languages): the cells
+holding a reading still open for the word have a border and background, the same spelling in a cell the
+rules ruled out is dashed, and the sections containing the word open first (`tools/build_paradigms.py`).
+
 **German (2026-10-18, phase 3)** at `/de/`: the English Wiktionary's German entries (100,980 lemmas, 442k
 forms, `data/de/` 47 MB). Every noun shows its **article** (der / die / das, die (Pl.)) above the word,
 because gender decides the adjective endings. A preposition governs its **whole noun phrase** (`mit dem
 guten Wein` is dative throughout and moves as one chunk); Wechselpräpositionen stay two-coloured until the
-phrase settles them. A sentence-initial capital is read both ways (`Essen ist gut`: noun and verb). In the
+phrase settles them. Inside a noun phrase everything takes its noun's case, number and gender, and the
+article word decides the adjective declension; clauses (between commas) give the verb its person and number,
+put the finite verb last in a subordinate clause, and read a clause-final participle or infinitive as the
+verb's partner. Commas and full stops travel with the word before them. The rules, with what is applied and
+what comes next: `docs/languages/de.md` §10. A sentence-initial capital is read both ways (`Essen ist gut`: noun and verb). In the
 dictionary settings, an optional **natural voice** (Thorsten, Piper, 63 MB) downloads on request and the
 speaker uses it. Grammar notes: `docs/languages/de.md`; build: `bash tools/fetch_wiktextract.sh German &&
 python3 tools/build_lang.py de`.

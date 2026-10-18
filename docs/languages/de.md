@@ -122,6 +122,7 @@ syntax model of design §8).
 | CL2 | A finite verb in the 1st/2nd person needs *ich, wir, du, ihr* as subject in its clause (German drops no subject pronoun); otherwise it is 3rd person. An imperative stands first in its clause. | done |
 | CL3 | A clause has one finite verb; once it is certain, the clause-final infinitive or participle is the right bracket of the **Satzklammer** (*fand … verwandelt*, *hat … gegessen*, *will … spielen*). | done |
 | CL4 | **Nebensatz**: after a subordinating conjunction (als, dass, weil, wenn, ob, obwohl, damit, nachdem, bevor, während, da, falls, sodass, seit, bis, indem) or a relative pronoun after a comma (der/die/das, welcher), the finite verb is the **last** word of the clause; its other readings drop, and the verbs before it are not finite. | done |
+| CL4a | A subordinating conjunction opening its clause is the conjunction (*Als* is not a noun there). | done |
 | CL5a | A clause with a certain nominative subject, or the sentence's first clause, needs a finite verb: when only one word in it can be a verb, it is finite (*Die Kinder spielen*). | done |
 | CL5 | **Hauptsatz**: the finite verb is the 2nd constituent (**V2**); in a question or command, the 1st (**V1**). | next (needs constituent boundaries = NP1) |
 | CL6 | **Separable verbs**: a particle at the end of a main clause (an, auf, aus, ab, ein, mit, vor, zu, zurück, weg, los, nach, her, hin, …) belongs to the clause's finite verb (*fängt … an* = *anfangen*); the pair is looked up as one word. | next |

@@ -292,3 +292,19 @@ added as prepositions. Keys keep case, ß and umlauts; shards are named by the l
 | shards / largest gzipped | 896 / 51 KB | 300 KB |
 
 Gate passed with no trimming.
+
+### Paradigm tables (2026-10-18)
+
+Every form of every lemma, inverted from the form index by `tools/build_paradigms.py <code>` into
+`data/<code>/paradigms/<lemma % 512>.json`, front-coded (each form after the first as the length it shares
+with the previous one plus the rest). The dictionary overlay fetches one file per entry (≤ 15 KB gzipped).
+
+| | lemmas | raw | gzipped |
+|---|---|---|---|
+| Latin | 38,106 | 33.3 MB | 5.2 MB |
+| Ancient Greek | 22,001 | 20.9 MB | 3.9 MB |
+| German | 96,866 | 23.0 MB | 2.9 MB |
+
+**Budget ruling (2026-10-18):** the 60 MB per-language budget applies to the dictionary index; the tables
+are counted separately. Latin + Greek + German with tables are about 233 MB served, against GitHub Pages'
+1 GB per site; the languages design (§3) moves language families to their own sites if the sum outgrows one.

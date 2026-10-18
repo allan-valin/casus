@@ -133,7 +133,9 @@ await page.click('button.sample:has-text("Kafka")'); await page.waitForSelector(
 console.log('de articles:', (await page.$$eval('.pill .article', (e) => e.map((x) => x.textContent))).join(' '), '| chunks:', JSON.stringify(await page.$$eval('.chunk', (els) => els.map((e) => e.textContent.trim().replace(/\s+/g, ' ')))));
 await page.click('.pill:has-text("Bett")'); await page.waitForSelector('.dictionary .ipa', { timeout: 20000 });
 console.log('de entry:', (await page.textContent('.dictionary .form')).replace(/\s+/g, ' ').trim(), '| ipa', await page.textContent('.dictionary .ipa'));
+console.log('de entry table:', await page.$$eval('.dictionary td.reading', (e) => e.map((x) => x.dataset.cell + ' ' + x.textContent)));
 await page.keyboard.press('Escape');
+console.log('de commas:', await page.$$eval('.pool .trail', (e) => e.map((x) => x.textContent).join(' ')));
 console.log('de natural voice offered:', (await page.$('button.download')) !== null);
 console.log('activity lines:', await page.$$eval('.activity .line', (els) => els.length), '| last:', (await page.textContent('.activity .line.last')).slice(0, 120));
 console.log('errors:', errors);
