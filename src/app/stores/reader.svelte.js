@@ -1,6 +1,7 @@
 import { createState } from '../../lib/state.js';
 import { initialOrder, move as moveIn, moveItem as moveItemIn, autoSort as autoSortIn, arrangeBy } from '../lib/order.js';
 import { loadLemmas, loadGlosses } from '../lib/fetchers.js';
+import { getLanguage } from '../../lang/registry.js';
 
 const DEFAULT_LAYERS = { nominal: true, verb: true, function: true, classes: false };
 
@@ -9,8 +10,8 @@ const DEFAULT_LAYERS = { nominal: true, verb: true, function: true, classes: fal
  * Parse decisions come from createState; this adds layers, era, gloss language,
  * per-sentence arrangement and unglued chunks, and serialises all of it.
  */
-export function createReader({ lexicon, text, saved = null, onaction = () => {} }) {
-  const state = createState({ text, lexicon, saved });
+export function createReader({ lexicon, text, saved = null, onaction = () => {}, lang = getLanguage('la') }) {
+  const state = createState({ text, lexicon, lang, saved });
   let version = $state(0);                       // bumped after every state.* call so getters re-read
   let loaded = $state(false);
   const layers = $state({ ...DEFAULT_LAYERS, ...(saved?.layers ?? {}) });

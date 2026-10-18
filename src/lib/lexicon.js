@@ -31,11 +31,14 @@ const LAYOUT = {
   interj: [],
 };
 
-/** One format-2 code (see docs/DATA.md) back into a spelled-out analysis. */
-export function decodeAnalysis(code, lemma) {
-  const pos = POS[code[0]];
+/** Latin's format-2 code tables, also carried by the Latin inventory (src/lang/la/inventory.js). */
+export const LATIN_CODES = { POS, LAYOUT };
+
+/** One format-2 code (see docs/DATA.md) back into a spelled-out analysis; `codes` = a language's tables. */
+export function decodeAnalysis(code, lemma, codes = LATIN_CODES) {
+  const pos = codes.POS[code[0]];
   const out = { lemma, pos };
-  LAYOUT[pos].forEach(([name, table], i) => {
+  codes.LAYOUT[pos].forEach(([name, table], i) => {
     out[name] = table[code[i + 1]];
   });
   return out;

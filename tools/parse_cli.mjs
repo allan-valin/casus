@@ -11,6 +11,7 @@ import { pathToFileURL } from 'node:url';
 import path from 'node:path';
 import { createLexicon } from '../src/lib/lexicon.js';
 import { createState } from '../src/lib/state.js';
+import { getLanguage } from '../src/lang/registry.js';
 
 const ORDER = ['case', 'number', 'gender', 'degree', 'person', 'tense', 'mood', 'voice', 'governs'];
 
@@ -69,7 +70,7 @@ async function main(argv) {
     manifest,
     fetchShard: async (name) => JSON.parse(await readFile(path.join(dataDir, 'forms', `${name}.json`), 'utf8')),
   });
-  const state = createState({ text, lexicon });
+  const state = createState({ text, lexicon, lang: getLanguage('la') });
   await state.load();
   state.sentences().forEach((sentence, i) => {
     state.select(i);

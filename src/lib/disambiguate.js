@@ -45,8 +45,8 @@ function finish(block) {
   return { ...block, resolved: block.candidates.length === 1 };
 }
 
-const NOMINAL_TARGETS = new Set(['adj', 'vpar', 'pron']);
-const WITNESSES = new Set(['noun', 'pron']);
+/* Latin's agreement roles; a language definition's inventory.agreement overrides them. */
+export const LATIN_AGREEMENT = { targets: ['adj', 'vpar', 'pron'], witnesses: ['noun', 'pron'] };
 
 function genderFits(a, b) {
   if (a === b || a === 'x' || b === 'x') return true;
@@ -72,7 +72,9 @@ function describe(a) {
  * self-review): an adjective can agree with a noun it does not modify — the
  * reason names the witness so the reader can repin.
  */
-export function agreementStage(blocks) {
+export function agreementStage(blocks, inventory = { agreement: LATIN_AGREEMENT }) {
+  const NOMINAL_TARGETS = new Set(inventory.agreement?.targets ?? LATIN_AGREEMENT.targets);
+  const WITNESSES = new Set(inventory.agreement?.witnesses ?? LATIN_AGREEMENT.witnesses);
   return blocks.map((block, i) => {
     const otherBlocks = blocks.filter((b, j) => j !== i);
     const targets = block.candidates.filter((c) => NOMINAL_TARGETS.has(c.analysis.pos));
@@ -126,9 +128,9 @@ function ownGoverns(analysis) {
 }
 
 /** A pinned reading is a fixed fact and keeps what the lexicon gave it; otherwise the table fills in. */
-function governedBy(block, analysis) {
+function governedBy(block, analysis, government = GOVERNMENT) {
   if (block.pinned) return ownGoverns(analysis);
-  if (GOVERNMENT[block.token.key]) return GOVERNMENT[block.token.key];
+  if (government[block.token.key]) return government[block.token.key];
   return ownGoverns(analysis);
 }
 
@@ -151,11 +153,11 @@ function withLink(candidate, kind, index) {
  * `in urbe` settles the ablative, `in Galliam` the accusative, and when both
  * stay open both stay striped.
  */
-export function governmentStage(blocks) {
+export function governmentStage(blocks, government = GOVERNMENT) {
   const out = blocks.map((block) => ({
     ...block,
     candidates: block.candidates.map((c) => (c.analysis.pos === 'prep'
-      ? { ...c, analysis: { ...c.analysis, governs: governedBy(block, c.analysis) } }
+      ? { ...c, analysis: { ...c.analysis, governs: governedBy(block, c.analysis, government) } }
       : c)),
   }));
 
@@ -195,14 +197,15 @@ const PIN_REASON = 'pin: chosen by the reader';
  * which can feed another preposition. Two passes are enough for v1; a
  * fixed-point loop is a later refinement and would need a cycle guard.
  */
-export function runCascade(tokens, analysesByKey, { pins = new Map() } = {}) {
+/** Latin's stage order: government, agreement, government (resolving an object feeds agreement). */
+export const LATIN_STAGES = [governmentStage, agreementStage, governmentStage];
+
+export function runCascade(tokens, analysesByKey, { pins = new Map(), stages = LATIN_STAGES } = {}) {
   let blocks = buildBlocks(tokens, analysesByKey).map((block) => {
     const pinned = pins.get(block.token.index);
     if (!pinned) return block;
     return { ...block, pinned, resolved: true, candidates: [{ analysis: pinned, reasons: [PIN_REASON], links: [] }] };
   });
-  blocks = narrow(blocks, governmentStage);
-  blocks = narrow(blocks, agreementStage);
-  blocks = narrow(blocks, governmentStage);
+  for (const stage of stages) blocks = narrow(blocks, stage);
   return blocks;
 }
