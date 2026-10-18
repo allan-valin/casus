@@ -23,6 +23,14 @@ export function tokenize(sentenceText) {
     }
     first = false;
   }
+  // a capitalised word right before another capitalised word may be an adjective in a name
+  // (der Deutschen Einheit, das Rote Kreuz): it is looked up in small letters too
+  const words = tokens.filter((x) => x.kind === 'word');
+  for (let k = 0; k + 1 < words.length; k += 1) {
+    const w = words[k];
+    if (w.altKey || w.index === 0 || words[k + 1].index !== w.index + 1) continue;
+    if (/^\p{Lu}/u.test(w.key) && /^\p{Lu}/u.test(words[k + 1].key) && /(e|en|em|er|es)$/.test(w.key)) w.altKey = w.key[0].toLowerCase() + w.key.slice(1);
+  }
   return tokens;
 }
 

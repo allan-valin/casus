@@ -131,7 +131,28 @@ syntax model of design §8).
 | CL9 | Compound tenses and the passive: *haben/sein* + Partizip II = Perfekt; *werden* + Infinitiv = Futur; *werden* + Partizip II = Passiv. Mark the pair. | next |
 | CL10 | Verb valency: which case a verb takes for its objects (*helfen* + dat, *gedenken* + gen, *geben* + dat + acc) settles the remaining nominal cases. Needs a valency list per verb. | parser (or a valency list) |
 
+### Added from the German-teacher review (2026-10-18, 98 sentences)
+
+| id | rule | status |
+|---|---|---|
+| NP0 | A capitalised first word whose small-letter form is a pronoun, adverb, conjunction or preposition is not a noun (*Ich*, not *das Ich*). | done |
+| NP1a | A noun of unknown gender matches any gender; a phrase whose members disagree with its noun is not narrowed at all (nothing lost). | done |
+| NP3a | dies-, jen-, kein-, welch-, all- are article words; numerals and uninflected words are carried through a phrase. | done |
+| NP12 | A cardinal above one makes the phrase plural. | done |
+| NP13a | A capitalised adjective in a name (*der Deutschen Einheit*, *das Rote Kreuz*) is read as an adjective of the following noun. | done |
+| CL2b | An unambiguous *ich/du/wir* fixes the finite verb's person and number. | done |
+| CL2c | *sie/Sie/ihr* as the only possible subject takes the verb's person and number. | done |
+| CL6a | A clause-final word with nothing after it to govern is not a preposition (*ruft … an*), postpositions excepted. | done |
+| D1 | One nominative per clause: once the subject is certain the other phrases are not nominative (copula predicates excepted). | done |
+| REL1 | A relative pronoun takes gender and number from its antecedent; an article word followed by something that cannot continue a noun phrase is the pronoun. | done |
+| CL8a | No nominative in a zu-infinitive clause; *um/ohne/statt … zu* open with the conjunction. | next |
+| NP11 | A nominalised infinitive after an article or contraction is a neuter singular noun (*das Wünschen, beim Essen*). | next |
+| NP13 | Saxon genitive (*Peters Buch*); proper names take case from article or preposition. | next |
+| NP14 | *dessen/deren* + noun: the noun is not genitive. | next |
+| CL11 | Copula predicate is nominative; *als/wie* in comparisons take the case of what they compare. | next |
+| CMP | **Compounds** (Allan): a compound noun is split into its dictionary roots (with linking -s-, -es-, -n-, -en-, -er-) and each root is drawn in its own ink inside the block. | next |
+
 ### Order of the cascade (German)
 
-government (NP4, NP5) → noun phrases (NP1–NP3) → government again → noun phrases again → clauses (CL1–CL5a, CL7, CL8).
+government (NP4, NP5) → noun phrases (NP1–NP3, NP12) → government again → noun phrases again → clauses (CL1–CL8, D1, REL1) → noun phrases again → clauses again → government.
 Each stage only narrows and never empties a word; what stays open is shown open.

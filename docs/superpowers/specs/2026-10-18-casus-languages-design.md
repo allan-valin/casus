@@ -261,6 +261,16 @@ accepting `.txt` and `.md` (UTF-8; other encodings detected where the browser ca
 in the page and treats it as pasted text. PDF and images remain the v2 OCR path. Phase 1 adds it
 to Latin; every language inherits it.
 
+**Decided by Allan later on 2026-10-18:**
+- **Sites by family**: GitHub Pages gives every repository its own site (1 GB each). `casus` keeps the
+  classical languages (Latin, Ancient Greek, Sanskrit…); the others go to regional sites (by continent or
+  region), built from the same code. The language bar links across sites.
+- **Wiktionary as a dynamic fallback**: where a language has no built tables (or a word is missing), the
+  entry may fetch the word's Wiktionary page through its API and show its inflection table, marked as
+  fetched live (needs internet).
+- **Compound words**: long compounds (German first) are split into dictionary roots and each root gets its
+  own ink inside the block, so a learner sees the parts (de.md §10, CMP).
+
 ## 12. Left to the builder
 
 - The exact compact code alphabet for each language's analyses (Latin's format 2 generalised

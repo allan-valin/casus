@@ -106,7 +106,9 @@ export function clauseStage(blocks) {
     // when only one word in it can be a verb, that word is finite (Die Kinder spielen)
     const verbish = members.filter((i) => out[i].candidates.some((c) => c.analysis.pos === 'verb'));
     const hasSubject = members.some((i) => out[i].candidates.length && out[i].candidates.every((c) => (c.analysis.pos === 'noun' || c.analysis.pos === 'pron') && c.analysis.case === 'nom'));
-    const zuInfinitive = members.length > 1 && out[members[members.length - 2]].token.key.toLowerCase() === 'zu';
+    // only zu right before a clause-final infinitive makes an infinitive group (not zu Hause)
+    const zuInfinitive = members.length > 1 && out[members[members.length - 2]].token.key.toLowerCase() === 'zu'
+      && out[last0].candidates.some((c) => c.analysis.mood === 'inf');
     if (verbish.length === 1 && ((out[members[0]].token.clause ?? 0) === 0 || hasSubject) && !zuInfinitive) {
       const b = out[verbish[0]];
       const keep = b.candidates.filter((c) => isFinite(c.analysis));
@@ -190,6 +192,13 @@ export function clauseStage(blocks) {
           || gn.has(`${c.analysis.number}|${c.analysis.number === 'pl' ? 'x' : c.analysis.gender}`)
           || (c.analysis.gender === 'x' && [...gn].some((k) => k.startsWith(`${c.analysis.number}|`))));
         if (keep.length && keep.length < rel.candidates.length) out[members[0]] = { ...rel, candidates: keep.map((c) => withReason(c, `relative clause: agrees with ${ante.token.surface}`)) };
+      }
+      // D4: an article word followed by something that cannot continue a noun phrase is the pronoun
+      const nxt = out[members[1]];
+      const r2 = out[members[0]];
+      if (nxt && !nxt.candidates.some((c) => ['det', 'adj', 'num', 'noun'].includes(c.analysis.pos)) && r2.candidates.some((c) => c.analysis.pos === 'pron')) {
+        const keep2 = r2.candidates.filter((c) => c.analysis.pos !== 'det' || !c.analysis.case || c.analysis.case === 'x');
+        if (keep2.length < r2.candidates.length) out[members[0]] = { ...r2, candidates: keep2.map((c) => withReason(c, `relative clause: ${nxt.token.surface} cannot follow an article, so this is the pronoun`)) };
       }
     }
     // B3 / CL6a: a clause-final word with nothing after it to govern is not a preposition (ruft … an)

@@ -18,7 +18,7 @@ const LEX = {
   Er: [N('nom', 'sg', 'm', 'pron', 'er'), N('nom', 'sg', 'm', 'noun', 'derEr')],
   kommt: [V('3', 'sg'), V('2', 'pl')],
   aus: [{ lemma: 'a', pos: 'prep', governs: 'dat' }, { lemma: 'a', pos: 'adv', degree: 'pos' }],
-  der: [...ART([['nom', 'sg', 'm'], ['gen', 'sg', 'f'], ['dat', 'sg', 'f'], ['gen', 'pl', 'x']]), { lemma: 'der2', pos: 'det', case: 'x', number: 'x', gender: 'x' }],
+  der: [...ART([['nom', 'sg', 'm'], ['gen', 'sg', 'f'], ['dat', 'sg', 'f'], ['gen', 'pl', 'x']]), { lemma: 'der2', pos: 'det', case: 'x', number: 'x', gender: 'x' }, N('nom', 'sg', 'm', 'pron', 'rel'), N('dat', 'sg', 'f', 'pron', 'rel')],
   Schweiz: [N('nom', 'sg', 'x'), N('gen', 'sg', 'x'), N('dat', 'sg', 'x'), N('acc', 'sg', 'x')],
   mit: [{ lemma: 'm', pos: 'prep', governs: 'dat' }, { lemma: 'm', pos: 'adv', degree: 'pos' }],
   zwei: [{ lemma: 'z', pos: 'num', case: 'x', number: 'x', gender: 'x' }],
@@ -43,6 +43,7 @@ const LEX = {
   weiß: [V('3', 'sg', 'pres', 'ind', 'wissen'), V('1', 'sg', 'pres', 'ind', 'wissen'), { lemma: 'w', pos: 'adj', case: 'x', number: 'x', gender: 'x', infl: 'x', degree: 'pos' }],
   Mann: [N('nom', 'sg', 'm'), N('dat', 'sg', 'm'), N('acc', 'sg', 'm')],
   steht: [V('3', 'sg'), V('2', 'pl')],
+  der_rel: [],
   dort: [{ lemma: 'd', pos: 'adv', degree: 'pos' }],
   Der: ART([['nom', 'sg', 'm'], ['gen', 'sg', 'f'], ['dat', 'sg', 'f'], ['gen', 'pl', 'x']]),
   Sie: [N('nom', 'sg', 'f', 'pron', 'sie'), N('acc', 'sg', 'f', 'pron', 'sie'), N('nom', 'pl', 'x', 'pron', 'sie'), N('acc', 'pl', 'x', 'pron', 'sie')],
@@ -127,11 +128,43 @@ describe('D: new rules', () => {
   });
   it('D3: a relative pronoun takes gender and number from its antecedent (Der Mann, der dort steht)', async () => {
     const b = await read('Der Mann, der dort steht, ist nett.');
-    expect(R(at(b, 2))).toEqual(expect.arrayContaining(['det nom sg m']));
+    expect(R(at(b, 2))).toEqual(expect.arrayContaining(['pron nom sg m']));
     expect(R(at(b, 2)).every((r) => /sg m/.test(r) || r === 'det')).toBe(true);
   });
   it('D5: a numeral above one makes the phrase plural (Er sieht zwei Hunde → not the old dative singular)', async () => {
     const b = await read('Er sieht zwei Hunde.');
     expect(R(at(b, 3)).some((r) => r.includes('sg'))).toBe(false);
+  });
+});
+
+describe('open points after the first pass', () => {
+  const L2 = {
+    ...LEX,
+    Wegen: [{ lemma: 'w', pos: 'prep', governs: 'gen' }], bleiben: [V('0', 'x', 'x', 'inf', 'b'), V('1', 'pl', 'pres', 'ind', 'b'), V('3', 'pl', 'pres', 'ind', 'b')],
+    wir: [N('nom', 'pl', 'x', 'pron', 'wir')], zu: [{ lemma: 'z', pos: 'prep', governs: 'dat' }, { lemma: 'z', pos: 'particle' }],
+    Hause: [N('dat', 'sg', 'n')],
+    feiern: [V('1', 'pl'), V('3', 'pl'), V('0', 'x', 'x', 'inf', 'f')], den: ART([['acc', 'sg', 'm'], ['dat', 'pl', 'x']]),
+    Tag: [N('nom', 'sg', 'm'), N('dat', 'sg', 'm'), N('acc', 'sg', 'm')],
+    Deutschen: [N('gen', 'sg', 'f', 'noun', 'dieDeutsche'), N('gen', 'pl', 'f', 'noun', 'dieDeutsche'), N('dat', 'sg', 'f', 'noun', 'dieDeutsche')],
+    deutschen: [N('gen', 'sg', 'f', 'adj', 'deutsch', { infl: 'weak', degree: 'pos' }), N('dat', 'sg', 'f', 'adj', 'deutsch', { infl: 'weak', degree: 'pos' }), N('gen', 'pl', 'x', 'adj', 'deutsch', { infl: 'weak', degree: 'pos' })],
+    Einheit: [N('nom', 'sg', 'f'), N('gen', 'sg', 'f'), N('dat', 'sg', 'f'), N('acc', 'sg', 'f')],
+  };
+  const lx2 = { lookupAll: async (keys) => new Map(keys.map((k) => [k, L2[k] ?? []])) };
+  async function read2(text) { const s = createState({ text, lexicon: lx2, lang: de }); await s.load(); return s.blocks(); }
+  it('zu Hause does not stop the lone verb from being finite (bleiben wir zu Hause)', async () => {
+    const b = await read2('Wegen bleiben wir zu Hause.');
+    expect(R(b[1]).every((r) => r.startsWith('verb') && !r.includes('inf'))).toBe(true);
+  });
+  it('a relative pronoun directly before a word that cannot start a noun phrase is the pronoun (der dort steht)', async () => {
+    const b = await read('Der Mann, der dort steht, ist nett.');
+    expect(R(b[2]).every((r) => r.startsWith('pron') || r === 'det')).toBe(true);
+    expect(R(b[2])).toContain('pron nom sg m');
+  });
+  it('a capitalised word between an article and a noun is read as an adjective too (der Deutschen Einheit)', async () => {
+    const b = await read2('Wir feiern den Tag der Deutschen Einheit.');
+    // dative stays open until verb valency (feiern takes no dative object) is a rule: CL10
+    expect(R(b[6])).toEqual(['noun dat sg f', 'noun gen sg f']);
+    expect(R(b[5])).toEqual(['adj dat sg f', 'adj gen sg f']);
+    expect(R(b[4])).toEqual(['det dat sg f', 'det gen sg f']);
   });
 });
