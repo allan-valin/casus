@@ -7,7 +7,8 @@
   import Speaker from './Speaker.svelte';
   let { lang, random = Math.random, voice = null, shuffle: shuffleDefault = true } = $props();
   const { ROWS, createGame, createGrid } = lang.game;
-  let rows = $state(['α-ε']);
+  // every row ticked to start (Allan, 2026-10-18); select all / unselect all beside them
+  let rows = $state(ROWS.map((r) => r.id));
   let mode = $state('sound');
   let view = $state('grid');
   let shuffle = $state(shuffleDefault);
@@ -27,8 +28,9 @@
   let streak = $state(0);
   let single = $state(null);
 
+  function setAll(on) { rows = on ? ROWS.map((r) => r.id) : []; restart(); }
   function restart() {
-    if (rows.length === 0) return;
+    if (rows.length === 0) { cells = []; return; }
     if (view === 'grid') {
       grid = createGrid({ rows, mode, random, shuffle });
       cells = grid.cells.map((c) => ({ ...c }));
@@ -70,6 +72,7 @@
   <p class="hint">{view === 'grid' ? t('game.hint.grid') : t('game.hint.single')}</p>
   <fieldset class="rows">
     <legend>{t('game.rows')}</legend>
+    <div class="row-actions"><button type="button" class="rows-all" onclick={() => setAll(true)}>{t('game.rowsAll')}</button><button type="button" class="rows-none" onclick={() => setAll(false)}>{t('game.rowsNone')}</button></div>
     <div class="row-group">
       {#each ROWS.filter((r) => !r.capital && r.id !== 'breathings') as r (r.id)}
         <label><input type="checkbox" value={r.id} bind:group={rows} onchange={restart}> {r.items.map((i) => i.glyph).join(' ')}</label>
@@ -162,4 +165,6 @@
   .answer { font: inherit; font-size: 1.2rem; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; min-width: 12em; }
   .feedback { text-align: center; min-height: 1.4em; margin: 0; font-weight: 600; }
   .score { text-align: center; color: var(--ink-2); margin: 0; }
+  .row-actions { display: flex; gap: 6px; margin-bottom: 6px; }
+  .row-actions button { font: inherit; font-size: 0.9em; padding: 3px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); color: var(--ink); cursor: pointer; }
 </style>
