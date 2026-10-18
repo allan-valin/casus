@@ -7,7 +7,7 @@ import { tokenize } from './tokenize.js';
 import { GOVERNMENT } from './prepositions.js';
 import { GREEK_INVENTORY } from './inventory.js';
 import { GREEK_ERAS } from './eras.js';
-import { ROWS, LETTERS, createGame } from './game.js';
+import { ROWS, LETTERS, createGame, createGrid } from './game.js';
 
 const gov = (blocks) => governmentStage(blocks, GOVERNMENT);
 const agr = (blocks) => agreementStage(blocks, GREEK_INVENTORY);
@@ -30,5 +30,5 @@ export const greek = {
   dataPath: '/data/grc',
   samplesPath: '/samples/grc',
   voice: { espeak: 'grc' },
-  game: { ROWS, LETTERS, createGame },
+  game: { ROWS, LETTERS, createGame, createGrid },
 };
