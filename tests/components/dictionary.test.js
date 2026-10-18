@@ -134,6 +134,18 @@ describe('Dictionary speaker (languages plan Task 7)', () => {
     await fireEvent.click(button);
     expect(speak).toHaveBeenCalledWith('rosa');
   });
+  it('says so in visible text when speaking fails (touch screens show no tooltips)', async () => {
+    const reader = await readerWith('Rosa.');
+    const onspoke = vi.fn();
+    const voice = { tier: async () => 'espeak', speak: vi.fn(async () => { throw new Error('no voice for la'); }) };
+    const { container } = render(Dictionary, { block: reader.blocks[0], reader, onclose: () => {}, voice, onspoke });
+    await new Promise((r) => setTimeout(r, 0));
+    await fireEvent.click(container.querySelector('button.speaker'));
+    await new Promise((r) => setTimeout(r, 0));
+    expect(container.querySelector('.voice-note').textContent).toMatch(/no voice/i);
+    expect(onspoke).toHaveBeenCalledWith('rosa', null);
+    expect(container.querySelector('button.speaker').disabled).toBe(false);   // a retry stays possible
+  });
   it('disables the speaker with a note when there is no voice', async () => {
     const reader = await readerWith('Rosa.');
     const voice = { tier: async () => null, speak: vi.fn() };
@@ -142,6 +154,7 @@ describe('Dictionary speaker (languages plan Task 7)', () => {
     const button = container.querySelector('button.speaker');
     expect(button.disabled).toBe(true);
     expect(button.title).toMatch(/no voice/i);
+    expect(container.querySelector('.voice-note').textContent).toMatch(/no voice/i);
   });
 });
 

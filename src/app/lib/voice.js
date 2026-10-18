@@ -40,44 +40,48 @@ export async function playPcm(audio, sampleRate) {
   await new Promise((resolve) => { source.onended = resolve; source.start(); });
 }
 
-export function createVoice({ bcp47, espeakVoice, synth = globalThis.speechSynthesis ?? null, loadEspeak = loadEspeakFromCdn, play = playPcm }) {
-  let engine = null;
+export function createVoice({ bcp47, espeakVoice, synth = globalThis.speechSynthesis ?? null, loadEspeak = loadEspeakFromCdn, play = playPcm, timeoutMs = 30000 }) {
+  // The tier is decided without downloading anything: espeak-ng (24 MB) loads on the first speak only
+  // (review finding: deciding it on mount downloaded it whenever an entry opened).
   let engineLoad = null;
-  let decided = null;
-
   function browserVoice() {
     if (!synth?.getVoices) return null;
     const lang = bcp47.toLowerCase();
     return synth.getVoices().find((v) => v.lang?.toLowerCase() === lang || v.lang?.toLowerCase().startsWith(`${lang}-`)) ?? null;
   }
-  async function espeak() {
-    if (!espeakVoice) return null;
-    engineLoad ??= loadEspeak().then((e) => { engine = e; return e; }, () => null);
-    return engineLoad;
-  }
+  // Chrome lists no voices on the first call; they arrive with voiceschanged: listeners re-ask tier()
+  const listeners = new Set();
+  synth?.addEventListener?.('voiceschanged', () => { for (const fn of listeners) fn(); });
+  function onchange(fn) { listeners.add(fn); return () => listeners.delete(fn); }
   async function tier() {
-    if (decided !== null) return decided || null;
-    if (browserVoice()) decided = 'browser';
-    else decided = (await espeak()) ? 'espeak' : false;
-    return decided || null;
+    if (browserVoice()) return 'browser';
+    return espeakVoice ? 'espeak' : null;
+  }
+  function withTimeout(p) {
+    return Promise.race([p, new Promise((_, reject) => setTimeout(() => reject(new Error('timed out')), timeoutMs))]);
+  }
+  async function engine() {
+    engineLoad ??= withTimeout(loadEspeak());
+    try { return await engineLoad; } catch (e) { engineLoad = null; throw new Error(`no voice for ${bcp47}: espeak-ng could not be loaded (${e.message})`); }
   }
   async function speak(text) {
-    const which = await tier();
-    if (which === 'browser') {
-      const v = browserVoice();
-      const u = new SpeechSynthesisUtterance(text);
-      u.voice = v;
-      u.lang = v.lang;
-      synth.cancel?.();
-      synth.speak(u);
+    const v = browserVoice();
+    if (v) {
+      await new Promise((resolve, reject) => {
+        const u = new SpeechSynthesisUtterance(text);
+        u.voice = v;
+        u.lang = v.lang;
+        u.onend = () => resolve();
+        u.onerror = (e) => reject(new Error(e?.error ?? 'speech failed'));
+        synth.cancel?.();
+        synth.speak(u);
+      });
       return;
     }
-    if (which === 'espeak') {
-      const { audio, sampleRate } = await engine.synthesize(text, espeakVoice);
-      await play(audio, sampleRate);
-      return;
-    }
-    throw new Error(`no voice for ${bcp47}`);
+    if (!espeakVoice) throw new Error(`no voice for ${bcp47}`);
+    const e = await engine();
+    const { audio, sampleRate } = await e.synthesize(text, espeakVoice);
+    await play(audio, sampleRate);
   }
-  return { tier, speak };
+  return { tier, speak, onchange };
 }

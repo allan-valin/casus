@@ -212,7 +212,7 @@
     </section>
 
     {#if openBlock}
-      <Dictionary block={openBlock} {reader} onclose={() => (open = null)} {voice} onspoke={(word, tier) => say('act.spoke', { word, tier })} />
+      <Dictionary block={openBlock} {reader} onclose={() => (open = null)} {voice} onspoke={(word, tier) => (tier ? say('act.spoke', { word, tier }) : say('act.spokeFailed', { word }, 'err'))} />
     {/if}
   {/if}
 
