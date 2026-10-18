@@ -7,17 +7,31 @@
   import { drillsPath } from '../lib/route.js';
   import Game from './Game.svelte';
   import EndingsDrill from './EndingsDrill.svelte';
+  import ChoiceDrill from './ChoiceDrill.svelte';
   import Overlay from './Overlay.svelte';
   import CheatSheet from './CheatSheet.svelte';
-  let { lang, voice = null, loadModels, navigate, random = Math.random } = $props();
+  let { lang, voice = null, loadData, loadParadigm = null, navigate, random = Math.random } = $props();
 
   const NOMINAL = new Set(['noun', 'adj', 'det', 'pron']);
-  const drills = $derived([...(lang.game ? ['letters'] : []), 'nouns', 'verbs']);
+  const drills = $derived([...(lang.game ? ['letters'] : []), 'nouns', 'verbs', 'words', 'phrases']);
   let chosen = $state(null);
   const drill = $derived(chosen && drills.includes(chosen) ? chosen : drills[0]);
   let models = $state([]);
   let cheat = $state(false);
-  onMount(() => { loadModels().then((m) => { models = m ?? []; }).catch(() => { models = []; }); });
+  let frequency = $state([]);
+  let phrases = $state([]);
+  const load = (name, set) => loadData(name).then((x) => set(x ?? [])).catch(() => set([]));
+  onMount(() => { load('drills', (x) => { models = x; }); load('frequency', (x) => { frequency = x; }); load('phrases', (x) => { phrases = x; }); });
+  // frequent words: a rank range and a direction
+  const RANGES = [[1, 200], [201, 500], [501, 1000]];
+  let range = $state('1-200');
+  let direction = $state('meaning');
+  const ranges = $derived(RANGES.filter(([a]) => a <= Math.max(1, frequency.length)).map(([a, b]) => `${a}-${Math.min(b, frequency.length || b)}`));
+  const inRange = $derived.by(() => { const [a, b] = range.split('-').map(Number); return frequency.filter((f) => f.rank >= a && f.rank <= b); });
+  const wordItems = $derived(inRange.map((f) => (direction === 'meaning' ? { prompt: f.w, answer: f.en } : { prompt: f.en, answer: f.w })));
+  // phrases: everyday phrases, idioms, proverbs, or all
+  let kind = $state('all');
+  const phraseItems = $derived(phrases.filter((p) => kind === 'all' || p.kind === kind).map((p) => ({ prompt: p.p, answer: p.en, lit: p.lit, kind: p.kind })));
   const nouns = $derived(models.filter((m) => NOMINAL.has(m.pos)));
   const verbs = $derived(models.filter((m) => m.pos === 'verb'));
   const withDrills = LANGUAGES;          // every shipped language has at least the endings drills
@@ -41,15 +55,34 @@
   <p class="hint">{t(`drills.${drill}.hint`)}</p>
   {#if cheat}
     <Overlay onclose={() => { cheat = false; }} label={t('drills.cheatsheet')} wide>
-      <CheatSheet {lang} {drill} models={drill === 'verbs' ? verbs : nouns} />
+      <CheatSheet {lang} {drill} models={drill === 'verbs' ? verbs : nouns} words={inRange} phrases={phrases.filter((p) => kind === 'all' || p.kind === kind)} />
     </Overlay>
   {/if}
   {#if drill === 'letters'}
     <Game {lang} {voice} />
+  {:else if drill === 'words'}
+    <div class="options">
+      <label>{t('words.range')}
+        <select class="word-range" bind:value={range}>{#each ranges as r}<option value={r}>{r.replace('-', '–')}</option>{/each}</select>
+      </label>
+      <label>{t('words.direction')}
+        <select class="word-direction" bind:value={direction}><option value="meaning">{t('words.toMeaning')}</option><option value="word">{t('words.toWord')}</option></select>
+      </label>
+    </div>
+    {#key `${range}|${direction}|${frequency.length}`}<ChoiceDrill items={wordItems} {random} />{/key}
+  {:else if drill === 'phrases'}
+    <div class="options">
+      <label>{t('phrases.kind')}
+        <select class="phrase-kind" bind:value={kind}>
+          {#each ['all', 'phrase', 'idiom', 'proverb'] as k}<option value={k}>{t(`phrases.${k}`)} ({k === 'all' ? phrases.length : phrases.filter((p) => p.kind === k).length})</option>{/each}
+        </select>
+      </label>
+    </div>
+    {#key `${kind}|${phrases.length}`}<ChoiceDrill items={phraseItems} {random} />{/key}
   {:else if drill === 'nouns'}
-    {#key 'nouns'}<EndingsDrill {lang} models={nouns} {random} />{/key}
+    {#key 'nouns'}<EndingsDrill {lang} models={nouns} {random} {loadParadigm} />{/key}
   {:else}
-    {#key 'verbs'}<EndingsDrill {lang} models={verbs} {random} />{/key}
+    {#key 'verbs'}<EndingsDrill {lang} models={verbs} {random} {loadParadigm} />{/key}
   {/if}
 </section>
 
@@ -62,4 +95,6 @@
   .drill-tab { font: inherit; padding: 6px 14px; border: 1.5px solid var(--line); border-radius: 999px; background: var(--panel); color: var(--ink); cursor: pointer; }
   .drill-tab.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
   .hint { color: var(--ink-2); }
+  .options { display: flex; flex-wrap: wrap; gap: 12px; margin: 6px 0; }
+  .options select { max-width: 100%; }
 </style>

@@ -52,6 +52,21 @@ The preposition table (`government.json`) follows Smyth's *Greek Grammar* (publi
 kaikki.org, licensed CC BY-SA 4.0 and the GFDL; the contributors are the editors of the English Wiktionary.
 Built by `tools/build_lang.py de`. The preposition table follows the Duden *Grammatik*.
 
+## Drills: phrases, sayings and frequent words — CC BY-SA
+
+- **Phrases, idioms and proverbs** (`data/<code>/phrases.json`): multi-word entries of the English Wiktionary
+  (via wiktextract / kaikki.org), CC BY-SA 4.0, with their meanings; the word-by-word readings come from the
+  dictionaries above.
+- **Latin and Greek core vocabularies** (`data/la/frequency.json`, `data/grc/frequency.json`): Dickinson
+  College Commentaries, *Latin Core Vocabulary* and *Greek Core Vocabulary* (https://dcc.dickinson.edu),
+  published as CC BY-SA like the rest of DCC. The page states no separate licence for the lists; they are
+  used here with attribution under that licence.
+- **German frequency** (`data/de/frequency.json`): Hermit Dave, *FrequencyWords* (OpenSubtitles 2018, de_50k),
+  https://github.com/hermitdave/FrequencyWords, content CC BY-SA 4.0; word forms counted under their
+  dictionary word by `tools/build_wordlists.mjs`.
+- **Model words and their glosses** for the endings drills: chosen and written for Casus
+  (`tools/build_drills.py`).
+
 ## Speech — espeak-ng (GPL-3.0)
 
 When the browser has no voice for a language, the speaker button loads espeak-ng compiled to

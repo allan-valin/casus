@@ -5,9 +5,11 @@
   import { t, ui } from '../lib/i18n.svelte.js';
   import { drillTables, createEndingsGrid } from '../lib/endings.js';
   import { displayForm } from '../lib/entry.js';
-  let { lang, models, random = Math.random } = $props();
+  let { lang, models, random = Math.random, loadParadigm = null } = $props();
 
   let wordIndex = $state(0);
+  let random_ = $state(null);          // a random word of the model's table, or null for the model itself
+  let loading = $state(false);
   let tableIndex = $state(0);
   let grid = null;
   let cells = $state([]);
@@ -15,7 +17,9 @@
   let typed = $state({});
   let note = $state('');
 
-  const model = $derived(models[wordIndex] ?? null);
+  const model = $derived(random_ ?? models[wordIndex] ?? null);
+  const base = $derived(models[wordIndex] ?? null);
+  const randomTitle = $derived(base?.irregular ? t('drill.irregular') : base?.pool?.length ? t('drill.random.title', { n: base.pool.length }) : t('drill.noPool'));
   const tables = $derived(model ? drillTables(model, lang) : []);
   const table = $derived(tables[tableIndex] ?? null);
   const glossOf = (m) => (typeof m.gloss === 'string' ? m.gloss : (m.gloss?.[ui.lang] ?? m.gloss?.en ?? ''));
@@ -35,13 +39,19 @@
   }
   $effect(() => { void table; start(); });
 
-  function pick(i) { wordIndex = i; tableIndex = 0; }
-  function another() {
-    if (models.length < 2) { start(); return; }
-    let i = wordIndex;
-    while (i === wordIndex) i = Math.floor(random() * models.length);
-    pick(i);
+  function pick(i) { wordIndex = i; tableIndex = 0; random_ = null; }
+  // "Random word" (Allan, 2026-10-18): a dictionary word that follows the chosen model's table exactly (the build
+  // matched them, tools/build_drills.py); irregular models are learnt as they are
+  async function randomWord() {
+    const base = models[wordIndex];
+    if (!base?.pool?.length || !loadParadigm) return;
+    const [id, dict_form, gloss] = base.pool[Math.floor(random() * base.pool.length)];
+    loading = true;
+    const rows = await loadParadigm(id).catch(() => null);
+    loading = false;
+    if (rows) { random_ = { id, dict_form, gloss: { en: gloss }, pos: base.pos, rows, like: base.dict_form }; tableIndex = 0; }
   }
+
   const at = (r, c) => cells.findIndex((x) => x.row === r && x.col === c);
   function check(i) {
     if (!grid || i < 0) return;
@@ -63,7 +73,8 @@
         {#each models as m, i}<option value={i}>{displayForm(m.dict_form)}{glossOf(m) ? ` — ${glossOf(m)}` : ''}</option>{/each}
       </select>
     </label>
-    <button class="another" onclick={another}>{t('drill.another')}</button>
+    <button class="random-word" onclick={randomWord} disabled={!base?.pool?.length || loading} title={randomTitle}>{t('drill.random')}</button>
+    {#if random_}<button class="back-to-model" onclick={() => { random_ = null; tableIndex = 0; }}>{t('drill.backTo', { word: displayForm(base.dict_form).split(',')[0] })}</button>{/if}
     {#if tables.length > 1}
       <label>{t('drill.table')}
         <select class="drill-table-select" bind:value={tableIndex}>
@@ -72,7 +83,7 @@
       </label>
     {/if}
   </div>
-  <p class="drill-word"><b>{displayForm(model.dict_form)}</b>{#if glossOf(model)} <span class="gloss">{glossOf(model)}</span>{/if}</p>
+  <p class="drill-word"><b>{displayForm(model.dict_form)}</b>{#if glossOf(model)} <span class="gloss">{glossOf(model)}</span>{/if}{#if model.like} <span class="like">{t(model.pos === 'verb' ? 'drill.likeVerb' : 'drill.like', { word: displayForm(model.like).split(',')[0] })}</span>{/if}{#if base?.irregular && !random_} <span class="like">{t('drill.irregularShort')}</span>{/if}</p>
   {#if table}
     <div class="table-scroll"><table class="drill-table">
       <thead><tr><th></th>{#each table.cols as c}<th>{colName(c)}</th>{/each}</tr></thead>
@@ -112,6 +123,7 @@
   select, button { font: inherit; padding: 6px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); }
   button:hover { border-color: var(--accent); }
   .drill-word { font-size: 1.15rem; margin: 8px 0; }
+  .like { color: #6b4e9b; font-size: 0.85em; margin-left: 0.5em; }
   .gloss { color: var(--ink-2); font-style: italic; margin-left: 0.5em; }
   .table-scroll { overflow-x: auto; max-width: 100%; }
   .drill-table { border-collapse: collapse; }

@@ -63,7 +63,8 @@ still comes from `src/lib/`. The page is one column of numbered cards:
 eras, data and sample paths, voice); colours and legend are generated from the inventory. A bar at the top
 lists the shipped languages; the path selects one (`/` Latin, `/<code>/`, `/<code>/drills/` for its drills,
 `/drills/` for Latin's: letters for non-Latin alphabets, noun and verb endings for every language; old
-`/<code>/game/` links still work; model words from `tools/build_drills.py <code>`). Design: `docs/superpowers/specs/2026-10-18-casus-languages-design.md`; plan:
+`/<code>/game/` links still work; model words and their random-word pools from `tools/build_drills.py <code>`;
+frequent words and phrases from `python3 tools/build_wordlists.py <code>` then `node tools/build_wordlists.mjs <code>`). Design: `docs/superpowers/specs/2026-10-18-casus-languages-design.md`; plan:
 `docs/superpowers/plans/2026-10-18-casus-languages-phase1-2.md`. Every entry now shows the **IPA**
 (Latin's from Wiktionary, the variant matching the dictionary period: Classical or Ecclesiastical), a
 **Wiktionary link**, and a **🔊 speaker**: the browser's own voice for the language, else espeak-ng

@@ -5,7 +5,7 @@
   import { frontDecode } from '../lib/paradigm.js';
   import { displayForm } from '../lib/entry.js';
   import Paradigm from './Paradigm.svelte';
-  let { lang, drill, models = [] } = $props();
+  let { lang, drill, models = [], words = [], phrases = [] } = $props();
   const glossOf = (m) => (typeof m.gloss === 'string' ? m.gloss : (m.gloss?.[ui.lang] ?? m.gloss?.en ?? ''));
   const romanize = lang.script?.romanize ?? null;
 </script>
@@ -20,6 +20,16 @@
           <tr class="letter"><td class="glyph">{l.lower}</td><td class="glyph">{l.upper}</td><td>{l.names[0]}</td><td>{l.sounds.join(', ')}</td></tr>
         {/each}
       </tbody>
+    </table>
+  {:else if drill === 'words'}
+    <table>
+      <thead><tr><th>#</th><th>{t('cheat.word')}</th><th>{t('cheat.meaning')}</th></tr></thead>
+      <tbody>{#each words as w (w.rank)}<tr class="word"><td>{w.rank}</td><td class="w">{w.w}{#if romanize} <span class="roman">{romanize(w.w)}</span>{/if}</td><td>{w.en}</td></tr>{/each}</tbody>
+    </table>
+  {:else if drill === 'phrases'}
+    <table>
+      <thead><tr><th>{t('cheat.phrase')}</th><th>{t('cheat.meaning')}</th><th>{t('quiz.literal')}</th></tr></thead>
+      <tbody>{#each phrases as p (p.p)}<tr class="phrase"><td class="w">{p.p}</td><td>{p.en}</td><td class="lit">{p.lit.map(([w, g]) => `${w}: ${g || '—'}`).join(' · ')}</td></tr>{/each}</tbody>
     </table>
   {:else}
     {#each models as m (m.id)}
@@ -40,5 +50,7 @@
   table { border-collapse: collapse; }
   th, td { border: 1px solid var(--line-soft); padding: 3px 10px; text-align: left; }
   th { background: var(--panel-hi); color: var(--ink-2); }
+  .w { font-family: Georgia, serif; font-size: 1.05em; }
+  .lit { color: var(--ink-2); font-size: 0.9em; }
   .glyph { font-size: 1.3em; font-family: Georgia, serif; }
 </style>

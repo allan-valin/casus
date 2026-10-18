@@ -179,7 +179,8 @@
   </header>
 
   {#if route.view === 'drills'}
-    <Drills {lang} {voice} loadModels={() => fetchImpl(`${DATA}/drills.json`).then((r) => (r.ok ? r.json() : []))} navigate={(p) => { location.href = withBase(p); }} />
+    <Drills {lang} {voice} loadData={(name) => fetchImpl(`${DATA}/${name}.json`).then((r) => (r.ok ? r.json() : []))}
+      loadParadigm={(id) => fetchImpl(`${DATA}/paradigms/${Number(id) % 512}.json`).then((r) => (r.ok ? r.json() : {})).then((b) => b[String(id)] ?? null)} navigate={(p) => { location.href = withBase(p); }} />
   {:else}
   <section class="card">
     <h2><span class="step">1</span> {t('text.heading')}</h2>
