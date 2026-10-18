@@ -6,12 +6,12 @@ import App from '../../src/app/App.svelte';
 beforeAll(() => { Element.prototype.getAnimations ??= () => []; });
 
 const files = {
-  '/data/manifest.json': { format: 2, built: '2026-10-02', shards: { ro: {}, bo: {} } },
-  '/data/forms/ro.json': { rosa: [[1, 'nnsf', 'nbsf']] },
-  '/data/forms/bo.json': { bona: [[2, 'ngsf']] }, // genitive: agrees with nothing, so Rosa stays nom/abl
-  '/data/lemmas.json': { 1: { headword: 'rosa', dict_form: 'rosa, -ae f.', pos: 'noun', decl: 1, gender: 'f', age: 'X', freq: 'A' }, 2: { headword: 'bona', dict_form: 'bona, -ae f.', pos: 'noun', decl: 1, gender: 'f', age: 'X', freq: 'A' } },
-  '/data/glosses.en.json': { 1: 'rose', 2: 'good' },
-  '/samples/index.json': [],
+  '/data/la/manifest.json': { format: 2, built: '2026-10-02', shards: { ro: {}, bo: {} } },
+  '/data/la/forms/ro.json': { rosa: [[1, 'nnsf', 'nbsf']] },
+  '/data/la/forms/bo.json': { bona: [[2, 'ngsf']] }, // genitive: agrees with nothing, so Rosa stays nom/abl
+  '/data/la/lemmas.json': { 1: { headword: 'rosa', dict_form: 'rosa, -ae f.', pos: 'noun', decl: 1, gender: 'f', age: 'X', freq: 'A' }, 2: { headword: 'bona', dict_form: 'bona, -ae f.', pos: 'noun', decl: 1, gender: 'f', age: 'X', freq: 'A' } },
+  '/data/la/glosses.en.json': { 1: 'rose', 2: 'good' },
+  '/samples/la/index.json': [],
 };
 function fetchImpl(url) {
   const body = files[url];
@@ -44,6 +44,24 @@ describe('App', () => {
     expect(container.querySelector('.dictionary').textContent).toContain('rosa, -ae f.');
   });
 
+  it('reads an arrangement saved before languages existed (casus:<hash>) into the Latin key', async () => {
+    const s = storage();
+    const first = render(App, { fetchImpl, storage: s, ...immediate });
+    await tick(); await tick();
+    await readPasted(first.container, 'Rosa bona.');
+    await fireEvent.click(first.container.querySelector('.pill'));
+    await tick();
+    await fireEvent.click(first.container.querySelectorAll('button.pin')[1]);
+    await tick();
+    const [key, value] = [...s.map.entries()][0];
+    const old = storage({ [key.replace('casus:la:', 'casus:')]: value });
+    first.unmount();
+    const second = render(App, { fetchImpl, storage: old, ...immediate });
+    await tick(); await tick();
+    await readPasted(second.container, 'Rosa bona.');
+    expect(second.container.querySelector('.pill').classList.contains('pinned')).toBe(true);
+  });
+
   it('autosaves and restores pins by the text hash', async () => {
     const s = storage();
     const first = render(App, { fetchImpl, storage: s, ...immediate });
@@ -53,7 +71,7 @@ describe('App', () => {
     await tick();
     await fireEvent.click(first.container.querySelectorAll('button.pin')[1]);
     await tick();
-    expect([...s.map.keys()][0]).toMatch(/^casus:[0-9a-f]{8}$/);
+    expect([...s.map.keys()][0]).toMatch(/^casus:la:[0-9a-f]{8}$/);
     first.unmount();
 
     const second = render(App, { fetchImpl, storage: s, ...immediate });
@@ -127,7 +145,7 @@ describe('App passage switching', () => {
     let release;
     const slowOnce = { ...files };
     const fetchSlow = (url) => {
-      if (url === '/data/forms/ro.json' && release === undefined) {
+      if (url === '/data/la/forms/ro.json' && release === undefined) {
         return new Promise((resolve) => { release = () => resolve({ ok: true, status: 200, json: async () => structuredClone(files[url]) }); });
       }
       return fetchImpl(url);
@@ -203,7 +221,7 @@ describe('App UI language flag (decided 2026-10-18)', () => {
 describe('App activity log (copied from Desembarque, feedback E)', () => {
   it('writes a line for the dictionary, the reading, a pin and an export; the busy bar shows while a request is open', async () => {
     let release;
-    const slow = (url) => (url === '/data/forms/bo.json' && !release)
+    const slow = (url) => (url === '/data/la/forms/bo.json' && !release)
       ? new Promise((r) => { release = () => r({ ok: true, status: 200, json: async () => structuredClone(files[url]) }); })
       : fetchImpl(url);
     const { container } = render(App, { fetchImpl: slow, storage: storage(), ...immediate });
@@ -223,5 +241,15 @@ describe('App activity log (copied from Desembarque, feedback E)', () => {
     await fireEvent.click(container.querySelectorAll('button.pin')[1]);
     await tick();
     expect(log().at(-1)).toMatch(/Rosa pinned as noun abl sg f/);
+  });
+});
+
+describe('App language bar (languages design §4)', () => {
+  it('lists the shipped languages with Latin current at the root', async () => {
+    const { container } = render(App, { fetchImpl, storage: storage(), ...immediate });
+    await tick(); await tick();
+    const current = container.querySelector('nav.languages a[aria-current=page]');
+    expect(current.textContent).toMatch(/Latin/);
+    expect(current.getAttribute('href')).toBe('/');
   });
 });

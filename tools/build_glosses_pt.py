@@ -28,7 +28,7 @@ def build(src: Path, out: Path) -> tuple[int, float, float]:
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--src", default=DEFAULT_SRC, type=Path)
-    ap.add_argument("--out", default="data", type=Path)
+    ap.add_argument("--out", default="data/la", type=Path)
     args = ap.parse_args(argv)
     if not args.src.exists():
         print(f"no Portuguese extract at {args.src}; run tools/fetch_glosses_pt.sh", file=sys.stderr)

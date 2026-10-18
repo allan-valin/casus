@@ -11,6 +11,7 @@ import { LATIN_INVENTORY } from './inventory.js';
 
 export const latin = {
   code: 'la',
+  name: { en: 'Latin', pt: 'Latim' },
   bcp47: 'la',
   wiktionary: 'Latin',
   script: { normalize: normalizeForm, rtl: false, spaced: true },

@@ -3,10 +3,10 @@
   import { t } from '../lib/i18n.svelte.js';
   /* v1 input (spec §10.1): paste, or one of the bundled passages. Samples sit above the text
    * box and are named as demonstration material; the button says what it does (feedback D9, D10). */
-  let { samples = [], onchoose, fetchImpl } = $props();
+  let { samples = [], onchoose, fetchImpl, samplesPath = '/samples/la' } = $props();
   let pasted = $state('');
   async function choose(sample) {
-    const res = await fetchImpl(withBase(`/samples/${sample.file}`));
+    const res = await fetchImpl(withBase(`${samplesPath}/${sample.file}`));
     if (!res.ok) return;
     pasted = '';
     onchoose((await res.text()).trim(), sample.era ?? null);

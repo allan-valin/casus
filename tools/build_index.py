@@ -34,7 +34,7 @@ def _parse_sparse(lines):
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--vendor", default="vendor/whitakers-words", type=Path)
-    ap.add_argument("--out", default="data", type=Path)
+    ap.add_argument("--out", default="data/la", type=Path)
     args = ap.parse_args(argv)
 
     t0 = time.time()

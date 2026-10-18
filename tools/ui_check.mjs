@@ -47,8 +47,8 @@ console.log('after drag (padding grab):', (await dragTo('.pill:has-text("omnis")
 const after = await dragTo('.pool .item.chunk .pill >> nth=0', '.pool .item:last-child');
 console.log('chunk to the end:', after.slice(-3), '| chunks:', await page.$$eval('.chunk', (els) => els.map((e) => e.textContent.trim().replace(/\s+/g, ' '))));
 // a directory URL under /data must not kill the dev server
-const dirStatus = await (await page.request.get(base + '/data/forms')).status();
-console.log('GET /data/forms ->', dirStatus, '| server alive:', (await page.request.get(base + '/data/manifest.json')).ok());
+const dirStatus = await (await page.request.get(base + '/data/la/forms')).status();
+console.log('GET /data/la/forms ->', dirStatus, '| server alive:', (await page.request.get(base + '/data/la/manifest.json')).ok());
 await page.screenshot({ path: `${sc}/casus-2.png` });
 await page.waitForTimeout(500);
 await page.reload();

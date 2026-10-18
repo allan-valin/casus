@@ -2,6 +2,8 @@ import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import { existsSync, statSync, createReadStream, cpSync } from 'node:fs';
 import { join, resolve, sep } from 'node:path';
+import { mkdirSync, copyFileSync } from 'node:fs';
+import { LANGUAGES } from './src/lang/registry.js';
 
 const DATA = resolve('data');
 
@@ -19,6 +21,17 @@ function serveData() {
     },
     closeBundle() {
       if (existsSync(DATA)) cpSync(DATA, resolve('dist/data'), { recursive: true });
+      // one HTML per language route, so a deep link (/grc/, /grc/game/) loads on static hosting
+      const html = resolve('dist/index.html');
+      if (!existsSync(html)) return;
+      for (const l of LANGUAGES) {
+        if (l.path === '/') continue;
+        for (const dir of [l.path, `${l.path.replace(/\/$/, '')}/game/`]) {
+          const out = resolve('dist' + dir);
+          mkdirSync(out, { recursive: true });
+          copyFileSync(html, join(out, 'index.html'));
+        }
+      }
     },
   };
 }

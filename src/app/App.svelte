@@ -13,13 +13,18 @@
   import Legend from './components/Legend.svelte';
   import Help from './components/Help.svelte';
   import PassagePicker from './components/PassagePicker.svelte';
+  import LanguageBar from './components/LanguageBar.svelte';
+  import { getLanguage } from '../lang/registry.js';
+  import { langFromPath } from './lib/route.js';
   import { t, ui, setLang } from './lib/i18n.svelte.js';
   import { createActivity } from './lib/activity.svelte.js';
   import ActivityLog from './components/ActivityLog.svelte';
   import { describeAnalysis } from './lib/colors.js';
   import { partners as partnersOf } from './lib/chunks.js';
 
-  const DATA = withBase('/data');
+  const route = langFromPath(typeof location !== 'undefined' ? location.pathname : '/', import.meta.env?.BASE_URL ?? '/');
+  const lang = getLanguage(route.code);
+  const DATA = withBase(lang.dataPath);
 
   // injected for tests; the browser gets the real ones
   function defaultStorage() {
@@ -54,17 +59,20 @@
         say('act.ready', status.vars, 'ok');
       })
       .catch((e) => { status = { key: 'app.status.none', vars: { error: e.message } }; say('act.noLexicon', { error: e.message }, 'err'); });
-    fetchImpl(withBase('/samples/index.json')).then((r) => (r.ok ? r.json() : [])).then((list) => { samples = list; }).catch(() => {});
+    fetchImpl(withBase(`${lang.samplesPath}/index.json`)).then((r) => (r.ok ? r.json() : [])).then((list) => { samples = list; }).catch(() => {});
   });
 
   async function choose(text, era) {
     if (!lexicon) return;
     const mine = ++generation;
     autosave?.flush();                // the passage being left keeps its last change
-    const key = `casus:${textHash(text)}`;
-    const save = createAutosave({ storage: storage ?? { getItem: () => null, setItem: () => {} }, key, schedule, cancel });
+    const store = storage ?? { getItem: () => null, setItem: () => {} };
+    const key = `casus:${lang.code}:${textHash(text)}`;
+    // arrangements saved before languages existed sit under casus:<hash>; Latin reads them once
+    if (lang.code === 'la' && store.getItem(key) === null && store.getItem(`casus:${textHash(text)}`) !== null) store.setItem(key, store.getItem(`casus:${textHash(text)}`));
+    const save = createAutosave({ storage: store, key, schedule, cancel });
     const saved = restore(save.loaded(), text);
-    const r = createReader({ lexicon, text, saved, onaction: logAction });
+    const r = createReader({ lexicon, text, saved, onaction: logAction, lang });
     if (!saved && era) r.era = era;
     if (!saved) r.glossLang = ui.lang;   // the page language carries the dictionary language with it
     const t0 = Date.now();
@@ -149,7 +157,8 @@
   {#if activity.busy}<div class="busy" role="progressbar" aria-label="loading"></div>{/if}
   <header class="top">
     <div class="brand">
-      <h1>Casus</h1>
+      <h1>Casus <span class="lang-name">· {lang.name?.[ui.lang] ?? ''}</span></h1>
+      <LanguageBar current={lang.code} view={route.view} />
       <p class="tagline">{t('app.tagline')}</p>
     </div>
     <div class="corner">
@@ -168,7 +177,7 @@
 
   <section class="card">
     <h2><span class="step">1</span> {t('text.heading')}</h2>
-    <PassagePicker {samples} onchoose={choose} {fetchImpl} />
+    <PassagePicker {samples} onchoose={choose} {fetchImpl} samplesPath={lang.samplesPath} />
     <p class="status" aria-live="polite">{t(status.key, status.vars)}</p>
   </section>
 
@@ -216,6 +225,8 @@
   main { width: min(1500px, 100% - 2 * var(--gutter)); margin: 0 auto; padding: clamp(10px, 2vw, 24px) 0 40px; display: flex; flex-direction: column; gap: clamp(12px, 1.8vw, 22px); }
   .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
   h1 { margin: 0; font-family: Georgia, serif; font-size: clamp(1.7rem, 1.4rem + 1.2vw, 2.4rem); letter-spacing: 0.01em; }
+  .lang-name { font-size: 0.5em; color: var(--muted); font-family: system-ui, sans-serif; font-weight: 400; }
+  .brand :global(nav.languages) { margin: 8px 0 2px; }
   .tagline { margin: 4px 0 0; color: var(--ink-2); max-width: 60ch; }
   .corner { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
   .exports { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }

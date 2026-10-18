@@ -13,7 +13,7 @@ const fetchImpl = vi.fn(async () => ({ ok: true, text: async () => 'Rosa bona.' 
 describe('PassagePicker', () => {
   it('reads pasted text', async () => {
     const onchoose = vi.fn();
-    const { container } = render(PassagePicker, { samples, onchoose, fetchImpl });
+    const { container } = render(PassagePicker, { samples, onchoose, fetchImpl, samplesPath: '/samples/la' });
     await fireEvent.input(container.querySelector('textarea'), { target: { value: 'Urbs magna.' } });
     await fireEvent.click(container.querySelector('button.read'));
     expect(onchoose).toHaveBeenCalledWith('Urbs magna.', null);
@@ -28,10 +28,10 @@ describe('PassagePicker', () => {
   });
   it('fetches a bundled sample and passes its era along', async () => {
     const onchoose = vi.fn();
-    const { container } = render(PassagePicker, { samples, onchoose, fetchImpl });
+    const { container } = render(PassagePicker, { samples, onchoose, fetchImpl, samplesPath: '/samples/la' });
     await fireEvent.click(container.querySelector('button.sample'));
     await new Promise((r) => setTimeout(r, 0));
-    expect(fetchImpl).toHaveBeenCalledWith('/samples/a.txt');
+    expect(fetchImpl).toHaveBeenCalledWith('/samples/la/a.txt');
     expect(onchoose).toHaveBeenCalledWith('Rosa bona.', 'late');
   });
 });
