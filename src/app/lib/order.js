@@ -42,3 +42,23 @@ export function autoSort(order, blocks) {
   };
   return [...order].sort((a, b) => rank(a) - rank(b) || a - b);
 }
+
+/* Word-order arrangements (feedback C7). S = nominative, V = finite verb, O = accusative;
+ * every other block follows in its current order. Within S, V and O the current order is
+ * kept too, so a hand-made arrangement inside a group survives. */
+export const WORD_ORDERS = ['SVO', 'SOV', 'VSO', 'VOS', 'OVS', 'OSV'];
+
+function role(block) {
+  const key = sortKey(block).replace(/^\?/, '');
+  if (key === 'nom') return 'S';
+  if (key === 'verb') return 'V';
+  if (key === 'acc') return 'O';
+  return 'rest';
+}
+
+export function arrangeBy(order, blocks, pattern) {
+  const byIndex = new Map(blocks.map((b) => [b.token.index, b]));
+  const rank = Object.fromEntries([...pattern].map((r, i) => [r, i]));
+  const rankOf = (index) => rank[role(byIndex.get(index))] ?? pattern.length;
+  return order.map((index, i) => [index, i]).sort((a, b) => rankOf(a[0]) - rankOf(b[0]) || a[1] - b[1]).map(([index]) => index);
+}

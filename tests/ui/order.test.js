@@ -37,3 +37,31 @@ describe('moveItem', () => {
     expect(moveItem([0, 1, 2, 3], [3], 1)).toEqual([0, 3, 1, 2]);            // single, same as move
   });
 });
+
+import { arrangeBy, WORD_ORDERS } from '../../src/app/lib/order.js';
+
+describe('arrangeBy (feedback C7: SVO, SOV, VSO, VOS, OVS, OSV)', () => {
+  const noun = (index, c, extra = {}) => ({ token: { index }, candidates: [{ analysis: { pos: 'noun', case: c, number: 'sg' } }], ...extra });
+  const verb = (index) => ({ token: { index }, candidates: [{ analysis: { pos: 'verb', person: '3', number: 'sg' } }] });
+  const prep = (index) => ({ token: { index }, candidates: [{ analysis: { pos: 'prep', governs: ['abl'] } }] });
+  // "Galliam Caesar cum legione vicit magnam" : O S prep abl V adj(acc)
+  const blocks = [noun(0, 'acc'), noun(1, 'nom'), prep(2), noun(3, 'abl'), verb(4), noun(5, 'acc')];
+  const order = [0, 1, 2, 3, 4, 5];
+
+  it('lists the six orders', () => {
+    expect(WORD_ORDERS).toEqual(['SVO', 'SOV', 'VSO', 'VOS', 'OVS', 'OSV']);
+  });
+  it('puts subject (nominative), verb and object (accusative) in the pattern, each group in text order, the rest after', () => {
+    expect(arrangeBy(order, blocks, 'SVO')).toEqual([1, 4, 0, 5, 2, 3]);
+    expect(arrangeBy(order, blocks, 'SOV')).toEqual([1, 0, 5, 4, 2, 3]);
+    expect(arrangeBy(order, blocks, 'VSO')).toEqual([4, 1, 0, 5, 2, 3]);
+    expect(arrangeBy(order, blocks, 'OSV')).toEqual([0, 5, 1, 4, 2, 3]);
+  });
+  it('an ambiguous block goes by its first reading, as auto-sort does', () => {
+    const amb = { token: { index: 9 }, candidates: [{ analysis: { pos: 'noun', case: 'nom', number: 'sg' } }, { analysis: { pos: 'noun', case: 'abl', number: 'sg' } }] };
+    expect(arrangeBy([9, 4], [amb, verb(4)], 'VSO')).toEqual([4, 9]);
+  });
+  it('is stable: the rest keeps its current (possibly hand-made) order', () => {
+    expect(arrangeBy([3, 2, 5, 4, 1, 0], blocks, 'SVO')).toEqual([1, 4, 5, 0, 3, 2]);
+  });
+});

@@ -130,6 +130,22 @@ describe('BlockPane drag: caret preview, move on release (feedback D17)', () => 
   });
 });
 
+describe('BlockPane word-order buttons (feedback C7)', () => {
+  it('offers the six orders, applies one, and says what S, V and O mean', async () => {
+    const reader = createReader({ lexicon, text: 'Caesar in Galliam magnam.' });
+    await reader.load();
+    const { container } = render(BlockPane, { reader, onhover: () => {}, onopen: () => {} });
+    const buttons = [...container.querySelectorAll('button.word-order')];
+    expect(buttons.map((b) => b.textContent)).toEqual(['SVO', 'SOV', 'VSO', 'VOS', 'OVS', 'OSV']);
+    expect(buttons[0].title).toMatch(/nominative/i);
+    await fireEvent.click(buttons.find((b) => b.textContent === 'OSV'));
+    await tick();
+    // Galliam (acc) and magnam (acc) first, Caesar (nom) next, no verb, then in (function)
+    expect(reader.order).toEqual([2, 3, 0, 1]);
+    expect(container.querySelector('.sort-note').textContent).toMatch(/OSV/);
+  });
+});
+
 describe('BlockPane accessibility', () => {
   it('names the glue buttons for screen readers', async () => {
     const reader = createReader({ lexicon, text: 'Caesar in Galliam magnam.' });

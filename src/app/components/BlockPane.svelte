@@ -11,10 +11,12 @@
   import { gluePairs, partners, items as poolItems } from '../lib/chunks.js';
   import { blockStyle } from '../lib/colors.js';
   import { createDrag, tokenOffset } from '../lib/drag.js';
+  import { WORD_ORDERS } from '../lib/order.js';
 
   let { reader, onhover, onopen, lemmaOf = null } = $props();
   let hovered = $state(null);
   let sorted = $state(false);        // the pool was last arranged by auto-sort
+  let pattern = $state(null);        // the word order last applied (SVO…)
   let pool = $state(null);
 
   const blocks = $derived(reader.blocks);
@@ -72,7 +74,7 @@
     if (was) { suppressClick = true; setTimeout(() => { suppressClick = false; }, 0); }
     const moving = items[r.item];
     if (!moving) return;
-    sorted = false;
+    sorted = false; pattern = null;
     reader.moveItem(moving.indices, tokenOffset(items, r.gap, moving.id));
   }
   function cancel() { clearTimeout(holdTimer); drag.cancel(); sync({ dragging: false }); }
@@ -93,16 +95,22 @@
     const gap = e.key === 'ArrowLeft' ? position - 1 : position + 2;
     if (gap < 0 || gap > items.length) return;
     const moving = items[position];
-    sorted = false;
+    sorted = false; pattern = null;
     reader.moveItem(moving.indices, tokenOffset(items, gap, moving.id));
   }
 </script>
 
 <div class="controls">
   <span class="group-label">Arrange</span>
-  <button class="restore" title="put every block back in the order of the text" onclick={() => { reader.restoreOrder(); sorted = false; }}>restore original order</button>
-  <button class="autosort" title="group blocks by case, each group in text order" onclick={() => { reader.autoSort(); sorted = true; }}>auto-sort by case</button>
+  <button class="restore" title="put every block back in the order of the text" onclick={() => { reader.restoreOrder(); sorted = false; pattern = null; }}>restore original order</button>
+  <button class="autosort" title="group blocks by case, each group in text order" onclick={() => { reader.autoSort(); sorted = true; pattern = null; }}>auto-sort by case</button>
+  <span class="group-label order-label" title="S = subject (nominative), V = verb, O = object (accusative); every other word follows in its current order">word order:</span>
+  {#each WORD_ORDERS as p (p)}
+    <button class="word-order" class:active={pattern === p} title="S = subject (nominative), V = verb, O = object (accusative); the rest follows in its current order"
+            onclick={() => { reader.arrange(p); pattern = p; sorted = false; }}>{p}</button>
+  {/each}
   {#if sorted}<span class="sort-note" aria-live="polite">sorted by case; an ambiguous block goes by its first reading</span>{/if}
+  {#if pattern}<span class="sort-note" aria-live="polite">arranged {pattern}: {[...pattern].map((r) => ({ S: 'subject (nominative)', V: 'verb', O: 'object (accusative)' })[r]).join(' → ')}, then the rest; an ambiguous block goes by its first reading</span>{/if}
   <span class="count" aria-live="polite">{blocks.length} words · {unresolved} ambiguous{unknown ? ` · ${unknown} not in the dictionary` : ''}</span>
 </div>
 
@@ -138,7 +146,10 @@
 <style>
   .controls { display: flex; gap: 8px; margin-bottom: 10px; align-items: center; flex-wrap: wrap; }
   .group-label { color: var(--ink-2); font-size: 0.9rem; font-weight: 600; }
-  .sort-note { font-size: 0.8em; color: var(--muted); }
+  .sort-note { font-size: 0.8em; color: var(--muted); flex-basis: 100%; }
+  .order-label { margin-left: 8px; }
+  .word-order { padding: 4px 8px; min-height: 32px; font-variant: small-caps; letter-spacing: 0.04em; }
+  .word-order.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
   .count { margin-left: auto; font-size: 0.85em; color: var(--muted); }
   .pool { position: relative; display: flex; flex-wrap: wrap; gap: 10px 12px; min-height: 90px; padding: 14px; border: 1.5px dashed var(--line); border-radius: 10px; background: var(--panel); width: 100%; box-sizing: border-box; }
   .pool.dragging { cursor: grabbing; }
