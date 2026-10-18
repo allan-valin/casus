@@ -42,7 +42,7 @@
   let hovered = $state(null);
   let open = $state(null);          // the block whose dictionary is open
   let help = $state(false);
-  let legendOpen = $state(typeof window === 'undefined' || window.innerWidth > 700);   // folded on a phone, open on a monitor
+  let legendOpen = $state(false);   // closed by default to save space (Allan, 2026-10-18)
   let generation = 0;               // choose() calls; a slower, older load must not win
 
   $effect(() => {
@@ -229,7 +229,9 @@
   .status { color: var(--muted); font-size: 0.82rem; margin: 10px 0 0; }
   .block-controls { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
   .legend-box { margin-top: 14px; }
-  .legend-box summary { cursor: pointer; color: var(--ink-2); font-weight: 600; font-size: 0.92rem; padding: 4px 0; }
+  .legend-box summary { cursor: pointer; color: var(--ink); font-weight: 600; font-size: 0.92rem; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); display: inline-block; }
+  .legend-box summary:hover { border-color: var(--accent); }
+  .legend-box[open] summary { border-color: var(--accent); }
   .legend-box :global(.legend) { margin-top: 8px; }
   .busy { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 70; background: linear-gradient(90deg, transparent, var(--accent), transparent); background-size: 40% 100%; animation: slide 1.1s linear infinite; }
   @keyframes slide { from { background-position: -40% 0; } to { background-position: 140% 0; } }

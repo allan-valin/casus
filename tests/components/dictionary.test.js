@@ -31,16 +31,40 @@ describe('Dictionary', () => {
     expect(container.textContent).toContain('rosa, -ae f.');
     expect(container.textContent).toMatch(/1st declension/);
     expect(container.textContent).toContain('rose');
-    expect(container.querySelector('.gloss-lang').textContent).toBe('en');
     expect(container.textContent).toMatch(/medieval/);
     expect(container.textContent).toMatch(/freq B/);
   });
 
-  it('falls back to English with the badge flipped when Portuguese is asked for and missing', async () => {
+  it('offers one button per dictionary that has the word, under the headword, and opens the preferred one (Allan, 2026-10-18)', async () => {
+    const reader = await readerWith('Rosa.', 'pt');
+    reader.lexiconExtras = { ...extras, glosses: { en: { 7: 'rose' }, pt: { 7: 'rosa, roseira' } } };
+    const { container } = render(Dictionary, { block: reader.blocks[0], reader, onclose: () => {} });
+    const tabs = [...container.querySelectorAll('button.dict-tab')];
+    expect(tabs.map((b) => b.dataset.dict)).toEqual(['en', 'pt']);
+    expect(tabs[1].classList.contains('active')).toBe(true);
+    expect(container.querySelector('.gloss').textContent.trim()).toBe('rosa, roseira');
+    await fireEvent.click(tabs[0]);
+    expect(container.querySelector('.gloss').textContent.trim()).toBe('rose');
+    expect(tabs[0].classList.contains('active')).toBe(true);
+  });
+
+  it('never switches dictionaries silently: with Portuguese preferred but absent, only the English button shows and it is the one open', async () => {
     const reader = await readerWith('Rosa.', 'pt');
     const { container } = render(Dictionary, { block: reader.blocks[0], reader, onclose: () => {} });
-    expect(container.querySelector('.gloss-lang').textContent).toBe('en (no pt)');
+    const tabs = [...container.querySelectorAll('button.dict-tab')];
+    expect(tabs.map((b) => b.dataset.dict)).toEqual(['en']);
+    expect(tabs[0].classList.contains('active')).toBe(true);
     expect(container.textContent).toContain('rose');
+    expect(container.querySelector('.gloss-lang')).toBe(null);
+  });
+
+  it('says so when no dictionary has the word', async () => {
+    const reader = await readerWith('Rosa.', 'pt');
+    reader.lexiconExtras = { ...extras, glosses: { en: {}, pt: {} } };
+    const { container } = render(Dictionary, { block: reader.blocks[0], reader, onclose: () => {} });
+    expect(container.querySelectorAll('button.dict-tab')).toHaveLength(0);
+    expect(container.querySelector('.no-gloss').textContent).toMatch(/not found in any dictionary/i);
+    expect(container.textContent).toContain('rosa, -ae f.');   // the form and class still come from Whitaker's lexicon
   });
 
   it('dims an entry outside the era and prints the warning', async () => {

@@ -19,20 +19,30 @@
     return bits.join(' · ');
   }
 
-  /** §8: the chosen language when it has the word, else English with the badge flipped. */
+  /* Allan, 2026-10-18: never swap dictionaries silently. Under the headword, one button per
+   * dictionary that has the word; the preferred language opens first when it has it, else the
+   * first that does; when none has it, say so. Form, class, age and frequency are Whitaker's
+   * lexicon either way. */
+  const DICTS = ['en', 'pt'];
+  const available = $derived(DICTS.filter((d) => lemmaIds.some((id) => extras.glosses[d]?.[id])));
+  let chosen = $state(null);
+  const dict = $derived(available.includes(chosen) ? chosen : (available.includes(reader.glossLang) ? reader.glossLang : available[0] ?? null));
   function gloss(id) {
-    const want = reader.glossLang;
-    const pt = extras.glosses.pt?.[id];
-    const en = extras.glosses.en?.[id];
-    if (want === 'pt' && pt) return { text: pt, lang: 'pt' };
-    if (want === 'pt') return { text: en ?? '', lang: 'en (no pt)' };
-    return { text: en ?? '', lang: 'en' };
+    return dict ? (extras.glosses[dict]?.[id] ?? null) : null;
   }
 </script>
 
 <Overlay {onclose} label="dictionary" panelClass="dictionary">
   <div class="body">
     <h3>{block.token.surface}</h3>
+    {#if block.candidates.length > 0 && extras.lemmas}
+      <div class="dicts" role="tablist" aria-label="dictionaries">
+        {#each available as d (d)}
+          <button class="dict-tab" class:active={dict === d} data-dict={d} role="tab" aria-selected={dict === d} onclick={() => (chosen = d)}>{t(`settings.lang.${d}`)}</button>
+        {/each}
+        {#if available.length === 0}<span class="no-gloss">{t('dict.nogloss')}</span>{/if}
+      </div>
+    {/if}
     {#if block.candidates.length === 0}
       <p class="none">{t('dict.none')}</p>
     {:else if !extras.lemmas}
@@ -47,7 +57,7 @@
           <div class="entry" class:dim-near={status === 'near'} class:dim-out={status === 'out'}>
             <div class="form">{r.dict_form ?? r.headword}</div>
             <div class="class">{classLine(r)}</div>
-            <div class="gloss">{g.text} <span class="gloss-lang" title={t('dict.glosslang')}>{g.lang}</span></div>
+            {#if g !== null}<div class="gloss">{g}</div>{:else if dict}<div class="gloss missing">{t('dict.missingHere', { name: t(`settings.lang.${dict}`) })}</div>{/if}
             <div class="meta">{t('dict.age')}: {AGE_LABEL[r.age] ?? r.age} · {t('dict.freq')} {r.freq}</div>
             {#if warning(r.age, reader.era)}<div class="warning">{warning(r.age, reader.era)}</div>{/if}
           </div>
@@ -72,7 +82,10 @@
   .dim-out { opacity: 0.45; }
   .form { font-weight: 700; }
   .class, .meta { font-size: 0.85em; color: var(--ink-2); }
-  .gloss-lang { font-size: 0.7em; border: 1px solid var(--muted); border-radius: 3px; padding: 0 3px; margin-left: 4px; color: var(--ink-2); }
+  .dicts { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 0 0 6px; }
+  .dict-tab { min-height: 30px; padding: 3px 10px; font-size: 0.85rem; border-radius: 999px; }
+  .dict-tab.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .no-gloss, .missing { color: var(--muted); font-style: italic; font-size: 0.9em; }
   .warning { color: #a33; font-size: 0.85em; }
   .none, .loading { color: #666; font-style: italic; }
 </style>

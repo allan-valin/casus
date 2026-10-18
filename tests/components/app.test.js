@@ -169,6 +169,10 @@ describe('App page furniture (feedback D8, D14, D20)', () => {
     expect(headings.some((h) => /block/i.test(h))).toBe(true);
     expect(container.querySelector('.hint').textContent).toMatch(/click|drag/i);
     expect(container.querySelector('button.export-json').title).toMatch(/download/i);
+    const legend = container.querySelector('details.legend-box');
+    expect(legend.open).toBe(false);                                  // closed by default (Allan, 2026-10-18)
+    await fireEvent.click(legend.querySelector('summary'));
+    await tick();
     expect(container.querySelector('.legend')).not.toBe(null);
   });
 });
