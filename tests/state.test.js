@@ -95,3 +95,14 @@ describe('createState and the language definition', () => {
     expect(() => createState({ text: 'Rosa.', lexicon })).toThrow(/lang/);
   });
 });
+
+describe('createState looks up alternative keys too', () => {
+  it('asks the lexicon for altKey', async () => {
+    const asked = [];
+    const lx = { lookupAll: async (keys) => { asked.push(...keys); return new Map(keys.map((k) => [k, []])); } };
+    const lang = { ...la, tokenize: (s) => [{ index: 0, surface: 'Essen', key: 'Essen', altKey: 'essen', kind: 'word', start: 0, end: 5 }] };
+    const s = createState({ text: 'Essen.', lexicon: lx, lang });
+    await s.load();
+    expect(asked).toContain('essen');
+  });
+});

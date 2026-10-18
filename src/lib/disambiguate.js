@@ -20,7 +20,8 @@ export function buildBlocks(tokens, analysesByKey) {
     .filter((t) => t.kind === 'word')
     .map((token) => finish({
       token,
-      candidates: (analysesByKey.get(token.key) ?? []).map((analysis) => ({
+      // a token may carry an alternative key (German sentence-initial capitals): both keys' readings
+      candidates: [...(analysesByKey.get(token.key) ?? []), ...(token.altKey ? analysesByKey.get(token.altKey) ?? [] : [])].map((analysis) => ({
         analysis,
         reasons: [LEXICON_REASON],
         links: [],

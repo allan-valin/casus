@@ -100,3 +100,16 @@ describe('narrow guards the block list itself', () => {
     expect(() => narrow(blocks, (bs) => [bs[1], bs[0]])).toThrow(/order/);
   });
 });
+
+describe('alternative keys (languages phase 3: German sentence-initial capitals)', () => {
+  it('a token with an altKey gets the readings of both keys; a token without one is unchanged', async () => {
+    const { buildBlocks } = await import('../src/lib/disambiguate.js');
+    const analyses = new Map([['Essen', [{ lemma: '1', pos: 'noun', case: 'nom', number: 'sg', gender: 'n' }]], ['essen', [{ lemma: '2', pos: 'verb', person: '0', number: 'x', mood: 'inf' }]]]);
+    const [a, b] = buildBlocks([
+      { index: 0, surface: 'Essen', key: 'Essen', altKey: 'essen', kind: 'word' },
+      { index: 1, surface: 'Essen', key: 'Essen', kind: 'word' },
+    ], analyses);
+    expect(a.candidates.map((c) => c.analysis.pos)).toEqual(['noun', 'verb']);
+    expect(b.candidates.map((c) => c.analysis.pos)).toEqual(['noun']);
+  });
+});

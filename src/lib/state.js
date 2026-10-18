@@ -23,6 +23,7 @@ export function createState({ text, lexicon, lang, saved = null }) {
       for (const [i, t] of tokens.entries()) {
         if (t.kind !== 'word') continue;
         keys.add(t.key);
+        if (t.altKey) keys.add(t.altKey);
         if (t.enclitic) keys.add(wholeKey(t, tokens[i + 1], normalize));
       }
     }
