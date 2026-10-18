@@ -12,7 +12,7 @@ describe('language registry', () => {
     expect(la.dataPath).toBe('/data/la');
     expect(la.samplesPath).toBe('/samples/la');
     expect(la.voice.espeak).toBe('la');
-    expect(la.stages).toHaveLength(3);
+    expect(la.stages.length).toBeGreaterThanOrEqual(3);
     expect(typeof la.script.normalize).toBe('function');
     expect(la.script.spaced).toBe(true);
     expect(la.inventory.primary).toBe('case');

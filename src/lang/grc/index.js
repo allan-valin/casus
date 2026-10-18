@@ -6,6 +6,8 @@ import { segment } from './segment.js';
 import { tokenize } from './tokenize.js';
 import { GOVERNMENT } from './prepositions.js';
 import { GREEK_INVENTORY } from './inventory.js';
+import { prepositionSettledStage, makeVocativeStage, makeCoordinationStage, makeNumberStage, makeRelativeStage } from '../../lib/classical.js';
+import { normalizeGrc as nG } from './normalize.js';
 import { GREEK_ERAS } from './eras.js';
 import { ROWS, LETTERS, createGame, createGrid } from './game.js';
 
@@ -23,7 +25,8 @@ export const greek = {
   inventory: GREEK_INVENTORY,
   segment,
   tokenize,
-  stages: [gov, agr, gov],
+  stages: [gov, agr, gov, prepositionSettledStage, makeVocativeStage(['ὦ', 'ὤ']), makeCoordinationStage(['καί', 'τε', 'ἠδέ']), makeNumberStage({ conjunctions: ['καί', 'τε', 'ἠδέ', 'ἤ'], neuterPluralTakesSingular: true }),
+    makeRelativeStage(['ὅς', 'ἥ', 'ὅ', 'οὗ', 'ἧς', 'ᾧ', 'ᾗ', 'ὅν', 'ἥν', 'οἵ', 'αἵ', 'ἅ', 'ὧν', 'οἷς', 'αἷς', 'οὕς', 'ἅς'].map(nG)), gov, agr, gov],
   government: GOVERNMENT,
   arrange: WORD_ORDERS,
   eras: GREEK_ERAS,

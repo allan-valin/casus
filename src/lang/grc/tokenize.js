@@ -16,12 +16,14 @@ const WORD = new RegExp(`(\\p{L}[\\p{L}\\p{M}]*[${APOSTROPHES}]?)|([^\\s\\p{L}]+
 
 export function tokenize(sentenceText) {
   const tokens = [];
+  let clause = 0;
   for (let m = WORD.exec(sentenceText); m; m = WORD.exec(sentenceText)) {
     const [raw, word] = m;
-    if (!word) { push(tokens, raw, 'punct', normalizeGrc(raw), m.index); continue; }
+    if (!word) { push(tokens, raw, 'punct', normalizeGrc(raw), m.index); if (/[,;:·\u0387]/.test(raw)) clause += 1; continue; }
     const bare = word.replace(new RegExp(`[${APOSTROPHES}]$`), '');
     const key = bare !== word ? (ELISIONS[normalizeGrc(bare)] ?? normalizeGrc(bare)) : normalizeGrc(word);
     push(tokens, word, 'word', key, m.index);
+    tokens[tokens.length - 1].clause = clause;
   }
   return tokens;
 }

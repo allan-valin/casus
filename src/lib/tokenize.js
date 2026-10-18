@@ -23,11 +23,13 @@ const NEVER_SPLIT = new Set([
  */
 export function tokenize(sentenceText) {
   const tokens = [];
+  let clause = 0;          // clauses between , ; : (the classical rules read their verb from it)
   const re = /(\p{L}+)|([^\s\p{L}]+)/gu;
   for (let m = re.exec(sentenceText); m; m = re.exec(sentenceText)) {
     const [raw, word, punct] = m;
     if (punct) {
       push(tokens, { surface: raw, kind: 'punct', enclitic: null, start: m.index });
+      if (/[,;:]/.test(raw)) clause += 1;
       continue;
     }
     const { parts, enclitic } = splitEnclitic(word);
@@ -35,6 +37,7 @@ export function tokenize(sentenceText) {
     parts.forEach((part, i) => {
       const isHost = parts.length > 1 && i === 0;
       push(tokens, { surface: part, kind: 'word', enclitic: isHost ? enclitic : null, start: offset });
+      tokens[tokens.length - 1].clause = clause;
       offset += part.length;
     });
   }
