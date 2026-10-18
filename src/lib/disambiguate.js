@@ -15,15 +15,26 @@ const LEXICON_REASON = 'lexicon: attested form';
  *   or governor so the UI never parses the prose.
  * Block = { token, candidates: Candidate[], pinned: Analysis | null, resolved: boolean }
  */
+/** key + altKey; when both find nothing, the first spelling fallback that does (ungeheueren → ungeheuren). */
+function lookedUp(token, analysesByKey) {
+  const found = [...(analysesByKey.get(token.key) ?? []), ...(token.altKey ? analysesByKey.get(token.altKey) ?? [] : [])];
+  if (found.length || !token.fallbackKeys) return found.map((analysis) => ({ analysis }));
+  for (const k of token.fallbackKeys) {
+    const hit = analysesByKey.get(k) ?? [];
+    if (hit.length) return hit.map((analysis) => ({ analysis, via: k }));
+  }
+  return [];
+}
+
 export function buildBlocks(tokens, analysesByKey) {
   return tokens
     .filter((t) => t.kind === 'word')
     .map((token) => finish({
       token,
       // a token may carry an alternative key (German sentence-initial capitals): both keys' readings
-      candidates: [...(analysesByKey.get(token.key) ?? []), ...(token.altKey ? analysesByKey.get(token.altKey) ?? [] : [])].map((analysis) => ({
+      candidates: lookedUp(token, analysesByKey).map(({ analysis, via }) => ({
         analysis,
-        reasons: [LEXICON_REASON],
+        reasons: [via ? `lexicon: read as ${via} (spelling variant)` : LEXICON_REASON],
         links: [],
       })),
       pinned: null,
@@ -164,6 +175,8 @@ function governedSpan(blocks, i, phrase) {
   for (let j = i + 1; j < blocks.length && span.length < 5; j += 1) {
     const poses = blocks[j].candidates.map((c) => c.analysis.pos);
     if (poses.includes('noun')) { span.push(j); break; }
+    // an unknown inflected word inside the phrase (an old spelling, a rare participle) does not cut it
+    if (!poses.length && /^[\p{Ll}].*(en|em|er|es|e)$/u.test(blocks[j].token.surface)) { span.push(j); continue; }
     // a personal pronoun is a whole phrase on its own (mit ihm): it ends the span (review I1)
     if (poses.includes('pron') && !poses.some((p) => p === 'det' || p === 'adj' || p === 'num')) { span.push(j); break; }
     if (poses.some((p) => PHRASE_MEMBERS.has(p))) { span.push(j); continue; }
@@ -190,6 +203,7 @@ export function governmentStage(blocks, government = GOVERNMENT, { phrase = fals
     // the phrase is contiguous: a member with no reading in the governed cases ends it, it is not skipped
     const span = [];
     for (const j of governedSpan(out, i, phrase)) {
+      if (!out[j].candidates.length) continue;                    // unknown member: carried, not narrowed
       if (!out[j].candidates.some((c) => caseOk(c, governs) && c.analysis.case !== 'x')) break;
       span.push(j);
     }
@@ -203,12 +217,16 @@ export function governmentStage(blocks, government = GOVERNMENT, { phrase = fals
     }
     const name = prep.token.surface;
     const head = out[span[span.length - 1]];
+    // NP4 (phrase languages): a word followed by the phrase it governs is the preposition
+    if (phrase && prep.candidates.some((c) => c.analysis.pos !== 'prep')) {
+      out[i] = { ...out[i], candidates: out[i].candidates.filter((c) => c.analysis.pos === 'prep') };
+    }
     if (shared.length === 1) {
       const theCase = shared[0];
       const prepReason = `government: ${name} + ${theCase} (object ${head.token.surface} is ${CASE_NAME[theCase]})`;
       out[i] = {
-        ...prep,
-        candidates: prep.candidates.map((c) => (c.analysis.pos === 'prep'
+        ...out[i],
+        candidates: out[i].candidates.map((c) => (c.analysis.pos === 'prep'
           ? withLink(withReason({ ...c, analysis: { ...c.analysis, governs: [theCase] } }, prepReason), 'government', head.token.index)
           : c)),
       };

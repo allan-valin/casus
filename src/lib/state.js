@@ -24,11 +24,12 @@ export function createState({ text, lexicon, lang, saved = null }) {
         if (t.kind !== 'word') continue;
         keys.add(t.key);
         if (t.altKey) keys.add(t.altKey);
+        for (const k of t.fallbackKeys ?? []) keys.add(k);
         if (t.enclitic) keys.add(wholeKey(t, tokens[i + 1], normalize));
       }
     }
     analysesByKey = await lexicon.lookupAll([...keys]);
-    tokensBySentence = split.map((tokens) => rejoinAttested(tokens, analysesByKey, normalize));
+    tokensBySentence = split.map((tokens) => withTrail(rejoinAttested(tokens, analysesByKey, normalize)));
     cache = null;
   }
 
@@ -90,4 +91,15 @@ function rejoinAttested(tokens, analysesByKey, normalize) {
     }
   }
   return out.map((t, index) => ({ ...t, index }));
+}
+
+/** Each word carries the punctuation right after it (`,` `;` `.`), so the block pool can show commas and
+ * clause ends next to the word they follow, wherever the word is moved (Allan, 2026-10-18). */
+function withTrail(tokens) {
+  return tokens.map((t, i) => {
+    if (t.kind !== 'word') return t;
+    let trail = '';
+    for (let j = i + 1; j < tokens.length && tokens[j].kind === 'punct'; j += 1) trail += tokens[j].surface;
+    return trail ? { ...t, trail } : t;
+  });
 }

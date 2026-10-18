@@ -1,13 +1,14 @@
 /* German (docs/languages/de.md; languages phase 3). */
-import { governmentStage, agreementStage } from '../../lib/disambiguate.js';
+import { governmentStage } from '../../lib/disambiguate.js';
 import { WORD_ORDERS } from '../../app/lib/order.js';
 import { segment } from './segment.js';
 import { tokenize } from './tokenize.js';
 import { GOVERNMENT } from './prepositions.js';
 import { GERMAN_INVENTORY } from './inventory.js';
+import { phraseStage } from './phrase.js';
+import { clauseStage } from './clause.js';
 
 const gov = (blocks) => governmentStage(blocks, GOVERNMENT, { phrase: true });
-const agr = (blocks) => agreementStage(blocks, GERMAN_INVENTORY);
 
 export const german = {
   code: 'de',
@@ -20,7 +21,9 @@ export const german = {
   inventory: GERMAN_INVENTORY,
   segment,
   tokenize,
-  stages: [gov, agr, gov],
+  // government, then the noun-phrase rules (NP1–NP3), then government again with the settled phrases;
+  // the sentence-wide agreement stage is not used: German agreement lives inside the phrase
+  stages: [gov, phraseStage, gov, phraseStage, clauseStage],
   government: GOVERNMENT,
   governmentPhrase: true,
   arrange: WORD_ORDERS,

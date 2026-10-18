@@ -36,7 +36,7 @@
     {@const r = lemmaOf(block.candidates[0].analysis.lemma)}
     {#if r}<span class="class">{r.pos === 'verb' ? (r.conj ?? '') : [r.decl, r.gender].filter(Boolean).join(' ')}</span>{/if}
   {/if}
-</div>
+</div>{#if block.token.trail}<span class="trail" aria-hidden="true">{block.token.trail}</span>{/if}
 
 <style>
   .pill { display: inline-flex; align-items: baseline; gap: 5px; border: 2.5px solid; border-radius: 12px;
@@ -45,6 +45,7 @@
   .pinned { outline: 2px dotted #222; outline-offset: 2px; }
   .unknown { color: #666; font-style: italic; }
   .index { font-size: 0.6em; opacity: 0.7; }
+  .trail { font-family: Georgia, serif; font-size: 1.3em; font-weight: 700; color: var(--ink); margin-left: 2px; align-self: flex-end; }
   .word-stack { display: inline-flex; flex-direction: column; align-items: center; line-height: 1.15; }
   .article { font-size: 0.72em; font-weight: 600; color: var(--ink-2); letter-spacing: 0.02em; }
   .reading { font-size: 0.82em; font-weight: 600; letter-spacing: 0.02em; }

@@ -106,3 +106,11 @@ describe('createState looks up alternative keys too', () => {
     expect(asked).toContain('essen');
   });
 });
+
+describe('punctuation after a word travels with its block (Allan, 2026-10-18)', () => {
+  it('a word token carries the punctuation that follows it as trail', async () => {
+    const s = createState({ text: 'Rosa, bona; urbs.', lexicon, lang: la });
+    await s.load();
+    expect(s.blocks().map((b) => [b.token.surface, b.token.trail ?? ''])).toEqual([['Rosa', ','], ['bona', ';'], ['urbs', '.']]);
+  });
+});

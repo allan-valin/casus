@@ -202,3 +202,12 @@ describe('German article on noun pills (languages phase 3 Task 5)', async () => 
     expect(adj.querySelector('.article')).toBe(null);
   });
 });
+
+describe('Block shows the punctuation that follows its word', () => {
+  it('a comma after the word is drawn after the pill, outside it', () => {
+    const b = { token: { index: 0, surface: 'erwachte', trail: ',' }, candidates: [{ analysis: { lemma: '1', pos: 'verb', person: '3', number: 'sg', tense: 'pret', mood: 'ind' }, reasons: [] }], pinned: null, resolved: true };
+    const { container } = render(Block, { block: b, layers: ALL, onhover: () => {}, onopen: () => {} });
+    expect(container.querySelector('.trail').textContent).toBe(',');
+    expect(container.querySelector('.pill').contains(container.querySelector('.trail'))).toBe(false);
+  });
+});
