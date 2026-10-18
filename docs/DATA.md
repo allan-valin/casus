@@ -274,3 +274,21 @@ way: (1) a separate unaccented key per form cost 60 MB, so it was dropped — th
 input against the shard it loads anyway, at no data cost; (2) `write_assets` left shards of earlier builds
 in `forms/` (first measurements of 103–109 MB were mostly stale files); it now clears them.
 Keys fold grave to acute (καὶ → καί) as well as case, final sigma and length marks.
+
+### German (languages phase 3 Task 1, 2026-10-18)
+
+Source: English Wiktionary via kaikki.org (`kaikki.org-dictionary-German.jsonl`, 1.08 GB, 371,261 entries;
+268,501 form-of pages skipped). Multiword cells (compound tenses, article + noun) skipped, except article +
+adjective cells, the only place weak and mixed endings appear (last word taken). Contractions (im, zum, ins…)
+added as prepositions. Keys keep case, ß and umlauts; shards are named by the lower-cased prefix.
+`python3 tools/build_lang.py de`, 40 s, 4.2 GB peak RAM.
+
+| | measured | budget |
+|---|---|---|
+| lemmas | 100,980 | |
+| forms / analyses | 403,434 / 1,967,051 | |
+| `data/de/` on disk | **45.6 MB** | 60 MB |
+| all shards gzipped | 3.4 MB | |
+| shards / largest gzipped | 896 / 51 KB | 300 KB |
+
+Gate passed with no trimming.

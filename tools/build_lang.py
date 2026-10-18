@@ -56,6 +56,38 @@ def build_grc(src: Path, out: Path, drop_dialects: bool) -> dict:
     return manifest
 
 
+def build_de(src: Path, out: Path) -> dict:
+    from casus_build.de.codes import CODES_JSON, encode_analysis
+    from casus_build.de.parse import ARTICLE, build_index, contraction_entries, parse_entries
+    from casus_build.de.prepositions import GOVERNMENT
+
+    with src.open(encoding="utf-8") as fh:
+        entries = list(parse_entries(fh))
+    index = build_index(entries)
+
+    def rows(analyses):
+        groups: dict[int, list[str]] = {}
+        for a in analyses:
+            groups.setdefault(a["lemma"], []).append(encode_analysis({k: v for k, v in a.items() if k != "lemma"}))
+        return [[lemma, *codes] for lemma, codes in groups.items()]
+
+    lemmas = {}
+    for e in [*entries, *contraction_entries()]:
+        art = ARTICLE.get(e.get("gender")) if e["pos"] == "noun" else None
+        rec = {"headword": e["headword"], "dict_form": f"{art} {e['headword']}" if art else e["headword"],
+               "pos": e["pos"], "gender": e.get("gender"), "article": art}
+        lemmas[str(e["id"])] = {k: v for k, v in rec.items() if v is not None}
+    out.mkdir(parents=True, exist_ok=True)
+    manifest = write_assets(index, lemmas, out, rows=rows, key_of=lambda f: f.lower())
+    for name, obj in (("glosses.en.json", {str(e["id"]): e["gloss_en"] for e in entries if e["gloss_en"]}),
+                      ("ipa.json", {str(e["id"]): e["ipa"] for e in entries if e["ipa"]}),
+                      ("government.json", GOVERNMENT), ("codes.json", CODES_JSON)):
+        (out / name).write_text(json.dumps(obj, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    manifest["key"] = "lower"           # shard names come from the lower-cased form
+    (out / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8")
+    return manifest
+
+
 _DIALECTS = ("Epic", "Ionic", "Doric", "Aeolic", "Laconian", "Boeotian", "Cretan", "Arcadocypriot", "Cypriot",
              "Thessalian", "Lesbian", "Elean")
 
@@ -91,15 +123,17 @@ def measure(out: Path) -> dict:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("code", choices=["grc"])
+    ap.add_argument("code", choices=["grc", "de"])
     ap.add_argument("--vendor", default="vendor/wiktextract", type=Path)
     ap.add_argument("--data", default="data", type=Path)
     ap.add_argument("--drop-dialects", action="store_true", help="keep only Attic, Koine and unlabelled tables")
     args = ap.parse_args(argv)
-    src = args.vendor / "kaikki.org-dictionary-AncientGreek.jsonl"
     out = args.data / args.code
     t0 = time.time()
-    manifest = build_grc(src, out, args.drop_dialects)
+    if args.code == "grc":
+        manifest = build_grc(args.vendor / "kaikki.org-dictionary-AncientGreek.jsonl", out, args.drop_dialects)
+    else:
+        manifest = build_de(args.vendor / "kaikki.org-dictionary-German.jsonl", out)
     m = measure(out)
     print(f"{manifest['lemmas']} lemmas, {manifest['forms']} forms, {manifest['analyses']} analyses in {time.time() - t0:.0f} s")
     print(f"raw {m['raw'] / 1e6:.1f} MB (budget {BUDGET_RAW / 1e6:.0f}), all shards gz {m['gz_all'] / 1e6:.1f} MB, "

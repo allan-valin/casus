@@ -46,6 +46,12 @@ entries through the Wiktextract extraction at kaikki.org (extraction of 2026-10-
 and the GFDL; the contributors are the editors of the English Wiktionary. Built by `tools/build_lang.py grc`.
 The preposition table (`government.json`) follows Smyth's *Greek Grammar* (public domain).
 
+## German dictionary — CC BY-SA
+
+`data/de/` is derived from the **English Wiktionary**'s German entries through the Wiktextract extraction at
+kaikki.org, licensed CC BY-SA 4.0 and the GFDL; the contributors are the editors of the English Wiktionary.
+Built by `tools/build_lang.py de`. The preposition table follows the Duden *Grammatik*.
+
 ## Speech — espeak-ng (GPL-3.0)
 
 When the browser has no voice for a language, the speaker button loads espeak-ng compiled to
