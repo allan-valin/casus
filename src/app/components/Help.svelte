@@ -43,6 +43,7 @@
         (cobertura parcial: vocabulário comum). Licença própria; veja NOTICE.md.</li>
       <li><b>Amostras</b>: César, <i>De bello Gallico</i> 1.1; Cícero, <i>In Catilinam</i> 1.1; a Vulgata,
         Gênesis 1 — trechos curtos em domínio público, procedência em <code>samples/SOURCES.md</code>.</li>
+      <li><b>espeak-ng</b> (GPL-3.0): a voz do botão de áudio quando o navegador não tem uma para o idioma, carregada do jsDelivr na primeira vez que você o aperta.</li>
       <li><b>Svelte</b> e <b>Vite</b> (MIT): a página. O arrastar é do próprio Casus (eventos de ponteiro, sem biblioteca).</li>
       <li><b>Cores</b>: o conjunto Okabe–Ito, seguro para daltonismo, verificado par a par para as três
         deficiências de visão de cor mais comuns.</li>
@@ -85,6 +86,7 @@
         Separately licensed; see NOTICE.md.</li>
       <li><b>Sample passages</b>: Caesar, <i>De bello Gallico</i> 1.1; Cicero, <i>In Catilinam</i> 1.1; the Vulgate,
         Genesis 1 — short public-domain excerpts, provenance in <code>samples/SOURCES.md</code>.</li>
+      <li><b>espeak-ng</b> (GPL-3.0): the speaker button's voice when your browser has none for the language, loaded from jsDelivr the first time you press it.</li>
       <li><b>Svelte</b> and <b>Vite</b> (MIT): the page. The drag-and-drop is Casus' own (pointer events, no library): blocks stay still while you aim, a bar marks the gap, the move happens on release.</li>
       <li><b>Colours</b>: the Okabe–Ito colour-blind-safe set, checked pairwise for the three common colour
         vision deficiencies.</li>

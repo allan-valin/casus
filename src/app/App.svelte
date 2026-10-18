@@ -16,6 +16,7 @@
   import LanguageBar from './components/LanguageBar.svelte';
   import { getLanguage } from '../lang/registry.js';
   import { langFromPath } from './lib/route.js';
+  import { createVoice } from './lib/voice.js';
   import { t, ui, setLang } from './lib/i18n.svelte.js';
   import { createActivity } from './lib/activity.svelte.js';
   import ActivityLog from './components/ActivityLog.svelte';
@@ -25,6 +26,7 @@
   const route = langFromPath(typeof location !== 'undefined' ? location.pathname : '/', import.meta.env?.BASE_URL ?? '/');
   const lang = getLanguage(route.code);
   const DATA = withBase(lang.dataPath);
+  const voice = typeof window === 'undefined' ? null : createVoice({ bcp47: lang.bcp47, espeakVoice: lang.voice.espeak });
 
   // injected for tests; the browser gets the real ones
   function defaultStorage() {
@@ -206,7 +208,7 @@
     </section>
 
     {#if openBlock}
-      <Dictionary block={openBlock} {reader} onclose={() => (open = null)} />
+      <Dictionary block={openBlock} {reader} onclose={() => (open = null)} {voice} onspoke={(word, tier) => say('act.spoke', { word, tier })} />
     {/if}
   {/if}
 

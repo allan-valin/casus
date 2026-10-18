@@ -3,8 +3,9 @@
   import Overlay from './Overlay.svelte';
   import { eraStatus, warning, AGE_LABEL } from '../lib/era.js';
   import { pickIpa, wiktionaryUrl } from '../lib/entry.js';
+  import Speaker from './Speaker.svelte';
   import { t, ui } from '../lib/i18n.svelte.js';
-  let { block, reader, onclose } = $props();
+  let { block, reader, onclose, voice = null, onspoke = () => {} } = $props();
 
   const ORDINAL = { 1: '1st', 2: '2nd', 3: '3rd', 4: '4th', 5: '5th' };
   const lemmaIds = $derived([...new Set(block.candidates.map((c) => String(c.analysis.lemma)))]);
@@ -61,7 +62,7 @@
               <a class="wiktionary" href={wiktionaryUrl(r.headword, reader.lang?.wiktionary ?? 'Latin', 'en')} target="_blank" rel="noopener" title={t('dict.wiktionary')}>Wiktionary ↗</a>
               {#if ui.lang === 'pt'}<a class="wiktionary pt" href={wiktionaryUrl(r.headword, reader.lang?.wiktionary ?? 'Latin', 'pt')} target="_blank" rel="noopener" title={t('dict.wiktionary')}>Wikcionário ↗</a>{/if}
             </div>
-            {#if ip}<div class="ipa-line"><span class="ipa" title={ip.tags.join(', ')}>{ip.ipa}</span></div>{/if}
+            <div class="ipa-line">{#if ip}<span class="ipa" title={ip.tags.join(', ')}>{ip.ipa}</span>{/if}<Speaker text={r.headword} {voice} onspoke={(tier) => onspoke(r.headword, tier)} /></div>
             <div class="class">{classLine(r)}</div>
             {#if g !== null}<div class="gloss">{g}</div>{:else if dict}<div class="gloss missing">{t('dict.missingHere', { name: t(`settings.lang.${dict}`) })}</div>{/if}
             <div class="meta">{t('dict.age')}: {AGE_LABEL[r.age] ?? r.age} · {t('dict.freq')} {r.freq}</div>

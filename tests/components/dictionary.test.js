@@ -121,3 +121,26 @@ describe('Dictionary IPA and Wiktionary link (languages plan Task 6)', () => {
     expect(container.querySelector('a.wiktionary').getAttribute('href')).toBe('https://en.wiktionary.org/wiki/rosa#Latin');
   });
 });
+
+describe('Dictionary speaker (languages plan Task 7)', () => {
+  it('has a speaker button that says the headword through the voice it is given', async () => {
+    const reader = await readerWith('Rosa.');
+    const speak = vi.fn(async () => {});
+    const voice = { tier: async () => 'espeak', speak };
+    const { container } = render(Dictionary, { block: reader.blocks[0], reader, onclose: () => {}, voice });
+    await new Promise((r) => setTimeout(r, 0));
+    const button = container.querySelector('button.speaker');
+    expect(button.disabled).toBe(false);
+    await fireEvent.click(button);
+    expect(speak).toHaveBeenCalledWith('rosa');
+  });
+  it('disables the speaker with a note when there is no voice', async () => {
+    const reader = await readerWith('Rosa.');
+    const voice = { tier: async () => null, speak: vi.fn() };
+    const { container } = render(Dictionary, { block: reader.blocks[0], reader, onclose: () => {}, voice });
+    await new Promise((r) => setTimeout(r, 0));
+    const button = container.querySelector('button.speaker');
+    expect(button.disabled).toBe(true);
+    expect(button.title).toMatch(/no voice/i);
+  });
+});
