@@ -7,6 +7,7 @@ import { tokenize } from './tokenize.js';
 import { GOVERNMENT } from './prepositions.js';
 import { GREEK_INVENTORY } from './inventory.js';
 import { GREEK_ERAS } from './eras.js';
+import { ROWS, LETTERS, createGame } from './game.js';
 
 const gov = (blocks) => governmentStage(blocks, GOVERNMENT);
 const agr = (blocks) => agreementStage(blocks, GREEK_INVENTORY);
@@ -17,7 +18,7 @@ export const greek = {
   inText: { en: 'Ancient Greek', pt: 'grego antigo' },
   bcp47: 'grc',
   wiktionary: 'Ancient Greek',
-  sources: { en: 'Wiktionary', pt: 'Wikcionário' },
+  sources: { en: 'Wiktionary', pt: 'Wikcionário', full: { en: 'the English Wiktionary', pt: 'o Wiktionary em inglês' } },
   script: { normalize: normalizeGrc, rtl: false, spaced: true, prefixOf: stripGrc, strip: stripGrc, hasMarks },
   inventory: GREEK_INVENTORY,
   segment,
@@ -29,4 +30,5 @@ export const greek = {
   dataPath: '/data/grc',
   samplesPath: '/samples/grc',
   voice: { espeak: 'grc' },
+  game: { ROWS, LETTERS, createGame },
 };

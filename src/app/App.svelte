@@ -20,6 +20,7 @@
   import { t, ui, setLang } from './lib/i18n.svelte.js';
   import { createActivity } from './lib/activity.svelte.js';
   import ActivityLog from './components/ActivityLog.svelte';
+  import Game from './components/Game.svelte';
   import { describeAnalysis } from './lib/colors.js';
   import { partners as partnersOf } from './lib/chunks.js';
 
@@ -168,15 +169,18 @@
         <button class="ui-lang" class:active={ui.lang === 'en'} data-lang="en" onclick={() => switchLang('en')}>English</button>
         <button class="ui-lang" class:active={ui.lang === 'pt'} data-lang="pt" onclick={() => switchLang('pt')}>Português</button>
       </div>
-      <div class="exports" aria-label="export">
+      {#if route.view !== 'game'}<div class="exports" aria-label="export">
         <span class="exports-label">{t('app.export')}</span>
         <button class="export-json" disabled={!reader} title={t('app.export.json.title')} onclick={() => download('json')}>{t('app.export.json')}</button>
         <button class="export-md" disabled={!reader} title={t('app.export.md.title')} onclick={() => download('md')}>{t('app.export.md')}</button>
-      </div>
+      </div>{/if}
       <button class="help-button" title={t('app.help.title')} aria-label="help" onclick={() => (help = true)}>?</button>
     </div>
   </header>
 
+  {#if route.view === 'game' && lang.game}
+    <Game {lang} {voice} />
+  {:else}
   <section class="card">
     <h2><span class="step">1</span> {t('text.heading')}</h2>
     <PassagePicker {samples} onchoose={choose} {fetchImpl} samplesPath={lang.samplesPath} language={lang.inText?.[ui.lang] ?? ''} onerror={(error) => say('act.uploadFailed', { error }, 'err')} />
@@ -212,6 +216,8 @@
     {/if}
   {/if}
 
+  {/if}
+
   {#if help}
     <Help onclose={() => (help = false)} />
   {/if}
@@ -219,7 +225,7 @@
   <ActivityLog {activity} />
 
   <footer>
-    <span>{@html t('footer')}</span>
+    <span>{@html t('footer', { source: lang.sources?.full?.[ui.lang] ?? '' })}</span>
   </footer>
 </main>
 

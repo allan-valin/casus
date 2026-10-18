@@ -15,7 +15,7 @@ export const latin = {
   inText: { en: 'classical Latin', pt: 'latim clássico' },
   bcp47: 'la',
   wiktionary: 'Latin',
-  sources: { en: 'Whitaker', pt: 'Wikcionário' },
+  sources: { en: 'Whitaker', pt: 'Wikcionário', full: { en: 'Whitaker’s WORDS', pt: 'WORDS de Whitaker' } },
   script: { normalize: normalizeForm, rtl: false, spaced: true },
   inventory: LATIN_INVENTORY,
   segment,
