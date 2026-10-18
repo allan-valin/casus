@@ -100,3 +100,12 @@ equivalent in the data). Recorded as a limitation, not hidden.
 
 Article-noun pairing beyond agreement, the genitive absolute, the articular infinitive, μέν … δέ
 correlation, verbal aspect beyond the tense label. These are §8 (parser phase) material.
+
+## Transliteration under each word (Allan, 2026-10-18)
+
+Every non-Latin script shows the word in Latin letters, small and italic, under the block
+(`script.romanize` in the language definition; toggle "Latin letters under each word", on by default).
+Greek uses the usual scholarly scheme: η ē, ω ō, θ th, φ ph, χ ch, ψ ps, ξ x, υ y (u in diphthongs),
+γ before γ κ ξ χ = n, rough breathing h (ῥ rh), iota subscript i; accents dropped. When the input lacked
+marks, the dictionary's spellings are romanised, each distinct result shown (ην: ēn / hēn).
+Japanese (romaji), Arabic, Russian, Korean, Chinese (pinyin) and Macedonian get their own `romanize`.

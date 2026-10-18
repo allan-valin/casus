@@ -9,6 +9,7 @@
   <label title={t('layers.nominal.title')}><input type="checkbox" bind:checked={reader.layers.nominal}> {t('layers.nominal')}</label>
   <label title={t('layers.verb.title')}><input type="checkbox" bind:checked={reader.layers.verb}> {t('layers.verb')}</label>
   <label title={t('layers.function.title')}><input type="checkbox" bind:checked={reader.layers.function}> {t('layers.function')}</label>
+  {#if reader.lang?.script?.romanize}<label title={t('layers.roman.title')}><input type="checkbox" bind:checked={reader.layers.roman}> {t('layers.roman')}</label>{/if}
   {#if reader.lang?.script?.hasMarks}<label title={t('layers.marks.title')}><input type="checkbox" bind:checked={reader.layers.marks}> {t('layers.marks')}</label>{/if}
   <label title={t('layers.classes.title')}><input type="checkbox" bind:checked={reader.layers.classes}> {t('layers.classes')}</label>
 </fieldset>

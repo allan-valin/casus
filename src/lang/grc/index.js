@@ -6,6 +6,7 @@ import { segment } from './segment.js';
 import { tokenize } from './tokenize.js';
 import { GOVERNMENT } from './prepositions.js';
 import { GREEK_INVENTORY } from './inventory.js';
+import { romanizeGrc } from './romanize.js';
 import { prepositionSettledStage, makeVocativeStage, makeCoordinationStage, makeNumberStage, makeRelativeStage } from '../../lib/classical.js';
 import { normalizeGrc as nG } from './normalize.js';
 import { GREEK_ERAS } from './eras.js';
@@ -21,7 +22,7 @@ export const greek = {
   bcp47: 'grc',
   wiktionary: 'Ancient Greek',
   sources: { en: 'Wiktionary', pt: 'Wikcionário', full: { en: 'the English Wiktionary', pt: 'o Wiktionary em inglês' } },
-  script: { normalize: normalizeGrc, rtl: false, spaced: true, prefixOf: stripGrc, strip: stripGrc, hasMarks },
+  script: { normalize: normalizeGrc, rtl: false, spaced: true, prefixOf: stripGrc, strip: stripGrc, hasMarks, romanize: romanizeGrc },
   inventory: GREEK_INVENTORY,
   segment,
   tokenize,

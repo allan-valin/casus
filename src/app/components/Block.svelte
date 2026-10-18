@@ -2,7 +2,7 @@
   import { blockStyle as latinBlockStyle } from '../lib/colors.js';
   import { t } from '../lib/i18n.svelte.js';
   import { suppliedLabel, displayForm } from '../lib/entry.js';
-  let { block, layers, onhover, onopen, lemmaOf = null, colors = null, showArticle = false } = $props();
+  let { block, layers, onhover, onopen, lemmaOf = null, colors = null, showArticle = false, romanize = null } = $props();
   // German: every noun shows its article, the mark that decides its adjective endings (de.md §2)
   const ARTICLE = { m: 'der', f: 'die', n: 'das' };
   const article = $derived.by(() => {
@@ -18,6 +18,9 @@
   // the class sub-layer needs one lemma; the case may still be open (rosa nom/abl is one word)
   // marks the input lacked, supplied by the dictionary (languages design §7): every distinct spelling
   const supplied = $derived(layers.marks === false ? [] : [...new Set(block.candidates.map((c) => c.analysis.marked).filter(Boolean))]);
+  // non-Latin scripts: the word in Latin letters, small, under it (Allan, 2026-10-18); from the dictionary's
+  // spelling when the input lacked marks and only one spelling fits, so breathings (h) are not lost
+  const roman = $derived(!romanize || layers.roman === false ? '' : [...new Set((supplied.length ? supplied : [block.token.surface]).map(romanize))].join(' / '));
   const oneLemma = $derived(block.candidates.length > 0 && block.candidates.every((c) => String(c.analysis.lemma) === String(block.candidates[0].analysis.lemma)));
 </script>
 
@@ -29,7 +32,7 @@
      onclick={() => onopen(block)}
      onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onopen(block); } }}>
   <sup class="index">{block.token.index + 1}</sup>
-  <span class="word-stack">{#if article}<span class="article" title={t('block.article')}>{article}</span>{/if}{#if supplied.length}<span class="reading supplied" title={`${t('block.supplied')}: ${supplied.map(displayForm).join(' / ')}`}>{suppliedLabel(supplied)}</span>{/if}<span class="surface">{#if block.parts}{#each block.parts as part, k}<span class="root" class:root-b={k % 2 === 1} title={t('block.compound')}>{part}</span>{/each}{:else}{block.token.surface}{/if}</span></span>
+  <span class="word-stack">{#if article}<span class="article" title={t('block.article')}>{article}</span>{/if}{#if supplied.length}<span class="reading supplied" title={`${t('block.supplied')}: ${supplied.map(displayForm).join(' / ')}`}>{suppliedLabel(supplied)}</span>{/if}<span class="surface">{#if block.parts}{#each block.parts as part, k}<span class="root" class:root-b={k % 2 === 1} title={t('block.compound')}>{part}</span>{/each}{:else}{block.token.surface}{/if}</span>{#if roman}<span class="roman" title={t('block.roman')}>{roman}</span>{/if}</span>
   <span class="badge" style:color={style.ambiguous || style.unknown ? '#555' : style.border}>{style.badge}</span>
   {#if style.dots.length}<span class="dots" aria-label="possible cases">{#each style.dots as d}<i class="dot" style:background={d}></i>{/each}</span>{/if}
   {#if layers.classes && oneLemma && lemmaOf}
@@ -47,6 +50,7 @@
   .index { font-size: 0.6em; opacity: 0.7; }
   .trail { font-family: Georgia, serif; font-size: 1.3em; font-weight: 700; color: var(--ink); margin-left: 2px; align-self: flex-end; }
   .word-stack { display: inline-flex; flex-direction: column; align-items: center; line-height: 1.15; }
+  .roman { font-size: 0.62em; color: var(--ink-2); font-style: italic; letter-spacing: 0.02em; margin-top: 1px; }
   .root { color: var(--ink); }
   .root-b { color: #6b4e9b; }
   .article { font-size: 0.72em; font-weight: 600; color: var(--ink-2); letter-spacing: 0.02em; }

@@ -127,7 +127,7 @@
         {@const block = byIndex.get(index)}
         {#if block}
           <span class="block" class:linked={linked.has(index)} class:hovered={hovered === index}>
-            <Block {block} layers={reader.layers} onhover={hover} onopen={open} {lemmaOf} {colors} showArticle={!!reader.lang?.inventory?.showArticle} />
+            <Block {block} layers={reader.layers} onhover={hover} onopen={open} {lemmaOf} {colors} showArticle={!!reader.lang?.inventory?.showArticle} romanize={reader.lang?.script?.romanize ?? null} />
           </span>
           {#if item.indices.length > 1 && i === 0}
             <button class="unglue" title={t('pane.unglue')} aria-label="unglue this chunk" onclick={() => reader.toggleGlue(index)}>⛓</button>

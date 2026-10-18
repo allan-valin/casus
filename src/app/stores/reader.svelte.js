@@ -5,7 +5,7 @@ import { getLanguage } from '../../lang/registry.js';
 import { makeColors } from '../lib/colors.js';
 import { frontDecode } from '../lib/paradigm.js';
 
-const DEFAULT_LAYERS = { nominal: true, verb: true, function: true, classes: false, marks: true };
+const DEFAULT_LAYERS = { nominal: true, verb: true, function: true, classes: false, marks: true, roman: true };
 
 /**
  * The single source of truth for the page (spec §5.2 state.js + the UI state).
