@@ -6,7 +6,7 @@ const COMBINING = /[̀-ͯ]/g;
 const LENGTH = /[̄̆]/g;
 
 export function normalizeGrc(s) {
-  return s.normalize('NFD').toLowerCase().replace(/ς/g, 'σ').replace(LENGTH, '').normalize('NFC');
+  return s.normalize('NFD').toLowerCase().replace(/ς/g, 'σ').replace(LENGTH, '').replace(/\u0300/g, '\u0301').normalize('NFC');
 }
 
 export function stripGrc(s) {

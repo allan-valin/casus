@@ -251,3 +251,26 @@ Latin: English Wiktionary via kaikki.org (`kaikki.org-dictionary-Latin.jsonl`, 1
 variant kept with its tags (Classical-Latin, Ecclesiastical). **18,809 lemma records, 49.3 % of all,
 72.2 % of the frequent (A–C); `data/la/ipa.json` 2.3 MB.** The entry shows the variant whose tag the
 dictionary period prefers (classical/archaic → Classical-Latin; later → Ecclesiastical).
+
+### Ancient Greek (languages plan Task 11, 2026-10-18)
+
+Source: English Wiktionary via kaikki.org (`kaikki.org-dictionary-AncientGreek.jsonl`, 404 MB, 68,196
+entries; extraction of 2026-10-03 from the dump of 2026-09-02). Inflected-form pages (44,945 entries
+whose senses are all form-of) are skipped: their forms are in their lemma's tables. Tense comes from the
+conjugation table label; a cell tagged with two values gives one analysis per value. `python3
+tools/build_lang.py grc`, 31 s, 4 GB peak RAM.
+
+| | measured | budget |
+|---|---|---|
+| lemmas | 22,757 | |
+| forms / analyses | 871,295 / 1,180,811 | |
+| `data/grc/` on disk | **49.0 MB** | 60 MB |
+| all shards gzipped | 5.5 MB | |
+| shards | 1,201, named by the prefix of the form **without diacritics** | |
+| largest shard gzipped | under 70 KB | 300 KB |
+
+Gate passed with **no trimming**: every dialect table (Epic, Ionic, Doric…) is kept. Two findings on the
+way: (1) a separate unaccented key per form cost 60 MB, so it was dropped — the page matches unaccented
+input against the shard it loads anyway, at no data cost; (2) `write_assets` left shards of earlier builds
+in `forms/` (first measurements of 103–109 MB were mostly stale files); it now clears them.
+Keys fold grave to acute (καὶ → καί) as well as case, final sigma and length marks.

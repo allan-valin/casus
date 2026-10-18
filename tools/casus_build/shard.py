@@ -77,21 +77,23 @@ def shard_key(form: str, names=None) -> str | None:
     return None
 
 
-def split_shards(forms, max_forms: int = 8000, depth: int = 2, max_depth: int = 5) -> dict[str, list[str]]:
-    """Group forms by prefix, splitting any group over max_forms by one more letter."""
+def split_shards(forms, max_forms: int = 8000, depth: int = 2, max_depth: int = 5, key_of=None) -> dict[str, list[str]]:
+    """Group forms by prefix, splitting any group over max_forms by one more letter. `key_of` maps a form to
+    the string its prefix is taken from (Greek: the form without diacritics); identity by default."""
+    key_of = key_of or (lambda f: f)
     groups: dict[str, list[str]] = defaultdict(list)
     for form in forms:
-        groups[form[:depth]].append(form)
+        groups[key_of(form)[:depth]].append(form)
     out: dict[str, list[str]] = {}
     for name, members in groups.items():
         if len(members) <= max_forms or depth >= max_depth or len(name) < depth:
             out[name] = members
             continue
-        own = [f for f in members if len(f) <= depth]
-        longer = [f for f in members if len(f) > depth]
+        own = [f for f in members if len(key_of(f)) <= depth]
+        longer = [f for f in members if len(key_of(f)) > depth]
         if own:
             out[name] = own
-        out.update(split_shards(longer, max_forms, depth + 1, max_depth))
+        out.update(split_shards(longer, max_forms, depth + 1, max_depth, key_of))
     return out
 
 
@@ -111,16 +113,19 @@ def _rows(analyses: list[dict]) -> list[list]:
     return [[lemma, *codes] for lemma, codes in by_lemma.items()]
 
 
-def write_assets(index: dict, lemmas: dict, out_dir: Path, max_forms: int = 8000) -> dict:
+def write_assets(index: dict, lemmas: dict, out_dir: Path, max_forms: int = 8000, rows=None, key_of=None) -> dict:
     """Write forms/<prefix>.json, lemmas.json and manifest.json under out_dir; return the manifest."""
     out_dir = Path(out_dir)
     forms_dir = out_dir / "forms"
     forms_dir.mkdir(parents=True, exist_ok=True)
+    for stale in forms_dir.glob("*.json"):   # a shard of an earlier build would be served and counted
+        stale.unlink()
 
     manifest_shards = {}
     total = 0
-    for name, members in sorted(split_shards(index, max_forms).items()):
-        data = _dump({form: _rows(index[form]) for form in members})
+    rows = rows or _rows
+    for name, members in sorted(split_shards(index, max_forms, key_of=key_of).items()):
+        data = _dump({form: rows(index[form]) for form in members})
         (forms_dir / f"{name}.json").write_text(data, encoding="utf-8")
         size = len(data.encode("utf-8"))
         manifest_shards[name] = {"forms": len(members), "bytes": size}

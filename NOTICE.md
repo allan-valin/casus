@@ -39,6 +39,13 @@ licensed CC BY-SA 4.0 and the GFDL; the contributors are the editors of the Engl
 is separately licensed from the Whitaker-derived assets and is never blended into them. Latin: fetched
 2026-10-18, 18,809 lemma records.
 
+## Ancient Greek dictionary — CC BY-SA
+
+`data/grc/` (forms, lemmas, English glosses, IPA) is derived from the **English Wiktionary**'s Ancient Greek
+entries through the Wiktextract extraction at kaikki.org (extraction of 2026-10-03), licensed CC BY-SA 4.0
+and the GFDL; the contributors are the editors of the English Wiktionary. Built by `tools/build_lang.py grc`.
+The preposition table (`government.json`) follows Smyth's *Greek Grammar* (public domain).
+
 ## Speech — espeak-ng (GPL-3.0)
 
 When the browser has no voice for a language, the speaker button loads espeak-ng compiled to
