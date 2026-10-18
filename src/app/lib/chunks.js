@@ -10,13 +10,16 @@ function linksOf(block, kind) {
 
 /** preposition index -> object index, for adjacent pairs the cascade settled; unglued ones are skipped. */
 export function gluePairs(blocks, unglued = new Set()) {
+  // preposition index -> the object's index (one word, Latin) or the indices of its whole governed phrase (German)
   const out = new Map();
   for (let i = 0; i < blocks.length - 1; i += 1) {
     const prep = blocks[i];
-    const object = blocks[i + 1];
     if (unglued.has(prep.token.index)) continue;
     if (!prep.candidates.some((c) => c.analysis.pos === 'prep')) continue;
-    if (linksOf(object, 'government').includes(prep.token.index)) out.set(prep.token.index, object.token.index);
+    const members = [];
+    for (let j = i + 1; j < blocks.length && linksOf(blocks[j], 'government').includes(prep.token.index); j += 1) members.push(blocks[j].token.index);
+    if (members.length === 1) out.set(prep.token.index, members[0]);
+    else if (members.length > 1) out.set(prep.token.index, members);
   }
   return out;
 }
@@ -42,9 +45,9 @@ export function partners(blocks) {
  * index in the order) carries both. */
 export function items(blocks, order, glue) {
   const partnerOf = new Map();
-  for (const [prep, object] of glue) {
-    partnerOf.set(prep, [prep, object]);
-    partnerOf.set(object, [prep, object]);
+  for (const [prep, objects] of glue) {
+    const chunk = [prep, ...(Array.isArray(objects) ? objects : [objects])];
+    for (const index of chunk) partnerOf.set(index, chunk);
   }
   const done = new Set();
   const out = [];

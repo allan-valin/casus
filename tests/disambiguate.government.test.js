@@ -118,3 +118,45 @@ describe('government and indeclinables', () => {
     expect(out[1].candidates.map((c) => c.analysis.case).sort()).toEqual(['acc', 'x']);
   });
 });
+
+describe('government over the noun phrase (German, languages phase 3 Task 4)', () => {
+  const N = (c, n = 'sg', g = 'm', pos = 'noun') => ({ lemma: 'x', pos, case: c, number: n, gender: g });
+  const tok = (i, s) => ({ index: i, surface: s, key: s, kind: 'word' });
+  const GOV = { mit: ['dat'], in: ['acc', 'dat'], an: ['acc', 'dat'] };
+  async function run(words, analyses) {
+    const { buildBlocks, governmentStage, narrow } = await import('../src/lib/disambiguate.js');
+    const blocks = buildBlocks(words.map((w, i) => tok(i, w)), new Map(Object.entries(analyses)));
+    return narrow(blocks, (b) => governmentStage(b, GOV, { phrase: true }));
+  }
+  const cases = (b) => [...new Set(b.candidates.map((c) => c.analysis.case))].sort();
+
+  it('mit dem guten Wein: article, adjective and noun all dative, each linked to mit', async () => {
+    const out = await run(['mit', 'dem', 'guten', 'Wein'], {
+      mit: [{ lemma: 'p', pos: 'prep', governs: 'dat' }],
+      dem: [N('dat', 'sg', 'm', 'det'), N('dat', 'sg', 'n', 'det')],
+      guten: [N('dat', 'sg', 'm', 'adj'), N('acc', 'sg', 'm', 'adj'), N('gen', 'sg', 'm', 'adj'), N('nom', 'pl', 'x', 'adj')],
+      Wein: [N('nom'), N('dat'), N('acc')],
+    });
+    expect(out.slice(1).map(cases)).toEqual([['dat'], ['dat'], ['dat']]);
+    for (const b of out.slice(1)) expect(b.candidates.every((c) => c.links.some((l) => l.kind === 'government' && l.index === 0))).toBe(true);
+  });
+  it('in das Haus is accusative and in dem Haus dative: the article settles the preposition', async () => {
+    const haus = [N('nom', 'sg', 'n'), N('dat', 'sg', 'n'), N('acc', 'sg', 'n')];
+    const prep = [{ lemma: 'p', pos: 'prep', governs: 'acc' }, { lemma: 'p', pos: 'prep', governs: 'dat' }];
+    const a = await run(['in', 'das', 'Haus'], { in: prep, das: [N('nom', 'sg', 'n', 'det'), N('acc', 'sg', 'n', 'det')], Haus: haus });
+    expect(cases(a[2])).toEqual(['acc']);
+    expect(a[0].candidates.map((c) => c.analysis.governs)).toEqual([['acc'], ['acc']]);
+    const d = await run(['in', 'dem', 'Haus'], { in: prep, dem: [N('dat', 'sg', 'n', 'det')], Haus: haus });
+    expect(cases(d[2])).toEqual(['dat']);
+  });
+  it('a Wechselpräposition whose phrase allows both stays two-coloured', async () => {
+    const out = await run(['an', 'Häuser'], { an: [{ lemma: 'p', pos: 'prep', governs: 'acc' }, { lemma: 'p', pos: 'prep', governs: 'dat' }], Häuser: [N('nom', 'pl', 'n'), N('acc', 'pl', 'n'), N('dat', 'pl', 'n')] });
+    expect(cases(out[1])).toEqual(['acc', 'dat']);
+    expect([...new Set(out[0].candidates.flatMap((c) => c.analysis.governs))].sort()).toEqual(['acc', 'dat']);
+  });
+  it('the span stops after the first noun and never crosses a verb', async () => {
+    const out = await run(['mit', 'Wein', 'kam', 'Wein'], { mit: [{ lemma: 'p', pos: 'prep', governs: 'dat' }], Wein: [N('nom'), N('dat'), N('acc')], kam: [{ lemma: 'v', pos: 'verb', person: '3', number: 'sg' }] });
+    expect(cases(out[1])).toEqual(['dat']);
+    expect(cases(out[3])).toEqual(['acc', 'dat', 'nom']);
+  });
+});

@@ -69,3 +69,19 @@ describe('gluePairs without prepositions', () => {
     expect(gluePairs([b(0, 'Rosa', 'noun'), b(1, 'urbem', 'noun'), b(2, 'uidet', 'verb')]).size).toBe(0);
   });
 });
+
+describe('glue over a governed noun phrase (German)', () => {
+  it('glues the preposition to every following word that links its government to it', () => {
+    const link = (i) => [{ analysis: { pos: 'noun', case: 'dat' }, links: [{ kind: 'government', index: 0 }] }];
+    const blocks = [
+      { token: { index: 0, surface: 'mit' }, candidates: [{ analysis: { pos: 'prep', governs: ['dat'] }, links: [] }] },
+      { token: { index: 1, surface: 'dem' }, candidates: link() },
+      { token: { index: 2, surface: 'guten' }, candidates: link() },
+      { token: { index: 3, surface: 'Wein' }, candidates: link() },
+      { token: { index: 4, surface: 'kam' }, candidates: [{ analysis: { pos: 'verb' }, links: [] }] },
+    ];
+    const glue = gluePairs(blocks);
+    expect([...glue]).toEqual([[0, [1, 2, 3]]]);
+    expect(items(blocks, [0, 1, 2, 3, 4], glue).map((i) => i.indices)).toEqual([[0, 1, 2, 3], [4]]);
+  });
+});

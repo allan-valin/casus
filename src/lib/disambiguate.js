@@ -154,7 +154,23 @@ function withLink(candidate, kind, index) {
  * `in urbe` settles the ablative, `in Galliam` the accusative, and when both
  * stay open both stay striped.
  */
-export function governmentStage(blocks, government = GOVERNMENT) {
+const PHRASE_MEMBERS = new Set(['det', 'adj', 'num', 'pron', 'vpar']);
+
+/** With `phrase` (German): the blocks after a preposition while each can be a determiner, adjective,
+ * numeral or pronoun, up to and including the first that can be a noun (at most five); else the next one. */
+function governedSpan(blocks, i, phrase) {
+  if (!phrase) return [i + 1];
+  const span = [];
+  for (let j = i + 1; j < blocks.length && span.length < 5; j += 1) {
+    const poses = blocks[j].candidates.map((c) => c.analysis.pos);
+    if (poses.includes('noun')) { span.push(j); break; }
+    if (poses.some((p) => PHRASE_MEMBERS.has(p))) { span.push(j); continue; }
+    break;
+  }
+  return span;
+}
+
+export function governmentStage(blocks, government = GOVERNMENT, { phrase = false } = {}) {
   const out = blocks.map((block) => ({
     ...block,
     candidates: block.candidates.map((c) => (c.analysis.pos === 'prep'
@@ -167,25 +183,36 @@ export function governmentStage(blocks, government = GOVERNMENT) {
     const preps = prep.candidates.filter((c) => c.analysis.pos === 'prep' && c.analysis.governs.length > 0);
     if (preps.length === 0) continue;
     const governs = [...new Set(preps.flatMap((c) => c.analysis.governs))];
-    const object = out[i + 1];
     // an indeclinable reading (case x) says nothing about government: it stays as it is
-    const kept = object.candidates.filter((c) => c.analysis.case && (c.analysis.case === 'x' || governs.includes(c.analysis.case)));
-    if (!kept.some((c) => c.analysis.case !== 'x')) continue;
-
-    const survivingCases = [...new Set(kept.map((c) => c.analysis.case).filter((k) => k !== 'x'))];
+    const caseOk = (c, allowed) => c.analysis.case && (c.analysis.case === 'x' || allowed.includes(c.analysis.case));
+    const span = governedSpan(out, i, phrase).filter((j) => out[j].candidates.some((c) => caseOk(c, governs) && c.analysis.case !== 'x'));
+    if (span.length === 0) continue;
+    // the cases every member of the phrase still allows; one shared case settles the preposition
+    let shared = governs;
+    for (const j of span) {
+      const own = new Set(out[j].candidates.filter((c) => caseOk(c, governs)).map((c) => c.analysis.case).filter((k) => k !== 'x'));
+      const next = shared.filter((k) => own.has(k));
+      if (next.length) shared = next;
+    }
     const name = prep.token.surface;
-    if (survivingCases.length === 1) {
-      const theCase = survivingCases[0];
-      const prepReason = `government: ${name} + ${theCase} (object ${object.token.surface} is ${CASE_NAME[theCase]})`;
+    const head = out[span[span.length - 1]];
+    if (shared.length === 1) {
+      const theCase = shared[0];
+      const prepReason = `government: ${name} + ${theCase} (object ${head.token.surface} is ${CASE_NAME[theCase]})`;
       out[i] = {
         ...prep,
         candidates: prep.candidates.map((c) => (c.analysis.pos === 'prep'
-          ? withLink(withReason({ ...c, analysis: { ...c.analysis, governs: [theCase] } }, prepReason), 'government', object.token.index)
+          ? withLink(withReason({ ...c, analysis: { ...c.analysis, governs: [theCase] } }, prepReason), 'government', head.token.index)
           : c)),
       };
     }
-    const objectReason = `government: governed by ${name} (${survivingCases.join('/')})`;
-    out[i + 1] = { ...object, candidates: kept.map((c) => (c.analysis.case === 'x' ? c : withLink(withReason(c, objectReason), 'government', prep.token.index))) };
+    const objectReason = `government: governed by ${name} (${shared.join('/')})`;
+    for (const j of span) {
+      const object = out[j];
+      const kept = object.candidates.filter((c) => caseOk(c, shared));
+      if (!kept.some((c) => c.analysis.case !== 'x')) continue;
+      out[j] = { ...object, candidates: kept.map((c) => (c.analysis.case === 'x' ? c : withLink(withReason(c, objectReason), 'government', prep.token.index))) };
+    }
   }
   return out;
 }
