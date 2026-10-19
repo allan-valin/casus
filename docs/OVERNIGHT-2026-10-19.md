@@ -55,3 +55,16 @@ Decisions (his answers): phrase answers show the REAL sense; explanations writte
   Possible next (all small): Turkish possessive + case (evine), Portuguese inverted subjects, Sanskrit fused words,
   Icelandic present tense (needs the BÍN licence answer).
 - ~04:50: Turkish possessed nouns (evine dative); Sanskrit fused words split (हरिर्जयति, सत्यमेव). Browser-checked.
+
+## 2026-10-19 daytime (Allan's feedback after waking)
+Done: cheat sheet menu; above/below checkboxes in the sentences panel; Arabic blocks (one dictionary form, badge
+smaller than the word, vowels in the text decide, basmala reads in full); literature passages for every language after
+Macedonian; Chinese via CC-CEDICT + Unihan (都 dōu; single characters back in the word list); grammar gaps (Slavic
+past, participles, Greek middle voice, Turkish negatives and -DIr, names, form-of pronouns, Korean stacked particles,
+subject–verb person); Icelandic from BÍN (CC BY-SA 4.0); Korean conjugation generator (connectives, -는/-(으)ㄴ/-(으)ㄹ,
+-어하다 verbs; readable badges); Sanskrit vowel sandhi and up to four words split; Wiktionary on demand for unknown
+words (src/lib/live.js) and a Downloads panel to keep dictionaries offline (public/sw.js), both checked on the live
+site; dumps kept gzipped, dist/ no longer kept locally.
+Hosting: Czech, Greek, Icelandic from the full dump; Finnish, Polish, Hungarian, Portuguese, Turkish keep the
+frequent-word core (Pages budget), rare words come from the live lookup.
+Still open: Sanskrit stem-only compound members (व्यूढं); Icelandic and Finnish Kalevala-style archaic forms.

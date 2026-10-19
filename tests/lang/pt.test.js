@@ -48,3 +48,19 @@ describe('Portuguese noun or verb by the article', () => {
     expect(roles(out)).toEqual(['sbj', 'sbj', '-', 'obj', 'obj']);
   });
 });
+describe('an intransitive verb with nothing before it: the noun after is the subject (Chegou o trem)', () => {
+  it('Chegou o trem → sujeito; Comeu o bolo → objeto', () => {
+    const intr = roleStage([B(0, 'Chegou', [{ ...V('3', 'sg', 'past'), valency: 'intr' }]), B(1, 'o', [ART('m')]), B(2, 'trem', [N('m')])]);
+    expect(roles(intr)).toEqual(['-', 'sbj', 'sbj']);
+    const tr = roleStage([B(0, 'Comeu', [V('3', 'sg', 'past')]), B(1, 'o', [ART('m')]), B(2, 'bolo', [N('m')])]);
+    expect(roles(tr)).toEqual(['-', 'obj', 'obj']);
+  });
+});
+describe('the Casus list of verbs that put their subject after them', () => {
+  it('chegou (chegar) even without a valency tag', () => {
+    const out = roleStage([B(0, 'Chegou', [{ ...V('3', 'sg', 'past'), lemma: 'chegar' }]), B(1, 'o', [ART('m')]), B(2, 'trem', [N('m')])]);
+    const cair = roleStage([B(0, 'Caiu', [V('3', 'sg', 'past')]), B(1, 'a', [ART('f')]), B(2, 'chuva', [N('f')])]);
+    expect(roles(cair)).toEqual(['-', 'sbj', 'sbj']);
+    expect(roles(out)).toEqual(['-', 'sbj', 'sbj']);
+  });
+});

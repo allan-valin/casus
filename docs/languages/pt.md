@@ -13,4 +13,6 @@ Built overnight 2026-10-19 on the generic builder, caseless.
   dictionary.
 - Drills: verb endings only (no noun cases), frequent words from pt-BR subtitles, phrases.
 - Data: English Wiktionary via kaikki (CC BY-SA), kept for the 50,000 commonest pt-BR subtitle words.
-- Not yet: inverted subjects (Chegou o trem), objects fronted for emphasis, a + noun before the verb, proper names.
+- Inverted subjects: with nothing before the verb, a verb that puts its subject after it (Casus list: chegar, nascer,
+  morrer, cair, acontecer, aparecer…, or Wiktionary marking it intransitive only) has its subject after it (Chegou o trem).
+- Not yet: objects fronted for emphasis, a + noun before the verb.

@@ -67,33 +67,56 @@ export default {
   "polarity": {
    "n": "neg",
    "_": "x"
+  },
+  "definite": {
+   "d": "def",
+   "i": "indef",
+   "_": "x"
+  },
+  "poss": {
+   "a": "1sg",
+   "b": "1pl",
+   "c": "2sg",
+   "d": "2pl",
+   "e": "3sg",
+   "f": "3pl",
+   "_": "x"
+  },
+  "valency": {
+   "i": "intr",
+   "_": "x"
   }
  },
  "LAYOUT": {
   "noun": [
    "case",
    "number",
-   "gender"
+   "gender",
+   "poss"
   ],
   "adj": [
    "case",
    "number",
-   "gender"
+   "gender",
+   "poss"
   ],
   "pron": [
    "case",
    "number",
-   "gender"
+   "gender",
+   "poss"
   ],
   "det": [
    "case",
    "number",
-   "gender"
+   "gender",
+   "poss"
   ],
   "num": [
    "case",
    "number",
-   "gender"
+   "gender",
+   "poss"
   ],
   "verb": [
    "person",
@@ -102,7 +125,9 @@ export default {
    "mood",
    "gender",
    "voice",
-   "polarity"
+   "polarity",
+   "definite",
+   "valency"
   ],
   "adv": [],
   "prep": [],

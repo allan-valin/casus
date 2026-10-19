@@ -20,6 +20,10 @@ describe('badge', () => {
     expect(badge({ pos: 'verb', person: '2', number: 'sg', tense: 'pres', mood: 'ind', voice: 'pass' })).toBe('2sg pr ps');
     expect(badge({ pos: 'verb', person: '3', number: 'sg', tense: 'aor', mood: 'ind', polarity: 'neg' })).toBe('3sg ao neg');
     expect(badge({ pos: 'verb', mood: 'part', tense: 'pres' })).toBe('part pr');
+    expect(badge({ pos: 'verb', person: '1', number: 'pl', tense: 'pres', mood: 'ind', definite: 'def' })).toBe('1pl pr def');
+  });
+  it('a possessed noun shows its owner after the case (Turkish evime: dative, my)', () => {
+    expect(badge({ ...noun('dat'), poss: '1sg' })).toBe(`${badge(noun('dat'))} 1sg`);
   });
   it('marks a preposition and gives a dash to the rest', () => {
     expect(badge({ pos: 'prep', governs: ['abl'] })).toBe('Prp');

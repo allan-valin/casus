@@ -9,4 +9,5 @@ Built overnight 2026-10-19 on the generic case-language builder.
 - Verbs (2026-10-19): Wiktionary's Hungarian tables come tagged as unrecognised with the persons a row off; the
   builder reads the person from the ending (olvasok 1sg, olvassuk 1pl, olvastam 1sg past), tense and definiteness from
   the tags, and keeps the indicative only. The headword is the 3rd singular (olvas).
-- Not yet: definite vs indefinite shown on the badge; conditional and subjunctive forms.
+- The badge marks the definite conjugation (olvassuk: 1pl pr def).
+- Not yet: conditional and subjunctive forms.

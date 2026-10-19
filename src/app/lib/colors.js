@@ -52,14 +52,15 @@ export function makeColors(inventory) {
     return 'function';
   }
   function badge(analysis) {
-    if (family(analysis) === 'nominal') return primary.badge[analysis[inventory.primary]] ?? '—';
+    // a possessed noun shows its owner (Turkish evime: Yön 1sg)
+    if (family(analysis) === 'nominal') return `${primary.badge[analysis[inventory.primary]] ?? '—'}${analysis.poss && analysis.poss !== 'x' ? ` ${analysis.poss}` : ''}`;
     if (inventory.formBadge && family(analysis) === 'verb') return inventory.formBadge[analysis.form] ?? analysis.form ?? '—';
     if (analysis.pos === 'verb') {
       const tense = TENSE_BADGE[analysis.tense] ?? analysis.tense;
       if (analysis.mood === 'inf') return `inf ${tense}`;
       if (analysis.mood === 'part') return `part${tense ? ` ${tense}` : ''}${analysis.voice === 'pass' ? ' ps' : ''}`;
       // the passive and the negative show (Greek φοβάσαι, Turkish kalmaz); a past by gender has no person (Czech byl)
-      const extra = `${analysis.voice === 'pass' ? ' ps' : ''}${analysis.polarity === 'neg' ? ' neg' : ''}`;
+      const extra = `${analysis.voice === 'pass' ? ' ps' : ''}${analysis.polarity === 'neg' ? ' neg' : ''}${analysis.definite === 'def' ? ' def' : ''}`;
       if ((!analysis.person || analysis.person === 'x') && analysis.gender && analysis.gender !== 'x') return `${analysis.gender}.${analysis.number} ${tense}${extra}`;
       return `${analysis.person}${analysis.number} ${tense}${extra}`;
     }

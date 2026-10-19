@@ -144,6 +144,9 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
         # उवाच: perfect of वच्); kept only when the tags give a reading
         form_of_tags = set(senses[0].get("tags") or []) if form_of and pos not in ("prep", "conj", "particle", "adv") else None
         gender = next((v for k, v in GENDERS.items() if any(k in (s.get("tags") or []) for s in senses)), None)
+        # intransitive: some sense says so and none says transitive (chegar "to arrive")
+        intransitive = pos == "verb" and any("intransitive" in (x.get("tags") or []) for x in senses) \
+            and not any("transitive" in (x.get("tags") or []) for x in senses)
         cells = []
         seen_person: dict = {}                    # (tense, number, gender) -> how many untagged persons so far
         for f in d.get("forms") or []:
@@ -158,6 +161,7 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
             text = cfg.clean((f.get("form") or "").strip())
             # a key must be a word: it starts with a letter and has no slash (an IPA cell filed as a form once tried to
             # become the shard "/ˈ", a path outside the data folder)
+            definite = ("def" if "definite" in tags else "indef" if "indefinite" in tags else None) if cfg.code == "hu" else None
             if cfg.code == "hu" and pos == "verb":
                 # Hungarian tables come tagged as unrecognised, persons a row off: the person from the ending, tense and
                 # definiteness from the tags; moods other than the indicative are left out (their tags are unreliable)
@@ -172,9 +176,13 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
                 # the Slavic past is the l-participle by gender and number (Czech byl, byla); other participles are
                 # kept as participles (Turkish yüzen "swimming")
                 skip = skip - {"participle"}
+            owner = None
             if cfg.code == "tr" and pos == "noun" and "possessive" in tags:
-                # evine "to his house": the case stays; the number is the house's (possessed-single/-many), not the owner's
+                # evine "to his house": the case stays; the number is the house's (possessed-single/-many), the owner's
+                # person and number go to `poss` (evime: 1sg)
                 skip = skip - {"possessive"}
+                if _one(tags, PERSONS) and _one(tags, NUMBERS):
+                    owner = _one(tags, PERSONS) + _one(tags, NUMBERS)
                 tags = (tags - set(NUMBERS) - set(PERSONS)) | {"plural" if "possessed-many" in tags else "singular"}
             if not text or " " in text or tags & skip or not cfg.letters.match(text) or "/" in text or "\\" in text:
                 continue
@@ -183,6 +191,12 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
                 tags = (tags - set(PERSONS) - set(NUMBERS)) | {{"1": "first-person", "2": "second-person", "3": "third-person"}[person], {"sg": "singular", "pl": "plural"}[number]}
             a = analysis(cfg, pos, tags, gender)
             if a:
+                if owner:
+                    a["poss"] = owner
+                if definite and pos == "verb":
+                    a["definite"] = definite
+                if intransitive and a.get("pos") == "verb":
+                    a["valency"] = "intr"
                 cells.append((text, a))
         if form_of_tags and not cells:
             fa = analysis(cfg, pos, form_of_tags, gender)
@@ -199,7 +213,7 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
         if not gloss:
             continue
         ipa = [{"ipa": s["ipa"], "tags": list(s.get("tags") or [])} for s in d.get("sounds") or [] if s.get("ipa")]
-        yield {"id": i, "headword": word, "pos": pos, "gender": gender, "cells": cells, "gloss_en": gloss, "ipa": ipa[:3]}
+        yield {"id": i, "headword": word, "pos": pos, "gender": gender, "cells": cells, "gloss_en": gloss, "ipa": ipa[:3], "form_of": bool(form_of)}
 
 
 def build_index(entries: list[dict]) -> dict[str, list[dict]]:
@@ -213,6 +227,12 @@ def build_index(entries: list[dict]) -> dict[str, list[dict]]:
             rows = index.setdefault(text.lower(), [])
             if full not in rows:
                 rows.append(full)
+    # a form-of entry (Turkish gittim, "first-person singular past of gitmek") never doubles a form its real lemma covers
+    form_of_ids = {e["id"] for e in entries if e.get("form_of")}
+    for form, rows in index.items():
+        real = {r["pos"] for r in rows if r["lemma"] not in form_of_ids}
+        if real:
+            index[form] = [r for r in rows if r["lemma"] not in form_of_ids or r["pos"] not in real]
     # pronouns that share one table (Icelandic ég, þú, hún…) each list every form: a form that is some pronoun's own
     # headword belongs to that pronoun only
     pron_head = {e["headword"].lower(): e["id"] for e in entries if e["pos"] == "pron"}
@@ -233,11 +253,14 @@ def codes(cfg: Config):
     mood = {"ind": "i", "cond": "c", "imp": "m", "subj": "s", "pot": "o", "opt": "t", "inf": "n", "part": "r", "x": "_", None: "_"}
     voice = {"act": "a", "pass": "p", "x": "_", None: "_"}
     polarity = {"neg": "n", "x": "_", None: "_"}
+    definite = {"def": "d", "indef": "i", "x": "_", None: "_"}                    # Hungarian conjugations
+    valency = {"intr": "i", "x": "_", None: "_"}                                # every sense intransitive (pt chegar)
+    poss = {f"{p}{n}": ch for (p, n), ch in zip([(p, n) for p in "123" for n in ("sg", "pl")], "abcdef")} | {"x": "_", None: "_"}   # Turkish possessor
     pos_codes = {"noun": "n", "adj": "a", "verb": "v", "pron": "o", "det": "t", "num": "m", "adv": "d", "prep": "r", "conj": "c", "particle": "k", "interj": "j"}
-    nominal = (("case", case), ("number", number), ("gender", gender))
+    nominal = (("case", case), ("number", number), ("gender", gender), ("poss", poss))
     layout = {p: nominal for p in ("noun", "adj", "pron", "det", "num")}
     # a verb: person, number, tense, mood; the Slavic past's gender, the voice (Greek mediopassive), negation (Turkish)
-    layout.update({"verb": (("person", person), ("number", number), ("tense", tense), ("mood", mood), ("gender", gender), ("voice", voice), ("polarity", polarity)), "adv": (), "prep": (), "conj": (), "particle": (), "interj": ()})
+    layout.update({"verb": (("person", person), ("number", number), ("tense", tense), ("mood", mood), ("gender", gender), ("voice", voice), ("polarity", polarity), ("definite", definite), ("valency", valency)), "adv": (), "prep": (), "conj": (), "particle": (), "interj": ()})
     back = {name: {v: k for k, v in t.items() if k is not None} for lay in layout.values() for name, t in lay}
 
     def encode(a: dict) -> str:
@@ -253,7 +276,7 @@ def codes(cfg: Config):
         return out
 
     json_ = {"POS": {v: k for k, v in pos_codes.items()},
-             "TABLES": {n: {v: k for k, v in t.items() if k is not None} for n, t in (("case", case), ("number", number), ("gender", gender), ("person", person), ("tense", tense), ("mood", mood), ("voice", voice), ("polarity", polarity))},
+             "TABLES": {n: {v: k for k, v in t.items() if k is not None} for n, t in (("case", case), ("number", number), ("gender", gender), ("person", person), ("tense", tense), ("mood", mood), ("voice", voice), ("polarity", polarity), ("definite", definite), ("poss", poss), ("valency", valency))},
              "LAYOUT": {p: [n for n, _t in lay] for p, lay in layout.items()}}
     return encode, decode, json_
 

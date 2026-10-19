@@ -178,3 +178,39 @@ def test_a_verb_form_filed_only_as_a_form_of_is_read_from_its_tags():
 def test_sanskrit_class_nasal_folds_to_the_anusvara():
     from casus_build.generic import clean_sa
     assert clean_sa("सञ्जय") == clean_sa("संजय")
+
+
+def test_hungarian_definiteness_and_turkish_possessor_are_kept():
+    from casus_build.generic import CONFIGS, codes
+    hu = [json.dumps({"word": "olvas", "pos": "verb", "forms": [{"form": "olvassuk", "tags": ["definite", "error-unrecognized-form", "plural"]},
+                                                                {"form": "olvasunk", "tags": ["indefinite", "error-unrecognized-form", "plural"]}], "senses": [{"glosses": ["to read"]}]})]
+    index = build_index(list(parse_entries(CONFIGS["hu"], hu)))
+    assert index["olvassuk"][0]["definite"] == "def" and index["olvasunk"][0]["definite"] == "indef"
+    tr = [json.dumps({"word": "ev", "pos": "noun", "forms": [{"form": "evime", "tags": ["dative", "first-person", "possessed-single", "possessive", "singular"]}], "senses": [{"glosses": ["house"]}]})]
+    t = build_index(list(parse_entries(CONFIGS["tr"], tr)))
+    assert (t["evime"][0]["case"], t["evime"][0]["poss"]) == ("dat", "1sg")
+    encode, decode, _ = codes(CONFIGS["tr"])
+    assert decode(encode(t["evime"][0] | {"lemma": None} if False else {k: v for k, v in t["evime"][0].items() if k != "lemma"}), "1")["poss"] == "1sg"
+
+
+def test_a_form_of_entry_never_doubles_a_form_its_lemma_covers():
+    from casus_build.generic import CONFIGS
+    lines = [json.dumps({"word": "gitmek", "pos": "verb", "forms": [{"form": "gittim", "tags": ["past", "first-person", "singular"]}], "senses": [{"glosses": ["to go"]}]}),
+             json.dumps({"word": "gittim", "pos": "verb", "forms": [], "senses": [{"glosses": ["first-person singular past of gitmek"], "tags": ["form-of", "past", "first-person", "singular"]}]}),
+             json.dumps({"word": "उवाच", "pos": "verb", "forms": [], "senses": [{"glosses": ["perfect of वच्"], "tags": ["form-of", "perfect", "singular", "third-person"]}]}, ensure_ascii=False)]
+    tr = build_index(list(parse_entries(CONFIGS["tr"], lines[:2])))
+    assert len({a["lemma"] for a in tr["gittim"]}) == 1
+    sa = build_index(list(parse_entries(CONFIGS["sa"], lines[2:])))
+    assert "उवाच" in sa
+
+
+def test_a_verb_whose_every_sense_is_intransitive_says_so():
+    from casus_build.generic import CONFIGS, codes
+    lines = [json.dumps({"word": "chegar", "pos": "verb", "forms": [{"form": "chegou", "tags": ["third-person", "singular", "preterite", "indicative"]}],
+                         "senses": [{"glosses": ["to arrive"], "tags": ["intransitive"]}, {"glosses": ["to come back"]}]}),
+             json.dumps({"word": "comer", "pos": "verb", "forms": [{"form": "comeu", "tags": ["third-person", "singular", "preterite", "indicative"]}],
+                         "senses": [{"glosses": ["to eat"], "tags": ["transitive"]}, {"glosses": ["to have a meal"], "tags": ["intransitive"]}]})]
+    index = build_index(list(parse_entries(CONFIGS["pt"], lines)))
+    assert index["chegou"][0]["valency"] == "intr" and "valency" not in index["comeu"][0]
+    encode, decode, _ = codes(CONFIGS["pt"])
+    assert decode(encode({k: v for k, v in index["chegou"][0].items() if k != "lemma"}), "1")["valency"] == "intr"

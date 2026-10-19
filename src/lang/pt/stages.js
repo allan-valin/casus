@@ -37,6 +37,8 @@ function nounOrVerb(blocks) {
   });
 }
 
+const UNACCUSATIVE = /^(cheg|nasc|nasç|morr|acontec|aparec|desaparec|surg|exist|falt|cresc|caiu|caí|cai$|caem|caíram|saiu|saíram|começ|termin|sobr|sumi|sum[iu])/;
+
 export function roleStage(blocks) {
   let out = nounOrVerb(blocks);
   // article or object pronoun
@@ -65,6 +67,12 @@ export function roleStage(blocks) {
     phrases.push([start, i]);
   }
   let objectTaken = false;
+  // an intransitive verb with no noun phrase before it has its subject after it (Chegou o trem)
+  // the verb's first reading decides (a homograph entry may be transitive), or the Casus list of verbs that put
+  // their subject after them (Chegou o trem, Caiu a chuva, Nasceu uma criança)
+  const inverted = !phrases.some(([, z]) => z < v)
+    && (out[v].candidates[0]?.analysis.valency === 'intr' || UNACCUSATIVE.test(out[v].token.key ?? ''));
+  let subjectTaken = false;
   for (const [a, z] of phrases) {
     const before = out[a - 1];
     const prep = before && before.candidates.some((c) => c.analysis.pos === 'prep') ? before.token.key : null;
@@ -73,6 +81,7 @@ export function roleStage(blocks) {
     if (prep && DATIVE.has(prep) && a > v) { role = 'iobj'; why = `${before.token.surface} + noun after the verb: the indirect object`; }
     else if (prep) continue;
     else if (z < v) { role = 'sbj'; why = 'before the verb: the subject'; }
+    else if (inverted && !subjectTaken) { role = 'sbj'; why = 'after an intransitive verb with nothing before it: the subject'; subjectTaken = true; }
     else if (!objectTaken) { role = 'obj'; why = 'after the verb, no preposition: the direct object'; objectTaken = true; }
     if (!role) continue;
     if (prep) out[a - 1] = { ...before, candidates: before.candidates.map((c) => (c.analysis.pos === 'prep' ? withReason({ ...c, analysis: { ...c.analysis, governs: [role], case: role } }, 'marks the indirect object') : c)) };
