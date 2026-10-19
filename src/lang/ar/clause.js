@@ -1,3 +1,4 @@
+import { vowelsAgree, finalVowel, lettersOf } from './normalize.js';
 /*
  * Arabic sentence rules (overnight plan 2026-10-19). Each narrows, never empties.
  * prepStage  a preposition whose genitive object the government stage settled is the preposition (إلى is not
@@ -58,6 +59,46 @@ export function adjectiveStage(blocks) {
     if (!keepA.length || !keepN.length) continue;
     if (!adj.pinned) out[i] = { ...adj, candidates: keepA.map((c) => withReason({ ...c, links: [...(c.links ?? []), { kind: 'agreement', index: noun.token.index }] }, `agrees with ${noun.token.surface}`)) };
     if (!noun.pinned && n === i - 1) out[n] = { ...noun, candidates: keepN.map((c) => withReason({ ...c, links: [...(c.links ?? []), { kind: 'agreement', index: adj.token.index }] }, `its adjective ${adj.token.surface} agrees`)) };
+  }
+  return out;
+}
+
+/* VOWELS: readings whose vowelled spelling disagrees with the vowels the text writes drop (بِسْمِ is not بَسَمَ), and
+ * a noun's final vowel tells its case: ُ/ٌ nominative; ِ/ٍ and َ/ً not nominative (َ is also the diptote genitive,
+ * ِ also the feminine plural accusative). */
+export function vowelStage(blocks) {
+  return blocks.map((b) => {
+    if (b.pinned || !b.candidates.length) return b;
+    const surface = b.token.surface;
+    let keep = b.candidates.filter((c) => vowelsAgree(surface, c.analysis.marked, { last: c.analysis.pos === 'verb' }));
+    let why = 'the vowels written in the text';
+    const v = finalVowel(surface);
+    const nominal = (c) => ['noun', 'adj', 'pron'].includes(c.analysis.pos) && c.analysis.case && c.analysis.case !== 'x';
+    if (v) {
+      const fits = (c) => !nominal(c) || (v === 'u' ? c.analysis.case === 'nom' : c.analysis.case !== 'nom');
+      const narrowed = keep.filter(fits);
+      if (narrowed.length) { keep = narrowed; why = v === 'u' ? 'the final ُ: nominative' : `the final ${v === 'i' ? 'ِ' : 'َ'}: not nominative`; }
+    }
+    if (!keep.length || keep.length === b.candidates.length) return b;
+    return { ...b, candidates: keep.map((c) => ({ ...c, reasons: [...c.reasons, why] })) };
+  });
+}
+
+/* IDAFA: a noun in construct (no article, no tanwin) followed by a definite word makes it genitive (اسم الله, رب
+ * العالمين). */
+const DEFINITE = /^[وفبكل]?\u0627\u0644|^\u0671\u0644/u;
+export function idafaStage(blocks) {
+  const out = blocks.slice();
+  for (let i = 0; i + 1 < out.length; i += 1) {
+    const head = out[i];
+    const next = out[i + 1];
+    const bare = lettersOf(head.token.surface);
+    const construct = head.candidates.length && head.candidates.every((c) => c.analysis.pos === 'noun') && !/^\u0627\u0644/u.test(bare) && !/[ًٌٍ]/u.test(head.token.surface);
+    const definite = DEFINITE.test(lettersOf(next.token.surface).normalize('NFC')) || next.candidates.some((c) => c.analysis.proper);
+    if (!construct || !definite || next.pinned) continue;
+    const gen = next.candidates.filter((c) => c.analysis.case === 'gen');
+    if (!gen.length || gen.length === next.candidates.length) continue;
+    out[i + 1] = { ...next, candidates: gen.map((c) => ({ ...c, reasons: [...c.reasons, `after ${head.token.surface} in construct (iḍāfa): genitive`] })) };
   }
   return out;
 }

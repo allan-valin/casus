@@ -3,6 +3,10 @@
 and prints the coverage (languages plan Task 6). Usage: build_ipa.py la"""
 from __future__ import annotations
 
+import sys as _sys
+from pathlib import Path as _P
+_sys.path.insert(0, str(_P(__file__).resolve().parent))
+from casus_build.dump import open_dump, dump_path  # noqa: E402
 import argparse
 import json
 import sys
@@ -22,12 +26,13 @@ def main(argv=None) -> int:
     args = ap.parse_args(argv)
     name, lang_code = EXTRACTS[args.code]
     src = args.vendor / f"kaikki.org-dictionary-{name.replace(' ', '')}.jsonl"
+    src = dump_path(src)
     if not src.exists():
         print(f"no extract at {src}; run tools/fetch_wiktextract.sh {name}", file=sys.stderr)
         return 1
     out = args.data / args.code
     lemmas = json.loads((out / "lemmas.json").read_text(encoding="utf-8"))
-    with src.open(encoding="utf-8") as fh:
+    with open_dump(src) as fh:
         ipa = build_ipa(fh, lemmas, lang_code=lang_code)
     (out / "ipa.json").write_text(json.dumps(ipa, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     common = {k: v for k, v in lemmas.items() if v.get("freq") in ("A", "B", "C")}

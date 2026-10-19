@@ -8,6 +8,9 @@ ipa.json, government.json, codes.json and manifest.json; prints the size gate (�
 from __future__ import annotations
 
 import argparse
+import sys as _sys
+_sys.path.insert(0, str(__import__('pathlib').Path(__file__).resolve().parent))
+from casus_build.dump import open_dump
 import gzip
 import json
 import sys
@@ -28,7 +31,7 @@ def build_grc(src: Path, out: Path, drop_dialects: bool) -> dict:
     from casus_build.grc.parse import build_index, parse_entries
     from casus_build.grc.prepositions import GOVERNMENT
 
-    with src.open(encoding="utf-8") as fh:
+    with open_dump(src) as fh:
         entries = list(parse_entries(fh))
     if drop_dialects:
         for e in entries:
@@ -62,7 +65,7 @@ def build_de(src: Path, out: Path) -> dict:
     from casus_build.de.parse import ARTICLE, build_index, contraction_entries, parse_entries, phrase_entries
     from casus_build.de.prepositions import GOVERNMENT
 
-    with src.open(encoding="utf-8") as fh:
+    with open_dump(src) as fh:
         entries = list(parse_entries(fh))
     index = build_index(entries)
 
@@ -85,7 +88,7 @@ def build_de(src: Path, out: Path) -> dict:
                       ("government.json", GOVERNMENT), ("codes.json", CODES_JSON),
                       ("compounds.json", _compounds(entries)),
                       ("valency.json", _valency(entries)),
-                      ("expressions.json", build_expressions([*phrase_entries(src.open(encoding="utf-8")), *(e for e in entries if e["pos"] == "verb" and " " not in e["headword"])]))):
+                      ("expressions.json", build_expressions([*phrase_entries(open_dump(src)), *(e for e in entries if e["pos"] == "verb" and " " not in e["headword"])]))):
         (out / name).write_text(json.dumps(obj, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     manifest["key"] = "lower"
     manifest["expressions"] = True           # shard names come from the lower-cased form
@@ -101,7 +104,7 @@ def build_ar(src: Path, out: Path, freq: Path) -> dict:
     from casus_build.ar.parse import build_index, parse_entries
 
     common = {strip_ar(l.split()[0]) for l in freq.read_text(encoding="utf-8").splitlines() if l.strip()}
-    with src.open(encoding="utf-8") as fh:
+    with open_dump(src) as fh:
         entries = [e for e in parse_entries(fh)
                    if e["pos"] != "verb" or any(strip_ar(t) in common for t, _a in e["cells"]) or strip_ar(e["headword"]) in common]
     index = build_index(entries)
@@ -137,7 +140,7 @@ def build_ru(src: Path, out: Path, freq: Path) -> dict:
     from casus_build.ru.parse import build_index, parse_entries, tidy
 
     common = {strip_ru(l.split()[0]) for l in freq.read_text(encoding="utf-8").splitlines() if l.strip()}
-    with src.open(encoding="utf-8") as fh:
+    with open_dump(src) as fh:
         entries = tidy([e for e in parse_entries(fh)
                         if e["pos"] not in ("noun", "verb", "adj", "adv") or strip_ru(e["headword"]) in common
                         or any(strip_ru(t) in common for t, _a in e["cells"])])
@@ -172,7 +175,7 @@ def build_ko(src: Path, out: Path) -> dict:
     from casus_build.ko.codes import CODES_JSON, encode_analysis
     from casus_build.ko.parse import build_index, parse_entries, particle_entries
 
-    with src.open(encoding="utf-8") as fh:
+    with open_dump(src) as fh:
         entries = list(parse_entries(fh))
     entries += particle_entries(10_000_000)
     index = build_index(entries)
@@ -205,7 +208,7 @@ def build_zh(src: Path, out: Path) -> dict:
     from casus_build.zh.parse import build_index, parse_entries
 
     from casus_build.zh.parse import char_map
-    with src.open(encoding="utf-8") as fh:
+    with open_dump(src) as fh:
         entries = list(parse_entries(fh))
     simp = char_map(entries)
     for e in entries:                                  # 書 → 书: single characters get their simplified key
@@ -252,7 +255,7 @@ def build_mk(src: Path, out: Path) -> dict:
     from casus_build.mk.codes import CODES_JSON, encode_analysis
     from casus_build.mk.parse import build_index, parse_entries
 
-    with src.open(encoding="utf-8") as fh:
+    with open_dump(src) as fh:
         entries = list(parse_entries(fh))
     index = build_index(entries)
 
@@ -285,7 +288,7 @@ def build_generic(code: str, src: Path, out: Path) -> dict:
 
     cfg = CONFIGS[code]
     encode, _decode, codes_json = codes(cfg)
-    with src.open(encoding="utf-8") as fh:
+    with open_dump(src) as fh:
         entries = list(parse_entries(cfg, fh))
     index = build_index(entries)
 
@@ -312,7 +315,7 @@ def build_ja(src: Path, out: Path) -> dict:
     from casus_build.ja.codes import CODES_JSON, encode_analysis
     from casus_build.ja.parse import build_index, jlpt_ranks, parse_entries
 
-    with src.open(encoding="utf-8") as fh:
+    with open_dump(src) as fh:
         entries = list(parse_entries(fh))
     index = build_index(entries, reading_rank=jlpt_ranks(Path(__file__).resolve().parents[1] / "vendor" / "wordlists" / "ja"))
 

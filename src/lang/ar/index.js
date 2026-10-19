@@ -7,7 +7,7 @@ import { ARABIC_INVENTORY } from './inventory.js';
 import { stripAr, hasMarksAr, keepsAr } from './normalize.js';
 import { romanizeAr } from './romanize.js';
 import { ROWS, LETTERS, LABELS, createGame, createGrid } from './game.js';
-import { prepStage, vsoStage, adjectiveStage } from './clause.js';
+import { prepStage, vsoStage, adjectiveStage, vowelStage, idafaStage } from './clause.js';
 
 const gov = (blocks) => governmentStage(blocks, GOVERNMENT);
 
@@ -24,7 +24,7 @@ export const arabic = {
   tokenize,
   splitWords,
   // agreement is the adjective's with the noun before it (adjectiveStage), not sentence-wide
-  stages: [gov, prepStage, vsoStage, adjectiveStage, gov, prepStage, adjectiveStage],
+  stages: [vowelStage, idafaStage, gov, prepStage, vsoStage, adjectiveStage, gov, prepStage, adjectiveStage],
   government: GOVERNMENT,
   arrange: [],
   eras: [{ id: 'msa', label: 'Modern Standard Arabic', authors: '', ages: [], ipa: [] }],

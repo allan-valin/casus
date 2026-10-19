@@ -7,6 +7,7 @@ among them; closed classes in full; phrases and proverbs. Writes vendor/wiktextr
 usage: python3 tools/fetch_filtered.py Finnish fi"""
 from __future__ import annotations
 
+import gzip
 import json
 import sys
 import urllib.request
@@ -39,10 +40,10 @@ def main(name: str, code: str, freq_code: str | None = None) -> None:
         with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=120) as r:
             fpath.write_bytes(r.read())
     common = {l.split()[0].lower() for l in fpath.read_text(encoding="utf-8").splitlines() if l.split()}
-    dest = ROOT / "vendor" / "wiktextract" / f"kaikki.org-dictionary-{name.replace(' ', '')}.jsonl"
+    dest = ROOT / "vendor" / "wiktextract" / f"kaikki.org-dictionary-{name.replace(' ', '')}.jsonl.gz"   # kept compressed (2026-10-19)
     url = f"https://kaikki.org/dictionary/{name.replace(' ', '%20')}/kaikki.org-dictionary-{name.replace(' ', '')}.jsonl"
     kept = seen = 0
-    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=300) as r, dest.open("w", encoding="utf-8") as out:
+    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=300) as r, gzip.open(dest, "wt", encoding="utf-8") as out:
         for raw in r:
             seen += 1
             line = raw.decode("utf-8")
@@ -50,7 +51,7 @@ def main(name: str, code: str, freq_code: str | None = None) -> None:
             if keep_entry(d, common):
                 out.write(line if line.endswith("\n") else line + "\n")
                 kept += 1
-    (dest.parent / f"{dest.name}.FETCHED").write_text("filtered\n")
+    (dest.parent / f"{dest.name[:-3]}.FETCHED").write_text("filtered\n")
     print(f"{name}: kept {kept} of {seen} entries -> {dest.name} ({dest.stat().st_size // 1_000_000} MB)")
 
 

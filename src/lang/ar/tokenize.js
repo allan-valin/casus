@@ -1,3 +1,4 @@
+import { vowelsAgree } from './normalize.js';
 /*
  * Arabic words are runs of Arabic letters and their vowel marks. The key is the bare letters (normalize.js), so
  * the dictionary's vowelled spellings are all found and supplied; the key keeps the letters as written (a hamza
@@ -42,8 +43,12 @@ function cut(surface, n) {
 
 function candidates(t) {
   const out = [];
+  // the basmala writes bi + ism without the alif of اسم (بسم الله)
+  if (t.key.startsWith('بسم')) out.push({ clitics: ['ب'], restKey: `ا${t.key.slice(1)}`, prefixLen: 1 });
+  // li + Allah writes two lams, not three (لله, ولله)
+  for (const [pre, cl] of [['لله', ['ل']], ['ولله', ['و', 'ل']], ['فلله', ['ف', 'ل']]]) if (t.key === pre) out.push({ clitics: cl, restKey: 'الله', prefixLen: cl.length });
   for (const [prefix, clitics, alifDropped] of SPLITS) {
-    if (!t.key.startsWith(prefix) || t.key.length <= prefix.length + 1) continue;
+    if (!t.key.startsWith(prefix) || t.key.length <= prefix.length + (alifDropped ? 0 : 1)) continue;   // لله: li + Allah
     const restKey = (alifDropped ? 'ا' : '') + t.key.slice(prefix.length - (prefix.endsWith('ال') ? 2 : alifDropped ? 1 : 0));
     out.push({ clitics, restKey, prefixLen: prefix.length - (prefix.endsWith('ال') ? 2 : alifDropped ? 1 : 0) });
   }
@@ -55,11 +60,12 @@ export async function splitWords(tokens, lexicon) {
   const keys = new Set(words.map((t) => t.key));
   for (const t of words) for (const c of candidates(t)) keys.add(c.restKey);
   const found = await lexicon.lookupAll([...keys]);
-  const known = (k) => (found.get(k) ?? []).length > 0;
+  // a word is known when a reading's vowels agree with the ones the text writes (بِسْمِ is not بَسَمَ)
+  const known = (k, surface) => (found.get(k) ?? []).some((a) => vowelsAgree(surface, a.marked));
   const out = [];
   for (const t of tokens) {
-    if (t.kind !== 'word' || known(t.key)) { out.push(t); continue; }
-    const c = candidates(t).find((x) => known(x.restKey));
+    if (t.kind !== 'word' || known(t.key, t.surface)) { out.push(t); continue; }
+    const c = candidates(t).find((x) => known(x.restKey, cut(t.surface, x.prefixLen)[1]));
     if (!c) { out.push(t); continue; }
     let [head, rest] = cut(t.surface, c.prefixLen);
     let at = t.start;

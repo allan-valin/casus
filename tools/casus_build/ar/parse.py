@@ -8,7 +8,8 @@ import re
 from collections.abc import Iterable, Iterator
 
 POS = {"noun": "noun", "adj": "adj", "verb": "verb", "pron": "pron", "num": "num", "adv": "adv", "prep": "prep",
-       "conj": "conj", "particle": "particle", "intj": "interj"}
+       "conj": "conj", "particle": "particle", "intj": "interj",
+       "name": "noun"}                              # Arabic writes no capitals: names (الله) come from the dictionary
 CASES = {"nominative": "nom", "accusative": "acc", "genitive": "gen"}
 NUMBERS = {"singular": "sg", "dual": "du", "plural": "pl"}
 GENDERS = {"masculine": "m", "feminine": "f"}

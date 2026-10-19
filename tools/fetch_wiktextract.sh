@@ -10,4 +10,6 @@ mkdir -p "$DEST"
 echo "fetching $URL"
 curl -fL --retry 3 -C - "$URL" -o "$DEST/$FILE_NAME"
 date -u +%Y-%m-%d > "$DEST/${FILE_NAME}.FETCHED"
-ls -l "$DEST/$FILE_NAME"
+# kept compressed (the disk filled up on 2026-10-19); the build tools read .jsonl.gz (tools/casus_build/dump.py)
+gzip -f "$DEST/$FILE_NAME"
+ls -l "$DEST/$FILE_NAME.gz"

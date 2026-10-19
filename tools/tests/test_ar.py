@@ -54,3 +54,9 @@ def test_codes_round_trip():
               {"pos": "verb", "person": "2", "number": "pl", "gender": "f", "tense": "npast", "mood": "subj", "voice": "pass"},
               {"pos": "prep"}, {"pos": "particle"}):
         assert decode_analysis(encode_analysis(a), "5") == {"lemma": "5", **a}
+
+
+def test_names_are_kept_arabic_writes_no_capitals_to_spot_them():
+    lines = [entry("الله", "name", [{"form": "ٱللَّٰه", "tags": ["canonical"]}, {"form": "ٱللَّٰهِ", "tags": ["definite", "genitive", "singular"]}], "God")]
+    index = build_index(list(parse_entries(lines)))
+    assert any(a["pos"] == "noun" for a in index["ٱللَّٰهِ"])

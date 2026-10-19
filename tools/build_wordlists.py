@@ -172,7 +172,8 @@ def main(code: str) -> None:
     out_dir = ROOT / "vendor" / "wordlists" / code
     out_dir.mkdir(parents=True, exist_ok=True)
     phrases, seen = [], set()
-    with open(ROOT / "vendor" / "wiktextract" / f"kaikki.org-dictionary-{DUMPS[code]}.jsonl", encoding="utf-8") as f:
+    from casus_build.dump import open_dump
+    with open_dump(ROOT / "vendor" / "wiktextract" / f"kaikki.org-dictionary-{DUMPS[code]}.jsonl") as f:
         for line in f:
             item = phrase_item(json.loads(line))
             if item and item["p"] not in seen:
