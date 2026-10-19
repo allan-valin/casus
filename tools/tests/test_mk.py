@@ -28,3 +28,9 @@ def test_nouns_by_definiteness_and_verbs():
 def test_codes():
     for a in ({"pos": "noun", "case": "dist", "number": "pl"}, {"pos": "verb", "person": "2", "number": "pl", "tense": "aor", "aspect": "pf"}):
         assert decode_analysis(encode_analysis(a), "1") == {"lemma": "1", **a}
+
+
+def test_a_latin_j_inside_a_cyrillic_form_is_the_cyrillic_one():
+    from casus_build.mk.parse import build_index
+    e = {"id": 1, "headword": "мој", "pos": "det", "cells": [("моjот", {"pos": "det"})]}
+    assert "мојот" in build_index([e])

@@ -15,7 +15,7 @@ export const macedonian = {
   bcp47: 'mk',
   wiktionary: 'Macedonian',
   sources: { en: 'Wiktionary', pt: 'Wikcionário', full: { en: 'the English Wiktionary', pt: 'o Wiktionary em inglês' } },
-  script: { normalize: (s) => s.normalize('NFC'), rtl: false, spaced: true, prefixOf: (f) => f.toLowerCase(), romanize: romanizeMk },
+  script: { normalize: (s) => s.normalize('NFC').replace(/(?<=\p{Script=Cyrillic})j|j(?=\p{Script=Cyrillic})/gu, 'ј'), rtl: false, spaced: true, prefixOf: (f) => f.toLowerCase(), romanize: romanizeMk },
   inventory: MACEDONIAN_INVENTORY,
   segment,
   tokenize,

@@ -92,6 +92,7 @@ def build_index(entries: list[dict]) -> dict[str, list[dict]]:
     for e in entries:
         base = {"lemma": e["id"], "pos": e["pos"]}
         for text, a in (e["cells"] or [(e["headword"], {"pos": e["pos"]})]):
+            text = text.replace("j", "ј").replace("J", "Ј")  # Wiktionary types a Latin j now and then (моjот)
             key = text.lower() if e["pos"] != "noun" or text[:1].islower() else text
             full = {**base, **{k: v for k, v in a.items() if k != "pos" and v is not None}}
             rows = index.setdefault(key, [])
