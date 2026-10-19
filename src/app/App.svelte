@@ -1,6 +1,6 @@
 <script>
   import { createLexicon } from '../lib/lexicon.js';
-  import { makeFetchShard, makeFetchFile, loadManifest } from './lib/fetchers.js';
+  import { makeFetchShard, fileFetcherFor, loadManifest } from './lib/fetchers.js';
   import { withBase } from './lib/paths.js';
   import { createReader } from './stores/reader.svelte.js';
   import { textHash, createAutosave, restore } from './lib/persist.js';
@@ -57,7 +57,7 @@
   $effect(() => {
     loadManifest(fetchImpl, DATA)
       .then((manifest) => {
-        lexicon = createLexicon({ fetchShard: makeFetchShard(fetchImpl, DATA), fetchFile: manifest.expressions ? makeFetchFile(fetchImpl, DATA) : null, manifest, codes: lang.inventory.codes, script: lang.script });
+        lexicon = createLexicon({ fetchShard: makeFetchShard(fetchImpl, DATA), fetchFile: fileFetcherFor(manifest, fetchImpl, DATA), manifest, codes: lang.inventory.codes, script: lang.script });
         status = { key: 'app.status.ready', vars: { entries: manifest.lemmas?.toLocaleString?.() ?? '', shards: Object.keys(manifest.shards).length, built: manifest.built } };
         say('act.ready', status.vars, 'ok');
       })

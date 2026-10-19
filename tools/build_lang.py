@@ -242,6 +242,7 @@ def build_zh(src: Path, out: Path) -> dict:
                       ("government.json", {}), ("codes.json", CODES_JSON)):
         (out / name).write_text(json.dumps(obj, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     manifest["key"] = "bucket"
+    manifest["files"] = ["wordfreq.json"]          # the page fetches only the files the manifest names
     (out / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8")
     return manifest
 

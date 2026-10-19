@@ -13,6 +13,15 @@ export function makeFetchFile(fetchImpl, base = '/data') {
   return (name) => getJSON(fetchImpl, `${base}/${name}`);
 }
 
+/** the extra data files a language ships, as its manifest names them (German: expressions and the files beside
+ * them, flagged by `expressions`; others: `files`); null when it ships none, so nothing is requested in vain */
+export function fileFetcherFor(manifest, fetchImpl, base = '/data') {
+  const listed = new Set(manifest?.files ?? []);
+  if (!manifest?.expressions && !listed.size) return null;
+  const fetchFile = makeFetchFile(fetchImpl, base);
+  return (name) => (manifest.expressions || listed.has(name) ? fetchFile(name) : Promise.resolve(null));
+}
+
 export function loadManifest(fetchImpl, base = '/data') {
   return getJSON(fetchImpl, `${base}/manifest.json`);
 }
