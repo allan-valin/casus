@@ -17,7 +17,7 @@ Decisions (his answers): phrase answers show the REAL sense; explanations writte
 5. [x] Russian, fully (cases — reuse the case engine; stress marks; Cyrillic drill).
 6. [x] Korean, fully (Hangul drill, particles, romanization).
 7. [x] Chinese, fully (segmentation, pinyin with tones, characters drill).
-8. [ ] Macedonian, fully (Cyrillic, articles as suffixes).
+8. [x] Macedonian, fully (Cyrillic, articles as suffixes).
 
 ## Done log
 - 2026-10-19 night: phrases notes live — Latin 49 + 60 Wikipedia, Greek 8 + 1, German proverbs 40 + 3; word-by-word boxed; keys 1–4/Enter; Reader/Drills row; Greek transliteration in drills.
@@ -26,3 +26,6 @@ Decisions (his answers): phrase answers show the REAL sense; explanations writte
   docs/languages/<code>.md. Chinese phrase lists were still building (re-release zh after: node tools/build_wordlists.mjs zh;
   bash tools/release_data.sh zh). Known: 魚 shows the rarer reading うお; Arabic random words approximate; Korean
   frequency has some homograph noise.
+- ~04:00: Macedonian, Finnish, Modern Greek live; Chinese phrases (9,952 incl. chengyu) released. Next in Allan's order:
+  Sanskrit, Czech, Polish, Turkish, Hungarian, Icelandic, Portuguese (pt-BR). Data total 558 MB of the 1 GB Pages
+  limit: new languages are streamed and filtered (tools/fetch_filtered.py); keep each under ~40 MB.
