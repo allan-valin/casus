@@ -8,6 +8,7 @@ import { russian } from './ru/index.js';
 import { korean } from './ko/index.js';
 import { chinese } from './zh/index.js';
 import { macedonian } from './mk/index.js';
+import { finnish } from './fi/index.js';
 
 export const LANGUAGES = [
   { code: 'la', path: '/', name: { en: 'Latin', pt: 'Latim' } },
@@ -19,9 +20,10 @@ export const LANGUAGES = [
   { code: 'ko', path: '/ko/', name: { en: 'Korean', pt: 'Coreano' } },
   { code: 'zh', path: '/zh/', name: { en: 'Chinese', pt: 'Chinês' } },
   { code: 'mk', path: '/mk/', name: { en: 'Macedonian', pt: 'Macedônio' } },
+  { code: 'fi', path: '/fi/', name: { en: 'Finnish', pt: 'Finlandês' } },
 ];
 
-const DEFINITIONS = { la: latin, grc: greek, de: german, ja: japanese, ar: arabic, ru: russian, ko: korean, zh: chinese, mk: macedonian };
+const DEFINITIONS = { la: latin, grc: greek, de: german, ja: japanese, ar: arabic, ru: russian, ko: korean, zh: chinese, mk: macedonian, fi: finnish };
 
 export function getLanguage(code) {
   return DEFINITIONS[code];

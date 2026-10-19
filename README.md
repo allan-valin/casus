@@ -127,6 +127,11 @@ characters, frequency and phrase/chengyu drills. Notes: `docs/languages/zh.md`; 
 by person, number, tense and aspect; Cyrillic, table, frequency and phrase drills. Notes: `docs/languages/mk.md`;
 build: `bash tools/fetch_wiktextract.sh Macedonian && python3 tools/build_lang.py mk`.
 
+**Finnish (2026-10-19)** at `/fi/`: the first language on the generic case-language builder
+(`tools/casus_build/generic.py`, `src/lang/caseLanguage.js`); fifteen cases folded onto six hues with their own
+borders and badges; the dump streamed and kept for common words (`python3 tools/fetch_filtered.py Finnish fi`, then
+`python3 tools/build_lang.py fi`). Notes: `docs/languages/fi.md`.
+
 Top corner: **English ⇄ Português** (the page and the dictionary language together, remembered),
 exports (JSON to reload, Markdown to read) and **?** — what is on screen, how to use it, every
 resource and licence. Under the page, **What is happening**: one timestamped line per action and its

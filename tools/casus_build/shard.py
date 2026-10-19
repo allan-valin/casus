@@ -125,6 +125,8 @@ def write_assets(index: dict, lemmas: dict, out_dir: Path, max_forms: int = 8000
     total = 0
     rows = rows or _rows
     for name, members in sorted(split_shards(index, max_forms, key_of=key_of).items()):
+        if not name or any(c in name for c in "/\\") or name in (".", ".."):
+            raise ValueError(f"unsafe shard name {name!r}: a key that is not a word reached the index")
         data = _dump({form: rows(index[form]) for form in members})
         (forms_dir / f"{name}.json").write_text(data, encoding="utf-8")
         size = len(data.encode("utf-8"))

@@ -21,13 +21,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-DUMPS = {"la": "Latin", "grc": "AncientGreek", "de": "German", "ja": "Japanese", "ar": "Arabic", "ru": "Russian", "ko": "Korean", "zh": "Chinese", "mk": "Macedonian"}
+DUMPS = {"la": "Latin", "grc": "AncientGreek", "de": "German", "ja": "Japanese", "ar": "Arabic", "ru": "Russian", "ko": "Korean", "zh": "Chinese", "mk": "Macedonian", "fi": "Finnish", "el": "Greek", "sa": "Sanskrit", "cs": "Czech", "pl": "Polish", "tr": "Turkish", "hu": "Hungarian", "is": "Icelandic"}
 CORE = {"la": "https://dcc.dickinson.edu/latin-core-list1", "grc": "https://dcc.dickinson.edu/greek-core-list"}
 # Japanese: the JLPT N5 and N4 vocabularies (open-anki-jlpt-decks, MIT; after Jonathan Waller's JLPT lists)
 JLPT = [("N5", "https://raw.githubusercontent.com/jamsinclair/open-anki-jlpt-decks/main/src/n5.csv"),
         ("N4", "https://raw.githubusercontent.com/jamsinclair/open-anki-jlpt-decks/main/src/n4.csv")]
 SUBTITLE_FREQ = {code: f"https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/{code}/{code}_50k.txt"
-                 for code in ("de", "ar", "ru", "ko", "mk")}
+                 for code in ("de", "ar", "ru", "ko", "mk", "fi", "el", "cs", "pl", "tr", "hu", "is")}
 SUBTITLE_FREQ["zh"] = "https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/zh_cn/zh_cn_50k.txt"
 SKIP_TAGS = {"vulgar", "offensive", "derogatory", "ethnic", "slur"}
 XREF = re.compile(r"^(synonym|alternative (form|spelling)|[\w-]+ form|abbreviation|misspelling|obsolete form|archaic form|initialism|contraction) of\b", re.I)
