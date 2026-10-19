@@ -178,6 +178,9 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
   explanations of the structural points **written for Casus** (tools/learn_zh_labels.py, tools/curricula/zh/notes.yml);
   English glosses CC-CEDICT (CC BY-SA); sentences Tatoeba (CC BY 2.0 FR), traditional-script sentences left out. The
   Chinese Grammar Wiki (AllSet Learning) forbids commercial use and was not used.
+- Finnish lessons (46, A1–B2) **written for Casus** after Iso suomen kielioppi (VISK, Kotus, CC BY 4.0) and
+  Wikipedia's Finnish grammar (CC BY-SA), in the order of the usual first- and second-year courses; tables from
+  Casus's Wiktionary paradigms; sentences Tatoeba (CC BY 2.0 FR).
 
 ## Document import
 
