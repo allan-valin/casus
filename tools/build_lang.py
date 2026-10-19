@@ -247,6 +247,37 @@ def build_zh(src: Path, out: Path) -> dict:
     return manifest
 
 
+def build_mk(src: Path, out: Path) -> dict:
+    """Macedonian: Wiktionary's nouns, adjectives and verbs with their forms (casus_build/mk)."""
+    from casus_build.mk.codes import CODES_JSON, encode_analysis
+    from casus_build.mk.parse import build_index, parse_entries
+
+    with src.open(encoding="utf-8") as fh:
+        entries = list(parse_entries(fh))
+    index = build_index(entries)
+
+    def rows(analyses):
+        groups: dict[int, list[str]] = {}
+        for a in analyses:
+            groups.setdefault(a["lemma"], []).append(encode_analysis({k: v for k, v in a.items() if k != "lemma"}))
+        return [[lemma, *codes] for lemma, codes in groups.items()]
+
+    lemmas = {}
+    for e in entries:
+        dict_form = e["headword"] + (f" ({e['gender']}.)" if e.get("gender") and e["pos"] == "noun" else "") + (f" ({e['aspect']}.)" if e.get("aspect") else "")
+        rec = {"headword": e["headword"], "dict_form": dict_form, "pos": e["pos"], "gender": e.get("gender")}
+        lemmas[str(e["id"])] = {k: v for k, v in rec.items() if v is not None}
+    out.mkdir(parents=True, exist_ok=True)
+    manifest = write_assets(index, lemmas, out, rows=rows, key_of=lambda f: f.lower())
+    for name, obj in (("glosses.en.json", {str(e["id"]): e["gloss_en"] for e in entries if e["gloss_en"]}),
+                      ("ipa.json", {str(e["id"]): e["ipa"] for e in entries if e["ipa"]}),
+                      ("government.json", {}), ("codes.json", CODES_JSON)):
+        (out / name).write_text(json.dumps(obj, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    manifest["key"] = "lower"
+    (out / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8")
+    return manifest
+
+
 def build_ja(src: Path, out: Path) -> dict:
     from casus_build.ja.codes import CODES_JSON, encode_analysis
     from casus_build.ja.parse import build_index, parse_entries
@@ -338,7 +369,7 @@ def measure(out: Path) -> dict:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("code", choices=["grc", "de", "ja", "ar", "ru", "ko", "zh"])
+    ap.add_argument("code", choices=["grc", "de", "ja", "ar", "ru", "ko", "zh", "mk"])
     ap.add_argument("--vendor", default="vendor/wiktextract", type=Path)
     ap.add_argument("--data", default="data", type=Path)
     ap.add_argument("--drop-dialects", action="store_true", help="keep only Attic, Koine and unlabelled tables")
@@ -347,6 +378,8 @@ def main(argv=None) -> int:
     t0 = time.time()
     if args.code == "grc":
         manifest = build_grc(args.vendor / "kaikki.org-dictionary-AncientGreek.jsonl", out, args.drop_dialects)
+    elif args.code == "mk":
+        manifest = build_mk(args.vendor / "kaikki.org-dictionary-Macedonian.jsonl", out)
     elif args.code == "zh":
         manifest = build_zh(args.vendor / "kaikki.org-dictionary-Chinese.jsonl", out)
     elif args.code == "ko":

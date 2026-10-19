@@ -21,7 +21,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-DUMPS = {"la": "Latin", "grc": "AncientGreek", "de": "German", "ja": "Japanese", "ar": "Arabic", "ru": "Russian", "ko": "Korean", "zh": "Chinese"}
+DUMPS = {"la": "Latin", "grc": "AncientGreek", "de": "German", "ja": "Japanese", "ar": "Arabic", "ru": "Russian", "ko": "Korean", "zh": "Chinese", "mk": "Macedonian"}
 CORE = {"la": "https://dcc.dickinson.edu/latin-core-list1", "grc": "https://dcc.dickinson.edu/greek-core-list"}
 # Japanese: the JLPT N5 and N4 vocabularies (open-anki-jlpt-decks, MIT; after Jonathan Waller's JLPT lists)
 JLPT = [("N5", "https://raw.githubusercontent.com/jamsinclair/open-anki-jlpt-decks/main/src/n5.csv"),

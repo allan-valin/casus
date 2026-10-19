@@ -123,6 +123,10 @@ frequency tie-breaks; pinyin under each word with the tones in colour; coverbs (
 characters, frequency and phrase/chengyu drills. Notes: `docs/languages/zh.md`; build:
 `bash tools/fetch_wiktextract.sh Chinese && python3 tools/build_lang.py zh`.
 
+**Macedonian (2026-10-19)** at `/mk/`: 41,700 lemmas; the definite article (the / this / that) is the colour; verbs
+by person, number, tense and aspect; Cyrillic, table, frequency and phrase drills. Notes: `docs/languages/mk.md`;
+build: `bash tools/fetch_wiktextract.sh Macedonian && python3 tools/build_lang.py mk`.
+
 Top corner: **English ⇄ Português** (the page and the dictionary language together, remembered),
 exports (JSON to reload, Markdown to read) and **?** — what is on screen, how to use it, every
 resource and licence. Under the page, **What is happening**: one timestamped line per action and its

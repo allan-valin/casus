@@ -105,6 +105,11 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
   CC BY-SA 4.0.
 - Sample passages: sentences written for Casus; *Analects* 1.1 (public domain).
 
+## Macedonian — CC BY-SA
+
+- Dictionary, forms, IPA, phrases: the English Wiktionary via wiktextract / kaikki.org, CC BY-SA 4.0.
+- Frequency: Hermit Dave, *FrequencyWords* (OpenSubtitles 2018, mk_50k), CC BY-SA 4.0.
+
 ## Speech — espeak-ng (GPL-3.0)
 
 When the browser has no voice for a language, the speaker button loads espeak-ng compiled to

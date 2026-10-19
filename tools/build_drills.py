@@ -55,6 +55,9 @@ MODELS = {
     "ko": [("좋다", "adj", "to be good", "ser bom"), ("크다", "adj", "to be big", "ser grande"), ("작다", "adj", "to be small", "ser pequeno"),
            ("가다", "verb", "to go", "ir"), ("먹다", "verb", "to eat", "comer"), ("하다", "verb", "to do", "fazer"), ("보다", "verb", "to see", "ver"),
            ("읽다", "verb", "to read", "ler"), ("듣다", "verb", "to listen", "ouvir"), ("살다", "verb", "to live", "viver")],
+    "mk": [("книга", "noun", "book", "livro"), ("град", "noun", "city", "cidade"), ("село", "noun", "village", "aldeia"), ("добар", "adj", "good", "bom"),
+           ("нов", "adj", "new", "novo"), ("чита", "verb", "to read", "ler"), ("пишува", "verb", "to write", "escrever"), ("живее", "verb", "to live", "viver"),
+           ("сум", "verb", "to be", "ser, estar"), ("има", "verb", "to have", "ter")],
     "ja": [("高い", "adj", "high, expensive", "alto, caro"), ("いい", "adj", "good", "bom"), ("綺麗", "adj", "pretty, clean", "bonito, limpo"),
            ("食べる", "verb", "to eat", "comer"), ("書く", "verb", "to write", "escrever"), ("泳ぐ", "verb", "to swim", "nadar"),
            ("話す", "verb", "to speak", "falar"), ("待つ", "verb", "to wait", "esperar"), ("死ぬ", "verb", "to die", "morrer"),
@@ -67,7 +70,7 @@ XREF = re.compile(r"^(synonym|alternative (form|spelling)|[\w-]+ form|abbreviati
 IRREGULAR = {"la": {"sum", "eo", "uolo", "fero", "ego", "hic", "qui"}, "grc": {"εἰμί", "ὁ", "δίδωμι"},
              "de": {"der", "ein", "ich", "er", "sein", "haben", "werden", "können"},
              "ja": {"いい", "行く", "する", "来る"}, "ar": {"رأى"},
-             "ru": {"время", "быть", "идти", "я", "он", "этот"}, "ko": {"하다", "듣다", "살다"}}
+             "ru": {"время", "быть", "идти", "я", "он", "этот"}, "ko": {"하다", "듣다", "살다"}, "mk": {"сум", "има"}}
 POOL = 60
 
 
