@@ -60,7 +60,7 @@ export function makeColors(inventory) {
       if (analysis.mood === 'part') return `part${tense ? ` ${tense}` : ''}${analysis.voice === 'pass' ? ' ps' : ''}`;
       // the passive and the negative show (Greek φοβάσαι, Turkish kalmaz); a past by gender has no person (Czech byl)
       const extra = `${analysis.voice === 'pass' ? ' ps' : ''}${analysis.polarity === 'neg' ? ' neg' : ''}`;
-      if (!analysis.person && analysis.gender) return `${analysis.gender}.${analysis.number} ${tense}${extra}`;
+      if ((!analysis.person || analysis.person === 'x') && analysis.gender && analysis.gender !== 'x') return `${analysis.gender}.${analysis.number} ${tense}${extra}`;
       return `${analysis.person}${analysis.number} ${tense}${extra}`;
     }
     if (analysis.pos === 'prep') return 'Prp';

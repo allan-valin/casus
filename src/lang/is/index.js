@@ -10,5 +10,6 @@ export const icelandic = makeCaseLanguage({
   government: { í: ['dat', 'acc'], á: ['dat', 'acc'], til: ['gen'], frá: ['dat'], af: ['dat'], með: ['dat', 'acc'], um: ['acc'], við: ['acc', 'dat'], fyrir: ['acc', 'dat'],
     hjá: ['dat'], án: ['gen'], undir: ['acc', 'dat'], yfir: ['acc', 'dat'], úr: ['dat'], eftir: ['acc', 'dat'], vegna: ['gen'], gegnum: ['acc'], kringum: ['acc'] },
   and: ['og', 'eða'], copulas: ['er', 'eru', 'var', 'voru'],
+  pronounPerson: { ég: '1', þú: '2', hann: '3', hún: '3', það: '3', við: '1', þið: '2', þeir: '3', þær: '3', þau: '3' },
   codes: CODES, voice: { espeak: 'is', natural: { voiceId: 'is_IS-bui-medium', name: 'Búi', sizeMB: 63 } }, address: [],
 });

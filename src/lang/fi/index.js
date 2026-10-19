@@ -25,6 +25,7 @@ export const finnish = makeCaseLanguage({
   borders: { acc: 'double', ela: 'double', ill: 'dotted', abl: 'double', all: 'dotted', tra: 'double', ins: 'dotted', abe: 'groove', com: 'ridge' },
   and: ['ja', 'tai', 'sekä'],
   copulas: ['on', 'ovat', 'oli', 'olivat', 'olen', 'olet', 'olemme', 'olette'],
+  pronounPerson: { minä: '1', sinä: '2', hän: '3', se: '3', me: '1', te: '2', he: '3', ne: '3' },
   codes: CODES,
   voice: { espeak: 'fi', natural: { voiceId: 'fi_FI-harri-medium', name: 'Harri', sizeMB: 63 } },
 });

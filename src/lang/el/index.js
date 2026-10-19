@@ -20,6 +20,7 @@ export const modernGreek = makeCaseLanguage({
   government: Object.fromEntries(ACC.map((p) => [p, ['acc']])),
   and: ['και', 'ή', 'κι'],
   copulas: ['είναι', 'ειναι', 'είμαι', 'ήταν'],
+  pronounPerson: { εγώ: '1', εσύ: '2', αυτός: '3', αυτή: '3', αυτό: '3', εμείς: '1', εσείς: '2', αυτοί: '3', αυτές: '3', αυτά: '3' },
   codes: CODES,
   voice: { espeak: 'el', natural: { voiceId: 'el_GR-rapunzelina-low', name: 'Rapunzelina', sizeMB: 28 } },
   script: { prefixOf: stripEl, strip: stripEl, hasMarks: hasMarksEl, romanize: romanizeEl },

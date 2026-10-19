@@ -284,3 +284,34 @@ export function makeOneVerbStage(conjunctions = []) {
     return out;
   };
 }
+
+/* SUBJECT PERSON: the clause's one certain nominative decides its verb's person — a noun is 3rd person, a pronoun the
+ * person the language gives it (Icelandic Hún les: les is "she reads", not "I read"). */
+export function makeSubjectPersonStage(pronounPerson = {}) {
+  return function subjectPersonStage(blocks) {
+    const byClause = new Map();
+    blocks.forEach((b, i) => { const c = b.token.clause ?? 0; if (!byClause.has(c)) byClause.set(c, []); byClause.get(c).push(i); });
+    const out = blocks.slice();
+    for (const idx of byClause.values()) {
+      const nomPron = (b) => pronounPerson[b.token.key] && b.candidates.some((c) => c.analysis.pos === 'pron' && c.analysis.case === 'nom');
+      const subj = idx.filter((i) => out[i].candidates.length && (out[i].candidates.every((c) => c.analysis.case === 'nom' && ['noun', 'pron'].includes(c.analysis.pos)) || nomPron(out[i])));
+      if (subj.length !== 1) continue;
+      // a listed personal pronoun is the pronoun (Hún: not the noun húnn)
+      if (nomPron(out[subj[0]]) && !out[subj[0]].pinned) {
+        const b = out[subj[0]];
+        out[subj[0]] = { ...b, candidates: b.candidates.filter((c) => c.analysis.pos === 'pron' && c.analysis.case === 'nom').map((c) => ({ ...c, reasons: [...c.reasons, 'a personal pronoun, the subject'] })) };
+      }
+      const s = out[subj[0]];
+      const person = s.candidates[0].analysis.pos === 'noun' ? '3' : pronounPerson[s.token.key];
+      if (!person) continue;
+      for (const i of idx) {
+        const b = out[i];
+        const verbs = b.candidates.filter((c) => c.analysis.pos === 'verb' && c.analysis.person && c.analysis.person !== 'x');
+        const keep = b.candidates.filter((c) => !verbs.includes(c) || c.analysis.person === person);
+        if (b.pinned || !verbs.length || keep.length === b.candidates.length || !keep.some((c) => c.analysis.pos === 'verb')) continue;
+        out[i] = { ...b, candidates: keep.map((c) => ({ ...c, reasons: [...c.reasons, `subject ${s.token.surface}: ${person}rd/person`.replace('rd/', person === '1' ? 'st ' : person === '2' ? 'nd ' : 'rd ')] })) };
+      }
+    }
+    return out;
+  };
+}

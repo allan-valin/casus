@@ -17,5 +17,6 @@ export const hungarian = makeCaseLanguage({
   shares: { ela: 'ine', ill: 'ine', del: 'sup', sub: 'sup', abl: 'ade', all: 'ade', ins: 'dat', cau: 'dat', tra: 'dat', ter: 'dat', ess: 'dat', for: 'dat' },
   borders: { ela: 'double', ill: 'dotted', del: 'double', sub: 'dotted', abl: 'double', all: 'dotted', ins: 'double', cau: 'dotted', tra: 'groove', ter: 'ridge', ess: 'inset', for: 'outset' },
   and: ['és', 'vagy', 'meg'], copulas: ['van', 'vannak', 'volt', 'voltak'],
+  pronounPerson: { én: '1', te: '2', ő: '3', mi: '1', ti: '2', ők: '3' },
   codes: CODES, voice: { espeak: 'hu', natural: { voiceId: 'hu_HU-anna-medium', name: 'Anna', sizeMB: 63 } }, address: [],
 });

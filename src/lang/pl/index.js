@@ -12,5 +12,6 @@ export const polish = makeCaseLanguage({
     o: ['loc', 'acc'], po: ['loc', 'acc'], przy: ['loc'], przez: ['acc'], za: ['ins', 'acc'], przed: ['ins'], pod: ['ins', 'acc'], nad: ['ins', 'acc'], między: ['ins'],
     ku: ['dat'], dzięki: ['dat'], przeciw: ['dat'], przeciwko: ['dat'], obok: ['gen'], koło: ['gen'], według: ['gen'], podczas: ['gen'] },
   and: ['i', 'a', 'oraz', 'lub', 'albo'], copulas: ['jest', 'są', 'był', 'była', 'było', 'byli', 'jestem', 'jesteś', 'jesteśmy'],
+  pronounPerson: { ja: '1', ty: '2', on: '3', ona: '3', ono: '3', my: '1', wy: '2', oni: '3', one: '3' },
   codes: CODES, voice: { espeak: 'pl', natural: { voiceId: 'pl_PL-gosia-medium', name: 'Gosia', sizeMB: 63 } }, address: [],
 });

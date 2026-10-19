@@ -22,3 +22,9 @@ def test_merge_adds_bins_forms_to_the_matching_entry_and_frequent_words_wiktiona
     assert ("les", {"pos": "verb", "person": "3", "number": "sg", "tense": "pres", "mood": "ind"}) in out[0]["cells"]
     added = [e for e in out if e["id"] >= 100]
     assert [(e["headword"], e["pos"]) for e in added] == [("búa", "verb")] and added[0]["gloss_en"] == ""
+
+
+def test_a_bin_cell_that_says_less_than_one_already_there_is_not_added():
+    entries = [{"id": 1, "headword": "hún", "pos": "pron", "cells": [("hún", {"pos": "pron", "case": "nom", "number": "sg", "gender": "f"})], "gloss_en": "she"}]
+    out = merge_bin(entries, lambda: [("hún", "pfn", "hún", "NFET")], frequent=set(), start_id=9)
+    assert len(out[0]["cells"]) == 1

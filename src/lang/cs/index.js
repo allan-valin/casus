@@ -12,5 +12,6 @@ export const czech = makeCaseLanguage({
     o: ['loc', 'acc'], po: ['loc', 'acc'], u: ['gen'], od: ['gen'], bez: ['gen'], pro: ['acc'], přes: ['acc'], za: ['ins', 'acc', 'gen'], před: ['ins', 'acc'], pod: ['ins', 'acc'],
     nad: ['ins', 'acc'], mezi: ['ins', 'acc'], při: ['loc'], kvůli: ['dat'], proti: ['dat'], podle: ['gen'], během: ['gen'], vedle: ['gen'], kromě: ['gen'] },
   and: ['a', 'i', 'nebo'], copulas: ['je', 'jsou', 'byl', 'byla', 'bylo', 'byli', 'jsem', 'jsi', 'jsme', 'jste'],
+  pronounPerson: { já: '1', ty: '2', on: '3', ona: '3', ono: '3', my: '1', vy: '2', oni: '3', ony: '3' },
   codes: CODES, voice: { espeak: 'cs', natural: { voiceId: 'cs_CZ-jirka-medium', name: 'Jirka', sizeMB: 63 } }, address: [],
 });

@@ -16,6 +16,7 @@ describe('badge', () => {
     expect(badge({ pos: 'verb', person: '0', number: 'x', tense: 'pres', mood: 'inf', voice: 'act' })).toBe('inf pr');
     // Allan, 2026-10-19: the Slavic past by gender (byl), the passive and the negative show on the badge
     expect(badge({ pos: 'verb', number: 'sg', gender: 'm', tense: 'past', mood: 'ind' })).toBe('m.sg past');
+    expect(badge({ pos: 'verb', person: 'x', number: 'sg', gender: 'm', tense: 'past', mood: 'ind', voice: 'x', polarity: 'x' })).toBe('m.sg past');
     expect(badge({ pos: 'verb', person: '2', number: 'sg', tense: 'pres', mood: 'ind', voice: 'pass' })).toBe('2sg pr ps');
     expect(badge({ pos: 'verb', person: '3', number: 'sg', tense: 'aor', mood: 'ind', polarity: 'neg' })).toBe('3sg ao neg');
     expect(badge({ pos: 'verb', mood: 'part', tense: 'pres' })).toBe('part pr');

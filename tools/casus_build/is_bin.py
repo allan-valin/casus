@@ -71,9 +71,9 @@ def merge_bin(entries: list[dict], rows, frequent: set, start_id: int) -> list[d
             e = extra.get(key)
             if e is None:
                 e = extra[key] = {"id": None, "headword": lemma, "pos": a["pos"], "gender": GENDER_CLASS.get(cls), "cells": [], "gloss_en": "", "ipa": []}
-        cell = (form, a)
-        if cell not in e["cells"]:
-            e["cells"].append(cell)
+        # nothing a cell already there says more precisely (Wiktionary's hún has its gender, BÍN's not)
+        if not any(f == form and all(b.get(k) == v for k, v in a.items()) for f, b in e["cells"]):
+            e["cells"].append((form, a))
     added = list(extra.values())
     for k, e in enumerate(added):
         e["id"] = start_id + k

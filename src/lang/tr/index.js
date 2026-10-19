@@ -12,5 +12,6 @@ export const turkish = makeCaseLanguage({
   hues: ['nom', 'acc', 'dat', 'loc', 'abl', 'gen'], shares: { ins: 'dat' }, borders: { ins: 'dotted' },
   and: ['ve', 'veya', 'ya da'], copulas: [],
   splitWords, preStages: [copulaStage],
+  pronounPerson: { ben: '1', sen: '2', o: '3', biz: '1', siz: '2', onlar: '3' },
   codes: CODES, voice: { espeak: 'tr', natural: { voiceId: 'tr_TR-dfki-medium', name: 'DFKI', sizeMB: 63 } }, address: [],
 });

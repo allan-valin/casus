@@ -61,3 +61,17 @@ describe('the only-verb rule and imperatives', () => {
     expect(out[1].candidates.length).toBe(2);
   });
 });
+import { makeSubjectPersonStage } from '../../src/lib/classical.js';
+describe('the subject decides the verb’s person', () => {
+  const V = (person) => ({ pos: 'verb', person, number: 'sg', tense: 'pres' });
+  it('Hún les: hún is 3rd person, so les is 3sg', () => {
+    const out = makeSubjectPersonStage({ hún: '3', ég: '1' })([B(0, 'Hún', [{ pos: 'pron', case: 'nom', number: 'sg' }]), B(1, 'les', [V('1'), V('3')])]);
+    expect(out[1].candidates.map((c) => c.analysis.person)).toEqual(['3']);
+  });
+  it('a noun subject is 3rd person; no sure subject, no change', () => {
+    const noun = makeSubjectPersonStage({})([B(0, 'Anna', [{ pos: 'noun', case: 'nom', number: 'sg' }]), B(1, 'les', [V('1'), V('3')])]);
+    expect(noun[1].candidates.map((c) => c.analysis.person)).toEqual(['3']);
+    const none = makeSubjectPersonStage({})([B(0, 'les', [V('1'), V('3')])]);
+    expect(none[0].candidates.length).toBe(2);
+  });
+});
