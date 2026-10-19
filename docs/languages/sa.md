@@ -14,4 +14,8 @@ Built overnight 2026-10-19 on the generic case-language builder.
 - Words written together split in two known words: at a syllable start with the first word's sandhi undone
   (हरिर्जयति = हरिः + जयति), or a final consonant joined to the next word's vowel (सत्यमेव = सत्यम् + एव; the shared
   syllable shows with the first word).
-- Not yet: vowel + vowel sandhi (रामागच्छति = रामः/राम + आगच्छति), three or more words together.
+- Vowel sandhi across words (a + ā → ā, a + i → e, a + u → o, i + vowel → y, u + vowel → v: गङ्गोदकम्, इत्यादि),
+  visarga before c/t (पाण्डवाश्च), and up to four words written together (पाण्डवाश्चैव, कर्मण्येवाधिकारस्ते).
+- A class nasal before its consonant is folded to the anusvara on both sides (सञ्जय = संजय); verb forms Wiktionary
+  files only as "form of" (उवाच, perfect of वच्) are read from their tags.
+- Not yet: compounds whose members the dictionary lists only as stems (व्यूढं, आचार्यमुपसंगम्य).

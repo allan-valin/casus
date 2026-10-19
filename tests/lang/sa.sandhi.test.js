@@ -1,8 +1,10 @@
 import { describe, it, expect } from 'vitest';
 import { undoSandhi, splitWords } from '../../src/lang/sa/sandhi.js';
+import { cleanSa } from '../../src/lang/sa/script.js';
 
 const tok = (surface, start = 0) => ({ surface, kind: 'word', key: surface, start, end: start + surface.length, enclitic: null, clause: 0 });
-const lexicon = (known) => ({ lookupAll: async (keys) => new Map(keys.map((k) => [k, known.includes(k) ? [{}] : []])) });
+// keys normalised as the build normalises them (cleanSa: सञ्जय = संजय)
+const lexicon = (known0) => { const known = known0.map(cleanSa); return { lookupAll: async (keys) => new Map(keys.map((k) => [k, known.includes(k) ? [{}] : []])) }; };
 
 describe('Sanskrit sandhi undone at the word end', () => {
   it('-o before a voiced sound was -aḥ; -r was -ḥ; a voiced final stop was voiceless', () => {
@@ -33,4 +35,25 @@ describe('a final consonant joined to the next word’s vowel', () => {
     expect(out.map((t) => t.key)).toEqual(['सत्यम्', 'एव']);
     expect(out.map((t) => t.surface).join('')).toBe('सत्यमेव');
   });
+});
+describe('vowel sandhi across words', () => {
+  it('a + ā → ā: रामागच्छति = राम(ः) + आगच्छति', async () => {
+    const out = await splitWords([tok('रामागच्छति')], lexicon(['रामः', 'आगच्छति']));
+    expect(out.map((t) => t.key)).toEqual(['रामः', 'आगच्छति']);
+  });
+  it('a + i → e: सूर्येति… and a + u → o: गङ्गोदकम्', async () => {
+    expect((await splitWords([tok('गङ्गोदकम्')], lexicon(['गङ्गा', 'उदकम्']))).map((t) => t.key)).toEqual([cleanSa('गङ्गा'), 'उदकम्']);
+  });
+  it('i + a → ya: इत्यादि = इति + आदि', async () => {
+    expect((await splitWords([tok('इत्यादि')], lexicon(['इति', 'आदि']))).map((t) => t.key)).toEqual(['इति', 'आदि']);
+  });
+});
+describe('more sandhi', () => {
+  it('visarga before c is ś: three words पाण्डवाश्चैव = पाण्डवाः + च + एव', async () => {
+    const out = await splitWords([tok('पाण्डवाश्चैव')], lexicon(['पाण्डवाः', 'च', 'एव']));
+    expect(out.map((t) => t.key)).toEqual([cleanSa('पाण्डवाः'), 'च', 'एव']);
+  });
+});
+describe('a one-letter word at the end', () => {
+  it('रामश्च = रामः + च', async () => expect((await splitWords([tok('रामश्च')], lexicon(['रामः', 'च']))).map((t) => t.key)).toEqual(['रामः', 'च']));
 });

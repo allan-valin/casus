@@ -140,10 +140,9 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
         senses = d.get("senses") or []
         # an alternative form of a closed-class word is a word of its own (Czech ve for v before some consonants)
         form_of = senses and all(set(x.get("tags") or []) & {"form-of", "alt-of"} for x in senses)
-        if form_of and pos not in ("prep", "conj", "particle", "adv", "pron", "det", "num"):
-            continue
-        # a pronoun filed only as a form of another (Greek σου: genitive of εσύ) is read from its sense's tags
-        form_of_tags = set(senses[0].get("tags") or []) if form_of and pos in ("pron", "det", "num") else None
+        # a word filed only as a form of another is read from its sense's tags (Greek σου: genitive of εσύ; Sanskrit
+        # उवाच: perfect of वच्); kept only when the tags give a reading
+        form_of_tags = set(senses[0].get("tags") or []) if form_of and pos not in ("prep", "conj", "particle", "adv") else None
         gender = next((v for k, v in GENDERS.items() if any(k in (s.get("tags") or []) for s in senses)), None)
         cells = []
         seen_person: dict = {}                    # (tense, number, gender) -> how many untagged persons so far
@@ -272,7 +271,9 @@ CONFIGS["el"] = GREEK
 def clean_sa(s: str) -> str:
     """Sanskrit key: no Vedic accents (U+0951–0954, U+1CD0–1CFF) or footnote digits (mirror of src/lang/sa/script.js)"""
     import re as _re
-    return _re.sub("\u0902$", "\u092e\u094d", _re.sub("[\u0951-\u0954\u1cd0-\u1cff0-9]", "", s))
+    s = _re.sub("[\u0951-\u0954\u1cd0-\u1cff0-9]", "", s)
+    s = _re.sub("[\u0919\u091e\u0923\u0928\u092e]\u094d(?=[\u0915-\u0939])", "\u0902", s)   # सञ्जय = संजय
+    return _re.sub("\u0902$", "\u092e\u094d", s)
 
 
 SANSKRIT = Config("sa", ["nom", "acc", "ins", "dat", "abl", "gen", "loc", "voc"],

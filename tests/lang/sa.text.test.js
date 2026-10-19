@@ -11,3 +11,6 @@ describe('Sanskrit text', () => {
   it('a final anusvara is the final m (वनं = वनम्)', () => expect(cleanSa('वनं')).toBe('वनम्'));
   it('sentences end at the danda', () => expect(getLanguage('sa').segment('रामः वनं गच्छति। बालकः पठति॥').map((s) => s.text)).toEqual(['रामः वनं गच्छति।', 'बालकः पठति॥']));
 });
+describe('Sanskrit nasals', () => {
+  it('a class nasal before its consonant is the anusvara (सञ्जय = संजय)', () => expect(cleanSa('सञ्जय')).toBe(cleanSa('संजय')));
+});

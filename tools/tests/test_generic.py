@@ -166,3 +166,15 @@ def test_names_form_of_pronouns_and_participles():
     assert (el["σου"][0]["pos"], el["σου"][0]["case"]) == ("pron", "gen")
     tr = build_index(list(parse_entries(CONFIGS["tr"], lines[2:])))
     assert (tr["yüzen"][0]["pos"], tr["yüzen"][0]["mood"]) == ("verb", "part")
+
+
+def test_a_verb_form_filed_only_as_a_form_of_is_read_from_its_tags():
+    from casus_build.generic import CONFIGS
+    line = json.dumps({"word": "उवाच", "pos": "verb", "forms": [], "senses": [{"glosses": ["third-person singular perfect of वच्"], "tags": ["form-of", "perfect", "singular", "third-person"]}]}, ensure_ascii=False)
+    index = build_index(list(parse_entries(CONFIGS["sa"], [line])))
+    assert (index["उवाच"][0]["person"], index["उवाच"][0]["tense"]) == ("3", "perf")
+
+
+def test_sanskrit_class_nasal_folds_to_the_anusvara():
+    from casus_build.generic import clean_sa
+    assert clean_sa("सञ्जय") == clean_sa("संजय")

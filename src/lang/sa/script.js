@@ -1,7 +1,9 @@
 /* Sanskrit in Devanagari (overnight 2026-10-19): keys without Vedic accents (॑ ॒ ᳚) or footnote digits; Latin letters in
  * IAST (ā ī ū ṛ ṝ ḷ ṃ ḥ ṅ ñ ṭ ḍ ṇ ś ṣ), the inherent a written unless a virama or a vowel sign replaces it. */
 // a word-final anusvara is the final m the dictionary writes (वनं = वनम्)
-export const cleanSa = (s) => s.normalize('NFC').replace(/[\u0951-\u0954\u1cd0-\u1cff0-9]/gu, '').replace(/\u0902$/u, '\u092e\u094d');
+// a class nasal before a consonant of its class is written as the anusvara (सञ्जय = संजय), so both spellings meet
+const NASAL = /[\u0919\u091e\u0923\u0928\u092e]\u094d(?=[\u0915-\u0939])/gu;
+export const cleanSa = (s) => s.normalize('NFC').replace(/[\u0951-\u0954\u1cd0-\u1cff0-9]/gu, '').replace(NASAL, '\u0902').replace(/\u0902$/u, '\u092e\u094d');
 const C = { क: 'k', ख: 'kh', ग: 'g', घ: 'gh', ङ: 'ṅ', च: 'c', छ: 'ch', ज: 'j', झ: 'jh', ञ: 'ñ', ट: 'ṭ', ठ: 'ṭh', ड: 'ḍ', ढ: 'ḍh', ण: 'ṇ',
   त: 't', थ: 'th', द: 'd', ध: 'dh', न: 'n', प: 'p', फ: 'ph', ब: 'b', भ: 'bh', म: 'm', य: 'y', र: 'r', ल: 'l', व: 'v', श: 'ś', ष: 'ṣ', स: 's', ह: 'h', ळ: 'ḷ' };
 const V = { अ: 'a', आ: 'ā', इ: 'i', ई: 'ī', उ: 'u', ऊ: 'ū', ऋ: 'ṛ', ॠ: 'ṝ', ऌ: 'ḷ', ए: 'e', ऐ: 'ai', ओ: 'o', औ: 'au' };
