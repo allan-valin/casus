@@ -62,7 +62,7 @@ MODELS = {
            ("hyvä", "adj", "good", "bom"), ("puhua", "verb", "to speak", "falar"), ("lukea", "verb", "to read", "ler"), ("olla", "verb", "to be", "ser, estar"),
            ("tulla", "verb", "to come", "vir"), ("haluta", "verb", "to want", "querer")],
     "el": [("δρόμος", "noun", "street, road", "rua"), ("θάλασσα", "noun", "sea", "mar"), ("βιβλίο", "noun", "book", "livro"), ("καλός", "adj", "good", "bom"),
-           ("γράφω", "verb", "to write", "escrever"), ("αγαπώ", "verb", "to love", "amar"), ("είμαι", "verb", "to be", "ser, estar")],
+           ("γράφω", "verb", "to write", "escrever"), ("αγαπάω", "verb", "to love", "amar"), ("είμαι", "verb", "to be", "ser, estar")],
     "sa": [("देव", "noun", "god", "deus"), ("फल", "noun", "fruit", "fruto"), ("नदी", "noun", "river", "rio"), ("अग्नि", "noun", "fire", "fogo")],
     "cs": [("hrad", "noun", "castle", "castelo"), ("žena", "noun", "woman", "mulher"), ("město", "noun", "town", "cidade"), ("muž", "noun", "man", "homem"),
            ("nový", "adj", "new", "novo"), ("dělat", "verb", "to do", "fazer"), ("prosit", "verb", "to ask, to beg", "pedir"), ("být", "verb", "to be", "ser, estar")],
