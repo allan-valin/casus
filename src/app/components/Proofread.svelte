@@ -12,7 +12,7 @@
   import { readTextFile, ACCEPT } from '../lib/upload.js';
   let { lang, storage = null, fetchImpl, say = () => {}, loadSpeller = defaultLoadSpeller, checkGrammar = defaultCheckGrammar, toReader = null,
     schedule = (fn, ms) => setTimeout(fn, ms), cancel = (id) => clearTimeout(id),
-    copy = (s) => navigator.clipboard?.writeText(s) } = $props();
+    copy = (s) => navigator.clipboard?.writeText(s), knownWords = null } = $props();
 
   // the same text as the reader's box (PassagePicker keeps it under this key), mirrored both ways
   const KEY = `casus:input:${lang.code}`;
@@ -62,6 +62,17 @@
     if (auto) later();
   }
 
+  // a word Hunspell rejects but the reader's dictionary knows (Wiktionary: names, loans, compounds) is no mistake; a
+  // hyphenated word passes when each part is known to either (Allan, 2026-10-19: German compounds)
+  async function notInReader(found) {
+    if (!knownWords || !found.length) return found;
+    const parts = (w) => w.split(/[-‐]/).filter(Boolean);
+    const words = [...new Set(found.flatMap((i) => [i.word, ...parts(i.word)]))];
+    const known = await knownWords(words);
+    const ok = (w) => known.has(w) || speller.correct(w) || speller.correct(w.toLowerCase());
+    return found.filter((i) => !(known.has(i.word) || (i.word.includes('-') && parts(i.word).every(ok))));
+  }
+
   async function check() {
     const snapshot = text;
     if (!snapshot.trim() || (!hasSpell && !hasGrammar)) { issues = []; return; }
@@ -69,7 +80,7 @@
     busy = true;
     try {
       const [sp, gr] = await Promise.all([
-        hasSpell ? (async () => { speller ??= await loadSpeller(lang.code, fetchImpl); return spellIssues(snapshot, speller, { suggest: true }); })().catch((e) => { say('act.proof.spellFailed', { error: e.message }); return []; }) : [],
+        hasSpell ? (async () => { speller ??= await loadSpeller(lang.code, fetchImpl); return notInReader(spellIssues(snapshot, speller, { suggest: true })); })().catch((e) => { say('act.proof.spellFailed', { error: e.message }); return []; }) : [],
         hasGrammar ? checkGrammar(snapshot, lang.code, { fetchImpl, allowPublic }).catch((e) => { say('act.proof.grammarFailed', { error: e.message }); return { engine: null, issues: [] }; }) : { engine: null, issues: [] },
       ]);
       if (mine !== seq) return;                         // a newer check is on its way

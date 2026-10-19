@@ -94,3 +94,16 @@ describe('Proofreading (Allan, 2026-10-19: one box, marks as you type, colours, 
     expect(container.querySelector('.engines').textContent).toMatch(/no (spelling|checker)/i);
   });
 });
+
+describe('a word the reader’s dictionary knows is not a misspelling (Allan, 2026-10-19: German compounds)', () => {
+  it('Smartphone-App passes when Casus knows Smartphone and App; a real typo still shows', async () => {
+    const storage = store();
+    storage.setItem('casus:input:de', 'Die Smartphone-App ist gutt.');
+    const sp = { correct: (w) => ['Die', 'App', 'ist'].includes(w), suggest: () => ['gut'] };
+    const known = async (words) => new Set(words.filter((w) => ['Smartphone', 'App'].includes(w)));
+    const { container } = render(Proofread, { lang: getLanguage('de'), storage, fetchImpl: async () => ({ ok: false }), say: () => {}, loadSpeller: async () => sp,
+      checkGrammar: async () => ({ engine: 'local', issues: [] }), schedule: (fn) => { fn(); return 0; }, knownWords: known });
+    await flush();
+    expect([...container.querySelectorAll('.backdrop mark')].map((m) => m.textContent)).toEqual(['gutt']);
+  });
+});

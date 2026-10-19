@@ -194,7 +194,12 @@
   </header>
 
   {#if route.view === 'proof'}
-    <Proofread {lang} {storage} {fetchImpl} say={(k, v) => say(k, v, k.endsWith('done') ? 'ok' : k.endsWith('Failed') ? 'err' : undefined)}
+    <Proofread {lang} {storage} {fetchImpl} knownWords={async (words) => {
+        if (!lexicon) return new Set();
+        const keys = words.map((w) => lang.tokenize(w).find((tk) => tk.kind === 'word')?.key ?? w);
+        const found = await lexicon.lookupAll(keys);
+        return new Set(words.filter((w, k) => (found.get(keys[k]) ?? []).length));
+      }} say={(k, v) => say(k, v, k.endsWith('done') ? 'ok' : k.endsWith('Failed') ? 'err' : undefined)}
       toReader={(text) => { try { storage?.setItem(`casus:input:${lang.code}`, text); } catch { /* not kept */ } location.href = withBase(LANGUAGES.find((l) => l.code === lang.code)?.path ?? '/'); }} />
   {:else if route.view === 'drills'}
     <Drills {lang} {voice} loadData={(name) => fetchImpl(`${DATA}/${name}.json`).then((r) => (r.ok ? r.json() : []))}
