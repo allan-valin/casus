@@ -170,7 +170,7 @@ async function main(code) {
       const romanBlocks = blocks.map((b) => ({ ...b, roman: /[\p{L}\p{N}]/u.test(b.token.surface) ? roman(b) : '' }));
       const tokens = blocks.map((b) => b.token);
       done.add(norm(text));
-      found.get(l.id).push({ text, shown: text, src: id ? 'tatoeba' : only ? 'book' : 'text', en: id ? eng.get(toEng.get(id)) : '', pt: id && toPor.has(id) ? por.get(toPor.get(id)) : undefined, answer,
+      found.get(l.id).push({ text, shown: text, src: id ? 'tatoeba' : only ? 'drill' : 'text', en: id ? eng.get(toEng.get(id)) : '', pt: id && toPor.has(id) ? por.get(toPor.get(id)) : undefined, answer,
         wrong: wrong?.length >= (swaps || prefixes || suffixes ? 1 : 2) ? wrong : null, gap: rewrite(text, tokens, () => null, m.span),
         gapRoman: sure ? gapRoman(romanBlocks, m.span) : '', roman: romanBlocks.map((b) => b.roman).filter(Boolean).join(' '),
         tok: blocks.map((b) => b.token.surface) });
@@ -198,6 +198,21 @@ async function main(code) {
       readOwn.set(ex.text, { shown: ex.shown, roman: ex.roman, tok: blocks.map((b) => b.token.surface) });
       // the example's gap, worked out as for Tatoeba: in a script without vowels, the answer vowelled from its paradigm
       // row and the nearest forms as wrong answers (else the bare answer among vowelled ones gives itself away)
+      // a phrase as the answer (Grimm Grammar marks dem alten Mann): the wrong answers are the same phrase with its
+      // first word in its other forms (den alten Mann…), so the shape gives nothing away
+      if (ex.target && !vowelled && ex.target.includes(' ')) {
+        const words = ex.target.split(/\s+/u);
+        const at = blocks.findIndex((b) => norm(b.token.surface) === norm(words[0]));
+        const gb = at >= 0 ? blocks[at] : null;
+        const ids = gb ? [...new Set(gb.candidates.map((c) => c.analysis.lemma))] : [];
+        const forms = ids.length === 1 ? await paradigmOf(ids[0]) : null;
+        const row = forms ? (forms.find(([f]) => f === gb.token.surface) ?? forms.find(([f]) => norm(f) === norm(gb.token.surface))) : null;
+        if (row) {
+          const firstCap = words[0][0] !== words[0][0].toLocaleLowerCase();
+          const variants = formPool(forms, row[0], row[1], decode, 5).map((f) => [firstCap ? f[0].toLocaleUpperCase() + f.slice(1) : f, ...words.slice(1)].join(' '));
+          if (variants.length >= 2) ownGap.set(`${ex.en}|${norm(ex.target)}`, { answer: ex.target, pool: variants });
+        }
+      }
       if (ex.target && vowelled) {
         const gb = blocks.find((b) => norm(b.token.surface) === norm(ex.target));
         const ids = gb ? [...new Set(gb.candidates.map((c) => c.analysis.lemma))] : [];
@@ -217,7 +232,8 @@ async function main(code) {
     const answers = [...new Set(mine.map((m) => m.answer))];
     const f = path.join(dataDir, 'learn', `q-${l.id}.json`);
     const file = JSON.parse(await readFile(f, 'utf8'));
-    file.qs = file.qs.filter((q) => !['tatoeba', 'book', 'text'].includes(q.source));
+    // (questions the builder made from a book — Grimm Grammar's exercises, source 'book' — stay)
+    file.qs = file.qs.filter((q) => !['tatoeba', 'drill', 'text'].includes(q.source));
     for (const q of file.qs) {
       const text = q.furi?.map(([t]) => t).join('');
       if (q.type === 'translate' && readOwn.has(text)) { const r = readOwn.get(text); q.furi = [[r.shown, null]]; q.roman = r.roman; q.tok = r.tok; }
@@ -225,6 +241,7 @@ async function main(code) {
         const key = `${q.en}|${norm(q.answer)}`;
         if (ownGap.get(key)) Object.assign(q, ownGap.get(key));
         else if (ownGap.has(key)) q.drop = true;               // vowels not certain: no fair question
+        else if (/\s/u.test(q.answer ?? '') && !q.pool) q.drop = true;   // a phrase with no phrase-shaped wrong answers
       }
     }
     file.qs = file.qs.filter((q) => !q.drop);

@@ -78,3 +78,33 @@ stages:
     assert "Agricola cum fīliā in casā habitat." in l["drill"]
     words = [q for q in questions["Beginner"]["la-VII"]["qs"] if q["type"] == "word"]
     assert any(q["prompt"] == "casa" and q["answer"] == "cottage" for q in words)
+
+
+def test_german_from_grimm_grammar_and_the_plan(tmp_path):
+    from build_learn import de_learn
+    book = tmp_path / "grimm"
+    book.mkdir()
+    (book / "cas_02.html").write_text((FIX / "grimm-cas_02.html").read_text(encoding="utf-8", errors="replace"), encoding="utf-8")
+    (book / "answer_key.html").write_text((FIX / "grimm-key-cas_02.html").read_text(encoding="utf-8", errors="replace"), encoding="utf-8")
+    plan = tmp_path / "plan.yml"
+    plan.write_text("""system: CEFR
+credit: {en: c, pt: c}
+levels:
+- id: A1
+  topics:
+  - title: {en: Cases, pt: Casos}
+    lessons:
+    - page: cas_02
+      meaning: {en: the nominative, pt: o nominativo}
+      match: {seq: [{pos: det, case: nom}]}
+""", encoding="utf-8")
+    index, lessons, questions = de_learn(book, plan)
+    e = index["levels"][0]["topics"][0]["lessons"][0]
+    assert e == {"id": "de-cas_02", "title": "Der Nominativ", "meaning": {"en": "the nominative", "pt": "o nominativo"}}
+    l = lessons["de-cas_02"]
+    assert l["examples"][0]["target"] == "Die sieben Zwerge" and l["match"] == {"seq": [{"pos": "det", "case": "nom"}]}
+    qs = questions["A1"]["de-cas_02"]["qs"]
+    mc = [q for q in qs if q.get("task")]
+    assert any(q["answer"] == "Die schöne Königin" and "einem Schloss" in q["pool"] for q in mc)
+    assert any(q["type"] == "gap" and q["answer"] == "Das kleine Mädchen" and "das junge Paar" in q["pool"] for q in mc)
+    assert any(q["type"] == "translate" and q["answer"] == "The seven dwarves live in the loft apartment." for q in qs)

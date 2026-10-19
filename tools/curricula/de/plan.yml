@@ -1,0 +1,364 @@
+# German Learn lessons: Grimm Grammar (COERLL, UT Austin, CC BY 4.0), one page per lesson as the site has it
+# (tools/learn_de.py), with its exercise sets from the answer key. The CEFR level and the topic order are Casus's
+# (the site groups by part of speech); so are the Portuguese summaries and the rules for Tatoeba's German sentences.
+system: "CEFR"
+credit:
+  en: "Lessons: Grimm Grammar, COERLL, The University of Texas at Austin (coerll.utexas.edu/gg), CC BY 4.0. Levels, topics, summaries and Tatoeba exercises (CC BY 2.0 FR) by Casus."
+  pt: "Lições: Grimm Grammar, COERLL, Universidade do Texas em Austin (coerll.utexas.edu/gg), CC BY 4.0 (em inglês). Níveis, tópicos, resumos e exercícios do Tatoeba (CC BY 2.0 FR) pelo Casus."
+levels:
+- id: A1
+  topics:
+  - title: {en: Nouns and articles, pt: Substantivos e artigos}
+    lessons:
+    - page: no_01
+      meaning: {en: "nouns: capital letters, gender, number", pt: "substantivos: maiúscula, gênero, número"}
+      match: {seq: [{pos: noun}], same: [number]}
+    - page: no_02
+      meaning: {en: "noun gender: der, die, das", pt: "gênero dos substantivos: der, die, das"}
+      match: {seq: [{pos: det, lemma: "^der$"}, {pos: noun}], gap: 0, same: [case, number]}
+    - page: no_03
+      meaning: {en: "plural of nouns", pt: "plural dos substantivos"}
+      match: {seq: [{pos: noun, number: pl}], same: [case]}
+    - page: det_01
+      meaning: {en: "definite and indefinite articles", pt: "artigos definidos e indefinidos"}
+      match: {seq: [{pos: det, lemma: "^(der|ein)$"}, {pos: noun}], gap: 0, same: [number]}
+    - page: det_02
+      meaning: {en: "der-words: dieser, jeder, welcher…", pt: "palavras do tipo der: dieser, jeder, welcher…"}
+      match: {seq: [{lemma: "^(dieser|jeder|jener|welcher|mancher|solcher)$"}], same: [number]}
+    - page: det_03
+      meaning: {en: "ein-words: kein and the possessives", pt: "palavras do tipo ein: kein e os possessivos"}
+      match: {seq: [{lemma: "^(ein|kein|mein|dein|sein|unser|euer)$", pos: det}], same: [number]}
+  - title: {en: Pronouns and the present tense, pt: Pronomes e o presente}
+    lessons:
+    - page: pro_01
+      meaning: {en: "personal pronouns", pt: "pronomes pessoais"}
+      match: {seq: [{word: [ich, du, er, sie, es, wir, ihr, mich, dich, ihn, uns, euch, mir, dir, ihm, ihnen]}]}
+      pool: [ich, du, er, sie, es, wir, ihr, mich, dich, ihn, mir, dir, ihm, uns, euch]
+    - page: pro_02
+      meaning: {en: "subject pronouns: ich, du, er…", pt: "pronomes sujeito: ich, du, er…"}
+      match: {seq: [{word: [ich, du, er, wir], start: true}, {pos: verb}], gap: 0}
+      pool: [Ich, Du, Er, Sie, Es, Wir, Ihr]
+    - page: v_01
+      meaning: {en: "verbs: infinitive and stem", pt: "verbos: infinitivo e radical"}
+      match: {seq: [{pos: verb, mood: inf}], same: [mood]}
+    - page: v_02
+      meaning: {en: "the present tense of regular verbs", pt: "o presente dos verbos regulares"}
+      match: {seq: [{pos: verb, tense: pres, mood: ind, not: {lemma: "^(sein|haben|werden)$"}}], same: [tense, mood]}
+    - page: vi_11
+      meaning: {en: "sein (to be)", pt: "sein (ser, estar)"}
+      match: {seq: [{pos: verb, lemma: "^sein$", tense: pres, mood: ind}], same: [tense, mood]}
+    - page: vi_05
+      meaning: {en: "haben (to have)", pt: "haben (ter)"}
+      match: {seq: [{pos: verb, lemma: "^haben$", tense: pres, mood: ind}], same: [tense, mood]}
+    - page: vi_01
+      meaning: {en: "essen: e → i", pt: "essen: e → i"}
+      match: {seq: [{pos: verb, lemma: "^(essen|fressen|vergessen|messen)$", tense: pres}], same: [tense, mood]}
+    - page: vi_02
+      meaning: {en: "fahren: a → ä", pt: "fahren: a → ä"}
+      match: {seq: [{pos: verb, lemma: "^(fahren|fallen|gefallen|halten|lassen|schlagen|tragen|waschen|wachsen)$", tense: pres}], same: [tense, mood]}
+    - page: vi_03
+      meaning: {en: "geben: e → i", pt: "geben: e → i"}
+      match: {seq: [{pos: verb, lemma: "^(geben|helfen|sprechen|treffen|werfen|sterben|brechen|nehmen)$", tense: pres}], same: [tense, mood]}
+    - page: vi_06
+      meaning: {en: "laufen: au → äu", pt: "laufen: au → äu"}
+      match: {seq: [{pos: verb, lemma: "^(laufen|saufen)$", tense: pres}], same: [tense, mood]}
+    - page: vi_07
+      meaning: {en: "lesen: e → ie", pt: "lesen: e → ie"}
+      match: {seq: [{pos: verb, lemma: "^(lesen|sehen|geschehen|stehlen|empfehlen)$", tense: pres}], same: [tense, mood]}
+    - page: vi_08
+      meaning: {en: "nehmen", pt: "nehmen (pegar, tomar)"}
+      match: {seq: [{pos: verb, lemma: "^nehmen$"}], same: [tense, mood]}
+    - page: vi_09
+      meaning: {en: "schlafen", pt: "schlafen (dormir)"}
+      match: {seq: [{pos: verb, lemma: "^schlafen$"}], same: [tense, mood]}
+    - page: vi_10
+      meaning: {en: "sehen", pt: "sehen (ver)"}
+      match: {seq: [{pos: verb, lemma: "^sehen$"}], same: [tense, mood]}
+    - page: vi_12
+      meaning: {en: "sprechen", pt: "sprechen (falar)"}
+      match: {seq: [{pos: verb, lemma: "^sprechen$"}], same: [tense, mood]}
+    - page: vi_13
+      meaning: {en: "tragen", pt: "tragen (carregar, vestir)"}
+      match: {seq: [{pos: verb, lemma: "^tragen$"}], same: [tense, mood]}
+    - page: vi_14
+      meaning: {en: "werden (to become)", pt: "werden (tornar-se)"}
+      match: {seq: [{pos: verb, lemma: "^werden$", tense: pres, mood: ind}], same: [tense, mood]}
+  - title: {en: "Cases: nominative and accusative", pt: "Casos: nominativo e acusativo"}
+    lessons:
+    - page: cas_01
+      meaning: {en: "the four cases", pt: "os quatro casos"}
+      match: {seq: [{pos: det, lemma: "^der$"}, {pos: noun}], gap: 0, same: [number, gender]}
+    - page: cas_02
+      meaning: {en: "the nominative", pt: "o nominativo"}
+      match: {seq: [{pos: det, case: nom}, {pos: noun}], gap: 0, same: [number, gender]}
+    - page: cas_03
+      meaning: {en: "the accusative (and durch, für, gegen, ohne, um)", pt: "o acusativo (e durch, für, gegen, ohne, um)"}
+      match: [{seq: [{word: [durch, für, gegen, ohne, um]}, {pos: det}], gap: 1, same: [number, gender]}, {seq: [{pos: det, case: acc}, {pos: noun}], gap: 0, same: [number, gender]}]
+    - page: pro_03
+      meaning: {en: "accusative pronouns: mich, dich, ihn…", pt: "pronomes no acusativo: mich, dich, ihn…"}
+      match: {seq: [{word: [mich, dich, ihn, uns, euch]}]}
+      pool: [mich, dich, ihn, uns, euch, mir, dir, ihm, ich, du]
+    - page: det_04
+      meaning: {en: "possessives in the nominative", pt: "possessivos no nominativo"}
+      match: {seq: [{pos: det, lemma: "^(mein|dein|sein|ihr|unser|euer)$", case: nom}], same: [case, number]}
+    - page: det_05
+      meaning: {en: "possessives in the accusative", pt: "possessivos no acusativo"}
+      match: {seq: [{pos: det, lemma: "^(mein|dein|sein|ihr|unser|euer)$", case: acc}], same: [number, gender]}
+  - title: {en: "Questions, negation, word order", pt: "Perguntas, negação, ordem das palavras"}
+    lessons:
+    - page: con_05
+      meaning: {en: "question words", pt: "palavras interrogativas"}
+      match: {seq: [{word: [wer, was, wo, wohin, woher, wann, warum, wie, welcher, welche, welches, wen, wem, wessen], start: true}]}
+      pool: [Wer, Was, Wo, Wohin, Woher, Wann, Warum, Wie, Wen, Wem]
+    - page: con_02
+      meaning: {en: "negation: nicht and kein", pt: "negação: nicht e kein"}
+      match: {seq: [{word: [nicht, kein, keine, keinen, keinem, keiner, keines, nie, niemand, nichts]}]}
+      pool: [nicht, kein, keine, keinen, keinem, nie, niemand, nichts]
+    - page: con_06
+      meaning: {en: "word order: the verb second, and last", pt: "ordem das palavras: o verbo em segundo lugar, e no fim"}
+      match: {seq: [{word: [weil, dass, wenn, ob, obwohl, als, bevor, nachdem]}, {pos: verb, mood: ind}], near: 8, gap: 1, same: [tense, mood]}
+  - title: {en: Time, pt: Tempo}
+    lessons:
+    - page: cas_04
+      meaning: {en: "telling the time", pt: "dizer as horas"}
+      match: {seq: [{word: [uhr, halb, viertel]}]}
+      pool: [Uhr, halb, Viertel, nach, vor, Stunde]
+    - page: cas_05
+      meaning: {en: "days of the week", pt: "dias da semana"}
+      match: {seq: [{word: [montag, dienstag, mittwoch, donnerstag, freitag, samstag, sonntag, montags, sonntags]}]}
+      pool: [Montag, Dienstag, Mittwoch, Donnerstag, Freitag, Samstag, Sonntag]
+    - page: cas_06
+      meaning: {en: "months and seasons", pt: "meses e estações"}
+      match: {seq: [{word: [januar, februar, märz, april, mai, juni, juli, august, september, oktober, november, dezember, frühling, sommer, herbst, winter]}]}
+      pool: [Januar, März, Mai, Juli, September, November, Frühling, Sommer, Herbst, Winter]
+  - title: {en: Commands, pt: Ordens}
+    lessons:
+    - page: vimp_01
+      meaning: {en: "the imperative", pt: "o imperativo"}
+      match: {seq: [{pos: verb, mood: imp}], same: [mood]}
+- id: A2
+  topics:
+  - title: {en: The dative, pt: O dativo}
+    lessons:
+    - page: cas_07
+      meaning: {en: "the dative (and aus, bei, mit, nach, seit, von, zu)", pt: "o dativo (e aus, bei, mit, nach, seit, von, zu)"}
+      match: [{seq: [{word: [aus, außer, bei, mit, nach, seit, von, zu, gegenüber]}, {pos: det}], gap: 1, same: [number, gender]}, {seq: [{pos: det, case: dat}, {pos: noun}], gap: 0, same: [number, gender]}]
+    - page: pro_04
+      meaning: {en: "dative pronouns: mir, dir, ihm…", pt: "pronomes no dativo: mir, dir, ihm…"}
+      match: {seq: [{word: [mir, dir, ihm, uns, euch, ihnen]}]}
+      pool: [mir, dir, ihm, ihr, uns, euch, ihnen, mich, dich, ihn]
+    - page: det_06
+      meaning: {en: "possessives in the dative", pt: "possessivos no dativo"}
+      match: {seq: [{pos: det, lemma: "^(mein|dein|sein|ihr|unser|euer)$", case: dat}], same: [number, gender]}
+    - page: vi_04
+      meaning: {en: "gefallen: I like (it pleases me)", pt: "gefallen: eu gosto (me agrada)"}
+      match: {seq: [{pos: verb, lemma: "^(gefallen|gehören|helfen|danken|schmecken|passen|antworten)$"}], same: [tense, mood]}
+  - title: {en: Verbs with prefixes, pt: Verbos com prefixo}
+    lessons:
+    - page: v_04
+      meaning: {en: "separable verbs (anrufen: ich rufe … an)", pt: "verbos separáveis (anrufen: ich rufe … an)"}
+      match: {seq: [{pos: verb, mood: ind}, {word: [an, auf, aus, ein, mit, vor, zu, zurück, ab, fern, los, weg, her, hin, nach, fest, statt]}], near: 6, gap: 1}
+      pool: [an, auf, aus, ein, mit, vor, zu, zurück, ab, weg]
+    - page: v_05
+      meaning: {en: "inseparable verbs (be-, ver-, er-…)", pt: "verbos inseparáveis (be-, ver-, er-…)"}
+      match: {seq: [{pos: verb, mood: ind, tense: pres, re: "^(be|emp|ent|er|miss|ver|zer)"}], same: [tense, mood]}
+    - page: vi_15
+      meaning: {en: "wissen and kennen: to know", pt: "wissen e kennen: saber e conhecer"}
+      match: {seq: [{pos: verb, lemma: "^(wissen|kennen)$"}], same: [tense, mood]}
+    - page: vm_01
+      meaning: {en: "modal verbs: können, müssen, wollen…", pt: "verbos modais: können, müssen, wollen…"}
+      match: {seq: [{pos: verb, lemma: "^(können|müssen|dürfen|sollen|wollen|mögen)$", tense: pres, mood: ind}], same: [tense, mood]}
+  - title: {en: The Perfekt, pt: O Perfekt (passado composto)}
+    lessons:
+    - page: vcp_01
+      meaning: {en: "the conversational past: haben or sein + participle", pt: "o passado da conversa: haben ou sein + particípio"}
+      match: {seq: [{pos: verb, lemma: "^(haben|sein)$", tense: pres, mood: ind}, {pos: verb, mood: ppl2}], near: 6, gap: 0}
+      pool: [hat, ist, habe, bin, haben, sind, hast, bist, habt, seid]
+    - page: vcp_02
+      meaning: {en: "Perfekt of regular verbs (gemacht)", pt: "Perfekt dos verbos regulares (gemacht)"}
+      match: {seq: [{pos: verb, lemma: "^haben$"}, {pos: verb, mood: ppl2, re: "^ge.+t$"}], near: 6, gap: 1}
+    - page: vcp_03
+      meaning: {en: "Perfekt of irregular verbs with haben (gesehen)", pt: "Perfekt dos irregulares com haben (gesehen)"}
+      match: {seq: [{pos: verb, lemma: "^haben$"}, {pos: verb, mood: ppl2, re: "^ge.+en$"}], near: 6, gap: 1}
+    - page: vcp_04
+      meaning: {en: "Perfekt with sein (gegangen)", pt: "Perfekt com sein (gegangen)"}
+      match: {seq: [{pos: verb, lemma: "^sein$"}, {pos: verb, mood: ppl2}], near: 6, gap: 1}
+    - page: vcp_05
+      meaning: {en: "Perfekt of mixed verbs (gebracht, gedacht)", pt: "Perfekt dos verbos mistos (gebracht, gedacht)"}
+      match: {seq: [{pos: verb, mood: ppl2, lemma: "^(bringen|denken|kennen|nennen|rennen|wissen|brennen|senden|wenden)$"}]}
+    - page: vcp_06
+      meaning: {en: "Perfekt of -ieren verbs (studiert)", pt: "Perfekt dos verbos em -ieren (studiert)"}
+      match: {seq: [{pos: verb, mood: ppl2, re: "iert$"}]}
+    - page: vcp_07
+      meaning: {en: "Perfekt of separable verbs (angerufen)", pt: "Perfekt dos verbos separáveis (angerufen)"}
+      match: {seq: [{pos: verb, mood: ppl2, re: "^(an|auf|aus|ein|mit|vor|zu|zurück|ab|weg|fern|los)ge"}]}
+    - page: vcp_08
+      meaning: {en: "Perfekt of inseparable verbs (verstanden)", pt: "Perfekt dos verbos inseparáveis (verstanden)"}
+      match: {seq: [{pos: verb, mood: ppl2, re: "^(be|emp|ent|er|miss|ver|zer)"}]}
+  - title: {en: Joining sentences, pt: Ligando frases}
+    lessons:
+    - page: con_01
+      meaning: {en: "conjunctions", pt: "conjunções"}
+      match: {seq: [{word: [und, aber, oder, denn, sondern, weil, dass, wenn, ob, als, obwohl, damit, bevor, nachdem, während]}]}
+      pool: [und, aber, oder, denn, sondern, weil, dass, wenn, ob, obwohl]
+    - page: con_03
+      meaning: {en: "coordinating conjunctions: und, aber, oder, denn, sondern", pt: "conjunções coordenativas: und, aber, oder, denn, sondern"}
+      match: {seq: [{word: [und, aber, oder, denn, sondern], notStart: true}]}
+      pool: [und, aber, oder, denn, sondern]
+    - page: con_04
+      meaning: {en: "subordinating conjunctions: the verb goes to the end", pt: "conjunções subordinativas: o verbo vai para o fim"}
+      # bis and seit are mostly prepositions; während and als too often other things
+      match: {seq: [{word: [weil, dass, wenn, ob, obwohl, damit, bevor, nachdem, sobald, falls]}]}
+      pool: [weil, dass, wenn, ob, obwohl, damit, bevor, nachdem, als, bis]
+  - title: {en: Adjectives, pt: Adjetivos}
+    lessons:
+    - page: adj_01
+      meaning: {en: "adjective endings: an overview", pt: "terminações dos adjetivos: visão geral"}
+      match: {seq: [{pos: adj, degree: pos}, {pos: noun}], gap: 0}
+    - page: adj_02
+      meaning: {en: "adjectives after ein-words", pt: "adjetivos depois de palavras do tipo ein"}
+      match: {seq: [{pos: det, lemma: "^(ein|kein|mein|dein|sein|ihr|unser|euer)$"}, {pos: adj}], gap: 1, same: [degree]}
+    - page: adj_03
+      meaning: {en: "adjectives after der-words", pt: "adjetivos depois de palavras do tipo der"}
+      match: {seq: [{pos: det, lemma: "^(der|dieser|jeder|jener|welcher)$"}, {pos: adj}], gap: 1, same: [degree]}
+    - page: adj_04
+      meaning: {en: "adjectives without an article", pt: "adjetivos sem artigo"}
+      match: {seq: [{pos: adj, infl: strong, degree: pos}, {pos: noun}], gap: 0}
+    - page: adj_05
+      meaning: {en: "comparative and superlative", pt: "comparativo e superlativo"}
+      match: {seq: [{pos: adj, degree: [comp, super]}], same: [case, number, gender, infl]}
+  - title: {en: "Place, reflexives, adverbs", pt: "Lugar, reflexivos, advérbios"}
+    lessons:
+    - page: cas_09
+      meaning: {en: "two-way prepositions: accusative (where to?) or dative (where?)", pt: "preposições de dois casos: acusativo (para onde?) ou dativo (onde?)"}
+      match: {seq: [{word: [in, an, auf, über, unter, vor, hinter, neben, zwischen]}, {pos: det, case: [acc, dat]}], gap: 1, same: [number, gender]}
+    - page: vrf_01
+      meaning: {en: "reflexive verbs: sich waschen", pt: "verbos reflexivos: sich waschen"}
+      match: {seq: [{pos: verb}, {word: [mich, dich, sich, uns, euch]}], near: 1, gap: 1}
+      pool: [mich, dich, sich, uns, euch, mir, dir]
+    - page: adv_01
+      meaning: {en: "adverbs of time, frequency, quantity", pt: "advérbios de tempo, frequência, quantidade"}
+      match: {seq: [{word: [heute, morgen, gestern, oft, immer, nie, manchmal, selten, sehr, ziemlich, bald, jetzt, schon, noch, wieder]}]}
+      pool: [heute, morgen, gestern, oft, immer, nie, manchmal, selten, sehr, bald, jetzt, schon, noch]
+    - page: adv_02
+      meaning: {en: "adverbs of manner and place", pt: "advérbios de modo e de lugar"}
+      match: {seq: [{word: [hier, dort, da, oben, unten, links, rechts, gern, gerne, schnell, langsam, zusammen, draußen, drinnen]}]}
+      pool: [hier, dort, oben, unten, links, rechts, gern, schnell, langsam, zusammen]
+- id: B1
+  topics:
+  - title: {en: The Präteritum, pt: O Präteritum (passado simples)}
+    lessons:
+    - page: vsp_04
+      meaning: {en: "Präteritum of haben: hatte", pt: "Präteritum de haben: hatte"}
+      match: {seq: [{pos: verb, lemma: "^haben$", tense: pret, mood: ind}], same: [tense, mood]}
+    - page: vsp_05
+      meaning: {en: "Präteritum of sein: war", pt: "Präteritum de sein: war"}
+      match: {seq: [{pos: verb, lemma: "^sein$", tense: pret, mood: ind}], same: [tense, mood]}
+    - page: vsp_01
+      meaning: {en: "Präteritum of regular verbs (machte)", pt: "Präteritum dos verbos regulares (machte)"}
+      match: {seq: [{pos: verb, tense: pret, mood: ind, re: "te(st|n|t)?$", not: {lemma: "^(haben|sein|werden)$"}}], same: [tense, mood]}
+    - page: vsp_02
+      meaning: {en: "Präteritum of irregular verbs (ging, sah)", pt: "Präteritum dos verbos irregulares (ging, sah)"}
+      match: {seq: [{pos: verb, tense: pret, mood: ind, re: "^(?!.*te(st|n|t)?$)", not: {lemma: "^(haben|sein|werden)$"}}], same: [tense, mood]}
+    - page: vsp_03
+      meaning: {en: "Präteritum of mixed verbs (brachte, dachte)", pt: "Präteritum dos verbos mistos (brachte, dachte)"}
+      match: {seq: [{pos: verb, tense: pret, lemma: "^(bringen|denken|kennen|nennen|rennen|wissen|brennen|senden|wenden)$"}], same: [tense, mood]}
+    - page: vm_02
+      meaning: {en: "modal verbs in the past (konnte, musste)", pt: "verbos modais no passado (konnte, musste)"}
+      match: {seq: [{pos: verb, lemma: "^(können|müssen|dürfen|sollen|wollen|mögen)$", tense: pret}], same: [tense, mood]}
+    - page: vpp_01
+      meaning: {en: "the Plusquamperfekt: hatte gemacht", pt: "o Plusquamperfekt: hatte gemacht"}
+      match: {seq: [{pos: verb, lemma: "^(haben|sein)$", tense: pret}, {pos: verb, mood: ppl2}], near: 6, gap: 0}
+      pool: [hatte, war, hatten, waren, hattest, warst, hat, ist]
+  - title: {en: The genitive, pt: O genitivo}
+    lessons:
+    - page: cas_08
+      meaning: {en: "the genitive (and wegen, trotz, während)", pt: "o genitivo (e wegen, trotz, während)"}
+      match: [{seq: [{word: [wegen, trotz, während, statt, anstatt, innerhalb, außerhalb]}, {pos: det}], gap: 1, same: [number, gender]}, {seq: [{pos: det, case: gen}, {pos: noun}], gap: 0, same: [number, gender]}]
+    - page: det_07
+      meaning: {en: "possessives in the genitive", pt: "possessivos no genitivo"}
+      match: {seq: [{pos: det, lemma: "^(mein|dein|sein|ihr|unser|euer)$", case: gen}], same: [number, gender]}
+    - page: no_04
+      meaning: {en: "weak masculine nouns (den Herrn, dem Studenten)", pt: "substantivos masculinos fracos (den Herrn, dem Studenten)"}
+      match: {seq: [{pos: noun, lemma: "^(Junge|Herr|Mensch|Student|Name|Nachbar|Kollege|Prinz|Held|Bär|Affe|Löwe|Präsident|Polizist|Elefant|Soldat|Kunde|Bauer|Patient|Tourist)$"}], same: [number]}
+  - title: {en: Relative clauses, pt: Orações relativas}
+    lessons:
+    - page: pro_05
+      meaning: {en: "relative pronouns: der, die, das…", pt: "pronomes relativos: der, die, das…"}
+      # a comma after the noun: the relative clause, not an article (Ein Gruß der Welt)
+      # noun, comma, relative pronoun … and the verb last, before the clause's comma or stop
+      match: {seq: [{pos: noun, trail: ","}, {word: [der, die, das, den, dem, dessen, deren, denen]}, {pos: [noun, pron, det, adj, adv, prep, num]}, {pos: verb, mood: ind, trail: ",.!?"}], near: 6, gap: 1}
+      pool: [der, die, das, den, dem, dessen, deren, denen]
+    - page: pro_07
+      meaning: {en: "demonstrative pronouns", pt: "pronomes demonstrativos"}
+      match: {seq: [{lemma: "^(dieser|jener|derjenige|derselbe)$"}], same: [number]}
+  - title: {en: "Future, infinitives, Konjunktiv II", pt: "Futuro, infinitivos, Konjunktiv II"}
+    lessons:
+    - page: vf_01
+      meaning: {en: "the future: werden + infinitive", pt: "o futuro: werden + infinitivo"}
+      match: {seq: [{pos: verb, lemma: "^werden$", tense: pres, mood: ind}, {pos: verb, mood: inf}], near: 6, gap: 0, same: [tense, mood]}
+    - page: vinf_01
+      meaning: {en: "infinitive clauses with zu (um … zu)", pt: "orações infinitivas com zu (um … zu)"}
+      match: {seq: [{word: [zu]}, {pos: verb, mood: inf}], gap: 1}
+    - page: vsub_01
+      meaning: {en: "the subjunctive: an overview", pt: "o subjuntivo: visão geral"}
+      # the characteristic forms: other words look like subjunctives too (lange, bitte)
+      match: {seq: [{word: [wäre, wären, wärst, hätte, hätten, hättest, würde, würden, würdest, könnte, könnten, müsste, müssten, dürfte, wüsste, käme, ginge, gäbe]}]}
+      pool: [wäre, war, ist, hätte, hatte, hat, würde, wird, könnte, kann, sei]
+    - page: vsub_02
+      meaning: {en: "Konjunktiv II: würde, wäre, hätte", pt: "Konjunktiv II: würde, wäre, hätte"}
+      match: {seq: [{pos: verb, mood: sub2}], same: [person, number]}
+    - page: vsub_03
+      meaning: {en: "Konjunktiv II in the past: hätte gemacht", pt: "Konjunktiv II no passado: hätte gemacht"}
+      match: {seq: [{word: [hätte, hätten, hättest, hättet, wäre, wären, wärst, wäret]}, {pos: verb, mood: ppl2}], near: 6, gap: 0}
+      pool: [hätte, wäre, hätten, wären, hatte, war, würde]
+  - title: {en: The passive, pt: A passiva}
+    lessons:
+    - page: vpass_01
+      meaning: {en: "the passive in the present: wird gemacht", pt: "a passiva no presente: wird gemacht"}
+      match: {seq: [{pos: verb, lemma: "^werden$", tense: pres}, {pos: verb, mood: ppl2}], near: 6, gap: 0, same: [tense, mood]}
+    - page: vpass_03
+      meaning: {en: "the passive in the past: wurde gemacht", pt: "a passiva no passado: wurde gemacht"}
+      match: {seq: [{pos: verb, lemma: "^werden$", tense: pret}, {pos: verb, mood: ppl2}], near: 6, gap: 0, same: [tense, mood]}
+    - page: vpass_04
+      meaning: {en: "alternatives to the passive (man, sich lassen)", pt: "alternativas à passiva (man, sich lassen)"}
+      match: {seq: [{word: [man]}, {pos: verb}], gap: 0}
+      pool: [man, jemand, es, sie, er]
+  - title: {en: Verbs with prepositions, pt: Verbos com preposição}
+    lessons:
+    - page: vphr_01
+      meaning: {en: "verbs with fixed prepositions (warten auf)", pt: "verbos com preposição fixa (warten auf)"}
+      match: {seq: [{pos: verb, lemma: "^(warten|denken|freuen|interessieren|bitten|fragen|sprechen|glauben|träumen|achten|antworten|hoffen|erinnern|kümmern|ärgern|gewöhnen|verlassen)$"}, {word: [auf, an, über, für, nach, von, mit, um]}], near: 4, gap: 1}
+      pool: [auf, an, über, für, nach, von, mit, um]
+- id: B2
+  topics:
+  - title: {en: Reported speech and style, pt: Discurso indireto e estilo}
+    lessons:
+    - page: vsub_04
+      meaning: {en: "Konjunktiv I: reported speech", pt: "Konjunktiv I: discurso indireto"}
+      # after a 3rd-person subject, where habe, werde… can only be Konjunktiv I (ich habe is indicative)
+      match: {seq: [{word: [er, es, man]}, {word: [sei, könne, müsse, solle, wolle, dürfe, möge, wisse, habe, werde, gebe, komme, gehe]}], gap: 1}
+      pool: [sei, ist, wäre, könne, kann, könnte, habe, hat, hätte, werde, wird, würde]
+    - page: adv_03
+      meaning: {en: "adverbs that tell a story: dann, zuerst, schließlich", pt: "advérbios da narração: dann, zuerst, schließlich"}
+      match: {seq: [{word: [dann, danach, zuerst, schließlich, plötzlich, endlich, inzwischen, später, damals, anschließend]}]}
+      pool: [dann, danach, zuerst, schließlich, plötzlich, endlich, inzwischen, später, damals]
+    - page: mis_04
+      meaning: {en: "flavouring particles: doch, mal, ja, denn", pt: "partículas modais: doch, mal, ja, denn"}
+      match: {seq: [{word: [doch, mal, ja, eben, halt, eigentlich, wohl, bloß], notStart: true}]}
+      pool: [doch, mal, ja, denn, eben, halt, eigentlich, wohl, schon]
+    - page: mis_02
+      meaning: {en: "word formation: -ung, -heit, -keit, -lich…", pt: "formação de palavras: -ung, -heit, -keit, -lich…"}
+      match: {seq: [{pos: noun, re: "(ung|heit|keit|schaft)(en)?$"}], same: [number]}
+    - page: mis_03
+      meaning: {en: "false friends", pt: "falsos amigos"}
+      match: {seq: [{word: [bekommen, bekomme, bekommt, gift, handy, aktuell, eventuell, chef, sensibel, also, brav, kind, rat, see]}]}
+      pool: [bekommen, Gift, Handy, aktuell, eventuell, Chef, sensibel, also, brav]
+    - page: mis_01
+      meaning: {en: "punctuation (the comma before dass, weil…)", pt: "pontuação (a vírgula antes de dass, weil…)"}
+      match: {seq: [{word: [dass, weil, obwohl, ob, wenn, damit]}]}
+      pool: [dass, weil, obwohl, ob, wenn, damit]
+    - page: mis_05
+      meaning: {en: "the spelling reform: ß and ss", pt: "a reforma ortográfica: ß e ss"}
+      match: {seq: [{re: "ß"}]}
+      swaps: {ß: [ss]}

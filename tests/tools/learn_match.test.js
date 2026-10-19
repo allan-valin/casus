@@ -166,3 +166,9 @@ it('a variant of the answer in the same slot (ἐστί for ἐστίν) is neve
   const rows = [['ἐστίν', 'v3s'], ['ἐστί', 'v3s'], ['εἰσί', 'v3p'], ['εἰμί', 'v1s']];
   expect(formPool(rows, 'ἐστίν', 'v3s', (c) => ({ p: c[1], n: c[2] }))).toEqual(['εἰσί', 'εἰμί']);
 });
+it('trail: what follows the word (a comma before a relative clause)', () => {
+  const blocks = [{ token: { surface: 'Mann', trail: ',' }, candidates: [{ analysis: { pos: 'noun' } }] }, { token: { surface: 'der' }, candidates: [] }];
+  expect(matchRule(blocks, { seq: [{ pos: 'noun', trail: ',' }, { word: ['der'] }], gap: 1 })).toEqual({ span: [1, 2], gap: 1 });
+  blocks[0].token.trail = undefined;
+  expect(matchRule(blocks, { seq: [{ pos: 'noun', trail: ',' }, { word: ['der'] }], gap: 1 })).toBe(null);
+});

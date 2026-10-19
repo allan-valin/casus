@@ -160,6 +160,11 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
   generated from the Wiktionary-based paradigms (CC BY-SA; tools/learn_tables.py). Exercise sentences: Tatoeba's Greek
   (CC BY 2.0 FR) and Xenophon's Anabasis and Memorabilia and Lysias 1 from the **Perseus Digital Library**
   (canonical-greekLit, CC BY-SA 4.0; tools/build_corpus.py).
+- German lessons (92, A1–B2): **Grimm Grammar**, COERLL, The University of Texas at Austin (coerll.utexas.edu/gg),
+  CC BY 4.0 — each page's explanation and examples, and the exercise sets of its answer key, as the site has them
+  (audio and pictures left out; vendor/grimm/, tools/learn_de.py). The CEFR levels, topic order, Portuguese summaries
+  and Tatoeba rules are Casus's (tools/curricula/de/plan.yml). Exercises also from Tatoeba's German sentences
+  (CC BY 2.0 FR). COERLL's textbook *Deutsch im Blick* (CC BY 4.0) was checked and is the same project's.
 
 ## Document import
 

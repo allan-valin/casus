@@ -64,6 +64,7 @@
     <!-- a sentence with furigana where it has readings (Learn, 2026-10-19), else the plain prompt -->
     <p class="quiz-prompt" lang="" dir="auto">{#if current.item.furi}{#each current.item.furi as [t, r]}{#if r}<ruby>{t}<rt>{r}</rt></ruby>{:else}{t}{/if}{/each}{:else}{current.item.prompt}{/if}</p>
     {#if promptRoman}<p class="roman prompt-roman">{promptRoman}</p>{/if}
+    {#if current.item.task}<p class="quiz-task">{current.item.task}</p>{/if}
     {#if current.item.hint ?? (current.item.type === 'gap' ? current.item.en : null)}<p class="quiz-hint">{current.item.hint ?? (ui.lang === 'pt' && current.item.pt ? current.item.pt : current.item.en)}</p>{/if}
     {#if current.item.type === 'order'}
       <!-- put the words in order: tap them, the sentence builds up; it is checked when every word is used -->
@@ -107,6 +108,7 @@
   .roman { display: block; font-style: italic; color: var(--ink-2); font-size: 0.8em; }
   .prompt-roman { font-size: 1rem; margin: 0 0 6px; }
   .quiz-hint { color: var(--ink-2); margin: 0 0 8px; }
+  .quiz-task { color: var(--ink-2); font-size: 0.9em; font-style: italic; margin: 0 0 4px; }
   .built { font-size: 1.4rem; min-height: 1.6em; border-bottom: 2px solid var(--line); padding: 4px 2px; margin: 6px 0; }
   .tiles { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
   .tile, .undo { font: inherit; font-size: 1.15rem; padding: 6px 12px; border: 1.5px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); cursor: pointer; }

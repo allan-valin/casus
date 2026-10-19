@@ -71,7 +71,7 @@
   // the lesson's own examples first, in order; then Tatoeba's and the derived ones, shuffled
   function bookFirst(qs) {
     // the lesson's own questions and the book's (D'Ooge) in order; Tatoeba's and the texts' (Xenophon…) shuffled
-    const own = qs.filter((q) => (!q.source || q.source === 'book') && !q.derivedFrom);
+    const own = qs.filter((q) => (!q.source || q.source === 'book' || q.source === 'drill') && !q.derivedFrom);
     const rest = qs.filter((q) => !own.includes(q));
     for (let i = rest.length - 1; i > 0; i -= 1) { const j = Math.floor(random() * (i + 1)); [rest[i], rest[j]] = [rest[j], rest[i]]; }
     return [...own, ...rest];

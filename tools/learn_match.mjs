@@ -7,7 +7,8 @@
  *                                          (the word the learner fills in) is the k-th condition's word
  *   cond: { pos, tense, aspect, person, number, gender, case, word: [surfaces], re: regex on the word,
  *           lemma: regex on the dictionary form of every reading, start: the sentence's first word,
- *           notStart: not the first word, noTrail: no comma or stop right after it (Да, … is "yes"), dict: regex on the dictionary form as printed
+ *           notStart: not the first word, noTrail: no comma or stop right after it (Да, … is "yes"), trail: this
+ *           punctuation right after it (a comma before a relative clause), dict: regex on the dictionary form as printed
  *           (Arabic: "دَرَّسَ (form II)"), not: cond }
  *   several rules: the first that matches (its index comes back as `rule`); words and re compare after `norm`
  *   (lower case; Arabic: the bare letters, so rules are written without vowels)
@@ -15,7 +16,7 @@
  * A word fits a morphological condition only when every reading the reader keeps for it fits, so a gap is never
  * built on a guess.
  */
-const FEATURES = ['pos', 'tense', 'aspect', 'person', 'number', 'gender', 'case', 'mood', 'voice', 'state', 'degree', 'conj'];
+const FEATURES = ['pos', 'tense', 'aspect', 'person', 'number', 'gender', 'case', 'mood', 'voice', 'state', 'degree', 'conj', 'infl'];
 const lower = (s) => s.toLocaleLowerCase();
 
 function fitsAnalysis(a, cond, lemmaOf, dictOf) {
@@ -34,6 +35,7 @@ export function fits(block, cond, lemmaOf = null, dictOf = null, norm = lower) {
   if (cond.word && !cond.word.map(norm).includes(norm(block.token.surface))) return false;
   if (cond.re && !new RegExp(cond.re, 'iu').test(norm === lower ? block.token.surface : norm(block.token.surface))) return false;
   if (cond.noTrail && block.token.trail) return false;
+  if (cond.trail && ![...cond.trail].some((ch) => (block.token.trail ?? '').includes(ch))) return false;   // any of these marks
   const morph = FEATURES.some((f) => cond[f] != null) || cond.not || cond.lemma || cond.dict;
   if (!morph) return true;
   const cands = block.candidates ?? [];

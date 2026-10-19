@@ -149,7 +149,66 @@ def la_learn(book: str, plan_path: Path) -> tuple[dict, dict, dict]:
     return {"system": plan["system"], "levels": levels, "credit": plan["credit"]}, lessons, questions
 
 
+def de_learn(book: Path, plan_path: Path) -> tuple[dict, dict, dict]:
+    """German: Grimm Grammar's pages as lessons (tools/learn_de.py) in the levels, topics and rules of
+    tools/curricula/de/plan.yml; its examples as the lesson's own questions, its exercise sets as the book's"""
+    import yaml
+    from learn_de import parse_key, parse_page
+    plan = yaml.safe_load(plan_path.read_text(encoding="utf-8"))
+    key = parse_key((book / "answer_key.html").read_text(encoding="utf-8", errors="replace"))
+    levels, lessons, questions = [], {}, {}
+    for lv in plan["levels"]:
+        topics, qs = [], {}
+        for t_k, topic in enumerate(lv["topics"], 1):
+            entries = []
+            for x in topic["lessons"]:
+                f = book / f"{x['page']}.html"
+                if not f.exists():
+                    continue
+                p = parse_page(f.read_text(encoding="utf-8", errors="replace"))
+                lid = f"de-{x['page']}"
+                examples = [{"text": e["text"], "en": e["en"], **({"target": e["target"]} if e.get("target") else {})} for e in p["examples"]]
+                page = {"id": lid, "title": p["de"], "meaning": x["meaning"], "intro": "", "level": lv["id"], "topic": topic["title"],
+                        "sections": [{"id": "lesson", "title": {"en": p["en"][:1].upper() + p["en"][1:], "pt": "A lição (em inglês, da Grimm Grammar)"}, "html": p["html"]}],
+                        "examples": examples, "practice": [], "match": x["match"], "source": "Grimm Grammar (COERLL, UT Austin), CC BY 4.0"}
+                for k in ("pool", "swaps", "prefixes", "suffixes"):
+                    if x.get(k):
+                        page[k] = x[k]
+                lessons[lid] = page
+                entries.append({"id": lid, "title": p["de"], "meaning": x["meaning"]})
+                mine = []
+                for e in examples:
+                    t = e.get("target")
+                    if t and t in e["text"]:
+                        a, b = e["text"].split(t, 1)
+                        mine.append({"type": "gap", "furi": [s for s in [[a, None], ["＿＿", None], [b, None]] if s[0]], "en": e["en"], "answer": t})
+                    mine.append({"type": "translate", "furi": [[e["text"], None]], "answer": e["en"]})
+                # the page's exercise sets, answers from the site's key
+                for name, st in key.items():
+                    if not name.startswith(x["page"] + "_"):
+                        continue
+                    for it in st["items"]:
+                        if st["kind"] == "fib" and st["bank"]:
+                            a, b = it["text"].split("＿＿", 1) if "＿＿" in it["text"] else (it["text"], "")
+                            mine.append({"type": "gap", "source": "book", "task": st["task"], "furi": [s for s in [[a, None], ["＿＿", None], [b, None]] if s[0]],
+                                         "answer": it["answer"], "pool": [w for w in st["bank"] if w != it["answer"]]})
+                        elif st["kind"] == "mcr" and it.get("options"):
+                            pool = [o for o in it["options"] if o != it["answer"]]
+                            if "＿＿" in it["prompt"]:
+                                a, b = it["prompt"].split("＿＿", 1)
+                                mine.append({"type": "gap", "source": "book", "task": st["task"], "furi": [s for s in [[a, None], ["＿＿", None], [b, None]] if s[0]], "answer": it["answer"], "pool": pool})
+                            else:
+                                mine.append({"type": "choice", "source": "book", "task": st["task"], "prompt": it["prompt"], "answer": it["answer"], "pool": pool})
+                qs[lid] = {"pools": {"gap": x.get("pool", [])}, "qs": mine}
+            if entries:
+                topics.append({"id": f"de-{lv['id']}-t{t_k}", "kind": "grammar", "title": topic["title"], "lessons": entries})
+        levels.append({"id": lv["id"], "topics": topics})
+        questions[lv["id"]] = qs
+    return {"system": plan["system"], "levels": levels, "credit": plan["credit"]}, lessons, questions
+
+
 BUILDERS = {"ja": lambda: ja_learn(ROOT / "vendor" / "jlpt-grammar-enhanced", ROOT / "vendor" / "openjlpt")}
+BUILDERS["de"] = lambda: de_learn(ROOT / "vendor" / "grimm", ROOT / "tools" / "curricula" / "de" / "plan.yml")
 BUILDERS["la"] = lambda: la_learn((ROOT / "vendor" / "dooge" / "dooge.html").read_text(encoding="utf-8"), ROOT / "tools" / "curricula" / "la" / "plan.yml")
 
 
@@ -202,7 +261,7 @@ def main(code: str) -> None:
         (folder / f"q-{lid}.json").write_text(dump(qs), encoding="utf-8")
     counts = {lv["id"]: sum(len(t["lessons"]) for t in lv["topics"] if t["kind"] == "grammar") for lv in index["levels"]}
     size = sum(f.stat().st_size for f in folder.glob("*.json")) // 1024
-    print(f"{code}: grammar lessons {counts}, {len(lessons)} lesson files, {sum(len(v) for qs in questions.values() for v in qs.values())} questions, {size} KB")
+    print(f"{code}: grammar lessons {counts}, {len(lessons)} lesson files, {sum(len(v["qs"]) if isinstance(v, dict) else len(v) for qs in questions.values() for v in qs.values())} questions, {size} KB")
 
 
 if __name__ == "__main__":
