@@ -45,3 +45,6 @@ Decisions (his answers): phrase answers show the REAL sense; explanations writte
 - Frequent-words lists cleaned for pt, pl, tr, is, fi, el, cs, hu: plain meanings for the top function words (pl to
   "this, it", tr bir "one; a, an", is var "was", el μου "my; me"), one row per such word, Portuguese function words
   read as articles/pronouns (um "a, an", not the digit). German list unchanged.
+- ~04:20: Hungarian verbs (tables read by their endings), Icelandic pronoun spill fixed, Arabic drill pools by pattern,
+  no vulgar pool words, Greek αγαπάω model; every language's data re-released; full UI check clean (no overflow, no
+  errors). Data 705 MB.
