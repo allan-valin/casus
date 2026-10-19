@@ -113,6 +113,11 @@ prepositions with their cases, agreement, verb number, one subject per clause; a
 form; Cyrillic, table, frequency and phrase drills. Notes: `docs/languages/ru.md`; build:
 `bash tools/fetch_wiktextract.sh Russian && python3 tools/build_lang.py ru`.
 
+**Korean (2026-10-19)** at `/ko/`: 35,500 lemmas with their conjugations; particles split off their words and
+give them their roles (as in Japanese); speech level and tense on every verb; Revised Romanization; Hangul,
+conjugation, frequency and phrase drills. Notes: `docs/languages/ko.md`; build:
+`bash tools/fetch_wiktextract.sh Korean && python3 tools/build_lang.py ko`.
+
 Top corner: **English ⇄ Português** (the page and the dictionary language together, remembered),
 exports (JSON to reload, Markdown to read) and **?** — what is on screen, how to use it, every
 resource and licence. Under the page, **What is happening**: one timestamped line per action and its

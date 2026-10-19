@@ -5,6 +5,7 @@ import { german } from './de/index.js';
 import { japanese } from './ja/index.js';
 import { arabic } from './ar/index.js';
 import { russian } from './ru/index.js';
+import { korean } from './ko/index.js';
 
 export const LANGUAGES = [
   { code: 'la', path: '/', name: { en: 'Latin', pt: 'Latim' } },
@@ -13,9 +14,10 @@ export const LANGUAGES = [
   { code: 'ja', path: '/ja/', name: { en: 'Japanese', pt: 'Japonês' } },
   { code: 'ar', path: '/ar/', name: { en: 'Arabic', pt: 'Árabe' } },
   { code: 'ru', path: '/ru/', name: { en: 'Russian', pt: 'Russo' } },
+  { code: 'ko', path: '/ko/', name: { en: 'Korean', pt: 'Coreano' } },
 ];
 
-const DEFINITIONS = { la: latin, grc: greek, de: german, ja: japanese, ar: arabic, ru: russian };
+const DEFINITIONS = { la: latin, grc: greek, de: german, ja: japanese, ar: arabic, ru: russian, ko: korean };
 
 export function getLanguage(code) {
   return DEFINITIONS[code];

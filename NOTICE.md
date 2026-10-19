@@ -91,6 +91,13 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
 - Frequency (word selection and frequent words): Hermit Dave, *FrequencyWords* (OpenSubtitles 2018, ru_50k), CC BY-SA 4.0.
 - Sample passages: sentences written for Casus; Tolstoy and Pushkin, public domain.
 
+## Korean — CC BY-SA
+
+- Dictionary, conjugations, IPA, phrases: the English Wiktionary via wiktextract / kaikki.org, CC BY-SA 4.0. The
+  particle list and its role names are written for Casus.
+- Frequency: Hermit Dave, *FrequencyWords* (OpenSubtitles 2018, ko_50k), CC BY-SA 4.0.
+- Sample passages: sentences written for Casus; the first line of *Aegukga* (public domain).
+
 ## Speech — espeak-ng (GPL-3.0)
 
 When the browser has no voice for a language, the speaker button loads espeak-ng compiled to
