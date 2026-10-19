@@ -16,7 +16,7 @@
  * A word fits a morphological condition only when every reading the reader keeps for it fits, so a gap is never
  * built on a guess.
  */
-const FEATURES = ['pos', 'tense', 'aspect', 'person', 'number', 'gender', 'case', 'mood', 'voice', 'state', 'degree', 'conj', 'infl'];
+const FEATURES = ['pos', 'tense', 'aspect', 'person', 'number', 'gender', 'case', 'mood', 'voice', 'state', 'degree', 'conj', 'infl', 'form'];
 const lower = (s) => s.toLocaleLowerCase();
 
 function fitsAnalysis(a, cond, lemmaOf, dictOf) {

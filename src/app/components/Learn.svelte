@@ -124,7 +124,7 @@
       {#if lesson.kind === 'vocab' || lesson.kind === 'kanji'}
         <nav class="toc"><a href="#ex-start">{t('learn.exercises')}</a></nav>
         {#if lesson.kind === 'vocab'}
-          <table class="words"><tbody>{#each lesson.words as w}<tr><td class="w" lang={lang.bcp47}><ruby>{w.w}<rt>{w.reading}</rt></ruby></td><td class="r">{romanize ? romanize(w.reading) : ''}</td><td>{w.en}</td></tr>{/each}</tbody></table>
+          <table class="words"><tbody>{#each lesson.words as w}<tr><td class="w" lang={lang.bcp47}>{#if w.reading}<ruby>{w.w}<rt>{w.reading}</rt></ruby>{:else}{w.w}{/if}</td><td class="r">{romanize ? romanize(w.reading ?? w.w) : ''}</td><td>{w.en}</td></tr>{/each}</tbody></table>
         {:else}
           <table class="words"><tbody>{#each lesson.kanji as k}<tr><td class="w big" lang={lang.bcp47}>{k.k}</td><td>{k.en}</td><td class="r">{k.on}</td><td class="r">{k.kun}</td><td class="r" lang={lang.bcp47}>{k.words.join('、')}</td></tr>{/each}</tbody></table>
         {/if}

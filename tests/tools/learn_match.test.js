@@ -177,3 +177,7 @@ it('unknown: a word the dictionary does not have (Russian gerunds in the core le
   expect(matchRule(blocks, { seq: [{ re: 'ясь$', unknown: true }] })).toEqual({ span: [0, 1], gap: 0 });
   expect(matchRule(blocks, { seq: [{ re: 'ом$', unknown: true }] })).toBe(null);
 });
+it('Hangul spelling variants swap letters inside the syllable block (decomposed, then recomposed)', () => {
+  const swaps = { 'ᅥ': ['ᅩ'], 'ᄀ': ['ᄏ'] };
+  expect(spellingVariants('거'.normalize('NFD'), swaps).map((w) => w.normalize('NFC'))).toEqual(['커', '고']);
+});

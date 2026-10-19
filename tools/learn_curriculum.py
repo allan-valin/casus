@@ -124,7 +124,47 @@ def curriculum_learn(path: Path, tables=None) -> tuple[dict, dict, dict]:
             topics.append({"id": f"{lv['id']}-t{t_k}", "kind": "grammar", "title": _both(topic["title"]), "lessons": entries})
         levels.append({"id": lv["id"], **({"title": _both(lv["title"])} if lv.get("title") else {}), "topics": topics})
         questions[lv["id"]] = qs
+    if data.get("vocab"):
+        add_vocabulary(data["vocab"], levels, lessons, path)
     index = {"system": data["system"], "levels": levels, "credit": _both(data["credit"])}
     if data.get("names"):
         index["names"] = data["names"]
     return index, lessons, questions
+
+
+def add_vocabulary(spec: dict, levels: list, lessons: dict, path: Path) -> None:
+    """graded words as Words lessons (word ↔ English questions in the page): spec = {file: tsv of word, part of speech,
+    level, English; levels: {source level: [our level ids]} — a source level shared by several of ours is split
+    evenly between them in order; unit: words a lesson}"""
+    import math
+    f = Path(spec["file"])
+    if not f.is_absolute():
+        f = Path(__file__).resolve().parents[1] / f
+    if not f.exists():
+        return
+    rows = [line.split("\t") for line in f.read_text(encoding="utf-8").splitlines() if line.count("\t") >= 3]
+    unit = spec.get("unit", 40)
+    for src, ours in spec["levels"].items():
+        words = [{"w": r[0], "en": r[3]} for r in rows if r[2] == src and r[3]]
+        seen, uniq = set(), []
+        for w in words:
+            if w["w"] not in seen:
+                seen.add(w["w"])
+                uniq.append(w)
+        per = math.ceil(len(uniq) / len(ours)) if ours else 0
+        for k, lv_id in enumerate(ours):
+            mine = uniq[k * per:(k + 1) * per]
+            if not mine:
+                continue
+            level = next((lv for lv in levels if lv["id"] == lv_id), None)
+            if level is None:
+                continue
+            n = math.ceil(len(mine) / unit)
+            size = math.ceil(len(mine) / n)
+            entries = []
+            for j in range(n):
+                part = mine[j * size:(j + 1) * size]
+                lid = f"{lv_id.lower().replace(' ', '')}-v{j + 1}"
+                lessons[lid] = {"id": lid, "kind": "vocab", "level": lv_id, "words": part, "source": spec.get("source", "")}
+                entries.append({"id": lid, "title": " · ".join(w["w"] for w in part[:3]) + " …", "meaning": {"en": f"{len(part)} words", "pt": f"{len(part)} palavras"}})
+            level["topics"].append({"id": f"{lv_id}-words", "kind": "vocab", "title": {"en": "Words", "pt": "Palavras"}, "lessons": entries})

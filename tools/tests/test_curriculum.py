@@ -39,3 +39,19 @@ def test_table_cells_can_differ_per_language(tmp_path):
     _, lessons, _ = curriculum_learn(f)
     html = lessons["a1-sum"]["sections"][0]["html"]
     assert "<td>o senhor</td>" in html["pt"] and "<td>you (polite)</td>" in html["en"]
+
+
+def test_graded_vocabulary_from_a_word_list(tmp_path):
+    import yaml
+    data = yaml.safe_load(FIX.read_text(encoding="utf-8"))
+    words = tmp_path / "vocab.tsv"
+    words.write_text("\n".join(f"단어{k}\t명사\t초급\tword {k}" for k in range(50)) + "\n", encoding="utf-8")
+    data["vocab"] = {"file": str(words), "levels": {"초급": ["A1"]}, "unit": 40, "source": "NIKL"}
+    f = tmp_path / "xx.yml"
+    f.write_text(yaml.safe_dump(data, allow_unicode=True), encoding="utf-8")
+    index, lessons, questions = curriculum_learn(f)
+    topics = index["levels"][0]["topics"]
+    voc = [t for t in topics if t["kind"] == "vocab"][0]
+    assert [len(lessons[e["id"]]["words"]) for e in voc["lessons"]] == [25, 25]       # 50 words → two units, the short tail merged
+    first = lessons[voc["lessons"][0]["id"]]
+    assert first["kind"] == "vocab" and first["words"][0] == {"w": "단어0", "en": "word 0"} and first["source"] == "NIKL"

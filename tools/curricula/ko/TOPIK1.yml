@@ -1,0 +1,245 @@
+id: TOPIK 1
+title: {en: TOPIK 1, pt: TOPIK 1}
+topics:
+
+- title: {en: Hangul, pt: Hangul}
+  lessons:
+  - id: ko-hangul
+    title: 한글
+    meaning: {en: "the Korean alphabet", pt: "o alfabeto coreano"}
+    intro:
+      en: |
+        Hangul has 14 basic consonants and 10 basic vowels, written in **syllable blocks**: an initial consonant, a vowel, and optionally a final consonant (*batchim*): **ㅎ + ㅏ + ㄴ = 한**, **ㄱ + ㅡ + ㄹ = 글** — **한글**. A syllable that starts with a vowel is written with a silent **ㅇ**: **아, 오, 이**.
+
+        Consonants: **ㄱ** g/k, **ㄴ** n, **ㄷ** d/t, **ㄹ** r/l, **ㅁ** m, **ㅂ** b/p, **ㅅ** s, **ㅇ** (silent / ng), **ㅈ** j, **ㅊ** ch, **ㅋ** k, **ㅌ** t, **ㅍ** p, **ㅎ** h; tense **ㄲ ㄸ ㅃ ㅆ ㅉ**. Vowels: **ㅏ** a, **ㅓ** eo, **ㅗ** o, **ㅜ** u, **ㅡ** eu, **ㅣ** i, **ㅐ** ae, **ㅔ** e, and with a *y*: **ㅑ ㅕ ㅛ ㅠ**.
+      pt: |
+        O hangul tem 14 consoantes e 10 vogais básicas, escritas em **blocos silábicos**: consoante inicial, vogal e, às vezes, consoante final (*batchim*): **ㅎ + ㅏ + ㄴ = 한**, **ㄱ + ㅡ + ㄹ = 글** — **한글**. A sílaba que começa por vogal leva um **ㅇ** mudo: **아, 오, 이**.
+
+        Consoantes: **ㄱ** g/k, **ㄴ** n, **ㄷ** d/t, **ㄹ** r/l, **ㅁ** m, **ㅂ** b/p, **ㅅ** s, **ㅇ** (mudo / ng), **ㅈ** dj, **ㅊ** tch, **ㅋ** k, **ㅌ** t, **ㅍ** p, **ㅎ** h; tensas **ㄲ ㄸ ㅃ ㅆ ㅉ**. Vogais: **ㅏ** a, **ㅓ** ó (aberto), **ㅗ** ô, **ㅜ** u, **ㅡ** ɨ, **ㅣ** i, **ㅐ** é, **ㅔ** ê, e com *i* antes: **ㅑ ㅕ ㅛ ㅠ**.
+    table:
+      head: {en: [Block, Parts, Sound], pt: [Bloco, Partes, Som]}
+      rows:
+      - [한, ㅎ ㅏ ㄴ, han]
+      - [글, ㄱ ㅡ ㄹ, geul]
+      - [사, ㅅ ㅏ, sa]
+      - [람, ㄹ ㅏ ㅁ, ram]
+      - [아, ㅇ ㅏ, a]
+    examples:
+    - [안녕하세요., Hello., Olá., 안녕하세요]
+    - [감사합니다., Thank you., Obrigado., 감사합니다]
+    # spelling: one letter of the block swapped for the one it is confused with (letters as decomposed jamo)
+    match: {seq: [{pos: noun, re: "^[가-힣]{2,4}$"}]}
+    swaps: {"ᅥ": ["ᅩ"], "ᅩ": ["ᅥ"], "ᅮ": ["ᅳ"], "ᅳ": ["ᅮ"], "ᅢ": ["ᅦ"], "ᅦ": ["ᅢ"], "ᄀ": ["ᄏ"], "ᄃ": ["ᄐ"], "ᄇ": ["ᄑ"], "ᄌ": ["ᄎ"], "ᄏ": ["ᄀ"], "ᄐ": ["ᄃ"], "ᄑ": ["ᄇ"], "ᄎ": ["ᄌ"]}
+
+- title: {en: Particles, pt: Partículas}
+  lessons:
+  - id: ko-topic-subject
+    title: 은/는, 이/가
+    meaning: {en: "topic and subject particles", pt: "partículas de tópico e de sujeito"}
+    intro:
+      en: |
+        Korean marks a noun's role with a **particle** after it. **은 / 는** marks the **topic** — what you are talking about, often in contrast: **저는 학생이에요** "As for me, I'm a student." **이 / 가** marks the **subject**, often new information or the answer to *who?*: **누가 왔어요? — 민수가 왔어요.**
+
+        The pair depends on the last sound: after a consonant **은 / 이**, after a vowel **는 / 가**: **책은, 학교는; 책이, 학교가**.
+      pt: |
+        O coreano marca o papel do substantivo com uma **partícula** depois dele. **은 / 는** marca o **tópico** — aquilo de que se fala, muitas vezes em contraste: **저는 학생이에요** "Quanto a mim, sou estudante." **이 / 가** marca o **sujeito**, muitas vezes informação nova ou a resposta a *quem?*: **누가 왔어요? — 민수가 왔어요.**
+
+        A forma depende do último som: depois de consoante **은 / 이**, depois de vogal **는 / 가**: **책은, 학교는; 책이, 학교가**.
+    mistakes:
+    - wrong: 학교은
+      right: 학교는
+      why: {en: "After a vowel: 는.", pt: "Depois de vogal: 는."}
+    examples:
+    - [저는 학생이에요., I'm a student., Sou estudante., 는]
+    - [날씨가 좋아요., The weather is nice., O tempo está bom., 가]
+    - [이것은 책이에요., This is a book., Isto é um livro., 은]
+    match: {seq: [{word: [은, 는, 이, 가], pos: particle}]}
+    pool: [은, 는, 이, 가, 을, 를, 에]
+
+  - id: ko-object
+    title: 을/를
+    meaning: {en: "the object particle", pt: "a partícula de objeto"}
+    intro:
+      en: |
+        **을** (after a consonant) / **를** (after a vowel) marks the **object**: **밥을 먹어요** "I eat rice", **커피를 마셔요** "I drink coffee". In speech it is often dropped when the meaning is clear.
+      pt: |
+        **을** (depois de consoante) / **를** (depois de vogal) marca o **objeto**: **밥을 먹어요** "como arroz", **커피를 마셔요** "tomo café". Na fala muitas vezes cai quando o sentido é claro.
+    examples:
+    - [밥을 먹어요., I'm eating (rice)., Estou comendo., 을]
+    - [커피를 마셔요., I'm drinking coffee., Estou tomando café., 를]
+    match: {seq: [{word: [을, 를], pos: particle}]}
+    pool: [을, 를, 은, 는, 이, 가, 에]
+
+  - id: ko-place
+    title: 에, 에서
+    meaning: {en: "place particles: 에 (to, at) and 에서 (at, doing)", pt: "partículas de lugar: 에 (para, em) e 에서 (em, fazendo)"}
+    intro:
+      en: |
+        **에** marks a destination (**학교에 가요** "I go to school"), a location of being (**집에 있어요** "I'm at home") and time (**세 시에** "at three"). **에서** marks the place where an action happens (**학교에서 공부해요** "I study at school") and *from* (**서울에서 왔어요** "I came from Seoul").
+      pt: |
+        **에** marca o destino (**학교에 가요** "vou à escola"), o lugar onde algo está (**집에 있어요** "estou em casa") e o tempo (**세 시에** "às três"). **에서** marca o lugar onde a ação acontece (**학교에서 공부해요** "estudo na escola") e *de* (**서울에서 왔어요** "vim de Seul").
+    mistakes:
+    - wrong: 도서관에 공부해요.
+      right: 도서관에서 공부해요.
+      why: {en: "An action in a place: 에서.", pt: "Ação num lugar: 에서."}
+    examples:
+    - [학교에 가요., I'm going to school., Vou à escola., 에]
+    - [집에서 쉬어요., I'm resting at home., Descanso em casa., 에서]
+    match: {seq: [{word: [에, 에서], pos: particle}]}
+    pool: [에, 에서, 을, 를, 으로, 로, 와]
+
+- title: {en: Verbs in the polite style, pt: Verbos no estilo cortês}
+  lessons:
+  - id: ko-copula
+    title: 이에요 / 예요
+    meaning: {en: "to be (a noun): 이에요 / 예요", pt: "ser (+ substantivo): 이에요 / 예요"}
+    intro:
+      en: |
+        *X is Y* is **Y + 이에요** after a consonant, **Y + 예요** after a vowel: **학생이에요** "(I) am a student", **의사예요** "(she) is a doctor". The negative is **이/가 아니에요**: **학생이 아니에요**. In the formal style: **입니다 / 이/가 아닙니다**.
+      pt: |
+        *X é Y* se diz **Y + 이에요** depois de consoante, **Y + 예요** depois de vogal: **학생이에요** "(sou) estudante", **의사예요** "(ela) é médica". A negativa é **이/가 아니에요**: **학생이 아니에요**. No estilo formal: **입니다 / 이/가 아닙니다**.
+    examples:
+    - [저는 학생이에요., I'm a student., Sou estudante., 이에요]
+    - [이건 제 가방이 아니에요., This isn't my bag., Esta não é a minha bolsa., 아니에요]
+    match: {seq: [{word: [이에요, 예요, 입니다, 아니에요, 아닙니다, 이었어요, 였어요]}]}
+    pool: [이에요, 예요, 입니다, 아니에요, 있어요, 없어요]
+
+  - id: ko-haeyo
+    title: 가요, 먹어요
+    meaning: {en: "the present in the polite 해요 style", pt: "o presente no estilo cortês 해요"}
+    intro:
+      en: |
+        Verbs are listed with **-다** (**가다** go, **먹다** eat). The everyday polite style takes the stem and adds **-아요** if its last vowel is **ㅏ** or **ㅗ**, otherwise **-어요**: **가다 → 가요**, **보다 → 봐요**, **먹다 → 먹어요**, **마시다 → 마셔요**; **하다 → 해요**. The same form is a statement, a question (rising intonation) and a suggestion.
+      pt: |
+        O verbo aparece com **-다** (**가다** ir, **먹다** comer). O estilo cortês do dia a dia pega o radical e acrescenta **-아요** se a última vogal é **ㅏ** ou **ㅗ**, senão **-어요**: **가다 → 가요**, **보다 → 봐요**, **먹다 → 먹어요**, **마시다 → 마셔요**; **하다 → 해요**. A mesma forma serve para afirmação, pergunta (entonação subindo) e sugestão.
+    table:
+      head: {en: [Verb, Polite present, Meaning], pt: [Verbo, Presente cortês, Significado]}
+      rows:
+      - [가다, 가요, {en: go, pt: ir}]
+      - [보다, 봐요, {en: see, pt: ver}]
+      - [먹다, 먹어요, {en: eat, pt: comer}]
+      - [마시다, 마셔요, {en: drink, pt: beber}]
+      - [하다, 해요, {en: do, pt: fazer}]
+    examples:
+    - ["어디에 가요?", "Where are you going?", "Aonde você vai?", "가요"]
+    - [저는 김치를 먹어요., I eat kimchi., Eu como kimchi., 먹어요]
+    match: {seq: [{pos: [verb, adj], form: haeyo}]}
+
+  - id: ko-past
+    title: 갔어요, 먹었어요
+    meaning: {en: "the past: -았/었-", pt: "o passado: -았/었-"}
+    intro:
+      en: |
+        Add **-았-** (after ㅏ, ㅗ) or **-었-** (otherwise) before the ending: **가다 → 갔어요**, **먹다 → 먹었어요**, **하다 → 했어요**. The past works the same in every style: **갔습니다** (formal), **갔어** (casual), **갔다** (plain).
+      pt: |
+        Acrescente **-았-** (depois de ㅏ, ㅗ) ou **-었-** (nos outros casos) antes da terminação: **가다 → 갔어요**, **먹다 → 먹었어요**, **하다 → 했어요**. O passado funciona igual em todos os estilos: **갔습니다** (formal), **갔어** (informal), **갔다** (neutro).
+    examples:
+    - [어제 친구를 만났어요., I met a friend yesterday., Encontrei um amigo ontem., 만났어요]
+    - ["점심을 먹었어요?", "Did you have lunch?", "Você almoçou?", "먹었어요"]
+    match: {seq: [{pos: [verb, adj], form: [haeyo past, hae past, hamnida past]}]}
+
+  - id: ko-negation
+    title: 안, 못
+    meaning: {en: "negation: 안 (not) and 못 (cannot)", pt: "negação: 안 (não) e 못 (não conseguir)"}
+    intro:
+      en: |
+        **안** before the verb negates it: **안 가요** "I don't go". **못** means *cannot*: **못 가요** "I can't go". The longer forms put **-지 않다 / -지 못하다** after the stem: **가지 않아요, 가지 못해요**. With **하다** verbs, 안 goes before **하다**: **공부 안 해요**.
+      pt: |
+        **안** antes do verbo o nega: **안 가요** "não vou". **못** significa *não conseguir*: **못 가요** "não posso ir". As formas longas põem **-지 않다 / -지 못하다** depois do radical: **가지 않아요, 가지 못해요**. Com verbos em **하다**, 안 vai antes de **하다**: **공부 안 해요**.
+    examples:
+    - [오늘은 안 가요., I'm not going today., Hoje não vou., 안]
+    - [수영을 못 해요., I can't swim., Não sei nadar., 못]
+    match: {seq: [{word: [안, 못]}, {pos: [verb, adj]}], gap: 0}
+    pool: [안, 못, 잘, 다, 또]
+
+  - id: ko-want
+    title: -고 싶다
+    meaning: {en: "want to: -고 싶다", pt: "querer: -고 싶다"}
+    intro:
+      en: |
+        Verb stem + **-고 싶어요**: **가고 싶어요** "I want to go", **먹고 싶어요** "I want to eat". For a third person, **-고 싶어 해요**: **동생이 가고 싶어 해요** "My brother wants to go."
+      pt: |
+        Radical + **-고 싶어요**: **가고 싶어요** "quero ir", **먹고 싶어요** "quero comer". Para uma terceira pessoa, **-고 싶어 해요**: **동생이 가고 싶어 해요** "Meu irmão quer ir."
+    examples:
+    - [한국에 가고 싶어요., I want to go to Korea., Quero ir à Coreia., 가고]
+    - ["뭐 먹고 싶어요?", "What do you want to eat?", "O que você quer comer?", "먹고"]
+    match: {seq: [{pos: verb, re: "고$"}, {re: "^싶"}], gap: 0}
+
+  - id: ko-future
+    title: -(으)ㄹ 거예요
+    meaning: {en: "the future: -(으)ㄹ 거예요", pt: "o futuro: -(으)ㄹ 거예요"}
+    intro:
+      en: |
+        Stem + **-(으)ㄹ 거예요** expresses plans and predictions: **갈 거예요** "I'll go", **먹을 거예요** "I'll eat", **비가 올 거예요** "It will rain". After a consonant add **을**, after a vowel **ㄹ**.
+      pt: |
+        Radical + **-(으)ㄹ 거예요** exprime planos e previsões: **갈 거예요** "vou (irei)", **먹을 거예요** "vou comer", **비가 올 거예요** "vai chover". Depois de consoante acrescente **을**, depois de vogal **ㄹ**.
+    examples:
+    - ["내일 뭐 할 거예요?", "What will you do tomorrow?", "O que você vai fazer amanhã?", "할"]
+    - [주말에 영화를 볼 거예요., I'll watch a film at the weekend., No fim de semana vou ver um filme., 볼]
+    # the verb before 거예요 / 겁니다 (the ㄹ is inside its last syllable, which a pattern cannot see)
+    match: {seq: [{pos: verb}, {re: "^(거예요|거야|거에요|겁니다|거다)$"}], gap: 0}
+
+- title: {en: Joining clauses, pt: Ligando orações}
+  lessons:
+  - id: ko-and-but
+    title: -고, -지만
+    meaning: {en: "and (-고) and but (-지만)", pt: "e (-고) e mas (-지만)"}
+    intro:
+      en: |
+        **-고** joins two actions or facts: **밥을 먹고 커피를 마셔요** "I eat and (then) drink coffee". **-지만** contrasts: **비싸지만 맛있어요** "It's expensive but tasty." Both attach to the stem; tense goes on the last verb (or on both with -지만).
+      pt: |
+        **-고** une duas ações ou fatos: **밥을 먹고 커피를 마셔요** "como e (depois) tomo café". **-지만** contrasta: **비싸지만 맛있어요** "É caro, mas gostoso." Os dois se ligam ao radical; o tempo vai no último verbo (ou nos dois com -지만).
+    examples:
+    - [비싸지만 맛있어요., "It's expensive but tasty.", "É caro, mas gostoso.", 비싸지만]
+    - [밥을 먹고 커피를 마셔요., I eat and then drink coffee., Como e depois tomo café., 먹고]
+    match: {seq: [{pos: [verb, adj], re: "지만$"}]}
+
+  - id: ko-because
+    title: -아서/-어서, -(으)니까
+    meaning: {en: "because: -아서 and -(으)니까", pt: "porque: -아서 e -(으)니까"}
+    intro:
+      en: |
+        **-아서 / -어서** gives a cause (no past tense before it, no commands after it): **배가 고파서 밥을 먹었어요** "I was hungry, so I ate." It also means *and then* for linked actions: **친구를 만나서 영화를 봤어요**. **-(으)니까** gives a reason the listener should accept, and allows commands: **비가 오니까 우산을 가져가세요** "It's raining, so take an umbrella."
+      pt: |
+        **-아서 / -어서** dá a causa (sem passado antes, sem ordem depois): **배가 고파서 밥을 먹었어요** "Estava com fome, então comi." Também significa *e então* para ações ligadas: **친구를 만나서 영화를 봤어요**. **-(으)니까** dá um motivo que o ouvinte deve aceitar e permite ordens: **비가 오니까 우산을 가져가세요** "Está chovendo, então leve guarda-chuva."
+    examples:
+    - [배가 고파서 밥을 먹었어요., "I was hungry, so I ate.", "Estava com fome, então comi.", 고파서]
+    - [비가 오니까 우산을 가져가세요., "It's raining, so take an umbrella.", "Está chovendo, então leve guarda-chuva.", 오니까]
+    match: {seq: [{pos: [verb, adj], form: [so, since]}]}
+
+  - id: ko-if
+    title: -(으)면
+    meaning: {en: "if, when: -(으)면", pt: "se, quando: -(으)면"}
+    intro:
+      en: |
+        Stem + **-(으)면** "if, when (whenever)": **시간이 있으면 같이 가요** "If you have time, let's go together"; **봄이 되면 꽃이 펴요** "When spring comes, flowers bloom".
+      pt: |
+        Radical + **-(으)면** "se, quando (sempre que)": **시간이 있으면 같이 가요** "Se tiver tempo, vamos juntos"; **봄이 되면 꽃이 펴요** "Quando chega a primavera, as flores abrem".
+    examples:
+    - [시간이 있으면 같이 가요., "If you have time, let's go together.", "Se tiver tempo, vamos juntos.", 있으면]
+    match: {seq: [{pos: [verb, adj], form: if, re: "면$"}]}
+
+- title: {en: Numbers and counting, pt: Números e contagem}
+  lessons:
+  - id: ko-numbers
+    title: 하나, 둘 / 일, 이
+    meaning: {en: "two sets of numbers and counters", pt: "dois sistemas de números e os classificadores"}
+    intro:
+      en: |
+        Korean has **native** numbers (**하나, 둘, 셋, 넷, 다섯…**) for counting things, hours and age, and **Sino-Korean** numbers (**일, 이, 삼, 사, 오…**) for dates, money, minutes and phone numbers. Before a counter the first four native numbers shorten: **한 개, 두 명, 세 시, 네 마리**. Common counters: **개** (things), **명** (people), **마리** (animals), **권** (books), **잔** (cups), **살** (years of age), **시** (o'clock), **분** (minutes), **원** (won).
+      pt: |
+        O coreano tem números **nativos** (**하나, 둘, 셋, 넷, 다섯…**) para contar coisas, horas e idade, e **sino-coreanos** (**일, 이, 삼, 사, 오…**) para datas, dinheiro, minutos e telefones. Antes de classificador os quatro primeiros nativos encurtam: **한 개, 두 명, 세 시, 네 마리**. Classificadores comuns: **개** (coisas), **명** (pessoas), **마리** (animais), **권** (livros), **잔** (copos), **살** (anos de idade), **시** (horas), **분** (minutos), **원** (won).
+    table:
+      head: {en: [n, Native, Sino-Korean], pt: [n, Nativo, Sino-coreano]}
+      rows:
+      - [1, "하나 (한)", 일]
+      - [2, "둘 (두)", 이]
+      - [3, "셋 (세)", 삼]
+      - [4, "넷 (네)", 사]
+      - [5, 다섯, 오]
+      - [10, 열, 십]
+    examples:
+    - [커피 두 잔 주세요., "Two coffees, please.", "Dois cafés, por favor.", 두]
+    - [저는 스무 살이에요., I'm twenty., Tenho vinte anos., 스무]
+    match: {seq: [{word: [한, 두, 세, 네, 다섯, 여섯, 일곱, 여덟, 아홉, 열, 스무]}, {word: [개, 명, 마리, 권, 잔, 살, 시, 번, 사람, 병]}], gap: 0}
+    pool: [한, 두, 세, 네, 다섯, 여섯, 열, 하나, 둘, 셋]

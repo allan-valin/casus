@@ -164,7 +164,9 @@ async function main(code) {
       const seen = l.perAnswer ?? (l.perAnswer = new Map());
       if (!swaps && (seen.get(key) ?? 0) >= (rulePool ? 100 : 12)) continue;
       seen.set(key, (seen.get(key) ?? 0) + 1);
-      if (swaps) wrong = spellingVariants(answer, swaps);
+      // (Korean: the letters are inside the syllable block — swap them decomposed, then recompose)
+      if (swaps) wrong = code === 'ko' ? spellingVariants(answer.normalize('NFD'), swaps).map((w) => w.normalize('NFC')) : spellingVariants(answer, swaps);
+      if (swaps && !wrong.length) { seen.set(key, (seen.get(key) ?? 1) - 1); continue; }   // nothing to misspell: not a spelling question
       else if (prefixes) wrong = prefixVariants(answer, prefixes);
       else if (suffixes) wrong = suffixVariants(answer, suffixes);
       else if (rulePool) wrong = rulePool.filter((w) => norm(w) !== norm(answer));
@@ -216,6 +218,19 @@ async function main(code) {
           const firstCap = words[0][0] !== words[0][0].toLocaleLowerCase();
           const variants = formPool(forms, row[0], row[1], decode, 5).map((f) => [firstCap ? f[0].toLocaleUpperCase() + f.slice(1) : f, ...words.slice(1)].join(' '));
           if (variants.length >= 2) ownGap.set(`${ex.en}|${norm(ex.target)}`, { answer: ex.target, pool: variants });
+        }
+      }
+      // a one-word answer: the wrong answers are that word's other forms (the lesson's own rule keeps what it keeps)
+      if (ex.target && !vowelled && !ex.target.includes(' ')) {
+        const gb = blocks.find((b) => norm(b.token.surface) === norm(ex.target));
+        const ids = gb ? [...new Set(gb.candidates.map((c) => c.analysis.lemma))] : [];
+        const forms = ids.length === 1 ? await paradigmOf(ids[0]) : null;
+        const row = forms ? (forms.find(([f]) => f === gb.token.surface) ?? forms.find(([f]) => norm(f) === norm(gb.token.surface))) : null;
+        const rule0 = Array.isArray(l.match) ? l.match[0] : l.match;
+        if (row && !l.pool && !(rule0.pool)) {
+          let pool = formPool(forms, row[0], row[1], decode, 5, rule0.same ?? []).filter((f) => norm(f) !== norm(ex.target));
+          if (lang.code === 'grc') pool = pool.map((w) => w.replace(/σ$/u, 'ς'));
+          if (pool.length >= 2) ownGap.set(`${ex.en}|${norm(ex.target)}`, { answer: ex.target, pool });
         }
       }
       if (ex.target && vowelled) {

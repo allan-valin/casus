@@ -1,0 +1,57 @@
+id: TOPIK 3
+title: {en: TOPIK 3, pt: TOPIK 3}
+topics:
+
+- title: {en: Writing and reporting, pt: Escrita e discurso indireto}
+  lessons:
+  - id: ko-plain
+    title: 간다, 먹는다
+    meaning: {en: "the plain style of writing (한다체)", pt: "o estilo neutro da escrita (한다체)"}
+    intro:
+      en: |
+        Newspapers, books and diaries use the **plain style**: verbs **-ㄴ다 / -는다** (**간다, 먹는다**), adjectives **-다** (**좋다**), past **-았다 / -었다** (**갔다**), questions **-니? / -냐?**. It is also how Korean speaks to close friends and younger people in writing.
+      pt: |
+        Jornais, livros e diários usam o **estilo neutro**: verbos **-ㄴ다 / -는다** (**간다, 먹는다**), adjetivos **-다** (**좋다**), passado **-았다 / -었다** (**갔다**), perguntas **-니? / -냐?**. É também como se escreve a amigos próximos e a pessoas mais novas.
+    examples:
+    - [나는 매일 아침 커피를 마신다., I drink coffee every morning., Tomo café todas as manhãs., 마신다]
+    match: {seq: [{pos: [verb, adj], form: [handa, handa past]}]}
+
+  - id: ko-reported
+    title: -다고 하다
+    meaning: {en: "reported speech: -다고, -냐고, -자고, -라고", pt: "discurso indireto: -다고, -냐고, -자고, -라고"}
+    intro:
+      en: |
+        Reported statements: plain-style form + **-고 하다**: **비가 온다고 해요** "They say it's raining", **좋다고 했어요** "He said it was good". Questions **-냐고**, suggestions **-자고**, commands **-(으)라고**: **가자고 했어요** "She suggested going". In speech, **-대요** contracts **-다고 해요**: **비가 온대요**.
+      pt: |
+        Afirmações relatadas: forma do estilo neutro + **-고 하다**: **비가 온다고 해요** "Dizem que está chovendo", **좋다고 했어요** "Ele disse que era bom". Perguntas **-냐고**, sugestões **-자고**, ordens **-(으)라고**: **가자고 했어요** "Ela sugeriu ir". Na fala, **-대요** contrai **-다고 해요**: **비가 온대요**.
+    examples:
+    - [내일 비가 온다고 해요., They say it will rain tomorrow., Dizem que amanhã vai chover., 온다고]
+    match: {seq: [{re: "(다고|냐고|자고|라고)$"}]}
+
+  - id: ko-because-2
+    title: -기 때문에
+    meaning: {en: "because: -기 때문에, 때문에", pt: "porque: -기 때문에, 때문에"}
+    intro:
+      en: |
+        **-기 때문에** after a verb, **때문에** after a noun: a clear, often written cause: **시간이 없기 때문에 못 가요** "Because I have no time, I can't go"; **비 때문에** "because of the rain".
+      pt: |
+        **-기 때문에** depois de verbo, **때문에** depois de substantivo: uma causa clara, muitas vezes escrita: **시간이 없기 때문에 못 가요** "Como não tenho tempo, não posso ir"; **비 때문에** "por causa da chuva".
+    examples:
+    - [비 때문에 못 갔어요., I couldn't go because of the rain., Não pude ir por causa da chuva., 때문에]
+    match: {seq: [{word: [때문에, 때문이다, 때문입니다, 때문이에요]}]}
+    pool: [때문에, 덕분에, 다음에, 동안에, 대신에]
+
+- title: {en: Passive and causative, pt: Passiva e causativa}
+  lessons:
+  - id: ko-passive-causative
+    title: 보이다, 먹이다
+    meaning: {en: "passive and causative verbs (-이-, -히-, -리-, -기-)", pt: "verbos passivos e causativos (-이-, -히-, -리-, -기-)"}
+    intro:
+      en: |
+        Inserting **-이-, -히-, -리-, -기-** makes many verbs passive (**보다 → 보이다** "be seen", **닫다 → 닫히다** "be closed", **열다 → 열리다** "be opened") or causative (**먹다 → 먹이다** "feed", **입다 → 입히다** "dress someone", **웃다 → 웃기다** "make laugh"). Others use **-어지다** (passive: **만들어지다**) or **-게 하다** (causative: **가게 하다**).
+      pt: |
+        Inserir **-이-, -히-, -리-, -기-** torna muitos verbos passivos (**보다 → 보이다** "ser visto, aparecer", **닫다 → 닫히다** "ser fechado", **열다 → 열리다** "ser aberto") ou causativos (**먹다 → 먹이다** "alimentar", **입다 → 입히다** "vestir alguém", **웃다 → 웃기다** "fazer rir"). Outros usam **-어지다** (passiva: **만들어지다**) ou **-게 하다** (causativa: **가게 하다**).
+    examples:
+    - [문이 열렸어요., The door opened., A porta se abriu., 열렸어요]
+    - [산이 보여요., I can see the mountain., Dá para ver a montanha., 보여요]
+    match: {seq: [{pos: verb, lemma: "^(보이다|들리다|잡히다|열리다|닫히다|먹히다|쓰이다|놓이다|팔리다|풀리다|걸리다|먹이다|입히다|울리다|웃기다|알리다|죽이다|읽히다|씻기다|만들어지다|이루어지다)$"}], same: []}

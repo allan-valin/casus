@@ -1,0 +1,31 @@
+id: TOPIK 4
+title: {en: TOPIK 4, pt: TOPIK 4}
+topics:
+
+- title: {en: Expressions of time and condition, pt: Expressões de tempo e condição}
+  lessons:
+  - id: ko-time-clauses
+    title: -(으)ㄹ 때, -기 전에, -(으)ㄴ 후에
+    meaning: {en: "when, before, after", pt: "quando, antes de, depois de"}
+    intro:
+      en: |
+        **-(으)ㄹ 때** "when": **어렸을 때** "when I was little". **-기 전에** "before": **자기 전에** "before sleeping". **-(으)ㄴ 후에 / 다음에** "after": **밥을 먹은 후에** "after eating". **-는 동안** "while": **기다리는 동안** "while waiting".
+      pt: |
+        **-(으)ㄹ 때** "quando": **어렸을 때** "quando eu era pequeno". **-기 전에** "antes de": **자기 전에** "antes de dormir". **-(으)ㄴ 후에 / 다음에** "depois de": **밥을 먹은 후에** "depois de comer". **-는 동안** "enquanto": **기다리는 동안** "enquanto espera".
+    examples:
+    - [자기 전에 책을 읽어요., I read before going to bed., Leio antes de dormir., 전에]
+    - [어렸을 때 부산에 살았어요., I lived in Busan when I was little., Morei em Busan quando era pequeno., 때]
+    match: {seq: [{word: [때, 전에, 후에, 다음에, 동안, 동안에]}]}
+    pool: [때, 전에, 후에, 다음에, 동안, 때문에]
+
+  - id: ko-conditions-2
+    title: -(으)면 좋겠다, -거든
+    meaning: {en: "wishes and conditions: -면 좋겠다, -거든, -다면", pt: "desejos e condições: -면 좋겠다, -거든, -다면"}
+    intro:
+      en: |
+        **-(으)면 좋겠어요** "I wish, I'd like it if": **눈이 오면 좋겠어요** "I wish it would snow". **-거든** "if (then do…)", used before a request: **도착하거든 전화하세요** "Call when you arrive". **-(ㄴ/는)다면** a hypothetical *if*: **복권에 당첨된다면** "if I won the lottery".
+      pt: |
+        **-(으)면 좋겠어요** "eu queria que, seria bom se": **눈이 오면 좋겠어요** "Queria que nevasse". **-거든** "se (então faça…)", antes de um pedido: **도착하거든 전화하세요** "Ligue quando chegar". **-(ㄴ/는)다면** um *se* hipotético: **복권에 당첨된다면** "se eu ganhasse na loteria".
+    examples:
+    - [눈이 오면 좋겠어요., I wish it would snow., Queria que nevasse., 좋겠어요]
+    match: {seq: [{re: "(면|거든|다면)$", pos: [verb, adj]}, {pos: [verb, adj]}], near: 4, gap: 0}

@@ -1,0 +1,29 @@
+id: TOPIK 5
+title: {en: TOPIK 5, pt: TOPIK 5}
+topics:
+
+- title: {en: Formal style, pt: Estilo formal}
+  lessons:
+  - id: ko-formal
+    title: -습니다, -ㅂ니까
+    meaning: {en: "the formal style: news, speeches, service", pt: "o estilo formal: notícias, discursos, atendimento"}
+    intro:
+      en: |
+        **-습니다 / -ㅂ니다** (statements), **-습니까 / -ㅂ니까** (questions), **-십시오** (requests), **-ㅂ시다** (let's) — the formal polite style of announcements, news, presentations and service: **감사합니다**, **어디에 가십니까?**, **앉으십시오**.
+      pt: |
+        **-습니다 / -ㅂ니다** (afirmações), **-습니까 / -ㅂ니까** (perguntas), **-십시오** (pedidos), **-ㅂ시다** (vamos) — o estilo formal e polido de avisos, notícias, apresentações e atendimento: **감사합니다**, **어디에 가십니까?**, **앉으십시오**.
+    examples:
+    - [만나서 반갑습니다., Pleased to meet you., Prazer em conhecer., 반갑습니다]
+    match: {seq: [{pos: [verb, adj], form: [hamnida, hamnida q, hamnida imp, hamnida let, hamnida past, hamnida past q]}]}
+
+  - id: ko-nominalizer-eum
+    title: -(으)ㅁ
+    meaning: {en: "-(으)ㅁ: nouns from verbs in writing", pt: "-(으)ㅁ: substantivos a partir de verbos na escrita"}
+    intro:
+      en: |
+        **-(으)ㅁ** makes a noun from a verb or adjective, in notices, notes and formal writing: **조용히 함** "keep quiet", **회의가 있음** "there is a meeting", **그가 범인임이 밝혀졌다** "it was revealed that he was the culprit".
+      pt: |
+        **-(으)ㅁ** forma substantivo de verbo ou adjetivo, em avisos, anotações e escrita formal: **조용히 함** "silêncio", **회의가 있음** "há reunião", **그가 범인임이 밝혀졌다** "revelou-se que ele era o culpado".
+    examples:
+    - [내일 회의가 있음., There is a meeting tomorrow (note)., Amanhã há reunião (aviso)., 있음]
+    match: {seq: [{re: "(있음|없음|았음|었음|였음|했음|됨|않음)$"}]}

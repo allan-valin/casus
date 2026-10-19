@@ -168,6 +168,11 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
 - Russian lessons (35, A1–B2): **written for Casus** (tools/curricula/ru/), English and Portuguese. Mezhdu nami, the
   main open Russian textbook, is CC BY-NC-ND and was not used; tables with stress marks are generated from the
   Wiktionary-based paradigms (CC BY-SA). Exercises from Tatoeba's Russian sentences (CC BY 2.0 FR).
+- Korean lessons (33 grammar lessons, TOPIK 1–6): **written for Casus** (tools/curricula/ko/), English and Portuguese;
+  no openly licensed TOPIK grammar course or list was found. Words by level (11,030, as Words lessons) and 161,000
+  example sentences for the exercises: the **NIKL Basic Korean Dictionary** (한국어기초사전, 국립국어원), CC BY-SA 2.0
+  KR, from the export mirrored in github.com/71/study-korean (tools/build_kodict.py). Also Tatoeba's Korean sentences
+  (CC BY 2.0 FR).
 
 ## Document import
 

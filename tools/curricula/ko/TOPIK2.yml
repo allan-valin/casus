@@ -1,0 +1,130 @@
+id: TOPIK 2
+title: {en: TOPIK 2, pt: TOPIK 2}
+topics:
+
+- title: {en: Describing with verbs, pt: Descrever com verbos}
+  lessons:
+  - id: ko-adnominal
+    title: -는, -(으)ㄴ, -(으)ㄹ
+    meaning: {en: "verbs before nouns: who does, who did, who will", pt: "verbos antes do substantivo: que faz, que fez, que fará"}
+    intro:
+      en: |
+        Korean puts a describing clause **before** the noun, with a special ending on its verb: present **-는** (**먹는 사람** "the person who eats"), past **-(으)ㄴ** (**먹은 사람** "the person who ate"), future **-(으)ㄹ** (**먹을 음식** "food to eat"). Adjectives take **-(으)ㄴ** in the present: **예쁜 꽃** "a pretty flower".
+      pt: |
+        O coreano põe a oração que descreve **antes** do substantivo, com uma terminação especial no verbo: presente **-는** (**먹는 사람** "a pessoa que come"), passado **-(으)ㄴ** (**먹은 사람** "a pessoa que comeu"), futuro **-(으)ㄹ** (**먹을 음식** "comida para comer"). Adjetivos levam **-(으)ㄴ** no presente: **예쁜 꽃** "uma flor bonita".
+    examples:
+    - [제가 좋아하는 음식이에요., It's a food I like., É uma comida de que eu gosto., 좋아하는]
+    - [어제 본 영화가 재미있었어요., The film I saw yesterday was fun., O filme que vi ontem foi divertido., 본]
+    match: {seq: [{pos: [verb, adj], form: [adn pres, adn past, adn fut]}, {pos: noun}], gap: 0}
+
+  - id: ko-progressive
+    title: -고 있다
+    meaning: {en: "be doing: -고 있다", pt: "estar fazendo: -고 있다"}
+    intro:
+      en: |
+        Stem + **-고 있어요** for an action in progress: **책을 읽고 있어요** "I'm reading a book". The honorific is **-고 계세요**.
+      pt: |
+        Radical + **-고 있어요** para uma ação em andamento: **책을 읽고 있어요** "Estou lendo um livro". A forma honorífica é **-고 계세요**.
+    examples:
+    - [지금 책을 읽고 있어요., I'm reading a book now., Estou lendo um livro agora., 읽고]
+    match: {seq: [{pos: verb, re: "고$"}, {re: "^(있|계)"}], gap: 0}
+
+  - id: ko-try
+    title: -아/어 보다
+    meaning: {en: "try doing: -아/어 보다", pt: "experimentar: -아/어 보다"}
+    intro:
+      en: |
+        **-아 / -어** + **보다** "try (and see)": **먹어 봐요** "Try it", **한국에 가 봤어요** "I've been to Korea (tried going)".
+      pt: |
+        **-아 / -어** + **보다** "experimentar, tentar": **먹어 봐요** "Experimente", **한국에 가 봤어요** "Já fui à Coreia (experimentei ir)".
+    examples:
+    - [한번 먹어 보세요., Try it once., Experimente uma vez., 먹어]
+    match: {seq: [{pos: verb, re: "[아어여해]$"}, {re: "^(봐|보|봤)"}], gap: 0}
+
+  - id: ko-must
+    title: -아야/어야 하다
+    meaning: {en: "have to: -아야/어야 하다", pt: "ter que: -아야/어야 하다"}
+    intro:
+      en: |
+        Stem + **-아야 / -어야 해요** (or **돼요**) "have to": **가야 해요** "I have to go", **공부해야 돼요** "I have to study".
+      pt: |
+        Radical + **-아야 / -어야 해요** (ou **돼요**) "ter que": **가야 해요** "tenho que ir", **공부해야 돼요** "tenho que estudar".
+    examples:
+    - [내일 일찍 일어나야 해요., I have to get up early tomorrow., Amanhã tenho que acordar cedo., 일어나야]
+    match: {seq: [{re: "야$", pos: verb}, {re: "^(해|하|돼|되|했)"}], gap: 0}
+
+  - id: ko-can
+    title: -(으)ㄹ 수 있다
+    meaning: {en: "can: -(으)ㄹ 수 있다/없다", pt: "poder: -(으)ㄹ 수 있다/없다"}
+    intro:
+      en: |
+        Stem + **-(으)ㄹ 수 있어요** "can", **-(으)ㄹ 수 없어요** "cannot": **한국어를 할 수 있어요** "I can speak Korean"; **지금은 갈 수 없어요** "I can't go now".
+      pt: |
+        Radical + **-(으)ㄹ 수 있어요** "poder, conseguir", **-(으)ㄹ 수 없어요** "não poder": **한국어를 할 수 있어요** "Sei falar coreano"; **지금은 갈 수 없어요** "Agora não posso ir".
+    examples:
+    - ["한국어를 할 수 있어요?", "Can you speak Korean?", "Você sabe falar coreano?", "있어요"]
+    match: {seq: [{pos: verb}, {word: [수]}, {re: "^(있|없)"}], gap: 2}
+    pool: [있어요, 없어요, 있습니다, 없습니다, 있다, 없다]
+
+  - id: ko-intent
+    title: -(으)려고, -(으)러
+    meaning: {en: "in order to: -(으)려고, -(으)러 가다", pt: "para: -(으)려고, -(으)러 가다"}
+    intro:
+      en: |
+        **-(으)러** + a verb of going or coming gives the purpose of the movement: **밥 먹으러 가요** "I'm going to eat". **-(으)려고** gives an intention with any verb: **한국어를 배우려고 책을 샀어요** "I bought a book to learn Korean".
+      pt: |
+        **-(으)러** + verbo de ir ou vir dá a finalidade do movimento: **밥 먹으러 가요** "vou comer". **-(으)려고** dá a intenção com qualquer verbo: **한국어를 배우려고 책을 샀어요** "Comprei um livro para aprender coreano".
+    examples:
+    - [밥 먹으러 가요., I'm going to eat., Vou comer., 먹으러]
+    match: {seq: [{pos: verb, form: [intent, purpose]}]}
+
+- title: {en: Politeness and nuance, pt: Polidez e nuances}
+  lessons:
+  - id: ko-honorific
+    title: -(으)시-
+    meaning: {en: "honorific -(으)시-: respect for the subject", pt: "honorífico -(으)시-: respeito ao sujeito"}
+    intro:
+      en: |
+        **-(으)시-** after the stem shows respect for the **subject**: **선생님이 오세요** "The teacher is coming", **어머니가 주무셨어요** "Mother slept". In the polite style it appears as **-(으)세요**, in the past **-(으)셨어요**. Some verbs have special honorific forms: **먹다 → 드시다**, **자다 → 주무시다**, **있다 → 계시다**.
+      pt: |
+        **-(으)시-** depois do radical mostra respeito pelo **sujeito**: **선생님이 오세요** "O professor está vindo", **어머니가 주무셨어요** "Minha mãe dormiu". No estilo cortês aparece como **-(으)세요**, no passado **-(으)셨어요**. Alguns verbos têm formas honoríficas próprias: **먹다 → 드시다**, **자다 → 주무시다**, **있다 → 계시다**.
+    examples:
+    - [할머니께서 오셨어요., Grandmother has come., A vovó chegou., 오셨어요]
+    - [천천히 드세요., Eat slowly / Enjoy your meal., Coma com calma., 드세요]
+    match: {seq: [{pos: verb, re: "(세요|셨어요|십니다|셨습니다|셔요)$"}]}
+
+  - id: ko-background
+    title: -는데
+    meaning: {en: "background, contrast: -는데 / -(으)ㄴ데", pt: "contexto, contraste: -는데 / -(으)ㄴ데"}
+    intro:
+      en: |
+        **-는데** (verbs) / **-(으)ㄴ데** (adjectives) sets the scene for what follows, or softens a contrast: **비가 오는데 우산이 없어요** "It's raining, and I have no umbrella"; **맛있는데 비싸요** "It's tasty, but expensive".
+      pt: |
+        **-는데** (verbos) / **-(으)ㄴ데** (adjetivos) dá o contexto do que vem depois, ou suaviza um contraste: **비가 오는데 우산이 없어요** "Está chovendo e não tenho guarda-chuva"; **맛있는데 비싸요** "É gostoso, mas caro".
+    examples:
+    - [비가 오는데 우산이 없어요., "It's raining and I have no umbrella.", "Está chovendo e não tenho guarda-chuva.", 오는데]
+    match: {seq: [{pos: [verb, adj], re: "데$"}]}
+
+  - id: ko-even
+    title: -아도/어도
+    meaning: {en: "even if: -아도/어도", pt: "mesmo que: -아도/어도"}
+    intro:
+      en: |
+        Stem + **-아도 / -어도** "even if, even though": **비가 와도 가요** "I'll go even if it rains". With **되다** it asks or gives permission: **들어가도 돼요?** "May I go in?"
+      pt: |
+        Radical + **-아도 / -어도** "mesmo que, ainda que": **비가 와도 가요** "Vou mesmo que chova". Com **되다** pede ou dá permissão: **들어가도 돼요?** "Posso entrar?"
+    examples:
+    - ["여기 앉아도 돼요?", "May I sit here?", "Posso sentar aqui?", "앉아도"]
+    match: {seq: [{pos: [verb, adj], form: even}]}
+
+  - id: ko-nominal
+    title: -기, -게
+    meaning: {en: "-기 (doing as a noun) and -게 (so that, -ly)", pt: "-기 (o fazer, como substantivo) e -게 (de modo que, -mente)"}
+    intro:
+      en: |
+        **-기** turns a verb into a noun phrase: **수영하기를 좋아해요** "I like swimming", **한국어는 배우기 쉬워요** "Korean is easy to learn". **-게** makes an adverb or a result: **예쁘게** "prettily", **늦게** "late"; **-게 되다** "come to, end up": **한국에 살게 됐어요** "I came to live in Korea".
+      pt: |
+        **-기** transforma o verbo em substantivo: **수영하기를 좋아해요** "Gosto de nadar", **한국어는 배우기 쉬워요** "O coreano é fácil de aprender". **-게** faz advérbio ou resultado: **예쁘게** "bonito", **늦게** "tarde"; **-게 되다** "acabar por": **한국에 살게 됐어요** "Acabei morando na Coreia".
+    examples:
+    - [요리하기를 좋아해요., I like cooking., Gosto de cozinhar., 요리하기를]
+    match: {seq: [{pos: [verb, adj], form: [noun, ge]}]}

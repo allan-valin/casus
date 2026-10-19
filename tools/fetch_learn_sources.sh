@@ -16,7 +16,7 @@ if [ ! -d "$V/jlpt-grammar-enhanced" ]; then
 fi
 # Tatoeba, CC BY 2.0 FR: sentences and translation links per language
 # one Tatoeba code per Learn language (tools/learn_curriculum.mjs TATOEBA), plus English and Portuguese for translations
-for t3 in jpn mkd ara lat grc deu rus; do
+for t3 in jpn mkd ara lat grc deu rus kor; do
   for f in "$t3/${t3}_sentences.tsv.bz2" "$t3/$t3-eng_links.tsv.bz2" "$t3/$t3-por_links.tsv.bz2"; do
     [ -f "$V/tatoeba/$(basename $f)" ] || curl -sfL -o "$V/tatoeba/$(basename $f)" "https://downloads.tatoeba.org/exports/per_language/$f" || true
   done
@@ -39,4 +39,8 @@ mkdir -p "$V/grimm"
 for p in $(grep -o 'href="[a-z_0-9]*\.html"' "$V/grimm/index.html" | sed 's/href="//;s/"//' | sort -u | grep -v -e about -e characters -e credits -e help -e '^index'); do
   [ -f "$V/grimm/$p" ] || { curl -sfL -o "$V/grimm/$p" "https://coerll.utexas.edu/gg/gr/$p"; sleep 0.5; }
 done
+# NIKL Basic Korean Dictionary (CC BY-SA 2.0 KR): words by level and example sentences
+mkdir -p "$V/kodict"
+[ -f "$V/kodict/kodict.zip" ] || curl -sfL -o "$V/kodict/kodict.zip" "https://raw.githubusercontent.com/71/study-korean/master/data/kodict.zip"
+python3 "$ROOT/tools/build_kodict.py"
 echo "Learn sources in $V"
