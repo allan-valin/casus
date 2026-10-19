@@ -67,3 +67,11 @@ def test_a_caseless_determiner_keeps_its_headword():
     line = json.dumps({"word": "um", "pos": "article", "forms": [{"form": "uma", "tags": ["feminine"]}, {"form": "uns", "tags": ["plural"]}], "senses": [{"glosses": ["a, an"]}]})
     index = build_index(list(parse_entries(CONFIGS["pt"], [line])))
     assert index["um"][0]["pos"] == "det"
+
+
+def test_a_pronoun_form_that_is_some_pronouns_headword_belongs_to_that_pronoun_only():
+    from casus_build.generic import CONFIGS
+    table = [{"form": "ég", "tags": ["nominative", "singular"]}, {"form": "hún", "tags": ["nominative", "singular", "feminine"]}]
+    lines = [json.dumps({"word": w, "pos": "pron", "forms": table, "senses": [{"glosses": [g]}]}, ensure_ascii=False) for w, g in (("ég", "I"), ("hún", "she"))]
+    index = build_index(list(parse_entries(CONFIGS["is"], lines)))
+    assert len({a["lemma"] for a in index["hún"]}) == 1 and len({a["lemma"] for a in index["ég"]}) == 1

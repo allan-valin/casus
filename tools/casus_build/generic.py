@@ -143,6 +143,13 @@ def build_index(entries: list[dict]) -> dict[str, list[dict]]:
             rows = index.setdefault(text.lower(), [])
             if full not in rows:
                 rows.append(full)
+    # pronouns that share one table (Icelandic ég, þú, hún…) each list every form: a form that is some pronoun's own
+    # headword belongs to that pronoun only
+    pron_head = {e["headword"].lower(): e["id"] for e in entries if e["pos"] == "pron"}
+    for form, rows in index.items():
+        own = pron_head.get(form)
+        if own is not None and any(r["lemma"] == own for r in rows):
+            index[form] = [r for r in rows if r["pos"] != "pron" or r["lemma"] == own]
     return index
 
 
