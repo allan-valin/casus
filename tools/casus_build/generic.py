@@ -55,6 +55,9 @@ def analysis(cfg: Config, pos: str, tags: set, gender: str | None) -> dict | Non
             return {"pos": pos, "number": _one(tags, NUMBERS) or ("sg" if pos in ("noun", "adj") else None),
                     "gender": _one(tags, GENDERS) or (gender if pos in ("noun", "adj") else None)}
         cases = [v for k, v in cfg.case_tags.items() if k in tags]
+        if not cases and "error-unrecognized-form" in tags and pos in ("pron", "det") and (_one(tags, GENDERS) or _one(tags, NUMBERS)):
+            # a pronoun table Wiktextract could not read (Polish mój): the form is known, its case is not
+            return {"pos": pos, "number": _one(tags, NUMBERS), "gender": _one(tags, GENDERS)}
         if len(set(cases)) != 1:
             return None
         return {"pos": pos, "case": cases[0], "number": _one(tags, NUMBERS) or ("sg" if pos == "noun" else None),
@@ -154,7 +157,8 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
                     person, number = hungarian_person(text, word, definite="definite" in tags, past="past" in tags)
                     tags = {"past" if "past" in tags else "present", "indicative", {"1": "first-person", "2": "second-person", "3": "third-person"}[person],
                             {"sg": "singular", "pl": "plural"}[number]}
-            if not text or " " in text or tags & SKIP or not cfg.letters.match(text) or "/" in text or "\\" in text:
+            skip = SKIP - {"error-unrecognized-form"} if pos in ("pron", "det") else SKIP
+            if not text or " " in text or tags & skip or not cfg.letters.match(text) or "/" in text or "\\" in text:
                 continue
             if cfg.code == "tr" and pos == "verb" and tags & set(PERSONS):
                 person, number = turkish_person(text)            # the table's own person tags are a row off

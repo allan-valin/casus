@@ -101,3 +101,11 @@ def test_hungarian_tables_are_read_despite_their_tags():
     assert (index["olvasok"][0]["person"], index["olvasok"][0]["number"], index["olvasok"][0]["tense"]) == ("1", "sg", "pres")
     assert (index["olvassák"][0]["person"], index["olvassák"][0]["number"]) == ("3", "pl")
     assert index["olvastam"][0]["tense"] == "past"
+
+
+def test_an_unrecognised_pronoun_table_still_gives_its_forms_with_the_case_unknown():
+    from casus_build.generic import CONFIGS
+    forms = [{"form": "moja", "tags": ["error-unrecognized-form", "feminine", "singular"]}, {"form": "moi", "tags": ["error-unrecognized-form", "plural", "virile"]}]
+    line = json.dumps({"word": "mój", "pos": "pron", "forms": forms, "senses": [{"glosses": ["my"]}]}, ensure_ascii=False)
+    index = build_index(list(parse_entries(CONFIGS["pl"], [line])))
+    assert index["moja"][0]["pos"] == "pron" and index["moja"][0].get("case") is None and index["moja"][0]["gender"] == "f"

@@ -218,3 +218,69 @@ export function nameArticleStage(blocks) {
   }
   return out;
 }
+
+/* "AND": the language's own coordinating words read as conjunctions even where the dictionary lost them (Polish i). */
+export function makeConjunctionStage(conjunctions) {
+  const and = new Set(conjunctions);
+  return (blocks) => blocks.map((b) => (and.has(b.token.key) && !b.candidates.length && !b.pinned
+    ? { ...b, candidates: [{ analysis: { lemma: b.token.key, pos: 'conj' }, reasons: ['a coordinating word (Casus list)'], links: [] }] }
+    : b));
+}
+
+/* PERSON: a clause whose finite verbs are all 1st or 2nd person has its subject in the verb (kupiłem "I bought"), so a
+ * noun there is not nominative — unless the verb is a copula (jsem učitel "I am a teacher"). */
+export function makePersonStage(copulas = []) {
+  const cop = new Set(copulas);
+  return function personStage(blocks) {
+    const byClause = new Map();
+    blocks.forEach((b, i) => { const c = b.token.clause ?? 0; if (!byClause.has(c)) byClause.set(c, []); byClause.get(c).push(i); });
+    const out = blocks.slice();
+    for (const idx of byClause.values()) {
+      const verbs = idx.filter((i) => out[i].candidates.length && out[i].candidates.every((c) => c.analysis.pos === 'verb' && c.analysis.person));
+      if (!verbs.length || verbs.some((i) => cop.has(out[i].token.key) || out[i].candidates.some((c) => c.analysis.person === '3'))) continue;
+      for (const i of idx) {
+        const b = out[i];
+        const keep = b.candidates.filter((c) => !(c.analysis.pos === 'noun' && c.analysis.case === 'nom'));
+        if (b.pinned || keep.length === b.candidates.length || !keep.length) continue;
+        out[i] = { ...b, candidates: keep.map((c) => ({ ...c, reasons: [...c.reasons, `the verb ${out[verbs[0]].token.surface} is its own subject: not nominative`] })) };
+      }
+    }
+    return out;
+  };
+}
+
+/* ONE VERB: a clause with a certain finite verb and no conjunction has no second one, so a word that could also be a
+ * finite verb is its other reading (Luen kirjaa: kirjaa the noun, not kirjata). */
+export function makeOneVerbStage(conjunctions = []) {
+  const conj = new Set(conjunctions);
+  const finite = (c) => c.analysis.pos === 'verb' && c.analysis.person;
+  return function oneVerbStage(blocks) {
+    const byClause = new Map();
+    blocks.forEach((b, i) => { const c = b.token.clause ?? 0; if (!byClause.has(c)) byClause.set(c, []); byClause.get(c).push(i); });
+    const out = blocks.slice();
+    for (const idx of byClause.values()) {
+      if (idx.some((i) => conj.has(out[i].token.key) || out[i].candidates.some((c) => c.analysis.pos === 'conj'))) continue;
+      const sure = idx.filter((i) => out[i].candidates.length && out[i].candidates.every(finite));
+      if (!sure.length) {
+        // no certain verb: the only word that could be one, agreeing with a certain nominative, is the verb (siostra mieszka)
+        const maybe = idx.filter((i) => out[i].candidates.some(finite));
+        const subj = idx.find((i) => out[i].candidates.length && out[i].candidates.every((c) => c.analysis.case === 'nom' && ['noun', 'pron'].includes(c.analysis.pos)));
+        if (maybe.length === 1 && subj !== undefined && !out[maybe[0]].pinned) {
+          const n = out[subj].candidates[0].analysis.number;
+          const verbs = out[maybe[0]].candidates.filter((c) => finite(c) && (!n || c.analysis.number === n) && (c.analysis.person === '3' || out[subj].candidates[0].analysis.pos === 'pron'));
+          if (verbs.length) out[maybe[0]] = { ...out[maybe[0]], candidates: verbs.map((c) => ({ ...c, reasons: [...c.reasons, `the clause's only verb, agreeing with ${out[subj].token.surface}`] })) };
+        }
+        continue;
+      }
+      if (sure.length !== 1) continue;
+      for (const i of idx) {
+        const b = out[i];
+        if (i === sure[0] || b.pinned) continue;
+        const keep = b.candidates.filter((c) => !finite(c));
+        if (!keep.length || keep.length === b.candidates.length) continue;
+        out[i] = { ...b, candidates: keep.map((c) => ({ ...c, reasons: [...c.reasons, `${out[sure[0]].token.surface} is the clause's verb`] })) };
+      }
+    }
+    return out;
+  };
+}
