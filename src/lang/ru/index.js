@@ -1,6 +1,6 @@
 /* Russian (docs/languages/ru.md; overnight plan 2026-10-19). Stress supplied from the dictionary, like Greek accents. */
 import { governmentStage, agreementStage } from '../../lib/disambiguate.js';
-import { prepositionSettledStage, makeCoordinationStage, makeNumberStage, casedStage, makeOneSubjectStage } from '../../lib/classical.js';
+import { prepositionSettledStage, makeCoordinationStage, makeNumberStage, casedStage, makeOneSubjectStage, properNameStage } from '../../lib/classical.js';
 import { WORD_ORDERS } from '../../app/lib/order.js';
 import { segment } from './segment.js';
 import { tokenize } from './tokenize.js';
@@ -25,7 +25,7 @@ export const russian = {
   inventory: RUSSIAN_INVENTORY,
   segment,
   tokenize,
-  stages: [casedStage, gov, agr, gov, prepositionSettledStage, makeCoordinationStage(AND), makeNumberStage({ conjunctions: AND }),
+  stages: [properNameStage, casedStage, gov, agr, gov, prepositionSettledStage, makeCoordinationStage(AND), makeNumberStage({ conjunctions: AND }),
     makeOneSubjectStage({ conjunctions: AND, copulas: ['есть', 'был', 'была', 'было', 'были', 'будет', 'будут', 'является', 'являются', 'стал', 'стала', 'стало', 'стали'] }), gov, agr, gov],
   government: GOVERNMENT,
   arrange: WORD_ORDERS,

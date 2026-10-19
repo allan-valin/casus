@@ -1,3 +1,4 @@
+import { properNameStage } from '../../lib/classical.js';
 /* Macedonian (docs/languages/mk.md; overnight plan 2026-10-19). */
 import { segment } from '../ru/segment.js';
 import { tokenize } from '../ru/tokenize.js';
@@ -18,7 +19,7 @@ export const macedonian = {
   inventory: MACEDONIAN_INVENTORY,
   segment,
   tokenize,
-  stages: [letterStage],
+  stages: [properNameStage, letterStage],
   government: {},
   arrange: WORD_ORDERS,
   eras: [{ id: 'modern', label: 'Standard Macedonian', authors: '', ages: [], ipa: [] }],
