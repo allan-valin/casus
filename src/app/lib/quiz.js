@@ -17,7 +17,8 @@ export function createChoiceQuiz(items, { random = Math.random, size = 4 } = {})
     return item;
   }
   function choicesFor(item) {
-    const others = [...new Set(items.map((i) => i.answer).filter((a) => a !== item.answer))];
+    // a question may bring its own wrong answers (Learn: meanings for a meaning question, patterns for a gap)
+    const others = [...new Set((item.pool ?? items.map((i) => i.answer)).filter((a) => a !== item.answer))];
     const picked = [];
     const need = Math.min(size - 1, others.length);
     while (picked.length < need) {

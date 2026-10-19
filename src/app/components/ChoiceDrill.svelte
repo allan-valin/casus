@@ -5,7 +5,7 @@
   import { t } from '../lib/i18n.svelte.js';
   import { createChoiceQuiz } from '../lib/quiz.js';
   import { romanOf } from '../lib/roman.js';
-  let { items, random = Math.random, romanize = null } = $props();
+  let { items, random = Math.random, romanize = null, onresult = null } = $props();
   let quiz = $state.raw(null);
   let current = $state.raw(null);
   let result = $state(null);
@@ -24,6 +24,7 @@
     if (result || !quiz) return;
     picked = c;
     result = quiz.answer(c);
+    onresult?.(current.item, result.correct);              // Learn keeps each lesson's progress
     score = { ...quiz.score }; streak = quiz.streak;
   }
   function next() { quiz.next(); current = quiz.current(); result = null; picked = null; selected = -1; }

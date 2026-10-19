@@ -126,6 +126,12 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
   handle 20.500.12537/5). Every verb, noun and adjective form; frequent lemmas without an English Wiktionary entry are
   added from it without a meaning.
 
+## Learn tab
+
+- Japanese lessons: OpenJLPT (github.com/evanclan/OpenJLPT), CC BY-SA 4.0 — grammar points (pattern, meaning,
+  formation, example, notes) by the OpenJLPT contributors; vocabulary and kanji levels after Jonathan Waller's JLPT
+  resources (tanos.co.uk, CC BY); kanji data from KANJIDIC (EDRDG, CC BY-SA). Questions are generated from it.
+
 ## Document import
 
 - JSZip (Stuart Knightley and contributors), MIT: reads Word (.docx), OpenDocument (.odt) and EPUB files.

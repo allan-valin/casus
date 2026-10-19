@@ -24,6 +24,7 @@
   import Downloads from './components/Downloads.svelte';
   import SendToCasus from './components/SendToCasus.svelte';
   import Proofread from './components/Proofread.svelte';
+  import Learn from './components/Learn.svelte';
   import { describeAnalysis } from './lib/colors.js';
   import { partners as partnersOf } from './lib/chunks.js';
   import { createLive } from '../lib/live.js';
@@ -193,7 +194,10 @@
     </div>
   </header>
 
-  {#if route.view === 'proof'}
+  {#if route.view === 'learn'}
+    <Learn {lang} {storage} loadLearn={() => fetchImpl(`${DATA}/learn.json`).then((r) => (r.ok ? r.json() : null))}
+      openInReader={(text) => { try { storage?.setItem(`casus:input:${lang.code}`, text); } catch { /* not kept */ } location.href = withBase(LANGUAGES.find((l) => l.code === lang.code)?.path ?? '/'); }} />
+  {:else if route.view === 'proof'}
     <Proofread {lang} {storage} {fetchImpl} knownWords={async (words) => {
         if (!lexicon) return new Set();
         const keys = words.map((w) => lang.tokenize(w).find((tk) => tk.kind === 'word')?.key ?? w);

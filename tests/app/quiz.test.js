@@ -28,3 +28,12 @@ describe('multiple-choice quiz (frequent words, phrases)', () => {
     expect(q.current().choices).toHaveLength(2);
   });
 });
+
+describe('a question can bring its own wrong answers (Learn, 2026-10-19)', () => {
+  it('choices come from the item’s pool when it has one', () => {
+    const items = [{ prompt: '〜は', answer: 'topic', pool: ['subject', 'object', 'place'] }, { prompt: '私は＿学生です', answer: 'は', pool: ['が', 'を', 'に'] }];
+    const q = createChoiceQuiz(items, { random: () => 0 });
+    const c = q.current();
+    expect(c.choices.sort()).toEqual([c.item.answer, ...c.item.pool].sort());
+  });
+});
