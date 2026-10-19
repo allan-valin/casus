@@ -84,6 +84,39 @@ def turkish_person(form: str) -> tuple[str, str]:
     return ("3", "sg")
 
 
+def hungarian_person(form: str, headword: str, definite: bool, past: bool) -> tuple[str, str]:
+    """Hungarian person and number from the personal ending (Wiktionary's Hungarian tables come with their person tags
+    a row off). The 3rd singular present is the headword itself."""
+    f = form.lower()
+    end = lambda pat: re.search(f"({pat})$", f)                      # noqa: E731
+    if past:
+        if end("tatok|tetek|tátok|tétek"):
+            return ("2", "pl")
+        if end("tunk|tünk|tuk|tük"):
+            return ("1", "pl")
+        if end("tak|tek|ták|ték"):
+            return ("3", "pl")
+        if end("tam|tem|talak|telek"):
+            return ("1", "sg")
+        if end("tál|tél|tad|ted"):
+            return ("2", "sg")
+        return ("3", "sg")
+    if f == headword.lower():
+        return ("3", "sg")
+    if end("játok|itek|tok|tek|tök"):
+        return ("2", "pl")
+    # the definite j assimilates after a sibilant (olvassák, olvassuk)
+    if end("nak|nek") or (definite and end("ák|ék|ik")):
+        return ("3", "pl")
+    if end("unk|ünk") or (definite and end("uk|ük")):
+        return ("1", "pl")
+    if end("lak|lek|ok|ek|ök|om|em|öm"):
+        return ("1", "sg")
+    if end("sz|ol|el|öl|od|ed|öd"):
+        return ("2", "sg")
+    return ("3", "sg")
+
+
 def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
     for i, line in enumerate(lines):
         line = line.strip()
@@ -112,6 +145,15 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
             text = cfg.clean((f.get("form") or "").strip())
             # a key must be a word: it starts with a letter and has no slash (an IPA cell filed as a form once tried to
             # become the shard "/ˈ", a path outside the data folder)
+            if cfg.code == "hu" and pos == "verb":
+                # Hungarian tables come tagged as unrecognised, persons a row off: the person from the ending, tense and
+                # definiteness from the tags; moods other than the indicative are left out (their tags are unreliable)
+                if tags & {"conditional", "subjunctive", "imperative", "infinitive", "participle"} or not text or " " in text:
+                    continue
+                if tags & set(PERSONS) or tags & {"definite", "indefinite"}:
+                    person, number = hungarian_person(text, word, definite="definite" in tags, past="past" in tags)
+                    tags = {"past" if "past" in tags else "present", "indicative", {"1": "first-person", "2": "second-person", "3": "third-person"}[person],
+                            {"sg": "singular", "pl": "plural"}[number]}
             if not text or " " in text or tags & SKIP or not cfg.letters.match(text) or "/" in text or "\\" in text:
                 continue
             if cfg.code == "tr" and pos == "verb" and tags & set(PERSONS):
@@ -123,6 +165,8 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
         word = cfg.clean(word)
         if cfg.caseless and pos in ("noun", "adj", "det", "pron", "num") and not any(t == word for t, _ in cells):
             cells.insert(0, (word, {"pos": pos, "number": "sg", "gender": gender or ("m" if pos == "adj" else None)}))  # the headword is the (masculine) singular
+        if cfg.code == "hu" and pos == "verb" and not any(t == word for t, _ in cells):
+            cells.insert(0, (word, {"pos": "verb", "person": "3", "number": "sg", "tense": "pres", "mood": "ind"}))  # the headword is the 3rd singular
         if pos in ("verb",) and not any(t == word for t, _ in cells):
             cells.append((word, {"pos": "verb", "mood": "inf"}))
         gloss = "; ".join(dict.fromkeys(" ".join(g.split()) for s in senses for g in (s.get("glosses") or [])[:1] if g))
