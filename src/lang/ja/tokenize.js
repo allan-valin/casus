@@ -39,10 +39,13 @@ export async function splitWords(tokens, lexicon) {
     for (let a = 0; a < cs.length; a += 1) for (let n = 1; n <= MAX && a + n <= cs.length; n += 1) keys.add(cs.slice(a, a + n).join(''));
   }
   const found = keys.size ? await lexicon.lookupAll([...keys]) : new Map();
+  // a language with word frequencies (Chinese) breaks ties toward the commoner words: 在 + 学校, not 在学 + 校
+  const ranks = lexicon.file ? await lexicon.file('wordfreq.json').catch(() => null) : null;
+  const rarity = (word) => (!ranks ? 0 : ranks[word] ? Math.log10(ranks[word]) / 10 : 0.6);
   const cost = (word) => {
     const as = found.get(word) ?? [];
     if (!as.length) return null;
-    return as.every((x) => x.form === 'kana') ? 1.4 : 1;
+    return (as.every((x) => x.form === 'kana') ? 1.4 : 1) + rarity(word);
   };
   const out = [];
   for (const t of tokens) {

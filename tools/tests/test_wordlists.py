@@ -66,3 +66,9 @@ def test_a_japanese_phrase_keeps_its_reading():
     d = {"word": "猿も木から落ちる", "pos": "proverb", "senses": [{"glosses": ["even monkeys fall from trees"]}],
          "head_templates": [{"expansion": "猿(さる)も木(き)から落(お)ちる • (saru mo ki kara ochiru)"}]}
     assert phrase_item(d)["reading"] == "さるもきからおちる"
+
+
+def test_a_chinese_phrase_keeps_its_pinyin():
+    d = {"word": "画蛇添足", "pos": "proverb", "senses": [{"glosses": ["to ruin something by adding unnecessary details"]}],
+         "sounds": [{"zh_pron": "huàshétiānzú", "tags": ["Mandarin", "Standard", "Pinyin"]}]}
+    assert phrase_item(d)["reading"] == "huàshétiānzú"

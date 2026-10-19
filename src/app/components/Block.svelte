@@ -34,7 +34,7 @@
      onclick={() => onopen(block)}
      onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onopen(block); } }}>
   <sup class="index">{block.token.index + 1}</sup>
-  <span class="word-stack">{#if article}<span class="article" title={t('block.article')}>{article}</span>{/if}{#if supplied.length}<span class="reading supplied" title={`${t('block.supplied')}: ${supplied.map(displayForm).join(' / ')}`}>{suppliedLabel(supplied)}</span>{/if}<span class="surface">{#if furi}{#each furi as [text, reading]}{#if reading}<ruby>{text}<rt>{reading}</rt></ruby>{:else}{text}{/if}{/each}{:else if block.parts}{#each block.parts as part, k}<span class="root" class:root-b={k % 2 === 1} title={t('block.compound')}>{part}</span>{/each}{:else}{block.token.surface}{/if}</span>{#if roman}<span class="roman" title={t('block.roman')}>{roman}</span>{/if}</span>
+  <span class="word-stack">{#if article}<span class="article" title={t('block.article')}>{article}</span>{/if}{#if supplied.length}<span class="reading supplied" title={`${t('block.supplied')}: ${supplied.map(displayForm).join(' / ')}`}>{suppliedLabel(supplied)}</span>{/if}<span class="surface">{#if furi}{#each furi as [text, reading]}{#if reading}<ruby>{text}<rt>{reading}</rt></ruby>{:else}{text}{/if}{/each}{:else if block.parts}{#each block.parts as part, k}<span class="root" class:root-b={k % 2 === 1} title={t('block.compound')}>{part}</span>{/each}{:else}{block.token.surface}{/if}</span>{#if roman}<span class="roman" title={t('block.roman')}>{#if block.romanParts && block.roman !== undefined}{#each block.romanParts as [s, tone]}{#if tone === null}{s}{:else}<span class="tone tone-{tone}">{s}</span>{/if}{/each}{:else}{roman}{/if}</span>{/if}</span>
   <span class="badge" style:color={style.ambiguous || style.unknown ? '#555' : style.border}>{style.badge}</span>
   {#if style.dots.length}<span class="dots" aria-label="possible cases">{#each style.dots as d}<i class="dot" style:background={d}></i>{/each}</span>{/if}
   {#if layers.classes && oneLemma && lemmaOf}
@@ -54,6 +54,8 @@
   .word-stack { display: inline-flex; flex-direction: column; align-items: center; line-height: 1.15; }
   ruby rt { font-size: 0.55em; color: var(--ink-2); }
   .roman { font-size: 0.62em; color: var(--ink-2); font-style: italic; letter-spacing: 0.02em; margin-top: 1px; }
+  /* Mandarin tones, the colours learners' dictionaries use: 1 red, 2 green, 3 blue, 4 purple, neutral grey */
+  .tone-1 { color: #d1001f; } .tone-2 { color: #1a8a3a; } .tone-3 { color: #1f5fbf; } .tone-4 { color: #8b2fc9; } .tone-0 { color: var(--muted); }
   .root { color: var(--ink); }
   .root-b { color: #6b4e9b; }
   .article { font-size: 0.72em; font-weight: 600; color: var(--ink-2); letter-spacing: 0.02em; }

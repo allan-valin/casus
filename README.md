@@ -118,6 +118,11 @@ give them their roles (as in Japanese); speech level and tense on every verb; Re
 conjugation, frequency and phrase drills. Notes: `docs/languages/ko.md`; build:
 `bash tools/fetch_wiktextract.sh Korean && python3 tools/build_lang.py ko`.
 
+**Chinese (2026-10-19)** at `/zh/`: 157k words and characters, simplified and traditional; word splitting with
+frequency tie-breaks; pinyin under each word with the tones in colour; coverbs (在 把 给 从…) and 的 give roles;
+characters, frequency and phrase/chengyu drills. Notes: `docs/languages/zh.md`; build:
+`bash tools/fetch_wiktextract.sh Chinese && python3 tools/build_lang.py zh`.
+
 Top corner: **English ⇄ Português** (the page and the dictionary language together, remembered),
 exports (JSON to reload, Markdown to read) and **?** — what is on screen, how to use it, every
 resource and licence. Under the page, **What is happening**: one timestamped line per action and its

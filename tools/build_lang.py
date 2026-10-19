@@ -198,6 +198,54 @@ def build_ko(src: Path, out: Path) -> dict:
     return manifest
 
 
+def build_zh(src: Path, out: Path) -> dict:
+    """Chinese (Mandarin): Wiktionary's words and characters, keyed by both spellings, pinyin as each row's reading."""
+    from casus_build.ja.bucket import bucket
+    from casus_build.zh.codes import CODES_JSON, encode_analysis
+    from casus_build.zh.parse import build_index, parse_entries
+
+    from casus_build.zh.parse import char_map
+    with src.open(encoding="utf-8") as fh:
+        entries = list(parse_entries(fh))
+    simp = char_map(entries)
+    for e in entries:                                  # 書 → 书: single characters get their simplified key
+        if len(e["headword"]) == 1 and not e.get("simplified") and e["headword"] in simp:
+            e["simplified"] = simp[e["headword"]]
+    index = build_index(entries)
+    # word frequencies (FrequencyWords zh_cn, CC BY-SA 4.0): ties in word splitting go to the commoner words
+    freq_path = Path("vendor/wordlists/zh/zh_cn_50k.txt")
+    if freq_path.exists():
+        ranks = {}
+        for k, line in enumerate(freq_path.read_text(encoding="utf-8").splitlines()):
+            w = line.split()[0] if line.split() else ""
+            if w and w not in ranks:
+                ranks[w] = k + 1
+        (out / "wordfreq.json").parent.mkdir(parents=True, exist_ok=True)
+        (out / "wordfreq.json").write_text(json.dumps(ranks, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+    def rows(analyses):
+        groups: dict[tuple, list[str]] = {}
+        for a in analyses:
+            groups.setdefault((a["lemma"], a.get("reading")), []).append(encode_analysis(a))
+        return [[lemma, *(["~" + r] if r else []), *codes] for (lemma, r), codes in groups.items()]
+
+    lemmas = {}
+    for e in entries:
+        simp = e.get("simplified")
+        shown = f"{simp} ({e['headword']})" if simp and simp != e["headword"] else e["headword"]
+        rec = {"headword": simp or e["headword"], "dict_form": shown + (f" {e['pinyin']}" if e.get("pinyin") else ""), "pos": e["pos"]}
+        lemmas[str(e["id"])] = rec
+    out.mkdir(parents=True, exist_ok=True)
+    manifest = write_assets(index, lemmas, out, rows=rows, key_of=bucket)
+    for name, obj in (("glosses.en.json", {str(e["id"]): e["gloss_en"] for e in entries if e["gloss_en"]}),
+                      ("ipa.json", {str(e["id"]): e["ipa"] for e in entries if e["ipa"]}),
+                      ("government.json", {}), ("codes.json", CODES_JSON)):
+        (out / name).write_text(json.dumps(obj, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    manifest["key"] = "bucket"
+    (out / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8")
+    return manifest
+
+
 def build_ja(src: Path, out: Path) -> dict:
     from casus_build.ja.codes import CODES_JSON, encode_analysis
     from casus_build.ja.parse import build_index, parse_entries
@@ -289,7 +337,7 @@ def measure(out: Path) -> dict:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("code", choices=["grc", "de", "ja", "ar", "ru", "ko"])
+    ap.add_argument("code", choices=["grc", "de", "ja", "ar", "ru", "ko", "zh"])
     ap.add_argument("--vendor", default="vendor/wiktextract", type=Path)
     ap.add_argument("--data", default="data", type=Path)
     ap.add_argument("--drop-dialects", action="store_true", help="keep only Attic, Koine and unlabelled tables")
@@ -298,6 +346,8 @@ def main(argv=None) -> int:
     t0 = time.time()
     if args.code == "grc":
         manifest = build_grc(args.vendor / "kaikki.org-dictionary-AncientGreek.jsonl", out, args.drop_dialects)
+    elif args.code == "zh":
+        manifest = build_zh(args.vendor / "kaikki.org-dictionary-Chinese.jsonl", out)
     elif args.code == "ko":
         manifest = build_ko(args.vendor / "kaikki.org-dictionary-Korean.jsonl", out)
     elif args.code == "ru":

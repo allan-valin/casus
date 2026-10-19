@@ -21,13 +21,14 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-DUMPS = {"la": "Latin", "grc": "AncientGreek", "de": "German", "ja": "Japanese", "ar": "Arabic", "ru": "Russian", "ko": "Korean"}
+DUMPS = {"la": "Latin", "grc": "AncientGreek", "de": "German", "ja": "Japanese", "ar": "Arabic", "ru": "Russian", "ko": "Korean", "zh": "Chinese"}
 CORE = {"la": "https://dcc.dickinson.edu/latin-core-list1", "grc": "https://dcc.dickinson.edu/greek-core-list"}
 # Japanese: the JLPT N5 and N4 vocabularies (open-anki-jlpt-decks, MIT; after Jonathan Waller's JLPT lists)
 JLPT = [("N5", "https://raw.githubusercontent.com/jamsinclair/open-anki-jlpt-decks/main/src/n5.csv"),
         ("N4", "https://raw.githubusercontent.com/jamsinclair/open-anki-jlpt-decks/main/src/n4.csv")]
 SUBTITLE_FREQ = {code: f"https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/{code}/{code}_50k.txt"
                  for code in ("de", "ar", "ru", "ko", "mk")}
+SUBTITLE_FREQ["zh"] = "https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/zh_cn/zh_cn_50k.txt"
 SKIP_TAGS = {"vulgar", "offensive", "derogatory", "ethnic", "slur"}
 XREF = re.compile(r"^(synonym|alternative (form|spelling)|[\w-]+ form|abbreviation|misspelling|obsolete form|archaic form|initialism|contraction) of\b", re.I)
 
@@ -62,8 +63,13 @@ def phrase_item(d: dict) -> dict | None:
     if not gloss or gloss.lower().strip(" .!?") == word.lower().strip(" .!?"):
         return None
     item = {"p": word, "kind": kind, "en": gloss[:160]}
+    # Chinese: the pinyin from the Mandarin pronunciation
+    if re.search(r"[\u3400-\u9fff]", word) and not re.search(r"[\u3040-\u30ff]", word):
+        from casus_build.zh.parse import pinyin_of
+        if pinyin_of(d):
+            item["reading"] = pinyin_of(d)
     # Japanese: the reading from the head line's ruby, for furigana and romaji
-    if re.search(r"[\u3040-\u30ff\u3400-\u9fff]", word):
+    if re.search(r"[\u3040-\u30ff\u3400-\u9fff]", word) and "reading" not in item:
         from casus_build.ja.parse import furigana
         heads = d.get("head_templates") or []
         if heads and heads[0].get("expansion"):
@@ -177,7 +183,8 @@ def main(code: str) -> None:
         if NOTES.get(code, {}).get(p["p"]):
             p["note"] = NOTES[code][p["p"]]
     # Latin and Greek sayings, and German proverbs, are often explained on English Wikipedia (memento mori)
-    wiki_notes([p for p in phrases if code != "de" or p["kind"] == "proverb"], out_dir / "wiki.cache.json")
+    # German and Chinese have thousands of phrases: only their proverbs are looked up
+    wiki_notes([p for p in phrases if code not in ("de", "zh") or p["kind"] == "proverb"], out_dir / "wiki.cache.json")
     print(f"{code}: {sum(1 for p in phrases if p.get('wiki'))} phrases with a Wikipedia note")
     (out_dir / "phrases.raw.json").write_text(json.dumps(phrases, ensure_ascii=False), encoding="utf-8")
     if code == "ja":

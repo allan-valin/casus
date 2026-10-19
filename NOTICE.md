@@ -98,6 +98,13 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
 - Frequency: Hermit Dave, *FrequencyWords* (OpenSubtitles 2018, ko_50k), CC BY-SA 4.0.
 - Sample passages: sentences written for Casus; the first line of *Aegukga* (public domain).
 
+## Chinese — CC BY-SA
+
+- Dictionary, pinyin, IPA, phrases and chengyu: the English Wiktionary via wiktextract / kaikki.org, CC BY-SA 4.0.
+- Word frequencies (word splitting, frequent words): Hermit Dave, *FrequencyWords* (OpenSubtitles 2018, zh_cn),
+  CC BY-SA 4.0.
+- Sample passages: sentences written for Casus; *Analects* 1.1 (public domain).
+
 ## Speech — espeak-ng (GPL-3.0)
 
 When the browser has no voice for a language, the speaker button loads espeak-ng compiled to
