@@ -51,3 +51,6 @@ Decisions (his answers): phrase answers show the REAL sense; explanations writte
 - ~04:30: clause rules for the factory languages (Polish i, kupiłem chleb accusative, Luen kirjaa noun, siostra
   mieszka verb, moja found). QUESTION for Allan: Icelandic present tense (les, bý, förum) is not in the Wiktionary dump;
   BÍN (bin.arnastofnun.is, 34 MB download) has it, but I could not confirm its licence, so it is NOT used.
+- ~04:40: names in Russian and Macedonian too; Macedonian моjот (Latin j in Wiktionary) fixed; Polish z mężem settled.
+  Possible next (all small): Turkish possessive + case (evine), Portuguese inverted subjects, Sanskrit fused words,
+  Icelandic present tense (needs the BÍN licence answer).
