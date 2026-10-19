@@ -60,3 +60,10 @@ def test_a_caseless_noun_keeps_its_headword_as_the_singular():
     line = json.dumps({"word": "menino", "pos": "noun", "head_templates": [{"args": {"1": "m"}}], "forms": [{"form": "meninos", "tags": ["plural"]}, {"form": "menina", "tags": ["feminine"]}], "senses": [{"glosses": ["boy"]}]})
     index = build_index(list(parse_entries(CONFIGS["pt"], [line])))
     assert index["menino"][0]["pos"] == "noun" and index["menino"][0]["number"] == "sg"
+
+
+def test_a_caseless_determiner_keeps_its_headword():
+    from casus_build.generic import CONFIGS
+    line = json.dumps({"word": "um", "pos": "article", "forms": [{"form": "uma", "tags": ["feminine"]}, {"form": "uns", "tags": ["plural"]}], "senses": [{"glosses": ["a, an"]}]})
+    index = build_index(list(parse_entries(CONFIGS["pt"], [line])))
+    assert index["um"][0]["pos"] == "det"

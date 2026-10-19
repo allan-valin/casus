@@ -136,7 +136,32 @@ describe('a common Korean pronoun counts as the pronoun (나: I, not 나다)', (
     const L = (headword, pos) => ({ headword, pos, dict_form: headword });
     const lookups = new Map([['나', [{ lemma: 'nada', pos: 'verb' }, { lemma: 'na', pos: 'pron' }]], ['나서', [{ lemma: 'nada', pos: 'verb' }]]]);
     const lemmas = { nada: L('나다', 'verb'), na: L('나', 'pron') };
-    const out = rankLemmas([{ form: '나', n: 50 }, { form: '나서', n: 5 }], lookups, lemmas, { nada: 'to be born', na: 'I' }, 5, {}, (x) => x, new Set(['나']));
+    const out = rankLemmas([{ form: '나', n: 50 }, { form: '나서', n: 5 }], lookups, lemmas, { nada: 'to be born', na: 'I' }, 5, {}, (x) => x, new Map([['나', 'pron']]));
     expect(out[0].w).toBe('나');
+  });
+});
+
+describe('a language can name the part of speech of its function words (Portuguese um: the article)', () => {
+  it('um', async () => {
+    const { rankLemmas } = await import('../../tools/build_wordlists.mjs');
+    const L = (headword, pos) => ({ headword, pos, dict_form: headword });
+    const lookups = new Map([['um', [{ lemma: 'umN', pos: 'noun' }, { lemma: 'umD', pos: 'det' }]], ['uns', [{ lemma: 'umN', pos: 'noun' }]]]);
+    const lemmas = { umN: L('um', 'noun'), umD: L('um', 'det') };
+    const out = rankLemmas([{ form: 'um', n: 50 }, { form: 'uns', n: 9 }], lookups, lemmas, { umN: 'the digit one', umD: 'a, an' }, 5, {}, (x) => x, new Map([['um', 'det']]));
+    expect(out[0]).toMatchObject({ w: 'um', en: 'a, an' });
+  });
+});
+
+describe('a word with a plain meaning is one row, whatever its parts of speech (Finnish se: it; that)', () => {
+  it('se', async () => {
+    const { rankLemmas } = await import('../../tools/build_wordlists.mjs');
+    const L = (headword, pos) => ({ headword, pos, dict_form: headword });
+    const lookups = new Map([['se', [{ lemma: 'p', pos: 'pron' }]], ['sen', [{ lemma: 'p', pos: 'pron' }]], ['seh', [{ lemma: 'i', pos: 'interj' }]]]);
+    const lemmas = { p: L('se', 'pron'), i: L('se', 'interj') };
+    const glosses = { p: 'that', i: 'here you go' };
+    const rows = [{ form: 'se', n: 50 }, { form: 'sen', n: 9 }, { form: 'seh', n: 5 }];
+    lookups.set('seh', [{ lemma: 'i', pos: 'interj' }]);
+    const out = rankLemmas(rows, lookups, lemmas, glosses, 5, { se: 'it; that' });
+    expect(out.map((o) => [o.w, o.en])).toEqual([['se', 'it; that']]);
   });
 });

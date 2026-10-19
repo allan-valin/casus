@@ -42,3 +42,6 @@ Decisions (his answers): phrase answers show the REAL sense; explanations writte
 - Korean: copula split (학생이에요), 거 = 것, 이건 = 이거, pronouns first; Korean list rebuilt clean. Chinese list now
   has the one-character pronouns (我 你 他); other single characters stay out because the dump lacks some common senses
   (都 dōu "all" is missing; only 都 dū "capital").
+- Frequent-words lists cleaned for pt, pl, tr, is, fi, el, cs, hu: plain meanings for the top function words (pl to
+  "this, it", tr bir "one; a, an", is var "was", el μου "my; me"), one row per such word, Portuguese function words
+  read as articles/pronouns (um "a, an", not the digit). German list unchanged.

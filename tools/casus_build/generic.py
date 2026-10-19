@@ -121,7 +121,7 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
             if a:
                 cells.append((text, a))
         word = cfg.clean(word)
-        if cfg.caseless and pos in ("noun", "adj") and not any(t == word for t, _ in cells):
+        if cfg.caseless and pos in ("noun", "adj", "det", "pron", "num") and not any(t == word for t, _ in cells):
             cells.insert(0, (word, {"pos": pos, "number": "sg", "gender": gender or ("m" if pos == "adj" else None)}))  # the headword is the (masculine) singular
         if pos in ("verb",) and not any(t == word for t, _ in cells):
             cells.append((word, {"pos": "verb", "mood": "inf"}))
