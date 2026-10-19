@@ -126,3 +126,22 @@ def test_dakuten_are_not_accents():
     from build_drills import _plain
     assert _plain("泳ぐ") == "泳ぐ" and _plain("パン") == "パン" and _plain("λόγος") == "λογοσ"
 
+
+
+def test_arabic_pattern_is_the_vowel_skeleton_with_root_consonants_as_c():
+    from build_drills import arabic_pattern
+    assert arabic_pattern("كَتَبَ") == arabic_pattern("فَعَلَ") != arabic_pattern("وَلِيَ")
+    assert arabic_pattern("قَالَ") == arabic_pattern("كَانَ") != arabic_pattern("لَيْسَ")
+    assert arabic_pattern("جَمِيل") == arabic_pattern("كَبِير") != arabic_pattern("آخِر")
+    assert arabic_pattern("جَمِيل") != arabic_pattern("جَيِّد")
+
+
+def test_vulgar_words_stay_out_of_the_pools():
+    from build_drills import pools
+    L = lambda h: {"headword": h, "pos": "noun", "dict_form": h}
+    lemmas = {"1": L("puer"), "2": L("gener"), "3": L("cunnus")}
+    rows = {i: [[h, "nnsm"], [len(h), "i", "ngsm"]] for i, h in [("1", "puer"), ("2", "gener"), ("3", "cunnus")]}
+    rows["3"] = [["cunner", "nnsm"], [6, "i", "ngsm"]]
+    lemmas["3"] = L("cunner")
+    out = pools([{"id": "1", "headword": "puer", "pos": "noun"}], lemmas, rows.get, {"2": "son-in-law", "3": "(vulgar) cunt"})
+    assert [p[0] for p in out["1"]] == ["2"]

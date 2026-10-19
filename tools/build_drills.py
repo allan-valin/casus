@@ -175,7 +175,18 @@ def _short(text: str) -> str:
     return first if len(first) <= 40 else first[:38].rstrip() + "…"
 
 
-def pools(models, lemmas: dict, rows_of, glosses: dict, irregular=frozenset(), rank=None, capitalised_nouns=False, used=None, lead_drop=2, verb_share=0.85) -> dict:
+# a random word is drawn from these pools: nothing vulgar (an Arabic verb "to fuck" came up next to قَالَ)
+VULGAR = re.compile(r"\b(vulgar|fuck\w*|shit\w*|cunt|cock|dick|pussy|whore|slut|bitch|arse|asshole)\b", re.I)
+_AR_WEAK = set("اويىءأإآؤئ")
+
+
+def arabic_pattern(headword: str) -> str:
+    """the vowel skeleton of an Arabic word, root consonants as C (كَتَبَ, فَعَلَ: CَCَCَ; قَالَ: CَاCَ): the long
+    vowels, weak letters and marks stay, so a word of another pattern conjugates differently"""
+    return "".join(ch if (ch in _AR_WEAK or not ("\u0621" <= ch <= "\u064a")) else "C" for ch in headword)
+
+
+def pools(models, lemmas: dict, rows_of, glosses: dict, irregular=frozenset(), rank=None, capitalised_nouns=False, used=None, lead_drop=2, verb_share=0.85, pattern=None) -> dict:
     """model id -> [[lemma id, dict form, short meaning]…]: other words with exactly the model's table, the most
     frequent first (Whitaker's frequency letter, or a rank from the frequency list), at most POOL"""
     rank = rank or {}
@@ -187,7 +198,8 @@ def pools(models, lemmas: dict, rows_of, glosses: dict, irregular=frozenset(), r
             continue
         # no names (capitalised, except German nouns), abbreviations, numbers, or entries that only point elsewhere
         name = glosses[i][:1].isupper() and _plain(glosses[i]).startswith(_plain(h))            # Ambiorix, a chief…
-        if (h[:1].isupper() and not capitalised_nouns) or name or (len(h) > 1 and h.isupper()) or any(ch.isdigit() for ch in h) or XREF.match(glosses[i]):
+        if (h[:1].isupper() and not capitalised_nouns) or name or (len(h) > 1 and h.isupper()) or any(ch.isdigit() for ch in h) or XREF.match(glosses[i]) \
+                or VULGAR.search(glosses[i]):
             continue
         rows = rows_of(i)
         if rows:
@@ -201,6 +213,8 @@ def pools(models, lemmas: dict, rows_of, glosses: dict, irregular=frozenset(), r
         # a noun or adjective table is small: every cell must end alike; a verb table may differ in a few
         share = verb_share if m["pos"] == "verb" else 1.0
         same = [i for i, (pos, t) in tables.items() if pos == m["pos"] and i != m["id"] and same_table(mine, t, share)]
+        if pattern:                                # Arabic: the same pattern too, and not the model's own homograph
+            same = [i for i in same if pattern(lemmas[i]["headword"]) == pattern(m["headword"]) and lemmas[i]["headword"] != m["headword"]]
         if not same and used:                      # the everyday form fits nothing (Jungs): match the dictionary's table
             mine = core_endings(rows_of(m["id"]), m["headword"], lead_drop=lead_drop)
             same = [i for i, (pos, t) in tables.items() if pos == m["pos"] and i != m["id"] and same_table(mine, t, share)]
@@ -270,7 +284,7 @@ def main(code: str) -> None:
         rows_of(str(n))                                   # load every bucket once, so the pools can look anywhere
     by_model = pools(out, lemmas, rows_of, glosses, IRREGULAR.get(code, set()), rank, capitalised_nouns=(code == "de"), used=used,
                      # Japanese: short headwords (書く) keep one character of stem; generated forms match exactly
-                     lead_drop=1 if code == "ja" else 2, verb_share=1.0 if code == "ja" else 0.85)   # German nouns are capitalised
+                     lead_drop=1 if code == "ja" else 2, verb_share=1.0 if code == "ja" else 0.85, pattern=arabic_pattern if code == "ar" else None)   # German nouns are capitalised
     for m in out:
         m["irregular"] = m["headword"] in IRREGULAR.get(code, set()) or m.get("irregular_key") in IRREGULAR.get(code, set())
         m.pop("irregular_key", None)
