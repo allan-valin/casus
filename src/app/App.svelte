@@ -21,8 +21,10 @@
   import { createActivity } from './lib/activity.svelte.js';
   import ActivityLog from './components/ActivityLog.svelte';
   import Drills from './components/Drills.svelte';
+  import Downloads from './components/Downloads.svelte';
   import { describeAnalysis } from './lib/colors.js';
   import { partners as partnersOf } from './lib/chunks.js';
+  import { createLive } from '../lib/live.js';
 
   const route = langFromPath(typeof location !== 'undefined' ? location.pathname : '/', import.meta.env?.BASE_URL ?? '/');
   const lang = getLanguage(route.code);
@@ -53,6 +55,17 @@
   let help = $state(false);
   let legendOpen = $state(false);   // closed by default to save space (Allan, 2026-10-18)
   let generation = 0;               // choose() calls; a slower, older load must not win
+  // Wiktionary on demand for words the dictionary lacks (Allan, 2026-10-19); on unless switched off, kept per browser
+  let liveOn = $state((() => { try { return storage?.getItem('casus.live') !== 'off'; } catch { return true; } })());
+  function setLive(on) { liveOn = on; try { storage?.setItem('casus.live', on ? 'on' : 'off'); } catch { /* not kept */ } say(on ? 'act.live.on' : 'act.live.off'); }
+  const liveStore = { get: (k) => { try { const v = storage?.getItem(k); return v ? JSON.parse(v) : null; } catch { return null; } },
+    set: (k, v) => { try { storage?.setItem(k, JSON.stringify(v)); } catch { /* full */ } } };
+  function liveFor() {
+    if (!liveOn || (typeof navigator !== 'undefined' && navigator.onLine === false)) return null;
+    const primary = lang.inventory.channels[lang.inventory.primary];
+    const l = createLive({ fetchImpl: rawFetch, code: lang.code, caseIds: primary?.values ?? [], storage: liveStore });
+    return { lookup: async (words) => { say('act.live.asking', { n: words.length }); const out = await l.lookup(words); say('act.live.found', { n: [...out.values()].filter((r) => r.analyses.length || r.alternativeOf).length, of: words.length }, 'ok'); return out; } };
+  }
 
   $effect(() => {
     loadManifest(fetchImpl, DATA)
@@ -75,7 +88,7 @@
     if (lang.code === 'la' && store.getItem(key) === null && store.getItem(`casus:${textHash(text)}`) !== null) store.setItem(key, store.getItem(`casus:${textHash(text)}`));
     const save = createAutosave({ storage: store, key, schedule, cancel });
     const saved = restore(save.loaded(), text);
-    const r = createReader({ lexicon, text, saved, onaction: logAction, lang });
+    const r = createReader({ lexicon, text, saved, onaction: logAction, lang, live: liveFor() });
     if (!saved && era) r.era = era;
     if (!saved) r.glossLang = ui.lang;   // the page language carries the dictionary language with it
     const t0 = Date.now();
@@ -210,6 +223,8 @@
     <section class="card">
       <h2><span class="step">4</span> {t('settings.heading')}</h2>
       <Toolbar {reader} {voice} onvoice={(what, error) => (what === 'downloaded' ? say('act.voiceDownloaded', {}, 'ok') : what === 'removed' ? say('act.voiceRemoved') : say('voice.natural.failed', { error }, 'err'))} />
+      <label class="live-toggle" title={t('settings.live.title')}><input type="checkbox" checked={liveOn} onchange={(e) => setLive(e.currentTarget.checked)}> {t('settings.live')}</label>
+      <Downloads {fetchImpl} {storage} current={lang.code} onsay={(k, v) => say(k, v, k.endsWith('done') ? 'ok' : k.endsWith('failed') ? 'err' : undefined)} />
     </section>
 
     {#if openBlock}
@@ -231,6 +246,7 @@
 </main>
 
 <style>
+  .live-toggle { display: block; margin-top: 10px; }
   main { width: min(1500px, 100% - 2 * var(--gutter)); margin: 0 auto; padding: clamp(10px, 2vw, 24px) 0 40px; display: flex; flex-direction: column; gap: clamp(12px, 1.8vw, 22px); }
   .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
   h1 { margin: 0; font-family: Georgia, serif; font-size: clamp(1.7rem, 1.4rem + 1.2vw, 2.4rem); letter-spacing: 0.01em; }

@@ -5,7 +5,7 @@ import { runCascade } from './disambiguate.js';
  * pins. Takes an already-built lexicon, so it never fetches; serialises to a
  * plain object (`toJSON`) — persistence itself belongs to the UI plan.
  */
-export function createState({ text, lexicon, lang, saved = null }) {
+export function createState({ text, lexicon, lang, saved = null, live = null }) {
   if (!lang) throw new Error('createState needs lang: a language definition (src/lang/registry.js)');
   const { segment, tokenize, stages } = lang;
   const normalize = lang.script.normalize;
@@ -33,6 +33,30 @@ export function createState({ text, lexicon, lang, saved = null }) {
       }
     }
     analysesByKey = await lexicon.lookupAll([...keys]);
+    // words the dictionary does not know, asked live of Wiktionary (src/lib/live.js; Allan, 2026-10-19)
+    if (live) {
+      const unknown = new Map();
+      for (const tokens of split) for (const t of tokens) if (t.kind === 'word' && !(analysesByKey.get(t.key) ?? []).length) unknown.set(t.surface, t.key);
+      if (unknown.size) {
+        const found = await live.lookup([...unknown.keys()]);
+        const lemmas = {};
+        const glosses = {};
+        const alternatives = new Map();
+        for (const [surface, r] of found) {
+          if (r.analyses.length) analysesByKey.set(unknown.get(surface), r.analyses);
+          else if (r.alternativeOf) alternatives.set(unknown.get(surface), tokenize(r.alternativeOf).find((t) => t.kind === 'word')?.key);
+          Object.assign(lemmas, r.lemmas);
+          Object.assign(glosses, r.glosses);
+        }
+        // an alternative form takes the readings of the word it points at (twą = twoją)
+        const targets = [...new Set([...alternatives.values()].filter(Boolean))];
+        if (targets.length) {
+          const more = await lexicon.lookupAll(targets);
+          for (const [key, target] of alternatives) if ((more.get(target) ?? []).length) analysesByKey.set(key, more.get(target));
+        }
+        if (Object.keys(lemmas).length) live.onExtras?.({ lemmas, glosses });
+      }
+    }
     // language data the stages need beyond the form index (German: the fixed expressions)
     ctx = { ...(lang.loadContext ? await lang.loadContext(lexicon) : {}), lookups: analysesByKey };
     tokensBySentence = split.map((tokens) => withTrail(rejoinAttested(tokens, analysesByKey, normalize)));

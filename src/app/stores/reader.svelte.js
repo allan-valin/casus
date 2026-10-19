@@ -12,8 +12,11 @@ const DEFAULT_LAYERS = { nominal: true, verb: true, function: true, classes: fal
  * Parse decisions come from createState; this adds layers, era, gloss language,
  * per-sentence arrangement and unglued chunks, and serialises all of it.
  */
-export function createReader({ lexicon, text, saved = null, onaction = () => {}, lang = getLanguage('la') }) {
-  const state = createState({ text, lexicon, lang, saved });
+export function createReader({ lexicon, text, saved = null, onaction = () => {}, lang = getLanguage('la'), live = null }) {
+  // words found live in Wiktionary bring their lemmas and meanings with them (src/lib/live.js)
+  let liveExtras = $state({ lemmas: {}, glosses: {} });
+  const liveHook = live ? { lookup: live.lookup, onExtras: (e) => { liveExtras = { lemmas: { ...liveExtras.lemmas, ...e.lemmas }, glosses: { ...liveExtras.glosses, ...e.glosses } }; live.onFound?.(e); } } : null;
+  const state = createState({ text, lexicon, lang, saved, live: liveHook });
   const colors = makeColors(lang.inventory);
   let version = $state(0);                       // bumped after every state.* call so getters re-read
   let loaded = $state(false);
@@ -73,7 +76,11 @@ export function createReader({ lexicon, text, saved = null, onaction = () => {},
     get glossLang() { return glossLang; },
     set glossLang(v) { glossLang = v; },
     get unglued() { void version; return unglued; },
-    get lexiconExtras() { return lexiconExtras; },
+    get lexiconExtras() {
+      if (!Object.keys(liveExtras.lemmas).length) return lexiconExtras;
+      return { ...lexiconExtras, lemmas: { ...(lexiconExtras.lemmas ?? {}), ...liveExtras.lemmas },
+        glosses: { ...lexiconExtras.glosses, en: { ...(lexiconExtras.glosses.en ?? {}), ...liveExtras.glosses } } };
+    },
     set lexiconExtras(v) { lexiconExtras = v; },
 
     async load() { await state.load(); loaded = true; touch(); },
