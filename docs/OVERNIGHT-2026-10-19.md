@@ -54,3 +54,4 @@ Decisions (his answers): phrase answers show the REAL sense; explanations writte
 - ~04:40: names in Russian and Macedonian too; Macedonian моjот (Latin j in Wiktionary) fixed; Polish z mężem settled.
   Possible next (all small): Turkish possessive + case (evine), Portuguese inverted subjects, Sanskrit fused words,
   Icelandic present tense (needs the BÍN licence answer).
+- ~04:50: Turkish possessed nouns (evine dative); Sanskrit fused words split (हरिर्जयति, सत्यमेव). Browser-checked.
