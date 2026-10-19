@@ -128,6 +128,8 @@ async function main(code) {
       // names (Tom, Mary, Sami…) are no lesson's point, whatever the reader takes them for
       if (names.has(norm(gapBlock.token.surface))) continue;
       if (index.name_stems && looksLikeName(gapBlock.token.surface, index.name_stems)) continue;
+      // a gap is a whole written word (Sanskrit: the reader splits sandhi and compounds — दन्तधावनं — into pieces)
+      if (index.whole_words) { const tk = gapBlock.token; if (/[\p{L}\p{M}]/u.test(text[tk.start - 1] ?? '') || /[\p{L}\p{M}]/u.test(text[tk.end] ?? '')) continue; }
       // a script written without vowels (Arabic): a form question shows the answer and its wrong answers vowelled, as
       // the paradigm table spells them, and only when the word's row there is certain; the sentence stays as written
       // (the reader's vowelling of a whole sentence can be wrong, and a learner would trust it)

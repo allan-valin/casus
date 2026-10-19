@@ -1,0 +1,132 @@
+id: Intermediate
+title: {en: Intermediate, pt: Intermediário}
+topics:
+
+- title: {en: Past and future, pt: Passado e futuro}
+  lessons:
+  - id: sa-imperfect
+    title: अगच्छत्
+    meaning: {en: "the imperfect: augment अ- + secondary endings", pt: "o imperfeito: aumento अ- + terminações secundárias"}
+    intro:
+      en: |
+        The everyday past of narrative: the **augment अ-** before the present stem and the **secondary endings**: **अगच्छम्, अगच्छः, अगच्छत्; अगच्छाव, अगच्छतम्, अगच्छताम्; अगच्छाम, अगच्छत, अगच्छन्**. A stem starting with a vowel lengthens it: **इच्छति → ऐच्छत्**. With **मा** + augmentless forms it forbids.
+      pt: |
+        O passado comum da narração: o **aumento अ-** antes do radical do presente e as **terminações secundárias**: **अगच्छम्, अगच्छः, अगच्छत्; अगच्छाव, अगच्छतम्, अगच्छताम्; अगच्छाम, अगच्छत, अगच्छन्**. Radical que começa com vogal a alonga: **इच्छति → ऐच्छत्**. Com **मा** + formas sem aumento, proíbe.
+    examples:
+    - [रामः वनम् अगच्छत् ।, Rāma went to the forest., Rama foi à floresta., अगच्छत्]
+    match: {seq: [{pos: verb, re: "^अ.+(त्|न्|म्)$"}], same: [person, number]}
+
+  - id: sa-future
+    title: गमिष्यति
+    meaning: {en: "the future in -ष्य-", pt: "o futuro em -ष्य-"}
+    intro:
+      en: |
+        **-स्य- / -ष्य-** (often **-इष्य-**) + the present endings: **भविष्यति** "will be", **गमिष्यति** "will go", **करिष्यामि** "I will do", **दास्यति** "will give".
+      pt: |
+        **-स्य- / -ष्य-** (muitas vezes **-इष्य-**) + as terminações do presente: **भविष्यति** "será", **गमिष्यति** "irá", **करिष्यामि** "farei", **दास्यति** "dará".
+    examples:
+    - [अहम् श्वः गमिष्यामि ।, I will go tomorrow., Irei amanhã., गमिष्यामि]
+    match: {seq: [{pos: verb, re: "(ष्य|स्य)(ति|न्ति|सि|ामि|ामः)$"}], suffixes: [ष्यति, ष्यन्ति, ष्यसि, ष्यामि, ष्यामः, स्यति, स्यन्ति, स्यामि], attested: true}
+
+- title: {en: Moods, pt: Modos}
+  lessons:
+  - id: sa-imperative
+    title: गच्छतु, गच्छ
+    meaning: {en: "the imperative: let him go, go!", pt: "o imperativo: que ele vá, vai!"}
+    intro:
+      en: |
+        **गच्छतु** let him go, **गच्छन्तु** let them go; **गच्छ** go! (the bare stem), **गच्छत** go! (pl.); **गच्छानि** let me go. Negative with **मा**.
+      pt: |
+        **गच्छतु** que ele vá, **गच्छन्तु** que eles vão; **गच्छ** vai! (o radical puro), **गच्छत** ide!; **गच्छानि** que eu vá. Negativa com **मा**.
+    examples:
+    - [भवान् आगच्छतु ।, Please come (sir)., Venha (o senhor)., आगच्छतु]
+    match: {seq: [{pos: verb, re: "(तु|न्तु|ानि)$"}], suffixes: [तु, न्तु, ति, न्ति, ेत्], attested: true}
+
+  - id: sa-optative
+    title: गच्छेत्
+    meaning: {en: "the optative: should, would, may", pt: "o optativo: deveria, poderia"}
+    intro:
+      en: |
+        **-ेत्** (3 sg.), **-ेयुः** (3 pl.), **-ेयम्** (1 sg.), **-ेः** (2 sg.): rules and advice (**धर्मम् आचरेत्** "one should practise dharma"), wishes, and conditions (**यदि … गच्छेत्** "if he went").
+      pt: |
+        **-ेत्** (3ª sg.), **-ेयुः** (3ª pl.), **-ेयम्** (1ª sg.), **-ेः** (2ª sg.): regras e conselhos (**धर्मम् आचरेत्** "deve-se praticar o dharma"), desejos e condições (**यदि … गच्छेत्** "se ele fosse").
+    examples:
+    - [धर्मम् आचरेत् ।, One should practise dharma., Deve-se praticar o dharma., आचरेत्]
+    match: {seq: [{pos: verb, re: "(ेत्|ेयुः|ेयम्)$"}], suffixes: [ेत्, ेयुः, ेयम्, ति, न्ति, तु], attested: true}
+
+- title: {en: Verbal nouns and participles, pt: Formas nominais e particípios}
+  lessons:
+  - id: sa-gerund
+    title: गत्वा, आगम्य
+    meaning: {en: "the absolutive: having gone (-त्वा, -य)", pt: "o absolutivo: tendo ido (-त्वा, -य)"}
+    intro:
+      en: |
+        **-त्वा** (simple verbs) and **-य** (with a prefix) mean *having done*, the subject being that of the main verb: **गृहम् गत्वा भुङ्क्ते** "having gone home, he eats"; **आगम्य** "having come", **दृष्ट्वा** "having seen". Sanskrit narrative strings them: **स्नात्वा भुक्त्वा शेते**.
+      pt: |
+        **-त्वा** (verbos simples) e **-य** (com prefixo) querem dizer *tendo feito*, com o mesmo sujeito do verbo principal: **गृहम् गत्वा भुङ्क्ते** "tendo ido para casa, ele come"; **आगम्य** "tendo vindo", **दृष्ट्वा** "tendo visto". A narrativa sânscrita os encadeia: **स्नात्वा भुक्त्वा शेते**.
+    examples:
+    - [सः गृहम् गत्वा भुङ्क्ते ।, Having gone home he eats., Tendo ido para casa ele come., गत्वा]
+    match: {seq: [{re: "त्वा$"}], suffixes: [त्वा, तुम्, तः], attested: true}
+
+  - id: sa-infinitive
+    title: गन्तुम्
+    meaning: {en: "the infinitive -तुम्: to do", pt: "o infinitivo -तुम्: para fazer"}
+    intro:
+      en: |
+        **-तुम्**: purpose and complement of *can, want*: **द्रष्टुम् इच्छामि** "I want to see", **गन्तुम् अर्हसि** "you ought to go", **कर्तुम् शक्नोति** "he can do".
+      pt: |
+        **-तुम्**: finalidade e complemento de *poder, querer*: **द्रष्टुम् इच्छामि** "quero ver", **गन्तुम् अर्हसि** "deves ir", **कर्तुम् शक्नोति** "ele consegue fazer".
+    examples:
+    - [राजानम् द्रष्टुम् इच्छामि ।, I want to see the king., Quero ver o rei., द्रष्टुम्]
+    match: {seq: [{re: "तुम्$"}], suffixes: [तुम्, त्वा, तः], attested: true}
+
+  - id: sa-participle
+    title: गतः, उक्तम्
+    meaning: {en: "the past participle -त / -न", pt: "o particípio passado -त / -न"}
+    intro:
+      en: |
+        **-त** (or **-न**): *gone, said, done* — the commonest past in later Sanskrit, declined like an adjective in -a: **रामः वनम् गतः** "Rāma went (is gone) to the forest"; with a transitive verb it is passive and the doer goes in the instrumental: **रामेण उक्तम्** "it was said by Rāma".
+      pt: |
+        **-त** (ou **-न**): *ido, dito, feito* — o passado mais comum do sânscrito clássico, declinado como adjetivo em -a: **रामः वनम् गतः** "Rama foi à floresta"; com verbo transitivo é passivo, e quem faz vai para o instrumental: **रामेण उक्तम्** "foi dito por Rama".
+    examples:
+    - [रामः वनम् गतः ।, Rāma went to the forest., Rama foi à floresta., गतः]
+    match: {seq: [{pos: adj, re: "(तः|ता|तम्|ताः|ताः|ते|ताः|नः|ना|नम्)$", case: [nom, acc]}], same: [number]}
+
+  - id: sa-passive
+    title: उच्यते
+    meaning: {en: "the passive in -य-: it is said", pt: "a passiva em -य-: diz-se"}
+    intro:
+      en: |
+        **-य-** + the middle endings: **उच्यते** "is said", **दृश्यते** "is seen, appears", **क्रियते** "is done", **श्रूयते** "is heard". The doer is instrumental: **रामेण ग्रामः दृश्यते**.
+      pt: |
+        **-य-** + as terminações médias: **उच्यते** "diz-se", **दृश्यते** "é visto, aparece", **क्रियते** "é feito", **श्रूयते** "ouve-se". Quem faz vai para o instrumental: **रामेण ग्रामः दृश्यते**.
+    examples:
+    - [इति उच्यते ।, So it is said., Assim se diz., उच्यते]
+    match: {seq: [{pos: verb, re: "य(ते|न्ते)$"}], suffixes: [यते, यन्ते, ति, न्ति], attested: true}
+
+- title: {en: Joining clauses, pt: Ligando orações}
+  lessons:
+  - id: sa-relative
+    title: यः … सः
+    meaning: {en: "relative clauses: yad … tad", pt: "orações relativas: yad … tad"}
+    intro:
+      en: |
+        Sanskrit pairs a **relative** with a **demonstrative**: **यः … सः** who … he; **यदा … तदा** when … then; **यत्र … तत्र** where … there; **यथा … तथा** as … so; **यदि … तर्हि** if … then: **यः धर्मम् आचरति सः सुखी भवति** "who practises dharma is happy".
+      pt: |
+        O sânscrito junta um **relativo** e um **demonstrativo**: **यः … सः** quem … esse; **यदा … तदा** quando … então; **यत्र … तत्र** onde … aí; **यथा … तथा** como … assim; **यदि … तर्हि** se … então: **यः धर्मम् आचरति सः सुखी भवति** "quem pratica o dharma é feliz".
+    examples:
+    - [यदा रामः आगच्छति तदा सीता हसति ।, When Rāma comes Sītā laughs., Quando Rama vem Sita ri., यदा]
+    match: {seq: [{word: [यः, या, यत्, ये, याः, यम्, येन, यस्य, यदा, तदा, यत्र, तत्र, यथा, तथा, यदि]}], gap: 0}
+    pool: [यः, सः, यदा, तदा, यत्र, तत्र, यथा, तथा, यदि]
+
+  - id: sa-dual
+    title: देवौ, देवाभ्याम्
+    meaning: {en: "the dual: exactly two", pt: "o dual: exatamente dois"}
+    intro:
+      en: |
+        For two of anything Sanskrit uses the **dual**: nominative/accusative **-ौ** (masc.) / **-े** (fem., neut.), instrumental-dative-ablative **-ाभ्याम्**, genitive-locative **-योः**. Verbs too: **गच्छतः** "the two go". **रामलक्ष्मणौ** "Rāma and Lakṣmaṇa".
+      pt: |
+        Para duas coisas o sânscrito usa o **dual**: nominativo/acusativo **-ौ** (masc.) / **-े** (fem., neut.), instrumental-dativo-ablativo **-ाभ्याम्**, genitivo-locativo **-योः**. Os verbos também: **गच्छतः** "os dois vão". **रामलक्ष्मणौ** "Rama e Lakshmana".
+    examples:
+    - [बालौ गच्छतः ।, The two boys go., Os dois meninos vão., बालौ]
+    match: {seq: [{pos: noun, number: du}], same: [case]}

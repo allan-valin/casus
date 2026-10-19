@@ -130,7 +130,7 @@ def curriculum_learn(path: Path, tables=None) -> tuple[dict, dict, dict]:
     index = {"system": data["system"], "levels": levels, "credit": _both(data["credit"])}
     # names never gapped (exact, or as stems for an inflecting language: Tom → Tomille), and features every wrong
     # answer keeps (Finnish: no possessive suffix the sentence doesn't have)
-    for key in ("names", "name_stems", "exclude_forms"):
+    for key in ("names", "name_stems", "exclude_forms", "whole_words"):
         if data.get(key):
             index[key] = data[key]
     return index, lessons, questions

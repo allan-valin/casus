@@ -1,0 +1,238 @@
+id: Beginner
+title: {en: Beginner, pt: Iniciante}
+topics:
+
+- title: {en: Script and sounds, pt: Escrita e sons}
+  lessons:
+  - id: sa-script
+    title: देवनागरी
+    meaning: {en: "Devanagari: vowels, consonants, conjuncts", pt: "devanágari: vogais, consoantes, ligaduras"}
+    intro:
+      en: |
+        Devanagari writes **syllables**. A consonant letter carries an inherent **a**: **क** = *ka*. Other vowels are signs around it: **का** *kā*, **कि** *ki*, **की** *kī*, **कु** *ku*, **कू** *kū*, **कृ** *kṛ*, **के** *ke*, **कै** *kai*, **को** *ko*, **कौ** *kau*. At the start of a word vowels have full letters: **अ आ इ ई उ ऊ ऋ ए ऐ ओ औ**. The **virāma** ् kills the vowel: **क्** *k*. Two consonants without a vowel between them join into a **conjunct**: **क्ष** *kṣa*, **ज्ञ** *jña*, **त्र** *tra*, **श्र** *śra*.
+
+        Watch **vowel length** (**ि** short *i* is written before the consonant; **ी** long) and the three **sibilants**: **श** *ś* (palatal), **ष** *ṣ* (retroflex), **स** *s*. **ं** (anusvāra) is a nasal, **ः** (visarga) a breath *ḥ*. **।** ends a sentence or half-verse.
+      pt: |
+        O devanágari escreve **sílabas**. A letra de consoante já traz um **a**: **क** = *ka*. As outras vogais são sinais em volta dela: **का** *kā*, **कि** *ki*, **की** *kī*, **कु** *ku*, **कू** *kū*, **कृ** *kṛ*, **के** *ke*, **कै** *kai*, **को** *ko*, **कौ** *kau*. No início da palavra as vogais têm letras próprias: **अ आ इ ई उ ऊ ऋ ए ऐ ओ औ**. O **virāma** ् elimina a vogal: **क्** *k*. Duas consoantes sem vogal entre elas se juntam numa **ligadura**: **क्ष** *kṣa*, **ज्ञ** *jña*, **त्र** *tra*, **श्र** *śra*.
+
+        Atenção à **quantidade da vogal** (**ि** *i* breve se escreve antes da consoante; **ी** longo) e aos três **sibilantes**: **श** *ś* (palatal, como *ch* de chá), **ष** *ṣ* (retroflexo), **स** *s*. **ं** (anusvāra) é uma nasal, **ः** (visarga) um sopro *ḥ*. **।** fecha a frase ou o meio verso.
+    mistakes:
+    - wrong: देवी written दवि
+      right: देवी
+      why: {en: "e and long ī are different signs: े and ी.", pt: "e e ī longo são sinais diferentes: े e ी."}
+    examples:
+    - [रामः वनम् गच्छति ।, Rāma goes to the forest., Rama vai à floresta., वनम्]
+    match: {seq: [{pos: noun, re: "[िीुूशषसणन]"}]}
+    swaps: {ि: [ी], ी: [ि], ु: [ू], ू: [ु], श: [ष, स], ष: [श, स], स: [श, ष], ण: [न], न: [ण]}
+
+- title: {en: The present tense, pt: O presente}
+  lessons:
+  - id: sa-present
+    title: गच्छति, गच्छन्ति
+    meaning: {en: "the present of thematic verbs: -ति, -न्ति, -मि", pt: "o presente dos verbos temáticos: -ति, -न्ति, -मि"}
+    intro:
+      en: |
+        Most verbs add a vowel **-a-** to their present stem (**गच्छ** *gaccha* from √गम्, **वद** *vada* from √वद्, **भव** *bhava* from √भू) and then the endings — singular, **dual** (two people) and plural:
+
+        | | sg. | du. | pl. |
+        |---|---|---|---|
+        | 3rd | गच्छ**ति** | गच्छ**तः** | गच्छ**न्ति** |
+        | 2nd | गच्छ**सि** | गच्छ**थः** | गच्छ**थ** |
+        | 1st | गच्छ**ामि** | गच्छ**ावः** | गच्छ**ामः** |
+
+        Word order is free; the verb tends to come last: **रामः वनम् गच्छति** "Rāma goes to the forest".
+      pt: |
+        A maioria dos verbos acrescenta uma vogal **-a-** ao radical do presente (**गच्छ** *gaccha* de √गम्, **वद** *vada* de √वद्, **भव** *bhava* de √भू) e depois as terminações — singular, **dual** (duas pessoas) e plural:
+
+        | | sg. | du. | pl. |
+        |---|---|---|---|
+        | 3ª | गच्छ**ति** | गच्छ**तः** | गच्छ**न्ति** |
+        | 2ª | गच्छ**सि** | गच्छ**थः** | गच्छ**थ** |
+        | 1ª | गच्छ**ामि** | गच्छ**ावः** | गच्छ**ामः** |
+
+        A ordem das palavras é livre; o verbo tende a vir no fim: **रामः वनम् गच्छति** "Rama vai à floresta".
+    examples:
+    - [अहम् गच्छामि ।, I go., Eu vou., गच्छामि]
+    - [बालाः वदन्ति ।, The boys speak., Os meninos falam., वदन्ति]
+    match:
+    - {seq: [{pos: verb, re: "(?<!ष्य|स्य|ष्या|स्या)(ति|न्ति|सि|थः|ामि|ावः|ामः)$"}], suffixes: [ति, तः, न्ति, सि, थः, ामि, ावः, ामः], attested: true}
+
+- title: {en: "Nouns in -a: the cases", pt: "Substantivos em -a: os casos"}
+  lessons:
+  - id: sa-cases
+    title: देवः, देवम्, देवेन
+    meaning: {en: "the eight cases: an overview (देव god)", pt: "os oito casos: visão geral (देव deus)"}
+    intro:
+      en: |
+        Sanskrit has **eight cases** and **three numbers**. The commonest nouns end in **-a** (masculine **देव** god, neuter **वन** forest):
+
+        - **nominative** (prathamā) subject: देवः
+        - **accusative** (dvitīyā) object, goal: देवम्
+        - **instrumental** (tṛtīyā) *with, by*: देवेन
+        - **dative** (caturthī) *to, for*: देवाय
+        - **ablative** (pañcamī) *from, because of*: देवात्
+        - **genitive** (ṣaṣṭhī) *of*: देवस्य
+        - **locative** (saptamī) *in, on, at*: देवे
+        - **vocative** (sambodhana) *O god!*: देव
+
+        The next lessons take them one by one; Casus's reader colours them in any text.
+      pt: |
+        O sânscrito tem **oito casos** e **três números**. Os substantivos mais comuns terminam em **-a** (masculino **देव** deus, neutro **वन** floresta):
+
+        - **nominativo** (prathamā) sujeito: देवः
+        - **acusativo** (dvitīyā) objeto, destino: देवम्
+        - **instrumental** (tṛtīyā) *com, por*: देवेन
+        - **dativo** (caturthī) *a, para*: देवाय
+        - **ablativo** (pañcamī) *de, por causa de*: देवात्
+        - **genitivo** (ṣaṣṭhī) *de* (posse): देवस्य
+        - **locativo** (saptamī) *em*: देवे
+        - **vocativo** (sambodhana) *ó deus!*: देव
+
+        As próximas lições tratam de um por vez; o leitor do Casus os colore em qualquer texto.
+    paradigms:
+    - {word: देव, pos: noun, label: {en: "देव (m.) god", pt: "देव (m.) deus"}}
+    - {word: वन, pos: noun, label: {en: "वन (n.) forest", pt: "वन (n.) floresta"}}
+    examples:
+    - [देवः वनम् गच्छति ।, The god goes to the forest., O deus vai à floresta., देवः]
+    match: {seq: [{pos: noun, case: [nom, acc, ins, dat, abl, gen, loc]}], same: [number]}
+
+  - id: sa-accusative
+    title: वनम् गच्छति
+    meaning: {en: "the accusative: object and goal", pt: "o acusativo: objeto e destino"}
+    intro:
+      en: |
+        **-म्** (singular), **-ौ** (dual), **-ान्** (masculine plural), **-ानि** (neuter plural). The direct object, and the goal of motion: **ग्रामम् गच्छति** "goes to the village". Neuters have the same form in the nominative and accusative: **वनम्**.
+      pt: |
+        **-म्** (singular), **-ौ** (dual), **-ान्** (plural masculino), **-ानि** (plural neutro). O objeto direto, e o destino do movimento: **ग्रामम् गच्छति** "vai à aldeia". Os neutros têm a mesma forma no nominativo e no acusativo: **वनम्**.
+    examples:
+    - [रामः ग्रामम् गच्छति ।, Rāma goes to the village., Rama vai à aldeia., ग्रामम्]
+    match: {seq: [{pos: noun, case: acc}], same: [number]}
+
+  - id: sa-instrumental
+    title: देवेन
+    meaning: {en: "the instrumental: with, by", pt: "o instrumental: com, por"}
+    intro:
+      en: |
+        **-एन** (sg.), **-ाभ्याम्** (du.), **-ैः** (pl.): the means (**हस्तेन** "with the hand"), the agent of a passive (**रामेण उक्तम्** "said by Rāma"), company with **सह** (**पुत्रेण सह** "with the son"). After **र्, ष्, ऋ** the n becomes ण: **रामेण**.
+      pt: |
+        **-एन** (sg.), **-ाभ्याम्** (du.), **-ैः** (pl.): o meio (**हस्तेन** "com a mão"), o agente da passiva (**रामेण उक्तम्** "dito por Rama"), a companhia com **सह** (**पुत्रेण सह** "com o filho"). Depois de **र्, ष्, ऋ** o n vira ण: **रामेण**.
+    examples:
+    - [पुत्रेण सह गच्छति ।, He goes with his son., Ele vai com o filho., पुत्रेण]
+    match: {seq: [{pos: noun, case: ins}], same: [number]}
+
+  - id: sa-dative
+    title: देवाय
+    meaning: {en: "the dative: to, for", pt: "o dativo: a, para"}
+    intro:
+      en: |
+        **-ाय** (sg.), **-ाभ्याम्** (du.), **-ेभ्यः** (pl.): the person something is given or told to, and purpose: **ब्राह्मणाय धनम् ददाति** "gives money to the brahmin", **युद्धाय** "for battle".
+      pt: |
+        **-ाय** (sg.), **-ाभ्याम्** (du.), **-ेभ्यः** (pl.): a quem se dá ou diz algo, e a finalidade: **ब्राह्मणाय धनम् ददाति** "dá dinheiro ao brâmane", **युद्धाय** "para a batalha".
+    examples:
+    - [ब्राह्मणाय धनम् ददाति ।, He gives money to the brahmin., Ele dá dinheiro ao brâmane., ब्राह्मणाय]
+    match: {seq: [{pos: noun, case: dat}], same: [number]}
+
+  - id: sa-ablative
+    title: वनात्
+    meaning: {en: "the ablative: from, because of", pt: "o ablativo: de, por causa de"}
+    intro:
+      en: |
+        **-ात्** (sg.), **-ाभ्याम्** (du.), **-ेभ्यः** (pl., as the dative): motion away (**वनात् आगच्छति** "comes from the forest"), cause (**भयात्** "out of fear") and comparison (**धनात् विद्या श्रेयसी** "knowledge is better than wealth").
+      pt: |
+        **-ात्** (sg.), **-ाभ्याम्** (du.), **-ेभ्यः** (pl., igual ao dativo): afastamento (**वनात् आगच्छति** "vem da floresta"), causa (**भयात्** "por medo") e comparação (**धनात् विद्या श्रेयसी** "o saber é melhor que a riqueza").
+    examples:
+    - [वनात् आगच्छति ।, He comes from the forest., Ele vem da floresta., वनात्]
+    match: {seq: [{pos: noun, case: abl}], same: [number]}
+
+  - id: sa-genitive
+    title: देवस्य
+    meaning: {en: "the genitive: of", pt: "o genitivo: de (posse)"}
+    intro:
+      en: |
+        **-स्य** (sg.), **-योः** (du.), **-ानाम्** (pl.): possession and relation: **रामस्य पुत्रः** "Rāma's son", **नृपाणाम् श्रेष्ठः** "the best of kings". It can also stand for the dative with verbs of giving and speaking.
+      pt: |
+        **-स्य** (sg.), **-योः** (du.), **-ानाम्** (pl.): posse e relação: **रामस्य पुत्रः** "o filho de Rama", **नृपाणाम् श्रेष्ठः** "o melhor dos reis". Também pode substituir o dativo com verbos de dar e falar.
+    examples:
+    - [रामस्य पुत्रः आगच्छति ।, Rāma's son is coming., O filho de Rama está vindo., रामस्य]
+    match: {seq: [{pos: noun, case: gen}], same: [number]}
+
+  - id: sa-locative
+    title: वने
+    meaning: {en: "the locative: in, on, at", pt: "o locativo: em"}
+    intro:
+      en: |
+        **-े** (sg.), **-योः** (du.), **-ेषु** (pl.): place and time: **वने वसति** "lives in the forest", **प्रभाते** "at dawn". The **locative absolute** (B: a participle and a noun in the locative) means *when, while*: **सूर्ये उदिते** "when the sun had risen".
+      pt: |
+        **-े** (sg.), **-योः** (du.), **-ेषु** (pl.): lugar e tempo: **वने वसति** "mora na floresta", **प्रभाते** "ao amanhecer". O **locativo absoluto** (um particípio e um substantivo no locativo) quer dizer *quando, enquanto*: **सूर्ये उदिते** "quando o sol nasceu".
+    examples:
+    - [मुनिः वने वसति ।, The sage lives in the forest., O sábio mora na floresta., वने]
+    match: {seq: [{pos: noun, case: loc}], same: [number]}
+
+  - id: sa-vocative
+    title: हे राम
+    meaning: {en: "the vocative: calling someone", pt: "o vocativo: chamando alguém"}
+    intro:
+      en: |
+        Calling someone uses the **bare stem** in the singular for -a nouns (**राम!**, **देव!**), often with **हे** or **भोः**; the dual and plural are as the nominative: **हे देवाः!**
+      pt: |
+        Para chamar alguém usa-se o **radical puro** no singular dos nomes em -a (**राम!**, **देव!**), muitas vezes com **हे** ou **भोः**; o dual e o plural são iguais ao nominativo: **हे देवाः!**
+    examples:
+    - ["हे राम कुत्र गच्छसि ।", "O Rāma, where are you going?", "Ó Rama, aonde vais?", "राम"]
+    match: {seq: [{word: [हे, भोः, भो]}, {pos: noun, case: voc}], gap: 1, same: [number]}
+
+- title: {en: Other nouns and pronouns, pt: Outros substantivos e pronomes}
+  lessons:
+  - id: sa-feminine
+    title: सेना, नदी
+    meaning: {en: "feminines in -ā and -ī", pt: "femininos em -ā e -ī"}
+    intro:
+      en: |
+        **-ā** (सेना army): सेना, सेनाम्, सेनया, सेनायै, सेनायाः, सेनायाः, सेनायाम्; pl. सेनाः, सेनाभिः, सेनानाम्, सेनासु. **-ī** (नदी river): नदी, नदीम्, नद्या, नद्यै, नद्याः, नद्याः, नद्याम्; pl. नद्यः, नदीभिः, नदीनाम्, नदीषु.
+      pt: |
+        **-ā** (सेना exército): सेना, सेनाम्, सेनया, सेनायै, सेनायाः, सेनायाः, सेनायाम्; pl. सेनाः, सेनाभिः, सेनानाम्, सेनासु. **-ī** (नदी rio): नदी, नदीम्, नद्या, नद्यै, नद्याः, नद्याः, नद्याम्; pl. नद्यः, नदीभिः, नदीनाम्, नदीषु.
+    paradigms:
+    - {word: सेना, pos: noun, label: {en: "सेना (f.) army", pt: "सेना (f.) exército"}}
+    examples:
+    - [सेना नगरम् गच्छति ।, The army goes to the city., O exército vai à cidade., सेना]
+    match: {seq: [{pos: noun, lemma: "(ा|ी)$", case: [nom, acc, ins, dat, abl, gen, loc]}], same: [number]}
+
+  - id: sa-tad
+    title: सः, सा, तत्
+    meaning: {en: "the pronoun tad: he, she, it, that", pt: "o pronome tad: ele, ela, isso, aquele"}
+    intro:
+      en: |
+        **तद्** is *he, she, it* and *that* (also *the*): masculine **सः, तम्, तेन, तस्मै, तस्मात्, तस्य, तस्मिन्**; plural **ते, तान्, तैः, तेभ्यः, तेषाम्, तेषु**. Feminine **सा, ताम्, तया, तस्यै, तस्याः, तस्याम्**. Neuter **तत्**. Note **-स्मै, -स्मात्, -स्मिन्**: pronouns differ from nouns there.
+      pt: |
+        **तद्** é *ele, ela, isso* e *aquele* (também *o, a*): masculino **सः, तम्, तेन, तस्मै, तस्मात्, तस्य, तस्मिन्**; plural **ते, तान्, तैः, तेभ्यः, तेषाम्, तेषु**. Feminino **सा, ताम्, तया, तस्यै, तस्याः, तस्याम्**. Neutro **तत्**. Repare em **-स्मै, -स्मात्, -स्मिन्**: aí o pronome difere do substantivo.
+    examples:
+    - [सः ग्रामम् गच्छति ।, He goes to the village., Ele vai à aldeia., सः]
+    - [तस्य पुत्रः आगच्छति ।, His son is coming., O filho dele está vindo., तस्य]
+    match: {seq: [{word: [सः, तम्, तेन, तस्मै, तस्मात्, तस्य, तस्मिन्, ते, तान्, तैः, तेभ्यः, तेषाम्, तेषु, सा, ताम्, तया, तस्यै, तस्याः, तस्याम्, ताः, ताभिः, तासाम्, तासु, तत्]}], gap: 0}
+    pool: [सः, तम्, तेन, तस्मै, तस्मात्, तस्य, तस्मिन्, ते, तान्, तैः, तेषाम्, सा, ताम्, तया, तस्याः]
+
+  - id: sa-personal
+    title: अहम्, त्वम्
+    meaning: {en: "I and you", pt: "eu e tu"}
+    intro:
+      en: |
+        **अहम्** I: **माम्, मया, मह्यम्, मत्, मम, मयि**; **वयम्** we: **अस्मान्, अस्माभिः, अस्माकम्**. **त्वम्** you: **त्वाम्, त्वया, तुभ्यम्, त्वत्, तव, त्वयि**; **यूयम्** you (pl.): **युष्मान्, युष्माकम्**. Short forms **मा, मे, नः, त्वा, ते, वः** never start a sentence.
+      pt: |
+        **अहम्** eu: **माम्, मया, मह्यम्, मत्, मम, मयि**; **वयम्** nós: **अस्मान्, अस्माभिः, अस्माकम्**. **त्वम्** tu: **त्वाम्, त्वया, तुभ्यम्, त्वत्, तव, त्वयि**; **यूयम्** vós: **युष्मान्, युष्माकम्**. As formas curtas **मा, मे, नः, त्वा, ते, वः** nunca começam a frase.
+    examples:
+    - [अहम् त्वाम् पश्यामि ।, I see you., Eu te vejo., त्वाम्]
+    - [मम नाम रामः ।, My name is Rāma., Meu nome é Rama., मम]
+    match: {seq: [{word: [अहम्, माम्, मया, मह्यम्, मत्, मम, मयि, वयम्, अस्मान्, अस्माभिः, अस्माकम्, त्वम्, त्वाम्, त्वया, तुभ्यम्, त्वत्, तव, त्वयि, यूयम्, युष्मान्, युष्माकम्]}], gap: 0}
+    pool: [अहम्, माम्, मया, मम, मयि, त्वम्, त्वाम्, त्वया, तव, वयम्, अस्माकम्]
+
+  - id: sa-particles
+    title: च, अपि, इव, एव
+    meaning: {en: "particles: and, also, like, only", pt: "partículas: e, também, como, só"}
+    intro:
+      en: |
+        **च** *and* — after the word it joins (**रामः लक्ष्मणः च** "Rāma and Lakṣmaṇa"); **अपि** *also, even*; **इव** *like, as it were*; **एव** *only, just, indeed*; **तु** *but*; **हि** *for, indeed*; **वा** *or* (after the word); **न** *not*; **इति** closes a quotation or thought.
+      pt: |
+        **च** *e* — depois da palavra que liga (**रामः लक्ष्मणः च** "Rama e Lakshmana"); **अपि** *também, até*; **इव** *como, por assim dizer*; **एव** *só, mesmo*; **तु** *mas*; **हि** *pois, de fato*; **वा** *ou* (depois da palavra); **न** *não*; **इति** fecha uma citação ou pensamento.
+    examples:
+    - [रामः लक्ष्मणः च वनम् गच्छतः ।, Rāma and Lakṣmaṇa go to the forest., Rama e Lakshmana vão à floresta., च]
+    match: {seq: [{word: [च, अपि, इव, एव, तु, हि, वा, न, इति]}], gap: 0}
+    pool: [च, अपि, इव, एव, तु, हि, वा, न, इति]

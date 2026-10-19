@@ -16,7 +16,7 @@ if [ ! -d "$V/jlpt-grammar-enhanced" ]; then
 fi
 # Tatoeba, CC BY 2.0 FR: sentences and translation links per language
 # one Tatoeba code per Learn language (tools/learn_curriculum.mjs TATOEBA), plus English and Portuguese for translations
-for t3 in jpn mkd ara lat grc deu rus kor cmn fin ell; do
+for t3 in jpn mkd ara lat grc deu rus kor cmn fin ell san ces pol tur hun isl por; do
   for f in "$t3/${t3}_sentences.tsv.bz2" "$t3/$t3-eng_links.tsv.bz2" "$t3/$t3-por_links.tsv.bz2"; do
     [ -f "$V/tatoeba/$(basename $f)" ] || curl -sfL -o "$V/tatoeba/$(basename $f)" "https://downloads.tatoeba.org/exports/per_language/$f" || true
   done
@@ -48,4 +48,10 @@ mkdir -p "$V/hsk30"
 for f in hsk30.csv hsk30-grammar.csv hsk30-chars.csv LICENSE README.md; do
   [ -f "$V/hsk30/$f" ] || curl -sfL -o "$V/hsk30/$f" "https://raw.githubusercontent.com/ivankra/hsk30/master/$f"
 done
+# Digital Corpus of Sanskrit (CC BY 4.0): a sparse clone of the texts tools/build_dcs.py reads
+if [ ! -d "$V/dcs-src" ]; then
+  git clone -q --depth 1 --filter=blob:none --sparse https://github.com/OliverHellwig/sanskrit.git "$V/dcs-src"
+  (cd "$V/dcs-src" && git sparse-checkout set "dcs/data/conllu/files/Hitopadeśa" "dcs/data/conllu/files/Śukasaptati" \
+    "dcs/data/conllu/files/Vetālapañcaviṃśatikā" "dcs/data/conllu/files/Kathāsaritsāgara" "dcs/data/conllu/files/Rāmāyaṇa")
+fi
 echo "Learn sources in $V"

@@ -215,3 +215,7 @@ it('re also matches the word as written when the key strips accents (Modern Gree
   expect(fits(block, { re: 'άς$' }, null, null, strip)).toBe(true);
   expect(fits(block, { re: 'ας$' }, null, null, strip)).toBe(true);
 });
+
+it('suffixVariants keeps marks that belong to the suffix (Devanagari vowel signs, virama)', () => {
+  expect(suffixVariants('गच्छति', ['ति', 'न्ति', 'ामि'])).toEqual(['गच्छन्ति', 'गच्छामि']);
+});

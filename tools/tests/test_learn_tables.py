@@ -53,3 +53,17 @@ def test_possessive_forms_never_fill_a_cell():
     t = paradigm_table(fi, {"word": "talo", "pos": "noun"}, attested={"taloomme": 9, "talonne": 9}, exclude=r"((?<!k)si|ni|mme|nne|nsa|nsä)$")
     rows = {r[0]["en"]: r[1:] for r in t["rows"]}
     assert rows["genitive"] == ["talon", "talojen"] and rows["illative"] == ["taloon", "taloihin"]
+
+
+def test_a_dual_column_between_singular_and_plural(tmp_path):
+    import json, shutil
+    d = tmp_path / "fi"
+    shutil.copytree(Path(__file__).parent / "fixtures" / "tables" / "fi", d)
+    shard = next((d / "paradigms").glob("*.json"))
+    para = json.loads(shard.read_text(encoding="utf-8"))
+    lid = next(k for k in para if json.loads((d / "lemmas.json").read_text())[k]["headword"] == "talo")
+    para[lid] += [["talodu", "nad__"]]
+    shard.write_text(json.dumps(para, ensure_ascii=False), encoding="utf-8")
+    t = paradigm_table(d, {"word": "talo", "pos": "noun"})
+    assert t["head"]["en"] == ["", "singular", "dual", "plural"]
+    assert {r[0]["en"]: r[1:] for r in t["rows"]}["nominative"] == ["talo", "talodu", "talot"]

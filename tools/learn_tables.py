@@ -87,7 +87,7 @@ def paradigm_table(data: Path, spec: dict, attested: dict | None = None, final_s
     genderless = not any(a.get("gender") in ("m", "f", "n") for _, a in forms)
     finnish = any(a.get("case") == "par" for _, a in forms)
     if pos == "noun" or genderless:
-        cols = [n for n in ("sg", "pl") if any(a.get("number") == n for _, a in forms)]
+        cols = [n for n in ("sg", "du", "pl") if any(a.get("number") == n for _, a in forms)]   # (Sanskrit, Greek: the dual)
         cond = lambda c, n: {"case": c, "number": n}   # noqa: E731
     else:
         number = spec.get("number", "sg")

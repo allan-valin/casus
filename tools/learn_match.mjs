@@ -155,8 +155,10 @@ export function rewrite(text, tokens, replace, gap = null) {
 /** the word with each of the other suffixes (possessives: كتابي, كتابك, كتابه…), vowel marks left aside; the longest
  * suffix it has comes off; none when it has none of them */
 export function suffixVariants(word, suffixes) {
-  const bare = word.replace(/\p{M}/gu, '');
-  const mine = [...suffixes].sort((a, b) => b.length - a.length).find((x) => bare.endsWith(x));
+  // the word as written when a suffix fits it (Devanagari: the vowel signs are the suffix); else without vowel marks
+  const longest = [...suffixes].sort((a, b) => b.length - a.length);
+  const bare = !/[\u0600-\u06ff]/u.test(word) && longest.some((x) => word.endsWith(x)) ? word : word.replace(/\p{M}/gu, '');   // (Arabic: always bare)
+  const mine = longest.find((x) => bare.endsWith(x));
   if (!mine) return [];
   const stem = bare.slice(0, bare.length - mine.length);
   return suffixes.filter((x) => x !== mine).map((x) => stem + x);
