@@ -58,4 +58,22 @@ open graded inventory like JLPT/HSK; the usable pieces are open courses, PD text
 - Dutch: **Wikibooks Dutch** (100% developed, 23 lessons + 16 practice). Swedish: DaLAJ (CC BY, learner error
   pairs). Norwegian: UD (CC BY-SA); NTNU course has no licence. Estonian: thin.
 
-(Slavic and Romance/English/Korean reports to follow below.)
+## Slavic
+No openly licensed CEFR grammar-point inventory exists for mk, ru, cs, pl. Shared: Tatoeba (CC BY 2.0 FR), Kaikki
+(CC BY-SA). UD SynTagRus, PDT, FicTree, PDB, IU are NC — AVOID. FSI Bulgarian/Serbo-Croatian/Russian/Czech courses (US
+gov, PD per mirrors; scans).
+- **Macedonian:** no PD textbooks (standard codified 1945); Wikibooks stub; UD MTB licence conflicting (avoid). Point
+  list must be written (AI-tagged) from the standard grammars' facts; drills from Tatoeba + paradigms.
+- **Russian:** **Forbes, *First Russian Book* (1915)** and *Russian Grammar* (1916) — PD, graded lessons + exercises,
+  IA scans (old orthography → modernise). Prokosch 1920 (PDM). **OpenRussian dump** ("all data is licensed under the
+  CC BY-SA license", en.openrussian.org/dictionary-data). UD Taiga/GSD (CC BY-SA). Wikibooks Russian (77 pages).
+  AVOID *Mezhdu nami* (BY-NC-ND).
+- **Czech:** **Nigrin, *Bohemian Grammar* (1918), Gutenberg #50595** — PD, clean text, lessons + exercises. HIGH.
+  **Reality Czech** (CC BY-SA 3.0, 10 units). UD CAC/CLTT (CC BY-SA). Czech Navigator licence conflicting (avoid).
+- **Polish:** **Ssymank, *Elementary Polish Grammar* + *Key* (1921)** — PD in US, graded course with answers (scans).
+  Baluta 1915 (PD in US). UD Polish-LFG (GPL). Wikibooks Polish (57 pages). AVOID PDB (NC), *Gramatyka dla praktyka*
+  (NC-ND).
+- Others: Serbian (Subotić & Forbes 1918 PD; UD SET CC BY-SA), Bulgarian (FSI), Slovak/Slovene (UD CC BY-SA),
+  Ukrainian (Tatoeba 189k).
+
+(Romance/English/Korean report to follow.)

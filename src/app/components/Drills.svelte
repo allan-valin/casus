@@ -10,11 +10,12 @@
   import ChoiceDrill from './ChoiceDrill.svelte';
   import Overlay from './Overlay.svelte';
   import CheatSheet from './CheatSheet.svelte';
+  import { parseItems } from '../lib/parse.js';
   let { lang, voice = null, loadData, loadParadigm = null, navigate, random = Math.random } = $props();
 
   const NOMINAL = new Set(['noun', 'adj', 'det', 'pron']);
   // a language that does not inflect (Chinese) has no endings drills; one without noun cases (Portuguese) only the verbs
-  const drills = $derived([...(lang.game ? ['letters'] : []), ...(lang.noEndings ? [] : lang.noNounEndings ? ['verbs'] : ['nouns', 'verbs']), 'words', 'phrases']);
+  const drills = $derived([...(lang.game ? ['letters'] : []), ...(lang.noEndings ? [] : lang.noNounEndings ? ['verbs', 'parse'] : ['nouns', 'verbs', 'parse']), 'words', 'phrases']);
   let chosen = $state(null);
   const drill = $derived(chosen && drills.includes(chosen) ? chosen : drills[0]);
   let models = $state([]);
@@ -43,6 +44,14 @@
   const phraseItems = $derived(phrases.filter((p) => kind === 'all' || p.kind === kind).map((p) => ({ prompt: p.p, answer: p.en, lit: p.lit, kind: p.kind, literally: p.literally, more: p.more, wiki: p.wiki, note: p.note, roman: romaji(p.reading), hint: p.reading })));
   const nouns = $derived(models.filter((m) => NOMINAL.has(m.pos)));
   const verbs = $derived(models.filter((m) => m.pos === 'verb'));
+  // parse the form: every form of the model words, its cell to choose (any reading of a syncretic form is right)
+  const caseName = (c) => lang.inventory.channels.case?.name?.[ui.lang]?.[c] ?? c;
+  const paraWord = (x) => (t(`para.${x}`) === `para.${x}` ? x : t(`para.${x}`));
+  const cellName = (table, r, c) => `${table.rowsBy === 'case' ? caseName(r) : table.rowsBy === 'jform' ? t(`para.ja.${r}`) : t(`para.p${r}`)} · ${String(c).split(' ').map(paraWord).join(' ')}`;
+  // (placeholder values — x — are left out of the name)
+  const clean = (name) => name.split(' · ').map((x) => x.split(' ').filter((w) => w && w !== 'x').join(' ')).filter(Boolean).join(' · ');
+  const parseList = $derived(models.flatMap((m) => parseItems(m, lang, (tb, r, c, several) => clean((several && tb.label ? `${tb.label.split(' · ').map(paraWord).join(' ')} · ` : '') + cellName(tb, r, c)))
+    .map((it) => ({ ...it, hint: `${m.dict_form ?? m.headword}${m.gloss ? ` — ${typeof m.gloss === 'string' ? m.gloss : (m.gloss[ui.lang] ?? m.gloss.en)}` : ''}` }))));
   const withDrills = siteLanguages();     // this site's languages; every one has at least the endings drills
 </script>
 
@@ -88,6 +97,8 @@
       </label>
     </div>
     {#key `${kind}|${phrases.length}`}<ChoiceDrill items={phraseItems} {random} romanize={lang.script?.romanize ?? null} />{/key}
+  {:else if drill === 'parse'}
+    {#key `parse|${models.length}|${ui.lang}`}<ChoiceDrill items={parseList} {random} romanize={lang.script?.romanize ?? null} />{/key}
   {:else if drill === 'nouns'}
     {#key 'nouns'}<EndingsDrill {lang} models={nouns} {random} {loadParadigm} />{/key}
   {:else}

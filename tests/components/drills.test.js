@@ -33,13 +33,13 @@ describe('Drills page', () => {
   });
   it('Latin has noun and verb drills but no letters; Greek has letters too', async () => {
     const la = render(Drills, { lang: getLanguage('la'), loadData, navigate: () => {} });
-    expect([...la.container.querySelectorAll('.drill-tab')].map((b) => b.dataset.drill)).toEqual(['nouns', 'verbs', 'words', 'phrases']);
+    expect([...la.container.querySelectorAll('.drill-tab')].map((b) => b.dataset.drill)).toEqual(['nouns', 'verbs', 'parse', 'words', 'phrases']);
     const grc = render(Drills, { lang: getLanguage('grc'), loadData, navigate: () => {} });
-    expect([...grc.container.querySelectorAll('.drill-tab')].map((b) => b.dataset.drill)).toEqual(['letters', 'nouns', 'verbs', 'words', 'phrases']);
+    expect([...grc.container.querySelectorAll('.drill-tab')].map((b) => b.dataset.drill)).toEqual(['letters', 'nouns', 'verbs', 'parse', 'words', 'phrases']);
   });
   it('Portuguese has no noun cases, so verb endings only', () => {
     const pt = render(Drills, { lang: getLanguage('pt'), loadData, navigate: () => {} });
-    expect([...pt.container.querySelectorAll('.drill-tab')].map((b) => b.dataset.drill)).toEqual(['verbs', 'words', 'phrases']);
+    expect([...pt.container.querySelectorAll('.drill-tab')].map((b) => b.dataset.drill)).toEqual(['verbs', 'parse', 'words', 'phrases']);
   });
   it('the noun drill shows the table blank; a right answer turns its cell right', async () => {
     const { container } = render(Drills, { lang: getLanguage('la'), loadData, navigate: () => {}, random: () => 0 });
@@ -133,7 +133,7 @@ describe('frequent words and phrases (Allan, 2026-10-18)', () => {
     await tick();
     const sheet = () => [...document.querySelectorAll('.cheat')].at(-1);
     const menu = [...sheet().querySelectorAll('.cheat-tab')].map((b) => b.dataset.section);
-    expect(menu).toEqual(['nouns', 'verbs', 'words', 'phrases']);
+    expect(menu).toEqual(['nouns', 'verbs', 'parse', 'words', 'phrases']);
     expect(sheet().querySelector('.cheat-tab.active').dataset.section).toBe('nouns');
     await fireEvent.click(sheet().querySelector('.cheat-tab[data-section="phrases"]'));
     await tick();
@@ -200,5 +200,17 @@ describe('Japanese drills (overnight plan 2026-10-19)', () => {
     expect(tabs.letters).toMatch(/kana/i);
     expect(tabs.nouns).toMatch(/adjective/i);
     expect(tabs.verbs).toMatch(/verb/i);
+  });
+});
+
+describe('Parse the form (drills research 2026-10-20)', () => {
+  it('shows a form of a model word and offers what it could be; a syncretic form never offers its other readings', async () => {
+    const { container } = render(Drills, { lang: getLanguage('la'), loadData, navigate: () => {}, random: () => 0 });
+    await tick2();
+    await fireEvent.click(container.querySelector('.drill-tab[data-drill="parse"]'));
+    await tick2();
+    const prompt = container.querySelector('.quiz-prompt').textContent.trim();
+    expect(['rosa', 'rosae', 'rosam', 'amo', 'amas', 'amat']).toContain(prompt);
+    expect(container.querySelectorAll('.choice').length).toBeGreaterThanOrEqual(2);
   });
 });
