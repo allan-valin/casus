@@ -71,7 +71,7 @@ MODELS = {
     "tr": [("ev", "noun", "house", "casa"), ("kitap", "noun", "book", "livro"), ("okul", "noun", "school", "escola"), ("göz", "noun", "eye", "olho"),
            ("gelmek", "verb", "to come", "vir"), ("okumak", "verb", "to read", "ler")],
     "hu": [("ház", "noun", "house", "casa"), ("könyv", "noun", "book", "livro"), ("asztal", "noun", "table", "mesa"), ("kert", "noun", "garden", "jardim"),
-           ("olvas", "verb", "to read", "ler"), ("lenni", "verb", "to be", "ser, estar")],
+           ("olvas", "verb", "to read", "ler"), ("van", "verb", "to be", "ser, estar")],
     "pl": [("dom", "noun", "house", "casa"), ("kobieta", "noun", "woman", "mulher"), ("okno", "noun", "window", "janela"), ("pies", "noun", "dog", "cachorro"),
            ("nowy", "adj", "new", "novo"), ("czytać", "verb", "to read", "ler"), ("mówić", "verb", "to speak", "falar"), ("być", "verb", "to be", "ser, estar")],
     "pt": [("falar", "verb", "to speak", "falar"), ("comer", "verb", "to eat", "comer"), ("partir", "verb", "to leave", "partir"), ("ser", "verb", "to be", "ser"),

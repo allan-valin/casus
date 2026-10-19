@@ -34,5 +34,5 @@ Decisions (his answers): phrase answers show the REAL sense; explanations writte
   no frequency list. Polish verbs get their person from table order; Turkish verbs from the personal ending (Wiktionary
   tags a row off). Portuguese is caseless: subject / direct / indirect object by word order, articles and clitics.
   Data 692 MB of the 1 GB Pages limit. Known: proper names unknown in the streamed languages (filter drops them);
-  Sanskrit sandhi not split; Hungarian lenni missing from the models.
+  Sanskrit sandhi not split; Hungarian "to be" model fixed (van).
 - Next (my pick, list done): Finnish and Polish lists still building (re-release fi, pl); then the known issues above.
