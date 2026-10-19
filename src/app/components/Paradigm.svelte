@@ -60,7 +60,7 @@
   th { color: var(--ink-2); font-weight: 600; background: var(--panel-hi); }
   td.reading { border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 16%, white); font-weight: 700; }
   td.same-form, li.same-form { background: color-mix(in srgb, var(--accent) 6%, white); outline: 1px dashed var(--muted); }
-  li.reading { font-weight: 700; color: var(--accent); }
+  li.reading { font-weight: 700; color: var(--accent-text); }
   ul { margin: 4px 0; padding-left: 18px; }
   .roman { display: block; font-size: 0.78em; font-style: italic; color: var(--ink-2); }
   .roman.inline { display: inline; }

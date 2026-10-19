@@ -15,6 +15,31 @@
   --pill-size: clamp(0.98rem, 0.86rem + 0.4vw, 1.2rem);
   --gutter: clamp(12px, 2.5vw, 40px);
 }
+/* Colour identity (Allan, 2026-10-20): --accent and --accent-2 come from the language's flag (src/app/lib/theme.js);
+ * the page tints, table heads and stripes are mixed from them, so every palette works in light and dark */
+:root {
+  --accent-2: #c9a227;
+  --bg: color-mix(in srgb, var(--accent) 5%, #f4f1ea);
+  --panel-hi: color-mix(in srgb, var(--accent-2) 14%, #fffdf8);
+  --accent-text: color-mix(in srgb, var(--accent) 88%, black);
+  --table-head: color-mix(in srgb, var(--accent) 24%, #fffdf8);
+  --table-head-ink: var(--ink);
+  --table-stripe: color-mix(in srgb, var(--accent) 7%, #fffdf8);
+}
+:root[data-mode=dark] {
+  color-scheme: dark;
+  --bg: color-mix(in srgb, var(--accent) 8%, #141317);
+  --panel: #1f1d23;
+  --panel-hi: color-mix(in srgb, var(--accent-2) 10%, #29262e);
+  --ink: #ece9e2;
+  --ink-2: #c4c0b6;
+  --muted: #9a958b;
+  --line: #4a4650;
+  --line-soft: #37333c;
+  --accent-text: color-mix(in srgb, var(--accent) 50%, white);
+  --table-head: color-mix(in srgb, var(--accent) 45%, #1f1d23);
+  --table-stripe: color-mix(in srgb, var(--accent) 12%, #1f1d23);
+}
 html { background: var(--bg); }
 body { margin: 0; color: var(--ink); font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: clamp(15px, 14px + 0.25vw, 17px); -webkit-text-size-adjust: 100%; }
 button { font: inherit; padding: 6px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); cursor: pointer; min-height: 36px; }
@@ -27,3 +52,11 @@ select { font: inherit; padding: 5px 8px; border: 1px solid var(--line); border-
 /* a script that needs it reads a little larger (Japanese 1.15, Allan 2026-10-18); defined on main, where
    --font-scale is set, because a custom property resolves its var() where it is declared */
 main { --text-size: calc(clamp(1.02rem, 0.9rem + 0.45vw, 1.3rem) * var(--font-scale, 1)); --pill-size: clamp(0.98rem, 0.86rem + 0.4vw, 1.2rem);   /* the word itself scales in Block (.surface), the badge does not */ }
+
+/* dark mode: the few fixed light backgrounds of components */
+:root[data-mode=dark] .choice.wrong, :root[data-mode=dark] td.wrong input { background: #4a1f1c; }
+:root[data-mode=dark] .choice.right, :root[data-mode=dark] td.right input { background: #1d3d27; }
+:root[data-mode=dark] .hot-partner { background: #6b5a12; color: var(--ink); }
+:root[data-mode=dark] input, :root[data-mode=dark] textarea { background: var(--panel); color: var(--ink); border-color: var(--line); }
+:root[data-mode=dark] td.right { background: #1d3d27; }
+:root[data-mode=dark] td.right .answer, :root[data-mode=dark] .quiz-feedback.right { color: #7ed69b; }

@@ -161,3 +161,59 @@ describe('no romanisation of unvowelled Arabic (browser check 2026-10-19: "lm �
     expect(container.querySelector('.prompt-roman')).toBe(null);
   });
 });
+
+describe('Learn, Allan 2026-10-20 night list', () => {
+  it('topics start collapsed and open on a click; a search opens them', async () => {
+    const { container } = render(Learn, props());
+    await flush();
+    const topics = [...container.querySelectorAll('details.topic')];
+    expect(topics.every((d) => !d.open)).toBe(true);
+    expect(container.querySelector('.topic summary .chev')).not.toBe(null);
+  });
+  it('a lesson page: back button first, the title below it as its own heading', async () => {
+    const { container } = render(Learn, props());
+    await flush();
+    await fireEvent.click(container.querySelector('.lesson-row[data-lesson="n5-004"]'));
+    await flush();
+    const page = container.querySelector('.lesson-page');
+    const back = page.querySelector('.back');
+    const h3 = page.querySelector('h3');
+    expect(back.compareDocumentPosition(h3) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(back.closest('h3')).toBe(null);
+    expect(page.querySelectorAll('.toc .sep').length).toBe(page.querySelectorAll('.toc a').length - 1);
+  });
+  it('words lessons link each word to the dictionary', async () => {
+    const { container } = render(Learn, props());
+    await flush();
+    await fireEvent.click(container.querySelector('.lesson-row[data-lesson="n5-v1"]'));
+    await flush();
+    const links = [...container.querySelectorAll('.words a.dict')];
+    expect(links.length).toBe(2);
+    expect(links[0].href).toContain('wiktionary.org');
+    expect(links[0].href).toContain(encodeURIComponent('会う'));
+  });
+  it('progress can be exported as a file and imported back', async () => {
+    const storage = store();
+    storage.setItem('casus:learn:ja', JSON.stringify({ 'n5-004': { right: 3, total: 4 } }));
+    storage.setItem('casus:learn:fi', JSON.stringify({ 'fi-olla': { right: 1, total: 1 } }));
+    const saved = [];
+    const { container } = render(Learn, props({ storage, saveFile: (name, text) => saved.push([name, text]) }));
+    await flush();
+    await fireEvent.click(container.querySelector('.progress-help summary'));
+    await fireEvent.click(container.querySelector('button.export-progress'));
+    expect(saved[0][0]).toMatch(/^casus-progress-.*\.json$/);
+    const data = JSON.parse(saved[0][1]);
+    expect(data.learn.ja['n5-004']).toEqual({ right: 3, total: 4 });
+    expect(data.learn.fi['fi-olla']).toEqual({ right: 1, total: 1 });
+    const other = store();
+    const r2 = render(Learn, props({ storage: other }));
+    await flush();
+    const input = r2.container.querySelector('input.import-progress');
+    const file = new File([saved[0][1]], 'p.json', { type: 'application/json' });
+    await fireEvent.change(input, { target: { files: [file] } });
+    await flush();
+    expect(r2.container.querySelector('.import-note')?.textContent ?? 'no note').toContain('2');
+    expect(JSON.parse(other.getItem('casus:learn:fi'))['fi-olla']).toEqual({ right: 1, total: 1 });
+    expect(r2.container.querySelector('.lesson-row[data-lesson="n5-004"] .pct').textContent).toBe('75%');
+  });
+});

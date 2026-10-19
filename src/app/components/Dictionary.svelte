@@ -95,7 +95,7 @@
   .dim-out { opacity: 0.45; }
   .form { font-weight: 700; }
   .class, .meta { font-size: 0.85em; color: var(--ink-2); }
-  .wiktionary { font-size: 0.75rem; font-weight: 400; margin-left: 8px; color: var(--accent); }
+  .wiktionary { font-size: 0.75rem; font-weight: 400; margin-left: 8px; color: var(--accent-text); }
   .ipa-line { margin: 2px 0; }
   .ipa { font-family: 'Charis SIL', 'Doulos SIL', 'Gentium Plus', 'Noto Sans', serif; font-size: 1.05rem; color: var(--ink); }
   .dicts { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 0 0 6px; }

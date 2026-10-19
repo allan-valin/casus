@@ -25,4 +25,13 @@ describe('LanguageBar', () => {
     expect(container.querySelector('nav.languages a[aria-current=page]').textContent).toMatch(/Greek/);
     expect(container.querySelector('nav.views a[aria-current=page]').dataset.view).toBe('drills');
   });
+  it('each language carries its flag, and the three sites are distinct buttons with their own mark (Allan, 2026-10-20)', () => {
+    const { container } = render(LanguageBar, { current: 'grc', view: 'reader' });
+    const latin = [...container.querySelectorAll('nav.languages a')].find((a) => a.textContent.includes('Latin'));
+    expect(latin.querySelector('img.flag')).not.toBe(null);
+    const sites = [...container.querySelectorAll('nav.sites .site')];
+    expect(sites.map((x) => x.dataset.site)).toEqual(['casus', 'asia', 'world']);
+    expect(sites.every((x) => x.querySelector('.site-mark'))).toBe(true);
+    expect(container.querySelector('nav.sites .site.here').dataset.site).toBe('casus');
+  });
 });

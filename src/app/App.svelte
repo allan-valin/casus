@@ -25,6 +25,9 @@
   import SendToCasus from './components/SendToCasus.svelte';
   import Proofread from './components/Proofread.svelte';
   import Learn from './components/Learn.svelte';
+  import ThemeControls from './components/ThemeControls.svelte';
+  import { languageFlag } from './lib/theme.js';
+  import { SITE } from '../sites.js';
   import { describeAnalysis } from './lib/colors.js';
   import { partners as partnersOf } from './lib/chunks.js';
   import { createLive } from '../lib/live.js';
@@ -176,7 +179,7 @@
   {#if activity.busy}<div class="busy" role="progressbar" aria-label="loading"></div>{/if}
   <header class="top">
     <div class="brand">
-      <h1>Casus <span class="lang-name">· {lang.name?.[ui.lang] ?? ''}</span></h1>
+      <h1>{SITE.title} <span class="lang-name">· {#if languageFlag(lang.code)}<img class="flag" src={languageFlag(lang.code)} alt="" />{/if}{lang.name?.[ui.lang] ?? ''}</span></h1>
       <LanguageBar current={lang.code} view={route.view} />
       <p class="tagline">{t('app.tagline', { language: lang.inText?.[ui.lang] ?? lang.name?.[ui.lang] })}</p>
     </div>
@@ -190,6 +193,7 @@
         <button class="export-json" disabled={!reader} title={t('app.export.json.title')} onclick={() => download('json')}>{t('app.export.json')}</button>
         <button class="export-md" disabled={!reader} title={t('app.export.md.title')} onclick={() => download('md')}>{t('app.export.md')}</button>
       </div>{/if}
+      <ThemeControls code={lang.code} {storage} />
       <button class="help-button" title={t('app.help.title')} aria-label="help" onclick={() => (help = true)}>?</button>
     </div>
   </header>
@@ -270,6 +274,7 @@
   .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
   h1 { margin: 0; font-family: Georgia, serif; font-size: clamp(1.7rem, 1.4rem + 1.2vw, 2.4rem); letter-spacing: 0.01em; }
   .lang-name { font-size: 0.5em; color: var(--muted); font-family: system-ui, sans-serif; font-weight: 400; }
+  .lang-name .flag { width: 1.5em; height: 1.1em; border-radius: 2px; margin: 0 6px 0 2px; vertical-align: -0.15em; box-shadow: 0 0 0 1px rgba(0,0,0,.15); }
   .brand :global(nav.languages) { margin: 8px 0 2px; }
   .tagline { margin: 4px 0 0; color: var(--ink-2); max-width: 60ch; }
   .corner { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }

@@ -71,9 +71,10 @@ def lesson_page(src: dict, tables=None) -> dict:
         sections.append({"id": "formation", "title": SECTION_TITLES["formation"], "html": _table(src["table"])})
     if src.get("paradigms") and tables:
         from learn_tables import paradigm_table
-        data, attested, sigma = tables
+        data, attested, sigma, *rest = tables
+        exclude = rest[0] if rest else None
         for k, spec in enumerate(src["paradigms"]):
-            t = paradigm_table(data, spec, attested=attested, final_sigma=sigma)
+            t = paradigm_table(data, spec, attested=attested, final_sigma=sigma, exclude=exclude)
             label = spec.get("label") or {"en": spec["word"], "pt": spec["word"]}
             sections.append({"id": f"paradigm-{k}", "title": _both(label), "html": _table(t)})
     for s in src.get("sections", []):
@@ -110,7 +111,7 @@ def curriculum_learn(path: Path, tables=None) -> tuple[dict, dict, dict]:
         for t_k, topic in enumerate(lv["topics"], 1):
             entries = []
             for src in topic["lessons"]:
-                page = lesson_page(src, tables)
+                page = lesson_page(src, (*tables, data.get("exclude_forms")) if tables else None)
                 page.update({"level": lv["id"], "topic": _both(topic["title"])})
                 lessons[page["id"]] = page
                 entries.append({"id": page["id"], "title": page["title"], "meaning": page["meaning"]})

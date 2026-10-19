@@ -46,3 +46,10 @@ def test_finnish_cases_and_an_adjective_without_gender():
     a = paradigm_table(fi, {"word": "iso", "pos": "adj"})
     assert a["head"]["en"] == ["", "singular", "plural"]
     assert {r[0]["en"]: r[1:] for r in a["rows"]}["elative"] == ["isosta", "isoista"]
+
+
+def test_possessive_forms_never_fill_a_cell():
+    fi = Path(__file__).parent / "fixtures" / "tables" / "fi"
+    t = paradigm_table(fi, {"word": "talo", "pos": "noun"}, attested={"taloomme": 9, "talonne": 9}, exclude=r"((?<!k)si|ni|mme|nne|nsa|nsä)$")
+    rows = {r[0]["en"]: r[1:] for r in t["rows"]}
+    assert rows["genitive"] == ["talon", "talojen"] and rows["illative"] == ["taloon", "taloihin"]

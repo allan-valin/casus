@@ -46,11 +46,14 @@ def _rows(data: Path, word: str, pos: str):
     return out
 
 
-def paradigm_table(data: Path, spec: dict, attested: dict | None = None, final_sigma: bool = False) -> dict:
+def paradigm_table(data: Path, spec: dict, attested: dict | None = None, final_sigma: bool = False, exclude: str | None = None) -> dict:
     """{head: {en, pt}, rows: [[label {en, pt}, cell…]]} for a noun (case × number), an adjective or pronoun (case ×
     gender, in one number) or a verb (person × number, in one tense, mood and voice)"""
     attested = attested or {}
     forms = _rows(Path(data), spec["word"], spec["pos"])
+    if exclude:
+        # (Finnish: the data files possessive forms — taloomme — under the plain cases)
+        forms = [(f, a) for f, a in forms if not re.search(exclude, f)]
     fix = (lambda w: re.sub(r"σ\b", "ς", w)) if final_sigma else (lambda w: w)   # noqa: E731
 
     import unicodedata
