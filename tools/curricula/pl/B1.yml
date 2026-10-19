@@ -1,0 +1,72 @@
+id: B1
+topics:
+
+- title: {en: Conditions and clauses, pt: Condições e orações}
+  lessons:
+  - id: pl-conditional
+    title: zrobiłbym, gdyby
+    meaning: {en: "the conditional: -by", pt: "o condicional: -by"}
+    intro:
+      en: |
+        Past form + **-by** + person ending: **zrobiłbym** (I would do, man), **zrobiłabym** (woman), **zrobiłbyś, zrobiłby, zrobilibyśmy…** Polite wishes: **Chciałbym kawę.** "I'd like a coffee." With **gdyby** (if): **Gdybym miał czas, poszedłbym.** "If I had time, I'd go." **żeby** (so that) takes the same forms: **Chcę, żebyś przyszedł.**
+      pt: |
+        Forma do passado + **-by** + terminação pessoal: **zrobiłbym** (eu faria, homem), **zrobiłabym** (mulher), **zrobiłbyś, zrobiłby, zrobilibyśmy…** Desejos educados: **Chciałbym kawę.** "Eu queria um café." Com **gdyby** (se): **Gdybym miał czas, poszedłbym.** "Se eu tivesse tempo, iria." **żeby** (para que) usa as mesmas formas: **Chcę, żebyś przyszedł.** "Quero que você venha."
+    examples:
+    - [Chciałbym kawę., I'd like a coffee., Eu queria um café., Chciałbym]
+    match:
+    # (one gender per question: a speaker of either sex says Chciałbym or Chciałabym, both right)
+    - {seq: [{re: "(łabym|łabyś|łaby|łybyśmy|łybyście|łyby)$"}], suffixes: [łabym, łabyś, łaby, łybyśmy, łyby], attested: true}
+    - {seq: [{re: "(łbym|łbyś|łby|libyśmy|libyście|liby)$"}], suffixes: [łbym, łbyś, łby, libyśmy, liby], attested: true}
+    - {seq: [{word: [gdybym, gdybyś, gdyby, gdybyśmy, żebym, żebyś, żeby, żebyśmy]}], gap: 0, pool: [gdybym, gdybyś, gdyby, żebym, żebyś, żeby]}
+
+  - id: pl-relative
+    title: który, która, które
+    meaning: {en: "relative clauses with który", pt: "orações relativas com który"}
+    intro:
+      en: |
+        **który / która / które** agrees with its noun and takes the case of its role in the clause: **człowiek, który tu mieszka** "the man who lives here", **książka, którą czytam** "the book I'm reading", **miasto, w którym mieszkam** "the town I live in". A comma always comes before it.
+      pt: |
+        **który / która / które** concorda com o substantivo e fica no caso da sua função na oração: **człowiek, który tu mieszka** "o homem que mora aqui", **książka, którą czytam** "o livro que estou lendo", **miasto, w którym mieszkam** "a cidade em que moro". Sempre há vírgula antes.
+    examples:
+    - ["To jest książka, którą czytam.", "This is the book I'm reading.", "Este é o livro que estou lendo.", "którą"]
+    match: {seq: [{lemma: "^który$", pos: pron}], same: [number]}
+
+  - id: pl-conjunctions
+    title: że, bo, kiedy, jeśli
+    meaning: {en: "that, because, when, if", pt: "que, porque, quando, se"}
+    intro:
+      en: |
+        **że** that, **bo / ponieważ** because, **kiedy / gdy** when, **jeśli / jeżeli** if, **ale** but, **albo / lub** or, **i / a** and, **ani** nor, **niż** than, **chociaż** although, **zanim** before, **dopóki** as long as.
+      pt: |
+        **że** que, **bo / ponieważ** porque, **kiedy / gdy** quando, **jeśli / jeżeli** se, **ale** mas, **albo / lub** ou, **i / a** e, **ani** nem, **niż** que (comparação), **chociaż** embora, **zanim** antes que, **dopóki** enquanto.
+    examples:
+    - ["Wiem, że masz rację.", "I know you're right.", "Sei que você tem razão.", "że"]
+    match: {seq: [{word: [że, bo, ponieważ, kiedy, gdy, jeśli, jeżeli, ale, albo, niż, chociaż, zanim]}], gap: 0}
+    pool: [że, bo, kiedy, jeśli, ale, albo, niż, chociaż]
+
+  - id: pl-comparison
+    title: lepszy, najlepszy
+    meaning: {en: "comparative -szy / bardziej and superlative naj-", pt: "comparativo -szy / bardziej e superlativo naj-"}
+    intro:
+      en: |
+        **-szy / -ejszy**: **nowy → nowszy, ładny → ładniejszy**; long adjectives use **bardziej** (more): **bardziej interesujący**; superlative **naj-**: **najnowszy, najbardziej**. Irregular: **dobry → lepszy → najlepszy**, **zły → gorszy**, **duży → większy**, **mały → mniejszy**. *Than*: **niż** or **od** + genitive.
+      pt: |
+        **-szy / -ejszy**: **nowy → nowszy, ładny → ładniejszy**; adjetivos longos usam **bardziej** (mais): **bardziej interesujący**; superlativo **naj-**: **najnowszy, najbardziej**. Irregulares: **dobry → lepszy → najlepszy**, **zły → gorszy**, **duży → większy**, **mały → mniejszy**. O *que*: **niż** ou **od** + genitivo.
+    examples:
+    - [To jest najlepsza kawa., This is the best coffee., Este é o melhor café., najlepsza]
+    match:
+    - {seq: [{pos: adj, re: "^naj"}], prefixes: [naj, ""], attested: true}
+    - {seq: [{pos: adj, re: "(szy|sza|sze|szego|szej|szym)$", not: {lemma: "szy$"}}], prefixes: [naj, ""], attested: true}
+
+  - id: pl-reflexive
+    title: się
+    meaning: {en: "reflexive się", pt: "o reflexivo się"}
+    intro:
+      en: |
+        **się** belongs to many verbs: **nazywam się** "my name is", **uczę się** "I'm learning", **boję się** "I'm afraid", **śmieję się** "I laugh", **podoba mi się** "I like it". It also makes impersonal sentences: **Tu się nie pali.** "No smoking here."
+      pt: |
+        **się** faz parte de muitos verbos: **nazywam się** "me chamo", **uczę się** "estou estudando", **boję się** "tenho medo", **śmieję się** "rio", **podoba mi się** "gosto disso". Também forma frases impessoais: **Tu się nie pali.** "Aqui não se fuma."
+    examples:
+    - ["Jak się nazywasz?", "What's your name?", "Como você se chama?", "się"]
+    match: {seq: [{word: [się]}], gap: 0}
+    pool: [się, sobie, siebie, mi, ci]

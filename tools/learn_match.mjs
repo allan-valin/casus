@@ -209,3 +209,15 @@ export function dropMarked(forms, answer, re) {
   const marked = new RegExp(re, 'u');
   return marked.test(answer) ? forms : forms.filter((f) => !marked.test(f));
 }
+
+/** wrong answers less the answer's partner in the other gender (Polish popełniłem / popełniłam, Czech četl / četla:
+ * with the speaker unseen both are right); pairs: [[masculine ending, feminine ending], …], longest first wins */
+export function dropPartners(forms, answer, pairs) {
+  const low = answer.toLocaleLowerCase();
+  const partners = new Set();
+  for (const [a, b] of [...pairs].sort((x, y) => Math.max(y[0].length, y[1].length) - Math.max(x[0].length, x[1].length))) {
+    if (low.endsWith(a)) partners.add(low.slice(0, -a.length) + b);
+    if (low.endsWith(b)) partners.add(low.slice(0, -b.length) + a);
+  }
+  return forms.filter((f) => !partners.has(f.toLocaleLowerCase()));
+}

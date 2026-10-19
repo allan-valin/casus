@@ -219,3 +219,11 @@ it('re also matches the word as written when the key strips accents (Modern Gree
 it('suffixVariants keeps marks that belong to the suffix (Devanagari vowel signs, virama)', () => {
   expect(suffixVariants('गच्छति', ['ति', 'न्ति', 'ामि'])).toEqual(['गच्छन्ति', 'गच्छामि']);
 });
+
+import { dropPartners } from '../../tools/learn_match.mjs';
+
+it('dropPartners removes the same form in the other gender (both are right for an unseen speaker)', () => {
+  const pairs = [['łem', 'łam'], ['ł', 'ła']];
+  expect(dropPartners(['popełniłam', 'popełnił', 'popełniliśmy'], 'popełniłem', pairs)).toEqual(['popełnił', 'popełniliśmy']);
+  expect(dropPartners(['četla', 'četli'], 'četl', [['l', 'la']])).toEqual(['četli']);
+});

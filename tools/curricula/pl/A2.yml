@@ -1,0 +1,122 @@
+id: A2
+topics:
+
+- title: {en: Past and future, pt: Passado e futuro}
+  lessons:
+  - id: pl-past
+    title: robiłem, robiłam
+    meaning: {en: "the past: -ł- with person endings and gender", pt: "o passado: -ł- com terminações de pessoa e gênero"}
+    intro:
+      en: |
+        Infinitive minus **-ć**, plus **-ł-** and an ending that shows person **and gender**: **robiłem** (I did, man), **robiłam** (woman), **robiłeś / robiłaś** (you did), **robił / robiła / robiło** (he / she / it did), **robiliśmy / robiłyśmy** (we), **robili / robiły** (they). Some stems change: **mieć → miałem, iść → szedłem / szłam, jeść → jadłem**.
+      pt: |
+        Infinitivo menos **-ć**, mais **-ł-** e uma terminação que mostra pessoa **e gênero**: **robiłem** (eu fiz, homem), **robiłam** (mulher), **robiłeś / robiłaś** (você fez), **robił / robiła / robiło** (ele / ela / isso fez), **robiliśmy / robiłyśmy** (nós), **robili / robiły** (eles / elas). Alguns radicais mudam: **mieć → miałem, iść → szedłem / szłam, jeść → jadłem**.
+    examples:
+    - [Wczoraj byłem w kinie., Yesterday I was at the cinema., Ontem eu estava no cinema., byłem]
+    - ["Co robiłaś?", "What were you doing?", "O que você estava fazendo?", "robiłaś"]
+    # (wrong answers keep the answer's gender: a woman's Četla is as right as Četl)
+    match: {seq: [{pos: verb, tense: past}], same: [tense], partners: [[łem, łam], [łeś, łaś], [liśmy, łyśmy], [liście, łyście], [li, ły], [ł, ła]]}
+
+  - id: pl-aspect
+    title: pisać – napisać
+    meaning: {en: "aspect: imperfective and perfective", pt: "aspecto: imperfectivo e perfectivo"}
+    intro:
+      en: |
+        Verbs come in pairs: **imperfective** for an ongoing or repeated action (**pisać**, **robić**, **kupować**), **perfective** for a completed one (**napisać**, **zrobić**, **kupić**). A perfective in the present form means the **future**: **Napiszę list.** "I'll write the letter." Imperfectives make the future with **będę**: **Będę pisać / pisał.**
+      pt: |
+        Os verbos vêm em pares: **imperfectivo** para ação em andamento ou repetida (**pisać**, **robić**, **kupować**), **perfectivo** para ação concluída (**napisać**, **zrobić**, **kupić**). Um perfectivo na forma do presente significa **futuro**: **Napiszę list.** "Vou escrever a carta." Os imperfectivos fazem o futuro com **będę**: **Będę pisać / pisał.**
+    examples:
+    - [Zrobię to jutro., I'll do it tomorrow., Faço isso amanhã., Zrobię]
+    match: {seq: [{pos: verb, re: "^(na|z|s|u|prze|po|wy|za|do|przy)"}], prefixes: [na, z, s, u, prze, po, wy, za, do, przy, ""], attested: true}
+
+  - id: pl-future
+    title: będę robić
+    meaning: {en: "the future of imperfective verbs: będę", pt: "o futuro dos verbos imperfectivos: będę"}
+    intro:
+      en: |
+        **będę, będziesz, będzie, będziemy, będziecie, będą** + the infinitive or the past form: **Będę czytać / czytał.** "I'll be reading." Also the future of **być**: **Jutro będę w domu.**
+      pt: |
+        **będę, będziesz, będzie, będziemy, będziecie, będą** + o infinitivo ou a forma do passado: **Będę czytać / czytał.** "Vou estar lendo." Também o futuro de **być**: **Jutro będę w domu.** "Amanhã estarei em casa."
+    examples:
+    - [Jutro będę w domu., Tomorrow I'll be at home., Amanhã estarei em casa., będę]
+    match: {seq: [{word: [będę, będziesz, będzie, będziemy, będziecie, będą]}], gap: 0}
+    pool: [będę, będziesz, będzie, będziemy, będziecie, będą]
+
+- title: {en: More cases and pronouns, pt: Mais casos e pronomes}
+  lessons:
+  - id: pl-dative
+    title: dam to bratu
+    meaning: {en: "the dative: to, for", pt: "o dativo: a, para"}
+    intro:
+      en: |
+        **-owi / -u** (masc.: **bratu, ojcu, panu, Tomkowi**), **-e / -i / -y** (fem.: **mamie, siostrze**), **-u** (neut.: **dziecku**); plural **-om**. After **dać, pomagać, dziękować, podobać się**, and **dzięki** (thanks to), **przeciw** (against), **ku** (towards): **Dziękuję panu.** "Thank you, sir."
+      pt: |
+        **-owi / -u** (masc.: **bratu, ojcu, panu, Tomkowi**), **-e / -i / -y** (fem.: **mamie, siostrze**), **-u** (neutro: **dziecku**); plural **-om**. Depois de **dać, pomagać, dziękować, podobać się**, e de **dzięki** (graças a), **przeciw** (contra), **ku** (em direção a): **Dziękuję panu.** "Obrigado, senhor."
+    examples:
+    - [Pomagam mamie., I'm helping mum., Estou ajudando a mamãe., mamie]
+    match: {seq: [{pos: noun, case: dat}], same: [number]}
+
+  - id: pl-pronouns
+    title: mnie, mi, cię, ci, go, mu
+    meaning: {en: "personal pronouns in the cases", pt: "os pronomes pessoais nos casos"}
+    intro:
+      en: |
+        Short forms come after the verb, not stressed: **Kocham cię.** "I love you." **Dam ci to.** "I'll give it to you." **Znasz go?** "Do you know him?" Accusative **mnie, cię, go, ją, nas, was, ich / je**; dative **mi, ci, mu, jej, nam, wam, im**. After a preposition **on → n-**: **do niego, z nią, o nich**.
+      pt: |
+        As formas curtas vêm depois do verbo, sem acento: **Kocham cię.** "Te amo." **Dam ci to.** "Te dou isso." **Znasz go?** "Você o conhece?" Acusativo **mnie, cię, go, ją, nas, was, ich / je**; dativo **mi, ci, mu, jej, nam, wam, im**. Depois de preposição **on → n-**: **do niego, z nią, o nich**.
+    examples:
+    - [Kocham cię., I love you., Te amo., cię]
+    - [Daj mi to., Give it to me., Me dá isso., mi]
+    match: {seq: [{word: [mnie, mi, cię, ci, go, mu, ją, nas, nam, was, wam, ich, im, jej, niego, nią, nich]}], gap: 0}
+    pool: [mnie, mi, cię, ci, go, mu, ją, nas, nam, was, wam, ich, im]
+
+  - id: pl-plural
+    title: koty, kobiety, studenci
+    meaning: {en: "the plural, and the masculine-personal form", pt: "o plural, e a forma masculino-pessoal"}
+    intro:
+      en: |
+        Most nouns: **-y / -i** (**kot → koty, kobieta → kobiety, noga → nogi**), **-e** after soft consonants (**koń → konie, ulica → ulice**), neuters **-a** (**okno → okna**). Groups of **men** have their own forms, with softened consonants: **student → studenci, Polak → Polacy, pan → panowie**. Irregular: **człowiek → ludzie, dziecko → dzieci, oko → oczy, ręka → ręce**.
+      pt: |
+        A maioria: **-y / -i** (**kot → koty, kobieta → kobiety, noga → nogi**), **-e** depois de consoante mole (**koń → konie, ulica → ulice**), neutros **-a** (**okno → okna**). Grupos de **homens** têm formas próprias, com consoante amolecida: **student → studenci, Polak → Polacy, pan → panowie**. Irregulares: **człowiek → ludzie, dziecko → dzieci, oko → oczy, ręka → ręce**.
+    examples:
+    - [Dzieci się bawią., The children are playing., As crianças estão brincando., Dzieci]
+    match: {seq: [{pos: noun, case: nom, number: pl}], same: [case]}
+
+- title: {en: Commands and modal verbs, pt: Ordens e verbos modais}
+  lessons:
+  - id: pl-imperative
+    title: pisz, piszcie
+    meaning: {en: "the imperative", pt: "o imperativo"}
+    intro:
+      en: |
+        From the 3rd person plural minus its ending: **piszą → pisz! piszcie!**, **czytają → czytaj! czytajcie!**; **-my** is *let's*: **chodźmy!** Polite: **Proszę usiąść.** "Please sit down." Common: **chodź** (come), **czekaj** (wait), **słuchaj** (listen), **daj** (give), **zobacz** (look).
+      pt: |
+        Da 3ª pessoa do plural menos a terminação: **piszą → pisz! piszcie!**, **czytają → czytaj! czytajcie!**; **-my** é *vamos*: **chodźmy!** Formal: **Proszę usiąść.** "Sente-se, por favor." Comuns: **chodź** (vem), **czekaj** (espera), **słuchaj** (escuta), **daj** (dá), **zobacz** (olha).
+    examples:
+    - [Chodź tutaj!, Come here!, Vem cá!, Chodź]
+    match: {seq: [{pos: verb, mood: imp, start: true}], same: [mood]}
+
+  - id: pl-modals
+    title: muszę, mogę, chcę
+    meaning: {en: "modal verbs: must, can, want", pt: "verbos modais: dever, poder, querer"}
+    intro:
+      en: |
+        **musieć** must (**muszę, musisz**), **móc** can (**mogę, możesz, może**), **chcieć** want (**chcę, chcesz, chce**), **umieć** know how (**umiem**), **woleć** prefer (**wolę**) — + infinitive: **Muszę iść.** "I have to go." Impersonal: **trzeba** (one must), **można** (one may), **wolno** (it's allowed).
+      pt: |
+        **musieć** dever (**muszę, musisz**), **móc** poder (**mogę, możesz, może**), **chcieć** querer (**chcę, chcesz, chce**), **umieć** saber fazer (**umiem**), **woleć** preferir (**wolę**) — + infinitivo: **Muszę iść.** "Tenho de ir." Impessoais: **trzeba** (é preciso), **można** (pode-se), **wolno** (é permitido).
+    examples:
+    - [Muszę iść., I have to go., Tenho de ir., Muszę]
+    - ["Chcesz kawy?", "Do you want coffee?", "Você quer café?", "Chcesz"]
+    match: {seq: [{lemma: "^(musieć|móc|chcieć|umieć|woleć)$", mood: ind, tense: pres}], same: [tense, mood]}
+
+  - id: pl-motion
+    title: iść, jechać, chodzić
+    meaning: {en: "verbs of motion: on foot or by vehicle, now or usually", pt: "verbos de movimento: a pé ou de veículo, agora ou sempre"}
+    intro:
+      en: |
+        **iść / chodzić** on foot, **jechać / jeździć** by vehicle; **iść, jechać** for one trip now, **chodzić, jeździć** for habit: **Idę do sklepu.** "I'm going to the shop (now)." **Chodzę do szkoły.** "I go to school (usually)." **Jadę autobusem.**
+      pt: |
+        **iść / chodzić** a pé, **jechać / jeździć** de veículo; **iść, jechać** para uma ida agora, **chodzić, jeździć** para hábito: **Idę do sklepu.** "Estou indo à loja (agora)." **Chodzę do szkoły.** "Vou à escola (sempre)." **Jadę autobusem.** "Vou de ônibus."
+    examples:
+    - [Idę do sklepu., I'm going to the shop., Estou indo à loja., Idę]
+    match: {seq: [{lemma: "^(iść|jechać|chodzić|jeździć)$", mood: ind}], same: [person, number]}

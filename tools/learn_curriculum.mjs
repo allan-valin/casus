@@ -12,7 +12,7 @@
 import { readFile, writeFile, readdir } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import path from 'node:path';
-import { matchRule, formPool, preferAttested, looksLikeName, dropMarked, spellingVariants, prefixVariants, suffixVariants, unsuitable, markOf, rewrite, rowFor, consonantV, followSpelling } from './learn_match.mjs';
+import { matchRule, formPool, preferAttested, looksLikeName, dropMarked, dropPartners, spellingVariants, prefixVariants, suffixVariants, unsuitable, markOf, rewrite, rowFor, consonantV, followSpelling } from './learn_match.mjs';
 import { gapRoman } from './learn_examples.mjs';
 
 export const TATOEBA = { mk: 'mkd', ar: 'ara', la: 'lat', grc: 'grc', de: 'deu', ru: 'rus', ko: 'kor', zh: 'cmn', fi: 'fin', el: 'ell', sa: 'san', cs: 'ces', pl: 'pol', tr: 'tur', hu: 'hun', is: 'isl', pt: 'por', en: 'eng', es: 'spa' };
@@ -179,6 +179,9 @@ async function main(code) {
       if ((prefixes || suffixes) && !swaps && (rule.attested ?? l.attested)) wrong = preferAttested(wrong, attested, norm);
       // nothing real to offer: no question (a form left with only invented neighbours)
       if ((prefixes || suffixes) && !swaps && (rule.attested ?? l.attested) && !wrong.length) { seen.set(key, (seen.get(key) ?? 1) - 1); continue; }
+      // never the answer's other-gender partner (popełniłem / popełniłam): both are right for an unseen speaker
+      const partnerPairs = rule.partners ?? l.partners;
+      if (wrong && partnerPairs) wrong = dropPartners(wrong, answer, partnerPairs);
       // one choice per word, whatever its capital (Ο / ο), and never the answer itself
       if (wrong) { const low = new Set([answer.toLocaleLowerCase()]); wrong = wrong.filter((w) => { const k = w.toLocaleLowerCase(); if (low.has(k)) return false; low.add(k); return true; }); }
       else if (rulePool) wrong = rulePool.filter((w) => norm(w) !== norm(answer));

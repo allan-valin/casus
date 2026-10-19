@@ -1,0 +1,198 @@
+id: A1
+topics:
+
+- title: {en: Sounds and spelling, pt: Sons e escrita}
+  lessons:
+  - id: pl-sounds
+    title: sz, cz, rz, ż, ą, ę
+    meaning: {en: "the alphabet: digraphs, soft consonants, nasal vowels", pt: "o alfabeto: dígrafos, consoantes moles, vogais nasais"}
+    intro:
+      en: |
+        Polish spelling is regular once you know the groups:
+
+        - **sz** = *sh*, **cz** = *ch*, **rz / ż** = *s* in pleasure (two spellings, one sound), **dż** = *j* in jam
+        - **ś, ć, ź, dź, ń** — soft versions, written **si, ci, zi, dzi, ni** before a vowel: **ś**wiat, **ci**epło
+        - **ł** = *w* in water; **w** = *v*; **ch / h** = *h* (rough)
+        - **ą, ę** are nasal vowels (*on, en*): **są** (they are), **idę** (I go); **ó** = *u* (spelling: **ó / u** are the same sound)
+
+        Stress falls on the **second-to-last syllable**: **Polska, dziękuję, uniwersytet**.
+      pt: |
+        A ortografia polonesa é regular quando se conhecem os grupos:
+
+        - **sz** = *ch* de chá, **cz** = *tch*, **rz / ż** = *j* de já (duas grafias, um som), **dż** = *dj*
+        - **ś, ć, ź, dź, ń** — versões moles, escritas **si, ci, zi, dzi, ni** antes de vogal: **ś**wiat, **ci**epło
+        - **ł** = *u* semivogal (como em *mau*); **w** = *v*; **ch / h** = *rr* carioca
+        - **ą, ę** são vogais nasais (*om, em*): **są** (são), **idę** (vou); **ó** = *u* (as grafias **ó / u** têm o mesmo som)
+
+        O acento cai na **penúltima sílaba**: **Polska, dziękuję, uniwersytet**.
+    mistakes:
+    - wrong: mozę
+      right: może
+      why: {en: "ż and z are different letters: learn ż/rz words as written.", pt: "ż e z são letras diferentes: aprenda as palavras com ż/rz como se escrevem."}
+    examples:
+    - [Dziękuję bardzo., Thank you very much., Muito obrigado., Dziękuję]
+    match: {seq: [{pos: [noun, adj, verb], re: "[ąęóżźśćńł]"}]}
+    swaps: {ą: [a, o], ę: [e], ó: [u, o], ż: [z, rz], ź: [z], ś: [s], ć: [c], ń: [n], ł: [l]}
+
+- title: {en: "Pronouns and 'być'", pt: "Pronomes e 'być'"}
+  lessons:
+  - id: pl-byc
+    title: jestem, jesteś, jest
+    meaning: {en: "personal pronouns and być 'to be'", pt: "pronomes pessoais e być 'ser, estar'"}
+    intro:
+      en: |
+        **ja** I, **ty** you, **on / ona / ono** he / she / it, **my** we, **wy** you (pl.), **oni** (with men) / **one** (all others) they. Polite *you* is **pan** (to a man), **pani** (to a woman), **państwo** (to a group), with the 3rd person verb: **Czy pan jest z Polski?**
+
+        **być**: **jestem, jesteś, jest, jesteśmy, jesteście, są**.
+      pt: |
+        **ja** eu, **ty** tu/você, **on / ona / ono** ele / ela / isso, **my** nós, **wy** vocês, **oni** (com homens) / **one** (os demais) eles. O *você* formal é **pan** (a um homem), **pani** (a uma mulher), **państwo** (a um grupo), com o verbo na 3ª pessoa: **Czy pan jest z Polski?** "O senhor é da Polônia?"
+
+        **być**: **jestem, jesteś, jest, jesteśmy, jesteście, są**.
+    paradigms:
+    - {word: być, pos: verb, tense: pres, mood: ind, label: {en: "być to be", pt: "być ser, estar"}}
+    examples:
+    - [Jestem studentem., I'm a student., Sou estudante., Jestem]
+    - ["Gdzie jesteś?", "Where are you?", "Onde você está?", "jesteś"]
+    match: {seq: [{lemma: "^być$", mood: ind, tense: pres}], same: [tense, mood]}
+
+- title: {en: The present tense, pt: O presente}
+  lessons:
+  - id: pl-present
+    title: czytam, mówię, piszę
+    meaning: {en: "the present: -m/-sz verbs and -ę/-esz verbs", pt: "o presente: verbos em -m/-sz e em -ę/-esz"}
+    intro:
+      en: |
+        Two big patterns:
+
+        | | czytać (read) | mówić (speak) | pisać (write) |
+        |---|---|---|---|
+        | ja | czyta**m** | mówi**ę** | pisz**ę** |
+        | ty | czyta**sz** | mówi**sz** | pisz**esz** |
+        | on | czyta | mówi | pisz**e** |
+        | my | czyta**my** | mówi**my** | pisz**emy** |
+        | wy | czyta**cie** | mówi**cie** | pisz**ecie** |
+        | oni | czytaj**ą** | mówi**ą** | pisz**ą** |
+
+        Verbs in **-ać** mostly follow *czytać*; many have their own stem (**pisać → piszę, iść → idę, jechać → jadę**).
+      pt: |
+        Dois grandes modelos:
+
+        | | czytać (ler) | mówić (falar) | pisać (escrever) |
+        |---|---|---|---|
+        | ja | czyta**m** | mówi**ę** | pisz**ę** |
+        | ty | czyta**sz** | mówi**sz** | pisz**esz** |
+        | on | czyta | mówi | pisz**e** |
+        | my | czyta**my** | mówi**my** | pisz**emy** |
+        | wy | czyta**cie** | mówi**cie** | pisz**ecie** |
+        | oni | czytaj**ą** | mówi**ą** | pisz**ą** |
+
+        Os verbos em **-ać** seguem em geral *czytać*; muitos têm radical próprio (**pisać → piszę, iść → idę, jechać → jadę**).
+    paradigms:
+    - {word: robić, pos: verb, tense: pres, mood: ind, label: {en: "robić to do", pt: "robić fazer"}}
+    examples:
+    - ["Mówisz po polsku?", "Do you speak Polish?", "Você fala polonês?", "Mówisz"]
+    - ["Co robisz?", "What are you doing?", "O que você está fazendo?", "robisz"]
+    match: {seq: [{pos: verb, mood: ind, tense: pres, person: ["1", "2", "3"], not: {lemma: "^być$"}}], same: [tense, mood]}
+
+  - id: pl-negation
+    title: nie mam, nic, nigdy
+    meaning: {en: "negation: nie, and the genitive after it", pt: "negação: nie, e o genitivo depois dela"}
+    intro:
+      en: |
+        **nie** before the verb (written separately): **Nie wiem.** "I don't know." Double negatives are normal: **Nikt nic nie wie.** "Nobody knows anything." (**nikt** nobody, **nic** nothing, **nigdy** never, **nigdzie** nowhere). A direct object becomes **genitive** after a negated verb: **Mam samochód → Nie mam samochodu.**
+      pt: |
+        **nie** antes do verbo (escrito separado): **Nie wiem.** "Não sei." Dupla negação é normal, como no português: **Nikt nic nie wie.** "Ninguém sabe nada." (**nikt** ninguém, **nic** nada, **nigdy** nunca, **nigdzie** em lugar nenhum). O objeto direto vai para o **genitivo** depois de verbo negado: **Mam samochód → Nie mam samochodu.** "Não tenho carro."
+    mistakes:
+    - wrong: Nie mam samochód.
+      right: Nie mam samochodu.
+      why: {en: "After a negated verb the object is genitive.", pt: "Depois de verbo negado o objeto vai para o genitivo."}
+    examples:
+    - [Nie mam czasu., I don't have time., Não tenho tempo., czasu]
+    - [Nikt nic nie wie., Nobody knows anything., Ninguém sabe nada., nic]
+    match:
+    - {seq: [{word: [nie]}, {lemma: "^(mieć|widzieć|lubić|znać|potrzebować|rozumieć|kupić|jeść|pić)$"}, {pos: noun, case: gen}], near: 2, gap: 2, same: [number]}
+    - {seq: [{word: [nikt, nic, nigdy, nigdzie, żaden, żadna, żadne]}], gap: 0, pool: [nikt, nic, nigdy, nigdzie, coś, ktoś, zawsze]}
+
+  - id: pl-questions
+    title: kto, co, gdzie
+    meaning: {en: "question words, and czy", pt: "palavras interrogativas, e czy"}
+    intro:
+      en: |
+        **kto** who, **co** what, **gdzie** where, **dokąd** where to, **skąd** where from, **kiedy** when, **dlaczego / czemu** why, **jak** how, **ile** how much, **który** which, **jaki** what kind of. Yes/no questions start with **czy**: **Czy masz czas?** "Do you have time?"
+      pt: |
+        **kto** quem, **co** o que, **gdzie** onde, **dokąd** para onde, **skąd** de onde, **kiedy** quando, **dlaczego / czemu** por que, **jak** como, **ile** quanto, **który** qual, **jaki** que tipo de. Perguntas de sim ou não começam com **czy**: **Czy masz czas?** "Você tem tempo?"
+    examples:
+    - ["Gdzie mieszkasz?", "Where do you live?", "Onde você mora?", "Gdzie"]
+    - ["Czy masz czas?", "Do you have time?", "Você tem tempo?", "Czy"]
+    match: {seq: [{word: [kto, co, gdzie, dokąd, skąd, kiedy, dlaczego, czemu, jak, ile, czy]}], gap: 0}
+    pool: [kto, co, gdzie, skąd, kiedy, dlaczego, jak, ile, czy]
+
+- title: {en: Nouns and the cases, pt: Substantivos e casos}
+  lessons:
+  - id: pl-accusative
+    title: mam kota, lubię kawę
+    meaning: {en: "the accusative: the object", pt: "o acusativo: o objeto"}
+    intro:
+      en: |
+        Feminines **-a → -ę** (**kawa → kawę, siostra → siostrę**); animate masculines take the genitive form **-a** (**kot → kota, brat → brata**); inanimate masculines and neuters **don't change** (**mam dom, widzę okno**). Also after **na, w, przez, za** with motion or time: **na pocztę**, **przez tydzień**.
+      pt: |
+        Femininos **-a → -ę** (**kawa → kawę, siostra → siostrę**); masculinos animados tomam a forma do genitivo **-a** (**kot → kota, brat → brata**); masculinos inanimados e neutros **não mudam** (**mam dom, widzę okno**). Também depois de **na, w, przez, za** com movimento ou tempo: **na pocztę**, **przez tydzień**.
+    paradigms:
+    - {word: kobieta, pos: noun, label: {en: "kobieta (f.) woman", pt: "kobieta (f.) mulher"}}
+    examples:
+    - [Lubię kawę., I like coffee., Gosto de café., kawę]
+    - [Mam kota., I have a cat., Tenho um gato., kota]
+    match: {seq: [{pos: noun, case: acc, gender: f}], same: [number]}
+
+  - id: pl-genitive
+    title: do domu, bez cukru
+    meaning: {en: "the genitive: of, after do, z, bez, od, u, and quantities", pt: "o genitivo: de, depois de do, z, bez, od, u, e quantidades"}
+    intro:
+      en: |
+        Polish's busiest case: possession (**dom ojca**), quantity (**dużo ludzi, szklanka wody**), after negation, and after **do** (to, into), **z** (out of, from), **bez** (without), **od** (from), **u** (at someone's), **dla** (for), **obok** (next to). Endings: **-a / -u** (masc.: **do domu, od brata**), **-y / -i** (fem.: **z Polski, do pracy**), **-a** (neut.: **do kina**).
+      pt: |
+        O caso mais usado do polonês: posse (**dom ojca** "a casa do pai"), quantidade (**dużo ludzi, szklanka wody**), depois de negação, e depois de **do** (para, para dentro), **z** (de dentro, de), **bez** (sem), **od** (de, desde), **u** (na casa de), **dla** (para), **obok** (ao lado de). Terminações: **-a / -u** (masc.: **do domu, od brata**), **-y / -i** (fem.: **z Polski, do pracy**), **-a** (neutro: **do kina**).
+    examples:
+    - [Idę do domu., I'm going home., Estou indo para casa., domu]
+    - [Kawa bez cukru., Coffee without sugar., Café sem açúcar., cukru]
+    match: {seq: [{word: [do, z, ze, bez, od, u, dla, obok, koło]}, {pos: noun, case: gen}], near: 2, gap: 1, same: [number]}
+
+  - id: pl-locative
+    title: w Krakowie, na stole
+    meaning: {en: "the locative: in, on, about (after w, na, o, przy, po)", pt: "o locativo: em, sobre (depois de w, na, o, przy, po)"}
+    intro:
+      en: |
+        Only after **w / we** (in), **na** (on, at), **o** (about), **przy** (by), **po** (after, around). Endings: **-e** with a softened consonant (**stół → na stole, Kraków → w Krakowie, kot → o kocie, Warszawa → w Warszawie**), **-u** after soft and k, g, ch (**w domu, w parku**), feminines **-e / -i / -y** (**w szkole, w pracy**); plural **-ach**.
+      pt: |
+        Só depois de **w / we** (em, dentro), **na** (em, sobre), **o** (sobre, a respeito de), **przy** (junto), **po** (depois, por). Terminações: **-e** com a consoante amolecida (**stół → na stole, Kraków → w Krakowie, kot → o kocie, Warszawa → w Warszawie**), **-u** depois de mole e de k, g, ch (**w domu, w parku**), femininos **-e / -i / -y** (**w szkole, w pracy**); plural **-ach**.
+    examples:
+    - [Mieszkam w Warszawie., I live in Warsaw., Moro em Varsóvia., Warszawie]
+    - [Książka jest na stole., The book is on the table., O livro está na mesa., stole]
+    match: {seq: [{word: [w, we, na, o, przy, po]}, {pos: noun, case: loc}], near: 2, gap: 1, same: [number]}
+
+  - id: pl-instrumental
+    title: z bratem, autobusem
+    meaning: {en: "the instrumental: with, by; after być for jobs", pt: "o instrumental: com, por meio de; depois de być para profissões"}
+    intro:
+      en: |
+        **-em** (masc., neut.: **z bratem, autobusem**), **-ą** (fem.: **z mamą, tramwajem → tramwajem**), plural **-ami**. After **z** (with), **przed** (in front of), **za** (behind), **nad** (above), **pod** (under), **między** (between); for the means (**jadę pociągiem** "I'm going by train"); after **być** with a noun: **Jestem nauczycielem.** "I'm a teacher."
+      pt: |
+        **-em** (masc., neutro: **z bratem, autobusem**), **-ą** (fem.: **z mamą**), plural **-ami**. Depois de **z** (com), **przed** (diante de), **za** (atrás), **nad** (acima), **pod** (embaixo), **między** (entre); para o meio (**jadę pociągiem** "vou de trem"); depois de **być** com substantivo: **Jestem nauczycielem.** "Sou professor."
+    examples:
+    - [Jadę pociągiem., I'm going by train., Vou de trem., pociągiem]
+    - [Jestem nauczycielem., I'm a teacher., Sou professor., nauczycielem]
+    match: {seq: [{pos: noun, case: ins}], same: [number]}
+
+  - id: pl-adjectives
+    title: nowy, nowa, nowe
+    meaning: {en: "adjectives agree in gender, number and case", pt: "o adjetivo concorda em gênero, número e caso"}
+    intro:
+      en: |
+        **-y / -i** (masc.), **-a** (fem.), **-e** (neut.): **nowy dom, nowa książka, nowe okno**; plural **-e** (**nowe domy**), but **-i / -y** for groups with men (**nowi studenci**). They agree in case: **w nowym domu, z nową książką**.
+      pt: |
+        **-y / -i** (masc.), **-a** (fem.), **-e** (neutro): **nowy dom, nowa książka, nowe okno**; plural **-e** (**nowe domy**), mas **-i / -y** para grupos com homens (**nowi studenci**). Concordam no caso: **w nowym domu, z nową książką**.
+    paradigms:
+    - {word: dobry, pos: adj, number: sg, label: {en: "dobry good", pt: "dobry bom"}}
+    examples:
+    - [To jest nowa książka., This is a new book., Este é um livro novo., nowa]
+    match: {seq: [{pos: adj}, {pos: noun}], gap: 0, same: [number]}

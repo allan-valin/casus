@@ -22,7 +22,8 @@ topics:
     examples:
     - [Včera jsem byl doma., Yesterday I was at home., Ontem eu estava em casa., byl]
     - ["Kde jsi byla?", "Where were you?", "Onde você estava?", "byla"]
-    match: {seq: [{pos: verb, tense: past}], same: [tense]}
+    # (wrong answers keep the answer's gender: a woman's Četla is as right as Četl)
+    match: {seq: [{pos: verb, tense: past}], same: [tense], partners: [[li, ly], [l, la]]}
 
   - id: cs-aspect
     title: psát – napsat
