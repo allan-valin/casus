@@ -1,0 +1,253 @@
+id: A1
+topics:
+
+- title: {en: Sounds and spelling, pt: Sons e escrita}
+  lessons:
+  - id: cs-sounds
+    title: č, ř, ě, ů
+    meaning: {en: "the alphabet: háček, čárka, ě, ů", pt: "o alfabeto: háček, čárka, ě, ů"}
+    intro:
+      en: |
+        Czech is written as it sounds, with two marks:
+
+        - **čárka** (´) makes a vowel **long**: **a/á, e/é, i/í, o/ó, u/ú, y/ý**; **ů** (with a ring) is also a long *ú*. Length changes meaning: **byt** (flat) – **být** (to be).
+        - **háček** (ˇ) softens: **č** = *ch* in church, **š** = *sh*, **ž** = *s* in pleasure, **ř** (a rolled r with ž at the same time — Czech's famous sound), **ň** = *ny*, **ď, ť** = soft d, t; **ě** softens the consonant before it: **dě** = *dye*, **mě** = *mnye*.
+
+        **ch** is one letter (after h in the alphabet) and sounds like German *ach*. Stress is always on the **first syllable**.
+      pt: |
+        O tcheco se escreve como se fala, com dois sinais:
+
+        - a **čárka** (´) torna a vogal **longa**: **a/á, e/é, i/í, o/ó, u/ú, y/ý**; **ů** (com anel) também é um *ú* longo. A quantidade muda o sentido: **byt** (apartamento) – **být** (ser).
+        - o **háček** (ˇ) amolece: **č** = *tch* de tcheco, **š** = *ch* de chá, **ž** = *j* de já, **ř** (um r vibrante com ž ao mesmo tempo — o som famoso do tcheco), **ň** = *nh*, **ď, ť** = d, t moles; **ě** amolece a consoante anterior: **dě** = *die*, **mě** = *mnie*.
+
+        **ch** é uma letra só (depois de h no alfabeto) e soa como o *rr* carioca. O acento tônico cai sempre na **primeira sílaba**.
+    mistakes:
+    - wrong: domu (house, long vowel forgotten in dům)
+      right: dům
+      why: {en: "ů is a long ú: dům, stůl, můj.", pt: "ů é um ú longo: dům, stůl, můj."}
+    examples:
+    - [Mám rád českou kuchyni., I like Czech cuisine., Gosto da cozinha tcheca., českou]
+    - [Řeknu ti to zítra., I'll tell you tomorrow., Te conto amanhã., Řeknu]
+    match: {seq: [{pos: [noun, adj, verb], re: "[áéíóúůýčšžřěň]"}]}
+    swaps: {á: [a], é: [e], í: [i, ý], ý: [y, í], ú: [u, ů], ů: [ú, u], č: [c], š: [s], ž: [z], ř: [r, ž], ě: [e]}
+
+- title: {en: "Pronouns and 'být'", pt: "Pronomes e 'být'"}
+  lessons:
+  - id: cs-byt
+    title: jsem, jsi, je
+    meaning: {en: "personal pronouns and být 'to be'", pt: "pronomes pessoais e být 'ser, estar'"}
+    intro:
+      en: |
+        **já** I, **ty** you (familiar), **on / ona / ono** he / she / it, **my** we, **vy** you (plural and polite **Vy**), **oni / ony / ona** they. The verb ending says who, so pronouns are usually dropped.
+
+        **být**: **jsem, jsi, je, jsme, jste, jsou**. Negative: **nejsem, nejsi, není, nejsme, nejste, nejsou**.
+      pt: |
+        **já** eu, **ty** tu/você (íntimo), **on / ona / ono** ele / ela / isso, **my** nós, **vy** vocês (e o tratamento formal **Vy**), **oni / ony / ona** eles / elas. A terminação do verbo diz quem é, por isso o pronome em geral cai.
+
+        **být**: **jsem, jsi, je, jsme, jste, jsou**. Negativa: **nejsem, nejsi, není, nejsme, nejste, nejsou**.
+    paradigms:
+    - {word: být, pos: verb, tense: pres, mood: ind, label: {en: "být to be", pt: "být ser, estar"}}
+    examples:
+    - [Jsem student., I'm a student., Sou estudante., Jsem]
+    - ["Kde jsi?", "Where are you?", "Onde você está?", "jsi"]
+    - [Nejsme doma., We're not at home., Não estamos em casa., Nejsme]
+    match: {seq: [{lemma: "^být$", mood: ind, tense: pres}], same: [tense, mood]}
+
+- title: {en: The present tense, pt: O presente}
+  lessons:
+  - id: cs-present
+    title: dělám, mluvím, píšu
+    meaning: {en: "the present: -ám, -ím, -u verbs", pt: "o presente: verbos em -ám, -ím, -u"}
+    intro:
+      en: |
+        Czech verbs fall into three main patterns, recognisable from the 1st person:
+
+        | | dělat (do) | mluvit (speak) | psát (write) |
+        |---|---|---|---|
+        | já | děl**ám** | mluv**ím** | píš**u** |
+        | ty | děl**áš** | mluv**íš** | píš**eš** |
+        | on | děl**á** | mluv**í** | píš**e** |
+        | my | děl**áme** | mluv**íme** | píš**eme** |
+        | vy | děl**áte** | mluv**íte** | píš**ete** |
+        | oni | děl**ají** | mluv**í** | píš**ou** |
+
+        Learn the stem of the third group with each verb: **psát → píšu**, **číst → čtu**, **pít → piju**.
+      pt: |
+        Os verbos tchecos seguem três modelos principais, reconhecíveis pela 1ª pessoa:
+
+        | | dělat (fazer) | mluvit (falar) | psát (escrever) |
+        |---|---|---|---|
+        | já | děl**ám** | mluv**ím** | píš**u** |
+        | ty | děl**áš** | mluv**íš** | píš**eš** |
+        | on | děl**á** | mluv**í** | píš**e** |
+        | my | děl**áme** | mluv**íme** | píš**eme** |
+        | vy | děl**áte** | mluv**íte** | píš**ete** |
+        | oni | děl**ají** | mluv**í** | píš**ou** |
+
+        Aprenda o radical do terceiro grupo com cada verbo: **psát → píšu**, **číst → čtu**, **pít → piju**.
+    paradigms:
+    - {word: dělat, pos: verb, tense: pres, mood: ind, label: {en: "dělat to do", pt: "dělat fazer"}}
+    - {word: mluvit, pos: verb, tense: pres, mood: ind, label: {en: "mluvit to speak", pt: "mluvit falar"}}
+    examples:
+    - ["Mluvíte anglicky?", "Do you speak English?", "O senhor fala inglês?", "Mluvíte"]
+    - ["Co děláš?", "What are you doing?", "O que você está fazendo?", "děláš"]
+    - [Píšu dopis., I'm writing a letter., Estou escrevendo uma carta., Píšu]
+    match: {seq: [{pos: verb, mood: ind, tense: pres, person: ["1", "2", "3"], not: {lemma: "^být$"}}], same: [tense, mood]}
+
+  - id: cs-negation
+    title: nemám, nevím
+    meaning: {en: "negation: ne- joined to the verb", pt: "negação: ne- junto do verbo"}
+    intro:
+      en: |
+        **ne-** is written together with the verb: **mám → nemám** "I don't have", **vím → nevím** "I don't know", **je → není**. Czech uses double negatives: **Nikdo nic neví.** "Nobody knows anything." (**nikdo** nobody, **nic** nothing, **nikdy** never, **nikde** nowhere).
+      pt: |
+        **ne-** se escreve junto com o verbo: **mám → nemám** "não tenho", **vím → nevím** "não sei", **je → není**. O tcheco usa dupla negação, como o português: **Nikdo nic neví.** "Ninguém sabe nada." (**nikdo** ninguém, **nic** nada, **nikdy** nunca, **nikde** em lugar nenhum).
+    examples:
+    - [Nevím., I don't know., Não sei., Nevím]
+    - [Nikdo nic neví., Nobody knows anything., Ninguém sabe nada., nic]
+    match:
+    - {seq: [{pos: verb, re: "^ne", mood: ind}], prefixes: [ne, ""], attested: true}
+    - {seq: [{word: [nikdo, nic, nikdy, nikde, žádný, žádná, žádné]}], gap: 0, pool: [nikdo, nic, nikdy, nikde, něco, někdo, vždy]}
+
+  - id: cs-questions
+    title: kdo, co, kde
+    meaning: {en: "question words", pt: "palavras interrogativas"}
+    intro:
+      en: |
+        **kdo** who, **co** what, **kde** where, **kam** where to, **odkud** where from, **kdy** when, **proč** why, **jak** how, **kolik** how much, **který** which, **jaký** what kind of, **čí** whose. Yes/no questions just rise in intonation, often with the verb first: **Máš čas?**
+      pt: |
+        **kdo** quem, **co** o que, **kde** onde, **kam** para onde, **odkud** de onde, **kdy** quando, **proč** por que, **jak** como, **kolik** quanto, **který** qual, **jaký** que tipo de, **čí** de quem. Perguntas de sim ou não só sobem a entonação, muitas vezes com o verbo primeiro: **Máš čas?**
+    examples:
+    - ["Kde bydlíš?", "Where do you live?", "Onde você mora?", "Kde"]
+    - ["Proč pláčeš?", "Why are you crying?", "Por que você está chorando?", "Proč"]
+    match: {seq: [{word: [kdo, co, kde, kam, odkud, kdy, proč, jak, kolik]}], gap: 0}
+    pool: [kdo, co, kde, kam, odkud, kdy, proč, jak, kolik]
+
+- title: {en: Nouns and the cases, pt: Substantivos e casos}
+  lessons:
+  - id: cs-gender
+    title: ten, ta, to
+    meaning: {en: "gender: masculine (animate, inanimate), feminine, neuter", pt: "gênero: masculino (animado, inanimado), feminino, neutro"}
+    intro:
+      en: |
+        Czech has no articles, but every noun has a gender, shown mostly by its ending, and the demonstrative **ten / ta / to** (this, that) agrees with it:
+
+        - **masculine**: a consonant — **ten muž** (man), **ten hrad** (castle). Masculines split into **animate** (people, animals) and **inanimate**, which decline differently.
+        - **feminine**: **-a, -e/-ě**, some consonants — **ta žena** (woman), **ta růže** (rose), **ta kost** (bone)
+        - **neuter**: **-o, -e, -í** — **to město** (town), **to moře** (sea), **to nádraží** (station)
+      pt: |
+        O tcheco não tem artigos, mas todo substantivo tem gênero, mostrado sobretudo pela terminação, e o demonstrativo **ten / ta / to** (este, esse) concorda com ele:
+
+        - **masculino**: consoante — **ten muž** (homem), **ten hrad** (castelo). Os masculinos se dividem em **animados** (pessoas, animais) e **inanimados**, que declinam de modo diferente.
+        - **feminino**: **-a, -e/-ě**, algumas consoantes — **ta žena** (mulher), **ta růže** (rosa), **ta kost** (osso)
+        - **neutro**: **-o, -e, -í** — **to město** (cidade), **to moře** (mar), **to nádraží** (estação)
+    examples:
+    - [Ten dům je velký., That house is big., Aquela casa é grande., Ten]
+    - [Ta kniha je nová., That book is new., Aquele livro é novo., Ta]
+    match: {seq: [{word: [ten, ta, to, ty, ti, tu, toho, té, tom, tím, tou]}, {pos: noun}], gap: 0}
+    pool: [ten, ta, to, ty, ti, tu, toho, té]
+
+  - id: cs-accusative
+    title: vidím ženu
+    meaning: {en: "the accusative: the object", pt: "o acusativo: o objeto"}
+    intro:
+      en: |
+        The direct object: feminines **-a → -u** (**žena → ženu**), **-e → -i** (**růže → růži**); animate masculines take **-a** or **-e** (**pán → pána**, **muž → muže**); inanimate masculines and neuters **do not change** (**vidím hrad, vidím město**). Prepositions of motion **na, do… pro, za** take it too: **na poštu** "to the post office".
+      pt: |
+        O objeto direto: femininos **-a → -u** (**žena → ženu**), **-e → -i** (**růže → růži**); masculinos animados ganham **-a** ou **-e** (**pán → pána**, **muž → muže**); masculinos inanimados e neutros **não mudam** (**vidím hrad, vidím město**). Preposições de movimento como **na, pro, za** também o pedem: **na poštu** "para os correios".
+    paradigms:
+    - {word: žena, pos: noun, label: {en: "žena (f.) woman", pt: "žena (f.) mulher"}}
+    examples:
+    - [Mám sestru., I have a sister., Tenho uma irmã., sestru]
+    - [Čekám na autobus., I'm waiting for the bus., Estou esperando o ônibus., autobus]
+    match: {seq: [{pos: noun, case: acc, gender: f}], same: [number]}
+
+  - id: cs-locative
+    title: v Praze, na poště
+    meaning: {en: "the locative: in, on, about (after v, na, o, po, při)", pt: "o locativo: em, sobre (depois de v, na, o, po, při)"}
+    intro:
+      en: |
+        Only after prepositions: **v / ve** (in), **na** (on, at), **o** (about), **po** (after, around), **při** (during, by). Endings: **-e/-ě** (**v Praze, na poště, ve městě**), **-u** (**v domě / v domu, na hradu**), **-i** (**v práci, na ulici**), masculine animate **-ovi** (**o bratrovi**). Plural **-ech, -ách, -ích**.
+
+        Watch the consonant changes before **-e/-ě**: **k → c** (Amerika → v Americe), **h → z** (Praha → v Praze), **ch → š**, **r → ř** (sestra → o sestře).
+      pt: |
+        Só depois de preposições: **v / ve** (em, dentro), **na** (em, sobre), **o** (sobre, a respeito de), **po** (depois, por), **při** (durante, junto). Terminações: **-e/-ě** (**v Praze, na poště, ve městě**), **-u** (**v domě / v domu, na hradu**), **-i** (**v práci, na ulici**), masculino animado **-ovi** (**o bratrovi**). Plural **-ech, -ách, -ích**.
+
+        Atenção às trocas de consoante antes de **-e/-ě**: **k → c** (Amerika → v Americe), **h → z** (Praha → v Praze), **ch → š**, **r → ř** (sestra → o sestře).
+    mistakes:
+    - wrong: v Prahe
+      right: v Praze
+      why: {en: "h becomes z before the locative -e.", pt: "h vira z antes do -e do locativo."}
+    examples:
+    - [Bydlím v Praze., I live in Prague., Moro em Praga., Praze]
+    - [Kniha je na stole., The book is on the table., O livro está na mesa., stole]
+    match: {seq: [{word: [v, ve, na, o, po, při]}, {pos: noun, case: loc}], near: 2, gap: 1, same: [number]}
+
+  - id: cs-genitive
+    title: bez cukru, do města
+    meaning: {en: "the genitive: of, after do, z, bez, u, od", pt: "o genitivo: de, depois de do, z, bez, u, od"}
+    intro:
+      en: |
+        Possession and quantity (**šálek kávy** "a cup of coffee", **hodně lidí** "many people") and after **do** (into, to), **z / ze** (out of), **bez** (without), **u** (at someone's), **od** (from), **vedle** (next to), **kromě** (except). Endings: **-a/-u** (masc., neut.: **do města, bez cukru**), **-y/-e** (fem.: **z Prahy, do školy**).
+      pt: |
+        Posse e quantidade (**šálek kávy** "uma xícara de café", **hodně lidí** "muita gente") e depois de **do** (para dentro, a), **z / ze** (de dentro), **bez** (sem), **u** (na casa de), **od** (de, desde), **vedle** (ao lado de), **kromě** (exceto). Terminações: **-a/-u** (masc., neutro: **do města, bez cukru**), **-y/-e** (fem.: **z Prahy, do školy**).
+    examples:
+    - [Jdu do školy., I'm going to school., Vou para a escola., školy]
+    - [Kávu bez cukru prosím., Coffee without sugar please., Café sem açúcar por favor., cukru]
+    match: {seq: [{word: [do, z, ze, bez, u, od, vedle, kromě]}, {pos: noun, case: gen}], near: 2, gap: 1, same: [number]}
+
+  - id: cs-instrumental
+    title: s mužem, autem
+    meaning: {en: "the instrumental: with, by", pt: "o instrumental: com, por meio de"}
+    intro:
+      en: |
+        **-em** (masc., neut.: **s bratrem, autem** "by car"), **-ou** (fem.: **s maminkou, tramvají**), plural **-y, -ami, -emi**. Used after **s / se** (with), **před** (in front of, ago), **za** (behind), **nad** (above), **pod** (under), **mezi** (between), and for the means: **jedu vlakem** "I go by train", and after **být** for jobs: **Je učitelem.**
+      pt: |
+        **-em** (masc., neutro: **s bratrem, autem** "de carro"), **-ou** (fem.: **s maminkou, tramvají**), plural **-y, -ami, -emi**. Usa-se depois de **s / se** (com), **před** (diante de, há), **za** (atrás), **nad** (acima), **pod** (embaixo), **mezi** (entre), para o meio: **jedu vlakem** "vou de trem", e depois de **být** para profissões: **Je učitelem.**
+    examples:
+    - [Jedu vlakem., I'm going by train., Vou de trem., vlakem]
+    - [Mluvím s maminkou., I'm talking with mum., Estou falando com a mamãe., maminkou]
+    match: {seq: [{pos: noun, case: ins}], same: [number]}
+
+  - id: cs-adjectives
+    title: nový, nová, nové
+    meaning: {en: "hard adjectives -ý, -á, -é and soft -í", pt: "adjetivos duros -ý, -á, -é e moles -í"}
+    intro:
+      en: |
+        **Hard** adjectives end in **-ý, -á, -é** for masculine, feminine, neuter: **nový dům, nová kniha, nové auto**. **Soft** ones end in **-í** for all three: **moderní, cizí**. They agree in gender, number and case: **v novém domě, s novou knihou**.
+      pt: |
+        Os adjetivos **duros** terminam em **-ý, -á, -é** no masculino, feminino e neutro: **nový dům, nová kniha, nové auto**. Os **moles** terminam em **-í** nos três: **moderní, cizí**. Concordam em gênero, número e caso: **v novém domě, s novou knihou**.
+    paradigms:
+    - {word: dobrý, pos: adj, number: sg, label: {en: "dobrý good", pt: "dobrý bom"}}
+    examples:
+    - [To je nová kniha., That's a new book., Esse é um livro novo., nová]
+    match: {seq: [{pos: adj}, {pos: noun}], gap: 0, same: [number]}
+
+  - id: cs-possessives
+    title: můj, tvůj, náš
+    meaning: {en: "possessives: my, your, our…", pt: "possessivos: meu, teu, nosso…"}
+    intro:
+      en: |
+        **můj / moje** my, **tvůj / tvoje** your, **jeho** his, **její** her, **náš** our, **váš** your (pl., polite), **jejich** their; **svůj** one's own (refers to the subject). They agree with the noun: **můj bratr, moje sestra, moje auto**. **jeho, jejich** never change.
+      pt: |
+        **můj / moje** meu, **tvůj / tvoje** teu, **jeho** dele, **její** dela, **náš** nosso, **váš** de vocês (e formal), **jejich** deles; **svůj** o próprio (refere-se ao sujeito). Concordam com o substantivo: **můj bratr, moje sestra, moje auto**. **jeho, jejich** não mudam.
+    examples:
+    - [To je můj bratr., That's my brother., Esse é o meu irmão., můj]
+    - ["Kde je tvoje auto?", "Where's your car?", "Onde está o seu carro?", "tvoje"]
+    match: {seq: [{word: [můj, moje, mé, má, tvůj, tvoje, tvé, náš, naše, váš, vaše, jeho, její, jejich, svůj, svoje]}, {pos: noun}], gap: 0}
+    pool: [můj, moje, tvůj, tvoje, náš, naše, váš, vaše, jeho, její, jejich]
+
+  - id: cs-numbers
+    title: jeden, dva, pět
+    meaning: {en: "numbers and the genitive plural after five", pt: "números e o genitivo plural depois de cinco"}
+    intro:
+      en: |
+        **1 jeden / jedna / jedno, 2 dva / dvě, 3 tři, 4 čtyři, 5 pět, 6 šest, 7 sedm, 8 osm, 9 devět, 10 deset, 20 dvacet, 100 sto.** After **2–4** the noun is in the nominative plural (**dva bratři, tři knihy**); after **5 and up**, and **mnoho, hodně, kolik**, in the **genitive plural** (**pět bratrů, deset knih**), and the verb is singular: **Pět lidí přišlo.**
+      pt: |
+        **1 jeden / jedna / jedno, 2 dva / dvě, 3 tři, 4 čtyři, 5 pět, 6 šest, 7 sedm, 8 osm, 9 devět, 10 deset, 20 dvacet, 100 sto.** Depois de **2–4** o substantivo fica no nominativo plural (**dva bratři, tři knihy**); de **5 em diante**, e depois de **mnoho, hodně, kolik**, no **genitivo plural** (**pět bratrů, deset knih**), e o verbo fica no singular: **Pět lidí přišlo.**
+    examples:
+    - [Mám dva bratry., I have two brothers., Tenho dois irmãos., bratry]
+    - [Je tam pět lidí., There are five people there., Há cinco pessoas lá., lidí]
+    match:
+    - {seq: [{word: [pět, šest, sedm, osm, devět, deset, dvacet, sto, mnoho, hodně, kolik, málo]}, {pos: noun, case: gen, number: pl}], gap: 1}
+    - {seq: [{word: [dva, dvě, tři, čtyři]}, {pos: noun, number: pl}], gap: 1, same: [number]}

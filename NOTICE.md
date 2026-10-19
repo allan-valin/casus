@@ -185,6 +185,8 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
   (1885), both public domain. Sentences: the **Digital Corpus of Sanskrit** (Oliver Hellwig, CC BY 4.0,
   github.com/OliverHellwig/sanskrit) — Hitopadeśa, Śukasaptati, Vetālapañcaviṃśati, Kathāsaritsāgara, Rāmāyaṇa — in
   their annotated word-by-word (padapāṭha) form, transliterated to Devanagari (tools/build_dcs.py); Tatoeba (CC BY 2.0 FR).
+- Czech lessons (30, A1–B2) **written for Casus** after the Internetová jazyková příručka (ÚJČ AV ČR) as summarised in
+  Wikipedia's Czech grammar (CC BY-SA); tables from Casus's Wiktionary paradigms; sentences Tatoeba (CC BY 2.0 FR).
 - Modern Greek lessons (28, A1–B1) **written for Casus** after Wikipedia's Modern Greek grammar (CC BY-SA); tables
   from Casus's Wiktionary paradigms; sentences Tatoeba (CC BY 2.0 FR).
 

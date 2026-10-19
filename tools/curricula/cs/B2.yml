@@ -1,0 +1,40 @@
+id: B2
+topics:
+
+- title: {en: Formal Czech, pt: Tcheco formal}
+  lessons:
+  - id: cs-passive
+    title: byl postaven
+    meaning: {en: "the passive: být + -n/-t participle", pt: "a passiva: být + particípio em -n/-t"}
+    intro:
+      en: |
+        **být** + the passive participle in **-n / -t**, agreeing with the subject: **Dům byl postaven v roce 1900.** "The house was built in 1900." **Okno je otevřeno / otevřené.** In everyday Czech the reflexive passive is commoner: **Tady se kouří.** "People smoke here." **To se nedělá.** "That isn't done."
+      pt: |
+        **být** + o particípio passivo em **-n / -t**, concordando com o sujeito: **Dům byl postaven v roce 1900.** "A casa foi construída em 1900." **Okno je otevřeno / otevřené.** No tcheco do dia a dia a passiva reflexiva é mais comum: **Tady se kouří.** "Aqui se fuma." **To se nedělá.** "Isso não se faz."
+    examples:
+    - [Dopis byl napsán včera., The letter was written yesterday., A carta foi escrita ontem., napsán]
+    match: {seq: [{lemma: "^být$"}, {pos: [verb, adj], re: "(án|ána|áno|ány|en|ena|eno|eny|ěn|ěna|it|ita|ito|ut|uta)$"}], near: 1, gap: 1, suffixes: [án, ána, áno, ány, ení, ený], attested: true}
+
+  - id: cs-vocative
+    title: Pane! Petře!
+    meaning: {en: "the vocative: addressing people", pt: "o vocativo: chamando as pessoas"}
+    intro:
+      en: |
+        Czech still uses a **vocative** whenever you address someone: **pan Novák → pane Nováku!**, **Petr → Petře!**, **Jana → Jano!**, **paní Nováková** (unchanged), **pan doktor → pane doktore!** Endings: masculine **-e** (with r → ř), **-u** after k, h, ch, g, **-i** after soft consonants; feminine **-a → -o**.
+      pt: |
+        O tcheco ainda usa o **vocativo** sempre que se chama alguém: **pan Novák → pane Nováku!**, **Petr → Petře!**, **Jana → Jano!**, **paní Nováková** (não muda), **pan doktor → pane doktore!** Terminações: masculino **-e** (com r → ř), **-u** depois de k, h, ch, g, **-i** depois de consoante mole; feminino **-a → -o**.
+    examples:
+    - [Dobrý den pane doktore., Good morning doctor., Bom dia doutor., doktore]
+    match: {seq: [{pos: noun, case: voc, trail: ",!", notStart: true}], same: [number]}
+
+  - id: cs-gerunds
+    title: dělaje, udělav
+    meaning: {en: "transgressives and verbal nouns (-ní)", pt: "transgressivos e substantivos verbais (-ní)"}
+    intro:
+      en: |
+        **Verbal nouns** in **-ní / -tí** name an action: **čtení** (reading), **psaní** (writing), **pití** (drinking), **zakázáno kouření** "smoking prohibited". The old **transgressives** (**dělaje** while doing, **udělav** having done) survive only in literature and set phrases (**chtě nechtě** "willy-nilly").
+      pt: |
+        Os **substantivos verbais** em **-ní / -tí** dão nome à ação: **čtení** (leitura), **psaní** (escrita), **pití** (bebida), **zakázáno kouření** "proibido fumar". Os antigos **transgressivos** (**dělaje** fazendo, **udělav** tendo feito) sobrevivem só na literatura e em expressões fixas (**chtě nechtě** "queira ou não").
+    examples:
+    - [Mám rád čtení., I like reading., Gosto de ler., čtení]
+    match: {seq: [{pos: noun, re: "(ní|tí)$", lemma: "(ní|tí)$"}], same: [number]}

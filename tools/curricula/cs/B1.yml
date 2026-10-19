@@ -1,0 +1,74 @@
+id: B1
+topics:
+
+- title: {en: Conditions and clauses, pt: Condições e orações}
+  lessons:
+  - id: cs-conditional
+    title: dělal bych
+    meaning: {en: "the conditional: -l form + bych", pt: "o condicional: forma em -l + bych"}
+    intro:
+      en: |
+        **-l form + bych, bys, by, bychom, byste, by**: **Dělal bych to.** "I would do it." **Chtěla bych kávu.** "I'd like a coffee (woman)." With **kdyby** (if): **Kdybych měl čas, šel bych.** "If I had time, I'd go." **aby** (so that, in order to) takes the same forms: **Řekl mi, abych přišel.**
+      pt: |
+        **forma em -l + bych, bys, by, bychom, byste, by**: **Dělal bych to.** "Eu faria isso." **Chtěla bych kávu.** "Eu queria um café (mulher)." Com **kdyby** (se): **Kdybych měl čas, šel bych.** "Se eu tivesse tempo, iria." **aby** (para que) usa as mesmas formas: **Řekl mi, abych přišel.** "Ele me disse para eu vir."
+    examples:
+    - [Chtěl bych kávu., I'd like a coffee., Eu queria um café., bych]
+    - [Kdybych měl čas šel bych., If I had time I'd go., Se eu tivesse tempo iria., Kdybych]
+    match: {seq: [{word: [bych, bys, by, bychom, byste, kdybych, kdybys, kdyby, kdybychom, kdybyste, abych, abys, aby, abychom, abyste]}], gap: 0}
+    pool: [bych, bys, by, bychom, byste, kdyby, aby]
+
+  - id: cs-relative
+    title: který, která, které
+    meaning: {en: "relative clauses with který", pt: "orações relativas com který"}
+    intro:
+      en: |
+        **který / která / které** (who, which) agrees with its noun in gender and number, and takes the case of its role in the clause: **muž, který tam stojí** "the man who stands there", **žena, kterou znám** "the woman I know", **dům, ve kterém bydlím** "the house I live in". Always a comma before it. **co** is the spoken all-purpose relative: **to, co chceš** "what you want".
+      pt: |
+        **který / která / které** (que, o qual) concorda com o substantivo em gênero e número e fica no caso da sua função na oração: **muž, který tam stojí** "o homem que está lá", **žena, kterou znám** "a mulher que conheço", **dům, ve kterém bydlím** "a casa em que moro". Sempre há vírgula antes. **co** é o relativo coloquial para tudo: **to, co chceš** "o que você quer".
+    examples:
+    - ["To je žena, kterou znám.", "That's the woman I know.", "Essa é a mulher que conheço.", "kterou"]
+    match: {seq: [{lemma: "^který$", pos: pron}], same: [number]}
+
+  - id: cs-conjunctions
+    title: že, protože, když, jestli
+    meaning: {en: "that, because, when, if", pt: "que, porque, quando, se"}
+    intro:
+      en: |
+        **že** that, **protože** because, **když** when / if, **jestli / jestliže** if, whether, **ale** but, **nebo** or, **a** and, **ani** nor, **než** than / before, **zatímco** while, **dokud** while, until, **i když** even though. A comma comes before every subordinate clause.
+      pt: |
+        **že** que, **protože** porque, **když** quando / se, **jestli / jestliže** se, **ale** mas, **nebo** ou, **a** e, **ani** nem, **než** que (comparação) / antes que, **zatímco** enquanto, **dokud** enquanto, até que, **i když** embora. Sempre há vírgula antes de oração subordinada.
+    examples:
+    - ["Vím, že máš pravdu.", "I know you're right.", "Sei que você tem razão.", "že"]
+    - ["Nepřišel, protože byl nemocný.", "He didn't come because he was ill.", "Ele não veio porque estava doente.", "protože"]
+    match: {seq: [{word: [že, protože, když, jestli, ale, nebo, než, zatímco, dokud]}], gap: 0}
+    pool: [že, protože, když, jestli, ale, nebo, než]
+
+- title: {en: Motion and comparison, pt: Movimento e comparação}
+  lessons:
+  - id: cs-motion
+    title: jít, jet, chodit
+    meaning: {en: "verbs of motion: on foot or by vehicle, once or habitually", pt: "verbos de movimento: a pé ou de veículo, uma vez ou habitualmente"}
+    intro:
+      en: |
+        Czech distinguishes **on foot** (**jít / chodit**) from **by vehicle** (**jet / jezdit**), and **one trip now** (**jít, jet**) from **habitual or repeated** (**chodit, jezdit**): **Jdu do práce.** "I'm walking to work (now)." **Chodím do práce pěšky.** "I walk to work (usually)." **Jedu vlakem.** "I'm going by train." Future: **půjdu, pojedu**.
+      pt: |
+        O tcheco distingue **a pé** (**jít / chodit**) de **com veículo** (**jet / jezdit**), e **uma ida agora** (**jít, jet**) de **habitual ou repetida** (**chodit, jezdit**): **Jdu do práce.** "Estou indo a pé para o trabalho (agora)." **Chodím do práce pěšky.** "Vou a pé para o trabalho (sempre)." **Jedu vlakem.** "Vou de trem." Futuro: **půjdu, pojedu**.
+    examples:
+    - [Jdu domů., I'm going home., Estou indo para casa., Jdu]
+    - [Jezdím autem., I go by car., Vou de carro., Jezdím]
+    match: {seq: [{lemma: "^(jít|jet|chodit|jezdit)$", mood: ind}], same: [person, number]}
+
+  - id: cs-comparison
+    title: větší, nejlepší
+    meaning: {en: "comparative -ší/-ejší and superlative nej-", pt: "comparativo -ší/-ejší e superlativo nej-"}
+    intro:
+      en: |
+        Comparative **-ší** or **-ejší / -ější**: **nový → novější, starý → starší, rychlý → rychlejší**; superlative **nej-** + comparative: **nejstarší, nejrychlejší**. Irregular: **dobrý → lepší → nejlepší**, **špatný → horší**, **velký → větší**, **malý → menší**. *Than* is **než**: **Je starší než já.**
+      pt: |
+        Comparativo **-ší** ou **-ejší / -ější**: **nový → novější, starý → starší, rychlý → rychlejší**; superlativo **nej-** + comparativo: **nejstarší, nejrychlejší**. Irregulares: **dobrý → lepší → nejlepší**, **špatný → horší**, **velký → větší**, **malý → menší**. O *que* da comparação é **než**: **Je starší než já.**
+    examples:
+    - [Je starší než já., He's older than me., Ele é mais velho que eu., starší]
+    - [To je nejlepší pivo., That's the best beer., Essa é a melhor cerveja., nejlepší]
+    match:
+    - {seq: [{pos: adj, re: "^nej"}], prefixes: [nej, ""], attested: true}
+    - {seq: [{pos: adj, re: "(ší|ejší|ější)$"}], prefixes: [nej, ""], attested: true}

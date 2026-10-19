@@ -1,0 +1,138 @@
+id: A2
+topics:
+
+- title: {en: Past and future, pt: Passado e futuro}
+  lessons:
+  - id: cs-past
+    title: dělal jsem, dělala jsem
+    meaning: {en: "the past: -l participle + jsem", pt: "o passado: particípio em -l + jsem"}
+    intro:
+      en: |
+        The past is the **-l form** of the verb, agreeing in gender and number, plus **jsem, jsi, jsme, jste** in the 1st and 2nd person (none in the 3rd): **dělal jsem** (I did, man), **dělala jsem** (woman), **dělal** (he did), **dělala** (she did), **dělali jsme** (we did), **dělaly** (they did, all female).
+
+        Form: infinitive minus **-t** plus **-l**: **dělat → dělal, mluvit → mluvil**; some change: **být → byl, jít → šel / šla, mít → měl, psát → psal, číst → četl**.
+      pt: |
+        O passado é a **forma em -l** do verbo, que concorda em gênero e número, mais **jsem, jsi, jsme, jste** na 1ª e 2ª pessoa (nada na 3ª): **dělal jsem** (eu fiz, homem), **dělala jsem** (mulher), **dělal** (ele fez), **dělala** (ela fez), **dělali jsme** (nós fizemos), **dělaly** (elas fizeram).
+
+        Forma: infinitivo menos **-t** mais **-l**: **dělat → dělal, mluvit → mluvil**; alguns mudam: **být → byl, jít → šel / šla, mít → měl, psát → psal, číst → četl**.
+    mistakes:
+    - wrong: (Anna) Byl jsem doma.
+      right: Byla jsem doma.
+      why: {en: "The -l form agrees with the speaker's gender.", pt: "A forma em -l concorda com o gênero de quem fala."}
+    examples:
+    - [Včera jsem byl doma., Yesterday I was at home., Ontem eu estava em casa., byl]
+    - ["Kde jsi byla?", "Where were you?", "Onde você estava?", "byla"]
+    match: {seq: [{pos: verb, tense: past}], same: [tense]}
+
+  - id: cs-aspect
+    title: psát – napsat
+    meaning: {en: "aspect: imperfective and perfective verbs", pt: "aspecto: verbos imperfectivos e perfectivos"}
+    intro:
+      en: |
+        Most verbs come in pairs: an **imperfective** for an action in progress or repeated (**psát** write, be writing), a **perfective** for one completed act (**napsat** write, get written). Perfectives are usually made with a prefix (**psát → napsat, dělat → udělat, číst → přečíst**) or a different suffix (**kupovat → koupit, dávat → dát**).
+
+        A perfective verb in the **present form means the future**: **Napíšu dopis.** "I'll write the letter." The imperfective future uses **budu**: **Budu psát.** "I'll be writing."
+      pt: |
+        A maioria dos verbos vem em pares: um **imperfectivo** para ação em andamento ou repetida (**psát** escrever, estar escrevendo), um **perfectivo** para um ato concluído (**napsat** escrever até o fim). Os perfectivos em geral se formam com prefixo (**psát → napsat, dělat → udělat, číst → přečíst**) ou outro sufixo (**kupovat → koupit, dávat → dát**).
+
+        Um verbo perfectivo na **forma do presente significa futuro**: **Napíšu dopis.** "Vou escrever a carta." O futuro imperfectivo usa **budu**: **Budu psát.** "Vou estar escrevendo."
+    examples:
+    - [Napíšu ti zítra., I'll write to you tomorrow., Te escrevo amanhã., Napíšu]
+    - [Už jsem to udělal., I've already done it., Já fiz isso., udělal]
+    match: {seq: [{pos: verb, re: "^(na|u|při|za|po|vy|pře|do|s|z)"}], prefixes: [na, u, při, za, po, vy, pře, do, ""], attested: true}
+
+  - id: cs-future
+    title: budu dělat
+    meaning: {en: "the future: budu + infinitive", pt: "o futuro: budu + infinitivo"}
+    intro:
+      en: |
+        Imperfective verbs make the future with **budu, budeš, bude, budeme, budete, budou** + infinitive: **Budu pracovat.** "I'll be working." Perfectives use their present forms (previous lesson). **být** itself: **budu** "I'll be". Motion verbs take **po-**: **půjdu** "I'll go", **pojedu** "I'll ride".
+      pt: |
+        Os verbos imperfectivos fazem o futuro com **budu, budeš, bude, budeme, budete, budou** + infinitivo: **Budu pracovat.** "Vou trabalhar." Os perfectivos usam as formas do presente (lição anterior). O próprio **být**: **budu** "serei, estarei". Verbos de movimento levam **po-**: **půjdu** "irei", **pojedu** "irei (de veículo)".
+    examples:
+    - [Zítra budu pracovat., Tomorrow I'll work., Amanhã vou trabalhar., budu]
+    match: {seq: [{word: [budu, budeš, bude, budeme, budete, budou]}, {pos: verb, mood: inf}], near: 2, gap: 0}
+    pool: [budu, budeš, bude, budeme, budete, budou]
+
+- title: {en: More cases, pt: Mais casos}
+  lessons:
+  - id: cs-dative
+    title: dám to bratrovi
+    meaning: {en: "the dative: to, for; after k, kvůli, díky, proti", pt: "o dativo: a, para; depois de k, kvůli, díky, proti"}
+    intro:
+      en: |
+        The person something is given to or done for: **Dám to bratrovi.** "I'll give it to my brother." Endings: animate masculines **-ovi / -i** (**bratrovi, muži**), inanimate **-u**, feminines **-e/-ě, -i** (**sestře, růži**), neuters **-u, -i**; plural **-ům, -ám, -ím**. After **k / ke** (towards, to someone's), **kvůli** (because of), **díky** (thanks to), **proti** (against). Many "liking" verbs: **Líbí se mi to.** "I like it."
+      pt: |
+        A pessoa a quem se dá ou para quem se faz algo: **Dám to bratrovi.** "Vou dar isso ao meu irmão." Terminações: masculino animado **-ovi / -i** (**bratrovi, muži**), inanimado **-u**, feminino **-e/-ě, -i** (**sestře, růži**), neutro **-u, -i**; plural **-ům, -ám, -ím**. Depois de **k / ke** (em direção a, à casa de), **kvůli** (por causa de), **díky** (graças a), **proti** (contra). Muitos verbos de "gostar": **Líbí se mi to.** "Gosto disso."
+    examples:
+    - [Napíšu mámě., I'll write to mum., Vou escrever para a mamãe., mámě]
+    - [Jdu k doktorovi., I'm going to the doctor's., Vou ao médico., doktorovi]
+    match: {seq: [{pos: noun, case: dat}], same: [number]}
+
+  - id: cs-pronoun-cases
+    title: mě, mi, tě, ti, ho, mu
+    meaning: {en: "personal pronouns in the cases", pt: "os pronomes pessoais nos casos"}
+    intro:
+      en: |
+        Short forms come **second** in the sentence: **Vidím tě.** "I see you." **Dám ti to.** "I'll give it to you." **Znáš ho?** "Do you know him?" — accusative **mě, tě, ho, ji, nás, vás, je**; dative **mi, ti, mu, jí, nám, vám, jim**. Long forms (**mně, tobě, jemu**) are for emphasis and after prepositions: **pro mě, k tobě, s ním** (after a preposition **on → n-**: **něj, něho, ní**).
+      pt: |
+        As formas curtas vêm em **segundo lugar** na frase: **Vidím tě.** "Te vejo." **Dám ti to.** "Te dou isso." **Znáš ho?** "Você o conhece?" — acusativo **mě, tě, ho, ji, nás, vás, je**; dativo **mi, ti, mu, jí, nám, vám, jim**. As formas longas (**mně, tobě, jemu**) servem para ênfase e depois de preposição: **pro mě, k tobě, s ním** (depois de preposição **on → n-**: **něj, něho, ní**).
+    examples:
+    - [Miluju tě., I love you., Te amo., tě]
+    - [Dám ti to zítra., I'll give it to you tomorrow., Te dou isso amanhã., ti]
+    match: {seq: [{word: [mě, mi, tě, ti, ho, mu, ji, jí, nás, vám, nám, vás, jim, mně, tobě, jemu, něj, ní, nich]}], gap: 0}
+    pool: [mě, mi, tě, ti, ho, mu, ji, jí, nás, nám, vás, vám, jim]
+
+  - id: cs-plural
+    title: ženy, hrady, města
+    meaning: {en: "the plural", pt: "o plural"}
+    intro:
+      en: |
+        Nominative plural: hard masculines **-y** (**hrad → hrady**), animate **-i / -ové** (**student → studenti, pán → páni**, with **k → c, h → z, r → ř**: **kluk → kluci**), feminines **-y / -e** (**žena → ženy, růže → růže**), neuters **-a / -e / -í** (**město → města, moře → moře**). Irregular: **člověk → lidé, dítě → děti, oko → oči, ruka → ruce**.
+      pt: |
+        Nominativo plural: masculinos duros **-y** (**hrad → hrady**), animados **-i / -ové** (**student → studenti, pán → páni**, com **k → c, h → z, r → ř**: **kluk → kluci**), femininos **-y / -e** (**žena → ženy, růže → růže**), neutros **-a / -e / -í** (**město → města, moře → moře**). Irregulares: **člověk → lidé, dítě → děti, oko → oči, ruka → ruce**.
+    examples:
+    - [Děti si hrají., The children are playing., As crianças estão brincando., Děti]
+    match: {seq: [{pos: noun, case: nom, number: pl}], same: [case]}
+
+- title: {en: Commands and modal verbs, pt: Ordens e verbos modais}
+  lessons:
+  - id: cs-imperative
+    title: piš, pište
+    meaning: {en: "the imperative", pt: "o imperativo"}
+    intro:
+      en: |
+        From the 3rd person plural stem: **dělají → dělej! dělejte!**, **píšou → piš! pište!**, **mluví → mluv! mluvte!**; **-me** is *let's*: **pojďme!** Negative imperatives are usually imperfective: **Nedělej to!** Very common: **pojď / pojďte** (come), **počkej** (wait), **podívej se** (look), **promiň / promiňte** (sorry).
+      pt: |
+        Do radical da 3ª pessoa do plural: **dělají → dělej! dělejte!**, **píšou → piš! pište!**, **mluví → mluv! mluvte!**; **-me** é *vamos*: **pojďme!** O imperativo negativo em geral é imperfectivo: **Nedělej to!** Muito comuns: **pojď / pojďte** (vem), **počkej** (espera), **podívej se** (olha), **promiň / promiňte** (desculpa).
+    examples:
+    - [Počkej na mě!, Wait for me!, Espera por mim!, Počkej]
+    - [Pojďme domů., Let's go home., Vamos para casa., Pojďme]
+    match: {seq: [{pos: verb, mood: imp, start: true}], same: [mood]}
+
+  - id: cs-modals
+    title: musím, můžu, chci
+    meaning: {en: "modal verbs: must, can, want, may", pt: "verbos modais: dever, poder, querer"}
+    intro:
+      en: |
+        **muset** must (**musím**), **moct** can (**můžu / mohu**), **chtít** want (**chci, chceš, chce, chceme, chcete, chtějí**), **smět** may (**smím**), **mít** should (**mám**) — all + infinitive: **Musím jít.** "I have to go." **Můžu ti pomoct?** "Can I help you?" **umět** *know how*: **Umím plavat.**
+      pt: |
+        **muset** dever (**musím**), **moct** poder (**můžu / mohu**), **chtít** querer (**chci, chceš, chce, chceme, chcete, chtějí**), **smět** ter permissão (**smím**), **mít** dever (**mám**) — todos + infinitivo: **Musím jít.** "Tenho de ir." **Můžu ti pomoct?** "Posso te ajudar?" **umět** *saber fazer*: **Umím plavat.** "Sei nadar."
+    examples:
+    - [Musím jít., I have to go., Tenho de ir., Musím]
+    - ["Chceš kávu?", "Do you want coffee?", "Você quer café?", "Chceš"]
+    match: {seq: [{lemma: "^(muset|moci|moct|chtít|smět|umět)$", mood: ind, tense: pres}], same: [tense, mood]}
+
+  - id: cs-reflexive
+    title: se, si
+    meaning: {en: "reflexive se and si", pt: "os reflexivos se e si"}
+    intro:
+      en: |
+        **se** (accusative) and **si** (dative) belong to many verbs and come **second** in the sentence: **Jmenuju se Pavel.** "My name is Pavel." **Dám si kávu.** "I'll have a coffee." **Myju se.** "I wash (myself)." **Bojím se.** "I'm afraid." **Pamatuješ si?** "Do you remember?"
+      pt: |
+        **se** (acusativo) e **si** (dativo) fazem parte de muitos verbos e vêm em **segundo lugar** na frase: **Jmenuju se Pavel.** "Meu nome é Pavel." **Dám si kávu.** "Vou tomar um café." **Myju se.** "Eu me lavo." **Bojím se.** "Tenho medo." **Pamatuješ si?** "Você se lembra?"
+    examples:
+    - ["Jak se jmenuješ?", "What's your name?", "Como você se chama?", "se"]
+    - [Dám si pivo., I'll have a beer., Vou tomar uma cerveja., si]
+    match: {seq: [{word: [se, si]}, {pos: verb}], gap: 0}
+    pool: [se, si]
