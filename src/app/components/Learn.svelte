@@ -23,6 +23,8 @@
   let progress = $state({});
   let loading = $state(false);
   const KEY = `casus:learn:${lang.code}`;
+  // lessons written for Casus keep their text per interface language ({ en, pt }); the Japanese book's is English
+  const loc = (x) => (x == null ? '' : typeof x === 'string' ? x : (x[ui.lang] ?? x.en ?? ''));
   const romanize = lang.script?.romanize ?? null;
 
   onMount(async () => {
@@ -36,7 +38,7 @@
 
   const level = $derived(learn?.levels.find((l) => l.id === levelId) ?? null);
   const flat = $derived(learn ? learn.levels.flatMap((lv) => lv.topics.flatMap((tp) => tp.lessons.map((e) => ({ level: lv, topic: tp, entry: e })))) : []);
-  const visible = (tp) => (!search.trim() ? tp.lessons : tp.lessons.filter((e) => `${e.title} ${e.meaning}`.toLowerCase().includes(search.trim().toLowerCase())));
+  const visible = (tp) => (!search.trim() ? tp.lessons : tp.lessons.filter((e) => `${e.title} ${loc(e.meaning)}`.toLowerCase().includes(search.trim().toLowerCase())));
   function record(item, correct) {
     const p = progress[item.lesson] ?? { right: 0, total: 0 };
     progress = { ...progress, [item.lesson]: { right: p.right + (correct ? 1 : 0), total: p.total + 1 } };
@@ -61,7 +63,7 @@
   }
   async function startExercises() {
     if (lesson.kind === 'vocab' || lesson.kind === 'kanji') { quizItems = vocabQuestions(lesson); return; }
-    quizItems = bookFirst(questionsFromFile(await loadQuestions(lesson.id), { lesson: lesson.id, random }));
+    quizItems = bookFirst(questionsFromFile(await loadQuestions(lesson.id), { lesson: lesson.id, random, ui: ui.lang }));
   }
   // the lesson's own examples first, in order; then Tatoeba's and the derived ones, shuffled
   function bookFirst(qs) {
@@ -78,7 +80,7 @@
     const copy = [...pool];
     while (copy.length && picked.length < 12) picked.push(copy.splice(Math.floor(random() * copy.length), 1)[0]);
     loading = true;
-    const files = await Promise.all(picked.map((x) => loadQuestions(x.entry.id).then((f) => questionsFromFile(f, { lesson: x.entry.id, random })).catch(() => [])));
+    const files = await Promise.all(picked.map((x) => loadQuestions(x.entry.id).then((f) => questionsFromFile(f, { lesson: x.entry.id, random, ui: ui.lang })).catch(() => [])));
     loading = false;
     const all = files.flat();
     for (let i = all.length - 1; i > 0; i -= 1) { const j = Math.floor(random() * (i + 1)); [all[i], all[j]] = [all[j], all[i]]; }
@@ -112,9 +114,9 @@
   {:else if lesson && lessonRef}
     <!-- one lesson, as a page -->
     <article class="lesson-page">
-      <nav class="crumbs"><button class="back" onclick={() => { lesson = null; quizItems = []; }}>← {lessonRef.level.id}</button> <span>{lessonRef.topic.title}</span></nav>
+      <nav class="crumbs"><button class="back" onclick={() => { lesson = null; quizItems = []; }}>← {lessonRef.level.id}</button> <span>{loc(lessonRef.topic.title)}</span></nav>
       <h3><span class="badge-level">{lessonRef.level.id}</span> <span class="l-head" lang={lang.bcp47}>{lesson.title ?? lessonRef.entry.title}</span></h3>
-      {#if lesson.meaning}<p class="l-sub">{lesson.meaning}</p>{/if}
+      {#if lesson.meaning}<p class="l-sub">{loc(lesson.meaning)}</p>{/if}
       {#if lesson.kind === 'vocab' || lesson.kind === 'kanji'}
         <nav class="toc"><a href="#ex-start">{t('learn.exercises')}</a></nav>
         {#if lesson.kind === 'vocab'}
@@ -123,12 +125,12 @@
           <table class="words"><tbody>{#each lesson.kanji as k}<tr><td class="w big" lang={lang.bcp47}>{k.k}</td><td>{k.en}</td><td class="r">{k.on}</td><td class="r">{k.kun}</td><td class="r" lang={lang.bcp47}>{k.words.join('、')}</td></tr>{/each}</tbody></table>
         {/if}
       {:else}
-        <nav class="toc">{#each lesson.sections as s}<a href={`#sec-${s.id}`}>{s.title}</a>{/each}{#if lesson.practice?.length}<a href="#sec-turn">{t('learn.yourTurn')}</a>{/if}<a href="#ex-start">{t('learn.exercises')}</a></nav>
-        {#if lesson.intro}<div class="prose">{@html lesson.intro}</div>{/if}
+        <nav class="toc">{#each lesson.sections as s}<a href={`#sec-${s.id}`}>{loc(s.title)}</a>{/each}{#if lesson.more?.length}<a href="#sec-more">{t('learn.more')}</a>{/if}{#if lesson.practice?.length}<a href="#sec-turn">{t('learn.yourTurn')}</a>{/if}<a href="#ex-start">{t('learn.exercises')}</a></nav>
+        {#if loc(lesson.intro)}<div class="prose">{@html loc(lesson.intro)}</div>{/if}
         {#each lesson.sections as s}
           <section class="l-sec" id={`sec-${s.id}`} data-sec={s.id}>
-            <h4>{s.title}</h4>
-            <div class="prose">{@html s.html}</div>
+            <h4>{loc(s.title)}</h4>
+            <div class="prose">{@html loc(s.html)}</div>
             {#if s.id === 'examples' && lesson.examples?.length}
               <details class="examples-romaji"><summary>{t('learn.romaji')}</summary>
                 <ol>{#each lesson.examples as ex}<li><span lang={lang.bcp47}>{ex.text}</span> — <i>{exampleRoman(ex)}</i>{#if openInReader} <button class="to-reader" onclick={() => openInReader(ex.text)}>{t('learn.read')}</button>{/if}</li>{/each}</ol>
@@ -136,6 +138,14 @@
             {/if}
           </section>
         {/each}
+        {#if lesson.more?.length}
+          <!-- more examples: Tatoeba sentences that show the lesson's point (tools/learn_curriculum.mjs) -->
+          <section class="l-sec more-examples" id="sec-more">
+            <h4>{t('learn.more')}</h4>
+            {#each lesson.more as ex}<div class="ex"><p class="ja" lang={lang.bcp47}>{ex.text}</p>{#if ex.roman}<p class="r">{ex.roman}</p>{/if}<p class="en">{ui.lang === 'pt' && ex.pt ? ex.pt : ex.en}</p></div>{/each}
+            <p class="more-source">Tatoeba (CC BY 2.0 FR)</p>
+          </section>
+        {/if}
         {#if lesson.practice?.length}
           <section class="l-sec your-turn" id="sec-turn">
             <h4>{t('learn.yourTurn')}</h4>
@@ -149,7 +159,7 @@
         {#if !quizItems.length}<button class="start-exercises primary" onclick={startExercises}>{t('learn.practiceLesson')}</button>
         {:else}<p class="ex-count">{t('learn.exCount', { n: quizItems.length })}</p><ChoiceDrill items={quizItems} {random} {romanize} onresult={record} ordered />{/if}
       </section>
-      <p class="source">{t('learn.source')}: {lesson.source ?? learn.credit}</p>
+      <p class="source">{t('learn.source')}: {lesson.source === 'written for Casus' ? t('learn.writtenForCasus') : (lesson.source ?? loc(learn.credit))}</p>
       <nav class="prev-next">
         {#if neighbour(-1)}<button class="prev-lesson" data-lesson={neighbour(-1).entry.id} onclick={() => open(neighbour(-1))}>← <span lang={lang.bcp47}>{neighbour(-1).entry.title}</span></button>{/if}
         {#if neighbour(1)}<button class="next-lesson" data-lesson={neighbour(1).entry.id} onclick={() => open(neighbour(1))}><span lang={lang.bcp47}>{neighbour(1).entry.title}</span> →</button>{/if}
@@ -164,11 +174,11 @@
     {#each level?.topics ?? [] as tp (tp.id)}
       {#if visible(tp).length}
         <details class="topic" data-kind={tp.kind} open={tp.kind === 'grammar' || !!search.trim()}>
-          <summary><span class="topic-title">{tp.kind === 'grammar' ? tp.title : kindName(tp.kind)}</span> <span class="topic-n">{visible(tp).length}</span></summary>
+          <summary><span class="topic-title">{tp.kind === 'grammar' ? loc(tp.title) : kindName(tp.kind)}</span> <span class="topic-n">{visible(tp).length}</span></summary>
           <ul class="lesson-list">
             {#each visible(tp) as e (e.id)}
               <li><button class="lesson-row" data-lesson={e.id} onclick={() => open({ level, topic: tp, entry: e })}>
-                <span class="l-title" lang={lang.bcp47}>{e.title}</span><span class="l-meaning">{e.meaning}</span>
+                <span class="l-title" lang={lang.bcp47}>{e.title}</span><span class="l-meaning">{loc(e.meaning)}</span>
                 {#if pct(e.id) !== null}<span class="pct" class:good={pct(e.id) >= 80}>{pct(e.id)}%</span>{/if}
               </button></li>
             {/each}
@@ -177,7 +187,7 @@
       {/if}
     {/each}
   {/if}
-  {#if learn}<p class="credit">{learn.credit}</p>{/if}
+  {#if learn}<p class="credit">{loc(learn.credit)}</p>{/if}
 </section>
 
 <style>
@@ -224,6 +234,8 @@
   .prose :global(.ex .en) { color: var(--ink-2); margin: 0; }
   .prose :global(.note), .prose :global(.rule) { border: 1px solid var(--line-soft); border-left: 4px solid #ff7f0e; border-radius: 8px; padding: 2px 12px; margin: 8px 0; background: var(--panel-hi); }
   .prose :global(.rule) { border-left-color: #1f77b4; }
+  .more-examples .ex { border-left: 3px solid var(--line); padding: 4px 12px; margin: 8px 0; background: var(--panel-hi); border-radius: 0 8px 8px 0; }
+  .more-examples .ja { font-size: 1.15em; margin: 2px 0; } .more-examples .en, .more-examples .r { color: var(--ink-2); margin: 0; }
   .examples-romaji { margin-top: 6px; color: var(--ink-2); }
   .your-turn .turn { border-top: 1px dashed var(--line-soft); padding: 6px 0; }
   .your-turn summary { cursor: pointer; color: var(--accent); }
@@ -232,5 +244,5 @@
   .prev-next { display: flex; justify-content: space-between; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
   .next-lesson { margin-left: auto; }
   .range-box { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 12px 0; }
-  .ex-count, .pct-line, .source, .credit { color: var(--ink-2); font-size: 0.88em; }
+  .ex-count, .pct-line, .source, .more-source, .credit { color: var(--ink-2); font-size: 0.88em; }
 </style>

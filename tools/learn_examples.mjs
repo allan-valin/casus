@@ -11,6 +11,7 @@
  */
 import { readFile, writeFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
+import { unsuitable } from './learn_match.mjs';
 import path from 'node:path';
 
 export function findTarget(tokens, target) {
@@ -130,7 +131,7 @@ async function main(code = 'ja', limit = Infinity) {
   // every pattern known, for the longer-pattern guard: the bold parts, the title cores, and the titles' alternatives
   const allPatterns = [...new Set([...targets, ...lessons.flatMap((l) => coresOfTitle(l.title)), 'かも', 'でも', 'とも', 'ても', 'ども', 'しも'])];
   // shortest sentences first; each lesson takes up to 200, those within its level's kanji first (the rest have furigana)
-  const pool = [...jpn].filter(([id, t]) => toEng.has(id) && eng.has(toEng.get(id)) && t.length <= 45).sort((a, b) => a[1].length - b[1].length);
+  const pool = [...jpn].filter(([id, t]) => toEng.has(id) && eng.has(toEng.get(id)) && t.length <= 45 && !unsuitable(eng.get(toEng.get(id)), t)).sort((a, b) => a[1].length - b[1].length);
   const found = new Map(lessons.map((l) => [l.id, []]));
   let done = 0;
   const t0 = Date.now();

@@ -57,15 +57,18 @@ const sentenceOf = (furi) => furi.map(([t]) => t).join('');
 
 /** a lesson's question file ({ pools, qs }) as questions: the stored ones with their pools, and for every sentence with
  * its words two more — English → choose the Japanese, and put the words in order */
-export function questionsFromFile(file, { lesson, random = Math.random } = {}) {
-  const qs = Array.isArray(file) ? file : (file?.qs ?? []);
+export function questionsFromFile(file, { lesson, random = Math.random, ui = 'en' } = {}) {
+  // in a Portuguese interface a sentence Tatoeba also translated into Portuguese is asked in Portuguese
+  const localise = (q) => (q.type === 'translate' && ui === 'pt' && q.pt ? { ...q, answer: q.pt, en: q.answer, lang: 'pt' } : q);
+  const qs = (Array.isArray(file) ? file : (file?.qs ?? [])).map(localise);
   const pools = Array.isArray(file) ? {} : (file?.pools ?? {});
   const sentences = qs.filter((q) => q.type === 'translate');
   const ens = sentences.map((q) => q.answer);
   const jas = sentences.map((q) => sentenceOf(q.furi));
   const out = [];
   for (const q of qs) {
-    const pool = q.pool ?? (q.type === 'gap' ? pools.gap : q.type === 'translate' ? ens.filter((e) => e !== q.answer) : []) ?? [];
+    const same = (x) => (x.lang ?? 'en') === (q.lang ?? 'en');
+    const pool = q.pool ?? (q.type === 'gap' ? pools.gap : q.type === 'translate' ? sentences.filter((x) => same(x) && x.answer !== q.answer).map((x) => x.answer) : []) ?? [];
     out.push({ ...q, lesson, pool });
   }
   sentences.forEach((q, k) => {

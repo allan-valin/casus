@@ -95,3 +95,30 @@ describe('word order question', () => {
     expect(container.querySelector('.quiz-feedback').classList.contains('right')).toBe(true);
   });
 });
+
+describe('lessons written for Casus: text in the interface language, more examples from Tatoeba', () => {
+  const MK_INDEX = { system: 'CEFR', credit: { en: 'Written for Casus.', pt: 'Escrito para o Casus.' }, levels: [{ id: 'A1', topics: [
+    { id: 'A1-t1', kind: 'grammar', title: { en: 'Being', pt: 'Ser e estar' }, lessons: [{ id: 'a1-sum', title: 'сум', meaning: { en: 'to be', pt: 'ser/estar' } }] }] }] };
+  const MK_LESSON = { id: 'a1-sum', title: 'сум', meaning: { en: 'to be', pt: 'ser/estar' }, level: 'A1', topic: { en: 'Being', pt: 'Ser e estar' },
+    intro: { en: '<p>The verb to be.</p>', pt: '<p>O verbo ser.</p>' },
+    sections: [{ id: 'formation', title: { en: 'Formation', pt: 'Formação' }, html: { en: '<table><tr><td>сум</td></tr></table>', pt: '<table><tr><td>сум</td></tr></table>' } }],
+    examples: [{ text: 'Јас сум студент.', en: 'I am a student.', pt: 'Eu sou estudante.' }], practice: [], source: 'written for Casus',
+    more: [{ text: 'Тој е тука.', en: 'He is here.', roman: 'toj e tuka', target: 'е' }] };
+  it('shows the Portuguese text when the interface is Portuguese', async () => {
+    const { setLang: setUiLang } = await import('../../src/app/lib/i18n.svelte.js');
+    setUiLang('pt');
+    const { container } = render(Learn, props({ lang: getLanguage('mk'), loadLearn: async () => MK_INDEX, loadLesson: async () => MK_LESSON }));
+    await flush();
+    expect(container.querySelector('.topic-title').textContent).toBe('Ser e estar');
+    expect(container.querySelector('.l-meaning').textContent).toBe('ser/estar');
+    await fireEvent.click(container.querySelector('.lesson-row'));
+    await flush();
+    const page = container.querySelector('.lesson-page');
+    expect(page.querySelector('.prose').textContent).toContain('O verbo ser');
+    expect(page.querySelector('.toc a').textContent).toBe('Formação');
+    expect(page.querySelector('.more-examples').textContent).toContain('Тој е тука.');
+    expect(page.querySelector('.more-examples').textContent).toContain('toj e tuka');
+    expect(page.querySelector('.source').textContent).toContain('Casus');
+    setUiLang('en');
+  });
+});

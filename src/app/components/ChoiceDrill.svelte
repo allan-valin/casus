@@ -2,7 +2,7 @@
   /* One item at a time, four answers to choose from (Allan, 2026-10-18: the most frequent words; set phrases and
    * sayings). After answering: right or wrong, the answer, and for a phrase its word-by-word reading, which shows
    * why a saying cannot be translated word by word. A missed item comes back soon. */
-  import { t } from '../lib/i18n.svelte.js';
+  import { t, ui } from '../lib/i18n.svelte.js';
   import { createChoiceQuiz } from '../lib/quiz.js';
   import { romanOf } from '../lib/roman.js';
   let { items, random = Math.random, romanize = null, onresult = null, ordered = false } = $props();
@@ -60,7 +60,7 @@
     <!-- a sentence with furigana where it has readings (Learn, 2026-10-19), else the plain prompt -->
     <p class="quiz-prompt" lang="">{#if current.item.furi}{#each current.item.furi as [t, r]}{#if r}<ruby>{t}<rt>{r}</rt></ruby>{:else}{t}{/if}{/each}{:else}{current.item.prompt}{/if}</p>
     {#if promptRoman}<p class="roman prompt-roman">{promptRoman}</p>{/if}
-    {#if current.item.hint ?? (current.item.type === 'gap' ? current.item.en : null)}<p class="quiz-hint">{current.item.hint ?? current.item.en}</p>{/if}
+    {#if current.item.hint ?? (current.item.type === 'gap' ? current.item.en : null)}<p class="quiz-hint">{current.item.hint ?? (ui.lang === 'pt' && current.item.pt ? current.item.pt : current.item.en)}</p>{/if}
     {#if current.item.type === 'order'}
       <!-- put the words in order: tap them, the sentence builds up; it is checked when every word is used -->
       <p class="built" aria-live="polite">{built.map((k) => current.item.tokens[k]).join('') || '…'}</p>

@@ -1,0 +1,803 @@
+id: A1
+topics:
+
+- title: {en: Letters and sounds, pt: Letras e sons}
+  lessons:
+  - id: a1-alphabet
+    title: Азбуката
+    meaning: {en: "the alphabet, spelling and stress", pt: "o alfabeto, a ortografia e o acento"}
+    intro:
+      en: |
+        Macedonian is written in its own Cyrillic alphabet of **31 letters**, and it is written **as it is spoken**: one letter, one sound, and every letter is pronounced. Once you know the letters you can read any word aloud.
+
+        Most letters match Russian or Serbian Cyrillic. Seven need attention: `ѓ` and `ќ` (soft *g* and *k*, close to the *gy* and *ky* of "argue" and "cute"), `ѕ` (*dz*), `ј` (the *y* of "yes"), `љ` and `њ` (soft *l* and *n*, as in "million" and "canyon"), and `џ` (the *j* of "jam").
+      pt: |
+        O macedônio é escrito com seu próprio alfabeto cirílico de **31 letras**, e se escreve **como se fala**: uma letra, um som, e toda letra é pronunciada. Sabendo as letras, você consegue ler qualquer palavra em voz alta.
+
+        A maioria das letras é igual ao cirílico russo ou sérvio. Sete pedem atenção: `ѓ` e `ќ` (*g* e *k* suaves, perto de "guia" e "quieto" ditos rápido), `ѕ` (*dz*), `ј` (o *i* de "iate"), `љ` e `њ` (*lh* e *nh*, como em "filho" e "ninho") e `џ` (o *dj* de "adjetivo").
+    table:
+      head: {en: [Letter, Latin, Sounds like, Example], pt: [Letra, Latino, Soa como, Exemplo]}
+      rows:
+      - [ѓ, gj, "soft g", "ѓакон (pupil)"]
+      - [ќ, kj, "soft k", "ќерка (daughter)"]
+      - [ѕ, dz, dz, "ѕвезда (star)"]
+      - [ј, j, "y in yes", "јас (I)"]
+      - [љ, lj, "lh / lli", "љубов (love)"]
+      - [њ, nj, "nh / ny", "коњ (horse)"]
+      - [џ, dž, "j in jam", "џеб (pocket)"]
+      - [ц, c, ts, "цвет (flower)"]
+      - [ч, č, ch, "чај (tea)"]
+      - [ш, š, sh, "шума (forest)"]
+      - [ж, ž, "s in pleasure", "жена (woman)"]
+      - [х, h, "h / ch in Bach", "хотел (hotel)"]
+    sections:
+    - id: usage
+      title: {en: Where the stress falls, pt: Onde cai o acento}
+      body:
+        en: |
+          The stress is **fixed**: in a word of three or more syllables it falls on the **third syllable from the end**; in shorter words, on the first. It is never written.
+
+          | word | stress |
+          |---|---|
+          | вода (water) | **во**да |
+          | македонски | ма**ке**донски |
+          | водата (the water) | во**да**та |
+
+          Because the article is part of the word, adding it moves the stress: **во**да → во**да**та, **чо**век → чо**ве**кот. A few loanwords keep their own stress (e.g. литера**ту**ра).
+        pt: |
+          O acento é **fixo**: numa palavra de três ou mais sílabas ele cai na **antepenúltima**; nas mais curtas, na primeira. Nunca é escrito.
+
+          | palavra | acento |
+          |---|---|
+          | вода (água) | **во**да |
+          | македонски | ма**ке**донски |
+          | водата (a água) | во**да**та |
+
+          Como o artigo faz parte da palavra, acrescentá-lo desloca o acento: **во**да → во**да**та, **чо**век → чо**ве**кот. Algumas palavras estrangeiras mantêm o acento original (ex.: литера**ту**ра).
+    mistakes:
+    - wrong: "ѓ = g, ќ = k"
+      right: "ѓ ≈ gj, ќ ≈ kj"
+      why: {en: "They are soft, palatal sounds: ќе is *kye*, not *ke*.", pt: "São sons suaves, palatais: ќе soa *quié*, não *que*."}
+    - wrong: "ма-ке-ДОН-ски"
+      right: "ма-КЕ-дон-ски"
+      why: {en: "Count three syllables from the end.", pt: "Conte três sílabas a partir do fim."}
+    examples:
+    - [Јас сум Ана., I am Ana., Eu sou a Ana.]
+    - [Ова е ќерка ми., This is my daughter., Esta é minha filha.]
+    - [Пијам чај., I drink tea., Eu bebo chá.]
+    - ["Каде е џебот?", "Where is the pocket?", "Onde está o bolso?"]
+    # spelling: the wrong answers swap a special letter for the plain one it is mistaken for
+    match: {seq: [{re: "[ѓќѕљњџ]"}]}
+    swaps: {ѓ: [г, џ], ќ: [к, ч], ѕ: [з, ц], љ: [л], њ: [н], џ: [ч, ѓ], ч: [ќ], ј: [и]}
+
+- title: {en: Being and having, pt: Ser, estar e ter}
+  lessons:
+  - id: a1-sum
+    title: сум
+    meaning: {en: "to be (I am, you are…)", pt: "ser / estar (eu sou, você é…)"}
+    intro:
+      en: |
+        `сум` is *to be*. Macedonian uses one verb where Portuguese uses *ser* and *estar*. The subject pronoun is usually left out, because the verb form already says who it is: **Студент сум.** "I am a student."
+      pt: |
+        `сум` é *ser* e *estar* ao mesmo tempo: o macedônio não distingue os dois. O pronome sujeito costuma ficar de fora, porque a forma do verbo já diz quem é: **Студент сум.** "Sou estudante."
+    table:
+      head: {en: [Person, Form, With "not"], pt: [Pessoa, Forma, Com "não"]}
+      rows:
+      - [јас (I), сум, не сум]
+      - [ти (you), си, не си]
+      - [тој / таа / тоа (he / she / it), е, не е]
+      - [ние (we), сме, не сме]
+      - [вие (you, plural or polite), сте, не сте]
+      - [тие (they), се, не се]
+    sections:
+    - id: usage
+      body:
+        en: |
+          - The forms are short and **never start a sentence** in normal speech: say **Студент сум** or **Јас сум студент**, not *Сум студент*.
+          - `Вие сте` is also the polite *you* for one person, like *o senhor / a senhora*.
+          - The 3rd person `е` and the plural `се` look like other words (`е` "eh", `се` "oneself"); the sentence makes it clear.
+        pt: |
+          - As formas são curtas e **não abrem a frase** na fala normal: diga **Студент сум** ou **Јас сум студент**, não *Сум студент*.
+          - `Вие сте` também é o *você* formal para uma pessoa, como *o senhor / a senhora*.
+          - O `е` da 3ª pessoa e o `се` do plural parecem outras palavras (`е` "ei", `се` "se"); a frase deixa claro.
+    mistakes:
+    - wrong: Јас е студент.
+      right: Јас сум студент.
+      why: {en: "Each person has its own form; е is only he/she/it.", pt: "Cada pessoa tem sua forma; е é só ele/ela."}
+    - wrong: Сум уморен.
+      right: Уморен сум.
+      why: {en: "The short form leans on a word before it.", pt: "A forma curta se apoia numa palavra antes dela."}
+    examples:
+    - [Јас сум студент., I am a student., Eu sou estudante., сум]
+    - [Ти си многу добар., You are very good., Você é muito bom., си]
+    - [Таа е дома., She is at home., Ela está em casa., е]
+    - [Ние сме од Бразил., We are from Brazil., Nós somos do Brasil., сме]
+    - ["Каде сте вие?", "Where are you?", "Onde vocês estão?", "сте"]
+    match: {seq: [{word: [сум, си, е, сме, сте]}]}
+    pool: [сум, си, е, сме, сте, се]
+
+  - id: a1-negation
+    title: не, нема
+    meaning: {en: "not; there is not", pt: "não; não há"}
+    intro:
+      en: |
+        `не` goes **directly before the verb** (and before any short pronouns attached to it): **Не знам.** "I don't know." Macedonian keeps double negatives: **Никој не дојде.** "Nobody came" (literally "nobody didn't come").
+
+        `нема` is the negative of `има` "there is": **Нема леб.** "There is no bread." With `да` it also makes the negative future (lesson A2).
+      pt: |
+        `не` vem **logo antes do verbo** (e antes dos pronomes curtos ligados a ele): **Не знам.** "Não sei." O macedônio usa dupla negação como o português: **Никој не дојде.** "Ninguém veio" (literalmente "ninguém não veio").
+
+        `нема` é a negação de `има` "há": **Нема леб.** "Não há pão." Com `да` forma também o futuro negativo (lição A2).
+    table:
+      head: {en: [Positive, Negative], pt: [Afirmativa, Negativa]}
+      rows:
+      - [Знам., Не знам.]
+      - [Тој е тука., Тој не е тука.]
+      - [Го сакам., Не го сакам.]
+      - [Има време., Нема време.]
+    mistakes:
+    - wrong: Го не сакам.
+      right: Не го сакам.
+      why: {en: "не comes before the short pronouns too.", pt: "не vem antes também dos pronomes curtos."}
+    - wrong: Не има време.
+      right: Нема време.
+      why: {en: "не + има is always written нема.", pt: "не + има sempre vira нема."}
+    examples:
+    - [Не знам., I don't know., Não sei., не]
+    - [Тој не е тука., He isn't here., Ele não está aqui., не]
+    - [Нема проблем., No problem., Sem problema., Нема]
+    - [Никој не дојде., Nobody came., Ninguém veio., не]
+    match: [{seq: [{word: [не]}, {pos: verb}], near: 2, gap: 0}, {seq: [{word: [нема]}], gap: 0}]
+    pool: [не, нема, ни, ниту, ли, да]
+
+  - id: a1-imam
+    title: имам, немам
+    meaning: {en: "to have; there is", pt: "ter; haver"}
+    intro:
+      en: |
+        `имам` "I have" is an а-verb (next lesson) with a negative of its own: `немам` "I don't have". The 3rd person `има` / `нема` also means *there is / there isn't*, like Brazilian *tem*: **Има кафе?** "Is there coffee?"
+      pt: |
+        `имам` "eu tenho" é um verbo em -а (próxima lição) com negativa própria: `немам` "não tenho". A 3ª pessoa `има` / `нема` também significa *há / não há*, como o *tem* do português do Brasil: **Има кафе?** "Tem café?"
+    table:
+      head: {en: [Person, have, don't have], pt: [Pessoa, ter, não ter]}
+      rows:
+      - [јас, имам, немам]
+      - [ти, имаш, немаш]
+      - [тој / таа / тоа, има, нема]
+      - [ние, имаме, немаме]
+      - [вие, имате, немате]
+      - [тие, имаат, немаат]
+    examples:
+    - [Имам брат., I have a brother., Eu tenho um irmão., Имам]
+    - [Немам пари., I have no money., Não tenho dinheiro., Немам]
+    - ["Имаш ли време?", "Do you have time?", "Você tem tempo?", "Имаш"]
+    - [Тука нема никој., There's nobody here., Não tem ninguém aqui., нема]
+    - [Тие имаат куче., They have a dog., Eles têm um cachorro., имаат]
+    match: {seq: [{word: [имам, имаш, има, имаме, имате, имаат, немам, немаш, немаме, немате, немаат]}]}
+    pool: [имам, имаш, има, имаме, имате, имаат, немам, немаш, нема, немаме, немате, немаат]
+
+- title: {en: The present tense, pt: O presente}
+  lessons:
+  - id: a1-pres-a
+    title: чита – читам
+    meaning: {en: "present tense of а-verbs", pt: "presente dos verbos em -а"}
+    intro:
+      en: |
+        Dictionaries list a Macedonian verb in the **3rd person singular** of the present ("he reads"), because there is no infinitive. The vowel at its end sorts the verb into one of three groups: **а**, **е** or **и**.
+
+        The а-group is the largest and the most regular: take `чита` "reads" and add the endings. Every 1st person singular in the present ends in **-м**.
+      pt: |
+        Os dicionários dão o verbo macedônio na **3ª pessoa do singular** do presente ("ele lê"), porque não existe infinitivo. A vogal final separa o verbo em três grupos: **а**, **е** ou **и**.
+
+        O grupo em -а é o maior e o mais regular: pegue `чита` "lê" e acrescente as terminações. Toda 1ª pessoa do singular do presente termina em **-м**.
+    table:
+      head: {en: [Person, Ending, "чита (read)", "зборува (speak)"], pt: [Pessoa, Terminação, "чита (ler)", "зборува (falar)"]}
+      rows:
+      - [јас, -ам, читам, зборувам]
+      - [ти, -аш, читаш, зборуваш]
+      - [тој / таа / тоа, -а, чита, зборува]
+      - [ние, -аме, читаме, зборуваме]
+      - [вие, -ате, читате, зборувате]
+      - [тие, -аат, читаат, зборуваат]
+    sections:
+    - id: notes
+      body:
+        en: "Many verbs in **-ува** belong here: `зборува` (speak), `пишува` (write), `купува` (buy), `патува` (travel). Also `гледа` (watch), `чека` (wait), `сака` (want, love), `игра` (play)."
+        pt: "Muitos verbos em **-ува** estão aqui: `зборува` (falar), `пишува` (escrever), `купува` (comprar), `патува` (viajar). Também `гледа` (ver, assistir), `чека` (esperar), `сака` (querer, amar), `игра` (brincar, jogar)."
+    mistakes:
+    - wrong: Тие чита.
+      right: Тие читаат.
+      why: {en: "They takes -аат.", pt: "Eles leva -аат."}
+    examples:
+    - [Читам книга., I'm reading a book., Estou lendo um livro., Читам]
+    - ["Зборуваш ли англиски?", "Do you speak English?", "Você fala inglês?", "Зборуваш"]
+    - [Ние гледаме филм., We're watching a film., Estamos assistindo a um filme., гледаме]
+    - [Тие те чекаат., They are waiting for you., Eles estão te esperando., чекаат]
+    match: {seq: [{pos: verb, tense: pres, lemma: "а$"}], same: [tense]}
+
+  - id: a1-pres-e
+    title: пие – пијам
+    meaning: {en: "present tense of е-verbs", pt: "presente dos verbos em -е"}
+    intro:
+      en: |
+        Verbs whose dictionary form ends in **-е** take **-е-** in the middle persons and **-ам / -ат** at the ends. After a vowel a `ј` appears where two vowels would meet: `пие` → `пијам`, `пијат`.
+      pt: |
+        Os verbos cuja forma de dicionário termina em **-е** levam **-е-** nas pessoas do meio e **-ам / -ат** nas pontas. Depois de vogal aparece um `ј` onde duas vogais se encontrariam: `пие` → `пијам`, `пијат`.
+    table:
+      head: {en: [Person, Ending, "јаде (eat)", "пие (drink)"], pt: [Pessoa, Terminação, "јаде (comer)", "пие (beber)"]}
+      rows:
+      - [јас, -ам, јадам, пијам]
+      - [ти, -еш, јадеш, пиеш]
+      - [тој / таа / тоа, -е, јаде, пие]
+      - [ние, -еме, јадеме, пиеме]
+      - [вие, -ете, јадете, пиете]
+      - [тие, -ат, јадат, пијат]
+    sections:
+    - id: notes
+      body:
+        en: "Also: `живее` (lives: живеам, живееш…), `пере` (washes), `плете` (knits), `тресе` (shakes), `може` (can: можам, можеш… можат), `дојде` (comes, perfective)."
+        pt: "Também: `живее` (mora, vive: живеам, живееш…), `пере` (lava), `плете` (tricota), `тресе` (sacode), `може` (pode: можам, можеш… можат), `дојде` (vem, perfectivo)."
+    mistakes:
+    - wrong: Јадем леб.
+      right: Јадам леб.
+      why: {en: "I always ends in -ам/-м in the present, even in е-verbs.", pt: "Eu sempre termina em -ам/-м no presente, mesmo nos verbos em -е."}
+    examples:
+    - [Јадам јаболко., I'm eating an apple., Estou comendo uma maçã., Јадам]
+    - ["Што пиеш?", "What are you drinking?", "O que você está bebendo?", "пиеш"]
+    - ["Каде живеете?", "Where do you live?", "Onde vocês moram?", "живеете"]
+    - ["Можеме ли да влеземе?", "May we come in?", "Podemos entrar?", "Можеме"]
+    match: {seq: [{pos: verb, tense: pres, lemma: "е$"}], same: [tense]}
+
+  - id: a1-pres-i
+    title: носи – носам
+    meaning: {en: "present tense of и-verbs", pt: "presente dos verbos em -и"}
+    intro:
+      en: |
+        Verbs in **-и** keep **-и-** in the middle persons; the 1st person singular is still **-ам** and *they* is **-ат**.
+      pt: |
+        Os verbos em **-и** mantêm **-и-** nas pessoas do meio; a 1ª pessoa do singular continua **-ам** e *eles* é **-ат**.
+    table:
+      head: {en: [Person, Ending, "оди (go)", "учи (learn)"], pt: [Pessoa, Terminação, "оди (ir)", "учи (estudar)"]}
+      rows:
+      - [јас, -ам, одам, учам]
+      - [ти, -иш, одиш, учиш]
+      - [тој / таа / тоа, -и, оди, учи]
+      - [ние, -име, одиме, учиме]
+      - [вие, -ите, одите, учите]
+      - [тие, -ат, одат, учат]
+    contrast: null
+    sections:
+    - id: contrast
+      body:
+        en: |
+          | | а-verbs | е-verbs | и-verbs |
+          |---|---|---|---|
+          | I | -ам | -ам | -ам |
+          | you | -аш | -еш | -иш |
+          | he/she | -а | -е | -и |
+          | we | -аме | -еме | -име |
+          | you (pl.) | -ате | -ете | -ите |
+          | they | -аат | -ат | -ат |
+        pt: |
+          | | verbos em -а | em -е | em -и |
+          |---|---|---|---|
+          | eu | -ам | -ам | -ам |
+          | você | -аш | -еш | -иш |
+          | ele/ela | -а | -е | -и |
+          | nós | -аме | -еме | -име |
+          | vocês | -ате | -ете | -ите |
+          | eles | -аат | -ат | -ат |
+    examples:
+    - [Одам дома., I'm going home., Vou para casa., Одам]
+    - ["Што учиш?", "What are you studying?", "O que você estuda?", "учиш"]
+    - [Тој носи очила., He wears glasses., Ele usa óculos., носи]
+    - ["Каде одите?", "Where are you going?", "Aonde vocês vão?", "одите"]
+    match: {seq: [{pos: verb, tense: pres, lemma: "и$"}], same: [tense]}
+
+  - id: a1-questions
+    title: ли, дали
+    meaning: {en: "yes/no questions", pt: "perguntas de sim ou não"}
+    intro:
+      en: |
+        A yes/no question is made in two ways:
+
+        - `ли` **after the first word** you ask about, usually the verb: **Зборуваш ли македонски?**
+        - `Дали` **at the start**, with normal word order: **Дали зборуваш македонски?**
+
+        In speech, rising intonation alone also works: **Зборуваш македонски?**
+      pt: |
+        A pergunta de sim ou não se faz de duas formas:
+
+        - `ли` **depois da primeira palavra** sobre a qual se pergunta, normalmente o verbo: **Зборуваш ли македонски?**
+        - `Дали` **no início**, com a ordem normal: **Дали зборуваш македонски?**
+
+        Na fala, só a entonação também funciona: **Зборуваш македонски?**
+    mistakes:
+    - wrong: Ли зборуваш македонски?
+      right: Зборуваш ли македонски?
+      why: {en: "ли never starts a sentence; it follows the word in question.", pt: "ли nunca abre a frase; vem depois da palavra perguntada."}
+    - wrong: Дали зборуваш ли македонски?
+      right: Дали зборуваш македонски?
+      why: {en: "Use one or the other.", pt: "Use um ou outro."}
+    examples:
+    - ["Зборуваш ли македонски?", "Do you speak Macedonian?", "Você fala macedônio?", "ли"]
+    - ["Дали е тој дома?", "Is he at home?", "Ele está em casa?", "Дали"]
+    - ["Имаш ли брат?", "Do you have a brother?", "Você tem irmão?", "ли"]
+    - ["Дали те разбирам добро?", "Do I understand you right?", "Estou te entendendo bem?", "Дали"]
+    match: [{seq: [{word: [ли]}], gap: 0}, {seq: [{word: [дали], start: true}], gap: 0}]
+    pool: [ли, дали, да, ќе, не, ни]
+
+  - id: a1-question-words
+    title: што, кој, каде, кога…
+    meaning: {en: "question words", pt: "palavras interrogativas"}
+    intro:
+      en: |
+        The question word comes first, as in English. `кој` "who, which" agrees with what it asks about: `кој` (m.), `која` (f.), `кое` (n.), `кои` (pl.).
+      pt: |
+        A palavra interrogativa vem primeiro, como em português. `кој` "quem, qual" concorda com aquilo que pergunta: `кој` (m.), `која` (f.), `кое` (n.), `кои` (pl.).
+    table:
+      head: {en: [Word, Meaning, Example], pt: [Palavra, Significado, Exemplo]}
+      rows:
+      - ["што", "what", "Што правиш?"]
+      - ["кој / која / кое / кои", "who, which", "Кој е тоа?"]
+      - ["чиј / чија / чие / чии", "whose", "Чија е книгата?"]
+      - ["каде", "where", "Каде живееш?"]
+      - ["кога", "when", "Кога доаѓаш?"]
+      - ["зошто", "why", "Зошто плачеш?"]
+      - ["како", "how", "Како си?"]
+      - ["колку", "how much, how many", "Колку чини?"]
+    examples:
+    - ["Како си?", "How are you?", "Como você está?", "Како"]
+    - ["Што правиш?", "What are you doing?", "O que você está fazendo?", "Што"]
+    - ["Каде живееш?", "Where do you live?", "Onde você mora?", "Каде"]
+    - ["Колку чини ова?", "How much does this cost?", "Quanto custa isso?", "Колку"]
+    - ["Зошто плачеш?", "Why are you crying?", "Por que você está chorando?", "Зошто"]
+    match: {seq: [{word: [што, кој, која, кое, кои, каде, кога, зошто, како, колку, чиј, чија, чие], start: true}], gap: 0}
+    pool: [Што, Кој, Која, Каде, Кога, Зошто, Како, Колку, Чиј]
+
+- title: {en: Nouns and the article, pt: Substantivos e artigo}
+  lessons:
+  - id: a1-gender
+    title: род
+    meaning: {en: "gender: masculine, feminine, neuter", pt: "gênero: masculino, feminino, neutro"}
+    intro:
+      en: |
+        Every noun is masculine, feminine or neuter, and the ending usually tells you which:
+
+        - **masculine**: a consonant — `стол` (chair), `град` (city); a few men in -о/-а: `татко` (father), `колега` (colleague)
+        - **feminine**: **-а** — `жена` (woman), `книга` (book); and some in a consonant, mostly abstract nouns in **-ост/-ест** and `ноќ` (night), `крв` (blood), `сол` (salt)
+        - **neuter**: **-о** or **-е** — `село` (village), `дете` (child), `море` (sea)
+
+        Adjectives, the article and *this/that* follow the gender: `нов стол`, `нова книга`, `ново село`.
+      pt: |
+        Todo substantivo é masculino, feminino ou neutro, e a terminação costuma dizer qual:
+
+        - **masculino**: consoante — `стол` (cadeira), `град` (cidade); alguns homens em -о/-а: `татко` (pai), `колега` (colega)
+        - **feminino**: **-а** — `жена` (mulher), `книга` (livro); e alguns em consoante, quase todos abstratos em **-ост/-ест**, além de `ноќ` (noite), `крв` (sangue), `сол` (sal)
+        - **neutro**: **-о** ou **-е** — `село` (aldeia), `дете` (criança), `море` (mar)
+
+        O adjetivo, o artigo e *este/aquele* seguem o gênero: `нов стол`, `нова книга`, `ново село`. Atenção: o gênero nem sempre coincide com o português (`книга` "livro" é feminino).
+    table:
+      head: {en: [Gender, Ending, Examples, "new …"], pt: [Gênero, Terminação, Exemplos, "novo …"]}
+      rows:
+      - [masculine / masculino, consonant, "стол, град, телефон", нов]
+      - [feminine / feminino, "-а; -ост", "жена, книга, радост", нова]
+      - [neuter / neutro, "-о, -е", "село, дете, море", ново]
+    mistakes:
+    - wrong: нов книга
+      right: нова книга
+      why: {en: "книга ends in -а: feminine.", pt: "книга termina em -а: feminino."}
+    - wrong: нова татко
+      right: нов татко
+      why: {en: "Men are masculine whatever the ending.", pt: "Homens são masculinos qualquer que seja a terminação."}
+    examples:
+    - [Ова е нов стол., This is a new chair., Esta é uma cadeira nova., нов]
+    - [Имам нова книга., I have a new book., Tenho um livro novo., нова]
+    - [Тоа е мало село., That's a small village., É uma aldeia pequena., мало]
+    - [Тој е добар татко., He is a good father., Ele é um bom pai., добар]
+    match: {seq: [{pos: adj, case: indef, number: sg}, {pos: noun, number: sg}], gap: 0, same: [case, number]}
+
+  - id: a1-plural
+    title: множина
+    meaning: {en: "plural of nouns", pt: "plural dos substantivos"}
+    intro:
+      en: |
+        The plural depends on the gender:
+
+        - **masculine** of one syllable: **-ови** (after a soft consonant **-еви**) — `град` → `градови`, `нож` → `ножеви`; of more syllables: **-и** — `студент` → `студенти`. Before -и, к/г/х change: `ученик` → `ученици`, `бубрег` → `бубрези`.
+        - **feminine**: **-а → -и** — `жена` → `жени`, `книга` → `книги`; consonant nouns add -и: `ноќ` → `ноќи`.
+        - **neuter**: **-о → -а** — `село` → `села`; **-е → -иња** — `море` → `мориња`, `кафе` → `кафиња`; **-це → -ца**: `јајце` → `јајца`.
+
+        Some are irregular and very common: `човек` → `луѓе` (people), `дете` → `деца` (children), `брат` → `браќа`, `око` → `очи`, `уво` → `уши`.
+      pt: |
+        O plural depende do gênero:
+
+        - **masculino** de uma sílaba: **-ови** (depois de consoante suave **-еви**) — `град` → `градови`, `нож` → `ножеви`; de mais sílabas: **-и** — `студент` → `студенти`. Antes de -и, к/г/х mudam: `ученик` → `ученици`, `бубрег` → `бубрези`.
+        - **feminino**: **-а → -и** — `жена` → `жени`, `книга` → `книги`; os em consoante acrescentam -и: `ноќ` → `ноќи`.
+        - **neutro**: **-о → -а** — `село` → `села`; **-е → -иња** — `море` → `мориња`, `кафе` → `кафиња`; **-це → -ца**: `јајце` → `јајца`.
+
+        Alguns são irregulares e muito comuns: `човек` → `луѓе` (pessoas), `дете` → `деца` (crianças), `брат` → `браќа`, `око` → `очи`, `уво` → `уши`.
+    table:
+      head: {en: [Singular, Plural, Rule], pt: [Singular, Plural, Regra]}
+      rows:
+      - [град, градови, "m., 1 syllable: -ови"]
+      - [студент, студенти, "m., 2+ syllables: -и"]
+      - [ученик, ученици, "к → ц before -и"]
+      - [жена, жени, "f.: -а → -и"]
+      - [село, села, "n.: -о → -а"]
+      - [море, мориња, "n.: -е → -иња"]
+      - [човек, луѓе, irregular]
+      - [дете, деца, irregular]
+    mistakes:
+    - wrong: човеци
+      right: луѓе
+      why: {en: "The plural of човек is a different word.", pt: "O plural de човек é outra palavra."}
+    - wrong: ученики
+      right: ученици
+      why: {en: "к becomes ц before the plural -и.", pt: "к vira ц antes do -и do plural."}
+    examples:
+    - [Имам две сестри., I have two sisters., Tenho duas irmãs., сестри]
+    - [Децата спијат., The children are asleep., As crianças estão dormindo.]
+    - [Тие се студенти., They are students., Eles são estudantes., студенти]
+    - [Има многу луѓе тука., There are a lot of people here., Tem muita gente aqui., луѓе]
+    # a plural noun also reads as a vocative plural: both readings are fine here
+    match: {seq: [{pos: noun, number: pl, case: [indef, voc]}]}
+
+  - id: a1-article
+    title: -от, -та, -то, -те
+    meaning: {en: "the definite article (the)", pt: "o artigo definido (o, a)"}
+    intro:
+      en: |
+        Macedonian has no word for *the*: the article is an **ending** added to the noun. Which ending depends on the **form of the noun**, not only its gender:
+
+        - masculine in a consonant: **-от** — `стол` → `столот`
+        - feminine, and masculine in -а: **-та** — `жена` → `жената`, `колега` → `колегата`
+        - neuter, and masculine in -о: **-то** — `село` → `селото`, `татко` → `таткото`
+        - plural in -и: **-те** — `столови` → `столовите`, `жени` → `жените`
+        - plural in -а: **-та** — `села` → `селата`, `деца` → `децата`
+
+        There is no indefinite article; `еден / една / едно` "one" is used when *a certain one* is meant.
+      pt: |
+        O macedônio não tem uma palavra para *o/a*: o artigo é uma **terminação** colada ao substantivo. Qual terminação depende da **forma do substantivo**, não só do gênero:
+
+        - masculino em consoante: **-от** — `стол` → `столот`
+        - feminino, e masculino em -а: **-та** — `жена` → `жената`, `колега` → `колегата`
+        - neutro, e masculino em -о: **-то** — `село` → `селото`, `татко` → `таткото`
+        - plural em -и: **-те** — `столови` → `столовите`, `жени` → `жените`
+        - plural em -а: **-та** — `села` → `селата`, `деца` → `децата`
+
+        Não há artigo indefinido; `еден / една / едно` "um, uma" se usa quando se quer dizer *um certo*.
+    table:
+      head: {en: [Noun, "+ the", Ending], pt: [Substantivo, "+ artigo", Terminação]}
+      rows:
+      - [стол, столот, -от]
+      - [жена, жената, -та]
+      - [село, селото, -то]
+      - [татко, таткото, -то]
+      - [столови, столовите, -те]
+      - [деца, децата, -та]
+    sections:
+    - id: usage
+      body:
+        en: |
+          The article is used much as in Portuguese — for something known or already mentioned (**Каде е клучот?** "Where is the key?") — but **not** with proper names, and **not** after prepositions when the meaning is general (**во град** "in a city", **во градот** "in the city").
+
+          Kinship words with a short possessive take no article: **мајка ми** "my mother" (lesson A2).
+        pt: |
+          O artigo se usa mais ou menos como em português — para algo conhecido ou já mencionado (**Каде е клучот?** "Onde está a chave?") — mas **não** com nomes próprios: *a Ana* é só **Ана**.
+
+          Palavras de parentesco com possessivo curto não levam artigo: **мајка ми** "minha mãe" (lição A2).
+    mistakes:
+    - wrong: таткоот
+      right: таткото
+      why: {en: "Masculine nouns in -о take -то.", pt: "Masculinos em -о levam -то."}
+    - wrong: децате
+      right: децата
+      why: {en: "Plurals in -а take -та.", pt: "Plurais em -а levam -та."}
+    examples:
+    - ["Каде е клучот?", "Where is the key?", "Onde está a chave?", "клучот"]
+    - [Книгата е на масата., The book is on the table., O livro está na mesa., Книгата]
+    - [Детето спие., The child is asleep., A criança está dormindo., Детето]
+    - [Жените се тука., The women are here., As mulheres estão aqui., Жените]
+    match: {seq: [{pos: noun, case: def}], same: [number]}
+
+- title: {en: Describing things, pt: Descrevendo as coisas}
+  lessons:
+  - id: a1-adjectives
+    title: нов, нова, ново, нови
+    meaning: {en: "adjectives and agreement", pt: "adjetivos e concordância"}
+    intro:
+      en: |
+        An adjective comes **before** its noun and agrees with it: masculine has no ending, feminine **-а**, neuter **-о**, plural **-и** (for all genders).
+
+        Masculine adjectives often have a mobile vowel that drops in the other forms: `добар` → `добра, добро, добри`; `мал` keeps it simple: `мала, мало, мали`. Many adjectives in **-ски** keep -и throughout: `македонски, македонска, македонско, македонски`.
+      pt: |
+        O adjetivo vem **antes** do substantivo e concorda com ele: masculino sem terminação, feminino **-а**, neutro **-о**, plural **-и** (para todos os gêneros).
+
+        Muitos masculinos têm uma vogal móvel que cai nas outras formas: `добар` → `добра, добро, добри`; `мал` é simples: `мала, мало, мали`. Os adjetivos em **-ски** terminam assim no masculino: `македонски, македонска, македонско, македонски`.
+    table:
+      head: {en: [m., f., n., pl., meaning], pt: [m., f., n., pl., significado]}
+      rows:
+      - [нов, нова, ново, нови, new]
+      - [мал, мала, мало, мали, small]
+      - [добар, добра, добро, добри, good]
+      - [голем, голема, големо, големи, big]
+      - [убав, убава, убаво, убави, beautiful]
+      - [македонски, македонска, македонско, македонски, Macedonian]
+    mistakes:
+    - wrong: добара жена
+      right: добра жена
+      why: {en: "The mobile -а- of добар drops in the other forms.", pt: "O -а- móvel de добар cai nas outras formas."}
+    - wrong: нова деца
+      right: нови деца
+      why: {en: "Plural is -и for every gender.", pt: "O plural é -и para todos os gêneros."}
+    examples:
+    - [Тоа е голема куќа., That's a big house., É uma casa grande., голема]
+    - [Имаме ново куче., We have a new dog., Temos um cachorro novo., ново]
+    - [Тие се добри луѓе., They are good people., São boas pessoas., добри]
+    - [Денес е убав ден., It's a beautiful day today., Hoje está um dia bonito., убав]
+    match: {seq: [{pos: adj, case: indef}], same: [case]}
+
+  - id: a1-adj-article
+    title: новиот стол
+    meaning: {en: "the article goes on the first word", pt: "o artigo vai na primeira palavra"}
+    intro:
+      en: |
+        When an adjective comes before the noun, the article moves to the **adjective** — the first word of the phrase — and the noun stays bare: `стол` → `столот`, but `нов стол` → **новиот стол**.
+
+        Masculine adjectives take **-иот** (`новиот`, `добриот`); the other forms take the same article as nouns: `новата`, `новото`, `новите`.
+      pt: |
+        Quando há adjetivo antes do substantivo, o artigo passa para o **adjetivo** — a primeira palavra do grupo — e o substantivo fica sem ele: `стол` → `столот`, mas `нов стол` → **новиот стол** "a cadeira nova".
+
+        O masculino leva **-иот** (`новиот`, `добриот`); as outras formas levam o mesmo artigo dos substantivos: `новата`, `новото`, `новите`.
+    table:
+      head: {en: [Without, With the article], pt: [Sem, Com artigo]}
+      rows:
+      - [нов стол, новиот стол]
+      - [нова книга, новата книга]
+      - [ново село, новото село]
+      - [нови столови, новите столови]
+      - [мојот нов телефон, "(possessive first: the article on it)"]
+    mistakes:
+    - wrong: нов столот
+      right: новиот стол
+      why: {en: "Only the first word takes the article.", pt: "Só a primeira palavra leva o artigo."}
+    - wrong: новот стол
+      right: новиот стол
+      why: {en: "Masculine adjectives take -иот.", pt: "Adjetivos masculinos levam -иот."}
+    examples:
+    - [Новиот учител е млад., The new teacher is young., O professor novo é jovem., Новиот]
+    - [Ја сакам црвената кошула., I like the red shirt., Gosto da camisa vermelha., црвената]
+    - ["Каде е малото куче?", "Where is the little dog?", "Onde está o cachorrinho?", "малото"]
+    - [Старите куќи се убави., The old houses are beautiful., As casas velhas são bonitas., Старите]
+    match: {seq: [{pos: adj, case: def}, {pos: noun, case: indef}], gap: 0, same: [case]}
+
+  - id: a1-demonstratives
+    title: овој, тој, оној
+    meaning: {en: "this, that, that over there", pt: "este, esse, aquele"}
+    intro:
+      en: |
+        Three distances, like Portuguese *este / esse / aquele*:
+
+        - `овој` — **this**, near me
+        - `тој` — **that**, the one we're talking about (also *he / she / it*)
+        - `оној` — **that over there**, far away
+
+        They agree with the noun, and the noun after them has no article: **овој стол** "this chair".
+      pt: |
+        Três distâncias, como *este / esse / aquele*:
+
+        - `овој` — **este**, perto de mim
+        - `тој` — **esse**, aquele de que falamos (também é *ele / ela*)
+        - `оној` — **aquele lá**, longe
+
+        Concordam com o substantivo, e o substantivo depois deles fica sem artigo: **овој стол** "esta cadeira".
+    table:
+      head: {en: ["", m., f., n., pl.], pt: ["", m., f., n., pl.]}
+      rows:
+      - [this / este, овој, оваа, ова, овие]
+      - [that / esse, тој, таа, тоа, тие]
+      - [over there / aquele, оној, онаа, она, оние]
+    sections:
+    - id: notes
+      body:
+        en: "`ова` and `тоа` alone mean *this* and *that* as things: **Што е ова?** \"What is this?\" — **Тоа е мојот брат.** \"That's my brother.\""
+        pt: "`ова` e `тоа` sozinhos significam *isto* e *isso*: **Што е ова?** \"O que é isto?\" — **Тоа е мојот брат.** \"Esse é meu irmão.\""
+    mistakes:
+    - wrong: овој столот
+      right: овој стол
+      why: {en: "No article after a demonstrative.", pt: "Sem artigo depois de demonstrativo."}
+    examples:
+    - ["Што е ова?", "What is this?", "O que é isto?", "ова"]
+    - [Оваа куќа е голема., This house is big., Esta casa é grande., Оваа]
+    - [Тоа е мојот брат., That's my brother., Esse é meu irmão., Тоа]
+    - ["Кој е оној човек?", "Who is that man over there?", "Quem é aquele homem?", "оној"]
+    match: {seq: [{word: [овој, оваа, ова, овие, оној, онаа, она, оние]}]}
+    pool: [овој, оваа, ова, овие, тој, таа, тоа, тие, оној, онаа, она, оние]
+
+  - id: a1-possessives
+    title: мој, твој, негов…
+    meaning: {en: "my, your, his, her…", pt: "meu, teu, dele, dela…"}
+    intro:
+      en: |
+        Possessives agree with the **thing owned**, like adjectives, and usually take the article: **мојот брат** "my brother", **мојата сестра** "my sister", **моето дете**, **моите пријатели**.
+
+        *His* and *her* are different words: `негов` (his, its) and `нејзин` (her).
+      pt: |
+        Os possessivos concordam com a **coisa possuída**, como adjetivos, e normalmente levam o artigo: **мојот брат** "meu irmão", **мојата сестра** "minha irmã", **моето дете**, **моите пријатели**.
+
+        *Dele* e *dela* são palavras diferentes: `негов` (dele) e `нејзин` (dela) — concordam com a coisa, não com o dono.
+    table:
+      head: {en: [Owner, m., f., n., pl.], pt: [Dono, m., f., n., pl.]}
+      rows:
+      - [јас, мој, моја, мое, мои]
+      - [ти, твој, твоја, твое, твои]
+      - [тој / тоа, негов, негова, негово, негови]
+      - [таа, нејзин, нејзина, нејзино, нејзини]
+      - [ние, наш, наша, наше, наши]
+      - [вие, ваш, ваша, ваше, ваши]
+      - [тие, нивен, нивна, нивно, нивни]
+    mistakes:
+    - wrong: мој сестра
+      right: мојата сестра
+      why: {en: "Agree with the thing owned, and add the article.", pt: "Concorde com a coisa possuída e acrescente o artigo."}
+    - wrong: "(Ана) неговата книга"
+      right: "(Ана) нејзината книга"
+      why: {en: "The owner is a woman: нејзин.", pt: "A dona é mulher: нејзин."}
+    examples:
+    - [Ова е мојата куќа., This is my house., Esta é minha casa., мојата]
+    - ["Каде е твојот телефон?", "Where is your phone?", "Onde está o seu telefone?", "твојот"]
+    - [Нејзиниот брат е доктор., Her brother is a doctor., O irmão dela é médico., Нејзиниот]
+    - [Нашите деца учат., Our children are studying., Nossos filhos estão estudando., Нашите]
+    match: {seq: [{word: [мојот, мојата, моето, моите, мој, моја, мое, мои, твојот, твојата, твоето, твоите, твој, твоја, твое, твои, неговиот, неговата, неговото, неговите, негов, негова, негово, негови, нејзиниот, нејзината, нејзиното, нејзините, нашиот, нашата, нашето, нашите, вашиот, вашата, вашето, вашите, нивниот, нивната, нивното, нивните]}]}
+    pool: [мојот, мојата, моето, моите, твојот, твојата, неговиот, неговата, нејзиниот, нејзината, нашиот, нашата, вашиот, нивниот, нивните]
+
+- title: {en: People, pt: Pessoas}
+  lessons:
+  - id: a1-pronouns
+    title: јас, ти, тој…
+    meaning: {en: "subject pronouns", pt: "pronomes pessoais"}
+    intro:
+      en: |
+        The subject pronouns are mostly **left out**, since the verb ending shows the person: **Одам дома.** "I'm going home." They are used for emphasis or contrast: **Јас одам, ти остануваш.** "*I'm* going, *you're* staying."
+
+        `вие` is both *you all* and the polite *you* to one person.
+      pt: |
+        Os pronomes sujeito costumam **ficar de fora**, porque a terminação do verbo mostra a pessoa: **Одам дома.** "Vou para casa." Usam-se para dar ênfase ou contraste: **Јас одам, ти остануваш.** "*Eu* vou, *você* fica."
+
+        `вие` é tanto *vocês* quanto o *o senhor / a senhora* para uma pessoa.
+    table:
+      head: {en: [Singular, "", Plural, ""], pt: [Singular, "", Plural, ""]}
+      rows:
+      - [јас, I / eu, ние, we / nós]
+      - [ти, you / você, вие, you / vocês]
+      - ["тој, таа, тоа", "he, she, it / ele, ela", тие, "they / eles, elas"]
+    examples:
+    - [Јас сум Марко., I am Marko., Eu sou o Marko., Јас]
+    - [Ти си во право., You are right., Você tem razão., Ти]
+    - [Таа е мојата сестра., She is my sister., Ela é minha irmã., Таа]
+    - [Ние сме пријатели., We are friends., Somos amigos., Ние]
+    - [Тие доаѓаат утре., They're coming tomorrow., Eles vêm amanhã., Тие]
+    match: {seq: [{word: [јас, ти, тој, таа, ние, вие, тие], start: true}], gap: 0}
+    pool: [Јас, Ти, Тој, Таа, Ние, Вие, Тие]
+
+- title: {en: Numbers and time, pt: Números e tempo}
+  lessons:
+  - id: a1-numbers
+    title: еден, два, три…
+    meaning: {en: "numbers 1–100", pt: "números de 1 a 100"}
+    intro:
+      en: |
+        *One* agrees with the noun: `еден` (m.), `една` (f.), `едно` (n.). *Two* has `два` for masculine nouns and `две` for feminine and neuter. From three on, numbers do not change.
+
+        Teens add **-наесет** (`единаесет` 11, `дванаесет` 12), tens add **-есет / -десет** (`дваесет` 20, `триесет` 30, `педесет` 50), and compounds join with **и**: `дваесет и пет` 25.
+
+        After a number, masculine things take a special **count plural** in **-а**: `два стола` "two chairs" (more in A2).
+      pt: |
+        *Um* concorda com o substantivo: `еден` (m.), `една` (f.), `едно` (n.). *Dois* é `два` com masculinos e `две` com femininos e neutros. Do três em diante os números não mudam.
+
+        De 11 a 19 acrescenta-se **-наесет** (`единаесет` 11, `дванаесет` 12), as dezenas levam **-есет / -десет** (`дваесет` 20, `триесет` 30, `педесет` 50) e os compostos se ligam com **и**: `дваесет и пет` 25.
+
+        Depois de um número, coisas masculinas têm um **plural de contagem** em **-а**: `два стола` "duas cadeiras" (mais na A2).
+    table:
+      head: {en: [1–10, "", 11–19, "", tens, ""], pt: [1–10, "", 11–19, "", dezenas, ""]}
+      rows:
+      - [1, еден / една / едно, 11, единаесет, 10, десет]
+      - [2, два / две, 12, дванаесет, 20, дваесет]
+      - [3, три, 13, тринаесет, 30, триесет]
+      - [4, четири, 14, четиринаесет, 40, четириесет]
+      - [5, пет, 15, петнаесет, 50, педесет]
+      - [6, шест, 16, шеснаесет, 60, шеесет]
+      - [7, седум, 17, седумнаесет, 70, седумдесет]
+      - [8, осум, 18, осумнаесет, 80, осумдесет]
+      - [9, девет, 19, деветнаесет, 90, деведесет]
+      - [10, десет, "", "", 100, сто]
+    mistakes:
+    - wrong: два сестри
+      right: две сестри
+      why: {en: "две for feminine and neuter.", pt: "две com femininos e neutros."}
+    - wrong: еден куќа
+      right: една куќа
+      why: {en: "One agrees with the gender.", pt: "Um concorda com o gênero."}
+    examples:
+    - [Имам две сестри., I have two sisters., Tenho duas irmãs., две]
+    - [Тој има дваесет години., He is twenty years old., Ele tem vinte anos., дваесет]
+    - [Чекав еден час., I waited an hour., Esperei uma hora., еден]
+    - [Таа има три деца., She has three children., Ela tem três filhos., три]
+    match: {seq: [{word: [еден, една, едно, два, две, три, четири, пет, шест, седум, осум, девет, десет, единаесет, дванаесет, петнаесет, дваесет, триесет, четириесет, педесет, сто]}]}
+    pool: [еден, една, едно, два, две, три, четири, пет, шест, седум, осум, девет, десет, дваесет, сто]
+
+  - id: a1-days
+    title: денес, утре, понеделник…
+    meaning: {en: "days and time words", pt: "dias e palavras de tempo"}
+    intro:
+      en: |
+        *On Monday* is **во понеделник**; *every Monday* is **секој понеделник** or **понеделниците**. *Today, tomorrow, yesterday* are `денес`, `утре`, `вчера`; *now* is `сега`. The days are not capitalised.
+      pt: |
+        *Na segunda-feira* é **во понеделник**; *toda segunda* é **секој понеделник**. *Hoje, amanhã, ontem* são `денес`, `утре`, `вчера`; *agora* é `сега`. Os dias se escrevem com minúscula.
+    table:
+      head: {en: [Day, "", Word, ""], pt: [Dia, "", Palavra, ""]}
+      rows:
+      - [понеделник, Monday / segunda, денес, today / hoje]
+      - [вторник, Tuesday / terça, утре, tomorrow / amanhã]
+      - [среда, Wednesday / quarta, вчера, yesterday / ontem]
+      - [четврток, Thursday / quinta, сега, now / agora]
+      - [петок, Friday / sexta, секогаш, always / sempre]
+      - [сабота, Saturday / sábado, никогаш, never / nunca]
+      - [недела, Sunday / domingo, понекогаш, sometimes / às vezes]
+    examples:
+    - [Денес е петок., Today is Friday., Hoje é sexta-feira., Денес]
+    - [Утре одам на работа., I'm going to work tomorrow., Amanhã vou trabalhar., Утре]
+    - [Вчера беше студено., It was cold yesterday., Ontem estava frio., Вчера]
+    - [Во недела не работам., I don't work on Sunday., Não trabalho no domingo., недела]
+    match: {seq: [{word: [денес, утре, вчера, сега, понеделник, вторник, среда, четврток, петок, сабота, недела, секогаш, никогаш, понекогаш]}]}
+    pool: [денес, утре, вчера, сега, понеделник, вторник, среда, четврток, петок, сабота, недела, секогаш, никогаш]
+
+- title: {en: Place, pt: Lugar}
+  lessons:
+  - id: a1-prepositions
+    title: во, на, кај, од, со…
+    meaning: {en: "prepositions of place and company", pt: "preposições de lugar e companhia"}
+    intro:
+      en: |
+        Nouns don't change after prepositions (there are no cases), so only the preposition carries the meaning:
+
+        - `во` in, into — **во градот** "in the city"
+        - `на` on, at, to (also *of*, and the indirect object) — **на масата** "on the table", **на море** "at the seaside"
+        - `кај` at someone's, near — **кај мене** "at my place", **кај Ана** "at Ana's"
+        - `од` from, of — **од Скопје** "from Skopje"
+        - `до` to, as far as, next to — **до центарот** "to the centre"
+        - `со` with — **со пријател** "with a friend"
+        - `за` for, about — **за тебе** "for you"
+        - `без` without; `под` under; `над` above; `пред` in front of; `зад` behind; `меѓу` between
+      pt: |
+        O substantivo não muda depois de preposição (não há casos), então só a preposição carrega o sentido:
+
+        - `во` em, dentro — **во градот** "na cidade"
+        - `на` sobre, em, a (também *de*, e o objeto indireto) — **на масата** "na mesa", **на море** "na praia"
+        - `кај` na casa de, perto — **кај мене** "na minha casa", **кај Ана** "na casa da Ana"
+        - `од` de (origem) — **од Скопје** "de Skopje"
+        - `до` até, ao lado de — **до центарот** "até o centro"
+        - `со` com — **со пријател** "com um amigo"
+        - `за` para, sobre — **за тебе** "para você"
+        - `без` sem; `под` debaixo; `над` acima; `пред` na frente; `зад` atrás; `меѓу` entre
+    sections:
+    - id: contrast
+      body:
+        en: "**во** is *inside* (во училиште, во Скопје), **на** is *at an event or open place* (на работа, на пазар, на концерт). With countries and cities use **во**; with islands, mountains and the sea, **на**."
+        pt: "**во** é *dentro* (во училиште, во Скопје), **на** é *num evento ou lugar aberto* (на работа, на пазар, на концерт). Com países e cidades use **во**; com ilhas, montanhas e o mar, **на**."
+    mistakes:
+    - wrong: Живеам на Скопје.
+      right: Живеам во Скопје.
+      why: {en: "Cities take во.", pt: "Cidades levam во."}
+    - wrong: Одам во работа.
+      right: Одам на работа.
+      why: {en: "Work, school lessons, the market: на.", pt: "Trabalho, aula, feira: на."}
+    examples:
+    - [Живеам во Скопје., I live in Skopje., Moro em Skopje., во]
+    - [Клучот е на масата., The key is on the table., A chave está na mesa., на]
+    - [Вечерва сум кај Ана., Tonight I'm at Ana's., Hoje à noite estou na casa da Ana., кај]
+    - [Тој е од Охрид., He is from Ohrid., Ele é de Ohrid., од]
+    - [Одам со брат ми., I'm going with my brother., Vou com meu irmão., со]
+    match: {seq: [{word: [во, кај, од, до, со, за, без, под, над, пред, зад, меѓу]}, {pos: noun}], near: 1, gap: 0}
+    pool: [во, на, кај, од, до, со, за, без, под, над, пред, зад, меѓу]

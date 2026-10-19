@@ -30,3 +30,19 @@ describe('a lesson’s question file becomes questions (Allan, 2026-10-19: hundr
     expect(qs.find((q) => q.type === 'meaning').pool).toEqual(['subject', 'object']);
   });
 });
+
+describe('translations in the interface language', () => {
+  it('Portuguese interface: a sentence with a Portuguese translation is asked in Portuguese, among Portuguese ones', () => {
+    const file = { qs: [
+      { type: 'translate', furi: [['Тој е тука.', null]], answer: 'He is here.', pt: 'Ele está aqui.' },
+      { type: 'translate', furi: [['Јас сум тука.', null]], answer: 'I am here.', pt: 'Eu estou aqui.' },
+      { type: 'translate', furi: [['Таа спие.', null]], answer: 'She sleeps.' },
+    ] };
+    const qs = questionsFromFile(file, { lesson: 'x', ui: 'pt', random: () => 0 }).filter((q) => q.type === 'translate');
+    expect(qs[0].answer).toBe('Ele está aqui.');
+    expect(qs[0].pool).toEqual(['Eu estou aqui.']);
+    expect(qs[2].answer).toBe('She sleeps.');
+    const back = questionsFromFile(file, { lesson: 'x', ui: 'pt', random: () => 0 }).find((q) => q.type === 'back');
+    expect(back.prompt).toBe('Ele está aqui.');
+  });
+});

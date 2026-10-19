@@ -106,9 +106,20 @@ def ja_learn(book: Path, openjlpt: Path) -> tuple[dict, dict, dict]:
 BUILDERS = {"ja": lambda: ja_learn(ROOT / "vendor" / "jlpt-grammar-enhanced", ROOT / "vendor" / "openjlpt")}
 
 
+def builder(code: str):
+    """the Japanese book, or a curriculum written for Casus (tools/curricula/<code>/ or <code>.yml)"""
+    if code in BUILDERS:
+        return BUILDERS[code]
+    from learn_curriculum import curriculum_learn
+    for path in (ROOT / "tools" / "curricula" / code, ROOT / "tools" / "curricula" / f"{code}.yml"):
+        if path.exists():
+            return lambda: curriculum_learn(path)
+    raise SystemExit(f"no Learn source for {code}")
+
+
 def main(code: str) -> None:
     """data/<code>/learn.json (the index), learn/<lesson>.json (one lesson), learn/questions-<level>.json"""
-    index, lessons, questions = BUILDERS[code]()
+    index, lessons, questions = builder(code)()
     out = ROOT / "data" / code
     folder = out / "learn"
     if folder.exists():
