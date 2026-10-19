@@ -21,3 +21,15 @@ describe('Korean copula', () => {
     expect(out[0].candidates.map((c) => c.analysis.pos)).toEqual(['pron']);
   });
 });
+describe('Korean colloquial 거 is 것', () => {
+  it('거야 → 거 (key 것) + 야', async () => {
+    const lex = { lookupAll: async (keys) => new Map(keys.map((k) => [k, k === '것' ? [{ pos: 'noun' }] : []])) };
+    expect((await splitWords([tok('거야')], lex)).map((t) => [t.surface, t.key])).toEqual([['거', '것'], ['야', '야']]);
+  });
+});
+describe('Korean contractions with the particle fused (이건 = 이거 + 는)', () => {
+  it('read as the word', async () => {
+    const lex = { lookupAll: async (keys) => new Map(keys.map((k) => [k, k === '이거' ? [{ pos: 'pron' }] : []])) };
+    expect((await splitWords([tok('이건')], lex)).map((t) => [t.surface, t.key])).toEqual([['이건', '이거']]);
+  });
+});

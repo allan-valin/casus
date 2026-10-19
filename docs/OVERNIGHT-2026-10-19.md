@@ -39,3 +39,6 @@ Decisions (his answers): phrase answers show the REAL sense; explanations writte
 - after the list: names read as nouns on the factory languages (Maria = subject); Sanskrit word-end sandhi; Japanese
   readings ranked (rare last, JLPT form+reading pairs, then kana main entries: 魚 さかな, 私 わたし); 今日は inside a
   sentence = 今日 + は.
+- Korean: copula split (학생이에요), 거 = 것, 이건 = 이거, pronouns first; Korean list rebuilt clean. Chinese list now
+  has the one-character pronouns (我 你 他); other single characters stay out because the dump lacks some common senses
+  (都 dōu "all" is missing; only 都 dū "capital").

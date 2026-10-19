@@ -52,7 +52,26 @@ export function literalOf(tokens, lookups, glosses, lemmas = {}, frequent = new 
 }
 
 /** word forms with counts -> the top dictionary words; a form's own headword wins over other lemmas */
-export function rankLemmas(rows, lookups, lemmas, glosses, top = 1000, plain = {}, bare = (x) => x) {
+/* Korean subtitle forms are spaced phrases: a contraction (우린 = 우리는) is written out, then the particle or copula
+ * is cut off (거야: 거, 학생이에요: 학생), so the count goes to the word itself. */
+const KO_CONTRACTIONS = { 우린: '우리는', 난: '나는', 넌: '너는', 건: '것은', 걸: '것을', 거: '것', 게: '것이', 전: '저는', 저흰: '저희는', 그건: '그거는', 이건: '이거는', 뭘: '뭐를' };
+const KO_COPULA = ['이었어요', '였어요', '이에요', '입니다', '예요', '이야', '이다', '야'];
+export async function koreanForms(rows, split, lookupAll) {
+  // the copula comes off first even where the whole is some rare noun (거야 去夜 "last night")
+  const stems = rows.flatMap((r) => KO_COPULA.filter((c) => r.form.endsWith(c) && r.form.length > c.length).map((c) => r.form.slice(0, -c.length))).map((x) => KO_CONTRACTIONS[x] ?? x);
+  const found = lookupAll ? await lookupAll([...new Set(stems)]) : new Map();
+  const nominal = (k) => (found.get(KO_CONTRACTIONS[k] ?? k) ?? []).some((a) => a.pos === 'noun' || a.pos === 'pron');
+  const out = [];
+  for (const r of rows) {
+    const cop = KO_COPULA.find((c) => r.form.endsWith(c) && r.form.length > c.length && nominal(r.form.slice(0, -c.length)));
+    if (cop) { const stem = r.form.slice(0, -cop.length); out.push({ ...r, form: KO_CONTRACTIONS[stem] ?? stem }); continue; }
+    const tokens = await split(KO_CONTRACTIONS[r.form] ?? r.form);
+    out.push({ ...r, form: tokens.find((t) => t.kind === 'word')?.key ?? r.form });
+  }
+  return out;
+}
+
+export function rankLemmas(rows, lookups, lemmas, glosses, top = 1000, plain = {}, bare = (x) => x, pronouns = new Set()) {
   // first pass: forms that can only be one word, so an ambiguous form can go to the word common elsewhere
   const sure = new Map();
   for (const { form, n } of rows) {
@@ -61,7 +80,10 @@ export function rankLemmas(rows, lookups, lemmas, glosses, top = 1000, plain = {
   }
   const count = new Map();
   for (const { form, n } of rows) {
-    if (form.length < 2) continue;
+    // one character: a Hangul syllable is a word (거, 나); a Chinese character only as a pronoun (我, 你), since the
+    // dictionary lacks some characters' common senses (都 dōu "all"); a lone letter never
+    const single = form.length < 2;
+    if (single && !/^\p{Script=Hangul}$/u.test(form) && !/^\p{Script=Han}$/u.test(form)) continue;
     const cap = form[0].toUpperCase() + form.slice(1);
     const known = (xs) => (xs ?? []).filter((a) => lemmas[a.lemma] && glosses[a.lemma]);
     // the subtitles are lower-cased: a capitalised noun only when the lowercase form is no word (habe: haben)
@@ -81,7 +103,9 @@ export function rankLemmas(rows, lookups, lemmas, glosses, top = 1000, plain = {
     const UNINFLECTED = ['conj', 'prep', 'particle', 'adv', 'interj'];      // aber: the conjunction before the adverb
     // bare(): a script whose dictionary writes marks the text leaves out (Arabic فِي for في) compares without them
     const plainWord = pool.filter((a) => bare(lemmas[a.lemma].headword) === bare(form) && UNINFLECTED.includes(a.pos)).sort((x, y) => UNINFLECTED.indexOf(x.pos) - UNINFLECTED.indexOf(y.pos))[0];
-    const own = plainWord ?? (sure.get(common.lemma) ? common : null) ?? fn ?? best(pool.filter((a) => lemmas[a.lemma].headword === form)) ?? best(pool.filter((a) => lemmas[a.lemma].headword.toLowerCase() === form.toLowerCase())) ?? pool[0];
+    if (single && /^\p{Script=Han}$/u.test(form) && !pool.some((x) => x.pos === 'pron')) continue;
+    // a Chinese character, or a word the language names a common pronoun (Korean 나), counts as the pronoun
+    const own = (single && /^\p{Script=Han}$/u.test(form)) || (pronouns.has(form) && pool.some((x) => x.pos === 'pron')) ? pool.find((x) => x.pos === 'pron') : plainWord ?? (sure.get(common.lemma) ? common : null) ?? fn ?? best(pool.filter((a) => lemmas[a.lemma].headword === form)) ?? best(pool.filter((a) => lemmas[a.lemma].headword.toLowerCase() === form.toLowerCase())) ?? pool[0];
     if (!real.length) continue;                                     // only form-of entries (meinem): its lemma counts elsewhere
     count.set(own.lemma, (count.get(own.lemma) ?? 0) + n);
   }
@@ -121,9 +145,11 @@ async function main(code) {
   }
   await writeFile(path.join(dir, 'phrases.json'), JSON.stringify(out));
   let freq = raw;
+  if (freq[0]?.form && code === 'ko') freq = await koreanForms(freq, (t) => lang.splitWords(lang.tokenize(t), lexicon), (keys) => lexicon.lookupAll(keys));
   if (freq[0]?.form) {
     const forms = freq.flatMap((r) => [r.form, r.form[0].toUpperCase() + r.form.slice(1)]);
-    freq = rankLemmas(freq, await lexicon.lookupAll(forms), lemmas, glosses, 1000, PLAIN[code] ?? {}, lang.script?.strip ?? ((x) => x));
+    const pronouns = code === 'ko' ? new Set((await import('../src/lang/ko/tokenize.js')).PRONOUNS) : new Set();
+    freq = rankLemmas(freq, await lexicon.lookupAll(forms), lemmas, glosses, 1000, PLAIN[code] ?? {}, lang.script?.strip ?? ((x) => x), pronouns);
   }
   await writeFile(path.join(dir, 'frequency.json'), JSON.stringify(freq));
   console.log(`${code}: ${out.length} phrases (${out.filter((p) => p.lit.every(([, g]) => g)).length} with every word glossed), ${freq.length} frequent words`);

@@ -117,3 +117,26 @@ describe('a one-character word that can be a particle is the particle', () => {
     expect(literalOf([{ kind: 'word', surface: 'に', key: 'に' }], lookups, { niru: 'to resemble', ni: 'marks the recipient' })).toEqual([['に', 'marks the recipient']]);
   });
 });
+
+describe('Korean subtitle forms', () => {
+  it('contractions and the copula count under the word they contain (우린: 우리, 거야: 거, 학생이에요: 학생)', async () => {
+    const { koreanForms } = await import('../../tools/build_wordlists.mjs');
+    const { splitWords, tokenize } = await import('../../src/lang/ko/tokenize.js');
+    const WORDS = { 우리: [{ pos: 'pron' }], 거: [{ pos: 'noun' }], 학생: [{ pos: 'noun' }], 하다: [{ pos: 'verb' }] };
+    const lexicon = { lookupAll: async (keys) => new Map(keys.map((k) => [k, WORDS[k] ?? []])) };
+    WORDS.거야 = [{ pos: 'noun' }];                 // 去夜 "last night": the dictionary has it, the subtitles mean 거 + 야
+    expect(await koreanForms([{ form: '우린', n: 9 }, { form: '거야', n: 7 }, { form: '학생이에요', n: 2 }, { form: '하다', n: 5 }], (t) => splitWords(tokenize(t), lexicon), lexicon.lookupAll))
+      .toEqual([{ form: '우리', n: 9 }, { form: '거', n: 7 }, { form: '학생', n: 2 }, { form: '하다', n: 5 }]);
+  });
+});
+
+describe('a common Korean pronoun counts as the pronoun (나: I, not 나다)', () => {
+  it('나', async () => {
+    const { rankLemmas } = await import('../../tools/build_wordlists.mjs');
+    const L = (headword, pos) => ({ headword, pos, dict_form: headword });
+    const lookups = new Map([['나', [{ lemma: 'nada', pos: 'verb' }, { lemma: 'na', pos: 'pron' }]], ['나서', [{ lemma: 'nada', pos: 'verb' }]]]);
+    const lemmas = { nada: L('나다', 'verb'), na: L('나', 'pron') };
+    const out = rankLemmas([{ form: '나', n: 50 }, { form: '나서', n: 5 }], lookups, lemmas, { nada: 'to be born', na: 'I' }, 5, {}, (x) => x, new Set(['나']));
+    expect(out[0].w).toBe('나');
+  });
+});

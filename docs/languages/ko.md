@@ -28,3 +28,5 @@ Built overnight 2026-10-19.
 
 - 2026-10-19 morning: the copula after a noun splits off and reads as 이다 (학생이에요 → 학생 + 이에요, 그거야 →
   그거 + 야); a common pronoun is the pronoun (우리 "we", not the pen).
+- 거 reads as 것 (the dictionary files it only as a contraction), 이건/그걸 as 이거/그거; the frequent-words list
+  counts contractions and copula forms under their word (거야: 것), and a common pronoun as the pronoun (나: I).
