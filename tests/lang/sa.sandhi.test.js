@@ -17,3 +17,20 @@ describe('Sanskrit sandhi undone at the word end', () => {
     expect(out.map((t) => [t.surface, t.key])).toEqual([['रामो', 'रामः'], ['गच्छति', 'गच्छति'], ['रामो', 'रामः'], ['ऽपि', 'अपि']]);
   });
 });
+describe('Sanskrit words written together', () => {
+  it('an unknown word splits in two known ones, the first with its sandhi undone (हरिर्जयति = हरिः + जयति)', async () => {
+    const out = await splitWords([tok('हरिर्जयति')], lexicon(['हरिः', 'जयति']));
+    expect(out.map((t) => [t.surface, t.key])).toEqual([['हरिर्', 'हरिः'], ['जयति', 'जयति']]);
+  });
+  it('a word that does not split stays whole', async () => {
+    const out = await splitWords([tok('अज्ञात')], lexicon(['जयति']));
+    expect(out.map((t) => t.surface)).toEqual(['अज्ञात']);
+  });
+});
+describe('a final consonant joined to the next word’s vowel', () => {
+  it('सत्यमेव = सत्यम् + एव', async () => {
+    const out = await splitWords([tok('सत्यमेव')], lexicon(['सत्यम्', 'एव']));
+    expect(out.map((t) => t.key)).toEqual(['सत्यम्', 'एव']);
+    expect(out.map((t) => t.surface).join('')).toBe('सत्यमेव');
+  });
+});

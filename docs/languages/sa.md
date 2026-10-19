@@ -11,4 +11,7 @@ Built overnight 2026-10-19 on the generic case-language builder.
   Sanskrit, so the frequent-words drill is empty.
 - Sandhi, the common word-end cases (src/lang/sa/sandhi.js): -o was -aḥ (रामो = रामः), -r was -ḥ, a voiced final
   stop was voiceless, a dropped visarga after -a; the avagraha splits रामोऽपि into रामो + ऽपि (= अपि).
-- Not yet: words written together with no space (हरिर्जयति), vowel sandhi across words (रामागच्छति).
+- Words written together split in two known words: at a syllable start with the first word's sandhi undone
+  (हरिर्जयति = हरिः + जयति), or a final consonant joined to the next word's vowel (सत्यमेव = सत्यम् + एव; the shared
+  syllable shows with the first word).
+- Not yet: vowel + vowel sandhi (रामागच्छति = रामः/राम + आगच्छति), three or more words together.
