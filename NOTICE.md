@@ -126,6 +126,12 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
   handle 20.500.12537/5). Every verb, noun and adjective form; frequent lemmas without an English Wiktionary entry are
   added from it without a meaning.
 
+## Document import
+
+- JSZip (Stuart Knightley and contributors), MIT: reads Word (.docx), OpenDocument (.odt) and EPUB files.
+- pdf.js (Mozilla), Apache-2.0: reads the text of PDF files.
+Both load only when such a file is opened; the file never leaves the computer.
+
 ## Speech — espeak-ng (GPL-3.0)
 
 When the browser has no voice for a language, the speaker button loads espeak-ng compiled to

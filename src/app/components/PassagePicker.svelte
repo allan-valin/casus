@@ -1,17 +1,48 @@
 <script>
   import { withBase } from '../lib/paths.js';
   import { t } from '../lib/i18n.svelte.js';
-  import { readTextFile } from '../lib/upload.js';
+  import { readTextFile, ACCEPT } from '../lib/upload.js';
   /* v1 input (spec §10.1): paste, or one of the bundled passages. Samples sit above the text
    * box and are named as demonstration material; the button says what it does (feedback D9, D10). */
-  let { samples = [], onchoose, fetchImpl, samplesPath = '/samples/la', onerror = () => {}, language = 'Latin' } = $props();
+  import { onMount } from 'svelte';
+  let { samples = [], onchoose, fetchImpl, samplesPath = '/samples/la', onerror = () => {}, language = 'Latin',
+    storage = null, code = 'la', schedule = (fn, ms) => setTimeout(fn, ms), onsay = () => {},
+    location: loc = typeof window !== 'undefined' ? window.location : null,
+    replaceHash = () => { try { history.replaceState(null, '', window.location.pathname + window.location.search); } catch { /* no history */ } } } = $props();
+  // the text box is remembered per language (Allan, 2026-10-19: what I typed is there next time)
+  const KEY = `casus:input:${code}`;
+  let timer = null;
+  function remember(text) {
+    if (!storage) return;
+    clearTimeout(timer);
+    timer = schedule(() => { try { storage.setItem(KEY, text); } catch { /* storage full or blocked */ } }, 400);
+  }
+  // text sent by the bookmarklet arrives as #append=<text>&from=<site>, added at the bottom
+  function takeAppend() {
+    const hash = loc?.hash ?? '';
+    if (!hash.startsWith('#append=')) return;
+    const params = new URLSearchParams(hash.slice(1));
+    const add = (params.get('append') ?? '').trim();
+    replaceHash();
+    if (!add) return;
+    pasted = pasted.trim() ? `${pasted.trimEnd()}\n\n${add}` : add;
+    remember(pasted);
+    onsay('act.appended', { site: params.get('from') ?? '', chars: [...add].length });
+  }
+  onMount(() => {
+    try { pasted = storage?.getItem(KEY) ?? ''; } catch { /* blocked */ }
+    takeAppend();
+    const onHash = () => takeAppend();
+    window.addEventListener?.('hashchange', onHash);
+    return () => window.removeEventListener?.('hashchange', onHash);
+  });
   async function upload(e) {
     const input = e.currentTarget;
     const file = input.files?.[0];
     if (!file) return;
     try {
       const text = (await readTextFile(file)).trim();
-      if (text) { pasted = text; onchoose(text, null); }
+      if (text) { pasted = text; remember(text); onchoose(text, null); }
     } catch (err) { onerror(err.message); }
     try { input.value = ''; } catch { /* a test's files stub */ }
   }
@@ -33,9 +64,9 @@
   </div>
   <div class="paste-row">
     <label class="paste-label" for="paste">{t('picker.paste', { language })}</label>
-    <label class="upload" title={t('picker.upload.title')}>{t('picker.upload')}<input type="file" accept=".txt,.md,text/plain,text/markdown" onchange={upload}></label>
+    <label class="upload" title={t('picker.upload.title')}>{t('picker.upload')}<input type="file" accept={ACCEPT} onchange={upload}></label>
   </div>
-  <textarea id="paste" rows="5" dir="auto" placeholder={t('picker.placeholder')} bind:value={pasted}></textarea>
+  <textarea id="paste" rows="5" dir="auto" placeholder={t('picker.placeholder')} bind:value={pasted} oninput={() => remember(pasted)}></textarea>
   <div class="actions">
     <span class="paste-hint">{t('picker.hint')}</span>
     <button class="read primary" onclick={() => pasted.trim() && onchoose(pasted.trim(), null)} disabled={!pasted.trim()}>{t('picker.read')}</button>

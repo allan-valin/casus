@@ -41,7 +41,8 @@ describe('PassagePicker upload (Allan, 2026-10-18)', () => {
     const onchoose = vi.fn();
     const { container } = render(PassagePicker, { samples, onchoose, fetchImpl, samplesPath: '/samples/la' });
     const input = container.querySelector('input[type=file]');
-    expect(input.getAttribute('accept')).toBe('.txt,.md,text/plain,text/markdown');
+    // Allan, 2026-10-19: Word and PDF too
+    for (const ext of ['.txt', '.md', '.docx', '.pdf', '.odt']) expect(input.getAttribute('accept')).toContain(ext);
     const file = new File(['Rosa bona.\r\n'], 'r.txt', { type: 'text/plain' });
     Object.defineProperty(input, 'files', { value: [file] });
     await fireEvent.change(input);

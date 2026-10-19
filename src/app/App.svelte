@@ -197,7 +197,8 @@
   {:else}
   <section class="card">
     <h2><span class="step">1</span> {t('text.heading')}</h2>
-    <PassagePicker {samples} onchoose={choose} {fetchImpl} samplesPath={lang.samplesPath} language={lang.inText?.[ui.lang] ?? ''} onerror={(error) => say('act.uploadFailed', { error }, 'err')} />
+    <PassagePicker {samples} onchoose={choose} {fetchImpl} samplesPath={lang.samplesPath} language={lang.inText?.[ui.lang] ?? ''} onerror={(error) => say('act.uploadFailed', { error }, 'err')}
+      {storage} code={lang.code} onsay={(k, v) => say(k, v, 'ok')} />
     <p class="status" aria-live="polite">{t(status.key, status.vars)}</p>
     <!-- always here, before any text is read (Allan, 2026-10-19: Wiktionary on demand, dictionaries offline) -->
     <label class="live-toggle" title={t('settings.live.title')}><input type="checkbox" checked={liveOn} onchange={(e) => setLive(e.currentTarget.checked)}> {t('settings.live')}</label>
