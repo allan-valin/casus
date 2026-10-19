@@ -34,7 +34,8 @@ def strip_el(s: str) -> str:
 
 
 class Config:
-    def __init__(self, code: str, cases: list[str], case_tags: dict[str, str], script: str = r"\p{L}", key=_lower, clean=None):
+    def __init__(self, code: str, cases: list[str], case_tags: dict[str, str], script: str = r"\p{L}", key=_lower, clean=None, caseless=False):
+        self.caseless = caseless                 # no cases (Portuguese): the role comes from the page's word-order rules
         self.key = key                           # how a form is keyed for its shard (Greek: without accents)
         self.clean = clean or (lambda t: t)      # how a form is written as a key (Sanskrit: no Vedic accents)
         self.code = code
@@ -50,6 +51,9 @@ def _one(tags, table):
 
 def analysis(cfg: Config, pos: str, tags: set, gender: str | None) -> dict | None:
     if pos in ("noun", "adj", "pron", "det", "num"):
+        if cfg.caseless:
+            return {"pos": pos, "number": _one(tags, NUMBERS) or ("sg" if pos in ("noun", "adj") else None),
+                    "gender": _one(tags, GENDERS) or (gender if pos in ("noun", "adj") else None)}
         cases = [v for k, v in cfg.case_tags.items() if k in tags]
         if len(set(cases)) != 1:
             return None
@@ -117,6 +121,8 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
             if a:
                 cells.append((text, a))
         word = cfg.clean(word)
+        if cfg.caseless and pos in ("noun", "adj") and not any(t == word for t, _ in cells):
+            cells.insert(0, (word, {"pos": pos, "number": "sg", "gender": gender or ("m" if pos == "adj" else None)}))  # the headword is the (masculine) singular
         if pos in ("verb",) and not any(t == word for t, _ in cells):
             cells.append((word, {"pos": "verb", "mood": "inf"}))
         gloss = "; ".join(dict.fromkeys(" ".join(g.split()) for s in senses for g in (s.get("glosses") or [])[:1] if g))
@@ -206,3 +212,4 @@ CONFIGS["hu"] = Config("hu", ["nom", "acc", "dat", "ine", "ela", "ill", "sup", "
                         "superessive": "sup", "delative": "del", "sublative": "sub", "adessive": "ade", "ablative": "abl", "allative": "all",
                         "instrumental": "ins", "causal-final": "cau", "translative": "tra", "terminative": "ter", "essive-formal": "for",
                         "essive-modal": "ess", "essive": "ess"})
+CONFIGS["pt"] = Config("pt", [], {}, caseless=True)

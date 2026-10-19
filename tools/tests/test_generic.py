@@ -46,3 +46,17 @@ def test_turkish_person_from_the_personal_ending():
     assert turkish_person("okuyorum") == ("1", "sg") and turkish_person("okuyorsun") == ("2", "sg") and turkish_person("okuyor") == ("3", "sg")
     assert turkish_person("okuyoruz") == ("1", "pl") and turkish_person("okuyorsunuz") == ("2", "pl") and turkish_person("okuyorlar") == ("3", "pl")
     assert turkish_person("okudum") == ("1", "sg") and turkish_person("okuduk") == ("1", "pl") and turkish_person("geliyorsunuz") == ("2", "pl")
+
+
+def test_a_caseless_language_keeps_number_and_gender_without_a_case():
+    from casus_build.generic import CONFIGS
+    line = json.dumps({"word": "livro", "pos": "noun", "forms": [{"form": "livros", "tags": ["plural"]}], "senses": [{"glosses": ["book"]}]})
+    index = build_index(list(parse_entries(CONFIGS["pt"], [line])))
+    assert index["livros"][0]["pos"] == "noun" and index["livros"][0]["number"] == "pl" and not index["livros"][0].get("case")
+
+
+def test_a_caseless_noun_keeps_its_headword_as_the_singular():
+    from casus_build.generic import CONFIGS
+    line = json.dumps({"word": "menino", "pos": "noun", "head_templates": [{"args": {"1": "m"}}], "forms": [{"form": "meninos", "tags": ["plural"]}, {"form": "menina", "tags": ["feminine"]}], "senses": [{"glosses": ["boy"]}]})
+    index = build_index(list(parse_entries(CONFIGS["pt"], [line])))
+    assert index["menino"][0]["pos"] == "noun" and index["menino"][0]["number"] == "sg"

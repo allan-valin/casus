@@ -13,8 +13,8 @@
   let { lang, voice = null, loadData, loadParadigm = null, navigate, random = Math.random } = $props();
 
   const NOMINAL = new Set(['noun', 'adj', 'det', 'pron']);
-  // a language that does not inflect (Chinese) has no endings drills
-  const drills = $derived([...(lang.game ? ['letters'] : []), ...(lang.noEndings ? [] : ['nouns', 'verbs']), 'words', 'phrases']);
+  // a language that does not inflect (Chinese) has no endings drills; one without noun cases (Portuguese) only the verbs
+  const drills = $derived([...(lang.game ? ['letters'] : []), ...(lang.noEndings ? [] : lang.noNounEndings ? ['verbs'] : ['nouns', 'verbs']), 'words', 'phrases']);
   let chosen = $state(null);
   const drill = $derived(chosen && drills.includes(chosen) ? chosen : drills[0]);
   let models = $state([]);

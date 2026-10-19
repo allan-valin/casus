@@ -74,6 +74,8 @@ MODELS = {
            ("olvas", "verb", "to read", "ler"), ("lenni", "verb", "to be", "ser, estar")],
     "pl": [("dom", "noun", "house", "casa"), ("kobieta", "noun", "woman", "mulher"), ("okno", "noun", "window", "janela"), ("pies", "noun", "dog", "cachorro"),
            ("nowy", "adj", "new", "novo"), ("czytać", "verb", "to read", "ler"), ("mówić", "verb", "to speak", "falar"), ("być", "verb", "to be", "ser, estar")],
+    "pt": [("falar", "verb", "to speak", "falar"), ("comer", "verb", "to eat", "comer"), ("partir", "verb", "to leave", "partir"), ("ser", "verb", "to be", "ser"),
+           ("ter", "verb", "to have", "ter"), ("ir", "verb", "to go", "ir")],
     "ja": [("高い", "adj", "high, expensive", "alto, caro"), ("いい", "adj", "good", "bom"), ("綺麗", "adj", "pretty, clean", "bonito, limpo"),
            ("食べる", "verb", "to eat", "comer"), ("書く", "verb", "to write", "escrever"), ("泳ぐ", "verb", "to swim", "nadar"),
            ("話す", "verb", "to speak", "falar"), ("待つ", "verb", "to wait", "esperar"), ("死ぬ", "verb", "to die", "morrer"),
@@ -86,7 +88,7 @@ XREF = re.compile(r"^(synonym|alternative (form|spelling)|[\w-]+ form|abbreviati
 IRREGULAR = {"la": {"sum", "eo", "uolo", "fero", "ego", "hic", "qui"}, "grc": {"εἰμί", "ὁ", "δίδωμι"},
              "de": {"der", "ein", "ich", "er", "sein", "haben", "werden", "können"},
              "ja": {"いい", "行く", "する", "来る"}, "ar": {"رأى"},
-             "ru": {"время", "быть", "идти", "я", "он", "этот"}, "ko": {"하다", "듣다", "살다"}, "mk": {"сум", "има"}, "fi": {"olla"}, "el": {"είμαι"}, "cs": {"být"}, "is": {"vera"}, "pl": {"być"}}
+             "ru": {"время", "быть", "идти", "я", "он", "этот"}, "ko": {"하다", "듣다", "살다"}, "mk": {"сум", "има"}, "fi": {"olla"}, "el": {"είμαι"}, "cs": {"být"}, "is": {"vera"}, "pl": {"być"}, "pt": {"ser", "ter", "ir"}}
 POOL = 60
 
 

@@ -145,6 +145,9 @@ generic builder, each streamed and kept for its commonest words (`python3 tools/
 then `python3 tools/build_lang.py <code>`): seven Slavic cases with prepositions; Turkish case suffixes; Hungarian's
 eighteen cases on six hues; Icelandic's four. Notes: `docs/languages/<code>.md`.
 
+**Portuguese, Brazil (2026-10-19)** at `/pt/`: no cases, so the colours are subject, direct and indirect object from
+word order, articles and clitics. Notes: `docs/languages/pt.md`.
+
 Top corner: **English ⇄ Português** (the page and the dictionary language together, remembered),
 exports (JSON to reload, Markdown to read) and **?** — what is on screen, how to use it, every
 resource and licence. Under the page, **What is happening**: one timestamped line per action and its

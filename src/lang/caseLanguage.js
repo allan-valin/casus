@@ -16,7 +16,7 @@ function layoutPairs(json) {
   return { POS: json.POS, LAYOUT, json };
 }
 
-export function makeCaseLanguage({ code, name, inText, bcp47, wiktionary, cases, hues, shares = {}, borders = {}, government = {}, and = [], copulas = [], codes, voice, romanize = null, game = null, eras, script = {}, extraStages = [], address = [], splitWords = null, tokenize: ownTokenize = null, segment: ownSegment = null }) {
+export function makeCaseLanguage({ code, name, inText, bcp47, wiktionary, cases, hues, shares = {}, borders = {}, government = {}, and = [], copulas = [], codes, voice, romanize = null, game = null, eras, script = {}, extraStages = [], preStages = [], address = [], splitWords = null, tokenize: ownTokenize = null, segment: ownSegment = null }) {
   const inventory = {
     primary: 'case',
     channels: {
@@ -48,7 +48,7 @@ export function makeCaseLanguage({ code, name, inText, bcp47, wiktionary, cases,
     tokenize: ownTokenize ?? tokenize,
     ...(splitWords ? { splitWords } : {}),
     // a vocative only where someone is addressed (the classical rule), when the language has one
-    stages: [casedStage, gov, phraseAgreementStage, agr, gov, prepositionSettledStage, makeVocativeStage(address), makeCoordinationStage(and), makeNumberStage({ conjunctions: and }),
+    stages: [...preStages, casedStage, gov, phraseAgreementStage, agr, gov, prepositionSettledStage, makeVocativeStage(address), makeCoordinationStage(and), makeNumberStage({ conjunctions: and }),
       makeOneSubjectStage({ conjunctions: and, copulas }), gov, phraseAgreementStage, agr, gov, ...extraStages],
     government,
     arrange: WORD_ORDERS,

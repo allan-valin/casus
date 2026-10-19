@@ -37,6 +37,10 @@ describe('Drills page', () => {
     const grc = render(Drills, { lang: getLanguage('grc'), loadData, navigate: () => {} });
     expect([...grc.container.querySelectorAll('.drill-tab')].map((b) => b.dataset.drill)).toEqual(['letters', 'nouns', 'verbs', 'words', 'phrases']);
   });
+  it('Portuguese has no noun cases, so verb endings only', () => {
+    const pt = render(Drills, { lang: getLanguage('pt'), loadData, navigate: () => {} });
+    expect([...pt.container.querySelectorAll('.drill-tab')].map((b) => b.dataset.drill)).toEqual(['verbs', 'words', 'phrases']);
+  });
   it('the noun drill shows the table blank; a right answer turns its cell right', async () => {
     const { container } = render(Drills, { lang: getLanguage('la'), loadData, navigate: () => {}, random: () => 0 });
     await tick2();
