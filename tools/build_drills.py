@@ -61,6 +61,8 @@ MODELS = {
     "fi": [("talo", "noun", "house", "casa"), ("kirja", "noun", "book", "livro"), ("katu", "noun", "street", "rua"), ("nainen", "noun", "woman", "mulher"),
            ("hyvä", "adj", "good", "bom"), ("puhua", "verb", "to speak", "falar"), ("lukea", "verb", "to read", "ler"), ("olla", "verb", "to be", "ser, estar"),
            ("tulla", "verb", "to come", "vir"), ("haluta", "verb", "to want", "querer")],
+    "el": [("δρόμος", "noun", "street, road", "rua"), ("θάλασσα", "noun", "sea", "mar"), ("βιβλίο", "noun", "book", "livro"), ("καλός", "adj", "good", "bom"),
+           ("γράφω", "verb", "to write", "escrever"), ("αγαπώ", "verb", "to love", "amar"), ("είμαι", "verb", "to be", "ser, estar")],
     "ja": [("高い", "adj", "high, expensive", "alto, caro"), ("いい", "adj", "good", "bom"), ("綺麗", "adj", "pretty, clean", "bonito, limpo"),
            ("食べる", "verb", "to eat", "comer"), ("書く", "verb", "to write", "escrever"), ("泳ぐ", "verb", "to swim", "nadar"),
            ("話す", "verb", "to speak", "falar"), ("待つ", "verb", "to wait", "esperar"), ("死ぬ", "verb", "to die", "morrer"),
@@ -73,7 +75,7 @@ XREF = re.compile(r"^(synonym|alternative (form|spelling)|[\w-]+ form|abbreviati
 IRREGULAR = {"la": {"sum", "eo", "uolo", "fero", "ego", "hic", "qui"}, "grc": {"εἰμί", "ὁ", "δίδωμι"},
              "de": {"der", "ein", "ich", "er", "sein", "haben", "werden", "können"},
              "ja": {"いい", "行く", "する", "来る"}, "ar": {"رأى"},
-             "ru": {"время", "быть", "идти", "я", "он", "этот"}, "ko": {"하다", "듣다", "살다"}, "mk": {"сум", "има"}, "fi": {"olla"}}
+             "ru": {"время", "быть", "идти", "я", "он", "этот"}, "ko": {"하다", "듣다", "살다"}, "mk": {"сум", "има"}, "fi": {"olla"}, "el": {"είμαι"}}
 POOL = 60
 
 

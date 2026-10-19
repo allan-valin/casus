@@ -298,12 +298,12 @@ def build_generic(code: str, src: Path, out: Path) -> dict:
     lemmas = {str(e["id"]): {k: v for k, v in {"headword": e["headword"], "dict_form": e["headword"] + (f" ({e['gender']}.)" if e.get("gender") and e["pos"] == "noun" else ""),
                                                  "pos": e["pos"], "gender": e.get("gender")}.items() if v is not None} for e in entries}
     out.mkdir(parents=True, exist_ok=True)
-    manifest = write_assets(index, lemmas, out, rows=rows, key_of=lambda f: f.lower())
+    manifest = write_assets(index, lemmas, out, rows=rows, key_of=cfg.key)
     for name, obj in (("glosses.en.json", {str(e["id"]): e["gloss_en"] for e in entries if e["gloss_en"]}),
                       ("ipa.json", {str(e["id"]): e["ipa"] for e in entries if e["ipa"]}),
                       ("government.json", {}), ("codes.json", codes_json)):
         (out / name).write_text(json.dumps(obj, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    manifest["key"] = "lower"
+    manifest["key"] = "lower" if cfg.key.__name__ == "_lower" else "strip"
     (out / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=1), encoding="utf-8")
     return manifest
 

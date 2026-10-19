@@ -132,6 +132,10 @@ build: `bash tools/fetch_wiktextract.sh Macedonian && python3 tools/build_lang.p
 borders and badges; the dump streamed and kept for common words (`python3 tools/fetch_filtered.py Finnish fi`, then
 `python3 tools/build_lang.py fi`). Notes: `docs/languages/fi.md`.
 
+**Modern Greek (2026-10-19)** at `/el/`: four cases, accents supplied, στο = σε + το, phrase agreement, modern
+Latin letters and alphabet drill. Notes: `docs/languages/el.md`; build: `python3 tools/fetch_filtered.py Greek el &&
+python3 tools/build_lang.py el`.
+
 Top corner: **English ⇄ Português** (the page and the dictionary language together, remembered),
 exports (JSON to reload, Markdown to read) and **?** — what is on screen, how to use it, every
 resource and licence. Under the page, **What is happening**: one timestamped line per action and its

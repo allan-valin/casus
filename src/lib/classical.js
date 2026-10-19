@@ -83,7 +83,7 @@ export function makeNumberStage({ conjunctions = [], neuterPluralTakesSingular =
         const b = out[i];
         if (i === verbish[0] || b.pinned) continue;
         // a reading with no number (a Russian personal pronoun in Wiktionary) is not ruled out by the verb's number
-        const keep = b.candidates.filter((c) => !(NOMINAL.has(c.analysis.pos) && c.analysis.case === 'nom' && c.analysis.number && c.analysis.number !== n
+        const keep = b.candidates.filter((c) => !(NOMINAL.has(c.analysis.pos) && c.analysis.case === 'nom' && c.analysis.number && c.analysis.number !== 'x' && c.analysis.number !== n
           && !(neuterPluralTakesSingular && n === 'sg' && c.analysis.number === 'pl' && c.analysis.gender === 'n')));
         if (keep.length && keep.length < b.candidates.length) {
           const r = `clause: its verb ${v.token.surface} is ${n === 'sg' ? 'singular' : 'plural'}, so a nominative here is too`;
@@ -155,4 +155,42 @@ export function makeOneSubjectStage({ conjunctions = [], copulas = [] } = {}) {
     }
     return out;
   };
+}
+
+/* PHRASE: an article and adjectives right before a noun share case, number and gender with it, both ways (ένα βιβλίο:
+ * the article's accusative settles the noun). Never empties; only contiguous words of one clause. */
+export function phraseAgreementStage(blocks) {
+  const out = blocks.slice();
+  const MEMBER = new Set(['det', 'adj', 'num']);
+  // 'x' (the decoder's unknown) and a missing value agree with anything
+  const known = (v) => v && v !== 'x';
+  const same = (a, b) => a.case === b.case && (!known(a.number) || !known(b.number) || a.number === b.number) && (!known(a.gender) || !known(b.gender) || a.gender === b.gender);
+  for (let i = 0; i < out.length; i += 1) {
+    if (!out[i].candidates.some((c) => c.analysis.pos === 'noun' && c.analysis.case)) continue;
+    let j = i - 1;
+    while (j >= 0 && out[j + 1].token.index - out[j].token.index === 1 && out[j].token.clause === out[i].token.clause
+      && out[j].candidates.length && out[j].candidates.every((c) => MEMBER.has(c.analysis.pos))) j -= 1;
+    const members = [];
+    for (let k = j + 1; k < i; k += 1) members.push(k);
+    if (!members.length) continue;
+    const nouns = out[i].candidates.filter((c) => c.analysis.pos === 'noun' && c.analysis.case);
+    let triples = nouns.map((c) => c.analysis);
+    for (const k of members) {
+      const own = out[k].candidates.map((c) => c.analysis).filter((a) => a.case);
+      const kept = triples.filter((t) => own.some((a) => same(a, t)));
+      if (!kept.length) { triples = null; break; }
+      triples = kept;
+    }
+    if (!triples) continue;
+    const fits = (a) => !a.case || triples.some((t) => same(a, t));
+    for (const k of [...members, i]) {
+      if (out[k].pinned) continue;
+      const keep = out[k].candidates.filter((c) => fits(c.analysis));
+      if (keep.length && keep.length < out[k].candidates.length) {
+        const r = `phrase: agrees with ${out[k === i ? members[0] : i].token.surface}`;
+        out[k] = { ...out[k], candidates: keep.map((c) => (c.reasons.includes(r) ? c : { ...c, reasons: [...c.reasons, r] })) };
+      }
+    }
+  }
+  return out;
 }

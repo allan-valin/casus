@@ -21,8 +21,20 @@ SKIP = {"romanization", "table-tags", "inflection-template", "multiword-construc
         "connegative", "participle", "infinitive", "possessive", "dialectal", "rare"}
 
 
+def _lower(f: str) -> str:
+    return f.lower()
+
+
+def strip_el(s: str) -> str:
+    """Modern Greek key: lower case, no tonos or diaeresis, final sigma folded (mirror of src/lang/el/script.js)"""
+    import unicodedata
+    d = unicodedata.normalize("NFD", s.lower())
+    return unicodedata.normalize("NFC", "".join(c for c in d if c not in "\u0301\u0308\u0344")).replace("ς", "σ")
+
+
 class Config:
-    def __init__(self, code: str, cases: list[str], case_tags: dict[str, str], script: str = r"\p{L}"):
+    def __init__(self, code: str, cases: list[str], case_tags: dict[str, str], script: str = r"\p{L}", key=_lower):
+        self.key = key                           # how a form is keyed for its shard (Greek: without accents)
         self.code = code
         self.cases = cases                       # our case ids, in the language's school order
         self.case_tags = case_tags               # wiktextract tag -> case id
@@ -132,3 +144,6 @@ FINNISH = Config("fi", ["nom", "gen", "par", "acc", "ine", "ela", "ill", "ade", 
                   "illative": "ill", "adessive": "ade", "ablative": "abl", "allative": "all", "essive": "ess", "translative": "tra",
                   "instructive": "ins", "abessive": "abe", "comitative": "com"})
 CONFIGS = {"fi": FINNISH}
+
+GREEK = Config("el", ["nom", "gen", "acc", "voc"], {"nominative": "nom", "genitive": "gen", "accusative": "acc", "vocative": "voc"}, key=strip_el)
+CONFIGS["el"] = GREEK

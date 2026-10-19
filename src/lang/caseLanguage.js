@@ -5,7 +5,7 @@
  * government, agreement inside the clause, the classical clause rules.
  */
 import { governmentStage, agreementStage } from '../lib/disambiguate.js';
-import { prepositionSettledStage, makeCoordinationStage, makeNumberStage, casedStage, makeOneSubjectStage } from '../lib/classical.js';
+import { prepositionSettledStage, makeCoordinationStage, makeNumberStage, casedStage, makeOneSubjectStage, phraseAgreementStage, makeVocativeStage } from '../lib/classical.js';
 import { WORD_ORDERS } from '../app/lib/order.js';
 import { segment } from './ru/segment.js';
 import { tokenize } from './ru/tokenize.js';
@@ -16,7 +16,7 @@ function layoutPairs(json) {
   return { POS: json.POS, LAYOUT, json };
 }
 
-export function makeCaseLanguage({ code, name, inText, bcp47, wiktionary, cases, hues, shares = {}, borders = {}, government = {}, and = [], copulas = [], codes, voice, romanize = null, game = null, eras, script = {}, extraStages = [] }) {
+export function makeCaseLanguage({ code, name, inText, bcp47, wiktionary, cases, hues, shares = {}, borders = {}, government = {}, and = [], copulas = [], codes, voice, romanize = null, game = null, eras, script = {}, extraStages = [], address = [], splitWords = null, tokenize: ownTokenize = null }) {
   const inventory = {
     primary: 'case',
     channels: {
@@ -45,9 +45,11 @@ export function makeCaseLanguage({ code, name, inText, bcp47, wiktionary, cases,
     script: { normalize: (s) => s.normalize('NFC'), rtl: false, spaced: true, prefixOf: lower, ...(romanize ? { romanize } : {}), ...script },
     inventory,
     segment,
-    tokenize,
-    stages: [casedStage, gov, agr, gov, prepositionSettledStage, makeCoordinationStage(and), makeNumberStage({ conjunctions: and }),
-      makeOneSubjectStage({ conjunctions: and, copulas }), gov, agr, gov, ...extraStages],
+    tokenize: ownTokenize ?? tokenize,
+    ...(splitWords ? { splitWords } : {}),
+    // a vocative only where someone is addressed (the classical rule), when the language has one
+    stages: [casedStage, gov, phraseAgreementStage, agr, gov, prepositionSettledStage, makeVocativeStage(address), makeCoordinationStage(and), makeNumberStage({ conjunctions: and }),
+      makeOneSubjectStage({ conjunctions: and, copulas }), gov, phraseAgreementStage, agr, gov, ...extraStages],
     government,
     arrange: WORD_ORDERS,
     eras: eras ?? [{ id: 'modern', label: `Present-day standard ${name.en}`, authors: '', ages: [], ipa: [] }],
