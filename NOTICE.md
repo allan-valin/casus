@@ -110,12 +110,14 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
 - Dictionary, forms, IPA, phrases: the English Wiktionary via wiktextract / kaikki.org, CC BY-SA 4.0.
 - Frequency: Hermit Dave, *FrequencyWords* (OpenSubtitles 2018, mk_50k), CC BY-SA 4.0.
 
-## Finnish (and the later case languages) — CC BY-SA
+## Finnish, Modern Greek, Sanskrit, Czech, Polish, Turkish, Hungarian, Icelandic, Portuguese — CC BY-SA
 
 - Dictionary, forms, IPA, phrases: the English Wiktionary via wiktextract / kaikki.org, CC BY-SA 4.0, streamed and kept
   for the commonest words (tools/fetch_filtered.py).
 - Frequency: Hermit Dave, *FrequencyWords* (OpenSubtitles 2018), CC BY-SA 4.0.
-- Sample passages: sentences written for Casus; the *Kalevala* (Elias Lönnrot, 1849), public domain.
+- Sample passages: sentences written for Casus; the *Kalevala* (Elias Lönnrot, 1849), public domain; Sanskrit
+  *satyam eva jayate* (Muṇḍaka Upaniṣad 3.1.6), public domain.
+- Japanese readings are also ranked with the JLPT lists above (MIT).
 
 ## Speech — espeak-ng (GPL-3.0)
 
