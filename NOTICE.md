@@ -144,6 +144,11 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
   (CC BY 2.0 FR), matched to lessons on Casus's own reading of each sentence (tools/learn_curriculum.mjs); wrong
   answers come from the Wiktionary-based paradigm tables (CC BY-SA). Sentences with sexual or vulgar content are left
   out.
+- Arabic lessons (A1–C1, 45 lessons): **written for Casus** (tools/curricula/ar/), in English and Portuguese. The open
+  Arabic textbooks found (Michigan State's Elementary/Intermediate Arabic) are CC BY-NC and were not used; facts follow
+  Wikipedia's Arabic grammar articles (CC BY-SA) and the public-domain grammars of Wright (1896) and Thatcher (1910).
+  Exercises from Tatoeba's Arabic sentences (CC BY 2.0 FR); a form question shows its answer vowelled only when the
+  paradigm table (Wiktionary, CC BY-SA) confirms the one form the sentence needs.
 
 ## Document import
 

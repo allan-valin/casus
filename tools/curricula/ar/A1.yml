@@ -1,0 +1,362 @@
+id: A1
+topics:
+
+- title: {en: Letters and sounds, pt: Letras e sons}
+  lessons:
+  - id: ar-a1-alphabet
+    title: الحروف
+    meaning: {en: "the alphabet, vowel marks and similar letters", pt: "o alfabeto, os sinais de vogal e as letras parecidas"}
+    intro:
+      en: |
+        Arabic is written **right to left** with 28 letters, most of which join to the next one and so have up to four shapes. Only the **consonants and long vowels** (ا و ي) are written; the **short vowels** are small marks — `ـَ` *a*, `ـِ` *i*, `ـُ` *u* — that ordinary texts leave out and learners' texts, the Qur'an and children's books put in. `ـْ` (sukun) means no vowel, `ـّ` (shadda) doubles the consonant, and `ـٌ ـٍ ـً` (tanwin) add *-n* to an indefinite noun.
+
+        Casus shows the vowels wherever its reader is sure of them.
+      pt: |
+        O árabe se escreve **da direita para a esquerda** com 28 letras, a maioria ligada à seguinte, por isso com até quatro formas. Só se escrevem as **consoantes e as vogais longas** (ا و ي); as **vogais breves** são sinais pequenos — `ـَ` *a*, `ـِ` *i*, `ـُ` *u* — que os textos comuns omitem e os textos para aprendizes, o Alcorão e os livros infantis colocam. `ـْ` (sukun) indica ausência de vogal, `ـّ` (shadda) dobra a consoante, e `ـٌ ـٍ ـً` (tanwin) acrescentam *-n* ao substantivo indefinido.
+
+        O Casus mostra as vogais onde o leitor tem certeza delas.
+    table:
+      head: {en: [Pair, Sounds, Example], pt: [Par, Sons, Exemplo]}
+      rows:
+      - [س / ص, "s / emphatic ṣ", "سَيْف (sword) / صَيْف (summer)"]
+      - [ت / ط, "t / emphatic ṭ", "تِين (figs) / طِين (clay)"]
+      - [د / ض, "d / emphatic ḍ", "دَرْب (path) / ضَرْب (hitting)"]
+      - [ذ / ز / ظ, "dh / z / emphatic ẓ", "ذَهَب (gold) / زَهْر (flowers) / ظَهْر (back)"]
+      - [ه / ح / خ, "h / ḥ (throat) / kh", "هَمّ / حَمّام / خَمْس"]
+      - [ك / ق, "k / q (deep k)", "كَلْب (dog) / قَلْب (heart)"]
+      - [ء / ع, "glottal stop / ʿayn", "سَأَلَ (asked) / سَعَلَ (coughed)"]
+    sections:
+    - id: notes
+      title: {en: The vowel marks, pt: Os sinais de vogal}
+      body:
+        en: |
+          | mark | name | sound | example |
+          |---|---|---|---|
+          | ـَ | fatha | a | كَتَبَ *kataba* |
+          | ـِ | kasra | i | بِنْت *bint* |
+          | ـُ | damma | u | كُتُب *kutub* |
+          | ـْ | sukun | no vowel | قَلْب *qalb* |
+          | ـّ | shadda | double consonant | مُدَرِّس *mudarris* |
+          | ـٌ ـٍ ـً | tanwin | -un -in -an | كِتَابٌ *kitābun* |
+        pt: |
+          | sinal | nome | som | exemplo |
+          |---|---|---|---|
+          | ـَ | fatha | a | كَتَبَ *kataba* |
+          | ـِ | kasra | i | بِنْت *bint* |
+          | ـُ | damma | u | كُتُب *kutub* |
+          | ـْ | sukun | sem vogal | قَلْب *qalb* |
+          | ـّ | shadda | consoante dobrada | مُدَرِّس *mudarris* |
+          | ـٌ ـٍ ـً | tanwin | -un -in -an | كِتَابٌ *kitābun* |
+    mistakes:
+    - wrong: "قلب = kalb"
+      right: "قلب = qalb"
+      why: {en: "ق is a deeper k, made at the back of the throat; كلب is *dog*.", pt: "ق é um k mais fundo, feito no fundo da garganta; كلب é *cachorro*."}
+    examples:
+    - [هذا قلب., This is a heart., Isto é um coração., قلب]
+    - [الصيف حار., The summer is hot., O verão é quente., الصيف]
+    - [أنا طالب., I am a student., Eu sou estudante., طالب]
+    # spelling: the wrong answers swap a letter for the one it is confused with
+    match: {seq: [{re: "[صطضظحقعخذث]", pos: [noun, adj, verb]}]}
+    swaps: {ص: [س], س: [ص], ط: [ت], ت: [ط], ض: [د], د: [ض], ظ: [ز, ذ], ذ: [ز], ح: [ه, خ], خ: [ح], ق: [ك], ك: [ق], ث: [س]}
+
+  - id: ar-a1-definite
+    title: ال
+    meaning: {en: "the article al- and the sun letters", pt: "o artigo al- e as letras solares"}
+    intro:
+      en: |
+        **ال** (*al-*) is the only article and is written joined to the noun: `بَيْت` "a house" → `الْبَيْت` "the house". An indefinite noun carries **tanwin**: `بَيْتٌ` *baytun*; a definite one never does.
+
+        Before the 14 **sun letters** (ت ث د ذ ر ز س ش ص ض ط ظ ل ن — those made with the tip of the tongue) the *l* is not pronounced and the letter doubles: `الشَّمْس` *ash-shams* "the sun". Before the **moon letters** it stays: `الْقَمَر` *al-qamar* "the moon".
+      pt: |
+        **ال** (*al-*) é o único artigo e se escreve junto ao substantivo: `بَيْت` "uma casa" → `الْبَيْت` "a casa". O substantivo indefinido leva **tanwin**: `بَيْتٌ` *baytun*; o definido nunca.
+
+        Antes das 14 **letras solares** (ت ث د ذ ر ز س ش ص ض ط ظ ل ن — as feitas com a ponta da língua) o *l* não se pronuncia e a letra dobra: `الشَّمْس` *ash-shams* "o sol". Antes das **letras lunares** ele fica: `الْقَمَر` *al-qamar* "a lua".
+    table:
+      head: {en: [Indefinite, Definite, Pronounced], pt: [Indefinido, Definido, Pronúncia]}
+      rows:
+      - [بَيْتٌ, الْبَيْتُ, al-baytu]
+      - [قَمَرٌ, الْقَمَرُ, al-qamaru]
+      - [شَمْسٌ, الشَّمْسُ, ash-shamsu]
+      - [سَيَّارَةٌ, السَّيَّارَةُ, as-sayyāratu]
+      - [كِتَابٌ, الْكِتَابُ, al-kitābu]
+      - [نُورٌ, النُّورُ, an-nūru]
+    mistakes:
+    - wrong: "الشمس = al-shams"
+      right: "الشمس = ash-shams"
+      why: {en: "ش is a sun letter: the l assimilates.", pt: "ش é letra solar: o l se assimila."}
+    - wrong: الْكِتَابٌ
+      right: الْكِتَابُ
+      why: {en: "No tanwin with al-.", pt: "Sem tanwin com al-."}
+    examples:
+    - [البيت كبير., The house is big., A casa é grande., البيت]
+    - [الشمس حارة اليوم., The sun is hot today., O sol está quente hoje., الشمس]
+    - ["أين الكتاب؟", "Where is the book?", "Onde está o livro?", "الكتاب"]
+    match: {seq: [{pos: noun, state: def}], same: [number, case]}
+
+- title: {en: Sentences without a verb, pt: Frases sem verbo}
+  lessons:
+  - id: ar-a1-pronouns
+    title: أنا، أنتَ، هو…
+    meaning: {en: "personal pronouns", pt: "pronomes pessoais"}
+    intro:
+      en: |
+        Arabic distinguishes **masculine and feminine** in *you* and *they* too, and has **dual** forms for two people. In verbal sentences the pronoun is usually dropped, since the verb shows the person; in sentences without a verb it is needed: **أَنَا طَالِبٌ.** "I am a student."
+      pt: |
+        O árabe distingue **masculino e feminino** também em *você* e *eles*, e tem formas de **dual** para duas pessoas. Em frases com verbo o pronome costuma cair, porque o verbo mostra a pessoa; em frases sem verbo ele é necessário: **أَنَا طَالِبٌ.** "Sou estudante."
+    table:
+      head: {en: [Person, Singular, Dual, Plural], pt: [Pessoa, Singular, Dual, Plural]}
+      rows:
+      - [1, أَنَا, —, نَحْنُ]
+      - [2 m., أَنْتَ, أَنْتُمَا, أَنْتُمْ]
+      - [2 f., أَنْتِ, أَنْتُمَا, أَنْتُنَّ]
+      - [3 m., هُوَ, هُمَا, هُمْ]
+      - [3 f., هِيَ, هُمَا, هُنَّ]
+    mistakes:
+    - wrong: "أنتَ (to a woman)"
+      right: أنتِ
+      why: {en: "*you* to a woman is anti, with kasra.", pt: "*você* para mulher é anti, com kasra."}
+    examples:
+    - [أنا من البرازيل., I'm from Brazil., Sou do Brasil., أنا]
+    - ["هل أنت طالب؟", "Are you a student?", "Você é estudante?", "أنت"]
+    - [هي معلمة., She is a teacher., Ela é professora., هي]
+    - [نحن أصدقاء., We are friends., Somos amigos., نحن]
+    match: {seq: [{word: [انا, انت, هو, هي, نحن, انتم, هم, هن]}]}
+    pool: [أنا, أنت, هو, هي, نحن, أنتم, هم]
+
+  - id: ar-a1-nominal
+    title: أنا طالبٌ
+    meaning: {en: "the nominal sentence: no 'to be' in the present", pt: "a frase nominal: sem 'ser' no presente"}
+    intro:
+      en: |
+        In the present, *to be* is not said: subject + predicate is a full sentence. **الْبَيْتُ كَبِيرٌ.** "The house (is) big." **أَنَا مُتْعَبٌ.** "I (am) tired." The subject is usually definite and the predicate **indefinite** — that difference is what makes it a sentence and not a phrase: **الْبَيْتُ الْكَبِيرُ** is only "the big house".
+
+        The predicate agrees with the subject in gender and number: **هُوَ طَالِبٌ / هِيَ طَالِبَةٌ**.
+      pt: |
+        No presente o *ser/estar* não se diz: sujeito + predicado já é uma frase. **الْبَيْتُ كَبِيرٌ.** "A casa (é) grande." **أَنَا مُتْعَبٌ.** "(Estou) cansado." O sujeito costuma ser definido e o predicado **indefinido** — é essa diferença que faz dele uma frase e não um sintagma: **الْبَيْتُ الْكَبِيرُ** é só "a casa grande".
+
+        O predicado concorda com o sujeito em gênero e número: **هُوَ طَالِبٌ / هِيَ طَالِبَةٌ**.
+    table:
+      head: {en: [Sentence, Meaning], pt: [Frase, Significado]}
+      rows:
+      - [أَنَا طَالِبٌ., {en: I am a student., pt: Sou estudante.}]
+      - [هِيَ طَالِبَةٌ., {en: She is a student., pt: Ela é estudante.}]
+      - [الْجَوُّ جَمِيلٌ., {en: The weather is nice., pt: O tempo está bom.}]
+      - [الْكِتَابُ جَدِيدٌ., {en: The book is new., pt: O livro é novo.}]
+    mistakes:
+    - wrong: الْبَيْتُ الْكَبِيرُ. (meaning *the house is big*)
+      right: الْبَيْتُ كَبِيرٌ.
+      why: {en: "With al- on both it is a phrase, not a sentence.", pt: "Com al- nos dois é um sintagma, não uma frase."}
+    - wrong: هِيَ طَالِبٌ.
+      right: هِيَ طَالِبَةٌ.
+      why: {en: "The predicate agrees: feminine ة.", pt: "O predicado concorda: feminino ة."}
+    examples:
+    - [أنا متعب., I'm tired., Estou cansado., متعب]
+    - [الجو جميل اليوم., The weather is nice today., O tempo está bom hoje., جميل]
+    - [هي سعيدة., She is happy., Ela está feliz., سعيدة]
+    - [الطعام لذيذ., The food is tasty., A comida está gostosa., لذيذ]
+    # adverbs the reader may file as adjectives (حقا "really", جدا "very") are not predicates
+    match: {seq: [{word: [انا, انت, هو, هي, نحن, انتم, هم]}, {pos: adj, state: indef, re: "^(?!(حقا|جدا|ايضا|فقط|دائما|ابدا)$)"}], gap: 1, same: [state, case]}
+
+  - id: ar-a1-gender
+    title: طالب / طالبة
+    meaning: {en: "masculine and feminine", pt: "masculino e feminino"}
+    intro:
+      en: |
+        Most feminine nouns and adjectives end in **ة** (*tā' marbūṭa*, pronounced *-a*, or *-at* before another word): `طَالِب` / `طَالِبَة` (student), `كَبِير` / `كَبِيرَة` (big). A few feminine nouns have no ة: `شَمْس` (sun), `أُمّ` (mother), `أَرْض` (earth), `يَد` (hand), `دَار` (house), and most names of cities and countries.
+
+        Adjectives and verbs agree with the gender.
+      pt: |
+        A maioria dos substantivos e adjetivos femininos termina em **ة** (*tā' marbūṭa*, pronunciado *-a*, ou *-at* antes de outra palavra): `طَالِب` / `طَالِبَة` (estudante), `كَبِير` / `كَبِيرَة` (grande). Alguns femininos não têm ة: `شَمْس` (sol), `أُمّ` (mãe), `أَرْض` (terra), `يَد` (mão), `دَار` (casa), e a maioria dos nomes de cidades e países.
+
+        Adjetivos e verbos concordam com o gênero.
+    table:
+      head: {en: [Masculine, Feminine, Meaning], pt: [Masculino, Feminino, Significado]}
+      rows:
+      - [طَالِبٌ, طَالِبَةٌ, {en: student, pt: estudante}]
+      - [مُعَلِّمٌ, مُعَلِّمَةٌ, {en: teacher, pt: professor(a)}]
+      - [كَبِيرٌ, كَبِيرَةٌ, {en: big, pt: grande}]
+      - [جَمِيلٌ, جَمِيلَةٌ, {en: beautiful, pt: bonito(a)}]
+      - [جَدِيدٌ, جَدِيدَةٌ, {en: new, pt: novo(a)}]
+    mistakes:
+    - wrong: الشَّمْسُ حَارٌّ.
+      right: الشَّمْسُ حَارَّةٌ.
+      why: {en: "شمس is feminine without ة.", pt: "شمس é feminino sem ة."}
+    examples:
+    - [المدينة كبيرة., The city is big., A cidade é grande., كبيرة]
+    - [هذا بيت جميل., This is a beautiful house., Esta é uma casa bonita., جميل]
+    - [السيارة جديدة., The car is new., O carro é novo., جديدة]
+    match: {seq: [{pos: noun}, {pos: adj}], gap: 1, same: [state, case]}
+
+  - id: ar-a1-demonstratives
+    title: هذا، هذه، ذلك
+    meaning: {en: "this and that", pt: "este e aquele"}
+    intro:
+      en: |
+        **هٰذَا** (m.) / **هٰذِهِ** (f.) "this", **ذٰلِكَ** (m.) / **تِلْكَ** (f.) "that", **هٰؤُلَاءِ** / **أُولٰئِكَ** "these / those" (people). With an indefinite noun they make a sentence — **هٰذَا كِتَابٌ.** "This is a book." — with a definite one, a phrase: **هٰذَا الْكِتَابُ** "this book".
+
+        Plurals of **things** count as feminine singular: **هٰذِهِ الْكُتُبُ** "these books".
+      pt: |
+        **هٰذَا** (m.) / **هٰذِهِ** (f.) "este/esta", **ذٰلِكَ** (m.) / **تِلْكَ** (f.) "aquele/aquela", **هٰؤُلَاءِ** / **أُولٰئِكَ** "estes / aqueles" (pessoas). Com substantivo indefinido formam uma frase — **هٰذَا كِتَابٌ.** "Isto é um livro." — com definido, um sintagma: **هٰذَا الْكِتَابُ** "este livro".
+
+        Plurais de **coisas** contam como feminino singular: **هٰذِهِ الْكُتُبُ** "estes livros".
+    table:
+      head: {en: ["", m., f., "pl. (people)"], pt: ["", m., f., "pl. (pessoas)"]}
+      rows:
+      - [{en: this, pt: este}, هٰذَا, هٰذِهِ, هٰؤُلَاءِ]
+      - [{en: that, pt: aquele}, ذٰلِكَ, تِلْكَ, أُولٰئِكَ]
+    mistakes:
+    - wrong: هٰؤُلَاءِ الْكُتُبُ
+      right: هٰذِهِ الْكُتُبُ
+      why: {en: "Plurals of things take the feminine singular.", pt: "Plurais de coisas levam o feminino singular."}
+    examples:
+    - [هذا كتاب., This is a book., Isto é um livro., هذا]
+    - [هذه سيارتي., This is my car., Este é o meu carro., هذه]
+    - ["من ذلك الرجل؟", "Who is that man?", "Quem é aquele homem?", "ذلك"]
+    match: {seq: [{word: [هذا, هذه, ذلك, تلك, هؤلاء, اولئك]}]}
+    pool: [هذا, هذه, ذلك, تلك, هؤلاء, أولئك]
+
+  - id: ar-a1-noun-adj
+    title: البيتُ الكبيرُ
+    meaning: {en: "noun + adjective: full agreement", pt: "substantivo + adjetivo: concordância total"}
+    intro:
+      en: |
+        The adjective comes **after** the noun and copies everything: gender, number, case — and **definiteness**. **بَيْتٌ كَبِيرٌ** "a big house", **الْبَيْتُ الْكَبِيرُ** "the big house". If only the noun has al-, it is a sentence (**الْبَيْتُ كَبِيرٌ** "the house is big").
+      pt: |
+        O adjetivo vem **depois** do substantivo e copia tudo: gênero, número, caso — e **definição**. **بَيْتٌ كَبِيرٌ** "uma casa grande", **الْبَيْتُ الْكَبِيرُ** "a casa grande". Se só o substantivo tem al-, é uma frase (**الْبَيْتُ كَبِيرٌ** "a casa é grande").
+    table:
+      head: {en: [Phrase, Meaning], pt: [Sintagma, Significado]}
+      rows:
+      - [بَيْتٌ كَبِيرٌ, {en: a big house, pt: uma casa grande}]
+      - [الْبَيْتُ الْكَبِيرُ, {en: the big house, pt: a casa grande}]
+      - [سَيَّارَةٌ جَدِيدَةٌ, {en: a new car, pt: um carro novo}]
+      - [السَّيَّارَةُ الْجَدِيدَةُ, {en: the new car, pt: o carro novo}]
+    mistakes:
+    - wrong: الْبَيْتُ كَبِيرٌ (for *the big house*)
+      right: الْبَيْتُ الْكَبِيرُ
+      why: {en: "Definite noun, definite adjective.", pt: "Substantivo definido, adjetivo definido."}
+    examples:
+    - [أعيش في البيت الكبير., I live in the big house., Moro na casa grande., الكبير]
+    - [اشتريت سيارة جديدة., I bought a new car., Comprei um carro novo., جديدة]
+    match: {seq: [{pos: noun, state: def}, {pos: adj, state: def}], gap: 1, same: [gender, number]}
+
+- title: {en: Asking, pt: Perguntando}
+  lessons:
+  - id: ar-a1-questions
+    title: هل، ما، من، أين…
+    meaning: {en: "question words", pt: "palavras interrogativas"}
+    intro:
+      en: |
+        **هَلْ** turns a statement into a yes/no question: **هَلْ أَنْتَ طَالِبٌ؟** Other question words: **مَا** what (before a noun), **مَاذَا** what (before a verb), **مَنْ** who, **أَيْنَ** where, **مَتَى** when, **كَيْفَ** how, **لِمَاذَا** why, **كَمْ** how many (+ a singular accusative noun: **كَمْ كِتَابًا؟**).
+      pt: |
+        **هَلْ** transforma uma afirmação em pergunta de sim ou não: **هَلْ أَنْتَ طَالِبٌ؟** Outras palavras: **مَا** o que (antes de substantivo), **مَاذَا** o que (antes de verbo), **مَنْ** quem, **أَيْنَ** onde, **مَتَى** quando, **كَيْفَ** como, **لِمَاذَا** por que, **كَمْ** quantos (+ substantivo singular no acusativo: **كَمْ كِتَابًا؟**).
+    table:
+      head: {en: [Word, Meaning, Example], pt: [Palavra, Significado, Exemplo]}
+      rows:
+      - [هَلْ, {en: yes/no, pt: sim/não}, هَلْ تَتَكَلَّمُ الْعَرَبِيَّةَ؟]
+      - [مَا / مَاذَا, {en: what, pt: o que}, مَاذَا تُرِيدُ؟]
+      - [مَنْ, {en: who, pt: quem}, مَنْ هٰذَا؟]
+      - [أَيْنَ, {en: where, pt: onde}, أَيْنَ تَسْكُنُ؟]
+      - [مَتَى, {en: when, pt: quando}, مَتَى تَصِلُ؟]
+      - [كَيْفَ, {en: how, pt: como}, كَيْفَ حَالُكَ؟]
+      - [لِمَاذَا, {en: why, pt: por que}, لِمَاذَا تَضْحَكُ؟]
+      - [كَمْ, {en: how many, pt: quantos}, كَمْ عُمْرُكَ؟]
+    mistakes:
+    - wrong: ما تريد؟
+      right: ماذا تريد؟
+      why: {en: "Before a verb, *what* is ماذا.", pt: "Antes de verbo, *o que* é ماذا."}
+    examples:
+    - ["كيف حالك؟", "How are you?", "Como vai?", "كيف"]
+    - ["أين تسكن؟", "Where do you live?", "Onde você mora?", "أين"]
+    - ["ماذا تريد؟", "What do you want?", "O que você quer?", "ماذا"]
+    - ["هل تتكلم العربية؟", "Do you speak Arabic?", "Você fala árabe?", "هل"]
+    match: {seq: [{word: [هل, ما, ماذا, من, اين, متى, كيف, لماذا, كم], start: true}], gap: 0}
+    pool: [هل, ما, ماذا, من, أين, متى, كيف, لماذا, كم]
+
+- title: {en: Place and possession, pt: Lugar e posse}
+  lessons:
+  - id: ar-a1-prepositions
+    title: في، على، من، إلى
+    meaning: {en: "prepositions (and the genitive after them)", pt: "preposições (e o genitivo depois delas)"}
+    intro:
+      en: |
+        **فِي** in · **عَلَى** on · **مِنْ** from · **إِلَى** to · **مَعَ** with (someone) · **عِنْدَ** at, at the home of · **عَنْ** about · and two written joined to the next word: **بِـ** with, by, in · **لِـ** for, to.
+
+        The noun after a preposition is in the **genitive** (-i): **فِي الْبَيْتِ** "in the house", **مِنْ مِصْرَ** "from Egypt".
+      pt: |
+        **فِي** em · **عَلَى** sobre · **مِنْ** de (origem) · **إِلَى** para · **مَعَ** com (alguém) · **عِنْدَ** junto de, na casa de · **عَنْ** sobre (assunto) · e duas que se escrevem junto à palavra seguinte: **بِـ** com, por, em · **لِـ** para, a.
+
+        O substantivo depois de preposição fica no **genitivo** (-i): **فِي الْبَيْتِ** "na casa", **مِنْ مِصْرَ** "do Egito".
+    mistakes:
+    - wrong: فِي الْبَيْتُ
+      right: فِي الْبَيْتِ
+      why: {en: "Genitive after a preposition.", pt: "Genitivo depois de preposição."}
+    examples:
+    - [الكتاب على الطاولة., The book is on the table., O livro está na mesa., على]
+    - [أنا من البرازيل., I'm from Brazil., Sou do Brasil., من]
+    - [ذهبت إلى السوق., I went to the market., Fui ao mercado., إلى]
+    - [أسكن في القاهرة., I live in Cairo., Moro no Cairo., في]
+    # من or ما opening a sentence is "who / what", not the preposition
+    match: {seq: [{word: [في, على, من, الى, مع, عند, عن], pos: prep, notStart: true}, {pos: noun}], gap: 0}
+    pool: [في, على, من, إلى, مع, عند, عن]
+
+  - id: ar-a1-possessive
+    title: كتابي، كتابك
+    meaning: {en: "my, your, his: possessive suffixes", pt: "meu, teu, dele: sufixos possessivos"}
+    intro:
+      en: |
+        *My, your, his…* are **suffixes** on the noun, which then takes no al-: **كِتَابِي** "my book", **كِتَابُكَ** "your (m.) book", **كِتَابُهَا** "her book". Before a suffix, **ة** becomes **ت**: `سَيَّارَة` → **سَيَّارَتِي** "my car".
+      pt: |
+        *Meu, teu, dele…* são **sufixos** no substantivo, que então não leva al-: **كِتَابِي** "meu livro", **كِتَابُكَ** "teu (m.) livro", **كِتَابُهَا** "o livro dela". Antes de sufixo, **ة** vira **ت**: `سَيَّارَة` → **سَيَّارَتِي** "meu carro".
+    table:
+      head: {en: [Owner, Suffix, Example], pt: [Dono, Sufixo, Exemplo]}
+      rows:
+      - [{en: my, pt: meu}, ـِي, كِتَابِي]
+      - [{en: your (m.), pt: teu (m.)}, ـكَ, كِتَابُكَ]
+      - [{en: your (f.), pt: teu (f.)}, ـكِ, كِتَابُكِ]
+      - [{en: his, pt: dele}, ـهُ, كِتَابُهُ]
+      - [{en: her, pt: dela}, ـهَا, كِتَابُهَا]
+      - [{en: our, pt: nosso}, ـنَا, كِتَابُنَا]
+      - [{en: your (pl.), pt: de vocês}, ـكُمْ, كِتَابُكُمْ]
+      - [{en: their, pt: deles}, ـهُمْ, كِتَابُهُمْ]
+    mistakes:
+    - wrong: الْكِتَابِي
+      right: كِتَابِي
+      why: {en: "A noun with a suffix is already definite: no al-.", pt: "Substantivo com sufixo já é definido: sem al-."}
+    - wrong: سَيَّارَةِي
+      right: سَيَّارَتِي
+      why: {en: "ة → ت before a suffix.", pt: "ة → ت antes de sufixo."}
+    examples:
+    - [هذا بيتي., This is my house., Esta é a minha casa., بيتي]
+    - ["ما اسمك؟", "What's your name?", "Qual é o seu nome?", "اسمك"]
+    - [أخوها طبيب., Her brother is a doctor., O irmão dela é médico., أخوها]
+    # not a word that only happens to end in ه (الله)
+    match: {seq: [{pos: noun, state: cons, re: "^(?!ال)(?!(ماري|سامي|توني|جوني|نانسي|كاثي|جودي|راندي|هاري)$).+(ي|ك|ه|ها|نا|كم|هم)$"}]}
+    suffixes: [ي, ك, ه, ها, نا, كم, هم]
+
+- title: {en: Numbers, pt: Números}
+  lessons:
+  - id: ar-a1-numbers
+    title: واحد، اثنان، ثلاثة
+    meaning: {en: "numbers 1–10", pt: "números de 1 a 10"}
+    intro:
+      en: |
+        Arabic numerals (the ones Europe borrowed came from here; Arabic now writes ٠١٢٣٤٥٦٧٨٩) and words: **وَاحِد ١، اِثْنَان ٢، ثَلَاثَة ٣، أَرْبَعَة ٤، خَمْسَة ٥، سِتَّة ٦، سَبْعَة ٧، ثَمَانِيَة ٨، تِسْعَة ٩، عَشَرَة ١٠**. Numbers are written left to right even inside Arabic text.
+
+        One and two follow the noun as adjectives (**كِتَابٌ وَاحِدٌ**) or are shown by the dual (**كِتَابَانِ** "two books"); from three on there is a gender twist (B1).
+      pt: |
+        Os algarismos (os que a Europa adotou vieram daqui; o árabe hoje escreve ٠١٢٣٤٥٦٧٨٩) e as palavras: **وَاحِد ١، اِثْنَان ٢، ثَلَاثَة ٣، أَرْبَعَة ٤، خَمْسَة ٥، سِتَّة ٦، سَبْعَة ٧، ثَمَانِيَة ٨، تِسْعَة ٩، عَشَرَة ١٠**. Os números se escrevem da esquerda para a direita mesmo no meio do texto árabe.
+
+        Um e dois vêm depois do substantivo como adjetivos (**كِتَابٌ وَاحِدٌ**) ou pelo dual (**كِتَابَانِ** "dois livros"); do três em diante há uma inversão de gênero (B1).
+    table:
+      head: {en: [Digit, Word, Digit, Word], pt: [Algarismo, Palavra, Algarismo, Palavra]}
+      rows:
+      - [١, وَاحِد, ٦, سِتَّة]
+      - [٢, اِثْنَان, ٧, سَبْعَة]
+      - [٣, ثَلَاثَة, ٨, ثَمَانِيَة]
+      - [٤, أَرْبَعَة, ٩, تِسْعَة]
+      - [٥, خَمْسَة, ١٠, عَشَرَة]
+    examples:
+    - [عندي ثلاثة أطفال., I have three children., Tenho três filhos., ثلاثة]
+    - [انتظرت خمس دقائق., I waited five minutes., Esperei cinco minutos., خمس]
+    match: {seq: [{word: [واحد, واحدة, اثنان, اثنين, ثلاثة, ثلاث, اربعة, اربع, خمسة, خمس, ستة, ست, سبعة, سبع, ثمانية, ثماني, تسعة, تسع, عشرة, عشر]}]}
+    pool: [واحد, اثنان, ثلاثة, أربعة, خمسة, ستة, سبعة, ثمانية, تسعة, عشرة]

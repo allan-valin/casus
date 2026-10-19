@@ -1,0 +1,290 @@
+id: B1
+topics:
+
+- title: {en: The moods of the verb, pt: Os modos do verbo}
+  lessons:
+  - id: ar-b1-subjunctive
+    title: أريد أن أذهبَ
+    meaning: {en: "the subjunctive after أن، لن، كي، حتى", pt: "o subjuntivo depois de أن، لن، كي، حتى"}
+    intro:
+      en: |
+        After **أَنْ** "that, to", **لَنْ** "will not", **كَيْ / لِكَيْ / لِـ** "in order to" and **حَتَّى** "so that, until", the present takes the **subjunctive**: the final **-ُ** becomes **-َ** (**يَذْهَبُ → أَنْ يَذْهَبَ**), and the endings in **-ونَ / -ينَ / -انِ** lose their **ن** (**يَذْهَبُونَ → أَنْ يَذْهَبُوا**).
+
+        **أُرِيدُ أَنْ أَذْهَبَ** is how Arabic says *I want to go* — no infinitive, as in Macedonian.
+      pt: |
+        Depois de **أَنْ** "que, (para)", **لَنْ** "não vai", **كَيْ / لِكَيْ / لِـ** "para (que)" e **حَتَّى** "para que, até", o presente vai para o **subjuntivo**: o **-ُ** final vira **-َ** (**يَذْهَبُ → أَنْ يَذْهَبَ**), e as terminações em **-ونَ / -ينَ / -انِ** perdem o **ن** (**يَذْهَبُونَ → أَنْ يَذْهَبُوا**).
+
+        **أُرِيدُ أَنْ أَذْهَبَ** é como o árabe diz *quero ir* — sem infinitivo.
+    table:
+      head: {en: [Indicative, Subjunctive, Example], pt: [Indicativo, Subjuntivo, Exemplo]}
+      rows:
+      - [يَذْهَبُ, يَذْهَبَ, أَنْ يَذْهَبَ]
+      - [تَذْهَبِينَ, تَذْهَبِي, أُرِيدُكِ أَنْ تَذْهَبِي]
+      - [يَذْهَبُونَ, يَذْهَبُوا, لَنْ يَذْهَبُوا]
+      - [أَكْتُبُ, أَكْتُبَ, حَتَّى أَكْتُبَ]
+    mistakes:
+    - wrong: لَنْ يَذْهَبُونَ
+      right: لَنْ يَذْهَبُوا
+      why: {en: "The -ن of the plural drops in the subjunctive.", pt: "O -ن do plural cai no subjuntivo."}
+    examples:
+    - [أريد أن أنام., I want to sleep., Quero dormir., أنام]
+    - [لن أنسى., I won't forget., Não vou esquecer., أنسى]
+    - [يجب أن تدرس., You must study., Você precisa estudar., تدرس]
+    match: {seq: [{word: [ان, لن, كي, لكي, حتى]}, {pos: verb, tense: npast}], gap: 1, same: [person, number]}
+
+  - id: ar-b1-jussive
+    title: لم يذهبْ
+    meaning: {en: "the jussive after لم and the prohibitive لا", pt: "o jussivo depois de لم e do لا proibitivo"}
+    intro:
+      en: |
+        The **jussive** ends in **sukun** where the indicative has **-ُ** (**يَذْهَبُ → يَذْهَبْ**) and, like the subjunctive, drops the **ن** of **-ونَ / -ينَ / -انِ**. It follows **لَمْ** (past negation: **لَمْ يَذْهَبْ** "he didn't go"), **لَا** in prohibitions (**لَا تَقْلَقْ** "don't worry"), **لِـ** "let…" (**لِنَذْهَبْ** "let's go") and conditional **إِنْ**. Hollow verbs shorten their vowel: **يَقُولُ → لَمْ يَقُلْ**.
+      pt: |
+        O **jussivo** termina em **sukun** onde o indicativo tem **-ُ** (**يَذْهَبُ → يَذْهَبْ**) e, como o subjuntivo, perde o **ن** de **-ونَ / -ينَ / -انِ**. Vem depois de **لَمْ** (negação do passado: **لَمْ يَذْهَبْ** "ele não foi"), de **لَا** em proibições (**لَا تَقْلَقْ** "não se preocupe"), de **لِـ** "que…/vamos" (**لِنَذْهَبْ** "vamos") e do condicional **إِنْ**. Verbos ocos encurtam a vogal: **يَقُولُ → لَمْ يَقُلْ**.
+    table:
+      head: {en: [Indicative, Jussive, Example], pt: [Indicativo, Jussivo, Exemplo]}
+      rows:
+      - [يَذْهَبُ, يَذْهَبْ, لَمْ يَذْهَبْ]
+      - [يَذْهَبُونَ, يَذْهَبُوا, لَمْ يَذْهَبُوا]
+      - [يَقُولُ, يَقُلْ, لَمْ يَقُلْ]
+      - [تَقْلَقُ, تَقْلَقْ, لَا تَقْلَقْ]
+    mistakes:
+    - wrong: لَمْ يَقُولْ
+      right: لَمْ يَقُلْ
+      why: {en: "Hollow verbs lose the long vowel before sukun.", pt: "Verbos ocos perdem a vogal longa antes do sukun."}
+    examples:
+    - [لم أفهم., I didn't understand., Não entendi., أفهم]
+    - [لا تقلق., Don't worry., Não se preocupe., تقلق]
+    - [لم يقل شيئاً., He didn't say anything., Ele não disse nada., يقل]
+    match: {seq: [{word: [لم]}, {pos: verb, tense: npast}], gap: 1, same: [person, number], rowHas: {mood: juss}}
+
+- title: {en: Cases, pt: Casos}
+  lessons:
+  - id: ar-b1-irab
+    title: الإعراب
+    meaning: {en: "i'rāb: nominative, accusative, genitive", pt: "i'rāb: nominativo, acusativo, genitivo"}
+    intro:
+      en: |
+        Nouns and adjectives have three cases, shown by the **last vowel** (written only in vowelled texts, but read aloud in formal Arabic):
+
+        - **nominative -ُ / -ٌ**: the subject, the predicate of a verbless sentence
+        - **accusative -َ / -ً**: the object, after **إِنَّ**, the predicate of **كَانَ**, adverbs (**يَوْمًا** "one day")
+        - **genitive -ِ / -ٍ**: after prepositions, the second noun of an iḍāfa
+
+        Indefinite accusative adds an alif: **كِتَابًا**. The sound masculine plural has **-ُونَ** / **-ِينَ**, the dual **-َانِ** / **-َيْنِ**.
+      pt: |
+        Substantivos e adjetivos têm três casos, marcados pela **última vogal** (escrita só em textos vocalizados, mas lida em voz alta no árabe formal):
+
+        - **nominativo -ُ / -ٌ**: o sujeito, o predicado da frase sem verbo
+        - **acusativo -َ / -ً**: o objeto, depois de **إِنَّ**, o predicado de **كَانَ**, advérbios (**يَوْمًا** "um dia")
+        - **genitivo -ِ / -ٍ**: depois de preposição, o segundo termo da iḍāfa
+
+        O acusativo indefinido ganha um alif: **كِتَابًا**. O plural masculino regular tem **-ُونَ** / **-ِينَ**, o dual **-َانِ** / **-َيْنِ**.
+    table:
+      head: {en: [Case, Definite, Indefinite, Use], pt: [Caso, Definido, Indefinido, Uso]}
+      rows:
+      - [{en: nominative, pt: nominativo}, الْكِتَابُ, كِتَابٌ, {en: subject, pt: sujeito}]
+      - [{en: accusative, pt: acusativo}, الْكِتَابَ, كِتَابًا, {en: object, pt: objeto}]
+      - [{en: genitive, pt: genitivo}, الْكِتَابِ, كِتَابٍ, {en: after a preposition, pt: depois de preposição}]
+    mistakes:
+    - wrong: فِي الْبَيْتُ
+      right: فِي الْبَيْتِ
+      why: {en: "Genitive after في.", pt: "Genitivo depois de في."}
+    - wrong: قَرَأْتُ كِتَابٌ
+      right: قَرَأْتُ كِتَابًا
+      why: {en: "The object is accusative.", pt: "O objeto vai no acusativo."}
+    examples:
+    - [الطالبُ في الفصلِ., The student is in the classroom., O aluno está na sala de aula., الفصلِ]
+    - [قرأتُ كتاباً., I read a book., Li um livro., كتاباً]
+    match: [{seq: [{pos: prep}, {pos: noun, case: gen}], gap: 1, same: [state, number]}, {seq: [{pos: verb}, {pos: noun, case: acc}], gap: 1, same: [state, number]}]
+
+  - id: ar-b1-inna
+    title: إنّ وأخواتها
+    meaning: {en: "إنّ and its sisters: the subject in the accusative", pt: "إنّ e suas irmãs: o sujeito no acusativo"}
+    intro:
+      en: |
+        **إِنَّ** "indeed", **أَنَّ** "that", **لَكِنَّ** "but", **لِأَنَّ** "because", **كَأَنَّ** "as if", **لَيْتَ** "if only", **لَعَلَّ** "perhaps" introduce a nominal sentence and put its subject in the **accusative**; the predicate stays nominative: **إِنَّ الْجَوَّ جَمِيلٌ.** "The weather is indeed nice." A pronoun subject is attached: **إِنَّهُ**, **لِأَنَّنِي** (or **لِأَنِّي**).
+
+        Don't confuse **أَنَّ** (+ noun) with **أَنْ** (+ verb).
+      pt: |
+        **إِنَّ** "de fato", **أَنَّ** "que", **لَكِنَّ** "mas", **لِأَنَّ** "porque", **كَأَنَّ** "como se", **لَيْتَ** "quem dera", **لَعَلَّ** "talvez" introduzem uma frase nominal e põem o sujeito no **acusativo**; o predicado continua nominativo: **إِنَّ الْجَوَّ جَمِيلٌ.** "O tempo está mesmo bom." Um pronome sujeito vem colado: **إِنَّهُ**, **لِأَنَّنِي** (ou **لِأَنِّي**).
+
+        Não confunda **أَنَّ** (+ substantivo) com **أَنْ** (+ verbo).
+    table:
+      head: {en: [Particle, Meaning, Example], pt: [Partícula, Significado, Exemplo]}
+      rows:
+      - [إِنَّ, {en: indeed, pt: de fato}, إِنَّ الْعِلْمَ نُورٌ]
+      - [أَنَّ, {en: that, pt: que}, أَعْرِفُ أَنَّ الْوَقْتَ مُتَأَخِّرٌ]
+      - [لَكِنَّ, {en: but, pt: mas}, لَكِنَّ الطَّرِيقَ طَوِيلٌ]
+      - [لِأَنَّ, {en: because, pt: porque}, لِأَنَّ الْجَوَّ بَارِدٌ]
+      - [لَعَلَّ, {en: perhaps, pt: talvez}, لَعَلَّ الْقِطَارَ مُتَأَخِّرٌ]
+    mistakes:
+    - wrong: إِنَّ الْجَوُّ جَمِيلٌ
+      right: إِنَّ الْجَوَّ جَمِيلٌ
+      why: {en: "The subject after إنّ is accusative.", pt: "O sujeito depois de إنّ vai no acusativo."}
+    examples:
+    - [أعرف أن الوقت متأخر., I know it's late., Sei que é tarde., أن]
+    - [لم آتِ لأنني كنت مريضاً., I didn't come because I was ill., Não vim porque estava doente., لأنني]
+    - [لعل المطر يتوقف., Perhaps the rain will stop., Talvez a chuva pare., لعل]
+    # كأنّ is left out: unvowelled it is كان "was"
+    match: {seq: [{word: [ان, لكن, لان, ليت, لعل, انه, انها, لانه, لانها, لانني, لاني, لكنه, لكنها, انني, اني]}, {pos: [noun, pron]}], gap: 0}
+    pool: [إن, أن, لكن, لأن, كأن, ليت, لعل]
+
+- title: {en: Verb patterns, pt: Padrões verbais}
+  lessons:
+  - id: ar-b1-forms-2-4
+    title: فعّل، فاعل، أفعل
+    meaning: {en: "derived verbs: forms II, III, IV", pt: "verbos derivados: formas II, III, IV"}
+    intro:
+      en: |
+        From one root, **patterns** make related verbs. Dictionaries number them with Roman numerals:
+
+        - **II فَعَّلَ** (doubled middle): causes or intensifies — **دَرَسَ** study → **دَرَّسَ** teach; **عَلِمَ** know → **عَلَّمَ** teach
+        - **III فَاعَلَ** (long ā): doing to / with someone — **سَاعَدَ** help, **شَاهَدَ** watch, **كَاتَبَ** correspond with
+        - **IV أَفْعَلَ** (prefix a-): causes — **أَرْسَلَ** send, **أَخْبَرَ** inform, **أَحَبَّ** love
+
+        Their present tenses start with **يُـ** (yu-): **يُدَرِّسُ، يُسَاعِدُ، يُرْسِلُ**.
+      pt: |
+        De uma raiz, **padrões** formam verbos aparentados. Os dicionários os numeram em romanos:
+
+        - **II فَعَّلَ** (meio dobrado): causa ou intensifica — **دَرَسَ** estudar → **دَرَّسَ** ensinar; **عَلِمَ** saber → **عَلَّمَ** ensinar
+        - **III فَاعَلَ** (ā longo): fazer a / com alguém — **سَاعَدَ** ajudar, **شَاهَدَ** assistir, **كَاتَبَ** corresponder-se
+        - **IV أَفْعَلَ** (prefixo a-): causa — **أَرْسَلَ** enviar, **أَخْبَرَ** informar, **أَحَبَّ** amar
+
+        O presente delas começa com **يُـ** (yu-): **يُدَرِّسُ، يُسَاعِدُ، يُرْسِلُ**.
+    table:
+      head: {en: [Form, Past, Present, Example], pt: [Forma, Passado, Presente, Exemplo]}
+      rows:
+      - [II, فَعَّلَ, يُفَعِّلُ, "دَرَّسَ / يُدَرِّسُ"]
+      - [III, فَاعَلَ, يُفَاعِلُ, "سَاعَدَ / يُسَاعِدُ"]
+      - [IV, أَفْعَلَ, يُفْعِلُ, "أَرْسَلَ / يُرْسِلُ"]
+    examples:
+    - [يدرّس أبي الرياضيات., My father teaches maths., Meu pai ensina matemática., يدرّس]
+    - [ساعدني صديقي., My friend helped me., Meu amigo me ajudou., ساعدني]
+    - [أرسلت رسالة., I sent a letter., Enviei uma carta., أرسلت]
+    match: {seq: [{pos: verb, dict: "\\(form (II|III|IV)\\)"}], same: [tense]}
+
+  - id: ar-b1-forms-5-10
+    title: تفعّل، تفاعل، افتعل، استفعل
+    meaning: {en: "derived verbs: forms V–X", pt: "verbos derivados: formas V–X"}
+    intro:
+      en: |
+        - **V تَفَعَّلَ**: reflexive of II — **تَعَلَّمَ** learn (teach oneself), **تَكَلَّمَ** speak
+        - **VI تَفَاعَلَ**: reciprocal — **تَعَاوَنَ** cooperate, **تَقَابَلَ** meet each other
+        - **VII اِنْفَعَلَ**: passive-like — **اِنْكَسَرَ** break (get broken), **اِنْقَطَعَ** be cut off
+        - **VIII اِفْتَعَلَ**: — **اِجْتَمَعَ** meet, **اِنْتَظَرَ** wait, **اِسْتَمَعَ** listen
+        - **X اِسْتَفْعَلَ**: seeking, considering — **اِسْتَخْدَمَ** use, **اِسْتَقْبَلَ** receive, **اِسْتَطَاعَ** be able
+
+        Knowing the pattern lets you guess a new word's meaning from its root.
+      pt: |
+        - **V تَفَعَّلَ**: reflexivo da II — **تَعَلَّمَ** aprender, **تَكَلَّمَ** falar
+        - **VI تَفَاعَلَ**: recíproco — **تَعَاوَنَ** cooperar, **تَقَابَلَ** encontrar-se
+        - **VII اِنْفَعَلَ**: quase passivo — **اِنْكَسَرَ** quebrar(-se), **اِنْقَطَعَ** ser cortado
+        - **VIII اِفْتَعَلَ**: — **اِجْتَمَعَ** reunir-se, **اِنْتَظَرَ** esperar, **اِسْتَمَعَ** escutar
+        - **X اِسْتَفْعَلَ**: buscar, considerar — **اِسْتَخْدَمَ** usar, **اِسْتَقْبَلَ** receber, **اِسْتَطَاعَ** conseguir
+
+        Conhecendo o padrão dá para adivinhar o sentido de uma palavra nova pela raiz.
+    table:
+      head: {en: [Form, Past, Present, Example], pt: [Forma, Passado, Presente, Exemplo]}
+      rows:
+      - [V, تَفَعَّلَ, يَتَفَعَّلُ, "تَعَلَّمَ / يَتَعَلَّمُ"]
+      - [VI, تَفَاعَلَ, يَتَفَاعَلُ, "تَعَاوَنَ / يَتَعَاوَنُ"]
+      - [VII, اِنْفَعَلَ, يَنْفَعِلُ, "اِنْكَسَرَ / يَنْكَسِرُ"]
+      - [VIII, اِفْتَعَلَ, يَفْتَعِلُ, "اِنْتَظَرَ / يَنْتَظِرُ"]
+      - [X, اِسْتَفْعَلَ, يَسْتَفْعِلُ, "اِسْتَخْدَمَ / يَسْتَخْدِمُ"]
+    examples:
+    - [أتعلم العربية., I'm learning Arabic., Estou aprendendo árabe., أتعلم]
+    - [انتظرتك ساعة., I waited for you for an hour., Esperei você uma hora., انتظرتك]
+    - ["هل تستطيع مساعدتي؟", "Can you help me?", "Você pode me ajudar?", "تستطيع"]
+    match: {seq: [{pos: verb, dict: "\\(form (V|VI|VII|VIII|X)\\)"}], same: [tense]}
+
+  - id: ar-b1-participles
+    title: كاتب، مكتوب
+    meaning: {en: "active and passive participles", pt: "particípios ativo e passivo"}
+    intro:
+      en: |
+        Every verb has an **active participle** (the doer, or *-ing*) and a **passive participle** (the thing done): form I **فَاعِل / مَفْعُول** — **كَاتِب** writer, writing / **مَكْتُوب** written, a letter. The derived forms use **مُـ**: **مُدَرِّس** teacher (II), **مُسَاعِد** assistant (III), **مُسْتَخْدَم** used (X).
+
+        Participles act as nouns and adjectives and often replace a verb: **أَنَا ذَاهِبٌ** "I'm going".
+      pt: |
+        Todo verbo tem um **particípio ativo** (quem faz, ou *-ndo*) e um **passivo** (o que foi feito): forma I **فَاعِل / مَفْعُول** — **كَاتِب** escritor, que escreve / **مَكْتُوب** escrito, uma carta. As formas derivadas usam **مُـ**: **مُدَرِّس** professor (II), **مُسَاعِد** assistente (III), **مُسْتَخْدَم** usado (X).
+
+        Os particípios funcionam como substantivos e adjetivos e muitas vezes substituem o verbo: **أَنَا ذَاهِبٌ** "estou indo".
+    table:
+      head: {en: [Verb, Active, Passive], pt: [Verbo, Ativo, Passivo]}
+      rows:
+      - [كَتَبَ, كَاتِب, مَكْتُوب]
+      - [فَتَحَ, فَاتِح, مَفْتُوح]
+      - [دَرَّسَ, مُدَرِّس, مُدَرَّس]
+      - [اِسْتَخْدَمَ, مُسْتَخْدِم, مُسْتَخْدَم]
+    examples:
+    - [الباب مفتوح., The door is open., A porta está aberta., مفتوح]
+    - [أنا ذاهب إلى البيت., I'm going home., Estou indo para casa., ذاهب]
+    # the reader files participles as adjectives (or nouns): found by their dictionary form, فَاعِل, مَفْعُول, مُـ…
+    match: {seq: [{pos: [adj, noun], lemma: "^(.َا.ِ.|مَ.ْ.ُو.|مُ.{3,}[^ةى])$"}], same: [state]}
+
+- title: {en: Conditions and numbers, pt: Condições e números}
+  lessons:
+  - id: ar-b1-conditional
+    title: إذا، لو
+    meaning: {en: "if: إذا (likely) and لو (unreal)", pt: "se: إذا (provável) e لو (irreal)"}
+    intro:
+      en: |
+        - **إِذَا** + past for a real or likely condition (the past form here means *if… ever*): **إِذَا جَاءَ أَخْبِرْنِي.** "If he comes, tell me."
+        - **لَوْ** + past for an **unreal** one, with **لَـ** on the result: **لَوْ كُنْتُ غَنِيًّا لَاشْتَرَيْتُ بَيْتًا.** "If I were rich I'd buy a house."
+        - **إِنْ** + jussive or past, more formal: **إِنْ تَدْرُسْ تَنْجَحْ.** "If you study you'll pass."
+      pt: |
+        - **إِذَا** + passado para uma condição real ou provável (o passado aqui significa *se… acaso*): **إِذَا جَاءَ أَخْبِرْنِي.** "Se ele vier, me avise."
+        - **لَوْ** + passado para uma **irreal**, com **لَـ** no resultado: **لَوْ كُنْتُ غَنِيًّا لَاشْتَرَيْتُ بَيْتًا.** "Se eu fosse rico, compraria uma casa."
+        - **إِنْ** + jussivo ou passado, mais formal: **إِنْ تَدْرُسْ تَنْجَحْ.** "Se estudar, vai passar."
+    mistakes:
+    - wrong: إِذَا يَجِيءُ…
+      right: إِذَا جَاءَ…
+      why: {en: "إذا takes the past even for the future.", pt: "إذا pede o passado mesmo para o futuro."}
+    examples:
+    - [إذا أمطرت سأبقى في البيت., "If it rains, I'll stay home.", "Se chover, fico em casa.", إذا]
+    - [لو كنت مكانك لذهبت., "If I were you, I'd go.", "Se eu fosse você, eu iria.", لو]
+    match: {seq: [{word: [اذا, لو]}, {pos: verb}], near: 1, gap: 0}
+    pool: [إذا, لو, إن, عندما, لأن]
+
+  - id: ar-b1-number-agreement
+    title: ثلاثة كتب، ثلاث بنات
+    meaning: {en: "numbers 3–10: reversed gender", pt: "números 3–10: gênero invertido"}
+    intro:
+      en: |
+        From three to ten the number takes the **opposite gender** of the noun's singular: a masculine noun gets the number **with ة**, a feminine one **without**: **ثَلَاثَةُ كُتُبٍ** "three books" (كتاب m.), **ثَلَاثُ بَنَاتٍ** "three girls" (بنت f.). The noun is **plural genitive**.
+
+        From 11 to 99 the noun is **singular accusative**: **عِشْرُونَ طَالِبًا** "twenty students".
+      pt: |
+        Do três ao dez o número fica no **gênero oposto** ao singular do substantivo: substantivo masculino leva o número **com ة**, feminino **sem**: **ثَلَاثَةُ كُتُبٍ** "três livros" (كتاب m.), **ثَلَاثُ بَنَاتٍ** "três meninas" (بنت f.). O substantivo vai no **plural genitivo**.
+
+        De 11 a 99 o substantivo fica no **singular acusativo**: **عِشْرُونَ طَالِبًا** "vinte estudantes".
+    table:
+      head: {en: [Masculine noun, Feminine noun], pt: [Substantivo masculino, Substantivo feminino]}
+      rows:
+      - [ثَلَاثَةُ كُتُبٍ, ثَلَاثُ بَنَاتٍ]
+      - [خَمْسَةُ رِجَالٍ, خَمْسُ نِسَاءٍ]
+      - [سَبْعَةُ أَيَّامٍ, سَبْعُ سَاعَاتٍ]
+    mistakes:
+    - wrong: ثَلَاثُ كُتُبٍ
+      right: ثَلَاثَةُ كُتُبٍ
+      why: {en: "Masculine noun, number with ة.", pt: "Substantivo masculino, número com ة."}
+    examples:
+    - [عندي ثلاثة إخوة., I have three brothers., Tenho três irmãos., ثلاثة]
+    - [انتظرت خمس ساعات., I waited five hours., Esperei cinco horas., خمس]
+    match: {seq: [{word: [ثلاثة, ثلاث, اربعة, اربع, خمسة, خمس, ستة, ست, سبعة, سبع, ثمانية, ثماني, تسعة, تسع, عشرة, عشر]}, {pos: noun, number: pl}], gap: 0}
+    pool: [ثلاثة, ثلاث, أربعة, أربع, خمسة, خمس, ستة, ست, سبعة, سبع, عشرة, عشر]
+
+  - id: ar-b1-become
+    title: أصبح، صار، ما زال
+    meaning: {en: "become, still: كان's sisters", pt: "tornar-se, ainda: as irmãs de كان"}
+    intro:
+      en: |
+        Like **كَانَ**, these verbs take a nominative subject and an **accusative** predicate: **أَصْبَحَ / صَارَ** "became", **مَا زَالَ / لَا يَزَالُ** "is still", **ظَلَّ** "kept on", **لَيْسَ** "is not". **أَصْبَحَ الْجَوُّ بَارِدًا.** "The weather became cold." **مَا زِلْتُ أَنْتَظِرُ.** "I'm still waiting."
+      pt: |
+        Como **كَانَ**, esses verbos pedem sujeito no nominativo e predicado no **acusativo**: **أَصْبَحَ / صَارَ** "tornou-se", **مَا زَالَ / لَا يَزَالُ** "ainda está", **ظَلَّ** "continuou", **لَيْسَ** "não é". **أَصْبَحَ الْجَوُّ بَارِدًا.** "O tempo ficou frio." **مَا زِلْتُ أَنْتَظِرُ.** "Ainda estou esperando."
+    examples:
+    - [أصبح الجو بارداً., The weather became cold., O tempo ficou frio., أصبح]
+    - [ما زلت أنتظر., I'm still waiting., Ainda estou esperando., زلت]
+    - [صار طبيباً., He became a doctor., Ele virou médico., صار]
+    match: {seq: [{word: [اصبح, اصبحت, اصبحوا, صار, صارت, صاروا, زال, زلت, يزال, تزال, ظل, ظلت]}]}
+    pool: [أصبح, أصبحت, صار, صارت, زال, زلت, يزال, ظل, كان]

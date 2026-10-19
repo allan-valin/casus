@@ -57,8 +57,11 @@ export function adjectiveStage(blocks) {
     const keepA = adjs.filter((a) => nouns.some((x) => same(a.analysis, x.analysis)));
     const keepN = nouns.filter((x) => adjs.some((a) => same(a.analysis, x.analysis)));
     if (!keepA.length || !keepN.length) continue;
-    if (!adj.pinned) out[i] = { ...adj, candidates: keepA.map((c) => withReason({ ...c, links: [...(c.links ?? []), { kind: 'agreement', index: noun.token.index }] }, `agrees with ${noun.token.surface}`)) };
-    if (!noun.pinned && n === i - 1) out[n] = { ...noun, candidates: keepN.map((c) => withReason({ ...c, links: [...(c.links ?? []), { kind: 'agreement', index: adj.token.index }] }, `its adjective ${adj.token.surface} agrees`)) };
+    // agreement settles noun against adjective; a verb or pronoun reading of either word is another question and stays
+    // (أنا أحب: أَنَا and أُحِبُّ, not only أَنًّا + the elative أَحَبَّ — Learn check, 2026-10-19)
+    const other = (b) => b.candidates.filter((c) => !['noun', 'adj'].includes(c.analysis.pos));
+    if (!adj.pinned) out[i] = { ...adj, candidates: [...other(adj), ...keepA.map((c) => withReason({ ...c, links: [...(c.links ?? []), { kind: 'agreement', index: noun.token.index }] }, `agrees with ${noun.token.surface}`))] };
+    if (!noun.pinned && n === i - 1) out[n] = { ...noun, candidates: [...other(noun), ...keepN.map((c) => withReason({ ...c, links: [...(c.links ?? []), { kind: 'agreement', index: adj.token.index }] }, `its adjective ${adj.token.surface} agrees`))] };
   }
   return out;
 }

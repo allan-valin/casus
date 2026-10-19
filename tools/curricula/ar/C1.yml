@@ -1,0 +1,79 @@
+id: C1
+topics:
+
+- title: {en: Classical constructions, pt: Construções clássicas}
+  lessons:
+  - id: ar-c1-la-nafiya
+    title: لا شكّ، لا بدّ
+    meaning: {en: "absolute negation: there is no…", pt: "negação absoluta: não há…"}
+    intro:
+      en: |
+        **لَا** + an indefinite noun in the **accusative without tanwin** denies a whole category: **لَا شَكَّ** "there is no doubt", **لَا بُدَّ** "it is inevitable" (+ مِنْ / أَنْ: **لَا بُدَّ أَنْ نَذْهَبَ** "we must go"), **لَا مَانِعَ** "no objection", **لَا رَيْبَ**.
+      pt: |
+        **لَا** + substantivo indefinido no **acusativo sem tanwin** nega uma categoria inteira: **لَا شَكَّ** "não há dúvida", **لَا بُدَّ** "é inevitável" (+ مِنْ / أَنْ: **لَا بُدَّ أَنْ نَذْهَبَ** "temos que ir"), **لَا مَانِعَ** "nada impede", **لَا رَيْبَ**.
+    examples:
+    - [لا شك في ذلك., There's no doubt about it., Não há dúvida disso., شك]
+    - [لا بد أن نذهب., We have to go., Temos que ir., بد]
+    match: {seq: [{word: [لا]}, {word: [شك, بد, مانع, ريب, داعي, فائدة, احد]}], gap: 1}
+    pool: [شك, بد, مانع, ريب, أحد, فائدة]
+
+  - id: ar-c1-amma
+    title: أمّا… فـ
+    meaning: {en: "as for…", pt: "quanto a…"}
+    intro:
+      en: |
+        **أَمَّا** "as for" picks a topic, and the comment that follows begins with **فَـ**: **أَمَّا أَنَا فَلَا أَعْرِفُ.** "As for me, I don't know." Often in contrasts: **…أَمَّا أَخُوهُ فَطَبِيبٌ** "…as for his brother, he is a doctor". Don't confuse it with **إِمَّا… وَإِمَّا** "either… or".
+      pt: |
+        **أَمَّا** "quanto a" escolhe um tópico, e o comentário que segue começa com **فَـ**: **أَمَّا أَنَا فَلَا أَعْرِفُ.** "Quanto a mim, não sei." Frequente em contrastes: **…أَمَّا أَخُوهُ فَطَبِيبٌ** "…já o irmão dele é médico". Não confunda com **إِمَّا… وَإِمَّا** "ou… ou".
+    examples:
+    - [أما أنا فلا أعرف., "As for me, I don't know.", "Quanto a mim, não sei.", أما]
+    # أمّا … فـ: the فـ of the comment must follow (bare أما is also أ + ما, إما)
+    match: {seq: [{word: [اما]}, {re: "^ف"}], near: 3, gap: 0}
+    pool: [أما, إما, أم, أو]
+
+  - id: ar-c1-diptotes
+    title: ممنوع من الصرف
+    meaning: {en: "diptotes: nouns without tanwin", pt: "dípotes: substantivos sem tanwin"}
+    intro:
+      en: |
+        Some nouns and adjectives never take **tanwin** and use **-َ** for the genitive when indefinite: many broken plurals of the pattern **مَفَاعِل / مَفَاعِيل** (**مَسَاجِدُ، مَدَارِسُ**), the elative **أَفْعَلُ** (**أَكْبَرُ**), many names (**أَحْمَدُ، فَاطِمَةُ، مَكَّةُ**), and colours **أَحْمَرُ**. **فِي مَدَارِسَ كَثِيرَةٍ** "in many schools". With al- or in iḍāfa they decline normally: **فِي الْمَدَارِسِ**.
+      pt: |
+        Alguns substantivos e adjetivos nunca levam **tanwin** e usam **-َ** no genitivo quando indefinidos: muitos plurais quebrados do padrão **مَفَاعِل / مَفَاعِيل** (**مَسَاجِدُ، مَدَارِسُ**), o elativo **أَفْعَلُ** (**أَكْبَرُ**), muitos nomes (**أَحْمَدُ، فَاطِمَةُ، مَكَّةُ**) e cores **أَحْمَرُ**. **فِي مَدَارِسَ كَثِيرَةٍ** "em muitas escolas". Com al- ou em iḍāfa declinam normalmente: **فِي الْمَدَارِسِ**.
+    table:
+      head: {en: [Word, Nom., Gen. (indef.)], pt: [Palavra, Nom., Gen. (indef.)]}
+      rows:
+      - [مَدَارِس, مَدَارِسُ, مَدَارِسَ]
+      - [أَكْبَر, أَكْبَرُ, أَكْبَرَ]
+      - [أَحْمَد, أَحْمَدُ, أَحْمَدَ]
+    examples:
+    - [في مدارس كثيرة., In many schools., Em muitas escolas., مدارس]
+    match: {seq: [{word: [مساجد, مدارس, شوارع, مفاتيح, فنادق, مكاتب, ملابس, دقائق, رسائل, صحراء, اصدقاء, اطباء, وزراء, علماء, اغنياء, فقراء, اقوياء]}]}
+    pool: [مساجد, مدارس, شوارع, مفاتيح, فنادق, مكاتب, ملابس, دقائق, رسائل, أصدقاء, أطباء, وزراء]
+
+  - id: ar-c1-exclamation
+    title: ما أجملَ!
+    meaning: {en: "exclamations: how beautiful…!", pt: "exclamações: que bonito…!"}
+    intro:
+      en: |
+        **مَا + أَفْعَلَ + accusative** expresses wonder: **مَا أَجْمَلَ السَّمَاءَ!** "How beautiful the sky is!" **مَا أَطْيَبَ هٰذَا الطَّعَامَ!** "How delicious this food is!"
+      pt: |
+        **مَا + أَفْعَلَ + acusativo** exprime admiração: **مَا أَجْمَلَ السَّمَاءَ!** "Que lindo o céu!" **مَا أَطْيَبَ هٰذَا الطَّعَامَ!** "Que gostosa esta comida!"
+    examples:
+    - [ما أجمل هذه المدينة!, How beautiful this city is!, Que linda esta cidade!, أجمل]
+    match: {seq: [{word: [ما], start: true}, {word: [اجمل, اكبر, اصغر, اطيب, احلى, اسرع, اصعب, اسهل, اروع, اغرب, ابرد, احر, اطول, اقصر, اذكى, اعظم]}], gap: 1}
+    pool: [أجمل, أكبر, أصغر, أطيب, أحلى, أسرع, أصعب, أسهل]
+
+  - id: ar-c1-quantifiers
+    title: كلّ، بعض، نفس
+    meaning: {en: "all, some, self", pt: "todo, algum, mesmo"}
+    intro:
+      en: |
+        These nouns head an iḍāfa: **كُلُّ** + indefinite singular "every" (**كُلُّ يَوْمٍ** "every day"), + definite "all" (**كُلُّ الطُّلَّابِ**); **بَعْضُ** "some" (**بَعْضُ النَّاسِ**); **نَفْسُ** "the same" or "-self" (**نَفْسُ الْكِتَابِ** "the same book", **بِنَفْسِي** "by myself"); **جَمِيعُ** "all"; **كِلَا / كِلْتَا** "both".
+      pt: |
+        Esses substantivos encabeçam uma iḍāfa: **كُلُّ** + singular indefinido "cada" (**كُلُّ يَوْمٍ** "todo dia"), + definido "todos" (**كُلُّ الطُّلَّابِ**); **بَعْضُ** "alguns" (**بَعْضُ النَّاسِ**); **نَفْسُ** "o mesmo" ou "-próprio" (**نَفْسُ الْكِتَابِ** "o mesmo livro", **بِنَفْسِي** "eu mesmo"); **جَمِيعُ** "todos"; **كِلَا / كِلْتَا** "ambos".
+    examples:
+    - [أذهب إلى العمل كل يوم., I go to work every day., Vou trabalhar todo dia., كل]
+    - [بعض الناس لا يفهمون., Some people don't understand., Algumas pessoas não entendem., بعض]
+    - [فعلت ذلك بنفسي., I did it myself., Fiz isso sozinho., بنفسي]
+    match: {seq: [{word: [كل, بعض, نفس, جميع, كلا, كلتا]}]}
+    pool: [كل, بعض, نفس, جميع, كلا]

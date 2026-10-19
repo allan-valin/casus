@@ -19,6 +19,7 @@ def test_curriculum_lesson_pages_in_both_languages():
     assert ids == ["formation", "usage", "examples", "mistakes"]
     form = l["sections"][0]
     assert "<th>Pessoa</th>" in form["html"]["pt"] and "<td>сум</td>" in form["html"]["en"] and form["title"]["pt"] == "Formação"
+    assert 'class="ja" dir="auto"' in l["sections"][2]["html"]["en"]   # right-to-left scripts show right to left
     assert "❌" in l["sections"][3]["html"]["en"] and "primeira pessoa" in l["sections"][3]["html"]["pt"]
     assert l["examples"][0] == {"text": "Јас сум студент.", "en": "I am a student.", "pt": "Eu sou estudante.", "target": "сум"}
     assert l["match"] == {"seq": [{"word": ["сум", "си"]}]}

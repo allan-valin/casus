@@ -1,0 +1,389 @@
+id: A2
+topics:
+
+- title: {en: The verb, pt: O verbo}
+  lessons:
+  - id: ar-a2-present
+    title: يكتبُ
+    meaning: {en: "the present (imperfect) tense", pt: "o presente (imperfectivo)"}
+    intro:
+      en: |
+        Arabic verbs are built on a **root** of (usually) three consonants — **ك ت ب** "writing" — and dictionaries list them in the past, 3rd person masculine: **كَتَبَ** "he wrote".
+
+        The present (non-past) adds **prefixes** for the person and **suffixes** for gender and number: **أَكْتُبُ** I write, **يَكْتُبُ** he writes, **تَكْتُبُ** she writes / you write. It covers *I write*, *I am writing* and often *I will write*.
+      pt: |
+        O verbo árabe se constrói sobre uma **raiz** de (geralmente) três consoantes — **ك ت ب** "escrever" — e os dicionários o dão no passado, 3ª pessoa masculina: **كَتَبَ** "ele escreveu".
+
+        O presente acrescenta **prefixos** de pessoa e **sufixos** de gênero e número: **أَكْتُبُ** eu escrevo, **يَكْتُبُ** ele escreve, **تَكْتُبُ** ela escreve / você escreve. Serve para *escrevo*, *estou escrevendo* e muitas vezes *vou escrever*.
+    table:
+      head: {en: [Person, Present, Meaning], pt: [Pessoa, Presente, Significado]}
+      rows:
+      - [أَنَا, أَكْتُبُ, {en: I write, pt: eu escrevo}]
+      - [أَنْتَ, تَكْتُبُ, {en: you (m.) write, pt: você (m.) escreve}]
+      - [أَنْتِ, تَكْتُبِينَ, {en: you (f.) write, pt: você (f.) escreve}]
+      - [هُوَ, يَكْتُبُ, {en: he writes, pt: ele escreve}]
+      - [هِيَ, تَكْتُبُ, {en: she writes, pt: ela escreve}]
+      - [نَحْنُ, نَكْتُبُ, {en: we write, pt: nós escrevemos}]
+      - [أَنْتُمْ, تَكْتُبُونَ, {en: you (pl.) write, pt: vocês escrevem}]
+      - [هُمْ, يَكْتُبُونَ, {en: they write, pt: eles escrevem}]
+    mistakes:
+    - wrong: هِيَ يَكْتُبُ
+      right: هِيَ تَكْتُبُ
+      why: {en: "She takes the ت- prefix.", pt: "Ela leva o prefixo ت-."}
+    - wrong: أَنْتِ تَكْتُبُ (to a woman)
+      right: أَنْتِ تَكْتُبِينَ
+      why: {en: "*you* (f.) adds -ينَ.", pt: "*você* (f.) acrescenta -ينَ."}
+    examples:
+    - [أكتب رسالة., I'm writing a letter., Estou escrevendo uma carta., أكتب]
+    - ["هل تتكلم العربية؟", "Do you speak Arabic?", "Você fala árabe?", "تتكلم"]
+    - [يعمل أبي في مستشفى., My father works in a hospital., Meu pai trabalha num hospital., يعمل]
+    - [نسكن في دمشق., We live in Damascus., Moramos em Damasco., نسكن]
+    match: {seq: [{pos: verb, tense: npast, mood: ind}], same: [tense, mood]}
+
+  - id: ar-a2-past
+    title: كتبَ
+    meaning: {en: "the past (perfect) tense", pt: "o passado (perfectivo)"}
+    intro:
+      en: |
+        The past uses **suffixes only**: **كَتَبْتُ** I wrote, **كَتَبْتَ** you (m.) wrote, **كَتَبَ** he wrote, **كَتَبَتْ** she wrote, **كَتَبْنَا** we wrote, **كَتَبُوا** they wrote. The bare form **كَتَبَ** is the dictionary form.
+
+        In unvowelled text **كتبت** can be *I / you (m.) / you (f.) / she wrote* — the context and the subject decide.
+      pt: |
+        O passado usa **só sufixos**: **كَتَبْتُ** escrevi, **كَتَبْتَ** você (m.) escreveu, **كَتَبَ** ele escreveu, **كَتَبَتْ** ela escreveu, **كَتَبْنَا** escrevemos, **كَتَبُوا** eles escreveram. A forma simples **كَتَبَ** é a do dicionário.
+
+        Sem vogais, **كتبت** pode ser *eu / você (m.) / você (f.) / ela escreveu* — o contexto e o sujeito decidem.
+    table:
+      head: {en: [Person, Past, Meaning], pt: [Pessoa, Passado, Significado]}
+      rows:
+      - [أَنَا, كَتَبْتُ, {en: I wrote, pt: escrevi}]
+      - [أَنْتَ, كَتَبْتَ, {en: you (m.) wrote, pt: você (m.) escreveu}]
+      - [أَنْتِ, كَتَبْتِ, {en: you (f.) wrote, pt: você (f.) escreveu}]
+      - [هُوَ, كَتَبَ, {en: he wrote, pt: ele escreveu}]
+      - [هِيَ, كَتَبَتْ, {en: she wrote, pt: ela escreveu}]
+      - [نَحْنُ, كَتَبْنَا, {en: we wrote, pt: escrevemos}]
+      - [أَنْتُمْ, كَتَبْتُمْ, {en: you (pl.) wrote, pt: vocês escreveram}]
+      - [هُمْ, كَتَبُوا, {en: they wrote, pt: eles escreveram}]
+    mistakes:
+    - wrong: هُمْ كَتَبُ
+      right: هُمْ كَتَبُوا
+      why: {en: "They: -وا (the alif is silent).", pt: "Eles: -وا (o alif é mudo)."}
+    examples:
+    - [ذهبت إلى السوق أمس., I went to the market yesterday., Fui ao mercado ontem., ذهبت]
+    - [وصل القطار., The train arrived., O trem chegou., وصل]
+    - [شربنا القهوة معاً., We drank coffee together., Tomamos café juntos., شربنا]
+    match: {seq: [{pos: verb, tense: past, voice: act}], same: [tense, voice]}
+
+  - id: ar-a2-negation
+    title: لا، لم، لن، ليس
+    meaning: {en: "negation: four words for not", pt: "negação: quatro palavras para não"}
+    intro:
+      en: |
+        Which *not* depends on the tense:
+
+        - **لَا** + present: **لَا أَعْرِفُ.** "I don't know."
+        - **لَمْ** + jussive (a present form, short ending) for the **past**: **لَمْ أَذْهَبْ.** "I didn't go."
+        - **لَنْ** + subjunctive for the **future**: **لَنْ أَذْهَبَ.** "I won't go."
+        - **لَيْسَ** "is not", conjugated, for sentences without a verb: **لَسْتُ مُتْعَبًا.** "I'm not tired." (predicate in the accusative)
+
+        **مَا** + past (**مَا ذَهَبْتُ**) is also correct, and common in speech.
+      pt: |
+        Qual *não* depende do tempo:
+
+        - **لَا** + presente: **لَا أَعْرِفُ.** "Não sei."
+        - **لَمْ** + jussivo (forma do presente com final curto) para o **passado**: **لَمْ أَذْهَبْ.** "Não fui."
+        - **لَنْ** + subjuntivo para o **futuro**: **لَنْ أَذْهَبَ.** "Não vou."
+        - **لَيْسَ** "não é / não está", conjugado, para frases sem verbo: **لَسْتُ مُتْعَبًا.** "Não estou cansado." (predicado no acusativo)
+
+        **مَا** + passado (**مَا ذَهَبْتُ**) também é correto e comum na fala.
+    table:
+      head: {en: [Time, Negation, Example], pt: [Tempo, Negação, Exemplo]}
+      rows:
+      - [{en: present, pt: presente}, لَا, لَا أَعْرِفُ]
+      - [{en: past, pt: passado}, لَمْ, لَمْ أَذْهَبْ]
+      - [{en: future, pt: futuro}, لَنْ, لَنْ أَذْهَبَ]
+      - [{en: no verb, pt: sem verbo}, لَيْسَ, لَيْسَ هُنَا]
+    mistakes:
+    - wrong: لَا ذَهَبْتُ أَمْسِ.
+      right: لَمْ أَذْهَبْ أَمْسِ.
+      why: {en: "Past: لم + jussive (or ما + past).", pt: "Passado: لم + jussivo (ou ما + passado)."}
+    - wrong: أَنَا لَا مُتْعَبٌ.
+      right: لَسْتُ مُتْعَبًا.
+      why: {en: "No verb: ليس, conjugated.", pt: "Sem verbo: ليس, conjugado."}
+    examples:
+    - [لا أعرف., I don't know., Não sei., لا]
+    - [لم أنم جيداً., I didn't sleep well., Não dormi bem., لم]
+    - [لن أنسى ذلك أبداً., I'll never forget that., Nunca vou esquecer isso., لن]
+    - [هو ليس هنا., He isn't here., Ele não está aqui., ليس]
+    match: {seq: [{word: [لا, لم, لن, ليس, ليست, لست, لسنا, ليسوا, لستم]}], gap: 0}
+    pool: [لا, لم, لن, ليس, ما, لست, ليست]
+
+  - id: ar-a2-future
+    title: سـ، سوف
+    meaning: {en: "the future: sa- and sawfa", pt: "o futuro: sa- e sawfa"}
+    intro:
+      en: |
+        **سَـ** (joined) or **سَوْفَ** (a separate word) before the present make the future: **سَأَذْهَبُ / سَوْفَ أَذْهَبُ** "I will go". سَـ is the more common in writing; سوف can sound more distant or emphatic. The negative is **لَنْ** + subjunctive (not لا سوف).
+      pt: |
+        **سَـ** (junto) ou **سَوْفَ** (separado) antes do presente formam o futuro: **سَأَذْهَبُ / سَوْفَ أَذْهَبُ** "irei". سَـ é mais comum na escrita; سوف pode soar mais distante ou enfático. A negativa é **لَنْ** + subjuntivo (não لا سوف).
+    table:
+      head: {en: [Person, Future, Meaning], pt: [Pessoa, Futuro, Significado]}
+      rows:
+      - [أَنَا, سَأَذْهَبُ, {en: I will go, pt: irei}]
+      - [أَنْتَ, سَتَذْهَبُ, {en: you will go, pt: você irá}]
+      - [هُوَ, سَيَذْهَبُ, {en: he will go, pt: ele irá}]
+      - [نَحْنُ, سَنَذْهَبُ, {en: we will go, pt: iremos}]
+      - [هُمْ, سَيَذْهَبُونَ, {en: they will go, pt: eles irão}]
+    mistakes:
+    - wrong: سَوْفَ لَا أَذْهَبُ
+      right: لَنْ أَذْهَبَ
+      why: {en: "Negative future: لن.", pt: "Futuro negativo: لن."}
+    examples:
+    - [سأتصل بك غداً., I'll call you tomorrow., Vou te ligar amanhã., سأتصل]
+    - [سوف نرى., We'll see., Veremos., نرى]
+    - [ستمطر اليوم., It will rain today., Vai chover hoje., ستمطر]
+    # سـ + the present: written ست/سي/سن here (سأ, written سا without the hamza, would also catch سامحي)
+    match: [{seq: [{re: "^س[تين][\\u0621-\\u064A]{2,}$", pos: verb, tense: npast}], prefixes: [سأ, ست, سي, سن]}, {seq: [{word: [سوف]}, {pos: verb, tense: npast, re: "^[اتين]"}], gap: 1, prefixes: [أ, ت, ي, ن]}]
+
+  - id: ar-a2-kana
+    title: كان
+    meaning: {en: "was, were: كان", pt: "era, estava: كان"}
+    intro:
+      en: |
+        **كَانَ** is *to be* in the past (and the future **يَكُونُ**). It conjugates like a past verb with a long ā that shortens before consonant endings: **كُنْتُ** I was, **كَانَ** he was, **كَانَتْ** she was, **كُنَّا** we were, **كَانُوا** they were.
+
+        Its predicate is **accusative**: **كَانَ الْجَوُّ جَمِيلًا.** "The weather was nice." With a present verb it makes the past continuous / habitual: **كُنْتُ أَعْمَلُ** "I was working / I used to work".
+      pt: |
+        **كَانَ** é *ser/estar* no passado (e no futuro **يَكُونُ**). Conjuga como um passado com ā longo que encurta antes de terminações consonantais: **كُنْتُ** eu era, **كَانَ** ele era, **كَانَتْ** ela era, **كُنَّا** éramos, **كَانُوا** eram.
+
+        O predicado fica no **acusativo**: **كَانَ الْجَوُّ جَمِيلًا.** "O tempo estava bom." Com verbo no presente forma o passado contínuo / habitual: **كُنْتُ أَعْمَلُ** "eu trabalhava / estava trabalhando".
+    table:
+      head: {en: [Person, Was, Meaning], pt: [Pessoa, Passado, Significado]}
+      rows:
+      - [أَنَا, كُنْتُ, {en: I was, pt: eu era/estava}]
+      - [أَنْتَ, كُنْتَ, {en: you were, pt: você era}]
+      - [هُوَ, كَانَ, {en: he was, pt: ele era}]
+      - [هِيَ, كَانَتْ, {en: she was, pt: ela era}]
+      - [نَحْنُ, كُنَّا, {en: we were, pt: éramos}]
+      - [هُمْ, كَانُوا, {en: they were, pt: eram}]
+    mistakes:
+    - wrong: كَانَ الْجَوُّ جَمِيلٌ.
+      right: كَانَ الْجَوُّ جَمِيلًا.
+      why: {en: "The predicate of كان is accusative.", pt: "O predicado de كان fica no acusativo."}
+    examples:
+    - [كنت في البيت., I was at home., Eu estava em casa., كنت]
+    - [كان الجو جميلاً., The weather was nice., O tempo estava bom., كان]
+    - [كانوا أصدقاء., They were friends., Eram amigos., كانوا]
+    match: {seq: [{word: [كنت, كان, كانت, كنا, كانوا, كنتم]}]}
+    pool: [كنت, كان, كانت, كنا, كانوا, كنتم]
+
+- title: {en: Nouns together, pt: Substantivos juntos}
+  lessons:
+  - id: ar-a2-idafa
+    title: كتابُ الطالبِ
+    meaning: {en: "the iḍāfa: X of Y", pt: "a iḍāfa: X de Y"}
+    intro:
+      en: |
+        *The student's book* is two nouns side by side, the **iḍāfa**: **كِتَابُ الطَّالِبِ** "book (of) the student". The first noun takes **no article and no tanwin** — it is made definite by what follows — and the second is **genitive**. Chains are fine: **مِفْتَاحُ بَابِ الْبَيْتِ** "the key of the door of the house".
+
+        An adjective for the first noun goes **after** the whole iḍāfa: **كِتَابُ الطَّالِبِ الْجَدِيدُ** "the student's new book".
+      pt: |
+        *O livro do estudante* são dois substantivos lado a lado, a **iḍāfa**: **كِتَابُ الطَّالِبِ** "livro (do) estudante". O primeiro fica **sem artigo e sem tanwin** — o que vem depois o torna definido — e o segundo vai no **genitivo**. Cadeias funcionam: **مِفْتَاحُ بَابِ الْبَيْتِ** "a chave da porta da casa".
+
+        O adjetivo do primeiro substantivo vem **depois** da iḍāfa inteira: **كِتَابُ الطَّالِبِ الْجَدِيدُ** "o livro novo do estudante".
+    table:
+      head: {en: [Iḍāfa, Meaning], pt: [Iḍāfa, Significado]}
+      rows:
+      - [كِتَابُ الطَّالِبِ, {en: the student's book, pt: o livro do estudante}]
+      - [بَابُ الْبَيْتِ, {en: the door of the house, pt: a porta da casa}]
+      - [مَدِينَةُ الْقَاهِرَةِ, {en: the city of Cairo, pt: a cidade do Cairo}]
+      - [فِنْجَانُ قَهْوَةٍ, {en: a cup of coffee, pt: uma xícara de café}]
+    mistakes:
+    - wrong: الْكِتَابُ الطَّالِبِ
+      right: كِتَابُ الطَّالِبِ
+      why: {en: "The first term never takes al-.", pt: "O primeiro termo nunca leva al-."}
+    examples:
+    - [هذا كتاب الطالب., This is the student's book., Este é o livro do estudante., كتاب]
+    - ["أين مفتاح السيارة؟", "Where is the car key?", "Onde está a chave do carro?", "مفتاح"]
+    - [أريد فنجان قهوة., I'd like a cup of coffee., Quero uma xícara de café., فنجان]
+    match: {seq: [{pos: noun, state: cons, re: "^(?!ال)"}, {pos: noun, state: def}], gap: 0, same: [number]}
+
+  - id: ar-a2-plural
+    title: معلمون، سيارات، كتب
+    meaning: {en: "plurals: sound and broken", pt: "plurais: regulares e 'quebrados'"}
+    intro:
+      en: |
+        Two kinds of plural:
+
+        - **sound**: masculine **-ُونَ** (genitive/accusative **-ِينَ**) for men — **مُعَلِّمُونَ**; feminine **-َات** — **مُعَلِّمَات**, **سَيَّارَات**.
+        - **broken**: the vowels inside the root change — **كِتَاب → كُتُب**, **بَيْت → بُيُوت**, **وَلَد → أَوْلَاد**, **رَجُل → رِجَال**. Most common nouns have one; learn it with the noun.
+
+        Plurals of **things** take feminine singular agreement: **الْكُتُبُ جَدِيدَةٌ** "the books are new".
+      pt: |
+        Dois tipos de plural:
+
+        - **regular**: masculino **-ُونَ** (genitivo/acusativo **-ِينَ**) para homens — **مُعَلِّمُونَ**; feminino **-َات** — **مُعَلِّمَات**, **سَيَّارَات**.
+        - **"quebrado"**: as vogais dentro da raiz mudam — **كِتَاب → كُتُب**, **بَيْت → بُيُوت**, **وَلَد → أَوْلَاد**, **رَجُل → رِجَال**. A maioria dos substantivos comuns tem um; aprenda junto com a palavra.
+
+        Plurais de **coisas** concordam no feminino singular: **الْكُتُبُ جَدِيدَةٌ** "os livros são novos".
+    table:
+      head: {en: [Singular, Plural, Kind], pt: [Singular, Plural, Tipo]}
+      rows:
+      - [مُعَلِّم, مُعَلِّمُونَ, {en: sound m., pt: regular m.}]
+      - [سَيَّارَة, سَيَّارَات, {en: sound f., pt: regular f.}]
+      - [كِتَاب, كُتُب, {en: broken, pt: quebrado}]
+      - [بَيْت, بُيُوت, {en: broken, pt: quebrado}]
+      - [وَلَد, أَوْلَاد, {en: broken, pt: quebrado}]
+      - [رَجُل, رِجَال, {en: broken, pt: quebrado}]
+    mistakes:
+    - wrong: الْكُتُبُ جَدِيدُونَ
+      right: الْكُتُبُ جَدِيدَةٌ
+      why: {en: "Things in the plural: feminine singular.", pt: "Coisas no plural: feminino singular."}
+    examples:
+    - [عندي كتب كثيرة., I have many books., Tenho muitos livros., كتب]
+    - [الأولاد يلعبون., The boys are playing., Os meninos estão brincando., الأولاد]
+    - [السيارات غالية هنا., Cars are expensive here., Os carros são caros aqui., السيارات]
+    match: {seq: [{pos: noun, number: pl}]}
+
+  - id: ar-a2-dual
+    title: كتابان، طالبتان
+    meaning: {en: "the dual: two of something", pt: "o dual: dois de alguma coisa"}
+    intro:
+      en: |
+        Two of something is a separate form, the **dual**: **-َانِ** (nominative), **-َيْنِ** (genitive/accusative): **كِتَابَانِ** "two books", **فِي يَوْمَيْنِ** "in two days". Before ة the t is pronounced: **طَالِبَتَانِ**. In an iḍāfa the final ن drops: **يَدَا الطِّفْلِ** "the child's two hands".
+      pt: |
+        Dois de alguma coisa é uma forma própria, o **dual**: **-َانِ** (nominativo), **-َيْنِ** (genitivo/acusativo): **كِتَابَانِ** "dois livros", **فِي يَوْمَيْنِ** "em dois dias". Antes de ة o t se pronuncia: **طَالِبَتَانِ**. Na iḍāfa o ن final cai: **يَدَا الطِّفْلِ** "as duas mãos da criança".
+    table:
+      head: {en: [Singular, Dual nom., Dual gen./acc.], pt: [Singular, Dual nom., Dual gen./acus.]}
+      rows:
+      - [كِتَاب, كِتَابَانِ, كِتَابَيْنِ]
+      - [يَوْم, يَوْمَانِ, يَوْمَيْنِ]
+      - [طَالِبَة, طَالِبَتَانِ, طَالِبَتَيْنِ]
+    examples:
+    - [عندي أختان., I have two sisters., Tenho duas irmãs., أختان]
+    - [سأعود بعد يومين., I'll be back in two days., Volto daqui a dois dias., يومين]
+    match: {seq: [{pos: noun, number: du}], same: [state]}
+
+- title: {en: Having and comparing, pt: Ter e comparar}
+  lessons:
+  - id: ar-a2-have
+    title: عندي، لي
+    meaning: {en: "to have: عند and لـ", pt: "ter: عند e لـ"}
+    intro:
+      en: |
+        Arabic has no verb *to have*. It says "at me is…" with **عِنْدَ** + a suffix, or "to me is…" with **لِـ**: **عِنْدِي سَيَّارَةٌ** "I have a car", **لِي أَخٌ** "I have a brother". **لَدَى** (+ suffix: **لَدَيَّ**) is the formal equivalent. Negative: **لَيْسَ عِنْدِي**; past: **كَانَ عِنْدِي**.
+      pt: |
+        O árabe não tem verbo *ter*. Diz "junto de mim há…" com **عِنْدَ** + sufixo, ou "para mim há…" com **لِـ**: **عِنْدِي سَيَّارَةٌ** "tenho carro", **لِي أَخٌ** "tenho um irmão". **لَدَى** (+ sufixo: **لَدَيَّ**) é o equivalente formal. Negativa: **لَيْسَ عِنْدِي**; passado: **كَانَ عِنْدِي**.
+    table:
+      head: {en: [Person, عند, لـ], pt: [Pessoa, عند, لـ]}
+      rows:
+      - [أَنَا, عِنْدِي, لِي]
+      - [أَنْتَ, عِنْدَكَ, لَكَ]
+      - [أَنْتِ, عِنْدَكِ, لَكِ]
+      - [هُوَ, عِنْدَهُ, لَهُ]
+      - [هِيَ, عِنْدَهَا, لَهَا]
+      - [نَحْنُ, عِنْدَنَا, لَنَا]
+      - [هُمْ, عِنْدَهُمْ, لَهُمْ]
+    mistakes:
+    - wrong: أَنَا عِنْدَهُ سَيَّارَةٌ
+      right: عِنْدِي سَيَّارَةٌ
+      why: {en: "The suffix is the owner.", pt: "O sufixo é o dono."}
+    examples:
+    - [عندي سؤال., I have a question., Tenho uma pergunta., عندي]
+    - ["هل عندك وقت؟", "Do you have time?", "Você tem tempo?", "عندك"]
+    - [ليس عندنا خبز., We have no bread., Não temos pão., عندنا]
+    match: {seq: [{word: [عندي, عندك, عنده, عندها, عندنا, عندكم, عندهم, لدي, لديك, لديه, لديها, لدينا, لديهم]}]}
+    pool: [عندي, عندك, عنده, عندها, عندنا, عندهم, لدي, لديه]
+
+  - id: ar-a2-comparative
+    title: أكبر من
+    meaning: {en: "bigger than, the biggest", pt: "maior que, o maior"}
+    intro:
+      en: |
+        The comparative has the pattern **أَفْعَلُ**, the same for both genders: `كَبِير` → **أَكْبَرُ** "bigger", `صَغِير` → **أَصْغَرُ**, `جَمِيل` → **أَجْمَلُ**. *Than* is **مِنْ**: **أَخِي أَكْبَرُ مِنِّي.** "My brother is older than me."
+
+        The superlative is the same word, definite or in iḍāfa: **الْأَكْبَرُ** "the biggest", **أَكْبَرُ مَدِينَةٍ** "the biggest city". For long adjectives use **أَكْثَرُ** "more" + a noun: **أَكْثَرُ أَهَمِّيَّةً** "more important".
+      pt: |
+        O comparativo tem o padrão **أَفْعَلُ**, igual para os dois gêneros: `كَبِير` → **أَكْبَرُ** "maior", `صَغِير` → **أَصْغَرُ**, `جَمِيل` → **أَجْمَلُ**. *Do que* é **مِنْ**: **أَخِي أَكْبَرُ مِنِّي.** "Meu irmão é mais velho que eu."
+
+        O superlativo é a mesma palavra, definida ou em iḍāfa: **الْأَكْبَرُ** "o maior", **أَكْبَرُ مَدِينَةٍ** "a maior cidade". Para adjetivos longos use **أَكْثَرُ** "mais" + substantivo: **أَكْثَرُ أَهَمِّيَّةً** "mais importante".
+    table:
+      head: {en: [Adjective, Comparative, Meaning], pt: [Adjetivo, Comparativo, Significado]}
+      rows:
+      - [كَبِير, أَكْبَرُ, {en: bigger / older, pt: maior / mais velho}]
+      - [صَغِير, أَصْغَرُ, {en: smaller, pt: menor}]
+      - [جَمِيل, أَجْمَلُ, {en: more beautiful, pt: mais bonito}]
+      - [حَسَن, أَحْسَنُ, {en: better, pt: melhor}]
+      - [كَثِير, أَكْثَرُ, {en: more, pt: mais}]
+      - [قَلِيل, أَقَلُّ, {en: less, pt: menos}]
+    mistakes:
+    - wrong: هِيَ كُبْرَى مِنِّي.
+      right: هِيَ أَكْبَرُ مِنِّي.
+      why: {en: "With مِن the comparative stays أفعل for both genders.", pt: "Com مِن o comparativo fica أفعل nos dois gêneros."}
+    examples:
+    - [أخي أكبر مني., My brother is older than me., Meu irmão é mais velho que eu., أكبر]
+    - [هذا أفضل., This is better., Isto é melhor., أفضل]
+    - [القاهرة أكبر مدينة في مصر., Cairo is the biggest city in Egypt., O Cairo é a maior cidade do Egito., أكبر]
+    match: {seq: [{word: [اكبر, اصغر, اطول, اقصر, احسن, افضل, اكثر, اقل, اجمل, اسرع, ابعد, اقرب, اغلى, ارخص, اسهل, اصعب, اقدم, احدث, اسوا, اهم]}]}
+    pool: [أكبر, أصغر, أطول, أحسن, أفضل, أكثر, أقل, أجمل, أسرع, أسهل, أصعب, أهم]
+
+- title: {en: Commands and relative clauses, pt: Ordens e orações relativas}
+  lessons:
+  - id: ar-a2-imperative
+    title: اكتبْ!
+    meaning: {en: "the imperative", pt: "o imperativo"}
+    intro:
+      en: |
+        Take the jussive of *you* (**تَكْتُبْ**), drop the prefix **تَـ**, and if the word now starts with two consonants add a helping vowel with alif: **اُكْتُبْ** "write!" (u after a u-stem, otherwise i: **اِذْهَبْ** "go!", **اِجْلِسْ** "sit!"). Feminine **-ِي**, plural **-ُوا**: **اُكْتُبِي، اُكْتُبُوا**.
+
+        *Don't* is **لَا** + jussive: **لَا تَذْهَبْ!** "Don't go!"
+      pt: |
+        Pegue o jussivo de *você* (**تَكْتُبْ**), tire o prefixo **تَـ**, e se a palavra começar com duas consoantes acrescente uma vogal de apoio com alif: **اُكْتُبْ** "escreva!" (u depois de radical em u, senão i: **اِذْهَبْ** "vá!", **اِجْلِسْ** "sente!"). Feminino **-ِي**, plural **-ُوا**: **اُكْتُبِي، اُكْتُبُوا**.
+
+        *Não* é **لَا** + jussivo: **لَا تَذْهَبْ!** "Não vá!"
+    table:
+      head: {en: [Verb, m., f., pl.], pt: [Verbo, m., f., pl.]}
+      rows:
+      - [كَتَبَ, اُكْتُبْ, اُكْتُبِي, اُكْتُبُوا]
+      - [ذَهَبَ, اِذْهَبْ, اِذْهَبِي, اِذْهَبُوا]
+      - [جَلَسَ, اِجْلِسْ, اِجْلِسِي, اِجْلِسُوا]
+      - [دَرَسَ, اُدْرُسْ, اُدْرُسِي, اُدْرُسُوا]
+    mistakes:
+    - wrong: لَا اِذْهَبْ!
+      right: لَا تَذْهَبْ!
+      why: {en: "Negative command: لا + jussive, not the imperative.", pt: "Ordem negativa: لا + jussivo, não o imperativo."}
+    examples:
+    - [اجلس هنا., Sit here., Sente aqui., اجلس]
+    - [اكتب اسمك., Write your name., Escreva seu nome., اكتب]
+    - [لا تقلق., Don't worry., Não se preocupe.]
+    # opening the sentence: inside one the reader may take a preposition + suffix (وراءي) for an imperative
+    match: {seq: [{pos: verb, mood: imp, start: true, re: "^(?!ان)"}], same: [mood]}
+
+  - id: ar-a2-relative
+    title: الذي، التي
+    meaning: {en: "relative pronouns: who, which", pt: "pronomes relativos: que, o qual"}
+    intro:
+      en: |
+        After a **definite** noun the relative pronoun agrees with it: **الَّذِي** (m.), **الَّتِي** (f., and plural things), **الَّذِينَ** (m. people pl.), **اللَّوَاتِي** (f. pl.). After an **indefinite** noun there is no relative word at all: **رَأَيْتُ رَجُلًا يَقْرَأُ** "I saw a man (who was) reading".
+
+        As in Macedonian or Portuguese colloquial speech, an object relative keeps a pronoun: **الْكِتَابُ الَّذِي قَرَأْتُهُ** "the book that I read (it)".
+      pt: |
+        Depois de substantivo **definido**, o pronome relativo concorda com ele: **الَّذِي** (m.), **الَّتِي** (f., e plural de coisas), **الَّذِينَ** (m. pessoas pl.), **اللَّوَاتِي** (f. pl.). Depois de substantivo **indefinido** não há palavra relativa: **رَأَيْتُ رَجُلًا يَقْرَأُ** "vi um homem (que estava) lendo".
+
+        Um relativo objeto mantém o pronome: **الْكِتَابُ الَّذِي قَرَأْتُهُ** "o livro que eu li (o)".
+    table:
+      head: {en: [Antecedent, Relative, Example], pt: [Antecedente, Relativo, Exemplo]}
+      rows:
+      - [m., الَّذِي, الرَّجُلُ الَّذِي يَعْمَلُ هُنَا]
+      - [{en: "f. / things pl.", pt: "f. / coisas pl."}, الَّتِي, الْمَدِينَةُ الَّتِي زُرْتُهَا]
+      - [m. pl., الَّذِينَ, الطُّلَّابُ الَّذِينَ نَجَحُوا]
+      - [f. pl., اللَّوَاتِي, الْبَنَاتُ اللَّوَاتِي جِئْنَ]
+    mistakes:
+    - wrong: رَأَيْتُ رَجُلًا الَّذِي يَقْرَأُ.
+      right: رَأَيْتُ رَجُلًا يَقْرَأُ.
+      why: {en: "No relative after an indefinite noun.", pt: "Sem relativo depois de substantivo indefinido."}
+    examples:
+    - [هذا هو الرجل الذي ساعدني., This is the man who helped me., Este é o homem que me ajudou., الذي]
+    - ["أين الكتب التي اشتريتها؟", "Where are the books you bought?", "Onde estão os livros que você comprou?", "التي"]
+    - [الطلاب الذين نجحوا سعداء., The students who passed are happy., Os alunos que passaram estão felizes., الذين]
+    match: {seq: [{word: [الذي, التي, الذين, اللواتي, اللاتي, اللذان, اللتان]}]}
+    pool: [الذي, التي, الذين, اللواتي]

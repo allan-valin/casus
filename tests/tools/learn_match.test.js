@@ -95,3 +95,61 @@ it('noTrail: a word followed by a comma does not count (Да, лут сум: д�
   S2[0].token.trail = undefined;
   expect(matchRule(S2, { seq: [{ word: ['да'], noTrail: true }, { pos: 'verb' }], near: 1, gap: 0 })).toEqual({ span: [0, 1], gap: 0 });
 });
+import { rewrite, markOf, suffixVariants } from '../../tools/learn_match.mjs';
+describe('Arabic: vowels where the reading is sure, suffix distractors, dictionary-form condition', () => {
+  const b = (surface, ...marks) => ({ token: { surface }, candidates: marks.map((marked) => ({ analysis: { marked } })) });
+  it('markOf: the one vowelled form all readings share, else null', () => {
+    expect(markOf(b('إلى', 'إِلَى'))).toBe('إِلَى');
+    expect(markOf(b('المدرسة', 'الْمَدْرَسَةِ', 'الْمُدَرِّسَةِ'))).toBe(null);
+    expect(markOf(b('Том'))).toBe(null);
+  });
+  it('rewrite: each word replaced, spaces and punctuation kept, a gap where asked', () => {
+    const tokens = [{ start: 0, end: 4 }, { start: 5, end: 8 }, { start: 9, end: 16 }];
+    expect(rewrite('ذهبت إلى المدرسة.', tokens, (i) => ['ذَهَبْتُ', 'إِلَى', null][i])).toEqual([['ذَهَبْتُ إِلَى المدرسة.', null]]);
+    expect(rewrite('ذهبت إلى المدرسة.', tokens, (i) => ['ذَهَبْتُ', 'إِلَى', null][i], [1, 2])).toEqual([['ذَهَبْتُ ', null], ['＿＿', null], [' المدرسة.', null]]);
+  });
+  it('suffix distractors: the same stem with the other suffixes, longest suffix taken off first', () => {
+    expect(suffixVariants('كتابها', ['ي', 'ك', 'ه', 'ها', 'نا'])).toEqual(['كتابي', 'كتابك', 'كتابه', 'كتابنا']);
+  });
+  it('dict: a regex on the dictionary form', () => {
+    const blocks = [{ token: { surface: 'درّس' }, candidates: [{ analysis: { pos: 'verb', lemma: '5' } }] }];
+    const dictOf = (id) => ({ 5: 'دَرَّسَ (form II)' })[id];
+    expect(matchRule(blocks, { seq: [{ pos: 'verb', dict: 'form II\\)' }] }, { dictOf })).toEqual({ span: [0, 1], gap: 0 });
+    expect(matchRule(blocks, { seq: [{ pos: 'verb', dict: 'form I\\)' }] }, { dictOf })).toBe(null);
+  });
+});
+it('norm: word lists and re compare the normalised word (Arabic: vowels and hamza forms folded)', () => {
+  const strip = (s) => s.replace(/[ً-ْ]/g, '').replace(/[أإآ]/g, 'ا');
+  const blocks = [{ token: { surface: 'أَنَا' }, candidates: [] }];
+  expect(matchRule(blocks, { seq: [{ word: ['انا'] }] }, { norm: strip })).toEqual({ span: [0, 1], gap: 0 });
+  expect(matchRule(blocks, { seq: [{ word: ['أنا'] }] }, { norm: strip })).toEqual({ span: [0, 1], gap: 0 });
+  expect(matchRule(blocks, { seq: [{ re: '^انا$' }] }, { norm: strip })).toEqual({ span: [0, 1], gap: 0 });
+});
+import { rowFor } from '../../tools/learn_match.mjs';
+it('rowFor: the paradigm row of a written word — same bare letters, same features as one of its readings', () => {
+  const strip = (s) => s.replace(/[ً-ْ]/g, '');
+  const rows = [['كَتَبَ', 'p3sm'], ['كَتَبْتُ', 'p1sm'], ['كُتُبٌ', 'n']];
+  const decode = (c) => ({ tense: c[0] === 'p' ? 'past' : 'x', person: c[1] });
+  expect(rowFor(rows, 'كتبت', [{ tense: 'past', person: '1' }], decode, strip)).toEqual(['كَتَبْتُ', 'p1sm']);
+  expect(rowFor(rows, 'كتبت', [{ tense: 'past', person: '3' }], decode, strip)).toBe(null);
+});
+it('rowFor: readings that lead to different forms (case not known) give no row', () => {
+  const strip = (s) => s.replace(/[ً-ْ]/g, '');
+  const rows = [['صَغِيرَةٌ', 'n'], ['صَغِيرَةً', 'a'], ['صَغِيرَةٍ', 'g']];
+  const decode = (c) => ({ case: { n: 'nom', a: 'acc', g: 'gen' }[c] });
+  expect(rowFor(rows, 'صغيرة', [{ case: 'nom' }, { case: 'acc' }], decode, strip)).toBe(null);
+  expect(rowFor(rows, 'صغيرة', [{ case: 'gen' }], decode, strip)).toEqual(['صَغِيرَةٍ', 'g']);
+});
+it('state (Arabic definiteness) is a feature rules can ask for', () => {
+  const blocks = [{ token: { surface: 'منشفة' }, candidates: [{ analysis: { pos: 'noun', state: 'indef' } }] }];
+  expect(matchRule(blocks, { seq: [{ pos: 'noun', state: 'def' }] })).toBe(null);
+  expect(matchRule(blocks, { seq: [{ pos: 'noun', state: 'indef' }] })).toEqual({ span: [0, 1], gap: 0 });
+});
+it('notStart: not the first word (من opening a question is "who")', () => {
+  const blocks = [{ token: { surface: 'من' }, candidates: [] }, { token: { surface: 'هنا' }, candidates: [] }];
+  expect(matchRule(blocks, { seq: [{ word: ['من'], notStart: true }] })).toBe(null);
+});
+it('suffixVariants ignores vowel marks and gives nothing when no suffix is there', () => {
+  expect(suffixVariants('والديّ', ['ي', 'ك'])).toEqual(['والدك']);
+  expect(suffixVariants('بيت', ['ي', 'ك'])).toEqual([]);
+});

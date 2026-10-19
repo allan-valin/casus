@@ -12,7 +12,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import path from 'node:path';
-import { matchRule, formPool, gapText, spellingVariants, prefixVariants, unsuitable } from './learn_match.mjs';
+import { matchRule, formPool, spellingVariants, prefixVariants, suffixVariants, unsuitable, markOf, rewrite, rowFor } from './learn_match.mjs';
 import { gapRoman } from './learn_examples.mjs';
 
 export const TATOEBA = { mk: 'mkd', ar: 'ara', la: 'lat', grc: 'grc', de: 'deu', ru: 'rus', ko: 'kor', zh: 'cmn', fi: 'fin', el: 'ell', sa: 'san', cs: 'ces', pl: 'pol', tr: 'tur', hu: 'hun', is: 'isl', pt: 'por', en: 'eng', es: 'spa' };
@@ -39,6 +39,8 @@ async function main(code) {
     fetchFile: async (name) => json(name), fetchShard: async (name) => json(`forms/${name}.json`) });
   const lemmas = await json('lemmas.json');
   const lemmaOf = (id) => lemmas[id]?.headword;
+  const dictOf = (id) => lemmas[id]?.dict_form ?? lemmas[id]?.headword;
+  const norm = lang.script?.strip ? (w) => lang.script.strip(w).toLocaleLowerCase() : (w) => w.toLocaleLowerCase();
   const freq = new Map((await json('frequency.json').catch(() => [])).map((f) => [f.w.toLocaleLowerCase(), f.rank]));
   const buckets = new Map();
   const paradigmOf = async (id) => {
@@ -61,10 +63,11 @@ async function main(code) {
   const por = new Map(rows('por_sentences.tsv.bz2').filter(([id]) => wanted.has(id)).map(([id, , t]) => [id, t]));
 
   const index = await json('learn.json');
+  const names = new Set((index.names ?? []).map(norm));
   const lessons = [];
   for (const level of index.levels) for (const topic of level.topics) for (const e of topic.lessons) {
     const l = await json(`learn/${e.id}.json`);
-    if (l.match) lessons.push({ id: e.id, level: level.id, match: l.match, pool: l.pool ?? l.match.pool ?? null, swaps: l.swaps ?? null, prefixes: l.prefixes ?? null, own: new Set(l.examples.map((x) => x.text)) });
+    if (l.match) lessons.push({ id: e.id, level: level.id, match: l.match, pool: l.pool ?? l.match.pool ?? null, swaps: l.swaps ?? null, prefixes: l.prefixes ?? null, suffixes: l.suffixes ?? null, own: new Set(l.examples.map((x) => x.text)) });
   }
   const pool = own.filter(([id, , t]) => toEng.has(id) && eng.has(toEng.get(id)) && t.length <= 70 && !unsuitable(eng.get(toEng.get(id)), t))
     .map(([id, , t]) => ({ id, text: t, s: simplicity(t.split(/[\s.,!?;:„“"]+/u).filter(Boolean), (w) => freq.get(w)) }))
@@ -82,38 +85,95 @@ async function main(code) {
     // a gap needs some context: three words at least
     if (blocks.filter((b) => /[\p{L}\p{N}]/u.test(b.token.surface)).length < 3) continue;
     for (const l of open) {
-      const m = matchRule(blocks, l.match, { lemmaOf });
+      const m = matchRule(blocks, l.match, { lemmaOf, dictOf, norm });
       if (!m) continue;
       const gapBlock = blocks[m.gap];
-      const answer = gapBlock.token.surface;
-      // variety: one formula (Ве молам) must not fill a lesson
-      const key = answer.toLocaleLowerCase();
-      const seen = l.perAnswer ?? (l.perAnswer = new Map());
-      // (a word-list lesson has few answers by nature: it may repeat one, up to 100 times)
-      const rulePool = (Array.isArray(l.match) ? l.match[m.rule] : l.match).pool ?? l.pool;
-      if (!l.swaps && (seen.get(key) ?? 0) >= (rulePool ? 100 : 12)) continue;
-      seen.set(key, (seen.get(key) ?? 0) + 1);
-      let wrong = null;
       const rule = Array.isArray(l.match) ? l.match[m.rule] : l.match;
-      if (l.swaps) wrong = spellingVariants(answer, l.swaps);
-      else if (l.prefixes) wrong = prefixVariants(answer, l.prefixes);
-      else if (rule.pool || l.pool) wrong = (rule.pool ?? l.pool).filter((w) => w.toLocaleLowerCase() !== answer.toLocaleLowerCase());
-      else {
+      // a generator of wrong answers belongs to its rule, or to the whole lesson
+      const rulePool = rule.pool ?? l.pool;
+      const swaps = rule.swaps ?? l.swaps;
+      const prefixes = rule.prefixes ?? (Array.isArray(l.match) ? null : l.prefixes);
+      const suffixes = rule.suffixes ?? l.suffixes;
+      const listLesson = !!(rulePool ?? swaps ?? prefixes ?? suffixes);
+      // names (Tom, Mary, Sami…) are no lesson's point, whatever the reader takes them for
+      if (names.has(norm(gapBlock.token.surface))) continue;
+      // a script written without vowels (Arabic): a form question shows the answer and its wrong answers vowelled, as
+      // the paradigm table spells them, and only when the word's row there is certain; the sentence stays as written
+      // (the reader's vowelling of a whole sentence can be wrong, and a learner would trust it)
+      const vowelled = blocks.some((b) => b.candidates.some((c) => c.analysis?.marked));
+      // a word-list answer without the vowel marks the sentence happens to write (the list has none)
+      let answer = listLesson ? gapBlock.token.surface.replace(/[\u064B-\u0652\u0670]/gu, '') : gapBlock.token.surface;
+      let wrong = null;
+      if (!listLesson) {
         const ids = [...new Set(gapBlock.candidates.map((c) => c.analysis.lemma))];
-        const codes = gapBlock.candidates.map((c) => c.code).filter(Boolean);
-        if (ids.length === 1) {
-          const forms = await paradigmOf(ids[0]);
-          const mine = forms?.find(([f]) => f === answer.toLocaleLowerCase()) ?? forms?.find(([f]) => f === answer);
-          if (forms && mine) wrong = formPool(forms, answer.toLocaleLowerCase(), codes[0] ?? mine[1], decode, 5, rule.same ?? []);
+        const forms = ids.length === 1 ? await paradigmOf(ids[0]) : null;
+        const row = forms ? (vowelled ? rowFor(forms, answer, gapBlock.candidates.map((c) => c.analysis), decode, norm)
+          : forms.find(([f]) => f === answer) ?? forms.find(([f]) => f === answer.toLocaleLowerCase())) : null;
+        // no row, or a row the source spells oddly (two vowel marks on one letter, عَالِقُْونَ): no vowelled question
+        if (vowelled && (!row || /[ًٌٍَُِ][ًٌٍَُِْ]|ْ[ًٌٍَُِ]/u.test(row[0]))) continue;
+        // rowHas: the form the sentence needs must really be that one (لَمْ + jussive; لِمَ "why" + indicative is not)
+        if (row && rule.rowHas && !row.slice(1).some((c) => { const f = decode(c); return Object.entries(rule.rowHas).every(([k, v]) => f[k] === v); })) continue;
+        if (row) {
+          if (vowelled) answer = row[0];
+          wrong = formPool(forms, row[0], row[1], decode, 5, rule.same ?? []);
         }
       }
-      const roman = (b) => b.roman ?? (romanize ? romanize(b.token.surface) : '');
+      // variety: one formula (Ве молам) must not fill a lesson (a word-list lesson has few answers by nature: it may
+      // repeat one, up to 100 times)
+      const key = norm(answer);
+      const seen = l.perAnswer ?? (l.perAnswer = new Map());
+      if (!swaps && (seen.get(key) ?? 0) >= (rulePool ? 100 : 12)) continue;
+      seen.set(key, (seen.get(key) ?? 0) + 1);
+      if (swaps) wrong = spellingVariants(answer, swaps);
+      else if (prefixes) wrong = prefixVariants(answer, prefixes);
+      else if (suffixes) wrong = suffixVariants(answer, suffixes);
+      else if (rulePool) wrong = rulePool.filter((w) => norm(w) !== norm(answer));
+      // romanisation: of every word, or (a script without vowels) only when every word's vowels are certain
+      const words = blocks.filter((b) => /[\p{L}\p{N}]/u.test(b.token.surface));
+      const sure = !vowelled || words.every((b) => markOf(b));
+      const roman = (b) => (sure && romanize ? romanize(markOf(b) ?? b.token.surface) : '');
       const romanBlocks = blocks.map((b) => ({ ...b, roman: /[\p{L}\p{N}]/u.test(b.token.surface) ? roman(b) : '' }));
-      found.get(l.id).push({ text, en: eng.get(toEng.get(id)), pt: toPor.has(id) ? por.get(toPor.get(id)) : undefined, answer,
-        wrong: wrong?.length >= (l.swaps || l.prefixes ? 1 : 2) ? wrong : null, gap: gapText(text, blocks.map((b) => b.token), m.span), gapRoman: gapRoman(romanBlocks, m.span),
-        roman: romanBlocks.map((b) => b.roman).filter(Boolean).join(' '), tok: blocks.map((b) => b.token.surface) });
+      const tokens = blocks.map((b) => b.token);
+      found.get(l.id).push({ text, shown: text, en: eng.get(toEng.get(id)), pt: toPor.has(id) ? por.get(toPor.get(id)) : undefined, answer,
+        wrong: wrong?.length >= (swaps || prefixes || suffixes ? 1 : 2) ? wrong : null, gap: rewrite(text, tokens, () => null, m.span),
+        gapRoman: sure ? gapRoman(romanBlocks, m.span) : '', roman: romanBlocks.map((b) => b.roman).filter(Boolean).join(' '),
+        tok: blocks.map((b) => b.token.surface) });
     }
     if (read % 5000 === 0) console.log(`${read} sentences read (${Math.round((Date.now() - t0) / 1000)} s)`);
+  }
+  // the lessons' own examples, read the same way: romanisation (for a script without vowels, only when every word's
+  // vowels are certain) and their words for the word-order question
+  const esc = (x) => String(x).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const readOwn = new Map();
+  const ownGap = new Map();
+  for (const l of lessons) {
+    const lf = path.join(dataDir, 'learn', `${l.id}.json`);
+    const page = JSON.parse(await readFile(lf, 'utf8'));
+    for (const ex of page.examples) {
+      const st = createState({ text: ex.text, lexicon, lang });
+      await st.load();
+      const blocks = st.blocks();
+      const tokens = blocks.map((b) => b.token);
+      const words = blocks.filter((b) => /[\p{L}\p{N}]/u.test(b.token.surface));
+      const vowelled = blocks.some((b) => b.candidates.some((c) => c.analysis?.marked));
+      const sure = !vowelled || words.every((b) => markOf(b));
+      ex.shown = ex.text;
+      ex.roman = sure && romanize ? words.map((b) => romanize(markOf(b) ?? b.token.surface)).filter(Boolean).join(' ') : '';
+      readOwn.set(ex.text, { shown: ex.shown, roman: ex.roman, tok: blocks.map((b) => b.token.surface) });
+      // the example's gap, worked out as for Tatoeba: in a script without vowels, the answer vowelled from its paradigm
+      // row and the nearest forms as wrong answers (else the bare answer among vowelled ones gives itself away)
+      if (ex.target && vowelled) {
+        const gb = blocks.find((b) => norm(b.token.surface) === norm(ex.target));
+        const ids = gb ? [...new Set(gb.candidates.map((c) => c.analysis.lemma))] : [];
+        const forms = ids.length === 1 ? await paradigmOf(ids[0]) : null;
+        const row = forms ? rowFor(forms, gb.token.surface, gb.candidates.map((c) => c.analysis), decode, norm) : null;
+        if (row) ownGap.set(`${ex.en}|${norm(ex.target)}`, { answer: row[0], pool: formPool(forms, row[0], row[1], decode, 5) });
+        else ownGap.set(`${ex.en}|${norm(ex.target)}`, null);
+      }
+    }
+    const sec = page.sections.find((x) => x.id === 'examples');
+    if (sec) for (const k of Object.keys(sec.html)) sec.html[k] = page.examples.map((e) => `<div class="ex"><p class="ja" dir="auto">${esc(e.shown)}</p>${e.roman ? `<p class="r">${esc(e.roman)}</p>` : ''}<p class="en">${esc(e[k] ?? e.en)}</p></div>`).join('');
+    await writeFile(lf, JSON.stringify(page));
   }
   let total = 0;
   for (const l of lessons) {
@@ -122,17 +182,29 @@ async function main(code) {
     const f = path.join(dataDir, 'learn', `q-${l.id}.json`);
     const file = JSON.parse(await readFile(f, 'utf8'));
     file.qs = file.qs.filter((q) => q.source !== 'tatoeba');
+    for (const q of file.qs) {
+      const text = q.furi?.map(([t]) => t).join('');
+      if (q.type === 'translate' && readOwn.has(text)) { const r = readOwn.get(text); q.furi = [[r.shown, null]]; q.roman = r.roman; q.tok = r.tok; }
+      if (q.type === 'gap' && !q.source) {
+        const key = `${q.en}|${norm(q.answer)}`;
+        if (ownGap.get(key)) Object.assign(q, ownGap.get(key));
+        else if (ownGap.has(key)) q.drop = true;               // vowels not certain: no fair question
+      }
+    }
+    file.qs = file.qs.filter((q) => !q.drop);
     for (const m of mine) {
       const pt = m.pt ? { pt: m.pt } : {};
       file.qs.push({ type: 'gap', source: 'tatoeba', furi: m.gap, roman: m.gapRoman, en: m.en, ...pt, answer: m.answer,
         pool: m.wrong ?? answers.filter((a) => a !== m.answer).slice(0, 30) });
-      file.qs.push({ type: 'translate', source: 'tatoeba', furi: [[m.text, null]], roman: m.roman, tok: m.tok, answer: m.en, ...pt });
+      file.qs.push({ type: 'translate', source: 'tatoeba', furi: [[m.shown, null]], roman: m.roman, tok: m.tok, answer: m.en, ...pt });
     }
+    // wrong answers for the lesson's own gap questions, when the lesson has no word list: the answers its sentences give
+    if (!(file.pools?.gap?.length)) file.pools = { ...file.pools, gap: answers.slice(0, 40) };
     total += mine.length;
     await writeFile(f, JSON.stringify(file));
     const lf = path.join(dataDir, 'learn', `${l.id}.json`);
     const page = JSON.parse(await readFile(lf, 'utf8'));
-    page.more = mine.slice(0, 8).map((m) => ({ text: m.text, en: m.en, pt: m.pt, roman: m.roman, target: m.answer }));
+    page.more = mine.slice(0, 8).map((m) => ({ text: m.shown, en: m.en, pt: m.pt, roman: m.roman, target: m.answer }));
     await writeFile(lf, JSON.stringify(page));
   }
   const counts = lessons.map((l) => found.get(l.id).length).sort((a, b) => a - b);

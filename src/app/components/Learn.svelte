@@ -25,7 +25,10 @@
   const KEY = `casus:learn:${lang.code}`;
   // lessons written for Casus keep their text per interface language ({ en, pt }); the Japanese book's is English
   const loc = (x) => (x == null ? '' : typeof x === 'string' ? x : (x[ui.lang] ?? x.en ?? ''));
-  const romanize = lang.script?.romanize ?? null;
+  // a script that writes its vowels only sometimes (Arabic): romanise only text that mostly has them, the rest would be
+  // bare letters (ʔḵšā ʔnn)
+  const vowelledEnough = (t) => { const letters = (t.match(/\p{L}/gu) ?? []).length; return letters > 0 && (t.match(/\p{M}/gu) ?? []).length / letters >= 0.4; };
+  const romanize = lang.script?.romanize ? (lang.script.hasMarks ? (t) => (vowelledEnough(t) ? lang.script.romanize(t) : '') : lang.script.romanize) : null;
 
   onMount(async () => {
     try { progress = JSON.parse(storage?.getItem(KEY) ?? '{}'); } catch { progress = {}; }
@@ -113,7 +116,7 @@
     {#if quizItems.length}<p class="ex-count">{t('learn.exCount', { n: quizItems.length })}</p><ChoiceDrill items={quizItems} {random} {romanize} onresult={record} ordered />{/if}
   {:else if lesson && lessonRef}
     <!-- one lesson, as a page -->
-    <article class="lesson-page">
+    <article class="lesson-page" style={`--script-scale: ${lang.script?.fontScale ?? 1}`}>
       <nav class="crumbs"><button class="back" onclick={() => { lesson = null; quizItems = []; }}>← {lessonRef.level.id}</button> <span>{loc(lessonRef.topic.title)}</span></nav>
       <h3><span class="badge-level">{lessonRef.level.id}</span> <span class="l-head" lang={lang.bcp47}>{lesson.title ?? lessonRef.entry.title}</span></h3>
       {#if lesson.meaning}<p class="l-sub">{loc(lesson.meaning)}</p>{/if}
@@ -142,7 +145,7 @@
           <!-- more examples: Tatoeba sentences that show the lesson's point (tools/learn_curriculum.mjs) -->
           <section class="l-sec more-examples" id="sec-more">
             <h4>{t('learn.more')}</h4>
-            {#each lesson.more as ex}<div class="ex"><p class="ja" lang={lang.bcp47}>{ex.text}</p>{#if ex.roman}<p class="r">{ex.roman}</p>{/if}<p class="en">{ui.lang === 'pt' && ex.pt ? ex.pt : ex.en}</p></div>{/each}
+            {#each lesson.more as ex}<div class="ex"><p class="ja" lang={lang.bcp47} dir="auto">{ex.text}</p>{#if ex.roman}<p class="r">{ex.roman}</p>{/if}<p class="en">{ui.lang === 'pt' && ex.pt ? ex.pt : ex.en}</p></div>{/each}
             <p class="more-source">Tatoeba (CC BY 2.0 FR)</p>
           </section>
         {/if}
@@ -229,13 +232,14 @@
   .prose :global(rt) { font-size: 0.55em; color: var(--ink-2); }
   .prose :global(code) { background: var(--panel-hi); padding: 0 4px; border-radius: 4px; font-family: inherit; font-weight: 600; }
   .prose :global(.ex) { border-left: 3px solid var(--line); padding: 4px 12px; margin: 8px 0; background: var(--panel-hi); border-radius: 0 8px 8px 0; }
-  .prose :global(.ex .ja) { font-size: 1.2em; margin: 2px 0; line-height: 2; }
+  .prose :global(.ex .ja) { font-size: calc(1.2em * var(--script-scale, 1)); margin: 2px 0; line-height: 2; }
   .prose :global(.ex .ja b) { color: var(--accent); }
   .prose :global(.ex .en) { color: var(--ink-2); margin: 0; }
+  .prose :global(.ex .r) { color: var(--ink-2); margin: 0; font-style: italic; }
   .prose :global(.note), .prose :global(.rule) { border: 1px solid var(--line-soft); border-left: 4px solid #ff7f0e; border-radius: 8px; padding: 2px 12px; margin: 8px 0; background: var(--panel-hi); }
   .prose :global(.rule) { border-left-color: #1f77b4; }
   .more-examples .ex { border-left: 3px solid var(--line); padding: 4px 12px; margin: 8px 0; background: var(--panel-hi); border-radius: 0 8px 8px 0; }
-  .more-examples .ja { font-size: 1.15em; margin: 2px 0; } .more-examples .en, .more-examples .r { color: var(--ink-2); margin: 0; }
+  .more-examples .ja { font-size: calc(1.15em * var(--script-scale, 1)); margin: 2px 0; } .more-examples .en, .more-examples .r { color: var(--ink-2); margin: 0; }
   .examples-romaji { margin-top: 6px; color: var(--ink-2); }
   .your-turn .turn { border-top: 1px dashed var(--line-soft); padding: 6px 0; }
   .your-turn summary { cursor: pointer; color: var(--accent); }

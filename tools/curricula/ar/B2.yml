@@ -1,0 +1,137 @@
+id: B2
+topics:
+
+- title: {en: Weak verbs, pt: Verbos fracos}
+  lessons:
+  - id: ar-b2-hollow
+    title: قال – يقول
+    meaning: {en: "hollow verbs (و or ي in the middle)", pt: "verbos ocos (و ou ي no meio)"}
+    intro:
+      en: |
+        When the middle root letter is **و** or **ي**, it turns into a long vowel and shortens before a consonant ending: **قَالَ** "he said" but **قُلْتُ** "I said"; present **يَقُولُ**, jussive **لَمْ يَقُلْ**. The present vowel shows the hidden letter: **يَقُولُ** (و), **يَبِيعُ** (ي), **يَنَامُ** (ا).
+      pt: |
+        Quando a letra do meio da raiz é **و** ou **ي**, ela vira vogal longa e encurta antes de terminação consonantal: **قَالَ** "ele disse" mas **قُلْتُ** "eu disse"; presente **يَقُولُ**, jussivo **لَمْ يَقُلْ**. A vogal do presente revela a letra escondida: **يَقُولُ** (و), **يَبِيعُ** (ي), **يَنَامُ** (ا).
+    table:
+      head: {en: [Verb, he (past), I (past), he (present)], pt: [Verbo, ele (passado), eu (passado), ele (presente)]}
+      rows:
+      - [{en: say, pt: dizer}, قَالَ, قُلْتُ, يَقُولُ]
+      - [{en: sell, pt: vender}, بَاعَ, بِعْتُ, يَبِيعُ]
+      - [{en: sleep, pt: dormir}, نَامَ, نِمْتُ, يَنَامُ]
+      - [{en: visit, pt: visitar}, زَارَ, زُرْتُ, يَزُورُ]
+    mistakes:
+    - wrong: قَالْتُ
+      right: قُلْتُ
+      why: {en: "The long ā shortens before -tu.", pt: "O ā longo encurta antes de -tu."}
+    examples:
+    - [قلت لك ذلك., I told you that., Eu te disse isso., قلت]
+    - ["ماذا يقول؟", "What is he saying?", "O que ele está dizendo?", "يقول"]
+    - [نمت جيداً., I slept well., Dormi bem., نمت]
+    # common hollow verbs only: unvowelled, the reader can mistake other words for rare ones (كلنا "all of us" → كِلْنَا)
+    match: {seq: [{pos: verb, lemma: "^(قَالَ|نَامَ|زَارَ|بَاعَ|عَادَ|قَامَ|خَافَ|طَارَ|سَارَ|مَاتَ|شَاءَ|جَاءَ|ذَاقَ|صَامَ|فَازَ|غَابَ|طَالَ|سَاقَ|دَامَ|نَالَ)$"}], same: [tense]}
+
+  - id: ar-b2-defective
+    title: مشى – يمشي، دعا – يدعو
+    meaning: {en: "defective verbs (و or ي at the end)", pt: "verbos defectivos (و ou ي no fim)"}
+    intro:
+      en: |
+        With **و / ي** as the last root letter, the verb ends in a vowel: **مَشَى / يَمْشِي** "walk", **دَعَا / يَدْعُو** "call, invite", **نَسِيَ / يَنْسَى** "forget". Endings meet that vowel: **مَشَيْتُ** "I walked", **مَشَوْا** "they walked"; the jussive drops it: **لَمْ يَمْشِ**.
+      pt: |
+        Com **و / ي** como última letra da raiz, o verbo termina em vogal: **مَشَى / يَمْشِي** "andar", **دَعَا / يَدْعُو** "chamar, convidar", **نَسِيَ / يَنْسَى** "esquecer". As terminações encontram essa vogal: **مَشَيْتُ** "andei", **مَشَوْا** "andaram"; o jussivo a perde: **لَمْ يَمْشِ**.
+    table:
+      head: {en: [Verb, he (past), I (past), he (present)], pt: [Verbo, ele (passado), eu (passado), ele (presente)]}
+      rows:
+      - [{en: walk, pt: andar}, مَشَى, مَشَيْتُ, يَمْشِي]
+      - [{en: invite, pt: convidar}, دَعَا, دَعَوْتُ, يَدْعُو]
+      - [{en: forget, pt: esquecer}, نَسِيَ, نَسِيتُ, يَنْسَى]
+      - [{en: buy, pt: comprar}, اِشْتَرَى, اِشْتَرَيْتُ, يَشْتَرِي]
+    examples:
+    - [نسيت مفاتيحي., I forgot my keys., Esqueci minhas chaves., نسيت]
+    - [اشتريت سيارة., I bought a car., Comprei um carro., اشتريت]
+    - [يمشي كل يوم., He walks every day., Ele caminha todo dia., يمشي]
+    match: {seq: [{pos: verb, lemma: "^(مَشَى|دَعَا|نَسِيَ|اِشْتَرَى|بَكَى|رَمَى|بَنَى|جَرَى|لَقِيَ|نَجَا|شَكَا|أَتَى|رَأَى|بَقِيَ|أَلْقَى|أَعْطَى|أَنْهَى|قَضَى|مَضَى|اِنْتَهَى)$"}], same: [tense]}
+
+  - id: ar-b2-assimilated-doubled
+    title: وصل – يصل، مدّ – يمدّ
+    meaning: {en: "assimilated (و- first) and doubled verbs", pt: "verbos assimilados (و- inicial) e geminados"}
+    intro:
+      en: |
+        - **Assimilated**: first root letter **و** drops in the present: **وَصَلَ / يَصِلُ** "arrive", **وَجَدَ / يَجِدُ** "find", **وَضَعَ / يَضَعُ** "put".
+        - **Doubled**: second and third letters the same, written with shadda when they meet: **ظَنَّ / يَظُنُّ** "think", **مَرَّ / يَمُرُّ** "pass"; they split before a consonant ending: **ظَنَنْتُ** "I thought".
+      pt: |
+        - **Assimilado**: a primeira letra **و** cai no presente: **وَصَلَ / يَصِلُ** "chegar", **وَجَدَ / يَجِدُ** "encontrar", **وَضَعَ / يَضَعُ** "pôr".
+        - **Geminado**: segunda e terceira letras iguais, escritas com shadda quando se encontram: **ظَنَّ / يَظُنُّ** "achar", **مَرَّ / يَمُرُّ** "passar"; separam-se antes de terminação consonantal: **ظَنَنْتُ** "achei".
+    table:
+      head: {en: [Verb, he (past), I (past), he (present)], pt: [Verbo, ele (passado), eu (passado), ele (presente)]}
+      rows:
+      - [{en: arrive, pt: chegar}, وَصَلَ, وَصَلْتُ, يَصِلُ]
+      - [{en: find, pt: encontrar}, وَجَدَ, وَجَدْتُ, يَجِدُ]
+      - [{en: think, pt: achar}, ظَنَّ, ظَنَنْتُ, يَظُنُّ]
+      - [{en: pass, pt: passar}, مَرَّ, مَرَرْتُ, يَمُرُّ]
+    examples:
+    - ["متى وصلت؟", "When did you arrive?", "Quando você chegou?", "وصلت"]
+    - [وجدت المفتاح., I found the key., Achei a chave., وجدت]
+    - [أظن ذلك., I think so., Acho que sim., أظن]
+    match: {seq: [{pos: verb, re: "^(?!ان)", lemma: "^(وَصَلَ|وَجَدَ|وَضَعَ|وَقَفَ|وَعَدَ|وَلَدَ|وَقَعَ|وَثِقَ|ظَنَّ|مَرَّ|رَدَّ|شَدَّ|عَدَّ|دَلَّ|ظَلَّ|مَدَّ|حَلَّ)$"}], same: [tense]}
+
+- title: {en: Nuance, pt: Nuances}
+  lessons:
+  - id: ar-b2-qad
+    title: قد، لقد
+    meaning: {en: "قد: already, indeed; may", pt: "قد: já, de fato; pode ser que"}
+    intro:
+      en: |
+        **قَدْ** + past stresses that something **has happened** (often *already*): **قَدْ وَصَلَ الْقِطَارُ** "the train has arrived"; **لَقَدْ** is stronger still. **قَدْ** + present means **may, sometimes**: **قَدْ يَتَأَخَّرُ** "he may be late".
+      pt: |
+        **قَدْ** + passado reforça que algo **aconteceu** (muitas vezes *já*): **قَدْ وَصَلَ الْقِطَارُ** "o trem já chegou"; **لَقَدْ** é ainda mais forte. **قَدْ** + presente significa **pode ser que, às vezes**: **قَدْ يَتَأَخَّرُ** "ele pode se atrasar".
+    examples:
+    - [لقد فهمت., I've understood., Entendi., لقد]
+    - [قد يمطر غداً., It may rain tomorrow., Pode chover amanhã., قد]
+    match: {seq: [{word: [قد, لقد]}, {pos: verb}], gap: 0}
+    pool: [قد, لقد, لم, لن, سوف]
+
+  - id: ar-b2-exception
+    title: إلا، غير
+    meaning: {en: "except, only: إلا, غير, سوى", pt: "exceto, só: إلا, غير, سوى"}
+    intro:
+      en: |
+        **إِلَّا** "except" (+ accusative after a positive sentence): **جَاءَ الطُّلَّابُ إِلَّا خَالِدًا.** With a negative it means **only**: **مَا عِنْدِي إِلَّا عَشَرَةُ دَنَانِيرَ** "I have only ten dinars". **غَيْر** and **سِوَى** "other than" take a genitive: **لَا أَحَدَ غَيْرُكَ** "no one but you". **غير** also negates adjectives: **غَيْرُ مُمْكِنٍ** "impossible".
+      pt: |
+        **إِلَّا** "exceto" (+ acusativo depois de frase afirmativa): **جَاءَ الطُّلَّابُ إِلَّا خَالِدًا.** Com negação significa **só**: **مَا عِنْدِي إِلَّا عَشَرَةُ دَنَانِيرَ** "só tenho dez dinares". **غَيْر** e **سِوَى** "além de" pedem genitivo: **لَا أَحَدَ غَيْرُكَ** "ninguém além de você". **غير** também nega adjetivos: **غَيْرُ مُمْكِنٍ** "impossível".
+    examples:
+    - [لا أحد يعرف إلا أنا., Nobody knows except me., Ninguém sabe além de mim., إلا]
+    - [هذا غير ممكن., This is impossible., Isso é impossível., غير]
+    # not opening a sentence: there الا is mostly ألا "don't you…?"
+    match: {seq: [{word: [الا, غير, سوى], notStart: true}]}
+    pool: [إلا, غير, سوى, لا, لكن]
+
+- title: {en: Word order, pt: Ordem das palavras}
+  lessons:
+  - id: ar-b2-vso
+    title: ذهب الطلاب
+    meaning: {en: "verb before a plural subject stays singular", pt: "verbo antes de sujeito plural fica no singular"}
+    intro:
+      en: |
+        In a **verbal sentence** (verb first, the classic order) the verb agrees with its subject in **gender only**, staying **singular** even before a plural: **ذَهَبَ الطُّلَّابُ** "the students went", **ذَهَبَتِ الطَّالِبَاتُ**. When the subject comes **first**, full agreement: **الطُّلَّابُ ذَهَبُوا**.
+      pt: |
+        Na **frase verbal** (verbo primeiro, a ordem clássica) o verbo concorda com o sujeito **só em gênero**, ficando no **singular** mesmo antes de plural: **ذَهَبَ الطُّلَّابُ** "os estudantes foram", **ذَهَبَتِ الطَّالِبَاتُ**. Quando o sujeito vem **primeiro**, concordância total: **الطُّلَّابُ ذَهَبُوا**.
+    mistakes:
+    - wrong: ذَهَبُوا الطُّلَّابُ
+      right: ذَهَبَ الطُّلَّابُ
+      why: {en: "Verb first: singular.", pt: "Verbo primeiro: singular."}
+    examples:
+    - [وصل الضيوف., The guests have arrived., Os convidados chegaram., وصل]
+    - [نجحت الطالبات., The (female) students passed., As alunas passaram., نجحت]
+    match: {seq: [{pos: verb, person: "3", number: sg, start: true}, {pos: noun, number: pl, state: def}], gap: 0, same: [tense]}
+
+  - id: ar-b2-hal
+    title: جاء مسرعاً
+    meaning: {en: "the ḥāl: how someone did something", pt: "o ḥāl: como alguém fez algo"}
+    intro:
+      en: |
+        An **indefinite accusative** adjective or participle after a verb tells the state of the subject or object at that moment: **جَاءَ مُسْرِعًا** "he came hurrying", **رَجَعَ سَعِيدًا** "he came back happy". A clause with **وَ** does the same: **خَرَجَ وَهُوَ يَضْحَكُ** "he went out laughing".
+      pt: |
+        Um adjetivo ou particípio **indefinido no acusativo** depois do verbo diz o estado do sujeito ou do objeto naquele momento: **جَاءَ مُسْرِعًا** "veio às pressas", **رَجَعَ سَعِيدًا** "voltou feliz". Uma oração com **وَ** faz o mesmo: **خَرَجَ وَهُوَ يَضْحَكُ** "saiu rindo".
+    examples:
+    - [عاد إلى البيت متعباً., He came home tired., Voltou para casa cansado., متعباً]
+    - [دخلت مبتسمة., She came in smiling., Ela entrou sorrindo., مبتسمة]
+    match: {seq: [{pos: verb}, {pos: adj, state: indef, case: acc}], gap: 1, same: [state]}

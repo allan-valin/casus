@@ -32,7 +32,7 @@
   let built = $state([]);
   function place(k) {
     built = [...built, k];
-    if (built.length === current.item.tokens.length) choose(built.map((i) => current.item.tokens[i]).join(''));
+    if (built.length === current.item.tokens.length) choose(built.map((i) => current.item.tokens[i]).join(current.item.sep ?? ''));
   }
   // romaji/romanisation: stored, or from the kana reading, or — for a script read letter by letter (Cyrillic) — from
   // the sentence itself; never from kanji, which the romaniser cannot read
@@ -62,18 +62,18 @@
 {:else}
   <div class="quiz">
     <!-- a sentence with furigana where it has readings (Learn, 2026-10-19), else the plain prompt -->
-    <p class="quiz-prompt" lang="">{#if current.item.furi}{#each current.item.furi as [t, r]}{#if r}<ruby>{t}<rt>{r}</rt></ruby>{:else}{t}{/if}{/each}{:else}{current.item.prompt}{/if}</p>
+    <p class="quiz-prompt" lang="" dir="auto">{#if current.item.furi}{#each current.item.furi as [t, r]}{#if r}<ruby>{t}<rt>{r}</rt></ruby>{:else}{t}{/if}{/each}{:else}{current.item.prompt}{/if}</p>
     {#if promptRoman}<p class="roman prompt-roman">{promptRoman}</p>{/if}
     {#if current.item.hint ?? (current.item.type === 'gap' ? current.item.en : null)}<p class="quiz-hint">{current.item.hint ?? (ui.lang === 'pt' && current.item.pt ? current.item.pt : current.item.en)}</p>{/if}
     {#if current.item.type === 'order'}
       <!-- put the words in order: tap them, the sentence builds up; it is checked when every word is used -->
-      <p class="built" aria-live="polite">{built.map((k) => current.item.tokens[k]).join('') || '…'}</p>
-      <div class="tiles">{#each current.item.tokens as tok, k}<button class="tile" disabled={!!result || built.includes(k)} onclick={() => place(k)}>{tok}</button>{/each}
+      <p class="built" aria-live="polite" dir="auto">{built.map((k) => current.item.tokens[k]).join(current.item.sep ?? '') || '…'}</p>
+      <div class="tiles">{#each current.item.tokens as tok, k}<button class="tile" dir="auto" disabled={!!result || built.includes(k)} onclick={() => place(k)}>{tok}</button>{/each}
         {#if built.length && !result}<button class="undo" onclick={() => { built = built.slice(0, -1); }}>⌫</button>{/if}</div>
     {:else}
     <div class="choices">
       {#each current.choices as c, i}
-        <button class="choice" class:selected={!result && i === selected} class:right={result && c === current.item.answer} class:wrong={result && c === picked && !result.correct} disabled={!!result} onclick={() => choose(c)}><span class="key" aria-hidden="true">{i + 1}</span><span class="text">{c}{#if romanOf(c, romanize)}<span class="roman">{romanOf(c, romanize)}</span>{/if}</span></button>
+        <button class="choice" class:selected={!result && i === selected} class:right={result && c === current.item.answer} class:wrong={result && c === picked && !result.correct} disabled={!!result} onclick={() => choose(c)}><span class="key" aria-hidden="true">{i + 1}</span><span class="text"><span class="choice-text" dir="auto">{c}</span>{#if romanOf(c, romanize)}<span class="roman">{romanOf(c, romanize)}</span>{/if}</span></button>
       {/each}
     </div>
     {/if}

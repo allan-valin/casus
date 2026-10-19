@@ -19,12 +19,12 @@ for n, line in enumerate(lines):
         continue
     m = re.match(r"^(\s*- )\[(.*)\]\s*$", line)
     items = yaml.safe_load(f"[{m.group(2)}]")
-    if len(items) <= 4 and all(str(i).rstrip().endswith((".", "?", "!", "…", '"', "»")) for i in items[:3]):
+    if len(items) <= 4 and all(str(i).rstrip().endswith((".", "?", "!", "…", "؟", '"', "»")) for i in items[:3]):
         continue
     out, buf = [], []
     for i in map(str, items):
         buf.append(i)
-        if i.rstrip().endswith((".", "?", "!", "…")):
+        if i.rstrip().endswith((".", "?", "!", "…", "؟")):
             out.append(", ".join(buf))
             buf = []
     if buf:

@@ -75,7 +75,7 @@ def lesson_page(src: dict) -> dict:
                 for e in src.get("examples", [])]
     if examples:
         sections.append({"id": "examples", "title": SECTION_TITLES["examples"], "html": {k: "".join(
-            f'<div class="ex"><p class="ja">{html.escape(e["text"])}</p><p class="en">{html.escape(e[k])}</p></div>' for e in examples) for k in LANGS}})
+            f'<div class="ex"><p class="ja" dir="auto">{html.escape(e["text"])}</p><p class="en">{html.escape(e[k])}</p></div>' for e in examples) for k in LANGS}})
     if src.get("mistakes"):
         sections.append({"id": "mistakes", "title": SECTION_TITLES["mistakes"], "html": {k: "<ul>" + "".join(
             f'<li>❌ <s>{html.escape(m["wrong"])}</s> → ✅ <b>{html.escape(m["right"])}</b><br>{_inline(_both(m["why"])[k])}</li>'
@@ -87,7 +87,7 @@ def lesson_page(src: dict) -> dict:
         page["match"] = src["match"]
     if src.get("pool"):
         page["pool"] = src["pool"]
-    for key in ("swaps", "prefixes"):
+    for key in ("swaps", "prefixes", "suffixes"):
         if src.get(key):
             page[key] = src[key]
     return page
@@ -115,4 +115,7 @@ def curriculum_learn(path: Path) -> tuple[dict, dict, dict]:
             topics.append({"id": f"{lv['id']}-t{t_k}", "kind": "grammar", "title": _both(topic["title"]), "lessons": entries})
         levels.append({"id": lv["id"], "topics": topics})
         questions[lv["id"]] = qs
-    return {"system": data["system"], "levels": levels, "credit": _both(data["credit"])}, lessons, questions
+    index = {"system": data["system"], "levels": levels, "credit": _both(data["credit"])}
+    if data.get("names"):
+        index["names"] = data["names"]
+    return index, lessons, questions

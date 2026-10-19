@@ -85,3 +85,21 @@ describe('Arabic agreement: the adjective follows its noun', () => {
     expect(b[2].candidates.map((c) => c.analysis.number)).toEqual(['sg']);
   });
 });
+
+describe('agreement narrows, it does not erase other parts of speech (Learn check, 2026-10-19: أنا أحب الشاي)', () => {
+  const LEX2 = {
+    'أَنَا': [{ lemma: 'ana', pos: 'pron', case: 'x', number: 'x', gender: 'x', state: 'x' }],
+    'أَنًّا': [N('ann', 'acc', 'sg', 'm', 'indef')],
+    'أُحِبُّ': [{ lemma: 'ahabba', pos: 'verb', person: '1', number: 'sg', gender: 'm', tense: 'npast', mood: 'ind', voice: 'act' }],
+    'أَحَبَّ': [{ lemma: 'ahabb', pos: 'adj', case: 'acc', number: 'sg', gender: 'm', state: 'indef' }],
+  };
+  const marked2 = Object.keys(LEX2);
+  const lex2 = { lookupAll: async (keys) => new Map(keys.map((k) => [k, marked2.filter((m) => stripAr(m) === stripAr(k)).flatMap((m) => LEX2[m].map((a) => ({ ...a, marked: m })))])) };
+  it('the pronoun and the verb readings stay', async () => {
+    const s = createState({ text: 'أنا أحب', lexicon: lex2, lang: ar });
+    await s.load();
+    const b = s.blocks();
+    expect(b[0].candidates.map((c) => c.analysis.pos)).toContain('pron');
+    expect(b[1].candidates.map((c) => c.analysis.pos)).toContain('verb');
+  });
+});

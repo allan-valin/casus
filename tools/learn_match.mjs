@@ -7,44 +7,47 @@
  *                                          (the word the learner fills in) is the k-th condition's word
  *   cond: { pos, tense, aspect, person, number, gender, case, word: [surfaces], re: regex on the word,
  *           lemma: regex on the dictionary form of every reading, start: the sentence's first word,
- *           noTrail: no comma or stop right after it (Да, … is "yes"), not: cond }
- *   several rules: the first that matches (its index comes back as `rule`)
+ *           notStart: not the first word, noTrail: no comma or stop right after it (Да, … is "yes"), dict: regex on the dictionary form as printed
+ *           (Arabic: "دَرَّسَ (form II)"), not: cond }
+ *   several rules: the first that matches (its index comes back as `rule`); words and re compare after `norm`
+ *   (lower case; Arabic: the bare letters, so rules are written without vowels)
  *
  * A word fits a morphological condition only when every reading the reader keeps for it fits, so a gap is never
  * built on a guess.
  */
-const FEATURES = ['pos', 'tense', 'aspect', 'person', 'number', 'gender', 'case', 'mood', 'voice'];
+const FEATURES = ['pos', 'tense', 'aspect', 'person', 'number', 'gender', 'case', 'mood', 'voice', 'state'];
 const lower = (s) => s.toLocaleLowerCase();
 
-function fitsAnalysis(a, cond, lemmaOf) {
+function fitsAnalysis(a, cond, lemmaOf, dictOf) {
   for (const f of FEATURES) {
     if (cond[f] == null) continue;
     const want = Array.isArray(cond[f]) ? cond[f] : [cond[f]];
     if (!want.includes(a?.[f])) return false;
   }
   if (cond.lemma && !(lemmaOf && new RegExp(cond.lemma, 'u').test(lemmaOf(a?.lemma) ?? ''))) return false;
-  if (cond.not && fitsAnalysis(a, cond.not, lemmaOf)) return false;
+  if (cond.dict && !(dictOf && new RegExp(cond.dict, 'u').test(dictOf(a?.lemma) ?? ''))) return false;
+  if (cond.not && fitsAnalysis(a, cond.not, lemmaOf, dictOf)) return false;
   return true;
 }
 
-export function fits(block, cond, lemmaOf = null) {
-  if (cond.word && !cond.word.map(lower).includes(lower(block.token.surface))) return false;
-  if (cond.re && !new RegExp(cond.re, 'iu').test(block.token.surface)) return false;
+export function fits(block, cond, lemmaOf = null, dictOf = null, norm = lower) {
+  if (cond.word && !cond.word.map(norm).includes(norm(block.token.surface))) return false;
+  if (cond.re && !new RegExp(cond.re, 'iu').test(norm === lower ? block.token.surface : norm(block.token.surface))) return false;
   if (cond.noTrail && block.token.trail) return false;
-  const morph = FEATURES.some((f) => cond[f] != null) || cond.not || cond.lemma;
+  const morph = FEATURES.some((f) => cond[f] != null) || cond.not || cond.lemma || cond.dict;
   if (!morph) return true;
   const cands = block.candidates ?? [];
-  return cands.length > 0 && cands.every((c) => fitsAnalysis(c.analysis, cond, lemmaOf));
+  return cands.length > 0 && cands.every((c) => fitsAnalysis(c.analysis, cond, lemmaOf, dictOf));
 }
 
-export function matchRule(blocks, rule, { lemmaOf = null } = {}) {
+export function matchRule(blocks, rule, { lemmaOf = null, dictOf = null, norm = lower } = {}) {
   if (Array.isArray(rule)) {
-    for (let k = 0; k < rule.length; k += 1) { const m = matchRule(blocks, rule[k], { lemmaOf }); if (m) return { ...m, rule: k }; }
+    for (let k = 0; k < rule.length; k += 1) { const m = matchRule(blocks, rule[k], { lemmaOf, dictOf, norm }); if (m) return { ...m, rule: k }; }
     return null;
   }
   const { seq, near = 0, gap = seq.length - 1 } = rule;
   const words = blocks.map((b, i) => [b, i]).filter(([b]) => /[\p{L}\p{N}]/u.test(b.token.surface));
-  const ok = (j, k) => fits(words[j][0], seq[k], lemmaOf) && (!seq[k].start || j === 0);
+  const ok = (j, k) => fits(words[j][0], seq[k], lemmaOf, dictOf, norm) && (!seq[k].start || j === 0) && (!seq[k].notStart || j > 0);
   const from = (w, k, at) => {
     if (k === seq.length) return at;
     for (let j = w; j < words.length && j - w <= near; j += 1) {
@@ -113,4 +116,53 @@ export function prefixVariants(word, prefixes) {
   const mine = [...prefixes].sort((a, b) => b.length - a.length).find((p) => low.startsWith(p)) ?? '';
   const base = low.slice(mine.length);
   return prefixes.filter((p) => p !== mine).map((p) => { const w = p + base; return cap ? w[0].toLocaleUpperCase() + w.slice(1) : w; });
+}
+
+/** the vowelled form every reading of a word agrees on (Arabic: the reader's `marked`), or null */
+export function markOf(block) {
+  const marks = new Set((block.candidates ?? []).map((c) => c.analysis?.marked).filter(Boolean));
+  return marks.size === 1 ? [...marks][0] : null;
+}
+
+/** the text with each word replaced where `replace(i)` gives something (vowels), optionally with a gap over [a, b) */
+export function rewrite(text, tokens, replace, gap = null) {
+  const parts = [];
+  let at = 0;
+  let cur = '';
+  tokens.forEach((t, i) => {
+    cur += text.slice(at, t.start);
+    at = t.end;
+    if (gap && i >= gap[0] && i < gap[1]) {
+      if (i === gap[0]) { parts.push([cur, null]); parts.push(['＿＿', null]); cur = ''; }
+      return;
+    }
+    cur += replace(i) ?? text.slice(t.start, t.end);
+  });
+  cur += text.slice(at);
+  parts.push([cur, null]);
+  return parts.filter(([s]) => s);
+}
+
+/** the word with each of the other suffixes (possessives: كتابي, كتابك, كتابه…), vowel marks left aside; the longest
+ * suffix it has comes off; none when it has none of them */
+export function suffixVariants(word, suffixes) {
+  const bare = word.replace(/\p{M}/gu, '');
+  const mine = [...suffixes].sort((a, b) => b.length - a.length).find((x) => bare.endsWith(x));
+  if (!mine) return [];
+  const stem = bare.slice(0, bare.length - mine.length);
+  return suffixes.filter((x) => x !== mine).map((x) => stem + x);
+}
+
+/** the paradigm row a written word stands for: the same letters after `norm` (Arabic: without vowels), and a code
+ * whose features agree with the word's readings. When its readings lead to different forms (unvowelled صغيرة: nom.,
+ * acc. or gen.) there is no row: a vowelled answer must be the one the sentence needs, not one of several */
+export function rowFor(rows, surface, analyses, decode, norm) {
+  const key = norm(surface);
+  const agrees = (f, a) => Object.keys(f).every((k) => f[k] == null || a[k] == null || f[k] === a[k] || f[k] === 'x');
+  const found = new Map();
+  for (const a of analyses) {
+    const row = rows.find((r) => norm(r[0]) === key && r.slice(1).some((c) => agrees(decode(c), a)));
+    if (row) found.set(row[0], row);
+  }
+  return found.size === 1 ? [...found.values()][0] : null;
 }

@@ -90,7 +90,9 @@ export function questionsFromFile(file, { lesson, random = Math.random, ui = 'en
     if (q.tok?.length >= 3) {
       const tokens = [...q.tok];
       for (let i = tokens.length - 1; i > 0; i -= 1) { const j = Math.floor(random() * (i + 1)); [tokens[i], tokens[j]] = [tokens[j], tokens[i]]; }
-      out.push({ type: 'order', derivedFrom: q.source ?? 'book', lesson, prompt: q.answer, tokens, answer: ja, furi: q.furi, roman: q.roman });
+      // a language written with spaces is put together with spaces; the answer is the words, not the punctuation
+      const sep = /\s/u.test(ja) ? ' ' : '';
+      out.push({ type: 'order', derivedFrom: q.source ?? 'book', lesson, prompt: q.answer, tokens, answer: sep ? q.tok.join(sep) : ja, sep, furi: q.furi, roman: q.roman });
     }
   });
   return out;

@@ -54,3 +54,15 @@ describe('gap choices follow the answer’s capital letter (mk browser check, 20
     expect(q.pool).toEqual(['Го', 'Ги', 'Му']);
   });
 });
+
+describe('word order in a language written with spaces (bug found 2026-10-19)', () => {
+  it('the answer is the words joined with spaces, and the item says so', () => {
+    const file = { qs: [
+      { type: 'translate', furi: [['Го видов Марко.', null]], answer: 'I saw Marko.', tok: ['Го', 'видов', 'Марко'] },
+      { type: 'translate', furi: [['私は学生です。', null]], answer: 'I am a student.', tok: ['私', 'は', '学生', 'です', '。'] },
+    ] };
+    const order = questionsFromFile(file, { lesson: 'x', random: () => 0 }).filter((q) => q.type === 'order');
+    expect(order[0]).toMatchObject({ answer: 'Го видов Марко', sep: ' ' });
+    expect(order[1]).toMatchObject({ answer: '私は学生です。', sep: '' });
+  });
+});

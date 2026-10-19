@@ -122,3 +122,42 @@ describe('lessons written for Casus: text in the interface language, more exampl
     setUiLang('en');
   });
 });
+
+describe('word order with spaces', () => {
+  it('tapping the words in order answers it', async () => {
+    const ChoiceDrill = (await import('../../src/app/components/ChoiceDrill.svelte')).default;
+    const items = [{ type: 'order', prompt: 'I saw Marko.', tokens: ['Марко', 'Го', 'видов'], answer: 'Го видов Марко', sep: ' ' }];
+    const { container } = render(ChoiceDrill, { items, random: () => 0 });
+    await flush();
+    for (const w of ['Го', 'видов', 'Марко']) await fireEvent.click([...container.querySelectorAll('.tile:not(:disabled)')].find((b) => b.textContent === w));
+    await flush();
+    expect(container.querySelector('.built').textContent).toBe('Го видов Марко');
+    expect(container.querySelector('.quiz-feedback').classList.contains('right')).toBe(true);
+  });
+});
+
+describe('right-to-left text in exercises (Arabic)', () => {
+  it('the prompt, choices and tiles take their direction from their text', async () => {
+    const ChoiceDrill = (await import('../../src/app/components/ChoiceDrill.svelte')).default;
+    const items = [{ type: 'gap', furi: [['أريد أن ', null], ['＿＿', null], ['.', null]], answer: 'أنام', pool: ['أنامُ', 'نام'] }];
+    const { container } = render(ChoiceDrill, { items, random: () => 0 });
+    await flush();
+    expect(container.querySelector('.quiz-prompt').getAttribute('dir')).toBe('auto');
+    expect([...container.querySelectorAll('.choice .choice-text')].every((c) => c.getAttribute('dir') === 'auto')).toBe(true);
+  });
+});
+
+describe('no romanisation of unvowelled Arabic (browser check 2026-10-19: "lm ＿＿")', () => {
+  it('a bare prompt gets none, a vowelled one does', async () => {
+    const AR_INDEX = { system: 'CEFR', credit: 'x', levels: [{ id: 'B1', topics: [{ id: 't', kind: 'grammar', title: 'T', lessons: [{ id: 'j', title: 'لم', meaning: 'm' }] }] }] };
+    const AR_LESSON = { id: 'j', title: 'لم', meaning: 'm', sections: [], examples: [], practice: [], source: 'written for Casus' };
+    const QS = { pools: { gap: ['يَذْهَبُ'] }, qs: [{ type: 'gap', furi: [['لم ', null], ['＿＿', null], ['.', null]], answer: 'يَذْهَبْ', en: 'He did not go.' }] };
+    const { container } = render(Learn, props({ lang: getLanguage('ar'), loadLearn: async () => AR_INDEX, loadLesson: async () => AR_LESSON, loadQuestions: async () => QS }));
+    await flush();
+    await fireEvent.click(container.querySelector('.lesson-row'));
+    await flush();
+    await fireEvent.click(container.querySelector('button.start-exercises'));
+    await flush();
+    expect(container.querySelector('.prompt-roman')).toBe(null);
+  });
+});
