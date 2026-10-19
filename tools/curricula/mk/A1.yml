@@ -18,18 +18,18 @@ topics:
     table:
       head: {en: [Letter, Latin, Sounds like, Example], pt: [Letra, Latino, Soa como, Exemplo]}
       rows:
-      - [ѓ, gj, "soft g", "ѓакон (pupil)"]
-      - [ќ, kj, "soft k", "ќерка (daughter)"]
-      - [ѕ, dz, dz, "ѕвезда (star)"]
-      - [ј, j, "y in yes", "јас (I)"]
-      - [љ, lj, "lh / lli", "љубов (love)"]
-      - [њ, nj, "nh / ny", "коњ (horse)"]
-      - [џ, dž, "j in jam", "џеб (pocket)"]
-      - [ц, c, ts, "цвет (flower)"]
-      - [ч, č, ch, "чај (tea)"]
-      - [ш, š, sh, "шума (forest)"]
-      - [ж, ž, "s in pleasure", "жена (woman)"]
-      - [х, h, "h / ch in Bach", "хотел (hotel)"]
+      - ["ѓ", "gj", {"en": "soft g", "pt": "g suave"}, {"en": "ѓакон (pupil)", "pt": "ѓакон (aluno)"}]
+      - ["ќ", "kj", {"en": "soft k", "pt": "k suave"}, {"en": "ќерка (daughter)", "pt": "ќерка (filha)"}]
+      - ["ѕ", "dz", "dz", {"en": "ѕвезда (star)", "pt": "ѕвезда (estrela)"}]
+      - ["ј", "j", {"en": "y in yes", "pt": "i de iate"}, {"en": "јас (I)", "pt": "јас (eu)"}]
+      - ["љ", "lj", {"en": "lh / lli", "pt": "lh"}, {"en": "љубов (love)", "pt": "љубов (amor)"}]
+      - ["њ", "nj", {"en": "nh / ny", "pt": "nh"}, {"en": "коњ (horse)", "pt": "коњ (cavalo)"}]
+      - ["џ", "dž", {"en": "j in jam", "pt": "dj"}, {"en": "џеб (pocket)", "pt": "џеб (bolso)"}]
+      - ["ц", "c", "ts", {"en": "цвет (flower)", "pt": "цвет (flor)"}]
+      - ["ч", "č", {"en": "ch", "pt": "tch"}, {"en": "чај (tea)", "pt": "чај (chá)"}]
+      - ["ш", "š", {"en": "sh", "pt": "ch / x"}, {"en": "шума (forest)", "pt": "шума (floresta)"}]
+      - ["ж", "ž", {"en": "s in pleasure", "pt": "j de já"}, {"en": "жена (woman)", "pt": "жена (mulher)"}]
+      - ["х", "h", {"en": "h / ch in Bach", "pt": "rr aspirado"}, "хотел (hotel)"]
     sections:
     - id: usage
       title: {en: Where the stress falls, pt: Onde cai o acento}
@@ -70,7 +70,7 @@ topics:
     match: {seq: [{re: "[ѓќѕљњџ]"}]}
     swaps: {ѓ: [г, џ], ќ: [к, ч], ѕ: [з, ц], љ: [л], њ: [н], џ: [ч, ѓ], ч: [ќ], ј: [и]}
 
-- title: {en: Being and having, pt: Ser, estar e ter}
+- title: {en: Being and having, pt: "Ser, estar e ter"}
   lessons:
   - id: a1-sum
     title: сум
@@ -83,12 +83,12 @@ topics:
     table:
       head: {en: [Person, Form, With "not"], pt: [Pessoa, Forma, Com "não"]}
       rows:
-      - [јас (I), сум, не сум]
-      - [ти (you), си, не си]
-      - [тој / таа / тоа (he / she / it), е, не е]
-      - [ние (we), сме, не сме]
-      - [вие (you, plural or polite), сте, не сте]
-      - [тие (they), се, не се]
+      - [{"en": "јас (I)", "pt": "јас (eu)"}, "сум", "не сум"]
+      - [{"en": "ти (you)", "pt": "ти (você)"}, "си", "не си"]
+      - [{"en": "тој / таа / тоа (he / she / it)", "pt": "тој / таа / тоа (ele / ela)"}, "е", "не е"]
+      - [{"en": "ние (we)", "pt": "ние (nós)"}, "сме", "не сме"]
+      - [{"en": "вие (you, plural or polite)", "pt": "вие (vocês, ou o senhor / a senhora)"}, "сте", "не сте"]
+      - [{"en": "тие (they)", "pt": "тие (eles, elas)"}, "се", "не се"]
     sections:
     - id: usage
       body:
@@ -338,14 +338,14 @@ topics:
     table:
       head: {en: [Word, Meaning, Example], pt: [Palavra, Significado, Exemplo]}
       rows:
-      - ["што", "what", "Што правиш?"]
-      - ["кој / која / кое / кои", "who, which", "Кој е тоа?"]
-      - ["чиј / чија / чие / чии", "whose", "Чија е книгата?"]
-      - ["каде", "where", "Каде живееш?"]
-      - ["кога", "when", "Кога доаѓаш?"]
-      - ["зошто", "why", "Зошто плачеш?"]
-      - ["како", "how", "Како си?"]
-      - ["колку", "how much, how many", "Колку чини?"]
+      - ["што", {"en": "what", "pt": "o quê"}, "Што правиш?"]
+      - ["кој / која / кое / кои", {"en": "who, which", "pt": "quem, qual"}, "Кој е тоа?"]
+      - ["чиј / чија / чие / чии", {"en": "whose", "pt": "de quem"}, "Чија е книгата?"]
+      - ["каде", {"en": "where", "pt": "onde"}, "Каде живееш?"]
+      - ["кога", {"en": "when", "pt": "quando"}, "Кога доаѓаш?"]
+      - ["зошто", {"en": "why", "pt": "por quê"}, "Зошто плачеш?"]
+      - ["како", {"en": "how", "pt": "como"}, "Како си?"]
+      - ["колку", {"en": "how much, how many", "pt": "quanto, quantos"}, "Колку чини?"]
     examples:
     - ["Како си?", "How are you?", "Como você está?", "Како"]
     - ["Што правиш?", "What are you doing?", "O que você está fazendo?", "Што"]
@@ -380,7 +380,7 @@ topics:
     table:
       head: {en: [Gender, Ending, Examples, "new …"], pt: [Gênero, Terminação, Exemplos, "novo …"]}
       rows:
-      - [masculine / masculino, consonant, "стол, град, телефон", нов]
+      - ["masculine / masculino", {"en": "consonant", "pt": "consoante"}, "стол, град, телефон", "нов"]
       - [feminine / feminino, "-а; -ост", "жена, книга, радост", нова]
       - [neuter / neutro, "-о, -е", "село, дете, море", ново]
     mistakes:
@@ -420,9 +420,9 @@ topics:
     table:
       head: {en: [Singular, Plural, Rule], pt: [Singular, Plural, Regra]}
       rows:
-      - [град, градови, "m., 1 syllable: -ови"]
-      - [студент, студенти, "m., 2+ syllables: -и"]
-      - [ученик, ученици, "к → ц before -и"]
+      - ["град", "градови", {"en": "m., 1 syllable: -ови", "pt": "m., 1 sílaba: -ови"}]
+      - ["студент", "студенти", {"en": "m., 2+ syllables: -и", "pt": "m., 2+ sílabas: -и"}]
+      - ["ученик", "ученици", {"en": "к → ц before -и", "pt": "к → ц antes de -и"}]
       - [жена, жени, "f.: -а → -и"]
       - [село, села, "n.: -о → -а"]
       - [море, мориња, "n.: -е → -иња"]
@@ -518,12 +518,12 @@ topics:
     table:
       head: {en: [m., f., n., pl., meaning], pt: [m., f., n., pl., significado]}
       rows:
-      - [нов, нова, ново, нови, new]
-      - [мал, мала, мало, мали, small]
-      - [добар, добра, добро, добри, good]
-      - [голем, голема, големо, големи, big]
-      - [убав, убава, убаво, убави, beautiful]
-      - [македонски, македонска, македонско, македонски, Macedonian]
+      - ["нов", "нова", "ново", "нови", {"en": "new", "pt": "novo"}]
+      - ["мал", "мала", "мало", "мали", {"en": "small", "pt": "pequeno"}]
+      - ["добар", "добра", "добро", "добри", {"en": "good", "pt": "bom"}]
+      - ["голем", "голема", "големо", "големи", {"en": "big", "pt": "grande"}]
+      - ["убав", "убава", "убаво", "убави", {"en": "beautiful", "pt": "bonito"}]
+      - ["македонски", "македонска", "македонско", "македонски", {"en": "Macedonian", "pt": "macedônio"}]
     mistakes:
     - wrong: добара жена
       right: добра жена
@@ -557,7 +557,7 @@ topics:
       - [нова книга, новата книга]
       - [ново село, новото село]
       - [нови столови, новите столови]
-      - [мојот нов телефон, "(possessive first: the article on it)"]
+      - ["мојот нов телефон", {"en": "(possessive first: the article on it)", "pt": "(possessivo primeiro: o artigo vai nele)"}]
     mistakes:
     - wrong: нов столот
       right: новиот стол

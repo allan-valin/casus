@@ -1,0 +1,226 @@
+id: B2
+topics:
+
+- title: {en: Aspect in depth, pt: Aspecto a fundo}
+  lessons:
+  - id: b2-perfective-imperfect
+    title: штом ќе дојдеше
+    meaning: {en: "repeated events: perfective imperfect, habitual ќе", pt: "eventos repetidos: imperfeito perfectivo, ќе habitual"}
+    intro:
+      en: |
+        A perfective verb can appear in the **imperfect** in one place: in clauses of **repeated** past events, usually after **кога ќе / штом ќе / ако**: **Штом ќе седнеше, заспиваше.** "Whenever he sat down, he would fall asleep." Each sitting is a whole event (perfective), and the series is a habit (imperfect).
+
+        The present has the same pattern for habits: **Кога ќе дојде, секогаш носи цвеќе.** "Whenever she comes, she brings flowers."
+      pt: |
+        Um verbo perfectivo pode aparecer no **imperfeito** num lugar: em orações de eventos passados **repetidos**, em geral depois de **кога ќе / штом ќе / ако**: **Штом ќе седнеше, заспиваше.** "Toda vez que se sentava, adormecia." Cada vez que senta é um evento inteiro (perfectivo), e a série é um hábito (imperfeito).
+
+        O presente tem o mesmo padrão para hábitos: **Кога ќе дојде, секогаш носи цвеќе.** "Sempre que ela vem, traz flores."
+    mistakes:
+    - wrong: Штом седна, заспиваше (every time).
+      right: Штом ќе седнеше, заспиваше.
+      why: {en: "Repeated: ќе + perfective imperfect.", pt: "Repetido: ќе + imperfeito do perfectivo."}
+    examples:
+    - ["Штом ќе седнеше, заспиваше.", "Whenever he sat down, he fell asleep.", "Toda vez que se sentava, adormecia.", "седнеше"]
+    - ["Кога ќе дојдеше, секогаш носеше подарок.", "Whenever he came, he brought a present.", "Sempre que vinha, trazia um presente.", "дојдеше"]
+    - ["Ако ќе го прашаше некој, не одговараше.", "If anyone asked him, he didn't answer.", "Se alguém lhe perguntasse, não respondia.", "прашаше"]
+    # the reader marks the past of сум as perfective: leave сум and биде out
+    match: [{seq: [{word: [кога, штом, ако, додека, секогаш]}, {word: [ќе]}, {pos: verb, tense: impf}], near: 2, gap: 2, same: [tense]}, {seq: [{pos: verb, tense: impf, aspect: pf, not: {lemma: "^(сум|биде)$"}}], same: [tense]}]
+
+  - id: b2-prefixes
+    title: напише, препише, потпише
+    meaning: {en: "prefixes that change the meaning", pt: "prefixos que mudam o sentido"}
+    intro:
+      en: |
+        A prefix makes a verb perfective and often adds meaning. From `пишува` "write": **напише** write (done), **препише** copy, **потпише** sign, **опише** describe, **запише** note down, enrol, **испише** write out, withdraw. The same prefixes work across many verbs: **пре-** re-/over, **по-** a little / a while, **за-** start, **из-** out, **до-** up to, **од-** away.
+
+        Their imperfective partners add **-ува**: препише → **препишува**, потпише → **потпишува**.
+      pt: |
+        Um prefixo torna o verbo perfectivo e muitas vezes acrescenta sentido. De `пишува` "escrever": **напише** escrever (concluído), **препише** copiar, **потпише** assinar, **опише** descrever, **запише** anotar, matricular, **испише** escrever por extenso, desmatricular. Os mesmos prefixos valem para muitos verbos: **пре-** re-/de novo, **по-** um pouco, **за-** começar, **из-** para fora, **до-** até, **од-** afastar.
+
+        Os pares imperfectivos acrescentam **-ува**: препише → **препишува**, потпише → **потпишува**.
+    table:
+      head: {en: [Verb, Meaning, Imperfective], pt: [Verbo, Significado, Imperfectivo]}
+      rows:
+      - [напише, write / escrever, пишува]
+      - [препише, copy / copiar, препишува]
+      - [потпише, sign / assinar, потпишува]
+      - [опише, describe / descrever, опишува]
+      - [запише, note down / anotar, запишува]
+    mistakes:
+    - wrong: Ја напишав договорот (signature).
+      right: Го потпишав договорот.
+      why: {en: "*sign* is потпише.", pt: "*assinar* é потпише."}
+    examples:
+    - [Потпишете тука., Sign here., Assine aqui., Потпишете]
+    - [Ја препишав домашната задача., I copied the homework., Copiei a lição de casa., препишав]
+    - [Опиши ми го тој човек., Describe that man to me., Descreva esse homem para mim., Опиши]
+    - [Запиши го мојот број., Write down my number., Anote meu número., Запиши]
+    match: {seq: [{re: "^(на|пре|пот|о|за|ис|из)пиш"}]}
+    prefixes: [на, пре, пот, о, за, ис]
+
+- title: {en: People and addressing, pt: Pessoas e vocativo}
+  lessons:
+  - id: b2-personal-numerals
+    title: двајца, тројца, неколкумина
+    meaning: {en: "numerals for groups of people", pt: "numerais para grupos de pessoas"}
+    intro:
+      en: |
+        For groups of **men or mixed groups** Macedonian uses special numerals: **двајца** (two), **тројца** (three), **четворица** (four), **петмина**, **шестмина** … and **неколкумина** "several people". The noun is in the normal plural: **двајца браќа**, **тројца студенти**. With the article: **двајцата** "the two of them".
+
+        For *both*: **двата / двете** (things), **обата / обете**, and for people **двајцата**.
+      pt: |
+        Para grupos de **homens ou mistos** o macedônio usa numerais especiais: **двајца** (dois), **тројца** (três), **четворица** (quatro), **петмина**, **шестмина** … e **неколкумина** "várias pessoas". O substantivo vai no plural normal: **двајца браќа**, **тројца студенти**. Com artigo: **двајцата** "os dois".
+
+        Para *ambos*: **двата / двете** (coisas), **обата / обете**, e para pessoas **двајцата**.
+    table:
+      head: {en: [Number, People, Example], pt: [Número, Pessoas, Exemplo]}
+      rows:
+      - [2, двајца, двајца пријатели]
+      - [3, тројца, тројца браќа]
+      - [4, четворица, четворица играчи]
+      - [5, петмина, петмина студенти]
+      - [several / vários, неколкумина, неколкумина луѓе]
+    mistakes:
+    - wrong: два браќа
+      right: двајца браќа
+      why: {en: "Men: the personal numeral.", pt: "Homens: o numeral pessoal."}
+    examples:
+    - [Имам двајца браќа., I have two brothers., Tenho dois irmãos., двајца]
+    - [Тројца студенти не дојдоа., Three students didn't come., Três estudantes não vieram., Тројца]
+    - [Двајцата се многу слични., The two of them are very alike., Os dois são muito parecidos., Двајцата]
+    match: {seq: [{word: [двајца, тројца, четворица, петмина, шестмина, седуммина, неколкумина, двајцата, тројцата]}]}
+    pool: [двајца, тројца, четворица, петмина, неколкумина, два, две, три, двајцата]
+
+  - id: b2-vocative
+    title: мајко, брате, Марко
+    meaning: {en: "the vocative: calling someone", pt: "o vocativo: chamar alguém"}
+    intro:
+      en: |
+        Nouns have kept one case ending: the **vocative**, for calling or addressing. Masculine nouns take **-е** (**брате**, **господине**, **Петре**) or **-у** (**човеку**, **другару**); feminine nouns in -а take **-о** (**мајко**, **сестро**, **бабо**), names in -ка often **-е** (**Ленке**). Neuter nouns and many names don't change. It is common in speech, more affectionate or blunt than the plain form.
+      pt: |
+        O substantivo conservou uma terminação de caso: o **vocativo**, para chamar ou se dirigir a alguém. Masculinos levam **-е** (**брате**, **господине**, **Петре**) ou **-у** (**човеку**, **другару**); femininos em -а levam **-о** (**мајко**, **сестро**, **бабо**), nomes em -ка muitas vezes **-е** (**Ленке**). Neutros e muitos nomes não mudam. É comum na fala, mais carinhoso ou mais direto que a forma simples.
+    table:
+      head: {en: [Noun, Vocative], pt: [Substantivo, Vocativo]}
+      rows:
+      - [брат, брате]
+      - [господин, господине]
+      - [човек, човеку]
+      - [мајка, мајко]
+      - [сестра, сестро]
+      - [баба, бабо]
+    examples:
+    - ["Мајко, каде си?", "Mum, where are you?", "Mãe, onde você está?", "Мајко"]
+    - ["Благодарам, господине.", "Thank you, sir.", "Obrigado, senhor.", "господине"]
+    - ["Брате, што правиш?", "Bro, what are you doing?", "Mano, o que você está fazendo?", "Брате"]
+    match: {seq: [{pos: noun, case: voc, number: sg}]}
+
+- title: {en: Wishes and commands, pt: Desejos e ordens}
+  lessons:
+  - id: b2-neka
+    title: нека
+    meaning: {en: "let…, may…", pt: "que…, deixa…"}
+    intro:
+      en: |
+        **нека** + present gives a command or wish for a **third person** (or a resigned *let it be*): **Нека влезе.** "Let him come in." **Нека е со среќа!** "Good luck with it! (may it be with luck)". **Нека биде така.** "So be it."
+      pt: |
+        **нека** + presente dá uma ordem ou desejo para uma **terceira pessoa** (ou um resignado *deixa estar*): **Нека влезе.** "Que ele entre." **Нека е со среќа!** "Boa sorte! (que seja com sorte)". **Нека биде така.** "Que assim seja."
+    examples:
+    - [Нека влезе., Let him come in., Que ele entre., Нека]
+    - [Нека ти е со среќа!, Good luck with it!, Boa sorte com isso!, Нека]
+    - [Нека чека., Let him wait., Que ele espere., Нека]
+    match: {seq: [{word: [нека]}, {pos: verb}], near: 2, gap: 0}
+    pool: [нека, да, ќе, би, ако]
+
+  - id: b2-da-wishes
+    title: Да живее!
+    meaning: {en: "да + present as a wish or mild command", pt: "да + presente como desejo ou ordem branda"}
+    intro:
+      en: |
+        Starting a sentence, **да** + present is a wish or a softened command: **Да живее Македонија!** "Long live Macedonia!" **Да не заборавиш!** "Don't forget!" **Да одиме.** "Let's go." In questions it asks for advice: **Да дојдам ли?** "Shall I come?"
+      pt: |
+        No início da frase, **да** + presente é um desejo ou uma ordem suavizada: **Да живее Македонија!** "Viva a Macedônia!" **Да не заборавиш!** "Não esqueça!" **Да одиме.** "Vamos." Em pergunta pede conselho: **Да дојдам ли?** "Devo ir?"
+    examples:
+    - [Да одиме дома., Let's go home., Vamos para casa., Да]
+    - [Да не заборавиш!, Don't forget!, Não vá esquecer!, Да]
+    - ["Да ти помогнам ли?", "Shall I help you?", "Quer que eu te ajude?", "Да"]
+    match: {seq: [{word: [да], start: true, noTrail: true}, {pos: verb, tense: pres, not: {lemma: "^сум$"}}], near: 1, gap: 0}
+    pool: [Да, Ќе, Нека, Ако, Би]
+
+- title: {en: Word order and emphasis, pt: Ordem das palavras e ênfase}
+  lessons:
+  - id: b2-topic-doubling
+    title: Книгата ја прочитав.
+    meaning: {en: "a fronted object keeps its pronoun", pt: "objeto antecipado mantém o pronome"}
+    intro:
+      en: |
+        Word order is free, and an object put **first** for emphasis or as the topic keeps its short pronoun: **Книгата ја прочитав, филмот не го гледав.** "The book I read; the film I didn't watch." Quantified objects are doubled too: **Ги видов сите.** "I saw them all." **Секого го познава.** "He knows everybody."
+      pt: |
+        A ordem é livre, e um objeto posto **primeiro**, para ênfase ou como tópico, mantém o pronome curto: **Книгата ја прочитав, филмот не го гледав.** "O livro eu li; o filme não vi." Objetos quantificados também se duplicam: **Ги видов сите.** "Vi todos." **Секого го познава.** "Ele conhece todo mundo."
+    mistakes:
+    - wrong: Книгата прочитав.
+      right: Книгата ја прочитав.
+      why: {en: "A definite object before the verb is always doubled.", pt: "Objeto definido antes do verbo é sempre duplicado."}
+    examples:
+    - [Книгата ја прочитав., The book I've read., O livro eu já li., ја]
+    - [Ги видов сите., I saw them all., Vi todos., Ги]
+    - [Тоа го знам., That I know., Isso eu sei., го]
+    # a fronted noun cannot be told from a subject without syntax (Тигарот го излижа: the tiger licked him), so only
+    # pronouns and quantifiers that are objects here
+    match: {seq: [{word: [тоа, ова, она, сите, секого, никого, нив, него, неа, мене, тебе], start: true}, {word: [го, ја, ги, ме, те]}], gap: 1}
+    pool: [го, ја, ги, му, ѝ, им]
+
+  - id: b2-impersonal
+    title: се зборува, не се знае
+    meaning: {en: "impersonal се: one says, it is not known", pt: "се impessoal: diz-se, não se sabe"}
+    intro:
+      en: |
+        **се** + 3rd person singular makes an impersonal statement, like Portuguese *se*: **Се зборува дека…** "People say that…" **Не се знае.** "Nobody knows." **Како се оди до центарот?** "How does one get to the centre?" With a dative pronoun it expresses an involuntary feeling: **Ми се спие.** "I feel sleepy." **Не ми се работи.** "I don't feel like working."
+      pt: |
+        **се** + 3ª pessoa do singular faz uma frase impessoal, como o *se* do português: **Се зборува дека…** "Diz-se que…" **Не се знае.** "Não se sabe." **Како се оди до центарот?** "Como se chega ao centro?" Com pronome dativo exprime uma vontade involuntária: **Ми се спие.** "Estou com sono." **Не ми се работи.** "Não estou a fim de trabalhar."
+    examples:
+    - [Се зборува дека ќе има избори., People say there will be elections., Dizem que vai haver eleições., зборува]
+    - [Не се знае кој победи., Nobody knows who won., Não se sabe quem ganhou., знае]
+    - [Ми се јаде нешто слатко., I feel like eating something sweet., Estou com vontade de comer um doce., јаде]
+    match: [{seq: [{word: [се]}, {word: [зборува, знае, вели, гледа, оди, чини, чека, работи, верува]}], gap: 1}, {seq: [{word: [ми, ти, му, ѝ, ни, ви, им]}, {word: [се]}, {word: [спие, јаде, пие, работи, оди, плаче, смее, пее, игра]}], gap: 2}]
+
+- title: {en: Small words, pt: Diminutivos}
+  lessons:
+  - id: b2-diminutives
+    title: столче, детенце, куќичка
+    meaning: {en: "diminutives", pt: "diminutivos"}
+    intro:
+      en: |
+        Diminutives (small, dear) are very common: **-че** (neuter) — `стол` → **столче**, `град` → **градче**; **-енце** — `дете` → **детенце**, `куче` → **кученце**; **-ичка / -шка** — `куќа` → **куќичка**, `рака` → **рачка**, `книга` → **книшка**. Some have become ordinary words: **девојче** "girl", **момче** "boy".
+      pt: |
+        Os diminutivos (pequeno, querido) são muito comuns: **-че** (neutro) — `стол` → **столче**, `град` → **градче**; **-енце** — `дете` → **детенце**, `куче` → **кученце**; **-ичка / -шка** — `куќа` → **куќичка**, `рака` → **рачка**, `книга` → **книшка**. Alguns viraram palavras comuns: **девојче** "menina", **момче** "menino".
+    table:
+      head: {en: [Word, Diminutive], pt: [Palavra, Diminutivo]}
+      rows:
+      - [стол, столче]
+      - [град, градче]
+      - [дете, детенце]
+      - [куќа, куќичка]
+      - [рака, рачка]
+      - [книга, книшка]
+    examples:
+    - [Живеам во мало градче., I live in a little town., Moro numa cidadezinha., градче]
+    - [Детенцето спие., The little one is asleep., O neném está dormindo., Детенцето]
+    - [Имаме куќичка на село., We have a little house in the village., Temos uma casinha na aldeia., куќичка]
+    match: {seq: [{word: [столче, градче, коњче, куферче, кученце, детенце, срценце, куќичка, рачка, ногичка, книшка, лажиче, маче, девојче, момче, пиленце, столчето, градчето, детенцето, кученцето, куќичката, девојчето, момчето, мачето]}]}
+    pool: [стол, град, дете, куќа, рака, книга, куче, девојка, столче, градче, детенце, куќичка]
+
+- title: {en: The future perfect, pt: O futuro perfeito}
+  lessons:
+  - id: b2-future-perfect
+    title: ќе имам завршено
+    meaning: {en: "will have done", pt: "terei feito"}
+    intro:
+      en: |
+        **ќе + има + verbal adjective** or **ќе + сум + l-form**: **Додека дојдеш, ќе имам завршено.** "By the time you come I'll have finished." Also for guesses about the past: **Ќе има заминато веќе.** "He'll have left already."
+      pt: |
+        **ќе + има + adjetivo verbal** ou **ќе + сум + forma em -л**: **Додека дојдеш, ќе имам завршено.** "Até você chegar eu já terei terminado." Também para suposições sobre o passado: **Ќе има заминато веќе.** "Ele já deve ter saído."
+    examples:
+    - [До утре ќе имам завршено., I'll have finished by tomorrow., Até amanhã terei terminado., имам]
+    - [Ќе има заминато веќе., He'll have left by now., Ele já deve ter ido embora., има]
+    match: [{seq: [{word: [ќе]}, {word: [имам, имаш, има, имаме, имате, имаат]}, {pos: verb, tense: lpart, re: "(но|то)$"}], gap: 1}, {seq: [{word: [ќе]}, {word: [сум, си, е, сме, сте]}, {pos: verb, tense: lpart, re: "(л|ла|ло|ле)$"}], gap: 1}]
+    pool: [имам, имаш, има, имаме, имаат, сум, си, е]

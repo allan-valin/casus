@@ -1,0 +1,458 @@
+id: B1
+topics:
+
+- title: {en: Perfect and pluperfect, pt: Perfeito e mais-que-perfeito}
+  lessons:
+  - id: b1-ima-perfect
+    title: имам видено
+    meaning: {en: "the има-perfect: I have seen", pt: "o perfeito com има: tenho visto, já vi"}
+    intro:
+      en: |
+        Macedonian has a true *have*-perfect, unique among the Slavic languages: **има** + the **neuter verbal adjective** in **-но / -то**, which never changes: **Имам видено.** "I have seen (it)." **Немам јадено.** "I haven't eaten." **Имаш ли бидено во Струга?** "Have you ever been to Struga?"
+
+        It stresses the **result** or the **experience** now, much like the English present perfect. `има` agrees with the subject; the participle stays neuter.
+      pt: |
+        O macedônio tem um verdadeiro perfeito com *ter*, único entre as línguas eslavas: **има** + o **adjetivo verbal neutro** em **-но / -то**, que não muda: **Имам видено.** "Já vi." **Немам јадено.** "Não comi (ainda)." **Имаш ли бидено во Струга?** "Você já esteve em Struga?"
+
+        Destaca o **resultado** ou a **experiência** no presente, como o *present perfect* do inglês. `има` concorda com o sujeito; o particípio fica no neutro.
+    table:
+      head: {en: [Verb, Verbal adjective, Perfect], pt: [Verbo, Adjetivo verbal, Perfeito]}
+      rows:
+      - [види, видено, имам видено]
+      - [јаде, јадено, немам јадено]
+      - [прочита, прочитано, имаме прочитано]
+      - [напише, напишано, имаат напишано]
+      - [слушне, слушнато, имаш слушнато]
+      - [биде, бидено, имам бидено]
+    mistakes:
+    - wrong: Имам видена (for a film).
+      right: Имам видено.
+      why: {en: "The participle is always neuter here.", pt: "Aqui o particípio é sempre neutro."}
+    - wrong: Сум видено.
+      right: Имам видено.
+      why: {en: "The perfect of action verbs is with има.", pt: "O perfeito dos verbos de ação é com има."}
+    examples:
+    - [Го имам видено тој филм., I've seen that film., Já vi esse filme., видено]
+    - [Немам јадено од утрото., I haven't eaten since this morning., Não como desde de manhã., јадено]
+    - ["Имате ли бидено во Охрид?", "Have you ever been to Ohrid?", "Vocês já estiveram em Ohrid?", "бидено"]
+    - [Имаме платено сè., We've paid for everything., Já pagamos tudo., платено]
+    # the participle as the reader files it: a verb form in -но/-то (an adjective in -но, хартиено, is not one)
+    match: {seq: [{word: [имам, имаш, има, имаме, имате, имаат, немам, немаш, нема, немаме, немате, немаат]}, {pos: verb, tense: lpart, re: "(но|то)$"}], near: 1, gap: 1}
+
+  - id: b1-pluperfect
+    title: бев заминал, имав купено
+    meaning: {en: "the pluperfect: had done", pt: "o mais-que-perfeito: tinha feito"}
+    intro:
+      en: |
+        For something that had already happened before another past event, use the **past of сум + l-form** or the **past of има + verbal adjective**:
+
+        - **Кога дојдов, тој веќе беше заминал.** "When I came, he had already left."
+        - **Имав купено билети.** "I had bought tickets."
+      pt: |
+        Para algo que já tinha acontecido antes de outro fato passado, use o **passado de сум + forma em -л** ou o **passado de има + adjetivo verbal**:
+
+        - **Кога дојдов, тој веќе беше заминал.** "Quando cheguei, ele já tinha ido embora."
+        - **Имав купено билети.** "Eu tinha comprado ingressos."
+    table:
+      head: {en: [Person, with сум, with има], pt: [Pessoa, com сум, com има]}
+      rows:
+      - [јас, бев заминал, имав купено]
+      - [ти, беше заминал, имаше купено]
+      - [тој / таа, беше заминал / заминала, имаше купено]
+      - [ние, бевме заминале, имавме купено]
+      - [тие, беа заминале, имаа купено]
+    mistakes:
+    - wrong: Кога дојдов, тој веќе замина.
+      right: Кога дојдов, тој веќе беше заминал.
+      why: {en: "*Had left* before my arrival: pluperfect.", pt: "*Tinha saído* antes da minha chegada: mais-que-perfeito."}
+    examples:
+    - ["Кога стигнавме, филмот веќе беше почнал.", "When we arrived the film had already started.", "Quando chegamos o filme já tinha começado.", "беше"]
+    - [Не знаев дека ти беше заборавил., I didn't know you had forgotten., Eu não sabia que você tinha esquecido., беше]
+    - [Имав прочитано за тоа., I had read about that., Eu tinha lido sobre isso., Имав]
+    match: [{seq: [{word: [бев, беше, бевме, бевте, беа]}, {pos: verb, tense: lpart, re: "(л|ла|ло|ле)$"}], gap: 0}, {seq: [{word: [имав, имаше, имавме, имавте, имаа]}, {pos: verb, re: "(но|то)$"}], gap: 0}]
+    pool: [бев, беше, бевме, бевте, беа, имав, имаше, имавме, имаа, сум, е]
+
+- title: {en: Would and if, pt: Futuro do pretérito e condições}
+  lessons:
+  - id: b1-future-past
+    title: ќе одев
+    meaning: {en: "ќе + imperfect: would, was going to", pt: "ќе + imperfeito: iria, ia"}
+    intro:
+      en: |
+        `ќе` with the **imperfect** puts the future into the past: **Ќе одев, но врнеше.** "I was going to go, but it was raining." It is also the *would* of unreal conditions: **Да знаев, ќе ти кажев.** "If I had known, I'd have told you."
+
+        And it describes past habits, like English *would*: **Секое лето ќе одевме на село.** "Every summer we would go to the village."
+      pt: |
+        `ќе` com o **imperfeito** põe o futuro no passado: **Ќе одев, но врнеше.** "Eu ia, mas estava chovendo." É também o *iria / teria* das condições irreais: **Да знаев, ќе ти кажев.** "Se eu soubesse, teria te dito."
+
+        E descreve hábitos passados: **Секое лето ќе одевме на село.** "Todo verão a gente ia para a aldeia."
+    table:
+      head: {en: [Person, ќе + imperfect, Meaning], pt: [Pessoa, ќе + imperfeito, Significado]}
+      rows:
+      - [јас, ќе одев, I would go / eu iria]
+      - [ти, ќе одеше, you would go / você iria]
+      - [тој, ќе одеше, he would go / ele iria]
+      - [ние, ќе одевме, we would go / nós iríamos]
+      - [тие, ќе одеа, they would go / eles iriam]
+    mistakes:
+    - wrong: Да знаев, ќе ти кажам.
+      right: Да знаев, ќе ти кажев.
+      why: {en: "Unreal past: imperfect on both sides.", pt: "Irreal no passado: imperfeito dos dois lados."}
+    examples:
+    - ["Ќе дојдев, ама бев болен.", "I would have come but I was ill.", "Eu teria vindo, mas estava doente.", "дојдев"]
+    - [Знаев дека ќе успееше., I knew he would succeed., Eu sabia que ele ia conseguir., успееше]
+    - [Без тебе ќе се изгубевме., Without you we would have got lost., Sem você teríamos nos perdido., изгубевме]
+    match: {seq: [{word: [ќе]}, {pos: verb, tense: impf}], near: 2, gap: 1, same: [tense]}
+
+  - id: b1-conditional
+    title: би сакал
+    meaning: {en: "би + l-form: would (polite, possible)", pt: "би + forma em -л: gostaria, faria"}
+    intro:
+      en: |
+        **би** (it never changes) + the **l-form** makes the conditional mood: **Би сакал кафе.** "I'd like a coffee." **Би дошла, ако можам.** "I'd come if I could." The l-form agrees with the subject: `сакал` (m.), `сакала` (f.), `сакале` (pl.).
+
+        It is the polite way to ask: **Би можеле ли да ми помогнете?** "Could you help me?"
+      pt: |
+        **би** (que não muda) + a **forma em -л** forma o condicional: **Би сакал кафе.** "Eu gostaria de um café." **Би дошла, ако можам.** "Eu viria, se pudesse." A forma em -л concorda com o sujeito: `сакал` (m.), `сакала` (f.), `сакале` (pl.).
+
+        É o jeito educado de pedir: **Би можеле ли да ми помогнете?** "Poderiam me ajudar?"
+    table:
+      head: {en: [Person, Form, Meaning], pt: [Pessoa, Forma, Significado]}
+      rows:
+      - [јас, би сакал / би сакала, I'd like / eu gostaria]
+      - [ти, би сакал / би сакала, you'd like / você gostaria]
+      - ["тој / таа", "би сакал / би сакала", {"en": "he/she'd like", "pt": "ele/ela gostaria"}]
+      - [ние, би сакале, we'd like / gostaríamos]
+      - [тие, би сакале, they'd like / gostariam]
+    mistakes:
+    - wrong: Би сакам кафе.
+      right: Би сакал кафе.
+      why: {en: "би takes the l-form, not the present.", pt: "би pede a forma em -л, não o presente."}
+    - wrong: (a woman) Би сакал.
+      right: Би сакала.
+      why: {en: "The l-form agrees with the speaker.", pt: "A forma em -л concorda com quem fala."}
+    examples:
+    - [Би сакал една чаша вода., I'd like a glass of water., Eu gostaria de um copo d'água., сакал]
+    - ["Што би направила на мое место?", "What would you do in my place?", "O que você faria no meu lugar?", "направила"]
+    - ["Би можеле ли да ми помогнете?", "Could you help me?", "Poderiam me ajudar?", "можеле"]
+    match: {seq: [{word: [би]}, {pos: verb, tense: lpart, re: "(л|ла|ло|ле)$"}], near: 2, gap: 1, same: [tense]}
+
+  - id: b1-if-real
+    title: ако
+    meaning: {en: "real conditions: if…", pt: "condições reais: se…"}
+    intro:
+      en: |
+        **ако** + present for a real condition; the result is usually in the future: **Ако врне, ќе останам дома.** "If it rains, I'll stay at home." After `ако` there is **no ќе**, and a perfective verb is fine in the present: **Ако дојдеш, јави се.** "If you come, call."
+      pt: |
+        **ако** + presente para uma condição real; o resultado costuma ir no futuro: **Ако врне, ќе останам дома.** "Se chover, fico em casa." Depois de `ако` **não há ќе**, e um verbo perfectivo vai bem no presente: **Ако дојдеш, јави се.** "Se você vier, ligue." (O português usa o futuro do subjuntivo: *se chover, se vier*.)
+    mistakes:
+    - wrong: Ако ќе врне, ќе останам дома.
+      right: Ако врне, ќе останам дома.
+      why: {en: "No ќе after ако.", pt: "Sem ќе depois de ако."}
+    examples:
+    - ["Ако врне, ќе останам дома.", "If it rains, I'll stay at home.", "Se chover, fico em casa.", "Ако"]
+    - ["Ако сакаш, можеме да одиме заедно.", "If you like, we can go together.", "Se você quiser, podemos ir juntos.", "Ако"]
+    - [Јави ми се ако имаш време., Call me if you have time., Me liga se tiver tempo., ако]
+    match: {seq: [{word: [ако]}, {pos: verb}], near: 2, gap: 0}
+    pool: [ако, да, кога, дали, ли, ќе]
+
+  - id: b1-if-unreal
+    title: да имав…, ќе купев
+    meaning: {en: "unreal conditions: if I had…, I would…", pt: "condições irreais: se eu tivesse…, eu iria…"}
+    intro:
+      en: |
+        An unreal or contrary-to-fact condition is **да + imperfect**, and its result **ќе + imperfect**: **Да имав пари, ќе купев кола.** "If I had money, I'd buy a car." The same form covers present and past: **Да знаев, ќе дојдев.** "Had I known, I would have come."
+
+        The negative result is **немаше да** + present: **Да знаев, немаше да дојдам.** "Had I known, I wouldn't have come." With **би** + l-form the result sounds softer: **Да имам време, би дошол.**
+      pt: |
+        Uma condição irreal é **да + imperfeito**, e o resultado **ќе + imperfeito**: **Да имав пари, ќе купев кола.** "Se eu tivesse dinheiro, compraria um carro." A mesma forma serve para presente e passado: **Да знаев, ќе дојдев.** "Se eu soubesse, teria vindo."
+
+        O resultado negativo é **немаше да** + presente: **Да знаев, немаше да дојдам.** "Se eu soubesse, não teria vindo." Com **би** + forma em -л o resultado soa mais suave: **Да имам време, би дошол.**
+    table:
+      head: {en: [Condition, Result, Meaning], pt: [Condição, Resultado, Significado]}
+      rows:
+      - ["Да имав пари", "ќе купев кола.", {"en": "If I had money, I'd buy a car", "pt": "se eu tivesse dinheiro, compraria um carro"}]
+      - ["Да знаев", "ќе ти кажев.", {"en": "If I'd known, I'd have told you", "pt": "se eu soubesse, teria te dito"}]
+      - ["Да бев тука", "ќе ти помогнев.", {"en": "If I'd been here, I'd have helped you", "pt": "se eu estivesse aqui, teria te ajudado"}]
+    mistakes:
+    - wrong: Ако имав пари, ќе купам кола.
+      right: Да имав пари, ќе купев кола.
+      why: {en: "Unreal: да + imperfect, then ќе + imperfect.", pt: "Irreal: да + imperfeito, depois ќе + imperfeito."}
+    examples:
+    - ["Да имав пари, ќе патував.", "If I had money, I would travel.", "Se eu tivesse dinheiro, viajaria.", "имав"]
+    - ["Да знаев, ќе дојдев порано.", "Had I known, I'd have come earlier.", "Se eu soubesse, teria vindo antes.", "знаев"]
+    - ["Да бев на твое место, немаше да го направам тоа.", "If I were you, I wouldn't do that.", "Se eu fosse você, não faria isso.", "бев"]
+    match: {seq: [{word: [да], start: true, noTrail: true}, {pos: verb, tense: impf}], near: 1, gap: 1, same: [tense]}
+
+- title: {en: Reported events, pt: Fatos relatados}
+  lessons:
+  - id: b1-renarrative
+    title: тој бил, тие заминале
+    meaning: {en: "reported past: apparently, they say", pt: "passado relatado: pelo jeito, dizem que"}
+    intro:
+      en: |
+        Macedonian marks whether the speaker **witnessed** a past event. The aorist and imperfect vouch for it; the **l-form without сум** reports it as hearsay or inference: **Тој беше болен.** "He was ill (I know)." vs **Тој бил болен.** "He was ill, apparently."
+
+        News, stories and gossip use it constantly: **Синоќа имало земјотрес.** "There was an earthquake last night (I hear)." With surprise at something just discovered it is the *admirative*: **Ти си бил паметен!** "Why, you're clever!"
+      pt: |
+        O macedônio marca se quem fala **testemunhou** o fato passado. O aoristo e o imperfeito garantem; a **forma em -л sem сум** relata por ouvir dizer ou dedução: **Тој беше болен.** "Ele estava doente (eu sei)." vs **Тој бил болен.** "Ele estava doente, pelo visto."
+
+        Notícias, histórias e fofocas a usam o tempo todo: **Синоќа имало земјотрес.** "Ontem à noite houve um terremoto (dizem)." Com surpresa diante de algo recém-descoberto é o *admirativo*: **Ти си бил паметен!** "Olha só, você é esperto!"
+    table:
+      head: {en: [Witnessed, Reported, Meaning], pt: [Testemunhado, Relatado, Significado]}
+      rows:
+      - [беше болен, бил болен, "he was ill / estava doente"]
+      - [заминаа, заминале, "they left / foram embora"]
+      - [имаше земјотрес, имало земјотрес, "there was an earthquake / houve um terremoto"]
+      - [дојде, дошол, "he came / veio"]
+    mistakes:
+    - wrong: "(a rumour) Тој замина во Америка."
+      right: Тој заминал во Америка.
+      why: {en: "Not witnessed: l-form.", pt: "Não testemunhado: forma em -л."}
+    examples:
+    - [Велат дека тој бил многу богат., They say he was very rich., Dizem que ele era muito rico., бил]
+    - [Синоќа имало силен ветер., There was a strong wind last night (apparently)., Parece que ontem à noite ventou forte., имало]
+    - [Тие се преселиле во Битола., They've moved to Bitola (I hear)., Eles se mudaram para Bitola (dizem)., преселиле]
+    - ["Ти си бил добар готвач!", "Why, you're a good cook!", "Olha só, você cozinha bem!", "бил"]
+    match: {seq: [{word: [бил, била, било, биле, имало, имал, имала, имале]}]}
+    pool: [бил, била, било, биле, беше, беа, имало, имаше]
+
+- title: {en: Joining sentences, pt: Ligando frases}
+  lessons:
+  - id: b1-relative
+    title: кој, која, што
+    meaning: {en: "relative clauses: who, which, that", pt: "orações relativas: que, o qual, quem"}
+    intro:
+      en: |
+        Two relative words: **што** (*that*), invariable and the most common in speech, and **кој / која / кое / кои** (*who, which*), which agree with the noun: **човекот кој / што живее тука** "the man who lives here", **жената која ја видов** "the woman (whom) I saw".
+
+        When the relative is the **object**, a short pronoun repeats it inside the clause: **книгата што ја купив** "the book that I bought (it)". After prepositions use the кој-forms: **со кого** "with whom", **за која** "about which", **во кој** "in which".
+      pt: |
+        Duas palavras relativas: **што** (*que*), invariável e a mais comum na fala, e **кој / која / кое / кои** (*o qual, quem*), que concordam com o substantivo: **човекот кој / што живее тука** "o homem que mora aqui", **жената која ја видов** "a mulher que eu vi".
+
+        Quando o relativo é **objeto**, um pronome curto o repete dentro da oração: **книгата што ја купив** "o livro que eu comprei (o)". Depois de preposição use as formas de кој: **со кого** "com quem", **за која** "sobre a qual", **во кој** "no qual".
+    table:
+      head: {en: [Noun, Relative, Example], pt: [Substantivo, Relativo, Exemplo]}
+      rows:
+      - ["човекот (m.)", кој / што, човекот кој пее]
+      - ["жената (f.)", која / што, жената која ја познавам]
+      - ["детето (n.)", кое / што, детето кое плаче]
+      - ["луѓето (pl.)", кои / што, луѓето кои чекаат]
+      - [{"en": "person after prep.", "pt": "pessoa depois de prep."}, "кого", "девојката со која зборував"]
+    mistakes:
+    - wrong: книгата што купив
+      right: книгата што ја купив
+      why: {en: "Object relative: repeat it with a short pronoun.", pt: "Relativo objeto: repita com o pronome curto."}
+    - wrong: жената кој
+      right: жената која
+      why: {en: "кој agrees with the noun.", pt: "кој concorda com o substantivo."}
+    examples:
+    - [Човекот кој живее тука е лекар., The man who lives here is a doctor., O homem que mora aqui é médico., кој]
+    - [Ова е книгата што ја барав., This is the book I was looking for., Este é o livro que eu procurava., што]
+    - [Девојката со која зборуваше е моја сестра., The girl you were talking to is my sister., A moça com quem você falava é minha irmã., која]
+    match: {seq: [{pos: noun, case: def}, {word: [кој, која, кое, кои, што, којшто, коишто, кого, чиј, чија]}], gap: 1}
+    pool: [кој, која, кое, кои, што, кого, каде, кога]
+
+  - id: b1-time-conj
+    title: кога, додека, штом, откако
+    meaning: {en: "time clauses: when, while, as soon as, after", pt: "orações de tempo: quando, enquanto, assim que, depois que"}
+    intro:
+      en: |
+        - **кога** when · **додека** while (also *until*, with не: **додека не дојдеш** "until you come") · **штом** as soon as · **откако** after · **пред да** before (+ present: **пред да заминеш**) · **откога** since
+
+        For the future, **кога** takes **ќе** (unlike **ако**, which never does): **Кога ќе стигнеш, јави се.** "When you arrive, call." The others take the present, a perfective one for a single event: **Штом дојде, ќе почнеме.**
+      pt: |
+        - **кога** quando · **додека** enquanto (também *até que*, com не: **додека не дојдеш** "até você chegar") · **штом** assim que · **откако** depois que · **пред да** antes de (+ presente: **пред да заминеш**) · **откога** desde que
+
+        Para o futuro, depois de **кога** se usa **ќе**: **Кога ќе стигнеш, јави се.** "Quando você chegar, ligue." (Diferente de ако, que não aceita ќе.)
+    mistakes:
+    - wrong: Пред заминеш, јави се.
+      right: Пред да заминеш, јави се.
+      why: {en: "*before* + verb is пред да.", pt: "*antes de* + verbo é пред да."}
+    examples:
+    - ["Кога ќе стигнеш, јави ми се.", "When you arrive, call me.", "Quando chegar, me liga.", "Кога"]
+    - ["Додека јас готвам, ти постави маса.", "While I cook, you lay the table.", "Enquanto eu cozinho, você põe a mesa.", "Додека"]
+    - ["Штом дојде, ќе почнеме.", "As soon as he comes, we'll start.", "Assim que ele chegar, começamos.", "Штом"]
+    - [Измиј ги рацете пред да јадеш., Wash your hands before you eat., Lave as mãos antes de comer., пред]
+    match: {seq: [{word: [кога, додека, штом, откако, откога, пред]}, {pos: verb}], near: 2, gap: 0}
+    pool: [кога, додека, штом, откако, откога, пред, ако, дали]
+
+  - id: b1-cause-conj
+    title: бидејќи, затоа што, иако, за да
+    meaning: {en: "because, although, so that", pt: "porque, embora, para que"}
+    intro:
+      en: |
+        - **бидејќи / зашто / затоа што** because · **затоа** that's why · **па** so, and then · **иако** although · **но / ама** but · **туку** but rather (after a negative) · **за да** so that, in order to (+ present)
+
+        **За да** is how you say *in order to*: **Учам за да положам.** "I study (in order) to pass."
+      pt: |
+        - **бидејќи / зашто / затоа што** porque · **затоа** por isso · **па** então, e aí · **иако** embora · **но / ама** mas · **туку** mas sim (depois de negação) · **за да** para (que) (+ presente)
+
+        **За да** é o *para* + verbo: **Учам за да положам.** "Estudo para passar."
+    mistakes:
+    - wrong: Не е црвено, но сино.
+      right: Не е црвено, туку сино.
+      why: {en: "*not X but Y* is туку.", pt: "*não X, mas Y* é туку."}
+    - wrong: Дојдов да те видам.
+      right: Дојдов за да те видам.
+      why: {en: "Both exist; за да states the purpose clearly.", pt: "Os dois existem; за да deixa claro o propósito."}
+    examples:
+    - [Останав дома бидејќи бев болен., I stayed at home because I was ill., Fiquei em casa porque estava doente., бидејќи]
+    - ["Иако е стар, тој е многу силен.", "Although he's old, he's very strong.", "Embora seja velho, é muito forte.", "Иако"]
+    - [Учам за да положам., I'm studying to pass., Estudo para passar., за]
+    - ["Не е црвено, туку сино.", "It isn't red, it's blue.", "Não é vermelho, é azul.", "туку"]
+    match: {seq: [{word: [бидејќи, зашто, затоа, иако, туку, ама, но]}]}
+    pool: [бидејќи, затоа, иако, туку, но, ама, па, за]
+
+  - id: b1-reported-speech
+    title: дека, дали
+    meaning: {en: "reported speech: that, whether", pt: "discurso indireto: que, se"}
+    intro:
+      en: |
+        After verbs of saying and thinking: **дека** (or colloquial **оти**) "that" for statements, **дали** "whether" for yes/no questions, and **да** for commands and wishes:
+
+        - **Рече дека ќе дојде.** "He said he would come." (tense as in the original: *will come*)
+        - **Ме праша дали сум гладен.** "She asked me if I was hungry."
+        - **Ми рече да чекам.** "He told me to wait."
+      pt: |
+        Depois de verbos de dizer e pensar: **дека** (ou, na fala, **оти**) "que" para afirmações, **дали** "se" para perguntas de sim ou não, e **да** para ordens e desejos:
+
+        - **Рече дека ќе дојде.** "Disse que viria." (o tempo fica como no original: *vai vir*)
+        - **Ме праша дали сум гладен.** "Ela me perguntou se eu estava com fome."
+        - **Ми рече да чекам.** "Ele me disse para esperar."
+    mistakes:
+    - wrong: Ме праша ако сум гладен.
+      right: Ме праша дали сум гладен.
+      why: {en: "*if = whether* is дали; ако is only conditional.", pt: "*se = se acaso* é дали; ако é só condicional."}
+    examples:
+    - [Мислам дека е во право., I think he's right., Acho que ele tem razão., дека]
+    - [Не знам дали ќе дојде., I don't know if he'll come., Não sei se ele vem., дали]
+    - [Ми рече да чекам., He told me to wait., Ele me disse para esperar., да]
+    match: {seq: [{word: [рече, кажа, вели, велат, мислам, мисли, мислиш, знам, знае, знаеш, праша, слушнав, верувам, сигурен]}, {word: [дека, оти, дали]}], near: 1, gap: 1}
+    pool: [дека, дали, да, ако, што, оти]
+
+- title: {en: Verb-based forms, pt: Formas derivadas do verbo}
+  lessons:
+  - id: b1-verbal-adverb
+    title: одејќи, читајќи
+    meaning: {en: "the verbal adverb: while doing", pt: "o gerúndio: fazendo, enquanto faz"}
+    intro:
+      en: |
+        From **imperfective** verbs, **-јќи** added to the present stem vowel gives an invariable form meaning *while / by doing*: `оди` → **одејќи** "(while) walking", `чита` → **читајќи**, `зборува` → **зборувајќи**. It is more bookish than English *-ing*; speech often says **додека** + verb.
+      pt: |
+        Dos verbos **imperfectivos**, **-јќи** depois da vogal do presente forma uma palavra invariável que significa *fazendo / enquanto faz*: `оди` → **одејќи** "andando", `чита` → **читајќи**, `зборува` → **зборувајќи**. É mais literário que o nosso gerúndio; a fala prefere **додека** + verbo.
+    table:
+      head: {en: [Verb, Verbal adverb], pt: [Verbo, Gerúndio]}
+      rows:
+      - [оди, одејќи]
+      - [чита, читајќи]
+      - [зборува, зборувајќи]
+      - [пее, пеејќи]
+      - [гледа, гледајќи]
+    mistakes:
+    - wrong: прочитајќи
+      right: читајќи
+      why: {en: "Only imperfective verbs make it.", pt: "Só verbos imperfectivos o formam."}
+    examples:
+    - ["Одејќи по улица, сретнав пријател.", "Walking down the street, I met a friend.", "Andando pela rua, encontrei um amigo.", "Одејќи"]
+    - [Учеше слушајќи музика., He studied listening to music., Ele estudava ouvindo música., слушајќи]
+    - [Влезе пеејќи., She came in singing., Ela entrou cantando., пеејќи]
+    match: {seq: [{re: "јќи$"}]}
+
+  - id: b1-verbal-noun
+    title: читање, пишување
+    meaning: {en: "the verbal noun: reading, writing", pt: "o substantivo verbal: a leitura, o escrever"}
+    intro:
+      en: |
+        **-ње** on the stem of an **imperfective** verb makes a neuter noun for the activity: `чита` → **читање** "reading", `пишува` → **пишување**, `оди` → **одење**, `пие` → **пиење**. It takes the article like any neuter noun: **читањето**, and is the usual word in signs and rules: **Пушењето е забрането.** "Smoking is forbidden."
+      pt: |
+        **-ње** no radical de um verbo **imperfectivo** forma um substantivo neutro para a atividade: `чита` → **читање** "leitura, o ler", `пишува` → **пишување**, `оди` → **одење**, `пие` → **пиење**. Leva artigo como qualquer neutro: **читањето**, e é a palavra comum em avisos: **Пушењето е забрането.** "É proibido fumar."
+    table:
+      head: {en: [Verb, Verbal noun, With the article], pt: [Verbo, Substantivo, Com artigo]}
+      rows:
+      - [чита, читање, читањето]
+      - [пишува, пишување, пишувањето]
+      - [пуши, пушење, пушењето]
+      - [учи, учење, учењето]
+      - [пее, пеење, пеењето]
+    examples:
+    - [Пушењето е забрането., Smoking is forbidden., É proibido fumar., Пушењето]
+    - [Сакам читање., I like reading., Gosto de ler., читање]
+    - [Учењето јазици е забавно., Learning languages is fun., Aprender línguas é divertido., Учењето]
+    match: {seq: [{re: "[аеи]ње(то)?$", pos: noun}]}
+
+  - id: b1-passive
+    title: е затворено, се продава
+    meaning: {en: "the passive and states", pt: "a voz passiva e os estados"}
+    intro:
+      en: |
+        Two passives:
+
+        - **сум + verbal adjective** (-н / -т, agreeing): a state or result — **Вратата е затворена.** "The door is closed." **Роден сум во Скопје.** "I was born in Skopje." **Книгата е напишана во 1990.**
+        - **се + verb**: a general or impersonal passive — **Куќата се продава.** "The house is for sale." **Тука се зборува англиски.** "English is spoken here."
+      pt: |
+        Duas passivas:
+
+        - **сум + adjetivo verbal** (-н / -т, concordando): um estado ou resultado — **Вратата е затворена.** "A porta está fechada." **Роден сум во Скопје.** "Nasci em Skopje." **Книгата е напишана во 1990.**
+        - **се + verbo**: passiva geral ou impessoal — **Куќата се продава.** "Vende-se a casa." **Тука се зборува англиски.** "Aqui se fala inglês." (Igual ao *se* do português.)
+    table:
+      head: {en: [Verb, m., f., n., pl.], pt: [Verbo, m., f., n., pl.]}
+      rows:
+      - [затвори, затворен, затворена, затворено, затворени]
+      - [роди, роден, родена, родено, родени]
+      - [напише, напишан, напишана, напишано, напишани]
+      - [скрие, скриен, скриена, скриено, скриени]
+      - [испие, испиен, испиена, испиено, испиени]
+    mistakes:
+    - wrong: Вратата е затворен.
+      right: Вратата е затворена.
+      why: {en: "The participle agrees with the subject.", pt: "O particípio concorda com o sujeito."}
+    examples:
+    - [Продавницата е затворена., The shop is closed., A loja está fechada., затворена]
+    - ["Каде си роден?", "Where were you born?", "Onde você nasceu?", "роден"]
+    - [Станот се издава., The flat is for rent., Aluga-se o apartamento., се]
+    # a participle (a verb form for the reader), not an adjective that happens to end in -ен (гладен)
+    match: {seq: [{word: [сум, си, е, сме, сте, се, бев, беше, беа, биде, бидат]}, {pos: verb, tense: lpart, re: "(ен|ан|ат|ет|ена|ана|ата|ета|ено|ано|ато|ето|ени|ани|ати|ети)$"}], near: 1, gap: 1}
+
+- title: {en: Someone and no one, pt: Alguém e ninguém}
+  lessons:
+  - id: b1-indefinite
+    title: некој, никој, секој
+    meaning: {en: "someone, no one, everyone…", pt: "alguém, ninguém, todos…"}
+    intro:
+      en: |
+        Question words make whole families with **не-** (some-), **ни-** (no-), **се-** (every-) and **било** (any-):
+
+        | | who | what | where | when |
+        |---|---|---|---|---|
+        | some- | некој | нешто | некаде | некогаш |
+        | no- | никој | ништо | никаде | никогаш |
+        | every- | секој | сè | секаде | секогаш |
+        | any- | кој било | што било | каде било | кога било |
+
+        The **ни-** words come with **не** on the verb (double negative): **Никој не дојде.** "Nobody came." **Ништо не знам.** "I don't know anything."
+      pt: |
+        As palavras interrogativas formam famílias com **не-** (algum), **ни-** (nenhum), **се-** (todo) e **било** (qualquer):
+
+        | | quem | o quê | onde | quando |
+        |---|---|---|---|---|
+        | algum | некој | нешто | некаде | некогаш |
+        | nenhum | никој | ништо | никаде | никогаш |
+        | todo | секој | сè | секаде | секогаш |
+        | qualquer | кој било | што било | каде било | кога било |
+
+        As palavras com **ни-** vêm com **не** no verbo (dupla negação, como em português): **Никој не дојде.** "Ninguém veio." **Ништо не знам.** "Não sei nada."
+    mistakes:
+    - wrong: Никој дојде.
+      right: Никој не дојде.
+      why: {en: "ни-words need не on the verb.", pt: "Palavras com ни- pedem не no verbo."}
+    - wrong: се (everything)
+      right: сè
+      why: {en: "*everything* is written сè, with the mark; се is *oneself*.", pt: "*tudo* se escreve сè, com acento; се é *se*."}
+    examples:
+    - [Некој чука на вратата., Someone is knocking at the door., Alguém está batendo na porta., Некој]
+    - [Никој не знае., Nobody knows., Ninguém sabe., Никој]
+    - [Секој има право на мислење., Everyone has a right to an opinion., Todos têm direito a uma opinião., Секој]
+    - [Ништо не се случи., Nothing happened., Não aconteceu nada., Ништо]
+    match: {seq: [{word: [некој, никој, секој, нешто, ништо, сè, некаде, никаде, секаде, насекаде, некогаш, никогаш, секогаш, некого, никого, секого]}]}
+    pool: [некој, никој, секој, нешто, ништо, сè, некаде, никаде, секаде, некогаш, никогаш, секогаш]

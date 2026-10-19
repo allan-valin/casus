@@ -15,7 +15,13 @@ if [ ! -d "$V/jlpt-grammar-enhanced" ]; then
   rm -rf "$T"
 fi
 # Tatoeba, CC BY 2.0 FR: sentences and translation links per language
-for f in jpn/jpn_sentences.tsv.bz2 eng/eng_sentences.tsv.bz2 por/por_sentences.tsv.bz2 jpn/jpn-eng_links.tsv.bz2 jpn/jpn-por_links.tsv.bz2; do
+# one Tatoeba code per Learn language (tools/learn_curriculum.mjs TATOEBA), plus English and Portuguese for translations
+for t3 in jpn mkd; do
+  for f in "$t3/${t3}_sentences.tsv.bz2" "$t3/$t3-eng_links.tsv.bz2" "$t3/$t3-por_links.tsv.bz2"; do
+    [ -f "$V/tatoeba/$(basename $f)" ] || curl -sfL -o "$V/tatoeba/$(basename $f)" "https://downloads.tatoeba.org/exports/per_language/$f" || true
+  done
+done
+for f in eng/eng_sentences.tsv.bz2 por/por_sentences.tsv.bz2; do
   [ -f "$V/tatoeba/$(basename $f)" ] || curl -sfL -o "$V/tatoeba/$(basename $f)" "https://downloads.tatoeba.org/exports/per_language/$f"
 done
 echo "Learn sources in $V"

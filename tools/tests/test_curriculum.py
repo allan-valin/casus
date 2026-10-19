@@ -27,3 +27,14 @@ def test_curriculum_lesson_pages_in_both_languages():
     gap = next(q for q in qs if q["type"] == "gap")
     assert gap["answer"] == "сум" and ["＿＿", None] in gap["furi"] and gap["en"] == "I am a student."
     assert any(q["type"] == "translate" and q["answer"] == "I am a student." and q.get("pt") == "Eu sou estudante." for q in qs)
+
+
+def test_table_cells_can_differ_per_language(tmp_path):
+    import yaml
+    data = yaml.safe_load(FIX.read_text(encoding="utf-8"))
+    data["levels"][0]["topics"][0]["lessons"][0]["table"]["rows"].append(["вие", {"en": "you (polite)", "pt": "o senhor"}])
+    f = tmp_path / "xx.yml"
+    f.write_text(yaml.safe_dump(data, allow_unicode=True), encoding="utf-8")
+    _, lessons, _ = curriculum_learn(f)
+    html = lessons["a1-sum"]["sections"][0]["html"]
+    assert "<td>o senhor</td>" in html["pt"] and "<td>you (polite)</td>" in html["en"]

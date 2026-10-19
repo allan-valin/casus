@@ -1,0 +1,65 @@
+id: C2
+topics:
+
+- title: {en: Shades of meaning, pt: Nuances}
+  lessons:
+  - id: c2-admirative
+    title: Ти си бил паметен!
+    meaning: {en: "surprise and irony with the l-form", pt: "surpresa e ironia com a forma em -л"}
+    intro:
+      en: |
+        The l-form with **сум** in the present, used about something **just discovered**, expresses surprise (the *admirative*): **Ти си бил паметен!** "Why, you're clever (I didn't know)!" **Ова било вкусно!** "This is delicious (I didn't expect it)!" Said of a claim one doubts, it turns ironic (*dubitative*): **Тој бил чесен, бил!** "Honest, him? Sure!"
+      pt: |
+        A forma em -л com **сум** no presente, sobre algo **recém-descoberto**, exprime surpresa (o *admirativo*): **Ти си бил паметен!** "Olha só, você é esperto!" **Ова било вкусно!** "Que gostoso (eu não esperava)!" Sobre uma afirmação de que se duvida, vira ironia (*dubitativo*): **Тој бил чесен, бил!** "Honesto, ele? Sei!"
+    examples:
+    - [Ова било многу вкусно!, This is really tasty!, Que gostoso!, било]
+    - [Ти си бил добар пејач!, "Why, you're a good singer!", "Olha só, você canta bem!", бил]
+    - ["Тој бил чесен, бил!", "Him, honest? Sure!", "Ele, honesto? Sei!", "бил"]
+    match: {seq: [{word: [си, сте, сум, сме]}, {word: [бил, била, било, биле]}], gap: 1}
+    pool: [бил, била, било, биле, беше, е]
+
+  - id: c2-aspect-politeness
+    title: Седнете! – Седнувајте!
+    meaning: {en: "aspect in commands: polite or urgent", pt: "aspecto nas ordens: cortês ou urgente"}
+    intro:
+      en: |
+        In commands, the **perfective** is the neutral request for one action (**Седнете.** "Sit down."), while the **imperfective** can sound warmer and inviting — "go ahead" (**Седнувајте, повелете!** "Do sit down, please!") — or impatient, urging an action to start (**Јадете!** "Eat, go on!"). Negative commands use the imperfective (**Не седнувајте тука.**).
+      pt: |
+        Nas ordens, o **perfectivo** é o pedido neutro para uma ação (**Седнете.** "Sentem-se."), enquanto o **imperfectivo** pode soar mais acolhedor — "fique à vontade" (**Седнувајте, повелете!** "Sentem-se, por favor!") — ou impaciente, mandando começar (**Јадете!** "Comam, vamos!"). Ordens negativas usam o imperfectivo (**Не седнувајте тука.**).
+    examples:
+    - ["Повелете, седнувајте.", "Please, do sit down.", "Por favor, sentem-se.", "седнувајте"]
+    - [Не пушете тука., Don't smoke here., Não fumem aqui., пушете]
+    match: {seq: [{pos: verb, tense: imp, aspect: impf}]}
+
+- title: {en: Register and set phrases, pt: Registro e expressões fixas}
+  lessons:
+  - id: c2-register
+    title: Вие, повелете, господине
+    meaning: {en: "formal and informal address", pt: "tratamento formal e informal"}
+    intro:
+      en: |
+        **Вие** (capitalised in letters) is the polite *you*, with plural verbs: **Како сте?** — but adjectives and l-forms agree with the person: **Вие сте уморна?** (to a woman). **Повелете** "here you are / please, go ahead / how can I help?", **Ве молам** "please", **господине / госпоѓо / госпоѓице** "sir / madam / miss". **Ти** is for friends, family, children and, increasingly, colleagues.
+      pt: |
+        **Вие** (com maiúscula em cartas) é o *o senhor / a senhora*, com verbo no plural: **Како сте?** — mas adjetivos e formas em -л concordam com a pessoa: **Вие сте уморна?** (para uma mulher). **Повелете** "aqui está / por favor, fique à vontade / posso ajudar?", **Ве молам** "por favor", **господине / госпоѓо / госпоѓице** "senhor / senhora / senhorita". **Ти** é para amigos, família, crianças e, cada vez mais, colegas.
+    examples:
+    - ["Повелете, што ќе пиете?", "Here you are — what will you drink?", "Pois não, o que vão beber?", "Повелете"]
+    - ["Ве молам, седнете.", "Please, sit down.", "Por favor, sente-se.", "Ве"]
+    - ["Благодарам, господине.", "Thank you, sir.", "Obrigado, senhor.", "господине"]
+    match: {seq: [{word: [повелете, господине, госпоѓо, госпоѓице, извинете, благодарам, Ве, Вие]}]}
+    pool: [повелете, господине, госпоѓо, извинете, благодарам, ве, вие, ти, те]
+
+  - id: c2-set-phrases
+    title: На здравје! Со среќа!
+    meaning: {en: "everyday set phrases", pt: "expressões do dia a dia"}
+    intro:
+      en: |
+        Phrases that every speaker uses: **Добар ден** (good day), **Пријатно** (enjoy your meal / goodbye), **На здравје!** (cheers / bless you), **Со среќа!** (good luck), **Нека ти е со среќа!** (congratulations on something new), **Честит роденден!**, **Среќен пат!** (have a good trip), **Ајде** (come on / let's go / bye), **Нема врска** (never mind), **Се гледаме** (see you).
+      pt: |
+        Expressões que todo falante usa: **Добар ден** (bom dia), **Пријатно** (bom apetite / tchau), **На здравје!** (saúde!), **Со среќа!** (boa sorte), **Нека ти е со среќа!** (parabéns por algo novo), **Честит роденден!**, **Среќен пат!** (boa viagem), **Ајде** (vamos / anda / tchau), **Нема врска** (deixa pra lá), **Се гледаме** (até mais).
+    examples:
+    - [На здравје!, Cheers!, Saúde!, здравје]
+    - [Среќен пат!, Have a good trip!, Boa viagem!, Среќен]
+    - [Нема врска., Never mind., Deixa pra lá., врска]
+    - ["Ајде, се гледаме.", "OK, see you.", "Beleza, até mais.", "Ајде"]
+    match: {seq: [{word: [пријатно, здравје, среќа, среќен, среќна, честит, честитам, ајде, врска, повелете]}]}
+    pool: [пријатно, здравје, среќа, среќен, честит, ајде, врска, повелете]

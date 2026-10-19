@@ -35,7 +35,7 @@ def _table(t: dict) -> dict:
     out = {}
     for k in LANGS:
         cells = "".join(f"<th>{html.escape(h)}</th>" for h in head[k])
-        rows = "".join("<tr>" + "".join(f"<td>{_inline(c)}</td>" for c in r) + "</tr>" for r in t["rows"])
+        rows = "".join("<tr>" + "".join(f"<td>{_inline(_both(c)[k] if isinstance(c, dict) else c)}</td>" for c in r) + "</tr>" for r in t["rows"])
         note = _both(t.get("note", ""))[k]
         out[k] = f"<table><thead><tr>{cells}</tr></thead><tbody>{rows}</tbody></table>" + (_md(note) if note else "")
     return out
@@ -45,12 +45,13 @@ def _inline(text) -> str:
     return re.sub(r"^<p>(.*)</p>$", r"\1", _md(str(text)).strip(), flags=re.S)
 
 
-def _gap_furi(text: str, target: str) -> list | None:
-    m = re.search(rf"(?<![\w-]){re.escape(target)}(?![\w-])", text)
+def _gap_furi(text: str, target: str) -> tuple[list, str] | None:
+    """the sentence with the target blanked (any case: Не at the start is the target не), and the target as written"""
+    m = re.search(rf"(?<![\w-]){re.escape(target)}(?![\w-])", text, flags=re.I)
     if not m:
         return None
     parts = [[text[: m.start()], None], ["＿＿", None], [text[m.end():], None]]
-    return [p for p in parts if p[0]]
+    return [p for p in parts if p[0]], m.group(0)
 
 
 def _load(path: Path) -> dict:
@@ -86,8 +87,9 @@ def lesson_page(src: dict) -> dict:
         page["match"] = src["match"]
     if src.get("pool"):
         page["pool"] = src["pool"]
-    if src.get("swaps"):
-        page["swaps"] = src["swaps"]
+    for key in ("swaps", "prefixes"):
+        if src.get(key):
+            page[key] = src[key]
     return page
 
 
@@ -105,9 +107,9 @@ def curriculum_learn(path: Path) -> tuple[dict, dict, dict]:
                 entries.append({"id": page["id"], "title": page["title"], "meaning": page["meaning"]})
                 mine = []
                 for e in page["examples"]:
-                    gap = _gap_furi(e["text"], e["target"]) if e.get("target") else None
-                    if gap:
-                        mine.append({"type": "gap", "furi": gap, "en": e["en"], "pt": e["pt"], "answer": e["target"]})
+                    found = _gap_furi(e["text"], e["target"]) if e.get("target") else None
+                    if found:
+                        mine.append({"type": "gap", "furi": found[0], "en": e["en"], "pt": e["pt"], "answer": found[1]})
                     mine.append({"type": "translate", "furi": [[e["text"], None]], "answer": e["en"], "pt": e["pt"]})
                 qs[page["id"]] = {"pools": {"gap": [x for x in src.get("pool", [])]}, "qs": mine}
             topics.append({"id": f"{lv['id']}-t{t_k}", "kind": "grammar", "title": _both(topic["title"]), "lessons": entries})

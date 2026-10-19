@@ -12,7 +12,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import path from 'node:path';
-import { matchRule, formPool, gapText, spellingVariants, unsuitable } from './learn_match.mjs';
+import { matchRule, formPool, gapText, spellingVariants, prefixVariants, unsuitable } from './learn_match.mjs';
 import { gapRoman } from './learn_examples.mjs';
 
 export const TATOEBA = { mk: 'mkd', ar: 'ara', la: 'lat', grc: 'grc', de: 'deu', ru: 'rus', ko: 'kor', zh: 'cmn', fi: 'fin', el: 'ell', sa: 'san', cs: 'ces', pl: 'pol', tr: 'tur', hu: 'hun', is: 'isl', pt: 'por', en: 'eng', es: 'spa' };
@@ -64,7 +64,7 @@ async function main(code) {
   const lessons = [];
   for (const level of index.levels) for (const topic of level.topics) for (const e of topic.lessons) {
     const l = await json(`learn/${e.id}.json`);
-    if (l.match) lessons.push({ id: e.id, level: level.id, match: l.match, pool: l.pool ?? l.match.pool ?? null, swaps: l.swaps ?? null, own: new Set(l.examples.map((x) => x.text)) });
+    if (l.match) lessons.push({ id: e.id, level: level.id, match: l.match, pool: l.pool ?? l.match.pool ?? null, swaps: l.swaps ?? null, prefixes: l.prefixes ?? null, own: new Set(l.examples.map((x) => x.text)) });
   }
   const pool = own.filter(([id, , t]) => toEng.has(id) && eng.has(toEng.get(id)) && t.length <= 70 && !unsuitable(eng.get(toEng.get(id)), t))
     .map(([id, , t]) => ({ id, text: t, s: simplicity(t.split(/[\s.,!?;:„“"]+/u).filter(Boolean), (w) => freq.get(w)) }))
@@ -89,13 +89,14 @@ async function main(code) {
       // variety: one formula (Ве молам) must not fill a lesson
       const key = answer.toLocaleLowerCase();
       const seen = l.perAnswer ?? (l.perAnswer = new Map());
-      // (a word-list lesson has few answers by nature: there the sentences give the variety)
+      // (a word-list lesson has few answers by nature: it may repeat one, up to 100 times)
       const rulePool = (Array.isArray(l.match) ? l.match[m.rule] : l.match).pool ?? l.pool;
-      if (!rulePool && !l.swaps && (seen.get(key) ?? 0) >= 12) continue;
+      if (!l.swaps && (seen.get(key) ?? 0) >= (rulePool ? 100 : 12)) continue;
       seen.set(key, (seen.get(key) ?? 0) + 1);
       let wrong = null;
       const rule = Array.isArray(l.match) ? l.match[m.rule] : l.match;
       if (l.swaps) wrong = spellingVariants(answer, l.swaps);
+      else if (l.prefixes) wrong = prefixVariants(answer, l.prefixes);
       else if (rule.pool || l.pool) wrong = (rule.pool ?? l.pool).filter((w) => w.toLocaleLowerCase() !== answer.toLocaleLowerCase());
       else {
         const ids = [...new Set(gapBlock.candidates.map((c) => c.analysis.lemma))];
@@ -109,7 +110,7 @@ async function main(code) {
       const roman = (b) => b.roman ?? (romanize ? romanize(b.token.surface) : '');
       const romanBlocks = blocks.map((b) => ({ ...b, roman: /[\p{L}\p{N}]/u.test(b.token.surface) ? roman(b) : '' }));
       found.get(l.id).push({ text, en: eng.get(toEng.get(id)), pt: toPor.has(id) ? por.get(toPor.get(id)) : undefined, answer,
-        wrong: wrong?.length >= (l.swaps ? 1 : 2) ? wrong : null, gap: gapText(text, blocks.map((b) => b.token), m.span), gapRoman: gapRoman(romanBlocks, m.span),
+        wrong: wrong?.length >= (l.swaps || l.prefixes ? 1 : 2) ? wrong : null, gap: gapText(text, blocks.map((b) => b.token), m.span), gapRoman: gapRoman(romanBlocks, m.span),
         roman: romanBlocks.map((b) => b.roman).filter(Boolean).join(' '), tok: blocks.map((b) => b.token.surface) });
     }
     if (read % 5000 === 0) console.log(`${read} sentences read (${Math.round((Date.now() - t0) / 1000)} s)`);

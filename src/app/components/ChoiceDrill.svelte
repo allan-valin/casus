@@ -34,7 +34,11 @@
     built = [...built, k];
     if (built.length === current.item.tokens.length) choose(built.map((i) => current.item.tokens[i]).join(''));
   }
-  const promptRoman = $derived(current ? (current.item.roman ?? (current.item.kana && romanize ? romanOf(current.item.kana, romanize) : (current.item.furi ? '' : romanOf(current.item.prompt, romanize)))) : '');
+  // romaji/romanisation: stored, or from the kana reading, or — for a script read letter by letter (Cyrillic) — from
+  // the sentence itself; never from kanji, which the romaniser cannot read
+  const plainFuri = (f) => f && f.every(([, r]) => !r) ? f.map(([t]) => t).join('') : null;
+  const promptRoman = $derived(current ? (current.item.roman ?? (current.item.kana && romanize ? romanOf(current.item.kana, romanize)
+    : (current.item.furi ? romanOf(plainFuri(current.item.furi) ?? '', romanize) : romanOf(current.item.prompt, romanize)))) : '');
   function onkey(e) {
     if (!current || e.ctrlKey || e.metaKey || e.altKey) return;
     const tag = e.target?.tagName;

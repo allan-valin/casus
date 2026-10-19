@@ -55,6 +55,19 @@ export function practiceQuestions(learn, from, to, { n = 30, ui = 'en', random =
 
 const sentenceOf = (furi) => furi.map(([t]) => t).join('');
 
+/** wrong answers written like the answer: capitalised at the start of a sentence, and none that is the answer itself
+ * in another case (ја beside Ја) */
+function casedLike(answer, pool) {
+  const low = (x) => x.toLocaleLowerCase();
+  const cap = answer && answer[0] !== low(answer[0]);
+  const out = [];
+  for (const w of pool) {
+    const v = cap ? w[0].toLocaleUpperCase() + w.slice(1) : w;
+    if (low(v) !== low(answer) && !out.some((o) => low(o) === low(v))) out.push(v);
+  }
+  return out;
+}
+
 /** a lesson's question file ({ pools, qs }) as questions: the stored ones with their pools, and for every sentence with
  * its words two more — English → choose the Japanese, and put the words in order */
 export function questionsFromFile(file, { lesson, random = Math.random, ui = 'en' } = {}) {
@@ -69,7 +82,7 @@ export function questionsFromFile(file, { lesson, random = Math.random, ui = 'en
   for (const q of qs) {
     const same = (x) => (x.lang ?? 'en') === (q.lang ?? 'en');
     const pool = q.pool ?? (q.type === 'gap' ? pools.gap : q.type === 'translate' ? sentences.filter((x) => same(x) && x.answer !== q.answer).map((x) => x.answer) : []) ?? [];
-    out.push({ ...q, lesson, pool });
+    out.push({ ...q, lesson, pool: q.type === 'gap' ? casedLike(q.answer, pool) : pool });
   }
   sentences.forEach((q, k) => {
     const ja = jas[k];

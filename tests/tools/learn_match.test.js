@@ -84,3 +84,14 @@ describe('quality filters', () => {
     expect(unsuitable('Essex is in England.')).toBe(false);
   });
 });
+import { prefixVariants } from '../../tools/learn_match.mjs';
+it('degree distractors: the same word with the other prefixes', () => {
+  expect(prefixVariants('по-голем', ['', 'по-', 'нај'])).toEqual(['голем', 'најголем']);
+  expect(prefixVariants('Најдобро', ['', 'по-', 'нај'])).toEqual(['Добро', 'По-добро']);
+});
+it('noTrail: a word followed by a comma does not count (Да, лут сум: да is "yes")', () => {
+  const S2 = [{ token: { surface: 'Да', trail: ',' }, candidates: [] }, { token: { surface: 'одам' }, candidates: [{ analysis: { pos: 'verb', tense: 'pres' } }] }];
+  expect(matchRule(S2, { seq: [{ word: ['да'], noTrail: true }, { pos: 'verb' }], near: 1, gap: 0 })).toBe(null);
+  S2[0].token.trail = undefined;
+  expect(matchRule(S2, { seq: [{ word: ['да'], noTrail: true }, { pos: 'verb' }], near: 1, gap: 0 })).toEqual({ span: [0, 1], gap: 0 });
+});

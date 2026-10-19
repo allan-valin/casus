@@ -1,0 +1,122 @@
+id: C1
+topics:
+
+- title: {en: Reporting and doubting, pt: Relatar e duvidar}
+  lessons:
+  - id: c1-renarrative-full
+    title: бил дошол, ќе дојдел
+    meaning: {en: "the full reported mood", pt: "o modo relatado completo"}
+    intro:
+      en: |
+        The reported (renarrated) mood has a form for every tense:
+
+        - reported aorist/imperfect: **дошол**, **одел** (B1)
+        - reported perfect / pluperfect: **бил дошол** "had reportedly come", **имал направено**
+        - reported future: **ќе дојдел** "he'll come, they say"
+        - reported conditional: **ќе одел** "he would go, apparently"
+
+        In the press it marks distance from a claim: **Министерот бил запознаен.** "The minister was allegedly informed."
+      pt: |
+        O modo relatado tem uma forma para cada tempo:
+
+        - aoristo/imperfeito relatado: **дошол**, **одел** (B1)
+        - perfeito / mais-que-perfeito relatado: **бил дошол** "teria vindo", **имал направено**
+        - futuro relatado: **ќе дојдел** "ele virá, dizem"
+        - condicional relatado: **ќе одел** "ele iria, pelo visto"
+
+        Na imprensa marca distância de uma afirmação: **Министерот бил запознаен.** "O ministro teria sido informado."
+    table:
+      head: {en: [Witnessed, Reported], pt: [Testemunhado, Relatado]}
+      rows:
+      - [дојде, дошол]
+      - [беше дошол, бил дошол]
+      - [ќе дојде, ќе дојдел]
+      - [имаше направено, имал направено]
+    examples:
+    - [Утре ќе дојдел., "He's coming tomorrow, he says.", "Ele vem amanhã, pelo que diz.", дојдел]
+    - [Тој веќе бил заминал., "He had already left, apparently.", "Ele já teria ido embora.", бил]
+    - [Велат дека имал направено голема грешка., They say he had made a big mistake., Dizem que ele tinha cometido um grande erro., имал]
+    match: [{seq: [{word: [ќе]}, {pos: verb, tense: lpart, re: "(л|ла|ло|ле)$"}], near: 2, gap: 1}, {seq: [{word: [бил, била, било, биле]}, {pos: verb, tense: lpart, re: "(л|ла|ло|ле)$"}], gap: 0}]
+
+  - id: c1-ima-da
+    title: има да
+    meaning: {en: "има да: you'll have to, it will definitely", pt: "има да: você vai ter que, vai sem dúvida"}
+    intro:
+      en: |
+        **има да** + present expresses a strong obligation or certainty, often a threat or a promise: **Има да ми платиш!** "You're going to pay me!" **Има да видиш.** "You'll see." The negative **нема да** is the ordinary negative future (A2).
+      pt: |
+        **има да** + presente exprime obrigação forte ou certeza, muitas vezes ameaça ou promessa: **Има да ми платиш!** "Você vai me pagar!" **Има да видиш.** "Você vai ver." A negativa **нема да** é o futuro negativo comum (A2).
+    examples:
+    - [Има да ми платиш!, You're going to pay me!, Você vai me pagar!, Има]
+    - [Има да видиш., You'll see., Você vai ver., Има]
+    match: {seq: [{word: [има]}, {word: [да]}, {pos: verb, tense: pres, person: ["1", "2"]}], gap: 0}
+    pool: [Има, Нема, Ќе, Мора]
+
+- title: {en: Clitic clusters, pt: Grupos de clíticos}
+  lessons:
+  - id: c1-clitic-clusters
+    title: не би ми го дал
+    meaning: {en: "long clitic chains and their order", pt: "cadeias de clíticos e sua ordem"}
+    intro:
+      en: |
+        Short words line up in a fixed order before the verb:
+
+        **не → би / ќе / да → си (reflexive) → indirect → direct → сум-form → verb**
+
+        **Не би ми го дал.** "He wouldn't give it to me." **Да не си ми го изгубил?** "You haven't lost it on me, have you?" **Ќе ти ги донесам.** After an imperative everything follows: **Донеси ми ги!**
+      pt: |
+        As palavras curtas se alinham numa ordem fixa antes do verbo:
+
+        **не → би / ќе / да → си (reflexivo) → indireto → direto → forma de сум → verbo**
+
+        **Не би ми го дал.** "Ele não me daria (isso)." **Да не си ми го изгубил?** "Não vai me dizer que você perdeu?" **Ќе ти ги донесам.** Depois do imperativo tudo vem atrás: **Донеси ми ги!**
+    mistakes:
+    - wrong: Би не ми го дал.
+      right: Не би ми го дал.
+      why: {en: "не always first.", pt: "не sempre primeiro."}
+    - wrong: Ќе го ти донесам.
+      right: Ќе ти го донесам.
+      why: {en: "Indirect before direct.", pt: "Indireto antes do direto."}
+    examples:
+    - [Не би ми го дал., He wouldn't give it to me., Ele não me daria isso., ми]
+    - [Ќе ти ги донесам утре., I'll bring them to you tomorrow., Vou te trazer amanhã., ти]
+    - [Не ми го кажа тоа., He didn't tell me that., Ele não me disse isso., ми]
+    match: {seq: [{word: [не, би, ќе, да]}, {word: [ми, ти, му, ѝ, ни, ви, им]}, {word: [го, ја, ги]}], gap: 1}
+    pool: [ми, ти, му, ѝ, ни, ви, им, ме, се]
+
+- title: {en: Particles, pt: Partículas}
+  lessons:
+  - id: c1-particles
+    title: баш, барем, дури, сепак
+    meaning: {en: "particles that colour a sentence", pt: "partículas que dão o tom"}
+    intro:
+      en: |
+        Small words that carry attitude:
+
+        - **баш** exactly, really · **барем** at least · **дури** even · **само** only · **уште** still, more · **веќе** already · **пак** again · **сепак** nevertheless · **сè уште** still · **токму** precisely · **речиси** almost · **нели** right? isn't it? · **ајде** come on
+      pt: |
+        Palavras pequenas que trazem atitude:
+
+        - **баш** justamente, mesmo · **барем** pelo menos · **дури** até (mesmo) · **само** só · **уште** ainda, mais · **веќе** já · **пак** de novo · **сепак** mesmo assim · **сè уште** ainda · **токму** exatamente · **речиси** quase · **нели** né? · **ајде** vamos, anda
+    examples:
+    - [Барем пробај., At least try., Pelo menos tente., Барем]
+    - [Дури и тој знае., Even he knows., Até ele sabe., Дури]
+    - ["Сепак, ќе одам.", "Still, I'll go.", "Mesmo assim, eu vou.", "Сепак"]
+    - [Тоа е токму она што го барав., That's exactly what I was looking for., É exatamente o que eu procurava., токму]
+    match: {seq: [{word: [баш, барем, дури, само, уште, веќе, пак, сепак, токму, речиси, нели]}]}
+    pool: [баш, барем, дури, само, уште, веќе, пак, сепак, токму, речиси]
+
+- title: {en: Formal style, pt: Estilo formal}
+  lessons:
+  - id: c1-formal
+    title: по потпишувањето
+    meaning: {en: "verbal nouns and participles in formal style", pt: "substantivos verbais e particípios no estilo formal"}
+    intro:
+      en: |
+        Official and journalistic Macedonian packs actions into **verbal nouns** after prepositions: **по потпишувањето на договорот** "after the signing of the agreement", **при влегувањето** "on entering", **за подобрување на условите** "for improving conditions", **со цел** "with the aim of". In ordinary speech the same is said with a clause: **откако го потпишаа договорот**.
+      pt: |
+        O macedônio oficial e jornalístico condensa ações em **substantivos verbais** depois de preposições: **по потпишувањето на договорот** "após a assinatura do acordo", **при влегувањето** "ao entrar", **за подобрување на условите** "para melhorar as condições", **со цел** "com o objetivo de". Na fala comum se diz o mesmo com uma oração: **откако го потпишаа договорот**.
+    examples:
+    - ["По потпишувањето на договорот, министрите заминаа.", "After signing the agreement, the ministers left.", "Após a assinatura do acordo, os ministros partiram.", "потпишувањето"]
+    - [Пушењето е забрането при влегувањето., Smoking is forbidden on entering., É proibido fumar ao entrar., влегувањето]
+    match: {seq: [{word: [по, при, за, со, пред, после, без, на, во, од, до, кон, преку, поради]}, {re: "[аеи]ње(то)?$", pos: noun}], gap: 1}

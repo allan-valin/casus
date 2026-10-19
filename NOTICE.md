@@ -137,6 +137,13 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
 - Exercise sentences: **Tatoeba** (tatoeba.org), CC BY 2.0 FR — Japanese sentences with their English and Portuguese
   translations, matched to lessons by tools/learn_examples.mjs. Romaji and word lists come from Casus's own reading
   of each sentence. Fetch the sources with tools/fetch_learn_sources.sh.
+- Macedonian lessons (A1–C2, 76 lessons): **written for Casus** (tools/curricula/mk/), explanations and examples in
+  English and Portuguese, labelled as such on every lesson. No open graded Macedonian course exists; the topic order
+  follows the usual course order, the facts Wikipedia's "Macedonian grammar" (CC BY-SA) and the standard grammars.
+  Exercises and "more examples": Tatoeba's Macedonian sentences with their English and Portuguese translations
+  (CC BY 2.0 FR), matched to lessons on Casus's own reading of each sentence (tools/learn_curriculum.mjs); wrong
+  answers come from the Wiktionary-based paradigm tables (CC BY-SA). Sentences with sexual or vulgar content are left
+  out.
 
 ## Document import
 

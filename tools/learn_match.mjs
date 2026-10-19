@@ -6,7 +6,8 @@
  *   { seq: [cond, …], near: n, gap: k }   the conditions in order, at most n words between neighbours; the gap
  *                                          (the word the learner fills in) is the k-th condition's word
  *   cond: { pos, tense, aspect, person, number, gender, case, word: [surfaces], re: regex on the word,
- *           lemma: regex on the dictionary form of every reading, start: the sentence's first word, not: cond }
+ *           lemma: regex on the dictionary form of every reading, start: the sentence's first word,
+ *           noTrail: no comma or stop right after it (Да, … is "yes"), not: cond }
  *   several rules: the first that matches (its index comes back as `rule`)
  *
  * A word fits a morphological condition only when every reading the reader keeps for it fits, so a gap is never
@@ -29,6 +30,7 @@ function fitsAnalysis(a, cond, lemmaOf) {
 export function fits(block, cond, lemmaOf = null) {
   if (cond.word && !cond.word.map(lower).includes(lower(block.token.surface))) return false;
   if (cond.re && !new RegExp(cond.re, 'iu').test(block.token.surface)) return false;
+  if (cond.noTrail && block.token.trail) return false;
   const morph = FEATURES.some((f) => cond[f] != null) || cond.not || cond.lemma;
   if (!morph) return true;
   const cands = block.candidates ?? [];
@@ -102,4 +104,13 @@ export function spellingVariants(word, swaps) {
   });
   out.delete(word);
   return [...out];
+}
+
+/** the word with each of the other prefixes (comparison: голем, по-голем, најголем); capital kept on the first letter */
+export function prefixVariants(word, prefixes) {
+  const low = word.toLocaleLowerCase();
+  const cap = word[0] !== low[0];
+  const mine = [...prefixes].sort((a, b) => b.length - a.length).find((p) => low.startsWith(p)) ?? '';
+  const base = low.slice(mine.length);
+  return prefixes.filter((p) => p !== mine).map((p) => { const w = p + base; return cap ? w[0].toLocaleUpperCase() + w.slice(1) : w; });
 }

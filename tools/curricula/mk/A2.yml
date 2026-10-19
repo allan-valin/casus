@@ -1,0 +1,759 @@
+id: A2
+topics:
+
+- title: {en: The future and wanting, pt: O futuro e o querer}
+  lessons:
+  - id: a2-future
+    title: ќе + present
+    meaning: {en: "the future: I will…", pt: "o futuro: eu vou…"}
+    intro:
+      en: |
+        The future is the particle `ќе` + the **present tense** forms: **Ќе одам.** "I'll go." `ќе` never changes; the verb shows the person.
+
+        Short object pronouns go **between** `ќе` and the verb: **Ќе го видам.** "I'll see him."
+      pt: |
+        O futuro é a partícula `ќе` + as formas do **presente**: **Ќе одам.** "Vou (irei)." `ќе` não muda; o verbo mostra a pessoa.
+
+        Os pronomes objeto curtos ficam **entre** `ќе` e o verbo: **Ќе го видам.** "Vou vê-lo."
+    table:
+      head: {en: [Person, Future, Meaning], pt: [Pessoa, Futuro, Significado]}
+      rows:
+      - [јас, ќе одам, I'll go / vou]
+      - [ти, ќе одиш, you'll go / você vai]
+      - [тој / таа, ќе оди, he / she will go]
+      - [ние, ќе одиме, we'll go / vamos]
+      - [вие, ќе одите, you'll go / vocês vão]
+      - [тие, ќе одат, they'll go / eles vão]
+    sections:
+    - id: usage
+      body:
+        en: |
+          - After `ќе` a **perfective** verb is normal for one completed action (**Ќе ти кажам.** "I'll tell you."), an imperfective one for an ongoing or repeated action (**Ќе ти пишувам секој ден.** "I'll write to you every day.").
+          - `ќе` also gives a guess about the present: **Ќе е дома.** "He must be at home."
+        pt: |
+          - Depois de `ќе`, um verbo **perfectivo** é o normal para uma ação concluída (**Ќе ти кажам.** "Vou te contar."), um imperfectivo para uma ação em curso ou repetida (**Ќе ти пишувам секој ден.** "Vou te escrever todo dia.").
+          - `ќе` também faz uma suposição sobre o presente: **Ќе е дома.** "Deve estar em casa."
+    mistakes:
+    - wrong: Го ќе видам.
+      right: Ќе го видам.
+      why: {en: "ќе comes first, then the short pronoun, then the verb.", pt: "Primeiro ќе, depois o pronome curto, depois o verbo."}
+    - wrong: Ќе одеше утре.
+      right: Ќе оди утре.
+      why: {en: "ќе + present for the future (ќе + imperfect means *would*, B1).", pt: "ќе + presente para o futuro (ќе + imperfeito é *iria*, B1)."}
+    examples:
+    - [Утре ќе одам во Охрид., Tomorrow I'll go to Ohrid., Amanhã vou a Ohrid., одам]
+    - [Ќе ти се јавам вечерва., I'll call you tonight., Vou te ligar hoje à noite., јавам]
+    - ["Што ќе правиш викендов?", "What will you do this weekend?", "O que você vai fazer neste fim de semana?", "правиш"]
+    - [Ќе врне дожд., It's going to rain., Vai chover., врне]
+    match: {seq: [{word: [ќе]}, {pos: verb, tense: pres}], near: 2, gap: 1, same: [tense]}
+
+  - id: a2-future-neg
+    title: нема да
+    meaning: {en: "the negative future: I won't…", pt: "o futuro negativo: não vou…"}
+    intro:
+      en: |
+        The negative of `ќе` is **нема да** + present: **Нема да одам.** "I won't go." (Also heard: **Не ќе одам**, which is older and more literary.)
+      pt: |
+        A negação de `ќе` é **нема да** + presente: **Нема да одам.** "Não vou." (Também existe **Не ќе одам**, mais antigo e literário.)
+    table:
+      head: {en: [Positive, Negative], pt: [Afirmativa, Negativa]}
+      rows:
+      - [Ќе дојдам., Нема да дојдам.]
+      - [Ќе го купам., Нема да го купам.]
+      - [Ќе врне., Нема да врне.]
+    mistakes:
+    - wrong: Не ќе да дојдам.
+      right: Нема да дојдам.
+      why: {en: "Either нема да or не ќе — never both.", pt: "Ou нема да ou не ќе — nunca os dois."}
+    examples:
+    - [Нема да те заборавам., I won't forget you., Não vou te esquecer., Нема]
+    - [Таа нема да дојде., She won't come., Ela não vai vir., нема]
+    - [Нема да кажам никому., I won't tell anyone., Não vou contar para ninguém., Нема]
+    match: {seq: [{word: [нема]}, {word: [да]}, {pos: verb, tense: pres}], near: 2, gap: 0}
+    pool: [нема, не, ќе, ни]
+
+  - id: a2-da
+    title: сакам да, можам да, треба да
+    meaning: {en: "want to, can, must: да + present", pt: "querer, poder, dever: да + presente"}
+    intro:
+      en: |
+        With no infinitive, Macedonian says *I want to go* as "I want **that I go**": **Сакам да одам.** Both verbs take the person: **Сакаш да одиш.** "You want to go."
+
+        The same pattern follows `може` (can), `мора` (must), `треба` (should, needs to), `почнува` (begins), `знае` (knows how). `треба` and often `мора` stay in the 3rd person: **Треба да учам.** "I need to study."
+      pt: |
+        Sem infinitivo, o macedônio diz *quero ir* como "quero **que eu vá**": **Сакам да одам.** Os dois verbos levam a pessoa: **Сакаш да одиш.** "Você quer ir."
+
+        O mesmo vale para `може` (poder), `мора` (ter que), `треба` (dever, precisar), `почнува` (começar), `знае` (saber fazer). `треба` e muitas vezes `мора` ficam na 3ª pessoa: **Треба да учам.** "Preciso estudar."
+    table:
+      head: {en: [Verb, + да + present, Meaning], pt: [Verbo, + да + presente, Significado]}
+      rows:
+      - [сакам, сакам да спијам, I want to sleep / quero dormir]
+      - [можам, можам да пливам, I can swim / sei nadar]
+      - [треба, треба да одам, I need to go / preciso ir]
+      - [мора, мора да работиш, you must work / você tem que trabalhar]
+      - [знам, знам да возам, I can drive / sei dirigir]
+    mistakes:
+    - wrong: Сакам да одиш.
+      right: Сакам да одам.
+      why: {en: "*I want to go*: both verbs in the 1st person. (Сакам да одиш is *I want you to go*.)", pt: "*Quero ir*: os dois verbos na 1ª pessoa. (Сакам да одиш é *quero que você vá*.)"}
+    - wrong: Можам одам.
+      right: Можам да одам.
+      why: {en: "да is required between the two verbs.", pt: "да é obrigatório entre os dois verbos."}
+    examples:
+    - [Сакам да спијам., I want to sleep., Quero dormir., спијам]
+    - [Треба да учиш повеќе., You need to study more., Você precisa estudar mais., учиш]
+    - ["Можеш ли да ми помогнеш?", "Can you help me?", "Você pode me ajudar?", "помогнеш"]
+    - [Мора да заминам., I have to leave., Tenho que ir embora., заминам]
+    match: {seq: [{word: [сакам, сакаш, сака, сакаме, сакате, сакаат, можам, можеш, може, можеме, можете, можат, треба, мора, морам, мораш, мораме, морате, морат]}, {word: [да]}, {pos: verb, tense: pres}], near: 2, gap: 2, same: [tense]}
+
+  - id: a2-aspect
+    title: прочита / чита
+    meaning: {en: "aspect: perfective and imperfective", pt: "aspecto: perfectivo e imperfectivo"}
+    intro:
+      en: |
+        Almost every verb comes in a **pair**: an **imperfective** verb for an action seen as ongoing, repeated or in general, and a **perfective** one for a single action seen as a whole, completed.
+
+        - `чита` / `прочита` read · `пишува` / `напише` write · `купува` / `купи` buy · `кажува` / `каже` tell · `доаѓа` / `дојде` come · `враќа` / `врати` return
+
+        The key rule: a **perfective verb cannot be used alone in the present**, because the present is ongoing. It appears after **ќе, да, ако, кога** (future, wishes, conditions) — **Ќе ја прочитам.** "I'll read it (through)." — but for *now* only the imperfective: **Ја читам.** "I'm reading it."
+      pt: |
+        Quase todo verbo vem em **par**: um **imperfectivo**, para a ação vista em curso, repetida ou em geral, e um **perfectivo**, para uma ação única vista como um todo, concluída.
+
+        - `чита` / `прочита` ler · `пишува` / `напише` escrever · `купува` / `купи` comprar · `кажува` / `каже` dizer · `доаѓа` / `дојде` vir · `враќа` / `врати` devolver, voltar
+
+        A regra-chave: um **verbo perfectivo não pode ficar sozinho no presente**, porque o presente está em curso. Ele aparece depois de **ќе, да, ако, кога** (futuro, desejo, condição) — **Ќе ја прочитам.** "Vou lê-lo (até o fim)." — mas para *agora* só o imperfectivo: **Ја читам.** "Estou lendo."
+    table:
+      head: {en: [Imperfective, Perfective, How the pair is made], pt: [Imperfectivo, Perfectivo, Como o par se forma]}
+      rows:
+      - [чита, прочита, "prefix / prefixo"]
+      - [пишува, напише, "-ува / prefix"]
+      - [кажува, каже, "-ува"]
+      - [купува, купи, "-ува"]
+      - [враќа, врати, "vowel/consonant / vogal e consoante"]
+      - [слуша, слушне, "-не"]
+      - [зема, земе, "а → е"]
+    mistakes:
+    - wrong: Сега ја прочитам книгата.
+      right: Сега ја читам книгата.
+      why: {en: "Right now = imperfective.", pt: "Agora mesmo = imperfectivo."}
+    - wrong: Ќе ти пишувам писмо утре (for one letter, done).
+      right: Ќе ти напишам писмо утре.
+      why: {en: "One whole action in the future = perfective.", pt: "Uma ação inteira no futuro = perfectivo."}
+    examples:
+    - [Сега читам весник., I'm reading a newspaper now., Estou lendo o jornal agora., читам]
+    - [Ќе го прочитам утре., I'll read it tomorrow., Vou ler amanhã., прочитам]
+    - [Сакам да ти кажам нешто., I want to tell you something., Quero te dizer uma coisa., кажам]
+    - [Секој ден купувам леб., I buy bread every day., Compro pão todo dia., купувам]
+    match: {seq: [{word: [ќе, да, ако]}, {pos: verb, tense: pres, aspect: pf}], near: 2, gap: 1, same: [tense]}
+
+- title: {en: Commands, pt: Ordens e pedidos}
+  lessons:
+  - id: a2-imperative
+    title: читај! одете!
+    meaning: {en: "the imperative", pt: "o imperativo"}
+    intro:
+      en: |
+        The imperative is made from the present stem:
+
+        - after a **vowel** (а-verbs, and е/и-verbs whose stem ends in a vowel): **-ј** / **-јте** — `чита` → **читај, читајте**; `пие` → **пиј, пијте**
+        - after a **consonant**: **-и** / **-ете** — `оди` → **оди, одете**; `јаде` → **јади, јадете**; `дојде` → **дојди, дојдете**
+
+        Short pronouns come **after** the imperative: **Дај ми го!** "Give it to me!" A polite request often uses the plural or **Ве молам** "please". For *don't*: **не** + imperfective imperative (**Не пушете!**), or **немој / немојте да** + present (**Немој да плачеш.** "Don't cry.").
+      pt: |
+        O imperativo se forma a partir do radical do presente:
+
+        - depois de **vogal** (verbos em -а, e verbos em -е/-и com radical em vogal): **-ј** / **-јте** — `чита` → **читај, читајте**; `пие` → **пиј, пијте**
+        - depois de **consoante**: **-и** / **-ете** — `оди` → **оди, одете**; `јаде` → **јади, јадете**; `дојде` → **дојди, дојдете**
+
+        Os pronomes curtos vêm **depois** do imperativo: **Дај ми го!** "Me dá isso!" Um pedido educado usa o plural ou **Ве молам** "por favor". Para *não*: **не** + imperativo imperfectivo (**Не пушете!**), ou **немој / немојте да** + presente (**Немој да плачеш.** "Não chore.").
+    table:
+      head: {en: [Verb, ти, вие], pt: [Verbo, ти, вие]}
+      rows:
+      - [чита, читај, читајте]
+      - [гледа, гледај, гледајте]
+      - [пие, пиј, пијте]
+      - [оди, оди, одете]
+      - [јаде, јади, јадете]
+      - [дојде, дојди, дојдете]
+      - [седне, седни, седнете]
+      - ["даде (irregular)", дај, дајте]
+    mistakes:
+    - wrong: Ми дај го!
+      right: Дај ми го!
+      why: {en: "After an imperative the pronouns follow it.", pt: "Com imperativo, os pronomes vêm depois."}
+    - wrong: Не дојди!
+      right: Немој да доаѓаш! / Не доаѓај!
+      why: {en: "Negative commands use the imperfective.", pt: "Ordem negativa usa o imperfectivo."}
+    examples:
+    - [Седни тука., Sit here., Sente aqui., Седни]
+    - [Дојдете утре., Come tomorrow., Venham amanhã., Дојдете]
+    - [Читај гласно!, Read aloud!, Leia em voz alta!, Читај]
+    - [Немој да плачеш., Don't cry., Não chore.]
+    # wrong answers: the same verb's present forms (читаш, читате for читај, читајте)
+    match: {seq: [{pos: verb, tense: imp}]}
+
+- title: {en: Short pronouns, pt: Pronomes curtos}
+  lessons:
+  - id: a2-direct-clitics
+    title: ме, те, го, ја…
+    meaning: {en: "object pronouns: me, you, him, her…", pt: "pronomes objeto: me, te, o, a…"}
+    intro:
+      en: |
+        Direct object pronouns are short words that stand **right before the verb** (after `не`, `ќе`, `да`): **Те сакам.** "I love you." **Не го знам.** "I don't know him/it."
+
+        `го` is *him* and *it* (masc. and neuter), `ја` is *her* and *it* (fem.), `ги` is *them*.
+      pt: |
+        Os pronomes objeto direto são palavras curtas que ficam **logo antes do verbo** (depois de `не`, `ќе`, `да`): **Те сакам.** "Te amo." **Не го знам.** "Não o conheço / não sei."
+
+        `го` é *o* (masc. e neutro), `ја` é *a* (fem.), `ги` é *os, as*.
+    table:
+      head: {en: [Person, Short form, Example], pt: [Pessoa, Forma curta, Exemplo]}
+      rows:
+      - ["јас", "ме", "Ме гледаш?"]
+      - [ти, те, Те сакам.]
+      - [тој / тоа, го, Го знам.]
+      - [таа, ја, Ја видов.]
+      - [ние, не, Не чекаат.]
+      - [вие, ве, Ве молам.]
+      - [тие, ги, Ги купив.]
+    sections:
+    - id: notes
+      body:
+        en: "`не` is both *us* and *not*: **Не не гледаат.** \"They don't see us.\" The first is *not*."
+        pt: "`не` é ao mesmo tempo *nos* e *não*: **Не не гледаат.** \"Eles não nos veem.\" O primeiro é *não*."
+    mistakes:
+    - wrong: Сакам те.
+      right: Те сакам.
+      why: {en: "The short pronoun goes before a finite verb.", pt: "O pronome curto vai antes do verbo conjugado."}
+    examples:
+    - [Те сакам., I love you., Te amo., Те]
+    - [Не го знам., I don't know him., Não o conheço., го]
+    - [Ја видов вчера., I saw her yesterday., Eu a vi ontem., Ја]
+    - [Ги купив сите., I bought them all., Comprei todos., Ги]
+    match: {seq: [{word: [ме, те, го, ја, ве, ги], pos: pron}, {pos: verb}], near: 1, gap: 0}
+    pool: [ме, те, го, ја, не, ве, ги, ми, му, ѝ]
+
+  - id: a2-indirect-clitics
+    title: ми, ти, му, ѝ…
+    meaning: {en: "indirect object pronouns: to me, to him…", pt: "objeto indireto: me, lhe…"}
+    intro:
+      en: |
+        The indirect object (*to me, for him*) has its own short forms, also before the verb: **Ми рече.** "He told me." **Му дадов книга.** "I gave him a book."
+
+        Note `ѝ` (*to her*) with its accent mark, which tells it apart from `и` "and".
+      pt: |
+        O objeto indireto (*a mim, para ele*) tem suas próprias formas curtas, também antes do verbo: **Ми рече.** "Ele me disse." **Му дадов книга.** "Dei-lhe um livro."
+
+        Repare em `ѝ` (*a ela*) com o acento, que o distingue de `и` "e".
+    table:
+      head: {en: [Person, Direct, Indirect], pt: [Pessoa, Direto, Indireto]}
+      rows:
+      - [јас, ме, ми]
+      - [ти, те, ти]
+      - [тој / тоа, го, му]
+      - [таа, ја, ѝ]
+      - [ние, не, ни]
+      - [вие, ве, ви]
+      - [тие, ги, им]
+    mistakes:
+    - wrong: Го реков.
+      right: Му реков.
+      why: {en: "*I told him*: telling is *to* someone, indirect.", pt: "*Eu lhe disse*: dizer é *a* alguém, indireto."}
+    - wrong: Дадов и книга.
+      right: Ѝ дадов книга.
+      why: {en: "*to her* is ѝ, with the mark, before the verb.", pt: "*a ela* é ѝ, com o acento, antes do verbo."}
+    examples:
+    - [Ми рече да чекам., He told me to wait., Ele me disse para esperar., Ми]
+    - [Му пишав писмо., I wrote him a letter., Escrevi-lhe uma carta., Му]
+    - ["Што ти кажа?", "What did she tell you?", "O que ela te disse?", "ти"]
+    - [Им се јавив., I called them., Liguei para eles., Им]
+    match: {seq: [{word: [ми, му, ѝ, ни, ви, им]}, {pos: verb}], near: 1, gap: 0}
+    pool: [ми, ти, му, ѝ, ни, ви, им, ме, го, ја]
+
+  - id: a2-clitic-pairs
+    title: ми го, му ја
+    meaning: {en: "two short pronouns together", pt: "dois pronomes curtos juntos"}
+    intro:
+      en: |
+        When both objects are short pronouns, the order is fixed: **indirect + direct + verb** — **Ми го даде.** "He gave it to me." With `не` and `ќе` in front: **Не ми го даде.** · **Ќе ти ја донесам.**
+
+        After an imperative the whole group follows the verb: **Дај ми го!** · **Кажи ми ја вистината!**
+      pt: |
+        Quando os dois objetos são pronomes curtos, a ordem é fixa: **indireto + direto + verbo** — **Ми го даде.** "Ele me deu (isso)." Com `не` e `ќе` na frente: **Не ми го даде.** · **Ќе ти ја донесам.**
+
+        Depois do imperativo, o grupo inteiro vem atrás do verbo: **Дај ми го!** · **Кажи ми ја вистината!**
+    table:
+      head: {en: ["", го, ја, ги], pt: ["", го, ја, ги]}
+      rows:
+      - [ми, ми го, ми ја, ми ги]
+      - [ти, ти го, ти ја, ти ги]
+      - [му, му го, му ја, му ги]
+      - [ѝ, ѝ го, ѝ ја, ѝ ги]
+      - [им, им го, им ја, им ги]
+    mistakes:
+    - wrong: Го ми даде.
+      right: Ми го даде.
+      why: {en: "Indirect first.", pt: "Indireto primeiro."}
+    examples:
+    - [Ми го даде клучот., He gave me the key., Ele me deu a chave., го]
+    - [Ќе ти ја донесам утре., I'll bring it to you tomorrow., Vou te trazer amanhã., ја]
+    - [Дај ми го!, Give it to me!, Me dá isso!, го]
+    - ["Кој ти ги кажа тие работи?", "Who told you those things?", "Quem te disse essas coisas?", "ги"]
+    match: {seq: [{word: [ми, ти, му, ѝ, ни, ви, им]}, {word: [го, ја, ги]}], gap: 1}
+    pool: [го, ја, ги, ме, те, ве]
+
+  - id: a2-doubling
+    title: Го видов Марко.
+    meaning: {en: "object doubling", pt: "duplicação do objeto"}
+    intro:
+      en: |
+        A striking feature: a **definite direct object** is announced by a short pronoun as well — **Го видов Марко.** literally "I saw *him* Marko". **Ја прочитав книгата.** "I read the book." Without the article (*a book*) there is no doubling: **Прочитав книга.**
+
+        An **indirect object** with `на` is always doubled: **Му реков на Марко.** "I told Marko." **Им дадов на децата.** "I gave (it) to the children."
+      pt: |
+        Uma característica marcante: um **objeto direto definido** é anunciado também por um pronome curto — **Го видов Марко.** literalmente "o vi o Marko". **Ја прочитав книгата.** "Li o livro." Sem artigo (*um livro*) não há duplicação: **Прочитав книга.**
+
+        Um **objeto indireto** com `на` é sempre duplicado: **Му реков на Марко.** "Disse ao Marko." **Им дадов на децата.** "Dei às crianças." (Parecido com o espanhol *le dije a Marco*.)
+    table:
+      head: {en: [Object, Doubled, Meaning], pt: [Objeto, Duplicado, Significado]}
+      rows:
+      - [{"en": "Марко (name)", "pt": "Марко (nome)"}, "Го видов Марко.", {"en": "I saw Marko", "pt": "vi o Marko"}]
+      - [{"en": "книгата (the book)", "pt": "книгата (o livro)"}, "Ја читам книгата.", {"en": "I'm reading the book", "pt": "estou lendo o livro"}]
+      - [{"en": "книга (a book)", "pt": "книга (um livro)"}, {"en": "Читам книга. (no doubling)", "pt": "Читам книга. (sem duplicação)"}, {"en": "I'm reading a book", "pt": "estou lendo um livro"}]
+      - ["на Ана", "Ѝ реков на Ана.", {"en": "I told Ana", "pt": "eu disse à Ana"}]
+      - ["на децата", "Им купив на децата.", {"en": "I bought (it) for the children", "pt": "comprei para as crianças"}]
+    mistakes:
+    - wrong: Видов Марко.
+      right: Го видов Марко.
+      why: {en: "Names and nouns with the article are definite: double them.", pt: "Nomes e substantivos com artigo são definidos: duplique."}
+    - wrong: Реков на Ана.
+      right: Ѝ реков на Ана.
+      why: {en: "на + person always comes with its short pronoun.", pt: "на + pessoa sempre vem com o pronome curto."}
+    examples:
+    - [Го видов Марко во градот., I saw Marko in town., Vi o Marko na cidade., Го]
+    - [Ја изгубив торбата., I lost the bag., Perdi a bolsa., Ја]
+    - [Му реков на Том., I told Tom., Eu disse ao Tom., Му]
+    - [Ги чекам децата., I'm waiting for the children., Estou esperando as crianças., Ги]
+    match: [{seq: [{word: [го, ја, ги]}, {pos: verb}, {pos: noun, case: def}], near: 2, gap: 0}, {seq: [{word: [му, ѝ, им]}, {pos: verb}, {word: [на]}], near: 2, gap: 0}]
+    pool: [го, ја, ги, му, ѝ, им]
+
+  - id: a2-long-pronouns
+    title: мене, тебе, него, неа…
+    meaning: {en: "the long (stressed) pronouns", pt: "os pronomes longos (tônicos)"}
+    intro:
+      en: |
+        Each short pronoun has a **long form** used after prepositions — **со мене** "with me", **за неа** "for her", **кај нив** "at their place" — and for emphasis. When used as an object for emphasis, the short one stays too: **Мене ме бараат, не тебе.** "It's *me* they're looking for, not you."
+      pt: |
+        Cada pronome curto tem uma **forma longa**, usada depois de preposições — **со мене** "comigo", **за неа** "para ela", **кај нив** "na casa deles" — e para dar ênfase. Como objeto enfático, o curto continua: **Мене ме бараат, не тебе.** "É a *mim* que procuram, não a você."
+    table:
+      head: {en: [Person, Long, After a preposition], pt: [Pessoa, Longa, Depois de preposição]}
+      rows:
+      - [јас, мене, со мене]
+      - [ти, тебе, за тебе]
+      - [тој / тоа, него, од него]
+      - [таа, неа, со неа]
+      - [ние, нас, кај нас]
+      - [вие, вас, за вас]
+      - [тие, нив, без нив]
+    mistakes:
+    - wrong: со ме
+      right: со мене
+      why: {en: "After a preposition only the long form.", pt: "Depois de preposição só a forma longa."}
+    - wrong: со јас
+      right: со мене
+      why: {en: "јас is only the subject.", pt: "јас é só sujeito."}
+    examples:
+    - [Дојди со мене., Come with me., Venha comigo., мене]
+    - [Ова е за тебе., This is for you., Isto é para você., тебе]
+    - [Не можам без неа., I can't do without her., Não consigo sem ela., неа]
+    - ["Вечерва сте кај нас?", "Are you at our place tonight?", "Hoje à noite vocês vêm à nossa casa?", "нас"]
+    match: {seq: [{word: [со, за, од, кај, без, до, на, пред, зад, меѓу, околу, кон, преку]}, {word: [мене, тебе, него, неа, нас, вас, нив]}], gap: 1}
+    pool: [мене, тебе, него, неа, нас, вас, нив, ме, јас]
+
+  - id: a2-dopagja
+    title: ми се допаѓа
+    meaning: {en: "I like (it pleases me)", pt: "eu gosto (me agrada)"}
+    intro:
+      en: |
+        *I like* is said the other way round, like Portuguese *agrada-me*: **Ми се допаѓа Охрид.** "Ohrid pleases me." The thing liked is the subject, so the verb agrees with it: **Ми се допаѓаат цвеќињата.** "I like the flowers."
+
+        The same frame: **ми треба** "I need" (it is necessary to me), **ми е студено** "I'm cold", **ми е жал** "I'm sorry", **ми се спие** "I'm sleepy".
+      pt: |
+        *Gostar* se diz ao contrário, como *agrada-me* ou o espanhol *me gusta*: **Ми се допаѓа Охрид.** "Ohrid me agrada." A coisa é o sujeito, e o verbo concorda com ela: **Ми се допаѓаат цвеќињата.** "Gosto das flores."
+
+        A mesma construção: **ми треба** "preciso de", **ми е студено** "estou com frio", **ми е жал** "sinto muito", **ми се спие** "estou com sono".
+    table:
+      head: {en: [Person, I like it, I like them], pt: [Pessoa, gosto disso, gosto deles]}
+      rows:
+      - [јас, ми се допаѓа, ми се допаѓаат]
+      - [ти, ти се допаѓа, ти се допаѓаат]
+      - [тој, му се допаѓа, му се допаѓаат]
+      - [таа, ѝ се допаѓа, ѝ се допаѓаат]
+      - [тие, им се допаѓа, им се допаѓаат]
+    mistakes:
+    - wrong: Јас допаѓам Охрид.
+      right: Ми се допаѓа Охрид.
+      why: {en: "The liker is the indirect object.", pt: "Quem gosta é o objeto indireto."}
+    - wrong: Ми се допаѓа цвеќињата.
+      right: Ми се допаѓаат цвеќињата.
+      why: {en: "Plural subject, plural verb.", pt: "Sujeito plural, verbo plural."}
+    examples:
+    - [Ми се допаѓа оваа песна., I like this song., Gosto desta música., Ми]
+    - ["Дали ти се допаѓа?", "Do you like it?", "Você gosta?", "ти"]
+    - [Ми треба помош., I need help., Preciso de ajuda., Ми]
+    - [Ми е студено., I'm cold., Estou com frio., Ми]
+    match: [{seq: [{word: [ми, ти, му, ѝ, ни, ви, им]}, {word: [се]}, {word: [допаѓа, допаѓаат, допадна, допадне, спие]}], gap: 0}, {seq: [{word: [ми, ти, му, ѝ, ни, ви, им]}, {word: [треба, требаат]}], gap: 0}, {seq: [{word: [ми, ти, му, ѝ, ни, ви, им]}, {word: [е]}, {word: [студено, топло, жал, драго, мило, лошо, здодевно]}], gap: 0}]
+    pool: [ми, ти, му, ѝ, ни, ви, им, ме, го]
+
+  - id: a2-possessive-clitics
+    title: мајка ми, брат ти
+    meaning: {en: "my mother, your brother: short possessives", pt: "minha mãe, teu irmão: possessivos curtos"}
+    intro:
+      en: |
+        With close **family words**, the short indirect pronoun **after** the noun means *my, your, his…*, and the noun takes **no article**: **мајка ми** "my mother", **татко ти** "your father", **сестра му** "his sister", **баба ѝ** "her grandmother". It is the natural way to say it; **мојата мајка** sounds emphatic.
+
+        With other nouns the full possessive is used (**мојата куќа**), though speech also has **куќата ми**.
+      pt: |
+        Com **palavras de família** próximas, o pronome indireto curto **depois** do substantivo significa *meu, teu, dele…*, e o substantivo fica **sem artigo**: **мајка ми** "minha mãe", **татко ти** "teu pai", **сестра му** "a irmã dele", **баба ѝ** "a avó dela". É o jeito natural; **мојата мајка** soa enfático.
+
+        Com outros substantivos se usa o possessivo completo (**мојата куќа**), embora a fala também tenha **куќата ми**.
+    table:
+      head: {en: [Short, Meaning], pt: [Curto, Significado]}
+      rows:
+      - [мајка ми, my mother / minha mãe]
+      - [татко ти, your father / teu pai]
+      - [брат му, his brother / o irmão dele]
+      - [сестра ѝ, her sister / a irmã dela]
+      - [баба ни, our grandmother / nossa avó]
+      - [дедо им, their grandfather / o avô deles]
+    mistakes:
+    - wrong: мајката ми
+      right: мајка ми
+      why: {en: "No article with the short possessive on family words.", pt: "Sem artigo com o possessivo curto em palavras de família."}
+    examples:
+    - [Мајка ми е учителка., My mother is a teacher., Minha mãe é professora., ми]
+    - ["Каде работи татко ти?", "Where does your father work?", "Onde o seu pai trabalha?", "ти"]
+    - [Брат му живее во Германија., His brother lives in Germany., O irmão dele mora na Alemanha., му]
+    match: {seq: [{word: [мајка, татко, брат, сестра, баба, дедо, син, ќерка, сопруга, сопруг, маж, жена, тетка, чичко, вујко, внук, внука, братучед, братучетка]}, {word: [ми, ти, му, ѝ, ни, ви, им]}], gap: 1}
+    pool: [ми, ти, му, ѝ, ни, ви, им]
+
+- title: {en: Reflexive verbs, pt: Verbos reflexivos}
+  lessons:
+  - id: a2-reflexive
+    title: се, си
+    meaning: {en: "oneself: се and си", pt: "se: се e си"}
+    intro:
+      en: |
+        `се` is the reflexive *oneself* (direct): **Се мијам.** "I wash (myself)." Many verbs simply always have it: **се вика** "is called" (**Како се викаш?** "What's your name?"), **се смее** "laughs", **се плаши** "is afraid", **се враќа** "returns".
+
+        `си` is the reflexive *for oneself* (indirect): **Си ги мијам рацете.** "I wash my hands." It also makes "go off": **Си одам.** "I'm off (home)." Both stand where other short pronouns stand.
+      pt: |
+        `се` é o reflexivo direto *se*: **Се мијам.** "Eu me lavo." Muitos verbos sempre o têm: **се вика** "chama-se" (**Како се викаш?** "Como você se chama?"), **се смее** "ri", **се плаши** "tem medo", **се враќа** "volta".
+
+        `си` é o reflexivo indireto *para si*: **Си ги мијам рацете.** "Lavo as minhas mãos." Também dá o sentido de "ir-se": **Си одам.** "Vou embora (para casa)." Os dois ficam onde ficam os outros pronomes curtos.
+    table:
+      head: {en: [Verb, Example, Meaning], pt: [Verbo, Exemplo, Significado]}
+      rows:
+      - [се вика, Се викам Ана., My name is Ana / Me chamo Ana]
+      - ["се смее", "Зошто се смееш?", "Why are you laughing? / Por que você está rindo?"]
+      - [се плаши, Се плашам од кучиња., I'm afraid of dogs / Tenho medo de cachorro]
+      - ["се враќа", "Кога се враќаш?", "When are you coming back? / Quando você volta?"]
+      - [си мие, Си ги мијам рацете., I wash my hands / Lavo as mãos]
+    mistakes:
+    - wrong: Викам Ана.
+      right: Се викам Ана.
+      why: {en: "Without се it means *I shout Ana*.", pt: "Sem се significa *grito Ana*."}
+    examples:
+    - [Се викам Марија., My name is Marija., Me chamo Marija., Се]
+    - [Се плашам од темнина., I'm afraid of the dark., Tenho medo do escuro., Се]
+    - ["Кога се враќаш дома?", "When are you coming home?", "Quando você volta para casa?", "се"]
+    - [Си ги мијам рацете., I'm washing my hands., Estou lavando as mãos., Си]
+    match: {seq: [{word: [се, си]}, {pos: verb, number: sg, person: ["1", "2"]}], near: 1, gap: 0}
+    pool: [се, си, ме, ми, го]
+
+- title: {en: Comparing, pt: Comparando}
+  lessons:
+  - id: a2-comparison
+    title: по-голем, најголем
+    meaning: {en: "comparative and superlative", pt: "comparativo e superlativo"}
+    intro:
+      en: |
+        Comparison is regular: **по-** for *more* and **нај-** for *most*, on adjectives and adverbs alike — `голем` → **по-голем** "bigger" → **најголем** "biggest"; `добро` → **по-добро** → **најдобро**. *Than* is **од**: **Таа е по-висока од мене.**
+
+        Spelling: **по-** with a hyphen, **нај-** joined to the word.
+      pt: |
+        A comparação é regular: **по-** para *mais* e **нај-** para *o mais*, em adjetivos e advérbios — `голем` → **по-голем** "maior" → **најголем** "o maior"; `добро` → **по-добро** → **најдобро**. *Do que* é **од**: **Таа е по-висока од мене.**
+
+        Ortografia: **по-** com hífen, **нај-** junto à palavra.
+    table:
+      head: {en: [Base, More, Most], pt: [Base, Mais, O mais]}
+      rows:
+      - [голем, по-голем, најголем]
+      - [мал, по-мал, најмал]
+      - [добар, по-добар, најдобар]
+      - [убаво, по-убаво, најубаво]
+      - [многу, повеќе, најмногу]
+    mistakes:
+    - wrong: Тој е повисок како мене.
+      right: Тој е по-висок од мене.
+      why: {en: "*than* is од; по- with a hyphen.", pt: "*do que* é од; по- com hífen."}
+    - wrong: по-многу
+      right: повеќе
+      why: {en: "*more* of многу is irregular.", pt: "*mais* de многу é irregular."}
+    examples:
+    - [Таа е по-висока од мене., She is taller than me., Ela é mais alta que eu., по-висока]
+    - [Ова е најдобриот ресторан во градот., This is the best restaurant in town., Este é o melhor restaurante da cidade., најдобриот]
+    - [Денес е по-топло., It's warmer today., Hoje está mais quente., по-топло]
+    - ["Кој е најстар?", "Who is the oldest?", "Quem é o mais velho?", "најстар"]
+    # нај- only on adjectives and adverbs (најдов "I found" is not a superlative)
+    match: [{seq: [{re: "^по-[а-шѓќѕљњџј]{3,}"}]}, {seq: [{re: "^нај", pos: [adj, adv]}]}]
+    prefixes: ["", по-, нај]
+
+- title: {en: The past, pt: O passado}
+  lessons:
+  - id: a2-sum-past
+    title: бев, беше
+    meaning: {en: "was, were: the past of сум", pt: "era, estava: o passado de сум"}
+    intro:
+      en: |
+        The past of `сум` is **бев, беше, беше, бевме, бевте, беа**: **Бев дома.** "I was at home." **Каде беше?** "Where were you?" Like `сум`, it does not start the sentence in neutral speech: **Болен бев.** or **Јас бев болен.**
+      pt: |
+        O passado de `сум` é **бев, беше, беше, бевме, бевте, беа**: **Бев дома.** "Eu estava em casa." **Каде беше?** "Onde você estava?" Serve para *era* e *estava*.
+    table:
+      head: {en: [Person, Present, Past], pt: [Pessoa, Presente, Passado]}
+      rows:
+      - [јас, сум, бев]
+      - [ти, си, беше]
+      - [тој / таа / тоа, е, беше]
+      - [ние, сме, бевме]
+      - [вие, сте, бевте]
+      - [тие, се, беа]
+    mistakes:
+    - wrong: Ние беше таму.
+      right: Ние бевме таму.
+      why: {en: "We takes бевме.", pt: "Nós leva бевме."}
+    examples:
+    - [Вчера бев болен., I was ill yesterday., Ontem eu estava doente., бев]
+    - ["Каде беше синоќа?", "Where were you last night?", "Onde você estava ontem à noite?", "беше"]
+    - [Бевме во Струга., We were in Struga., Estávamos em Struga., Бевме]
+    - [Тие беа многу среќни., They were very happy., Eles estavam muito felizes., беа]
+    match: {seq: [{word: [бев, беше, бевме, бевте, беа]}]}
+    pool: [бев, беше, бевме, бевте, беа, сум, е, бил]
+
+  - id: a2-aorist
+    title: дојдов, купив, прочитав
+    meaning: {en: "the aorist: what happened (once, done)", pt: "o aoristo: o que aconteceu (uma vez, concluído)"}
+    intro:
+      en: |
+        The **aorist** tells what happened at a moment the speaker witnessed or vouches for — the usual tense for completed events: **Вчера купив кола.** "Yesterday I bought a car." It is made mostly from **perfective** verbs.
+
+        Endings: **-в, —, —, -вме, -вте, -а** after the stem vowel — а-verbs keep **а** (прочитав), и-verbs keep **и** (купив), е-verbs mostly change to **о** in the 1st person and plural (дојдов, дојде, дојдовме, дојдоа).
+      pt: |
+        O **aoristo** conta o que aconteceu num momento que quem fala testemunhou ou garante — o tempo normal para fatos concluídos: **Вчера купив кола.** "Ontem comprei um carro." Forma-se sobretudo com verbos **perfectivos**. É o nosso pretérito perfeito: *comprei, vim, li*.
+
+        Terminações: **-в, —, —, -вме, -вте, -а** depois da vogal do radical — verbos em -а mantêm **а** (прочитав), em -и mantêm **и** (купив), em -е em geral mudam para **о** na 1ª pessoa e no plural (дојдов, дојде, дојдовме, дојдоа).
+    table:
+      head: {en: [Person, "прочита (read)", "купи (buy)", "дојде (come)"], pt: [Pessoa, "прочита (ler)", "купи (comprar)", "дојде (vir)"]}
+      rows:
+      - [јас, прочитав, купив, дојдов]
+      - [ти, прочита, купи, дојде]
+      - [тој / таа, прочита, купи, дојде]
+      - [ние, прочитавме, купивме, дојдовме]
+      - [вие, прочитавте, купивте, дојдовте]
+      - [тие, прочитаа, купија, дојдоа]
+    mistakes:
+    - wrong: Вчера купувам кола.
+      right: Вчера купив кола.
+      why: {en: "Finished past event: aorist.", pt: "Fato passado concluído: aoristo."}
+    examples:
+    - [Вчера купив кола., Yesterday I bought a car., Ontem comprei um carro., купив]
+    - ["Кога дојде?", "When did you come?", "Quando você chegou?", "дојде"]
+    - [Ја прочитавме книгата., We read the book., Lemos o livro., прочитавме]
+    - [Тие заминаа рано., They left early., Eles foram embora cedo., заминаа]
+    match: {seq: [{pos: verb, tense: aor}], same: [tense]}
+
+  - id: a2-imperfect
+    title: читав, одев
+    meaning: {en: "the imperfect: what was going on, what used to be", pt: "o imperfeito: o que estava acontecendo, o que se fazia"}
+    intro:
+      en: |
+        The **imperfect** describes the past as ongoing or repeated — background, habits, descriptions: **Кога бев мал, играв фудбал секој ден.** "When I was little I played football every day." It is made mostly from **imperfective** verbs, just like the Portuguese *imperfeito*.
+
+        Endings: **-в, -ше, -ше, -вме, -вте, -а**; е- and и-verbs take **е**: `оди` → **одев, одеше, одевме, одеа**.
+      pt: |
+        O **imperfeito** descreve o passado em curso ou repetido — pano de fundo, hábitos, descrições: **Кога бев мал, играв фудбал секој ден.** "Quando eu era pequeno jogava futebol todo dia." Forma-se sobretudo com verbos **imperfectivos**, exatamente como o nosso *imperfeito*: *jogava, ia, lia*.
+
+        Terminações: **-в, -ше, -ше, -вме, -вте, -а**; verbos em -е e -и levam **е**: `оди` → **одев, одеше, одевме, одеа**.
+    table:
+      head: {en: [Person, "чита (read)", "оди (go)", "пие (drink)"], pt: [Pessoa, "чита (ler)", "оди (ir)", "пие (beber)"]}
+      rows:
+      - [јас, читав, одев, пиев]
+      - [ти, читаше, одеше, пиеше]
+      - [тој / таа, читаше, одеше, пиеше]
+      - [ние, читавме, одевме, пиевме]
+      - [вие, читавте, одевте, пиевте]
+      - [тие, читаа, одеа, пиеја]
+    sections:
+    - id: contrast
+      body:
+        en: "**Читав** книга кога **ѕвонеше** телефонот. \"I *was reading* a book when the phone *was ringing*.\" — **Ја прочитав** книгата. \"I *read* (finished) the book.\" Imperfect = the scene; aorist = the event."
+        pt: "**Читав** книга кога **ѕвонеше** телефонот. \"Eu *lia* um livro quando o telefone *tocava*.\" — **Ја прочитав** книгата. \"*Li* (terminei) o livro.\" Imperfeito = o cenário; aoristo = o fato."
+    mistakes:
+    - wrong: Секој ден купив леб.
+      right: Секој ден купував леб.
+      why: {en: "Repeated past = imperfective verb, imperfect tense.", pt: "Passado repetido = verbo imperfectivo, imperfeito."}
+    examples:
+    - [Кога бев дете живеевме во Битола., When I was a child we lived in Bitola., Quando eu era criança morávamos em Bitola., живеевме]
+    - ["Што правеше вчера во пет?", "What were you doing yesterday at five?", "O que você estava fazendo ontem às cinco?", "правеше"]
+    - [Секое лето одевме на море., Every summer we went to the seaside., Todo verão íamos à praia., одевме]
+    - [Врнеше цел ден., It rained all day., Choveu o dia inteiro., Врнеше]
+    match: {seq: [{pos: verb, tense: impf}], same: [tense]}
+
+  - id: a2-l-form
+    title: сум бил, си видел
+    meaning: {en: "the past with сум + l-form: have done, have been", pt: "o passado com сум + forma em -л: já fiz, já estive"}
+    intro:
+      en: |
+        The **l-form** of a verb (`бил`, `видел`, `дошол`) agrees in gender and number — **-л, -ла, -ло, -ле** — and with the present of `сум` makes the **indefinite past**: **Сум бил во Охрид.** "I have been to Ohrid." In the **3rd person there is no сум**: **Тој бил во Охрид.**
+
+        It is used for experiences without a fixed time (*have you ever…?*) and for things the speaker did **not witness** — the 3rd person in particular often means "reportedly" (B1).
+      pt: |
+        A **forma em -л** do verbo (`бил`, `видел`, `дошол`) concorda em gênero e número — **-л, -ла, -ло, -ле** — e com o presente de `сум` forma o **passado indefinido**: **Сум бил во Охрид.** "Já estive em Ohrid." Na **3ª pessoa não há сум**: **Тој бил во Охрид.**
+
+        Usa-se para experiências sem data (*você já…?*) e para o que quem fala **não testemunhou** — a 3ª pessoa muitas vezes quer dizer "dizem que" (B1).
+    table:
+      head: {en: [Person, "бил (been)", "видел (seen)"], pt: [Pessoa, "бил (estado)", "видел (visto)"]}
+      rows:
+      - [јас, сум бил / била, сум видел / видела]
+      - [ти, си бил / била, си видел / видела]
+      - [тој / таа, бил / била, видел / видела]
+      - [ние, сме биле, сме виделе]
+      - [вие, сте биле, сте виделе]
+      - [тие, биле, виделе]
+    sections:
+    - id: notes
+      body:
+        en: "l-forms: а-verbs **-ал** (читал), и-verbs **-ел** (одел, видел), many е-verbs **-ел** (пиел, јадел); irregular: **дошол, дошла** (дојде), **рекол, рекла** (рече), **можел** (може)."
+        pt: "Formas em -л: verbos em -а **-ал** (читал), em -и **-ел** (одел, видел), muitos em -е **-ел** (пиел, јадел); irregulares: **дошол, дошла** (дојде), **рекол, рекла** (рече), **можел** (може)."
+    mistakes:
+    - wrong: Тој е бил во Охрид.
+      right: Тој бил во Охрид.
+      why: {en: "No auxiliary in the 3rd person.", pt: "Sem auxiliar na 3ª pessoa."}
+    - wrong: (Ана) Сум бил.
+      right: (Ана) Сум била.
+      why: {en: "The l-form agrees with the speaker's gender.", pt: "A forma em -л concorda com o gênero de quem fala."}
+    examples:
+    - ["Дали си бил во Скопје?", "Have you been to Skopje?", "Você já esteve em Skopje?", "бил"]
+    - [Никогаш не сум јадел тавче гравче., I've never eaten tavče gravče., Nunca comi tavče gravče., јадел]
+    - [Сме слушале за тоа., We've heard about that., Já ouvimos falar disso., слушале]
+    # the l-form proper: the reader also files the -н/-т participle (замрзнато) under it
+    match: {seq: [{pos: verb, tense: lpart, re: "(л|ла|ло|ле)$"}], same: [tense]}
+
+- title: {en: Counting and time, pt: Contagem e horas}
+  lessons:
+  - id: a2-count-plural
+    title: два стола, пет дена
+    meaning: {en: "the count plural", pt: "o plural de contagem"}
+    intro:
+      en: |
+        After a number (and after `колку` "how many", `неколку` "a few"), masculine nouns for **things** take a special plural in **-а**: **два стола** (not *столови*), **пет дена**, **неколку часа**. Feminine and neuter nouns use their normal plural: **две книги**.
+
+        Masculine nouns for **people** don't: **три студенти**, or with the personal numerals **тројца студенти** (B2).
+      pt: |
+        Depois de um número (e de `колку` "quantos", `неколку` "alguns"), substantivos masculinos de **coisas** levam um plural especial em **-а**: **два стола** (não *столови*), **пет дена**, **неколку часа**. Femininos e neutros usam o plural normal: **две книги**.
+
+        Masculinos de **pessoas** não: **три студенти**, ou com os numerais pessoais **тројца студенти** (B2).
+    table:
+      head: {en: [Noun, Plural, After a number], pt: [Substantivo, Plural, Depois de número]}
+      rows:
+      - [стол, столови, два стола]
+      - [ден, денови, пет дена]
+      - [час, часови, три часа]
+      - [молив, моливи, два молива]
+      - [книга, книги, "две книги (f.: normal)"]
+    mistakes:
+    - wrong: два столови
+      right: два стола
+      why: {en: "Masculine thing after a number: -а.", pt: "Masculino de coisa depois de número: -а."}
+    examples:
+    - [Чекав два часа., I waited two hours., Esperei duas horas., часа]
+    - [Остануваме пет дена., We're staying five days., Ficamos cinco dias., дена]
+    - ["Колку молива имаш?", "How many pencils do you have?", "Quantos lápis você tem?", "молива"]
+    match: {seq: [{word: [два, три, четири, пет, шест, седум, осум, девет, десет, неколку, колку, дваесет, сто]}, {pos: noun, gender: m}], gap: 1}
+
+  - id: a2-ordinals
+    title: прв, втор, трет
+    meaning: {en: "ordinal numbers and dates", pt: "ordinais e datas"}
+    intro:
+      en: |
+        Ordinals are adjectives (**прв, прва, прво, први**) and usually take the article: **првиот ден** "the first day". From five on they end in **-ти**: `петти`, `шести`, `седми`, `осми`, `деветти`, `десетти`.
+
+        Dates use the masculine ordinal and the month: **први мај** "1 May", **на петти март** "on 5 March"; **Денес е дваесет и први.** "Today is the twenty-first."
+      pt: |
+        Os ordinais são adjetivos (**прв, прва, прво, први**) e em geral levam artigo: **првиот ден** "o primeiro dia". Do quinto em diante terminam em **-ти**: `петти`, `шести`, `седми`, `осми`, `деветти`, `десетти`.
+
+        Datas: o ordinal masculino com o mês: **први мај** "1º de maio", **на петти март** "em 5 de março".
+    table:
+      head: {en: [Number, Ordinal, With the article], pt: [Número, Ordinal, Com artigo]}
+      rows:
+      - [1, прв / прва / прво, првиот / првата]
+      - [2, втор, вториот]
+      - [3, трет, третиот]
+      - [4, четврт, четвртиот]
+      - [5, петти, петтиот]
+      - [10, десетти, десеттиот]
+    mistakes:
+    - wrong: петиот ден
+      right: петтиот ден
+      why: {en: "Ordinals from five have -ти: петти.", pt: "Ordinais do quinto em diante têm -ти: петти."}
+    examples:
+    - [Ова е мојот прв пат во Македонија., This is my first time in Macedonia., É a minha primeira vez na Macedônia., прв]
+    - [Живеам на третиот кат., I live on the third floor., Moro no terceiro andar., третиот]
+    - [Роден сум на петти март., I was born on the fifth of March., Nasci no dia cinco de março., петти]
+    match: {seq: [{word: [прв, прва, прво, први, првиот, првата, првото, првите, втор, втора, второ, втори, вториот, втората, второто, трет, трета, трето, трети, третиот, третата, четврт, четвртиот, петти, петтиот, шести, шестиот, седми, осми, деветти, десетти]}]}
+    pool: [прв, првиот, втор, вториот, трет, третиот, четврт, петти, петтиот, шести]
+
+  - id: a2-time
+    title: Колку е часот?
+    meaning: {en: "telling the time", pt: "dizer as horas"}
+    intro:
+      en: |
+        **Колку е часот?** "What time is it?" — **Часот е пет.** "It's five." *At five* is **во пет (часот)**. Minutes after the hour join with **и** (*and*), before the hour with **без** (*without*): **пет и десет** 5:10, **пет и половина** 5:30, **шест без петнаесет** 5:45 ("six without fifteen").
+      pt: |
+        **Колку е часот?** "Que horas são?" — **Часот е пет.** "São cinco." *Às cinco* é **во пет (часот)**. Minutos depois da hora se ligam com **и** (*e*), antes da hora com **без** (*sem*, como em "quinze para as seis"): **пет и десет** 5:10, **пет и половина** 5:30, **шест без петнаесет** 5:45.
+    table:
+      head: {en: [Time, Macedonian], pt: [Hora, Macedônio]}
+      rows:
+      - ["1:00", еден часот]
+      - ["5:10", пет и десет]
+      - ["5:30", пет и половина]
+      - ["5:45", шест без петнаесет]
+      - [{"en": "at 8", "pt": "às 8"}, "во осум часот"]
+    examples:
+    - ["Колку е часот?", "What time is it?", "Que horas são?", "часот"]
+    - [Се гледаме во осум часот., See you at eight o'clock., Nos vemos às oito horas., часот]
+    - [Возот тргнува во пет и половина., The train leaves at half past five., O trem sai às cinco e meia., половина]
+    match: {seq: [{word: [часот, половина, часа]}]}
+    pool: [часот, половина, часа, час, минути, без]
+
+- title: {en: This one and that one, pt: Este aqui e aquele lá}
+  lessons:
+  - id: a2-prox-dist
+    title: книгава, книгана
+    meaning: {en: "the near and far articles", pt: "os artigos de perto e de longe"}
+    intro:
+      en: |
+        Besides **-от / -та / -то** (*the*), Macedonian has two more articles found in no other standard Balkan language: **-ов / -ва / -во / -ве** for something **near me** ("this … here") and **-он / -на / -но / -не** for something **far away** ("that … there"). **Книгава е моја.** "This book is mine." **Куќана е стара.** "That house there is old." They are frequent in speech.
+      pt: |
+        Além de **-от / -та / -то** (*o, a*), o macedônio tem mais dois artigos, que nenhuma outra língua balcânica padrão tem: **-ов / -ва / -во / -ве** para algo **perto de mim** ("este … aqui") e **-он / -на / -но / -не** para algo **longe** ("aquele … lá"). **Книгава е моја.** "Este livro aqui é meu." **Куќана е стара.** "Aquela casa lá é velha." São frequentes na fala.
+    table:
+      head: {en: ["", m., f., n., "pl. (m./f.)", "pl. (n.)"], pt: ["", m., f., n., "pl. (m./f.)", "pl. (n.)"]}
+      rows:
+      - ["the / o, a", столот, жената, селото, жените, селата]
+      - ["this here / este aqui", столов, женава, селово, жениве, селава]
+      - ["that there / aquele lá", столон, женана, селоно, женине, селана]
+    examples:
+    - [Книгава е многу интересна., This book is very interesting., Este livro aqui é muito interessante., Книгава]
+    - ["Кој е човекон?", "Who is that man over there?", "Quem é aquele homem lá?", "човекон"]
+    - [Летово беше топло., This summer was hot., Este verão foi quente., Летово]
+    match: {seq: [{pos: noun, case: [prox, dist]}], same: [number]}

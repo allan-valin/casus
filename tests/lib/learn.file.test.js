@@ -46,3 +46,11 @@ describe('translations in the interface language', () => {
     expect(back.prompt).toBe('Ele está aqui.');
   });
 });
+
+describe('gap choices follow the answer’s capital letter (mk browser check, 2026-10-19)', () => {
+  it('Ја at the start: wrong answers capitalised, no ја beside Ја', () => {
+    const file = { pools: { gap: ['го', 'ја', 'ги', 'му'] }, qs: [{ type: 'gap', furi: [['＿＿ изгубив торбата.', null]], answer: 'Ја', en: 'I lost the bag.' }] };
+    const [q] = questionsFromFile(file, { lesson: 'x' });
+    expect(q.pool).toEqual(['Го', 'Ги', 'Му']);
+  });
+});
