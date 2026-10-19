@@ -52,3 +52,30 @@ export function practiceQuestions(learn, from, to, { n = 30, ui = 'en', random =
   const all = levels.flatMap((level) => level.units.flatMap((u) => u.lessons).flatMap((lesson) => lessonQuestions(lesson, level, { ui, random })));
   return sample(all, n, random);
 }
+
+const sentenceOf = (furi) => furi.map(([t]) => t).join('');
+
+/** a lesson's question file ({ pools, qs }) as questions: the stored ones with their pools, and for every sentence with
+ * its words two more — English → choose the Japanese, and put the words in order */
+export function questionsFromFile(file, { lesson, random = Math.random } = {}) {
+  const qs = Array.isArray(file) ? file : (file?.qs ?? []);
+  const pools = Array.isArray(file) ? {} : (file?.pools ?? {});
+  const sentences = qs.filter((q) => q.type === 'translate');
+  const ens = sentences.map((q) => q.answer);
+  const jas = sentences.map((q) => sentenceOf(q.furi));
+  const out = [];
+  for (const q of qs) {
+    const pool = q.pool ?? (q.type === 'gap' ? pools.gap : q.type === 'translate' ? ens.filter((e) => e !== q.answer) : []) ?? [];
+    out.push({ ...q, lesson, pool });
+  }
+  sentences.forEach((q, k) => {
+    const ja = jas[k];
+    out.push({ type: 'back', derivedFrom: q.source ?? 'book', lesson, prompt: q.answer, answer: ja, pool: jas.filter((j) => j !== ja) });
+    if (q.tok?.length >= 3) {
+      const tokens = [...q.tok];
+      for (let i = tokens.length - 1; i > 0; i -= 1) { const j = Math.floor(random() * (i + 1)); [tokens[i], tokens[j]] = [tokens[j], tokens[i]]; }
+      out.push({ type: 'order', derivedFrom: q.source ?? 'book', lesson, prompt: q.answer, tokens, answer: ja, furi: q.furi, roman: q.roman });
+    }
+  });
+  return out;
+}

@@ -5,7 +5,7 @@
   import { t } from '../lib/i18n.svelte.js';
   import { createChoiceQuiz } from '../lib/quiz.js';
   import { romanOf } from '../lib/roman.js';
-  let { items, random = Math.random, romanize = null, onresult = null } = $props();
+  let { items, random = Math.random, romanize = null, onresult = null, ordered = false } = $props();
   let quiz = $state.raw(null);
   let current = $state.raw(null);
   let result = $state(null);
@@ -16,7 +16,7 @@
   $effect(() => {
     if (!items.length) { quiz = null; current = null; return; }
     // a local first: reading the state back inside this effect would make it depend on itself and loop
-    const q = createChoiceQuiz(items, { random });
+    const q = createChoiceQuiz(items, { random, ordered });
     quiz = q;
     current = q.current(); result = null; picked = null; selected = -1; score = { ...q.score }; streak = 0;
   });
@@ -27,7 +27,14 @@
     onresult?.(current.item, result.correct);              // Learn keeps each lesson's progress
     score = { ...quiz.score }; streak = quiz.streak;
   }
-  function next() { quiz.next(); current = quiz.current(); result = null; picked = null; selected = -1; }
+  function next() { quiz.next(); current = quiz.current(); result = null; picked = null; selected = -1; built = []; }
+  // word order: the indexes of the tiles placed so far
+  let built = $state([]);
+  function place(k) {
+    built = [...built, k];
+    if (built.length === current.item.tokens.length) choose(built.map((i) => current.item.tokens[i]).join(''));
+  }
+  const promptRoman = $derived(current ? (current.item.roman ?? (current.item.kana && romanize ? romanOf(current.item.kana, romanize) : (current.item.furi ? '' : romanOf(current.item.prompt, romanize)))) : '');
   function onkey(e) {
     if (!current || e.ctrlKey || e.metaKey || e.altKey) return;
     const tag = e.target?.tagName;
@@ -50,14 +57,22 @@
   <p class="muted">{t('drill.loading')}</p>
 {:else}
   <div class="quiz">
-    <p class="quiz-prompt" lang="">{current.item.prompt}</p>
-    {#if current.item.roman ?? romanOf(current.item.prompt, romanize)}<p class="roman prompt-roman">{current.item.roman ?? romanOf(current.item.prompt, romanize)}</p>{/if}
-    {#if current.item.hint}<p class="quiz-hint">{current.item.hint}</p>{/if}
+    <!-- a sentence with furigana where it has readings (Learn, 2026-10-19), else the plain prompt -->
+    <p class="quiz-prompt" lang="">{#if current.item.furi}{#each current.item.furi as [t, r]}{#if r}<ruby>{t}<rt>{r}</rt></ruby>{:else}{t}{/if}{/each}{:else}{current.item.prompt}{/if}</p>
+    {#if promptRoman}<p class="roman prompt-roman">{promptRoman}</p>{/if}
+    {#if current.item.hint ?? (current.item.type === 'gap' ? current.item.en : null)}<p class="quiz-hint">{current.item.hint ?? current.item.en}</p>{/if}
+    {#if current.item.type === 'order'}
+      <!-- put the words in order: tap them, the sentence builds up; it is checked when every word is used -->
+      <p class="built" aria-live="polite">{built.map((k) => current.item.tokens[k]).join('') || '…'}</p>
+      <div class="tiles">{#each current.item.tokens as tok, k}<button class="tile" disabled={!!result || built.includes(k)} onclick={() => place(k)}>{tok}</button>{/each}
+        {#if built.length && !result}<button class="undo" onclick={() => { built = built.slice(0, -1); }}>⌫</button>{/if}</div>
+    {:else}
     <div class="choices">
       {#each current.choices as c, i}
         <button class="choice" class:selected={!result && i === selected} class:right={result && c === current.item.answer} class:wrong={result && c === picked && !result.correct} disabled={!!result} onclick={() => choose(c)}><span class="key" aria-hidden="true">{i + 1}</span><span class="text">{c}{#if romanOf(c, romanize)}<span class="roman">{romanOf(c, romanize)}</span>{/if}</span></button>
       {/each}
     </div>
+    {/if}
     {#if result}
       <p class="quiz-feedback" class:right={result.correct} class:wrong={!result.correct} aria-live="polite">
         {result.correct ? t('quiz.right') : t('quiz.wrong', { expected: result.expected })}
@@ -88,6 +103,11 @@
   .roman { display: block; font-style: italic; color: var(--ink-2); font-size: 0.8em; }
   .prompt-roman { font-size: 1rem; margin: 0 0 6px; }
   .quiz-hint { color: var(--ink-2); margin: 0 0 8px; }
+  .built { font-size: 1.4rem; min-height: 1.6em; border-bottom: 2px solid var(--line); padding: 4px 2px; margin: 6px 0; }
+  .tiles { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+  .tile, .undo { font: inherit; font-size: 1.15rem; padding: 6px 12px; border: 1.5px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); cursor: pointer; }
+  .tile:disabled { opacity: 0.35; cursor: default; }
+  .quiz-prompt ruby rt { font-size: 0.5em; color: var(--ink-2); }
   .choices { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; margin: 10px 0; }
   .choice { font: inherit; text-align: left; padding: 10px 12px; border: 1.5px solid var(--line); border-radius: 10px; background: var(--panel); color: var(--ink); cursor: pointer; }
   .choice:hover:not(:disabled) { border-color: var(--accent); }

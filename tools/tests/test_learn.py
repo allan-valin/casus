@@ -1,33 +1,50 @@
+import json
+import shutil
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from build_learn import ja_learn, units_of  # noqa: E402
 
-GRAMMAR = "id,pattern,reading,romaji,level,meaning,formation,example_ja,example_en,tags,notes\n" + "\n".join(
-    f"g{k},〜p{k},,p{k},N5,meaning {k},Noun + p{k},例{k}です。,Example {k}.,particle,note {k}" for k in range(8))
-VOCAB = "id,word,reading,romaji,meanings,level,pos,jmdict_id,other_forms,example_ja,example_en\n" + "\n".join(
-    f"v{k},語{k},ご{k},go{k},word {k},N5,n,1,,,"for k in range(35))
+FIX = Path(__file__).parent / "fixtures"
+VOCAB = "id,word,reading,romaji,meanings,level,pos,jmdict_id,other_forms,example_ja,example_en\n" + "\n".join(f"v{k},語{k},ご{k},go{k},word {k},N5,n,1,,," for k in range(35))
 KANJI = "character,level,strokes,grade,freq,radical,radical_number,onyomi,kunyomi,nanori,meanings,words,supplementary\n日,N5,4,1,1,日,72,ニチ; ジツ,ひ; -び,,day; sun,明日; 今日,\n"
 
 
 def test_units_are_small_groups_in_order():
-    assert [len(u) for u in units_of(list(range(13)), 6)] == [6, 7]          # a short tail joins the last unit
-    assert [len(u) for u in units_of(list(range(14)), 6)] == [6, 6, 2] or [len(u) for u in units_of(list(range(14)), 6)] == [6, 8]
+    assert [len(u) for u in units_of(list(range(13)), 6)] == [6, 7]
 
 
-def test_japanese_levels_units_and_lessons(tmp_path):
+def book(tmp: Path) -> Path:
+    b = tmp / "book"
+    (b / "n5").mkdir(parents=True)
+    for n in ("n4", "n3", "n2", "n1"):
+        (b / n).mkdir()
+    page = (FIX / "jge-mo.md").read_text(encoding="utf-8")
+    (b / "n5" / "005-も.md").write_text(page, encoding="utf-8")
+    (b / "n5" / "004-は.md").write_text(page.replace("# も", "# は").replace("also; too; as well", "as for; topic").replace("<b>も</b>", "<b>は</b>"), encoding="utf-8")
+    (b / "SUMMARY.md").write_text("# N5 - Beginner\n\n- [N5](./n5/index.md)\n  - [Saying what something is]()\n    - [は](./n5/004-は.md)\n    - [も](./n5/005-も.md)\n", encoding="utf-8")
+    return b
+
+
+def test_japanese_levels_topics_lessons_and_questions(tmp_path):
+    oj = tmp_path / "oj"
+    oj.mkdir()
     for n in ("n5", "n4", "n3", "n2", "n1"):
-        (tmp_path / f"grammar-{n}.csv").write_text(GRAMMAR if n == "n5" else GRAMMAR.split("\n")[0] + "\n", encoding="utf-8")
-        (tmp_path / f"vocab-{n}.csv").write_text(VOCAB if n == "n5" else VOCAB.split("\n")[0] + "\n", encoding="utf-8")
-        (tmp_path / f"kanji-{n}.csv").write_text(KANJI if n == "n5" else KANJI.split("\n")[0] + "\n", encoding="utf-8")
-    out = ja_learn(tmp_path)
-    assert out["system"] == "JLPT" and [lv["id"] for lv in out["levels"]] == ["N5", "N4", "N3", "N2", "N1"]
-    n5 = out["levels"][0]
-    kinds = [u["kind"] for u in n5["units"]]
-    assert kinds.count("grammar") == 1 and kinds.count("vocab") == 1 and kinds.count("kanji") == 1
-    g = n5["units"][0]["lessons"][0]
-    assert g == {"id": "ja-g0", "kind": "grammar", "pattern": "〜p0", "romaji": "p0", "meaning": {"en": "meaning 0"}, "formation": "Noun + p0",
-                 "examples": [{"text": "例0です。", "en": "Example 0."}], "notes": {"en": "note 0"}, "source": "OpenJLPT"}
-    v = [u for u in n5["units"] if u["kind"] == "vocab"][0]["lessons"][0]
-    assert v["kind"] == "vocab" and len(v["words"]) == 35 and v["words"][0] == {"w": "語0", "reading": "ご0", "en": "word 0"}
+        (oj / f"vocab-{n}.csv").write_text(VOCAB if n == "n5" else VOCAB.split("\n")[0] + "\n", encoding="utf-8")
+        (oj / f"kanji-{n}.csv").write_text(KANJI if n == "n5" else KANJI.split("\n")[0] + "\n", encoding="utf-8")
+    index, lessons, questions = ja_learn(book(tmp_path), oj)
+    n5 = index["levels"][0]
+    assert n5["id"] == "N5"
+    topic = n5["topics"][0]
+    assert topic["title"] == "Saying what something is" and topic["kind"] == "grammar"
+    assert [(l["id"], l["title"], l["meaning"]) for l in topic["lessons"]] == [("n5-004", "は", "as for; topic"), ("n5-005", "も", "also; too; as well")]
+    assert {t["kind"] for t in n5["topics"]} == {"grammar", "vocab", "kanji"}
+    mo = lessons["n5-005"]
+    assert mo["examples"][0]["target"] == "も" and len(mo["practice"]) == 2 and mo["level"] == "N5" and mo["topic"] == "Saying what something is"
+    f = questions["N5"]["n5-005"]
+    qs = f["qs"]
+    gap = next(q for q in qs if q["type"] == "gap")
+    assert gap["answer"] == "も" and ["＿＿", None] in gap["furi"] and "は" in f["pools"]["gap"]
+    assert any(q["type"] == "translate" and q["answer"] == "I'll go too." for q in qs)
+    assert any(q["type"] == "meaning" and q["answer"] == "also; too; as well" for q in qs)

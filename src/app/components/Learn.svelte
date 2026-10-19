@@ -1,138 +1,236 @@
 <script>
-  /* Learn (Allan, 2026-10-19; design 2026-10-19-learn-and-three-sites-design.md §2): every topic of every level
-   * (JLPT N5–N1, CEFR A1–C2…), a lesson per grammar point, vocabulary set or kanji set, practice questions for each
-   * lesson, and a practice section for a chosen range of levels. Progress is kept in this browser. */
+  /* Learn (Allan, 2026-10-19; second version after his review): a level's topics with their lessons listed under each
+   * (like bentojapanese.com/learn/grammar), a lesson as a page — explanation, formation, examples with furigana and
+   * romaji, nuance, contrasts, common mistakes, the book's own practice with answers to reveal — and exercises by the
+   * hundred (gap, translation both ways, word order) from the lesson and from Tatoeba. A practice section mixes a range
+   * of levels. Progress is kept in this browser. */
   import { onMount } from 'svelte';
   import { t, ui } from '../lib/i18n.svelte.js';
-  import { lessonQuestions, practiceQuestions } from '../../lib/learn/questions.js';
+  import { questionsFromFile } from '../../lib/learn/questions.js';
   import ChoiceDrill from './ChoiceDrill.svelte';
-  let { lang, loadLearn, storage = null, random = Math.random, openInReader = null } = $props();
+  let { lang, loadLearn, loadLesson, loadQuestions, storage = null, random = Math.random, openInReader = null } = $props();
 
   let learn = $state(null);
   let failed = $state(false);
   let mode = $state('lessons');
   let levelId = $state(null);
-  let open = $state(null);                     // { lesson, level }
+  let lesson = $state(null);                   // the open lesson's full data
+  let lessonRef = $state(null);                // { level, topic, entry }
   let quizItems = $state([]);
   let from = $state(null);
   let to = $state(null);
+  let search = $state('');
   let progress = $state({});
+  let loading = $state(false);
   const KEY = `casus:learn:${lang.code}`;
+  const romanize = lang.script?.romanize ?? null;
 
   onMount(async () => {
     try { progress = JSON.parse(storage?.getItem(KEY) ?? '{}'); } catch { progress = {}; }
     try {
       learn = await loadLearn();
       if (!learn?.levels?.length) { failed = true; return; }
-      levelId = learn.levels[0].id;
-      from = learn.levels[0].id;
-      to = learn.levels[0].id;
+      levelId = learn.levels[0].id; from = levelId; to = levelId;
     } catch { failed = true; }
   });
 
   const level = $derived(learn?.levels.find((l) => l.id === levelId) ?? null);
-  const meaning = (o) => (o ? o[ui.lang] ?? o.en ?? '' : '');
+  const flat = $derived(learn ? learn.levels.flatMap((lv) => lv.topics.flatMap((tp) => tp.lessons.map((e) => ({ level: lv, topic: tp, entry: e })))) : []);
+  const visible = (tp) => (!search.trim() ? tp.lessons : tp.lessons.filter((e) => `${e.title} ${e.meaning}`.toLowerCase().includes(search.trim().toLowerCase())));
   function record(item, correct) {
     const p = progress[item.lesson] ?? { right: 0, total: 0 };
     progress = { ...progress, [item.lesson]: { right: p.right + (correct ? 1 : 0), total: p.total + 1 } };
     try { storage?.setItem(KEY, JSON.stringify(progress)); } catch { /* not kept */ }
   }
   const pct = (id) => { const p = progress[id]; return p?.total ? Math.round((100 * p.right) / p.total) : null; };
-  function openLesson(lesson) { open = { lesson, level }; quizItems = []; }
-  function practiseLesson() { quizItems = lessonQuestions(open.lesson, open.level, { ui: ui.lang, random }); }
-  function startPractice() { quizItems = practiceQuestions(learn, from, to, { n: 30, ui: ui.lang, random }); }
+  async function open(ref) {
+    loading = true; quizItems = [];
+    lessonRef = ref;
+    lesson = await loadLesson(ref.entry.id);
+    loading = false;
+    try { window.scrollTo({ top: 0 }); } catch { /* jsdom */ }
+  }
+  const neighbour = (d) => { const k = flat.findIndex((x) => x.entry.id === lessonRef?.entry.id); return k >= 0 ? flat[k + d] ?? null : null; };
+  function vocabQuestions(l) {
+    if (l.kind === 'vocab') {
+      const ens = l.words.map((w) => w.en); const ws = l.words.map((w) => w.w);
+      return l.words.flatMap((w) => [{ type: 'word', lesson: l.id, prompt: w.w, kana: w.reading, answer: w.en, pool: ens }, { type: 'word-back', lesson: l.id, prompt: w.en, answer: w.w, pool: ws }]);
+    }
+    const ens = l.kanji.map((k) => k.en); const rs = l.kanji.map((k) => (k.kun || k.on).split(';')[0].trim());
+    return l.kanji.flatMap((k, i) => [{ type: 'kanji', lesson: l.id, prompt: k.k, answer: k.en, pool: ens }, ...(rs[i] ? [{ type: 'kanji-reading', lesson: l.id, prompt: k.k, answer: rs[i], pool: rs }] : [])]);
+  }
+  async function startExercises() {
+    if (lesson.kind === 'vocab' || lesson.kind === 'kanji') { quizItems = vocabQuestions(lesson); return; }
+    quizItems = bookFirst(questionsFromFile(await loadQuestions(lesson.id), { lesson: lesson.id, random }));
+  }
+  // the lesson's own examples first, in order; then Tatoeba's and the derived ones, shuffled
+  function bookFirst(qs) {
+    const own = qs.filter((q) => q.source !== 'tatoeba' && !q.derivedFrom);
+    const rest = qs.filter((q) => !own.includes(q));
+    for (let i = rest.length - 1; i > 0; i -= 1) { const j = Math.floor(random() * (i + 1)); [rest[i], rest[j]] = [rest[j], rest[i]]; }
+    return [...own, ...rest];
+  }
+  async function startPractice() {
+    const ids = learn.levels.map((l) => l.id);
+    const [a, b] = [ids.indexOf(from), ids.indexOf(to)].sort((x, y) => x - y);
+    const pool = flat.filter((x) => { const k = ids.indexOf(x.level.id); return k >= a && k <= b && x.topic.kind === 'grammar'; });
+    const picked = [];
+    const copy = [...pool];
+    while (copy.length && picked.length < 12) picked.push(copy.splice(Math.floor(random() * copy.length), 1)[0]);
+    loading = true;
+    const files = await Promise.all(picked.map((x) => loadQuestions(x.entry.id).then((f) => questionsFromFile(f, { lesson: x.entry.id, random })).catch(() => [])));
+    loading = false;
+    const all = files.flat();
+    for (let i = all.length - 1; i > 0; i -= 1) { const j = Math.floor(random() * (i + 1)); [all[i], all[j]] = [all[j], all[i]]; }
+    quizItems = all;
+  }
   const kindName = (k) => t(`learn.kind.${k}`);
+  // word-spaced romaji from the reader (tools/learn_examples.mjs); bare kana only as a fallback
+  const exampleRoman = (ex) => ex.roman ?? (ex.kana && romanize ? romanize(ex.kana) : '');
 </script>
 
 <section class="card learn">
-  <h2>{t('learn.heading')} {#if learn}<span class="system">{learn.system}</span>{/if}</h2>
+  <header class="learn-head">
+    <h2>{t('learn.heading')}</h2>
+    {#if learn}<span class="system">{learn.system}</span>{/if}
+    <div class="modes" role="tablist">
+      <button class="mode-tab" data-mode="lessons" aria-selected={mode === 'lessons'} class:active={mode === 'lessons'} onclick={() => { mode = 'lessons'; quizItems = []; }}>{t('learn.lessons')}</button>
+      <button class="mode-tab" data-mode="practice" aria-selected={mode === 'practice'} class:active={mode === 'practice'} onclick={() => { mode = 'practice'; lesson = null; quizItems = []; }}>{t('learn.practice')}</button>
+    </div>
+  </header>
   {#if failed}
     <p class="muted">{t('learn.none', { language: lang.name[ui.lang] ?? lang.name.en })}</p>
   {:else if !learn}
     <p class="muted">{t('drill.loading')}</p>
-  {:else}
-    <div class="modes" role="tablist">
-      <button class="mode-tab" data-mode="lessons" aria-selected={mode === 'lessons'} class:active={mode === 'lessons'} onclick={() => { mode = 'lessons'; quizItems = []; }}>{t('learn.lessons')}</button>
-      <button class="mode-tab" data-mode="practice" aria-selected={mode === 'practice'} class:active={mode === 'practice'} onclick={() => { mode = 'practice'; open = null; quizItems = []; }}>{t('learn.practice')}</button>
+  {:else if mode === 'practice'}
+    <div class="range-box">
+      <label>{t('learn.from')} <select class="range" bind:value={from}>{#each learn.levels as l}<option value={l.id}>{l.id}</option>{/each}</select></label>
+      <label>{t('learn.to')} <select class="range" bind:value={to}>{#each learn.levels as l}<option value={l.id}>{l.id}</option>{/each}</select></label>
+      <button class="start-practice primary" onclick={startPractice} disabled={loading}>{t('learn.start')}</button>
     </div>
-
-    {#if mode === 'lessons'}
-      <div class="levels" role="tablist">
-        {#each learn.levels as l}<button class="level-tab" class:active={l.id === levelId} aria-selected={l.id === levelId} onclick={() => { levelId = l.id; open = null; quizItems = []; }}>{l.id}</button>{/each}
-      </div>
-      {#if open}
-        <button class="back" onclick={() => { open = null; quizItems = []; }}>← {t('learn.back')}</button>
-        <article class="lesson">
-          {#if open.lesson.kind === 'grammar'}
-            <p class="pattern" lang={lang.bcp47}>{open.lesson.pattern}</p>
-            {#if open.lesson.romaji}<p class="romaji">{open.lesson.romaji}</p>{/if}
-            <p class="meaning">{meaning(open.lesson.meaning)}</p>
-            {#if open.lesson.formation}<p class="formation"><b>{t('learn.formation')}:</b> {open.lesson.formation}</p>{/if}
-            {#each open.lesson.examples ?? [] as ex}
-              <div class="example"><span class="ex-text" lang={lang.bcp47}>{ex.text}</span> <span class="ex-en">{ex.en}</span>
-                {#if openInReader}<button class="to-reader" onclick={() => openInReader(ex.text)}>{t('learn.read')}</button>{/if}</div>
-            {/each}
-            {#if meaning(open.lesson.notes)}<p class="notes">{meaning(open.lesson.notes)}</p>{/if}
-          {:else if open.lesson.kind === 'vocab'}
-            <table class="words"><tbody>{#each open.lesson.words as w}<tr><td class="w" lang={lang.bcp47}>{w.w}</td><td class="r">{w.reading ?? ''}</td><td>{w.en}</td></tr>{/each}</tbody></table>
-          {:else if open.lesson.kind === 'kanji'}
-            <table class="words"><tbody>{#each open.lesson.kanji as k}<tr><td class="w big" lang={lang.bcp47}>{k.k}</td><td>{k.en}</td><td class="r">{k.on}</td><td class="r">{k.kun}</td><td class="r">{k.words.join('、')}</td></tr>{/each}</tbody></table>
-          {/if}
-          <p class="source">{t('learn.source')}: {open.lesson.source ?? learn.credit}</p>
-          <button class="practice-lesson primary" onclick={practiseLesson}>{t('learn.practiceLesson')}</button>
-        </article>
+    {#if quizItems.length}<p class="ex-count">{t('learn.exCount', { n: quizItems.length })}</p><ChoiceDrill items={quizItems} {random} {romanize} onresult={record} ordered />{/if}
+  {:else if lesson && lessonRef}
+    <!-- one lesson, as a page -->
+    <article class="lesson-page">
+      <nav class="crumbs"><button class="back" onclick={() => { lesson = null; quizItems = []; }}>← {lessonRef.level.id}</button> <span>{lessonRef.topic.title}</span></nav>
+      <h3><span class="badge-level">{lessonRef.level.id}</span> <span class="l-head" lang={lang.bcp47}>{lesson.title ?? lessonRef.entry.title}</span></h3>
+      {#if lesson.meaning}<p class="l-sub">{lesson.meaning}</p>{/if}
+      {#if lesson.kind === 'vocab' || lesson.kind === 'kanji'}
+        <nav class="toc"><a href="#ex-start">{t('learn.exercises')}</a></nav>
+        {#if lesson.kind === 'vocab'}
+          <table class="words"><tbody>{#each lesson.words as w}<tr><td class="w" lang={lang.bcp47}><ruby>{w.w}<rt>{w.reading}</rt></ruby></td><td class="r">{romanize ? romanize(w.reading) : ''}</td><td>{w.en}</td></tr>{/each}</tbody></table>
+        {:else}
+          <table class="words"><tbody>{#each lesson.kanji as k}<tr><td class="w big" lang={lang.bcp47}>{k.k}</td><td>{k.en}</td><td class="r">{k.on}</td><td class="r">{k.kun}</td><td class="r" lang={lang.bcp47}>{k.words.join('、')}</td></tr>{/each}</tbody></table>
+        {/if}
       {:else}
-        {#each level?.units ?? [] as u (u.id)}
-          <section class="unit">
-            <h3><span class="kind" data-kind={u.kind}>{kindName(u.kind)} {u.n}</span> <span class="title" lang={lang.bcp47}>{u.title}</span></h3>
-            <ul class="lesson-list">
-              {#each u.lessons as l (l.id)}
-                <li><button class="lesson-link" data-lesson={l.id} onclick={() => openLesson(l)}>
-                  <span lang={lang.bcp47}>{l.kind === 'grammar' ? l.pattern : kindName(l.kind) + ' ' + u.n}</span>{#if l.kind === 'grammar'} <span class="gloss">{meaning(l.meaning)}</span>{/if}
-                  {#if pct(l.id) !== null}<span class="pct" class:good={pct(l.id) >= 80}>{pct(l.id)}%</span>{/if}
-                </button></li>
-              {/each}
-            </ul>
+        <nav class="toc">{#each lesson.sections as s}<a href={`#sec-${s.id}`}>{s.title}</a>{/each}{#if lesson.practice?.length}<a href="#sec-turn">{t('learn.yourTurn')}</a>{/if}<a href="#ex-start">{t('learn.exercises')}</a></nav>
+        {#if lesson.intro}<div class="prose">{@html lesson.intro}</div>{/if}
+        {#each lesson.sections as s}
+          <section class="l-sec" id={`sec-${s.id}`} data-sec={s.id}>
+            <h4>{s.title}</h4>
+            <div class="prose">{@html s.html}</div>
+            {#if s.id === 'examples' && lesson.examples?.length}
+              <details class="examples-romaji"><summary>{t('learn.romaji')}</summary>
+                <ol>{#each lesson.examples as ex}<li><span lang={lang.bcp47}>{ex.text}</span> — <i>{exampleRoman(ex)}</i>{#if openInReader} <button class="to-reader" onclick={() => openInReader(ex.text)}>{t('learn.read')}</button>{/if}</li>{/each}</ol>
+              </details>
+            {/if}
           </section>
         {/each}
+        {#if lesson.practice?.length}
+          <section class="l-sec your-turn" id="sec-turn">
+            <h4>{t('learn.yourTurn')}</h4>
+            {#each lesson.practice as p, k}<div class="turn"><div class="prose q"><b>{k + 1}.</b> {@html p.q}</div><details><summary>{t('learn.showAnswer')}</summary><div class="prose">{@html p.a}</div></details></div>{/each}
+          </section>
+        {/if}
       {/if}
-    {:else}
-      <div class="range">
-        <label>{t('learn.from')} <select class="range" bind:value={from}>{#each learn.levels as l}<option value={l.id}>{l.id}</option>{/each}</select></label>
-        <label>{t('learn.to')} <select class="range" bind:value={to}>{#each learn.levels as l}<option value={l.id}>{l.id}</option>{/each}</select></label>
-        <button class="start-practice primary" onclick={startPractice}>{t('learn.start')}</button>
-      </div>
-    {/if}
-    {#if quizItems.length}<div class="quiz-wrap"><ChoiceDrill items={quizItems} {random} romanize={lang.script?.romanize ?? null} onresult={record} /></div>{/if}
-    <p class="credit">{learn.credit}</p>
+      <section class="l-sec" id="ex-start">
+        <h4>{t('learn.exercises')}</h4>
+        {#if pct(lesson.id) !== null}<p class="pct-line">{t('learn.score', { pct: pct(lesson.id), n: progress[lesson.id].total })}</p>{/if}
+        {#if !quizItems.length}<button class="start-exercises primary" onclick={startExercises}>{t('learn.practiceLesson')}</button>
+        {:else}<p class="ex-count">{t('learn.exCount', { n: quizItems.length })}</p><ChoiceDrill items={quizItems} {random} {romanize} onresult={record} ordered />{/if}
+      </section>
+      <p class="source">{t('learn.source')}: {lesson.source ?? learn.credit}</p>
+      <nav class="prev-next">
+        {#if neighbour(-1)}<button class="prev-lesson" data-lesson={neighbour(-1).entry.id} onclick={() => open(neighbour(-1))}>← <span lang={lang.bcp47}>{neighbour(-1).entry.title}</span></button>{/if}
+        {#if neighbour(1)}<button class="next-lesson" data-lesson={neighbour(1).entry.id} onclick={() => open(neighbour(1))}><span lang={lang.bcp47}>{neighbour(1).entry.title}</span> →</button>{/if}
+      </nav>
+    </article>
+  {:else}
+    <!-- the level's topics, each with its lessons listed under it -->
+    <div class="levels" role="tablist">
+      {#each learn.levels as l}<button class="level-tab" data-level={l.id} class:active={l.id === levelId} aria-selected={l.id === levelId} onclick={() => { levelId = l.id; }}>{l.id}<span class="count">{l.topics.filter((tp) => tp.kind === 'grammar').reduce((n, tp) => n + tp.lessons.length, 0)}</span></button>{/each}
+    </div>
+    <input class="search" type="search" bind:value={search} placeholder={t('learn.search')} />
+    {#each level?.topics ?? [] as tp (tp.id)}
+      {#if visible(tp).length}
+        <details class="topic" data-kind={tp.kind} open={tp.kind === 'grammar' || !!search.trim()}>
+          <summary><span class="topic-title">{tp.kind === 'grammar' ? tp.title : kindName(tp.kind)}</span> <span class="topic-n">{visible(tp).length}</span></summary>
+          <ul class="lesson-list">
+            {#each visible(tp) as e (e.id)}
+              <li><button class="lesson-row" data-lesson={e.id} onclick={() => open({ level, topic: tp, entry: e })}>
+                <span class="l-title" lang={lang.bcp47}>{e.title}</span><span class="l-meaning">{e.meaning}</span>
+                {#if pct(e.id) !== null}<span class="pct" class:good={pct(e.id) >= 80}>{pct(e.id)}%</span>{/if}
+              </button></li>
+            {/each}
+          </ul>
+        </details>
+      {/if}
+    {/each}
   {/if}
+  {#if learn}<p class="credit">{learn.credit}</p>{/if}
 </section>
 
 <style>
-  .system { font-size: 0.7em; color: var(--ink-2); font-weight: 400; margin-left: 6px; }
-  .modes, .levels { display: flex; flex-wrap: wrap; gap: 4px; margin: 6px 0 10px; }
-  .mode-tab, .level-tab, button { font: inherit; padding: 5px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); color: var(--ink); cursor: pointer; }
+  .learn-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+  .learn-head h2 { margin: 0; }
+  .system { color: var(--ink-2); font-size: 0.9em; }
+  .modes { margin-left: auto; display: flex; gap: 4px; }
+  .mode-tab, .level-tab { font: inherit; padding: 5px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); color: var(--ink); cursor: pointer; }
   .mode-tab.active, .level-tab.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
-  button.primary { border-color: var(--accent); font-weight: 600; border-radius: 8px; }
-  .unit h3 { font-size: 1rem; margin: 12px 0 4px; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
-  .kind { font-size: 0.78em; padding: 1px 8px; border-radius: 6px; border: 1px solid var(--line); color: var(--ink-2); white-space: nowrap; }
-  .kind[data-kind=grammar] { border-color: #1f77b4; } .kind[data-kind=vocab] { border-color: #2e8b57; } .kind[data-kind=kanji] { border-color: #9467bd; }
-  .title { color: var(--ink-2); font-weight: 400; }
-  .lesson-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px; }
-  .lesson-link { border-radius: 8px; text-align: left; }
-  .gloss { color: var(--ink-2); font-size: 0.88em; }
-  .pct { font-size: 0.8em; margin-left: 6px; color: #b06000; } .pct.good { color: #2e8b57; }
-  .lesson { border: 1px solid var(--line-soft); border-radius: 10px; padding: 10px 14px; margin: 8px 0; background: var(--panel); }
-  .pattern { font-size: 1.8rem; margin: 4px 0; font-family: Georgia, serif; }
-  .romaji { color: var(--ink-2); font-style: italic; margin: 0; }
-  .meaning { font-size: 1.1em; font-weight: 600; }
-  .example { margin: 6px 0; padding: 6px 10px; background: var(--panel-hi); border-radius: 8px; display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; }
-  .ex-text { font-size: 1.15em; } .ex-en { color: var(--ink-2); }
-  .notes { border-left: 3px solid var(--accent); padding-left: 10px; color: var(--ink-2); }
-  .source, .credit { color: var(--muted); font-size: 0.85em; }
-  .words { border-collapse: collapse; } .words td { border-bottom: 1px solid var(--line-soft); padding: 3px 10px; }
-  .w { font-size: 1.15em; } .big { font-size: 1.6em; } .r { color: var(--ink-2); }
-  .range { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-  .back { margin-bottom: 6px; }
-  .quiz-wrap { margin-top: 10px; border-top: 1px solid var(--line-soft); padding-top: 6px; }
+  .levels { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 8px; }
+  .count { font-size: 0.75em; opacity: 0.75; margin-left: 6px; }
+  .search { width: 100%; box-sizing: border-box; font: inherit; padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); margin-bottom: 8px; }
+  .topic { border: 1px solid var(--line-soft); border-radius: 10px; margin: 8px 0; background: var(--panel); overflow: hidden; }
+  .topic summary { cursor: pointer; padding: 9px 14px; font-weight: 700; display: flex; align-items: baseline; gap: 8px; background: var(--panel-hi); }
+  .topic-n { font-weight: 400; font-size: 0.8em; color: var(--ink-2); margin-left: auto; }
+  .topic[data-kind=vocab] summary { border-left: 4px solid #2e8b57; } .topic[data-kind=kanji] summary { border-left: 4px solid #9467bd; } .topic[data-kind=grammar] summary { border-left: 4px solid #1f77b4; }
+  .lesson-list { list-style: none; margin: 0; padding: 0; }
+  .lesson-list li + li { border-top: 1px solid var(--line-soft); }
+  .lesson-row { width: 100%; display: grid; grid-template-columns: minmax(7em, auto) 1fr auto; gap: 4px 14px; align-items: baseline; text-align: left; font: inherit; padding: 8px 14px; border: 0; background: none; color: var(--ink); cursor: pointer; }
+  .lesson-row:hover { background: var(--panel-hi); }
+  @media (max-width: 600px) { .lesson-row { grid-template-columns: 1fr auto; } .l-meaning { grid-column: 1; } }
+  .l-title { font-size: 1.12em; font-weight: 600; }
+  .l-meaning { color: var(--ink-2); font-size: 0.92em; }
+  .pct { font-size: 0.8em; color: #b06000; } .pct.good { color: #2e8b57; }
+  .crumbs { color: var(--ink-2); font-size: 0.9em; display: flex; gap: 10px; align-items: center; }
+  .back, .prev-lesson, .next-lesson, button.primary, .to-reader { font: inherit; padding: 5px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); cursor: pointer; }
+  button.primary { border-color: var(--accent); font-weight: 600; }
+  h3 { font-size: 1.9rem; margin: 10px 0 2px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .badge-level { font-size: 0.45em; padding: 2px 8px; border-radius: 6px; background: var(--accent); color: var(--accent-ink); }
+  .l-sub { font-size: 1.15em; color: var(--ink-2); margin: 0 0 8px; }
+  .toc { display: flex; flex-wrap: wrap; gap: 4px 12px; position: sticky; top: 0; background: var(--panel); padding: 6px 0; border-bottom: 1px solid var(--line-soft); z-index: 2; font-size: 0.92em; }
+  .toc a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  .toc a:hover { text-decoration: underline; }
+  .l-sec { margin-top: 18px; scroll-margin-top: 48px; }
+  .l-sec h4 { font-size: 1.15em; margin: 0 0 6px; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 2px; }
+  .prose :global(table) { border-collapse: collapse; margin: 8px 0; max-width: 100%; display: block; overflow-x: auto; }
+  .prose :global(th), .prose :global(td) { border: 1px solid var(--line-soft); padding: 4px 10px; text-align: left; vertical-align: top; }
+  .prose :global(th) { background: var(--panel-hi); }
+  .prose :global(rt) { font-size: 0.55em; color: var(--ink-2); }
+  .prose :global(code) { background: var(--panel-hi); padding: 0 4px; border-radius: 4px; font-family: inherit; font-weight: 600; }
+  .prose :global(.ex) { border-left: 3px solid var(--line); padding: 4px 12px; margin: 8px 0; background: var(--panel-hi); border-radius: 0 8px 8px 0; }
+  .prose :global(.ex .ja) { font-size: 1.2em; margin: 2px 0; line-height: 2; }
+  .prose :global(.ex .ja b) { color: var(--accent); }
+  .prose :global(.ex .en) { color: var(--ink-2); margin: 0; }
+  .prose :global(.note), .prose :global(.rule) { border: 1px solid var(--line-soft); border-left: 4px solid #ff7f0e; border-radius: 8px; padding: 2px 12px; margin: 8px 0; background: var(--panel-hi); }
+  .prose :global(.rule) { border-left-color: #1f77b4; }
+  .examples-romaji { margin-top: 6px; color: var(--ink-2); }
+  .your-turn .turn { border-top: 1px dashed var(--line-soft); padding: 6px 0; }
+  .your-turn summary { cursor: pointer; color: var(--accent); }
+  .words { border-collapse: collapse; } .words td { border-bottom: 1px solid var(--line-soft); padding: 4px 10px; }
+  .w { font-size: 1.2em; } .big { font-size: 1.7em; } .r { color: var(--ink-2); }
+  .prev-next { display: flex; justify-content: space-between; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+  .next-lesson { margin-left: auto; }
+  .range-box { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 12px 0; }
+  .ex-count, .pct-line, .source, .credit { color: var(--ink-2); font-size: 0.88em; }
 </style>

@@ -128,9 +128,15 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
 
 ## Learn tab
 
-- Japanese lessons: OpenJLPT (github.com/evanclan/OpenJLPT), CC BY-SA 4.0 — grammar points (pattern, meaning,
-  formation, example, notes) by the OpenJLPT contributors; vocabulary and kanji levels after Jonathan Waller's JLPT
-  resources (tanos.co.uk, CC BY); kanji data from KANJIDIC (EDRDG, CC BY-SA). Questions are generated from it.
+- Japanese grammar lessons: **JLPT Grammar Enhanced** (github.com/maitodesu/jlpt-grammar-enhanced, commit a4254e0),
+  CC BY-SA 4.0 — 847 grammar points N5–N1 with their explanations, formation tables, examples, nuance, contrasts,
+  common mistakes and practice questions, by its authors; shown as written, with furigana rendered as ruby. Topic
+  groups and order are the book's.
+- Japanese words and kanji by level: OpenJLPT (github.com/evanclan/OpenJLPT), CC BY-SA 4.0; levels after Jonathan
+  Waller's JLPT resources (tanos.co.uk, CC BY); kanji data from KANJIDIC (EDRDG, CC BY-SA).
+- Exercise sentences: **Tatoeba** (tatoeba.org), CC BY 2.0 FR — Japanese sentences with their English and Portuguese
+  translations, matched to lessons by tools/learn_examples.mjs. Romaji and word lists come from Casus's own reading
+  of each sentence. Fetch the sources with tools/fetch_learn_sources.sh.
 
 ## Document import
 

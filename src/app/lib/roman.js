@@ -3,5 +3,8 @@
 const OTHER_SCRIPT = /[^\p{Script=Latin}\p{Script=Common}\p{Script=Inherited}]/u;
 export function romanOf(text, romanize) {
   if (!romanize || !text || !OTHER_SCRIPT.test(text)) return '';
-  return romanize(text);
+  const out = romanize(text);
+  // a romaniser that cannot read the script (Japanese kanji have no reading without the dictionary) leaves it as it
+  // was: show nothing rather than the same text again (Allan, 2026-10-19: the romaji repeated the kanji)
+  return OTHER_SCRIPT.test(out) ? '' : out;
 }
