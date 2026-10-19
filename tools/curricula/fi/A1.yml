@@ -1,0 +1,537 @@
+id: A1
+topics:
+
+- title: {en: Sounds and vowel harmony, pt: Sons e harmonia vocálica}
+  lessons:
+  - id: fi-harmony
+    title: talossa, metsässä
+    meaning: {en: "vowel harmony: -ssa or -ssä?", pt: "harmonia vocálica: -ssa ou -ssä?"}
+    intro:
+      en: |
+        Finnish is written as it is spoken: every letter is always pronounced the same, and a **double letter is a long sound** that changes the meaning: **tuli** (fire) – **tuuli** (wind) – **tulli** (customs).
+
+        The vowels form three groups:
+
+        - **back**: **a, o, u**
+        - **front**: **ä, ö, y**
+        - **neutral**: **e, i**
+
+        Endings come in two shapes, and the word chooses: a word with a back vowel takes **-ssa, -sta, -lla, -ko, -a**; a word with only front (or neutral) vowels takes **-ssä, -stä, -llä, -kö, -ä**: **talo → talossa** (in the house), **metsä → metsässä** (in the forest), **kirje → kirjeessä** (in the letter). In a compound the last part decides: **kirjakauppa → kirjakaupassa**.
+      pt: |
+        O finlandês se escreve como se fala: cada letra tem sempre o mesmo som, e **letra dobrada é som longo**, que muda o sentido: **tuli** (fogo) – **tuuli** (vento) – **tulli** (alfândega).
+
+        As vogais formam três grupos:
+
+        - **posteriores**: **a, o, u**
+        - **anteriores**: **ä, ö, y** (ä como o *é* aberto, ö como o *eu* francês, y como o *u* francês)
+        - **neutras**: **e, i**
+
+        As terminações têm duas formas, e a palavra escolhe: palavra com vogal posterior leva **-ssa, -sta, -lla, -ko, -a**; palavra só com vogais anteriores (ou neutras) leva **-ssä, -stä, -llä, -kö, -ä**: **talo → talossa** (na casa), **metsä → metsässä** (na floresta), **kirje → kirjeessä** (na carta). Na palavra composta decide a última parte: **kirjakauppa → kirjakaupassa**.
+    mistakes:
+    - wrong: metsässa
+      right: metsässä
+      why: {en: "metsä has only front vowels: every ending takes ä.", pt: "metsä só tem vogais anteriores: toda terminação leva ä."}
+    examples:
+    - [Asun talossa., I live in a house., Moro numa casa., talossa]
+    - [Kävelen metsässä., I'm walking in the forest., Estou caminhando na floresta., metsässä]
+    - ["Onko tämä sinun kirjasi?", "Is this your book?", "Este livro é seu?", "Onko"]
+    match:
+    - {seq: [{re: "ssa$", pos: [noun, adj]}], suffixes: [ssa, ssä]}
+    - {seq: [{re: "ssä$", pos: [noun, adj]}], suffixes: [ssä, ssa]}
+    - {seq: [{re: "sta$", pos: [noun, adj]}], suffixes: [sta, stä]}
+    - {seq: [{re: "stä$", pos: [noun, adj]}], suffixes: [stä, sta]}
+    - {seq: [{re: "lla$", pos: [noun, adj]}], suffixes: [lla, llä]}
+    - {seq: [{re: "llä$", pos: [noun, adj]}], suffixes: [llä, lla]}
+    - {seq: [{re: "ko$", pos: verb, start: true}], suffixes: [ko, kö]}
+    - {seq: [{re: "kö$", pos: verb, start: true}], suffixes: [kö, ko]}
+
+- title: {en: "Pronouns and 'olla'", pt: "Pronomes e 'olla'"}
+  lessons:
+  - id: fi-olla
+    title: minä olen, sinä olet
+    meaning: {en: "personal pronouns and olla 'to be'", pt: "pronomes pessoais e olla 'ser, estar'"}
+    intro:
+      en: |
+        **minä** I, **sinä** you, **hän** he/she (one word for both, always for people), **me** we, **te** you (plural and polite), **he** they (people). Things are **se** (it) and **ne** (they). In speech you will hear **mä, sä, se, me, te, ne**.
+
+        The ending of the verb already says who: **olen** = I am, so the pronoun is often left out in the 1st and 2nd person (**Olen Anna.**), but never in the 3rd (**Hän on Anna.**).
+      pt: |
+        **minä** eu, **sinä** você/tu, **hän** ele/ela (uma palavra só, sempre para pessoas), **me** nós, **te** vocês (e o tratamento formal), **he** eles/elas (pessoas). Coisas são **se** (isso) e **ne** (essas coisas). Na fala se ouve **mä, sä, se, me, te, ne**.
+
+        A terminação do verbo já diz quem é: **olen** = eu sou, por isso o pronome muitas vezes cai na 1ª e 2ª pessoa (**Olen Anna.**), mas nunca na 3ª (**Hän on Anna.**).
+    paradigms:
+    - {word: olla, pos: verb, tense: pres, mood: ind, label: {en: "olla to be (present)", pt: "olla ser, estar (presente)"}}
+    examples:
+    - [Minä olen opiskelija., I'm a student., Eu sou estudante., olen]
+    - [Hän on lääkäri., He is a doctor., Ele é médico., "on"]
+    - [Olemme kotona., We're at home., Estamos em casa., Olemme]
+    match: {seq: [{lemma: "^olla$", mood: ind, tense: pres}], same: [tense, mood]}
+
+- title: {en: Present tense by verb type, pt: Presente por tipo de verbo}
+  lessons:
+  - id: fi-type1
+    title: puhua – puhun
+    meaning: {en: "verb type 1: puhua, asua, lukea", pt: "verbo do tipo 1: puhua, asua, lukea"}
+    intro:
+      en: |
+        Finnish verbs fall into six types by the ending of the infinitive (the dictionary form). **Type 1** ends in **two vowels**, the last **-a / -ä**: **puhua** (speak), **asua** (live), **lukea** (read), **ottaa** (take). Drop the **-a/-ä** and add the personal endings:
+
+        | | |
+        |---|---|
+        | minä puhu**n** | me puhu**mme** |
+        | sinä puhu**t** | te puhu**tte** |
+        | hän puhu**u** (vowel doubled) | he puhu**vat / -vät** |
+
+        Many type 1 verbs change their stem consonant (**consonant gradation**, next lessons): **ottaa → otan**, **lukea → luen**, but the 3rd person keeps the strong stem: **ottaa → hän ottaa**.
+      pt: |
+        Os verbos finlandeses se dividem em seis tipos pela terminação do infinitivo (a forma do dicionário). O **tipo 1** termina em **duas vogais**, a última **-a / -ä**: **puhua** (falar), **asua** (morar), **lukea** (ler), **ottaa** (pegar). Tire o **-a/-ä** e acrescente as terminações pessoais:
+
+        | | |
+        |---|---|
+        | minä puhu**n** | me puhu**mme** |
+        | sinä puhu**t** | te puhu**tte** |
+        | hän puhu**u** (vogal dobrada) | he puhu**vat / -vät** |
+
+        Muitos verbos do tipo 1 trocam a consoante do radical (**gradação consonantal**, próximas lições): **ottaa → otan**, **lukea → luen**, mas a 3ª pessoa fica com o radical forte: **ottaa → hän ottaa**.
+    paradigms:
+    - {word: puhua, pos: verb, tense: pres, mood: ind, label: {en: "puhua to speak", pt: "puhua falar"}}
+    - {word: ottaa, pos: verb, tense: pres, mood: ind, label: {en: "ottaa to take", pt: "ottaa pegar"}}
+    mistakes:
+    - wrong: hän puhuu → hän puhu
+      right: hän puhuu
+      why: {en: "The 3rd person singular doubles the stem's last vowel.", pt: "A 3ª pessoa do singular dobra a última vogal do radical."}
+    examples:
+    - [Puhun suomea., I speak Finnish., Eu falo finlandês., Puhun]
+    - ["Missä sinä asut?", "Where do you live?", "Onde você mora?", "asut"]
+    - [He lukevat kirjaa., They're reading a book., Eles estão lendo um livro., lukevat]
+    match: {seq: [{pos: verb, mood: ind, tense: pres, person: ["1", "2", "3"], lemma: "[aeiouyäö][aä]$", not: {lemma: "^(olla|ei)$"}}], same: [tense, mood]}
+
+  - id: fi-type2
+    title: syödä – syön
+    meaning: {en: "verb type 2: syödä, juoda, saada", pt: "verbo do tipo 2: syödä, juoda, saada"}
+    intro:
+      en: |
+        **Type 2** ends in **-da / -dä** after a vowel: **syödä** (eat), **juoda** (drink), **saada** (get), **voida** (can), **tehdä** (do, irregular: **teen**), **nähdä** (see: **näen**). Drop **-da/-dä**; the 3rd person singular adds nothing: **hän syö, hän juo, hän saa**.
+
+        **syön, syöt, syö, syömme, syötte, syövät.** No consonant gradation in this type.
+      pt: |
+        O **tipo 2** termina em **-da / -dä** depois de vogal: **syödä** (comer), **juoda** (beber), **saada** (receber), **voida** (poder), **tehdä** (fazer, irregular: **teen**), **nähdä** (ver: **näen**). Tire **-da/-dä**; a 3ª pessoa do singular não acrescenta nada: **hän syö, hän juo, hän saa**.
+
+        **syön, syöt, syö, syömme, syötte, syövät.** Este tipo não tem gradação consonantal.
+    paradigms:
+    - {word: syödä, pos: verb, tense: pres, mood: ind, label: {en: "syödä to eat", pt: "syödä comer"}}
+    examples:
+    - [Syön aamiaista., I'm eating breakfast., Estou tomando café da manhã., Syön]
+    - ["Juotko kahvia?", "Do you drink coffee?", "Você bebe café?", "Juotko"]
+    - [Voimme mennä huomenna., We can go tomorrow., Podemos ir amanhã., Voimme]
+    match: {seq: [{pos: verb, mood: ind, tense: pres, person: ["1", "2", "3"], lemma: "[aeiouyäöh]d[aä]$"}], same: [tense, mood]}
+
+  - id: fi-type3
+    title: tulla – tulen
+    meaning: {en: "verb type 3: tulla, mennä, purra, nousta", pt: "verbo do tipo 3: tulla, mennä, purra, nousta"}
+    intro:
+      en: |
+        **Type 3** ends in **-lla, -nna, -rra, -sta** (and **-llä, -nnä, -rrä, -stä**): **tulla** (come), **mennä** (go), **olla** (be, irregular), **purra** (bite), **nousta** (rise), **pestä** (wash). Take off the **-la/-na/-ra/-ta** and add **-e-**, then the endings: **tul-e-n, men-e-n, nous-e-n, pes-e-n**. The 3rd person singular doubles the e: **hän tulee, hän menee**.
+      pt: |
+        O **tipo 3** termina em **-lla, -nna, -rra, -sta** (e **-llä, -nnä, -rrä, -stä**): **tulla** (vir), **mennä** (ir), **olla** (ser, irregular), **purra** (morder), **nousta** (levantar-se), **pestä** (lavar). Tire o **-la/-na/-ra/-ta**, acrescente **-e-** e depois as terminações: **tul-e-n, men-e-n, nous-e-n, pes-e-n**. A 3ª pessoa do singular dobra o e: **hän tulee, hän menee**.
+    paradigms:
+    - {word: tulla, pos: verb, tense: pres, mood: ind, label: {en: "tulla to come", pt: "tulla vir"}}
+    - {word: mennä, pos: verb, tense: pres, mood: ind, label: {en: "mennä to go", pt: "mennä ir"}}
+    examples:
+    - [Tulen huomenna., I'll come tomorrow., Venho amanhã., Tulen]
+    - ["Mihin te menette?", "Where are you going?", "Aonde vocês vão?", "menette"]
+    match: {seq: [{pos: verb, mood: ind, tense: pres, person: ["1", "2", "3"], lemma: "(ll|nn|rr|st)[aä]$", not: {lemma: "^olla$"}}], same: [tense, mood]}
+
+  - id: fi-type4
+    title: haluta – haluan
+    meaning: {en: "verb type 4: haluta, tavata, pelätä", pt: "verbo do tipo 4: haluta, tavata, pelätä"}
+    intro:
+      en: |
+        **Type 4** ends in a **vowel + -ta / -tä**: **haluta** (want), **tavata** (meet), **osata** (know how), **pelätä** (fear), **siivota** (clean). Take off **-ta/-tä** and add **-a-/-ä-**: **halu-a-n, halu-a-t, halua-a, halua-mme, halua-tte, halua-vat**. When the stem already ends in a, the 3rd person singular is just **-aa**: **hän haluaa, hän tapaa**. Gradation goes the other way (weak → strong): **tavata → tapaan**.
+      pt: |
+        O **tipo 4** termina em **vogal + -ta / -tä**: **haluta** (querer), **tavata** (encontrar), **osata** (saber fazer), **pelätä** (temer), **siivota** (limpar). Tire **-ta/-tä** e acrescente **-a-/-ä-**: **halu-a-n, halu-a-t, halua-a, halua-mme, halua-tte, halua-vat**. Quando o radical já termina em a, a 3ª pessoa do singular é só **-aa**: **hän haluaa, hän tapaa**. A gradação vai ao contrário (fraca → forte): **tavata → tapaan**.
+    paradigms:
+    - {word: haluta, pos: verb, tense: pres, mood: ind, label: {en: "haluta to want", pt: "haluta querer"}}
+    examples:
+    - [Haluan kahvia., I want coffee., Quero café., Haluan]
+    - ["Osaatko uida?", "Can you swim?", "Você sabe nadar?", "Osaatko"]
+    match: {seq: [{pos: verb, mood: ind, tense: pres, person: ["1", "2", "3"], lemma: "[^aeiouyäö][aouyäö]t[aä]$"}], same: [tense, mood]}
+
+  - id: fi-type5
+    title: tarvita – tarvitsen
+    meaning: {en: "verb type 5: tarvita, valita, häiritä", pt: "verbo do tipo 5: tarvita, valita, häiritä"}
+    intro:
+      en: |
+        **Type 5** ends in **-ita / -itä**: **tarvita** (need), **valita** (choose), **häiritä** (disturb), **merkitä** (mean). Take off **-ta/-tä** and add **-tse-**: **tarvi-tse-n, tarvitset, tarvitsee, tarvitsemme, tarvitsette, tarvitsevat**. No gradation.
+
+        (**Type 6**, **-eta / -etä**, mostly verbs of becoming — **vanheta** grow old → **vanhenen** — adds **-ne-**.)
+      pt: |
+        O **tipo 5** termina em **-ita / -itä**: **tarvita** (precisar), **valita** (escolher), **häiritä** (incomodar), **merkitä** (significar). Tire **-ta/-tä** e acrescente **-tse-**: **tarvi-tse-n, tarvitset, tarvitsee, tarvitsemme, tarvitsette, tarvitsevat**. Sem gradação.
+
+        (O **tipo 6**, **-eta / -etä**, quase só verbos de "tornar-se" — **vanheta** envelhecer → **vanhenen** — acrescenta **-ne-**.)
+    paradigms:
+    - {word: tarvita, pos: verb, tense: pres, mood: ind, label: {en: "tarvita to need", pt: "tarvita precisar"}}
+    examples:
+    - [Tarvitsen apua., I need help., Preciso de ajuda., Tarvitsen]
+    - ["Mitä sinä valitset?", "What do you choose?", "O que você escolhe?", "valitset"]
+    match: {seq: [{pos: verb, mood: ind, tense: pres, person: ["1", "2", "3"], lemma: "[^aeiouyäö][ie]t[aä]$"}], same: [tense, mood]}
+
+  - id: fi-gradation
+    title: nukkua – nukun
+    meaning: {en: "consonant gradation: kk → k, pp → p, tt → t, nt → nn…", pt: "gradação consonantal: kk → k, pp → p, tt → t, nt → nn…"}
+    intro:
+      en: |
+        In many words the consonant at the start of the last syllable **weakens** when the syllable closes (a consonant follows: **-n, -t, -mme, -tte**, many case endings):
+
+        | strong | weak | example |
+        |---|---|---|
+        | kk | k | nukkua → nu**k**un |
+        | pp | p | oppia → o**p**in |
+        | tt | t | ottaa → o**t**an |
+        | k | – | lukea → luen |
+        | p | v | tupa → tuvassa |
+        | t | d | tietää → tiedän |
+        | nt | nn | ranta → ra**nn**alla |
+        | nk | ng | kenkä → kengät |
+        | mp | mm | ampua → ammun |
+        | lt | ll | kieltää → kiellän |
+        | rt | rr | kertoa → kerron |
+
+        Verb types 1–2 go strong → weak (**nukkua → nukun**, but **hän nukkuu**: the 3rd person doesn't close the syllable); types 3–4 go weak → strong (**tavata → tapaan**).
+      pt: |
+        Em muitas palavras a consoante do início da última sílaba **enfraquece** quando a sílaba se fecha (vem uma consoante: **-n, -t, -mme, -tte**, muitas terminações de caso):
+
+        | forte | fraca | exemplo |
+        |---|---|---|
+        | kk | k | nukkua → nu**k**un |
+        | pp | p | oppia → o**p**in |
+        | tt | t | ottaa → o**t**an |
+        | k | – | lukea → luen |
+        | p | v | tupa → tuvassa |
+        | t | d | tietää → tiedän |
+        | nt | nn | **ranta → rannalla** |
+        | nk | ng | kenkä → kengät |
+        | mp | mm | ampua → ammun |
+        | lt | ll | kieltää → kiellän |
+        | rt | rr | kertoa → kerron |
+
+        Os tipos 1–2 vão de forte para fraca (**nukkua → nukun**, mas **hän nukkuu**: a 3ª pessoa não fecha a sílaba); os tipos 3–4 de fraca para forte (**tavata → tapaan**).
+    mistakes:
+    - wrong: minä nukkun
+      right: minä nukun
+      why: {en: "-n closes the syllable: kk weakens to k.", pt: "-n fecha a sílaba: kk enfraquece para k."}
+    examples:
+    - [Nukun hyvin., I sleep well., Durmo bem., Nukun]
+    - [Kerron sinulle tarinan., I'll tell you a story., Vou te contar uma história., Kerron]
+    - [Tiedän sen., I know it., Eu sei disso., Tiedän]
+    match: {seq: [{pos: verb, mood: ind, tense: pres, person: ["1", "2"], lemma: "(kk|pp|tt|nt|nk|mp|lt|rt|ht|tä|ta|ke|ka)[aeiouyäö]?[aä]$"}], same: [tense, mood]}
+
+- title: {en: Negation and questions, pt: Negação e perguntas}
+  lessons:
+  - id: fi-negation
+    title: en puhu
+    meaning: {en: "the negative verb: en, et, ei, emme, ette, eivät", pt: "o verbo negativo: en, et, ei, emme, ette, eivät"}
+    intro:
+      en: |
+        Finnish says *no* with a **verb of its own** that takes the personal ending; the main verb stays in a bare stem (the present stem without ending):
+
+        | | |
+        |---|---|
+        | minä **en** puhu | me **emme** puhu |
+        | sinä **et** puhu | te **ette** puhu |
+        | hän **ei** puhu | he **eivät** puhu |
+
+        **olla → en ole, tulla → en tule, haluta → en halua, tarvita → en tarvitse.** Gradation: the stem is weak like the 1st person: **en nuku**.
+      pt: |
+        O finlandês diz *não* com um **verbo próprio**, que leva a terminação pessoal; o verbo principal fica no radical puro (o radical do presente sem terminação):
+
+        | | |
+        |---|---|
+        | minä **en** puhu | me **emme** puhu |
+        | sinä **et** puhu | te **ette** puhu |
+        | hän **ei** puhu | he **eivät** puhu |
+
+        **olla → en ole, tulla → en tule, haluta → en halua, tarvita → en tarvitse.** Gradação: o radical é fraco como na 1ª pessoa: **en nuku**.
+    mistakes:
+    - wrong: minä ei puhu
+      right: minä en puhu
+      why: {en: "The negative verb agrees with the subject.", pt: "O verbo negativo concorda com o sujeito."}
+    examples:
+    - [En ymmärrä., I don't understand., Não entendo., En]
+    - [Hän ei ole kotona., He's not at home., Ele não está em casa., ei]
+    - [Emme tiedä., We don't know., Não sabemos., Emme]
+    match: {seq: [{lemma: "^ei$"}, {pos: verb}], gap: 0, same: [tense, mood]}
+
+  - id: fi-question-ko
+    title: Puhutko suomea?
+    meaning: {en: "yes/no questions with -ko / -kö", pt: "perguntas de sim ou não com -ko / -kö"}
+    intro:
+      en: |
+        A yes/no question puts **-ko / -kö** on the word asked about and moves it to the front: **Puhut suomea.** → **Puhutko suomea?** "Do you speak Finnish?"; **Onko tämä sinun?** "Is this yours?"; **Sinäkö sen teit?** "Was it *you* who did it?". Vowel harmony chooses **-ko** or **-kö**.
+
+        The answer repeats the verb: **Puhutko suomea? – Puhun. / En puhu.** (**kyllä** "yes" and **ei** "no" also exist.)
+      pt: |
+        A pergunta de sim ou não põe **-ko / -kö** na palavra perguntada e a leva para o início: **Puhut suomea.** → **Puhutko suomea?** "Você fala finlandês?"; **Onko tämä sinun?** "Isto é seu?"; **Sinäkö sen teit?** "Foi *você* que fez?". A harmonia vocálica escolhe **-ko** ou **-kö**.
+
+        A resposta repete o verbo: **Puhutko suomea? – Puhun. / En puhu.** (Também existem **kyllä** "sim" e **ei** "não".)
+    examples:
+    - ["Puhutko englantia?", "Do you speak English?", "Você fala inglês?", "Puhutko"]
+    - ["Onko sinulla nälkä?", "Are you hungry?", "Você está com fome?", "Onko"]
+    - ["Tiedätkö missä hän asuu?", "Do you know where he lives?", "Você sabe onde ele mora?", "Tiedätkö"]
+    match:
+    - {seq: [{re: "(ko)$", pos: verb, start: true}], same: [tense, mood]}
+    - {seq: [{re: "(kö)$", pos: verb, start: true}], same: [tense, mood]}
+
+  - id: fi-question-words
+    title: mikä, kuka, missä
+    meaning: {en: "question words", pt: "palavras interrogativas"}
+    intro:
+      en: |
+        **mikä** what, **kuka** who, **mitä** what (partitive: *what are you doing*), **missä** where, **mistä** where from, **mihin / minne** where to, **milloin** when, **miksi** why, **miten / kuinka** how, **kuinka paljon** how much, **millainen** what kind, **kenen** whose, **paljonko** how much.
+
+        Note the three *where*: the local cases of **mi-** (**missä, mistä, mihin**) match the answer: **Missä asut? – Helsingissä. Mistä tulet? – Brasiliasta. Mihin menet? – Kauppaan.**
+      pt: |
+        **mikä** o que/qual, **kuka** quem, **mitä** o que (partitivo: *o que você está fazendo*), **missä** onde, **mistä** de onde, **mihin / minne** para onde, **milloin** quando, **miksi** por que, **miten / kuinka** como, **kuinka paljon** quanto, **millainen** de que tipo, **kenen** de quem, **paljonko** quanto.
+
+        Repare nos três *onde*: os casos locais de **mi-** (**missä, mistä, mihin**) combinam com a resposta: **Missä asut? – Helsingissä. Mistä tulet? – Brasiliasta. Mihin menet? – Kauppaan.**
+    examples:
+    - ["Mistä sinä olet kotoisin?", "Where are you from?", "De onde você é?", "Mistä"]
+    - ["Miksi olet myöhässä?", "Why are you late?", "Por que você está atrasado?", "Miksi"]
+    match: {seq: [{word: [mikä, kuka, mitä, missä, mistä, mihin, minne, milloin, miksi, miten, kuinka, millainen, kenen, paljonko, ketä, keneltä, kenelle]}], gap: 0}
+    pool: [mikä, kuka, mitä, missä, mistä, mihin, milloin, miksi, miten, kenen]
+
+- title: {en: Nouns and their cases, pt: Os substantivos e seus casos}
+  lessons:
+  - id: fi-cases-overview
+    title: sijamuodot
+    meaning: {en: "the cases: an overview", pt: "os casos: visão geral"}
+    intro:
+      en: |
+        Finnish has no prepositions where English has *in, from, to, on*: **endings** do the work. The main ones:
+
+        - **nominative** (subject): **talo**
+        - **genitive** (*of*, owner): **talon**
+        - **partitive** (part, amount, object of an unfinished action): **taloa**
+        - **inner local**: **talossa** (in), **talosta** (out of), **taloon** (into)
+        - **outer local**: **talolla** (on, at), **talolta** (off, from), **talolle** (onto, to)
+        - **essive** (as): **talona**, **translative** (becoming): **taloksi**
+
+        Each gets its own lesson; the table shows two words in full.
+      pt: |
+        O finlandês não tem preposições onde o português tem *em, de, para*: as **terminações** fazem o trabalho. As principais:
+
+        - **nominativo** (sujeito): **talo**
+        - **genitivo** (*de*, posse): **talon**
+        - **partitivo** (parte, quantidade, objeto de ação não concluída): **taloa**
+        - **locais internos**: **talossa** (em, dentro), **talosta** (de dentro), **taloon** (para dentro)
+        - **locais externos**: **talolla** (em cima, junto), **talolta** (de cima, de junto), **talolle** (para cima, para junto)
+        - **essivo** (como): **talona**, **translativo** (tornar-se): **taloksi**
+
+        Cada um tem sua lição; a tabela mostra duas palavras completas.
+    paradigms:
+    - {word: talo, pos: noun, label: {en: "talo house", pt: "talo casa"}}
+    - {word: kirja, pos: noun, label: {en: "kirja book", pt: "kirja livro"}}
+    examples:
+    - [Talo on iso., The house is big., A casa é grande., Talo]
+    match: {seq: [{pos: noun, number: sg, case: [nom, gen, par, ine, ela, ill, ade, abl, all]}], same: [number]}
+
+  - id: fi-partitive
+    title: kahvia, vettä
+    meaning: {en: "the partitive singular: some, part, after numbers", pt: "o partitivo singular: um pouco, parte, depois de números"}
+    intro:
+      en: |
+        The **partitive** is the most frequent case after the nominative. Endings: **-a / -ä** (**kahvi → kahvia, talo → taloa**), **-ta / -tä** after a long vowel or a consonant (**maa → maata, nainen → naista, vesi → vettä**), **-tta / -ttä** after -e (**huone → huonetta**).
+
+        Use it for:
+
+        - **an undefined amount** of a mass: **Juon kahvia.** "I drink (some) coffee."
+        - **after numbers** (2 and up): **kaksi kahvia, kolme taloa**
+        - **after many verbs** (rakastaa, odottaa, auttaa…): **Rakastan sinua.**
+        - **negative sentences**: **Minulla ei ole autoa.**
+        - **unfinished actions**: **Luen kirjaa.** "I'm reading a book."
+      pt: |
+        O **partitivo** é o caso mais frequente depois do nominativo. Terminações: **-a / -ä** (**kahvi → kahvia, talo → taloa**), **-ta / -tä** depois de vogal longa ou consoante (**maa → maata, nainen → naista, vesi → vettä**), **-tta / -ttä** depois de -e (**huone → huonetta**).
+
+        Usa-se:
+
+        - para **quantidade indefinida** de algo: **Juon kahvia.** "Bebo café."
+        - **depois de números** (de 2 em diante): **kaksi kahvia, kolme taloa**
+        - **depois de muitos verbos** (rakastaa, odottaa, auttaa…): **Rakastan sinua.**
+        - em **frases negativas**: **Minulla ei ole autoa.**
+        - em **ações não concluídas**: **Luen kirjaa.** "Estou lendo um livro."
+    mistakes:
+    - wrong: kaksi kahvit
+      right: kaksi kahvia
+      why: {en: "After a number: partitive singular.", pt: "Depois de número: partitivo singular."}
+    examples:
+    - [Juon kahvia., I drink coffee., Bebo café., kahvia]
+    - [Minulla ei ole autoa., I don't have a car., Não tenho carro., autoa]
+    - [Rakastan sinua., I love you., Eu te amo., sinua]
+    match: {seq: [{pos: noun, case: par, number: sg}], same: [number]}
+
+  - id: fi-numbers
+    title: yksi, kaksi, kolme
+    meaning: {en: "numbers and the partitive after them", pt: "os números e o partitivo depois deles"}
+    intro:
+      en: |
+        **0 nolla, 1 yksi, 2 kaksi, 3 kolme, 4 neljä, 5 viisi, 6 kuusi, 7 seitsemän, 8 kahdeksan, 9 yhdeksän, 10 kymmenen.** Teens: **yksitoista** (11), **kaksitoista** (12)… Tens: **kaksikymmentä** (20), **kolmekymmentä** (30). **sata** 100, **tuhat** 1000.
+
+        After every number except **yksi**, the noun is in the **partitive singular**: **kaksi kissaa, kolme poikaa, kymmenen euroa**. The verb stays singular: **Kaksi poikaa leikkii.**
+      pt: |
+        **0 nolla, 1 yksi, 2 kaksi, 3 kolme, 4 neljä, 5 viisi, 6 kuusi, 7 seitsemän, 8 kahdeksan, 9 yhdeksän, 10 kymmenen.** De 11 a 19: **yksitoista** (11), **kaksitoista** (12)… Dezenas: **kaksikymmentä** (20), **kolmekymmentä** (30). **sata** 100, **tuhat** 1000.
+
+        Depois de todo número menos **yksi**, o substantivo vai para o **partitivo singular**: **kaksi kissaa, kolme poikaa, kymmenen euroa**. O verbo fica no singular: **Kaksi poikaa leikkii.**
+    examples:
+    - [Minulla on kaksi veljeä., I have two brothers., Tenho dois irmãos., veljeä]
+    - [Se maksaa kymmenen euroa., It costs ten euros., Custa dez euros., euroa]
+    match: {seq: [{word: [kaksi, kolme, neljä, viisi, kuusi, seitsemän, kahdeksan, yhdeksän, kymmenen, sata, tuhat, monta, muutama, paljon]}, {pos: noun, case: par, number: sg}], gap: 1, same: [number]}
+
+  - id: fi-genitive
+    title: Annan kirja
+    meaning: {en: "the genitive: -n (owner, 'of')", pt: "o genitivo: -n (posse, 'de')"}
+    intro:
+      en: |
+        The **genitive** ends in **-n** and comes **before** the noun it belongs to: **Annan kirja** "Anna's book", **talon ovi** "the door of the house", **Suomen pääkaupunki** "the capital of Finland". Gradation weakens the stem: **kauppa → kaupan**, **pöytä → pöydän**. Words in **-e** double it: **huone → huoneen**; **-nen** → **-sen**: **nainen → naisen**.
+
+        The genitive also marks the subject of **täytyy** (must) and the object of a finished action (later lessons).
+      pt: |
+        O **genitivo** termina em **-n** e vem **antes** do substantivo a que pertence: **Annan kirja** "o livro da Anna", **talon ovi** "a porta da casa", **Suomen pääkaupunki** "a capital da Finlândia". A gradação enfraquece o radical: **kauppa → kaupan**, **pöytä → pöydän**. Palavras em **-e** a dobram: **huone → huoneen**; **-nen** → **-sen**: **nainen → naisen**.
+
+        O genitivo também marca o sujeito de **täytyy** (ter de) e o objeto de uma ação concluída (próximas lições).
+    examples:
+    - [Tämä on Annan kirja., This is Anna's book., Este é o livro da Anna., Annan]
+    - [Talon ovi on punainen., The door of the house is red., A porta da casa é vermelha., Talon]
+    match: {seq: [{pos: noun, case: gen, number: sg}, {pos: noun}], gap: 0, same: [number]}
+
+  - id: fi-plural
+    title: talot, kirjat
+    meaning: {en: "the nominative plural -t", pt: "o nominativo plural -t"}
+    intro:
+      en: |
+        The plural subject ends in **-t**, on the same (often weak) stem as the genitive singular: **talo → talot, kauppa → kaupat, huone → huoneet, nainen → naiset, käsi → kädet**. The verb agrees: **Talot ovat isoja.** The other plural cases use **-i-** (A2).
+      pt: |
+        O sujeito no plural termina em **-t**, sobre o mesmo radical (muitas vezes fraco) do genitivo singular: **talo → talot, kauppa → kaupat, huone → huoneet, nainen → naiset, käsi → kädet**. O verbo concorda: **Talot ovat isoja.** Os outros casos do plural usam **-i-** (A2).
+    examples:
+    - [Lapset leikkivät., The children are playing., As crianças estão brincando., Lapset]
+    - ["Missä avaimet ovat?", "Where are the keys?", "Onde estão as chaves?", "avaimet"]
+    match: {seq: [{pos: noun, case: nom, number: pl, re: "t$"}]}
+
+  - id: fi-inner-local
+    title: talossa, talosta, taloon
+    meaning: {en: "inside: inessive -ssa, elative -sta, illative -Vn", pt: "dentro: inessivo -ssa, elativo -sta, ilativo -Vn"}
+    intro:
+      en: |
+        Three cases for **inside**:
+
+        - **inessive -ssa/-ssä** "in": **Asun Helsingissä.**
+        - **elative -sta/-stä** "out of, from": **Tulen kaupasta.** Also "about": **puhua elokuvasta**
+        - **illative** "into": the last vowel doubled + **-n** (**talo → taloon, kauppa → kauppaan**), **-hVn** after a long vowel (**maa → maahan, työ → työhön**), **-seen** after a long vowel in longer words (**huone → huoneeseen**). The illative keeps the **strong** stem.
+
+        Cities, countries and closed spaces take these: **Suomessa, Brasiliassa, koulussa, autossa**.
+      pt: |
+        Três casos para **dentro**:
+
+        - **inessivo -ssa/-ssä** "em": **Asun Helsingissä.** "Moro em Helsinque."
+        - **elativo -sta/-stä** "de dentro, de": **Tulen kaupasta.** "Venho da loja." Também "sobre": **puhua elokuvasta**
+        - **ilativo** "para dentro": a última vogal dobrada + **-n** (**talo → taloon, kauppa → kauppaan**), **-hVn** depois de vogal longa (**maa → maahan, työ → työhön**), **-seen** depois de vogal longa em palavras maiores (**huone → huoneeseen**). O ilativo fica com o radical **forte**.
+
+        Cidades, países e espaços fechados usam estes: **Suomessa, Brasiliassa, koulussa, autossa**.
+    mistakes:
+    - wrong: menen kaupassa
+      right: menen kauppaan
+      why: {en: "Motion into: illative, not inessive.", pt: "Movimento para dentro: ilativo, não inessivo."}
+    examples:
+    - [Asun Helsingissä., I live in Helsinki., Moro em Helsinque., Helsingissä]
+    - [Tulen kaupasta., I'm coming from the shop., Venho da loja., kaupasta]
+    - [Menen kouluun., I'm going to school., Vou para a escola., kouluun]
+    match: {seq: [{pos: noun, case: [ine, ela, ill], number: sg}], same: [number]}
+
+  - id: fi-outer-local
+    title: pöydällä, pöydältä, pöydälle
+    meaning: {en: "on, at: adessive -lla, ablative -lta, allative -lle", pt: "em cima, junto: adessivo -lla, ablativo -lta, alativo -lle"}
+    intro:
+      en: |
+        Three cases for **on a surface, at, near**:
+
+        - **adessive -lla/-llä** "on, at": **Kirja on pöydällä.** Also *by means of* (**bussilla** "by bus") and time (**viikolla** "during the week").
+        - **ablative -lta/-ltä** "off, from (someone)": **Sain kirjeen äidiltä.**
+        - **allative -lle** "onto, to (someone)": **Annan kukan äidille.**
+
+        Open places and some towns take these too: **torilla** (at the market), **asemalla** (at the station), **Tampereella**.
+      pt: |
+        Três casos para **sobre uma superfície, junto, perto**:
+
+        - **adessivo -lla/-llä** "sobre, em": **Kirja on pöydällä.** "O livro está na mesa." Também *por meio de* (**bussilla** "de ônibus") e tempo (**viikolla** "durante a semana").
+        - **ablativo -lta/-ltä** "de cima de, de (alguém)": **Sain kirjeen äidiltä.** "Recebi uma carta da mãe."
+        - **alativo -lle** "para cima de, para (alguém)": **Annan kukan äidille.** "Dou uma flor para a mãe."
+
+        Lugares abertos e algumas cidades também: **torilla** (na feira), **asemalla** (na estação), **Tampereella**.
+    examples:
+    - [Kirja on pöydällä., The book is on the table., O livro está na mesa., pöydällä]
+    - [Soitan äidille., I'll call mum., Vou ligar para a mamãe., äidille]
+    - [Menen töihin bussilla., I go to work by bus., Vou para o trabalho de ônibus., bussilla]
+    match: {seq: [{pos: noun, case: [ade, abl, all], number: sg}], same: [number]}
+
+  - id: fi-have
+    title: minulla on
+    meaning: {en: "'to have': minulla on (at me is)", pt: "'ter': minulla on (em mim há)"}
+    intro:
+      en: |
+        Finnish has no verb *to have*. The owner goes in the **adessive** and the verb is always **on**: **Minulla on auto.** "I have a car." **Sinulla on, hänellä on, meillä on, teillä on, heillä on.** Question: **Onko sinulla…?** Negative: **Minulla ei ole autoa** (partitive). Feelings work the same: **Minulla on nälkä** "I'm hungry".
+      pt: |
+        O finlandês não tem verbo *ter*. O dono vai para o **adessivo** e o verbo é sempre **on**: **Minulla on auto.** "Tenho um carro." **Sinulla on, hänellä on, meillä on, teillä on, heillä on.** Pergunta: **Onko sinulla…?** Negativa: **Minulla ei ole autoa** (partitivo). Sensações funcionam igual: **Minulla on nälkä** "Estou com fome".
+    examples:
+    - [Minulla on kissa., I have a cat., Tenho um gato., Minulla]
+    - ["Onko sinulla aikaa?", "Do you have time?", "Você tem tempo?", "sinulla"]
+    - [Meillä ei ole rahaa., We don't have money., Não temos dinheiro., Meillä]
+    match: {seq: [{pos: [pron, noun], case: ade}, {word: ["on", ole, oli, ollut]}], near: 1, gap: 0, same: [number]}
+
+  - id: fi-adjectives
+    title: iso talo, isossa talossa
+    meaning: {en: "adjectives agree in case and number", pt: "o adjetivo concorda em caso e número"}
+    intro:
+      en: |
+        An adjective before a noun takes **the same case and number**: **iso talo, isossa talossa, isoon taloon, isot talot, isoja taloja**. After **olla** the adjective is nominative for one countable thing (**Talo on iso**) and partitive for masses and plurals (**Vesi on kylmää. Talot ovat isoja.**).
+      pt: |
+        O adjetivo antes do substantivo fica **no mesmo caso e número**: **iso talo, isossa talossa, isoon taloon, isot talot, isoja taloja**. Depois de **olla** o adjetivo fica no nominativo para uma coisa contável (**Talo on iso**) e no partitivo para massas e plurais (**Vesi on kylmää. Talot ovat isoja.**).
+    paradigms:
+    - {word: iso, pos: adj, label: {en: "iso big", pt: "iso grande"}}
+    examples:
+    - [Asun isossa talossa., I live in a big house., Moro numa casa grande., isossa]
+    - [Hän on uusi opettaja., He's a new teacher., Ele é um professor novo., uusi]
+    match: {seq: [{pos: adj}, {pos: noun}], gap: 0, same: [number]}
+
+  - id: fi-demonstratives
+    title: tämä, tuo, se
+    meaning: {en: "this, that, it: tämä, tuo, se", pt: "este, aquele, isso: tämä, tuo, se"}
+    intro:
+      en: |
+        **tämä** this (near me), **tuo** that (over there), **se** it / that (already mentioned). Plurals: **nämä, nuo, ne**. They decline: **tässä** (here, in this), **tästä, tähän; tuossa, tuolla; siinä, sitä, sen**. In speech **se** and **ne** are also used for people.
+      pt: |
+        **tämä** este (perto de mim), **tuo** aquele (lá), **se** isso / esse (já mencionado). Plurais: **nämä, nuo, ne**. Eles declinam: **tässä** (aqui, neste), **tästä, tähän; tuossa, tuolla; siinä, sitä, sen**. Na fala **se** e **ne** também se usam para pessoas.
+    examples:
+    - [Tämä on minun autoni., This is my car., Este é o meu carro., Tämä]
+    - [En tiedä sitä., I don't know that., Não sei disso., sitä]
+    match: {seq: [{pos: pron, lemma: "^(tämä|tuo|se|nämä|nuo|ne)$"}], same: [number]}
+
+- title: {en: Imperative, pt: Imperativo}
+  lessons:
+  - id: fi-imperative
+    title: Tule! Tulkaa!
+    meaning: {en: "the imperative: tule!, tulkaa!, älä tule!", pt: "o imperativo: tule!, tulkaa!, älä tule!"}
+    intro:
+      en: |
+        **To one person** the imperative is the stem of the 1st person singular without **-n**: **puhun → puhu!, tulen → tule!, haluan → halua!** **To several (or politely)**: infinitive stem + **-kaa / -kää**: **puhukaa!, tulkaa!, syökää!**.
+
+        Negative: **älä** (one) / **älkää** (several) + the bare stem: **Älä mene! Älkää puhuko!** (plural adds **-ko/-kö**). Add **-pa/-pä** to soften: **Tulepa tänne!**
+      pt: |
+        **Para uma pessoa** o imperativo é o radical da 1ª pessoa do singular sem **-n**: **puhun → puhu!, tulen → tule!, haluan → halua!** **Para várias (ou com formalidade)**: radical do infinitivo + **-kaa / -kää**: **puhukaa!, tulkaa!, syökää!**.
+
+        Negativa: **älä** (uma) / **älkää** (várias) + o radical puro: **Älä mene! Älkää puhuko!** (o plural acrescenta **-ko/-kö**). Acrescente **-pa/-pä** para suavizar: **Tulepa tänne!**
+    examples:
+    - [Tule tänne!, Come here!, Vem cá!, Tule]
+    - [Älä huoli., Don't worry., Não se preocupe., Älä]
+    - ["Istukaa, olkaa hyvä.", "Sit down, please.", "Sentem-se, por favor.", "Istukaa"]
+    match:
+    - {seq: [{pos: verb, mood: imp, start: true}], same: [mood]}
+    - {seq: [{word: [älä, älkää]}, {pos: verb}], gap: 0, pool: [älä, älkää, en, ei, et]}

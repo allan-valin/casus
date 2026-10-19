@@ -1,0 +1,263 @@
+id: A2
+topics:
+
+- title: {en: The past, pt: O passado}
+  lessons:
+  - id: fi-past
+    title: puhuin, tulin, halusin
+    meaning: {en: "the past tense (imperfekti)", pt: "o pretérito (imperfekti)"}
+    intro:
+      en: |
+        The past tense puts **-i-** between the stem and the personal ending: **puhun → puhuin, asun → asuin, tulen → tulin, haluan → halusin** (type 4: **-si-**), **tarvitsen → tarvitsin**. 3rd person singular: just **-i**: **hän puhui, hän tuli, hän halusi**.
+
+        The **-i-** changes the vowel before it:
+
+        - **a, ä, e** drop: **tule-i → tuli, menen → menin**
+        - in two-syllable verbs, **a** after **a, e, i** in the first syllable becomes **o**: **antaa → annoin, maksaa → maksoin**, but **ottaa → otin**
+        - long vowels shorten: **saada → sain, juoda → join, syödä → söin, viedä → vein**
+        - **t → s** in many verbs: **tietää → tiesin, ymmärtää → ymmärsin, lentää → lensin**
+
+        The past is the ordinary narrative tense: **Eilen kävin kaupassa.** "Yesterday I went to the shop."
+      pt: |
+        O pretérito põe **-i-** entre o radical e a terminação pessoal: **puhun → puhuin, asun → asuin, tulen → tulin, haluan → halusin** (tipo 4: **-si-**), **tarvitsen → tarvitsin**. 3ª pessoa do singular: só **-i**: **hän puhui, hän tuli, hän halusi**.
+
+        O **-i-** altera a vogal anterior:
+
+        - **a, ä, e** caem: **tule-i → tuli, menen → menin**
+        - em palavras de duas sílabas, **a** depois de **a, e, i** na primeira sílaba vira **o**: **antaa → annoin, maksaa → maksoin**, mas **ottaa → otin**
+        - vogais longas encurtam: **saada → sain, juoda → join, syödä → söin, viedä → vein**
+        - **t → s** em muitos verbos: **tietää → tiesin, ymmärtää → ymmärsin, lentää → lensin**
+
+        O pretérito é o tempo normal da narração: **Eilen kävin kaupassa.** "Ontem fui à loja."
+    paradigms:
+    - {word: puhua, pos: verb, tense: past, mood: ind, label: {en: "puhua to speak (past)", pt: "puhua falar (pretérito)"}}
+    - {word: tulla, pos: verb, tense: past, mood: ind, label: {en: "tulla to come (past)", pt: "tulla vir (pretérito)"}}
+    mistakes:
+    - wrong: minä tulein
+      right: minä tulin
+      why: {en: "The e of the stem drops before -i-.", pt: "O e do radical cai antes do -i-."}
+    examples:
+    - [Eilen kävin kaupassa., Yesterday I went to the shop., Ontem fui à loja., kävin]
+    - [Hän tuli kotiin myöhään., He came home late., Ele chegou em casa tarde., tuli]
+    - [Asuimme Tampereella., We lived in Tampere., Morávamos em Tampere., Asuimme]
+    match: {seq: [{pos: verb, mood: ind, tense: past, person: ["1", "2", "3"]}], same: [person, number]}
+
+  - id: fi-past-negative
+    title: en ollut, emme tulleet
+    meaning: {en: "the negative past: en + the -nut participle", pt: "o passado negativo: en + o particípio em -nut"}
+    intro:
+      en: |
+        The negative past is **en, et, ei…** + the **active past participle**: **-nut / -nyt** in the singular, **-neet** in the plural: **En puhunut. Hän ei tullut. Emme tulleet.**
+
+        The **n** assimilates to a stem ending in **l, r, s**: **tulla → tullut, purra → purrut, nousta → noussut, olla → ollut**. Type 4 and 5: **-nnut**: **haluta → halunnut, tarvita → tarvinnut**.
+
+        Vowel harmony: **-nut** after back-vowel verbs, **-nyt** after front ones: **syödä → syönyt, mennä → mennyt**.
+      pt: |
+        O passado negativo é **en, et, ei…** + o **particípio passado ativo**: **-nut / -nyt** no singular, **-neet** no plural: **En puhunut. Hän ei tullut. Emme tulleet.**
+
+        O **n** se assimila ao radical em **l, r, s**: **tulla → tullut, purra → purrut, nousta → noussut, olla → ollut**. Tipos 4 e 5: **-nnut**: **haluta → halunnut, tarvita → tarvinnut**.
+
+        Harmonia vocálica: **-nut** nos verbos com vogais posteriores, **-nyt** nos de vogais anteriores: **syödä → syönyt, mennä → mennyt**.
+    mistakes:
+    - wrong: emme tullut
+      right: emme tulleet
+      why: {en: "A plural subject takes -neet.", pt: "Sujeito plural leva -neet."}
+    examples:
+    - [En ollut kotona., I wasn't at home., Eu não estava em casa., ollut]
+    - [Hän ei syönyt mitään., He didn't eat anything., Ele não comeu nada., syönyt]
+    - [Emme tienneet sitä., We didn't know that., Não sabíamos disso., tienneet]
+    match:
+    - {seq: [{lemma: "^ei$"}, {pos: verb, re: "(n|l|r|s)ut$"}], gap: 1, suffixes: [ut, eet, yt], attested: true}
+    - {seq: [{lemma: "^ei$"}, {pos: verb, re: "(n|l|r|s)yt$"}], gap: 1, suffixes: [yt, eet, ut], attested: true}
+    - {seq: [{lemma: "^ei$"}, {pos: verb, re: "(n|l|r|s)eet$"}], gap: 1, suffixes: [eet, ut, yt], attested: true}
+
+  - id: fi-perfect
+    title: olen syönyt
+    meaning: {en: "the perfect: olen + -nut", pt: "o perfeito: olen + -nut"}
+    intro:
+      en: |
+        **olla** in the present + the past participle: **Olen syönyt.** "I have eaten." **Oletko käynyt Suomessa?** "Have you been to Finland?" **He ovat asuneet täällä kauan.** "They have lived here long." The participle agrees in number: **-nut/-nyt** (singular), **-neet** (plural).
+
+        Use it as in English: experience up to now, results that matter now, things still going on. The **pluperfect** uses the past of olla: **Olin syönyt.** "I had eaten."
+      pt: |
+        **olla** no presente + o particípio passado: **Olen syönyt.** "Já comi." **Oletko käynyt Suomessa?** "Você já esteve na Finlândia?" **He ovat asuneet täällä kauan.** "Eles moram aqui há muito tempo." O particípio concorda em número: **-nut/-nyt** (singular), **-neet** (plural).
+
+        Usa-se como o *present perfect* inglês: experiência até agora, resultados que importam agora, coisas que continuam. O **mais-que-perfeito** usa o passado de olla: **Olin syönyt.** "Eu tinha comido."
+    examples:
+    - [Olen syönyt jo., I've already eaten., Já comi., syönyt]
+    - ["Oletko käynyt Suomessa?", "Have you been to Finland?", "Você já esteve na Finlândia?", "käynyt"]
+    - [He ovat asuneet täällä kauan., They've lived here for a long time., Eles moram aqui há muito tempo., asuneet]
+    match:
+    - {seq: [{lemma: "^olla$", mood: ind}, {pos: verb, re: "(n|l|r|s)ut$"}], near: 2, gap: 1, suffixes: [ut, eet, yt], attested: true}
+    - {seq: [{lemma: "^olla$", mood: ind}, {pos: verb, re: "(n|l|r|s)yt$"}], near: 2, gap: 1, suffixes: [yt, eet, ut], attested: true}
+    - {seq: [{lemma: "^olla$", mood: ind}, {pos: verb, re: "(n|l|r|s)eet$"}], near: 2, gap: 1, suffixes: [eet, ut, yt], attested: true}
+
+- title: {en: Plurals, pt: Plurais}
+  lessons:
+  - id: fi-plural-partitive
+    title: taloja, kirjoja
+    meaning: {en: "the partitive plural: -ja, -ita, -ia", pt: "o partitivo plural: -ja, -ita, -ia"}
+    intro:
+      en: |
+        Plural partitive: **-ja / -jä** after a vowel (**talo → taloja, kirja → kirjoja, kissa → kissoja**), **-ia / -iä** when the plural stem has a consonant before the i (**pöytä → pöytiä, päivä → päiviä, nainen → naisia**), **-ita / -itä** after a long vowel (**maa → maita, huone → huoneita**).
+
+        Use it as the singular partitive, for **an unlimited number**: **Ostin omenoita.** "I bought (some) apples." **Talot ovat isoja.** After olla, plural adjectives are partitive.
+      pt: |
+        Partitivo plural: **-ja / -jä** depois de vogal (**talo → taloja, kirja → kirjoja**), **-ia / -iä** quando o radical plural fica com consoante antes do i (**pöytä → pöytiä, nainen → naisia**), **-ita / -itä** depois de vogal longa (**maa → maita, huone → huoneita**).
+
+        Usa-se como o partitivo singular, para **número indefinido**: **Ostin omenoita.** "Comprei maçãs." **Talot ovat isoja.** Depois de olla, adjetivos no plural ficam no partitivo.
+    examples:
+    - [Ostin omenoita., I bought apples., Comprei maçãs., omenoita]
+    - [Minulla on monta ystävää., I have many friends., Tenho muitos amigos., ystävää]
+    - [Pidän kirjoista ja elokuvista., I like books and films., Gosto de livros e filmes., kirjoista]
+    match: {seq: [{pos: noun, case: par, number: pl}], same: [case]}
+
+  - id: fi-plural-cases
+    title: taloissa, kirjoista
+    meaning: {en: "the plural stem -i- in the other cases", pt: "o radical plural -i- nos outros casos"}
+    intro:
+      en: |
+        Outside the nominative, the plural marker is **-i-** (**-j-** between vowels), placed before the case ending: **talo-i-ssa, kirjo-i-sta, kaupo-i-lle**. The **-i-** changes the stem vowel as in the past tense: **a → o** or drops (**kirja → kirjoissa, kissa → kissoissa, koira → koirissa**), **ä, e drop** (**päivä → päivissä**), long vowels shorten (**maa → maissa, työ → töissä**). Genitive plural: **-jen / -iden / -ten**: **talojen, maiden, naisten**.
+      pt: |
+        Fora do nominativo, a marca do plural é **-i-** (**-j-** entre vogais), antes da terminação do caso: **talo-i-ssa, kirjo-i-sta, kaupo-i-lle**. O **-i-** altera a vogal do radical como no pretérito: **a → o** ou cai (**kirja → kirjoissa, kissa → kissoissa, koira → koirissa**), **ä, e caem** (**päivä → päivissä**), vogais longas encurtam (**maa → maissa, työ → töissä**). Genitivo plural: **-jen / -iden / -ten**: **talojen, maiden, naisten**.
+    paradigms:
+    - {word: kissa, pos: noun, label: {en: "kissa cat", pt: "kissa gato"}}
+    examples:
+    - [Lapset leikkivät puistoissa., Children play in parks., As crianças brincam nos parques., puistoissa]
+    - [Pidän koirista., I like dogs., Gosto de cachorros., koirista]
+    match: {seq: [{pos: noun, number: pl, case: [gen, ine, ela, ill, ade, abl, all]}], same: [case]}
+
+- title: {en: Objects and verb government, pt: Objeto e regência}
+  lessons:
+  - id: fi-object
+    title: Luen kirjaa – luen kirjan
+    meaning: {en: "the object: partitive or genitive?", pt: "o objeto: partitivo ou genitivo?"}
+    intro:
+      en: |
+        The direct object has **two** cases, and the choice changes the meaning:
+
+        - **genitive** (-n) for a whole, finished result: **Luin kirjan.** "I read the book (to the end)." **Ostan auton.** "I'll buy the car."
+        - **partitive** for something unfinished, a part, an amount, or after a negation: **Luin kirjaa.** "I was reading the book." **Ostan maitoa.** "I'll buy some milk." **En osta autoa.** "I won't buy the car."
+
+        Some verbs always take the partitive (feelings and ongoing states): **rakastaa, ajatella, odottaa, auttaa, kiittää**: **Odotan bussia.**
+      pt: |
+        O objeto direto tem **dois** casos, e a escolha muda o sentido:
+
+        - **genitivo** (-n) para um todo, um resultado concluído: **Luin kirjan.** "Li o livro (até o fim)." **Ostan auton.** "Vou comprar o carro."
+        - **partitivo** para algo não concluído, uma parte, uma quantidade, ou depois de negação: **Luin kirjaa.** "Estava lendo o livro." **Ostan maitoa.** "Vou comprar leite." **En osta autoa.** "Não vou comprar o carro."
+
+        Alguns verbos levam sempre partitivo (sentimentos e estados contínuos): **rakastaa, ajatella, odottaa, auttaa, kiittää**: **Odotan bussia.** "Espero o ônibus."
+    mistakes:
+    - wrong: En osta auton.
+      right: En osta autoa.
+      why: {en: "After a negation the object is partitive.", pt: "Depois de negação o objeto fica no partitivo."}
+    examples:
+    - [Luin kirjan eilen., I read the book yesterday., Li o livro ontem., kirjan]
+    - [Odotan bussia., I'm waiting for the bus., Estou esperando o ônibus., bussia]
+    - [En ymmärrä kysymystä., I don't understand the question., Não entendo a pergunta., kysymystä]
+    match: {seq: [{pos: verb, mood: ind, person: ["1", "2", "3"]}, {pos: noun, case: [gen, par], number: sg}], gap: 1, same: [number]}
+
+  - id: fi-government
+    title: pidän sinusta
+    meaning: {en: "verbs with a fixed case: pitää jostakin, tutustua johonkin", pt: "verbos com caso fixo: pitää jostakin, tutustua johonkin"}
+    intro:
+      en: |
+        Many verbs require a particular case, to be learnt with the verb:
+
+        - **elative (-sta)**: **pitää** (like), **tykätä** (like), **kiinnostua** (get interested), **nauttia** (enjoy), **huolehtia** (take care of), **puhua / kertoa** (talk / tell about), **unelmoida** (dream of): **Pidän sinusta.** "I like you."
+        - **illative (-Vn)**: **tutustua** (get to know), **osallistua** (take part), **rakastua** (fall in love), **uskoa** (believe in), **luottaa** (trust), **vastata** (answer), **tottua** (get used to): **Rakastuin häneen.**
+        - **allative (-lle)**: **soittaa** (call), **antaa** (give), **kertoa** (tell someone), **nauraa** (laugh at): **Soitan sinulle.**
+        - **adessive (-lla)**: **on** (have, see *minulla on*)
+      pt: |
+        Muitos verbos exigem um caso, que se aprende com o verbo:
+
+        - **elativo (-sta)**: **pitää** (gostar), **tykätä** (gostar), **kiinnostua** (interessar-se), **nauttia** (aproveitar), **huolehtia** (cuidar de), **puhua / kertoa** (falar / contar sobre), **unelmoida** (sonhar com): **Pidän sinusta.** "Gosto de você."
+        - **ilativo (-Vn)**: **tutustua** (conhecer), **osallistua** (participar), **rakastua** (apaixonar-se), **uskoa** (acreditar em), **luottaa** (confiar), **vastata** (responder), **tottua** (acostumar-se): **Rakastuin häneen.** "Me apaixonei por ele."
+        - **alativo (-lle)**: **soittaa** (ligar), **antaa** (dar), **kertoa** (contar a alguém), **nauraa** (rir de): **Soitan sinulle.** "Te ligo."
+        - **adessivo (-lla)**: **on** (ter, ver *minulla on*)
+    mistakes:
+    - wrong: Pidän sinua.
+      right: Pidän sinusta.
+      why: {en: "pitää 'like' takes the elative.", pt: "pitää 'gostar' pede o elativo."}
+    examples:
+    - [Pidän sinusta., I like you., Gosto de você., sinusta]
+    - [Luotan häneen., I trust him., Confio nele., häneen]
+    - [Soitan sinulle huomenna., I'll call you tomorrow., Te ligo amanhã., sinulle]
+    match:
+    - {seq: [{lemma: "^(pitää|tykätä|kiinnostua|nauttia|huolehtia|unelmoida|haaveilla|kärsiä|välittää|riippua|luopua)$"}, {pos: [noun, pron], case: ela}], near: 2, gap: 1, same: [number]}
+    - {seq: [{lemma: "^(tutustua|osallistua|rakastua|uskoa|luottaa|vastata|tottua|kyllästyä|keskittyä|vaikuttaa|tyytyä|ihastua)$"}, {pos: [noun, pron], case: ill}], near: 2, gap: 1, same: [number]}
+    - {seq: [{lemma: "^(soittaa|nauraa|kirjoittaa|opettaa|näyttää|selittää|lähettää)$"}, {pos: [noun, pron], case: all}], near: 2, gap: 1, same: [number]}
+
+  - id: fi-necessity
+    title: minun täytyy
+    meaning: {en: "must: minun täytyy, minun pitää (genitive subject)", pt: "ter de: minun täytyy, minun pitää (sujeito no genitivo)"}
+    intro:
+      en: |
+        **täytyy, pitää, tarvitsee** (in the negative), **kannattaa** (it's worth), **on pakko** (have to) and **on** + adjective (**on helppo** it's easy) take the person in the **genitive** and stay in the 3rd person singular: **Minun täytyy mennä.** "I must go." **Sinun pitää levätä.** "You should rest." **Hänen ei tarvitse tulla.** "He doesn't need to come."
+      pt: |
+        **täytyy, pitää, tarvitsee** (na negativa), **kannattaa** (vale a pena), **on pakko** (é obrigatório) e **on** + adjetivo (**on helppo** é fácil) levam a pessoa no **genitivo** e ficam na 3ª pessoa do singular: **Minun täytyy mennä.** "Tenho de ir." **Sinun pitää levätä.** "Você deve descansar." **Hänen ei tarvitse tulla.** "Ele não precisa vir."
+    mistakes:
+    - wrong: Minä täytyy mennä.
+      right: Minun täytyy mennä.
+      why: {en: "täytyy takes a genitive subject.", pt: "täytyy pede o sujeito no genitivo."}
+    examples:
+    - [Minun täytyy lähteä., I have to leave., Tenho de ir embora., Minun]
+    - [Sinun pitäisi levätä., You should rest., Você deveria descansar., Sinun]
+    match:
+    - {seq: [{pos: [pron, noun], case: gen}, {word: [täytyy, täytyi, pitää, pitäisi, piti, kannattaa, kannattaisi]}, {pos: verb}], gap: 0, same: [number]}
+    - {seq: [{pos: [pron, noun], case: gen}, {word: [ei]}, {word: [tarvitse, tarvinnut, tarvitsisi]}], gap: 0, same: [number]}
+
+- title: {en: Joining sentences, pt: Ligando frases}
+  lessons:
+  - id: fi-conjunctions
+    title: että, koska, kun, jos
+    meaning: {en: "that, because, when, if: subordinating conjunctions", pt: "que, porque, quando, se: conjunções subordinativas"}
+    intro:
+      en: |
+        **että** that, **koska** because, **kun** when / as (also *than* in comparisons is **kuin**), **jos** if, **vaikka** although, **kunnes** until, **jotta** so that, **ennen kuin** before, **sen jälkeen kun** after. A comma always comes before them. Word order in the clause stays as in a main clause: **Tiedän, että hän tulee.**
+
+        **ja** and, **mutta** but, **tai** or, **vai** or (in questions: **teetä vai kahvia?**), **vaan** but rather (after a negation): **Hän ei ole suomalainen vaan ruotsalainen.**
+      pt: |
+        **että** que, **koska** porque, **kun** quando / como (o *que* das comparações é **kuin**), **jos** se, **vaikka** embora, **kunnes** até que, **jotta** para que, **ennen kuin** antes que, **sen jälkeen kun** depois que. Sempre há vírgula antes delas. A ordem na oração fica igual à da principal: **Tiedän, että hän tulee.** "Sei que ele vem."
+
+        **ja** e, **mutta** mas, **tai** ou, **vai** ou (em perguntas: **teetä vai kahvia?**), **vaan** mas sim (depois de negação): **Hän ei ole suomalainen vaan ruotsalainen.** "Ele não é finlandês, mas sueco."
+    examples:
+    - ["Tiedän, että hän tulee.", "I know that he's coming.", "Sei que ele vem.", "että"]
+    - ["Jäin kotiin, koska olin sairas.", "I stayed home because I was ill.", "Fiquei em casa porque estava doente.", "koska"]
+    - ["Jos sataa, en tule.", "If it rains, I won't come.", "Se chover, não venho.", "Jos"]
+    match: {seq: [{word: [että, koska, kun, jos, vaikka, kunnes, jotta, mutta, vaan, vai]}], gap: 0}
+    pool: [että, koska, kun, jos, vaikka, mutta, vaan, vai]
+
+  - id: fi-time
+    title: maanantaina, tammikuussa
+    meaning: {en: "time expressions: days, months, clock", pt: "expressões de tempo: dias, meses, horas"}
+    intro:
+      en: |
+        **Days** take the essive **-na**: **maanantaina** (on Monday), **tiistaina, keskiviikkona, torstaina, perjantaina, lauantaina, sunnuntaina**; also **viikonloppuna** (at the weekend), **jouluna**. **Months** (all in **-kuu**) take the inessive: **tammikuussa** (in January), **kesäkuussa**. **Seasons**: **keväällä, kesällä, syksyllä, talvella** (adessive). **Clock**: **kello kolme** (at three), **puoli neljä** (half past three — *half to four*).
+      pt: |
+        Os **dias** levam o essivo **-na**: **maanantaina** (na segunda-feira), **tiistaina, keskiviikkona, torstaina, perjantaina, lauantaina, sunnuntaina**; também **viikonloppuna** (no fim de semana), **jouluna** (no Natal). Os **meses** (todos em **-kuu**) levam o inessivo: **tammikuussa** (em janeiro), **kesäkuussa**. **Estações**: **keväällä, kesällä, syksyllä, talvella** (adessivo). **Horas**: **kello kolme** (às três), **puoli neljä** (três e meia — *meia para as quatro*).
+    examples:
+    - [Tulen maanantaina., I'm coming on Monday., Venho na segunda-feira., maanantaina]
+    - [Kesällä on lämmin., It's warm in summer., No verão faz calor., Kesällä]
+    match: {seq: [{pos: noun, lemma: "^(maanantai|tiistai|keskiviikko|torstai|perjantai|lauantai|sunnuntai|viikonloppu|kevät|kesä|syksy|talvi|aamu|ilta|yö|päivä|tammikuu|helmikuu|maaliskuu|huhtikuu|toukokuu|kesäkuu|heinäkuu|elokuu|syyskuu|lokakuu|marraskuu|joulukuu|joulu)$", case: [ess, ine, ade]}], same: [number]}
+
+- title: {en: Comparing, pt: Comparação}
+  lessons:
+  - id: fi-comparison
+    title: isompi, isoin
+    meaning: {en: "comparative -mpi and superlative -in", pt: "comparativo -mpi e superlativo -in"}
+    intro:
+      en: |
+        **Comparative**: stem + **-mpi** (**iso → isompi, kallis → kalliimpi, helppo → helpompi**); two-syllable stems in **-a/-ä** change it to **e** (**vanha → vanhempi**). **Superlative**: **-in** (**isoin, vanhin, kallein**). Irregular: **hyvä → parempi → paras**, **pitkä → pidempi**.
+
+        *Than* is **kuin** (**Hän on pidempi kuin minä**) or the partitive of the compared thing (**Hän on minua pidempi**). Both decline: **isommassa talossa, parhaat ystävät**.
+      pt: |
+        **Comparativo**: radical + **-mpi** (**iso → isompi, kallis → kalliimpi, helppo → helpompi**); radicais de duas sílabas em **-a/-ä** trocam por **e** (**vanha → vanhempi**). **Superlativo**: **-in** (**isoin, vanhin, kallein**). Irregular: **hyvä → parempi → paras**, **pitkä → pidempi**.
+
+        O *que* da comparação é **kuin** (**Hän on pidempi kuin minä**) ou o partitivo do termo comparado (**Hän on minua pidempi**). Ambos declinam: **isommassa talossa, parhaat ystävät**.
+    examples:
+    - [Hän on minua vanhempi., He's older than me., Ele é mais velho que eu., vanhempi]
+    - [Tämä on paras ravintola., This is the best restaurant., Este é o melhor restaurante., paras]
+    match:
+    - {seq: [{pos: adj, lemma: "mpi$"}], same: [number]}
+    - {seq: [{pos: adj, lemma: "^(paras|suurin|pienin|vanhin|nuorin|tärkein|kaunein|isoin|pisin|lyhyin|kallein|halvin|helpoin|vaikein|nopein|uusin|paras)$"}], same: [number]}

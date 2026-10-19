@@ -1,0 +1,120 @@
+id: B2
+topics:
+
+- title: {en: Participles, pt: Particípios}
+  lessons:
+  - id: fi-participles
+    title: lukeva, luettu, lukenut
+    meaning: {en: "participles as adjectives: the reading man, the read book", pt: "particípios como adjetivos: o homem que lê, o livro lido"}
+    intro:
+      en: |
+        Finnish replaces many relative clauses with participles, declined like adjectives:
+
+        - **-va / -vä** (present active): **lukeva poika** "the boy who reads", **juokseva vesi** "running water"
+        - **-nut / -nyt** (past active): **väsynyt mies** "a tired man", **kirjan lukenut opiskelija** "the student who has read the book"
+        - **-ttava / -ttävä** (present passive): **luettava kirja** "a book to be read", **syötävä** "edible"
+        - **-ttu / -tty** (past passive): **luettu kirja** "a read book", **suljettu ovi** "a closed door"
+
+        News and formal texts are full of them; speech prefers **joka** clauses.
+      pt: |
+        O finlandês troca muitas orações relativas por particípios, que declinam como adjetivos:
+
+        - **-va / -vä** (presente ativo): **lukeva poika** "o menino que lê", **juokseva vesi** "água corrente"
+        - **-nut / -nyt** (passado ativo): **väsynyt mies** "um homem cansado", **kirjan lukenut opiskelija** "o estudante que leu o livro"
+        - **-ttava / -ttävä** (presente passivo): **luettava kirja** "um livro a ser lido", **syötävä** "comestível"
+        - **-ttu / -tty** (passado passivo): **luettu kirja** "um livro lido", **suljettu ovi** "uma porta fechada"
+
+        Notícias e textos formais estão cheios deles; a fala prefere orações com **joka**.
+    examples:
+    - [Ovi oli suljettu., The door was closed., A porta estava fechada., suljettu]
+    - [Olen todella väsynyt., I'm really tired., Estou muito cansado., väsynyt]
+    match:
+    - {seq: [{pos: verb, mood: part, re: "[aeiouyäö]va$"}, {pos: noun}], gap: 0, same: [number]}
+    - {seq: [{pos: verb, mood: part, re: "[aeiouyäö]vä$"}, {pos: noun}], gap: 0, same: [number]}
+    - {seq: [{pos: [verb, adj], re: "ttu$"}], suffixes: [ttu, ttava, nut, va], attested: true}
+    - {seq: [{pos: [verb, adj], re: "tty$"}], suffixes: [tty, ttävä, nyt, vä], attested: true}
+
+  - id: fi-relative
+    title: joka, mikä
+    meaning: {en: "relative pronouns: joka, mikä", pt: "pronomes relativos: joka, mikä"}
+    intro:
+      en: |
+        **joka** (who, which) refers to a noun and takes the case its role needs in the clause: **mies, joka asuu täällä** "the man who lives here", **mies, jonka tunnen** "the man I know", **talo, jossa asun** "the house I live in", **ystävä, jolle soitin** "the friend I called". Plural: **jotka, joita, joissa…**. **mikä** refers to a whole clause or to **se, kaikki, jotain**: **Hän tuli ajoissa, mikä oli yllätys.**
+      pt: |
+        **joka** (que, o qual) se refere a um substantivo e fica no caso que a função dele pede na oração: **mies, joka asuu täällä** "o homem que mora aqui", **mies, jonka tunnen** "o homem que conheço", **talo, jossa asun** "a casa em que moro", **ystävä, jolle soitin** "o amigo para quem liguei". Plural: **jotka, joita, joissa…**. **mikä** se refere a uma oração inteira ou a **se, kaikki, jotain**: **Hän tuli ajoissa, mikä oli yllätys.** "Ele chegou na hora, o que foi uma surpresa."
+    examples:
+    - ["Tämä on talo, jossa asun.", "This is the house I live in.", "Esta é a casa em que moro.", "jossa"]
+    - ["Mies, jonka näin, oli poliisi.", "The man I saw was a policeman.", "O homem que vi era policial.", "jonka"]
+    match: {seq: [{pos: pron, lemma: "^(joka|jotka)$"}], same: [number]}
+
+- title: {en: Rarer cases and forms, pt: Casos e formas menos comuns}
+  lessons:
+  - id: fi-essive-translative
+    title: lapsena, opettajaksi
+    meaning: {en: "essive -na (as) and translative -ksi (becoming)", pt: "essivo -na (como) e translativo -ksi (tornar-se)"}
+    intro:
+      en: |
+        **Essive -na / -nä**: a temporary state or role, *as*: **Lapsena asuin maalla.** "As a child I lived in the country." **Hän on töissä opettajana.** "He works as a teacher." Also time: **maanantaina, jouluna**.
+
+        **Translative -ksi**: becoming, changing into, *for* (a time or purpose): **Hän tuli sairaaksi.** "He fell ill." **Haluan opettajaksi.** "I want to become a teacher." **Mitä se on suomeksi?** "What is it in Finnish?" **viikoksi** "for a week".
+      pt: |
+        **Essivo -na / -nä**: um estado ou papel temporário, *como*: **Lapsena asuin maalla.** "Quando criança eu morava no campo." **Hän on töissä opettajana.** "Ele trabalha como professor." Também tempo: **maanantaina, jouluna**.
+
+        **Translativo -ksi**: tornar-se, transformar-se, *por* (um tempo ou finalidade): **Hän tuli sairaaksi.** "Ele ficou doente." **Haluan opettajaksi.** "Quero ser professor." **Mitä se on suomeksi?** "Como se diz isso em finlandês?" **viikoksi** "por uma semana".
+    examples:
+    - [Lapsena asuin maalla., As a child I lived in the country., Quando criança eu morava no campo., Lapsena]
+    - ["Mitä tämä on suomeksi?", "What is this in Finnish?", "Como se diz isto em finlandês?", "suomeksi"]
+    match: {seq: [{pos: [noun, adj], case: [ess, tra]}], same: [number]}
+
+  - id: fi-abessive-instructive
+    title: rahatta, omin silmin
+    meaning: {en: "abessive -tta (without), instructive -in, comitative -ine-", pt: "abessivo -tta (sem), instrutivo -in, comitativo -ine-"}
+    intro:
+      en: |
+        Three rare cases, mostly in set phrases and writing:
+
+        - **abessive -tta / -ttä** "without": **rahatta** (without money); usually **ilman** + partitive: **ilman rahaa**
+        - **instructive -in** (plural form): manner: **omin silmin** (with one's own eyes), **jalan** (on foot), **käsin** (by hand)
+        - **comitative -ine-** + possessive: "together with": **Hän tuli perheineen.** "He came with his family."
+      pt: |
+        Três casos raros, quase só em expressões fixas e na escrita:
+
+        - **abessivo -tta / -ttä** "sem": **rahatta** (sem dinheiro); em geral **ilman** + partitivo: **ilman rahaa**
+        - **instrutivo -in** (forma plural): modo: **omin silmin** (com os próprios olhos), **jalan** (a pé), **käsin** (à mão)
+        - **comitativo -ine-** + possessivo: "junto com": **Hän tuli perheineen.** "Ele veio com a família."
+    examples:
+    - [Hän lähti ilman rahaa., He left without money., Ele saiu sem dinheiro., rahaa]
+    match:
+    - {seq: [{word: [ilman]}, {pos: noun, case: par}], gap: 1, same: [number]}
+    - {seq: [{pos: noun, case: abe}], same: [number]}
+
+- title: {en: Word formation, pt: Formação de palavras}
+  lessons:
+  - id: fi-derivation
+    title: -ja, -sto, -nen, -ton
+    meaning: {en: "common suffixes: -ja (doer), -inen (adjective), -ton (without), -sto (place)", pt: "sufixos comuns: -ja (agente), -inen (adjetivo), -ton (sem), -sto (lugar)"}
+    intro:
+      en: |
+        Finnish builds words from roots with productive suffixes:
+
+        - **-ja / -jä** doer: **opettaa → opettaja** (teacher), **lukea → lukija** (reader)
+        - **-inen** adjective: **kulta → kultainen** (golden), **suomi → suomalainen** (Finnish)
+        - **-ton / -tön** "-less": **raha → rahaton** (penniless), **työ → työtön** (unemployed)
+        - **-sto / -stö** place or collection: **kirja → kirjasto** (library), **sana → sanasto** (vocabulary)
+        - **-us / -ys** abstract noun: **vapaa → vapaus** (freedom), **ystävä → ystävyys** (friendship)
+        - **-la / -lä** place: **ravintola** (restaurant), **kahvila** (café), **sairaala** (hospital)
+      pt: |
+        O finlandês forma palavras a partir de raízes com sufixos produtivos:
+
+        - **-ja / -jä** agente: **opettaa → opettaja** (professor), **lukea → lukija** (leitor)
+        - **-inen** adjetivo: **kulta → kultainen** (dourado), **suomi → suomalainen** (finlandês)
+        - **-ton / -tön** "sem": **raha → rahaton** (sem dinheiro), **työ → työtön** (desempregado)
+        - **-sto / -stö** lugar ou coleção: **kirja → kirjasto** (biblioteca), **sana → sanasto** (vocabulário)
+        - **-us / -ys** substantivo abstrato: **vapaa → vapaus** (liberdade), **ystävä → ystävyys** (amizade)
+        - **-la / -lä** lugar: **ravintola** (restaurante), **kahvila** (café), **sairaala** (hospital)
+    examples:
+    - [Menen kirjastoon., I'm going to the library., Vou à biblioteca., kirjastoon]
+    - [Hän on työtön., He's unemployed., Ele está desempregado., työtön]
+    match:
+    - {seq: [{pos: adj, re: "(ton|tön)$"}], suffixes: [ton, tön, llinen, inen], attested: true}
+    - {seq: [{pos: noun, lemma: "(sto|stö|la|lä|us|ys)$"}], same: [number]}

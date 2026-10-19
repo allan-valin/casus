@@ -184,3 +184,22 @@ export function followSpelling(written, row, wrong) {
   for (let i = 0; i < Math.min(written.length, row.length); i += 1) if (written[i].toLowerCase() !== row[i].toLowerCase()) at.push([i, written[i].toLowerCase(), row[i].toLowerCase()]);
   return wrong.map((w) => [...w].map((ch, i) => { const d = at.find(([k, , from]) => k === i && ch.toLowerCase() === from); return d ? d[1] : ch; }).join(''));
 }
+
+/** generated wrong answers (suffix or prefix variants) that real text has: those, when there are two; else all of them
+ * (a lesson asks for it with `attested: true` — Finnish -ttiin, not the invented -tiin) */
+export function preferAttested(forms, seen, norm = lower) {
+  const real = forms.filter((f) => seen.has(norm(f)));
+  return real.length >= 2 ? real : forms;
+}
+
+/** a name in an inflecting language: capitalised and starting with one of the course's names (Tomille, Marin) */
+export function looksLikeName(surface, names) {
+  return surface[0] !== surface[0].toLocaleLowerCase() && names.some((n) => surface.startsWith(n));
+}
+
+/** wrong answers without an ending the answer lacks (Finnish possessive suffixes, which the paradigm data files
+ * under plain cases: elämieni as a genitive singular) */
+export function dropMarked(forms, answer, re) {
+  const marked = new RegExp(re, 'u');
+  return marked.test(answer) ? forms : forms.filter((f) => !marked.test(f));
+}

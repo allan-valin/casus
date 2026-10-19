@@ -181,3 +181,30 @@ it('Hangul spelling variants swap letters inside the syllable block (decomposed,
   const swaps = { 'ᅥ': ['ᅩ'], 'ᄀ': ['ᄏ'] };
   expect(spellingVariants('거'.normalize('NFD'), swaps).map((w) => w.normalize('NFC'))).toEqual(['커', '고']);
 });
+
+import { preferAttested } from '../../tools/learn_match.mjs';
+
+it('preferAttested keeps the generated forms seen in real text when there are two, else all of them', () => {
+  const seen = new Set(['puhuttiin', 'puhuisi']);
+  expect(preferAttested(['puhutiin', 'puhuttiin', 'puhuisi'], seen)).toEqual(['puhuttiin', 'puhuisi']);
+  expect(preferAttested(['puhutiin', 'puhuttiin'], seen)).toEqual(['puhutiin', 'puhuttiin']);
+});
+
+import { looksLikeName } from '../../tools/learn_match.mjs';
+
+it('looksLikeName: a capitalised word that starts with a listed name (Tom → Tomille), not places or other words', () => {
+  const names = ['Tom', 'Mari', 'Anni'];
+  expect(looksLikeName('Tomille', names)).toBe(true);
+  expect(looksLikeName('Marille', names)).toBe(true);
+  expect(looksLikeName('Helsingissä', names)).toBe(false);
+  expect(looksLikeName('tomaatti', names)).toBe(false);
+  expect(looksLikeName('Anna', names)).toBe(false);
+});
+
+import { dropMarked } from '../../tools/learn_match.mjs';
+
+it('dropMarked leaves out wrong answers with a marked ending unless the answer has it', () => {
+  const re = '(ni|si|mme|nne|nsa|nsä)$';
+  expect(dropMarked(['elämä', 'elämieni', 'elämillämme', 'elämässä'], 'elämää', re)).toEqual(['elämä', 'elämässä']);
+  expect(dropMarked(['ystävälläni', 'ystävälle'], 'ystävälleni', re)).toEqual(['ystävälläni', 'ystävälle']);
+});

@@ -9,8 +9,13 @@ import re
 from pathlib import Path
 
 CASES = ["nom", "gen", "dat", "acc", "ins", "abl", "loc", "pre", "voc"]
+# Finnish (and the Uralic order generally): the grammatical cases, then the inner and outer local cases, then the rest
+CASES_FI = ["nom", "gen", "par", "acc", "ine", "ela", "ill", "ade", "abl", "all", "ess", "tra", "abe"]   # (instructive, comitative: rare, in the lessons text)
 CASE_NAME = {"nom": ("nominative", "nominativo"), "gen": ("genitive", "genitivo"), "dat": ("dative", "dativo"), "acc": ("accusative", "acusativo"),
-             "abl": ("ablative", "ablativo"), "loc": ("locative", "locativo"), "ins": ("instrumental", "instrumental"), "pre": ("prepositional", "preposicional"), "voc": ("vocative", "vocativo")}
+             "abl": ("ablative", "ablativo"), "loc": ("locative", "locativo"), "ins": ("instrumental", "instrumental"), "pre": ("prepositional", "preposicional"), "voc": ("vocative", "vocativo"),
+             "par": ("partitive", "partitivo"), "ine": ("inessive", "inessivo"), "ela": ("elative", "elativo"), "ill": ("illative", "ilativo"),
+             "ade": ("adessive", "adessivo"), "all": ("allative", "alativo"), "ess": ("essive", "essivo"), "tra": ("translative", "translativo"),
+             "abe": ("abessive", "abessivo"), "com": ("comitative", "comitativo")}
 NUM_NAME = {"sg": ("singular", "singular"), "pl": ("plural", "plural"), "du": ("dual", "dual")}
 GEN_NAME = {"m": ("masculine", "masculino"), "f": ("feminine", "feminino"), "n": ("neuter", "neutro")}
 PERSON_NAME = {"1": ("1st person", "1ª pessoa"), "2": ("2nd person", "2ª pessoa"), "3": ("3rd person", "3ª pessoa")}
@@ -75,7 +80,10 @@ def paradigm_table(data: Path, spec: dict, attested: dict | None = None, final_s
             if any(cells):
                 rows.append([_both(PERSON_NAME[p]), *[c or "—" for c in cells]])
         return {"head": {"en": ["", *[NUM_NAME[n][0] for n in cols]], "pt": ["", *[NUM_NAME[n][1] for n in cols]]}, "rows": rows}
-    if pos == "noun":
+    # a language without gender (Finnish): adjectives and pronouns are laid out like nouns, case × number
+    genderless = not any(a.get("gender") in ("m", "f", "n") for _, a in forms)
+    finnish = any(a.get("case") == "par" for _, a in forms)
+    if pos == "noun" or genderless:
         cols = [n for n in ("sg", "pl") if any(a.get("number") == n for _, a in forms)]
         cond = lambda c, n: {"case": c, "number": n}   # noqa: E731
     else:
@@ -91,9 +99,9 @@ def paradigm_table(data: Path, spec: dict, attested: dict | None = None, final_s
             if g == "pl":
                 return {"case": c, "number": "pl", **deg}
             return {"case": c, "number": "x" if genderless_plural else number, "gender": g, **deg}
-    names = NUM_NAME if pos == "noun" else {**GEN_NAME, "pl": NUM_NAME["pl"]}
+    names = NUM_NAME if pos == "noun" or genderless else {**GEN_NAME, "pl": NUM_NAME["pl"]}
     rows = []
-    for c in CASES:
+    for c in (CASES_FI if finnish else CASES):
         if c == "voc" and pos in ("pron", "det"):
             continue                                          # pronouns and articles are not called
         cells = [pick(cond(c, x)) for x in cols]

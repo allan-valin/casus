@@ -1,0 +1,166 @@
+id: B1
+topics:
+
+- title: {en: Moods, pt: Modos}
+  lessons:
+  - id: fi-conditional
+    title: puhuisin, tulisin
+    meaning: {en: "the conditional -isi-: would", pt: "o condicional -isi-: -ria"}
+    intro:
+      en: |
+        The conditional puts **-isi-** before the personal ending: **puhuisin, tulisin, haluaisin, olisin**. 3rd person: **puhuisi, tulisi** (no extra vowel). The stem's **e** and **i** drop: **tule-isi → tulisi**; long vowels shorten as in the past: **saada → saisin, syödä → söisin**.
+
+        Use it for wishes and polite requests (**Haluaisin kahvia.** "I'd like a coffee."), for unreal conditions with **jos**: **Jos minulla olisi rahaa, ostaisin talon.** "If I had money I'd buy a house." Past conditional: **olisin + -nut**: **Olisin tullut.** "I would have come."
+      pt: |
+        O condicional põe **-isi-** antes da terminação pessoal: **puhuisin, tulisin, haluaisin, olisin**. 3ª pessoa: **puhuisi, tulisi** (sem vogal extra). O **e** e o **i** do radical caem: **tule-isi → tulisi**; vogais longas encurtam como no pretérito: **saada → saisin, syödä → söisin**.
+
+        Usa-se para desejos e pedidos educados (**Haluaisin kahvia.** "Eu queria um café."), e para condições irreais com **jos**: **Jos minulla olisi rahaa, ostaisin talon.** "Se eu tivesse dinheiro, compraria uma casa." Condicional passado: **olisin + -nut**: **Olisin tullut.** "Eu teria vindo."
+    paradigms:
+    - {word: olla, pos: verb, tense: pres, mood: cond, label: {en: "olla (conditional)", pt: "olla (condicional)"}}
+    examples:
+    - [Haluaisin kupin kahvia., I'd like a cup of coffee., Eu queria uma xícara de café., Haluaisin]
+    - ["Jos olisin rikas, matkustaisin paljon.", "If I were rich I'd travel a lot.", "Se eu fosse rico, viajaria muito.", "olisin"]
+    - ["Voisitko auttaa minua?", "Could you help me?", "Você poderia me ajudar?", "Voisitko"]
+    match: {seq: [{pos: verb, mood: cond, person: ["1", "2", "3"]}], same: [person, number]}
+
+  - id: fi-potential
+    title: lienee, tullee
+    meaning: {en: "the potential -ne-: probably (formal)", pt: "o potencial -ne-: provavelmente (formal)"}
+    intro:
+      en: |
+        The **potential** (-ne-) says *probably, may*: **Hän tullee huomenna.** "He'll probably come tomorrow." The **n** assimilates like the past participle: **tulla → tullee, nousta → noussee**; **olla** has its own stem: **lienee** "is probably". It belongs to news and official writing; in speech Finns say **varmaan, kai, ehkä** + the indicative.
+      pt: |
+        O **potencial** (-ne-) diz *provavelmente, talvez*: **Hän tullee huomenna.** "Ele provavelmente vem amanhã." O **n** se assimila como no particípio passado: **tulla → tullee, nousta → noussee**; **olla** tem radical próprio: **lienee** "provavelmente é". É da linguagem de jornal e oficial; na fala se diz **varmaan, kai, ehkä** + indicativo.
+    examples:
+    - [Hän lienee kotona., He's probably at home., Ele provavelmente está em casa., lienee]
+    match: {seq: [{pos: verb, mood: pot, re: "(nee|lee|ree|see|nevat|nevät|levat|levät|revat|revät|sevat|sevät|lienen|lienet|lienemme|lienette)$"}], same: [person, number]}
+
+  - id: fi-imperative-3
+    title: tulkoon, menkäämme
+    meaning: {en: "other imperatives: let him come, let's go", pt: "outros imperativos: que ele venha, vamos"}
+    intro:
+      en: |
+        **3rd person**: **-koon / -köön**: **Tulkoon!** "Let him come!", **Olkoon.** "So be it." **1st plural** (formal): **-kaamme / -käämme**: **Menkäämme!** "Let us go!" In everyday speech *let's* is the passive: **Mennään!** "Let's go!", **Syödään!** "Let's eat!".
+      pt: |
+        **3ª pessoa**: **-koon / -köön**: **Tulkoon!** "Que ele venha!", **Olkoon.** "Que seja." **1ª do plural** (formal): **-kaamme / -käämme**: **Menkäämme!** "Vamos!" No dia a dia o *vamos* é a passiva: **Mennään!** "Vamos!", **Syödään!** "Vamos comer!".
+    examples:
+    - [Olkoon niin., So be it., Que assim seja., Olkoon]
+    match:
+    - {seq: [{pos: verb, re: "(koon|kaamme)$"}], suffixes: [koon, kaamme, kaa, ko], attested: true}
+    - {seq: [{pos: verb, re: "(köön|käämme)$"}], suffixes: [köön, käämme, kää, kö], attested: true}
+
+- title: {en: The passive, pt: A passiva}
+  lessons:
+  - id: fi-passive
+    title: puhutaan, mennään
+    meaning: {en: "the passive present: 'one does', 'is done'", pt: "a passiva no presente: 'faz-se', 'é feito'"}
+    intro:
+      en: |
+        The Finnish passive has **no doer at all** — *someone, people* do it: **Suomessa puhutaan suomea ja ruotsia.** "Finnish and Swedish are spoken in Finland." The object stays in the object case (nominative or partitive), and there is one form for all.
+
+        Form: take the infinitive (weak stem for types 1–2) and add **-taan / -tään** (type 1: **puhua → puhutaan, ottaa → otetaan** — a → e), **-aan / -ään** after the -da/-la/-na/-ta of types 2–6: **syödä → syödään, tulla → tullaan, mennä → mennään, haluta → halutaan, tarvita → tarvitaan**.
+
+        In speech **me** + passive is *we*: **Me mennään** "We're going".
+      pt: |
+        A passiva finlandesa **não tem agente nenhum** — *alguém, as pessoas* fazem: **Suomessa puhutaan suomea ja ruotsia.** "Na Finlândia se fala finlandês e sueco." O objeto continua no caso de objeto (nominativo ou partitivo), e há uma forma só para tudo.
+
+        Forma: pegue o infinitivo (radical fraco nos tipos 1–2) e acrescente **-taan / -tään** (tipo 1: **puhua → puhutaan, ottaa → otetaan** — a → e), **-aan / -ään** depois do -da/-la/-na/-ta dos tipos 2–6: **syödä → syödään, tulla → tullaan, mennä → mennään, haluta → halutaan, tarvita → tarvitaan**.
+
+        Na fala, **me** + passiva é *nós*: **Me mennään** "A gente vai".
+    examples:
+    - [Suomessa puhutaan suomea ja ruotsia., Finnish and Swedish are spoken in Finland., Na Finlândia se fala finlandês e sueco., puhutaan]
+    - [Täällä ei saa tupakoida., Smoking is not allowed here., Aqui não se pode fumar., saa]
+    - [Kauppa avataan kello yhdeksän., The shop opens at nine., A loja abre às nove., avataan]
+    match:
+    - {seq: [{pos: verb, re: "[^aeiouyäö][aeiouyäö]taan$"}], suffixes: [taan, ttiin, ttaisiin], attested: true}
+    - {seq: [{pos: verb, re: "[^aeiouyäö][aeiouyäö]tään$"}], suffixes: [tään, ttiin, ttäisiin], attested: true}
+    - {seq: [{pos: verb, re: "nnaan$"}], suffixes: [nnaan, ntiin, ntaisiin], attested: true}
+    - {seq: [{pos: verb, re: "nnään$"}], suffixes: [nnään, ntiin, ntäisiin], attested: true}
+    - {seq: [{pos: verb, re: "llaan$"}], suffixes: [llaan, ltiin, ltaisiin], attested: true}
+    - {seq: [{pos: verb, re: "llään$"}], suffixes: [llään, ltiin, ltäisiin], attested: true}
+    - {seq: [{pos: verb, re: "[aeiouyäö]daan$"}], suffixes: [daan, tiin, taisiin], attested: true}
+    - {seq: [{pos: verb, re: "[aeiouyäö]dään$"}], suffixes: [dään, tiin, täisiin], attested: true}
+
+  - id: fi-passive-past
+    title: puhuttiin, mentiin
+    meaning: {en: "the passive past: -ttiin, -tiin", pt: "a passiva no passado: -ttiin, -tiin"}
+    intro:
+      en: |
+        Past passive: **-ttiin** for type 1 (**puhuttiin, otettiin**), **-tiin** for the others (**syötiin, tultiin, mentiin, haluttiin, tarvittiin**). Negative: **ei** + the passive past participle **-ttu / -tty**: **Ei puhuttu.** "It wasn't spoken of." Perfect: **on puhuttu** "has been spoken".
+      pt: |
+        Passiva no passado: **-ttiin** no tipo 1 (**puhuttiin, otettiin**), **-tiin** nos outros (**syötiin, tultiin, mentiin, haluttiin, tarvittiin**). Negativa: **ei** + o particípio passado passivo **-ttu / -tty**: **Ei puhuttu.** "Não se falou disso." Perfeito: **on puhuttu** "foi falado".
+    examples:
+    - [Talo rakennettiin vuonna 1920., The house was built in 1920., A casa foi construída em 1920., rakennettiin]
+    - [Eilen mentiin elokuviin., Yesterday we went to the cinema., Ontem fomos ao cinema., mentiin]
+    match:
+    - {seq: [{pos: verb, re: "[aeiouyäö]ttiin$"}], suffixes: [ttiin, taan, ttaisiin, tään], attested: true}
+    - {seq: [{pos: verb, re: "ntiin$"}], suffixes: [ntiin, nnaan, nnään, ntaisiin, ntäisiin], attested: true}
+    - {seq: [{pos: verb, re: "ltiin$"}], suffixes: [ltiin, llaan, llään, ltaisiin, ltäisiin], attested: true}
+    - {seq: [{pos: verb, re: "[aeiouyäö]tiin$"}], suffixes: [tiin, daan, dään, taisiin, täisiin], attested: true}
+    - {seq: [{lemma: "^ei$"}, {pos: verb, re: "ttu$"}], gap: 1, suffixes: [ttu, tty, ttiin, ttaisiin], attested: true}
+    - {seq: [{lemma: "^ei$"}, {pos: verb, re: "tty$"}], gap: 1, suffixes: [tty, ttu, ttiin, ttäisiin], attested: true}
+
+- title: {en: Infinitives, pt: Infinitivos}
+  lessons:
+  - id: fi-ma-infinitive
+    title: menen ostamaan, olen syömässä
+    meaning: {en: "the -ma infinitive: going to do, doing, coming from doing", pt: "o infinitivo em -ma: ir fazer, estar fazendo, vir de fazer"}
+    intro:
+      en: |
+        The **3rd infinitive** is the 3rd person plural stem + **-ma-** with a local-case ending, and works like a place:
+
+        - **-maan** (into): after motion verbs and some others: **Menen ostamaan ruokaa.** "I'm going to buy food." **Opin uimaan.** "I learnt to swim."
+        - **-massa** (in): doing something somewhere: **Hän on syömässä.** "He's (out) eating."
+        - **-masta** (out of): coming from doing: **Tulen uimasta.** "I'm coming back from swimming."
+        - **-matta** (without): **Hän lähti sanomatta mitään.** "He left without saying anything."
+      pt: |
+        O **3º infinitivo** é o radical da 3ª pessoa do plural + **-ma-** com terminação de caso local, e funciona como um lugar:
+
+        - **-maan** (para): depois de verbos de movimento e alguns outros: **Menen ostamaan ruokaa.** "Vou comprar comida." **Opin uimaan.** "Aprendi a nadar."
+        - **-massa** (em): fazendo algo em algum lugar: **Hän on syömässä.** "Ele saiu para comer."
+        - **-masta** (de): voltando de fazer: **Tulen uimasta.** "Venho de nadar."
+        - **-matta** (sem): **Hän lähti sanomatta mitään.** "Ele foi embora sem dizer nada."
+    mistakes:
+    - wrong: Menen ostaa ruokaa.
+      right: Menen ostamaan ruokaa.
+      why: {en: "After mennä, tulla, oppia: the -maan form.", pt: "Depois de mennä, tulla, oppia: a forma em -maan."}
+    examples:
+    - [Menen ostamaan ruokaa., I'm going to buy food., Vou comprar comida., ostamaan]
+    - [Hän on töissä tekemässä raporttia., He's at work writing a report., Ele está no trabalho fazendo um relatório., tekemässä]
+    - [Hän lähti sanomatta mitään., He left without saying anything., Ele saiu sem dizer nada., sanomatta]
+    match:
+    - {seq: [{pos: verb, re: "ma(an|ssa|sta|tta)$"}], suffixes: [maan, massa, masta, matta], attested: true}
+    - {seq: [{pos: verb, re: "mä(än|ssä|stä|ttä)$"}], suffixes: [mään, mässä, mästä, mättä], attested: true}
+
+  - id: fi-infinitive-1
+    title: haluan mennä
+    meaning: {en: "the basic infinitive after verbs: haluan mennä, osaan uida", pt: "o infinitivo básico depois de verbos: haluan mennä, osaan uida"}
+    intro:
+      en: |
+        After **haluta, voida, osata, saada, täytyy, pitää, yrittää, aikoa, alkaa, kannattaa, ehtiä, unohtaa** the second verb is in the **basic infinitive** (the dictionary form): **Haluan mennä kotiin. Osaan uida. Aion matkustaa.** Some verbs of motion or learning take **-maan** instead (previous lesson): **opin uimaan, menen nukkumaan**.
+      pt: |
+        Depois de **haluta, voida, osata, saada, täytyy, pitää, yrittää, aikoa, alkaa, kannattaa, ehtiä, unohtaa** o segundo verbo fica no **infinitivo básico** (a forma do dicionário): **Haluan mennä kotiin. Osaan uida. Aion matkustaa.** Alguns verbos de movimento ou aprendizado levam **-maan** (lição anterior): **opin uimaan, menen nukkumaan**.
+    examples:
+    - [Haluan mennä kotiin., I want to go home., Quero ir para casa., mennä]
+    - ["Osaatko ajaa autoa?", "Can you drive a car?", "Você sabe dirigir?", "ajaa"]
+    match: {seq: [{lemma: "^(haluta|voida|osata|yrittää|aikoa|alkaa|ehtiä|unohtaa|täytyä|pitää|saada|kannattaa)$", mood: [ind, cond]}, {pos: verb, re: "([aeiouyäö][aä]|d[aä]|ll[aä]|nn[aä]|rr[aä]|st[aä]|t[aä])$", not: {lemma: "^(olla|ei)$"}}], near: 1, gap: 1, same: [mood]}
+
+- title: {en: Possessive suffixes, pt: Sufixos possessivos}
+  lessons:
+  - id: fi-possessive
+    title: minun kirjani
+    meaning: {en: "possessive suffixes: -ni, -si, -nsa, -mme, -nne", pt: "sufixos possessivos: -ni, -si, -nsa, -mme, -nne"}
+    intro:
+      en: |
+        Standard Finnish marks the owner on the noun too: **(minun) kirjani** my book, **(sinun) kirjasi** your book, **hänen kirjansa** his/her book, **(meidän) kirjamme** our book, **(teidän) kirjanne** your book, **heidän kirjansa** their book. In the 1st and 2nd person the pronoun can be dropped; in the 3rd it stays (without it, **-nsa** means *his own*).
+
+        The suffix goes after the case ending: **talossani** (in my house), **kirjastasi** (from your book). With case endings ending in a vowel, the 3rd person is often **-Vn**: **talossaan, kotiinsa**. Speech mostly drops the suffixes: **mun kirja**.
+      pt: |
+        O finlandês padrão marca o dono também no substantivo: **(minun) kirjani** meu livro, **(sinun) kirjasi** seu livro, **hänen kirjansa** o livro dele/dela, **(meidän) kirjamme** nosso livro, **(teidän) kirjanne** o livro de vocês, **heidän kirjansa** o livro deles. Na 1ª e na 2ª pessoa o pronome pode cair; na 3ª fica (sem ele, **-nsa** quer dizer *o próprio*).
+
+        O sufixo vem depois da terminação do caso: **talossani** (na minha casa), **kirjastasi** (do seu livro). Depois de terminação em vogal, a 3ª pessoa costuma ser **-Vn**: **talossaan, kotiinsa**. A fala quase sempre dispensa os sufixos: **mun kirja**.
+    examples:
+    - ["Missä on minun puhelimeni?", "Where's my phone?", "Onde está o meu celular?", "puhelimeni"]
+    - [Hänen isänsä on opettaja., His father is a teacher., O pai dele é professor., isänsä]
+    - [Teidän talonne on kaunis., Your house is beautiful., A casa de vocês é bonita., talonne]
+    match: {seq: [{word: [minun, sinun, hänen, meidän, teidän, heidän]}, {pos: noun, re: "(ni|si|nsa|nsä|mme|nne)$"}], gap: 1, suffixes: [ni, si, nsa, nsä, mme, nne], attested: true}

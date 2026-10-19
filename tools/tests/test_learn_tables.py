@@ -34,3 +34,15 @@ def test_past_indicatives_prefer_the_augmented_form(tmp_path):
     (d / "codes.json").write_text(json.dumps(codes, ensure_ascii=False), encoding="utf-8")
     t = paradigm_table(d, {"word": "λύω", "pos": "verb", "tense": "aor", "mood": "ind", "voice": "act"}, final_sigma=True)
     assert t["rows"][0][1:] == ["ἔλυσα", "ἐλύσαμεν"]
+
+
+def test_finnish_cases_and_an_adjective_without_gender():
+    fi = Path(__file__).parent / "fixtures" / "tables" / "fi"
+    t = paradigm_table(fi, {"word": "talo", "pos": "noun"})
+    rows = {r[0]["en"]: r[1:] for r in t["rows"]}
+    assert rows["partitive"] == ["taloa", "taloja"] and rows["inessive"] == ["talossa", "taloissa"]
+    assert rows["illative"] == ["taloon", "taloihin"] and rows["translative"] == ["taloksi", "taloiksi"]
+    assert list(rows)[:4] == ["nominative", "genitive", "partitive", "accusative"] or list(rows)[:3] == ["nominative", "genitive", "partitive"]
+    a = paradigm_table(fi, {"word": "iso", "pos": "adj"})
+    assert a["head"]["en"] == ["", "singular", "plural"]
+    assert {r[0]["en"]: r[1:] for r in a["rows"]}["elative"] == ["isosta", "isoista"]

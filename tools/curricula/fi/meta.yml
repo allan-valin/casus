@@ -1,0 +1,16 @@
+# Finnish Learn lessons, written for Casus (2026-10-20). Open courses were searched: Uusi kielemme and Suomen mestari
+# are all-rights-reserved, Wikibooks' Finnish is a handful of uneven pages, and the Kielikoulu/Yle courses are not
+# openly licensed. So the lessons follow the order of the usual first- and second-year courses (Suomen mestari 1–4,
+# Finnish for Foreigners) and the CEFR descriptors of the YKI exam; the facts follow Iso suomen kielioppi (VISK, Kotus,
+# CC BY 4.0) and Wikipedia's Finnish grammar (CC BY-SA). Tables are generated from Casus's Wiktionary paradigms
+# (tools/learn_tables.py). Exercises: Tatoeba's Finnish sentences.
+system: CEFR
+credit:
+  en: "Lessons written for Casus after Iso suomen kielioppi (Kotus, CC BY 4.0); tables from Wiktionary (CC BY-SA). Exercise sentences: Tatoeba (CC BY 2.0 FR)."
+  pt: "Lições escritas para o Casus com base no Iso suomen kielioppi (Kotus, CC BY 4.0); tabelas do Wikcionário (CC BY-SA). Frases dos exercícios: Tatoeba (CC BY 2.0 FR)."
+level_files: [A1, A2, B1, B2]
+# Tatoeba's recurring names, as stems (Tomille, Marin): never a gap
+name_stems: [Tom, Mari, Mary, John, Anni, Ken, Jack, Jim, Bob, Mike, Lucy, Alice, Emily, Jane, Pekka, Matti, Liisa, Mika, Sami, Layla, Dan, Linda, Taro, Tony, Bill, Nancy, Kati, Ville, Juha, Ann, Mark, Pete, Paul, Ted]
+# no wrong answer carries a possessive suffix the answer doesn't have (kissaa, not kissallani): the paradigm data
+# files those forms under the plain cases
+exclude_forms: "((?<!k)si|ni|mme|nne|nsa|nsä)$"   # (-ksi is the translative)

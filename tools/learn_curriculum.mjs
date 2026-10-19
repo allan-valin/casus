@@ -12,7 +12,7 @@
 import { readFile, writeFile, readdir } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import path from 'node:path';
-import { matchRule, formPool, spellingVariants, prefixVariants, suffixVariants, unsuitable, markOf, rewrite, rowFor, consonantV, followSpelling } from './learn_match.mjs';
+import { matchRule, formPool, preferAttested, looksLikeName, dropMarked, spellingVariants, prefixVariants, suffixVariants, unsuitable, markOf, rewrite, rowFor, consonantV, followSpelling } from './learn_match.mjs';
 import { gapRoman } from './learn_examples.mjs';
 
 export const TATOEBA = { mk: 'mkd', ar: 'ara', la: 'lat', grc: 'grc', de: 'deu', ru: 'rus', ko: 'kor', zh: 'cmn', fi: 'fin', el: 'ell', sa: 'san', cs: 'ces', pl: 'pol', tr: 'tur', hu: 'hun', is: 'isl', pt: 'por', en: 'eng', es: 'spa' };
@@ -127,6 +127,7 @@ async function main(code) {
       const listLesson = !!(rulePool ?? swaps ?? prefixes ?? suffixes);
       // names (Tom, Mary, Sami…) are no lesson's point, whatever the reader takes them for
       if (names.has(norm(gapBlock.token.surface))) continue;
+      if (index.name_stems && looksLikeName(gapBlock.token.surface, index.name_stems)) continue;
       // a script written without vowels (Arabic): a form question shows the answer and its wrong answers vowelled, as
       // the paradigm table spells them, and only when the word's row there is certain; the sentence stays as written
       // (the reader's vowelling of a whole sentence can be wrong, and a learner would trust it)
@@ -148,7 +149,8 @@ async function main(code) {
           // answers), with the sentence's capital
           if (vowelled) answer = lang.code === 'grc' ? row[0].replace(/σ$/u, 'ς') : row[0];
           else answer = answer.normalize('NFD').replace(/[\u0304\u0306]/gu, '').normalize('NFC');   // as written, less the book's macrons (not Greek accents)
-          const all = formPool(forms, row[0], row[1], decode, 20, rule.same ?? []);
+          let all = formPool(forms, row[0], row[1], decode, index.exclude_forms ? 40 : 20, rule.same ?? []);
+          if (index.exclude_forms) all = dropMarked(all, row[0], index.exclude_forms);
           const real = all.filter((f) => attested.has(norm(f)));
           // too few attested (a name): at least no archaic Latin endings (-ad/-ed/-od ablative, -ai genitive, -om)
           const plain = lang.code === 'la' ? all.filter((f) => !/([aeiou]d|ai|om|eis)$/u.test(f)) : all;
@@ -172,6 +174,7 @@ async function main(code) {
       if (swaps && !wrong.length) { seen.set(key, (seen.get(key) ?? 1) - 1); continue; }   // nothing to misspell: not a spelling question
       else if (prefixes) wrong = prefixVariants(answer, prefixes);
       else if (suffixes) wrong = suffixVariants(answer, suffixes);
+      if ((prefixes || suffixes) && !swaps && (rule.attested ?? l.attested)) wrong = preferAttested(wrong, attested, norm);
       else if (rulePool) wrong = rulePool.filter((w) => norm(w) !== norm(answer));
       // romanisation: of every word, or (a script without vowels) only when every word's vowels are certain
       const words = blocks.filter((b) => /[\p{L}\p{N}]/u.test(b.token.surface));
@@ -234,7 +237,8 @@ async function main(code) {
         const row = forms ? (forms.find(([f]) => f === gb.token.surface) ?? forms.find(([f]) => norm(f) === norm(gb.token.surface))) : null;
         const rule0 = Array.isArray(l.match) ? l.match[0] : l.match;
         if (row && !l.pool && !(rule0.pool)) {
-          let pool = formPool(forms, row[0], row[1], decode, 5, rule0.same ?? []).filter((f) => norm(f) !== norm(ex.target));
+          let pool = formPool(forms, row[0], row[1], decode, index.exclude_forms ? 40 : 5, rule0.same ?? []).filter((f) => norm(f) !== norm(ex.target));
+          if (index.exclude_forms) pool = dropMarked(pool, row[0], index.exclude_forms).slice(0, 5);
           if (lang.code === 'grc') pool = pool.map((w) => w.replace(/σ$/u, 'ς'));
           if (pool.length >= 2) ownGap.set(`${ex.en}|${norm(ex.target)}`, { answer: ex.target, pool });
         }
@@ -244,7 +248,7 @@ async function main(code) {
         const ids = gb ? [...new Set(gb.candidates.map((c) => c.analysis.lemma))] : [];
         const forms = ids.length === 1 ? await paradigmOf(ids[0]) : null;
         const row = forms ? rowFor(forms, gb.token.surface, gb.candidates.map((c) => c.analysis), decode, norm) : null;
-        if (row) ownGap.set(`${ex.en}|${norm(ex.target)}`, { answer: row[0], pool: formPool(forms, row[0], row[1], decode, 5) });
+        if (row) ownGap.set(`${ex.en}|${norm(ex.target)}`, { answer: row[0], pool: index.exclude_forms ? dropMarked(formPool(forms, row[0], row[1], decode, 40), row[0], index.exclude_forms).slice(0, 5) : formPool(forms, row[0], row[1], decode, 5) });
         else ownGap.set(`${ex.en}|${norm(ex.target)}`, null);
       }
     }
