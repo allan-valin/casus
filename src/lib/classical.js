@@ -194,3 +194,12 @@ export function phraseAgreementStage(blocks) {
   }
   return out;
 }
+
+/* PROPER NAMES: the streamed dictionaries leave names out, so a capitalised word the dictionary does not know is read
+ * as a name (a noun, case unknown) rather than shown as unknown (Maria, Praze). */
+export function properNameStage(blocks) {
+  return blocks.map((b) => {
+    if (b.candidates.length || b.pinned || !/^\p{Lu}\p{Ll}/u.test(b.token.surface ?? '')) return b;
+    return { ...b, candidates: [{ analysis: { lemma: b.token.surface, pos: 'noun', proper: true }, reasons: ['capitalised and not in the dictionary: a name'], links: [] }] };
+  });
+}

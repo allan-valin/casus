@@ -5,7 +5,7 @@
  * government, agreement inside the clause, the classical clause rules.
  */
 import { governmentStage, agreementStage } from '../lib/disambiguate.js';
-import { prepositionSettledStage, makeCoordinationStage, makeNumberStage, casedStage, makeOneSubjectStage, phraseAgreementStage, makeVocativeStage } from '../lib/classical.js';
+import { prepositionSettledStage, makeCoordinationStage, makeNumberStage, casedStage, makeOneSubjectStage, phraseAgreementStage, makeVocativeStage, properNameStage } from '../lib/classical.js';
 import { WORD_ORDERS } from '../app/lib/order.js';
 import { segment } from './ru/segment.js';
 import { tokenize } from './ru/tokenize.js';
@@ -48,7 +48,7 @@ export function makeCaseLanguage({ code, name, inText, bcp47, wiktionary, cases,
     tokenize: ownTokenize ?? tokenize,
     ...(splitWords ? { splitWords } : {}),
     // a vocative only where someone is addressed (the classical rule), when the language has one
-    stages: [...preStages, casedStage, gov, phraseAgreementStage, agr, gov, prepositionSettledStage, makeVocativeStage(address), makeCoordinationStage(and), makeNumberStage({ conjunctions: and }),
+    stages: [...preStages, properNameStage, casedStage, gov, phraseAgreementStage, agr, gov, prepositionSettledStage, makeVocativeStage(address), makeCoordinationStage(and), makeNumberStage({ conjunctions: and }),
       makeOneSubjectStage({ conjunctions: and, copulas }), gov, phraseAgreementStage, agr, gov, ...extraStages],
     government,
     arrange: WORD_ORDERS,
