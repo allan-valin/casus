@@ -2,7 +2,9 @@
   /* Downloads (Allan, 2026-10-19): keep a language's dictionary on this device for offline reading, see what is kept,
    * remove it; and the Wiktionary answers kept for the current language. */
   import { onMount } from 'svelte';
-  import { LANGUAGES, getLanguage } from '../../lang/registry.js';
+  import { getLanguage } from '../../lang/registry.js';
+  import { siteLanguages } from '../../sites.js';
+  const LANGUAGES = siteLanguages();
   import { withBase } from '../lib/paths.js';
   import { t, ui } from '../lib/i18n.svelte.js';
   import { downloadLanguage, removeLanguage, cacheName, liveEntries, clearLive } from '../lib/offline.js';

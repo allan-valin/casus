@@ -9,7 +9,7 @@ REPO="${GH_REPO:-allan-valin/casus}"
 mkdir -p "$DEST"
 names=$(gh release view data --repo "$REPO" --json assets -q '.assets[].name' | grep '^data-.*\.tar\.gz$' | sort)
 if [ $# -gt 0 ]; then
-  names=$(for c in "$@"; do echo "$names" | grep "^data-$c-" | tail -1; done)
+  names=$(for c in "$@"; do echo "$names" | grep "^data-$c-" | tail -1 || true; done)   # a language with no data yet is skipped
 else
   names=$(echo "$names" | sed -E 's/^data-([^-]+)-.*/\1 &/' | sort -k1,1 -k2,2 | awk '{last[$1]=$2} END {for (k in last) print last[k]}')
 fi

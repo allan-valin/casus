@@ -1,0 +1,52 @@
+# Builds SITE_TITLE from the Casus code (github.com/allan-valin/casus) and publishes it to this repo's GitHub Pages.
+# One codebase, three sites (Allan, 2026-10-19): the code and the dictionaries live in allan-valin/casus; this repo
+# only holds this workflow. Started after every Casus deploy (gh workflow run), or by hand.
+name: pages
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: casus branch or commit to build
+        default: main
+  push:
+    branches: [main]
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: allan-valin/casus
+          ref: ${{ github.event.inputs.ref || 'main' }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Fetch this site's dictionary indexes from the Casus data release
+        run: bash tools/fetch_data_assets.sh $(node tools/site_languages.mjs SITE_ID)
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - run: npm run build
+        env:
+          CASUS_BASE: /REPO_NAME/
+          VITE_CASUS_SITE: SITE_ID
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

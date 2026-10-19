@@ -1,5 +1,6 @@
 # Builds the reader and publishes dist/ (bundle + data/ + samples) to GitHub Pages
-# at https://allan-valin.github.io/casus/ on every push to main.
+# at https://allan-valin.github.io/casus/ on every push to main. Casus Asia and Casus World build from this same code
+# in their own repos (deploy/site-pages.yml, tools/setup_site_repo.sh).
 name: pages
 on:
   push:
@@ -22,14 +23,15 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      - name: Fetch the dictionary indexes from the data release
-        run: bash tools/fetch_data_assets.sh
+      - name: Fetch this site's dictionary indexes from the data release
+        run: bash tools/fetch_data_assets.sh $(node tools/site_languages.mjs casus)
         env:
           GH_TOKEN: ${{ github.token }}
       - run: npm test
       - run: npm run build
         env:
           CASUS_BASE: /casus/
+          VITE_CASUS_SITE: casus
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist

@@ -5,6 +5,7 @@ import { tick } from 'svelte';
 import Proofread from '../../src/app/components/Proofread.svelte';
 import { getLanguage } from '../../src/lang/registry.js';
 import { langFromPath, proofPath } from '../../src/app/lib/route.js';
+import { SITES, siteLanguages } from '../../src/sites.js';
 
 const flush = async () => { for (let i = 0; i < 10; i += 1) { await tick(); await new Promise((r) => setTimeout(r, 0)); } };
 const store = () => { const m = new Map(); return { getItem: (k) => m.get(k) ?? null, setItem: (k, v) => m.set(k, String(v)), m }; };
@@ -21,7 +22,7 @@ const props = (storage, extra = {}) => ({ lang: getLanguage('pt'), storage, fetc
 
 describe('Proofreading (Allan, 2026-10-19: one box, marks as you type, colours, a corrected version)', () => {
   it('lives at /<code>/proof/', () => {
-    expect(langFromPath('/casus/pt/proof/', '/casus/')).toEqual({ code: 'pt', view: 'proof' });
+    expect(langFromPath('/casus-world/pt/proof/', '/casus-world/', siteLanguages(SITES.world))).toEqual({ code: 'pt', view: 'proof' });
     expect(proofPath({ path: '/pt/' })).toBe('/pt/proof/');
   });
   it('shares the reader’s text; checks as you type; marks are coloured by kind; explanations beside', async () => {

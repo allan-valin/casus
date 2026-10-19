@@ -1,8 +1,9 @@
 import { defineConfig } from 'vite';
+import { SITE, siteUrl } from './src/sites.js';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import { existsSync, statSync, createReadStream, cpSync } from 'node:fs';
 import { join, resolve, sep } from 'node:path';
-import { mkdirSync, copyFileSync } from 'node:fs';
+import { mkdirSync, copyFileSync, writeFileSync } from 'node:fs';
 import { LANGUAGES } from './src/lang/registry.js';
 
 const DATA = resolve('data');
@@ -20,14 +21,24 @@ function serveData() {
       });
     },
     closeBundle() {
-      if (existsSync(DATA)) cpSync(DATA, resolve('dist/data'), { recursive: true });
+      // only this site's dictionaries (each site has its own 1 GB on GitHub Pages)
+      if (existsSync(DATA)) for (const code of SITE.languages) if (existsSync(join(DATA, code))) cpSync(join(DATA, code), resolve('dist/data', code), { recursive: true });
       // one HTML per language route, so a deep link (/grc/, /grc/game/) loads on static hosting
       const html = resolve('dist/index.html');
       if (!existsSync(html)) return;
-      for (const l of LANGUAGES) {
+      // a language that moved to another site: its old addresses redirect there
+      for (const l of LANGUAGES.filter((x) => !SITE.languages.includes(x.code) && x.path !== '/')) {
+        for (const view of ['reader', 'drills', 'proof', 'learn', 'game']) {
+          const out = resolve('dist' + l.path + (view === 'reader' ? '' : `${view}/`));
+          mkdirSync(out, { recursive: true });
+          const to = siteUrl(l.code, view === 'game' ? 'drills' : view);
+          writeFileSync(join(out, 'index.html'), `<!doctype html><meta charset="utf-8"><title>${l.name.en}</title><meta http-equiv="refresh" content="0; url=${to}"><link rel="canonical" href="${to}"><a href="${to}">${to}</a>\n`);
+        }
+      }
+      for (const l of LANGUAGES.filter((x) => SITE.languages.includes(x.code))) {
         const at = l.path.replace(/\/$/, '');
         // the reader (Latin's is the root itself), the drills, and the old /game/ links
-        for (const dir of [...(l.path === '/' ? [] : [l.path]), `${at}/drills/`, `${at}/proof/`, ...(l.path === '/' ? [] : [`${at}/game/`])]) {
+        for (const dir of [...(l.path === '/' ? [] : [l.path]), `${at}/drills/`, `${at}/proof/`, `${at}/learn/`, ...(l.path === '/' ? [] : [`${at}/game/`])]) {
           const out = resolve('dist' + dir);
           mkdirSync(out, { recursive: true });
           copyFileSync(html, join(out, 'index.html'));

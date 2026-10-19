@@ -2,7 +2,8 @@
   /* The navigation: every shipped language on the first row, the current one marked; on a second row, what to do
    * with it — read, or drill (Allan, 2026-10-19: the drills link moved under the languages, and on the drills page
    * a language name opens that language's drills; 2026-10-19: proofreading). */
-  import { LANGUAGES } from '../../lang/registry.js';
+  import { SITE, SITES, siteLanguages, siteUrl } from '../../sites.js';
+  const LANGUAGES = siteLanguages();
   import { drillsPath, proofPath } from '../lib/route.js';
   import { withBase } from '../lib/paths.js';
   import { t, ui } from '../lib/i18n.svelte.js';
@@ -15,6 +16,10 @@
     <a href={withBase(view === 'drills' ? drillsPath(l) : view === 'proof' ? proofPath(l) : l.path)} aria-current={l.code === current ? 'page' : undefined}>{l.name[ui.lang] ?? l.name.en}</a>
   {/each}
 </nav>
+<!-- the other two sites (Allan, 2026-10-19: one codebase, three sites) -->
+<nav class="sites" aria-label={t('nav.sites')}>
+  {#each Object.values(SITES) as s (s.id)}{#if s.id === SITE.id}<span class="here">{s.title}</span>{:else}<a href={siteUrl(s.languages[0])}>{s.title}</a>{/if}{/each}
+</nav>
 <nav class="views" aria-label={t('nav.views')}>
   <a data-view="reader" href={withBase(here.path)} aria-current={view === 'reader' ? 'page' : undefined}>{t('nav.reader')}</a>
   <a data-view="drills" href={withBase(drillsPath(here))} aria-current={view === 'drills' ? 'page' : undefined}>{t('nav.game')}</a>
@@ -23,6 +28,9 @@
 
 <style>
   .languages { display: flex; flex-wrap: wrap; gap: 4px; }
+  .sites { display: flex; gap: 12px; font-size: 0.85rem; margin: 6px 0 0; color: var(--ink-2); }
+  .sites .here { font-weight: 700; color: var(--ink); }
+  .sites a { color: var(--ink-2); }
   .languages a { padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); color: var(--ink); text-decoration: none; font-size: 0.92rem; }
   .languages a:hover { border-color: var(--accent); }
   .languages a[aria-current=page] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }

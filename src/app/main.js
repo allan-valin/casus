@@ -1,6 +1,9 @@
 import './app.css';
 import { mount } from 'svelte';
 import App from './App.svelte';
+import { SITE } from '../sites.js';
+
+document.title = SITE.title;
 
 // the bookmarklet sends text to the tab named casus (src/app/lib/bookmarklet.js)
 try { window.name = 'casus'; } catch { /* sandboxed */ }

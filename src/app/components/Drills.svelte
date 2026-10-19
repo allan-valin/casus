@@ -2,7 +2,7 @@
   /* The drills page (Allan, 2026-10-18; was the letters drill): pick a language here and its drills open —
    * the letters of a non-Latin alphabet, and the noun and verb endings of every language. */
   import { onMount } from 'svelte';
-  import { LANGUAGES } from '../../lang/registry.js';
+  import { siteLanguages } from '../../sites.js';
   import { t, ui } from '../lib/i18n.svelte.js';
   import { drillsPath } from '../lib/route.js';
   import Game from './Game.svelte';
@@ -43,7 +43,7 @@
   const phraseItems = $derived(phrases.filter((p) => kind === 'all' || p.kind === kind).map((p) => ({ prompt: p.p, answer: p.en, lit: p.lit, kind: p.kind, literally: p.literally, more: p.more, wiki: p.wiki, note: p.note, roman: romaji(p.reading), hint: p.reading })));
   const nouns = $derived(models.filter((m) => NOMINAL.has(m.pos)));
   const verbs = $derived(models.filter((m) => m.pos === 'verb'));
-  const withDrills = LANGUAGES;          // every shipped language has at least the endings drills
+  const withDrills = siteLanguages();     // this site's languages; every one has at least the endings drills
 </script>
 
 <section class="card drills">
