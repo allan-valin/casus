@@ -12,7 +12,8 @@ describe('LanguageBar', () => {
     expect(langs.find((a) => a.textContent.includes('Latin')).getAttribute('href')).toMatch(/\/$/);
     expect(langs.some((a) => /drills/i.test(a.textContent))).toBe(false);
     const views = [...container.querySelectorAll('nav.views a')];
-    expect(views.map((a) => a.dataset.view)).toEqual(['reader', 'drills']);
+    expect(views.map((a) => a.dataset.view)).toEqual(['reader', 'drills', 'proof']);   // proofreading added 2026-10-19
+    expect(views[2].getAttribute('href')).toMatch(/\/grc\/proof\/$/);
     expect(views[1].getAttribute('href')).toMatch(/\/grc\/drills\/$/);
     expect(container.querySelector('nav.views a[aria-current=page]').dataset.view).toBe('reader');
   });

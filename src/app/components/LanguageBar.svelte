@@ -1,9 +1,9 @@
 <script>
   /* The navigation: every shipped language on the first row, the current one marked; on a second row, what to do
    * with it — read, or drill (Allan, 2026-10-19: the drills link moved under the languages, and on the drills page
-   * a language name opens that language's drills). */
+   * a language name opens that language's drills; 2026-10-19: proofreading). */
   import { LANGUAGES } from '../../lang/registry.js';
-  import { drillsPath } from '../lib/route.js';
+  import { drillsPath, proofPath } from '../lib/route.js';
   import { withBase } from '../lib/paths.js';
   import { t, ui } from '../lib/i18n.svelte.js';
   let { current, view = 'reader' } = $props();
@@ -12,12 +12,13 @@
 
 <nav class="languages" aria-label={t('nav.label')}>
   {#each LANGUAGES as l (l.code)}
-    <a href={withBase(view === 'drills' ? drillsPath(l) : l.path)} aria-current={l.code === current ? 'page' : undefined}>{l.name[ui.lang] ?? l.name.en}</a>
+    <a href={withBase(view === 'drills' ? drillsPath(l) : view === 'proof' ? proofPath(l) : l.path)} aria-current={l.code === current ? 'page' : undefined}>{l.name[ui.lang] ?? l.name.en}</a>
   {/each}
 </nav>
 <nav class="views" aria-label={t('nav.views')}>
   <a data-view="reader" href={withBase(here.path)} aria-current={view === 'reader' ? 'page' : undefined}>{t('nav.reader')}</a>
   <a data-view="drills" href={withBase(drillsPath(here))} aria-current={view === 'drills' ? 'page' : undefined}>{t('nav.game')}</a>
+  <a data-view="proof" href={withBase(proofPath(here))} aria-current={view === 'proof' ? 'page' : undefined}>{t('nav.proof')}</a>
 </nav>
 
 <style>

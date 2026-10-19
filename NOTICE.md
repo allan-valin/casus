@@ -132,6 +132,19 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
 - pdf.js (Mozilla), Apache-2.0: reads the text of PDF files.
 Both load only when such a file is opened; the file never leaves the computer.
 
+## Proofreading
+
+- Hunspell compiled to WebAssembly: hunspell-asm (OJ Kwon), MIT; Hunspell itself MPL/LGPL/GPL.
+  (Its bundled nanoid 2 carries an advisory about negative or zero sizes and custom generators; hunspell-asm only
+  calls it with the default size to name the dictionary files it mounts.)
+- Spelling dictionaries, loaded from jsDelivr when the tab is used: dictionary-pt (VERO, pt-BR; LGPL-3.0 or MPL-2.0),
+  dictionary-de (GPL), dictionary-el (GPL/LGPL/MPL), dictionary-ru (BSD-3-Clause), dictionary-pl (GPL/LGPL/MPL),
+  dictionary-cs (GPL-2.0), dictionary-hu (GPL/LGPL/MPL), dictionary-is (CC BY-SA 3.0), dictionary-tr (MIT),
+  dictionary-la (GPL-2.0), dictionary-mk (GPL-3.0), dictionary-ko (GPL/LGPL/MPL) — the LibreOffice dictionaries,
+  packaged by Titus Wormer (wooorm/dictionaries).
+- Grammar: LanguageTool (LGPL-2.1), run on the reader's computer by tools/languagetool.sh, or its free public API
+  (api.languagetool.org) when the reader allows it.
+
 ## Speech — espeak-ng (GPL-3.0)
 
 When the browser has no voice for a language, the speaker button loads espeak-ng compiled to

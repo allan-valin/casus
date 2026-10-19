@@ -4,18 +4,25 @@
 import { LANGUAGES } from '../../lang/registry.js';
 
 const DRILLS = new Set(['drills', 'game']);
+const PROOF = 'proof';                       // the proofreading view (Allan, 2026-10-18/19)
 
 export function langFromPath(pathname, base = '/', languages = LANGUAGES) {
   const b = base.endsWith('/') ? base : `${base}/`;
   const rest = pathname.startsWith(b) ? pathname.slice(b.length) : pathname.replace(/^\//, '');
   const [code, view] = rest.split('/').filter(Boolean);
   if (DRILLS.has(code)) return { code: 'la', view: 'drills' };
+  if (code === PROOF) return { code: 'la', view: 'proof' };
   const known = languages.find((l) => l.code === code && l.path !== '/');
   if (!known) return { code: 'la', view: 'reader' };
-  return { code, view: DRILLS.has(view) ? 'drills' : 'reader' };
+  return { code, view: DRILLS.has(view) ? 'drills' : view === PROOF ? 'proof' : 'reader' };
 }
 
 /** the drills page of a language, without the site base */
 export function drillsPath(language) {
   return `${language.path.replace(/\/$/, '')}/drills/`;
+}
+
+/** the proofreading page of a language, without the site base */
+export function proofPath(language) {
+  return `${language.path.replace(/\/$/, '')}/proof/`;
 }

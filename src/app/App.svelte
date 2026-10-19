@@ -23,6 +23,7 @@
   import Drills from './components/Drills.svelte';
   import Downloads from './components/Downloads.svelte';
   import SendToCasus from './components/SendToCasus.svelte';
+  import Proofread from './components/Proofread.svelte';
   import { describeAnalysis } from './lib/colors.js';
   import { partners as partnersOf } from './lib/chunks.js';
   import { createLive } from '../lib/live.js';
@@ -183,7 +184,7 @@
         <button class="ui-lang" class:active={ui.lang === 'en'} data-lang="en" onclick={() => switchLang('en')}>English</button>
         <button class="ui-lang" class:active={ui.lang === 'pt'} data-lang="pt" onclick={() => switchLang('pt')}>Português</button>
       </div>
-      {#if route.view !== 'drills'}<div class="exports" aria-label="export">
+      {#if route.view === 'reader'}<div class="exports" aria-label="export">
         <span class="exports-label">{t('app.export')}</span>
         <button class="export-json" disabled={!reader} title={t('app.export.json.title')} onclick={() => download('json')}>{t('app.export.json')}</button>
         <button class="export-md" disabled={!reader} title={t('app.export.md.title')} onclick={() => download('md')}>{t('app.export.md')}</button>
@@ -192,7 +193,10 @@
     </div>
   </header>
 
-  {#if route.view === 'drills'}
+  {#if route.view === 'proof'}
+    <Proofread {lang} {storage} {fetchImpl} say={(k, v) => say(k, v, k.endsWith('done') ? 'ok' : k.endsWith('Failed') ? 'err' : undefined)}
+      toReader={(text) => { try { storage?.setItem(`casus:input:${lang.code}`, text); } catch { /* not kept */ } location.href = withBase(LANGUAGES.find((l) => l.code === lang.code)?.path ?? '/'); }} />
+  {:else if route.view === 'drills'}
     <Drills {lang} {voice} loadData={(name) => fetchImpl(`${DATA}/${name}.json`).then((r) => (r.ok ? r.json() : []))}
       loadParadigm={(id) => fetchImpl(`${DATA}/paradigms/${Number(id) % 512}.json`).then((r) => (r.ok ? r.json() : {})).then((b) => b[String(id)] ?? null)} navigate={(p) => { location.href = withBase(p); }} />
   {:else}

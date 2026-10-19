@@ -27,7 +27,7 @@ function serveData() {
       for (const l of LANGUAGES) {
         const at = l.path.replace(/\/$/, '');
         // the reader (Latin's is the root itself), the drills, and the old /game/ links
-        for (const dir of [...(l.path === '/' ? [] : [l.path]), `${at}/drills/`, ...(l.path === '/' ? [] : [`${at}/game/`])]) {
+        for (const dir of [...(l.path === '/' ? [] : [l.path]), `${at}/drills/`, `${at}/proof/`, ...(l.path === '/' ? [] : [`${at}/game/`])]) {
           const out = resolve('dist' + dir);
           mkdirSync(out, { recursive: true });
           copyFileSync(html, join(out, 'index.html'));
@@ -43,7 +43,10 @@ export default defineConfig({
   plugins: [svelte(), serveData()],
   // under vitest, resolve Svelte's browser build so components mount in jsdom
   // (component tests carry `// @vitest-environment jsdom` at the top of the file)
-  resolve: process.env.VITEST ? { conditions: ['browser'] } : undefined,
+  // hunspell-asm's ESM build imports its wasm runtime as a namespace, not a function; its CommonJS build (with the
+  // package's browser field) converts cleanly (proofreading, 2026-10-19)
+  resolve: process.env.VITEST ? { conditions: ['browser'] } : { alias: [{ find: /^hunspell-asm$/, replacement: 'hunspell-asm/dist/cjs/index.js' }] },
+  optimizeDeps: { include: ['hunspell-asm/dist/cjs/index.js'] },
   test: {
     environment: 'node',
   },
