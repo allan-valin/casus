@@ -63,10 +63,19 @@ def _load(path: Path) -> dict:
     return yaml.safe_load(path.read_text(encoding="utf-8"))
 
 
-def lesson_page(src: dict) -> dict:
+def lesson_page(src: dict, tables=None) -> dict:
+    """tables: (data dir, attested word counts, final sigma) for `paradigms:` — tables made from the reader's own
+    paradigm data (tools/learn_tables.py)"""
     sections = []
     if src.get("table"):
         sections.append({"id": "formation", "title": SECTION_TITLES["formation"], "html": _table(src["table"])})
+    if src.get("paradigms") and tables:
+        from learn_tables import paradigm_table
+        data, attested, sigma = tables
+        for k, spec in enumerate(src["paradigms"]):
+            t = paradigm_table(data, spec, attested=attested, final_sigma=sigma)
+            label = spec.get("label") or {"en": spec["word"], "pt": spec["word"]}
+            sections.append({"id": f"paradigm-{k}", "title": _both(label), "html": _table(t)})
     for s in src.get("sections", []):
         body = _both(s["body"])
         sections.append({"id": s["id"], "title": _both(s.get("title") or SECTION_TITLES.get(s["id"], s["id"])),
@@ -93,7 +102,7 @@ def lesson_page(src: dict) -> dict:
     return page
 
 
-def curriculum_learn(path: Path) -> tuple[dict, dict, dict]:
+def curriculum_learn(path: Path, tables=None) -> tuple[dict, dict, dict]:
     data = _load(path)
     levels, lessons, questions = [], {}, {}
     for lv in data["levels"]:
@@ -101,7 +110,7 @@ def curriculum_learn(path: Path) -> tuple[dict, dict, dict]:
         for t_k, topic in enumerate(lv["topics"], 1):
             entries = []
             for src in topic["lessons"]:
-                page = lesson_page(src)
+                page = lesson_page(src, tables)
                 page.update({"level": lv["id"], "topic": _both(topic["title"])})
                 lessons[page["id"]] = page
                 entries.append({"id": page["id"], "title": page["title"], "meaning": page["meaning"]})
@@ -113,7 +122,7 @@ def curriculum_learn(path: Path) -> tuple[dict, dict, dict]:
                     mine.append({"type": "translate", "furi": [[e["text"], None]], "answer": e["en"], "pt": e["pt"]})
                 qs[page["id"]] = {"pools": {"gap": [x for x in src.get("pool", [])]}, "qs": mine}
             topics.append({"id": f"{lv['id']}-t{t_k}", "kind": "grammar", "title": _both(topic["title"]), "lessons": entries})
-        levels.append({"id": lv["id"], "topics": topics})
+        levels.append({"id": lv["id"], **({"title": _both(lv["title"])} if lv.get("title") else {}), "topics": topics})
         questions[lv["id"]] = qs
     index = {"system": data["system"], "levels": levels, "credit": _both(data["credit"])}
     if data.get("names"):

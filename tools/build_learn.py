@@ -153,6 +153,24 @@ BUILDERS = {"ja": lambda: ja_learn(ROOT / "vendor" / "jlpt-grammar-enhanced", RO
 BUILDERS["la"] = lambda: la_learn((ROOT / "vendor" / "dooge" / "dooge.html").read_text(encoding="utf-8"), ROOT / "tools" / "curricula" / "la" / "plan.yml")
 
 
+TATOEBA = {"mk": "mkd", "ar": "ara", "grc": "grc", "de": "deu", "ru": "rus", "ko": "kor", "zh": "cmn", "fi": "fin", "el": "ell",
+           "sa": "san", "cs": "ces", "pl": "pol", "tr": "tur", "hu": "hun", "is": "isl", "pt": "por", "en": "eng", "es": "spa", "la": "lat"}
+
+
+def attested_words(code: str) -> dict:
+    """how often each word occurs in the language's Tatoeba sentences and open texts (vendor/corpora/<code>/)"""
+    import bz2
+    import collections
+    import re
+    texts = []
+    f = ROOT / "vendor" / "tatoeba" / f"{TATOEBA.get(code, code)}_sentences.tsv.bz2"
+    if f.exists():
+        texts += [line.split("\t")[-1] for line in bz2.open(f, "rt", encoding="utf-8")]
+    for t in (ROOT / "vendor" / "corpora" / code).glob("*.txt") if (ROOT / "vendor" / "corpora" / code).exists() else []:
+        texts += t.read_text(encoding="utf-8").splitlines()
+    return collections.Counter(w for t in texts for w in re.findall(r"[^\W\d_]+", t))
+
+
 def builder(code: str):
     """the Japanese book, or a curriculum written for Casus (tools/curricula/<code>/ or <code>.yml)"""
     if code in BUILDERS:
@@ -160,7 +178,7 @@ def builder(code: str):
     from learn_curriculum import curriculum_learn
     for path in (ROOT / "tools" / "curricula" / code, ROOT / "tools" / "curricula" / f"{code}.yml"):
         if path.exists():
-            return lambda: curriculum_learn(path)
+            return lambda: curriculum_learn(path, (ROOT / "data" / code, attested_words(code), code == "grc"))
     raise SystemExit(f"no Learn source for {code}")
 
 

@@ -162,3 +162,7 @@ it('wrong answers follow the answer’s spelling where the paradigm differs (sil
   expect(followSpelling('silvam', 'siluam', ['silua', 'siluae'])).toEqual(['silva', 'silvae']);
   expect(followSpelling('linguae', 'linguae', ['lingua'])).toEqual(['lingua']);
 });
+it('a variant of the answer in the same slot (ἐστί for ἐστίν) is never a wrong answer', () => {
+  const rows = [['ἐστίν', 'v3s'], ['ἐστί', 'v3s'], ['εἰσί', 'v3p'], ['εἰμί', 'v1s']];
+  expect(formPool(rows, 'ἐστίν', 'v3s', (c) => ({ p: c[1], n: c[2] }))).toEqual(['εἰσί', 'εἰμί']);
+});

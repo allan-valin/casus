@@ -1,0 +1,169 @@
+id: Beginner
+title: {en: Beginner, pt: Iniciante}
+topics:
+
+- title: {en: Letters and sounds, pt: Letras e sons}
+  lessons:
+  - id: grc-alphabet
+    title: τὰ γράμματα
+    meaning: {en: "the alphabet, breathings and accents", pt: "o alfabeto, os espíritos e os acentos"}
+    intro:
+      en: |
+        Greek has 24 letters. Seven are vowels: **α ε η ι ο υ ω** — **ε / ο** are short, **η / ω** their long partners, and **α ι υ** can be either. Every word that begins with a vowel carries a **breathing**: **ἀ** (smooth, no sound) or **ἁ** (rough, an *h*): **ἀγαθός** *agathós*, **ἡμέρα** *hēméra*. Initial **ρ** always has the rough breathing: **ῥήτωρ**.
+
+        Almost every word has an **accent** — acute **ά**, grave **ὰ** (an acute before another word) or circumflex **ᾶ** (only on long vowels) — marking a rise in pitch. A small **ι** under a long vowel (**ᾳ ῃ ῳ**, *iota subscript*) was written beside it in classical times and is not pronounced in the school pronunciation. Final sigma is written **ς**: **λόγος**.
+      pt: |
+        O grego tem 24 letras. Sete são vogais: **α ε η ι ο υ ω** — **ε / ο** são breves, **η / ω** as longas correspondentes, e **α ι υ** podem ser uma ou outra. Toda palavra que começa por vogal leva um **espírito**: **ἀ** (brando, sem som) ou **ἁ** (áspero, um *h*): **ἀγαθός** *agathós*, **ἡμέρα** *hēméra*. O **ρ** inicial tem sempre espírito áspero: **ῥήτωρ**.
+
+        Quase toda palavra tem **acento** — agudo **ά**, grave **ὰ** (um agudo antes de outra palavra) ou circunflexo **ᾶ** (só em vogal longa) — marcando a subida do tom. Um **ι** pequeno debaixo de vogal longa (**ᾳ ῃ ῳ**, *iota subscrito*) era escrito ao lado dela na época clássica e não se pronuncia na pronúncia escolar. O sigma final se escreve **ς**: **λόγος**.
+    table:
+      head: {en: [Letter, Name, Sound], pt: [Letra, Nome, Som]}
+      rows:
+      - ["Α α", ἄλφα, a]
+      - ["Β β", βῆτα, b]
+      - ["Γ γ", γάμμα, "g (ng before γ κ χ)"]
+      - ["Δ δ", δέλτα, d]
+      - ["Ε ε", "ἒ ψιλόν", "e (short)"]
+      - ["Ζ ζ", ζῆτα, "zd / dz"]
+      - ["Η η", ἦτα, "ē (long)"]
+      - ["Θ θ", θῆτα, "th"]
+      - ["Ι ι", ἰῶτα, i]
+      - ["Κ κ", κάππα, k]
+      - ["Λ λ", λάμβδα, l]
+      - ["Μ μ", μῦ, m]
+      - ["Ν ν", νῦ, n]
+      - ["Ξ ξ", ξῖ, ks]
+      - ["Ο ο", "ὂ μικρόν", "o (short)"]
+      - ["Π π", πῖ, p]
+      - ["Ρ ρ", ῥῶ, r]
+      - ["Σ σ ς", σίγμα, s]
+      - ["Τ τ", ταῦ, t]
+      - ["Υ υ", "ὖ ψιλόν", "y (French u)"]
+      - ["Φ φ", φῖ, "ph"]
+      - ["Χ χ", χῖ, "kh"]
+      - ["Ψ ψ", ψῖ, ps]
+      - ["Ω ω", "ὦ μέγα", "ō (long)"]
+    mistakes:
+    - wrong: λογοσ
+      right: λόγος
+      why: {en: "Final σ is written ς, and the word keeps its accent.", pt: "O σ final se escreve ς, e a palavra mantém o acento."}
+    # spelling: the wrong answers swap a long vowel for its short partner and back
+    match: {seq: [{re: "[ηωήώῆῶ]", pos: [noun, verb, adj]}]}
+    swaps: {η: [ε], ω: [ο], ή: [έ], ώ: [ό], ε: [η], ο: [ω], έ: [ή], ό: [ώ], ῆ: [ῖ], ῶ: [οῦ]}
+
+- title: {en: The article and the second declension, pt: O artigo e a segunda declinação}
+  lessons:
+  - id: grc-article
+    title: ὁ, ἡ, τό
+    meaning: {en: "the definite article", pt: "o artigo definido"}
+    intro:
+      en: |
+        Greek has a definite article — **ὁ** (m.), **ἡ** (f.), **τό** (n.) — declined in all cases and numbers, and no indefinite one: **ἄνθρωπος** "a man", **ὁ ἄνθρωπος** "the man". It agrees with its noun, so it tells you the noun's case even when the noun's ending is unfamiliar. It is used more than in English: with abstract nouns (**ἡ ἀρετή** "virtue") and names (**ὁ Σωκράτης**).
+      pt: |
+        O grego tem artigo definido — **ὁ** (m.), **ἡ** (f.), **τό** (n.) — declinado em todos os casos e números, e não tem indefinido: **ἄνθρωπος** "um homem", **ὁ ἄνθρωπος** "o homem". Concorda com o substantivo, então mostra o caso mesmo quando a terminação do substantivo é desconhecida. Usa-se como em português, também com abstratos (**ἡ ἀρετή** "a virtude") e nomes (**ὁ Σωκράτης**, "o Sócrates").
+    paradigms:
+    - {word: ὁ, pos: det, number: sg, label: {en: "ὁ, ἡ, τό — singular", pt: "ὁ, ἡ, τό — singular"}}
+    - {word: ὁ, pos: det, number: pl, label: {en: "οἱ, αἱ, τά — plural", pt: "οἱ, αἱ, τά — plural"}}
+    # by lemma only: ὁ is both the article and (in Homer, and before δέ) a pronoun
+    match: {seq: [{lemma: "^ὁ$"}, {pos: [noun, adj, vpar]}], near: 1, gap: 0, same: [number]}
+
+  - id: grc-o-declension
+    title: λόγος, δῶρον
+    meaning: {en: "the second (o-) declension", pt: "a segunda declinação (em -o)"}
+    intro:
+      en: |
+        Nouns in **-ος** (mostly masculine: **λόγος** "word", **ἄνθρωπος** "human being") and **-ον** (neuter: **δῶρον** "gift"). The neuter has the same form for nominative and accusative, and **-α** in the plural.
+
+        The **cases**: nominative (subject), genitive (*of*, and after many prepositions), dative (*to, for*, also *with, by*), accusative (object, and *to* after prepositions of motion), vocative (calling). A neuter plural subject usually takes a **singular** verb: **τὰ δῶρά ἐστι καλά**.
+      pt: |
+        Substantivos em **-ος** (na maioria masculinos: **λόγος** "palavra", **ἄνθρωπος** "ser humano") e em **-ον** (neutros: **δῶρον** "presente"). O neutro tem a mesma forma no nominativo e no acusativo, e **-α** no plural.
+
+        Os **casos**: nominativo (sujeito), genitivo (*de*, e depois de muitas preposições), dativo (*a, para*, também *com, por*), acusativo (objeto, e *para* depois de preposições de movimento), vocativo (chamado). Um sujeito neutro plural costuma levar verbo no **singular**: **τὰ δῶρά ἐστι καλά**.
+    paradigms:
+    - {word: λόγος, pos: noun, label: {en: "λόγος (m.) word", pt: "λόγος (m.) palavra"}}
+    - {word: δῶρον, pos: noun, label: {en: "δῶρον (n.) gift", pt: "δῶρον (n.) presente"}}
+    match: {seq: [{pos: noun, dict: "ου [mn]\\.$"}], same: [number]}
+
+- title: {en: The first declension, pt: A primeira declinação}
+  lessons:
+  - id: grc-a-declension
+    title: χώρα, τιμή
+    meaning: {en: "the first (a-) declension", pt: "a primeira declinação (em -a)"}
+    intro:
+      en: |
+        Mostly feminine nouns in **-α** or **-η**: after **ε, ι, ρ** the **α** stays long through the singular (**χώρα, χώρας** "land"); otherwise **η** (**τιμή, τιμῆς** "honour"). Nouns in short **-α** (**θάλαττα, θαλάττης** "sea") have η in the genitive and dative singular. The plural is the same for all: **-αι, -ῶν, -αις, -ᾱς**.
+
+        A few masculines end in **-ης / -ᾱς** with genitive **-ου**: **στρατιώτης, στρατιώτου** "soldier", **νεανίᾱς** "young man".
+      pt: |
+        Sobretudo femininos em **-α** ou **-η**: depois de **ε, ι, ρ** o **α** continua longo no singular (**χώρα, χώρας** "terra"); senão **η** (**τιμή, τιμῆς** "honra"). Os de **-α** breve (**θάλαττα, θαλάττης** "mar") têm η no genitivo e dativo singular. O plural é o mesmo para todos: **-αι, -ῶν, -αις, -ᾱς**.
+
+        Alguns masculinos terminam em **-ης / -ᾱς** com genitivo **-ου**: **στρατιώτης, στρατιώτου** "soldado", **νεανίᾱς** "rapaz".
+    paradigms:
+    - {word: χώρα, pos: noun, label: {en: "χώρα (f.) land", pt: "χώρα (f.) terra"}}
+    - {word: τιμή, pos: noun, label: {en: "τιμή (f.) honour", pt: "τιμή (f.) honra"}}
+    match: {seq: [{pos: noun, dict: "(ας|ης) [fm]\\.$"}], same: [number]}
+
+- title: {en: The verb, pt: O verbo}
+  lessons:
+  - id: grc-present
+    title: λύω
+    meaning: {en: "the present indicative active", pt: "o presente do indicativo ativo"}
+    intro:
+      en: |
+        Greek verbs are listed in the **1st person singular** present: **λύω** "I loose, release". The present stem **λυ-** + the thematic vowel **ο / ε** + the personal ending: **λύ-ο-μεν** "we loose". The endings show the person, so the pronoun is usually left out. The **-ν** of **λύουσι(ν)** is added before a vowel or at the end of a sentence (*movable nu*).
+      pt: |
+        O verbo grego aparece na **1ª pessoa do singular** do presente: **λύω** "eu solto". Radical do presente **λυ-** + vogal temática **ο / ε** + terminação pessoal: **λύ-ο-μεν** "soltamos". As terminações mostram a pessoa, então o pronome costuma ficar de fora. O **-ν** de **λύουσι(ν)** aparece antes de vogal ou no fim da frase (*ni móvel*).
+    paradigms:
+    - {word: λύω, pos: verb, tense: pres, mood: ind, voice: act, label: {en: "λύω — present active", pt: "λύω — presente ativo"}}
+    match: {seq: [{pos: verb, tense: pres, mood: ind, voice: act, not: {lemma: "^εἰμί$"}}], same: [tense, mood, voice]}
+
+  - id: grc-eimi
+    title: εἰμί
+    meaning: {en: "to be", pt: "ser, estar"}
+    intro:
+      en: |
+        **εἰμί** "I am" is irregular. Its present forms (except **εἶ** "you are") are **enclitic**: they lean on the word before and usually lose their accent: **ἀγαθός ἐστιν**. Accented at the start of a sentence, **ἔστι** means "there is" or "it is possible". The imperfect is **ἦ / ἦν, ἦσθα, ἦν…** "I was".
+      pt: |
+        **εἰμί** "sou" é irregular. Suas formas do presente (menos **εἶ** "és") são **enclíticas**: apoiam-se na palavra anterior e em geral perdem o acento: **ἀγαθός ἐστιν**. Acentuado no início da frase, **ἔστι** significa "há" ou "é possível". O imperfeito é **ἦ / ἦν, ἦσθα, ἦν…** "eu era".
+    paradigms:
+    - {word: εἰμί, pos: verb, tense: pres, mood: ind, label: {en: "εἰμί — present", pt: "εἰμί — presente"}}
+    match: {seq: [{pos: verb, lemma: "^εἰμί$", mood: ind}], same: [tense, mood]}
+
+- title: {en: Describing and placing, pt: Descrever e situar}
+  lessons:
+  - id: grc-adjectives
+    title: ἀγαθός, ἀγαθή, ἀγαθόν
+    meaning: {en: "adjectives of the first and second declensions; attributive position", pt: "adjetivos da primeira e segunda declinações; posição atributiva"}
+    intro:
+      en: |
+        Most adjectives follow **-ος, -η (or -ᾱ), -ον** — masculine and neuter like λόγος / δῶρον, feminine like τιμή / χώρα. They agree with the noun in gender, number and case.
+
+        Position matters: between article and noun, or after a repeated article, the adjective is **attributive** — **ὁ ἀγαθὸς ἀνήρ / ὁ ἀνὴρ ὁ ἀγαθός** "the good man"; outside the article group it is **predicative** — **ὁ ἀνὴρ ἀγαθός** "the man (is) good".
+      pt: |
+        A maioria dos adjetivos segue **-ος, -η (ou -ᾱ), -ον** — masculino e neutro como λόγος / δῶρον, feminino como τιμή / χώρα. Concordam com o substantivo em gênero, número e caso.
+
+        A posição importa: entre artigo e substantivo, ou depois de artigo repetido, o adjetivo é **atributivo** — **ὁ ἀγαθὸς ἀνήρ / ὁ ἀνὴρ ὁ ἀγαθός** "o homem bom"; fora do grupo do artigo é **predicativo** — **ὁ ἀνὴρ ἀγαθός** "o homem (é) bom".
+    paradigms:
+    - {word: ἀγαθός, pos: adj, number: sg, degree: pos, label: {en: "ἀγαθός good — singular", pt: "ἀγαθός bom — singular"}}
+    - {word: ἀγαθός, pos: adj, number: pl, degree: pos, label: {en: "ἀγαθός — plural", pt: "ἀγαθός — plural"}}
+    match: {seq: [{pos: adj}], same: [case, number]}
+
+  - id: grc-prepositions
+    title: ἐν, εἰς, ἐκ, πρός…
+    meaning: {en: "prepositions and their cases", pt: "preposições e seus casos"}
+    intro:
+      en: |
+        Each preposition takes a set case, and some change meaning with the case:
+
+        - genitive: **ἐκ / ἐξ** out of, **ἀπό** from, **πρό** before, **ἀντί** instead of
+        - dative: **ἐν** in, **σύν** with
+        - accusative: **εἰς** into, **ἀνά** up
+        - several: **παρά** (gen. *from*, dat. *beside*, acc. *to*), **πρός** (gen. *from*, dat. *at*, acc. *towards*), **ἐπί** (gen. *on*, dat. *at*, acc. *against*), **διά** (gen. *through*, acc. *because of*), **μετά** (gen. *with*, acc. *after*), **ὑπό** (gen. *by* an agent, acc. *under*), **κατά**, **περί**, **ὑπέρ**
+      pt: |
+        Cada preposição pede um caso, e algumas mudam de sentido com o caso:
+
+        - genitivo: **ἐκ / ἐξ** de dentro de, **ἀπό** a partir de, **πρό** antes de, **ἀντί** em vez de
+        - dativo: **ἐν** em, **σύν** com
+        - acusativo: **εἰς** para dentro de, **ἀνά** acima
+        - vários: **παρά** (gen. *da parte de*, dat. *junto a*, acus. *para junto de*), **πρός** (gen. *da parte de*, dat. *junto a*, acus. *em direção a*), **ἐπί** (gen. *sobre*, dat. *junto a*, acus. *contra*), **διά** (gen. *através de*, acus. *por causa de*), **μετά** (gen. *com*, acus. *depois de*), **ὑπό** (gen. *por* um agente, acus. *debaixo de*), **κατά**, **περί**, **ὑπέρ**
+    match: {seq: [{pos: prep}, {pos: [noun, det]}], gap: 1, same: [number]}

@@ -154,6 +154,12 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
   (pictures left out). Stages, topics, Portuguese summaries and the Tatoeba rules are Casus's (tools/curricula/la/).
   Exercises from Tatoeba's Latin sentences (CC BY 2.0 FR) and from the book's own Latin sentences; wrong answers from
   the Whitaker's Words paradigms (public domain), only forms attested in the Tatoeba sentences when there are enough.
+- Ancient Greek lessons (31, Beginner–Reading): **written for Casus** (tools/curricula/grc/), English and Portuguese.
+  White's First Greek Book (1896) is public domain but only as scans, its UMKC digital edition is CC BY-NC-SA, and
+  Wikibooks' course is a stub; the facts follow Smyth's Greek Grammar (1920, public domain). Paradigm tables are
+  generated from the Wiktionary-based paradigms (CC BY-SA; tools/learn_tables.py). Exercise sentences: Tatoeba's Greek
+  (CC BY 2.0 FR) and Xenophon's Anabasis and Memorabilia and Lysias 1 from the **Perseus Digital Library**
+  (canonical-greekLit, CC BY-SA 4.0; tools/build_corpus.py).
 
 ## Document import
 

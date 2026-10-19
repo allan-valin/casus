@@ -76,7 +76,8 @@ export function formPool(rows, answer, code, decode, max = 5, same = []) {
   const keeps = (c) => { const a = decode(c); return same.every((k) => a[k] === mine[k]); };
   const best = new Map();
   for (const [form, ...codes] of rows) {
-    if (form === answer || prefixed(form) || !codes.some(keeps)) continue;
+    // the answer itself, a variant of it in the same slot (ἐστί / ἐστίν), a prefixed form, a form outside `same`
+    if (form === answer || codes.includes(code) || prefixed(form) || !codes.some(keeps)) continue;
     const s = Math.max(...codes.filter(keeps).map(score));
     if (!best.has(form) || best.get(form) < s) best.set(form, s);
   }

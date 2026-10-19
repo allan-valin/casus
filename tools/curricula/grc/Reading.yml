@@ -1,0 +1,120 @@
+id: Reading
+title: {en: Reading, pt: Leitura}
+topics:
+
+- title: {en: Participles and infinitives, pt: Particípios e infinitivos}
+  lessons:
+  - id: grc-participle
+    title: λύων, λύσας
+    meaning: {en: "participles", pt: "particípios"}
+    intro:
+      en: |
+        Greek uses participles far more than English or Portuguese. A participle is an adjective of the verb, with tense (aspect) and voice: **λύων, λύουσα, λῦον** "loosing", **λύσας, λύσασα, λῦσαν** "having loosed", **λυθείς** "having been loosed". With the article it is a noun: **οἱ φεύγοντες** "those fleeing, the fugitives". Without it, it adds a circumstance — *when, because, although, if* — that the context decides.
+      pt: |
+        O grego usa particípios muito mais que o português. O particípio é um adjetivo do verbo, com tempo (aspecto) e voz: **λύων, λύουσα, λῦον** "soltando", **λύσας, λύσασα, λῦσαν** "tendo soltado", **λυθείς** "tendo sido solto". Com artigo vira substantivo: **οἱ φεύγοντες** "os que fogem, os fugitivos". Sem artigo, acrescenta uma circunstância — *quando, porque, embora, se* — que o contexto decide.
+    match: {seq: [{pos: vpar}], same: [case, number, gender]}
+
+  - id: grc-genitive-absolute
+    title: Κύρου βασιλεύοντος
+    meaning: {en: "the genitive absolute", pt: "o genitivo absoluto"}
+    intro:
+      en: |
+        A noun and a participle in the **genitive**, outside the main clause's grammar, give its circumstances — like the Latin ablative absolute: **Κύρου βασιλεύοντος** "while Cyrus was king", **ταῦτα εἰπόντος αὐτοῦ** "when he had said this".
+      pt: |
+        Um substantivo e um particípio no **genitivo**, fora da gramática da oração principal, dão as circunstâncias — como o ablativo absoluto latino: **Κύρου βασιλεύοντος** "quando Ciro era rei", **ταῦτα εἰπόντος αὐτοῦ** "depois que ele disse isso".
+    match: {seq: [{pos: [noun, pron], case: gen}, {pos: vpar, case: gen}], near: 2, gap: 1, same: [case, number, gender]}
+
+  - id: grc-infinitive
+    title: λύειν, λῦσαι
+    meaning: {en: "the infinitive; indirect statement", pt: "o infinitivo; o discurso indireto"}
+    intro:
+      en: |
+        Infinitives: present **λύειν**, aorist **λῦσαι**, future **λύσειν**, perfect **λελυκέναι** (middle/passive **λύεσθαι, λύσασθαι, λυθῆναι**). With the article it is a noun: **τὸ μανθάνειν** "learning".
+
+        After verbs of saying and thinking (**φημί, νομίζω, οἴομαι**), the reported statement is an **infinitive with its subject in the accusative**: **φησὶ τὸν ἄνδρα ἀγαθὸν εἶναι** "he says the man is good". (**λέγω** and **οἶδα** prefer **ὅτι** + indicative.)
+      pt: |
+        Infinitivos: presente **λύειν**, aoristo **λῦσαι**, futuro **λύσειν**, perfeito **λελυκέναι** (médio/passivo **λύεσθαι, λύσασθαι, λυθῆναι**). Com artigo vira substantivo: **τὸ μανθάνειν** "o aprender".
+
+        Depois de verbos de dizer e pensar (**φημί, νομίζω, οἴομαι**), a afirmação relatada vai no **infinitivo com sujeito no acusativo**: **φησὶ τὸν ἄνδρα ἀγαθὸν εἶναι** "diz que o homem é bom". (**λέγω** e **οἶδα** preferem **ὅτι** + indicativo.)
+    match: {seq: [{pos: verb, mood: inf}], same: [mood]}
+
+- title: {en: Subjunctive and optative, pt: Subjuntivo e optativo}
+  lessons:
+  - id: grc-subjunctive
+    title: λύω, λύῃς (subj.)
+    meaning: {en: "the subjunctive: purpose, exhortation, conditions", pt: "o subjuntivo: finalidade, exortação, condições"}
+    intro:
+      en: |
+        The subjunctive has **long thematic vowels** (**ω / η**): **λύω, λύῃς, λύῃ, λύωμεν, λύητε, λύωσι**. Main uses: **purpose** after **ἵνα, ὅπως, ὡς** (negative **μή**): **ἥκομεν ἵνα μάθωμεν** "we have come to learn"; **exhortation**: **ἴωμεν** "let us go"; prohibition with aorist **μὴ ποιήσῃς** "don't do it"; and future conditions with **ἐάν** (**ἐάν τι ἔχω, δώσω** "if I have anything, I'll give it").
+      pt: |
+        O subjuntivo tem **vogais temáticas longas** (**ω / η**): **λύω, λύῃς, λύῃ, λύωμεν, λύητε, λύωσι**. Usos principais: **finalidade** depois de **ἵνα, ὅπως, ὡς** (negação **μή**): **ἥκομεν ἵνα μάθωμεν** "viemos para aprender"; **exortação**: **ἴωμεν** "vamos"; proibição com aoristo **μὴ ποιήσῃς** "não faça isso"; e condições futuras com **ἐάν** (**ἐάν τι ἔχω, δώσω** "se eu tiver algo, darei").
+    match: {seq: [{pos: verb, mood: sub}], same: [person, number, voice]}
+
+  - id: grc-optative
+    title: λύοιμι
+    meaning: {en: "the optative: wishes and remote possibility", pt: "o optativo: desejos e possibilidade remota"}
+    intro:
+      en: |
+        The optative has **-οι-** (or **-αι-**, **-ειη-**): **λύοιμι, λύοις, λύοι…**, aorist **λύσαιμι**. It expresses **wishes** (**εἴθε γένοιο** "may you become…"), remote **possibility** with **ἄν** (**τοῦτο οὐκ ἂν γένοιτο** "this could not happen"), and after a past main verb it may replace the subjunctive or indicative of a subordinate clause.
+      pt: |
+        O optativo tem **-οι-** (ou **-αι-**, **-ειη-**): **λύοιμι, λύοις, λύοι…**, aoristo **λύσαιμι**. Exprime **desejos** (**εἴθε γένοιο** "oxalá te tornes…"), **possibilidade** remota com **ἄν** (**τοῦτο οὐκ ἂν γένοιτο** "isso não poderia acontecer"), e depois de verbo principal no passado pode substituir o subjuntivo ou o indicativo da oração subordinada.
+    match: {seq: [{pos: verb, mood: opt}], same: [person, number, voice]}
+
+  - id: grc-conditions
+    title: εἰ, ἐάν, ἄν
+    meaning: {en: "conditional sentences", pt: "frases condicionais"}
+    intro:
+      en: |
+        **εἰ** + indicative for simple conditions (**εἰ τοῦτο λέγεις, ἁμαρτάνεις** "if you say this, you're wrong"); **ἐάν** (= εἰ ἄν) + subjunctive for future and general ones; **εἰ** + optative … **ἄν** + optative for remote future ("if he should…, he would…"); **εἰ** + past indicative … **ἄν** + past indicative for contrary-to-fact ("if he had…, he would have…").
+      pt: |
+        **εἰ** + indicativo para condições simples (**εἰ τοῦτο λέγεις, ἁμαρτάνεις** "se dizes isso, erras"); **ἐάν** (= εἰ ἄν) + subjuntivo para as futuras e gerais; **εἰ** + optativo … **ἄν** + optativo para o futuro remoto ("se ele viesse a…, ele…-ria"); **εἰ** + indicativo passado … **ἄν** + indicativo passado para o irreal ("se ele tivesse…, teria…").
+    # ἤν "if" is left out: without accents it is ἦν "was"
+    match: {seq: [{word: [εἰ, ἐάν, ἄν, ἂν]}, {pos: verb}], near: 4, gap: 0}
+    pool: [εἰ, ἐάν, ἄν, ὅτι, ἵνα, ὡς]
+
+- title: {en: Further forms, pt: Outras formas}
+  lessons:
+  - id: grc-perfect
+    title: λέλυκα
+    meaning: {en: "the perfect and pluperfect", pt: "o perfeito e o mais-que-perfeito"}
+    intro:
+      en: |
+        The perfect has **reduplication** (the first consonant + ε: **λέ-λυκα**) and, in the active, **-κα**: **λέλυκα** "I have loosed" — a present state resulting from a past act. The pluperfect adds the augment: **ἐλελύκη** "I had loosed". The middle/passive perfect has no κ: **λέλυμαι**.
+      pt: |
+        O perfeito tem **reduplicação** (a primeira consoante + ε: **λέ-λυκα**) e, na ativa, **-κα**: **λέλυκα** "tenho soltado / soltei (e está solto)" — um estado presente que resulta de um ato passado. O mais-que-perfeito acrescenta o aumento: **ἐλελύκη** "tinha soltado". O perfeito médio/passivo não tem κ: **λέλυμαι**.
+    paradigms:
+    - {word: λύω, pos: verb, tense: perf, mood: ind, voice: act, label: {en: "λύω — perfect active", pt: "λύω — perfeito ativo"}}
+    match: {seq: [{pos: verb, tense: [perf, plup]}], same: [person, number, voice]}
+
+  - id: grc-mi-verbs
+    title: δίδωμι, τίθημι, ἵστημι
+    meaning: {en: "verbs in -μι", pt: "verbos em -μι"}
+    intro:
+      en: |
+        A small, very common group adds endings directly to the stem, without a thematic vowel, and reduplicates the present with **ι**: **δί-δω-μι** "give", **τί-θη-μι** "put", **ἵ-στη-μι** "make stand", **ἵημι** "send", **δείκνυμι** "show". The stem vowel is long in the singular and short in the plural: **δίδωμι / δίδομεν**.
+      pt: |
+        Um grupo pequeno e muito comum acrescenta as terminações direto ao radical, sem vogal temática, e reduplica o presente com **ι**: **δί-δω-μι** "dar", **τί-θη-μι** "pôr", **ἵ-στη-μι** "pôr de pé", **ἵημι** "enviar", **δείκνυμι** "mostrar". A vogal do radical é longa no singular e breve no plural: **δίδωμι / δίδομεν**.
+    paradigms:
+    - {word: δίδωμι, pos: verb, tense: pres, mood: ind, voice: act, label: {en: "δίδωμι give — present", pt: "δίδωμι dar — presente"}}
+    match: {seq: [{pos: verb, lemma: "^(δίδωμι|τίθημι|ἵστημι|ἵημι|δείκνυμι|φημί|εἶμι|οἶδα)$"}], same: [tense, mood]}
+
+  - id: grc-imperative
+    title: λῦε, λύσατε
+    meaning: {en: "the imperative", pt: "o imperativo"}
+    intro:
+      en: |
+        Present imperative **λῦε, λύετε** (an ongoing or general command), aorist **λῦσον, λύσατε** (one act). There are 3rd-person forms too: **λυέτω** "let him loose". Negative commands: **μή** + present imperative, or **μή** + aorist **subjunctive**: **μὴ λύσῃς**.
+      pt: |
+        Imperativo presente **λῦε, λύετε** (ordem contínua ou geral), aoristo **λῦσον, λύσατε** (um ato). Há também formas de 3ª pessoa: **λυέτω** "que ele solte". Ordens negativas: **μή** + imperativo presente, ou **μή** + **subjuntivo** aoristo: **μὴ λύσῃς**.
+    match: {seq: [{pos: verb, mood: imp}], same: [mood]}
+
+  - id: grc-comparison
+    title: σοφώτερος, σοφώτατος
+    meaning: {en: "comparison of adjectives", pt: "comparação dos adjetivos"}
+    intro:
+      en: |
+        Regular comparison: **-τερος, -τατος**: **σοφός → σοφώτερος → σοφώτατος** (ω after a short syllable). Many common adjectives use **-ίων, -ιστος**: **ἡδύς → ἡδίων → ἥδιστος**; and some are irregular: **ἀγαθός → ἀμείνων / βελτίων → ἄριστος / βέλτιστος**, **κακός → κακίων → κάκιστος**, **μέγας → μείζων → μέγιστος**, **πολύς → πλείων → πλεῖστος**. *Than* is **ἤ** or the genitive: **σοφώτερος ἐμοῦ**.
+      pt: |
+        Comparação regular: **-τερος, -τατος**: **σοφός → σοφώτερος → σοφώτατος** (ω depois de sílaba breve). Muitos adjetivos comuns usam **-ίων, -ιστος**: **ἡδύς → ἡδίων → ἥδιστος**; e alguns são irregulares: **ἀγαθός → ἀμείνων / βελτίων → ἄριστος / βέλτιστος**, **κακός → κακίων → κάκιστος**, **μέγας → μείζων → μέγιστος**, **πολύς → πλείων → πλεῖστος**. *Do que* é **ἤ** ou o genitivo: **σοφώτερος ἐμοῦ**.
+    # by the suffix: the analysis rarely marks the degree
+    match: {seq: [{pos: adj, re: "(τερ|τατ)[οηαωᾳῃῳ]|ιστ[οηαω]", not: {lemma: "^(ἡμέτερος|ὑμέτερος|ἕτερος|πότερος|ἑκάτερος|ἀμφότερος|πιστός|ἄπιστος)$"}}], same: [case, number, gender]}

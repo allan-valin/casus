@@ -28,7 +28,7 @@
   // a script that writes its vowels only sometimes (Arabic): romanise only text that mostly has them, the rest would be
   // bare letters (ʔḵšā ʔnn)
   const vowelledEnough = (t) => { const letters = (t.match(/\p{L}/gu) ?? []).length; return letters > 0 && (t.match(/\p{M}/gu) ?? []).length / letters >= 0.4; };
-  const romanize = lang.script?.romanize ? (lang.script.hasMarks ? (t) => (vowelledEnough(t) ? lang.script.romanize(t) : '') : lang.script.romanize) : null;
+  const romanize = lang.script?.romanize ? (lang.script.hasMarks && lang.script.rtl ? (t) => (vowelledEnough(t) ? lang.script.romanize(t) : '') : lang.script.romanize) : null;
 
   onMount(async () => {
     try { progress = JSON.parse(storage?.getItem(KEY) ?? '{}'); } catch { progress = {}; }
@@ -70,7 +70,8 @@
   }
   // the lesson's own examples first, in order; then Tatoeba's and the derived ones, shuffled
   function bookFirst(qs) {
-    const own = qs.filter((q) => q.source !== 'tatoeba' && !q.derivedFrom);
+    // the lesson's own questions and the book's (D'Ooge) in order; Tatoeba's and the texts' (Xenophon…) shuffled
+    const own = qs.filter((q) => (!q.source || q.source === 'book') && !q.derivedFrom);
     const rest = qs.filter((q) => !own.includes(q));
     for (let i = rest.length - 1; i > 0; i -= 1) { const j = Math.floor(random() * (i + 1)); [rest[i], rest[j]] = [rest[j], rest[i]]; }
     return [...own, ...rest];
