@@ -49,7 +49,7 @@
 
 <details class="downloads">
   <summary>{t('dl.heading')}</summary>
-  <p class="hint">{t('dl.hint')}</p>
+  <p class="dl-hint">{t('dl.hint')}</p>
   <ul>
     {#each rows as r (r.code)}
       <li class="dl-row" data-code={r.code}>
@@ -70,7 +70,7 @@
 <style>
   .downloads { margin-top: 10px; border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; background: var(--panel); }
   summary { cursor: pointer; font-weight: 600; }
-  .hint { color: var(--ink-2); font-size: 0.9em; margin: 6px 0; }
+  .dl-hint { color: var(--ink-2); font-size: 0.9em; margin: 6px 0; }
   ul { list-style: none; padding: 0; margin: 0; }
   .dl-row { display: grid; grid-template-columns: 1fr auto auto auto; gap: 4px 10px; align-items: center; padding: 3px 0; border-top: 1px solid var(--line-soft); }
   .size, .dl-state { color: var(--ink-2); font-size: 0.9em; white-space: nowrap; }
