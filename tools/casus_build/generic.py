@@ -63,6 +63,23 @@ def analysis(cfg: Config, pos: str, tags: set, gender: str | None) -> dict | Non
     return None
 
 
+def turkish_person(form: str) -> tuple[str, str]:
+    """Turkish person and number from the personal ending (Wiktionary's Turkish tables have their person tags shifted by a
+    row): -sInIz 2pl, -lAr 3pl, -sIn 2sg, -Iz 1pl, -k after a past -dI 1pl, -(I)m 1sg, else 3sg"""
+    f = form.lower()
+    if re.search(r"(sınız|siniz|sunuz|sünüz|nız|niz|nuz|nüz)$", f):
+        return ("2", "pl")
+    if re.search(r"(lar|ler)$", f):
+        return ("3", "pl")
+    if re.search(r"(sın|sin|sun|sün)$", f):
+        return ("2", "sg")
+    if re.search(r"(ız|iz|uz|üz)$", f) or re.search(r"[dt][ıiuü]k$", f):
+        return ("1", "pl")
+    if re.search(r"m$", f):
+        return ("1", "sg")
+    return ("3", "sg")
+
+
 def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
     for i, line in enumerate(lines):
         line = line.strip()
@@ -93,6 +110,9 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
             # become the shard "/ˈ", a path outside the data folder)
             if not text or " " in text or tags & SKIP or not cfg.letters.match(text) or "/" in text or "\\" in text:
                 continue
+            if cfg.code == "tr" and pos == "verb" and tags & set(PERSONS):
+                person, number = turkish_person(text)            # the table's own person tags are a row off
+                tags = (tags - set(PERSONS) - set(NUMBERS)) | {{"1": "first-person", "2": "second-person", "3": "third-person"}[person], {"sg": "singular", "pl": "plural"}[number]}
             a = analysis(cfg, pos, tags, gender)
             if a:
                 cells.append((text, a))

@@ -39,3 +39,10 @@ def test_a_table_without_person_tags_gets_the_person_from_its_order():
     index = build_index(list(parse_entries(CONFIGS["pl"], [line])))
     assert index["czytam"][0]["person"] == "1" and index["czytasz"][0]["person"] == "2" and index["czytacie"][0]["person"] == "2"
     assert index["czyta"][0]["person"] == "3"
+
+
+def test_turkish_person_from_the_personal_ending():
+    from casus_build.generic import turkish_person
+    assert turkish_person("okuyorum") == ("1", "sg") and turkish_person("okuyorsun") == ("2", "sg") and turkish_person("okuyor") == ("3", "sg")
+    assert turkish_person("okuyoruz") == ("1", "pl") and turkish_person("okuyorsunuz") == ("2", "pl") and turkish_person("okuyorlar") == ("3", "pl")
+    assert turkish_person("okudum") == ("1", "sg") and turkish_person("okuduk") == ("1", "pl") and turkish_person("geliyorsunuz") == ("2", "pl")
