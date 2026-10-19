@@ -29,3 +29,10 @@ Decisions (his answers): phrase answers show the REAL sense; explanations writte
 - ~04:00: Macedonian, Finnish, Modern Greek live; Chinese phrases (9,952 incl. chengyu) released. Next in Allan's order:
   Sanskrit, Czech, Polish, Turkish, Hungarian, Icelandic, Portuguese (pt-BR). Data total 558 MB of the 1 GB Pages
   limit: new languages are streamed and filtered (tools/fetch_filtered.py); keep each under ~40 MB.
+- 2026-10-19 morning: Sanskrit, Czech, Polish, Turkish, Hungarian, Icelandic, Portuguese (Brazil) LIVE
+  (/casus/sa|cs|pl|tr|hu|is|pt/). Sanskrit: Devanagari + IAST, danda sentences, final anusvara = m, Devanagari drill,
+  no frequency list. Polish verbs get their person from table order; Turkish verbs from the personal ending (Wiktionary
+  tags a row off). Portuguese is caseless: subject / direct / indirect object by word order, articles and clitics.
+  Data 692 MB of the 1 GB Pages limit. Known: proper names unknown in the streamed languages (filter drops them);
+  Sanskrit sandhi not split; Hungarian lenni missing from the models.
+- Next (my pick, list done): Finnish and Polish lists still building (re-release fi, pl); then the known issues above.
