@@ -113,8 +113,13 @@ def curriculum_learn(path: Path, tables=None) -> tuple[dict, dict, dict]:
             for src in topic["lessons"]:
                 page = lesson_page(src, (*tables, data.get("exclude_forms")) if tables else None)
                 page.update({"level": lv["id"], "topic": _both(topic["title"])})
+                # lessons written by AI (Claude) for Casus are marked as such on the page and in the list (Allan,
+                # 2026-10-20); a lesson can say otherwise (ai: false)
+                ai = src.get("ai", bool(data.get("ai_written")))
+                if ai:
+                    page["ai"] = True
                 lessons[page["id"]] = page
-                entries.append({"id": page["id"], "title": page["title"], "meaning": page["meaning"]})
+                entries.append({"id": page["id"], "title": page["title"], "meaning": page["meaning"], **({"ai": True} if ai else {})})
                 mine = []
                 for e in page["examples"]:
                     found = _gap_furi(e["text"], e["target"]) if e.get("target") else None

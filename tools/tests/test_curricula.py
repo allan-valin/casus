@@ -38,3 +38,15 @@ def test_curriculum_is_well_formed(path):
                     assert isinstance(s["body"], str) or set(s["body"]) == {"en", "pt"}, where
                 for m in l.get("mistakes", []):
                     assert m["wrong"] != m["right"] and set(m["why"]) == {"en", "pt"}, where
+
+
+def test_ai_written_curricula_mark_their_lessons(tmp_path):
+    import yaml
+    from learn_curriculum import curriculum_learn
+    d = tmp_path / "xx"; d.mkdir()
+    (d / "meta.yml").write_text(yaml.safe_dump({"system": "CEFR", "level_files": ["A1"], "ai_written": True, "credit": {"en": "c", "pt": "c"}}), encoding="utf-8")
+    (d / "A1.yml").write_text(yaml.safe_dump({"id": "A1", "topics": [{"title": {"en": "T", "pt": "T"}, "lessons": [
+        {"id": "xx-1", "title": "a", "meaning": {"en": "m", "pt": "m"}, "intro": {"en": "x", "pt": "x"}}]}]}), encoding="utf-8")
+    index, lessons, _ = curriculum_learn(d)
+    assert lessons["xx-1"]["ai"] is True
+    assert index["levels"][0]["topics"][0]["lessons"][0]["ai"] is True

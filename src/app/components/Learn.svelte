@@ -169,6 +169,7 @@
       <nav class="crumbs"><button class="back" onclick={() => { lesson = null; quizItems = []; }}>← {lessonRef.level.title ? loc(lessonRef.level.title) : lessonRef.level.id}</button> <span class="crumb-topic">{loc(lessonRef.topic.title)}</span></nav>
       <h3 class="lesson-title"><span class="badge-level">{lessonRef.level.title ? loc(lessonRef.level.title) : lessonRef.level.id}</span> <span class="l-head" lang={lang.bcp47}>{lesson.title ?? lessonRef.entry.title}</span></h3>
       {#if lesson.meaning}<p class="l-sub">{loc(lesson.meaning)}</p>{/if}
+      {#if lesson.ai}<p class="ai-badge" title={t('learn.ai.title')}>✦ {t('learn.ai')}</p>{/if}
       {#if lesson.kind === 'vocab' || lesson.kind === 'kanji'}
         <nav class="toc"><a href="#ex-start">{t('learn.exercises')}</a></nav>
         {#if lesson.kind === 'vocab'}
@@ -230,7 +231,7 @@
           <ul class="lesson-list">
             {#each visible(tp) as e (e.id)}
               <li><button class="lesson-row" data-lesson={e.id} onclick={() => open({ level, topic: tp, entry: e })}>
-                <span class="l-title" lang={lang.bcp47}>{e.title}</span><span class="l-meaning">{loc(e.meaning)}</span>
+                <span class="l-title" lang={lang.bcp47}>{e.title}</span><span class="l-meaning">{loc(e.meaning)}{#if e.ai} <span class="ai-mark" title={t('learn.ai.title')}>✦ AI</span>{/if}</span>
                 {#if pct(e.id) !== null}<span class="pct" class:good={pct(e.id) >= 80}>{pct(e.id)}%</span>{/if}
               </button></li>
             {/each}
@@ -277,6 +278,8 @@
   h3.lesson-title { font-size: 2.1rem; margin: 18px 0 4px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
   .badge-level { font-size: 0.45em; padding: 2px 8px; border-radius: 6px; background: var(--accent); color: var(--accent-ink); }
   .l-sub { font-size: 1.15em; color: var(--ink-2); margin: 0 0 8px; }
+  .ai-badge { display: inline-block; margin: 0 0 8px; padding: 3px 10px; border-radius: 6px; font-size: 0.85em; background: color-mix(in srgb, var(--accent-2) 25%, var(--panel)); border: 1px solid var(--accent-2); color: var(--ink); }
+  .ai-mark { font-size: 0.75em; padding: 0 5px; border-radius: 4px; border: 1px solid var(--accent-2); color: var(--ink-2); white-space: nowrap; }
   .toc { display: flex; flex-wrap: wrap; gap: 4px 12px; position: sticky; top: 0; background: var(--panel); padding: 6px 0; border-bottom: 1px solid var(--line-soft); z-index: 2; font-size: 0.92em; }
   .toc { align-items: center; }
   .toc a { color: var(--accent-text); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; font-weight: 600; padding: 3px 8px; border-radius: 6px; }

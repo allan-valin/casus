@@ -217,3 +217,15 @@ describe('Learn, Allan 2026-10-20 night list', () => {
     expect(r2.container.querySelector('.lesson-row[data-lesson="n5-004"] .pct').textContent).toBe('75%');
   });
 });
+
+describe('AI-written lessons are marked (Allan, 2026-10-20)', () => {
+  it('a lesson written by AI shows a badge on its page and a mark in the list', async () => {
+    const index = { ...INDEX, levels: [{ id: 'N5', topics: [{ id: 't1', kind: 'grammar', title: 'T', lessons: [{ id: 'n5-004', title: 'は', meaning: 'topic', ai: true }] }] }] };
+    const { container } = render(Learn, props({ loadLearn: async () => index, loadLesson: async () => ({ ...LESSONS['n5-004'], ai: true }) }));
+    await flush();
+    expect(container.querySelector('.lesson-row .ai-mark')).not.toBe(null);
+    await fireEvent.click(container.querySelector('.lesson-row'));
+    await flush();
+    expect(container.querySelector('.lesson-page .ai-badge').textContent).toMatch(/AI/);
+  });
+});

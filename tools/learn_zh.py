@@ -165,8 +165,10 @@ def zh_learn(grammar_csv: Path, words_csv: Path, cedict_path: Path, notes: dict,
         if "被动" in (r["Details"] + r["Category"]) and page.get("match"):
             own = ["被"]   # 叫 and 让 are mostly "tell / let" (你凭什么叫我走), so the drill is on 被
             page["match"] = {"seq": [{"word": own}, {"pos": ["noun", "pron"]}, {"pos": "verb"}], "near": 3, "gap": 0}
+        if note:
+            page["ai"] = True   # the explanation was written by AI (Claude) for Casus
         lessons[lid] = page
-        levels.setdefault(lv, {}).setdefault(group, []).append({"id": lid, "title": page["title"], "meaning": meaning})
+        levels.setdefault(lv, {}).setdefault(group, []).append({"id": lid, "title": page["title"], "meaning": meaning, **({"ai": True} if note else {})})
         questions.setdefault(lv, {})[lid] = {"pools": {"gap": page.get("pool", [])}, "qs": []}
     # wrong answers for a point with one form, or a frame: the forms of the other points of its category
     by_cat = {}
@@ -213,6 +215,6 @@ def zh_learn(grammar_csv: Path, words_csv: Path, cedict_path: Path, notes: dict,
         if lv in levels:
             out_levels.append({"id": lv, "topics": topics})
     index = {"system": "HSK 3.0", "levels": out_levels,
-             "credit": {"en": "Grammar points: HSK 3.0 syllabus (GF 0025-2021) via ivankra/hsk30 (MIT); explanations and translations written for Casus; English glosses CC-CEDICT (CC BY-SA); sentences Tatoeba (CC BY 2.0 FR).",
-                        "pt": "Pontos de gramática: programa do HSK 3.0 (GF 0025-2021) via ivankra/hsk30 (MIT); explicações e traduções escritas para o Casus; glosas em inglês do CC-CEDICT (CC BY-SA); frases do Tatoeba (CC BY 2.0 FR)."}}
+             "credit": {"en": "Grammar points: HSK 3.0 syllabus (GF 0025-2021) via ivankra/hsk30 (MIT); explanations and label translations written by AI (Claude) for Casus; English glosses CC-CEDICT (CC BY-SA); sentences Tatoeba (CC BY 2.0 FR).",
+                        "pt": "Pontos de gramática: programa do HSK 3.0 (GF 0025-2021) via ivankra/hsk30 (MIT); explicações e traduções dos rótulos escritas por IA (Claude) para o Casus; glosas em inglês do CC-CEDICT (CC BY-SA); frases do Tatoeba (CC BY 2.0 FR)."}}
     return index, lessons, questions
