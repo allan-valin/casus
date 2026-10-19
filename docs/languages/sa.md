@@ -9,4 +9,6 @@ Built overnight 2026-10-19 on the generic case-language builder.
 - Devanagari drill: vowels, consonants, consonants with ā.
 - Data: the whole English Wiktionary Sanskrit extract (144 MB; 10,200 lemmas, 195k forms). No frequency list exists for
   Sanskrit, so the frequent-words drill is empty.
-- Not yet: sandhi — words fused at their boundaries (रामोऽपि) are not split, so they are not found.
+- Sandhi, the common word-end cases (src/lang/sa/sandhi.js): -o was -aḥ (रामो = रामः), -r was -ḥ, a voiced final
+  stop was voiceless, a dropped visarga after -a; the avagraha splits रामोऽपि into रामो + ऽपि (= अपि).
+- Not yet: words written together with no space (हरिर्जयति), vowel sandhi across words (रामागच्छति).

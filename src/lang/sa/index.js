@@ -3,6 +3,7 @@ import { makeCaseLanguage } from '../caseLanguage.js';
 import { cleanSa, romanizeSa } from './script.js';
 import { ROWS, LETTERS, LABELS, createGame, createGrid } from './game.js';
 import CODES from './codes.js';
+import { splitWords } from './sandhi.js';
 
 // sentences end at the danda (। ॥) as well as . ! ?
 const END = /[\u0964\u0965.!?]+|\n+/g;
@@ -49,6 +50,7 @@ export const sanskrit = makeCaseLanguage({
   script: { prefixOf: cleanSa, romanize: romanizeSa },
   tokenize,
   segment,
+  splitWords,
   game: { ROWS, LETTERS, LABELS, createGame, createGrid },
   address: ['हे', 'भो'],
   eras: [{ id: 'classical', label: 'Classical Sanskrit (with Vedic forms where Wiktionary lists them)', authors: '', ages: [], ipa: [] }],
