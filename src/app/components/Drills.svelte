@@ -64,7 +64,7 @@
   <p class="hint">{t(`drills.${drill}.hint`)}</p>
   {#if cheat}
     <Overlay onclose={() => { cheat = false; }} label={t('drills.cheatsheet')} wide>
-      <CheatSheet {lang} {drill} models={drill === 'verbs' ? verbs : nouns} words={inRange} phrases={phrases.filter((p) => kind === 'all' || p.kind === kind)} />
+      <CheatSheet {lang} {drill} {drills} {nouns} {verbs} words={inRange} phrases={phrases.filter((p) => kind === 'all' || p.kind === kind)} />
     </Overlay>
   {/if}
   {#if drill === 'letters'}

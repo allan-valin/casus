@@ -59,6 +59,14 @@
   }
 </script>
 
+{#if reader.lang?.script?.romanize || reader.lang?.script?.spaced === false || reader.lang?.script?.hasMarks}
+  <!-- Allan, 2026-10-19: switch the reading above and the Latin letters below right here, not only in the layers -->
+  <div class="pane-toggles">
+    {#if reader.lang?.script?.spaced === false}<label title={t('layers.furigana.title')}><input type="checkbox" data-layer="furigana" bind:checked={reader.layers.furigana}> {t('pane.above.furigana')}</label>
+    {:else if reader.lang?.script?.hasMarks}<label title={t('layers.marks.title')}><input type="checkbox" data-layer="marks" bind:checked={reader.layers.marks}> {t('pane.above.marks')}</label>{/if}
+    {#if reader.lang?.script?.romanize}<label title={t('layers.roman.title')}><input type="checkbox" data-layer="roman" bind:checked={reader.layers.roman}> {t('pane.below.roman')}</label>{/if}
+  </div>
+{/if}
 <div class="text" dir={reader.lang?.script?.rtl ? 'rtl' : 'ltr'} class:romanized={!!romanize}>
   {#each reader.sentences as sentence, i (sentence.start)}
     <span class="sentence" class:dimmed={i !== reader.selected} class:current={i === reader.selected} data-index={i}
@@ -88,6 +96,8 @@
   .sentence::before { counter-increment: sentence; content: counter(sentence); font-size: 0.6em; color: var(--muted); margin-right: 4px; vertical-align: super; }
   .hot { background: color-mix(in srgb, var(--accent) 28%, white); outline: 2px solid var(--accent); border-radius: 3px; }
   .ilg { display: inline-flex; flex-direction: column; align-items: center; line-height: 1.25; }   /* baseline = the word's */
+  .pane-toggles { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 0.85rem; color: var(--ink-2); margin: 0 0 6px; }
+  .pane-toggles label { white-space: nowrap; cursor: pointer; }
   .text.romanized { line-height: 3; }
   .text.romanized .sentence { padding-top: 0.6em; padding-bottom: 0.9em; }
   .roman { font-size: 0.6em; font-style: italic; font-family: system-ui, sans-serif; color: var(--ink-2); line-height: 1.1; }

@@ -47,3 +47,6 @@ describe('Arabic, more', () => {
     expect((await splitWords([tok], lex)).map((t) => t.key)).toEqual(['ل', 'الله']);
   });
 });
+describe('one-letter particles', () => {
+  it('لِ is not لَ', () => expect(vowelsAgree('لِ', 'لَـ')).toBe(false));
+});

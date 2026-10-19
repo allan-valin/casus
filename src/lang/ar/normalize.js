@@ -31,6 +31,7 @@ export function vowelsAgree(text, spelling, { last = false } = {}) {
   if (!spelling) return true;
   const a = syllables(text);
   const b = syllables(spelling);
+  if (a.length === 1) last = true;                     // a one-letter particle: its vowel is all it has (لِ, not لَ)
   if (a.length !== b.length) return true;              // different letters: another rule's business
   for (let i = 0; i < a.length - (last ? 0 : 1); i += 1) {
     const va = [...a[i].marks].find((m) => VOWEL.test(m));

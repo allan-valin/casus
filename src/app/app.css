@@ -26,4 +26,4 @@ select { font: inherit; padding: 5px 8px; border: 1px solid var(--line); border-
 
 /* a script that needs it reads a little larger (Japanese 1.15, Allan 2026-10-18); defined on main, where
    --font-scale is set, because a custom property resolves its var() where it is declared */
-main { --text-size: calc(clamp(1.02rem, 0.9rem + 0.45vw, 1.3rem) * var(--font-scale, 1)); --pill-size: calc(clamp(0.98rem, 0.86rem + 0.4vw, 1.2rem) * var(--font-scale, 1)); }
+main { --text-size: calc(clamp(1.02rem, 0.9rem + 0.45vw, 1.3rem) * var(--font-scale, 1)); --pill-size: clamp(0.98rem, 0.86rem + 0.4vw, 1.2rem);   /* the word itself scales in Block (.surface), the badge does not */ }

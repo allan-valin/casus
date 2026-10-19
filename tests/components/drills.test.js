@@ -126,6 +126,22 @@ describe('frequent words and phrases (Allan, 2026-10-18)', () => {
     await tick();
     expect(document.querySelectorAll('.cheat tr.word').length).toBe(200);
   });
+  it('the cheat sheet has a menu of every drill; it opens on the current one and moves to any other', async () => {
+    const { container } = render(Drills, { lang: getLanguage('la'), loadData, navigate: () => {} });
+    await tick2();
+    await fireEvent.click(container.querySelector('button.cheatsheet'));
+    await tick();
+    const sheet = () => [...document.querySelectorAll('.cheat')].at(-1);
+    const menu = [...sheet().querySelectorAll('.cheat-tab')].map((b) => b.dataset.section);
+    expect(menu).toEqual(['nouns', 'verbs', 'words', 'phrases']);
+    expect(sheet().querySelector('.cheat-tab.active').dataset.section).toBe('nouns');
+    await fireEvent.click(sheet().querySelector('.cheat-tab[data-section="phrases"]'));
+    await tick();
+    expect(sheet().querySelectorAll('tr.phrase').length).toBe(5);
+    await fireEvent.click(sheet().querySelector('.cheat-tab[data-section="verbs"]'));
+    await tick();
+    expect(sheet().querySelector('.model h4').textContent).toContain('amo');
+  });
 });
 
 describe('random word of the same table (Allan, 2026-10-18)', () => {
