@@ -15,3 +15,15 @@ describe('proper names', () => {
     expect(out[1].candidates[0].analysis.pos).toBe('verb');
   });
 });
+import { nameArticleStage } from '../../src/lib/classical.js';
+describe('a name after an article', () => {
+  it('takes the article’s case, gender and number; the article stays an article', () => {
+    const out = nameArticleStage([B(0, 'Η', [{ pos: 'det', case: 'nom', gender: 'f', number: 'sg' }, { pos: 'conj' }, { pos: 'num' }]), B(1, 'Μαρία', [{ pos: 'noun', proper: true }])]);
+    expect(out[0].candidates.map((c) => c.analysis.pos)).toEqual(['det']);
+    expect(out[1].candidates[0].analysis).toMatchObject({ pos: 'noun', proper: true, case: 'nom', gender: 'f', number: 'sg' });
+  });
+  it('a name with no article is left alone', () => {
+    const b = [B(0, 'Maria', [{ pos: 'noun', proper: true }])];
+    expect(nameArticleStage(b)[0]).toBe(b[0]);
+  });
+});

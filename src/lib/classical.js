@@ -203,3 +203,18 @@ export function properNameStage(blocks) {
     return { ...b, candidates: [{ analysis: { lemma: b.token.surface, pos: 'noun', proper: true }, reasons: ['capitalised and not in the dictionary: a name'], links: [] }] };
   });
 }
+
+/* A NAME AFTER AN ARTICLE takes the article's case, gender and number (Η Μαρία: nominative), and the article is the
+ * article (not Η the numeral or ή "or"). */
+export function nameArticleStage(blocks) {
+  const out = blocks.slice();
+  for (let i = 1; i < out.length; i += 1) {
+    const name = out[i];
+    const art = out[i - 1].candidates.filter((c) => c.analysis.pos === 'det' && c.analysis.case && c.analysis.case !== 'x');
+    if (name.pinned || !art.length || !name.candidates.length || !name.candidates.every((c) => c.analysis.proper)) continue;
+    const why = `after the article ${out[i - 1].token.surface}: its case`;
+    out[i] = { ...name, candidates: art.map((a) => ({ ...name.candidates[0], analysis: { ...name.candidates[0].analysis, case: a.analysis.case, gender: a.analysis.gender, number: a.analysis.number }, reasons: [...name.candidates[0].reasons, why] })) };
+    if (!out[i - 1].pinned) out[i - 1] = { ...out[i - 1], candidates: art };
+  }
+  return out;
+}
