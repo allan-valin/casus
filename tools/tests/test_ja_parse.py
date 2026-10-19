@@ -69,3 +69,19 @@ def test_each_kanji_form_carries_its_reading():
     lines = [entry("食べる", "verb", "食(た)べる • (taberu) transitive ichidan", {"1": "たべる", "type": "2"}, "ja-verb", gloss="to eat")]
     entries = list(parse_entries(lines))
     assert {"lemma": entries[0]["id"], "pos": "verb", "form": "politepast", "reading": "たべました"} in build_index(entries)["食べました"]
+
+
+def test_a_kana_entry_indexes_its_kanji_spelling_and_a_rare_reading_goes_last():
+    uo = json.loads(entry("魚", "noun", "魚(うお) • (uo)", gloss="fish"))
+    uo["senses"][0]["tags"] = ["uncommon"]
+    sakana = entry("さかな", "noun", "さかな • (sakana)", gloss="fish", forms=[{"form": "魚", "tags": ["alternative", "kanji"]}])
+    gyo = entry("魚", "noun", "魚(ぎょ) • (gyo)", gloss="a fish")
+    index = build_index(list(parse_entries([json.dumps(uo, ensure_ascii=False), gyo, sakana])))
+    assert [a.get("reading") for a in index["魚"]] == ["さかな", "ぎょ", "うお"]
+
+
+def test_a_commoner_reading_goes_first():
+    atashi = entry("あたし", "pron", "あたし • (atashi)", gloss="I", forms=[{"form": "私", "tags": ["alternative", "kanji"]}])
+    watashi = entry("私", "pron", "私(わたし) • (watashi)", gloss="I")
+    index = build_index(list(parse_entries([atashi, watashi])), reading_rank={"私\tわたし": 10, "私\tあたし": 400})
+    assert [a.get("reading") for a in index["私"]] == ["わたし", "あたし"]

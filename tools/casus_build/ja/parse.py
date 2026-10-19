@@ -23,6 +23,7 @@ TAG_FORM = [  # Wiktionary table tags -> our form names; stems that are never wo
 ]
 SKIP_TAGS = {"romanization", "canonical", "table-tags", "inflection-template", "imperfective", "hypothetical-stem",
              "irrealis", "realis", "error-unrecognized-form", "historical", "kyūjitai", "alternative", "counter", "noun-from-adj"}
+RARE = {"uncommon", "archaic", "obsolete", "dialectal", "rare", "dated"}
 _KANA = re.compile(r"^[぀-ヿー]+$")
 _JA = re.compile(r"[぀-ヿ㐀-鿿豈-﫿ー々〆ヶ]")
 _SEG = re.compile(r"([぀-ヿー]*)([^぀-ヿー()\s]+)\(([^)]+)\)")
@@ -111,15 +112,24 @@ def parse_entries(lines: Iterable[str]) -> Iterator[dict]:
             name = _form_name(tags)
             if name:
                 forms.append((text, name))
+        # a kana entry's kanji spellings (さかな: 魚, 肴), which Wiktionary lists as alternatives
+        kanji = [f["form"].strip() for f in d.get("forms") or [] if {"alternative", "kanji"} <= set(f.get("tags") or [])
+                 and f.get("form") and _JA.search(f["form"]) and not _KANA.match(f["form"])] if _KANA.match(word) else []
         senses = d.get("senses") or []
+        rare = bool(senses) and all(set(s.get("tags") or []) & RARE for s in senses)
         gloss = "; ".join(dict.fromkeys(" ".join(g.split()) for s in senses for g in (s.get("glosses") or [])[:1] if g))
         ipa = [{"ipa": s["ipa"], "tags": list(s.get("tags") or [])} for s in d.get("sounds") or [] if s.get("ipa")]
         yield {"id": i, "headword": word, "reading": reading, "furi": furi, "pos": pos, "cls": cls, "forms": forms,
-               "gloss_en": gloss, "ipa": ipa[:3]}
+               "gloss_en": gloss, "ipa": ipa[:3], "kanji": kanji, "rare": rare}
 
 
-def build_index(entries: list[dict]) -> dict[str, list[dict]]:
+def build_index(entries: list[dict], reading_rank: dict | None = None) -> dict[str, list[dict]]:
+    """reading_rank: "form\treading" -> rank (JLPT lists, N5 first); the commoner reading of a form
+    goes first"""
+    reading_rank = reading_rank or {}
     index: dict[str, list[dict]] = {}
+    rare_lemmas: set = set()
+    main_spelling: set = set()                   # (kanji, lemma) where a kana main entry names the kanji
 
     def add(form: str, a: dict):
         form = form.strip()
@@ -152,4 +162,31 @@ def build_index(entries: list[dict]) -> dict[str, list[dict]]:
             add(text, with_reading(text, {**base, "form": name} if e["pos"] in ("verb", "adj") else base))
         if e["pos"] in ("verb", "adj") and not inflects:
             add(e["headword"], {**base, "form": "dict"})
+        if not inflects:
+            for k in e.get("kanji") or []:
+                add(k, {**base, "reading": e["headword"]})
+                main_spelling.add((k, e["id"]))
+        if e.get("rare"):
+            rare_lemmas.add(e["id"])
+    # a reading whose every sense is uncommon, archaic or dialectal last (うお), then the commoner reading (JLPT), then
+    # the kana main entry's (Wiktionary keeps native words under kana: 魚 さかな)
+    for form, rows in index.items():
+        rows.sort(key=lambda a: (a["lemma"] in rare_lemmas,
+                                 reading_rank.get(f"{form}\t{a.get('reading') or form}", 10**6),
+                                 (form, a["lemma"]) not in main_spelling))
     return index
+
+
+def jlpt_ranks(folder) -> dict:
+    """"form\treading" -> rank from the JLPT lists (open-anki-jlpt-decks, MIT), N5 first"""
+    import csv
+    from pathlib import Path
+    ranks: dict = {}
+    for n in (5, 4, 3, 2, 1):
+        p = Path(folder) / f"jlpt_n{n}.csv"
+        if not p.exists():
+            continue
+        with open(p, encoding="utf-8") as f:
+            for row in csv.DictReader(f):
+                ranks.setdefault(f"{row['expression']}\t{row['reading']}", len(ranks))
+    return ranks

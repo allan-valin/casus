@@ -310,11 +310,11 @@ def build_generic(code: str, src: Path, out: Path) -> dict:
 
 def build_ja(src: Path, out: Path) -> dict:
     from casus_build.ja.codes import CODES_JSON, encode_analysis
-    from casus_build.ja.parse import build_index, parse_entries
+    from casus_build.ja.parse import build_index, jlpt_ranks, parse_entries
 
     with src.open(encoding="utf-8") as fh:
         entries = list(parse_entries(fh))
-    index = build_index(entries)
+    index = build_index(entries, reading_rank=jlpt_ranks(Path(__file__).resolve().parents[1] / "vendor" / "wordlists" / "ja"))
 
     def rows(analyses):
         # [lemma, "~reading"?, codes…]: one row per lemma and reading of this spelling

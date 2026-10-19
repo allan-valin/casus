@@ -24,7 +24,7 @@ Decisions (his answers): phrase answers show the REAL sense; explanations writte
 - 2026-10-19 ~02:50: Japanese, Arabic, Russian, Korean, Chinese LIVE (/casus/ja|ar|ru|ko|zh/), each with reader, dictionary,
   transliteration, alphabet/kana/hangul/characters drill, tables (not zh), frequent words, phrases. Notes in
   docs/languages/<code>.md. Chinese phrase lists were still building (re-release zh after: node tools/build_wordlists.mjs zh;
-  bash tools/release_data.sh zh). Known: 魚 shows the rarer reading うお; Arabic random words approximate; Korean
+  bash tools/release_data.sh zh). Known (魚 うお fixed later that morning: JLPT-ranked readings); Arabic random words approximate; Korean
   frequency has some homograph noise.
 - ~04:00: Macedonian, Finnish, Modern Greek live; Chinese phrases (9,952 incl. chengyu) released. Next in Allan's order:
   Sanskrit, Czech, Polish, Turkish, Hungarian, Icelandic, Portuguese (pt-BR). Data total 558 MB of the 1 GB Pages
@@ -36,3 +36,6 @@ Decisions (his answers): phrase answers show the REAL sense; explanations writte
   Data 692 MB of the 1 GB Pages limit. Known: proper names unknown in the streamed languages (filter drops them);
   Sanskrit sandhi: word-end cases undone, fused words not split; Hungarian "to be" model fixed (van).
 - Next (my pick, list done): Finnish and Polish lists still building (re-release fi, pl); then the known issues above.
+- after the list: names read as nouns on the factory languages (Maria = subject); Sanskrit word-end sandhi; Japanese
+  readings ranked (rare last, JLPT form+reading pairs, then kana main entries: 魚 さかな, 私 わたし); 今日は inside a
+  sentence = 今日 + は.

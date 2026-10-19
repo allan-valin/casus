@@ -42,10 +42,11 @@ export async function splitWords(tokens, lexicon) {
   // a language with word frequencies (Chinese) breaks ties toward the commoner words: 在 + 学校, not 在学 + 校
   const ranks = lexicon.file ? await lexicon.file('wordfreq.json').catch(() => null) : null;
   const rarity = (word) => (!ranks ? 0 : ranks[word] ? Math.log10(ranks[word]) / 10 : 0.6);
-  const cost = (word) => {
+  // an interjection inside a longer run costs more: 今日は alone is the greeting, 今日は日曜日 is today + は
+  const cost = (word, whole) => {
     const as = found.get(word) ?? [];
     if (!as.length) return null;
-    return (as.every((x) => x.form === 'kana') ? 1.4 : 1) + rarity(word);
+    return (as.every((x) => x.form === 'kana') ? 1.4 : 1) + rarity(word) + (!whole && as.every((x) => x.pos === 'interj') ? 1.5 : 0);
   };
   const out = [];
   for (const t of tokens) {
@@ -61,7 +62,7 @@ export async function splitWords(tokens, lexicon) {
         if (!pick || total < pick.cost - 1e-9 || (Math.abs(total - pick.cost) < 1e-9 && len > pick.len)) pick = { cost: total, len };
       };
       for (let len = Math.min(MAX, n - a); len >= 1; len -= 1) {
-        const c = cost(cs.slice(a, a + len).join(''));
+        const c = cost(cs.slice(a, a + len).join(''), len === n);
         if (c != null) consider(len, c);
       }
       if (KATAKANA.test(cs[a])) {
