@@ -227,3 +227,17 @@ it('dropPartners removes the same form in the other gender (both are right for a
   expect(dropPartners(['popełniłam', 'popełnił', 'popełniliśmy'], 'popełniłem', pairs)).toEqual(['popełnił', 'popełniliśmy']);
   expect(dropPartners(['četla', 'četli'], 'četl', [['l', 'la']])).toEqual(['četli']);
 });
+
+it('rules can ask for a possessive or a negative verb (Turkish evim, gelmedi)', () => {
+  const b = (surface, a) => ({ token: { surface }, candidates: [{ analysis: a }] });
+  expect(fits(b('evim', { pos: 'noun', poss: '1sg' }), { poss: ['1sg', '2sg'] })).toBe(true);
+  expect(fits(b('ev', { pos: 'noun', poss: 'x' }), { poss: ['1sg', '2sg'] })).toBe(false);
+  expect(fits(b('gelmedi', { pos: 'verb', polarity: 'neg' }), { polarity: 'neg' })).toBe(true);
+});
+
+import { shareStem } from '../../tools/learn_match.mjs';
+
+it('shareStem keeps wrong answers that differ from the answer only in its last letters (person endings)', () => {
+  expect(shareStem(['inanıyorum', 'inanabiliyordunuz', 'inanıyorsunuz'], 'inanıyoruz', 5)).toEqual(['inanıyorum', 'inanıyorsunuz']);
+  expect(shareStem(['oldum', 'olabilecek'], 'oldu', 5)).toEqual(['oldum']);
+});

@@ -1,0 +1,85 @@
+id: B1
+topics:
+
+- title: {en: More tenses and moods, pt: Mais tempos e modos}
+  lessons:
+  - id: tr-evidential
+    title: gelmiş
+    meaning: {en: "the evidential past -miş: apparently, they say", pt: "o passado evidencial -miş: pelo visto, dizem que"}
+    intro:
+      en: |
+        **-mış / -miş / -muş / -müş** reports a past you did not witness — heard, inferred or discovered: **Ali gelmiş.** "Ali has come (apparently / I see)." **Yağmur yağmış.** "It has rained (the street is wet)." Compare **Ali geldi** (I saw him come). Also in stories: **Bir varmış, bir yokmuş…** "Once upon a time…"
+      pt: |
+        **-mış / -miş / -muş / -müş** relata um passado que não se presenciou — ouvido, deduzido ou descoberto: **Ali gelmiş.** "O Ali veio (pelo visto)." **Yağmur yağmış.** "Choveu (a rua está molhada)." Compare **Ali geldi** (eu o vi chegar). Também nas histórias: **Bir varmış, bir yokmuş…** "Era uma vez…"
+    examples:
+    - [Ali gelmiş., Ali has come (apparently)., O Ali veio (pelo visto)., gelmiş]
+    match: {seq: [{pos: verb, re: "m(ı|i|u|ü)ş"}], suffixes: [mış, miş, muş, müş, dı, di, du, dü], attested: true}
+
+  - id: tr-conditional
+    title: gelirsem, gelse
+    meaning: {en: "conditions: -se / -sa", pt: "condições: -se / -sa"}
+    intro:
+      en: |
+        **-se / -sa** marks *if*: real conditions on the aorist (**Gelirsen, görüşürüz.** "If you come, we'll meet."), wishes and unreal conditions on the bare stem (**Keşke gelsen!** "I wish you'd come!", **Param olsa, alırdım.** "If I had money, I'd buy it."). **eğer** (if) may begin the clause.
+      pt: |
+        **-se / -sa** marca *se*: condições reais sobre o aoristo (**Gelirsen, görüşürüz.** "Se você vier, a gente se vê."), desejos e condições irreais sobre o radical puro (**Keşke gelsen!** "Quem dera você viesse!", **Param olsa, alırdım.** "Se eu tivesse dinheiro, compraria."). **eğer** (se) pode abrir a oração.
+    examples:
+    - [Keşke gelsen., I wish you'd come., Quem dera você viesse., gelsen]
+    match: {seq: [{pos: verb, mood: cond}], same: [person, number]}
+
+- title: {en: Subordinate forms, pt: Formas subordinadas}
+  lessons:
+  - id: tr-participles
+    title: gelen adam, okuduğum kitap
+    meaning: {en: "relative participles: -en (who…) and -dik (that I…)", pt: "particípios relativos: -en (que…) e -dik (que eu…)"}
+    intro:
+      en: |
+        Turkish has no relative pronoun; the verb becomes an adjective before the noun:
+
+        - **-(y)en / -(y)an** when the noun is the **subject**: **gelen adam** "the man who comes / came", **çalışan kadın** "the working woman"
+        - **-dik / -dık** + possessive when the noun is the **object** or another role: **okuduğum kitap** "the book (that) I read", **oturduğumuz ev** "the house we live in"; future **-(y)eceğ-**: **okuyacağım kitap** "the book I will read"
+      pt: |
+        O turco não tem pronome relativo; o verbo vira um adjetivo antes do substantivo:
+
+        - **-(y)en / -(y)an** quando o substantivo é o **sujeito**: **gelen adam** "o homem que vem / veio", **çalışan kadın** "a mulher que trabalha"
+        - **-dik / -dık** + possessivo quando o substantivo é o **objeto** ou outro papel: **okuduğum kitap** "o livro que li", **oturduğumuz ev** "a casa em que moramos"; futuro **-(y)eceğ-**: **okuyacağım kitap** "o livro que vou ler"
+    examples:
+    - [Okuduğum kitap çok güzel., The book I'm reading is very good., O livro que estou lendo é muito bom., Okuduğum]
+    match: {seq: [{pos: verb, mood: part}, {pos: noun}], gap: 0, same: [number]}
+
+  - id: tr-converbs
+    title: gelip, gelince, gelerek
+    meaning: {en: "converbs: -ip (and), -ince (when), -erek (by …ing)", pt: "conversos: -ip (e), -ince (quando), -erek (…ndo)"}
+    intro:
+      en: |
+        Turkish joins clauses with verb endings instead of conjunctions:
+
+        - **-(y)ip**: *and (then)*: **Eve gelip yemek yedim.** "I came home and ate."
+        - **-(y)ince**: *when, as soon as*: **Eve gelince ara.** "Call when you get home."
+        - **-(y)erek**: *by, while …ing*: **Koşarak geldi.** "He came running."
+        - **-ken**: *while*: **Yürürken düştüm.** "I fell while walking."
+        - **-meden**: *without, before*: **Söylemeden gitti.** "He left without saying."
+      pt: |
+        O turco liga orações com terminações verbais em vez de conjunções:
+
+        - **-(y)ip**: *e (depois)*: **Eve gelip yemek yedim.** "Cheguei em casa e comi."
+        - **-(y)ince**: *quando, assim que*: **Eve gelince ara.** "Liga quando chegar em casa."
+        - **-(y)erek**: *…ndo*: **Koşarak geldi.** "Ele veio correndo."
+        - **-ken**: *enquanto*: **Yürürken düştüm.** "Caí enquanto andava."
+        - **-meden**: *sem, antes de*: **Söylemeden gitti.** "Ele foi embora sem dizer."
+    examples:
+    - [Koşarak geldi., He came running., Ele veio correndo., Koşarak]
+    match:
+    - {seq: [{re: "(ıp|ip|up|üp|ınca|ince|unca|ünce|arak|erek|ken|madan|meden)$", not: {pos: [noun, adj, adv, pron]}}], suffixes: [ip, ince, erek, ken, meden, ıp, ınca, arak, madan, up, unca, üp, ünce], attested: true}
+
+  - id: tr-passive
+    title: yazıldı, yapılır
+    meaning: {en: "the passive -il- / -in-", pt: "a passiva -il- / -in-"}
+    intro:
+      en: |
+        **-ıl / -il / -ul / -ül** after a consonant, **-n** after a vowel, **-ın** after l: **yazmak → yazılmak** (be written), **okumak → okunmak** (be read), **bilmek → bilinmek**. **Bu kitap 1950'de yazıldı.** "This book was written in 1950." **Burada sigara içilmez.** "Smoking is not allowed here."
+      pt: |
+        **-ıl / -il / -ul / -ül** depois de consoante, **-n** depois de vogal, **-ın** depois de l: **yazmak → yazılmak** (ser escrito), **okumak → okunmak** (ser lido), **bilmek → bilinmek**. **Bu kitap 1950'de yazıldı.** "Este livro foi escrito em 1950." **Burada sigara içilmez.** "Aqui não se fuma."
+    examples:
+    - [Burada sigara içilmez., Smoking is not allowed here., Aqui não se fuma., içilmez]
+    match: {seq: [{pos: verb, re: "(ıl|il|ul|ül)(dı|di|du|dü|ır|ir|ur|ür|maz|mez)$", not: {lemma: "^değil"}}], same: [person, number]}

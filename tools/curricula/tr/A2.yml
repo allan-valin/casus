@@ -1,0 +1,94 @@
+id: A2
+topics:
+
+- title: {en: Past and future, pt: Passado e futuro}
+  lessons:
+  - id: tr-past
+    title: geldim, gittin
+    meaning: {en: "the past -di", pt: "o passado -di"}
+    intro:
+      en: |
+        **-dı / -di / -du / -dü** (**-t-** after a voiceless consonant) + short endings: **geldim, geldin, geldi, geldik, geldiniz, geldiler**; **yaptım, yaptın, yaptı**. It is the past you witnessed or are sure of. Negative: **gelmedim**.
+      pt: |
+        **-dı / -di / -du / -dü** (**-t-** depois de consoante surda) + terminações curtas: **geldim, geldin, geldi, geldik, geldiniz, geldiler**; **yaptım, yaptın, yaptı**. É o passado que se presenciou ou de que se tem certeza. Negativa: **gelmedim**.
+    examples:
+    - [Dün sinemaya gittim., Yesterday I went to the cinema., Ontem fui ao cinema., gittim]
+    - ["Ne dedin?", "What did you say?", "O que você disse?", "dedin"]
+    match: {seq: [{pos: verb, tense: past, mood: ind}], same: [person, number, polarity]}
+
+  - id: tr-future
+    title: geleceğim
+    meaning: {en: "the future -ecek / -acak", pt: "o futuro -ecek / -acak"}
+    intro:
+      en: |
+        **-(y)ecek / -(y)acak** + endings, with **k → ğ** before a vowel: **geleceğim, geleceksin, gelecek, geleceğiz, geleceksiniz, gelecekler**; **yapacağım**. Negative: **gelmeyeceğim**.
+      pt: |
+        **-(y)ecek / -(y)acak** + terminações, com **k → ğ** antes de vogal: **geleceğim, geleceksin, gelecek, geleceğiz, geleceksiniz, gelecekler**; **yapacağım**. Negativa: **gelmeyeceğim**.
+    examples:
+    - [Yarın geleceğim., I'll come tomorrow., Venho amanhã., geleceğim]
+    match: {seq: [{pos: verb, tense: fut, mood: ind}], same: [person, number, polarity]}
+
+  - id: tr-aorist
+    title: gelirim, yaparım
+    meaning: {en: "the aorist (geniş zaman): habits, general truths, offers", pt: "o aoristo (geniş zaman): hábitos, verdades gerais, ofertas"}
+    intro:
+      en: |
+        **-r / -ir / -ar**: what usually happens or is generally true, and offers or promises: **Her gün kahve içerim.** "I drink coffee every day." **Sana yardım ederim.** "I'll help you." Negative: **-mez / -maz** (**gelmem, gelmezsin, gelmez**). Polite requests: **Bir çay alır mısınız?** "Would you have a tea?"
+      pt: |
+        **-r / -ir / -ar**: o que costuma acontecer ou é verdade em geral, e ofertas ou promessas: **Her gün kahve içerim.** "Bebo café todo dia." **Sana yardım ederim.** "Eu te ajudo." Negativa: **-mez / -maz** (**gelmem, gelmezsin, gelmez**). Pedidos educados: **Bir çay alır mısınız?** "Aceita um chá?"
+    examples:
+    - [Her gün kahve içerim., I drink coffee every day., Bebo café todo dia., içerim]
+    match: {seq: [{pos: verb, tense: aor, mood: ind}], same: [person, number, polarity]}
+
+  - id: tr-negation
+    title: gelmiyorum, değil
+    meaning: {en: "negation: -me- in verbs, değil with nouns", pt: "negação: -me- nos verbos, değil com nomes"}
+    intro:
+      en: |
+        Verbs take **-me- / -ma-** right after the stem: **gelmiyorum, gelmedim, gelmeyeceğim** (aorist **gelmem, gelmez**). Nouns and adjectives take **değil**: **Öğretmen değilim.** "I'm not a teacher." **Bu benim değil.** "This isn't mine."
+      pt: |
+        Os verbos levam **-me- / -ma-** logo depois do radical: **gelmiyorum, gelmedim, gelmeyeceğim** (aoristo **gelmem, gelmez**). Substantivos e adjetivos levam **değil**: **Öğretmen değilim.** "Não sou professor." **Bu benim değil.** "Isto não é meu."
+    examples:
+    - [Bilmiyorum., I don't know., Não sei., Bilmiyorum]
+    - [Ben doktor değilim., I'm not a doctor., Não sou médico., değilim]
+    match:
+    - {seq: [{pos: verb, polarity: neg, mood: ind}], same: [person, number, tense]}
+    - {seq: [{word: [değilim, değilsin, değil, değiliz, değilsiniz, değiller]}], gap: 0, pool: [değilim, değilsin, değil, değiliz, değilsiniz, değiller]}
+
+- title: {en: Other cases and modality, pt: Outros casos e modalidade}
+  lessons:
+  - id: tr-instrumental
+    title: arabayla, kalemle
+    meaning: {en: "-(y)le / -(y)la: with, by", pt: "-(y)le / -(y)la: com, por meio de"}
+    intro:
+      en: |
+        **ile**, usually a suffix **-(y)le / -(y)la**: company and means: **arkadaşımla** "with my friend", **otobüsle** "by bus", **kalemle** "with a pen". Between nouns it means *and*: **Ali ile Ayşe**.
+      pt: |
+        **ile**, em geral como sufixo **-(y)le / -(y)la**: companhia e meio: **arkadaşımla** "com meu amigo", **otobüsle** "de ônibus", **kalemle** "com uma caneta". Entre nomes quer dizer *e*: **Ali ile Ayşe**.
+    examples:
+    - [İşe otobüsle gidiyorum., I go to work by bus., Vou para o trabalho de ônibus., otobüsle]
+    match: {seq: [{pos: noun, re: "(yla|yle|la|le)$", not: {lemma: "(la|le)$"}}], suffixes: [yla, yle, la, le, da, de, dan, den], attested: true}
+
+  - id: tr-ability
+    title: gelebilirim
+    meaning: {en: "can: -ebil-; cannot: -eme-", pt: "poder: -ebil-; não poder: -eme-"}
+    intro:
+      en: |
+        **-(y)ebil- / -(y)abil-** = *can, may*: **Yüzebilirim.** "I can swim." **Gelebilir.** "He may come." *Cannot* is **-(y)eme- / -(y)ama-**: **Gelemem.** "I can't come." **Uyuyamadım.** "I couldn't sleep."
+      pt: |
+        **-(y)ebil- / -(y)abil-** = *poder, conseguir*: **Yüzebilirim.** "Sei nadar." **Gelebilir.** "Ele pode vir." *Não poder* é **-(y)eme- / -(y)ama-**: **Gelemem.** "Não posso vir." **Uyuyamadım.** "Não consegui dormir."
+    examples:
+    - ["Türkçe konuşabilir misin?", "Can you speak Turkish?", "Você sabe falar turco?", "konuşabilir"]
+    match: {seq: [{pos: verb, re: "(ebil|abil|yebil|yabil|eme|ama|yeme|yama)"}], same: [person, number]}
+
+  - id: tr-necessity
+    title: gitmeliyim
+    meaning: {en: "must: -meli; have to: -mek zorunda", pt: "dever: -meli; ter de: -mek zorunda"}
+    intro:
+      en: |
+        **-meli / -malı** + endings: **Gitmeliyim.** "I must go." **Daha çok çalışmalısın.** "You should study more." Stronger: **-mek zorundayım** "I have to"; impersonal: **gitmem lazım / gerek** "I need to go".
+      pt: |
+        **-meli / -malı** + terminações: **Gitmeliyim.** "Devo ir." **Daha çok çalışmalısın.** "Você deveria estudar mais." Mais forte: **-mek zorundayım** "sou obrigado a"; impessoal: **gitmem lazım / gerek** "preciso ir".
+    examples:
+    - [Gitmeliyim., I must go., Devo ir., Gitmeliyim]
+    match: {seq: [{pos: verb, re: "m(e|a)l(i|ı)"}], suffixes: [meliyim, melisin, meli, meliyiz, melisiniz, meliler, malıyım, malısın, malı, malıyız, malısınız, malılar], attested: true}

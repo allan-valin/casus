@@ -12,7 +12,7 @@
 import { readFile, writeFile, readdir } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import path from 'node:path';
-import { matchRule, formPool, preferAttested, looksLikeName, dropMarked, dropPartners, spellingVariants, prefixVariants, suffixVariants, unsuitable, markOf, rewrite, rowFor, consonantV, followSpelling } from './learn_match.mjs';
+import { matchRule, formPool, preferAttested, looksLikeName, dropMarked, dropPartners, shareStem, spellingVariants, prefixVariants, suffixVariants, unsuitable, markOf, rewrite, rowFor, consonantV, followSpelling } from './learn_match.mjs';
 import { gapRoman } from './learn_examples.mjs';
 
 export const TATOEBA = { mk: 'mkd', ar: 'ara', la: 'lat', grc: 'grc', de: 'deu', ru: 'rus', ko: 'kor', zh: 'cmn', fi: 'fin', el: 'ell', sa: 'san', cs: 'ces', pl: 'pol', tr: 'tur', hu: 'hun', is: 'isl', pt: 'por', en: 'eng', es: 'spa' };
@@ -137,6 +137,7 @@ async function main(code) {
       // a word-list answer without the vowel marks the sentence happens to write (the list has none)
       let answer = listLesson ? gapBlock.token.surface.replace(/[\u064B-\u0652\u0670]/gu, '') : gapBlock.token.surface;
       let wrong = null;
+      let nothingReal = false;   // (strict_attested: the paradigm had no form real text uses)
       if (!listLesson) {
         const ids = [...new Set(gapBlock.candidates.map((c) => c.analysis.lemma))];
         const forms = ids.length === 1 ? await paradigmOf(ids[0]) : null;
@@ -157,6 +158,11 @@ async function main(code) {
           // too few attested (a name): at least no archaic Latin endings (-ad/-ed/-od ablative, -ai genitive, -om)
           const plain = lang.code === 'la' ? all.filter((f) => !/([aeiou]d|ai|om|eis)$/u.test(f)) : all;
           wrong = (real.length >= 2 ? real : plain);
+          // a language whose paradigms run to thousands of derived forms (Turkish): only forms real text has, and
+          // for a person drill only the answer's own stem
+          if (index.strict_attested) wrong = real;
+          if (rule.stem) wrong = shareStem(wrong, row[0], rule.stem);
+          if (index.strict_attested && !wrong.length) nothingReal = true;
           // one per spelling: stress or accent variants of a form (дня, дня́) are one choice, and never the answer's
           const seenW = new Set([norm(answer)]);
           wrong = wrong.filter((w) => { const k = norm(w).normalize('NFD').replace(/[\u0300\u0301]/gu, ''); if (seenW.has(k) || k === norm(answer).normalize('NFD').replace(/[\u0300\u0301]/gu, '')) return false; seenW.add(k); return true; }).slice(0, 5);
@@ -165,6 +171,9 @@ async function main(code) {
           if (lang.code === 'grc') wrong = wrong.map((w) => w.replace(/σ$/u, 'ς'));   // the paradigm data writes final sigma as σ
         }
       }
+      // (strict: no paradigm and no rule of its own for wrong answers — the lesson's other answers would be guesses)
+      if (index.strict_attested && !listLesson && !wrong && !swaps && !prefixes && !suffixes && !rulePool) continue;
+      if (nothingReal) continue;
       // variety: one formula (Ве молам) must not fill a lesson (a word-list lesson has few answers by nature: it may
       // repeat one, up to 100 times)
       const key = norm(answer);

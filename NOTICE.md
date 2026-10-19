@@ -189,6 +189,8 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
   Wikipedia's Czech grammar (CC BY-SA); tables from Casus's Wiktionary paradigms; sentences Tatoeba (CC BY 2.0 FR).
 - Polish lessons (24, A1–B1) **written for Casus** after Wikipedia's Polish grammar (CC BY-SA); tables from Casus's
   Wiktionary paradigms; sentences Tatoeba (CC BY 2.0 FR).
+- Turkish lessons (24, A1–B1) **written for Casus** after Wikipedia's Turkish grammar (CC BY-SA); forms from Casus's
+  Wiktionary data; sentences Tatoeba (CC BY 2.0 FR).
 - Modern Greek lessons (28, A1–B1) **written for Casus** after Wikipedia's Modern Greek grammar (CC BY-SA); tables
   from Casus's Wiktionary paradigms; sentences Tatoeba (CC BY 2.0 FR).
 

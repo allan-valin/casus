@@ -271,7 +271,11 @@
 <style>
   .live-toggle { display: block; margin-top: 10px; }
   main { width: min(1500px, 100% - 2 * var(--gutter)); margin: 0 auto; padding: clamp(10px, 2vw, 24px) 0 40px; display: flex; flex-direction: column; gap: clamp(12px, 1.8vw, 22px); }
-  .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
+  /* the brand shrinks and its language pills wrap inside it, so the controls stay top right however many languages
+     a site has (Casus has 13: Allan, 2026-10-20) */
+  .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: nowrap; }
+  .brand { flex: 1 1 auto; min-width: 0; }
+  .corner { flex: 0 1 auto; justify-content: flex-end; max-width: 46%; }
   h1 { margin: 0; font-family: Georgia, serif; font-size: clamp(1.7rem, 1.4rem + 1.2vw, 2.4rem); letter-spacing: 0.01em; }
   .lang-name { font-size: 0.5em; color: var(--muted); font-family: system-ui, sans-serif; font-weight: 400; }
   .lang-name .flag { width: 1.5em; height: 1.1em; border-radius: 2px; margin: 0 6px 0 2px; vertical-align: -0.15em; box-shadow: 0 0 0 1px rgba(0,0,0,.15); }

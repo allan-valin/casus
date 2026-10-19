@@ -21,6 +21,7 @@
 <div class="theme-controls">
   <button class="mode" onclick={toggle} title={t(mode === 'dark' ? 'theme.light' : 'theme.dark')} aria-label={t(mode === 'dark' ? 'theme.light' : 'theme.dark')}>{mode === 'dark' ? '☀' : '☾'}</button>
   <label class="palette-box" title={t('theme.palette')}>
+    <span class="palette-label">{t('theme.scheme')}</span>
     {#if flagUrl(theme.flag)}<img class="flag" src={flagUrl(theme.flag)} alt="" />{:else}<span class="dot"></span>{/if}
     <select class="palette" value={themeId} onchange={(e) => choose(e.currentTarget.value)} aria-label={t('theme.palette')}>
       {#each themes as x (x.id)}<option value={x.id}>{x.name[ui.lang] ?? x.name.en}</option>{/each}
@@ -33,6 +34,7 @@
   .mode { width: 38px; height: 38px; border-radius: 50%; padding: 0; font-size: 1.1rem; }
   .palette-box { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); border-radius: 8px; padding: 0 0 0 8px; background: var(--panel); }
   .palette-box select { border: 0; background: transparent; }
+  .palette-label { font-size: 0.8rem; color: var(--ink-2); white-space: nowrap; }
   .flag { width: 22px; height: 16px; border-radius: 2px; box-shadow: 0 0 0 1px var(--line); }
   .dot { width: 14px; height: 14px; border-radius: 50%; background: var(--accent); }
 </style>

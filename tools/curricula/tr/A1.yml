@@ -1,0 +1,190 @@
+id: A1
+topics:
+
+- title: {en: Sounds and vowel harmony, pt: Sons e harmonia vocálica}
+  lessons:
+  - id: tr-harmony
+    title: evde, okulda
+    meaning: {en: "vowel harmony: two-way (a/e) and four-way (ı/i/u/ü) suffixes", pt: "harmonia vocálica: sufixos de duas (a/e) e quatro formas (ı/i/u/ü)"}
+    intro:
+      en: |
+        Turkish writes as it speaks: **c** = *j*, **ç** = *ch*, **ş** = *sh*, **ğ** lengthens the vowel before it, **ı** (no dot) is a back *i*, **ö, ü** as in German.
+
+        Every suffix copies the **last vowel** of the word:
+
+        - **two-way** (e/a): after **e i ö ü** → **e**, after **a ı o u** → **a**: **ev-de** (at home), **okul-da** (at school), **ev-ler**, **kitap-lar**
+        - **four-way** (i/ı/ü/u): after **e i → i**, **a ı → ı**, **ö ü → ü**, **o u → u**: **ev-im** (my house), **kız-ım**, **göz-üm**, **okul-um**
+
+        Consonants harmonise too: **d → t** after a voiceless consonant (**kitap-ta**, **uçak-ta**).
+      pt: |
+        O turco se escreve como se fala: **c** = *dj*, **ç** = *tch*, **ş** = *ch* de chá, **ğ** alonga a vogal anterior, **ı** (sem ponto) é um *i* fechado e recuado, **ö, ü** como no alemão.
+
+        Todo sufixo copia a **última vogal** da palavra:
+
+        - **duas formas** (e/a): depois de **e i ö ü** → **e**, depois de **a ı o u** → **a**: **ev-de** (em casa), **okul-da** (na escola), **ev-ler**, **kitap-lar**
+        - **quatro formas** (i/ı/ü/u): depois de **e i → i**, **a ı → ı**, **ö ü → ü**, **o u → u**: **ev-im** (minha casa), **kız-ım**, **göz-üm**, **okul-um**
+
+        As consoantes também se ajustam: **d → t** depois de consoante surda (**kitap-ta**, **uçak-ta**).
+    mistakes:
+    - wrong: okulde
+      right: okulda
+      why: {en: "The last vowel of okul is u (back): -da.", pt: "A última vogal de okul é u (posterior): -da."}
+    examples:
+    - [Evdeyim., I'm at home., Estou em casa., Evdeyim]
+    - [Okulda öğretmen var., There's a teacher at school., Há um professor na escola., Okulda]
+    match:
+    - {seq: [{pos: noun, case: loc, re: "(da|ta)$"}], suffixes: [da, de, ta, te], attested: true}
+    - {seq: [{pos: noun, case: loc, re: "(de|te)$"}], suffixes: [de, da, te, ta], attested: true}
+    - {seq: [{pos: noun, case: abl, re: "(dan|tan)$"}], suffixes: [dan, den, tan, ten], attested: true}
+    - {seq: [{pos: noun, case: abl, re: "(den|ten)$"}], suffixes: [den, dan, ten, tan], attested: true}
+
+- title: {en: Nouns and their endings, pt: Substantivos e suas terminações}
+  lessons:
+  - id: tr-plural
+    title: evler, kitaplar
+    meaning: {en: "the plural -ler / -lar", pt: "o plural -ler / -lar"}
+    intro:
+      en: |
+        **-ler / -lar** (two-way harmony): **ev → evler, kitap → kitaplar**. After a number the noun stays singular: **iki kitap** "two books", and **çok** (many) too: **çok insan** "many people".
+      pt: |
+        **-ler / -lar** (harmonia de duas formas): **ev → evler, kitap → kitaplar**. Depois de número o substantivo fica no singular: **iki kitap** "dois livros", e depois de **çok** (muitos) também: **çok insan** "muita gente".
+    mistakes:
+    - wrong: iki kitaplar
+      right: iki kitap
+      why: {en: "After a number: singular.", pt: "Depois de número: singular."}
+    examples:
+    - [Çocuklar oynuyor., The children are playing., As crianças estão brincando., Çocuklar]
+    match: {seq: [{pos: noun, number: pl, case: nom, poss: x}], same: [case, poss]}
+
+  - id: tr-locative
+    title: evde, Ankara'da
+    meaning: {en: "the locative -de/-da: in, at, on", pt: "o locativo -de/-da: em"}
+    intro:
+      en: |
+        **-de / -da / -te / -ta**: place and time: **evde** (at home), **İstanbul'da** (proper nouns take an apostrophe), **saat üçte** (at three o'clock). With **var / yok**: **Masada bir kitap var.** "There's a book on the table."
+      pt: |
+        **-de / -da / -te / -ta**: lugar e tempo: **evde** (em casa), **İstanbul'da** (nomes próprios levam apóstrofo), **saat üçte** (às três horas). Com **var / yok**: **Masada bir kitap var.** "Há um livro na mesa."
+    examples:
+    - [Annem evde., My mother is at home., Minha mãe está em casa., evde]
+    match: {seq: [{pos: noun, case: loc}], same: [number, poss]}
+
+  - id: tr-dative
+    title: eve, okula
+    meaning: {en: "the dative -e/-a: to, towards", pt: "o dativo -e/-a: para, a"}
+    intro:
+      en: |
+        **-e / -a** (with **-y-** after a vowel: **araba-ya**): direction and the person something is given to: **eve gidiyorum** "I'm going home", **okula** "to school", **Ali'ye verdim** "I gave (it) to Ali". Many verbs take it: **bakmak** (look at), **başlamak** (start), **inanmak** (believe), **yardım etmek** (help).
+      pt: |
+        **-e / -a** (com **-y-** depois de vogal: **araba-ya**): direção e a pessoa a quem se dá algo: **eve gidiyorum** "vou para casa", **okula** "para a escola", **Ali'ye verdim** "dei ao Ali". Muitos verbos o pedem: **bakmak** (olhar), **başlamak** (começar), **inanmak** (acreditar), **yardım etmek** (ajudar).
+    examples:
+    - [Okula gidiyorum., I'm going to school., Vou para a escola., Okula]
+    match: {seq: [{pos: noun, case: dat}], same: [number, poss]}
+
+  - id: tr-ablative
+    title: evden, okuldan
+    meaning: {en: "the ablative -den/-dan: from, out of, than", pt: "o ablativo -den/-dan: de, desde, que"}
+    intro:
+      en: |
+        **-den / -dan / -ten / -tan**: **Türkiye'den geliyorum** "I come from Turkey", **evden** "from home"; also with **korkmak** (be afraid of), **hoşlanmak** (like), and comparison: **benden büyük** "bigger than me".
+      pt: |
+        **-den / -dan / -ten / -tan**: **Türkiye'den geliyorum** "venho da Turquia", **evden** "de casa"; também com **korkmak** (ter medo de), **hoşlanmak** (gostar de) e na comparação: **benden büyük** "maior que eu".
+    examples:
+    - [Brezilya'dan geliyorum., I come from Brazil., Venho do Brasil., Brezilya'dan]
+    match: {seq: [{pos: noun, case: abl}], same: [number, poss]}
+
+  - id: tr-accusative
+    title: kitabı okudum
+    meaning: {en: "the accusative -(y)ı: a definite object", pt: "o acusativo -(y)ı: objeto definido"}
+    intro:
+      en: |
+        A **definite** object takes **-ı / -i / -u / -ü** (with **-y-** after a vowel): **Kitabı okudum.** "I read the book." An indefinite one takes nothing: **Kitap okudum.** "I read (a book / books)." Note **p, ç, t, k → b, c, d, ğ** before a vowel: **kitap → kitabı, ağaç → ağacı, köpek → köpeği**.
+      pt: |
+        O objeto **definido** leva **-ı / -i / -u / -ü** (com **-y-** depois de vogal): **Kitabı okudum.** "Li o livro." O indefinido não leva nada: **Kitap okudum.** "Li (um livro / livros)." Repare em **p, ç, t, k → b, c, d, ğ** antes de vogal: **kitap → kitabı, ağaç → ağacı, köpek → köpeği**.
+    examples:
+    - [Seni seviyorum., I love you., Eu te amo., Seni]
+    - [Kapıyı kapat., Close the door., Feche a porta., Kapıyı]
+    match: {seq: [{pos: noun, case: acc}], same: [number, poss]}
+
+  - id: tr-possessive
+    title: evim, evin, evi
+    meaning: {en: "possessive suffixes: my, your, his…", pt: "sufixos possessivos: meu, teu, dele…"}
+    intro:
+      en: |
+        Possession is a suffix on the noun (four-way harmony): **ev-im** my house, **ev-in** your, **ev-i** his/her, **ev-imiz** our, **ev-iniz** your (pl.), **ev-leri** their. After a vowel: **araba-m, araba-n, araba-sı, araba-mız, araba-nız**. The pronoun (**benim, senin…**) is added for emphasis: **benim evim**.
+      pt: |
+        A posse é um sufixo no substantivo (harmonia de quatro formas): **ev-im** minha casa, **ev-in** tua, **ev-i** dele/dela, **ev-imiz** nossa, **ev-iniz** de vocês, **ev-leri** deles. Depois de vogal: **araba-m, araba-n, araba-sı, araba-mız, araba-nız**. O pronome (**benim, senin…**) entra para dar ênfase: **benim evim**.
+    examples:
+    - [Benim adım Ali., My name is Ali., Meu nome é Ali., adım]
+    - ["Senin araban nerede?", "Where's your car?", "Onde está o seu carro?", "araban"]
+    match: {seq: [{pos: noun, case: nom, poss: [1sg, 2sg, 1pl, 2pl]}], same: [case, number]}
+
+  - id: tr-genitive
+    title: Ali'nin evi
+    meaning: {en: "the genitive -(n)in with the possessive: Ali's house", pt: "o genitivo -(n)in com o possessivo: a casa do Ali"}
+    intro:
+      en: |
+        **Owner + -in, thing owned + its possessive**: **Ali'nin evi** "Ali's house", **kapının rengi** "the door's colour", **benim kitabım** "my book". After a vowel **-nin**: **annenin**. A compound of two nouns uses only the second suffix: **Türk kahvesi** "Turkish coffee".
+      pt: |
+        **Dono + -in, coisa possuída + o possessivo**: **Ali'nin evi** "a casa do Ali", **kapının rengi** "a cor da porta", **benim kitabım** "meu livro". Depois de vogal **-nin**: **annenin**. Um composto de dois substantivos usa só o segundo sufixo: **Türk kahvesi** "café turco".
+    examples:
+    - [Annemin evi büyük., My mother's house is big., A casa da minha mãe é grande., Annemin]
+    match: {seq: [{pos: [noun, pron], case: gen}, {pos: noun}], gap: 0, same: [number, poss]}
+
+  - id: tr-var-yok
+    title: var, yok
+    meaning: {en: "there is / there isn't; to have", pt: "há / não há; ter"}
+    intro:
+      en: |
+        **var** there is, **yok** there isn't: **Burada bir banka var mı?** "Is there a bank here?" *Have* is the possessive + var: **Arabam var** "I have a car" (my-car exists), **Zamanım yok** "I have no time".
+      pt: |
+        **var** há, **yok** não há: **Burada bir banka var mı?** "Há um banco aqui?" *Ter* é o possessivo + var: **Arabam var** "Tenho carro" (meu-carro existe), **Zamanım yok** "Não tenho tempo".
+    examples:
+    - [Zamanım yok., I have no time., Não tenho tempo., yok]
+    match: {seq: [{word: [var, yok, vardı, yoktu]}], gap: 0}
+    pool: [var, yok, vardı, yoktu, değil]
+
+- title: {en: The present and questions, pt: O presente e perguntas}
+  lessons:
+  - id: tr-present
+    title: geliyorum, gidiyorsun
+    meaning: {en: "the present continuous -iyor", pt: "o presente contínuo -iyor"}
+    intro:
+      en: |
+        Stem + **-(i)yor** (four-way vowel, **-yor** never changes) + personal ending: **gel-iyor-um** I'm coming, **gel-iyor-sun**, **gel-iyor**, **gel-iyor-uz**, **gel-iyor-sunuz**, **gel-iyor-lar**. A stem vowel **a/e** at the end becomes **ı/i/u/ü**: **bekle → bekliyorum, anla → anlıyorum**. Negative: **-m-** before: **gelmiyorum**.
+      pt: |
+        Radical + **-(i)yor** (vogal de quatro formas, **-yor** nunca muda) + terminação pessoal: **gel-iyor-um** estou vindo, **gel-iyor-sun**, **gel-iyor**, **gel-iyor-uz**, **gel-iyor-sunuz**, **gel-iyor-lar**. A vogal **a/e** no fim do radical vira **ı/i/u/ü**: **bekle → bekliyorum, anla → anlıyorum**. Negativa: **-m-** antes: **gelmiyorum**.
+    examples:
+    - [Türkçe öğreniyorum., I'm learning Turkish., Estou aprendendo turco., öğreniyorum]
+    - ["Ne yapıyorsun?", "What are you doing?", "O que você está fazendo?", "yapıyorsun"]
+    match: {seq: [{pos: verb, tense: pres, mood: ind, re: "yor"}], same: [tense, mood, polarity], stem: 4}
+
+  - id: tr-questions
+    title: mı, mi, mu, mü
+    meaning: {en: "yes/no questions with mi, and question words", pt: "perguntas de sim ou não com mi, e palavras interrogativas"}
+    intro:
+      en: |
+        **mı / mi / mu / mü** (four-way harmony, written separately) after the word asked about: **Geliyor musun?** "Are you coming?", **Bu senin mi?** "Is this yours?" Question words: **ne** what, **kim** who, **nerede** where, **nereye** where to, **nereden** where from, **ne zaman** when, **neden / niçin** why, **nasıl** how, **kaç** how many, **hangi** which.
+      pt: |
+        **mı / mi / mu / mü** (harmonia de quatro formas, escrito separado) depois da palavra perguntada: **Geliyor musun?** "Você vem?", **Bu senin mi?** "Isso é seu?" Palavras interrogativas: **ne** o que, **kim** quem, **nerede** onde, **nereye** para onde, **nereden** de onde, **ne zaman** quando, **neden / niçin** por que, **nasıl** como, **kaç** quantos, **hangi** qual.
+    mistakes:
+    - wrong: Geliyor misun?
+      right: Geliyor musun?
+      why: {en: "The question particle follows harmony: after o, mu.", pt: "A partícula interrogativa segue a harmonia: depois de o, mu."}
+    examples:
+    - ["Bu senin mi?", "Is this yours?", "Isso é seu?", "mi"]
+    - ["Nerede oturuyorsun?", "Where do you live?", "Onde você mora?", "Nerede"]
+    match:
+    - {seq: [{word: [mı, mi, mu, mü]}], gap: 0, pool: [mı, mi, mu, mü]}
+    - {seq: [{word: [ne, kim, nerede, nereye, nereden, neden, niçin, nasıl, kaç, hangi]}], gap: 0, pool: [ne, kim, nerede, nereye, nereden, neden, nasıl, kaç, hangi]}
+
+  - id: tr-imperative
+    title: gel, gelin
+    meaning: {en: "the imperative", pt: "o imperativo"}
+    intro:
+      en: |
+        The bare stem is a command to one person: **Gel!** "Come!", **Otur!** "Sit!" Plural or polite **-(y)in**: **Gelin, oturun.** Very polite **-(y)iniz**: **Lütfen oturunuz.** Negative **-me / -ma**: **Gelme!** "Don't come!"
+      pt: |
+        O radical puro é uma ordem a uma pessoa: **Gel!** "Vem!", **Otur!** "Senta!" Plural ou formal **-(y)in**: **Gelin, oturun.** Muito formal **-(y)iniz**: **Lütfen oturunuz.** Negativa **-me / -ma**: **Gelme!** "Não venha!"
+    examples:
+    - [Buraya gel!, Come here!, Vem cá!, gel]
+    match: {seq: [{pos: verb, mood: imp}], same: [mood]}

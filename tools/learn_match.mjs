@@ -16,7 +16,7 @@
  * A word fits a morphological condition only when every reading the reader keeps for it fits, so a gap is never
  * built on a guess.
  */
-const FEATURES = ['pos', 'tense', 'aspect', 'person', 'number', 'gender', 'case', 'mood', 'voice', 'state', 'degree', 'conj', 'infl', 'form'];
+const FEATURES = ['pos', 'tense', 'aspect', 'person', 'number', 'gender', 'case', 'mood', 'voice', 'state', 'degree', 'conj', 'infl', 'form', 'poss', 'polarity'];
 const lower = (s) => s.toLocaleLowerCase();
 
 function fitsAnalysis(a, cond, lemmaOf, dictOf) {
@@ -220,4 +220,11 @@ export function dropPartners(forms, answer, pairs) {
     if (low.endsWith(b)) partners.add(low.slice(0, -b.length) + a);
   }
   return forms.filter((f) => !partners.has(f.toLocaleLowerCase()));
+}
+
+/** wrong answers that share the answer's stem: all but its last `tail` letters (at least three) — a person drill offers
+ * inanıyorum for inanıyoruz, never a derived inanabiliyordunuz */
+export function shareStem(forms, answer, tail) {
+  const stem = answer.toLocaleLowerCase().slice(0, Math.max(3, answer.length - tail));
+  return forms.filter((f) => f.toLocaleLowerCase().startsWith(stem));
 }
