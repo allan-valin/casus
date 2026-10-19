@@ -229,3 +229,18 @@ describe('AI-written lessons are marked (Allan, 2026-10-20)', () => {
     expect(container.querySelector('.lesson-page .ai-badge').textContent).toMatch(/AI/);
   });
 });
+
+describe('generated lessons are marked (Allan, 2026-10-20)', () => {
+  it('a lesson generated from Wiktionary data says so, and a vocabulary topic keeps its own title', async () => {
+    const index = { ...INDEX, levels: [{ id: 'N5', topics: [
+      { id: 'g', kind: 'grammar', title: 'Prepositions', generated: true, lessons: [{ id: 'n5-004', title: 'na', meaning: 'on', generated: true }] },
+      { id: 'p', kind: 'vocab', title: { en: 'Phrases', pt: 'Frases feitas' }, lessons: [{ id: 'n5-v1', title: 'x', meaning: '1' }] }] }] };
+    const { container } = render(Learn, props({ loadLearn: async () => index, loadLesson: async () => ({ ...LESSONS['n5-004'], generated: true }) }));
+    await flush();
+    expect([...container.querySelectorAll('.topic-title')].map((x) => x.textContent)).toEqual(['Prepositions', 'Phrases']);
+    expect(container.querySelector('.lesson-row .gen-mark')).not.toBe(null);
+    await fireEvent.click(container.querySelector('.lesson-row'));
+    await flush();
+    expect(container.querySelector('.lesson-page .gen-badge').textContent).toMatch(/Wiktionary/);
+  });
+});

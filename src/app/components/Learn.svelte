@@ -170,6 +170,7 @@
       <h3 class="lesson-title"><span class="badge-level">{lessonRef.level.title ? loc(lessonRef.level.title) : lessonRef.level.id}</span> <span class="l-head" lang={lang.bcp47}>{lesson.title ?? lessonRef.entry.title}</span></h3>
       {#if lesson.meaning}<p class="l-sub">{loc(lesson.meaning)}</p>{/if}
       {#if lesson.ai}<p class="ai-badge" title={t('learn.ai.title')}>✦ {t('learn.ai')}</p>{/if}
+      {#if lesson.generated}<p class="ai-badge gen-badge" title={t('learn.gen.title')}>⚙ {t('learn.gen')}</p>{/if}
       {#if lesson.kind === 'vocab' || lesson.kind === 'kanji'}
         <nav class="toc"><a href="#ex-start">{t('learn.exercises')}</a></nav>
         {#if lesson.kind === 'vocab'}
@@ -227,11 +228,11 @@
     {#each level?.topics ?? [] as tp (tp.id)}
       {#if visible(tp).length}
         <details class="topic" data-kind={tp.kind} open={!!search.trim()}>
-          <summary><span class="chev" aria-hidden="true">▸</span><span class="topic-title">{tp.kind === 'grammar' ? loc(tp.title) : kindName(tp.kind)}</span> <span class="topic-n">{visible(tp).length}</span></summary>
+          <summary><span class="chev" aria-hidden="true">▸</span><span class="topic-title">{tp.kind === 'grammar' || tp.title ? loc(tp.title) : kindName(tp.kind)}</span> <span class="topic-n">{visible(tp).length}</span></summary>
           <ul class="lesson-list">
             {#each visible(tp) as e (e.id)}
               <li><button class="lesson-row" data-lesson={e.id} onclick={() => open({ level, topic: tp, entry: e })}>
-                <span class="l-title" lang={lang.bcp47}>{e.title}</span><span class="l-meaning">{loc(e.meaning)}{#if e.ai} <span class="ai-mark" title={t('learn.ai.title')}>✦ AI</span>{/if}</span>
+                <span class="l-title" lang={lang.bcp47}>{e.title}</span><span class="l-meaning">{loc(e.meaning)}{#if e.ai} <span class="ai-mark" title={t('learn.ai.title')}>✦ AI</span>{/if}{#if e.generated} <span class="ai-mark gen-mark" title={t('learn.gen.title')}>⚙</span>{/if}</span>
                 {#if pct(e.id) !== null}<span class="pct" class:good={pct(e.id) >= 80}>{pct(e.id)}%</span>{/if}
               </button></li>
             {/each}

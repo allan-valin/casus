@@ -76,4 +76,22 @@ gov, PD per mirrors; scans).
 - Others: Serbian (Subotić & Forbes 1918 PD; UD SET CC BY-SA), Bulgarian (FSI), Slovak/Slovene (UD CC BY-SA),
   Ukrainian (Tatoeba 189k).
 
-(Romance/English/Korean report to follow.)
+## Korean
+- **NIKL 국제 통용 한국어 표준 교육과정 적용 연구(4단계), 2017** — report page korean.go.kr …report_seq=932 shows
+  "제1유형: 출처표시" (KOGL type 1: attribution only; commercial use and derivatives allowed; the type is per report).
+  Attachment "어휘, 문법 등급 목록_20201117 수정.xlsx": **336 grammar points** (1급 45, 2급 45, 3급 67, 4급 67, 5급 56,
+  6급 56; columns 등급, 분류 조사/어미/표현, 대표형, 관련형, 의미) + 10,635 graded words. vendor/nikl/. HIGH.
+- KRDict (CC BY-SA 2.0 KR, already in vendor/kodict) gives definitions and examples for 어미/조사/표현 entries.
+- AVOID the grammar-explanation report (seq 869, 제4유형) and seq 882.
+
+## Spanish / French / Portuguese / English / Italian
+No open CEFR grammar inventories.
+- Spanish: Wikibooks Spanish (CC BY-SA, featured), Semillas (CC BY), COERLL ¡Listos! (CC BY). AVOID Spanish Grammar in
+  Context (BY-NC-SA), Acceso (BY-NC), Plan Curricular Cervantes (©).
+- French: **Français interactif** (CC BY 3.0, 14 chapters), **Tex's French Grammar** (CC BY).
+- Portuguese: **Bate-Papo** (UW, CC BY 4.0), **Tá Falado** (COERLL, CC BY 3.0), Língua da Gente, Conversa Brasileira.
+  AVOID Português para principiantes (BY-NC-SA), ClicaBrasil (BY-NC-SA).
+- English: **CEFR-J Grammar Profile** (500 rows; "can be used for research and commercial purposes with no charge,
+  provided that you cite the dataset" — custom terms, medium risk; vendor/cefrj-grammar.csv); Advanced Academic Grammar
+  for ESL (CC BY 4.0). AVOID English Grammar Profile (Cambridge), British Council.
+- Italian: Italiano avanzato (BYU, CC BY 4.0, advanced), Wikibooks Italian (thin). AVOID Piacere!, D'accordo, Gratis!.

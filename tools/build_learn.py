@@ -287,9 +287,33 @@ def builder(code: str):
     raise SystemExit(f"no Learn source for {code}")
 
 
+# languages whose lessons are extended with generated ones (tools/learn_expand.py): spaced scripts (word counts are
+# word-based), and Japanese already has its 1,160 lessons; case languages drill the noun after each preposition
+EXPAND = {"mk", "ar", "la", "grc", "de", "ru", "ko", "fi", "el", "sa", "cs", "pl", "tr", "hu", "is", "pt"}
+CASE_LANGS = {"la", "grc", "de", "ru", "fi", "el", "sa", "cs", "pl", "tr", "hu", "is"}
+T3 = {"mk": "mkd", "ar": "ara", "la": "lat", "grc": "grc", "de": "deu", "ru": "rus", "ko": "kor", "fi": "fin", "el": "ell", "sa": "san",
+      "cs": "ces", "pl": "pol", "tr": "tur", "hu": "hun", "is": "isl", "pt": "por"}
+
+
+def sentences_of(code: str) -> list:
+    """the language's Tatoeba sentences and its corpus texts (vendor/corpora/<code>)"""
+    import bz2
+    out = []
+    f = ROOT / "vendor" / "tatoeba" / f"{T3.get(code, code)}_sentences.tsv.bz2"
+    if f.exists():
+        out += [line.rstrip("\n").split("\t")[2] for line in bz2.open(f, "rt", encoding="utf-8") if line.count("\t") >= 2]
+    for t in sorted((ROOT / "vendor" / "corpora" / code).glob("*.txt")) if (ROOT / "vendor" / "corpora" / code).exists() else []:
+        out += t.read_text(encoding="utf-8").splitlines()
+    return out
+
+
 def main(code: str) -> None:
     """data/<code>/learn.json (the index), learn/<lesson>.json (one lesson), learn/questions-<level>.json"""
     index, lessons, questions = builder(code)()
+    if code in EXPAND:
+        from learn_expand import expand
+        n = expand(code, ROOT / "data" / code, index, lessons, questions, sentences_of(code), cases=code in CASE_LANGS)
+        print(f"{code}: {n} generated lessons")
     out = ROOT / "data" / code
     folder = out / "learn"
     if folder.exists():
