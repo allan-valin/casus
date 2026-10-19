@@ -17,7 +17,9 @@ async function ask(url, text, language, fetchImpl, ms) {
 }
 
 /** { engine: 'local' | 'public' | null, issues: [{ kind: 'grammar', offset, length, message, replacements, rule, category }] } */
-export async function checkGrammar(text, code, { fetchImpl, localMs = 1500, publicMs = 15000, allowPublic = true } = {}) {
+// localMs is long: Chrome asks the reader once whether this site may reach apps on this computer, and the request waits
+// for the answer; a server that is not running fails at once anyway
+export async function checkGrammar(text, code, { fetchImpl, localMs = 30000, publicMs = 15000, allowPublic = true } = {}) {
   const language = LT_CODE[code];
   if (!language || !text.trim()) return { engine: null, issues: [] };
   let engine = 'local';
