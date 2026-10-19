@@ -62,11 +62,18 @@ def analysis(cfg: Config, pos: str, tags: set, gender: str | None) -> dict | Non
             return None
         return {"pos": pos, "case": cases[0], "number": _one(tags, NUMBERS) or ("sg" if pos == "noun" else None),
                 "gender": _one(tags, GENDERS) or (gender if pos == "noun" else None)}
+    if pos == "verb" and {"participle", "past"} <= tags and _one(tags, GENDERS) and not tags & set(PERSONS) and "passive" not in tags \
+            and cfg.code in ("cs", "pl"):
+        return {"pos": "verb", "tense": "past", "mood": "ind", "gender": _one(tags, GENDERS), "number": _one(tags, NUMBERS) or "sg"}
+    if pos == "verb" and "participle" in tags:
+        return {"pos": "verb", "mood": "part", "tense": _one(tags, TENSES), "gender": _one(tags, GENDERS), "number": _one(tags, NUMBERS),
+                **({"voice": "pass"} if "passive" in tags else {})}
     if pos == "verb":
         person, number = _one(tags, PERSONS), _one(tags, NUMBERS)
-        if not person or not number or "negative" in tags or "passive" in tags:
+        if not person or not number:
             return None
-        return {"pos": "verb", "person": person, "number": number, "tense": _one(tags, TENSES) or "pres", "mood": _one(tags, MOODS) or "ind"}
+        return {"pos": "verb", "person": person, "number": number, "tense": _one(tags, TENSES) or "pres", "mood": _one(tags, MOODS) or "ind",
+                **({"voice": "pass"} if tags & {"passive", "mediopassive"} else {}), **({"polarity": "neg"} if "negative" in tags else {})}
     return None
 
 
@@ -128,11 +135,15 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
         d = json.loads(line)
         pos = POS.get(d.get("pos", ""))
         word = (d.get("word") or "").strip()
-        if not pos or not word or " " in word or d.get("pos") == "name":
-            continue
+        if not pos or not word or " " in word:
+            continue                                  # names stay (Praha, Praze: v + locative)
         senses = d.get("senses") or []
-        if senses and all(set(x.get("tags") or []) & {"form-of", "alt-of"} for x in senses):
+        # an alternative form of a closed-class word is a word of its own (Czech ve for v before some consonants)
+        form_of = senses and all(set(x.get("tags") or []) & {"form-of", "alt-of"} for x in senses)
+        if form_of and pos not in ("prep", "conj", "particle", "adv", "pron", "det", "num"):
             continue
+        # a pronoun filed only as a form of another (Greek σου: genitive of εσύ) is read from its sense's tags
+        form_of_tags = set(senses[0].get("tags") or []) if form_of and pos in ("pron", "det", "num") else None
         gender = next((v for k, v in GENDERS.items() if any(k in (s.get("tags") or []) for s in senses)), None)
         cells = []
         seen_person: dict = {}                    # (tense, number, gender) -> how many untagged persons so far
@@ -157,7 +168,11 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
                     person, number = hungarian_person(text, word, definite="definite" in tags, past="past" in tags)
                     tags = {"past" if "past" in tags else "present", "indicative", {"1": "first-person", "2": "second-person", "3": "third-person"}[person],
                             {"sg": "singular", "pl": "plural"}[number]}
-            skip = SKIP - {"error-unrecognized-form"} if pos in ("pron", "det") else SKIP
+            skip = SKIP - {"error-unrecognized-form"} if pos in ("pron", "det", "num") else SKIP
+            if pos == "verb" and "participle" in tags:
+                # the Slavic past is the l-participle by gender and number (Czech byl, byla); other participles are
+                # kept as participles (Turkish yüzen "swimming")
+                skip = skip - {"participle"}
             if cfg.code == "tr" and pos == "noun" and "possessive" in tags:
                 # evine "to his house": the case stays; the number is the house's (possessed-single/-many), not the owner's
                 skip = skip - {"possessive"}
@@ -170,6 +185,10 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
             a = analysis(cfg, pos, tags, gender)
             if a:
                 cells.append((text, a))
+        if form_of_tags and not cells:
+            fa = analysis(cfg, pos, form_of_tags, gender)
+            if fa:
+                cells.append((cfg.clean(word), fa))
         word = cfg.clean(word)
         if cfg.caseless and pos in ("noun", "adj", "det", "pron", "num") and not any(t == word for t, _ in cells):
             cells.insert(0, (word, {"pos": pos, "number": "sg", "gender": gender or ("m" if pos == "adj" else None)}))  # the headword is the (masculine) singular
@@ -212,11 +231,14 @@ def codes(cfg: Config):
     gender = {"m": "m", "f": "f", "n": "n", "x": "_", None: "_"}
     person = {"1": "1", "2": "2", "3": "3", "x": "_", None: "_"}
     tense = {"pres": "p", "past": "r", "fut": "f", "impf": "i", "aor": "a", "perf": "e", "x": "_", None: "_"}
-    mood = {"ind": "i", "cond": "c", "imp": "m", "subj": "s", "pot": "o", "opt": "t", "inf": "n", "x": "_", None: "_"}
+    mood = {"ind": "i", "cond": "c", "imp": "m", "subj": "s", "pot": "o", "opt": "t", "inf": "n", "part": "r", "x": "_", None: "_"}
+    voice = {"act": "a", "pass": "p", "x": "_", None: "_"}
+    polarity = {"neg": "n", "x": "_", None: "_"}
     pos_codes = {"noun": "n", "adj": "a", "verb": "v", "pron": "o", "det": "t", "num": "m", "adv": "d", "prep": "r", "conj": "c", "particle": "k", "interj": "j"}
     nominal = (("case", case), ("number", number), ("gender", gender))
     layout = {p: nominal for p in ("noun", "adj", "pron", "det", "num")}
-    layout.update({"verb": (("person", person), ("number", number), ("tense", tense), ("mood", mood)), "adv": (), "prep": (), "conj": (), "particle": (), "interj": ()})
+    # a verb: person, number, tense, mood; the Slavic past's gender, the voice (Greek mediopassive), negation (Turkish)
+    layout.update({"verb": (("person", person), ("number", number), ("tense", tense), ("mood", mood), ("gender", gender), ("voice", voice), ("polarity", polarity)), "adv": (), "prep": (), "conj": (), "particle": (), "interj": ()})
     back = {name: {v: k for k, v in t.items() if k is not None} for lay in layout.values() for name, t in lay}
 
     def encode(a: dict) -> str:
@@ -232,7 +254,7 @@ def codes(cfg: Config):
         return out
 
     json_ = {"POS": {v: k for k, v in pos_codes.items()},
-             "TABLES": {n: {v: k for k, v in t.items() if k is not None} for n, t in (("case", case), ("number", number), ("gender", gender), ("person", person), ("tense", tense), ("mood", mood))},
+             "TABLES": {n: {v: k for k, v in t.items() if k is not None} for n, t in (("case", case), ("number", number), ("gender", gender), ("person", person), ("tense", tense), ("mood", mood), ("voice", voice), ("polarity", polarity))},
              "LAYOUT": {p: [n for n, _t in lay] for p, lay in layout.items()}}
     return encode, decode, json_
 

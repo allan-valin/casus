@@ -15,3 +15,9 @@ def test_keeps_common_words_their_forms_closed_classes_and_phrases():
     assert keep_entry(e("mutta", "conj"), common)                        # closed class
     assert keep_entry(e("hyvää huomenta", "phrase"), common)
     assert not keep_entry(e("Talo", "name"), common)
+
+
+def test_keep_all_keeps_rare_words_and_names():
+    e = lambda word, pos: {"word": word, "pos": pos, "forms": []}
+    assert keep_entry(e("borový", "adj"), None) and keep_entry(e("Praha", "name"), None)
+    assert not keep_entry(e("x", "romanization"), None)

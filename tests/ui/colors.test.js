@@ -14,6 +14,11 @@ describe('badge', () => {
   it('spells a verb as person·number tense', () => {
     expect(badge({ pos: 'verb', person: '3', number: 'sg', tense: 'perf', mood: 'ind', voice: 'act' })).toBe('3sg pf');
     expect(badge({ pos: 'verb', person: '0', number: 'x', tense: 'pres', mood: 'inf', voice: 'act' })).toBe('inf pr');
+    // Allan, 2026-10-19: the Slavic past by gender (byl), the passive and the negative show on the badge
+    expect(badge({ pos: 'verb', number: 'sg', gender: 'm', tense: 'past', mood: 'ind' })).toBe('m.sg past');
+    expect(badge({ pos: 'verb', person: '2', number: 'sg', tense: 'pres', mood: 'ind', voice: 'pass' })).toBe('2sg pr ps');
+    expect(badge({ pos: 'verb', person: '3', number: 'sg', tense: 'aor', mood: 'ind', polarity: 'neg' })).toBe('3sg ao neg');
+    expect(badge({ pos: 'verb', mood: 'part', tense: 'pres' })).toBe('part pr');
   });
   it('marks a preposition and gives a dash to the rest', () => {
     expect(badge({ pos: 'prep', governs: ['abl'] })).toBe('Prp');

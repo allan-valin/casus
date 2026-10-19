@@ -33,3 +33,9 @@ describe('Korean contractions with the particle fused (이건 = 이거 + 는)', 
     expect((await splitWords([tok('이건')], lex)).map((t) => [t.surface, t.key])).toEqual([['이건', '이거']]);
   });
 });
+describe('Korean stacked particles', () => {
+  it('때에는 = 때 + 에는 (place + topic)', async () => {
+    const lex = { lookupAll: async (keys) => new Map(keys.map((k) => [k, k === '때' ? [{ pos: 'noun' }] : []])) };
+    expect((await splitWords([tok('때에는')], lex)).map((t) => t.surface)).toEqual(['때', '에는']);
+  });
+});

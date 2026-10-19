@@ -18,11 +18,14 @@ CLOSED = {"pron", "det", "prep", "postp", "conj", "particle", "intj", "num", "ar
 UA = {"User-Agent": "casus-build/1.0 (https://github.com/allan-valin/casus)"}
 
 
-def keep_entry(d: dict, common: set[str]) -> bool:
+def keep_entry(d: dict, common: set[str] | None) -> bool:
+    """common None: keep every word and name (Allan, 2026-10-19: literary words were missing after the frequency cut)"""
     pos = d.get("pos")
     word = (d.get("word") or "").lower()
-    if pos in ("name", "character", "romanization", "soft-redirect"):
+    if pos in ("character", "romanization", "soft-redirect") or (pos == "name" and common is not None):
         return False
+    if common is None:
+        return True
     if pos in ("phrase", "proverb") or pos in CLOSED:
         return True
     if word in common:
@@ -30,7 +33,7 @@ def keep_entry(d: dict, common: set[str]) -> bool:
     return any((f.get("form") or "").lower() in common for f in d.get("forms") or [])
 
 
-def main(name: str, code: str, freq_code: str | None = None) -> None:
+def main(name: str, code: str, freq_code: str | None = None, keep_all: bool = False, local: bool = False) -> None:
     freq_code = freq_code or code
     wl = ROOT / "vendor" / "wordlists" / code
     wl.mkdir(parents=True, exist_ok=True)
@@ -39,11 +42,14 @@ def main(name: str, code: str, freq_code: str | None = None) -> None:
         url = f"https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/{freq_code}/{freq_code}_50k.txt"
         with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=120) as r:
             fpath.write_bytes(r.read())
-    common = {l.split()[0].lower() for l in fpath.read_text(encoding="utf-8").splitlines() if l.split()}
+    common = None if keep_all else {l.split()[0].lower() for l in fpath.read_text(encoding="utf-8").splitlines() if l.split()}
     dest = ROOT / "vendor" / "wiktextract" / f"kaikki.org-dictionary-{name.replace(' ', '')}.jsonl.gz"   # kept compressed (2026-10-19)
     url = f"https://kaikki.org/dictionary/{name.replace(' ', '%20')}/kaikki.org-dictionary-{name.replace(' ', '')}.jsonl"
     kept = seen = 0
-    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=300) as r, gzip.open(dest, "wt", encoding="utf-8") as out:
+    # --local: re-filter the full dump already on disk instead of downloading (Finnish in full is 714 MB of data)
+    tmp = dest.with_name(dest.name + ".tmp")
+    source = gzip.open(dest, "rb") if local else urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=300)
+    with source as r, gzip.open(tmp if local else dest, "wt", encoding="utf-8") as out:
         for raw in r:
             seen += 1
             line = raw.decode("utf-8")
@@ -51,9 +57,12 @@ def main(name: str, code: str, freq_code: str | None = None) -> None:
             if keep_entry(d, common):
                 out.write(line if line.endswith("\n") else line + "\n")
                 kept += 1
+    if local:
+        tmp.replace(dest)
     (dest.parent / f"{dest.name[:-3]}.FETCHED").write_text("filtered\n")
     print(f"{name}: kept {kept} of {seen} entries -> {dest.name} ({dest.stat().st_size // 1_000_000} MB)")
 
 
 if __name__ == "__main__":
-    main(*sys.argv[1:])
+    args = [a for a in sys.argv[1:] if a not in ("--all", "--local")]
+    main(*args, keep_all="--all" in sys.argv, local="--local" in sys.argv)

@@ -120,3 +120,49 @@ def test_turkish_possessed_forms_keep_their_case_and_the_nouns_own_number():
     index = build_index(list(parse_entries(CONFIGS["tr"], [line])))
     assert (index["evine"][0]["case"], index["evine"][0]["number"]) == ("dat", "sg")
     assert index["evinize"][0]["number"] == "sg" and index["evlerine"][0]["number"] == "pl"
+
+
+def test_czech_gaps_found_in_real_texts():
+    from casus_build.generic import CONFIGS
+    cs = CONFIGS["cs"]
+    lines = [json.dumps(x, ensure_ascii=False) for x in [
+        {"word": "ve", "pos": "prep", "forms": [], "senses": [{"glosses": ["alternative form of v (“in”)"], "tags": ["alt-of", "alternative"]}]},
+        {"word": "dva", "pos": "num", "forms": [{"form": "dvě", "tags": ["error-unrecognized-form", "nominative", "plural"]}], "senses": [{"glosses": ["two"]}]},
+        {"word": "být", "pos": "verb", "forms": [{"form": "byl", "tags": ["animate", "masculine", "participle", "past", "singular"]},
+                                                 {"form": "byla", "tags": ["feminine", "participle", "past", "singular"]}], "senses": [{"glosses": ["to be"]}]}]]
+    index = build_index(list(parse_entries(cs, lines)))
+    assert index["ve"][0]["pos"] == "prep"
+    assert index["dvě"][0]["case"] == "nom"
+    assert (index["byl"][0]["pos"], index["byl"][0]["tense"], index["byl"][0]["gender"], index["byl"][0]["number"]) == ("verb", "past", "m", "sg")
+    assert index["byla"][0]["gender"] == "f"
+
+
+def test_verb_codes_keep_gender_voice_and_negation():
+    from casus_build.generic import CONFIGS, codes
+    encode, decode, _ = codes(CONFIGS["tr"])
+    a = {"pos": "verb", "person": "3", "number": "sg", "tense": "pres", "mood": "ind", "gender": "f", "voice": "pass", "polarity": "neg"}
+    assert {k: v for k, v in decode(encode(a), "1").items() if k != "lemma"} == a
+
+
+def test_negative_and_mediopassive_verb_forms_are_kept():
+    from casus_build.generic import CONFIGS
+    lines = [json.dumps({"word": "kalmak", "pos": "verb", "forms": [{"form": "kalmaz", "tags": ["aorist", "negative", "singular", "third-person"]}], "senses": [{"glosses": ["to stay"]}]}),
+             json.dumps({"word": "φοβάμαι", "pos": "verb", "forms": [{"form": "φοβάσαι", "tags": ["mediopassive", "present", "second-person", "singular"]}], "senses": [{"glosses": ["to fear"]}]}, ensure_ascii=False)]
+    tr = build_index(list(parse_entries(CONFIGS["tr"], lines[:1])))
+    assert tr["kalmaz"][0]["polarity"] == "neg"
+    el = build_index(list(parse_entries(CONFIGS["el"], lines[1:])))
+    assert (el["φοβάσαι"][0]["person"], el["φοβάσαι"][0]["voice"]) == ("2", "pass")
+
+
+def test_names_form_of_pronouns_and_participles():
+    from casus_build.generic import CONFIGS
+    lines = [json.dumps(x, ensure_ascii=False) for x in [
+        {"word": "Praha", "pos": "name", "forms": [{"form": "Praze", "tags": ["locative", "singular"]}], "senses": [{"glosses": ["Prague"], "tags": ["feminine"]}]},
+        {"word": "σου", "pos": "pron", "forms": [], "senses": [{"glosses": ["genitive singular of εσύ"], "tags": ["form-of", "genitive", "singular"]}]},
+        {"word": "yüzmek", "pos": "verb", "forms": [{"form": "yüzen", "tags": ["participle", "present"]}], "senses": [{"glosses": ["to swim"]}]}]]
+    cs = build_index(list(parse_entries(CONFIGS["cs"], lines[:1])))
+    assert cs["praze"][0]["case"] == "loc"
+    el = build_index(list(parse_entries(CONFIGS["el"], lines[1:2])))
+    assert (el["σου"][0]["pos"], el["σου"][0]["case"]) == ("pron", "gen")
+    tr = build_index(list(parse_entries(CONFIGS["tr"], lines[2:])))
+    assert (tr["yüzen"][0]["pos"], tr["yüzen"][0]["mood"]) == ("verb", "part")

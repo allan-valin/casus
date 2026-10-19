@@ -121,6 +121,10 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
 - Sample passages: sentences written for Casus; the *Kalevala* (Elias Lönnrot, 1849), public domain; Sanskrit
   *satyam eva jayate* (Muṇḍaka Upaniṣad 3.1.6), public domain.
 - Japanese readings are also ranked with the JLPT lists above (MIT).
+- Icelandic inflection: BÍN, the Database of Modern Icelandic Inflection (Beygingarlýsing íslensks nútímamáls), © The
+  Árni Magnússon Institute for Icelandic Studies, CC BY-SA 4.0 (https://bin.arnastofnun.is; repository.clarin.is
+  handle 20.500.12537/5). Every verb, noun and adjective form; frequent lemmas without an English Wiktionary entry are
+  added from it without a meaning.
 
 ## Speech — espeak-ng (GPL-3.0)
 

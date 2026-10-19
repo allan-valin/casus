@@ -70,6 +70,16 @@ export default {
    "o": "pot",
    "t": "opt",
    "n": "inf",
+   "r": "part",
+   "_": "x"
+  },
+  "voice": {
+   "a": "act",
+   "p": "pass",
+   "_": "x"
+  },
+  "polarity": {
+   "n": "neg",
    "_": "x"
   }
  },
@@ -103,7 +113,10 @@ export default {
    "person",
    "number",
    "tense",
-   "mood"
+   "mood",
+   "gender",
+   "voice",
+   "polarity"
   ],
   "adv": [],
   "prep": [],

@@ -304,6 +304,15 @@ def build_generic(code: str, src: Path, out: Path) -> dict:
     encode, _decode, codes_json = codes(cfg)
     with open_dump(src) as fh:
         entries = list(parse_entries(cfg, fh))
+    bin_zip = Path("vendor/bin/SHsnid.csv.zip")
+    if code == "is" and bin_zip.exists():
+        # BÍN (CC BY-SA 4.0) gives every Icelandic form; Wiktionary gives verbs their principal parts only (Allan, 2026-10-19)
+        from casus_build.is_bin import merge_bin, read_bin
+        freq = Path("vendor/wordlists/is/is_50k.txt")
+        frequent = {l.split()[0].lower() for l in freq.read_text(encoding="utf-8").splitlines() if l.split()} if freq.exists() else set()
+        before = len(entries)
+        entries = merge_bin(entries, lambda: read_bin(bin_zip), frequent, start_id=max(e["id"] for e in entries) + 1)
+        print(f"BÍN: forms merged, {len(entries) - before} frequent lemmas added")
     index = build_index(entries)
 
     def rows(analyses):

@@ -28,7 +28,7 @@ export function tint(hex, number) {
 
 /** Same vocabulary as the CLI (tools/parse_cli.mjs): what a candidate list prints. */
 export function describeAnalysis(a) {
-  if (a.pos === 'verb') return ['verb', a.person, a.number, a.tense, a.mood, a.voice].join(' ');
+  if (a.pos === 'verb') return ['verb', a.person, a.gender, a.number, a.tense, a.mood, a.voice, a.polarity].filter((v) => v != null && v !== 'x').join(' ');
   if (a.pos === 'prep') return `prep ${Array.isArray(a.governs) ? a.governs.join('/') : (a.governs ?? '')}`.trim();
   const parts = ['case', 'number', 'gender', 'degree'].map((k) => a[k]).filter((v) => v != null && v !== 'x');
   return [a.pos, ...parts].join(' ');
@@ -57,7 +57,11 @@ export function makeColors(inventory) {
     if (analysis.pos === 'verb') {
       const tense = TENSE_BADGE[analysis.tense] ?? analysis.tense;
       if (analysis.mood === 'inf') return `inf ${tense}`;
-      return `${analysis.person}${analysis.number} ${tense}`;
+      if (analysis.mood === 'part') return `part${tense ? ` ${tense}` : ''}${analysis.voice === 'pass' ? ' ps' : ''}`;
+      // the passive and the negative show (Greek φοβάσαι, Turkish kalmaz); a past by gender has no person (Czech byl)
+      const extra = `${analysis.voice === 'pass' ? ' ps' : ''}${analysis.polarity === 'neg' ? ' neg' : ''}`;
+      if (!analysis.person && analysis.gender) return `${analysis.gender}.${analysis.number} ${tense}${extra}`;
+      return `${analysis.person}${analysis.number} ${tense}${extra}`;
     }
     if (analysis.pos === 'prep') return 'Prp';
     // a particle that governs a role (Japanese を) shows that role's badge
