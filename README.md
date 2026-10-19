@@ -11,6 +11,20 @@ genuinely ambiguous is shown as ambiguous rather than guessed at.
 - Feedback and status after the first hands-on session: `docs/FEEDBACK-2026-10-18.md`
 - Data provenance and field layouts: `docs/DATA.md`
 
+## Three sites, one codebase (2026-10-19)
+
+- **Casus** — https://allan-valin.github.io/casus/ — Latin, Ancient Greek, German, Arabic, Russian, Finnish, Modern
+  Greek, Sanskrit, Czech, Polish, Turkish, Hungarian, Icelandic
+- **Casus Asia** — https://allan-valin.github.io/casus-asia/ — Japanese, Korean, Chinese
+  ([repo](https://github.com/allan-valin/casus-asia))
+- **Casus World** — https://allan-valin.github.io/casus-world/ — Portuguese (Brazil), Macedonian, English, Spanish
+  ([repo](https://github.com/allan-valin/casus-world))
+
+All three are built from this repo (`src/sites.js`, `VITE_CASUS_SITE`); the other two repos only hold a workflow
+(`deploy/site-pages.yml`). Each page links the other two sites under the language bar; old addresses of moved
+languages redirect. Deploy: push `main`, then `gh workflow run pages.yml --repo allan-valin/casus-asia` (and
+`casus-world`).
+
 ## Development
 
 Requires Node 20+ and Python 3.11+.
