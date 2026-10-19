@@ -165,3 +165,14 @@ describe('a word with a plain meaning is one row, whatever its parts of speech (
     expect(out.map((o) => [o.w, o.en])).toEqual([['se', 'it; that']]);
   });
 });
+
+describe('a Chinese character is a word too (Allan, 2026-10-19)', () => {
+  it('都 counts under its first reading (dōu "all"), not dropped', async () => {
+    const { rankLemmas } = await import('../../tools/build_wordlists.mjs');
+    const L = (headword, pos, dict_form) => ({ headword, pos, dict_form });
+    const lookups = new Map([['都', [{ lemma: 'dou', pos: 'adv' }, { lemma: 'du', pos: 'noun' }]]]);
+    const lemmas = { dou: L('都', 'adv', '都 dōu'), du: L('都', 'noun', '都 dū') };
+    const out = rankLemmas([{ form: '都', n: 50 }], lookups, lemmas, { dou: 'all; both', du: 'capital city' }, 5);
+    expect(out.map((o) => o.w)).toEqual(['都 dōu']);
+  });
+});

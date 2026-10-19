@@ -12,6 +12,8 @@ POS = {"noun": "noun", "verb": "verb", "adj": "adj", "adv": "adv", "pron": "pron
 _HAN = re.compile(r"[㐀-鿿豈-﫿]")
 
 
+ADVERBS = {"all", "both", "also", "already", "still", "again", "only", "very", "not", "just", "even", "then", "too", "more",
+           "most", "together", "always", "never", "often", "once", "soon", "now", "certainly", "really", "almost", "quite", "so"}
 PRONOUNS = {"i", "me", "my", "you", "he", "him", "she", "her", "it", "we", "they", "this", "that", "who", "what"}
 
 
@@ -25,6 +27,9 @@ def char_pos(gloss: str) -> str:
         return "verb"
     if first.rstrip(".").split(",")[0].split(" (")[0].strip() in PRONOUNS:
         return "pron"
+    head = first.rstrip(".").split(",")[0].split(" (")[0].strip()
+    if head in ADVERBS or (head.endswith("ly") and " " not in head):
+        return "adv"
     return "noun"
 
 

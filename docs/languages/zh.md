@@ -24,3 +24,9 @@ Built overnight 2026-10-19.
 
 ## Not yet
 - Measure words linked to their nouns; aspect (了 过 着) shown on the verb; 是…的; resultative complements (看完).
+
+## 2026-10-19 (Allan: grammar complete; single characters are words)
+- CC-CEDICT fills the words and readings Wiktionary lacks (38,700 added: 都 dōu "all", frequent names like 北京); a
+  neutral-tone duplicate of a word we have (学生 xuésheng) is left out.
+- Unihan kMandarin orders a character's readings, the most customary first (都 dōu, 要 yào).
+- The frequent-words list has single characters again (的, 我, 是, 都), with plain meanings for the top particles.

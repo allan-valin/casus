@@ -32,6 +32,12 @@ export const PLAIN = {
   fi: { se: 'it; that', ei: 'no; not (the negative verb)', mitä: 'what (partitive of mikä)', te: 'you (plural)', niin: 'so; then' },
   el: { μου: 'my; me', να: 'to (before a verb)', θα: 'will (future)', ο: 'the', αυτός: 'he; this', που: 'that, who, which; where' },
   cs: { já: 'I', ten: 'the, this, that', co: 'what; that' },
+  zh: { 是: 'to be; yes', 就: 'then; just; right away', 会: 'can, will; meeting', 和: 'and; with; peace', 也: 'also, too',
+    了: '(particle: completed action, change)', 吗: '(question particle)', 吧: '(particle: suggestion, “…, OK?”)', 啊: 'ah, oh (exclamation particle)',
+    呢: '(particle: “and…?”, ongoing)', 在: 'at, in; to be at; (in the middle of) -ing', 对: 'correct; towards', 把: '(object marker: 把 + object + verb); to hold',
+    给: 'to give; for', 去: 'to go', 人: 'person', 的: '(possessive / attributive particle: of, ’s)', 不: 'not, no', 有: 'to have; there is',
+    这: 'this', 那: 'that', 好: 'good, well', 来: 'to come', 要: 'to want; will; must', 说: 'to say, to speak', 得: '(particle after a verb: degree, result); to get',
+    还: 'still, yet; also', 没: 'not (have), did not', 看: 'to look, to see', 让: 'to let, to make', 被: '(passive marker); quilt' },
   hu: { egy: 'one; a, an', mi: 'what; we', meg: 'and; (verb prefix: done)' },
 };
 export const isFormOf = (g) => /^(inflection|alternative form|obsolete spelling|clipping|plural|feminine|masculine) of\b|^(nominative|genitive|dative|accusative)\b.*\bof\b/i.test(String(g ?? ''));
@@ -95,8 +101,7 @@ export function rankLemmas(rows, lookups, lemmas, glosses, top = 1000, plain = {
   }
   const count = new Map();
   for (const { form, n } of rows) {
-    // one character: a Hangul syllable is a word (거, 나); a Chinese character only as a pronoun (我, 你), since the
-    // dictionary lacks some characters' common senses (都 dōu "all"); a lone letter never
+    // one character: a Hangul syllable or a Chinese character is a word (거, 我, 都); a lone letter never
     const single = form.length < 2;
     if (single && !/^\p{Script=Hangul}$/u.test(form) && !/^\p{Script=Han}$/u.test(form)) continue;
     const cap = form[0].toUpperCase() + form.slice(1);
@@ -118,11 +123,11 @@ export function rankLemmas(rows, lookups, lemmas, glosses, top = 1000, plain = {
     const UNINFLECTED = ['conj', 'prep', 'particle', 'adv', 'interj'];      // aber: the conjunction before the adverb
     // bare(): a script whose dictionary writes marks the text leaves out (Arabic فِي for في) compares without them
     const plainWord = pool.filter((a) => bare(lemmas[a.lemma].headword) === bare(form) && UNINFLECTED.includes(a.pos)).sort((x, y) => UNINFLECTED.indexOf(x.pos) - UNINFLECTED.indexOf(y.pos))[0];
-    if (single && /^\p{Script=Han}$/u.test(form) && !pool.some((x) => x.pos === 'pron')) continue;
-    // a Chinese character counts as the pronoun; a function word the language names (Korean 나 pron, Portuguese um
-    // det) as that part of speech
-    const named = prefer.get(form) ?? (single && /^\p{Script=Han}$/u.test(form) ? 'pron' : null);
-    const own = named && pool.some((x) => x.pos === named) ? pool.find((x) => x.pos === named) : plainWord ?? (sure.get(common.lemma) ? common : null) ?? fn ?? best(pool.filter((a) => lemmas[a.lemma].headword === form)) ?? best(pool.filter((a) => lemmas[a.lemma].headword.toLowerCase() === form.toLowerCase())) ?? pool[0];
+    // a function word the language names (Korean 나 pron, Portuguese um det) counts as that part of speech; a Chinese
+    // character as its most customary reading, which the build puts first (Unihan: 都 dōu before dū)
+    const named = prefer.get(form);
+    const han = single && /^\p{Script=Han}$/u.test(form);
+    const own = named && pool.some((x) => x.pos === named) ? pool.find((x) => x.pos === named) : han ? pool[0] : plainWord ?? (sure.get(common.lemma) ? common : null) ?? fn ?? best(pool.filter((a) => lemmas[a.lemma].headword === form)) ?? best(pool.filter((a) => lemmas[a.lemma].headword.toLowerCase() === form.toLowerCase())) ?? pool[0];
     if (!real.length) continue;                                     // only form-of entries (meinem): its lemma counts elsewhere
     count.set(own.lemma, (count.get(own.lemma) ?? 0) + n);
   }

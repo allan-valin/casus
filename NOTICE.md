@@ -104,6 +104,9 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
 - Word frequencies (word splitting, frequent words): Hermit Dave, *FrequencyWords* (OpenSubtitles 2018, zh_cn),
   CC BY-SA 4.0.
 - Sample passages: sentences written for Casus; *Analects* 1.1 (public domain).
+- CC-CEDICT (MDBG and contributors, https://www.mdbg.net/chinese/dictionary?page=cc-cedict), CC BY-SA 4.0: words and
+  readings the Wiktionary extract lacks (都 dōu "all"), and frequent proper names.
+- Unihan database (Unicode, Inc.), Unicode License v3: kMandarin orders a character's readings.
 
 ## Macedonian — CC BY-SA
 

@@ -214,7 +214,21 @@ def build_zh(src: Path, out: Path) -> dict:
     for e in entries:                                  # 書 → 书: single characters get their simplified key
         if len(e["headword"]) == 1 and not e.get("simplified") and e["headword"] in simp:
             e["simplified"] = simp[e["headword"]]
+    # CC-CEDICT fills the words and readings Wiktionary lacks; Unihan orders a character's readings (Allan, 2026-10-19)
+    from casus_build.zh.cedict import missing_entries, order_rows, parse_cedict, reading_order
+    import gzip
+    cedict_path, unihan_path = Path("vendor/cedict/cedict_1_0_ts_utf-8_mdbg.txt.gz"), Path("vendor/unihan/Unihan_Readings.txt.gz")
+    if cedict_path.exists():
+        with gzip.open(cedict_path, "rt", encoding="utf-8") as fh:
+            frequent = {l.split()[0] for l in Path("vendor/wordlists/zh/zh_cn_50k.txt").read_text(encoding="utf-8").splitlines()[:30000] if l.split()} \
+                if Path("vendor/wordlists/zh/zh_cn_50k.txt").exists() else set()
+            added = missing_entries(entries, parse_cedict(fh), start_id=max(e["id"] for e in entries) + 1, frequent=frequent)
+        print(f"CC-CEDICT: {len(added)} words or readings added")
+        entries += added
     index = build_index(entries)
+    if unihan_path.exists():
+        with gzip.open(unihan_path, "rt", encoding="utf-8") as fh:
+            index = order_rows(index, reading_order(fh))
     # word frequencies (FrequencyWords zh_cn, CC BY-SA 4.0): ties in word splitting go to the commoner words
     freq_path = Path("vendor/wordlists/zh/zh_cn_50k.txt")
     if freq_path.exists():
