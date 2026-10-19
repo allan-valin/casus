@@ -1,7 +1,7 @@
 /* Korean (docs/languages/ko.md; overnight plan 2026-10-19). */
 import { segment } from '../ar/segment.js';
 import { tokenize, splitWords } from './tokenize.js';
-import { particleStage, finalVerbStage, adverbStage, sentenceTypeStage, copulaStage, pronounStage } from './stages.js';
+import { particleStage, finalVerbStage, adverbStage, sentenceTypeStage, copulaStage, pronounStage, negationStage } from './stages.js';
 import { romanizeKo } from './romanize.js';
 import { bucket } from '../ja/bucket.js';
 import { ROWS, LETTERS, LABELS, createGame, createGrid } from './game.js';
@@ -30,7 +30,21 @@ const KOREAN_INVENTORY = {
   paradigm: koreanParadigm,
   codes: layoutPairs(CODES),
 };
-KOREAN_INVENTORY.formBadge = new Proxy({}, { get: (_t, form) => (typeof form === 'string' && form !== 'dict' ? form : 'dict') });
+// the badge: a connective or modifier shows its ending, a sentence ending its speech level (formal, polite, casual,
+// plain), past and sentence type (Allan, 2026-10-19: 가실 showed "handa")
+const ENDING = { inf: '-어', seq: '-니', and: '-고', if: '-면', so: '-어서', even: '-어도', but: '-지만', since: '-니까', ji: '-지', ge: '-게', noun: '-기',
+  will: '-겠', intent: '-려고', purpose: '-러', 'adn pres': '-는', 'adn past': '-ㄴ', 'adn fut': '-ㄹ', bg: '-는데' };
+const LEVEL = { hamnida: 'fml', haeyo: 'pol', hae: 'cas', handa: 'pln' };
+function koreanBadge(form) {
+  if (typeof form !== 'string' || form === 'dict') return 'dict';
+  if (ENDING[form]) return ENDING[form];
+  const [level, ...rest] = form.split(' ');
+  if (!LEVEL[level]) return form;
+  const past = rest.includes('past') ? ' pst' : '';
+  const kind = rest.includes('q') ? '?' : rest.includes('imp') ? '!' : rest.includes('let') ? ' let' : '';
+  return `${LEVEL[level]}${past}${kind}`;
+}
+KOREAN_INVENTORY.formBadge = new Proxy({}, { get: (_t, form) => koreanBadge(form) });
 
 export const korean = {
   code: 'ko',
@@ -44,7 +58,7 @@ export const korean = {
   segment,
   tokenize,
   splitWords,
-  stages: [copulaStage, pronounStage, particleStage, finalVerbStage, sentenceTypeStage, adverbStage],
+  stages: [copulaStage, pronounStage, negationStage, particleStage, finalVerbStage, sentenceTypeStage, adverbStage],
   government: {},
   arrange: [],
   eras: [{ id: 'modern', label: 'Present-day standard Korean', authors: '', ages: [], ipa: [] }],

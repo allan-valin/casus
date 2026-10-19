@@ -5,6 +5,8 @@ import string
 _POS = {"noun": "n", "verb": "v", "adj": "a", "adv": "d", "pron": "o", "num": "m", "det": "t", "interj": "j", "particle": "k"}
 _NAMES = ["dict", "inf", "seq", "if"] + [f"{lvl}{past}{kind}" for lvl in ("hamnida", "haeyo", "hae", "handa")
                                           for past in ("", " past") for kind in ("", " q", " imp", " let")]
+# the generated connectives and noun-modifying forms (casus_build/ko/conj.py), appended so the old codes stay
+_NAMES += ["so", "even", "but", "since", "ji", "ge", "noun", "will", "intent", "purpose", "adn pres", "adn past", "adn fut", "bg", "and"]
 _FORM = {name: ch for name, ch in zip(_NAMES, string.ascii_letters + string.digits)}
 _FORM["x"] = "_"
 _FORM[None] = "_"

@@ -30,3 +30,8 @@ Built overnight 2026-10-19.
   그거 + 야); a common pronoun is the pronoun (우리 "we", not the pen).
 - 거 reads as 것 (the dictionary files it only as a contraction), 이건/그걸 as 이거/그거; the frequent-words list
   counts contractions and copula forms under their word (거야: 것), and a common pronoun as the pronoun (나: I).
+- Conjugation generator (tools/casus_build/ko/conj.py): every verb and adjective gets the connectives (-고, -아서, -아도,
+  -지만, -(으)니, -(으)니까, -(으)면, -는데, -지, -게, -기, -(으)려고, -(으)러, -겠다), the noun-modifying forms (-는,
+  -(으)ㄴ, -(으)ㄹ) and the polite and plain endings, built on Wiktionary's own -아/어 form so irregulars come out right
+  (괴롭다 → 괴로워, 듣다 → 들어); each adjective gets its verb of feeling (괴롭다 → 괴로워하다, meaning written for
+  Casus). Badges show the ending (-어서) or level·tense (pol pst ?). -지 before 않다 is the negated verb.

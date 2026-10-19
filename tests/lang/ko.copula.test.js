@@ -39,3 +39,18 @@ describe('Korean stacked particles', () => {
     expect((await splitWords([tok('때에는')], lex)).map((t) => t.surface)).toEqual(['때', '에는']);
   });
 });
+import { getLanguage } from '../../src/lang/registry.js';
+describe('Korean badges', () => {
+  it('show the ending or the speech level, not internal names', () => {
+    const fb = getLanguage('ko').inventory.formBadge;
+    expect([fb.so, fb.but, fb['adn pres'], fb.haeyo, fb['haeyo past q'], fb.handa, fb.hamnida]).toEqual(['-어서', '-지만', '-는', 'pol', 'pol pst?', 'pln', 'fml']);
+  });
+});
+import { negationStage } from '../../src/lang/ko/stages.js';
+describe('Korean -지 않다', () => {
+  it('the -지 form before 않다 is the verb', () => {
+    const b = (key, as) => ({ token: { key, surface: key }, candidates: as.map((a) => ({ analysis: a, reasons: [], links: [] })), pinned: null });
+    const out = negationStage([b('먹지', [{ pos: 'verb', form: 'ji', lemma: 'eat' }, { pos: 'noun', lemma: 'paper' }]), b('않았다', [{ pos: 'verb', lemma: 'not', form: 'handa past' }])]);
+    expect(out[0].candidates.map((c) => c.analysis.pos)).toEqual(['verb']);
+  });
+});

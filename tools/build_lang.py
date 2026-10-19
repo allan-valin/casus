@@ -177,6 +177,8 @@ def build_ko(src: Path, out: Path) -> dict:
 
     with open_dump(src) as fh:
         entries = list(parse_entries(fh))
+    from casus_build.ko.conj import add_conjugations
+    entries = add_conjugations(entries, start_id=max(e["id"] for e in entries) + 1)   # connectives, -는/-(으)ㄴ/-(으)ㄹ, 괴로워하다
     entries += particle_entries(10_000_000)
     index = build_index(entries)
 

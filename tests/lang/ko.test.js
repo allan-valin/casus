@@ -23,7 +23,7 @@ describe('Korean', () => {
     expect(b[2].candidates.map((c) => c.analysis.case)).toEqual(['obj']);
     expect(b[3].candidates.map((c) => c.analysis.pos)).toEqual(['particle']);
     const colors = makeColors(ko.inventory);
-    expect(colors.blockStyle(b[4], { nominal: true, verb: true, function: true }).badge).toBe('haeyo past');
+    expect(colors.blockStyle(b[4], { nominal: true, verb: true, function: true }).badge).toBe('pol pst');
   });
   it('romanised under each word', async () => {
     const b = await read('저는 밥을 먹었어요.');
@@ -67,5 +67,13 @@ describe('the sentence mark decides the polite ending (가요: goes / goes? / go
     expect(await read3('가요.')).toEqual(['haeyo']);
     expect(await read3('가요?')).toEqual(['haeyo q']);
     expect((await read3('가요!')).sort()).toEqual(['haeyo imp', 'haeyo let']);
+  });
+});
+
+describe('Korean table lists the connectives too (2026-10-19)', () => {
+  it('-어서 and -는 rows', async () => {
+    const { koreanParadigm } = await import('../../src/lang/ko/paradigm.js');
+    const g = koreanParadigm([{ analysis: { form: 'so' } }, { analysis: { form: 'adn pres' } }, { analysis: { form: 'haeyo' } }]);
+    expect(g[0].rows).toEqual(['haeyo', 'so', 'adn pres']);
   });
 });

@@ -80,3 +80,14 @@ export function pronounStage(blocks) {
     return { ...b, candidates: pron.map((c) => ({ ...c, reasons: [...c.reasons, 'a common pronoun'] })) };
   });
 }
+
+/* -지 않다 / 못하다 / 말다: the -지 form before them is the verb being negated (먹지 않았다: not the noun 먹지). */
+const NEGATORS = /^(않|안|못하|못해|못했|말|마)/;
+export function negationStage(blocks) {
+  return blocks.map((b, i) => {
+    const next = blocks[i + 1];
+    const ji = b.candidates.filter((c) => c.analysis.form === 'ji');
+    if (b.pinned || !next || !ji.length || ji.length === b.candidates.length || !NEGATORS.test(next.token.key)) return b;
+    return { ...b, candidates: ji.map((c) => ({ ...c, reasons: [...c.reasons, `-지 before ${next.token.surface}: the verb it negates`] })) };
+  });
+}
