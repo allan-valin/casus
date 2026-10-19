@@ -46,3 +46,12 @@ describe('the only possible verb agreeing with a sure subject is the verb', () =
     expect(out[0].candidates.length).toBe(2);
   });
 });
+import { prepositionSettledStage } from '../../src/lib/classical.js';
+describe('a preposition that took its object', () => {
+  it('drops its particle and adverb readings (Polish z mężem)', () => {
+    const b = { token: { index: 0, surface: 'z', key: 'z' }, pinned: null, candidates: [
+      { analysis: { pos: 'prep', governs: ['ins'] }, reasons: [], links: [{ kind: 'government' }] },
+      { analysis: { pos: 'particle' }, reasons: [], links: [] }, { analysis: { pos: 'adv' }, reasons: [], links: [] }] };
+    expect(prepositionSettledStage([b])[0].candidates.map((c) => c.analysis.pos)).toEqual(['prep']);
+  });
+});

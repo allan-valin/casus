@@ -1,7 +1,7 @@
 /*
  * Rules a Latin or Greek teacher applies to any sentence (Allan, 2026-10-18: "make them more sure").
  * Each narrows, never empties (narrow() guards), and is a stage(blocks, ctx).
- * PREP  A preposition whose object the government stage settled is the preposition: its interjection and
+ * PREP  A preposition whose object the government stage settled is the preposition: its interjection, particle, adverb and
  *       caseless-noun readings (the letter a, an abbreviation) drop.
  * VOC   A vocative is direct address; a sentence with no 2nd-person verb, no imperative and no o / ὦ addresses
  *       no one, so it has no vocatives.
@@ -13,7 +13,7 @@ export function prepositionSettledStage(blocks) {
   return blocks.map((b) => {
     const governing = b.candidates.some((c) => c.analysis.pos === 'prep' && (c.links ?? []).some((l) => l.kind === 'government'));
     if (!governing || b.pinned) return b;
-    const keep = b.candidates.filter((c) => !(c.analysis.pos === 'interj' || ((c.analysis.pos === 'noun' || c.analysis.pos === 'pron') && (!c.analysis.case || c.analysis.case === 'x'))));
+    const keep = b.candidates.filter((c) => !(['interj', 'particle', 'adv'].includes(c.analysis.pos) || ((c.analysis.pos === 'noun' || c.analysis.pos === 'pron') && (!c.analysis.case || c.analysis.case === 'x'))));
     return keep.length && keep.length < b.candidates.length
       ? { ...b, candidates: keep.map((c) => withReason(c, 'government: it has taken its object, so it is the preposition')) } : b;
   });
