@@ -1,0 +1,297 @@
+id: A1
+topics:
+
+- title: {en: Letters and sounds, pt: Letras e sons}
+  lessons:
+  - id: ru-alphabet
+    title: Алфавит
+    meaning: {en: "the alphabet, stress and reduced vowels", pt: "o alfabeto, o acento e as vogais reduzidas"}
+    intro:
+      en: |
+        Russian has 33 letters. Some look and sound like Latin ones (**а, к, м, о, т**), some look Latin but sound different (**в** = v, **н** = n, **р** = r, **с** = s, **у** = u, **х** = kh), and some are new: **б, г, д, ж, з, л, п, ф, ц, ч, ш, щ, ы, э, ю, я, ь, ъ**.
+
+        **я, ю, е, ё** are "soft" vowels that put a *y* before the vowel at the start of a word or after a vowel (**я** = ya), and soften the consonant before them otherwise. **ь** (soft sign) softens the consonant before it; **ъ** (hard sign) separates. **ы** is a vowel with no English equivalent (say *i* with the tongue pulled back).
+
+        **Stress** is free and not written in ordinary texts (Casus's tables mark it: **сто́л, кни́га**). Unstressed **о** sounds like *a* (**молоко́** *malakó*), unstressed **е, я** like *i*.
+      pt: |
+        O russo tem 33 letras. Algumas parecem e soam como as latinas (**а, к, м, о, т**), outras parecem latinas mas soam diferente (**в** = v, **н** = n, **р** = r, **с** = s, **у** = u, **х** = kh, como o *rr* carioca), e outras são novas: **б, г, д, ж, з, л, п, ф, ц, ч, ш, щ, ы, э, ю, я, ь, ъ**.
+
+        **я, ю, е, ё** são vogais "brandas", que põem um *i* antes da vogal no início da palavra ou depois de vogal (**я** = iá), e amolecem a consoante antes delas nos outros casos. **ь** (sinal brando) amolece a consoante anterior; **ъ** (sinal duro) separa. **ы** é uma vogal sem equivalente (diga *i* com a língua recuada).
+
+        O **acento** é livre e não se escreve nos textos comuns (as tabelas do Casus o marcam: **сто́л, кни́га**). O **о** átono soa como *a* (**молоко́** *malakó*), **е, я** átonos como *i*.
+    table:
+      head: {en: [Letter, Sound, Example], pt: [Letra, Som, Exemplo]}
+      rows:
+      - [Б б, b, "брат (brother)"]
+      - [В в, v, "вода (water)"]
+      - [Г г, g, "город (city)"]
+      - [Д д, d, "дом (house)"]
+      - [Ж ж, "zh (s in pleasure)", "жена (wife)"]
+      - [З з, z, "зима (winter)"]
+      - [И и, i, "имя (name)"]
+      - [Й й, "y (in boy)", "мой (my)"]
+      - [Л л, l, "лампа (lamp)"]
+      - [П п, p, "папа (dad)"]
+      - [Р р, "r (rolled)", "рука (hand)"]
+      - [С с, s, "сын (son)"]
+      - [У у, u, "утро (morning)"]
+      - [Ф ф, f, "фото (photo)"]
+      - [Х х, kh, "хлеб (bread)"]
+      - [Ц ц, ts, "цирк (circus)"]
+      - [Ч ч, ch, "час (hour)"]
+      - [Ш ш, sh, "школа (school)"]
+      - [Щ щ, "shsh (soft)", "борщ (borscht)"]
+      - [Ы ы, "ɨ (back i)", "мы (we)"]
+      - [Э э, e, "это (this)"]
+      - [Ю ю, yu, "юг (south)"]
+      - [Я я, ya, "я (I)"]
+    mistakes:
+    - wrong: "молоко = mo-lo-ko"
+      right: "молоко́ = ma-la-kó"
+      why: {en: "Unstressed о is pronounced a.", pt: "O о átono se pronuncia a."}
+    match: {seq: [{re: "[шщыэиеё]", pos: [noun, verb, adj]}]}
+    swaps: {ш: [щ], щ: [ш], ы: [и], и: [ы], е: [э], э: [е]}
+
+- title: {en: Nouns and gender, pt: Substantivos e gênero}
+  lessons:
+  - id: ru-gender
+    title: род
+    meaning: {en: "gender: masculine, feminine, neuter", pt: "gênero: masculino, feminino, neutro"}
+    intro:
+      en: |
+        Russian has no articles, but every noun has a gender, shown by its ending:
+
+        - **masculine**: a consonant or **-й** — **стол** (table), **музей** (museum); also men in **-а / -я**: **папа**, **дядя**
+        - **feminine**: **-а / -я** — **мама**, **неделя** (week)
+        - **neuter**: **-о / -е / -ё** — **окно** (window), **море** (sea); and nouns in **-мя**: **имя** (name)
+        - nouns in **-ь** can be masculine (**день**, day) or feminine (**ночь**, night) — learn them with the word
+
+        Adjectives, possessives and the past tense agree with the gender.
+      pt: |
+        O russo não tem artigos, mas todo substantivo tem gênero, mostrado pela terminação:
+
+        - **masculino**: consoante ou **-й** — **стол** (mesa), **музей** (museu); também homens em **-а / -я**: **папа**, **дядя**
+        - **feminino**: **-а / -я** — **мама**, **неделя** (semana)
+        - **neutro**: **-о / -е / -ё** — **окно** (janela), **море** (mar); e os em **-мя**: **имя** (nome)
+        - os em **-ь** podem ser masculinos (**день**, dia) ou femininos (**ночь**, noite) — aprenda com a palavra
+
+        Adjetivos, possessivos e o passado concordam com o gênero.
+    mistakes:
+    - wrong: новый мама
+      right: новая мама
+      why: {en: "мама ends in -а: feminine.", pt: "мама termina em -а: feminino."}
+    examples:
+    - [Это новый стол., This is a new table., Esta é uma mesa nova., новый]
+    - [Это моя книга., This is my book., Este é o meu livro., моя]
+    - [Окно открыто., The window is open., A janela está aberta., открыто]
+    match: {seq: [{pos: adj, case: nom, number: x}, {pos: noun, case: nom}], gap: 0, same: [case]}
+
+  - id: ru-plural
+    title: столы, книги, окна
+    meaning: {en: "the plural (nominative)", pt: "o plural (nominativo)"}
+    intro:
+      en: |
+        Masculine and feminine nouns take **-ы**, or **-и** after **г к х ж ш щ ч** and after soft stems: **стол → столы**, **мама → мамы**, **книга → книги**, **день → дни**. Neuters take **-а / -я**: **окно → окна**, **море → моря**. Some masculines take a stressed **-а**: **дом → дома́**, **город → города́**. Irregular: **человек → люди**, **ребёнок → дети**, **друг → друзья**.
+      pt: |
+        Masculinos e femininos levam **-ы**, ou **-и** depois de **г к х ж ш щ ч** e de radicais brandos: **стол → столы**, **мама → мамы**, **книга → книги**, **день → дни**. Neutros levam **-а / -я**: **окно → окна**, **море → моря**. Alguns masculinos levam **-а** tônico: **дом → дома́**, **город → города́**. Irregulares: **человек → люди**, **ребёнок → дети**, **друг → друзья**.
+    mistakes:
+    - wrong: книгы
+      right: книги
+      why: {en: "After г к х: -и, never -ы (spelling rule).", pt: "Depois de г к х: -и, nunca -ы (regra ortográfica)."}
+    examples:
+    - [Это мои книги., These are my books., Estes são os meus livros., книги]
+    - [Дети играют., The children are playing., As crianças estão brincando., Дети]
+    match: {seq: [{pos: noun, number: pl, case: nom}]}
+
+  - id: ru-noun-table
+    title: падежи
+    meaning: {en: "the six cases: an overview", pt: "os seis casos: visão geral"}
+    intro:
+      en: |
+        Russian nouns change their ending for **six cases**: nominative (subject), genitive (*of*, after **нет**, numbers, many prepositions), dative (*to, for*), accusative (direct object, *to/into* with **в/на**), instrumental (*with, by*, after **с**) and prepositional (only after prepositions: **в, на, о**). The next lessons take them one at a time; here are three nouns in full.
+      pt: |
+        O substantivo russo muda de terminação em **seis casos**: nominativo (sujeito), genitivo (*de*, depois de **нет**, números, muitas preposições), dativo (*a, para*), acusativo (objeto direto, *para* com **в/на**), instrumental (*com, por*, depois de **с**) e preposicional (só depois de preposições: **в, на, о**). As próximas lições tratam de um por vez; aqui estão três substantivos completos.
+    paradigms:
+    - {word: стол, pos: noun, label: {en: "стол (m.) table", pt: "стол (m.) mesa"}}
+    - {word: книга, pos: noun, label: {en: "книга (f.) book", pt: "книга (f.) livro"}}
+    - {word: окно, pos: noun, label: {en: "окно (n.) window", pt: "окно (n.) janela"}}
+    match: {seq: [{pos: noun}], same: [number]}
+
+- title: {en: "Pronouns, 'to be' and questions", pt: "Pronomes, 'ser' e perguntas"}
+  lessons:
+  - id: ru-pronouns
+    title: я, ты, он, она…
+    meaning: {en: "personal pronouns; no 'to be' in the present", pt: "pronomes pessoais; sem 'ser' no presente"}
+    intro:
+      en: |
+        **я** I, **ты** you (familiar), **он / она / оно** he / she / it, **мы** we, **вы** you (plural and polite), **они** they.
+
+        In the present, *to be* is not said: **Я студент.** "I (am) a student." **Это мой брат.** "This (is) my brother." In writing a dash often replaces it between two nouns: **Москва — столица России.**
+      pt: |
+        **я** eu, **ты** tu/você (íntimo), **он / она / оно** ele / ela / (neutro), **мы** nós, **вы** vocês e o senhor / a senhora, **они** eles.
+
+        No presente o *ser/estar* não se diz: **Я студент.** "(Sou) estudante." **Это мой брат.** "Este (é) meu irmão." Na escrita um travessão muitas vezes o substitui entre dois substantivos: **Москва — столица России.**
+    table:
+      head: {en: [Person, Singular, Plural], pt: [Pessoa, Singular, Plural]}
+      rows:
+      - [1, я, мы]
+      - [2, ты, вы]
+      - [3, "он, она, оно", они]
+    mistakes:
+    - wrong: Я есть студент.
+      right: Я студент.
+      why: {en: "No verb 'to be' in the present.", pt: "Sem verbo 'ser' no presente."}
+    examples:
+    - [Я студент., I am a student., Sou estudante., Я]
+    - ["Ты дома?", "Are you at home?", "Você está em casa?", "Ты"]
+    - [Мы друзья., We are friends., Somos amigos., Мы]
+    - [Они здесь., They are here., Eles estão aqui., Они]
+    match: {seq: [{word: [я, ты, он, она, оно, мы, вы, они], start: true}]}
+    pool: [Я, Ты, Он, Она, Мы, Вы, Они]
+
+  - id: ru-possessives
+    title: мой, твой, наш, ваш
+    meaning: {en: "possessives: my, your, our", pt: "possessivos: meu, teu, nosso"}
+    intro:
+      en: |
+        **мой** (my), **твой** (your), **наш** (our), **ваш** (your, pl./polite) agree with the thing owned: **мой брат**, **моя сестра**, **моё окно**, **мои книги**. **его** (his, its), **её** (her) and **их** (their) never change: **его сестра**, **их дом**. **свой** means "one's own" and refers back to the subject.
+      pt: |
+        **мой** (meu), **твой** (teu), **наш** (nosso), **ваш** (de vocês / do senhor) concordam com a coisa possuída: **мой брат**, **моя сестра**, **моё окно**, **мои книги**. **его** (dele), **её** (dela) e **их** (deles) não mudam: **его сестра**, **их дом**. **свой** significa "seu próprio" e remete ao sujeito.
+    table:
+      head: {en: [Owner, m., f., n., pl.], pt: [Dono, m., f., n., pl.]}
+      rows:
+      - [я, мой, моя, моё, мои]
+      - [ты, твой, твоя, твоё, твои]
+      - [мы, наш, наша, наше, наши]
+      - [вы, ваш, ваша, ваше, ваши]
+      - ["он / она / они", его / её / их, его / её / их, его / её / их, его / её / их]
+    mistakes:
+    - wrong: мой сестра
+      right: моя сестра
+      why: {en: "Agree with the noun owned.", pt: "Concorde com o substantivo possuído."}
+    examples:
+    - [Это моя сестра., This is my sister., Esta é minha irmã., моя]
+    - ["Где твой телефон?", "Where is your phone?", "Onde está o seu telefone?", "твой"]
+    - [Наш дом большой., Our house is big., Nossa casa é grande., Наш]
+    match: {seq: [{word: [мой, моя, моё, мое, мои, твой, твоя, твоё, твое, твои, наш, наша, наше, наши, ваш, ваша, ваше, ваши]}]}
+    pool: [мой, моя, моё, мои, твой, твоя, наш, наша, ваш, ваша]
+
+  - id: ru-questions
+    title: кто, что, где…
+    meaning: {en: "question words", pt: "palavras interrogativas"}
+    intro:
+      en: |
+        **кто** who, **что** what, **где** where, **куда** where to, **откуда** where from, **когда** when, **почему / зачем** why, **как** how, **сколько** how much/many, **какой** which, what kind, **чей** whose. A yes/no question keeps the word order of a statement and changes only the intonation: **Ты дома?**
+      pt: |
+        **кто** quem, **что** o quê, **где** onde, **куда** para onde, **откуда** de onde, **когда** quando, **почему / зачем** por que / para quê, **как** como, **сколько** quanto(s), **какой** qual, que tipo, **чей** de quem. A pergunta de sim ou não mantém a ordem da afirmação e muda só a entonação: **Ты дома?**
+    examples:
+    - ["Как тебя зовут?", "What's your name?", "Como você se chama?", "Как"]
+    - ["Где ты живёшь?", "Where do you live?", "Onde você mora?", "Где"]
+    - ["Что это?", "What is this?", "O que é isto?", "Что"]
+    match: {seq: [{word: [кто, что, где, куда, откуда, когда, почему, зачем, как, сколько, какой, какая, какое, какие, чей, чья, чьё, чьи], start: true}]}
+    pool: [Кто, Что, Где, Куда, Откуда, Когда, Почему, Как, Сколько, Какой]
+
+- title: {en: The present tense, pt: O presente}
+  lessons:
+  - id: ru-present-1
+    title: читать — я читаю
+    meaning: {en: "first conjugation: -ю/-у, -ешь", pt: "primeira conjugação: -ю/-у, -ешь"}
+    intro:
+      en: |
+        Most verbs in **-ать / -ять** belong to the **first conjugation**: drop **-ть** and add **-ю, -ешь, -ет, -ем, -ете, -ют**. The present also covers *I am reading* and *I read (habitually)*. Some first-conjugation verbs change their stem: **писать → пишу, пишешь**; **жить → живу, живёшь**.
+      pt: |
+        A maioria dos verbos em **-ать / -ять** é da **primeira conjugação**: tire **-ть** e acrescente **-ю, -ешь, -ет, -ем, -ете, -ют**. O presente vale também para *estou lendo* e *leio (sempre)*. Alguns mudam o radical: **писать → пишу, пишешь**; **жить → живу, живёшь**.
+    paradigms:
+    - {word: читать, pos: verb, tense: pres, mood: ind, label: {en: "читать read", pt: "читать ler"}}
+    mistakes:
+    - wrong: я читаешь
+      right: я читаю
+      why: {en: "I: -ю.", pt: "Eu: -ю."}
+    examples:
+    - [Я читаю книгу., I'm reading a book., Estou lendo um livro., читаю]
+    - ["Что ты делаешь?", "What are you doing?", "O que você está fazendo?", "делаешь"]
+    - [Мы живём в Москве., We live in Moscow., Moramos em Moscou., живём]
+    match: {seq: [{pos: verb, tense: pres, mood: ind, lemma: "(ать|ять|еть|ить|ти|чь)$"}], same: [tense, mood]}
+
+  - id: ru-present-2
+    title: говорить — я говорю
+    meaning: {en: "second conjugation: -ю/-у, -ишь", pt: "segunda conjugação: -ю/-у, -ишь"}
+    intro:
+      en: |
+        Most verbs in **-ить** (and some in -еть, -ать) take **-ю, -ишь, -ит, -им, -ите, -ят**: **говорить → говорю, говоришь, говорят**. In the 1st person singular some consonants change: **видеть → вижу, видишь**; **любить → люблю, любишь**; **сидеть → сижу**.
+      pt: |
+        A maioria dos verbos em **-ить** (e alguns em -еть, -ать) leva **-ю, -ишь, -ит, -им, -ите, -ят**: **говорить → говорю, говоришь, говорят**. Na 1ª pessoa do singular algumas consoantes mudam: **видеть → вижу, видишь**; **любить → люблю, любишь**; **сидеть → сижу**.
+    paradigms:
+    - {word: говорить, pos: verb, tense: pres, mood: ind, label: {en: "говорить speak", pt: "говорить falar"}}
+    examples:
+    - [Я говорю по-русски., I speak Russian., Falo russo., говорю]
+    - ["Ты меня любишь?", "Do you love me?", "Você me ama?", "любишь"]
+    - [Они говорят быстро., They speak fast., Eles falam rápido., говорят]
+    match: {seq: [{pos: verb, tense: pres, mood: ind, lemma: "ить$"}], same: [tense, mood]}
+
+- title: {en: "Cases I: where and what", pt: "Casos I: onde e o quê"}
+  lessons:
+  - id: ru-prepositional
+    title: в Москве, на работе
+    meaning: {en: "the prepositional case: where, about", pt: "o caso preposicional: onde, sobre"}
+    intro:
+      en: |
+        After **в** (in) and **на** (on, at) for location, and **о / об** (about), nouns take the **prepositional**: usually **-е** — **Москва → в Москве**, **стол → на столе**, **работа → на работе**; nouns in **-ия, -ие** and feminines in **-ь** take **-и**: **Россия → в России**, **тетрадь → в тетради**.
+
+        **на** goes with open spaces, events and some places by convention: **на улице, на концерте, на работе, на почте**.
+      pt: |
+        Depois de **в** (em) e **на** (sobre, em) para lugar, e de **о / об** (sobre), o substantivo vai para o **preposicional**: em geral **-е** — **Москва → в Москве**, **стол → на столе**, **работа → на работе**; os em **-ия, -ие** e os femininos em **-ь** levam **-и**: **Россия → в России**, **тетрадь → в тетради**.
+
+        **на** vai com espaços abertos, eventos e alguns lugares por convenção: **на улице, на концерте, на работе, на почте**.
+    mistakes:
+    - wrong: в Россие
+      right: в России
+      why: {en: "-ия nouns take -и.", pt: "Os em -ия levam -и."}
+    examples:
+    - [Я живу в Москве., I live in Moscow., Moro em Moscou., Москве]
+    - [Книга на столе., The book is on the table., O livro está na mesa., столе]
+    - [Мы говорим о фильме., We're talking about the film., Estamos falando do filme., фильме]
+    match: {seq: [{word: [в, во, на, о, об, обо, при]}, {pos: noun, case: pre}], gap: 1, same: [number]}
+
+  - id: ru-accusative
+    title: я вижу маму
+    meaning: {en: "the accusative: the direct object", pt: "o acusativo: o objeto direto"}
+    intro:
+      en: |
+        The direct object takes the **accusative**. Feminines in **-а / -я** change to **-у / -ю**: **мама → маму**, **неделя → неделю**. Masculine and neuter **things** stay as they are: **Я вижу стол / окно**. Masculine **people and animals** take the genitive form: **Я вижу брата**. After **в / на** for motion (*where to?*), also the accusative: **Я иду в школу.**
+      pt: |
+        O objeto direto vai para o **acusativo**. Femininos em **-а / -я** mudam para **-у / -ю**: **мама → маму**, **неделя → неделю**. **Coisas** masculinas e neutras ficam iguais: **Я вижу стол / окно**. **Pessoas e animais** masculinos tomam a forma do genitivo: **Я вижу брата**. Depois de **в / на** com movimento (*para onde?*), também acusativo: **Я иду в школу.**
+    mistakes:
+    - wrong: Я люблю мама.
+      right: Я люблю маму.
+      why: {en: "Object of люблю: accusative.", pt: "Objeto de люблю: acusativo."}
+    examples:
+    - [Я люблю маму., I love Mum., Amo minha mãe., маму]
+    - [Он читает газету., He's reading the newspaper., Ele está lendo o jornal., газету]
+    - [Мы идём в школу., We're going to school., Estamos indo para a escola., школу]
+    match: {seq: [{pos: verb, tense: [pres, past]}, {pos: noun, case: acc, gender: f}], near: 1, gap: 1, same: [number]}
+
+- title: {en: Numbers, pt: Números}
+  lessons:
+  - id: ru-numbers
+    title: один, два, пять
+    meaning: {en: "numbers and the noun after them", pt: "números e o substantivo depois deles"}
+    intro:
+      en: |
+        **один / одна / одно** agrees like an adjective. After **два / две, три, четыре** the noun is in the **genitive singular**: **два стола**, **три книги**. From **пять** on, the **genitive plural**: **пять столов**, **десять книг**. Compound numbers follow their last word: **двадцать один стол**, **двадцать два стола**, **двадцать пять столов**.
+      pt: |
+        **один / одна / одно** concorda como adjetivo. Depois de **два / две, три, четыре** o substantivo vai para o **genitivo singular**: **два стола**, **три книги**. De **пять** em diante, **genitivo plural**: **пять столов**, **десять книг**. Números compostos seguem a última palavra: **двадцать один стол**, **двадцать два стола**, **двадцать пять столов**.
+    table:
+      head: {en: [Number, Noun, Case], pt: [Número, Substantivo, Caso]}
+      rows:
+      - [один, стол, {en: nominative, pt: nominativo}]
+      - [два / три / четыре, стола, {en: genitive singular, pt: genitivo singular}]
+      - [пять … двадцать, столов, {en: genitive plural, pt: genitivo plural}]
+    mistakes:
+    - wrong: пять стола
+      right: пять столов
+      why: {en: "From five: genitive plural.", pt: "Do cinco em diante: genitivo plural."}
+    examples:
+    - [У меня два брата., I have two brothers., Tenho dois irmãos., брата]
+    - [Мне двадцать лет., I'm twenty years old., Tenho vinte anos., лет]
+    match: {seq: [{word: [два, две, три, четыре, пять, шесть, семь, восемь, девять, десять, двадцать, сто, сколько, много, несколько]}, {pos: noun}], gap: 1, same: [case]}

@@ -172,3 +172,8 @@ it('trail: what follows the word (a comma before a relative clause)', () => {
   blocks[0].token.trail = undefined;
   expect(matchRule(blocks, { seq: [{ pos: 'noun', trail: ',' }, { word: ['der'] }], gap: 1 })).toBe(null);
 });
+it('unknown: a word the dictionary does not have (Russian gerunds in the core lexicon)', () => {
+  const blocks = [{ token: { surface: 'улыбаясь' }, candidates: [] }, { token: { surface: 'дом' }, candidates: [{ analysis: { pos: 'noun' } }] }];
+  expect(matchRule(blocks, { seq: [{ re: 'ясь$', unknown: true }] })).toEqual({ span: [0, 1], gap: 0 });
+  expect(matchRule(blocks, { seq: [{ re: 'ом$', unknown: true }] })).toBe(null);
+});

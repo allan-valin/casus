@@ -1,0 +1,110 @@
+id: B1
+topics:
+
+- title: {en: The plural cases, pt: Os casos no plural}
+  lessons:
+  - id: ru-genitive-plural
+    title: столов, книг, окон
+    meaning: {en: "the genitive plural", pt: "o genitivo plural"}
+    intro:
+      en: |
+        The genitive plural is the trickiest form: masculine hard stems **-ов** (**столов**), soft stems and hushers **-ей** (**дней, ножей**), stems in **-й** **-ев** (**музеев**); feminine and neuter nouns usually have **no ending** at all (**книга → книг**, **окно → окон**, with a vowel inserted where needed: **девушка → девушек**). It follows numbers from five, **много / мало / сколько / несколько**, and **нет**.
+      pt: |
+        O genitivo plural é a forma mais difícil: masculinos de radical duro **-ов** (**столов**), brandos e chiantes **-ей** (**дней, ножей**), radicais em **-й** **-ев** (**музеев**); femininos e neutros em geral **sem terminação** (**книга → книг**, **окно → окон**, com vogal inserida quando preciso: **девушка → девушек**). Vem depois de números a partir de cinco, de **много / мало / сколько / несколько** e de **нет**.
+    examples:
+    - [У меня много друзей., I have a lot of friends., Tenho muitos amigos., друзей]
+    - [Здесь нет книг., There are no books here., Aqui não há livros., книг]
+    match: {seq: [{pos: noun, case: gen, number: pl}], same: [number]}
+
+  - id: ru-plural-cases
+    title: друзьям, друзьями, о друзьях
+    meaning: {en: "dative, instrumental and prepositional plural", pt: "dativo, instrumental e preposicional plural"}
+    intro:
+      en: |
+        Unlike the singular, the other plural cases are the same for all genders: dative **-ам / -ям**, instrumental **-ами / -ями**, prepositional **-ах / -ях**: **друзьям, друзьями, о друзьях**; **книгам, книгами, о книгах**.
+      pt: |
+        Diferente do singular, os outros casos do plural são iguais para todos os gêneros: dativo **-ам / -ям**, instrumental **-ами / -ями**, preposicional **-ах / -ях**: **друзьям, друзьями, о друзьях**; **книгам, книгами, о книгах**.
+    examples:
+    - [Я пишу письма друзьям., I write letters to my friends., Escrevo cartas para os amigos., друзьям]
+    - [Мы говорили о книгах., We talked about books., Falamos sobre livros., книгах]
+    match: {seq: [{pos: noun, number: pl, case: [dat, ins, pre]}], same: [number]}
+
+- title: {en: "Prefixed motion, 'would', relative clauses", pt: "Movimento com prefixo, condicional, relativas"}
+  lessons:
+  - id: ru-prefixed-motion
+    title: прийти, уйти, войти, выйти
+    meaning: {en: "prefixed verbs of motion", pt: "verbos de movimento com prefixo"}
+    intro:
+      en: |
+        Prefixes give direction: **при-** arrival (**прийти** "arrive"), **у-** departure (**уйти** "leave"), **в-** in (**войти**), **вы-** out (**выйти**), **пере-** across (**перейти**), **под-** up to (**подойти**), **за-** drop in (**зайти**), **от-** away (**отойти**). With **идти** they make perfectives (**прийти / приходить**); with **ехать**, **приехать / приезжать**.
+      pt: |
+        Os prefixos dão direção: **при-** chegada (**прийти** "chegar"), **у-** partida (**уйти** "ir embora"), **в-** para dentro (**войти**), **вы-** para fora (**выйти**), **пере-** através (**перейти**), **под-** aproximação (**подойти**), **за-** passar rapidamente (**зайти**), **от-** afastamento (**отойти**). Com **идти** formam perfectivos (**прийти / приходить**); com **ехать**, **приехать / приезжать**.
+    examples:
+    - ["Когда ты придёшь?", "When will you come?", "Quando você vem?", "придёшь"]
+    - [Он вышел из дома., He left the house., Ele saiu de casa., вышел]
+    match: {seq: [{pos: verb, lemma: "^(при|у|в|во|вы|пере|под|подо|за|до|от|ото|об|обо|про|с|со)(йти|ехать|ходить|езжать|бежать|лететь|нести|вести)$"}], same: [tense]}
+
+  - id: ru-conditional
+    title: бы
+    meaning: {en: "the conditional: past + бы", pt: "o condicional: passado + бы"}
+    intro:
+      en: |
+        **бы** + the **past** form makes the conditional, for any time: **Я бы пошёл** "I would go / would have gone"; **Если бы я знал, я бы сказал.** "If I had known, I would have told you." A polite wish: **Я бы хотел кофе.** "I'd like a coffee."
+      pt: |
+        **бы** + a forma do **passado** faz o condicional, para qualquer tempo: **Я бы пошёл** "eu iria / teria ido"; **Если бы я знал, я бы сказал.** "Se eu soubesse, teria dito." Um pedido educado: **Я бы хотел кофе.** "Eu gostaria de um café."
+    mistakes:
+    - wrong: Если я бы знаю…
+      right: Если бы я знал…
+      why: {en: "бы goes with the past form; in 'if' clauses it follows если.", pt: "бы vai com o passado; na condição vem logo depois de если."}
+    examples:
+    - [Я бы хотел чаю., I'd like some tea., Eu gostaria de um chá., бы]
+    - [Если бы я знал!, If only I had known!, Se eu soubesse!, бы]
+    match: {seq: [{word: [бы, б]}, {pos: verb, tense: past}], near: 2, gap: 1, same: [tense]}
+
+  - id: ru-kotoryj
+    title: который
+    meaning: {en: "relative clauses with который", pt: "orações relativas com который"}
+    intro:
+      en: |
+        **который** "who, which" agrees with its noun in **gender and number**, but takes its **case** from its own clause: **человек, который живёт здесь** "the man who lives here"; **человек, которого я видел** "the man whom I saw"; **книга, о которой я говорил** "the book I spoke about". A comma always separates the clause.
+      pt: |
+        **который** "que, o qual" concorda com o substantivo em **gênero e número**, mas o **caso** vem da sua própria oração: **человек, который живёт здесь** "o homem que mora aqui"; **человек, которого я видел** "o homem que eu vi"; **книга, о которой я говорил** "o livro de que eu falei". A vírgula sempre separa a oração.
+    paradigms:
+    - {word: который, pos: pron, number: sg, label: {en: "который which, who", pt: "который que, o qual"}}
+    examples:
+    - ["Это девушка, которую я люблю.", "This is the girl I love.", "Esta é a moça que eu amo.", "которую"]
+    - ["Где книга, которую я тебе дал?", "Where is the book I gave you?", "Onde está o livro que te dei?", "которую"]
+    match: {seq: [{lemma: "^кото́?рый$"}], same: [number]}
+
+- title: {en: Joining sentences, pt: Ligando frases}
+  lessons:
+  - id: ru-chtoby
+    title: что, чтобы
+    meaning: {en: "что (that) and чтобы (so that, to)", pt: "что (que) e чтобы (para que, para)"}
+    intro:
+      en: |
+        **что** introduces a statement: **Я знаю, что он дома.** **чтобы** introduces purpose or a wish — with the **infinitive** if the subject is the same (**Я пришёл, чтобы помочь** "I came to help"), with the **past** form if it differs (**Я хочу, чтобы ты пришёл** "I want you to come").
+      pt: |
+        **что** introduz uma afirmação: **Я знаю, что он дома.** **чтобы** introduz finalidade ou desejo — com **infinitivo** se o sujeito é o mesmo (**Я пришёл, чтобы помочь** "vim para ajudar"), com a forma do **passado** se é outro (**Я хочу, чтобы ты пришёл** "quero que você venha").
+    mistakes:
+    - wrong: Я хочу, что ты пришёл.
+      right: Я хочу, чтобы ты пришёл.
+      why: {en: "A wish about someone else: чтобы + past.", pt: "Desejo sobre outra pessoa: чтобы + passado."}
+    examples:
+    - ["Я хочу, чтобы ты знал.", "I want you to know.", "Quero que você saiba.", "чтобы"]
+    - ["Я думаю, что он прав.", "I think he's right.", "Acho que ele tem razão.", "что"]
+    match: [{seq: [{word: [чтобы]}, {pos: [verb, pron, noun]}], near: 2, gap: 0, pool: [чтобы, что, если, когда, как]}, {seq: [{lemma: "^(знать|думать|сказать|говорить|понимать|видеть|слышать|надеяться|верить)$"}, {word: [что]}], near: 1, gap: 1, pool: [что, чтобы, если, как]}]
+
+  - id: ru-conjunctions
+    title: потому что, если, когда, хотя
+    meaning: {en: "conjunctions: because, if, when, although", pt: "conjunções: porque, se, quando, embora"}
+    intro:
+      en: |
+        **потому что** because, **так как** since, **поэтому** therefore, **если** if, **когда** when, **хотя** although, **пока** while / until (with **не**), **как только** as soon as, **а** and / but (contrast), **но** but, **или** or, **ли** whether (**Я не знаю, придёт ли он**).
+      pt: |
+        **потому что** porque, **так как** já que, **поэтому** por isso, **если** se, **когда** quando, **хотя** embora, **пока** enquanto / até que (com **не**), **как только** assim que, **а** e / mas (contraste), **но** mas, **или** ou, **ли** se (pergunta indireta: **Я не знаю, придёт ли он**).
+    examples:
+    - ["Я не пришёл, потому что был болен.", "I didn't come because I was ill.", "Não vim porque estava doente.", "потому"]
+    - ["Если хочешь, приходи.", "Come if you like.", "Se quiser, venha.", "Если"]
+    match: {seq: [{word: [потому, поэтому, если, когда, хотя, пока, или, но]}]}
+    pool: [потому, поэтому, если, когда, хотя, пока, но, или]

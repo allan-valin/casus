@@ -1,0 +1,75 @@
+id: B2
+topics:
+
+- title: {en: Participles and gerunds, pt: Particípios e gerúndios}
+  lessons:
+  - id: ru-participles
+    title: читающий, прочитанный
+    meaning: {en: "participles: the one reading, the thing read", pt: "particípios: o que lê, o que foi lido"}
+    intro:
+      en: |
+        Participles are adjectives made from verbs, common in writing: present active **-ущ- / -ющ- / -ащ- / -ящ-** (**читающий** "reading, who reads"), past active **-вш- / -ш-** (**читавший**), present passive **-ем- / -им-** (**любимый** "loved, favourite"), past passive **-нн- / -т-** (**прочитанный** "read", **открытый** "opened"). They agree like adjectives; the short past passive forms the passive: **Книга прочитана.**
+      pt: |
+        Os particípios são adjetivos feitos de verbos, comuns na escrita: presente ativo **-ущ- / -ющ- / -ащ- / -ящ-** (**читающий** "que lê"), passado ativo **-вш- / -ш-** (**читавший**), presente passivo **-ем- / -им-** (**любимый** "amado, preferido"), passado passivo **-нн- / -т-** (**прочитанный** "lido", **открытый** "aberto"). Concordam como adjetivos; a forma curta do passado passivo faz a voz passiva: **Книга прочитана.**
+    examples:
+    - [Это мой любимый фильм., This is my favourite film., Este é o meu filme preferido., любимый]
+    - [Дверь была открыта., The door was open., A porta estava aberta., открыта]
+    match: {seq: [{pos: adj, re: "(ющ|ущ|ащ|ящ|вш|енн|анн|ённ|ем[ыао]|им[ыао])"}], same: [number]}
+
+  - id: ru-gerunds
+    title: читая, прочитав
+    meaning: {en: "gerunds: while doing, having done", pt: "gerúndios: fazendo, tendo feito"}
+    intro:
+      en: |
+        Gerunds (**деепричастия**) are invariable and tell what else the subject does: imperfective **-я / -а** "while doing" (**читая** "while reading"), perfective **-в / -вши** "having done" (**прочитав** "having read"). **Возвращаясь домой, я встретил друга.** "On my way home I met a friend."
+      pt: |
+        Os gerúndios (**деепричастия**) são invariáveis e dizem o que mais o sujeito faz: imperfectivo **-я / -а** "fazendo" (**читая** "lendo"), perfectivo **-в / -вши** "tendo feito" (**прочитав** "tendo lido"). **Возвращаясь домой, я встретил друга.** "Voltando para casa, encontrei um amigo."
+    examples:
+    - ["Он говорил, улыбаясь.", "He spoke smiling.", "Ele falava sorrindo.", "улыбаясь"]
+    - ["Прочитав письмо, она заплакала.", "Having read the letter, she burst into tears.", "Tendo lido a carta, ela começou a chorar.", "Прочитав"]
+    # the core dictionary has no gerunds: words it does not know, with a gerund ending
+    match: {seq: [{re: "(ывая|ясь)$", unknown: true}]}
+
+- title: {en: "Impersonal sentences, negation, particles", pt: "Frases impessoais, negação, partículas"}
+  lessons:
+  - id: ru-impersonal
+    title: мне холодно, надо, можно
+    meaning: {en: "impersonal sentences", pt: "frases impessoais"}
+    intro:
+      en: |
+        Many statements have no subject at all; the person is in the **dative**: **Мне холодно** "I'm cold", **Тебе надо / нужно идти** "you need to go", **Здесь можно курить?** "May one smoke here?", **Нельзя** "it's not allowed / impossible", **Мне кажется** "it seems to me". In the past and future they use **было / будет**: **Мне было скучно.**
+      pt: |
+        Muitas frases não têm sujeito; a pessoa vai no **dativo**: **Мне холодно** "estou com frio", **Тебе надо / нужно идти** "você precisa ir", **Здесь можно курить?** "pode fumar aqui?", **Нельзя** "não pode / é impossível", **Мне кажется** "me parece". No passado e no futuro usam **было / будет**: **Мне было скучно.**
+    examples:
+    - [Мне нужно идти., I have to go., Preciso ir., нужно]
+    - [Здесь нельзя курить., You can't smoke here., Não pode fumar aqui., нельзя]
+    match: {seq: [{word: [надо, нужно, можно, нельзя, холодно, жарко, скучно, страшно, кажется, жаль]}]}
+    pool: [надо, нужно, можно, нельзя, холодно, жарко, скучно, кажется, жаль]
+
+  - id: ru-negatives
+    title: никто не, ничего не
+    meaning: {en: "negative pronouns and double negation", pt: "pronomes negativos e dupla negação"}
+    intro:
+      en: |
+        **никто** nobody, **ничто / ничего** nothing, **нигде** nowhere, **никогда** never, **никакой** no (kind of) — always with **не** on the verb: **Никто не знает.** "Nobody knows." **Я ничего не вижу.** "I don't see anything." With a preposition, it splits the word: **ни с кем** "with nobody".
+      pt: |
+        **никто** ninguém, **ничто / ничего** nada, **нигде** em lugar nenhum, **никогда** nunca, **никакой** nenhum — sempre com **не** no verbo: **Никто не знает.** "Ninguém sabe." **Я ничего не вижу.** "Não vejo nada." Com preposição, a palavra se divide: **ни с кем** "com ninguém".
+    examples:
+    - [Никто не знает., Nobody knows., Ninguém sabe., Никто]
+    - [Я никогда не был в Париже., I've never been to Paris., Nunca estive em Paris., никогда]
+    match: {seq: [{word: [никто, ничего, ничто, нигде, никогда, никуда, никакой, никакая, никакого, никого, никому]}]}
+    pool: [никто, ничего, нигде, никогда, никуда, никакой, никого, никому]
+
+  - id: ru-particles
+    title: же, ли, ведь, -то, -нибудь
+    meaning: {en: "particles that colour a sentence", pt: "partículas que dão o tom"}
+    intro:
+      en: |
+        **же** emphasis (**Это же просто!** "But it's simple!"), **ли** question / whether, **ведь** "after all", **уже** already, **ещё** still / more, **даже** even, **только** only. The suffixes **-то** and **-нибудь** make indefinites: **кто-то** "someone (particular)", **кто-нибудь** "anyone (no matter who)".
+      pt: |
+        **же** ênfase (**Это же просто!** "Mas é simples!"), **ли** pergunta / se, **ведь** "afinal", **уже** já, **ещё** ainda / mais, **даже** até, **только** só. Os sufixos **-то** e **-нибудь** fazem indefinidos: **кто-то** "alguém (determinado)", **кто-нибудь** "alguém (qualquer)".
+    examples:
+    - [Кто-то звонил., Someone called., Alguém ligou., Кто-то]
+    - ["Ты уже поел?", "Have you eaten already?", "Você já comeu?", "уже"]
+    match: {seq: [{word: [же, ведь, уже, ещё, даже, только, кто-то, что-то, где-то, кто-нибудь, что-нибудь, где-нибудь]}]}
+    pool: [же, ведь, уже, ещё, даже, только, кто-то, что-то, кто-нибудь, что-нибудь]

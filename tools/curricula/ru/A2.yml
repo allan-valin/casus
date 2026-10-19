@@ -1,0 +1,232 @@
+id: A2
+topics:
+
+- title: {en: The other cases, pt: Os outros casos}
+  lessons:
+  - id: ru-genitive
+    title: нет времени, у меня есть
+    meaning: {en: "the genitive: of, there is no, having", pt: "o genitivo: de, não há, ter"}
+    intro:
+      en: |
+        The genitive means *of* (**книга брата** "the brother's book") and follows **нет** "there is no" (**нет времени** "there's no time"), quantities (**много людей**), numbers from two on, and many prepositions: **у** (at, by — **у меня есть** "I have", literally "by me there is"), **из** (out of), **от** (from), **до** (until), **без** (without), **для** (for), **после** (after), **около** (near).
+
+        Endings in the singular: masculine and neuter **-а / -я** (**стола, окна**), feminine **-ы / -и** (**мамы, недели**).
+      pt: |
+        O genitivo significa *de* (**книга брата** "o livro do irmão") e vem depois de **нет** "não há" (**нет времени** "não há tempo"), de quantidades (**много людей**), de números a partir de dois e de muitas preposições: **у** (junto de — **у меня есть** "eu tenho", literalmente "junto de mim há"), **из** (de dentro de), **от** (de, da parte de), **до** (até), **без** (sem), **для** (para), **после** (depois de), **около** (perto de).
+
+        Terminações no singular: masculino e neutro **-а / -я** (**стола, окна**), feminino **-ы / -и** (**мамы, недели**).
+    mistakes:
+    - wrong: У меня нет время.
+      right: У меня нет времени.
+      why: {en: "нет takes the genitive.", pt: "нет pede o genitivo."}
+    examples:
+    - [У меня нет времени., I have no time., Não tenho tempo., времени]
+    - [Это книга брата., This is my brother's book., Este é o livro do meu irmão., брата]
+    - [Он приехал из Москвы., He came from Moscow., Ele veio de Moscou., Москвы]
+    match: [{seq: [{word: [нет, без, для, из, от, до, после, около, кроме, вместо, у]}, {pos: noun, case: gen}], gap: 1, same: [number]}, {seq: [{pos: noun}, {pos: noun, case: gen}], gap: 1, same: [number]}]
+
+  - id: ru-dative
+    title: мне нравится, к другу
+    meaning: {en: "the dative: to, for; I like; age", pt: "o dativo: a, para; eu gosto; idade"}
+    intro:
+      en: |
+        The dative is the indirect object (*to, for*): **Я дал книгу брату.** "I gave the book to my brother." It follows **к** (towards) and **по** (along, by): **к другу**, **по улице**, **по телефону**. Russian says *I like* as "it pleases to me": **Мне нравится музыка.** The dative also gives age (**Мне двадцать лет**), need (**Мне нужно**) and feelings (**Мне холодно** "I'm cold").
+
+        Singular endings: masculine and neuter **-у / -ю** (**брату, морю**), feminine **-е / -и** (**маме, тетради**).
+      pt: |
+        O dativo é o objeto indireto (*a, para*): **Я дал книгу брату.** "Dei o livro ao meu irmão." Vem depois de **к** (em direção a) e **по** (ao longo de, por): **к другу**, **по улице**, **по телефону**. O russo diz *eu gosto* como "agrada a mim": **Мне нравится музыка.** O dativo também dá a idade (**Мне двадцать лет**), a necessidade (**Мне нужно**) e as sensações (**Мне холодно** "estou com frio").
+
+        Terminações no singular: masculino e neutro **-у / -ю** (**брату, морю**), feminino **-е / -и** (**маме, тетради**).
+    table:
+      head: {en: [Pronoun, Dative], pt: [Pronome, Dativo]}
+      rows:
+      - [я, мне]
+      - [ты, тебе]
+      - [он / оно, ему]
+      - [она, ей]
+      - [мы, нам]
+      - [вы, вам]
+      - [они, им]
+    mistakes:
+    - wrong: Я нравлюсь музыка.
+      right: Мне нравится музыка.
+      why: {en: "The liker is dative, the thing liked is the subject.", pt: "Quem gosta vai no dativo; a coisa é o sujeito."}
+    examples:
+    - [Мне нравится эта песня., I like this song., Gosto desta música., Мне]
+    - [Позвони маме., Call Mum., Ligue para a mamãe., маме]
+    - [Я иду к другу., I'm going to my friend's., Vou à casa de um amigo., другу]
+    match: [{seq: [{word: [к, ко, по]}, {pos: noun, case: dat}], gap: 1, same: [number]}, {seq: [{word: [мне, тебе, ему, ей, нам, вам, им]}, {word: [нравится, нравятся, нравился, нравилась, нужно, надо, холодно, жарко, скучно, интересно, лет]}], gap: 0, pool: [мне, тебе, ему, ей, нам, вам, им, меня, я]}]
+
+  - id: ru-instrumental
+    title: с другом, ручкой
+    meaning: {en: "the instrumental: with, by means of; becoming", pt: "o instrumental: com, por meio de; tornar-se"}
+    intro:
+      en: |
+        The instrumental tells the means (**писать ручкой** "write with a pen") and follows **с** (together with: **кофе с молоком**), **за** (behind), **под** (under), **над** (above), **перед** (in front of), **между** (between). It is also used for what one is, becomes or works as: **Он хочет стать врачом.** "He wants to become a doctor." **Он работает учителем.**
+
+        Endings: masculine and neuter **-ом / -ем**, feminine **-ой / -ей**; plural **-ами / -ями**.
+      pt: |
+        O instrumental indica o meio (**писать ручкой** "escrever com caneta") e vem depois de **с** (junto com: **кофе с молоком**), **за** (atrás de), **под** (debaixo de), **над** (acima de), **перед** (na frente de), **между** (entre). Também se usa para o que alguém é, se torna ou exerce: **Он хочет стать врачом.** "Ele quer ser médico." **Он работает учителем.**
+
+        Terminações: masculino e neutro **-ом / -ем**, feminino **-ой / -ей**; plural **-ами / -ями**.
+    mistakes:
+    - wrong: кофе с молоко
+      right: кофе с молоком
+      why: {en: "с (with) takes the instrumental.", pt: "с (com) pede o instrumental."}
+    examples:
+    - [Я пью кофе с молоком., I drink coffee with milk., Tomo café com leite., молоком]
+    - [Он хочет стать врачом., He wants to become a doctor., Ele quer ser médico., врачом]
+    - [Пиши ручкой., Write with a pen., Escreva com caneta., ручкой]
+    match: [{seq: [{word: [с, со, за, под, над, перед, между]}, {pos: noun, case: ins}], gap: 1, same: [number]}, {seq: [{lemma: "^(стать|быть|работать|являться|оказаться)$"}, {pos: noun, case: ins}], near: 2, gap: 1, same: [number]}]
+
+- title: {en: Past and future, pt: Passado e futuro}
+  lessons:
+  - id: ru-past
+    title: был, была, было, были
+    meaning: {en: "the past tense: agreement in gender", pt: "o passado: concordância de gênero"}
+    intro:
+      en: |
+        The past is easy to form and agrees with the subject in **gender and number**, not person: drop **-ть** and add **-л, -ла, -ло, -ли**: **читать → он читал, она читала, они читали**. **быть** "to be" has a past: **был, была, было, были** — **Я был дома** (a man), **Я была дома** (a woman).
+      pt: |
+        O passado é fácil de formar e concorda com o sujeito em **gênero e número**, não em pessoa: tire **-ть** e acrescente **-л, -ла, -ло, -ли**: **читать → он читал, она читала, они читали**. **быть** "ser/estar" tem passado: **был, была, было, были** — **Я был дома** (um homem), **Я была дома** (uma mulher).
+    table:
+      head: {en: [Subject, читать, быть], pt: [Sujeito, читать, быть]}
+      rows:
+      - ["я, ты, он (m.)", читал, был]
+      - ["я, ты, она (f.)", читала, была]
+      - ["оно (n.)", читало, было]
+      - ["мы, вы, они (pl.)", читали, были]
+    mistakes:
+    - wrong: "(Anna) Я был дома."
+      right: Я была дома.
+      why: {en: "A woman speaking: feminine -ла.", pt: "Mulher falando: feminino -ла."}
+    examples:
+    - [Вчера я был дома., I was at home yesterday., Ontem eu estava em casa., был]
+    - [Она читала книгу., She was reading a book., Ela lia um livro., читала]
+    - [Мы смотрели фильм., We watched a film., Assistimos a um filme., смотрели]
+    match: {seq: [{pos: verb, tense: past}], same: [tense, aspect]}
+
+  - id: ru-future
+    title: буду читать, прочитаю
+    meaning: {en: "the future: буду + infinitive, or a perfective", pt: "o futuro: буду + infinitivo, ou um perfectivo"}
+    intro:
+      en: |
+        Two futures, by aspect: **imperfective** verbs use **буду, будешь, будет…** + infinitive (**Я буду читать** "I'll be reading / I'll read (for a while)"); **perfective** verbs simply take present endings, which give them a future meaning (**Я прочитаю** "I'll read (it through)").
+      pt: |
+        Dois futuros, conforme o aspecto: verbos **imperfectivos** usam **буду, будешь, будет…** + infinitivo (**Я буду читать** "vou ler / estarei lendo"); verbos **perfectivos** só tomam as terminações do presente, que para eles valem como futuro (**Я прочитаю** "vou ler (até o fim)").
+    table:
+      head: {en: [Person, быть (future)], pt: [Pessoa, быть (futuro)]}
+      rows:
+      - [я, буду]
+      - [ты, будешь]
+      - [он / она, будет]
+      - [мы, будем]
+      - [вы, будете]
+      - [они, будут]
+    mistakes:
+    - wrong: Я буду прочитать.
+      right: Я прочитаю.
+      why: {en: "буду goes only with imperfective infinitives.", pt: "буду só vai com infinitivo imperfectivo."}
+    examples:
+    - [Завтра я буду работать., I'll be working tomorrow., Amanhã vou trabalhar., буду]
+    - [Я тебе позвоню., I'll call you., Vou te ligar., позвоню]
+    match: [{seq: [{word: [буду, будешь, будет, будем, будете, будут]}, {pos: verb, mood: inf}], near: 2, gap: 0, pool: [буду, будешь, будет, будем, будете, будут, был, была]}, {seq: [{pos: verb, tense: fut, aspect: pf}], same: [tense]}]
+
+  - id: ru-aspect
+    title: делать / сделать
+    meaning: {en: "aspect: imperfective and perfective", pt: "aspecto: imperfectivo e perfectivo"}
+    intro:
+      en: |
+        Almost every verb has two partners: the **imperfective** (process, repetition, the action in general) and the **perfective** (one completed action, a result). **Я читал книгу** "I was reading / I read the book (for a while)"; **Я прочитал книгу** "I read the book (to the end)". Perfectives are often made with a prefix (**делать / сделать**, **писать / написать**) or by a change of suffix (**решать / решить**, **давать / дать**).
+
+        Perfectives have no present: their present forms mean the future.
+      pt: |
+        Quase todo verbo tem dois parceiros: o **imperfectivo** (processo, repetição, a ação em geral) e o **perfectivo** (uma ação concluída, um resultado). **Я читал книгу** "eu lia / estive lendo o livro"; **Я прочитал книгу** "li o livro (até o fim)". O perfectivo muitas vezes se forma com prefixo (**делать / сделать**, **писать / написать**) ou com troca de sufixo (**решать / решить**, **давать / дать**).
+
+        O perfectivo não tem presente: suas formas de presente significam futuro.
+    table:
+      head: {en: [Imperfective, Perfective, Meaning], pt: [Imperfectivo, Perfectivo, Significado]}
+      rows:
+      - [делать, сделать, {en: do, pt: fazer}]
+      - [писать, написать, {en: write, pt: escrever}]
+      - [читать, прочитать, {en: read, pt: ler}]
+      - [решать, решить, {en: decide, pt: decidir}]
+      - [давать, дать, {en: give, pt: dar}]
+      - [говорить, сказать, {en: say, pt: dizer}]
+    examples:
+    - [Я уже сделал уроки., I've already done my homework., Já fiz a lição., сделал]
+    - [Он каждый день читает газету., He reads the paper every day., Ele lê o jornal todo dia., читает]
+    match: {seq: [{pos: verb, aspect: pf, tense: past}], same: [tense]}
+
+  - id: ru-motion
+    title: идти / ходить, ехать / ездить
+    meaning: {en: "verbs of motion: one way or around", pt: "verbos de movimento: numa direção ou em geral"}
+    intro:
+      en: |
+        Verbs of motion come in pairs: **идти** "go (on foot), in one direction, now" against **ходить** "go regularly, there and back, in general"; **ехать / ездить** "go by vehicle". **Я иду в школу** "I'm on my way to school"; **Я хожу в школу** "I go to school (every day)". Also **бежать / бегать** (run), **лететь / летать** (fly), **нести / носить** (carry).
+      pt: |
+        Os verbos de movimento vêm em pares: **идти** "ir (a pé), numa direção, agora" diante de **ходить** "ir com frequência, ida e volta, em geral"; **ехать / ездить** "ir de veículo". **Я иду в школу** "estou indo para a escola"; **Я хожу в школу** "vou à escola (todo dia)". Também **бежать / бегать** (correr), **лететь / летать** (voar), **нести / носить** (carregar).
+    paradigms:
+    - {word: идти, pos: verb, tense: pres, mood: ind, label: {en: "идти go (one way)", pt: "идти ir (numa direção)"}}
+    - {word: ехать, pos: verb, tense: pres, mood: ind, label: {en: "ехать go by vehicle", pt: "ехать ir de veículo"}}
+    examples:
+    - ["Куда ты идёшь?", "Where are you going?", "Aonde você vai?", "идёшь"]
+    - [Я часто хожу в кино., I often go to the cinema., Vou muito ao cinema., хожу]
+    match: {seq: [{pos: verb, lemma: "^(идти|ходить|ехать|ездить|бежать|бегать|лететь|летать|нести|носить|вести|водить|плыть|плавать)$"}], same: [tense]}
+
+- title: {en: "Adjectives, -ся verbs, commands, comparison", pt: "Adjetivos, verbos em -ся, ordens, comparação"}
+  lessons:
+  - id: ru-adjectives
+    title: новый, новая, новое, новые
+    meaning: {en: "adjectives and their cases", pt: "adjetivos e seus casos"}
+    intro:
+      en: |
+        Adjectives agree with their noun in gender, number and case: **новый дом**, **новая книга**, **новое окно**, **новые книги**; **в новом доме**, **с новой книгой**. After **г к х ж ш щ ч** the spelling rules apply (**русский**, **хороший**). Soft adjectives have **-ний**: **синий, синяя, синее, синие** (dark blue).
+      pt: |
+        O adjetivo concorda com o substantivo em gênero, número e caso: **новый дом**, **новая книга**, **новое окно**, **новые книги**; **в новом доме**, **с новой книгой**. Depois de **г к х ж ш щ ч** valem as regras de ortografia (**русский**, **хороший**). Os adjetivos brandos têm **-ний**: **синий, синяя, синее, синие** (azul-escuro).
+    paradigms:
+    - {word: новый, pos: adj, number: sg, label: {en: "новый new", pt: "новый novo"}}
+    examples:
+    - [Это очень интересная книга., This is a very interesting book., Este é um livro muito interessante., интересная]
+    - [Я живу в большом городе., I live in a big city., Moro numa cidade grande., большом]
+    match: {seq: [{pos: adj}, {pos: noun}], gap: 0, same: [number]}
+
+  - id: ru-reflexive
+    title: -ся
+    meaning: {en: "verbs in -ся", pt: "verbos em -ся"}
+    intro:
+      en: |
+        **-ся** (after a vowel **-сь**) makes a verb reflexive or intransitive: **мыть** "wash" → **мыться** "wash oneself"; **начинать** "begin (something)" → **начинаться** "begin". Many common verbs always have it: **нравиться** (please), **смеяться** (laugh), **учиться** (study), **надеяться** (hope), **бояться** (fear).
+      pt: |
+        **-ся** (depois de vogal **-сь**) torna o verbo reflexivo ou intransitivo: **мыть** "lavar" → **мыться** "lavar-se"; **начинать** "começar (algo)" → **начинаться** "começar". Muitos verbos comuns sempre o têm: **нравиться** (agradar), **смеяться** (rir), **учиться** (estudar), **надеяться** (esperar, ter esperança), **бояться** (ter medo).
+    examples:
+    - [Я учусь в университете., I study at the university., Estudo na universidade., учусь]
+    - [Фильм начинается в семь., The film starts at seven., O filme começa às sete., начинается]
+    match: {seq: [{pos: verb, re: "(ся|сь)$", mood: ind}], same: [tense]}
+
+  - id: ru-imperative
+    title: читай! говорите!
+    meaning: {en: "the imperative", pt: "o imperativo"}
+    intro:
+      en: |
+        From the present stem: after a vowel **-й** (**читать → читай, читайте**), otherwise **-и** (**говорить → говори, говорите**; **писать → пиши**) or **-ь** when the stress is on the stem (**встать → встань**). **-те** makes it plural or polite. Requests usually use the imperfective (**Садитесь!** "Sit down!"); negative commands too (**Не говори!**).
+      pt: |
+        A partir do radical do presente: depois de vogal **-й** (**читать → читай, читайте**), senão **-и** (**говорить → говори, говорите**; **писать → пиши**) ou **-ь** quando o acento cai no radical (**встать → встань**). **-те** faz o plural ou a forma educada. Pedidos costumam usar o imperfectivo (**Садитесь!** "Sentem-se!"); ordens negativas também (**Не говори!**).
+    examples:
+    - [Скажи мне правду., Tell me the truth., Me diga a verdade., Скажи]
+    - [Подождите минуту., Wait a minute., Esperem um minuto., Подождите]
+    match: {seq: [{pos: verb, mood: imp}], same: [mood]}
+
+  - id: ru-comparison
+    title: больше, лучше, самый
+    meaning: {en: "comparison", pt: "comparação"}
+    intro:
+      en: |
+        The short comparative ends in **-ее** (**интересный → интереснее**, **быстрый → быстрее**), or **-е** with a consonant change for many common adjectives: **большой → больше**, **маленький → меньше**, **хороший → лучше**, **плохой → хуже**, **дорогой → дороже**. *Than* is **чем** or the genitive: **Он старше меня / чем я.** The superlative is **самый** + adjective: **самый большой город**.
+      pt: |
+        O comparativo curto termina em **-ее** (**интересный → интереснее**, **быстрый → быстрее**), ou **-е** com troca de consoante em muitos adjetivos comuns: **большой → больше**, **маленький → меньше**, **хороший → лучше**, **плохой → хуже**, **дорогой → дороже**. *Do que* é **чем** ou o genitivo: **Он старше меня / чем я.** O superlativo é **самый** + adjetivo: **самый большой город**.
+    examples:
+    - [Москва больше Петербурга., Moscow is bigger than St Petersburg., Moscou é maior que São Petersburgo., больше]
+    - [Сегодня лучше., Today is better., Hoje está melhor., лучше]
+    match: {seq: [{word: [больше, меньше, лучше, хуже, дальше, ближе, выше, ниже, старше, младше, моложе, дороже, дешевле, интереснее, быстрее, медленнее, легче, труднее, проще, сложнее, чаще, раньше, позже]}]}
+    pool: [больше, меньше, лучше, хуже, дальше, ближе, старше, дороже, дешевле, быстрее, легче]

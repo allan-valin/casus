@@ -38,7 +38,9 @@ async function main(code) {
   const lexicon = createLexicon({ manifest, codes: lang.inventory.codes, script: lang.script,
     fetchFile: async (name) => json(name), fetchShard: async (name) => json(`forms/${name}.json`) });
   const lemmas = await json('lemmas.json');
-  const lemmaOf = (id) => lemmas[id]?.headword;
+  // Russian headwords carry stress marks (идти́), which lemma patterns leave out; Greek accents are spelling and stay
+  const unstress = (w) => (code === 'ru' && w ? w.normalize('NFD').replace(/[\u0300\u0301]/gu, '').normalize('NFC') : w);
+  const lemmaOf = (id) => unstress(lemmas[id]?.headword);
   const dictOf = (id) => lemmas[id]?.dict_form ?? lemmas[id]?.headword;
   // compare words as the reader keys them: Arabic bare letters, Latin without macrons, else lower case
   // (Greek keeps its accents and breathings — ὦ is not ᾧ, ἦν is not ἤν — only grave = acute and ς = σ)
@@ -147,7 +149,10 @@ async function main(code) {
           const real = all.filter((f) => attested.has(norm(f)));
           // too few attested (a name): at least no archaic Latin endings (-ad/-ed/-od ablative, -ai genitive, -om)
           const plain = lang.code === 'la' ? all.filter((f) => !/([aeiou]d|ai|om|eis)$/u.test(f)) : all;
-          wrong = (real.length >= 2 ? real : plain).slice(0, 5);
+          wrong = (real.length >= 2 ? real : plain);
+          // one per spelling: stress or accent variants of a form (дня, дня́) are one choice, and never the answer's
+          const seenW = new Set([norm(answer)]);
+          wrong = wrong.filter((w) => { const k = norm(w).normalize('NFD').replace(/[\u0300\u0301]/gu, ''); if (seenW.has(k) || k === norm(answer).normalize('NFD').replace(/[\u0300\u0301]/gu, '')) return false; seenW.add(k); return true; }).slice(0, 5);
           // Latin: the paradigm writes u for consonantal v; follow the sentence when it writes v
           if (lang.code === 'la' && /v/i.test(text)) wrong = followSpelling(answer, row[0], wrong.map(consonantV));
           if (lang.code === 'grc') wrong = wrong.map((w) => w.replace(/σ$/u, 'ς'));   // the paradigm data writes final sigma as σ

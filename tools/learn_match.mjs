@@ -36,6 +36,7 @@ export function fits(block, cond, lemmaOf = null, dictOf = null, norm = lower) {
   if (cond.re && !new RegExp(cond.re, 'iu').test(norm === lower ? block.token.surface : norm(block.token.surface))) return false;
   if (cond.noTrail && block.token.trail) return false;
   if (cond.trail && ![...cond.trail].some((ch) => (block.token.trail ?? '').includes(ch))) return false;   // any of these marks
+  if (cond.unknown && (block.candidates ?? []).length) return false;
   const morph = FEATURES.some((f) => cond[f] != null) || cond.not || cond.lemma || cond.dict;
   if (!morph) return true;
   const cands = block.candidates ?? [];

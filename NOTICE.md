@@ -165,6 +165,9 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
   (audio and pictures left out; vendor/grimm/, tools/learn_de.py). The CEFR levels, topic order, Portuguese summaries
   and Tatoeba rules are Casus's (tools/curricula/de/plan.yml). Exercises also from Tatoeba's German sentences
   (CC BY 2.0 FR). COERLL's textbook *Deutsch im Blick* (CC BY 4.0) was checked and is the same project's.
+- Russian lessons (35, A1–B2): **written for Casus** (tools/curricula/ru/), English and Portuguese. Mezhdu nami, the
+  main open Russian textbook, is CC BY-NC-ND and was not used; tables with stress marks are generated from the
+  Wiktionary-based paradigms (CC BY-SA). Exercises from Tatoeba's Russian sentences (CC BY 2.0 FR).
 
 ## Document import
 

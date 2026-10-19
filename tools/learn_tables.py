@@ -8,9 +8,9 @@ import json
 import re
 from pathlib import Path
 
-CASES = ["nom", "gen", "dat", "acc", "abl", "loc", "ins", "voc"]
+CASES = ["nom", "gen", "dat", "acc", "ins", "abl", "loc", "pre", "voc"]
 CASE_NAME = {"nom": ("nominative", "nominativo"), "gen": ("genitive", "genitivo"), "dat": ("dative", "dativo"), "acc": ("accusative", "acusativo"),
-             "abl": ("ablative", "ablativo"), "loc": ("locative", "locativo"), "ins": ("instrumental", "instrumental"), "voc": ("vocative", "vocativo")}
+             "abl": ("ablative", "ablativo"), "loc": ("locative", "locativo"), "ins": ("instrumental", "instrumental"), "pre": ("prepositional", "preposicional"), "voc": ("vocative", "vocativo")}
 NUM_NAME = {"sg": ("singular", "singular"), "pl": ("plural", "plural"), "du": ("dual", "dual")}
 GEN_NAME = {"m": ("masculine", "masculino"), "f": ("feminine", "feminino"), "n": ("neuter", "neutro")}
 PERSON_NAME = {"1": ("1st person", "1ª pessoa"), "2": ("2nd person", "2ª pessoa"), "3": ("3rd person", "3ª pessoa")}
@@ -23,7 +23,8 @@ def _both(pair):
 def _rows(data: Path, word: str, pos: str):
     codes = json.loads((data / "codes.json").read_text(encoding="utf-8"))
     lemmas = json.loads((data / "lemmas.json").read_text(encoding="utf-8"))
-    lid = next(k for k, v in lemmas.items() if v["headword"] == word and v.get("pos") == pos)
+    bare = lambda w: re.sub(r"[\u0300\u0301]", "", __import__("unicodedata").normalize("NFD", w))   # noqa: E731  (Russian headwords carry stress marks)
+    lid = next(k for k, v in lemmas.items() if bare(v["headword"]) == bare(word) and v.get("pos") == pos)
     raw = json.loads((data / "paradigms" / f"{int(lid) % 512}.json").read_text(encoding="utf-8"))[lid]
     out, prev = [], None
     for row in raw:
@@ -80,8 +81,17 @@ def paradigm_table(data: Path, spec: dict, attested: dict | None = None, final_s
     else:
         number = spec.get("number", "sg")
         cols = [g for g in ("m", "f", "n") if any(a.get("gender") == g for _, a in forms)]
-        cond = lambda c, g: {"case": c, "number": number, "gender": g, **({"degree": spec["degree"]} if "degree" in spec else {})}   # noqa: E731
-    names = NUM_NAME if pos == "noun" else GEN_NAME
+        # Russian marks gender only in the singular (number "x") and has one plural for all: m, f, n, plural
+        genderless_plural = number == "sg" and any(a.get("number") == "x" and a.get("gender") in ("m", "f", "n") for _, a in forms)
+        if genderless_plural and any(a.get("number") == "p" or a.get("number") == "pl" for _, a in forms):
+            cols = cols + ["pl"]
+        deg = {"degree": spec["degree"]} if "degree" in spec else {}
+
+        def cond(c, g):
+            if g == "pl":
+                return {"case": c, "number": "pl", **deg}
+            return {"case": c, "number": "x" if genderless_plural else number, "gender": g, **deg}
+    names = NUM_NAME if pos == "noun" else {**GEN_NAME, "pl": NUM_NAME["pl"]}
     rows = []
     for c in CASES:
         if c == "voc" and pos in ("pron", "det"):
