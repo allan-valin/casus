@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { matchRule, formPool } from '../../tools/learn_match.mjs';
+import { matchRule, formPool, fits } from '../../tools/learn_match.mjs';
 
 const blk = (surface, ...analyses) => ({ token: { surface }, candidates: analyses.map((analysis) => ({ analysis })) });
 // Јас ќе го видам Том.
@@ -184,10 +184,10 @@ it('Hangul spelling variants swap letters inside the syllable block (decomposed,
 
 import { preferAttested } from '../../tools/learn_match.mjs';
 
-it('preferAttested keeps the generated forms seen in real text when there are two, else all of them', () => {
+it('preferAttested keeps only the generated forms seen in real text', () => {
   const seen = new Set(['puhuttiin', 'puhuisi']);
   expect(preferAttested(['puhutiin', 'puhuttiin', 'puhuisi'], seen)).toEqual(['puhuttiin', 'puhuisi']);
-  expect(preferAttested(['puhutiin', 'puhuttiin'], seen)).toEqual(['puhutiin', 'puhuttiin']);
+  expect(preferAttested(['πρέπω', 'πρέπεις'], seen)).toEqual([]);
 });
 
 import { looksLikeName } from '../../tools/learn_match.mjs';
@@ -207,4 +207,11 @@ it('dropMarked leaves out wrong answers with a marked ending unless the answer h
   const re = '(ni|si|mme|nne|nsa|nsä)$';
   expect(dropMarked(['elämä', 'elämieni', 'elämillämme', 'elämässä'], 'elämää', re)).toEqual(['elämä', 'elämässä']);
   expect(dropMarked(['ystävälläni', 'ystävälle'], 'ystävälleni', re)).toEqual(['ystävälläni', 'ystävälle']);
+});
+
+it('re also matches the word as written when the key strips accents (Modern Greek -άς)', () => {
+  const strip = (w) => w.normalize('NFD').replace(/\p{M}/gu, '').normalize('NFC').toLocaleLowerCase();
+  const block = { token: { surface: 'Μιλάς' }, candidates: [] };
+  expect(fits(block, { re: 'άς$' }, null, null, strip)).toBe(true);
+  expect(fits(block, { re: 'ας$' }, null, null, strip)).toBe(true);
 });

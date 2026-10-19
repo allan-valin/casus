@@ -33,7 +33,12 @@ function fitsAnalysis(a, cond, lemmaOf, dictOf) {
 
 export function fits(block, cond, lemmaOf = null, dictOf = null, norm = lower) {
   if (cond.word && !cond.word.map(norm).includes(norm(block.token.surface))) return false;
-  if (cond.re && !new RegExp(cond.re, 'iu').test(norm === lower ? block.token.surface : norm(block.token.surface))) return false;
+  // (on the key and on the word as written: a key may strip accents the pattern names, Modern Greek -άς)
+  if (cond.re) {
+    const re = new RegExp(cond.re, 'iu');
+    const s = block.token.surface;
+    if (!re.test(norm === lower ? s : norm(s)) && !re.test(s.normalize('NFC').toLocaleLowerCase())) return false;
+  }
   if (cond.noTrail && block.token.trail) return false;
   if (cond.trail && ![...cond.trail].some((ch) => (block.token.trail ?? '').includes(ch))) return false;   // any of these marks
   if (cond.unknown && (block.candidates ?? []).length) return false;
@@ -185,11 +190,10 @@ export function followSpelling(written, row, wrong) {
   return wrong.map((w) => [...w].map((ch, i) => { const d = at.find(([k, , from]) => k === i && ch.toLowerCase() === from); return d ? d[1] : ch; }).join(''));
 }
 
-/** generated wrong answers (suffix or prefix variants) that real text has: those, when there are two; else all of them
- * (a lesson asks for it with `attested: true` — Finnish -ttiin, not the invented -tiin) */
+/** generated wrong answers (suffix or prefix variants) that real text has (a lesson asks for it with
+ * `attested: true` — Finnish -ttiin, not the invented -tiin; Greek πρέπεις from the impersonal πρέπει is never seen) */
 export function preferAttested(forms, seen, norm = lower) {
-  const real = forms.filter((f) => seen.has(norm(f)));
-  return real.length >= 2 ? real : forms;
+  return forms.filter((f) => seen.has(norm(f)));
 }
 
 /** a name in an inflecting language: capitalised and starting with one of the course's names (Tomille, Marin) */

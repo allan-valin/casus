@@ -181,6 +181,8 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
 - Finnish lessons (46, A1–B2) **written for Casus** after Iso suomen kielioppi (VISK, Kotus, CC BY 4.0) and
   Wikipedia's Finnish grammar (CC BY-SA), in the order of the usual first- and second-year courses; tables from
   Casus's Wiktionary paradigms; sentences Tatoeba (CC BY 2.0 FR).
+- Modern Greek lessons (28, A1–B1) **written for Casus** after Wikipedia's Modern Greek grammar (CC BY-SA); tables
+  from Casus's Wiktionary paradigms; sentences Tatoeba (CC BY 2.0 FR).
 
 ## Document import
 

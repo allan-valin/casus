@@ -1,0 +1,303 @@
+id: A1
+topics:
+
+- title: {en: Letters and sounds, pt: Letras e sons}
+  lessons:
+  - id: el-alphabet
+    title: Αλφάβητο
+    meaning: {en: "the alphabet, the accent and the five spellings of i", pt: "o alfabeto, o acento e as cinco grafias do i"}
+    intro:
+      en: |
+        Greek has 24 letters and five vowel **sounds**: *a, e, i, o, u*. Several letters and pairs spell the same sound, and spelling has to be learnt with the word:
+
+        - *i*: **ι, η, υ, ει, οι** (**σπίτι** house, **μητέρα** mother, **ύπνος** sleep, **είμαι** I am, **οικογένεια** family)
+        - *o*: **ο, ω** (**σπίτι του** his house, **ώρα** hour)
+        - *e*: **ε, αι** (**έχω**, **και** and)
+        - *u*: **ου** (**ουρανός** sky)
+
+        Consonant pairs: **μπ** = b (**μπαμπάς**), **ντ** = d (**ντομάτα**), **γκ / γγ** = g (**γκαράζ**), **τσ** = ts, **τζ** = dz. **γ** before *e, i* sounds like *y* (**γεια**). Every word of two or more syllables carries one written **accent** (**´**) on the stressed vowel: **μήλο** (apple) vs **μηλό** (cheekbone, rare). **;** is the question mark.
+      pt: |
+        O grego tem 24 letras e cinco **sons** de vogal: *a, e, i, o, u*. Várias letras e pares escrevem o mesmo som, e a grafia se aprende com a palavra:
+
+        - *i*: **ι, η, υ, ει, οι** (**σπίτι** casa, **μητέρα** mãe, **ύπνος** sono, **είμαι** sou, **οικογένεια** família)
+        - *o*: **ο, ω** (**σπίτι του** a casa dele, **ώρα** hora)
+        - *e*: **ε, αι** (**έχω** tenho, **και** e)
+        - *u*: **ου** (**ουρανός** céu)
+
+        Pares de consoantes: **μπ** = b (**μπαμπάς**), **ντ** = d (**ντομάτα**), **γκ / γγ** = g (**γκαράζ**), **τσ** = ts, **τζ** = dz. **γ** antes de *e, i* soa como *i* semivogal (**γεια**). Toda palavra de duas sílabas ou mais leva um **acento** escrito (**´**) na vogal tônica. **;** é o ponto de interrogação.
+    mistakes:
+    - wrong: σπήτι
+      right: σπίτι
+      why: {en: "Same sound, one spelling: learn the word as written.", pt: "Mesmo som, uma grafia só: aprenda a palavra como se escreve."}
+    examples:
+    - [Το σπίτι είναι μεγάλο., The house is big., A casa é grande., σπίτι]
+    - [Η μητέρα μου είναι εδώ., My mother is here., Minha mãe está aqui., μητέρα]
+    match: {seq: [{pos: [noun, adj], re: "[ιηυίήύοωόώ]"}]}
+    swaps: {ι: [η, υ], η: [ι, υ], υ: [ι, η], ί: [ή, ύ], ή: [ί, ύ], ύ: [ί, ή], ο: [ω], ω: [ο], ό: [ώ], ώ: [ό]}
+
+- title: {en: Articles and gender, pt: Artigos e gênero}
+  lessons:
+  - id: el-articles
+    title: ο, η, το
+    meaning: {en: "the article and the three genders", pt: "o artigo e os três gêneros"}
+    intro:
+      en: |
+        Every noun is **masculine, feminine or neuter**, and the article shows it: **ο** άντρας (the man), **η** γυναίκα (the woman), **το** παιδί (the child). The ending usually tells:
+
+        - masculine: **-ος, -ας, -ης** (ο δρόμος, ο πατέρας, ο μαθητής)
+        - feminine: **-α, -η** (η μητέρα, η αδελφή), some **-ος** (η οδός)
+        - neuter: **-ο, -ι, -μα** (το βιβλίο, το σπίτι, το γράμμα)
+
+        Plural: **οι** (masculine and feminine), **τα** (neuter). The indefinite article is **ένας, μία (μια), ένα**. Greek uses the article more than English, also with names: **ο Γιάννης**, and with general nouns: **Μου αρέσει ο καφές** "I like coffee".
+      pt: |
+        Todo substantivo é **masculino, feminino ou neutro**, e o artigo mostra: **ο** άντρας (o homem), **η** γυναίκα (a mulher), **το** παιδί (a criança). A terminação em geral diz:
+
+        - masculino: **-ος, -ας, -ης** (ο δρόμος, ο πατέρας, ο μαθητής)
+        - feminino: **-α, -η** (η μητέρα, η αδελφή), alguns **-ος** (η οδός)
+        - neutro: **-ο, -ι, -μα** (το βιβλίο, το σπίτι, το γράμμα)
+
+        Plural: **οι** (masculino e feminino), **τα** (neutro). O artigo indefinido é **ένας, μία (μια), ένα**. O grego usa o artigo como o português, também com nomes: **ο Γιάννης**, e com substantivos em geral: **Μου αρέσει ο καφές** "Gosto de café".
+    paradigms:
+    - {word: ο, pos: det, number: sg, label: {en: "ο the (singular)", pt: "ο o, a (singular)"}}
+    mistakes:
+    - wrong: το γυναίκα
+      right: η γυναίκα
+      why: {en: "γυναίκα ends in -α: feminine.", pt: "γυναίκα termina em -α: feminino."}
+    examples:
+    - [Ο καφές είναι ζεστός., The coffee is hot., O café está quente., Ο]
+    - [Η πόρτα είναι ανοιχτή., The door is open., A porta está aberta., Η]
+    - [Το παιδί παίζει., The child is playing., A criança está brincando., Το]
+    # (τη and την are both right before most consonants: τη is never the gap, and never a wrong answer)
+    match: {seq: [{pos: det, lemma: "^ο$", re: "^(?!τη$)"}, {pos: noun}], gap: 0, same: [case, number]}
+    pool: [ο, η, το, οι, τα, τον, την, του, της, τους, τις, των]
+
+- title: {en: Verbs in the present, pt: Verbos no presente}
+  lessons:
+  - id: el-eimai
+    title: είμαι, είσαι, είναι
+    meaning: {en: "είμαι 'to be' and the personal pronouns", pt: "είμαι 'ser, estar' e os pronomes pessoais"}
+    intro:
+      en: |
+        **εγώ** I, **εσύ** you, **αυτός / αυτή / αυτό** he / she / it, **εμείς** we, **εσείς** you (plural and polite), **αυτοί / αυτές / αυτά** they. The verb ending already says who, so pronouns are used only for emphasis.
+
+        **είμαι, είσαι, είναι, είμαστε, είστε (είσαστε), είναι** — 3rd singular and plural are the same. Past: **ήμουν, ήσουν, ήταν, ήμασταν, ήσασταν, ήταν**.
+      pt: |
+        **εγώ** eu, **εσύ** você, **αυτός / αυτή / αυτό** ele / ela / isso, **εμείς** nós, **εσείς** vocês (e o tratamento formal), **αυτοί / αυτές / αυτά** eles / elas. A terminação do verbo já diz quem é, por isso o pronome só aparece para dar ênfase.
+
+        **είμαι, είσαι, είναι, είμαστε, είστε (είσαστε), είναι** — a 3ª do singular e a do plural são iguais. Passado: **ήμουν, ήσουν, ήταν, ήμασταν, ήσασταν, ήταν**.
+    paradigms:
+    - {word: είμαι, pos: verb, tense: pres, mood: ind, label: {en: "είμαι to be", pt: "είμαι ser, estar"}}
+    examples:
+    - [Είμαι από τη Βραζιλία., I'm from Brazil., Sou do Brasil., Είμαι]
+    - ["Πού είσαι;", "Where are you?", "Onde você está?", "είσαι"]
+    - [Είμαστε φίλοι., We're friends., Somos amigos., Είμαστε]
+    match: {seq: [{lemma: "^είμαι$", mood: ind}], same: [tense, mood]}
+
+  - id: el-verbs-a
+    title: γράφω, γράφεις
+    meaning: {en: "the present of verbs in -ω (first conjugation)", pt: "o presente dos verbos em -ω (primeira conjugação)"}
+    intro:
+      en: |
+        Verbs stressed on the stem, ending in **-ω**: **γράφω** (write), **μένω** (live), **διαβάζω** (read), **δουλεύω** (work), **πίνω** (drink).
+
+        | | |
+        |---|---|
+        | γράφ**ω** | γράφ**ουμε** |
+        | γράφ**εις** | γράφ**ετε** |
+        | γράφ**ει** | γράφ**ουν(ε)** |
+
+        The Greek present covers both *I write* and *I'm writing*.
+      pt: |
+        Verbos com acento no radical, terminados em **-ω**: **γράφω** (escrever), **μένω** (morar), **διαβάζω** (ler), **δουλεύω** (trabalhar), **πίνω** (beber).
+
+        | | |
+        |---|---|
+        | γράφ**ω** | γράφ**ουμε** |
+        | γράφ**εις** | γράφ**ετε** |
+        | γράφ**ει** | γράφ**ουν(ε)** |
+
+        O presente grego cobre *escrevo* e *estou escrevendo*.
+    paradigms:
+    - {word: γράφω, pos: verb, tense: pres, mood: ind, label: {en: "γράφω to write", pt: "γράφω escrever"}}
+    mistakes:
+    - wrong: εσύ γράφει
+      right: εσύ γράφεις
+      why: {en: "2nd person singular: -εις.", pt: "2ª pessoa do singular: -εις."}
+    examples:
+    - ["Πού μένεις;", "Where do you live?", "Onde você mora?", "μένεις"]
+    - [Διαβάζω ένα βιβλίο., I'm reading a book., Estou lendo um livro., Διαβάζω]
+    - [Δουλεύουμε πολύ., We work a lot., Trabalhamos muito., Δουλεύουμε]
+    match:
+    - {seq: [{pos: verb, mood: ind, tense: pres, re: "(ω|εις|ει|ουμε|ετε|ουν|ουνε)$", not: {lemma: "(ώ|άω|ομαι|είμαι|μαι)$"}}], suffixes: [ω, εις, ει, ουμε, ετε, ουν], attested: true}
+
+  - id: el-verbs-b
+    title: μιλάω, μιλάς; μπορώ, μπορείς
+    meaning: {en: "verbs stressed on the ending: -άω and -ώ (second conjugation)", pt: "verbos com acento na terminação: -άω e -ώ (segunda conjugação)"}
+    intro:
+      en: |
+        Verbs stressed on the last syllable come in two groups:
+
+        | -άω (μιλάω speak) | -ώ (μπορώ can) |
+        |---|---|
+        | μιλ**άω** / μιλ**ώ** | μπορ**ώ** |
+        | μιλ**άς** | μπορ**είς** |
+        | μιλ**άει** / μιλ**ά** | μπορ**εί** |
+        | μιλ**άμε** / μιλ**ούμε** | μπορ**ούμε** |
+        | μιλ**άτε** | μπορ**είτε** |
+        | μιλ**άνε** / μιλ**ούν** | μπορ**ούν(ε)** |
+
+        **-άω**: αγαπάω (love), ρωτάω (ask), ξεχνάω (forget), πεινάω (be hungry). **-ώ**: μπορώ, ζω (live), οδηγώ (drive), τηλεφωνώ (phone), προσπαθώ (try).
+      pt: |
+        Os verbos com acento na última sílaba formam dois grupos:
+
+        | -άω (μιλάω falar) | -ώ (μπορώ poder) |
+        |---|---|
+        | μιλ**άω** / μιλ**ώ** | μπορ**ώ** |
+        | μιλ**άς** | μπορ**είς** |
+        | μιλ**άει** / μιλ**ά** | μπορ**εί** |
+        | μιλ**άμε** / μιλ**ούμε** | μπορ**ούμε** |
+        | μιλ**άτε** | μπορ**είτε** |
+        | μιλ**άνε** / μιλ**ούν** | μπορ**ούν(ε)** |
+
+        **-άω**: αγαπάω (amar), ρωτάω (perguntar), ξεχνάω (esquecer), πεινάω (ter fome). **-ώ**: μπορώ, ζω (viver), οδηγώ (dirigir), τηλεφωνώ (telefonar), προσπαθώ (tentar).
+    examples:
+    - ["Μιλάς ελληνικά;", "Do you speak Greek?", "Você fala grego?", "Μιλάς"]
+    - [Δεν μπορώ να έρθω., I can't come., Não posso ir., μπορώ]
+    - [Σ' αγαπάω., I love you., Eu te amo., αγαπάω]
+    match:
+    - {seq: [{pos: verb, mood: ind, re: "(άω|άς|άει|άμε|άτε|άνε)$"}], suffixes: [άω, άς, άει, άμε, άτε, άνε], attested: true}
+    - {seq: [{pos: verb, mood: ind, re: "[^ά](είς|εί|ούμε|είτε)$"}], suffixes: [ώ, είς, εί, ούμε, είτε, ούν], attested: true}
+
+  - id: el-negation
+    title: δεν, μην, όχι
+    meaning: {en: "negation: δεν, μην, όχι", pt: "negação: δεν, μην, όχι"}
+    intro:
+      en: |
+        **δεν (δε)** before a verb in statements and questions: **Δεν ξέρω.** "I don't know." **μην (μη)** after **να**, in commands and wishes: **Μην ανησυχείς!** "Don't worry!", **Θέλω να μην έρθει.** "I want him not to come." **όχι** is *no* and negates other words: **Όχι, ευχαριστώ.** "No, thank you." **ναι** is *yes*. The **-ν** stays before vowels and κ π τ ξ ψ μπ ντ γκ τσ τζ.
+      pt: |
+        **δεν (δε)** antes do verbo em afirmações e perguntas: **Δεν ξέρω.** "Não sei." **μην (μη)** depois de **να**, em ordens e desejos: **Μην ανησυχείς!** "Não se preocupe!", **Θέλω να μην έρθει.** "Quero que ele não venha." **όχι** é *não* como resposta e nega outras palavras: **Όχι, ευχαριστώ.** "Não, obrigado." **ναι** é *sim*. O **-ν** fica antes de vogal e de κ π τ ξ ψ μπ ντ γκ τσ τζ.
+    examples:
+    - [Δεν ξέρω., I don't know., Não sei., Δεν]
+    - [Μην ανησυχείς!, Don't worry!, Não se preocupe!, Μην]
+    match: {seq: [{word: [δεν, δε, μην, μη]}, {pos: verb}], gap: 0}
+    pool: [δεν, μην, όχι, να, θα]
+
+  - id: el-questions
+    title: τι, ποιος, πού, πότε
+    meaning: {en: "question words", pt: "palavras interrogativas"}
+    intro:
+      en: |
+        **τι** what, **ποιος / ποια / ποιο** who, which (declines), **πού** where (with accent; **που** without it is *that, who*), **από πού** where from, **πότε** when, **πώς** how, **γιατί** why (also *because*), **πόσο / πόσα / πόσοι** how much, how many. Yes/no questions keep the word order and only change the intonation: **Είσαι Έλληνας;**
+      pt: |
+        **τι** o que, **ποιος / ποια / ποιο** quem, qual (declina), **πού** onde (com acento; **που** sem acento é *que*), **από πού** de onde, **πότε** quando, **πώς** como, **γιατί** por que (também *porque*), **πόσο / πόσα / πόσοι** quanto, quantos. Perguntas de sim ou não mantêm a ordem das palavras e só mudam a entonação: **Είσαι Έλληνας;**
+    examples:
+    - ["Τι κάνεις;", "How are you?", "Como vai?", "Τι"]
+    - ["Πού είναι η τουαλέτα;", "Where's the toilet?", "Onde fica o banheiro?", "Πού"]
+    - ["Γιατί δεν ήρθες;", "Why didn't you come?", "Por que você não veio?", "Γιατί"]
+    match: {seq: [{word: [τι, ποιος, ποια, ποιο, ποιοι, ποιες, πού, πότε, πώς, γιατί, πόσο, πόσα, πόσοι, πόσες, πόση]}], gap: 0}
+    pool: [τι, ποιος, πού, πότε, πώς, γιατί, πόσο]
+
+- title: {en: Nouns and adjectives, pt: Substantivos e adjetivos}
+  lessons:
+  - id: el-accusative
+    title: τον καφέ, τη μητέρα
+    meaning: {en: "the accusative: object and after prepositions", pt: "o acusativo: objeto e depois de preposições"}
+    intro:
+      en: |
+        Greek has four cases: **nominative** (subject), **accusative** (object, and after every preposition: **σε, από, με, για, χωρίς**), **genitive** (*of*, A2) and **vocative** (calling someone). In the accusative, masculines drop the **-ς**: **ο φίλος → τον φίλο**, **ο πατέρας → τον πατέρα**, **ο μαθητής → τον μαθητή**; feminines and neuters look like the nominative singular, and only the article changes: **η μητέρα → τη(ν) μητέρα**, **το σπίτι → το σπίτι**.
+      pt: |
+        O grego tem quatro casos: **nominativo** (sujeito), **acusativo** (objeto, e depois de toda preposição: **σε, από, με, για, χωρίς**), **genitivo** (*de*, A2) e **vocativo** (para chamar alguém). No acusativo os masculinos perdem o **-ς**: **ο φίλος → τον φίλο**, **ο πατέρας → τον πατέρα**, **ο μαθητής → τον μαθητή**; femininos e neutros ficam iguais ao nominativo singular, e só o artigo muda: **η μητέρα → τη(ν) μητέρα**, **το σπίτι → το σπίτι**.
+    paradigms:
+    - {word: φίλος, pos: noun, label: {en: "φίλος (m.) friend", pt: "φίλος (m.) amigo"}}
+    - {word: πατέρας, pos: noun, label: {en: "πατέρας (m.) father", pt: "πατέρας (m.) pai"}}
+    examples:
+    - [Περιμένω τον φίλο μου., I'm waiting for my friend., Estou esperando meu amigo., φίλο]
+    - [Πίνω καφέ., I drink coffee., Bebo café., καφέ]
+    match: {seq: [{pos: noun, case: acc, gender: m}], same: [number]}
+
+  - id: el-plural
+    title: οι φίλοι, τα σπίτια
+    meaning: {en: "the plural of nouns", pt: "o plural dos substantivos"}
+    intro:
+      en: |
+        | singular | plural |
+        |---|---|
+        | ο φίλ**ος** | οι φίλ**οι** |
+        | ο πατέρ**ας**, ο μαθητ**ής** | οι πατέρ**ες**, οι μαθητ**ές** |
+        | η μητέρ**α**, η αδελφ**ή** | οι μητέρ**ες**, οι αδελφ**ές** |
+        | το βιβλί**ο** | τα βιβλί**α** |
+        | το σπίτ**ι** | τα σπίτ**ια** |
+        | το γράμ**μα** | τα γράμ**ματα** |
+
+        Accusative plural: masculines in **-ος → -ους** (τους φίλους); the rest as the nominative, with **τους / τις / τα**.
+      pt: |
+        | singular | plural |
+        |---|---|
+        | ο φίλ**ος** | οι φίλ**οι** |
+        | ο πατέρ**ας**, ο μαθητ**ής** | οι πατέρ**ες**, οι μαθητ**ές** |
+        | η μητέρ**α**, η αδελφ**ή** | οι μητέρ**ες**, οι αδελφ**ές** |
+        | το βιβλί**ο** | τα βιβλί**α** |
+        | το σπίτ**ι** | τα σπίτ**ια** |
+        | το γράμ**μα** | τα γράμ**ματα** |
+
+        Acusativo plural: masculinos em **-ος → -ους** (τους φίλους); os outros como o nominativo, com **τους / τις / τα**.
+    examples:
+    - [Τα παιδιά παίζουν., The children are playing., As crianças estão brincando., παιδιά]
+    - [Οι φίλοι μου είναι εδώ., My friends are here., Meus amigos estão aqui., φίλοι]
+    match: {seq: [{pos: det, lemma: "^ο$", number: pl}, {pos: noun, number: pl}], gap: 1, same: [case]}
+
+  - id: el-adjectives
+    title: μεγάλος, μεγάλη, μεγάλο
+    meaning: {en: "adjectives agree in gender, number and case", pt: "o adjetivo concorda em gênero, número e caso"}
+    intro:
+      en: |
+        Most adjectives end in **-ος, -η, -ο** (or **-ος, -α, -ο** after a vowel: **ωραίος, ωραία, ωραίο**) and take the noun's gender, number and case: **ο μεγάλος σκύλος, η μεγάλη πόλη, το μεγάλο σπίτι, τα μεγάλα σπίτια**. They go before the noun. Others: **-ύς, -ιά, -ύ** (**βαθύς** deep), **-ής, -ής, -ές** (**ακριβής** exact).
+      pt: |
+        A maioria dos adjetivos termina em **-ος, -η, -ο** (ou **-ος, -α, -ο** depois de vogal: **ωραίος, ωραία, ωραίο**) e toma o gênero, número e caso do substantivo: **ο μεγάλος σκύλος, η μεγάλη πόλη, το μεγάλο σπίτι, τα μεγάλα σπίτια**. Vêm antes do substantivo. Outros: **-ύς, -ιά, -ύ** (**βαθύς** fundo), **-ής, -ής, -ές** (**ακριβής** exato).
+    paradigms:
+    - {word: μεγάλος, pos: adj, number: sg, label: {en: "μεγάλος big", pt: "μεγάλος grande"}}
+    examples:
+    - [Έχω ένα μεγάλο σκύλο., I have a big dog., Tenho um cachorro grande., μεγάλο]
+    - [Είναι μια ωραία μέρα., It's a beautiful day., É um dia bonito., ωραία]
+    match: {seq: [{pos: adj}, {pos: noun}], gap: 0, same: [number]}
+
+  - id: el-possessive
+    title: το σπίτι μου
+    meaning: {en: "possessives: μου, σου, του, της, μας, σας, τους", pt: "possessivos: μου, σου, του, της, μας, σας, τους"}
+    intro:
+      en: |
+        Possession is a short pronoun **after** the noun, with the article before it: **το σπίτι μου** my house, **η μητέρα σου** your mother, **ο φίλος του / της** his / her friend, **τα παιδιά μας** our children, **ο δάσκαλός σας** your teacher, **το αυτοκίνητό τους** their car. A noun stressed on the third-last syllable takes a second accent: **ο δάσκαλός μου**.
+      pt: |
+        A posse é um pronome curto **depois** do substantivo, com o artigo antes: **το σπίτι μου** minha casa, **η μητέρα σου** sua mãe, **ο φίλος του / της** o amigo dele / dela, **τα παιδιά μας** nossos filhos, **ο δάσκαλός σας** o professor de vocês, **το αυτοκίνητό τους** o carro deles. Substantivo com acento na antepenúltima ganha um segundo acento: **ο δάσκαλός μου**.
+    examples:
+    - [Αυτό είναι το σπίτι μου., This is my house., Esta é a minha casa., μου]
+    - ["Πώς είναι η μητέρα σου;", "How is your mother?", "Como está a sua mãe?", "σου"]
+    match: {seq: [{pos: noun}, {word: [μου, σου, του, της, μας, σας, τους]}], gap: 1}
+    pool: [μου, σου, του, της, μας, σας, τους]
+
+  - id: el-se-article
+    title: στο, στη, στον
+    meaning: {en: "σε + article: στο, στη(ν), στον, στα, στις, στους", pt: "σε + artigo: στο, στη(ν), στον, στα, στις, στους"}
+    intro:
+      en: |
+        **σε** (in, at, to) joins the article: **σε + το = στο**, **σε + τη(ν) = στη(ν)**, **σε + τον = στον**, **στα, στις, στους**: **Μένω στην Αθήνα.** "I live in Athens." **Πάω στο σχολείο.** "I'm going to school." The article must agree with the noun after it.
+      pt: |
+        **σε** (em, a, para) se junta ao artigo: **σε + το = στο**, **σε + τη(ν) = στη(ν)**, **σε + τον = στον**, **στα, στις, στους**: **Μένω στην Αθήνα.** "Moro em Atenas." **Πάω στο σχολείο.** "Vou para a escola." O artigo concorda com o substantivo que vem depois.
+    examples:
+    - [Μένω στην Αθήνα., I live in Athens., Moro em Atenas., στην]
+    - [Πάμε στο σινεμά!, Let's go to the cinema!, Vamos ao cinema!, στο]
+    match: {seq: [{word: [σ]}, {word: [το, την, τον, τα, τις, τους]}], gap: 1}
+    pool: [το, την, τον, τα, τις, τους]
+
+  - id: el-numbers
+    title: ένα, δύο, τρία
+    meaning: {en: "numbers 1–100", pt: "os números de 1 a 100"}
+    intro:
+      en: |
+        **1 ένα** (ένας, μία), **2 δύο**, **3 τρία** (τρεις), **4 τέσσερα** (τέσσερις), **5 πέντε**, **6 έξι**, **7 επτά / εφτά**, **8 οκτώ / οχτώ**, **9 εννέα / εννιά**, **10 δέκα**, **11 έντεκα**, **12 δώδεκα**, **13 δεκατρία**, **20 είκοσι**, **30 τριάντα**, **40 σαράντα**, **50 πενήντα**, **100 εκατό**. **1, 3, 4** agree with the noun's gender: **ένας φίλος, μία φίλη; τρεις φίλοι, τρία παιδιά**.
+      pt: |
+        **1 ένα** (ένας, μία), **2 δύο**, **3 τρία** (τρεις), **4 τέσσερα** (τέσσερις), **5 πέντε**, **6 έξι**, **7 επτά / εφτά**, **8 οκτώ / οχτώ**, **9 εννέα / εννιά**, **10 δέκα**, **11 έντεκα**, **12 δώδεκα**, **13 δεκατρία**, **20 είκοσι**, **30 τριάντα**, **40 σαράντα**, **50 πενήντα**, **100 εκατό**. **1, 3, 4** concordam com o gênero do substantivo: **ένας φίλος, μία φίλη; τρεις φίλοι, τρία παιδιά**.
+    examples:
+    - [Έχω δύο αδέλφια., I have two siblings., Tenho dois irmãos., δύο]
+    match: {seq: [{word: [δύο, τρία, τρεις, τέσσερα, τέσσερις, πέντε, έξι, επτά, εφτά, οκτώ, οχτώ, εννέα, εννιά, δέκα, είκοσι, εκατό]}, {pos: noun}], gap: 0}
+    pool: [δύο, τρία, τρεις, τέσσερα, πέντε, έξι, δέκα]

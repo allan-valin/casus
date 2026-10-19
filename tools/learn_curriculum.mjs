@@ -175,6 +175,10 @@ async function main(code) {
       else if (prefixes) wrong = prefixVariants(answer, prefixes);
       else if (suffixes) wrong = suffixVariants(answer, suffixes);
       if ((prefixes || suffixes) && !swaps && (rule.attested ?? l.attested)) wrong = preferAttested(wrong, attested, norm);
+      // nothing real to offer: no question (a form left with only invented neighbours)
+      if ((prefixes || suffixes) && !swaps && (rule.attested ?? l.attested) && !wrong.length) { seen.set(key, (seen.get(key) ?? 1) - 1); continue; }
+      // one choice per word, whatever its capital (Ο / ο), and never the answer itself
+      if (wrong) { const low = new Set([answer.toLocaleLowerCase()]); wrong = wrong.filter((w) => { const k = w.toLocaleLowerCase(); if (low.has(k)) return false; low.add(k); return true; }); }
       else if (rulePool) wrong = rulePool.filter((w) => norm(w) !== norm(answer));
       // romanisation: of every word, or (a script without vowels) only when every word's vowels are certain
       const words = blocks.filter((b) => /[\p{L}\p{N}]/u.test(b.token.surface));
@@ -259,7 +263,11 @@ async function main(code) {
   let total = 0;
   for (const l of lessons) {
     const mine = found.get(l.id);
-    const answers = [...new Set(mine.map((m) => m.answer))];
+    // one per word whatever its capital (Ο, ο): the lower-case spelling when the sentences have it (German nouns keep
+    // theirs); the quiz gives each choice the answer's capital
+    const byLow = new Map();
+    for (const m of mine) { const k = m.answer.toLocaleLowerCase(); if (!byLow.has(k) || m.answer === k) byLow.set(k, m.answer); }
+    const answers = [...byLow.values()];
     const f = path.join(dataDir, 'learn', `q-${l.id}.json`);
     const file = JSON.parse(await readFile(f, 'utf8'));
     // (questions the builder made from a book — Grimm Grammar's exercises, source 'book' — stay)
@@ -278,7 +286,7 @@ async function main(code) {
     for (const m of mine) {
       const pt = m.pt ? { pt: m.pt } : {};
       file.qs.push({ type: 'gap', source: m.src, furi: m.gap, roman: m.gapRoman, ...(m.en ? { en: m.en } : {}), ...pt, answer: m.answer,
-        pool: m.wrong ?? answers.filter((a) => a !== m.answer).slice(0, 30) });
+        pool: m.wrong ?? answers.filter((a) => a.toLocaleLowerCase() !== m.answer.toLocaleLowerCase()).slice(0, 30) });
       if (m.en) file.qs.push({ type: 'translate', source: m.src, furi: [[m.shown, null]], roman: m.roman, tok: m.tok, answer: m.en, ...pt });
     }
     // wrong answers for the lesson's own gap questions, when the lesson has no word list: the answers its sentences give

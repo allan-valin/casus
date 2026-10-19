@@ -1,0 +1,87 @@
+id: B1
+topics:
+
+- title: {en: Perfect tenses and the passive past, pt: Tempos perfeitos e o passado passivo}
+  lessons:
+  - id: el-perfect
+    title: έχω γράψει
+    meaning: {en: "the perfect: έχω + -ει", pt: "o perfeito: έχω + -ει"}
+    intro:
+      en: |
+        **έχω** + the **aorist stem in -ει** (the form of θα γράψει, frozen): **Έχω γράψει.** "I have written." **Έχεις πάει στην Ελλάδα;** "Have you been to Greece?" Pluperfect with **είχα**: **Είχα φύγει.** "I had left." Greek uses the perfect less than English: a finished event with a time is aorist: **Έφαγα πριν μια ώρα.**
+      pt: |
+        **έχω** + o **radical do aoristo em -ει** (a forma de θα γράψει, fixa): **Έχω γράψει.** "Já escrevi." **Έχεις πάει στην Ελλάδα;** "Você já foi à Grécia?" Mais-que-perfeito com **είχα**: **Είχα φύγει.** "Eu tinha saído." O grego usa o perfeito menos que o inglês: evento concluído com tempo marcado vai para o aoristo: **Έφαγα πριν μια ώρα.**
+    examples:
+    - ["Έχεις πάει στην Ελλάδα;", "Have you been to Greece?", "Você já foi à Grécia?", "πάει"]
+    - [Δεν έχω φάει ακόμα., I haven't eaten yet., Ainda não comi., φάει]
+    match: {seq: [{lemma: "^έχω$", mood: ind}, {pos: verb, re: "ει$"}], near: 1, gap: 1, same: [person, number]}
+
+  - id: el-passive-past
+    title: γράφτηκε, ειπώθηκε
+    meaning: {en: "the passive aorist: -θηκα, -τηκα", pt: "o aoristo passivo: -θηκα, -τηκα"}
+    intro:
+      en: |
+        The passive (and -ομαι) verbs form their aorist with **-θηκα / -τηκα / -στηκα**: **γράφομαι → γράφτηκα**, **κάθομαι → κάθισα** (irregular), **σκέφτομαι → σκέφτηκα**, **χάνομαι → χάθηκα**, **γεννιέμαι → γεννήθηκα**. Endings **-α, -ες, -ε, -αμε, -ατε, -αν**, accent rule as the active: **γεννήθηκα, γεννηθήκαμε**. **Γεννήθηκα στο Σάο Πάολο.** "I was born in São Paulo."
+      pt: |
+        Os verbos passivos (e em -ομαι) formam o aoristo com **-θηκα / -τηκα / -στηκα**: **γράφομαι → γράφτηκα**, **κάθομαι → κάθισα** (irregular), **σκέφτομαι → σκέφτηκα**, **χάνομαι → χάθηκα**, **γεννιέμαι → γεννήθηκα**. Terminações **-α, -ες, -ε, -αμε, -ατε, -αν**, regra de acento igual à ativa: **γεννήθηκα, γεννηθήκαμε**. **Γεννήθηκα στο Σάο Πάολο.** "Nasci em São Paulo."
+    examples:
+    - [Γεννήθηκα στη Βραζιλία., I was born in Brazil., Nasci no Brasil., Γεννήθηκα]
+    - [Το βιβλίο γράφτηκε το 1950., The book was written in 1950., O livro foi escrito em 1950., γράφτηκε]
+    match: {seq: [{pos: verb, mood: ind, tense: past, re: "(θηκ|τηκ|θήκ|τήκ)"}], same: [person, number]}
+
+- title: {en: Complex sentences, pt: Períodos compostos}
+  lessons:
+  - id: el-relative
+    title: που, ο οποίος
+    meaning: {en: "relative clauses: που", pt: "orações relativas: που"}
+    intro:
+      en: |
+        **που** (no accent) is the all-purpose relative *who, which, that*: **ο άνθρωπος που ήρθε** "the man who came", **το βιβλίο που διαβάζω** "the book I'm reading". When the relative is an object or follows a preposition, formal Greek uses **ο οποίος, η οποία, το οποίο** (declined): **η πόλη στην οποία μένω** "the city in which I live". Don't confuse with **πού** "where?".
+      pt: |
+        **που** (sem acento) é o relativo para tudo, *que, quem, o qual*: **ο άνθρωπος που ήρθε** "o homem que veio", **το βιβλίο που διαβάζω** "o livro que estou lendo". Quando o relativo é objeto ou vem depois de preposição, o grego formal usa **ο οποίος, η οποία, το οποίο** (declinado): **η πόλη στην οποία μένω** "a cidade em que moro". Não confunda com **πού** "onde?".
+    examples:
+    - [Ο άνθρωπος που ήρθε είναι γιατρός., The man who came is a doctor., O homem que veio é médico., που]
+    match: {seq: [{pos: noun}, {word: [που]}, {pos: verb}], near: 1, gap: 1}
+    pool: [που, πού, ότι, όπου, όταν]
+
+  - id: el-conjunctions
+    title: ότι, επειδή, όταν, αν
+    meaning: {en: "that, because, when, if", pt: "que, porque, quando, se"}
+    intro:
+      en: |
+        **ότι / πως** that (after *say, think, know*), **επειδή / γιατί** because, **όταν** when, **αν** if (with θα in the main clause: **Αν βρέξει, θα μείνω σπίτι.**), **ενώ** while, **αλλά** but, **ή** or, **και** and, **μόλις** as soon as, **ώστε** so that, **πριν (να)** before, **αφού** since / after.
+      pt: |
+        **ότι / πως** que (depois de *dizer, achar, saber*), **επειδή / γιατί** porque, **όταν** quando, **αν** se (com θα na principal: **Αν βρέξει, θα μείνω σπίτι.** "Se chover, fico em casa."), **ενώ** enquanto, **αλλά** mas, **ή** ou, **και** e, **μόλις** assim que, **ώστε** de modo que, **πριν (να)** antes, **αφού** já que / depois que.
+    examples:
+    - [Νομίζω ότι έχεις δίκιο., I think you're right., Acho que você tem razão., ότι]
+    - [Αν βρέξει θα μείνω σπίτι., If it rains I'll stay at home., Se chover fico em casa., Αν]
+    match: {seq: [{word: [ότι, πως, επειδή, όταν, αν, ενώ, αλλά, μόλις, ώστε, αφού]}], gap: 0}
+    pool: [ότι, επειδή, όταν, αν, ενώ, αλλά, μόλις]
+
+- title: {en: Non-finite forms, pt: Formas nominais}
+  lessons:
+  - id: el-gerund
+    title: γράφοντας, μιλώντας
+    meaning: {en: "the gerund -οντας / -ώντας", pt: "o gerúndio -οντας / -ώντας"}
+    intro:
+      en: |
+        **-οντας** (stem-stressed verbs) and **-ώντας** (end-stressed): *while doing, by doing*: **Έμαθα ελληνικά διαβάζοντας.** "I learnt Greek by reading." **Μιλώντας στο τηλέφωνο, οδηγούσε.** "He was driving while talking on the phone." It never changes.
+      pt: |
+        **-οντας** (verbos com acento no radical) e **-ώντας** (com acento na terminação): *fazendo, ao fazer*: **Έμαθα ελληνικά διαβάζοντας.** "Aprendi grego lendo." **Μιλώντας στο τηλέφωνο, οδηγούσε.** "Ele dirigia falando ao telefone." Nunca muda.
+    examples:
+    - [Έμαθα ελληνικά διαβάζοντας., I learnt Greek by reading., Aprendi grego lendo., διαβάζοντας]
+    match:
+    - {seq: [{pos: verb, re: "οντας$"}], suffixes: [οντας, ώντας, ει, ω], attested: true}
+    - {seq: [{pos: verb, re: "ώντας$"}], suffixes: [ώντας, οντας, άει, ώ], attested: true}
+
+  - id: el-participle
+    title: κλεισμένος, γραμμένος
+    meaning: {en: "the past participle -μένος", pt: "o particípio passado -μένος"}
+    intro:
+      en: |
+        **-μένος, -μένη, -μένο** is a passive adjective, agreeing like one: **Το μαγαζί είναι κλειστό / κλεισμένο.** "The shop is closed." **Η πόρτα είναι ανοιγμένη.** **Είμαι κουρασμένος.** "I'm tired." **Το γράμμα είναι γραμμένο στα ελληνικά.** Some verbs: **γράφω → γραμμένος, δένω → δεμένος, κουράζω → κουρασμένος, ντύνω → ντυμένος**.
+      pt: |
+        **-μένος, -μένη, -μένο** é um adjetivo passivo e concorda como adjetivo: **Η πόρτα είναι ανοιγμένη.** "A porta está aberta." **Είμαι κουρασμένος.** "Estou cansado." **Το γράμμα είναι γραμμένο στα ελληνικά.** "A carta está escrita em grego." Alguns verbos: **γράφω → γραμμένος, δένω → δεμένος, κουράζω → κουρασμένος, ντύνω → ντυμένος**.
+    examples:
+    - [Είμαι πολύ κουρασμένος., I'm very tired., Estou muito cansado., κουρασμένος]
+    match: {seq: [{pos: [verb, adj], re: "μέν(ος|η|ο|οι|ες|α)$"}], suffixes: [μένος, μένη, μένο, μένοι, μένες, μένα], attested: true}
