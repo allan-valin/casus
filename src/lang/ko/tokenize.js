@@ -7,7 +7,9 @@ import { PARTICLES } from './particles.js';
 
 const WORD = /[가-힣ㄱ-ㆎ\p{L}\p{N}]+/gu;
 const BY_LENGTH = Object.keys(PARTICLES).sort((a, b) => b.length - a.length);
-const PRONOUNS = ['저', '나', '너', '우리', '저희', '그', '그녀', '이것', '그것', '저것', '여기', '거기', '저기', '누구', '무엇', '뭐', '당신'];
+// the copula after a noun (학생이에요 "is a student", 그거야 "it's that"), longest first; 야 and 예요 follow a vowel
+const COPULA = ['이었어요', '였어요', '이었다', '였다', '이에요', '입니다', '이세요', '이니까', '예요', '이야', '이다', '이고', '야'];
+export const PRONOUNS = ['저', '나', '너', '우리', '저희', '그', '그녀', '이것', '그것', '저것', '여기', '거기', '저기', '누구', '무엇', '뭐', '당신'];
 
 export function tokenize(sentenceText) {
   const tokens = [];
@@ -27,16 +29,24 @@ export async function splitWords(tokens, lexicon) {
   for (const t of tokens) {
     if (t.kind !== 'word') continue;
     keys.add(t.key);
-    for (const p of BY_LENGTH) if (t.key.endsWith(p) && t.key.length > p.length) keys.add(t.key.slice(0, -p.length));
+    for (const p of [...BY_LENGTH, ...COPULA]) if (t.key.endsWith(p) && t.key.length > p.length) keys.add(t.key.slice(0, -p.length));
   }
   const found = await lexicon.lookupAll([...keys]);
   const known = (k) => (found.get(k) ?? []).some((a) => a.pos !== 'particle');
+  const nominal = (k) => (found.get(k) ?? []).some((a) => a.pos === 'noun' || a.pos === 'pron');
   const out = [];
   for (const t of tokens) {
     // the common pronouns are split from their particle even where the dictionary lists the whole (저는, 제가…)
     const pronounFirst = PRONOUNS.some((pr) => t.key.startsWith(pr) && t.key.length > pr.length && PARTICLES[t.key.slice(pr.length)] !== undefined);
     if (t.kind !== 'word' || (known(t.key) && !pronounFirst)) { out.push(t); continue; }
     const p = BY_LENGTH.find((x) => t.key.endsWith(x) && t.key.length > x.length && known(t.key.slice(0, -x.length)));
+    const cop = !p && COPULA.find((x) => t.key.endsWith(x) && t.key.length > x.length && nominal(t.key.slice(0, -x.length)));
+    if (cop) {
+      const cut = t.surface.length - cop.length;
+      out.push({ ...t, surface: t.surface.slice(0, cut), key: t.key.slice(0, -cop.length), end: t.start + cut });
+      out.push({ surface: cop, kind: 'word', key: cop, start: t.start + cut, end: t.end, enclitic: null, copula: true });
+      continue;
+    }
     if (!p) { out.push(t); continue; }
     const cut = t.surface.length - p.length;
     out.push({ ...t, surface: t.surface.slice(0, cut), key: t.key.slice(0, -p.length), end: t.start + cut });

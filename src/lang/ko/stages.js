@@ -4,6 +4,7 @@ import { PARTICLES } from './particles.js';
 
 const withReason = (c, r) => (c.reasons.includes(r) ? c : { ...c, reasons: [...c.reasons, r] });
 const NOMINAL = new Set(['noun', 'pron', 'num']);
+import { PRONOUNS } from './tokenize.js';
 
 export function particleStage(blocks) {
   const out = blocks.slice();
@@ -60,5 +61,22 @@ export function adverbStage(blocks) {
     const marked = next && next.token.start === b.token.end && next.candidates.some((c) => c.analysis.pos === 'particle');
     if (marked || !b.candidates.some((c) => c.analysis.pos === 'adv') || !b.candidates.some((c) => c.analysis.pos === 'noun') || b.pinned) return b;
     return { ...b, candidates: b.candidates.filter((c) => c.analysis.pos === 'adv').map((c) => withReason(c, 'no particle after it, so the adverb')) };
+  });
+}
+
+/* The copula split off a noun (학생 + 이에요) reads as 이다 "to be". */
+export function copulaStage(blocks) {
+  return blocks.map((b) => (b.token.copula && !b.pinned
+    ? { ...b, candidates: [{ analysis: { lemma: '이다', pos: 'verb', copula: true, form: 'cop' }, reasons: ['the copula 이다 "to be" after a noun'], links: [] }] }
+    : b));
+}
+
+/* A common pronoun is the pronoun: 우리 "we", not 우리 "pen, cage"; 나 "I", not the other 나. */
+const COMMON_PRONOUNS = new Set(PRONOUNS);
+export function pronounStage(blocks) {
+  return blocks.map((b) => {
+    const pron = b.candidates.filter((c) => c.analysis.pos === 'pron');
+    if (b.pinned || !COMMON_PRONOUNS.has(b.token.key) || !pron.length || pron.length === b.candidates.length) return b;
+    return { ...b, candidates: pron.map((c) => ({ ...c, reasons: [...c.reasons, 'a common pronoun'] })) };
   });
 }

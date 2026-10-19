@@ -1,7 +1,7 @@
 /* Korean (docs/languages/ko.md; overnight plan 2026-10-19). */
 import { segment } from '../ar/segment.js';
 import { tokenize, splitWords } from './tokenize.js';
-import { particleStage, finalVerbStage, adverbStage, sentenceTypeStage } from './stages.js';
+import { particleStage, finalVerbStage, adverbStage, sentenceTypeStage, copulaStage, pronounStage } from './stages.js';
 import { romanizeKo } from './romanize.js';
 import { bucket } from '../ja/bucket.js';
 import { ROWS, LETTERS, LABELS, createGame, createGrid } from './game.js';
@@ -44,7 +44,7 @@ export const korean = {
   segment,
   tokenize,
   splitWords,
-  stages: [particleStage, finalVerbStage, sentenceTypeStage, adverbStage],
+  stages: [copulaStage, pronounStage, particleStage, finalVerbStage, sentenceTypeStage, adverbStage],
   government: {},
   arrange: [],
   eras: [{ id: 'modern', label: 'Present-day standard Korean', authors: '', ages: [], ipa: [] }],

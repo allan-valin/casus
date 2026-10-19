@@ -25,3 +25,6 @@ Built overnight 2026-10-19.
 
 ## Not yet
 - Verb endings beyond Wiktionary's tables (-고, -지만, -는데…) split off; honorific -시-; the copula 이다 after nouns.
+
+- 2026-10-19 morning: the copula after a noun splits off and reads as 이다 (학생이에요 → 학생 + 이에요, 그거야 →
+  그거 + 야); a common pronoun is the pronoun (우리 "we", not the pen).
