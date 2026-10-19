@@ -5,6 +5,7 @@ const ABBREVIATIONS = new Set([
 ]);
 // Upper case only: `vici`, `dixi`, `mimi` are words made of Roman letters.
 const ROMAN = /^[IVXLCDM]+$/;
+const BREAK_BEFORE = /^[ \t]*([•◦▪▫●○■□‣⁃∙·\-–—*]\s|\d{1,3}[.)]\s|[a-z][.)]\s)/u;
 const CLOSERS = new Set(['"', '”', '’', "'", ')', ']', '»']);
 
 /**
@@ -17,6 +18,12 @@ export function segment(text) {
   let start = 0;
   for (let i = 0; i < text.length; i += 1) {
     const ch = text[i];
+    // a line break before a list item (• - * – 1. a)) or a blank line ends the sentence: slides, notes, lists
+    if (ch === '\n' && (BREAK_BEFORE.test(text.slice(i + 1)) || /^[ \t]*\n/.test(text.slice(i + 1)))) {
+      pushSpan(out, text, start, i);
+      start = i + 1;
+      continue;
+    }
     if (ch !== '.' && ch !== '?' && ch !== '!') continue;
     if (ch === '.' && isGuarded(text, i)) continue;
     let end = i + 1;
@@ -31,6 +38,7 @@ export function segment(text) {
 
 function isGuarded(text, i) {
   if (text[i + 1] === '.' || text[i - 1] === '.') return true; // ellipsis
+  if (/(^|\n)[ \t]*\d{1,3}$/.test(text.slice(0, i))) return true; // a list number (2. tertia)
   const before = /([A-Za-z]+)$/.exec(text.slice(0, i));
   if (!before) return false;
   return ABBREVIATIONS.has(before[1].toLowerCase()) || ROMAN.test(before[1]);

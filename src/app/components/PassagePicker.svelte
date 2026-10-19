@@ -52,8 +52,11 @@
     try { pasted = storage?.getItem(KEY) ?? ''; } catch { /* blocked */ }
     takeAppend();
     const onHash = () => takeAppend();
+    // the proofreading tab edits the same text: mirror it here (Allan, 2026-10-19)
+    const onStorage = (e) => { if (e.key === KEY && e.newValue !== null && e.newValue !== pasted) pasted = e.newValue; };
     window.addEventListener?.('hashchange', onHash);
-    return () => window.removeEventListener?.('hashchange', onHash);
+    window.addEventListener?.('storage', onStorage);
+    return () => { window.removeEventListener?.('hashchange', onHash); window.removeEventListener?.('storage', onStorage); };
   });
   async function upload(e) {
     const input = e.currentTarget;

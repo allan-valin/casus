@@ -53,3 +53,10 @@ describe('segment', () => {
     expect(segment('Legio X. venit in Galliam.')).toHaveLength(1);
   });
 });
+
+describe('lines that are their own sentences (Allan, 2026-10-19: slide bullets were glued together)', () => {
+  it('a bulleted or numbered line, or a paragraph after a blank line, starts a sentence; a wrapped line does not', () => {
+    const t = 'Gallia est omnis\ndivisa in partes tres\n• prima pars\n• secunda pars\n2. tertia\n\nNovus versus sine puncto';
+    expect(segment(t).map((s) => s.text)).toEqual(['Gallia est omnis\ndivisa in partes tres', '• prima pars', '• secunda pars', '2. tertia', 'Novus versus sine puncto']);
+  });
+});

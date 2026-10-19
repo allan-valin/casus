@@ -78,9 +78,29 @@ async function pdf(file, loadPdf) {
   const pages = [];
   for (let n = 1; n <= doc.numPages; n += 1) {
     const content = await (await doc.getPage(n)).getTextContent();
-    pages.push(content.items.map((i) => (i.str ?? '') + (i.hasEOL ? '\n' : '')).join(''));
+    pages.push(pdfLines(content.items));
   }
   return tidy(pages.join('\n'));
+}
+
+/* a page's text by position: a new line wherever the text moves down (slides rarely flag line ends), a space between
+ * pieces of one line that do not touch, so bullet points stay one per line (Allan, 2026-10-19) */
+export function pdfLines(items) {
+  let out = '';
+  let last = null;
+  for (const i of items) {
+    const str = i.str ?? '';
+    const [, , , , x = 0, y = 0] = i.transform ?? [];
+    const h = Math.abs(i.height || i.transform?.[3] || 10) || 10;
+    if (last) {
+      if (Math.abs(y - last.y) > h * 0.5) out += '\n';
+      else if (x - last.end > h * 0.15 && !/\s$/.test(out) && !/^\s/.test(str)) out += ' ';
+    }
+    out += str;
+    if (i.hasEOL) { out += '\n'; last = null; continue; }
+    if (str) last = { y, end: x + (i.width || 0) };
+  }
+  return out;
 }
 
 async function browserPdf() {

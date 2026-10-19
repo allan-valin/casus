@@ -33,7 +33,7 @@ export async function checkGrammar(text, code, { fetchImpl, localMs = 30000, pub
   }
   const issues = (json.matches ?? []).map((m) => ({
     kind: 'grammar', offset: m.offset, length: m.length, message: m.message, short: m.shortMessage || '',
-    replacements: (m.replacements ?? []).slice(0, 5).map((r) => r.value), rule: m.rule?.id ?? '', category: m.rule?.category?.name ?? '',
+    replacements: (m.replacements ?? []).slice(0, 5).map((r) => r.value), rule: m.rule?.id ?? '', category: m.rule?.category?.name ?? '', categoryId: m.rule?.category?.id ?? '',
   }));
   return { engine, issues };
 }

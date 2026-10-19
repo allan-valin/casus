@@ -54,3 +54,14 @@ describe('an open Casus tab takes the text; the tab the bookmark opened closes',
     expect(popup.container.querySelector('textarea').value).toBe('');
   });
 });
+
+describe('the reader’s box follows the proofreading tab', () => {
+  it('a change saved elsewhere shows up', async () => {
+    const storage = store();
+    const { container } = render(PassagePicker, { onchoose: () => {}, fetchImpl: async () => ({ ok: false }), storage, code: 'pt', channel: null, location: { hash: '' } });
+    await flush();
+    window.dispatchEvent(new StorageEvent('storage', { key: 'casus:input:pt', newValue: 'Corrigido.' }));
+    await flush();
+    expect(container.querySelector('textarea').value).toBe('Corrigido.');
+  });
+});

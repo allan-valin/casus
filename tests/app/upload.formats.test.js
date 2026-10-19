@@ -40,3 +40,12 @@ describe('documents read as text (Allan, 2026-10-19: Word and PDF are what peopl
     await expect(readTextFile(fileOf('x.png', 'binary'))).rejects.toThrow(/PDF/);
   });
 });
+describe('PDF slides (Allan, 2026-10-19: bullet points came out glued together)', () => {
+  it('a new line wherever the text moves down, even without end-of-line flags; words on a line keep their spaces', async () => {
+    const item = (str, x, y, w) => ({ str, transform: [12, 0, 0, 12, x, y], width: w, height: 12, hasEOL: false });
+    const page = { getTextContent: async () => ({ items: [item('Título', 50, 500, 40), item('do slide', 95, 500, 50), item('•', 60, 460, 5), item('primeiro ponto', 70, 460, 80), item('•', 60, 440, 5), item('segundo', 70, 440, 45), item('ponto', 118, 440, 30)] }) };
+    const lib = { getDocument: () => ({ promise: Promise.resolve({ numPages: 1, getPage: async () => page }) }) };
+    const text = await readTextFile(fileOf('slides.pdf', new Uint8Array([1])), { loadPdf: async () => lib });
+    expect(text).toBe('Título do slide\n• primeiro ponto\n• segundo ponto');
+  });
+});
