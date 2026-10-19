@@ -29,3 +29,16 @@ def test_chinese_lessons_from_the_hsk_syllabus():
     words = [t for t in index["levels"][0]["topics"] if t["kind"] == "vocab"][0]
     w = lessons[words["lessons"][0]["id"]]["words"]
     assert {"w": "很", "reading": "hěn", "en": "very; quite"} in w and {"w": "爱", "reading": "ài", "en": "to love"} in w
+
+
+def test_glosses_follow_the_hsk_reading_and_keep_three_senses():
+    index, lessons, _ = zh_learn(FIX / "grammar.csv", FIX / "hsk30.csv", FIX / "cedict.txt.gz", {})
+    words = {w["w"]: w["en"] for l in lessons.values() if l.get("kind") == "vocab" for w in l["words"]}
+    assert words["太"] == "highest; greatest; too (much)"
+    assert words["得"] == "structural particle: used after a verb"
+
+
+def test_glosses_skip_proper_nouns_and_long_notes():
+    from learn_zh import gloss_of
+    entries = [("bai|2", "Bai ethnic group", True), ("bai|2", "white; snowy; pure", False)]
+    assert gloss_of(entries, "bái") == "white; snowy; pure"

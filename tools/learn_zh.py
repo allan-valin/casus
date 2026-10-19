@@ -55,28 +55,61 @@ def frame_of(text: str) -> list[list[str]] | None:
     return parts if len(parts) >= 2 else None
 
 
+def reading_key(pinyin: str) -> str:
+    """a comparable key for a reading, from tone marks (fēicháng) or CEDICT numbers (fei1 chang2): its letters, then
+    its non-neutral tones in order (de and de5 → "de|", tài and tai4 → "tai|4")"""
+    marks = {"āáǎà": "a", "ēéěè": "e", "īíǐì": "i", "ōóǒò": "o", "ūúǔù": "u", "ǖǘǚǜ": "v"}
+    letters, tones = [], []
+    for ch in pinyin.lower().replace("ü", "v").replace("u:", "v"):
+        for group, base in marks.items():
+            if ch in group:
+                tones.append(str(group.index(ch) + 1))
+                ch = base
+        if ch.isalpha():
+            letters.append(ch)
+        elif ch in "1234":
+            tones.append(ch)
+    return "".join(letters) + "|" + "".join(tones)
+
+
 def cedict(path: Path) -> dict:
-    """simplified → first English sense (CC-CEDICT)"""
+    """simplified → [(reading key, English: its first three senses)] (CC-CEDICT); variant and
+    'used in' senses left out"""
     out = {}
     with gzip.open(path, "rt", encoding="utf-8") as f:
         for line in f:
-            m = re.match(r"^(\S+) (\S+) \[([^\]]+)\] /([^/]+)/", line)
-            if m and m.group(2) not in out:
-                out[m.group(2)] = m.group(4).strip()
+            m = re.match(r"^(\S+) (\S+) \[([^\]]+)\] /(.+)/$", line.rstrip("\n"))
+            if not m:
+                continue
+            senses = [x for x in m.group(4).split("/") if not re.match(r"(variant of|used in|surname|old variant|see )", x)]
+            # pieces of the senses, long notes left out unless nothing else; a capitalised reading is a name
+            pieces = [p for x in senses for p in x.split("; ")]
+            short = [p for p in pieces if len(p) <= 50] or pieces
+            if short:
+                out.setdefault(m.group(2), []).append((reading_key(m.group(3)), "; ".join(short[:3]), m.group(3)[:1].isupper()))
     return out
+
+
+def gloss_of(entries: list, pinyin: str = "") -> str:
+    """the entry whose reading is the word's (得 de → the particle), else the first"""
+    want = reading_key(pinyin) if pinyin else ""
+    ranked = sorted(entries, key=lambda e: e[2])   # common words before names
+    return next((e for r, e, _ in ranked if want and r == want), ranked[0][1] if ranked else "")
 
 
 def zh_learn(grammar_csv: Path, words_csv: Path, cedict_path: Path, notes: dict, sentences=()) -> tuple[dict, dict, dict]:
     """sentences: (Chinese, English, Portuguese) to show one example per form, shortest first"""
-    gloss = cedict(cedict_path)
+    entries = cedict(cedict_path)
     pinyin = {}
     vocab = {lv: [] for lv in LEVELS}
     with open(words_csv, encoding="utf-8") as f:
         for r in csv.DictReader(f):
             pinyin.setdefault(r["Simplified"], r["Pinyin"])
             lv = r["Level"] if r["Level"] in vocab else ("7-9" if r["Level"].startswith("7") else None)
-            if lv and gloss.get(r["Simplified"]):
-                vocab[lv].append({"w": r["Simplified"], "reading": r["Pinyin"], "en": gloss[r["Simplified"]]})
+            g = gloss_of(entries.get(r["Simplified"], []), r["Pinyin"])
+            if lv and g:
+                vocab[lv].append({"w": r["Simplified"], "reading": r["Pinyin"], "en": g})
+    gloss = {w: gloss_of(e, pinyin.get(w, "")) for w, e in entries.items()}
     examples = sorted(sentences, key=lambda s: len(s[0]))
     example_for = {}
 
