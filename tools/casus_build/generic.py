@@ -9,6 +9,7 @@ import re
 import string
 from collections.abc import Iterable, Iterator
 
+_WORD = re.compile(r"[^\W\d_]")
 POS = {"noun": "noun", "name": "noun", "adj": "adj", "verb": "verb", "pron": "pron", "det": "det", "num": "num", "adv": "adv",
        "prep": "prep", "postp": "prep", "conj": "conj", "particle": "particle", "intj": "interj", "article": "det"}
 NUMBERS = {"singular": "sg", "plural": "pl", "dual": "du"}
@@ -77,8 +78,16 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
             continue
         gender = next((v for k, v in GENDERS.items() if any(k in (s.get("tags") or []) for s in senses)), None)
         cells = []
+        seen_person: dict = {}                    # (tense, number, gender) -> how many untagged persons so far
         for f in d.get("forms") or []:
             tags = set(f.get("tags") or [])
+            # Polish-style tables give 1st and 2nd person by row order only: supply the person from that order
+            if pos == "verb" and not tags & set(PERSONS) and _one(tags, NUMBERS) and _one(tags, TENSES) and not tags & {"impersonal", "infinitive", "participle"}:
+                k = (_one(tags, TENSES), _one(tags, NUMBERS), _one(tags, GENDERS), "virile" in tags)
+                n = seen_person.get(k, 0)
+                seen_person[k] = n + 1
+                if n < 3:
+                    tags = tags | {["first-person", "second-person", "third-person"][n]}
             text = cfg.clean((f.get("form") or "").strip())
             # a key must be a word: it starts with a letter and has no slash (an IPA cell filed as a form once tried to
             # become the shard "/ˈ", a path outside the data folder)
@@ -102,6 +111,8 @@ def build_index(entries: list[dict]) -> dict[str, list[dict]]:
     for e in entries:
         base = {"lemma": e["id"], "pos": e["pos"]}
         for text, a in (e["cells"] or [(e["headword"], {"pos": e["pos"]})]):
+            if not _WORD.match(text) or "/" in text or "\\" in text:
+                continue                                  # 7/24 and the like are no keys
             full = {**base, **{k: v for k, v in a.items() if k != "pos" and v is not None}}
             rows = index.setdefault(text.lower(), [])
             if full not in rows:
@@ -161,3 +172,17 @@ SANSKRIT = Config("sa", ["nom", "acc", "ins", "dat", "abl", "gen", "loc", "voc"]
                   {"nominative": "nom", "accusative": "acc", "instrumental": "ins", "dative": "dat", "ablative": "abl",
                    "genitive": "gen", "locative": "loc", "vocative": "voc"}, clean=clean_sa)
 CONFIGS["sa"] = SANSKRIT
+
+SLAVIC_TAGS = {"nominative": "nom", "genitive": "gen", "dative": "dat", "accusative": "acc", "vocative": "voc", "locative": "loc",
+               "prepositional": "loc", "instrumental": "ins"}
+CONFIGS["cs"] = Config("cs", ["nom", "gen", "dat", "acc", "voc", "loc", "ins"], SLAVIC_TAGS)
+CONFIGS["pl"] = Config("pl", ["nom", "gen", "dat", "acc", "ins", "loc", "voc"], SLAVIC_TAGS)
+CONFIGS["is"] = Config("is", ["nom", "acc", "dat", "gen"], {"nominative": "nom", "accusative": "acc", "dative": "dat", "genitive": "gen"})
+CONFIGS["tr"] = Config("tr", ["nom", "acc", "dat", "loc", "abl", "gen", "ins"],
+                       {"nominative": "nom", "accusative": "acc", "dative": "dat", "locative": "loc", "ablative": "abl", "genitive": "gen",
+                        "instrumental": "ins", "comitative": "ins"})
+CONFIGS["hu"] = Config("hu", ["nom", "acc", "dat", "ine", "ela", "ill", "sup", "del", "sub", "ade", "abl", "all", "ins", "cau", "tra", "ter", "ess", "for"],
+                       {"nominative": "nom", "accusative": "acc", "dative": "dat", "inessive": "ine", "elative": "ela", "illative": "ill",
+                        "superessive": "sup", "delative": "del", "sublative": "sub", "adessive": "ade", "ablative": "abl", "allative": "all",
+                        "instrumental": "ins", "causal-final": "cau", "translative": "tra", "terminative": "ter", "essive-formal": "for",
+                        "essive-modal": "ess", "essive": "ess"})

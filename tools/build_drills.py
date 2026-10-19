@@ -64,6 +64,16 @@ MODELS = {
     "el": [("δρόμος", "noun", "street, road", "rua"), ("θάλασσα", "noun", "sea", "mar"), ("βιβλίο", "noun", "book", "livro"), ("καλός", "adj", "good", "bom"),
            ("γράφω", "verb", "to write", "escrever"), ("αγαπώ", "verb", "to love", "amar"), ("είμαι", "verb", "to be", "ser, estar")],
     "sa": [("देव", "noun", "god", "deus"), ("फल", "noun", "fruit", "fruto"), ("नदी", "noun", "river", "rio"), ("अग्नि", "noun", "fire", "fogo")],
+    "cs": [("hrad", "noun", "castle", "castelo"), ("žena", "noun", "woman", "mulher"), ("město", "noun", "town", "cidade"), ("muž", "noun", "man", "homem"),
+           ("nový", "adj", "new", "novo"), ("dělat", "verb", "to do", "fazer"), ("prosit", "verb", "to ask, to beg", "pedir"), ("být", "verb", "to be", "ser, estar")],
+    "is": [("hestur", "noun", "horse", "cavalo"), ("kona", "noun", "woman", "mulher"), ("barn", "noun", "child", "criança"), ("góður", "adj", "good", "bom"),
+           ("tala", "verb", "to speak", "falar"), ("vera", "verb", "to be", "ser, estar")],
+    "tr": [("ev", "noun", "house", "casa"), ("kitap", "noun", "book", "livro"), ("okul", "noun", "school", "escola"), ("göz", "noun", "eye", "olho"),
+           ("gelmek", "verb", "to come", "vir"), ("okumak", "verb", "to read", "ler")],
+    "hu": [("ház", "noun", "house", "casa"), ("könyv", "noun", "book", "livro"), ("asztal", "noun", "table", "mesa"), ("kert", "noun", "garden", "jardim"),
+           ("olvas", "verb", "to read", "ler"), ("lenni", "verb", "to be", "ser, estar")],
+    "pl": [("dom", "noun", "house", "casa"), ("kobieta", "noun", "woman", "mulher"), ("okno", "noun", "window", "janela"), ("pies", "noun", "dog", "cachorro"),
+           ("nowy", "adj", "new", "novo"), ("czytać", "verb", "to read", "ler"), ("mówić", "verb", "to speak", "falar"), ("być", "verb", "to be", "ser, estar")],
     "ja": [("高い", "adj", "high, expensive", "alto, caro"), ("いい", "adj", "good", "bom"), ("綺麗", "adj", "pretty, clean", "bonito, limpo"),
            ("食べる", "verb", "to eat", "comer"), ("書く", "verb", "to write", "escrever"), ("泳ぐ", "verb", "to swim", "nadar"),
            ("話す", "verb", "to speak", "falar"), ("待つ", "verb", "to wait", "esperar"), ("死ぬ", "verb", "to die", "morrer"),
@@ -76,7 +86,7 @@ XREF = re.compile(r"^(synonym|alternative (form|spelling)|[\w-]+ form|abbreviati
 IRREGULAR = {"la": {"sum", "eo", "uolo", "fero", "ego", "hic", "qui"}, "grc": {"εἰμί", "ὁ", "δίδωμι"},
              "de": {"der", "ein", "ich", "er", "sein", "haben", "werden", "können"},
              "ja": {"いい", "行く", "する", "来る"}, "ar": {"رأى"},
-             "ru": {"время", "быть", "идти", "я", "он", "этот"}, "ko": {"하다", "듣다", "살다"}, "mk": {"сум", "има"}, "fi": {"olla"}, "el": {"είμαι"}}
+             "ru": {"время", "быть", "идти", "я", "он", "этот"}, "ko": {"하다", "듣다", "살다"}, "mk": {"сум", "има"}, "fi": {"olla"}, "el": {"είμαι"}, "cs": {"být"}, "is": {"vera"}, "pl": {"być"}}
 POOL = 60
 
 

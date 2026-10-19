@@ -11,6 +11,11 @@ import { macedonian } from './mk/index.js';
 import { finnish } from './fi/index.js';
 import { modernGreek } from './el/index.js';
 import { sanskrit } from './sa/index.js';
+import { czech } from './cs/index.js';
+import { polish } from './pl/index.js';
+import { icelandic } from './is/index.js';
+import { turkish } from './tr/index.js';
+import { hungarian } from './hu/index.js';
 
 export const LANGUAGES = [
   { code: 'la', path: '/', name: { en: 'Latin', pt: 'Latim' } },
@@ -25,9 +30,14 @@ export const LANGUAGES = [
   { code: 'fi', path: '/fi/', name: { en: 'Finnish', pt: 'Finlandês' } },
   { code: 'el', path: '/el/', name: { en: 'Modern Greek', pt: 'Grego moderno' } },
   { code: 'sa', path: '/sa/', name: { en: 'Sanskrit', pt: 'Sânscrito' } },
+  { code: 'cs', path: '/cs/', name: { en: 'Czech', pt: 'Tcheco' } },
+  { code: 'pl', path: '/pl/', name: { en: 'Polish', pt: 'Polonês' } },
+  { code: 'tr', path: '/tr/', name: { en: 'Turkish', pt: 'Turco' } },
+  { code: 'hu', path: '/hu/', name: { en: 'Hungarian', pt: 'Húngaro' } },
+  { code: 'is', path: '/is/', name: { en: 'Icelandic', pt: 'Islandês' } },
 ];
 
-const DEFINITIONS = { la: latin, grc: greek, de: german, ja: japanese, ar: arabic, ru: russian, ko: korean, zh: chinese, mk: macedonian, fi: finnish, el: modernGreek, sa: sanskrit };
+const DEFINITIONS = { la: latin, grc: greek, de: german, ja: japanese, ar: arabic, ru: russian, ko: korean, zh: chinese, mk: macedonian, fi: finnish, el: modernGreek, sa: sanskrit, cs: czech, pl: polish, is: icelandic, tr: turkish, hu: hungarian };
 
 export function getLanguage(code) {
   return DEFINITIONS[code];

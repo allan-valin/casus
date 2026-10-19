@@ -140,6 +140,11 @@ python3 tools/build_lang.py el`.
 Devanagari drill; sandhi not split yet. Notes: `docs/languages/sa.md`; build: `bash tools/fetch_wiktextract.sh
 Sanskrit && python3 tools/build_lang.py sa`.
 
+**Czech, Polish, Turkish, Hungarian, Icelandic (2026-10-19)** at `/cs/`, `/pl/`, `/tr/`, `/hu/`, `/is/`: on the
+generic builder, each streamed and kept for its commonest words (`python3 tools/fetch_filtered.py <Name> <code>`,
+then `python3 tools/build_lang.py <code>`): seven Slavic cases with prepositions; Turkish case suffixes; Hungarian's
+eighteen cases on six hues; Icelandic's four. Notes: `docs/languages/<code>.md`.
+
 Top corner: **English ⇄ Português** (the page and the dictionary language together, remembered),
 exports (JSON to reload, Markdown to read) and **?** — what is on screen, how to use it, every
 resource and licence. Under the page, **What is happening**: one timestamped line per action and its
