@@ -199,6 +199,9 @@
     <h2><span class="step">1</span> {t('text.heading')}</h2>
     <PassagePicker {samples} onchoose={choose} {fetchImpl} samplesPath={lang.samplesPath} language={lang.inText?.[ui.lang] ?? ''} onerror={(error) => say('act.uploadFailed', { error }, 'err')} />
     <p class="status" aria-live="polite">{t(status.key, status.vars)}</p>
+    <!-- always here, before any text is read (Allan, 2026-10-19: Wiktionary on demand, dictionaries offline) -->
+    <label class="live-toggle" title={t('settings.live.title')}><input type="checkbox" checked={liveOn} onchange={(e) => setLive(e.currentTarget.checked)}> {t('settings.live')}</label>
+    <Downloads {fetchImpl} {storage} current={lang.code} onsay={(k, v) => say(k, v, k.endsWith('done') ? 'ok' : k.endsWith('failed') ? 'err' : undefined)} />
   </section>
 
   {#if reader}
@@ -223,8 +226,6 @@
     <section class="card">
       <h2><span class="step">4</span> {t('settings.heading')}</h2>
       <Toolbar {reader} {voice} onvoice={(what, error) => (what === 'downloaded' ? say('act.voiceDownloaded', {}, 'ok') : what === 'removed' ? say('act.voiceRemoved') : say('voice.natural.failed', { error }, 'err'))} />
-      <label class="live-toggle" title={t('settings.live.title')}><input type="checkbox" checked={liveOn} onchange={(e) => setLive(e.currentTarget.checked)}> {t('settings.live')}</label>
-      <Downloads {fetchImpl} {storage} current={lang.code} onsay={(k, v) => say(k, v, k.endsWith('done') ? 'ok' : k.endsWith('failed') ? 'err' : undefined)} />
     </section>
 
     {#if openBlock}
