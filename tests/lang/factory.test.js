@@ -55,3 +55,9 @@ describe('a preposition that took its object', () => {
     expect(prepositionSettledStage([b])[0].candidates.map((c) => c.analysis.pos)).toEqual(['prep']);
   });
 });
+describe('the only-verb rule and imperatives', () => {
+  it('an imperative is not the verb of a stated subject (kedi var: var stays “there is”)', () => {
+    const out = makeOneVerbStage([])([B(0, 'kedi', [{ pos: 'noun', case: 'nom', number: 'sg' }]), B(1, 'var', [{ pos: 'verb', person: '3', number: 'sg', mood: 'imp' }, { pos: 'adj' }])]);
+    expect(out[1].candidates.length).toBe(2);
+  });
+});

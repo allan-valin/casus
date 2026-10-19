@@ -158,6 +158,10 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
                     tags = {"past" if "past" in tags else "present", "indicative", {"1": "first-person", "2": "second-person", "3": "third-person"}[person],
                             {"sg": "singular", "pl": "plural"}[number]}
             skip = SKIP - {"error-unrecognized-form"} if pos in ("pron", "det") else SKIP
+            if cfg.code == "tr" and pos == "noun" and "possessive" in tags:
+                # evine "to his house": the case stays; the number is the house's (possessed-single/-many), not the owner's
+                skip = skip - {"possessive"}
+                tags = (tags - set(NUMBERS) - set(PERSONS)) | {"plural" if "possessed-many" in tags else "singular"}
             if not text or " " in text or tags & skip or not cfg.letters.match(text) or "/" in text or "\\" in text:
                 continue
             if cfg.code == "tr" and pos == "verb" and tags & set(PERSONS):

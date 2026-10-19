@@ -267,7 +267,7 @@ export function makeOneVerbStage(conjunctions = []) {
         const subj = idx.find((i) => out[i].candidates.length && out[i].candidates.every((c) => c.analysis.case === 'nom' && ['noun', 'pron'].includes(c.analysis.pos)));
         if (maybe.length === 1 && subj !== undefined && !out[maybe[0]].pinned) {
           const n = out[subj].candidates[0].analysis.number;
-          const verbs = out[maybe[0]].candidates.filter((c) => finite(c) && (!n || c.analysis.number === n) && (c.analysis.person === '3' || out[subj].candidates[0].analysis.pos === 'pron'));
+          const verbs = out[maybe[0]].candidates.filter((c) => finite(c) && c.analysis.mood !== 'imp' && (!n || c.analysis.number === n) && (c.analysis.person === '3' || out[subj].candidates[0].analysis.pos === 'pron'));
           if (verbs.length) out[maybe[0]] = { ...out[maybe[0]], candidates: verbs.map((c) => ({ ...c, reasons: [...c.reasons, `the clause's only verb, agreeing with ${out[subj].token.surface}`] })) };
         }
         continue;

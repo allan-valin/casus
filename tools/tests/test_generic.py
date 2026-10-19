@@ -109,3 +109,14 @@ def test_an_unrecognised_pronoun_table_still_gives_its_forms_with_the_case_unkno
     line = json.dumps({"word": "mój", "pos": "pron", "forms": forms, "senses": [{"glosses": ["my"]}]}, ensure_ascii=False)
     index = build_index(list(parse_entries(CONFIGS["pl"], [line])))
     assert index["moja"][0]["pos"] == "pron" and index["moja"][0].get("case") is None and index["moja"][0]["gender"] == "f"
+
+
+def test_turkish_possessed_forms_keep_their_case_and_the_nouns_own_number():
+    from casus_build.generic import CONFIGS
+    forms = [{"form": "evine", "tags": ["dative", "possessed-single", "possessive", "singular", "third-person"]},
+             {"form": "evinize", "tags": ["dative", "plural", "possessed-single", "possessive", "second-person"]},
+             {"form": "evlerine", "tags": ["dative", "possessed-many", "possessive", "singular", "third-person"]}]
+    line = json.dumps({"word": "ev", "pos": "noun", "forms": forms, "senses": [{"glosses": ["house"]}]})
+    index = build_index(list(parse_entries(CONFIGS["tr"], [line])))
+    assert (index["evine"][0]["case"], index["evine"][0]["number"]) == ("dat", "sg")
+    assert index["evinize"][0]["number"] == "sg" and index["evlerine"][0]["number"] == "pl"
