@@ -149,6 +149,11 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
   Wikipedia's Arabic grammar articles (CC BY-SA) and the public-domain grammars of Wright (1896) and Thatcher (1910).
   Exercises from Tatoeba's Arabic sentences (CC BY 2.0 FR); a form question shows its answer vowelled only when the
   paradigm table (Wiktionary, CC BY-SA) confirms the one form the sentence needs.
+- Latin lessons: **Benjamin L. D'Ooge, *Latin for Beginners*** (Ginn, 1909), public domain, from Project Gutenberg #18251
+  (vendor/dooge/): its 79 lessons with their explanations, tables, vocabularies and exercises, as the book has them
+  (pictures left out). Stages, topics, Portuguese summaries and the Tatoeba rules are Casus's (tools/curricula/la/).
+  Exercises from Tatoeba's Latin sentences (CC BY 2.0 FR) and from the book's own Latin sentences; wrong answers from
+  the Whitaker's Words paradigms (public domain), only forms attested in the Tatoeba sentences when there are enough.
 
 ## Document import
 

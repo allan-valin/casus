@@ -1,0 +1,291 @@
+# Latin Learn lessons: D'Ooge, Latin for Beginners (1909, public domain), as the book has them (tools/learn_la.py),
+# grouped into three stages (Latin has no exam levels; design 2026-10-19 §2). Each lesson's meaning in English and
+# Portuguese and its rule for Tatoeba's Latin sentences (tools/learn_match.mjs) are written for Casus here.
+# Rules: dict = the dictionary form printed by the reader ("puella, -ae f."); same = features the wrong answers keep.
+system: "Latin for Beginners"
+credit:
+  en: "Lessons: Benjamin L. D'Ooge, Latin for Beginners (Ginn, 1909), public domain, Project Gutenberg #18251. Lesson summaries, topics and exercises from Tatoeba (CC BY 2.0 FR) matched by Casus."
+  pt: "Lições: Benjamin L. D'Ooge, Latin for Beginners (Ginn, 1909), domínio público, Projeto Gutenberg #18251 (em inglês). Resumos, tópicos e exercícios do Tatoeba (CC BY 2.0 FR) organizados pelo Casus."
+stages:
+- id: Beginner
+  title: {en: Beginner, pt: Iniciante}
+  topics:
+  - title: {en: First principles, pt: Primeiros princípios}
+    lessons:
+    - n: I
+      meaning: {en: "subject, predicate, object; est and sunt", pt: "sujeito, predicado, objeto; est e sunt"}
+      match: {seq: [{word: [est, sunt]}]}
+      pool: [est, sunt, es, sum, erat, erant]
+    - n: II
+      meaning: {en: "number; the verb agrees with its subject", pt: "número; o verbo concorda com o sujeito"}
+      match: {seq: [{pos: verb, tense: pres, mood: ind, person: "3"}], same: [tense, mood, voice]}
+    - n: III
+      meaning: {en: "declension: endings show the case", pt: "declinação: as terminações mostram o caso"}
+      match: {seq: [{pos: noun}], same: [number]}
+    - n: IV
+      meaning: {en: "nominative subject, accusative object, genitive of possession", pt: "sujeito no nominativo, objeto no acusativo, genitivo de posse"}
+      match: {seq: [{pos: noun, case: acc}], same: [number]}
+    - n: V
+      meaning: {en: "the dative: indirect object", pt: "o dativo: objeto indireto"}
+      match: {seq: [{pos: noun, case: dat}], same: [number]}
+    - n: VI
+      meaning: {en: "the ablative and prepositions; adjectives", pt: "o ablativo e as preposições; adjetivos"}
+      match: {seq: [{pos: prep}, {pos: noun, case: abl}], gap: 1, same: [number]}
+  - title: {en: First and second declensions, pt: Primeira e segunda declinações}
+    lessons:
+    - n: VII
+      meaning: {en: "first declension (puella, -ae)", pt: "primeira declinação (puella, -ae)"}
+      match: {seq: [{pos: noun, dict: ", -ae [fm]\\."}], same: [number]}
+    - n: VIII
+      meaning: {en: "first declension: the plural", pt: "primeira declinação: o plural"}
+      match: {seq: [{pos: noun, number: pl, dict: ", -ae [fm]\\."}], same: [number]}
+    - n: IX
+      meaning: {en: "second declension, masculine (dominus, -ī)", pt: "segunda declinação, masculino (dominus, -ī)"}
+      match: {seq: [{pos: noun, dict: ", -i m\\."}], same: [number]}
+    - n: X
+      meaning: {en: "second declension, neuter (bellum, -ī)", pt: "segunda declinação, neutro (bellum, -ī)"}
+      match: {seq: [{pos: noun, dict: ", -i n\\."}], same: [number]}
+    - n: XI
+      meaning: {en: "adjectives of the first and second declensions (bonus, -a, -um)", pt: "adjetivos da primeira e segunda declinações (bonus, -a, -um)"}
+      match: {seq: [{pos: noun}, {pos: adj, dict: ", -a, -um"}], gap: 1, same: [case, number]}
+    - n: XII
+      meaning: {en: "nouns in -ius and -ium", pt: "substantivos em -ius e -ium"}
+      match: {seq: [{pos: noun, lemma: "i(us|um)$", dict: ", -i [mn]\\."}], same: [number]}
+    - n: XIII
+      meaning: {en: "second declension nouns in -er and -ir (puer, vir)", pt: "segunda declinação em -er e -ir (puer, vir)"}
+      match: {seq: [{pos: noun, lemma: "(er|ir)$", dict: ", -i m\\."}], same: [number]}
+    - n: XIV
+      meaning: {en: "possessive adjectives: meus, tuus, suus, noster, vester", pt: "adjetivos possessivos: meus, tuus, suus, noster, vester"}
+      match: {seq: [{pos: [adj, pron], lemma: "^(meus|tuus|suus|noster|vester)$"}], same: [number]}
+    - n: XV
+      meaning: {en: "the ablative with cum: with whom, how", pt: "o ablativo com cum: com quem, como"}
+      match: {seq: [{word: [cum]}, {pos: noun, case: abl}], gap: 1, same: [number]}
+    - n: XVI
+      meaning: {en: "the nine irregular adjectives (ūnus, sōlus, tōtus…)", pt: "os nove adjetivos irregulares (ūnus, sōlus, tōtus…)"}
+      match: {seq: [{lemma: "^(unus|solus|totus|ullus|nullus|alius|alter|uter|neuter)$"}], same: [number]}
+    - n: XVII
+      meaning: {en: "the demonstrative is, ea, id", pt: "o demonstrativo is, ea, id"}
+      match: {seq: [{pos: pron, lemma: "^is$"}], same: [number]}
+  - title: {en: The verb in the present system, pt: O verbo no sistema do presente}
+    lessons:
+    - n: XVIII
+      meaning: {en: "conjugation: tense, mood, person; sum", pt: "conjugação: tempo, modo, pessoa; sum"}
+      match: {seq: [{pos: verb, lemma: "^sum$", mood: ind}], same: [tense]}
+    - n: XIX
+      meaning: {en: "present active of amō and moneō", pt: "presente ativo de amō e moneō"}
+      match: {seq: [{pos: verb, tense: pres, mood: ind, voice: act, conj: ["1", "2"]}], same: [tense, mood, voice]}
+    - n: XX
+      meaning: {en: "imperfect active of amō and moneō", pt: "imperfeito ativo de amō e moneō"}
+      match: {seq: [{pos: verb, tense: impf, mood: ind, voice: act, conj: ["1", "2"]}], same: [person, number]}
+    - n: XXI
+      meaning: {en: "future active of amō and moneō", pt: "futuro ativo de amō e moneō"}
+      match: {seq: [{pos: verb, tense: fut, mood: ind, voice: act, conj: ["1", "2"]}], same: [person, number]}
+    - n: XXII
+      meaning: {en: "review of verbs; the dative with adjectives", pt: "revisão dos verbos; o dativo com adjetivos"}
+      # lemma only: amīcus is a noun and an adjective, both fine here
+      match: {seq: [{lemma: "^(amicus|inimicus|gratus|carus|similis|fidelis|proximus|idoneus|utilis|par|aequus|notus|finitimus)$"}, {pos: [noun, pron], case: dat}], near: 1, gap: 1, same: [number]}
+    - n: XXIII
+      meaning: {en: "present active of regō and audiō", pt: "presente ativo de regō e audiō"}
+      match: {seq: [{pos: verb, tense: pres, mood: ind, voice: act, conj: ["3", "4"]}], same: [tense, mood, voice]}
+    - n: XXIV
+      meaning: {en: "imperfect active of regō and audiō; the dative with special verbs", pt: "imperfeito ativo de regō e audiō; o dativo com verbos especiais"}
+      match: [{seq: [{pos: verb, tense: impf, mood: ind, voice: act, conj: ["3", "4"]}], same: [person, number]}, {seq: [{pos: verb, lemma: "^(credo|faveo|pareo|noceo|persuadeo|resisto|studeo|impero|placeo|servio|ignosco|parco)$"}, {pos: noun, case: dat}], near: 2, gap: 1, same: [number]}]
+    - n: XXV
+      meaning: {en: "future active of regō and audiō", pt: "futuro ativo de regō e audiō"}
+      match: {seq: [{pos: verb, tense: fut, mood: ind, voice: act, conj: ["3", "4", "3-io"]}], same: [person, number]}
+    - n: XXVI
+      meaning: {en: "verbs in -iō of the third conjugation; the imperative", pt: "verbos em -iō da terceira conjugação; o imperativo"}
+      match: [{seq: [{pos: verb, mood: imp}], same: [mood]}, {seq: [{pos: verb, conj: "3-io", mood: ind}], same: [tense]}]
+  - title: {en: The passive voice, pt: A voz passiva}
+    lessons:
+    - n: XXVII
+      meaning: {en: "the passive: present, imperfect, future of amō and moneō", pt: "a passiva: presente, imperfeito e futuro de amō e moneō"}
+      match: {seq: [{pos: verb, voice: pass, mood: ind, tense: [pres, impf, fut], conj: ["1", "2"]}], same: [tense, voice]}
+    - n: XXVIII
+      meaning: {en: "the passive of regō and audiō", pt: "a passiva de regō e audiō"}
+      match: {seq: [{pos: verb, voice: pass, mood: ind, tense: [pres, impf, fut], conj: ["3", "4"]}], same: [tense, voice]}
+    - n: XXIX
+      meaning: {en: "passive of -iō verbs; passive infinitive and imperative", pt: "passiva dos verbos em -iō; infinitivo e imperativo passivos"}
+      match: {seq: [{pos: verb, mood: inf, voice: pass, tense: pres}]}
+    - n: XXX
+      meaning: {en: "synopses; the ablative of separation (from)", pt: "sinopses; o ablativo de separação (de, a partir de)"}
+      match: {seq: [{word: [a, ab, e, ex, de]}, {pos: noun, case: abl}], gap: 0}
+      pool: [a, ab, e, ex, de, cum, in, sine]
+- id: Intermediate
+  title: {en: Intermediate, pt: Intermediário}
+  topics:
+  - title: {en: The perfect system, pt: O sistema do perfeito}
+    lessons:
+    - n: XXXI
+      meaning: {en: "perfect, pluperfect and future perfect of sum", pt: "perfeito, mais-que-perfeito e futuro perfeito de sum"}
+      match: {seq: [{pos: verb, lemma: "^sum$", tense: [perf, plup, futp]}], same: [person, number]}
+    - n: XXXII
+      meaning: {en: "the perfect active indicative", pt: "o perfeito ativo do indicativo"}
+      match: {seq: [{pos: verb, tense: perf, mood: ind, voice: act}], same: [person, number, voice]}
+    - n: XXXIII
+      meaning: {en: "pluperfect and future perfect active; perfect infinitive", pt: "mais-que-perfeito e futuro perfeito ativos; infinitivo perfeito"}
+      match: {seq: [{pos: verb, tense: [plup, futp], mood: ind, voice: act}], same: [person, number, voice]}
+    - n: XXXIV
+      meaning: {en: "review of the active voice", pt: "revisão da voz ativa"}
+      match: {seq: [{pos: verb, voice: act, mood: ind}], same: [person, number]}
+    - n: XXXV
+      meaning: {en: "the passive perfects (amātus est)", pt: "os perfeitos passivos (amātus est)"}
+      match: {seq: [{pos: vpar, tense: perf, voice: pass}, {word: [est, sunt, erat, erant, sum, es, sumus, estis, fuit]}], gap: 0, same: [case]}
+    - n: XXXVI
+      meaning: {en: "principal parts; prepositions; yes-or-no questions", pt: "partes principais; preposições; perguntas de sim ou não"}
+      match: [{seq: [{word: [nonne, num]}], gap: 0, pool: [nonne, num, ne, an, cur]}, {seq: [{pos: prep}, {pos: noun}], gap: 0, pool: [ad, ante, apud, circum, contra, inter, ob, per, post, prope, propter, trans, a, ab, cum, de, e, ex, in, pro, sine, sub]}]
+    - n: XXXVII
+      meaning: {en: "possum; the infinitive used as in English", pt: "possum; o infinitivo usado como em português"}
+      match: [{seq: [{pos: verb, lemma: "^possum$"}], same: [tense, mood]}, {seq: [{pos: verb, lemma: "^(possum|volo|debeo|cupio|incipio|nolo|soleo)$"}, {pos: verb, mood: inf}], near: 2, gap: 1, same: [mood]}]
+    - n: XXXVIII
+      meaning: {en: "the relative and interrogative pronouns (quī, quis)", pt: "os pronomes relativo e interrogativo (quī, quis)"}
+      # the forms as a list: quī is also an adverb and quis a dative, so the analysis is rarely one reading
+      match: {seq: [{word: [qui, quae, quod, cuius, cui, quem, quam, quo, qua, quorum, quarum, quibus, quos, quas, quis, quid]}]}
+      pool: [qui, quae, quod, cuius, cui, quem, quam, quo, qua, quorum, quibus, quos, quas, quis, quid]
+  - title: {en: The third declension, pt: A terceira declinação}
+    lessons:
+    - n: XXXIX
+      meaning: {en: "third declension: consonant stems (rēx, rēgis)", pt: "terceira declinação: temas em consoante (rēx, rēgis)"}
+      match: {seq: [{pos: noun, dict: ", -is [mfc]\\."}], same: [number]}
+    - n: XL
+      meaning: {en: "third declension: consonant stems (continued)", pt: "terceira declinação: temas em consoante (continuação)"}
+      match: {seq: [{pos: noun, dict: ", -is n\\."}], same: [number]}
+    - n: XLI
+      meaning: {en: "third declension: consonant stems (concluded)", pt: "terceira declinação: temas em consoante (conclusão)"}
+      match: {seq: [{pos: noun, dict: ", -is [mfnc]\\.", case: [gen, dat, abl]}], same: [number]}
+    - n: XLII
+      meaning: {en: "review of the declensions", pt: "revisão das declinações"}
+      match: {seq: [{pos: noun}], same: [number]}
+    - n: XLIII
+      meaning: {en: "third declension: i-stems", pt: "terceira declinação: temas em -i"}
+      match: {seq: [{pos: noun, dict: ", -is [mfn]\\.", lemma: "(is|es|e|al|ar)$"}], same: [number]}
+    - n: XLIV
+      meaning: {en: "irregular nouns of the third declension; gender", pt: "substantivos irregulares da terceira declinação; gênero"}
+      match: {seq: [{pos: noun, lemma: "^(vis|iter|senex|bos|caro|nix|Iuppiter|domus)$"}], same: [number]}
+    - n: XLV
+      meaning: {en: "adjectives of the third declension", pt: "adjetivos da terceira declinação"}
+      match: {seq: [{pos: adj, dict: ", -is, -e|, -is$|ntis|, -cris"}], same: [number]}
+  - title: {en: "Fourth and fifth declensions; place and time", pt: "Quarta e quinta declinações; lugar e tempo"}
+    lessons:
+    - n: XLVI
+      meaning: {en: "the fourth declension (manus, -ūs)", pt: "a quarta declinação (manus, -ūs)"}
+      match: {seq: [{pos: noun, dict: ", -us [mfn]\\."}], same: [number]}
+    - n: XLVII
+      meaning: {en: "expressions of place; domus", pt: "expressões de lugar; domus"}
+      match: [{seq: [{word: [domi, domum, domo, ruri, rus, romae, romam, roma, athenis, athenas]}], pool: [domi, domum, domo, ruri, rus]}, {seq: [{word: [in, ad, ex, e, a, ab]}, {pos: noun, case: [acc, abl]}], gap: 0, pool: [in, ad, ex, a, ab, de]}]
+    - n: XLVIII
+      meaning: {en: "the fifth declension (rēs, reī); the ablative of time", pt: "a quinta declinação (rēs, reī); o ablativo de tempo"}
+      match: [{seq: [{pos: noun, dict: ", -ei [mf]\\."}], same: [number]}, {seq: [{word: [die, nocte, hieme, aestate, vere, mane, hora, anno, tempore]}], pool: [die, nocte, hieme, aestate, hora, anno, diem, noctem]}]
+  - title: {en: Pronouns, pt: Pronomes}
+    lessons:
+    - n: XLIX
+      meaning: {en: "personal and reflexive pronouns (ego, tū, suī)", pt: "pronomes pessoais e reflexivos (ego, tū, suī)"}
+      match: {seq: [{pos: pron, lemma: "^(ego|tu|nos|vos|sui)$"}], same: [number]}
+    - n: L
+      meaning: {en: "ipse and īdem", pt: "ipse e īdem"}
+      match: {seq: [{pos: pron, lemma: "^(ipse|idem)$"}], same: [number]}
+    - n: LI
+      meaning: {en: "the demonstratives hic, iste, ille", pt: "os demonstrativos hic, iste, ille"}
+      match: {seq: [{pos: pron, lemma: "^(hic|iste|ille)$"}], same: [number]}
+    - n: LII
+      meaning: {en: "the indefinite pronouns (aliquis, quīdam, quisque)", pt: "os pronomes indefinidos (aliquis, quīdam, quisque)"}
+      match: {seq: [{word: [aliquis, aliquid, aliquem, alicui, alicuius, quidam, quaedam, quoddam, quiddam, quendam, quandam, quisque, quidque, quemque, cuique, quisquam, quicquam, quidquam, nemo, neminem, nihil]}]}
+      pool: [aliquis, aliquid, quidam, quaedam, quisque, quisquam, quicquam, nemo, nihil]
+  - title: {en: Comparison and numerals, pt: Comparação e numerais}
+    lessons:
+    - n: LIII
+      meaning: {en: "regular comparison of adjectives", pt: "comparação regular dos adjetivos"}
+      match: {seq: [{pos: adj, degree: [comp, super]}], same: [case, number, gender]}
+    - n: LIV
+      meaning: {en: "irregular comparison; the ablative of comparison", pt: "comparação irregular; o ablativo de comparação"}
+      match: {seq: [{pos: adj, degree: [comp, super], lemma: "^(bonus|malus|magnus|parvus|multus)$"}], same: [case, number, gender]}
+    - n: LV
+      meaning: {en: "irregular comparison (continued)", pt: "comparação irregular (continuação)"}
+      match: {seq: [{pos: adj, lemma: "^(superus|inferus|exterus|posterus|prior|ulterior|citerior|interior|propior)$"}], same: [case, number]}
+    - n: LVI
+      meaning: {en: "the ablative of the measure of difference (multō, paulō)", pt: "o ablativo da medida da diferença (multō, paulō)"}
+      match: {seq: [{word: [multo, paulo, nihilo, tanto, quanto, aliquanto]}]}
+      pool: [multo, paulo, nihilo, tanto, quanto, multum, paulum]
+    - n: LVII
+      meaning: {en: "adverbs: formation and comparison", pt: "advérbios: formação e comparação"}
+      match: {seq: [{pos: adv, degree: [comp, super]}]}
+    - n: LVIII
+      meaning: {en: "numerals; the partitive genitive", pt: "numerais; o genitivo partitivo"}
+      match: [{seq: [{pos: num}], same: [case]}, {seq: [{word: [pars, partem, multi, nemo, nihil, satis, unus, quis, plerique, nonnulli]}, {pos: noun, case: gen}], gap: 1, same: [number]}]
+    - n: LIX
+      meaning: {en: "numerals; the accusative of extent", pt: "numerais; o acusativo de extensão"}
+      match: {seq: [{pos: num}, {pos: noun, case: acc, lemma: "^(annus|dies|hora|mensis|pes|passus|nox)$"}], gap: 1, same: [number]}
+  - title: {en: Deponent verbs, pt: Verbos depoentes}
+    lessons:
+    - n: LX
+      meaning: {en: "deponent verbs: passive in form, active in meaning", pt: "verbos depoentes: forma passiva, sentido ativo"}
+      match: {seq: [{pos: verb, lemma: "or$"}], same: [tense, mood]}
+- id: Reading
+  title: {en: Reading, pt: Leitura}
+  topics:
+  - title: {en: The subjunctive, pt: O subjuntivo}
+    lessons:
+    - n: LXI
+      meaning: {en: "the subjunctive mood", pt: "o modo subjuntivo"}
+      match: {seq: [{pos: verb, mood: sub}], same: [person, number, voice]}
+    - n: LXII
+      meaning: {en: "the subjunctive of purpose (ut, nē)", pt: "o subjuntivo de finalidade (ut, nē)"}
+      match: {seq: [{word: [ut, ne]}, {pos: verb, mood: sub}], near: 3, gap: 1, same: [person, number, voice]}
+    - n: LXIII
+      meaning: {en: "the imperfect subjunctive; sequence of tenses", pt: "o imperfeito do subjuntivo; a concordância dos tempos"}
+      match: {seq: [{pos: verb, mood: sub, tense: impf}], same: [person, number, voice]}
+    - n: LXIV
+      meaning: {en: "perfect and pluperfect subjunctive; clauses of purpose as objects", pt: "perfeito e mais-que-perfeito do subjuntivo; orações finais como objeto"}
+      match: {seq: [{pos: verb, mood: sub, tense: [perf, plup]}], same: [person, number, voice]}
+    - n: LXV
+      meaning: {en: "the subjunctive of possum; verbs of fearing", pt: "o subjuntivo de possum; verbos de temor"}
+      match: [{seq: [{pos: verb, lemma: "^possum$", mood: sub}], same: [person, number]}, {seq: [{pos: verb, lemma: "^(timeo|metuo|vereor)$"}, {word: [ne, ut]}], near: 1, gap: 1, pool: [ne, ut, quod, cum]}]
+  - title: {en: Participles and irregular verbs, pt: Particípios e verbos irregulares}
+    lessons:
+    - n: LXVI
+      meaning: {en: "the participles", pt: "os particípios"}
+      match: {seq: [{pos: vpar}], same: [case, number, gender]}
+    - n: LXVII
+      meaning: {en: "volō, nōlō, mālō; the ablative absolute", pt: "volō, nōlō, mālō; o ablativo absoluto"}
+      match: [{seq: [{pos: verb, lemma: "^(volo|nolo|malo)$"}], same: [tense, mood]}, {seq: [{pos: noun, case: abl}, {pos: vpar, case: abl}], gap: 1, same: [case, number, gender]}]
+    - n: LXVIII
+      meaning: {en: "the irregular verb fīō; the subjunctive of result", pt: "o verbo irregular fīō; o subjuntivo de consequência"}
+      match: [{seq: [{pos: verb, lemma: "^fio$"}], same: [tense, mood]}, {seq: [{word: [tam, ita, tantus, tanta, tantum, sic, adeo, tot]}, {word: [ut]}, {pos: verb, mood: sub}], near: 6, gap: 2, same: [person, number, voice]}]
+  - title: {en: Clauses and constructions, pt: Orações e construções}
+    lessons:
+    - n: LXIX
+      meaning: {en: "the subjunctive of characteristic; the predicate accusative", pt: "o subjuntivo de caracterização; o acusativo predicativo"}
+      match: {seq: [{word: [qui, quae, quod, cuius, cui, quem, quam, quo, qua, quibus, quos, quas]}, {pos: verb, mood: sub}], near: 3, gap: 1, same: [person, number, voice]}
+    - n: LXX
+      meaning: {en: "constructions with cum; the ablative of specification", pt: "construções com cum; o ablativo de especificação"}
+      match: {seq: [{word: [cum]}, {pos: verb, mood: sub}], near: 4, gap: 1, same: [person, number, voice]}
+    - n: LXXI
+      meaning: {en: "the gerund and gerundive; the predicate genitive", pt: "o gerúndio e o gerundivo; o genitivo predicativo"}
+      match: {seq: [{pos: vpar, tense: fut, voice: pass}], same: [case, number, gender]}
+    - n: LXXII
+      meaning: {en: "the irregular verb eō; indirect statement", pt: "o verbo irregular eō; o discurso indireto"}
+      match: [{seq: [{pos: verb, lemma: "^eo$"}], same: [tense, mood]}, {seq: [{pos: verb, lemma: "^(dico|puto|scio|credo|nuntio|spero|nego|audio|video|sentio|existimo|arbitror|intellego)$"}, {pos: verb, mood: inf}], near: 4, gap: 1, same: [mood]}]
+    - n: LXXIII
+      meaning: {en: "the irregular verb ferō; the dative with compounds", pt: "o verbo irregular ferō; o dativo com compostos"}
+      match: {seq: [{pos: verb, lemma: "^(af|con|de|dif|ef|in|of|per|prae|pro|re|trans)?fero$"}], same: [tense, mood]}
+    - n: LXXIV
+      meaning: {en: "the subjunctive in indirect questions", pt: "o subjuntivo nas perguntas indiretas"}
+      match: {seq: [{word: [quis, quid, cur, ubi, quando, quomodo, num, utrum, unde, quo, qualis, quantus]}, {pos: verb, mood: sub}], near: 3, gap: 1, same: [person, number, voice]}
+  - title: {en: Reviews, pt: Revisões}
+    lessons:
+    - n: LXXV
+      meaning: {en: "the dative of purpose (double dative)", pt: "o dativo de finalidade (duplo dativo)"}
+      match: {seq: [{word: [auxilio, praesidio, usui, curae, saluti, odio, honori, impedimento, dono, exemplo]}]}
+      pool: [auxilio, praesidio, usui, curae, saluti, odio, honori, impedimento]
+    - n: LXXVI
+      meaning: {en: "the genitive and ablative of quality", pt: "o genitivo e o ablativo de qualidade"}
+      match: {seq: [{word: [vir, homo, femina, puer, mulier, puella, iuvenis]}, {pos: adj, case: [gen, abl]}, {pos: noun, case: [gen, abl]}], near: 1, gap: 1, same: [case, number, gender]}
+    - n: LXXVII
+      meaning: {en: "review of agreement and of the genitive, dative, accusative", pt: "revisão da concordância e do genitivo, dativo, acusativo"}
+      match: {seq: [{pos: noun}, {pos: adj}], gap: 1, same: [number, gender]}
+    - n: LXXVIII
+      meaning: {en: "review of the ablative", pt: "revisão do ablativo"}
+      match: {seq: [{pos: noun, case: abl}], same: [number]}
+    - n: LXXIX
+      meaning: {en: "review of the gerund, gerundive, infinitive and subjunctive", pt: "revisão do gerúndio, gerundivo, infinitivo e subjuntivo"}
+      match: {seq: [{pos: verb, mood: [sub, inf]}], same: [person, number]}

@@ -153,3 +153,12 @@ it('suffixVariants ignores vowel marks and gives nothing when no suffix is there
   expect(suffixVariants('والديّ', ['ي', 'ك'])).toEqual(['والدك']);
   expect(suffixVariants('بيت', ['ي', 'ك'])).toEqual([]);
 });
+import { consonantV } from '../../tools/learn_match.mjs';
+it('Latin consonantal u written v, as the sentence writes it (uideor → videor, but tuus, sua stay)', () => {
+  expect(['uideor', 'uidebaris', 'nouus', 'tuus', 'suam', 'uir', 'Uenit', 'uoluit'].map(consonantV)).toEqual(['videor', 'videbaris', 'novus', 'tuus', 'suam', 'vir', 'Venit', 'voluit']);
+});
+import { followSpelling } from '../../tools/learn_match.mjs';
+it('wrong answers follow the answer’s spelling where the paradigm differs (silva written with v)', () => {
+  expect(followSpelling('silvam', 'siluam', ['silua', 'siluae'])).toEqual(['silva', 'silvae']);
+  expect(followSpelling('linguae', 'linguae', ['lingua'])).toEqual(['lingua']);
+});

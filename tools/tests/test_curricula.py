@@ -8,7 +8,7 @@ import yaml
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from learn_curriculum import _load  # noqa: E402
 
-CURRICULA = sorted(p for p in (Path(__file__).resolve().parents[1] / "curricula").iterdir() if p.is_dir() or p.suffix == ".yml")
+CURRICULA = sorted(p for p in (Path(__file__).resolve().parents[1] / "curricula").iterdir() if (p.is_dir() and (p / "meta.yml").exists()) or p.suffix == ".yml")
 
 
 @pytest.mark.parametrize("path", CURRICULA, ids=lambda p: p.name)

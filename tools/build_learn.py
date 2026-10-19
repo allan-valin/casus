@@ -103,7 +103,54 @@ def ja_learn(book: Path, openjlpt: Path) -> tuple[dict, dict, dict]:
     return index, lessons, questions
 
 
+def la_learn(book: str, plan_path: Path) -> tuple[dict, dict, dict]:
+    """Latin: D'Ooge's lessons as the book has them, in the stages, topics and rules of tools/curricula/la/plan.yml;
+    each lesson's vocabulary as word questions, its Latin sentences for the gap exercises (tools/learn_curriculum.mjs)"""
+    import yaml
+    from learn_la import lessons_of
+    plan = yaml.safe_load(plan_path.read_text(encoding="utf-8"))
+    book_lessons = {l["number"]: l for l in lessons_of(book)}
+    both = lambda en, pt: {"en": en, "pt": pt}   # noqa: E731
+    levels, lessons, questions = [], {}, {}
+    for st in plan["stages"]:
+        topics, qs = [], {}
+        all_vocab = [v for t in st["topics"] for x in t["lessons"] for v in book_lessons.get(x["n"], {}).get("vocab", [])]
+        for t_k, topic in enumerate(st["topics"], 1):
+            entries = []
+            for x in topic["lessons"]:
+                b = book_lessons.get(x["n"])
+                if not b:
+                    continue
+                lid = f"la-{x['n']}"
+                sections = [{"id": "lesson", "title": both("The lesson", "A lição (em inglês, do livro)"), "html": b["html"]}]
+                if b["vocab"]:
+                    rows = "".join(f"<tr><td><b>{la}</b></td><td>{en}</td></tr>" for la, en in b["vocab"])
+                    sections.append({"id": "vocab", "title": both("Vocabulary", "Vocabulário"), "html": f"<table>{rows}</table>"})
+                if b["exercises_html"]:
+                    sections.append({"id": "book-exercises", "title": both("The book's exercises", "Exercícios do livro"), "html": b["exercises_html"]})
+                page = {"id": lid, "title": f"{x['n']} · {b['title']}", "meaning": x["meaning"], "intro": "", "sections": sections,
+                        "examples": [], "practice": [], "level": st["id"], "topic": topic["title"], "match": x["match"],
+                        "drill": b["drill"], "source": "D'Ooge, Latin for Beginners (1909), public domain"}
+                if x.get("pool"):
+                    page["pool"] = x["pool"]
+                lessons[lid] = page
+                entries.append({"id": lid, "title": page["title"], "meaning": x["meaning"]})
+                ens = [en for _, en in all_vocab]
+                las = [la for la, _ in all_vocab]
+                mine = []
+                for la, en in b["vocab"]:
+                    mine.append({"type": "word", "prompt": la, "answer": en, "pool": [e for e in ens if e != en][:40]})
+                    mine.append({"type": "word-back", "prompt": en, "answer": la, "pool": [w for w in las if w != la][:40]})
+                qs[lid] = {"pools": {"gap": x.get("pool", [])}, "qs": mine}
+            if entries:
+                topics.append({"id": f"la-{st['id']}-t{t_k}", "kind": "grammar", "title": topic["title"], "lessons": entries})
+        levels.append({"id": st["id"], "title": st["title"], "topics": topics})
+        questions[st["id"]] = qs
+    return {"system": plan["system"], "levels": levels, "credit": plan["credit"]}, lessons, questions
+
+
 BUILDERS = {"ja": lambda: ja_learn(ROOT / "vendor" / "jlpt-grammar-enhanced", ROOT / "vendor" / "openjlpt")}
+BUILDERS["la"] = lambda: la_learn((ROOT / "vendor" / "dooge" / "dooge.html").read_text(encoding="utf-8"), ROOT / "tools" / "curricula" / "la" / "plan.yml")
 
 
 def builder(code: str):

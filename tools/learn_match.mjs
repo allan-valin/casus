@@ -15,7 +15,7 @@
  * A word fits a morphological condition only when every reading the reader keeps for it fits, so a gap is never
  * built on a guess.
  */
-const FEATURES = ['pos', 'tense', 'aspect', 'person', 'number', 'gender', 'case', 'mood', 'voice', 'state'];
+const FEATURES = ['pos', 'tense', 'aspect', 'person', 'number', 'gender', 'case', 'mood', 'voice', 'state', 'degree', 'conj'];
 const lower = (s) => s.toLocaleLowerCase();
 
 function fitsAnalysis(a, cond, lemmaOf, dictOf) {
@@ -165,4 +165,18 @@ export function rowFor(rows, surface, analyses, decode, norm) {
     if (row) found.set(row[0], row);
   }
   return found.size === 1 ? [...found.values()][0] : null;
+}
+
+/** Latin u where it is a consonant, written v as most modern texts do: at the start before a vowel, and between vowels
+ * (uideor → videor, nouus → novus); tuus, sua stay */
+export function consonantV(word) {
+  return word.replace(/(^|[aeiouāēīōū])([uU])(?=[aeiouāēīōū])/gu, (m, before, u) => before + (u === 'U' ? 'V' : 'v'));
+}
+
+/** where the sentence spells the answer differently from its paradigm row (silvam / siluam), the wrong answers get the
+ * same letters at the same places */
+export function followSpelling(written, row, wrong) {
+  const at = [];
+  for (let i = 0; i < Math.min(written.length, row.length); i += 1) if (written[i].toLowerCase() !== row[i].toLowerCase()) at.push([i, written[i].toLowerCase(), row[i].toLowerCase()]);
+  return wrong.map((w) => [...w].map((ch, i) => { const d = at.find(([k, , from]) => k === i && ch.toLowerCase() === from); return d ? d[1] : ch; }).join(''));
 }

@@ -16,7 +16,7 @@ if [ ! -d "$V/jlpt-grammar-enhanced" ]; then
 fi
 # Tatoeba, CC BY 2.0 FR: sentences and translation links per language
 # one Tatoeba code per Learn language (tools/learn_curriculum.mjs TATOEBA), plus English and Portuguese for translations
-for t3 in jpn mkd ara; do
+for t3 in jpn mkd ara lat; do
   for f in "$t3/${t3}_sentences.tsv.bz2" "$t3/$t3-eng_links.tsv.bz2" "$t3/$t3-por_links.tsv.bz2"; do
     [ -f "$V/tatoeba/$(basename $f)" ] || curl -sfL -o "$V/tatoeba/$(basename $f)" "https://downloads.tatoeba.org/exports/per_language/$f" || true
   done
@@ -24,4 +24,7 @@ done
 for f in eng/eng_sentences.tsv.bz2 por/por_sentences.tsv.bz2; do
   [ -f "$V/tatoeba/$(basename $f)" ] || curl -sfL -o "$V/tatoeba/$(basename $f)" "https://downloads.tatoeba.org/exports/per_language/$f"
 done
+# D'Ooge, Latin for Beginners (public domain): Project Gutenberg #18251
+mkdir -p "$V/dooge"
+[ -f "$V/dooge/dooge.html" ] || curl -sfL -o "$V/dooge/dooge.html" "https://www.gutenberg.org/files/18251/18251-h/18251-h.htm"
 echo "Learn sources in $V"

@@ -109,16 +109,16 @@
     <p class="muted">{t('drill.loading')}</p>
   {:else if mode === 'practice'}
     <div class="range-box">
-      <label>{t('learn.from')} <select class="range" bind:value={from}>{#each learn.levels as l}<option value={l.id}>{l.id}</option>{/each}</select></label>
-      <label>{t('learn.to')} <select class="range" bind:value={to}>{#each learn.levels as l}<option value={l.id}>{l.id}</option>{/each}</select></label>
+      <label>{t('learn.from')} <select class="range" bind:value={from}>{#each learn.levels as l}<option value={l.id}>{l.title ? loc(l.title) : l.id}</option>{/each}</select></label>
+      <label>{t('learn.to')} <select class="range" bind:value={to}>{#each learn.levels as l}<option value={l.id}>{l.title ? loc(l.title) : l.id}</option>{/each}</select></label>
       <button class="start-practice primary" onclick={startPractice} disabled={loading}>{t('learn.start')}</button>
     </div>
     {#if quizItems.length}<p class="ex-count">{t('learn.exCount', { n: quizItems.length })}</p><ChoiceDrill items={quizItems} {random} {romanize} onresult={record} ordered />{/if}
   {:else if lesson && lessonRef}
     <!-- one lesson, as a page -->
     <article class="lesson-page" style={`--script-scale: ${lang.script?.fontScale ?? 1}`}>
-      <nav class="crumbs"><button class="back" onclick={() => { lesson = null; quizItems = []; }}>← {lessonRef.level.id}</button> <span>{loc(lessonRef.topic.title)}</span></nav>
-      <h3><span class="badge-level">{lessonRef.level.id}</span> <span class="l-head" lang={lang.bcp47}>{lesson.title ?? lessonRef.entry.title}</span></h3>
+      <nav class="crumbs"><button class="back" onclick={() => { lesson = null; quizItems = []; }}>← {lessonRef.level.title ? loc(lessonRef.level.title) : lessonRef.level.id}</button> <span>{loc(lessonRef.topic.title)}</span></nav>
+      <h3><span class="badge-level">{lessonRef.level.title ? loc(lessonRef.level.title) : lessonRef.level.id}</span> <span class="l-head" lang={lang.bcp47}>{lesson.title ?? lessonRef.entry.title}</span></h3>
       {#if lesson.meaning}<p class="l-sub">{loc(lesson.meaning)}</p>{/if}
       {#if lesson.kind === 'vocab' || lesson.kind === 'kanji'}
         <nav class="toc"><a href="#ex-start">{t('learn.exercises')}</a></nav>
@@ -171,7 +171,7 @@
   {:else}
     <!-- the level's topics, each with its lessons listed under it -->
     <div class="levels" role="tablist">
-      {#each learn.levels as l}<button class="level-tab" data-level={l.id} class:active={l.id === levelId} aria-selected={l.id === levelId} onclick={() => { levelId = l.id; }}>{l.id}<span class="count">{l.topics.filter((tp) => tp.kind === 'grammar').reduce((n, tp) => n + tp.lessons.length, 0)}</span></button>{/each}
+      {#each learn.levels as l}<button class="level-tab" data-level={l.id} class:active={l.id === levelId} aria-selected={l.id === levelId} onclick={() => { levelId = l.id; }}>{l.title ? loc(l.title) : l.id}<span class="count">{l.topics.filter((tp) => tp.kind === 'grammar').reduce((n, tp) => n + tp.lessons.length, 0)}</span></button>{/each}
     </div>
     <input class="search" type="search" bind:value={search} placeholder={t('learn.search')} />
     {#each level?.topics ?? [] as tp (tp.id)}

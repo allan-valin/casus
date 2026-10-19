@@ -48,3 +48,33 @@ def test_japanese_levels_topics_lessons_and_questions(tmp_path):
     assert gap["answer"] == "も" and ["＿＿", None] in gap["furi"] and "は" in f["pools"]["gap"]
     assert any(q["type"] == "translate" and q["answer"] == "I'll go too." for q in qs)
     assert any(q["type"] == "meaning" and q["answer"] == "also; too; as well" for q in qs)
+
+
+def test_latin_from_the_book_and_the_plan(tmp_path):
+    from build_learn import la_learn
+    book = (FIX / "dooge-lesson7.html").read_text(encoding="utf-8") + (
+        '<h3>APPENDIX</h3><h5 class="subchap">LESSON VII, <a href="#sec62" name="sec62vocab">§ 62</a></h5>'
+        '<table class="vocab"><tr><td><div class="index special"><b>casa, -ae</b>, f., <i>cottage</i></div></td></tr></table><h3>')
+    plan = tmp_path / "plan.yml"
+    plan.write_text("""system: X
+credit: {en: c, pt: c}
+stages:
+- id: Beginner
+  title: {en: Beginner, pt: Iniciante}
+  topics:
+  - title: {en: First declension, pt: Primeira declinação}
+    lessons:
+    - n: VII
+      meaning: {en: first declension, pt: primeira declinação}
+      match: {seq: [{pos: noun}]}
+""", encoding="utf-8")
+    index, lessons, questions = la_learn(book, plan)
+    st = index["levels"][0]
+    assert st["id"] == "Beginner" and st["title"] == {"en": "Beginner", "pt": "Iniciante"}
+    e = st["topics"][0]["lessons"][0]
+    assert e == {"id": "la-VII", "title": "VII · The First or Ā-Declension", "meaning": {"en": "first declension", "pt": "primeira declinação"}}
+    l = lessons["la-VII"]
+    assert [s["id"] for s in l["sections"]][:1] == ["lesson"] and l["match"] == {"seq": [{"pos": "noun"}]}
+    assert "Agricola cum fīliā in casā habitat." in l["drill"]
+    words = [q for q in questions["Beginner"]["la-VII"]["qs"] if q["type"] == "word"]
+    assert any(q["prompt"] == "casa" and q["answer"] == "cottage" for q in words)
