@@ -209,6 +209,52 @@ def de_learn(book: Path, plan_path: Path) -> tuple[dict, dict, dict]:
 
 BUILDERS = {"ja": lambda: ja_learn(ROOT / "vendor" / "jlpt-grammar-enhanced", ROOT / "vendor" / "openjlpt")}
 BUILDERS["de"] = lambda: de_learn(ROOT / "vendor" / "grimm", ROOT / "tools" / "curricula" / "de" / "plan.yml")
+def tatoeba_pairs(t3: str, limit_len: int = 30) -> list:
+    """(sentence, English, Portuguese) from Tatoeba for a language, short ones"""
+    import bz2
+    T = ROOT / "vendor" / "tatoeba"
+    rows = lambda f: (line.rstrip("\n").split("\t") for line in bz2.open(T / f, "rt", encoding="utf-8"))   # noqa: E731
+    own = {r[0]: r[2] for r in rows(f"{t3}_sentences.tsv.bz2") if len(r) > 2 and len(r[2]) <= limit_len}
+    to_en, to_pt = {}, {}
+    for a, b in rows(f"{t3}-eng_links.tsv.bz2"):
+        if a in own:
+            to_en.setdefault(a, b)
+    try:
+        for a, b in rows(f"{t3}-por_links.tsv.bz2"):
+            if a in own:
+                to_pt.setdefault(a, b)
+    except FileNotFoundError:
+        pass
+    want = set(to_en.values()) | set(to_pt.values())
+    en = {r[0]: r[2] for r in rows("eng_sentences.tsv.bz2") if r[0] in want}
+    pt = {r[0]: r[2] for r in rows("por_sentences.tsv.bz2") if r[0] in want}
+    return [(t, en[to_en[i]], pt.get(to_pt.get(i))) for i, t in own.items() if to_en.get(i) in en]
+
+
+def zh_builder():
+    import yaml
+    from learn_zh import zh_learn
+    notes = yaml.safe_load((ROOT / "tools" / "curricula" / "zh" / "notes.yml").read_text(encoding="utf-8"))
+    import gzip
+    import re
+    # characters only traditional writing uses (CC-CEDICT: in a traditional headword, in no simplified one): Tatoeba
+    # mixes traditional sentences in; the lessons are in simplified characters
+    trad, simp = set(), set()
+    with gzip.open(ROOT / "vendor" / "cedict" / "cedict_1_0_ts_utf-8_mdbg.txt.gz", "rt", encoding="utf-8") as f:
+        for line in f:
+            m = re.match(r"^(\S+) (\S+) ", line)
+            if m:
+                trad.update(m.group(1))
+                simp.update(m.group(2))
+    avoid = "".join(sorted(c for c in trad - simp if "\u3400" <= c <= "\u9fff"))
+    pairs = [p for p in tatoeba_pairs("cmn") if not any(c in avoid for c in p[0])]
+    index, lessons, questions = zh_learn(ROOT / "vendor" / "hsk30" / "hsk30-grammar.csv", ROOT / "vendor" / "hsk30" / "hsk30.csv",
+                                         ROOT / "vendor" / "cedict" / "cedict_1_0_ts_utf-8_mdbg.txt.gz", notes, sentences=pairs)
+    index["avoid"] = avoid
+    return index, lessons, questions
+
+
+BUILDERS["zh"] = zh_builder
 BUILDERS["la"] = lambda: la_learn((ROOT / "vendor" / "dooge" / "dooge.html").read_text(encoding="utf-8"), ROOT / "tools" / "curricula" / "la" / "plan.yml")
 
 

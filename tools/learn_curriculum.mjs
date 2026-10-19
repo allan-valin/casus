@@ -70,6 +70,9 @@ async function main(code) {
 
   const index = await json('learn.json');
   const names = new Set((index.names ?? []).map(norm));
+  // characters a language's lessons do not use (Chinese: traditional-only characters in a simplified course)
+  const avoid = new Set(index.avoid ?? '');
+  const avoided = (t) => avoid.size > 0 && [...t].some((c) => avoid.has(c));
   const lessons = [];
   for (const level of index.levels) for (const topic of level.topics) for (const e of topic.lessons) {
     const l = await json(`learn/${e.id}.json`);
@@ -85,7 +88,7 @@ async function main(code) {
   const corpus = [];
   try { for (const f of (await readdir(corpusDir)).filter((x) => x.endsWith('.txt'))) for (const t of (await readFile(path.join(corpusDir, f), 'utf8')).split('\n')) if (t.trim()) corpus.push(t.trim()); } catch { /* none */ }
   const attested = new Set([...own.map(([, , t]) => t), ...corpus].flatMap((t) => t.split(/[^\p{L}\p{M}'-]+/u)).filter((w) => w && w[0] === w[0].toLocaleLowerCase()).map(norm));
-  const pool = own.filter(([id, , t]) => toEng.has(id) && eng.has(toEng.get(id)) && t.length <= 70 && !inscription(t) && !unsuitable(eng.get(toEng.get(id)), t))
+  const pool = own.filter(([id, , t]) => toEng.has(id) && eng.has(toEng.get(id)) && t.length <= 70 && !inscription(t) && !avoided(t) && !unsuitable(eng.get(toEng.get(id)), t))
     .map(([id, , t]) => ({ id, text: t, s: simplicity(t.split(/[\s.,!?;:„“"]+/u).filter(Boolean), (w) => freq.get(w)) }))
     .sort((a, b) => a.s - b.s);
   const found = new Map(lessons.map((l) => [l.id, []]));
@@ -173,13 +176,16 @@ async function main(code) {
       // romanisation: of every word, or (a script without vowels) only when every word's vowels are certain
       const words = blocks.filter((b) => /[\p{L}\p{N}]/u.test(b.token.surface));
       const sure = !vowelled || words.every((b) => markOf(b));
-      const roman = (b) => (sure && romanize ? romanize(markOf(b) ?? b.token.surface) : '');
+      // the reader's own reading of a word where it has one (Chinese pinyin), else the script's romanisation
+      const roman = (b) => (b.roman ? b.roman.split(' / ')[0] : null) ?? (sure && romanize ? romanize(markOf(b) ?? b.token.surface) : '');
       const romanBlocks = blocks.map((b) => ({ ...b, roman: /[\p{L}\p{N}]/u.test(b.token.surface) ? roman(b) : '' }));
       const tokens = blocks.map((b) => b.token);
       done.add(norm(text));
       found.get(l.id).push({ text, shown: text, src: id ? 'tatoeba' : only ? 'drill' : 'text', en: id ? eng.get(toEng.get(id)) : '', pt: id && toPor.has(id) ? por.get(toPor.get(id)) : undefined, answer,
         wrong: wrong?.length >= (swaps || prefixes || suffixes ? 1 : 2) ? wrong : null, gap: rewrite(text, tokens, () => null, m.span),
-        gapRoman: sure ? gapRoman(romanBlocks, m.span) : '', roman: romanBlocks.map((b) => b.roman).filter(Boolean).join(' '),
+        // Chinese: the gap's pinyin stays in the line — near-synonyms (很, 非常) would otherwise both fit; the question
+        // becomes which characters are written for that sound and meaning
+        gapRoman: code === 'zh' ? romanBlocks.map((b) => b.roman).filter(Boolean).join(' ') : sure ? gapRoman(romanBlocks, m.span) : '', roman: romanBlocks.map((b) => b.roman).filter(Boolean).join(' '),
         tok: blocks.map((b) => b.token.surface) });
     }
     if (read % 5000 === 0) console.log(`${read} sentences read (${Math.round((Date.now() - t0) / 1000)} s)`);
@@ -201,7 +207,7 @@ async function main(code) {
       const vowelled = blocks.some((b) => b.candidates.some((c) => c.analysis?.marked));
       const sure = !vowelled || words.every((b) => markOf(b));
       ex.shown = ex.text;
-      ex.roman = sure && romanize ? words.map((b) => romanize(markOf(b) ?? b.token.surface)).filter(Boolean).join(' ') : '';
+      ex.roman = words.map((b) => (b.roman ? b.roman.split(' / ')[0] : null) ?? (sure && romanize ? romanize(markOf(b) ?? b.token.surface) : '')).filter(Boolean).join(' ');
       readOwn.set(ex.text, { shown: ex.shown, roman: ex.roman, tok: blocks.map((b) => b.token.surface) });
       // the example's gap, worked out as for Tatoeba: in a script without vowels, the answer vowelled from its paradigm
       // row and the nearest forms as wrong answers (else the bare answer among vowelled ones gives itself away)

@@ -173,6 +173,11 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
   example sentences for the exercises: the **NIKL Basic Korean Dictionary** (한국어기초사전, 국립국어원), CC BY-SA 2.0
   KR, from the export mirrored in github.com/71/study-korean (tools/build_kodict.py). Also Tatoeba's Korean sentences
   (CC BY 2.0 FR).
+- Chinese lessons (573, HSK 1–9): the points of the **HSK 3.0 grammar syllabus** (GF 0025-2021, a national standard)
+  as extracted with the HSK 3.0 word list by github.com/ivankra/hsk30 (MIT); English and Portuguese labels and the
+  explanations of the structural points **written for Casus** (tools/learn_zh_labels.py, tools/curricula/zh/notes.yml);
+  English glosses CC-CEDICT (CC BY-SA); sentences Tatoeba (CC BY 2.0 FR), traditional-script sentences left out. The
+  Chinese Grammar Wiki (AllSet Learning) forbids commercial use and was not used.
 
 ## Document import
 

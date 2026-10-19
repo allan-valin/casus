@@ -1,0 +1,157 @@
+# Explanations written for Casus (2026-10-20) for the structural points of the HSK 3.0 grammar syllabus, keyed by the
+# syllabus's own label (Details, else Category). Word-list points need none: their forms are shown with pinyin,
+# English and an example each. Each entry may carry `match`, a rule for Tatoeba's sentences (tools/learn_match.mjs).
+动态助词:
+  en: |
+    Chinese verbs do not change; **particles** after them show the aspect. **了** marks a completed action (**我买了一本书** "I bought a book"), **过** a past experience (**我去过北京** "I've been to Beijing"), **着** a continuing state (**门开着** "the door is open"). Negated completion uses **没(有)** without 了: **我没买**.
+  pt: |
+    O verbo chinês não muda; **partículas** depois dele mostram o aspecto. **了** marca a ação concluída (**我买了一本书** "comprei um livro"), **过** uma experiência passada (**我去过北京** "já estive em Pequim"), **着** um estado contínuo (**门开着** "a porta está aberta"). A conclusão negada usa **没(有)** sem 了: **我没买**.
+  match: {seq: [{pos: verb}, {word: [了, 过, 着]}], gap: 1}
+  pool: [了, 过, 着, 的, 得]
+结构助词:
+  en: |
+    Three particles pronounced *de*: **的** joins an attribute to a noun (**我的书** "my book", **我买的书** "the book I bought"); **地** joins an adverbial to a verb (**慢慢地走** "walk slowly"); **得** joins a verb to its complement of manner or degree (**跑得很快** "runs fast").
+  pt: |
+    Três partículas pronunciadas *de*: **的** liga um adjunto ao substantivo (**我的书** "meu livro", **我买的书** "o livro que comprei"); **地** liga um adjunto adverbial ao verbo (**慢慢地走** "andar devagar"); **得** liga o verbo ao complemento de modo ou grau (**跑得很快** "corre rápido").
+  match: {seq: [{word: [的, 地, 得]}], gap: 0}
+  pool: [的, 地, 得]
+语气助词:
+  en: |
+    Particles at the end of the sentence set its tone: **吗** makes a yes/no question (**你好吗？**), **呢** asks back or softens (**你呢？** "And you?"), **吧** suggests or seeks agreement (**我们走吧** "Let's go"), sentence-final **了** marks a change (**下雨了** "It's started raining").
+  pt: |
+    Partículas no fim da frase dão o tom: **吗** faz pergunta de sim ou não (**你好吗？**), **呢** devolve a pergunta ou suaviza (**你呢？** "E você?"), **吧** sugere ou pede concordância (**我们走吧** "Vamos"), **了** final marca uma mudança (**下雨了** "Começou a chover").
+  match: {seq: [{word: [吗, 呢, 吧], trail: "？?。.!！"}], gap: 0}
+  pool: [吗, 呢, 吧, 了, 啊]
+“把”字句:
+  en: |
+    **把** brings the object before the verb to say what is done **to** it, with a result: **我把书放在桌子上** "I put the book on the table". The verb needs something after it (a complement, 了, a direction): not just ✗ *我把书放*. The object is definite.
+  pt: |
+    **把** traz o objeto para antes do verbo para dizer o que se faz **com** ele, com um resultado: **我把书放在桌子上** "Pus o livro na mesa". O verbo precisa de algo depois (complemento, 了, direção): não só ✗ *我把书放*. O objeto é definido.
+  match: {seq: [{word: [把]}, {pos: [noun, pron]}], near: 3, gap: 0}
+  pool: [把, 被, 让, 给, 对]
+被动句:
+  en: |
+    **被** (or, in speech, **叫 / 让**) marks the doer of a passive action, often an unpleasant one: **我的钱包被偷了** "My wallet was stolen", **他被老师批评了** "He was criticised by the teacher".
+  pt: |
+    **被** (ou, na fala, **叫 / 让**) marca quem faz a ação na passiva, muitas vezes algo desagradável: **我的钱包被偷了** "Minha carteira foi roubada", **他被老师批评了** "Ele foi criticado pelo professor".
+  match: {seq: [{word: [被]}], gap: 0}
+  pool: [被, 把, 让, 给, 对]
+比较句:
+  en: |
+    **A 比 B + adjective**: **他比我高** "He is taller than me". Add the difference after the adjective (**高三厘米**, **高一点儿**, **高得多**); never **很** before it. Negative: **A 没有 B (那么) 高**.
+  pt: |
+    **A 比 B + adjetivo**: **他比我高** "Ele é mais alto que eu". A diferença vai depois do adjetivo (**高三厘米**, **高一点儿**, **高得多**); nunca **很** antes dele. Negativa: **A 没有 B (那么) 高**.
+  match: {seq: [{word: [比]}], gap: 0}
+  pool: [比, 跟, 和, 像, 对]
+结果补语:
+  en: |
+    A second verb or adjective after the verb tells its **result**: **看完** "finish reading", **听懂** "understand (by listening)", **找到** "find", **写错** "write wrongly". Negated with **没**: **我没听懂**.
+  pt: |
+    Um segundo verbo ou adjetivo depois do verbo diz o **resultado**: **看完** "terminar de ler", **听懂** "entender (ouvindo)", **找到** "encontrar", **写错** "escrever errado". Nega-se com **没**: **我没听懂**.
+  match: {seq: [{pos: verb}, {word: [完, 懂, 到, 错, 好, 见, 会, 住, 走, 掉]}], gap: 1}
+  pool: [完, 懂, 到, 错, 好, 见, 会, 住]
+趋向补语:
+  en: |
+    **来** (towards the speaker) and **去** (away), alone or after **上 下 进 出 回 过 起**, give direction: **进来** "come in", **拿出去** "take out", **站起来** "stand up". Some have figurative senses: **想起来** "recall", **看起来** "seem".
+  pt: |
+    **来** (em direção a quem fala) e **去** (afastando-se), sozinhos ou depois de **上 下 进 出 回 过 起**, dão a direção: **进来** "entrar (para cá)", **拿出去** "levar para fora", **站起来** "levantar-se". Alguns têm sentido figurado: **想起来** "lembrar", **看起来** "parecer".
+  match: {seq: [{pos: verb}, {word: [来, 去, 上来, 下来, 进来, 出来, 回来, 过来, 起来, 上去, 下去, 进去, 出去, 回去, 过去]}], gap: 1}
+  pool: [来, 去, 起来, 下来, 出来, 回来, 进来, 过去]
+状态补语:
+  en: |
+    **Verb + 得 + description** says how an action is done: **他说得很快** "He speaks fast", **你写得真好** "You write really well". With an object the verb is repeated: **他说汉语说得很好**.
+  pt: |
+    **Verbo + 得 + descrição** diz como a ação é feita: **他说得很快** "Ele fala rápido", **你写得真好** "Você escreve muito bem". Com objeto o verbo se repete: **他说汉语说得很好**.
+  match: {seq: [{pos: verb}, {word: [得]}], gap: 1}
+  pool: [得, 的, 地, 了]
+可能补语:
+  en: |
+    **得 / 不** between a verb and its complement says whether something **can** be done: **听得懂** "can understand", **听不懂** "can't understand", **看不见** "can't see", **买不到** "can't get (to buy)".
+  pt: |
+    **得 / 不** entre o verbo e o complemento diz se algo **pode** ser feito: **听得懂** "consegue entender", **听不懂** "não consegue entender", **看不见** "não consegue ver", **买不到** "não consegue comprar".
+  match: {seq: [{pos: verb}, {word: [得, 不]}, {word: [懂, 见, 到, 完, 了, 起, 动, 开, 清楚, 下, 上]}], gap: 1}
+  pool: [得, 不, 没, 了]
+持续态:
+  en: |
+    **着** after a verb: a state that continues, or the manner of another action: **门开着** "The door is open", **他笑着说** "he said with a smile".
+  pt: |
+    **着** depois do verbo: um estado que continua, ou o modo de outra ação: **门开着** "A porta está aberta", **他笑着说** "ele disse sorrindo".
+  match: {seq: [{pos: verb}, {word: [着]}], gap: 1}
+  pool: [着, 了, 过, 的]
+经历态:
+  en: |
+    **过** after a verb: something has happened at least once — experience: **我吃过北京烤鸭** "I've eaten Peking duck". Negative: **没(有)…过**: **我没去过**.
+  pt: |
+    **过** depois do verbo: algo já aconteceu ao menos uma vez — experiência: **我吃过北京烤鸭** "Já comi pato laqueado". Negativa: **没(有)…过**: **我没去过**.
+  match: {seq: [{pos: verb}, {word: [过]}], gap: 1}
+  pool: [过, 了, 着, 的]
+完成态:
+  en: |
+    **了** after a verb: the action is complete: **我吃了饭** "I've eaten". With a number or description of the object it sounds natural; negated by **没** (not 不了).
+  pt: |
+    **了** depois do verbo: a ação está concluída: **我吃了饭** "Comi". Fica natural com número ou descrição do objeto; nega-se com **没** (não 不了).
+  match: {seq: [{pos: verb}, {word: [了]}], gap: 1}
+  pool: [了, 过, 着, 的]
+进行态:
+  en: |
+    **在 / 正在 / 正** before a verb (often with **呢** at the end): an action in progress: **我在看书** "I'm reading", **他正在打电话呢** "He's on the phone".
+  pt: |
+    **在 / 正在 / 正** antes do verbo (muitas vezes com **呢** no fim): ação em andamento: **我在看书** "Estou lendo", **他正在打电话呢** "Ele está ao telefone".
+  match: {seq: [{word: [在, 正在, 正]}, {pos: verb}], gap: 0}
+  pool: [在, 正在, 正, 要, 会]
+变化态:
+  en: |
+    **了** at the end of a sentence: a **new situation**, a change: **下雨了** "It's raining now", **我饿了** "I'm hungry (now)", **他不来了** "He's not coming any more".
+  pt: |
+    **了** no fim da frase: uma **situação nova**, uma mudança: **下雨了** "Começou a chover", **我饿了** "Fiquei com fome", **他不来了** "Ele não vem mais".
+  match: {seq: [{word: [了], trail: "。.！!？?"}], gap: 0}
+  pool: [了, 吗, 呢, 吧, 的]
+存现句:
+  en: |
+    **Place + verb + thing** says what exists or appears somewhere: **桌子上有一本书** "There's a book on the table", **门口站着一个人** "A man is standing at the door".
+  pt: |
+    **Lugar + verbo + coisa** diz o que existe ou aparece em algum lugar: **桌子上有一本书** "Há um livro na mesa", **门口站着一个人** "Há um homem de pé na porta".
+  match: {seq: [{word: [上, 里, 下, 边, 前, 后]}, {word: [有, 是]}], gap: 1}
+  pool: [有, 是, 在, 着]
+连动句:
+  en: |
+    Two verbs in a row, the second the purpose or manner of the first: **我去商店买东西** "I'm going to the shop to buy things", **他坐飞机去上海** "He goes to Shanghai by plane".
+  pt: |
+    Dois verbos seguidos, o segundo dizendo a finalidade ou o modo do primeiro: **我去商店买东西** "Vou à loja comprar coisas", **他坐飞机去上海** "Ele vai a Xangai de avião".
+  match: {seq: [{word: [去, 来]}, {pos: noun}, {pos: verb}], gap: 0}
+  pool: [去, 来, 在, 到]
+双宾语句:
+  en: |
+    Verbs of giving and telling take two objects, the person first: **他给我一本书** "He gave me a book", **老师教我们汉语** "The teacher teaches us Chinese".
+  pt: |
+    Verbos de dar e dizer levam dois objetos, a pessoa primeiro: **他给我一本书** "Ele me deu um livro", **老师教我们汉语** "O professor nos ensina chinês".
+  match: {seq: [{word: [给, 教, 问, 告诉, 送, 还]}, {pos: pron}], gap: 0}
+  pool: [给, 教, 问, 告诉, 送, 让]
+兼语句:
+  en: |
+    The object of the first verb is the subject of the second: **我请他吃饭** "I invite him to eat", **妈妈让我去** "Mum told me to go", **这件事使我很高兴** "This made me happy".
+  pt: |
+    O objeto do primeiro verbo é o sujeito do segundo: **我请他吃饭** "Convido-o para comer", **妈妈让我去** "Mamãe mandou eu ir", **这件事使我很高兴** "Isso me deixou feliz".
+  match: {seq: [{word: [请, 让, 叫, 使]}, {pos: pron}, {pos: verb}], gap: 0}
+  pool: [请, 让, 叫, 使, 给]
+疑问句:
+  en: |
+    Questions: add **吗** (**你忙吗？**), use a question word in place (**你去哪儿？**), or put the verb affirmative + negative (**你去不去？**). **还是** asks *or*: **茶还是咖啡？**
+  pt: |
+    Perguntas: acrescente **吗** (**你忙吗？**), ponha a palavra interrogativa no lugar (**你去哪儿？**) ou o verbo afirmativo + negativo (**你去不去？**). **还是** pergunta *ou*: **茶还是咖啡？**
+  match: {seq: [{word: [吗, 呢, 什么, 哪儿, 谁, 怎么, 为什么, 几, 多少]}], gap: 0}
+  pool: [吗, 呢, 什么, 哪儿, 谁, 怎么, 几]
+祈使句:
+  en: |
+    Requests and commands: the plain verb (**进来！**), **请** for politeness (**请坐**), **吧** to soften (**走吧**), **别 / 不要** for *don't* (**别说话**).
+  pt: |
+    Pedidos e ordens: o verbo simples (**进来！**), **请** por educação (**请坐**), **吧** para suavizar (**走吧**), **别 / 不要** para *não* (**别说话**).
+  match: {seq: [{word: [请, 别, 不要], start: true}], gap: 0}
+  pool: [请, 别, 不要, 让, 要]
+感叹句:
+  en: |
+    Exclamations: **太……了** (**太好了！** "Great!"), **真** (**真漂亮！**), **多(么)……啊** (**多美啊！** "How beautiful!").
+  pt: |
+    Exclamações: **太……了** (**太好了！** "Ótimo!"), **真** (**真漂亮！**), **多(么)……啊** (**多美啊！** "Que lindo!").
+  match: {seq: [{word: [太, 真, 多么]}, {pos: adj}], gap: 0}
+  pool: [太, 真, 多么, 很, 最]
