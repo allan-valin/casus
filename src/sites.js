@@ -5,7 +5,7 @@ import { LANGUAGES } from './lang/registry.js';
 
 const ORIGIN = 'https://allan-valin.github.io';
 export const SITES = {
-  casus: { id: 'casus', title: 'Casus', base: '/casus/', languages: ['la', 'grc', 'de', 'ru', 'ar', 'fi', 'el', 'sa', 'cs', 'pl', 'tr', 'hu', 'is'] },
+  casus: { id: 'casus', title: 'Casus', base: '/casus/', languages: ['la', 'grc', 'de', 'ar', 'ru', 'fi', 'el', 'sa', 'cs', 'pl', 'tr', 'hu', 'is'] },
   asia: { id: 'asia', title: 'Casus Asia', base: '/casus-asia/', languages: ['ja', 'ko', 'zh'] },
   world: { id: 'world', title: 'Casus World', base: '/casus-world/', languages: ['pt', 'mk', 'en', 'es'] },
 };
@@ -15,7 +15,8 @@ const chosen = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_CASU
 export const SITE = SITES[chosen] ?? SITES.casus;
 
 export const siteOf = (code) => Object.values(SITES).find((s) => s.languages.includes(code)) ?? SITES.casus;
-export const siteLanguages = (site = SITE) => LANGUAGES.filter((l) => site.languages.includes(l.code));
+/** a site's languages in its own order (the first is the root page) */
+export const siteLanguages = (site = SITE) => site.languages.map((c) => LANGUAGES.find((l) => l.code === c)).filter(Boolean);
 
 /** the full address of a language's page on its own site */
 export function siteUrl(code, view = 'reader') {

@@ -19,6 +19,9 @@ describe('three sites from one codebase (Allan, 2026-10-19)', () => {
     expect(siteUrl('la', 'reader')).toBe('https://allan-valin.github.io/casus/');
     expect(siteUrl('pt', 'proof')).toBe('https://allan-valin.github.io/casus-world/pt/proof/');
   });
+  it('Casus World opens on Portuguese', () => {
+    expect(siteLanguages(SITES.world)[0].code).toBe('pt');
+  });
   it('the root and unknown paths open the site’s first language', () => {
     const asia = siteLanguages(SITES.asia);
     expect(langFromPath('/casus-asia/', '/casus-asia/', asia)).toEqual({ code: 'ja', view: 'reader' });
