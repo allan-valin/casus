@@ -193,8 +193,10 @@ def main(code: str) -> None:
             freq += parse_jlpt_csv(fetch(url), level, len(freq))
     elif code in CORE:
         freq = parse_core_rows(fetch(CORE[code]))
-    else:
+    elif code in SUBTITLE_FREQ:
         freq = [{"form": w, "n": int(n)} for w, n in (l.split() for l in fetch(SUBTITLE_FREQ[code]).splitlines()[:8000] if len(l.split()) == 2)]
+    else:
+        freq = []                                  # no frequency source (Sanskrit): the frequent-words drill stays empty
     (out_dir / "frequency.raw.json").write_text(json.dumps(freq, ensure_ascii=False), encoding="utf-8")
     counts = ", ".join(f"{k} {sum(1 for p in phrases if p['kind'] == k)}" for k in ("phrase", "idiom", "proverb"))
     print(f"{code}: {len(phrases)} phrases ({counts}), {len(freq)} frequency rows")

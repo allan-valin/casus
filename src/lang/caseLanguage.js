@@ -16,7 +16,7 @@ function layoutPairs(json) {
   return { POS: json.POS, LAYOUT, json };
 }
 
-export function makeCaseLanguage({ code, name, inText, bcp47, wiktionary, cases, hues, shares = {}, borders = {}, government = {}, and = [], copulas = [], codes, voice, romanize = null, game = null, eras, script = {}, extraStages = [], address = [], splitWords = null, tokenize: ownTokenize = null }) {
+export function makeCaseLanguage({ code, name, inText, bcp47, wiktionary, cases, hues, shares = {}, borders = {}, government = {}, and = [], copulas = [], codes, voice, romanize = null, game = null, eras, script = {}, extraStages = [], address = [], splitWords = null, tokenize: ownTokenize = null, segment: ownSegment = null }) {
   const inventory = {
     primary: 'case',
     channels: {
@@ -44,7 +44,7 @@ export function makeCaseLanguage({ code, name, inText, bcp47, wiktionary, cases,
     // script: a language's own key folding (Modern Greek accents, Sanskrit…) over the plain lower case
     script: { normalize: (s) => s.normalize('NFC'), rtl: false, spaced: true, prefixOf: lower, ...(romanize ? { romanize } : {}), ...script },
     inventory,
-    segment,
+    segment: ownSegment ?? segment,
     tokenize: ownTokenize ?? tokenize,
     ...(splitWords ? { splitWords } : {}),
     // a vocative only where someone is addressed (the classical rule), when the language has one

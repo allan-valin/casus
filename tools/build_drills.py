@@ -63,6 +63,7 @@ MODELS = {
            ("tulla", "verb", "to come", "vir"), ("haluta", "verb", "to want", "querer")],
     "el": [("δρόμος", "noun", "street, road", "rua"), ("θάλασσα", "noun", "sea", "mar"), ("βιβλίο", "noun", "book", "livro"), ("καλός", "adj", "good", "bom"),
            ("γράφω", "verb", "to write", "escrever"), ("αγαπώ", "verb", "to love", "amar"), ("είμαι", "verb", "to be", "ser, estar")],
+    "sa": [("देव", "noun", "god", "deus"), ("फल", "noun", "fruit", "fruto"), ("नदी", "noun", "river", "rio"), ("अग्नि", "noun", "fire", "fogo")],
     "ja": [("高い", "adj", "high, expensive", "alto, caro"), ("いい", "adj", "good", "bom"), ("綺麗", "adj", "pretty, clean", "bonito, limpo"),
            ("食べる", "verb", "to eat", "comer"), ("書く", "verb", "to write", "escrever"), ("泳ぐ", "verb", "to swim", "nadar"),
            ("話す", "verb", "to speak", "falar"), ("待つ", "verb", "to wait", "esperar"), ("死ぬ", "verb", "to die", "morrer"),
@@ -225,7 +226,11 @@ def main(code: str) -> None:
             buckets[n] = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
         return buckets[n].get(i)
 
-    if code == "ru":
+    if code in ("sa", "el"):
+        from casus_build.generic import clean_sa, strip_el
+        bare_key = {"sa": clean_sa, "el": strip_el}[code]
+        out = pick_models(MODELS[code], lemmas, rows_of, key=bare_key)
+    elif code == "ru":
         from casus_build.ru.normalize import strip_ru
         out = pick_models(MODELS[code], lemmas, rows_of, key=strip_ru)
         bare = {strip_ru(h): h for h, *_ in MODELS[code]}
@@ -251,17 +256,18 @@ def main(code: str) -> None:
     used = {_plain(r["form"]): r["n"] for r in json.loads(raw.read_text(encoding="utf-8")) if "form" in r} if raw.exists() else {}
     for n in range(512):
         rows_of(str(n))                                   # load every bucket once, so the pools can look anywhere
-    by_model = pools(out, lemmas, rows_of, glosses, IRREGULAR[code], rank, capitalised_nouns=(code == "de"), used=used,
+    by_model = pools(out, lemmas, rows_of, glosses, IRREGULAR.get(code, set()), rank, capitalised_nouns=(code == "de"), used=used,
                      # Japanese: short headwords (書く) keep one character of stem; generated forms match exactly
                      lead_drop=1 if code == "ja" else 2, verb_share=1.0 if code == "ja" else 0.85)   # German nouns are capitalised
     for m in out:
-        m["irregular"] = m["headword"] in IRREGULAR[code] or m.get("irregular_key") in IRREGULAR[code]
+        m["irregular"] = m["headword"] in IRREGULAR.get(code, set()) or m.get("irregular_key") in IRREGULAR.get(code, set())
         m.pop("irregular_key", None)
         m["pool"] = by_model[m["id"]]
     (root / "drills.json").write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     from casus_build.ar.normalize import strip_ar
     from casus_build.ru.normalize import strip_ru
-    bare_of = {"ar": strip_ar, "ru": strip_ru}.get(code, lambda w: w)
+    from casus_build.generic import clean_sa, strip_el
+    bare_of = {"ar": strip_ar, "ru": strip_ru, "sa": clean_sa, "el": strip_el}.get(code, lambda w: w)
     missing = [h for h, p, *_ in MODELS[code] if not any(m["pos"] == p and bare_of(m["headword"]) == bare_of(h) for m in out)]
     print(f"{code}: pools " + ", ".join(f"{m['headword']} {len(m['pool'])}" for m in out))
     print(f"{code}: {len(out)} model words, {(root / 'drills.json').stat().st_size // 1024} KB" + (f"; not found: {', '.join(missing)}" if missing else ""))

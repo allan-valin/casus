@@ -33,8 +33,9 @@ def strip_el(s: str) -> str:
 
 
 class Config:
-    def __init__(self, code: str, cases: list[str], case_tags: dict[str, str], script: str = r"\p{L}", key=_lower):
+    def __init__(self, code: str, cases: list[str], case_tags: dict[str, str], script: str = r"\p{L}", key=_lower, clean=None):
         self.key = key                           # how a form is keyed for its shard (Greek: without accents)
+        self.clean = clean or (lambda t: t)      # how a form is written as a key (Sanskrit: no Vedic accents)
         self.code = code
         self.cases = cases                       # our case ids, in the language's school order
         self.case_tags = case_tags               # wiktextract tag -> case id
@@ -78,7 +79,7 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
         cells = []
         for f in d.get("forms") or []:
             tags = set(f.get("tags") or [])
-            text = (f.get("form") or "").strip()
+            text = cfg.clean((f.get("form") or "").strip())
             # a key must be a word: it starts with a letter and has no slash (an IPA cell filed as a form once tried to
             # become the shard "/ˈ", a path outside the data folder)
             if not text or " " in text or tags & SKIP or not cfg.letters.match(text) or "/" in text or "\\" in text:
@@ -86,6 +87,7 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
             a = analysis(cfg, pos, tags, gender)
             if a:
                 cells.append((text, a))
+        word = cfg.clean(word)
         if pos in ("verb",) and not any(t == word for t, _ in cells):
             cells.append((word, {"pos": "verb", "mood": "inf"}))
         gloss = "; ".join(dict.fromkeys(" ".join(g.split()) for s in senses for g in (s.get("glosses") or [])[:1] if g))
@@ -147,3 +149,15 @@ CONFIGS = {"fi": FINNISH}
 
 GREEK = Config("el", ["nom", "gen", "acc", "voc"], {"nominative": "nom", "genitive": "gen", "accusative": "acc", "vocative": "voc"}, key=strip_el)
 CONFIGS["el"] = GREEK
+
+
+def clean_sa(s: str) -> str:
+    """Sanskrit key: no Vedic accents (U+0951–0954, U+1CD0–1CFF) or footnote digits (mirror of src/lang/sa/script.js)"""
+    import re as _re
+    return _re.sub("\u0902$", "\u092e\u094d", _re.sub("[\u0951-\u0954\u1cd0-\u1cff0-9]", "", s))
+
+
+SANSKRIT = Config("sa", ["nom", "acc", "ins", "dat", "abl", "gen", "loc", "voc"],
+                  {"nominative": "nom", "accusative": "acc", "instrumental": "ins", "dative": "dat", "ablative": "abl",
+                   "genitive": "gen", "locative": "loc", "vocative": "voc"}, clean=clean_sa)
+CONFIGS["sa"] = SANSKRIT
