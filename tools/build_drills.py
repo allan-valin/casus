@@ -46,6 +46,12 @@ MODELS = {
            ("بيت", "noun", "house", "casa"), ("كبير", "adj", "big", "grande"), ("جميل", "adj", "beautiful", "bonito"),
            ("كتب", "verb", "to write", "escrever"), ("قال", "verb", "to say", "dizer"), ("ذهب", "verb", "to go", "ir"),
            ("درس", "verb", "to study", "estudar"), ("رأى", "verb", "to see", "ver")],
+    "ru": [("стол", "noun", "table", "mesa"), ("книга", "noun", "book", "livro"), ("окно", "noun", "window", "janela"),
+           ("словарь", "noun", "dictionary", "dicionário"), ("тетрадь", "noun", "notebook", "caderno"), ("время", "noun", "time", "tempo"),
+           ("новый", "adj", "new", "novo"), ("хороший", "adj", "good", "bom"), ("большой", "adj", "big", "grande"),
+           ("читать", "verb", "to read", "ler"), ("говорить", "verb", "to speak", "falar"), ("писать", "verb", "to write", "escrever"),
+           ("жить", "verb", "to live", "viver"), ("быть", "verb", "to be", "ser, estar"), ("идти", "verb", "to go (on foot)", "ir (a pé)"),
+           ("я", "pron", "I", "eu"), ("он", "pron", "he", "ele"), ("этот", "det", "this", "este")],
     "ja": [("高い", "adj", "high, expensive", "alto, caro"), ("いい", "adj", "good", "bom"), ("綺麗", "adj", "pretty, clean", "bonito, limpo"),
            ("食べる", "verb", "to eat", "comer"), ("書く", "verb", "to write", "escrever"), ("泳ぐ", "verb", "to swim", "nadar"),
            ("話す", "verb", "to speak", "falar"), ("待つ", "verb", "to wait", "esperar"), ("死ぬ", "verb", "to die", "morrer"),
@@ -57,7 +63,8 @@ XREF = re.compile(r"^(synonym|alternative (form|spelling)|[\w-]+ form|abbreviati
 # models whose tables no other word follows: learnt by heart, so "random word" is off for them
 IRREGULAR = {"la": {"sum", "eo", "uolo", "fero", "ego", "hic", "qui"}, "grc": {"εἰμί", "ὁ", "δίδωμι"},
              "de": {"der", "ein", "ich", "er", "sein", "haben", "werden", "können"},
-             "ja": {"いい", "行く", "する", "来る"}, "ar": {"رأى"}}
+             "ja": {"いい", "行く", "する", "来る"}, "ar": {"رأى"},
+             "ru": {"время", "быть", "идти", "я", "он", "этот"}}
 POOL = 60
 
 
@@ -207,7 +214,13 @@ def main(code: str) -> None:
             buckets[n] = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
         return buckets[n].get(i)
 
-    if code == "ar":
+    if code == "ru":
+        from casus_build.ru.normalize import strip_ru
+        out = pick_models(MODELS[code], lemmas, rows_of, key=strip_ru)
+        bare = {strip_ru(h): h for h, *_ in MODELS[code]}
+        for m in out:
+            m["irregular_key"] = bare.get(strip_ru(m["headword"]))
+    elif code == "ar":
         from casus_build.ar.normalize import strip_ar
         out = pick_models(MODELS[code], lemmas, rows_of, key=strip_ar)
         bare = {strip_ar(h): h for h, *_ in MODELS[code]}
@@ -235,7 +248,10 @@ def main(code: str) -> None:
         m.pop("irregular_key", None)
         m["pool"] = by_model[m["id"]]
     (root / "drills.json").write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    missing = [h for h, p, *_ in MODELS[code] if not any(m["pos"] == p and (m["headword"] == h or (code == "ar" and __import__("casus_build.ar.normalize", fromlist=["strip_ar"]).strip_ar(m["headword"]) == h)) for m in out)]
+    from casus_build.ar.normalize import strip_ar
+    from casus_build.ru.normalize import strip_ru
+    bare_of = {"ar": strip_ar, "ru": strip_ru}.get(code, lambda w: w)
+    missing = [h for h, p, *_ in MODELS[code] if not any(m["pos"] == p and bare_of(m["headword"]) == bare_of(h) for m in out)]
     print(f"{code}: pools " + ", ".join(f"{m['headword']} {len(m['pool'])}" for m in out))
     print(f"{code}: {len(out)} model words, {(root / 'drills.json').stat().st_size // 1024} KB" + (f"; not found: {', '.join(missing)}" if missing else ""))
 

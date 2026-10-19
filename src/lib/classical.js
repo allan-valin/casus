@@ -82,7 +82,8 @@ export function makeNumberStage({ conjunctions = [], neuterPluralTakesSingular =
       for (const i of members) {
         const b = out[i];
         if (i === verbish[0] || b.pinned) continue;
-        const keep = b.candidates.filter((c) => !(NOMINAL.has(c.analysis.pos) && c.analysis.case === 'nom' && c.analysis.number !== n
+        // a reading with no number (a Russian personal pronoun in Wiktionary) is not ruled out by the verb's number
+        const keep = b.candidates.filter((c) => !(NOMINAL.has(c.analysis.pos) && c.analysis.case === 'nom' && c.analysis.number && c.analysis.number !== n
           && !(neuterPluralTakesSingular && n === 'sg' && c.analysis.number === 'pl' && c.analysis.gender === 'n')));
         if (keep.length && keep.length < b.candidates.length) {
           const r = `clause: its verb ${v.token.surface} is ${n === 'sg' ? 'singular' : 'plural'}, so a nominative here is too`;
@@ -113,5 +114,45 @@ export function makeRelativeStage(relativeKeys) {
       const r = `relative clause: agrees with ${ante.token.surface} in gender and number`;
       return { ...b, candidates: keep.map((c) => (c.reasons.includes(r) ? c : { ...c, reasons: [...c.reasons, r], links: [...(c.links ?? []), { kind: 'reference', index: ante.token.index }] })) };
     });
+  };
+}
+
+/* CASED: a word with case readings drops its caseless noun readings (Russian я: the pronoun, not the letter's name). */
+export function casedStage(blocks) {
+  return blocks.map((b) => {
+    const cased = b.candidates.filter((c) => c.analysis.case && c.analysis.case !== 'x');
+    const caselessNoun = (c) => c.analysis.pos === 'noun' && (!c.analysis.case || c.analysis.case === 'x');
+    if (!cased.length || b.pinned || !b.candidates.some(caselessNoun)) return b;
+    return { ...b, candidates: b.candidates.filter((c) => !caselessNoun(c)) };
+  });
+}
+
+/* ONE SUBJECT: in a clause with one finite verb and no coordination, a word that is certainly nominative is the
+ * subject; the other nouns there are not nominative (Мама пишет письмо: письмо is the object). */
+export function makeOneSubjectStage({ conjunctions = [], copulas = [] } = {}) {
+  const conj = new Set(conjunctions);
+  const cop = new Set(copulas);
+  const HEAD = new Set(['noun', 'pron']);
+  return function oneSubjectStage(blocks) {
+    const out = blocks.slice();
+    const clauses = new Map();
+    out.forEach((b, i) => { const k = b.token.clause ?? 0; if (!clauses.has(k)) clauses.set(k, []); clauses.get(k).push(i); });
+    for (const members of clauses.values()) {
+      if (members.some((i) => conj.has(out[i].token.key))) continue;
+      const verbs = members.filter((i) => out[i].candidates.length && out[i].candidates.every((c) => c.analysis.pos === 'verb' && c.analysis.mood !== 'inf'));
+      if (verbs.length !== 1 || cop.has(out[verbs[0]].token.key)) continue;
+      const heads = members.filter((i) => out[i].candidates.some((c) => HEAD.has(c.analysis.pos) && c.analysis.case));
+      const certain = heads.filter((i) => out[i].candidates.filter((c) => c.analysis.case).every((c) => c.analysis.case === 'nom'));
+      if (certain.length !== 1) continue;
+      for (const i of heads) {
+        if (i === certain[0] || out[i].pinned) continue;
+        const keep = out[i].candidates.filter((c) => c.analysis.case !== 'nom');
+        if (keep.length && keep.length < out[i].candidates.length) {
+          const r = `clause: ${out[certain[0]].token.surface} is already the subject of ${out[verbs[0]].token.surface}`;
+          out[i] = { ...out[i], candidates: keep.map((c) => (c.reasons.includes(r) ? c : { ...c, reasons: [...c.reasons, r] })) };
+        }
+      }
+    }
+    return out;
   };
 }

@@ -103,3 +103,17 @@ describe('Arabic frequency: a vowelled headword counts as the bare form (في: i
     expect(out.map((o) => o.en)).toEqual(['in', 'mouth']);
   });
 });
+
+describe('word by word: a word spelled that way wins over a kana spelling of a kanji word (は: the particle, not 歯)', () => {
+  it('literalOf', () => {
+    const tokens = [{ kind: 'word', surface: 'は', key: 'は' }];
+    const lookups = new Map([['は', [{ lemma: 'tooth', pos: 'noun', form: 'kana' }, { lemma: 'wa', pos: 'particle' }]]]);
+    expect(literalOf(tokens, lookups, { tooth: 'tooth', wa: 'marks the topic' })).toEqual([['は', 'marks the topic']]);
+  });
+});
+describe('a one-character word that can be a particle is the particle', () => {
+  it('に', () => {
+    const lookups = new Map([['に', [{ lemma: 'niru', pos: 'verb', form: 'stem' }, { lemma: 'ni', pos: 'particle' }]]]);
+    expect(literalOf([{ kind: 'word', surface: 'に', key: 'に' }], lookups, { niru: 'to resemble', ni: 'marks the recipient' })).toEqual([['に', 'marks the recipient']]);
+  });
+});

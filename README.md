@@ -96,6 +96,23 @@ dictionary settings, an optional **natural voice** (Thorsten, Piper, 63 MB) down
 speaker uses it. Grammar notes: `docs/languages/de.md`; build: `bash tools/fetch_wiktextract.sh German &&
 python3 tools/build_lang.py de`.
 
+**Japanese (2026-10-19)** at `/ja/`: the English Wiktionary's Japanese entries (85k lemmas, 661k forms in kanji
+and kana, plus the everyday conjugations the tables lack). Text without spaces is cut into dictionary words;
+particles give the word before them its role (topic, subject, object, target…) on the case hues; furigana over
+kanji and hiragana over katakana (toggle), romaji under each word; kana, conjugation, JLPT and phrase drills.
+Notes: `docs/languages/ja.md`; build: `bash tools/fetch_wiktextract.sh Japanese && python3 tools/build_lang.py ja`.
+
+**Arabic (2026-10-19)** at `/ar/`: right to left; 31k lemmas, 489k vowelled forms (common verbs only). Bare
+text finds the vowelled spellings, which are supplied over the block; proclitics (و ف ب ل ك) split off;
+three cases, prepositions with the genitive, verb–subject–object, adjective agreement; alphabet (alone and
+joined), table, frequency and phrase drills. Notes: `docs/languages/ar.md`; build:
+`bash tools/fetch_wiktextract.sh Arabic && python3 tools/build_lang.py ar`.
+
+**Russian (2026-10-19)** at `/ru/`: 45,800 common lemmas; stress supplied over unstressed text; six cases,
+prepositions with their cases, agreement, verb number, one subject per clause; aspect pairs in the dictionary
+form; Cyrillic, table, frequency and phrase drills. Notes: `docs/languages/ru.md`; build:
+`bash tools/fetch_wiktextract.sh Russian && python3 tools/build_lang.py ru`.
+
 Top corner: **English ⇄ Português** (the page and the dictionary language together, remembered),
 exports (JSON to reload, Markdown to read) and **?** — what is on screen, how to use it, every
 resource and licence. Under the page, **What is happening**: one timestamped line per action and its

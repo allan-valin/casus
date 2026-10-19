@@ -39,7 +39,12 @@ export function shortGloss(text, headword = null, pos = null, table = {}) {
 export function literalOf(tokens, lookups, glosses, lemmas = {}, frequent = new Set(), plain = {}) {
   return tokens.filter((t) => t.kind === 'word').map((t) => {
     const keys = [t.key, t.altKey, ...(t.fallbackKeys ?? [])].filter(Boolean);
-    const all = keys.flatMap((k) => lookups.get(k) ?? []).filter((x) => glosses[x.lemma]);
+    const found = keys.flatMap((k) => lookups.get(k) ?? []).filter((x) => glosses[x.lemma]);
+    const direct = found.filter((x) => x.form !== 'kana');               // Japanese: は the particle, not 歯 met in kana
+    const pool = direct.length ? direct : found;
+    // a one-character word that can be a particle is the particle (Japanese に, not the stem of 似る)
+    const particle = [...t.surface].length === 1 ? pool.filter((x) => x.pos === 'particle') : [];
+    const all = particle.length ? particle : pool;
     const real = all.filter((x) => !isFormOf(glosses[x.lemma]));
     const a = real.find((x) => frequent.has(lemmas[x.lemma]?.headword)) ?? all.find((x) => frequent.has(lemmas[x.lemma]?.headword)) ?? real[0] ?? all[0];
     return [t.surface, a ? shortGloss(glosses[a.lemma], lemmas[a.lemma]?.headword, lemmas[a.lemma]?.pos, plain) : ''];
