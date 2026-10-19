@@ -14,7 +14,7 @@
   import Help from './components/Help.svelte';
   import PassagePicker from './components/PassagePicker.svelte';
   import LanguageBar from './components/LanguageBar.svelte';
-  import { getLanguage } from '../lang/registry.js';
+  import { getLanguage, LANGUAGES } from '../lang/registry.js';
   import { langFromPath } from './lib/route.js';
   import { createVoice } from './lib/voice.js';
   import { t, ui, setLang } from './lib/i18n.svelte.js';
@@ -22,6 +22,7 @@
   import ActivityLog from './components/ActivityLog.svelte';
   import Drills from './components/Drills.svelte';
   import Downloads from './components/Downloads.svelte';
+  import SendToCasus from './components/SendToCasus.svelte';
   import { describeAnalysis } from './lib/colors.js';
   import { partners as partnersOf } from './lib/chunks.js';
   import { createLive } from '../lib/live.js';
@@ -203,6 +204,7 @@
     <!-- always here, before any text is read (Allan, 2026-10-19: Wiktionary on demand, dictionaries offline) -->
     <label class="live-toggle" title={t('settings.live.title')}><input type="checkbox" checked={liveOn} onchange={(e) => setLive(e.currentTarget.checked)}> {t('settings.live')}</label>
     <Downloads {fetchImpl} {storage} current={lang.code} onsay={(k, v) => say(k, v, k.endsWith('done') ? 'ok' : k.endsWith('failed') ? 'err' : undefined)} />
+    <SendToCasus pageUrl={typeof location !== 'undefined' ? location.origin + withBase(LANGUAGES.find((l) => l.code === lang.code)?.path ?? '/') : ''} language={lang.name[ui.lang] ?? lang.name.en} />
   </section>
 
   {#if reader}

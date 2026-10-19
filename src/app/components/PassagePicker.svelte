@@ -8,7 +8,9 @@
   let { samples = [], onchoose, fetchImpl, samplesPath = '/samples/la', onerror = () => {}, language = 'Latin',
     storage = null, code = 'la', schedule = (fn, ms) => setTimeout(fn, ms), onsay = () => {},
     location: loc = typeof window !== 'undefined' ? window.location : null,
-    replaceHash = () => { try { history.replaceState(null, '', window.location.pathname + window.location.search); } catch { /* no history */ } } } = $props();
+    replaceHash = () => { try { history.replaceState(null, '', window.location.pathname + window.location.search); } catch { /* no history */ } },
+    channel = typeof BroadcastChannel !== 'undefined' ? new BroadcastChannel('casus') : null,
+    closeWindow = () => { try { window.close(); } catch { /* not ours to close */ } }, handoffMs = 400 } = $props();
   // the text box is remembered per language (Allan, 2026-10-19: what I typed is there next time)
   const KEY = `casus:input:${code}`;
   let timer = null;
@@ -18,16 +20,33 @@
     timer = schedule(() => { try { storage.setItem(KEY, text); } catch { /* storage full or blocked */ } }, 400);
   }
   // text sent by the bookmarklet arrives as #append=<text>&from=<site>, added at the bottom
+  function append(add, site) {
+    pasted = pasted.trim() ? `${pasted.trimEnd()}\n\n${add}` : add;
+    remember(pasted);
+    onsay('act.appended', { site, chars: [...add].length });
+  }
+  // a Casus tab already open for this language takes the text, and the tab the bookmark opened closes itself
+  // (a site cannot reach a tab the reader opened, so the bookmark opens a new one)
+  if (channel) {
+    channel.addEventListener('message', (e) => {
+      const m = e.data ?? {};
+      if (m.type === 'append' && m.code === code && !m.mine) { append(m.text, m.site); channel.postMessage({ type: 'taken', id: m.id }); }
+    });
+  }
   function takeAppend() {
     const hash = loc?.hash ?? '';
     if (!hash.startsWith('#append=')) return;
     const params = new URLSearchParams(hash.slice(1));
     const add = (params.get('append') ?? '').trim();
+    const site = params.get('from') ?? '';
     replaceHash();
     if (!add) return;
-    pasted = pasted.trim() ? `${pasted.trimEnd()}\n\n${add}` : add;
-    remember(pasted);
-    onsay('act.appended', { site: params.get('from') ?? '', chars: [...add].length });
+    if (!channel) { append(add, site); return; }
+    const id = `${Date.now()}-${Math.random()}`;
+    let taken = false;
+    channel.addEventListener('message', (e) => { if (e.data?.type === 'taken' && e.data.id === id) taken = true; });
+    channel.postMessage({ type: 'append', code, text: add, site, id });
+    setTimeout(() => { if (taken) closeWindow(); else append(add, site); }, handoffMs);
   }
   onMount(() => {
     try { pasted = storage?.getItem(KEY) ?? ''; } catch { /* blocked */ }

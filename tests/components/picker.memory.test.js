@@ -27,10 +27,30 @@ describe('the input is remembered (Allan, 2026-10-19)', () => {
     let replaced = null;
     const said = [];
     const { container } = render(PassagePicker, { onchoose: () => {}, fetchImpl: async () => ({ ok: false }), storage, code: 'ja',
-      location: { hash: `#append=${encodeURIComponent('猫が好きです。')}&from=${encodeURIComponent('www3.nhk.or.jp')}` }, replaceHash: () => { replaced = ''; }, onsay: (k, v) => said.push([k, v]) });
+      channel: null, location: { hash: `#append=${encodeURIComponent('猫が好きです。')}&from=${encodeURIComponent('www3.nhk.or.jp')}` }, replaceHash: () => { replaced = ''; }, onsay: (k, v) => said.push([k, v]) });
     await flush();
     expect(container.querySelector('textarea').value).toBe('今日は晴れです。\n\n猫が好きです。');
     expect(replaced).toBe('');
     expect(said[0]).toEqual(['act.appended', { site: 'www3.nhk.or.jp', chars: 7 }]);
+  });
+});
+
+describe('an open Casus tab takes the text; the tab the bookmark opened closes', () => {
+  function channels() {
+    const all = [];
+    return () => { const ch = { listeners: [], postMessage(m) { for (const o of all) if (o !== ch) for (const l of o.listeners) l({ data: m }); }, addEventListener(_, l) { ch.listeners.push(l); }, close() {} }; all.push(ch); return ch; };
+  }
+  it('hand-off', async () => {
+    const make = channels();
+    const storage = store();
+    const open = render(PassagePicker, { onchoose: () => {}, fetchImpl: async () => ({ ok: false }), storage, code: 'ja', channel: make(), location: { hash: '' } });
+    await flush();
+    let closed = false;
+    const popup = render(PassagePicker, { onchoose: () => {}, fetchImpl: async () => ({ ok: false }), storage: store(), code: 'ja', channel: make(), closeWindow: () => { closed = true; },
+      location: { hash: `#append=${encodeURIComponent('猫です。')}&from=x` }, replaceHash: () => {}, handoffMs: 20 });
+    await flush(); await new Promise((r) => setTimeout(r, 60)); await flush();
+    expect(open.container.querySelector('textarea').value).toBe('猫です。');
+    expect(closed).toBe(true);
+    expect(popup.container.querySelector('textarea').value).toBe('');
   });
 });
