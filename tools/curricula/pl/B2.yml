@@ -1,0 +1,194 @@
+id: B2
+topics:
+
+- title: {en: The passive and participles, pt: A passiva e os particípios}
+  lessons:
+  - id: pl-b2-passive
+    title: "został zbudowany"
+    meaning: {en: "the passive: zostać / być + -ny, -ty", pt: "a passiva: zostać / być + -ny, -ty"}
+    intro:
+      en: |
+        The passive participle ends in **-ny / -ony / -ty** and agrees like an adjective: **zbudowany, zbudowana, zbudowane**; masculine-personal plural **-ni / -eni / -ci** (**zaproszeni** "invited"). With **zostać** (perfective) it describes an event: **Dom został zbudowany w 1900 roku.** "The house was built in 1900." With **być** it describes a state or a repeated action: **Sklep jest zamknięty.** "The shop is closed." **Dom był budowany przez dwa lata.** "The house was being built for two years." The doer follows **przez**: **napisany przez Mickiewicza**.
+      pt: |
+        O particípio passivo termina em **-ny / -ony / -ty** e concorda como adjetivo: **zbudowany, zbudowana, zbudowane**; no plural masculino-pessoal **-ni / -eni / -ci** (**zaproszeni** "convidados"). Com **zostać** (perfectivo) descreve um acontecimento: **Dom został zbudowany w 1900 roku.** "A casa foi construída em 1900." Com **być** descreve um estado ou uma ação repetida: **Sklep jest zamknięty.** "A loja está fechada." **Dom był budowany przez dwa lata.** "A casa ficou em construção por dois anos." O agente vem depois de **przez**: **napisany przez Mickiewicza** "escrito por Mickiewicz".
+    examples:
+    - ["Dom został zbudowany w 1900 roku.", "The house was built in 1900.", "A casa foi construída em 1900.", "zbudowany"]
+    - ["Sklep jest zamknięty.", "The shop is closed.", "A loja está fechada.", "zamknięty"]
+    - ["Wszyscy zostali zaproszeni.", "Everyone was invited.", "Todos foram convidados.", "zaproszeni"]
+    match: {seq: [{word: [został, została, zostało, zostali, zostały, zostanie, zostaną, zostałem, zostałam, zostaliśmy, jest, są, był, była, było, byli, były, będzie]}, {re: "^(?!(?:(zielon|czerwon|ciekaw|dumn|pewn)))[\\s\\S]*?(?:(an|on|ęt|yt|ut|it|rt)(y|a|e|i|ego|ej|ych)$|(ani|eni|ci)$)", pos: [adj, verb]}], near: 1, gap: 1, same: [gender, number]}
+
+  - id: pl-b2-active-participle
+    title: "pracujący, czytająca"
+    meaning: {en: "the active adjectival participle -ący", pt: "o particípio adjetival ativo -ący"}
+    intro:
+      en: |
+        From the 3rd person plural present, **-ą** becomes **-ący, -ąca, -ące**: **czytają → czytający** "reading, who reads", **pracują → pracujący**. It declines like an adjective and replaces a **który** clause, mostly in writing: **człowiek czytający gazetę** = **człowiek, który czyta gazetę**. Many have become ordinary adjectives or nouns: **następujący** "following", **wiodący** "leading", **przewodniczący** "chairman".
+
+        Only imperfective verbs have it.
+      pt: |
+        A partir da 3ª pessoa do plural do presente, **-ą** vira **-ący, -ąca, -ące**: **czytają → czytający** "que lê", **pracują → pracujący**. Declina-se como adjetivo e substitui uma oração com **który**, sobretudo na escrita: **człowiek czytający gazetę** = **człowiek, który czyta gazetę** "o homem que lê o jornal". Muitos viraram adjetivos ou substantivos comuns: **następujący** "seguinte", **wiodący** "líder", **przewodniczący** "presidente (de uma reunião)".
+
+        Só os verbos imperfectivos o têm.
+    examples:
+    - ["Widzisz tego człowieka czytającego gazetę?", "Do you see that man reading the paper?", "Está vendo aquele homem lendo o jornal?", "czytającego"]
+    - ["To jest bardzo interesująca książka.", "This is a very interesting book.", "Este é um livro muito interessante.", "interesująca"]
+    - ["Następujący uczniowie zdali egzamin.", "The following pupils passed the exam.", "Os seguintes alunos passaram na prova.", "Następujący"]
+    match: {seq: [{re: "(ący|ąca|ące|ącego|ącej|ącemu|ącym|ących|ącą|ącymi)$"}], same: [case, number]}
+
+  - id: pl-b2-adverbial-participle
+    title: "czytając, przeczytawszy"
+    meaning: {en: "adverbial participles: while doing, having done", pt: "particípios adverbiais: fazendo, tendo feito"}
+    intro:
+      en: |
+        **-ąc** (from imperfective verbs) means "while doing": **Czytając, piła kawę.** "While reading, she drank coffee." **-wszy / -łszy** (from perfective verbs, bookish) means "having done": **Przeczytawszy list, wyszedł.** "Having read the letter, he went out." Both are invariable and must share the subject of the main verb.
+      pt: |
+        **-ąc** (de verbos imperfectivos) quer dizer "fazendo": **Czytając, piła kawę.** "Enquanto lia, ela tomava café." **-wszy / -łszy** (de verbos perfectivos, livresco) quer dizer "tendo feito": **Przeczytawszy list, wyszedł.** "Tendo lido a carta, ele saiu." Os dois são invariáveis e têm que ter o mesmo sujeito do verbo principal.
+    mistakes:
+    - wrong: "Wchodząc do pokoju, zgasło światło."
+      right: "Wchodząc do pokoju, zgasiłem światło."
+      why: {en: "The one entering must be the subject of the main verb.", pt: "Quem entra tem que ser o sujeito do verbo principal."}
+    examples:
+    - ["Czytając, piła kawę.", "While reading, she drank coffee.", "Enquanto lia, ela tomava café.", "Czytając"]
+    - ["Przeczytawszy list, wyszedł.", "Having read the letter, he went out.", "Tendo lido a carta, ele saiu.", "Przeczytawszy"]
+    - ["Uczę się, słuchając muzyki.", "I study while listening to music.", "Estudo ouvindo música.", "słuchając"]
+    match:
+    - {seq: [{re: "^(?!(?:miesiąc|tysiąc|zając)$)[\\s\\S]*?(?:ąc$)"}]}
+    - {seq: [{re: "(awszy|ywszy|iwszy|ąwszy|łszy)$", not: {pos: adj}}]}
+
+  - id: pl-b2-verbal-nouns
+    title: "czytanie, picie"
+    meaning: {en: "verbal nouns in -nie, -cie", pt: "substantivos verbais em -nie, -cie"}
+    intro:
+      en: |
+        Almost every verb makes a neuter noun in **-anie / -enie / -cie** naming the action: **czytać → czytanie** "reading", **pisać → pisanie**, **mówić → mówienie**, **pić → picie** "drinking", **myć → mycie**. They keep aspect (**zrobienie** "having done") and **się**-verbs can keep it (**uczenie się** "learning"). They decline like **zdanie**: **Lubię czytanie.** **Palenie zabronione.** "No smoking." In formal style they replace whole clauses: **po zakończeniu pracy** "after finishing work".
+      pt: |
+        Quase todo verbo forma um substantivo neutro em **-anie / -enie / -cie** que nomeia a ação: **czytać → czytanie** "leitura", **pisać → pisanie**, **mówić → mówienie**, **pić → picie** "o beber", **myć → mycie**. Eles mantêm o aspecto (**zrobienie** "o ter feito") e os verbos com **się** podem mantê-lo (**uczenie się** "o aprender"). Declinam-se como **zdanie**: **Lubię czytanie.** "Gosto de ler." **Palenie zabronione.** "Proibido fumar." No estilo formal substituem orações inteiras: **po zakończeniu pracy** "depois de terminar o trabalho".
+    examples:
+    - ["Palenie zabronione.", "No smoking.", "Proibido fumar.", "Palenie"]
+    - ["Lubię czytanie książek.", "I like reading books.", "Gosto de ler livros.", "czytanie"]
+    - ["Po zakończeniu pracy poszliśmy do domu.", "After finishing work we went home.", "Depois de terminar o trabalho fomos para casa.", "zakończeniu"]
+    match: {seq: [{re: "(anie|enie|ania|enia|aniu|eniu|aniem|eniem)$", pos: noun}], same: [case, number]}
+
+- title: {en: Impersonal constructions, pt: Construções impessoais}
+  lessons:
+  - id: pl-b2-impersonal-no-to
+    title: "zrobiono, powiedziano"
+    meaning: {en: "the impersonal past in -no / -to", pt: "o passado impessoal em -no / -to"}
+    intro:
+      en: |
+        A form in **-no / -to**, built like the passive participle, says that something **was done** without naming who did it: **Zbudowano nowy most.** "A new bridge was built." **Powiedziano mi, że…** "I was told that…" **Ukradziono mi rower.** "My bike was stolen." The object stays in the **accusative** (or genitive after **nie**), so it is not a passive: **Zaproszono nas.** "We were invited." It is common in news and reports.
+      pt: |
+        Uma forma em **-no / -to**, feita como o particípio passivo, diz que algo **foi feito** sem dizer quem fez: **Zbudowano nowy most.** "Construíram uma ponte nova." **Powiedziano mi, że…** "Disseram-me que…" **Ukradziono mi rower.** "Roubaram minha bicicleta." O objeto fica no **acusativo** (ou no genitivo depois de **nie**), por isso não é uma passiva: **Zaproszono nas.** "Fomos convidados." É comum em notícias e relatórios.
+    examples:
+    - ["Zbudowano nowy most.", "A new bridge was built.", "Construíram uma ponte nova.", "Zbudowano"]
+    - ["Ukradziono mi rower.", "My bike was stolen.", "Roubaram minha bicicleta.", "Ukradziono"]
+    - ["Powiedziano mi, że jesteś chory.", "I was told you were ill.", "Disseram-me que você estava doente.", "Powiedziano"]
+    match: {seq: [{re: "^(?!(?:czerwono|zielono|kolano|święto|siano|rano|ono)$)[\\s\\S]*?(?:(ano|ono|ęto|yto|ito|uto)$)", pos: verb}]}
+
+  - id: pl-b2-predicatives
+    title: "można, trzeba, warto, należy"
+    meaning: {en: "impersonal words of possibility and necessity", pt: "palavras impessoais de possibilidade e necessidade"}
+    intro:
+      en: |
+        These words have no subject and take an infinitive; the person, if named, is in the **dative**: **można** "one can, it's allowed", **trzeba** "one must", **warto** "it's worth", **wolno** "it's permitted" (**Nie wolno tu palić.**), **należy** "one should" (formal), **widać / słychać** "one can see / hear". Past and future with **było / będzie**: **Trzeba było przyjść wcześniej.** "You should have come earlier."
+      pt: |
+        Essas palavras não têm sujeito e pedem infinitivo; a pessoa, se aparece, vai no **dativo**: **można** "pode-se, é permitido", **trzeba** "é preciso", **warto** "vale a pena", **wolno** "é permitido" (**Nie wolno tu palić.** "Não é permitido fumar aqui."), **należy** "deve-se" (formal), **widać / słychać** "dá para ver / ouvir". Passado e futuro com **było / będzie**: **Trzeba było przyjść wcześniej.** "Era para ter vindo mais cedo."
+    examples:
+    - ["Czy można tu palić?", "Can one smoke here?", "Pode fumar aqui?", "można"]
+    - ["Trzeba było przyjść wcześniej.", "You should have come earlier.", "Era para ter vindo mais cedo.", "Trzeba"]
+    - ["Warto przeczytać tę książkę.", "This book is worth reading.", "Vale a pena ler este livro.", "Warto"]
+    match: {seq: [{word: [można, trzeba, warto, wolno, należy, widać, słychać, niepodobna]}], gap: 0}
+    pool: [można, trzeba, warto, wolno, należy, widać, musi, chce]
+
+- title: {en: Numerals, pt: Numerais}
+  lessons:
+  - id: pl-b2-five-and-up
+    title: "pięć kotów, kilku ludzi"
+    meaning: {en: "five and up: the genitive plural and a neuter verb", pt: "de cinco em diante: genitivo plural e verbo no neutro"}
+    intro:
+      en: |
+        After **pięć** and higher (and **kilka, wiele, dużo, mało, parę**) the noun is **genitive plural**, and the verb is **3rd person singular neuter**: **Pięć kotów spało.** "Five cats were sleeping." **Przyszło dziesięć osób.** "Ten people came." **Mam kilka pytań.** "I have a few questions." After **dwa, trzy, cztery** the noun is nominative plural and the verb agrees normally: **Dwa koty spały.**
+      pt: |
+        Depois de **pięć** em diante (e de **kilka, wiele, dużo, mało, parę**) o substantivo fica no **genitivo plural** e o verbo na **3ª pessoa do singular neutro**: **Pięć kotów spało.** "Cinco gatos dormiam." **Przyszło dziesięć osób.** "Vieram dez pessoas." **Mam kilka pytań.** "Tenho algumas perguntas." Depois de **dwa, trzy, cztery** o substantivo fica no nominativo plural e o verbo concorda normalmente: **Dwa koty spały.**
+    examples:
+    - ["Przyszło dziesięć osób.", "Ten people came.", "Vieram dez pessoas.", "osób"]
+    - ["Mam kilka pytań.", "I have a few questions.", "Tenho algumas perguntas.", "pytań"]
+    - ["Pięć kotów spało na kanapie.", "Five cats were sleeping on the sofa.", "Cinco gatos dormiam no sofá.", "kotów"]
+    match: {seq: [{word: [pięć, sześć, siedem, osiem, dziewięć, dziesięć, jedenaście, dwanaście, piętnaście, dwadzieścia, trzydzieści, sto, kilka, kilkanaście, wiele, dużo, mało, parę, sporo, trochę]}, {pos: noun, case: gen, number: pl}], near: 1, gap: 1, same: [case, number]}
+
+  - id: pl-b2-men-numerals
+    title: "dwaj panowie, pięciu mężczyzn"
+    meaning: {en: "numerals with groups of men", pt: "numerais com grupos de homens"}
+    intro:
+      en: |
+        Masculine-personal nouns (men, or mixed groups referred to with masculine plurals) have their own numerals: **dwaj, trzej, czterej** + nominative (**dwaj bracia**), or, more commonly, **dwóch, trzech, czterech, pięciu, sześciu…** + **genitive** with a neuter singular verb: **Dwóch studentów przyszło.** "Two students came." **Pięciu mężczyzn czekało.** **obaj / obu** "both (men)". **kilku, wielu** follow the same pattern: **kilku kolegów**.
+      pt: |
+        Os substantivos masculino-pessoais (homens, ou grupos mistos tratados no masculino plural) têm numerais próprios: **dwaj, trzej, czterej** + nominativo (**dwaj bracia**), ou, mais comum, **dwóch, trzech, czterech, pięciu, sześciu…** + **genitivo** com verbo no neutro singular: **Dwóch studentów przyszło.** "Vieram dois estudantes." **Pięciu mężczyzn czekało.** "Cinco homens esperavam." **obaj / obu** "ambos (homens)". **kilku, wielu** seguem o mesmo padrão: **kilku kolegów**.
+    table:
+      head: {en: [Number, Men, Other nouns], pt: [Número, Homens, Outros substantivos]}
+      rows:
+      - ["2", "dwaj / dwóch", "dwa (masc.) / dwie (fem.)"]
+      - ["3", "trzej / trzech", trzy]
+      - ["5", pięciu, pięć]
+      - [a few, kilku, kilka]
+    examples:
+    - ["Dwóch studentów przyszło.", "Two students came.", "Vieram dois estudantes.", "Dwóch"]
+    - ["Dwaj bracia mieszkają w Krakowie.", "Two brothers live in Kraków.", "Dois irmãos moram em Cracóvia.", "Dwaj"]
+    - ["Pięciu mężczyzn czekało przed domem.", "Five men were waiting outside the house.", "Cinco homens esperavam diante da casa.", "Pięciu"]
+    match: {seq: [{word: [dwaj, trzej, czterej, obaj, dwóch, trzech, czterech, pięciu, sześciu, siedmiu, ośmiu, dziesięciu, kilku, wielu, obu]}, {pos: noun}], gap: 0}
+    pool: [dwaj, dwóch, trzech, pięciu, kilku, dwa, trzy, pięć, kilka]
+
+  - id: pl-b2-collective
+    title: "dwoje dzieci, oboje"
+    meaning: {en: "collective numerals: dwoje, troje, oboje", pt: "numerais coletivos: dwoje, troje, oboje"}
+    intro:
+      en: |
+        **dwoje, troje, czworo, pięcioro…** count **mixed groups** (a man and a woman), **children and young beings** (**dwoje dzieci**, **troje kociąt**) and plural-only nouns for people and things (**dwoje drzwi** "two doors"). They take the **genitive plural** and a neuter singular verb: **Mają troje dzieci.** "They have three children." **oboje** "both (a man and a woman)": **Oboje są lekarzami.** "They are both doctors." Oblique forms: **dwojga, obojga, dwojgiem**.
+      pt: |
+        **dwoje, troje, czworo, pięcioro…** contam **grupos mistos** (um homem e uma mulher), **crianças e filhotes** (**dwoje dzieci**, **troje kociąt**) e substantivos só plurais (**dwoje drzwi** "duas portas"). Pedem o **genitivo plural** e verbo no neutro singular: **Mają troje dzieci.** "Eles têm três filhos." **oboje** "os dois (um homem e uma mulher)": **Oboje są lekarzami.** "Os dois são médicos." Formas oblíquas: **dwojga, obojga, dwojgiem**.
+    examples:
+    - ["Mają troje dzieci.", "They have three children.", "Eles têm três filhos.", "troje"]
+    - ["Oboje są lekarzami.", "They are both doctors.", "Os dois são médicos.", "Oboje"]
+    - ["Mamy dwoje dzieci.", "We have two children.", "Temos dois filhos.", "dwoje"]
+    match: {seq: [{word: [dwoje, troje, czworo, pięcioro, sześcioro, oboje, dwojga, trojga, obojga, dwojgiem, obojgiem, obojgu]}], gap: 0}
+    pool: [dwoje, troje, czworo, oboje, dwa, trzy, obaj, dwóch]
+
+- title: {en: Polite address and pronouns, pt: Tratamento e pronomes}
+  lessons:
+  - id: pl-b2-pan-pani
+    title: "Czy pan…? Proszę pani"
+    meaning: {en: "formal address: pan, pani, państwo", pt: "tratamento formal: pan, pani, państwo"}
+    intro:
+      en: |
+        Polish has no polite "you" pronoun: strangers are addressed in the **3rd person** with **pan** (a man), **pani** (a woman), **państwo** (a couple or mixed group, with a plural verb), **panowie, panie**: **Czy pan mówi po angielsku?** "Do you speak English, sir?" **Co państwo zamawiają?** "What would you like to order?" They decline: **Proszę pana!** "Excuse me, sir!", **Dziękuję pani.** "Thank you, madam." In speech the addressee often stays in the verb: **Czy może pan…?** "Could you…?"
+      pt: |
+        O polonês não tem um "você" formal: a desconhecidos se fala na **3ª pessoa** com **pan** (homem), **pani** (mulher), **państwo** (casal ou grupo misto, com verbo no plural), **panowie, panie**: **Czy pan mówi po angielsku?** "O senhor fala inglês?" **Co państwo zamawiają?** "O que os senhores vão pedir?" Eles se declinam: **Proszę pana!** "Com licença, senhor!", **Dziękuję pani.** "Obrigado, senhora." Na fala o tratamento muitas vezes fica com o verbo: **Czy może pan…?** "O senhor poderia…?"
+    table:
+      head: {en: [Case, pan, pani, państwo], pt: [Caso, pan, pani, państwo]}
+      rows:
+      - [nom., pan, pani, państwo]
+      - [gen., pana, pani, państwa]
+      - [dat., panu, pani, państwu]
+      - [acc., pana, panią, państwa]
+      - [ins., panem, panią, państwem]
+    examples:
+    - ["Czy pan mówi po angielsku?", "Do you speak English, sir?", "O senhor fala inglês?", "pan"]
+    - ["Proszę pana!", "Excuse me, sir!", "Com licença, senhor!", "pana"]
+    - ["Co państwo zamawiają?", "What would you like to order?", "O que os senhores vão pedir?", "państwo"]
+    match: {seq: [{word: [pan, pani, pana, panu, panem, panią, państwo, państwa, państwu, panowie, panie]}], gap: 0}
+    pool: [pan, pani, pana, panu, panią, państwo, ty, wy]
+
+  - id: pl-b2-indefinites
+    title: "ktoś, ktokolwiek, byle co"
+    meaning: {en: "indefinite pronouns: -ś, -kolwiek, byle", pt: "pronomes indefinidos: -ś, -kolwiek, byle"}
+    intro:
+      en: |
+        **-ś** makes "some-": **ktoś** someone, **coś** something, **gdzieś** somewhere, **kiedyś** once / some day, **jakiś** some (kind of). **-kolwiek** makes "any-, -ever": **ktokolwiek** anyone, **cokolwiek** anything, **gdziekolwiek** wherever. **byle** "just any, no matter which" is dismissive: **byle co** "any old thing", **byle jak** "carelessly". **Ktoś dzwonił.** "Someone called." **Zrób cokolwiek!** "Do anything!"
+      pt: |
+        **-ś** forma "algum": **ktoś** alguém, **coś** algo, **gdzieś** em algum lugar, **kiedyś** uma vez / algum dia, **jakiś** algum (tipo de). **-kolwiek** forma "qualquer, quer que": **ktokolwiek** qualquer um, **cokolwiek** qualquer coisa, **gdziekolwiek** onde quer que. **byle** "qualquer um, tanto faz" é depreciativo: **byle co** "qualquer porcaria", **byle jak** "de qualquer jeito". **Ktoś dzwonił.** "Alguém ligou." **Zrób cokolwiek!** "Faça qualquer coisa!"
+    examples:
+    - ["Ktoś dzwonił.", "Someone called.", "Alguém ligou.", "Ktoś"]
+    - ["Chcesz coś do picia?", "Do you want something to drink?", "Quer alguma coisa para beber?", "coś"]
+    - ["Możesz usiąść gdziekolwiek.", "You can sit anywhere.", "Pode sentar onde quiser.", "gdziekolwiek"]
+    match: {seq: [{re: "^(kto|kogo|komu|kim|co|czego|czemu|czym|gdzie|kiedy|jak|jaki|jaka|jakie|jakiego|jakiej|jakim|jakich|jaką|dokąd|skąd)(ś|kolwiek)$"}], gap: 0}
+    pool: [ktoś, coś, gdzieś, kiedyś, jakiś, ktokolwiek, cokolwiek, nikt, nic]

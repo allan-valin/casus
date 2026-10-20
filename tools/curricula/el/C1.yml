@@ -1,0 +1,184 @@
+id: C1
+topics:
+
+- title: {en: Learned verb forms, pt: Formas verbais eruditas}
+  lessons:
+  - id: el-c1-present-passive-participle
+    title: "επόμενος, ενδιαφερόμενος, λεγόμενος"
+    meaning: {en: "the present passive participle -όμενος, -ούμενος", pt: "o particípio passivo presente -όμενος, -ούμενος"}
+    intro:
+      en: |
+        Inherited from the learned language, the participle in **-όμενος / -ούμενος / -άμενος** (from verbs in -ομαι, -ούμαι, -άμαι) means "being done, that is …": **ο ενδιαφερόμενος** "the person concerned", **ο εργαζόμενος** "the employee", **τα λεγόμενα** "what is said", **ο λεγόμενος** "the so-called", **τα περιεχόμενα** "the contents". Many have become everyday adjectives: **επόμενος** "next", **προηγούμενος** "previous", **ερχόμενος** "coming", **χαρούμενος** "happy". They decline like **καλός**.
+      pt: |
+        Herdado da língua erudita, o particípio em **-όμενος / -ούμενος / -άμενος** (de verbos em -ομαι, -ούμαι, -άμαι) quer dizer "que está sendo feito, que é …": **ο ενδιαφερόμενος** "o interessado", **ο εργαζόμενος** "o empregado", **τα λεγόμενα** "o que se diz", **ο λεγόμενος** "o chamado", **τα περιεχόμενα** "o conteúdo". Muitos viraram adjetivos do dia a dia: **επόμενος** "próximo", **προηγούμενος** "anterior", **ερχόμενος** "que vem", **χαρούμενος** "alegre". Declinam-se como **καλός**.
+    examples:
+    - ["Θα σε δω την επόμενη εβδομάδα.", "I'll see you next week.", "Vejo você na semana que vem.", "επόμενη"]
+    - ["Είναι πολύ χαρούμενος.", "He's very happy.", "Ele está muito alegre.", "χαρούμενος"]
+    - ["Ο ενδιαφερόμενος πρέπει να υποβάλει αίτηση.", "The person concerned must apply.", "O interessado deve fazer o pedido.", "ενδιαφερόμενος"]
+    match: {seq: [{re: "(όμεν|ούμεν|άμεν|ώμεν|ιόμεν)(ος|η|ο|οι|ες|α|ου|ης|ων|ους|ον)$"}], same: [case, number]}
+
+  - id: el-c1-internal-augment
+    title: "συνέβη, υπέγραψε, επέστρεψε"
+    meaning: {en: "the internal augment in learned compound verbs", pt: "o aumento interno nos verbos compostos eruditos"}
+    intro:
+      en: |
+        Verbs of learned origin with a prepositional prefix put the past-tense augment **between** prefix and stem, and it stays even when unstressed: **συμβαίνει → συνέβη** "it happened", **υπογράφω → υπέγραψα** "I signed", **επιστρέφω → επέστρεψα** "I returned", **υπάρχω → υπήρχε** "there was", **μεταφράζω → μετέφρασα**, **περιέχω → περιείχε**, **εκδίδω → εξέδωσα**. Prefixes change before the vowel: **εκ- → εξ-**, **συμ- → συν-**. In the plural many verbs drop it in speech: **υπογράψαμε**, but **υπήρχαν**.
+      pt: |
+        Os verbos de origem erudita com prefixo preposicional põem o aumento do passado **entre** o prefixo e o radical, e ele fica mesmo sem acento: **συμβαίνει → συνέβη** "aconteceu", **υπογράφω → υπέγραψα** "assinei", **επιστρέφω → επέστρεψα** "voltei", **υπάρχω → υπήρχε** "havia", **μεταφράζω → μετέφρασα**, **περιέχω → περιείχε**, **εκδίδω → εξέδωσα**. Os prefixos mudam antes de vogal: **εκ- → εξ-**, **συμ- → συν-**. No plural muitos verbos o perdem na fala: **υπογράψαμε**, mas **υπήρχαν**.
+    table:
+      head: {en: [Present, Aorist], pt: [Presente, Aoristo]}
+      rows:
+      - [συμβαίνει, συνέβη]
+      - [υπογράφω, υπέγραψα]
+      - [επιστρέφω, επέστρεψα]
+      - [μεταφράζω, μετέφρασα]
+      - [εκδίδω, εξέδωσα]
+    examples:
+    - ["Τι συνέβη;", "What happened?", "O que aconteceu?", "συνέβη"]
+    - ["Επέστρεψε χθες από την Αθήνα.", "He returned from Athens yesterday.", "Ele voltou de Atenas ontem.", "Επέστρεψε"]
+    - ["Υπήρχε ένα πρόβλημα.", "There was a problem.", "Havia um problema.", "Υπήρχε"]
+    match: {seq: [{re: "^(?!(?:συνέχισ|συνεχισ))[\\s\\S]*?(?:^(συν|συμ|παρ|κατ|εξ|υπ|προσ|απ|εν|επ|δι|αν|μετ|περι|προ)(έ|ή|εί))", pos: verb, tense: [past, impf]}], same: [person, number]}
+
+  - id: el-c1-perfect-gerund
+    title: "έχοντας τελειώσει"
+    meaning: {en: "the perfect gerund: having done", pt: "o gerúndio perfeito: tendo feito"}
+    intro:
+      en: |
+        **έχοντας** + the **-ει** form makes a perfect gerund, "having done", used mostly in writing: **Έχοντας τελειώσει τη δουλειά, πήγε σπίτι.** "Having finished the work, he went home." **Έχοντας ζήσει χρόνια στο εξωτερικό, μιλάει τρεις γλώσσες.** "Having lived abroad for years, she speaks three languages." Like every gerund it shares the subject of the main verb.
+      pt: |
+        **έχοντας** + a forma em **-ει** forma o gerúndio perfeito, "tendo feito", usado sobretudo na escrita: **Έχοντας τελειώσει τη δουλειά, πήγε σπίτι.** "Tendo terminado o trabalho, ele foi para casa." **Έχοντας ζήσει χρόνια στο εξωτερικό, μιλάει τρεις γλώσσες.** "Tendo morado anos no exterior, ela fala três línguas." Como todo gerúndio, tem o mesmo sujeito do verbo principal.
+    examples:
+    - ["Έχοντας τελειώσει τη δουλειά πήγε σπίτι.", "Having finished the work, he went home.", "Tendo terminado o trabalho, ele foi para casa.", "τελειώσει"]
+    - ["Έχοντας ζήσει χρόνια στο εξωτερικό μιλάει τρεις γλώσσες.", "Having lived abroad for years, she speaks three languages.", "Tendo morado anos no exterior, ela fala três línguas.", "ζήσει"]
+    match: {seq: [{word: [έχοντας]}, {re: "ει$"}], near: 1, gap: 1}
+
+- title: {en: Learned nouns and adjectives, pt: Substantivos e adjetivos eruditos}
+  lessons:
+  - id: el-c1-neuter-os
+    title: "το μέρος – του μέρους"
+    meaning: {en: "learned neuters in -ος and their genitive -ους", pt: "neutros eruditos em -ος e o genitivo -ους"}
+    intro:
+      en: |
+        A group of neuter nouns in **-ος** come from the ancient third declension: **το μέρος** "part, place", **το έτος** "year", **το είδος** "kind", **το βάρος** "weight", **το λάθος** "mistake", **το μέγεθος** "size", **το κράτος** "state", **το ύψος** "height". Genitive **-ους**, plural **-η**, genitive plural **-ών**: **του έτους, τα έτη, των ετών**. Don't confuse them with the masculine **ο δρόμος**. **εκ μέρους** + gen. "on behalf of", **κάθε είδους** "of every kind".
+      pt: |
+        Um grupo de substantivos neutros em **-ος** vem da terceira declinação antiga: **το μέρος** "parte, lugar", **το έτος** "ano", **το είδος** "tipo", **το βάρος** "peso", **το λάθος** "erro", **το μέγεθος** "tamanho", **το κράτος** "Estado", **το ύψος** "altura". Genitivo **-ους**, plural **-η**, genitivo plural **-ών**: **του έτους, τα έτη, των ετών**. Não confunda com o masculino **ο δρόμος**. **εκ μέρους** + gen. "da parte de", **κάθε είδους** "de todo tipo".
+    table:
+      head: {en: [Case, Singular, Plural], pt: [Caso, Singular, Plural]}
+      rows:
+      - [nom./acc., το μέρος, τα μέρη]
+      - [gen., του μέρους, των μερών]
+      - [nom./acc., το έτος, τα έτη]
+      - [gen., του έτους, των ετών]
+    examples:
+    - ["Μιλάω εκ μέρους όλων μας.", "I speak on behalf of all of us.", "Falo em nome de todos nós.", "μέρους"]
+    - ["Είναι το τέλος του έτους.", "It's the end of the year.", "É o fim do ano.", "έτους"]
+    - ["Πουλάνε βιβλία κάθε είδους.", "They sell books of every kind.", "Vendem livros de todo tipo.", "είδους"]
+    match: {seq: [{word: [μέρους, μέρη, μερών, έτους, έτη, ετών, είδους, είδη, ειδών, βάρους, βάρη, λάθους, λάθη, μεγέθους, κράτους, κράτη, κρατών, ύψους, πλήθους, γένους, τέλους, ήθους, ήθη, έθνους, έθνη, εθνών, δάσους, δάση, όρους, όρη, ποσοστού]}], gap: 0}
+    pool: [μέρους, μέρη, έτους, έτη, είδους, είδη, μέρος, έτος]
+
+  - id: el-c1-learned-superlatives
+    title: "ελάχιστος, μέγιστος, άριστα"
+    meaning: {en: "absolute superlatives in -τατος and irregular learned ones", pt: "superlativos absolutos em -τατος e os eruditos irregulares"}
+    intro:
+      en: |
+        Beside **ο πιο μεγάλος / ο μεγαλύτερος**, Greek has an **absolute superlative** "very, extremely" in **-ότατος / -ύτατος**: **σπουδαιότατος** "most important", **ταχύτατος** "extremely fast", **ελαφρότατος**; and learned irregular forms: **μέγιστος** "maximum", **ελάχιστος** "minimum, very little", **άριστος** "excellent" (**άριστα** "excellently", the top school mark), **βέλτιστος** "optimal", **χείριστος** "worst", **πλείστος** "most" (**ως επί το πλείστον** "for the most part"). **Το ελάχιστο που μπορώ να κάνω.** "The least I can do."
+      pt: |
+        Ao lado de **ο πιο μεγάλος / ο μεγαλύτερος**, o grego tem um **superlativo absoluto** "muito, extremamente" em **-ότατος / -ύτατος**: **σπουδαιότατος** "importantíssimo", **ταχύτατος** "rapidíssimo", **ελαφρότατος**; e formas eruditas irregulares: **μέγιστος** "máximo", **ελάχιστος** "mínimo, pouquíssimo", **άριστος** "excelente" (**άριστα** "excelentemente", a nota máxima na escola), **βέλτιστος** "ótimo", **χείριστος** "péssimo", **πλείστος** "a maior parte" (**ως επί το πλείστον** "na maioria das vezes"). **Το ελάχιστο που μπορώ να κάνω.** "O mínimo que posso fazer."
+    examples:
+    - ["Είναι το ελάχιστο που μπορώ να κάνω.", "It's the least I can do.", "É o mínimo que posso fazer.", "ελάχιστο"]
+    - ["Η μέγιστη ταχύτητα είναι 100.", "The maximum speed is 100.", "A velocidade máxima é 100.", "μέγιστη"]
+    - ["Μιλάει άριστα ελληνικά.", "She speaks excellent Greek.", "Ela fala grego muito bem.", "άριστα"]
+    match:
+    - {seq: [{re: "^(ελάχιστ|ελαχιστ|μέγιστ|μεγιστ|άριστ|αρίστ|βέλτιστ|χείριστ|πλείστ|κάλλιστ|ύψιστ)"}], gap: 0}
+    - {seq: [{re: "(ότατ|ύτατ|έστατ|ώτατ)(ος|η|ο|οι|ες|α|ου|ης|ων|ους|ον|α)$"}], gap: 0}
+
+- title: {en: Formal connectors and prepositions, pt: Conectores e preposições formais}
+  lessons:
+  - id: el-c1-formal-connectors
+    title: "επομένως, εφόσον, καθώς, διότι"
+    meaning: {en: "connectors of formal style", pt: "conectores do estilo formal"}
+    intro:
+      en: |
+        Formal Greek uses its own connectors:
+
+        - cause: **διότι, καθότι** "because" (= γιατί), **καθώς** "as, since"; also "as, while" in time
+        - condition: **εάν** (= αν), **εφόσον** "provided that, since"
+        - consequence: **επομένως, συνεπώς, άρα** "therefore"
+        - explanation: **δηλαδή** "that is", **ήτοι** "namely" (very bookish)
+        - alternative: **ειδάλλως / αλλιώς** "otherwise"
+      pt: |
+        O grego formal usa conectores próprios:
+
+        - causa: **διότι, καθότι** "porque" (= γιατί), **καθώς** "já que"; também "enquanto" no tempo
+        - condição: **εάν** (= αν), **εφόσον** "desde que, uma vez que"
+        - consequência: **επομένως, συνεπώς, άρα** "portanto"
+        - explicação: **δηλαδή** "isto é", **ήτοι** "a saber" (muito livresco)
+        - alternativa: **ειδάλλως / αλλιώς** "senão"
+    examples:
+    - ["Δεν ήρθε διότι ήταν άρρωστος.", "He didn't come because he was ill.", "Ele não veio porque estava doente.", "διότι"]
+    - ["Εφόσον το θέλεις θα το κάνω.", "Since you want it, I'll do it.", "Já que você quer, vou fazer.", "Εφόσον"]
+    - ["Καθώς περπατούσα άρχισε να βρέχει.", "As I was walking it started to rain.", "Enquanto eu andava começou a chover.", "Καθώς"]
+    match: {seq: [{word: [διότι, καθότι, καθώς, εάν, εφόσον, επομένως, συνεπώς, άρα, δηλαδή, ήτοι, ειδάλλως, αλλιώς]}], gap: 0}
+    pool: [διότι, καθώς, εάν, εφόσον, επομένως, άρα, δηλαδή, αλλιώς, γιατί]
+
+  - id: el-c1-learned-prepositions
+    title: "μέσω, λόγω, υπέρ, εναντίον"
+    meaning: {en: "learned prepositions with the genitive", pt: "preposições eruditas com genitivo"}
+    intro:
+      en: |
+        Modern Greek's everyday prepositions take the accusative, but a set of learned ones take the **genitive**: **μέσω** "via, through" (**μέσω Αθήνας**), **λόγω** "due to" (**λόγω καιρού**), **υπέρ** "in favour of", **εναντίον** "against", **περί** "about, concerning", **άνευ** "without" (**άνευ όρων** "unconditionally"), **εκτός** "except", **κατά τη διάρκεια** "during", **χάρη σε** "thanks to" (with σε + acc.). **ως** "as, up to" takes the accusative or nominative: **ως πρόεδρος** "as president".
+      pt: |
+        As preposições comuns do grego moderno pedem o acusativo, mas um grupo de preposições eruditas pede o **genitivo**: **μέσω** "via, por meio de" (**μέσω Αθήνας** "via Atenas"), **λόγω** "devido a" (**λόγω καιρού** "devido ao tempo"), **υπέρ** "a favor de", **εναντίον** "contra", **περί** "sobre, a respeito de", **άνευ** "sem" (**άνευ όρων** "incondicionalmente"), **εκτός** "exceto", **κατά τη διάρκεια** "durante", **χάρη σε** "graças a" (com σε + ac.). **ως** "como, até" pede acusativo ou nominativo: **ως πρόεδρος** "como presidente".
+    examples:
+    - ["Πήγαμε στη Ρώμη μέσω Αθήνας.", "We went to Rome via Athens.", "Fomos a Roma via Atenas.", "μέσω"]
+    - ["Η πτήση ακυρώθηκε λόγω καιρού.", "The flight was cancelled due to the weather.", "O voo foi cancelado devido ao tempo.", "λόγω"]
+    - ["Είμαι υπέρ αυτής της ιδέας.", "I'm in favour of this idea.", "Sou a favor desta ideia.", "υπέρ"]
+    match: {seq: [{word: [μέσω, λόγω, υπέρ, εναντίον, περί, άνευ, ένεκα, χάριν, εκτός, χάρη]}], gap: 0}
+    pool: [μέσω, λόγω, υπέρ, εναντίον, περί, εκτός, χάρη, για]
+
+  - id: el-c1-dative-fossils
+    title: "εν τω μεταξύ, τοις εκατό"
+    meaning: {en: "fossilised ancient datives", pt: "dativos antigos fossilizados"}
+    intro:
+      en: |
+        The ancient dative case is gone, but it survives in fixed phrases of everyday Greek: **εν τω μεταξύ** "meanwhile", **τοις εκατό** "per cent", **εν λόγω** "in question", **εν ολίγοις** "in short", **εν πάση περιπτώσει** "in any case", **εν μέρει** "partly", **εν γένει** "in general", **δόξα τω Θεώ** "thank God", **εν τάξει** (now written **εντάξει**) "OK". Treat each as a single word.
+      pt: |
+        O caso dativo antigo desapareceu, mas sobrevive em expressões fixas do grego do dia a dia: **εν τω μεταξύ** "enquanto isso", **τοις εκατό** "por cento", **εν λόγω** "em questão", **εν ολίγοις** "em suma", **εν πάση περιπτώσει** "em todo caso", **εν μέρει** "em parte", **εν γένει** "em geral", **δόξα τω Θεώ** "graças a Deus", **εν τάξει** (hoje escrito **εντάξει**) "tudo bem". Trate cada uma como uma só palavra.
+    examples:
+    - ["Εν τω μεταξύ άρχισε να βρέχει.", "Meanwhile it started to rain.", "Enquanto isso começou a chover.", "τω"]
+    - ["Οι τιμές ανέβηκαν δέκα τοις εκατό.", "Prices went up ten per cent.", "Os preços subiram dez por cento.", "τοις"]
+    - ["Εν πάση περιπτώσει θα σου τηλεφωνήσω.", "In any case I'll call you.", "Em todo caso eu te ligo.", "πάση"]
+    match: {seq: [{word: [εν, τω, τοις, πάση, ολίγοις, ταις]}], gap: 0}
+    pool: [εν, τω, τοις, στο, το, στα]
+
+- title: {en: Clauses in depth, pt: Orações a fundo}
+  lessons:
+  - id: el-c1-pou-emotion
+    title: "Χαίρομαι που ήρθες."
+    meaning: {en: "που after verbs of feeling", pt: "που depois de verbos de sentimento"}
+    intro:
+      en: |
+        After verbs and adjectives of **emotion** the complement clause is introduced by **που**, not **ότι**: **Χαίρομαι που ήρθες.** "I'm glad you came." **Λυπάμαι που δεν μπορώ να βοηθήσω.** "I'm sorry I can't help." **Μετανιώνω που το είπα.** "I regret saying it." **Ευχαριστώ που με βοήθησες.** "Thank you for helping me." With verbs of saying and thinking it is **ότι / πως**; for the clause as a fact one is grateful or sorry about, **που**.
+      pt: |
+        Depois de verbos e adjetivos de **emoção** a oração completiva é introduzida por **που**, e não por **ότι**: **Χαίρομαι που ήρθες.** "Fico feliz que você veio." **Λυπάμαι που δεν μπορώ να βοηθήσω.** "Sinto muito não poder ajudar." **Μετανιώνω που το είπα.** "Me arrependo de ter dito isso." **Ευχαριστώ που με βοήθησες.** "Obrigado por me ajudar." Com verbos de dizer e pensar é **ότι / πως**; para o fato pelo qual se agradece ou se lamenta, **που**.
+    examples:
+    - ["Χαίρομαι που ήρθες.", "I'm glad you came.", "Fico feliz que você veio.", "που"]
+    - ["Λυπάμαι που δεν μπορώ να βοηθήσω.", "I'm sorry I can't help.", "Sinto muito não poder ajudar.", "που"]
+    - ["Ευχαριστώ που με βοήθησες.", "Thank you for helping me.", "Obrigado por me ajudar.", "που"]
+    match: {seq: [{re: "^(χαίρ|χαιρ|λυπ|μετανι|ευχαριστ|θύμωσ|ντρέπ|ντραπ|ζηλεύ|ανακουφ)"}, {word: [που]}], near: 1, gap: 1}
+    pool: [που, ότι, πως, να, αν]
+
+  - id: el-c1-to-na
+    title: "Το να καπνίζεις βλάπτει."
+    meaning: {en: "το να: a να clause used as a noun", pt: "το να: uma oração com να usada como substantivo"}
+    intro:
+      en: |
+        Greek has no infinitive, so to use an action as a noun it puts the article **το** before a **να** clause: **Το να καπνίζεις βλάπτει την υγεία.** "Smoking harms your health." **Το να μάθεις μια γλώσσα θέλει χρόνο.** "Learning a language takes time." After prepositions the article shows the case: **Αντί του να…** (formal) "instead of…". Similarly **το ότι** makes a fact into a noun: **Το ότι δεν ήρθε με ανησυχεί.** "The fact that he didn't come worries me."
+      pt: |
+        O grego não tem infinitivo, então para usar uma ação como substantivo põe o artigo **το** antes de uma oração com **να**: **Το να καπνίζεις βλάπτει την υγεία.** "Fumar faz mal à saúde." **Το να μάθεις μια γλώσσα θέλει χρόνο.** "Aprender uma língua leva tempo." Depois de preposição o artigo mostra o caso: **Αντί του να…** (formal) "em vez de…". Da mesma forma **το ότι** transforma um fato em substantivo: **Το ότι δεν ήρθε με ανησυχεί.** "O fato de ele não ter vindo me preocupa."
+    examples:
+    - ["Το να καπνίζεις βλάπτει την υγεία.", "Smoking harms your health.", "Fumar faz mal à saúde.", "Το"]
+    - ["Το να μάθεις μια γλώσσα θέλει χρόνο.", "Learning a language takes time.", "Aprender uma língua leva tempo.", "Το"]
+    - ["Το ότι δεν ήρθε με ανησυχεί.", "The fact that he didn't come worries me.", "O fato de ele não ter vindo me preocupa.", "Το"]
+    match: {seq: [{word: [το, στο]}, {word: [να, ότι]}], gap: 0}
+    pool: [το, του, στο, τα, ο]

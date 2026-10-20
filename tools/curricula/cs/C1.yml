@@ -1,0 +1,230 @@
+id: C1
+topics:
+
+- title: {en: Written Czech, pt: Tcheco escrito}
+  lessons:
+  - id: cs-c1-jenz
+    title: "jenž, jehož, v němž"
+    meaning: {en: "the bookish relative jenž", pt: "o relativo livresco jenž"}
+    intro:
+      en: |
+        Beside **který**, written Czech uses **jenž** "who, which", declined like the pronoun **on** with **-ž** added: **jenž** (masc. sg.), **jež** (fem. and neut., and most plurals), **jehož** (gen./acc.), **jemuž** (dat.), after prepositions **něhož, němž, nímž, níž, nichž**. **Muž, jenž stál u okna…** "The man who stood by the window…" **dům, v němž bydlím** "the house in which I live".
+
+        The possessive **jehož, jejíž, jejichž** "whose" is also used with **který**-style clauses: **spisovatel, jehož knihy čtu** "the writer whose books I read". In speech **který** replaces all of them.
+      pt: |
+        Ao lado de **který**, o tcheco escrito usa **jenž** "que, o qual", declinado como o pronome **on** com **-ž** acrescentado: **jenž** (masc. sing.), **jež** (fem. e neutro, e a maioria dos plurais), **jehož** (gen./ac.), **jemuž** (dat.), depois de preposição **něhož, němž, nímž, níž, nichž**. **Muž, jenž stál u okna…** "O homem que estava junto à janela…" **dům, v němž bydlím** "a casa em que moro".
+
+        O possessivo **jehož, jejíž, jejichž** "cujo" também aparece: **spisovatel, jehož knihy čtu** "o escritor cujos livros leio". Na fala **který** substitui todos eles.
+    table:
+      head: {en: [Case, Masc. sg., Fem. sg., Plural], pt: [Caso, Masc. sing., Fem. sing., Plural]}
+      rows:
+      - [nom., jenž, jež, jež / již]
+      - [gen., "jehož / něhož", "jíž / níž", "jichž / nichž"]
+      - [dat., "jemuž / němuž", "jíž / níž", "jimž / nimž"]
+      - [loc., "(o) němž", "(o) níž", "(o) nichž"]
+      - [ins., "jímž / nímž", "jíž / níž", "jimiž / nimiž"]
+    examples:
+    - ["Muž, jenž stál u okna, byl můj otec.", "The man who stood by the window was my father.", "O homem que estava junto à janela era meu pai.", "jenž"]
+    - ["To je dům, v němž bydlím.", "That is the house in which I live.", "Esta é a casa em que moro.", "němž"]
+    - ["To je spisovatel, jehož knihy čtu.", "That's the writer whose books I read.", "Este é o escritor cujos livros leio.", "jehož"]
+    match: {seq: [{word: [jenž, jež, jehož, jemuž, jímž, jejíž, jejichž, něhož, němuž, němž, nímž, níž, nichž, nimiž, jimiž, jichž, jimž]}], gap: 0}
+    pool: [jenž, jež, jehož, němž, níž, nichž, který, jejichž]
+
+  - id: cs-c1-participial-adjectives
+    title: "pracující, rostoucí"
+    meaning: {en: "adjectives from the present participle: -ící, -oucí", pt: "adjetivos do particípio presente: -ící, -oucí"}
+    intro:
+      en: |
+        From the 3rd person plural present Czech makes an adjective in **-ící / -oucí** "doing": **pracují → pracující** "working", **rostou → rostoucí** "growing", **jedou → jedoucí** "travelling". It declines like **jarní** (soft adjectives) and is typical of written and official Czech: **cestující** "passengers", **následující den** "the following day", **vedoucí** "manager".
+
+        Many such words have become ordinary adjectives: **vzrušující** "exciting", **matoucí** "confusing", **budoucí** "future".
+      pt: |
+        A partir da 3ª pessoa do plural do presente o tcheco faz um adjetivo em **-ící / -oucí** "que faz": **pracují → pracující** "que trabalha", **rostou → rostoucí** "crescente", **jedou → jedoucí** "que viaja". Declina-se como **jarní** (adjetivos brandos) e é típico do tcheco escrito e oficial: **cestující** "passageiros", **následující den** "o dia seguinte", **vedoucí** "gerente".
+
+        Muitas dessas palavras viraram adjetivos comuns: **vzrušující** "emocionante", **matoucí** "confuso", **budoucí** "futuro".
+    examples:
+    - ["Všichni cestující musí vystoupit.", "All passengers must get off.", "Todos os passageiros devem descer.", "cestující"]
+    - ["Ten film byl opravdu vzrušující.", "That film was really exciting.", "Aquele filme foi muito emocionante.", "vzrušující"]
+    - ["Následující den pršelo.", "The following day it rained.", "No dia seguinte choveu.", "Následující"]
+    match: {seq: [{re: "^(?!(?:nejvíce|tisíce|více)$)[\\s\\S]*?(?:(oucí|ující|ející|ící)(ho|mu|m|ch|mi)?$)", pos: [adj, noun, verb]}], same: [case, number]}
+
+  - id: cs-c1-formal-prepositions
+    title: "díky, kvůli, navzdory, v rámci"
+    meaning: {en: "secondary prepositions and their cases", pt: "preposições secundárias e seus casos"}
+    intro:
+      en: |
+        Prepositions made from nouns and adverbs carry precise meanings, each with its case:
+
+        - **díky** + dat. "thanks to" (good causes), **kvůli** + dat. "because of" (bad or neutral ones), **navzdory** + dat. "in spite of"
+        - **během** + gen. "during", **kromě** + gen. "except, besides", **místo** + gen. "instead of", **ohledně** + gen. "concerning"
+        - in official style: **v rámci** + gen. "within", **na základě** + gen. "on the basis of", **v souvislosti s** + ins. "in connection with", **vzhledem k** + dat. "in view of", **prostřednictvím** + gen. "by means of"
+      pt: |
+        Preposições feitas de substantivos e advérbios têm sentidos precisos, cada uma com seu caso:
+
+        - **díky** + dat. "graças a" (causas boas), **kvůli** + dat. "por causa de" (ruins ou neutras), **navzdory** + dat. "apesar de"
+        - **během** + gen. "durante", **kromě** + gen. "exceto, além de", **místo** + gen. "em vez de", **ohledně** + gen. "a respeito de"
+        - no estilo oficial: **v rámci** + gen. "no âmbito de", **na základě** + gen. "com base em", **v souvislosti s** + instr. "em relação a", **vzhledem k** + dat. "tendo em vista", **prostřednictvím** + gen. "por meio de"
+    examples:
+    - ["Díky tobě jsem zkoušku udělal.", "Thanks to you I passed the exam.", "Graças a você passei na prova.", "Díky"]
+    - ["Kvůli dešti jsme zůstali doma.", "Because of the rain we stayed home.", "Por causa da chuva ficamos em casa.", "Kvůli"]
+    - ["Během léta pracuji v Praze.", "During the summer I work in Prague.", "Durante o verão trabalho em Praga.", "Během"]
+    match: {seq: [{word: [díky, kvůli, navzdory, během, kromě, ohledně, prostřednictvím, rámci, základě, souvislosti, vzhledem]}], gap: 0}
+    pool: [díky, kvůli, navzdory, během, kromě, místo, ohledně]
+
+- title: {en: Verbs in depth, pt: Os verbos a fundo}
+  lessons:
+  - id: cs-c1-iteratives
+    title: "chodíval, bývalo, mívá"
+    meaning: {en: "frequentative verbs: used to, tends to", pt: "verbos frequentativos: costumava, costuma"}
+    intro:
+      en: |
+        From imperfective verbs Czech forms **frequentatives** in **-ávat / -ívat / -vat** for repeated or habitual actions: **chodit → chodívat**, **dělat → dělávat**, **mít → mívat**, **být → bývat**, **hrát → hrávat**. In the past they mean "used to": **Chodíval jsem sem každý den.** "I used to come here every day." In the present "tends to": **V zimě tu bývá hodně sněhu.** "There tends to be a lot of snow here in winter."
+
+        **Bývalo to lepší.** "Things used to be better." The adjective **bývalý** "former" comes from the same verb.
+      pt: |
+        A partir de verbos imperfectivos o tcheco forma **frequentativos** em **-ávat / -ívat / -vat** para ações repetidas ou habituais: **chodit → chodívat**, **dělat → dělávat**, **mít → mívat**, **být → bývat**, **hrát → hrávat**. No passado querem dizer "costumava": **Chodíval jsem sem každý den.** "Eu costumava vir aqui todo dia." No presente, "costuma": **V zimě tu bývá hodně sněhu.** "No inverno costuma ter muita neve aqui."
+
+        **Bývalo to lepší.** "Já foi melhor." O adjetivo **bývalý** "ex-, antigo" vem do mesmo verbo.
+    examples:
+    - ["Chodíval jsem sem každý den.", "I used to come here every day.", "Eu costumava vir aqui todo dia.", "Chodíval"]
+    - ["V zimě tu bývá hodně sněhu.", "There tends to be a lot of snow here in winter.", "No inverno costuma ter muita neve aqui.", "bývá"]
+    - ["Býval to můj nejlepší přítel.", "He used to be my best friend.", "Ele era meu melhor amigo.", "Býval"]
+    match: {seq: [{re: "^(chodív|jezdív|říkáv|děláv|mív|vídáv|hráv|spáv|jídáv|býv|čítáv|psáv|nosív|vozív|zpíváv)", pos: verb}], same: [person, number, tense]}
+
+  - id: cs-c1-prefixes
+    title: "dočíst, najíst se, zamilovat se"
+    meaning: {en: "prefixes that add a manner of action", pt: "prefixos que acrescentam um modo de ação"}
+    intro:
+      en: |
+        Prefixes do more than make a verb perfective: **do-** to the end (**dočíst** "finish reading"), **pře-** again or over (**přečíst** "read through", **přejíst se** "overeat"), **na- … se** one's fill (**najíst se** "eat one's fill", **napít se** "have a drink"), **vy- … se** enough (**vyspat se** "get enough sleep"), **roz- … se** start, spread (**rozesmát se** "burst out laughing", **rozplakat se**), **za- … se** become absorbed (**zamilovat se** "fall in love", **zamyslet se** "fall to thinking").
+      pt: |
+        Os prefixos fazem mais que tornar o verbo perfectivo: **do-** até o fim (**dočíst** "terminar de ler"), **pře-** de novo ou demais (**přečíst** "ler inteiro", **přejíst se** "comer demais"), **na- … se** até se fartar (**najíst se** "comer até se satisfazer", **napít se** "tomar um gole"), **vy- … se** o suficiente (**vyspat se** "dormir bem"), **roz- … se** começar, espalhar (**rozesmát se** "cair na risada", **rozplakat se**), **za- … se** ficar absorto (**zamilovat se** "se apaixonar", **zamyslet se** "ficar pensativo").
+    examples:
+    - ["Konečně jsem tu knihu dočetl.", "I finally finished reading that book.", "Finalmente terminei de ler aquele livro.", "dočetl"]
+    - ["Vyspal ses dobře?", "Did you sleep well?", "Você dormiu bem?", "Vyspal"]
+    - ["Zamiloval se do ní.", "He fell in love with her.", "Ele se apaixonou por ela.", "Zamiloval"]
+    match: {seq: [{re: "^(do|pře|na|vy|roz|roze|za)(čet|čte|číst|jedl|jíst|pil|pít|spal|spat|smál|smát|plak|milov|mysl)", pos: verb}], same: [person, number, tense]}
+
+  - id: cs-c1-impersonal
+    title: "chce se mi spát, stýská se mi"
+    meaning: {en: "impersonal se-verbs with the dative", pt: "verbos impessoais com se e o dativo"}
+    intro:
+      en: |
+        Many feelings are expressed with no subject, the person in the **dative** and the verb in the 3rd person singular with **se**: **Chce se mi spát.** "I feel sleepy." **Stýská se mi po domově.** "I'm homesick." **Daří se mi dobře.** "I'm doing well." **Zdá se mi, že…** "It seems to me that…" **Nechce se mi.** "I don't feel like it." In the past the verb is neuter: **Chtělo se mi plakat.** "I felt like crying."
+      pt: |
+        Muitos sentimentos se exprimem sem sujeito, com a pessoa no **dativo** e o verbo na 3ª pessoa do singular com **se**: **Chce se mi spát.** "Estou com sono." **Stýská se mi po domově.** "Estou com saudade de casa." **Daří se mi dobře.** "Estou indo bem." **Zdá se mi, že…** "Me parece que…" **Nechce se mi.** "Não estou a fim." No passado o verbo fica no neutro: **Chtělo se mi plakat.** "Deu vontade de chorar."
+    examples:
+    - ["Chce se mi spát.", "I feel sleepy.", "Estou com sono.", "Chce"]
+    - ["Stýská se mi po domově.", "I'm homesick.", "Estou com saudade de casa.", "Stýská"]
+    - ["Zdá se mi, že prší.", "It seems to me it's raining.", "Me parece que está chovendo.", "Zdá"]
+    match:
+    - {seq: [{word: [chce, nechce, chtělo, nechtělo, stýská, stýskalo, daří, nedaří, dařilo, zdá, zdálo]}, {word: [se]}, {word: [mi, ti, mu, jí, nám, vám, jim]}], gap: 0}
+    - {seq: [{word: [se]}, {word: [mi, ti, mu, jí, nám, vám, jim]}, {word: [chce, nechce, chtělo, nechtělo, stýská, stýskalo, daří, nedaří, dařilo, zdá, zdálo]}], gap: 2}
+    pool: [chce, stýská, daří, zdá, líbí, chtělo, nechce]
+
+- title: {en: Numerals and case, pt: Numerais e caso}
+  lessons:
+  - id: cs-c1-numeral-cases
+    title: "se dvěma, ve třech, o pěti"
+    meaning: {en: "numerals in the oblique cases", pt: "os numerais nos casos oblíquos"}
+    intro:
+      en: |
+        **dva, tři, čtyři** take the noun in the same case as themselves, and decline: **se dvěma přáteli** "with two friends", **ve třech dnech** "in three days", **ke čtyřem lidem**. From **pět** up, the numeral and its noun take the **genitive plural** in the nominative and accusative (**pět lidí**), but in the other cases both stand in the case required: **s pěti lidmi** "with five people", **o deseti dnech**.
+
+        The forms: **dvou, dvěma** · **tří (třech), třem, třemi** · **čtyř (čtyřech), čtyřem, čtyřmi** · **pěti** for every oblique case of five and up.
+      pt: |
+        **dva, tři, čtyři** põem o substantivo no mesmo caso que eles e se declinam: **se dvěma přáteli** "com dois amigos", **ve třech dnech** "em três dias", **ke čtyřem lidem**. De **pět** em diante, o numeral e o substantivo ficam no **genitivo plural** no nominativo e no acusativo (**pět lidí**), mas nos outros casos os dois vão no caso exigido: **s pěti lidmi** "com cinco pessoas", **o deseti dnech**.
+
+        As formas: **dvou, dvěma** · **tří (třech), třem, třemi** · **čtyř (čtyřech), čtyřem, čtyřmi** · **pěti** para todos os casos oblíquos de cinco em diante.
+    table:
+      head: {en: [Case, "2", "3", "5"], pt: [Caso, "2", "3", "5"]}
+      rows:
+      - [nom., dva / dvě, tři, pět]
+      - [gen., dvou, "tří / třech", pěti]
+      - [dat., dvěma, třem, pěti]
+      - [loc., dvou, "třech", pěti]
+      - [ins., dvěma, třemi, pěti]
+    examples:
+    - ["Přišel se dvěma přáteli.", "He came with two friends.", "Ele veio com dois amigos.", "dvěma"]
+    - ["Mluví třemi jazyky.", "She speaks three languages.", "Ela fala três línguas.", "třemi"]
+    - ["Bydlím s pěti kamarády.", "I live with five friends.", "Moro com cinco amigos.", "pěti"]
+    match: {seq: [{word: [dvou, dvěma, třech, třem, třemi, čtyřech, čtyřem, čtyřmi, pěti, šesti, sedmi, osmi, devíti, deseti, jedenácti, dvanácti, dvaceti, třiceti, čtyřiceti, padesáti, sto, stech]}], gap: 0}
+    pool: [dvou, dvěma, třech, třem, třemi, pěti, deseti, dva, tři]
+
+  - id: cs-c1-collective
+    title: "oba, obě, dvoje"
+    meaning: {en: "both, and numerals for pairs and sets", pt: "ambos e os numerais para pares e conjuntos"}
+    intro:
+      en: |
+        **oba** (masc.) and **obě** (fem., neut.) "both" decline like **dva**: **obou, oběma**. **Oba bratři jsou lékaři.** "Both brothers are doctors." **s oběma rodiči** "with both parents".
+
+        Nouns that exist only in the plural — **dveře** "door", **kalhoty** "trousers", **brýle** "glasses", **noviny**, **hodinky** — are counted with the **set numerals** **jedny, dvoje, troje, čtvery, patery**: **dvoje dveře** "two doors", **troje kalhoty**. **dvojí, trojí** mean "of two / three kinds": **dvojí metr** "double standards".
+      pt: |
+        **oba** (masc.) e **obě** (fem., neutro) "ambos" se declinam como **dva**: **obou, oběma**. **Oba bratři jsou lékaři.** "Os dois irmãos são médicos." **s oběma rodiči** "com os dois pais".
+
+        Substantivos que só existem no plural — **dveře** "porta", **kalhoty** "calça", **brýle** "óculos", **noviny**, **hodinky** — se contam com os **numerais de conjunto** **jedny, dvoje, troje, čtvery, patery**: **dvoje dveře** "duas portas", **troje kalhoty**. **dvojí, trojí** querem dizer "de dois / três tipos": **dvojí metr** "dois pesos e duas medidas".
+    examples:
+    - ["Oba bratři jsou lékaři.", "Both brothers are doctors.", "Os dois irmãos são médicos.", "Oba"]
+    - ["Mluvil jsem s oběma rodiči.", "I spoke with both parents.", "Falei com os dois pais.", "oběma"]
+    - ["Mám dvoje brýle.", "I have two pairs of glasses.", "Tenho dois óculos.", "dvoje"]
+    match: {seq: [{word: [oba, obě, obou, oběma, dvoje, troje, čtvery, patery, jedny, dvojí, trojí]}], gap: 0}
+    pool: [oba, obě, obou, oběma, dvoje, troje, dva, dvě]
+
+- title: {en: Word order and particles, pt: Ordem das palavras e partículas}
+  lessons:
+  - id: cs-c1-clitics
+    title: "Včera jsem mu to dal."
+    meaning: {en: "the clitic cluster in second position", pt: "o grupo de clíticos na segunda posição"}
+    intro:
+      en: |
+        Czech short words stand together in the **second position** of the clause, after the first phrase, in a fixed order:
+
+        **jsem / jsi / jsme / jste, bych / by… → se / si → dative (mi, ti, mu) → accusative (tě, ho, to)**
+
+        **Včera jsem mu to dal.** "I gave it to him yesterday." **Dal bych ti ho.** "I'd give it to you." **Zeptal se mě.** The cluster never starts the sentence: not *Jsem mu to dal* but **Dal jsem mu to.**
+      pt: |
+        As palavras curtas do tcheco ficam juntas na **segunda posição** da oração, depois do primeiro sintagma, numa ordem fixa:
+
+        **jsem / jsi / jsme / jste, bych / by… → se / si → dativo (mi, ti, mu) → acusativo (tě, ho, to)**
+
+        **Včera jsem mu to dal.** "Ontem eu dei isso a ele." **Dal bych ti ho.** "Eu daria a você." **Zeptal se mě.** O grupo nunca abre a frase: não *Jsem mu to dal*, e sim **Dal jsem mu to.**
+    mistakes:
+    - wrong: "Včera jsem to mu dal."
+      right: "Včera jsem mu to dal."
+      why: {en: "The dative comes before the accusative.", pt: "O dativo vem antes do acusativo."}
+    examples:
+    - ["Včera jsem mu to dal.", "I gave it to him yesterday.", "Ontem eu dei isso a ele.", "mu"]
+    - ["Dal bych ti ho.", "I'd give it to you.", "Eu daria a você.", "ti"]
+    - ["Už jsem ti to řekl.", "I've already told you.", "Já te disse isso.", "ti"]
+    match: {seq: [{word: [jsem, jsi, jsme, jste, bych, bys, by, bychom, byste, se, si]}, {word: [mi, ti, mu, jí, nám, vám, jim]}, {word: [to, ho, ji, je, tě]}], gap: 1}
+    pool: [mi, ti, mu, jí, nám, vám, jim, ho, to]
+
+  - id: cs-c1-particles
+    title: "prý, vždyť, přece, copak, kéž"
+    meaning: {en: "modal particles", pt: "partículas modais"}
+    intro:
+      en: |
+        Czech particles add the speaker's attitude:
+
+        - **prý** "reportedly, they say": **Prý bude pršet.** "It's supposed to rain."
+        - **vždyť, přece** "after all, but surely": **Vždyť jsem ti to říkal!** "But I told you!" **To přece víš.** "Surely you know that."
+        - **copak** surprise or reproach in questions: **Copak to nevidíš?** "Can't you see it?"
+        - **kéž** "if only" (with the conditional): **Kéž by to byla pravda!**
+        - **snad** "perhaps, hopefully", **ať** "let": **Ať přijde.** "Let him come."
+        - **zrovna, právě** "just, exactly", **teprve** "only (so late, so few)", **dokonce** "even"
+      pt: |
+        As partículas tchecas acrescentam a atitude do falante:
+
+        - **prý** "dizem que, pelo visto": **Prý bude pršet.** "Dizem que vai chover."
+        - **vždyť, přece** "afinal, mas é claro": **Vždyť jsem ti to říkal!** "Mas eu te disse!" **To přece víš.** "Isso você sabe, né."
+        - **copak** surpresa ou censura em perguntas: **Copak to nevidíš?** "Será que você não vê?"
+        - **kéž** "tomara, quem dera" (com o condicional): **Kéž by to byla pravda!**
+        - **snad** "talvez, tomara", **ať** "que": **Ať přijde.** "Que ele venha."
+        - **zrovna, právě** "justamente, agora mesmo", **teprve** "só (tão tarde, tão pouco)", **dokonce** "até"
+    examples:
+    - ["Prý bude pršet.", "It's supposed to rain.", "Dizem que vai chover.", "Prý"]
+    - ["Vždyť jsem ti to říkal!", "But I told you!", "Mas eu te disse!", "Vždyť"]
+    - ["Kéž by to byla pravda!", "If only it were true!", "Quem dera fosse verdade!", "Kéž"]
+    - ["Copak to nevidíš?", "Can't you see it?", "Será que você não vê?", "Copak"]
+    match: {seq: [{word: [prý, vždyť, přece, copak, kéž, snad, zrovna, teprve, dokonce]}], gap: 0}
+    pool: [prý, vždyť, přece, copak, kéž, snad, zrovna, teprve, dokonce]

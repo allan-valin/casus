@@ -1,0 +1,191 @@
+id: B2
+topics:
+
+- title: {en: Conditions and wishes, pt: Condições e desejos}
+  lessons:
+  - id: el-b2-conditional
+    title: "θα ήθελα, θα είχα έρθει"
+    meaning: {en: "the conditional: θα + imperfect, θα είχα + -ει", pt: "o condicional: θα + imperfeito, θα είχα + -ει"}
+    intro:
+      en: |
+        **θα + imperfect** is the conditional "would": **Θα ήθελα έναν καφέ.** "I'd like a coffee." It forms unreal conditions with **αν + imperfect**: **Αν είχα χρόνο, θα ερχόμουν.** "If I had time, I'd come." For the past, **θα είχα + -ει** (the perfect stem): **Αν το ήξερα, θα είχα έρθει.** "If I had known, I would have come." **θα + imperfect** can also mean "must have been, probably was": **Θα ήταν δέκα η ώρα.** "It must have been ten o'clock."
+      pt: |
+        **θα + imperfeito** é o condicional "-ria": **Θα ήθελα έναν καφέ.** "Eu queria um café." Forma condições irreais com **αν + imperfeito**: **Αν είχα χρόνο, θα ερχόμουν.** "Se eu tivesse tempo, viria." Para o passado, **θα είχα + -ει** (o radical do perfeito): **Αν το ήξερα, θα είχα έρθει.** "Se eu soubesse, teria vindo." **θα + imperfeito** também pode querer dizer "devia ser, provavelmente era": **Θα ήταν δέκα η ώρα.** "Deviam ser dez horas."
+    examples:
+    - ["Θα ήθελα έναν καφέ.", "I'd like a coffee.", "Eu queria um café.", "ήθελα"]
+    - ["Αν είχα χρόνο θα ερχόμουν.", "If I had time I'd come.", "Se eu tivesse tempo viria.", "ερχόμουν"]
+    - ["Αν το ήξερα θα είχα έρθει.", "If I had known I would have come.", "Se eu soubesse teria vindo.", "είχα"]
+    match:
+    - {seq: [{word: [θα]}, {word: [είχα, είχες, είχε, είχαμε, είχατε, είχαν]}, {re: "ει$"}], near: 1, gap: 1}
+    - {seq: [{word: [θα]}, {pos: verb, tense: impf}], near: 1, gap: 1, same: [person, number]}
+
+  - id: el-b2-wishes
+    title: "μακάρι να, ας"
+    meaning: {en: "wishes and suggestions: μακάρι να, ας", pt: "desejos e sugestões: μακάρι να, ας"}
+    intro:
+      en: |
+        **μακάρι να** + subjunctive wishes for something possible (**Μακάρι να έρθει!** "I hope he comes!"), + imperfect for something unreal now (**Μακάρι να ήξερα!** "If only I knew!"), + **είχα … -ει** for the past (**Μακάρι να είχα πάει.** "If only I had gone.").
+
+        **ας** + subjunctive makes suggestions and concessions: **Ας πάμε!** "Let's go!" **Ας έρθει αν θέλει.** "Let him come if he wants." With the imperfect it is a regret: **Ας ερχόσουν νωρίτερα!** "You should have come earlier!"
+      pt: |
+        **μακάρι να** + subjuntivo deseja algo possível (**Μακάρι να έρθει!** "Tomara que ele venha!"), + imperfeito algo irreal agora (**Μακάρι να ήξερα!** "Quem dera eu soubesse!"), + **είχα … -ει** para o passado (**Μακάρι να είχα πάει.** "Quem dera eu tivesse ido.").
+
+        **ας** + subjuntivo faz sugestões e concessões: **Ας πάμε!** "Vamos!" **Ας έρθει αν θέλει.** "Que ele venha, se quiser." Com o imperfeito é um lamento: **Ας ερχόσουν νωρίτερα!** "Era para você ter vindo mais cedo!"
+    examples:
+    - ["Μακάρι να έρθει!", "I hope he comes!", "Tomara que ele venha!", "Μακάρι"]
+    - ["Μακάρι να ήξερα!", "If only I knew!", "Quem dera eu soubesse!", "Μακάρι"]
+    - ["Ας πάμε!", "Let's go!", "Vamos!", "Ας"]
+    match: {seq: [{word: [μακάρι, ας]}], gap: 0}
+    pool: [μακάρι, ας, να, θα, αν]
+
+  - id: el-b2-na-past
+    title: "πρέπει να έφυγε"
+    meaning: {en: "να with past tenses: must have, may have", pt: "να com tempos do passado: deve ter, pode ter"}
+    intro:
+      en: |
+        **να** normally takes the subjunctive, but with a **past** tense it describes a past possibility: **Πρέπει να έφυγε.** "He must have left." **Μπορεί να το ξέχασε.** "He may have forgotten it." **Ίσως να ήταν κουρασμένος.** "Perhaps he was tired." Compare **Πρέπει να φύγει.** "He must leave." With **έχει + -ει** the result is stressed: **Πρέπει να έχει φύγει.** "He must have gone (already)."
+      pt: |
+        **να** normalmente pede o subjuntivo, mas com um tempo **passado** descreve uma possibilidade no passado: **Πρέπει να έφυγε.** "Ele deve ter ido embora." **Μπορεί να το ξέχασε.** "Pode ser que ele tenha esquecido." **Ίσως να ήταν κουρασμένος.** "Talvez ele estivesse cansado." Compare **Πρέπει να φύγει.** "Ele tem que ir embora." Com **έχει + -ει** o resultado fica em destaque: **Πρέπει να έχει φύγει.** "Ele já deve ter ido."
+    examples:
+    - ["Πρέπει να έφυγε.", "He must have left.", "Ele deve ter ido embora.", "έφυγε"]
+    - ["Μπορεί να το ξέχασε.", "He may have forgotten it.", "Pode ser que ele tenha esquecido.", "ξέχασε"]
+    - ["Ίσως να ήταν κουρασμένος.", "Perhaps he was tired.", "Talvez ele estivesse cansado.", "ήταν"]
+    match: {seq: [{word: [πρέπει, μπορεί, ίσως, λες]}, {word: [να]}, {pos: verb, tense: [past, impf]}], near: 1, gap: 2, same: [person, number]}
+
+- title: {en: Passive tenses, pt: Tempos passivos}
+  lessons:
+  - id: el-b2-passive-imperfect
+    title: "ερχόμουν, φαινόταν"
+    meaning: {en: "the passive imperfect: -όμουν, -όταν", pt: "o imperfeito passivo: -όμουν, -όταν"}
+    intro:
+      en: |
+        Verbs in **-ομαι** (and the passive) form their imperfect with **-όμουν, -όσουν, -όταν, -όμασταν, -όσασταν, -όντουσαν / -ονταν**, always stressed on the ending's first vowel: **έρχομαι → ερχόμουν** "I was coming", **φαίνεται → φαινόταν** "it seemed", **χρειάζομαι → χρειαζόμουν**, **κοιμάμαι → κοιμόμουν**. **Τον έβλεπα ενώ ερχόμουν.** "I saw him as I was coming." Speech also has **-όμουνα, -όσουνα, -ότανε**.
+      pt: |
+        Os verbos em **-ομαι** (e a passiva) formam o imperfeito com **-όμουν, -όσουν, -όταν, -όμασταν, -όσασταν, -όντουσαν / -ονταν**, sempre com acento na primeira vogal da terminação: **έρχομαι → ερχόμουν** "eu vinha", **φαίνεται → φαινόταν** "parecia", **χρειάζομαι → χρειαζόμουν**, **κοιμάμαι → κοιμόμουν**. **Τον έβλεπα ενώ ερχόμουν.** "Eu o via enquanto vinha." A fala também tem **-όμουνα, -όσουνα, -ότανε**.
+    table:
+      head: {en: [Person, έρχομαι, κοιμάμαι], pt: [Pessoa, έρχομαι, κοιμάμαι]}
+      rows:
+      - ["1 sg.", ερχόμουν, κοιμόμουν]
+      - ["2 sg.", ερχόσουν, κοιμόσουν]
+      - ["3 sg.", ερχόταν, κοιμόταν]
+      - ["1 pl.", ερχόμασταν, κοιμόμασταν]
+      - ["2 pl.", ερχόσασταν, κοιμόσασταν]
+      - ["3 pl.", "έρχονταν / ερχόντουσαν", "κοιμόντουσαν"]
+    examples:
+    - ["Φαινόταν κουρασμένος.", "He seemed tired.", "Ele parecia cansado.", "Φαινόταν"]
+    - ["Σκεφτόμουν εσένα.", "I was thinking of you.", "Eu estava pensando em você.", "Σκεφτόμουν"]
+    - ["Πού βρισκόταν το σπίτι;", "Where was the house?", "Onde ficava a casa?", "βρισκόταν"]
+    match: {seq: [{re: "^(?!(?:όταν|οταν)$)[\\s\\S]*?(?:(όμουν|όμουνα|όσουν|όσουνα|.{2,}όταν|ότανε|όμασταν|όσασταν|όντουσαν|ονταν)$)", pos: verb}], same: [person, number]}
+
+  - id: el-b2-passive-perfect
+    title: "έχει γραφτεί, είχε χτιστεί"
+    meaning: {en: "the passive perfect: έχω + -θεί", pt: "o perfeito passivo: έχω + -θεί"}
+    intro:
+      en: |
+        The passive perfect uses **έχω** + the frozen form in **-θεί / -τεί** (the passive aorist subjunctive, 3rd sg.): **Το γράμμα έχει γραφτεί.** "The letter has been written." **Το σπίτι είχε χτιστεί το 1900.** "The house had been built in 1900." **Έχει ειπωθεί πολλές φορές.** "It has been said many times." **Δεν έχει αποφασιστεί ακόμα.** "It hasn't been decided yet." A state can also be expressed with **είναι** + participle: **Το γράμμα είναι γραμμένο.**
+      pt: |
+        O perfeito passivo usa **έχω** + a forma fixa em **-θεί / -τεί** (o subjuntivo do aoristo passivo, 3ª sing.): **Το γράμμα έχει γραφτεί.** "A carta foi escrita." **Το σπίτι είχε χτιστεί το 1900.** "A casa tinha sido construída em 1900." **Έχει ειπωθεί πολλές φορές.** "Isso já foi dito muitas vezes." **Δεν έχει αποφασιστεί ακόμα.** "Ainda não foi decidido." Um estado também se exprime com **είναι** + particípio: **Το γράμμα είναι γραμμένο.**
+    examples:
+    - ["Το γράμμα έχει γραφτεί.", "The letter has been written.", "A carta foi escrita.", "γραφτεί"]
+    - ["Δεν έχει αποφασιστεί ακόμα.", "It hasn't been decided yet.", "Ainda não foi decidido.", "αποφασιστεί"]
+    - ["Έχει ειπωθεί πολλές φορές.", "It has been said many times.", "Isso já foi dito muitas vezes.", "ειπωθεί"]
+    match: {seq: [{word: [έχω, έχεις, έχει, έχουμε, έχετε, έχουν, είχα, είχες, είχε, είχαμε, είχατε, είχαν, έχοντας]}, {re: "(θεί|τεί)$"}], near: 1, gap: 1}
+
+- title: {en: Complex clauses, pt: Orações complexas}
+  lessons:
+  - id: el-b2-na-clauses
+    title: "για να, χωρίς να, πριν να"
+    meaning: {en: "conjunctions with να: purpose, manner, time", pt: "conjunções com να: finalidade, modo, tempo"}
+    intro:
+      en: |
+        Many subordinate clauses are built with **να** + subjunctive: **για να** "in order to" (**Ήρθα για να σε δω.** "I came to see you."), **χωρίς να** "without" (**Έφυγε χωρίς να πει τίποτα.** "He left without saying anything."), **πριν (να)** / **προτού** "before", **αντί να** "instead of", **μέχρι να / ώσπου να** "until". Since Greek has no infinitive, these clauses do the work of English *-ing* and *to* forms.
+      pt: |
+        Muitas orações subordinadas se formam com **να** + subjuntivo: **για να** "para" (**Ήρθα για να σε δω.** "Vim para te ver."), **χωρίς να** "sem" (**Έφυγε χωρίς να πει τίποτα.** "Ele saiu sem dizer nada."), **πριν (να)** / **προτού** "antes de", **αντί να** "em vez de", **μέχρι να / ώσπου να** "até que". Como o grego não tem infinitivo, essas orações fazem o papel do infinitivo português.
+    examples:
+    - ["Ήρθα για να σε δω.", "I came to see you.", "Vim para te ver.", "για"]
+    - ["Έφυγε χωρίς να πει τίποτα.", "He left without saying anything.", "Ele saiu sem dizer nada.", "χωρίς"]
+    - ["Περίμενε μέχρι να έρθω.", "Wait until I come.", "Espere até eu chegar.", "μέχρι"]
+    match: {seq: [{word: [για, χωρίς, πριν, αντί, μέχρι, ώσπου, προτού]}, {word: [να]}], gap: 0}
+    pool: [για, χωρίς, πριν, αντί, μέχρι, ώσπου, προτού]
+
+  - id: el-b2-concessive
+    title: "αν και, παρόλο που, ωστόσο"
+    meaning: {en: "although, even though, however", pt: "embora, apesar de que, no entanto"}
+    intro:
+      en: |
+        Concession is expressed by **αν και** and **παρόλο που** "although" (indicative): **Αν και έβρεχε, βγήκαμε.** "Although it was raining, we went out." **μολονότι** is the bookish equivalent; **έστω κι αν / ακόμα κι αν** "even if". Across sentences: **ωστόσο, εντούτοις** "however", **παρ' όλα αυτά** "nevertheless".
+      pt: |
+        A concessão se exprime com **αν και** e **παρόλο που** "embora" (indicativo): **Αν και έβρεχε, βγήκαμε.** "Embora chovesse, saímos." **μολονότι** é o equivalente livresco; **έστω κι αν / ακόμα κι αν** "mesmo que". Entre frases: **ωστόσο, εντούτοις** "no entanto", **παρ' όλα αυτά** "mesmo assim".
+    examples:
+    - ["Αν και έβρεχε βγήκαμε.", "Although it was raining we went out.", "Embora chovesse saímos.", "Αν"]
+    - ["Παρόλο που είναι πλούσιος δεν είναι ευτυχισμένος.", "Even though he is rich he isn't happy.", "Apesar de ser rico ele não é feliz.", "Παρόλο"]
+    - ["Ωστόσο δεν είπε τίποτα.", "However he said nothing.", "No entanto ele não disse nada.", "Ωστόσο"]
+    match:
+    - {seq: [{word: [παρόλο, μολονότι, ωστόσο, εντούτοις, έστω]}], gap: 0}
+    - {seq: [{word: [αν]}, {word: [και, κι]}], gap: 0}
+    pool: [παρόλο, μολονότι, ωστόσο, αν, όμως, επειδή]
+
+  - id: el-b2-indirect-questions
+    title: "με ρώτησε αν, δεν ξέρω πού"
+    meaning: {en: "indirect questions", pt: "perguntas indiretas"}
+    intro:
+      en: |
+        Indirect yes/no questions use **αν** "whether", and wh-questions keep their question word with its accent: **Με ρώτησε αν θέλω καφέ.** "He asked me whether I wanted coffee." **Δεν ξέρω πού μένει.** "I don't know where he lives." **Θυμάσαι τι είπε;** "Do you remember what he said?" The tense stays as in the direct question: **Ρώτησε πού είναι** "He asked where it was."
+      pt: |
+        As perguntas indiretas de sim/não usam **αν** "se", e as outras mantêm a palavra interrogativa com acento: **Με ρώτησε αν θέλω καφέ.** "Ele me perguntou se eu queria café." **Δεν ξέρω πού μένει.** "Não sei onde ele mora." **Θυμάσαι τι είπε;** "Você lembra o que ele disse?" O tempo fica como na pergunta direta: **Ρώτησε πού είναι** "Ele perguntou onde ficava."
+    examples:
+    - ["Με ρώτησε αν θέλω καφέ.", "He asked me whether I wanted coffee.", "Ele me perguntou se eu queria café.", "αν"]
+    - ["Δεν ξέρω πού μένει.", "I don't know where he lives.", "Não sei onde ele mora.", "πού"]
+    - ["Θυμάσαι τι είπε;", "Do you remember what he said?", "Você lembra o que ele disse?", "τι"]
+    match: {seq: [{re: "^(ρώτησ|ρωτά|ρωτο|ρωτή|ρωτώ|αναρωτ|ξέρ|ξερ|ήξερ|θυμ|καταλαβ|κατάλαβ|ξέρει)"}, {re: "^(αν|πού|πώς|πότε|τι|ποιος|ποια|ποιο|γιατί|πόσο|πόσα)$"}], near: 2, gap: 1}
+    pool: [αν, πού, πώς, πότε, τι, ποιος, γιατί, ότι]
+
+- title: {en: Pronouns and emphasis, pt: Pronomes e ênfase}
+  lessons:
+  - id: el-b2-clitic-doubling
+    title: "Τον Γιάννη τον ξέρω."
+    meaning: {en: "a fronted object repeated by a pronoun", pt: "o objeto anteposto retomado por um pronome"}
+    intro:
+      en: |
+        When a definite object is moved to the front as the topic, a weak pronoun repeats it before the verb: **Τον Γιάννη τον ξέρω.** "Giannis — I know him." **Το βιβλίο το διάβασα.** "The book, I've read it." **Τις φωτογραφίες τις είδες;** "The photos — did you see them?" The doubling also happens with the object after the verb, in speech, to mark it as known: **Τον ξέρω τον Γιάννη.**
+      pt: |
+        Quando um objeto definido vai para a frente como tópico, um pronome átono o retoma antes do verbo: **Τον Γιάννη τον ξέρω.** "O Giannis, eu conheço (ele)." **Το βιβλίο το διάβασα.** "O livro, eu li." **Τις φωτογραφίες τις είδες;** "As fotos, você viu?" A duplicação também acontece com o objeto depois do verbo, na fala, para marcá-lo como conhecido: **Τον ξέρω τον Γιάννη.**
+    examples:
+    - ["Το βιβλίο το διάβασα.", "The book, I've read it.", "O livro, eu li.", "το"]
+    - ["Τις φωτογραφίες τις είδες;", "The photos, did you see them?", "As fotos, você viu?", "τις"]
+    - ["Τον καφέ τον πίνω σκέτο.", "Coffee, I drink it black.", "O café, eu tomo puro.", "τον"]
+    match: {seq: [{word: [τον, την, το, τα, τους, τις], start: true}, {pos: noun}, {word: [τον, την, το, τα, τους, τις]}, {pos: verb}], gap: 2}
+    pool: [τον, την, το, τα, τους, τις, του, της]
+
+  - id: el-b2-free-relatives
+    title: "όποιος, ό,τι, όσο, οτιδήποτε"
+    meaning: {en: "whoever, whatever, as much as", pt: "quem quer que, o que quer que, quanto"}
+    intro:
+      en: |
+        **όποιος, -α, -ο** "whoever", **ό,τι** (with a comma, to tell it from **ότι** "that") "whatever", **όπου** "wherever", **όσος, -η, -ο** "as much / many as", and the **-δήποτε** series "any … at all": **οποιοσδήποτε** "anyone", **οτιδήποτε** "anything", **οπουδήποτε** "anywhere", **οποτεδήποτε** "any time". **Όποιος θέλει, ας έρθει.** "Whoever wants, let him come." **Κάνε ό,τι θέλεις.** "Do whatever you like." **Φάε όσο θέλεις.** "Eat as much as you like."
+      pt: |
+        **όποιος, -α, -ο** "quem quer que", **ό,τι** (com vírgula, para distinguir de **ότι** "que") "o que quer que", **όπου** "onde quer que", **όσος, -η, -ο** "quanto(s)", e a série em **-δήποτε** "qualquer": **οποιοσδήποτε** "qualquer um", **οτιδήποτε** "qualquer coisa", **οπουδήποτε** "em qualquer lugar", **οποτεδήποτε** "a qualquer hora". **Όποιος θέλει, ας έρθει.** "Quem quiser, que venha." **Κάνε ό,τι θέλεις.** "Faça o que quiser." **Φάε όσο θέλεις.** "Coma quanto quiser."
+    examples:
+    - ["Όποιος θέλει ας έρθει.", "Whoever wants, let him come.", "Quem quiser, que venha.", "Όποιος"]
+    - ["Φάε όσο θέλεις.", "Eat as much as you like.", "Coma quanto quiser.", "όσο"]
+    - ["Μπορείς να με ρωτήσεις οτιδήποτε.", "You can ask me anything.", "Você pode me perguntar qualquer coisa.", "οτιδήποτε"]
+    # (όποιος "whoever" and the relative οποίος differ only in the accent: matched on the word as written)
+    match:
+    - {seq: [{re: "^όποι(ος|α|ο|ον|οι|ες|ου|ας|ων|ους)$"}], gap: 0}
+    - {seq: [{word: [όσος, όση, όσο, όσοι, όσες, όσα, οποιοσδήποτε, οποιαδήποτε, οποιοδήποτε, οποιονδήποτε, οτιδήποτε, οπουδήποτε, οποτεδήποτε]}], gap: 0}
+    pool: [όποιος, όσο, όσα, οτιδήποτε, οποιοσδήποτε, ποιος, πόσο, τίποτα]
+
+  - id: el-b2-emphatic-pronouns
+    title: "ο ίδιος, ο εαυτός μου, μόνος μου"
+    meaning: {en: "self, same, on one's own", pt: "mesmo, si mesmo, sozinho"}
+    intro:
+      en: |
+        Greek has no reflexive pronoun like *myself*; it uses **ο εαυτός μου** "my self" (declined, with the possessive): **Κοιτάζω τον εαυτό μου.** "I look at myself." **Πρόσεχε τον εαυτό σου.** "Take care of yourself." **ο ίδιος** means "the same" or, after a noun or pronoun, "-self (in person)": **το ίδιο βιβλίο** "the same book", **Ο ίδιος μου το είπε.** "He told me himself." **μόνος μου, μόνη σου…** "on my / your own": **Το έκανα μόνος μου.** "I did it by myself."
+      pt: |
+        O grego não tem pronome reflexivo como *mim mesmo*; usa **ο εαυτός μου** "o meu eu" (declinado, com o possessivo): **Κοιτάζω τον εαυτό μου.** "Olho para mim mesmo." **Πρόσεχε τον εαυτό σου.** "Cuide-se." **ο ίδιος** quer dizer "o mesmo" ou, depois de substantivo ou pronome, "em pessoa": **το ίδιο βιβλίο** "o mesmo livro", **Ο ίδιος μου το είπε.** "Ele mesmo me disse." **μόνος μου, μόνη σου…** "sozinho, sozinha": **Το έκανα μόνος μου.** "Fiz isso sozinho."
+    examples:
+    - ["Πρόσεχε τον εαυτό σου.", "Take care of yourself.", "Cuide-se.", "εαυτό"]
+    - ["Ο ίδιος μου το είπε.", "He told me himself.", "Ele mesmo me disse.", "ίδιος"]
+    - ["Το έκανα μόνος μου.", "I did it by myself.", "Fiz isso sozinho.", "μόνος"]
+    match: {seq: [{word: [εαυτό, εαυτός, εαυτού, εαυτούς, εαυτών, ίδιος, ίδια, ίδιο, ίδιοι, ίδιες, ίδιου, ίδιας, ίδιων, μόνος, μόνη, μόνοι, μόνες]}, {word: [μου, σου, του, της, μας, σας, τους]}], near: 0, gap: 0}
+    pool: [εαυτό, ίδιος, ίδια, μόνος, μόνη, άλλος]

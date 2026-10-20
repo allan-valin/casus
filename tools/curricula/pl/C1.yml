@@ -1,0 +1,224 @@
+id: C1
+topics:
+
+- title: {en: Verbs in depth, pt: Os verbos a fundo}
+  lessons:
+  - id: pl-c1-prefixed-motion
+    title: "przyjść, wyjść, wejść, przejść"
+    meaning: {en: "prefixed verbs of motion", pt: "verbos de movimento com prefixo"}
+    intro:
+      en: |
+        Prefixes give **iść / chodzić** and **jechać / jeździć** a direction, and the pair becomes perfective / imperfective: **przyjść / przychodzić** "arrive, come", **wyjść / wychodzić** "go out", **wejść / wchodzić** "go in", **przejść / przechodzić** "cross, go through", **odejść / odchodzić** "go away", **dojść / dochodzić** "reach", **zejść / schodzić** "go down", **obejść** "go round", **rozejść się** "disperse", **podejść** "approach". **iść** loses its **i** after a prefix: **przyjdę, wyszedł, weszła**. With vehicles: **przyjechać, wyjechać, wjechać**…
+      pt: |
+        Os prefixos dão direção a **iść / chodzić** e **jechać / jeździć**, e o par vira perfectivo / imperfectivo: **przyjść / przychodzić** "chegar, vir", **wyjść / wychodzić** "sair", **wejść / wchodzić** "entrar", **przejść / przechodzić** "atravessar, passar", **odejść / odchodzić** "ir embora", **dojść / dochodzić** "chegar até", **zejść / schodzić** "descer", **obejść** "contornar", **rozejść się** "dispersar-se", **podejść** "aproximar-se". **iść** perde o **i** depois do prefixo: **przyjdę, wyszedł, weszła**. De veículo: **przyjechać, wyjechać, wjechać**…
+    table:
+      head: {en: [Prefix, Meaning, On foot, By vehicle], pt: [Prefixo, Sentido, A pé, De veículo]}
+      rows:
+      - [przy-, arrive / chegar, przyjść, przyjechać]
+      - [wy-, out / sair, wyjść, wyjechać]
+      - [w(e)-, in / entrar, wejść, wjechać]
+      - [prze-, across / atravessar, przejść, przejechać]
+      - [od(e)-, away / afastar-se, odejść, odjechać]
+      - [do-, as far as / até, dojść, dojechać]
+    examples:
+    - ["Przyszedł za późno.", "He came too late.", "Ele chegou tarde demais.", "Przyszedł"]
+    - ["Wyszła z domu o siódmej.", "She left the house at seven.", "Ela saiu de casa às sete.", "Wyszła"]
+    - ["Musimy przejść przez ulicę.", "We have to cross the street.", "Temos que atravessar a rua.", "przejść"]
+    match: {seq: [{re: "^(przy|wy|w|we|prze|ob|obe|od|ode|z|ze|roz|roze|do|za|nad|pod|wz)(szed|szła|szli|szło|szły|jdzie|jdę|jdziesz|jdziemy|jdą|jść|jechał|jedzie|jechać|jadę|jedziemy|jadą)", pos: verb}], same: [person, number, tense]}
+
+  - id: pl-c1-aktionsart
+    title: "doczytać, najeść się, zakochać się"
+    meaning: {en: "prefixes that add a manner of action", pt: "prefixos que acrescentam um modo de ação"}
+    intro:
+      en: |
+        Beyond making perfectives, prefixes add precise shades: **do-** to the end (**doczytać** "finish reading"), **prze-** through or too much (**przeczytać** "read through", **przejeść się** "overeat"), **na- … się** one's fill (**najeść się** "eat one's fill", **napić się** "have a drink"), **wy- … się** enough (**wyspać się** "get enough sleep"), **roz- … się** burst out (**rozpłakać się** "burst into tears", **rozchorować się** "fall ill"), **za- … się** become absorbed (**zakochać się** "fall in love", **zamyślić się** "fall to thinking"), **po-** for a while (**poczytać** "read a bit").
+      pt: |
+        Além de formar perfectivos, os prefixos acrescentam nuances precisas: **do-** até o fim (**doczytać** "terminar de ler"), **prze-** do começo ao fim ou demais (**przeczytać** "ler inteiro", **przejeść się** "comer demais"), **na- … się** até se fartar (**najeść się** "comer até se satisfazer", **napić się** "tomar alguma coisa"), **wy- … się** o suficiente (**wyspać się** "dormir bem"), **roz- … się** romper em (**rozpłakać się** "cair no choro", **rozchorować się** "adoecer"), **za- … się** ficar absorto (**zakochać się** "se apaixonar", **zamyślić się** "ficar pensativo"), **po-** por um tempo (**poczytać** "ler um pouco").
+    examples:
+    - ["Wyspałeś się?", "Did you get enough sleep?", "Você dormiu bem?", "Wyspałeś"]
+    - ["Zakochał się w niej.", "He fell in love with her.", "Ele se apaixonou por ela.", "Zakochał"]
+    - ["Napijesz się kawy?", "Will you have some coffee?", "Aceita um café?", "Napijesz"]
+    match: {seq: [{re: "^(do|prze|na|wy|roz|za|po)(czyt|jadł|jeść|jem|spa|śpi|płak|koch|myśl|pił|pij|pić|chorow)", pos: verb}], same: [person, number, tense]}
+
+  - id: pl-c1-iteratives
+    title: "bywa, miewa, jadam"
+    meaning: {en: "frequentative verbs: tends to, used to", pt: "verbos frequentativos: costuma, costumava"}
+    intro:
+      en: |
+        A small set of verbs in **-ywać / -iwać / -ać** express habit or repetition: **bywać** "be (from time to time)", **miewać** "have (now and then)", **jadać** "eat (habitually)", **sypiać** "sleep (habitually)", **widywać** "see (regularly)", **chadzać** "go (habitually)". **Bywa różnie.** "It varies." **Miewam bóle głowy.** "I get headaches now and then." **Rzadko jadam mięso.** "I seldom eat meat." In the past they mean "used to": **Bywał u nas często.** "He used to visit us often."
+      pt: |
+        Um pequeno grupo de verbos em **-ywać / -iwać / -ać** exprime hábito ou repetição: **bywać** "estar (de vez em quando)", **miewać** "ter (de vez em quando)", **jadać** "comer (habitualmente)", **sypiać** "dormir (habitualmente)", **widywać** "ver (regularmente)", **chadzać** "ir (habitualmente)". **Bywa różnie.** "Depende." **Miewam bóle głowy.** "De vez em quando tenho dor de cabeça." **Rzadko jadam mięso.** "Raramente como carne." No passado querem dizer "costumava": **Bywał u nas często.** "Ele costumava nos visitar com frequência."
+    examples:
+    - ["Bywa różnie.", "It varies.", "Depende.", "Bywa"]
+    - ["Rzadko jadam mięso.", "I seldom eat meat.", "Raramente como carne.", "jadam"]
+    - ["Miewam bóle głowy.", "I get headaches now and then.", "De vez em quando tenho dor de cabeça.", "Miewam"]
+    match: {seq: [{re: "^(bywa|miewa|jada|sypia|widywa|chadza|grywa|czytywa|pisywa|bywał|miewał|jadał|sypiał)", pos: verb}], same: [person, number, tense]}
+
+  - id: pl-c1-negative-imperative
+    title: "Nie otwieraj! – Nie zapomnij!"
+    meaning: {en: "aspect in negative commands", pt: "o aspecto nas ordens negativas"}
+    intro:
+      en: |
+        Negative commands are normally **imperfective**: **Nie otwieraj okna!** "Don't open the window!" **Nie mów nikomu.** "Don't tell anyone." A negated **perfective** is a **warning** against something that could happen by accident: **Nie spadnij!** "Mind you don't fall!" **Nie zgub kluczy!** "Don't lose the keys!" **Nie zapomnij!** "Don't forget!" Note that the object of a negated verb goes into the **genitive**: **okna**, **kluczy**.
+      pt: |
+        As ordens negativas normalmente são **imperfectivas**: **Nie otwieraj okna!** "Não abra a janela!" **Nie mów nikomu.** "Não conte para ninguém." Um **perfectivo** negado é um **aviso** contra algo que pode acontecer sem querer: **Nie spadnij!** "Cuidado para não cair!" **Nie zgub kluczy!** "Não vá perder as chaves!" **Nie zapomnij!** "Não esqueça!" Note que o objeto de um verbo negado vai para o **genitivo**: **okna**, **kluczy**.
+    examples:
+    - ["Nie otwieraj okna!", "Don't open the window!", "Não abra a janela!", "otwieraj"]
+    - ["Nie zapomnij o mnie.", "Don't forget about me.", "Não se esqueça de mim.", "zapomnij"]
+    - ["Nie mów nikomu.", "Don't tell anyone.", "Não conte para ninguém.", "mów"]
+    match: {seq: [{word: [nie]}, {pos: verb, mood: imp}], gap: 1, same: [person, number]}
+
+- title: {en: Formal style, pt: Estilo formal}
+  lessons:
+  - id: pl-c1-secondary-prepositions
+    title: "dzięki, mimo, wskutek, w związku z"
+    meaning: {en: "secondary prepositions and their cases", pt: "preposições secundárias e seus casos"}
+    intro:
+      en: |
+        Formal Polish uses prepositions built from other words, each with its case:
+
+        - **dzięki** + dat. "thanks to", **wbrew** + dat. "contrary to"
+        - **mimo / pomimo** + gen. "despite", **według** + gen. "according to", **wskutek** + gen. "as a result of", **podczas** + gen. "during", **zamiast** + gen. "instead of", **oprócz** + gen. "apart from"
+        - **z powodu** + gen. "because of", **w ciągu** + gen. "within", **w trakcie** + gen. "in the course of", **na podstawie** + gen. "on the basis of", **ze względu na** + acc. "in view of"
+        - **w związku z** + ins. "in connection with", **wobec** + gen. "towards, in the face of"
+      pt: |
+        O polonês formal usa preposições feitas de outras palavras, cada uma com seu caso:
+
+        - **dzięki** + dat. "graças a", **wbrew** + dat. "contrariando"
+        - **mimo / pomimo** + gen. "apesar de", **według** + gen. "segundo", **wskutek** + gen. "em consequência de", **podczas** + gen. "durante", **zamiast** + gen. "em vez de", **oprócz** + gen. "além de, exceto"
+        - **z powodu** + gen. "por causa de", **w ciągu** + gen. "no prazo de", **w trakcie** + gen. "no decorrer de", **na podstawie** + gen. "com base em", **ze względu na** + ac. "tendo em vista"
+        - **w związku z** + instr. "em relação a", **wobec** + gen. "em relação a, diante de"
+    examples:
+    - ["Dzięki tobie zdałem egzamin.", "Thanks to you I passed the exam.", "Graças a você passei na prova.", "Dzięki"]
+    - ["Mimo deszczu poszliśmy na spacer.", "Despite the rain we went for a walk.", "Apesar da chuva fomos passear.", "Mimo"]
+    - ["Lot odwołano z powodu mgły.", "The flight was cancelled because of fog.", "O voo foi cancelado por causa da neblina.", "powodu"]
+    match: {seq: [{word: [dzięki, wbrew, mimo, pomimo, według, wskutek, podczas, zamiast, oprócz, powodu, ciągu, trakcie, podstawie, względu, związku, wobec]}], gap: 0}
+    pool: [dzięki, mimo, według, wskutek, podczas, zamiast, oprócz, powodu, wobec]
+
+  - id: pl-c1-bookish-conjunctions
+    title: "gdyż, bowiem, lecz, iż, zatem"
+    meaning: {en: "conjunctions of written style", pt: "conjunções do estilo escrito"}
+    intro:
+      en: |
+        Written Polish has its own connectors:
+
+        - cause: **gdyż, albowiem** "because, for", **bowiem** "for" (never first: **Nie przyszedł, był bowiem chory.**)
+        - contrast: **lecz** "but", **jednak, jednakże** "however", **natomiast** "whereas", **aczkolwiek** "albeit"
+        - consequence: **zatem, więc, toteż** "therefore"
+        - **iż** = **że** "that" in formal texts
+      pt: |
+        O polonês escrito tem conectores próprios:
+
+        - causa: **gdyż, albowiem** "porque, pois", **bowiem** "pois" (nunca em primeiro lugar: **Nie przyszedł, był bowiem chory.** "Ele não veio, pois estava doente.")
+        - contraste: **lecz** "mas", **jednak, jednakże** "porém", **natomiast** "ao passo que", **aczkolwiek** "se bem que"
+        - consequência: **zatem, więc, toteż** "portanto"
+        - **iż** = **że** "que" nos textos formais
+    examples:
+    - ["Nie przyszedł, gdyż był chory.", "He didn't come, because he was ill.", "Ele não veio, porque estava doente.", "gdyż"]
+    - ["Chciał pomóc, lecz nie mógł.", "He wanted to help but couldn't.", "Ele quis ajudar, mas não pôde.", "lecz"]
+    - ["Myślę, zatem jestem.", "I think, therefore I am.", "Penso, logo existo.", "zatem"]
+    match: {seq: [{word: [gdyż, albowiem, bowiem, lecz, jednak, jednakże, natomiast, aczkolwiek, zatem, toteż, iż]}], gap: 0}
+    pool: [gdyż, bowiem, lecz, jednak, natomiast, zatem, iż, bo, ale]
+
+  - id: pl-c1-hearsay
+    title: "podobno, rzekomo, jakoby"
+    meaning: {en: "reporting and distancing: allegedly", pt: "relatar e se distanciar: supostamente"}
+    intro:
+      en: |
+        Polish marks second-hand or doubtful information with adverbs and particles: **podobno, ponoć** "reportedly, apparently" (neutral: **Podobno będzie padać.** "It's supposed to rain."), **rzekomo** "allegedly" (sceptical, common in the press), **jakoby** "supposedly, as if" (bookish, also a conjunction: **Mówi, jakoby był chory.** "He says he's supposedly ill."), **niby** "supposedly, as if" (colloquial: **Niby wszystko w porządku.** "Everything's fine, apparently.").
+      pt: |
+        O polonês marca informação de segunda mão ou duvidosa com advérbios e partículas: **podobno, ponoć** "pelo visto, dizem que" (neutro: **Podobno będzie padać.** "Dizem que vai chover."), **rzekomo** "supostamente" (cético, comum na imprensa), **jakoby** "supostamente, como se" (livresco, também conjunção: **Mówi, jakoby był chory.** "Ele diz que estaria doente."), **niby** "supostamente, tipo" (coloquial: **Niby wszystko w porządku.** "Pelo jeito está tudo bem.").
+    examples:
+    - ["Podobno będzie padać.", "It's supposed to rain.", "Dizem que vai chover.", "Podobno"]
+    - ["Rzekomo nic nie wiedział.", "Allegedly he knew nothing.", "Supostamente ele não sabia de nada.", "Rzekomo"]
+    - ["Niby wszystko w porządku.", "Everything's fine, apparently.", "Pelo jeito está tudo bem.", "Niby"]
+    match: {seq: [{word: [podobno, ponoć, rzekomo, jakoby, niby]}], gap: 0}
+    pool: [podobno, ponoć, rzekomo, jakoby, niby, chyba, pewnie]
+
+  - id: pl-c1-particles
+    title: "przecież, chyba, właśnie, aż, dopiero"
+    meaning: {en: "modal and focus particles", pt: "partículas modais e de foco"}
+    intro:
+      en: |
+        Particles carry much of a Polish speaker's attitude:
+
+        - **przecież** "but surely, after all": **Przecież ci mówiłem!** "But I told you!"
+        - **chyba** "probably, I think": **Chyba pada.** "I think it's raining."
+        - **właśnie** "exactly, just": **Właśnie wyszedł.** "He's just left."
+        - **aż** "as many as, all the way": **aż do rana** "right until morning"; **dopiero** "only (so late)": **dopiero jutro** "not until tomorrow"
+        - **nawet** "even", **raczej** "rather", **czyż** (rhetorical question), **niech** "let", **oby** "may it be": **Oby wszystko się udało!**
+      pt: |
+        As partículas carregam boa parte da atitude do falante polonês:
+
+        - **przecież** "mas é claro, afinal": **Przecież ci mówiłem!** "Mas eu te disse!"
+        - **chyba** "provavelmente, acho que": **Chyba pada.** "Acho que está chovendo."
+        - **właśnie** "justamente, agora mesmo": **Właśnie wyszedł.** "Ele acabou de sair."
+        - **aż** "nada menos que, até": **aż do rana** "até de manhã"; **dopiero** "só (tão tarde)": **dopiero jutro** "só amanhã"
+        - **nawet** "até", **raczej** "antes, de preferência", **czyż** (pergunta retórica), **niech** "que", **oby** "tomara": **Oby wszystko się udało!** "Tomara que tudo dê certo!"
+    examples:
+    - ["Przecież ci mówiłem!", "But I told you!", "Mas eu te disse!", "Przecież"]
+    - ["Właśnie wyszedł.", "He's just left.", "Ele acabou de sair.", "Właśnie"]
+    - ["Wróci dopiero jutro.", "He won't be back until tomorrow.", "Ele só volta amanhã.", "dopiero"]
+    - ["Oby wszystko się udało!", "May it all go well!", "Tomara que tudo dê certo!", "Oby"]
+    match: {seq: [{word: [przecież, chyba, właśnie, aż, dopiero, nawet, raczej, oby]}], gap: 0}
+    pool: [przecież, chyba, właśnie, aż, dopiero, nawet, raczej, oby]
+
+- title: {en: Numbers and quantities, pt: Números e quantidades}
+  lessons:
+  - id: pl-c1-numeral-cases
+    title: "z dwoma, o pięciu, ze stu"
+    meaning: {en: "numerals in the oblique cases", pt: "os numerais nos casos oblíquos"}
+    intro:
+      en: |
+        Numerals decline, and in the dative, instrumental and locative the noun agrees with them in case: **z dwoma kolegami** "with two friends", **dwóm / dwom osobom** "to two people", **z trzema dziećmi**, **o pięciu książkach** "about five books", **z pięcioma (pięciu) osobami**. **dwa** has **dwóch / dwu** in the genitive and locative, **dwóm** in the dative and **dwoma** (fem. also **dwiema**) in the instrumental; **pięć** and higher have **pięciu** in every oblique case, with **pięcioma** as an instrumental alternative. **sto → stu**, **tysiąc** declines as a noun.
+      pt: |
+        Os numerais se declinam, e no dativo, no instrumental e no locativo o substantivo concorda com eles em caso: **z dwoma kolegami** "com dois amigos", **dwóm / dwom osobom** "a duas pessoas", **z trzema dziećmi**, **o pięciu książkach** "sobre cinco livros", **z pięcioma (pięciu) osobami**. **dwa** tem **dwóch / dwu** no genitivo e no locativo, **dwóm** no dativo e **dwoma** (fem. também **dwiema**) no instrumental; **pięć** em diante têm **pięciu** em todos os casos oblíquos, com **pięcioma** como alternativa no instrumental. **sto → stu**, **tysiąc** se declina como substantivo.
+    table:
+      head: {en: [Case, "2 (masc.)", "3", "5"], pt: [Caso, "2 (masc.)", "3", "5"]}
+      rows:
+      - [nom., dwa, trzy, pięć]
+      - [gen., dwóch, trzech, pięciu]
+      - [dat., dwóm, trzem, pięciu]
+      - [ins., dwoma, trzema, "pięcioma / pięciu"]
+      - [loc., dwóch, trzech, pięciu]
+    examples:
+    - ["Rozmawiałem z dwoma kolegami.", "I talked with two friends.", "Conversei com dois amigos.", "dwoma"]
+    - ["Mieszka z trzema psami.", "She lives with three dogs.", "Ela mora com três cachorros.", "trzema"]
+    - ["Ten hotel ma ponad stu gości.", "This hotel has over a hundred guests.", "Este hotel tem mais de cem hóspedes.", "stu"]
+    match: {seq: [{word: [dwoma, dwiema, dwóm, dwom, dwu, trzem, trzema, czterem, czterema, pięcioma, sześcioma, dziesięcioma, stu, dwustu, tysiąca, tysiącem, tysiącach]}], gap: 0}
+    pool: [dwoma, dwiema, dwóm, trzema, trzem, pięcioma, pięciu, stu, dwa]
+
+  - id: pl-c1-approximation
+    title: "około, ponad, półtora"
+    meaning: {en: "approximate quantities", pt: "quantidades aproximadas"}
+    intro:
+      en: |
+        **około** + gen. "about" (**około stu osób**), **ponad** "over" (**ponad godzinę**), **blisko** "nearly", **przeszło** "more than", **niespełna** "just under" (bookish), **mniej więcej** "more or less". **półtora** (masc./neut.) and **półtorej** (fem.) "one and a half" take the genitive singular: **półtora roku**, **półtorej godziny**.
+      pt: |
+        **około** + gen. "cerca de" (**około stu osób** "umas cem pessoas"), **ponad** "mais de" (**ponad godzinę** "mais de uma hora"), **blisko** "quase", **przeszło** "mais de", **niespełna** "pouco menos de" (livresco), **mniej więcej** "mais ou menos". **półtora** (masc./neutro) e **półtorej** (fem.) "um e meio" pedem o genitivo singular: **półtora roku** "um ano e meio", **półtorej godziny** "uma hora e meia".
+    examples:
+    - ["Było tam około stu osób.", "There were about a hundred people there.", "Havia umas cem pessoas lá.", "około"]
+    - ["Czekałem ponad godzinę.", "I waited over an hour.", "Esperei mais de uma hora.", "ponad"]
+    - ["Podróż trwała półtorej godziny.", "The journey took an hour and a half.", "A viagem durou uma hora e meia.", "półtorej"]
+    match: {seq: [{word: [około, ponad, przeszło, niespełna, półtora, półtorej]}], gap: 0}
+    pool: [około, ponad, blisko, półtora, półtorej, prawie, mniej]
+
+- title: {en: Word order, pt: Ordem das palavras}
+  lessons:
+  - id: pl-c1-word-order
+    title: "Do pokoju wszedł mężczyzna."
+    meaning: {en: "word order: known first, new last", pt: "ordem das palavras: o conhecido primeiro, o novo no fim"}
+    intro:
+      en: |
+        Polish puts **known** information first and **new** information last, and this does the work of English articles: **Mężczyzna wszedł do pokoju.** "The man came into the room." **Do pokoju wszedł mężczyzna.** "A man came into the room." Sentences that start with a time, a place or **nagle** often put the subject after the verb: **Wczoraj przyjechał mój brat.** "My brother arrived yesterday." **Nagle zadzwonił telefon.** "Suddenly the phone rang."
+
+        **się** and short pronouns avoid the end of the sentence when they can: **Bardzo mi się to podoba.**
+      pt: |
+        O polonês põe a informação **conhecida** primeiro e a **nova** no fim, e isso faz o papel dos artigos: **Mężczyzna wszedł do pokoju.** "O homem entrou na sala." **Do pokoju wszedł mężczyzna.** "Um homem entrou na sala." Frases que começam por um tempo, um lugar ou **nagle** costumam pôr o sujeito depois do verbo: **Wczoraj przyjechał mój brat.** "Ontem chegou meu irmão." **Nagle zadzwonił telefon.** "De repente o telefone tocou."
+
+        **się** e os pronomes curtos evitam o fim da frase quando podem: **Bardzo mi się to podoba.** "Gosto muito disso."
+    examples:
+    - ["Wczoraj przyjechał mój brat.", "My brother arrived yesterday.", "Ontem chegou meu irmão.", "przyjechał"]
+    - ["Nagle zadzwonił telefon.", "Suddenly the phone rang.", "De repente o telefone tocou.", "zadzwonił"]
+    - ["Wieczorem przyszła wiadomość.", "In the evening a message came.", "À noite chegou uma mensagem.", "przyszła"]
+    match: {seq: [{word: [wczoraj, dzisiaj, dziś, jutro, tam, tutaj, tu, potem, nagle, rano, wieczorem, wreszcie, wkrótce, później, kiedyś], start: true}, {pos: verb, re: "(ł|ła|ło|li|ły)$"}, {pos: noun, case: nom}], near: 2, gap: 1, same: [gender, number]}

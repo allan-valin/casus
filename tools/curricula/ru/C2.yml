@@ -1,0 +1,293 @@
+id: C2
+topics:
+
+- title: {en: Word order and emphasis, pt: Ordem das palavras e ênfase}
+  lessons:
+  - id: ru-c2-word-order
+    title: "В комнату вошла девушка."
+    meaning: {en: "word order: the new information comes last", pt: "ordem das palavras: a informação nova vem no fim"}
+    intro:
+      en: |
+        Russian word order is free in grammar but not in meaning: the sentence starts from what is **known** (the theme) and ends on what is **new** (the rheme). **Девушка вошла в комнату.** "The girl came into the room" (we know which girl). **В комнату вошла девушка.** "A girl came into the room" (a new person). This is how Russian does the work of English *the* and *a*.
+
+        Sentences that open with a place, a time or **вдруг** usually put the verb before the subject: **Вчера приехал мой брат.** "My brother arrived yesterday." **Вдруг зазвонил телефон.** "Suddenly the phone rang." In speech the new element can come first with strong stress instead.
+      pt: |
+        A ordem das palavras do russo é livre na gramática mas não no sentido: a frase parte do que é **conhecido** (o tema) e termina no que é **novo** (o rema). **Девушка вошла в комнату.** "A moça entrou na sala" (sabemos qual moça). **В комнату вошла девушка.** "Uma moça entrou na sala" (pessoa nova). É assim que o russo faz o trabalho dos artigos *o* e *um*.
+
+        As frases que começam por um lugar, um tempo ou **вдруг** costumam pôr o verbo antes do sujeito: **Вчера приехал мой брат.** "Ontem chegou meu irmão." **Вдруг зазвонил телефон.** "De repente o telefone tocou." Na fala o elemento novo também pode vir primeiro, com acento forte.
+    examples:
+    - ["В комнату вошла девушка.", "A girl came into the room.", "Uma moça entrou na sala.", "вошла"]
+    - ["Вдруг зазвонил телефон.", "Suddenly the phone rang.", "De repente o telefone tocou.", "зазвонил"]
+    - ["Вчера приехал мой брат.", "My brother arrived yesterday.", "Ontem chegou meu irmão.", "приехал"]
+    match: {seq: [{word: [вдруг, вчера, сегодня, тут, здесь, там, потом, однажды, наконец, вскоре, затем, утром, вечером, ночью], start: true}, {pos: verb, tense: past}, {pos: noun, case: nom}], near: 1, gap: 1, same: [gender, number]}
+
+  - id: ru-c2-emphatic-particles
+    title: "именно, разве, отнюдь"
+    meaning: {en: "particles of focus, doubt and denial", pt: "partículas de foco, dúvida e negação"}
+    intro:
+      en: |
+        These particles sharpen the information structure:
+
+        - **именно** "precisely, it's … that": **Именно это я и хотел сказать.** "That's exactly what I wanted to say."
+        - **лишь, исключительно** "only, solely"
+        - **разве** and **неужели** turn a statement into surprise or doubt: **Разве ты не знал?** "Didn't you know?" **Неужели это правда?** "Can it really be true?"
+        - **вовсе не, отнюдь не, ничуть не** "not at all" (отнюдь is bookish)
+        - **всё-таки, всё же** "all the same"
+      pt: |
+        Estas partículas afinam a estrutura da informação:
+
+        - **именно** "justamente, é … que": **Именно это я и хотел сказать.** "É justamente isso que eu queria dizer."
+        - **лишь, исключительно** "só, unicamente"
+        - **разве** e **неужели** transformam a afirmação em surpresa ou dúvida: **Разве ты не знал?** "Você não sabia?" **Неужели это правда?** "Será mesmo verdade?"
+        - **вовсе не, отнюдь не, ничуть не** "de jeito nenhum" (отнюдь é livresco)
+        - **всё-таки, всё же** "mesmo assim"
+    examples:
+    - ["Именно это я и хотел сказать.", "That's exactly what I wanted to say.", "É justamente isso que eu queria dizer.", "Именно"]
+    - ["Разве ты не знал?", "Didn't you know?", "Você não sabia?", "Разве"]
+    - ["Неужели это правда?", "Can it really be true?", "Será mesmo verdade?", "Неужели"]
+    - ["Это вовсе не трудно.", "It isn't difficult at all.", "Não é nada difícil.", "вовсе"]
+    match: {seq: [{word: [именно, лишь, исключительно, разве, неужели, вовсе, отнюдь, ничуть, всё-таки]}], gap: 0}
+    pool: [именно, лишь, разве, неужели, вовсе, отнюдь, ничуть, всё-таки]
+
+- title: {en: Negation in depth, pt: A negação a fundo}
+  lessons:
+  - id: ru-c2-ni-concessive
+    title: "кто бы ни, что бы ни"
+    meaning: {en: "whoever, whatever: concessive ни", pt: "quem quer que, o que quer que: ни concessivo"}
+    intro:
+      en: |
+        **ни** (not **не**) after a question word, usually with **бы** + past, makes *-ever* clauses: **Что бы ты ни говорил, я не поверю.** "Whatever you say, I won't believe it." **Где бы он ни был…** "Wherever he is…" **Как ни старайся, не успеешь.** "However hard you try, you won't make it." **Сколько ни** "no matter how much".
+
+        Here **ни** denies nothing; the main clause stays affirmative or negative on its own. Writing **не** instead is one of the commonest spelling slips of native speakers.
+      pt: |
+        **ни** (e não **не**) depois de uma palavra interrogativa, em geral com **бы** + passado, forma orações de "quer que": **Что бы ты ни говорил, я не поверю.** "Diga o que disser, não vou acreditar." **Где бы он ни был…** "Onde quer que ele esteja…" **Как ни старайся, не успеешь.** "Por mais que você se esforce, não vai dar tempo." **Сколько ни** "por mais que".
+
+        Aqui **ни** não nega nada; a oração principal é afirmativa ou negativa por conta própria. Escrever **не** no lugar é um dos erros de ortografia mais comuns dos próprios russos.
+    mistakes:
+    - wrong: "Что бы ты не говорил, я не поверю."
+      right: "Что бы ты ни говорил, я не поверю."
+      why: {en: "The concessive particle is ни.", pt: "A partícula concessiva é ни."}
+    examples:
+    - ["Что бы ты ни говорил, я не поверю.", "Whatever you say, I won't believe it.", "Diga o que disser, não vou acreditar.", "ни"]
+    - ["Где бы он ни был, он всегда звонит маме.", "Wherever he is, he always calls his mother.", "Onde quer que esteja, ele sempre liga para a mãe.", "ни"]
+    - ["Как ни старайся, всё равно не успеешь.", "However hard you try, you won't make it.", "Por mais que você se esforce, não vai dar tempo.", "ни"]
+    match:
+    - {seq: [{word: [кто, что, где, куда, когда, какой, какая, какое, какие, сколько, как, чего, чем, кого, кому, откуда]}, {word: [бы]}, {word: [ни]}], near: 2, gap: 2}
+    - {seq: [{word: [как, сколько, куда, где], start: true}, {word: [ни]}], gap: 1}
+    pool: [ни, не, бы, же]
+
+  - id: ru-c2-double-negative
+    title: "не могу не, нельзя не"
+    meaning: {en: "two negatives make a strong yes", pt: "duas negações fazem um sim forte"}
+    intro:
+      en: |
+        **не мочь не** + infinitive, **нельзя не**, **не может не** mean "can't help doing, must": **Я не могу не согласиться.** "I can't but agree." **Нельзя не признать, что…** "One has to admit that…" **Он не мог не заметить.** "He couldn't fail to notice."
+
+        Set phrases work the same way: **не раз** "more than once" (but **ни разу** "not once"), **не кто иной, как** "none other than", **не без** "not without": **не без труда** "with some difficulty".
+      pt: |
+        **не мочь не** + infinitivo, **нельзя не**, **не может не** querem dizer "não ter como não, ter que": **Я не могу не согласиться.** "Não posso deixar de concordar." **Нельзя не признать, что…** "É preciso admitir que…" **Он не мог не заметить.** "Ele não tinha como não perceber."
+
+        Expressões fixas funcionam igual: **не раз** "mais de uma vez" (mas **ни разу** "nem uma vez"), **не кто иной, как** "ninguém menos que", **не без** "não sem": **не без труда** "com certa dificuldade".
+    examples:
+    - ["Я не могу не согласиться.", "I can't but agree.", "Não posso deixar de concordar.", "не"]
+    - ["Он не мог не заметить ошибку.", "He couldn't fail to notice the mistake.", "Ele não tinha como não perceber o erro.", "не"]
+    - ["Я не раз был в Петербурге.", "I've been to Petersburg more than once.", "Estive em Petersburgo mais de uma vez.", "раз"]
+    match:
+    - {seq: [{word: [не, нельзя]}, {word: [могу, можешь, может, можем, можете, могут, мог, могла, могли, мочь]}, {word: [не]}], near: 0, gap: 2}
+    - {seq: [{word: [нельзя]}, {word: [не]}], gap: 1}
+    pool: [не, ни, нет, бы]
+
+  - id: ru-c2-genitive-negation
+    title: "Ответа не было."
+    meaning: {en: "the genitive of negation", pt: "o genitivo da negação"}
+    intro:
+      en: |
+        Denying that something **exists** puts it in the genitive, with a neuter verb: **Ответа не было.** "There was no answer." **Писем не пришло.** "No letters came." After negated transitive verbs the object is often genitive, especially abstract or indefinite ones: **Он не имеет права.** "He has no right." **Я не вижу никакой разницы.** "I see no difference at all." **не обращай внимания** "pay no attention".
+
+        A concrete, definite object stays accusative: **Я не видел твою сестру.** "I haven't seen your sister." The choice between the two is one of the finest points of Russian style.
+      pt: |
+        Negar que algo **exista** põe esse algo no genitivo, com verbo no neutro: **Ответа не было.** "Não houve resposta." **Писем не пришло.** "Não chegaram cartas." Depois de verbos transitivos negados o objeto muitas vezes vai no genitivo, sobretudo se é abstrato ou indefinido: **Он не имеет права.** "Ele não tem direito." **Я не вижу никакой разницы.** "Não vejo diferença nenhuma." **не обращай внимания** "não ligue".
+
+        Um objeto concreto e definido fica no acusativo: **Я не видел твою сестру.** "Não vi a sua irmã." A escolha entre os dois é um dos pontos mais finos do estilo russo.
+    examples:
+    - ["Ответа не было.", "There was no answer.", "Não houve resposta.", "Ответа"]
+    - ["Он не имеет права так говорить.", "He has no right to talk like that.", "Ele não tem o direito de falar assim.", "права"]
+    - ["Я не вижу никакой разницы.", "I see no difference at all.", "Não vejo diferença nenhuma.", "разницы"]
+    match:
+    - {seq: [{pos: noun, case: gen}, {word: [не]}, {word: [было, будет, осталось, оказалось, существует, хватает, хватило, пришло]}], gap: 0, same: [number]}
+    - {seq: [{word: [не]}, {word: [имеет, имел, имела, имеют, вижу, видел, видела, вижу, обращай, обращайте, обращал, обратил, понимаю, замечал, слышал, получил, получила, нашёл, нашла]}, {word: [никакой, никакого, никаких]}, {pos: noun, case: gen}], gap: 3, same: [number]}
+    - {seq: [{word: [не]}, {word: [имеет, имел, имела, имеют, обращай, обращайте, обращал, обратил]}, {pos: noun, case: gen}], gap: 2, same: [number]}
+
+- title: {en: Registers, pt: Registros}
+  lessons:
+  - id: ru-c2-bookish
+    title: "ибо, дабы, нежели, сей"
+    meaning: {en: "old and bookish words of high style", pt: "palavras antigas e livrescas do estilo elevado"}
+    intro:
+      en: |
+        Official, legal, religious and ironic writing keeps words that speech has dropped: **ибо** "for, because", **дабы** "so that" (= чтобы), **нежели** "than" (= чем), **сей, сия, сие** "this" (**до сих пор** "until now", **сию минуту** "this very minute"), **оный** "the said", **ежели** "if", **коль скоро** "inasmuch as", **отнюдь** "by no means".
+
+        Used in everyday conversation they sound pompous or jocular: **Сие мне неведомо.** "This is unknown to me" (mock-solemn).
+      pt: |
+        A escrita oficial, jurídica, religiosa e irônica conserva palavras que a fala abandonou: **ибо** "pois, porque", **дабы** "a fim de que" (= чтобы), **нежели** "do que" (= чем), **сей, сия, сие** "este" (**до сих пор** "até agora", **сию минуту** "neste exato minuto"), **оный** "o referido", **ежели** "se", **коль скоро** "visto que", **отнюдь** "de modo algum".
+
+        Usadas numa conversa comum, soam pomposas ou brincalhonas: **Сие мне неведомо.** "Isto me é desconhecido" (solenidade de brincadeira).
+    examples:
+    - ["Лучше поздно, нежели никогда.", "Better late than never.", "Antes tarde do que nunca.", "нежели"]
+    - ["Он ушёл рано, дабы не опоздать на поезд.", "He left early so as not to miss the train.", "Ele saiu cedo a fim de não perder o trem.", "дабы"]
+    - ["Я до сих пор не знаю.", "I still don't know.", "Até agora não sei.", "сих"]
+    match: {seq: [{word: [ибо, дабы, нежели, сей, сия, сие, сего, сих, сию, оный, ежели, коль, отнюдь, доколе]}], gap: 0}
+    pool: [ибо, дабы, нежели, сей, сие, ежели, отнюдь, чем, чтобы]
+
+  - id: ru-c2-colloquial
+    title: "мол, дескать, небось, авось"
+    meaning: {en: "particles of colloquial speech", pt: "partículas da fala coloquial"}
+    intro:
+      en: |
+        Speech has its own particles, rare in writing:
+
+        - **мол, дескать** mark someone else's words, often sceptically: **Он сказал, мол, занят.** "He said he was busy, if you please."
+        - **небось** "I bet, probably": **Устал небось?** "Tired, I bet?"
+        - **авось** "maybe it'll work out" — **на авось** "trusting to luck", a proverbial Russian attitude
+        - **ну, вот, вон, ладно, давай**: hesitation, pointing, agreement, "come on"
+        - **-ка** softens a command: **Покажи-ка!** "Go on, show me!"
+      pt: |
+        A fala tem partículas próprias, raras na escrita:
+
+        - **мол, дескать** marcam palavras alheias, muitas vezes com ceticismo: **Он сказал, мол, занят.** "Ele disse que, olha só, estava ocupado."
+        - **небось** "aposto que, provavelmente": **Устал небось?** "Cansado, aposto?"
+        - **авось** "quem sabe dá certo" — **на авось** "contando com a sorte", uma atitude proverbial russa
+        - **ну, вот, вон, ладно, давай**: hesitação, apontar, concordar, "vamos"
+        - **-ка** suaviza uma ordem: **Покажи-ка!** "Anda, mostra!"
+    examples:
+    - ["Он сказал, мол, занят.", "He said he was busy, supposedly.", "Ele disse que estava ocupado, pelo visto.", "мол"]
+    - ["Устал небось?", "Tired, I bet?", "Cansado, aposto?", "небось"]
+    - ["Ладно, давай завтра.", "All right, let's do it tomorrow.", "Tá bom, vamos deixar para amanhã.", "Ладно"]
+    match: {seq: [{word: [мол, дескать, небось, авось, ладно, вон, покажи-ка, давай-ка, ну-ка, посмотри-ка, скажи-ка]}], gap: 0}
+    pool: [мол, дескать, небось, авось, ладно, вон, вот, ну]
+
+  - id: ru-c2-expressive-suffixes
+    title: "домик, чашечка, домище"
+    meaning: {en: "suffixes of size and feeling", pt: "sufixos de tamanho e afeto"}
+    intro:
+      en: |
+        Diminutive and augmentative suffixes carry attitude more than size:
+
+        - endearment: **-ик, -чик** (**домик, стульчик**), **-ок / -ек** (**сынок, пирожок**), **-очк- / -ечк-** (**чашечка, минуточка**), **-еньк- / -оньк-** on adjectives (**маленький, тихонько**)
+        - **-ушк- / -юшк-** affection in folk style (**бабушка, солнышко**)
+        - augmentative or coarse: **-ищ-** (**домище** "huge house", **ручища**)
+        - pejorative: **-ишк-** (**домишко** "a wretched little house")
+
+        Waiters and shop assistants say **минуточку, хлебушек, чаёк** to sound friendly.
+      pt: |
+        Os sufixos diminutivos e aumentativos levam mais afeto que tamanho:
+
+        - carinho: **-ик, -чик** (**домик, стульчик**), **-ок / -ек** (**сынок, пирожок**), **-очк- / -ечк-** (**чашечка, минуточка**), **-еньк- / -оньк-** em adjetivos (**маленький, тихонько**)
+        - **-ушк- / -юшк-** afeto em estilo popular (**бабушка, солнышко**)
+        - aumentativo ou grosseiro: **-ищ-** (**домище** "casarão", **ручища**)
+        - pejorativo: **-ишк-** (**домишко** "uma casinha pobre")
+
+        Garçons e vendedores dizem **минуточку, хлебушек, чаёк** para soar simpáticos.
+    examples:
+    - ["Подождите минуточку.", "Wait just a moment.", "Espere só um minutinho.", "минуточку"]
+    - ["Хочешь чашечку кофе?", "Would you like a little cup of coffee?", "Quer um cafezinho?", "чашечку"]
+    - ["Говори тихонько.", "Speak softly.", "Fale baixinho.", "тихонько"]
+    match: {seq: [{re: "^(?!(?:маленького|маленьких|маленькой|маленькую|хранилище|маленьким|маленьком|маленькие|маленький|маленькая|маленькое|бабушкой|чудовище|пастбище|девочкой|девушкой|кладбище|дедушкой|дедушка|девушек|училище|девушку|дедушке|девушки|девочке|девочку|слишком|девушке|подушку|бабушки|девочка|девочки|бабушка|игрушку|игрушки|девушка|убежище|подушки|игрушек|игрушка|дедушку|подушка|бабушку|дедушки|бабушке|дочкой|жилище|очками|бочка|дочка|точка|точку|дочки|дочку|точки|дочке|очков|очках|очки)$)[\\s\\S]*?(?:(еньк|оньк|ечк|ушк|юшк|ышк|ишк))"}], same: [case, number]}
+    pool: [минуточку, чашечку, тихонько, солнышко, домик, домище]
+
+- title: {en: Verbs in depth, pt: Os verbos a fundo}
+  lessons:
+  - id: ru-c2-prefix-meanings
+    title: "дочитать, переесть, наесться"
+    meaning: {en: "prefixes that add a manner of action", pt: "prefixos que acrescentam um modo de ação"}
+    intro:
+      en: |
+        Beyond making perfectives, prefixes add precise shades (*Aktionsarten*):
+
+        - **до-** to the end: **дочитать** "finish reading"
+        - **пере-** again or too much: **переделать** "redo", **переесть** "overeat"
+        - **недо-** too little: **недооценить** "underestimate"
+        - **за-** start: **заплакать** "burst into tears"; **по-** a little while: **поговорить** "have a talk"
+        - **на- … -ся** to one's fill: **наесться** "eat one's fill", **выспаться** "sleep enough"
+        - **раз- … -ся** to get going: **разговориться** "get talking"
+      pt: |
+        Além de formar perfectivos, os prefixos acrescentam nuances precisas (*Aktionsarten*):
+
+        - **до-** até o fim: **дочитать** "terminar de ler"
+        - **пере-** de novo ou demais: **переделать** "refazer", **переесть** "comer demais"
+        - **недо-** de menos: **недооценить** "subestimar"
+        - **за-** início: **заплакать** "cair no choro"; **по-** um pouco: **поговорить** "bater um papo"
+        - **на- … -ся** até se fartar: **наесться** "comer até ficar satisfeito", **выспаться** "dormir o suficiente"
+        - **раз- … -ся** pegar embalo: **разговориться** "se soltar na conversa"
+    examples:
+    - ["Я дочитал книгу.", "I finished reading the book.", "Terminei de ler o livro.", "дочитал"]
+    - ["Ты выспался?", "Did you get enough sleep?", "Você dormiu bem?", "выспался"]
+    - ["Она вдруг заплакала.", "She suddenly burst into tears.", "Ela de repente caiu no choro.", "заплакала"]
+    - ["Не стоит недооценивать его.", "You shouldn't underestimate him.", "Não convém subestimá-lo.", "недооценивать"]
+    match: {seq: [{re: "^(до|недо|пере|за|на|вы|раз|рас)(чит|дел|есть|ел|ест|спа|оцен|плак|говор|смея|сме)", pos: verb}], same: [person, number, tense]}
+
+  - id: ru-c2-figurative-motion
+    title: "идёт дождь, время летит"
+    meaning: {en: "verbs of motion in figurative use", pt: "verbos de movimento em sentido figurado"}
+    intro:
+      en: |
+        **идти** describes much that does not walk: **идёт дождь / снег** "it's raining / snowing", **идёт фильм** "a film is on", **часы идут** "the clock works", **время идёт** "time passes", **речь идёт о…** "it's a matter of…", **Тебе идёт эта шапка.** "That hat suits you." Other motion verbs follow: **время летит** "time flies", **слухи ходят** "rumours go round", **автобус ходит** "the bus runs" (a regular service: multidirectional).
+      pt: |
+        **идти** descreve muita coisa que não anda: **идёт дождь / снег** "está chovendo / nevando", **идёт фильм** "está passando um filme", **часы идут** "o relógio funciona", **время идёт** "o tempo passa", **речь идёт о…** "trata-se de…", **Тебе идёт эта шапка.** "Esse gorro fica bem em você." Outros verbos de movimento seguem: **время летит** "o tempo voa", **слухи ходят** "correm boatos", **автобус ходит** "o ônibus circula" (serviço regular: multidirecional).
+    examples:
+    - ["Идёт дождь.", "It's raining.", "Está chovendo.", "Идёт"]
+    - ["Речь идёт о деньгах.", "It's a question of money.", "Trata-se de dinheiro.", "идёт"]
+    - ["Тебе очень идёт это платье.", "That dress really suits you.", "Esse vestido fica muito bem em você.", "идёт"]
+    - ["Время летит.", "Time flies.", "O tempo voa.", "летит"]
+    match:
+    - {seq: [{word: [идёт, шёл, шла, идут, шли, пошёл, пошла, летит, летело, ходит, ходят]}, {word: [дождь, снег, фильм, урок, война, время, речь, слухи, автобус, поезд]}], gap: 0}
+    - {seq: [{word: [дождь, снег, фильм, урок, война, время, речь, часы, слухи, автобус]}, {word: [идёт, шёл, шла, идут, шли, пошёл, пошла, летит, летело, ходит, ходят]}], gap: 1}
+    - {seq: [{word: [тебе, вам, ему, ей]}, {word: [идёт, идут, шло, шла, шёл]}], near: 1, gap: 1}
+    pool: [идёт, ходит, едет, летит, шёл, идут, ходят]
+
+  - id: ru-c2-impersonal-verbs
+    title: "темнеет, мне не спится, его ранило"
+    meaning: {en: "impersonal verbs and the elemental construction", pt: "verbos impessoais e a construção dos elementos"}
+    intro:
+      en: |
+        Some verbs have no subject at all:
+
+        - nature: **темнеет** "it's getting dark", **светает** "dawn is breaking", **морозит**
+        - states, with the person in the accusative: **меня тошнит** "I feel sick", **его знобит** "he's shivery"
+        - dative + **-ся**, an urge or ability that "happens" to someone: **мне не спится** "I can't sleep", **ему не работается** "he can't get down to work"
+        - the "elemental" construction, with the force in the instrumental: **Лодку унесло ветром.** "The boat was carried off by the wind." **Его ранило.** "He was wounded."
+        - luck: **ему везёт / повезло** "he's lucky / was lucky"
+      pt: |
+        Alguns verbos não têm sujeito nenhum:
+
+        - natureza: **темнеет** "está escurecendo", **светает** "está amanhecendo", **морозит**
+        - estados, com a pessoa no acusativo: **меня тошнит** "estou enjoado", **его знобит** "ele está com calafrios"
+        - dativo + **-ся**, uma vontade ou capacidade que "acontece" com alguém: **мне не спится** "não consigo dormir", **ему не работается** "ele não consegue se pôr a trabalhar"
+        - a construção "dos elementos", com a força no instrumental: **Лодку унесло ветром.** "O barco foi levado pelo vento." **Его ранило.** "Ele foi ferido."
+        - sorte: **ему везёт / повезло** "ele tem sorte / teve sorte"
+    examples:
+    - ["Зимой рано темнеет.", "In winter it gets dark early.", "No inverno escurece cedo.", "темнеет"]
+    - ["Мне не спится.", "I can't sleep.", "Não consigo dormir.", "спится"]
+    - ["Тебе повезло.", "You were lucky.", "Você teve sorte.", "повезло"]
+    - ["Лодку унесло ветром.", "The boat was carried off by the wind.", "O barco foi levado pelo vento.", "унесло"]
+    match: {seq: [{word: [темнеет, стемнело, светает, рассвело, смеркается, вечереет, морозит, тошнит, знобит, спится, спалось, работается, везёт, повезло, везло, унесло, занесло, ранило, убило, затопило, сдуло]}], gap: 0}
+    pool: [темнеет, светает, тошнит, спится, везёт, повезло, ранило, унесло]
+
+  - id: ru-c2-imperative-politeness
+    title: "Садитесь! – Сядьте!"
+    meaning: {en: "aspect in commands: invitation or order", pt: "o aspecto nas ordens: convite ou ordem"}
+    intro:
+      en: |
+        In positive commands the **perfective** is the neutral request for one action: **Сядьте.** "Sit down." **Закройте дверь.** The **imperfective** is what a host uses — an invitation to do what is expected: **Садитесь, пожалуйста!** "Do sit down!" **Проходите, раздевайтесь.** "Come in, take your coat off." **Угощайтесь!** "Help yourself!"
+
+        The imperfective can also urge someone to get on with a thing already agreed: **Ну, рассказывайте!** "Well, go on, tell us!" A perfective said to a guest may sound like an order.
+      pt: |
+        Nas ordens afirmativas, o **perfectivo** é o pedido neutro para uma ação: **Сядьте.** "Sente-se." **Закройте дверь.** O **imperfectivo** é o que o anfitrião usa — um convite a fazer o esperado: **Садитесь, пожалуйста!** "Sente-se, por favor!" **Проходите, раздевайтесь.** "Entre, tire o casaco." **Угощайтесь!** "Sirva-se!"
+
+        O imperfectivo também pode apressar alguém a fazer o que já foi combinado: **Ну, рассказывайте!** "Então, conte logo!" Um perfectivo dito a uma visita pode soar como ordem.
+    examples:
+    - ["Садитесь, пожалуйста.", "Do sit down, please.", "Sente-se, por favor.", "Садитесь"]
+    - ["Проходите, раздевайтесь.", "Come in, take your coat off.", "Entre, tire o casaco.", "Проходите"]
+    - ["Угощайтесь!", "Help yourself!", "Sirva-se!", "Угощайтесь"]
+    match: {seq: [{word: [садитесь, садись, сядьте, сядь, проходите, проходи, пройдите, заходите, заходи, зайдите, раздевайтесь, угощайтесь, угощайся, входите, входи, войдите, присаживайтесь, рассказывайте, рассказывай]}], gap: 0}
+    pool: [садитесь, сядьте, проходите, пройдите, заходите, зайдите, угощайтесь, входите]

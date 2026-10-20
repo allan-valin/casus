@@ -1,0 +1,284 @@
+id: C1
+topics:
+
+- title: {en: Participle and gerund phrases, pt: Orações participiais e gerundiais}
+  lessons:
+  - id: ru-c1-participle-phrase
+    title: "человек, сидящий у окна"
+    meaning: {en: "the participle phrase instead of a который clause", pt: "a oração participial no lugar de uma oração com который"}
+    intro:
+      en: |
+        Written Russian replaces a **который** clause with a **participle phrase** (причастный оборот): **человек, который сидит у окна** → **человек, сидящий у окна** "the man sitting by the window". The participle takes the gender, number and case of its noun (**к человеку, сидящему у окна**) and keeps the verb's objects and case government (**интересующийся музыкой** "interested in music").
+
+        Placed **after** its noun, the phrase is set off by commas on both sides; placed **before** it, no commas: **сидящий у окна человек**. The tense of the participle is relative to the main verb: **читающий** "who is / was reading (at that moment)", **читавший** "who had been reading".
+      pt: |
+        O russo escrito troca a oração com **который** por uma **oração participial** (причастный оборот): **человек, который сидит у окна** → **человек, сидящий у окна** "o homem sentado junto à janela". O particípio toma o gênero, o número e o caso do seu substantivo (**к человеку, сидящему у окна**) e mantém os complementos e a regência do verbo (**интересующийся музыкой** "interessado em música").
+
+        Colocada **depois** do substantivo, a oração fica entre vírgulas; colocada **antes**, sem vírgulas: **сидящий у окна человек**. O tempo do particípio é relativo ao verbo principal: **читающий** "que lê / lia (naquele momento)", **читавший** "que tinha lido / estivera lendo".
+    mistakes:
+    - wrong: "Я знаю девушку, живущая в Москве."
+      right: "Я знаю девушку, живущую в Москве."
+      why: {en: "The participle agrees with its noun: девушку is accusative.", pt: "O particípio concorda com o substantivo: девушку está no acusativo."}
+    examples:
+    - ["Человек, сидящий у окна, мой брат.", "The man sitting by the window is my brother.", "O homem sentado junto à janela é meu irmão.", "сидящий"]
+    - ["Я знаю девушку, живущую в этом доме.", "I know a girl who lives in this house.", "Conheço uma moça que mora nesta casa.", "живущую"]
+    - ["Студенты, сдавшие экзамен, могут идти домой.", "The students who have passed the exam may go home.", "Os alunos que passaram na prova podem ir para casa.", "сдавшие"]
+    match: {seq: [{trail: ","}, {re: "^(?!(?:подходящего|подходящую|настоящего|подходящий|подходящее|подходящая|следующему|следующего|настоящее|настоящей|настоящих|следующие|следующее|следующих|блестящее|следующая|блестящий|настоящая|настоящие|следующую|блестящие|следующий|следующим|блестящая|настоящий|настоящую|следующей|настоящим|будущего|будущих|будущий|будущую|будущая|будущее|бывшего|будущие|будущей|будущем|будущим|бывшая|бывших|бывшей|бывшим|бывшее|бывшую|бывшие|бывший)$)[\\s\\S]*?(?:(ющ|ящ|ущ|ащ|вш)(ий|ая|ее|ие|его|ей|ему|им|их|ую|ими|ем|ой)$)"}], gap: 1, same: [case, number]}
+
+  - id: ru-c1-short-passive
+    title: "был построен, будет решён"
+    meaning: {en: "the passive with short participles in -н / -т", pt: "a passiva com particípios curtos em -н / -т"}
+    intro:
+      en: |
+        The short past passive participle — **построен, построена, построено, построены** — with **быть** makes the passive of perfective verbs: **Дом был построен в 1900 году.** "The house was built in 1900." **Вопрос будет решён завтра.** "The question will be settled tomorrow." In the present **есть** is left out: **Магазин закрыт.** "The shop is closed." The doer, if named, is in the **instrumental**: **Роман написан Толстым.**
+
+        Short forms have a single **н** (**решена**), the long forms two (**решённая задача**). Imperfective verbs make their passive with **-ся** instead: **Дом строится.** "The house is being built."
+      pt: |
+        O particípio passivo passado curto — **построен, построена, построено, построены** — com **быть** forma a passiva dos verbos perfectivos: **Дом был построен в 1900 году.** "A casa foi construída em 1900." **Вопрос будет решён завтра.** "A questão será resolvida amanhã." No presente **есть** some: **Магазин закрыт.** "A loja está fechada." O agente, se aparece, vai no **instrumental**: **Роман написан Толстым.** "O romance foi escrito por Tolstói."
+
+        As formas curtas têm um só **н** (**решена**), as longas dois (**решённая задача**). Os verbos imperfectivos fazem a passiva com **-ся**: **Дом строится.** "A casa está sendo construída."
+    table:
+      head: {en: [Masc., Fem., Neut., Plural], pt: [Masc., Fem., Neutro, Plural]}
+      rows:
+      - [построен, построена, построено, построены]
+      - [решён, решена, решено, решены]
+      - [закрыт, закрыта, закрыто, закрыты]
+    examples:
+    - ["Дом был построен в 1900 году.", "The house was built in 1900.", "A casa foi construída em 1900.", "построен"]
+    - ["Магазин уже закрыт.", "The shop is already closed.", "A loja já está fechada.", "закрыт"]
+    - ["Письмо было написано по-русски.", "The letter was written in Russian.", "A carta foi escrita em russo.", "написано"]
+    match: {seq: [{word: [был, была, было, были, будет, будут, уже, давно]}, {re: "(ан|ян|ен|ён|ыт|нут|бит|нят)(а|о|ы)?$", not: {pos: [noun, pron, adv, num, prep, conj]}}], gap: 1, same: [gender, number]}
+
+  - id: ru-c1-perfective-gerund
+    title: "сделав, вернувшись"
+    meaning: {en: "the perfective gerund: having done", pt: "o gerúndio perfectivo: tendo feito"}
+    intro:
+      en: |
+        Perfective verbs make a gerund in **-в** (**сделав** "having done", **прочитав**), **-вшись** for reflexive verbs (**вернувшись** "having come back", **умывшись**) and **-я** for a few stems in -д/-т (**придя** "having come", **войдя**, **приведя**). The action is finished **before** the main one: **Сделав уроки, он пошёл гулять.** "Having done his homework, he went for a walk."
+
+        A gerund must share the subject of the main verb. **Подъезжая к станции, у меня слетела шляпа** ("Approaching the station, my hat flew off") is Chekhov's famous example of the mistake.
+      pt: |
+        Os verbos perfectivos formam um gerúndio em **-в** (**сделав** "tendo feito", **прочитав**), **-вшись** nos reflexivos (**вернувшись** "tendo voltado", **умывшись**) e **-я** em alguns radicais em -д/-т (**придя** "tendo chegado", **войдя**, **приведя**). A ação termina **antes** da principal: **Сделав уроки, он пошёл гулять.** "Tendo feito a lição, ele foi passear."
+
+        O gerúndio tem que ter o mesmo sujeito do verbo principal. **Подъезжая к станции, у меня слетела шляпа** ("Chegando à estação, meu chapéu voou") é o célebre exemplo de Tchekhov do erro.
+    mistakes:
+    - wrong: "Прочитав книгу, она мне понравилась."
+      right: "Прочитав книгу, я её полюбил."
+      why: {en: "The one who read must be the subject of the main verb.", pt: "Quem leu tem que ser o sujeito do verbo principal."}
+    examples:
+    - ["Сделав уроки, он пошёл гулять.", "Having done his homework, he went for a walk.", "Tendo feito a lição, ele foi passear.", "Сделав"]
+    - ["Вернувшись домой, я сразу лёг спать.", "When I got home I went straight to bed.", "Ao voltar para casa, fui direto dormir.", "Вернувшись"]
+    - ["Прочитав письмо, она улыбнулась.", "Having read the letter, she smiled.", "Depois de ler a carta, ela sorriu.", "Прочитав"]
+    # gerunds are not in the core dictionary: an unknown word with a prefix and a gerund ending
+    match: {seq: [{re: "^(с|по|про|за|вы|при|у|на|от|до|пере|раз|рас|вз|о|об|под|из|ис|вер|под)[а-яё]+(ав|ив|ев|ыв|ув|вшись)$", unknown: true}]}
+
+- title: {en: Aspect in depth, pt: O aspecto a fundo}
+  lessons:
+  - id: ru-c1-aspect-negation
+    title: "не открывай! – не открой!"
+    meaning: {en: "aspect in negative commands and with нельзя", pt: "o aspecto nas ordens negativas e com нельзя"}
+    intro:
+      en: |
+        A negative command is normally **imperfective**: **Не открывай окно!** "Don't open the window!" **Не говорите ему.** "Don't tell him." A negated **perfective** imperative is a **warning** against something that may happen by accident: **Не упади!** "Mind you don't fall!" **Смотри, не опоздай!** "Careful not to be late!"
+
+        The same split runs through **нельзя**: + imperfective "it's not allowed" (**Здесь нельзя курить.**), + perfective "it's impossible" (**Эту дверь нельзя открыть.** "This door can't be opened.").
+      pt: |
+        A ordem negativa normalmente é **imperfectiva**: **Не открывай окно!** "Não abra a janela!" **Не говорите ему.** "Não contem a ele." O imperativo **perfectivo** negado é um **aviso** contra algo que pode acontecer sem querer: **Не упади!** "Cuidado para não cair!" **Смотри, не опоздай!** "Olha, não vá se atrasar!"
+
+        A mesma divisão vale para **нельзя**: + imperfectivo "não é permitido" (**Здесь нельзя курить.**), + perfectivo "é impossível" (**Эту дверь нельзя открыть.** "Esta porta não dá para abrir.").
+    table:
+      head: {en: [Form, Meaning], pt: [Forma, Sentido]}
+      rows:
+      - [не открывай, "don't open (prohibition) / não abra (proibição)"]
+      - [не открой, "mind you don't open it (warning) / cuidado para não abrir (aviso)"]
+      - [нельзя входить, "entry is forbidden / é proibido entrar"]
+      - [нельзя войти, "one can't get in / não dá para entrar"]
+    examples:
+    - ["Не открывай окно!", "Don't open the window!", "Não abra a janela!", "открывай"]
+    - ["Не говорите ему об этом.", "Don't tell him about it.", "Não contem isso a ele.", "говорите"]
+    - ["Смотри не упади!", "Mind you don't fall!", "Cuidado para não cair!", "упади"]
+    match: {seq: [{word: [не]}, {pos: verb, mood: imp}], gap: 1, same: [person, number]}
+
+  - id: ru-c1-aspect-fact
+    title: "Ты читал «Войну и мир»?"
+    meaning: {en: "the imperfective for the bare fact", pt: "o imperfectivo para o simples fato"}
+    intro:
+      en: |
+        To ask or say **whether** something ever happened — not its result — Russian uses the **imperfective** past, even for one finished act: **Ты читал «Войну и мир»?** "Have you read War and Peace?" **Кто открывал окно?** "Who opened the window (at some point)?" **Я уже видел этот фильм.** "I've already seen this film." This is the *general-factual* meaning (общефактическое значение).
+
+        The **perfective** puts the **result** in focus: **Ты прочитал книгу?** "Have you finished the book?" A reversed result is a strong cue for the imperfective: **Кто-то открывал окно** "someone opened the window (and shut it again)".
+      pt: |
+        Para perguntar ou dizer **se** algo já aconteceu — e não o seu resultado — o russo usa o passado **imperfectivo**, mesmo para um ato único e concluído: **Ты читал «Войну и мир»?** "Você já leu Guerra e paz?" **Кто открывал окно?** "Quem abriu a janela (em algum momento)?" **Я уже видел этот фильм.** "Já vi este filme." É o sentido *factual geral* (общефактическое значение).
+
+        O **perfectivo** põe o **resultado** em foco: **Ты прочитал книгу?** "Você terminou o livro?" Um resultado desfeito pede o imperfectivo: **Кто-то открывал окно** "alguém abriu a janela (e fechou de novo)".
+    examples:
+    - ["Ты уже читал эту книгу?", "Have you read this book yet?", "Você já leu este livro?", "читал"]
+    - ["Я уже видел этот фильм.", "I've already seen this film.", "Já vi este filme.", "видел"]
+    - ["Вы когда-нибудь были в Японии?", "Have you ever been to Japan?", "Você já esteve no Japão?", "были"]
+    match: {seq: [{word: [уже, когда-нибудь, никогда, раньше, однажды]}, {pos: verb, tense: past, aspect: impf}], near: 1, gap: 1, same: [gender, number]}
+
+  - id: ru-c1-aspect-future-plans
+    title: "буду звонить – позвоню"
+    meaning: {en: "aspect in the future: process or promise", pt: "o aspecto no futuro: processo ou promessa"}
+    intro:
+      en: |
+        **буду + imperfective infinitive** describes a future activity or a habit, with no result promised: **Завтра я буду работать весь день.** "Tomorrow I'll be working all day." **Я буду тебе звонить каждый день.** "I'll call you every day." The **perfective present** is a single act with a result — a promise or a plan: **Я позвоню тебе завтра.** "I'll call you tomorrow."
+
+        With **не**, the perfective future often means "can't, won't manage": **Я не найду дорогу.** "I won't be able to find the way."
+      pt: |
+        **буду + infinitivo imperfectivo** descreve uma atividade futura ou um hábito, sem resultado prometido: **Завтра я буду работать весь день.** "Amanhã vou trabalhar o dia todo." **Я буду тебе звонить каждый день.** "Vou te ligar todo dia." O **presente perfectivo** é um ato único com resultado — promessa ou plano: **Я позвоню тебе завтра.** "Eu te ligo amanhã."
+
+        Com **не**, o futuro perfectivo muitas vezes quer dizer "não vou conseguir": **Я не найду дорогу.** "Não vou achar o caminho."
+    examples:
+    - ["Завтра я буду работать весь день.", "Tomorrow I'll be working all day.", "Amanhã vou trabalhar o dia todo.", "буду"]
+    - ["Я буду тебе звонить каждый день.", "I'll call you every day.", "Vou te ligar todo dia.", "буду"]
+    - ["Я позвоню тебе завтра.", "I'll call you tomorrow.", "Eu te ligo amanhã.", "позвоню"]
+    match: {seq: [{word: [буду, будешь, будет, будем, будете, будут]}, {pos: verb, mood: inf, aspect: impf}], near: 2, gap: 0}
+    pool: [буду, будешь, будет, будем, будете, будут]
+
+- title: {en: Numerals and case, pt: Numerais e caso}
+  lessons:
+  - id: ru-c1-numeral-cases
+    title: "о двух, с тремя, к пяти"
+    meaning: {en: "numerals in the oblique cases", pt: "os numerais nos casos oblíquos"}
+    intro:
+      en: |
+        After **два, три, четыре** the noun is genitive singular and after **пять** and up genitive plural — but only when the numeral is itself nominative or accusative. In every other case the numeral **declines** and the noun stands in the **same case, plural**: **с тремя друзьями** "with three friends", **о двух книгах** "about two books", **к пяти часам** "by five o'clock", **из десяти студентов**.
+
+        Numerals from **пять** decline like **ночь** (**пяти, пятью**); **сорок, девяносто, сто** have just one oblique form: **сорока, девяноста, ста**. In compound numbers every part declines: **с двадцатью пятью рублями**.
+      pt: |
+        Depois de **два, три, четыре** o substantivo fica no genitivo singular, e de **пять** em diante no genitivo plural — mas só quando o próprio numeral está no nominativo ou no acusativo. Em todos os outros casos o numeral **se declina** e o substantivo vai no **mesmo caso, no plural**: **с тремя друзьями** "com três amigos", **о двух книгах** "sobre dois livros", **к пяти часам** "até as cinco horas", **из десяти студентов**.
+
+        Os numerais a partir de **пять** se declinam como **ночь** (**пяти, пятью**); **сорок, девяносто, сто** têm uma só forma oblíqua: **сорока, девяноста, ста**. Nos números compostos todas as partes se declinam: **с двадцатью пятью рублями**.
+    table:
+      head: {en: [Case, "2", "3", "5", "40"], pt: [Caso, "2", "3", "5", "40"]}
+      rows:
+      - [nom., два / две, три, пять, сорок]
+      - [gen., двух, трёх, пяти, сорока]
+      - [dat., двум, трём, пяти, сорока]
+      - [ins., двумя, тремя, пятью, сорока]
+      - [pre., двух, трёх, пяти, сорока]
+    examples:
+    - ["Я пришёл с тремя друзьями.", "I came with three friends.", "Vim com três amigos.", "тремя"]
+    - ["Он говорит на двух языках.", "He speaks two languages.", "Ele fala duas línguas.", "двух"]
+    - ["Приходи к пяти часам.", "Come by five o'clock.", "Venha até as cinco.", "пяти"]
+    match: {seq: [{word: [двух, трёх, четырёх, двум, трём, четырём, двумя, тремя, четырьмя, пяти, шести, семи, восьми, девяти, десяти, пятью, шестью, семью, восемью, десятью, двадцати, тридцати, сорока, девяноста, ста, двухсот, трёхсот, пятисот]}], gap: 0}
+    pool: [двух, трёх, двум, двумя, тремя, пяти, пятью, десяти, ста]
+
+  - id: ru-c1-collective
+    title: "двое, трое, оба"
+    meaning: {en: "collective numerals and оба / обе", pt: "numerais coletivos e оба / обе"}
+    intro:
+      en: |
+        **двое, трое, четверо, пятеро…** count people as a group, with the genitive plural: **двое детей** "two children", **нас было трое** "there were three of us". They are required with nouns that have no singular (**двое суток** "two days and nights", **трое ножниц**) and with **дети, люди** in small numbers; with male nouns they are an alternative (**трое друзей / три друга**). They are never used with feminine nouns.
+
+        **оба** (masc./neut.) and **обе** (fem.) mean "both" and take the genitive singular: **оба брата, обе сестры**; oblique **обоих / обеих**.
+      pt: |
+        **двое, трое, четверо, пятеро…** contam pessoas como grupo, com o genitivo plural: **двое детей** "duas crianças", **нас было трое** "éramos três". São obrigatórios com substantivos sem singular (**двое суток** "dois dias inteiros", **трое ножниц**) e com **дети, люди** em números pequenos; com substantivos masculinos de pessoa são alternativa (**трое друзей / три друга**). Nunca se usam com femininos.
+
+        **оба** (masc./neutro) e **обе** (fem.) querem dizer "ambos" e pedem o genitivo singular: **оба брата, обе сестры**; oblíquo **обоих / обеих**.
+    examples:
+    - ["У них двое детей.", "They have two children.", "Eles têm dois filhos.", "двое"]
+    - ["Нас было трое.", "There were three of us.", "Éramos três.", "трое"]
+    - ["Обе сестры живут в Москве.", "Both sisters live in Moscow.", "As duas irmãs moram em Moscou.", "Обе"]
+    match: {seq: [{word: [двое, трое, четверо, пятеро, шестеро, семеро, оба, обе, обоих, обеих, двоих, троих, четверых, обоим, обеим]}], gap: 0}
+    pool: [двое, трое, четверо, оба, обе, два, три, две]
+
+  - id: ru-c1-approximation
+    title: "около ста, часа два"
+    meaning: {en: "approximate numbers", pt: "números aproximados"}
+    intro:
+      en: |
+        Approximation has its own grammar: **около** + genitive "about" (**около ста человек**), **свыше / более** + genitive "over" (**свыше тысячи**), **порядка** "on the order of", **примерно / приблизительно** "roughly". In speech, putting the **noun before the numeral** makes it approximate: **часа два** "a couple of hours, about two hours" against **два часа** "two hours".
+
+        **полтора** (fem. **полторы**) "one and a half" takes the genitive singular: **полтора часа, полторы недели**.
+      pt: |
+        A aproximação tem gramática própria: **около** + genitivo "cerca de" (**около ста человек**), **свыше / более** + genitivo "mais de" (**свыше тысячи**), **порядка** "da ordem de", **примерно / приблизительно** "mais ou menos". Na fala, pôr o **substantivo antes do numeral** torna o número aproximado: **часа два** "umas duas horas" contra **два часа** "duas horas".
+
+        **полтора** (fem. **полторы**) "um e meio" pede o genitivo singular: **полтора часа, полторы недели**.
+    examples:
+    - ["Там было около ста человек.", "There were about a hundred people there.", "Havia umas cem pessoas lá.", "около"]
+    - ["Я ждал часа два.", "I waited about two hours.", "Esperei umas duas horas.", "часа"]
+    - ["Поездка заняла полтора часа.", "The trip took an hour and a half.", "A viagem levou uma hora e meia.", "полтора"]
+    match: {seq: [{word: [около, свыше, порядка, примерно, приблизительно, полтора, полторы]}], gap: 0}
+    pool: [около, свыше, порядка, примерно, полтора, полторы, почти]
+
+- title: {en: Bookish style, pt: Estilo livresco}
+  lessons:
+  - id: ru-c1-verbal-nouns
+    title: "после окончания, при решении"
+    meaning: {en: "verbal nouns in -ние after prepositions", pt: "substantivos verbais em -ние depois de preposições"}
+    intro:
+      en: |
+        Formal and scientific Russian packs a clause into a **verbal noun** in **-ание / -ение** after a preposition: **после окончания университета** "after graduating", **при решении задачи** "when solving the problem", **для улучшения условий** "to improve conditions", **до начала занятий**. The verb's object goes in the **genitive** and its subject in the instrumental: **принятие закона парламентом** "the passing of the law by parliament".
+
+        Speech says the same with a clause: **после того как он окончил университет**.
+      pt: |
+        O russo formal e científico condensa uma oração num **substantivo verbal** em **-ание / -ение** depois de uma preposição: **после окончания университета** "depois de se formar", **при решении задачи** "ao resolver o problema", **для улучшения условий** "para melhorar as condições", **до начала занятий**. O objeto do verbo vai no **genitivo** e o sujeito no instrumental: **принятие закона парламентом** "a aprovação da lei pelo parlamento".
+
+        Na fala se diz o mesmo com uma oração: **после того как он окончил университет**.
+    examples:
+    - ["После окончания университета он уехал в Москву.", "After graduating he left for Moscow.", "Depois de se formar ele foi para Moscou.", "окончания"]
+    - ["Мы говорили о решении этой проблемы.", "We talked about solving this problem.", "Falamos da solução deste problema.", "решении"]
+    - ["Это нужно для улучшения работы.", "This is needed to improve the work.", "Isso é necessário para melhorar o trabalho.", "улучшения"]
+    match: {seq: [{word: [после, для, при, до, без, в, во, по, на, о, об, с, со, к, ко, от, перед]}, {re: "(ани|ени|яни)(е|я|ю|ем|и|й)$", pos: noun}], gap: 1, same: [number]}
+
+  - id: ru-c1-derived-prepositions
+    title: "благодаря, несмотря на, в связи с"
+    meaning: {en: "prepositions made from other words", pt: "preposições derivadas"}
+    intro:
+      en: |
+        Formal texts use prepositions built from gerunds, nouns and adverbs, each with its own case:
+
+        - **благодаря** + dat. "thanks to", **согласно** + dat. "according to", **вопреки** + dat. "despite"
+        - **несмотря на** + acc. "in spite of"
+        - **вследствие**, **ввиду**, **в течение**, **в результате**, **в ходе**, **помимо**, **относительно** + gen.
+        - **в связи с** + ins. "in connection with"
+
+        **благодаря** is for good causes; for bad ones say **из-за**: **из-за дождя** "because of the rain".
+      pt: |
+        Os textos formais usam preposições feitas de gerúndios, substantivos e advérbios, cada uma com seu caso:
+
+        - **благодаря** + dat. "graças a", **согласно** + dat. "segundo", **вопреки** + dat. "contrariando"
+        - **несмотря на** + ac. "apesar de"
+        - **вследствие**, **ввиду**, **в течение**, **в результате**, **в ходе**, **помимо**, **относительно** + gen.
+        - **в связи с** + instr. "em vista de, em relação a"
+
+        **благодаря** é para causas boas; para as ruins use **из-за**: **из-за дождя** "por causa da chuva".
+    examples:
+    - ["Благодаря тебе я сдал экзамен.", "Thanks to you I passed the exam.", "Graças a você passei na prova.", "Благодаря"]
+    - ["Несмотря на дождь, мы пошли гулять.", "Despite the rain we went for a walk.", "Apesar da chuva, fomos passear.", "Несмотря"]
+    - ["Он работал там в течение года.", "He worked there for a year.", "Ele trabalhou lá durante um ano.", "течение"]
+    match: {seq: [{word: [благодаря, несмотря, вследствие, ввиду, согласно, вопреки, помимо, относительно, течение, связи, результате, ходе]}], gap: 0}
+    pool: [благодаря, несмотря, вследствие, согласно, вопреки, помимо, из-за, течение]
+
+  - id: ru-c1-conjunctions
+    title: "поскольку, тогда как, будто"
+    meaning: {en: "conjunctions of formal and literary style", pt: "conjunções do estilo formal e literário"}
+    intro:
+      en: |
+        Beyond **потому что** and **хотя**:
+
+        - cause: **поскольку**, **так как** "since", **ибо** (bookish) "for"
+        - contrast: **тогда как**, **в то время как** "whereas", **хотя / хоть** "although"
+        - comparison and doubt: **будто, словно, как будто** "as if", **якобы** "supposedly"
+        - time: **едва** "barely, as soon as", **по мере того как** "as"
+        - purpose: **для того чтобы** "in order to"
+
+        **будто** after verbs of saying shows the speaker doubts the claim: **Он говорит, будто болен.** "He says he's ill (I doubt it)."
+      pt: |
+        Além de **потому что** e **хотя**:
+
+        - causa: **поскольку**, **так как** "já que", **ибо** (livresco) "pois"
+        - contraste: **тогда как**, **в то время как** "ao passo que", **хотя / хоть** "embora"
+        - comparação e dúvida: **будто, словно, как будто** "como se", **якобы** "supostamente"
+        - tempo: **едва** "mal, assim que", **по мере того как** "à medida que"
+        - finalidade: **для того чтобы** "a fim de"
+
+        **будто** depois de verbos de dizer mostra que o falante duvida: **Он говорит, будто болен.** "Ele diz que está doente (duvido)."
+    examples:
+    - ["Поскольку шёл дождь, мы остались дома.", "Since it was raining we stayed home.", "Como estava chovendo, ficamos em casa.", "Поскольку"]
+    - ["Он смотрел на меня, словно не узнавал.", "He looked at me as if he didn't recognise me.", "Ele me olhava como se não me reconhecesse.", "словно"]
+    - ["Он говорит, будто болен.", "He says he's ill.", "Ele diz que está doente.", "будто"]
+    match: {seq: [{word: [поскольку, хотя, хоть, словно, будто, якобы, ибо, едва]}], gap: 0}
+    pool: [поскольку, хотя, словно, будто, якобы, ибо, едва, потому]

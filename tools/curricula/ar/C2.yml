@@ -1,0 +1,311 @@
+id: C2
+topics:
+
+- title: {en: Classical formulas, pt: Fórmulas clássicas}
+  lessons:
+  - id: ar-c2-oath
+    title: والله، أقسم بـ
+    meaning: {en: "oaths and their answer", pt: "juramentos e sua resposta"}
+    intro:
+      en: |
+        An oath is sworn with the particles **وَ**, **بِـ** or **تَـ** + genitive (**وَاللّٰهِ، بِاللّٰهِ، تَاللّٰهِ** "by God") or with the verb **أُقْسِمُ بِـ / أَحْلِفُ بِـ** "I swear by". The statement sworn to (جَوَاب الْقَسَم) is marked: an affirmative past with **لَقَدْ** (**وَاللّٰهِ لَقَدْ رَأَيْتُهُ** "by God, I did see him"), a future with **لَـ … ـَنَّ** (the energetic: **وَاللّٰهِ لَأَفْعَلَنَّ** "I swear I'll do it"), a negative with **مَا** or **لَا**. **لَعَمْرِي** "by my life" is literary.
+
+        In speech **وَاللّٰهِ** is often just "really, honestly": **وَاللّٰهِ لَا أَعْرِفُ** "honestly, I don't know".
+      pt: |
+        O juramento se faz com as partículas **وَ**, **بِـ** ou **تَـ** + genitivo (**وَاللّٰهِ، بِاللّٰهِ، تَاللّٰهِ** "por Deus") ou com o verbo **أُقْسِمُ بِـ / أَحْلِفُ بِـ** "juro por". A afirmação jurada (جَوَاب الْقَسَم) vem marcada: passado afirmativo com **لَقَدْ** (**وَاللّٰهِ لَقَدْ رَأَيْتُهُ** "por Deus, eu o vi mesmo"), futuro com **لَـ … ـَنَّ** (o enérgico: **وَاللّٰهِ لَأَفْعَلَنَّ** "juro que vou fazer"), negativa com **مَا** ou **لَا**. **لَعَمْرِي** "pela minha vida" é literário.
+
+        Na fala **وَاللّٰهِ** muitas vezes é só "sério, juro": **وَاللّٰهِ لَا أَعْرِفُ** "juro que não sei".
+    examples:
+    - ["أقسم بالله إنني لا أعرف.", "I swear by God I don't know.", "Juro por Deus que não sei.", "أقسم"]
+    - ["والله لا أعرف.", "Honestly, I don't know.", "Juro que não sei.", "والله"]
+    - ["أقسم لك أنني سأعود.", "I swear to you I'll come back.", "Juro a você que vou voltar.", "أقسم"]
+    match: {seq: [{word: [والله, تالله, بالله, اقسم, اقسمت, نقسم, يقسم, احلف, حلفت, لعمري]}], gap: 0}
+    pool: [أقسم, والله, بالله, أحلف, أعدك, أظن]
+
+  - id: ar-c2-praise-blame
+    title: نِعْمَ، بِئْسَ
+    meaning: {en: "verbs of praise and blame", pt: "verbos de louvor e censura"}
+    intro:
+      en: |
+        **نِعْمَ** "how excellent is…" and **بِئْسَ** "how bad is…" are frozen verbs followed by a definite noun in the nominative (and often the specified person after it): **نِعْمَ الصَّدِيقُ أَنْتَ** "what an excellent friend you are", **بِئْسَ الْمَصِيرُ** "what an evil fate". **حَبَّذَا** "how good is" and **لَا حَبَّذَا** "how bad" work the same way: **حَبَّذَا الصَّبْرُ**. Don't confuse **نِعْمَ** with **نَعَمْ** "yes" — in unvowelled text the definite noun after it shows which it is.
+
+        The second exclamative pattern, **أَفْعِلْ بِـ**, is literary: **أَكْرِمْ بِهِ!** "how generous he is!"
+      pt: |
+        **نِعْمَ** "que excelente é…" e **بِئْسَ** "que ruim é…" são verbos fixos seguidos de substantivo definido no nominativo (e muitas vezes da pessoa especificada): **نِعْمَ الصَّدِيقُ أَنْتَ** "que amigo excelente você é", **بِئْسَ الْمَصِيرُ** "que destino terrível". **حَبَّذَا** "que bom é" e **لَا حَبَّذَا** "que ruim" funcionam igual: **حَبَّذَا الصَّبْرُ**. Não confunda **نِعْمَ** com **نَعَمْ** "sim" — no texto sem vogais é o substantivo definido depois que mostra qual é.
+
+        O segundo padrão exclamativo, **أَفْعِلْ بِـ**, é literário: **أَكْرِمْ بِهِ!** "como ele é generoso!"
+    examples:
+    - ["نعم الصديق أنت.", "What an excellent friend you are.", "Que amigo excelente você é.", "نعم"]
+    - ["بئس المصير.", "What an evil fate.", "Que destino terrível.", "بئس"]
+    - ["نعم الرجل أبوك.", "Your father is a fine man.", "Seu pai é um homem excelente.", "نعم"]
+    match:
+    - {seq: [{word: [نعم], noTrail: true}, {re: "^ال"}], gap: 0}
+    - {seq: [{word: [بئس, حبذا]}], gap: 0}
+    pool: [نعم, بئس, حبذا, ما, كم]
+
+  - id: ar-c2-exceptives
+    title: عدا، خلا، حاشا، لا سيّما
+    meaning: {en: "the rarer exceptives and لا سيما", pt: "os exceptivos raros e لا سيما"}
+    intro:
+      en: |
+        Beside **إِلَّا، غَيْر، سِوَى** (B2), classical and formal Arabic uses **عَدَا، خَلَا، حَاشَا** "except". Alone they are prepositions and take the **genitive**, or verbs with an **accusative**: **جَاءَ الْقَوْمُ عَدَا زَيْدٍ / زَيْدًا**. With **مَا** they are only verbs, so the accusative: **مَا عَدَا زَيْدًا, مَا خَلَا زَيْدًا**. **حَاشَا لِلّٰهِ / حَاشَ لِلّٰهِ** "God forbid".
+
+        **لَا سِيَّمَا / وَلَا سِيَّمَا** "especially, above all" singles out the best case: **أُحِبُّ الْفَوَاكِهَ لَا سِيَّمَا التُّفَّاحَ** "I love fruit, especially apples".
+      pt: |
+        Ao lado de **إِلَّا، غَيْر، سِوَى** (B2), o árabe clássico e formal usa **عَدَا، خَلَا، حَاشَا** "exceto". Sozinhos são preposições e pedem o **genitivo**, ou verbos com **acusativo**: **جَاءَ الْقَوْمُ عَدَا زَيْدٍ / زَيْدًا**. Com **مَا** são só verbos, portanto acusativo: **مَا عَدَا زَيْدًا, مَا خَلَا زَيْدًا**. **حَاشَا لِلّٰهِ / حَاشَ لِلّٰهِ** "Deus me livre".
+
+        **لَا سِيَّمَا / وَلَا سِيَّمَا** "sobretudo, principalmente" destaca o melhor caso: **أُحِبُّ الْفَوَاكِهَ لَا سِيَّمَا التُّفَّاحَ** "adoro frutas, principalmente maçã".
+    table:
+      head: {en: [Exceptive, After it], pt: [Exceptivo, Depois dele]}
+      rows:
+      - [إِلَّا, "acc. (positive sentence) / ac. (frase afirmativa)"]
+      - ["غَيْر، سِوَى", "gen. / gen."]
+      - ["عَدَا، خَلَا، حَاشَا", "gen. or acc. / gen. ou ac."]
+      - ["مَا عَدَا، مَا خَلَا", "acc. / ac."]
+    examples:
+    - ["حضر الجميع ما عدا أخي.", "Everyone came except my brother.", "Todos vieram menos meu irmão.", "عدا"]
+    - ["أحب الفواكه لا سيما التفاح.", "I love fruit, especially apples.", "Adoro frutas, principalmente maçã.", "سيما"]
+    - ["لا أعرف أحدا سوى توم.", "I don't know anyone but Tom.", "Não conheço ninguém além do Tom.", "سوى"]
+    match: {seq: [{word: [عدا, خلا, حاشا, حاش, سيما, سوى]}], gap: 0}
+    pool: [عدا, خلا, حاشا, سيما, سوى, إلا, غير]
+
+  - id: ar-c2-kada
+    title: كاد، أوشك، عسى، شرع
+    meaning: {en: "verbs of approach, hope and beginning", pt: "verbos de aproximação, esperança e início"}
+    intro:
+      en: |
+        Like **كَانَ**, these verbs have a subject and a predicate, but the predicate is a **verb in the imperfect**:
+
+        - approach: **كَادَ، أَوْشَكَ** "almost, was about to": **كَادَ يَسْقُطُ** "he almost fell"; **مَا كَادَ … حَتَّى** "hardly … when"
+        - hope: **عَسَى** (+ **أَنْ**): **عَسَى أَنْ يَأْتِيَ** "perhaps he'll come"
+        - beginning: **شَرَعَ، أَخَذَ، بَدَأَ، جَعَلَ** "began to": **أَخَذَ يَبْكِي** "he began to cry"
+
+        **كَادَ** is never followed by **أَنْ** in good style; **أَوْشَكَ** may be.
+      pt: |
+        Como **كَانَ**, estes verbos têm sujeito e predicado, mas o predicado é um **verbo no imperfeito**:
+
+        - aproximação: **كَادَ، أَوْشَكَ** "quase, estava a ponto de": **كَادَ يَسْقُطُ** "ele quase caiu"; **مَا كَادَ … حَتَّى** "mal … quando"
+        - esperança: **عَسَى** (+ **أَنْ**): **عَسَى أَنْ يَأْتِيَ** "quem sabe ele venha"
+        - início: **شَرَعَ، أَخَذَ، بَدَأَ، جَعَلَ** "começou a": **أَخَذَ يَبْكِي** "ele começou a chorar"
+
+        **كَادَ** não é seguido de **أَنْ** no bom estilo; **أَوْشَكَ** pode ser.
+    examples:
+    - ["كاد يسقط.", "He almost fell.", "Ele quase caiu.", "كاد"]
+    - ["كادت تبكي.", "She was on the verge of tears.", "Ela estava quase chorando.", "كادت"]
+    - ["عسى أن يأتي غدا.", "Perhaps he'll come tomorrow.", "Quem sabe ele venha amanhã.", "عسى"]
+    match:
+    - {seq: [{word: [كاد, كادت, كدت, كادوا, يكاد, تكاد, اكاد, اوشك, اوشكت, يوشك, شرع, شرعت]}, {pos: verb, tense: npast}], near: 1, gap: 0}
+    - {seq: [{word: [عسى]}], gap: 0}
+    pool: [كاد, كادت, أوشك, عسى, شرع, كان, صار]
+
+- title: {en: Verb forms in depth, pt: Formas verbais a fundo}
+  lessons:
+  - id: ar-c2-internal-passive
+    title: قِيلَ، يُقَالُ، تُوُفِّيَ
+    meaning: {en: "the internal passive: فُعِلَ، يُفْعَلُ", pt: "a passiva interna: فُعِلَ، يُفْعَلُ"}
+    intro:
+      en: |
+        Arabic forms the passive by changing the **vowels**: past **فُعِلَ** (**كُتِبَ** "was written"), present **يُفْعَلُ** (**يُكْتَبُ** "is written"); derived forms follow suit (**اُسْتُخْدِمَ** "was used", **يُسْتَخْدَمُ**). The doer is normally not named. Unvowelled text hides it, so context decides — except in common forms that are always passive:
+
+        - hollow verbs: **قِيلَ** "it was said", **يُقَالُ** "it is said", **بِيعَ** "was sold"
+        - **تُوُفِّيَ** "passed away" (literally "was taken in full")
+        - **وُلِدَ** "was born", **يُرْجَى** "it is requested" (in notices)
+
+        **يُقَالُ إِنَّ…** "it is said that…" opens many reports.
+      pt: |
+        O árabe forma a passiva mudando as **vogais**: passado **فُعِلَ** (**كُتِبَ** "foi escrito"), presente **يُفْعَلُ** (**يُكْتَبُ** "é escrito"); as formas derivadas seguem o mesmo (**اُسْتُخْدِمَ** "foi usado", **يُسْتَخْدَمُ**). O agente normalmente não aparece. O texto sem vogais esconde a passiva, e o contexto decide — menos nas formas comuns que são sempre passivas:
+
+        - verbos ocos: **قِيلَ** "foi dito", **يُقَالُ** "diz-se", **بِيعَ** "foi vendido"
+        - **تُوُفِّيَ** "faleceu" (literalmente "foi levado por inteiro")
+        - **وُلِدَ** "nasceu", **يُرْجَى** "solicita-se" (em avisos)
+
+        **يُقَالُ إِنَّ…** "diz-se que…" abre muitas notícias.
+    table:
+      head: {en: [Active, Passive], pt: [Ativa, Passiva]}
+      rows:
+      - [كَتَبَ – يَكْتُبُ, كُتِبَ – يُكْتَبُ]
+      - [قَالَ – يَقُولُ, قِيلَ – يُقَالُ]
+      - [اِسْتَخْدَمَ – يَسْتَخْدِمُ, اُسْتُخْدِمَ – يُسْتَخْدَمُ]
+    examples:
+    - ["يقال إنه غني جدا.", "They say he's very rich.", "Dizem que ele é muito rico.", "يقال"]
+    - ["قيل لي إن الاجتماع ألغي.", "I was told the meeting was cancelled.", "Disseram-me que a reunião foi cancelada.", "قيل"]
+    - ["توفي جده العام الماضي.", "His grandfather died last year.", "O avô dele faleceu no ano passado.", "توفي"]
+    match:
+    - {seq: [{word: [قيل, يقال, توفي, توفيت, بيع, بيعت, يرجى]}], gap: 0}
+    - {seq: [{pos: verb, voice: pass}], same: [person, number]}
+    pool: [قيل, يقال, توفي, قال, يقول, مات]
+
+  - id: ar-c2-form-ix
+    title: احمرّ، اصفرّ، ابيضّ
+    meaning: {en: "form IX (colours and defects) and forms XI–XV", pt: "a forma IX (cores e defeitos) e as formas XI–XV"}
+    intro:
+      en: |
+        **Form IX اِفْعَلَّ / يَفْعَلُّ** is made almost only from the roots of **colours and physical defects** and means "become, turn": **اِحْمَرَّ** "turned red, blushed", **اِصْفَرَّ** "turned yellow / pale", **اِبْيَضَّ** "turned white", **اِسْوَدَّ** "turned black", **اِخْضَرَّ** "turned green", **اِعْوَجَّ** "became crooked". The masdar is **اِفْعِلَال**: **اِحْمِرَار** "redness, blushing". Unvowelled, **احمر** may be the verb or the adjective **أَحْمَرُ** "red".
+
+        Forms **XI–XV** are rare and literary: **XI اِفْعَالَّ** (**اِحْمَارَّ** "turned deep red"), **XII اِفْعَوْعَلَ** (**اِخْشَوْشَنَ** "became very rough"), **XIII اِفْعَوَّلَ**, **XIV اِفْعَنْلَلَ**, **XV اِفْعَنْلَى**. You only need to recognise them in dictionaries and poetry.
+      pt: |
+        A **forma IX اِفْعَلَّ / يَفْعَلُّ** se faz quase só com raízes de **cores e defeitos físicos** e quer dizer "ficar, tornar-se": **اِحْمَرَّ** "ficou vermelho, corou", **اِصْفَرَّ** "ficou amarelo / pálido", **اِبْيَضَّ** "ficou branco", **اِسْوَدَّ** "ficou preto", **اِخْضَرَّ** "ficou verde", **اِعْوَجَّ** "entortou". O masdar é **اِفْعِلَال**: **اِحْمِرَار** "vermelhidão, rubor". Sem vogais, **احمر** pode ser o verbo ou o adjetivo **أَحْمَرُ** "vermelho".
+
+        As formas **XI–XV** são raras e literárias: **XI اِفْعَالَّ** (**اِحْمَارَّ** "ficou vermelho-escuro"), **XII اِفْعَوْعَلَ** (**اِخْشَوْشَنَ** "ficou muito áspero"), **XIII اِفْعَوَّلَ**, **XIV اِفْعَنْلَلَ**, **XV اِفْعَنْلَى**. Basta reconhecê-las nos dicionários e na poesia.
+    table:
+      head: {en: [Root, Past, Present, Masdar], pt: [Raiz, Passado, Presente, Masdar]}
+      rows:
+      - [ح م ر, اِحْمَرَّ, يَحْمَرُّ, اِحْمِرَار]
+      - [ص ف ر, اِصْفَرَّ, يَصْفَرُّ, اِصْفِرَار]
+      - [ب ي ض, اِبْيَضَّ, يَبْيَضُّ, اِبْيِضَاض]
+      - [س و د, اِسْوَدَّ, يَسْوَدُّ, اِسْوِدَاد]
+    examples:
+    - ["احمر وجهها خجلا.", "Her face turned red with embarrassment.", "O rosto dela ficou vermelho de vergonha.", "احمر"]
+    - ["اصفر وجهه من الخوف.", "His face went pale with fear.", "O rosto dele empalideceu de medo.", "اصفر"]
+    - ["تحمر أوراق الشجر في الخريف.", "The leaves turn red in autumn.", "As folhas das árvores ficam vermelhas no outono.", "تحمر"]
+    match:
+    - {seq: [{word: [احمر, احمرت, اصفر, اصفرت, ابيض, ابيضت, اسود, اسودت, اخضر, اخضرت, ازرق, ازرقت], pos: verb}], gap: 0}
+    - {seq: [{word: [يحمر, تحمر, يصفر, تصفر, يخضر, تخضر, احمرار, اصفرار, اسوداد, اخضرار]}], gap: 0}
+    pool: [احمرّ, اصفرّ, ابيضّ, اسودّ, اخضرّ, أحمر]
+
+  - id: ar-c2-kana-qad
+    title: كان قد ذهب، سيكون قد
+    meaning: {en: "compound tenses with كان and قد", pt: "tempos compostos com كان e قد"}
+    intro:
+      en: |
+        **كَانَ** combines with the other tenses to place events in time precisely:
+
+        - **كَانَ قَدْ** + past = pluperfect: **كَانَ قَدْ خَرَجَ عِنْدَمَا وَصَلْتُ** "he had gone out when I arrived"
+        - **كَانَ** + imperfect = past habit or progress: **كَانَ يَقْرَأُ** "he used to read / was reading" (A2)
+        - **سَيَكُونُ قَدْ** + past = future perfect: **سَيَكُونُ قَدْ وَصَلَ** "he will have arrived"
+        - **كَانَ سَـ** + imperfect = future in the past: **كَانَ سَيُسَافِرُ** "he was going to travel"
+
+        **كَانَ** agrees with the subject, and so does the following verb: **كَانَتْ قَدْ نَامَتْ**.
+      pt: |
+        **كَانَ** se combina com os outros tempos para situar os fatos com precisão:
+
+        - **كَانَ قَدْ** + passado = mais-que-perfeito: **كَانَ قَدْ خَرَجَ عِنْدَمَا وَصَلْتُ** "ele tinha saído quando cheguei"
+        - **كَانَ** + imperfeito = hábito ou progresso no passado: **كَانَ يَقْرَأُ** "ele lia / estava lendo" (A2)
+        - **سَيَكُونُ قَدْ** + passado = futuro perfeito: **سَيَكُونُ قَدْ وَصَلَ** "ele terá chegado"
+        - **كَانَ سَـ** + imperfeito = futuro do pretérito: **كَانَ سَيُسَافِرُ** "ele ia viajar"
+
+        **كَانَ** concorda com o sujeito, e o verbo seguinte também: **كَانَتْ قَدْ نَامَتْ**.
+    examples:
+    - ["كان قد خرج عندما وصلت.", "He had gone out when I arrived.", "Ele tinha saído quando cheguei.", "قد"]
+    - ["كانت قد نامت.", "She had fallen asleep.", "Ela tinha adormecido.", "قد"]
+    - ["سيكون قد وصل قبل المساء.", "He will have arrived before evening.", "Ele terá chegado antes do anoitecer.", "قد"]
+    match: {seq: [{word: [كان, كانت, كنت, كانوا, كنا, كنتم, يكون, سيكون, تكون, ستكون]}, {word: [قد]}, {pos: verb, tense: past}], near: 1, gap: 1}
+    pool: [قد, لقد, لم, سوف, لن]
+
+- title: {en: Fine points of iʿrāb, pt: Detalhes do iʿrāb}
+  lessons:
+  - id: ar-c2-fossil-accusatives
+    title: شكراً، أيضاً، احتراماً
+    meaning: {en: "accusatives behind everyday words", pt: "acusativos por trás de palavras do dia a dia"}
+    intro:
+      en: |
+        Many everyday words are **frozen accusatives** with tanwin **-an** (written ـًا):
+
+        - **المفعول المطلق** (cognate / absolute object), a masdar standing for its own verb: **شُكْرًا** "thanks" (= أَشْكُرُكَ شُكْرًا), **عَفْوًا**, **حَقًّا** "truly", **أَيْضًا** "also", **جِدًّا** "very", **طَبْعًا** "of course". In full sentences it intensifies or describes: **ضَرَبَهُ ضَرْبًا شَدِيدًا** "he beat him hard".
+        - **المفعول لأجله** (object of purpose), a masdar giving the reason: **وَقَفُوا احْتِرَامًا لَهُ** "they stood out of respect for him", **خَوْفًا مِنْ** "for fear of".
+        - **الظرف** (adverbial of time and place): **صَبَاحًا** "in the morning", **أَبَدًا** "ever, never", **دَائِمًا**, **فَوْرًا** "at once".
+      pt: |
+        Muitas palavras do dia a dia são **acusativos fossilizados** com tanwin **-an** (escrito ـًا):
+
+        - **المفعول المطلق** (objeto absoluto), um masdar no lugar do próprio verbo: **شُكْرًا** "obrigado" (= أَشْكُرُكَ شُكْرًا), **عَفْوًا**, **حَقًّا** "realmente", **أَيْضًا** "também", **جِدًّا** "muito", **طَبْعًا** "claro". Em frases completas intensifica ou descreve: **ضَرَبَهُ ضَرْبًا شَدِيدًا** "bateu nele com força".
+        - **المفعول لأجله** (objeto de finalidade), um masdar que dá o motivo: **وَقَفُوا احْتِرَامًا لَهُ** "levantaram-se em respeito a ele", **خَوْفًا مِنْ** "por medo de".
+        - **الظرف** (adjunto de tempo e lugar): **صَبَاحًا** "de manhã", **أَبَدًا** "jamais", **دَائِمًا**, **فَوْرًا** "imediatamente".
+    examples:
+    - ["شكرا جزيلا.", "Thank you very much.", "Muito obrigado.", "شكرا"]
+    - ["وقفوا احتراما له.", "They stood out of respect for him.", "Levantaram-se em respeito a ele.", "احتراما"]
+    - ["هذا صعب جدا.", "This is very difficult.", "Isto é muito difícil.", "جدا"]
+    match: {seq: [{word: [شكرا, عفوا, حقا, طبعا, جدا, ايضا, ابدا, تماما, فورا, احتراما, خوفا, حبا, صباحا, مساء, دائما, غدا]}], gap: 0}
+    pool: [شكراً, حقاً, أيضاً, جداً, أبداً, تماماً, فوراً, احتراماً]
+
+  - id: ar-c2-tamyiz
+    title: كم كتاباً؟ عشرون طالباً
+    meaning: {en: "tamyīz: the accusative of specification", pt: "tamyīz: o acusativo de especificação"}
+    intro:
+      en: |
+        **التمييز** is an indefinite **accusative** that says *in what respect* something is meant:
+
+        - after numbers **11–99**: **أَحَدَ عَشَرَ كِتَابًا**, **عِشْرُونَ طَالِبًا**, **خَمْسُونَ سَنَةً** (singular accusative)
+        - after interrogative **كَمْ** "how many": **كَمْ كِتَابًا قَرَأْتَ؟** "how many books have you read?" (after exclamatory **كَمْ** "how many…!" the noun is genitive: **كَمْ كِتَابٍ قَرَأْتُ!**)
+        - after an elative or a verb of fullness: **هُوَ أَكْثَرُ عِلْمًا** "he is more learned" (literally "more in knowledge"), **اِمْتَلَأَ الْكَأْسُ مَاءً** "the glass filled with water"
+        - after measures: **لِتْرٌ حَلِيبًا** (also iḍāfa: **لِتْرُ حَلِيبٍ**)
+      pt: |
+        O **التمييز** é um **acusativo** indefinido que diz *em que aspecto* algo é entendido:
+
+        - depois dos números **11–99**: **أَحَدَ عَشَرَ كِتَابًا**, **عِشْرُونَ طَالِبًا**, **خَمْسُونَ سَنَةً** (acusativo singular)
+        - depois do interrogativo **كَمْ** "quantos": **كَمْ كِتَابًا قَرَأْتَ؟** "quantos livros você leu?" (depois do **كَمْ** exclamativo "quantos…!" o substantivo vai no genitivo: **كَمْ كِتَابٍ قَرَأْتُ!**)
+        - depois de um elativo ou de um verbo de enchimento: **هُوَ أَكْثَرُ عِلْمًا** "ele é mais sábio" (literalmente "mais em saber"), **اِمْتَلَأَ الْكَأْسُ مَاءً** "o copo se encheu de água"
+        - depois de medidas: **لِتْرٌ حَلِيبًا** (também iḍāfa: **لِتْرُ حَلِيبٍ**)
+    table:
+      head: {en: [Number, Example], pt: [Número, Exemplo]}
+      rows:
+      - [11, أَحَدَ عَشَرَ كِتَابًا]
+      - [20, عِشْرُونَ طَالِبًا]
+      - [kam, كَمْ كِتَابًا؟]
+    examples:
+    - ["كم كتابا قرأت؟", "How many books have you read?", "Quantos livros você leu?", "كتابا"]
+    - ["في الفصل عشرون طالبا.", "There are twenty students in the class.", "Há vinte alunos na sala.", "طالبا"]
+    - ["هو أكثر علما منه.", "He is more learned than him.", "Ele é mais sábio do que ele.", "علما"]
+    match:
+    - {seq: [{word: [كم]}, {pos: noun, re: "^(?!(?:لديكما|عندنا|معنا|لنا|هذا|انا|هنا)$)[\\s\\S]*?(?:ا$)"}], gap: 1}
+    - {seq: [{word: [عشرون, عشرين, ثلاثون, ثلاثين, اربعون, اربعين, خمسون, خمسين, ستون, ستين, سبعون, سبعين, ثمانون, ثمانين, تسعون, تسعين, عشر]}, {re: "^(?!(?:انا|سنة|هذا)$)[\\s\\S]*?(?:(ا|ة)$)"}], gap: 1}
+
+  - id: ar-c2-lam-emphasis
+    title: إنّه لَصادق
+    meaning: {en: "the emphatic lām after إنّ", pt: "o lām enfático depois de إنّ"}
+    intro:
+      en: |
+        After **إِنَّ** the predicate (or a postponed subject) can take the emphatic **لَـ** (اللام المزحلقة "the slid lām"): **إِنَّهُ لَصَادِقٌ** "he is truly honest", **إِنَّ هٰذَا لَأَمْرٌ عَجِيبٌ** "this is indeed a strange matter", **إِنَّ فِي ذٰلِكَ لَعِبْرَةً** "in that there is surely a lesson". It is a feature of rhetoric, the Qur'an and formal speeches; the lām never comes right after **إِنَّ**, but "slides" to the predicate. The lightened **إِنْ** keeps the lām obligatorily, to tell it from negative **إِنْ**: **إِنْ كَانَ لَصَادِقًا** "he was truly honest".
+      pt: |
+        Depois de **إِنَّ** o predicado (ou um sujeito posposto) pode levar o **لَـ** enfático (اللام المزحلقة "o lām deslizado"): **إِنَّهُ لَصَادِقٌ** "ele é realmente sincero", **إِنَّ هٰذَا لَأَمْرٌ عَجِيبٌ** "isto é de fato uma coisa estranha", **إِنَّ فِي ذٰلِكَ لَعِبْرَةً** "nisso há certamente uma lição". É um traço da retórica, do Alcorão e dos discursos formais; o lām nunca vem logo depois de **إِنَّ**, mas "desliza" para o predicado. O **إِنْ** atenuado conserva o lām obrigatoriamente, para se distinguir do **إِنْ** negativo: **إِنْ كَانَ لَصَادِقًا** "ele era realmente sincero".
+    examples:
+    - ["إنه لصادق.", "He is truly honest.", "Ele é realmente sincero.", "لصادق"]
+    - ["إن هذا لأمر عجيب.", "This is indeed a strange matter.", "Isto é de fato uma coisa estranha.", "لأمر"]
+    - ["إنها لفكرة رائعة.", "That's truly a wonderful idea.", "É realmente uma ideia maravilhosa.", "لفكرة"]
+    match: {seq: [{word: [انه, انها, انك, انني, انهم, انكم, ان]}, {re: "^(?!(?:لماذا|لديك|ليست|لديه|لهم|لقد|لما|لكي|لها|لكم|ليس|لدي|لان|لنا|لكن|لن|لو|لي|لم|لك|لا|له)$)[\\s\\S]*?(?:^ل(ا|ي|م|ف|ص|ع|ج|ك|ح|س|ر|ط|ب|ق|ش|خ|د|ت|ن|غ|ز|ه|ث|ذ|ض|ظ))"}], near: 2, gap: 1}
+
+- title: {en: Literary connectors, pt: Conectores literários}
+  lessons:
+  - id: ar-c2-conditional-nouns
+    title: مهما، أينما، كلّما، من
+    meaning: {en: "conditional nouns: whatever, wherever, whenever", pt: "nomes condicionais: o que quer que, onde quer que, sempre que"}
+    intro:
+      en: |
+        Beside **إِنْ، إِذَا، لَوْ**, a set of **conditional nouns** introduce general conditions, classically with the **jussive** (or the past) in both clauses: **مَنْ** "whoever" (**مَنْ يَجْتَهِدْ يَنْجَحْ** "whoever works hard succeeds"), **مَا / مَهْمَا** "whatever" (**مَهْمَا تَفْعَلْ…**), **أَيْنَمَا / حَيْثُمَا** "wherever", **مَتَى** "whenever", **كَيْفَمَا** "however". **كُلَّمَا** "every time that" takes the past in both clauses: **كُلَّمَا رَأَيْتُهُ تَذَكَّرْتُ أَبِي** "every time I see him I remember my father".
+      pt: |
+        Ao lado de **إِنْ، إِذَا، لَوْ**, um grupo de **nomes condicionais** introduz condições gerais, no clássico com o **jussivo** (ou o passado) nas duas orações: **مَنْ** "quem" (**مَنْ يَجْتَهِدْ يَنْجَحْ** "quem se esforça tem sucesso"), **مَا / مَهْمَا** "o que quer que" (**مَهْمَا تَفْعَلْ…**), **أَيْنَمَا / حَيْثُمَا** "onde quer que", **مَتَى** "sempre que", **كَيْفَمَا** "como quer que". **كُلَّمَا** "toda vez que" pede o passado nas duas orações: **كُلَّمَا رَأَيْتُهُ تَذَكَّرْتُ أَبِي** "toda vez que o vejo, lembro do meu pai".
+    examples:
+    - ["مهما حدث فلن أتركك.", "Whatever happens, I won't leave you.", "Aconteça o que acontecer, não vou te deixar.", "مهما"]
+    - ["سأتبعك أينما ذهبت.", "I'll follow you wherever you go.", "Vou te seguir aonde você for.", "أينما"]
+    - ["كلما رأيته تذكرت أبي.", "Every time I see him I remember my father.", "Toda vez que o vejo lembro do meu pai.", "كلما"]
+    match: {seq: [{word: [مهما, اينما, حيثما, كيفما, كلما, اذما]}], gap: 0}
+    pool: [مهما, أينما, حيثما, كيفما, كلما, إذا, عندما]
+
+  - id: ar-c2-lamma-idh
+    title: لمّا، إذ، ما إن… حتى
+    meaning: {en: "literary time connectors", pt: "conectores temporais literários"}
+    intro:
+      en: |
+        Literary narrative links events with:
+
+        - **لَمَّا** + past "when, after": **لَمَّا وَصَلَ اسْتَقْبَلُوهُ** "when he arrived they welcomed him"; + jussive it means "not yet": **لَمَّا يَصِلْ** "he hasn't arrived yet"
+        - **إِذْ** "when, since, as": **إِذْ كُنْتُ صَغِيرًا** "when I was little"; **إِذْ** also gives a cause
+        - **إِذَا** of surprise (إذا الفجائية) + noun: **خَرَجْتُ فَإِذَا الْمَطَرُ يَنْهَمِرُ** "I went out, and lo, the rain was pouring"
+        - **مَا إِنْ … حَتَّى** "no sooner … than": **مَا إِنْ وَصَلَ حَتَّى نَامَ** "no sooner had he arrived than he fell asleep"
+        - **رَيْثَمَا** "until, while (waiting)", **حَالَمَا** "as soon as"
+      pt: |
+        A narrativa literária liga os fatos com:
+
+        - **لَمَّا** + passado "quando, depois que": **لَمَّا وَصَلَ اسْتَقْبَلُوهُ** "quando ele chegou, o receberam"; + jussivo quer dizer "ainda não": **لَمَّا يَصِلْ** "ele ainda não chegou"
+        - **إِذْ** "quando, já que": **إِذْ كُنْتُ صَغِيرًا** "quando eu era pequeno"; **إِذْ** também dá uma causa
+        - **إِذَا** de surpresa (إذا الفجائية) + substantivo: **خَرَجْتُ فَإِذَا الْمَطَرُ يَنْهَمِرُ** "saí, e eis que chovia a cântaros"
+        - **مَا إِنْ … حَتَّى** "mal … e já": **مَا إِنْ وَصَلَ حَتَّى نَامَ** "mal chegou, dormiu"
+        - **رَيْثَمَا** "até que, enquanto (se espera)", **حَالَمَا** "assim que"
+    examples:
+    - ["لما وصل استقبلوه بحرارة.", "When he arrived, they welcomed him warmly.", "Quando ele chegou, o receberam calorosamente.", "لما"]
+    - ["ما إن وصل حتى نام.", "No sooner had he arrived than he fell asleep.", "Mal chegou e já dormiu.", "حتى"]
+    - ["سأتصل بك حالما أصل.", "I'll call you as soon as I arrive.", "Ligo para você assim que chegar.", "حالما"]
+    match:
+    - {seq: [{word: [لما], start: true}], gap: 0}
+    - {seq: [{word: [اذ, ريثما, حالما]}], gap: 0}
+    - {seq: [{word: [ما]}, {word: [ان]}, {word: [حتى]}], near: 4, gap: 2}
+    pool: [لما, إذ, ريثما, حالما, عندما, حتى, بينما]
