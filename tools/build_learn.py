@@ -219,6 +219,57 @@ def de_learn(book: Path, plan_path: Path) -> tuple[dict, dict, dict]:
     return {"system": plan["system"], "levels": levels, "credit": plan["credit"]}, lessons, questions
 
 
+def agfe_grc(index: dict, lessons: dict, questions: dict) -> None:
+    """Ancient Greek for Everyone (CC BY 4.0): its 48 chapters as lessons, chapters 1–20 Beginner, the rest
+    Intermediate; each chapter's rule picks the Greek sentences its exercises come from; the book's own exercise
+    sentences join the Greek corpus (vendor/corpora/grc/agfe.txt)"""
+    import html as _h
+    import re
+    from learn_agfe import agfe_lessons, exercise_sentences
+    folder = ROOT / "vendor" / "agfe" / "html"
+    toc = (folder / "toc.html").read_text(encoding="utf-8")
+    titles = {}
+    for m in re.finditer(r'href="https://pressbooks.pub/ancientgreek/chapter/(\d+)/"[^>]*>(.*?)</a>', toc, re.S):
+        t = re.sub(r"\s+", " ", _h.unescape(re.sub(r"<[^>]+>", "", m.group(2)))).strip()
+        titles[int(m.group(1))] = re.sub(r"^\d+\.\s*", "", t)
+    v = lambda **k: {"seq": [{"pos": "verb", **k}], "same": ["person", "number"]}   # noqa: E731
+    n = lambda **k: {"seq": [{"pos": ["noun", "adj"], **k}], "same": ["case", "number"]}   # noqa: E731
+    rules = {
+        1: {"seq": [{"re": "[ηωήώῆῶ]", "pos": ["noun", "verb", "adj"]}]}, 2: {"seq": [{"re": "[θφχψξζ]", "pos": ["noun", "verb", "adj"]}]},
+        3: {"seq": [{"re": "[ἁἑἡἱὁὑὡῥ]", "pos": ["noun", "verb", "adj", "pron"]}]},
+        4: v(tense="pres", mood="ind", voice="act"), 5: {"seq": [{"pos": "verb", "lemma": "^(εἰμί|ἔχω)$"}], "same": ["person", "number"]},
+        6: {"seq": [{"pos": "verb", "lemma": "^(δίδωμι|τίθημι|ἵστημι|ἵημι|εἰμί|ἔχω)$"}], "same": ["person", "number"]},
+        7: n(pos="noun", case=["nom", "acc"]), 8: {"seq": [{"pos": "noun", "case": "acc"}], "same": ["number"]},
+        9: n(pos="noun", case=["gen", "dat"]), 10: {"seq": [{"word": ["καί", "ἀλλά", "ἀλλ’", "δέ", "δ’", "γάρ", "οὖν", "τε", "ἤ", "οὔτε", "εἴτε", "ἐπεί", "ὅτι", "διό"]}], "gap": 0},
+        11: {"seq": [{"pos": "pron", "lemma": "^(ἐγώ|σύ|ἡμεῖς|ὑμεῖς)$"}], "same": ["number"]},
+        12: {"seq": [{"pos": "pron", "lemma": "^(αὐτός|οὗτος|ἐκεῖνος|ὅδε)$"}], "same": ["case", "number"]},
+        13: {"seq": [{"pos": "prep"}, {"pos": ["noun", "det"]}], "gap": 1, "same": ["number"]},
+        14: v(tense="pres", mood="ind", voice="act", lemma="ω$"), 15: v(tense="fut", mood="ind"), 16: v(tense="fut"),
+        17: {"seq": [{"pos": "verb", "lemma": "(άω|έω|όω)$", "tense": ["pres", "impf"]}], "same": ["tense", "mood", "voice"]},
+        18: {"seq": [{"pos": "verb", "lemma": "(άω|έω|όω)$"}], "same": ["tense", "mood", "voice"]},
+        19: {"seq": [{"pos": "noun", "dict": "(ας|ης) [fm]\\.$"}], "same": ["number"]}, 20: {"seq": [{"pos": "noun", "dict": "ου [mn]\\.$"}], "same": ["number"]},
+        21: v(tense=["pres", "impf"], voice=["mid", "mp"]), 22: v(voice=["mid", "mp"]),
+        23: {"seq": [{"pos": "noun", "dict": ", \\S+ος( [mfn]\\.)?$"}], "same": ["number"]}, 24: {"seq": [{"pos": "noun", "lemma": "ος$", "dict": "(ους|εος) n\\.$"}], "same": ["number"]},
+        25: {"seq": [{"word": ["ὅς", "ἥ", "ὅ", "οὗ", "ἧς", "ᾧ", "ᾗ", "ὅν", "ἥν", "οἵ", "αἵ", "ἅ", "ὧν", "οἷς", "αἷς", "οὕς", "ἅς"]}], "gap": 0},
+        26: {"seq": [{"pos": "pron", "lemma": "^(τίς|τις|ὅστις)$"}], "same": ["case", "number"]},
+        27: {"seq": [{"pos": "verb", "mood": "inf"}], "same": ["mood"]}, 28: v(tense="impf", mood="ind"),
+        29: {"seq": [{"pos": "adj"}], "same": ["case", "number"]}, 30: {"seq": [{"pos": "adj", "lemma": "^(πᾶς|ἅπας|ἀληθής|σαφής|εὐδαίμων|σώφρων|ταχύς|ἡδύς|μέγας|πολύς)$"}], "same": ["case", "number"]},
+        31: v(tense="aor", mood="ind", voice="act"), 32: v(tense="aor", mood="ind"),
+        33: {"seq": [{"pos": ["adv", "num"]}], "gap": 0}, 34: v(tense="aor", voice="mid"), 35: v(tense="aor", voice="pass"),
+        36: {"seq": [{"pos": "adj", "re": "(τερ|τατ)[οηαωᾳῃῳ]|ιστ[οηαω]"}], "same": ["case", "number"]},
+        37: {"seq": [{"pos": "vpar"}], "same": ["case", "number", "gender"]}, 38: {"seq": [{"pos": "vpar", "tense": "aor"}], "same": ["case", "number"]},
+        39: {"seq": [{"pos": ["noun", "pron"], "case": "gen"}, {"pos": "vpar", "case": "gen"}], "near": 2, "gap": 1, "same": ["case", "number", "gender"]},
+        40: {"seq": [{"pos": "noun", "case": "voc"}], "same": ["number"]}, 41: {"seq": [{"pos": "verb", "mood": "imp"}], "same": ["mood"]},
+        42: v(tense=["perf", "plup"], voice="act"), 43: v(tense=["perf", "plup"]), 44: v(tense=["perf", "plup"], voice=["mid", "mp", "pass"]),
+        45: {"seq": [{"word": ["μέν", "δέ", "γε", "δή", "μήν", "τοι", "ἄρα", "που", "πως", "οἶδα", "χρή", "δεῖ"]}], "gap": 0},
+        46: v(mood="sub"), 47: v(mood="opt"), 48: {"seq": [{"word": ["εἰ", "ἐάν", "ἄν", "ἂν"]}, {"pos": "verb"}], "near": 4, "gap": 0},
+    }
+    print(f"grc: {agfe_lessons(folder, titles, index, lessons, questions, levels={k: 'Beginner' if k <= 20 else 'Intermediate' for k in titles}, rules=rules)} lessons from Ancient Greek for Everyone")
+    sents = [s for k in sorted(titles) if (folder / f"chapter__{k}.html").exists() for s in exercise_sentences((folder / f"chapter__{k}.html").read_text(encoding="utf-8"))]
+    (ROOT / "vendor" / "corpora" / "grc").mkdir(parents=True, exist_ok=True)
+    (ROOT / "vendor" / "corpora" / "grc" / "agfe.txt").write_text("\n".join(dict.fromkeys(sents)) + "\n", encoding="utf-8")
+
+
 BUILDERS = {"ja": lambda: ja_learn(ROOT / "vendor" / "jlpt-grammar-enhanced", ROOT / "vendor" / "openjlpt")}
 BUILDERS["de"] = lambda: de_learn(ROOT / "vendor" / "grimm", ROOT / "tools" / "curricula" / "de" / "plan.yml")
 def tatoeba_pairs(t3: str, limit_len: int = 30) -> list:
@@ -378,6 +429,8 @@ def main(code: str) -> None:
     if code == "la" and (ROOT / "vendor" / "ag" / "alphabet.html").exists():
         from learn_ag import ag_lessons
         print(f"la: {ag_lessons(ROOT / 'vendor' / 'ag', index, lessons, questions)} lessons from Allen and Greenough (DCC)")
+    if code == "grc" and (ROOT / "vendor" / "agfe" / "html" / "toc.html").exists():
+        agfe_grc(index, lessons, questions)
     if code == "sa" and (ROOT / "vendor" / "learnsanskrit" / "html").exists():
         from learn_lso import lso_lessons
         print(f"sa: {lso_lessons(ROOT / 'vendor' / 'learnsanskrit', index, lessons, questions)} lessons from the learnsanskrit.org guide")

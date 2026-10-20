@@ -247,5 +247,8 @@ apparatus and editorial choices, so each bundled passage records its source and 
   (CC BY-SA: "freely available for re-use under a Creative Commons Attribution-ShareAlike license"), 255 pages.
 - **Hungarian**: Joseph Ginever, *Hungarian Grammar* (1909), Project Gutenberg #76725, public domain; CEFR lessons
   written by AI (Claude) for Casus, marked as such.
+- **Ancient Greek**: Wilfred E. Major and Michael Laughy, *Ancient Greek for Everyone* (Pressbooks, 2018),
+  pressbooks.pub/ancientgreek, CC BY 4.0: its 48 chapters' text (photos left out), and its exercise sentences as extra
+  Greek sentences for the exercises.
 - **Generated lessons** (every spaced-script language): function words, verbs, vocabulary and phrases built by Casus
   from Wiktionary (CC BY-SA, via kaikki.org) and Tatoeba (CC BY 2.0 FR); marked "generated" on every page.

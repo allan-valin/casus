@@ -88,3 +88,5 @@ mkdir -p "$V/batepapo"; [ -s "$V/batepapo/index.html" ] || curl -sfL -A "Mozilla
 grep -o 'href="https://uw.pressbooks.pub/batepapo/chapter/[^"#]*' "$V/batepapo/index.html" | sed 's/href="//' | awk '!seen[$0]++' > "$V/batepapo/chapters.txt"
 while read u; do f="$V/batepapo/$(basename "$u").html"; [ -s "$f" ] || { curl -sfL -A "Mozilla/5.0 Casus" "$u" -o "$f"; sleep 1.5; }; done < "$V/batepapo/chapters.txt"
 echo "Learn sources in $V"
+# Ancient Greek for Everyone (Major & Laughy, CC BY 4.0): no download offered and a Cloudflare check, so a headless browser
+[ -s "$V/agfe/html/chapter__48.html" ] || node "$ROOT/tools/fetch_agfe.mjs"
