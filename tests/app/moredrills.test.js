@@ -111,3 +111,13 @@ describe('learnSample: some Learn lessons and their questions, for the drills th
     expect(got.qs.map((q) => q.type).sort()).toEqual(['gap', 'translate']);
   });
 });
+
+describe('agreement builder: only unambiguous cells', () => {
+  it('a cell with several forms (Icelandic: strong, weak and superlative in one cell) is not asked', async () => {
+    const la = getLanguage('la');
+    const bonus = { id: '10', headword: 'bonus', pos: 'adj', rows: [['bonam', 'aasfp'], ['optimam', 'aasfp'], ['bonae', 'agsfp']] };
+    const rosa = { id: '1', headword: 'rosa', pos: 'noun', rows: [['rosam', 'nasf'], ['rosae', 'ngsf']] };
+    const items = agreementItems([bonus, rosa], la, (c) => c, (n) => n);
+    expect(items.map((i) => i.answer)).toEqual(['bonae rosae']);
+  });
+});

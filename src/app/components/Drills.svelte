@@ -26,7 +26,7 @@
   // a language that does not inflect (Chinese) has no endings drills; one without noun cases (Portuguese) only the verbs
   // (the newer drills, research items 4–15: each only where its data exists — genders, IPA, a voice, noun cases)
   const cased = $derived(!!lang.inventory?.channels?.case);
-  const drills = $derived([...(lang.game ? ['letters'] : []), ...(lang.noEndings ? [] : lang.noNounEndings ? ['verbs', 'parse', 'transform'] : ['nouns', 'verbs', 'parse', 'transform', 'agree']),
+  const drills = $derived([...(lang.game ? ['letters'] : []), ...(lang.noEndings ? [] : lang.noNounEndings ? ['verbs', 'parse', 'transform'] : ['nouns', 'verbs', 'parse', 'transform', ...(models.length && !agreeList.length ? [] : ['agree'])]),
     'cloze', 'spot', ...(cased ? ['who'] : []), 'words', 'match', ...(bins?.items?.length ? ['bins'] : []), ...(sounds?.words?.length ? ['sounds'] : []),
     ...(sounds?.pairs?.length && voice ? ['pairs'] : []), 'phrases', 'listen', ...(voice ? ['shadow'] : []), 'review']);
   let chosen = $state(null);

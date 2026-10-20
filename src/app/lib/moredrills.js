@@ -102,8 +102,11 @@ export function agreementItems(models, lang, caseName, numberName) {
       if (genders.length !== 1) continue;
       const g = genders[0];
       for (const n of ncs) {
+        // one form each, or no fair question (a paradigm that keeps definite and indefinite, strong and weak, or
+        // positive and superlative in one cell)
+        if (new Set(ncs.filter((x) => x.case === n.case && x.number === n.number).map((x) => x.form)).size !== 1) continue;
         const fits = acs.filter((a) => a.case === n.case && a.number === n.number && (a.gender === g || a.gender === 'x' || !a.gender));
-        if (!fits.length) continue;
+        if (new Set(fits.map((a) => a.form)).size !== 1) continue;
         const right = new Set(fits.map((a) => a.form));
         const answer = `${fits[0].form} ${n.form}`;
         const pool = [...new Set(acs.map((a) => a.form))].filter((f) => !right.has(f)).map((f) => `${f} ${n.form}`);

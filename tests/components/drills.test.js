@@ -133,7 +133,7 @@ describe('frequent words and phrases (Allan, 2026-10-18)', () => {
     await tick();
     const sheet = () => [...document.querySelectorAll('.cheat')].at(-1);
     const menu = [...sheet().querySelectorAll('.cheat-tab')].map((b) => b.dataset.section);
-    expect(menu).toEqual(['nouns', 'verbs', 'parse', 'transform', 'agree', 'cloze', 'spot', 'who', 'words', 'match', 'phrases', 'listen', 'review']);
+    expect(menu).toEqual(['nouns', 'verbs', 'parse', 'transform', 'cloze', 'spot', 'who', 'words', 'match', 'phrases', 'listen', 'review']);
     expect(sheet().querySelector('.cheat-tab.active').dataset.section).toBe('nouns');
     await fireEvent.click(sheet().querySelector('.cheat-tab[data-section="phrases"]'));
     await tick();

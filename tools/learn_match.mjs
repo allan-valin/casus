@@ -242,14 +242,20 @@ export function shareStem(forms, answer, tail) {
  * which is nominative (English: subject case) and the one every reading of which is accusative (object case), in a
  * sentence with a verb; null when either is missing, doubled or uncertain. objFirst: the object comes first, the
  * sentences that teach the point (Den Hund sieht der Mann). */
-export function rolesOf(blocks) {
+// accusatives of time (den ganzen Tag, allan morguninn, всю ночь, totam noctem) are no objects
+const TIME = /^(klukka|uhr|morgunn|dagur|kvöld|nótt|ár|vika|stund|tími|mánuður|tag|morgen|abend|nacht|jahr|woche|monat|stunde|zeit|день|ночь|утро|вечер|год|неделя|месяц|час|время|минута|dies|nox|annus|hora|tempus|mensis|ἡμέρα|νύξ|ἔτος|χρόνος|ὥρα|μήν|dzień|noc|rok|tydzień|godzina|miesiąc|den|týden|hodina|měsíc|päivä|yö|vuosi|viikko|tunti|aika|kuukausi|nap|éj|év|hét|óra|idő|hónap|gün|gece|yıl|hafta|saat|ay|μέρα|νύχτα|χρόνο|εβδομάδα|ώρα|μήνας|يوم|ليلة|سنة|أسبوع|ساعة|وقت|شهر|day|night|year|week|hour|time|month|morning|evening)$/u;
+
+export function rolesOf(blocks, { lemmaOf = null } = {}) {
   const sure = (b, cases) => ['noun', 'pron'].includes(b.candidates?.[0]?.analysis?.pos) && b.candidates.every((c) => cases.includes(c.analysis?.case) && ['noun', 'pron'].includes(c.analysis?.pos));
   const sbj = blocks.map((b, i) => (sure(b, ['nom', 'sbj']) ? i : -1)).filter((i) => i >= 0);
   const obj = blocks.map((b, i) => (sure(b, ['acc', 'obj']) ? i : -1)).filter((i) => i >= 0);
   // one clause: one verb, no comma or colon inside, and the object not governed by a preposition (á sjálfa sig)
   const verbs = blocks.filter((b) => b.candidates?.length && b.candidates.some((c) => c.analysis?.pos === 'verb')).length;
   const inner = blocks.slice(0, -1).some((b) => /[,;:–—]/u.test(b.token.trail ?? '') || /^[,;:–—"„“«»]$/u.test(b.token.surface));
-  if (sbj.length !== 1 || obj.length !== 1 || verbs !== 1 || inner) return null;
+  const unread = blocks.some((b) => /[\p{L}]/u.test(b.token.surface) && !b.candidates?.length);
+  const conj = blocks.some((b) => b.candidates?.length && b.candidates.every((c) => c.analysis?.pos === 'conj'));
+  if (sbj.length !== 1 || obj.length !== 1 || verbs !== 1 || inner || unread || conj) return null;
+  if (lemmaOf && blocks[obj[0]].candidates.some((c) => TIME.test((lemmaOf(c.analysis?.lemma) ?? '').toLocaleLowerCase()))) return null;
   const words = blocks.map((b, i) => [b, i]).filter(([b]) => /[\p{L}\p{N}]/u.test(b.token.surface));
   const afterPrep = (k) => { const at = words.findIndex(([, i]) => i === k); return words.slice(Math.max(0, at - 3), at).some(([b]) => b.candidates?.some((c) => c.analysis?.pos === 'prep')); };
   if (afterPrep(obj[0]) || afterPrep(sbj[0])) return null;

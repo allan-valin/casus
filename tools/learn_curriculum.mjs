@@ -221,7 +221,7 @@ async function main(code) {
         // Chinese: the gap's pinyin stays in the line — near-synonyms (很, 非常) would otherwise both fit; the question
         // becomes which characters are written for that sound and meaning
         gapRoman: code === 'zh' ? romanBlocks.map((b) => b.roman).filter(Boolean).join(' ') : sure ? gapRoman(romanBlocks, m.span) : '', roman: romanBlocks.map((b) => b.roman).filter(Boolean).join(' '),
-        tok: blocks.map((b) => b.token.surface), lemma, roles: rolesOf(blocks) });
+        tok: blocks.map((b) => b.token.surface), lemma, roles: rolesOf(blocks, { lemmaOf }) });
     }
     if (read % 5000 === 0) console.log(`${read} sentences read (${Math.round((Date.now() - t0) / 1000)} s)`);
   }

@@ -276,3 +276,19 @@ describe('who did what: only simple one-clause sentences', () => {
     expect(rolesOf(comma)).toBe(null);
   });
 });
+
+describe('who did what: a time phrase in the accusative is no object', () => {
+  it('Allan morguninn leitaði ég hans: morguninn is "all morning", so no question', async () => {
+    const { rolesOf } = await import('../../tools/learn_match.mjs');
+    const s = [blk('morguninn', { pos: 'noun', case: 'acc', lemma: '9' }), blk('leitaði', { pos: 'verb' }), blk('ég', { pos: 'pron', case: 'nom' })];
+    expect(rolesOf(s, { lemmaOf: (id) => ({ 9: 'morgunn' })[id] })).toBe(null);
+  });
+});
+
+describe('who did what: every word read, no conjunction', () => {
+  it('an unread word (an imperative with its clitic) or a conjunction (áður en …): no question', async () => {
+    const { rolesOf } = await import('../../tools/learn_match.mjs');
+    expect(rolesOf([blk('Pússaðu'), blk('skóna', { pos: 'noun', case: 'acc' }), blk('þú', { pos: 'pron', case: 'nom' }), blk('ferð', { pos: 'verb' })])).toBe(null);
+    expect(rolesOf([blk('skóna', { pos: 'noun', case: 'acc' }), blk('en', { pos: 'conj' }), blk('þú', { pos: 'pron', case: 'nom' }), blk('ferð', { pos: 'verb' })])).toBe(null);
+  });
+});
