@@ -16,7 +16,7 @@ topics:
       right: I didn't go.
       why: {en: "After did: the base form.", pt: "Depois de did: a forma base."}
     examples:
-    - [I went to the beach yesterday., I went to the beach yesterday., Fui à praia ontem., went]
+    - ["I went to the beach yesterday.", "Fui à praia ontem.", "Fui à praia ontem.", "went"]
     match: {seq: [{pos: verb, tense: past, mood: ind}], same: [number]}
 
   - id: en-future
@@ -28,7 +28,7 @@ topics:
       en: |
         **will**: instant decisions, promises, predictions. **be going to**: plans and visible evidence. Negative **won't**.
     examples:
-    - [I'll help you., I'll help you., Vou te ajudar., help]
+    - ["I'll help you.", "Vou te ajudar.", "Vou te ajudar.", "help"]
     match: {seq: [{word: [will, "'ll", won't]}], gap: 0}
     pool: [will, won't, would, can, must]
 
@@ -41,7 +41,7 @@ topics:
       en: |
         Short adjectives **-er / -est**; long ones **more / the most**; **than**. Irregular: **good → better → best, bad → worse → worst**.
     examples:
-    - [She is taller than me., She is taller than me., Ela é mais alta que eu., taller]
+    - ["She is taller than me.", "Ela é mais alta que eu.", "Ela é mais alta que eu.", "taller"]
     match:
     - {seq: [{pos: adj, re: "(er|est)$"}], suffixes: [er, est, ""], attested: true}
     - {seq: [{word: [more, most, less, least]}, {pos: adj}], gap: 0, pool: [more, most, less, very]}
@@ -59,7 +59,7 @@ topics:
       right: I've lived here for ten years.
       why: {en: "Unfinished time: the present perfect.", pt: "Tempo que continua: present perfect."}
     examples:
-    - ["Have you ever been to London?", "Have you ever been to London?", "Você já foi a Londres?", "been"]
+    - ["Have you ever been to London?", "Você já foi a Londres?", "Você já foi a Londres?", "been"]
     match: {seq: [{word: [have, has, "'ve", haven't, hasn't]}, {pos: verb, re: "(ed|en|ne|wn|ght|un|ung|ade|aid|ept|eft|ost|ot|ad|ood)$"}], near: 1, gap: 1, same: [number]}
 
 - title: {en: Obligation and advice, pt: Obrigação e conselho}
@@ -77,6 +77,6 @@ topics:
       right: You don't have to come.
       why: {en: "mustn't = forbidden; don't have to = not needed.", pt: "mustn't = proibido; don't have to = não precisa."}
     examples:
-    - [You should rest., You should rest., Você deveria descansar., should]
+    - ["You should rest.", "Você deveria descansar.", "Você deveria descansar.", "should"]
     match: {seq: [{word: [must, should, mustn't, shouldn't, ought]}], gap: 0}
     pool: [must, should, can, will, would]

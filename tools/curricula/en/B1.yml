@@ -12,7 +12,7 @@ topics:
       en: |
         Real: **If it rains, I'll stay home.** Hypothetical: **If I had money, I would travel. If I were you…** Past unreal: **If I had known, I would have come.**
     examples:
-    - [If I were you I would go., If I were you I would go., Se eu fosse você eu iria., would]
+    - ["If I were you I would go.", "Se eu fosse você eu iria.", "Se eu fosse você eu iria.", "would"]
     match: {seq: [{word: [would, "'d", wouldn't]}], gap: 0}
     pool: [would, will, could, should]
 
@@ -25,7 +25,7 @@ topics:
       en: |
         **be + past participle**, **by** for the doer: **The house was built in 1900. English is spoken here.**
     examples:
-    - [English is spoken here., English is spoken here., Fala-se inglês aqui., spoken]
+    - ["English is spoken here.", "Fala-se inglês aqui.", "Fala-se inglês aqui.", "spoken"]
     match: {seq: [{word: [is, are, was, were, been, be]}, {pos: verb, re: "(ed|en|wn|ght|ne|ilt|old|ung|ade)$"}], gap: 1, same: [number]}
 
 - title: {en: Relative clauses and verbs, pt: Orações relativas e verbos}
@@ -39,7 +39,7 @@ topics:
       en: |
         **who** (people), **which** (things), **that** (both); dropped as object: **the book I read**; **whose** = possessive.
     examples:
-    - [The man who called is my uncle., The man who called is my uncle., O homem que ligou é meu tio., who]
+    - ["The man who called is my uncle.", "O homem que ligou é meu tio.", "O homem que ligou é meu tio.", "who"]
     match: {seq: [{pos: noun}, {word: [who, which, that, whose, whom, where]}], gap: 1}
     pool: [who, which, that, whose, where]
 
@@ -56,5 +56,5 @@ topics:
       right: I enjoy reading.
       why: {en: "enjoy takes -ing.", pt: "enjoy pede -ing."}
     examples:
-    - [I enjoy reading., I enjoy reading., Gosto de ler., reading]
+    - ["I enjoy reading.", "Gosto de ler.", "Gosto de ler.", "reading"]
     match: {seq: [{lemma: "^(enjoy|finish|avoid|mind|keep|stop|suggest|practise|practice)$"}, {re: "ing$"}], gap: 1, suffixes: [ing, ""], attested: true}

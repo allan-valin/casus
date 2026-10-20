@@ -17,7 +17,7 @@ topics:
       why: {en: "English needs a subject: it.", pt: "O inglês precisa de sujeito: it."}
     examples:
     - [I am a student., I'm a student., Sou estudante., am]
-    - ["Are you tired?", "Are you tired?", "Você está cansado?", "Are"]
+    - ["Are you tired?", "Você está cansado?", "Você está cansado?", "Are"]
     match: {seq: [{word: [am, is, are, was, were]}], gap: 0}
     pool: [am, is, are, was, were, be]
 
@@ -34,7 +34,7 @@ topics:
       right: She is a doctor.
       why: {en: "A job takes a / an.", pt: "Profissão leva a / an (diferente do português)."}
     examples:
-    - [She is a doctor., She is a doctor., Ela é médica., a]
+    - ["She is a doctor.", "Ela é médica.", "Ela é médica.", "a"]
     match: {seq: [{word: [a, an, the]}, {pos: [noun, adj]}], gap: 0}
     pool: [a, an, the]
 
@@ -54,8 +54,8 @@ topics:
       right: Does she work?
       why: {en: "After does the verb has no -s.", pt: "Depois de does o verbo fica sem -s."}
     examples:
-    - [She works in a hospital., She works in a hospital., Ela trabalha num hospital., works]
-    - ["Do you speak English?", "Do you speak English?", "Você fala inglês?", "Do"]
+    - ["She works in a hospital.", "Ela trabalha num hospital.", "Ela trabalha num hospital.", "works"]
+    - ["Do you speak English?", "Você fala inglês?", "Você fala inglês?", "Do"]
     match:
     - {seq: [{word: [he, she, it]}, {pos: verb, tense: pres, re: "s$"}], gap: 1, suffixes: [es, s, ""], attested: true}
     - {seq: [{word: [do, does, don't, doesn't]}], gap: 0, pool: [do, does, don't, doesn't, did]}
@@ -69,7 +69,7 @@ topics:
       en: |
         **am / is / are + -ing** for now: **I'm reading.** Also for arrangements: **I'm meeting her tomorrow.** State verbs (like, know, want) are rarely in -ing.
     examples:
-    - [I'm reading a book., I'm reading a book., Estou lendo um livro., reading]
+    - ["I'm reading a book.", "Estou lendo um livro.", "Estou lendo um livro.", "reading"]
     match: {seq: [{word: [am, is, are, "'m", "'s", "'re"]}, {re: "ing$", pos: verb}], near: 1, gap: 1, suffixes: [ing, s, ed, ""], attested: true}
 
 - title: {en: Pronouns and possessives, pt: Pronomes e possessivos}
@@ -83,7 +83,7 @@ topics:
       en: |
         Subject **I, you, he, she, it, we, they**; object **me, you, him, her, it, us, them**: **She loves him. Give it to me.**
     examples:
-    - [She loves him., She loves him., Ela o ama., him]
+    - ["She loves him.", "Ela o ama.", "Ela o ama.", "him"]
     match: {seq: [{pos: verb}, {word: [me, him, her, us, them]}], gap: 1}
     pool: [me, him, her, us, them, I, he, she, we, they]
 
@@ -100,7 +100,7 @@ topics:
       right: her book
       why: {en: "The possessive follows the owner: Mary → her.", pt: "O possessivo segue o dono: Mary → her."}
     examples:
-    - [This is my car., This is my car., Este é o meu carro., my]
+    - ["This is my car.", "Este é o meu carro.", "Este é o meu carro.", "my"]
     match: {seq: [{word: [my, your, his, her, its, our, their]}, {pos: noun}], gap: 0}
     pool: [my, your, his, her, its, our, their]
 
@@ -117,7 +117,7 @@ topics:
       right: There is a bank near here.
       why: {en: "Existence: there is / are.", pt: "Existência: there is / are, não have."}
     examples:
-    - [There is a bank near here., There is a bank near here., Tem um banco aqui perto., is]
+    - ["There is a bank near here.", "Tem um banco aqui perto.", "Tem um banco aqui perto.", "is"]
     match: {seq: [{word: [there]}, {word: [is, are, was, were]}], gap: 1}
     pool: [is, are, was, were]
 
@@ -130,8 +130,8 @@ topics:
       en: |
         **in** inside, cities, countries, months, years; **on** surfaces, days, dates; **at** points, times, activity places (**at home, at 5**).
     examples:
-    - [I live in Brazil., I live in Brazil., Moro no Brasil., in]
-    - [See you on Monday., See you on Monday., Até segunda., "on"]
+    - ["I live in Brazil.", "Moro no Brasil.", "Moro no Brasil.", "in"]
+    - ["See you on Monday.", "Até segunda.", "Até segunda.", "on"]
     match: {seq: [{word: [in, "on", at]}], gap: 0}
     pool: [in, "on", at, to, for]
 
@@ -144,6 +144,6 @@ topics:
       en: |
         **can** + bare verb, the same for every person: **I can swim. Can you help me?** Negative **can't**; past **could**.
     examples:
-    - ["Can you help me?", "Can you help me?", "Você pode me ajudar?", "Can"]
+    - ["Can you help me?", "Você pode me ajudar?", "Você pode me ajudar?", "Can"]
     match: {seq: [{word: [can, can't, cannot, could, couldn't]}], gap: 0}
     pool: [can, can't, could, must, should, will]
