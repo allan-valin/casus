@@ -124,9 +124,14 @@ def crowded(text: str) -> bool:
     return n > 12 and n * 2 > len(re.findall(r"[^\W\d_]", PH.sub(" ", text)))
 
 
-def segments(html: str, src: str = "en") -> list:
+GLOSSABLE = {"b", "strong", "i", "em"}
+
+
+def segments(html: str, src: str = "en", gloss=None) -> list:
     """the page as a list of pieces: {"raw": html kept as is} or a prose run {"text": with placeholders, "inline":
-    [html of each placeholder], "translate": bool}"""
+    [html of each placeholder], "translate": bool}. gloss(text) -> bool, when given, tells a bold or italic word
+    in the explanation language (Grimm Grammar bolds the English gloss of each example) from a form of the taught
+    language: a gloss keeps only its tags as placeholders and is translated with its sentence."""
     p = _Tokens()
     p.feed(html)
     p.close()
@@ -153,8 +158,16 @@ def segments(html: str, src: str = "en") -> list:
             elif tag in INLINE and kind == "end":
                 depth -= 1
                 if not depth:
-                    inline.append("".join(buf))
-                    run.append(f"[{len(inline)}]")
+                    words = buf[1:-1]
+                    if gloss and tag in GLOSSABLE and words and not any("<" in w for w in words) and gloss(unescape("".join(words)).strip()):
+                        inline.append(buf[0])
+                        run.append(f"[{len(inline)}]")
+                        run.extend(words)
+                        inline.append(buf[-1])
+                        run.append(f"[{len(inline)}]")
+                    else:
+                        inline.append("".join(buf))
+                        run.append(f"[{len(inline)}]")
                     buf = []
             continue
         # a link or a plain span is prose: only its tags become placeholders, its text is translated
@@ -179,10 +192,10 @@ def segments(html: str, src: str = "en") -> list:
     return out
 
 
-def translate_html(html: str, translate, src: str = "en") -> str:
+def translate_html(html: str, translate, src: str = "en", gloss=None) -> str:
     """translate(list of strings) -> list of strings, the model call; returns the page with its prose in `src` (the
     book's explanation language) replaced"""
-    segs = segments(html, src)
+    segs = segments(html, src, gloss)
     todo = [s for s in segs if "text" in s and s["translate"]]
     # the model gets plain characters (&quot; → "), and its answer is escaped again for the page
     done = translate([unescape(s["text"].strip()) for s in todo]) if todo else []

@@ -15,6 +15,8 @@ usage (the GPU venv; CTranslate2 needs CUDA 12 cuBLAS on LD_LIBRARY_PATH):
 from __future__ import annotations
 
 import argparse
+import collections
+import functools
 import json
 import os
 import re
@@ -286,12 +288,38 @@ def text_field(obj: dict, tr, src: str = "en") -> bool:
     return True
 
 
-def html_field(obj: dict, tr, src: str = "en") -> bool:
+# courses whose imported English books bold both the taught forms and their English glosses (Grimm Grammar:
+# "there was a <b>rich</b> man"); there a bold English word is translated with its sentence
+GLOSS_COURSES = {"de"}
+
+
+@functools.lru_cache(maxsize=None)
+def gloss_test(code: str):
+    """for a course in GLOSS_COURSES, gloss(text) -> True when a bold run is English rather than a form of the taught
+    language: more of its words are English only (words of the course's English glosses) than forms of the course
+    only. A word of both languages ("was", "die") decides nothing, so such a run stays protected."""
+    if code not in GLOSS_COURSES:
+        return None
+    data = ROOT / "data" / code
+    forms = {k.lower() for f in (data / "forms").glob("*.json") for k in json.loads(f.read_text(encoding="utf-8"))}
+    counts = collections.Counter(w for v in json.loads((data / "glosses.en.json").read_text(encoding="utf-8")).values()
+                                 for w in re.findall(r"[a-z]+", v.lower()))
+    english = {w for w, c in counts.items() if c >= 3}
+
+    def gloss(text: str) -> bool:
+        words = [w.lower() for w in re.findall(r"[^\W\d_]+", text)]
+        en = sum(w in english and w not in forms for w in words)
+        de = sum(w in forms and w not in english for w in words) + sum(not w.isascii() for w in words)
+        return en > de
+    return gloss
+
+
+def html_field(obj: dict, tr, src: str = "en", gloss=None) -> bool:
     orig = _orig(obj)
     if not orig or src == tr.ui or not _todo(obj, tr.ui):
         return False
     try:
-        out = translate_html(orig, tr, src)
+        out = translate_html(orig, tr, src, gloss)
     except Missing:
         return False
     if out != orig:
@@ -333,16 +361,17 @@ def translate_language(code: str, tr, redo: bool = False, only: str | None = Non
                 if isinstance(s.get(key), str) and s[key].strip():
                     s[key] = {"en": s[key]}
         changed = False
+        gloss = gloss_test(code) if src == "en" else None
         for key in ("meaning", "topic"):
             if isinstance(page.get(key), dict):
                 changed |= text_field(page[key], tr, src)
         if isinstance(page.get("intro"), dict):
-            changed |= html_field(page["intro"], tr, src)
+            changed |= html_field(page["intro"], tr, src, gloss)
         for s in page.get("sections", []):
             if isinstance(s.get("title"), dict):
                 changed |= text_field(s["title"], tr, src)
             if isinstance(s.get("html"), dict):
-                changed |= html_field(s["html"], tr, src)
+                changed |= html_field(s["html"], tr, src, gloss)
         # examples without a translation (the NIKL dictionary's) get one, even when the page is in tr.ui already
         tr.src = code          # the examples are in the taught language
         for obj in [page.get("intro")] + [s.get("html") for s in page.get("sections", [])]:

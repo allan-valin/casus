@@ -147,3 +147,16 @@ def test_a_run_that_is_mostly_examples_is_not_sent_to_the_model():
     real = "[1]呂[2][3][4][5]翁[6][7][8][9]坐[10][77][11][12][13][14][15]其[16][17][18][19]傍[20][78][21][22]、[23][24][25]主[28][29]"
     assert crowded(real)
     assert not crowded("The particle [1] marks the topic, and [2] marks the subject of a sentence like [3] or [4].")
+
+
+def test_a_bold_english_gloss_is_translated_inside_its_sentence():
+    # Grimm Grammar bolds the English gloss of the German example ("there was a <b>rich</b> man"): with a gloss
+    # test for the course, the bold's tags become placeholders and its word is translated with the sentence
+    html = "<p>Once upon a time, there was a <b>rich</b> man, said <b>reicher</b>.</p>"
+    seg = [s for s in segments(html, "en", gloss=lambda t: t == "rich") if "text" in s][0]
+    assert seg["text"] == "Once upon a time, there was a [1]rich[2] man, said [3]."
+    assert seg["inline"] == ["<b>", "</b>", "<b>reicher</b>"]
+    out = translate_html(html, lambda xs: ["Си бил еднаш еден [1]богат[2] човек, рече [3]."], "en", gloss=lambda t: t == "rich")
+    assert out == "<p>Си бил еднаш еден <b>богат</b> човек, рече <b>reicher</b>.</p>"
+    # without a gloss test a bold stays a protected example, as before
+    assert [s for s in segments(html, "en") if "text" in s][0]["text"] == "Once upon a time, there was a [1] man, said [2]."

@@ -319,3 +319,14 @@ def test_imported_translations_must_keep_their_placeholders():
     assert import_translations(pieces, ["0|A partícula [1] marca o tópico.", "1|Está frio."]) == {pieces[0]: "A partícula [1] marca o tópico.", pieces[1]: "Está frio."}
     with pytest.raises(ValueError):
         import_translations(pieces, ["0|A partícula marca o tópico."])
+
+
+def test_the_german_course_tells_a_bold_english_gloss_from_a_german_form():
+    import pytest
+    if not (T.ROOT / "data" / "de" / "forms").exists():
+        pytest.skip("German data not built")
+    gloss = T.gloss_test("de")
+    assert gloss("rich") and gloss("sadder and sadder") and gloss("attributive adjectives") and gloss("most beautiful")
+    assert not gloss("reicher") and not gloss("der") and not gloss("immer trauriger") and not gloss("Es gibt")
+    assert not gloss("was")          # a word of both languages stays protected
+    assert T.gloss_test("ko") is None  # only courses whose bolds are known to mix glosses and forms
