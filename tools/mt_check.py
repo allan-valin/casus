@@ -15,7 +15,7 @@ from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from mt_html import INLINE, is_prose  # noqa: E402
+from mt_html import INLINE, SRC_SCRIPT, is_prose  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 INLINE_RE = re.compile(r"<(" + "|".join(sorted(INLINE)) + r")\b[^>]*>.*?</\1>", re.S)
@@ -29,14 +29,22 @@ def problems(orig: str, out: str, src: str) -> list:
     found = []
     lost = Counter(m.group(0) for m in INLINE_RE.finditer(orig)) - Counter(m.group(0) for m in INLINE_RE.finditer(out))
     found += [f"example lost: {x}" for x in lost]
+    own = SRC_SCRIPT.get(src)
+    if own:
+        foreign = re.compile(rf"(?:(?![{own}])[^\W\d_])+")
+        gone = Counter(foreign.findall(_text(orig))) - Counter(foreign.findall(_text(out)))
+        found += [f"script text changed: {w}" for w in gone]
     for para in re.findall(r"<(?:p|li|td|h\d)\b[^>]*>(.*?)</(?:p|li|td|h\d)>", out, re.S):
         plain = _text(INLINE_RE.sub(" ", para))
         if len(plain) > 40 and is_prose(plain, src) and plain in _text(INLINE_RE.sub(" ", orig)):
             found.append(f"untranslated: {plain[:80]}")
-    words = _text(out).split()
-    grams = Counter(tuple(words[k:k + 3]) for k in range(len(words) - 2))
-    if grams and grams.most_common(1)[0][1] >= 5:
-        found.append(f"repetition: {' '.join(grams.most_common(1)[0][0])}")
+    def top(h):
+        words = _text(h).split()
+        grams = Counter(tuple(words[k:k + 3]) for k in range(len(words) - 2))
+        return grams.most_common(1)[0] if grams else ((), 0)
+    (gram, n), (_, n0) = top(out), top(orig)
+    if n >= 5 and n > 2 * n0 + 2:          # a loop of the model, not a pattern the original repeats too
+        found.append(f"repetition: {' '.join(gram)}")
     a, b = len(_text(orig)), len(_text(out))
     if a > 60 and not 0.6 <= b / a <= 1.8:
         found.append(f"length {b}/{a}")

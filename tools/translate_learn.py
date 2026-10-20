@@ -54,8 +54,15 @@ class Translator:
         todo = sorted({p for ps in pieces for p in ps if p.strip() and p not in self.cache})
         for k in range(0, len(todo), 96):
             batch = [protect_terms(x, self.ui) for x in todo[k:k + 96]]
-            for src, (prot, terms), out in zip(todo[k:k + 96], batch, self._model([x for x, _ in batch])):
-                # the grammar terms go back in as the glossary has them; a lost placeholder keeps the English
+            outs = self._model([x for x, _ in batch])
+            # a lost placeholder: one more try with {n} (the model keeps braces better), brought back to [n]
+            bad = [i for i, ((prot, _), out) in enumerate(zip(batch, outs)) if sorted(PH.findall(out)) != sorted(PH.findall(prot))]
+            if bad:
+                again = self._model([PH.sub(r"{\1}", batch[i][0]) for i in bad])
+                for i, out in zip(bad, again):
+                    outs[i] = re.sub(r"\{(\d+)\}", r"[\1]", out)
+            for src, (prot, terms), out in zip(todo[k:k + 96], batch, outs):
+                # the grammar terms go back in as the glossary has them; a lost placeholder keeps the original
                 first = max([int(n) for n in PH.findall(src)] or [0])
                 if sorted(PH.findall(out)) != sorted(PH.findall(prot)):
                     self.cache[src] = src
@@ -148,7 +155,7 @@ def html_field(obj: dict, tr, src: str = "en") -> bool:
     return False
 
 
-def translate_language(code: str, tr) -> int:
+def translate_language(code: str, tr, redo: bool = False) -> int:
     """the imported pages of one language into tr.ui; then the index's titles and meanings of those pages"""
     data = ROOT / "data" / code
     srcs, n = {}, 0
@@ -162,6 +169,13 @@ def translate_language(code: str, tr) -> int:
         if not src or src == tr.ui:
             continue
         srcs[page.get("id", f.stem)] = src
+        if redo and (page.get("mt") or {}).get(tr.ui):        # an earlier translation into this language is dropped
+            for obj in [page.get(k) for k in ("meaning", "topic")] + [s.get("html") for s in page.get("sections", [])]:
+                if isinstance(obj, dict) and tr.ui in obj and obj.get(tr.ui) != _orig(obj):
+                    if tr.ui == "en":
+                        obj["en"] = obj.pop("orig", obj["en"])
+                    else:
+                        del obj[tr.ui]
         changed = False
         for key in ("meaning", "topic"):
             if isinstance(page.get(key), dict):
@@ -196,7 +210,8 @@ if __name__ == "__main__":
     ap.add_argument("codes", nargs="+")
     ap.add_argument("--ui", required=True, choices=["en", "pt", "de", "mk", "ar"])
     ap.add_argument("--cache-only", action="store_true", help="re-apply cached translations after a rebuild (no GPU)")
+    ap.add_argument("--redo", action="store_true", help="translate again pages already translated into this language")
     a = ap.parse_args()
     tr = CacheOnly(a.ui) if a.cache_only else Translator(a.ui)
     for c in a.codes:
-        print(f"{c}: {translate_language(c, tr)} pages machine-translated into {a.ui} ({tr.new} new sentences so far)", flush=True)
+        print(f"{c}: {translate_language(c, tr, a.redo)} pages machine-translated into {a.ui} ({tr.new} new sentences so far)", flush=True)

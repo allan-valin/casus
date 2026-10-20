@@ -24,3 +24,16 @@ def test_a_repetition_loop_and_a_too_short_text_are_flagged():
     loop = "<p>O presente de <b>λύω</b> <i>-ω, -εις</i> " + "do presente ativo " * 12 + "</p>"
     assert any(p.startswith("repetition") for p in problems(ORIG, loop, "fr"))
     assert any(p.startswith("length") for p in problems(ORIG, "<p><b>λύω</b> <i>-ω, -εις</i> ok.</p>", "fr"))
+
+
+def test_repetition_the_original_has_too_is_not_flagged():
+    row = "<tr><td>Letter (jamo)</td><td>sound</td></tr>"
+    orig = "<table>" + row * 8 + "</table>"
+    out = "<table>" + row.replace("sound", "som") * 8 + "</table>"
+    assert not any(p.startswith("repetition") for p in problems(orig, out, "en"))
+
+
+def test_a_changed_word_in_another_script_is_flagged():
+    orig = "<p>Try to read the words that contain the letter ㅗ and then read them again aloud.</p>"
+    out = "<p>Tente ler as palavras que contêm a letra ㅜ e depois leia-as de novo em voz alta.</p>"
+    assert "script text changed: ㅗ" in problems(orig, out, "en")

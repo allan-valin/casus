@@ -81,6 +81,28 @@ class _Tokens(HTMLParser):
         self.out.append(("text", None, f"&#{name};"))
 
 
+# the script an explanation language is written in; a word in any other script (ㅗ, 오이, λύω in an English or French
+# text) is the taught language and is protected like an inline example
+LATIN = "A-Za-z\u00c0-\u024f\u1e00-\u1eff"
+SRC_SCRIPT = {**{k: LATIN for k in ("en", "fr", "de", "es", "pt", "it", "nl", "pl", "cs", "fi", "hu", "tr", "is")},
+              "ru": "\u0400-\u04ff", "uk": "\u0400-\u04ff", "mk": "\u0400-\u04ff", "el": "\u0370-\u03ff\u1f00-\u1fff",
+              "ar": "\u0600-\u06ff", "ja": "\u3040-\u30ff\u4e00-\u9fff", "zh": "\u4e00-\u9fff", "ko": "\uac00-\ud7af\u1100-\u11ff\u3130-\u318f"}
+_FOREIGN = {}
+
+
+def protect_script(text: str, src: str, inline: list) -> str:
+    """runs of words in a script other than the explanation's become placeholders [n] (their text appended to inline)"""
+    own = SRC_SCRIPT.get(src)
+    if not own:
+        return text
+    rx = _FOREIGN.get(src) or _FOREIGN.setdefault(src, re.compile(rf"(?:(?![{own}])[^\W\d_])+(?:[\s\-'’]+(?:(?![{own}])[^\W\d_])+)*"))
+
+    def sub(m):
+        inline.append(m.group(0))
+        return f"[{len(inline)}]"
+    return rx.sub(sub, text)
+
+
 def segments(html: str, src: str = "en") -> list:
     """the page as a list of pieces: {"raw": html kept as is} or a prose run {"text": with placeholders, "inline":
     [html of each placeholder], "translate": bool}"""
@@ -93,7 +115,7 @@ def segments(html: str, src: str = "en") -> list:
         nonlocal run, inline
         if not run:
             return
-        text = "".join(run)
+        text = protect_script("".join(run), src, inline)
         plain = PH.sub(" ", text)
         out.append({"text": text, "inline": inline, "translate": is_prose(plain, src)})
         run, inline = [], []
@@ -187,6 +209,9 @@ def protect_terms(text: str, ui: str) -> tuple:
 def dedupe(out: str, src: str) -> str:
     """the model sometimes says it twice ("Beispiele Beispiele:"): a repeated sentence or a doubled short phrase is
     cut to once; a final stop the English did not have is dropped"""
+    half = len(out.strip()) // 2
+    if half and out.strip()[:half] == out.strip()[half:]:          # said twice with no space between
+        out = out.strip()[:half]
     sents = re.split(r"(?<=[.!?:;])\s+", out.strip())
     keep = [x for k, x in enumerate(sents) if k == 0 or x.strip(" .:;") != sents[k - 1].strip(" .:;")]
     out = " ".join(keep)

@@ -83,3 +83,28 @@ def test_cache_only_reapplies_known_translations_and_skips_the_rest(tmp_path, mo
     assert T.translate_language("xx", tr) == 1
     secs = json.loads(f.read_text())["sections"]
     assert secs[0]["html"]["pt"] == "<p>O presente forma-se com as terminações do presente.</p>" and "pt" not in secs[1]["html"]
+
+
+def test_a_lost_placeholder_is_retried_with_braces():
+    tr = object.__new__(T.Translator)
+    tr.ui, tr.cache, tr.new, tr.cache_file = "pt", {}, 0, None
+    tr.save = lambda: None
+    calls = []
+
+    def model(texts):
+        calls.append(texts)
+        # the first try drops [2]; the brace try keeps {1} {2}
+        return [t.replace("It is", "É").replace(" [2]", "") if "[" in t else t.replace("It is", "É") for t in texts]
+    tr._model = model
+    assert tr(["It is [1] and [2]."]) == ["É [1] and [2]."]
+    assert calls[1] == ["It is {1} and {2}."]
+
+
+def test_redo_replaces_an_earlier_translation(tmp_path, monkeypatch):
+    body = "<p>Le présent se forme avec les terminaisons du présent.</p>"
+    f = page(tmp_path / "data", "p", source="Wikibooks (fr), X", mt={"pt": "MADLAD-400"}, src="fr",
+             sections=[{"id": "a", "html": {"en": body, "pt": "<p>velha tradução</p>"}}])
+    (tmp_path / "data" / "xx" / "learn.json").write_text(json.dumps({"levels": []}))
+    monkeypatch.setattr(T, "ROOT", tmp_path)
+    assert T.translate_language("xx", Fake("pt"), redo=True) == 1
+    assert json.loads(f.read_text())["sections"][0]["html"]["pt"].startswith("<p><pt>")

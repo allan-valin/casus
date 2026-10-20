@@ -73,3 +73,16 @@ def test_segments_translate_only_the_explanation_language():
     runs = [s for s in segs if "text" in s]
     assert runs[0]["translate"] and runs[0]["inline"] == ["<b>λύω</b>"]
     assert not runs[1]["translate"]
+
+
+def test_text_in_another_script_is_protected_like_an_example():
+    """a Korean letter in plain English text must come back exactly (the model turned ㅗ into ㅜ)"""
+    from mt_html import segments
+    run = [s for s in segments("<p>Read the words with the letter ㅗ (o) and 오이.</p>", src="en") if "text" in s][0]
+    assert run["translate"] and "ㅗ" not in run["text"] and "오이" not in run["text"]
+    assert "ㅗ" in run["inline"] and "오이" in run["inline"]
+
+
+def test_a_sentence_said_twice_without_a_space_is_cut_to_once():
+    from mt_html import dedupe
+    assert dedupe("É o [3], por isso o [4] soa.É o [3], por isso o [4] soa.", "It is [3], so [4] sounds.") == "É o [3], por isso o [4] soa."
