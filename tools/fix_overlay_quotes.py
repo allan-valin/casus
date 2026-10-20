@@ -8,7 +8,7 @@ for p in sys.argv[1:]:
     out = []
     for line in lines:
         m = re.match(r'^(\s+)(meaning|[^\s#][^:]*?): (?![|>\["\']).*\S$', line)
-        if m and (m.group(2) == "meaning" or len(m.group(1)) == 2) and not line.strip().startswith("- "):
+        if m and (m.group(2) == "meaning" or len(m.group(1)) == 2) and not line.strip().startswith(("- ", '"', "'")):
             key, val = line.split(": ", 1) if m.group(2) != "meaning" else (line[: line.index("meaning:") + 7], line[line.index("meaning:") + 9:])
             val = val.replace("\\", "\\\\").replace('"', '\\"')
             line = f'{key}: "{val}"'
