@@ -127,15 +127,18 @@ export function createVoice({ bcp47, espeakVoice, natural = null, synth = global
     }
     const v = browserVoice();
     if (v) {
-      await new Promise((resolve, reject) => {
+      const say = () => new Promise((resolve, reject) => {
         const u = new SpeechSynthesisUtterance(text);
         u.voice = v;
         u.lang = v.lang;
         u.onend = () => resolve();
         u.onerror = (e) => reject(new Error(e?.error ?? 'speech failed'));
-        synth.cancel?.();
+        if (synth.speaking) synth.cancel?.();
         synth.speak(u);
       });
+      // Chrome can report a fresh utterance as interrupted right after another one was cancelled: say it again once
+      // (Allan, 2026-10-20: the button showed an error, a second click worked)
+      try { await say(); } catch (e) { if (!/interrupted|canceled/.test(e.message)) throw e; await say(); }
       return { tier: 'browser', fellBack };
     }
     if (!espeakVoice) throw new Error(`no voice for ${bcp47}`);

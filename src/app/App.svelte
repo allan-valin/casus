@@ -229,7 +229,8 @@
   </header>
 
   {#if route.view === 'speak'}
-    <Trainer {lang} {voice} {fetchImpl} data={DATA} base={withBase('/')} {lexicon} {storage} {award} say={(msg, kind) => activity.say(msg, kind)} />
+    <Trainer {lang} {voice} {fetchImpl} data={DATA} base={withBase('/')} {lexicon} {storage} {award}
+      loadParadigm={(id) => fetchImpl(`${DATA}/paradigms/${Number(id) % 512}.json`).then((r) => (r.ok ? r.json() : {})).then((b) => b[String(id)] ?? null).catch(() => null)} say={(msg, kind) => activity.say(msg, kind)} />
   {:else if route.view === 'learn'}
     <Learn {lang} {storage} {award} {progression} speak={(text) => speakHref(withBase(speakPath(LANGUAGES.find((l) => l.code === lang.code) ?? { path: '/' })), text)} loadLearn={() => fetchImpl(`${DATA}/learn.json`).then((r) => (r.ok ? r.json() : null))}
       loadLesson={(id) => fetchImpl(`${DATA}/learn/${id}.json`).then((r) => r.json())}

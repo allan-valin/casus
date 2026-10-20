@@ -21,7 +21,7 @@
 </script>
 
 <button class="speaker" disabled={!voice || tier === null || busy} {title} aria-label={title} onclick={say}>{busy ? '…' : '🔊'}</button>
-{#if tier === null || failed}<span class="voice-note">{t('voice.none')}</span>{:else if fellBack}<span class="voice-note">{t('voice.natural.fellBack')}</span>{/if}
+{#if tier === null || (failed && tier === 'espeak')}<span class="voice-note">{t('voice.none')}</span>{:else if failed}<span class="voice-note">{t('voice.failed')}</span>{:else if fellBack}<span class="voice-note">{t('voice.natural.fellBack')}</span>{/if}
 
 <style>
   .speaker { min-height: 30px; padding: 2px 8px; font-size: 1rem; margin-left: 6px; vertical-align: middle; }

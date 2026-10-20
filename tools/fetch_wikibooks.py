@@ -11,7 +11,7 @@ import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-API = "https://en.wikibooks.org/w/api.php"
+API = "https://en.wikibooks.org/w/api.php"   # main() points it at another edition for "pt:Inglês"
 UA = {"User-Agent": "Casus/1.0 (https://allan-valin.github.io/casus/; language-learning site, open source)"}
 
 
@@ -32,15 +32,19 @@ def links_of(html, book):
     out = []
     for href in re.findall(r'href="/wiki/([^"#?]+)"', html):
         t = urllib.parse.unquote(href).replace("_", " ")
-        if t.startswith(book.replace("_", " ") + "/") and t not in out:
+        if t.startswith(book.replace("_", " ") + "/") and t not in out and ":" not in t.split("/")[0]:
             out.append(t)
     return out
 
 
-def main(book):
-    """the book's pages in the order of its table of contents: the main page's links, and the links of an index page
+def main(spec):
+    """`spec` is a book of the English edition (Russian) or edition:book (pt:Inglês → vendor/wikibooks/pt/Inglês).
+    the book's pages in the order of its table of contents: the main page's links, and the links of an index page
     (Contents, Level I…) in its place, one level down"""
-    out = ROOT / "vendor" / "wikibooks" / book
+    global API
+    edition, book = spec.split(":", 1) if ":" in spec else ("en", spec)
+    API = f"https://{edition}.wikibooks.org/w/api.php"
+    out = ROOT / "vendor" / "wikibooks" / (book if edition == "en" else f"{edition}/{book}")
     out.mkdir(parents=True, exist_ok=True)
     order, pages, seen = [], [], set()
     first = links_of(parsed(book), book)

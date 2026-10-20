@@ -168,3 +168,13 @@ describe('tones', () => {
     expect(segments('/wɔ²¹⁴/')).toEqual(['w', 'ɔ']);
   });
 });
+
+import { entriesFor } from '../../src/app/lib/pronounce.js';
+describe('the dictionary entry of a word in the trainer', () => {
+  it('groups the readings by lemma, in the order found, and drops lemmas missing from the table', () => {
+    const lemmas = { 7: { headword: 'sein', dict_form: 'sein', pos: 'verb' }, 9: { headword: 'ist', pos: 'noun' } };
+    const analyses = [{ lemma: 7, pos: 'verb', person: '3', number: 'sg' }, { lemma: 7, pos: 'verb', person: '3', number: 'sg', mood: 'subj' }, { lemma: 12 }, { lemma: 9, pos: 'noun' }];
+    const out = entriesFor(analyses, lemmas);
+    expect(out.map((e) => [e.id, e.lemma.headword, e.readings.length])).toEqual([['7', 'sein', 2], ['9', 'ist', 1]]);
+  });
+});

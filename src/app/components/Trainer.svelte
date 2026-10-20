@@ -7,11 +7,16 @@
   import { t, ui } from '../lib/i18n.svelte.js';
   import Speaker from './Speaker.svelte';
   import IpaChart from './IpaChart.svelte';
-  import { buildIpaIndex, expectedFor, expectedSounds, segments, align, score, aiPrompt, sampleFor, ipaFromWikitext } from '../lib/pronounce.js';
+  import { buildIpaIndex, expectedFor, expectedSounds, segments, align, score, aiPrompt, sampleFor, ipaFromWikitext, entriesFor } from '../lib/pronounce.js';
   import { loadLemmas, loadIpa } from '../lib/fetchers.js';
-  import { MODELS, load, transcribe, to16kMono, playSamples, wavBytes, isCached } from '../speech/engine.js';
+  import { MODELS, load, transcribe, to16kMono, playSamples, wavBytes, isCached, forget } from '../speech/engine.js';
+  import Paradigm from './Paradigm.svelte';
+  import { frontDecode } from '../lib/paradigm.js';
+  import { describeAnalysis } from '../lib/colors.js';
+  import { wiktionaryUrl } from '../lib/entry.js';
+  import { loadGlosses } from '../lib/fetchers.js';
 
-  let { lang, voice = null, fetchImpl, data, base = '/', lexicon = null, say = () => {}, storage = null, award = null } = $props();
+  let { lang, voice = null, fetchImpl, data, base = '/', lexicon = null, say = () => {}, storage = null, award = null, loadParadigm = null } = $props();
 
   const params = typeof location !== 'undefined' ? new URLSearchParams(location.search) : new URLSearchParams();
   let text = $state(params.get('text') ?? '');
@@ -177,7 +182,47 @@
   async function copyPrompt() {
     try { await navigator.clipboard.writeText(prompt); say(t('speak.act.copied'), 'ok'); } catch (e) { say(t('speak.act.failed', { error: e.message }), 'err'); }
   }
-  function toggle(p) { panel = panel === p ? null : p; }
+  function toggle(p) { panel = panel === p ? null : p; if (p === 'options' && panel) refreshOptions(); }
+
+  // options, as in speech-to-ipa: the microphone, and each model's size, licence and cache, deletable by hand
+  let mic = $state('');
+  let usage = $state(null);
+  async function refreshOptions() {
+    for (const m of MODELS) isCached(m).then((c) => { cached = { ...cached, [m.id]: c }; }).catch(() => {});
+    try { mic = (await navigator.permissions.query({ name: 'microphone' })).state; } catch { mic = ''; }
+    try { const e = await navigator.storage.estimate(); usage = Math.round(e.usage / 1e6); } catch { usage = null; }
+  }
+  async function allowMic() {
+    try { const s = await navigator.mediaDevices.getUserMedia({ audio: true }); s.getTracks().forEach((tr) => tr.stop()); say(t('speak.opt.micOk'), 'ok'); }
+    catch (e) { say(t('speak.act.micDenied', { err: e.name ?? e.message }), 'err'); }
+    refreshOptions();
+  }
+  async function downloadModel(m) {
+    const keep = modelId; modelId = m.id;
+    try { await ensureModel(); } catch (e) { say(t('speak.act.failed', { error: e.message }), 'err'); }
+    modelId = keep; refreshOptions();
+  }
+  async function deleteModel(m) {
+    try { await loaded[m.id]?.then((l) => l.session.release()); } catch { /* not open */ }
+    delete loaded[m.id];
+    await forget(m);
+    say(t('speak.opt.deleted', { model: m.name, mb: m.mb }), 'ok');
+    refreshOptions();
+  }
+
+  // a dictionary entry for each word, as in the reader
+  let openWord = $state(null);
+  let entries = $state({});
+  let glosses = null;
+  async function toggleEntry(w) {
+    if (openWord === w.word) { openWord = null; return; }
+    openWord = w.word;
+    if (entries[w.word]) return;
+    glosses ??= await loadGlosses(fetchImpl, data, ui.lang === 'pt' ? 'pt' : 'en').then((g) => g ?? loadGlosses(fetchImpl, data, 'en')).catch(() => null);
+    const list = entriesFor(await lookup(w.word.toLowerCase()).catch(() => []), lemmas);
+    entries = { ...entries, [w.word]: list };
+    say(t('speak.act.entry', { word: w.word, n: list.length }));
+  }
 </script>
 
 <section class="card trainer">
@@ -187,7 +232,32 @@
     <button class="tool" class:on={panel === 'chart'} onclick={() => toggle('chart')}>{t('speak.chart')}</button>
     <button class="tool" class:on={panel === 'howto'} onclick={() => toggle('howto')}>{t('speak.howto')}</button>
     <button class="tool" class:on={panel === 'help'} onclick={() => toggle('help')}>{t('speak.help')}</button>
+    <button class="tool" class:on={panel === 'use'} onclick={() => toggle('use')}>{t('speak.use')}</button>
+    <button class="tool" class:on={panel === 'options'} onclick={() => toggle('options')}>⚙ {t('speak.options')}</button>
   </div>
+  {#if panel === 'use'}
+    <div class="help-panel"><div class="prose">{@html t('speak.use.html')}</div><button class="close" onclick={() => (panel = null)}>✕ {t('speak.close')}</button></div>
+  {/if}
+  {#if panel === 'options'}
+    <div class="help-panel options">
+      <h4>{t('speak.opt.mic')}</h4>
+      <p>{mic ? t(`speak.opt.mic.${mic}`) : t('speak.opt.mic.unknown')} <button onclick={allowMic}>{t('speak.opt.micAllow')}</button></p>
+      <h4>{t('speak.opt.models')}</h4>
+      <p class="note">{t('speak.opt.modelsNote')}</p>
+      <div class="scroll"><table class="models"><tbody>
+        <tr><th></th><th>{t('speak.opt.model')}</th><th>MB</th><th>{t('speak.opt.per')}</th><th>{t('speak.opt.licence')}</th><th>{t('speak.opt.cache')}</th><th></th></tr>
+        {#each MODELS as m}<tr>
+          <td><input type="radio" name="model" checked={modelId === m.id} onchange={() => chooseModel(m.id)} aria-label={m.name} /></td>
+          <td><a href={m.source} target="_blank" rel="noopener">{m.name}</a> <small>({m.credit})</small></td><td>{m.mb}</td><td>{m.per}</td><td>{m.license}</td>
+          <td>{cached[m.id] ? '✓' : '—'}</td>
+          <td>{#if cached[m.id]}<button onclick={() => deleteModel(m)}>🗑 {t('speak.opt.delete')}</button>{:else}<button disabled={!!busy} onclick={() => downloadModel(m)}>⬇ {t('speak.opt.download')}</button>{/if}</td>
+        </tr>{/each}
+      </tbody></table></div>
+      {#if usage != null}<p class="note">{t('speak.opt.usage', { mb: usage })}</p>{/if}
+      <p class="note">{t('speak.opt.warn')}</p>
+      <button class="close" onclick={() => (panel = null)}>✕ {t('speak.close')}</button>
+    </div>
+  {/if}
   {#if panel === 'chart' || panel === 'howto'}<IpaChart mode={panel} {samples} play={playSample} {used} onclose={() => (panel = null)} />{/if}
   {#if panel === 'help'}
     <div class="help-panel">
@@ -208,7 +278,7 @@
     <div class="words" dir="ltr">
       {#each expected as w}
         <div class="word {w.source}">
-          <div class="w" lang={lang.bcp47}>{w.word}{#if voice}<Speaker text={w.word} {voice} />{/if}</div>
+          <div class="w" lang={lang.bcp47}>{w.word}{#if voice}<Speaker text={w.word} {voice} />{/if}<button class="dict-btn" class:on={openWord === w.word} title={t('speak.entry')} onclick={() => toggleEntry(w)}>📖</button></div>
           {#if w.ipa}
             <div class="ipa" title={w.source === 'lemma' ? t('speak.word.lemma', { lemma: w.lemma }) : ''}>{w.source === 'lemma' ? '≈ ' : ''}{w.ipa}</div>
             <div class="sounds">{#each segments(w.ipa) as s}<button class="snd" class:has={!!sampleFor(s, samples)} title={sampleFor(s, samples) ? t('speak.sound.title', { sym: s }) : t('speak.sound.missing', { sym: s })} onclick={() => playSample(s)}>{s}</button>{/each}</div>
@@ -217,6 +287,24 @@
         </div>
       {/each}
     </div>
+    {#if openWord}
+      <div class="entry-panel">
+        <h4 lang={lang.bcp47}>{openWord}</h4>
+        {#if !entries[openWord]}<p class="note">{t('dict.loading')}</p>
+        {:else if !entries[openWord].length}<p class="note">{t('dict.none')} <a href={wiktionaryUrl(openWord, lang.wiktionary ?? 'Latin', ui.lang === 'pt' ? 'pt' : 'en')} target="_blank" rel="noopener">Wiktionary ↗</a></p>
+        {:else}{#each entries[openWord] as e (e.id)}
+          <div class="entry">
+            <div class="form" lang={lang.bcp47}><b>{e.lemma.dict_form ?? e.lemma.headword}</b> <small>{e.lemma.pos ?? ''}</small>
+              {#if ipa?.[e.id]?.length}<span class="ipa">{ipa[e.id][0].ipa}</span>{/if}{#if voice}<Speaker text={e.lemma.headword} {voice} />{/if}
+              <a href={wiktionaryUrl(e.lemma.headword, lang.wiktionary ?? 'Latin', 'en')} target="_blank" rel="noopener">Wiktionary ↗</a>
+              {#if ui.lang === 'pt'}<a href={wiktionaryUrl(e.lemma.headword, lang.wiktionary ?? 'Latin', 'pt')} target="_blank" rel="noopener">Wikcionário ↗</a>{/if}</div>
+            {#if glosses?.[e.id]}<div class="gloss">{glosses[e.id]}</div>{/if}
+            <div class="note">{t('speak.entry.readings')}: {[...new Set(e.readings.map(describeAnalysis))].join(' · ')}</div>
+            {#if loadParadigm}{#await loadParadigm(e.id).then((r) => (r ? frontDecode(r) : null)) then rows}{#if rows?.length}<Paradigm {rows} lemma={e.id} {lang} form={openWord.toLowerCase()} readings={e.readings} />{/if}{/await}{/if}
+          </div>
+        {/each}{/if}
+      </div>
+    {/if}
   {/if}
 
   <div class="rec-row">
@@ -283,4 +371,14 @@
   .help-panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; margin: 10px 0; }
   .prompt { width: 100%; box-sizing: border-box; font-size: .85rem; }
   .credit { margin-top: 14px; }
+  .dict-btn { min-height: 28px; padding: 0 6px; margin-inline-start: 4px; }
+  .dict-btn.on { outline: 2px solid var(--accent, #3a7); }
+  .entry-panel { border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; margin: 8px 0; background: var(--panel); }
+  .entry-panel h4 { margin: 0 0 6px; }
+  .entry { border-top: 1px dashed var(--line); padding: 6px 0; }
+  .entry .ipa { margin-inline-start: 6px; }
+  .entry a { margin-inline-start: 6px; font-size: .85em; }
+  .gloss { margin: 2px 0; }
+  table.models { border-collapse: collapse; font-size: .9em; }
+  .models td, .models th { padding: 3px 6px; border-bottom: 1px solid var(--line); text-align: start; }
 </style>

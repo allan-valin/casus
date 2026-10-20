@@ -198,3 +198,15 @@ export function ipaFromWikitext(wikitext, section, code) {
   }
   return null;
 }
+
+/** a word's dictionary entries: its readings grouped by lemma, in the order the lexicon gave them */
+export function entriesFor(analyses, lemmas) {
+  const out = new Map();
+  for (const a of analyses ?? []) {
+    const id = String(a.lemma);
+    if (!lemmas?.[id]) continue;
+    if (!out.has(id)) out.set(id, { id, lemma: lemmas[id], readings: [] });
+    out.get(id).readings.push(a);
+  }
+  return [...out.values()];
+}

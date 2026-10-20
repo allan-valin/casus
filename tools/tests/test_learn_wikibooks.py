@@ -24,3 +24,20 @@ def test_lessons_from_a_book_skip_stubs():
     n = wikibooks_lessons("ru", "Russian", pages, index, lessons, questions)
     assert n == 1 and lessons["ru-wb-1"]["title"] == "Lesson 1"
     assert "Wikibooks" in lessons["ru-wb-1"]["source"] and "CC BY-SA" in lessons["ru-wb-1"]["source"]
+
+
+def test_a_book_from_another_wikibooks_edition_links_there_and_says_its_language():
+    from learn_wikibooks import wikibooks_lessons
+    index = {"levels": [{"id": "A1", "topics": []}, {"id": "A2", "topics": []}]}
+    lessons, questions = {}, {}
+    body = "<p>" + "Os adjetivos em inglês vêm antes do substantivo. " * 10 + '<a href="/wiki/Ingl%C3%AAs/Gram%C3%A1tica">x</a></p>'
+    pages = [{"title": "Inglês/Gramática/Adjetivos", "html": body}, {"title": "Inglês/Curso/Lição 1", "html": body}]
+    n = wikibooks_lessons("en", "Inglês", pages, index, lessons, questions, edition="pt", prefix="en-wbpt")
+    assert n == 2
+    page = lessons["en-wbpt-1"]
+    assert "https://pt.wikibooks.org/wiki/Ingl%C3%AAs/Gram%C3%A1tica" in page["sections"][0]["html"]["en"]
+    assert "https://pt.wikibooks.org/wiki/Ingl" in page["intro"]["en"]
+    assert "Portuguese" in page["intro"]["en"] and "português" in page["intro"]["pt"]
+    assert page["source"].startswith("Wikibooks (pt)")
+    titles = [tp["title"]["en"] for lv in index["levels"] for tp in lv["topics"]]
+    assert all(t.startswith("Wikibooks (Português)") for t in titles)

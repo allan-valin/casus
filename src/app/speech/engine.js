@@ -9,13 +9,13 @@ const ORT_URL = 'https://cdn.jsdelivr.net/npm/onnxruntime-web@1.30.0/dist/ort.al
 const CACHE = 'ipa-models-v1';
 
 export const MODELS = [
-  { id: 'powsm', name: 'POWSM', mb: 214, input: 'logmel', license: 'CC BY 4.0', credit: 'Li et al. 2025',
+  { id: 'powsm', name: 'POWSM', mb: 214, per: 55.5, input: 'logmel', license: 'CC BY 4.0', credit: 'Li et al. 2025',
     url: `${HF}/allan-valin/powsm-ctc-onnx/resolve/main/model.int8.onnx`,
     vocab: `${HF}/allan-valin/powsm-ctc-onnx/resolve/main/vocab.json`, source: `${HF}/espnet/powsm` },
-  { id: 'wav2vec2phoneme', name: 'Wav2Vec2Phoneme', mb: 357, input: 'wave', license: 'Apache 2.0', credit: 'Xu et al. 2021',
+  { id: 'wav2vec2phoneme', name: 'Wav2Vec2Phoneme', mb: 357, per: 53.0, input: 'wave', license: 'Apache 2.0', credit: 'Xu et al. 2021',
     url: `${HF}/allan-valin/wav2vec2phoneme-onnx/resolve/main/model.int8.onnx`,
     vocab: `${HF}/allan-valin/wav2vec2phoneme-onnx/resolve/main/vocab.json`, source: `${HF}/facebook/wav2vec2-xlsr-53-espeak-cv-ft` },
-  { id: 'multipa', name: 'MultIPA', mb: 318, input: 'wave', license: 'MIT', credit: 'Taguchi et al. 2023',
+  { id: 'multipa', name: 'MultIPA', mb: 318, per: 62.4, input: 'wave', license: 'MIT', credit: 'Taguchi et al. 2023',
     url: `${HF}/allan-valin/multipa-onnx/resolve/main/model.int8.onnx`,
     vocab: `${HF}/allan-valin/multipa-onnx/resolve/main/vocab.json`, source: `${HF}/ctaguchi/wav2vec2-large-xlsr-japlmthufielta-ipa1000-ns` },
 ];
@@ -39,6 +39,11 @@ async function cached(url) {
 
 export async function isCached(model) {
   return !!(await cached(model.url));
+}
+
+/** delete one model from the browser cache */
+export async function forget(model) {
+  try { await (await caches.open(CACHE)).delete(model.url); } catch { /* nothing cached */ }
 }
 
 async function fetchBytes(url, onProgress) {

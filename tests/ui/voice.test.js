@@ -22,6 +22,21 @@ describe('createVoice (languages design §6, §11.3; review fixes)', () => {
     await v.speak('rosa');
     expect(synth.speak.mock.calls[0][0].lang).toBe('la-x-classical');
   });
+  it('an utterance Chrome reports as interrupted, after another was cancelled, is retried once, not shown as a failure (Allan, 2026-10-20)', async () => {
+    const synth = fakeSynth(['la']);
+    let first = true;
+    synth.speak = vi.fn((u) => setTimeout(() => { if (first) { first = false; u.onerror?.({ error: 'interrupted' }); } else u.onend?.(); }, 0));
+    const v = createVoice({ bcp47: 'la', espeakVoice: 'la', synth, loadEspeak: vi.fn() });
+    expect(await v.speak('rosa')).toMatchObject({ tier: 'browser' });
+    expect(synth.speak).toHaveBeenCalledTimes(2);
+  });
+  it('cancels only when something is being spoken', async () => {
+    const synth = fakeSynth(['la']);
+    synth.cancel = vi.fn(); synth.speaking = false;
+    const v = createVoice({ bcp47: 'la', espeakVoice: 'la', synth, loadEspeak: vi.fn() });
+    await v.speak('rosa');
+    expect(synth.cancel).not.toHaveBeenCalled();
+  });
   it('rejects when the browser voice fails, instead of claiming it spoke', async () => {
     const v = createVoice({ bcp47: 'la', espeakVoice: 'la', synth: fakeSynth(['la'], { fail: true }), loadEspeak: vi.fn() });
     await expect(v.speak('rosa')).rejects.toThrow(/synthesis-failed/);
