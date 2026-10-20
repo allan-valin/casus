@@ -352,10 +352,10 @@ def builder(code: str):
 
 # languages whose lessons are extended with generated ones (tools/learn_expand.py): spaced scripts (word counts are
 # word-based), and Japanese already has its 1,160 lessons; case languages drill the noun after each preposition
-EXPAND = {"mk", "ar", "la", "grc", "de", "ru", "ko", "fi", "el", "sa", "cs", "pl", "tr", "hu", "is", "pt", "fr", "es", "en"}
-CASE_LANGS = {"la", "grc", "de", "ru", "fi", "el", "sa", "cs", "pl", "tr", "hu", "is"}
+EXPAND = {"mk", "ar", "la", "grc", "de", "ru", "ko", "fi", "el", "sa", "cs", "pl", "tr", "hu", "is", "pt", "fr", "es", "en", "it", "nl", "uk"}
+CASE_LANGS = {"la", "grc", "de", "ru", "fi", "el", "sa", "cs", "pl", "tr", "hu", "is", "uk"}
 T3 = {"mk": "mkd", "ar": "ara", "la": "lat", "grc": "grc", "de": "deu", "ru": "rus", "ko": "kor", "fi": "fin", "el": "ell", "sa": "san",
-      "cs": "ces", "pl": "pol", "tr": "tur", "hu": "hun", "is": "isl", "pt": "por", "fr": "fra", "es": "spa", "en": "eng"}
+      "cs": "ces", "pl": "pol", "tr": "tur", "hu": "hun", "is": "isl", "pt": "por", "fr": "fra", "es": "spa", "en": "eng", "it": "ita", "nl": "nld", "uk": "ukr"}
 
 
 def sentences_of(code: str) -> list:

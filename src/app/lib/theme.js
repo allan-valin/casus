@@ -46,6 +46,10 @@ const FLAG = {
   co: { accent: '#003893', accent2: '#fcd116', name: { en: 'Colombia', pt: 'Colômbia' } },
   fr: { accent: '#0055a4', accent2: '#ef4135', name: { en: 'France', pt: 'França' } },
   be: { accent: '#c8102e', accent2: '#fdda24', name: { en: 'Belgium', pt: 'Bélgica' } },
+  nl: { accent: '#ae1c28', accent2: '#21468b', name: { en: 'Netherlands', pt: 'Países Baixos' } },
+  sr: { accent: '#377e3f', accent2: '#b40a2d', name: { en: 'Suriname', pt: 'Suriname' } },
+  ua: { accent: '#0057b7', accent2: '#ffd700', name: { en: 'Ukraine', pt: 'Ucrânia' } },
+  sm: { accent: '#5eb6e4', accent2: '#8a8a8a', ink: true, name: { en: 'San Marino', pt: 'San Marino' } },
   ca: { accent: '#d80621', accent2: '#8a8a8a', name: { en: 'Canada (Québec)', pt: 'Canadá (Quebec)' } },
 };
 
@@ -53,7 +57,7 @@ const FLAG = {
 export const LANGUAGE_FLAGS = {
   la: ['spqr', 'va'], grc: ['athens', 'sparta', 'gr'], el: ['gr', 'cy'], de: ['de', 'at', 'ch'], ja: ['jp'], ar: ['arab', 'eg', 'ma'], ru: ['ru'],
   ko: ['kr'], zh: ['cn', 'tw'], mk: ['mk'], fi: ['fi'], sa: ['in', 'np'], cs: ['cz'], pl: ['pl'], tr: ['tr'], hu: ['hu'],
-  is: ['is'], pt: ['br', 'pt', 'ao', 'mz'], en: ['gb', 'us', 'au'], es: ['es', 'mx', 'ar', 'co'], fr: ['fr', 'be', 'ca', 'ch'],
+  is: ['is'], pt: ['br', 'pt', 'ao', 'mz'], en: ['gb', 'us', 'au'], es: ['es', 'mx', 'ar', 'co'], fr: ['fr', 'be', 'ca', 'ch'], it: ['it', 'ch', 'sm'], nl: ['nl', 'be', 'sr'], uk: ['ua'],
 };
 
 export const MODE_KEY = 'casus:mode';
@@ -97,7 +101,7 @@ export function applyTheme(mode, theme, root = typeof document !== 'undefined' ?
 }
 
 // flag images, bundled (only these): Vite turns each into a URL
-const FLAG_FILES = import.meta.glob('/node_modules/flag-icons/flags/4x3/{casus,va,it,gr,cy,de,at,ch,jp,arab,eg,ma,ru,kr,cn,tw,mk,fi,in,np,cz,pl,tr,hu,is,br,pt,ao,mz,gb,us,au,es,mx,ar,co,fr,be,ca}.svg', { eager: true, query: '?url', import: 'default' });
+const FLAG_FILES = import.meta.glob('/node_modules/flag-icons/flags/4x3/{casus,va,it,gr,cy,de,at,ch,jp,arab,eg,ma,ru,kr,cn,tw,mk,fi,in,np,cz,pl,tr,hu,is,br,pt,ao,mz,gb,us,au,es,mx,ar,co,fr,be,ca,nl,sr,ua,sm}.svg', { eager: true, query: '?url', import: 'default' });
 // historical flags flag-icons lacks (Rome, Athens, Sparta), drawn for Casus
 const OWN_FLAGS = import.meta.glob('/src/app/flags/*.svg', { eager: true, query: '?url', import: 'default' });
 export const flagUrl = (id) => (id ? FLAG_FILES[`/node_modules/flag-icons/flags/4x3/${id}.svg`] ?? OWN_FLAGS[`/src/app/flags/${id}.svg`] ?? null : null);

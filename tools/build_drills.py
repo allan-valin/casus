@@ -78,6 +78,13 @@ MODELS = {
            ("être", "verb", "to be", "ser, estar"), ("avoir", "verb", "to have", "ter"), ("aller", "verb", "to go", "ir"), ("faire", "verb", "to do, make", "fazer")],
     "es": [("hablar", "verb", "to speak", "falar"), ("comer", "verb", "to eat", "comer"), ("vivir", "verb", "to live", "viver"),
            ("ser", "verb", "to be", "ser"), ("estar", "verb", "to be", "estar"), ("tener", "verb", "to have", "ter"), ("ir", "verb", "to go", "ir")],
+    "it": [("parlare", "verb", "to speak", "falar"), ("credere", "verb", "to believe", "acreditar"), ("dormire", "verb", "to sleep", "dormir"),
+           ("finire", "verb", "to finish", "terminar"), ("essere", "verb", "to be", "ser, estar"), ("avere", "verb", "to have", "ter"), ("andare", "verb", "to go", "ir"), ("fare", "verb", "to do, make", "fazer")],
+    "nl": [("werken", "verb", "to work", "trabalhar"), ("zijn", "verb", "to be", "ser, estar"), ("hebben", "verb", "to have", "ter"), ("gaan", "verb", "to go", "ir"),
+           ("komen", "verb", "to come", "vir"), ("lopen", "verb", "to walk", "andar")],
+    "uk": [("стіл", "noun", "table", "mesa"), ("книга", "noun", "book", "livro"), ("вікно", "noun", "window", "janela"), ("день", "noun", "day", "dia"),
+           ("земля", "noun", "earth, land", "terra"), ("ніч", "noun", "night", "noite"), ("ім'я", "noun", "name", "nome"), ("добрий", "adj", "good", "bom"),
+           ("я", "pron", "I", "eu"), ("читати", "verb", "to read", "ler"), ("говорити", "verb", "to speak", "falar"), ("бути", "verb", "to be", "ser, estar"), ("йти", "verb", "to go", "ir")],
     "en": [("walk", "verb", "to walk", "andar"), ("be", "verb", "to be", "ser, estar"), ("have", "verb", "to have", "ter"), ("go", "verb", "to go", "ir"),
            ("write", "verb", "to write", "escrever"), ("take", "verb", "to take", "pegar, levar")],
     "pt": [("falar", "verb", "to speak", "falar"), ("comer", "verb", "to eat", "comer"), ("partir", "verb", "to leave", "partir"), ("ser", "verb", "to be", "ser"),
@@ -94,7 +101,7 @@ XREF = re.compile(r"^(synonym|alternative (form|spelling)|[\w-]+ form|abbreviati
 IRREGULAR = {"la": {"sum", "eo", "uolo", "fero", "ego", "hic", "qui"}, "grc": {"εἰμί", "ὁ", "δίδωμι"},
              "de": {"der", "ein", "ich", "er", "sein", "haben", "werden", "können"},
              "ja": {"いい", "行く", "する", "来る"}, "ar": {"رأى"},
-             "ru": {"время", "быть", "идти", "я", "он", "этот"}, "ko": {"하다", "듣다", "살다"}, "mk": {"сум", "има"}, "fi": {"olla"}, "el": {"είμαι"}, "cs": {"být"}, "is": {"vera"}, "pl": {"być"}, "pt": {"ser", "ter", "ir"}, "fr": {"être", "avoir", "aller", "faire"}, "es": {"ser", "estar", "tener", "ir"}, "en": {"be", "have", "go", "write", "take"}}
+             "ru": {"время", "быть", "идти", "я", "он", "этот"}, "ko": {"하다", "듣다", "살다"}, "mk": {"сум", "има"}, "fi": {"olla"}, "el": {"είμαι"}, "cs": {"být"}, "is": {"vera"}, "pl": {"być"}, "pt": {"ser", "ter", "ir"}, "fr": {"être", "avoir", "aller", "faire"}, "es": {"ser", "estar", "tener", "ir"}, "en": {"be", "have", "go", "write", "take"}, "it": {"essere", "avere", "andare", "fare"}, "nl": {"zijn", "hebben", "gaan", "komen"}, "uk": {"бути", "йти", "я"}}
 POOL = 60
 
 
