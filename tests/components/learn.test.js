@@ -244,3 +244,19 @@ describe('generated lessons are marked (Allan, 2026-10-20)', () => {
     expect(container.querySelector('.lesson-page .gen-badge').textContent).toMatch(/Wiktionary/);
   });
 });
+
+describe('Learn answers go to the review queue', () => {
+  it('an answered exercise is kept for review', async () => {
+    const storage = store();
+    const { container } = render(Learn, props({ storage }));
+    await flush();
+    await fireEvent.click(container.querySelector('details.topic summary'));
+    await fireEvent.click(container.querySelector('.lesson-row[data-lesson="n5-004"]'));
+    await flush();
+    await fireEvent.click(container.querySelector('button.start-exercises'));
+    await flush();
+    await fireEvent.click(container.querySelector('.choice'));
+    await flush();
+    expect(Object.keys(JSON.parse(storage.getItem('casus:review:ja')))).toHaveLength(1);
+  });
+});

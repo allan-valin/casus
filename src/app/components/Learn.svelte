@@ -10,6 +10,7 @@
   import ChoiceDrill from './ChoiceDrill.svelte';
   import { wiktionaryUrl } from '../lib/entry.js';
   import { LANGUAGES } from '../../lang/registry.js';
+  import { createReview } from '../lib/review.js';
   let { lang, loadLearn, loadLesson, loadQuestions, storage = null, random = Math.random, openInReader = null, saveFile = downloadFile } = $props();
 
   let learn = $state(null);
@@ -44,7 +45,9 @@
   const level = $derived(learn?.levels.find((l) => l.id === levelId) ?? null);
   const flat = $derived(learn ? learn.levels.flatMap((lv) => lv.topics.flatMap((tp) => tp.lessons.map((e) => ({ level: lv, topic: tp, entry: e })))) : []);
   const visible = (tp) => (!search.trim() ? tp.lessons : tp.lessons.filter((e) => `${e.title} ${loc(e.meaning)}`.toLowerCase().includes(search.trim().toLowerCase())));
+  const review = createReview(lang.code, storage);   // every answer is scheduled for the Review drill
   function record(item, correct) {
+    review.record(item, correct);
     const p = progress[item.lesson] ?? { right: 0, total: 0 };
     progress = { ...progress, [item.lesson]: { right: p.right + (correct ? 1 : 0), total: p.total + 1 } };
     try { storage?.setItem(KEY, JSON.stringify(progress)); } catch { /* not kept */ }

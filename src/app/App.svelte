@@ -212,7 +212,7 @@
       }} say={(k, v) => say(k, v, k.endsWith('done') ? 'ok' : k.endsWith('Failed') ? 'err' : undefined)}
       toReader={(text) => { try { storage?.setItem(`casus:input:${lang.code}`, text); } catch { /* not kept */ } location.href = withBase(LANGUAGES.find((l) => l.code === lang.code)?.path ?? '/'); }} />
   {:else if route.view === 'drills'}
-    <Drills {lang} {voice} loadData={(name) => fetchImpl(`${DATA}/${name}.json`).then((r) => (r.ok ? r.json() : []))}
+    <Drills {lang} {voice} {storage} loadData={(name) => fetchImpl(`${DATA}/${name}.json`).then((r) => (r.ok ? r.json() : []))}
       loadParadigm={(id) => fetchImpl(`${DATA}/paradigms/${Number(id) % 512}.json`).then((r) => (r.ok ? r.json() : {})).then((b) => b[String(id)] ?? null)} navigate={(p) => { location.href = withBase(p); }} />
   {:else}
   <section class="card">

@@ -33,13 +33,13 @@ describe('Drills page', () => {
   });
   it('Latin has noun and verb drills but no letters; Greek has letters too', async () => {
     const la = render(Drills, { lang: getLanguage('la'), loadData, navigate: () => {} });
-    expect([...la.container.querySelectorAll('.drill-tab')].map((b) => b.dataset.drill)).toEqual(['nouns', 'verbs', 'parse', 'words', 'phrases']);
+    expect([...la.container.querySelectorAll('.drill-tab')].map((b) => b.dataset.drill)).toEqual(['nouns', 'verbs', 'parse', 'words', 'phrases', 'review']);
     const grc = render(Drills, { lang: getLanguage('grc'), loadData, navigate: () => {} });
-    expect([...grc.container.querySelectorAll('.drill-tab')].map((b) => b.dataset.drill)).toEqual(['letters', 'nouns', 'verbs', 'parse', 'words', 'phrases']);
+    expect([...grc.container.querySelectorAll('.drill-tab')].map((b) => b.dataset.drill)).toEqual(['letters', 'nouns', 'verbs', 'parse', 'words', 'phrases', 'review']);
   });
   it('Portuguese has no noun cases, so verb endings only', () => {
     const pt = render(Drills, { lang: getLanguage('pt'), loadData, navigate: () => {} });
-    expect([...pt.container.querySelectorAll('.drill-tab')].map((b) => b.dataset.drill)).toEqual(['verbs', 'parse', 'words', 'phrases']);
+    expect([...pt.container.querySelectorAll('.drill-tab')].map((b) => b.dataset.drill)).toEqual(['verbs', 'parse', 'words', 'phrases', 'review']);
   });
   it('the noun drill shows the table blank; a right answer turns its cell right', async () => {
     const { container } = render(Drills, { lang: getLanguage('la'), loadData, navigate: () => {}, random: () => 0 });
@@ -133,7 +133,7 @@ describe('frequent words and phrases (Allan, 2026-10-18)', () => {
     await tick();
     const sheet = () => [...document.querySelectorAll('.cheat')].at(-1);
     const menu = [...sheet().querySelectorAll('.cheat-tab')].map((b) => b.dataset.section);
-    expect(menu).toEqual(['nouns', 'verbs', 'parse', 'words', 'phrases']);
+    expect(menu).toEqual(['nouns', 'verbs', 'parse', 'words', 'phrases', 'review']);
     expect(sheet().querySelector('.cheat-tab.active').dataset.section).toBe('nouns');
     await fireEvent.click(sheet().querySelector('.cheat-tab[data-section="phrases"]'));
     await tick();
@@ -212,5 +212,23 @@ describe('Parse the form (drills research 2026-10-20)', () => {
     const prompt = container.querySelector('.quiz-prompt').textContent.trim();
     expect(['rosa', 'rosae', 'rosam', 'amo', 'amas', 'amat']).toContain(prompt);
     expect(container.querySelectorAll('.choice').length).toBeGreaterThanOrEqual(2);
+  });
+});
+
+describe('Review tab (drills research 2026-10-20)', () => {
+  it('asks the items that are due, and says when nothing is', async () => {
+    const m = new Map(); const storage = { getItem: (k) => m.get(k) ?? null, setItem: (k, v) => m.set(k, String(v)) };
+    const { createReview } = await import('../../src/app/lib/review.js');
+    createReview('la', storage).record({ prompt: 'rosae', answer: 'gen sg', pool: ['acc sg', 'abl sg', 'dat pl'] }, false, 0);
+    const { container } = render(Drills, { lang: getLanguage('la'), loadData, navigate: () => {}, storage, random: () => 0 });
+    await tick2();
+    await fireEvent.click(container.querySelector('.drill-tab[data-drill="review"]'));
+    await tick2();
+    expect(container.querySelector('.quiz-prompt').textContent).toContain('rosae');
+    const empty = render(Drills, { lang: getLanguage('de'), loadData, navigate: () => {}, storage, random: () => 0 });
+    await tick2();
+    await fireEvent.click(empty.container.querySelector('.drill-tab[data-drill="review"]'));
+    await tick2();
+    expect(empty.container.querySelector('.review-empty')).not.toBe(null);
   });
 });
