@@ -39,6 +39,9 @@ def chapter_sections(raw: str) -> tuple[str, list]:
                 secs[-1]["html"] += content
             continue
         secs.append({"title": t, "html": content.strip()})
+    if not secs and len(_text(parts[0])) >= 80:
+        # no section headings (an anthology's chapter: one text): the whole chapter is one section
+        secs.append({"title": title, "html": re.sub(r"<h2\b[^>]*>", "<h4>", parts[0]).replace("</h2>", "</h4>").strip()})
     return title, secs
 
 

@@ -426,6 +426,8 @@ PDF_BOOKS = {
 PRESSBOOKS = {
     "fr": [("pb-grammaire", "Kanstantsin Tsedryk, <i>Grammaire française : approche interactive et visuelle</i> (University of Waterloo)", "CC BY-SA 4.0",
             "https://ecampusontario.pressbooks.pub/grammaire/", "university")],
+    "es": [("pb-aalh", "Julie Ann Ward (ed.), <i>Antología abierta de literatura hispana</i> (Rebus Community)", "CC BY 4.0",
+            "https://press.rebus.community/aalh/", "reader", ["C1", "C2"])],
     "ru": [("pb-diverserussian", "<i>Diverse Russian: A Multicultural Exploration</i> (University of Wisconsin–Madison)", "CC BY-SA 4.0",
             "https://wisc.pb.unizin.org/diverserussian/", "university")],
 }
@@ -577,7 +579,7 @@ def main(code: str) -> None:
         from learn_storybooks import storybook_lessons
         print(f"{code}: {storybook_lessons(code, story_dirs, index, lessons, questions)} stories from Global Storybooks")
     # open university textbooks on Pressbooks (vendor/<folder>, tools/fetch_pressbooks.mjs)
-    for folder_name, title, licence, url, group in PRESSBOOKS.get(code, []):
+    for folder_name, title, licence, url, group, *want in PRESSBOOKS.get(code, []):
         folder = ROOT / "vendor" / folder_name
         if not (folder / "chapters.txt").exists():
             continue
@@ -585,7 +587,7 @@ def main(code: str) -> None:
         slugs = [u.rstrip("/").split("/")[-1] for u in (folder / "chapters.txt").read_text().split()]
         credit = {"en": f'<p><small>From <a href="{url}">{title}</a>, {licence}.</small></p>',
                   "pt": f'<p><small>De <a href="{url}">{title}</a>, {licence}.</small></p>'}
-        lvls = [lv["id"] for lv in index["levels"] if lv["id"] in ("B1", "B2")] or [lv["id"] for lv in index["levels"]][-2:]
+        lvls = [lv["id"] for lv in index["levels"] if lv["id"] in (want[0] if want else ("B1", "B2"))] or [lv["id"] for lv in index["levels"]][-2:]
         n = pressbooks_lessons(folder, slugs, f"{code}-{folder_name}", credit, f"{title}, {licence}",
                                lambda slug, u=url: f"{u}chapter/{slug}/", lvls, index, lessons, questions, group=group)
         print(f"{code}: {n} sections from {title} ({licence})")
