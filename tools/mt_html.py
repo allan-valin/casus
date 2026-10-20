@@ -101,6 +101,8 @@ def protect_script(text: str, src: str, inline: list) -> str:
         return f"[{len(inline)}]"
     text = re.sub(r"\[(?!\d+\])(?:[^\[\]\s]|\[\d+\]){1,60}\]|/[^/\s]{1,40}/",
                   lambda m: ipa(m) if re.search(r"[^\x00-\x7f]", PH.sub("", m.group(0))) else m.group(0), text)
+    if src in ("ja", "zh"):     # a Japanese or Chinese explanation quotes its examples in 「」 or 『』
+        text = re.sub(r"[「『][^」』]{1,80}[」』]", ipa, text)
     own = SRC_SCRIPT.get(src)
     if not own:
         return text

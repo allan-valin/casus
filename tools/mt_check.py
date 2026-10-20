@@ -59,7 +59,7 @@ def check_language(code: str, ui: str, sample: int = 20, seed: int = 1) -> dict:
         page = json.loads(f.read_text(encoding="utf-8"))
         if not (page.get("mt") or {}).get(ui):
             continue
-        for s in page.get("sections", []):
+        for s in [{"id": "intro", "html": page.get("intro")}] + page.get("sections", []):
             h = s.get("html")
             if not isinstance(h, dict) or not h.get(ui):
                 continue

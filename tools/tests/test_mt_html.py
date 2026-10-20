@@ -111,3 +111,10 @@ def test_ipa_with_an_example_inside_is_kept_whole():
     page = "<p>The word <b>막</b> is said [mak̚<b>ㄱ</b>i] when a consonant follows it here.</p>"
     out = translate_html(page, lambda texts: [t.replace("The word", "A palavra").replace("\u031a", "\u031c") for t in texts], "en")
     assert "[mak̚<b>ㄱ</b>i]" in out
+
+
+def test_quoted_japanese_in_a_japanese_explanation_is_protected():
+    """school books explain Japanese in Japanese: the examples are in 「」 or 『』"""
+    from mt_html import segments
+    run = [s for s in segments("<p>「いとをかし」は「とても趣がある」という意味で、古文によく出てくる言葉です。</p>", src="ja") if "text" in s][0]
+    assert run["translate"] and "「いとをかし」" in run["inline"] and "いとをかし" not in run["text"]
