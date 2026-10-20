@@ -310,6 +310,25 @@ def sentences_of(code: str) -> list:
 def main(code: str) -> None:
     """data/<code>/learn.json (the index), learn/<lesson>.json (one lesson), learn/questions-<level>.json"""
     index, lessons, questions = builder(code)()
+    if code == "hu" and (ROOT / "vendor" / "ginever" / "ginever.txt").exists():
+        from learn_gutenberg import book_lessons
+        t = (ROOT / "vendor" / "ginever" / "ginever.txt").read_text(encoding="utf-8")
+        t = t[t.find("CHAPTER I\n\nTHE ALPHABET"):t.rfind("HUNGARIAN-ENGLISH VOCABULARY")]
+        rules = {"accusative": {"seq": [{"pos": "noun", "case": "acc"}], "same": ["number"]},
+                 "dative": {"seq": [{"pos": "noun", "case": "dat"}], "same": ["number"]},
+                 "number": {"seq": [{"pos": "noun", "number": "pl", "case": "nom"}], "same": ["case"]},
+                 "place, direction": {"seq": [{"pos": "noun", "case": ["ine", "ela", "ill", "sup", "del", "sub", "ade", "abl", "all"]}], "same": ["number"]},
+                 "comparison of adjectives": {"seq": [{"pos": "adj", "re": "bb(ak|ek|at|et)?$"}], "same": ["number"]},
+                 "iktelen": {"seq": [{"pos": "verb", "mood": "ind", "definite": "indef"}], "same": ["tense", "mood", "definite"]},
+                 "ikes": {"seq": [{"pos": "verb", "re": "ik$"}], "same": ["tense", "mood"]},
+                 "irregular verbs": {"seq": [{"lemma": "^(megy|jön|eszik|iszik|tesz|vesz|visz|hisz|alszik|lesz|van)$"}], "same": ["tense", "mood"]}}
+        credit = {"en": "<p><small>From Joseph Ginever, <i>Hungarian Grammar</i> (1909), Project Gutenberg #76725, public domain.</small></p>",
+                  "pt": "<p><small>De Joseph Ginever, <i>Hungarian Grammar</i> (1909), Project Gutenberg #76725, domínio público, em inglês.</small></p>"}
+        levels = [lv["id"] for lv in index["levels"]]
+        print(f"hu: {book_lessons(t, 'hu-ginever', credit, 'Ginever, Hungarian Grammar (1909), public domain', levels, index, lessons, questions, rules, {'en': 'Ginever: ', 'pt': 'Ginever: '})} sections from Ginever's Hungarian Grammar (1909)")
+    if code == "la" and (ROOT / "vendor" / "ag" / "alphabet.html").exists():
+        from learn_ag import ag_lessons
+        print(f"la: {ag_lessons(ROOT / 'vendor' / 'ag', index, lessons, questions)} lessons from Allen and Greenough (DCC)")
     if code == "sa" and (ROOT / "vendor" / "learnsanskrit" / "html").exists():
         from learn_lso import lso_lessons
         print(f"sa: {lso_lessons(ROOT / 'vendor' / 'learnsanskrit', index, lessons, questions)} lessons from the learnsanskrit.org guide")

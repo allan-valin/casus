@@ -33,10 +33,19 @@ CONTENT = {"noun", "adj", "verb", "adv"}
 WORD = re.compile(r"[\ẁ-֑ͯ-ׇً-ٟऀ-ॿ'’-]+", re.U)
 
 
+ARABIC_MARKS = re.compile(r"[\u064b-\u0652\u0670\u0640]")
+
+
+def key(w: str) -> str:
+    """a word as it is counted: lower case; Arabic without its vowel marks (Tatoeba seldom writes them, the
+    paradigms always do)"""
+    return ARABIC_MARKS.sub("", w).lower()
+
+
 def word_counts(sentences) -> Counter:
     c = Counter()
     for s in sentences:
-        c.update(w.lower() for w in WORD.findall(s))
+        c.update(key(w) for w in WORD.findall(s))
     return c
 
 
@@ -72,6 +81,9 @@ def expand(code: str, data: Path, index: dict, lessons: dict, questions: dict, s
     def forms_of(lid, hw):
         return sorted({f.lower() for f in paras.get(lid, [])} | {hw.lower()})
 
+    def count(forms):
+        return sum(counts.get(k, 0) for k in {key(f) for f in forms})
+
     # rank each part of speech by how often its forms occur
     ranked = {}
     for lid, e in lemmas.items():
@@ -79,7 +91,7 @@ def expand(code: str, data: Path, index: dict, lessons: dict, questions: dict, s
         if not hw or " " in hw or not gl.get(lid):
             continue
         forms = forms_of(lid, hw)
-        n = sum(counts.get(f, 0) for f in forms)
+        n = count(forms)
         if n >= min_count:
             ranked.setdefault(pos, []).append((n, lid, hw, forms))
     for pos in ranked:

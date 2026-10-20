@@ -75,4 +75,10 @@ for t in json.load(open(root + "/index.json"))["topics"]:
 PY
 while read p; do f="$V/learnsanskrit/html/$(echo "$p" | sed 's#^/guide/##;s#/$##;s#/#__#g').html"
   [ -s "$f" ] || { curl -sfL "https://www.learnsanskrit.org$p" -o "$f"; sleep 1.5; }; done < "$V/learnsanskrit/pages.txt"
+# Latin: Allen and Greenough, DCC edition (CC BY-SA): the pages its menu lists, politely
+mkdir -p "$V/ag"; [ -s "$V/ag/alphabet.html" ] || curl -sfL https://dcc.dickinson.edu/grammar/latin/alphabet -o "$V/ag/alphabet.html"
+grep -o 'href="[^"]*/grammar/latin/[^"#?]*"' "$V/ag/alphabet.html" | sed 's/href="//;s/"$//;s#^https\?://dcc.dickinson.edu##' | awk '!seen[$0]++' | while read p; do
+  f="$V/ag/$(basename "$p").html"; [ -s "$f" ] || { curl -sfL "https://dcc.dickinson.edu$p" -o "$f"; sleep 1.5; }; done
+# Hungarian: Ginever, Hungarian Grammar (1909, PD, Gutenberg #76725)
+mkdir -p "$V/ginever"; [ -s "$V/ginever/ginever.txt" ] || curl -sfL https://www.gutenberg.org/cache/epub/76725/pg76725.txt -o "$V/ginever/ginever.txt"
 echo "Learn sources in $V"

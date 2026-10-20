@@ -243,5 +243,9 @@ apparatus and editorial choices, so each bundled passage records its source and 
   한국어기초사전 (NIKL, CC BY-SA 2.0 KR).
 - **Czech**: Charles Nigrin, *Bohemian Grammar* (1918), Project Gutenberg #50595, public domain.
 - **Sanskrit**: the learnsanskrit.org guide (CC BY 4.0, per page).
+- **Latin**: Allen and Greenough, *New Latin Grammar*, Dickinson College Commentaries edition, ed. Meagan Ayer
+  (CC BY-SA: "freely available for re-use under a Creative Commons Attribution-ShareAlike license"), 255 pages.
+- **Hungarian**: Joseph Ginever, *Hungarian Grammar* (1909), Project Gutenberg #76725, public domain; CEFR lessons
+  written by AI (Claude) for Casus, marked as such.
 - **Generated lessons** (every spaced-script language): function words, verbs, vocabulary and phrases built by Casus
   from Wiktionary (CC BY-SA, via kaikki.org) and Tatoeba (CC BY 2.0 FR); marked "generated" on every page.

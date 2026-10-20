@@ -53,3 +53,8 @@ def test_expansion_adds_function_word_verb_and_vocabulary_lessons(tmp_path):
                 assert e["id"] in lessons and lessons[e["id"]]["level"] == lv["id"]
                 if t["kind"] == "grammar":
                     assert e["id"] in questions[lv["id"]]
+
+
+def test_vowelled_forms_count_against_unvowelled_sentences():
+    assert word_counts(["كتب الولد"]) == {"كتب": 1, "الولد": 1}
+    assert word_counts(["كَتَبَ"]) == {"كتب": 1}

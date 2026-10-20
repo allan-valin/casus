@@ -1,0 +1,69 @@
+id: A2
+topics:
+
+- title: {en: Possession, pt: Posse}
+  lessons:
+  - id: hu-possessive
+    title: házam, házad, háza
+    meaning: {en: "possessive suffixes", pt: "sufixos possessivos"}
+    intro:
+      en: |
+        Possession is a suffix on the thing owned: **ház-am** my house, **ház-ad** your, **ház-a** his/her, **ház-unk** our, **ház-atok** your (pl.), **ház-uk** their (front: **kert-em, kert-ed, kert-je, kert-ünk, kert-etek, kert-jük**). The owner noun goes before it: **Péter háza** "Péter's house". *To have* is **van** + the possessed noun: **Van egy kutyám.** "I have a dog."
+      pt: |
+        A posse é um sufixo na coisa possuída: **ház-am** minha casa, **ház-ad** tua, **ház-a** dele/dela, **ház-unk** nossa, **ház-atok** de vocês, **ház-uk** deles (anterior: **kert-em, kert-ed, kert-je, kert-ünk, kert-etek, kert-jük**). O dono vem antes: **Péter háza** "a casa do Péter". *Ter* é **van** + o substantivo possuído: **Van egy kutyám.** "Tenho um cachorro."
+    examples:
+    - [Van egy kutyám., I have a dog., Tenho um cachorro., kutyám]
+    match: {seq: [{pos: noun, re: "(am|em|om|öm|ad|ed|od|öd|unk|ünk|atok|etek|otok|ötök)$"}], suffixes: [am, ad, a, unk, atok, uk, em, ed, e, ünk, etek, ük, om, od], attested: true}
+
+- title: {en: Past and future, pt: Passado e futuro}
+  lessons:
+  - id: hu-past
+    title: olvastam, olvastál, olvasott
+    meaning: {en: "the past -t- / -tt-", pt: "o passado -t- / -tt-"}
+    intro:
+      en: |
+        **-t-** or **-tt-** + the endings, in both conjugations: indefinite **olvastam, olvastál, olvasott, olvastunk, olvastatok, olvastak**; definite **olvastam, olvastad, olvasta, olvastuk, olvastátok, olvasták**. Hungarian has only one past tense.
+      pt: |
+        **-t-** ou **-tt-** + as terminações, nas duas conjugações: indefinida **olvastam, olvastál, olvasott, olvastunk, olvastatok, olvastak**; definida **olvastam, olvastad, olvasta, olvastuk, olvastátok, olvasták**. O húngaro tem um só tempo passado.
+    examples:
+    - [Tegnap moziban voltam., Yesterday I was at the cinema., Ontem fui ao cinema., voltam]
+    match: {seq: [{pos: verb, tense: past, mood: ind}], same: [person, number, definite]}
+
+  - id: hu-future
+    title: fogok olvasni
+    meaning: {en: "the future: fog + infinitive", pt: "o futuro: fog + infinitivo"}
+    intro:
+      en: |
+        **fogok, fogsz, fog, fogunk, fogtok, fognak** + infinitive: **Holnap dolgozni fogok.** "Tomorrow I'll work." Often the present with a time word is enough: **Holnap jövök.** "I'm coming tomorrow."
+      pt: |
+        **fogok, fogsz, fog, fogunk, fogtok, fognak** + infinitivo: **Holnap dolgozni fogok.** "Amanhã vou trabalhar." Muitas vezes basta o presente com uma palavra de tempo: **Holnap jövök.** "Venho amanhã."
+    examples:
+    - [Holnap dolgozni fogok., Tomorrow I'll work., Amanhã vou trabalhar., fogok]
+    match: {seq: [{word: [fogok, fogsz, fog, fogunk, fogtok, fognak]}], gap: 0}
+    pool: [fogok, fogsz, fog, fogunk, fogtok, fognak]
+
+- title: {en: Verbal prefixes, pt: Prefixos verbais}
+  lessons:
+  - id: hu-prefixes
+    title: megy, bemegy, elmegy
+    meaning: {en: "verbal prefixes: be-, ki-, el-, meg-, fel-, le-", pt: "prefixos verbais: be-, ki-, el-, meg-, fel-, le-"}
+    intro:
+      en: |
+        **be-** in, **ki-** out, **fel- / föl-** up, **le-** down, **el-** away, **vissza-** back, **át-** across, **meg-** (completed): **bemegy** go in, **kimegy** go out, **elmegy** go away, **megír** write (finish). The prefix moves after the verb when something is focused or in negation: **Nem megyek be.** "I'm not going in."
+      pt: |
+        **be-** para dentro, **ki-** para fora, **fel- / föl-** para cima, **le-** para baixo, **el-** embora, **vissza-** de volta, **át-** através, **meg-** (concluído): **bemegy** entrar, **kimegy** sair, **elmegy** ir embora, **megír** escrever (até o fim). O prefixo vai para depois do verbo quando algo está em foco ou na negação: **Nem megyek be.** "Não vou entrar."
+    examples:
+    - [Elmegyek., I'm leaving., Vou embora., Elmegyek]
+    match: {seq: [{pos: verb, re: "^(be|ki|fel|föl|le|el|vissza|át|meg)"}], prefixes: [be, ki, fel, le, el, vissza, át, meg], attested: true}
+
+  - id: hu-imperative
+    title: menj!, olvasd!
+    meaning: {en: "the imperative -j", pt: "o imperativo -j"}
+    intro:
+      en: |
+        **-j** + endings (assimilating after s, sz, z, t): **várj!** (wait), **olvass!** (read), **nézz!** (look); definite **olvasd el!** Irregular: **menj** (go), **gyere** (come), **legyél / légy** (be). It also expresses wishes and purpose after **hogy**: **Mondd meg neki, hogy jöjjön!** "Tell him to come!" Negative with **ne**: **Ne menj!**
+      pt: |
+        **-j** + terminações (assimilado depois de s, sz, z, t): **várj!** (espera), **olvass!** (lê), **nézz!** (olha); definido **olvasd el!** Irregulares: **menj** (vai), **gyere** (vem), **legyél / légy** (sê). Também exprime desejo e finalidade depois de **hogy**: **Mondd meg neki, hogy jöjjön!** "Diga a ele para vir!" Negativa com **ne**: **Ne menj!**
+    examples:
+    - [Gyere ide!, Come here!, Vem cá!, Gyere]
+    match: {seq: [{pos: verb, mood: [imp, subj]}], same: [person, number]}

@@ -1,0 +1,207 @@
+id: A1
+topics:
+
+- title: {en: Sounds and vowel harmony, pt: Sons e harmonia vocálica}
+  lessons:
+  - id: hu-harmony
+    title: házban, kertben
+    meaning: {en: "vowel harmony: back -ban, front -ben", pt: "harmonia vocálica: posterior -ban, anterior -ben"}
+    intro:
+      en: |
+        Hungarian spelling: **sz** = *s*, **s** = *sh*, **zs** = *s* in pleasure, **cs** = *ch*, **gy** = *dy*, **ny** = *ny*, **ty** = *ty*, **ly** = *y*; the accent marks **length**: **a / á, e / é, o / ó, ö / ő, u / ú, ü / ű**. Stress is always on the first syllable.
+
+        Suffixes come in **two shapes** (back/front): a word with **a, á, o, ó, u, ú** takes **-ban, -ba, -nak, -ból**; a word with **e, é, i, í, ö, ő, ü, ű** takes **-ben, -be, -nek, -ből**: **ház → házban** (in the house), **kert → kertben** (in the garden). Some take **three** (with ö): **-hoz / -hez / -höz**: **házhoz, kerthez, öröm → örömhöz**.
+      pt: |
+        Ortografia húngara: **sz** = *s*, **s** = *x* de xícara, **zs** = *j*, **cs** = *tch*, **gy** = *dj*, **ny** = *nh*, **ty** = *tch* mole, **ly** = *i*; o acento marca **duração**: **a / á, e / é, o / ó, ö / ő, u / ú, ü / ű**. O acento tônico cai sempre na primeira sílaba.
+
+        Os sufixos têm **duas formas** (posterior/anterior): palavra com **a, á, o, ó, u, ú** leva **-ban, -ba, -nak, -ból**; palavra com **e, é, i, í, ö, ő, ü, ű** leva **-ben, -be, -nek, -ből**: **ház → házban** (na casa), **kert → kertben** (no jardim). Alguns têm **três** (com ö): **-hoz / -hez / -höz**: **házhoz, kerthez, öröm → örömhöz**.
+    examples:
+    - [A házban vagyok., I'm in the house., Estou na casa., házban]
+    - [A kertben ülök., I'm sitting in the garden., Estou sentado no jardim., kertben]
+    match:
+    - {seq: [{pos: noun, re: "ban$"}], suffixes: [ban, ben], attested: true}
+    - {seq: [{pos: noun, re: "ben$"}], suffixes: [ben, ban], attested: true}
+    - {seq: [{pos: noun, re: "ból$"}], suffixes: [ból, ből], attested: true}
+    - {seq: [{pos: noun, re: "ből$"}], suffixes: [ből, ból], attested: true}
+
+- title: {en: "Pronouns and 'van'", pt: "Pronomes e 'van'"}
+  lessons:
+  - id: hu-van
+    title: vagyok, vagy, van
+    meaning: {en: "personal pronouns and lenni 'to be'", pt: "pronomes pessoais e lenni 'ser, estar'"}
+    intro:
+      en: |
+        **én** I, **te** you, **ő** he/she (one word), **mi** we, **ti** you (pl.), **ők** they; polite **ön / maga** (pl. **önök / maguk**) with the 3rd person. **lenni**: **vagyok, vagy, van, vagyunk, vagytok, vannak**. In the 3rd person **van/vannak** is left out with a noun or adjective: **Péter orvos.** "Péter is a doctor." but kept for place: **Péter otthon van.** "Péter is at home." Negative: **nem vagyok**, 3rd person **nincs / nincsenek**.
+      pt: |
+        **én** eu, **te** tu, **ő** ele/ela (uma palavra só), **mi** nós, **ti** vós, **ők** eles; tratamento formal **ön / maga** (pl. **önök / maguk**) com a 3ª pessoa. **lenni**: **vagyok, vagy, van, vagyunk, vagytok, vannak**. Na 3ª pessoa **van/vannak** cai com substantivo ou adjetivo: **Péter orvos.** "Péter é médico." mas fica para lugar: **Péter otthon van.** "Péter está em casa." Negativa: **nem vagyok**, na 3ª **nincs / nincsenek**.
+    examples:
+    - [Fáradt vagyok., I'm tired., Estou cansado., vagyok]
+    - ["Hol vagy?", "Where are you?", "Onde você está?", "vagy"]
+    match: {seq: [{word: [vagyok, vagy, van, vagyunk, vagytok, vannak, voltam, voltál, volt, voltunk, voltatok, voltak]}], gap: 0}
+    pool: [vagyok, vagy, van, vagyunk, vagytok, vannak]
+
+- title: {en: Verbs, pt: Verbos}
+  lessons:
+  - id: hu-present-indef
+    title: olvasok, olvasol, olvas
+    meaning: {en: "the present: indefinite conjugation", pt: "o presente: conjugação indefinida"}
+    intro:
+      en: |
+        Hungarian verbs have **two conjugations**. The **indefinite** one is used with no object or an indefinite one (**egy könyvet**, *a book*):
+
+        | | back (olvas read) | front (beszél speak) |
+        |---|---|---|
+        | én | olvas**ok** | beszél**ek** |
+        | te | olvas**ol** | beszél**sz** |
+        | ő | olvas | beszél |
+        | mi | olvas**unk** | beszél**ünk** |
+        | ti | olvas**tok** | beszél**tek** |
+        | ők | olvas**nak** | beszél**nek** |
+
+        After **s, sz, z** the te-form is **-ol / -el / -öl**: **olvasol, főzöl**. The dictionary form is the ő-form (**olvas**); the infinitive adds **-ni** (**olvasni**).
+      pt: |
+        Os verbos húngaros têm **duas conjugações**. A **indefinida** é usada sem objeto ou com objeto indefinido (**egy könyvet**, *um livro*):
+
+        | | posterior (olvas ler) | anterior (beszél falar) |
+        |---|---|---|
+        | én | olvas**ok** | beszél**ek** |
+        | te | olvas**ol** | beszél**sz** |
+        | ő | olvas | beszél |
+        | mi | olvas**unk** | beszél**ünk** |
+        | ti | olvas**tok** | beszél**tek** |
+        | ők | olvas**nak** | beszél**nek** |
+
+        Depois de **s, sz, z** a forma de te é **-ol / -el / -öl**: **olvasol, főzöl**. A forma do dicionário é a de ő (**olvas**); o infinitivo acrescenta **-ni** (**olvasni**).
+    examples:
+    - ["Beszélsz angolul?", "Do you speak English?", "Você fala inglês?", "Beszélsz"]
+    - [Egy könyvet olvasok., I'm reading a book., Estou lendo um livro., olvasok]
+    match: {seq: [{pos: verb, mood: ind, tense: pres, definite: indef, person: ["1", "2", "3"]}], same: [tense, mood, definite]}
+
+  - id: hu-present-def
+    title: olvasom, olvasod, olvassa
+    meaning: {en: "the definite conjugation: a definite object", pt: "a conjugação definida: objeto definido"}
+    intro:
+      en: |
+        With a **definite** object — **a/az** + noun, a name, **ezt, azt**, a possessed noun — the verb takes the **definite** endings: **olvasom, olvasod, olvassa, olvassuk, olvassátok, olvassák** (front: **nézem, nézed, nézi, nézzük, nézitek, nézik**). **Olvasok egy könyvet** (a book) but **Olvasom a könyvet** (the book). *I … you* has its own ending **-lak / -lek**: **Szeretlek.** "I love you."
+      pt: |
+        Com objeto **definido** — **a/az** + substantivo, um nome, **ezt, azt**, um substantivo com possessivo — o verbo leva as terminações **definidas**: **olvasom, olvasod, olvassa, olvassuk, olvassátok, olvassák** (anterior: **nézem, nézed, nézi, nézzük, nézitek, nézik**). **Olvasok egy könyvet** (um livro) mas **Olvasom a könyvet** (o livro). *Eu … você* tem terminação própria **-lak / -lek**: **Szeretlek.** "Te amo."
+    examples:
+    - [Olvasom a könyvet., I'm reading the book., Estou lendo o livro., Olvasom]
+    - [Szeretlek., I love you., Te amo., Szeretlek]
+    match: {seq: [{pos: verb, mood: ind, definite: def}], same: [tense, mood]}
+
+  - id: hu-negation
+    title: nem, nincs, ne
+    meaning: {en: "negation: nem, nincs, ne", pt: "negação: nem, nincs, ne"}
+    intro:
+      en: |
+        **nem** before the verb or word negated: **Nem tudom.** "I don't know." The 3rd person of *to be* has its own negative: **nincs / nincsenek** "there isn't / aren't", **Nincs időm.** "I don't have time." **ne** is for commands and wishes: **Ne félj!** "Don't be afraid!" Double negatives are normal: **Senki sem tudja.** "Nobody knows."
+      pt: |
+        **nem** antes do verbo ou da palavra negada: **Nem tudom.** "Não sei." A 3ª pessoa de *ser/estar* tem negativa própria: **nincs / nincsenek** "não há", **Nincs időm.** "Não tenho tempo." **ne** é para ordens e desejos: **Ne félj!** "Não tenha medo!" Dupla negação é normal: **Senki sem tudja.** "Ninguém sabe."
+    examples:
+    - [Nem tudom., I don't know., Não sei., Nem]
+    - [Nincs időm., I don't have time., Não tenho tempo., Nincs]
+    match: {seq: [{word: [nem, nincs, nincsenek, ne, sem, senki, semmi, soha, sehol]}], gap: 0}
+    pool: [nem, nincs, ne, sem, senki, semmi, soha]
+
+  - id: hu-questions
+    title: ki, mi, hol, -e
+    meaning: {en: "question words and the question particle -e", pt: "palavras interrogativas e a partícula -e"}
+    intro:
+      en: |
+        **ki** who, **mi** what, **hol** where, **hová** where to, **honnan** where from, **mikor** when, **miért** why, **hogyan / hogy** how, **mennyi** how much, **hány** how many, **melyik** which, **milyen** what kind. Yes/no questions rise in tone; in indirect questions the verb takes **-e**: **Nem tudom, jön-e.** "I don't know whether he's coming."
+      pt: |
+        **ki** quem, **mi** o que, **hol** onde, **hová** para onde, **honnan** de onde, **mikor** quando, **miért** por que, **hogyan / hogy** como, **mennyi** quanto, **hány** quantos, **melyik** qual, **milyen** de que tipo. Perguntas de sim ou não sobem a entonação; nas indiretas o verbo leva **-e**: **Nem tudom, jön-e.** "Não sei se ele vem."
+    examples:
+    - ["Hol laksz?", "Where do you live?", "Onde você mora?", "Hol"]
+    - ["Miért nevetsz?", "Why are you laughing?", "Por que você está rindo?", "Miért"]
+    match: {seq: [{word: [ki, mi, hol, hová, hova, honnan, mikor, miért, hogyan, mennyi, hány, melyik, milyen]}], gap: 0}
+    pool: [ki, mi, hol, hová, honnan, mikor, miért, hogyan, mennyi, melyik]
+
+- title: {en: Nouns and their cases, pt: Substantivos e casos}
+  lessons:
+  - id: hu-plural
+    title: házak, kertek
+    meaning: {en: "the plural -k", pt: "o plural -k"}
+    intro:
+      en: |
+        **-k**, with a linking vowel after a consonant: **ház → házak, kert → kertek, gyerek → gyerekek, ló → lovak**; a final **a / e** lengthens: **alma → almák, kefe → kefék**. After a number or a word of quantity the noun stays singular: **két ház, sok ember**.
+      pt: |
+        **-k**, com vogal de ligação depois de consoante: **ház → házak, kert → kertek, gyerek → gyerekek, ló → lovak**; **a / e** final se alonga: **alma → almák, kefe → kefék**. Depois de número ou palavra de quantidade o substantivo fica no singular: **két ház, sok ember**.
+    examples:
+    - [A gyerekek játszanak., The children are playing., As crianças estão brincando., gyerekek]
+    match: {seq: [{pos: noun, case: nom, number: pl}], same: [case]}
+
+  - id: hu-accusative
+    title: könyvet, házat
+    meaning: {en: "the accusative -t: the object", pt: "o acusativo -t: o objeto"}
+    intro:
+      en: |
+        Every direct object takes **-t**, often with a linking vowel: **könyv → könyvet, ház → házat, alma → almát, bor → bort**. With a definite object the verb is definite (previous lesson): **Látom a házat.** / **Látok egy házat.**
+      pt: |
+        Todo objeto direto leva **-t**, muitas vezes com vogal de ligação: **könyv → könyvet, ház → házat, alma → almát, bor → bort**. Com objeto definido o verbo fica na conjugação definida: **Látom a házat.** / **Látok egy házat.**
+    examples:
+    - ["Kérek egy kávét.", "A coffee please.", "Um café, por favor.", "kávét"]
+    match: {seq: [{pos: noun, case: acc}], same: [number]}
+
+  - id: hu-inner-local
+    title: -ban, -ba, -ból
+    meaning: {en: "inside: inessive -ban, illative -ba, elative -ból", pt: "dentro: inessivo -ban, ilativo -ba, elativo -ból"}
+    intro:
+      en: |
+        **-ban / -ben** in, **-ba / -be** into, **-ból / -ből** out of: **a házban** (in the house), **a házba** (into the house), **a házból** (out of the house). Most countries and cities take these: **Budapesten** is an exception (outer cases), **Brazíliában** is regular.
+      pt: |
+        **-ban / -ben** em (dentro), **-ba / -be** para dentro, **-ból / -ből** de dentro: **a házban** (na casa), **a házba** (para dentro da casa), **a házból** (de dentro da casa). A maioria dos países e cidades usa estes: **Budapesten** é exceção (casos externos), **Brazíliában** é regular.
+    examples:
+    - [Brazíliában élek., I live in Brazil., Moro no Brasil., Brazíliában]
+    - [Bemegyek a boltba., I'm going into the shop., Vou entrar na loja., boltba]
+    match: {seq: [{pos: noun, case: [ine, ill, ela]}], same: [number]}
+
+  - id: hu-outer-local
+    title: -on, -ra, -ról
+    meaning: {en: "on: superessive -on, sublative -ra, delative -ról", pt: "em cima: superessivo -on, sublativo -ra, delativo -ról"}
+    intro:
+      en: |
+        **-n / -on / -en / -ön** on, **-ra / -re** onto, **-ról / -ről** off, about: **az asztalon** (on the table), **az asztalra** (onto the table), **a filmről beszélünk** (we talk about the film). Hungarian towns and many places take these: **Budapesten, Magyarországon, a postán** (at the post office).
+      pt: |
+        **-n / -on / -en / -ön** sobre, **-ra / -re** para cima de, **-ról / -ről** de cima de, sobre (assunto): **az asztalon** (na mesa), **az asztalra** (para a mesa), **a filmről beszélünk** (falamos do filme). As cidades húngaras e muitos lugares usam estes: **Budapesten, Magyarországon, a postán** (nos correios).
+    examples:
+    - [Budapesten lakom., I live in Budapest., Moro em Budapeste., Budapesten]
+    - [A könyv az asztalon van., The book is on the table., O livro está na mesa., asztalon]
+    match: {seq: [{pos: noun, case: [sup, sub, del]}], same: [number]}
+
+  - id: hu-near-local
+    title: -nál, -hoz, -tól
+    meaning: {en: "at, to, from (a person or place): -nál, -hoz, -tól", pt: "junto de, para, de (pessoa ou lugar): -nál, -hoz, -tól"}
+    intro:
+      en: |
+        **-nál / -nél** at (someone's), **-hoz / -hez / -höz** to, **-tól / -től** from: **az orvosnál** (at the doctor's), **az orvoshoz** (to the doctor), **az orvostól** (from the doctor). People always take these for *to, from, at*: **Anyámhoz megyek.** "I'm going to my mother's."
+      pt: |
+        **-nál / -nél** junto de, na casa de, **-hoz / -hez / -höz** para (junto de), **-tól / -től** de (junto de): **az orvosnál** (no médico), **az orvoshoz** (ao médico), **az orvostól** (do médico). Pessoas sempre levam estes para *a, de, em*: **Anyámhoz megyek.** "Vou à casa da minha mãe."
+    examples:
+    - [Az orvoshoz megyek., I'm going to the doctor., Vou ao médico., orvoshoz]
+    match: {seq: [{pos: noun, case: [ade, all, abl]}], same: [number]}
+
+  - id: hu-dative
+    title: -nak, -nek
+    meaning: {en: "the dative -nak / -nek: to, for; possession", pt: "o dativo -nak / -nek: a, para; posse"}
+    intro:
+      en: |
+        **-nak / -nek**: the person something is given to or for (**Adok egy könyvet Péternek.** "I give Péter a book."), and the owner in *have* sentences: **Péternek van egy autója.** "Péter has a car."
+      pt: |
+        **-nak / -nek**: a pessoa a quem ou para quem se dá algo (**Adok egy könyvet Péternek.** "Dou um livro ao Péter."), e o dono nas frases de *ter*: **Péternek van egy autója.** "O Péter tem um carro."
+    examples:
+    - [Adok egy könyvet a lánynak., I give the girl a book., Dou um livro à menina., lánynak]
+    match: {seq: [{pos: noun, case: dat}], same: [number]}
+
+  - id: hu-instrumental
+    title: -val, -vel
+    meaning: {en: "the instrumental -val / -vel: with, by", pt: "o instrumental -val / -vel: com, por meio de"}
+    intro:
+      en: |
+        **-val / -vel**, the **v** assimilating to a final consonant: **busszal** (by bus), **tollal** (with a pen), **a barátommal** (with my friend), **Annával**. After a vowel **v** stays: **autóval**.
+      pt: |
+        **-val / -vel**, com o **v** assimilado à consoante final: **busszal** (de ônibus), **tollal** (com uma caneta), **a barátommal** (com meu amigo), **Annával**. Depois de vogal o **v** fica: **autóval**.
+    examples:
+    - [Busszal megyek., I'm going by bus., Vou de ônibus., Busszal]
+    match: {seq: [{pos: noun, case: ins}], same: [number]}

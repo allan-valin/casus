@@ -1,0 +1,42 @@
+id: B1
+topics:
+
+- title: {en: Conditional and clauses, pt: Condicional e orações}
+  lessons:
+  - id: hu-conditional
+    title: olvasnék, olvasnám
+    meaning: {en: "the conditional -na / -ne", pt: "o condicional -na / -ne"}
+    intro:
+      en: |
+        **-na- / -ne-** + endings: **olvasnék, olvasnál, olvasna** (indef.), **olvasnám, olvasnád, olvasná** (def.). Wishes and polite requests (**Szeretnék egy kávét.** "I'd like a coffee."), and unreal conditions with **ha**: **Ha lenne időm, eljönnék.** "If I had time, I'd come."
+      pt: |
+        **-na- / -ne-** + terminações: **olvasnék, olvasnál, olvasna** (indef.), **olvasnám, olvasnád, olvasná** (def.). Desejos e pedidos educados (**Szeretnék egy kávét.** "Eu queria um café."), e condições irreais com **ha**: **Ha lenne időm, eljönnék.** "Se eu tivesse tempo, viria."
+    examples:
+    - [Szeretnék egy kávét., I'd like a coffee., Eu queria um café., Szeretnék]
+    match: {seq: [{pos: verb, mood: cond}], same: [person, number, definite]}
+
+  - id: hu-conjunctions
+    title: hogy, mert, ha, de
+    meaning: {en: "that, because, if, but", pt: "que, porque, se, mas"}
+    intro:
+      en: |
+        **hogy** that, **mert** because, **ha** if, **amikor** when, **de** but, **vagy** or, **és** and, **tehát** so, **mivel** since, **bár** although, **mielőtt** before, **miután** after. A comma always comes before a subordinate clause; the main clause often has a pointer word: **Azt mondta, hogy jön.** "He said that he's coming."
+      pt: |
+        **hogy** que, **mert** porque, **ha** se, **amikor** quando, **de** mas, **vagy** ou, **és** e, **tehát** portanto, **mivel** já que, **bár** embora, **mielőtt** antes que, **miután** depois que. Sempre há vírgula antes da subordinada; a principal muitas vezes tem uma palavra que a anuncia: **Azt mondta, hogy jön.** "Ele disse que vem."
+    examples:
+    - [Azt mondta hogy jön., He said that he's coming., Ele disse que vem., hogy]
+    match: {seq: [{word: [hogy, mert, ha, amikor, de, vagy, tehát, mivel, bár, mielőtt, miután]}], gap: 0}
+    pool: [hogy, mert, ha, amikor, de, vagy, bár]
+
+  - id: hu-relative
+    title: aki, ami, amely
+    meaning: {en: "relative pronouns: aki, ami, amely", pt: "pronomes relativos: aki, ami, amely"}
+    intro:
+      en: |
+        **aki** (people), **ami / amely** (things), declined like nouns: **a férfi, aki itt lakik** "the man who lives here", **a könyv, amit olvasok** "the book I'm reading", **a ház, amelyben lakom** "the house I live in". Also **ahol** where, **amikor** when.
+      pt: |
+        **aki** (pessoas), **ami / amely** (coisas), declinados como substantivos: **a férfi, aki itt lakik** "o homem que mora aqui", **a könyv, amit olvasok** "o livro que estou lendo", **a ház, amelyben lakom** "a casa em que moro". Também **ahol** onde, **amikor** quando.
+    examples:
+    - [Ez az a könyv amit olvasok., This is the book I'm reading., Este é o livro que estou lendo., amit]
+    match: {seq: [{word: [aki, akit, akinek, akivel, akiről, ami, amit, aminek, amivel, amiről, amely, amelyet, amelyben, ahol, amikor]}], gap: 0}
+    pool: [aki, akit, akinek, ami, amit, amely, ahol, amikor]
