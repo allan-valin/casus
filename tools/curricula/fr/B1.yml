@@ -1,0 +1,68 @@
+id: B1
+topics:
+
+- title: {en: Moods, pt: Modos}
+  lessons:
+  - id: fr-conditionnel
+    title: je voudrais
+    meaning: {en: "the conditional: would", pt: "o condicional: -ria"}
+    intro:
+      en: |
+        Future stem + imperfect endings: **je parlerais, je voudrais, j'aimerais, ce serait**. Polite requests (**Je voudrais un café.**) and unreal conditions with **si** + imperfect: **Si j'avais de l'argent, je voyagerais.**
+      pt: |
+        Radical do futuro + terminações do imperfeito: **je parlerais, je voudrais, j'aimerais, ce serait**. Pedidos educados (**Je voudrais un café.** "Eu queria um café.") e condições irreais com **si** + imperfeito: **Si j'avais de l'argent, je voyagerais.**
+    examples:
+    - [Je voudrais un café., I'd like a coffee., Eu queria um café., voudrais]
+    match: {seq: [{pos: verb, mood: cond}], same: [person, number]}
+
+  - id: fr-subjonctif
+    title: il faut que tu viennes
+    meaning: {en: "the subjunctive after que", pt: "o subjuntivo depois de que"}
+    intro:
+      en: |
+        After expressions of necessity, wish, feeling and doubt + **que**: **Il faut que tu viennes. Je veux qu'il parte. Je suis content que vous soyez là.** Form: stem of **ils** in the present + **-e, -es, -e, -ions, -iez, -ent**: ils parl-ent → **que je parle**; irregular **être → sois, avoir → aie, aller → aille, faire → fasse, pouvoir → puisse**.
+      pt: |
+        Depois de expressões de necessidade, vontade, sentimento e dúvida + **que**: **Il faut que tu viennes.** "É preciso que você venha." **Je veux qu'il parte.** Forma: radical do **ils** no presente + **-e, -es, -e, -ions, -iez, -ent**: ils parl-ent → **que je parle**; irregulares **être → sois, avoir → aie, aller → aille, faire → fasse, pouvoir → puisse**.
+    examples:
+    - [Il faut que tu viennes., You have to come., É preciso que você venha., viennes]
+    match: {seq: [{word: [que, qu]}, {pos: [pron, noun]}, {pos: verb, mood: subj}], near: 1, gap: 2, same: [person, number]}
+
+- title: {en: Complex sentences, pt: Períodos compostos}
+  lessons:
+  - id: fr-relatives
+    title: qui, que, dont, où
+    meaning: {en: "relative pronouns", pt: "pronomes relativos"}
+    intro:
+      en: |
+        **qui** subject (**l'homme qui parle**), **que** object (**le livre que je lis**), **dont** = *of which, whose* (**le livre dont je parle**), **où** place and time (**la ville où j'habite, le jour où il est venu**).
+      pt: |
+        **qui** sujeito (**l'homme qui parle** "o homem que fala"), **que** objeto (**le livre que je lis** "o livro que leio"), **dont** = *do qual, cujo* (**le livre dont je parle** "o livro de que falo"), **où** lugar e tempo (**la ville où j'habite, le jour où il est venu**).
+    examples:
+    - [C'est le livre que je lis., That's the book I'm reading., Esse é o livro que estou lendo., que]
+    match: {seq: [{pos: noun}, {word: [qui, que, qu, dont, où]}], gap: 1}
+    pool: [qui, que, dont, où, quoi]
+
+  - id: fr-y-en
+    title: y, en
+    meaning: {en: "the pronouns y (there, to it) and en (of it, some)", pt: "os pronomes y (lá, a isso) e en (disso, alguns)"}
+    intro:
+      en: |
+        **y** replaces **à** + thing or a place: **Je vais à Paris → J'y vais.** **en** replaces **de** + thing or a quantity: **Je mange du pain → J'en mange. J'en ai deux.** Set phrases: **il y a** (there is), **on y va** (let's go), **je m'en vais** (I'm leaving).
+      pt: |
+        **y** substitui **à** + coisa ou um lugar: **Je vais à Paris → J'y vais.** "Vou lá." **en** substitui **de** + coisa ou uma quantidade: **Je mange du pain → J'en mange. J'en ai deux.** Expressões fixas: **il y a** (há), **on y va** (vamos), **je m'en vais** (vou embora).
+    examples:
+    - [Il y a un problème., There's a problem., Há um problema., y]
+    match: {seq: [{word: [y, en]}, {pos: verb}], gap: 0}
+    pool: [y, en, le, lui]
+
+  - id: fr-gerondif
+    title: en parlant
+    meaning: {en: "the gerund en + -ant", pt: "o gerúndio en + -ant"}
+    intro:
+      en: |
+        **en** + present participle (**-ant**, from the nous stem): *while / by doing*: **Il chante en travaillant.** "He sings while working." **C'est en forgeant qu'on devient forgeron.** "Practice makes perfect."
+      pt: |
+        **en** + particípio presente (**-ant**, do radical de nous): *enquanto / fazendo*: **Il chante en travaillant.** "Ele canta trabalhando." **C'est en forgeant qu'on devient forgeron.** "A prática leva à perfeição."
+    examples:
+    - [Il chante en travaillant., He sings while working., Ele canta trabalhando., travaillant]
+    match: {seq: [{word: [en]}, {re: "ant$"}], gap: 1, suffixes: [ant, er, ait, ons], attested: true}

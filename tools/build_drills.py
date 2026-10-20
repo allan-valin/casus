@@ -74,6 +74,12 @@ MODELS = {
            ("olvas", "verb", "to read", "ler"), ("van", "verb", "to be", "ser, estar")],
     "pl": [("dom", "noun", "house", "casa"), ("kobieta", "noun", "woman", "mulher"), ("okno", "noun", "window", "janela"), ("pies", "noun", "dog", "cachorro"),
            ("nowy", "adj", "new", "novo"), ("czytać", "verb", "to read", "ler"), ("mówić", "verb", "to speak", "falar"), ("być", "verb", "to be", "ser, estar")],
+    "fr": [("parler", "verb", "to speak", "falar"), ("finir", "verb", "to finish", "terminar"), ("vendre", "verb", "to sell", "vender"),
+           ("être", "verb", "to be", "ser, estar"), ("avoir", "verb", "to have", "ter"), ("aller", "verb", "to go", "ir"), ("faire", "verb", "to do, make", "fazer")],
+    "es": [("hablar", "verb", "to speak", "falar"), ("comer", "verb", "to eat", "comer"), ("vivir", "verb", "to live", "viver"),
+           ("ser", "verb", "to be", "ser"), ("estar", "verb", "to be", "estar"), ("tener", "verb", "to have", "ter"), ("ir", "verb", "to go", "ir")],
+    "en": [("walk", "verb", "to walk", "andar"), ("be", "verb", "to be", "ser, estar"), ("have", "verb", "to have", "ter"), ("go", "verb", "to go", "ir"),
+           ("write", "verb", "to write", "escrever"), ("take", "verb", "to take", "pegar, levar")],
     "pt": [("falar", "verb", "to speak", "falar"), ("comer", "verb", "to eat", "comer"), ("partir", "verb", "to leave", "partir"), ("ser", "verb", "to be", "ser"),
            ("ter", "verb", "to have", "ter"), ("ir", "verb", "to go", "ir")],
     "ja": [("高い", "adj", "high, expensive", "alto, caro"), ("いい", "adj", "good", "bom"), ("綺麗", "adj", "pretty, clean", "bonito, limpo"),
@@ -88,7 +94,7 @@ XREF = re.compile(r"^(synonym|alternative (form|spelling)|[\w-]+ form|abbreviati
 IRREGULAR = {"la": {"sum", "eo", "uolo", "fero", "ego", "hic", "qui"}, "grc": {"εἰμί", "ὁ", "δίδωμι"},
              "de": {"der", "ein", "ich", "er", "sein", "haben", "werden", "können"},
              "ja": {"いい", "行く", "する", "来る"}, "ar": {"رأى"},
-             "ru": {"время", "быть", "идти", "я", "он", "этот"}, "ko": {"하다", "듣다", "살다"}, "mk": {"сум", "има"}, "fi": {"olla"}, "el": {"είμαι"}, "cs": {"být"}, "is": {"vera"}, "pl": {"być"}, "pt": {"ser", "ter", "ir"}}
+             "ru": {"время", "быть", "идти", "я", "он", "этот"}, "ko": {"하다", "듣다", "살다"}, "mk": {"сум", "има"}, "fi": {"olla"}, "el": {"είμαι"}, "cs": {"být"}, "is": {"vera"}, "pl": {"być"}, "pt": {"ser", "ter", "ir"}, "fr": {"être", "avoir", "aller", "faire"}, "es": {"ser", "estar", "tener", "ir"}, "en": {"be", "have", "go", "write", "take"}}
 POOL = 60
 
 

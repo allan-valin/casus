@@ -1,0 +1,85 @@
+id: A2
+topics:
+
+- title: {en: The past, pt: O passado}
+  lessons:
+  - id: fr-passe-compose
+    title: j'ai parlé, je suis allé
+    meaning: {en: "the passé composé: avoir / être + participle", pt: "o passé composé: avoir / être + particípio"}
+    intro:
+      en: |
+        **avoir** + past participle for most verbs: **J'ai mangé.** "I ate / I have eaten." Participles: **-er → -é** (parlé), **-ir → -i** (fini), others vary (**fait, pris, vu, eu, été, dit, mis**). Verbs of motion and change and all reflexives take **être**, and the participle agrees: **Elle est partie. Nous sommes allés. Je me suis levé.**
+      pt: |
+        **avoir** + particípio passado para a maioria dos verbos: **J'ai mangé.** "Comi." Particípios: **-er → -é** (parlé), **-ir → -i** (fini), outros variam (**fait, pris, vu, eu, été, dit, mis**). Verbos de movimento e mudança e todos os reflexivos levam **être**, e o particípio concorda: **Elle est partie. Nous sommes allés. Je me suis levé.**
+    examples:
+    - [J'ai mangé une pomme., I ate an apple., Comi uma maçã., mangé]
+    - [Elle est partie hier., She left yesterday., Ela foi embora ontem., partie]
+    match:
+    - {seq: [{lemma: "^(avoir|être)$", mood: ind}, {re: "(é|ée|és|ées)$"}], near: 1, gap: 1, suffixes: [é, ée, és, ées, er, ez], attested: true}
+    - {seq: [{lemma: "^(avoir|être)$", mood: ind}, {re: "(i|ie|is|it|u|ue|us)$", pos: [verb, adj]}], near: 1, gap: 1, same: [number]}
+
+  - id: fr-imparfait
+    title: je parlais
+    meaning: {en: "the imperfect: was doing, used to", pt: "o imperfeito: fazia, estava fazendo"}
+    intro:
+      en: |
+        Stem of **nous** in the present minus **-ons**, plus **-ais, -ais, -ait, -ions, -iez, -aient**: nous parl-ons → **je parlais**; nous fais-ons → **je faisais**; only **être** is irregular: **j'étais**. Background, habits and descriptions in the past: **Quand j'étais petit, je jouais au foot.**
+      pt: |
+        Radical do **nous** no presente menos **-ons**, mais **-ais, -ais, -ait, -ions, -iez, -aient**: nous parl-ons → **je parlais**; nous fais-ons → **je faisais**; só **être** é irregular: **j'étais**. Cenário, hábitos e descrições no passado: **Quand j'étais petit, je jouais au foot.** "Quando eu era pequeno, jogava futebol."
+    examples:
+    - [Quand j'étais petit je jouais au foot., When I was little I used to play football., Quando eu era pequeno jogava futebol., jouais]
+    match: {seq: [{pos: verb, mood: ind, tense: [impf, past], re: "(ais|ait|ions|iez|aient)$"}], same: [person, number]}
+
+  - id: fr-futur
+    title: je parlerai
+    meaning: {en: "the simple future", pt: "o futuro simples"}
+    intro:
+      en: |
+        Infinitive (without final -e) + **-ai, -as, -a, -ons, -ez, -ont**: **je parlerai, tu finiras, il prendra**. Irregular stems: **être → ser-, avoir → aur-, aller → ir-, faire → fer-, pouvoir → pourr-, venir → viendr-, voir → verr-, vouloir → voudr-**.
+      pt: |
+        Infinitivo (sem o -e final) + **-ai, -as, -a, -ons, -ez, -ont**: **je parlerai, tu finiras, il prendra**. Radicais irregulares: **être → ser-, avoir → aur-, aller → ir-, faire → fer-, pouvoir → pourr-, venir → viendr-, voir → verr-, vouloir → voudr-**.
+    examples:
+    - [Je te téléphonerai demain., I'll call you tomorrow., Te ligo amanhã., téléphonerai]
+    match: {seq: [{pos: verb, mood: ind, tense: fut}], same: [person, number]}
+
+- title: {en: Pronouns, pt: Pronomes}
+  lessons:
+  - id: fr-object-pronouns
+    title: le, la, lui, leur
+    meaning: {en: "object pronouns before the verb", pt: "pronomes objeto antes do verbo"}
+    intro:
+      en: |
+        Direct: **me, te, le, la, nous, vous, les**; indirect: **me, te, lui, nous, vous, leur**. They go **before** the verb (before the auxiliary in compound tenses): **Je le vois. Je lui parle. Je l'ai vu.** In affirmative commands after it: **Donne-le-moi !**
+      pt: |
+        Diretos: **me, te, le, la, nous, vous, les**; indiretos: **me, te, lui, nous, vous, leur**. Vêm **antes** do verbo (antes do auxiliar nos tempos compostos): **Je le vois. Je lui parle. Je l'ai vu.** No imperativo afirmativo, depois: **Donne-le-moi !**
+    examples:
+    - [Je le vois., I see him., Eu o vejo., le]
+    - [Je lui parle., I'm talking to him., Falo com ele., lui]
+    match: {seq: [{word: [le, la, les, lui, leur, me, te, nous, vous]}, {pos: verb}], gap: 0}
+    pool: [le, la, les, lui, leur, me, te]
+
+  - id: fr-reflexive
+    title: je me lève
+    meaning: {en: "reflexive verbs: se lever, s'appeler", pt: "verbos reflexivos: se lever, s'appeler"}
+    intro:
+      en: |
+        **me, te, se, nous, vous, se** before the verb: **Je m'appelle Ana. Il se lève à sept heures. Nous nous amusons.** In the passé composé with **être**: **Je me suis levé(e).**
+      pt: |
+        **me, te, se, nous, vous, se** antes do verbo: **Je m'appelle Ana.** "Me chamo Ana." **Il se lève à sept heures.** "Ele se levanta às sete." No passé composé com **être**: **Je me suis levé(e).**
+    examples:
+    - ["Comment tu t'appelles ?", "What's your name?", "Como você se chama?", "t"]
+    match: {seq: [{word: [me, m, te, t, se, s]}, {pos: verb}], gap: 0}
+    pool: [me, te, se, nous, vous]
+
+  - id: fr-comparison
+    title: plus … que
+    meaning: {en: "comparison: plus, moins, aussi … que", pt: "comparação: plus, moins, aussi … que"}
+    intro:
+      en: |
+        **plus … que** more than, **moins … que** less than, **aussi … que** as … as: **Il est plus grand que moi.** Superlative **le plus / le moins**: **la plus belle ville**. Irregular: **bon → meilleur**, **bien → mieux**.
+      pt: |
+        **plus … que** mais que, **moins … que** menos que, **aussi … que** tão … quanto: **Il est plus grand que moi.** Superlativo **le plus / le moins**: **la plus belle ville**. Irregulares: **bon → meilleur**, **bien → mieux**.
+    examples:
+    - [Il est plus grand que moi., He's taller than me., Ele é mais alto que eu., plus]
+    match: {seq: [{word: [plus, moins, aussi]}, {pos: [adj, adv]}], gap: 0}
+    pool: [plus, moins, aussi, très, trop]

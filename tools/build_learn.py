@@ -289,10 +289,10 @@ def builder(code: str):
 
 # languages whose lessons are extended with generated ones (tools/learn_expand.py): spaced scripts (word counts are
 # word-based), and Japanese already has its 1,160 lessons; case languages drill the noun after each preposition
-EXPAND = {"mk", "ar", "la", "grc", "de", "ru", "ko", "fi", "el", "sa", "cs", "pl", "tr", "hu", "is", "pt"}
+EXPAND = {"mk", "ar", "la", "grc", "de", "ru", "ko", "fi", "el", "sa", "cs", "pl", "tr", "hu", "is", "pt", "fr", "es", "en"}
 CASE_LANGS = {"la", "grc", "de", "ru", "fi", "el", "sa", "cs", "pl", "tr", "hu", "is"}
 T3 = {"mk": "mkd", "ar": "ara", "la": "lat", "grc": "grc", "de": "deu", "ru": "rus", "ko": "kor", "fi": "fin", "el": "ell", "sa": "san",
-      "cs": "ces", "pl": "pol", "tr": "tur", "hu": "hun", "is": "isl", "pt": "por"}
+      "cs": "ces", "pl": "pol", "tr": "tur", "hu": "hun", "is": "isl", "pt": "por", "fr": "fra", "es": "spa", "en": "eng"}
 
 
 def sentences_of(code: str) -> list:
@@ -335,7 +335,7 @@ def main(code: str) -> None:
                   "pt": "<p><small>De Joseph Ginever, <i>Hungarian Grammar</i> (1909), Project Gutenberg #76725, domínio público, em inglês.</small></p>"}
         levels = [lv["id"] for lv in index["levels"]]
         print(f"hu: {book_lessons(t, 'hu-ginever', credit, 'Ginever, Hungarian Grammar (1909), public domain', levels, index, lessons, questions, rules, {'en': 'Ginever: ', 'pt': 'Ginever: '})} sections from Ginever's Hungarian Grammar (1909)")
-    WIKIBOOKS = {"ru": "Russian", "el": "Modern_Greek", "ar": "Arabic", "de": "German", "tr": "Turkish"}
+    WIKIBOOKS = {"ru": "Russian", "el": "Modern_Greek", "ar": "Arabic", "de": "German", "tr": "Turkish", "fr": "French", "es": "Spanish"}
     wb = ROOT / "vendor" / "wikibooks" / WIKIBOOKS.get(code, "-") / "pages.json"
     if wb.exists():
         from learn_wikibooks import wikibooks_lessons

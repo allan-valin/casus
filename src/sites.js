@@ -7,7 +7,7 @@ const ORIGIN = 'https://allan-valin.github.io';
 export const SITES = {
   casus: { id: 'casus', title: 'Casus', base: '/casus/', languages: ['la', 'grc', 'de', 'ar', 'ru', 'fi', 'el', 'sa', 'cs', 'pl', 'tr', 'hu', 'is'] },
   asia: { id: 'asia', title: 'Casus Asia', base: '/casus-asia/', languages: ['ja', 'ko', 'zh'] },
-  world: { id: 'world', title: 'Casus World', base: '/casus-world/', languages: ['pt', 'mk', 'en', 'es'] },
+  world: { id: 'world', title: 'Casus World', base: '/casus-world/', languages: ['pt', 'mk', 'fr', 'en', 'es'] },
 };
 
 const chosen = (typeof import.meta !== 'undefined' && import.meta.env?.VITE_CASUS_SITE)

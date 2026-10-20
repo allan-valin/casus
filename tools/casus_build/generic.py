@@ -318,3 +318,6 @@ CONFIGS["hu"] = Config("hu", ["nom", "acc", "dat", "ine", "ela", "ill", "sup", "
                         "instrumental": "ins", "causal-final": "cau", "translative": "tra", "terminative": "ter", "essive-formal": "for",
                         "essive-modal": "ess", "essive": "ess"})
 CONFIGS["pt"] = Config("pt", [], {}, caseless=True)
+CONFIGS["fr"] = Config("fr", [], {}, caseless=True)
+CONFIGS["es"] = Config("es", [], {}, caseless=True)
+CONFIGS["en"] = Config("en", [], {}, caseless=True)

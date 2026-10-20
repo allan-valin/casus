@@ -1,0 +1,141 @@
+id: A1
+topics:
+
+- title: {en: Articles and nouns, pt: Artigos e substantivos}
+  lessons:
+  - id: fr-articles
+    title: le, la, les, un, une, des
+    meaning: {en: "the articles and gender", pt: "os artigos e o gênero"}
+    intro:
+      en: |
+        Every noun is **masculine** or **feminine**: **le livre** (the book), **la table** (the table); before a vowel or mute h, **l'**: **l'homme, l'école**. Plural **les** for both. Indefinite: **un** livre, **une** table, **des** livres. French uses the article more than English: **J'aime le café** "I like coffee". After a negation **un / une / des** become **de**: **Je n'ai pas de voiture.**
+      pt: |
+        Todo substantivo é **masculino** ou **feminino**: **le livre** (o livro), **la table** (a mesa); antes de vogal ou h mudo, **l'**: **l'homme, l'école**. Plural **les** para os dois. Indefinido: **un** livre, **une** table, **des** livres. Depois de negação **un / une / des** viram **de**: **Je n'ai pas de voiture.** "Não tenho carro."
+    examples:
+    - [Le chat dort., The cat is sleeping., O gato está dormindo., Le]
+    - [J'ai une voiture., I have a car., Tenho um carro., une]
+    match: {seq: [{word: [le, la, les, un, une, des]}, {pos: noun}], gap: 0}
+    pool: [le, la, les, un, une, des]
+
+- title: {en: "Être, avoir and the present", pt: "Être, avoir e o presente"}
+  lessons:
+  - id: fr-etre-avoir
+    title: je suis, j'ai
+    meaning: {en: "être 'to be' and avoir 'to have'", pt: "être 'ser, estar' e avoir 'ter'"}
+    intro:
+      en: |
+        **être**: je **suis**, tu **es**, il **est**, nous **sommes**, vous **êtes**, ils **sont**. **avoir**: j'**ai**, tu **as**, il **a**, nous **avons**, vous **avez**, ils **ont**. French says *have* for age, hunger and cold: **J'ai vingt ans**, **J'ai faim**, **J'ai froid**.
+      pt: |
+        **être**: je **suis**, tu **es**, il **est**, nous **sommes**, vous **êtes**, ils **sont**. **avoir**: j'**ai**, tu **as**, il **a**, nous **avons**, vous **avez**, ils **ont**. O francês usa *ter* para idade, fome e frio, como o português: **J'ai vingt ans**, **J'ai faim**, **J'ai froid**.
+    examples:
+    - [Je suis étudiant., I'm a student., Sou estudante., suis]
+    - [Nous avons faim., We're hungry., Estamos com fome., avons]
+    match: {seq: [{lemma: "^(être|avoir)$", mood: ind, tense: pres}], same: [tense, mood]}
+
+  - id: fr-er-verbs
+    title: je parle, nous parlons
+    meaning: {en: "the present of -er verbs", pt: "o presente dos verbos em -er"}
+    intro:
+      en: |
+        Nine French verbs in ten end in **-er** (**parler**, **aimer**, **habiter**). Drop **-er** and add **-e, -es, -e, -ons, -ez, -ent**: je parl**e**, tu parl**es**, il parl**e**, nous parl**ons**, vous parl**ez**, ils parl**ent**. The **-e, -es, -ent** forms sound the same.
+      pt: |
+        Nove em cada dez verbos franceses terminam em **-er** (**parler**, **aimer**, **habiter**). Tire **-er** e acrescente **-e, -es, -e, -ons, -ez, -ent**: je parl**e**, tu parl**es**, il parl**e**, nous parl**ons**, vous parl**ez**, ils parl**ent**. As formas em **-e, -es, -ent** soam iguais.
+    examples:
+    - ["Tu parles français ?", "Do you speak French?", "Você fala francês?", "parles"]
+    - [Nous habitons à Paris., We live in Paris., Moramos em Paris., habitons]
+    match: {seq: [{pos: verb, mood: ind, tense: pres, lemma: "er$", not: {lemma: "^(aller|être)$"}}], same: [tense, mood]}
+
+  - id: fr-irregular-present
+    title: je vais, je fais, je peux
+    meaning: {en: "common irregular verbs in the present", pt: "verbos irregulares comuns no presente"}
+    intro:
+      en: |
+        **aller** (go): vais, vas, va, allons, allez, vont. **faire** (do, make): fais, fais, fait, faisons, faites, font. **pouvoir** (can): peux, peux, peut, pouvons, pouvez, peuvent. **vouloir** (want): veux, veux, veut, voulons, voulez, veulent. **venir** (come): viens, viens, vient, venons, venez, viennent. **prendre** (take): prends, prends, prend, prenons, prenez, prennent.
+      pt: |
+        **aller** (ir): vais, vas, va, allons, allez, vont. **faire** (fazer): fais, fais, fait, faisons, faites, font. **pouvoir** (poder): peux, peux, peut, pouvons, pouvez, peuvent. **vouloir** (querer): veux, veux, veut, voulons, voulez, veulent. **venir** (vir): viens, viens, vient, venons, venez, viennent. **prendre** (pegar, tomar): prends, prends, prend, prenons, prenez, prennent.
+    examples:
+    - [Je vais à l'école., I'm going to school., Vou para a escola., vais]
+    - ["Qu'est-ce que tu fais ?", "What are you doing?", "O que você está fazendo?", "fais"]
+    match: {seq: [{lemma: "^(aller|faire|pouvoir|vouloir|venir|prendre|savoir|devoir|dire|voir)$", mood: ind, tense: pres}], same: [tense, mood]}
+
+- title: {en: Negation and questions, pt: Negação e perguntas}
+  lessons:
+  - id: fr-negation
+    title: ne … pas
+    meaning: {en: "negation: ne … pas, jamais, rien, plus", pt: "negação: ne … pas, jamais, rien, plus"}
+    intro:
+      en: |
+        **ne** (n' before a vowel) before the verb and **pas** after it: **Je ne sais pas.** "I don't know." Instead of pas: **jamais** (never), **rien** (nothing), **plus** (no longer), **personne** (nobody). In speech **ne** is often dropped: **Je sais pas.**
+      pt: |
+        **ne** (n' antes de vogal) antes do verbo e **pas** depois: **Je ne sais pas.** "Não sei." No lugar de pas: **jamais** (nunca), **rien** (nada), **plus** (não mais), **personne** (ninguém). Na fala o **ne** muitas vezes cai: **Je sais pas.**
+    examples:
+    - [Je ne sais pas., I don't know., Não sei., pas]
+    - [Il ne mange jamais de viande., He never eats meat., Ele nunca come carne., jamais]
+    match: {seq: [{word: [ne, n]}, {pos: verb}, {word: [pas, jamais, rien, plus, personne]}], near: 1, gap: 2}
+    pool: [pas, jamais, rien, plus, personne]
+
+  - id: fr-questions
+    title: qui, que, où, quand
+    meaning: {en: "question words", pt: "palavras interrogativas"}
+    intro:
+      en: |
+        **qui** who, **que / quoi** what, **où** where, **quand** when, **comment** how, **pourquoi** why, **combien** how much, **quel / quelle** which. Three ways to ask: intonation (**Tu viens ?**), **est-ce que** (**Est-ce que tu viens ?**), inversion (**Viens-tu ?**, formal).
+      pt: |
+        **qui** quem, **que / quoi** o que, **où** onde, **quand** quando, **comment** como, **pourquoi** por que, **combien** quanto, **quel / quelle** qual. Três maneiras de perguntar: entonação (**Tu viens ?**), **est-ce que** (**Est-ce que tu viens ?**), inversão (**Viens-tu ?**, formal).
+    examples:
+    - ["Où est la gare ?", "Where's the station?", "Onde fica a estação?", "Où"]
+    - ["Pourquoi tu pleures ?", "Why are you crying?", "Por que você está chorando?", "Pourquoi"]
+    match: {seq: [{word: [qui, quoi, où, quand, comment, pourquoi, combien, quel, quelle, quels, quelles]}], gap: 0}
+    pool: [qui, quoi, où, quand, comment, pourquoi, combien, quel]
+
+- title: {en: Adjectives and possessives, pt: Adjetivos e possessivos}
+  lessons:
+  - id: fr-adjectives
+    title: petit, petite
+    meaning: {en: "adjectives agree: -e, -s", pt: "o adjetivo concorda: -e, -s"}
+    intro:
+      en: |
+        Feminine **+e**, plural **+s**: **un petit garçon, une petite fille, des petits garçons, des petites filles**. Some change more: **beau / belle, nouveau / nouvelle, blanc / blanche, heureux / heureuse**. Most come after the noun (**une voiture rouge**); short common ones before it (**grand, petit, bon, beau, jeune, vieux**).
+      pt: |
+        Feminino **+e**, plural **+s**: **un petit garçon, une petite fille, des petits garçons, des petites filles**. Alguns mudam mais: **beau / belle, nouveau / nouvelle, blanc / blanche, heureux / heureuse**. A maioria vem depois do substantivo (**une voiture rouge**); os curtos e comuns antes (**grand, petit, bon, beau, jeune, vieux**).
+    examples:
+    - [C'est une petite maison., It's a small house., É uma casa pequena., petite]
+    match: {seq: [{pos: adj}], same: [number]}
+
+  - id: fr-possessives
+    title: mon, ma, mes
+    meaning: {en: "possessives: mon, ton, son, notre, votre, leur", pt: "possessivos: mon, ton, son, notre, votre, leur"}
+    intro:
+      en: |
+        They agree with the **thing owned**, not the owner: **mon livre, ma maison, mes amis**; **ton / ta / tes**; **son / sa / ses** (his *or* her: **sa maison** = his or her house); **notre / nos, votre / vos, leur / leurs**. Before a vowel the feminine uses **mon / ton / son**: **mon amie**.
+      pt: |
+        Concordam com a **coisa possuída**, não com o dono: **mon livre, ma maison, mes amis**; **ton / ta / tes**; **son / sa / ses** (dele *ou* dela: **sa maison** = a casa dele ou dela); **notre / nos, votre / vos, leur / leurs**. Antes de vogal o feminino usa **mon / ton / son**: **mon amie**.
+    examples:
+    - [C'est mon frère., That's my brother., Esse é o meu irmão., mon]
+    match: {seq: [{word: [mon, ma, mes, ton, ta, tes, son, sa, ses, notre, nos, votre, vos, leurs]}, {pos: noun}], gap: 0}
+    pool: [mon, ma, mes, ton, ta, tes, son, sa, ses, notre, votre]
+
+  - id: fr-prepositions
+    title: au, du, à la
+    meaning: {en: "à and de with the article: au, aux, du, des", pt: "à e de com o artigo: au, aux, du, des"}
+    intro:
+      en: |
+        **à + le = au**, **à + les = aux**, **de + le = du**, **de + les = des**; **à la, à l', de la, de l'** stay apart: **Je vais au cinéma, à la plage, aux États-Unis.** **Il vient du Brésil.** Partitive *some*: **du pain, de la confiture, des fruits**.
+      pt: |
+        **à + le = au**, **à + les = aux**, **de + le = du**, **de + les = des**; **à la, à l', de la, de l'** ficam separados: **Je vais au cinéma, à la plage, aux États-Unis.** **Il vient du Brésil.** Partitivo (um pouco de): **du pain, de la confiture, des fruits**.
+    examples:
+    - [Je vais au cinéma., I'm going to the cinema., Vou ao cinema., au]
+    match: {seq: [{word: [au, aux, du]}], gap: 0}
+    pool: [au, aux, du, des, à, de]
+
+  - id: fr-futur-proche
+    title: je vais partir
+    meaning: {en: "the near future: aller + infinitive", pt: "o futuro próximo: aller + infinitivo"}
+    intro:
+      en: |
+        **aller** in the present + infinitive: **Je vais manger.** "I'm going to eat." **On va voir.** "We'll see." The everyday future of speech.
+      pt: |
+        **aller** no presente + infinitivo: **Je vais manger.** "Vou comer." **On va voir.** "Vamos ver." O futuro do dia a dia.
+    examples:
+    - [Je vais manger., I'm going to eat., Vou comer., vais]
+    match: {seq: [{lemma: "^aller$", tense: pres, mood: ind}, {pos: verb, mood: inf}], gap: 0, same: [tense, mood]}
