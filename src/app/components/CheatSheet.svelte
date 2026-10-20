@@ -8,7 +8,8 @@
   import Paradigm from './Paradigm.svelte';
   let { lang, drill, drills = [drill], nouns = [], verbs = [], models = null, words = [], phrases = [] } = $props();
   let picked = $state(null);
-  const section = $derived(picked && drills.includes(picked) ? picked : drill);
+  // (the matching grid drills the same words; the sentence drills have no sheet of their own: the tables help most)
+  const section = $derived(((s) => ({ match: 'words' })[s] ?? s)(picked && drills.includes(picked) ? picked : drill));
   const shown = $derived(models ?? (section === 'verbs' ? verbs : nouns));
   const glossOf = (m) => (typeof m.gloss === 'string' ? m.gloss : (m.gloss?.[ui.lang] ?? m.gloss?.en ?? ''));
   const romanize = lang.script?.romanize ?? null;

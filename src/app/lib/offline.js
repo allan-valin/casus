@@ -5,7 +5,7 @@
  * under casus.live.<code>.<word> and can be cleared here too.
  */
 const SIDE = ['manifest.json', 'lemmas.json', 'glosses.en.json', 'glosses.pt.json', 'ipa.json', 'government.json', 'codes.json',
-  'drills.json', 'frequency.json', 'phrases.json', 'learn.json', 'expressions.json', 'compounds.json', 'valency.json'];
+  'drills.json', 'frequency.json', 'phrases.json', 'sounds.json', 'bins.json', 'learn.json', 'expressions.json', 'compounds.json', 'valency.json'];
 
 export const cacheName = (code) => `casus-data-${code}`;
 

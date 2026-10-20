@@ -10,6 +10,12 @@
   import ChoiceDrill from './ChoiceDrill.svelte';
   import TypeDrill from './TypeDrill.svelte';
   import ListenDrill from './ListenDrill.svelte';
+  import SpotDrill from './SpotDrill.svelte';
+  import MatchDrill from './MatchDrill.svelte';
+  import PairsDrill from './PairsDrill.svelte';
+  import ShadowDrill from './ShadowDrill.svelte';
+  import { clozeItems, whoItems, spotItems, binItems, soundItems, pairItems, agreementItems, learnSample } from '../lib/moredrills.js';
+  import { sentencePool } from '../lib/listen.js';
   import Overlay from './Overlay.svelte';
   import CheatSheet from './CheatSheet.svelte';
   import { parseItems, transformItems } from '../lib/parse.js';
@@ -18,15 +24,34 @@
 
   const NOMINAL = new Set(['noun', 'adj', 'det', 'pron']);
   // a language that does not inflect (Chinese) has no endings drills; one without noun cases (Portuguese) only the verbs
-  const drills = $derived([...(lang.game ? ['letters'] : []), ...(lang.noEndings ? [] : lang.noNounEndings ? ['verbs', 'parse', 'transform'] : ['nouns', 'verbs', 'parse', 'transform']), 'words', 'phrases', 'listen', 'review']);
+  // (the newer drills, research items 4–15: each only where its data exists — genders, IPA, a voice, noun cases)
+  const cased = $derived(!!lang.inventory?.channels?.case);
+  const drills = $derived([...(lang.game ? ['letters'] : []), ...(lang.noEndings ? [] : lang.noNounEndings ? ['verbs', 'parse', 'transform'] : ['nouns', 'verbs', 'parse', 'transform', 'agree']),
+    'cloze', 'spot', ...(cased ? ['who'] : []), 'words', 'match', ...(bins?.items?.length ? ['bins'] : []), ...(sounds?.words?.length ? ['sounds'] : []),
+    ...(sounds?.pairs?.length && voice ? ['pairs'] : []), 'phrases', 'listen', ...(voice ? ['shadow'] : []), 'review']);
   let chosen = $state(null);
   const drill = $derived(chosen && drills.includes(chosen) ? chosen : drills[0]);
   let models = $state([]);
   let cheat = $state(false);
   let frequency = $state([]);
   let phrases = $state([]);
+  let bins = $state(null);
+  let sounds = $state(null);
   const load = (name, set) => loadData(name).then((x) => set(x ?? [])).catch(() => set([]));
-  onMount(() => { load('drills', (x) => { models = x; }); load('frequency', (x) => { frequency = x; }); load('phrases', (x) => { phrases = x; }); });
+  onMount(() => {
+    load('drills', (x) => { models = x; }); load('frequency', (x) => { frequency = x; }); load('phrases', (x) => { phrases = x; });
+    load('bins', (x) => { bins = Array.isArray(x) ? null : x; }); load('sounds', (x) => { sounds = Array.isArray(x) ? null : x; });
+  });
+  // the drills on real sentences read a sample of the Learn lessons, once, when first opened
+  const LEARN_BASED = new Set(['cloze', 'spot', 'who', 'shadow']);
+  let sample = $state(null);
+  let sampling = false;
+  $effect(() => {
+    if (!LEARN_BASED.has(drill) || sample || sampling) return;
+    sampling = true;
+    learnSample(loadData, random).then((x) => { sample = x; }).catch(() => { sample = { lessons: [], qs: [] }; });
+  });
+  let soundDir = $state('word');
   // frequent words: a rank range and a direction
   const RANGES = [[1, 200], [201, 500], [501, 1000]];
   let range = $state('1-200');
@@ -64,6 +89,8 @@
   const remember = (item, correct) => review.record(item, correct);
   let dueItems = $state([]);
   $effect(() => { if (drill === 'review') dueItems = review.due(); });
+  const genderNames = $derived(Object.fromEntries(['m', 'f', 'n', 'c'].map((g) => [g, paraWord(g)])));
+  const agreeList = $derived(agreementItems(models, lang, caseName, paraWord));
   const withDrills = siteLanguages();     // this site's languages; every one has at least the endings drills
 </script>
 
@@ -112,6 +139,30 @@
       </label>
     </div>
     {#key `${kind}|${phrases.length}`}<ChoiceDrill items={phraseItems} {random} romanize={lang.script?.romanize ?? null} onresult={remember} />{/key}
+  {:else if drill === 'match'}
+    {#key `match|${frequency.length}`}<MatchDrill items={frequency.map((f) => ({ w: f.w, en: f.en }))} {random} {lang} onresult={remember} />{/key}
+  {:else if drill === 'bins'}
+    {#key `bins|${ui.lang}`}<ChoiceDrill items={binItems(bins, genderNames)} {random} onresult={remember} />{/key}
+  {:else if drill === 'sounds'}
+    <div class="options">
+      <select class="sound-direction" bind:value={soundDir}><option value="word">{t('sounds.toWord')}</option><option value="ipa">{t('sounds.toIpa')}</option></select>
+    </div>
+    {#key `sounds|${soundDir}`}<ChoiceDrill items={soundItems(sounds, soundDir)} {random} onresult={remember} />{/key}
+  {:else if drill === 'pairs'}
+    {#key 'pairs'}<PairsDrill items={pairItems(sounds, random)} {voice} {random} onresult={remember} />{/key}
+  {:else if drill === 'agree'}
+    {#key `agree|${models.length}|${ui.lang}`}<ChoiceDrill items={agreeList} {random} onresult={remember} />{/key}
+  {:else if LEARN_BASED.has(drill)}
+    {#if !sample}<p class="muted">{t('more.loading')}</p>
+    {:else if drill === 'cloze'}
+      {#key `cloze|${ui.lang}`}{#if clozeItems(sample.qs, ui.lang).length}<TypeDrill items={clozeItems(sample.qs, ui.lang)} {lang} {random} onresult={remember} />{:else}<p class="muted">{t('more.none')}</p>{/if}{/key}
+    {:else if drill === 'spot'}
+      {#key 'spot'}{#if spotItems(sample.qs, random).length}<SpotDrill items={spotItems(sample.qs, random)} {lang} {random} onresult={remember} />{:else}<p class="muted">{t('more.none')}</p>{/if}{/key}
+    {:else if drill === 'who'}
+      {#key `who|${ui.lang}`}{#if whoItems(sample.qs, ui.lang).length}<ChoiceDrill items={whoItems(sample.qs, ui.lang)} {random} onresult={remember} ordered />{:else}<p class="muted">{t('more.none')}</p>{/if}{/key}
+    {:else}
+      {#key 'shadow'}<ShadowDrill sentences={sentencePool(sample.lessons)} {voice} {lang} {random} />{/key}
+    {/if}
   {:else if drill === 'listen'}
     {#key 'listen'}<ListenDrill {lang} {voice} {loadData} {random} />{/key}
   {:else if drill === 'review'}
@@ -137,7 +188,7 @@
   .tabs { display: flex; flex-wrap: wrap; gap: 4px; }
   .drill-tab { font: inherit; padding: 6px 14px; border: 1.5px solid var(--line); border-radius: 999px; background: var(--panel); color: var(--ink); cursor: pointer; }
   .drill-tab.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
-  .hint { color: var(--ink-2); }
+  .hint, .muted { color: var(--ink-2); }
   .options { display: flex; flex-wrap: wrap; gap: 12px; margin: 6px 0; }
   .options select { max-width: 100%; }
 </style>
