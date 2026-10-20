@@ -292,3 +292,12 @@ describe('who did what: every word read, no conjunction', () => {
     expect(rolesOf([blk('skóna', { pos: 'noun', case: 'acc' }), blk('en', { pos: 'conj' }), blk('þú', { pos: 'pron', case: 'nom' }), blk('ferð', { pos: 'verb' })])).toBe(null);
   });
 });
+
+describe('not: a word list or pattern excludes words (it silently excluded every word)', () => {
+  it('not: { word } and not: { re } exclude only those words', () => {
+    const s = [blk('Јас', { pos: 'pron' }), blk('го', { pos: 'pron' }), blk('видам', { pos: 'verb' })];
+    expect(matchRule(s, { seq: [{ pos: 'pron', not: { word: ['јас'] } }] })).toEqual({ span: [1, 2], gap: 1 });
+    expect(matchRule(s, { seq: [{ pos: 'pron', not: { re: '^ј' } }] })).toEqual({ span: [1, 2], gap: 1 });
+    expect(matchRule(s, { seq: [{ pos: 'pron', not: { pos: 'pron' } }] })).toBe(null);
+  });
+});

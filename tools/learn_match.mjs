@@ -36,11 +36,15 @@ function fitsAnalysis(a, cond, lemmaOf, dictOf) {
   }
   if (cond.lemma && !(lemmaOf && compiled(cond, 'lemma', 'u').test(lemmaOf(a?.lemma) ?? ''))) return false;
   if (cond.dict && !(dictOf && compiled(cond, 'dict', 'u').test(dictOf(a?.lemma) ?? ''))) return false;
-  if (cond.not && fitsAnalysis(a, cond.not, lemmaOf, dictOf)) return false;
+  // (a `not` of words or patterns only is checked on the word itself, in fits)
+  if (cond.not && morphOf(cond.not) && fitsAnalysis(a, cond.not, lemmaOf, dictOf)) return false;
   return true;
 }
 
+const morphOf = (cond) => FEATURES.some((f) => cond[f] != null) || cond.not || cond.lemma || cond.dict;
+
 export function fits(block, cond, lemmaOf = null, dictOf = null, norm = lower) {
+  if (cond.not && (cond.not.word || cond.not.re) && !morphOf(cond.not) && fits(block, cond.not, lemmaOf, dictOf, norm)) return false;
   if (cond.word && !cond.word.map(norm).includes(norm(block.token.surface))) return false;
   // (on the key and on the word as written: a key may strip accents the pattern names, Modern Greek -άς)
   if (cond.re) {
@@ -51,7 +55,7 @@ export function fits(block, cond, lemmaOf = null, dictOf = null, norm = lower) {
   if (cond.noTrail && block.token.trail) return false;
   if (cond.trail && ![...cond.trail].some((ch) => (block.token.trail ?? '').includes(ch))) return false;   // any of these marks
   if (cond.unknown && (block.candidates ?? []).length) return false;
-  const morph = FEATURES.some((f) => cond[f] != null) || cond.not || cond.lemma || cond.dict;
+  const morph = FEATURES.some((f) => cond[f] != null) || (cond.not && morphOf(cond.not)) || cond.lemma || cond.dict;
   if (!morph) return true;
   const cands = block.candidates ?? [];
   return cands.length > 0 && cands.every((c) => fitsAnalysis(c.analysis, cond, lemmaOf, dictOf));
