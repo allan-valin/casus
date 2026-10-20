@@ -46,3 +46,19 @@ Je ne suis pas. """ + "Phrase. " * 60 + "\n"
     secs = sections_of(text, heading=r"[A-ZÈÉ]+ LEÇON\.?", min_chars=200)
     assert [s["title"] for s in secs] == ["Première leçon", "Deuxième leçon"]
     assert "Je suis" in secs[0]["text"] and "ÉTUDE DE MOTS" in secs[0]["text"]
+
+
+def test_book_lessons_can_file_their_topics_under_a_group():
+    """a university textbook's chapters go under the University header of the Learn list (topic group)"""
+    from learn_gutenberg import book_lessons
+    index = {"levels": [{"id": "Beginner", "topics": []}]}
+    text = "Module 1: Letters\n" + "The alphabet. " * 40 + "\nModule 2: Sounds\n" + "Vowels. " * 60 + "\n"
+    n = book_lessons(text, "grc-peek", {"en": "c", "pt": "c"}, "Peek", ["Beginner"], index, {}, {}, heading=r"Module \d+(: .*)?$",
+                     min_chars=100, group="university")
+    assert n == 2 and all(tp["group"] == "university" for tp in index["levels"][0]["topics"])
+
+
+def test_a_group_of_chapters_is_named_by_their_short_labels():
+    text = "".join(f"Module {n}: A long title about point {n} here\n" + "Text. " * 80 + "\n" for n in range(1, 13))
+    secs = sections_of(text, heading=r"Module \d+(: .*)?$", min_chars=100)
+    assert secs[0]["chapter"] == "Module 1 – Module 10" and secs[11]["chapter"] == "Module 11 – Module 12"

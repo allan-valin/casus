@@ -36,7 +36,8 @@ def sections_of(text: str, subheads: bool = False, heading: str | None = None, m
                 current["text"] += line + "\n"
         out = [x for x in out if len(x["text"].strip()) >= min_chars and x["title"].lower() not in ("contents", "index", "table des matières", "inhalt")]
         for k, x in enumerate(out):
-            x["chapter"] = f"{out[k // 10 * 10]['title']} – {out[min(len(out) - 1, k // 10 * 10 + 9)]['title']}"
+            label = lambda t: t.split(": ")[0]   # noqa: E731  ("Module 11: The Definite Article" → "Module 11")
+            x["chapter"] = f"{label(out[k // 10 * 10]['title'])} – {label(out[min(len(out) - 1, k // 10 * 10 + 9)]['title'])}"
         return out
     lines = text.splitlines()
     out, chapter, current, skip = [], None, None, False
@@ -94,8 +95,9 @@ def to_html(text: str) -> str:
 
 def book_lessons(text: str, prefix: str, credit: dict, source: str, levels: list, index: dict, lessons: dict, questions: dict,
                  rules: dict | None = None, topic_title: dict | None = None, subheads: bool = False, heading: str | None = None,
-                 min_chars: int = 0) -> int:
-    """sections spread over `levels` in order, one topic per chapter"""
+                 min_chars: int = 0, group: str | None = None) -> int:
+    """sections spread over `levels` in order, one topic per chapter; group: the Learn list section its topics go under
+    (school, university, reader; none = a course for learners)"""
     secs = sections_of(text, subheads, heading, min_chars)
     topics = {lv["id"]: lv["topics"] for lv in index["levels"]}
     per = {}
@@ -115,5 +117,5 @@ def book_lessons(text: str, prefix: str, credit: dict, source: str, levels: list
         per.setdefault((lv, s["chapter"]), []).append({"id": lid, "title": s["title"], "meaning": page["meaning"]})
     for (lv, chapter), entries in per.items():
         title = {"en": f"{(topic_title or {}).get('en', '')}{chapter}", "pt": f"{(topic_title or {}).get('pt', '')}{chapter}"}
-        topics[lv].append({"id": f"{lv}-{prefix}-{chapter}", "kind": "grammar", "title": title, "lessons": entries})
+        topics[lv].append({"id": f"{lv}-{prefix}-{chapter}", "kind": "grammar", "title": title, "lessons": entries, **({"group": group} if group else {})})
     return len(secs)

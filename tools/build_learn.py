@@ -410,6 +410,13 @@ GUTENBERG = {
 
 
 # open textbooks on Pressbooks: (vendor folder, title, licence, book url, Learn header group)
+# open textbooks published as PDF (vendor/<path>, made with `pdftotext -layout`; tools/fetch_learn_sources.sh), cut at
+# their own chapters: (path, chapter pattern, running heads to drop, where the chapters end, title, licence, url, group)
+PDF_BOOKS = {
+    "grc": [("peek/peek.txt", r"Module \d+", [r"©.*CC BY", r"^[0-9ivx]+\s+Ancient Greek I$", r"^Module \d+ \|.*\d+$", r"^Contents\s+[ivx]+$"],
+             r"Appendix I: ", "Philip S. Peek, <i>Ancient Greek I: A 21st Century Approach</i> (Open Book Publishers, 2021)",
+             "CC BY 4.0", "https://doi.org/10.11647/OBP.0264", "university")],
+}
 PRESSBOOKS = {
     "fr": [("pb-grammaire", "Kanstantsin Tsedryk, <i>Grammaire française : approche interactive et visuelle</i> (University of Waterloo)", "CC BY-SA 4.0",
             "https://ecampusontario.pressbooks.pub/grammaire/", "university")],
@@ -542,6 +549,22 @@ def main(code: str) -> None:
         k = book_lessons(t, f"{code}-pg{n}", credit, f"{short} ({year}), Project Gutenberg #{n}, public domain", lvls, index, lessons,
                          questions, None, {"en": f"{short.split(',')[0]}: ", "pt": f"{short.split(',')[0]}: "}, heading=heading, min_chars=300)
         print(f"{code}: {k} sections from {short} (Gutenberg #{n}){' → reference' if kind == 'reference' else ''}")
+    for path, heading, drop, stop, title, licence, url, group in PDF_BOOKS.get(code, []):
+        f = ROOT / "vendor" / path
+        if not f.exists():
+            continue
+        from learn_gutenberg import book_lessons
+        from learn_pdfbook import clean_layout
+        t = clean_layout(f.read_text(encoding="utf-8"), heading, drop, stop)
+        first = re.search(rf"^{heading}: ", t, re.M)
+        t = t[[m.start() for m in re.finditer(rf"^{first.group(0)}", t, re.M)][-1]:] if first else t   # past the contents
+        credit = {"en": f'<p><small>From <a href="{url}">{title}</a>, {licence}.</small></p>',
+                  "pt": f'<p><small>De <a href="{url}">{title}</a>, {licence}.</small></p>'}
+        lvls = [lv["id"] for lv in index["levels"] if lv["id"] != "Reference"][:2]
+        short = re.sub(r"<[^>]+>", "", title)
+        k = book_lessons(t, f"{code}-pdf{zlib.crc32(path.encode()) % 1000:03d}", credit, f"{short}, {licence}", lvls, index, lessons,
+                         questions, None, None, heading=rf"{heading}(: .*)?$", min_chars=300, group=group)
+        print(f"{code}: {k} chapters from {short}")
     # graded readers: Global Storybooks, CC BY stories only (vendor/global-asp, vendor/global-pb)
     story_dirs = [ROOT / "vendor" / repo / code for repo in ("global-asp", "global-pb") if (ROOT / "vendor" / repo / code).is_dir()]
     if story_dirs:
