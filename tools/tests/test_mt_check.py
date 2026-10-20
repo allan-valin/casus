@@ -43,3 +43,9 @@ def test_a_translated_link_is_not_a_lost_example():
     orig = '<p>La langue est parlée en <a href="/w/Corée">Corée du Sud</a> et ailleurs dans le monde entier.</p>'
     out = '<p>A língua é falada na <a href="/w/Corée">Coreia do Sul</a> e em outros lugares do mundo inteiro.</p>'
     assert problems(orig, out, "fr") == []
+
+
+def test_an_example_without_its_meaning_is_flagged():
+    """Allan, 2026-10-20: Korean examples showed no meaning at all"""
+    orig = '<p>Uma partícula que marca o sujeito de uma frase.</p><div class="ex"><p class="ja">오늘 밤은 달이 참 밝다.</p></div>'
+    assert "example without meaning: 오늘 밤은 달이 참 밝다." in problems(orig, orig.replace("Uma", "Una"), "pt")

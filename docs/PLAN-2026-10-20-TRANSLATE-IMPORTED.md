@@ -43,3 +43,8 @@ ar 0.4M · uk 0.3M · is 0.2M · mk 0.03M.
   (builder fixed, data patched), Wikibooks navigation panels dropped. Check: 355 sections, 12 flagged (fragments).
   ja>pt: kanbun crashed the GPU (crowded runs skipped); output-length guard rejected right Japanese translations
   (now ×5 for CJK; 7026 rejected sentences purged and redone); batch 16 scaled down for long inputs.
+- 2026-10-20 (Allan, after ko check): proofreading means READING each pair, not just the checker. Per pair: the checker
+  (now also flags examples without a meaning line), then by eye: a sample of every book, both sides, judged on whether a
+  learner gets the meaning (labels, examples, links, headings) — record findings + fixes here. Structural gaps found by
+  Allan in ko: NIKL examples had no meaning (MT lines added in every UI), "— particle." untranslated (label now a phrase).
+  Words in Learn now open their dictionary entry (WordEntry), as in the Reader.

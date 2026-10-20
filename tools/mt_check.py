@@ -40,6 +40,8 @@ def problems(orig: str, out: str, src: str) -> list:
         plain = _text(INLINE_RE.sub(" ", para))
         if len(plain) > 10 and is_prose(plain, src) and plain in _text(INLINE_RE.sub(" ", orig)):
             found.append(f"untranslated: {plain[:80]}")
+    for m in re.finditer(r'<div class="ex">\s*<p class="ja"[^>]*>(.*?)</p>\s*</div>', out, re.S):
+        found.append(f"example without meaning: {_text(m.group(1))[:60]}")
     def top(h):
         words = _text(h).split()
         grams = Counter(tuple(words[k:k + 3]) for k in range(len(words) - 2))
