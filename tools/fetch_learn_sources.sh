@@ -81,4 +81,6 @@ grep -o 'href="[^"]*/grammar/latin/[^"#?]*"' "$V/ag/alphabet.html" | sed 's/href
   f="$V/ag/$(basename "$p").html"; [ -s "$f" ] || { curl -sfL "https://dcc.dickinson.edu$p" -o "$f"; sleep 1.5; }; done
 # Hungarian: Ginever, Hungarian Grammar (1909, PD, Gutenberg #76725)
 mkdir -p "$V/ginever"; [ -s "$V/ginever/ginever.txt" ] || curl -sfL https://www.gutenberg.org/cache/epub/76725/pg76725.txt -o "$V/ginever/ginever.txt"
+# Finnish: Eliot, A Finnish Grammar (1890, PD, Gutenberg #59795)
+mkdir -p "$V/eliot"; [ -s "$V/eliot/eliot.txt" ] || curl -sfL https://www.gutenberg.org/cache/epub/59795/pg59795.txt -o "$V/eliot/eliot.txt"
 echo "Learn sources in $V"

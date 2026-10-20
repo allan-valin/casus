@@ -19,3 +19,10 @@ def test_sections_split_at_headings_with_their_exercises():
 def test_markup():
     h = to_html("_Number_ is =-k=.\n\n  rigó     (thrush),     plural rigók")
     assert "<i>Number</i>" in h and "<b>-k</b>" in h and "<pre>" in h
+
+
+def test_italic_subheadings_split_a_long_section():
+    text = "NOUNS.\n\nIntro text.\n\n\n_Declension._\n\nThe noun is declined.\n\n_Rule._—not a heading.\n\n\n_Possessive suffixes._\n\nSuffixes."
+    s = sections_of(text, subheads=True)
+    assert [x["title"] for x in s] == ["Nouns", "Declension", "Possessive suffixes"]
+    assert all(x["chapter"] == "Nouns" for x in s) and "_Rule._" in s[1]["text"]

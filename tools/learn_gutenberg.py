@@ -16,7 +16,11 @@ def _title(s: str) -> str:
     return s[:1] + s[1:].lower() if s.isupper() else s
 
 
-def sections_of(text: str) -> list[dict]:
+SUBHEAD = re.compile(r"_([A-Z][^_]{2,60})\._")
+
+
+def sections_of(text: str, subheads: bool = False) -> list[dict]:
+    """subheads: a line that is only an italic heading (_Declension._) starts a section of the current chapter"""
     lines = text.splitlines()
     out, chapter, current, skip = [], None, None, False
     for i, line in enumerate(lines):
@@ -26,6 +30,11 @@ def sections_of(text: str) -> list[dict]:
             chapter = _title(nxt)
             current = None
             skip = True          # the chapter title line itself starts the first section
+            continue
+        if subheads and SUBHEAD.fullmatch(st) and current is not None and len(SUBHEAD.fullmatch(st).group(1)) > 5 \
+                and SUBHEAD.fullmatch(st).group(1).lower() not in ("singular", "plural", "example", "examples", "exceptions"):
+            current = {"chapter": current["chapter"], "title": SUBHEAD.fullmatch(st).group(1), "text": ""}
+            out.append(current)
             continue
         if HEADING.fullmatch(st) and not st.startswith("NOTE"):
             if st.upper().startswith("FOOTNOTES"):
@@ -37,6 +46,8 @@ def sections_of(text: str) -> list[dict]:
                 skip = False
                 continue
             current = {"chapter": chapter or _title(st), "title": _title(st), "text": ""}
+            if subheads and not chapter:
+                current["chapter"] = _title(st)
             out.append(current)
             skip = False
             continue
@@ -65,9 +76,9 @@ def to_html(text: str) -> str:
 
 
 def book_lessons(text: str, prefix: str, credit: dict, source: str, levels: list, index: dict, lessons: dict, questions: dict,
-                 rules: dict | None = None, topic_title: dict | None = None) -> int:
+                 rules: dict | None = None, topic_title: dict | None = None, subheads: bool = False) -> int:
     """sections spread over `levels` in order, one topic per chapter"""
-    secs = sections_of(text)
+    secs = sections_of(text, subheads)
     topics = {lv["id"]: lv["topics"] for lv in index["levels"]}
     per = {}
     for k, s in enumerate(secs):

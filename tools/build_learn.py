@@ -326,6 +326,34 @@ def main(code: str) -> None:
                   "pt": "<p><small>De Joseph Ginever, <i>Hungarian Grammar</i> (1909), Project Gutenberg #76725, domínio público, em inglês.</small></p>"}
         levels = [lv["id"] for lv in index["levels"]]
         print(f"hu: {book_lessons(t, 'hu-ginever', credit, 'Ginever, Hungarian Grammar (1909), public domain', levels, index, lessons, questions, rules, {'en': 'Ginever: ', 'pt': 'Ginever: '})} sections from Ginever's Hungarian Grammar (1909)")
+    WIKIBOOKS = {"ru": "Russian", "el": "Modern_Greek", "ar": "Arabic", "de": "German", "tr": "Turkish"}
+    wb = ROOT / "vendor" / "wikibooks" / WIKIBOOKS.get(code, "-") / "pages.json"
+    if wb.exists():
+        from learn_wikibooks import wikibooks_lessons
+        case = lambda c: {"seq": [{"pos": ["noun", "adj"], "case": c}], "same": ["number"]}   # noqa: E731
+        rules = {"nominative": case("nom"), "genitive": case("gen"), "dative": case("dat"), "accusative": case("acc"),
+                 "instrumental": case("ins"), "prepositional": case("pre"), "locative": case("loc"), "vocative": case("voc"),
+                 "past tense": {"seq": [{"pos": "verb", "tense": "past"}], "same": ["person", "number"]},
+                 "imperative": {"seq": [{"pos": "verb", "mood": "imp"}], "same": ["person", "number"]},
+                 "plural": {"seq": [{"pos": "noun", "number": "pl"}], "same": ["case"]}} if code in CASE_LANGS else {}
+        print(f"{code}: {wikibooks_lessons(code, WIKIBOOKS[code], json.loads(wb.read_text(encoding='utf-8')), index, lessons, questions, rules=rules)} lessons from Wikibooks")
+    if code == "fi" and (ROOT / "vendor" / "eliot" / "eliot.txt").exists():
+        from learn_gutenberg import book_lessons
+        t = (ROOT / "vendor" / "eliot" / "eliot.txt").read_text(encoding="utf-8")
+        t = t[t.find("A FINNISH GRAMMAR.\n"):t.find("SELECTIONS FROM FINNISH LITERATURE")]
+        case = lambda *c: {"seq": [{"pos": ["noun", "adj"], "case": list(c)}], "same": ["number"]}   # noqa: E731
+        rules = {"inessive": case("ine", "ela", "ill"), "adessive": case("ade", "abl", "all"), "partitive": case("par"),
+                 "genitive": case("gen"), "essive": case("ess", "tra"), "accusative": case("gen", "par"),
+                 "infinitive": {"seq": [{"pos": "verb", "re": "m(a|ä)(an|än|ssa|ssä|sta|stä|tta|ttä)$"}], "suffixes": ["maan", "massa", "masta", "matta"], "attested": True},
+                 "participle": {"seq": [{"pos": "verb", "mood": "part"}], "same": ["number"]},
+                 "potential": {"seq": [{"pos": "verb", "mood": "pot"}], "same": ["person", "number"]},
+                 "conditional": {"seq": [{"pos": "verb", "mood": "cond"}], "same": ["person", "number"]},
+                 "imperative": {"seq": [{"pos": "verb", "mood": "imp"}], "same": ["person", "number"]},
+                 "negative": {"seq": [{"lemma": "^ei$"}, {"pos": "verb"}], "gap": 0, "same": ["tense", "mood"]}}
+        credit = {"en": "<p><small>From C. N. E. Eliot, <i>A Finnish Grammar</i> (1890), Project Gutenberg #59795, public domain. Its spelling and some forms are of the 19th century.</small></p>",
+                  "pt": "<p><small>De C. N. E. Eliot, <i>A Finnish Grammar</i> (1890), Project Gutenberg #59795, domínio público, em inglês. A grafia e algumas formas são do século XIX.</small></p>"}
+        levels = [lv["id"] for lv in index["levels"]][1:]
+        print(f"fi: {book_lessons(t, 'fi-eliot', credit, 'Eliot, A Finnish Grammar (1890), public domain', levels, index, lessons, questions, rules, {'en': 'Eliot: ', 'pt': 'Eliot: '}, subheads=True)} sections from Eliot's Finnish Grammar (1890)")
     if code == "la" and (ROOT / "vendor" / "ag" / "alphabet.html").exists():
         from learn_ag import ag_lessons
         print(f"la: {ag_lessons(ROOT / 'vendor' / 'ag', index, lessons, questions)} lessons from Allen and Greenough (DCC)")
