@@ -43,7 +43,7 @@ def chapter_sections(raw: str) -> tuple[str, list]:
 
 
 def pressbooks_lessons(folder: Path, chapters: list, prefix: str, credit: dict, source: str, url_of, levels: list,
-                       index: dict, lessons: dict, questions: dict) -> int:
+                       index: dict, lessons: dict, questions: dict, group: str | None = None) -> int:
     """chapters: the chapter slugs in book order; their sections spread over `levels` in order"""
     folder = Path(folder)
     all_secs = []
@@ -66,5 +66,6 @@ def pressbooks_lessons(folder: Path, chapters: list, prefix: str, credit: dict, 
         questions.setdefault(lv, {})[lid] = {"pools": {"gap": []}, "qs": []}
         per.setdefault((lv, chapter), []).append({"id": lid, "title": s["title"], "meaning": page["meaning"]})
     for (lv, chapter), entries in per.items():
-        topics[lv].append({"id": f"{lv}-{prefix}-{chapter}", "kind": "grammar", "title": {"en": chapter, "pt": chapter}, "lessons": entries})
+        topics[lv].append({"id": f"{lv}-{prefix}-{chapter}", "kind": "grammar", "title": {"en": chapter, "pt": chapter}, "lessons": entries,
+                                 **({"group": group} if group else {})})
     return len(all_secs)

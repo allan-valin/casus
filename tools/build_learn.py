@@ -374,16 +374,16 @@ EXTRA_SOURCES = {
            "ja:高等学校国語総合@school", "ja:高等学校古文@school", "ja:高等学校古典B@school", "wv-en:Beginner Japanese", "wv-en:Japanese Language", "wv-fr:Japonais"],
     "zh": ["zh:小学语文@school", "zh:初中语文@school", "zh:國中語文（高中）@school", "wv-fr:Chinois"],
     "fi": ["fi:Äidinkieli@school", "wv-en:Learning Finnish"], "tr": ["tr:Türkçe@school", "tr:Ön-Türkçe@university", "wv-en:Turkish"],
-    "it": ["it:Italiano@school", "wv-en:Introduction to Italian", "wv-fr:Italien"], "nl": ["nl:Nederlands@school", "wv-en:Dutch Language", "wv-fr:Néerlandais"],
-    "uk": ["uk:Українська мова@school", "wv-en:Ukrainian language"], "fr": ["fr:Français@school", "wv-en:French"],
-    "cs": ["wv-en:Czech Language"], "ru": ["ru:Некоторые сюжеты из истории русского языка@university", "ru:Русский язык как иностранный", "wv-fr:Russe", "wv-en:Russian"],
+    "it": ["it:Italiano@school", "wv-en:Introduction to Italian", "wv-fr:Italien", "wv-es:Gramática básica del italiano"], "nl": ["nl:Nederlands@school", "wv-en:Dutch Language", "wv-fr:Néerlandais"],
+    "uk": ["uk:Українська мова@school", "wv-en:Ukrainian language"], "fr": ["fr:Français@school", "wv-en:French", "wv-fr:Leçons de français par niveau"],
+    "cs": ["wv-en:Czech Language"], "ru": ["ru:Некоторые сюжеты из истории русского языка@university", "ru:Русский язык как иностранный", "wv-fr:Russe", "wv-en:Russian", "wv-ru:Русский язык (1 класс)@school", "wv-ru:Русский язык (5 класс)@school", "wv-ru:Русский язык (6 класс)@school", "wv-ru:Русский язык (7 класс)@school"],
     "la": ["hu:Latin", "es:Gramática de uso de la lengua latina", "la:Lingua Latina in libris de Harrio Potter@reader",
-           "wv-en:Latin I@university", "wv-en:Latin II@university", "wv-en:Latin III@university", "wv-fr:Latin@school"],
-    "grc": ["wv-en:Introductory Ancient Greek Language@university", "wv-fr:Grec ancien@school"],
-    "de": ["wv-en:German Language", "wv-en:German grammar", "wv-fr:Allemand"], "es": ["wv-en:Spanish 1", "wv-fr:Espagnol"],
-    "pt": ["wv-en:Brazilian Portuguese", "wv-en:Portuguese Language", "wv-fr:Portugais"], "ar": ["wv-en:Arabic", "wv-fr:Arabe"],
+           "wv-en:Latin I@university", "wv-en:Latin II@university", "wv-en:Latin III@university", "wv-fr:Latin@school", "wv-it:Introduzione alla grammatica latina (superiori)@school", "wv-it:Programma di grammatica latina per le superiori@school", "wv-de:Lateinische Grammatik"],
+    "grc": ["wv-en:Introductory Ancient Greek Language@university", "wv-fr:Grec ancien@school", "wv-it:Programma di grammatica greca per le superiori@school"],
+    "de": ["wv-en:German Language", "wv-en:German grammar", "wv-fr:Allemand", "wv-de:Kontrastive Syntax Deutsch-Englisch: Subjekte@university", "wv-de:Kontrastive Syntax Deutsch-Englisch: Passiv@university", "wv-de:Kontrastive Syntax Deutsch-Englisch: Verb und Objekte@university"], "es": ["wv-en:Spanish 1", "wv-fr:Espagnol"],
+    "pt": ["wv-en:Brazilian Portuguese", "wv-en:Portuguese Language", "wv-fr:Portugais", "wv-pt:Portal:Grupo de Estudos em Português para o ensino fundamental@school", "wv-pt:Morfologia do Português@university"], "ar": ["wv-en:Arabic", "wv-fr:Arabe"],
     "ko": ["wv-en:Korean", "wv-en:Korean Language", "wv-fr:Coréen"], "pl": ["wv-en:Polish language", "wv-fr:Polonais"],
-    "hu": ["wv-en:Hungarian language"], "el": ["wv-en:Greek Language"], "sa": ["wv-en:Sanskrit Language"],
+    "hu": ["wv-en:Hungarian language"], "el": ["wv-en:Greek Language", "wv-el:Γλώσσα Α' Δημοτικού@school", "wv-el:Γλώσσα Β' Δημοτικού@school", "wv-el:Γλώσσα Ε' Δημοτικού@school", "wv-el:Γλώσσα ΣΤ' Δημοτικού@school"], "sa": ["wv-en:Sanskrit Language"],
 }
 # full grammars for the Reference tab (Wikisource: public domain; Wikibooks: CC BY-SA); "ws-xx:" = Wikisource
 REFERENCE = {
@@ -406,6 +406,15 @@ GUTENBERG = {
            ("38124", r"LESSON [IVXLC]+\.?\s*$", "course", "Edith J. Broomhall, <i>Spanish Composition</i>", 1921)],
     "de": [("44642", r"§\. ?\d+\.", "reference", "Hermann Bohm, <i>Kleine deutsche Sprachlehre</i> (spelling of 1879)", 1879)],
     "pt": [("79190", r"[A-Z][A-Z ,]{4,}\.?$", "reference", "John Casper Branner, <i>A Brief Grammar of the Portuguese Language</i>", 1910)],
+}
+
+
+# open textbooks on Pressbooks: (vendor folder, title, licence, book url, Learn header group)
+PRESSBOOKS = {
+    "fr": [("pb-grammaire", "Kanstantsin Tsedryk, <i>Grammaire française : approche interactive et visuelle</i> (University of Waterloo)", "CC BY-SA 4.0",
+            "https://ecampusontario.pressbooks.pub/grammaire/", "university")],
+    "ru": [("pb-diverserussian", "<i>Diverse Russian: A Multicultural Exploration</i> (University of Wisconsin–Madison)", "CC BY-SA 4.0",
+            "https://wisc.pb.unizin.org/diverserussian/", "university")],
 }
 
 
@@ -521,6 +530,19 @@ def main(code: str) -> None:
     if story_dirs:
         from learn_storybooks import storybook_lessons
         print(f"{code}: {storybook_lessons(code, story_dirs, index, lessons, questions)} stories from Global Storybooks")
+    # open university textbooks on Pressbooks (vendor/<folder>, tools/fetch_pressbooks.mjs)
+    for folder_name, title, licence, url, group in PRESSBOOKS.get(code, []):
+        folder = ROOT / "vendor" / folder_name
+        if not (folder / "chapters.txt").exists():
+            continue
+        from learn_pressbooks import pressbooks_lessons
+        slugs = [u.rstrip("/").split("/")[-1] for u in (folder / "chapters.txt").read_text().split()]
+        credit = {"en": f'<p><small>From <a href="{url}">{title}</a>, {licence}.</small></p>',
+                  "pt": f'<p><small>De <a href="{url}">{title}</a>, {licence}.</small></p>'}
+        lvls = [lv["id"] for lv in index["levels"] if lv["id"] in ("B1", "B2")] or [lv["id"] for lv in index["levels"]][-2:]
+        n = pressbooks_lessons(folder, slugs, f"{code}-{folder_name}", credit, f"{title}, {licence}",
+                               lambda slug, u=url: f"{u}chapter/{slug}/", lvls, index, lessons, questions, group=group)
+        print(f"{code}: {n} sections from {title} ({licence})")
     if code == "pl" and (ROOT / "vendor" / "pl-exam" / "du.txt").exists():
         from learn_pl_exam import pl_exam_lessons
         print(f"pl: {pl_exam_lessons(ROOT / 'vendor' / 'pl-exam' / 'du.txt', index, lessons, questions)} points of the official exam grammar list (Dz.U. 2025 poz. 217)")

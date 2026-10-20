@@ -111,3 +111,6 @@ mkdir -p "$V/pl-exam"
 [ -s "$V/pl-exam/du.txt" ] || { curl -sfL https://eli.gov.pl/eli/DU/2025/217/ogl/pol/pdf -o "$V/pl-exam/du2025-217.pdf" && pdftotext -layout "$V/pl-exam/du2025-217.pdf" "$V/pl-exam/du.txt"; }
 # Global Storybooks (CC BY 4.0 except where a story says otherwise; only CC-BY stories are used)
 for r in global-asp global-pb; do [ -d "$V/$r" ] || git clone -q --depth 1 "https://github.com/global-asp/$r.git" "$V/$r"; done
+# open university textbooks on Pressbooks (build_learn.py PRESSBOOKS), read with a headless browser
+node "$ROOT/tools/fetch_pressbooks.mjs" https://ecampusontario.pressbooks.pub/grammaire/ pb-grammaire
+node "$ROOT/tools/fetch_pressbooks.mjs" https://wisc.pb.unizin.org/diverserussian/ pb-diverserussian
