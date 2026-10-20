@@ -8,284 +8,284 @@ credit:
   pt: "Lições: Benjamin L. D'Ooge, Latin for Beginners (Ginn, 1909), domínio público, Projeto Gutenberg #18251 (em inglês). Resumos, tópicos e exercícios do Tatoeba (CC BY 2.0 FR) organizados pelo Casus."
 stages:
 - id: Beginner
-  title: {en: Beginner, pt: Iniciante}
+  title: {en: Beginner, pt: Iniciante, de: "Anfänger", mk: "Почетно", ar: "مبتدئ"}
   topics:
-  - title: {en: First principles, pt: Primeiros princípios}
+  - title: {en: First principles, pt: Primeiros princípios, de: "Erste Grundlagen", mk: "Први начела", ar: "المبادئ الأولى"}
     lessons:
     - n: I
-      meaning: {en: "subject, predicate, object; est and sunt", pt: "sujeito, predicado, objeto; est e sunt"}
+      meaning: {en: "subject, predicate, object; est and sunt", pt: "sujeito, predicado, objeto; est e sunt", de: "Subjekt, Prädikat, Objekt; est und sunt", mk: "подмет, прирок, предмет; est и sunt", ar: "الفاعل والمسند والمفعول؛ est وsunt"}
       match: {seq: [{word: [est, sunt]}]}
       pool: [est, sunt, es, sum, erat, erant]
     - n: II
-      meaning: {en: "number; the verb agrees with its subject", pt: "número; o verbo concorda com o sujeito"}
+      meaning: {en: "number; the verb agrees with its subject", pt: "número; o verbo concorda com o sujeito", de: "Numerus; das Verb kongruiert mit dem Subjekt", mk: "број; глаголот се согласува со подметот", ar: "العدد؛ الفعل يطابق فاعله"}
       match: {seq: [{pos: verb, tense: pres, mood: ind, person: "3"}], same: [tense, mood, voice]}
     - n: III
-      meaning: {en: "declension: endings show the case", pt: "declinação: as terminações mostram o caso"}
+      meaning: {en: "declension: endings show the case", pt: "declinação: as terminações mostram o caso", de: "Deklination: Endungen zeigen den Fall", mk: "деклинација: наставките го покажуваат падежот", ar: "التصريف الاسمي: اللواحق تبيّن الحالة"}
       match: {seq: [{pos: noun}], same: [number]}
     - n: IV
-      meaning: {en: "nominative subject, accusative object, genitive of possession", pt: "sujeito no nominativo, objeto no acusativo, genitivo de posse"}
+      meaning: {en: "nominative subject, accusative object, genitive of possession", pt: "sujeito no nominativo, objeto no acusativo, genitivo de posse", de: "Nominativ als Subjekt, Akkusativ als Objekt, Genitiv des Besitzes", mk: "номинатив подмет, акузатив предмет, генитив на припадност", ar: "حالة الرفع للفاعل، والنصب للمفعول، والإضافة للملكية"}
       match: {seq: [{pos: noun, case: acc}], same: [number]}
     - n: V
-      meaning: {en: "the dative: indirect object", pt: "o dativo: objeto indireto"}
+      meaning: {en: "the dative: indirect object", pt: "o dativo: objeto indireto", de: "der Dativ: indirektes Objekt", mk: "дативот: индиректен предмет", ar: "حالة القابل: المفعول غير المباشر"}
       match: {seq: [{pos: noun, case: dat}], same: [number]}
     - n: VI
-      meaning: {en: "the ablative and prepositions; adjectives", pt: "o ablativo e as preposições; adjetivos"}
+      meaning: {en: "the ablative and prepositions; adjectives", pt: "o ablativo e as preposições; adjetivos", de: "der Ablativ und Präpositionen; Adjektive", mk: "аблативот и предлозите; придавки", ar: "حالة الأداة (الأبلاتيف) وحروف الجر؛ الصفات"}
       match: {seq: [{pos: prep}, {pos: noun, case: abl}], gap: 1, same: [number]}
-  - title: {en: First and second declensions, pt: Primeira e segunda declinações}
+  - title: {en: First and second declensions, pt: Primeira e segunda declinações, de: "Erste und zweite Deklination", mk: "Прва и втора деклинација", ar: "التصريفان الأول والثاني"}
     lessons:
     - n: VII
-      meaning: {en: "first declension (puella, -ae)", pt: "primeira declinação (puella, -ae)"}
+      meaning: {en: "first declension (puella, -ae)", pt: "primeira declinação (puella, -ae)", de: "erste Deklination (puella, -ae)", mk: "прва деклинација (puella, -ae)", ar: "التصريف الأول (puella، -ae)"}
       match: {seq: [{pos: noun, dict: ", -ae [fm]\\."}], same: [number]}
     - n: VIII
-      meaning: {en: "first declension: the plural", pt: "primeira declinação: o plural"}
+      meaning: {en: "first declension: the plural", pt: "primeira declinação: o plural", de: "erste Deklination: der Plural", mk: "прва деклинација: множина", ar: "التصريف الأول: الجمع"}
       match: {seq: [{pos: noun, number: pl, dict: ", -ae [fm]\\."}], same: [number]}
     - n: IX
-      meaning: {en: "second declension, masculine (dominus, -ī)", pt: "segunda declinação, masculino (dominus, -ī)"}
+      meaning: {en: "second declension, masculine (dominus, -ī)", pt: "segunda declinação, masculino (dominus, -ī)", de: "zweite Deklination, maskulin (dominus, -ī)", mk: "втора деклинација, машки род (dominus, -ī)", ar: "التصريف الثاني، المذكر (dominus، -ī)"}
       match: {seq: [{pos: noun, dict: ", -i m\\."}], same: [number]}
     - n: X
-      meaning: {en: "second declension, neuter (bellum, -ī)", pt: "segunda declinação, neutro (bellum, -ī)"}
+      meaning: {en: "second declension, neuter (bellum, -ī)", pt: "segunda declinação, neutro (bellum, -ī)", de: "zweite Deklination, neutral (bellum, -ī)", mk: "втора деклинација, среден род (bellum, -ī)", ar: "التصريف الثاني، المحايد (bellum، -ī)"}
       match: {seq: [{pos: noun, dict: ", -i n\\."}], same: [number]}
     - n: XI
-      meaning: {en: "adjectives of the first and second declensions (bonus, -a, -um)", pt: "adjetivos da primeira e segunda declinações (bonus, -a, -um)"}
+      meaning: {en: "adjectives of the first and second declensions (bonus, -a, -um)", pt: "adjetivos da primeira e segunda declinações (bonus, -a, -um)", de: "Adjektive der ersten und zweiten Deklination (bonus, -a, -um)", mk: "придавки од прва и втора деклинација (bonus, -a, -um)", ar: "صفات التصريفين الأول والثاني (bonus، -a، -um)"}
       match: {seq: [{pos: noun}, {pos: adj, dict: ", -a, -um"}], gap: 1, same: [case, number]}
     - n: XII
-      meaning: {en: "nouns in -ius and -ium", pt: "substantivos em -ius e -ium"}
+      meaning: {en: "nouns in -ius and -ium", pt: "substantivos em -ius e -ium", de: "Nomen auf -ius und -ium", mk: "именки на -ius и -ium", ar: "الأسماء المنتهية بـ -ius و-ium"}
       match: {seq: [{pos: noun, lemma: "i(us|um)$", dict: ", -i [mn]\\."}], same: [number]}
     - n: XIII
-      meaning: {en: "second declension nouns in -er and -ir (puer, vir)", pt: "segunda declinação em -er e -ir (puer, vir)"}
+      meaning: {en: "second declension nouns in -er and -ir (puer, vir)", pt: "segunda declinação em -er e -ir (puer, vir)", de: "Nomen der zweiten Deklination auf -er und -ir (puer, vir)", mk: "именки од втора деклинација на -er и -ir (puer, vir)", ar: "أسماء التصريف الثاني المنتهية بـ -er و-ir (puer، vir)"}
       match: {seq: [{pos: noun, lemma: "(er|ir)$", dict: ", -i m\\."}], same: [number]}
     - n: XIV
-      meaning: {en: "possessive adjectives: meus, tuus, suus, noster, vester", pt: "adjetivos possessivos: meus, tuus, suus, noster, vester"}
+      meaning: {en: "possessive adjectives: meus, tuus, suus, noster, vester", pt: "adjetivos possessivos: meus, tuus, suus, noster, vester", de: "Possessivadjektive: meus, tuus, suus, noster, vester", mk: "присвојни придавки: meus, tuus, suus, noster, vester", ar: "صفات الملكية: meus، tuus، suus، noster، vester"}
       match: {seq: [{pos: [adj, pron], lemma: "^(meus|tuus|suus|noster|vester)$"}], same: [number]}
     - n: XV
-      meaning: {en: "the ablative with cum: with whom, how", pt: "o ablativo com cum: com quem, como"}
+      meaning: {en: "the ablative with cum: with whom, how", pt: "o ablativo com cum: com quem, como", de: "der Ablativ mit cum: mit wem, wie", mk: "аблативот со cum: со кого, како", ar: "الأبلاتيف مع cum: مع من، وكيف"}
       match: {seq: [{word: [cum]}, {pos: noun, case: abl}], gap: 1, same: [number]}
     - n: XVI
-      meaning: {en: "the nine irregular adjectives (ūnus, sōlus, tōtus…)", pt: "os nove adjetivos irregulares (ūnus, sōlus, tōtus…)"}
+      meaning: {en: "the nine irregular adjectives (ūnus, sōlus, tōtus…)", pt: "os nove adjetivos irregulares (ūnus, sōlus, tōtus…)", de: "die neun unregelmäßigen Adjektive (ūnus, sōlus, tōtus…)", mk: "деветте неправилни придавки (ūnus, sōlus, tōtus…)", ar: "الصفات الشاذة التسع (ūnus، sōlus، tōtus…)"}
       match: {seq: [{lemma: "^(unus|solus|totus|ullus|nullus|alius|alter|uter|neuter)$"}], same: [number]}
     - n: XVII
-      meaning: {en: "the demonstrative is, ea, id", pt: "o demonstrativo is, ea, id"}
+      meaning: {en: "the demonstrative is, ea, id", pt: "o demonstrativo is, ea, id", de: "das Demonstrativ is, ea, id", mk: "показната заменка is, ea, id", ar: "اسم الإشارة is، ea، id"}
       match: {seq: [{pos: pron, lemma: "^is$"}], same: [number]}
-  - title: {en: The verb in the present system, pt: O verbo no sistema do presente}
+  - title: {en: The verb in the present system, pt: O verbo no sistema do presente, de: "Das Verb im Präsenssystem", mk: "Глаголот во сегашниот систем", ar: "الفعل في نظام المضارع"}
     lessons:
     - n: XVIII
-      meaning: {en: "conjugation: tense, mood, person; sum", pt: "conjugação: tempo, modo, pessoa; sum"}
+      meaning: {en: "conjugation: tense, mood, person; sum", pt: "conjugação: tempo, modo, pessoa; sum", de: "Konjugation: Tempus, Modus, Person; sum", mk: "конјугација: време, начин, лице; sum", ar: "التصريف الفعلي: الزمن والصيغة والشخص؛ sum"}
       match: {seq: [{pos: verb, lemma: "^sum$", mood: ind}], same: [tense]}
     - n: XIX
-      meaning: {en: "present active of amō and moneō", pt: "presente ativo de amō e moneō"}
+      meaning: {en: "present active of amō and moneō", pt: "presente ativo de amō e moneō", de: "Präsens Aktiv von amō und moneō", mk: "сегашно активно на amō и moneō", ar: "المضارع المعلوم من amō وmoneō"}
       match: {seq: [{pos: verb, tense: pres, mood: ind, voice: act, conj: ["1", "2"]}], same: [tense, mood, voice]}
     - n: XX
-      meaning: {en: "imperfect active of amō and moneō", pt: "imperfeito ativo de amō e moneō"}
+      meaning: {en: "imperfect active of amō and moneō", pt: "imperfeito ativo de amō e moneō", de: "Imperfekt Aktiv von amō und moneō", mk: "имперфект активно на amō и moneō", ar: "الماضي الناقص المعلوم من amō وmoneō"}
       match: {seq: [{pos: verb, tense: impf, mood: ind, voice: act, conj: ["1", "2"]}], same: [person, number]}
     - n: XXI
-      meaning: {en: "future active of amō and moneō", pt: "futuro ativo de amō e moneō"}
+      meaning: {en: "future active of amō and moneō", pt: "futuro ativo de amō e moneō", de: "Futur Aktiv von amō und moneō", mk: "идно активно на amō и moneō", ar: "المستقبل المعلوم من amō وmoneō"}
       match: {seq: [{pos: verb, tense: fut, mood: ind, voice: act, conj: ["1", "2"]}], same: [person, number]}
     - n: XXII
-      meaning: {en: "review of verbs; the dative with adjectives", pt: "revisão dos verbos; o dativo com adjetivos"}
+      meaning: {en: "review of verbs; the dative with adjectives", pt: "revisão dos verbos; o dativo com adjetivos", de: "Wiederholung der Verben; der Dativ bei Adjektiven", mk: "преглед на глаголите; датив со придавки", ar: "مراجعة الأفعال؛ حالة القابل مع الصفات"}
       # lemma only: amīcus is a noun and an adjective, both fine here
       match: {seq: [{lemma: "^(amicus|inimicus|gratus|carus|similis|fidelis|proximus|idoneus|utilis|par|aequus|notus|finitimus)$"}, {pos: [noun, pron], case: dat}], near: 1, gap: 1, same: [number]}
     - n: XXIII
-      meaning: {en: "present active of regō and audiō", pt: "presente ativo de regō e audiō"}
+      meaning: {en: "present active of regō and audiō", pt: "presente ativo de regō e audiō", de: "Präsens Aktiv von regō und audiō", mk: "сегашно активно на regō и audiō", ar: "المضارع المعلوم من regō وaudiō"}
       match: {seq: [{pos: verb, tense: pres, mood: ind, voice: act, conj: ["3", "4"]}], same: [tense, mood, voice]}
     - n: XXIV
-      meaning: {en: "imperfect active of regō and audiō; the dative with special verbs", pt: "imperfeito ativo de regō e audiō; o dativo com verbos especiais"}
+      meaning: {en: "imperfect active of regō and audiō; the dative with special verbs", pt: "imperfeito ativo de regō e audiō; o dativo com verbos especiais", de: "Imperfekt Aktiv von regō und audiō; der Dativ bei bestimmten Verben", mk: "имперфект активно на regō и audiō; датив со посебни глаголи", ar: "الماضي الناقص المعلوم من regō وaudiō؛ حالة القابل مع أفعال خاصة"}
       match: [{seq: [{pos: verb, tense: impf, mood: ind, voice: act, conj: ["3", "4"]}], same: [person, number]}, {seq: [{pos: verb, lemma: "^(credo|faveo|pareo|noceo|persuadeo|resisto|studeo|impero|placeo|servio|ignosco|parco)$"}, {pos: noun, case: dat}], near: 2, gap: 1, same: [number]}]
     - n: XXV
-      meaning: {en: "future active of regō and audiō", pt: "futuro ativo de regō e audiō"}
+      meaning: {en: "future active of regō and audiō", pt: "futuro ativo de regō e audiō", de: "Futur Aktiv von regō und audiō", mk: "идно активно на regō и audiō", ar: "المستقبل المعلوم من regō وaudiō"}
       match: {seq: [{pos: verb, tense: fut, mood: ind, voice: act, conj: ["3", "4", "3-io"]}], same: [person, number]}
     - n: XXVI
-      meaning: {en: "verbs in -iō of the third conjugation; the imperative", pt: "verbos em -iō da terceira conjugação; o imperativo"}
+      meaning: {en: "verbs in -iō of the third conjugation; the imperative", pt: "verbos em -iō da terceira conjugação; o imperativo", de: "Verben auf -iō der dritten Konjugation; der Imperativ", mk: "глаголи на -iō од трета конјугација; заповеден начин", ar: "أفعال -iō من التصريف الثالث؛ الأمر"}
       match: [{seq: [{pos: verb, mood: imp}], same: [mood]}, {seq: [{pos: verb, conj: "3-io", mood: ind}], same: [tense]}]
-  - title: {en: The passive voice, pt: A voz passiva}
+  - title: {en: The passive voice, pt: A voz passiva, de: "Das Passiv", mk: "Пасивот", ar: "المبني للمجهول"}
     lessons:
     - n: XXVII
-      meaning: {en: "the passive: present, imperfect, future of amō and moneō", pt: "a passiva: presente, imperfeito e futuro de amō e moneō"}
+      meaning: {en: "the passive: present, imperfect, future of amō and moneō", pt: "a passiva: presente, imperfeito e futuro de amō e moneō", de: "das Passiv: Präsens, Imperfekt, Futur von amō und moneō", mk: "пасивот: сегашно, имперфект, идно на amō и moneō", ar: "المبني للمجهول: المضارع والماضي الناقص والمستقبل من amō وmoneō"}
       match: {seq: [{pos: verb, voice: pass, mood: ind, tense: [pres, impf, fut], conj: ["1", "2"]}], same: [tense, voice]}
     - n: XXVIII
-      meaning: {en: "the passive of regō and audiō", pt: "a passiva de regō e audiō"}
+      meaning: {en: "the passive of regō and audiō", pt: "a passiva de regō e audiō", de: "das Passiv von regō und audiō", mk: "пасивот на regō и audiō", ar: "المجهول من regō وaudiō"}
       match: {seq: [{pos: verb, voice: pass, mood: ind, tense: [pres, impf, fut], conj: ["3", "4"]}], same: [tense, voice]}
     - n: XXIX
-      meaning: {en: "passive of -iō verbs; passive infinitive and imperative", pt: "passiva dos verbos em -iō; infinitivo e imperativo passivos"}
+      meaning: {en: "passive of -iō verbs; passive infinitive and imperative", pt: "passiva dos verbos em -iō; infinitivo e imperativo passivos", de: "Passiv der Verben auf -iō; Infinitiv und Imperativ Passiv", mk: "пасив на глаголите на -iō; пасивен инфинитив и заповеден", ar: "مجهول أفعال -iō؛ المصدر والأمر المجهولان"}
       match: {seq: [{pos: verb, mood: inf, voice: pass, tense: pres}]}
     - n: XXX
-      meaning: {en: "synopses; the ablative of separation (from)", pt: "sinopses; o ablativo de separação (de, a partir de)"}
+      meaning: {en: "synopses; the ablative of separation (from)", pt: "sinopses; o ablativo de separação (de, a partir de)", de: "Synopsen; der Ablativ der Trennung (von)", mk: "прегледи на формите; аблатив на одделување (од)", ar: "جداول الصيغ؛ أبلاتيف الانفصال (من)"}
       match: {seq: [{word: [a, ab, e, ex, de]}, {pos: noun, case: abl}], gap: 0}
       pool: [a, ab, e, ex, de, cum, in, sine]
 - id: Intermediate
-  title: {en: Intermediate, pt: Intermediário}
+  title: {en: Intermediate, pt: Intermediário, de: "Mittelstufe", mk: "Средно", ar: "متوسط"}
   topics:
-  - title: {en: The perfect system, pt: O sistema do perfeito}
+  - title: {en: The perfect system, pt: O sistema do perfeito, de: "Das Perfektsystem", mk: "Перфектниот систем", ar: "نظام التام"}
     lessons:
     - n: XXXI
-      meaning: {en: "perfect, pluperfect and future perfect of sum", pt: "perfeito, mais-que-perfeito e futuro perfeito de sum"}
+      meaning: {en: "perfect, pluperfect and future perfect of sum", pt: "perfeito, mais-que-perfeito e futuro perfeito de sum", de: "Perfekt, Plusquamperfekt und Futur II von sum", mk: "перфект, плусквамперфект и идно минато на sum", ar: "التام والبعيد والمستقبل التام من sum"}
       match: {seq: [{pos: verb, lemma: "^sum$", tense: [perf, plup, futp]}], same: [person, number]}
     - n: XXXII
-      meaning: {en: "the perfect active indicative", pt: "o perfeito ativo do indicativo"}
+      meaning: {en: "the perfect active indicative", pt: "o perfeito ativo do indicativo", de: "das Perfekt Aktiv Indikativ", mk: "перфект активен индикатив", ar: "الماضي التام المعلوم الإخباري"}
       match: {seq: [{pos: verb, tense: perf, mood: ind, voice: act}], same: [person, number, voice]}
     - n: XXXIII
-      meaning: {en: "pluperfect and future perfect active; perfect infinitive", pt: "mais-que-perfeito e futuro perfeito ativos; infinitivo perfeito"}
+      meaning: {en: "pluperfect and future perfect active; perfect infinitive", pt: "mais-que-perfeito e futuro perfeito ativos; infinitivo perfeito", de: "Plusquamperfekt und Futur II Aktiv; Infinitiv Perfekt", mk: "плусквамперфект и идно минато активно; перфектен инфинитив", ar: "البعيد والمستقبل التام المعلومان؛ المصدر التام"}
       match: {seq: [{pos: verb, tense: [plup, futp], mood: ind, voice: act}], same: [person, number, voice]}
     - n: XXXIV
-      meaning: {en: "review of the active voice", pt: "revisão da voz ativa"}
+      meaning: {en: "review of the active voice", pt: "revisão da voz ativa", de: "Wiederholung des Aktivs", mk: "преглед на активот", ar: "مراجعة المعلوم"}
       match: {seq: [{pos: verb, voice: act, mood: ind}], same: [person, number]}
     - n: XXXV
-      meaning: {en: "the passive perfects (amātus est)", pt: "os perfeitos passivos (amātus est)"}
+      meaning: {en: "the passive perfects (amātus est)", pt: "os perfeitos passivos (amātus est)", de: "die Perfektformen des Passivs (amātus est)", mk: "перфектните форми на пасивот (amātus est)", ar: "صيغ التام المجهولة (amātus est)"}
       match: {seq: [{pos: vpar, tense: perf, voice: pass}, {word: [est, sunt, erat, erant, sum, es, sumus, estis, fuit]}], gap: 0, same: [case]}
     - n: XXXVI
-      meaning: {en: "principal parts; prepositions; yes-or-no questions", pt: "partes principais; preposições; perguntas de sim ou não"}
+      meaning: {en: "principal parts; prepositions; yes-or-no questions", pt: "partes principais; preposições; perguntas de sim ou não", de: "Stammformen; Präpositionen; Ja/Nein-Fragen", mk: "главни форми; предлози; прашања да/не", ar: "الأجزاء الأساسية للفعل؛ حروف الجر؛ أسئلة نعم/لا"}
       match: [{seq: [{word: [nonne, num]}], gap: 0, pool: [nonne, num, ne, an, cur]}, {seq: [{pos: prep}, {pos: noun}], gap: 0, pool: [ad, ante, apud, circum, contra, inter, ob, per, post, prope, propter, trans, a, ab, cum, de, e, ex, in, pro, sine, sub]}]
     - n: XXXVII
-      meaning: {en: "possum; the infinitive used as in English", pt: "possum; o infinitivo usado como em português"}
+      meaning: {en: "possum; the infinitive used as in English", pt: "possum; o infinitivo usado como em português", de: "possum; der Infinitiv wie im Deutschen gebraucht", mk: "possum; инфинитивот употребен како во англискиот", ar: "possum؛ المصدر مستعملًا كما في الإنجليزية"}
       match: [{seq: [{pos: verb, lemma: "^possum$"}], same: [tense, mood]}, {seq: [{pos: verb, lemma: "^(possum|volo|debeo|cupio|incipio|nolo|soleo)$"}, {pos: verb, mood: inf}], near: 2, gap: 1, same: [mood]}]
     - n: XXXVIII
-      meaning: {en: "the relative and interrogative pronouns (quī, quis)", pt: "os pronomes relativo e interrogativo (quī, quis)"}
+      meaning: {en: "the relative and interrogative pronouns (quī, quis)", pt: "os pronomes relativo e interrogativo (quī, quis)", de: "Relativ- und Interrogativpronomen (quī, quis)", mk: "релативни и прашални заменки (quī, quis)", ar: "ضمائر الموصول والاستفهام (quī، quis)"}
       # the forms as a list: quī is also an adverb and quis a dative, so the analysis is rarely one reading
       match: {seq: [{word: [qui, quae, quod, cuius, cui, quem, quam, quo, qua, quorum, quarum, quibus, quos, quas, quis, quid]}]}
       pool: [qui, quae, quod, cuius, cui, quem, quam, quo, qua, quorum, quibus, quos, quas, quis, quid]
-  - title: {en: The third declension, pt: A terceira declinação}
+  - title: {en: The third declension, pt: A terceira declinação, de: "Die dritte Deklination", mk: "Третата деклинација", ar: "التصريف الثالث"}
     lessons:
     - n: XXXIX
-      meaning: {en: "third declension: consonant stems (rēx, rēgis)", pt: "terceira declinação: temas em consoante (rēx, rēgis)"}
+      meaning: {en: "third declension: consonant stems (rēx, rēgis)", pt: "terceira declinação: temas em consoante (rēx, rēgis)", de: "dritte Deklination: Konsonantenstämme (rēx, rēgis)", mk: "трета деклинација: согласковни основи (rēx, rēgis)", ar: "التصريف الثالث: الجذور الصامتة (rēx، rēgis)"}
       match: {seq: [{pos: noun, dict: ", -is [mfc]\\."}], same: [number]}
     - n: XL
-      meaning: {en: "third declension: consonant stems (continued)", pt: "terceira declinação: temas em consoante (continuação)"}
+      meaning: {en: "third declension: consonant stems (continued)", pt: "terceira declinação: temas em consoante (continuação)", de: "dritte Deklination: Konsonantenstämme (Fortsetzung)", mk: "трета деклинација: согласковни основи (продолжение)", ar: "التصريف الثالث: الجذور الصامتة (تتمة)"}
       match: {seq: [{pos: noun, dict: ", -is n\\."}], same: [number]}
     - n: XLI
-      meaning: {en: "third declension: consonant stems (concluded)", pt: "terceira declinação: temas em consoante (conclusão)"}
+      meaning: {en: "third declension: consonant stems (concluded)", pt: "terceira declinação: temas em consoante (conclusão)", de: "dritte Deklination: Konsonantenstämme (Schluss)", mk: "трета деклинација: согласковни основи (крај)", ar: "التصريف الثالث: الجذور الصامتة (خاتمة)"}
       match: {seq: [{pos: noun, dict: ", -is [mfnc]\\.", case: [gen, dat, abl]}], same: [number]}
     - n: XLII
-      meaning: {en: "review of the declensions", pt: "revisão das declinações"}
+      meaning: {en: "review of the declensions", pt: "revisão das declinações", de: "Wiederholung der Deklinationen", mk: "преглед на деклинациите", ar: "مراجعة التصريفات"}
       match: {seq: [{pos: noun}], same: [number]}
     - n: XLIII
-      meaning: {en: "third declension: i-stems", pt: "terceira declinação: temas em -i"}
+      meaning: {en: "third declension: i-stems", pt: "terceira declinação: temas em -i", de: "dritte Deklination: i-Stämme", mk: "трета деклинација: i-основи", ar: "التصريف الثالث: جذور i"}
       match: {seq: [{pos: noun, dict: ", -is [mfn]\\.", lemma: "(is|es|e|al|ar)$"}], same: [number]}
     - n: XLIV
-      meaning: {en: "irregular nouns of the third declension; gender", pt: "substantivos irregulares da terceira declinação; gênero"}
+      meaning: {en: "irregular nouns of the third declension; gender", pt: "substantivos irregulares da terceira declinação; gênero", de: "unregelmäßige Nomen der dritten Deklination; Genus", mk: "неправилни именки од трета деклинација; род", ar: "أسماء التصريف الثالث الشاذة؛ الجنس"}
       match: {seq: [{pos: noun, lemma: "^(vis|iter|senex|bos|caro|nix|Iuppiter|domus)$"}], same: [number]}
     - n: XLV
-      meaning: {en: "adjectives of the third declension", pt: "adjetivos da terceira declinação"}
+      meaning: {en: "adjectives of the third declension", pt: "adjetivos da terceira declinação", de: "Adjektive der dritten Deklination", mk: "придавки од трета деклинација", ar: "صفات التصريف الثالث"}
       match: {seq: [{pos: adj, dict: ", -is, -e|, -is$|ntis|, -cris"}], same: [number]}
-  - title: {en: "Fourth and fifth declensions; place and time", pt: "Quarta e quinta declinações; lugar e tempo"}
+  - title: {en: "Fourth and fifth declensions; place and time", pt: "Quarta e quinta declinações; lugar e tempo", de: "Vierte und fünfte Deklination; Ort und Zeit", mk: "Четврта и петта деклинација; место и време", ar: "التصريفان الرابع والخامس؛ المكان والزمان"}
     lessons:
     - n: XLVI
-      meaning: {en: "the fourth declension (manus, -ūs)", pt: "a quarta declinação (manus, -ūs)"}
+      meaning: {en: "the fourth declension (manus, -ūs)", pt: "a quarta declinação (manus, -ūs)", de: "die vierte Deklination (manus, -ūs)", mk: "четвртата деклинација (manus, -ūs)", ar: "التصريف الرابع (manus، -ūs)"}
       match: {seq: [{pos: noun, dict: ", -us [mfn]\\."}], same: [number]}
     - n: XLVII
-      meaning: {en: "expressions of place; domus", pt: "expressões de lugar; domus"}
+      meaning: {en: "expressions of place; domus", pt: "expressões de lugar; domus", de: "Ortsangaben; domus", mk: "изрази за место; domus", ar: "تعابير المكان؛ domus"}
       match: [{seq: [{word: [domi, domum, domo, ruri, rus, romae, romam, roma, athenis, athenas]}], pool: [domi, domum, domo, ruri, rus]}, {seq: [{word: [in, ad, ex, e, a, ab]}, {pos: noun, case: [acc, abl]}], gap: 0, pool: [in, ad, ex, a, ab, de]}]
     - n: XLVIII
-      meaning: {en: "the fifth declension (rēs, reī); the ablative of time", pt: "a quinta declinação (rēs, reī); o ablativo de tempo"}
+      meaning: {en: "the fifth declension (rēs, reī); the ablative of time", pt: "a quinta declinação (rēs, reī); o ablativo de tempo", de: "die fünfte Deklination (rēs, reī); der Ablativ der Zeit", mk: "петтата деклинација (rēs, reī); аблатив на време", ar: "التصريف الخامس (rēs، reī)؛ أبلاتيف الزمان"}
       match: [{seq: [{pos: noun, dict: ", -ei [mf]\\."}], same: [number]}, {seq: [{word: [die, nocte, hieme, aestate, vere, mane, hora, anno, tempore]}], pool: [die, nocte, hieme, aestate, hora, anno, diem, noctem]}]
-  - title: {en: Pronouns, pt: Pronomes}
+  - title: {en: Pronouns, pt: Pronomes, de: "Pronomen", mk: "Заменки", ar: "الضمائر"}
     lessons:
     - n: XLIX
-      meaning: {en: "personal and reflexive pronouns (ego, tū, suī)", pt: "pronomes pessoais e reflexivos (ego, tū, suī)"}
+      meaning: {en: "personal and reflexive pronouns (ego, tū, suī)", pt: "pronomes pessoais e reflexivos (ego, tū, suī)", de: "Personal- und Reflexivpronomen (ego, tū, suī)", mk: "лични и повратни заменки (ego, tū, suī)", ar: "الضمائر الشخصية والانعكاسية (ego، tū، suī)"}
       match: {seq: [{pos: pron, lemma: "^(ego|tu|nos|vos|sui)$"}], same: [number]}
     - n: L
-      meaning: {en: "ipse and īdem", pt: "ipse e īdem"}
+      meaning: {en: "ipse and īdem", pt: "ipse e īdem", de: "ipse und īdem", mk: "ipse и īdem", ar: "ipse وīdem"}
       match: {seq: [{pos: pron, lemma: "^(ipse|idem)$"}], same: [number]}
     - n: LI
-      meaning: {en: "the demonstratives hic, iste, ille", pt: "os demonstrativos hic, iste, ille"}
+      meaning: {en: "the demonstratives hic, iste, ille", pt: "os demonstrativos hic, iste, ille", de: "die Demonstrativa hic, iste, ille", mk: "показните заменки hic, iste, ille", ar: "أسماء الإشارة hic، iste، ille"}
       match: {seq: [{pos: pron, lemma: "^(hic|iste|ille)$"}], same: [number]}
     - n: LII
-      meaning: {en: "the indefinite pronouns (aliquis, quīdam, quisque)", pt: "os pronomes indefinidos (aliquis, quīdam, quisque)"}
+      meaning: {en: "the indefinite pronouns (aliquis, quīdam, quisque)", pt: "os pronomes indefinidos (aliquis, quīdam, quisque)", de: "die Indefinitpronomen (aliquis, quīdam, quisque)", mk: "неопределените заменки (aliquis, quīdam, quisque)", ar: "الضمائر المبهمة (aliquis، quīdam، quisque)"}
       match: {seq: [{word: [aliquis, aliquid, aliquem, alicui, alicuius, quidam, quaedam, quoddam, quiddam, quendam, quandam, quisque, quidque, quemque, cuique, quisquam, quicquam, quidquam, nemo, neminem, nihil]}]}
       pool: [aliquis, aliquid, quidam, quaedam, quisque, quisquam, quicquam, nemo, nihil]
-  - title: {en: Comparison and numerals, pt: Comparação e numerais}
+  - title: {en: Comparison and numerals, pt: Comparação e numerais, de: "Steigerung und Zahlwörter", mk: "Споредување и броеви", ar: "المقارنة والأعداد"}
     lessons:
     - n: LIII
-      meaning: {en: "regular comparison of adjectives", pt: "comparação regular dos adjetivos"}
+      meaning: {en: "regular comparison of adjectives", pt: "comparação regular dos adjetivos", de: "regelmäßige Steigerung der Adjektive", mk: "правилно споредување на придавките", ar: "المقارنة القياسية للصفات"}
       match: {seq: [{pos: adj, degree: [comp, super]}], same: [case, number, gender]}
     - n: LIV
-      meaning: {en: "irregular comparison; the ablative of comparison", pt: "comparação irregular; o ablativo de comparação"}
+      meaning: {en: "irregular comparison; the ablative of comparison", pt: "comparação irregular; o ablativo de comparação", de: "unregelmäßige Steigerung; der Ablativ des Vergleichs", mk: "неправилно споредување; аблатив на споредба", ar: "المقارنة الشاذة؛ أبلاتيف المقارنة"}
       match: {seq: [{pos: adj, degree: [comp, super], lemma: "^(bonus|malus|magnus|parvus|multus)$"}], same: [case, number, gender]}
     - n: LV
-      meaning: {en: "irregular comparison (continued)", pt: "comparação irregular (continuação)"}
+      meaning: {en: "irregular comparison (continued)", pt: "comparação irregular (continuação)", de: "unregelmäßige Steigerung (Fortsetzung)", mk: "неправилно споредување (продолжение)", ar: "المقارنة الشاذة (تتمة)"}
       match: {seq: [{pos: adj, lemma: "^(superus|inferus|exterus|posterus|prior|ulterior|citerior|interior|propior)$"}], same: [case, number]}
     - n: LVI
-      meaning: {en: "the ablative of the measure of difference (multō, paulō)", pt: "o ablativo da medida da diferença (multō, paulō)"}
+      meaning: {en: "the ablative of the measure of difference (multō, paulō)", pt: "o ablativo da medida da diferença (multō, paulō)", de: "der Ablativ des Maßes des Unterschieds (multō, paulō)", mk: "аблатив на мерата на разликата (multō, paulō)", ar: "أبلاتيف مقدار الفرق (multō، paulō)"}
       match: {seq: [{word: [multo, paulo, nihilo, tanto, quanto, aliquanto]}]}
       pool: [multo, paulo, nihilo, tanto, quanto, multum, paulum]
     - n: LVII
-      meaning: {en: "adverbs: formation and comparison", pt: "advérbios: formação e comparação"}
+      meaning: {en: "adverbs: formation and comparison", pt: "advérbios: formação e comparação", de: "Adverbien: Bildung und Steigerung", mk: "прилози: образување и споредување", ar: "الظروف: صياغتها ومقارنتها"}
       match: {seq: [{pos: adv, degree: [comp, super]}]}
     - n: LVIII
-      meaning: {en: "numerals; the partitive genitive", pt: "numerais; o genitivo partitivo"}
+      meaning: {en: "numerals; the partitive genitive", pt: "numerais; o genitivo partitivo", de: "Zahlwörter; der partitive Genitiv", mk: "броеви; партитивен генитив", ar: "الأعداد؛ إضافة التبعيض"}
       match: [{seq: [{pos: num}], same: [case]}, {seq: [{word: [pars, partem, multi, nemo, nihil, satis, unus, quis, plerique, nonnulli]}, {pos: noun, case: gen}], gap: 1, same: [number]}]
     - n: LIX
-      meaning: {en: "numerals; the accusative of extent", pt: "numerais; o acusativo de extensão"}
+      meaning: {en: "numerals; the accusative of extent", pt: "numerais; o acusativo de extensão", de: "Zahlwörter; der Akkusativ der Ausdehnung", mk: "броеви; акузатив на протег", ar: "الأعداد؛ نصب المدى"}
       match: {seq: [{pos: num}, {pos: noun, case: acc, lemma: "^(annus|dies|hora|mensis|pes|passus|nox)$"}], gap: 1, same: [number]}
-  - title: {en: Deponent verbs, pt: Verbos depoentes}
+  - title: {en: Deponent verbs, pt: Verbos depoentes, de: "Deponentien", mk: "Депонентни глаголи", ar: "الأفعال الديبوننتية"}
     lessons:
     - n: LX
-      meaning: {en: "deponent verbs: passive in form, active in meaning", pt: "verbos depoentes: forma passiva, sentido ativo"}
+      meaning: {en: "deponent verbs: passive in form, active in meaning", pt: "verbos depoentes: forma passiva, sentido ativo", de: "Deponentien: passiv in der Form, aktiv in der Bedeutung", mk: "депонентни глаголи: пасивни по форма, активни по значење", ar: "الأفعال الديبوننتية: مجهولة الصيغة معلومة المعنى"}
       match: {seq: [{pos: verb, lemma: "or$"}], same: [tense, mood]}
 - id: Reading
-  title: {en: Reading, pt: Leitura}
+  title: {en: Reading, pt: Leitura, de: "Lektüre", mk: "Читање", ar: "القراءة"}
   topics:
-  - title: {en: The subjunctive, pt: O subjuntivo}
+  - title: {en: The subjunctive, pt: O subjuntivo, de: "Der Konjunktiv", mk: "Конјунктивот", ar: "الالتماسي"}
     lessons:
     - n: LXI
-      meaning: {en: "the subjunctive mood", pt: "o modo subjuntivo"}
+      meaning: {en: "the subjunctive mood", pt: "o modo subjuntivo", de: "der Konjunktiv", mk: "конјунктивот", ar: "صيغة الالتماسي"}
       match: {seq: [{pos: verb, mood: sub}], same: [person, number, voice]}
     - n: LXII
-      meaning: {en: "the subjunctive of purpose (ut, nē)", pt: "o subjuntivo de finalidade (ut, nē)"}
+      meaning: {en: "the subjunctive of purpose (ut, nē)", pt: "o subjuntivo de finalidade (ut, nē)", de: "der Konjunktiv des Zwecks (ut, nē)", mk: "конјунктив за цел (ut, nē)", ar: "الالتماسي للغاية (ut، nē)"}
       match: {seq: [{word: [ut, ne]}, {pos: verb, mood: sub}], near: 3, gap: 1, same: [person, number, voice]}
     - n: LXIII
-      meaning: {en: "the imperfect subjunctive; sequence of tenses", pt: "o imperfeito do subjuntivo; a concordância dos tempos"}
+      meaning: {en: "the imperfect subjunctive; sequence of tenses", pt: "o imperfeito do subjuntivo; a concordância dos tempos", de: "der Konjunktiv Imperfekt; Zeitenfolge", mk: "имперфектен конјунктив; слагање на времињата", ar: "الالتماسي الناقص؛ توافق الأزمنة"}
       match: {seq: [{pos: verb, mood: sub, tense: impf}], same: [person, number, voice]}
     - n: LXIV
-      meaning: {en: "perfect and pluperfect subjunctive; clauses of purpose as objects", pt: "perfeito e mais-que-perfeito do subjuntivo; orações finais como objeto"}
+      meaning: {en: "perfect and pluperfect subjunctive; clauses of purpose as objects", pt: "perfeito e mais-que-perfeito do subjuntivo; orações finais como objeto", de: "Konjunktiv Perfekt und Plusquamperfekt; Finalsätze als Objekte", mk: "перфектен и плусквамперфектен конјунктив; реченици за цел како предмет", ar: "الالتماسي التام والبعيد؛ جمل الغاية مفعولًا"}
       match: {seq: [{pos: verb, mood: sub, tense: [perf, plup]}], same: [person, number, voice]}
     - n: LXV
-      meaning: {en: "the subjunctive of possum; verbs of fearing", pt: "o subjuntivo de possum; verbos de temor"}
+      meaning: {en: "the subjunctive of possum; verbs of fearing", pt: "o subjuntivo de possum; verbos de temor", de: "der Konjunktiv von possum; Verben des Fürchtens", mk: "конјунктивот на possum; глаголи на страв", ar: "التماسي possum؛ أفعال الخوف"}
       match: [{seq: [{pos: verb, lemma: "^possum$", mood: sub}], same: [person, number]}, {seq: [{pos: verb, lemma: "^(timeo|metuo|vereor)$"}, {word: [ne, ut]}], near: 1, gap: 1, pool: [ne, ut, quod, cum]}]
-  - title: {en: Participles and irregular verbs, pt: Particípios e verbos irregulares}
+  - title: {en: Participles and irregular verbs, pt: Particípios e verbos irregulares, de: "Partizipien und unregelmäßige Verben", mk: "Партиципи и неправилни глаголи", ar: "أسماء الفاعل والمفعول والأفعال الشاذة"}
     lessons:
     - n: LXVI
-      meaning: {en: "the participles", pt: "os particípios"}
+      meaning: {en: "the participles", pt: "os particípios", de: "die Partizipien", mk: "партиципите", ar: "أسماء الفاعل والمفعول"}
       match: {seq: [{pos: vpar}], same: [case, number, gender]}
     - n: LXVII
-      meaning: {en: "volō, nōlō, mālō; the ablative absolute", pt: "volō, nōlō, mālō; o ablativo absoluto"}
+      meaning: {en: "volō, nōlō, mālō; the ablative absolute", pt: "volō, nōlō, mālō; o ablativo absoluto", de: "volō, nōlō, mālō; der Ablativus absolutus", mk: "volō, nōlō, mālō; апсолутен аблатив", ar: "volō، nōlō، mālō؛ الأبلاتيف المطلق"}
       match: [{seq: [{pos: verb, lemma: "^(volo|nolo|malo)$"}], same: [tense, mood]}, {seq: [{pos: noun, case: abl}, {pos: vpar, case: abl}], gap: 1, same: [case, number, gender]}]
     - n: LXVIII
-      meaning: {en: "the irregular verb fīō; the subjunctive of result", pt: "o verbo irregular fīō; o subjuntivo de consequência"}
+      meaning: {en: "the irregular verb fīō; the subjunctive of result", pt: "o verbo irregular fīō; o subjuntivo de consequência", de: "das unregelmäßige Verb fīō; der Konjunktiv der Folge", mk: "неправилниот глагол fīō; конјунктив за последица", ar: "الفعل الشاذ fīō؛ الالتماسي للنتيجة"}
       match: [{seq: [{pos: verb, lemma: "^fio$"}], same: [tense, mood]}, {seq: [{word: [tam, ita, tantus, tanta, tantum, sic, adeo, tot]}, {word: [ut]}, {pos: verb, mood: sub}], near: 6, gap: 2, same: [person, number, voice]}]
-  - title: {en: Clauses and constructions, pt: Orações e construções}
+  - title: {en: Clauses and constructions, pt: Orações e construções, de: "Nebensätze und Konstruktionen", mk: "Реченици и конструкции", ar: "الجمل والتراكيب"}
     lessons:
     - n: LXIX
-      meaning: {en: "the subjunctive of characteristic; the predicate accusative", pt: "o subjuntivo de caracterização; o acusativo predicativo"}
+      meaning: {en: "the subjunctive of characteristic; the predicate accusative", pt: "o subjuntivo de caracterização; o acusativo predicativo", de: "der charakterisierende Konjunktiv; der prädikative Akkusativ", mk: "конјунктив на својство; предикативен акузатив", ar: "التماسي الوصف؛ النصب الخبري"}
       match: {seq: [{word: [qui, quae, quod, cuius, cui, quem, quam, quo, qua, quibus, quos, quas]}, {pos: verb, mood: sub}], near: 3, gap: 1, same: [person, number, voice]}
     - n: LXX
-      meaning: {en: "constructions with cum; the ablative of specification", pt: "construções com cum; o ablativo de especificação"}
+      meaning: {en: "constructions with cum; the ablative of specification", pt: "construções com cum; o ablativo de especificação", de: "Konstruktionen mit cum; der Ablativ der Beziehung", mk: "конструкции со cum; аблатив на однос", ar: "تراكيب cum؛ أبلاتيف التخصيص"}
       match: {seq: [{word: [cum]}, {pos: verb, mood: sub}], near: 4, gap: 1, same: [person, number, voice]}
     - n: LXXI
-      meaning: {en: "the gerund and gerundive; the predicate genitive", pt: "o gerúndio e o gerundivo; o genitivo predicativo"}
+      meaning: {en: "the gerund and gerundive; the predicate genitive", pt: "o gerúndio e o gerundivo; o genitivo predicativo", de: "Gerundium und Gerundivum; der prädikative Genitiv", mk: "герунд и герундив; предикативен генитив", ar: "اسم المصدر والصفة الواجبة؛ الإضافة الخبرية"}
       match: {seq: [{pos: vpar, tense: fut, voice: pass}], same: [case, number, gender]}
     - n: LXXII
-      meaning: {en: "the irregular verb eō; indirect statement", pt: "o verbo irregular eō; o discurso indireto"}
+      meaning: {en: "the irregular verb eō; indirect statement", pt: "o verbo irregular eō; o discurso indireto", de: "das unregelmäßige Verb eō; die indirekte Rede (AcI)", mk: "неправилниот глагол eō; индиректен исказ", ar: "الفعل الشاذ eō؛ الخبر غير المباشر"}
       match: [{seq: [{pos: verb, lemma: "^eo$"}], same: [tense, mood]}, {seq: [{pos: verb, lemma: "^(dico|puto|scio|credo|nuntio|spero|nego|audio|video|sentio|existimo|arbitror|intellego)$"}, {pos: verb, mood: inf}], near: 4, gap: 1, same: [mood]}]
     - n: LXXIII
-      meaning: {en: "the irregular verb ferō; the dative with compounds", pt: "o verbo irregular ferō; o dativo com compostos"}
+      meaning: {en: "the irregular verb ferō; the dative with compounds", pt: "o verbo irregular ferō; o dativo com compostos", de: "das unregelmäßige Verb ferō; der Dativ bei Komposita", mk: "неправилниот глагол ferō; датив со сложени глаголи", ar: "الفعل الشاذ ferō؛ حالة القابل مع الأفعال المركبة"}
       match: {seq: [{pos: verb, lemma: "^(af|con|de|dif|ef|in|of|per|prae|pro|re|trans)?fero$"}], same: [tense, mood]}
     - n: LXXIV
-      meaning: {en: "the subjunctive in indirect questions", pt: "o subjuntivo nas perguntas indiretas"}
+      meaning: {en: "the subjunctive in indirect questions", pt: "o subjuntivo nas perguntas indiretas", de: "der Konjunktiv in indirekten Fragen", mk: "конјунктив во индиректни прашања", ar: "الالتماسي في الأسئلة غير المباشرة"}
       match: {seq: [{word: [quis, quid, cur, ubi, quando, quomodo, num, utrum, unde, quo, qualis, quantus]}, {pos: verb, mood: sub}], near: 3, gap: 1, same: [person, number, voice]}
-  - title: {en: Reviews, pt: Revisões}
+  - title: {en: Reviews, pt: Revisões, de: "Wiederholungen", mk: "Прегледи", ar: "مراجعات"}
     lessons:
     - n: LXXV
-      meaning: {en: "the dative of purpose (double dative)", pt: "o dativo de finalidade (duplo dativo)"}
+      meaning: {en: "the dative of purpose (double dative)", pt: "o dativo de finalidade (duplo dativo)", de: "der Dativ des Zwecks (doppelter Dativ)", mk: "датив на цел (двоен датив)", ar: "قابل الغاية (القابل المزدوج)"}
       match: {seq: [{word: [auxilio, praesidio, usui, curae, saluti, odio, honori, impedimento, dono, exemplo]}]}
       pool: [auxilio, praesidio, usui, curae, saluti, odio, honori, impedimento]
     - n: LXXVI
-      meaning: {en: "the genitive and ablative of quality", pt: "o genitivo e o ablativo de qualidade"}
+      meaning: {en: "the genitive and ablative of quality", pt: "o genitivo e o ablativo de qualidade", de: "Genitiv und Ablativ der Eigenschaft", mk: "генитив и аблатив на својство", ar: "إضافة الصفة وأبلاتيفها"}
       match: {seq: [{word: [vir, homo, femina, puer, mulier, puella, iuvenis]}, {pos: adj, case: [gen, abl]}, {pos: noun, case: [gen, abl]}], near: 1, gap: 1, same: [case, number, gender]}
     - n: LXXVII
-      meaning: {en: "review of agreement and of the genitive, dative, accusative", pt: "revisão da concordância e do genitivo, dativo, acusativo"}
+      meaning: {en: "review of agreement and of the genitive, dative, accusative", pt: "revisão da concordância e do genitivo, dativo, acusativo", de: "Wiederholung der Kongruenz und von Genitiv, Dativ, Akkusativ", mk: "преглед на согласувањето и на генитивот, дативот, акузативот", ar: "مراجعة المطابقة والإضافة والقابل والنصب"}
       match: {seq: [{pos: noun}, {pos: adj}], gap: 1, same: [number, gender]}
     - n: LXXVIII
-      meaning: {en: "review of the ablative", pt: "revisão do ablativo"}
+      meaning: {en: "review of the ablative", pt: "revisão do ablativo", de: "Wiederholung des Ablativs", mk: "преглед на аблативот", ar: "مراجعة الأبلاتيف"}
       match: {seq: [{pos: noun, case: abl}], same: [number]}
     - n: LXXIX
-      meaning: {en: "review of the gerund, gerundive, infinitive and subjunctive", pt: "revisão do gerúndio, gerundivo, infinitivo e subjuntivo"}
+      meaning: {en: "review of the gerund, gerundive, infinitive and subjunctive", pt: "revisão do gerúndio, gerundivo, infinitivo e subjuntivo", de: "Wiederholung von Gerundium, Gerundivum, Infinitiv und Konjunktiv", mk: "преглед на герундот, герундивот, инфинитивот и конјунктивот", ar: "مراجعة اسم المصدر والصفة الواجبة والمصدر والالتماسي"}
       match: {seq: [{pos: verb, mood: [sub, inf]}], same: [person, number]}
