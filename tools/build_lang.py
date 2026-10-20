@@ -36,6 +36,7 @@ def build_grc(src: Path, out: Path, drop_dialects: bool) -> dict:
     if drop_dialects:
         for e in entries:
             e["forms"] = _attic_koine_only(e["forms"])
+    entries = fold_form_of(entries)
     index = build_index(entries)
     entries = used_entries(entries, index)
 
@@ -301,7 +302,7 @@ def build_mk(src: Path, out: Path) -> dict:
 def build_generic(code: str, src: Path, out: Path) -> dict:
     """a case language from tools/casus_build/generic.py (Finnish and the others after Macedonian); the dump is
     already filtered to common words at download (tools/fetch_filtered.py)."""
-    from casus_build.generic import CONFIGS, build_index, codes, parse_entries, used_entries
+    from casus_build.generic import CONFIGS, build_index, codes, fold_form_of, parse_entries, used_entries
 
     cfg = CONFIGS[code]
     encode, _decode, codes_json = codes(cfg)

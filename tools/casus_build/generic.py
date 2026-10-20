@@ -213,7 +213,28 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
         if not gloss:
             continue
         ipa = [{"ipa": s["ipa"], "tags": list(s.get("tags") or [])} for s in d.get("sounds") or [] if s.get("ipa")]
-        yield {"id": i, "headword": word, "pos": pos, "gender": gender, "cells": cells, "gloss_en": gloss, "ipa": ipa[:3], "form_of": bool(form_of)}
+        base = next((f.get("word") for x in senses for f in (x.get("form_of") or []) if f.get("word")), None) if form_of else None
+        yield {"id": i, "headword": word, "pos": pos, "gender": gender, "cells": cells, "gloss_en": gloss, "ipa": ipa[:3], "form_of": bool(form_of),
+               **({"form_of_word": base} if base else {})}
+
+
+def fold_form_of(entries: list[dict]) -> list[dict]:
+    """a form-of entry whose base lemma is in the dictionary (same part of speech) gives its readings to that lemma and
+    is left out: Italian and others file every inflected form as an entry of its own (450,000 of them)"""
+    base = {}
+    for e in entries:
+        if not e.get("form_of"):
+            base.setdefault((e["headword"], e["pos"]), e)
+    out = []
+    for e in entries:
+        target = base.get((e.get("form_of_word"), e["pos"])) if e.get("form_of") else None
+        if target is None:
+            out.append(e)
+            continue
+        for c in e["cells"]:
+            if c not in target["cells"]:
+                target["cells"].append(c)
+    return out
 
 
 def used_entries(entries: list[dict], index: dict) -> list[dict]:

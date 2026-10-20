@@ -225,3 +225,15 @@ def test_form_of_entries_the_real_lemmas_cover_are_dropped():
                {"id": 3, "headword": "gittim", "pos": "verb", "cells": [("gittim", {"pos": "verb"})], "form_of": True}]
     index = build_index(entries)
     assert [e["id"] for e in used_entries(entries, index)] == [1, 3]
+
+
+def test_form_of_entries_fold_into_their_base_lemma():
+    """Italian files each inflected form as its own entry ("parlo: first-person singular present of parlare"); its
+    reading moves to parlare's entry and the form-of entry goes, so the lemma list stays small"""
+    from casus_build.generic import fold_form_of
+    entries = [{"id": 1, "headword": "parlare", "pos": "verb", "cells": [("parlare", {"pos": "verb", "mood": "inf"})], "form_of": False},
+               {"id": 2, "headword": "parlo", "pos": "verb", "cells": [("parlo", {"pos": "verb", "person": "1"})], "form_of": True, "form_of_word": "parlare"},
+               {"id": 3, "headword": "gittim", "pos": "verb", "cells": [("gittim", {"pos": "verb"})], "form_of": True, "form_of_word": "unknown"}]
+    out = fold_form_of(entries)
+    assert [e["id"] for e in out] == [1, 3]
+    assert ("parlo", {"pos": "verb", "person": "1"}) in out[0]["cells"]
