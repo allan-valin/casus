@@ -40,7 +40,7 @@ describe('Learn tab, second version (Allan, 2026-10-19: topics listed under each
     const topics = [...container.querySelectorAll('.topic')];
     expect(topics.map((t) => t.querySelector('.topic-title').textContent.trim())).toEqual(['Saying what something is', 'Words']);
     expect([...topics[0].querySelectorAll('.lesson-row .l-title')].map((x) => x.textContent)).toEqual(['は', 'も']);
-    expect(topics[0].querySelector('.lesson-row .l-meaning').textContent).toBe('as for; topic');
+    expect(topics[0].querySelector('.lesson-row .l-meaning-text').textContent).toBe('as for; topic');
   });
   it('a lesson is a page: intro, sections with a contents bar, examples with furigana and romaji, the book’s practice with answers to reveal', async () => {
     const { container } = render(Learn, props());
@@ -110,7 +110,7 @@ describe('lessons written for Casus: text in the interface language, more exampl
     const { container } = render(Learn, props({ lang: getLanguage('mk'), loadLearn: async () => MK_INDEX, loadLesson: async () => MK_LESSON }));
     await flush();
     expect(container.querySelector('.topic-title').textContent).toBe('Ser e estar');
-    expect(container.querySelector('.l-meaning').textContent).toBe('ser/estar');
+    expect(container.querySelector('.l-meaning-text').textContent).toBe('ser/estar');
     await fireEvent.click(container.querySelector('.lesson-row'));
     await flush();
     const page = container.querySelector('.lesson-page');
@@ -259,5 +259,18 @@ describe('Learn answers go to the review queue', () => {
     await fireEvent.click(container.querySelector('.choice'));
     await flush();
     expect(Object.keys(JSON.parse(storage.getItem('casus:review:ja')))).toHaveLength(1);
+  });
+});
+
+describe('human-written lessons are marked too (Allan, 2026-10-20)', () => {
+  it('a lesson neither AI-written nor generated shows a human mark in the list and on its page', async () => {
+    const index = { ...INDEX, levels: [{ id: 'N5', topics: [{ id: 't1', kind: 'grammar', title: 'T', lessons: [{ id: 'n5-004', title: 'は', meaning: 'topic' }] }] }] };
+    const { container } = render(Learn, props({ loadLearn: async () => index, loadLesson: async () => LESSONS['n5-004'] }));
+    await flush();
+    expect(container.querySelector('.lesson-row .human-mark')).not.toBe(null);
+    expect(container.querySelector('.lesson-row .ai-mark')).toBe(null);
+    await fireEvent.click(container.querySelector('.lesson-row'));
+    await flush();
+    expect(container.querySelector('.lesson-page .human-badge')).not.toBe(null);
   });
 });
