@@ -57,3 +57,9 @@ def test_an_example_with_its_meaning_line_is_fine_and_dense_text_may_double():
     ja = "<p>結論が冒頭と最後の両方に書かれる文章構成を双括式と言います。</p>"
     pt = "<p>A estrutura de texto em que a conclusão aparece tanto no começo quanto no fim chama-se estrutura de dupla conclusão.</p>"
     assert not any(p.startswith("length") for p in problems(ja, pt, "ja"))
+
+
+def test_a_page_already_in_the_interface_language_is_not_untranslated():
+    from mt_check import problems
+    en = '<p>A postpositional particle referring to the subject of a sentence here.</p>'
+    assert problems(en, en, "en", ui="en") == []

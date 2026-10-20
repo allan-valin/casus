@@ -4,7 +4,7 @@ export const SPEAK = {
   en: {
     'speak.act.entryOpen': 'Dictionary entry for {word}.',
     'learn.mt': 'AI-translated from {lang}',
-    'learn.mt.title': "Translated by an open-source AI model (MADLAD-400) from the book's original; examples in the language you are learning are kept as the book has them. It may contain mistakes.",
+    'learn.mt.title': "Translated by AI from the book's original: an open-source model (MADLAD-400), proofread, with example sentences and corrections by Claude. Examples in the language you are learning are kept as the book has them. It may contain mistakes.",
     'learn.mt.orig': 'Show the original',
     'learn.mt.back': 'Show the translation',
     'learn.human': 'Written by people',
@@ -83,7 +83,7 @@ export const SPEAK = {
   pt: {
     'speak.act.entryOpen': 'Verbete de {word}.',
     'learn.mt': 'Traduzida por IA do {lang}',
-    'learn.mt.title': 'Traduzida por um modelo de IA de código aberto (MADLAD-400) a partir do original do livro; os exemplos na língua que você aprende ficam como o livro os tem. Pode conter erros.',
+    'learn.mt.title': 'Traduzida por IA a partir do original do livro: um modelo de código aberto (MADLAD-400), revisado, com frases de exemplo e correções feitas pelo Claude. Os exemplos na língua que você aprende ficam como o livro os tem. Pode conter erros.',
     'learn.mt.orig': 'Ver o original',
     'learn.mt.back': 'Ver a tradução',
     'learn.human': 'Escrita por pessoas',
@@ -162,7 +162,7 @@ export const SPEAK = {
   de: {
     'speak.act.entryOpen': 'Wörterbucheintrag für {word}.',
     'learn.mt': 'KI-Übersetzung, Original: {lang}',
-    'learn.mt.title': 'Von einem quelloffenen KI-Modell (MADLAD-400) aus dem Original des Buchs übersetzt; Beispiele in der Sprache, die du lernst, bleiben wie im Buch. Kann Fehler enthalten.',
+    'learn.mt.title': 'Von KI aus dem Original des Buchs übersetzt: ein quelloffenes Modell (MADLAD-400), korrekturgelesen, Beispielsätze und Korrekturen von Claude. Beispiele in der Sprache, die du lernst, bleiben wie im Buch. Kann Fehler enthalten.',
     'learn.mt.orig': 'Original zeigen',
     'learn.mt.back': 'Übersetzung zeigen',
     'learn.human': 'Von Menschen geschrieben',
@@ -241,7 +241,7 @@ export const SPEAK = {
   mk: {
     'speak.act.entryOpen': 'Речничка одредница за {word}.',
     'learn.mt': 'Преведено со ВИ од {lang}',
-    'learn.mt.title': 'Преведено со модел на вештачка интелигенција со отворен код (MADLAD-400) од оригиналот на книгата; примерите на јазикот што го учите остануваат како во книгата. Може да содржи грешки.',
+    'learn.mt.title': 'Преведено со вештачка интелигенција од оригиналот на книгата: модел со отворен код (MADLAD-400), лекториран, со реченици-примери и поправки од Claude. Примерите на јазикот што го учите остануваат како во книгата. Може да содржи грешки.',
     'learn.mt.orig': 'Прикажи го оригиналот',
     'learn.mt.back': 'Прикажи го преводот',
     'learn.human': 'Напишано од луѓе',
@@ -320,7 +320,7 @@ export const SPEAK = {
   ar: {
     'speak.act.entryOpen': 'مدخل المعجم لـ {word}.',
     'learn.mt': 'مترجم بالذكاء الاصطناعي من {lang}',
-    'learn.mt.title': 'ترجمه نموذج ذكاء اصطناعي مفتوح المصدر (MADLAD-400) من أصل الكتاب؛ وتبقى الأمثلة باللغة التي تتعلمها كما في الكتاب. قد يحتوي على أخطاء.',
+    'learn.mt.title': 'ترجمه الذكاء الاصطناعي من أصل الكتاب: نموذج مفتوح المصدر (MADLAD-400) مع مراجعة، وجمل الأمثلة والتصحيحات من Claude. وتبقى الأمثلة باللغة التي تتعلمها كما في الكتاب. قد يحتوي على أخطاء.',
     'learn.mt.orig': 'عرض الأصل',
     'learn.mt.back': 'عرض الترجمة',
     'learn.human': 'كتبه بشر',

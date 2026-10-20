@@ -27,7 +27,7 @@ def _text(h: str) -> str:
     return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", h)).strip()
 
 
-def problems(orig: str, out: str, src: str) -> list:
+def problems(orig: str, out: str, src: str, ui: str | None = None) -> list:
     found = []
     lost = Counter(m.group(0) for m in INLINE_RE.finditer(orig)) - Counter(m.group(0) for m in INLINE_RE.finditer(out))
     found += [f"example lost: {x}" for x in lost]
@@ -36,7 +36,7 @@ def problems(orig: str, out: str, src: str) -> list:
         foreign = re.compile(rf"(?:(?![{own}])[^\W\d_])+")
         gone = Counter(foreign.findall(_text(orig))) - Counter(foreign.findall(_text(out)))
         found += [f"script text changed: {w}" for w in gone]
-    for para in re.findall(r"<(?:p|li|td|h\d)\b[^>]*>(.*?)</(?:p|li|td|h\d)>", out, re.S):
+    for para in ([] if ui == src else re.findall(r"<(?:p|li|td|h\d)\b[^>]*>(.*?)</(?:p|li|td|h\d)>", out, re.S)):
         plain = _text(INLINE_RE.sub(" ", para))
         if len(plain) > 10 and is_prose(plain, src) and plain in _text(INLINE_RE.sub(" ", orig)):
             found.append(f"untranslated: {plain[:80]}")
@@ -73,7 +73,7 @@ def check_language(code: str, ui: str, sample: int = 20, seed: int = 1) -> dict:
                 continue
             item = {"page": f.stem, "section": s.get("id"), "source": page.get("source", "")[:60]}
             # an imported page's intro is Casus's own English credit line, whatever the book's language
-            p = problems(orig, h[ui], "en" if s.get("id") == "intro" else page.get("src", "en"))
+            p = problems(orig, h[ui], "en" if s.get("id") == "intro" else page.get("src", "en"), ui)
             (flagged if p else clean).append({**item, "problems": p} if p else item)
     random.Random(seed).shuffle(clean)
     report = {"code": code, "ui": ui, "flagged": flagged, "sample": clean[:sample], "checked": len(flagged) + len(clean)}
