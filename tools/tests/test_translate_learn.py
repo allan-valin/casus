@@ -14,7 +14,7 @@ class Fake:
 
     def __call__(self, texts):
         self.sent += texts
-        return [f"<{self.ui}>{t}" for t in texts]
+        return [f"«{self.ui}»{t}" for t in texts]
 
     def save(self):
         pass
@@ -47,7 +47,7 @@ def test_a_french_page_is_translated_to_portuguese_and_keeps_its_original(tmp_pa
     p = json.loads(f.read_text())
     assert p["mt"] == {"pt": "MADLAD-400"} and p["src"] == "fr"
     html = p["sections"][0]["html"]
-    assert html["en"] == body and html["pt"].startswith("<p><pt>") and "<b>λύω</b>" in html["pt"]
+    assert html["en"] == body and html["pt"].startswith("<p>«pt»") and "<b>λύω</b>" in html["pt"]
 
 
 def test_into_english_the_original_moves_to_orig(tmp_path, monkeypatch):
@@ -57,7 +57,7 @@ def test_into_english_the_original_moves_to_orig(tmp_path, monkeypatch):
     monkeypatch.setattr(T, "ROOT", tmp_path)
     T.translate_language("xx", Fake("en"))
     html = json.loads(f.read_text())["sections"][0]["html"]
-    assert html["orig"] == body and html["en"].startswith("<p><en>")
+    assert html["orig"] == body and html["en"].startswith("<p>«en»")
 
 
 def test_ai_written_storybook_and_same_language_pages_are_left_alone(tmp_path, monkeypatch):
@@ -107,7 +107,7 @@ def test_redo_replaces_an_earlier_translation(tmp_path, monkeypatch):
     (tmp_path / "data" / "xx" / "learn.json").write_text(json.dumps({"levels": []}))
     monkeypatch.setattr(T, "ROOT", tmp_path)
     assert T.translate_language("xx", Fake("pt"), redo=True) == 1
-    assert json.loads(f.read_text())["sections"][0]["html"]["pt"].startswith("<p><pt>")
+    assert json.loads(f.read_text())["sections"][0]["html"]["pt"].startswith("<p>«pt»")
 
 
 def test_a_very_long_sentence_is_cut_at_commas():

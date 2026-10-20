@@ -86,3 +86,15 @@ def test_text_in_another_script_is_protected_like_an_example():
 def test_a_sentence_said_twice_without_a_space_is_cut_to_once():
     from mt_html import dedupe
     assert dedupe("É o [3], por isso o [4] soa.É o [3], por isso o [4] soa.", "It is [3], so [4] sounds.") == "É o [3], por isso o [4] soa."
+
+
+def test_entities_are_plain_characters_for_the_model_and_escaped_again():
+    from mt_html import translate_html
+    sent = []
+
+    def model(texts):
+        sent.extend(texts)
+        return [t.replace("means", "significa") for t in texts]
+    out = translate_html("<p>The ending means &quot;as&quot; &amp; more&#160;here and there.</p>", model, "en")
+    assert sent == ['The ending means "as" & more here and there.']
+    assert out == "<p>The ending significa &quot;as&quot; &amp; more here and there.</p>"

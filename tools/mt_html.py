@@ -6,6 +6,7 @@ not trusted: that run stays in English."""
 from __future__ import annotations
 
 import re
+from html import unescape
 from html.parser import HTMLParser
 
 INLINE = {"b", "strong", "i", "em", "code", "span", "a", "small", "sup", "sub", "u", "s", "mark", "ruby", "rt", "abbr", "bdi"}
@@ -155,7 +156,9 @@ def translate_html(html: str, translate, src: str = "en") -> str:
     book's explanation language) replaced"""
     segs = segments(html, src)
     todo = [s for s in segs if "text" in s and s["translate"]]
-    done = translate([s["text"].strip() for s in todo]) if todo else []
+    # the model gets plain characters (&quot; → "), and its answer is escaped again for the page
+    done = translate([unescape(s["text"].strip()) for s in todo]) if todo else []
+    done = [t.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;") for t in done]
     for s, t in zip(todo, done):
         want = sorted(PH.findall(s["text"]))
         if sorted(PH.findall(t)) == want and t.strip():
