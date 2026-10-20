@@ -72,7 +72,7 @@ def split_page(book, html):
 def subpages(book):
     """the book's subpages from the wiki's page list, in reading order"""
     got = get({"action": "query", "list": "allpages", "apprefix": book + "/", "aplimit": 500})["query"]["allpages"]
-    names = [p["title"].split("/", 1)[1] for p in got]
+    names = [p["title"][len(book) + 1:] for p in got]
     return [f"{book}/{n}" for n in book_order(names)]
 
 

@@ -88,3 +88,10 @@ def test_reference_levels_are_merged_into_the_first():
     merge_reference_levels(index, lessons, prefer="A&G")
     assert [lv["id"] for lv in index["levels"]] == ["Beginner", "A&G"]
     assert [t["id"] for t in index["levels"][1]["topics"]] == ["ag", "r1"] and lessons["x"]["level"] == "A&G"
+
+
+def test_subpages_of_a_nested_book_keep_one_prefix(monkeypatch):
+    import fetch_wikibooks as f
+    monkeypatch.setattr(f, "get", lambda params: {"query": {"allpages": [{"title": "Ungarisch/Ungarisch-Grammatik/Akkusativ"},
+                                                                        {"title": "Ungarisch/Ungarisch-Grammatik/Dativ"}]}})
+    assert f.subpages("Ungarisch/Ungarisch-Grammatik") == ["Ungarisch/Ungarisch-Grammatik/Akkusativ", "Ungarisch/Ungarisch-Grammatik/Dativ"]
