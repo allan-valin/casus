@@ -31,6 +31,12 @@
   const KEY = `casus:learn:${lang.code}`;
   // lessons written for Casus keep their text per interface language ({ en, pt }); the Japanese book's is English
   const loc = (x) => (x == null ? '' : typeof x === 'string' ? x : (x[ui.lang] ?? x.en ?? ''));
+  // an AI-translated page (lesson.mt[ui]) can show its original instead (Allan, 2026-10-20); the original of a field
+  // translated into English is kept as `orig`
+  let showOrig = $state(false);
+  const orig = (x) => (x == null ? '' : typeof x === 'string' ? x : (x.orig ?? x.en ?? ''));
+  const body = (x) => (showOrig ? orig(x) : loc(x));
+  const langName = (code) => { try { return new Intl.DisplayNames([ui.lang], { type: 'language' }).of(code); } catch { return code; } };
   // a script that writes its vowels only sometimes (Arabic): romanise only text that mostly has them, the rest would be
   // bare letters (ʔḵšā ʔnn)
   const vowelledEnough = (t) => { const letters = (t.match(/\p{L}/gu) ?? []).length; return letters > 0 && (t.match(/\p{M}/gu) ?? []).length / letters >= 0.4; };
@@ -95,6 +101,7 @@
   const pct = (id) => { const p = progress[id]; return p?.total ? Math.round((100 * p.right) / p.total) : null; };
   const doneOf = (id) => completion(progress[id]);
   async function open(ref) {
+    showOrig = false;
     loading = true; quizItems = [];
     lessonRef = ref;
     lesson = await loadLesson(ref.entry.id);
@@ -183,6 +190,8 @@
       {#if lesson.ai}<p class="ai-badge" title={t('learn.ai.title')}>✦ {t('learn.ai')}</p>{/if}
       {#if lesson.generated}<p class="ai-badge gen-badge" title={t('learn.gen.title')}>⚙ {t('learn.gen')}</p>{/if}
       {#if !lesson.ai && !lesson.generated}<p class="ai-badge human-badge" title={t('learn.human.title')}>👤 {t('learn.human')}</p>{/if}
+      {#if lesson.mt?.[ui.lang]}<p class="ai-badge mt-badge" title={t('learn.mt.title')}>⇄ {t('learn.mt', { lang: langName(lesson.src ?? 'en') })}
+        <button class="orig-toggle" onclick={() => { showOrig = !showOrig; }}>{showOrig ? t('learn.mt.back') : t('learn.mt.orig')}</button></p>{/if}
       {#if lesson.kind === 'vocab' || lesson.kind === 'kanji'}
         <nav class="toc"><a href="#ex-start">{t('learn.exercises')}</a></nav>
         {#if lesson.kind === 'vocab'}
@@ -196,7 +205,7 @@
         {#each lesson.sections as s}
           <section class="l-sec" id={`sec-${s.id}`} data-sec={s.id}>
             <h4>{loc(s.title)}</h4>
-            <div class="prose" use:speakLinks={{ html: loc(s.html), speak, title: t('learn.speak.title') }}>{@html loc(s.html)}</div>
+            <div class="prose" use:speakLinks={{ html: body(s.html), speak, title: t('learn.speak.title') }}>{@html body(s.html)}</div>
             {#if s.id === 'examples' && lesson.examples?.length}
               <details class="examples-romaji"><summary>{t('learn.romaji')}</summary>
                 <ol>{#each lesson.examples as ex}<li><span lang={lang.bcp47}>{ex.text}</span> — <i>{exampleRoman(ex)}</i>{#if openInReader} <button class="to-reader" onclick={() => openInReader(ex.text)}>{t('learn.read')}</button>{/if}{@render say(ex.text)}</li>{/each}</ol>
@@ -307,6 +316,7 @@
   .badge-level { font-size: 0.45em; padding: 2px 8px; border-radius: 6px; background: var(--accent); color: var(--accent-ink); }
   .l-sub { font-size: 1.15em; color: var(--ink-2); margin: 0 0 8px; }
   .human-mark { font-size: .8em; opacity: .75; }
+  .orig-toggle { margin-inline-start: 8px; font: inherit; font-size: .9em; cursor: pointer; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); color: var(--ink); padding: 1px 8px; }
   .human-badge { background: var(--panel); border-color: var(--line); }
   .ai-badge { display: inline-block; margin: 0 0 8px; padding: 3px 10px; border-radius: 6px; font-size: 0.85em; background: color-mix(in srgb, var(--accent-2) 25%, var(--panel)); border: 1px solid var(--accent-2); color: var(--ink); }
   .ai-mark { font-size: 0.75em; padding: 0 5px; border-radius: 4px; border: 1px solid var(--accent-2); color: var(--ink-2); white-space: nowrap; }

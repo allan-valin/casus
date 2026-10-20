@@ -274,3 +274,25 @@ describe('human-written lessons are marked too (Allan, 2026-10-20)', () => {
     expect(container.querySelector('.lesson-page .human-badge')).not.toBe(null);
   });
 });
+
+describe('AI-translated pages: badge and a switch to the original (Allan, 2026-10-20)', () => {
+  it('shows the translation in the interface language, and the original on demand', async () => {
+    const { setLang: setUiLang } = await import('../../src/app/lib/i18n.svelte.js');
+    setUiLang('pt');
+    const lesson = { ...LESSONS['n5-004'], mt: { pt: 'MADLAD-400' }, src: 'fr',
+      sections: [{ id: 'book', title: { en: 'The lesson', pt: 'A lição' }, html: { en: '<p>Le présent</p>', pt: '<p>O presente</p>' } }] };
+    const index = { ...INDEX, levels: [{ id: 'N5', topics: [{ id: 't1', kind: 'grammar', title: 'T', lessons: [{ id: 'n5-004', title: 'は', meaning: 'topic' }] }] }] };
+    const { container } = render(Learn, props({ loadLearn: async () => index, loadLesson: async () => lesson }));
+    await flush();
+    await fireEvent.click(container.querySelector('.lesson-row'));
+    await flush();
+    const page = container.querySelector('.lesson-page');
+    expect(page.querySelector('.mt-badge')).not.toBe(null);
+    expect(page.querySelector('#sec-book .prose').textContent).toBe('O presente');
+    await fireEvent.click(page.querySelector('.orig-toggle'));
+    expect(page.querySelector('#sec-book .prose').textContent).toBe('Le présent');
+    await fireEvent.click(page.querySelector('.orig-toggle'));
+    expect(page.querySelector('#sec-book .prose').textContent).toBe('O presente');
+    setUiLang('en');
+  });
+});
