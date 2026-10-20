@@ -237,7 +237,8 @@ describe('generated lessons are marked (Allan, 2026-10-20)', () => {
       { id: 'p', kind: 'vocab', title: { en: 'Phrases', pt: 'Frases feitas' }, lessons: [{ id: 'n5-v1', title: 'x', meaning: '1' }] }] }] };
     const { container } = render(Learn, props({ loadLearn: async () => index, loadLesson: async () => ({ ...LESSONS['n5-004'], generated: true }) }));
     await flush();
-    expect([...container.querySelectorAll('.topic-title')].map((x) => x.textContent)).toEqual(['Prepositions', 'Phrases']);
+    expect([...container.querySelectorAll('.topic-title')].map((x) => x.textContent)).toEqual(['Phrases', 'Prepositions']);   // human lessons first, generated under their own header (Allan, 2026-10-20)
+    expect(container.querySelector('.made-head')).not.toBe(null);
     expect(container.querySelector('.lesson-row .gen-mark')).not.toBe(null);
     await fireEvent.click(container.querySelector('.lesson-row'));
     await flush();

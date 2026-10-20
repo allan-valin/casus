@@ -2,6 +2,7 @@
  * i18n.svelte.js. de, mk and ar written by AI (Claude). */
 export const SPEAK = {
   en: {
+    'learn.madeHead': "Written by AI or generated from data", 'learn.madeNote': "✦ lessons were written by AI (Claude) for Casus; ⚙ lessons are built automatically from Wiktionary's tables and word lists. The lessons above come from human authors.",
     'speak.word.wikt': "from this form's own Wiktionary page", 'speak.act.wikt': 'Asked Wiktionary about {n} forms without IPA here: found {k}.',
     'learn.speak.title': 'Practise saying this in the Pronunciation Trainer (new tab)',
     'nav.speak': 'Pronunciation',
@@ -42,6 +43,7 @@ export const SPEAK = {
     'speak.howto.marks.text': '<p><b>ˈ</b> stress on the next syllable · <b>ː</b> long · <b>ʰ</b> a puff of air after the sound (aspirated) · <b>̃</b> nasal (air through the nose too, as in Portuguese <i>mão</i>) · <b>ʲ</b> palatalised (with an i-like tongue) · <b>̯</b> not a syllable of its own (the second half of a diphthong) · <b>̥</b> voiceless · <b>͡</b> two symbols said as one sound (t͡s).</p>',
   },
   pt: {
+    'learn.madeHead': "Escritas por IA ou geradas de dados", 'learn.madeNote': "As lições ✦ foram escritas por IA (Claude) para o Casus; as ⚙ são montadas automaticamente das tabelas e listas de palavras do Wikcionário. As lições acima vêm de autores humanos.",
     'speak.word.wikt': "da página desta forma no Wikcionário", 'speak.act.wikt': 'Perguntei ao Wikcionário por {n} formas sem IPA aqui: achei {k}.',
     'learn.speak.title': 'Treinar a pronúncia disto no Treino de pronúncia (nova aba)',
     'nav.speak': 'Pronúncia',
@@ -82,6 +84,7 @@ export const SPEAK = {
     'speak.howto.marks.text': '<p><b>ˈ</b> tônica na sílaba seguinte · <b>ː</b> longo · <b>ʰ</b> um sopro depois do som (aspirado) · <b>̃</b> nasal (o ar sai também pelo nariz, como em <i>mão</i>) · <b>ʲ</b> palatalizado (com a língua como num i) · <b>̯</b> não forma sílaba (a segunda metade de um ditongo) · <b>̥</b> surdo · <b>͡</b> dois símbolos ditos como um som (t͡s).</p>',
   },
   de: {
+    'learn.madeHead': "Von KI geschrieben oder aus Daten erzeugt", 'learn.madeNote': "✦-Lektionen hat eine KI (Claude) für Casus geschrieben; ⚙-Lektionen entstehen automatisch aus den Tabellen und Wortlisten des Wiktionary. Die Lektionen oben stammen von menschlichen Autoren.",
     'speak.word.wikt': "von der Wiktionary-Seite dieser Form", 'speak.act.wikt': 'Das Wiktionary nach {n} Formen ohne IPA gefragt: {k} gefunden.',
     'learn.speak.title': 'Das im Aussprachetrainer üben (neuer Tab)',
     'nav.speak': 'Aussprache',
@@ -122,6 +125,7 @@ export const SPEAK = {
     'speak.howto.marks.text': '<p><b>ˈ</b> Betonung auf der folgenden Silbe · <b>ː</b> lang · <b>ʰ</b> ein Hauch nach dem Laut (behaucht) · <b>̃</b> nasal (die Luft geht auch durch die Nase, wie in französisch <i>bon</i>) · <b>ʲ</b> palatalisiert (mit i-artiger Zunge) · <b>̯</b> keine eigene Silbe (die zweite Hälfte eines Diphthongs) · <b>̥</b> stimmlos · <b>͡</b> zwei Symbole als ein Laut (t͡s).</p>',
   },
   mk: {
+    'learn.madeHead': "Напишани од ВИ или создадени од податоци", 'learn.madeNote': "Лекциите ✦ ги напиша ВИ (Claude) за Casus; лекциите ⚙ се составени автоматски од табелите и листите зборови на Викиречникот. Лекциите погоре се од човечки автори.",
     'speak.word.wikt': "од страницата на оваа форма во Викиречникот", 'speak.act.wikt': 'Прашан Викиречникот за {n} форми без IPA: најдени {k}.',
     'learn.speak.title': 'Вежбај го изговорот на ова во Вежбачот за изговор (ново јазиче)',
     'nav.speak': 'Изговор',
@@ -162,6 +166,7 @@ export const SPEAK = {
     'speak.howto.marks.text': '<p><b>ˈ</b> нагласок на следниот слог · <b>ː</b> долго · <b>ʰ</b> воздишка по гласот (аспирирано) · <b>̃</b> назално (воздухот излегува и низ носот, како во француското <i>bon</i>) · <b>ʲ</b> палатализирано (со јазик како за и — како ќ, ѓ) · <b>̯</b> не прави свој слог (втората половина од дифтонг) · <b>̥</b> безвучно · <b>͡</b> два симбола како еден глас (t͡s = ц).</p>',
   },
   ar: {
+    'learn.madeHead': "كتبها الذكاء الاصطناعي أو وُلّدت من البيانات", 'learn.madeNote': "دروس ✦ كتبها الذكاء الاصطناعي (Claude) لـCasus؛ ودروس ⚙ تُبنى آليًا من جداول ويكاموس وقوائم كلماته. والدروس أعلاه من مؤلفين بشر.",
     'speak.word.wikt': "من صفحة هذه الصيغة في ويكاموس", 'speak.act.wikt': 'سُئل ويكاموس عن {n} صيغة بلا IPA هنا: وُجد {k}.',
     'learn.speak.title': 'تدرّب على نطق هذا في مدرّب النطق (علامة تبويب جديدة)',
     'nav.speak': 'النطق',

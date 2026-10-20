@@ -13,6 +13,7 @@
   import { createReview } from '../lib/review.js';
   import { lessonAnswer, completion } from '../lib/progression.js';
   import { speakLinks } from '../lib/pronounce.js';
+  import { byOrigin } from '../lib/learnorigin.js';
   let { lang, loadLearn, loadLesson, loadQuestions, storage = null, random = Math.random, openInReader = null, speak = null, saveFile = downloadFile, award = null, progression = null } = $props();
 
   let learn = $state(null);
@@ -236,7 +237,19 @@
       {#each learn.levels as l}<button class="level-tab" data-level={l.id} class:active={l.id === levelId} aria-selected={l.id === levelId} onclick={() => { levelId = l.id; }}>{l.title ? loc(l.title) : l.id}<span class="count">{l.topics.filter((tp) => tp.kind === 'grammar').reduce((n, tp) => n + tp.lessons.length, 0)}</span></button>{/each}
     </div>
     <input class="search" type="search" bind:value={search} placeholder={t('learn.search')} />
-    {#each level?.topics ?? [] as tp (tp.id)}
+    {@const parts = byOrigin(level?.topics)}
+    {@render topicList(parts.human)}
+    {#if parts.made.some((tp) => visible(tp).length)}
+      <h3 class="made-head">{t('learn.madeHead')}</h3>
+      <p class="made-note">{t('learn.madeNote')}</p>
+      {@render topicList(parts.made)}
+    {/if}
+  {/if}
+  {#if learn}<p class="credit">{loc(learn.credit)}</p>{/if}
+</section>
+
+{#snippet topicList(list)}
+    {#each list as tp (tp.key)}
       {#if visible(tp).length}
         <details class="topic" data-kind={tp.kind} open={!!search.trim()}>
           <summary><span class="chev" aria-hidden="true">▸</span><span class="topic-title">{tp.kind === 'grammar' || tp.title ? loc(tp.title) : kindName(tp.kind)}</span> <span class="topic-n">{visible(tp).length}</span></summary>
@@ -252,10 +265,7 @@
         </details>
       {/if}
     {/each}
-  {/if}
-  {#if learn}<p class="credit">{loc(learn.credit)}</p>{/if}
-</section>
-
+{/snippet}
 {#snippet say(text)}{#if speak}<a class="to-speak" href={speak(text)} target="_blank" rel="noopener" title={t('learn.speak.title')}>🗣</a>{/if}{/snippet}
 {#snippet dict(word)}<a class="dict" href={wiktionaryUrl(word, lang.wiktionary ?? 'Japanese', ui.lang === 'pt' ? 'pt' : 'en')} target="_blank" rel="noopener" title={t('dict.wiktionary')}>{ui.lang === 'pt' ? 'Wikcionário' : 'Wiktionary'} ↗</a>{/snippet}
 
@@ -324,6 +334,8 @@
   .words { border-collapse: collapse; } .words td { border-bottom: 1px solid var(--line); padding: 4px 10px; }
   .words tr:nth-child(even) td { background: var(--table-stripe); }
   .to-speak, :global(.prose .to-speak) { text-decoration: none; margin-inline-start: 4px; font-size: .9em; }
+  .made-head { margin: 22px 0 2px; font-size: 1rem; border-top: 2px solid var(--line); padding-top: 12px; }
+  .made-note { margin: 0 0 8px; color: var(--ink-2); font-size: .85em; }
   .dict { font-size: 0.8em; color: var(--accent-text); white-space: nowrap; }
   .progress-help { float: right; margin: 0 0 8px 12px; font-size: 0.9em; max-width: 34em; }
   .progress-help summary { cursor: pointer; color: var(--accent-text); text-decoration: underline; }
