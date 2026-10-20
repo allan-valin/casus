@@ -241,3 +241,38 @@ it('shareStem keeps wrong answers that differ from the answer only in its last l
   expect(shareStem(['inanıyorum', 'inanabiliyordunuz', 'inanıyorsunuz'], 'inanıyoruz', 5)).toEqual(['inanıyorum', 'inanıyorsunuz']);
   expect(shareStem(['oldum', 'olabilecek'], 'oldu', 5)).toEqual(['oldum']);
 });
+
+describe('who did what to whom (drills research item 5): the doer and the one done to, when the cases are sure', () => {
+  const de = [
+    blk('Den', { pos: 'det', case: 'acc' }), blk('Mann', { pos: 'noun', case: 'acc' }, { pos: 'noun', case: 'nom' }),
+    blk('sieht', { pos: 'verb' }), blk('der', { pos: 'det', case: 'nom' }, { pos: 'det', case: 'dat' }), blk('Hund', { pos: 'noun', case: 'nom' }), blk('.'),
+  ];
+  it('one sure subject and one sure object: their places, and whether the object comes first', async () => {
+    const { rolesOf } = await import('../../tools/learn_match.mjs');
+    const ru = [blk('Собаку', { pos: 'noun', case: 'acc' }), blk('видит', { pos: 'verb' }), blk('мальчик', { pos: 'noun', case: 'nom' }), blk('.')];
+    expect(rolesOf(ru)).toEqual({ sbj: 2, obj: 0, objFirst: true });
+  });
+  it('an ambiguous noun (Mann: nominative or accusative) is not sure, so no question', async () => {
+    const { rolesOf } = await import('../../tools/learn_match.mjs');
+    expect(rolesOf(de)).toBe(null);
+  });
+  it('English pronoun cases count (sbj / obj); no verb or two subjects: no question', async () => {
+    const { rolesOf } = await import('../../tools/learn_match.mjs');
+    expect(rolesOf([blk('She', { pos: 'pron', case: 'sbj' }), blk('saw', { pos: 'verb' }), blk('him', { pos: 'pron', case: 'obj' })])).toEqual({ sbj: 0, obj: 2, objFirst: false });
+    expect(rolesOf([blk('She', { pos: 'pron', case: 'sbj' }), blk('him', { pos: 'pron', case: 'obj' })])).toBe(null);
+    expect(rolesOf([blk('Ich', { pos: 'pron', case: 'nom' }), blk('und', { pos: 'conj' }), blk('du', { pos: 'pron', case: 'nom' }), blk('sehen', { pos: 'verb' }), blk('ihn', { pos: 'pron', case: 'acc' })])).toBe(null);
+  });
+});
+
+describe('who did what: only simple one-clause sentences', () => {
+  it('an accusative after a preposition is not the object; two verbs or a comma: two clauses, no question', async () => {
+    const { rolesOf } = await import('../../tools/learn_match.mjs');
+    // Hún horfði á sjálfa sig.
+    expect(rolesOf([blk('Hún', { pos: 'pron', case: 'nom' }), blk('horfði', { pos: 'verb' }), blk('á', { pos: 'prep' }), blk('sjálfa', { pos: 'pron', case: 'acc' })])).toBe(null);
+    // Hún sagði við sjálfa sig: hvert ætti ég að fara
+    expect(rolesOf([blk('Hún', { pos: 'pron', case: 'nom' }), blk('sagði', { pos: 'verb' }), blk('hann', { pos: 'pron', case: 'acc' }), blk('ætti', { pos: 'verb' })])).toBe(null);
+    const comma = [blk('Er', { pos: 'pron', case: 'nom' }), blk('sieht', { pos: 'verb' }), blk('ihn', { pos: 'pron', case: 'acc' })];
+    comma[0].token.trail = ',';
+    expect(rolesOf(comma)).toBe(null);
+  });
+});

@@ -12,7 +12,7 @@
 import { readFile, writeFile, readdir } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import path from 'node:path';
-import { matchRule, formPool, preferAttested, looksLikeName, dropMarked, dropPartners, shareStem, spellingVariants, prefixVariants, suffixVariants, unsuitable, markOf, rewrite, rowFor, consonantV, followSpelling } from './learn_match.mjs';
+import { matchRule, formPool, preferAttested, looksLikeName, dropMarked, dropPartners, shareStem, spellingVariants, prefixVariants, suffixVariants, unsuitable, markOf, rewrite, rowFor, consonantV, followSpelling, rolesOf } from './learn_match.mjs';
 import { gapRoman } from './learn_examples.mjs';
 
 export const TATOEBA = { mk: 'mkd', ar: 'ara', la: 'lat', grc: 'grc', de: 'deu', ru: 'rus', ko: 'kor', zh: 'cmn', fi: 'fin', el: 'ell', sa: 'san', cs: 'ces', pl: 'pol', tr: 'tur', hu: 'hun', is: 'isl', pt: 'por', en: 'eng', es: 'spa', fr: 'fra' };
@@ -149,6 +149,7 @@ async function main(code) {
       // a word-list answer without the vowel marks the sentence happens to write (the list has none)
       let answer = listLesson ? gapBlock.token.surface.replace(/[\u064B-\u0652\u0670]/gu, '') : gapBlock.token.surface;
       let wrong = null;
+      let lemma = null;          // the answer's dictionary word: the inflection cloze gives it (puella → puellārum)
       let nothingReal = false;   // (strict_attested: the paradigm had no form real text uses)
       if (!listLesson) {
         const ids = [...new Set(gapBlock.candidates.map((c) => c.analysis.lemma))];
@@ -160,6 +161,7 @@ async function main(code) {
         // rowHas: the form the sentence needs must really be that one (لَمْ + jussive; لِمَ "why" + indicative is not)
         if (row && rule.rowHas && !row.slice(1).some((c) => { const f = decode(c); return Object.entries(rule.rowHas).every(([k, v]) => f[k] === v); })) continue;
         if (row) {
+          lemma = dictOf(ids[0])?.split(/[,(]/u)[0].trim() || lemmaOf(ids[0]);
           // the answer as the paradigm spells it (vowelled Arabic; Latin without the book's macrons, like its wrong
           // answers), with the sentence's capital
           if (vowelled) answer = lang.code === 'grc' ? row[0].replace(/σ$/u, 'ς') : row[0];
@@ -219,7 +221,7 @@ async function main(code) {
         // Chinese: the gap's pinyin stays in the line — near-synonyms (很, 非常) would otherwise both fit; the question
         // becomes which characters are written for that sound and meaning
         gapRoman: code === 'zh' ? romanBlocks.map((b) => b.roman).filter(Boolean).join(' ') : sure ? gapRoman(romanBlocks, m.span) : '', roman: romanBlocks.map((b) => b.roman).filter(Boolean).join(' '),
-        tok: blocks.map((b) => b.token.surface) });
+        tok: blocks.map((b) => b.token.surface), lemma, roles: rolesOf(blocks) });
     }
     if (read % 5000 === 0) console.log(`${read} sentences read (${Math.round((Date.now() - t0) / 1000)} s)`);
   }
@@ -311,9 +313,9 @@ async function main(code) {
     file.qs = file.qs.filter((q) => !q.drop);
     for (const m of mine) {
       const pt = m.pt ? { pt: m.pt } : {};
-      file.qs.push({ type: 'gap', source: m.src, furi: m.gap, roman: m.gapRoman, ...(m.en ? { en: m.en } : {}), ...pt, answer: m.answer,
+      file.qs.push({ type: 'gap', source: m.src, furi: m.gap, roman: m.gapRoman, ...(m.en ? { en: m.en } : {}), ...pt, answer: m.answer, ...(m.lemma ? { lemma: m.lemma } : {}),
         pool: m.wrong ?? answers.filter((a) => a.toLocaleLowerCase() !== m.answer.toLocaleLowerCase()).slice(0, 30) });
-      if (m.en) file.qs.push({ type: 'translate', source: m.src, furi: [[m.shown, null]], roman: m.roman, tok: m.tok, answer: m.en, ...pt });
+      if (m.en) file.qs.push({ type: 'translate', source: m.src, furi: [[m.shown, null]], roman: m.roman, tok: m.tok, answer: m.en, ...pt, ...(m.roles ? { roles: m.roles } : {}) });
     }
     // wrong answers for the lesson's own gap questions, when the lesson has no word list: the answers its sentences give
     if (!(file.pools?.gap?.length)) file.pools = { ...file.pools, gap: answers.slice(0, 40) };

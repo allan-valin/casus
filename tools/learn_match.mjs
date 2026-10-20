@@ -237,3 +237,21 @@ export function shareStem(forms, answer, tail) {
   const stem = answer.toLocaleLowerCase().slice(0, Math.max(3, answer.length - tail));
   return forms.filter((f) => f.toLocaleLowerCase().startsWith(stem));
 }
+
+/** who did what to whom (processing instruction, VanPatten & Cadierno 1993): the one noun or pronoun every reading of
+ * which is nominative (English: subject case) and the one every reading of which is accusative (object case), in a
+ * sentence with a verb; null when either is missing, doubled or uncertain. objFirst: the object comes first, the
+ * sentences that teach the point (Den Hund sieht der Mann). */
+export function rolesOf(blocks) {
+  const sure = (b, cases) => ['noun', 'pron'].includes(b.candidates?.[0]?.analysis?.pos) && b.candidates.every((c) => cases.includes(c.analysis?.case) && ['noun', 'pron'].includes(c.analysis?.pos));
+  const sbj = blocks.map((b, i) => (sure(b, ['nom', 'sbj']) ? i : -1)).filter((i) => i >= 0);
+  const obj = blocks.map((b, i) => (sure(b, ['acc', 'obj']) ? i : -1)).filter((i) => i >= 0);
+  // one clause: one verb, no comma or colon inside, and the object not governed by a preposition (á sjálfa sig)
+  const verbs = blocks.filter((b) => b.candidates?.length && b.candidates.some((c) => c.analysis?.pos === 'verb')).length;
+  const inner = blocks.slice(0, -1).some((b) => /[,;:–—]/u.test(b.token.trail ?? '') || /^[,;:–—"„“«»]$/u.test(b.token.surface));
+  if (sbj.length !== 1 || obj.length !== 1 || verbs !== 1 || inner) return null;
+  const words = blocks.map((b, i) => [b, i]).filter(([b]) => /[\p{L}\p{N}]/u.test(b.token.surface));
+  const afterPrep = (k) => { const at = words.findIndex(([, i]) => i === k); return words.slice(Math.max(0, at - 3), at).some(([b]) => b.candidates?.some((c) => c.analysis?.pos === 'prep')); };
+  if (afterPrep(obj[0]) || afterPrep(sbj[0])) return null;
+  return { sbj: sbj[0], obj: obj[0], objFirst: obj[0] < sbj[0] };
+}
