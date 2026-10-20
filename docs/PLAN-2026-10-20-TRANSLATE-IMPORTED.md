@@ -61,3 +61,18 @@ ar 0.4M · uk 0.3M · is 0.2M · mk 0.03M.
   rest. Workflow: tools/mt_pieces.py <code> --ui <ui> --source "<book>" lists the exact pieces (with placeholders) →
   Claude translates them in batches into tools/mt_fixes/<ui>/<slug>.yml → translate_learn --cache-only --redo. ja>pt
   held: JLPT (core) by Claude first; school books MADLAD with classical lines protected.
+- 2026-10-21 (Allan): de>mk and de>ar FIRST, then the rest over days. DeepL rejected (no Macedonian, proprietary,
+  quota). Benchmark of open models on 45 real German-course sentences (en/es/fr → mk/ar): Macedonian MADLAD best
+  (Qwen3-8B writes Serbian-Russian mixtures); Arabic EuroLLM-9B-Instruct best (keeps placeholders and German, most
+  fluent), MADLAD drops placeholders/content, LMT-60 mistranslates and transliterates German, Seed-X garbage.
+  → Arabic bulk = EuroLLM-9B (tools/llm_server.sh + translate_learn --engine eurollm; own cache
+  vendor/mt/cache.ar.eurollm.json); the badge names who translated each page (Claude / EuroLLM-9B / MADLAD-400).
+- 2026-10-21: German course core = Grimm Grammar, translated by Claude into mk (4.5k sentences) and ar (3.6k).
+  Checking de>mk found and fixed (each with a test): Grimm's bold English glosses kept English ("еден <b>rich</b>
+  човек") → bold glosses translated in context; bare IPA turned Cyrillic → kept whole; IPA spans protected;
+  "backen (bäckt), backte, gebacken (to bake)" rewritten whole → only the gloss translated; German examples written
+  plainly or quoted («Ich bin der Mann», "Wie heißt du?") translated away → protected (German-word test per
+  explanation language: English word lists for English books, the es/fr/pl course forms for theirs); German-in-German
+  pages (Bohm's Sprachlehre, Kontrastive Syntax) left in German (model cannot tell example from explanation);
+  MADLAD's rejected sentences (673, mostly lost placeholders) and 190 verb glosses translated by Claude
+  (tools/mt_fixes/mk/de-rescue.yml). Released Korean/Japanese pairs re-checked: 0 sentences missing after the changes.
