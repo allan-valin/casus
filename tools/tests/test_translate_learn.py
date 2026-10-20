@@ -148,3 +148,15 @@ def test_the_model_input_ends_with_the_end_of_sequence_token():
     tr.sp, tr.model = SP(), Model()
     tr._raw(["Hello there"])
     assert seen[0][-1] == "</s>" and seen[0][0] == "<2pt>"
+
+
+def test_lines_are_translated_one_by_one():
+    assert T.pieces_of("Acorns may measure heights,\nthough varying very little.") == ["Acorns may measure heights,\n", "though varying very little."]
+
+
+def test_an_output_far_longer_than_its_input_is_not_trusted():
+    tr = object.__new__(T.Translator)
+    tr.ui, tr.cache, tr.new, tr.cache_file = "pt", {}, 0, None
+    tr.save = lambda: None
+    tr._model = lambda texts: ["Por que " * 30 if "Why" in t else "Bom dia." for t in texts]
+    assert tr(["Why do they differ?", "Good morning."]) == ["Why do they differ?", "Bom dia."]

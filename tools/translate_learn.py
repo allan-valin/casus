@@ -26,9 +26,10 @@ from mt_html import PH, dedupe, is_prose, protect_terms, translate_html  # noqa:
 ROOT = Path(__file__).resolve().parents[1]
 MODEL = ROOT / "vendor" / "mt" / "madlad400-3b-ct2"
 def pieces_of(text: str) -> list:
-    """a text cut into sentences; a sentence longer than 600 characters (a list run on with commas) also at commas"""
+    """a text cut into lines (each keeps its line break), sentences, and a sentence longer than 600 characters (a list
+    run on with commas) also at commas"""
     out = []
-    for p in SENT.split(text):
+    for p in [x for line in re.split(r"(?<=\n)", text) for x in SENT.split(line)]:
         while len(p) > 600:
             cut = p.rfind(", ", 0, 600)
             cut = cut + 2 if cut > 100 else (p.rfind(" ", 0, 600) + 1 or 600)
@@ -42,6 +43,18 @@ SENT = re.compile(r"(?<=[.!?;])\s+(?=[A-ZÀ-ÞА-ЯЁΑ-Ω\[(¿¡])|(?<=[。！�
 # a book whose source line names no edition: its explanation language when it is not English
 SRC_OF = {"Grammaire française": "fr", "Antología abierta": "es", "Dz.U.": "pl", "Gramática de la lengua castellana": "es",
           "Kleine deutsche Sprachlehre": "de", "Le Premier Livre": "fr"}
+
+
+def join(pieces: list, done: dict) -> str:
+    """the pieces' translations put back together: a piece that ended a line keeps its line break"""
+    out = ""
+    for p in pieces:
+        key = p.strip()
+        if not key:
+            out += p
+            continue
+        out += done.get(key, key) + (p[len(p.rstrip()):] or " ")
+    return out.rstrip(" ")
 
 
 class Translator:
@@ -58,7 +71,7 @@ class Translator:
     def _raw(self, texts: list) -> list:
         # the input must end with </s>: without it the model goes on writing after the sentence
         toks = [self.sp.encode(f"<2{self.ui}> {t}", out_type=str) + ["</s>"] for t in texts]
-        res = self.model.translate_batch(toks, beam_size=2, max_batch_size=6,
+        res = self.model.translate_batch(toks, beam_size=2, max_batch_size=4, no_repeat_ngram_size=6,
                                          max_decoding_length=min(512, max(32, int(1.8 * max(len(t) for t in toks)) + 8)))
         return [self.sp.decode(r.hypotheses[0]) for r in res]
 
@@ -78,7 +91,7 @@ class Translator:
     def __call__(self, texts: list) -> list:
         """each text cut into sentences, each sentence translated once ever"""
         pieces = [pieces_of(t) for t in texts]
-        todo = sorted({p for ps in pieces for p in ps if p.strip() and p not in self.cache})
+        todo = sorted({p.strip() for ps in pieces for p in ps if p.strip() and p.strip() not in self.cache})
         for k in range(0, len(todo), 96):
             batch = [protect_terms(x, self.ui) for x in todo[k:k + 96]]
             outs = self._model([x for x, _ in batch])
@@ -91,15 +104,15 @@ class Translator:
             for src, (prot, terms), out in zip(todo[k:k + 96], batch, outs):
                 # the grammar terms go back in as the glossary has them; a lost placeholder keeps the original
                 first = max([int(n) for n in PH.findall(src)] or [0])
-                if sorted(PH.findall(out)) != sorted(PH.findall(prot)):
-                    self.cache[src] = src
+                if sorted(PH.findall(out)) != sorted(PH.findall(prot)) or len(out) > 2 * len(src) + 20:
+                    self.cache[src] = src          # (a much longer output is the model looping or inventing)
                 else:
                     out = PH.sub(lambda m: terms[int(m.group(1)) - first - 1] if first < int(m.group(1)) <= first + len(terms) else m.group(0), out)
                     self.cache[src] = dedupe(out, src)
                 self.new += 1
             if self.new and self.new % 960 < 96:
                 self.save()
-        return [" ".join(self.cache.get(p, p) for p in ps) for ps in pieces]
+        return [join(ps, self.cache) for ps in pieces]
 
     def save(self):
         self.cache_file.write_text(json.dumps(self.cache, ensure_ascii=False), encoding="utf-8")
@@ -117,9 +130,9 @@ class CacheOnly:
 
     def __call__(self, texts: list) -> list:
         pieces = [pieces_of(t) for t in texts]
-        if any(p.strip() and p not in self.cache for ps in pieces for p in ps):
+        if any(p.strip() and p.strip() not in self.cache for ps in pieces for p in ps):
             raise Missing
-        return [" ".join(self.cache.get(p, p) for p in ps) for ps in pieces]
+        return [join(ps, self.cache) for ps in pieces]
 
     def save(self):
         pass
