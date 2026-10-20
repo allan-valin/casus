@@ -8,6 +8,7 @@
   import Game from './Game.svelte';
   import EndingsDrill from './EndingsDrill.svelte';
   import ChoiceDrill from './ChoiceDrill.svelte';
+  import TypeDrill from './TypeDrill.svelte';
   import Overlay from './Overlay.svelte';
   import CheatSheet from './CheatSheet.svelte';
   import { parseItems } from '../lib/parse.js';
@@ -90,10 +91,13 @@
         <select class="word-range" bind:value={range}>{#each ranges as r}<option value={r}>{r.replace('-', '–')}</option>{/each}</select>
       </label>
       <label>{t('words.direction')}
-        <select class="word-direction" bind:value={direction}><option value="meaning">{t('words.toMeaning')}</option><option value="word">{t('words.toWord')}</option></select>
+        <select class="word-direction" bind:value={direction}><option value="meaning">{t('words.toMeaning')}</option><option value="word">{t('words.toWord')}</option><option value="typed">{t('words.toTyped')}</option></select>
       </label>
     </div>
-    {#key `${range}|${direction}|${frequency.length}`}<ChoiceDrill items={wordItems} {random} romanize={lang.script?.romanize ?? null} onresult={remember} />{/key}
+    {#key `${range}|${direction}|${frequency.length}`}
+      {#if direction === 'typed'}<TypeDrill items={inRange.map((f) => ({ prompt: f.en, answer: f.w }))} {lang} {random} onresult={remember} />
+      {:else}<ChoiceDrill items={wordItems} {random} romanize={lang.script?.romanize ?? null} onresult={remember} />{/if}
+    {/key}
   {:else if drill === 'phrases'}
     <div class="options">
       <label>{t('phrases.kind')}

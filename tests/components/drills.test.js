@@ -232,3 +232,16 @@ describe('Review tab (drills research 2026-10-20)', () => {
     expect(empty.container.querySelector('.review-empty')).not.toBe(null);
   });
 });
+
+describe('typed recall in the Words drill', () => {
+  it('a third direction asks to type the word', async () => {
+    const { container } = render(Drills, { lang: getLanguage('la'), loadData, navigate: () => {}, random: () => 0 });
+    await tick2();
+    await fireEvent.click(container.querySelector('.drill-tab[data-drill="words"]'));
+    await tick2();
+    await fireEvent.change(container.querySelector('select.word-direction'), { target: { value: 'typed' } });
+    await tick2();
+    expect(container.querySelector('input.type-answer')).not.toBe(null);
+    expect(container.querySelector('.type-prompt').textContent).toMatch(/^m\d+$/);
+  });
+});
