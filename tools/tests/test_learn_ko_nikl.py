@@ -34,3 +34,12 @@ def test_lessons_from_the_nikl_list():
     assert rae["level"] == "TOPIK 2" and rae["match"]["seq"][0]["re"].startswith("(을래|을래요|[")
     assert [t["title"]["en"] for t in index["levels"][0]["topics"]] == ["Official syllabus: particles", "Official syllabus: endings", "Official syllabus: expressions"]
     assert "NIKL" in i["source"]
+
+
+def test_english_definitions_get_their_portuguese_from_translation_not_a_copy():
+    """the pt intro used to be the English definitions with a note; it is now left to tools/translate_learn.py
+    (Allan, 2026-10-20: every imported text in every interface language)"""
+    index = {"levels": [{"id": "TOPIK 1", "topics": []}, {"id": "TOPIK 2", "topics": []}]}
+    lessons, questions = {}, {"TOPIK 1": {}, "TOPIK 2": {}}
+    nikl_lessons(FIX / "grammar.csv", FIX / "grammar.json", index, lessons, questions)
+    assert "pt" not in lessons["ko-nikl-1"]["intro"]

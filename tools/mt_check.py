@@ -69,7 +69,8 @@ def check_language(code: str, ui: str, sample: int = 20, seed: int = 1) -> dict:
             if h[ui] == orig:
                 continue
             item = {"page": f.stem, "section": s.get("id"), "source": page.get("source", "")[:60]}
-            p = problems(orig, h[ui], page.get("src", "en"))
+            # an imported page's intro is Casus's own English credit line, whatever the book's language
+            p = problems(orig, h[ui], "en" if s.get("id") == "intro" else page.get("src", "en"))
             (flagged if p else clean).append({**item, "problems": p} if p else item)
     random.Random(seed).shuffle(clean)
     report = {"code": code, "ui": ui, "flagged": flagged, "sample": clean[:sample], "checked": len(flagged) + len(clean)}

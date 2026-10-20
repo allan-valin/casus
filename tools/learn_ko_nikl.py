@@ -119,13 +119,12 @@ def nikl_lessons(list_csv: Path, kodict_json: Path, index: dict, lessons: dict, 
                 parts.append(f"<p><b>{k}.</b> {html.escape(s.get('en_def') or '')}<br><small>{html.escape(s.get('ko') or '')}</small></p>{ex}")
             if not senses:
                 parts.append("<p>" + ("The sentences below use it; then the exercises." if lang == "en" else "As frases abaixo o usam; depois, os exercícios.") + "</p>")
-            if lang == "pt" and senses:
-                parts.insert(1, "<p><small>(definições em inglês e coreano do dicionário do NIKL)</small></p>")
             return "".join(parts)
 
         page = {"id": lid, "title": r["대표형"].lstrip("-") if kind == "조사" else re.sub(r"\d+$", "", r["대표형"]),
                 "meaning": {"en": first_def or f"{name_en}{' — ' + meaning_ko if meaning_ko else ''}", "pt": first_def or f"{name_pt}{' — ' + meaning_ko if meaning_ko else ''}"},
-                "intro": {"en": block("en"), "pt": block("pt")}, "sections": [], "examples": [], "practice": [], "level": lv,
+                # with English definitions the Portuguese comes from tools/translate_learn.py, not a copy
+                "intro": {"en": block("en"), **({} if senses else {"pt": block("pt")})}, "sections": [], "examples": [], "practice": [], "level": lv,
                 "topic": {"en": TOPIC[KIND[kind]][0], "pt": TOPIC[KIND[kind]][1]}, "match": rule,
                 "source": "NIKL International Standard Curriculum grammar list (KOGL type 1); definitions and examples: 한국어기초사전 (NIKL, CC BY-SA 2.0 KR)"}
         if kind == "조사":
