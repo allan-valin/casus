@@ -214,3 +214,14 @@ def test_a_verb_whose_every_sense_is_intransitive_says_so():
     assert index["chegou"][0]["valency"] == "intr" and "valency" not in index["comeu"][0]
     encode, decode, _ = codes(CONFIGS["pt"])
     assert decode(encode({k: v for k, v in index["chegou"][0].items() if k != "lemma"}), "1")["valency"] == "intr"
+
+
+def test_form_of_entries_the_real_lemmas_cover_are_dropped():
+    """Italian Wiktionary files 450,000 inflected forms as entries of their own ("abalienate: plural of abalienato");
+    when the real lemma's table already has the form, the form-of entry adds nothing and is left out of the lemmas"""
+    from casus_build.generic import used_entries
+    entries = [{"id": 1, "headword": "parlare", "pos": "verb", "cells": [("parlo", {"pos": "verb"}), ("parlare", {"pos": "verb"})], "form_of": False},
+               {"id": 2, "headword": "parlo", "pos": "verb", "cells": [("parlo", {"pos": "verb"})], "form_of": True},
+               {"id": 3, "headword": "gittim", "pos": "verb", "cells": [("gittim", {"pos": "verb"})], "form_of": True}]
+    index = build_index(entries)
+    assert [e["id"] for e in used_entries(entries, index)] == [1, 3]

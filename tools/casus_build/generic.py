@@ -216,6 +216,13 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
         yield {"id": i, "headword": word, "pos": pos, "gender": gender, "cells": cells, "gloss_en": gloss, "ipa": ipa[:3], "form_of": bool(form_of)}
 
 
+def used_entries(entries: list[dict], index: dict) -> list[dict]:
+    """the entries some form still points to: a form-of entry whose every form its real lemma covers (build_index drops
+    its rows) is left out of the lemmas, glosses and IPA (Italian: 450,000 such entries, 48 MB of lemmas)"""
+    used = {r["lemma"] for rows in index.values() for r in rows}
+    return [e for e in entries if not e.get("form_of") or e["id"] in used]
+
+
 def build_index(entries: list[dict]) -> dict[str, list[dict]]:
     index: dict[str, list[dict]] = {}
     for e in entries:
