@@ -22,16 +22,37 @@ def test_written_levels_beside_a_plan_are_well_formed(path):
     _well_formed({"levels": [yaml.safe_load((path / f"{lv}.yml").read_text(encoding="utf-8")) for lv in plan.get("written", []) if (path / f"{lv}.yml").exists()]})
 
 
+UI = {"en", "pt", "de", "mk", "ar"}
+
+
+@pytest.mark.parametrize("path", sorted(p for p in CURRICULA[0].parent.iterdir() if (p / "i18n").is_dir()), ids=lambda p: p.name)
+def test_every_translation_overlay_names_real_lessons_and_topics(path):
+    """a typo in an overlay would silently leave a lesson in English"""
+    meta = yaml.safe_load((path / "meta.yml").read_text(encoding="utf-8")) if (path / "meta.yml").exists() else {"level_files": []}
+    plan = yaml.safe_load((path / "plan.yml").read_text(encoding="utf-8")) if (path / "plan.yml").exists() else {}
+    files = [path / f"{lv}.yml" for lv in meta.get("level_files", []) + plan.get("written", [])]
+    ids, titles = set(), set()
+    for f in files:
+        if f.exists():
+            for t in (yaml.safe_load(f.read_text(encoding="utf-8")) or {}).get("topics") or []:
+                titles.add(t["title"]["en"] if isinstance(t["title"], dict) else t["title"])
+                ids |= {l["id"] for l in t["lessons"]}
+    for f in sorted((path / "i18n").glob("*.yml")):
+        over = yaml.safe_load(f.read_text(encoding="utf-8")) or {}
+        assert not set(over.get("lessons") or {}) - ids, f"{f.name}: unknown lessons {set(over['lessons']) - ids}"
+        assert not set(over.get("topics") or {}) - titles, f"{f.name}: unknown topics {set(over['topics']) - titles}"
+
+
 def _well_formed(data):
     seen = set()
     for lv in data["levels"]:
         for topic in lv["topics"]:
-            assert set(topic["title"]) == {"en", "pt"}
+            assert {"en", "pt"} <= set(topic["title"]) <= UI, topic["title"]
             for l in topic["lessons"]:
                 where = f"{lv['id']} {l['id']}"
                 assert l["id"] not in seen, where
                 seen.add(l["id"])
-                assert set(l["meaning"]) == {"en", "pt"} and set(l["intro"]) == {"en", "pt"}, where
+                assert {"en", "pt"} <= set(l["meaning"]) <= UI and {"en", "pt"} <= set(l["intro"]) <= UI, where
                 assert l.get("match"), f"{where}: no rule, so no exercises from Tatoeba"
                 for e in l.get("examples", []):
                     assert len(e) in (3, 4) and all(isinstance(x, str) and x for x in e), f"{where}: example {e}"
@@ -44,9 +65,9 @@ def _well_formed(data):
                         for row in t["rows"]:
                             assert len(row) == width, f"{where}: row {row} has {len(row)} cells, head {width}"
                 for s in l.get("sections", []):
-                    assert isinstance(s["body"], str) or set(s["body"]) == {"en", "pt"}, where
+                    assert isinstance(s["body"], str) or {"en", "pt"} <= set(s["body"]) <= UI, where
                 for m in l.get("mistakes", []):
-                    assert m["wrong"] != m["right"] and set(m["why"]) == {"en", "pt"}, where
+                    assert m["wrong"] != m["right"] and {"en", "pt"} <= set(m["why"]) <= UI, where
 
 
 def test_ai_written_curricula_mark_their_lessons(tmp_path):
