@@ -1,0 +1,60 @@
+id: B1
+topics:
+
+- title: {en: Conditions and the passive, pt: Condicionais e passiva}
+  lessons:
+  - id: en-conditionals
+    title: if I were, I would
+    meaning: {en: "conditionals: if + present / past", pt: "condicionais: if + presente / passado"}
+    intro:
+      pt: |
+        Real: **If it rains, I'll stay home.** (if + presente, will). Hipotético: **If I had money, I would travel.** (if + passado, would) — *Se eu tivesse*; com be, **If I were you…** (Se eu fosse você…). Passado irreal: **If I had known, I would have come.**
+      en: |
+        Real: **If it rains, I'll stay home.** Hypothetical: **If I had money, I would travel. If I were you…** Past unreal: **If I had known, I would have come.**
+    examples:
+    - [If I were you I would go., If I were you I would go., Se eu fosse você eu iria., would]
+    match: {seq: [{word: [would, "'d", wouldn't]}], gap: 0}
+    pool: [would, will, could, should]
+
+  - id: en-passive
+    title: it was built
+    meaning: {en: "the passive: be + participle", pt: "a voz passiva: be + particípio"}
+    intro:
+      pt: |
+        **be + particípio**, com **by** para quem fez: **The house was built in 1900. English is spoken here. The letter was written by Ana.** O inglês usa muito a passiva onde o português usa *se*: *Fala-se inglês* = **English is spoken**.
+      en: |
+        **be + past participle**, **by** for the doer: **The house was built in 1900. English is spoken here.**
+    examples:
+    - [English is spoken here., English is spoken here., Fala-se inglês aqui., spoken]
+    match: {seq: [{word: [is, are, was, were, been, be]}, {pos: verb, re: "(ed|en|wn|ght|ne|ilt|old|ung|ade)$"}], gap: 1, same: [number]}
+
+- title: {en: Relative clauses and verbs, pt: Orações relativas e verbos}
+  lessons:
+  - id: en-relatives
+    title: who, which, that
+    meaning: {en: "relative pronouns", pt: "pronomes relativos"}
+    intro:
+      pt: |
+        **who** para pessoas, **which** para coisas, **that** para os dois (mais informal): **the man who called, the book which / that I read**. Como objeto, o relativo pode sumir: **the book I read** (o livro que li). **whose** = cujo: **the girl whose father is a doctor**.
+      en: |
+        **who** (people), **which** (things), **that** (both); dropped as object: **the book I read**; **whose** = possessive.
+    examples:
+    - [The man who called is my uncle., The man who called is my uncle., O homem que ligou é meu tio., who]
+    match: {seq: [{pos: noun}, {word: [who, which, that, whose, whom, where]}], gap: 1}
+    pool: [who, which, that, whose, where]
+
+  - id: en-gerund-infinitive
+    title: enjoy doing, want to do
+    meaning: {en: "-ing or to + verb after a verb", pt: "-ing ou to + verbo depois de verbo"}
+    intro:
+      pt: |
+        Alguns verbos pedem **-ing** (**enjoy, finish, avoid, mind, keep, suggest**: *I enjoy reading*), outros **to** + verbo (**want, need, decide, hope, plan, learn**: *I want to go*). Depois de preposição sempre **-ing**: **I'm interested in learning. Thanks for coming.**
+      en: |
+        **-ing** after enjoy, finish, avoid, mind, keep; **to** after want, need, decide, hope; **-ing** after every preposition.
+    mistakes:
+    - wrong: I enjoy to read.
+      right: I enjoy reading.
+      why: {en: "enjoy takes -ing.", pt: "enjoy pede -ing."}
+    examples:
+    - [I enjoy reading., I enjoy reading., Gosto de ler., reading]
+    match: {seq: [{lemma: "^(enjoy|finish|avoid|mind|keep|stop|suggest|practise|practice)$"}, {re: "ing$"}], gap: 1, suffixes: [ing, ""], attested: true}

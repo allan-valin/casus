@@ -1,0 +1,82 @@
+id: A2
+topics:
+
+- title: {en: The past, pt: O passado}
+  lessons:
+  - id: en-past-simple
+    title: I worked, I went
+    meaning: {en: "the past simple: -ed and irregular verbs", pt: "o past simple: -ed e verbos irregulares"}
+    intro:
+      pt: |
+        Regulares: **-ed** (**worked, played, lived, stopped**), igual para todas as pessoas. Muitos verbos comuns são irregulares e se decoram: **go → went, have → had, do → did, see → saw, get → got, make → made, take → took, come → came, say → said**. Negativa e pergunta com **did** + verbo na forma base: **I didn't go. Did you see it?**
+      en: |
+        Regular **-ed**; many irregulars (**went, had, did, saw, got, made, took, came, said**). Negatives and questions: **did** + base form: **I didn't go. Did you see it?**
+    mistakes:
+    - wrong: I didn't went.
+      right: I didn't go.
+      why: {en: "After did: the base form.", pt: "Depois de did: a forma base."}
+    examples:
+    - [I went to the beach yesterday., I went to the beach yesterday., Fui à praia ontem., went]
+    match: {seq: [{pos: verb, tense: past, mood: ind}], same: [number]}
+
+  - id: en-future
+    title: will, going to
+    meaning: {en: "the future: will and going to", pt: "o futuro: will e going to"}
+    intro:
+      pt: |
+        **will** + verbo: decisões na hora, promessas, previsões (**I'll help you. It will rain.**). **be going to** + verbo: planos já decididos e o que se vê vindo (**I'm going to study medicine. Look, it's going to rain!**). Negativa **won't**.
+      en: |
+        **will**: instant decisions, promises, predictions. **be going to**: plans and visible evidence. Negative **won't**.
+    examples:
+    - [I'll help you., I'll help you., Vou te ajudar., help]
+    match: {seq: [{word: [will, "'ll", won't]}], gap: 0}
+    pool: [will, won't, would, can, must]
+
+  - id: en-comparatives
+    title: bigger, more beautiful
+    meaning: {en: "comparatives and superlatives", pt: "comparativos e superlativos"}
+    intro:
+      pt: |
+        Palavras curtas: **-er / -est**: **big → bigger → the biggest**, **happy → happier**; longas: **more / the most**: **more beautiful, the most expensive**. *Do que* = **than**: **She is taller than me.** Irregulares: **good → better → best, bad → worse → worst**.
+      en: |
+        Short adjectives **-er / -est**; long ones **more / the most**; **than**. Irregular: **good → better → best, bad → worse → worst**.
+    examples:
+    - [She is taller than me., She is taller than me., Ela é mais alta que eu., taller]
+    match:
+    - {seq: [{pos: adj, re: "(er|est)$"}], suffixes: [er, est, ""], attested: true}
+    - {seq: [{word: [more, most, less, least]}, {pos: adj}], gap: 0, pool: [more, most, less, very]}
+
+  - id: en-present-perfect
+    title: I have seen
+    meaning: {en: "the present perfect: have + participle", pt: "o present perfect: have + particípio"}
+    intro:
+      pt: |
+        **have / has + particípio** liga passado e presente: experiência (**Have you ever been to London?** Você já foi a Londres?), algo que começou e continua (**I've lived here for ten years** = moro aqui há dez anos), novidade (**I've lost my keys**). Com tempo definido no passado, use o past simple: *I saw him yesterday* (não *I have seen him yesterday*). Armadilha: *Moro aqui há 10 anos* NÃO é *I live here for 10 years*.
+      en: |
+        **have / has + past participle**: experience, unfinished time, news. With a finished time: the past simple.
+    mistakes:
+    - wrong: I live here for ten years.
+      right: I've lived here for ten years.
+      why: {en: "Unfinished time: the present perfect.", pt: "Tempo que continua: present perfect."}
+    examples:
+    - ["Have you ever been to London?", "Have you ever been to London?", "Você já foi a Londres?", "been"]
+    match: {seq: [{word: [have, has, "'ve", haven't, hasn't]}, {pos: verb, re: "(ed|en|ne|wn|ght|un|ung|ade|aid|ept|eft|ost|ot|ad|ood)$"}], near: 1, gap: 1, same: [number]}
+
+- title: {en: Obligation and advice, pt: Obrigação e conselho}
+  lessons:
+  - id: en-modals
+    title: must, should, have to
+    meaning: {en: "must, have to, should", pt: "must, have to, should: obrigação e conselho"}
+    intro:
+      pt: |
+        **must** obrigação (do falante) e dedução (**You must be tired**); **have to** obrigação externa (**I have to work tomorrow**); **should** conselho (**You should rest**). **mustn't** = proibido; **don't have to** = não precisa.
+      en: |
+        **must** (obligation, deduction), **have to** (external obligation), **should** (advice). **mustn't** = forbidden; **don't have to** = not necessary.
+    mistakes:
+    - wrong: You mustn't come (meaning it's not necessary).
+      right: You don't have to come.
+      why: {en: "mustn't = forbidden; don't have to = not needed.", pt: "mustn't = proibido; don't have to = não precisa."}
+    examples:
+    - [You should rest., You should rest., Você deveria descansar., should]
+    match: {seq: [{word: [must, should, mustn't, shouldn't, ought]}], gap: 0}
+    pool: [must, should, can, will, would]

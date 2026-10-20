@@ -1,0 +1,149 @@
+id: A1
+topics:
+
+- title: {en: The basics, pt: O básico}
+  lessons:
+  - id: en-to-be
+    title: I am, you are, he is
+    meaning: {en: "the verb to be", pt: "o verbo to be (ser / estar)"}
+    intro:
+      pt: |
+        **to be** é *ser* e *estar* ao mesmo tempo: **I am** (I'm), **you are** (you're), **he / she / it is** (he's), **we are**, **they are**. Negativa com **not**: **I'm not, she isn't, they aren't**. Pergunta invertendo: **Are you tired? Is he Brazilian?** O inglês não deixa o sujeito cair: *É tarde* = **It is late**, *Chove* = **It's raining**.
+      en: |
+        **I am** (I'm), **you are** (you're), **he / she / it is** (he's), **we are**, **they are**. Negative with **not**: **I'm not, she isn't, they aren't**. Questions invert: **Are you tired?** English never drops the subject: **It is late. It's raining.**
+    mistakes:
+    - wrong: Is late.
+      right: It is late.
+      why: {en: "English needs a subject: it.", pt: "O inglês precisa de sujeito: it."}
+    examples:
+    - [I am a student., I'm a student., Sou estudante., am]
+    - ["Are you tired?", "Are you tired?", "Você está cansado?", "Are"]
+    match: {seq: [{word: [am, is, are, was, were]}], gap: 0}
+    pool: [am, is, are, was, were, be]
+
+  - id: en-articles
+    title: a, an, the
+    meaning: {en: "articles", pt: "artigos"}
+    intro:
+      pt: |
+        **a** antes de som de consoante, **an** antes de som de vogal (**a book, an apple, an hour, a university**). **the** para tudo, singular e plural. Diferente do português: sem artigo para generalidades e nomes — **I like coffee** (Gosto **do** café), **Life is beautiful**, **Brazil is big**; e com profissões usa **a**: **She is a doctor**.
+      en: |
+        **a** before a consonant sound, **an** before a vowel sound (**a book, an apple, an hour**); **the** for everything. No article for generalities: **I like coffee. Life is beautiful.** Jobs take **a**: **She is a doctor.**
+    mistakes:
+    - wrong: She is doctor.
+      right: She is a doctor.
+      why: {en: "A job takes a / an.", pt: "Profissão leva a / an (diferente do português)."}
+    examples:
+    - [She is a doctor., She is a doctor., Ela é médica., a]
+    match: {seq: [{word: [a, an, the]}, {pos: [noun, adj]}], gap: 0}
+    pool: [a, an, the]
+
+  - id: en-present-simple
+    title: I work, she works
+    meaning: {en: "the present simple: -s in the third person", pt: "o present simple: -s na terceira pessoa"}
+    intro:
+      pt: |
+        O verbo quase não muda: **I work, you work, we work, they work** — só **he / she / it** ganha **-s**: **she works, he goes, it watches**. Perguntas e negativas usam **do / does**: **Do you work? Does she work? I don't work. She doesn't work** (sem -s depois de does). Para hábitos e verdades gerais: **I drink coffee every day.**
+      en: |
+        Only **he / she / it** take **-s**: **she works, he goes**. Questions and negatives use **do / does**: **Do you work? She doesn't work** (no -s after does).
+    mistakes:
+    - wrong: She work here.
+      right: She works here.
+      why: {en: "He, she, it: -s.", pt: "He, she, it: -s."}
+    - wrong: Does she works?
+      right: Does she work?
+      why: {en: "After does the verb has no -s.", pt: "Depois de does o verbo fica sem -s."}
+    examples:
+    - [She works in a hospital., She works in a hospital., Ela trabalha num hospital., works]
+    - ["Do you speak English?", "Do you speak English?", "Você fala inglês?", "Do"]
+    match:
+    - {seq: [{word: [he, she, it]}, {pos: verb, tense: pres, re: "s$"}], gap: 1, suffixes: [es, s, ""], attested: true}
+    - {seq: [{word: [do, does, don't, doesn't]}], gap: 0, pool: [do, does, don't, doesn't, did]}
+
+  - id: en-present-continuous
+    title: I am working
+    meaning: {en: "the present continuous: be + -ing", pt: "o present continuous: be + -ing"}
+    intro:
+      pt: |
+        **am / is / are + verbo-ing** para o que está acontecendo agora: **I'm reading** (estou lendo), **They are playing**. Também planos combinados: **I'm meeting her tomorrow.** Verbos de estado (like, know, want, need) quase nunca vão no -ing: **I know** (não *I'm knowing*).
+      en: |
+        **am / is / are + -ing** for now: **I'm reading.** Also for arrangements: **I'm meeting her tomorrow.** State verbs (like, know, want) are rarely in -ing.
+    examples:
+    - [I'm reading a book., I'm reading a book., Estou lendo um livro., reading]
+    match: {seq: [{word: [am, is, are, "'m", "'s", "'re"]}, {re: "ing$", pos: verb}], near: 1, gap: 1, suffixes: [ing, s, ed, ""], attested: true}
+
+- title: {en: Pronouns and possessives, pt: Pronomes e possessivos}
+  lessons:
+  - id: en-pronouns
+    title: I / me, he / him
+    meaning: {en: "subject and object pronouns", pt: "pronomes sujeito e objeto"}
+    intro:
+      pt: |
+        Sujeito **I, you, he, she, it, we, they**; objeto (depois do verbo ou de preposição) **me, you, him, her, it, us, them**: **She loves him. Give it to me. Come with us.** O inglês não usa *ele* para coisas: **it**.
+      en: |
+        Subject **I, you, he, she, it, we, they**; object **me, you, him, her, it, us, them**: **She loves him. Give it to me.**
+    examples:
+    - [She loves him., She loves him., Ela o ama., him]
+    match: {seq: [{pos: verb}, {word: [me, him, her, us, them]}], gap: 1}
+    pool: [me, him, her, us, them, I, he, she, we, they]
+
+  - id: en-possessives
+    title: my, your, his, her
+    meaning: {en: "possessive adjectives", pt: "adjetivos possessivos"}
+    intro:
+      pt: |
+        **my, your, his** (dele), **her** (dela), **its** (de uma coisa), **our, their**. Concordam com o **dono**, não com a coisa — o contrário do português: **his mother** (a mãe dele), **her father** (o pai dela). Possessivo de nomes: **'s**: **John's car**.
+      en: |
+        **my, your, his, her, its, our, their** agree with the owner: **his mother, her father**. Names take **'s**: **John's car**.
+    mistakes:
+    - wrong: (Mary's book) his book
+      right: her book
+      why: {en: "The possessive follows the owner: Mary → her.", pt: "O possessivo segue o dono: Mary → her."}
+    examples:
+    - [This is my car., This is my car., Este é o meu carro., my]
+    match: {seq: [{word: [my, your, his, her, its, our, their]}, {pos: noun}], gap: 0}
+    pool: [my, your, his, her, its, our, their]
+
+  - id: en-there-is
+    title: there is, there are
+    meaning: {en: "there is / there are", pt: "there is / there are (há, tem)"}
+    intro:
+      pt: |
+        *Há / tem* (existir) é **there is** (singular) e **there are** (plural): **There is a bank near here. There are two cats.** Não use *have* nesse sentido: *Tem um banco aqui* = **There is a bank here.**
+      en: |
+        **There is** + singular, **there are** + plural: **There is a bank near here. There are two cats.**
+    mistakes:
+    - wrong: Have a bank near here.
+      right: There is a bank near here.
+      why: {en: "Existence: there is / are.", pt: "Existência: there is / are, não have."}
+    examples:
+    - [There is a bank near here., There is a bank near here., Tem um banco aqui perto., is]
+    match: {seq: [{word: [there]}, {word: [is, are, was, were]}], gap: 1}
+    pool: [is, are, was, were]
+
+  - id: en-prepositions
+    title: in, on, at
+    meaning: {en: "in, on, at: place and time", pt: "in, on, at: lugar e tempo"}
+    intro:
+      pt: |
+        **in** dentro, cidades, países, meses, anos (**in Brazil, in May, in 2020**); **on** sobre uma superfície, dias e datas (**on the table, on Monday**); **at** ponto exato, horas, lugares de atividade (**at 5 o'clock, at home, at school, at the door**). O *em* do português vira três palavras.
+      en: |
+        **in** inside, cities, countries, months, years; **on** surfaces, days, dates; **at** points, times, activity places (**at home, at 5**).
+    examples:
+    - [I live in Brazil., I live in Brazil., Moro no Brasil., in]
+    - [See you on Monday., See you on Monday., Até segunda., "on"]
+    match: {seq: [{word: [in, "on", at]}], gap: 0}
+    pool: [in, "on", at, to, for]
+
+  - id: en-can
+    title: can, can't
+    meaning: {en: "can: ability and permission", pt: "can: poder, saber fazer"}
+    intro:
+      pt: |
+        **can** + verbo sem *to*, igual para todas as pessoas: **I can swim** (sei nadar), **She can come** (ela pode vir). Negativa **can't / cannot**, pergunta **Can you help me?** Passado **could**.
+      en: |
+        **can** + bare verb, the same for every person: **I can swim. Can you help me?** Negative **can't**; past **could**.
+    examples:
+    - ["Can you help me?", "Can you help me?", "Você pode me ajudar?", "Can"]
+    match: {seq: [{word: [can, can't, cannot, could, couldn't]}], gap: 0}
+    pool: [can, can't, could, must, should, will]

@@ -62,10 +62,12 @@ async function main(code) {
   const bz = (f) => execFileSync('bzcat', [path.join(ROOT, 'vendor', 'tatoeba', f)], { maxBuffer: 1 << 30 }).toString('utf8');
   const rows = (f) => bz(f).split('\n').filter(Boolean).map((l) => l.split('\t'));
   const own = rows(`${t3}_sentences.tsv.bz2`);
-  const toEng = new Map(); for (const [a, b] of rows(`${t3}-eng_links.tsv.bz2`)) if (!toEng.has(a)) toEng.set(a, b);
+  // English is taught to Brazilians: its "translation" side is Portuguese (Tatoeba's eng-por links)
+  const side = code === 'en' ? 'por' : 'eng';
+  const toEng = new Map(); for (const [a, b] of rows(`${t3}-${side}_links.tsv.bz2`)) if (!toEng.has(a)) toEng.set(a, b);
   const toPor = new Map(); try { for (const [a, b] of rows(`${t3}-por_links.tsv.bz2`)) if (!toPor.has(a)) toPor.set(a, b); } catch { /* none */ }
   const wanted = new Set([...toEng.values(), ...toPor.values()]);
-  const eng = new Map(rows('eng_sentences.tsv.bz2').filter(([id]) => wanted.has(id)).map(([id, , t]) => [id, t]));
+  const eng = new Map(rows(`${side}_sentences.tsv.bz2`).filter(([id]) => wanted.has(id)).map(([id, , t]) => [id, t]));
   const por = new Map(rows('por_sentences.tsv.bz2').filter(([id]) => wanted.has(id)).map(([id, , t]) => [id, t]));
 
   const index = await json('learn.json');
@@ -90,7 +92,8 @@ async function main(code) {
   const attested = new Set([...own.map(([, , t]) => t), ...corpus].flatMap((t) => t.split(/[^\p{L}\p{M}'-]+/u)).filter((w) => w && w[0] === w[0].toLocaleLowerCase()).map(norm));
   const pool = own.filter(([id, , t]) => toEng.has(id) && eng.has(toEng.get(id)) && t.length <= 70 && !inscription(t) && !avoided(t) && !unsuitable(eng.get(toEng.get(id)), t))
     .map(([id, , t]) => ({ id, text: t, s: simplicity(t.split(/[\s.,!?;:„“"]+/u).filter(Boolean), (w) => freq.get(w)) }))
-    .sort((a, b) => a.s - b.s);
+    .sort((a, b) => a.s - b.s)
+    .slice(0, 400000);   // the simplest 400,000 (English has 1.9 million; the rest would only slow the pass)
   const found = new Map(lessons.map((l) => [l.id, []]));
   // the book's own sentences (Latin: D'Ooge's exercises) come first, each for its own lesson; they have no translation
   const drill = [];

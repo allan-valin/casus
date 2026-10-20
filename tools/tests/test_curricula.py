@@ -50,3 +50,24 @@ def test_ai_written_curricula_mark_their_lessons(tmp_path):
     index, lessons, _ = curriculum_learn(d)
     assert lessons["xx-1"]["ai"] is True
     assert index["levels"][0]["topics"][0]["lessons"][0]["ai"] is True
+
+
+def test_no_word_in_a_rule_or_pool_is_read_as_a_yaml_boolean():
+    """on, no, yes, off are words in English, Spanish, French… (YAML 1.1 reads them as booleans unless quoted)"""
+    import glob
+    import yaml
+    flags = {"start", "attested", "ai_written", "notStart", "whole_words", "strict_attested", "noTrail", "unknown"}
+    bad = []
+
+    def walk(x, path):
+        if isinstance(x, bool) and path.split("/")[-1].split("[")[0] not in flags:
+            bad.append(path)
+        elif isinstance(x, dict):
+            for k, v in x.items():
+                walk(v, f"{path}/{k}")
+        elif isinstance(x, list):
+            for i, v in enumerate(x):
+                walk(v, f"{path}[{i}]")
+    for f in sorted(glob.glob(str(Path(__file__).resolve().parents[1] / "curricula" / "*" / "*.yml"))):
+        walk(yaml.safe_load(open(f, encoding="utf-8")), f)
+    assert not bad, bad
