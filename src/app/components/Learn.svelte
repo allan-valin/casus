@@ -14,7 +14,9 @@
   import { lessonAnswer, completion } from '../lib/progression.js';
   import { speakLinks } from '../lib/pronounce.js';
   import { learnSections } from '../lib/learnorigin.js';
-  let { lang, loadLearn, loadLesson, loadQuestions, storage = null, random = Math.random, openInReader = null, speak = null, saveFile = downloadFile, award = null, progression = null } = $props();
+  import WordEntry from './WordEntry.svelte';
+  import { wordAround, candidatesAt, firstKnown } from '../lib/wordat.js';
+  let { lang, loadLearn, loadLesson, loadQuestions, storage = null, random = Math.random, openInReader = null, speak = null, saveFile = downloadFile, award = null, progression = null, lookup = null, loadInfo = null, loadParadigm = null } = $props();
 
   let learn = $state(null);
   let failed = $state(false);
@@ -33,6 +35,21 @@
   const loc = (x) => (x == null ? '' : typeof x === 'string' ? x : (x[ui.lang] ?? x.en ?? ''));
   // an AI-translated page (lesson.mt[ui]) can show its original instead (Allan, 2026-10-20); the original of a field
   // translated into English is kept as `orig`
+  // a word of the taught language in a lesson opens its dictionary entry below its section, as in the Reader
+  // (Allan, 2026-10-20): examples (b, i, code, [lang], .ja) in any script, any word in a script other than Latin
+  let entry = $state(null);
+  const noSpaces = () => !!lang.script?.noSpaces || ['ja', 'zh'].includes(lang.code);
+  async function onProseClick(e, sec) {
+    if (!lookup || e.target.closest('a, button')) return;
+    const el = e.target.closest('[lang], .ja, b, strong, i, em, code, ruby');
+    const caret = document.caretPositionFromPoint?.(e.clientX, e.clientY) ?? document.caretRangeFromPoint?.(e.clientX, e.clientY);
+    const node = caret?.offsetNode ?? caret?.startContainer, at = caret?.offset ?? caret?.startOffset ?? 0;
+    const text = node?.nodeType === 3 ? node.data : (el ?? e.target).textContent, offset = node?.nodeType === 3 ? at : 0;
+    const ch = text[offset] ?? '';
+    if (!el && !/[^\p{Script=Latin}\p{P}\p{N}\s]/u.test(ch)) return;      // explanation text in a Latin script
+    const hit = noSpaces() ? await firstKnown(candidatesAt(text, offset, 8), lookup) : wordAround(text, offset);
+    if (hit) entry = { word: hit.word, sec };
+  }
   let showOrig = $state(false);
   const orig = (x) => (x == null ? '' : typeof x === 'string' ? x : (x.orig ?? x.en ?? ''));
   const body = (x) => (showOrig ? orig(x) : loc(x));
@@ -101,7 +118,7 @@
   const pct = (id) => { const p = progress[id]; return p?.total ? Math.round((100 * p.right) / p.total) : null; };
   const doneOf = (id) => completion(progress[id]);
   async function open(ref) {
-    showOrig = false;
+    showOrig = false; entry = null;
     loading = true; quizItems = [];
     lessonRef = ref;
     lesson = await loadLesson(ref.entry.id);
@@ -201,11 +218,15 @@
         {/if}
       {:else}
         <nav class="toc">{#each tocOf(lesson) as [href, label], i}{#if i}<span class="sep" aria-hidden="true">|</span>{/if}<a {href}>{label}</a>{/each}</nav>
-        {#if loc(lesson.intro)}<div class="prose" use:speakLinks={{ html: loc(lesson.intro), speak, title: t('learn.speak.title') }}>{@html loc(lesson.intro)}</div>{/if}
+        {#if loc(lesson.intro)}<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
+          <div class="prose words-clickable" use:speakLinks={{ html: body(lesson.intro), speak, title: t('learn.speak.title') }} onclick={(e) => onProseClick(e, 'intro')}>{@html body(lesson.intro)}</div>
+          {#if entry?.sec === 'intro'}<WordEntry word={entry.word} {lang} {lookup} {loadInfo} {loadParadigm} onclose={() => (entry = null)} />{/if}{/if}
         {#each lesson.sections as s}
           <section class="l-sec" id={`sec-${s.id}`} data-sec={s.id}>
             <h4>{loc(s.title)}</h4>
-            <div class="prose" use:speakLinks={{ html: body(s.html), speak, title: t('learn.speak.title') }}>{@html body(s.html)}</div>
+            <!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
+            <div class="prose words-clickable" use:speakLinks={{ html: body(s.html), speak, title: t('learn.speak.title') }} onclick={(e) => onProseClick(e, s.id)}>{@html body(s.html)}</div>
+            {#if entry?.sec === s.id}<WordEntry word={entry.word} {lang} {lookup} {loadInfo} {loadParadigm} onclose={() => (entry = null)} />{/if}
             {#if s.id === 'examples' && lesson.examples?.length}
               <details class="examples-romaji"><summary>{t('learn.romaji')}</summary>
                 <ol>{#each lesson.examples as ex}<li><span lang={lang.bcp47}>{ex.text}</span> — <i>{exampleRoman(ex)}</i>{#if openInReader} <button class="to-reader" onclick={() => openInReader(ex.text)}>{t('learn.read')}</button>{/if}{@render say(ex.text)}</li>{/each}</ol>
@@ -349,6 +370,7 @@
   .words { border-collapse: collapse; } .words td { border-bottom: 1px solid var(--line); padding: 4px 10px; }
   .words tr:nth-child(even) td { background: var(--table-stripe); }
   .to-speak, :global(.prose .to-speak) { text-decoration: none; margin-inline-start: 4px; font-size: .9em; }
+  :global(.words-clickable :is([lang], .ja, b, strong, i, em, code, ruby)) { cursor: pointer; text-decoration: underline dotted; text-decoration-color: var(--line); text-underline-offset: 3px; }
   :global(.prose .ex) { margin: 6px 0; } :global(.prose .ex p) { margin: 0; } :global(.prose .gloss) { color: var(--ink-2); font-size: .92em; }
   .sec-head { margin: 16px 0 4px; font-size: .95rem; color: var(--ink-2); }
   .made-head { margin: 22px 0 2px; font-size: 1rem; border-top: 2px solid var(--line); padding-top: 12px; }

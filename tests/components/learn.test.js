@@ -296,3 +296,22 @@ describe('AI-translated pages: badge and a switch to the original (Allan, 2026-1
     setUiLang('en');
   });
 });
+
+describe('words in a lesson open their dictionary entry, as in the Reader (Allan, 2026-10-20)', () => {
+  it('clicking an example word shows its entry below the section; explanation text is not a link', async () => {
+    const lesson = { ...LESSONS['n5-004'], sections: [{ id: 'book', title: 'The lesson', html: '<p>The word <b>寒い</b> means cold.</p>' }] };
+    const index = { ...INDEX, levels: [{ id: 'N5', topics: [{ id: 't1', kind: 'grammar', title: 'T', lessons: [{ id: 'n5-004', title: 'は', meaning: 'topic' }] }] }] };
+    const lookup = async (w) => (w === '寒い' ? [{ lemma: 3, pos: 'adj' }] : []);
+    const loadInfo = async () => ({ lemmas: { 3: { headword: '寒い', pos: 'adjective' } }, ipa: {}, glosses: { 3: 'cold' } });
+    const { container } = render(Learn, props({ loadLearn: async () => index, loadLesson: async () => lesson, lookup, loadInfo }));
+    await flush();
+    await fireEvent.click(container.querySelector('.lesson-row'));
+    await flush();
+    await fireEvent.click(container.querySelector('#sec-book .prose b'));
+    await flush(); await flush(); await flush();
+    expect(container.querySelector('#sec-book .entry-panel .gloss').textContent).toBe('cold');
+    await fireEvent.click(container.querySelector('#sec-book .prose p'));
+    await flush();
+    expect(container.querySelectorAll('.entry-panel').length).toBe(1);
+  });
+});

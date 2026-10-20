@@ -1,6 +1,6 @@
 <script>
   import { createLexicon } from '../lib/lexicon.js';
-  import { makeFetchShard, fileFetcherFor, loadManifest } from './lib/fetchers.js';
+  import { makeFetchShard, fileFetcherFor, loadManifest, loadLemmas, loadIpa, loadGlosses } from './lib/fetchers.js';
   import { withBase } from './lib/paths.js';
   import { createReader } from './stores/reader.svelte.js';
   import { textHash, createAutosave, restore } from './lib/persist.js';
@@ -59,6 +59,13 @@
 
   let status = $state({ key: 'app.status.loading' });
   let lexicon = $state(null);
+  // the dictionary data a word's entry shows (Learn pages; Allan, 2026-10-20), loaded on the first click
+  let entryInfo = null;
+  const loadEntryInfo = () => (entryInfo ??= Promise.all([
+    loadLemmas(fetchImpl, DATA).catch(() => ({})), loadIpa(fetchImpl, DATA).catch(() => ({})),
+    loadGlosses(fetchImpl, DATA, ui.lang === 'pt' ? 'pt' : 'en').then((g) => g ?? loadGlosses(fetchImpl, DATA, 'en')).catch(() => null),
+  ]).then(([lemmas, ipa, glosses]) => ({ lemmas, ipa, glosses })));
+  const loadParadigmOf = (id) => fetchImpl(`${DATA}/paradigms/${Number(id) % 512}.json`).then((r) => (r.ok ? r.json() : {})).then((b) => b[String(id)] ?? null).catch(() => null);
   let samples = $state([]);
   let reader = $state(null);
   let autosave = null;
@@ -232,7 +239,7 @@
     <Trainer {lang} {voice} {fetchImpl} data={DATA} base={withBase('/')} {lexicon} {storage} {award}
       loadParadigm={(id) => fetchImpl(`${DATA}/paradigms/${Number(id) % 512}.json`).then((r) => (r.ok ? r.json() : {})).then((b) => b[String(id)] ?? null).catch(() => null)} say={(msg, kind) => activity.say(msg, kind)} />
   {:else if route.view === 'learn'}
-    <Learn {lang} {storage} {award} {progression} speak={(text) => speakHref(withBase(speakPath(LANGUAGES.find((l) => l.code === lang.code) ?? { path: '/' })), text)} loadLearn={() => fetchImpl(`${DATA}/learn.json`).then((r) => (r.ok ? r.json() : null))}
+    <Learn {lang} {storage} {award} {progression} lookup={(w) => (lexicon ? lexicon.lookup(w) : Promise.resolve([]))} loadInfo={loadEntryInfo} loadParadigm={loadParadigmOf} speak={(text) => speakHref(withBase(speakPath(LANGUAGES.find((l) => l.code === lang.code) ?? { path: '/' })), text)} loadLearn={() => fetchImpl(`${DATA}/learn.json`).then((r) => (r.ok ? r.json() : null))}
       loadLesson={(id) => fetchImpl(`${DATA}/learn/${id}.json`).then((r) => r.json())}
       loadQuestions={(id) => fetchImpl(`${DATA}/learn/q-${id}.json`).then((r) => (r.ok ? r.json() : { qs: [] }))}
       openInReader={(text) => { try { storage?.setItem(`casus:input:${lang.code}`, text); } catch { /* not kept */ } location.href = withBase(LANGUAGES.find((l) => l.code === lang.code)?.path ?? '/'); }} />
