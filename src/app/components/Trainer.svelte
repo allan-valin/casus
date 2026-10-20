@@ -7,7 +7,7 @@
   import { t, ui } from '../lib/i18n.svelte.js';
   import Speaker from './Speaker.svelte';
   import IpaChart from './IpaChart.svelte';
-  import { buildIpaIndex, expectedFor, expectedSounds, segments, align, score, aiPrompt, sampleFor, ipaFromWikitext, entriesFor } from '../lib/pronounce.js';
+  import { widenSlices, buildIpaIndex, expectedFor, expectedSounds, segments, align, score, aiPrompt, sampleFor, ipaFromWikitext, entriesFor } from '../lib/pronounce.js';
   import { loadLemmas, loadIpa } from '../lib/fetchers.js';
   import { MODELS, load, transcribe, to16kMono, playSamples, wavBytes, isCached, forget } from '../speech/engine.js';
   import Paradigm from './Paradigm.svelte';
@@ -151,7 +151,7 @@
     const l = await ensureModel();
     busy = t('speak.act.recognising'); say(busy);
     const t0 = performance.now();
-    heard = await transcribe(model, l, wav);
+    heard = widenSlices(await transcribe(model, l, wav), wav.length / 16000);
     busy = '';
     say(t('speak.act.heard', { n: heard.length, s: ((performance.now() - t0) / 1000).toFixed(1) }), 'ok');
     compare();
@@ -321,7 +321,7 @@
     {#if busy}<span class="busy-line">{busy}</span>{#if pct != null}<progress max="100" value={pct}></progress>{/if}{/if}
   </div>
 
-  {#if heard.length}
+  {#if heard.length && !pairs.length}
     <h3>{t('speak.heard')}</h3>
     <div class="sounds heard" dir="ltr">{#each heard as h}<button class="snd mine" onclick={() => playSlice(h)}>{h.sym}</button>{/each}</div>
   {/if}
@@ -330,7 +330,7 @@
     <h3>{t('speak.compare')} {#if result != null}<span class="score">{t('speak.score', { n: result })}</span>{/if}</h3>
     <div class="scroll" dir="ltr"><table class="cmp"><tbody>
       <tr><th>{t('speak.row.expected')}</th>{#each pairs as p}<td class={p.op}>{#if p.exp}<button class="snd" onclick={() => playSample(p.exp)}>{p.exp}</button>{:else}{p.op === 'wild' ? '·' : '—'}{/if}</td>{/each}</tr>
-      <tr><th>{t('speak.row.heard')}</th>{#each pairs as p}<td class={p.op}>{p.got ?? '—'}</td>{/each}</tr>
+      <tr><th>{t('speak.row.heard')}</th>{#each pairs as p}<td class={p.op}>{#if p.got != null && heard[p.gi]}<button class="snd mine" onclick={() => playSlice(heard[p.gi])}>{p.got}</button>{:else}{p.got ?? '—'}{/if}</td>{/each}</tr>
     </tbody></table></div>
     <p class="note">{t('speak.legend')}</p>
   {/if}

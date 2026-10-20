@@ -178,3 +178,20 @@ describe('the dictionary entry of a word in the trainer', () => {
     expect(out.map((e) => [e.id, e.lemma.headword, e.readings.length])).toEqual([['7', 'sein', 2], ['9', 'ist', 1]]);
   });
 });
+
+import { widenSlices } from '../../src/app/lib/pronounce.js';
+describe('your sounds as audible clips (Allan, 2026-10-20: "barely plays anything")', () => {
+  it('each pair knows which heard sound it is, so the comparison row can play it', () => {
+    const pairs = align(['k', 'ɔ', 'ʁ', 'p'], ['k', 'ɔ', 'p']);
+    expect(pairs.map((p) => p.gi ?? null)).toEqual([0, 1, null, 2]);
+  });
+  it('a CTC spike one frame wide becomes a clip from midpoint to midpoint, at least 0.15 s', () => {
+    const heard = [{ sym: 'k', start: 0.30, end: 0.32 }, { sym: 'ɔ', start: 0.50, end: 0.52 }, { sym: 'p', start: 0.90, end: 0.92 }];
+    const w = widenSlices(heard, 1.5);
+    expect(w[0].start).toBeCloseTo(0.20, 2); expect(w[0].end).toBeCloseTo(0.41, 2);
+    expect(w[1].start).toBeCloseTo(0.41, 2); expect(w[1].end).toBeCloseTo(0.71, 2);
+    expect(w[2].start).toBeCloseTo(0.71, 2); expect(w[2].end).toBeCloseTo(1.02, 2);
+    expect(w.every((s) => s.end - s.start >= 0.15)).toBe(true);
+    expect(w[0].sym).toBe('k');
+  });
+});

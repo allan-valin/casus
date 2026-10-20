@@ -130,10 +130,23 @@ export function align(exp, got) {
   const out = [];
   for (let i = n, j = m; i || j;) {
     const [pi, pj, op] = B[i][j];
-    if (op !== 'skip') out.push({ exp: op === 'ins' || op === 'wild' ? null : exp[pi], got: op === 'del' ? null : got[pj], op });
+    if (op !== 'skip') out.push({ exp: op === 'ins' || op === 'wild' ? null : exp[pi], got: op === 'del' ? null : got[pj], ...(op === 'del' ? {} : { gi: pj }), op });
     i = pi; j = pj;
   }
   return out.reverse();
+}
+
+/** the recogniser marks each sound with a CTC spike, often one 20 ms frame: too short to hear. Each clip runs instead
+ * from halfway after the previous sound to halfway before the next (0.1 s before the first and after the last), and
+ * is at least 0.15 s long (Allan, 2026-10-20: "when I click my sounds it barely plays anything") */
+export function widenSlices(heard, total) {
+  const MIN = 0.15, EDGE = 0.1;
+  return heard.map((h, k) => {
+    let start = k ? (heard[k - 1].end + h.start) / 2 : Math.max(0, h.start - EDGE);
+    let end = k < heard.length - 1 ? (h.end + heard[k + 1].start) / 2 : Math.min(total, h.end + EDGE);
+    if (end - start < MIN) { const pad = (MIN - (end - start)) / 2; start = Math.max(0, start - pad); end = Math.min(total, end + pad); }
+    return { ...h, start, end };
+  });
 }
 
 /** share (0–100) of the expected sounds said right, near counting half; null when none could be compared */
