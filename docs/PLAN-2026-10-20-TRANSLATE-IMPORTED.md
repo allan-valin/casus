@@ -15,7 +15,7 @@ hu 68.8M (63M = Lesebuch sentence lists, German side only) · grc 4.7M · la 4.0
 sa 1.7M · ja 1.6M · fr 1.6M · it 1.4M · ru 1.3M · en 1.2M · fi 0.7M · zh 0.7M · el 0.6M · pl/tr/ko 0.5M · cs 0.4M ·
 ar 0.4M · uk 0.3M · is 0.2M · mk 0.03M.
 
-## Priority (course > UI): ko>pt, ja>pt, de>ar, de>mk, fr>pt, en>pt, it>pt, then the rest (all courses × all UIs)
+## Priority (course > UI) — updated 2026-10-20 night: de>mk and de>ar FIRST, then ko>pt, ja>pt, fr>pt, en>pt, it>pt and the rest over several days
 
 ## Steps
 1. [ ] Ledger + memory pointer (this file)
