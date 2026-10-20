@@ -121,3 +121,25 @@ topics:
     assert levels[0]["id"] == "C1" and levels[0]["topics"][0]["lessons"][0]["ai"] is True
     assert lessons["de-c1-x"]["ai"] is True and lessons["de-c1-x"]["level"] == "C1"
     assert questions["C1"]["de-c1-x"]["qs"][0]["type"] == "gap"
+
+
+def test_an_overlay_adds_another_interface_language(tmp_path):
+    """tools/curricula/<code>/i18n/<ui>.yml gives lessons their text in another interface language (Macedonian,
+    Arabic; 2026-10-20): meaning, intro, section bodies, mistakes and topic titles; English stays the fallback"""
+    import yaml
+    from learn_curriculum import curriculum_learn
+    d = tmp_path / "xx"; (d / "i18n").mkdir(parents=True)
+    (d / "meta.yml").write_text(yaml.safe_dump({"system": "CEFR", "level_files": ["A1"], "credit": {"en": "c", "pt": "c"}}), encoding="utf-8")
+    (d / "A1.yml").write_text(yaml.safe_dump({"id": "A1", "topics": [{"title": {"en": "Nouns", "pt": "Substantivos"}, "lessons": [
+        {"id": "xx-1", "title": "a", "meaning": {"en": "the article", "pt": "o artigo"}, "intro": {"en": "Use **a**.", "pt": "Use **a**."},
+         "sections": [{"id": "usage", "body": {"en": "Often.", "pt": "Sempre."}}],
+         "mistakes": [{"wrong": "x", "right": "y", "why": {"en": "because", "pt": "porque"}}]}]}]}), encoding="utf-8")
+    (d / "i18n" / "mk.yml").write_text(yaml.safe_dump({"topics": {"Nouns": "Именки"}, "lessons": {"xx-1": {
+        "meaning": "членот", "intro": "Користи **a**.", "sections": {"usage": "Често."}, "mistakes": ["зашто"]}}}, allow_unicode=True), encoding="utf-8")
+    index, lessons, _ = curriculum_learn(d)
+    l = lessons["xx-1"]
+    assert l["meaning"]["mk"] == "членот" and "<strong>a</strong>" in l["intro"]["mk"]
+    assert l["sections"][0]["html"]["mk"] == "<p>Често.</p>" and "зашто" in l["sections"][-1]["html"]["mk"]
+    assert l["topic"]["mk"] == "Именки" and index["levels"][0]["topics"][0]["title"]["mk"] == "Именки"
+    assert "mk" not in l["sections"][0]["title"] or l["sections"][0]["title"]["mk"]
+    assert l["meaning"]["en"] == "the article"

@@ -12,11 +12,15 @@ import markdown
 import yaml
 
 SECTION_TITLES = {
-    "formation": {"en": "Formation", "pt": "Formação"}, "usage": {"en": "How it is used", "pt": "Como se usa"},
-    "contrast": {"en": "Compare", "pt": "Compare"}, "notes": {"en": "Good to know", "pt": "Bom saber"},
-    "examples": {"en": "Examples", "pt": "Exemplos"}, "mistakes": {"en": "Common mistakes", "pt": "Erros comuns"},
+    "formation": {"en": "Formation", "pt": "Formação", "de": "Bildung", "mk": "Образување", "ar": "التكوين"},
+    "usage": {"en": "How it is used", "pt": "Como se usa", "de": "Gebrauch", "mk": "Како се користи", "ar": "الاستعمال"},
+    "contrast": {"en": "Compare", "pt": "Compare", "de": "Vergleiche", "mk": "Спореди", "ar": "قارن"},
+    "notes": {"en": "Good to know", "pt": "Bom saber", "de": "Gut zu wissen", "mk": "Добро е да се знае", "ar": "من المفيد أن تعرف"},
+    "examples": {"en": "Examples", "pt": "Exemplos", "de": "Beispiele", "mk": "Примери", "ar": "أمثلة"},
+    "mistakes": {"en": "Common mistakes", "pt": "Erros comuns", "de": "Häufige Fehler", "mk": "Чести грешки", "ar": "أخطاء شائعة"},
 }
 LANGS = ("en", "pt")
+EXTRA = ("de", "mk", "ar")      # interface languages a lesson may also have (tools/curricula/<code>/i18n/<ui>.yml)
 
 
 def _md(text: str) -> str:
@@ -24,19 +28,24 @@ def _md(text: str) -> str:
 
 
 def _both(value) -> dict:
-    """a text given once (the same in both languages) or per language"""
+    """a text given once (the same in both languages) or per language; German, Macedonian and Arabic only when given"""
     if isinstance(value, dict):
-        return {k: value.get(k) or value.get("en", "") for k in LANGS}
+        return {**{k: value.get(k) or value.get("en", "") for k in LANGS}, **{k: value[k] for k in EXTRA if value.get(k)}}
     return {k: value for k in LANGS}
+
+
+def _langs(*values) -> tuple:
+    """the interface languages any of these texts has"""
+    return LANGS + tuple(k for k in EXTRA if any(isinstance(v, dict) and v.get(k) for v in values))
 
 
 def _table(t: dict) -> dict:
     head = _both(t["head"])
     out = {}
-    for k in LANGS:
+    for k in head:
         cells = "".join(f"<th>{html.escape(h)}</th>" for h in head[k])
         rows = "".join("<tr>" + "".join(f"<td>{_inline(_both(c)[k] if isinstance(c, dict) else c)}</td>" for c in r) + "</tr>" for r in t["rows"])
-        note = _both(t.get("note", ""))[k]
+        note = _both(t.get("note", "")).get(k) or _both(t.get("note", ""))["en"]
         out[k] = f"<table><thead><tr>{cells}</tr></thead><tbody>{rows}</tbody></table>" + (_md(note) if note else "")
     return out
 
@@ -59,8 +68,38 @@ def _load(path: Path) -> dict:
         meta = yaml.safe_load((path / "meta.yml").read_text(encoding="utf-8"))
         meta["levels"] = [yaml.safe_load((path / f"{lv}.yml").read_text(encoding="utf-8"))
                           for lv in meta["level_files"] if (path / f"{lv}.yml").exists()]
+        apply_overlays(path, meta["levels"])
         return meta
     return yaml.safe_load(path.read_text(encoding="utf-8"))
+
+
+def apply_overlays(folder: Path, levels: list) -> None:
+    """tools/curricula/<code>/i18n/<ui>.yml: a lesson's text in another interface language — {topics: {English
+    title: title}, lessons: {id: {meaning, intro, sections: {id: body}, mistakes: [why…]}}} — written into the level
+    data as one more language beside en and pt"""
+    for ui in EXTRA:
+        f = Path(folder) / "i18n" / f"{ui}.yml"
+        if not f.exists():
+            continue
+        over = yaml.safe_load(f.read_text(encoding="utf-8")) or {}
+        tops, mine = over.get("topics") or {}, over.get("lessons") or {}
+        for lv in levels:
+            for topic in lv.get("topics", []):
+                en = topic["title"].get("en") if isinstance(topic["title"], dict) else topic["title"]
+                if en in tops:
+                    topic["title"] = {**_both(topic["title"]), ui: tops[en]}
+                for l in topic.get("lessons", []):
+                    o = mine.get(l.get("id"))
+                    if not o:
+                        continue
+                    for key in ("meaning", "intro"):
+                        if o.get(key):
+                            l[key] = {**_both(l.get(key, "")), ui: o[key]}
+                    for s in l.get("sections", []):
+                        if (o.get("sections") or {}).get(s["id"]):
+                            s["body"] = {**_both(s["body"]), ui: o["sections"][s["id"]]}
+                    for m, why in zip(l.get("mistakes", []), o.get("mistakes") or []):
+                        m["why"] = {**_both(m["why"]), ui: why}
 
 
 def lesson_page(src: dict, tables=None) -> dict:
@@ -80,16 +119,18 @@ def lesson_page(src: dict, tables=None) -> dict:
     for s in src.get("sections", []):
         body = _both(s["body"])
         sections.append({"id": s["id"], "title": _both(s.get("title") or SECTION_TITLES.get(s["id"], s["id"])),
-                         "html": {k: _md(body[k]) for k in LANGS}})
+                         "html": {k: _md(v) for k, v in body.items()}})
     examples = [{"text": e[0], "en": e[1], "pt": e[2], **({"target": e[3]} if len(e) > 3 and e[3] else {})}
                 for e in src.get("examples", [])]
+    langs = _langs(src.get("meaning"), src.get("intro"))
     if examples:
+        # (an example's translation is English or Portuguese; the other interfaces show the English)
         sections.append({"id": "examples", "title": SECTION_TITLES["examples"], "html": {k: "".join(
-            f'<div class="ex"><p class="ja" dir="auto">{html.escape(e["text"])}</p><p class="en">{html.escape(e[k])}</p></div>' for e in examples) for k in LANGS}})
+            f'<div class="ex"><p class="ja" dir="auto">{html.escape(e["text"])}</p><p class="en">{html.escape(e.get(k) or e["en"])}</p></div>' for e in examples) for k in langs}})
     if src.get("mistakes"):
         sections.append({"id": "mistakes", "title": SECTION_TITLES["mistakes"], "html": {k: "<ul>" + "".join(
-            f'<li>❌ <s>{html.escape(m["wrong"])}</s> → ✅ <b>{html.escape(m["right"])}</b><br>{_inline(_both(m["why"])[k])}</li>'
-            for m in src["mistakes"]) + "</ul>" for k in LANGS}})
+            f'<li>❌ <s>{html.escape(m["wrong"])}</s> → ✅ <b>{html.escape(m["right"])}</b><br>{_inline(_both(m["why"]).get(k) or _both(m["why"])["en"])}</li>'
+            for m in src["mistakes"]) + "</ul>" for k in langs}})
     page = {"id": src["id"], "title": src["title"], "meaning": _both(src["meaning"]),
             "intro": {k: _md(v) for k, v in _both(src.get("intro", "")).items()}, "sections": sections,
             "examples": examples, "practice": [], "source": "written for Casus"}
