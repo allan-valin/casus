@@ -388,7 +388,7 @@ EXTRA_SOURCES = {
 # full grammars for the Reference tab (Wikisource: public domain; Wikibooks: CC BY-SA); "ws-xx:" = Wikisource
 REFERENCE = {
     "sa": ["ws-en:Sanskrit Grammar (Whitney)"],
-    "hu": ["ws-en:Simplified Grammar of the Hungarian Language", "hu:Magyar nyelvtan", "de:Ungarisch-Grammatik"],
+    "hu": ["ws-en:Simplified Grammar of the Hungarian Language", "hu:Magyar nyelvtan", "de:Ungarisch/Ungarisch-Grammatik"],
     "grc": ["ws-el:Τέχνη Γραμματική", "ws-en:Syntax of the Moods and Tenses of the Greek Verb"],
     "ar": ["ws-ar:المقدمة الآجرومية (1283 هـ)", "ws-ar:الآجرومية في قواعد علم العربية"], "ja": ["ws-ja:改撰標準日本文法"], "zh": ["ws-zh:國語文法概論"],
     "es": ["es:Español", "ws-es:Gramática de la lengua castellana (1771)"],

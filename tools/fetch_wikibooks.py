@@ -101,7 +101,10 @@ def main(spec):
     out = ROOT / "vendor" / site / edition / book if site != "wikibooks" else ROOT / "vendor" / "wikibooks" / (book if edition == "en" else f"{edition}/{book}")
     out.mkdir(parents=True, exist_ok=True)
     order, pages, seen = [], [], set()
-    main_html = parsed(book)
+    try:
+        main_html = parsed(book)
+    except KeyError:                       # no root page, only subpages (de: "Englisch: Grammatik/…")
+        main_html = ""
     first = links_of(main_html, book)
     if len(first) < 3:                     # Wikisource: no table of contents on the main page
         first = subpages(book) or first
