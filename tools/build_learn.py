@@ -411,11 +411,15 @@ GUTENBERG = {
 
 # open textbooks on Pressbooks: (vendor folder, title, licence, book url, Learn header group)
 # open textbooks published as PDF (vendor/<path>, made with `pdftotext -layout`; tools/fetch_learn_sources.sh), cut at
-# their own chapters: (path, chapter pattern, running heads to drop, where the chapters end, title, licence, url, group)
+# their own chapters: (path, chapter pattern, running heads to drop, where the chapters end, title, licence, url, group,
+# levels)
 PDF_BOOKS = {
     "grc": [("peek/peek.txt", r"Module \d+", [r"©.*CC BY", r"^[0-9ivx]+\s+Ancient Greek I$", r"^Module \d+ \|.*\d+$", r"^Contents\s+[ivx]+$"],
-             r"Appendix I: ", "Philip S. Peek, <i>Ancient Greek I: A 21st Century Approach</i> (Open Book Publishers, 2021)",
-             "CC BY 4.0", "https://doi.org/10.11647/OBP.0264", "university")],
+             r"Appendix I: .*", "Philip S. Peek, <i>Ancient Greek I: A 21st Century Approach</i> (Open Book Publishers, 2021)",
+             "CC BY 4.0", "https://doi.org/10.11647/OBP.0264", "university", ["Beginner", "Intermediate"]),
+            ("peek2/peek2.txt", r"Module \d+", [r"©.*Peek", r"^[0-9ivx]+\s+Ancient Greek II: A 21st-Century Approach$", r"^Module \d+ \|.*\d+$", r"^Contents\s+[ivx]+$"],
+             r"Appendix I", "Philip S. Peek, <i>Ancient Greek II: A 21st-Century Approach</i> (Open Book Publishers, 2025)",
+             "CC BY 4.0", "https://doi.org/10.11647/OBP.0441", "university", ["Intermediate", "Reading"])],
 }
 PRESSBOOKS = {
     "fr": [("pb-grammaire", "Kanstantsin Tsedryk, <i>Grammaire française : approche interactive et visuelle</i> (University of Waterloo)", "CC BY-SA 4.0",
@@ -549,7 +553,7 @@ def main(code: str) -> None:
         k = book_lessons(t, f"{code}-pg{n}", credit, f"{short} ({year}), Project Gutenberg #{n}, public domain", lvls, index, lessons,
                          questions, None, {"en": f"{short.split(',')[0]}: ", "pt": f"{short.split(',')[0]}: "}, heading=heading, min_chars=300)
         print(f"{code}: {k} sections from {short} (Gutenberg #{n}){' → reference' if kind == 'reference' else ''}")
-    for path, heading, drop, stop, title, licence, url, group in PDF_BOOKS.get(code, []):
+    for path, heading, drop, stop, title, licence, url, group, want in PDF_BOOKS.get(code, []):
         f = ROOT / "vendor" / path
         if not f.exists():
             continue
@@ -560,7 +564,7 @@ def main(code: str) -> None:
         t = t[[m.start() for m in re.finditer(rf"^{first.group(0)}", t, re.M)][-1]:] if first else t   # past the contents
         credit = {"en": f'<p><small>From <a href="{url}">{title}</a>, {licence}.</small></p>',
                   "pt": f'<p><small>De <a href="{url}">{title}</a>, {licence}.</small></p>'}
-        lvls = [lv["id"] for lv in index["levels"] if lv["id"] != "Reference"][:2]
+        lvls = [lv["id"] for lv in index["levels"] if lv["id"] in want] or [lv["id"] for lv in index["levels"] if lv["id"] != "Reference"][:2]
         short = re.sub(r"<[^>]+>", "", title)
         k = book_lessons(t, f"{code}-pdf{zlib.crc32(path.encode()) % 1000:03d}", credit, f"{short}, {licence}", lvls, index, lessons,
                          questions, None, None, heading=rf"{heading}(: .*)?$", min_chars=300, group=group)

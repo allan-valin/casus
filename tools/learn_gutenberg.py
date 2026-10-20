@@ -28,7 +28,7 @@ def sections_of(text: str, subheads: bool = False, heading: str | None = None, m
         pat, out, current = re.compile(heading), [], None
         for line in text.splitlines():
             st = line.strip()
-            if pat.match(st) and not re.search(r"\s\d+$", st):
+            if pat.match(st) and not re.search(r"\s{2,}\d+$", st):   # a contents line: a page number set apart
                 title = re.sub(r"\b([ivxlc]+)\b$", lambda m: m.group(1).upper(), _title(st.rstrip(".")))
                 current = {"title": title, "text": ""}
                 out.append(current)

@@ -62,3 +62,9 @@ def test_a_group_of_chapters_is_named_by_their_short_labels():
     text = "".join(f"Module {n}: A long title about point {n} here\n" + "Text. " * 80 + "\n" for n in range(1, 13))
     secs = sections_of(text, heading=r"Module \d+(: .*)?$", min_chars=100)
     assert secs[0]["chapter"] == "Module 1 – Module 10" and secs[11]["chapter"] == "Module 11 – Module 12"
+
+
+def test_a_title_ending_in_a_number_is_not_a_contents_line():
+    text = "Module 56: Narratology IV: Time 1\n" + "Text. " * 80 + "\nModule 57: Time 2\n" + "Text. " * 80 + "\n"
+    assert [s["title"] for s in sections_of(text, heading=r"Module \d+(: .*)?$", min_chars=100)] == \
+        ["Module 56: Narratology IV: Time 1", "Module 57: Time 2"]

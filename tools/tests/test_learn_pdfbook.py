@@ -44,3 +44,9 @@ def test_clean_layout_drops_running_heads_and_joins_the_module_title():
 def test_a_double_spaced_table_stays_one_block():
     t = clean_layout("Text.\n\n        M   F\n\n   N    ὁ   ἡ\n\n   A    τόν τήν\n\nMore text.\n", heading=r"Module \d+", drop=[])
     assert "        M   F\n   N    ὁ   ἡ\n   A    τόν τήν\n" in t and "\n\nMore text." in t
+
+
+def test_the_contents_listing_the_appendix_does_not_end_the_book():
+    t = clean_layout("Contents\nModule 1\nAppendix I\n\f\nModule 1\nLetters\n\nAlpha.\nAppendix I. See the chart.\nAppendix I\nCharts.\n",
+                     heading=r"Module \d+", drop=[], stop=r"Appendix I")
+    assert "Alpha." in t and "Appendix I. See the chart." in t and "Charts." not in t

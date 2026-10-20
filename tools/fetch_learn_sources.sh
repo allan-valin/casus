@@ -114,5 +114,6 @@ for r in global-asp global-pb; do [ -d "$V/$r" ] || git clone -q --depth 1 "http
 # open university textbooks on Pressbooks (build_learn.py PRESSBOOKS), read with a headless browser
 node "$ROOT/tools/fetch_pressbooks.mjs" https://ecampusontario.pressbooks.pub/grammaire/ pb-grammaire
 node "$ROOT/tools/fetch_pressbooks.mjs" https://wisc.pb.unizin.org/diverserussian/ pb-diverserussian
-# open textbooks as PDF (Open Book Publishers, CC BY): Peek, Ancient Greek I (grc, university)
+# open textbooks as PDF (Open Book Publishers, CC BY): Peek, Ancient Greek I and II (grc, university)
 [ -s "$V/peek/peek.txt" ] || node "$ROOT/tools/fetch_obp.mjs" obp.0264 peek
+[ -s "$V/peek2/peek2.txt" ] || node "$ROOT/tools/fetch_obp.mjs" obp.0441 peek2

@@ -9,8 +9,8 @@ import re
 
 
 def clean_layout(text: str, heading: str, drop: list[str], stop: str | None = None) -> str:
-    """heading: the chapter pattern; drop: running heads and footers (searched in each stripped line); stop: the line
-    (a pattern) where the chapters end, e.g. the first appendix"""
+    """heading: the chapter pattern; drop: running heads and footers (searched in each stripped line); stop: the heading
+    (a pattern for the whole line) where the chapters end, e.g. the first appendix; its last occurrence counts"""
     drops = [re.compile(d) for d in drop]
     head = re.compile(rf"^{heading}$")
     pages = []
@@ -19,11 +19,12 @@ def clean_layout(text: str, heading: str, drop: list[str], stop: str | None = No
         indent = min((len(ln) - len(ln.lstrip()) for ln in lines if ln.strip()), default=0)
         pages.append([ln[indent:] for ln in lines])
     lines = [ln for page in pages for ln in page]
+    if stop:   # the last line that is the stop heading (the contents may list it too) ends the chapters
+        ends = [k for k, ln in enumerate(lines) if re.fullmatch(stop, ln.strip())]
+        lines = lines[:ends[-1]] if ends else lines
     out, i = [], 0
     while i < len(lines):
         st = lines[i].strip()
-        if stop and re.match(stop, st) and out:
-            break
         if head.match(st):
             title, j = [], i + 1
             while j < len(lines) and lines[j].strip():
