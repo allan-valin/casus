@@ -279,3 +279,12 @@ def test_a_japanese_or_korean_explanation_goes_through_english():
     tr._raw = raw
     assert tr(["今で言う岩手県の一地方。"]) == ["«pt»«en»今で言う岩手県の一地方。"]
     assert calls == ["en", "pt"] and tr.en_cache == {"今で言う岩手県の一地方。": "«en»今で言う岩手県の一地方。"}
+
+
+def test_redo_also_replaces_the_intro(tmp_path, monkeypatch):
+    intro = "<p>Le présent se forme avec les terminaisons du présent.</p>" * 8
+    f = page(tmp_path / "data", "p", source="Wikibooks (fr), X", mt={"pt": "MADLAD-400"}, src="fr", intro={"en": intro, "pt": "<p>velha</p>"})
+    (tmp_path / "data" / "xx" / "learn.json").write_text(json.dumps({"levels": []}))
+    monkeypatch.setattr(T, "ROOT", tmp_path)
+    T.translate_language("xx", Fake("pt"), redo=True)
+    assert json.loads(f.read_text())["intro"]["pt"].startswith("<p>«pt»")

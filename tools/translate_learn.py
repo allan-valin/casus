@@ -286,7 +286,9 @@ def translate_language(code: str, tr, redo: bool = False) -> int:
         srcs[page.get("id", f.stem)] = src
         tr.src = src
         if redo and (page.get("mt") or {}).get(tr.ui):        # an earlier translation into this language is dropped
-            for obj in [page.get(k) for k in ("meaning", "topic")] + [s.get("html") for s in page.get("sections", [])]:
+            intro = page.get("intro")    # (a short intro is Casus's own credit line, written in each language: kept)
+            long_intro = [intro] if isinstance(intro, dict) and len(_orig(intro) or "") > 400 else []
+            for obj in [page.get(k) for k in ("meaning", "topic")] + long_intro + [s.get("html") for s in page.get("sections", [])]:
                 if isinstance(obj, dict) and tr.ui in obj and obj.get(tr.ui) != _orig(obj):
                     if tr.ui == "en":
                         obj["en"] = obj.pop("orig", obj["en"])
