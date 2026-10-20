@@ -44,7 +44,7 @@ class Translator:
 
     def _model(self, texts: list) -> list:
         toks = [self.sp.encode(f"<2{self.ui}> {t}", out_type=str) for t in texts]
-        res = self.model.translate_batch(toks, beam_size=4, max_batch_size=24, no_repeat_ngram_size=4, repetition_penalty=1.15,
+        res = self.model.translate_batch(toks, beam_size=2, max_batch_size=8, no_repeat_ngram_size=4, repetition_penalty=1.15,
                                          max_decoding_length=max(32, int(1.8 * max(len(t) for t in toks)) + 8))
         return [self.sp.decode(r.hypotheses[0]) for r in res]
 
