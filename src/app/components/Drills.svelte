@@ -11,13 +11,13 @@
   import TypeDrill from './TypeDrill.svelte';
   import Overlay from './Overlay.svelte';
   import CheatSheet from './CheatSheet.svelte';
-  import { parseItems } from '../lib/parse.js';
+  import { parseItems, transformItems } from '../lib/parse.js';
   import { createReview } from '../lib/review.js';
   let { lang, voice = null, loadData, loadParadigm = null, navigate, random = Math.random, storage = null } = $props();
 
   const NOMINAL = new Set(['noun', 'adj', 'det', 'pron']);
   // a language that does not inflect (Chinese) has no endings drills; one without noun cases (Portuguese) only the verbs
-  const drills = $derived([...(lang.game ? ['letters'] : []), ...(lang.noEndings ? [] : lang.noNounEndings ? ['verbs', 'parse'] : ['nouns', 'verbs', 'parse']), 'words', 'phrases', 'review']);
+  const drills = $derived([...(lang.game ? ['letters'] : []), ...(lang.noEndings ? [] : lang.noNounEndings ? ['verbs', 'parse', 'transform'] : ['nouns', 'verbs', 'parse', 'transform']), 'words', 'phrases', 'review']);
   let chosen = $state(null);
   const drill = $derived(chosen && drills.includes(chosen) ? chosen : drills[0]);
   let models = $state([]);
@@ -54,6 +54,10 @@
   const clean = (name) => name.split(' · ').map((x) => x.split(' ').filter((w) => w && w !== 'x').join(' ')).filter(Boolean).join(' · ');
   const parseList = $derived(models.flatMap((m) => parseItems(m, lang, (tb, r, c, several) => clean((several && tb.label ? `${tb.label.split(' · ').map(paraWord).join(' ')} · ` : '') + cellName(tb, r, c)))
     .map((it) => ({ ...it, hint: `${m.dict_form ?? m.headword}${m.gloss ? ` — ${typeof m.gloss === 'string' ? m.gloss : (m.gloss[ui.lang] ?? m.gloss.en)}` : ''}` }))));
+  // transformation: a form and one change (plural, another case or person): type the new form
+  const changeName = (v) => (/^[123]$/.test(v) ? t(`para.p${v}`) : caseName(v) !== v ? caseName(v) : String(v).split(' ').map(paraWord).join(' '));
+  const transformList = $derived(models.flatMap((m) => transformItems(m, lang, changeName)
+    .map((it) => ({ ...it, prompt: `${it.prompt}   (${m.dict_form ?? m.headword})` }))));
   // spaced review: every answer here and in Learn is scheduled; the Review tab asks what is due
   const review = createReview(lang.code, storage);
   const remember = (item, correct) => review.record(item, correct);
@@ -111,6 +115,8 @@
     {#if dueItems.length}<p class="review-count">{t('review.due', { n: dueItems.length, total: review.size() })}</p>
       {#key dueItems.length}<ChoiceDrill items={dueItems} {random} romanize={lang.script?.romanize ?? null} onresult={remember} ordered />{/key}
     {:else}<p class="review-empty">{t('review.none', { total: review.size() })}</p>{/if}
+  {:else if drill === 'transform'}
+    {#key `transform|${models.length}|${ui.lang}`}<TypeDrill items={transformList} {lang} {random} onresult={remember} />{/key}
   {:else if drill === 'parse'}
     {#key `parse|${models.length}|${ui.lang}`}<ChoiceDrill items={parseList} {random} romanize={lang.script?.romanize ?? null} onresult={remember} />{/key}
   {:else if drill === 'nouns'}

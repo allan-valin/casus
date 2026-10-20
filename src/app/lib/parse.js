@@ -29,3 +29,35 @@ export function parseItems(model, lang, label) {
     pool: names.filter((n) => !readings.includes(n)),
   }));
 }
+
+/** one-step transformation (the textbook "put it in the plural" drill): two cells of a table that differ in one
+ * feature — same row, other number; same column, other case or person. The learner types the other form. A form that
+ * fills two cells is not asked (which one would be meant?). name(value) says the change in the interface language. */
+export function transformItems(model, lang, name) {
+  const out = [];
+  for (const t of drillTables(model, lang)) {
+    const cell = new Map();
+    const where = new Map();
+    for (const r of t.rows) {
+      for (const c of t.cols) {
+        const forms = [...new Set(t.cell(r, c).map((i) => i.form))];
+        if (!forms.length) continue;
+        cell.set(`${r}|${c}`, forms);
+        for (const f of forms) where.set(f, (where.get(f) ?? 0) + 1);
+      }
+    }
+    for (const r of t.rows) {
+      for (const c of t.cols) {
+        const from = cell.get(`${r}|${c}`);
+        if (!from || from.length !== 1 || where.get(from[0]) > 1) continue;
+        const targets = [...t.cols.filter((c2) => c2 !== c).map((c2) => [r, c2, c2]), ...t.rows.filter((r2) => r2 !== r).map((r2) => [r2, c, r2])];
+        for (const [r2, c2, change] of targets) {
+          const to = cell.get(`${r2}|${c2}`);
+          if (!to) continue;
+          out.push({ from: from[0], change, prompt: `${from[0]} → ${name(change)}`, answer: to[0], accept: to });
+        }
+      }
+    }
+  }
+  return out;
+}

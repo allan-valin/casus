@@ -24,3 +24,20 @@ describe('parseItems', () => {
     expect(rosae.accept.sort()).toEqual([...readings].sort());
   });
 });
+
+import { transformItems } from '../../src/app/lib/parse.js';
+
+describe('transformItems (drills research item 3: one-step transformation)', () => {
+  const amo = { id: '2', headword: 'amo', pos: 'verb', rows: [['amo', 'v1spia1'], [2, 'as', 'v2spia1'], [2, 'at', 'v3spia1'], [2, 'amus', 'v1ppia1'], [2, 'atis', 'v2ppia1'], [2, 'ant', 'v3ppia1']] };
+  it('pairs cells that differ in one feature: the change is named, the other form is the answer', () => {
+    const items = transformItems(amo, la, (f) => f);
+    const toPlural = items.find((i) => i.from === 'amo' && i.change === 'pl');
+    expect(toPlural.answer).toBe('amamus');
+    expect(items.some((i) => i.from === 'amas' && i.change === '1' && i.answer === 'amo')).toBe(true);
+    expect(items.every((i) => i.prompt.includes(i.from))).toBe(true);
+  });
+  it('a form shared by two cells is not asked (the change would be ambiguous)', () => {
+    const items = transformItems(rosa, la, (f) => f);
+    expect(items.some((i) => i.from === 'rosae')).toBe(false);
+  });
+});

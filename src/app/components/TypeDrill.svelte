@@ -14,7 +14,10 @@
 
   function check() {
     if (!current || result || !typed.trim()) return;
-    const r = sameAnswer(typed, current.answer, lang);
+    // any of the right forms counts (a cell with two forms: amavere, amaverunt)
+    const hit = (current.accept ?? [current.answer]).map((f) => ({ f, r: sameAnswer(typed, f, lang) })).find((x) => x.r.ok);
+    const r = hit ? hit.r : { ok: false, exact: false };
+    if (hit) current.answer = hit.f;
     result = { ok: r.ok, exact: r.exact };
     score = { right: score.right + (r.ok ? 1 : 0), total: score.total + 1 };
     onresult?.(current, r.ok);
