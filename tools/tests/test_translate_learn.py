@@ -232,3 +232,14 @@ def test_the_batch_shrinks_when_the_inputs_are_long():
     tr._raw(["short one"] * 20)
     tr._raw(["word " * 360] * 20)
     assert sizes[0] == 16 and sizes[1] <= 8
+
+
+def test_a_japanese_sentence_may_have_a_much_longer_translation():
+    """Japanese is dense: 「双括式」 explained in Portuguese is three times longer and still right"""
+    tr = object.__new__(T.Translator)
+    tr.ui, tr.cache, tr.new, tr.cache_file = "pt", {}, 0, None
+    tr.save = lambda: None
+    ja = "結論が冒頭と最後の両方に書かれる文章構成を双括式と言います。"
+    pt = "A estrutura de texto em que a conclusão aparece tanto no começo quanto no fim chama-se estrutura de dupla conclusão."
+    tr._model = lambda texts: [pt for _ in texts]
+    assert tr([ja]) == [pt]

@@ -56,6 +56,12 @@ def fixes(ui: str) -> dict:
     return (yaml.safe_load(f.read_text(encoding="utf-8")) or {}) if f.exists() else {}
 
 
+def too_long(src: str) -> int:
+    """the longest believable translation: twice the original, five times for dense CJK text"""
+    cjk = len(re.findall(r"[\u3040-\u30ff\u4e00-\u9fff\uac00-\ud7af]", src)) > len(src) // 3
+    return (5 if cjk else 2) * len(src) + 20
+
+
 def join(pieces: list, done: dict) -> str:
     """the pieces' translations put back together: a piece that ended a line keeps its line break"""
     out = ""
@@ -117,7 +123,7 @@ class Translator:
             for src, (prot, terms), out in zip(todo[k:k + 96], batch, outs):
                 # the grammar terms go back in as the glossary has them; a lost placeholder keeps the original
                 first = max([int(n) for n in PH.findall(src)] or [0])
-                if sorted(PH.findall(out)) != sorted(PH.findall(prot)) or len(out) > 2 * len(src) + 20:
+                if sorted(PH.findall(out)) != sorted(PH.findall(prot)) or len(out) > too_long(src):
                     self.cache[src] = src          # (a much longer output is the model looping or inventing)
                 else:
                     out = PH.sub(lambda m: terms[int(m.group(1)) - first - 1] if first < int(m.group(1)) <= first + len(terms) else m.group(0), out)

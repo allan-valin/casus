@@ -253,6 +253,6 @@ def dedupe(out: str, src: str) -> str:
         if [w.strip(".:;,") for w in words[:n]] == [w.strip(".:;,") for w in words[n:2 * n]] and len(src.split()) <= 6:
             out = " ".join(words[:n])
             break
-    if src.strip() and src.strip()[-1] not in ".:;!?" and out[-1:] in ".:;":
+    if src.strip() and src.strip()[-1] not in ".:;!?。！？：；" and out[-1:] in ".:;":
         out = out[:-1]
     return out.strip(" :") if not src.strip().endswith(":") else out
