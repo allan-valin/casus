@@ -7,13 +7,10 @@
   import { t, ui } from '../lib/i18n.svelte.js';
   import Speaker from './Speaker.svelte';
   import IpaChart from './IpaChart.svelte';
-  import { widenSlices, buildIpaIndex, expectedFor, expectedSounds, segments, align, score, aiPrompt, sampleFor, ipaFromWikitext, entriesFor } from '../lib/pronounce.js';
+  import { widenSlices, buildIpaIndex, expectedFor, expectedSounds, segments, align, score, aiPrompt, sampleFor, ipaFromWikitext } from '../lib/pronounce.js';
   import { loadLemmas, loadIpa } from '../lib/fetchers.js';
   import { MODELS, load, transcribe, to16kMono, playSamples, wavBytes, isCached, forget } from '../speech/engine.js';
-  import Paradigm from './Paradigm.svelte';
-  import { frontDecode } from '../lib/paradigm.js';
-  import { describeAnalysis } from '../lib/colors.js';
-  import { wiktionaryUrl } from '../lib/entry.js';
+  import WordEntry from './WordEntry.svelte';
   import { loadGlosses } from '../lib/fetchers.js';
 
   let { lang, voice = null, fetchImpl, data, base = '/', lexicon = null, say = () => {}, storage = null, award = null, loadParadigm = null } = $props();
@@ -212,16 +209,15 @@
 
   // a dictionary entry for each word, as in the reader
   let openWord = $state(null);
-  let entries = $state({});
   let glosses = null;
-  async function toggleEntry(w) {
-    if (openWord === w.word) { openWord = null; return; }
-    openWord = w.word;
-    if (entries[w.word]) return;
+  // the entry panel (WordEntry, shared with Learn) gets the dictionary data this page loads anyway
+  const loadInfo = async () => {
     glosses ??= await loadGlosses(fetchImpl, data, ui.lang === 'pt' ? 'pt' : 'en').then((g) => g ?? loadGlosses(fetchImpl, data, 'en')).catch(() => null);
-    const list = entriesFor(await lookup(w.word.toLowerCase()).catch(() => []), lemmas);
-    entries = { ...entries, [w.word]: list };
-    say(t('speak.act.entry', { word: w.word, n: list.length }));
+    return { lemmas, ipa, glosses };
+  };
+  function toggleEntry(w) {
+    openWord = openWord === w.word ? null : w.word;
+    if (openWord) say(t('speak.act.entryOpen', { word: w.word }));
   }
 </script>
 
@@ -287,24 +283,7 @@
         </div>
       {/each}
     </div>
-    {#if openWord}
-      <div class="entry-panel">
-        <h4 lang={lang.bcp47}>{openWord}</h4>
-        {#if !entries[openWord]}<p class="note">{t('dict.loading')}</p>
-        {:else if !entries[openWord].length}<p class="note">{t('dict.none')} <a href={wiktionaryUrl(openWord, lang.wiktionary ?? 'Latin', ui.lang === 'pt' ? 'pt' : 'en')} target="_blank" rel="noopener">Wiktionary ↗</a></p>
-        {:else}{#each entries[openWord] as e (e.id)}
-          <div class="entry">
-            <div class="form" lang={lang.bcp47}><b>{e.lemma.dict_form ?? e.lemma.headword}</b> <small>{e.lemma.pos ?? ''}</small>
-              {#if ipa?.[e.id]?.length}<span class="ipa">{ipa[e.id][0].ipa}</span>{/if}{#if voice}<Speaker text={e.lemma.headword} {voice} />{/if}
-              <a href={wiktionaryUrl(e.lemma.headword, lang.wiktionary ?? 'Latin', 'en')} target="_blank" rel="noopener">Wiktionary ↗</a>
-              {#if ui.lang === 'pt'}<a href={wiktionaryUrl(e.lemma.headword, lang.wiktionary ?? 'Latin', 'pt')} target="_blank" rel="noopener">Wikcionário ↗</a>{/if}</div>
-            {#if glosses?.[e.id]}<div class="gloss">{glosses[e.id]}</div>{/if}
-            <div class="note">{t('speak.entry.readings')}: {[...new Set(e.readings.map(describeAnalysis))].join(' · ')}</div>
-            {#if loadParadigm}{#await loadParadigm(e.id).then((r) => (r ? frontDecode(r) : null)) then rows}{#if rows?.length}<Paradigm {rows} lemma={e.id} {lang} form={openWord.toLowerCase()} readings={e.readings} />{/if}{/await}{/if}
-          </div>
-        {/each}{/if}
-      </div>
-    {/if}
+    {#if openWord}<WordEntry word={openWord} {lang} {lookup} {loadInfo} {voice} {loadParadigm} />{/if}
   {/if}
 
   <div class="rec-row">
@@ -373,12 +352,6 @@
   .credit { margin-top: 14px; }
   .dict-btn { min-height: 28px; padding: 0 6px; margin-inline-start: 4px; }
   .dict-btn.on { outline: 2px solid var(--accent, #3a7); }
-  .entry-panel { border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; margin: 8px 0; background: var(--panel); }
-  .entry-panel h4 { margin: 0 0 6px; }
-  .entry { border-top: 1px dashed var(--line); padding: 6px 0; }
-  .entry .ipa { margin-inline-start: 6px; }
-  .entry a { margin-inline-start: 6px; font-size: .85em; }
-  .gloss { margin: 2px 0; }
   table.models { border-collapse: collapse; font-size: .9em; }
   .models td, .models th { padding: 3px 6px; border-bottom: 1px solid var(--line); text-align: start; }
 </style>

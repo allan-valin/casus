@@ -2,6 +2,7 @@
  * i18n.svelte.js. de, mk and ar written by AI (Claude). */
 export const SPEAK = {
   en: {
+    'speak.act.entryOpen': 'Dictionary entry for {word}.',
     'learn.mt': 'AI-translated from {lang}',
     'learn.mt.title': "Translated by an open-source AI model (MADLAD-400) from the book's original; examples in the language you are learning are kept as the book has them. It may contain mistakes.",
     'learn.mt.orig': 'Show the original',
@@ -80,6 +81,7 @@ export const SPEAK = {
     'speak.howto.marks.text': '<p><b>ˈ</b> stress on the next syllable · <b>ː</b> long · <b>ʰ</b> a puff of air after the sound (aspirated) · <b>̃</b> nasal (air through the nose too, as in Portuguese <i>mão</i>) · <b>ʲ</b> palatalised (with an i-like tongue) · <b>̯</b> not a syllable of its own (the second half of a diphthong) · <b>̥</b> voiceless · <b>͡</b> two symbols said as one sound (t͡s).</p>',
   },
   pt: {
+    'speak.act.entryOpen': 'Verbete de {word}.',
     'learn.mt': 'Traduzida por IA do {lang}',
     'learn.mt.title': 'Traduzida por um modelo de IA de código aberto (MADLAD-400) a partir do original do livro; os exemplos na língua que você aprende ficam como o livro os tem. Pode conter erros.',
     'learn.mt.orig': 'Ver o original',
@@ -158,6 +160,7 @@ export const SPEAK = {
     'speak.howto.marks.text': '<p><b>ˈ</b> tônica na sílaba seguinte · <b>ː</b> longo · <b>ʰ</b> um sopro depois do som (aspirado) · <b>̃</b> nasal (o ar sai também pelo nariz, como em <i>mão</i>) · <b>ʲ</b> palatalizado (com a língua como num i) · <b>̯</b> não forma sílaba (a segunda metade de um ditongo) · <b>̥</b> surdo · <b>͡</b> dois símbolos ditos como um som (t͡s).</p>',
   },
   de: {
+    'speak.act.entryOpen': 'Wörterbucheintrag für {word}.',
     'learn.mt': 'KI-Übersetzung, Original: {lang}',
     'learn.mt.title': 'Von einem quelloffenen KI-Modell (MADLAD-400) aus dem Original des Buchs übersetzt; Beispiele in der Sprache, die du lernst, bleiben wie im Buch. Kann Fehler enthalten.',
     'learn.mt.orig': 'Original zeigen',
@@ -236,6 +239,7 @@ export const SPEAK = {
     'speak.howto.marks.text': '<p><b>ˈ</b> Betonung auf der folgenden Silbe · <b>ː</b> lang · <b>ʰ</b> ein Hauch nach dem Laut (behaucht) · <b>̃</b> nasal (die Luft geht auch durch die Nase, wie in französisch <i>bon</i>) · <b>ʲ</b> palatalisiert (mit i-artiger Zunge) · <b>̯</b> keine eigene Silbe (die zweite Hälfte eines Diphthongs) · <b>̥</b> stimmlos · <b>͡</b> zwei Symbole als ein Laut (t͡s).</p>',
   },
   mk: {
+    'speak.act.entryOpen': 'Речничка одредница за {word}.',
     'learn.mt': 'Преведено со ВИ од {lang}',
     'learn.mt.title': 'Преведено со модел на вештачка интелигенција со отворен код (MADLAD-400) од оригиналот на книгата; примерите на јазикот што го учите остануваат како во книгата. Може да содржи грешки.',
     'learn.mt.orig': 'Прикажи го оригиналот',
@@ -314,6 +318,7 @@ export const SPEAK = {
     'speak.howto.marks.text': '<p><b>ˈ</b> нагласок на следниот слог · <b>ː</b> долго · <b>ʰ</b> воздишка по гласот (аспирирано) · <b>̃</b> назално (воздухот излегува и низ носот, како во француското <i>bon</i>) · <b>ʲ</b> палатализирано (со јазик како за и — како ќ, ѓ) · <b>̯</b> не прави свој слог (втората половина од дифтонг) · <b>̥</b> безвучно · <b>͡</b> два симбола како еден глас (t͡s = ц).</p>',
   },
   ar: {
+    'speak.act.entryOpen': 'مدخل المعجم لـ {word}.',
     'learn.mt': 'مترجم بالذكاء الاصطناعي من {lang}',
     'learn.mt.title': 'ترجمه نموذج ذكاء اصطناعي مفتوح المصدر (MADLAD-400) من أصل الكتاب؛ وتبقى الأمثلة باللغة التي تتعلمها كما في الكتاب. قد يحتوي على أخطاء.',
     'learn.mt.orig': 'عرض الأصل',
