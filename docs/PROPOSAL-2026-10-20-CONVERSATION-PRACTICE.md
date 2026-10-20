@@ -1,6 +1,6 @@
 # Proposal: Conversation practice tab (Allan, 2026-10-20)
 
-Status: **proposal, for Allan's decisions** — wishlist item, built only after the translation pairs he listed
+Status: **decided 2026-10-21 (Allan's answers below)**; proposal text kept above them — wishlist item, built only after the translation pairs he listed
 (de→mk, de→ar first, then the rest; docs/PLAN-2026-10-20-TRANSLATE-IMPORTED.md). Nothing here is built yet.
 
 ## What Allan asked for
@@ -108,3 +108,25 @@ language adds similar effort. This runs over days and weeks, alongside his revie
    learner?).
 7. How much review per unit (Pimsleur leans heavy): ~30 % old material?
 8. Link to the pronunciation trainer from every phrase — yes?
+
+## Allan's decisions (2026-10-21)
+- **Order (taught language · narrator)**: mk · pt-BR first, then de · mk, ko · pt-BR, de · ar, ja · pt-BR, and so on.
+  (German was only his own moving-in example, not the starting point; de · pt/en are not a priority.)
+- **Formality**: research per language how polite/informal forms are expected — formal with strangers and in formal
+  situations, informal with friends/colleagues, varying by country (in Brazil the polite form is rare). No fixed "du".
+- **Culture shock research per language** (Sunday closures are only Germany): what surprises newcomers in each country,
+  **and the narrator language's culture** too, so scenarios arise where the two differ and confusion happens.
+- **CEFR** is the frame; adapt topics where something else fits the difficulty better.
+- **Read the Pimsleur PDFs** (reading booklets, course books) of the relevant languages for structure — never copy.
+- **Audio in the browser** (Piper; short clips are fast enough). Voice gaps: alter pitch to make another character, or
+  use a sister language's voice. No Piper voice at all → the language is left out (classical languages included).
+- **Dialects**: always the standard taught in grammars; the country matching the language's name (pt-BR: Brazil).
+  Optionally one chapter introducing the main dialect differences, only where a TTS voice exists for them.
+- **Prompts**: spoken answers, plus an optional typed answer.
+- **Protagonist**: matches the available voices; if both genders exist, alternate who does what, so all verb forms are
+  practised.
+- **Review ≈ 25 %**, varied: similar situation and response in a new setting that fits the story (lesson 1 greets in
+  the supermarket, lesson 2 greets somewhere else), never the same lines repeated.
+- **Pronunciation-trainer link on every phrase**: yes. Pipeline: as proposed.
+- **Effort**: it is text that gets synthesized; a unit script takes minutes to review. The real time goes into
+  agreeing on the material — so the story bible, culture notes and unit plans come to Allan first.
