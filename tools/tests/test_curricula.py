@@ -13,7 +13,16 @@ CURRICULA = sorted(p for p in (Path(__file__).resolve().parents[1] / "curricula"
 
 @pytest.mark.parametrize("path", CURRICULA, ids=lambda p: p.name)
 def test_curriculum_is_well_formed(path):
-    data = _load(path)
+    _well_formed(_load(path))
+
+
+@pytest.mark.parametrize("path", sorted(p for p in CURRICULA[0].parent.iterdir() if (p / "plan.yml").exists()), ids=lambda p: p.name)
+def test_written_levels_beside_a_plan_are_well_formed(path):
+    plan = yaml.safe_load((path / "plan.yml").read_text(encoding="utf-8"))
+    _well_formed({"levels": [yaml.safe_load((path / f"{lv}.yml").read_text(encoding="utf-8")) for lv in plan.get("written", []) if (path / f"{lv}.yml").exists()]})
+
+
+def _well_formed(data):
     seen = set()
     for lv in data["levels"]:
         for topic in lv["topics"]:
@@ -71,3 +80,44 @@ def test_no_word_in_a_rule_or_pool_is_read_as_a_yaml_boolean():
     for f in sorted(glob.glob(str(Path(__file__).resolve().parents[1] / "curricula" / "*" / "*.yml"))):
         walk(yaml.safe_load(open(f, encoding="utf-8")), f)
     assert not bad, bad
+
+
+CEFR = ["A1", "A2", "B1", "B2", "C1", "C2"]
+
+
+@pytest.mark.parametrize("path", sorted(p for p in CURRICULA[0].parent.iterdir() if (p / "meta.yml").exists() or (p / "plan.yml").exists()), ids=lambda p: p.name)
+def test_every_cefr_course_has_all_six_levels(path):
+    """Allan, 2026-10-20: "many don't have all european levels, german miss c1 c2, arabic c2" — a CEFR course runs
+    A1 to C2 (German: Grimm's pages in plan.yml, the rest written for Casus beside it)"""
+    if (path / "plan.yml").exists():
+        plan = yaml.safe_load((path / "plan.yml").read_text(encoding="utf-8"))
+        if plan.get("system") != "CEFR":
+            return
+        have = {lv["id"] for lv in plan["levels"]} | {lv for lv in plan.get("written", []) if (path / f"{lv}.yml").exists()}
+    else:
+        meta = yaml.safe_load((path / "meta.yml").read_text(encoding="utf-8"))
+        if meta.get("system") != "CEFR":
+            return
+        have = {lv for lv in meta["level_files"] if (path / f"{lv}.yml").exists()}
+    assert set(CEFR) <= have, f"{path.name}: missing {sorted(set(CEFR) - have)}"
+
+
+def test_german_written_levels_join_grimm(tmp_path):
+    """German's C1/C2 (no Grimm pages) come from level files written for Casus, marked as AI-written"""
+    from learn_curriculum import written_levels
+    (tmp_path / "C1.yml").write_text("""id: C1
+topics:
+- title: {en: Style, pt: Estilo}
+  lessons:
+  - id: de-c1-x
+    title: Nominalstil
+    meaning: {en: nominal style, pt: estilo nominal}
+    intro: {en: Nouns., pt: Substantivos.}
+    examples:
+    - [Die Durchführung der Prüfung, The carrying out of the exam, A realização da prova, Durchführung]
+    match: {seq: [{pos: noun}]}
+""", encoding="utf-8")
+    levels, lessons, questions = written_levels(tmp_path, ["C1"])
+    assert levels[0]["id"] == "C1" and levels[0]["topics"][0]["lessons"][0]["ai"] is True
+    assert lessons["de-c1-x"]["ai"] is True and lessons["de-c1-x"]["level"] == "C1"
+    assert questions["C1"]["de-c1-x"]["qs"][0]["type"] == "gap"

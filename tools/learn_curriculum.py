@@ -103,32 +103,55 @@ def lesson_page(src: dict, tables=None) -> dict:
     return page
 
 
+def _level(lv: dict, data: dict, tables=None) -> tuple[dict, dict, dict]:
+    """one level file → (level entry for the index, its lesson pages, its questions)"""
+    topics, qs, lessons = [], {}, {}
+    for t_k, topic in enumerate(lv["topics"], 1):
+        entries = []
+        for src in topic["lessons"]:
+            page = lesson_page(src, (*tables, data.get("exclude_forms")) if tables else None)
+            page.update({"level": lv["id"], "topic": _both(topic["title"])})
+            # lessons written by AI (Claude) for Casus are marked as such on the page and in the list (Allan,
+            # 2026-10-20); a lesson can say otherwise (ai: false)
+            ai = src.get("ai", bool(data.get("ai_written")))
+            if ai:
+                page["ai"] = True
+            lessons[page["id"]] = page
+            entries.append({"id": page["id"], "title": page["title"], "meaning": page["meaning"], **({"ai": True} if ai else {})})
+            mine = []
+            for e in page["examples"]:
+                found = _gap_furi(e["text"], e["target"]) if e.get("target") else None
+                if found:
+                    mine.append({"type": "gap", "furi": found[0], "en": e["en"], "pt": e["pt"], "answer": found[1]})
+                mine.append({"type": "translate", "furi": [[e["text"], None]], "answer": e["en"], "pt": e["pt"]})
+            qs[page["id"]] = {"pools": {"gap": [x for x in src.get("pool", [])]}, "qs": mine}
+        topics.append({"id": f"{lv['id']}-t{t_k}", "kind": "grammar", "title": _both(topic["title"]), "lessons": entries})
+    level = {"id": lv["id"], **({"title": _both(lv["title"])} if lv.get("title") else {}), "topics": topics}
+    return level, lessons, qs
+
+
+def written_levels(folder: Path, ids: list, tables=None) -> tuple[list, dict, dict]:
+    """levels written for Casus by AI (Claude) beside a course from another source (German: Grimm Grammar stops at
+    B2, so C1 and C2 are written here): tools/curricula/<code>/<id>.yml, each lesson marked AI-written"""
+    levels, lessons, questions = [], {}, {}
+    for lv_id in ids:
+        f = Path(folder) / f"{lv_id}.yml"
+        if not f.exists():
+            continue
+        level, mine, qs = _level(yaml.safe_load(f.read_text(encoding="utf-8")), {"ai_written": True}, tables)
+        levels.append(level)
+        lessons.update(mine)
+        questions[level["id"]] = qs
+    return levels, lessons, questions
+
+
 def curriculum_learn(path: Path, tables=None) -> tuple[dict, dict, dict]:
     data = _load(path)
     levels, lessons, questions = [], {}, {}
     for lv in data["levels"]:
-        topics, qs = [], {}
-        for t_k, topic in enumerate(lv["topics"], 1):
-            entries = []
-            for src in topic["lessons"]:
-                page = lesson_page(src, (*tables, data.get("exclude_forms")) if tables else None)
-                page.update({"level": lv["id"], "topic": _both(topic["title"])})
-                # lessons written by AI (Claude) for Casus are marked as such on the page and in the list (Allan,
-                # 2026-10-20); a lesson can say otherwise (ai: false)
-                ai = src.get("ai", bool(data.get("ai_written")))
-                if ai:
-                    page["ai"] = True
-                lessons[page["id"]] = page
-                entries.append({"id": page["id"], "title": page["title"], "meaning": page["meaning"], **({"ai": True} if ai else {})})
-                mine = []
-                for e in page["examples"]:
-                    found = _gap_furi(e["text"], e["target"]) if e.get("target") else None
-                    if found:
-                        mine.append({"type": "gap", "furi": found[0], "en": e["en"], "pt": e["pt"], "answer": found[1]})
-                    mine.append({"type": "translate", "furi": [[e["text"], None]], "answer": e["en"], "pt": e["pt"]})
-                qs[page["id"]] = {"pools": {"gap": [x for x in src.get("pool", [])]}, "qs": mine}
-            topics.append({"id": f"{lv['id']}-t{t_k}", "kind": "grammar", "title": _both(topic["title"]), "lessons": entries})
-        levels.append({"id": lv["id"], **({"title": _both(lv["title"])} if lv.get("title") else {}), "topics": topics})
+        level, mine, qs = _level(lv, data, tables)
+        levels.append(level)
+        lessons.update(mine)
         questions[lv["id"]] = qs
     if data.get("vocab"):
         add_vocabulary(data["vocab"], levels, lessons, path)

@@ -204,6 +204,18 @@ def de_learn(book: Path, plan_path: Path) -> tuple[dict, dict, dict]:
                 topics.append({"id": f"de-{lv['id']}-t{t_k}", "kind": "grammar", "title": topic["title"], "lessons": entries})
         levels.append({"id": lv["id"], "topics": topics})
         questions[lv["id"]] = qs
+    # levels Grimm has no pages for, written for Casus (AI-tagged): a written level of the same id adds its topics
+    from learn_curriculum import written_levels
+    more, more_lessons, more_qs = written_levels(plan_path.parent, plan.get("written", []), (ROOT / "data" / "de", attested_words("de"), False))
+    for lv in more:
+        same = next((x for x in levels if x["id"] == lv["id"]), None)
+        if same:
+            same["topics"] += lv["topics"]
+            questions[lv["id"]].update(more_qs[lv["id"]])
+        else:
+            levels.append(lv)
+            questions[lv["id"]] = more_qs[lv["id"]]
+    lessons.update(more_lessons)
     return {"system": plan["system"], "levels": levels, "credit": plan["credit"]}, lessons, questions
 
 
