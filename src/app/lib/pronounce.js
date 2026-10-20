@@ -103,8 +103,20 @@ export function cost(a, b) {
   if (a === b || plain(a) === plain(b)) return 0;
   const x = base(a), y = base(b);
   if (x === y) return 0.5;
-  return NEAR.some((g) => g.includes(x) && g.includes(y)) ? 0.5 : 1;
+  if (NEAR.some((g) => g.includes(x) && g.includes(y))) return 0.5;
+  // connected speech (Wiktionary gives careful standard speech): a vowel reduced to a schwa, a voicing change, a flap
+  if (VOWEL.test(x) && REDUCED.includes(y)) return 0.5;
+  if (VOICING.some(([v, u]) => (x === v && y === u) || (x === u && y === v))) return 0.5;
+  if ((x === 't' || x === 'd') && y === 'ɾ') return 0.5;
+  return 1;
 }
+
+const VOWEL = /^[aeiouyɑɐɒæɛɜəɘɞɤɨɪɯɵɶʉʊʌʏøœ]+$/u;
+const REDUCED = ['ə', 'ɐ'];
+const VOICING = [['b', 'p'], ['d', 't'], ['ɡ', 'k'], ['v', 'f'], ['z', 's'], ['ʒ', 'ʃ'], ['ð', 'θ'], ['dʒ', 'tʃ'], ['dz', 'ts']];
+// sounds fast speech drops or slips in: their absence or presence costs half
+const WEAK = ['ə', 'ɐ', 'ʔ', 'h'];
+const weak = (s) => WEAK.includes(base(s));
 
 /** align expected sounds ('*' = anything) with heard ones: [{ exp, got, op }] with op ok, near, sub, del, ins, wild */
 export function align(exp, got) {
@@ -123,14 +135,16 @@ export function align(exp, got) {
         continue;
       }
       if (i < n && j < m) { const c = cost(exp[i], got[j]); relax(i + 1, j + 1, c, c === 0 ? 'ok' : c < 1 ? 'near' : 'sub'); }
-      if (i < n) relax(i + 1, j, 1, 'del');
-      if (j < m) relax(i, j + 1, 1, 'ins');
+      if (i < n) relax(i + 1, j, weak(exp[i]) ? 0.5 : 1, weak(exp[i]) ? 'near' : 'del');
+      if (j < m) relax(i, j + 1, weak(got[j]) ? 0.5 : 1, weak(got[j]) ? 'near' : 'ins');
     }
   }
   const out = [];
   for (let i = n, j = m; i || j;) {
     const [pi, pj, op] = B[i][j];
-    if (op !== 'skip') out.push({ exp: op === 'ins' || op === 'wild' ? null : exp[pi], got: op === 'del' ? null : got[pj], ...(op === 'del' ? {} : { gi: pj }), op });
+    // a near that is a dropped or slipped-in weak sound has only one side
+    const kind = op === 'near' && pi === i ? 'ins' : op === 'near' && pj === j ? 'del' : op;
+    if (op !== 'skip') out.push({ exp: kind === 'ins' || kind === 'wild' ? null : exp[pi], got: kind === 'del' ? null : got[pj], ...(kind === 'del' ? {} : { gi: pj }), op });
     i = pi; j = pj;
   }
   return out.reverse();
@@ -151,7 +165,7 @@ export function widenSlices(heard, total) {
 
 /** share (0–100) of the expected sounds said right, near counting half; null when none could be compared */
 export function score(pairs) {
-  const counted = pairs.filter((p) => p.op !== 'wild' && p.op !== 'ins');
+  const counted = pairs.filter((p) => p.exp != null && p.op !== 'wild');   // only the expected sounds count
   if (!counted.length) return null;
   const got = counted.reduce((s, p) => s + (p.op === 'ok' ? 1 : p.op === 'near' ? 0.5 : 0), 0);
   return Math.round((100 * got) / counted.length);

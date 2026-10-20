@@ -195,3 +195,25 @@ describe('your sounds as audible clips (Allan, 2026-10-20: "barely plays anythin
     expect(w[0].sym).toBe('k');
   });
 });
+
+describe('connected-speech reductions count as near (Allan, 2026-10-20: Wiktionary gives careful standard speech)', () => {
+  it('a full vowel said as a schwa, a voicing change and a flap are near, not wrong', () => {
+    expect(cost('eː', 'ɐ')).toBe(0.5);
+    expect(cost('a', 'ə')).toBe(0.5);
+    expect(cost('b', 'p')).toBe(0.5);
+    expect(cost('z', 's')).toBe(0.5);
+    expect(cost('t', 'ɾ')).toBe(0.5);
+    expect(cost('k', 'a')).toBe(1);
+  });
+  it('a dropped schwa or glottal stop, or one slipped in, is near', () => {
+    expect(align(['h', 'a', 'b', 'ə', 'n'], ['h', 'a', 'b', 'n']).map((p) => p.op)).toEqual(['ok', 'ok', 'ok', 'near', 'ok']);
+    expect(align(['a', 'n'], ['ʔ', 'a', 'n']).map((p) => p.op)).toEqual(['near', 'ok', 'ok']);
+    expect(align(['h', 'a', 'n'], ['h', 'n']).map((p) => p.op)).toEqual(['ok', 'del', 'ok']);
+  });
+});
+
+describe('score with a slipped-in weak sound', () => {
+  it('a glottal stop said before a vowel does not change the score', () => {
+    expect(score(align(['a', 'n'], ['ʔ', 'a', 'n']))).toBe(100);
+  });
+});
