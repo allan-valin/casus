@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { themesFor, pickTheme, themeVars, MODE_KEY, themeKey } from '../../src/app/lib/theme.js';
+import { themesFor, pickTheme, themeVars, MODE_KEY, themeKey, flagUrl } from '../../src/app/lib/theme.js';
 import { LANGUAGES } from '../../src/lang/registry.js';
 
 const store = () => { const m = new Map(); return { getItem: (k) => m.get(k) ?? null, setItem: (k, v) => m.set(k, String(v)) }; };
@@ -31,5 +31,12 @@ describe('colour themes from flags (Allan, 2026-10-20)', () => {
     expect(v['--accent']).toBe(themesFor('ja')[0].accent);
     expect(v['--accent-ink']).toMatch(/^#/);
     expect(v['--accent-2']).toMatch(/^#/);
+  });
+  it('Latin flies the Roman vexillum (red, golden eagle, SPQR), not Italy; Ancient Greek its city emblems, not the modern flag first', () => {
+    expect(themesFor('la')[0].id).toBe('spqr');
+    expect(themesFor('la').map((x) => x.id)).not.toContain('it');
+    expect(themesFor('grc')[0].id).toBe('athens');
+    expect(themesFor('grc').map((x) => x.id)).toContain('sparta');
+    for (const id of ['spqr', 'athens', 'sparta']) expect(flagUrl(id), id).toBeTruthy();
   });
 });
