@@ -144,6 +144,21 @@ topics:
     assert questions["C1"]["de-c1-x"]["qs"][0]["type"] == "gap"
 
 
+def test_written_levels_take_overlays_too(tmp_path):
+    """German's written B2–C2 (beside Grimm) get their Macedonian / Arabic text from i18n/ overlays like any course"""
+    import yaml
+    from learn_curriculum import written_levels
+    (tmp_path / "i18n").mkdir()
+    (tmp_path / "C1.yml").write_text(yaml.safe_dump({"id": "C1", "topics": [{"title": {"en": "Style", "pt": "Estilo"}, "lessons": [
+        {"id": "de-c1-x", "title": "Nominalstil", "meaning": {"en": "nominal style", "pt": "estilo nominal"},
+         "intro": {"en": "Nouns.", "pt": "Substantivos."}}]}]}), encoding="utf-8")
+    (tmp_path / "i18n" / "mk.C.yml").write_text(yaml.safe_dump({"topics": {"Style": "Стил"}, "lessons": {"de-c1-x": {
+        "meaning": "номинален стил", "intro": "Именки."}}}, allow_unicode=True), encoding="utf-8")
+    levels, lessons, _ = written_levels(tmp_path, ["C1"])
+    assert levels[0]["topics"][0]["title"]["mk"] == "Стил"
+    assert lessons["de-c1-x"]["meaning"]["mk"] == "номинален стил"
+
+
 def test_an_overlay_adds_another_interface_language(tmp_path):
     """tools/curricula/<code>/i18n/<ui>.yml gives lessons their text in another interface language (Macedonian,
     Arabic; 2026-10-20): meaning, intro, section bodies, mistakes and topic titles; English stays the fallback"""

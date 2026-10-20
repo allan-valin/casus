@@ -178,11 +178,10 @@ def written_levels(folder: Path, ids: list, tables=None) -> tuple[list, dict, di
     """levels written for Casus by AI (Claude) beside a course from another source (German: Grimm Grammar stops at
     B2, so C1 and C2 are written here): tools/curricula/<code>/<id>.yml, each lesson marked AI-written"""
     levels, lessons, questions = [], {}, {}
-    for lv_id in ids:
-        f = Path(folder) / f"{lv_id}.yml"
-        if not f.exists():
-            continue
-        level, mine, qs = _level(yaml.safe_load(f.read_text(encoding="utf-8")), {"ai_written": True}, tables)
+    raw = [yaml.safe_load((Path(folder) / f"{i}.yml").read_text(encoding="utf-8")) for i in ids if (Path(folder) / f"{i}.yml").exists()]
+    apply_overlays(folder, raw)
+    for lv in raw:
+        level, mine, qs = _level(lv, {"ai_written": True}, tables)
         levels.append(level)
         lessons.update(mine)
         questions[level["id"]] = qs
