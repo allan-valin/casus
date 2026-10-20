@@ -48,3 +48,8 @@ ar 0.4M · uk 0.3M · is 0.2M · mk 0.03M.
   learner gets the meaning (labels, examples, links, headings) — record findings + fixes here. Structural gaps found by
   Allan in ko: NIKL examples had no meaning (MT lines added in every UI), "— particle." untranslated (label now a phrase).
   Words in Learn now open their dictionary entry (WordEntry), as in the Reader.
+- 2026-10-20 night: proofreading ja>pt and the new ko example lines found MADLAD INVENTS from Japanese/Korean straight
+  into Portuguese ("「だろう」は助動詞…" → "A palavra 'a' é usada…"; "민준이는 내 아들이 아니고 조카다" → "Ele não é seu filho").
+  Through English (beam 4) it is right in all tested sentences. Now: ja/zh/ko sources and Korean examples pivot via
+  English (vendor/mt/cache.en-pivot.json, reused by de/mk/ar); 19,006 directly translated CJK sentences purged; ja and ko
+  redone. ja>pt NOT released until a by-eye sample passes. Checker fixed (example pattern, CJK length ratio).
