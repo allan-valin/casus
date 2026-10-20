@@ -114,3 +114,15 @@ def test_a_very_long_sentence_is_cut_at_commas():
     long = "Words: " + ", ".join(f"word{n}" for n in range(200)) + "."
     parts = T.pieces_of(long)
     assert len(parts) > 1 and all(len(p) <= 600 for p in parts) and "".join(parts) == long
+
+
+def test_out_of_memory_halves_the_batch_and_a_hopeless_sentence_keeps_its_original():
+    tr = object.__new__(T.Translator)
+    tr.ui = "pt"
+
+    def raw(texts):
+        if len(texts) > 1 or "HUGE" in texts[0]:
+            raise RuntimeError("CUDA failed with error out of memory")
+        return [f"<pt>{texts[0]}"]
+    tr._raw = raw
+    assert tr._model(["a", "b", "HUGE c"]) == ["<pt>a", "<pt>b", "HUGE c"]

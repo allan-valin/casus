@@ -55,11 +55,24 @@ class Translator:
         self.cache = json.loads(self.cache_file.read_text(encoding="utf-8")) if self.cache_file.exists() else {}
         self.new = 0
 
-    def _model(self, texts: list) -> list:
+    def _raw(self, texts: list) -> list:
         toks = [self.sp.encode(f"<2{self.ui}> {t}", out_type=str) for t in texts]
         res = self.model.translate_batch(toks, beam_size=2, max_batch_size=1536, batch_type="tokens", no_repeat_ngram_size=4, repetition_penalty=1.15,
-                                         max_decoding_length=max(32, int(1.8 * max(len(t) for t in toks)) + 8))
+                                         max_decoding_length=min(512, max(32, int(1.8 * max(len(t) for t in toks)) + 8)))
         return [self.sp.decode(r.hypotheses[0]) for r in res]
+
+    def _model(self, texts: list) -> list:
+        """the model on a batch; out of GPU memory, the batch is halved, and a sentence that still does not fit stays
+        as it is (the checker then shows it untranslated)"""
+        try:
+            return self._raw(texts)
+        except RuntimeError as e:
+            if "out of memory" not in str(e):
+                raise
+            if len(texts) == 1:
+                return texts
+            half = len(texts) // 2
+            return self._model(texts[:half]) + self._model(texts[half:])
 
     def __call__(self, texts: list) -> list:
         """each text cut into sentences, each sentence translated once ever"""
