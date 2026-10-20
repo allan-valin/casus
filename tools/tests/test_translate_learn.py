@@ -69,3 +69,17 @@ def test_ai_written_storybook_and_same_language_pages_are_left_alone(tmp_path, m
     monkeypatch.setattr(T, "ROOT", tmp_path)
     tr = Fake("pt")
     assert T.translate_language("xx", tr) == 0 and tr.sent == []
+
+
+def test_cache_only_reapplies_known_translations_and_skips_the_rest(tmp_path, monkeypatch):
+    """after a rebuild, translations come back from the cache without the model; a field with any sentence not in
+    the cache stays as it was (no half-translated section)"""
+    known = "<p>Le présent se forme avec les terminaisons du présent.</p>"
+    unknown = "<p>Le passé se forme avec les terminaisons du passé simple.</p>"
+    f = page(tmp_path / "data", "p", source="Wikibooks (fr), X", sections=[{"id": "a", "html": {"en": known}}, {"id": "b", "html": {"en": unknown}}])
+    (tmp_path / "data" / "xx" / "learn.json").write_text(json.dumps({"levels": []}))
+    monkeypatch.setattr(T, "ROOT", tmp_path)
+    tr = T.CacheOnly("pt", {"Le présent se forme avec les terminaisons du présent.": "O presente forma-se com as terminações do presente."})
+    assert T.translate_language("xx", tr) == 1
+    secs = json.loads(f.read_text())["sections"]
+    assert secs[0]["html"]["pt"] == "<p>O presente forma-se com as terminações do presente.</p>" and "pt" not in secs[1]["html"]

@@ -30,3 +30,4 @@ ar 0.4M · uk 0.3M · is 0.2M · mk 0.03M.
 ## Log
 - 2026-10-20: steps 2–3 (any explanation language, any UI; original kept as html.orig when translating into English).
 - 2026-10-20: step 4 (⇄ badge naming the original's language, toggle original/translation, default translation).
+- 2026-10-20: cache-only re-application (translate_learn --cache-only; build_learn does it for every UI cache) so rebuilds keep translations. Step 5 checker: tools/mt_check.py <code> --ui <ui> → data/<code>/mt-check.<ui>.json.

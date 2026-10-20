@@ -645,6 +645,14 @@ def main(code: str) -> None:
         (folder / f"{lid}.json").write_text(dump(lesson), encoding="utf-8")
     for lid, qs in per_lesson.items():
         (folder / f"q-{lid}.json").write_text(dump(qs), encoding="utf-8")
+    # imported pages machine-translated earlier (vendor/mt/cache.<ui>.json, tools/translate_learn.py) get their
+    # translations back without the model
+    import translate_learn
+    for ui in ("en", "pt", "de", "mk", "ar"):
+        if (ROOT / "vendor" / "mt" / f"cache.{ui}.json").exists():
+            n = translate_learn.translate_language(code, translate_learn.CacheOnly(ui))
+            if n:
+                print(f"{code}: {n} pages from the {ui} translation cache")
     counts = {lv["id"]: sum(len(t["lessons"]) for t in lv["topics"] if t["kind"] == "grammar") for lv in index["levels"]}
     size = sum(f.stat().st_size for f in folder.glob("*.json")) // 1024
     print(f"{code}: grammar lessons {counts}, {len(lessons)} lesson files, {sum(len(v["qs"]) if isinstance(v, dict) else len(v) for qs in questions.values() for v in qs.values())} questions, {size} KB")

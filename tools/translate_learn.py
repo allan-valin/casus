@@ -71,6 +71,26 @@ class Translator:
         self.cache_file.write_text(json.dumps(self.cache, ensure_ascii=False), encoding="utf-8")
 
 
+class Missing(Exception):
+    """a sentence the cache does not have (cache-only mode)"""
+
+
+class CacheOnly:
+    """translations from the cache alone, no model (after a rebuild); a text with an uncached sentence raises Missing"""
+    def __init__(self, ui: str, cache: dict | None = None):
+        self.ui, self.new = ui, 0
+        self.cache = cache if cache is not None else (json.loads(f.read_text(encoding="utf-8")) if (f := ROOT / "vendor" / "mt" / f"cache.{ui}.json").exists() else {})
+
+    def __call__(self, texts: list) -> list:
+        pieces = [SENT.split(t) for t in texts]
+        if any(p.strip() and p not in self.cache for ps in pieces for p in ps):
+            raise Missing
+        return [" ".join(self.cache.get(p, p) for p in ps) for ps in pieces]
+
+    def save(self):
+        pass
+
+
 def source_language(page: dict) -> str | None:
     """the language a page explains in: the edition its source names, else a known book's, else English; None for a
     graded reader (the text is the taught language itself)"""
@@ -107,7 +127,10 @@ def text_field(obj: dict, tr, src: str = "en") -> bool:
         return False
     if not (is_prose(orig, src) or len(orig.split()) <= 6):
         return False
-    _put(obj, tr.ui, tr([orig])[0], src)
+    try:
+        _put(obj, tr.ui, tr([orig])[0], src)
+    except Missing:
+        return False
     return True
 
 
@@ -115,7 +138,10 @@ def html_field(obj: dict, tr, src: str = "en") -> bool:
     orig = _orig(obj)
     if not orig or src == tr.ui or not _todo(obj, tr.ui):
         return False
-    out = translate_html(orig, tr, src)
+    try:
+        out = translate_html(orig, tr, src)
+    except Missing:
+        return False
     if out != orig:
         _put(obj, tr.ui, out, src)
         return True
@@ -169,7 +195,8 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("codes", nargs="+")
     ap.add_argument("--ui", required=True, choices=["en", "pt", "de", "mk", "ar"])
+    ap.add_argument("--cache-only", action="store_true", help="re-apply cached translations after a rebuild (no GPU)")
     a = ap.parse_args()
-    tr = Translator(a.ui)
+    tr = CacheOnly(a.ui) if a.cache_only else Translator(a.ui)
     for c in a.codes:
         print(f"{c}: {translate_language(c, tr)} pages machine-translated into {a.ui} ({tr.new} new sentences so far)", flush=True)
