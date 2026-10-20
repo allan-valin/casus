@@ -145,7 +145,7 @@ def zh_learn(grammar_csv: Path, words_csv: Path, cedict_path: Path, notes: dict,
             sections.append({"id": "forms", "title": {"en": "The forms", "pt": "As formas"},
                              "html": {"en": table.format("Form", "English", "Example", body), "pt": table.format("Forma", "Inglês", "Exemplo", body)}})
         page = {"id": lid, "title": title_text.split("\n")[0][:40] if title_text else label, "meaning": meaning,
-                "intro": {k: f"<p>{html.escape(note[k]).replace(chr(10), '<br>')}</p>" if note else "" for k in ("en", "pt")} if note else "",
+                "intro": {k: f"<p>{html.escape(note[k]).replace(chr(10), '<br>')}</p>" if note else "" for k in ("en", "pt", "de", "mk", "ar") if k in note} if note else "",
                 "sections": sections, "examples": [], "practice": [], "level": lv,
                 "topic": {"en": GROUPS.get(group, (group, group))[0], "pt": GROUPS.get(group, (group, group))[1]},
                 "syllabus": {"no": r["No"], "group": group, "category": r["Category"], "details": r["Details"], "content": r["Content"]},

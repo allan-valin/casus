@@ -42,3 +42,11 @@ def test_glosses_skip_proper_nouns_and_long_notes():
     from learn_zh import gloss_of
     entries = [("bai|2", "Bai ethnic group", True), ("bai|2", "white; snowy; pure", False)]
     assert gloss_of(entries, "bái") == "white; snowy; pure"
+
+
+def test_a_note_in_more_interface_languages():
+    """notes.yml may carry de / mk / ar beside en and pt (Learn in German, Macedonian, Arabic; 2026-10-20)"""
+    notes = {"动态助词": {"en": "Aspect particles.", "pt": "Partículas.", "mk": "Честички за вид.", "ar": "أدوات الهيئة."}}
+    _, lessons, _ = zh_learn(FIX / "grammar.csv", FIX / "hsk30.csv", FIX / "cedict.txt.gz", notes)
+    intro = lessons["zh-21"]["intro"]
+    assert "Честички за вид." in intro["mk"] and "أدوات الهيئة." in intro["ar"] and "de" not in intro
