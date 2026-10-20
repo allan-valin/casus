@@ -1,0 +1,70 @@
+id: A2
+topics:
+
+- title: {en: The past, pt: O passado}
+  lessons:
+  - id: nl-perfect
+    title: ik heb gewerkt, ik ben gegaan
+    meaning: {en: "the present perfect", pt: "o perfeito composto"}
+    intro:
+      en: |
+        **hebben / zijn** + participle at the end: **Ik heb gewerkt. Ik ben naar huis gegaan.** Weak participle **ge- + stem + -t / -d**: the *'t kofschip* rule — stems ending in t, k, f, s, ch, p take **-t** (gewerkt, gefietst), others **-d** (gewoond). Verbs of motion to a place and change of state take **zijn** (gekomen, gebleven, gestorven).
+      pt: |
+        **hebben / zijn** + particípio no fim: **Ik heb gewerkt. Ik ben naar huis gegaan.** Particípio fraco **ge- + radical + -t / -d**: a regra *'t kofschip* — radicais terminados em t, k, f, s, ch, p levam **-t** (gewerkt, gefietst), os outros **-d** (gewoond). Verbos de movimento com destino e de mudança de estado usam **zijn** (gekomen, gebleven, gestorven).
+    examples:
+    - ["Ik heb de hele dag gewerkt.", "I worked all day.", "Trabalhei o dia inteiro.", "gewerkt"]
+    - ["Zij is naar Parijs gegaan.", "She went to Paris.", "Ela foi para Paris.", "gegaan"]
+    match: {seq: [{word: [heb, hebt, heeft, hebben, ben, bent, is, zijn]}, {re: "^ge\\p{L}+(t|d|en)$"}], near: 6, gap: 1}
+  - id: nl-imperfect
+    title: ik werkte, ik ging
+    meaning: {en: "the simple past", pt: "o pretérito simples"}
+    intro:
+      en: |
+        Weak verbs: stem + **-te(n)** after 't kofschip consonants, else **-de(n)**: **werkte, woonde, werkten**. Strong verbs change their vowel: **gaan → ging, komen → kwam, zijn → was / waren, hebben → had, zien → zag, doen → deed, eten → at**. Used for stories and descriptions; the perfect for single facts.
+      pt: |
+        Verbos fracos: radical + **-te(n)** depois das consoantes de 't kofschip, senão **-de(n)**: **werkte, woonde, werkten**. Verbos fortes mudam a vogal: **gaan → ging, komen → kwam, zijn → was / waren, hebben → had, zien → zag, doen → deed, eten → at**. Usa-se em narrativas e descrições; o perfeito composto para fatos isolados.
+    examples:
+    - ["Toen ik klein was, woonde ik in Gent.", "When I was little, I lived in Ghent.", "Quando eu era pequeno, morava em Gent.", "woonde"]
+    - ["Hij kwam te laat.", "He came too late.", "Ele chegou tarde demais.", "kwam"]
+    match: {seq: [{pos: verb, tense: [past, impf], mood: ind}], same: [person, number]}
+- title: {en: Separable verbs and modals, pt: Verbos separáveis e modais}
+  lessons:
+  - id: nl-separable
+    title: opbellen → ik bel je op
+    meaning: {en: "separable verbs", pt: "verbos separáveis"}
+    intro:
+      en: |
+        Stressed prefixes (**op, aan, uit, mee, af, terug, weg, in, door, over**) split off in main clauses and go to the end: **opbellen → Ik bel je morgen op. meegaan → Ga je mee?** Together in the infinitive and participle: **Ik wil je opbellen. Ik heb je opgebeld.**
+      pt: |
+        Prefixos tônicos (**op, aan, uit, mee, af, terug, weg, in, door, over**) se separam na oração principal e vão para o fim: **opbellen → Ik bel je morgen op** (te ligo amanhã). **meegaan → Ga je mee?** (você vem junto?). Juntos no infinitivo e no particípio: **Ik wil je opbellen. Ik heb je opgebeld.**
+    examples:
+    - ["Ik bel je morgen op.", "I'll call you tomorrow.", "Te ligo amanhã.", "op"]
+    - ["Ga je mee naar de film?", "Are you coming along to the film?", "Você vem junto ao cinema?", "mee"]
+    match: {seq: [{pos: verb}, {word: [op, aan, uit, mee, af, terug, weg, toe, bij], trail: ".?!"}], near: 6, gap: 1}
+    pool: [op, aan, uit, mee, af, terug, weg]
+  - id: nl-modals
+    title: kunnen, willen, moeten, mogen
+    meaning: {en: "modal verbs", pt: "verbos modais"}
+    intro:
+      en: |
+        **kunnen** (can: ik kan, jij kunt/kan), **willen** (want: ik wil, hij wil), **moeten** (must: ik moet), **mogen** (may: ik mag), **zullen** (shall/will: ik zal). The infinitive goes to the end: **Ik kan morgen niet komen.** *moeten niet* = needn't is **hoeven niet te**: **Je hoeft niet te komen.**
+      pt: |
+        **kunnen** (poder: ik kan, jij kunt/kan), **willen** (querer: ik wil, hij wil), **moeten** (dever: ik moet), **mogen** (ter permissão: ik mag), **zullen** (ir/futuro: ik zal). O infinitivo vai para o fim: **Ik kan morgen niet komen.** "Não precisa" é **hoeven niet te**: **Je hoeft niet te komen.**
+    examples:
+    - ["Mag ik binnenkomen?", "May I come in?", "Posso entrar?", "Mag"]
+    - ["Je hoeft niet te betalen.", "You don't have to pay.", "Você não precisa pagar.", "hoeft"]
+    match: {seq: [{word: [kan, kunt, kunnen, wil, wilt, willen, moet, moeten, mag, mogen, hoef, hoeft, hoeven, zal, zult, zullen]}], gap: 0}
+    pool: [kan, kunt, wil, wilt, moet, mag, hoeft, zal]
+  - id: nl-er
+    title: er
+    meaning: {en: "the many uses of er", pt: "os muitos usos de er"}
+    intro:
+      en: |
+        **er** = there (**Ik woon er al jaren**), dummy subject (**Er staat een man voor de deur**), "of them" with numbers (**Ik heb er drie**), and with prepositions = it (**ervan, erop, ermee**: **Ik denk erover na**).
+      pt: |
+        **er** = lá (**Ik woon er al jaren**), sujeito vazio (**Er staat een man voor de deur** — há um homem na porta), "deles" com números (**Ik heb er drie** — tenho três), e com preposições = isso (**ervan, erop, ermee**: **Ik denk erover na** — vou pensar nisso).
+    examples:
+    - ["Er is geen melk meer.", "There's no milk left.", "Não tem mais leite.", "Er"]
+    - ["Ik heb er twee.", "I have two of them.", "Tenho dois.", "er"]
+    match: {seq: [{word: [er, ervan, erop, ermee, erover, erin, eraan, ervoor]}], gap: 0}
+    pool: [er, daar, hier, ervan, erop, ermee]

@@ -398,17 +398,18 @@ def main(code: str) -> None:
                   "pt": "<p><small>De Joseph Ginever, <i>Hungarian Grammar</i> (1909), Project Gutenberg #76725, domínio público, em inglês.</small></p>"}
         levels = [lv["id"] for lv in index["levels"]]
         print(f"hu: {book_lessons(t, 'hu-ginever', credit, 'Ginever, Hungarian Grammar (1909), public domain', levels, index, lessons, questions, rules, {'en': 'Ginever: ', 'pt': 'Ginever: '})} sections from Ginever's Hungarian Grammar (1909)")
-    WIKIBOOKS = {"ru": "Russian", "el": "Modern_Greek", "ar": "Arabic", "de": "German", "tr": "Turkish", "fr": "French", "es": "Spanish"}
+    WIKIBOOKS = {"ru": "Russian", "el": "Modern_Greek", "ar": "Arabic", "de": "German", "tr": "Turkish", "fr": "French", "es": "Spanish", "nl": "Dutch"}
     wb = ROOT / "vendor" / "wikibooks" / WIKIBOOKS.get(code, "-") / "pages.json"
     if wb.exists():
         from learn_wikibooks import wikibooks_lessons
         case = lambda c: {"seq": [{"pos": ["noun", "adj"], "case": c}], "same": ["number"]}   # noqa: E731
+        # (the Wikibooks courses are beginner to intermediate: their pages go to A1–B1, never up to C2)
         rules = {"nominative": case("nom"), "genitive": case("gen"), "dative": case("dat"), "accusative": case("acc"),
                  "instrumental": case("ins"), "prepositional": case("pre"), "locative": case("loc"), "vocative": case("voc"),
                  "past tense": {"seq": [{"pos": "verb", "tense": "past"}], "same": ["person", "number"]},
                  "imperative": {"seq": [{"pos": "verb", "mood": "imp"}], "same": ["person", "number"]},
                  "plural": {"seq": [{"pos": "noun", "number": "pl"}], "same": ["case"]}} if code in CASE_LANGS else {}
-        print(f"{code}: {wikibooks_lessons(code, WIKIBOOKS[code], json.loads(wb.read_text(encoding='utf-8')), index, lessons, questions, rules=rules)} lessons from Wikibooks")
+        print(f"{code}: {wikibooks_lessons(code, WIKIBOOKS[code], json.loads(wb.read_text(encoding='utf-8')), index, lessons, questions, levels=[lv['id'] for lv in index['levels'] if lv['id'] in ('A1', 'A2', 'B1')] or None, rules=rules)} lessons from Wikibooks")
     if code == "fi" and (ROOT / "vendor" / "eliot" / "eliot.txt").exists():
         from learn_gutenberg import book_lessons
         t = (ROOT / "vendor" / "eliot" / "eliot.txt").read_text(encoding="utf-8")

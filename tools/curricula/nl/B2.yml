@@ -1,0 +1,88 @@
+id: B2
+topics:
+
+- title: {en: Verb clusters and conditionals, pt: Grupos verbais e condicionais}
+  lessons:
+  - id: nl-b2-zou
+    title: ik zou, ik had … gedaan
+    meaning: {en: "conditional: zou and the unreal past", pt: "condicional: zou e o passado irreal"}
+    intro:
+      en: |
+        **zou(den)** + infinitive = would: **Ik zou graag komen. Als ik rijk was, zou ik reizen.** Unreal past: **had / was** + participle (+ **zou … hebben**): **Als ik het had geweten, was ik gekomen.** Also polite: **Zou je het raam willen openen?**
+      pt: |
+        **zou(den)** + infinitivo = futuro do pretérito: **Ik zou graag komen** (eu gostaria de ir). **Als ik rijk was, zou ik reizen.** Passado irreal: **had / was** + particípio: **Als ik het had geweten, was ik gekomen** (se eu soubesse, teria vindo). Também cortês: **Zou je het raam willen openen?**
+    examples:
+    - ["Als ik tijd had, zou ik je helpen.", "If I had time, I would help you.", "Se eu tivesse tempo, ajudaria você.", "zou"]
+    - ["Zou je me kunnen helpen?", "Could you help me?", "Você poderia me ajudar?", "Zou"]
+    match: {seq: [{word: [zou, zoudt, zouden]}], gap: 0}
+    pool: [zou, zouden, zal, zullen, wil, kon]
+  - id: nl-b2-double-inf
+    title: Ik heb het niet kunnen vinden.
+    meaning: {en: "double infinitive", pt: "duplo infinitivo"}
+    intro:
+      en: |
+        A modal or *laten, gaan, blijven, zien, horen* in the perfect takes the **infinitive** instead of the participle: **Ik heb niet kunnen komen. Ik heb mijn haar laten knippen. Hij is blijven zitten.** In subordinate clauses the verbs cluster at the end: **…omdat ik niet heb kunnen komen.**
+      pt: |
+        Um modal ou *laten, gaan, blijven, zien, horen* no perfeito usa o **infinitivo** no lugar do particípio: **Ik heb niet kunnen komen** (não pude vir). **Ik heb mijn haar laten knippen** (cortei o cabelo). **Hij is blijven zitten.** Na subordinada os verbos se agrupam no fim: **…omdat ik niet heb kunnen komen.**
+    examples:
+    - ["Ik heb hem niet kunnen bereiken.", "I couldn't reach him.", "Não consegui falar com ele.", "kunnen"]
+    match: {seq: [{word: [heb, hebt, heeft, hebben, had, hadden, ben, is, zijn]}, {word: [kunnen, willen, moeten, mogen, laten, blijven, gaan, zien, horen]}, {pos: verb, mood: inf}], near: 6, gap: 1}
+    pool: [kunnen, willen, moeten, mogen, laten, gekund, gewild, gemoeten]
+  - id: nl-b2-te
+    title: om … te, zonder … te
+    meaning: {en: "te + infinitive", pt: "te + infinitivo"}
+    intro:
+      en: |
+        **om … te** = (in order) to: **Ik ga naar de winkel om brood te kopen.** **zonder … te** = without: **Hij vertrok zonder iets te zeggen.** After many verbs and adjectives **te** alone: **Het is moeilijk te zeggen. Ik probeer te slapen.** **aan het** + infinitive = in progress: **Ik ben aan het koken.**
+      pt: |
+        **om … te** = para: **Ik ga naar de winkel om brood te kopen.** **zonder … te** = sem: **Hij vertrok zonder iets te zeggen.** Depois de muitos verbos e adjetivos, só **te**: **Het is moeilijk te zeggen. Ik probeer te slapen.** **aan het** + infinitivo = em andamento: **Ik ben aan het koken** (estou cozinhando).
+    examples:
+    - ["Ik ben aan het werken.", "I'm working.", "Estou trabalhando.", "aan"]
+    - ["Hij ging weg zonder te betalen.", "He left without paying.", "Ele saiu sem pagar.", "zonder"]
+    match:
+    - {seq: [{word: [om, zonder, door, na]}, {word: [te]}], near: 6, gap: 0}
+    - {seq: [{word: [aan]}, {word: [het]}, {pos: verb, mood: inf}], gap: 0}
+    pool: [om, zonder, aan, door, voor]
+
+- title: {en: Pronominal adverbs and reflexives, pt: Advérbios pronominais e reflexivos}
+  lessons:
+  - id: nl-b2-daar-prep
+    title: daarover, hiermee, waarom
+    meaning: {en: "pronominal adverbs", pt: "advérbios pronominais"}
+    intro:
+      en: |
+        Prepositions do not take *het / dat / wat* for things: **daar / hier / waar / er + preposition** instead: **Ik denk daaraan** (of that), **Waar praat je over?** (what are you talking about?), **Hiermee kun je schrijven.** They often split: **Daar weet ik niets van.**
+      pt: |
+        Preposições não aceitam *het / dat / wat* para coisas: usa-se **daar / hier / waar / er + preposição**: **Ik denk daaraan** (penso nisso), **Waar praat je over?** (do que você está falando?), **Hiermee kun je schrijven** (com isto). Muitas vezes se separam: **Daar weet ik niets van.**
+    examples:
+    - ["Daar weet ik niets van.", "I know nothing about that.", "Não sei nada sobre isso.", "Daar"]
+    - ["Waar denk je aan?", "What are you thinking of?", "Em que você está pensando?", "Waar"]
+    match: {seq: [{word: [daarover, daarmee, daaraan, daarvan, daarop, daarin, daarna, hiermee, hiervan, hierover, waarover, waaraan, waarmee, waarom]}]}
+    pool: [daarover, daarmee, daaraan, daarvan, hiermee, waarover, waarmee]
+  - id: nl-b2-reflexive
+    title: zich vergissen, zich herinneren
+    meaning: {en: "reflexive verbs", pt: "verbos reflexivos"}
+    intro:
+      en: |
+        **me, je, zich, ons, je, zich**: **Ik vergis me. Hij herinnert zich alles. Wij vervelen ons.** Many are reflexive only in Dutch: **zich haasten** (hurry), **zich schamen** (be ashamed), **zich voelen** (feel). **zichzelf** for emphasis.
+      pt: |
+        **me, je, zich, ons, je, zich**: **Ik vergis me** (me engano). **Hij herinnert zich alles** (ele se lembra de tudo). **Wij vervelen ons** (estamos entediados). Alguns são reflexivos só em holandês: **zich haasten** (apressar-se), **zich schamen**, **zich voelen**.
+    examples:
+    - ["Ik herinner me zijn naam niet.", "I don't remember his name.", "Não me lembro do nome dele.", "me"]
+    match: {seq: [{pos: verb}, {word: [zich, me, ons, zichzelf, mezelf]}], near: 3, gap: 1}
+    pool: [zich, me, je, ons, hem, haar]
+
+- title: {en: Connectors, pt: Conectores}
+  lessons:
+  - id: nl-b2-adverb-connectors
+    title: daarom, dus, toch, echter
+    meaning: {en: "adverbs that link clauses (verb-second!)", pt: "advérbios de ligação (verbo em 2º!)"}
+    intro:
+      en: |
+        **daarom** (that's why), **dus** (so), **toch** (still, after all), **echter** (however), **bovendien** (moreover), **anders** (otherwise), **daarna** (afterwards). As the first element they trigger verb-second: **Het regent, daarom blijf ik thuis.**
+      pt: |
+        **daarom** (por isso), **dus** (então), **toch** (mesmo assim), **echter** (porém), **bovendien** (além disso), **anders** (senão), **daarna** (depois). No começo da oração provocam a inversão: **Het regent, daarom blijf ik thuis.**
+    examples:
+    - ["Ik was ziek, daarom ben ik thuisgebleven.", "I was ill, so I stayed home.", "Eu estava doente, por isso fiquei em casa.", "daarom"]
+    match: {seq: [{word: [daarom, dus, toch, echter, bovendien, anders, daarna, trouwens, immers]}]}
+    pool: [daarom, dus, toch, echter, bovendien, anders, immers]

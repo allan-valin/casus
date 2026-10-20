@@ -1,0 +1,68 @@
+id: A1
+topics:
+
+- title: {en: Basics, pt: O básico}
+  lessons:
+  - id: nl-articles
+    title: de, het, een
+    meaning: {en: "the articles", pt: "os artigos"}
+    intro:
+      en: |
+        **de** for common-gender nouns and all plurals (de man, de vrouw, de huizen), **het** for neuter singulars (het huis, het kind) and all diminutives (het meisje). **een** = a / an. About two thirds of nouns take *de*; the gender of each noun must be learnt.
+      pt: |
+        **de** para substantivos de gênero comum e todos os plurais (de man, de vrouw, de huizen), **het** para neutros no singular (het huis, het kind) e todos os diminutivos (het meisje). **een** = um / uma. Cerca de dois terços dos substantivos levam *de*; o gênero de cada um precisa ser decorado.
+    examples:
+    - ["Het huis is groot.", "The house is big.", "A casa é grande.", "Het"]
+    - ["De kinderen spelen buiten.", "The children are playing outside.", "As crianças estão brincando lá fora.", "De"]
+    match: {seq: [{word: [de, het]}, {pos: noun, number: sg}], gap: 0}
+    pool: [de, het, een]
+  - id: nl-zijn-hebben
+    title: ik ben, ik heb
+    meaning: {en: "zijn and hebben", pt: "zijn (ser/estar) e hebben (ter)"}
+    intro:
+      en: |
+        **zijn**: ik ben, jij bent (bent jij?), hij/zij/het is, wij/jullie/zij zijn, u bent. **hebben**: ik heb, jij hebt (heb jij?), hij heeft, wij hebben. Note: in questions *jij* after the verb drops the **-t**: **Ben jij…? Heb jij…? Loop jij…?**
+      pt: |
+        **zijn**: ik ben, jij bent (bent jij?), hij/zij/het is, wij/jullie/zij zijn, u bent. **hebben**: ik heb, jij hebt (heb jij?), hij heeft, wij hebben. Atenção: em perguntas, com *jij* depois do verbo cai o **-t**: **Ben jij…? Heb jij…? Loop jij…?**
+    examples:
+    - ["Ik ben moe.", "I'm tired.", "Estou cansado.", "ben"]
+    - ["Heb jij een fiets?", "Do you have a bike?", "Você tem bicicleta?", "Heb"]
+    match: {seq: [{word: [ben, bent, is, zijn, heb, hebt, heeft, hebben]}], gap: 0}
+    pool: [ben, bent, is, zijn, heb, hebt, heeft, hebben]
+  - id: nl-present
+    title: ik werk, hij werkt
+    meaning: {en: "the present tense", pt: "o presente"}
+    intro:
+      en: |
+        Stem + nothing / **-t** / **-en**: **ik werk, jij werkt, hij werkt, wij werken**. The stem is the infinitive minus *-en*, with spelling kept: **lopen → ik loop** (long vowel doubled), **zitten → ik zit** (double consonant simplified), **leven → ik leef** (v → f), **reizen → ik reis** (z → s).
+      pt: |
+        Radical + nada / **-t** / **-en**: **ik werk, jij werkt, hij werkt, wij werken**. O radical é o infinitivo sem *-en*, ajustando a grafia: **lopen → ik loop** (vogal longa dobrada), **zitten → ik zit**, **leven → ik leef** (v → f), **reizen → ik reis** (z → s).
+    examples:
+    - ["Hij woont in Amsterdam.", "He lives in Amsterdam.", "Ele mora em Amsterdã.", "woont"]
+    - ["Wij spreken Nederlands.", "We speak Dutch.", "Nós falamos holandês.", "spreken"]
+    match: {seq: [{pos: verb, tense: pres, mood: ind, not: {lemma: "^(zijn|hebben)$"}}], same: [person, number]}
+  - id: nl-word-order
+    title: Morgen ga ik…
+    meaning: {en: "verb second", pt: "o verbo em segundo lugar"}
+    intro:
+      en: |
+        In a main clause the conjugated verb is always the **second element**: **Ik ga morgen naar huis → Morgen ga ik naar huis.** The subject moves after the verb when something else comes first. Infinitives and participles go to the **end**: **Ik wil morgen naar huis gaan.**
+      pt: |
+        Na oração principal o verbo conjugado é sempre o **segundo elemento**: **Ik ga morgen naar huis → Morgen ga ik naar huis.** O sujeito passa para depois do verbo quando outra coisa vem antes. Infinitivos e particípios vão para o **fim**: **Ik wil morgen naar huis gaan.**
+    examples:
+    - ["Morgen ga ik naar Utrecht.", "Tomorrow I'm going to Utrecht.", "Amanhã vou a Utrecht.", "ga"]
+    - ["Vandaag werkt hij thuis.", "Today he's working at home.", "Hoje ele trabalha em casa.", "werkt"]
+    match: {seq: [{word: [morgen, vandaag, gisteren, nu, dan, daarna, soms, hier, daar, misschien], start: true}, {pos: verb}, {word: [ik, jij, je, hij, zij, ze, we, wij, u, het]}], gap: 1}
+  - id: nl-niet-geen
+    title: niet, geen
+    meaning: {en: "negation: niet and geen", pt: "negação: niet e geen"}
+    intro:
+      en: |
+        **geen** negates a noun with *een* or no article: **Ik heb geen auto. Hij drinkt geen koffie.** **niet** negates everything else, usually late in the clause: **Ik kom niet. Het boek is niet goed. Ik ken hem niet.**
+      pt: |
+        **geen** nega um substantivo com *een* ou sem artigo: **Ik heb geen auto** (não tenho carro). **Hij drinkt geen koffie.** **niet** nega o resto, em geral no fim da oração: **Ik kom niet. Het boek is niet goed. Ik ken hem niet.**
+    examples:
+    - ["Ik heb geen tijd.", "I don't have time.", "Não tenho tempo.", "geen"]
+    - ["Dat weet ik niet.", "I don't know that.", "Isso eu não sei.", "niet"]
+    match: {seq: [{word: [niet, geen]}], gap: 0}
+    pool: [niet, geen, nooit, niets]

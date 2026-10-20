@@ -1,0 +1,56 @@
+id: C1
+topics:
+
+- title: {en: Nuance, pt: Nuance}
+  lessons:
+  - id: nl-c1-particles
+    title: even, maar, toch, wel, eens
+    meaning: {en: "modal particles", pt: "partículas modais"}
+    intro:
+      en: |
+        Small words that set the tone: **even** (just, quickly: *Kom even hier*), **maar** (go ahead: *Kom maar binnen*), **eens** (once, softening: *Kijk eens!*), **toch** (surely, reproach: *Je komt toch?*), **wel** (contradicting a negative: *Ik kom wel*), **hoor** (reassurance: *Het is goed, hoor*). They combine: *Kom maar eens even kijken.*
+      pt: |
+        Palavrinhas que dão o tom: **even** (rapidinho: *Kom even hier*), **maar** (pode: *Kom maar binnen* — pode entrar), **eens** (suaviza: *Kijk eens!*), **toch** (né? / afinal: *Je komt toch?*), **wel** (contradiz uma negação: *Ik kom wel* — vou sim), **hoor** (tranquiliza: *Het is goed, hoor*). Combinam-se: *Kom maar eens even kijken.*
+    examples:
+    - ["Kom maar binnen.", "Do come in.", "Pode entrar.", "maar"]
+    - ["Je komt toch wel?", "You are coming, aren't you?", "Você vem, né?", "toch"]
+    match: {seq: [{word: [even, maar, eens, toch, wel, hoor, nou, gewoon, juist]}]}
+    pool: [even, maar, eens, toch, wel, hoor, nou]
+  - id: nl-c1-word-order-focus
+    title: Dat boek heb ik nooit gelezen.
+    meaning: {en: "fronting for emphasis", pt: "anteposição para ênfase"}
+    intro:
+      en: |
+        Any element can open the main clause for contrast or topic, the verb still second: **Dat boek heb ik nooit gelezen. Mooi is het niet. Hem ken ik niet.** In speech the subject is even dropped after a fronted object: **Weet ik niet.**
+      pt: |
+        Qualquer elemento pode abrir a oração para contraste ou tópico, com o verbo ainda em segundo: **Dat boek heb ik nooit gelezen** (esse livro eu nunca li). **Mooi is het niet. Hem ken ik niet.** Na fala, o sujeito até some: **Weet ik niet** (sei lá).
+    examples:
+    - ["Dat weet ik niet.", "I don't know that.", "Isso eu não sei.", "Dat"]
+    match: {seq: [{word: [dat, dit, hem, haar, hen, die], start: true}, {pos: verb}, {word: [ik, je, jij, hij, zij, ze, we, wij, u]}], gap: 0}
+    pool: [Dat, Dit, Hem, Die, Het]
+  - id: nl-c1-nominal
+    title: de verbetering van de situatie
+    meaning: {en: "formal, nominal style", pt: "estilo nominal formal"}
+    intro:
+      en: |
+        Formal Dutch turns verbs into nouns: **-ing** (verbeteren → de verbetering), the infinitive (**het lezen**), **-atie, -heid, -nis** (de organisatie, de mogelijkheid, de kennis). **Ter verbetering van…** (to improve), **met betrekking tot** (concerning), **naar aanleiding van** (following).
+      pt: |
+        O holandês formal transforma verbos em substantivos: **-ing** (verbeteren → de verbetering), o infinitivo (**het lezen**), **-atie, -heid, -nis** (de organisatie, de mogelijkheid, de kennis). **Ter verbetering van…** (para melhorar), **met betrekking tot** (a respeito de), **naar aanleiding van** (em decorrência de).
+    examples:
+    - ["Naar aanleiding van uw brief…", "Following your letter…", "Em resposta à sua carta…", "aanleiding"]
+    match: {seq: [{pos: noun, re: "(ing|atie|heid|nis|schap)$"}, {word: [van]}], gap: 0}
+
+- title: {en: Fixed expressions, pt: Expressões fixas}
+  lessons:
+  - id: nl-c1-idioms
+    title: met de deur in huis vallen
+    meaning: {en: "common idioms", pt: "expressões idiomáticas comuns"}
+    intro:
+      en: |
+        **met de deur in huis vallen** (get straight to the point), **de kat uit de boom kijken** (wait and see), **ergens geen kaas van gegeten hebben** (know nothing about it), **iemand in de maling nemen** (pull someone's leg), **het zal wel** (whatever), **lekker** (nice — for food, weather, sleep, everything).
+      pt: |
+        **met de deur in huis vallen** (ir direto ao ponto), **de kat uit de boom kijken** (esperar para ver), **ergens geen kaas van gegeten hebben** (não entender nada do assunto), **iemand in de maling nemen** (zoar alguém), **het zal wel** (tanto faz), **lekker** (gostoso — para comida, tempo, sono, tudo).
+    examples:
+    - ["Lekker weer vandaag!", "Lovely weather today!", "Que tempo bom hoje!", "Lekker"]
+    match: {seq: [{word: [lekker, gezellig, kaas, maling, deur, kat]}]}
+    pool: [lekker, gezellig, mooi, leuk]

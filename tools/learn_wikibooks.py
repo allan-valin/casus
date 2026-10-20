@@ -45,7 +45,7 @@ def wikibooks_lessons(code: str, book: str, pages: list, index: dict, lessons: d
                       rules: dict | None = None) -> int:
     levels = levels or [lv["id"] for lv in index["levels"]]
     topics = {lv["id"]: lv["topics"] for lv in index["levels"]}
-    skip = re.compile(r"(print version|^contents$|restructuring|about|contribut|computing|authors|todo|sandbox)", re.I)
+    skip = re.compile(r"(print version|^contents$|restructuring|about|contribut|computing|authors|todo|sandbox|hover test)", re.I)
     keep = [(p["title"], clean(p["html"])) for p in pages if not skip.search(p["title"].split("/")[-1])]
     keep = [(t, h) for t, h in keep if _text_len(h) >= 300]
     per = {}

@@ -1,0 +1,113 @@
+id: B1
+topics:
+
+- title: {en: Subordinate clauses, pt: Orações subordinadas}
+  lessons:
+  - id: nl-sub-order
+    title: …omdat ik moe ben
+    meaning: {en: "verb last in subordinate clauses", pt: "verbo no fim nas subordinadas"}
+    intro:
+      en: |
+        After **dat, omdat, als, wanneer, toen, terwijl, voordat, nadat, hoewel, of, zodat** the conjugated verb goes to the **end**: **Ik blijf thuis omdat ik moe ben. Ik weet niet of hij komt.** Coordinating **want, maar, en, of** keep normal order: **…want ik ben moe.**
+      pt: |
+        Depois de **dat, omdat, als, wanneer, toen, terwijl, voordat, nadat, hoewel, of, zodat** o verbo conjugado vai para o **fim**: **Ik blijf thuis omdat ik moe ben** (porque estou cansado). **Ik weet niet of hij komt.** As coordenativas **want, maar, en, of** mantêm a ordem normal: **…want ik ben moe.**
+    examples:
+    - ["Ik denk dat hij gelijk heeft.", "I think he's right.", "Acho que ele tem razão.", "dat"]
+    - ["Ik kom niet omdat ik ziek ben.", "I'm not coming because I'm ill.", "Não vou porque estou doente.", "omdat"]
+    match: {seq: [{word: [dat, omdat, als, wanneer, toen, terwijl, voordat, nadat, hoewel, zodat, totdat, zodra]}], gap: 0}
+    pool: [dat, omdat, als, toen, terwijl, hoewel, want, maar]
+  - id: nl-als-toen-wanneer
+    title: als, toen, wanneer
+    meaning: {en: "when: als, toen, wanneer", pt: "quando: als, toen, wanneer"}
+    intro:
+      en: |
+        **toen** = when, one event in the past (**Toen ik jong was…**); **als** = when / whenever / if, present and future (**Als het regent, blijf ik thuis**); **wanneer** = when, in questions and formal *als* (**Wanneer kom je?**).
+      pt: |
+        **toen** = quando, um fato no passado (**Toen ik jong was…**); **als** = quando / sempre que / se, presente e futuro (**Als het regent, blijf ik thuis**); **wanneer** = quando, em perguntas e como *als* formal (**Wanneer kom je?**).
+    examples:
+    - ["Toen ik klein was, had ik een hond.", "When I was little, I had a dog.", "Quando eu era pequeno, tinha um cachorro.", "Toen"]
+    - ["Als je wilt, kun je blijven.", "If you like, you can stay.", "Se quiser, pode ficar.", "Als"]
+    match: {seq: [{word: [als, toen, wanneer], start: true}]}
+    pool: [als, toen, wanneer, omdat, dat]
+  - id: nl-relative
+    title: die, dat, waar…
+    meaning: {en: "relative pronouns", pt: "pronomes relativos"}
+    intro:
+      en: |
+        **die** for *de*-words and plurals, **dat** for *het*-words: **de man die daar staat, het huis dat ik koop.** With a preposition: people **met wie**, things **waar + preposition**: **de pen waarmee ik schrijf, het huis waarin ik woon.** **wat** after *alles, iets, niets* and superlatives.
+      pt: |
+        **die** para palavras com *de* e plurais, **dat** para palavras com *het*: **de man die daar staat, het huis dat ik koop.** Com preposição: pessoas **met wie**, coisas **waar + preposição**: **de pen waarmee ik schrijf** (com que escrevo), **het huis waarin ik woon.** **wat** depois de *alles, iets, niets* e superlativos.
+    examples:
+    - ["Het boek dat ik lees is spannend.", "The book I'm reading is exciting.", "O livro que estou lendo é emocionante.", "dat"]
+    - ["Dat is de pen waarmee ik schrijf.", "That's the pen I write with.", "Essa é a caneta com que escrevo.", "waarmee"]
+    match:
+    - {seq: [{pos: noun}, {word: [die, dat]}], gap: 1}
+    - {seq: [{word: [waarmee, waarin, waarop, waarover, waarvan, waaraan, waarvoor, waardoor]}], gap: 0}
+    pool: [die, dat, wat, wie, waarmee, waarin, waarop]
+
+- title: {en: Adjectives and comparison, pt: Adjetivos e comparação}
+  lessons:
+  - id: nl-adj-e
+    title: een groot huis, het grote huis
+    meaning: {en: "the adjective ending -e", pt: "a terminação -e do adjetivo"}
+    intro:
+      en: |
+        Before a noun the adjective takes **-e** — except with an *het*-noun in the singular after **een, geen** or nothing: **de grote man, het grote huis, grote huizen**, but **een groot huis, geen groot probleem, groot geld**. After the noun (predicate) never: **Het huis is groot.**
+      pt: |
+        Antes do substantivo o adjetivo leva **-e** — exceto com palavra *het* no singular depois de **een, geen** ou sem artigo: **de grote man, het grote huis, grote huizen**, mas **een groot huis, geen groot probleem**. Depois do verbo (predicativo) nunca: **Het huis is groot.**
+    examples:
+    - ["Ze wonen in een groot huis.", "They live in a big house.", "Eles moram numa casa grande.", "groot"]
+    - ["Het oude station is gesloten.", "The old station is closed.", "A estação antiga está fechada.", "oude"]
+    match: {seq: [{word: [een, geen, de, het]}, {pos: adj}, {pos: noun}], gap: 1, same: [number]}
+  - id: nl-comparison
+    title: groter dan, het grootst
+    meaning: {en: "comparatives and superlatives", pt: "comparativos e superlativos"}
+    intro:
+      en: |
+        **-er** (+ **dan**) and **-st**: **groot, groter, grootst; mooi, mooier, mooist**; after *r* add **-der**: **duur → duurder**. Irregular: **goed, beter, best; veel, meer, meest; weinig, minder, minst; graag, liever, liefst**. **even … als** = as … as.
+      pt: |
+        **-er** (+ **dan**) e **-st**: **groot, groter, grootst; mooi, mooier, mooist**; depois de *r* acrescenta-se **-der**: **duur → duurder**. Irregulares: **goed, beter, best; veel, meer, meest; weinig, minder, minst; graag, liever, liefst**. **even … als** = tão … quanto.
+    examples:
+    - ["Mijn broer is ouder dan ik.", "My brother is older than me.", "Meu irmão é mais velho que eu.", "ouder"]
+    - ["Ik drink liever thee.", "I prefer tea.", "Prefiro chá.", "liever"]
+    match: {seq: [{word: [beter, best, meer, meest, minder, minst, liever, liefst, groter, kleiner, ouder, jonger, mooier, duurder]}]}
+    pool: [beter, best, meer, meest, liever, liefst, groter, kleiner]
+  - id: nl-diminutive
+    title: huisje, boompje, kopje
+    meaning: {en: "diminutives", pt: "diminutivos"}
+    intro:
+      en: |
+        **-je** (huisje), **-tje** after a vowel or l, n, r after a long vowel (stoeltje), **-pje** after m (boompje), **-etje** after a short vowel + l, m, n, r, ng (balletje), **-kje** (koninkje). Always **het**. Very frequent, often just friendly: **een kopje koffie, even een momentje.**
+      pt: |
+        **-je** (huisje), **-tje** depois de vogal ou de l, n, r após vogal longa (stoeltje), **-pje** depois de m (boompje), **-etje** depois de vogal breve + l, m, n, r, ng (balletje). Sempre **het**. Muito frequentes, muitas vezes só simpáticos: **een kopje koffie, even een momentje** (como *cafezinho*).
+    examples:
+    - ["Wil je een kopje koffie?", "Would you like a cup of coffee?", "Quer um cafezinho?", "kopje"]
+    match: {seq: [{pos: noun, re: "(je|jes)$"}]}
+
+- title: {en: Future and passive, pt: Futuro e passiva}
+  lessons:
+  - id: nl-future
+    title: ik zal, ik ga
+    meaning: {en: "the future", pt: "o futuro"}
+    intro:
+      en: |
+        **gaan** + infinitive for plans (**Ik ga morgen verhuizen**), **zullen** for promises, predictions and offers (**Ik zal je helpen. Zal ik het raam openen?**). Very often just the present with a time word: **Morgen werk ik thuis.**
+      pt: |
+        **gaan** + infinitivo para planos (**Ik ga morgen verhuizen** — vou me mudar amanhã), **zullen** para promessas, previsões e ofertas (**Ik zal je helpen. Zal ik het raam openen?**). Muitas vezes só o presente com uma palavra de tempo: **Morgen werk ik thuis.**
+    examples:
+    - ["Ik zal je morgen bellen.", "I'll call you tomorrow.", "Vou te ligar amanhã.", "zal"]
+    match: {seq: [{word: [zal, zult, zullen, zou, zouden]}, {pos: verb, mood: inf}], near: 6, gap: 0}
+    pool: [zal, zult, zullen, ga, gaat, gaan]
+  - id: nl-passive
+    title: wordt gebouwd, is gebouwd
+    meaning: {en: "the passive", pt: "a voz passiva"}
+    intro:
+      en: |
+        **worden** + participle for the action (**Het huis wordt gebouwd**; past **werd gebouwd**), **zijn** + participle for the perfect (**Het huis is gebouwd**). Agent with **door**. Impersonal passive with **er**: **Er wordt gedanst.**
+      pt: |
+        **worden** + particípio para a ação (**Het huis wordt gebouwd** — está sendo construída; passado **werd gebouwd**), **zijn** + particípio para o perfeito (**Het huis is gebouwd** — foi construída). Agente com **door**. Passiva impessoal com **er**: **Er wordt gedanst** (dança-se).
+    examples:
+    - ["De brief wordt morgen verstuurd.", "The letter will be sent tomorrow.", "A carta será enviada amanhã.", "wordt"]
+    - ["Het boek werd door haar geschreven.", "The book was written by her.", "O livro foi escrito por ela.", "werd"]
+    match: {seq: [{word: [word, wordt, worden, werd, werden]}, {re: "^ge\\p{L}+(t|d|en)$"}], near: 6, gap: 0}
+    pool: [wordt, worden, werd, werden, is, zijn, was]
