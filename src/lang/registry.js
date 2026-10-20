@@ -19,6 +19,7 @@ import { hungarian } from './hu/index.js';
 import { portuguese } from './pt/index.js';
 import { french } from './fr/index.js';
 import { spanish } from './es/index.js';
+import { english } from './en/index.js';
 
 export const LANGUAGES = [
   { code: 'la', path: '/', name: { en: 'Latin', pt: 'Latim' } },
@@ -41,9 +42,10 @@ export const LANGUAGES = [
   { code: 'pt', path: '/pt/', name: { en: 'Portuguese (Brazil)', pt: 'Português (Brasil)' } },
   { code: 'fr', path: '/fr/', name: { en: 'French', pt: 'Francês' } },
   { code: 'es', path: '/es/', name: { en: 'Spanish', pt: 'Espanhol' } },
+  { code: 'en', path: '/en/', name: { en: 'English', pt: 'Inglês' } },
 ];
 
-const DEFINITIONS = { la: latin, grc: greek, de: german, ja: japanese, ar: arabic, ru: russian, ko: korean, zh: chinese, mk: macedonian, fi: finnish, el: modernGreek, sa: sanskrit, cs: czech, pl: polish, is: icelandic, tr: turkish, hu: hungarian, pt: portuguese, fr: french, es: spanish };
+const DEFINITIONS = { la: latin, grc: greek, de: german, ja: japanese, ar: arabic, ru: russian, ko: korean, zh: chinese, mk: macedonian, fi: finnish, el: modernGreek, sa: sanskrit, cs: czech, pl: polish, is: icelandic, tr: turkish, hu: hungarian, pt: portuguese, fr: french, es: spanish, en: english };
 
 export function getLanguage(code) {
   return DEFINITIONS[code];
