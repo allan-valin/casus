@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 from html import unescape
@@ -80,6 +81,7 @@ class Translator:
     def _raw(self, texts: list) -> list:
         # the input must end with </s>: without it the model goes on writing after the sentence
         toks = [self.sp.encode(f"<2{self.ui}> {t}", out_type=str) + ["</s>"] for t in texts]
+        print(f"batch: {len(toks)} inputs, longest {max(map(len, toks))} tokens", file=sys.stderr, flush=True) if os.environ.get("MT_DEBUG") else None
         res = self.model.translate_batch(toks, beam_size=2, max_batch_size=4, no_repeat_ngram_size=6,
                                          max_decoding_length=min(512, max(32, int(1.8 * max(len(t) for t in toks)) + 8)))
         return [self.sp.decode(r.hypotheses[0]) for r in res]
