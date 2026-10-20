@@ -53,3 +53,7 @@ ar 0.4M · uk 0.3M · is 0.2M · mk 0.03M.
   Through English (beam 4) it is right in all tested sentences. Now: ja/zh/ko sources and Korean examples pivot via
   English (vendor/mt/cache.en-pivot.json, reused by de/mk/ar); 19,006 directly translated CJK sentences purged; ja and ko
   redone. ja>pt NOT released until a by-eye sample passes. Checker fixed (example pattern, CJK length ratio).
+- 2026-10-20 night: ko>pt and ko>en (example lines) RELEASED. By-eye check of the MADLAD example lines (via English):
+  ~50% had problems, ~25% serious → all 602 NIKL examples translated by Claude into pt and en (tools/mt_fixes/pt.yml,
+  en.yml; de/mk/ar still to do the same way). Rule from this: SHORT idiomatic example sentences = Claude; long prose =
+  MADLAD (via English for CJK) + by-eye proofreading + fixes. Badge text now names MADLAD + Claude.
