@@ -203,6 +203,7 @@
             {/if}
           </section>
         {/each}
+        {#if lesson.read && openInReader}<p class="read-story"><button class="to-reader" onclick={() => openInReader(lesson.read)}>📖 {t('learn.readStory')}</button>{@render say(lesson.read.split('\n')[0])}</p>{/if}
         {#if lesson.more?.length}
           <!-- more examples: Tatoeba sentences that show the lesson's point (tools/learn_curriculum.mjs) -->
           <section class="l-sec more-examples" id="sec-more">

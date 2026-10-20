@@ -175,13 +175,13 @@ export function speakLinks(node, opts) {
   function apply({ speak } = {}) {
     node.querySelectorAll('a.to-speak').forEach((a) => a.remove());
     if (!speak) return;
-    for (const b of node.querySelectorAll('strong, b')) {
+    for (const b of node.querySelectorAll('strong, b, .say')) {
       const text = b.textContent ?? '';
       if (!speakable(text) || b.closest('th')) continue;
       const a = document.createElement('a');
       a.className = 'to-speak'; a.href = speak(text.trim()); a.target = '_blank'; a.rel = 'noopener'; a.textContent = '🗣';
       a.title = opts?.title ?? '';
-      b.after(a);
+      if (b.classList?.contains('say')) b.append(' ', a); else b.after(a);
     }
   }
   queueMicrotask(() => apply(opts));

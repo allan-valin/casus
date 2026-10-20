@@ -496,6 +496,11 @@ def main(code: str) -> None:
         k = book_lessons(t, f"{code}-pg{n}", credit, f"{short} ({year}), Project Gutenberg #{n}, public domain", lvls, index, lessons,
                          questions, None, {"en": f"{short.split(',')[0]}: ", "pt": f"{short.split(',')[0]}: "}, heading=heading, min_chars=300)
         print(f"{code}: {k} sections from {short} (Gutenberg #{n}){' → reference' if kind == 'reference' else ''}")
+    # graded readers: Global Storybooks, CC BY stories only (vendor/global-asp, vendor/global-pb)
+    story_dirs = [ROOT / "vendor" / repo / code for repo in ("global-asp", "global-pb") if (ROOT / "vendor" / repo / code).is_dir()]
+    if story_dirs:
+        from learn_storybooks import storybook_lessons
+        print(f"{code}: {storybook_lessons(code, story_dirs, index, lessons, questions)} stories from Global Storybooks")
     if code == "pl" and (ROOT / "vendor" / "pl-exam" / "du.txt").exists():
         from learn_pl_exam import pl_exam_lessons
         print(f"pl: {pl_exam_lessons(ROOT / 'vendor' / 'pl-exam' / 'du.txt', index, lessons, questions)} points of the official exam grammar list (Dz.U. 2025 poz. 217)")
