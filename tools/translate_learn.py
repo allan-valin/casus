@@ -56,8 +56,9 @@ class Translator:
         self.new = 0
 
     def _raw(self, texts: list) -> list:
-        toks = [self.sp.encode(f"<2{self.ui}> {t}", out_type=str) for t in texts]
-        res = self.model.translate_batch(toks, beam_size=2, max_batch_size=1536, batch_type="tokens", no_repeat_ngram_size=4, repetition_penalty=1.15,
+        # the input must end with </s>: without it the model goes on writing after the sentence
+        toks = [self.sp.encode(f"<2{self.ui}> {t}", out_type=str) + ["</s>"] for t in texts]
+        res = self.model.translate_batch(toks, beam_size=2, max_batch_size=6,
                                          max_decoding_length=min(512, max(32, int(1.8 * max(len(t) for t in toks)) + 8)))
         return [self.sp.decode(r.hypotheses[0]) for r in res]
 

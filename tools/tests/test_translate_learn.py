@@ -126,3 +126,25 @@ def test_out_of_memory_halves_the_batch_and_a_hopeless_sentence_keeps_its_origin
         return [f"<pt>{texts[0]}"]
     tr._raw = raw
     assert tr._model(["a", "b", "HUGE c"]) == ["<pt>a", "<pt>b", "HUGE c"]
+
+
+def test_the_model_input_ends_with_the_end_of_sequence_token():
+    """without </s> MADLAD keeps writing after the sentence ("…, como se fosse um livro"): found 2026-10-20"""
+    tr = object.__new__(T.Translator)
+    tr.ui = "pt"
+    seen = []
+
+    class SP:
+        def encode(self, text, out_type=str):
+            return text.split()
+
+        def decode(self, toks):
+            return " ".join(toks)
+
+    class Model:
+        def translate_batch(self, toks, **kw):
+            seen.extend(toks)
+            return [type("R", (), {"hypotheses": [t[1:-1]]})() for t in toks]
+    tr.sp, tr.model = SP(), Model()
+    tr._raw(["Hello there"])
+    assert seen[0][-1] == "</s>" and seen[0][0] == "<2pt>"
