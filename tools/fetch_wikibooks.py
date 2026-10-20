@@ -6,6 +6,7 @@ import json
 import re
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -17,8 +18,14 @@ UA = {"User-Agent": "Casus/1.0 (https://allan-valin.github.io/casus/; language-l
 
 def get(params):
     q = urllib.parse.urlencode({**params, "format": "json", "formatversion": 2})
-    with urllib.request.urlopen(urllib.request.Request(f"{API}?{q}", headers=UA), timeout=60) as r:
-        return json.load(r)
+    for attempt in range(6):          # Wikimedia answers 429 when asked too fast: wait longer each time
+        try:
+            with urllib.request.urlopen(urllib.request.Request(f"{API}?{q}", headers=UA), timeout=60) as r:
+                return json.load(r)
+        except urllib.error.HTTPError as e:
+            if e.code != 429 or attempt == 5:
+                raise
+            time.sleep(30 * (attempt + 1))
 
 
 def parsed(title):
