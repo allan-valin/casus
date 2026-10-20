@@ -37,3 +37,9 @@ def test_a_changed_word_in_another_script_is_flagged():
     orig = "<p>Try to read the words that contain the letter ㅗ and then read them again aloud.</p>"
     out = "<p>Tente ler as palavras que contêm a letra ㅜ e depois leia-as de novo em voz alta.</p>"
     assert "script text changed: ㅗ" in problems(orig, out, "en")
+
+
+def test_a_translated_link_is_not_a_lost_example():
+    orig = '<p>La langue est parlée en <a href="/w/Corée">Corée du Sud</a> et ailleurs dans le monde entier.</p>'
+    out = '<p>A língua é falada na <a href="/w/Corée">Coreia do Sul</a> e em outros lugares do mundo inteiro.</p>'
+    assert problems(orig, out, "fr") == []

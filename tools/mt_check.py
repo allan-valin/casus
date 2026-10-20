@@ -15,10 +15,12 @@ from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from mt_html import INLINE, SRC_SCRIPT, is_prose  # noqa: E402
+from mt_html import INLINE, SRC_SCRIPT, TRANSPARENT, is_prose  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
-INLINE_RE = re.compile(r"<(" + "|".join(sorted(INLINE)) + r")\b[^>]*>.*?</\1>", re.S)
+# examples: inline elements the translation must keep as they are (a link or plain span is prose, unless it has lang=)
+INLINE_RE = re.compile(r"<(" + "|".join(sorted(INLINE - TRANSPARENT)) + r")\b[^>]*>.*?</\1>|<(?:" + "|".join(sorted(TRANSPARENT)) + r")\b[^>]*\blang=[^>]*>.*?</(?:"
+                       + "|".join(sorted(TRANSPARENT)) + r")>", re.S)
 
 
 def _text(h: str) -> str:
@@ -36,7 +38,7 @@ def problems(orig: str, out: str, src: str) -> list:
         found += [f"script text changed: {w}" for w in gone]
     for para in re.findall(r"<(?:p|li|td|h\d)\b[^>]*>(.*?)</(?:p|li|td|h\d)>", out, re.S):
         plain = _text(INLINE_RE.sub(" ", para))
-        if len(plain) > 40 and is_prose(plain, src) and plain in _text(INLINE_RE.sub(" ", orig)):
+        if len(plain) > 10 and is_prose(plain, src) and plain in _text(INLINE_RE.sub(" ", orig)):
             found.append(f"untranslated: {plain[:80]}")
     def top(h):
         words = _text(h).split()
