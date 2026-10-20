@@ -38,3 +38,8 @@ ar 0.4M · uk 0.3M · is 0.2M · mk 0.03M.
   Settings: beam 2, batch 16 (bench: 4 → 600 chars/s, 16 → 1650, 24 → 1950 but 5.6 GB peak), no_repeat_ngram 6, decode ≤ 512; CJK pieces ≤ 200 chars.
   After each pair: release_data.sh <code>, merge to main, push, run the casus-asia and casus-world workflows, live-check (Allan checks each pair).
   Run: tools/mt.sh <ui> <code> [--redo]; check: python3 tools/mt_check.py <code> --ui <ui>; then release_data.sh <code>.
+- 2026-10-20 evening: ko>pt REDONE and released after Allan found French left in the French Korean book: links were
+  protected like examples (now prose), short lines/dialogue not prose (fixed), NIKL intros were English copies under pt
+  (builder fixed, data patched), Wikibooks navigation panels dropped. Check: 355 sections, 12 flagged (fragments).
+  ja>pt: kanbun crashed the GPU (crowded runs skipped); output-length guard rejected right Japanese translations
+  (now ×5 for CJK; 7026 rejected sentences purged and redone); batch 16 scaled down for long inputs.
