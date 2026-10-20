@@ -23,11 +23,17 @@ ar 0.4M · uk 0.3M · is 0.2M · mk 0.03M.
        text protected; tests
 3. [x] translate_learn: any UI (en pt de mk ar); page gets mt[ui] and src (original's language); tests
 4. [x] Learn page: ⇄ AI-translated badge + toggle translation / original (default translation in UI language); tests
-5. [ ] Proofreading: automatic checks (examples intact, ratio, untranslated runs, placeholder loss) + sample read per book
+5. [x] Proofreading: automatic checks (examples intact, ratio, untranslated runs, placeholder loss) + sample read per book
 6. [ ] Pairs done (translated → checked → released):
-       - [ ] ko>pt  - [ ] ja>pt  - [ ] de>ar  - [ ] de>mk  - [ ] fr>pt  - [ ] en>pt  - [ ] it>pt  - [ ] …
+       - [x] ko>pt  - [ ] ja>pt  - [ ] de>ar  - [ ] de>mk  - [ ] fr>pt  - [ ] en>pt  - [ ] it>pt  - [ ] …
 
 ## Log
 - 2026-10-20: steps 2–3 (any explanation language, any UI; original kept as html.orig when translating into English).
 - 2026-10-20: step 4 (⇄ badge naming the original's language, toggle original/translation, default translation).
 - 2026-10-20: cache-only re-application (translate_learn --cache-only; build_learn does it for every UI cache) so rebuilds keep translations. Step 5 checker: tools/mt_check.py <code> --ui <ui> → data/<code>/mt-check.<ui>.json.
+- 2026-10-20: ko>pt DONE and released (286 pages; 82 sections checked, 1 flagged; 2404 sentences, 46 kept in the
+  original). Proofreading found and fixed: missing </s> (model invented clauses — ALL earlier MT discarded, incl. this
+  morning's cache.de), entities, line breaks, loops (output > 2× input rejected), IPA and other-script words now
+  protected, placeholder retry with braces, "used to mean"/"tense" corrections in tools/mt_fixes/pt.yml.
+  Settings: beam 2, batch 4, no_repeat_ngram 6, decode ≤ 512 (batch 6+ ran the 6 GB GPU out of memory).
+  Run: scratchpad mt.sh <ui> <code> [--redo]; check: python3 tools/mt_check.py <code> --ui <ui>; then release_data.sh <code>.
