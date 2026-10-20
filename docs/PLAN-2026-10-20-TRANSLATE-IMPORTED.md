@@ -19,12 +19,13 @@ ar 0.4M · uk 0.3M · is 0.2M · mk 0.03M.
 
 ## Steps
 1. [ ] Ledger + memory pointer (this file)
-2. [ ] mt_html: translate prose in any source language (not only English); per-block language detection; taught-language
+2. [x] mt_html: translate prose in any source language (not only English); per-block language detection; taught-language
        text protected; tests
-3. [ ] translate_learn: any UI (en pt de mk ar); page gets mt[ui] and src (original's language); tests
+3. [x] translate_learn: any UI (en pt de mk ar); page gets mt[ui] and src (original's language); tests
 4. [ ] Learn page: ⇄ AI-translated badge + toggle translation / original (default translation in UI language); tests
 5. [ ] Proofreading: automatic checks (examples intact, ratio, untranslated runs, placeholder loss) + sample read per book
 6. [ ] Pairs done (translated → checked → released):
        - [ ] ko>pt  - [ ] ja>pt  - [ ] de>ar  - [ ] de>mk  - [ ] fr>pt  - [ ] en>pt  - [ ] it>pt  - [ ] …
 
 ## Log
+- 2026-10-20: steps 2–3 (any explanation language, any UI; original kept as html.orig when translating into English).

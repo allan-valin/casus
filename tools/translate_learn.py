@@ -1,14 +1,17 @@
 #!/usr/bin/env python3
-"""Learn pages in German by machine translation (Allan, 2026-10-20: Learn content in German, Arabic and Macedonian).
+"""Learn pages in every interface language by machine translation (Allan, 2026-10-20: every imported, human-written
+book in en/pt/de/mk/ar, tagged AI-translated; the original stays one click away).
 
 Model: MADLAD-400 3B (Google, Apache-2.0), CTranslate2 int8 conversion (vendor/mt/madlad400-3b-ct2), on the GPU.
-Only English prose is translated (tools/mt_html.py: forms of the taught language and tables of forms stay as they
-are); every translation is kept in vendor/mt/cache.<ui>.json, so a rebuild translates only what is new. Pages get
-"mt": {"<ui>": "MADLAD-400"} and the page says the text is machine-translated. Macedonian and Arabic are NOT done
-this way (the model gets grammar terms wrong there); they come from tools/curricula/<code>/i18n/<ui>.yml.
+Only prose in the page's explanation language is translated (its source: "Wikibooks (fr)" → French, a book written in
+English → English; tools/mt_html.py keeps forms of the taught language and tables of forms as they are); every
+translation is kept in vendor/mt/cache.<ui>.json, so a rebuild translates only what is new. Pages get "mt": {"<ui>":
+"MADLAD-400"} and "src" (the original's language); a field translated into English keeps the original as "orig".
+AI-written lessons are not done this way (tools/curricula/<code>/i18n/<ui>.yml), nor graded readers (the story is
+the lesson).
 
 usage (the GPU venv; CTranslate2 needs CUDA 12 cuBLAS on LD_LIBRARY_PATH):
-  python tools/translate_learn.py <code> [<code>…] [--ui de]"""
+  python tools/translate_learn.py <code> [<code>…] --ui pt"""
 from __future__ import annotations
 
 import argparse
@@ -18,11 +21,14 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from mt_html import PH, dedupe, is_english, protect_terms, translate_html  # noqa: E402
+from mt_html import PH, dedupe, is_prose, protect_terms, translate_html  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 MODEL = ROOT / "vendor" / "mt" / "madlad400-3b-ct2"
-SENT = re.compile(r"(?<=[.!?;])\s+(?=[A-Z\[(])")
+SENT = re.compile(r"(?<=[.!?;])\s+(?=[A-ZÀ-ÞА-ЯЁΑ-Ω\[(¿¡])|(?<=[。！？])")
+# a book whose source line names no edition: its explanation language when it is not English
+SRC_OF = {"Grammaire française": "fr", "Antología abierta": "es", "Dz.U.": "pl", "Gramática de la lengua castellana": "es",
+          "Kleine deutsche Sprachlehre": "de", "Le Premier Livre": "fr"}
 
 
 class Translator:
@@ -65,63 +71,96 @@ class Translator:
         self.cache_file.write_text(json.dumps(self.cache, ensure_ascii=False), encoding="utf-8")
 
 
-def text_field(obj: dict, tr) -> bool:
-    """a short text (meaning, title): translated whole when it is English words"""
-    en = obj.get("en")
-    if not en or obj.get(tr.ui) or not re.search(r"[A-Za-z]{3}", en):
+def source_language(page: dict) -> str | None:
+    """the language a page explains in: the edition its source names, else a known book's, else English; None for a
+    graded reader (the text is the taught language itself)"""
+    src = page.get("source") or ""
+    if "Storybooks" in src:
+        return None
+    m = re.search(r"\b(?:Wikibooks|Wikiversity|Wikisource) \(([a-z]{2,3})\)", src)
+    if m:
+        return m.group(1)
+    return next((v for k, v in SRC_OF.items() if k in src), "en")
+
+
+def _orig(obj: dict) -> str:
+    return obj.get("orig", obj.get("en"))
+
+
+def _todo(obj: dict, ui: str) -> bool:
+    """not yet in `ui`: missing or only a copy of the original (into English: the original not yet moved aside)"""
+    if not _orig(obj):
         return False
-    obj[tr.ui] = tr([en])[0] if (is_english(en) or len(en.split()) <= 6) else en
+    return "orig" not in obj if ui == "en" else (not obj.get(ui) or obj[ui] == _orig(obj))
+
+
+def _put(obj: dict, ui: str, out: str, src: str) -> None:
+    if ui == "en" and src != "en" and "orig" not in obj:
+        obj["orig"] = obj["en"]
+    obj[ui] = out
+
+
+def text_field(obj: dict, tr, src: str = "en") -> bool:
+    """a short text (meaning, title): translated whole when it is words of the explanation language"""
+    orig = _orig(obj)
+    if not orig or src == tr.ui or not _todo(obj, tr.ui) or not re.search(r"[^\W\d_]{3}", orig):
+        return False
+    if not (is_prose(orig, src) or len(orig.split()) <= 6):
+        return False
+    _put(obj, tr.ui, tr([orig])[0], src)
     return True
 
 
-def html_field(obj: dict, tr) -> bool:
-    en = obj.get("en")
-    if not en or obj.get(tr.ui):
+def html_field(obj: dict, tr, src: str = "en") -> bool:
+    orig = _orig(obj)
+    if not orig or src == tr.ui or not _todo(obj, tr.ui):
         return False
-    out = translate_html(en, tr)
-    if out != en:
-        obj[tr.ui] = out
+    out = translate_html(orig, tr, src)
+    if out != orig:
+        _put(obj, tr.ui, out, src)
         return True
     return False
 
 
 def translate_language(code: str, tr) -> int:
+    """the imported pages of one language into tr.ui; then the index's titles and meanings of those pages"""
     data = ROOT / "data" / code
-    index = json.loads((data / "learn.json").read_text(encoding="utf-8"))
-    n = 0
-    for lv in index["levels"]:
-        if isinstance(lv.get("title"), dict):
-            text_field(lv["title"], tr)
-        for t in lv["topics"]:
-            if isinstance(t.get("title"), dict):
-                text_field(t["title"], tr)
-            for e in t["lessons"]:
-                if isinstance(e.get("meaning"), dict):
-                    text_field(e["meaning"], tr)
-    if isinstance(index.get("credit"), dict):
-        html_field(index["credit"], tr) or text_field(index["credit"], tr)
-    (data / "learn.json").write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    srcs, n = {}, 0
     for f in sorted((data / "learn").glob("*.json")):
         if f.name.startswith("q-"):
             continue
         page = json.loads(f.read_text(encoding="utf-8"))
-        if page.get("kind") in ("vocab", "kanji"):
+        if page.get("kind") in ("vocab", "kanji") or page.get("ai") or page.get("generated"):
             continue
+        src = source_language(page)
+        if not src or src == tr.ui:
+            continue
+        srcs[page.get("id", f.stem)] = src
         changed = False
         for key in ("meaning", "topic"):
             if isinstance(page.get(key), dict):
-                changed |= text_field(page[key], tr)
-        if isinstance(page.get("intro"), dict):
-            changed |= html_field(page["intro"], tr)
+                changed |= text_field(page[key], tr, src)
         for s in page.get("sections", []):
-            if isinstance(s.get("title"), dict):
-                changed |= text_field(s["title"], tr)
             if isinstance(s.get("html"), dict):
-                changed |= html_field(s["html"], tr)
+                changed |= html_field(s["html"], tr, src)
         if changed:
             page.setdefault("mt", {})[tr.ui] = "MADLAD-400"
+            page["src"] = src
             f.write_text(json.dumps(page, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
             n += 1
+    index_file = data / "learn.json"
+    if index_file.exists():
+        index = json.loads(index_file.read_text(encoding="utf-8"))
+        for lv in index.get("levels", []):
+            for t in lv.get("topics", []):
+                ids = [e.get("id") for e in t.get("lessons", [])]
+                tsrc = next((srcs[i] for i in ids if i in srcs), None)
+                if tsrc and isinstance(t.get("title"), dict):
+                    text_field(t["title"], tr, tsrc)
+                for e in t.get("lessons", []):
+                    if e.get("id") in srcs and isinstance(e.get("meaning"), dict):
+                        text_field(e["meaning"], tr, srcs[e["id"]])
+        index_file.write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     tr.save()
     return n
 
@@ -129,7 +168,7 @@ def translate_language(code: str, tr) -> int:
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("codes", nargs="+")
-    ap.add_argument("--ui", default="de")
+    ap.add_argument("--ui", required=True, choices=["en", "pt", "de", "mk", "ar"])
     a = ap.parse_args()
     tr = Translator(a.ui)
     for c in a.codes:

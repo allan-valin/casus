@@ -15,13 +15,46 @@ PH = re.compile(r"\[(\d+)\]")
 
 
 def is_english(text: str) -> bool:
-    words = re.findall(r"[A-Za-z']+", text)
+    return is_prose(text, "en")
+
+
+# the most frequent function words of each explanation language imported books use (Allan, 2026-10-20: every
+# imported book translated); a run is prose of the language when enough of its words are among them
+STOPS = {
+    "en": STOP,
+    "fr": set("le la les un une des de du et est sont en à au aux dans pour par sur avec que qui ne pas on il elle ce cette se son sa ses leur plus "
+              "comme mais ou si nous vous ils elles être avoir fait".split()),
+    "de": set("der die das den dem des ein eine einen einem einer und ist sind im in zu mit von für auf nicht sich auch als wie wird werden "
+              "man es er sie wir ihr dass oder bei nach aus kann".split()),
+    "es": set("el la los las un una unos de del y en es son que se con por para no al lo como más pero o su sus este esta".split()).union({"también"}),
+    "pt": set("o a os as um uma de do da dos das e em no na nos nas é são que se com por para não ao como mais mas ou seu sua este esta".split()).union({"também"}),
+    "it": set("il lo la i gli le un una di del della e è sono in nel nella che si con per non al come più ma o suo sua questo questa".split()).union({"anche"}),
+    "nl": set("de het een en van in is zijn op te met voor niet die dat als ook aan bij door wordt worden er je we ze hij zij maar of".split()),
+    "pl": set("i w na z się nie jest to że do o od po jak tak ale lub oraz przez dla są być który która".split()),
+    "ru": set("и в на с не что это как по к о из за от для или но же бы так также есть быть который которые".split()),
+    "uk": set("і й в у на з не що це як по до о із за від для або але же би так також є бути який які".split()),
+    "cs": set("a v na s se je to že do o z od po jak tak ale nebo pro být který která".split()),
+    "fi": set("ja on ei se että ovat tai kun myös kuin mutta niin jos joka mikä sen ne hän".split()),
+    "hu": set("a az és egy hogy nem is van meg de ha mint vagy csak már még".split()),
+    "el": set("και το η ο τα του της των στο στη με για να που δεν είναι από σε ένα μια".split()),
+    "tr": set("ve bir bu da de ile için ne çok gibi daha olan olarak ama veya".split()),
+    "is": set("og að í á er sem en við með til um ekki það hann hún".split()),
+}
+SCRIPT = {"ja": r"[\u3040-\u30ff\u4e00-\u9fff]", "zh": r"[\u4e00-\u9fff]", "ko": r"[\uac00-\ud7af]",
+          "ar": r"[\u0600-\u06ff]", "grc": r"[\u0370-\u03ff\u1f00-\u1fff]", "sa": r"[\u0900-\u097f]"}
+
+
+def is_prose(text: str, lang: str) -> bool:
+    """is this run explanation in `lang` (worth translating), not a form or list of forms of the taught language?"""
+    if lang in SCRIPT:
+        letters = re.findall(r"[^\W\d_]", text)
+        return len(letters) >= 8 and len(re.findall(SCRIPT[lang], text)) / len(letters) >= 0.6 and bool(re.search(r"[。、，．！？؟.,]", text) or len(letters) >= 20)
+    words = re.findall(r"[^\W\d_]+(?:'[^\W\d_]+)?", text)
     if len(words) < 3:
         return False
-    letters = len(re.findall(r"[^\W\d_]", text))
-    if letters and len(re.findall(r"[A-Za-z]", text)) / letters < 0.8:
-        return False
-    return sum(w.lower() in STOP for w in words) >= max(1, len(words) // 8)
+    stops = STOPS.get(lang, STOP)
+    return sum(w.lower() in stops for w in words) >= max(1, len(words) // 8) and \
+        sum(w.lower() in stops for w in words) > max((sum(w.lower() in o for w in words) for k, o in STOPS.items() if k != lang), default=0) * 0.7
 
 
 class _Tokens(HTMLParser):
@@ -48,7 +81,7 @@ class _Tokens(HTMLParser):
         self.out.append(("text", None, f"&#{name};"))
 
 
-def segments(html: str) -> list:
+def segments(html: str, src: str = "en") -> list:
     """the page as a list of pieces: {"raw": html kept as is} or a prose run {"text": with placeholders, "inline":
     [html of each placeholder], "translate": bool}"""
     p = _Tokens()
@@ -62,7 +95,7 @@ def segments(html: str) -> list:
             return
         text = "".join(run)
         plain = PH.sub(" ", text)
-        out.append({"text": text, "inline": inline, "translate": is_english(plain)})
+        out.append({"text": text, "inline": inline, "translate": is_prose(plain, src)})
         run, inline = [], []
 
     in_table = 0
@@ -95,9 +128,10 @@ def segments(html: str) -> list:
     return out
 
 
-def translate_html(html: str, translate) -> str:
-    """translate(list of strings) -> list of strings, the model call; returns the page with its English prose replaced"""
-    segs = segments(html)
+def translate_html(html: str, translate, src: str = "en") -> str:
+    """translate(list of strings) -> list of strings, the model call; returns the page with its prose in `src` (the
+    book's explanation language) replaced"""
+    segs = segments(html, src)
     todo = [s for s in segs if "text" in s and s["translate"]]
     done = translate([s["text"].strip() for s in todo]) if todo else []
     for s, t in zip(todo, done):

@@ -50,3 +50,26 @@ def test_a_repeated_translation_is_cut_to_once():
     assert dedupe("Beispiele Beispiele:", "Examples") == "Beispiele"
     assert dedupe("Das Verb ist unregelmäßig. Das Verb ist unregelmäßig.", "The verb is irregular.") == "Das Verb ist unregelmäßig."
     assert dedupe("Der Akkusativ: direktes Objekt.", "the accusative: direct object") == "Der Akkusativ: direktes Objekt"
+
+
+def test_prose_in_any_explanation_language():
+    """imported books explain in French, German, Spanish…, Japanese (Allan, 2026-10-20: translate every imported book)"""
+    from mt_html import is_prose
+    assert is_prose("Le verbe se conjugue avec les terminaisons du présent et on ajoute un s.", "fr")
+    assert not is_prose("The verb takes the endings of the present tense.", "fr")
+    assert is_prose("Das Verb steht im Nebensatz immer am Ende des Satzes.", "de")
+    assert is_prose("El verbo se conjuga con las terminaciones del presente.", "es")
+    assert is_prose("動詞は文の最後に置かれることが多いです。", "ja")
+    assert not is_prose("λύω λύεις λύει", "fr")
+    assert is_prose("The verb takes the endings of the present tense.", "en")
+    assert is_prose("O verbo concorda com o sujeito em número e pessoa.", "pt")
+    assert is_prose("Il verbo si coniuga con le desinenze del presente.", "it")
+    assert is_prose("Het werkwoord staat in de bijzin aan het eind.", "nl")
+
+
+def test_segments_translate_only_the_explanation_language():
+    from mt_html import segments
+    segs = segments("<p>Le présent de <b>λύω</b> se forme ainsi.</p><p>λύω, λύεις, λύει, λύομεν</p>", src="fr")
+    runs = [s for s in segs if "text" in s]
+    assert runs[0]["translate"] and runs[0]["inline"] == ["<b>λύω</b>"]
+    assert not runs[1]["translate"]
