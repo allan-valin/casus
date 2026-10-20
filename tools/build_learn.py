@@ -310,6 +310,15 @@ def sentences_of(code: str) -> list:
 def main(code: str) -> None:
     """data/<code>/learn.json (the index), learn/<lesson>.json (one lesson), learn/questions-<level>.json"""
     index, lessons, questions = builder(code)()
+    if code == "sa" and (ROOT / "vendor" / "learnsanskrit" / "html").exists():
+        from learn_lso import lso_lessons
+        print(f"sa: {lso_lessons(ROOT / 'vendor' / 'learnsanskrit', index, lessons, questions)} lessons from the learnsanskrit.org guide")
+    if code == "cs" and (ROOT / "vendor" / "nigrin" / "nigrin.txt").exists():
+        from learn_nigrin import nigrin_lessons
+        print(f"cs: {nigrin_lessons(ROOT / 'vendor' / 'nigrin' / 'nigrin.txt', index, lessons, questions)} lessons from Nigrin's Bohemian Grammar (1918)")
+    if code == "ko" and (ROOT / "vendor" / "nikl" / "csv" / "문법.csv").exists():
+        from learn_ko_nikl import nikl_lessons
+        print(f"ko: {nikl_lessons(ROOT / 'vendor' / 'nikl' / 'csv' / '문법.csv', ROOT / 'vendor' / 'kodict' / 'grammar.json', index, lessons, questions)} lessons from the NIKL syllabus")
     if code in EXPAND:
         from learn_expand import expand
         n = expand(code, ROOT / "data" / code, index, lessons, questions, sentences_of(code), cases=code in CASE_LANGS)

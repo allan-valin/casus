@@ -235,3 +235,13 @@ apparatus and editorial choices, so each bundled passage records its source and 
 ## Development dependencies
 
 - vitest — MIT
+
+## Learn tab: imported courses and generated lessons (2026-10-20)
+
+- **Korean**: the grammar list of the International Standard Curriculum for Korean (국립국어원 NIKL, 2017, list
+  revised 2020; KOGL type 1 — attribution: korean.go.kr report 932), 336 points; definitions and examples from
+  한국어기초사전 (NIKL, CC BY-SA 2.0 KR).
+- **Czech**: Charles Nigrin, *Bohemian Grammar* (1918), Project Gutenberg #50595, public domain.
+- **Sanskrit**: the learnsanskrit.org guide (CC BY 4.0, per page).
+- **Generated lessons** (every spaced-script language): function words, verbs, vocabulary and phrases built by Casus
+  from Wiktionary (CC BY-SA, via kaikki.org) and Tatoeba (CC BY 2.0 FR); marked "generated" on every page.

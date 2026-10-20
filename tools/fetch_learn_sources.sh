@@ -54,4 +54,25 @@ if [ ! -d "$V/dcs-src" ]; then
   (cd "$V/dcs-src" && git sparse-checkout set "dcs/data/conllu/files/Hitopadeśa" "dcs/data/conllu/files/Śukasaptati" \
     "dcs/data/conllu/files/Vetālapañcaviṃśatikā" "dcs/data/conllu/files/Kathāsaritsāgara" "dcs/data/conllu/files/Rāmāyaṇa")
 fi
+# Czech: Nigrin, Bohemian Grammar (1918, PD, Gutenberg #50595)
+mkdir -p "$V/nigrin"; [ -s "$V/nigrin/nigrin.txt" ] || curl -sfL https://www.gutenberg.org/cache/epub/50595/pg50595.txt -o "$V/nigrin/nigrin.txt"
+# Korean: NIKL International Standard Curriculum grammar/vocabulary list (KOGL type 1), as CSV
+mkdir -p "$V/nikl"; [ -s "$V/nikl/grammar-vocab-list.xlsx" ] || curl -sfL "https://www.korean.go.kr/common/download.do?file_path=reportData&c_file_name=157339df-1904-443a-b1a9-d6d34578ba93.xlsx&o_file_name=list.xlsx" -o "$V/nikl/grammar-vocab-list.xlsx"
+python3 "$(dirname "$0")/xlsx_csv.py" "$V/nikl/grammar-vocab-list.xlsx" "$V/nikl/csv"
+python3 "$(dirname "$0")/build_kodict_grammar.py"
+# Sanskrit: the learnsanskrit.org guide (CC BY 4.0 per page): the repository for its index, the rendered pages, politely
+[ -d "$V/learnsanskrit" ] || git clone -q --depth 1 https://github.com/sanskrit/learnsanskrit.org.git "$V/learnsanskrit"
+mkdir -p "$V/learnsanskrit/html"
+python3 - "$V/learnsanskrit" <<'PY' > "$V/learnsanskrit/pages.txt"
+import json, sys
+root = sys.argv[1] + "/content/guide"
+for t in json.load(open(root + "/index.json"))["topics"]:
+    try:
+        for l in json.load(open(f"{root}/{t}/index.json")).get("lessons", []):
+            print(f"/guide/{t}/{l}/")
+    except FileNotFoundError:
+        pass
+PY
+while read p; do f="$V/learnsanskrit/html/$(echo "$p" | sed 's#^/guide/##;s#/$##;s#/#__#g').html"
+  [ -s "$f" ] || { curl -sfL "https://www.learnsanskrit.org$p" -o "$f"; sleep 1.5; }; done < "$V/learnsanskrit/pages.txt"
 echo "Learn sources in $V"

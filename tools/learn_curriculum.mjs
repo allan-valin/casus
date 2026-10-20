@@ -98,6 +98,13 @@ async function main(code) {
     const page = await json(`learn/${l.id}.json`);
     for (const text of page.drill ?? []) drill.push({ id: null, text, only: l.id });
   }
+  // a lesson whose every rule needs one of a list of words (most generated lessons) is only tried on sentences that
+  // have one of them: with hundreds of lessons and hundreds of thousands of sentences, matching every rule is slow
+  for (const l of lessons) {
+    const rules = Array.isArray(l.match) ? l.match : [l.match];
+    const needs = rules.map((r) => r.seq?.find((c) => c.word)?.word);
+    l.needs = needs.every(Boolean) ? new Set(needs.flat().map(norm)) : null;
+  }
   const t0 = Date.now();
   let read = 0;
   const texts = corpus.filter((t) => !unsuitable('', t)).map((text) => ({ id: null, text, s: simplicity(text.split(/[\s.,!?;:·;]+/u).filter(Boolean), (w) => freq.get(w)) }))
@@ -111,7 +118,9 @@ async function main(code) {
     read += 1;
     // a gap needs some context: three words at least
     if (blocks.filter((b) => /[\p{L}\p{N}]/u.test(b.token.surface)).length < 3) continue;
+    const present = new Set(blocks.map((b) => norm(b.token.surface)));
     for (const l of open) {
+      if (l.needs && ![...present].some((w) => l.needs.has(w))) continue;
       // one sentence once per lesson (a text repeats its formulas: καὶ ὁ Χαιρεκράτης εἶπεν·)
       const done = l.texts ?? (l.texts = new Set());
       if (done.has(norm(text))) continue;
