@@ -150,8 +150,10 @@ def test_the_model_input_ends_with_the_end_of_sequence_token():
     assert seen[0][-1] == "</s>" and seen[0][0] == "<2pt>"
 
 
-def test_lines_are_translated_one_by_one():
-    assert T.pieces_of("Acorns may measure heights,\nthough varying very little.") == ["Acorns may measure heights,\n", "though varying very little."]
+def test_a_soft_line_break_inside_a_paragraph_does_not_cut_the_sentence():
+    """JLPT Grammar Enhanced wraps its lines: cutting there gave fragments ('[2] takes it as the') to the model
+    (2026-10-20); a real break is <br> or a new block, which already splits the text"""
+    assert T.pieces_of("[2] takes it as the\nsecond half in [1].  It rained.") == ["[2] takes it as the second half in [1].", "It rained."]
 
 
 def test_an_output_far_longer_than_its_input_is_not_trusted():
@@ -288,3 +290,32 @@ def test_redo_also_replaces_the_intro(tmp_path, monkeypatch):
     monkeypatch.setattr(T, "ROOT", tmp_path)
     T.translate_language("xx", Fake("pt"), redo=True)
     assert json.loads(f.read_text())["intro"]["pt"].startswith("<p>«pt»")
+
+
+def test_fixes_also_come_from_a_folder_per_language(tmp_path, monkeypatch):
+    """a book translated by Claude has its own file: tools/mt_fixes/<ui>/<book>.yml"""
+    (tmp_path / "tools" / "mt_fixes" / "pt").mkdir(parents=True)
+    (tmp_path / "tools" / "mt_fixes" / "pt" / "jlpt.yml").write_text('"It is cold.": "Está frio."\n', encoding="utf-8")
+    monkeypatch.setattr(T, "ROOT", tmp_path)
+    assert T.fixes("pt") == {"It is cold.": "Está frio."}
+
+
+def test_the_pieces_a_book_sends_can_be_listed_without_the_model(tmp_path, monkeypatch):
+    """tools/mt_pieces.py: the exact sentences (with placeholders) a book needs translated, for Claude to translate"""
+    body = "<p>The particle <b>は</b> marks the topic. It is cold today.</p>"
+    page(tmp_path / "data", "n5-1", id="n5-1", source="JLPT Grammar Enhanced (CC BY-SA 4.0)", sections=[{"id": "a", "html": {"en": body}}])
+    page(tmp_path / "data", "x-1", id="x-1", source="Wikibooks (fr), X", sections=[{"id": "a", "html": {"en": "<p>Le présent se forme avec les terminaisons.</p>"}}])
+    (tmp_path / "data" / "xx" / "learn.json").write_text(json.dumps({"levels": []}))
+    monkeypatch.setattr(T, "ROOT", tmp_path)
+    pieces = T.pieces_for("xx", "pt", "JLPT")
+    assert pieces == ["The particle [1] marks the topic.", "It is cold today."]
+    assert not (tmp_path / "data" / "xx" / "learn" / "n5-1.json").read_text().count('"pt"')
+
+
+def test_imported_translations_must_keep_their_placeholders():
+    import pytest
+    from mt_pieces import import_translations
+    pieces = ["The particle [1] marks the topic.", "It is cold."]
+    assert import_translations(pieces, ["0|A partícula [1] marca o tópico.", "1|Está frio."]) == {pieces[0]: "A partícula [1] marca o tópico.", pieces[1]: "Está frio."}
+    with pytest.raises(ValueError):
+        import_translations(pieces, ["0|A partícula marca o tópico."])

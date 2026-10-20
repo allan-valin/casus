@@ -28,10 +28,12 @@ from mt_html import PH, dedupe, is_prose, protect_terms, translate_html  # noqa:
 ROOT = Path(__file__).resolve().parents[1]
 MODEL = ROOT / "vendor" / "mt" / "madlad400-3b-ct2"
 def pieces_of(text: str) -> list:
-    """a text cut into lines (each keeps its line break), sentences, and a sentence longer than 600 characters (a list
-    run on with commas) also at commas"""
+    """a text cut into sentences, and a sentence longer than 600 characters (a list run on with commas) also at commas"""
     out = []
-    for p in [x for line in re.split(r"(?<=\n)", text) for x in SENT.split(line)]:
+    # a line break inside a paragraph is a soft wrap: the lines are one text (a real break, <br> or a new block,
+    # has already ended the run)
+    text = re.sub(r"\s*\n\s*", " ", text)
+    for p in SENT.split(text):
         cjk = len(re.findall(r"[\u3040-\u30ff\u4e00-\u9fff\uac00-\ud7af]", p)) > len(p) // 3
         limit = 200 if cjk else 600          # a CJK character is about one token
         while len(p) > limit:
@@ -50,10 +52,38 @@ SRC_OF = {"Grammaire française": "fr", "Antología abierta": "es", "Dz.U.": "pl
 
 
 def fixes(ui: str) -> dict:
-    """sentences corrected by proofreading (tools/mt_fixes/<ui>.yml, in git; the cache is not): source → translation"""
+    """sentences corrected by proofreading or translated by Claude (tools/mt_fixes/<ui>.yml and, one file per book,
+    tools/mt_fixes/<ui>/*.yml; in git, the cache is not): source → translation"""
     import yaml
-    f = ROOT / "tools" / "mt_fixes" / f"{ui}.yml"
-    return (yaml.safe_load(f.read_text(encoding="utf-8")) or {}) if f.exists() else {}
+    files = [ROOT / "tools" / "mt_fixes" / f"{ui}.yml"] + sorted((ROOT / "tools" / "mt_fixes" / ui).glob("*.yml"))
+    out = {}
+    for f in files:
+        if f.exists():
+            out.update(yaml.safe_load(f.read_text(encoding="utf-8")) or {})
+    return out
+
+
+class Recorder:
+    """lists what a book would send to the model (not yet in the fixes), sending nothing: tools/mt_pieces.py"""
+    def __init__(self, ui: str):
+        self.ui, self.new, self.src, self.cache, self.seen = ui, 0, "en", fixes(ui), {}
+
+    def __call__(self, texts: list) -> list:
+        for t in texts:
+            for p in pieces_of(t):
+                if p.strip() and p.strip() not in self.cache:
+                    self.seen.setdefault(p.strip(), None)
+        raise Missing
+
+    def save(self):
+        pass
+
+
+def pieces_for(code: str, ui: str, only: str) -> list:
+    """the pieces (with their placeholders) the pages of `code` whose source names `only` would send for `ui`"""
+    rec = Recorder(ui)
+    translate_language(code, rec, redo=True, only=only, write=False)   # (earlier machine translations ignored)
+    return list(rec.seen)
 
 
 def too_long(src: str) -> int:
@@ -270,7 +300,7 @@ def html_field(obj: dict, tr, src: str = "en") -> bool:
     return False
 
 
-def translate_language(code: str, tr, redo: bool = False) -> int:
+def translate_language(code: str, tr, redo: bool = False, only: str | None = None, write: bool = True) -> int:
     """the imported pages of one language into tr.ui; then the index's titles and meanings of those pages"""
     data = ROOT / "data" / code
     srcs, n = {}, 0
@@ -281,7 +311,7 @@ def translate_language(code: str, tr, redo: bool = False) -> int:
         if page.get("kind") in ("vocab", "kanji") or page.get("ai") or page.get("generated"):
             continue
         src = source_language(page)
-        if not src:
+        if not src or only and only not in (page.get("source") or ""):
             continue
         srcs[page.get("id", f.stem)] = src
         tr.src = src
@@ -321,7 +351,8 @@ def translate_language(code: str, tr, redo: bool = False) -> int:
         if changed:
             page.setdefault("mt", {})[tr.ui] = "MADLAD-400"
             page["src"] = src
-            f.write_text(json.dumps(page, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+            if write:
+                f.write_text(json.dumps(page, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
             n += 1
     index_file = data / "learn.json"
     if index_file.exists():
@@ -343,7 +374,8 @@ def translate_language(code: str, tr, redo: bool = False) -> int:
                                 del m[tr.ui]
                         tr.src = srcs[e["id"]]
                         text_field(m, tr, srcs[e["id"]])
-        index_file.write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        if write:
+            index_file.write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     tr.save()
     return n
 
