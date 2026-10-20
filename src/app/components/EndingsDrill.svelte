@@ -25,7 +25,7 @@
   const table = $derived(tables[tableIndex] ?? null);
   const romanize = $derived(lang.script?.romanize ?? null);
   const glossOf = (m) => (typeof m.gloss === 'string' ? m.gloss : (m.gloss?.[ui.lang] ?? m.gloss?.en ?? ''));
-  const caseName = (c) => lang.inventory.channels.case?.name?.[ui.lang]?.[c] ?? c;
+  const caseName = (c) => lang.inventory.channels.case?.name?.[ui.lang]?.[c] ?? lang.inventory.channels.case?.name?.en?.[c] ?? c;
   const word = (s) => (t(`para.${s}`) === `para.${s}` ? s : t(`para.${s}`));
   const label = (s) => s.split(' · ').map(word).join(' · ');
   const colName = (c) => c.split(' ').map(word).join(' ');

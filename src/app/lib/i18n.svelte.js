@@ -4,17 +4,20 @@
  * The choice is remembered in localStorage; the rest of the state is per text and lives in
  * the reader.
  */
+import DE from './i18n.de.js';
+
 const KEY = 'casus:ui-lang';
+const LANGS = ['en', 'pt', 'de'];
 
 function load() {
-  try { const v = localStorage.getItem(KEY); if (v === 'pt' || v === 'en') return v; } catch { /* no storage */ }
+  try { const v = localStorage.getItem(KEY); if (LANGS.includes(v)) return v; } catch { /* no storage */ }
   return 'en';
 }
 
 export const ui = $state({ lang: load() });
 
 export function setLang(lang) {
-  ui.lang = lang === 'pt' ? 'pt' : 'en';
+  ui.lang = LANGS.includes(lang) ? lang : 'en';
   try { localStorage.setItem(KEY, ui.lang); } catch { /* no storage */ }
 }
 
@@ -713,7 +716,7 @@ export const STRINGS = {
     'era.grc.classical': 'Ático clássico (séc. V–IV a.C.)',
     'era.grc.classical.authors': 'Platão, Tucídides, os trágicos, Xenofonte',
     'settings.period.noteGrc': 'Escolhe a pronúncia mostrada (a reconstrução do Wikcionário para o período). Autores: {authors}.',
-  },
+  },  de: DE,
 };
 
 /** Legend rows in the page language: label and meaning by row key (colors.js keeps the English). */

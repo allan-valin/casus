@@ -10,7 +10,7 @@
   const romanize = $derived(lang.script?.romanize ?? null);      // Greek tables: Latin letters under each form
   const groups = $derived(paradigmGroups(rows, lemma, lang));
   const norm = (s) => lang.script.normalize(s ?? '');
-  const caseName = (c) => lang.inventory.channels.case?.name?.[ui.lang]?.[c] ?? c;
+  const caseName = (c) => lang.inventory.channels.case?.name?.[ui.lang]?.[c] ?? lang.inventory.channels.case?.name?.en?.[c] ?? c;
   const label = (s) => s.split(' · ').map((p) => t(`para.${p}`) === `para.${p}` ? p : t(`para.${p}`)).join(' · ');
   const colName = (c) => c.split(' ').map((p) => (t(`para.${p}`) === `para.${p}` ? p : t(`para.${p}`))).join(' ');
   const rowName = (g, r) => (g.rowsBy === 'case' ? caseName(r) : g.rowsBy === 'jform' ? t(`para.ja.${r}`) : t(`para.p${r}`));

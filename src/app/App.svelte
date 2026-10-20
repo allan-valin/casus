@@ -96,7 +96,7 @@
     const saved = restore(save.loaded(), text);
     const r = createReader({ lexicon, text, saved, onaction: logAction, lang, live: liveFor() });
     if (!saved && era) r.era = era;
-    if (!saved) r.glossLang = ui.lang;   // the page language carries the dictionary language with it
+    if (!saved) r.glossLang = ui.lang === 'pt' ? 'pt' : 'en';   // (German page: English glosses)   // the page language carries the dictionary language with it
     const t0 = Date.now();
     say('act.reading', { words: text.split(/\s+/).filter(Boolean).length, sentences: r.sentences.length });
     await r.load();
@@ -131,7 +131,7 @@
   function switchLang(lang) {
     setLang(lang);
     if (reader) reader.glossLang = lang;
-    say('act.lang', { lang: lang === 'pt' ? 'português (Brasil)' : 'English' });
+    say('act.lang', { lang: { pt: 'português (Brasil)', de: 'Deutsch' }[lang] ?? 'English' });
   }
 
   function toggleOpen(b) {
@@ -179,14 +179,15 @@
   {#if activity.busy}<div class="busy" role="progressbar" aria-label="loading"></div>{/if}
   <header class="top">
     <div class="brand">
-      <h1>{SITE.title} <span class="lang-name">· {#if languageFlag(lang.code)}<img class="flag" src={languageFlag(lang.code)} alt="" />{/if}{lang.name?.[ui.lang] ?? ''}</span></h1>
+      <h1>{SITE.title} <span class="lang-name">· {#if languageFlag(lang.code)}<img class="flag" src={languageFlag(lang.code)} alt="" />{/if}{lang.name?.[ui.lang] ?? lang.name?.en ?? ''}</span></h1>
       <LanguageBar current={lang.code} view={route.view} />
-      <p class="tagline">{t('app.tagline', { language: lang.inText?.[ui.lang] ?? lang.name?.[ui.lang] })}</p>
+      <p class="tagline">{t('app.tagline', { language: lang.inText?.[ui.lang] ?? lang.name?.[ui.lang] ?? lang.inText?.en ?? lang.name?.en })}</p>
     </div>
     <div class="corner">
       <div class="langs" role="group" aria-label="language" title={t('app.lang.title')}>
         <button class="ui-lang" class:active={ui.lang === 'en'} data-lang="en" onclick={() => switchLang('en')}>English</button>
         <button class="ui-lang" class:active={ui.lang === 'pt'} data-lang="pt" onclick={() => switchLang('pt')}>Português</button>
+        <button class="ui-lang" class:active={ui.lang === 'de'} data-lang="de" onclick={() => switchLang('de')}>Deutsch</button>
       </div>
       {#if route.view === 'reader'}<div class="exports" aria-label="export">
         <span class="exports-label">{t('app.export')}</span>
@@ -217,7 +218,7 @@
   {:else}
   <section class="card">
     <h2><span class="step">1</span> {t('text.heading')}</h2>
-    <PassagePicker {samples} onchoose={choose} {fetchImpl} samplesPath={lang.samplesPath} language={lang.inText?.[ui.lang] ?? ''} onerror={(error) => say('act.uploadFailed', { error }, 'err')}
+    <PassagePicker {samples} onchoose={choose} {fetchImpl} samplesPath={lang.samplesPath} language={lang.inText?.[ui.lang] ?? lang.inText?.en ?? ''} onerror={(error) => say('act.uploadFailed', { error }, 'err')}
       {storage} code={lang.code} onsay={(k, v) => say(k, v, 'ok')} />
     <p class="status" aria-live="polite">{t(status.key, status.vars)}</p>
     <!-- always here, before any text is read (Allan, 2026-10-19: Wiktionary on demand, dictionaries offline) -->
@@ -264,7 +265,7 @@
   <ActivityLog {activity} />
 
   <footer>
-    <span>{@html t('footer', { source: lang.sources?.full?.[ui.lang] ?? '' })}</span>
+    <span>{@html t('footer', { source: lang.sources?.full?.[ui.lang] ?? lang.sources?.full?.en ?? '' })}</span>
   </footer>
 </main>
 

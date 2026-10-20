@@ -47,7 +47,7 @@
   const nouns = $derived(models.filter((m) => NOMINAL.has(m.pos)));
   const verbs = $derived(models.filter((m) => m.pos === 'verb'));
   // parse the form: every form of the model words, its cell to choose (any reading of a syncretic form is right)
-  const caseName = (c) => lang.inventory.channels.case?.name?.[ui.lang]?.[c] ?? c;
+  const caseName = (c) => lang.inventory.channels.case?.name?.[ui.lang]?.[c] ?? lang.inventory.channels.case?.name?.en?.[c] ?? c;
   const paraWord = (x) => (t(`para.${x}`) === `para.${x}` ? x : t(`para.${x}`));
   const cellName = (table, r, c) => `${table.rowsBy === 'case' ? caseName(r) : table.rowsBy === 'jform' ? t(`para.ja.${r}`) : t(`para.p${r}`)} · ${String(c).split(' ').map(paraWord).join(' ')}`;
   // (placeholder values — x — are left out of the name)
