@@ -2,6 +2,7 @@
  * Macedonian). Written by AI (Claude); a missing key falls back to English. */
 export default {
   'app.tagline': 'Читач за {language}: зборовите од реченицата стануваат блокчиња обоени според падежот, па она што се согласува се гледа, а не се погодува.',
+  'app.report': 'Пријави проблем', 'app.report.title': 'Отвори issue за оваа страница на GitHub (потребна е бесплатна сметка на GitHub)',
   'app.export': 'Извези го ова читање', 'app.export.json': 'JSON',
   'app.export.json.title': 'Преземи JSON-датотека со текстот, твојот распоред и твоите избори (може повторно да се вчита)',
   'app.export.md': 'Markdown', 'app.export.md.title': 'Преземи Markdown-датотека од текстот со падежот на секој збор, за читање на друго место',

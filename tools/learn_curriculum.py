@@ -78,11 +78,14 @@ def apply_overlays(folder: Path, levels: list) -> None:
     title: title}, lessons: {id: {meaning, intro, sections: {id: body}, mistakes: [why…]}}} — written into the level
     data as one more language beside en and pt"""
     for ui in EXTRA:
-        f = Path(folder) / "i18n" / f"{ui}.yml"
-        if not f.exists():
+        tops, mine = {}, {}
+        # one file per interface language, or several (de.A1.yml, de.A2.yml…)
+        for f in sorted((Path(folder) / "i18n").glob(f"{ui}.*yml")) if (Path(folder) / "i18n").exists() else []:
+            over = yaml.safe_load(f.read_text(encoding="utf-8")) or {}
+            tops.update(over.get("topics") or {})
+            mine.update(over.get("lessons") or {})
+        if not mine and not tops:
             continue
-        over = yaml.safe_load(f.read_text(encoding="utf-8")) or {}
-        tops, mine = over.get("topics") or {}, over.get("lessons") or {}
         for lv in levels:
             for topic in lv.get("topics", []):
                 en = topic["title"].get("en") if isinstance(topic["title"], dict) else topic["title"]

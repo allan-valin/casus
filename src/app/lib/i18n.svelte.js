@@ -34,6 +34,7 @@ export function t(key, vars = {}) {
 export const STRINGS = {
   en: {
     'app.tagline': 'A reader for {language}: the words of a sentence become blocks coloured by case, so what agrees with what is seen, not deduced.',
+    'app.report': 'Report a problem', 'app.report.title': 'Open an issue on GitHub about this page (a free GitHub account is needed)',
     'app.export': 'Export this reading',
     'app.export.json': 'JSON',
     'app.export.json.title': 'Download a JSON file with the text, your arrangement and your pins (reloadable, machine-readable)',
@@ -457,6 +458,7 @@ export const STRINGS = {
   },
   pt: {
     'app.tagline': 'Um leitor de {language}: as palavras de uma frase viram blocos coloridos por caso, e o que concorda com o quê se vê em vez de se deduzir.',
+    'app.report': 'Relatar um problema', 'app.report.title': 'Abrir uma issue no GitHub sobre esta página (é preciso uma conta gratuita do GitHub)',
     'app.export': 'Exportar esta leitura',
     'app.export.json': 'JSON',
     'app.export.json.title': 'Baixa um arquivo JSON com o texto, seu arranjo e suas fixações (recarregável, legível por máquina)',

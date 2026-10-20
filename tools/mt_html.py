@@ -114,3 +114,53 @@ def translate_html(html: str, translate) -> str:
             text = s.get("out", s["text"])
             parts.append(PH.sub(lambda m: s["inline"][int(m.group(1)) - 1] if 0 < int(m.group(1)) <= len(s["inline"]) else m.group(0), text))
     return "".join(parts)
+
+
+# grammar terms the model gets wrong ("neuters" → Kastraten, "subjunctive" → конјугација): each is swapped for a
+# placeholder before translation and filled with the right term after. Longest first; plural and singular both.
+TERMS = {
+    "de": {"nominative": "Nominativ", "accusative": "Akkusativ", "genitive": "Genitiv", "dative": "Dativ", "vocative": "Vokativ",
+           "instrumental": "Instrumental", "locative": "Lokativ", "ablative": "Ablativ", "partitive": "Partitiv", "prepositional": "Präpositiv",
+           "neuters": "Neutra", "masculines": "Maskulina", "feminines": "Feminina",
+           "singular": "Singular", "plural": "Plural", "dual": "Dual", "subjunctive": "Konjunktiv", "indicative": "Indikativ", "imperative": "Imperativ",
+           "conditional": "Konditional", "infinitive": "Infinitiv", "participle": "Partizip", "participles": "Partizipien", "gerund": "Gerundium",
+           "aorist": "Aorist", "imperfect": "Imperfekt", "perfect": "Perfekt", "pluperfect": "Plusquamperfekt", "preterite": "Präteritum",
+           "aspect": "Aspekt", "suffix": "Suffix", "prefix": "Präfix", "stem": "Stamm",
+           "ending": "Endung", "endings": "Endungen", "declension": "Deklination", "conjugation": "Konjugation", "clitic": "Klitikon", "clitics": "Klitika",
+           "preposition": "Präposition", "prepositions": "Präpositionen", "conjunction": "Konjunktion", "particle": "Partikel", "particles": "Partikeln",
+           "direct object": "direktes Objekt", "indirect object": "indirektes Objekt", "passive": "Passiv", "middle voice": "Medium", "comparative": "Komparativ", "superlative": "Superlativ"},
+}
+_TERM_RE = {}
+
+
+def protect_terms(text: str, ui: str) -> tuple:
+    """the text with each known grammar term replaced by a placeholder [N] (numbered after any already there), and
+    the target-language terms in placeholder order"""
+    table = TERMS.get(ui)
+    if not table:
+        return text, []
+    rx = _TERM_RE.get(ui) or _TERM_RE.setdefault(ui, re.compile(r"\b(" + "|".join(sorted(map(re.escape, table), key=len, reverse=True)) + r")\b", re.I))
+    start = max([int(n) for n in PH.findall(text)] or [0])
+    terms = []
+
+    def sub(m):
+        word = table[m.group(1).lower()]
+        terms.append(word[:1].upper() + word[1:] if m.group(1)[:1].isupper() else word)
+        return f"[{start + len(terms)}]"
+    return rx.sub(sub, text), terms
+
+
+def dedupe(out: str, src: str) -> str:
+    """the model sometimes says it twice ("Beispiele Beispiele:"): a repeated sentence or a doubled short phrase is
+    cut to once; a final stop the English did not have is dropped"""
+    sents = re.split(r"(?<=[.!?:;])\s+", out.strip())
+    keep = [x for k, x in enumerate(sents) if k == 0 or x.strip(" .:;") != sents[k - 1].strip(" .:;")]
+    out = " ".join(keep)
+    words = out.split()
+    for n in range(1, len(words) // 2 + 1):
+        if [w.strip(".:;,") for w in words[:n]] == [w.strip(".:;,") for w in words[n:2 * n]] and len(src.split()) <= 6:
+            out = " ".join(words[:n])
+            break
+    if src.strip() and src.strip()[-1] not in ".:;!?" and out[-1:] in ".:;":
+        out = out[:-1]
+    return out.strip(" :") if not src.strip().endswith(":") else out

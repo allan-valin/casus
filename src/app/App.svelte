@@ -28,6 +28,7 @@
   import ThemeControls from './components/ThemeControls.svelte';
   import ProgressChip from './components/ProgressChip.svelte';
   import { createProgression } from './lib/progression.js';
+  import { issueUrl } from './lib/report.js';
   import { languageFlag } from './lib/theme.js';
   import { SITE } from '../sites.js';
   import { describeAnalysis } from './lib/colors.js';
@@ -218,6 +219,8 @@
       </div>{/if}
       <ProgressChip {progression} version={xpVersion} {toasts} />
       <ThemeControls code={lang.code} {storage} />
+      <a class="report-button" target="_blank" rel="noopener" title={t('app.report.title')}
+        href={issueUrl({ href: typeof location !== 'undefined' ? location.href : '', site: SITE.title, language: lang.name?.en ?? lang.code, view: route.view, ui: ui.lang })}>⚑ {t('app.report')}</a>
       <button class="help-button" title={t('app.help.title')} aria-label="help" onclick={() => (help = true)}>?</button>
     </div>
   </header>
@@ -311,6 +314,8 @@
   .langs .ui-lang { border: 0; border-radius: 0; min-height: 34px; padding: 4px 10px; }
   .langs .ui-lang.active { background: var(--accent); color: var(--accent-ink); }
   .exports-label { color: var(--ink-2); font-size: 0.85rem; margin-right: 2px; }
+  .report-button { display: inline-flex; align-items: center; gap: 4px; padding: 6px 10px; border: 1.5px solid var(--line); border-radius: 8px; color: var(--ink); text-decoration: none; font-size: .9em; background: var(--panel); }
+  .report-button:hover { border-color: var(--accent); }
   .help-button { width: 40px; height: 40px; border-radius: 50%; font-weight: 700; font-size: 1.1rem; padding: 0; background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
   .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: clamp(12px, 1.6vw, 22px) clamp(12px, 2vw, 26px); box-shadow: 0 1px 2px rgba(0,0,0,.04); }
   h2 { margin: 0 0 12px; font-size: clamp(1.05rem, 1rem + 0.3vw, 1.3rem); display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }

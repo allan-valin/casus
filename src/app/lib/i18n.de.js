@@ -2,6 +2,7 @@
  * languages). Written by AI (Claude); a missing key falls back to English. */
 export default {
   'app.tagline': 'Ein Leser für {language}: Die Wörter eines Satzes werden zu Blöcken, nach Kasus gefärbt – was zusammengehört, sieht man, statt es zu erschließen.',
+  'app.report': 'Problem melden', 'app.report.title': 'Ein Issue zu dieser Seite auf GitHub eröffnen (ein kostenloses GitHub-Konto ist nötig)',
   'app.export': 'Diese Lektüre exportieren', 'app.export.json': 'JSON',
   'app.export.json.title': 'Eine JSON-Datei mit dem Text, deiner Anordnung und deinen Festlegungen herunterladen (wieder ladbar, maschinenlesbar)',
   'app.export.md': 'Markdown', 'app.export.md.title': 'Eine Markdown-Datei des Textes mit dem Kasus jedes Wortes herunterladen, um sie anderswo zu lesen',

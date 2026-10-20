@@ -3,6 +3,7 @@
  * right-to-left when Arabic is chosen. */
 export default {
   'app.tagline': 'قارئ لـ{language}: تصبح كلمات الجملة كتلًا ملوّنة بحسب الحالة الإعرابية، فيُرى ما يتطابق مع ماذا بدل أن يُستنتج.',
+  'app.report': 'أبلغ عن مشكلة', 'app.report.title': 'افتح بلاغًا (issue) عن هذه الصفحة على GitHub (يلزم حساب GitHub مجاني)',
   'app.export': 'تصدير هذه القراءة', 'app.export.json': 'JSON',
   'app.export.json.title': 'تنزيل ملف JSON فيه النص وترتيبك واختياراتك (يمكن تحميله من جديد)',
   'app.export.md': 'Markdown', 'app.export.md.title': 'تنزيل ملف Markdown للنص مع حالة كل كلمة، لقراءته في مكان آخر',

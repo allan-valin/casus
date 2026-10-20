@@ -36,3 +36,17 @@ def test_a_placeholder_the_model_drops_falls_back_to_the_english():
     html = "<p>Use <b>der</b> before masculine nouns in the nominative case.</p>"
     out = translate_html(html, lambda xs: ["Verwende vor maskulinen Nomen im Nominativ." for _ in xs])
     assert out == html
+
+
+def test_grammar_terms_are_protected_and_given_their_term():
+    from mt_html import protect_terms
+    text, terms = protect_terms("Neuters do not change; masculine nouns drop -ur in the accusative.", "de")
+    assert "Neuters" not in text and "accusative" not in text and "masculine" in text
+    assert any(t == "Neutra" for t in terms) and "Akkusativ" in terms
+
+
+def test_a_repeated_translation_is_cut_to_once():
+    from mt_html import dedupe
+    assert dedupe("Beispiele Beispiele:", "Examples") == "Beispiele"
+    assert dedupe("Das Verb ist unregelmäßig. Das Verb ist unregelmäßig.", "The verb is irregular.") == "Das Verb ist unregelmäßig."
+    assert dedupe("Der Akkusativ: direktes Objekt.", "the accusative: direct object") == "Der Akkusativ: direktes Objekt"
