@@ -98,3 +98,9 @@ def test_entities_are_plain_characters_for_the_model_and_escaped_again():
     out = translate_html("<p>The ending means &quot;as&quot; &amp; more&#160;here and there.</p>", model, "en")
     assert sent == ['The ending means "as" & more here and there.']
     assert out == "<p>The ending significa &quot;as&quot; &amp; more here and there.</p>"
+
+
+def test_ipa_in_brackets_or_slashes_is_protected():
+    from mt_html import segments
+    run = [s for s in segments("<p>The word is pronounced [mak̚t͈ɯ] or /ˈmakto/ in normal speech here.</p>", src="en") if "text" in s][0]
+    assert "[mak̚t͈ɯ]" in run["inline"] and "/ˈmakto/" in run["inline"] and "mak" not in run["text"]

@@ -45,6 +45,13 @@ SRC_OF = {"Grammaire française": "fr", "Antología abierta": "es", "Dz.U.": "pl
           "Kleine deutsche Sprachlehre": "de", "Le Premier Livre": "fr"}
 
 
+def fixes(ui: str) -> dict:
+    """sentences corrected by proofreading (tools/mt_fixes/<ui>.yml, in git; the cache is not): source → translation"""
+    import yaml
+    f = ROOT / "tools" / "mt_fixes" / f"{ui}.yml"
+    return (yaml.safe_load(f.read_text(encoding="utf-8")) or {}) if f.exists() else {}
+
+
 def join(pieces: list, done: dict) -> str:
     """the pieces' translations put back together: a piece that ended a line keeps its line break"""
     out = ""
@@ -66,6 +73,7 @@ class Translator:
         self.sp = spm.SentencePieceProcessor(model_file=str(MODEL / "spiece.model"))
         self.cache_file = ROOT / "vendor" / "mt" / f"cache.{ui}.json"
         self.cache = json.loads(self.cache_file.read_text(encoding="utf-8")) if self.cache_file.exists() else {}
+        self.cache.update(fixes(ui))
         self.new = 0
 
     def _raw(self, texts: list) -> list:
@@ -127,6 +135,7 @@ class CacheOnly:
     def __init__(self, ui: str, cache: dict | None = None):
         self.ui, self.new = ui, 0
         self.cache = cache if cache is not None else (json.loads(f.read_text(encoding="utf-8")) if (f := ROOT / "vendor" / "mt" / f"cache.{ui}.json").exists() else {})
+        self.cache.update(fixes(ui))
 
     def __call__(self, texts: list) -> list:
         pieces = [pieces_of(t) for t in texts]

@@ -93,6 +93,11 @@ _FOREIGN = {}
 
 def protect_script(text: str, src: str, inline: list) -> str:
     """runs of words in a script other than the explanation's become placeholders [n] (their text appended to inline)"""
+    # a transcription in [ ] or / / with a sign outside plain ASCII letters is kept exactly ([mak̚tɯ], /ˈmakto/)
+    def ipa(m):
+        inline.append(m.group(0))
+        return f"[{len(inline)}]"
+    text = re.sub(r"\[(?!\d+\])[^\[\]\s]{1,40}\]|/[^/\s]{1,40}/", lambda m: ipa(m) if re.search(r"[^\x00-\x7f]", m.group(0)) else m.group(0), text)
     own = SRC_SCRIPT.get(src)
     if not own:
         return text
@@ -188,6 +193,8 @@ TERMS = {
            "ending": "Endung", "endings": "Endungen", "declension": "Deklination", "conjugation": "Konjugation", "clitic": "Klitikon", "clitics": "Klitika",
            "preposition": "Präposition", "prepositions": "Präpositionen", "conjunction": "Konjunktion", "particle": "Partikel", "particles": "Partikeln",
            "direct object": "direktes Objekt", "indirect object": "indirektes Objekt", "passive": "Passiv", "middle voice": "Medium", "comparative": "Komparativ", "superlative": "Superlativ"},
+    # Portuguese: only what the model gets wrong (a placeholder hides a noun's gender, so the list stays short)
+    "pt": {"fortis": "fortis", "lenis": "lenis"},
 }
 _TERM_RE = {}
 

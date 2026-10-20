@@ -160,3 +160,12 @@ def test_an_output_far_longer_than_its_input_is_not_trusted():
     tr.save = lambda: None
     tr._model = lambda texts: ["Por que " * 30 if "Why" in t else "Bom dia." for t in texts]
     assert tr(["Why do they differ?", "Good morning."]) == ["Why do they differ?", "Bom dia."]
+
+
+def test_a_proofread_correction_wins_over_the_model(tmp_path, monkeypatch):
+    """tools/mt_fixes/<ui>.yml: sentences corrected by proofreading, kept in git (the cache is not)"""
+    (tmp_path / "tools" / "mt_fixes").mkdir(parents=True)
+    (tmp_path / "tools" / "mt_fixes" / "pt.yml").write_text('"A connective ending used to mean [1].": "Uma terminação conectiva usada para dizer [1]."\n', encoding="utf-8")
+    monkeypatch.setattr(T, "ROOT", tmp_path)
+    tr = T.CacheOnly("pt", {"A connective ending used to mean [1].": "Uma terminação costumava significar [1]."})
+    assert tr(["A connective ending used to mean [1]."]) == ["Uma terminação conectiva usada para dizer [1]."]
