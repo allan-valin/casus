@@ -243,3 +243,17 @@ def test_a_japanese_sentence_may_have_a_much_longer_translation():
     pt = "A estrutura de texto em que a conclusão aparece tanto no começo quanto no fim chama-se estrutura de dupla conclusão."
     tr._model = lambda texts: [pt for _ in texts]
     assert tr([ja]) == [pt]
+
+
+def test_an_example_without_a_translation_gets_one(tmp_path, monkeypatch):
+    """the NIKL dictionary gives Korean examples with no translation (Allan, 2026-10-20: 'no indication about what
+    the meaning is supposed to be'): each gets a machine-translated line, in every interface language"""
+    intro = '<p><b>이, 가</b> — a particle.</p><div class="ex"><p class="ja">오늘 밤은 달이 참 밝다.</p></div>'
+    f = page(tmp_path / "data", "ko-nikl-1", id="ko-nikl-1", source="NIKL grammar list; 한국어기초사전 (NIKL, CC BY-SA 2.0 KR)", intro={"en": intro})
+    (tmp_path / "data" / "xx" / "learn.json").write_text(json.dumps({"levels": []}))
+    monkeypatch.setattr(T, "ROOT", tmp_path)
+    T.translate_language("xx", Fake("pt"))
+    T.translate_language("xx", Fake("en"))
+    i = json.loads(f.read_text())["intro"]
+    assert '<p class="en gloss">«pt»오늘 밤은 달이 참 밝다.</p></div>' in i["pt"]
+    assert '<p class="en gloss">«en»오늘 밤은 달이 참 밝다.</p></div>' in i["en"] and i["orig"] == intro

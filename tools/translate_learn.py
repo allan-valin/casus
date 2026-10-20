@@ -187,6 +187,40 @@ def _put(obj: dict, ui: str, out: str, src: str) -> None:
     obj[ui] = out
 
 
+EX = re.compile(r'(<div class="ex">\s*<p class="ja"[^>]*>(.*?)</p>)(\s*</div>)', re.S)
+
+
+def gloss_examples(html: str, tr) -> str:
+    """an example block with no translation (the NIKL dictionary's) gets one: <p class="en gloss"> in tr.ui"""
+    todo = [m for m in EX.finditer(html) if 'class="en' not in m.group(0)]
+    if not todo:
+        return html
+    try:
+        done = tr([unescape(re.sub(r"<[^>]+>", "", m.group(2))).strip() for m in todo])
+    except Missing:
+        return html
+    out, pos = [], 0
+    for m, t in zip(todo, done):
+        safe = t.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+        out += [html[pos:m.end(1)], f'<p class="en gloss">{safe}</p>', m.group(3)]
+        pos = m.end()
+    return "".join(out) + html[pos:]
+
+
+def gloss_field(obj: dict, tr) -> bool:
+    """examples in the field's text for tr.ui get their translation line; into English the original is kept as orig"""
+    if not isinstance(obj, dict) or not _orig(obj) or 'class="ex"' not in _orig(obj):
+        return False
+    cur = obj.get(tr.ui) if obj.get(tr.ui) and (tr.ui != "en" or "orig" in obj) else _orig(obj)
+    new = gloss_examples(cur, tr)
+    if new == cur:
+        return False
+    if tr.ui == "en" and "orig" not in obj:
+        obj["orig"] = obj["en"]
+    obj[tr.ui] = new
+    return True
+
+
 def text_field(obj: dict, tr, src: str = "en") -> bool:
     """a short text (meaning, title): translated whole when it is words of the explanation language"""
     orig = _orig(obj)
@@ -230,7 +264,7 @@ def translate_language(code: str, tr, redo: bool = False) -> int:
         if page.get("kind") in ("vocab", "kanji") or page.get("ai") or page.get("generated"):
             continue
         src = source_language(page)
-        if not src or src == tr.ui:
+        if not src:
             continue
         srcs[page.get("id", f.stem)] = src
         if redo and (page.get("mt") or {}).get(tr.ui):        # an earlier translation into this language is dropped
@@ -259,6 +293,9 @@ def translate_language(code: str, tr, redo: bool = False) -> int:
                 changed |= text_field(s["title"], tr, src)
             if isinstance(s.get("html"), dict):
                 changed |= html_field(s["html"], tr, src)
+        # examples without a translation (the NIKL dictionary's) get one, even when the page is in tr.ui already
+        for obj in [page.get("intro")] + [s.get("html") for s in page.get("sections", [])]:
+            changed |= gloss_field(obj, tr)
         if changed:
             page.setdefault("mt", {})[tr.ui] = "MADLAD-400"
             page["src"] = src

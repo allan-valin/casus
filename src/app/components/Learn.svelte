@@ -349,6 +349,7 @@
   .words { border-collapse: collapse; } .words td { border-bottom: 1px solid var(--line); padding: 4px 10px; }
   .words tr:nth-child(even) td { background: var(--table-stripe); }
   .to-speak, :global(.prose .to-speak) { text-decoration: none; margin-inline-start: 4px; font-size: .9em; }
+  :global(.prose .ex) { margin: 6px 0; } :global(.prose .ex p) { margin: 0; } :global(.prose .gloss) { color: var(--ink-2); font-size: .92em; }
   .sec-head { margin: 16px 0 4px; font-size: .95rem; color: var(--ink-2); }
   .made-head { margin: 22px 0 2px; font-size: 1rem; border-top: 2px solid var(--line); padding-top: 12px; }
   .made-note { margin: 0 0 8px; color: var(--ink-2); font-size: .85em; }

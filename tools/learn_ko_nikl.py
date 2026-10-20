@@ -112,7 +112,9 @@ def nikl_lessons(list_csv: Path, kodict_json: Path, index: dict, lessons: dict, 
         first_def = next((s.get("en_def") for s in senses if s.get("en_def")), "")
 
         def block(lang):
-            parts = [f"<p><b>{html.escape(shown)}</b> — {name_en if lang == 'en' else name_pt}"
+            # "a particle", not "particle": a one-word label is too short for the translator to take as English
+            article = "an" if name_en[0] in "aeiou" else "a"
+            parts = [f"<p><b>{html.escape(shown)}</b> — {f'{article} {name_en}' if lang == 'en' else name_pt}"
                      + (f" ({html.escape(meaning_ko)})" if meaning_ko else "") + ".</p>"]
             for k, s in enumerate(senses, 1):
                 ex = "".join(f"<div class=\"ex\"><p class=\"ja\">{html.escape(x)}</p></div>" for x in s.get("examples", [])[:2])

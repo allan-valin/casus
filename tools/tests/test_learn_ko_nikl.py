@@ -43,3 +43,16 @@ def test_english_definitions_get_their_portuguese_from_translation_not_a_copy():
     lessons, questions = {}, {"TOPIK 1": {}, "TOPIK 2": {}}
     nikl_lessons(FIX / "grammar.csv", FIX / "grammar.json", index, lessons, questions)
     assert "pt" not in lessons["ko-nikl-1"]["intro"]
+
+
+def test_the_kind_of_grammar_point_is_a_phrase_the_translator_takes_as_prose():
+    """'— particle.' alone stayed English in every translation (Allan, 2026-10-20)"""
+    import sys
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    from mt_html import segments
+    index = {"levels": [{"id": "TOPIK 1", "topics": []}, {"id": "TOPIK 2", "topics": []}]}
+    lessons, questions = {}, {"TOPIK 1": {}, "TOPIK 2": {}}
+    nikl_lessons(FIX / "grammar.csv", FIX / "grammar.json", index, lessons, questions)
+    intro = lessons["ko-nikl-1"]["intro"]["en"]
+    assert "— a particle" in intro
+    assert any(s.get("translate") and "a particle" in s["text"] for s in segments(intro, "en") if "text" in s)
