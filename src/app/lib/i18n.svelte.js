@@ -371,6 +371,13 @@ export const STRINGS = {
     'era.grc.classical': 'Classical Attic (5th–4th c. BC)',
     'era.grc.classical.authors': 'Plato, Thucydides, the tragedians, Xenophon',
     'settings.period.noteGrc': 'Chooses the pronunciation shown (Wiktionary\u2019s reconstruction for the period). Authors: {authors}.',
+    'listen.meaning': 'hear → meaning',
+    'listen.dictation': 'dictation: type what you hear',
+    'listen.play': 'Listen',
+    'listen.type': 'type what you heard',
+    'listen.none': 'No sentences to listen to yet: this language has no Learn lessons.',
+    'drills.listen': 'Listening',
+    'drills.listen.hint': 'A sentence from the Learn lessons is spoken, not shown: choose its meaning, or type it (dictation) and see each word marked. Play it as often as you like.',
   },
   pt: {
     'app.tagline': 'Um leitor de {language}: as palavras de uma frase viram blocos coloridos por caso, e o que concorda com o quê se vê em vez de se deduzir.',
@@ -716,7 +723,15 @@ export const STRINGS = {
     'era.grc.classical': 'Ático clássico (séc. V–IV a.C.)',
     'era.grc.classical.authors': 'Platão, Tucídides, os trágicos, Xenofonte',
     'settings.period.noteGrc': 'Escolhe a pronúncia mostrada (a reconstrução do Wikcionário para o período). Autores: {authors}.',
-  },  de: DE,
+    'listen.meaning': 'ouvir → significado',
+    'listen.dictation': 'ditado: digite o que ouvir',
+    'listen.play': 'Ouvir',
+    'listen.type': 'digite o que você ouviu',
+    'listen.none': 'Ainda não há frases para ouvir: esta língua não tem lições em Aprender.',
+    'drills.listen': 'Escuta',
+    'drills.listen.hint': 'Uma frase das lições de Aprender é falada, não mostrada: escolha o significado, ou digite-a (ditado) e veja cada palavra marcada. Ouça quantas vezes quiser.',
+  },
+  de: DE,
 };
 
 /** Legend rows in the page language: label and meaning by row key (colors.js keeps the English). */

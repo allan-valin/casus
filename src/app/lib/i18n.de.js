@@ -189,4 +189,7 @@ export default {
   'era.de.modern': 'Heutiges Standarddeutsch', 'era.de.modern.authors': 'reformierte Rechtschreibung (1996/2006)',
   'era.grc.classical': 'Klassisches Attisch (5.–4. Jh. v. Chr.)', 'era.grc.classical.authors': 'Platon, Thukydides, die Tragiker, Xenophon',
   'settings.period.noteGrc': 'Wählt die angezeigte Aussprache (Rekonstruktion von Wiktionary für die Epoche). Autoren: {authors}.',
+  'listen.meaning': 'hören → Bedeutung', 'listen.dictation': 'Diktat: tippe, was du hörst', 'listen.play': 'Anhören', 'listen.type': 'tippe, was du gehört hast',
+  'listen.none': 'Noch keine Sätze zum Hören: Diese Sprache hat keine Lektionen unter Lernen.', 'drills.listen': 'Hören',
+  'drills.listen.hint': 'Ein Satz aus den Lektionen wird gesprochen, nicht gezeigt: Wähle seine Bedeutung oder tippe ihn (Diktat) und sieh jedes Wort markiert. Hör ihn so oft du willst.',
 };

@@ -9,6 +9,7 @@
   import EndingsDrill from './EndingsDrill.svelte';
   import ChoiceDrill from './ChoiceDrill.svelte';
   import TypeDrill from './TypeDrill.svelte';
+  import ListenDrill from './ListenDrill.svelte';
   import Overlay from './Overlay.svelte';
   import CheatSheet from './CheatSheet.svelte';
   import { parseItems, transformItems } from '../lib/parse.js';
@@ -17,7 +18,7 @@
 
   const NOMINAL = new Set(['noun', 'adj', 'det', 'pron']);
   // a language that does not inflect (Chinese) has no endings drills; one without noun cases (Portuguese) only the verbs
-  const drills = $derived([...(lang.game ? ['letters'] : []), ...(lang.noEndings ? [] : lang.noNounEndings ? ['verbs', 'parse', 'transform'] : ['nouns', 'verbs', 'parse', 'transform']), 'words', 'phrases', 'review']);
+  const drills = $derived([...(lang.game ? ['letters'] : []), ...(lang.noEndings ? [] : lang.noNounEndings ? ['verbs', 'parse', 'transform'] : ['nouns', 'verbs', 'parse', 'transform']), 'words', 'phrases', 'listen', 'review']);
   let chosen = $state(null);
   const drill = $derived(chosen && drills.includes(chosen) ? chosen : drills[0]);
   let models = $state([]);
@@ -111,6 +112,8 @@
       </label>
     </div>
     {#key `${kind}|${phrases.length}`}<ChoiceDrill items={phraseItems} {random} romanize={lang.script?.romanize ?? null} onresult={remember} />{/key}
+  {:else if drill === 'listen'}
+    {#key 'listen'}<ListenDrill {lang} {voice} {loadData} {random} />{/key}
   {:else if drill === 'review'}
     {#if dueItems.length}<p class="review-count">{t('review.due', { n: dueItems.length, total: review.size() })}</p>
       {#key dueItems.length}<ChoiceDrill items={dueItems} {random} romanize={lang.script?.romanize ?? null} onresult={remember} ordered />{/key}

@@ -33,13 +33,13 @@ describe('Drills page', () => {
   });
   it('Latin has noun and verb drills but no letters; Greek has letters too', async () => {
     const la = render(Drills, { lang: getLanguage('la'), loadData, navigate: () => {} });
-    expect([...la.container.querySelectorAll('.drill-tab')].map((b) => b.dataset.drill)).toEqual(['nouns', 'verbs', 'parse', 'transform', 'words', 'phrases', 'review']);
+    expect([...la.container.querySelectorAll('.drill-tab')].map((b) => b.dataset.drill)).toEqual(['nouns', 'verbs', 'parse', 'transform', 'words', 'phrases', 'listen', 'review']);
     const grc = render(Drills, { lang: getLanguage('grc'), loadData, navigate: () => {} });
-    expect([...grc.container.querySelectorAll('.drill-tab')].map((b) => b.dataset.drill)).toEqual(['letters', 'nouns', 'verbs', 'parse', 'transform', 'words', 'phrases', 'review']);
+    expect([...grc.container.querySelectorAll('.drill-tab')].map((b) => b.dataset.drill)).toEqual(['letters', 'nouns', 'verbs', 'parse', 'transform', 'words', 'phrases', 'listen', 'review']);
   });
   it('Portuguese has no noun cases, so verb endings only', () => {
     const pt = render(Drills, { lang: getLanguage('pt'), loadData, navigate: () => {} });
-    expect([...pt.container.querySelectorAll('.drill-tab')].map((b) => b.dataset.drill)).toEqual(['verbs', 'parse', 'transform', 'words', 'phrases', 'review']);
+    expect([...pt.container.querySelectorAll('.drill-tab')].map((b) => b.dataset.drill)).toEqual(['verbs', 'parse', 'transform', 'words', 'phrases', 'listen', 'review']);
   });
   it('the noun drill shows the table blank; a right answer turns its cell right', async () => {
     const { container } = render(Drills, { lang: getLanguage('la'), loadData, navigate: () => {}, random: () => 0 });
@@ -133,7 +133,7 @@ describe('frequent words and phrases (Allan, 2026-10-18)', () => {
     await tick();
     const sheet = () => [...document.querySelectorAll('.cheat')].at(-1);
     const menu = [...sheet().querySelectorAll('.cheat-tab')].map((b) => b.dataset.section);
-    expect(menu).toEqual(['nouns', 'verbs', 'parse', 'transform', 'words', 'phrases', 'review']);
+    expect(menu).toEqual(['nouns', 'verbs', 'parse', 'transform', 'words', 'phrases', 'listen', 'review']);
     expect(sheet().querySelector('.cheat-tab.active').dataset.section).toBe('nouns');
     await fireEvent.click(sheet().querySelector('.cheat-tab[data-section="phrases"]'));
     await tick();
