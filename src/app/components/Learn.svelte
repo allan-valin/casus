@@ -272,6 +272,7 @@
   .topic summary::-webkit-details-marker { display: none; }
   .chev { display: inline-block; transition: transform 0.15s; color: var(--accent-text); width: 1em; }
   .topic[open] .chev { transform: rotate(90deg); }
+  :global([dir="rtl"]) .topic:not([open]) .chev { transform: scaleX(-1); }
   .topic-n { font-weight: 400; font-size: 0.8em; color: var(--ink-2); margin-left: auto; }
   .topic[data-kind=vocab] summary { border-left: 4px solid #2e8b57; } .topic[data-kind=kanji] summary { border-left: 4px solid #9467bd; } .topic[data-kind=grammar] summary { border-left: 4px solid #1f77b4; }
   .lesson-list { list-style: none; margin: 0; padding: 0; }

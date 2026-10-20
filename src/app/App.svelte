@@ -17,7 +17,7 @@
   import { getLanguage, LANGUAGES } from '../lang/registry.js';
   import { langFromPath } from './lib/route.js';
   import { createVoice } from './lib/voice.js';
-  import { t, ui, setLang } from './lib/i18n.svelte.js';
+  import { t, ui, setLang, uiDir } from './lib/i18n.svelte.js';
   import { createActivity } from './lib/activity.svelte.js';
   import ActivityLog from './components/ActivityLog.svelte';
   import Drills from './components/Drills.svelte';
@@ -133,7 +133,7 @@
   function switchLang(lang) {
     setLang(lang);
     if (reader) reader.glossLang = lang;
-    say('act.lang', { lang: { pt: 'português (Brasil)', de: 'Deutsch' }[lang] ?? 'English' });
+    say('act.lang', { lang: { pt: 'português (Brasil)', de: 'Deutsch', mk: 'македонски', ar: 'العربية' }[lang] ?? 'English' });
   }
 
   function toggleOpen(b) {
@@ -191,6 +191,8 @@
     if (r.levelUp) toast(`⭐ ${t('xp.levelUp', { n: r.levelUp })}`);
     for (const id of r.unlocked) toast(`🏆 ${t('xp.unlocked', { name: t(`ach.${id}`) })}`);
   }
+  // the interface language on the page: Arabic turns the chrome right to left (texts keep their own direction)
+  $effect(() => { try { document.documentElement.lang = ui.lang; document.documentElement.dir = uiDir(ui.lang); } catch { /* no document */ } });
 </script>
 
 <main style:--font-scale={lang.script?.fontScale ?? 1}>
@@ -206,6 +208,8 @@
         <button class="ui-lang" class:active={ui.lang === 'en'} data-lang="en" onclick={() => switchLang('en')}>English</button>
         <button class="ui-lang" class:active={ui.lang === 'pt'} data-lang="pt" onclick={() => switchLang('pt')}>Português</button>
         <button class="ui-lang" class:active={ui.lang === 'de'} data-lang="de" onclick={() => switchLang('de')}>Deutsch</button>
+        <button class="ui-lang" class:active={ui.lang === 'mk'} data-lang="mk" lang="mk" onclick={() => switchLang('mk')}>Македонски</button>
+        <button class="ui-lang" class:active={ui.lang === 'ar'} data-lang="ar" lang="ar" onclick={() => switchLang('ar')}>العربية</button>
       </div>
       {#if route.view === 'reader'}<div class="exports" aria-label="export">
         <span class="exports-label">{t('app.export')}</span>

@@ -1,3 +1,4 @@
+import { NAMES } from './names.js';
 /* The shipped languages, in the order the bar lists them. Latin is the landing page. */
 import { latin } from './la/index.js';
 import { greek } from './grc/index.js';
@@ -52,6 +53,10 @@ export const LANGUAGES = [
 ];
 
 const DEFINITIONS = { la: latin, grc: greek, de: german, ja: japanese, ar: arabic, ru: russian, ko: korean, zh: chinese, mk: macedonian, fi: finnish, el: modernGreek, sa: sanskrit, cs: czech, pl: polish, is: icelandic, tr: turkish, hu: hungarian, pt: portuguese, fr: french, es: spanish, it: italian, nl: dutch, uk: ukrainian, en: english };
+
+// names in every interface language (src/lang/names.js), filled in where a language has none of its own
+for (const l of [...LANGUAGES, ...Object.values(DEFINITIONS)]) if (l?.name && NAMES[l.code]) l.name = { ...NAMES[l.code], ...l.name };
+for (const l of Object.values(DEFINITIONS)) if (l?.inText && NAMES[l.code]) l.inText = { ...NAMES[l.code], ...l.inText };
 
 export function getLanguage(code) {
   return DEFINITIONS[code];

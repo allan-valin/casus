@@ -5,9 +5,14 @@
  * the reader.
  */
 import DE from './i18n.de.js';
+import MK from './i18n.mk.js';
+import AR from './i18n.ar.js';
 
 const KEY = 'casus:ui-lang';
-const LANGS = ['en', 'pt', 'de'];
+const LANGS = ['en', 'pt', 'de', 'mk', 'ar'];
+
+/** the page's direction for an interface language (Arabic: right to left) */
+export const uiDir = (lang) => (lang === 'ar' ? 'rtl' : 'ltr');
 
 function load() {
   try { const v = localStorage.getItem(KEY); if (LANGS.includes(v)) return v; } catch { /* no storage */ }
@@ -874,6 +879,8 @@ export const STRINGS = {
     "ach.day500.d": "500 XP em um dia",
   },
   de: DE,
+  mk: MK,
+  ar: AR,
 };
 
 /** Legend rows in the page language: label and meaning by row key (colors.js keeps the English). */
