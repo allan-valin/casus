@@ -77,3 +77,14 @@ def test_fetcher_orders_chapters_by_roman_numeral_and_splits_a_one_page_book():
 def test_clean_drops_the_wikisource_header_box():
     h = clean('<div id="headertemplate"><div class="wst-header-mainblock">Author, 1928, ← previous next →</div></div><p>Text of the grammar.</p>', "ja", "wikisource")
     assert "previous" not in h and "Text of the grammar" in h
+
+
+def test_reference_levels_are_merged_into_the_first():
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+    from build_learn import merge_reference_levels
+    index = {"levels": [{"id": "Beginner", "topics": []}, {"id": "Reference", "reference": True, "topics": [{"id": "r1", "lessons": [{"id": "x"}]}]},
+                        {"id": "A&G", "reference": True, "topics": [{"id": "ag", "lessons": [{"id": "y"}]}]}]}
+    lessons = {"x": {"level": "Reference"}, "y": {"level": "A&G"}}
+    merge_reference_levels(index, lessons, prefer="A&G")
+    assert [lv["id"] for lv in index["levels"]] == ["Beginner", "A&G"]
+    assert [t["id"] for t in index["levels"][1]["topics"]] == ["ag", "r1"] and lessons["x"]["level"] == "A&G"

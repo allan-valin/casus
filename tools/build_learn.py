@@ -418,6 +418,23 @@ PRESSBOOKS = {
 }
 
 
+def merge_reference_levels(index, lessons, prefer=None):
+    """one Reference tab per language: the topics of every reference level go into one (Latin's A&G when there)"""
+    refs = [lv for lv in index["levels"] if lv.get("reference")]
+    if len(refs) < 2:
+        return
+    keep = next((lv for lv in refs if lv["id"] == prefer), refs[0])
+    for lv in refs:
+        if lv is keep:
+            continue
+        keep["topics"].extend(lv["topics"])
+        for tp in lv["topics"]:
+            for e in tp["lessons"]:
+                if e["id"] in lessons:
+                    lessons[e["id"]]["level"] = keep["id"]
+        index["levels"].remove(lv)
+
+
 def reference_level(index):
     """the language's Reference grammar tab (Latin's is Allen & Greenough, A&G), made on first use"""
     for lv in index["levels"]:
@@ -581,6 +598,7 @@ def main(code: str) -> None:
         from learn_expand import expand
         n = expand(code, ROOT / "data" / code, index, lessons, questions, sentences_of(code), cases=code in CASE_LANGS)
         print(f"{code}: {n} generated lessons")
+    merge_reference_levels(index, lessons, prefer="A&G")
     out = ROOT / "data" / code
     folder = out / "learn"
     if folder.exists():
