@@ -11,3 +11,14 @@ export function byOrigin(topics) {
   }
   return { human, made: machine };
 }
+
+const GROUPS = ['course', 'reader', 'school', 'university'];
+
+/** the Learn list in sections: human lessons by kind of source (a topic's `group`; courses for learners when it has
+ * none), then everything AI-written or generated; [{ id, topics }] in that order, empty ones left out */
+export function learnSections(topics) {
+  const { human, made: machine } = byOrigin(topics);
+  const out = GROUPS.map((id) => ({ id, topics: human.filter((tp) => (GROUPS.includes(tp.group) ? tp.group : 'course') === id) }));
+  out.push({ id: 'made', topics: machine });
+  return out.filter((s) => s.topics.length);
+}

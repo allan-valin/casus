@@ -17,3 +17,17 @@ describe('Learn list: human-written lessons first, AI-written and generated in t
     expect(new Set([...human, ...made].map((t) => t.key)).size).toBe(4);
   });
 });
+
+import { learnSections } from '../../src/app/lib/learnorigin.js';
+describe('Learn list sections by kind of source (Allan, 2026-10-20)', () => {
+  it('courses, readers, school, university, then AI/generated — empty sections left out', () => {
+    const topics = [
+      { id: 's', group: 'school', lessons: [{ id: 1 }] },
+      { id: 'c', lessons: [{ id: 2 }, { id: 3, ai: true }] },
+      { id: 'u', group: 'university', lessons: [{ id: 4 }] },
+      { id: 'r', group: 'reader', lessons: [{ id: 5 }] },
+    ];
+    expect(learnSections(topics).map((s) => [s.id, s.topics.map((t) => t.id)])).toEqual([
+      ['course', ['c']], ['reader', ['r']], ['school', ['s']], ['university', ['u']], ['made', ['c']]]);
+  });
+});

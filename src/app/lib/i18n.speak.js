@@ -2,6 +2,11 @@
  * i18n.svelte.js. de, mk and ar written by AI (Claude). */
 export const SPEAK = {
   en: {
+    'learn.sec.course': "Courses for learners",
+    'learn.sec.reader': "Readers",
+    'learn.sec.school': "School lessons (for native speakers)",
+    'learn.sec.university': "University and linguistics",
+    'learn.sec.made': "Written by AI or generated from data",
     'learn.readStory': "Read the whole story in the reader",
     'speak.use': 'How to use',
     'speak.options': 'Options',
@@ -69,6 +74,11 @@ export const SPEAK = {
     'speak.howto.marks.text': '<p><b>ˈ</b> stress on the next syllable · <b>ː</b> long · <b>ʰ</b> a puff of air after the sound (aspirated) · <b>̃</b> nasal (air through the nose too, as in Portuguese <i>mão</i>) · <b>ʲ</b> palatalised (with an i-like tongue) · <b>̯</b> not a syllable of its own (the second half of a diphthong) · <b>̥</b> voiceless · <b>͡</b> two symbols said as one sound (t͡s).</p>',
   },
   pt: {
+    'learn.sec.course': "Cursos para aprendizes",
+    'learn.sec.reader': "Leituras",
+    'learn.sec.school': "Aulas escolares (para falantes nativos)",
+    'learn.sec.university': "Universidade e linguística",
+    'learn.sec.made': "Escritas por IA ou geradas de dados",
     'learn.readStory': "Ler a história inteira no leitor",
     'speak.use': 'Como usar',
     'speak.options': 'Opções',
@@ -136,6 +146,11 @@ export const SPEAK = {
     'speak.howto.marks.text': '<p><b>ˈ</b> tônica na sílaba seguinte · <b>ː</b> longo · <b>ʰ</b> um sopro depois do som (aspirado) · <b>̃</b> nasal (o ar sai também pelo nariz, como em <i>mão</i>) · <b>ʲ</b> palatalizado (com a língua como num i) · <b>̯</b> não forma sílaba (a segunda metade de um ditongo) · <b>̥</b> surdo · <b>͡</b> dois símbolos ditos como um som (t͡s).</p>',
   },
   de: {
+    'learn.sec.course': "Kurse für Lernende",
+    'learn.sec.reader': "Lesetexte",
+    'learn.sec.school': "Schulstoff (für Muttersprachler)",
+    'learn.sec.university': "Universität und Sprachwissenschaft",
+    'learn.sec.made': "Von KI geschrieben oder aus Daten erzeugt",
     'learn.readStory': "Die ganze Geschichte im Leser lesen",
     'speak.use': 'So geht’s',
     'speak.options': 'Optionen',
@@ -203,6 +218,11 @@ export const SPEAK = {
     'speak.howto.marks.text': '<p><b>ˈ</b> Betonung auf der folgenden Silbe · <b>ː</b> lang · <b>ʰ</b> ein Hauch nach dem Laut (behaucht) · <b>̃</b> nasal (die Luft geht auch durch die Nase, wie in französisch <i>bon</i>) · <b>ʲ</b> palatalisiert (mit i-artiger Zunge) · <b>̯</b> keine eigene Silbe (die zweite Hälfte eines Diphthongs) · <b>̥</b> stimmlos · <b>͡</b> zwei Symbole als ein Laut (t͡s).</p>',
   },
   mk: {
+    'learn.sec.course': "Курсеви за учење",
+    'learn.sec.reader': "Читанки",
+    'learn.sec.school': "Училишни лекции (за мајчини говорители)",
+    'learn.sec.university': "Универзитет и лингвистика",
+    'learn.sec.made': "Напишани од ВИ или создадени од податоци",
     'learn.readStory': "Прочитај ја целата приказна во читачот",
     'speak.use': 'Како се користи',
     'speak.options': 'Опции',
@@ -270,6 +290,11 @@ export const SPEAK = {
     'speak.howto.marks.text': '<p><b>ˈ</b> нагласок на следниот слог · <b>ː</b> долго · <b>ʰ</b> воздишка по гласот (аспирирано) · <b>̃</b> назално (воздухот излегува и низ носот, како во француското <i>bon</i>) · <b>ʲ</b> палатализирано (со јазик како за и — како ќ, ѓ) · <b>̯</b> не прави свој слог (втората половина од дифтонг) · <b>̥</b> безвучно · <b>͡</b> два симбола како еден глас (t͡s = ц).</p>',
   },
   ar: {
+    'learn.sec.course': "دورات للمتعلمين",
+    'learn.sec.reader': "نصوص للقراءة",
+    'learn.sec.school': "دروس مدرسية (للناطقين بها)",
+    'learn.sec.university': "الجامعة واللسانيات",
+    'learn.sec.made': "كتبها الذكاء الاصطناعي أو وُلّدت من البيانات",
     'learn.readStory': "اقرأ القصة كاملة في القارئ",
     'speak.use': 'طريقة الاستعمال',
     'speak.options': 'الخيارات',

@@ -13,7 +13,7 @@
   import { createReview } from '../lib/review.js';
   import { lessonAnswer, completion } from '../lib/progression.js';
   import { speakLinks } from '../lib/pronounce.js';
-  import { byOrigin } from '../lib/learnorigin.js';
+  import { learnSections } from '../lib/learnorigin.js';
   let { lang, loadLearn, loadLesson, loadQuestions, storage = null, random = Math.random, openInReader = null, speak = null, saveFile = downloadFile, award = null, progression = null } = $props();
 
   let learn = $state(null);
@@ -238,13 +238,14 @@
       {#each learn.levels as l}<button class="level-tab" data-level={l.id} class:active={l.id === levelId} aria-selected={l.id === levelId} onclick={() => { levelId = l.id; }}>{l.title ? loc(l.title) : l.id}<span class="count">{l.topics.filter((tp) => tp.kind === 'grammar').reduce((n, tp) => n + tp.lessons.length, 0)}</span></button>{/each}
     </div>
     <input class="search" type="search" bind:value={search} placeholder={t('learn.search')} />
-    {@const parts = byOrigin(level?.topics)}
-    {@render topicList(parts.human)}
-    {#if parts.made.some((tp) => visible(tp).length)}
-      <h3 class="made-head">{t('learn.madeHead')}</h3>
-      <p class="made-note">{t('learn.madeNote')}</p>
-      {@render topicList(parts.made)}
-    {/if}
+    {@const parts = learnSections(level?.topics)}
+    {#each parts as sec, i (sec.id)}
+      {#if sec.topics.some((tp) => visible(tp).length)}
+        {#if parts.length > 1 || sec.id === 'made'}<h3 class="sec-head" class:made-head={sec.id === 'made'} data-section={sec.id}>{t(`learn.sec.${sec.id}`)}</h3>
+          {#if sec.id === 'made'}<p class="made-note">{t('learn.madeNote')}</p>{/if}{/if}
+        {@render topicList(sec.topics)}
+      {/if}
+    {/each}
   {/if}
   {#if learn}<p class="credit">{loc(learn.credit)}</p>{/if}
 </section>
@@ -335,6 +336,7 @@
   .words { border-collapse: collapse; } .words td { border-bottom: 1px solid var(--line); padding: 4px 10px; }
   .words tr:nth-child(even) td { background: var(--table-stripe); }
   .to-speak, :global(.prose .to-speak) { text-decoration: none; margin-inline-start: 4px; font-size: .9em; }
+  .sec-head { margin: 16px 0 4px; font-size: .95rem; color: var(--ink-2); }
   .made-head { margin: 22px 0 2px; font-size: 1rem; border-top: 2px solid var(--line); padding-top: 12px; }
   .made-note { margin: 0 0 8px; color: var(--ink-2); font-size: .85em; }
   .dict { font-size: 0.8em; color: var(--accent-text); white-space: nowrap; }
