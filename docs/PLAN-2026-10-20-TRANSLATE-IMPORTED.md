@@ -36,4 +36,5 @@ ar 0.4M · uk 0.3M · is 0.2M · mk 0.03M.
   morning's cache.de), entities, line breaks, loops (output > 2× input rejected), IPA and other-script words now
   protected, placeholder retry with braces, "used to mean"/"tense" corrections in tools/mt_fixes/pt.yml.
   Settings: beam 2, batch 4, no_repeat_ngram 6, decode ≤ 512 (batch 6+ ran the 6 GB GPU out of memory).
+  After each pair: release_data.sh <code>, merge to main, push, run the casus-asia and casus-world workflows, live-check (Allan checks each pair).
   Run: tools/mt.sh <ui> <code> [--redo]; check: python3 tools/mt_check.py <code> --ui <ui>; then release_data.sh <code>.
