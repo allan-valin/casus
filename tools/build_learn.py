@@ -367,12 +367,31 @@ FOREIGN_WIKIBOOKS = {
     "ko": ["en:Korean", "fr:Coréen"], "zh": ["en:Chinese (Mandarin)", "es:Chino", "zh:现代标准汉语"], "sa": ["en:Sanskrit", "es:Sánscrito"],
     "ja": ["en:Japanese"], "ar": ["it:Arabo", "tr:Arapça"], "ru": ["pt:Russo", "it:Russo", "zh:俄语"], "tr": ["tr:Türkçe", "es:Turco"],
 }
+# school material for native speakers ("@school") and university/linguistics courses ("@university"), and the
+# Wikiversity courses ("wv-xx:"), shown under their own headers in Learn (Allan, 2026-10-20)
+EXTRA_SOURCES = {
+    "ja": ["ja:小学校国語@school", "ja:中学校国語@school", "ja:中学校国語 文法@school", "ja:中学校国語 古文@school", "ja:中学校国語 漢文@school",
+           "ja:高等学校国語総合@school", "ja:高等学校古文@school", "ja:高等学校古典B@school", "wv-en:Beginner Japanese", "wv-en:Japanese Language", "wv-fr:Japonais"],
+    "zh": ["zh:小学语文@school", "zh:初中语文@school", "zh:國中語文（高中）@school", "wv-fr:Chinois"],
+    "fi": ["fi:Äidinkieli@school", "wv-en:Learning Finnish"], "tr": ["tr:Türkçe@school", "tr:Ön-Türkçe@university", "wv-en:Turkish"],
+    "it": ["it:Italiano@school", "wv-en:Introduction to Italian", "wv-fr:Italien"], "nl": ["nl:Nederlands@school", "wv-en:Dutch Language", "wv-fr:Néerlandais"],
+    "uk": ["uk:Українська мова@school", "wv-en:Ukrainian language"], "fr": ["fr:Français@school", "wv-en:French"],
+    "cs": ["wv-en:Czech Language"], "ru": ["ru:Некоторые сюжеты из истории русского языка@university", "ru:Русский язык как иностранный", "wv-fr:Russe", "wv-en:Russian"],
+    "la": ["hu:Latin", "es:Gramática de uso de la lengua latina", "la:Lingua Latina in libris de Harrio Potter@reader",
+           "wv-en:Latin I@university", "wv-en:Latin II@university", "wv-en:Latin III@university", "wv-fr:Latin@school"],
+    "grc": ["wv-en:Introductory Ancient Greek Language@university", "wv-fr:Grec ancien@school"],
+    "de": ["wv-en:German Language", "wv-en:German grammar", "wv-fr:Allemand"], "es": ["wv-en:Spanish 1", "wv-fr:Espagnol"],
+    "pt": ["wv-en:Brazilian Portuguese", "wv-en:Portuguese Language", "wv-fr:Portugais"], "ar": ["wv-en:Arabic", "wv-fr:Arabe"],
+    "ko": ["wv-en:Korean", "wv-en:Korean Language", "wv-fr:Coréen"], "pl": ["wv-en:Polish language", "wv-fr:Polonais"],
+    "hu": ["wv-en:Hungarian language"], "el": ["wv-en:Greek Language"], "sa": ["wv-en:Sanskrit Language"],
+}
 # full grammars for the Reference tab (Wikisource: public domain; Wikibooks: CC BY-SA); "ws-xx:" = Wikisource
 REFERENCE = {
-    "sa": ["ws-en:Sanskrit Grammar (Whitney)", "ws-sa:संस्कृत-व्याकरण की उपक्रमणिका"],
+    "sa": ["ws-en:Sanskrit Grammar (Whitney)"],
     "hu": ["ws-en:Simplified Grammar of the Hungarian Language", "hu:Magyar nyelvtan", "de:Ungarisch-Grammatik"],
-    "grc": ["ws-el:Τέχνη Γραμματική"], "ar": ["ws-ar:الآجرومية"], "ja": ["ws-ja:改撰標準日本文法"], "zh": ["ws-zh:國語文法概論"],
-    "ru": ["ws-ru:Русская грамматика для первоначального обучения (Белинский)"], "es": ["es:Español"],
+    "grc": ["ws-el:Τέχνη Γραμματική", "ws-en:Syntax of the Moods and Tenses of the Greek Verb"],
+    "ar": ["ws-ar:المقدمة الآجرومية (1283 هـ)", "ws-ar:الآجرومية في قواعد علم العربية"], "ja": ["ws-ja:改撰標準日本文法"], "zh": ["ws-zh:國語文法概論"],
+    "es": ["es:Español", "ws-es:Gramática de la lengua castellana (1771)"],
     "it": ["ws-en:Italian with Grammar", "it:Grammatica contestuale"], "pt": ["pt:Português", "pt:Introdução à língua portuguesa"],
     "nl": ["nl:Nederlands", "fr:Grammaire néerlandaise"], "pl": ["pl:Polski"], "el": ["de:Neugriechisch: Grammatik", "tr:Çağdaş Yunanca"],
     "en": ["en:English Grammar", "en:English in Use", "de:Englisch: Grammatik", "pt:Gramática inglesa estrutural", "hu:Angol nyelvtan", "ja:高校英語の文法"],
@@ -463,11 +482,12 @@ def main(code: str) -> None:
     # docs/PLAN-2026-10-20-HUMAN-SOURCES.md; vendor/wikibooks/…/pages.json, tools/fetch_wikibooks.py), then the
     # reference grammars: a "Reference grammar" tab for every language, as Latin has Allen & Greenough
     from learn_wikibooks import wikibooks_lessons
-    for spec, reference in [(x, False) for x in FOREIGN_WIKIBOOKS.get(code, [])] + [(x, True) for x in REFERENCE.get(code, [])]:
+    for spec, reference in [(x, False) for x in FOREIGN_WIKIBOOKS.get(code, []) + EXTRA_SOURCES.get(code, [])] + [(x, True) for x in REFERENCE.get(code, [])]:
+        spec, _, group = spec.partition("@")          # "fr:Latin@school": the kind of source, for the Learn headers
         edition, book = spec.split(":", 1)
-        site = "wikisource" if edition.startswith("ws-") else "wikibooks"
-        edition = edition[3:] if site == "wikisource" else edition
-        folder = (ROOT / "vendor" / "wikisource" / edition / book) if site == "wikisource" else \
+        site = {"ws-": "wikisource", "wv-": "wikiversity"}.get(edition[:3], "wikibooks")
+        edition = edition[3:] if site != "wikibooks" else edition
+        folder = (ROOT / "vendor" / site / edition / book) if site != "wikibooks" else \
             ROOT / "vendor" / "wikibooks" / (book if edition == "en" else f"{edition}/{book}")
         if not (folder / "pages.json").exists():
             continue
@@ -475,9 +495,9 @@ def main(code: str) -> None:
             lvls = [reference_level(index)]
         else:
             lvls = [lv["id"] for lv in index["levels"] if lv["id"] in ("A1", "A2", "B1")] or None
-        tag = "ws" if site == "wikisource" else "wb"
+        tag = {"wikisource": "ws", "wikiversity": "wv"}.get(site, "wb")
         n = wikibooks_lessons(code, book, json.loads((folder / "pages.json").read_text(encoding="utf-8")), index, lessons, questions,
-                              levels=lvls, edition=edition, prefix=f"{code}-{tag}{edition}{zlib.crc32(book.encode()) % 1000:03d}", site=site)
+                              levels=lvls, edition=edition, prefix=f"{code}-{tag}{edition}{zlib.crc32(book.encode()) % 1000:03d}", site=site, group=group or None)
         print(f"{code}: {n} lessons from {site} ({edition}) {book}{' → reference' if reference else ''}")
     # public-domain books from Project Gutenberg (vendor/gutenberg/<n>.txt, tools/fetch_learn_sources.sh), each cut at its
     # own lesson or section headings; a course goes to the first levels, a grammar to the Reference tab

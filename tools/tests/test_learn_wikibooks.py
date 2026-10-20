@@ -72,3 +72,8 @@ def test_fetcher_orders_chapters_by_roman_numeral_and_splits_a_one_page_book():
     assert book_order(names) == ["Preface", "Abbreviations", "Chapter I", "Chapter II", "Chapter IV", "Chapter V", "Chapter IX", "Chapter X"]
     html = "<p>intro</p><h2>Le nom</h2><p>a</p><h2>Le verbe</h2><p>b</p>"
     assert [p["title"] for p in split_page("Grammaire", html)] == ["Grammaire/Introduction", "Grammaire/Le nom", "Grammaire/Le verbe"]
+
+
+def test_clean_drops_the_wikisource_header_box():
+    h = clean('<div id="headertemplate"><div class="wst-header-mainblock">Author, 1928, ← previous next →</div></div><p>Text of the grammar.</p>', "ja", "wikisource")
+    assert "previous" not in h and "Text of the grammar" in h

@@ -100,7 +100,7 @@ python3 - "$ROOT" <<'PY'
 import re, sys, subprocess, ast
 t = open(f"{sys.argv[1]}/tools/build_learn.py", encoding="utf-8").read()
 specs = []
-for name in ("FOREIGN_WIKIBOOKS", "REFERENCE"):
+for name in ("FOREIGN_WIKIBOOKS", "EXTRA_SOURCES", "REFERENCE"):
     for v in ast.literal_eval(re.search(name + r" = (\{.*?\n\})", t, re.S).group(1)).values():
         specs += v
 for s in specs:

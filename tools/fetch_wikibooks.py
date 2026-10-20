@@ -85,10 +85,13 @@ def main(spec):
     global API
     edition, book = spec.split(":", 1) if ":" in spec else ("en", spec)
     site = "wikibooks"
+    spec_book = book.partition("@")[0]; book = spec_book   # "@school" is for the build, not the wiki
     if edition.startswith("ws-"):          # ws-fr:Title — a public-domain book on Wikisource
         site, edition = "wikisource", edition[3:]
+    elif edition.startswith("wv-"):        # wv-fr:Latin — a Wikiversity course (CC BY-SA)
+        site, edition = "wikiversity", edition[3:]
     API = f"https://{edition}.{site}.org/w/api.php"
-    out = ROOT / "vendor" / site / edition / book if site == "wikisource" else ROOT / "vendor" / "wikibooks" / (book if edition == "en" else f"{edition}/{book}")
+    out = ROOT / "vendor" / site / edition / book if site != "wikibooks" else ROOT / "vendor" / "wikibooks" / (book if edition == "en" else f"{edition}/{book}")
     out.mkdir(parents=True, exist_ok=True)
     order, pages, seen = [], [], set()
     main_html = parsed(book)

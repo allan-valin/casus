@@ -59,5 +59,5 @@ def storybook_lessons(code: str, folders: list, index: dict, lessons: dict, ques
         questions.setdefault(lv, {})[lid] = {"pools": {"gap": []}, "qs": []}
         per.setdefault(lv, []).append({"id": lid, "title": s["title"], "meaning": meaning})
     for lv, entries in per.items():
-        topics[lv].append({"id": f"{lv}-storybooks", "kind": "grammar", "title": {"en": "Storybooks (Global Storybooks, CC BY)", "pt": "Histórias (Global Storybooks, CC BY)"}, "lessons": entries})
+        topics[lv].append({"id": f"{lv}-storybooks", "kind": "grammar", "title": {"en": "Storybooks (Global Storybooks, CC BY)", "pt": "Histórias (Global Storybooks, CC BY)"}, "lessons": entries, "group": "reader"})
     return len(stories)

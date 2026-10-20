@@ -56,7 +56,7 @@ def clean(html: str, edition: str = "en", site: str = "wikibooks") -> str:
     h = re.sub(r"<style.*?</style>", "", html, flags=re.S)
     h = re.sub(r"<!--.*?-->", "", h, flags=re.S)
     for pat in (r'<table[^>]*class="[^"]*(ambox|navbox|metadata|noprint|toccolours)[^"]*"[^>]*>', r'<div[^>]*class="[^"]*(noprint|navbox|toc|printfooter|mw-references|ambox|thumb)[^"]*"[^>]*>',
-                r'<div[^>]*role="navigation"[^>]*>', r'<span[^>]*class="[^"]*mw-editsection[^"]*"[^>]*>'):
+                r'<div[^>]*role="navigation"[^>]*>', r'<div[^>]*id="headertemplate"[^>]*>', r'<div[^>]*class="[^"]*(wst-header|ws-noexport|licenseContainer)[^"]*"[^>]*>', r'<span[^>]*class="[^"]*mw-editsection[^"]*"[^>]*>'):
         h = _drop(h, pat)
     h = _drop_maintenance(h)
     h = re.sub(r"<img[^>]*>", "", h)
@@ -71,7 +71,8 @@ def _text_len(html: str) -> int:
 
 
 def wikibooks_lessons(code: str, book: str, pages: list, index: dict, lessons: dict, questions: dict, levels: list | None = None,
-                      rules: dict | None = None, edition: str = "en", prefix: str | None = None, site: str = "wikibooks") -> int:
+                      rules: dict | None = None, edition: str = "en", prefix: str | None = None, site: str = "wikibooks",
+                      group: str | None = None) -> int:
     """`site` wikisource: a public-domain book transcribed on Wikisource, credited as such"""
     levels = levels or [lv["id"] for lv in index["levels"]]
     topics = {lv["id"]: lv["topics"] for lv in index["levels"]}
@@ -88,7 +89,11 @@ def wikibooks_lessons(code: str, book: str, pages: list, index: dict, lessons: d
         url = f"https://{edition}.{site}.org/wiki/" + urllib.parse.quote(title.replace(" ", "_"), safe="/:")
         en_name, pt_name, own = EDITIONS.get(edition, (edition, edition, edition))
         written = "" if edition == "en" else f" It is written in {en_name}."
-        if site == "wikisource":
+        if site == "wikiversity":
+            credit = {"en": f'<p><small>From the Wikiversity course <a href="{url}">{title}</a> (CC BY-SA 4.0; authors in the page history).{written}</small></p>',
+                      "pt": f'<p><small>Do curso da Wikiversidade <a href="{url}">{title}</a> (CC BY-SA 4.0; autores no histórico da página), em {pt_name}.</small></p>'}
+            shelf = shelf_pt = f"Wikiversity ({own})"
+        elif site == "wikisource":
             written = f" It is written in {en_name}."
             credit = {"en": f'<p><small>From <a href="{url}">{title}</a>, a public domain book transcribed on Wikisource.{written}</small></p>',
                       "pt": f'<p><small>De <a href="{url}">{title}</a>, livro em domínio público transcrito no Wikisource, em {pt_name}.</small></p>'}
@@ -101,7 +106,7 @@ def wikibooks_lessons(code: str, book: str, pages: list, index: dict, lessons: d
         page = {"id": lid, "title": name, "meaning": {"en": section, "pt": section}, "intro": credit,
                 "sections": [{"id": "wikibooks", "title": {"en": "The lesson", "pt": "A lição"}, "html": {"en": h, "pt": h}}],
                 "examples": [], "practice": [], "level": lv, "topic": {"en": f"{shelf}: {section}", "pt": f"{shelf_pt}: {section}"},
-                "source": f"Wikisource ({edition}), {title} (public domain)" if site == "wikisource" else f"Wikibooks{'' if edition == 'en' else f' ({edition})'}, {title} (CC BY-SA 4.0)"}
+                "source": f"Wikiversity ({edition}), {title} (CC BY-SA 4.0)" if site == "wikiversity" else f"Wikisource ({edition}), {title} (public domain)" if site == "wikisource" else f"Wikibooks{'' if edition == 'en' else f' ({edition})'}, {title} (CC BY-SA 4.0)"}
         rule = next((r for word, r in (rules or {}).items() if word in title.lower()), None)
         if rule:
             page["match"] = rule
@@ -109,5 +114,6 @@ def wikibooks_lessons(code: str, book: str, pages: list, index: dict, lessons: d
         questions.setdefault(lv, {})[lid] = {"pools": {"gap": []}, "qs": []}
         per.setdefault((lv, section), []).append({"id": lid, "title": name, "meaning": page["meaning"]})
     for (lv, section), entries in per.items():
-        topics[lv].append({"id": f"{lv}-{prefix or 'wb'}-{section}", "kind": "grammar", "title": {"en": f"{shelf}: {section}", "pt": f"{shelf_pt}: {section}"}, "lessons": entries})
+        topics[lv].append({"id": f"{lv}-{prefix or 'wb'}-{section}", "kind": "grammar", "title": {"en": f"{shelf}: {section}", "pt": f"{shelf_pt}: {section}"}, "lessons": entries,
+                           **({"group": group} if group else {})})
     return len(keep)
