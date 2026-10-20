@@ -202,3 +202,10 @@ def test_a_page_with_plain_string_fields_is_translated_too(tmp_path, monkeypatch
     assert p["meaning"] == {"en": "marks the topic", "pt": "«pt»marks the topic"}
     assert p["intro"]["en"] == intro and "«pt»" in p["intro"]["pt"] and "<code>は</code>" in p["intro"]["pt"]
     assert p["sections"][0]["html"]["pt"].startswith("<p>«pt»") and p["sections"][0]["title"]["pt"] == "«pt»Formation"
+
+
+def test_a_long_japanese_sentence_is_cut_shorter_at_its_commas():
+    """a CJK character is about one token, so the cut is at 200 characters, at 、 or ，"""
+    long = "、".join(["これは長い文の一部です"] * 40) + "。"
+    parts = T.pieces_of(long)
+    assert len(parts) > 1 and all(len(p) <= 200 for p in parts) and "".join(parts) == long
