@@ -95,3 +95,12 @@ def test_subpages_of_a_nested_book_keep_one_prefix(monkeypatch):
     monkeypatch.setattr(f, "get", lambda params: {"query": {"allpages": [{"title": "Ungarisch/Ungarisch-Grammatik/Akkusativ"},
                                                                         {"title": "Ungarisch/Ungarisch-Grammatik/Dativ"}]}})
     assert f.subpages("Ungarisch/Ungarisch-Grammatik") == ["Ungarisch/Ungarisch-Grammatik/Akkusativ", "Ungarisch/Ungarisch-Grammatik/Dativ"]
+
+
+def test_a_navigation_template_with_an_edit_link_is_dropped():
+    """the Korean book's navigation panel (a table with an [edit] link to its template) is not lesson content"""
+    from learn_wikibooks import clean
+    nav = ('<table width="100%"><tbody><tr><td><small>[<small class="editlink noprint plainlinks"><a href="x?action=edit">edit</a></small>]</small>'
+           + "<p><b>Learn Korean</b> — 1. Greetings • 2. Forming sentences • " * 20 + "</p></td></tr></tbody></table>")
+    out = clean(nav + "<p>Welcome to the first lesson.</p>")
+    assert "Greetings" not in out and "Welcome to the first lesson." in out

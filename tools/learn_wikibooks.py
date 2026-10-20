@@ -46,7 +46,8 @@ def _drop_maintenance(html: str) -> str:
     out, pos = [], 0
     for m in re.finditer(r"<table\b[^>]*>.*?</table>", html, flags=re.S):
         text = re.sub(r"<[^>]+>", "", m.group(0))
-        if len(text) < 600 and MAINTENANCE.search(m.group(0)) and "wikitable" not in m.group(0)[:200]:
+        # a notice, or a navigation panel transcluded from a template (it carries the template's [edit] link)
+        if len(text) < 600 and MAINTENANCE.search(m.group(0)) and "wikitable" not in m.group(0)[:200] or 'class="editlink' in m.group(0):
             out.append(html[pos:m.start()]); pos = m.end()
     out.append(html[pos:])
     return "".join(out)
