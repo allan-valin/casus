@@ -108,3 +108,9 @@ def test_redo_replaces_an_earlier_translation(tmp_path, monkeypatch):
     monkeypatch.setattr(T, "ROOT", tmp_path)
     assert T.translate_language("xx", Fake("pt"), redo=True) == 1
     assert json.loads(f.read_text())["sections"][0]["html"]["pt"].startswith("<p><pt>")
+
+
+def test_a_very_long_sentence_is_cut_at_commas():
+    long = "Words: " + ", ".join(f"word{n}" for n in range(200)) + "."
+    parts = T.pieces_of(long)
+    assert len(parts) > 1 and all(len(p) <= 600 for p in parts) and "".join(parts) == long

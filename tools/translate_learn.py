@@ -25,6 +25,19 @@ from mt_html import PH, dedupe, is_prose, protect_terms, translate_html  # noqa:
 
 ROOT = Path(__file__).resolve().parents[1]
 MODEL = ROOT / "vendor" / "mt" / "madlad400-3b-ct2"
+def pieces_of(text: str) -> list:
+    """a text cut into sentences; a sentence longer than 600 characters (a list run on with commas) also at commas"""
+    out = []
+    for p in SENT.split(text):
+        while len(p) > 600:
+            cut = p.rfind(", ", 0, 600)
+            cut = cut + 2 if cut > 100 else (p.rfind(" ", 0, 600) + 1 or 600)
+            out.append(p[:cut])
+            p = p[cut:]
+        out.append(p)
+    return out
+
+
 SENT = re.compile(r"(?<=[.!?;])\s+(?=[A-ZÀ-ÞА-ЯЁΑ-Ω\[(¿¡])|(?<=[。！？])")
 # a book whose source line names no edition: its explanation language when it is not English
 SRC_OF = {"Grammaire française": "fr", "Antología abierta": "es", "Dz.U.": "pl", "Gramática de la lengua castellana": "es",
@@ -44,13 +57,13 @@ class Translator:
 
     def _model(self, texts: list) -> list:
         toks = [self.sp.encode(f"<2{self.ui}> {t}", out_type=str) for t in texts]
-        res = self.model.translate_batch(toks, beam_size=2, max_batch_size=8, no_repeat_ngram_size=4, repetition_penalty=1.15,
+        res = self.model.translate_batch(toks, beam_size=2, max_batch_size=1536, batch_type="tokens", no_repeat_ngram_size=4, repetition_penalty=1.15,
                                          max_decoding_length=max(32, int(1.8 * max(len(t) for t in toks)) + 8))
         return [self.sp.decode(r.hypotheses[0]) for r in res]
 
     def __call__(self, texts: list) -> list:
         """each text cut into sentences, each sentence translated once ever"""
-        pieces = [SENT.split(t) for t in texts]
+        pieces = [pieces_of(t) for t in texts]
         todo = sorted({p for ps in pieces for p in ps if p.strip() and p not in self.cache})
         for k in range(0, len(todo), 96):
             batch = [protect_terms(x, self.ui) for x in todo[k:k + 96]]
@@ -89,7 +102,7 @@ class CacheOnly:
         self.cache = cache if cache is not None else (json.loads(f.read_text(encoding="utf-8")) if (f := ROOT / "vendor" / "mt" / f"cache.{ui}.json").exists() else {})
 
     def __call__(self, texts: list) -> list:
-        pieces = [SENT.split(t) for t in texts]
+        pieces = [pieces_of(t) for t in texts]
         if any(p.strip() and p not in self.cache for ps in pieces for p in ps):
             raise Missing
         return [" ".join(self.cache.get(p, p) for p in ps) for ps in pieces]
