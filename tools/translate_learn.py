@@ -253,7 +253,13 @@ def translate_language(code: str, tr, redo: bool = False) -> int:
                     text_field(t["title"], tr, tsrc)
                 for e in t.get("lessons", []):
                     if e.get("id") in srcs and isinstance(e.get("meaning"), dict):
-                        text_field(e["meaning"], tr, srcs[e["id"]])
+                        m = e["meaning"]
+                        if redo and m.get(tr.ui) and m.get(tr.ui) != _orig(m):
+                            if tr.ui == "en":
+                                m["en"] = m.pop("orig", m["en"])
+                            else:
+                                del m[tr.ui]
+                        text_field(m, tr, srcs[e["id"]])
         index_file.write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     tr.save()
     return n

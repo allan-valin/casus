@@ -176,3 +176,14 @@ def test_a_meaning_with_entities_reaches_the_model_as_plain_text():
     obj = {"en": "A connective ending used to mean &quot;as&quot; in a sentence."}
     T.text_field(obj, tr, "en")
     assert tr.sent == ['A connective ending used to mean "as" in a sentence.'] and "&quot;as&quot;" in obj["pt"]
+
+
+def test_redo_also_replaces_the_index_meanings(tmp_path, monkeypatch):
+    body = "<p>Le présent se forme avec les terminaisons du présent.</p>"
+    page(tmp_path / "data", "p1", id="p1", source="Wikibooks (fr), X", mt={"pt": "MADLAD-400"}, src="fr",
+         sections=[{"id": "a", "html": {"en": body, "pt": "<p>velha</p>"}}])
+    idx = {"levels": [{"id": "A1", "topics": [{"title": {"en": "T"}, "lessons": [{"id": "p1", "meaning": {"en": "le présent", "pt": "velho"}}]}]}]}
+    (tmp_path / "data" / "xx" / "learn.json").write_text(json.dumps(idx))
+    monkeypatch.setattr(T, "ROOT", tmp_path)
+    T.translate_language("xx", Fake("pt"), redo=True)
+    assert json.loads((tmp_path / "data" / "xx" / "learn.json").read_text())["levels"][0]["topics"][0]["lessons"][0]["meaning"]["pt"] == "«pt»le présent"
