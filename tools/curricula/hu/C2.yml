@@ -1,0 +1,196 @@
+id: C2
+topics:
+
+- title: {en: Verbs in depth, pt: Verbos a fundo}
+  lessons:
+  - id: hu-causee
+    title: Megcsináltatom a szerelővel.
+    meaning: {en: "who is made to act: -val / -vel or the accusative", pt: "quem é levado a agir: -val / -vel ou acusativo"}
+    intro:
+      en: |
+        With a causative verb the person made to act is marked differently by the kind of verb:
+
+        - transitive base (the verb already has an object): the causee takes **-val / -vel**: **Megjavíttattam az autót a szerelővel.** "I had the mechanic repair the car." **Leveleket íratott a titkárnőjével.** "He had his secretary write letters."
+        - intransitive base: the causee is the object, in the accusative: **A tanár dolgoztatja a diákokat.** "The teacher makes the students work." **Megnevettette a gyerekeket.** "He made the children laugh."
+      pt: |
+        Com um verbo causativo, quem é levado a agir é marcado conforme o tipo de verbo:
+
+        - base transitiva (o verbo já tem objeto): o agente leva **-val / -vel**: **Megjavíttattam az autót a szerelővel.** "Mandei o mecânico consertar o carro." **Leveleket íratott a titkárnőjével.** "Ele mandou a secretária escrever cartas."
+        - base intransitiva: o agente é o objeto, no acusativo: **A tanár dolgoztatja a diákokat.** "O professor faz os alunos trabalharem." **Megnevettette a gyerekeket.** "Ele fez as crianças rirem."
+    examples:
+    - ["Megjavíttattam az autót a szerelővel.", "I had the mechanic repair the car.", "Mandei o mecânico consertar o carro.", "szerelővel"]
+    - ["A tanár dolgoztatja a diákokat.", "The teacher makes the students work.", "O professor faz os alunos trabalharem.", "diákokat"]
+    - ["Megnevettette a gyerekeket.", "He made the children laugh.", "Ele fez as crianças rirem.", "gyerekeket"]
+    match:
+    - {seq: [{pos: verb, lemma: "(tat|tet)$", not: {lemma: "^(mutat|kutat|tetet)$"}}, {pos: [noun, pron], case: [ins, acc]}], near: 4, gap: 1, same: [number]}
+    - {seq: [{pos: [noun, pron], case: [ins, acc]}, {pos: verb, lemma: "(tat|tet)$", not: {lemma: "^(mutat|kutat|tetet)$"}}], near: 2, gap: 0, same: [number]}
+
+  - id: hu-ik-verbs
+    title: eszem, iszom, lakom
+    meaning: {en: "-ik verbs: the careful 1st person -m", pt: "verbos em -ik: a 1ª pessoa cuidada em -m"}
+    intro:
+      en: |
+        Verbs listed with **-ik** (**eszik, iszik, lakik, dolgozik, alszik**) have their own forms in the present indefinite: 3rd singular **-ik**, and in careful, written and standard speech 1st singular **-m**: **eszem, iszom, lakom, dolgozom**. Everyday speech often uses **-k** like other verbs (**lakok, dolgozok**); purists frown on it. The conditional follows the same split: **ennék / enném**.
+      pt: |
+        Os verbos citados com **-ik** (**eszik, iszik, lakik, dolgozik, alszik**) têm formas próprias no presente indefinido: 3ª do singular **-ik** e, na fala cuidada, escrita e padrão, 1ª do singular **-m**: **eszem, iszom, lakom, dolgozom**. A fala do dia a dia muitas vezes usa **-k** como os outros verbos (**lakok, dolgozok**); os puristas não gostam. O condicional segue a mesma divisão: **ennék / enném**.
+    examples:
+    - ["Budapesten lakom.", "I live in Budapest.", "Moro em Budapeste.", "lakom"]
+    - ["Egy bankban dolgozom.", "I work in a bank.", "Trabalho num banco.", "dolgozom"]
+    - ["Nem iszom kávét.", "I don't drink coffee.", "Não bebo café.", "iszom"]
+    match: {seq: [{pos: verb, lemma: "ik$", tense: pres, mood: ind, person: "1", number: sg, re: "(om|em|öm)$"}], suffixes: [om, ok, em, ek, öm, ök], attested: true}
+
+  - id: hu-progressive
+    title: Éppen mentem át az úton, amikor …
+    meaning: {en: "the progressive: prefix after the verb in a background action", pt: "o progressivo: prefixo depois do verbo numa ação de fundo"}
+    intro:
+      en: |
+        Hungarian has no progressive tense, but word order can show an action in progress: the prefix moves behind the verb even without a focus, typically with **éppen / épp** and an **amikor** clause: **Éppen mentem át az úton, amikor megláttam.** "I was just crossing the road when I saw him." Compare the completed **Átmentem az úton.** "I crossed the road."
+      pt: |
+        O húngaro não tem tempo progressivo, mas a ordem das palavras pode mostrar uma ação em andamento: o prefixo passa para depois do verbo mesmo sem foco, em geral com **éppen / épp** e uma oração com **amikor**: **Éppen mentem át az úton, amikor megláttam.** "Eu estava atravessando a rua quando o vi." Compare com a ação concluída **Átmentem az úton.** "Atravessei a rua."
+    examples:
+    - ["Éppen mentem át az úton, amikor megláttam.", "I was just crossing the road when I saw him.", "Eu estava atravessando a rua quando o vi.", "át"]
+    - ["Épp szálltam be az autóba, amikor csörgött a telefon.", "I was just getting into the car when the phone rang.", "Eu estava entrando no carro quando o telefone tocou.", "be"]
+    - ["Éppen jöttem ki a boltból.", "I was just coming out of the shop.", "Eu estava saindo da loja.", "ki"]
+    match: {seq: [{word: [éppen, épp]}, {pos: verb}, {word: [be, ki, el, meg, fel, föl, le, vissza, át, haza, össze, rá, oda]}], gap: 2}
+    pool: [be, ki, el, meg, fel, le, vissza, át, haza]
+
+  - id: hu-stative-converb
+    title: meg van írva
+    meaning: {en: "prefix + van + -va: the resulting state", pt: "prefixo + van + -va: o estado resultante"}
+    intro:
+      en: |
+        **van** + the **-va / -ve** form, with the prefix in front of **van**, describes a finished state, close to an English passive: **A levél meg van írva.** "The letter is written." **Az ajtó be van zárva.** "The door is locked." **Minden el van intézve.** "Everything is arranged." Negative: **nincs megírva**.
+      pt: |
+        **van** + a forma em **-va / -ve**, com o prefixo antes de **van**, descreve um estado concluído, perto de uma passiva: **A levél meg van írva.** "A carta está escrita." **Az ajtó be van zárva.** "A porta está trancada." **Minden el van intézve.** "Está tudo resolvido." Negativa: **nincs megírva**.
+    examples:
+    - ["Az ajtó be van zárva.", "The door is locked.", "A porta está trancada.", "zárva"]
+    - ["Minden el van intézve.", "Everything is arranged.", "Está tudo resolvido.", "intézve"]
+    - ["A levél meg van írva.", "The letter is written.", "A carta está escrita.", "írva"]
+    match: {seq: [{word: [meg, el, be, ki, fel, le, össze, át, rá]}, {word: [van, vannak, volt, voltak, lesz, lesznek]}, {pos: verb, re: "(va|ve)$"}], gap: 2, suffixes: [va, ve, ta, te, ják, ik], attested: true}
+
+  - id: hu-narrative-past
+    title: monda, vala, lőn
+    meaning: {en: "old past forms in literature and the Bible", pt: "formas antigas de passado na literatura e na Bíblia"}
+    intro:
+      en: |
+        Older literature has tenses modern Hungarian lost: the narrative past **-á / -é** (**monda** "he said", **kezde** "he began", **láta** "he saw"), **vala** "was" (past of **van**, also as an auxiliary: **írt vala** "he had written"), **lőn** "became, came to be", **vagyon** "is", **lészen** "will be". Recognising them is enough: **Monda pedig Isten: Legyen világosság! És lőn világosság.**
+      pt: |
+        A literatura antiga tem tempos que o húngaro moderno perdeu: o passado narrativo **-á / -é** (**monda** "disse", **kezde** "começou", **láta** "viu"), **vala** "era, estava" (passado de **van**, também auxiliar: **írt vala** "tinha escrito"), **lőn** "tornou-se, houve", **vagyon** "é, há", **lészen** "será". Basta reconhecê-los: **Monda pedig Isten: Legyen világosság! És lőn világosság.** "E disse Deus: Haja luz! E houve luz."
+    examples:
+    - ["És lőn világosság.", "And there was light.", "E houve luz.", "lőn"]
+    - ["Monda pedig Isten: Legyen világosság!", "And God said: Let there be light!", "E disse Deus: Haja luz!", "Monda"]
+    - ["Egyszer vala egy király.", "Once there was a king.", "Era uma vez um rei.", "vala"]
+    match: {seq: [{word: [vala, valék, valának, monda, mondá, lőn, lészen, vagyon, kezde, láta, felele]}], gap: 0}
+    pool: [vala, monda, lőn, lészen, vagyon, volt, mondta, lett]
+
+- title: {en: Word formation, pt: Formação de palavras}
+  lessons:
+  - id: hu-hatatlan
+    title: hihetetlen, elképzelhetetlen
+    meaning: {en: "-hatatlan / -hetetlen: impossible to …", pt: "-hatatlan / -hetetlen: impossível de …"}
+    intro:
+      en: |
+        **-hat / -het** (can) + **-atlan / -etlen** (without) gives *un-…-able*: **hisz → hihetetlen** "unbelievable", **elképzel → elképzelhetetlen** "unimaginable", **kibír → kibírhatatlan** "unbearable", **elkerül → elkerülhetetlen** "unavoidable". Its positive partner is **-ható / -hető**: **hihető** "believable", **elkerülhető** "avoidable". With **-ul / -ül** it becomes an adverb: **hihetetlenül** "incredibly".
+      pt: |
+        **-hat / -het** (poder) + **-atlan / -etlen** (sem) dá *in-…-ável*: **hisz → hihetetlen** "inacreditável", **elképzel → elképzelhetetlen** "inimaginável", **kibír → kibírhatatlan** "insuportável", **elkerül → elkerülhetetlen** "inevitável". O par positivo é **-ható / -hető**: **hihető** "crível", **elkerülhető** "evitável". Com **-ul / -ül** vira advérbio: **hihetetlenül** "incrivelmente".
+    examples:
+    - ["Ez hihetetlen!", "That's unbelievable!", "Isso é inacreditável!", "hihetetlen"]
+    - ["A meleg kibírhatatlan.", "The heat is unbearable.", "O calor está insuportável.", "kibírhatatlan"]
+    - ["Hihetetlenül gyors volt.", "It was incredibly fast.", "Foi incrivelmente rápido.", "Hihetetlenül"]
+    match:
+    - {seq: [{re: "hatatlan(ul|ok|t|ság)?$"}], suffixes: [hatatlanul, hatatlan, hatatlant, ható, hatóan], attested: true}
+    - {seq: [{re: "hetetlen(ül|ek|t|ség)?$"}], suffixes: [hetetlenül, hetetlen, hetetlent, hető, hetően], attested: true}
+
+  - id: hu-reciprocal
+    title: egymást, egymással
+    meaning: {en: "each other: egymás and its cases", pt: "um ao outro: egymás e seus casos"}
+    intro:
+      en: |
+        **egymás** "each other" declines like a noun and takes whatever case the verb needs: **Szeretik egymást.** "They love each other." **Beszélnek egymással.** "They talk to each other." **Gondolnak egymásra.** "They think of each other." **Egymás mellett ültek.** "They sat next to each other."
+      pt: |
+        **egymás** "um ao outro" declina como substantivo e leva o caso que o verbo pedir: **Szeretik egymást.** "Eles se amam." **Beszélnek egymással.** "Eles conversam entre si." **Gondolnak egymásra.** "Eles pensam um no outro." **Egymás mellett ültek.** "Sentaram-se um ao lado do outro."
+    examples:
+    - ["Szeretik egymást.", "They love each other.", "Eles se amam.", "egymást"]
+    - ["Nem beszélnek egymással.", "They don't talk to each other.", "Eles não se falam.", "egymással"]
+    - ["Gyakran gondolnak egymásra.", "They often think of each other.", "Eles pensam muito um no outro.", "egymásra"]
+    match: {seq: [{word: [egymás, egymást, egymással, egymásnak, egymásról, egymásra, egymástól, egymásba, egymáshoz, egymásban, egymásért, egymásnál]}], gap: 0}
+    pool: [egymást, egymással, egymásnak, egymásról, egymásra, egymástól, egymáshoz]
+
+- title: {en: Discourse, pt: Discurso}
+  lessons:
+  - id: hu-concessive
+    title: noha, jóllehet, mégis
+    meaning: {en: "although, nevertheless: formal concession", pt: "embora, no entanto: concessão formal"}
+    intro:
+      en: |
+        Beside **bár** and **habár**: **noha, jóllehet, ámbár** (although, formal), **holott** (whereas, even though), and in the main clause **mégis, mégsem** (still, yet … not), **ennek ellenére** (despite this), **mindazonáltal** (nevertheless): **Noha fáradt volt, mégis eljött.** "Although he was tired, he came all the same."
+      pt: |
+        Além de **bár** e **habár**: **noha, jóllehet, ámbár** (embora, formal), **holott** (quando, se bem que), e na principal **mégis, mégsem** (mesmo assim, ainda assim … não), **ennek ellenére** (apesar disso), **mindazonáltal** (no entanto): **Noha fáradt volt, mégis eljött.** "Embora estivesse cansado, veio mesmo assim."
+    examples:
+    - ["Noha fáradt volt, mégis eljött.", "Although he was tired, he came all the same.", "Embora estivesse cansado, veio mesmo assim.", "Noha"]
+    - ["Mégsem mondtam semmit.", "Still, I said nothing.", "Mesmo assim, não disse nada.", "Mégsem"]
+    - ["Ennek ellenére sikerült.", "Despite this, it worked.", "Apesar disso, deu certo.", "ellenére"]
+    match: {seq: [{word: [noha, jóllehet, ámbár, holott, mégis, mégsem, mindazonáltal, habár, bár]}], gap: 0}
+    pool: [noha, bár, mégis, mégsem, holott, ezért, mert, tehát]
+
+  - id: hu-indefinite-series
+    title: valaki, bárki, mindenki, senki
+    meaning: {en: "the pronoun series: vala-, bár- / akár-, mind-, se-", pt: "as séries de pronomes: vala-, bár- / akár-, mind-, se-"}
+    intro:
+      en: |
+        Question words build four series with prefixes:
+
+        | | who | what | where | when |
+        |---|---|---|---|---|
+        | some- **vala-** | valaki | valami | valahol | valamikor |
+        | any- **bár- / akár-** | bárki | bármi | bárhol | bármikor |
+        | every- **mind-** | mindenki | minden | mindenhol | mindig |
+        | no- **se-** | senki | semmi | sehol | soha |
+
+        **bár- / akár-** means *any at all, whoever*: **Bárki megcsinálhatja.** "Anyone can do it." The **se-** series needs **nem / sem** with the verb: **Senki sem jött.**
+      pt: |
+        As palavras interrogativas formam quatro séries com prefixos:
+
+        | | quem | o quê | onde | quando |
+        |---|---|---|---|---|
+        | algum **vala-** | valaki | valami | valahol | valamikor |
+        | qualquer **bár- / akár-** | bárki | bármi | bárhol | bármikor |
+        | todo **mind-** | mindenki | minden | mindenhol | mindig |
+        | nenhum **se-** | senki | semmi | sehol | soha |
+
+        **bár- / akár-** quer dizer *qualquer um, quem quer que*: **Bárki megcsinálhatja.** "Qualquer um pode fazer." A série **se-** pede **nem / sem** no verbo: **Senki sem jött.** "Ninguém veio."
+    examples:
+    - ["Bárki megcsinálhatja.", "Anyone can do it.", "Qualquer um pode fazer.", "Bárki"]
+    - ["Valaki kopog.", "Someone is knocking.", "Alguém está batendo.", "Valaki"]
+    - ["Mindenki itt van.", "Everyone is here.", "Todo mundo está aqui.", "Mindenki"]
+    match: {seq: [{word: [bárki, bármi, bármit, bárhol, bármikor, bárhova, akárki, akármi, akárhol, akármikor, valaki, valakit, valami, valamit, valahol, valahova, valamikor, mindenki, mindenkit, mindenhol]}], gap: 0}
+    pool: [valaki, valami, bárki, bármi, mindenki, minden, senki, semmi]
+
+  - id: hu-particles
+    title: ugye, hiszen, ugyan, hát
+    meaning: {en: "discourse particles", pt: "partículas do discurso"}
+    intro:
+      en: |
+        Small words that set the tone of a sentence:
+
+        - **ugye** asks for agreement: **Jössz, ugye?** "You're coming, aren't you?"
+        - **hiszen** "after all, since": **Hiszen tudod!** "But you know it!"
+        - **ugyan** doubts or dismisses: **Ugyan, hagyd!** "Oh, come on, leave it!" **Ugyan ki tudná?** "Who could possibly know?"
+        - **hát** "well": **Hát, nem tudom.** "Well, I don't know."
+        - **csak** softens a request or adds *just*: **Gyere csak!** "Come on!"
+        - **persze** "of course", **bezzeg** "whereas, by contrast (reproachful)"
+      pt: |
+        Palavrinhas que dão o tom da frase:
+
+        - **ugye** pede concordância: **Jössz, ugye?** "Você vem, né?"
+        - **hiszen** "afinal, já que": **Hiszen tudod!** "Mas você sabe!"
+        - **ugyan** duvida ou descarta: **Ugyan, hagyd!** "Ah, deixa pra lá!" **Ugyan ki tudná?** "E quem é que saberia?"
+        - **hát** "bem, pois": **Hát, nem tudom.** "Bem, não sei."
+        - **csak** suaviza um pedido ou acrescenta *só*: **Gyere csak!** "Vem cá!"
+        - **persze** "claro", **bezzeg** "já, por outro lado (em tom de censura)"
+    examples:
+    - ["Jössz, ugye?", "You're coming, aren't you?", "Você vem, né?", "ugye"]
+    - ["Hiszen tudod!", "But you know it!", "Mas você sabe!", "Hiszen"]
+    - ["Hát, nem tudom.", "Well, I don't know.", "Bem, não sei.", "Hát"]
+    match: {seq: [{word: [ugye, hiszen, ugyan, hát, persze, bezzeg, vajon]}], gap: 0}
+    pool: [ugye, hiszen, ugyan, hát, persze, vajon, csak]

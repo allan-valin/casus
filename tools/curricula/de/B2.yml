@@ -1,0 +1,318 @@
+# German B2, more topics beside Grimm Grammar's B2 pages (written by AI (Claude) for Casus, 2026-10-20; marked as
+# such on every lesson). Points follow the usual B2 inventories (Profile Deutsch, university B2/C1 grammar syllabi);
+# not repeated: what Grimm's pages already teach (Konjunktiv I, man / sich lassen, particles doch/mal/ja).
+id: B2
+topics:
+
+- title: {en: Two-part connectors, pt: Conectores de duas partes}
+  lessons:
+  - id: de-b2-je-desto
+    title: je … desto
+    meaning: {en: "the more …, the more …: je … desto / umso", pt: "quanto mais …, mais …: je … desto / umso"}
+    intro:
+      en: |
+        **je** + comparative opens a subordinate clause (verb at the end); **desto** or **umso** + comparative opens the main clause (verb right after it):
+
+        **Je älter er wird, desto ruhiger wird er.** "The older he gets, the calmer he becomes."
+
+        **Je mehr du übst, umso besser spielst du.** "The more you practise, the better you play."
+
+        Short form without verbs: **je früher, desto besser** "the sooner the better".
+      pt: |
+        **je** + comparativo abre uma oração subordinada (verbo no fim); **desto** ou **umso** + comparativo abre a principal (verbo logo depois):
+
+        **Je älter er wird, desto ruhiger wird er.** "Quanto mais velho ele fica, mais calmo fica."
+
+        **Je mehr du übst, umso besser spielst du.** "Quanto mais você pratica, melhor você toca."
+
+        Forma curta sem verbos: **je früher, desto besser** "quanto antes, melhor".
+    mistakes:
+    - wrong: "Je mehr du übst, desto du spielst besser."
+      right: "Je mehr du übst, desto besser spielst du."
+      why: {en: "desto + comparative fill the first place; the verb comes right after them.", pt: "desto + comparativo ocupam a primeira posição; o verbo vem logo depois."}
+    examples:
+    - ["Je früher, desto besser.", "The sooner the better.", "Quanto antes, melhor.", "desto"]
+    - ["Je mehr ich lese, desto weniger verstehe ich.", "The more I read, the less I understand.", "Quanto mais leio, menos entendo.", "desto"]
+    - ["Je älter man wird, umso schneller vergeht die Zeit.", "The older you get, the faster time passes.", "Quanto mais velho se fica, mais rápido o tempo passa.", "umso"]
+    match: {seq: [{word: [je]}, {word: [desto, umso]}], near: 8, gap: 1}
+    pool: [desto, umso, als, so, wie, dann]
+
+  - id: de-b2-weder-noch
+    title: weder … noch, entweder … oder, sowohl … als auch
+    meaning: {en: "neither … nor, either … or, both … and", pt: "nem … nem, ou … ou, tanto … quanto"}
+    intro:
+      en: |
+        Three pairs that join two words or phrases of the same kind:
+
+        - **weder … noch** "neither … nor": **Ich trinke weder Kaffee noch Tee.**
+        - **entweder … oder** "either … or": **Entweder du kommst mit, oder du bleibst hier.**
+        - **sowohl … als auch** "both … and": **Sie spricht sowohl Deutsch als auch Englisch.**
+
+        **weder … noch** already negates: no **nicht** or **kein** beside it.
+      pt: |
+        Três pares que ligam duas palavras ou expressões do mesmo tipo:
+
+        - **weder … noch** "nem … nem": **Ich trinke weder Kaffee noch Tee.** "Não bebo nem café nem chá."
+        - **entweder … oder** "ou … ou": **Entweder du kommst mit, oder du bleibst hier.** "Ou você vem junto, ou fica aqui."
+        - **sowohl … als auch** "tanto … quanto": **Sie spricht sowohl Deutsch als auch Englisch.** "Ela fala tanto alemão quanto inglês."
+
+        **weder … noch** já nega: sem **nicht** ou **kein** ao lado.
+    examples:
+    - ["Ich trinke weder Kaffee noch Tee.", "I drink neither coffee nor tea.", "Não bebo nem café nem chá.", "weder"]
+    - ["Entweder er kommt heute oder morgen.", "He's coming either today or tomorrow.", "Ele vem ou hoje ou amanhã.", "Entweder"]
+    - ["Sie spricht sowohl Deutsch als auch Englisch.", "She speaks both German and English.", "Ela fala tanto alemão quanto inglês.", "sowohl"]
+    match:
+    - {seq: [{word: [weder]}, {word: [noch]}], near: 8, gap: 0}
+    - {seq: [{word: [entweder]}, {word: [oder]}], near: 8, gap: 0}
+    - {seq: [{word: [sowohl]}, {word: [als]}, {word: [auch]}], near: 8, gap: 0}
+    pool: [weder, entweder, sowohl, nicht, zwar, kein]
+
+  - id: de-b2-nicht-nur
+    title: nicht nur … sondern auch, zwar … aber
+    meaning: {en: "not only … but also; it's true that … but", pt: "não só … mas também; é verdade que … mas"}
+    intro:
+      en: |
+        **nicht nur … sondern auch** adds a second, stronger point: **Er ist nicht nur klug, sondern auch fleißig.** "He's not only clever but also hard-working."
+
+        **zwar … aber** concedes a point and then limits it: **Das Hotel ist zwar teuer, aber sehr schön.** "The hotel is expensive, it's true, but very nice."
+
+        **sondern** follows a negation; **aber** follows a concession: never **nicht nur … aber auch**.
+      pt: |
+        **nicht nur … sondern auch** acrescenta um segundo ponto, mais forte: **Er ist nicht nur klug, sondern auch fleißig.** "Ele não só é inteligente, mas também esforçado."
+
+        **zwar … aber** admite algo e depois o limita: **Das Hotel ist zwar teuer, aber sehr schön.** "O hotel é caro, é verdade, mas é muito bonito."
+
+        **sondern** vem depois de uma negação; **aber** depois de uma concessão: nunca **nicht nur … aber auch**.
+    examples:
+    - ["Er ist nicht nur klug, sondern auch fleißig.", "He's not only clever but also hard-working.", "Ele não só é inteligente, mas também esforçado.", "sondern"]
+    - ["Das Hotel ist zwar teuer, aber sehr schön.", "The hotel is expensive, but very nice.", "O hotel é caro, mas muito bonito.", "aber"]
+    - ["Sie singt nicht nur, sondern sie tanzt auch.", "She doesn't only sing, she dances too.", "Ela não só canta, como também dança.", "sondern"]
+    match:
+    - {seq: [{word: [nicht]}, {word: [nur]}, {word: [sondern]}], near: 8, gap: 2}
+    - {seq: [{word: [zwar]}, {word: [aber]}], near: 8, gap: 1}
+    pool: [sondern, aber, auch, oder, denn, und]
+
+  - id: de-b2-correlates
+    title: darauf, dass …
+    meaning: {en: "da-words pointing ahead to a clause: Ich freue mich darauf, dass …", pt: "palavras com da- que anunciam uma oração: Ich freue mich darauf, dass …"}
+    intro:
+      en: |
+        A verb with a fixed preposition (**sich freuen auf, denken an, sprechen über**) keeps its preposition when its object is a whole clause: the preposition joins **da(r)-** and points ahead to the **dass**-clause or the infinitive with **zu**:
+
+        - **Ich freue mich darauf, dich zu sehen.** "I'm looking forward to seeing you."
+        - **Denk daran, dass morgen Feiertag ist.** "Remember that tomorrow is a holiday."
+        - **Es kommt darauf an, ob es regnet.** "It depends on whether it rains."
+
+        The preposition decides the form: **auf → darauf, an → daran, über → darüber, von → davon, für → dafür, mit → damit, um → darum**.
+      pt: |
+        Um verbo com preposição fixa (**sich freuen auf, denken an, sprechen über**) mantém a preposição quando o objeto é uma oração inteira: a preposição se junta a **da(r)-** e anuncia a oração com **dass** ou o infinitivo com **zu**:
+
+        - **Ich freue mich darauf, dich zu sehen.** "Estou ansioso para te ver."
+        - **Denk daran, dass morgen Feiertag ist.** "Lembre-se de que amanhã é feriado."
+        - **Es kommt darauf an, ob es regnet.** "Depende de se vai chover."
+
+        A preposição decide a forma: **auf → darauf, an → daran, über → darüber, von → davon, für → dafür, mit → damit, um → darum**.
+    examples:
+    - ["Ich freue mich darauf, dich zu sehen.", "I'm looking forward to seeing you.", "Estou ansioso para te ver.", "darauf"]
+    - ["Denk daran, dass morgen Feiertag ist.", "Remember that tomorrow is a holiday.", "Lembre-se de que amanhã é feriado.", "daran"]
+    - ["Es geht darum, dass wir pünktlich sind.", "The point is that we're on time.", "A questão é que sejamos pontuais.", "darum"]
+    - ["Er hat sich darüber beschwert, dass es zu laut war.", "He complained that it was too loud.", "Ele reclamou que estava barulhento demais.", "darüber"]
+    match: {seq: [{word: [darauf, daran, darüber, davon, dafür, damit, dazu, darum]}, {word: [dass, zu, ob]}], near: 3, gap: 0}
+    pool: [darauf, daran, darüber, davon, dafür, dazu, darum]
+
+- title: {en: The passive and its alternatives, pt: A passiva e suas alternativas}
+  lessons:
+  - id: de-b2-zustandspassiv
+    title: Die Tür ist geschlossen.
+    meaning: {en: "the state passive: sein + participle", pt: "a passiva de estado: sein + particípio"}
+    intro:
+      en: |
+        **werden** + participle is the process (*something is being done*); **sein** + participle is the resulting state (*it is done*):
+
+        - **Die Tür wird geschlossen.** "The door is being closed."
+        - **Die Tür ist geschlossen.** "The door is closed."
+
+        **Das Geschäft ist sonntags geschlossen. Der Tisch ist reserviert. Rauchen ist hier verboten.** Its past is **war**: **Das Fenster war geöffnet.**
+      pt: |
+        **werden** + particípio é o processo (*algo está sendo feito*); **sein** + particípio é o estado resultante (*está feito*):
+
+        - **Die Tür wird geschlossen.** "A porta está sendo fechada."
+        - **Die Tür ist geschlossen.** "A porta está fechada."
+
+        **Das Geschäft ist sonntags geschlossen.** "A loja fica fechada aos domingos." **Der Tisch ist reserviert.** "A mesa está reservada." **Rauchen ist hier verboten.** "É proibido fumar aqui." O passado é **war**: **Das Fenster war geöffnet.**
+    examples:
+    - ["Die Tür ist geschlossen.", "The door is closed.", "A porta está fechada.", "ist"]
+    - ["Der Tisch ist reserviert.", "The table is reserved.", "A mesa está reservada.", "ist"]
+    - ["Das Fenster war geöffnet.", "The window was open.", "A janela estava aberta.", "war"]
+    match:
+    - {seq: [{word: [ist]}, {word: [geschlossen, geöffnet, verboten, erlaubt, reserviert, besetzt, verletzt, verheiratet, erledigt, verkauft, renoviert, beschädigt, vorbereitet, eingeladen, gedeckt, ausverkauft, angemeldet]}], near: 2, gap: 0, pool: [wird, hat]}
+    - {seq: [{word: [sind]}, {word: [geschlossen, geöffnet, verboten, erlaubt, reserviert, besetzt, verletzt, verheiratet, erledigt, verkauft, renoviert, beschädigt, vorbereitet, eingeladen, gedeckt, ausverkauft, angemeldet]}], near: 2, gap: 0, pool: [werden, haben]}
+    - {seq: [{word: [war]}, {word: [geschlossen, geöffnet, verboten, erlaubt, reserviert, besetzt, verletzt, verheiratet, erledigt, verkauft, renoviert, beschädigt, vorbereitet, eingeladen, gedeckt, ausverkauft, angemeldet]}], near: 2, gap: 0, pool: [wurde, hatte]}
+    - {seq: [{word: [waren]}, {word: [geschlossen, geöffnet, verboten, erlaubt, reserviert, besetzt, verletzt, verheiratet, erledigt, verkauft, renoviert, beschädigt, vorbereitet, eingeladen, gedeckt, ausverkauft, angemeldet]}], near: 2, gap: 0, pool: [wurden, hatten]}
+
+  - id: de-b2-sein-zu
+    title: Das ist nicht zu ändern.
+    meaning: {en: "sein + zu + infinitive: can / must be done", pt: "sein + zu + infinitivo: pode / deve ser feito"}
+    intro:
+      en: |
+        **sein + zu + infinitive** is a passive with a modal meaning, *can* or *must* be done, depending on context:
+
+        - **Das ist nicht zu ändern.** "That can't be changed."
+        - **Die Rechnung ist sofort zu bezahlen.** "The bill must be paid immediately."
+        - **Das Problem ist leicht zu lösen.** "The problem is easy to solve."
+
+        Its active partner is **haben + zu**, *have to*: **Ich habe noch viel zu tun.** "I still have a lot to do."
+      pt: |
+        **sein + zu + infinitivo** é uma passiva com sentido modal, *pode* ou *deve* ser feito, conforme o contexto:
+
+        - **Das ist nicht zu ändern.** "Isso não pode ser mudado."
+        - **Die Rechnung ist sofort zu bezahlen.** "A conta deve ser paga imediatamente."
+        - **Das Problem ist leicht zu lösen.** "O problema é fácil de resolver."
+
+        O par ativo é **haben + zu**, *ter de*: **Ich habe noch viel zu tun.** "Ainda tenho muito a fazer."
+    examples:
+    - ["Das ist nicht zu ändern.", "That can't be changed.", "Isso não tem como mudar.", "ist"]
+    - ["Das Problem ist leicht zu lösen.", "The problem is easy to solve.", "O problema é fácil de resolver.", "ist"]
+    - ["Ich habe noch viel zu tun.", "I still have a lot to do.", "Ainda tenho muito a fazer.", "habe"]
+    match:
+    - {seq: [{word: [ist]}, {word: [zu]}, {pos: verb, mood: inf}], near: 1, gap: 0, pool: [hat, wird]}
+    - {seq: [{word: [sind]}, {word: [zu]}, {pos: verb, mood: inf}], near: 1, gap: 0, pool: [haben, werden]}
+    - {seq: [{word: [war]}, {word: [zu]}, {pos: verb, mood: inf}], near: 1, gap: 0, pool: [hatte, wurde]}
+    - {seq: [{word: [habe, hast, hat, haben, hatte]}, {word: [viel, noch, nichts, etwas, einiges]}, {word: [zu]}, {pos: verb, mood: inf}], near: 1, gap: 0, pool: [bin, ist, sind, war]}
+
+  - id: de-b2-bar
+    title: machbar, unlesbar
+    meaning: {en: "-bar adjectives: can be done", pt: "adjetivos em -bar: que pode ser feito"}
+    intro:
+      en: |
+        **-bar** on a verb stem makes an adjective meaning *can be …-ed*, a short passive: **machbar** (feasible), **essbar** (edible), **lesbar** (legible), **erreichbar** (reachable), **vergleichbar** (comparable). **un-** negates: **unlesbar, unvorstellbar** (unimaginable), **unbezahlbar** (unaffordable, priceless).
+
+        **Ist das machbar?** = **Kann das gemacht werden?** Some -bar words are old and not passive: **dankbar, wunderbar, furchtbar**.
+      pt: |
+        **-bar** num radical verbal forma um adjetivo com sentido de *pode ser …-ado*, uma passiva curta: **machbar** (viável), **essbar** (comestível), **lesbar** (legível), **erreichbar** (alcançável), **vergleichbar** (comparável). **un-** nega: **unlesbar, unvorstellbar** (inimaginável), **unbezahlbar** (impagável).
+
+        **Ist das machbar?** = **Kann das gemacht werden?** "Isso é viável?" Algumas palavras em -bar são antigas e não passivas: **dankbar** (grato), **wunderbar** (maravilhoso), **furchtbar** (terrível).
+    examples:
+    - ["Ist das machbar?", "Is that feasible?", "Isso é viável?", "machbar"]
+    - ["Diese Pilze sind nicht essbar.", "These mushrooms aren't edible.", "Esses cogumelos não são comestíveis.", "essbar"]
+    - ["Seine Schrift ist unlesbar.", "His handwriting is illegible.", "A letra dele é ilegível.", "unlesbar"]
+    match: {seq: [{pos: adj, re: "bar(e|en|er|es|em)?$", not: {lemma: "^(wunderbar|furchtbar|dankbar|offenbar|sonderbar|scheinbar|fruchtbar|kostbar|unmittelbar|mittelbar|ehrbar|nachbar)$"}}]}
+
+  - id: de-b2-modal-passive
+    title: muss repariert werden
+    meaning: {en: "the passive with a modal verb", pt: "a passiva com verbo modal"}
+    intro:
+      en: |
+        Modal + participle + **werden** (the passive infinitive): **Das Auto muss repariert werden.** "The car has to be repaired." **Hier darf nicht geraucht werden.** "Smoking isn't allowed here." **Das kann nicht bewiesen werden.** "That can't be proven."
+
+        In a subordinate clause the modal goes to the very end: **…, weil das Auto repariert werden muss.**
+      pt: |
+        Modal + particípio + **werden** (o infinitivo passivo): **Das Auto muss repariert werden.** "O carro tem de ser consertado." **Hier darf nicht geraucht werden.** "Aqui não é permitido fumar." **Das kann nicht bewiesen werden.** "Isso não pode ser provado."
+
+        Numa subordinada o modal vai para o fim: **…, weil das Auto repariert werden muss.**
+    examples:
+    - ["Das Auto muss repariert werden.", "The car has to be repaired.", "O carro tem de ser consertado.", "werden"]
+    - ["Hier darf nicht geraucht werden.", "Smoking isn't allowed here.", "Aqui não se pode fumar.", "werden"]
+    - ["Das kann nicht bewiesen werden.", "That can't be proven.", "Isso não pode ser provado.", "werden"]
+    match: {seq: [{lemma: "^(können|müssen|sollen|dürfen|wollen)$"}, {pos: verb, mood: ppl2}, {word: [werden]}], near: 6, gap: 2}
+    pool: [werden, worden, sein, haben, wird, wurde]
+
+- title: {en: Time and supposition, pt: Tempo e suposição}
+  lessons:
+  - id: de-b2-futur2
+    title: wird … gemacht haben
+    meaning: {en: "Futur II: will have done; must have done", pt: "Futur II: terá feito; deve ter feito"}
+    intro:
+      en: |
+        **werden + participle + haben / sein**:
+
+        - something finished by a point in the future: **Bis Montag werde ich das Buch gelesen haben.** "By Monday I'll have read the book."
+        - much more often, a guess about the past: **Er wird den Zug verpasst haben.** "He'll have missed the train (I suppose)." **Sie wird schon nach Hause gegangen sein.** "She has probably gone home already."
+
+        **haben** or **sein** as in the Perfekt.
+      pt: |
+        **werden + particípio + haben / sein**:
+
+        - algo concluído até um momento futuro: **Bis Montag werde ich das Buch gelesen haben.** "Até segunda terei lido o livro."
+        - muito mais comum, uma suposição sobre o passado: **Er wird den Zug verpasst haben.** "Ele deve ter perdido o trem." **Sie wird schon nach Hause gegangen sein.** "Ela já deve ter ido para casa."
+
+        **haben** ou **sein** como no Perfekt.
+    examples:
+    - ["Er wird den Zug verpasst haben.", "He'll have missed the train.", "Ele deve ter perdido o trem.", "haben"]
+    - ["Sie wird schon nach Hause gegangen sein.", "She'll have gone home already.", "Ela já deve ter ido para casa.", "sein"]
+    - ["Bis Montag werde ich das Buch gelesen haben.", "By Monday I'll have read the book.", "Até segunda terei lido o livro.", "haben"]
+    match: {seq: [{pos: verb, lemma: "^werden$", tense: pres}, {pos: verb, mood: ppl2}, {word: [haben, sein]}], near: 6, gap: 2}
+    pool: [haben, sein, werden, worden, hat, ist]
+
+  - id: de-b2-werden-guess
+    title: Er wird wohl krank sein.
+    meaning: {en: "werden + infinitive for a guess about now", pt: "werden + infinitivo para supor algo do presente"}
+    intro:
+      en: |
+        **werden** + infinitive is often not a future but a guess about the present, usually with **wohl, schon, sicher, bestimmt, wahrscheinlich**:
+
+        **Er wird wohl krank sein.** "He's probably ill." **Das wird schon stimmen.** "That's probably right." **Sie wird jetzt im Büro sein.** "She'll be at the office now."
+      pt: |
+        **werden** + infinitivo muitas vezes não é futuro, mas uma suposição sobre o presente, em geral com **wohl, schon, sicher, bestimmt, wahrscheinlich**:
+
+        **Er wird wohl krank sein.** "Ele deve estar doente." **Das wird schon stimmen.** "Deve estar certo." **Sie wird jetzt im Büro sein.** "Ela deve estar no escritório agora."
+    examples:
+    - ["Er wird wohl krank sein.", "He's probably ill.", "Ele deve estar doente.", "wird"]
+    - ["Das wird schon stimmen.", "That's probably right.", "Isso deve estar certo.", "wird"]
+    - ["Sie werden wohl schon schlafen.", "They're probably asleep already.", "Eles já devem estar dormindo.", "werden"]
+    match: {seq: [{pos: verb, lemma: "^werden$", tense: pres}, {word: [wohl, schon, sicher, bestimmt, wahrscheinlich]}, {pos: verb, mood: inf}], near: 4, gap: 0, same: [tense, mood]}
+
+- title: {en: Prepositions and participles, pt: Preposições e particípios}
+  lessons:
+  - id: de-b2-genitive-prepositions
+    title: aufgrund, innerhalb, anstatt
+    meaning: {en: "more prepositions with the genitive", pt: "mais preposições com genitivo"}
+    intro:
+      en: |
+        Beyond **wegen, trotz, während**, written German has many genitive prepositions:
+
+        - cause: **aufgrund** (because of), **infolge** (as a result of), **dank** (thanks to)
+        - place and time: **innerhalb** (inside, within), **außerhalb** (outside), **oberhalb / unterhalb** (above / below)
+        - others: **anstatt / statt** (instead of), **angesichts** (in view of), **bezüglich / hinsichtlich** (regarding), **mithilfe** (with the help of), **laut** (according to)
+
+        **Aufgrund des Wetters fällt das Spiel aus. Innerhalb einer Woche.** In speech many take the dative: **wegen dem Wetter**.
+      pt: |
+        Além de **wegen, trotz, während**, o alemão escrito tem muitas preposições com genitivo:
+
+        - causa: **aufgrund** (por causa de), **infolge** (em consequência de), **dank** (graças a)
+        - lugar e tempo: **innerhalb** (dentro de), **außerhalb** (fora de), **oberhalb / unterhalb** (acima / abaixo de)
+        - outras: **anstatt / statt** (em vez de), **angesichts** (diante de), **bezüglich / hinsichtlich** (quanto a), **mithilfe** (com a ajuda de), **laut** (segundo)
+
+        **Aufgrund des Wetters fällt das Spiel aus.** "Por causa do tempo, o jogo foi cancelado." **Innerhalb einer Woche.** "Dentro de uma semana." Na fala, muitas pedem dativo: **wegen dem Wetter**.
+    examples:
+    - ["Aufgrund des Wetters fällt das Spiel aus.", "The game is cancelled because of the weather.", "O jogo foi cancelado por causa do tempo.", "Aufgrund"]
+    - ["Ich bin innerhalb einer Stunde zurück.", "I'll be back within an hour.", "Volto dentro de uma hora.", "innerhalb"]
+    - ["Statt eines Briefes schrieb er eine E-Mail.", "Instead of a letter he wrote an email.", "Em vez de uma carta, ele escreveu um e-mail.", "Statt"]
+    match: {seq: [{word: [aufgrund, infolge, innerhalb, außerhalb, oberhalb, unterhalb, anstatt, statt, angesichts, bezüglich, hinsichtlich, mithilfe, dank, laut]}, {pos: det}], gap: 0}
+    pool: [aufgrund, innerhalb, außerhalb, anstatt, angesichts, laut, dank, trotz]
+
+  - id: de-b2-participle-adjectives
+    title: das schlafende Kind, die gestohlene Tasche
+    meaning: {en: "participles as adjectives", pt: "particípios como adjetivos"}
+    intro:
+      en: |
+        Both participles can stand before a noun and take adjective endings:
+
+        - **Partizip I** (infinitive + **-d**): something happening, active: **das schlafende Kind** "the sleeping child", **kochendes Wasser** "boiling water", **in der kommenden Woche** "in the coming week"
+        - **Partizip II**: something done, passive (or completed): **die gestohlene Tasche** "the stolen bag", **ein gebrauchtes Auto** "a used car", **das gekochte Ei** "the boiled egg"
+
+        The endings are the ordinary adjective endings: **mit dem schlafenden Kind, eines gebrauchten Autos**.
+      pt: |
+        Os dois particípios podem vir antes do substantivo com terminações de adjetivo:
+
+        - **Partizip I** (infinitivo + **-d**): algo acontecendo, ativo: **das schlafende Kind** "a criança que dorme", **kochendes Wasser** "água fervendo", **in der kommenden Woche** "na semana que vem"
+        - **Partizip II**: algo feito, passivo (ou concluído): **die gestohlene Tasche** "a bolsa roubada", **ein gebrauchtes Auto** "um carro usado", **das gekochte Ei** "o ovo cozido"
+
+        As terminações são as dos adjetivos: **mit dem schlafenden Kind, eines gebrauchten Autos**.
+    examples:
+    - ["Weck das schlafende Kind nicht!", "Don't wake the sleeping child!", "Não acorde a criança que está dormindo!", "schlafende"]
+    - ["Er kaufte ein gebrauchtes Auto.", "He bought a used car.", "Ele comprou um carro usado.", "gebrauchtes"]
+    - ["Die Polizei hat die gestohlene Tasche gefunden.", "The police found the stolen bag.", "A polícia encontrou a bolsa roubada.", "gestohlene"]
+    match:
+    - {seq: [{re: "[^aeiou]end(e|en|er|es|em)$", not: {pos: [noun, adv, prep]}}, {pos: noun}], gap: 0}
+    - {seq: [{re: "^ge\\p{L}+(t|en)(e|en|er|es|em)$", not: {pos: [noun, adv, prep]}}, {pos: noun}], gap: 0}

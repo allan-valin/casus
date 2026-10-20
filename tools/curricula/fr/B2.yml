@@ -1,0 +1,242 @@
+id: B2
+topics:
+
+- title: {en: The subjunctive in depth, pt: O subjuntivo a fundo}
+  lessons:
+  - id: fr-b2-subj-passe
+    title: que tu aies fini
+    meaning: {en: "the past subjunctive", pt: "o pretérito do subjuntivo"}
+    intro:
+      en: |
+        **avoir / être** in the subjunctive + participle: **que j'aie fini, qu'il soit parti**. It marks an action completed before the main verb or before a moment: **Je suis content que tu sois venu. Il faut que tu aies fini avant midi.** Agreement rules are those of the passé composé.
+      pt: |
+        **avoir / être** no subjuntivo + particípio: **que j'aie fini, qu'il soit parti** — o nosso *que eu tenha terminado, que ele tenha ido*. Marca ação anterior ao verbo principal ou a um momento: **Je suis content que tu sois venu** (Estou feliz que você tenha vindo). Atenção: com os verbos de movimento o auxiliar é **être**, e o particípio concorda: **qu'elle soit partie**.
+    table:
+      head: {en: [Person, avoir, être], pt: [Pessoa, avoir, être]}
+      rows:
+      - [que je / j', aie fini, sois parti(e)]
+      - [que tu, aies fini, sois parti(e)]
+      - [qu'il / elle, ait fini, soit parti(e)]
+      - [que nous, ayons fini, soyons parti(e)s]
+      - [que vous, ayez fini, soyez parti(e)(s)]
+      - [qu'ils / elles, aient fini, soient parti(e)s]
+    examples:
+    - ["Je suis content que tu sois venu.", "I'm glad you came.", "Estou feliz que você tenha vindo.", "sois"]
+    - ["Il faut que tu aies fini avant midi.", "You must have finished before noon.", "Você precisa ter terminado antes do meio-dia.", "aies"]
+    - ["Je ne crois pas qu'il ait compris.", "I don't think he understood.", "Não acho que ele tenha entendido.", "ait"]
+    match: {seq: [{word: [que, qu]}, {word: [aie, aies, ait, ayons, ayez, aient, sois, soit, soyons, soyez, soient]}, {re: "(é|ée|és|ées|i|ie|is|ies|u|ue|us|ues|t|te|ts|tes)$", pos: verb}], near: 1, gap: 1, same: [person, number]}
+
+  - id: fr-b2-conjonctions-subj
+    title: bien que, pour que, avant que
+    meaning: {en: "conjunctions that take the subjunctive", pt: "conjunções que pedem subjuntivo"}
+    intro:
+      en: |
+        **bien que / quoique** "although", **pour que / afin que** "so that", **avant que** "before", **jusqu'à ce que** "until", **à condition que** "provided that", **à moins que** "unless", **sans que** "without" — always + subjunctive: **Bien qu'il soit tard, je reste. Parle fort pour qu'on t'entende.** But **après que** takes the indicative (in careful French): **après qu'il est parti**.
+      pt: |
+        **bien que / quoique** (embora), **pour que / afin que** (para que), **avant que** (antes que), **jusqu'à ce que** (até que), **à condition que** (desde que), **à moins que** (a menos que), **sans que** (sem que) — sempre + subjuntivo, como no português: **Bien qu'il soit tard, je reste** (Embora seja tarde, eu fico). Mas **après que** pede indicativo no francês cuidado: **après qu'il est parti**.
+    examples:
+    - ["Bien qu'il soit tard, je reste.", "Although it's late, I'm staying.", "Embora seja tarde, eu fico.", "soit"]
+    - ["Parle fort pour qu'on t'entende.", "Speak loudly so that people can hear you.", "Fale alto para que te ouçam.", "entende"]
+    - ["Attends jusqu'à ce que je revienne.", "Wait until I come back.", "Espere até eu voltar.", "revienne"]
+    match: {seq: [{word: [bien, quoique, pour, afin, avant, condition, moins, sans, ce]}, {word: [que, qu]}, {pos: verb, mood: subj}], near: 2, gap: 2, same: [person, number]}
+
+  - id: fr-b2-subj-doute
+    title: je ne pense pas qu'il vienne
+    meaning: {en: "subjunctive after doubt and negated opinion", pt: "subjuntivo depois de dúvida e opinião negada"}
+    intro:
+      en: |
+        **penser, croire, trouver, être sûr** + indicative when affirmed: **Je pense qu'il vient.** Negated or questioned with inversion, they take the subjunctive: **Je ne pense pas qu'il vienne. Crois-tu qu'il puisse ?** **douter que** always takes the subjunctive; **il semble que** usually does, **il me semble que** takes the indicative.
+      pt: |
+        **penser, croire, trouver, être sûr** + indicativo na afirmativa: **Je pense qu'il vient.** Na negativa ou na pergunta com inversão, subjuntivo: **Je ne pense pas qu'il vienne** (Não acho que ele venha). **douter que** sempre com subjuntivo; **il semble que** em geral com subjuntivo, mas **il me semble que** com indicativo.
+    examples:
+    - ["Je ne pense pas qu'il vienne.", "I don't think he'll come.", "Não acho que ele venha.", "vienne"]
+    - ["Je doute qu'elle sache la vérité.", "I doubt she knows the truth.", "Duvido que ela saiba a verdade.", "sache"]
+    - ["Je ne crois pas que ce soit possible.", "I don't think it's possible.", "Não acho que seja possível.", "soit"]
+    match: {seq: [{lemma: "^(penser|croire|douter|sembler|trouver|imaginer)$"}, {word: [que, qu]}, {pos: verb, mood: subj}], near: 3, gap: 2, same: [person, number]}
+
+  - id: fr-b2-subj-superlatif
+    title: le seul qui puisse
+    meaning: {en: "subjunctive after a superlative, seul, premier, dernier", pt: "subjuntivo depois de superlativo, seul, premier, dernier"}
+    intro:
+      en: |
+        A relative clause after **le seul, l'unique, le premier, le dernier** or a superlative usually takes the subjunctive, which presents the judgement as personal: **C'est le meilleur film que j'aie vu. Tu es la seule qui puisse m'aider.** Also after an indefinite or denied antecedent: **Je cherche quelqu'un qui sache coder.**
+      pt: |
+        Uma relativa depois de **le seul, l'unique, le premier, le dernier** ou de um superlativo costuma pedir subjuntivo — o português faz o mesmo às vezes (*o melhor filme que eu tenha visto*): **C'est le meilleur film que j'aie vu. Tu es la seule qui puisse m'aider.** Também com antecedente indefinido ou negado: **Je cherche quelqu'un qui sache coder.**
+    examples:
+    - ["C'est le meilleur film que j'aie vu.", "It's the best film I've seen.", "É o melhor filme que eu já vi.", "aie"]
+    - ["Tu es la seule qui puisse m'aider.", "You're the only one who can help me.", "Você é a única que pode me ajudar.", "puisse"]
+    - ["Je cherche quelqu'un qui sache coder.", "I'm looking for someone who can code.", "Procuro alguém que saiba programar.", "sache"]
+    match: {seq: [{word: [seul, seule, seuls, premier, première, dernier, dernière, meilleur, meilleure, unique, quelqu, personne, rien, plus]}, {word: [qui, que, qu]}, {pos: verb, mood: subj}], near: 3, gap: 2, same: [person, number]}
+
+- title: {en: Compound tenses, pt: Tempos compostos}
+  lessons:
+  - id: fr-b2-plus-que-parfait
+    title: j'avais fini
+    meaning: {en: "the pluperfect", pt: "o mais-que-perfeito"}
+    intro:
+      en: |
+        Imperfect of **avoir / être** + participle: **j'avais fini, elle était partie**. An action before another past action: **Quand je suis arrivé, le film avait commencé.** It is also the tense of past regrets with **si**: **Si seulement j'avais su !**
+      pt: |
+        Imperfeito de **avoir / être** + particípio = *tinha* + particípio: **j'avais fini** (eu tinha terminado), **elle était partie** (ela tinha ido embora). Ação anterior a outra no passado: **Quand je suis arrivé, le film avait commencé.** Com **si**, lamento: **Si seulement j'avais su !** (Se eu soubesse!)
+    examples:
+    - ["Quand je suis arrivé, le film avait commencé.", "When I arrived, the film had started.", "Quando cheguei, o filme tinha começado.", "avait"]
+    - ["Elle était déjà partie.", "She had already left.", "Ela já tinha ido embora.", "était"]
+    - ["Nous avions oublié nos billets.", "We had forgotten our tickets.", "Tínhamos esquecido nossos ingressos.", "avions"]
+    match: {seq: [{word: [avais, avait, avions, aviez, avaient, étais, était, étions, étiez, étaient]}, {re: "(é|ée|és|ées|i|ie|is|u|ue|us|it|ert|erte|ort|orte|ait)$", pos: verb}], near: 1, gap: 0, same: [person, number]}
+
+  - id: fr-b2-conditionnel-passe
+    title: j'aurais dû
+    meaning: {en: "the past conditional", pt: "o condicional passado"}
+    intro:
+      en: |
+        Conditional of **avoir / être** + participle: **j'aurais aimé, il serait venu**. What would have happened: **Si j'avais su, je serais venu.** Regrets and reproaches: **J'aurais dû partir plus tôt. Tu aurais pu me le dire !** In the press, an unconfirmed past fact: **L'accident aurait fait trois victimes.**
+      pt: |
+        Condicional de **avoir / être** + particípio = *teria* + particípio: **j'aurais aimé** (eu teria gostado), **il serait venu** (ele teria vindo). **Si j'avais su, je serais venu.** Lamentos e reprovações: **J'aurais dû partir plus tôt** (Eu deveria ter saído mais cedo). **Tu aurais pu me le dire !** (Você podia ter me dito!) Na imprensa, fato não confirmado: **L'accident aurait fait trois victimes.**
+    examples:
+    - ["J'aurais dû partir plus tôt.", "I should have left earlier.", "Eu deveria ter saído mais cedo.", "aurais"]
+    - ["Tu aurais pu me le dire !", "You could have told me!", "Você podia ter me dito!", "aurais"]
+    - ["Si j'avais su, je serais venu.", "If I had known, I would have come.", "Se eu soubesse, teria vindo.", "serais"]
+    match: {seq: [{word: [aurais, aurait, aurions, auriez, auraient, serais, serait, serions, seriez, seraient]}, {re: "(é|ée|és|ées|i|ie|is|u|ue|us|û|it|ert|ort|ait)$", pos: verb}], near: 1, gap: 0, same: [person, number]}
+
+  - id: fr-b2-si-passe
+    title: si j'avais su
+    meaning: {en: "unreal conditions in the past", pt: "condições irreais no passado"}
+    intro:
+      en: |
+        **si** + pluperfect, then the past conditional: **Si tu m'avais appelé, je serais venu.** Never the conditional after **si**: ~~si j'aurais su~~ (a very common slip in speech, still considered wrong). Mixed: **Si j'avais pris le train, je serais déjà là.**
+      pt: |
+        **si** + mais-que-perfeito, depois condicional passado: **Si tu m'avais appelé, je serais venu** (Se você tivesse me ligado, eu teria vindo). Note: onde o português usa o subjuntivo (*se você tivesse*), o francês usa o indicativo (**si tu avais**). Nunca condicional depois de **si**: ~~si j'aurais su~~.
+    mistakes:
+    - wrong: Si j'aurais su, je serais venu.
+      right: Si j'avais su, je serais venu.
+      why: {en: "no conditional after si: pluperfect.", pt: "nada de condicional depois de si: mais-que-perfeito."}
+    examples:
+    - ["Si tu m'avais appelé, je serais venu.", "If you had called me, I would have come.", "Se você tivesse me ligado, eu teria vindo.", "avais"]
+    - ["Si j'avais su, je ne serais pas venu.", "If I had known, I wouldn't have come.", "Se eu soubesse, não teria vindo.", "avais"]
+    - ["S'il avait plu, nous serions restés.", "If it had rained, we would have stayed.", "Se tivesse chovido, teríamos ficado.", "avait"]
+    match: {seq: [{word: [si, s]}, {word: [j, je, tu, il, elle, "on", nous, vous, ils, elles, m, t, l, les, me, te]}, {word: [avais, avait, avions, aviez, avaient, étais, était, étions, étiez, étaient]}, {re: "(é|ée|és|ées|i|ie|is|u|ue|us|û|it|ert|ort|ait)$", pos: verb}], near: 1, gap: 2}
+    pool: [avais, aurais, ai, aurai, avait]
+
+  - id: fr-b2-futur-anterieur
+    title: j'aurai fini
+    meaning: {en: "the future perfect", pt: "o futuro anterior"}
+    intro:
+      en: |
+        Future of **avoir / être** + participle: an action finished before a future moment: **J'aurai fini à six heures. Quand tu auras lu ce livre, prête-le-moi.** Note: after **quand, dès que, lorsque** French uses a future where English uses a present. It can also be a guess: **Il aura oublié** "He must have forgotten".
+      pt: |
+        Futuro de **avoir / être** + particípio = *terei* + particípio: **J'aurai fini à six heures** (Terei terminado às seis). Depois de **quand, dès que, lorsque**, o francês usa futuro onde o português usa o futuro do subjuntivo: **Quand tu auras lu ce livre…** (Quando você tiver lido este livro…). Também suposição: **Il aura oublié** (Ele deve ter esquecido).
+    examples:
+    - ["J'aurai fini à six heures.", "I'll have finished by six.", "Terei terminado às seis.", "aurai"]
+    - ["Quand tu auras lu ce livre, prête-le-moi.", "When you've read this book, lend it to me.", "Quando você tiver lido este livro, me empreste.", "auras"]
+    - ["Il aura oublié.", "He must have forgotten.", "Ele deve ter esquecido.", "aura"]
+    match: {seq: [{word: [aurai, auras, aura, aurons, aurez, auront, serai, seras, sera, serons, serez, seront]}, {re: "(é|ée|és|ées|i|ie|is|u|ue|us|it|ert|ort|ait)$", pos: verb}], near: 1, gap: 0, same: [person, number]}
+
+  - id: fr-b2-discours-indirect
+    title: il a dit qu'il viendrait
+    meaning: {en: "reported speech and the sequence of tenses", pt: "discurso indireto e concordância dos tempos"}
+    intro:
+      en: |
+        After a reporting verb in the past: present → imperfect, passé composé → pluperfect, future → conditional: **« Je viendrai »** → **Il a dit qu'il viendrait.** **« J'ai fini »** → **Elle a dit qu'elle avait fini.** Questions: **Il m'a demandé si je venais, ce que je voulais, où j'allais.**
+      pt: |
+        Com o verbo introdutor no passado: presente → imperfeito, passé composé → mais-que-perfeito, futuro → condicional, como no português: **« Je viendrai »** → **Il a dit qu'il viendrait** (Ele disse que viria). Perguntas: **Il m'a demandé si je venais, ce que je voulais** (o que eu queria), **où j'allais**. Atenção: **ce que**, não ~~qu'est-ce que~~, no indireto.
+    examples:
+    - ["Il a dit qu'il viendrait.", "He said he would come.", "Ele disse que viria.", "viendrait"]
+    - ["Je pensais que ce serait facile.", "I thought it would be easy.", "Eu achava que seria fácil.", "serait"]
+    - ["Elle m'a promis qu'elle m'écrirait.", "She promised me she would write to me.", "Ela me prometeu que me escreveria.", "écrirait"]
+    match:
+    - {seq: [{lemma: "^(dire|répondre|expliquer|annoncer|promettre|affirmer|assurer|écrire|jurer)$"}, {word: [que, qu]}, {pos: verb, mood: cond}], near: 3, gap: 2, same: [person, number]}
+    - {seq: [{word: [pensais, pensait, pensions, pensaient, croyais, croyait, croyions, croyaient, savais, savait, imaginais, espérais, espérait]}, {word: [que, qu]}, {pos: verb, mood: cond}], near: 3, gap: 2, same: [person, number]}
+
+- title: {en: Voice and verb forms, pt: Voz e formas verbais}
+  lessons:
+  - id: fr-b2-passif
+    title: il a été arrêté par
+    meaning: {en: "the passive", pt: "a voz passiva"}
+    intro:
+      en: |
+        **être** in any tense + participle agreeing with the subject, **par** for the agent (**de** with verbs of feeling or state: **aimé de tous**): **La lettre a été écrite par Marie. Le pont sera construit en 2030.** French often prefers **on** or a pronominal verb: **On parle français ici. Ça se mange froid.**
+      pt: |
+        **être** em qualquer tempo + particípio concordando com o sujeito, **par** para o agente (**de** com verbos de sentimento: **aimé de tous**, amado por todos): **La lettre a été écrite par Marie.** Muitas vezes o francês prefere **on** ou o verbo pronominal, como o nosso *se*: **On parle français ici** (Fala-se francês aqui). **Ça se mange froid.**
+    examples:
+    - ["La lettre a été écrite par Marie.", "The letter was written by Marie.", "A carta foi escrita pela Marie.", "écrite"]
+    - ["Il a été arrêté par la police.", "He was arrested by the police.", "Ele foi preso pela polícia.", "arrêté"]
+    - ["Ce livre est lu par tout le monde.", "This book is read by everyone.", "Este livro é lido por todo mundo.", "lu"]
+    match: {seq: [{lemma: "^être$"}, {re: "(é|ée|és|ées|i|ie|is|ies|u|ue|us|ues|t|te|ts|tes)$"}, {word: [par]}], near: 1, gap: 1}
+
+  - id: fr-b2-participe-present
+    title: ne sachant pas quoi faire
+    meaning: {en: "the present participle without en", pt: "o particípio presente sem en"}
+    intro:
+      en: |
+        Without **en**, the **-ant** form works like a relative or a cause, mostly in writing: **les étudiants ayant réussi** (= qui ont réussi), **Ne sachant pas quoi faire, il est parti** (= comme il ne savait pas). It does not agree. Irregular: **ayant, étant, sachant**. Compare the gérondif (B1), which needs the same subject as the main verb.
+      pt: |
+        Sem **en**, a forma em **-ant** funciona como relativa ou causa, sobretudo na escrita — como o nosso gerúndio: **les étudiants ayant réussi** (os alunos que passaram), **Ne sachant pas quoi faire, il est parti** (Não sabendo o que fazer, foi embora). É invariável. Irregulares: **ayant, étant, sachant**.
+    examples:
+    - ["Ne sachant pas quoi faire, il est parti.", "Not knowing what to do, he left.", "Não sabendo o que fazer, ele foi embora.", "sachant"]
+    - ["Étant malade, elle est restée chez elle.", "Being ill, she stayed at home.", "Estando doente, ela ficou em casa.", "Étant"]
+    - ["Les étudiants ayant réussi recevront un diplôme.", "The students who passed will receive a diploma.", "Os alunos que passaram vão receber um diploma.", "ayant"]
+    match: {seq: [{word: [ayant, étant, sachant, voyant, pensant, croyant, voulant, pouvant, sentant, considérant, espérant, connaissant, comprenant, réalisant, constatant, entendant]}], gap: 0}
+
+  - id: fr-b2-faire-causatif
+    title: faire réparer, se faire couper
+    meaning: {en: "causative faire + infinitive", pt: "faire causativo + infinitivo"}
+    intro:
+      en: |
+        **faire** + infinitive: to have something done: **Je fais réparer ma voiture** "I'm having my car repaired". **se faire** + infinitive: to have it done to oneself: **Je me suis fait couper les cheveux.** **laisser** + infinitive: to let: **Laisse-moi parler.** The participle **fait** does not agree here.
+      pt: |
+        **faire** + infinitivo = mandar fazer: **Je fais réparer ma voiture** (Mando consertar o carro). **se faire** + infinitivo: **Je me suis fait couper les cheveux** (Cortei o cabelo — no salão). **laisser** + infinitivo = deixar: **Laisse-moi parler.** Repare: o português diz *cortei o cabelo*; o francês precisa do **faire** quando outra pessoa faz.
+    examples:
+    - ["Je fais réparer ma voiture.", "I'm having my car repaired.", "Vou mandar consertar meu carro.", "réparer"]
+    - ["Je me suis fait couper les cheveux.", "I had my hair cut.", "Cortei o cabelo.", "couper"]
+    - ["Ça me fait rire.", "It makes me laugh.", "Isso me faz rir.", "rire"]
+    match: {seq: [{lemma: "^faire$"}, {pos: verb, mood: inf, not: {lemma: "^(être|avoir)$"}}], gap: 1}
+
+- title: {en: Emphasis and linking, pt: Ênfase e encadeamento}
+  lessons:
+  - id: fr-b2-mise-en-relief
+    title: c'est lui qui, ce que je veux
+    meaning: {en: "emphasis: c'est … qui / que, ce que … c'est", pt: "ênfase: c'est … qui / que, ce que … c'est"}
+    intro:
+      en: |
+        **c'est … qui** emphasises the subject, **c'est … que** anything else: **C'est Marie qui a gagné. C'est demain que je pars.** **ce qui / ce que … c'est** puts the topic first: **Ce que je veux, c'est dormir. Ce qui m'étonne, c'est son calme.** After **c'est moi qui** the verb agrees with moi: **C'est moi qui suis…**
+      pt: |
+        **c'est … qui** destaca o sujeito, **c'est … que** o resto: **C'est Marie qui a gagné** (Foi a Marie que ganhou). **C'est demain que je pars** (É amanhã que eu vou). **ce qui / ce que … c'est**: **Ce que je veux, c'est dormir** (O que eu quero é dormir). **ce qui** é sujeito, **ce que** é objeto. E o verbo concorda: **C'est moi qui suis** (Sou eu que estou).
+    examples:
+    - ["C'est Marie qui a gagné.", "It was Marie who won.", "Foi a Marie que ganhou.", "qui"]
+    - ["Ce que je veux, c'est dormir.", "What I want is to sleep.", "O que eu quero é dormir.", "que"]
+    - ["Ce qui m'étonne, c'est son calme.", "What surprises me is how calm he is.", "O que me espanta é a calma dele.", "qui"]
+    match:
+    - {seq: [{word: [c]}, {word: [est, était]}, {pos: [pron, noun], not: {pos: verb}}, {word: [qui, que, qu]}], near: 2, gap: 3, pool: [qui, que, dont, où]}
+    - {seq: [{word: [ce], start: true}, {word: [qui, que, qu]}], gap: 1, pool: [qui, que, dont, quoi]}
+
+  - id: fr-b2-connecteurs
+    title: pourtant, cependant, en revanche
+    meaning: {en: "connectors of contrast and addition", pt: "conectores de contraste e adição"}
+    intro:
+      en: |
+        Contrast: **pourtant** "yet", **cependant / toutefois / néanmoins** "however" (more formal), **en revanche / par contre** "on the other hand" (par contre is informal). Addition and argument: **d'ailleurs** "besides", **de plus / en outre** "moreover", **ainsi** "thus", **en effet** "indeed (as the facts show)".
+      pt: |
+        Contraste: **pourtant** (no entanto, mesmo assim), **cependant / toutefois / néanmoins** (porém, contudo — mais formais), **en revanche / par contre** (em compensação, já; par contre é informal). Adição: **d'ailleurs** (aliás), **de plus / en outre** (além disso), **ainsi** (assim), **en effet** (de fato). Falso amigo: **d'ailleurs** é *aliás*, não *de outro lugar*.
+    examples:
+    - ["Il est riche, et pourtant il n'est pas heureux.", "He's rich, and yet he isn't happy.", "Ele é rico e, mesmo assim, não é feliz.", "pourtant"]
+    - ["C'est cher ; cependant, ça vaut la peine.", "It's expensive; however, it's worth it.", "É caro; porém, vale a pena.", "cependant"]
+    - ["Je n'aime pas le thé, en revanche j'adore le café.", "I don't like tea; on the other hand, I love coffee.", "Não gosto de chá; em compensação, adoro café.", "revanche"]
+    match: {seq: [{word: [pourtant, cependant, toutefois, néanmoins, revanche, ailleurs, outre, ainsi]}], gap: 0}
+    pool: [pourtant, cependant, ainsi, ailleurs, revanche, donc]
+
+  - id: fr-b2-doubles-pronoms
+    title: je le lui donne
+    meaning: {en: "two object pronouns together", pt: "dois pronomes objeto juntos"}
+    intro:
+      en: |
+        Order before the verb: **me / te / se / nous / vous** → **le / la / les** → **lui / leur** → **y** → **en**: **Il me le donne. Je le lui ai dit. Je leur en parle.** In the positive imperative, after the verb with hyphens: **Donne-le-moi. Dites-le-lui.**
+      pt: |
+        Ordem antes do verbo: **me / te / se / nous / vous** → **le / la / les** → **lui / leur** → **y** → **en**: **Il me le donne** (Ele me dá isso). **Je le lui ai dit** (Eu disse isso a ele). O português do Brasil quase nunca junta dois clíticos (*eu disse pra ele*); em francês é obrigatório. No imperativo afirmativo: **Donne-le-moi.**
+    examples:
+    - ["Je le lui ai dit.", "I told him so.", "Eu disse isso a ele.", "lui"]
+    - ["Il me l'a donné.", "He gave it to me.", "Ele me deu isso.", "me"]
+    - ["Je leur en parlerai.", "I'll talk to them about it.", "Vou falar disso com eles.", "en"]
+    match:
+    - {seq: [{word: [le, la, l, les]}, {word: [lui, leur]}, {pos: verb}], gap: 1, pool: [lui, leur, le, "y", en]}
+    - {seq: [{word: [me, m, te, t, se, s, nous, vous]}, {word: [le, la, l, les]}, {pos: verb}], gap: 0, pool: [me, te, se, nous, vous]}
+    - {seq: [{word: [lui, leur, m, t, l, "y", me, te, nous, vous]}, {word: [en]}, {pos: verb}], gap: 1, pool: [en, "y", le, lui]}

@@ -1,0 +1,204 @@
+id: C2
+topics:
+
+- title: {en: Clause linking in depth, pt: Ligação de orações a fundo}
+  lessons:
+  - id: tr-digi-halde
+    title: bildiği halde, istediğin sürece
+    meaning: {en: "-DIğI + halde, takdirde, sürece, kadar, için", pt: "-DIğI + halde, takdirde, sürece, kadar, için"}
+    intro:
+      en: |
+        **-dik** + possessive + a noun or postposition gives a whole family of conjunctions:
+
+        - **-diği halde** "although": **Bildiği halde söylemedi.** "Although he knew, he didn't say."
+        - **-diği takdirde** "in case, if" (formal): **Ödeme yapılmadığı takdirde …** "If payment is not made …"
+        - **-diği sürece** "as long as": **İstediğin sürece kalabilirsin.** "You can stay as long as you like."
+        - **-diği kadar** "as much as": **Bildiğim kadarıyla** "as far as I know"
+        - **-diği için** "because": **Geç kaldığım için özür dilerim.** "Sorry for being late."
+        - **-diği zaman** "when", **-diği gibi** "as, just as"
+      pt: |
+        **-dik** + possessivo + um substantivo ou posposição forma toda uma família de conjunções:
+
+        - **-diği halde** "embora": **Bildiği halde söylemedi.** "Embora soubesse, não disse."
+        - **-diği takdirde** "caso, se" (formal): **Ödeme yapılmadığı takdirde …** "Caso o pagamento não seja feito …"
+        - **-diği sürece** "enquanto, desde que": **İstediğin sürece kalabilirsin.** "Você pode ficar quanto quiser."
+        - **-diği kadar** "tanto quanto": **Bildiğim kadarıyla** "pelo que sei"
+        - **-diği için** "porque": **Geç kaldığım için özür dilerim.** "Desculpe pelo atraso."
+        - **-diği zaman** "quando", **-diği gibi** "como, assim como"
+    examples:
+    - ["Bildiği halde söylemedi.", "Although he knew, he didn't say.", "Embora soubesse, não disse.", "halde"]
+    - ["İstediğin sürece kalabilirsin.", "You can stay as long as you like.", "Você pode ficar quanto quiser.", "sürece"]
+    - ["Geç kaldığım için özür dilerim.", "Sorry for being late.", "Desculpe pelo atraso.", "için"]
+    match: {seq: [{re: "[dt][ıiuü]ğ[ıiuü]"}, {word: [halde, takdirde, sürece, kadar, için, zaman, gibi, müddetçe]}], gap: 1}
+    pool: [halde, takdirde, sürece, kadar, için, zaman, gibi]
+
+  - id: tr-ir-irmez
+    title: eve girer girmez
+    meaning: {en: "-(A)r -mAz: as soon as", pt: "-(A)r -mAz: assim que"}
+    intro:
+      en: |
+        The aorist and its negative side by side mean *as soon as*: **Eve girer girmez telefon çaldı.** "As soon as I got home the phone rang." **Beni görür görmez gülümsedi.** "She smiled as soon as she saw me." Similar: **-(y)IncA** "when, once" (B1).
+      pt: |
+        O aoristo e sua negativa lado a lado querem dizer *assim que*: **Eve girer girmez telefon çaldı.** "Assim que entrei em casa, o telefone tocou." **Beni görür görmez gülümsedi.** "Ela sorriu assim que me viu." Parecido: **-(y)IncA** "quando, assim que" (B1).
+    examples:
+    - ["Eve girer girmez telefon çaldı.", "As soon as I got home the phone rang.", "Assim que entrei em casa, o telefone tocou.", "girmez"]
+    - ["Beni görür görmez gülümsedi.", "She smiled as soon as she saw me.", "Ela sorriu assim que me viu.", "görmez"]
+    - ["Yatar yatmaz uyudu.", "He fell asleep as soon as he lay down.", "Ele dormiu assim que se deitou.", "yatmaz"]
+    match: {seq: [{re: "[ae]r$|[ıiuü]r$"}, {re: "m[ae]z$"}], gap: 1, suffixes: [mez, maz, meden, madan, ince, ınca, unca, ünce], attested: true}
+
+  - id: tr-inceye-kadar
+    title: gelinceye kadar
+    meaning: {en: "-(y)IncAyA kadar: until", pt: "-(y)IncAyA kadar: até que"}
+    intro:
+      en: |
+        **-(y)ıncaya / -(y)inceye kadar** (or **dek**) means *until*: **Sen gelinceye kadar bekledim.** "I waited until you came." Speech often says **-(y)AnA kadar**: **Sen gelene kadar bekledim.** Both stand on the verb stem, with no person ending.
+      pt: |
+        **-(y)ıncaya / -(y)inceye kadar** (ou **dek**) quer dizer *até que*: **Sen gelinceye kadar bekledim.** "Esperei até você chegar." A fala muitas vezes diz **-(y)AnA kadar**: **Sen gelene kadar bekledim.** Ambas ficam no radical do verbo, sem terminação de pessoa.
+    examples:
+    - ["Sen gelinceye kadar bekledim.", "I waited until you came.", "Esperei até você chegar.", "gelinceye"]
+    - ["Sen gelene kadar bekledim.", "I waited until you came.", "Esperei até você chegar.", "gelene"]
+    - ["Yağmur dininceye kadar içeride kaldık.", "We stayed inside until the rain stopped.", "Ficamos dentro até a chuva parar.", "dininceye"]
+    match:
+    - {seq: [{re: "[ıiuü]n[cç][ae]y[ae]$"}, {word: [kadar, dek, değin]}], gap: 0, suffixes: [ıncaya, inceye, uncaya, ünceye, ınca, ince, unca, ünce], attested: true}
+    - {seq: [{re: "(y)?[ae]n[ae]$"}, {word: [kadar, dek]}], gap: 0, suffixes: [ene, ana, yene, yana, inceye, ıncaya], attested: true}
+
+  - id: tr-correlatives
+    title: ne … ne, hem … hem, ister … ister
+    meaning: {en: "paired conjunctions", pt: "conjunções em par"}
+    intro:
+      en: |
+        - **hem … hem (de)** "both … and": **Hem akıllı hem çalışkan.** "Both clever and hard-working."
+        - **ne … ne (de)** "neither … nor", with a *positive* verb: **Ne telefon etti ne de yazdı.** "He neither called nor wrote."
+        - **ya … ya (da)** "either … or": **Ya bugün ya yarın.**
+        - **ister … ister** "whether … or": **İster inan ister inanma.** "Believe it or not."
+        - **gerek … gerek(se)** "both … and" (formal)
+      pt: |
+        - **hem … hem (de)** "tanto … quanto": **Hem akıllı hem çalışkan.** "Tanto inteligente quanto esforçado."
+        - **ne … ne (de)** "nem … nem", com verbo *afirmativo*: **Ne telefon etti ne de yazdı.** "Ele nem ligou nem escreveu."
+        - **ya … ya (da)** "ou … ou": **Ya bugün ya yarın.** "Ou hoje ou amanhã."
+        - **ister … ister** "quer … quer": **İster inan ister inanma.** "Acredite ou não."
+        - **gerek … gerek(se)** "tanto … quanto" (formal)
+    mistakes:
+    - wrong: Ne telefon etmedi ne de yazmadı.
+      right: Ne telefon etti ne de yazdı.
+      why: {en: "ne … ne already negates: the verbs stay positive.", pt: "ne … ne já nega: os verbos ficam afirmativos."}
+    examples:
+    - ["Hem akıllı hem çalışkan.", "Both clever and hard-working.", "Tanto inteligente quanto esforçado.", "hem"]
+    - ["Ne telefon etti ne de yazdı.", "He neither called nor wrote.", "Ele nem ligou nem escreveu.", "ne"]
+    - ["İster inan ister inanma.", "Believe it or not.", "Acredite ou não.", "ister"]
+    match:
+    - {seq: [{word: [hem]}, {word: [hem]}], near: 5, gap: 1}
+    - {seq: [{word: [ne]}, {word: [ne]}], near: 5, gap: 1}
+    - {seq: [{word: [ya]}, {word: [ya]}], near: 5, gap: 1}
+    - {seq: [{word: [ister]}, {word: [ister]}], near: 5, gap: 1}
+    pool: [hem, ne, ya, ister, da, ama]
+
+- title: {en: Necessity and comparison of actions, pt: Necessidade e comparação de ações}
+  lessons:
+  - id: tr-masi-gerek
+    title: gitmem gerek, gitmesi lazım
+    meaning: {en: "-mAsI gerek / lazım: someone needs to", pt: "-mAsI gerek / lazım: alguém precisa"}
+    intro:
+      en: |
+        **gerek, lazım, şart** (necessary) take a clause in **-mA** + possessive for the person: **Gitmem gerek.** "I need to go." **Onun dinlenmesi lazım.** "He needs to rest." **Bunu bilmeniz şart.** "You absolutely must know this." Without a person: **Gitmek lazım.** "One has to go." Compare **-mAlI** (A2), which is a verb ending: **gitmeliyim**.
+      pt: |
+        **gerek, lazım, şart** (necessário) pedem uma oração em **-mA** + possessivo para a pessoa: **Gitmem gerek.** "Preciso ir." **Onun dinlenmesi lazım.** "Ele precisa descansar." **Bunu bilmeniz şart.** "É indispensável que vocês saibam isso." Sem pessoa: **Gitmek lazım.** "É preciso ir." Compare **-mAlI** (A2), que é uma terminação verbal: **gitmeliyim**.
+    examples:
+    - ["Gitmem gerek.", "I need to go.", "Preciso ir.", "Gitmem"]
+    - ["Onun dinlenmesi lazım.", "He needs to rest.", "Ele precisa descansar.", "dinlenmesi"]
+    - ["Bunu bilmeniz şart.", "You absolutely must know this.", "É indispensável que vocês saibam isso.", "bilmeniz"]
+    match: {seq: [{re: "m[ae](m|n|si|sı|miz|mız|niz|nız|leri|ları)$"}, {word: [gerek, gerekir, gerekiyor, lazım, şart]}], gap: 0, suffixes: [mem, mam, men, man, mesi, ması, memiz, mamız, meniz, manız, mek, mak], attested: true}
+
+  - id: tr-maktansa
+    title: beklemektense, gitmek yerine
+    meaning: {en: "rather than, instead of: -mAktAnsA, -mAk yerine", pt: "em vez de, antes … do que: -mAktAnsA, -mAk yerine"}
+    intro:
+      en: |
+        - **-maktansa / -mektense** "rather than": **Burada beklemektense eve gidelim.** "Rather than wait here, let's go home."
+        - **-mak yerine** "instead of": **Ders çalışmak yerine televizyon izledi.** "Instead of studying he watched TV."
+        - **-mAktAn** + comparison: **Okumaktan daha çok yazmayı severim.** "I like writing more than reading."
+      pt: |
+        - **-maktansa / -mektense** "em vez de, antes … do que": **Burada beklemektense eve gidelim.** "Em vez de esperar aqui, vamos para casa."
+        - **-mak yerine** "em vez de": **Ders çalışmak yerine televizyon izledi.** "Em vez de estudar, ele viu TV."
+        - **-mAktAn** + comparação: **Okumaktan daha çok yazmayı severim.** "Gosto mais de escrever do que de ler."
+    examples:
+    - ["Burada beklemektense eve gidelim.", "Rather than wait here, let's go home.", "Em vez de esperar aqui, vamos para casa.", "beklemektense"]
+    - ["Ders çalışmak yerine televizyon izledi.", "Instead of studying he watched TV.", "Em vez de estudar, ele viu TV.", "yerine"]
+    - ["Yalan söylemektense susarım.", "I'd rather keep quiet than lie.", "Prefiro ficar calado a mentir.", "söylemektense"]
+    match:
+    - {seq: [{re: "m[ae]kt[ae]ns[ae]$"}], suffixes: [mektense, maktansa, mekten, maktan, mek, mak], attested: true}
+    - {seq: [{re: "m[ae]k$"}, {word: [yerine]}], gap: 1, pool: [için, üzere, gibi, kadar]}
+
+  - id: tr-maliydi
+    title: gitmeliydim
+    meaning: {en: "should have: -mAlIydI", pt: "deveria ter: -mAlIydI"}
+    intro:
+      en: |
+        **-meli / -malı** + **-ydı** looks back at an obligation not met: **Daha erken gitmeliydim.** "I should have left earlier." **Bana söylemeliydin.** "You should have told me." Negative: **Bunu yapmamalıydın.** "You shouldn't have done that."
+      pt: |
+        **-meli / -malı** + **-ydı** olha para trás, para uma obrigação não cumprida: **Daha erken gitmeliydim.** "Eu devia ter saído mais cedo." **Bana söylemeliydin.** "Você devia ter me contado." Negativa: **Bunu yapmamalıydın.** "Você não devia ter feito isso."
+    examples:
+    - ["Daha erken gitmeliydim.", "I should have left earlier.", "Eu devia ter saído mais cedo.", "gitmeliydim"]
+    - ["Bana söylemeliydin.", "You should have told me.", "Você devia ter me contado.", "söylemeliydin"]
+    - ["Bunu yapmamalıydın.", "You shouldn't have done that.", "Você não devia ter feito isso.", "yapmamalıydın"]
+    match: {seq: [{re: "m[ae]l[ıi]yd[ıi](m|n|k|nız|niz|ler|lar)?$"}], suffixes: [meliydim, malıydım, meliydin, malıydın, meliydi, malıydı, meliyim, malıyım, melisin, malısın, meli, malı], attested: true}
+
+- title: {en: Word-level nuance, pt: Nuances no nível da palavra}
+  lessons:
+  - id: tr-ki-suffix
+    title: evdeki, yarınki
+    meaning: {en: "the suffix -ki: the one in / of", pt: "o sufixo -ki: o que está em / o de"}
+    intro:
+      en: |
+        **-ki** turns a place or time into an adjective or a pronoun:
+
+        - after the locative: **evdeki kitaplar** "the books (that are) at home", **masadaki bardak** "the glass on the table"
+        - after time words: **yarınki toplantı** "tomorrow's meeting", **bugünkü gazete** "today's paper"
+        - after the genitive, *the one of*: **Benim arabam eski, seninki yeni.** "My car is old, yours is new."
+
+        It mostly stays **-ki** whatever the vowels (**bugünkü** is an exception).
+      pt: |
+        **-ki** transforma um lugar ou um tempo em adjetivo ou pronome:
+
+        - depois do locativo: **evdeki kitaplar** "os livros (que estão) em casa", **masadaki bardak** "o copo que está na mesa"
+        - depois de palavras de tempo: **yarınki toplantı** "a reunião de amanhã", **bugünkü gazete** "o jornal de hoje"
+        - depois do genitivo, *o de*: **Benim arabam eski, seninki yeni.** "Meu carro é velho, o seu é novo."
+
+        Fica quase sempre **-ki**, sejam quais forem as vogais (**bugünkü** é exceção).
+    examples:
+    - ["Masadaki bardak benim.", "The glass on the table is mine.", "O copo que está na mesa é meu.", "Masadaki"]
+    - ["Yarınki toplantı iptal edildi.", "Tomorrow's meeting was cancelled.", "A reunião de amanhã foi cancelada.", "Yarınki"]
+    - ["Benim arabam eski, seninki yeni.", "My car is old, yours is new.", "Meu carro é velho, o seu é novo.", "seninki"]
+    match:
+    - {seq: [{re: "[dt][ae]ki$"}], suffixes: [daki, deki, taki, teki, da, de, ta, te], attested: true}
+    - {seq: [{word: [yarınki, bugünkü, dünkü, akşamki, sabahki, geçenki, seninki, benimki, onunki, bizimki, sizinki, onlarınki]}], gap: 0, pool: [yarınki, bugünkü, dünkü, seninki, benimki, onunki]}
+
+  - id: tr-sana
+    title: Gelsene!
+    meaning: {en: "-sAnA: urging, impatient commands", pt: "-sAnA: insistência, ordens impacientes"}
+    intro:
+      en: |
+        **-sana / -sene** (plural **-sanıza / -senize**) is a familiar, insistent imperative: *come on, why don't you*: **Gelsene!** "Come on, come!" **Otursanıza!** "Do sit down!" **Bir şey söylesene!** "Say something, will you!" It can sound impatient; plain **gel, gelin** is neutral.
+      pt: |
+        **-sana / -sene** (plural **-sanıza / -senize**) é um imperativo familiar e insistente: *vamos, por que você não*: **Gelsene!** "Vem, vai!" **Otursanıza!** "Sentem-se, por favor!" **Bir şey söylesene!** "Fala alguma coisa!" Pode soar impaciente; o simples **gel, gelin** é neutro.
+    examples:
+    - ["Gelsene!", "Come on, come!", "Vem, vai!", "Gelsene"]
+    - ["Bir şey söylesene!", "Say something, will you!", "Fala alguma coisa!", "söylesene"]
+    - ["Otursanıza!", "Do sit down!", "Sentem-se, por favor!", "Otursanıza"]
+    match:
+    - {seq: [{re: "s[ae]n[ıi]z[ae]$"}], suffixes: [senize, sanıza, sene, sana, in, ın, un, ün], attested: true}
+    - {seq: [{re: "s[ae]n[ae]$", not: {pos: [noun, pron, adj]}}], suffixes: [sene, sana, senize, sanıza, in, ın, un, ün], attested: true}
+
+  - id: tr-mis-adjective
+    title: pişmiş tavuk, kurutulmuş meyve
+    meaning: {en: "-mIş as an adjective: done, finished", pt: "-mIş como adjetivo: feito, acabado"}
+    intro:
+      en: |
+        Beside its use as a tense, **-mış** forms adjectives describing a finished state: **pişmiş tavuk** "cooked chicken", **evlenmiş çift** "the married couple", **kurutulmuş meyve** "dried fruit", **çok okumuş biri** "a well-read person". Compare **-An** (who is doing / did): **pişen yemek** "the food (that is) cooking".
+      pt: |
+        Além do uso como tempo verbal, **-mış** forma adjetivos que descrevem um estado acabado: **pişmiş tavuk** "frango cozido", **evlenmiş çift** "o casal casado", **kurutulmuş meyve** "fruta seca", **çok okumuş biri** "uma pessoa culta (que leu muito)". Compare **-An** (que faz / fez): **pişen yemek** "a comida que está cozinhando".
+    examples:
+    - ["Kurutulmuş meyve severim.", "I like dried fruit.", "Gosto de fruta seca.", "Kurutulmuş"]
+    - ["Pişmiş tavuk yedik.", "We ate cooked chicken.", "Comemos frango cozido.", "Pişmiş"]
+    - ["Kırılmış bir bardak buldum.", "I found a broken glass.", "Achei um copo quebrado.", "Kırılmış"]
+    match: {seq: [{re: "m[ıiuü]ş$"}, {pos: noun}], gap: 0, suffixes: [mış, miş, muş, müş, an, en, yan, yen], attested: true}

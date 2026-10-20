@@ -1,0 +1,180 @@
+id: C1
+topics:
+
+- title: {en: Subjunctive in depth, pt: Subjuntivo a fundo}
+  lessons:
+  - id: is-reported-past
+    title: Hún sagði að hann væri veikur.
+    meaning: {en: "reported speech in the past: the past subjunctive", pt: "discurso indireto no passado: o passado do subjuntivo"}
+    intro:
+      en: |
+        Reported speech is in the subjunctive, and its tense follows the reporting verb: after a present (**segir**) the present subjunctive, after a past (**sagði**) the past subjunctive, whatever the speaker's own tense:
+
+        - "Hann er veikur." → **Hún segir að hann sé veikur.** → **Hún sagði að hann væri veikur.**
+        - "Við komum á morgun." → **Þeir sögðu að þeir kæmu á morgun.**
+
+        Facts the speaker vouches for can stay indicative after **vita** (know): **Ég vissi að hann var heima.**
+      pt: |
+        O discurso indireto vai no subjuntivo, e o tempo segue o verbo de dizer: depois de um presente (**segir**) o presente do subjuntivo, depois de um passado (**sagði**) o passado do subjuntivo, qualquer que tenha sido o tempo da fala original:
+
+        - "Hann er veikur." → **Hún segir að hann sé veikur.** → **Hún sagði að hann væri veikur.** "Ela disse que ele estava doente."
+        - "Við komum á morgun." → **Þeir sögðu að þeir kæmu á morgun.** "Eles disseram que viriam amanhã."
+
+        Fatos que quem fala garante podem ficar no indicativo depois de **vita** (saber): **Ég vissi að hann var heima.**
+    examples:
+    - ["Hún sagði að hann væri veikur.", "She said he was ill.", "Ela disse que ele estava doente.", "væri"]
+    - ["Þeir sögðu að þeir kæmu á morgun.", "They said they would come tomorrow.", "Eles disseram que viriam amanhã.", "kæmu"]
+    - ["Ég hélt að þú værir farinn.", "I thought you had left.", "Achei que você tinha ido embora.", "værir"]
+    match: {seq: [{lemma: "^(segja|halda|telja|fullyrða|spyrja|frétta|heyra|skrifa|tilkynna|ímynda|vona)$", tense: past}, {word: [að]}, {pos: verb, mood: subj}], near: 3, gap: 2, same: [person, number]}
+
+  - id: is-unreal
+    title: Ef ég væri ríkur, myndi ég …
+    meaning: {en: "unreal conditions: ef + past subjunctive, myndi", pt: "condições irreais: ef + passado do subjuntivo, myndi"}
+    intro:
+      en: |
+        An unreal condition takes the past subjunctive after **ef**, and the main clause has either the past subjunctive too or **myndi** + infinitive: **Ef ég væri ríkur myndi ég ferðast.** "If I were rich I would travel." **Ef ég hefði tíma kæmi ég.** "If I had time I'd come." **myndi** is the past subjunctive of **munu**: **ég myndi, þú myndir, hann myndi, við myndum, þið mynduð, þeir myndu**.
+      pt: |
+        Uma condição irreal leva passado do subjuntivo depois de **ef**, e a principal tem também o passado do subjuntivo ou **myndi** + infinitivo: **Ef ég væri ríkur myndi ég ferðast.** "Se eu fosse rico, viajaria." **Ef ég hefði tíma kæmi ég.** "Se eu tivesse tempo, viria." **myndi** é o passado do subjuntivo de **munu**: **ég myndi, þú myndir, hann myndi, við myndum, þið mynduð, þeir myndu**.
+    examples:
+    - ["Ef ég væri ríkur myndi ég ferðast.", "If I were rich I would travel.", "Se eu fosse rico, viajaria.", "væri"]
+    - ["Ef ég hefði tíma kæmi ég.", "If I had time I'd come.", "Se eu tivesse tempo, viria.", "hefði"]
+    - ["Ég myndi hjálpa þér.", "I would help you.", "Eu ajudaria você.", "myndi"]
+    match:
+    - {seq: [{word: [ef]}, {pos: verb, mood: subj, tense: past}], near: 3, gap: 1, same: [person, number]}
+    - {seq: [{word: [myndi, myndir, myndum, mynduð, myndu, mundi]}, {pos: verb, mood: inf}], near: 3, gap: 0, pool: [myndi, mun, mundi, munu, mundu, myndu]}
+
+  - id: is-hefdi
+    title: Ég hefði getað hjálpað.
+    meaning: {en: "would have, could have: hefði + supine", pt: "teria, poderia ter: hefði + supino"}
+    intro:
+      en: |
+        **hefði** (past subjunctive of **hafa**) + supine looks back at what didn't happen: **Það hefði verið betra.** "That would have been better." **Ég hefði getað hjálpað þér.** "I could have helped you." **Þú hefðir átt að segja mér það.** "You should have told me." (**eiga að** "ought to")
+      pt: |
+        **hefði** (passado do subjuntivo de **hafa**) + supino olha para o que não aconteceu: **Það hefði verið betra.** "Teria sido melhor." **Ég hefði getað hjálpað þér.** "Eu poderia ter ajudado você." **Þú hefðir átt að segja mér það.** "Você devia ter me contado." (**eiga að** "dever")
+    examples:
+    - ["Það hefði verið betra.", "That would have been better.", "Teria sido melhor.", "hefði"]
+    - ["Ég hefði getað hjálpað þér.", "I could have helped you.", "Eu poderia ter ajudado você.", "hefði"]
+    - ["Þú hefðir átt að segja mér það.", "You should have told me.", "Você devia ter me contado.", "hefðir"]
+    match: {seq: [{word: [hefði, hefðir, hefðum, hefðuð, hefðu]}, {pos: verb, mood: part}], near: 3, gap: 0}
+    pool: [hefði, hafði, hafi, hefur, væri, var]
+
+  - id: is-mun-skal
+    title: Hann mun koma. Ég skal hjálpa.
+    meaning: {en: "munu (will, probably) and skulu (shall, I promise)", pt: "munu (vai, provavelmente) e skulu (vou, prometo)"}
+    intro:
+      en: |
+        Icelandic usually uses the present for the future, but two verbs make it explicit:
+
+        - **munu**: neutral future or probability: **Hann mun koma á morgun.** "He will come tomorrow." **Það mun vera rétt.** "That's probably right."
+        - **skulu**: promise, intention, suggestion: **Ég skal hjálpa þér.** "I'll help you (I promise)." **Eigum við að …? / Við skulum fara.** "Let's go."
+      pt: |
+        O islandês costuma usar o presente para o futuro, mas dois verbos o tornam explícito:
+
+        - **munu**: futuro neutro ou probabilidade: **Hann mun koma á morgun.** "Ele virá amanhã." **Það mun vera rétt.** "Deve estar certo."
+        - **skulu**: promessa, intenção, sugestão: **Ég skal hjálpa þér.** "Eu ajudo você (prometo)." **Við skulum fara.** "Vamos."
+    examples:
+    - ["Hann mun koma á morgun.", "He will come tomorrow.", "Ele virá amanhã.", "mun"]
+    - ["Ég skal hjálpa þér.", "I'll help you.", "Eu ajudo você.", "skal"]
+    - ["Við skulum fara.", "Let's go.", "Vamos.", "skulum"]
+    match: {seq: [{lemma: "^(munu|skulu)$", pos: verb, tense: pres}, {pos: verb, mood: inf}], near: 3, gap: 0, same: [tense, mood]}
+
+- title: {en: Voice and impersonal sentences, pt: Voz e frases impessoais}
+  lessons:
+  - id: is-middle-meanings
+    title: Við hittumst. Bókin seldist vel.
+    meaning: {en: "what -st means: each other, passive-like, verbs only in -st", pt: "o que -st significa: um ao outro, sentido passivo, verbos só em -st"}
+    intro:
+      en: |
+        The middle voice in **-st** has several meanings:
+
+        - reciprocal: **Við hittumst á morgun.** "We'll meet tomorrow." **Þau kysstust.** "They kissed."
+        - passive-like, without an agent: **Bókin seldist vel.** "The book sold well." **Það heyrðist ekkert.** "Nothing could be heard."
+        - reflexive: **Hann klæddist.** "He got dressed."
+        - verbs that exist only in **-st** (*deponents*): **óttast** (fear), **ferðast** (travel), **eldast** (grow old), **nálgast** (approach)
+      pt: |
+        A voz média em **-st** tem vários sentidos:
+
+        - recíproco: **Við hittumst á morgun.** "A gente se encontra amanhã." **Þau kysstust.** "Eles se beijaram."
+        - sentido passivo, sem agente: **Bókin seldist vel.** "O livro vendeu bem." **Það heyrðist ekkert.** "Não se ouvia nada."
+        - reflexivo: **Hann klæddist.** "Ele se vestiu."
+        - verbos que só existem em **-st** (*depoentes*): **óttast** (temer), **ferðast** (viajar), **eldast** (envelhecer), **nálgast** (aproximar-se)
+    examples:
+    - ["Við hittumst á morgun.", "We'll meet tomorrow.", "A gente se encontra amanhã.", "hittumst"]
+    - ["Bókin seldist vel.", "The book sold well.", "O livro vendeu bem.", "seldist"]
+    - ["Hún ferðast mikið.", "She travels a lot.", "Ela viaja muito.", "ferðast"]
+    match:
+    - {seq: [{word: [við, þið, þeir, þær, þau]}, {pos: verb, re: "st$"}], near: 1, gap: 1, suffixes: [st, ""], attested: true}
+    - {seq: [{word: [það]}, {pos: verb, re: "st$"}], near: 0, gap: 1, suffixes: [st, ""], attested: true}
+
+  - id: is-weather
+    title: Það rignir.
+    meaning: {en: "weather and nature verbs with no subject", pt: "verbos de tempo e natureza sem sujeito"}
+    intro:
+      en: |
+        Weather verbs have no subject at all; **það** only fills the first place and disappears when something else stands there: **Það rignir.** "It's raining." **Í gær rigndi.** "Yesterday it rained." **Það snjóaði í nótt.** "It snowed last night." Others: **hvessa** (get windy), **frysta** (freeze), **dimma** (get dark), **birta** (get light), **kólna / hlýna** (get colder / warmer).
+      pt: |
+        Os verbos de tempo não têm sujeito nenhum; **það** só ocupa o primeiro lugar e some quando outra coisa está ali: **Það rignir.** "Está chovendo." **Í gær rigndi.** "Ontem choveu." **Það snjóaði í nótt.** "Nevou à noite." Outros: **hvessa** (ventar forte), **frysta** (gear), **dimma** (escurecer), **birta** (clarear), **kólna / hlýna** (esfriar / esquentar).
+    examples:
+    - ["Það rignir.", "It's raining.", "Está chovendo.", "rignir"]
+    - ["Í gær rigndi.", "Yesterday it rained.", "Ontem choveu.", "rigndi"]
+    - ["Það snjóaði í nótt.", "It snowed last night.", "Nevou à noite.", "snjóaði"]
+    match: {seq: [{pos: verb, lemma: "^(rigna|snjóa|hvessa|frysta|dimma|birta|kólna|hlýna|lygna|hellirigna|þykkna|stytta)$"}], same: [person, number]}
+
+  - id: is-impersonal-passive
+    title: Það var dansað.
+    meaning: {en: "the impersonal passive: það var + supine", pt: "a passiva impessoal: það var + supino"}
+    intro:
+      en: |
+        Intransitive verbs and verbs with a dative or genitive object make a passive with no subject; the participle stays in the neuter: **Það var dansað alla nóttina.** "There was dancing all night." **Það er talað um þetta.** "People talk about this." **Það var hringt í mig.** "Someone called me." Younger speakers also say **Það var barið mig** "I was beaten" (the *new passive*), which standard Icelandic rejects: **Ég var barinn**.
+      pt: |
+        Verbos intransitivos e verbos com objeto no dativo ou genitivo fazem uma passiva sem sujeito; o particípio fica no neutro: **Það var dansað alla nóttina.** "Dançou-se a noite toda." **Það er talað um þetta.** "Fala-se disso." **Það var hringt í mig.** "Me ligaram." Falantes jovens também dizem **Það var barið mig** "Fui espancado" (a *nova passiva*), que o islandês padrão rejeita: **Ég var barinn**.
+    examples:
+    - ["Það var dansað alla nóttina.", "There was dancing all night.", "Dançou-se a noite toda.", "dansað"]
+    - ["Það er talað um þetta.", "People talk about this.", "Fala-se disso.", "talað"]
+    - ["Það var hringt í mig.", "Someone called me.", "Me ligaram.", "hringt"]
+    match: {seq: [{word: [það]}, {word: [var, er, verður, hefur, hafði]}, {pos: verb, mood: part, re: "(að|t|ð|ið)$"}], near: 1, gap: 1}
+
+- title: {en: Case government in depth, pt: Regência de casos a fundo}
+  lessons:
+  - id: is-oblique-subjects-2
+    title: Mig dreymdi, mér leiðist
+    meaning: {en: "more verbs with dative and accusative subjects", pt: "mais verbos com sujeito no dativo e no acusativo"}
+    intro:
+      en: |
+        Beyond **mér er kalt, mig langar**: accusative **mig dreymdi** (I dreamt), **mig minnir** (I seem to remember), **mig grunar** (I suspect), **mig svimar** (I feel dizzy); dative **mér leiðist** (I'm bored), **honum batnaði** (he got better), **mér tókst það** (I managed it), **mér gengur vel** (I'm doing well), **mér sýnist** (it seems to me), **mér varð kalt** (I got cold). Many speakers drift towards the dative (**mér langar**, *dative sickness*), but the standard keeps the accusative.
+      pt: |
+        Além de **mér er kalt, mig langar**: acusativo **mig dreymdi** (sonhei), **mig minnir** (tenho a impressão de lembrar), **mig grunar** (desconfio), **mig svimar** (estou tonto); dativo **mér leiðist** (estou entediado), **honum batnaði** (ele melhorou), **mér tókst það** (consegui), **mér gengur vel** (estou indo bem), **mér sýnist** (me parece), **mér varð kalt** (fiquei com frio). Muitos falantes tendem ao dativo (**mér langar**, a *doença do dativo*), mas o padrão mantém o acusativo.
+    examples:
+    - ["Mig dreymdi undarlegan draum.", "I had a strange dream.", "Tive um sonho estranho.", "Mig"]
+    - ["Mér leiðist.", "I'm bored.", "Estou entediado.", "Mér"]
+    - ["Honum batnaði fljótt.", "He got better quickly.", "Ele melhorou rápido.", "Honum"]
+    match: {seq: [{word: [mér, mig, þér, þig, honum, hann, henni, hana, okkur, ykkur, þeim, þá]}, {lemma: "^(dreyma|minna|gruna|svima|klæja|batna|versna|leiðast|sýnast|takast|bregða|detta|verða|ganga|blöskra|ofbjóða|sárna)$"}], near: 1, gap: 0}
+    pool: [mér, mig, ég, honum, hann, henni, hana]
+
+  - id: is-genitive-verbs
+    title: Ég sakna þín.
+    meaning: {en: "verbs with a genitive object", pt: "verbos com objeto no genitivo"}
+    intro:
+      en: |
+        A set of verbs takes a genitive object: **sakna** (miss), **óska** (wish), **krefjast** (demand), **njóta** (enjoy), **leita** (look for), **gæta** (look after), **bíða** (wait for), **vænta** (expect), **neyta** (consume), **iðrast** (regret): **Ég sakna þín.** "I miss you." **Hún nýtur lífsins.** "She enjoys life." **Við óskum þér góðrar ferðar.** "We wish you a good trip."
+      pt: |
+        Um grupo de verbos pede objeto no genitivo: **sakna** (sentir falta), **óska** (desejar), **krefjast** (exigir), **njóta** (desfrutar), **leita** (procurar), **gæta** (cuidar), **bíða** (esperar), **vænta** (esperar, contar com), **neyta** (consumir), **iðrast** (arrepender-se): **Ég sakna þín.** "Sinto sua falta." **Hún nýtur lífsins.** "Ela aproveita a vida." **Við óskum þér góðrar ferðar.** "Desejamos boa viagem."
+    examples:
+    - ["Ég sakna þín.", "I miss you.", "Sinto sua falta.", "þín"]
+    - ["Hún nýtur lífsins.", "She enjoys life.", "Ela aproveita a vida.", "lífsins"]
+    - ["Við óskum þér góðrar ferðar.", "We wish you a good trip.", "Desejamos boa viagem.", "ferðar"]
+    match: {seq: [{lemma: "^(sakna|óska|krefjast|njóta|leita|gæta|bíða|vænta|iðrast|neyta|freista|afla|minnast)$"}, {pos: [noun, pron], case: gen}], near: 3, gap: 1, same: [number]}
+
+  - id: is-present-participle
+    title: Hann kom hlaupandi.
+    meaning: {en: "the present participle -andi", pt: "o particípio presente -andi"}
+    intro:
+      en: |
+        **-andi** (indeclinable) describes an action going on: **Hann kom hlaupandi.** "He came running." **Barnið er sofandi.** "The child is asleep." **á komandi árum** "in the coming years", **lifandi** "alive". It is not a general *-ing* form: the progressive is **vera að** + infinitive.
+      pt: |
+        **-andi** (invariável) descreve uma ação em andamento: **Hann kom hlaupandi.** "Ele veio correndo." **Barnið er sofandi.** "A criança está dormindo." **á komandi árum** "nos próximos anos", **lifandi** "vivo". Não é um gerúndio geral: o progressivo é **vera að** + infinitivo.
+    examples:
+    - ["Hann kom hlaupandi.", "He came running.", "Ele veio correndo.", "hlaupandi"]
+    - ["Barnið er sofandi.", "The child is asleep.", "A criança está dormindo.", "sofandi"]
+    - ["Fiskurinn er enn lifandi.", "The fish is still alive.", "O peixe ainda está vivo.", "lifandi"]
+    match: {seq: [{pos: [verb, adj], re: "andi$", not: {lemma: "^(andi|landi|bandi|vandi)$"}}]}

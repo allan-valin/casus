@@ -1,0 +1,228 @@
+id: B2
+topics:
+
+- title: {en: Verbs, pt: Verbos}
+  lessons:
+  - id: is-strong-classes
+    title: bíta – beit, bjóða – bauð
+    meaning: {en: "the strong verb classes: vowel series", pt: "as classes de verbos fortes: séries vocálicas"}
+    intro:
+      en: |
+        Strong verbs change their vowel instead of adding **-ði**. The changes fall into seven series; learn each verb with its four main forms (infinitive – past sg – past pl – supine):
+
+        | class | infinitive | past sg | past pl | supine |
+        |---|---|---|---|---|
+        | 1 | bíta (bite) | beit | bitum | bitið |
+        | 2 | bjóða (offer) | bauð | buðum | boðið |
+        | 3 | drekka (drink) | drakk | drukkum | drukkið |
+        | 4 | bera (carry) | bar | bárum | borið |
+        | 5 | gefa (give) | gaf | gáfum | gefið |
+        | 6 | fara (go) | fór | fórum | farið |
+        | 7 | gráta (cry) | grét | grétum | grátið |
+      pt: |
+        Os verbos fortes mudam a vogal em vez de acrescentar **-ði**. As mudanças formam sete séries; aprenda cada verbo com suas quatro formas principais (infinitivo – passado sg – passado pl – supino):
+
+        | classe | infinitivo | passado sg | passado pl | supino |
+        |---|---|---|---|---|
+        | 1 | bíta (morder) | beit | bitum | bitið |
+        | 2 | bjóða (oferecer) | bauð | buðum | boðið |
+        | 3 | drekka (beber) | drakk | drukkum | drukkið |
+        | 4 | bera (carregar) | bar | bárum | borið |
+        | 5 | gefa (dar) | gaf | gáfum | gefið |
+        | 6 | fara (ir) | fór | fórum | farið |
+        | 7 | gráta (chorar) | grét | grétum | grátið |
+    examples:
+    - ["Hundurinn beit manninn.", "The dog bit the man.", "O cachorro mordeu o homem.", "beit"]
+    - ["Hann bauð mér í mat.", "He invited me to dinner.", "Ele me convidou para jantar.", "bauð"]
+    - ["Við drukkum kaffi saman.", "We drank coffee together.", "Tomamos café juntos.", "drukkum"]
+    - ["Hún gaf mér bók.", "She gave me a book.", "Ela me deu um livro.", "gaf"]
+    match: {seq: [{pos: verb, tense: past, mood: ind, lemma: "^(bíta|líta|ríða|grípa|bjóða|fljúga|frjósa|skjóta|brjóta|bresta|verða|drekka|finna|vinna|bera|stela|koma|nema|gefa|lesa|sitja|biðja|liggja|fara|taka|standa|vaxa|gráta|falla|heita|ganga|hlaupa|blása|sjá|sofa|hjálpa|syngja|sökkva|springa)$"}], same: [person, number]}
+
+  - id: is-preterite-present
+    title: veit, kann, má, þarf
+    meaning: {en: "preterite-present verbs: vita, kunna, mega, þurfa, eiga, munu, skulu", pt: "verbos pretérito-presentes: vita, kunna, mega, þurfa, eiga, munu, skulu"}
+    intro:
+      en: |
+        A small group of common verbs has a present that looks like a strong past: no **-r** in the 3rd singular, and a vowel change between singular and plural:
+
+        | | vita (know) | kunna (know how) | mega (may) | þurfa (need) | eiga (own) |
+        |---|---|---|---|---|---|
+        | ég | veit | kann | má | þarf | á |
+        | hann | veit | kann | má | þarf | á |
+        | við | vitum | kunnum | megum | þurfum | eigum |
+
+        **munu** (will) and **skulu** (shall) belong here too: **ég mun, ég skal**.
+      pt: |
+        Um pequeno grupo de verbos comuns tem um presente que parece um passado forte: sem **-r** na 3ª do singular e com mudança de vogal entre singular e plural:
+
+        | | vita (saber) | kunna (saber fazer) | mega (poder) | þurfa (precisar) | eiga (possuir) |
+        |---|---|---|---|---|---|
+        | ég | veit | kann | má | þarf | á |
+        | hann | veit | kann | má | þarf | á |
+        | við | vitum | kunnum | megum | þurfum | eigum |
+
+        **munu** (ir, futuro) e **skulu** (dever) também são deste grupo: **ég mun, ég skal**.
+    examples:
+    - ["Ég veit það ekki.", "I don't know.", "Não sei.", "veit"]
+    - ["Hún kann íslensku.", "She knows Icelandic.", "Ela sabe islandês.", "kann"]
+    - ["Má ég koma inn?", "May I come in?", "Posso entrar?", "Má"]
+    - ["Ég þarf að fara.", "I have to go.", "Preciso ir.", "þarf"]
+    match: {seq: [{pos: verb, lemma: "^(kunna|mega|munu|skulu|vita|eiga|þurfa|unna)$", tense: pres, mood: ind}], same: [tense, mood]}
+
+  - id: is-perfect
+    title: Ég hef lesið bókina.
+    meaning: {en: "the perfect: hafa + supine", pt: "o perfeito: hafa + supino"}
+    intro:
+      en: |
+        **hafa** + the **supine** (a form that never changes) makes the perfect: **Ég hef lesið bókina.** "I've read the book." **Hefur þú komið til Íslands?** "Have you been to Iceland?" **Við höfðum borðað.** "We had eaten." The supine of strong verbs ends in **-ið** (**lesið, farið**), of weak ones in **-að, -t, -ð** (**talað, keypt, heyrt**).
+      pt: |
+        **hafa** + o **supino** (uma forma que nunca muda) forma o perfeito: **Ég hef lesið bókina.** "Li o livro." **Hefur þú komið til Íslands?** "Você já esteve na Islândia?" **Við höfðum borðað.** "Tínhamos comido." O supino dos verbos fortes termina em **-ið** (**lesið, farið**), o dos fracos em **-að, -t, -ð** (**talað, keypt, heyrt**).
+    examples:
+    - ["Ég hef lesið bókina.", "I've read the book.", "Li o livro.", "lesið"]
+    - ["Hefur þú komið til Íslands?", "Have you been to Iceland?", "Você já esteve na Islândia?", "komið"]
+    - ["Við höfðum borðað.", "We had eaten.", "Tínhamos comido.", "borðað"]
+    match: {seq: [{lemma: "^hafa$", pos: verb}, {pos: verb, mood: part, re: "(ið|að|t|ð)$"}], near: 3, gap: 1}
+
+  - id: is-buinn
+    title: Ég er búinn að borða.
+    meaning: {en: "vera búinn að: to have finished doing", pt: "vera búinn að: ter acabado de fazer"}
+    intro:
+      en: |
+        **vera búinn að** + infinitive is the everyday way to say an action is done; **búinn** agrees with the subject: **Ég er búinn að borða.** "I've eaten (I'm done eating)." (a man) **Hún er búin að lesa bókina.** "She has read the book." **Við erum búin að ákveða.** "We've decided." (mixed group: neuter plural **búin**)
+      pt: |
+        **vera búinn að** + infinitivo é o jeito do dia a dia de dizer que uma ação está feita; **búinn** concorda com o sujeito: **Ég er búinn að borða.** "Já comi." (homem) **Hún er búin að lesa bókina.** "Ela já leu o livro." **Við erum búin að ákveða.** "Já decidimos." (grupo misto: neutro plural **búin**)
+    examples:
+    - ["Ég er búinn að borða.", "I've already eaten.", "Já comi.", "búinn"]
+    - ["Hún er búin að lesa bókina.", "She has read the book.", "Ela já leu o livro.", "búin"]
+    - ["Við erum búin að ákveða.", "We've decided.", "Já decidimos.", "búin"]
+    match: {seq: [{lemma: "^vera$"}, {word: [búinn, búin, búið, búnir, búnar]}, {word: [að]}], near: 1, gap: 1}
+    pool: [búinn, búin, búið, búnir, búnar]
+
+  - id: is-progressive
+    title: Ég er að lesa.
+    meaning: {en: "vera að: the progressive", pt: "vera að: o progressivo"}
+    intro:
+      en: |
+        **vera að** + infinitive says an action is in progress: **Ég er að lesa.** "I'm reading." **Hvað ertu að gera?** "What are you doing?" **Hún var að elda þegar ég kom.** "She was cooking when I came." Verbs of state don't take it: **Ég veit það** (not ~~ég er að vita~~).
+      pt: |
+        **vera að** + infinitivo diz que uma ação está em andamento: **Ég er að lesa.** "Estou lendo." **Hvað ertu að gera?** "O que você está fazendo?" **Hún var að elda þegar ég kom.** "Ela estava cozinhando quando cheguei." Verbos de estado não o usam: **Ég veit það** (e não ~~ég er að vita~~).
+    examples:
+    - ["Ég er að lesa.", "I'm reading.", "Estou lendo.", "er"]
+    - ["Hvað ertu að gera?", "What are you doing?", "O que você está fazendo?", "ertu"]
+    - ["Hún var að elda þegar ég kom.", "She was cooking when I came.", "Ela estava cozinhando quando cheguei.", "var"]
+    match: {seq: [{lemma: "^vera$", pos: verb}, {word: [að]}, {pos: verb, mood: inf}], near: 1, gap: 0, same: [tense, mood]}
+
+- title: {en: Adjectives and pronouns, pt: Adjetivos e pronomes}
+  lessons:
+  - id: is-weak-adjectives
+    title: gamli maðurinn, stóra húsið
+    meaning: {en: "weak adjectives after the definite article", pt: "adjetivos fracos depois do artigo definido"}
+    intro:
+      en: |
+        After a definite noun (or **þessi**, a possessive, **hinn**) the adjective takes the **weak** endings, much simpler than the strong ones: **gamli maðurinn** "the old man", **gamla konan**, **gamla húsið**. In the singular masculine **-i** (nom) / **-a** (other cases), feminine **-a / -u**, neuter **-a**; plural **-u** everywhere. Compare strong: **gamall maður, gömul kona, gamalt hús**.
+      pt: |
+        Depois de um substantivo definido (ou de **þessi**, um possessivo, **hinn**) o adjetivo leva as terminações **fracas**, bem mais simples que as fortes: **gamli maðurinn** "o homem velho", **gamla konan**, **gamla húsið**. No singular masculino **-i** (nom) / **-a** (outros casos), feminino **-a / -u**, neutro **-a**; plural **-u** em todos. Compare as fortes: **gamall maður, gömul kona, gamalt hús**.
+    examples:
+    - ["Gamli maðurinn býr einn.", "The old man lives alone.", "O homem velho mora sozinho.", "Gamli"]
+    - ["Stóra húsið er rautt.", "The big house is red.", "A casa grande é vermelha.", "Stóra"]
+    - ["Ég sá gamla manninn.", "I saw the old man.", "Vi o homem velho.", "gamla"]
+    match: {seq: [{pos: adj}, {pos: noun, definite: def}], gap: 0}
+
+  - id: is-comparison
+    title: ríkari, ríkastur
+    meaning: {en: "comparative and superlative", pt: "comparativo e superlativo"}
+    intro:
+      en: |
+        Most adjectives add **-ari** (comparative) and **-astur** (superlative): **ríkur → ríkari → ríkastur**, **fallegur → fallegri → fallegastur**. Some add **-ri / -stur** with umlaut: **stór → stærri → stærstur**, **ungur → yngri → yngstur**. Irregular: **góður → betri → bestur**, **mikill → meiri → mestur**, **lítill → minni → minnstur**. *Than* is **en**: **Hún er hærri en ég.**
+      pt: |
+        A maioria dos adjetivos acrescenta **-ari** (comparativo) e **-astur** (superlativo): **ríkur → ríkari → ríkastur**, **fallegur → fallegri → fallegastur**. Alguns acrescentam **-ri / -stur** com metafonia: **stór → stærri → stærstur**, **ungur → yngri → yngstur**. Irregulares: **góður → betri → bestur**, **mikill → meiri → mestur**, **lítill → minni → minnstur**. *Do que* é **en**: **Hún er hærri en ég.** "Ela é mais alta do que eu."
+    examples:
+    - ["Hann er ríkari en ég.", "He's richer than me.", "Ele é mais rico do que eu.", "ríkari"]
+    - ["Þetta er fallegasta húsið í bænum.", "This is the most beautiful house in town.", "Esta é a casa mais bonita da cidade.", "fallegasta"]
+    - ["Þetta er besti dagur lífs míns.", "This is the best day of my life.", "Este é o melhor dia da minha vida.", "besti"]
+    match:
+    - {seq: [{pos: adj, re: "ari$"}], suffixes: [ari, astur, asti, asta, ur], attested: true}
+    - {seq: [{pos: adj, re: "(astur|asti|asta|ast)$"}], suffixes: [astur, asti, asta, ari, ur], attested: true}
+
+  - id: is-reflexive
+    title: sig, sér, sín; sinn
+    meaning: {en: "reflexive pronouns and the reflexive possessive sinn", pt: "pronomes reflexivos e o possessivo reflexivo sinn"}
+    intro:
+      en: |
+        The 3rd-person reflexive has no nominative: **sig** (acc), **sér** (dat), **sín** (gen): **Hann þvær sér.** "He washes (himself)." **Hún klæddi sig.** "She got dressed."
+
+        **sinn / sín / sitt** "his / her / their own" refers back to the subject; **hans, hennar, þeirra** refer to someone else: **Jón tók bókina sína.** "Jón took his (own) book." **Jón tók bókina hans.** "Jón took his (another man's) book."
+      pt: |
+        O reflexivo da 3ª pessoa não tem nominativo: **sig** (acus.), **sér** (dat.), **sín** (gen.): **Hann þvær sér.** "Ele se lava." **Hún klæddi sig.** "Ela se vestiu."
+
+        **sinn / sín / sitt** "seu (próprio)" remete ao sujeito; **hans, hennar, þeirra** remetem a outra pessoa: **Jón tók bókina sína.** "O Jón pegou o (próprio) livro." **Jón tók bókina hans.** "O Jón pegou o livro dele (de outro)."
+    examples:
+    - ["Hann þvær sér.", "He's washing.", "Ele está se lavando.", "sér"]
+    - ["Hún klæddi sig.", "She got dressed.", "Ela se vestiu.", "sig"]
+    - ["Jón tók bókina sína.", "Jón took his book.", "O Jón pegou o livro dele.", "sína"]
+    match:
+    - {seq: [{word: [sig, sér, sín]}], gap: 0, pool: [sig, sér, sín, hann, honum, hana, henni]}
+    - {seq: [{pos: noun}, {word: [sinn, sína, sínum, sitt, sinni, sínu, sínar, sínir, síns, sinnar]}], gap: 1, pool: [hans, hennar, þeirra, sinn, sína, sínum, sitt]}
+
+- title: {en: Clauses, pt: Orações}
+  lessons:
+  - id: is-relative
+    title: maðurinn sem ég sá
+    meaning: {en: "relative clauses with sem", pt: "orações relativas com sem"}
+    intro:
+      en: |
+        **sem** introduces a relative clause and never changes; the role inside the clause is shown by word order and prepositions left at the end: **Maðurinn sem ég sá er kennari.** "The man (whom) I saw is a teacher." **Húsið sem ég bý í** "the house I live in". Formal texts also use **er**: **sá er** "he who".
+      pt: |
+        **sem** introduz uma oração relativa e nunca muda; a função dentro da oração aparece pela ordem das palavras e por preposições deixadas no fim: **Maðurinn sem ég sá er kennari.** "O homem que eu vi é professor." **Húsið sem ég bý í** "a casa em que moro". Textos formais também usam **er**: **sá er** "aquele que".
+    examples:
+    - ["Maðurinn sem ég sá er kennari.", "The man I saw is a teacher.", "O homem que eu vi é professor.", "sem"]
+    - ["Þetta er húsið sem ég bý í.", "This is the house I live in.", "Esta é a casa em que moro.", "sem"]
+    - ["Bókin sem þú gafst mér er góð.", "The book you gave me is good.", "O livro que você me deu é bom.", "sem"]
+    match: {seq: [{pos: noun}, {word: [sem]}], gap: 1}
+    pool: [sem, að, og, en, ef]
+
+  - id: is-subj-conjunctions
+    title: þótt hann sé, nema það rigni
+    meaning: {en: "conjunctions that take the subjunctive: þótt, nema, svo að", pt: "conjunções que pedem subjuntivo: þótt, nema, svo að"}
+    intro:
+      en: |
+        Some conjunctions always take the subjunctive:
+
+        - **þótt / þó að** "although": **Þótt hann sé ríkur er hann ekki hamingjusamur.** "Although he's rich, he isn't happy."
+        - **nema** "unless": **Ég kem, nema það rigni.** "I'll come unless it rains."
+        - **svo að / til þess að** "so that": **Talaðu hærra svo að allir heyri.** "Speak louder so everyone hears."
+
+        **ef** "if" takes the indicative for real conditions (**ef það rignir**), the past subjunctive for unreal ones.
+      pt: |
+        Algumas conjunções sempre pedem subjuntivo:
+
+        - **þótt / þó að** "embora": **Þótt hann sé ríkur er hann ekki hamingjusamur.** "Embora seja rico, ele não é feliz."
+        - **nema** "a não ser que": **Ég kem, nema það rigni.** "Eu venho, a não ser que chova."
+        - **svo að / til þess að** "para que": **Talaðu hærra svo að allir heyri.** "Fale mais alto para que todos ouçam."
+
+        **ef** "se" pede indicativo nas condições reais (**ef það rignir**) e passado do subjuntivo nas irreais.
+    examples:
+    - ["Þótt hann sé ríkur er hann ekki hamingjusamur.", "Although he's rich, he isn't happy.", "Embora seja rico, ele não é feliz.", "Þótt"]
+    - ["Ég kem, nema það rigni.", "I'll come unless it rains.", "Eu venho, a não ser que chova.", "nema"]
+    - ["Talaðu hærra svo að allir heyri.", "Speak louder so everyone hears.", "Fale mais alto para que todos ouçam.", "svo"]
+    match: {seq: [{word: [þótt, þó, nema, svo]}, {pos: verb, mood: subj}], near: 3, gap: 0}
+    pool: [þótt, nema, svo, ef, þegar, því, en]
+
+  - id: is-hvort
+    title: Ég veit ekki hvort hann kemur.
+    meaning: {en: "hvort: whether (not ef)", pt: "hvort: se (pergunta indireta, não ef)"}
+    intro:
+      en: |
+        An indirect yes/no question begins with **hvort** "whether", never **ef** (which is only conditional *if*): **Ég veit ekki hvort hann kemur.** "I don't know whether he's coming." **Hún spurði hvort ég vildi kaffi.** "She asked if I wanted coffee." **hvort … eða** "whether … or".
+      pt: |
+        Uma pergunta indireta de sim/não começa com **hvort** "se", nunca **ef** (que é só o *se* condicional): **Ég veit ekki hvort hann kemur.** "Não sei se ele vem." **Hún spurði hvort ég vildi kaffi.** "Ela perguntou se eu queria café." **hvort … eða** "se … ou".
+    mistakes:
+    - wrong: Ég veit ekki ef hann kemur.
+      right: Ég veit ekki hvort hann kemur.
+      why: {en: "Indirect questions take hvort; ef is only for conditions.", pt: "Perguntas indiretas levam hvort; ef é só para condições."}
+    examples:
+    - ["Ég veit ekki hvort hann kemur.", "I don't know whether he's coming.", "Não sei se ele vem.", "hvort"]
+    - ["Hún spurði hvort ég vildi kaffi.", "She asked if I wanted coffee.", "Ela perguntou se eu queria café.", "hvort"]
+    - ["Ég man ekki hvort ég læsti hurðinni.", "I don't remember whether I locked the door.", "Não lembro se tranquei a porta.", "hvort"]
+    match: {seq: [{word: [hvort], notStart: true}], gap: 0}
+    pool: [hvort, ef, að, hvernig, hvað, hvenær]

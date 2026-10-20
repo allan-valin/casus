@@ -1,0 +1,175 @@
+id: C2
+topics:
+
+- title: {en: Modality and feeling, pt: Modalidade e sentimento}
+  lessons:
+  - id: fi-necessive-participle
+    title: minun on lähdettävä
+    meaning: {en: "must: genitive + on + -tAvA", pt: "ter de: genitivo + on + -tAvA"}
+    intro:
+      en: |
+        Formal Finnish says *must* with the present passive participle in **-tAvA** after **on**, the person in the genitive: **Minun on lähdettävä.** "I must leave." **Sinun on tehtävä se heti.** "You have to do it at once." **Asiakkaan on maksettava lasku.** "The customer must pay the bill."
+
+        Negative: **Sinun ei ole pakko / tarvitse …**, not ~~ei ole tehtävä~~ (which means *it is not to be done*).
+      pt: |
+        O finlandês formal diz *ter de* com o particípio presente passivo em **-tAvA** depois de **on**, a pessoa no genitivo: **Minun on lähdettävä.** "Tenho de ir embora." **Sinun on tehtävä se heti.** "Você tem de fazer isso já." **Asiakkaan on maksettava lasku.** "O cliente deve pagar a conta."
+
+        Negativa: **Sinun ei ole pakko / tarvitse …**, e não ~~ei ole tehtävä~~ (que quer dizer *não é para ser feito*).
+    examples:
+    - ["Minun on lähdettävä nyt.", "I must leave now.", "Tenho de ir embora agora.", "lähdettävä"]
+    - ["Sinun on tehtävä se heti.", "You have to do it at once.", "Você tem de fazer isso já.", "tehtävä"]
+    - ["Meidän on odotettava.", "We have to wait.", "Temos de esperar.", "odotettava"]
+    match: {seq: [{pos: [pron, noun], case: gen}, {word: ["on", oli, olisi]}, {pos: verb, re: "(tava|tävä)$"}], near: 2, gap: 2}
+
+  - id: fi-feeling-verbs
+    title: minua väsyttää
+    meaning: {en: "feeling verbs with a partitive experiencer", pt: "verbos de sensação com quem sente no partitivo"}
+    intro:
+      en: |
+        Many sensations are verbs in **-ttAA** with no subject; the person who feels it is in the **partitive**: **Minua väsyttää.** "I'm sleepy." **Häntä naurattaa.** "He feels like laughing." **Meitä janottaa.** "We're thirsty." Others: **pelottaa** (be scared), **harmittaa** (be annoyed), **hävettää** (be ashamed), **kaduttaa** (regret), **jännittää** (be nervous), **kiinnostaa** (be interested), **kyllästyttää** (be fed up).
+      pt: |
+        Muitas sensações são verbos em **-ttAA** sem sujeito; quem sente fica no **partitivo**: **Minua väsyttää.** "Estou com sono." **Häntä naurattaa.** "Ele está com vontade de rir." **Meitä janottaa.** "Estamos com sede." Outros: **pelottaa** (ter medo), **harmittaa** (ficar chateado), **hävettää** (ter vergonha), **kaduttaa** (arrepender-se), **jännittää** (ficar nervoso), **kiinnostaa** (interessar-se), **kyllästyttää** (estar farto).
+    mistakes:
+    - wrong: Minä väsyttää.
+      right: Minua väsyttää.
+      why: {en: "The person who feels is in the partitive, not the nominative.", pt: "Quem sente fica no partitivo, não no nominativo."}
+    examples:
+    - ["Minua väsyttää.", "I'm sleepy.", "Estou com sono.", "Minua"]
+    - ["Minua pelottaa.", "I'm scared.", "Estou com medo.", "Minua"]
+    - ["Kiinnostaako sinua historia?", "Are you interested in history?", "Você se interessa por história?", "sinua"]
+    match:
+    - {seq: [{word: [minua, sinua, häntä, meitä, teitä, heitä]}, {lemma: "^(väsyttää|naurattaa|pelottaa|janottaa|nukuttaa|harmittaa|itkettää|jännittää|kiinnostaa|huvittaa|hävettää|suututtaa|kaduttaa|kyllästyttää|inhottaa|oksettaa|paleltaa|ärsyttää|säälittää|kammottaa|ujostuttaa|nolottaa)$"}], near: 2, gap: 0}
+    - {seq: [{lemma: "^(väsyttää|naurattaa|pelottaa|janottaa|nukuttaa|harmittaa|itkettää|jännittää|kiinnostaa|huvittaa|hävettää|suututtaa|kaduttaa|kyllästyttää|inhottaa|oksettaa|paleltaa|ärsyttää|säälittää|kammottaa|ujostuttaa|nolottaa)$"}, {word: [minua, sinua, häntä, meitä, teitä, heitä]}], near: 1, gap: 1}
+    pool: [minua, minä, minulla, minun, minulle, sinua, sinä]
+
+  - id: fi-maton
+    title: lukematon, uskomaton
+    meaning: {en: "-mAtOn: the negative participle", pt: "-mAtOn: o particípio negativo"}
+    intro:
+      en: |
+        **-mAtOn / -mätön** is a participle meaning *not (yet) done*: **lukematon kirja** "an unread book", **syömätön ruoka** "uneaten food", **tuntematon sotilas** "the unknown soldier". Many have become adjectives: **uskomaton** "unbelievable", **mahdoton** (from **-ton**) "impossible", **näkymätön** "invisible", **väsymätön** "tireless". It declines like **-ton** words: **lukemattomia kirjoja**.
+      pt: |
+        **-mAtOn / -mätön** é um particípio que quer dizer *não (ainda) feito*: **lukematon kirja** "um livro não lido", **syömätön ruoka** "comida não comida", **tuntematon sotilas** "o soldado desconhecido". Muitos viraram adjetivos: **uskomaton** "inacreditável", **näkymätön** "invisível", **väsymätön** "incansável". Declina como as palavras em **-ton**: **lukemattomia kirjoja** "inúmeros livros".
+    examples:
+    - ["Se on uskomatonta!", "That's unbelievable!", "Isso é inacreditável!", "uskomatonta"]
+    - ["Pöydällä on lukematon kirje.", "There's an unread letter on the table.", "Tem uma carta não lida na mesa.", "lukematon"]
+    - ["Hän on väsymätön.", "He's tireless.", "Ele é incansável.", "väsymätön"]
+    match:
+    - {seq: [{pos: [adj, verb], re: "mat(on|onta|tomia|toman|tomat|tomassa|tomaksi)$"}], suffixes: [maton, matonta, mattomia, mattoman, mattomat], attested: true}
+    - {seq: [{pos: [adj, verb], re: "mät(ön|öntä|tömiä|tömän|tömät|tömässä|tömäksi)$"}], suffixes: [mätön, mätöntä, mättömiä, mättömän, mättömät], attested: true}
+
+- title: {en: Indefinites and questions, pt: Indefinidos e perguntas}
+  lessons:
+  - id: fi-negative-polarity
+    title: kukaan, mitään, koskaan
+    meaning: {en: "anyone, anything, ever: -kAAn words with a negation", pt: "ninguém, nada, nunca: palavras em -kAAn com negação"}
+    intro:
+      en: |
+        With a negation (or in a doubtful question), Finnish uses the **-kaan / -kään** forms: **En nähnyt ketään.** "I didn't see anyone." **Hän ei sanonut mitään.** "He didn't say anything." **En ole koskaan käynyt siellä.** "I've never been there." Also **missään** (anywhere), **mihinkään** (to anywhere), **yhtään** (any at all), **lainkaan** (at all), **ikinä** (ever). Without a negation: **joku, jotain, joskus**.
+      pt: |
+        Com negação (ou numa pergunta de dúvida), o finlandês usa as formas em **-kaan / -kään**: **En nähnyt ketään.** "Não vi ninguém." **Hän ei sanonut mitään.** "Ele não disse nada." **En ole koskaan käynyt siellä.** "Nunca estive lá." Também **missään** (em lugar nenhum), **mihinkään** (para lugar nenhum), **yhtään** (nenhum, nem um pouco), **lainkaan** (de jeito nenhum), **ikinä** (nunca). Sem negação: **joku, jotain, joskus**.
+    examples:
+    - ["En nähnyt ketään.", "I didn't see anyone.", "Não vi ninguém.", "ketään"]
+    - ["Hän ei sanonut mitään.", "He didn't say anything.", "Ele não disse nada.", "mitään"]
+    - ["En ole koskaan käynyt siellä.", "I've never been there.", "Nunca estive lá.", "koskaan"]
+    match: {seq: [{word: [kukaan, ketään, kenellekään, keneltäkään, kenestäkään, mikään, mitään, mistään, mihinkään, missään, millään, koskaan, ikinä, yhtään, lainkaan, minnekään]}], gap: 0}
+    pool: [kukaan, ketään, mikään, mitään, missään, koskaan, joku, jotain, joskus]
+
+  - id: fi-tahansa
+    title: kuka tahansa, missä hyvänsä
+    meaning: {en: "free choice: anyone at all, wherever", pt: "escolha livre: qualquer um, onde quer que seja"}
+    intro:
+      en: |
+        A question word + **tahansa** or **hyvänsä** means *any … at all*; the question word takes the case the sentence needs: **Kuka tahansa voi tulla.** "Anyone can come." **Voit soittaa milloin tahansa.** "You can call any time." **Ota mikä tahansa.** "Take any one." **Kenelle tahansa** "to anyone". Compare **kukaan** (with a negation) and **joku** (someone).
+      pt: |
+        Uma palavra interrogativa + **tahansa** ou **hyvänsä** quer dizer *qualquer … que seja*; a palavra interrogativa fica no caso que a frase pede: **Kuka tahansa voi tulla.** "Qualquer um pode vir." **Voit soittaa milloin tahansa.** "Você pode ligar a qualquer hora." **Ota mikä tahansa.** "Pegue qualquer um." **Kenelle tahansa** "para qualquer um". Compare **kukaan** (com negação) e **joku** (alguém).
+    examples:
+    - ["Kuka tahansa voi tulla.", "Anyone can come.", "Qualquer um pode vir.", "Kuka"]
+    - ["Voit soittaa milloin tahansa.", "You can call any time.", "Você pode ligar a qualquer hora.", "milloin"]
+    - ["Hän tekisi mitä tahansa.", "He would do anything.", "Ele faria qualquer coisa.", "mitä"]
+    match: {seq: [{pos: [pron, adv]}, {word: [tahansa, hyvänsä]}], gap: 0}
+
+  - id: fi-indirect-questions
+    title: En tiedä, tuleeko hän.
+    meaning: {en: "indirect yes/no questions with -kO", pt: "perguntas indiretas de sim/não com -kO"}
+    intro:
+      en: |
+        An indirect yes/no question keeps **-ko / -kö** on its first word; there is no word for *whether*: **En tiedä, tuleeko hän.** "I don't know whether he's coming." **Kysyin, oliko hän kotona.** "I asked if he was at home." **Mietin, kannattaako se.** "I wonder whether it's worth it." Don't use **jos** here: **jos** is only the conditional *if*.
+      pt: |
+        Uma pergunta indireta de sim/não mantém **-ko / -kö** na primeira palavra; não há palavra para *se*: **En tiedä, tuleeko hän.** "Não sei se ele vem." **Kysyin, oliko hän kotona.** "Perguntei se ele estava em casa." **Mietin, kannattaako se.** "Fico pensando se vale a pena." Não use **jos** aqui: **jos** é só o *se* condicional.
+    mistakes:
+    - wrong: "En tiedä, jos hän tulee."
+      right: "En tiedä, tuleeko hän."
+      why: {en: "Indirect questions take -kO, not jos.", pt: "Perguntas indiretas levam -kO, não jos."}
+    examples:
+    - ["En tiedä, tuleeko hän.", "I don't know whether he's coming.", "Não sei se ele vem.", "tuleeko"]
+    - ["Kysyin, oliko hän kotona.", "I asked if he was at home.", "Perguntei se ele estava em casa.", "oliko"]
+    - ["Mietin, kannattaako se.", "I wonder whether it's worth it.", "Fico pensando se vale a pena.", "kannattaako"]
+    match:
+    - {seq: [{lemma: "^(tietää|kysyä|miettiä|ihmetellä|epäillä|selvittää|katsoa|kuulla|muistaa)$"}, {pos: verb, re: "[aou]\\p{L}*ko$"}], near: 2, gap: 1, suffixes: [ko, han, kin], attested: true}
+    - {seq: [{lemma: "^(tietää|kysyä|miettiä|ihmetellä|epäillä|selvittää|katsoa|kuulla|muistaa)$"}, {pos: verb, re: "kö$"}], near: 2, gap: 1, suffixes: [kö, hän, kin], attested: true}
+
+- title: {en: Rare cases, pt: Casos raros}
+  lessons:
+  - id: fi-comitative
+    title: perheineen
+    meaning: {en: "the comitative -ine-: together with (one's own)", pt: "o comitativo -ine-: junto com (os seus)"}
+    intro:
+      en: |
+        The comitative is always plural in form and, on nouns, takes a possessive suffix: **Hän tuli perheineen.** "He came with his family." **vaimoineen** "with his wife", **lapsineni** "with my children". An adjective before it has **-ine** without a suffix: **suurine toiveineen** "with his great hopes". It belongs to formal and literary style; speech says **perheen kanssa**.
+      pt: |
+        O comitativo tem sempre forma de plural e, nos substantivos, leva sufixo possessivo: **Hän tuli perheineen.** "Ele veio com a família." **vaimoineen** "com a esposa", **lapsineni** "com meus filhos". Um adjetivo antes dele leva **-ine** sem sufixo: **suurine toiveineen** "com suas grandes esperanças". É do estilo formal e literário; a fala diz **perheen kanssa**.
+    examples:
+    - ["Hän tuli perheineen.", "He came with his family.", "Ele veio com a família.", "perheineen"]
+    - ["Presidentti saapui vaimoineen.", "The president arrived with his wife.", "O presidente chegou com a esposa.", "vaimoineen"]
+    - ["Talo myytiin huonekaluineen.", "The house was sold with its furniture.", "A casa foi vendida com os móveis.", "huonekaluineen"]
+    match:
+    - {seq: [{pos: noun, case: com}]}
+    - {seq: [{pos: noun, re: "ine(en|ni|si|mme|nne)$"}]}
+
+  - id: fi-instructive
+    title: omin silmin, jalan, käsin
+    meaning: {en: "the instructive -in in set phrases", pt: "o instrutivo -in em expressões fixas"}
+    intro:
+      en: |
+        The instructive (**-n**, usually on the plural stem) tells the manner or the means and lives on in set phrases: **omin silmin** "with my own eyes", **paljain jaloin** "barefoot", **avoimin mielin** "with an open mind", **jalan** "on foot", **käsin** "by hand", **kaksin** "the two of us", **yksin** "alone", **toisin sanoen** "in other words", **hyvin** "well". It never takes an adjective ending of its own: noun and adjective both end in **-in**.
+      pt: |
+        O instrutivo (**-n**, em geral no radical plural) indica o modo ou o meio e sobrevive em expressões fixas: **omin silmin** "com os próprios olhos", **paljain jaloin** "descalço", **avoimin mielin** "de mente aberta", **jalan** "a pé", **käsin** "à mão", **kaksin** "a dois", **yksin** "sozinho", **toisin sanoen** "em outras palavras", **hyvin** "bem". Substantivo e adjetivo terminam ambos em **-in**.
+    examples:
+    - ["Näin sen omin silmin.", "I saw it with my own eyes.", "Vi com meus próprios olhos.", "silmin"]
+    - ["Menen töihin jalan.", "I go to work on foot.", "Vou ao trabalho a pé.", "jalan"]
+    - ["Kirje on kirjoitettu käsin.", "The letter is written by hand.", "A carta foi escrita à mão.", "käsin"]
+    match: {seq: [{word: [jalan, käsin, omin, silmin, korvin, paljain, jaloin, avoimin, mielin, kaksin, kolmin, yksin, sanoin, suin, hampain, kynsin, sydämin]}], gap: 0}
+    pool: [jalan, käsin, silmin, yksin, kaksin, jaloin, mielin]
+
+  - id: fi-prolative
+    title: postitse, maitse
+    meaning: {en: "the prolative -tse: by way of, via", pt: "o prolativo -tse: por meio de, via"}
+    intro:
+      en: |
+        **-tse** means *by way of, via*, on a short list of words: **postitse** "by post", **sähköpostitse** "by email", **puhelimitse** "by phone", **maitse** "by land", **meritse** "by sea", **ilmateitse** "by air", **netitse** "online". It's a frozen ending, not a full case: ordinary nouns use **kautta** or **-llA**: **Helsingin kautta** "via Helsinki".
+      pt: |
+        **-tse** quer dizer *por meio de, via*, numa lista curta de palavras: **postitse** "pelo correio", **sähköpostitse** "por e-mail", **puhelimitse** "por telefone", **maitse** "por terra", **meritse** "por mar", **ilmateitse** "por via aérea", **netitse** "pela internet". É uma terminação congelada, não um caso completo: os substantivos comuns usam **kautta** ou **-llA**: **Helsingin kautta** "via Helsinque".
+    examples:
+    - ["Lähetän sen postitse.", "I'll send it by post.", "Vou mandar pelo correio.", "postitse"]
+    - ["Voit ottaa yhteyttä sähköpostitse.", "You can contact us by email.", "Você pode entrar em contato por e-mail.", "sähköpostitse"]
+    - ["He matkustivat maitse.", "They travelled by land.", "Eles viajaram por terra.", "maitse"]
+    match: {seq: [{word: [postitse, sähköpostitse, puhelimitse, maitse, meritse, ilmateitse, netitse, kirjeitse, tekstiviestitse, faksitse]}], gap: 0}
+    pool: [postitse, sähköpostitse, puhelimitse, maitse, meritse, ilmateitse]
+
+- title: {en: Spoken verb forms, pt: Formas verbais faladas}
+  lessons:
+  - id: fi-spoken-verbs
+    title: mä oon, sä oot, mä tuun
+    meaning: {en: "short spoken verb forms", pt: "formas verbais curtas da fala"}
+    intro:
+      en: |
+        Everyday speech shortens frequent verbs: **oon, oot** (olen, olet), **tuun, tuut** (tulen, tulet), **meen, meet** (menen, menet), **paan** (panen), and drops final sounds: **mennää** (mennään), **onks** (onko), **eiks** (eikö). The question clitic becomes **-ks**: **Ooks sä kotona?** "Are you at home?" Read them in chats, subtitles and dialogue; write the standard forms in texts.
+      pt: |
+        A fala do dia a dia encurta verbos frequentes: **oon, oot** (olen, olet), **tuun, tuut** (tulen, tulet), **meen, meet** (menen, menet), **paan** (panen), e corta sons finais: **mennää** (mennään), **onks** (onko), **eiks** (eikö). O clítico de pergunta vira **-ks**: **Ooks sä kotona?** "Você está em casa?" Leia-os em chats, legendas e diálogos; nos textos escreva as formas padrão.
+    examples:
+    - ["Mä oon kotona.", "I'm at home.", "Tô em casa.", "oon"]
+    - ["Mä tuun huomenna.", "I'll come tomorrow.", "Eu venho amanhã.", "tuun"]
+    - ["Onks sulla nälkä?", "Are you hungry?", "Você tá com fome?", "Onks"]
+    match: {seq: [{word: [oon, oot, tuun, tuut, meen, meet, onks, ooks, eiks, oliks]}], gap: 0}
+    pool: [oon, oot, tuun, tuut, meen, meet, onks, eiks]

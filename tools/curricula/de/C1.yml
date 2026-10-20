@@ -1,0 +1,359 @@
+# German C1, written by AI (Claude) for Casus (2026-10-20; marked as such on every lesson): Grimm Grammar has no C1
+# pages. Points follow university C1 grammar syllabi (nominal style, Funktionsverbgefüge, subjective modal verbs,
+# Konjunktiv I/II in depth); explanations written here.
+id: C1
+topics:
+
+- title: {en: Reported speech in depth, pt: Discurso indireto a fundo}
+  lessons:
+  - id: de-c1-konj1-past
+    title: Er sagte, er habe es gewusst.
+    meaning: {en: "Konjunktiv I in the past: habe gemacht, sei gegangen", pt: "Konjunktiv I no passado: habe gemacht, sei gegangen"}
+    intro:
+      en: |
+        Reported speech has a single past form whatever tense the speaker used: **habe** or **sei** + participle.
+
+        - "Ich wusste es." / "Ich habe es gewusst." → **Er sagte, er habe es gewusst.**
+        - "Ich ging nach Hause." → **Sie sagte, sie sei nach Hause gegangen.**
+
+        Newspapers use it to keep a claim at a distance: **Der Minister erklärte, er habe davon nichts gewusst.** "The minister said he had known nothing about it."
+      pt: |
+        O discurso indireto tem uma só forma de passado, qualquer que seja o tempo usado por quem falou: **habe** ou **sei** + particípio.
+
+        - "Ich wusste es." / "Ich habe es gewusst." → **Er sagte, er habe es gewusst.** "Ele disse que sabia."
+        - "Ich ging nach Hause." → **Sie sagte, sie sei nach Hause gegangen.** "Ela disse que tinha ido para casa."
+
+        Os jornais a usam para manter distância de uma afirmação: **Der Minister erklärte, er habe davon nichts gewusst.** "O ministro declarou que não sabia de nada."
+    examples:
+    - ["Er sagte, er habe es nicht gewusst.", "He said he hadn't known.", "Ele disse que não sabia.", "habe"]
+    - ["Sie behauptet, sie sei krank gewesen.", "She claims she was ill.", "Ela afirma que esteve doente.", "sei"]
+    - ["Der Zeuge sagte, er habe nichts gesehen.", "The witness said he had seen nothing.", "A testemunha disse que não viu nada.", "habe"]
+    match: {seq: [{word: [er, sie, es, man]}, {word: [habe, sei]}, {pos: verb, mood: ppl2}], near: 6, gap: 1}
+    pool: [habe, sei, hat, ist, hätte, wäre]
+
+  - id: de-c1-konj1-substitute
+    title: Sie sagten, sie hätten keine Zeit.
+    meaning: {en: "Konjunktiv II when Konjunktiv I looks like the indicative", pt: "Konjunktiv II quando o Konjunktiv I parece indicativo"}
+    intro:
+      en: |
+        Konjunktiv I only shows clearly in the 3rd person singular (**er habe, er komme**) and in **sein**. Where it looks just like the indicative (**sie haben, wir kommen**), Konjunktiv II takes its place:
+
+        - "Wir haben keine Zeit." → ~~Sie sagten, sie haben keine Zeit~~ → **Sie sagten, sie hätten keine Zeit.**
+        - "Wir kommen später." → **Sie sagten, sie kämen später** (or **würden später kommen**).
+      pt: |
+        O Konjunktiv I só fica visível na 3ª pessoa do singular (**er habe, er komme**) e em **sein**. Onde é idêntico ao indicativo (**sie haben, wir kommen**), o Konjunktiv II toma o lugar dele:
+
+        - "Wir haben keine Zeit." → ~~Sie sagten, sie haben keine Zeit~~ → **Sie sagten, sie hätten keine Zeit.** "Disseram que não tinham tempo."
+        - "Wir kommen später." → **Sie sagten, sie kämen später** (ou **würden später kommen**). "Disseram que viriam mais tarde."
+    examples:
+    - ["Sie sagten, sie hätten keine Zeit.", "They said they had no time.", "Disseram que não tinham tempo.", "hätten"]
+    - ["Die Kinder erzählten, sie würden oft spielen.", "The children said they often played.", "As crianças contaram que brincavam muito.", "würden"]
+    - ["Sie meinten, sie hätten alles verstanden.", "They said they had understood everything.", "Eles disseram que tinham entendido tudo.", "hätten"]
+    match: {seq: [{lemma: "^(sagen|behaupten|erklären|meinen|berichten|erzählen|antworten|schreiben|glauben|denken)$"}, {word: [sie, wir]}, {word: [hätten, würden, wären, kämen, wüssten, müssten, könnten]}], near: 4, gap: 2}
+    pool: [hätten, haben, würden, werden, hatten, wären, sind]
+
+  - id: de-c1-konj1-requests
+    title: Er sagte, ich solle warten.
+    meaning: {en: "reported commands and wishes: solle, möge", pt: "ordens e pedidos relatados: solle, möge"}
+    intro:
+      en: |
+        A reported command uses **sollen** in Konjunktiv I; a polite request or wish, **mögen**:
+
+        - "Warte!" → **Er sagte, ich solle warten.** "He told me to wait."
+        - "Kommen Sie bitte herein!" → **Sie bat ihn, er möge hereinkommen.** "She asked him to come in."
+
+        Reported questions keep the question word or take **ob**: **Er fragte, ob ich Zeit habe.**
+      pt: |
+        Uma ordem relatada usa **sollen** no Konjunktiv I; um pedido educado ou um desejo, **mögen**:
+
+        - "Warte!" → **Er sagte, ich solle warten.** "Ele me disse para esperar."
+        - "Kommen Sie bitte herein!" → **Sie bat ihn, er möge hereinkommen.** "Ela pediu que ele entrasse."
+
+        Perguntas relatadas mantêm a palavra interrogativa ou levam **ob**: **Er fragte, ob ich Zeit habe.** "Ele perguntou se eu tinha tempo."
+    examples:
+    - ["Er sagte, ich solle warten.", "He told me to wait.", "Ele me disse para esperar.", "solle"]
+    - ["Sie bat ihn, er möge Platz nehmen.", "She asked him to take a seat.", "Ela pediu que ele se sentasse.", "möge"]
+    - ["Der Arzt meinte, man solle viel Wasser trinken.", "The doctor said one should drink a lot of water.", "O médico disse que se deve beber muita água.", "solle"]
+    match: {seq: [{word: [er, sie, ich, man, es]}, {word: [solle, möge]}], gap: 1}
+    pool: [solle, möge, soll, sollte, mag, müsse]
+
+- title: {en: Konjunktiv II beyond conditions, pt: Konjunktiv II além das condições}
+  lessons:
+  - id: de-c1-als-ob
+    title: als ob, als wäre
+    meaning: {en: "as if: als ob / als + Konjunktiv II", pt: "como se: als ob / als + Konjunktiv II"}
+    intro:
+      en: |
+        *As if* takes Konjunktiv II, in two word orders:
+
+        - **als ob / als wenn** + verb at the end: **Er tut so, als ob er nichts wüsste.**
+        - **als** + verb straight after it: **Er tut so, als wüsste er nichts.** "He acts as if he knew nothing."
+
+        Past: **Sie sah aus, als hätte sie nicht geschlafen.** "She looked as if she hadn't slept."
+      pt: |
+        *Como se* pede Konjunktiv II, em duas ordens:
+
+        - **als ob / als wenn** + verbo no fim: **Er tut so, als ob er nichts wüsste.**
+        - **als** + verbo logo depois: **Er tut so, als wüsste er nichts.** "Ele finge que não sabe de nada."
+
+        Passado: **Sie sah aus, als hätte sie nicht geschlafen.** "Ela parecia não ter dormido."
+    examples:
+    - ["Er tut so, als wüsste er nichts.", "He acts as if he knew nothing.", "Ele age como se não soubesse de nada.", "wüsste"]
+    - ["Sie sah aus, als hätte sie nicht geschlafen.", "She looked as if she hadn't slept.", "Ela parecia não ter dormido.", "hätte"]
+    - ["Es ist, als ob nichts passiert wäre.", "It's as if nothing had happened.", "É como se nada tivesse acontecido.", "wäre"]
+    match:
+    - {seq: [{word: [als]}, {word: [wäre, wären, hätte, hätten, wüsste, könnte, würde, gäbe, käme]}], gap: 1, pool: [wäre, hätte, ist, hat, war, hatte]}
+    - {seq: [{word: [als]}, {word: [ob, wenn]}, {word: [wäre, wären, hätte, hätten, wüsste, könnte, würde, gäbe, käme]}], near: 8, gap: 2, pool: [wäre, hätte, ist, hat, war, hatte]}
+
+  - id: de-c1-double-infinitive
+    title: Du hättest anrufen sollen.
+    meaning: {en: "should have, could have: hätte + infinitive + modal", pt: "deveria ter, poderia ter: hätte + infinitivo + modal"}
+    intro:
+      en: |
+        A modal verb in the past Konjunktiv II takes **hätte** and its own infinitive instead of a participle (the *double infinitive*):
+
+        - **Du hättest anrufen sollen.** "You should have called."
+        - **Wir hätten früher gehen können.** "We could have left earlier."
+        - **Das hättest du nicht sagen dürfen.** "You shouldn't have said that."
+
+        In a subordinate clause **hätte** comes before both infinitives: **…, dass du hättest anrufen sollen.**
+      pt: |
+        Um verbo modal no Konjunktiv II passado leva **hätte** e o próprio infinitivo em vez de particípio (o *duplo infinitivo*):
+
+        - **Du hättest anrufen sollen.** "Você deveria ter ligado."
+        - **Wir hätten früher gehen können.** "Poderíamos ter saído mais cedo."
+        - **Das hättest du nicht sagen dürfen.** "Você não devia ter dito isso."
+
+        Numa subordinada **hätte** vem antes dos dois infinitivos: **…, dass du hättest anrufen sollen.**
+    examples:
+    - ["Du hättest anrufen sollen.", "You should have called.", "Você deveria ter ligado.", "sollen"]
+    - ["Wir hätten früher gehen können.", "We could have left earlier.", "Poderíamos ter saído mais cedo.", "können"]
+    - ["Das hättest du nicht sagen dürfen.", "You shouldn't have said that.", "Você não devia ter dito isso.", "dürfen"]
+    match: {seq: [{word: [hätte, hätten, hättest, hättet]}, {pos: verb, mood: inf}, {word: [sollen, müssen, können, dürfen, wollen]}], near: 6, gap: 2}
+    pool: [sollen, müssen, können, dürfen, gesollt, gekonnt, gemusst]
+
+  - id: de-c1-wishes
+    title: Wenn ich doch nur Zeit hätte!
+    meaning: {en: "unreal wishes: wenn … doch nur, hätte ich bloß", pt: "desejos irreais: wenn … doch nur, hätte ich bloß"}
+    intro:
+      en: |
+        A wish that is contrary to fact takes Konjunktiv II and the particles **doch, nur, bloß**:
+
+        - **Wenn ich doch nur mehr Zeit hätte!** "If only I had more time!"
+        - without **wenn**, the verb comes first: **Hätte ich bloß nichts gesagt!** "If only I hadn't said anything!" **Wäre er doch hier!** "If only he were here!"
+      pt: |
+        Um desejo contrário aos fatos leva Konjunktiv II e as partículas **doch, nur, bloß**:
+
+        - **Wenn ich doch nur mehr Zeit hätte!** "Quem me dera ter mais tempo!"
+        - sem **wenn**, o verbo vem primeiro: **Hätte ich bloß nichts gesagt!** "Quem dera eu não tivesse dito nada!" **Wäre er doch hier!** "Se ao menos ele estivesse aqui!"
+    examples:
+    - ["Wenn ich doch nur mehr Zeit hätte!", "If only I had more time!", "Quem me dera ter mais tempo!", "hätte"]
+    - ["Hätte ich bloß nichts gesagt!", "If only I hadn't said anything!", "Quem dera eu não tivesse dito nada!", "Hätte"]
+    - ["Wäre er doch hier!", "If only he were here!", "Se ao menos ele estivesse aqui!", "Wäre"]
+    match:
+    - {seq: [{word: [hätte, wäre, könnte, wüsste, hätten, wären], start: true}, {word: [ich, er, sie, wir, du, es, man]}, {word: [doch, nur, bloß]}], near: 2, gap: 0}
+    - {seq: [{word: [wenn], start: true}, {word: [doch, nur, bloß]}, {word: [hätte, wäre, könnte, wüsste, hätten, wären, würde]}], near: 6, gap: 2}
+    pool: [hätte, wäre, könnte, hat, ist, kann, hatte, war]
+
+  - id: de-c1-inverted-conditions
+    title: Hätte ich das gewusst, …
+    meaning: {en: "conditions without wenn: the verb first", pt: "condições sem wenn: o verbo primeiro"}
+    intro:
+      en: |
+        **wenn** can be dropped: the verb then opens the clause, and the main clause often starts with **dann** or **so**:
+
+        - **Hätte ich das gewusst, wäre ich gekommen.** "Had I known that, I would have come."
+        - **Sollte es regnen, bleiben wir zu Hause.** "Should it rain, we'll stay at home." (**sollte** = *if by chance*)
+        - **Kommt er heute nicht, (dann) kommt er morgen.**
+      pt: |
+        **wenn** pode cair: o verbo abre a oração, e a principal muitas vezes começa com **dann** ou **so**:
+
+        - **Hätte ich das gewusst, wäre ich gekommen.** "Se eu soubesse disso, teria vindo."
+        - **Sollte es regnen, bleiben wir zu Hause.** "Caso chova, ficamos em casa." (**sollte** = *se por acaso*)
+        - **Kommt er heute nicht, (dann) kommt er morgen.** "Se ele não vier hoje, vem amanhã."
+    examples:
+    - ["Hätte ich das gewusst, wäre ich gekommen.", "Had I known that, I would have come.", "Se eu soubesse disso, teria vindo.", "Hätte"]
+    - ["Sollte es regnen, bleiben wir zu Hause.", "Should it rain, we'll stay at home.", "Caso chova, ficamos em casa.", "Sollte"]
+    - ["Wäre ich reich, würde ich reisen.", "If I were rich, I'd travel.", "Se eu fosse rico, viajaria.", "Wäre"]
+    match: {seq: [{word: [hätte, hätten, wäre, wären, sollte, sollten, könnte, würde, hättest, wärst], start: true}, {word: [ich, du, er, sie, es, wir, ihr, man]}, {re: ".", trail: ","}], near: 6, gap: 0}
+    pool: [Hätte, Wäre, Sollte, Wenn, Hatte, War, Ob]
+
+- title: {en: Nominal style, pt: Estilo nominal}
+  lessons:
+  - id: de-c1-nominal-genitive
+    title: die Lösung des Problems
+    meaning: {en: "nominal style: verb → noun + genitive", pt: "estilo nominal: verbo → substantivo + genitivo"}
+    intro:
+      en: |
+        Formal German (news, science, offices) turns verbs into nouns and the object into a genitive:
+
+        - **das Problem lösen → die Lösung des Problems**
+        - **Die Stadt baut eine Brücke → der Bau einer Brücke durch die Stadt** (the doer takes **durch**)
+        - **weil die Preise steigen → wegen des Anstiegs der Preise**
+
+        Chains of genitives are typical: **die Verbesserung der Qualität der Produkte**.
+      pt: |
+        O alemão formal (notícias, ciência, repartições) transforma verbos em substantivos e o objeto em genitivo:
+
+        - **das Problem lösen → die Lösung des Problems** "resolver o problema → a solução do problema"
+        - **Die Stadt baut eine Brücke → der Bau einer Brücke durch die Stadt** (quem faz leva **durch**)
+        - **weil die Preise steigen → wegen des Anstiegs der Preise** "por causa da alta dos preços"
+
+        Cadeias de genitivos são típicas: **die Verbesserung der Qualität der Produkte** "a melhoria da qualidade dos produtos".
+    examples:
+    - ["Die Lösung des Problems ist einfach.", "The solution to the problem is simple.", "A solução do problema é simples.", "des"]
+    - ["Die Eröffnung des Museums war ein Erfolg.", "The opening of the museum was a success.", "A inauguração do museu foi um sucesso.", "des"]
+    - ["Nach der Prüfung der Unterlagen melden wir uns.", "After checking the documents we'll be in touch.", "Depois de examinar os documentos, entraremos em contato.", "der"]
+    match: {seq: [{pos: noun, re: "(ung|ion|tät)$"}, {pos: det, case: gen}, {pos: noun}], gap: 1, same: [number, gender]}
+
+  - id: de-c1-nominal-infinitive
+    title: beim Lesen, zum Kochen
+    meaning: {en: "infinitives as nouns: beim, zum, vom", pt: "infinitivos como substantivos: beim, zum, vom"}
+    intro:
+      en: |
+        Any infinitive can be a neuter noun (with a capital): **das Lesen, das Rauchen**. With contracted prepositions it replaces a clause:
+
+        - **beim** "while": **Beim Lesen schlafe ich ein.** "I fall asleep while reading."
+        - **zum** "for": **Das Wasser ist zum Kochen.** "The water is for cooking." **Das ist zum Lachen.** "That's laughable."
+        - **vom** "from": **Ich bin müde vom Laufen.** "I'm tired from running."
+        - **ins** with **kommen / geraten**: **ins Schwitzen kommen** "start to sweat"
+      pt: |
+        Qualquer infinitivo pode virar substantivo neutro (com maiúscula): **das Lesen, das Rauchen**. Com preposições contraídas, substitui uma oração:
+
+        - **beim** "ao, enquanto": **Beim Lesen schlafe ich ein.** "Eu pego no sono lendo."
+        - **zum** "para": **Das Wasser ist zum Kochen.** "A água é para cozinhar." **Das ist zum Lachen.** "Isso é ridículo."
+        - **vom** "de": **Ich bin müde vom Laufen.** "Estou cansado de correr."
+        - **ins** com **kommen / geraten**: **ins Schwitzen kommen** "começar a suar"
+    examples:
+    - ["Beim Lesen schlafe ich immer ein.", "I always fall asleep while reading.", "Sempre pego no sono lendo.", "Beim"]
+    - ["Ich brauche Wasser zum Kochen.", "I need water for cooking.", "Preciso de água para cozinhar.", "zum"]
+    - ["Ich bin müde vom Laufen.", "I'm tired from running.", "Estou cansado de correr.", "vom"]
+    match: {seq: [{word: [beim, zum, vom, ins]}, {word: [lesen, schwimmen, rauchen, essen, kochen, fahren, laufen, arbeiten, lernen, schreiben, singen, tanzen, spielen, reisen, warten, schlafen, autofahren, einkaufen, aufstehen, sprechen, trinken, malen, wandern, radfahren, lachen, weinen, nachdenken, frühstück, abendessen, mittagessen, schwitzen, träumen, zuhören, packen, putzen, waschen, telefonieren]}], gap: 0}
+    pool: [beim, zum, vom, ins, im, am]
+
+  - id: de-c1-funktionsverbgefuege
+    title: zur Verfügung stellen, eine Entscheidung treffen
+    meaning: {en: "noun + light verb: Funktionsverbgefüge", pt: "substantivo + verbo-suporte: Funktionsverbgefüge"}
+    intro:
+      en: |
+        Formal German often says with a noun and a nearly empty verb what a simple verb could say. The noun carries the meaning, so it must be the right one:
+
+        | phrase | plain verb |
+        |---|---|
+        | **eine Entscheidung treffen** | entscheiden (decide) |
+        | **zur Verfügung stellen** | geben, bereitstellen (provide) |
+        | **in Frage kommen** | möglich sein (be an option) |
+        | **Rücksicht nehmen auf** | berücksichtigen (be considerate) |
+        | **zum Ausdruck bringen** | ausdrücken (express) |
+        | **in Kauf nehmen** | akzeptieren (put up with) |
+        | **eine Rolle spielen** | wichtig sein (matter) |
+        | **in Betracht ziehen** | erwägen (consider) |
+        | **Bescheid sagen / geben** | informieren (let know) |
+      pt: |
+        O alemão formal muitas vezes diz com um substantivo e um verbo quase vazio o que um verbo simples diria. O substantivo carrega o sentido, por isso tem de ser o certo:
+
+        | expressão | verbo simples |
+        |---|---|
+        | **eine Entscheidung treffen** | entscheiden (decidir; *tomar uma decisão*) |
+        | **zur Verfügung stellen** | geben, bereitstellen (*pôr à disposição*) |
+        | **in Frage kommen** | möglich sein (*entrar em questão*, ser opção) |
+        | **Rücksicht nehmen auf** | berücksichtigen (*ter consideração*) |
+        | **zum Ausdruck bringen** | ausdrücken (expressar) |
+        | **in Kauf nehmen** | akzeptieren (aceitar o preço de) |
+        | **eine Rolle spielen** | wichtig sein (*ter um papel*, importar) |
+        | **in Betracht ziehen** | erwägen (*levar em consideração*) |
+        | **Bescheid sagen / geben** | informieren (avisar) |
+    examples:
+    - ["Wir müssen eine Entscheidung treffen.", "We have to make a decision.", "Precisamos tomar uma decisão.", "Entscheidung"]
+    - ["Das kommt nicht in Frage.", "That's out of the question.", "Isso está fora de questão.", "Frage"]
+    - ["Geld spielt keine Rolle.", "Money doesn't matter.", "Dinheiro não importa.", "Rolle"]
+    - ["Sag mir bitte Bescheid.", "Please let me know.", "Me avise, por favor.", "Bescheid"]
+    match:
+    - {seq: [{lemma: "^(stellen|stehen|kommen|nehmen|treffen|bringen|ziehen|spielen|geben|sagen|fällen)$"}, {word: [verfügung, frage, rücksicht, entscheidung, kauf, ausdruck, betracht, anspruch, sprache, rolle, bescheid, abschied]}], near: 6, gap: 1}
+    - {seq: [{word: [verfügung, frage, rücksicht, entscheidung, kauf, ausdruck, betracht, anspruch, sprache, rolle, bescheid, abschied]}, {lemma: "^(stellen|stehen|kommen|nehmen|treffen|bringen|ziehen|spielen|geben|sagen|fällen)$"}], near: 4, gap: 0}
+    pool: [Verfügung, Frage, Rücksicht, Entscheidung, Kauf, Ausdruck, Betracht, Anspruch, Rolle, Bescheid]
+
+- title: {en: Modal verbs for guesses and claims, pt: Verbos modais para suposições e alegações}
+  lessons:
+  - id: de-c1-soll-will
+    title: Er soll reich sein. Sie will es gesehen haben.
+    meaning: {en: "sollen = they say; wollen = he claims", pt: "sollen = dizem que; wollen = ele afirma"}
+    intro:
+      en: |
+        Modal verbs can express the speaker's view of a statement instead of obligation or will (*subjective* use):
+
+        - **sollen**: hearsay, *supposedly*: **Er soll sehr reich sein.** "He's said to be very rich." **Morgen soll es regnen.** "It's supposed to rain tomorrow."
+        - **wollen**: the subject's own claim, which the speaker doubts: **Sie will ihn gestern gesehen haben.** "She claims to have seen him yesterday."
+      pt: |
+        Os modais podem exprimir a opinião de quem fala sobre uma afirmação, em vez de obrigação ou vontade (uso *subjetivo*):
+
+        - **sollen**: boato, *supostamente*: **Er soll sehr reich sein.** "Dizem que ele é muito rico." **Morgen soll es regnen.** "Dizem que amanhã vai chover."
+        - **wollen**: a alegação do próprio sujeito, da qual se duvida: **Sie will ihn gestern gesehen haben.** "Ela afirma tê-lo visto ontem."
+    examples:
+    - ["Morgen soll es regnen.", "It's supposed to rain tomorrow.", "Dizem que amanhã vai chover.", "soll"]
+    - ["Er soll sehr reich sein.", "He's said to be very rich.", "Dizem que ele é muito rico.", "soll"]
+    - ["Sie will ihn gestern gesehen haben.", "She claims to have seen him yesterday.", "Ela afirma tê-lo visto ontem.", "will"]
+    match:
+    - {seq: [{word: [es]}, {word: [soll]}, {pos: verb, mood: inf, trail: ".!"}], near: 4, gap: 1}
+    - {seq: [{word: [soll, sollen]}, {word: [sein], trail: "."}], near: 4, gap: 0}
+    - {seq: [{word: [will, wollen]}, {pos: verb, mood: ppl2}, {word: [haben]}], near: 6, gap: 0}
+    pool: [soll, will, muss, kann, sollte, wird]
+
+  - id: de-c1-durfte
+    title: Das dürfte schwierig sein.
+    meaning: {en: "dürfte, müsste: probably, should be", pt: "dürfte, müsste: provavelmente, deve ser"}
+    intro:
+      en: |
+        Konjunktiv II of modal verbs grades how sure a guess is:
+
+        - **muss**: almost certain: **Er muss zu Hause sein, das Licht ist an.**
+        - **müsste**: it should be so: **Der Zug müsste gleich kommen.** "The train should be here any minute."
+        - **dürfte**: probably: **Das dürfte schwierig sein.** "That's likely to be difficult." **Sie dürfte etwa vierzig sein.** "She's probably about forty."
+        - **könnte**: possibly: **Das könnte stimmen.**
+      pt: |
+        O Konjunktiv II dos modais gradua a certeza de uma suposição:
+
+        - **muss**: quase certo: **Er muss zu Hause sein, das Licht ist an.** "Ele deve estar em casa, a luz está acesa."
+        - **müsste**: deveria ser assim: **Der Zug müsste gleich kommen.** "O trem deve chegar a qualquer momento."
+        - **dürfte**: provavelmente: **Das dürfte schwierig sein.** "Isso deve ser difícil." **Sie dürfte etwa vierzig sein.** "Ela deve ter uns quarenta anos."
+        - **könnte**: talvez: **Das könnte stimmen.** "Pode ser verdade."
+    examples:
+    - ["Das dürfte schwierig sein.", "That's likely to be difficult.", "Isso deve ser difícil.", "dürfte"]
+    - ["Sie dürfte etwa vierzig sein.", "She's probably about forty.", "Ela deve ter uns quarenta anos.", "dürfte"]
+    - ["Der Zug müsste gleich kommen.", "The train should be here any minute.", "O trem deve chegar a qualquer momento.", "müsste"]
+    match:
+    - {seq: [{word: [dürfte, dürften], notStart: true}], gap: 0}
+    - {seq: [{word: [müsste, müssten], notStart: true}, {word: [eigentlich, schon, gleich, bald, längst, jetzt]}], near: 2, gap: 0}
+    pool: [dürfte, darf, durfte, müsste, muss, könnte, wird]
+
+- title: {en: More modal particles, pt: Mais partículas modais}
+  lessons:
+  - id: de-c1-particles
+    title: ruhig, etwa, schon, auch
+    meaning: {en: "particles that reassure, doubt, insist", pt: "partículas que tranquilizam, duvidam, insistem"}
+    intro:
+      en: |
+        Beside **doch, mal, ja, denn**, these particles colour a sentence:
+
+        - **ruhig** in a command: go ahead, don't worry: **Komm ruhig rein!** "Do come in!"
+        - **etwa** in a question: surprise, a hoped-for *no*: **Bist du etwa krank?** "You're not ill, are you?"
+        - **schon** reassures: **Das wird schon klappen.** "It'll work out, you'll see."
+        - **auch** in a question: checking: **Hast du auch die Tür abgeschlossen?** "Did you lock the door, I hope?"
+        - **eigentlich** in a question: changing the subject: **Wie alt bist du eigentlich?** "By the way, how old are you?"
+      pt: |
+        Além de **doch, mal, ja, denn**, estas partículas dão cor à frase:
+
+        - **ruhig** numa ordem: à vontade, sem problema: **Komm ruhig rein!** "Pode entrar!"
+        - **etwa** numa pergunta: surpresa, espera-se um *não*: **Bist du etwa krank?** "Não vai me dizer que está doente?"
+        - **schon** tranquiliza: **Das wird schon klappen.** "Vai dar certo, você vai ver."
+        - **auch** numa pergunta: conferir: **Hast du auch die Tür abgeschlossen?** "Você trancou a porta, né?"
+        - **eigentlich** numa pergunta: mudar de assunto: **Wie alt bist du eigentlich?** "Aliás, quantos anos você tem?"
+    examples:
+    - ["Komm ruhig rein!", "Do come in!", "Pode entrar!", "ruhig"]
+    - ["Bist du etwa krank?", "You're not ill, are you?", "Não vai me dizer que está doente?", "etwa"]
+    - ["Das wird schon klappen.", "It'll work out.", "Vai dar certo.", "schon"]
+    match:
+    - {seq: [{pos: verb, mood: imp}, {word: [ruhig]}], near: 3, gap: 1}
+    - {seq: [{word: [etwa]}, {re: ".", trail: "?"}], near: 6, gap: 0}
+    - {seq: [{word: [wird, werden]}, {word: [schon]}], near: 2, gap: 1}
+    pool: [ruhig, etwa, schon, doch, ja, mal, denn, eben]

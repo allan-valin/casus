@@ -1,0 +1,245 @@
+id: C1
+topics:
+
+- title: {en: Narration and hearsay, pt: Narração e relato}
+  lessons:
+  - id: tr-pluperfect
+    title: gelmişti
+    meaning: {en: "the past perfect -mIştI: had done", pt: "o mais-que-perfeito -mIştI: tinha feito"}
+    intro:
+      en: |
+        **-mış + -tı** (**-mişti, -muştu, -müştü**) places an action before another past one: **Ben vardığımda tren kalkmıştı.** "When I arrived, the train had left." It also sets the background of a story: **O gün çok yorulmuştum.** "That day I was (had got) very tired." Unlike plain **-mış**, it carries no sense of hearsay.
+      pt: |
+        **-mış + -tı** (**-mişti, -muştu, -müştü**) coloca uma ação antes de outra no passado: **Ben vardığımda tren kalkmıştı.** "Quando cheguei, o trem já tinha partido." Também cria o pano de fundo de uma história: **O gün çok yorulmuştum.** "Naquele dia eu estava muito cansado." Diferente do **-mış** simples, não tem sentido de relato.
+    examples:
+    - ["Ben vardığımda tren kalkmıştı.", "When I arrived, the train had left.", "Quando cheguei, o trem já tinha partido.", "kalkmıştı"]
+    - ["O gün çok yorulmuştum.", "That day I was very tired.", "Naquele dia eu estava muito cansado.", "yorulmuştum"]
+    - ["Daha önce hiç görmemiştim.", "I had never seen it before.", "Eu nunca tinha visto antes.", "görmemiştim"]
+    match: {seq: [{re: "m[ıiuü]şt[ıiuü](m|n|k|nız|niz|nuz|nüz|lar|ler)?$"}], suffixes: [mıştı, mişti, muştu, müştü, mıştım, miştim, muştum, müştüm, dı, di, du, dü, dım, dim, dum, düm, mış, miş, muş, müş], attested: true}
+
+  - id: tr-imis
+    title: geliyormuş, hastaymış
+    meaning: {en: "-(y)mIş on other tenses and nouns: reportedly", pt: "-(y)mIş sobre outros tempos e substantivos: dizem que"}
+    intro:
+      en: |
+        **-(y)mış** can follow any tense or a noun to mark hearsay or a discovery:
+
+        - **Geliyormuş.** "Apparently he's coming." **Gelecekmiş.** "He's supposed to come." **Gelirmiş.** "He would come, they say."
+        - **Hastaymış.** "He's ill, I hear." **Evdeymiş.** "She's at home, it seems."
+
+        Compare **-(y)dı** (plain past of the same forms): **Geliyordu.** "He was coming." **Hastaydı.** "He was ill."
+      pt: |
+        **-(y)mış** pode vir depois de qualquer tempo ou de um substantivo para marcar relato ou descoberta:
+
+        - **Geliyormuş.** "Parece que ele está vindo." **Gelecekmiş.** "Dizem que ele vem." **Gelirmiş.** "Dizem que ele vinha."
+        - **Hastaymış.** "Ouvi dizer que ele está doente." **Evdeymiş.** "Parece que ela está em casa."
+
+        Compare **-(y)dı** (o passado simples das mesmas formas): **Geliyordu.** "Ele estava vindo." **Hastaydı.** "Ele estava doente."
+    examples:
+    - ["Ali yarın geliyormuş.", "Apparently Ali is coming tomorrow.", "Parece que o Ali vem amanhã.", "geliyormuş"]
+    - ["Hastaymış, gelemeyecek.", "He's ill, I hear; he can't come.", "Dizem que ele está doente; não vai poder vir.", "Hastaymış"]
+    - ["Toplantı iptal edilecekmiş.", "The meeting is supposedly going to be cancelled.", "Dizem que a reunião vai ser cancelada.", "edilecekmiş"]
+    match:
+    - {seq: [{re: "yormuş(um|sun|uz|sunuz|lar)?$"}], suffixes: [yormuş, yordu, yormuşum, yordum, yormuşsun, yordun], attested: true}
+    - {seq: [{re: "(acak|ecek)m[ıi]ş$"}], suffixes: [ecekmiş, ecekti, acakmış, acaktı, ecek, acak], attested: true}
+    - {seq: [{re: "y(mış|miş|muş|müş)$"}], suffixes: [ymış, ymiş, ymuş, ymüş, ydı, ydi, ydu, ydü], attested: true}
+
+  - id: tr-dir
+    title: yorgundur, gelmiştir
+    meaning: {en: "-DIr: certainty, assumption and formal statements", pt: "-DIr: certeza, suposição e afirmações formais"}
+    intro:
+      en: |
+        **-dır / -dir / -dur / -dür** (**-tır…** after a voiceless consonant) after a noun or a verb form:
+
+        - definitions and formal statements: **Ankara Türkiye'nin başkentidir.** "Ankara is the capital of Turkey." **Sigara içmek yasaktır.** "Smoking is forbidden."
+        - assumption: **Yorgundur.** "He must be tired." **Şimdiye kadar gelmiştir.** "He has probably arrived by now."
+
+        Everyday speech leaves it out: **Yorgun.** "He's tired."
+      pt: |
+        **-dır / -dir / -dur / -dür** (**-tır…** depois de consoante surda) depois de um substantivo ou forma verbal:
+
+        - definições e afirmações formais: **Ankara Türkiye'nin başkentidir.** "Ancara é a capital da Turquia." **Sigara içmek yasaktır.** "É proibido fumar."
+        - suposição: **Yorgundur.** "Ele deve estar cansado." **Şimdiye kadar gelmiştir.** "Ele já deve ter chegado."
+
+        Na fala do dia a dia é omitido: **Yorgun.** "Ele está cansado."
+    examples:
+    - ["Ankara Türkiye'nin başkentidir.", "Ankara is the capital of Turkey.", "Ancara é a capital da Turquia.", "başkentidir"]
+    - ["Sigara içmek yasaktır.", "Smoking is forbidden.", "É proibido fumar.", "yasaktır"]
+    - ["Şimdiye kadar gelmiştir.", "He has probably arrived by now.", "Ele já deve ter chegado.", "gelmiştir"]
+    match: {seq: [{re: "[dt][ıiuü]r$", not: {pos: [verb]}}], suffixes: [dır, dir, dur, dür, tır, tir, tur, tür, ""], attested: true}
+
+- title: {en: Advanced subordination, pt: Subordinação avançada}
+  lessons:
+  - id: tr-casina
+    title: delicesine, hiçbir şey olmamışçasına
+    meaning: {en: "-cAsInA: like, as if", pt: "-cAsInA: como, como se"}
+    intro:
+      en: |
+        **-casına / -cesine** (**-çasına** after a voiceless consonant) means *like, in the manner of*: **delicesine** "madly", **çılgıncasına** "wildly". On **-mış** it means *as if*: **Hiçbir şey olmamışçasına konuştu.** "He spoke as if nothing had happened." **Beni tanımıyormuşçasına baktı.** "She looked at me as if she didn't know me." Speech prefers **… gibi**.
+      pt: |
+        **-casına / -cesine** (**-çasına** depois de consoante surda) quer dizer *como, à maneira de*: **delicesine** "loucamente", **çılgıncasına** "freneticamente". Sobre **-mış** quer dizer *como se*: **Hiçbir şey olmamışçasına konuştu.** "Ele falou como se nada tivesse acontecido." **Beni tanımıyormuşçasına baktı.** "Ela me olhou como se não me conhecesse." A fala prefere **… gibi**.
+    examples:
+    - ["Onu delicesine seviyor.", "He loves her madly.", "Ele a ama loucamente.", "delicesine"]
+    - ["Hiçbir şey olmamışçasına konuştu.", "He spoke as if nothing had happened.", "Ele falou como se nada tivesse acontecido.", "olmamışçasına"]
+    - ["Çılgıncasına dans ettiler.", "They danced wildly.", "Eles dançaram freneticamente.", "Çılgıncasına"]
+    match:
+    - {seq: [{re: "m[ıiuü]ş[çc][ae]s[ıi]n[ae]$"}], suffixes: [mışçasına, mişçesine, muşçasına, müşçesine, mış, miş, muş, müş], attested: true}
+    - {seq: [{re: "[cç][ae]s[ıi]n[ae]$"}], suffixes: [casına, cesine, çasına, çesine, ""], attested: true}
+
+  - id: tr-ki
+    title: Biliyorum ki …, o kadar … ki
+    meaning: {en: "the conjunction ki (borrowed from Persian)", pt: "a conjunção ki (do persa)"}
+    intro:
+      en: |
+        **ki** introduces a clause in European order, after the main verb:
+
+        - *that*: **Biliyorum ki haklısın.** "I know that you're right." **Umarım ki gelir.** "I hope he comes."
+        - result after **öyle / o kadar … ki**: **O kadar yorgundum ki hemen uyudum.** "I was so tired that I fell asleep at once."
+        - purpose and emphasis: **Söyle ki bilsinler.** "Say it so they know."
+
+        Written separately; the suffix **-ki** (**evdeki**) is a different thing.
+      pt: |
+        **ki** introduz uma oração na ordem europeia, depois do verbo principal:
+
+        - *que*: **Biliyorum ki haklısın.** "Sei que você tem razão." **Umarım ki gelir.** "Espero que ele venha."
+        - resultado depois de **öyle / o kadar … ki**: **O kadar yorgundum ki hemen uyudum.** "Eu estava tão cansado que dormi na hora."
+        - finalidade e ênfase: **Söyle ki bilsinler.** "Diga, para que saibam."
+
+        Escreve-se separado; o sufixo **-ki** (**evdeki**) é outra coisa.
+    examples:
+    - ["Biliyorum ki haklısın.", "I know that you're right.", "Sei que você tem razão.", "ki"]
+    - ["O kadar yorgundum ki hemen uyudum.", "I was so tired that I fell asleep at once.", "Eu estava tão cansado que dormi na hora.", "ki"]
+    - ["Umarım ki gelir.", "I hope he comes.", "Espero que ele venha.", "ki"]
+    match: {seq: [{word: [ki], notStart: true}], gap: 0}
+    pool: [ki, da, de, mi, ama, diye]
+
+  - id: tr-diye
+    title: diye
+    meaning: {en: "diye: quoting, naming and purpose", pt: "diye: citação, nome e finalidade"}
+    intro:
+      en: |
+        **diye** (literally *saying*) closes a quotation or a thought and links it to the verb:
+
+        - quote: **"Geliyorum" diye bağırdı.** "He shouted 'I'm coming'."
+        - thought or reason: **Geç kalırım diye koştum.** "I ran, thinking I'd be late."
+        - purpose with the optative/imperative: **Uyanmasın diye sessiz konuştuk.** "We spoke quietly so he wouldn't wake up."
+        - naming: **Ali diye biri** "someone called Ali"
+      pt: |
+        **diye** (literalmente *dizendo*) fecha uma citação ou um pensamento e o liga ao verbo:
+
+        - citação: **"Geliyorum" diye bağırdı.** "Ele gritou 'Estou indo'."
+        - pensamento ou motivo: **Geç kalırım diye koştum.** "Corri, achando que ia me atrasar."
+        - finalidade com optativo/imperativo: **Uyanmasın diye sessiz konuştuk.** "Falamos baixo para ele não acordar."
+        - nome: **Ali diye biri** "um tal de Ali"
+    examples:
+    - ["Geç kalırım diye koştum.", "I ran, thinking I'd be late.", "Corri, achando que ia me atrasar.", "diye"]
+    - ["Uyanmasın diye sessiz konuştuk.", "We spoke quietly so he wouldn't wake up.", "Falamos baixo para ele não acordar.", "diye"]
+    - ["Ali diye biri seni aradı.", "Someone called Ali phoned you.", "Um tal de Ali te ligou.", "diye"]
+    match: {seq: [{word: [diye], notStart: true}], gap: 0}
+    pool: [diye, ki, gibi, için, kadar]
+
+  - id: tr-mekte
+    title: çalışmaktadır
+    meaning: {en: "-mAktA(dIr): the formal progressive", pt: "-mAktA(dIr): o progressivo formal"}
+    intro:
+      en: |
+        News, reports and official writing put an ongoing action in **-makta / -mekte**, usually with **-dır**: **Şirket yeni projeler üzerinde çalışmaktadır.** "The company is working on new projects." **Fiyatlar artmaktadır.** "Prices are rising." In speech the same is **-yor**: **çalışıyor, artıyor**.
+      pt: |
+        Notícias, relatórios e textos oficiais põem uma ação em andamento em **-makta / -mekte**, em geral com **-dır**: **Şirket yeni projeler üzerinde çalışmaktadır.** "A empresa está trabalhando em novos projetos." **Fiyatlar artmaktadır.** "Os preços estão subindo." Na fala, o mesmo é **-yor**: **çalışıyor, artıyor**.
+    examples:
+    - ["Fiyatlar artmaktadır.", "Prices are rising.", "Os preços estão subindo.", "artmaktadır"]
+    - ["Şirket yeni projeler üzerinde çalışmaktadır.", "The company is working on new projects.", "A empresa está trabalhando em novos projetos.", "çalışmaktadır"]
+    - ["Hasta hâlâ tedavi görmektedir.", "The patient is still being treated.", "O paciente ainda está em tratamento.", "görmektedir"]
+    match: {seq: [{re: "m[ae]kt[ae](d[ıi]r|yd[ıi]|ym[ıi]ş|y[ıi]m|s[ıi]n|y[ıi]z|d[ıi]rlar|d[ıi]rler)?$"}], suffixes: [maktadır, mektedir, makta, mekte, ıyor, iyor, uyor, üyor, yor], attested: true}
+
+- title: {en: Formal register, pt: Registro formal}
+  lessons:
+  - id: tr-formal-connectors
+    title: ancak, dolayısıyla, oysa
+    meaning: {en: "connectors of written Turkish", pt: "conectores do turco escrito"}
+    intro:
+      en: |
+        Written Turkish links sentences with:
+
+        - contrast: **ancak, fakat** (but), **oysa, halbuki** (whereas, yet), **buna rağmen** (despite this)
+        - addition: **ayrıca** (also), **üstelik** (moreover), **bunun yanı sıra** (besides)
+        - result: **dolayısıyla, bu nedenle, bu yüzden** (therefore)
+        - explanation: **çünkü** (because), **zira** (for, formal), **nitekim** (indeed, as a matter of fact), **mademki** (since)
+      pt: |
+        O turco escrito liga frases com:
+
+        - contraste: **ancak, fakat** (mas), **oysa, halbuki** (ao passo que, no entanto), **buna rağmen** (apesar disso)
+        - adição: **ayrıca** (além disso), **üstelik** (ainda por cima), **bunun yanı sıra** (além disso)
+        - resultado: **dolayısıyla, bu nedenle, bu yüzden** (portanto)
+        - explicação: **çünkü** (porque), **zira** (pois, formal), **nitekim** (de fato), **mademki** (já que)
+    examples:
+    - ["Ancak bu kolay değil.", "However, this isn't easy.", "Porém, isso não é fácil.", "Ancak"]
+    - ["Üstelik çok pahalı.", "Moreover, it's very expensive.", "Além disso, é muito caro.", "Üstelik"]
+    - ["Oysa ben seni bekliyordum.", "And yet I was waiting for you.", "E eu, no entanto, estava te esperando.", "Oysa"]
+    match: {seq: [{word: [ancak, fakat, oysa, halbuki, ayrıca, üstelik, dolayısıyla, zira, nitekim, mademki, ama, çünkü]}], gap: 0}
+    pool: [ancak, fakat, oysa, halbuki, ayrıca, üstelik, dolayısıyla, çünkü]
+
+  - id: tr-loan-adverbs
+    title: tamamen, maalesef, şahsen
+    meaning: {en: "adverbs from Arabic, often in -en", pt: "advérbios vindos do árabe, muitas vezes em -en"}
+    intro:
+      en: |
+        Many common adverbs come from Arabic, most of them with its adverbial ending **-en / -an**: **tamamen** (completely), **kısmen** (partly), **umumiyetle** (generally; Turkish **genellikle**), **maalesef** (unfortunately), **şahsen** (personally), **resmen** (officially, literally), **aslen** (originally), **hakikaten** (truly), **tesadüfen** (by chance), **mecburen** (out of necessity). They don't follow vowel harmony.
+      pt: |
+        Muitos advérbios comuns vêm do árabe, a maioria com a terminação adverbial **-en / -an**: **tamamen** (completamente), **kısmen** (em parte), **maalesef** (infelizmente), **şahsen** (pessoalmente), **resmen** (oficialmente, literalmente), **aslen** (originalmente), **hakikaten** (realmente), **tesadüfen** (por acaso), **mecburen** (por necessidade). (**genellikle** é turco; seu par árabe é **umumiyetle**.) Não seguem a harmonia vocálica.
+    examples:
+    - ["Maalesef gelemiyorum.", "Unfortunately I can't come.", "Infelizmente não posso ir.", "Maalesef"]
+    - ["Tamamen haklısın.", "You're completely right.", "Você tem toda a razão.", "Tamamen"]
+    - ["Onunla tesadüfen tanıştım.", "I met him by chance.", "Eu o conheci por acaso.", "tesadüfen"]
+    match: {seq: [{word: [tamamen, kısmen, maalesef, şahsen, resmen, aslen, hakikaten, tesadüfen, mecburen, umumiyetle, nispeten, takriben]}], gap: 0}
+    pool: [tamamen, kısmen, maalesef, şahsen, resmen, tesadüfen, mecburen]
+
+  - id: tr-politeness
+    title: buyurun, rica ederim, efendim
+    meaning: {en: "polite formulas", pt: "fórmulas de cortesia"}
+    intro:
+      en: |
+        - **Buyurun** "please, go ahead, here you are, how can I help?"
+        - **Rica ederim** "you're welcome", also "please (I beg you)"
+        - **Efendim?** "Pardon?" / "Yes?" (on the phone); **efendim** also "sir, madam"
+        - **Zahmet olmazsa** "if it's no trouble"; **Kolay gelsin** "may it be easy" (to someone working); **Geçmiş olsun** "get well soon"; **Ellerinize sağlık** "thanks for the food (health to your hands)"; **Afiyet olsun** "enjoy your meal"
+        - **siz** + 2nd plural for one person; **-(y)AbilIr misiniz?** "could you …?"
+      pt: |
+        - **Buyurun** "por favor, fique à vontade, aqui está, posso ajudar?"
+        - **Rica ederim** "de nada", também "por favor (eu peço)"
+        - **Efendim?** "Como?" / "Pois não?" (ao telefone); **efendim** também "senhor, senhora"
+        - **Zahmet olmazsa** "se não for incômodo"; **Kolay gelsin** "bom trabalho"; **Geçmiş olsun** "melhoras"; **Ellerinize sağlık** "obrigado pela comida (saúde às suas mãos)"; **Afiyet olsun** "bom apetite"
+        - **siz** + 2ª do plural para uma pessoa; **-(y)AbilIr misiniz?** "poderia …?"
+    examples:
+    - ["Buyurun, oturun.", "Please, sit down.", "Por favor, sente-se.", "Buyurun"]
+    - ["Rica ederim.", "You're welcome.", "De nada.", "Rica"]
+    - ["Geçmiş olsun!", "Get well soon!", "Melhoras!", "Geçmiş"]
+    match: {seq: [{word: [buyurun, buyrun, efendim, rica, zahmet, afiyet, estağfurullah, teşekkürler, sağolun]}], gap: 0}
+    pool: [buyurun, efendim, rica, zahmet, afiyet, teşekkürler]
+
+  - id: tr-uzere
+    title: gitmek üzere
+    meaning: {en: "-mAk üzere: about to; in order to; on condition that", pt: "-mAk üzere: prestes a; a fim de; com a condição de"}
+    intro:
+      en: |
+        **-mak / -mek üzere** has three uses:
+
+        - *about to*: **Tren kalkmak üzere.** "The train is about to leave."
+        - *in order to* (formal): **Okumak üzere Ankara'ya gitti.** "He went to Ankara to study."
+        - *on condition that*: **Yarın geri vermek üzere aldım.** "I took it on condition of returning it tomorrow."
+
+        Related: **-mak yerine** "instead of", **-mak için** "in order to" (everyday).
+      pt: |
+        **-mak / -mek üzere** tem três usos:
+
+        - *prestes a*: **Tren kalkmak üzere.** "O trem está prestes a partir."
+        - *a fim de* (formal): **Okumak üzere Ankara'ya gitti.** "Ele foi a Ancara para estudar."
+        - *com a condição de*: **Yarın geri vermek üzere aldım.** "Peguei com a condição de devolver amanhã."
+
+        Relacionados: **-mak yerine** "em vez de", **-mak için** "para" (do dia a dia).
+    examples:
+    - ["Tren kalkmak üzere.", "The train is about to leave.", "O trem está prestes a partir.", "üzere"]
+    - ["Okumak üzere Ankara'ya gitti.", "He went to Ankara to study.", "Ele foi a Ancara para estudar.", "üzere"]
+    - ["Ders başlamak üzere.", "The lesson is about to begin.", "A aula está prestes a começar.", "üzere"]
+    match: {seq: [{re: "m[ae]k$"}, {word: [üzere, yerine, için]}], gap: 1}
+    pool: [üzere, yerine, için, gibi, kadar]

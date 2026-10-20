@@ -1,0 +1,180 @@
+id: C2
+topics:
+
+- title: {en: Literary style, pt: Estilo literário}
+  lessons:
+  - id: fr-c2-eut-ete
+    title: on eût dit, qui l'eût cru
+    meaning: {en: "the pluperfect subjunctive as a literary conditional", pt: "o mais-que-perfeito do subjuntivo como condicional literário"}
+    intro:
+      en: |
+        **eût / fût** + participle is the pluperfect subjunctive. Besides its normal use (**Bien qu'il eût fini…**), literature uses it for the past conditional, the so-called *conditionnel passé deuxième forme*: **On eût dit un enfant** "One would have said a child". **Qui l'eût cru ?** "Who would have thought it?" **S'il fût venu, je l'eusse vu** = s'il était venu, je l'aurais vu.
+      pt: |
+        **eût / fût** + particípio é o mais-que-perfeito do subjuntivo. Além do uso normal (**Bien qu'il eût fini…**), a literatura o usa no lugar do condicional passado: **On eût dit un enfant** (Dir-se-ia uma criança). **Qui l'eût cru ?** (Quem diria?) **S'il fût venu, je l'eusse vu** = s'il était venu, je l'aurais vu — lembra o nosso *se ele viera, eu o vira*, igualmente literário.
+    examples:
+    - ["Qui l'eût cru ?", "Who would have thought it?", "Quem diria?", "eût"]
+    - ["On eût dit un enfant.", "He looked just like a child.", "Parecia uma criança.", "eût"]
+    - ["Il eût mieux valu se taire.", "It would have been better to keep quiet.", "Teria sido melhor ficar calado.", "eût"]
+    match: {seq: [{word: [eût, eusse, eussent, eussions, eussiez, fût, fussent]}, {re: "^(?!(du|au|plus|si|pas|jamais)$).+(é|ée|és|ées|i|ie|is|u|ue|us|it|ert|ort|ait)$"}], near: 1, gap: 0}
+    pool: [eût, aurait, avait, eut, ait]
+
+  - id: fr-c2-incise
+    title: dit-il, répondit-elle
+    meaning: {en: "inversion in reporting clauses (incises)", pt: "inversão nas orações intercaladas (incises)"}
+    intro:
+      en: |
+        After or inside quoted speech the reporting verb comes first, with the subject after it: **« Je viens », dit-il. « Pourquoi ? » demanda-t-elle. « Non », répondit Marie.** With a pronoun subject, hyphens and the euphonic **-t-** after a vowel: **ajouta-t-il, s'écria-t-elle**. The plain order (~~il dit~~) is wrong here.
+      pt: |
+        Depois ou no meio de uma fala citada, o verbo vem antes do sujeito: **« Je viens », dit-il** (— Eu vou, disse ele). **« Pourquoi ? » demanda-t-elle. « Non », répondit Marie.** Com pronome, hífen e o **-t-** eufônico depois de vogal: **ajouta-t-il, s'écria-t-elle**. Igual ao português (*disse ele*), mas com hífen.
+    examples:
+    - ["« Je viens », dit-il.", "\"I'm coming,\" he said.", "— Eu vou — disse ele.", "dit-il"]
+    - ["« Pourquoi ? » demanda-t-elle.", "\"Why?\" she asked.", "— Por quê? — perguntou ela.", "demanda-t-elle"]
+    - ["« C'est fini », ajouta-t-il.", "\"It's over,\" he added.", "— Acabou — acrescentou ele.", "ajouta-t-il"]
+    match:
+    - {seq: [{re: "^(dit|répondit|demanda|ajouta|reprit|fit|cria|murmura|pensa|déclara|expliqua|répliqua|s'écria|écria|continua|poursuivit|lança|dis|demandai|répondis|dit|dirent)-(t-)?(il|elle|ils|elles|je)$"}], gap: 0, suffixes: ["-t-il", "-il", "-t-elle", "-elle"]}
+
+  - id: fr-c2-ne-seul
+    title: je ne saurais, je n'ose
+    meaning: {en: "ne without pas in literary French", pt: "ne sem pas no francês literário"}
+    intro:
+      en: |
+        With **savoir, pouvoir, oser, cesser** literary French may negate with **ne** alone: **Je ne saurais vous dire** "I couldn't tell you", **Je n'ose le croire**, **Il ne cesse de pleuvoir** "It keeps raining", **Je ne puis** (old form of je ne peux). Also **si je ne me trompe** "if I'm not mistaken" and **n'importe**.
+      pt: |
+        Com **savoir, pouvoir, oser, cesser** o francês literário pode negar só com **ne**: **Je ne saurais vous dire** (Eu não saberia lhe dizer), **Je n'ose le croire** (Não ouso acreditar), **Il ne cesse de pleuvoir** (Não para de chover), **Je ne puis** (forma antiga de je ne peux). Também **si je ne me trompe** (se não me engano).
+    examples:
+    - ["Je ne saurais vous dire.", "I couldn't tell you.", "Eu não saberia lhe dizer.", "saurais"]
+    - ["Il ne cesse de pleuvoir.", "It keeps raining.", "Não para de chover.", "cesse"]
+    - ["Je n'ose le croire.", "I hardly dare believe it.", "Não ouso acreditar.", "ose"]
+    match: {seq: [{word: [ne, n]}, {word: [saurais, saurait, saurions, sauriez, sauraient, puis, ose, oses, osait, osais, osa, cesse, cesses, cessait, cessent, cessa, trompe]}, {not: {pos: adv}, re: "^(?!(pas|plus|jamais|point|rien|guère)$)"}], gap: 1}
+
+- title: {en: Fine points of syntax, pt: Sutilezas da sintaxe}
+  lessons:
+  - id: fr-c2-quel-que
+    title: quel que soit, quoi que tu fasses
+    meaning: {en: "concessive relatives: quel que, quoi que, qui que, où que", pt: "relativas concessivas: quel que, quoi que, qui que, où que"}
+    intro:
+      en: |
+        **quel que** + **être** in the subjunctive, with **quel** agreeing with the subject: **quel que soit le prix, quelle que soit la raison, quels que soient les risques.** **quoi que** "whatever" (in two words; **quoique** = although), **qui que** "whoever", **où que** "wherever": **Quoi que tu fasses, je t'aime. Où que tu ailles…**
+      pt: |
+        **quel que** + **être** no subjuntivo, com **quel** concordando com o sujeito: **quel que soit le prix** (seja qual for o preço), **quelle que soit la raison, quels que soient les risques.** **quoi que** = o que quer que (separado; **quoique** junto = embora), **qui que** = quem quer que, **où que** = onde quer que: **Quoi que tu fasses, je t'aime** (Faça o que fizer, eu te amo).
+    examples:
+    - ["Quel que soit le prix, je l'achète.", "Whatever the price, I'll buy it.", "Seja qual for o preço, eu compro.", "Quel"]
+    - ["Quelle que soit la raison, c'est trop tard.", "Whatever the reason, it's too late.", "Seja qual for a razão, é tarde demais.", "Quelle"]
+    - ["Quoi que tu fasses, je t'aime.", "Whatever you do, I love you.", "Faça o que fizer, eu te amo.", "fasses"]
+    match:
+    - {seq: [{word: [quel, quelle, quels, quelles]}, {word: [que, qu]}, {word: [soit, soient, fût, fussent, puisse]}], gap: 0, pool: [quel, quelle, quels, quelles]}
+    - {seq: [{word: [quoi, où, qui]}, {word: [que, qu]}, {pos: verb, mood: subj}], near: 2, gap: 2, same: [person, number]}
+
+  - id: fr-c2-tout-adverbe
+    title: tout heureuse, toute contente
+    meaning: {en: "tout as an adverb: when it agrees", pt: "tout como advérbio: quando concorda"}
+    intro:
+      en: |
+        Before an adjective **tout** means "quite, completely" and is an adverb: invariable (**ils sont tout contents, elle est tout heureuse**) — except before a feminine adjective beginning with a consonant or aspirate h, where it agrees for the sound: **elle est toute contente, elles sont toutes honteuses.**
+      pt: |
+        Antes de adjetivo, **tout** = bem, totalmente, e é advérbio: invariável (**ils sont tout contents, elle est tout heureuse**) — menos antes de adjetivo feminino começado por consoante ou h aspirado, onde concorda por eufonia: **elle est toute contente, elles sont toutes honteuses.** O português faz algo parecido no coloquial (*ela ficou toda contente*).
+    examples:
+    - ["Elle est toute contente.", "She's very happy.", "Ela está toda contente.", "toute"]
+    - ["Ils sont tout contents.", "They're very happy.", "Eles estão todos contentes.", "tout"]
+    - ["Elle est tout heureuse.", "She's really happy.", "Ela está toda feliz.", "tout"]
+    match: {seq: [{word: [tout, toute, toutes]}, {pos: adj, not: {pos: [noun, det]}}], gap: 0}
+    pool: [tout, toute, toutes, tous]
+
+  - id: fr-c2-accord-pronominal
+    title: elle s'est lavée, elle s'est lavé les mains
+    meaning: {en: "agreement of reflexive verbs' participles", pt: "concordância do particípio dos verbos pronominais"}
+    intro:
+      en: |
+        Reflexive verbs take **être**, but the participle agrees only with a preceding direct object: **Elle s'est lavée** (se = direct object) but **Elle s'est lavé les mains** (the object les mains follows) and **Ils se sont parlé** (se = indirect: parler à). Verbs only used reflexively agree with the subject: **Elle s'est souvenue.**
+      pt: |
+        Os verbos pronominais usam **être**, mas o particípio só concorda com um objeto direto anterior: **Elle s'est lavée** (se = objeto direto), mas **Elle s'est lavé les mains** (o objeto *les mains* vem depois) e **Ils se sont parlé** (se = indireto: parler à). Verbos essencialmente pronominais concordam com o sujeito: **Elle s'est souvenue.**
+    examples:
+    - ["Elle s'est lavée.", "She washed.", "Ela se lavou.", "lavée"]
+    - ["Elle s'est lavé les mains.", "She washed her hands.", "Ela lavou as mãos.", "lavé"]
+    - ["Ils se sont parlé hier.", "They spoke to each other yesterday.", "Eles se falaram ontem.", "parlé"]
+    match: {seq: [{word: [s, se, me, m, te, t, nous, vous]}, {word: [est, sont, suis, es, sommes, êtes, était, étaient, étais, serait]}, {re: "(é|ée|és|ées|i|ie|is|ies|u|ue|us|ues|t|te|ts|tes)$", pos: verb}], gap: 2}
+
+  - id: fr-c2-negation-litteraire
+    title: ni … ni, nul, guère
+    meaning: {en: "literary negation: ni … ni, nul, aucun, guère, nullement", pt: "negação literária: ni … ni, nul, aucun, guère, nullement"}
+    intro:
+      en: |
+        **ne … ni … ni** "neither … nor": **Il ne boit ni vin ni bière** (no article). **nul / nulle** "no, nobody" (formal): **Nul n'est censé ignorer la loi.** **ne … guère** "hardly": **Je ne le vois guère.** **ne … nullement** "not at all". **aucun** as a pronoun: **Aucun n'est venu.**
+      pt: |
+        **ne … ni … ni** = nem … nem: **Il ne boit ni vin ni bière** (sem artigo). **nul / nulle** = nenhum, ninguém (formal): **Nul n'est censé ignorer la loi** (Ninguém pode alegar desconhecer a lei). **ne … guère** = quase não: **Je ne le vois guère.** **ne … nullement** = de modo algum. **aucun** como pronome: **Aucun n'est venu.**
+    examples:
+    - ["Il ne boit ni vin ni bière.", "He drinks neither wine nor beer.", "Ele não bebe nem vinho nem cerveja.", "ni"]
+    - ["Nul n'est censé ignorer la loi.", "Ignorance of the law is no excuse.", "Ninguém pode alegar desconhecer a lei.", "Nul"]
+    - ["Je ne le vois guère.", "I hardly ever see him.", "Quase não o vejo.", "guère"]
+    match: {seq: [{word: [ni, nul, nulle, guère, nullement, aucunement]}], gap: 0}
+    pool: [ni, nul, guère, jamais, aucun, pas]
+
+  - id: fr-c2-que-initial
+    title: qu'il entre, que le meilleur gagne
+    meaning: {en: "que + subjunctive at the start of a sentence", pt: "que + subjuntivo no início da frase"}
+    intro:
+      en: |
+        **que** + subjunctive alone gives an order or a wish for the 3rd person: **Qu'il entre ! Que le meilleur gagne ! Qu'elle se taise.** A **que**-clause can also open the sentence as its subject or topic, still in the subjunctive: **Qu'il soit en retard ne m'étonne pas.** **Que tu le veuilles ou non** "whether you like it or not".
+      pt: |
+        **que** + subjuntivo sozinho dá ordem ou desejo para a 3ª pessoa, como no português: **Qu'il entre !** (Que ele entre!) **Que le meilleur gagne !** Uma oração com **que** também pode abrir a frase como sujeito, sempre no subjuntivo: **Qu'il soit en retard ne m'étonne pas** (Que ele esteja atrasado não me espanta). **Que tu le veuilles ou non** (Queira você ou não).
+    examples:
+    - ["Qu'il entre !", "Let him come in!", "Que ele entre!", "entre"]
+    - ["Que le meilleur gagne !", "May the best one win!", "Que vença o melhor!", "gagne"]
+    - ["Qu'il soit en retard ne m'étonne pas.", "That he's late doesn't surprise me.", "Que ele esteja atrasado não me espanta.", "soit"]
+    match: {seq: [{word: [que, qu], start: true}, {pos: verb, mood: subj}], near: 2, gap: 1, same: [person, number]}
+
+  - id: fr-c2-ce-dont
+    title: ce dont j'ai besoin, ce à quoi je pense
+    meaning: {en: "ce dont, ce à quoi, ce sur quoi", pt: "ce dont, ce à quoi, ce sur quoi"}
+    intro:
+      en: |
+        **ce** + a relative refers to an idea: **ce qui, ce que** (B2), **ce dont** for verbs with **de** (**avoir besoin de, parler de**): **Ce dont j'ai besoin, c'est de repos.** With other prepositions, **ce à quoi, ce sur quoi, ce contre quoi**: **C'est ce à quoi je pensais.**
+      pt: |
+        **ce** + relativo retoma uma ideia: **ce qui, ce que** (B2), **ce dont** com verbos regidos por **de** (**avoir besoin de, parler de**): **Ce dont j'ai besoin, c'est de repos** (Do que eu preciso é descanso). Com outras preposições, **ce à quoi, ce sur quoi**: **C'est ce à quoi je pensais** (É nisso que eu estava pensando).
+    examples:
+    - ["Ce dont j'ai besoin, c'est de repos.", "What I need is rest.", "Do que eu preciso é descanso.", "dont"]
+    - ["C'est ce à quoi je pensais.", "That's what I was thinking about.", "É nisso que eu estava pensando.", "quoi"]
+    - ["Je ne sais pas ce dont il parle.", "I don't know what he's talking about.", "Não sei do que ele está falando.", "dont"]
+    match:
+    - {seq: [{word: [ce]}, {word: [dont]}], gap: 1, pool: [dont, que, qui, quoi]}
+    - {seq: [{word: [ce]}, {word: [à, sur, contre, par, pour, avec, de]}, {word: [quoi]}], gap: 2, pool: [quoi, que, qui, lequel]}
+
+- title: {en: Register, pt: Registro}
+  lessons:
+  - id: fr-c2-participe-compose
+    title: ayant terminé, une fois arrivé
+    meaning: {en: "the perfect participle and absolute constructions", pt: "o particípio composto e as construções absolutas"}
+    intro:
+      en: |
+        **ayant / étant** + participle marks a completed earlier action: **Ayant terminé son travail, il est sorti. Étant arrivée en retard, elle s'est excusée.** Written French also builds absolute clauses with a bare participle: **Le repas terminé, on a dansé. Une fois arrivés, appelez-moi.**
+      pt: |
+        **ayant / étant** + particípio marca ação anterior concluída: **Ayant terminé son travail, il est sorti** (Tendo terminado o trabalho, saiu). **Étant arrivée en retard, elle s'est excusée.** A escrita também usa o particípio absoluto, como o português: **Le repas terminé, on a dansé** (Terminada a refeição, dançamos). **Une fois arrivés, appelez-moi.**
+    examples:
+    - ["Ayant terminé son travail, il est sorti.", "Having finished his work, he went out.", "Tendo terminado o trabalho, ele saiu.", "Ayant"]
+    - ["Étant arrivée en retard, elle s'est excusée.", "Having arrived late, she apologised.", "Tendo chegado atrasada, ela pediu desculpas.", "Étant"]
+    - ["N'ayant rien compris, il s'est tu.", "Having understood nothing, he kept quiet.", "Não tendo entendido nada, ele se calou.", "ayant"]
+    match: {seq: [{word: [ayant, étant]}, {re: "^(?!(du|au|plus|si|pas|jamais|ainsi|aussi|ici|lui|tout|mais|depuis|déjà|peu|ni|qui|dit)$).+(é|ée|és|ées|i|ie|is|u|ue|us|it|ert|ort)$"}], near: 0, gap: 0}
+    pool: [ayant, étant, avant, en]
+
+  - id: fr-c2-familier
+    title: bosser, le boulot, une bagnole
+    meaning: {en: "informal vocabulary (français familier)", pt: "vocabulário informal (français familier)"}
+    intro:
+      en: |
+        Everyday spoken French has a second vocabulary: **bosser** = travailler, **le boulot** = le travail, **une bagnole** = une voiture, **le fric** = l'argent, **un mec / une meuf** = un homme / une femme, **un flic** = un policier, **un truc** = une chose, **un bouquin** = un livre, **piger** = comprendre, **bouffer** = manger. Fine with friends, out of place in writing.
+      pt: |
+        O francês falado do dia a dia tem um segundo vocabulário, como o nosso *trampo, grana, cara*: **bosser** = travailler (trampar), **le boulot** = le travail (trampo), **une bagnole** = une voiture, **le fric** = l'argent (grana), **un mec** = un homme (cara), **un flic** = un policier (tira), **un truc** = une chose (coisa, treco), **un bouquin** = un livre, **piger** = comprendre (sacar), **bouffer** = manger (rangar). Bom entre amigos, deslocado na escrita.
+    table:
+      head: {en: [Informal, Standard, English], pt: [Informal, Padrão, Português]}
+      rows:
+      - [bosser, travailler, to work / trampar]
+      - [le boulot, le travail, job / trampo]
+      - [le fric, l'argent, money / grana]
+      - [un mec, un homme, guy / cara]
+      - [un truc, une chose, thing / treco]
+      - [piger, comprendre, to get it / sacar]
+    examples:
+    - ["Je dois bosser ce soir.", "I have to work tonight.", "Tenho que trampar hoje à noite.", "bosser"]
+    - ["Il a changé de boulot.", "He changed jobs.", "Ele mudou de trampo.", "boulot"]
+    - ["C'est quoi, ce truc ?", "What's this thing?", "Que treco é esse?", "truc"]
+    match: {seq: [{word: [bosser, bosse, bosses, bossé, boulot, boulots, bagnole, bagnoles, fric, mec, mecs, meuf, meufs, flic, flics, truc, trucs, bouquin, bouquins, piger, pige, pigé, bouffer, bouffe, bouffé, flemme, nana, nanas, gosse, gosses, pote, potes, fringues, frangin, frangine, boulot, baraque, bled, kiffer, kiffe, chelou, relou, ouf]}], gap: 0}

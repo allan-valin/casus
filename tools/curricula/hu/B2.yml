@@ -1,0 +1,234 @@
+id: B2
+topics:
+
+- title: {en: Verbal prefixes in the sentence, pt: Prefixos verbais na frase}
+  lessons:
+  - id: hu-prefix-separation
+    title: Nem megyek be.
+    meaning: {en: "the prefix after the verb: negation and questions", pt: "o prefixo depois do verbo: negação e perguntas"}
+    intro:
+      en: |
+        A prefix stays on the verb in a neutral statement (**Bemegyek.** "I'm going in."), but moves **after** the verb when something else takes the place right before it:
+
+        - negation: **Nem megyek be.** "I'm not going in." **Ne nyisd ki!** "Don't open it!"
+        - a question word: **Mikor jössz haza?** "When are you coming home?"
+        - a focused word: **Péter hívott fel, nem Anna.** "It was Péter who called, not Anna."
+      pt: |
+        O prefixo fica no verbo numa afirmação neutra (**Bemegyek.** "Vou entrar."), mas passa para **depois** do verbo quando outra coisa ocupa o lugar logo antes dele:
+
+        - negação: **Nem megyek be.** "Não vou entrar." **Ne nyisd ki!** "Não abra!"
+        - palavra interrogativa: **Mikor jössz haza?** "Quando você volta para casa?"
+        - palavra em foco: **Péter hívott fel, nem Anna.** "Foi o Péter que ligou, não a Anna."
+    examples:
+    - ["Nem megyek be.", "I'm not going in.", "Não vou entrar.", "be"]
+    - ["Ne nyisd ki az ablakot!", "Don't open the window!", "Não abra a janela!", "ki"]
+    - ["Mikor jössz haza?", "When are you coming home?", "Quando você volta para casa?", "haza"]
+    match:
+    - {seq: [{word: [nem, ne, sem]}, {pos: verb}, {word: [be, ki, el, meg, fel, föl, le, vissza, át, haza, össze, rá, oda, ide]}], gap: 2}
+    - {seq: [{word: [mikor, hova, hová, miért, mit, hogyan, honnan, ki, kit, kivel]}, {pos: verb}, {word: [be, ki, el, meg, fel, föl, le, vissza, át, haza, össze, rá, oda, ide]}], gap: 2}
+    pool: [be, ki, el, meg, fel, le, vissza, át, haza, össze]
+
+  - id: hu-prefix-aspect
+    title: írtam – megírtam
+    meaning: {en: "meg- and other prefixes for a finished action", pt: "meg- e outros prefixos para ação concluída"}
+    intro:
+      en: |
+        Without a prefix a verb often describes an activity; with one, an action carried to its end. **meg-** mostly adds just that completeness:
+
+        - **Írtam egy levelet.** "I was writing / wrote a letter." – **Megírtam a levelet.** "I finished writing the letter."
+        - **Ettem.** "I ate (something)." – **Megettem a levest.** "I ate up the soup."
+        - **Olvastam a könyvet.** "I was reading the book." – **Elolvastam a könyvet.** "I read the book through."
+
+        Some verbs pair with **el-** (**olvas → elolvas**), **meg-** is the default (**csinál → megcsinál, néz → megnéz**).
+      pt: |
+        Sem prefixo, o verbo muitas vezes descreve uma atividade; com prefixo, uma ação levada até o fim. **meg-** em geral só acrescenta essa conclusão:
+
+        - **Írtam egy levelet.** "Eu escrevia / escrevi uma carta." – **Megírtam a levelet.** "Terminei de escrever a carta."
+        - **Ettem.** "Comi (algo)." – **Megettem a levest.** "Comi a sopa toda."
+        - **Olvastam a könyvet.** "Eu estava lendo o livro." – **Elolvastam a könyvet.** "Li o livro até o fim."
+
+        Alguns verbos fazem par com **el-** (**olvas → elolvas**); **meg-** é o padrão (**csinál → megcsinál, néz → megnéz**).
+    examples:
+    - ["Megírtam a levelet.", "I've written the letter.", "Já escrevi a carta.", "Megírtam"]
+    - ["Megettem a levest.", "I ate up the soup.", "Comi a sopa toda.", "Megettem"]
+    - ["Elolvastam a könyvet.", "I read the book through.", "Li o livro inteiro.", "Elolvastam"]
+    match: {seq: [{pos: verb, re: "^(meg|el)", not: {lemma: "^(megy|elég|él|eltart|el$)"}}], prefixes: [meg, el, ""], attested: true}
+
+  - id: hu-prefix-auxiliary
+    title: El akarok menni.
+    meaning: {en: "the prefix before akar, tud, fog, kell", pt: "o prefixo antes de akar, tud, fog, kell"}
+    intro:
+      en: |
+        With an auxiliary (**akar, tud, fog, kell, szeret, kezd, szokott, lehet**) the prefix leaves the infinitive and comes before the auxiliary: **El akarok menni.** "I want to leave." **Meg tudod csinálni?** "Can you do it?" **Haza fogok menni.** "I'll go home."
+
+        With a negation or a focus it returns to the infinitive: **Nem akarok elmenni.** "I don't want to leave."
+      pt: |
+        Com um verbo auxiliar (**akar, tud, fog, kell, szeret, kezd, szokott, lehet**) o prefixo sai do infinitivo e vai para antes do auxiliar: **El akarok menni.** "Quero ir embora." **Meg tudod csinálni?** "Você consegue fazer?" **Haza fogok menni.** "Vou para casa."
+
+        Com negação ou foco ele volta ao infinitivo: **Nem akarok elmenni.** "Não quero ir embora."
+    examples:
+    - ["El akarok menni.", "I want to leave.", "Quero ir embora.", "El"]
+    - ["Meg tudod csinálni?", "Can you do it?", "Você consegue fazer?", "Meg"]
+    - ["Haza fogok menni.", "I'll go home.", "Vou para casa.", "Haza"]
+    match: {seq: [{word: [be, ki, el, meg, fel, föl, le, vissza, át, haza, össze, rá]}, {lemma: "^(akar|tud|fog|kell|szeret|kezd|szokott|mer|lehet|szabad)$"}, {pos: verb, mood: inf}], near: 1, gap: 0}
+    pool: [be, ki, el, meg, fel, le, vissza, át, haza, össze]
+
+- title: {en: Derived verbs, pt: Verbos derivados}
+  lessons:
+  - id: hu-potential
+    title: mehetek, olvashat
+    meaning: {en: "-hat / -het: can, may", pt: "-hat / -het: poder"}
+    intro:
+      en: |
+        **-hat / -het** before the personal ending means *may, can, be allowed*: **Bejöhetek?** "May I come in?" **Itt dohányozhatsz.** "You may smoke here." **Ez igaz lehet.** "This may be true." (**lehet** from **van**). Compare **tud** (*know how to*): **Tudok úszni.** "I can swim."
+      pt: |
+        **-hat / -het** antes da terminação pessoal quer dizer *poder, ter permissão*: **Bejöhetek?** "Posso entrar?" **Itt dohányozhatsz.** "Aqui você pode fumar." **Ez igaz lehet.** "Isso pode ser verdade." (**lehet** vem de **van**). Compare **tud** (*saber fazer*): **Tudok úszni.** "Sei nadar."
+    examples:
+    - ["Bejöhetek?", "May I come in?", "Posso entrar?", "Bejöhetek"]
+    - ["Itt dohányozhatsz.", "You may smoke here.", "Aqui você pode fumar.", "dohányozhatsz"]
+    - ["Holnap jöhetsz.", "You can come tomorrow.", "Você pode vir amanhã.", "jöhetsz"]
+    match:
+    - {seq: [{pos: verb, re: "hat(ok|sz|unk|tok|nak|om|od|ja|juk|játok|ják|nék|nál|na)?$", not: {lemma: "^hat$"}}], suffixes: [hatok, hatsz, hat, hatunk, hattok, hatnak, ok, sz, unk, tok, nak], attested: true}
+    - {seq: [{pos: verb, re: "het(ek|sz|ünk|tek|nek|em|ed|i|jük|itek|ik|nék|nél|ne)?$"}], suffixes: [hetek, hetsz, het, hetünk, hettek, hetnek, ek, sz, ünk, tek, nek], attested: true}
+
+  - id: hu-causative
+    title: megjavíttatom az autót
+    meaning: {en: "-tat / -tet: have something done", pt: "-tat / -tet: mandar fazer algo"}
+    intro:
+      en: |
+        **-tat / -tet** (after a vowel or two-syllable stems) and **-at / -et** (after many one-syllable stems) make a verb causative: *make / have someone do*:
+
+        - **javít → javíttat**: **Megjavíttattam az autót.** "I had the car repaired."
+        - **ír → írat**, **vár → várat**: **Ne várass!** "Don't keep me waiting!"
+        - **nevet → nevettet** (make laugh), **dolgozik → dolgoztat** (make work)
+
+        The one made to act is in the accusative or with **-val / -vel**: **Megcsináltatom a szerelővel.** "I'll have the mechanic do it."
+      pt: |
+        **-tat / -tet** (depois de vogal ou em radicais de duas sílabas) e **-at / -et** (depois de muitos radicais de uma sílaba) tornam o verbo causativo: *fazer / mandar alguém fazer*:
+
+        - **javít → javíttat**: **Megjavíttattam az autót.** "Mandei consertar o carro."
+        - **ír → írat**, **vár → várat**: **Ne várass!** "Não me faça esperar!"
+        - **nevet → nevettet** (fazer rir), **dolgozik → dolgoztat** (fazer trabalhar)
+
+        Quem é levado a agir fica no acusativo ou com **-val / -vel**: **Megcsináltatom a szerelővel.** "Vou mandar o mecânico fazer."
+    examples:
+    - ["Megjavíttattam az autót.", "I had the car repaired.", "Mandei consertar o carro.", "Megjavíttattam"]
+    - ["Ne várass!", "Don't keep me waiting!", "Não me faça esperar!", "várass"]
+    - ["A film megnevettetett.", "The film made me laugh.", "O filme me fez rir.", "megnevettetett"]
+    match: {seq: [{pos: verb, lemma: "(tat|tet|ttat|ttet)$", not: {lemma: "^(mutat|kutat|tetet|tart|alkot)$"}}], same: [person, number]}
+
+  - id: hu-frequentative
+    title: olvasgat, nézeget
+    meaning: {en: "-gat / -get: doing something now and then, a little", pt: "-gat / -get: fazer algo de vez em quando, um pouco"}
+    intro:
+      en: |
+        **-gat / -get** (also **-ogat, -eget**) makes an action repeated, casual or spread out: **olvas → olvasgat** "read here and there", **néz → nézeget** "look at, browse", **kérdez → kérdezget** "keep asking", **ír → írogat** "write now and then". **-kál / -kél** is similar: **jár → járkál** "walk up and down".
+      pt: |
+        **-gat / -get** (também **-ogat, -eget**) torna a ação repetida, descontraída ou espalhada: **olvas → olvasgat** "ler aqui e ali", **néz → nézeget** "olhar, folhear", **kérdez → kérdezget** "ficar perguntando", **ír → írogat** "escrever de vez em quando". **-kál / -kél** é parecido: **jár → járkál** "andar de um lado para o outro".
+    examples:
+    - ["Esténként olvasgatok.", "In the evenings I read a bit.", "À noite eu leio um pouco.", "olvasgatok"]
+    - ["A fényképeket nézegette.", "She was looking through the photos.", "Ela estava olhando as fotos.", "nézegette"]
+    - ["Fel-alá járkált a szobában.", "He paced up and down the room.", "Ele andava de um lado para o outro no quarto.", "járkált"]
+    match: {seq: [{pos: verb, lemma: "(gat|get|kál|kél)$", not: {lemma: "^(tagad|szeget|hagy)$"}}], same: [person, number]}
+
+- title: {en: Participles, pt: Particípios}
+  lessons:
+  - id: hu-participles
+    title: az olvasó fiú, a megírt levél
+    meaning: {en: "participles: -ó (who does), -t (done), -andó (to be done)", pt: "particípios: -ó (que faz), -t (feito), -andó (a ser feito)"}
+    intro:
+      en: |
+        Three participles stand before a noun like adjectives:
+
+        - **-ó / -ő** (doing): **az olvasó fiú** "the boy who is reading", **a következő megálló** "the next stop"
+        - **-t / -tt** (done): **a megírt levél** "the written letter", **a tegnap vett kenyér** "the bread bought yesterday"
+        - **-andó / -endő** (to be done): **a megoldandó feladat** "the task to be solved", **fizetendő összeg** "amount payable"
+
+        They replace relative clauses: **a fiú, aki olvas = az olvasó fiú**.
+      pt: |
+        Três particípios vêm antes do substantivo como adjetivos:
+
+        - **-ó / -ő** (que faz): **az olvasó fiú** "o menino que está lendo", **a következő megálló** "a próxima parada"
+        - **-t / -tt** (feito): **a megírt levél** "a carta escrita", **a tegnap vett kenyér** "o pão comprado ontem"
+        - **-andó / -endő** (a ser feito): **a megoldandó feladat** "a tarefa a ser resolvida", **fizetendő összeg** "valor a pagar"
+
+        Substituem orações relativas: **a fiú, aki olvas = az olvasó fiú**.
+    examples:
+    - ["A következő megállónál szállunk le.", "We get off at the next stop.", "Descemos na próxima parada.", "következő"]
+    - ["Az olvasó fiú a bátyám.", "The boy who is reading is my brother.", "O menino que está lendo é meu irmão.", "olvasó"]
+    - ["Ez a megoldandó feladat.", "This is the task to be solved.", "Esta é a tarefa a ser resolvida.", "megoldandó"]
+    match: {seq: [{word: [a, az, egy]}, {re: "(ó|ő|ott|ett|ött|andó|endő)$", not: {pos: [noun, pron, num, adv]}}, {pos: noun}], gap: 1, suffixes: [ó, ő, ott, ett, ött, andó, endő, t], attested: true}
+
+  - id: hu-adverbial-participle
+    title: nyitva, ülve
+    meaning: {en: "-va / -ve: in a state, while", pt: "-va / -ve: em um estado, enquanto"}
+    intro:
+      en: |
+        **-va / -ve** describes a state that results from an action, or the way something is done:
+
+        - with **van**: **Az ajtó nyitva van.** "The door is open." **A bolt zárva van.** "The shop is closed." **Meg van írva.** "It's written."
+        - manner: **Ülve olvasott.** "He read sitting." **Sietve távozott.** "She left in a hurry."
+      pt: |
+        **-va / -ve** descreve um estado resultante de uma ação, ou o modo como algo é feito:
+
+        - com **van**: **Az ajtó nyitva van.** "A porta está aberta." **A bolt zárva van.** "A loja está fechada." **Meg van írva.** "Está escrito."
+        - modo: **Ülve olvasott.** "Ele lia sentado." **Sietve távozott.** "Ela saiu às pressas."
+    examples:
+    - ["Az ajtó nyitva van.", "The door is open.", "A porta está aberta.", "nyitva"]
+    - ["A bolt vasárnap zárva van.", "The shop is closed on Sunday.", "A loja fica fechada no domingo.", "zárva"]
+    - ["Sietve távozott.", "She left in a hurry.", "Ela saiu às pressas.", "Sietve"]
+    match: {seq: [{pos: verb, re: "[^aeiouáéíóöőúüű](va|ve)$"}], suffixes: [va, ve, ván, vén, ó, ő], attested: true}
+
+- title: {en: More cases, pt: Mais casos}
+  lessons:
+  - id: hu-translative-essive
+    title: orvossá, tanárként, magyarul
+    meaning: {en: "-vá / -vé (becoming), -ként (as), -ul / -ül (in a language, as)", pt: "-vá / -vé (tornar-se), -ként (como), -ul / -ül (em uma língua, como)"}
+    intro:
+      en: |
+        - **-vá / -vé** (translative): change into, with **válik, lesz**: **Orvossá vált.** "He became a doctor." **A víz jéggé fagyott.** "The water froze into ice." The **v** assimilates after a consonant: **jég → jéggé**.
+        - **-ként** (formal): in the role of: **Tanárként dolgozik.** "She works as a teacher."
+        - **-ul / -ül** (essive-modal): languages and manner: **magyarul** "in Hungarian", **jól** "well", **barátul** "as a friend".
+      pt: |
+        - **-vá / -vé** (translativo): transformar-se em, com **válik, lesz**: **Orvossá vált.** "Ele se tornou médico." **A víz jéggé fagyott.** "A água virou gelo." O **v** assimila depois de consoante: **jég → jéggé**.
+        - **-ként** (formal): no papel de: **Tanárként dolgozik.** "Ela trabalha como professora."
+        - **-ul / -ül** (essivo-modal): línguas e modo: **magyarul** "em húngaro", **jól** "bem", **barátul** "como amigo".
+    examples:
+    - ["Orvossá vált.", "He became a doctor.", "Ele se tornou médico.", "Orvossá"]
+    - ["Tanárként dolgozik.", "She works as a teacher.", "Ela trabalha como professora.", "Tanárként"]
+    - ["Beszélsz magyarul?", "Do you speak Hungarian?", "Você fala húngaro?", "magyarul"]
+    match: {seq: [{pos: noun, case: [tra, for, ess]}], same: [number]}
+
+  - id: hu-causal-terminative
+    title: a pénzért, ötig
+    meaning: {en: "-ért (for, in exchange for) and -ig (until, as far as)", pt: "-ért (por, em troca de) e -ig (até)"}
+    intro:
+      en: |
+        - **-ért** (causal-final): *for* a purpose, a price or a person: **Elmegyek kenyérért.** "I'm going for bread." **Mennyiért vetted?** "How much did you buy it for?" **Köszönöm a segítségért.** "Thanks for the help." **Miért?** "Why?" is the same ending.
+        - **-ig** (terminative): *until, as far as*: **ötig** "until five", **a sarokig** "as far as the corner", **holnapig** "until tomorrow".
+      pt: |
+        - **-ért** (causal-final): *por* uma finalidade, um preço ou uma pessoa: **Elmegyek kenyérért.** "Vou buscar pão." **Mennyiért vetted?** "Por quanto você comprou?" **Köszönöm a segítségért.** "Obrigado pela ajuda." **Miért?** "Por quê?" tem a mesma terminação.
+        - **-ig** (terminativo): *até*: **ötig** "até as cinco", **a sarokig** "até a esquina", **holnapig** "até amanhã".
+    examples:
+    - ["Elmegyek kenyérért.", "I'm going for bread.", "Vou buscar pão.", "kenyérért"]
+    - ["Mennyiért vetted?", "How much did you buy it for?", "Por quanto você comprou?", "Mennyiért"]
+    - ["Holnapig várok.", "I'll wait until tomorrow.", "Espero até amanhã.", "Holnapig"]
+    match: {seq: [{pos: noun, case: [cau, ter]}], same: [number]}
+
+  - id: hu-time-suffixes
+    title: hétkor, naponta
+    meaning: {en: "-kor (at a time), -nta / -nként (every)", pt: "-kor (a uma hora), -nta / -nként (cada)"}
+    intro:
+      en: |
+        - **-kor** gives a point in time, without vowel harmony: **hétkor** "at seven", **éjfélkor** "at midnight", **karácsonykor** "at Christmas", **Hány órakor?** "At what time?"
+        - **-nta / -nte** and **-nként** give a frequency or distribution: **naponta** "daily", **hetente** "weekly", **havonta** "monthly", **évente** "yearly", **óránként** "every hour, per hour", **egyenként** "one by one".
+      pt: |
+        - **-kor** indica um ponto no tempo, sem harmonia vocálica: **hétkor** "às sete", **éjfélkor** "à meia-noite", **karácsonykor** "no Natal", **Hány órakor?** "A que horas?"
+        - **-nta / -nte** e **-nként** indicam frequência ou distribuição: **naponta** "diariamente", **hetente** "semanalmente", **havonta** "mensalmente", **évente** "anualmente", **óránként** "a cada hora, por hora", **egyenként** "um por um".
+    examples:
+    - ["Hétkor kelek.", "I get up at seven.", "Acordo às sete.", "Hétkor"]
+    - ["Hány órakor indul a vonat?", "What time does the train leave?", "A que horas sai o trem?", "órakor"]
+    - ["Hetente kétszer úszom.", "I swim twice a week.", "Nado duas vezes por semana.", "Hetente"]
+    match:
+    - {seq: [{pos: [noun, num], re: "..kor$", not: {lemma: "kor$"}}], gap: 0}
+    - {seq: [{word: [naponta, hetente, havonta, évente, óránként, percenként, egyenként, időnként, naponként, évenként]}], gap: 0, pool: [naponta, hetente, havonta, évente, óránként, egyenként]}

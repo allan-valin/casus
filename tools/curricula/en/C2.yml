@@ -1,0 +1,167 @@
+id: C2
+topics:
+
+- title: {en: Unreal and concessive structures, pt: Estruturas irreais e concessivas}
+  lessons:
+  - id: en-c2-as-if
+    title: as if he were, as though nothing had happened
+    meaning: {en: "as if / as though with the unreal past", pt: "as if / as though com o passado irreal"}
+    intro:
+      pt: |
+        **as if / as though** + passado indica algo irreal ou improvável: **He talks as if he were the boss** (Fala como se fosse o chefe). + past perfect para o passado: **She acted as though nothing had happened.** Com algo provável, o presente é possível: **It looks as if it's going to rain.** No inglês formal, **were** para todas as pessoas.
+      en: |
+        **as if / as though** + past for something unreal: **He talks as if he were the boss.** + past perfect for the past: **She acted as though nothing had happened.** With a likely situation, the present: **It looks as if it's going to rain.**
+    examples:
+    - ["He talks as if he were the boss.", "Ele fala como se fosse o chefe.", "Ele fala como se fosse o chefe.", "were"]
+    - ["She acted as though nothing had happened.", "Ela agiu como se nada tivesse acontecido.", "Ela agiu como se nada tivesse acontecido.", "had"]
+    - ["You look as if you had seen a ghost.", "Você está com cara de quem viu um fantasma.", "Você está com cara de quem viu um fantasma.", "had"]
+    match: {seq: [{word: [as]}, {word: [if, though]}, {pos: [pron, noun]}, {word: [were, had, was, knew, could, owned, didn't, hadn't, weren't]}], near: 1, gap: 3}
+    pool: [were, are, had, have, is]
+
+  - id: en-c2-concessive-inversion
+    title: much as I like him, try as I might
+    meaning: {en: "concession with as / though after a fronted word", pt: "concessão com as / though depois de palavra anteposta"}
+    intro:
+      pt: |
+        No inglês literário, um adjetivo, advérbio ou verbo vem para o início, seguido de **as / though** + sujeito: **Much as I like him, I can't trust him** (Por mais que eu goste dele…). **Try as I might, I couldn't open it** (Por mais que eu tentasse…). **Strange as it may seem, it's true** (Por estranho que pareça…). Equivale ao nosso *por mais… que*.
+      en: |
+        A fronted adjective, adverb or verb + **as / though** + subject = "although / however much": **Much as I like him, I can't trust him. Try as I might, I couldn't open it. Strange as it may seem, it's true.**
+    examples:
+    - ["Much as I like him, I can't trust him.", "Por mais que eu goste dele, não posso confiar nele.", "Por mais que eu goste dele, não posso confiar nele.", "as"]
+    - ["Try as I might, I couldn't open it.", "Por mais que eu tentasse, não consegui abrir.", "Por mais que eu tentasse, não consegui abrir.", "as"]
+    - ["Strange as it may seem, it's true.", "Por estranho que pareça, é verdade.", "Por estranho que pareça, é verdade.", "as"]
+    match: {seq: [{pos: [adj, adv, verb], start: true}, {word: [as, though]}, {word: [i, you, he, she, it, we, they, tom, mary]}, {word: [may, might, could, is, was, am, are, were, do, did, seem, seems, like, liked, love, tried, try, have]}], near: 1, gap: 1}
+    pool: [as, though, if, so, that]
+
+  - id: en-c2-were-to
+    title: if he were to, were it not for
+    meaning: {en: "were to and were it not for", pt: "were to e were it not for"}
+    intro:
+      pt: |
+        **if + sujeito + were to + verbo** apresenta uma hipótese remota, formal: **If he were to resign, who would replace him?** (Se ele viesse a renunciar…). **Were it not for / If it weren't for / But for** = se não fosse: **Were it not for your help, I would have failed** (Se não fosse a sua ajuda…).
+      en: |
+        **if + subject + were to + verb** for a remote hypothesis: **If he were to resign, who would replace him?** **Were it not for / If it weren't for / But for** = without: **Were it not for your help, I would have failed.**
+    examples:
+    - ["If he were to resign, who would replace him?", "Se ele viesse a renunciar, quem o substituiria?", "Se ele viesse a renunciar, quem o substituiria?", "were"]
+    - ["If it weren't for you, I'd be lost.", "Se não fosse por você, eu estaria perdido.", "Se não fosse por você, eu estaria perdido.", "weren't"]
+    - ["Were it not for your help, I would have failed.", "Se não fosse a sua ajuda, eu teria fracassado.", "Se não fosse a sua ajuda, eu teria fracassado.", "Were"]
+    match:
+    - {seq: [{word: [if]}, {pos: [pron, noun]}, {word: [were]}, {word: [to]}], near: 1, gap: 2, pool: [were, was, is, are]}
+    - {seq: [{word: [if]}, {word: [it]}, {word: [weren't, wasn't, hadn't]}, {word: [for]}], gap: 2, pool: [weren't, isn't, wasn't, aren't]}
+    - {seq: [{word: [were, had], start: true}, {word: [it]}, {word: ["not"]}], gap: 0, pool: [Were, Was, If, Is]}
+
+  - id: en-c2-negative-adverbials
+    title: under no circumstances, by no means
+    meaning: {en: "negative adverbial phrases: under no circumstances, on no account, by no means", pt: "locuções adverbiais negativas: under no circumstances, on no account, by no means"}
+    intro:
+      pt: |
+        Locuções com **no** reforçam a negação e, no início da frase, provocam inversão: **Under no circumstances should you open this door** (Em hipótese alguma…). **On no account** (de jeito nenhum), **by no means** (de forma alguma), **in no way**, **at no time** (em momento algum). No meio da frase não há inversão: **It is by no means easy.**
+      en: |
+        Phrases with **no** strengthen the negative and cause inversion at the start: **Under no circumstances should you open this door.** **on no account, by no means, in no way, at no time.** Mid-sentence, no inversion: **It is by no means easy.**
+    examples:
+    - ["Under no circumstances should you open this door.", "Em hipótese alguma você deve abrir esta porta.", "Em hipótese alguma você deve abrir esta porta.", "no"]
+    - ["It is by no means easy.", "Não é nada fácil.", "Não é nada fácil.", "no"]
+    - ["At no time did he apologise.", "Em momento algum ele pediu desculpas.", "Em momento algum ele pediu desculpas.", "no"]
+    match: {seq: [{word: [under, "on", by, in, at]}, {word: ["no"]}, {word: [circumstances, account, means, way, time, point, case, condition]}], gap: 1}
+    pool: ["no", any, some, the, all]
+
+- title: {en: Refined syntax, pt: Sintaxe refinada}
+  lessons:
+  - id: en-c2-the-more
+    title: the more, the better
+    meaning: {en: "comparative correlatives: the more …, the more …", pt: "comparativas correlativas: the more …, the more …"}
+    intro:
+      pt: |
+        **the + comparativo …, the + comparativo …** = quanto mais…, mais…: **The more you practise, the better you get** (Quanto mais você pratica, melhor fica). **The sooner, the better** (Quanto antes, melhor). **The older he gets, the less he sleeps.** Não esqueça os dois **the**; ~~More you practise~~ está errado.
+      en: |
+        **the + comparative …, the + comparative …**: **The more you practise, the better you get. The sooner, the better. The older he gets, the less he sleeps.**
+    examples:
+    - ["The more you practise, the better you get.", "Quanto mais você pratica, melhor fica.", "Quanto mais você pratica, melhor fica.", "better"]
+    - ["The sooner, the better.", "Quanto antes, melhor.", "Quanto antes, melhor.", "sooner"]
+    - ["The older he gets, the less he sleeps.", "Quanto mais velho ele fica, menos dorme.", "Quanto mais velho ele fica, menos dorme.", "less"]
+    match:
+    - {seq: [{word: [the], start: true}, {word: [more, less, sooner, better, bigger, older, harder, longer, fewer, faster, higher, richer, earlier, longer, worse]}], gap: 1, pool: [more, most, less, much, better]}
+    - {seq: [{trail: ","}, {word: [the]}, {word: [more, less, better, worse, happier, harder, sooner, faster, colder, hotter, bigger, greater, easier]}], gap: 2, pool: [more, most, less, best, better]}
+
+  - id: en-c2-reduced-relatives
+    title: the man sitting there, a book written in 1900
+    meaning: {en: "reduced relative clauses", pt: "orações relativas reduzidas"}
+    intro:
+      pt: |
+        Uma relativa pode perder **who / which + be**: **the man (who is) sitting there** → **the man sitting there**; **a book (which was) written in 1900** → **a book written in 1900**. Com **-ing** o sentido é ativo, com particípio é passivo. Muito comum na escrita e nas notícias, onde poupa palavras.
+      en: |
+        A relative clause can drop **who / which + be**: **the man sitting there, a book written in 1900, people living abroad.** -ing is active, the participle passive.
+    examples:
+    - ["Who is the man sitting there?", "Quem é o homem sentado ali?", "Quem é o homem sentado ali?", "sitting"]
+    - ["It's a book written in 1900.", "É um livro escrito em 1900.", "É um livro escrito em 1900.", "written"]
+    - ["People living abroad can vote.", "Quem mora no exterior pode votar.", "Quem mora no exterior pode votar.", "living"]
+    match:
+    - {seq: [{word: [man, woman, people, boy, girl, children, men, women, person, house, car, book, students, cat, dog, letter, building, train]}, {re: "^[a-z]+ing$", pos: verb}, {pos: [prep, adv, det]}], gap: 1}
+    - {seq: [{word: [man, woman, people, house, car, book, letter, building, language, picture, song, film, movie, novel, poem, city]}, {word: [written, built, made, taken, painted, sung, spoken, known, sold, found, given, published, designed]}, {pos: [prep, adv]}], gap: 1}
+
+  - id: en-c2-pied-piping
+    title: to whom, in which
+    meaning: {en: "preposition + whom / which in formal English", pt: "preposição + whom / which no inglês formal"}
+    intro:
+      pt: |
+        No inglês informal a preposição fica no fim: **the man I spoke to**. No formal, ela vem antes do relativo, e para pessoas usa-se **whom**: **the man to whom I spoke**, **the house in which I grew up**, **the reason for which**. Para o brasileiro isso soa natural (*a quem, na qual*), mas no inglês do dia a dia parece rebuscado.
+      en: |
+        Informal: **the man I spoke to.** Formal: preposition + **whom** (people) / **which** (things): **the man to whom I spoke, the house in which I grew up.**
+    examples:
+    - ["He is the man to whom I spoke.", "Ele é o homem com quem eu falei.", "Ele é o homem com quem eu falei.", "to"]
+    - ["This is the house in which I grew up.", "Esta é a casa em que eu cresci.", "Esta é a casa em que eu cresci.", "in"]
+    - ["She has two sons, both of whom are doctors.", "Ela tem dois filhos, ambos médicos.", "Ela tem dois filhos, ambos médicos.", "of"]
+    match: {seq: [{word: [to, for, with, of, by, from, in, "on", at, about, under, without]}, {word: [whom, which]}], gap: 0}
+    pool: [to, for, with, of, in, "on"]
+
+- title: {en: Stance and register, pt: Posicionamento e registro}
+  lessons:
+  - id: en-c2-hedging
+    title: allegedly, arguably, presumably
+    meaning: {en: "stance adverbs: allegedly, arguably, presumably, supposedly", pt: "advérbios de posicionamento: allegedly, arguably, presumably, supposedly"}
+    intro:
+      pt: |
+        Advérbios que mostram a distância do autor em relação ao que diz: **allegedly** (supostamente — acusação não provada), **supposedly** (supostamente, em tese), **arguably** (pode-se dizer que), **presumably** (presumivelmente), **seemingly** (aparentemente), **admittedly** (é verdade que, reconheço). Essenciais em textos acadêmicos e jornalísticos.
+      en: |
+        Adverbs that show the writer's stance: **allegedly** (claimed, not proven), **supposedly**, **arguably** (it can be argued), **presumably**, **seemingly**, **admittedly** (I accept that).
+    examples:
+    - ["He allegedly stole the money.", "Ele supostamente roubou o dinheiro.", "Ele supostamente roubou o dinheiro.", "allegedly"]
+    - ["It is arguably the best film ever made.", "É possivelmente o melhor filme já feito.", "É possivelmente o melhor filme já feito.", "arguably"]
+    - ["Presumably he forgot.", "Ele deve ter esquecido.", "Ele deve ter esquecido.", "Presumably"]
+    match: {seq: [{word: [allegedly, arguably, presumably, supposedly, seemingly, admittedly, apparently, reportedly, undoubtedly, evidently]}], gap: 0}
+    pool: [allegedly, arguably, presumably, supposedly, apparently]
+
+  - id: en-c2-formal-connectors
+    title: albeit, whereby, thereby
+    meaning: {en: "very formal connectors: albeit, whereby, thereby, notwithstanding", pt: "conectores muito formais: albeit, whereby, thereby, notwithstanding"}
+    intro:
+      pt: |
+        Palavras do inglês jurídico e acadêmico: **albeit** (embora, ainda que — antes de adjetivo ou expressão: **a small, albeit important, change**), **whereby** (pelo qual, por meio do qual), **thereby** (com isso, dessa forma), **notwithstanding** (não obstante), **insofar as** (na medida em que), **hence** (daí). Reconhecer basta; usar em conversa soa pomposo.
+      en: |
+        Legal and academic English: **albeit** (although, before an adjective or phrase), **whereby** (by which), **thereby** (as a result of this), **notwithstanding** (despite), **insofar as** (to the extent that).
+    examples:
+    - ["It was a small, albeit important, change.", "Foi uma mudança pequena, ainda que importante.", "Foi uma mudança pequena, ainda que importante.", "albeit"]
+    - ["He resigned, thereby avoiding a scandal.", "Ele renunciou, evitando assim um escândalo.", "Ele renunciou, evitando assim um escândalo.", "thereby"]
+    - ["They signed an agreement whereby both sides would cut costs.", "Assinaram um acordo pelo qual os dois lados cortariam custos.", "Assinaram um acordo pelo qual os dois lados cortariam custos.", "whereby"]
+    match: {seq: [{word: [albeit, whereby, thereby, notwithstanding, insofar, wherein, hence, whereupon]}], gap: 0}
+    pool: [albeit, whereby, thereby, hence, notwithstanding]
+
+  - id: en-c2-ellipsis
+    title: I'd like to, but I can't
+    meaning: {en: "ellipsis and substitution: to, one, do so", pt: "elipse e substituição: to, one, do so"}
+    intro:
+      pt: |
+        O inglês evita repetir: o verbo some depois de **to** (**"Are you coming?" "I'd like to, but I can't."**), depois de auxiliares (**"Can you swim?" "I can."**) e é substituído por **one(s)** para substantivos (**I prefer the red one**) e **do so** no formal (**He promised to call, and he did so**). O brasileiro tende a deixar ~~I'd like~~ sem o **to**, ou a repetir o substantivo.
+      en: |
+        English avoids repetition: **to** stands for a verb phrase (**I'd like to, but I can't**), auxiliaries answer alone (**I can**), **one(s)** replaces a countable noun (**the red one**), formal **do so** replaces a verb phrase.
+    mistakes:
+    - wrong: I'd like, but I can't.
+      right: I'd like to, but I can't.
+      why: {en: "keep to when the verb is left out.", pt: "mantenha o to quando o verbo é omitido."}
+    examples:
+    - ["I'd like to, but I can't.", "Eu gostaria, mas não posso.", "Eu gostaria, mas não posso.", "to"]
+    - ["I prefer the red one.", "Prefiro o vermelho.", "Prefiro o vermelho.", "one"]
+    - ["You don't have to if you don't want to.", "Você não precisa, se não quiser.", "Você não precisa, se não quiser.", "to"]
+    match:
+    - {seq: [{word: [like, love, want, wants, wanted, have, has, had, need, try, tried, going, supposed, ought, used, hope, plan, mean, meant]}, {word: [to], trail: ".,!?"}], gap: 1, pool: [to, it, so, that]}
+    - {seq: [{word: [the, this, that, a, which, another, other, red, blue, new, old, big, small, black, white]}, {pos: adj}, {word: [one, ones]}], near: 1, gap: 2, pool: [one, ones, it, them]}

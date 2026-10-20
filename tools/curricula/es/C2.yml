@@ -1,0 +1,195 @@
+id: C2
+topics:
+
+- title: {en: Literary and formal verb forms, pt: Formas verbais literárias e formais}
+  lessons:
+  - id: es-c2-futuro-subj
+    title: si así no lo hiciere
+    meaning: {en: "the future subjunctive (law, sayings, old texts)", pt: "o futuro do subjuntivo (leis, ditados, textos antigos)"}
+    intro:
+      en: |
+        Modern Spanish has lost the future subjunctive in speech, but it survives in legal texts, oaths and sayings: **Adonde fueres, haz lo que vieres** "When in Rome…". **El que infringiere esta norma será sancionado.** Form: the **-ra** stem with **-re**: **hablare, tuviere, fuere, hiciere**. Read it as a present subjunctive (or the Portuguese future subjunctive).
+      pt: |
+        O espanhol moderno perdeu o futuro do subjuntivo na fala, mas ele sobrevive em leis, juramentos e ditados: **Adonde fueres, haz lo que vieres** (Aonde fores, faze o que vires). **El que infringiere esta norma será sancionado.** Forma: o radical do **-ra** com **-re**: **hablare, tuviere, fuere, hiciere**. Para o brasileiro é fácil: corresponde ao nosso futuro do subjuntivo (*for, tiver, fizer*), que no espanhol atual vira presente do subjuntivo ou indicativo.
+    examples:
+    - ["Adonde fueres, haz lo que vieres.", "When in Rome, do as the Romans do.", "Aonde fores, faze o que vires.", "fueres"]
+    - ["Sea lo que fuere, lo haremos.", "Be that as it may, we'll do it.", "Seja como for, vamos fazer isso.", "fuere"]
+    - ["El que así no lo hiciere será castigado.", "Whoever fails to do so shall be punished.", "Quem assim não fizer será punido.", "hiciere"]
+    match: {seq: [{word: [fuere, fueres, fueren, hubiere, hubieren, hiciere, hicieren, dijere, viere, vieres, quisiere, quisieres, pudiere, pudieren, tuviere, tuvieren, estuviere, hallare, hallaren, infringiere, deseare, desearen, fuéremos]}], gap: 0}
+
+  - id: es-c2-preterito-anterior
+    title: apenas hubo terminado
+    meaning: {en: "the past anterior (pretérito anterior)", pt: "o pretérito anterior"}
+    intro:
+      en: |
+        **hube, hubiste, hubo, hubimos, hubisteis, hubieron** + participle, after **apenas, en cuanto, cuando, una vez que, tan pronto como**: an action just before another past action. **Apenas hubo terminado, se fue.** Only in literary narrative; speech uses the preterite or pluperfect: **En cuanto terminó, se fue.**
+      pt: |
+        **hube, hubiste, hubo…** + particípio, depois de **apenas, en cuanto, cuando, una vez que, tan pronto como**: ação imediatamente anterior a outra no passado. **Apenas hubo terminado, se fue** (Mal tinha terminado, foi embora). Só na narrativa literária; a fala usa o pretérito simples ou o mais-que-perfeito: **En cuanto terminó, se fue.**
+    examples:
+    - ["Apenas hubo terminado, se fue.", "No sooner had he finished than he left.", "Mal tinha terminado, foi embora.", "hubo"]
+    - ["Cuando hubieron comido, salieron.", "When they had eaten, they went out.", "Depois de terem comido, saíram.", "hubieron"]
+    - ["En cuanto hubo llegado, llamó a su madre.", "As soon as he had arrived, he called his mother.", "Assim que chegou, ligou para a mãe.", "hubo"]
+    match: {seq: [{word: [hube, hubiste, hubo, hubimos, hubisteis, hubieron]}, {re: "(ado|ido|cho|sto|rto|elto|ierto)$"}], near: 1, gap: 0}
+    pool: [hubo, había, ha, habría, hubiera]
+
+  - id: es-c2-se-forma
+    title: hablase, tuviese
+    meaning: {en: "the -se imperfect subjunctive and the -ra form in writing", pt: "o imperfeito do subjuntivo em -se e a forma em -ra na escrita"}
+    intro:
+      en: |
+        **-se** and **-ra** are interchangeable as subjunctives: **Si tuviese / tuviera tiempo…**; **-se** is commoner in Spain and in careful writing. But only **-ra** can replace the conditional (**Hubiera / Habría sido mejor**) or, in journalism and literature, the pluperfect indicative: **el que fuera presidente** "the man who had been president".
+      pt: |
+        **-se** e **-ra** se alternam como subjuntivo: **Si tuviese / tuviera tiempo…** (Se eu tivesse tempo); **-se** é mais comum na Espanha e na escrita cuidada — e lembra o nosso *tivesse*. Só **-ra** pode substituir o condicional (**Hubiera / Habría sido mejor**) ou, no jornalismo e na literatura, o mais-que-perfeito do indicativo: **el que fuera presidente** (o que fora presidente) — aí funciona como o nosso *fora*.
+    examples:
+    - ["Si tuviese tiempo, te ayudaría.", "If I had time, I'd help you.", "Se eu tivesse tempo, te ajudaria.", "tuviese"]
+    - ["Le pedí que se quedase.", "I asked him to stay.", "Pedi a ele que ficasse.", "quedase"]
+    - ["No era posible que lo supiesen.", "They couldn't possibly have known.", "Não era possível que soubessem.", "supiesen"]
+    match: {seq: [{re: "(ase|ases|ásemos|asen|iese|ieses|iésemos|iesen|yese|yesen)$", pos: verb, mood: subj}], same: [person, number]}
+
+- title: {en: Sentence structure, pt: Estrutura da frase}
+  lessons:
+  - id: es-c2-cuyo
+    title: cuyo, cuya
+    meaning: {en: "cuyo: whose, agreeing with the thing owned", pt: "cuyo: cujo, concordando com o possuído"}
+    intro:
+      en: |
+        **cuyo, cuya, cuyos, cuyas** agrees with the noun that follows, not with the owner: **el autor cuya novela leí** "the author whose novel I read", **la casa cuyos dueños viven fuera**. It belongs to writing; speech often avoids it (~~que su~~ is considered substandard).
+      pt: |
+        **cuyo, cuya, cuyos, cuyas** concorda com o substantivo que vem depois, como o nosso *cujo*: **el autor cuya novela leí** (o autor cujo romance li), **la casa cuyos dueños viven fuera**. É da língua escrita; na fala se evita (o ~~que su~~ é considerado incorreto, como o nosso *que o… dele*).
+    examples:
+    - ["Es el autor cuya novela leí.", "He's the author whose novel I read.", "É o autor cujo romance eu li.", "cuya"]
+    - ["Tengo un amigo cuyo padre es piloto.", "I have a friend whose father is a pilot.", "Tenho um amigo cujo pai é piloto.", "cuyo"]
+    - ["La casa, cuyos dueños viven fuera, está vacía.", "The house, whose owners live abroad, is empty.", "A casa, cujos donos moram fora, está vazia.", "cuyos"]
+    match: {seq: [{word: [cuyo, cuya, cuyos, cuyas]}], gap: 0}
+    pool: [cuyo, cuya, cuyos, cuyas]
+
+  - id: es-c2-el-cual
+    title: el cual, lo cual
+    meaning: {en: "el cual, la cual, lo cual after prepositions and commas", pt: "el cual, la cual, lo cual depois de preposição e vírgula"}
+    intro:
+      en: |
+        **el cual / la cual / los cuales / las cuales** (= el que) after prepositions and in non-defining clauses, mainly in writing: **la razón por la cual vine**, **el edificio, en el cual trabajo**. **lo cual / lo que** refers to a whole idea: **Llegó tarde, lo cual me molestó.**
+      pt: |
+        **el cual / la cual / los cuales / las cuales** (= o qual, a qual) depois de preposição e em orações explicativas, sobretudo na escrita: **la razón por la cual vine** (a razão pela qual vim). **lo cual / lo que** retoma uma ideia inteira: **Llegó tarde, lo cual me molestó** (Chegou tarde, o que me incomodou). Atenção: **lo cual**, não ~~el cual~~, para uma ideia.
+    examples:
+    - ["Esa es la razón por la cual vine.", "That's the reason why I came.", "Essa é a razão pela qual eu vim.", "la"]
+    - ["Llegó tarde, lo cual me molestó.", "He arrived late, which annoyed me.", "Ele chegou tarde, o que me incomodou.", "lo"]
+    - ["Tengo dos hermanos, los cuales viven en Madrid.", "I have two brothers, who live in Madrid.", "Tenho dois irmãos, os quais moram em Madri.", "los"]
+    match: {seq: [{word: [el, la, los, las, lo]}, {word: [cual, cuales]}], gap: 0}
+    pool: [el, la, los, las, lo]
+
+  - id: es-c2-que-subj
+    title: que te vaya bien
+    meaning: {en: "independent que + subjunctive: wishes and orders", pt: "que + subjuntivo independente: desejos e ordens"}
+    intro:
+      en: |
+        A main clause can begin with **que** + subjunctive: wishes **¡Que te vaya bien! ¡Que aproveche! ¡Que descanses!**, and indirect orders **Que pase el siguiente** "Next, please", **Que lo haga él.** It is the shortened form of *quiero / espero que…*.
+      pt: |
+        Uma oração principal pode começar com **que** + subjuntivo: desejos **¡Que te vaya bien!** (Que tudo dê certo!), **¡Que aproveche!** (Bom apetite!), **¡Que descanses!**, e ordens indiretas **Que pase el siguiente** (O próximo, por favor), **Que lo haga él** (Ele que faça). É a forma curta de *quiero / espero que…*, como no português.
+    examples:
+    - ["¡Que te vaya bien!", "All the best!", "Que tudo dê certo para você!", "vaya"]
+    - ["¡Que descanses!", "Sleep well!", "Bom descanso!", "descanses"]
+    - ["Que lo haga él.", "Let him do it.", "Ele que faça.", "haga"]
+    match: {seq: [{word: [que], start: true}, {pos: verb, mood: [subj, imp]}], near: 2, gap: 1, same: [person, number]}
+
+  - id: es-c2-quiza
+    title: quizá venga, quizá viene
+    meaning: {en: "quizá, tal vez, acaso: mood as a degree of doubt", pt: "quizá, tal vez, acaso: o modo como grau de dúvida"}
+    intro:
+      en: |
+        **quizá(s), tal vez, posiblemente, probablemente** before the verb take either mood: subjunctive for more doubt (**Quizá venga mañana**), indicative for a likelier guess (**Quizá viene mañana**). After the verb, indicative only: **Viene mañana, quizá.** **a lo mejor** always takes the indicative: **A lo mejor llueve.**
+      pt: |
+        **quizá(s), tal vez, posiblemente, probablemente** antes do verbo admitem os dois modos: subjuntivo para mais dúvida (**Quizá venga mañana**, Talvez venha amanhã), indicativo para palpite mais firme (**Quizá viene mañana**). Depois do verbo, só indicativo. **a lo mejor** (de repente, quem sabe) sempre com indicativo: **A lo mejor llueve.**
+    examples:
+    - ["Quizá venga mañana.", "Maybe he'll come tomorrow.", "Talvez ele venha amanhã.", "venga"]
+    - ["Tal vez tengas razón.", "Perhaps you're right.", "Talvez você tenha razão.", "tengas"]
+    - ["A lo mejor llueve.", "It might rain.", "Pode ser que chova.", "llueve"]
+    match:
+    - {seq: [{word: [quizá, quizás, acaso, posiblemente, probablemente]}, {pos: verb}], near: 1, gap: 1, same: [person, number, mood]}
+    - {seq: [{word: [tal]}, {word: [vez]}, {pos: verb}], near: 1, gap: 2, same: [person, number, mood]}
+    - {seq: [{word: [lo]}, {word: [mejor]}, {pos: verb}], near: 1, gap: 2, same: [person, number, mood]}
+
+  - id: es-c2-por-mas-que
+    title: por mucho que insistas
+    meaning: {en: "intensive concession: por más que, por mucho que, por muy… que", pt: "concessão intensiva: por más que, por mucho que, por muy… que"}
+    intro:
+      en: |
+        **por más / mucho que** + verb, **por muy** + adjective + **que**: "however much / however…": **Por mucho que insistas, no iré. Por muy rico que sea, no es feliz.** Usually subjunctive; indicative only for a known fact. Also formal **si bien** "although" (+ indicative) and **aun cuando** "even if".
+      pt: |
+        **por más / mucho que** + verbo, **por muy** + adjetivo + **que** = por mais que: **Por mucho que insistas, no iré** (Por mais que você insista, não vou). **Por muy rico que sea, no es feliz** (Por mais rico que seja…). Em geral subjuntivo; indicativo só para fato conhecido. Também o formal **si bien** (+ indicativo, = embora) e **aun cuando** (mesmo que).
+    examples:
+    - ["Por mucho que insistas, no iré.", "However much you insist, I won't go.", "Por mais que você insista, não vou.", "insistas"]
+    - ["Por muy rico que sea, no es feliz.", "Rich as he may be, he isn't happy.", "Por mais rico que seja, ele não é feliz.", "sea"]
+    - ["Por más que lo intento, no puedo.", "However hard I try, I can't.", "Por mais que eu tente, não consigo.", "intento"]
+    match: {seq: [{word: [por]}, {word: [más, mucho, mucha, muchos, muchas, muy, poco]}, {word: [que]}, {pos: verb}], near: 3, gap: 3, same: [person, number]}
+
+- title: {en: Register and variation, pt: Registro e variação}
+  lessons:
+  - id: es-c2-voseo
+    title: vos sos, vos tenés
+    meaning: {en: "voseo: the vos forms of Argentina, Uruguay and Central America", pt: "voseo: as formas de vos da Argentina, do Uruguai e da América Central"}
+    intro:
+      en: |
+        In the River Plate and much of Central America **vos** replaces **tú**, with its own present: stress on the ending, **-ás, -és, -ís**: **vos hablás, tenés, vivís**; **vos sos** "you are". Imperative: **hablá, tené, vení, decí**. Subject and object pronoun: **vos** (**te** stays: **te quiero**); possessive **tu**.
+      pt: |
+        No Rio da Prata e em boa parte da América Central, **vos** substitui **tú**, com presente próprio, tônico na terminação: **-ás, -és, -ís**: **vos hablás, tenés, vivís**; **vos sos** (você é). Imperativo: **hablá, tené, vení, decí**. O pronome **te** continua (**te quiero**) e o possessivo é **tu**. Para o brasileiro do Sul, que ouve muito espanhol rioplatense, vale reconhecer de cara.
+    table:
+      head: {en: [Verb, tú, vos], pt: [Verbo, tú, vos]}
+      rows:
+      - [ser, eres, sos]
+      - [tener, tienes, tenés]
+      - [querer, quieres, querés]
+      - [poder, puedes, podés]
+      - [venir, vienes, venís]
+    examples:
+    - ["¿Vos sos de Buenos Aires?", "Are you from Buenos Aires?", "Você é de Buenos Aires?", "sos"]
+    - ["¿Qué querés comer?", "What do you want to eat?", "O que você quer comer?", "querés"]
+    - ["Vos tenés razón.", "You're right.", "Você tem razão.", "tenés"]
+    match: {seq: [{word: [sos, tenés, querés, podés, sabés, hacés, decís, venís, vivís, pensás, hablás, sentís, conocés, entendés, necesitás, tomás, estudiás, trabajás, creés, salís, pedís, preferís]}], gap: 0}
+
+  - id: es-c2-diminutivos
+    title: un momentito, ahorita
+    meaning: {en: "diminutives and augmentatives: -ito, -illo, -ón, -azo", pt: "diminutivos e aumentativos: -ito, -illo, -ón, -azo"}
+    intro:
+      en: |
+        **-ito / -ita** (general), **-illo** (Spain, Andalusia), **-ico** (Caribbean, Aragon) express smallness, affection or politeness: **un momentito, un cafecito, ahorita** (Mexico: "right now" or "in a while"). **-ón / -ona** and **-azo** enlarge or intensify: **un cochazo** "a great car", **un golpazo**, **un portazo** "a door slam". Some have become words of their own: **bolsillo, ventanilla, cajón**.
+      pt: |
+        **-ito / -ita** (geral), **-illo** (Espanha, Andaluzia), **-ico** (Caribe) exprimem tamanho, carinho ou cortesia, como o nosso *-inho*: **un momentito, un cafecito, ahorita** (México: agora mesmo ou daqui a pouco). **-ón / -ona** e **-azo** aumentam ou intensificam: **un cochazo** (um carrão), **un portazo** (uma batida de porta). Alguns viraram palavras próprias: **bolsillo** (bolso da roupa), **ventanilla** (guichê), **cajón** (gaveta).
+    examples:
+    - ["Espera un momentito.", "Wait a moment.", "Espera um minutinho.", "momentito"]
+    - ["Hablá más despacito.", "Speak a bit more slowly.", "Fala mais devagarinho.", "despacito"]
+    - ["Vivo en una casita cerca del mar.", "I live in a little house near the sea.", "Moro numa casinha perto do mar.", "casita"]
+    match: {seq: [{word: [poquito, poquita, poquitos, ahorita, perrito, perritos, gatito, gatitos, casita, abuelita, abuelito, momentito, cafecito, chiquito, chiquita, pequeñito, pequeñita, hermanito, hermanita, cerquita, despacito, librito, pajarito, besito, pobrecito, pobrecita, solito, solita, cosita, ratito, igualito, todito, niñito, florecita, bolsillo, ventanilla, cajón, portazo, golpazo, cochazo, grandote, mujerona, mesita, abrazote, chiquillo, chiquilla]}], gap: 0}
+
+  - id: es-c2-anteposicion
+    title: un gran hombre, un hombre grande
+    meaning: {en: "adjectives whose meaning changes with position", pt: "adjetivos que mudam de sentido conforme a posição"}
+    intro:
+      en: |
+        Before the noun an adjective is subjective or figurative, after it literal: **un gran hombre** "a great man" / **un hombre grande** "a big man"; **un pobre chico** "a poor (unlucky) boy" / **un chico pobre** "a poor (penniless) boy"; **un viejo amigo** "an old (long-standing) friend" / **un amigo viejo** "an elderly friend"; **el mismo día** "the same day" / **el rey mismo** "the king himself"; **cierto problema** "a certain problem" / **un dato cierto** "a true fact"; **un nuevo coche** "another car" / **un coche nuevo** "a brand-new car".
+      pt: |
+        Antes do substantivo o adjetivo é subjetivo ou figurado; depois, literal — muito parecido com o português: **un gran hombre** (um grande homem) / **un hombre grande** (um homem grande); **un pobre chico** (coitado) / **un chico pobre** (sem dinheiro); **un viejo amigo** (amigo de longa data) / **un amigo viejo** (idoso); **cierto problema** (certo problema) / **un dato cierto** (um dado verdadeiro). **grande** vira **gran** antes de substantivo singular.
+    examples:
+    - ["Fue un gran hombre.", "He was a great man.", "Ele foi um grande homem.", "gran"]
+    - ["Es un viejo amigo mío.", "He's an old friend of mine.", "É um velho amigo meu.", "viejo"]
+    - ["¡Pobre chico!", "Poor boy!", "Coitado do menino!", "Pobre"]
+    match: {seq: [{word: [gran, pobre, viejo, vieja, viejos, antiguo, antigua, antiguos, nuevo, nueva, cierto, cierta, ciertos, ciertas, único, única, mismo, misma, mismos, mismas, medio, media, propio, propia, propios, puro, pura]}, {pos: noun}], gap: 0}
+
+  - id: es-c2-infinitivo-compuesto
+    title: tras haber comido
+    meaning: {en: "the perfect infinitive: haber + participle after prepositions", pt: "o infinitivo composto: haber + particípio depois de preposições"}
+    intro:
+      en: |
+        **haber** + participle as an infinitive, after **tras, después de, por, sin, de, al**: **Tras haber comido, salimos. Gracias por haber venido. Me arrepiento de no haberlo hecho.** Formal Spanish also uses **al** + infinitive for "when": **Al llegar, llamó.**
+      pt: |
+        **haber** + particípio como infinitivo, depois de **tras, después de, por, sin, de, al**: **Tras haber comido, salimos** (Depois de ter comido, saímos). **Gracias por haber venido** (Obrigado por ter vindo). Note: o português usa *ter*, o espanhol sempre **haber**: ~~por tener venido~~. E **al** + infinitivo = ao: **Al llegar, llamó** (Ao chegar, ligou).
+    mistakes:
+    - wrong: Gracias por tener venido.
+      right: Gracias por haber venido.
+      why: {en: "compound tenses always use haber.", pt: "tempos compostos sempre com haber, nunca tener."}
+    examples:
+    - ["Gracias por haber venido.", "Thanks for coming.", "Obrigado por ter vindo.", "haber"]
+    - ["Me arrepiento de no haberlo hecho.", "I regret not having done it.", "Me arrependo de não ter feito isso.", "haberlo"]
+    - ["Tras haber comido, salimos.", "After eating, we went out.", "Depois de ter comido, saímos.", "haber"]
+    match: {seq: [{word: [tras, después, de, por, sin, al, "no"]}, {re: "^haber(lo|la|los|las|le|les|me|te|se|nos)?$"}, {re: "(ado|ido|cho|sto|rto|elto|ierto|ada|ida)$"}], near: 1, gap: 1}
+    pool: [haber, tener, ser, estar]

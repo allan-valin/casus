@@ -1,0 +1,210 @@
+id: C1
+topics:
+
+- title: {en: Subjunctive nuances, pt: Nuances do subjuntivo}
+  lessons:
+  - id: es-c1-no-creo-que
+    title: no creo que sea
+    meaning: {en: "negated opinion and perception take the subjunctive", pt: "opinião e percepção negadas pedem subjuntivo"}
+    intro:
+      en: |
+        **creer, pensar, parecer, decir, estar seguro de** + indicative when affirmed: **Creo que es verdad.** Negated, they take the subjunctive: **No creo que sea verdad. No me parece que tengas razón.** A negative question can keep the indicative: **¿No crees que es tarde?** (you expect "yes").
+      pt: |
+        **creer, pensar, parecer, decir, estar seguro de** + indicativo na afirmativa: **Creo que es verdad.** Na negativa, subjuntivo: **No creo que sea verdad** (Não acho que seja verdade). Como no português culto; mas em espanhol a regra é mais firme: ~~no creo que es~~ soa errado. Pergunta negativa pode manter o indicativo: **¿No crees que es tarde?**
+    mistakes:
+    - wrong: No creo que tiene razón.
+      right: No creo que tenga razón.
+      why: {en: "negated creer: subjunctive.", pt: "creer negado: subjuntivo."}
+    examples:
+    - ["No creo que sea verdad.", "I don't think it's true.", "Não acho que seja verdade.", "sea"]
+    - ["No me parece que tengas razón.", "I don't think you're right.", "Não me parece que você tenha razão.", "tengas"]
+    - ["No pienso que lo haga.", "I don't think he'll do it.", "Não acho que ele vá fazer isso.", "haga"]
+    match: {seq: [{word: ["no"]}, {lemma: "^(creer|pensar|parecer|decir|imaginar|suponer|estar|ser)$"}, {word: [que]}, {pos: verb, mood: [subj, imp]}], near: 2, gap: 3, same: [person, number]}
+
+  - id: es-c1-valoracion
+    title: es lógico que, el hecho de que
+    meaning: {en: "subjunctive after value judgements", pt: "subjuntivo depois de juízos de valor"}
+    intro:
+      en: |
+        **ser / parecer** + adjective or noun of judgement + **que** + subjunctive: **Es normal que estés cansado. Es una pena que no puedas venir. Me parece lógico que se queje.** Even when the fact is true, the judgement makes it subjunctive. Likewise **el hecho de que** usually: **El hecho de que lo sepa no cambia nada.** Statements of truth keep the indicative: **Es verdad que / Está claro que es así.**
+      pt: |
+        **ser / parecer** + adjetivo ou substantivo de valor + **que** + subjuntivo: **Es normal que estés cansado** (É normal que você esteja cansado). Mesmo sendo fato, o juízo pede subjuntivo. Também **el hecho de que** costuma pedir subjuntivo. Afirmações de certeza ficam no indicativo: **Es verdad que / Está claro que es así.**
+    examples:
+    - ["Es normal que estés cansado.", "It's normal that you're tired.", "É normal que você esteja cansado.", "estés"]
+    - ["Es una pena que no puedas venir.", "It's a pity you can't come.", "É uma pena que você não possa vir.", "puedas"]
+    - ["Es importante que lo sepas.", "It's important that you know it.", "É importante que você saiba disso.", "sepas"]
+    match: {seq: [{word: [normal, lógico, importante, necesario, posible, imposible, probable, improbable, raro, extraño, natural, increíble, pena, lástima, mejor, peor, bueno, malo, triste, fundamental, esencial, preciso, conveniente, urgente, hora, hecho]}, {word: [que, de]}, {pos: verb, mood: [subj, imp]}], near: 2, gap: 2, same: [person, number]}
+
+  - id: es-c1-lo-que-sea
+    title: haz lo que quieras, pase lo que pase
+    meaning: {en: "free relatives and reduplicated subjunctive", pt: "relativas livres e subjuntivo reduplicado"}
+    intro:
+      en: |
+        **lo que / donde / como / quien / cuando** + subjunctive leaves the choice open: **Haz lo que quieras. Ven cuando puedas. Siéntate donde quieras.** Repeating the verb gives "whatever": **pase lo que pase** "whatever happens", **digan lo que digan**, **sea como sea** "be that as it may", **cueste lo que cueste**.
+      pt: |
+        **lo que / donde / como / quien / cuando** + subjuntivo deixa a escolha em aberto: **Haz lo que quieras** (Faça o que quiser). Onde o português usa o futuro do subjuntivo (*quando puder, onde quiser*), o espanhol usa o presente: **Ven cuando puedas.** Com o verbo repetido: **pase lo que pase** (aconteça o que acontecer), **digan lo que digan**, **sea como sea**, **cueste lo que cueste**.
+    examples:
+    - ["Haz lo que quieras.", "Do whatever you like.", "Faça o que quiser.", "quieras"]
+    - ["Pase lo que pase, te ayudaré.", "Whatever happens, I'll help you.", "Aconteça o que acontecer, vou te ajudar.", "pase"]
+    - ["Ven cuando puedas.", "Come whenever you can.", "Venha quando puder.", "puedas"]
+    match: {seq: [{word: [lo, donde, como, quien, cuando, cuanto]}, {word: [que, quieras, quiera, quieran, puedas, pueda, puedan]}, {pos: verb, mood: [subj, imp]}], near: 1, gap: 2, same: [person, number]}
+
+  - id: es-c1-como-si
+    title: como si nada
+    meaning: {en: "como si + imperfect or pluperfect subjunctive", pt: "como si + imperfeito ou mais-que-perfeito do subjuntivo"}
+    intro:
+      en: |
+        **como si** "as if" always takes the past subjunctive, whatever the tense of the main verb: **Habla como si fuera el jefe. Me miró como si no me hubiera visto nunca.** Never the present: ~~como si es~~.
+      pt: |
+        **como si** (como se) pede sempre o subjuntivo passado, qualquer que seja o tempo principal: **Habla como si fuera el jefe** (Fala como se fosse o chefe). **Me miró como si no me hubiera visto nunca.** Igual ao português, nunca presente: ~~como si es~~.
+    examples:
+    - ["Habla como si fuera el jefe.", "He talks as if he were the boss.", "Ele fala como se fosse o chefe.", "fuera"]
+    - ["Me miró como si no me hubiera visto nunca.", "She looked at me as if she had never seen me.", "Ela me olhou como se nunca tivesse me visto.", "hubiera"]
+    - ["Actúa como si no pasara nada.", "He acts as if nothing were happening.", "Ele age como se nada estivesse acontecendo.", "pasara"]
+    match: {seq: [{word: [como]}, {word: [si]}, {pos: verb, mood: subj}], near: 2, gap: 2, same: [person, number]}
+
+  - id: es-c1-condicionales
+    title: a menos que, con tal de que
+    meaning: {en: "conditional conjunctions with the subjunctive", pt: "conjunções condicionais com subjuntivo"}
+    intro:
+      en: |
+        Besides **si**: **a menos que / a no ser que** "unless", **con tal de que / siempre que** "provided that", **en caso de que** "in case", **salvo que** "except if". All take the subjunctive: **Iré a menos que llueva. Te lo presto siempre que me lo devuelvas.** (**siempre que** + indicative means "whenever".)
+      pt: |
+        Além de **si**: **a menos que / a no ser que** (a menos que), **con tal de que / siempre que** (desde que, contanto que), **en caso de que** (caso), **salvo que**. Todas pedem subjuntivo: **Iré a menos que llueva. Te lo presto siempre que me lo devuelvas** (Te empresto desde que você me devolva). **siempre que** + indicativo = sempre que.
+    examples:
+    - ["Iré a menos que llueva.", "I'll go unless it rains.", "Eu vou, a menos que chova.", "llueva"]
+    - ["Te lo presto siempre que me lo devuelvas.", "I'll lend it to you provided you give it back.", "Eu te empresto desde que você me devolva.", "devuelvas"]
+    - ["Llévate el paraguas en caso de que llueva.", "Take the umbrella in case it rains.", "Leve o guarda-chuva caso chova.", "llueva"]
+    match: {seq: [{word: [menos, tal, caso, siempre, condición, salvo, excepto, ser]}, {word: [que]}, {pos: verb, mood: [subj, imp]}], near: 2, gap: 2, same: [person, number]}
+
+- title: {en: "Time, guesses and politeness", pt: "Tempo, suposições e cortesia"}
+  lessons:
+  - id: es-c1-futuro-conjetura
+    title: ¿dónde estará?
+    meaning: {en: "future and conditional of conjecture", pt: "futuro e condicional de suposição"}
+    intro:
+      en: |
+        The future often means "probably, I wonder" about the present: **¿Dónde estará Tom?** "Where can Tom be?" **Serán las diez** "It must be about ten." The conditional does the same for the past: **Serían las diez cuando llegó** "It must have been about ten." **Tendría veinte años** "He was probably twenty."
+      pt: |
+        O futuro muitas vezes é suposição sobre o presente: **¿Dónde estará Tom?** (Onde será que o Tom está?) **Serán las diez** (Devem ser umas dez). O condicional faz o mesmo para o passado: **Serían las diez cuando llegó** (Deviam ser umas dez quando ele chegou). No Brasil esse uso existe (*Onde estará?*), mas é mais literário; em espanhol é cotidiano.
+    examples:
+    - ["¿Dónde estará Tom?", "I wonder where Tom is.", "Onde será que o Tom está?", "estará"]
+    - ["Serán las diez.", "It must be about ten.", "Devem ser umas dez horas.", "Serán"]
+    - ["¿Qué hora será?", "I wonder what time it is.", "Que horas serão?", "será"]
+    match: {seq: [{word: [dónde, qué, quién, quiénes, cuántos, cuántas, cuánto, cómo, cuál]}, {pos: verb, mood: ind, tense: fut}], near: 1, gap: 1, same: [person, number]}
+
+  - id: es-c1-cortesia
+    title: quisiera, debiera
+    meaning: {en: "softened requests and advice: quisiera, debería, podría", pt: "pedidos e conselhos atenuados: quisiera, debería, podría"}
+    intro:
+      en: |
+        Three steps of politeness: **Quiero un café** (blunt), **Querría un café**, **Quisiera un café** (most polite; -ra subjunctive used alone). Advice is softened the same way: **Deberías / Debieras descansar.** **Podría** and **pudiera** for requests and possibilities.
+      pt: |
+        Três degraus de cortesia: **Quiero un café** (direto), **Querría un café**, **Quisiera un café** (o mais educado; subjuntivo em -ra sozinho, como nosso *Gostaria*). Conselhos atenuados: **Deberías / Debieras descansar** (Você deveria descansar). **Podría** e **pudiera** em pedidos e possibilidades.
+    examples:
+    - ["Quisiera hablar con el director.", "I would like to speak to the manager.", "Gostaria de falar com o diretor.", "Quisiera"]
+    - ["Deberías descansar un poco.", "You should rest a little.", "Você deveria descansar um pouco.", "Deberías"]
+    - ["¿Podría decirme la hora?", "Could you tell me the time?", "O senhor poderia me dizer as horas?", "Podría"]
+    match: {seq: [{word: [quisiera, quisieras, quisiéramos, quisieran, debiera, debieras, debieran, debería, deberías, deberíamos, deberían, querría, querrías, podría, podrías, podríamos, podrían, pudiera, pudieras]}], gap: 0}
+
+  - id: es-c1-mixtas
+    title: si hubiera estudiado, ahora sabría
+    meaning: {en: "mixed conditionals and de + infinitive", pt: "condicionais mistas e de + infinitivo"}
+    intro:
+      en: |
+        Past condition, present result: **Si hubiera estudiado medicina, ahora sería médico.** Present condition, past result: **Si fuera más listo, no lo habría hecho.** In formal style **de** + infinitive replaces **si**: **De haberlo sabido, habría venido** "Had I known…". **De seguir así** "If it goes on like this".
+      pt: |
+        Condição passada, resultado presente: **Si hubiera estudiado medicina, ahora sería médico** (Se eu tivesse estudado medicina, agora seria médico). Condição presente, resultado passado: **Si fuera más listo, no lo habría hecho.** No registro formal, **de** + infinitivo substitui **si**: **De haberlo sabido, habría venido** (Se eu soubesse, teria vindo). **De seguir así** (Se continuar assim).
+    examples:
+    - ["Si hubiera estudiado medicina, ahora sería médico.", "If I had studied medicine, I'd be a doctor now.", "Se eu tivesse estudado medicina, agora seria médico.", "sería"]
+    - ["De haberlo sabido, habría venido.", "Had I known, I would have come.", "Se eu soubesse, teria vindo.", "haberlo"]
+    - ["Si me hubieras escuchado, no estarías aquí.", "If you'd listened to me, you wouldn't be here.", "Se você tivesse me escutado, não estaria aqui.", "estarías"]
+    match:
+    - {seq: [{word: [si]}, {word: [hubiera, hubieras, hubiéramos, hubieran, hubiese, hubieses, hubiesen]}, {re: "(ría|rías|ríamos|rían)$"}], near: 6, gap: 1}
+    - {seq: [{word: [de], start: true}, {re: "^haber"}], gap: 1}
+    pool: [hubiera, había, habría, haya, haberlo]
+
+- title: {en: Discourse and connectors, pt: Discurso e conectores}
+  lessons:
+  - id: es-c1-contraste
+    title: sin embargo, no obstante
+    meaning: {en: "contrast: sin embargo, no obstante, en cambio, por el contrario", pt: "contraste: sin embargo, no obstante, en cambio, por el contrario"}
+    intro:
+      en: |
+        **sin embargo / no obstante** "however" (no obstante is more formal), **en cambio** "on the other hand" for a contrast between two things, **por el contrario** "on the contrary" for a correction. They usually go between commas: **Es caro; sin embargo, vale la pena.**
+      pt: |
+        **sin embargo / no obstante** = no entanto, porém (no obstante é mais formal); **en cambio** = já, por outro lado (contraste entre duas coisas); **por el contrario** = pelo contrário. Costumam vir entre vírgulas: **Es caro; sin embargo, vale la pena.** Cuidado: *embargo* não tem nada a ver com o "embargo" português nesse uso.
+    examples:
+    - ["Es caro; sin embargo, vale la pena.", "It's expensive; however, it's worth it.", "É caro; no entanto, vale a pena.", "embargo"]
+    - ["Yo soy alto; mi hermano, en cambio, es bajo.", "I'm tall; my brother, on the other hand, is short.", "Eu sou alto; já meu irmão é baixo.", "cambio"]
+    - ["No estaba enfadado; por el contrario, parecía feliz.", "He wasn't angry; on the contrary, he seemed happy.", "Ele não estava bravo; pelo contrário, parecia feliz.", "contrario"]
+    match: {seq: [{word: [sin, "no", en, por, al]}, {word: [embargo, obstante, cambio, contrario]}], gap: 1}
+    pool: [embargo, obstante, cambio, contrario]
+
+  - id: es-c1-causa-consecuencia
+    title: ya que, así que
+    meaning: {en: "cause and consequence: ya que, puesto que, dado que, así que", pt: "causa e consequência: ya que, puesto que, dado que, así que"}
+    intro:
+      en: |
+        Cause: **porque** (neutral), **ya que / puesto que / dado que** (the cause is known, often first): **Ya que estás aquí, ayúdame.** **como** at the start: **Como llovía, no salimos.** Consequence: **así que, de modo que, por lo tanto, por eso**: **Llovía, así que no salimos.**
+      pt: |
+        Causa: **porque** (neutro), **ya que / puesto que / dado que** (= já que, uma vez que): **Ya que estás aquí, ayúdame.** **como** no início: **Como llovía, no salimos.** Consequência: **así que, de modo que, por lo tanto, por eso** (então, portanto, por isso): **Llovía, así que no salimos.** Falso amigo: **puesto que** é causal (= já que), não concessivo.
+    examples:
+    - ["Ya que estás aquí, ayúdame.", "Since you're here, help me.", "Já que você está aqui, me ajude.", "Ya"]
+    - ["Llovía, así que no salimos.", "It was raining, so we didn't go out.", "Estava chovendo, então não saímos.", "así"]
+    - ["Puesto que no vienes, me voy.", "Since you're not coming, I'm leaving.", "Já que você não vem, eu vou embora.", "Puesto"]
+    match: {seq: [{word: [ya, puesto, dado, así]}, {word: [que]}], gap: 0}
+    pool: [ya, puesto, dado, así, aun]
+
+  - id: es-c1-duplicacion
+    title: a Juan le di el libro
+    meaning: {en: "doubled objects: a mí me, a Juan le, el libro lo", pt: "objeto duplicado: a mí me, a Juan le, el libro lo"}
+    intro:
+      en: |
+        An indirect object is usually doubled by a pronoun: **Le di el libro a Juan. A mí me gusta.** A direct object put first must be repeated by a pronoun: **El libro lo compré ayer. A tu hermana la vi en el cine.** Without the pronoun it sounds wrong.
+      pt: |
+        O objeto indireto costuma ser duplicado por um pronome: **Le di el libro a Juan** (Dei o livro ao Juan). **A mí me gusta.** O objeto direto anteposto precisa ser retomado por pronome: **El libro lo compré ayer** (O livro, comprei ontem). **A tu hermana la vi en el cine.** Sem o pronome soa errado em espanhol.
+    examples:
+    - ["A mí me gusta el cine.", "I like the cinema.", "Eu gosto de cinema.", "me"]
+    - ["A tu hermana la vi en el cine.", "I saw your sister at the cinema.", "Vi sua irmã no cinema.", "la"]
+    - ["A Juan le di el libro.", "I gave Juan the book.", "Dei o livro ao Juan.", "le"]
+    match: {seq: [{word: [a], start: true}, {pos: [noun, pron], re: "^(?!(qué|quién|quiénes|cuál|cuáles|dónde|cuánto|cuántos|hora)$)"}, {word: [me, te, le, les, lo, la, los, las, nos]}, {pos: verb}], near: 1, gap: 2}
+    pool: [me, te, le, les, lo, la, nos]
+
+  - id: es-c1-lo-adjetivo
+    title: lo bueno, lo rápido que
+    meaning: {en: "neuter lo + adjective", pt: "o neutro lo + adjetivo"}
+    intro:
+      en: |
+        **lo** + adjective makes an abstract noun: **lo bueno** "the good thing", **lo importante es…**, **lo mejor** "the best thing". **lo** + adjective/adverb + **que** means "how": **No sabes lo difícil que es** "You don't know how hard it is."
+      pt: |
+        **lo** + adjetivo forma um substantivo abstrato: **lo bueno** (o bom, a parte boa), **lo importante es…**, **lo mejor** (o melhor). **lo** + adjetivo/advérbio + **que** = como, o quanto: **No sabes lo difícil que es** (Você não sabe como é difícil). Em espanhol é **lo**, nunca ~~el~~ bueno nesse sentido.
+    examples:
+    - ["Lo importante es participar.", "The important thing is to take part.", "O importante é participar.", "Lo"]
+    - ["No sabes lo difícil que es.", "You don't know how hard it is.", "Você não sabe como é difícil.", "lo"]
+    - ["Lo mejor es esperar.", "The best thing is to wait.", "O melhor é esperar.", "Lo"]
+    match: {seq: [{word: [lo]}, {pos: [adj, adv], not: {pos: verb}}], gap: 0}
+    pool: [lo, el, la, los]
+
+  - id: es-c1-ser-estar-adj
+    title: es listo, está listo
+    meaning: {en: "adjectives that change meaning with ser and estar", pt: "adjetivos que mudam de sentido com ser e estar"}
+    intro:
+      en: |
+        Some adjectives mean different things: **ser listo** "clever" / **estar listo** "ready"; **ser aburrido** "boring" / **estar aburrido** "bored"; **ser malo** "bad" / **estar malo** "ill"; **ser rico** "rich" / **estar rico** "tasty"; **ser vivo** "sharp" / **estar vivo** "alive"; **ser orgulloso** "proud (arrogant)" / **estar orgulloso de** "proud of".
+      pt: |
+        Alguns adjetivos mudam de sentido: **ser listo** (esperto) / **estar listo** (pronto); **ser aburrido** (chato) / **estar aburrido** (entediado); **ser malo** (mau) / **estar malo** (doente); **ser rico** (rico) / **estar rico** (gostoso); **ser vivo** (esperto) / **estar vivo** (vivo); **ser orgulloso** (arrogante) / **estar orgulloso de** (orgulhoso de).
+    table:
+      head: {en: [Adjective, with ser, with estar], pt: [Adjetivo, com ser, com estar]}
+      rows:
+      - [listo, clever / esperto, ready / pronto]
+      - [aburrido, boring / chato, bored / entediado]
+      - [malo, bad / mau, ill / doente]
+      - [rico, rich / rico, tasty / gostoso]
+      - [vivo, sharp / esperto, alive / vivo]
+    examples:
+    - ["La cena está lista.", "Dinner is ready.", "O jantar está pronto.", "está"]
+    - ["Es un chico muy listo.", "He's a very clever boy.", "É um menino muito esperto.", "Es"]
+    - ["Estoy aburrido.", "I'm bored.", "Estou entediado.", "Estoy"]
+    match: {seq: [{lemma: "^(ser|estar)$", not: {lemma: "^ir$"}}, {word: [listo, lista, listos, listas, aburrido, aburrida, aburridos, aburridas, malo, mala, malos, malas, rico, rica, ricos, ricas, vivo, viva, vivos, vivas, orgulloso, orgullosa, despierto, despierta, atento, atenta, verde, verdes, seguro, segura, interesado, interesada, católico]}], near: 1, gap: 0}
+    pool: [es, está, son, están, era, estaba]

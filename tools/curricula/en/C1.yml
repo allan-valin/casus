@@ -1,0 +1,245 @@
+id: C1
+topics:
+
+- title: {en: Emphasis and inversion, pt: Ênfase e inversão}
+  lessons:
+  - id: en-c1-inversion
+    title: never have I seen
+    meaning: {en: "inversion after negative and restrictive adverbs", pt: "inversão depois de advérbios negativos e restritivos"}
+    intro:
+      pt: |
+        Em estilo formal ou enfático, depois de **never, rarely, seldom, hardly, little, nowhere, not only, no sooner, only then** no início da frase, o auxiliar vem antes do sujeito, como numa pergunta: **Never have I seen such a mess** (Nunca vi tamanha bagunça). **Not only did he lie, he also stole.** **Hardly had we arrived when it started to rain.** Sem auxiliar, entra **do / does / did**.
+      en: |
+        After a negative or restrictive adverbial at the start (**never, rarely, seldom, hardly, little, nowhere, not only, no sooner, only then**) the auxiliary comes before the subject: **Never have I seen such a mess. Not only did he lie, he also stole.**
+    examples:
+    - ["Never have I seen such a mess.", "Nunca vi tamanha bagunça.", "Nunca vi tamanha bagunça.", "have"]
+    - ["Not only did he lie, he also stole.", "Ele não só mentiu, como também roubou.", "Ele não só mentiu, como também roubou.", "did"]
+    - ["Rarely do we see such talent.", "Raramente vemos tanto talento.", "Raramente vemos tanto talento.", "do"]
+    match:
+    - {seq: [{word: [never, rarely, seldom, hardly, scarcely, little, nowhere], start: true}, {word: [have, has, had, do, does, did, will, would, can, could, is, are, was, were, shall, should]}, {word: [i, you, he, she, it, we, they]}], gap: 1}
+    - {seq: [{word: ["not"], start: true}, {word: [only]}, {word: [do, does, did, is, was, are, were, has, have, had, can, could, will, would]}], gap: 2}
+    pool: [have, did, do, had, was]
+
+  - id: en-c1-cleft
+    title: what I need is, it was Tom who
+    meaning: {en: "cleft sentences", pt: "frases clivadas"}
+    intro:
+      pt: |
+        Para destacar uma parte da frase: **What I need is a holiday** (O que eu preciso é de férias). **All I want is some peace** (Tudo o que eu quero é…). **It was Tom who broke it** (Foi o Tom que quebrou). **It's money that matters.** Lembre: em inglês **what** = *o que* nesse uso; nunca ~~That I need is~~.
+      en: |
+        To focus on one part: **What I need is a holiday. All I want is some peace. It was Tom who broke it.**
+    examples:
+    - ["What I need is a holiday.", "O que eu preciso é de férias.", "O que eu preciso é de férias.", "What"]
+    - ["It was Tom who broke it.", "Foi o Tom que quebrou.", "Foi o Tom que quebrou.", "who"]
+    - ["All I want is some peace.", "Tudo o que eu quero é um pouco de paz.", "Tudo o que eu quero é um pouco de paz.", "All"]
+    match:
+    - {seq: [{word: [what, all], start: true}, {word: [i, you, he, she, we, they, tom, mary]}, {pos: verb}, {word: [is, was]}], near: 2, gap: 0, pool: [What, All, That, Which]}
+    - {seq: [{word: [it], start: true}, {word: [was, is, "'s"]}, {pos: [noun, pron]}, {word: [who, that]}], near: 2, gap: 3, pool: [who, that, which, what]}
+
+  - id: en-c1-emphatic-do
+    title: I do like it
+    meaning: {en: "emphatic do", pt: "o do enfático"}
+    intro:
+      pt: |
+        **do / does / did** numa frase afirmativa reforça o verbo — contradiz, insiste ou confirma: **I do like it!** (Eu gosto, sim!) **She did tell you** (Ela te contou, sim). **Do sit down** (Sente-se, por favor — educado). Na fala, o **do** recebe acento forte. Equivale ao nosso *sim* no fim ou ao *é que*.
+      en: |
+        **do / does / did** in an affirmative sentence emphasises the verb — contradicting, insisting or confirming: **I do like it! She did tell you. Do sit down.**
+    examples:
+    - ["I do like it!", "Eu gosto, sim!", "Eu gosto, sim!", "do"]
+    - ["She did tell you.", "Ela te contou, sim.", "Ela te contou, sim.", "did"]
+    - ["He does work hard.", "Ele trabalha muito, sim.", "Ele trabalha muito, sim.", "does"]
+    match: {seq: [{word: [i, you, we, they, he, she, it, tom, mary]}, {word: [do, does, did]}, {lemma: "^(like|love|want|know|hope|think|need|remember|believe|care|work|try|understand|feel|mean|wish|appreciate|enjoy|miss|look|have|tell|say|see|agree|exist|seem|sound|make|speak|study|help)$", not: {pos: [noun, adj]}}], gap: 1}
+    pool: [do, does, did, am]
+
+  - id: en-c1-so-do-i
+    title: so do I, neither can she
+    meaning: {en: "short additions: so do I, neither do I, I hope so", pt: "respostas curtas: so do I, neither do I, I hope so"}
+    intro:
+      pt: |
+        Para concordar sem repetir: **so** + auxiliar + sujeito (afirmativo): **"I'm tired." "So am I."** (Eu também.) **neither / nor** + auxiliar + sujeito (negativo): **"I can't swim." "Neither can I."** (Eu também não.) O auxiliar segue a frase original: **am, can, do, did, have**. E **I think so / I hope so / I don't think so** (Acho que sim / Espero que sim / Acho que não).
+      en: |
+        To agree briefly: **so** + auxiliary + subject; **neither / nor** + auxiliary + subject; the auxiliary matches the first sentence: **So am I. Neither can I. So did we.** Also **I think so, I hope not**.
+    examples:
+    - ["So am I.", "Eu também.", "Eu também.", "am"]
+    - ["Neither can I.", "Eu também não.", "Eu também não.", "can"]
+    - ["So did we.", "Nós também.", "Nós também.", "did"]
+    match: {seq: [{word: [so, neither, nor]}, {word: [do, does, did, am, is, are, was, were, have, has, had, can, could, will, would, should]}, {word: [i, you, he, she, it, we, they, tom, mary], trail: ".!,"}], gap: 1}
+    pool: [do, am, have, did, can, will]
+
+- title: {en: Hypothesis and formality, pt: Hipótese e formalidade}
+  lessons:
+  - id: en-c1-mixed-conditionals
+    title: if I had studied, I would be
+    meaning: {en: "mixed conditionals", pt: "condicionais mistas"}
+    intro:
+      pt: |
+        Condição no passado, resultado no presente: **If I had studied medicine, I would be a doctor now** (Se eu tivesse estudado medicina, seria médico agora). Condição presente, resultado passado: **If I were braver, I would have said something.** Misture os tempos conforme o momento de cada parte.
+      en: |
+        Past condition, present result: **If I had studied medicine, I would be a doctor now.** Present condition, past result: **If I were braver, I would have said something.**
+    examples:
+    - ["If I had studied medicine, I would be a doctor now.", "Se eu tivesse estudado medicina, seria médico agora.", "Se eu tivesse estudado medicina, seria médico agora.", "be"]
+    - ["If I were braver, I would have said something.", "Se eu fosse mais corajoso, teria dito alguma coisa.", "Se eu fosse mais corajoso, teria dito alguma coisa.", "have"]
+    - ["If he had taken the job, he would be rich.", "Se ele tivesse aceitado o emprego, seria rico.", "Se ele tivesse aceitado o emprego, seria rico.", "be"]
+    match:
+    - {seq: [{word: [if]}, {word: [had]}, {word: [would, "'d", could, might]}, {word: [be, know, feel, live, own, speak, understand, have]}], near: 6, gap: 3, pool: [be, have, been, being]}
+    - {seq: [{word: [if]}, {word: [were, was, knew, spoke, lived]}, {word: [would, "'d", could, might]}, {word: [have]}], near: 6, gap: 3, pool: [have, be, had, has]}
+
+  - id: en-c1-subjunctive
+    title: I suggest he go, it's time we left
+    meaning: {en: "the subjunctive and unreal past: suggest that, it's time, would rather", pt: "subjuntivo e passado irreal: suggest that, it's time, would rather"}
+    intro:
+      pt: |
+        Depois de **suggest, insist, recommend, demand, it's essential / important that**, o inglês formal usa o verbo na forma base, sem -s: **I suggest he go. It's essential that she be there.** (O britânico diz também **should go**.) **It's (high) time** + passado: **It's time we left** (Está na hora de irmos). **would rather** + passado para outra pessoa: **I'd rather you didn't smoke.**
+      en: |
+        After **suggest, insist, recommend, demand, it's essential that**: the bare verb (**I suggest he go. It's essential that she be there**). **It's time** + past: **It's time we left.** **would rather** + past: **I'd rather you didn't.**
+    examples:
+    - ["I suggest he go now.", "Sugiro que ele vá agora.", "Sugiro que ele vá agora.", "go"]
+    - ["It's time we left.", "Está na hora de irmos.", "Está na hora de irmos.", "left"]
+    - ["I'd rather you didn't smoke.", "Preferia que você não fumasse.", "Preferia que você não fumasse.", "didn't"]
+    match:
+    - {seq: [{word: [suggest, suggested, insist, insisted, recommend, recommended, demand, demanded, essential, important, vital, require, required, propose, proposed]}, {word: [that]}, {word: [he, she, it, tom, mary, everyone]}, {word: [be, go, come, have, take, stay, leave, do, "not", see, wait, pay, study]}], near: 2, gap: 3, pool: [be, is, go, goes, has, have]}
+    - {seq: [{word: ["'s", it's, is, high, about]}, {word: [time]}, {word: [i, you, he, she, we, they, tom]}, {word: [went, left, got, stopped, started, had, did, were, made, took, came, told, bought]}], gap: 3, pool: [went, go, left, leave, got, get]}
+    - {seq: [{word: [rather]}, {word: [you, he, she, they, we, tom, mary]}, {word: [didn't, did, were, weren't, stayed, went, came, told, left, waited, wouldn't]}], gap: 2, pool: [didn't, don't, won't, did, do]}
+
+  - id: en-c1-inverted-conditionals
+    title: should you need, had I known
+    meaning: {en: "conditionals without if: should, were, had first", pt: "condicionais sem if: should, were, had no início"}
+    intro:
+      pt: |
+        No inglês formal, a condição pode começar pelo auxiliar, sem **if**: **Should you need help, call me** (= If you need… / Caso precise). **Were I you, I'd accept** (= If I were you). **Had I known, I would have come** (= If I had known / Se eu soubesse). Comum em cartas, e-mails de trabalho e literatura.
+      en: |
+        Formal conditions can drop **if** and invert: **Should you need help, call me. Were I you, I'd accept. Had I known, I would have come.**
+    examples:
+    - ["Should you need help, call me.", "Caso precise de ajuda, me ligue.", "Caso precise de ajuda, me ligue.", "Should"]
+    - ["Had I known, I would have come.", "Se eu soubesse, teria vindo.", "Se eu soubesse, teria vindo.", "Had"]
+    - ["Were I you, I'd accept.", "Se eu fosse você, aceitaria.", "Se eu fosse você, aceitaria.", "Were"]
+    match: {seq: [{word: [should, were, had], start: true}, {word: [i, you, he, she, it, we, they, there, tom, mary]}, {trail: ","}], near: 5, gap: 0}
+    pool: [Should, Were, Had, Did, Will]
+
+  - id: en-c1-modal-nuance
+    title: needn't have, be supposed to, be bound to
+    meaning: {en: "nuanced modality: needn't have, supposed to, bound to, likely to", pt: "modalidade com nuance: needn't have, supposed to, bound to, likely to"}
+    intro:
+      pt: |
+        **needn't have + particípio**: fez, mas não precisava: **You needn't have bought flowers** (Não precisava ter comprado flores). Diferente de **didn't need to** (não precisou, e em geral não fez). **be supposed to** = era para, deveria (combinado, regra): **You're supposed to be at work.** **be bound to** = com certeza vai: **It's bound to rain.** **be likely to** = provavelmente vai. **be due to** = previsto para: **The train is due to arrive at six.**
+      en: |
+        **needn't have** + participle (done, but unnecessary) vs **didn't need to**; **be supposed to** (expected, arranged), **be bound to** (certain), **be likely to** (probable), **be due to** (scheduled).
+    examples:
+    - ["You needn't have bought flowers.", "Você não precisava ter comprado flores.", "Você não precisava ter comprado flores.", "needn't"]
+    - ["You're supposed to be at work.", "Era para você estar no trabalho.", "Era para você estar no trabalho.", "supposed"]
+    - ["It's bound to rain.", "Com certeza vai chover.", "Com certeza vai chover.", "bound"]
+    match:
+    - {seq: [{word: [needn't]}, {word: [have]}], gap: 0, pool: [needn't, mustn't, shouldn't, can't]}
+    - {seq: [{word: [supposed, bound, likely, due, unlikely]}, {word: [to]}, {pos: verb}], gap: 0, pool: [supposed, bound, likely, due]}
+
+- title: {en: Advanced clauses, pt: Orações avançadas}
+  lessons:
+  - id: en-c1-participle-clauses
+    title: having finished, not knowing what to do
+    meaning: {en: "participle clauses", pt: "orações reduzidas de particípio e gerúndio"}
+    intro:
+      pt: |
+        Uma oração reduzida substitui *when / because / after* + sujeito + verbo, sobretudo na escrita: **Having finished the report, she went home** (Tendo terminado o relatório…). **Not knowing what to do, I called my mother** (Sem saber o que fazer…). **Built in 1900, the house needs repairs.** O sujeito tem de ser o mesmo da oração principal — senão a frase fica ambígua.
+      en: |
+        Participle clauses replace a conjunction + clause: **Having finished the report, she went home. Not knowing what to do, I called my mother. Built in 1900, the house needs repairs.** The subject must be that of the main clause.
+    examples:
+    - ["Having finished the report, she went home.", "Tendo terminado o relatório, ela foi para casa.", "Tendo terminado o relatório, ela foi para casa.", "Having"]
+    - ["Not knowing what to do, I called my mother.", "Sem saber o que fazer, liguei para minha mãe.", "Sem saber o que fazer, liguei para minha mãe.", "knowing"]
+    - ["Having lived in Brazil, he speaks Portuguese.", "Como morou no Brasil, ele fala português.", "Como morou no Brasil, ele fala português.", "Having"]
+    match:
+    - {seq: [{word: [having], start: true}, {re: "(ed|en|ne|wn|ght|un|ung|ade|aid|ept|eft|ost|ot|ood|ft|lt)$"}], gap: 0, pool: [Having, Being, After, Have]}
+    - {seq: [{word: ["not"], start: true}, {re: "ing$"}], gap: 1, suffixes: [ing, ""], attested: true}
+
+  - id: en-c1-whatever
+    title: whatever, whoever, wherever
+    meaning: {en: "-ever words: whatever, whoever, wherever, whenever", pt: "palavras em -ever: whatever, whoever, wherever, whenever"}
+    intro:
+      pt: |
+        **-ever** = qualquer que seja: **whatever** (o que quer que), **whoever** (quem quer que), **wherever** (onde quer que), **whenever** (sempre que, quando quer que), **whichever** (qualquer um que): **Do whatever you want** (Faça o que quiser). **Whoever wins gets the prize. Call me whenever you like.** Note: o português usa o futuro do subjuntivo (*quiser, ganhar*); o inglês, o presente.
+      en: |
+        **whatever, whoever, wherever, whenever, whichever** = "no matter what / who…": **Do whatever you want. Whoever wins gets the prize. Call me whenever you like.**
+    examples:
+    - ["Do whatever you want.", "Faça o que quiser.", "Faça o que quiser.", "whatever"]
+    - ["Whoever wins gets the prize.", "Quem ganhar leva o prêmio.", "Quem ganhar leva o prêmio.", "Whoever"]
+    - ["Call me whenever you like.", "Me ligue quando quiser.", "Me ligue quando quiser.", "whenever"]
+    match: {seq: [{word: [whatever, whoever, wherever, whenever, whichever, however]}, {pos: [pron, noun, det, adj]}], gap: 0}
+    pool: [whatever, whoever, wherever, whenever, whichever]
+
+  - id: en-c1-dependent-prepositions
+    title: depend on, married to, good at
+    meaning: {en: "prepositions after verbs and adjectives", pt: "preposições depois de verbos e adjetivos"}
+    intro:
+      pt: |
+        Muitas regências são diferentes do português — é aí que o brasileiro tropeça: **depend on** (~~of~~), **married to** (~~with~~), **dream of / about** (~~with~~), **think about / of** (~~in~~), **arrive in / at** (~~to~~), **good at** (bom em), **interested in**, **afraid of**, **responsible for**, **proud of**, **consist of** (~~in~~), **insist on** (~~in~~). Decore em bloco: verbo + preposição.
+      en: |
+        Fixed prepositions after verbs and adjectives: **depend on, married to, dream of, think about, arrive in / at, good at, interested in, afraid of, responsible for, proud of, consist of, insist on.**
+    table:
+      head: {en: [English, Typical Brazilian slip], pt: [Inglês, Erro típico]}
+      rows:
+      - [depend on, depend of]
+      - [married to, married with]
+      - [dream of / about, dream with]
+      - [think about / of, think in]
+      - [arrive in / at, arrive to]
+      - [consist of, consist in]
+    examples:
+    - ["It depends on the weather.", "Depende do tempo.", "Depende do tempo.", "on"]
+    - ["She's married to a doctor.", "Ela é casada com um médico.", "Ela é casada com um médico.", "to"]
+    - ["I dreamed about you.", "Sonhei com você.", "Sonhei com você.", "about"]
+    match: {seq: [{word: [depends, depend, depended, depending, married, interested, afraid, proud, responsible, good, keen, aware, capable, fond, accused, consist, consists, insist, insisted, rely, relies, dream, dreamed, dreamt, dreaming, arrive, arrived, arrives, angry, worried, tired, full, ashamed, jealous, similar, famous, bad, crazy]}, {word: ["on", of, in, at, to, for, with, about, from]}], gap: 1}
+    pool: ["on", of, in, at, to, for, with, about]
+
+- title: {en: Register and Brazilian traps, pt: Registro e armadilhas para brasileiros}
+  lessons:
+  - id: en-c1-false-friends
+    title: actually, eventually, currently
+    meaning: {en: "false friends: actually, eventually, currently and others", pt: "falsos cognatos: actually, eventually, currently e outros"}
+    intro:
+      pt: |
+        **actually** = na verdade (não *atualmente*); **currently / nowadays** = atualmente; **eventually** = finalmente, com o tempo (não *eventualmente*); **occasionally** = eventualmente, de vez em quando. Outros clássicos: **pretend** (fingir), **realize** (perceber), **push** (empurrar), **library** (biblioteca), **parents** (pais), **college** (faculdade), **lunch** (almoço), **exquisite** (requintado), **sensible** (sensato), **intend** (pretender).
+      en: |
+        Words that look Portuguese but aren't: **actually** = in fact (pt atualmente = currently); **eventually** = in the end (pt eventualmente = occasionally); also **pretend, realize, push, library, parents, college, sensible**.
+    table:
+      head: {en: [English, Means, Looks like], pt: [Inglês, Significa, Parece]}
+      rows:
+      - [actually, na verdade, atualmente]
+      - [currently, atualmente, corretamente]
+      - [eventually, finalmente, eventualmente]
+      - [pretend, fingir, pretender]
+      - [realize, perceber, realizar]
+      - [push, empurrar, puxar]
+    examples:
+    - ["Actually, I don't like coffee.", "Na verdade, eu não gosto de café.", "Na verdade, eu não gosto de café.", "Actually"]
+    - ["He is currently living in Rio.", "Ele mora atualmente no Rio.", "Ele mora atualmente no Rio.", "currently"]
+    - ["Eventually, she found a job.", "Finalmente, ela arranjou um emprego.", "Finalmente, ela arranjou um emprego.", "Eventually"]
+    match: {seq: [{word: [actually, eventually, currently, occasionally, nowadays]}], gap: 0}
+    pool: [actually, eventually, currently, occasionally]
+
+  - id: en-c1-formal-linkers
+    title: moreover, therefore, nonetheless
+    meaning: {en: "formal connectors", pt: "conectores formais"}
+    intro:
+      pt: |
+        Na escrita formal: adição **moreover, furthermore, in addition** (além disso); consequência **therefore, thus, hence, consequently** (portanto, assim); contraste **nonetheless, nevertheless** (ainda assim), **on the other hand**; ênfase **indeed** (de fato). Em conversa, prefira **also, so, but, anyway**. **hence** pode vir sem verbo: **hence the delay** (daí o atraso).
+      en: |
+        Formal writing: **moreover, furthermore** (addition), **therefore, thus, hence, consequently** (result), **nonetheless, nevertheless** (contrast), **indeed** (emphasis). Speech prefers **also, so, but**.
+    examples:
+    - ["It's cheap; moreover, it works.", "É barato; além disso, funciona.", "É barato; além disso, funciona.", "moreover"]
+    - ["I think, therefore I am.", "Penso, logo existo.", "Penso, logo existo.", "therefore"]
+    - ["It was hard; nonetheless, we finished.", "Foi difícil; ainda assim, terminamos.", "Foi difícil; ainda assim, terminamos.", "nonetheless"]
+    match: {seq: [{word: [moreover, furthermore, therefore, thus, hence, consequently, nonetheless, nevertheless, indeed]}], gap: 0}
+    pool: [moreover, therefore, nonetheless, hence, indeed]
+
+  - id: en-c1-impersonal-passive
+    title: he is said to be, it is believed that
+    meaning: {en: "impersonal passive: it is said that, he is thought to", pt: "passiva impessoal: it is said that, he is thought to"}
+    intro:
+      pt: |
+        Para relatar opinião geral, típico do jornalismo: **It is said that he is rich** = **He is said to be rich** (Dizem que ele é rico). **She is believed to have left the country** (Acredita-se que ela tenha deixado o país). Verbos: **say, believe, think, know, expect, report, consider, suppose**. O português usa *dizem que / acredita-se que*.
+      en: |
+        Impersonal reporting, typical of the news: **It is said that he is rich = He is said to be rich. She is believed to have left the country.** Verbs: say, believe, think, know, expect, report, consider.
+    examples:
+    - ["He is said to be rich.", "Dizem que ele é rico.", "Dizem que ele é rico.", "said"]
+    - ["It is believed that she left the country.", "Acredita-se que ela tenha deixado o país.", "Acredita-se que ela tenha deixado o país.", "believed"]
+    - ["The house is thought to be haunted.", "Dizem que a casa é mal-assombrada.", "Dizem que a casa é mal-assombrada.", "thought"]
+    match: {seq: [{word: [is, are, was, were, "'s"]}, {word: [said, believed, thought, known, reported, supposed, expected, considered, rumoured, rumored, alleged]}, {word: [to, that]}], gap: 1, pool: [said, believed, thought, known, expected]}

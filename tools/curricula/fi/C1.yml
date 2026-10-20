@@ -1,0 +1,282 @@
+id: C1
+topics:
+
+- title: {en: Clause substitutes, pt: Construções que substituem orações}
+  lessons:
+  - id: fi-referative
+    title: Hän sanoi tulevansa.
+    meaning: {en: "the referative construction: that-clauses as participles", pt: "a construção referativa: orações com että como particípios"}
+    intro:
+      en: |
+        After verbs of saying, thinking and perceiving (**sanoa, kertoa, luulla, uskoa, tietää, huomata, nähdä, kuulla, toivoa**) an **että**-clause can become a participle in the genitive (the *referatiivi*):
+
+        - same time: **-vAn**: **Hän sanoi, että Anna tulee → Hän sanoi Annan tulevan.**
+        - earlier: **-neen**: **Luulin, että hän oli lähtenyt → Luulin hänen lähteneen.**
+
+        When the subject is the same as the main clause's, a possessive suffix replaces it: **Hän sanoi tulevansa.** "He said he would come." **Luulin olevani oikeassa.** "I thought I was right."
+      pt: |
+        Depois de verbos de dizer, pensar e perceber (**sanoa, kertoa, luulla, uskoa, tietää, huomata, nähdä, kuulla, toivoa**) uma oração com **että** pode virar um particípio no genitivo (o *referatiivi*):
+
+        - simultâneo: **-vAn**: **Hän sanoi, että Anna tulee → Hän sanoi Annan tulevan.** "Ele disse que a Anna vem."
+        - anterior: **-neen**: **Luulin, että hän oli lähtenyt → Luulin hänen lähteneen.** "Achei que ele tivesse ido embora."
+
+        Quando o sujeito é o mesmo da principal, um sufixo possessivo o substitui: **Hän sanoi tulevansa.** "Ele disse que viria." **Luulin olevani oikeassa.** "Achei que eu estava certo."
+    examples:
+    - ["Hän sanoi tulevansa huomenna.", "He said he would come tomorrow.", "Ele disse que viria amanhã.", "tulevansa"]
+    - ["Luulin olevani oikeassa.", "I thought I was right.", "Achei que eu estava certo.", "olevani"]
+    - ["Kuulin hänen lähteneen.", "I heard that he had left.", "Ouvi dizer que ele tinha ido embora.", "lähteneen"]
+    match:
+    - {seq: [{pos: verb, re: "[aou].*(vansa|vani|vasi|vamme|vanne)$"}], suffixes: [vansa, vani, vasi, vamme, vanne], attested: true}
+    - {seq: [{pos: verb, re: "(vänsä|väni|väsi|vämme|vänne)$"}], suffixes: [vänsä, väni, väsi, vämme, vänne], attested: true}
+    - {seq: [{lemma: "^(sanoa|kertoa|luulla|uskoa|tietää|huomata|kuulla|nähdä|toivoa|väittää|muistaa|ilmoittaa|tuntea|epäillä)$"}, {pos: [pron, noun], case: gen}, {pos: verb, re: "(van|vän|neen)$"}], near: 2, gap: 2}
+
+  - id: fi-temporal
+    title: kotiin tultuani, kotiin tullessani
+    meaning: {en: "the temporal construction: when / after doing", pt: "a construção temporal: quando / depois de fazer"}
+    intro:
+      en: |
+        A **kun**-clause can shrink to a verb form with a possessive suffix (same subject) or a genitive subject (another subject):
+
+        - at the same time: **-essA** (2nd infinitive inessive): **Kun tulin kotiin, … → Kotiin tullessani …** "When I came home …" **Lasten nukkuessa luin.** "While the children slept, I read."
+        - before: **-tUA** (passive past participle + partitive ending): **Kun olin syönyt, … → Syötyäni …** "After I had eaten …" **Sateen lakattua lähdimme.** "When the rain had stopped we left."
+
+        Mostly written Finnish: news, reports, fiction.
+      pt: |
+        Uma oração com **kun** pode encolher para uma forma verbal com sufixo possessivo (mesmo sujeito) ou sujeito no genitivo (outro sujeito):
+
+        - ao mesmo tempo: **-essA** (2º infinitivo inessivo): **Kun tulin kotiin, … → Kotiin tullessani …** "Quando cheguei em casa …" **Lasten nukkuessa luin.** "Enquanto as crianças dormiam, eu lia."
+        - antes: **-tUA** (particípio passado passivo + terminação partitiva): **Kun olin syönyt, … → Syötyäni …** "Depois que comi …" **Sateen lakattua lähdimme.** "Quando a chuva parou, saímos."
+
+        É sobretudo do finlandês escrito: notícias, relatórios, ficção.
+    examples:
+    - ["Kotiin tullessani huomasin, että ovi oli auki.", "When I came home I noticed the door was open.", "Quando cheguei em casa, percebi que a porta estava aberta.", "tullessani"]
+    - ["Syötyäni menin nukkumaan.", "After eating I went to bed.", "Depois de comer, fui dormir.", "Syötyäni"]
+    - ["Lasten nukkuessa luin kirjaa.", "While the children slept I read a book.", "Enquanto as crianças dormiam, eu lia um livro.", "nukkuessa"]
+    match:
+    - {seq: [{pos: verb, re: "[aou].*essa(ni|si|an|mme|nne|nsa)?$"}], suffixes: [essani, essasi, essaan, essamme, essanne, essa], attested: true}
+    - {seq: [{pos: verb, re: "essä(ni|si|än|mme|nne|nsä)?$"}], suffixes: [essäni, essäsi, essään, essämme, essänne, essä], attested: true}
+    - {seq: [{pos: verb, re: "tua(ni|si|an|mme|nne)$"}], suffixes: [tuani, tuasi, tuaan, tuamme, tuanne], attested: true}
+    - {seq: [{pos: verb, re: "tyä(ni|si|än|mme|nne)$"}], suffixes: [tyäni, tyäsi, tyään, tyämme, tyänne], attested: true}
+
+  - id: fi-final
+    title: oppiakseni
+    meaning: {en: "the final construction -Akseen: in order to", pt: "a construção final -Akseen: para, a fim de"}
+    intro:
+      en: |
+        **jotta** + verb (so that) becomes the translative of the 1st infinitive + possessive suffix when the subject is the same: **-akse- / -äkse-** + **-ni, -si, -en, -mme, -nne, -en**:
+
+        - **Tulin Suomeen, jotta oppisin suomea → Tulin Suomeen oppiakseni suomea.** "I came to Finland to learn Finnish."
+        - **Hän säästää rahaa ostaakseen auton.** "He saves money to buy a car."
+
+        Fixed: **tietääkseni** "as far as I know", **muistaakseni** "if I remember right".
+      pt: |
+        **jotta** + verbo (para que) vira o translativo do 1º infinitivo + sufixo possessivo quando o sujeito é o mesmo: **-akse- / -äkse-** + **-ni, -si, -en, -mme, -nne, -en**:
+
+        - **Tulin Suomeen, jotta oppisin suomea → Tulin Suomeen oppiakseni suomea.** "Vim para a Finlândia para aprender finlandês."
+        - **Hän säästää rahaa ostaakseen auton.** "Ele economiza para comprar um carro."
+
+        Expressões fixas: **tietääkseni** "que eu saiba", **muistaakseni** "se não me engano".
+    examples:
+    - ["Tulin Suomeen oppiakseni suomea.", "I came to Finland to learn Finnish.", "Vim para a Finlândia para aprender finlandês.", "oppiakseni"]
+    - ["Hän säästää rahaa ostaakseen auton.", "He saves money to buy a car.", "Ele economiza para comprar um carro.", "ostaakseen"]
+    - ["Tietääkseni hän asuu Turussa.", "As far as I know he lives in Turku.", "Que eu saiba, ele mora em Turku.", "Tietääkseni"]
+    match:
+    - {seq: [{pos: verb, re: "akse(ni|si|en|mme|nne|nsa)$"}], suffixes: [akseni, aksesi, akseen, aksemme, aksenne], attested: true}
+    - {seq: [{pos: verb, re: "äkse(ni|si|en|mme|nne|nsä)$"}], suffixes: [äkseni, äksesi, äkseen, äksemme, äksenne], attested: true}
+
+  - id: fi-agent-participle
+    title: äidin leipomat pullat
+    meaning: {en: "the agent participle -mA: made by someone", pt: "o particípio agente -mA: feito por alguém"}
+    intro:
+      en: |
+        **-mA** + a doer in the genitive replaces a relative clause about something done by someone:
+
+        - **pullat, jotka äiti leipoi → äidin leipomat pullat** "the buns mother baked"
+        - with a pronoun, a possessive suffix: **minun kirjoittamani kirje** (or just **kirjoittamani kirje**) "the letter I wrote"
+        - **Tämä on Sibeliuksen säveltämä sinfonia.** "This is a symphony composed by Sibelius."
+
+        It declines like an adjective: **äidin leipomia pullia, isän rakentamassa talossa**.
+      pt: |
+        **-mA** + quem faz no genitivo substitui uma oração relativa sobre algo feito por alguém:
+
+        - **pullat, jotka äiti leipoi → äidin leipomat pullat** "os pãezinhos que a mãe assou"
+        - com pronome, sufixo possessivo: **minun kirjoittamani kirje** (ou só **kirjoittamani kirje**) "a carta que escrevi"
+        - **Tämä on Sibeliuksen säveltämä sinfonia.** "Esta é uma sinfonia composta por Sibelius."
+
+        Declina como adjetivo: **äidin leipomia pullia, isän rakentamassa talossa**.
+    examples:
+    - ["Äidin leipomat pullat ovat parhaita.", "The buns mother bakes are the best.", "Os pãezinhos que a mãe assa são os melhores.", "leipomat"]
+    - ["Tämä on Sibeliuksen säveltämä sinfonia.", "This is a symphony composed by Sibelius.", "Esta é uma sinfonia composta por Sibelius.", "säveltämä"]
+    - ["Luin kirjoittamasi kirjeen.", "I read the letter you wrote.", "Li a carta que você escreveu.", "kirjoittamasi"]
+    match:
+    - {seq: [{pos: [noun, pron], case: gen}, {pos: verb, re: "[^m]m(a|ä)(t|n|ni|si|nsa|nsä|mme|nne)?$"}, {pos: noun}], gap: 1}
+    - {seq: [{pos: verb, re: "m(a|ä)(ni|si|mme|nne)$"}, {pos: noun}], gap: 0, suffixes: [mani, masi, mamme, manne, mäni, mäsi, mämme, männe], attested: true}
+
+  - id: fi-modal-instructive
+    title: hymyillen, juosten
+    meaning: {en: "manner: the 2nd infinitive instructive -en", pt: "modo: o 2º infinitivo instrutivo -en"}
+    intro:
+      en: |
+        **-en** on the infinitive stem tells how something is done (the *modal construction*), like English *-ing*: **Hän tuli hymyillen.** "He came smiling." **Lapset juoksivat nauraen.** "The children ran laughing." **Kävelin laulaen.**
+
+        Fixed phrases: **toisin sanoen** "in other words", **yleisesti ottaen** "generally speaking", **niin sanoakseni** "so to speak".
+      pt: |
+        **-en** no radical do infinitivo diz como algo é feito (a *construção modal*), como o gerúndio: **Hän tuli hymyillen.** "Ele chegou sorrindo." **Lapset juoksivat nauraen.** "As crianças correram rindo." **Kävelin laulaen.** "Andei cantando."
+
+        Expressões fixas: **toisin sanoen** "em outras palavras", **yleisesti ottaen** "de modo geral", **niin sanoakseni** "por assim dizer".
+    examples:
+    - ["Hän tuli sisään hymyillen.", "He came in smiling.", "Ele entrou sorrindo.", "hymyillen"]
+    - ["Lapset juoksivat nauraen.", "The children ran laughing.", "As crianças correram rindo.", "nauraen"]
+    - ["Toisin sanoen se ei onnistu.", "In other words, it won't work.", "Em outras palavras, não vai dar certo.", "sanoen"]
+    match: {seq: [{pos: verb, mood: inf, re: "(aen|äen|ien|oen|uen|yen|öen|llen|sten|nnen|rren|hden|ten)$", not: {lemma: "^(olla|ei)$"}}]}
+
+- title: {en: The third and fourth infinitives, pt: O terceiro e o quarto infinitivos}
+  lessons:
+  - id: fi-matta
+    title: sanomatta mitään
+    meaning: {en: "-mAttA: without doing", pt: "-mAttA: sem fazer"}
+    intro:
+      en: |
+        The abessive of the 3rd infinitive, **-mAttA**, means *without doing*: **Hän lähti sanomatta mitään.** "He left without saying anything." **Älä mene syömättä.** "Don't go without eating."
+
+        With **jättää** it means *leave undone*: **Jätin kirjeen lukematta.** "I left the letter unread." It belongs to the same family as **-mAssA** (doing), **-mAstA** (from doing), **-mAAn** (to do).
+      pt: |
+        O abessivo do 3º infinitivo, **-mAttA**, quer dizer *sem fazer*: **Hän lähti sanomatta mitään.** "Ele foi embora sem dizer nada." **Älä mene syömättä.** "Não vá sem comer."
+
+        Com **jättää** quer dizer *deixar sem fazer*: **Jätin kirjeen lukematta.** "Deixei a carta sem ler." É da mesma família de **-mAssA** (fazendo), **-mAstA** (de fazer), **-mAAn** (para fazer).
+    examples:
+    - ["Hän lähti sanomatta mitään.", "He left without saying anything.", "Ele foi embora sem dizer nada.", "sanomatta"]
+    - ["Älä mene syömättä.", "Don't go without eating.", "Não vá sem comer.", "syömättä"]
+    - ["Jätin kirjeen lukematta.", "I left the letter unread.", "Deixei a carta sem ler.", "lukematta"]
+    match:
+    - {seq: [{pos: verb, re: "matta$"}], suffixes: [matta, massa, masta, maan, malla], attested: true}
+    - {seq: [{pos: verb, re: "mättä$"}], suffixes: [mättä, mässä, mästä, mään, mällä], attested: true}
+
+  - id: fi-malla
+    title: puhumalla oppii
+    meaning: {en: "-mAllA: by doing", pt: "-mAllA: fazendo, por meio de"}
+    intro:
+      en: |
+        The adessive of the 3rd infinitive, **-mAllA**, tells the means: *by doing*: **Puhumalla oppii.** "You learn by speaking." **Voit säästää rahaa kävelemällä.** "You can save money by walking." Compare **-en** (manner, at the same time): **Hän tuli hymyillen** versus **Hän ansaitsee rahaa opettamalla** "he earns money by teaching".
+      pt: |
+        O adessivo do 3º infinitivo, **-mAllA**, indica o meio: *fazendo, por meio de*: **Puhumalla oppii.** "Aprende-se falando." **Voit säästää rahaa kävelemällä.** "Você pode economizar andando a pé." Compare **-en** (modo, ao mesmo tempo): **Hän tuli hymyillen** com **Hän ansaitsee rahaa opettamalla** "ele ganha dinheiro dando aulas".
+    examples:
+    - ["Puhumalla oppii.", "You learn by speaking.", "Aprende-se falando.", "Puhumalla"]
+    - ["Voit säästää rahaa kävelemällä.", "You can save money by walking.", "Você pode economizar indo a pé.", "kävelemällä"]
+    - ["Hän ansaitsee rahaa opettamalla.", "He earns money by teaching.", "Ele ganha dinheiro dando aulas.", "opettamalla"]
+    match:
+    - {seq: [{pos: verb, re: "malla$"}], suffixes: [malla, matta, massa, masta, maan], attested: true}
+    - {seq: [{pos: verb, re: "mällä$"}], suffixes: [mällä, mättä, mässä, mästä, mään], attested: true}
+
+  - id: fi-minen
+    title: lukeminen, tupakointi
+    meaning: {en: "-minen: the verb as a noun", pt: "-minen: o verbo como substantivo"}
+    intro:
+      en: |
+        **-minen** (the 4th infinitive) turns any verb into a noun that declines fully: **lukeminen** "reading", **Lukeminen on hauskaa.** "Reading is fun." **Pidän uimisesta.** "I like swimming." **Lopeta valittaminen!** "Stop complaining!"
+
+        Formal texts build long noun chains with it: **asunnon ostamisen helpottaminen** "making it easier to buy a flat".
+      pt: |
+        **-minen** (o 4º infinitivo) transforma qualquer verbo num substantivo que declina por inteiro: **lukeminen** "a leitura, ler", **Lukeminen on hauskaa.** "Ler é divertido." **Pidän uimisesta.** "Gosto de nadar." **Lopeta valittaminen!** "Pare de reclamar!"
+
+        Textos formais formam longas cadeias de substantivos com ele: **asunnon ostamisen helpottaminen** "facilitar a compra de um apartamento".
+    examples:
+    - ["Lukeminen on hauskaa.", "Reading is fun.", "Ler é divertido.", "Lukeminen"]
+    - ["Pidän uimisesta.", "I like swimming.", "Gosto de nadar.", "uimisesta"]
+    - ["Lopeta valittaminen!", "Stop complaining!", "Pare de reclamar!", "valittaminen"]
+    match: {seq: [{pos: noun, lemma: "minen$"}], same: [number]}
+
+  - id: fi-possessive-postpositions
+    title: mielestäni, kanssasi, puolestaan
+    meaning: {en: "possessive suffixes on postpositions and set words", pt: "sufixos possessivos em posposições e palavras fixas"}
+    intro:
+      en: |
+        Written Finnish puts the possessive suffix on postpositions instead of (or besides) the pronoun: **(minun) kanssani** "with me", **(sinun) luoksesi** "to your place", **hänen vuokseen** "for his sake".
+
+        Some are set expressions of opinion and contrast: **mielestäni** "in my opinion", **puolestani** "as for me", **hän puolestaan** "he, on the other hand", **vuorostaan** "in turn".
+      pt: |
+        O finlandês escrito põe o sufixo possessivo na posposição em vez do pronome (ou junto dele): **(minun) kanssani** "comigo", **(sinun) luoksesi** "para a sua casa", **hänen vuokseen** "por causa dele".
+
+        Algumas são expressões fixas de opinião e contraste: **mielestäni** "na minha opinião", **puolestani** "quanto a mim", **hän puolestaan** "ele, por sua vez", **vuorostaan** "por sua vez".
+    examples:
+    - ["Mielestäni se on hyvä idea.", "In my opinion it's a good idea.", "Na minha opinião é uma boa ideia.", "Mielestäni"]
+    - ["Tuletko kanssani?", "Are you coming with me?", "Você vem comigo?", "kanssani"]
+    - ["Tulen luoksesi illalla.", "I'll come to your place in the evening.", "Vou à sua casa à noite.", "luoksesi"]
+    match: {seq: [{re: "^(kanssa|luo|luok|luokse|luona|luota|mielestä|puolesta|takia|vuoksi|edessä|vieressä|jälkeen|ansiosta|vierellä|ympärillä|seurassa)(ni|si|mme|nne)$"}], suffixes: [ni, si, mme, nne], attested: true}
+
+- title: {en: Spoken Finnish and clitics, pt: Finlandês falado e clíticos}
+  lessons:
+  - id: fi-clitics
+    title: Tulethan? Onpa kaunis!
+    meaning: {en: "the clitics -han, -pa, -kin", pt: "os clíticos -han, -pa, -kin"}
+    intro:
+      en: |
+        Small endings that attach to the first word of a clause and change its tone:
+
+        - **-han / -hän**: softens, *after all, you know*: **Tulethan huomenna?** "You will come tomorrow, won't you?" **Sehän on hyvä!** "Well, that's good!"
+        - **-pa / -pä**: emphasis, surprise: **Onpa kaunis päivä!** "What a beautiful day!" **Tulepa tänne!** "Come here, will you!"
+        - **-kin**: *also, indeed*: **Minäkin tulen.** "I'm coming too." **Hän tulikin.** "And he did come."
+      pt: |
+        Pequenas terminações que se juntam à primeira palavra da oração e mudam o tom:
+
+        - **-han / -hän**: suaviza, *afinal, sabe*: **Tulethan huomenna?** "Você vem amanhã, né?" **Sehän on hyvä!** "Ora, isso é bom!"
+        - **-pa / -pä**: ênfase, surpresa: **Onpa kaunis päivä!** "Que dia bonito!" **Tulepa tänne!** "Vem cá, vai!"
+        - **-kin**: *também, de fato*: **Minäkin tulen.** "Eu também vou." **Hän tulikin.** "E ele veio mesmo."
+    examples:
+    - ["Tulethan huomenna?", "You will come tomorrow, won't you?", "Você vem amanhã, né?", "Tulethan"]
+    - ["Onpa kaunis päivä!", "What a beautiful day!", "Que dia bonito!", "Onpa"]
+    - ["Minäkin tulen.", "I'm coming too.", "Eu também vou.", "Minäkin"]
+    match:
+    - {seq: [{pos: [verb, pron], re: "[aou]\\p{L}*(han|pa|kin)$"}], suffixes: [han, pa, kin], attested: true}
+    - {seq: [{pos: [verb, pron], re: "^[^aou]+(hän|pä|kin)$"}], suffixes: [hän, pä, kin], attested: true}
+
+  - id: fi-spoken-pronouns
+    title: mä, sä, mun
+    meaning: {en: "spoken pronouns: mä, sä, mun, mulla", pt: "pronomes falados: mä, sä, mun, mulla"}
+    intro:
+      en: |
+        Spoken Finnish (and much of Tatoeba) shortens the pronouns:
+
+        | standard | spoken |
+        |---|---|
+        | minä, sinä | mä, sä (also mää, sää) |
+        | minun, sinun | mun, sun |
+        | minulla, sinulla | mulla, sulla |
+        | minulle, sinulle | mulle, sulle |
+        | minua, sinua | mua, sua |
+        | hän | se (also for people) |
+
+        **Mä en tiedä.** "I don't know." **Onks sulla aikaa?** "Do you have time?"
+      pt: |
+        O finlandês falado (e boa parte do Tatoeba) encurta os pronomes:
+
+        | padrão | falado |
+        |---|---|
+        | minä, sinä | mä, sä (também mää, sää) |
+        | minun, sinun | mun, sun |
+        | minulla, sinulla | mulla, sulla |
+        | minulle, sinulle | mulle, sulle |
+        | minua, sinua | mua, sua |
+        | hän | se (também para pessoas) |
+
+        **Mä en tiedä.** "Eu não sei." **Onks sulla aikaa?** "Você tem tempo?"
+    examples:
+    - ["Mä en tiedä.", "I don't know.", "Eu não sei.", "Mä"]
+    - ["Onks sulla aikaa?", "Do you have time?", "Você tem tempo?", "sulla"]
+    - ["Soita mulle huomenna.", "Call me tomorrow.", "Me liga amanhã.", "mulle"]
+    match: {seq: [{word: [mä, sä, mun, sun, mulla, sulla, mulle, sulle, multa, sulta, mua, sua, mussa, sussa]}], gap: 0}
+    pool: [mä, sä, mun, sun, mulla, sulla, mulle, sulle, mua, sua]
+
+  - id: fi-me-mennaan
+    title: me mennään
+    meaning: {en: "spoken 'we': the passive form", pt: "o 'nós' falado: a forma passiva"}
+    intro:
+      en: |
+        In speech, *we* takes the passive form instead of the 1st plural: **me mennään** for **me menemme**, **me ollaan** for **me olemme**, **me ei tiedetä** for **me emme tiedä**. Without **me** the passive often means *let's*: **Mennään!** "Let's go!" Write **menemme** in formal texts.
+      pt: |
+        Na fala, *nós* leva a forma passiva em vez da 1ª do plural: **me mennään** em vez de **me menemme**, **me ollaan** em vez de **me olemme**, **me ei tiedetä** em vez de **me emme tiedä**. Sem **me**, a passiva muitas vezes quer dizer *vamos*: **Mennään!** "Vamos!" Em textos formais escreva **menemme**.
+    examples:
+    - ["Me mennään kotiin.", "We're going home.", "A gente vai para casa.", "mennään"]
+    - ["Me ollaan valmiita.", "We're ready.", "A gente está pronto.", "ollaan"]
+    - ["Mennään!", "Let's go!", "Vamos!", "Mennään"]
+    match: {seq: [{word: [me]}, {pos: verb, re: "(taan|tään|daan|dään|laan|lään|naan|nään|raan|rään)$"}], near: 1, gap: 1}

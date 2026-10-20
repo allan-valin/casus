@@ -1,0 +1,199 @@
+id: C1
+topics:
+
+- title: {en: Literary tenses, pt: Tempos literários}
+  lessons:
+  - id: fr-c1-passe-simple
+    title: il fut, ils parlèrent
+    meaning: {en: "the passé simple (recognition)", pt: "o passé simple (reconhecimento)"}
+    intro:
+      en: |
+        The tense of written narrative — novels, tales, history — where speech uses the passé composé. Mostly 3rd person: **-er** verbs **il parla, ils parlèrent**; **-ir / -re** **il finit, ils finirent**; **-oir** and others **il put, ils purent**. Irregular: **être → il fut**, **avoir → il eut**, **faire → il fit**, **venir → il vint**, **naître → il naquit**.
+      pt: |
+        O tempo da narrativa escrita — romances, contos, história — onde a fala usa o passé composé. Funciona como o nosso pretérito perfeito simples (*falou, fez*), mas em francês é só escrito. Sobretudo 3ª pessoa: **-er** **il parla, ils parlèrent**; **-ir / -re** **il finit, ils finirent**; outros **il put, ils purent**. Irregulares: **être → il fut**, **avoir → il eut**, **faire → il fit**, **venir → il vint**, **naître → il naquit**.
+    table:
+      head: {en: [Infinitive, il / elle, ils / elles], pt: [Infinitivo, il / elle, ils / elles]}
+      rows:
+      - [parler, parla, parlèrent]
+      - [finir, finit, finirent]
+      - [être, fut, furent]
+      - [avoir, eut, eurent]
+      - [faire, fit, firent]
+      - [venir, vint, vinrent]
+    examples:
+    - ["Il était une fois un roi qui eut trois filles.", "Once upon a time there was a king who had three daughters.", "Era uma vez um rei que teve três filhas.", "eut"]
+    - ["Ils se marièrent et vécurent heureux.", "They married and lived happily.", "Eles se casaram e viveram felizes.", "vécurent"]
+    - ["Elle ouvrit la porte et sortit.", "She opened the door and went out.", "Ela abriu a porta e saiu.", "sortit"]
+    match:
+    - {seq: [{re: "(èrent|irent|urent|inrent|âmes|îmes|ûmes|âtes|îtes|ûtes)$", pos: verb, mood: ind, tense: past}], same: [person, number]}
+    - {seq: [{word: [fut, eut, fit, vint, tint, sut, dut, naquit, mourut, devint, revint, parut, reconnut, alla, entra, regarda, demanda, arriva, partit, sortit, répondit, ouvrit, resta, reprit, prit, comprit, sentit, attendit, descendit, monta, tomba, commença, continua, ajouta, s'écria, écria, appela, trouva, donna, passa, laissa, rentra, décida]}], same: [person, number]}
+
+  - id: fr-c1-subj-imparfait
+    title: qu'il fût, qu'elle vînt
+    meaning: {en: "the imperfect subjunctive (recognition)", pt: "o imperfeito do subjuntivo (reconhecimento)"}
+    intro:
+      en: |
+        Classic literature keeps the sequence of tenses: after a past main verb, the imperfect subjunctive: **Il fallait qu'il partît. Je voulais qu'elle vînt.** Form: from the passé simple, **-sse, -sses, -^t, -ssions, -ssiez, -ssent**: **parla → qu'il parlât**, **fut → qu'il fût**, **vint → qu'il vînt**. Today it survives almost only in the 3rd singular; speech uses the present subjunctive.
+      pt: |
+        A literatura clássica mantém a correlação dos tempos: depois de verbo principal no passado, imperfeito do subjuntivo — exatamente como o português faz até hoje (*era preciso que ele partisse*): **Il fallait qu'il partît. Je voulais qu'elle vînt.** Forma: a partir do passé simple, **-sse, -sses, -^t, -ssions, -ssiez, -ssent**: **parla → qu'il parlât**, **fut → qu'il fût**. Hoje quase só na 3ª do singular; a fala usa o presente do subjuntivo.
+    examples:
+    - ["Il fallait qu'il partît.", "He had to leave.", "Era preciso que ele partisse.", "partît"]
+    - ["Je voulais qu'elle vînt.", "I wanted her to come.", "Eu queria que ela viesse.", "vînt"]
+    - ["Bien qu'il fût malade, il travaillait.", "Although he was ill, he worked.", "Embora estivesse doente, ele trabalhava.", "fût"]
+    match: {seq: [{re: "(ât|ît|ût|înt|ussent|ussiez|inssent)$", pos: verb, mood: subj}], same: [person, number]}
+
+  - id: fr-c1-passe-anterieur
+    title: dès qu'il eut fini
+    meaning: {en: "the passé antérieur", pt: "o passé antérieur"}
+    intro:
+      en: |
+        Passé simple of **avoir / être** + participle, after **quand, lorsque, dès que, aussitôt que, après que, à peine**: an action just before another one in the passé simple. **Dès qu'il eut fini, il sortit. Quand elle fut partie, il pleura.** Only in written narrative; speech: **dès qu'il a eu fini** or simply **après avoir fini**.
+      pt: |
+        Passé simple de **avoir / être** + particípio, depois de **quand, lorsque, dès que, aussitôt que, après que, à peine**: ação imediatamente anterior a outra no passé simple. **Dès qu'il eut fini, il sortit** (Assim que terminou, saiu). Corresponde ao nosso *mal tinha terminado / assim que terminou*. Só na narrativa escrita.
+    examples:
+    - ["Dès qu'il eut fini, il sortit.", "As soon as he had finished, he went out.", "Assim que terminou, ele saiu.", "eut"]
+    - ["Quand ils eurent mangé, ils partirent.", "When they had eaten, they left.", "Depois que comeram, eles partiram.", "eurent"]
+    - ["À peine eut-il parlé qu'on l'applaudit.", "Hardly had he spoken when they applauded him.", "Mal tinha falado e já o aplaudiram.", "eut-il"]
+    match: {seq: [{word: [eus, eut, eûmes, eûtes, eurent, eut-il, eut-elle]}, {re: "^(?!(du|au|plus|si|qui|ni|lui|tu|peu|aussi|ainsi|ici|parmi|droit|lieu|tort|besoin|peur|faim|froid|chaud|soif|honte|beau|tout|jamais|mais|pas|depuis|puis)$).+(é|ée|és|ées|i|ie|is|u|ue|us|it|ert|ort|ait)$"}], near: 0, gap: 0}
+    pool: [eut, avait, a, aurait, eût]
+
+- title: {en: Syntax of careful French, pt: Sintaxe do francês cuidado}
+  lessons:
+  - id: fr-c1-inversion
+    title: peut-être viendra-t-il
+    meaning: {en: "subject–verb inversion and the euphonic -t-", pt: "inversão sujeito–verbo e o -t- eufônico"}
+    intro:
+      en: |
+        Formal questions invert a pronoun subject with a hyphen: **Viendra-t-il ? Que veut-elle ? Puis-je entrer ?** Between two vowels a **-t-** is inserted: **a-t-il, parle-t-on, va-t-elle** (not after -d / -t: **prend-il, est-il**). Written French also inverts after **peut-être, sans doute, aussi** "therefore", **à peine, ainsi, du moins**: **Peut-être viendra-t-il. Aussi a-t-il refusé.**
+      pt: |
+        A pergunta formal inverte o pronome sujeito com hífen: **Viendra-t-il ? Que veut-elle ? Puis-je entrer ?** Entre duas vogais entra um **-t-**: **a-t-il, parle-t-on, va-t-elle** (não depois de -d / -t: **prend-il, est-il**). A escrita também inverte depois de **peut-être, sans doute, aussi** (por isso — falso amigo!), **à peine, ainsi**: **Peut-être viendra-t-il. Aussi a-t-il refusé** (Por isso ele recusou).
+    examples:
+    - ["Peut-être viendra-t-il demain.", "Perhaps he'll come tomorrow.", "Talvez ele venha amanhã.", "viendra-t-il"]
+    - ["Que veut-elle ?", "What does she want?", "O que ela quer?", "veut-elle"]
+    - ["A-t-il compris ?", "Has he understood?", "Ele entendeu?", "A-t-il"]
+    match:
+    - {seq: [{re: "-(t-)?il$"}], gap: 0, suffixes: ["-t-il", "-il"]}
+    - {seq: [{re: "-(t-)?elle$"}], gap: 0, suffixes: ["-t-elle", "-elle"]}
+    - {seq: [{re: "-(t-)?on$"}], gap: 0, suffixes: ["-t-on", "-on"]}
+
+  - id: fr-c1-ne-expletif
+    title: avant qu'il ne parte
+    meaning: {en: "the expletive ne", pt: "o ne expletivo"}
+    intro:
+      en: |
+        In careful French a **ne** without **pas** appears after **avant que, à moins que, de peur que, craindre que, empêcher que** and in comparisons of inequality: **Pars avant qu'il ne pleuve. Je crains qu'il ne soit trop tard. C'est plus difficile que je ne pensais.** It is not a negation: the meaning is positive. It is optional; speech usually drops it.
+      pt: |
+        No francês cuidado aparece um **ne** sem **pas** depois de **avant que, à moins que, de peur que, craindre que, empêcher que** e em comparações de desigualdade: **Pars avant qu'il ne pleuve** (Saia antes que chova). **Je crains qu'il ne soit trop tard. C'est plus difficile que je ne pensais.** Não é negação: o sentido é positivo. É opcional e a fala costuma omiti-lo.
+    examples:
+    - ["Pars avant qu'il ne pleuve.", "Leave before it rains.", "Saia antes que chova.", "ne"]
+    - ["Je crains qu'il ne soit trop tard.", "I'm afraid it's too late.", "Receio que seja tarde demais.", "ne"]
+    - ["C'est plus difficile que je ne pensais.", "It's harder than I thought.", "É mais difícil do que eu pensava.", "ne"]
+    match: {seq: [{word: [avant, moins, peur, crains, craint, craignais, craignait, plus, mieux, pire, autrement, empêcher]}, {word: [que, qu]}, {word: [ne, n]}, {pos: verb}], near: 2, gap: 2}
+    pool: [ne, pas, "y", en, le]
+
+  - id: fr-c1-ne-que
+    title: je n'ai qu'un frère
+    meaning: {en: "restriction: ne … que (only)", pt: "restrição: ne … que (só, apenas)"}
+    intro:
+      en: |
+        **ne … que** means "only", with **que** placed right before what is restricted: **Je n'ai qu'un frère. Il ne pense qu'à l'argent. On ne vit qu'une fois.** It is not a negation: **de** does not replace the article (**Je ne bois que de l'eau**). **ne … pas que** = "not only".
+      pt: |
+        **ne … que** = só, apenas, com o **que** logo antes do que é restringido: **Je n'ai qu'un frère** (Só tenho um irmão). **Il ne pense qu'à l'argent. On ne vit qu'une fois** (Só se vive uma vez). Não é negação: o artigo fica (**Je ne bois que de l'eau**). **ne … pas que** = não só.
+    examples:
+    - ["Je n'ai qu'un frère.", "I only have one brother.", "Só tenho um irmão.", "qu"]
+    - ["Il ne pense qu'à l'argent.", "He only thinks about money.", "Ele só pensa em dinheiro.", "qu"]
+    - ["Je ne bois que de l'eau.", "I only drink water.", "Só bebo água.", "que"]
+    match: {seq: [{word: [ne, n]}, {pos: verb}, {word: [que, qu]}], near: 2, gap: 2}
+    pool: [que, pas, plus, jamais, rien]
+
+  - id: fr-c1-lequel
+    title: auquel, duquel, dans lequel
+    meaning: {en: "lequel and its contractions after prepositions", pt: "lequel e suas contrações depois de preposições"}
+    intro:
+      en: |
+        After a preposition, a relative for things is **lequel, laquelle, lesquels, lesquelles**, contracted with **à** (**auquel, auxquels, auxquelles**) and **de** (**duquel, desquels, desquelles**): **la raison pour laquelle, le projet auquel je pense, le parc près duquel j'habite.** For people **qui** is usual: **l'ami à qui je parle**. With plain **de**, prefer **dont**.
+      pt: |
+        Depois de preposição, o relativo para coisas é **lequel, laquelle, lesquels, lesquelles** (o qual, a qual…), contraído com **à** (**auquel, auxquels**) e **de** (**duquel, desquels**): **la raison pour laquelle** (a razão pela qual), **le projet auquel je pense** (o projeto em que penso), **le parc près duquel j'habite**. Para pessoas, em geral **qui**: **l'ami à qui je parle**. Com **de** sozinho, prefira **dont**.
+    examples:
+    - ["C'est la raison pour laquelle je suis venu.", "That's the reason I came.", "É a razão pela qual eu vim.", "laquelle"]
+    - ["Le projet auquel je pense est ambitieux.", "The project I'm thinking of is ambitious.", "O projeto em que estou pensando é ambicioso.", "auquel"]
+    - ["Le parc près duquel j'habite est grand.", "The park I live near is big.", "O parque perto do qual eu moro é grande.", "duquel"]
+    match: {seq: [{word: [lequel, laquelle, lesquels, lesquelles, auquel, auxquels, auxquelles, duquel, desquels, desquelles]}], gap: 0}
+    pool: [lequel, laquelle, lesquels, auquel, duquel, dont]
+
+  - id: fr-c1-accord-participe
+    title: la lettre que j'ai écrite
+    meaning: {en: "past participle agreement with avoir", pt: "concordância do particípio com avoir"}
+    intro:
+      en: |
+        With **avoir** the participle agrees with the direct object only when that object comes before it: **J'ai écrit la lettre** but **la lettre que j'ai écrite**, **Je les ai vus**, **Quelles robes as-tu achetées ?** Never with **en** or an indirect object: **Je leur ai parlé.** Heard only in participles ending in a consonant: **écrite, prise, faite**.
+      pt: |
+        Com **avoir**, o particípio concorda com o objeto direto só quando ele vem antes: **J'ai écrit la lettre**, mas **la lettre que j'ai écrite**, **Je les ai vus** (Eu os vi). Nunca com **en** nem com objeto indireto: **Je leur ai parlé.** Só se ouve nos particípios terminados em consoante: **écrite, prise, faite**. Não existe nada parecido no português, então é questão de atenção na escrita.
+    examples:
+    - ["Voici la lettre que j'ai écrite.", "Here's the letter I wrote.", "Aqui está a carta que eu escrevi.", "écrite"]
+    - ["Je les ai vus hier.", "I saw them yesterday.", "Eu os vi ontem.", "vus"]
+    - ["Quelles robes as-tu achetées ?", "Which dresses did you buy?", "Que vestidos você comprou?", "achetées"]
+    match: {seq: [{word: [l, les, la, que, qu, me, m, te, t, nous, vous]}, {word: [ai, as, a, avons, avez, ont, avais, avait, avaient, aurait]}, {re: "(ée|ées|és|ie|ies|is|ue|ues|us|te|tes|se|ses)$", pos: verb}], near: 1, gap: 2}
+
+- title: {en: Mood and nuance, pt: Modo e nuance}
+  lessons:
+  - id: fr-c1-esperer-souhaiter
+    title: j'espère qu'il viendra, je souhaite qu'il vienne
+    meaning: {en: "indicative or subjunctive: espérer, souhaiter, après que, le fait que", pt: "indicativo ou subjuntivo: espérer, souhaiter, après que, le fait que"}
+    intro:
+      en: |
+        Some pairs look alike but differ: **espérer que** + indicative (**J'espère qu'il viendra**), **souhaiter que** + subjunctive (**Je souhaite qu'il vienne**). **après que** + indicative, **avant que** + subjunctive. **le fait que** usually takes the subjunctive. **se douter que** "to suspect" takes the indicative, unlike **douter que**.
+      pt: |
+        Alguns pares parecem iguais mas diferem: **espérer que** + indicativo (**J'espère qu'il viendra**, Espero que ele venha — note: o português usa subjuntivo!), **souhaiter que** + subjuntivo (**Je souhaite qu'il vienne**). **après que** + indicativo, **avant que** + subjuntivo. **le fait que** costuma pedir subjuntivo. **se douter que** (desconfiar) pede indicativo, ao contrário de **douter que**.
+    mistakes:
+    - wrong: J'espère qu'il vienne.
+      right: J'espère qu'il viendra.
+      why: {en: "espérer takes the indicative.", pt: "espérer pede indicativo, ao contrário do português esperar que + subjuntivo."}
+    examples:
+    - ["J'espère qu'il viendra.", "I hope he'll come.", "Espero que ele venha.", "viendra"]
+    - ["Je souhaite qu'il vienne.", "I wish he would come.", "Desejo que ele venha.", "vienne"]
+    - ["J'espère que tu vas bien.", "I hope you're well.", "Espero que você esteja bem.", "vas"]
+    match: {seq: [{lemma: "^(espérer|souhaiter|se douter)$"}, {word: [que, qu]}, {pos: verb}], near: 3, gap: 2, same: [person, number]}
+
+  - id: fr-c1-avoir-beau
+    title: j'ai beau essayer
+    meaning: {en: "concession: avoir beau, quand bien même, si … que", pt: "concessão: avoir beau, quand bien même, si … que"}
+    intro:
+      en: |
+        **avoir beau** + infinitive "however much…, in vain": **J'ai beau essayer, je n'y arrive pas.** **quand bien même** + conditional "even if": **Quand bien même il viendrait, je ne lui parlerais pas.** **si / aussi** + adjective + **que** + subjunctive: **Si riche qu'il soit, il n'est pas heureux.** Also **où que, quoi que, qui que** (C2).
+      pt: |
+        **avoir beau** + infinitivo = por mais que, em vão: **J'ai beau essayer, je n'y arrive pas** (Por mais que eu tente, não consigo). **quand bien même** + condicional = mesmo que: **Quand bien même il viendrait, je ne lui parlerais pas.** **si / aussi** + adjetivo + **que** + subjuntivo = por mais… que: **Si riche qu'il soit, il n'est pas heureux** (Por mais rico que seja…).
+    examples:
+    - ["J'ai beau essayer, je n'y arrive pas.", "However hard I try, I can't do it.", "Por mais que eu tente, não consigo.", "essayer"]
+    - ["Tu as beau crier, personne ne t'entend.", "You can shout all you like, nobody hears you.", "Pode gritar à vontade, ninguém te ouve.", "crier"]
+    - ["Elle a beau être jeune, elle est très sage.", "Young as she is, she's very wise.", "Apesar de jovem, ela é muito sensata.", "être"]
+    match: {seq: [{lemma: "^avoir$"}, {word: [beau]}, {pos: verb, mood: inf}], gap: 2}
+
+  - id: fr-c1-on-nous
+    title: on y va
+    meaning: {en: "on for nous, and other features of spoken French", pt: "on no lugar de nous e outros traços do francês falado"}
+    intro:
+      en: |
+        In speech **on** replaces **nous** almost always, with a 3rd person singular verb but plural agreement: **On est partis à huit heures. On y va ?** Spoken French also drops **ne** (**Je sais pas**), uses **ça** for **cela** and **il y a** shortened to **y a**. In writing, keep **nous** and **ne**.
+      pt: |
+        Na fala, **on** substitui **nous** quase sempre, com verbo na 3ª do singular — exatamente como o nosso *a gente*: **On est partis à huit heures** (A gente saiu às oito). **On y va ?** (Vamos?) O francês falado também derruba o **ne** (**Je sais pas**), usa **ça** por **cela**. Na escrita formal, **nous** e **ne**.
+    examples:
+    - ["On y va ?", "Shall we go?", "Vamos?", "On"]
+    - ["On est partis à huit heures.", "We left at eight.", "A gente saiu às oito.", "On"]
+    - ["On se voit demain.", "See you tomorrow.", "A gente se vê amanhã.", "On"]
+    match: {seq: [{word: ["on"], start: true}, {pos: verb}], near: 2, gap: 0}
+    pool: ["on", nous, ils, il]
+
+  - id: fr-c1-adverbes-ment
+    title: évidemment, couramment
+    meaning: {en: "adverbs in -amment and -emment", pt: "advérbios em -amment e -emment"}
+    intro:
+      en: |
+        Adjectives in **-ant** give **-amment** (**courant → couramment, constant → constamment**); adjectives in **-ent** give **-emment** (**évident → évidemment, récent → récemment**). Both are pronounced **[amɑ̃]**. Exceptions: **lent → lentement, présent → présentement**.
+      pt: |
+        Adjetivos em **-ant** dão **-amment** (**courant → couramment, constant → constamment**); em **-ent** dão **-emment** (**évident → évidemment, récent → récemment**). As duas se pronunciam **[amɑ̃]**, por isso a grafia confunde até os franceses. Exceções: **lent → lentement**.
+    examples:
+    - ["Il parle couramment anglais.", "He speaks English fluently.", "Ele fala inglês fluentemente.", "couramment"]
+    - ["Évidemment, c'est trop tard.", "Obviously, it's too late.", "Evidentemente, é tarde demais.", "Évidemment"]
+    - ["Je l'ai vu récemment.", "I saw him recently.", "Eu o vi recentemente.", "récemment"]
+    match: {seq: [{re: "(amment|emment)$"}], gap: 0, suffixes: [amment, emment]}

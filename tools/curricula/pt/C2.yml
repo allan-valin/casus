@@ -1,0 +1,189 @@
+id: C2
+topics:
+
+- title: {en: Literary and formal forms, pt: Formas literárias e formais}
+  lessons:
+  - id: pt-c2-mesoclise
+    title: far-se-á, dir-lhe-ei
+    meaning: {en: "mesoclisis: the pronoun inside the future and conditional", pt: "a mesóclise: o pronome dentro do futuro e do condicional"}
+    intro:
+      en: |
+        In the written norm a clitic cannot follow a future or conditional verb, and starting a sentence with it is avoided, so it goes inside, between the infinitive and the ending: **dir-lhe-ei** "I'll tell him", **far-se-á** "it will be done", **encontrá-lo-ia** "I would find him". Today it lives in laws, speeches and literature; in speech Brazilians say **vou te dizer, eu te diria**.
+      pt: |
+        Na norma escrita, o pronome não pode vir depois do futuro ou do condicional, e evita-se começar a frase com ele; então ele entra no meio, entre o infinitivo e a terminação: **dir-lhe-ei** (direi a ele), **far-se-á** (será feito), **encontrá-lo-ia** (eu o encontraria). Hoje vive em leis, discursos e literatura; na fala, o brasileiro diz **vou te dizer, eu te diria**. Com palavra atrativa antes, usa-se a próclise: **Não lhe direi.**
+    examples:
+    - ["Dir-lhe-ei a verdade.", "I'll tell him the truth.", "I'll tell him the truth.", "Dir-lhe-ei"]
+    - ["Far-se-á justiça.", "Justice will be done.", "Justice will be done.", "Far-se-á"]
+    - ["Encontrá-lo-ia em qualquer lugar.", "I would find him anywhere.", "I would find him anywhere.", "Encontrá-lo-ia"]
+    match:
+    - {seq: [{re: "-(se|me|te|lhe|nos|lhes)-(ei|ás|á|emos|ão|ia|ias|íamos|iam)$"}], gap: 0, suffixes: ["-ei", "-á", "-emos", "-ão", "-ia", "-iam"]}
+    - {seq: [{re: "-(lo|la|los|las)-(ei|ás|á|emos|ão|ia|ias|íamos|iam)$"}], gap: 0, suffixes: ["-ei", "-á", "-emos", "-ão", "-ia", "-iam"]}
+
+  - id: pt-c2-mais-que-perfeito
+    title: ele dissera, eu fizera
+    meaning: {en: "the simple pluperfect (literary)", pt: "o mais-que-perfeito simples (literário)"}
+    intro:
+      en: |
+        Besides **tinha feito**, literary Portuguese has a one-word pluperfect: 3rd plural preterite minus **-am** plus **-a**: **disseram → dissera, fizeram → fizera, tiveram → tivera, chegaram → chegara**. **Quando cheguei, ele já partira** = já tinha partido. It also survives in set phrases: **Quem me dera!** "If only!", **Pudera!** "No wonder!", **Quisera eu!**
+      pt: |
+        Além de **tinha feito**, o português literário tem um mais-que-perfeito simples: 3ª do plural do pretérito menos **-am** mais **-a**: **disseram → dissera, fizeram → fizera, tiveram → tivera, chegaram → chegara**. **Quando cheguei, ele já partira** = já tinha partido. Sobrevive também em expressões: **Quem me dera!** (Tomara!), **Pudera!** (Não é para menos!), **Quisera eu!** Não confunda: em espanhol *hablara* é subjuntivo.
+    examples:
+    - ["Quando cheguei, ele já partira.", "When I arrived, he had already left.", "When I arrived, he had already left.", "partira"]
+    - ["Ela dissera que voltaria.", "She had said she would come back.", "She had said she would come back.", "dissera"]
+    - ["Quem me dera ter tempo!", "If only I had time!", "If only I had time!", "dera"]
+    match: {seq: [{word: [fizera, dissera, tivera, estivera, pudera, quisera, soubera, trouxera, viera, dera, pusera, houvera, chegara, deixara, ficara, partira, morrera, nascera, esquecera, perdera, conhecera, voltara, acabara, começara, encontrara, falara, vivera, escrevera, comprara, pensara, prometera, sonhara, amara]}], gap: 0}
+
+  - id: pt-c2-tu-vos
+    title: tu fizeste, vós sois
+    meaning: {en: "tu and vós: full conjugation, regional and literary", pt: "tu e vós: conjugação completa, regional e literária"}
+    intro:
+      en: |
+        Most Brazilians use **você** with 3rd person verbs. **tu** is alive in the South, the North and parts of the Northeast, often with a 3rd person verb in speech (**tu vai**), but with its own forms in writing and in Portugal: **tu és, tu tens, tu fizeste, tu foste**. **vós** (2nd plural: **vós sois, vós fizestes**) survives only in prayers, the Bible, old literature and solemn speeches.
+      pt: |
+        A maioria dos brasileiros usa **você** com verbo na 3ª pessoa. O **tu** vive no Sul, no Norte e em partes do Nordeste, muitas vezes com verbo na 3ª pessoa na fala (**tu vai**), mas com formas próprias na escrita e em Portugal: **tu és, tu tens, tu fizeste, tu foste**. O **vós** (**vós sois, vós fizestes**) só sobrevive em orações, na Bíblia, na literatura antiga e em discursos solenes. Atenção ao pretérito: **tu falaste** (sem -s final; ~~falastes~~ é vós).
+    table:
+      head: {en: [Verb, tu (present), tu (preterite), vós (present)], pt: [Verbo, tu (presente), tu (pretérito), vós (presente)]}
+      rows:
+      - [ser, és, foste, sois]
+      - [ter, tens, tiveste, tendes]
+      - [fazer, fazes, fizeste, fazeis]
+      - [falar, falas, falaste, falais]
+    examples:
+    - ["Tu és muito gentil.", "You are very kind.", "You are very kind.", "és"]
+    - ["Onde foste ontem?", "Where did you go yesterday?", "Where did you go yesterday?", "foste"]
+    - ["Tu tens razão.", "You're right.", "You're right.", "tens"]
+    match: {seq: [{word: [és, tens, fizeste, foste, estiveste, tiveste, disseste, viste, sabes, queres, podes, vais, estás, fazes, falaste, comeste, sois, tendes, fizestes, sabeis, podeis, ides, estais, vindes, dizes, gostas, precisas, conheces, entendes, pensas, achas, falas, vens]}], gap: 0}
+
+- title: {en: Fine points of the norm, pt: Sutilezas da norma}
+  lessons:
+  - id: pt-c2-cujo
+    title: cujo, cuja
+    meaning: {en: "cujo: whose, agreeing with the thing owned", pt: "cujo: concordância com o possuído"}
+    intro:
+      en: |
+        **cujo, cuja, cujos, cujas** = "whose", agreeing with the following noun, with no article after it: **o autor cujo livro li**, **a casa cujas janelas estão quebradas**. A preposition required by the verb goes before it: **o amigo em cuja casa fiquei**. Speech avoids it with **que … dele**, which the norm rejects.
+      pt: |
+        **cujo, cuja, cujos, cujas** concorda com o substantivo seguinte e nunca leva artigo depois (~~cujo o~~): **o autor cujo livro li**, **a casa cujas janelas estão quebradas**. A preposição exigida pelo verbo vem antes: **o amigo em cuja casa fiquei**. A fala evita com **que … dele** (*o autor que eu li o livro dele*), construção que a norma não aceita.
+    mistakes:
+    - wrong: o escritor cujo o livro li
+      right: o escritor cujo livro li
+      why: {en: "no article after cujo.", pt: "nada de artigo depois de cujo."}
+    examples:
+    - ["Este é o autor cujo livro li.", "This is the author whose book I read.", "This is the author whose book I read.", "cujo"]
+    - ["A casa, cujas janelas estão quebradas, está à venda.", "The house, whose windows are broken, is for sale.", "The house, whose windows are broken, is for sale.", "cujas"]
+    - ["Tenho uma amiga cuja mãe é médica.", "I have a friend whose mother is a doctor.", "I have a friend whose mother is a doctor.", "cuja"]
+    match: {seq: [{word: [cujo, cuja, cujos, cujas]}], gap: 0}
+    pool: [cujo, cuja, cujos, cujas]
+
+  - id: pt-c2-o-qual
+    title: no qual, pela qual
+    meaning: {en: "o qual, a qual after prepositions", pt: "o qual, a qual depois de preposições"}
+    intro:
+      en: |
+        After a preposition, especially one of two or more syllables, careful Portuguese uses **o qual, a qual, os quais, as quais**, contracted with the preposition: **a razão pela qual vim**, **o prédio no qual trabalho**, **as pessoas com as quais falei**, **a empresa para a qual trabalho**. After short prepositions **que** is also fine: **a casa em que moro**.
+      pt: |
+        Depois de preposição, sobretudo das que têm duas sílabas ou mais, o português cuidado usa **o qual, a qual, os quais, as quais**, contraídos com a preposição: **a razão pela qual vim**, **o prédio no qual trabalho**, **as pessoas com as quais falei**, **a empresa para a qual trabalho**. Depois de preposição curta, **que** também serve: **a casa em que moro**. Na fala, a preposição costuma sumir (*a casa que eu moro*) — evite na escrita.
+    examples:
+    - ["Essa é a razão pela qual vim.", "That's the reason why I came.", "That's the reason why I came.", "pela"]
+    - ["O prédio no qual trabalho é antigo.", "The building I work in is old.", "The building I work in is old.", "no"]
+    - ["A empresa para a qual trabalho é grande.", "The company I work for is big.", "The company I work for is big.", "a"]
+    match: {seq: [{word: [o, a, os, as, "no", na, nos, nas, do, da, dos, das, ao, à, aos, às, pelo, pela, pelos, pelas]}, {word: [qual, quais]}], gap: 0}
+    pool: [o, a, "no", na, pelo, pela, do, da]
+
+  - id: pt-c2-onde-aonde
+    title: onde, aonde, donde
+    meaning: {en: "onde, aonde, donde", pt: "onde, aonde, donde"}
+    intro:
+      en: |
+        The written norm distinguishes **onde** "where (at)" with verbs of position (**Onde você mora?**), **aonde** "where (to)" with verbs of motion that take **a** (**Aonde você vai?**), and **donde / de onde** "where from" (**De onde você é?**). In speech **onde** covers everything (**Onde você vai?**). **onde** should also refer only to places, not to times or situations.
+      pt: |
+        A norma distingue **onde** (lugar em que) com verbos de permanência (**Onde você mora?**), **aonde** (lugar a que) com verbos de movimento regidos por **a** (**Aonde você vai?**) e **donde / de onde** (lugar de que: **De onde você é?**). Na fala, **onde** cobre tudo (**Onde você vai?**). Na escrita, **onde** deve se referir só a lugar, não a tempo nem a situação (~~a reunião onde decidimos~~ → **na qual**).
+    examples:
+    - ["Aonde você vai?", "Where are you going?", "Where are you going?", "Aonde"]
+    - ["Onde você mora?", "Where do you live?", "Where do you live?", "Onde"]
+    - ["Não sei aonde ele foi.", "I don't know where he went.", "I don't know where he went.", "aonde"]
+    match: {seq: [{word: [onde, aonde, donde]}], gap: 0}
+    pool: [onde, aonde, donde]
+
+  - id: pt-c2-haver-fazer
+    title: há dois anos, havia muitas pessoas
+    meaning: {en: "impersonal haver and fazer", pt: "haver e fazer impessoais"}
+    intro:
+      en: |
+        **haver** meaning "there is / there are" and **fazer** for elapsed time are impersonal: always 3rd singular. **Havia muitas pessoas** (not ~~haviam~~), **Houve problemas**, **Faz dois anos que moro aqui** (not ~~fazem~~). For time ago write **há**, not **a**: **Moro aqui há dois anos**; **a** is for the future: **daqui a dois anos**. Speech uses **ter**: **Tinha muita gente.**
+      pt: |
+        **haver** no sentido de existir e **fazer** indicando tempo decorrido são impessoais: sempre 3ª do singular. **Havia muitas pessoas** (não ~~haviam~~), **Houve problemas**, **Faz dois anos que moro aqui** (não ~~fazem~~). Para tempo passado, **há**, não **a**: **Moro aqui há dois anos**; **a** é para o futuro: **daqui a dois anos**. A fala usa **ter**: **Tinha muita gente.**
+    mistakes:
+    - wrong: Haviam muitas pessoas na festa.
+      right: Havia muitas pessoas na festa.
+      why: {en: "existential haver is impersonal: singular.", pt: "haver = existir é impessoal: singular."}
+    - wrong: Fazem dois anos que moro aqui.
+      right: Faz dois anos que moro aqui.
+      why: {en: "fazer for elapsed time is impersonal.", pt: "fazer indicando tempo é impessoal."}
+    examples:
+    - ["Moro aqui há dois anos.", "I've lived here for two years.", "I've lived here for two years.", "há"]
+    - ["Havia muitas pessoas na festa.", "There were many people at the party.", "There were many people at the party.", "Havia"]
+    - ["Faz dez anos que não o vejo.", "I haven't seen him for ten years.", "I haven't seen him for ten years.", "Faz"]
+    match:
+    - {seq: [{word: [há]}, {word: [anos, meses, dias, semanas, horas, minutos, muito, pouco, tempos, séculos, dois, duas, três, quatro, cinco, dez, vinte, alguns, algumas, uns, umas]}], gap: 0, pool: [há, a, à]}
+    - {seq: [{word: [havia, houve, haverá, haveria, haja]}, {word: [muitas, muitos, várias, vários, duas, dois, três, algumas, alguns, poucas, poucos, umas, uns, tantas, tantos]}], gap: 0, pool: [havia, haviam, houve, houveram]}
+    - {seq: [{word: [faz, fazia, fará]}, {word: [anos, meses, dias, semanas, horas, minutos, muito, tempo, dois, duas, três, cinco, dez, vinte, séculos]}], gap: 0, pool: [faz, fazem, fazia, faziam]}
+
+  - id: pt-c2-participios-duplos
+    title: tinha pagado, foi pago
+    meaning: {en: "double past participles: pagado / pago, aceitado / aceito", pt: "particípios duplos: pagado / pago, aceitado / aceito"}
+    intro:
+      en: |
+        Some verbs have two participles. The traditional rule: the regular one (**-ado / -ido**) with **ter / haver**, the short one with **ser / estar**: **Ele tinha aceitado o convite / O convite foi aceito.** In Brazil the short forms spread to **ter** too: **tinha pago, tinha ganho, tinha gasto** are normal; **pegado / pego**, **entregado / entregue**, **morrido / morto**, **imprimido / impresso**, **salvado / salvo**, **acendido / aceso**.
+      pt: |
+        Alguns verbos têm dois particípios. Regra tradicional: o regular (**-ado / -ido**) com **ter / haver**, o curto com **ser / estar**: **Ele tinha aceitado o convite / O convite foi aceito.** No Brasil a forma curta se espalhou também com **ter**: **tinha pago, tinha ganho, tinha gasto** são normais; outros pares: **pegado / pego**, **entregado / entregue**, **morrido / morto**, **imprimido / impresso**, **salvado / salvo**, **acendido / aceso**. Com **ser / estar**, sempre a forma curta: **está aceso**, não ~~está acendido~~.
+    table:
+      head: {en: [Verb, with ter, with ser / estar], pt: [Verbo, com ter, com ser / estar]}
+      rows:
+      - [aceitar, aceitado, aceito]
+      - [pagar, pagado / pago, pago]
+      - [entregar, entregado, entregue]
+      - [morrer, morrido, morto]
+      - [imprimir, imprimido, impresso]
+      - [acender, acendido, aceso]
+    examples:
+    - ["O convite foi aceito.", "The invitation was accepted.", "The invitation was accepted.", "aceito"]
+    - ["A luz está acesa.", "The light is on.", "The light is on.", "acesa"]
+    - ["Ele tinha pago a conta.", "He had paid the bill.", "He had paid the bill.", "pago"]
+    match: {seq: [{lemma: "^(ter|haver|ser|estar|ficar)$"}, {word: [aceito, aceita, aceitos, aceitas, aceitado, pago, paga, pagos, pagas, pagado, ganho, ganhado, gasto, gastado, pego, pega, pegado, entregue, entregues, entregado, eleito, eleita, elegido, preso, presa, presos, prendido, morto, morta, mortos, morrido, salvo, salva, salvado, aceso, acesa, acendido, impresso, impressa, imprimido, limpo, limpa, limpado, expulso, expulsado, suspenso, suspendido, solto, solta, soltado, enxuto, enxugado]}], near: 1, gap: 1}
+
+- title: {en: Spoken Brazilian Portuguese, pt: Português brasileiro falado}
+  lessons:
+  - id: pt-c2-a-gente
+    title: a gente vai
+    meaning: {en: "a gente for nós", pt: "a gente no lugar de nós"}
+    intro:
+      en: |
+        In Brazilian speech **a gente** "we" largely replaces **nós**, with a 3rd person singular verb: **A gente vai ao cinema. A gente se vê amanhã.** Mixing it with a **nós** verb (**a gente vamos**) is stigmatised. Possessive: **nosso** or **da gente**. In formal writing use **nós**.
+      pt: |
+        Na fala brasileira **a gente** substitui em grande parte o **nós**, com verbo na 3ª do singular: **A gente vai ao cinema. A gente se vê amanhã.** Misturar com verbo de **nós** (~~a gente vamos~~) é estigmatizado. Possessivo: **nosso** ou **da gente**. Em texto formal, prefira **nós**. Adjetivo concorda com o sentido: **A gente está cansado / cansada / cansados.**
+    mistakes:
+    - wrong: A gente vamos sair.
+      right: A gente vai sair.
+      why: {en: "a gente takes a 3rd person singular verb.", pt: "a gente pede verbo na 3ª do singular."}
+    examples:
+    - ["A gente vai ao cinema.", "We're going to the cinema.", "We're going to the cinema.", "vai"]
+    - ["A gente se vê amanhã.", "See you tomorrow.", "See you tomorrow.", "vê"]
+    - ["A gente estava com fome.", "We were hungry.", "We were hungry.", "estava"]
+    match: {seq: [{word: [a]}, {word: [gente]}, {pos: verb, person: "3", number: sg}], near: 2, gap: 2, same: [tense, mood]}
+
+  - id: pt-c2-fala
+    title: tá, tô, pra
+    meaning: {en: "reduced forms of speech: tá, tô, pra, pro", pt: "formas reduzidas da fala: tá, tô, pra, pro"}
+    intro:
+      en: |
+        Spoken Brazilian Portuguese shortens very common words: **estar → tô, tá, tava** (**Tô cansado. Tá bom. Tava chovendo**), **para → pra, pro (para o), pras, pros**, **você → cê**, **não é? → né?**. They appear in chats, songs and dialogue in fiction; in formal writing use the full forms.
+      pt: |
+        O português falado no Brasil encurta palavras muito comuns: **estar → tô, tá, tava** (**Tô cansado. Tá bom. Tava chovendo**), **para → pra, pro (para o), pras, pros**, **você → cê**, **não é? → né?**. Aparecem em conversas, mensagens, músicas e diálogos de ficção; no texto formal, use as formas plenas. Reconhecê-las é essencial para entender o Brasil real.
+    examples:
+    - ["Tô cansado.", "I'm tired.", "I'm tired.", "Tô"]
+    - ["Tá bom, pode ir.", "Okay, you can go.", "Okay, you can go.", "Tá"]
+    - ["Vou pra casa.", "I'm going home.", "I'm going home.", "pra"]
+    match:
+    - {seq: [{word: [tá, tô, tava, tavam, tamos, tás]}, {pos: [adj, verb, adv]}], gap: 0, pool: [tá, tô, tava, tás]}
+    - {seq: [{word: [pra, pro, pras, pros]}], gap: 0, pool: [pra, pro, pras, pros]}

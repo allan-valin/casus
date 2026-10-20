@@ -1,0 +1,263 @@
+# German C2, written by AI (Claude) for Casus (2026-10-20; marked as such on every lesson): Grimm Grammar has no C2
+# pages. Points: extended participial attributes, the gerundive, subjective modals in the past, concession, formal
+# Konjunktiv I, genitive verbs and formal prepositions; explanations written here.
+id: C2
+topics:
+
+- title: {en: Extended attributes, pt: Atributos estendidos}
+  lessons:
+  - id: de-c2-extended-participle
+    title: die von allen geliebte Lehrerin
+    meaning: {en: "the extended participial attribute", pt: "o atributo participial estendido"}
+    intro:
+      en: |
+        Written German packs a whole relative clause between the article and the noun: the participle goes last, just before the noun, and everything that belongs to it comes before it:
+
+        - **die Lehrerin, die von allen geliebt wird → die von allen geliebte Lehrerin**
+        - **der Laden, der seit Jahren leer steht → der seit Jahren leer stehende Laden**
+        - **das Haus, das 1900 in Berlin gebaut wurde → das 1900 in Berlin gebaute Haus**
+
+        To read one: find the article, jump to the noun it agrees with, then read the words in between backwards from the participle.
+      pt: |
+        O alemão escrito põe uma oração relativa inteira entre o artigo e o substantivo: o particípio vai por último, logo antes do substantivo, e tudo o que depende dele vem antes:
+
+        - **die Lehrerin, die von allen geliebt wird → die von allen geliebte Lehrerin** "a professora amada por todos"
+        - **der Laden, der seit Jahren leer steht → der seit Jahren leer stehende Laden** "a loja vazia há anos"
+        - **das Haus, das 1900 in Berlin gebaut wurde → das 1900 in Berlin gebaute Haus** "a casa construída em Berlim em 1900"
+
+        Para ler: ache o artigo, pule para o substantivo com que ele concorda e leia o meio de trás para a frente, a partir do particípio.
+    examples:
+    - ["Sie ist eine von allen geliebte Lehrerin.", "She's a teacher loved by everyone.", "Ela é uma professora amada por todos.", "geliebte"]
+    - ["Das in Berlin gebaute Haus ist alt.", "The house built in Berlin is old.", "A casa construída em Berlim é antiga.", "gebaute"]
+    - ["Der seit Jahren leer stehende Laden wird verkauft.", "The shop that has stood empty for years is being sold.", "A loja vazia há anos está sendo vendida.", "stehende"]
+    match:
+    - {seq: [{pos: det}, {pos: prep}, {re: "."}, {re: "(end|ge\\p{L}+(t|en))(e|en|er|es|em)$", not: {pos: [noun, prep]}}, {pos: noun}], gap: 3}
+    - {seq: [{pos: det}, {pos: prep}, {re: "."}, {re: "."}, {re: "(end|ge\\p{L}+(t|en))(e|en|er|es|em)$", not: {pos: [noun, prep]}}, {pos: noun}], gap: 4}
+
+  - id: de-c2-gerundive
+    title: die zu lösende Aufgabe
+    meaning: {en: "zu + Partizip I: which must / can be done", pt: "zu + Partizip I: que deve / pode ser feito"}
+    intro:
+      en: |
+        **zu** + present participle before a noun is the attributive form of **sein + zu**: *which is to be …-ed*:
+
+        - **die Aufgabe ist zu lösen → die zu lösende Aufgabe** "the task to be solved"
+        - **ein nicht zu unterschätzendes Problem** "a problem not to be underestimated"
+        - **die zu erwartenden Kosten** "the costs to be expected"
+      pt: |
+        **zu** + particípio presente antes de um substantivo é a forma atributiva de **sein + zu**: *que deve / pode ser …-ado*:
+
+        - **die Aufgabe ist zu lösen → die zu lösende Aufgabe** "a tarefa a ser resolvida"
+        - **ein nicht zu unterschätzendes Problem** "um problema que não se deve subestimar"
+        - **die zu erwartenden Kosten** "os custos esperados"
+    examples:
+    - ["Das ist die zu lösende Aufgabe.", "That's the task to be solved.", "Essa é a tarefa a ser resolvida.", "lösende"]
+    - ["Es ist ein nicht zu unterschätzendes Problem.", "It's a problem not to be underestimated.", "É um problema que não se deve subestimar.", "unterschätzendes"]
+    - ["Die zu erwartenden Kosten sind hoch.", "The expected costs are high.", "Os custos esperados são altos.", "erwartenden"]
+    match: {seq: [{word: [zu]}, {re: "end(e|en|er|es|em)$"}, {pos: noun}], gap: 1}
+
+  - id: de-c2-participle-phrases
+    title: genau genommen, abgesehen davon
+    meaning: {en: "fixed participle phrases", pt: "expressões fixas com particípio"}
+    intro:
+      en: |
+        Some participles head short phrases that comment on the whole sentence:
+
+        - **kurz gesagt** (in short), **genau / streng genommen** (strictly speaking), **im Grunde genommen** (basically), **offen gestanden** (frankly), **ehrlich gesagt** (to be honest), **grob gesagt** (roughly)
+        - **abgesehen von / davon** (apart from), **vorausgesetzt, dass** (provided that), **angenommen, dass** (assuming that)
+      pt: |
+        Alguns particípios encabeçam expressões curtas que comentam a frase inteira:
+
+        - **kurz gesagt** (em suma), **genau / streng genommen** (a rigor), **im Grunde genommen** (no fundo), **offen gestanden** (francamente), **ehrlich gesagt** (para ser sincero), **grob gesagt** (grosso modo)
+        - **abgesehen von / davon** (tirando, além de), **vorausgesetzt, dass** (desde que), **angenommen, dass** (supondo que)
+    examples:
+    - ["Ehrlich gesagt habe ich keine Lust.", "To be honest, I don't feel like it.", "Para ser sincero, não estou com vontade.", "gesagt"]
+    - ["Genau genommen ist das falsch.", "Strictly speaking, that's wrong.", "A rigor, isso está errado.", "genommen"]
+    - ["Abgesehen davon ist alles in Ordnung.", "Apart from that, everything is fine.", "Fora isso, está tudo bem.", "Abgesehen"]
+    match:
+    - {seq: [{word: [kurz, genau, streng, offen, ehrlich, grob, allgemein, grunde]}, {word: [gesagt, genommen, gestanden, gesprochen]}], gap: 1, pool: [gesagt, genommen, gestanden, gesprochen]}
+    - {seq: [{word: [abgesehen, vorausgesetzt, angenommen]}, {word: [davon, von, dass]}], near: 1, gap: 0, pool: [abgesehen, vorausgesetzt, angenommen, ausgenommen]}
+
+- title: {en: Modality and concession, pt: Modalidade e concessão}
+  lessons:
+  - id: de-c2-modal-perfect
+    title: Er muss es gewusst haben.
+    meaning: {en: "subjective modals about the past: muss gewusst haben, soll gewesen sein", pt: "modais subjetivos sobre o passado: muss gewusst haben, soll gewesen sein"}
+    intro:
+      en: |
+        A guess or a report about the past puts the modal in the present and the main verb in the perfect infinitive (participle + **haben / sein**):
+
+        - **Er muss es gewusst haben.** "He must have known."
+        - **Sie soll sehr reich gewesen sein.** "She is said to have been very rich."
+        - **Er will nichts gesehen haben.** "He claims to have seen nothing."
+        - **Das kann nicht gestimmt haben.** "That can't have been true." **Sie dürfte schon angekommen sein.** "She has probably arrived."
+
+        Compare the objective past **Er musste es wissen** (he had to know).
+      pt: |
+        Uma suposição ou um boato sobre o passado põe o modal no presente e o verbo principal no infinitivo perfeito (particípio + **haben / sein**):
+
+        - **Er muss es gewusst haben.** "Ele deve ter sabido."
+        - **Sie soll sehr reich gewesen sein.** "Dizem que ela foi muito rica."
+        - **Er will nichts gesehen haben.** "Ele afirma não ter visto nada."
+        - **Das kann nicht gestimmt haben.** "Isso não pode ter sido verdade." **Sie dürfte schon angekommen sein.** "Ela provavelmente já chegou."
+
+        Compare o passado objetivo **Er musste es wissen** (ele tinha de saber).
+    examples:
+    - ["Er muss es gewusst haben.", "He must have known.", "Ele deve ter sabido.", "haben"]
+    - ["Sie soll sehr reich gewesen sein.", "She is said to have been very rich.", "Dizem que ela foi muito rica.", "sein"]
+    - ["Sie dürfte schon angekommen sein.", "She has probably arrived.", "Ela provavelmente já chegou.", "sein"]
+    match: {seq: [{word: [soll, sollen, will, wollen, muss, müssen, kann, können, dürfte, dürften, könnte, könnten, müsste]}, {pos: verb, mood: ppl2}, {word: [haben, sein]}], near: 6, gap: 2}
+    pool: [haben, sein, werden, worden, hat, ist]
+
+  - id: de-c2-concessive
+    title: obgleich, wenngleich, selbst wenn
+    meaning: {en: "concession in formal style", pt: "concessão no estilo formal"}
+    intro:
+      en: |
+        Beside **obwohl** and **trotzdem**:
+
+        - subordinating (verb last): **obgleich, obschon, wenngleich** (although), **selbst wenn / auch wenn** (even if)
+        - adverbs (verb straight after): **dennoch, gleichwohl, nichtsdestotrotz** (nevertheless)
+        - **so … auch / wie … auch (immer)** + verb last: **So sehr er sich auch bemühte, es gelang ihm nicht.** "However hard he tried, he didn't succeed."
+      pt: |
+        Além de **obwohl** e **trotzdem**:
+
+        - subordinativas (verbo no fim): **obgleich, obschon, wenngleich** (embora), **selbst wenn / auch wenn** (mesmo que)
+        - advérbios (verbo logo depois): **dennoch, gleichwohl, nichtsdestotrotz** (no entanto, ainda assim)
+        - **so … auch / wie … auch (immer)** + verbo no fim: **So sehr er sich auch bemühte, es gelang ihm nicht.** "Por mais que se esforçasse, não conseguiu."
+    examples:
+    - ["Obgleich es regnete, gingen wir spazieren.", "Although it was raining, we went for a walk.", "Embora chovesse, fomos passear.", "Obgleich"]
+    - ["Selbst wenn ich Zeit hätte, käme ich nicht.", "Even if I had time, I wouldn't come.", "Mesmo que eu tivesse tempo, não viria.", "Selbst"]
+    - ["Es war schwer, dennoch haben wir es geschafft.", "It was hard, yet we managed.", "Foi difícil, mas mesmo assim conseguimos.", "dennoch"]
+    match:
+    - {seq: [{word: [obgleich, obschon, wenngleich, gleichwohl, nichtsdestotrotz, dennoch]}], gap: 0}
+    - {seq: [{word: [selbst, auch]}, {word: [wenn]}], gap: 0}
+    pool: [obgleich, wenngleich, dennoch, selbst, weil, damit, sodass]
+
+  - id: de-c2-geschweige
+    title: geschweige denn, es sei denn, ohne dass
+    meaning: {en: "let alone, unless, without", pt: "muito menos, a não ser que, sem que"}
+    intro:
+      en: |
+        - **geschweige denn** "let alone", after a negation: **Er kann kaum laufen, geschweige denn rennen.**
+        - **es sei denn** "unless" (a frozen Konjunktiv I): **Ich komme, es sei denn, es regnet.**
+        - **ohne dass / ohne … zu** "without": **Er ging, ohne dass jemand es merkte.**
+        - **(an)statt dass / (an)statt … zu** "instead of": **Statt zu arbeiten, schläft er.**
+        - **zu …, als dass** + Konjunktiv II "too … to": **Es ist zu schön, als dass es wahr sein könnte.**
+      pt: |
+        - **geschweige denn** "muito menos", depois de uma negação: **Er kann kaum laufen, geschweige denn rennen.** "Ele mal consegue andar, muito menos correr."
+        - **es sei denn** "a não ser que" (um Konjunktiv I congelado): **Ich komme, es sei denn, es regnet.** "Eu venho, a não ser que chova."
+        - **ohne dass / ohne … zu** "sem (que)": **Er ging, ohne dass jemand es merkte.** "Ele foi embora sem que ninguém percebesse."
+        - **(an)statt dass / (an)statt … zu** "em vez de": **Statt zu arbeiten, schläft er.** "Em vez de trabalhar, ele dorme."
+        - **zu …, als dass** + Konjunktiv II "… demais para": **Es ist zu schön, als dass es wahr sein könnte.** "É bom demais para ser verdade."
+    examples:
+    - ["Er kann kaum laufen, geschweige denn rennen.", "He can hardly walk, let alone run.", "Ele mal consegue andar, muito menos correr.", "geschweige"]
+    - ["Ich komme, es sei denn, es regnet.", "I'll come, unless it rains.", "Eu venho, a não ser que chova.", "sei"]
+    - ["Er ging, ohne dass jemand es merkte.", "He left without anyone noticing.", "Ele foi embora sem que ninguém percebesse.", "ohne"]
+    match:
+    - {seq: [{word: [geschweige]}, {word: [denn]}], gap: 0, pool: [geschweige, sondern, oder, also]}
+    - {seq: [{word: [es]}, {word: [sei]}, {word: [denn]}], gap: 1, pool: [ist, wäre, war]}
+    - {seq: [{word: [ohne, anstatt, statt]}, {word: [dass]}], gap: 0, pool: [ohne, anstatt, sodass, damit, obwohl]}
+
+- title: {en: Formal register, pt: Registro formal}
+  lessons:
+  - id: de-c2-konj1-formulas
+    title: Es lebe …! Man nehme …
+    meaning: {en: "Konjunktiv I in wishes, recipes and formulas", pt: "Konjunktiv I em desejos, receitas e fórmulas"}
+    intro:
+      en: |
+        Konjunktiv I survives outside reported speech in fixed uses:
+
+        - wishes and slogans: **Es lebe die Freiheit!** "Long live freedom!" **Gott sei Dank!** "Thank God!" **Möge er in Frieden ruhen.** "May he rest in peace."
+        - old recipes and instructions: **Man nehme drei Eier.** "Take three eggs."
+        - assumptions in mathematics: **Gegeben sei ein Dreieck ABC.** "Let ABC be a triangle."
+        - **sei es … sei es** "whether … or": **sei es heute, sei es morgen**
+      pt: |
+        O Konjunktiv I sobrevive fora do discurso indireto em usos fixos:
+
+        - desejos e lemas: **Es lebe die Freiheit!** "Viva a liberdade!" **Gott sei Dank!** "Graças a Deus!" **Möge er in Frieden ruhen.** "Que ele descanse em paz."
+        - receitas e instruções antigas: **Man nehme drei Eier.** "Tome três ovos."
+        - suposições na matemática: **Gegeben sei ein Dreieck ABC.** "Seja ABC um triângulo."
+        - **sei es … sei es** "seja … seja": **sei es heute, sei es morgen**
+    examples:
+    - ["Es lebe die Freiheit!", "Long live freedom!", "Viva a liberdade!", "lebe"]
+    - ["Gott sei Dank!", "Thank God!", "Graças a Deus!", "sei"]
+    - ["Man nehme drei Eier und etwas Mehl.", "Take three eggs and some flour.", "Tome três ovos e um pouco de farinha.", "nehme"]
+    match:
+    - {seq: [{word: [es]}, {word: [lebe, leben]}], gap: 1}
+    - {seq: [{word: [gott]}, {word: [sei]}], gap: 1}
+    - {seq: [{word: [man]}, {word: [nehme, gebe, lasse, füge, rühre, schneide, koche, mische]}], gap: 1}
+    - {seq: [{word: [möge], start: true}], gap: 0}
+    pool: [sei, lebe, möge, nehme, ist, lebt, mag, nimmt]
+
+  - id: de-c2-impersonal-passive
+    title: Es wurde getanzt.
+    meaning: {en: "the impersonal passive: no subject at all", pt: "a passiva impessoal: sem sujeito nenhum"}
+    intro:
+      en: |
+        Intransitive verbs make a passive too, with no subject: only the activity counts. **es** fills the first place when nothing else does, and disappears otherwise:
+
+        - **Es wurde viel gelacht.** = **Gestern wurde viel gelacht.** "There was a lot of laughing."
+        - **Hier wird nicht geraucht.** "There's no smoking here."
+        - **Jetzt wird geschlafen!** "Now it's time to sleep!" (a firm command)
+      pt: |
+        Verbos intransitivos também fazem passiva, sem sujeito: só conta a atividade. **es** ocupa o primeiro lugar quando nada mais o ocupa, e some nos outros casos:
+
+        - **Es wurde viel gelacht.** = **Gestern wurde viel gelacht.** "Riu-se muito (ontem)."
+        - **Hier wird nicht geraucht.** "Aqui não se fuma."
+        - **Jetzt wird geschlafen!** "Agora é hora de dormir!" (uma ordem firme)
+    examples:
+    - ["Es wurde viel gelacht.", "There was a lot of laughing.", "Riu-se muito.", "wurde"]
+    - ["Hier wird nicht geraucht.", "There's no smoking here.", "Aqui não se fuma.", "wird"]
+    - ["Jetzt wird geschlafen!", "Now it's time to sleep!", "Agora é hora de dormir!", "wird"]
+    match:
+    - {seq: [{word: [es], start: true}, {word: [wird, wurde]}, {pos: verb, mood: ppl2, trail: ".!"}], near: 3, gap: 1}
+    - {seq: [{word: [hier, dort, heute, jetzt, da, gestern, damals], start: true}, {word: [wird, wurde]}, {pos: verb, mood: ppl2, trail: ".!"}], near: 2, gap: 1}
+    pool: [wird, wurde, ist, hat, war]
+
+  - id: de-c2-genitive-verbs
+    title: Wir gedenken der Opfer.
+    meaning: {en: "verbs and adjectives with a genitive object", pt: "verbos e adjetivos com objeto no genitivo"}
+    intro:
+      en: |
+        A few verbs, mostly formal or legal, take a genitive object: **gedenken** (commemorate), **bedürfen** (need), **sich bedienen** (make use of), **sich enthalten** (abstain from), **sich vergewissern** (make sure of), **sich schämen** (be ashamed of, old), **jemanden beschuldigen / anklagen** (accuse someone of).
+
+        Also adjectives: **sich einer Sache bewusst sein** (be aware of), **würdig, schuldig, fähig, sicher, wert** + genitive.
+      pt: |
+        Alguns verbos, quase todos formais ou jurídicos, pedem objeto no genitivo: **gedenken** (homenagear, lembrar), **bedürfen** (precisar de), **sich bedienen** (servir-se de), **sich enthalten** (abster-se de), **sich vergewissern** (certificar-se de), **sich schämen** (envergonhar-se de, antigo), **jemanden beschuldigen / anklagen** (acusar alguém de).
+
+        Também adjetivos: **sich einer Sache bewusst sein** (estar ciente de), **würdig, schuldig, fähig, sicher, wert** + genitivo.
+    examples:
+    - ["Wir gedenken der Opfer des Krieges.", "We remember the victims of the war.", "Homenageamos as vítimas da guerra.", "der"]
+    - ["Das bedarf keiner Erklärung.", "That needs no explanation.", "Isso dispensa explicação.", "keiner"]
+    - ["Er wurde des Mordes angeklagt.", "He was charged with murder.", "Ele foi acusado de assassinato.", "des"]
+    match: {seq: [{lemma: "^(bedürfen|gedenken|bedienen|enthalten|vergewissern|rühmen|schämen|beschuldigen|anklagen|verdächtigen|entledigen|erfreuen|berauben)$"}, {pos: det, case: gen}], near: 4, gap: 1, same: [number, gender]}
+
+  - id: de-c2-formal-prepositions
+    title: zwecks, mittels, seitens, gemäß
+    meaning: {en: "prepositions of official style", pt: "preposições do estilo oficial"}
+    intro:
+      en: |
+        Office, legal and academic German uses prepositions hardly heard in speech:
+
+        - **zwecks** (for the purpose of) + gen.: **zwecks Prüfung**
+        - **mittels** (by means of) + gen.: **mittels eines Schlüssels**
+        - **seitens / vonseiten** (on the part of) + gen.: **seitens der Regierung**
+        - **kraft** (by virtue of) + gen.: **kraft seines Amtes**
+        - **anlässlich** (on the occasion of) + gen., **zugunsten** (in favour of) + gen., **ungeachtet** (regardless of) + gen.
+        - **gemäß, entsprechend, zufolge** (according to) + dat., often after the noun: **dem Gesetz gemäß, dem Bericht zufolge**
+      pt: |
+        O alemão de repartição, jurídico e acadêmico usa preposições quase inexistentes na fala:
+
+        - **zwecks** (para fins de) + gen.: **zwecks Prüfung**
+        - **mittels** (por meio de) + gen.: **mittels eines Schlüssels**
+        - **seitens / vonseiten** (por parte de) + gen.: **seitens der Regierung**
+        - **kraft** (em virtude de) + gen.: **kraft seines Amtes**
+        - **anlässlich** (por ocasião de) + gen., **zugunsten** (em favor de) + gen., **ungeachtet** (independentemente de) + gen.
+        - **gemäß, entsprechend, zufolge** (segundo, conforme) + dat., muitas vezes depois do substantivo: **dem Gesetz gemäß, dem Bericht zufolge**
+    examples:
+    - ["Dem Bericht zufolge ist die Lage ernst.", "According to the report, the situation is serious.", "Segundo o relatório, a situação é séria.", "zufolge"]
+    - ["Anlässlich seines Geburtstages gab es ein Fest.", "There was a party on the occasion of his birthday.", "Houve uma festa por ocasião do aniversário dele.", "Anlässlich"]
+    - ["Die Tür wird mittels eines Codes geöffnet.", "The door is opened by means of a code.", "A porta é aberta por meio de um código.", "mittels"]
+    match: {seq: [{word: [zwecks, mittels, seitens, vonseiten, zufolge, gemäß, anlässlich, zugunsten, ungeachtet, unweit, inmitten]}], gap: 0}
+    pool: [zwecks, mittels, seitens, zufolge, gemäß, anlässlich, zugunsten, ungeachtet]

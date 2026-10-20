@@ -1,0 +1,216 @@
+id: B2
+topics:
+
+- title: {en: Clauses as nouns, pt: Orações como substantivos}
+  lessons:
+  - id: tr-dik-complement
+    title: geldiğini biliyorum
+    meaning: {en: "that-clauses with -DIK + possessive", pt: "orações com 'que' em -DIK + possessivo"}
+    intro:
+      en: |
+        Turkish has no word for *that* after verbs of knowing, saying and seeing: the verb of the clause takes **-dik / -dık / -duk / -dük** (**-tik…** after a voiceless consonant), a possessive for its subject, and the case the main verb needs:
+
+        - **Ali'nin geldiğini biliyorum.** "I know that Ali has come." (gel-diğ-i-ni)
+        - **Ne dediğini anlamadım.** "I didn't understand what you said."
+        - **Hasta olduğumu söyledim.** "I said I was ill."
+
+        For the future it is **-(y)AcAK**: **Geleceğini söyledi.** "He said he would come."
+      pt: |
+        O turco não tem palavra para *que* depois de verbos de saber, dizer e ver: o verbo da oração recebe **-dik / -dık / -duk / -dük** (**-tik…** depois de consoante surda), um possessivo para o sujeito e o caso que o verbo principal pede:
+
+        - **Ali'nin geldiğini biliyorum.** "Sei que o Ali chegou." (gel-diğ-i-ni)
+        - **Ne dediğini anlamadım.** "Não entendi o que você disse."
+        - **Hasta olduğumu söyledim.** "Eu disse que estava doente."
+
+        Para o futuro é **-(y)AcAK**: **Geleceğini söyledi.** "Ele disse que viria."
+    examples:
+    - ["Ali'nin geldiğini biliyorum.", "I know that Ali has come.", "Sei que o Ali chegou.", "geldiğini"]
+    - ["Ne dediğini anlamadım.", "I didn't understand what you said.", "Não entendi o que você disse.", "dediğini"]
+    - ["Hasta olduğumu söyledim.", "I said I was ill.", "Eu disse que estava doente.", "olduğumu"]
+    match:
+    - {seq: [{re: "[dt][ıiuü]ğ[ıiuü]n[ıiuü]$"}], suffixes: [diğini, dığını, duğunu, düğünü, tiğini, tığını, tuğunu, tüğünü, eceğini, acağını, mesini, masını], attested: true}
+    - {seq: [{re: "[dt][ıiuü]ğ[ıiuü]m[ıiuü]$"}], suffixes: [diğimi, dığımı, duğumu, düğümü, tiğimi, tığımı, tuğumu, tüğümü, eceğimi, acağımı, memi, mamı], attested: true}
+
+  - id: tr-acak-participle
+    title: okuyacağım kitap, geleceğini
+    meaning: {en: "the future participle -(y)AcAK + possessive", pt: "o particípio futuro -(y)AcAK + possessivo"}
+    intro:
+      en: |
+        **-(y)acak / -(y)ecek** works like **-dik**, for what will happen: before a noun (**okuyacağım kitap** "the book I'll read", **gideceğimiz yer** "the place we'll go") or as a clause (**Ne zaman geleceğini bilmiyorum.** "I don't know when he'll come."). Without a possessive it describes the noun itself: **yarın gelecek misafirler** "the guests who'll come tomorrow". **k** becomes **ğ** before a vowel.
+      pt: |
+        **-(y)acak / -(y)ecek** funciona como **-dik**, para o que vai acontecer: antes de um substantivo (**okuyacağım kitap** "o livro que vou ler", **gideceğimiz yer** "o lugar aonde vamos") ou como oração (**Ne zaman geleceğini bilmiyorum.** "Não sei quando ele vem."). Sem possessivo, descreve o próprio substantivo: **yarın gelecek misafirler** "os convidados que virão amanhã". O **k** vira **ğ** antes de vogal.
+    examples:
+    - ["Okuyacağım kitabı aldım.", "I bought the book I'm going to read.", "Comprei o livro que vou ler.", "Okuyacağım"]
+    - ["Gideceğimiz yer çok uzak.", "The place we're going to is very far.", "O lugar aonde vamos é muito longe.", "Gideceğimiz"]
+    - ["Ne zaman geleceğini bilmiyorum.", "I don't know when he'll come.", "Não sei quando ele vem.", "geleceğini"]
+    match:
+    - {seq: [{re: "[ae]c[ae]ğ[ıi](m|n|miz|mız|niz|nız)$"}, {pos: noun}], gap: 0, suffixes: [eceğim, eceğin, eceğimiz, eceğiniz, acağım, acağın, acağımız, acağınız], attested: true}
+    - {seq: [{re: "[ae]c[ae]ğ[ıi]n[ıi]$"}], suffixes: [eceğini, acağını, diğini, dığını, duğunu, düğünü], attested: true}
+
+  - id: tr-ma-nominal
+    title: gelmeni istiyorum
+    meaning: {en: "-mA + possessive: wanting, asking, liking that someone does", pt: "-mA + possessivo: querer, pedir, gostar que alguém faça"}
+    intro:
+      en: |
+        Verbs of wanting, asking, advising and feeling take a clause in **-me / -ma** + possessive (not **-dik**, which is for facts): **Gelmeni istiyorum.** "I want you to come." **Annem erken yatmamı söyledi.** "My mother told me to go to bed early." **Onun gitmesine üzüldüm.** "I was sad that he left." Compare **Geldiğini biliyorum** (a fact: I know you came).
+      pt: |
+        Verbos de querer, pedir, aconselhar e sentir pedem uma oração em **-me / -ma** + possessivo (e não **-dik**, que é para fatos): **Gelmeni istiyorum.** "Quero que você venha." **Annem erken yatmamı söyledi.** "Minha mãe me disse para deitar cedo." **Onun gitmesine üzüldüm.** "Fiquei triste que ele foi embora." Compare **Geldiğini biliyorum** (um fato: sei que você veio).
+    examples:
+    - ["Gelmeni istiyorum.", "I want you to come.", "Quero que você venha.", "Gelmeni"]
+    - ["Annem erken yatmamı söyledi.", "My mother told me to go to bed early.", "Minha mãe me disse para deitar cedo.", "yatmamı"]
+    - ["Onun gitmesine üzüldüm.", "I was sad that he left.", "Fiquei triste que ele foi embora.", "gitmesine"]
+    match: {seq: [{re: "m[ae](mi|mı|ni|nı|sini|sını|mizi|mızı|nizi|nızı)$", not: {pos: [adj, adv, pron]}}], suffixes: [mesini, masını, meni, manı, memi, mamı, diğini, dığını], attested: true}
+
+- title: {en: Converbs, pt: Conversos}
+  lessons:
+  - id: tr-dikca
+    title: okudukça
+    meaning: {en: "-DIkçA: the more …, whenever", pt: "-DIkçA: quanto mais …, sempre que"}
+    intro:
+      en: |
+        **-dikçe / -dıkça / -dukça / -dükçe** (**-tikçe…** after a voiceless consonant) means *the more, as long as, whenever*: **Okudukça öğreniyorum.** "The more I read, the more I learn." **Zaman geçtikçe her şey düzeliyor.** "As time passes, everything gets better." **Fırsat buldukça yüzerim.** "I swim whenever I get the chance."
+      pt: |
+        **-dikçe / -dıkça / -dukça / -dükçe** (**-tikçe…** depois de consoante surda) quer dizer *quanto mais, à medida que, sempre que*: **Okudukça öğreniyorum.** "Quanto mais leio, mais aprendo." **Zaman geçtikçe her şey düzeliyor.** "Com o passar do tempo, tudo melhora." **Fırsat buldukça yüzerim.** "Nado sempre que tenho chance."
+    examples:
+    - ["Okudukça öğreniyorum.", "The more I read, the more I learn.", "Quanto mais leio, mais aprendo.", "Okudukça"]
+    - ["Zaman geçtikçe her şey düzeliyor.", "As time passes, everything gets better.", "Com o passar do tempo, tudo melhora.", "geçtikçe"]
+    - ["Fırsat buldukça yüzerim.", "I swim whenever I get the chance.", "Nado sempre que tenho chance.", "buldukça"]
+    match: {seq: [{re: "[dt][ıiuü]k[çc][ae]$"}], suffixes: [dıkça, dikçe, dukça, dükçe, tıkça, tikçe, tukça, tükçe, ınca, ince, unca, ünce, arak, erek], attested: true}
+
+  - id: tr-time-converbs
+    title: geldikten sonra, gitmeden önce
+    meaning: {en: "after, before, since: -DIktAn sonra, -mAdAn önce, -DIğIndAn beri", pt: "depois de, antes de, desde que: -DIktAn sonra, -mAdAn önce, -DIğIndAn beri"}
+    intro:
+      en: |
+        Time clauses are verb forms + a postposition:
+
+        - **-dikten sonra** "after": **Yemek yedikten sonra uyudum.** "After eating I slept."
+        - **-meden önce** "before": **Yatmadan önce dişlerini fırçala.** "Brush your teeth before going to bed."
+        - **-diğinden beri** "since": **Buraya geldiğimden beri yağmur yağıyor.** "It's been raining since I came here."
+        - **-(y)alı** "since (so long)": **Geleli iki yıl oldu.** "It's been two years since he came."
+      pt: |
+        Orações de tempo são formas verbais + uma posposição:
+
+        - **-dikten sonra** "depois de": **Yemek yedikten sonra uyudum.** "Depois de comer, dormi."
+        - **-meden önce** "antes de": **Yatmadan önce dişlerini fırçala.** "Escove os dentes antes de deitar."
+        - **-diğinden beri** "desde que": **Buraya geldiğimden beri yağmur yağıyor.** "Está chovendo desde que cheguei aqui."
+        - **-(y)alı** "desde que (faz tanto tempo)": **Geleli iki yıl oldu.** "Faz dois anos que ele chegou."
+    examples:
+    - ["Yemek yedikten sonra uyudum.", "After eating I slept.", "Depois de comer, dormi.", "yedikten"]
+    - ["Yatmadan önce dişlerini fırçala.", "Brush your teeth before going to bed.", "Escove os dentes antes de deitar.", "Yatmadan"]
+    - ["Buraya geldiğimden beri yağmur yağıyor.", "It's been raining since I came here.", "Está chovendo desde que cheguei aqui.", "geldiğimden"]
+    match:
+    - {seq: [{re: "[dt][ıiuü]kt[ae]n$"}, {word: [sonra]}], gap: 0, suffixes: [dikten, dıktan, duktan, dükten, tikten, tıktan, tuktan, tükten, meden, madan], attested: true}
+    - {seq: [{re: "m[ae]d[ae]n$"}, {word: [önce, evvel]}], gap: 0, suffixes: [meden, madan, dikten, dıktan, duktan, dükten], attested: true}
+    - {seq: [{re: "[dt][ıiuü]ğ[ıiuü](m|n|)(ı|i|u|ü|)nd[ae]n$"}, {word: [beri]}], gap: 1, pool: [beri, sonra, önce, dolayı]}
+
+- title: {en: Voice, pt: Voz}
+  lessons:
+  - id: tr-causative
+    title: yaptırmak, öldürmek, okutmak
+    meaning: {en: "the causative: make / have someone do", pt: "o causativo: fazer / mandar alguém fazer"}
+    intro:
+      en: |
+        Causative suffixes, chosen by the stem:
+
+        - **-t** after a vowel and most stems in **-l, -r** of several syllables: **okumak → okutmak** (make read, teach), **beklemek → bekletmek** (keep waiting), **oturmak → oturtmak**
+        - **-DIr** most other stems: **yapmak → yaptırmak** (have done), **yazmak → yazdırmak**, **gülmek → güldürmek** (make laugh)
+        - **-Ir / -Ar** a few: **bitmek → bitirmek** (finish something), **düşmek → düşürmek** (drop), **çıkmak → çıkarmak** (take out)
+
+        **Saçımı kestirdim.** "I had my hair cut." **Arabayı yıkattım.** "I had the car washed."
+      pt: |
+        Sufixos causativos, escolhidos pelo radical:
+
+        - **-t** depois de vogal e da maioria dos radicais em **-l, -r** de várias sílabas: **okumak → okutmak** (fazer ler, ensinar), **beklemek → bekletmek** (fazer esperar), **oturmak → oturtmak**
+        - **-DIr** na maioria dos outros radicais: **yapmak → yaptırmak** (mandar fazer), **yazmak → yazdırmak**, **gülmek → güldürmek** (fazer rir)
+        - **-Ir / -Ar** em alguns: **bitmek → bitirmek** (terminar algo), **düşmek → düşürmek** (deixar cair), **çıkmak → çıkarmak** (tirar)
+
+        **Saçımı kestirdim.** "Cortei o cabelo (no cabeleireiro)." **Arabayı yıkattım.** "Mandei lavar o carro."
+    examples:
+    - ["Saçımı kestirdim.", "I had my hair cut.", "Cortei o cabelo.", "kestirdim"]
+    - ["Arabayı yıkattım.", "I had the car washed.", "Mandei lavar o carro.", "yıkattım"]
+    - ["Bu film beni çok güldürdü.", "This film made me laugh a lot.", "Este filme me fez rir muito.", "güldürdü"]
+    match: {seq: [{pos: verb, re: "^(yaptır|yazdır|öldür|düşür|bitir|güldür|okut|çalıştır|durdur|yedir|giydir|uyut|beklet|yürüt|yaşat|kestir|temizlet|yıkat|onart|ağlat|korkut|sevindir|inandır|bildir|doldur|kaldır|indir|pişir|içir|bulaştır|söylet|getirt|ödet|sustur|uçur|kaçır|doyur|yatır|oturt)"}], same: [person, number]}
+
+  - id: tr-causative-passive
+    title: yaptırıldı
+    meaning: {en: "stacked voice: causative + passive", pt: "vozes empilhadas: causativo + passiva"}
+    intro:
+      en: |
+        Voice suffixes stack in a fixed order, causative before passive: **yap-tır-ıl-dı** "was had done, was made to be done", **öl-dür-ül-dü** "was killed", **kaldır-ıl-dı** "was removed", **bitir-il-di** "was finished". Even two causatives can stack: **yap-tır-t-mak** "have someone have it done".
+      pt: |
+        Os sufixos de voz se empilham em ordem fixa, causativo antes da passiva: **yap-tır-ıl-dı** "foi mandado fazer", **öl-dür-ül-dü** "foi morto", **kaldır-ıl-dı** "foi retirado", **bitir-il-di** "foi terminado". Até dois causativos podem se empilhar: **yap-tır-t-mak** "fazer alguém mandar fazer".
+    examples:
+    - ["Köprü geçen yıl yaptırıldı.", "The bridge was built last year.", "A ponte foi construída no ano passado.", "yaptırıldı"]
+    - ["Proje zamanında bitirildi.", "The project was finished on time.", "O projeto foi terminado no prazo.", "bitirildi"]
+    - ["Yasak kaldırıldı.", "The ban was lifted.", "A proibição foi suspensa.", "kaldırıldı"]
+    match: {seq: [{pos: verb, re: "(tır|tir|tur|tür|dır|dir|dur|dür|ır|ir|ur|ür|t)(ıl|il|ul|ül)(dı|di|du|dü|ır|ir|ur|ür|ıyor|iyor|uyor|üyor|acak|ecek|mış|miş|muş|müş|malı|meli)"}], same: [person, number]}
+
+  - id: tr-reciprocal-reflexive
+    title: görüşmek, yıkanmak
+    meaning: {en: "reciprocal -(I)ş and reflexive -(I)n", pt: "recíproco -(I)ş e reflexivo -(I)n"}
+    intro:
+      en: |
+        - **-(I)ş** "each other, together": **görmek → görüşmek** (meet, see each other), **tanımak → tanışmak** (get to know each other), **bulmak → buluşmak** (meet up), **anlamak → anlaşmak** (agree, get along)
+        - **-(I)n** "oneself": **yıkamak → yıkanmak** (wash oneself), **giymek → giyinmek** (get dressed), **hazırlamak → hazırlanmak** (get ready)
+
+        **Yarın görüşürüz!** "See you tomorrow!" **Memnun oldum, tanıştığımıza.** "Pleased to meet you."
+      pt: |
+        - **-(I)ş** "um ao outro, juntos": **görmek → görüşmek** (encontrar-se, ver-se), **tanımak → tanışmak** (conhecer-se), **bulmak → buluşmak** (encontrar-se, marcar encontro), **anlamak → anlaşmak** (entender-se, chegar a acordo)
+        - **-(I)n** "a si mesmo": **yıkamak → yıkanmak** (lavar-se), **giymek → giyinmek** (vestir-se), **hazırlamak → hazırlanmak** (preparar-se)
+
+        **Yarın görüşürüz!** "Até amanhã!" **Tanıştığımıza memnun oldum.** "Prazer em conhecer."
+    examples:
+    - ["Yarın görüşürüz!", "See you tomorrow!", "Até amanhã!", "görüşürüz"]
+    - ["Nerede tanıştınız?", "Where did you meet?", "Onde vocês se conheceram?", "tanıştınız"]
+    - ["Çabuk giyin!", "Get dressed quickly!", "Vista-se rápido!", "giyin"]
+    match: {seq: [{pos: verb, re: "^(görüş|tanış|buluş|öpüş|anlaş|kucaklaş|yazış|tartış|barış|yarış|vedalaş|selamlaş|yıkan|giyin|hazırlan|taran|süslen|övün|dövüş)"}], same: [person, number]}
+
+- title: {en: Conditions and wishes, pt: Condições e desejos}
+  lessons:
+  - id: tr-past-conditional
+    title: bilseydim
+    meaning: {en: "unreal past: -sAydI", pt: "irreal no passado: -sAydI"}
+    intro:
+      en: |
+        **-sa / -se** + **-ydı / -ydi** is an unreal condition about the past, usually with **-ırdı** (would have) in the main clause: **Bilseydim gelirdim.** "If I had known, I'd have come." **Erken kalksaydın treni kaçırmazdın.** "If you'd got up early you wouldn't have missed the train." With **keşke**: **Keşke gitmeseydim.** "I wish I hadn't gone."
+      pt: |
+        **-sa / -se** + **-ydı / -ydi** é uma condição irreal sobre o passado, em geral com **-ırdı** (teria) na principal: **Bilseydim gelirdim.** "Se eu soubesse, teria vindo." **Erken kalksaydın treni kaçırmazdın.** "Se você tivesse levantado cedo, não teria perdido o trem." Com **keşke**: **Keşke gitmeseydim.** "Quem dera eu não tivesse ido."
+    examples:
+    - ["Bilseydim gelirdim.", "If I had known, I'd have come.", "Se eu soubesse, teria vindo.", "Bilseydim"]
+    - ["Erken kalksaydın treni kaçırmazdın.", "If you'd got up early you wouldn't have missed the train.", "Se você tivesse levantado cedo, não teria perdido o trem.", "kalksaydın"]
+    - ["Keşke gitmeseydim.", "I wish I hadn't gone.", "Quem dera eu não tivesse ido.", "gitmeseydim"]
+    match: {seq: [{re: "s[ae]yd[ıi](m|n|k|nız|niz)?$"}], suffixes: [seydim, saydım, seydin, saydın, seydi, saydı, seydik, saydık, sem, sam, sen, san, se, sa], attested: true}
+
+  - id: tr-keske
+    title: Keşke gelsen!
+    meaning: {en: "wishes: keşke + -sA", pt: "desejos: keşke + -sA"}
+    intro:
+      en: |
+        **keşke** "if only, I wish" + the **-sA** form (a wish about now) or **-sAydI** (about the past): **Keşke burada olsan!** "I wish you were here!" **Keşke daha çok zamanım olsa.** "I wish I had more time." **Keşke söyleseydin.** "I wish you had told me."
+      pt: |
+        **keşke** "quem dera, tomara" + a forma em **-sA** (desejo sobre o presente) ou **-sAydI** (sobre o passado): **Keşke burada olsan!** "Quem dera você estivesse aqui!" **Keşke daha çok zamanım olsa.** "Quem dera eu tivesse mais tempo." **Keşke söyleseydin.** "Queria que você tivesse me contado."
+    examples:
+    - ["Keşke burada olsan!", "I wish you were here!", "Quem dera você estivesse aqui!", "olsan"]
+    - ["Keşke daha çok zamanım olsa.", "I wish I had more time.", "Quem dera eu tivesse mais tempo.", "olsa"]
+    - ["Keşke söyleseydin.", "I wish you had told me.", "Queria que você tivesse me contado.", "söyleseydin"]
+    match:
+    - {seq: [{word: [keşke]}, {re: "s[ae]yd[ıi](m|n|k|nız|niz)?$"}], near: 5, gap: 1, suffixes: [seydim, saydım, seydin, saydın, seydi, saydı, sem, sam, sen, san, se, sa], attested: true}
+    - {seq: [{word: [keşke]}, {re: "s[ae](m|n|k|nız|niz)?$"}], near: 5, gap: 1, suffixes: [sem, sam, sen, san, sek, sak, seniz, sanız, se, sa], attested: true}
+
+  - id: tr-sa-da
+    title: gelse de, ne yaparsan yap
+    meaning: {en: "even if: -sA dA; whatever: -sA … imperative", pt: "mesmo que: -sA dA; o que quer que: -sA … imperativo"}
+    intro:
+      en: |
+        - **-sa da / -se de** "even if, although": **Yağmur yağsa da gideceğim.** "Even if it rains I'll go." **Zengin olsa da mutlu değil.** "Although he's rich, he isn't happy."
+        - question word + **-sA** + the same verb in the imperative: *whatever, wherever*: **Ne yaparsan yap.** "Do whatever you like." **Nereye gidersen git.** "Go wherever you want."
+      pt: |
+        - **-sa da / -se de** "mesmo que, embora": **Yağmur yağsa da gideceğim.** "Mesmo que chova, vou." **Zengin olsa da mutlu değil.** "Embora seja rico, não é feliz."
+        - palavra interrogativa + **-sA** + o mesmo verbo no imperativo: *o que quer que, aonde quer que*: **Ne yaparsan yap.** "Faça o que quiser." **Nereye gidersen git.** "Vá aonde quiser."
+    examples:
+    - ["Yağmur yağsa da gideceğim.", "Even if it rains I'll go.", "Mesmo que chova, vou.", "da"]
+    - ["Zengin olsa da mutlu değil.", "Although he's rich, he isn't happy.", "Embora seja rico, não é feliz.", "da"]
+    - ["Ne yaparsan yap.", "Do whatever you like.", "Faça o que quiser.", "yaparsan"]
+    match: {seq: [{re: "s[ae](m|n|k|nız|niz)?$"}, {word: [da, de]}], gap: 1}
+    pool: [da, de, ki, mi, bile]

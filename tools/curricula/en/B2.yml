@@ -1,0 +1,265 @@
+id: B2
+topics:
+
+- title: {en: Perfect and continuous tenses, pt: Tempos perfeitos e contínuos}
+  lessons:
+  - id: en-b2-present-perfect-continuous
+    title: I've been waiting
+    meaning: {en: "the present perfect continuous", pt: "o present perfect continuous"}
+    intro:
+      pt: |
+        **have / has been + -ing**: algo que começou no passado e continua (ou acabou de parar), com foco na duração: **I've been waiting for an hour** (Estou esperando há uma hora). O brasileiro tende a dizer ~~I'm waiting for an hour~~ ou ~~I wait since~~: com **for / since** e duração, use esse tempo. **for** + período (for two years), **since** + ponto de partida (since 2020).
+      en: |
+        **have / has been + -ing**: an activity that started in the past and is still going on (or has just stopped), with the focus on duration: **I've been waiting for an hour. It's been raining all day.** **for** + a period, **since** + a starting point.
+    mistakes:
+    - wrong: I'm waiting here since two o'clock.
+      right: I've been waiting here since two o'clock.
+      why: {en: "duration up to now: present perfect (continuous).", pt: "duração até agora: present perfect (continuous), nunca o presente."}
+    examples:
+    - ["I've been waiting for an hour.", "Estou esperando há uma hora.", "Estou esperando há uma hora.", "been"]
+    - ["It's been raining all day.", "Está chovendo o dia todo.", "Está chovendo o dia todo.", "been"]
+    - ["How long have you been studying English?", "Há quanto tempo você estuda inglês?", "Há quanto tempo você estuda inglês?", "been"]
+    match: {seq: [{word: [have, has, "'ve", "'s", haven't, hasn't]}, {word: [been]}, {re: "ing$", pos: verb}], near: 1, gap: 1}
+    pool: [been, being, be, was]
+
+  - id: en-b2-past-perfect
+    title: I had already left
+    meaning: {en: "the past perfect", pt: "o past perfect"}
+    intro:
+      pt: |
+        **had + particípio** = *tinha* + particípio: uma ação anterior a outra no passado. **When I arrived, the film had already started** (Quando cheguei, o filme já tinha começado). Também em discurso indireto e na condicional do passado: **If I had known…** Na fala, **had** vira **'d**: **I'd forgotten.**
+      en: |
+        **had + past participle**: an action before another past action: **When I arrived, the film had already started.** Also in reported speech and past conditions: **If I had known…** Contracted **'d**.
+    examples:
+    - ["When I arrived, the film had already started.", "Quando cheguei, o filme já tinha começado.", "Quando cheguei, o filme já tinha começado.", "had"]
+    - ["I had never seen snow before.", "Eu nunca tinha visto neve antes.", "Eu nunca tinha visto neve antes.", "had"]
+    - ["She told me she had lost her keys.", "Ela me disse que tinha perdido as chaves.", "Ela me disse que tinha perdido as chaves.", "had"]
+    match: {seq: [{word: [had, hadn't]}, {re: "^(?!(red|bed|need|seed|speed|feed|kind|children|ten|often|men|women|kitchen|garden|chicken|eleven|seven|dozen|been|one|none|gone|phone|alone|done|own|town|brown|down|lot|hot|night|right|light|eight|not|bad|dad|sad|food|good|wood|gift|front|plant|aunt|student|parent|cent|percent|accident|present|moment|appointment|argument|apartment|agent|talent|point|ft)$).+(ed|en|ne|wn|ght|un|ung|ade|aid|ept|eft|ost|ot|ad|ood|ft|lt|nt)$"}], near: 1, gap: 0}
+    pool: [had, have, has, was]
+
+  - id: en-b2-future-perfect
+    title: I'll have finished, I'll be working
+    meaning: {en: "future continuous and future perfect", pt: "future continuous e future perfect"}
+    intro:
+      pt: |
+        **will be + -ing**: algo em andamento num momento futuro: **This time tomorrow I'll be flying to London** (Amanhã a esta hora estarei voando para Londres). **will have + particípio**: algo concluído antes de um momento futuro: **By Friday I'll have finished** (Até sexta terei terminado). **by** = até (prazo), não *por*.
+      en: |
+        **will be + -ing**: in progress at a future moment: **This time tomorrow I'll be flying to London.** **will have + participle**: completed before a future moment: **By Friday I'll have finished.**
+    examples:
+    - ["By Friday I'll have finished.", "Até sexta eu terei terminado.", "Até sexta eu terei terminado.", "have"]
+    - ["This time tomorrow I'll be flying to London.", "Amanhã a esta hora estarei voando para Londres.", "Amanhã a esta hora estarei voando para Londres.", "be"]
+    - ["He will have left by then.", "Ele já terá ido embora até lá.", "Ele já terá ido embora até lá.", "have"]
+    match: {seq: [{word: [will, "'ll", won't]}, {word: [have, be]}, {re: "(ed|en|ne|wn|ght|un|ing|eft|ft)$", pos: verb}], near: 1, gap: 1}
+    pool: [have, be, been, having]
+
+  - id: en-b2-used-to
+    title: I used to, I'm used to
+    meaning: {en: "used to (past habit) and be used to (accustomed)", pt: "used to (hábito passado) e be used to (acostumado)"}
+    intro:
+      pt: |
+        **used to + verbo**: hábito ou estado do passado que não existe mais: **I used to smoke** (Eu fumava / costumava fumar). Negativa e pergunta: **didn't use to, did you use to**. **be / get used to + -ing**: estar / ficar acostumado: **I'm used to waking up early** (Estou acostumado a acordar cedo). Cuidado: depois de **be used to** vem **-ing**, não o infinitivo.
+      en: |
+        **used to + verb**: a past habit or state: **I used to smoke.** **be / get used to + -ing**: be / become accustomed: **I'm used to waking up early. You'll get used to it.**
+    mistakes:
+    - wrong: I'm used to wake up early.
+      right: I'm used to waking up early.
+      why: {en: "be used to + -ing.", pt: "be used to + -ing (o to aqui é preposição)."}
+    examples:
+    - ["I used to smoke.", "Eu fumava.", "Eu fumava.", "used"]
+    - ["I'm used to waking up early.", "Estou acostumado a acordar cedo.", "Estou acostumado a acordar cedo.", "waking"]
+    - ["You'll get used to it.", "Você vai se acostumar.", "Você vai se acostumar.", "used"]
+    match:
+    - {seq: [{word: [am, is, are, was, were, be, been, get, got, getting, "'m", "'re", "'s"]}, {word: [used, accustomed]}, {word: [to]}, {re: "ing$"}], near: 1, gap: 3, suffixes: [ing, ""], attested: true}
+    - {seq: [{word: [used, use]}, {word: [to]}, {pos: verb, mood: inf}], gap: 0, pool: [used, use, uses, using]}
+
+- title: {en: Modals and hypotheses, pt: Modais e hipóteses}
+  lessons:
+  - id: en-b2-must-have
+    title: he must have forgotten
+    meaning: {en: "past modals of deduction and criticism", pt: "modais no passado: dedução e crítica"}
+    intro:
+      pt: |
+        **modal + have + particípio** fala do passado: **must have** (com certeza, deve ter): **He must have forgotten** (Ele deve ter esquecido). **can't / couldn't have** (não pode ter): **She can't have seen me.** **might / may / could have** (pode ter): **They might have missed the bus.** **should have** (deveria ter): **You should have told me.** Na fala, **have** soa como *of*: nunca escreva ~~should of~~.
+      en: |
+        **modal + have + past participle** looks back: **must have** (certainty), **can't have** (impossibility), **might / may / could have** (possibility), **should have** (criticism, regret): **He must have forgotten. You should have told me.**
+    examples:
+    - ["He must have forgotten.", "Ele deve ter esquecido.", "Ele deve ter esquecido.", "must"]
+    - ["You should have told me.", "Você deveria ter me contado.", "Você deveria ter me contado.", "should"]
+    - ["She can't have seen me.", "Ela não pode ter me visto.", "Ela não pode ter me visto.", "can't"]
+    match: {seq: [{word: [must, might, may, could, can't, couldn't, should, shouldn't, mustn't, would, wouldn't]}, {word: [have, "'ve"]}, {re: "(ed|en|ne|wn|ght|un|ung|ade|aid|ept|eft|ost|ot|ad|ood|ft|lt|nt|een)$", pos: verb}], near: 1, gap: 0}
+    pool: [must, should, might, can't, would]
+
+  - id: en-b2-wish
+    title: I wish I were, if only
+    meaning: {en: "wishes and regrets: wish, if only", pt: "desejos e lamentos: wish, if only"}
+    intro:
+      pt: |
+        **wish / if only** + passado = desejo sobre o presente: **I wish I were taller** (Queria ser mais alto). + past perfect = lamento sobre o passado: **I wish I had studied more** (Queria ter estudado mais). + **would** = vontade de que alguém mude: **I wish you would stop.** Nunca presente: ~~I wish I am~~.
+      en: |
+        **wish / if only** + past = a wish about the present: **I wish I were taller.** + past perfect = a regret: **I wish I had studied more.** + **would** = wanting someone to change: **I wish you would stop.**
+    examples:
+    - ["I wish I were taller.", "Queria ser mais alto.", "Queria ser mais alto.", "were"]
+    - ["I wish I had studied more.", "Queria ter estudado mais.", "Queria ter estudado mais.", "had"]
+    - ["I wish you would stop.", "Queria que você parasse.", "Queria que você parasse.", "would"]
+    match: {seq: [{word: [wish, wishes, wished, only]}, {word: [i, you, he, she, it, we, they]}, {word: [were, had, could, would, was, knew, did, "'d", lived, spoke, didn't, hadn't, wasn't, weren't, couldn't]}], gap: 2}
+    pool: [were, had, could, would, am, have]
+
+  - id: en-b2-unless
+    title: unless, as long as, in case
+    meaning: {en: "conditions without if: unless, provided, in case, otherwise", pt: "condições sem if: unless, provided, in case, otherwise"}
+    intro:
+      pt: |
+        **unless** = a menos que, se não: **I'll go unless it rains.** **as long as / provided (that)** = desde que: **You can go as long as you're back by ten.** **in case** = caso, para o caso de (precaução): **Take an umbrella in case it rains.** **otherwise** = senão. Como com **if**, o futuro não entra na oração da condição: ~~unless it will rain~~.
+      en: |
+        **unless** = if not, **as long as / provided (that)** = only if, **in case** = as a precaution, **otherwise** = if not, then…: **I'll go unless it rains. Take an umbrella in case it rains.** No **will** in the condition.
+    examples:
+    - ["I'll go unless it rains.", "Eu vou, a menos que chova.", "Eu vou, a menos que chova.", "unless"]
+    - ["Take an umbrella in case it rains.", "Leve um guarda-chuva caso chova.", "Leve um guarda-chuva caso chova.", "case"]
+    - ["Hurry up, otherwise we'll be late.", "Anda logo, senão vamos chegar atrasados.", "Anda logo, senão vamos chegar atrasados.", "otherwise"]
+    match: {seq: [{word: [unless, provided, providing, otherwise]}], gap: 0}
+    pool: [unless, if, otherwise, until, because]
+
+- title: {en: Reporting and the passive, pt: Discurso indireto e passiva}
+  lessons:
+  - id: en-b2-reported-speech
+    title: he said he would come
+    meaning: {en: "reported speech: backshift", pt: "discurso indireto: recuo dos tempos"}
+    intro:
+      pt: |
+        Com **said, told, asked** no passado, os tempos recuam: **"I will come"** → **He said he would come**; **"I can swim"** → **She said she could swim**; **"I've finished"** → **He said he had finished**. Perguntas viram afirmativas: **She asked me where I lived** (não ~~where did I live~~). Pedido: **He told me to wait.**
+      en: |
+        After a past reporting verb, tenses move back: will → would, can → could, present perfect → past perfect. Reported questions use statement order: **She asked me where I lived.** Requests: **He told me to wait.**
+    examples:
+    - ["He said he would come.", "Ele disse que viria.", "Ele disse que viria.", "would"]
+    - ["She said she could swim.", "Ela disse que sabia nadar.", "Ela disse que sabia nadar.", "could"]
+    - ["He told me he had finished.", "Ele me disse que tinha terminado.", "Ele me disse que tinha terminado.", "had"]
+    match: {seq: [{word: [said, told, asked, promised, explained, thought, knew, believed, admitted, claimed, wondered]}, {word: [would, could, had, might, should, "'d", wouldn't, couldn't, hadn't]}], near: 3, gap: 1}
+    pool: [would, will, could, can, had, has]
+
+  - id: en-b2-say-tell
+    title: say, tell
+    meaning: {en: "say or tell", pt: "say ou tell"}
+    intro:
+      pt: |
+        Os dois são *dizer*, mas: **tell** pede a pessoa logo depois: **He told me the truth** (sem *to*). **say** não leva a pessoa direto; se aparecer, é com **to**: **He said hello to me. She said (that) she was tired.** Expressões fixas com **tell**: **tell the truth, tell a lie, tell a story, tell the time**. O erro clássico do brasileiro: ~~He said me~~.
+      en: |
+        **tell** + the person: **He told me the truth.** **say** without a direct person (**say something to someone**): **She said she was tired.** Fixed: **tell the truth / a lie / a story**.
+    mistakes:
+    - wrong: He said me the truth.
+      right: He told me the truth.
+      why: {en: "tell + person; say + to + person.", pt: "tell + pessoa; say + to + pessoa."}
+    examples:
+    - ["He told me the truth.", "Ele me disse a verdade.", "Ele me disse a verdade.", "told"]
+    - ["She said she was tired.", "Ela disse que estava cansada.", "Ela disse que estava cansada.", "said"]
+    - ["Tom told us a story.", "O Tom nos contou uma história.", "O Tom nos contou uma história.", "told"]
+    match: {seq: [{word: [said, told]}], gap: 0}
+    pool: [said, told, spoke, talked]
+
+  - id: en-b2-passive-advanced
+    title: it's being repaired, it has been sold
+    meaning: {en: "the passive in continuous and perfect tenses", pt: "a passiva nos tempos contínuos e perfeitos"}
+    intro:
+      pt: |
+        A passiva existe em todos os tempos: **is being + particípio** (está sendo): **The car is being repaired.** **has been + particípio** (foi / tem sido): **The house has been sold.** **will be / must be / can be + particípio**: **It must be done today.** O português muitas vezes usa *-se* ou a 3ª do plural: *Estão consertando o carro*.
+      en: |
+        The passive works in every tense: **is being repaired, has been sold, will be finished, must be done.**
+    examples:
+    - ["The car is being repaired.", "O carro está sendo consertado.", "O carro está sendo consertado.", "being"]
+    - ["The house has been sold.", "A casa foi vendida.", "A casa foi vendida.", "been"]
+    - ["The road was being repaired.", "A estrada estava sendo consertada.", "A estrada estava sendo consertada.", "being"]
+    match: {seq: [{word: [is, are, was, were, has, have, had, "'s", "'ve", "'re"]}, {word: [being, been]}, {re: "(ed|en|wn|ght|ne|ilt|old|ung|ade|aid|ept|eft|ost|ot|ound|ut|elt|ent)$", pos: verb}], gap: 1}
+    pool: [being, been, be, was]
+
+  - id: en-b2-causative
+    title: I had my hair cut
+    meaning: {en: "causative have / get something done", pt: "have / get something done: mandar fazer"}
+    intro:
+      pt: |
+        **have / get + objeto + particípio**: alguém faz o serviço para você: **I had my hair cut** (Cortei o cabelo — no salão). **We're getting the house painted** (Vamos mandar pintar a casa). Atenção: o português diz *cortei o cabelo* mesmo quando foi o barbeiro; em inglês, **I cut my hair** significa que você mesmo cortou.
+      en: |
+        **have / get + object + past participle**: someone does it for you: **I had my hair cut. We're getting the house painted.** Also for bad experiences: **He had his phone stolen.**
+    examples:
+    - ["I had my hair cut.", "Cortei o cabelo.", "Cortei o cabelo.", "cut"]
+    - ["We're getting the house painted.", "Vamos mandar pintar a casa.", "Vamos mandar pintar a casa.", "painted"]
+    - ["He had his phone stolen.", "Roubaram o celular dele.", "Roubaram o celular dele.", "stolen"]
+    match: {seq: [{word: [have, has, had, having, get, got, gets, getting], notStart: true}, {word: [my, his, her, their, our, your, the, its]}, {pos: noun}, {re: "(ed|cut|done|made|stolen|taken|fixed|checked|repaired|painted|cleaned|delivered|built)$"}], gap: 3}
+
+- title: {en: Linking and word partners, pt: Conectores e combinações}
+  lessons:
+  - id: en-b2-although-despite
+    title: although, despite, however
+    meaning: {en: "contrast: although, despite, in spite of, however, whereas", pt: "contraste: although, despite, in spite of, however, whereas"}
+    intro:
+      pt: |
+        **although / though / even though** + oração: **Although it was raining, we went out.** **despite / in spite of** + substantivo ou **-ing**: **Despite the rain, we went out. Despite being tired…** **however** liga duas frases: **It was raining. However, we went out.** **whereas** = enquanto (contraste). O erro clássico: ~~despite of~~ (é **despite** ou **in spite of**).
+      en: |
+        **although / though / even though** + clause; **despite / in spite of** + noun or -ing; **however** between sentences; **whereas** for a contrast between two facts. Never ~~despite of~~.
+    mistakes:
+    - wrong: Despite of the rain, we went out.
+      right: Despite the rain, we went out.
+      why: {en: "despite has no of (in spite of has).", pt: "despite sem of; in spite of com of."}
+    examples:
+    - ["Although it was raining, we went out.", "Embora estivesse chovendo, saímos.", "Embora estivesse chovendo, saímos.", "Although"]
+    - ["Despite the rain, we went out.", "Apesar da chuva, saímos.", "Apesar da chuva, saímos.", "Despite"]
+    - ["It was late. However, he kept working.", "Era tarde. No entanto, ele continuou trabalhando.", "Era tarde. No entanto, ele continuou trabalhando.", "However"]
+    match: {seq: [{word: [although, though, despite, whereas, however, nevertheless]}], gap: 0}
+    pool: [although, despite, however, whereas, because]
+
+  - id: en-b2-phrasal-verbs
+    title: give up, find out, look after
+    meaning: {en: "common phrasal verbs", pt: "phrasal verbs comuns"}
+    intro:
+      pt: |
+        Verbo + partícula com sentido novo: **give up** (desistir), **find out** (descobrir), **look after** (cuidar de), **turn down** (recusar), **put off** (adiar), **run out of** (ficar sem), **carry on** (continuar), **figure out** (entender, resolver), **take off** (decolar, tirar roupa), **get over** (superar). Com objeto pronome, ele fica no meio: **give it up**, nunca ~~give up it~~.
+      en: |
+        Verb + particle with a new meaning: **give up, find out, look after, turn down, put off, run out of, carry on, figure out, take off, get over.** A pronoun object goes in the middle: **give it up**.
+    table:
+      head: {en: [Phrasal verb, Meaning], pt: [Phrasal verb, Sentido]}
+      rows:
+      - [give up, desistir]
+      - [find out, descobrir]
+      - [look after, cuidar de]
+      - [put off, adiar]
+      - [run out of, ficar sem]
+      - [turn down, recusar]
+    examples:
+    - ["Don't give up.", "Não desista.", "Não desista.", "up"]
+    - ["I found out the truth.", "Descobri a verdade.", "Descobri a verdade.", "out"]
+    - ["Who will look after the kids?", "Quem vai cuidar das crianças?", "Quem vai cuidar das crianças?", "after"]
+    match: {seq: [{lemma: "^(give|find|turn|look|put|run|carry|figure|bring|set|take|get|work|break|pick|grow|hang|show|throw|calm|cheer|sort|wake)$"}, {word: [up, out, down, "off", after, over, back, away]}], near: 2, gap: 1}
+    pool: [up, out, down, "off", "on", over]
+
+  - id: en-b2-make-do
+    title: make a mistake, do homework
+    meaning: {en: "make or do", pt: "make ou do"}
+    intro:
+      pt: |
+        Os dois são *fazer*. **make** = criar, produzir, causar: **make a mistake, make a decision, make money, make friends, make noise, make an effort, make sense**. **do** = tarefas, atividades, trabalho: **do homework, do the dishes, do business, do exercise, do a favour, do your best, do research**. Não há regra perfeita: aprenda as combinações.
+      en: |
+        **make** = create, produce, cause: **make a mistake, a decision, money, friends, an effort, sense**. **do** = tasks and activities: **do homework, the dishes, business, exercise, a favour, your best**.
+    examples:
+    - ["Everyone makes mistakes.", "Todo mundo comete erros.", "Todo mundo comete erros.", "makes"]
+    - ["Did you do your homework?", "Você fez a lição de casa?", "Você fez a lição de casa?", "do"]
+    - ["Can you do me a favour?", "Você pode me fazer um favor?", "Você pode me fazer um favor?", "do"]
+    match:
+    - {seq: [{word: [make, do]}, {word: [mistake, mistakes, decision, effort, progress, money, homework, favour, favor, research, business, exercise, damage, harm, sense, noise, friends, difference, choice, deal, best, dishes, laundry, shopping, mess, fun, sure, me, the, a, an, your, my, his, her, any, some]}, {word: [mistake, mistakes, decision, effort, progress, money, homework, favour, favor, research, business, exercise, damage, harm, sense, noise, friends, difference, choice, deal, best, dishes, laundry, shopping, mess, fun, sure, job, plans, phone, call, joke, bed, breakfast, dinner, lunch, coffee, tea, wish, speech, promise, work]}], near: 2, gap: 0, pool: [make, do]}
+    - {seq: [{word: [made, did]}, {word: [mistake, mistakes, decision, effort, progress, money, homework, favour, favor, research, business, exercise, damage, harm, sense, noise, friends, difference, choice, deal, best, dishes, laundry, shopping, mess, fun, sure, job, plans, call, joke, bed, breakfast, dinner, lunch, coffee, wish, speech, promise, work]}], near: 2, gap: 0, pool: [made, did]}
+    - {seq: [{word: [makes, does]}, {word: [mistake, mistakes, decision, effort, progress, money, homework, favour, favor, research, business, exercise, damage, harm, sense, noise, friends, difference, choice, deal, best, dishes, laundry, shopping, mess, fun, sure, job, plans, call, joke, bed, breakfast, dinner, lunch, coffee, wish, speech, promise, work]}], near: 2, gap: 0, pool: [makes, does]}
+    - {seq: [{word: [making, doing]}, {word: [mistake, mistakes, decision, effort, progress, money, homework, favour, favor, research, business, exercise, damage, harm, sense, noise, friends, difference, choice, deal, best, dishes, laundry, shopping, mess, fun, sure, job, plans, call, joke, bed, breakfast, dinner, lunch, coffee, wish, speech, promise, work]}], near: 2, gap: 0, pool: [making, doing]}
+
+  - id: en-b2-so-such
+    title: so tired, such a long day
+    meaning: {en: "so and such for emphasis", pt: "so e such para intensificar"}
+    intro:
+      pt: |
+        **so** + adjetivo ou advérbio: **I'm so tired. He drives so fast.** **such (a / an)** + (adjetivo +) substantivo: **It was such a long day. They're such nice people.** Com **that** para a consequência: **It was so cold that we stayed home.** O erro do brasileiro: ~~so a long day~~, ~~such tired~~.
+      en: |
+        **so** + adjective / adverb; **such (a / an)** + (adjective +) noun; **so / such … that** for a result: **It was so cold that we stayed home. It was such a long day.**
+    examples:
+    - ["I'm so tired.", "Estou tão cansado.", "Estou tão cansado.", "so"]
+    - ["It was such a long day.", "Foi um dia tão longo.", "Foi um dia tão longo.", "such"]
+    - ["It was so cold that we stayed home.", "Estava tão frio que ficamos em casa.", "Estava tão frio que ficamos em casa.", "so"]
+    match:
+    - {seq: [{word: [so]}, {pos: [adj], not: {pos: [noun, verb]}}], gap: 0}
+    - {seq: [{word: [such]}, {word: [a, an]}], gap: 0}
+    pool: [so, such, too, very]

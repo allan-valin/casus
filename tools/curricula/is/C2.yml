@@ -1,0 +1,167 @@
+id: C2
+topics:
+
+- title: {en: Formal and old style, pt: Estilo formal e antigo}
+  lessons:
+  - id: is-correlatives
+    title: hvorki … né, annaðhvort … eða, bæði … og
+    meaning: {en: "paired conjunctions", pt: "conjunções em par"}
+    intro:
+      en: |
+        - **hvorki … né** "neither … nor": **Hann talar hvorki ensku né dönsku.** "He speaks neither English nor Danish."
+        - **annaðhvort … eða** "either … or": **Annaðhvort kemur þú með eða þú verður heima.**
+        - **bæði … og** "both … and": **Bæði ég og hún vorum þar.**
+        - **hvort sem … eða** "whether … or": **hvort sem þér líkar betur eða verr** "whether you like it or not"
+      pt: |
+        - **hvorki … né** "nem … nem": **Hann talar hvorki ensku né dönsku.** "Ele não fala nem inglês nem dinamarquês."
+        - **annaðhvort … eða** "ou … ou": **Annaðhvort kemur þú með eða þú verður heima.** "Ou você vem junto ou fica em casa."
+        - **bæði … og** "tanto … quanto": **Bæði ég og hún vorum þar.** "Tanto eu quanto ela estávamos lá."
+        - **hvort sem … eða** "quer … quer": **hvort sem þér líkar betur eða verr** "quer você goste, quer não"
+    examples:
+    - ["Hann talar hvorki ensku né dönsku.", "He speaks neither English nor Danish.", "Ele não fala nem inglês nem dinamarquês.", "né"]
+    - ["Annaðhvort kemur þú með eða þú verður heima.", "Either you come along or you stay at home.", "Ou você vem junto ou fica em casa.", "eða"]
+    - ["Bæði ég og hún vorum þar.", "Both she and I were there.", "Tanto eu quanto ela estávamos lá.", "og"]
+    match:
+    - {seq: [{word: [hvorki]}, {word: [né]}], near: 6, gap: 1}
+    - {seq: [{word: [annaðhvort]}, {word: [eða]}], near: 6, gap: 1}
+    - {seq: [{word: [bæði]}, {word: [og]}], near: 4, gap: 1}
+    pool: [né, eða, og, heldur, en]
+
+  - id: is-subj-formulas
+    title: Guð blessi þig!
+    meaning: {en: "the present subjunctive in wishes and blessings", pt: "o presente do subjuntivo em desejos e bênçãos"}
+    intro:
+      en: |
+        Main-clause wishes keep the present subjunctive in set phrases: **Guð blessi þig!** "God bless you!" **Lifi lýðveldið!** "Long live the republic!" **Guð hjálpi mér.** "God help me." **Veri hann velkominn.** "May he be welcome." **Fari það og veri.** "So be it, let it go." Compare the indicative **blessar, lifir, hjálpar**.
+      pt: |
+        Desejos em oração principal mantêm o presente do subjuntivo em expressões fixas: **Guð blessi þig!** "Deus te abençoe!" **Lifi lýðveldið!** "Viva a república!" **Guð hjálpi mér.** "Deus me ajude." **Veri hann velkominn.** "Que seja bem-vindo." **Fari það og veri.** "Que seja, deixa pra lá." Compare o indicativo **blessar, lifir, hjálpar**.
+    examples:
+    - ["Guð blessi þig!", "God bless you!", "Deus te abençoe!", "blessi"]
+    - ["Lifi lýðveldið!", "Long live the republic!", "Viva a república!", "Lifi"]
+    - ["Guð hjálpi mér.", "God help me.", "Deus me ajude.", "hjálpi"]
+    match: {seq: [{word: [blessi, lifi, veri, gefi, hjálpi, varðveiti, fyrirgefi, launi, forði, geymi]}], gap: 0}
+    pool: [blessar, lifir, er, gefur, hjálpar, varðveitir, fyrirgefur]
+
+  - id: is-ver-oss
+    title: vér, oss, vor
+    meaning: {en: "the formal and old 'we': vér, oss, vor", pt: "o 'nós' formal e antigo: vér, oss, vor"}
+    intro:
+      en: |
+        Speeches, the Bible, old laws and the national anthem use the old pronoun **vér** (we): accusative and dative **oss**, genitive and possessive **vor**: **Faðir vor, þú sem ert á himnum** "Our Father, who art in heaven", **Gef oss í dag vort daglegt brauð** "Give us this day our daily bread", **Vér Íslendingar** "We Icelanders". **þér** with a plural verb is the matching old polite *you*.
+      pt: |
+        Discursos, a Bíblia, leis antigas e o hino nacional usam o pronome antigo **vér** (nós): acusativo e dativo **oss**, genitivo e possessivo **vor**: **Faðir vor, þú sem ert á himnum** "Pai nosso, que estais no céu", **Gef oss í dag vort daglegt brauð** "O pão nosso de cada dia nos dai hoje", **Vér Íslendingar** "Nós, islandeses". **þér** com verbo no plural é o *vós* cortês antigo correspondente.
+    examples:
+    - ["Faðir vor, þú sem ert á himnum.", "Our Father, who art in heaven.", "Pai nosso, que estais no céu.", "vor"]
+    - ["Gef oss í dag vort daglegt brauð.", "Give us this day our daily bread.", "O pão nosso de cada dia nos dai hoje.", "oss"]
+    - ["Vér Íslendingar erum fáir.", "We Icelanders are few.", "Nós, islandeses, somos poucos.", "Vér"]
+    match: {seq: [{word: [vér, oss, vor, vors, vorri, vort, vorn, vorum, vorrar]}], gap: 0}
+    pool: [vér, oss, vor, vort, vorn]
+
+- title: {en: Sentence structure, pt: Estrutura da frase}
+  lessons:
+  - id: is-stylistic-fronting
+    title: Sagt er að …
+    meaning: {en: "stylistic fronting: a participle in first place", pt: "anteposição estilística: um particípio em primeiro lugar"}
+    intro:
+      en: |
+        In a sentence with no subject, formal Icelandic fills the first place by moving a participle (or another word) in front of the verb instead of using **það**: **Sagt er að hann sé ríkur.** "It is said that he's rich." **Talið er að fimm hafi látist.** "Five are believed to have died." **Búist er við rigningu.** "Rain is expected." The same with **það**: **Það er sagt að …**
+      pt: |
+        Numa frase sem sujeito, o islandês formal preenche o primeiro lugar trazendo um particípio (ou outra palavra) para antes do verbo em vez de usar **það**: **Sagt er að hann sé ríkur.** "Diz-se que ele é rico." **Talið er að fimm hafi látist.** "Acredita-se que cinco morreram." **Búist er við rigningu.** "Espera-se chuva." O mesmo com **það**: **Það er sagt að …**
+    examples:
+    - ["Sagt er að hann sé ríkur.", "It is said that he's rich.", "Diz-se que ele é rico.", "Sagt"]
+    - ["Talið er að fimm hafi látist.", "Five are believed to have died.", "Acredita-se que cinco morreram.", "Talið"]
+    - ["Búist er við rigningu.", "Rain is expected.", "Espera-se chuva.", "Búist"]
+    match: {seq: [{word: [sagt, talið, vitað, haldið, búist, ákveðið, gert, óttast, fullyrt, greint], start: true}, {word: [er, var, hefur, hafði, verður]}], gap: 0}
+    pool: [Sagt, Talið, Vitað, Haldið, Búist, Ákveðið]
+
+  - id: is-lata
+    title: Ég lét gera við bílinn.
+    meaning: {en: "láta: have something done, let, make", pt: "láta: mandar fazer, deixar, fazer com que"}
+    intro:
+      en: |
+        **láta** + infinitive is Icelandic's causative: **Ég lét gera við bílinn.** "I had the car repaired." **Hún lét mig bíða.** "She kept me waiting." **Láttu mig vita!** "Let me know!" Its participle in a passive means *made to, dismissed*: **Hann var látinn fara.** "He was let go (fired)." The participle agrees: **látinn, látin, látið**.
+      pt: |
+        **láta** + infinitivo é o causativo do islandês: **Ég lét gera við bílinn.** "Mandei consertar o carro." **Hún lét mig bíða.** "Ela me fez esperar." **Láttu mig vita!** "Me avise!" O particípio numa passiva quer dizer *obrigado a, dispensado*: **Hann var látinn fara.** "Ele foi mandado embora (demitido)." O particípio concorda: **látinn, látin, látið**.
+    examples:
+    - ["Ég lét gera við bílinn.", "I had the car repaired.", "Mandei consertar o carro.", "lét"]
+    - ["Hún lét mig bíða.", "She kept me waiting.", "Ela me fez esperar.", "lét"]
+    - ["Hann var látinn fara.", "He was let go.", "Ele foi demitido.", "látinn"]
+    match:
+    - {seq: [{lemma: "^láta$", pos: verb, mood: [ind, imp]}, {pos: verb, mood: inf}], near: 3, gap: 0, same: [person, number]}
+    - {seq: [{word: [látinn, látin, látið, látnir, látnar]}, {pos: verb, mood: inf}], near: 1, gap: 0, pool: [látinn, látin, látið, látnir, látnar]}
+
+  - id: is-long-distance-reflexive
+    title: Jón segir að María elski sig.
+    meaning: {en: "sig reaching into a subjunctive clause", pt: "sig dentro de uma oração no subjuntivo"}
+    intro:
+      en: |
+        Inside a subjunctive clause (reported speech, wishes), **sig, sér, sín, sinn** can refer back to the subject of the **main** clause, the person whose words or thoughts are reported: **Jón segir að María elski sig.** "Jón says that María loves him (Jón)." **Hún vonar að allir muni eftir sér.** "She hopes everyone will remember her." With the indicative, **hann / hana** is used instead: **Jón veit að María elskar hann.**
+      pt: |
+        Dentro de uma oração no subjuntivo (discurso indireto, desejos), **sig, sér, sín, sinn** podem remeter ao sujeito da oração **principal**, a pessoa cujas palavras ou pensamentos são relatados: **Jón segir að María elski sig.** "O Jón diz que a María o ama." **Hún vonar að allir muni eftir sér.** "Ela espera que todos se lembrem dela." Com indicativo usa-se **hann / hana**: **Jón veit að María elskar hann.**
+    examples:
+    - ["Jón segir að María elski sig.", "Jón says that María loves him.", "O Jón diz que a María o ama.", "sig"]
+    - ["Hún vonar að allir muni eftir sér.", "She hopes everyone will remember her.", "Ela espera que todos se lembrem dela.", "sér"]
+    - ["Hann sagði að ég ætti að hjálpa sér.", "He said I should help him.", "Ele disse que eu devia ajudá-lo.", "sér"]
+    match: {seq: [{pos: verb, mood: subj}, {word: [sig, sér, sín]}], near: 4, gap: 1}
+    pool: [sig, sér, sín, hann, honum, hans, hana, henni]
+
+- title: {en: Forms and clauses, pt: Formas e orações}
+  lessons:
+  - id: is-past-subj-forms
+    title: kæmi, færi, tæki, yrði
+    meaning: {en: "forming the past subjunctive of strong verbs", pt: "a formação do passado do subjuntivo dos verbos fortes"}
+    intro:
+      en: |
+        The past subjunctive of a strong verb comes from its **past plural** with umlaut, plus **-i**: **komum → kæmi**, **fórum → færi**, **tókum → tæki**, **gáfum → gæfi**, **urðum → yrði**, **fundum → fyndi**, **buðum → byði**, **vorum → væri**. Weak verbs simply use the past stem with **-i**: **talaði**, but some umlaut: **vissi**, **hefði** (from **hafði**), **mundi / myndi**.
+      pt: |
+        O passado do subjuntivo de um verbo forte vem do **passado plural** com metafonia, mais **-i**: **komum → kæmi**, **fórum → færi**, **tókum → tæki**, **gáfum → gæfi**, **urðum → yrði**, **fundum → fyndi**, **buðum → byði**, **vorum → væri**. Os fracos usam simplesmente o radical do passado com **-i**: **talaði**, mas alguns têm metafonia: **vissi**, **hefði** (de **hafði**), **mundi / myndi**.
+    examples:
+    - ["Ég vildi að þú kæmir.", "I wish you would come.", "Eu queria que você viesse.", "kæmir"]
+    - ["Ef hann færi núna næði hann lestinni.", "If he left now he'd catch the train.", "Se ele saísse agora, pegaria o trem.", "færi"]
+    - ["Það væri gaman ef þú tækir þátt.", "It would be fun if you took part.", "Seria legal se você participasse.", "tækir"]
+    match: {seq: [{pos: verb, mood: subj, tense: past, lemma: "^(koma|fara|taka|gefa|verða|finna|bjóða|vera|sjá|geta|ganga|standa|gráta|liggja|sitja|biðja|drekka|bera|lesa|fá|ná|hlaupa|deyja|vinna|halda|láta|falla)$"}], same: [person, number]}
+
+  - id: is-relative-subj
+    title: maður sem tali íslensku
+    meaning: {en: "the subjunctive in relative clauses about someone not known to exist", pt: "o subjuntivo em orações relativas sobre alguém cuja existência não se sabe"}
+    intro:
+      en: |
+        A relative clause takes the subjunctive when it describes someone or something that may not exist, typically after a search, a question or a negation: **Ég leita að manni sem tali íslensku.** "I'm looking for a man who speaks Icelandic (any such man)." **Er einhver hér sem geti hjálpað mér?** "Is there anyone here who can help me?" **Það er enginn sem viti það.** "There's nobody who knows." A known person takes the indicative: **Ég þekki mann sem talar íslensku.**
+      pt: |
+        Uma oração relativa vai para o subjuntivo quando descreve alguém ou algo que talvez não exista, em geral depois de uma busca, uma pergunta ou uma negação: **Ég leita að manni sem tali íslensku.** "Procuro um homem que fale islandês (qualquer um)." **Er einhver hér sem geti hjálpað mér?** "Há alguém aqui que possa me ajudar?" **Það er enginn sem viti það.** "Não há ninguém que saiba." Uma pessoa conhecida leva indicativo: **Ég þekki mann sem talar íslensku.**
+    examples:
+    - ["Ég leita að manni sem tali íslensku.", "I'm looking for a man who speaks Icelandic.", "Procuro um homem que fale islandês.", "tali"]
+    - ["Er einhver hér sem geti hjálpað mér?", "Is there anyone here who can help me?", "Há alguém aqui que possa me ajudar?", "geti"]
+    - ["Það er enginn sem viti það.", "There's nobody who knows.", "Não há ninguém que saiba.", "viti"]
+    match: {seq: [{word: [sem]}, {pos: verb, mood: subj}], near: 2, gap: 1, same: [person, number]}
+
+  - id: is-sa-sem
+    title: Sá sem hlær síðast …
+    meaning: {en: "sá sem, það sem: he who, what", pt: "sá sem, það sem: aquele que, o que"}
+    intro:
+      en: |
+        **sá / sú / það** + **sem** stand for an unnamed person or thing: **Sá sem hlær síðast hlær best.** "He who laughs last laughs best." **Þeir sem vilja koma eru velkomnir.** "Those who want to come are welcome." **Það sem ég sagði var satt.** "What I said was true." The pronoun takes the case of its role in the main clause: **Ég treysti þeim sem segja satt.** "I trust those who tell the truth."
+      pt: |
+        **sá / sú / það** + **sem** representam uma pessoa ou coisa não nomeada: **Sá sem hlær síðast hlær best.** "Quem ri por último ri melhor." **Þeir sem vilja koma eru velkomnir.** "Quem quiser vir é bem-vindo." **Það sem ég sagði var satt.** "O que eu disse era verdade." O pronome fica no caso da sua função na oração principal: **Ég treysti þeim sem segja satt.** "Confio em quem diz a verdade."
+    examples:
+    - ["Sá sem hlær síðast hlær best.", "He who laughs last laughs best.", "Quem ri por último ri melhor.", "Sá"]
+    - ["Það sem ég sagði var satt.", "What I said was true.", "O que eu disse era verdade.", "Það"]
+    - ["Ég treysti þeim sem segja satt.", "I trust those who tell the truth.", "Confio em quem diz a verdade.", "þeim"]
+    match: {seq: [{word: [sá, sú, þeir, þær, þau, það, þann, þá, þeim, þeirri, því, þess]}, {word: [sem]}], gap: 0}
+    pool: [sá, sú, það, þeir, þann, þeim, því]
+
+  - id: is-dative-adjectives
+    title: líkur föður sínum
+    meaning: {en: "adjectives with a dative: líkur, þakklátur, reiður", pt: "adjetivos com dativo: líkur, þakklátur, reiður"}
+    intro:
+      en: |
+        Some adjectives govern a dative, which often comes before them: **Hann er líkur föður sínum.** "He looks like his father." **Ég er þér þakklátur.** "I'm grateful to you." **Hún er honum reið.** "She's angry with him." Also **trúr** (faithful to), **kær** (dear to), **nauðsynlegur** (necessary for), **ljóst** (clear to): **Mér er ljóst að …** "It's clear to me that …"
+      pt: |
+        Alguns adjetivos regem dativo, que muitas vezes vem antes deles: **Hann er líkur föður sínum.** "Ele se parece com o pai." **Ég er þér þakklátur.** "Sou grato a você." **Hún er honum reið.** "Ela está brava com ele." Também **trúr** (fiel a), **kær** (querido por), **nauðsynlegur** (necessário para), **ljóst** (claro para): **Mér er ljóst að …** "Está claro para mim que …"
+    examples:
+    - ["Hann er líkur föður sínum.", "He looks like his father.", "Ele se parece com o pai.", "föður"]
+    - ["Ég er þér þakklátur.", "I'm grateful to you.", "Sou grato a você.", "þér"]
+    - ["Hún er honum reið.", "She's angry with him.", "Ela está brava com ele.", "honum"]
+    match:
+    - {seq: [{pos: [noun, pron], case: dat}, {word: [líkur, lík, líkt, líkir, líkar, þakklátur, þakklát, þakklátir, reiður, reið, reiðir, trúr, trú, kær, kærir]}], near: 1, gap: 0, same: [number]}
+    - {seq: [{word: [líkur, lík, líkt, líkir, líkar]}, {pos: [noun, pron], case: dat}], near: 1, gap: 1, same: [number]}

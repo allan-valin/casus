@@ -1,0 +1,188 @@
+id: C1
+topics:
+
+- title: {en: The subjunctive in use, pt: O subjuntivo em uso}
+  lessons:
+  - id: pt-c1-futuro-subj
+    title: quando eu puder, se você quiser
+    meaning: {en: "the future subjunctive", pt: "o futuro do subjuntivo"}
+    intro:
+      en: |
+        Portuguese keeps a tense Spanish and French have lost: the future subjunctive, after **se, quando, assim que, enquanto, onde, quem, o que, como** about the future: **Se você quiser, eu vou. Quando eu puder, te ligo. Faça como achar melhor.** Form: 3rd plural preterite minus **-am**: **quiseram → quiser, puderam → puder, fizeram → fizer, foram → for, tiveram → tiver**. Regular verbs look like the infinitive: **falar, comer**.
+      pt: |
+        O português mantém um tempo que o espanhol e o francês perderam: o futuro do subjuntivo, depois de **se, quando, assim que, enquanto, onde, quem, o que, como** com sentido futuro: **Se você quiser, eu vou. Quando eu puder, te ligo. Faça como achar melhor.** Forma: 3ª do plural do pretérito perfeito menos **-am**: **quiseram → quiser, fizeram → fizer, foram → for, tiveram → tiver**. Erro frequente na fala: ~~se eu ver~~ (certo: **se eu vir**), ~~quando eu fazer~~ (**quando eu fizer**).
+    mistakes:
+    - wrong: Se eu ver o Pedro, aviso você.
+      right: Se eu vir o Pedro, aviso você.
+      why: {en: "ver → viram → vir.", pt: "ver → viram → vir (e vir → vieram → vier)."}
+    examples:
+    - ["Se você quiser, eu vou.", "If you want, I'll go.", "If you want, I'll go.", "quiser"]
+    - ["Quando eu puder, te ligo.", "When I can, I'll call you.", "When I can, I'll call you.", "puder"]
+    - ["Se eu vir o Pedro, aviso você.", "If I see Pedro, I'll let you know.", "If I see Pedro, I'll let you know.", "vir"]
+    match: {seq: [{word: [se, quando, assim, enquanto, onde, quem, como, logo, sempre, conforme, depois, que, tão, cedo, aonde, quanto]}, {word: [quiser, quiserem, quisermos, quiseres, puder, puderem, pudermos, puderes, fizer, fizerem, fizermos, tiver, tiverem, tivermos, for, forem, formos, fores, vier, vierem, viermos, disser, disserem, souber, souberem, houver, estiver, estiverem, estivermos, trouxer, der, derem, puser, couber]}], near: 2, gap: 1, same: [person, number]}
+
+  - id: pt-c1-imperfeito-subj
+    title: se eu tivesse, embora chovesse
+    meaning: {en: "the imperfect subjunctive", pt: "o pretérito imperfeito do subjuntivo"}
+    intro:
+      en: |
+        From the 3rd plural preterite: **tiveram → tivesse, fizeram → fizesse, foram → fosse**. Used in unreal conditions (**Se eu tivesse dinheiro, viajaria**), after a past main verb (**Ele pediu que eu esperasse**), and after **como se, embora, caso, talvez** in the past: **Falava como se fosse o dono.**
+      pt: |
+        Do pretérito perfeito na 3ª do plural: **tiveram → tivesse, fizeram → fizesse, foram → fosse**. Aparece nas condições irreais (**Se eu tivesse dinheiro, viajaria**), depois de verbo principal no passado (**Ele pediu que eu esperasse**) e depois de **como se, embora, caso, talvez** no passado: **Falava como se fosse o dono.** Na fala brasileira o condicional muitas vezes vira imperfeito (**Se eu tivesse dinheiro, viajava**) — aceitável no informal.
+    examples:
+    - ["Se eu tivesse dinheiro, viajaria.", "If I had money, I'd travel.", "If I had money, I'd travel.", "tivesse"]
+    - ["Ele pediu que eu esperasse.", "He asked me to wait.", "He asked me to wait.", "esperasse"]
+    - ["Falava como se fosse o dono.", "He talked as if he were the owner.", "He talked as if he were the owner.", "fosse"]
+    match: {seq: [{word: [se, embora, caso, como, que, talvez, quem, quisera, oxalá, tomara]}, {pos: verb, mood: subj, tense: impf}], near: 2, gap: 1, same: [person, number]}
+
+  - id: pt-c1-compostos-subj
+    title: que ele tenha feito, se tivesse sabido
+    meaning: {en: "compound subjunctive tenses", pt: "os tempos compostos do subjuntivo"}
+    intro:
+      en: |
+        **ter** in the subjunctive + participle: **tenha feito** (perfect: *Espero que ele tenha chegado*), **tivesse feito** (pluperfect: *Se eu tivesse sabido, teria vindo*), **tiver feito** (future perfect: *Quando você tiver terminado, me avise*). In formal writing **haver** can replace **ter**: **houvesse feito**.
+      pt: |
+        **ter** no subjuntivo + particípio: **tenha feito** (pretérito perfeito: *Espero que ele tenha chegado*), **tivesse feito** (mais-que-perfeito: *Se eu tivesse sabido, teria vindo*), **tiver feito** (futuro composto: *Quando você tiver terminado, me avise*). Na escrita formal, **haver** pode substituir **ter**: **houvesse feito**.
+    table:
+      head: {en: [Tense, Form, Example], pt: [Tempo, Forma, Exemplo]}
+      rows:
+      - [pretérito perfeito, tenha + particípio, que ele tenha chegado]
+      - [mais-que-perfeito, tivesse + particípio, se eu tivesse sabido]
+      - [futuro composto, tiver + particípio, quando você tiver terminado]
+    examples:
+    - ["Espero que ele tenha chegado bem.", "I hope he arrived safely.", "I hope he arrived safely.", "tenha"]
+    - ["Se eu tivesse sabido, teria vindo.", "If I had known, I would have come.", "If I had known, I would have come.", "tivesse"]
+    - ["Quando você tiver terminado, me avise.", "When you've finished, let me know.", "When you've finished, let me know.", "tiver"]
+    match: {seq: [{word: [tenha, tenhas, tenhamos, tenham, tivesse, tivesses, tivéssemos, tivessem, tiver, tiveres, tivermos, tiverem, houvesse, houvessem, haja]}, {re: "(ado|ada|ido|ida|to|ta|ito|eito|isto|osto|erto|ito)$"}], near: 1, gap: 0, same: [person, number]}
+
+  - id: pt-c1-infinitivo-pessoal
+    title: para nós irmos, antes de vocês saírem
+    meaning: {en: "the personal (inflected) infinitive", pt: "o infinitivo pessoal (flexionado)"}
+    intro:
+      en: |
+        Unique to Portuguese and Galician: the infinitive takes person endings when it has its own subject: **para eu falar, para nós falarmos, para eles falarem**. Typical after prepositions and impersonal phrases: **Antes de vocês saírem, fechem a janela. É melhor irmos embora. Ele trouxe o livro para lermos.** With the same subject as the main verb it usually stays uninflected: **Viemos para ajudar.**
+      pt: |
+        Exclusivo do português e do galego: o infinitivo recebe terminações de pessoa quando tem sujeito próprio: **para eu falar, para nós falarmos, para eles falarem**. Comum depois de preposição e expressões impessoais: **Antes de vocês saírem, fechem a janela. É melhor irmos embora. Ele trouxe o livro para lermos.** Com o mesmo sujeito do verbo principal, em geral fica sem flexão: **Viemos para ajudar.**
+    table:
+      head: {en: [Person, falar, fazer], pt: [Pessoa, falar, fazer]}
+      rows:
+      - [eu, falar, fazer]
+      - [você / ele, falar, fazer]
+      - [nós, falarmos, fazermos]
+      - [vocês / eles, falarem, fazerem]
+    examples:
+    - ["Antes de vocês saírem, fechem a janela.", "Before you leave, close the window.", "Before you leave, close the window.", "saírem"]
+    - ["É melhor irmos embora.", "We'd better go.", "We'd better go.", "irmos"]
+    - ["Ele trouxe o livro para lermos.", "He brought the book for us to read.", "He brought the book for us to read.", "lermos"]
+    match: {seq: [{word: [para, antes, depois, sem, até, ao, por, apesar, melhor, hora, importante, preciso, necessário, de]}, {re: "^[a-zçãâéêíóôõú]+(armos|ermos|irmos|ormos|arem|erem|irem|orem|aírem)$"}], near: 3, gap: 1}
+
+- title: {en: Pronouns and placement, pt: Pronomes e colocação}
+  lessons:
+  - id: pt-c1-colocacao
+    title: me dá, dê-me, não se preocupe
+    meaning: {en: "clitic placement: spoken Brazilian vs written norm", pt: "colocação pronominal: fala brasileira e norma escrita"}
+    intro:
+      en: |
+        Brazilians put the clitic before the verb (**próclise**) almost everywhere in speech: **Me dá uma água. Ele se levantou.** The written norm forbids starting a sentence with a clitic and prefers it after the verb (**ênclise**) there: **Dê-me uma água. Levantou-se cedo.** Words like **não, nunca, que, quem, já, também, onde, quando** "attract" the clitic before the verb in every register: **Não se preocupe. Quem te disse?**
+      pt: |
+        Na fala brasileira o pronome vem antes do verbo (**próclise**) quase sempre: **Me dá uma água. Ele se levantou.** A norma escrita não aceita começar frase com pronome oblíquo e prefere a **ênclise** nesse caso: **Dê-me uma água. Levantou-se cedo.** Palavras como **não, nunca, que, quem, já, também, onde, quando** "atraem" o pronome para antes do verbo em qualquer registro: **Não se preocupe. Quem te disse?**
+    examples:
+    - ["Não se preocupe.", "Don't worry.", "Don't worry.", "se"]
+    - ["Quem te disse isso?", "Who told you that?", "Who told you that?", "te"]
+    - ["Levantou-se cedo.", "He got up early.", "He got up early.", "Levantou-se"]
+    match:
+    - {seq: [{word: [não, nunca, que, quem, já, também, sempre, ninguém, nada, onde, quando, como, jamais, talvez]}, {word: [me, te, se, lhe, nos, lhes]}, {pos: verb}], gap: 1, pool: [me, te, se, lhe, nos]}
+    - {seq: [{re: "^[a-zçãâéêíóôõú]+-(me|se|lhe|te|nos)$", start: true}], gap: 0, suffixes: ["-me", "-se", "-lhe", "-te", "-nos"]}
+
+  - id: pt-c1-lo-la
+    title: comprá-lo, vi-a, dão-no
+    meaning: {en: "object pronouns o, a after the verb: -lo, -la, -no, -na", pt: "pronomes o, a depois do verbo: -lo, -la, -no, -na"}
+    intro:
+      en: |
+        In writing the object pronouns **o, a, os, as** change after certain endings: after **-r, -s, -z** the ending drops and they become **-lo, -la**: **comprar + o → comprá-lo**, **fiz + a → fi-la**; after a nasal sound they become **-no, -na**: **dão + o → dão-no**. Speech replaces them with **ele / ela** (**Vou comprar ele**) or leaves them out (**Vou comprar**), which is fine in informal style.
+      pt: |
+        Na escrita, os pronomes **o, a, os, as** mudam depois de certas terminações: depois de **-r, -s, -z** a terminação cai e eles viram **-lo, -la**: **comprar + o → comprá-lo**, **fiz + a → fi-la**; depois de som nasal viram **-no, -na**: **dão + o → dão-no**. A fala troca por **ele / ela** (**Vou comprar ele**) ou omite (**Vou comprar**), o que é normal no registro informal, mas não num texto formal.
+    examples:
+    - ["Vou comprá-lo amanhã.", "I'll buy it tomorrow.", "I'll buy it tomorrow.", "comprá-lo"]
+    - ["Preciso vê-la.", "I need to see her.", "I need to see her.", "vê-la"]
+    - ["Encontrei-os no parque.", "I met them in the park.", "I met them in the park.", "Encontrei-os"]
+    match:
+    - {seq: [{re: "-(lo|la|los|las)$"}], gap: 0, suffixes: ["-lo", "-la", "-los", "-las"]}
+    - {seq: [{re: "-(no|na|nos|nas)$", not: {pos: pron}}], gap: 0, suffixes: ["-no", "-na", "-nos", "-nas"]}
+
+  - id: pt-c1-passiva-sintetica
+    title: vendem-se casas
+    meaning: {en: "the se passive and agreement", pt: "a voz passiva sintética e a concordância"}
+    intro:
+      en: |
+        **verb + se** with a thing as subject: **Vende-se esta casa. Alugam-se apartamentos.** The written norm makes the verb agree with the thing (**alugam-se apartamentos**); speech and many signs use the singular (**aluga-se apartamentos**), read as impersonal. With a preposition the verb stays singular: **Precisa-se de vendedores.**
+      pt: |
+        **verbo + se** com uma coisa como sujeito: **Vende-se esta casa. Alugam-se apartamentos.** A norma pede concordância com a coisa (**alugam-se apartamentos** = apartamentos são alugados); a fala e muitas placas usam o singular (**aluga-se apartamentos**), entendido como impessoal. Com preposição, o verbo fica no singular: **Precisa-se de vendedores.**
+    examples:
+    - ["Alugam-se apartamentos.", "Flats to let.", "Flats to let.", "Alugam-se"]
+    - ["Vende-se esta casa.", "This house is for sale.", "This house is for sale.", "Vende-se"]
+    - ["Precisa-se de vendedores.", "Salespeople wanted.", "Salespeople wanted.", "Precisa-se"]
+    match: {seq: [{re: "^(vende|vendem|aluga|alugam|precisa|procura|procuram|fala|falam|diz|dizem|sabe|faz|fazem|leva|levam|aceita|aceitam|compra|compram|conserta|consertam|ouve|ouvem|vê|veem|pode|podem|deve|devem|usa|usam|come|comem|bebe|bebem|encontra|encontram|lê|leem|escreve|escrevem|fabrica|fabricam|produz|produzem|cultiva|cultivam|paga|pagam|chama|chamam|espera|esperam|oferece|oferecem|considera|consideram|nota|notam|vê|celebra|celebram|necessita|necessitam|admite|admitem|perde|perdem|aprende|aprendem|ensina|ensinam)-se$"}], gap: 0, suffixes: ["m-se", "-se"], attested: true}
+
+  - id: pt-c1-crase
+    title: vou à praia, às três horas
+    meaning: {en: "crase: à, às", pt: "a crase: à, às"}
+    intro:
+      en: |
+        **à** = preposition **a** + article **a**: it appears before feminine nouns after words that require **a**: **Vou à praia** (ir a + a praia), **Entreguei o livro à professora**, and in fixed phrases: **às três horas, à noite, à vontade, à direita, às vezes**. No crase before masculine nouns (**a pé**), verbs (**a partir de**) or **casa** without a modifier (**Voltei a casa**, in careful writing).
+      pt: |
+        **à** = preposição **a** + artigo **a**: aparece antes de palavra feminina quando o termo anterior pede **a**: **Vou à praia** (ir a + a praia), **Entreguei o livro à professora**, e em locuções: **às três horas, à noite, à vontade, à direita, às vezes**. Não há crase antes de masculino (**a pé**), de verbo (**a partir de**) nem de pronome como **ela, você**. Truque: troque por um masculino — se virar **ao**, há crase (**vou ao clube → vou à praia**).
+    examples:
+    - ["Vou à praia amanhã.", "I'm going to the beach tomorrow.", "I'm going to the beach tomorrow.", "à"]
+    - ["A reunião é às três horas.", "The meeting is at three o'clock.", "The meeting is at three o'clock.", "às"]
+    - ["Às vezes eu durmo tarde.", "Sometimes I go to bed late.", "Sometimes I go to bed late.", "Às"]
+    match: {seq: [{word: [à, às]}], gap: 0}
+    pool: [à, a, há, às, as]
+
+- title: {en: Connectors and government, pt: Conectores e regência}
+  lessons:
+  - id: pt-c1-concessivas
+    title: embora, ainda que, mesmo que
+    meaning: {en: "concession: embora, ainda que, mesmo que, se bem que", pt: "concessão: embora, ainda que, mesmo que, se bem que"}
+    intro:
+      en: |
+        **embora, ainda que, mesmo que, conquanto, posto que** + subjunctive: **Embora esteja cansado, vou sair. Mesmo que chova, a festa continua.** **se bem que** (colloquial) takes the indicative: **É caro, se bem que vale a pena.** **apesar de** + noun or infinitive: **Apesar da chuva, saímos.** Note: **posto que** in good style is concessive, not causal.
+      pt: |
+        **embora, ainda que, mesmo que, conquanto, posto que** + subjuntivo: **Embora esteja cansado, vou sair. Mesmo que chova, a festa continua.** **se bem que** (coloquial) aceita indicativo: **É caro, se bem que vale a pena.** **apesar de** + substantivo ou infinitivo: **Apesar da chuva, saímos.** Na norma culta, **posto que** é concessivo (= embora), não causal.
+    examples:
+    - ["Embora esteja cansado, vou sair.", "Although I'm tired, I'm going out.", "Although I'm tired, I'm going out.", "Embora"]
+    - ["Mesmo que chova, a festa continua.", "Even if it rains, the party goes on.", "Even if it rains, the party goes on.", "chova"]
+    - ["Ainda que fosse verdade, não mudaria nada.", "Even if it were true, it wouldn't change anything.", "Even if it were true, it wouldn't change anything.", "fosse"]
+    match:
+    - {seq: [{word: [embora, conquanto]}, {pos: verb, mood: [subj, imp], tense: [pres, impf]}], near: 2, gap: 0, pool: [embora, porque, quando, se, pois]}
+    - {seq: [{word: [ainda, mesmo]}, {word: [que]}, {pos: verb, mood: [subj, imp], tense: [pres, impf]}], near: 1, gap: 2, same: [person, number]}
+
+  - id: pt-c1-conectores
+    title: portanto, contudo, todavia
+    meaning: {en: "formal connectors: portanto, contudo, todavia, entretanto", pt: "conectores formais: portanto, contudo, todavia, entretanto"}
+    intro:
+      en: |
+        Contrast: **mas** (neutral), **porém, contudo, todavia, entretanto, no entanto** (more formal, can move inside the clause: *Ele, contudo, não veio*). Conclusion: **portanto, logo, por isso, por conseguinte**. Explanation: **pois** (before the verb: *Saia, pois está tarde*), **porquanto** (literary). Careful: **entretanto** means "however" in Brazil, not "meanwhile".
+      pt: |
+        Adversativas: **mas** (neutra), **porém, contudo, todavia, entretanto, no entanto** (mais formais, podem vir no meio da oração: *Ele, contudo, não veio*). Conclusivas: **portanto, logo, por isso, por conseguinte**. Explicativas: **pois** (*Saia, pois está tarde*), **porquanto** (literário). No Brasil, **entretanto** é adversativo (= no entanto); o sentido de *enquanto isso* é raro.
+    examples:
+    - ["Ele estudou muito; contudo, não passou.", "He studied hard; however, he didn't pass.", "He studied hard; however, he didn't pass.", "contudo"]
+    - ["Penso, logo existo.", "I think, therefore I am.", "I think, therefore I am.", "logo"]
+    - ["O tempo está ruim, portanto vamos ficar em casa.", "The weather is bad, so we'll stay home.", "The weather is bad, so we'll stay home.", "portanto"]
+    match: {seq: [{word: [portanto, contudo, todavia, entretanto, porém, porquanto, conseguinte]}], gap: 0}
+    pool: [portanto, contudo, todavia, porém, pois]
+
+  - id: pt-c1-regencia
+    title: assistir ao filme, preferir a
+    meaning: {en: "verb government: assistir a, obedecer a, preferir … a, chegar a", pt: "regência verbal: assistir a, obedecer a, preferir … a, chegar a"}
+    intro:
+      en: |
+        Some verbs require a preposition in the written norm that speech often changes or drops: **assistir a** "to watch" (**assistir ao filme**; colloquial *assistir o filme*), **obedecer a**, **preferir X a Y** (not *mais do que*), **chegar a** (colloquial *chegar em*), **ir a / para**, **visar a** "to aim at", **responder a**, **simpatizar com**, **lembrar-se de / esquecer-se de**, **namorar alguém** (no *com* in the norm).
+      pt: |
+        Alguns verbos pedem preposição na norma culta que a fala muda ou omite: **assistir a** = ver (**assistir ao filme**; coloquial *assistir o filme*), **obedecer a**, **preferir X a Y** (não *preferir mais do que*), **chegar a** (coloquial *chegar em*), **ir a / para**, **visar a** (= ter como objetivo), **responder a**, **simpatizar com**, **lembrar-se de**, **namorar alguém** (sem *com* na norma). Em textos formais (provas, redação), siga a norma.
+    examples:
+    - ["Assisti ao filme ontem.", "I watched the film yesterday.", "I watched the film yesterday.", "ao"]
+    - ["Prefiro chá a café.", "I prefer tea to coffee.", "I prefer tea to coffee.", "a"]
+    - ["Chegamos a Lisboa às dez.", "We arrived in Lisbon at ten.", "We arrived in Lisbon at ten.", "a"]
+    match: {seq: [{lemma: "^(assistir|obedecer|preferir|chegar|referir|responder|aspirar|visar|simpatizar|lembrar|esquecer|desobedecer|proceder|agradar|desagradar)$"}, {word: [a, ao, à, aos, às, em, "no", na, nos, nas, de, do, da, com]}], gap: 1}
+    pool: [a, ao, à, em, "no", de]

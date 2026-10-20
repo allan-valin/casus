@@ -1,0 +1,216 @@
+id: C1
+topics:
+
+- title: {en: Word order and focus, pt: Ordem das palavras e foco}
+  lessons:
+  - id: hu-focus
+    title: PÉTER hívott fel.
+    meaning: {en: "focus: the stressed word right before the verb", pt: "foco: a palavra enfatizada logo antes do verbo"}
+    intro:
+      en: |
+        Hungarian word order follows information, not grammar roles. The slot **right before the verb** is the *focus*: the new or contrasted element, said with stress. Whatever stands there pushes the verbal prefix behind the verb:
+
+        - neutral: **Péter felhívta Annát.** "Péter called Anna."
+        - focus on Péter: **Péter hívta fel Annát.** "It was Péter who called Anna."
+        - focus on Anna: **Annát hívta fel Péter.** "It was Anna that Péter called."
+        - **csak** (only) marks a focus too: **Csak én jöttem el.** "Only I came."
+
+        Question words always sit in the focus: **Ki hívta fel Annát?**
+      pt: |
+        A ordem das palavras em húngaro segue a informação, não as funções gramaticais. A posição **logo antes do verbo** é o *foco*: o elemento novo ou contrastado, dito com ênfase. O que estiver ali empurra o prefixo verbal para depois do verbo:
+
+        - neutro: **Péter felhívta Annát.** "O Péter ligou para a Anna."
+        - foco no Péter: **Péter hívta fel Annát.** "Foi o Péter que ligou para a Anna."
+        - foco na Anna: **Annát hívta fel Péter.** "Foi para a Anna que o Péter ligou."
+        - **csak** (só) também marca foco: **Csak én jöttem el.** "Só eu vim."
+
+        As palavras interrogativas ficam sempre no foco: **Ki hívta fel Annát?**
+    examples:
+    - ["Péter hívta fel Annát.", "It was Péter who called Anna.", "Foi o Péter que ligou para a Anna.", "fel"]
+    - ["Csak én jöttem el.", "Only I came.", "Só eu vim.", "el"]
+    - ["Ki hívta fel Annát?", "Who called Anna?", "Quem ligou para a Anna?", "fel"]
+    match:
+    - {seq: [{word: [csak]}, {pos: [noun, pron, adv, num]}, {pos: verb}, {word: [be, ki, el, meg, fel, föl, le, vissza, át, haza, össze, rá, oda]}], gap: 3}
+    - {seq: [{word: [ki, kit, mit, mi, kinek, kivel]}, {pos: verb}, {word: [be, el, meg, fel, föl, le, vissza, át, haza, össze, rá, oda]}], gap: 2}
+    pool: [be, ki, el, meg, fel, le, vissza, át, haza, össze]
+
+  - id: hu-is-sem
+    title: én is, én sem
+    meaning: {en: "is (also) and sem (not … either) after the word they belong to", pt: "is (também) e sem (também não) depois da palavra a que se referem"}
+    intro:
+      en: |
+        **is** "also, even" and **sem / se** "not … either, not even" follow the word they modify, and their place changes the meaning: **Én is jövök.** "I'm coming too." **Jövök is.** "And I'll come, too (indeed)." **Én sem tudom.** "I don't know either." **Egy szót sem szólt.** "He didn't say a single word." With **sem** after a negative word no **nem** is needed: **Senki sem jött.** "Nobody came."
+      pt: |
+        **is** "também, até" e **sem / se** "também não, nem" vêm depois da palavra que modificam, e a posição muda o sentido: **Én is jövök.** "Eu também vou." **Jövök is.** "E eu vou mesmo." **Én sem tudom.** "Eu também não sei." **Egy szót sem szólt.** "Ele não disse uma só palavra." Com **sem** depois de uma palavra negativa não é preciso **nem**: **Senki sem jött.** "Ninguém veio."
+    examples:
+    - ["Én is jövök.", "I'm coming too.", "Eu também vou.", "is"]
+    - ["Én sem tudom.", "I don't know either.", "Eu também não sei.", "sem"]
+    - ["Egy szót sem szólt.", "He didn't say a single word.", "Ele não disse uma só palavra.", "sem"]
+    match: {seq: [{pos: [pron, noun, num, adv]}, {word: [is, sem, se]}], gap: 1}
+    pool: [is, sem, se, csak, még, már]
+
+  - id: hu-pointer-words
+    title: Arról beszéltünk, hogy …
+    meaning: {en: "pointer words: azt, arról, abban … before a hogy-clause", pt: "palavras-âncora: azt, arról, abban … antes de uma oração com hogy"}
+    intro:
+      en: |
+        A **hogy**-clause cannot take a case ending itself, so the main clause carries a form of **az** with the case the verb needs, pointing ahead:
+
+        - **Azt mondta, hogy …** (mond + accusative)
+        - **Arról beszéltünk, hogy …** (beszél valamiről)
+        - **Abban reménykedem, hogy …** (reménykedik valamiben)
+        - **Annak örülök, hogy …** (örül valaminek)
+        - **Arra gondoltam, hogy …** (gondol valamire)
+        - **Attól félek, hogy …** (fél valamitől)
+      pt: |
+        Uma oração com **hogy** não pode levar terminação de caso, então a principal traz uma forma de **az** no caso que o verbo pede, anunciando a oração:
+
+        - **Azt mondta, hogy …** "Ele disse que …" (mond + acusativo)
+        - **Arról beszéltünk, hogy …** "Falamos sobre …" (beszél valamiről)
+        - **Abban reménykedem, hogy …** "Tenho esperança de que …" (reménykedik valamiben)
+        - **Annak örülök, hogy …** "Fico feliz que …" (örül valaminek)
+        - **Arra gondoltam, hogy …** "Pensei em …" (gondol valamire)
+        - **Attól félek, hogy …** "Tenho medo de que …" (fél valamitől)
+    examples:
+    - ["Annak örülök, hogy itt vagy.", "I'm glad you're here.", "Fico feliz que você esteja aqui.", "Annak"]
+    - ["Attól félek, hogy elkésünk.", "I'm afraid we'll be late.", "Tenho medo de que a gente se atrase.", "Attól"]
+    - ["Arra gondoltam, hogy elmehetnénk moziba.", "I was thinking we could go to the cinema.", "Pensei que a gente podia ir ao cinema.", "Arra"]
+    match: {seq: [{word: [azt, annak, abban, arról, arra, attól, azzal, azon, abból, ahhoz, afelől]}, {word: [hogy]}], near: 2, gap: 0}
+    pool: [azt, annak, abban, arról, arra, attól, azzal, azon]
+
+- title: {en: Subjunctive and conditional, pt: Subjuntivo e condicional}
+  lessons:
+  - id: hu-subjunctive-hogy
+    title: Azt akarom, hogy eljöjj.
+    meaning: {en: "the subjunctive after akar, kér, kell, fontos + hogy", pt: "o subjuntivo depois de akar, kér, kell, fontos + hogy"}
+    intro:
+      en: |
+        The imperative forms double as a subjunctive after verbs of wanting, asking and ordering, and after expressions of necessity: **Azt akarom, hogy eljöjj.** "I want you to come." **Kérlek, hogy segíts.** "Please help." **Fontos, hogy pontosan érkezz.** "It's important that you arrive on time." **Mondd meg neki, hogy hívjon fel.** "Tell him to call me."
+      pt: |
+        As formas do imperativo funcionam como subjuntivo depois de verbos de querer, pedir e mandar, e depois de expressões de necessidade: **Azt akarom, hogy eljöjj.** "Quero que você venha." **Kérlek, hogy segíts.** "Peço que me ajude." **Fontos, hogy pontosan érkezz.** "É importante que você chegue na hora." **Mondd meg neki, hogy hívjon fel.** "Diga a ele que me ligue."
+    examples:
+    - ["Azt akarom, hogy eljöjj.", "I want you to come.", "Quero que você venha.", "eljöjj"]
+    - ["Fontos, hogy pontosan érkezz.", "It's important that you arrive on time.", "É importante que você chegue na hora.", "érkezz"]
+    - ["Mondd meg neki, hogy hívjon fel.", "Tell him to call me.", "Diga a ele que me ligue.", "hívjon"]
+    match: {seq: [{lemma: "^(akar|kér|szeretne|szeret|mond|javasol|kell|fontos|hagy|enged|tilt|vár|kíván)$"}, {word: [hogy]}, {pos: verb, mood: [imp, subj]}], near: 3, gap: 2, same: [person, number]}
+
+  - id: hu-purpose
+    title: azért, hogy …
+    meaning: {en: "purpose: azért, hogy + subjunctive", pt: "finalidade: azért, hogy + subjuntivo"}
+    intro:
+      en: |
+        *In order to / so that* is **(azért,) hogy** + the subjunctive: **Azért jöttem, hogy beszéljünk.** "I came so that we could talk." **Korán keltem, hogy ne késsek el.** "I got up early so as not to be late." Compare **azért, mert** "because": **Azért jöttem, mert hívtál.**
+      pt: |
+        *Para (que)* é **(azért,) hogy** + subjuntivo: **Azért jöttem, hogy beszéljünk.** "Vim para a gente conversar." **Korán keltem, hogy ne késsek el.** "Acordei cedo para não me atrasar." Compare **azért, mert** "porque": **Azért jöttem, mert hívtál.** "Vim porque você me chamou."
+    examples:
+    - ["Azért jöttem, hogy beszéljünk.", "I came so that we could talk.", "Vim para a gente conversar.", "beszéljünk"]
+    - ["Korán keltem, hogy ne késsek el.", "I got up early so as not to be late.", "Acordei cedo para não me atrasar.", "késsek"]
+    - ["Pénzt gyűjt, hogy autót vegyen.", "He's saving money to buy a car.", "Ele está juntando dinheiro para comprar um carro.", "vegyen"]
+    match: {seq: [{word: [azért]}, {word: [hogy]}, {pos: verb, mood: [imp, subj]}], near: 4, gap: 2, same: [person, number]}
+
+  - id: hu-past-conditional
+    title: ha tudtam volna
+    meaning: {en: "the past conditional: past + volna", pt: "o condicional passado: passado + volna"}
+    intro:
+      en: |
+        Unreal past = the past tense + **volna**: **Ha tudtam volna, eljöttem volna.** "If I had known, I would have come." **Szívesen segítettem volna.** "I would gladly have helped." Wishes: **Bárcsak ott lettem volna!** "If only I had been there!"
+      pt: |
+        Passado irreal = o pretérito + **volna**: **Ha tudtam volna, eljöttem volna.** "Se eu soubesse, teria vindo." **Szívesen segítettem volna.** "Eu teria ajudado com prazer." Desejos: **Bárcsak ott lettem volna!** "Quem dera eu tivesse estado lá!"
+    examples:
+    - ["Ha tudtam volna, eljöttem volna.", "If I had known, I would have come.", "Se eu soubesse, teria vindo.", "tudtam"]
+    - ["Szívesen segítettem volna.", "I would gladly have helped.", "Eu teria ajudado com prazer.", "segítettem"]
+    - ["Bárcsak ott lettem volna!", "If only I had been there!", "Quem dera eu tivesse estado lá!", "lettem"]
+    match: {seq: [{pos: verb, tense: past}, {word: [volna]}], gap: 0, same: [tense, mood]}
+
+- title: {en: Formal style, pt: Estilo formal}
+  lessons:
+  - id: hu-van-converb
+    title: látván, belépvén
+    meaning: {en: "-ván / -vén: having done, since (literary)", pt: "-ván / -vén: tendo feito, já que (literário)"}
+    intro:
+      en: |
+        **-ván / -vén** is the formal, literary form of **-va / -ve**: an action that happens before or explains the main one: **Látván, hogy senki sincs otthon, elment.** "Seeing that nobody was at home, he left." **Belépvén a terembe, köszönt.** "On entering the hall, he greeted everyone." Speech prefers **amikor, mivel** clauses.
+      pt: |
+        **-ván / -vén** é a forma formal, literária de **-va / -ve**: uma ação anterior à principal ou que a explica: **Látván, hogy senki sincs otthon, elment.** "Vendo que não havia ninguém em casa, foi embora." **Belépvén a terembe, köszönt.** "Ao entrar no salão, cumprimentou a todos." A fala prefere orações com **amikor, mivel**.
+    examples:
+    - ["Látván, hogy senki sincs otthon, elment.", "Seeing that nobody was home, he left.", "Vendo que não havia ninguém em casa, foi embora.", "Látván"]
+    - ["Belépvén a terembe, köszönt.", "On entering the hall, he greeted everyone.", "Ao entrar no salão, cumprimentou a todos.", "Belépvén"]
+    - ["Tudván ezt, nem szóltam semmit.", "Knowing this, I said nothing.", "Sabendo disso, não disse nada.", "Tudván"]
+    match: {seq: [{pos: verb, re: "(ván|vén)$"}], suffixes: [ván, vén, va, ve], attested: true}
+
+  - id: hu-personal-infinitive
+    title: mennem kell
+    meaning: {en: "the personal infinitive: mennem, menned, mennie", pt: "o infinitivo pessoal: mennem, menned, mennie"}
+    intro:
+      en: |
+        After **kell, lehet, szabad, muszáj, sikerül, érdemes** the infinitive takes personal endings, and the person can be added in the dative: **Mennem kell.** "I have to go." **Neked kell eldöntened.** "You have to decide." **Nem szabad dohányoznia.** "He mustn't smoke." **Sikerült megoldanunk.** "We managed to solve it."
+
+        | | back | front |
+        |---|---|---|
+        | 1sg | -nom | -nem |
+        | 2sg | -nod | -ned |
+        | 3sg | -nia | -nie |
+        | 1pl | -nunk | -nünk |
+        | 2pl | -notok | -netek |
+        | 3pl | -niuk | -niük |
+      pt: |
+        Depois de **kell, lehet, szabad, muszáj, sikerül, érdemes** o infinitivo leva terminações pessoais, e a pessoa pode vir no dativo: **Mennem kell.** "Tenho de ir." **Neked kell eldöntened.** "Você é que tem de decidir." **Nem szabad dohányoznia.** "Ele não pode fumar." **Sikerült megoldanunk.** "Conseguimos resolver."
+
+        | | posterior | anterior |
+        |---|---|---|
+        | 1sg | -nom | -nem |
+        | 2sg | -nod | -ned |
+        | 3sg | -nia | -nie |
+        | 1pl | -nunk | -nünk |
+        | 2pl | -notok | -netek |
+        | 3pl | -niuk | -niük |
+    examples:
+    - ["Mennem kell.", "I have to go.", "Tenho de ir.", "Mennem"]
+    - ["Neked kell eldöntened.", "You have to decide.", "Você é que tem de decidir.", "eldöntened"]
+    - ["Sikerült megoldanunk.", "We managed to solve it.", "Conseguimos resolver.", "megoldanunk"]
+    match:
+    - {seq: [{pos: verb, re: "(nom|nod|nia|nunk|notok|niuk)$"}], suffixes: [nom, nod, nia, nunk, notok, niuk, ni], attested: true}
+    - {seq: [{pos: verb, re: "(nem|ned|nie|nünk|netek|niük)$", not: {lemma: "^nem$"}}], suffixes: [nem, ned, nie, nünk, netek, niük, ni], attested: true}
+
+  - id: hu-nominalization
+    title: az olvasás, a döntés
+    meaning: {en: "-ás / -és: the action as a noun", pt: "-ás / -és: a ação como substantivo"}
+    intro:
+      en: |
+        **-ás / -és** turns a verb into a noun of action: **olvas → olvasás** (reading), **dönt → döntés** (decision), **fejleszt → fejlesztés** (development). Formal Hungarian strings them with possessives: **a döntés meghozatala** "the making of the decision", **a lakás felújítása** "the renovation of the flat".
+      pt: |
+        **-ás / -és** transforma o verbo num substantivo de ação: **olvas → olvasás** (leitura), **dönt → döntés** (decisão), **fejleszt → fejlesztés** (desenvolvimento). O húngaro formal os encadeia com possessivos: **a döntés meghozatala** "a tomada da decisão", **a lakás felújítása** "a reforma do apartamento".
+    examples:
+    - ["Az olvasás a hobbim.", "Reading is my hobby.", "Ler é meu hobby.", "olvasás"]
+    - ["Nehéz döntés volt.", "It was a hard decision.", "Foi uma decisão difícil.", "döntés"]
+    - ["A lakás felújítása sokáig tartott.", "The renovation of the flat took a long time.", "A reforma do apartamento demorou muito.", "felújítása"]
+    match: {seq: [{pos: noun, lemma: "[^aeiou](ás|és)$"}], same: [number]}
+
+  - id: hu-formal-address
+    title: ön, maga, tetszik
+    meaning: {en: "formal 'you': ön, maga, tetszik + infinitive", pt: "o tratamento formal: ön, maga, tetszik + infinitivo"}
+    intro:
+      en: |
+        Formal *you* takes the 3rd person verb: **Ön honnan jön?** "Where are you from?" **ön** is polite and official; **maga** is common in speech but can sound cool; children and younger people address older ones with **tetszik** + infinitive: **Hova tetszik menni?** "Where are you going (madam/sir)?" Plural **önök, maguk**.
+      pt: |
+        O *você* formal leva o verbo na 3ª pessoa: **Ön honnan jön?** "De onde o senhor é?" **ön** é educado e oficial; **maga** é comum na fala, mas pode soar frio; crianças e jovens falam com os mais velhos usando **tetszik** + infinitivo: **Hova tetszik menni?** "Aonde a senhora vai?" Plural **önök, maguk**.
+    examples:
+    - ["Ön honnan jön?", "Where are you from?", "De onde o senhor é?", "Ön"]
+    - ["Hova tetszik menni?", "Where are you going, madam?", "Aonde a senhora vai?", "tetszik"]
+    - ["Segíthetek önnek?", "May I help you?", "Posso ajudar o senhor?", "önnek"]
+    match: {seq: [{word: [ön, önt, önnek, önnel, öné, önök, önöket, önöknek, önnél, öntől, tetszik]}], gap: 0}
+    pool: [ön, önt, önnek, önök, maga, magának, te, téged, neked]
+
+  - id: hu-possessive-e
+    title: Ez Péteré. Kovácsék
+    meaning: {en: "-é (whose: Péter's) and -ék (the family, the group)", pt: "-é (de quem: do Péter) e -ék (a família, o grupo)"}
+    intro:
+      en: |
+        **-é** stands for an owner without the thing owned: **Kié ez a könyv? – Péteré.** "Whose is this book? – Péter's." **Az enyém, a tiéd, az övé** "mine, yours, his/hers". **-ék** means someone and their family or group: **Kovácsék** "the Kovács family", **Péterék** "Péter and his family / friends", **Péteréknél** "at Péter's place".
+      pt: |
+        **-é** representa o dono sem a coisa possuída: **Kié ez a könyv? – Péteré.** "De quem é este livro? – Do Péter." **Az enyém, a tiéd, az övé** "o meu, o teu, o dele/dela". **-ék** quer dizer alguém e sua família ou turma: **Kovácsék** "a família Kovács", **Péterék** "o Péter e a família / os amigos", **Péteréknél** "na casa do Péter".
+    examples:
+    - ["Kié ez a könyv?", "Whose is this book?", "De quem é este livro?", "Kié"]
+    - ["Ez az enyém.", "This is mine.", "Isto é meu.", "enyém"]
+    - ["Péteréknél vacsoráztunk.", "We had dinner at Péter's.", "Jantamos na casa do Péter.", "Péteréknél"]
+    match: {seq: [{pos: [noun, pron], re: "(é|ék|éknél|ékhez|éké|ékkel|éktől)$", not: {lemma: "(é|ék)$"}}], same: [number]}

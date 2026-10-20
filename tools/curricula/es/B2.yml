@@ -1,0 +1,250 @@
+id: B2
+topics:
+
+- title: {en: The imperfect subjunctive, pt: O imperfeito do subjuntivo}
+  lessons:
+  - id: es-b2-imperfecto-subj
+    title: hablara, hablase
+    meaning: {en: "the imperfect subjunctive", pt: "o pretérito imperfeito do subjuntivo"}
+    intro:
+      en: |
+        Take the 3rd person plural of the preterite, drop **-ron**, add **-ra** or **-se**: **hablaron → hablara / hablase**, **tuvieron → tuviera / tuviese**, **fueron → fuera / fuese**. The two sets mean the same; **-ra** is more common in speech, **-se** in writing. It is used where the subjunctive is needed and the main verb is in the past or the conditional: **Quería que vinieras. Me pidió que lo ayudara.**
+      pt: |
+        Pegue a 3ª pessoa do plural do pretérito, tire **-ron** e acrescente **-ra** ou **-se**: **hablaron → hablara / hablase**, **tuvieron → tuviera / tuviese**, **fueron → fuera / fuese**. As duas séries significam o mesmo; **-ra** é mais comum na fala, **-se** na escrita. Corresponde ao nosso *falasse, tivesse, fosse*: **Quería que vinieras** (Queria que você viesse). Atenção: em português *falara* é mais-que-perfeito do indicativo; em espanhol **hablara** é subjuntivo.
+    table:
+      head: {en: [Infinitive, Preterite (ellos), -ra, -se], pt: [Infinitivo, Pretérito (ellos), -ra, -se]}
+      rows:
+      - [hablar, hablaron, hablara, hablase]
+      - [tener, tuvieron, tuviera, tuviese]
+      - [ser / ir, fueron, fuera, fuese]
+      - [decir, dijeron, dijera, dijese]
+    examples:
+    - [Quería que vinieras., I wanted you to come., Eu queria que você viesse., vinieras]
+    - [Me pidió que lo ayudara., He asked me to help him., Ele me pediu que o ajudasse., ayudara]
+    - [Era necesario que lo supieran todos., Everyone needed to know it., Era necessário que todos soubessem disso., supieran]
+    match: {seq: [{pos: verb, mood: subj, tense: impf}], same: [person, number]}
+
+  - id: es-b2-si-irreal
+    title: si tuviera, iría
+    meaning: {en: "unreal conditions in the present", pt: "condições irreais no presente"}
+    intro:
+      en: |
+        **si** + imperfect subjunctive, then the conditional: **Si tuviera tiempo, viajaría más.** "If I had time, I'd travel more." Never the conditional or the present subjunctive after **si**: ~~si tendría~~, ~~si tenga~~. For real conditions **si** takes the indicative: **Si llueve, me quedo.**
+      pt: |
+        **si** + imperfeito do subjuntivo, depois o condicional: **Si tuviera tiempo, viajaría más.** (Se eu tivesse tempo, viajaria mais.) Nunca condicional nem presente do subjuntivo depois de **si**: ~~si tendría~~, ~~si tenga~~. E o futuro do subjuntivo do português (*se eu puder*) vira presente do indicativo: **si puedo**.
+    mistakes:
+    - wrong: Si tendría dinero, compraría una casa.
+      right: Si tuviera dinero, compraría una casa.
+      why: {en: "after si: imperfect subjunctive, never the conditional.", pt: "depois de si: imperfeito do subjuntivo, nunca o condicional."}
+    examples:
+    - ["Si tuviera tiempo, viajaría más.", "If I had time, I'd travel more.", "Se eu tivesse tempo, viajaria mais.", tuviera]
+    - ["Si fuera rico, no trabajaría.", "If I were rich, I wouldn't work.", "Se eu fosse rico, não trabalharia.", fuera]
+    - ["Si supiera la respuesta, te la diría.", "If I knew the answer, I'd tell you.", "Se eu soubesse a resposta, eu te diria.", supiera]
+    match: {seq: [{word: [si]}, {pos: verb, mood: subj, tense: impf}], near: 2, gap: 1, same: [person, number]}
+
+  - id: es-b2-pluscuamperfecto-subj
+    title: si hubiera sabido
+    meaning: {en: "the pluperfect subjunctive", pt: "o mais-que-perfeito do subjuntivo"}
+    intro:
+      en: |
+        **hubiera / hubiese** + participle: **Si lo hubiera sabido, habría venido.** "If I had known, I would have come." Also after past wishes and regrets: **Ojalá no hubiera dicho nada. Me alegré de que hubieras llegado.**
+      pt: |
+        **hubiera / hubiese** + particípio = *tivesse* + particípio: **Si lo hubiera sabido, habría venido.** (Se eu tivesse sabido, teria vindo.) Também em desejos e lamentos sobre o passado: **Ojalá no hubiera dicho nada.** (Tomara que eu não tivesse dito nada.) Lembre: o auxiliar é sempre **haber**, nunca *tener*.
+    examples:
+    - ["Si lo hubiera sabido, habría venido.", "If I had known, I would have come.", "Se eu soubesse, teria vindo.", hubiera]
+    - [Ojalá no hubiera dicho nada., I wish I hadn't said anything., Quem dera eu não tivesse dito nada., hubiera]
+    - [Me alegré de que hubieras llegado., I was glad you had arrived., Fiquei feliz que você tivesse chegado., hubieras]
+    match: {seq: [{word: [hubiera, hubieras, hubiéramos, hubierais, hubieran, hubiese, hubieses, hubiésemos, hubiesen]}, {re: "(ado|ido|cho|sto|rto|elto|ierto|ada|ida)$"}], near: 2, gap: 0}
+    pool: [hubiera, había, habría, haya, hubieran]
+
+- title: {en: Subjunctive in clauses, pt: Subjuntivo nas orações}
+  lessons:
+  - id: es-b2-relativo-subj
+    title: busco a alguien que sepa
+    meaning: {en: "subjunctive in relative clauses", pt: "subjuntivo nas orações relativas"}
+    intro:
+      en: |
+        A relative clause takes the subjunctive when its antecedent is unknown, hypothetical or denied: **Busco a alguien que sepa francés** (anyone at all) vs **Conozco a alguien que sabe francés** (a real person). After **nadie, nada, ningún** always subjunctive: **No hay nadie que lo entienda.**
+      pt: |
+        A oração relativa pede subjuntivo quando o antecedente é desconhecido, hipotético ou negado: **Busco a alguien que sepa francés** (qualquer pessoa) x **Conozco a alguien que sabe francés** (uma pessoa real) — exatamente como *alguém que saiba / que sabe* em português. Depois de **nadie, nada, ningún**, sempre subjuntivo: **No hay nadie que lo entienda.**
+    examples:
+    - [Busco a alguien que sepa francés., I'm looking for someone who speaks French., Procuro alguém que saiba francês., sepa]
+    - [No hay nadie que lo entienda., There's nobody who understands it., Não há ninguém que entenda isso., entienda]
+    - ["¿Hay algo que pueda hacer?", "Is there anything I can do?", "Há algo que eu possa fazer?", pueda]
+    match: {seq: [{word: [alguien, algo, nadie, nada, ningún, ninguna, ninguno, algún, alguna, cualquier, cualquiera]}, {word: [que]}, {pos: verb, mood: [subj, imp]}], near: 2, gap: 2, same: [person, number]}
+
+  - id: es-b2-temporales
+    title: cuando llegues, en cuanto pueda
+    meaning: {en: "subjunctive in time clauses about the future", pt: "subjuntivo em orações temporais com sentido futuro"}
+    intro:
+      en: |
+        **cuando, en cuanto, hasta que, mientras, tan pronto como** + subjunctive when the event has not happened yet: **Te llamo en cuanto llegue. Espera hasta que vuelva.** With past or habitual facts, indicative: **Cuando llegó, cenamos.** **antes de que** always takes the subjunctive.
+      pt: |
+        **cuando, en cuanto, hasta que, mientras, tan pronto como** + subjuntivo quando o fato ainda não aconteceu: **Te llamo en cuanto llegue.** Onde o português usa o futuro do subjuntivo (*quando eu chegar, assim que puder*), o espanhol usa o presente do subjuntivo: **cuando llegue, en cuanto pueda**. **antes de que** sempre pede subjuntivo.
+    mistakes:
+    - wrong: Te llamo cuando llegaré.
+      right: Te llamo cuando llegue.
+      why: {en: "no future after cuando: present subjunctive.", pt: "nada de futuro depois de cuando: presente do subjuntivo."}
+    examples:
+    - [Te llamo en cuanto llegue., "I'll call you as soon as I arrive.", Eu te ligo assim que chegar., llegue]
+    - [Espera aquí hasta que vuelva., Wait here until I come back., Espere aqui até eu voltar., vuelva]
+    - ["Cuando seas mayor, lo entenderás.", "When you're older, you'll understand.", "Quando você for mais velho, vai entender.", seas]
+    match:
+    - {seq: [{word: [cuando, mientras, cuanto]}, {pos: verb, mood: [subj, imp]}], near: 2, gap: 1, same: [person, number]}
+    - {seq: [{word: [cuanto, hasta, antes, pronto]}, {word: [que, como]}, {pos: verb, mood: [subj, imp]}], near: 2, gap: 2, same: [person, number]}
+
+  - id: es-b2-finales
+    title: para que, sin que
+    meaning: {en: "purpose and manner: para que, sin que, a fin de que", pt: "finalidade e modo: para que, sin que, a fin de que"}
+    intro:
+      en: |
+        **para que, a fin de que, sin que** always take the subjunctive: **Te lo explico para que lo entiendas. Salió sin que nadie lo viera.** With the same subject use the infinitive: **Estudio para aprender** (not ~~para que aprenda~~).
+      pt: |
+        **para que, a fin de que, sin que** sempre pedem subjuntivo: **Te lo explico para que lo entiendas** (para que você entenda). **Salió sin que nadie lo viera** (sem que ninguém o visse). Com o mesmo sujeito, infinitivo: **Estudio para aprender.**
+    examples:
+    - [Te lo explico para que lo entiendas., "I'm explaining it to you so that you understand it.", Explico isso para que você entenda., entiendas]
+    - [Salió sin que nadie lo viera., He left without anyone seeing him., Ele saiu sem que ninguém o visse., viera]
+    - [Habla más alto para que te oigan., Speak louder so they can hear you., Fale mais alto para que te ouçam., oigan]
+    match: {seq: [{word: [para, sin, fin]}, {word: [que]}, {pos: verb, mood: [subj, imp]}], near: 2, gap: 2, same: [person, number]}
+
+  - id: es-b2-concesivas
+    title: aunque llueva
+    meaning: {en: "concession: aunque with indicative or subjunctive", pt: "concessão: aunque com indicativo ou subjuntivo"}
+    intro:
+      en: |
+        **aunque** + indicative states a fact: **Aunque llueve, salgo** "Although it is raining…". **aunque** + subjunctive leaves it open or dismisses it: **Aunque llueva, saldré** "Even if it rains…". Other concessive links: **a pesar de que, por más que, aun así, si bien**.
+      pt: |
+        **aunque** + indicativo afirma um fato: **Aunque llueve, salgo** (Embora esteja chovendo — está chovendo mesmo). **aunque** + subjuntivo deixa em aberto: **Aunque llueva, saldré** (Mesmo que chova, vou sair). Note que em português *embora* sempre pede subjuntivo; em espanhol, o modo muda o sentido. Outros conectores: **a pesar de que, por más que, aun así, si bien**.
+    examples:
+    - ["Aunque llueva, saldré.", "Even if it rains, I'll go out.", "Mesmo que chova, eu vou sair.", Aunque]
+    - ["Aunque estaba cansado, siguió trabajando.", "Although he was tired, he kept working.", "Embora estivesse cansado, continuou trabalhando.", Aunque]
+    - [Lo haré aunque no quieras., "I'll do it even if you don't want me to.", Vou fazer isso mesmo que você não queira., aunque]
+    match: {seq: [{word: [aunque]}], gap: 0}
+    pool: [aunque, porque, cuando, mientras, pues]
+
+- title: {en: Perfect tenses and reported speech, pt: Tempos compostos e discurso indireto}
+  lessons:
+  - id: es-b2-condicional-compuesto
+    title: habría ido
+    meaning: {en: "the conditional perfect", pt: "o condicional composto"}
+    intro:
+      en: |
+        **habría, habrías, habría, habríamos, habríais, habrían** + participle: what would have happened. **Habría ido, pero estaba enfermo.** In the main clause of a past unreal condition: **Si me hubieras llamado, habría venido.** In speech the **-ra** form also appears there: **hubiera venido**.
+      pt: |
+        **habría…** + particípio = *teria* + particípio: **Habría ido, pero estaba enfermo** (Eu teria ido, mas estava doente). Na oração principal de uma condição irreal no passado: **Si me hubieras llamado, habría venido.** Na fala também se ouve **hubiera venido** nessa posição.
+    examples:
+    - ["Habría ido, pero estaba enfermo.", "I would have gone, but I was ill.", "Eu teria ido, mas estava doente.", Habría]
+    - [Yo no lo habría hecho., I wouldn't have done it., Eu não teria feito isso., habría]
+    - [Nadie lo habría creído., Nobody would have believed it., Ninguém teria acreditado., habría]
+    match: {seq: [{word: [habría, habrías, habríamos, habríais, habrían]}, {re: "(ado|ido|cho|sto|rto|elto|ierto)$"}], near: 2, gap: 0}
+    pool: [habría, había, hubiera, habrá, ha]
+
+  - id: es-b2-futuro-perfecto
+    title: habrá terminado
+    meaning: {en: "the future perfect, also for guesses about the past", pt: "o futuro composto, também para suposições sobre o passado"}
+    intro:
+      en: |
+        **habré, habrás, habrá, habremos, habréis, habrán** + participle: **Para el lunes habré terminado** "By Monday I'll have finished". Very often it is a guess about what has happened: **Habrá salido** "He must have gone out". **¿Qué le habrá pasado?** "What can have happened to him?"
+      pt: |
+        **habré…** + particípio = *terei* + particípio: **Para el lunes habré terminado** (Até segunda terei terminado). Muitas vezes é uma suposição sobre o que aconteceu: **Habrá salido** (Ele deve ter saído). **¿Qué le habrá pasado?** (O que será que aconteceu com ele?)
+    examples:
+    - [Para el lunes habré terminado., "By Monday I'll have finished.", Até segunda eu terei terminado., habré]
+    - [Habrá salido., He must have gone out., Ele deve ter saído., Habrá]
+    - ["¿Qué le habrá pasado?", "What can have happened to him?", "O que será que aconteceu com ele?", habrá]
+    match: {seq: [{word: [habré, habrás, habrá, habremos, habréis, habrán]}, {re: "(ado|ido|cho|sto|rto|elto|ierto)$"}], near: 2, gap: 0}
+    pool: [habrá, habría, había, ha, hubo]
+
+  - id: es-b2-estilo-indirecto
+    title: dijo que vendría
+    meaning: {en: "reported speech and the sequence of tenses", pt: "discurso indireto e correlação dos tempos"}
+    intro:
+      en: |
+        When the reporting verb is in the past, the tenses move back: **"Vendré"** → **Dijo que vendría**; **"Estoy cansado"** → **Dijo que estaba cansado**; **"He terminado"** → **Dijo que había terminado**; a command **"Ven"** → **Me dijo que fuera**. Questions take **si** or the question word: **Me preguntó si quería café.**
+      pt: |
+        Com o verbo introdutor no passado, os tempos recuam como em português: **"Vendré"** → **Dijo que vendría** (Disse que viria); **"Estoy cansado"** → **Dijo que estaba cansado**; **"He terminado"** → **Dijo que había terminado**; uma ordem **"Ven"** → **Me dijo que fuera** (Me disse que fosse). Perguntas: **Me preguntó si quería café.**
+    table:
+      head: {en: [Direct, Reported (past)], pt: [Direto, Indireto (passado)]}
+      rows:
+      - [vendré, dijo que vendría]
+      - [estoy, dijo que estaba]
+      - [he terminado, dijo que había terminado]
+      - [ven, me dijo que fuera]
+    examples:
+    - [Dijo que vendría mañana., He said he would come tomorrow., Ele disse que viria amanhã., vendría]
+    - [Me prometió que me llamaría., He promised me he would call me., Ele me prometeu que me ligaria., llamaría]
+    - [Pensaba que sería fácil., I thought it would be easy., Eu achava que seria fácil., sería]
+    match: {seq: [{lemma: "^(decir|prometer|asegurar|pensar|creer|contar|explicar|saber|imaginar|suponer)$", mood: ind, tense: [past, impf]}, {word: [que]}, {pos: verb, re: "rían?$|rías$|ríamos$"}], near: 3, gap: 2, same: [person, number]}
+
+- title: {en: "Passive, se and periphrases", pt: "Passiva, se e perífrases"}
+  lessons:
+  - id: es-b2-pasiva
+    title: fue escrito por
+    meaning: {en: "the passive with ser", pt: "a voz passiva com ser"}
+    intro:
+      en: |
+        **ser** + participle agreeing with the subject, **por** for the agent: **El libro fue escrito por Cervantes. Las casas fueron construidas en 1900.** It belongs to written and formal Spanish; speech prefers the active or **se**: **Se construyeron las casas en 1900.**
+      pt: |
+        **ser** + particípio concordando com o sujeito, **por** para o agente: **El libro fue escrito por Cervantes.** Igual ao português, mas o espanhol usa a passiva com ser ainda menos na fala; prefere a ativa ou **se**: **Se construyeron las casas en 1900.**
+    examples:
+    - [El libro fue escrito por Cervantes., The book was written by Cervantes., O livro foi escrito por Cervantes., escrito]
+    - [Las casas fueron construidas en 1900., The houses were built in 1900., As casas foram construídas em 1900., construidas]
+    - [Fue detenido por la policía., He was arrested by the police., Ele foi preso pela polícia., detenido]
+    match: [{seq: [{word: [es, son, era, eran, fue, fueron, será, serán, sido, ser, sea, sean, fuera, fueran]}, {re: "(ado|ada|ados|adas|ido|ida|idos|idas|cho|cha|chos|chas|sto|sta|rto|rta|ito|ita|ierto|ierta)$"}, {word: [por]}], near: 1, gap: 1}]
+
+  - id: es-b2-se-pasiva
+    title: se venden pisos
+    meaning: {en: "passive and impersonal se", pt: "se apassivador e impessoal"}
+    intro:
+      en: |
+        **se** + 3rd person verb with no named doer: **Se habla español. Se venden pisos. Se vive bien aquí.** The verb agrees with the thing: **se vende una casa / se venden casas**. With people as objects the verb stays singular: **Se busca a los culpables.**
+      pt: |
+        **se** + verbo na 3ª pessoa, sem agente: **Se habla español** (Fala-se espanhol), **Se venden pisos** (Vendem-se apartamentos). Igual à norma do português: o verbo concorda com a coisa — **se vende una casa / se venden casas**. Note a ordem: em espanhol o **se** vem antes do verbo conjugado.
+    examples:
+    - [Se habla español., Spanish is spoken., Fala-se espanhol., habla]
+    - [Se venden pisos., Flats for sale., Vendem-se apartamentos., venden]
+    - [Se vive bien aquí., Life is good here., Vive-se bem aqui., vive]
+    match: {seq: [{word: [se]}, {lemma: "^(hablar|vender|alquilar|decir|necesitar|buscar|prohibir|permitir|oír|hacer|comer|vivir|creer|saber|esperar|usar|utilizar|escribir|construir|producir|cultivar|considerar|conocer|celebrar|necesitar|admitir|aceptar|requerir|ofrecer|beber|pronunciar|escuchar)$", not: {mood: [inf, part, ger]}}], gap: 1, same: [tense, mood]}
+
+  - id: es-b2-se-involuntario
+    title: se me olvidó
+    meaning: {en: "accidental se: se me olvidó, se le cayó", pt: "o se involuntário: se me olvidó, se le cayó"}
+    intro:
+      en: |
+        **se** + indirect pronoun + verb presents something as an accident: **Se me olvidó** "I forgot (it slipped my mind)", **Se le cayó el vaso** "He dropped the glass", **Se nos rompió el coche.** The verb agrees with the thing: **Se me olvidaron las llaves.**
+      pt: |
+        **se** + pronome indireto + verbo apresenta o fato como acidente: **Se me olvidó** (Esqueci / me esqueceu), **Se le cayó el vaso** (O copo caiu da mão dele), **Se nos rompió el coche** (Nosso carro quebrou). O verbo concorda com a coisa: **Se me olvidaron las llaves.** Ordem fixa: **se** + **me/te/le/nos/les**.
+    examples:
+    - [Se me olvidó., I forgot., Esqueci., me]
+    - [Se le cayó el vaso., He dropped the glass., O copo caiu da mão dele., le]
+    - [Se me olvidaron las llaves., I forgot the keys., Esqueci as chaves., me]
+    match: {seq: [{word: [se]}, {word: [me, te, le, nos, os, les]}, {pos: verb}], gap: 1}
+    pool: [me, te, le, nos, les]
+
+  - id: es-b2-perifrasis
+    title: volver a, dejar de, acabar de
+    meaning: {en: "verbal periphrases with an infinitive", pt: "perífrases verbais com infinitivo"}
+    intro:
+      en: |
+        **volver a** + infinitive "to do again": **Volvió a llamar.** **dejar de** "to stop": **Dejé de fumar.** **acabar de** "to have just": **Acabo de llegar.** **ponerse a** "to start": **Se puso a llorar.** **estar a punto de** "to be about to". The preposition is fixed.
+      pt: |
+        **volver a** + infinitivo = fazer de novo: **Volvió a llamar** (Ligou de novo). **dejar de** = parar de: **Dejé de fumar.** **acabar de** = acabar de: **Acabo de llegar.** **ponerse a** = começar a: **Se puso a llorar.** **estar a punto de** = estar prestes a. A preposição é fixa.
+    examples:
+    - [Volvió a llamar., He called again., Ele ligou de novo., Volvió a]
+    - [Dejé de fumar., I stopped smoking., Parei de fumar., de]
+    - [Se puso a llorar., She started crying., Ela começou a chorar., puso a]
+    match: {seq: [{lemma: "^(volver|dejar|acabar|ponerse|poner|echarse|echar|empezar|comenzar|terminar|tratar)$"}, {word: [a, de]}, {pos: verb, mood: inf}], gap: 1}
+    pool: [a, de, en, por, con]
+
+  - id: es-b2-gerundio-perifrasis
+    title: llevo dos años estudiando
+    meaning: {en: "periphrases with the gerund: llevar, seguir, ir, andar", pt: "perífrases com gerúndio: llevar, seguir, ir, andar"}
+    intro:
+      en: |
+        **llevar** + time + gerund: how long something has been going on: **Llevo dos años estudiando español.** **seguir / continuar** + gerund "to keep on": **Sigue lloviendo.** **ir** + gerund: gradual progress: **Voy entendiendo.** **andar** + gerund: going around doing: **Anda diciendo tonterías.**
+      pt: |
+        **llevar** + tempo + gerúndio = há quanto tempo algo dura: **Llevo dos años estudiando español** (Estudo espanhol há dois anos). **seguir / continuar** + gerúndio: **Sigue lloviendo** (Continua chovendo). **ir** + gerúndio, progresso gradual: **Voy entendiendo.** **andar** + gerúndio: **Anda diciendo tonterías** (Anda dizendo besteiras). Atenção: nunca ~~seguir a + infinitivo~~.
+    examples:
+    - [Llevo dos años estudiando español., "I've been studying Spanish for two years.", Estudo espanhol há dois anos., estudiando]
+    - [Sigue lloviendo., It's still raining., Continua chovendo., lloviendo]
+    - [Anda diciendo tonterías., He goes around talking nonsense., Ele anda dizendo besteiras., diciendo]
+    match: {seq: [{word: [llevo, llevas, lleva, llevamos, llevan, llevaba, llevaban, sigo, sigues, sigue, seguimos, siguen, seguía, siguió, siguieron, continúa, continúan, continuó, ando, andas, anda, andan, andaba, voy, vas, va, vamos, van, iba]}, {re: "(ando|iendo|yendo)$"}], near: 3, gap: 1}
