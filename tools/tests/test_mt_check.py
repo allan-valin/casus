@@ -63,3 +63,17 @@ def test_a_page_already_in_the_interface_language_is_not_untranslated():
     from mt_check import problems
     en = '<p>A postpositional particle referring to the subject of a sentence here.</p>'
     assert problems(en, en, "en", ui="en") == []
+
+
+def test_a_translated_bold_gloss_is_not_a_lost_example():
+    orig = "<p>Once upon a time, there was a <b>rich</b> man, said <b>reicher</b>.</p>"
+    out = "<p>Си бил еднаш еден <b>богат</b> човек, рече <b>reicher</b>.</p>"
+    assert problems(orig, out, "en", "mk", gloss=lambda t: t == "rich") == []
+    assert problems(orig, out, "en", "mk") == ["example lost: <b>rich</b>"]
+
+
+def test_ipa_beside_cyrillic_output_is_not_a_changed_script():
+    # a French vocabulary page into Macedonian: the IPA is kept, the Cyrillic around it is the translation
+    orig = "<p>le monsieur, prononcé ˈhɛʁ en allemand</p>"
+    out = "<p>господинот, се изговара ˈhɛʁ на германски</p>"
+    assert not [p for p in problems(orig, out, "fr", "mk") if p.startswith("script")]

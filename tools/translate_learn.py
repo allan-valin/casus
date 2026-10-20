@@ -359,12 +359,21 @@ def gloss_test(code: str):
     counts = collections.Counter(w for v in json.loads((data / "glosses.en.json").read_text(encoding="utf-8")).values()
                                  for w in re.findall(r"[a-z]+", v.lower()))
     english = {w for w, c in counts.items() if c >= 3}
+    # and the system's English word lists, where there are some: "ran", "heck", "exceptions" are German forms too
+    for f in ("/usr/share/dict/american-english", "/usr/share/dict/british-english"):
+        if Path(f).exists():
+            english |= {w.strip().lower() for w in Path(f).read_text(encoding="utf-8", errors="ignore").splitlines() if w.strip().isalpha()}
+
+    def counts(text: str) -> tuple:
+        words = [w.lower() for w in re.findall(r"[^\W\d_]+", text)]
+        return (sum(w in english and w not in forms for w in words),
+                sum(w in forms and w not in english for w in words) + sum(not w.isascii() for w in words))
 
     def gloss(text: str) -> bool:
-        words = [w.lower() for w in re.findall(r"[^\W\d_]+", text)]
-        en = sum(w in english and w not in forms for w in words)
-        de = sum(w in forms and w not in english for w in words) + sum(not w.isascii() for w in words)
+        en, de = counts(text)
         return en > de
+    # a line that is certainly forms of the course (no English-only word, some course-only one): "backen, backte"
+    gloss.taught = lambda text: (lambda en, de: de > 0 and en == 0)(*counts(text))
     return gloss
 
 
@@ -393,7 +402,9 @@ def translate_language(code: str, tr, redo: bool = False, only: str | None = Non
         if page.get("kind") in ("vocab", "kanji") or page.get("ai") or page.get("generated"):
             continue
         src = source_language(page)
-        if not src or only and only not in (page.get("source") or ""):
+        # a grammar of the language written in it (Bohm's Sprachlehre): explanation and examples are one language and
+        # a model translates the examples away (Allan's de>mk check, 2026-10-21), so the page stays as the book has it
+        if not src or src == code or only and only not in (page.get("source") or ""):
             continue
         srcs[page.get("id", f.stem)] = src
         tr.src, tr.course = src, code
@@ -417,7 +428,7 @@ def translate_language(code: str, tr, redo: bool = False, only: str | None = Non
                 if isinstance(s.get(key), str) and s[key].strip():
                     s[key] = {"en": s[key]}
         changed = False
-        gloss = gloss_test(code) if src == "en" else None
+        gloss = gloss_test(code) if src != code else None
         for key in ("meaning", "topic"):
             if isinstance(page.get(key), dict):
                 changed |= text_field(page[key], tr, src)

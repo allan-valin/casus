@@ -95,7 +95,7 @@ SRC_SCRIPT = {**{k: LATIN for k in ("en", "fr", "de", "es", "pt", "it", "nl", "p
 _FOREIGN = {}
 
 
-def protect_script(text: str, src: str, inline: list) -> str:
+def protect_script(text: str, src: str, inline: list, gloss=None) -> str:
     """runs of words in a script other than the explanation's become placeholders [n] (their text appended to inline)"""
     # a transcription in [ ] or / / with a sign outside plain ASCII letters is kept exactly ([mak̚tɯ], /ˈmakto/)
     # (an example placeholder inside it is put back, so the whole transcription becomes one placeholder)
@@ -105,6 +105,34 @@ def protect_script(text: str, src: str, inline: list) -> str:
         return f"[{len(inline)}]"
     text = re.sub(r"\[(?!\d+\])(?:[^\[\]\s]|\[\d+\]){1,60}\]|/[^/\s]{1,40}/",
                   lambda m: ipa(m) if re.search(r"[^\x00-\x7f]", PH.sub("", m.group(0))) else m.group(0), text)
+    # a bare IPA word (a letter of the IPA blocks or a combining mark: ˈʃtʊndə, maɪ̯nə) is kept whole, Latin letters too
+    text = re.sub(r"(?:[^\s\[\]]|\[\d+\])*[\u0250-\u02ff\u0300-\u036f\u1d00-\u1dbf](?:[^\s\[\]]|\[\d+\])*",
+                  lambda m: ipa(m) if re.search(r"[a-z]", PH.sub("", m.group(0))) else m.group(0), text) if SRC_SCRIPT.get(src) == LATIN else text
+    # a quotation in the taught language inside the explanation (« Ich bin der Mann ») is an example
+    taught = getattr(gloss, "taught", None) if PLAIN_EXAMPLES else None
+    if taught:
+        text = re.sub(r"«[^«»]{1,120}»|„[^„“”]{1,120}[“”]|\"[^\"]{1,120}\"",
+                      lambda m: ipa(m) if taught(unescape(PH.sub(" ", m.group(0)))) else m.group(0), text)
+        # words of the taught language written plainly in the explanation (English Wikibooks German: "Wie heißt du?")
+        # are examples too: each run of them becomes one placeholder
+        words = [m for m in re.finditer(r"(?<![\w'’])[^\W\d_]+(?![\w'’])", text) if taught(m.group(0))]
+        groups = []
+        for m in words:
+            if groups and re.fullmatch(r"[ \-]+", text[groups[-1][1]:m.start()]):
+                groups[-1][1] = m.end()
+            else:
+                groups.append([m.start(), m.end()])
+        for a, b in reversed(groups):
+            inline.append(text[a:b])
+            text = text[:a] + f"[{len(inline)}]" + text[b:]
+        # (placeholders were given from the end: renumber them in reading order)
+        order = [int(n) for n in PH.findall(text)]
+        if order != sorted(order):
+            first = len(inline) - len(groups)
+            mine = sorted(n for n in order if n > first)
+            remap = dict(zip(mine, sorted(mine, reverse=True)))
+            text = PH.sub(lambda m: f"[{remap.get(int(m.group(1)), int(m.group(1)))}]", text)
+            inline[first:] = inline[first:][::-1]
     if src in ("ja", "zh"):     # a Japanese or Chinese explanation quotes its examples in 「」 or 『』
         text = re.sub(r"[「『][^」』]{1,80}[」』]", ipa, text)
     own = SRC_SCRIPT.get(src)
@@ -125,6 +153,7 @@ def crowded(text: str) -> bool:
 
 
 GLOSSABLE = {"b", "strong", "i", "em"}
+PLAIN_EXAMPLES = True     # unmarked words of the taught language are protected (off only to migrate older translations)
 
 
 def segments(html: str, src: str = "en", gloss=None) -> list:
@@ -141,7 +170,15 @@ def segments(html: str, src: str = "en", gloss=None) -> list:
         nonlocal run, inline
         if not run:
             return
-        text = protect_script("".join(run), src, inline)
+        text = protect_script("".join(run), src, inline, gloss)
+        # a list line of forms with a gloss in brackets at its end ("backen (bäckt), backte, gebacken (to bake)"):
+        # the forms are kept, the gloss alone is translated
+        m = re.fullmatch(r"(.*?\S.*?)(\([^()]*\))(\s*)", text, re.S)
+        if gloss and m and not is_prose(PH.sub(" ", m.group(1)), src) and re.search(r"[^\W\d_]", PH.sub("", m.group(1))) \
+                and getattr(gloss, "taught", lambda t: not gloss(t))(unescape(re.sub(r"<[^>]+>", "", PH.sub(
+                    lambda p: inline[int(p.group(1)) - 1] if 0 < int(p.group(1)) <= len(inline) else " ", m.group(1)))).strip()):
+            inline.append(PH.sub(lambda p: inline[int(p.group(1)) - 1] if 0 < int(p.group(1)) <= len(inline) else p.group(0), m.group(1)))
+            text = f"[{len(inline)}]" + m.group(2) + m.group(3)
         plain = PH.sub(" ", text)
         out.append({"text": text, "inline": inline, "translate": is_prose(plain, src) and not crowded(text)})
         run, inline = [], []
@@ -171,7 +208,7 @@ def segments(html: str, src: str = "en", gloss=None) -> list:
                     buf = []
             continue
         # a link or a plain span is prose: only its tags become placeholders, its text is translated
-        if tag in TRANSPARENT and kind in ("start", "end") and not (kind == "start" and "lang=" in raw):
+        if tag in TRANSPARENT and kind in ("start", "end") and not (kind == "start" and ("lang=" in raw or re.search(r'class="[^"]*\bIPA\b', raw))):
             if kind == "start" or open_tags.get(tag):
                 open_tags[tag] = open_tags.get(tag, 0) + (1 if kind == "start" else -1)
                 inline.append(raw)

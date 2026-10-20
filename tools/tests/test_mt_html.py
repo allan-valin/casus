@@ -160,3 +160,51 @@ def test_a_bold_english_gloss_is_translated_inside_its_sentence():
     assert out == "<p>Си бил еднаш еден <b>богат</b> човек, рече <b>reicher</b>.</p>"
     # without a gloss test a bold stays a protected example, as before
     assert [s for s in segments(html, "en") if "text" in s][0]["text"] == "Once upon a time, there was a [1] man, said [2]."
+
+
+def test_an_ipa_span_is_protected_like_an_example():
+    # Wikibooks German puts IPA in <span class="IPA">: a span is otherwise transparent prose
+    run = [s for s in segments('<p>The word hallo is said <span class="IPA" title="IPA">/ˈhaloː/</span> in German.</p>') if "text" in s][0]
+    assert run["text"] == "The word hallo is said [1] in German."
+    assert run["inline"] == ['<span class="IPA" title="IPA">/ˈhaloː/</span>']
+
+
+def test_an_ipa_word_without_brackets_is_protected_whole():
+    # Wikiversity's French vocabulary pages give IPA bare in a cell; MADLAD turned "ˈʃtaːk" into "ˈʃтаː…"
+    from mt_html import protect_script
+    inline = []
+    out = protect_script("le mot se prononce ˈʃtʊndə et aussi ˈmaɪ̯nə ici", "fr", inline)
+    assert out == "le mot se prononce [1] et aussi [2] ici" and inline == ["ˈʃtʊndə", "ˈmaɪ̯nə"]
+
+
+def test_a_form_list_with_a_gloss_in_brackets_keeps_the_forms():
+    # Wikiversity's list of German verbs: "backen (bäckt), backte, gebacken (to bake)": only "(to bake)" is English
+    html = "<p>backen (bäckt), backte, gebacken (to bake)<br>beginnen, begann, begonnen (to begin)</p>"
+    german = lambda t: not any(w in t for w in ("backen", "beginnen"))     # the course's gloss test: True = English
+    runs = [s for s in segments(html, "en", gloss=german) if "text" in s]
+    assert runs[0]["text"] == "[1](to bake)" and runs[0]["inline"] == ["backen (bäckt), backte, gebacken "] and runs[0]["translate"]
+    out = translate_html(html, lambda xs: [x.replace("to bake", "печe").replace("to begin", "почнува") for x in xs], "en", gloss=german)
+    assert out == "<p>backen (bäckt), backte, gebacken (печe)<br>beginnen, begann, begonnen (почнува)</p>"
+    # an English headword with its gloss ("blue (also: drunk)") is translated whole; without a gloss test, as before
+    assert [s for s in segments("<p>blue (also: drunk)</p>", "en", gloss=german) if "text" in s][0]["text"] == "blue (also: drunk)"
+    assert [s for s in segments(html, "en") if "text" in s][0]["text"] == "backen (bäckt), backte, gebacken (to bake)"
+
+
+def test_quoted_german_in_a_french_explanation_is_protected():
+    german = lambda t: "Mann" not in t           # gloss test: True = English; "Mann" lines are German
+    german.taught = lambda t: "Mann" in t
+    run = [s for s in segments("<p>On dira donc « Ich bin der Mann » (der = nominatif), jamais « Ich bin den Mann ».</p>", "fr", gloss=german) if "text" in s][0]
+    assert "Ich bin der Mann" not in run["text"] and "« Ich bin der Mann »" in run["inline"]
+
+
+def test_german_words_in_plain_text_are_protected_in_the_german_course():
+    # English Wikibooks German writes its examples unmarked: "Dialogue: What's your name? — Wie heißt du?"
+    gl = lambda t: False
+    gl.taught = lambda t: all(w in {"wie", "heißt", "du", "danke", "sehr", "sein", "werden"} for w in t.lower().replace("ß", "ß").split())
+    inline = []
+    from mt_html import protect_script
+    out = protect_script("Dialogue: What's your name? — Wie heißt du? Say Danke (sehr)! with verbs like sein or werden.", "en", inline, gl)
+    assert out == "Dialogue: What's your name? — [1]? Say [2] ([3])! with verbs like [4] or [5]."
+    assert inline == ["Wie heißt du", "Danke", "sehr", "sein", "werden"]
+    gl.taught = lambda t: t == "aren"          # a piece of an English contraction is never a German word
+    assert protect_script("These mushrooms aren't edible.", "en", [], gl) == "These mushrooms aren't edible."

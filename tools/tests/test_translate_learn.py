@@ -352,3 +352,26 @@ def test_the_llm_prompt_names_the_languages_and_keeps_the_placeholders():
     prompt = T.llm_prompt("es", "ar", "de", "Todos terminan en [1], y la mayoría en [2].")
     assert "Spanish" in prompt and "Arabic" in prompt and "German" in prompt
     assert prompt.rstrip().endswith("Arabic:") and "Todos terminan en [1], y la mayoría en [2]." in prompt
+
+
+def test_the_german_course_tells_a_line_of_german_forms():
+    import pytest
+    if not (T.ROOT / "data" / "de" / "forms").exists():
+        pytest.skip("German data not built")
+    taught = T.gloss_test("de").taught
+    assert taught("backen (bäckt), backte, gebacken") and taught("der erste Januar")
+    assert not taught("cool") and not taught("blue") and not taught("the first one")
+    assert not taught("ran") and not taught("exceptions") and taught("Wie heißt du")   # English words that are also German forms
+
+
+def test_a_page_explaining_the_language_in_itself_is_not_machine_translated(tmp_path, monkeypatch):
+    # a German school grammar of German: explanation and examples are one language, a model cannot tell them apart
+    d = tmp_path / "data" / "de" / "learn"
+    d.mkdir(parents=True)
+    (d / "de-bohm.json").write_text(json.dumps({"source": "Hermann Bohm, Kleine deutsche Sprachlehre", "sections": [{"id": "s",
+        "html": {"en": "<p>Das Hauptwort ist der Name eines Dinges, und es wird mit dem Artikel der, die oder das verbunden.</p>"}}]}))
+    (tmp_path / "data" / "de" / "learn.json").write_text(json.dumps({"levels": []}))
+    monkeypatch.setattr(T, "ROOT", tmp_path)
+    monkeypatch.setattr(T, "gloss_test", lambda code: None)
+    tr = Fake("mk")
+    assert T.translate_language("de", tr) == 0 and tr.sent == []

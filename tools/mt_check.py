@@ -7,6 +7,7 @@ usage: python3 tools/mt_check.py <code> --ui pt [--sample N]   (prints a report;
 from __future__ import annotations
 
 import argparse
+from html import unescape
 import json
 import random
 import re
@@ -27,9 +28,15 @@ def _text(h: str) -> str:
     return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", h)).strip()
 
 
-def problems(orig: str, out: str, src: str, ui: str | None = None) -> list:
+GLOSS_RE = re.compile(r"<(b|strong|i|em)\b[^>]*>([^<]*)</\1>")
+
+
+def problems(orig: str, out: str, src: str, ui: str | None = None, gloss=None) -> list:
+    """gloss(text) -> bool: a bold English gloss the translation translates (tools/translate_learn.gloss_test)"""
     found = []
     lost = Counter(m.group(0) for m in INLINE_RE.finditer(orig)) - Counter(m.group(0) for m in INLINE_RE.finditer(out))
+    if gloss:
+        lost = Counter({x: n for x, n in lost.items() if not ((m := GLOSS_RE.fullmatch(x)) and gloss(unescape(m.group(2)).strip()))})
     found += [f"example lost: {x}" for x in lost]
     own = SRC_SCRIPT.get(src)
     if own:
@@ -57,6 +64,8 @@ def problems(orig: str, out: str, src: str, ui: str | None = None) -> list:
 
 
 def check_language(code: str, ui: str, sample: int = 20, seed: int = 1) -> dict:
+    from translate_learn import gloss_test
+    gloss = gloss_test(code)
     flagged, clean = [], []
     for f in sorted((ROOT / "data" / code / "learn").glob("*.json")):
         if f.name.startswith("q-"):
@@ -73,7 +82,8 @@ def check_language(code: str, ui: str, sample: int = 20, seed: int = 1) -> dict:
                 continue
             item = {"page": f.stem, "section": s.get("id"), "source": page.get("source", "")[:60]}
             # an imported page's intro is Casus's own English credit line, whatever the book's language
-            p = problems(orig, h[ui], "en" if s.get("id") == "intro" else page.get("src", "en"), ui)
+            src = "en" if s.get("id") == "intro" else page.get("src", "en")
+            p = problems(orig, h[ui], src, ui, gloss if src != code else None)
             (flagged if p else clean).append({**item, "problems": p} if p else item)
     random.Random(seed).shuffle(clean)
     report = {"code": code, "ui": ui, "flagged": flagged, "sample": clean[:sample], "checked": len(flagged) + len(clean)}
