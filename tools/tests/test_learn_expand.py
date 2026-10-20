@@ -71,3 +71,14 @@ def test_reference_levels_get_no_generated_lessons(tmp_path):
     lessons, questions = {}, {"A1": {}, "A&G": {}}
     expand("xx", d, index, lessons, questions, ["Toj ima kuka na rid."] * 30, min_count=10)
     assert not index["levels"][1]["topics"]
+
+
+def test_generated_lessons_speak_german_macedonian_and_arabic_too(tmp_path):
+    d = make_data(tmp_path)
+    index = {"levels": [{"id": "A1", "topics": []}]}
+    lessons, questions = {}, {"A1": {}}
+    expand("xx", d, index, lessons, questions, ["Toj ima kuka na rid."] * 30, min_count=10, cases=True)
+    na = next(l for l in lessons.values() if l.get("title") == "na")
+    assert "Präposition" in na["intro"]["de"] and "предлог" in na["intro"]["mk"] and "حرف جر" in na["intro"]["ar"]
+    assert na["topic"]["mk"] == "Предлози"
+    assert all({"de", "mk", "ar"} <= set(t["title"]) for t in index["levels"][0]["topics"])
