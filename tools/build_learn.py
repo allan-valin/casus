@@ -383,7 +383,9 @@ EXTRA_SOURCES = {
     "de": ["wv-en:German Language", "wv-en:German grammar", "wv-fr:Allemand", "wv-de:Kontrastive Syntax Deutsch-Englisch: Subjekte@university", "wv-de:Kontrastive Syntax Deutsch-Englisch: Passiv@university", "wv-de:Kontrastive Syntax Deutsch-Englisch: Verb und Objekte@university"], "es": ["wv-en:Spanish 1", "wv-fr:Espagnol"],
     "pt": ["wv-en:Brazilian Portuguese", "wv-en:Portuguese Language", "wv-fr:Portugais", "wv-pt:Portal:Grupo de Estudos em Português para o ensino fundamental@school", "wv-pt:Morfologia do Português@university"], "ar": ["wv-en:Arabic", "wv-fr:Arabe"],
     "ko": ["wv-en:Korean", "wv-en:Korean Language", "wv-fr:Coréen"], "pl": ["wv-en:Polish language", "wv-fr:Polonais"],
-    "hu": ["wv-en:Hungarian language"], "el": ["wv-en:Greek Language", "wv-el:Γλώσσα Α' Δημοτικού@school", "wv-el:Γλώσσα Β' Δημοτικού@school", "wv-el:Γλώσσα Ε' Δημοτικού@school", "wv-el:Γλώσσα ΣΤ' Δημοτικού@school"], "sa": ["wv-en:Sanskrit Language"],
+    "hu": ["wv-en:Hungarian language", "de:Ungarisch/Ungarisch-Lesebuch-Einfache-Texte-für-Kinder@reader",
+           "de:Ungarisch/Ungarisch-Lesebuch-Dialoge@reader", "de:Ungarisch/Ungarisch-Lesebuch-Eiszeit@reader",
+           "de:Ungarisch/Ungarisch-Lesebuch-Alltagthemen@reader"], "el": ["wv-en:Greek Language", "wv-el:Γλώσσα Α' Δημοτικού@school", "wv-el:Γλώσσα Β' Δημοτικού@school", "wv-el:Γλώσσα Ε' Δημοτικού@school", "wv-el:Γλώσσα ΣΤ' Δημοτικού@school"], "sa": ["wv-en:Sanskrit Language"],
 }
 # full grammars for the Reference tab (Wikisource: public domain; Wikibooks: CC BY-SA); "ws-xx:" = Wikisource
 REFERENCE = {
