@@ -179,3 +179,13 @@ def test_an_overlay_adds_another_interface_language(tmp_path):
     assert l["topic"]["mk"] == "Именки" and index["levels"][0]["topics"][0]["title"]["mk"] == "Именки"
     assert "mk" not in l["sections"][0]["title"] or l["sections"][0]["title"]["mk"]
     assert l["meaning"]["en"] == "the article"
+
+
+def test_macedonian_overlays_have_no_latin_lookalikes_inside_words():
+    """a Latin a / j typed inside a Cyrillic word (изоставa, преjаде) looks right but breaks search and speech"""
+    import re
+    bad = []
+    for f in sorted((Path(__file__).resolve().parents[1] / "curricula").glob("*/i18n/mk.*yml")):
+        for w in re.findall(r"[Ѐ-ӿ]+[a-zA-Z]+[Ѐ-ӿ]*|[a-zA-Z]+[Ѐ-ӿ]+", f.read_text(encoding="utf-8")):
+            bad.append(f"{f.parent.parent.name}/{f.name}: {w}")
+    assert not bad, bad
