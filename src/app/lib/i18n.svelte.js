@@ -7,6 +7,7 @@
 import DE from './i18n.de.js';
 import MK from './i18n.mk.js';
 import AR from './i18n.ar.js';
+import { SPEAK } from './i18n.speak.js';
 
 const KEY = 'casus:ui-lang';
 const LANGS = ['en', 'pt', 'de', 'mk', 'ar'];
@@ -880,10 +881,12 @@ export const STRINGS = {
     "ach.day500": "Maratona",
     "ach.day500.d": "500 XP em um dia",
   },
-  de: DE,
-  mk: MK,
-  ar: AR,
+  de: { ...DE, ...SPEAK.de },
+  mk: { ...MK, ...SPEAK.mk },
+  ar: { ...AR, ...SPEAK.ar },
 };
+Object.assign(STRINGS.en, SPEAK.en);
+Object.assign(STRINGS.pt, SPEAK.pt);
 
 /** Legend rows in the page language: label and meaning by row key (colors.js keeps the English). */
 export const LEGEND_PT = {

@@ -5,7 +5,7 @@ import { siteLanguages } from '../../sites.js';
 
 const DRILLS = new Set(['drills', 'game']);
 
-const VIEWS = new Set(['proof', 'learn']);
+const VIEWS = new Set(['proof', 'learn', 'speak']);
 export function langFromPath(pathname, base = '/', languages = siteLanguages()) {
   const first = languages[0]?.code ?? 'la';
   const b = base.endsWith('/') ? base : `${base}/`;
@@ -31,4 +31,9 @@ export function proofPath(language) {
 /** the learning page of a language, without the site base */
 export function learnPath(language) {
   return `${language.path.replace(/\/$/, '')}/learn/`;
+}
+
+/** the pronunciation trainer of a language, without the site base */
+export function speakPath(language) {
+  return `${language.path.replace(/\/$/, '')}/speak/`;
 }

@@ -25,6 +25,9 @@
   import SendToCasus from './components/SendToCasus.svelte';
   import Proofread from './components/Proofread.svelte';
   import Learn from './components/Learn.svelte';
+  import Trainer from './components/Trainer.svelte';
+  import { speakPath } from './lib/route.js';
+  import { speakHref } from './lib/pronounce.js';
   import ThemeControls from './components/ThemeControls.svelte';
   import ProgressChip from './components/ProgressChip.svelte';
   import { createProgression } from './lib/progression.js';
@@ -225,8 +228,10 @@
     </div>
   </header>
 
-  {#if route.view === 'learn'}
-    <Learn {lang} {storage} {award} {progression} loadLearn={() => fetchImpl(`${DATA}/learn.json`).then((r) => (r.ok ? r.json() : null))}
+  {#if route.view === 'speak'}
+    <Trainer {lang} {voice} {fetchImpl} data={DATA} base={withBase('/')} {lexicon} {storage} {award} say={(msg, kind) => activity.say(msg, kind)} />
+  {:else if route.view === 'learn'}
+    <Learn {lang} {storage} {award} {progression} speak={(text) => speakHref(withBase(speakPath(LANGUAGES.find((l) => l.code === lang.code) ?? { path: '/' })), text)} loadLearn={() => fetchImpl(`${DATA}/learn.json`).then((r) => (r.ok ? r.json() : null))}
       loadLesson={(id) => fetchImpl(`${DATA}/learn/${id}.json`).then((r) => r.json())}
       loadQuestions={(id) => fetchImpl(`${DATA}/learn/q-${id}.json`).then((r) => (r.ok ? r.json() : { qs: [] }))}
       openInReader={(text) => { try { storage?.setItem(`casus:input:${lang.code}`, text); } catch { /* not kept */ } location.href = withBase(LANGUAGES.find((l) => l.code === lang.code)?.path ?? '/'); }} />
@@ -310,7 +315,7 @@
   .tagline { margin: 4px 0 0; color: var(--ink-2); max-width: 60ch; }
   .corner { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
   .exports { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
-  .langs { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .langs { display: inline-flex; flex-wrap: wrap; max-width: 100%; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
   .langs .ui-lang { border: 0; border-radius: 0; min-height: 34px; padding: 4px 10px; }
   .langs .ui-lang.active { background: var(--accent); color: var(--accent-ink); }
   .exports-label { color: var(--ink-2); font-size: 0.85rem; margin-right: 2px; }
@@ -333,7 +338,7 @@
   @keyframes slide { from { background-position: -40% 0; } to { background-position: 140% 0; } }
   footer { color: var(--muted); font-size: 0.8rem; text-align: center; padding-top: 8px; }
   @media (max-width: 640px) {
-    .top { flex-direction: column; }
-    .corner { width: 100%; justify-content: space-between; }
+    .top { flex-direction: column; align-items: stretch; }
+    .corner { width: 100%; max-width: none; justify-content: space-between; }
   }
 </style>

@@ -12,7 +12,8 @@
   import { LANGUAGES } from '../../lang/registry.js';
   import { createReview } from '../lib/review.js';
   import { lessonAnswer, completion } from '../lib/progression.js';
-  let { lang, loadLearn, loadLesson, loadQuestions, storage = null, random = Math.random, openInReader = null, saveFile = downloadFile, award = null, progression = null } = $props();
+  import { speakLinks } from '../lib/pronounce.js';
+  let { lang, loadLearn, loadLesson, loadQuestions, storage = null, random = Math.random, openInReader = null, speak = null, saveFile = downloadFile, award = null, progression = null } = $props();
 
   let learn = $state(null);
   let failed = $state(false);
@@ -189,14 +190,14 @@
         {/if}
       {:else}
         <nav class="toc">{#each tocOf(lesson) as [href, label], i}{#if i}<span class="sep" aria-hidden="true">|</span>{/if}<a {href}>{label}</a>{/each}</nav>
-        {#if loc(lesson.intro)}<div class="prose">{@html loc(lesson.intro)}</div>{/if}
+        {#if loc(lesson.intro)}<div class="prose" use:speakLinks={{ html: loc(lesson.intro), speak, title: t('learn.speak.title') }}>{@html loc(lesson.intro)}</div>{/if}
         {#each lesson.sections as s}
           <section class="l-sec" id={`sec-${s.id}`} data-sec={s.id}>
             <h4>{loc(s.title)}</h4>
-            <div class="prose">{@html loc(s.html)}</div>
+            <div class="prose" use:speakLinks={{ html: loc(s.html), speak, title: t('learn.speak.title') }}>{@html loc(s.html)}</div>
             {#if s.id === 'examples' && lesson.examples?.length}
               <details class="examples-romaji"><summary>{t('learn.romaji')}</summary>
-                <ol>{#each lesson.examples as ex}<li><span lang={lang.bcp47}>{ex.text}</span> — <i>{exampleRoman(ex)}</i>{#if openInReader} <button class="to-reader" onclick={() => openInReader(ex.text)}>{t('learn.read')}</button>{/if}</li>{/each}</ol>
+                <ol>{#each lesson.examples as ex}<li><span lang={lang.bcp47}>{ex.text}</span> — <i>{exampleRoman(ex)}</i>{#if openInReader} <button class="to-reader" onclick={() => openInReader(ex.text)}>{t('learn.read')}</button>{/if}{@render say(ex.text)}</li>{/each}</ol>
               </details>
             {/if}
           </section>
@@ -205,7 +206,7 @@
           <!-- more examples: Tatoeba sentences that show the lesson's point (tools/learn_curriculum.mjs) -->
           <section class="l-sec more-examples" id="sec-more">
             <h4>{t('learn.more')}</h4>
-            {#each lesson.more as ex}<div class="ex"><p class="ja" lang={lang.bcp47} dir="auto">{ex.text}</p>{#if ex.roman}<p class="r">{ex.roman}</p>{/if}<p class="en">{ui.lang === 'pt' && ex.pt ? ex.pt : ex.en}</p></div>{/each}
+            {#each lesson.more as ex}<div class="ex"><p class="ja" lang={lang.bcp47} dir="auto">{ex.text}{@render say(ex.text)}</p>{#if ex.roman}<p class="r">{ex.roman}</p>{/if}<p class="en">{ui.lang === 'pt' && ex.pt ? ex.pt : ex.en}</p></div>{/each}
             <p class="more-source">Tatoeba (CC BY 2.0 FR)</p>
           </section>
         {/if}
@@ -255,6 +256,7 @@
   {#if learn}<p class="credit">{loc(learn.credit)}</p>{/if}
 </section>
 
+{#snippet say(text)}{#if speak}<a class="to-speak" href={speak(text)} target="_blank" rel="noopener" title={t('learn.speak.title')}>🗣</a>{/if}{/snippet}
 {#snippet dict(word)}<a class="dict" href={wiktionaryUrl(word, lang.wiktionary ?? 'Japanese', ui.lang === 'pt' ? 'pt' : 'en')} target="_blank" rel="noopener" title={t('dict.wiktionary')}>{ui.lang === 'pt' ? 'Wikcionário' : 'Wiktionary'} ↗</a>{/snippet}
 
 <style>
@@ -321,6 +323,7 @@
   .your-turn summary { cursor: pointer; color: var(--accent-text); }
   .words { border-collapse: collapse; } .words td { border-bottom: 1px solid var(--line); padding: 4px 10px; }
   .words tr:nth-child(even) td { background: var(--table-stripe); }
+  .to-speak, :global(.prose .to-speak) { text-decoration: none; margin-inline-start: 4px; font-size: .9em; }
   .dict { font-size: 0.8em; color: var(--accent-text); white-space: nowrap; }
   .progress-help { float: right; margin: 0 0 8px 12px; font-size: 0.9em; max-width: 34em; }
   .progress-help summary { cursor: pointer; color: var(--accent-text); text-decoration: underline; }
