@@ -20,7 +20,7 @@
   import CheatSheet from './CheatSheet.svelte';
   import { parseItems, transformItems } from '../lib/parse.js';
   import { createReview } from '../lib/review.js';
-  let { lang, voice = null, loadData, loadParadigm = null, navigate, random = Math.random, storage = null } = $props();
+  let { lang, voice = null, loadData, loadParadigm = null, navigate, random = Math.random, storage = null, award = null } = $props();
 
   const NOMINAL = new Set(['noun', 'adj', 'det', 'pron']);
   // a language that does not inflect (Chinese) has no endings drills; one without noun cases (Portuguese) only the verbs
@@ -86,7 +86,7 @@
     .map((it) => ({ ...it, prompt: `${it.prompt}   (${m.dict_form ?? m.headword})` }))));
   // spaced review: every answer here and in Learn is scheduled; the Review tab asks what is due
   const review = createReview(lang.code, storage);
-  const remember = (item, correct) => review.record(item, correct);
+  const remember = (item, correct) => { review.record(item, correct); award?.({ correct, kind: `drill:${drill}` }); };
   let dueItems = $state([]);
   $effect(() => { if (drill === 'review') dueItems = review.due(); });
   const genderNames = $derived(Object.fromEntries(['m', 'f', 'n', 'c'].map((g) => [g, paraWord(g)])));
@@ -164,7 +164,7 @@
       {#key 'shadow'}<ShadowDrill sentences={sentencePool(sample.lessons)} {voice} {lang} {random} />{/key}
     {/if}
   {:else if drill === 'listen'}
-    {#key 'listen'}<ListenDrill {lang} {voice} {loadData} {random} />{/key}
+    {#key 'listen'}<ListenDrill {lang} {voice} {loadData} {random} onresult={remember} />{/key}
   {:else if drill === 'review'}
     {#if dueItems.length}<p class="review-count">{t('review.due', { n: dueItems.length, total: review.size() })}</p>
       {#key dueItems.length}<ChoiceDrill items={dueItems} {random} romanize={lang.script?.romanize ?? null} onresult={remember} ordered />{/key}

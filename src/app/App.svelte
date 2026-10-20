@@ -26,6 +26,8 @@
   import Proofread from './components/Proofread.svelte';
   import Learn from './components/Learn.svelte';
   import ThemeControls from './components/ThemeControls.svelte';
+  import ProgressChip from './components/ProgressChip.svelte';
+  import { createProgression } from './lib/progression.js';
   import { languageFlag } from './lib/theme.js';
   import { SITE } from '../sites.js';
   import { describeAnalysis } from './lib/colors.js';
@@ -173,6 +175,22 @@
   const hotPartners = $derived(hovered === null || !reader ? new Set() : new Set(partnersOf(reader.blocks).get(hovered) ?? []));
   const lemmaOf = (id) => reader?.lexiconExtras.lemmas?.[String(id)] ?? null;
   const openBlock = $derived(open && reader ? (reader.blocks.find((b) => b.token.index === open.token.index) ?? open) : null);
+  // XP, levels, streak and achievements (Allan, 2026-10-20, after Duolingo): every answer in Learn and the drills
+  const progression = createProgression(storage);
+  let xpVersion = $state(0);
+  let toasts = $state([]);
+  let toastId = 0;
+  function toast(text) {
+    const id = (toastId += 1);
+    toasts = [...toasts, { id, text }];
+    setTimeout(() => { toasts = toasts.filter((x) => x.id !== id); }, 3500);
+  }
+  function award(x) {
+    const r = progression.award({ ...x, lang: lang.code });
+    xpVersion += 1;
+    if (r.levelUp) toast(`⭐ ${t('xp.levelUp', { n: r.levelUp })}`);
+    for (const id of r.unlocked) toast(`🏆 ${t('xp.unlocked', { name: t(`ach.${id}`) })}`);
+  }
 </script>
 
 <main style:--font-scale={lang.script?.fontScale ?? 1}>
@@ -194,13 +212,14 @@
         <button class="export-json" disabled={!reader} title={t('app.export.json.title')} onclick={() => download('json')}>{t('app.export.json')}</button>
         <button class="export-md" disabled={!reader} title={t('app.export.md.title')} onclick={() => download('md')}>{t('app.export.md')}</button>
       </div>{/if}
+      <ProgressChip {progression} version={xpVersion} {toasts} />
       <ThemeControls code={lang.code} {storage} />
       <button class="help-button" title={t('app.help.title')} aria-label="help" onclick={() => (help = true)}>?</button>
     </div>
   </header>
 
   {#if route.view === 'learn'}
-    <Learn {lang} {storage} loadLearn={() => fetchImpl(`${DATA}/learn.json`).then((r) => (r.ok ? r.json() : null))}
+    <Learn {lang} {storage} {award} {progression} loadLearn={() => fetchImpl(`${DATA}/learn.json`).then((r) => (r.ok ? r.json() : null))}
       loadLesson={(id) => fetchImpl(`${DATA}/learn/${id}.json`).then((r) => r.json())}
       loadQuestions={(id) => fetchImpl(`${DATA}/learn/q-${id}.json`).then((r) => (r.ok ? r.json() : { qs: [] }))}
       openInReader={(text) => { try { storage?.setItem(`casus:input:${lang.code}`, text); } catch { /* not kept */ } location.href = withBase(LANGUAGES.find((l) => l.code === lang.code)?.path ?? '/'); }} />
@@ -213,7 +232,7 @@
       }} say={(k, v) => say(k, v, k.endsWith('done') ? 'ok' : k.endsWith('Failed') ? 'err' : undefined)}
       toReader={(text) => { try { storage?.setItem(`casus:input:${lang.code}`, text); } catch { /* not kept */ } location.href = withBase(LANGUAGES.find((l) => l.code === lang.code)?.path ?? '/'); }} />
   {:else if route.view === 'drills'}
-    <Drills {lang} {voice} {storage} loadData={(name) => fetchImpl(`${DATA}/${name}.json`).then((r) => (r.ok ? r.json() : []))}
+    <Drills {lang} {voice} {storage} {award} loadData={(name) => fetchImpl(`${DATA}/${name}.json`).then((r) => (r.ok ? r.json() : []))}
       loadParadigm={(id) => fetchImpl(`${DATA}/paradigms/${Number(id) % 512}.json`).then((r) => (r.ok ? r.json() : {})).then((b) => b[String(id)] ?? null)} navigate={(p) => { location.href = withBase(p); }} />
   {:else}
   <section class="card">

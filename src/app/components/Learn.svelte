@@ -11,7 +11,8 @@
   import { wiktionaryUrl } from '../lib/entry.js';
   import { LANGUAGES } from '../../lang/registry.js';
   import { createReview } from '../lib/review.js';
-  let { lang, loadLearn, loadLesson, loadQuestions, storage = null, random = Math.random, openInReader = null, saveFile = downloadFile } = $props();
+  import { lessonAnswer, completion } from '../lib/progression.js';
+  let { lang, loadLearn, loadLesson, loadQuestions, storage = null, random = Math.random, openInReader = null, saveFile = downloadFile, award = null, progression = null } = $props();
 
   let learn = $state(null);
   let failed = $state(false);
@@ -48,9 +49,12 @@
   const review = createReview(lang.code, storage);   // every answer is scheduled for the Review drill
   function record(item, correct) {
     review.record(item, correct);
-    const p = progress[item.lesson] ?? { right: 0, total: 0 };
-    progress = { ...progress, [item.lesson]: { right: p.right + (correct ? 1 : 0), total: p.total + 1 } };
+    // the lesson's % done (Duolingo-like): its questions answered right at least once, of all it has (Allan, 2026-10-20)
+    const of = mode === 'lessons' ? quizItems.filter((q) => q.lesson === item.lesson).length : 0;
+    const { rec, done } = lessonAnswer(progress[item.lesson], item, correct, of);
+    progress = { ...progress, [item.lesson]: rec };
     try { storage?.setItem(KEY, JSON.stringify(progress)); } catch { /* not kept */ }
+    award?.({ correct, kind: 'learn', lessonDone: done });
   }
   // progress lives in this browser only (Allan, 2026-10-20): a file to keep it, and to bring it back
   function downloadFile(name, text) {
@@ -64,7 +68,7 @@
     const learnAll = {};
     for (const l of LANGUAGES) { const p = read(`casus:learn:${l.code}`); if (p && Object.keys(p).length) learnAll[l.code] = p; }
     const day = new Date().toISOString().slice(0, 10);
-    saveFile(`casus-progress-${day}.json`, JSON.stringify({ casus: 'progress', version: 1, saved: day, learn: learnAll }, null, 1));
+    saveFile(`casus-progress-${day}.json`, JSON.stringify({ casus: 'progress', version: 1, saved: day, learn: learnAll, ...(progression ? { progression: progression.state } : {}) }, null, 1));
   }
   async function importProgress(e) {
     const file = e.currentTarget.files?.[0];
@@ -81,11 +85,13 @@
         for (const [id, rec] of Object.entries(lessons)) if (!mine[id] || (rec.total ?? 0) > (mine[id].total ?? 0)) { mine[id] = rec; n += 1; }
         storage?.setItem(`casus:learn:${code}`, JSON.stringify(mine));
       }
+      progression?.merge(data.progression);
       progress = read(KEY) ?? {};
       importNote = t('learn.progress.imported', { n });
     } catch { importNote = t('learn.progress.badFile'); }
   }
   const pct = (id) => { const p = progress[id]; return p?.total ? Math.round((100 * p.right) / p.total) : null; };
+  const doneOf = (id) => completion(progress[id]);
   async function open(ref) {
     loading = true; quizItems = [];
     lessonRef = ref;
@@ -212,6 +218,7 @@
       {/if}
       <section class="l-sec" id="ex-start">
         <h4>{t('learn.exercises')}</h4>
+        {#if doneOf(lesson.id) !== null}<div class="done-bar" title={t('learn.done', { pct: doneOf(lesson.id) })}><span style:width="{doneOf(lesson.id)}%"></span></div><p class="done-line">{t('learn.done', { pct: doneOf(lesson.id) })}</p>{/if}
         {#if pct(lesson.id) !== null}<p class="pct-line">{t('learn.score', { pct: pct(lesson.id), n: progress[lesson.id].total })}</p>{/if}
         {#if !quizItems.length}<button class="start-exercises primary" onclick={startExercises}>{t('learn.practiceLesson')}</button>
         {:else}<p class="ex-count">{t('learn.exCount', { n: quizItems.length })}</p><ChoiceDrill items={quizItems} {random} {romanize} onresult={record} ordered />{/if}
@@ -236,7 +243,8 @@
             {#each visible(tp) as e (e.id)}
               <li><button class="lesson-row" data-lesson={e.id} onclick={() => open({ level, topic: tp, entry: e })}>
                 <span class="l-title" lang={lang.bcp47}>{e.title}</span><span class="l-meaning">{loc(e.meaning)}{#if e.ai} <span class="ai-mark" title={t('learn.ai.title')}>✦ AI</span>{/if}{#if e.generated} <span class="ai-mark gen-mark" title={t('learn.gen.title')}>⚙</span>{/if}</span>
-                {#if pct(e.id) !== null}<span class="pct" class:good={pct(e.id) >= 80}>{pct(e.id)}%</span>{/if}
+                {#if doneOf(e.id) !== null}<span class="pct done" class:full={doneOf(e.id) === 100} title={t('learn.done', { pct: doneOf(e.id) })}>{doneOf(e.id) === 100 ? '👑' : `${doneOf(e.id)}%`}</span>
+                {:else if pct(e.id) !== null}<span class="pct" class:good={pct(e.id) >= 80} title={t('learn.score', { pct: pct(e.id), n: progress[e.id].total })}>{pct(e.id)}%</span>{/if}
               </button></li>
             {/each}
           </ul>
@@ -325,4 +333,8 @@
   .next-lesson { margin-left: auto; }
   .range-box { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 12px 0; }
   .ex-count, .pct-line, .source, .more-source, .credit { color: var(--ink-2); font-size: 0.88em; }
+  .done-bar { height: 10px; border-radius: 6px; background: var(--line); overflow: hidden; max-width: 30em; }
+  .done-bar span { display: block; height: 100%; background: var(--accent); border-radius: 6px; transition: width .3s; }
+  .done-line { color: var(--ink-2); margin: 4px 0; }
+  .pct.done.full { background: none; }
 </style>
