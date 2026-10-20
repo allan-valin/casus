@@ -65,6 +65,38 @@ def fixes(ui: str) -> dict:
     return out
 
 
+LLM_URL = os.environ.get("CASUS_LLM_URL", "http://127.0.0.1:8099")
+LANG_NAME = {"en": "English", "es": "Spanish", "fr": "French", "de": "German", "pl": "Polish", "pt": "Portuguese", "it": "Italian",
+             "nl": "Dutch", "ru": "Russian", "uk": "Ukrainian", "mk": "Macedonian", "ar": "Arabic", "cs": "Czech", "fi": "Finnish",
+             "hu": "Hungarian", "el": "Modern Greek", "grc": "Ancient Greek", "la": "Latin", "tr": "Turkish", "is": "Icelandic",
+             "ja": "Japanese", "zh": "Chinese", "ko": "Korean", "sa": "Sanskrit"}
+# the engines and their caches: MADLAD-400 (vendor/mt/cache.<ui>.json), EuroLLM-9B-Instruct (Apache-2.0, through a
+# llama.cpp server; vendor/mt/cache.<ui>.eurollm.json; Allan, 2026-10-21: it read Arabic best of the open models
+# tried), and Claude (tools/mt_fixes). A page records which of them translated it.
+ENGINES = {"madlad": ("MADLAD-400", "cache.{ui}.json"), "eurollm": ("EuroLLM-9B", "cache.{ui}.eurollm.json")}
+
+
+def load_caches(ui: str) -> tuple:
+    """every translation into `ui` (Claude's over EuroLLM's over MADLAD's) and who made each"""
+    cache, label = {}, {}
+    for name, file in ENGINES.values():
+        f = ROOT / "vendor" / "mt" / file.format(ui=ui)
+        part = json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
+        cache.update(part)
+        label.update(dict.fromkeys(part, name))
+    fx = fixes(ui)
+    cache.update(fx)
+    label.update(dict.fromkeys(fx, "Claude"))
+    return cache, label
+
+
+def llm_prompt(src: str, ui: str, course: str, text: str) -> str:
+    """EuroLLM's translation prompt (its model card's form) with the two rules the pages need"""
+    a, b = LANG_NAME.get(src, src), LANG_NAME.get(ui, ui)
+    return (f"Translate the following {a} source text to {b}. Keep every placeholder like [1] or [2] exactly as it is, "
+            f"and leave {LANG_NAME.get(course, course)} words and examples unchanged.\n{a}: {text}\n{b}:")
+
+
 class Recorder:
     """lists what a book would send to the model (not yet in the fixes), sending nothing: tools/mt_pieces.py"""
     def __init__(self, ui: str):
@@ -107,15 +139,18 @@ def join(pieces: list, done: dict) -> str:
 
 
 class Translator:
-    def __init__(self, ui: str):
-        import ctranslate2
-        import sentencepiece as spm
-        self.ui = ui
-        self.model = ctranslate2.Translator(str(MODEL), device="cuda", compute_type="int8_float16")
-        self.sp = spm.SentencePieceProcessor(model_file=str(MODEL / "spiece.model"))
-        self.cache_file = ROOT / "vendor" / "mt" / f"cache.{ui}.json"
-        self.cache = json.loads(self.cache_file.read_text(encoding="utf-8")) if self.cache_file.exists() else {}
-        self.cache.update(fixes(ui))
+    def __init__(self, ui: str, engine: str = "madlad"):
+        self.ui, self.engine = ui, engine
+        if engine == "madlad":
+            import ctranslate2
+            import sentencepiece as spm
+            self.model = ctranslate2.Translator(str(MODEL), device="cuda", compute_type="int8_float16")
+            self.sp = spm.SentencePieceProcessor(model_file=str(MODEL / "spiece.model"))
+        self.name, file = ENGINES[engine]
+        self.cache_file = ROOT / "vendor" / "mt" / file.format(ui=ui)
+        self.own = json.loads(self.cache_file.read_text(encoding="utf-8")) if self.cache_file.exists() else {}
+        self.cache, self.label = load_caches(ui)
+        self.used, self.course = set(), "en"
         self.new = 0
         # Japanese, Chinese and Korean explanations go through English (straight into Portuguese MADLAD made things
         # up, 2026-10-20); the English step is kept in cache.en-pivot.json for every other interface language
@@ -123,7 +158,18 @@ class Translator:
         self.en_file = ROOT / "vendor" / "mt" / "cache.en-pivot.json"
         self.en_cache = json.loads(self.en_file.read_text(encoding="utf-8")) if self.en_file.exists() else {}
 
+    def _ask(self, text: str) -> str:
+        import urllib.request
+        body = {"messages": [{"role": "user", "content": llm_prompt(self.src, self.ui, self.course, text)}], "temperature": 0,
+                "max_tokens": min(1024, 4 * len(text) + 64)}
+        req = urllib.request.Request(f"{LLM_URL}/v1/chat/completions", data=json.dumps(body).encode(), headers={"Content-Type": "application/json"})
+        return json.load(urllib.request.urlopen(req, timeout=600))["choices"][0]["message"]["content"].strip().split("\n")[0].strip()
+
     def _raw(self, texts: list, ui: str | None = None, beam: int = 2) -> list:
+        if getattr(self, "engine", "madlad") != "madlad":          # the llama.cpp server has four slots
+            from concurrent.futures import ThreadPoolExecutor
+            with ThreadPoolExecutor(4) as ex:
+                return list(ex.map(self._ask, texts))
         # the input must end with </s>: without it the model goes on writing after the sentence
         toks = [self.sp.encode(f"<2{ui or self.ui}> {t}", out_type=str) + ["</s>"] for t in texts]
         print(f"batch: {len(toks)} inputs, longest {max(map(len, toks))} tokens", file=sys.stderr, flush=True) if os.environ.get("MT_DEBUG") else None
@@ -172,13 +218,17 @@ class Translator:
                 else:
                     out = PH.sub(lambda m: terms[int(m.group(1)) - first - 1] if first < int(m.group(1)) <= first + len(terms) else m.group(0), out)
                     self.cache[src] = dedupe(out, src)
+                if hasattr(self, "own"):
+                    self.own[src], self.label[src] = self.cache[src], self.name
                 self.new += 1
             if self.new and self.new % 960 < 96:
                 self.save()
+        if hasattr(self, "used"):
+            self.used.update(self.label.get(p.strip(), self.name) for ps in pieces for p in ps if p.strip())
         return [join(ps, self.cache) for ps in pieces]
 
     def save(self):
-        self.cache_file.write_text(json.dumps(self.cache, ensure_ascii=False), encoding="utf-8")
+        self.cache_file.write_text(json.dumps(getattr(self, "own", self.cache), ensure_ascii=False), encoding="utf-8")
         if getattr(self, "en_cache", None):
             self.en_file.write_text(json.dumps(self.en_cache, ensure_ascii=False), encoding="utf-8")
 
@@ -193,14 +243,18 @@ class Missing(Exception):
 class CacheOnly:
     """translations from the cache alone, no model (after a rebuild); a text with an uncached sentence raises Missing"""
     def __init__(self, ui: str, cache: dict | None = None):
-        self.ui, self.new = ui, 0
-        self.cache = cache if cache is not None else (json.loads(f.read_text(encoding="utf-8")) if (f := ROOT / "vendor" / "mt" / f"cache.{ui}.json").exists() else {})
-        self.cache.update(fixes(ui))
+        self.ui, self.new, self.used = ui, 0, set()
+        if cache is None:
+            self.cache, self.label = load_caches(ui)
+        else:
+            self.cache, self.label = cache, {}
+            self.cache.update(fixes(ui))
 
     def __call__(self, texts: list) -> list:
         pieces = [pieces_of(t) for t in texts]
         if any(p.strip() and p.strip() not in self.cache for ps in pieces for p in ps):
             raise Missing
+        self.used.update(self.label.get(p.strip(), "MADLAD-400") for ps in pieces for p in ps if p.strip())
         return [join(ps, self.cache) for ps in pieces]
 
     def save(self):
@@ -342,7 +396,9 @@ def translate_language(code: str, tr, redo: bool = False, only: str | None = Non
         if not src or only and only not in (page.get("source") or ""):
             continue
         srcs[page.get("id", f.stem)] = src
-        tr.src = src
+        tr.src, tr.course = src, code
+        if hasattr(tr, "used"):
+            tr.used = set()
         if redo and (page.get("mt") or {}).get(tr.ui):        # an earlier translation into this language is dropped
             intro = page.get("intro")    # (a short intro is Casus's own credit line, written in each language: kept)
             long_intro = [intro] if isinstance(intro, dict) and len(_orig(intro) or "") > 400 else []
@@ -378,7 +434,7 @@ def translate_language(code: str, tr, redo: bool = False, only: str | None = Non
             changed |= gloss_field(obj, tr)
         tr.src = src
         if changed:
-            page.setdefault("mt", {})[tr.ui] = "MADLAD-400"
+            page.setdefault("mt", {})[tr.ui] = " + ".join(sorted(getattr(tr, "used", None) or {"MADLAD-400"}))
             page["src"] = src
             if write:
                 f.write_text(json.dumps(page, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
@@ -415,7 +471,8 @@ if __name__ == "__main__":
     ap.add_argument("--ui", required=True, choices=["en", "pt", "de", "mk", "ar"])
     ap.add_argument("--cache-only", action="store_true", help="re-apply cached translations after a rebuild (no GPU)")
     ap.add_argument("--redo", action="store_true", help="translate again pages already translated into this language")
+    ap.add_argument("--engine", choices=list(ENGINES), default="madlad", help="eurollm: a llama.cpp server at $CASUS_LLM_URL (tools/llm_server.sh)")
     a = ap.parse_args()
-    tr = CacheOnly(a.ui) if a.cache_only else Translator(a.ui)
+    tr = CacheOnly(a.ui) if a.cache_only else Translator(a.ui, a.engine)
     for c in a.codes:
         print(f"{c}: {translate_language(c, tr, a.redo)} pages machine-translated into {a.ui} ({tr.new} new sentences so far)", flush=True)

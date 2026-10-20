@@ -295,6 +295,17 @@ describe('AI-translated pages: badge and a switch to the original (Allan, 2026-1
     expect(page.querySelector('#sec-book .prose').textContent).toBe('O presente');
     setUiLang('en');
   });
+
+  it('the badge names who translated the page (Claude, EuroLLM, MADLAD)', async () => {
+    const lesson = { ...LESSONS['n5-004'], mt: { en: 'Claude + EuroLLM-9B' }, src: 'fr',
+      sections: [{ id: 'book', html: { orig: '<p>Le présent</p>', en: '<p>The present</p>' } }] };
+    const index = { ...INDEX, levels: [{ id: 'N5', topics: [{ id: 't1', kind: 'grammar', title: 'T', lessons: [{ id: 'n5-004', title: 'は', meaning: 'topic' }] }] }] };
+    const { container } = render(Learn, props({ loadLearn: async () => index, loadLesson: async () => lesson }));
+    await flush();
+    await fireEvent.click(container.querySelector('.lesson-row'));
+    await flush();
+    expect(container.querySelector('.mt-badge').getAttribute('title')).toContain('Claude + EuroLLM-9B');
+  });
 });
 
 describe('words in a lesson open their dictionary entry, as in the Reader (Allan, 2026-10-20)', () => {

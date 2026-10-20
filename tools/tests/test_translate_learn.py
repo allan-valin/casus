@@ -330,3 +330,25 @@ def test_the_german_course_tells_a_bold_english_gloss_from_a_german_form():
     assert not gloss("reicher") and not gloss("der") and not gloss("immer trauriger") and not gloss("Es gibt")
     assert not gloss("was")          # a word of both languages stays protected
     assert T.gloss_test("ko") is None  # only courses whose bolds are known to mix glosses and forms
+
+
+def test_a_page_names_who_translated_it(tmp_path, monkeypatch):
+    # Grimm Grammar into Arabic: Claude's sentences (tools/mt_fixes) and EuroLLM's (its own cache) on one page
+    body = "<p>The first sentence is here and it is long enough.</p><p>The second sentence is there and it is long too.</p>"
+    f = page(tmp_path / "data", "de-x", source="Grimm Grammar (COERLL, UT Austin), CC BY 4.0", sections=[{"id": "lesson", "html": {"en": body}}])
+    (tmp_path / "data" / "xx" / "learn.json").write_text(json.dumps({"levels": []}))
+    (tmp_path / "tools" / "mt_fixes" / "ar").mkdir(parents=True)
+    (tmp_path / "tools" / "mt_fixes" / "ar" / "grimm.yml").write_text("The first sentence is here and it is long enough.: الجملة الأولى\n", encoding="utf-8")
+    (tmp_path / "vendor" / "mt").mkdir(parents=True)
+    (tmp_path / "vendor" / "mt" / "cache.ar.eurollm.json").write_text(json.dumps({"The second sentence is there and it is long too.": "الجملة الثانية"}), encoding="utf-8")
+    monkeypatch.setattr(T, "ROOT", tmp_path)
+    T.translate_language("xx", T.CacheOnly("ar"))
+    p = json.loads(f.read_text())
+    assert p["mt"] == {"ar": "Claude + EuroLLM-9B"}
+    assert "الجملة الأولى" in p["sections"][0]["html"]["ar"] and "الجملة الثانية" in p["sections"][0]["html"]["ar"]
+
+
+def test_the_llm_prompt_names_the_languages_and_keeps_the_placeholders():
+    prompt = T.llm_prompt("es", "ar", "de", "Todos terminan en [1], y la mayoría en [2].")
+    assert "Spanish" in prompt and "Arabic" in prompt and "German" in prompt
+    assert prompt.rstrip().endswith("Arabic:") and "Todos terminan en [1], y la mayoría en [2]." in prompt

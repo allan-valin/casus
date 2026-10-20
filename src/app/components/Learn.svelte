@@ -207,7 +207,7 @@
       {#if lesson.ai}<p class="ai-badge" title={t('learn.ai.title')}>✦ {t('learn.ai')}</p>{/if}
       {#if lesson.generated}<p class="ai-badge gen-badge" title={t('learn.gen.title')}>⚙ {t('learn.gen')}</p>{/if}
       {#if !lesson.ai && !lesson.generated}<p class="ai-badge human-badge" title={t('learn.human.title')}>👤 {t('learn.human')}</p>{/if}
-      {#if lesson.mt?.[ui.lang]}<p class="ai-badge mt-badge" title={t('learn.mt.title')}>⇄ {t('learn.mt', { lang: langName(lesson.src ?? 'en') })}
+      {#if lesson.mt?.[ui.lang]}<p class="ai-badge mt-badge" title={t('learn.mt.title', { engine: lesson.mt[ui.lang] })}>⇄ {t('learn.mt', { lang: langName(lesson.src ?? 'en') })}
         <button class="orig-toggle" onclick={() => { showOrig = !showOrig; }}>{showOrig ? t('learn.mt.back') : t('learn.mt.orig')}</button></p>{/if}
       {#if lesson.kind === 'vocab' || lesson.kind === 'kanji'}
         <nav class="toc"><a href="#ex-start">{t('learn.exercises')}</a></nav>
