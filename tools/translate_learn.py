@@ -85,27 +85,39 @@ class Translator:
         self.cache = json.loads(self.cache_file.read_text(encoding="utf-8")) if self.cache_file.exists() else {}
         self.cache.update(fixes(ui))
         self.new = 0
+        # Japanese, Chinese and Korean explanations go through English (straight into Portuguese MADLAD made things
+        # up, 2026-10-20); the English step is kept in cache.en-pivot.json for every other interface language
+        self.src = "en"
+        self.en_file = ROOT / "vendor" / "mt" / "cache.en-pivot.json"
+        self.en_cache = json.loads(self.en_file.read_text(encoding="utf-8")) if self.en_file.exists() else {}
 
-    def _raw(self, texts: list) -> list:
+    def _raw(self, texts: list, ui: str | None = None, beam: int = 2) -> list:
         # the input must end with </s>: without it the model goes on writing after the sentence
-        toks = [self.sp.encode(f"<2{self.ui}> {t}", out_type=str) + ["</s>"] for t in texts]
+        toks = [self.sp.encode(f"<2{ui or self.ui}> {t}", out_type=str) + ["</s>"] for t in texts]
         print(f"batch: {len(toks)} inputs, longest {max(map(len, toks))} tokens", file=sys.stderr, flush=True) if os.environ.get("MT_DEBUG") else None
-        res = self.model.translate_batch(toks, beam_size=2, max_batch_size=max(1, min(16, 1800 // max(map(len, toks)))), no_repeat_ngram_size=6,
+        res = self.model.translate_batch(toks, beam_size=beam, max_batch_size=max(1, min(16, (1800 if beam <= 2 else 900) // max(map(len, toks)))), no_repeat_ngram_size=6,
                                          max_decoding_length=min(512, max(32, int(1.8 * max(len(t) for t in toks)) + 8)))
         return [self.sp.decode(r.hypotheses[0]) for r in res]
 
-    def _model(self, texts: list) -> list:
+    def _model(self, texts: list, ui: str | None = None, beam: int = 2) -> list:
         """the model on a batch; out of GPU memory, the batch is halved, and a sentence that still does not fit stays
-        as it is (the checker then shows it untranslated)"""
+        as it is (the checker then shows it untranslated). A CJK source goes through English, at beam 4."""
+        if ui is None and getattr(self, "src", "en") in PIVOT and self.ui != "en":
+            todo = [t for t in dict.fromkeys(texts) if t not in self.en_cache]
+            if todo:
+                self.en_cache.update(zip(todo, self._model(todo, "en", 4)))
+            return self._model([self.en_cache[t] for t in texts], self.ui, 4)
+        if ui is None and getattr(self, "src", "en") in PIVOT:
+            ui, beam = self.ui, 4
         try:
-            return self._raw(texts)
+            return self._raw(texts, ui, beam) if (ui, beam) != (None, 2) else self._raw(texts)
         except RuntimeError as e:
             if "out of memory" not in str(e):
                 raise
             if len(texts) == 1:
                 return texts
             half = len(texts) // 2
-            return self._model(texts[:half]) + self._model(texts[half:])
+            return self._model(texts[:half], ui, beam) + self._model(texts[half:], ui, beam)
 
     def __call__(self, texts: list) -> list:
         """each text cut into sentences, each sentence translated once ever"""
@@ -135,6 +147,11 @@ class Translator:
 
     def save(self):
         self.cache_file.write_text(json.dumps(self.cache, ensure_ascii=False), encoding="utf-8")
+        if getattr(self, "en_cache", None):
+            self.en_file.write_text(json.dumps(self.en_cache, ensure_ascii=False), encoding="utf-8")
+
+
+PIVOT = {"ja", "zh", "ko"}   # explanation languages translated through English
 
 
 class Missing(Exception):
@@ -267,6 +284,7 @@ def translate_language(code: str, tr, redo: bool = False) -> int:
         if not src:
             continue
         srcs[page.get("id", f.stem)] = src
+        tr.src = src
         if redo and (page.get("mt") or {}).get(tr.ui):        # an earlier translation into this language is dropped
             for obj in [page.get(k) for k in ("meaning", "topic")] + [s.get("html") for s in page.get("sections", [])]:
                 if isinstance(obj, dict) and tr.ui in obj and obj.get(tr.ui) != _orig(obj):
@@ -294,8 +312,10 @@ def translate_language(code: str, tr, redo: bool = False) -> int:
             if isinstance(s.get("html"), dict):
                 changed |= html_field(s["html"], tr, src)
         # examples without a translation (the NIKL dictionary's) get one, even when the page is in tr.ui already
+        tr.src = code          # the examples are in the taught language
         for obj in [page.get("intro")] + [s.get("html") for s in page.get("sections", [])]:
             changed |= gloss_field(obj, tr)
+        tr.src = src
         if changed:
             page.setdefault("mt", {})[tr.ui] = "MADLAD-400"
             page["src"] = src
@@ -309,6 +329,7 @@ def translate_language(code: str, tr, redo: bool = False) -> int:
                 ids = [e.get("id") for e in t.get("lessons", [])]
                 tsrc = next((srcs[i] for i in ids if i in srcs), None)
                 if tsrc and isinstance(t.get("title"), dict):
+                    tr.src = tsrc
                     text_field(t["title"], tr, tsrc)
                 for e in t.get("lessons", []):
                     if e.get("id") in srcs and isinstance(e.get("meaning"), dict):
@@ -318,6 +339,7 @@ def translate_language(code: str, tr, redo: bool = False) -> int:
                                 m["en"] = m.pop("orig", m["en"])
                             else:
                                 del m[tr.ui]
+                        tr.src = srcs[e["id"]]
                         text_field(m, tr, srcs[e["id"]])
         index_file.write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     tr.save()

@@ -262,3 +262,20 @@ def test_an_example_without_a_translation_gets_one(tmp_path, monkeypatch):
 def test_an_example_that_has_its_meaning_gets_no_second_one():
     ex = '<div class="ex"><p class="ja">今日は寒い。</p><p class="en">It is cold today.</p></div>'
     assert T.gloss_examples(ex, Fake("pt")) == ex
+
+
+def test_a_japanese_or_korean_explanation_goes_through_english():
+    """MADLAD made things up from Japanese straight into Portuguese ('A palavra "a" é usada…'); through English it is
+    right (2026-10-20)"""
+    tr = object.__new__(T.Translator)
+    tr.ui, tr.cache, tr.new, tr.cache_file, tr.src = "pt", {}, 0, None, "ja"
+    tr.en_cache = {}
+    tr.save = lambda: None
+    calls = []
+
+    def raw(texts, ui=None, beam=2):
+        calls.append(ui)
+        return [f"«{ui}»{t}" for t in texts]
+    tr._raw = raw
+    assert tr(["今で言う岩手県の一地方。"]) == ["«pt»«en»今で言う岩手県の一地方。"]
+    assert calls == ["en", "pt"] and tr.en_cache == {"今で言う岩手県の一地方。": "«en»今で言う岩手県の一地方。"}
