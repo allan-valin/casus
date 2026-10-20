@@ -1,2 +1,84 @@
 id: B2
-topics: []
+topics:
+
+- title: {en: Conditional and hypotheses, pt: Condicional e hipóteses}
+  lessons:
+  - id: pt-b2-futuro-preterito
+    title: falaria, faria, seria
+    meaning: {en: "the conditional (futuro do pretérito)", pt: "o futuro do pretérito"}
+    intro:
+      en: |
+        **-ria**: falaria, comeria, abriria; irregular **faria, diria, traria**. Polite requests (**Você poderia me ajudar?**), unreal results (**Se eu pudesse, viajaria**), the future seen from the past (**Ele disse que viria**). Speech often uses the imperfect instead: **Se eu pudesse, eu viajava.**
+      pt: |
+        **-ria**: falaria, comeria, abriria; irregulares **faria, diria, traria**. Pedidos educados (**Você poderia me ajudar?**), resultados irreais (**Se eu pudesse, viajaria**), o futuro visto do passado (**Ele disse que viria**). A fala costuma trocar pelo imperfeito: **Se eu pudesse, eu viajava.**
+    examples:
+    - ["Você poderia fechar a janela?", "Could you close the window?", "Could you close the window?", "poderia"]
+    - ["Ele disse que viria hoje.", "He said he would come today.", "He said he would come today.", "viria"]
+    match: {seq: [{pos: verb, mood: cond}], same: [person, number]}
+    pool: [poderia, seria, faria, gostaria, iria, teria, pode, foi]
+  - id: pt-b2-indirect
+    title: Ele disse que estava cansado.
+    meaning: {en: "reported speech", pt: "discurso indireto"}
+    intro:
+      en: |
+        After a past verb of saying, tenses shift back: present → imperfect (**"Estou cansado" → Ele disse que estava cansado**), preterite → past perfect (**…que tinha saído**), future → conditional (**…que viria**), imperative → imperfect subjunctive (**Ele pediu que eu esperasse**).
+      pt: |
+        Depois de um verbo de dizer no passado, os tempos recuam: presente → imperfeito (**"Estou cansado" → Ele disse que estava cansado**), perfeito → mais-que-perfeito (**…que tinha saído**), futuro → futuro do pretérito (**…que viria**), imperativo → imperfeito do subjuntivo (**Ele pediu que eu esperasse**).
+    examples:
+    - ["Ela disse que estava com fome.", "She said she was hungry.", "She said she was hungry.", "estava"]
+    match: {seq: [{word: [disse, disseram, falou, contou, explicou, respondeu, perguntou, pediu]}, {word: [que, se]}, {pos: verb}], near: 3, gap: 2}
+
+- title: {en: Voice and periphrases, pt: Voz e perífrases}
+  lessons:
+  - id: pt-b2-passive
+    title: foi construído por
+    meaning: {en: "the passive with ser", pt: "a voz passiva com ser"}
+    intro:
+      en: |
+        **ser** + participle (agreeing) + **por**: **A casa foi construída em 1900. O livro foi escrito por Machado de Assis.** **estar** + participle is the resulting state: **A porta está fechada.** **ficar** + participle = to become: **Fiquei impressionado.**
+      pt: |
+        **ser** + particípio (concordando) + **por**: **A casa foi construída em 1900. O livro foi escrito por Machado de Assis.** **estar** + particípio é o estado resultante: **A porta está fechada.** **ficar** + particípio = tornar-se: **Fiquei impressionado.**
+    examples:
+    - ["O livro foi escrito por Machado de Assis.", "The book was written by Machado de Assis.", "The book was written by Machado de Assis.", "escrito"]
+    match: {seq: [{word: [foi, foram, é, são, será, serão, sido]}, {pos: [verb, adj, vpar], re: "(ad|id|it|ost|eit|ert|ist)[oa]s?$"}, {word: [por, pelo, pela, pelos, pelas]}], near: 3, gap: 1}
+  - id: pt-b2-periphrases
+    title: acabar de, voltar a, deixar de, andar + gerúndio
+    meaning: {en: "verb periphrases", pt: "perífrases verbais"}
+    intro:
+      en: |
+        **acabar de** + inf. (have just: *Acabei de chegar*), **voltar a** (again: *Voltou a chover*), **deixar de** (stop: *Deixei de fumar*), **começar a** (start), **continuar** + gerund (keep on), **andar** + gerund (have been doing lately: *Ando trabalhando muito*), **ficar** + gerund (keep doing: *Fiquei esperando*), **vir** + gerund (gradually).
+      pt: |
+        **acabar de** + inf. (*Acabei de chegar*), **voltar a** (de novo: *Voltou a chover*), **deixar de** (parar: *Deixei de fumar*), **começar a**, **continuar** + gerúndio, **andar** + gerúndio (ultimamente: *Ando trabalhando muito*), **ficar** + gerúndio (*Fiquei esperando*), **vir** + gerúndio (aos poucos).
+    examples:
+    - ["Acabei de chegar.", "I've just arrived.", "I've just arrived.", "Acabei"]
+    - ["Ando trabalhando muito.", "I've been working a lot lately.", "I've been working a lot lately.", "Ando"]
+    match:
+    - {seq: [{lemma: "^(acabar|voltar|deixar|começar|parar)$"}, {word: [de, a]}, {pos: verb, mood: inf}], gap: 0}
+    - {seq: [{lemma: "^(andar|ficar|continuar|vir|viver)$"}, {re: "ndo$"}], gap: 0}
+    pool: [acabei, acabou, voltou, deixei, comecei, ando, fiquei, continuo]
+
+- title: {en: Linking clauses, pt: Ligando orações}
+  lessons:
+  - id: pt-b2-conj-subj
+    title: para que, antes que, caso
+    meaning: {en: "conjunctions with the subjunctive", pt: "conjunções com subjuntivo"}
+    intro:
+      en: |
+        **para que** (so that), **antes que** (before), **sem que** (without), **caso** (in case), **a não ser que / a menos que** (unless), **desde que** (provided that): **Fale baixo para que ninguém ouça. Leve o guarda-chuva caso chova.**
+      pt: |
+        **para que, antes que, sem que, caso, a não ser que / a menos que, desde que** (com condição): **Fale baixo para que ninguém ouça. Leve o guarda-chuva caso chova.**
+    examples:
+    - ["Leve um casaco caso faça frio.", "Take a coat in case it gets cold.", "Take a coat in case it gets cold.", "faça"]
+    match: {seq: [{word: [caso, que]}, {pos: verb, mood: subj}], near: 2, gap: 1}
+    pool: [faça, faz, chova, chove, possa, pode, saiba, sabe]
+  - id: pt-b2-gerund-clauses
+    title: Chegando em casa, liguei.
+    meaning: {en: "gerund clauses", pt: "orações reduzidas de gerúndio"}
+    intro:
+      en: |
+        A gerund replaces a clause of time, means, cause or condition: **Chegando em casa, liguei para ela** (when I got home). **Estudando, você passa** (if you study). **Tendo terminado, saiu** (having finished).
+      pt: |
+        O gerúndio substitui oração de tempo, meio, causa ou condição: **Chegando em casa, liguei para ela.** **Estudando, você passa.** **Tendo terminado, saiu.** (Cuidado com o "gerundismo" de telemarketing: *vou estar enviando*.)
+    examples:
+    - ["Chegando em casa, liguei para ela.", "When I got home, I called her.", "When I got home, I called her.", "Chegando"]
+    match: {seq: [{re: "ndo$", start: true, pos: verb}]}

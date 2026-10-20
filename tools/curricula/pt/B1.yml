@@ -1,2 +1,128 @@
 id: B1
-topics: []
+topics:
+
+- title: {en: Past tenses, pt: Tempos do passado}
+  lessons:
+  - id: pt-b1-perfeito
+    title: falei, comi, abri
+    meaning: {en: "the preterite (pretérito perfeito)", pt: "o pretérito perfeito"}
+    intro:
+      en: |
+        Completed past actions: **-ar**: falei, falou, falamos, falaram; **-er**: comi, comeu, comemos, comeram; **-ir**: abri, abriu, abrimos, abriram. Irregular and very frequent: **fui / foi** (ser and ir share it!), **tive / teve, fiz / fez, disse, pude, quis, vim / veio, estive, dei, trouxe, soube**. Brazilians use it where English uses the present perfect: **Você já comeu?** (Have you eaten yet?).
+      pt: |
+        Ações concluídas: **-ar**: falei, falou, falamos, falaram; **-er**: comi, comeu, comemos, comeram; **-ir**: abri, abriu, abrimos, abriram. Irregulares muito frequentes: **fui / foi** (de *ser* e de *ir*!), **tive / teve, fiz / fez, disse, pude, quis, vim / veio, estive, dei, trouxe, soube**. No Brasil cobre também o *present perfect* do inglês: **Você já comeu?**
+    examples:
+    - ["Ontem eu fui ao cinema.", "Yesterday I went to the cinema.", "Yesterday I went to the cinema.", "fui"]
+    - ["Você já comeu?", "Have you eaten yet?", "Have you eaten yet?", "comeu"]
+    match: {seq: [{pos: verb, tense: [past, perf, aor], mood: ind}], same: [person, number]}
+  - id: pt-b1-imperfeito
+    title: falava, comia, era
+    meaning: {en: "the imperfect", pt: "o pretérito imperfeito"}
+    intro:
+      en: |
+        Background, habits, description: **-ava** (falava), **-ia** (comia, abria); irregular **era** (ser), **tinha, vinha, punha**. **Quando eu era criança, morava no Rio.** Also polite requests: **Eu queria um café.** Contrast: **Eu lia quando ele chegou** (background vs event).
+      pt: |
+        Fundo, hábitos, descrição: **-ava** (falava), **-ia** (comia, abria); irregulares **era** (ser), **tinha, vinha, punha**. **Quando eu era criança, morava no Rio.** Também pedido educado: **Eu queria um café.** Contraste: **Eu lia quando ele chegou** (fundo × evento).
+    examples:
+    - ["Quando eu era criança, eu brincava na rua.", "When I was a child, I used to play in the street.", "When I was a child, I used to play in the street.", "brincava"]
+    - ["Eu queria um café, por favor.", "I'd like a coffee, please.", "I'd like a coffee, please.", "queria"]
+    match: {seq: [{pos: verb, tense: impf, mood: ind}], same: [person, number]}
+  - id: pt-b1-tinha-feito
+    title: tinha feito, tinha visto
+    meaning: {en: "the past perfect (mais-que-perfeito composto)", pt: "o mais-que-perfeito composto"}
+    intro:
+      en: |
+        **tinha** + participle for an action before another past one: **Quando cheguei, o filme já tinha começado.** In speech it replaces the old one-word form (*começara*, C2).
+      pt: |
+        **tinha** + particípio para ação anterior a outra no passado: **Quando cheguei, o filme já tinha começado.** Na fala substitui a forma simples antiga (*começara*, nível C2).
+    examples:
+    - ["Eu nunca tinha visto o mar.", "I had never seen the sea.", "I had never seen the sea.", "tinha"]
+    match: {seq: [{word: [tinha, tinhas, tínhamos, tinham, havia]}, {pos: verb, re: "(ado|ido|ito|osto|eito|isto|ito|ito)$"}], near: 2, gap: 0}
+    pool: [tinha, tinham, tínhamos, tem, teve, tive]
+
+- title: {en: Future and commands, pt: Futuro e imperativo}
+  lessons:
+  - id: pt-b1-futuro
+    title: vou falar, falarei
+    meaning: {en: "the future", pt: "o futuro"}
+    intro:
+      en: |
+        Speech: **ir + infinitive** (**Vou viajar amanhã**). Writing and formal speech: the simple future **falarei, falará, falaremos, falarão**; irregular **farei, direi, trarei**. The present often suffices: **Amanhã eu te ligo.**
+      pt: |
+        Na fala: **ir + infinitivo** (**Vou viajar amanhã**). Na escrita e na fala formal: o futuro simples **falarei, falará, falaremos, falarão**; irregulares **farei, direi, trarei**. Muitas vezes basta o presente: **Amanhã eu te ligo.**
+    examples:
+    - ["Amanhã vou acordar cedo.", "Tomorrow I'm going to wake up early.", "Tomorrow I'm going to wake up early.", "vou"]
+    - ["O presidente falará hoje à noite.", "The president will speak tonight.", "The president will speak tonight.", "falará"]
+    match:
+    - {seq: [{word: [vou, vai, vamos, vão]}, {pos: verb, mood: inf}], gap: 0}
+    - {seq: [{pos: verb, tense: fut, mood: ind}]}
+    pool: [vou, vai, vamos, vão, foi, fui]
+  - id: pt-b1-imperativo
+    title: fala!, fale!, não fale!
+    meaning: {en: "the imperative in Brazil", pt: "o imperativo no Brasil"}
+    intro:
+      en: |
+        Formally (você / o senhor) the imperative is the present subjunctive: **Fale mais devagar. Venha cá. Não se preocupe.** In everyday Brazilian speech the *tu* form is used for *você*: **Fala!, Vem cá!, Olha!** Negative in speech too: **Não fala isso!**
+      pt: |
+        Na norma (você / o senhor) o imperativo é o presente do subjuntivo: **Fale mais devagar. Venha cá. Não se preocupe.** Na fala do dia a dia no Brasil usa-se a forma de *tu* com *você*: **Fala!, Vem cá!, Olha!** Também no negativo: **Não fala isso!**
+    examples:
+    - ["Fale mais devagar, por favor.", "Speak more slowly, please.", "Speak more slowly, please.", "Fale"]
+    - ["Vem cá!", "Come here!", "Come here!", "Vem"]
+    match: {seq: [{pos: verb, mood: [imp, subj], start: true}]}
+
+- title: {en: Pronouns in Brazil, pt: Pronomes no Brasil}
+  lessons:
+  - id: pt-b1-object-pronouns
+    title: eu vi ele, eu o vi
+    meaning: {en: "object pronouns: speech and writing", pt: "pronomes objeto: fala e escrita"}
+    intro:
+      en: |
+        Speech uses the subject form or nothing: **Eu vi ele. Você conhece ela? — Conheço.** Writing uses **o, a, os, as** (**Eu o vi**), **lhe** for *you / to him*. **me, te, nos** go before the verb in Brazil: **Me ajuda! Ele te ligou.**
+      pt: |
+        A fala usa a forma reta ou nada: **Eu vi ele. Você conhece ela? — Conheço.** A escrita usa **o, a, os, as** (**Eu o vi**), **lhe** para *você / a ele*. **me, te, nos** vêm antes do verbo no Brasil: **Me ajuda! Ele te ligou.**
+    examples:
+    - ["Eu vi ele ontem.", "I saw him yesterday.", "I saw him yesterday.", "ele"]
+    - ["Ele te ligou?", "Did he call you?", "Did he call you?", "te"]
+    match: {seq: [{pos: verb}, {word: [ele, ela, eles, elas, o, a, os, as, lhe]}], gap: 1}
+    pool: [ele, ela, o, a, lhe, te, me]
+  - id: pt-b1-por-para
+    title: por, para, pelo
+    meaning: {en: "por and para", pt: "por e para"}
+    intro:
+      en: |
+        **para** (often **pra**): goal, destination, recipient, deadline (**Vou pra casa. É para você. Para amanhã.**). **por**: cause, means, through, exchange, agent (**por causa de, por telefone, pela janela, por dez reais, escrito por**). **por + o = pelo, pela**.
+      pt: |
+        **para** (na fala **pra**): finalidade, destino, destinatário, prazo (**Vou pra casa. É para você. Para amanhã.**). **por**: causa, meio, através, troca, agente (**por causa de, por telefone, pela janela, por dez reais, escrito por**). **por + o = pelo, pela**.
+    examples:
+    - ["Obrigado pela ajuda.", "Thanks for the help.", "Thanks for the help.", "pela"]
+    - ["Esse presente é para você.", "This present is for you.", "This present is for you.", "para"]
+    match: {seq: [{word: [por, para, pra, pelo, pela, pelos, pelas]}], gap: 0}
+    pool: [por, para, pelo, pela, pra]
+
+- title: {en: The subjunctive begins, pt: O começo do subjuntivo}
+  lessons:
+  - id: pt-b1-pres-subj
+    title: espero que você venha
+    meaning: {en: "the present subjunctive", pt: "o presente do subjuntivo"}
+    intro:
+      en: |
+        After wishes, feelings, doubt and impersonal expressions + **que**: **Espero que você venha. É importante que todos saibam. Talvez chova.** Form from the 1st person present: **falo → fale, faço → faça, tenho → tenha**; irregular **seja, esteja, vá, dê, saiba, queira, haja**.
+      pt: |
+        Depois de desejo, sentimento, dúvida e expressões impessoais + **que**: **Espero que você venha. É importante que todos saibam. Talvez chova.** Forma a partir da 1ª pessoa do presente: **falo → fale, faço → faça, tenho → tenha**; irregulares **seja, esteja, vá, dê, saiba, queira, haja**.
+    examples:
+    - ["Espero que você goste.", "I hope you like it.", "I hope you like it.", "goste"]
+    - ["Talvez ele esteja em casa.", "Maybe he's at home.", "Maybe he's at home.", "esteja"]
+    match: {seq: [{word: [que, talvez, tomara]}, {pos: verb, mood: subj, tense: pres}], near: 3, gap: 1}
+    pool: [seja, é, esteja, está, tenha, tem, faça, faz, vá, vai]
+  - id: pt-b1-relative
+    title: que, quem, onde
+    meaning: {en: "relative pronouns", pt: "pronomes relativos"}
+    intro:
+      en: |
+        **que** for people and things (**o livro que li, a moça que conheci**), **quem** after a preposition for people (**a pessoa com quem falei**), **onde** for places (**a cidade onde moro**). Speech often drops the preposition: *a pessoa que eu falei* (norm: *com quem*).
+      pt: |
+        **que** para pessoas e coisas (**o livro que li, a moça que conheci**), **quem** depois de preposição para pessoas (**a pessoa com quem falei**), **onde** para lugares (**a cidade onde moro**). A fala costuma omitir a preposição: *a pessoa que eu falei* (norma: *com quem*).
+    examples:
+    - ["Essa é a cidade onde eu nasci.", "This is the city where I was born.", "This is the city where I was born.", "onde"]
+    match: {seq: [{pos: prep}, {word: [quem]}], gap: 1}
+    pool: [quem, que, onde, qual]
