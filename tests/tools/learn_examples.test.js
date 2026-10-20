@@ -55,3 +55,12 @@ it('gap romaji: the words’ romaji with ___ for the gap', () => {
   const blocks = [{ roman: 'watashi' }, { roman: 'wa' }, { roman: 'gakusei' }, { roman: 'desu' }];
   expect(gapRoman(blocks, [1, 2])).toBe('watashi ___ gakusei desu');
 });
+
+import { gapPool } from '../../tools/learn_examples.mjs';
+describe('gap pool of a lesson', () => {
+  it('a lesson outside the JLPT levels (the Reference tab) keeps its own pool', () => {
+    const targets = new Map([['N5', ['は', 'が']]]);
+    expect(gapPool(['を'], targets, 'N5')).toEqual(['を', 'は', 'が']);
+    expect(gapPool(['を'], targets, 'Reference')).toEqual(['を']);
+  });
+});

@@ -14,6 +14,12 @@ import { execFileSync } from 'node:child_process';
 import { unsuitable } from './learn_match.mjs';
 import path from 'node:path';
 
+/** a lesson's gap pool: its own words, then its level's lesson words (a lesson outside the JLPT levels, such as the
+ * Reference tab's, has only its own) */
+export function gapPool(own, levelTargets, level) {
+  return [...new Set([...(own ?? []), ...(levelTargets.get(level) ?? [])])].slice(0, 80);
+}
+
 export function findTarget(tokens, target) {
   for (let a = 0; a < tokens.length; a += 1) {
     let s = '';
@@ -199,8 +205,7 @@ async function main(code = 'ja', limit = Infinity) {
     }
     total += mine.length;
     found.set(l.id, mine);
-    const gapPool = [...new Set([...(file.pools.gap ?? []), ...levelTargets.get(l.level)])].slice(0, 80);
-    await writeFile(f, JSON.stringify({ pools: { ...file.pools, gap: gapPool }, qs }));
+    await writeFile(f, JSON.stringify({ pools: { ...file.pools, gap: gapPool(file.pools.gap, levelTargets, l.level) }, qs }));
   }
   const counts = lessons.map((l) => Math.min(200, found.get(l.id).length)).sort((a, b) => a - b);
   console.log(`${code}: ${done} sentences read; ${total} matches; per lesson median ${counts[counts.length >> 1]}, ${counts.filter((c) => c >= 50).length}/${counts.length} lessons with 50+ sentences; ${Math.round((Date.now() - t0) / 1000)} s`);
