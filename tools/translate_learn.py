@@ -230,11 +230,23 @@ def translate_language(code: str, tr, redo: bool = False) -> int:
                         obj["en"] = obj.pop("orig", obj["en"])
                     else:
                         del obj[tr.ui]
+        # a page whose text is plain strings (JLPT Grammar Enhanced) gets {"en": …} fields, the original under "en"
+        for key in ("meaning", "topic", "intro"):
+            if isinstance(page.get(key), str) and page[key].strip():
+                page[key] = {"en": page[key]}
+        for s in page.get("sections", []):
+            for key in ("title", "html"):
+                if isinstance(s.get(key), str) and s[key].strip():
+                    s[key] = {"en": s[key]}
         changed = False
         for key in ("meaning", "topic"):
             if isinstance(page.get(key), dict):
                 changed |= text_field(page[key], tr, src)
+        if isinstance(page.get("intro"), dict):
+            changed |= html_field(page["intro"], tr, src)
         for s in page.get("sections", []):
+            if isinstance(s.get("title"), dict):
+                changed |= text_field(s["title"], tr, src)
             if isinstance(s.get("html"), dict):
                 changed |= html_field(s["html"], tr, src)
         if changed:

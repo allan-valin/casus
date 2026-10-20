@@ -187,3 +187,18 @@ def test_redo_also_replaces_the_index_meanings(tmp_path, monkeypatch):
     monkeypatch.setattr(T, "ROOT", tmp_path)
     T.translate_language("xx", Fake("pt"), redo=True)
     assert json.loads((tmp_path / "data" / "xx" / "learn.json").read_text())["levels"][0]["topics"][0]["lessons"][0]["meaning"]["pt"] == "«pt»le présent"
+
+
+def test_a_page_with_plain_string_fields_is_translated_too(tmp_path, monkeypatch):
+    """JLPT Grammar Enhanced pages keep meaning, intro and section html as plain English strings"""
+    intro = "<p><code>は</code> does not mean anything by itself and marks the topic of the sentence.</p>"
+    f = page(tmp_path / "data", "n5-004", id="n5-004", source="JLPT Grammar Enhanced (CC BY-SA 4.0)", meaning="marks the topic",
+             intro=intro, topic="Saying what something is",
+             sections=[{"id": "formation", "title": "Formation", "html": "<p>It attaches to a noun with no change to the noun at all.</p>"}])
+    (tmp_path / "data" / "xx" / "learn.json").write_text(json.dumps({"levels": []}))
+    monkeypatch.setattr(T, "ROOT", tmp_path)
+    assert T.translate_language("xx", Fake("pt")) == 1
+    p = json.loads(f.read_text())
+    assert p["meaning"] == {"en": "marks the topic", "pt": "«pt»marks the topic"}
+    assert p["intro"]["en"] == intro and "«pt»" in p["intro"]["pt"] and "<code>は</code>" in p["intro"]["pt"]
+    assert p["sections"][0]["html"]["pt"].startswith("<p>«pt»") and p["sections"][0]["title"]["pt"] == "«pt»Formation"
