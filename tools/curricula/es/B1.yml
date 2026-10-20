@@ -1,0 +1,56 @@
+id: B1
+topics:
+
+- title: {en: Moods, pt: Modos}
+  lessons:
+  - id: es-subjuntivo
+    title: quiero que vengas
+    meaning: {en: "the present subjunctive", pt: "o presente do subjuntivo"}
+    intro:
+      en: |
+        After wishes, feelings, doubt and **para que, cuando** (future): **Quiero que vengas. Ojalá llueva. Cuando llegues, llámame.** Form: the yo-stem of the present with the "other" vowel: **-ar → -e** (hable), **-er/-ir → -a** (coma, viva); irregular **sea, esté, vaya, haya, sepa, dé**.
+      pt: |
+        Depois de vontade, sentimento, dúvida e **para que, cuando** (futuro): **Quiero que vengas. Ojalá llueva. Cuando llegues, llámame.** Forma: o radical do yo no presente com a vogal "trocada": **-ar → -e** (hable), **-er/-ir → -a** (coma, viva); irregulares **sea, esté, vaya, haya, sepa, dé**. Bem parecido com o português; atenção ao **cuando** + subjuntivo presente (pt: futuro do subjuntivo).
+    examples:
+    - [Quiero que vengas., I want you to come., Quero que você venha., vengas]
+    match: {seq: [{pos: verb, mood: subj}], same: [person, number]}
+
+  - id: es-condicional
+    title: hablaría
+    meaning: {en: "the conditional", pt: "o condicional"}
+    intro:
+      en: |
+        Future stem + **-ía, -ías, -ía, -íamos, -íais, -ían**: **hablaría, tendría, podría**. Polite requests (**¿Podrías ayudarme?**) and unreal conditions: **Si tuviera dinero, viajaría.**
+      pt: |
+        Radical do futuro + **-ía, -ías, -ía, -íamos, -íais, -ían**: **hablaría, tendría, podría**. Pedidos educados (**¿Podrías ayudarme?**) e condições irreais: **Si tuviera dinero, viajaría.**
+    examples:
+    - ["¿Podrías ayudarme?", "Could you help me?", "Você poderia me ajudar?", "Podrías"]
+    match: {seq: [{pos: verb, mood: cond}], same: [person, number]}
+
+- title: {en: Complex sentences, pt: Períodos compostos}
+  lessons:
+  - id: es-por-para
+    title: por, para
+    meaning: {en: "por and para", pt: "por e para"}
+    intro:
+      en: |
+        **para**: purpose, destination, recipient, deadline (**para ti, para mañana, para aprender**). **por**: cause, means, exchange, through, duration (**por la lluvia, por teléfono, gracias por todo, por la calle**).
+      pt: |
+        **para**: finalidade, destino, destinatário, prazo (**para ti, para mañana, para aprender**). **por**: causa, meio, troca, através, duração (**por la lluvia, por teléfono, gracias por todo, por la calle**) — quase como no português.
+    examples:
+    - [Gracias por todo., Thanks for everything., Obrigado por tudo., por]
+    match: {seq: [{word: [por, para]}], gap: 0}
+    pool: [por, para]
+
+  - id: es-relatives
+    title: que, quien, donde
+    meaning: {en: "relative pronouns", pt: "pronomes relativos"}
+    intro:
+      en: |
+        **que** (who, which, that) for most cases: **el libro que leo**; **quien / quienes** for people after a preposition: **la chica con quien hablé**; **donde** for places; **lo que** what: **No sé lo que quieres.**
+      pt: |
+        **que** para quase tudo: **el libro que leo**; **quien / quienes** para pessoas depois de preposição: **la chica con quien hablé**; **donde** para lugares; **lo que** o que: **No sé lo que quieres.**
+    examples:
+    - [Es el libro que leo., It's the book I'm reading., É o livro que estou lendo., que]
+    match: {seq: [{pos: noun}, {word: [que, quien, quienes, donde, cuyo, cuya]}], gap: 1}
+    pool: [que, quien, donde, cual, cuyo]

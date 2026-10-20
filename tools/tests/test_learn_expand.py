@@ -63,3 +63,11 @@ def test_vowelled_forms_count_against_unvowelled_sentences():
 def test_lemma_patterns_are_valid_javascript():
     from learn_expand import js_escape
     assert js_escape("кто-то") == "кто-то" and js_escape("a.b") == "a\\.b"
+
+
+def test_reference_levels_get_no_generated_lessons(tmp_path):
+    d = make_data(tmp_path)
+    index = {"levels": [{"id": "A1", "topics": []}, {"id": "A&G", "topics": [], "reference": True}]}
+    lessons, questions = {}, {"A1": {}, "A&G": {}}
+    expand("xx", d, index, lessons, questions, ["Toj ima kuka na rid."] * 30, min_count=10)
+    assert not index["levels"][1]["topics"]

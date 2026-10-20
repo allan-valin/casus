@@ -96,5 +96,5 @@ def ag_lessons(folder: Path, index: dict, lessons: dict, questions: dict) -> int
         if entries:
             topics.append({"id": f"ag-{k}", "kind": "grammar", "title": {"en": part, "pt": part}, "lessons": entries})
     if topics:
-        index["levels"].append({"id": level_id, "title": {"en": "Reference grammar (Allen & Greenough)", "pt": "Gramática de referência (Allen & Greenough)"}, "topics": topics})
+        index["levels"].append({"id": level_id, "reference": True, "title": {"en": "Reference grammar (Allen & Greenough)", "pt": "Gramática de referência (Allen & Greenough)"}, "topics": topics})
     return n

@@ -1,0 +1,100 @@
+id: A1
+topics:
+
+- title: {en: Articles and nouns, pt: Artigos e substantivos}
+  lessons:
+  - id: es-articles
+    title: el, la, los, las
+    meaning: {en: "the articles and gender", pt: "os artigos e o gênero"}
+    intro:
+      en: |
+        Masculine **el / los**, feminine **la / las**; indefinite **un, una, unos, unas**. Most nouns in **-o** are masculine, in **-a** feminine (**el libro, la casa**), with exceptions (**el día, la mano, el problema**). **a + el = al**, **de + el = del**.
+      pt: |
+        Masculino **el / los**, feminino **la / las**; indefinido **un, una, unos, unas**. A maioria dos substantivos em **-o** é masculina, em **-a** feminina (**el libro, la casa**), com exceções (**el día, la mano, el problema**). **a + el = al**, **de + el = del**. Atenção aos falsos amigos de gênero: **la leche, la sal, el viaje**.
+    examples:
+    - [El perro come., The dog is eating., O cachorro está comendo., El]
+    match: {seq: [{word: [el, la, los, las, un, una, unos, unas]}, {pos: noun}], gap: 0}
+    pool: [el, la, los, las, un, una]
+
+- title: {en: "Ser, estar and the present", pt: "Ser, estar e o presente"}
+  lessons:
+  - id: es-ser-estar
+    title: soy, estoy
+    meaning: {en: "ser and estar: two verbs for 'to be'", pt: "ser e estar: dois verbos 'ser/estar'"}
+    intro:
+      en: |
+        **ser** (soy, eres, es, somos, sois, son) for identity, origin, profession, time; **estar** (estoy, estás, está, estamos, estáis, están) for location and states: **Soy brasileño. Estoy cansado. Madrid está en España.** Portuguese speakers: the split is almost the same as in Portuguese.
+      pt: |
+        **ser** (soy, eres, es, somos, sois, son) para identidade, origem, profissão, hora; **estar** (estoy, estás, está, estamos, estáis, están) para lugar e estados: **Soy brasileño. Estoy cansado. Madrid está en España.** A divisão é quase igual à do português.
+    examples:
+    - [Soy de Brasil., I'm from Brazil., Sou do Brasil., Soy]
+    - ["¿Dónde estás?", "Where are you?", "Onde você está?", "estás"]
+    match: {seq: [{lemma: "^(ser|estar)$", mood: ind, tense: pres}], same: [tense, mood]}
+
+  - id: es-present
+    title: hablo, como, vivo
+    meaning: {en: "the present: -ar, -er, -ir", pt: "o presente: -ar, -er, -ir"}
+    intro:
+      en: |
+        **-ar** (hablar): hablo, hablas, habla, hablamos, habláis, hablan. **-er** (comer): como, comes, come, comemos, coméis, comen. **-ir** (vivir): vivo, vives, vive, vivimos, vivís, viven. Stem-changing verbs: **e → ie** (quiero), **o → ue** (puedo), **e → i** (pido), except in nosotros/vosotros.
+      pt: |
+        **-ar** (hablar): hablo, hablas, habla, hablamos, habláis, hablan. **-er** (comer): como, comes, come, comemos, coméis, comen. **-ir** (vivir): vivo, vives, vive, vivimos, vivís, viven. Verbos que mudam o radical: **e → ie** (quiero), **o → ue** (puedo), **e → i** (pido), menos em nosotros/vosotros.
+    examples:
+    - ["¿Hablas español?", "Do you speak Spanish?", "Você fala espanhol?", "Hablas"]
+    - [Vivimos en Madrid., We live in Madrid., Moramos em Madri., Vivimos]
+    match: {seq: [{pos: verb, mood: ind, tense: pres, not: {lemma: "^(ser|estar|haber)$"}}], same: [tense, mood]}
+
+- title: {en: Negation and questions, pt: Negação e perguntas}
+  lessons:
+  - id: es-questions
+    title: qué, quién, dónde
+    meaning: {en: "question words (with accents)", pt: "palavras interrogativas (com acento)"}
+    intro:
+      en: |
+        **qué** what, **quién** who, **dónde** where, **cuándo** when, **cómo** how, **por qué** why, **cuánto** how much, **cuál** which. They carry an accent; questions open with **¿** and exclamations with **¡**: **¿Dónde vives?**
+      pt: |
+        **qué** o que, **quién** quem, **dónde** onde, **cuándo** quando, **cómo** como, **por qué** por que, **cuánto** quanto, **cuál** qual. Levam acento; perguntas abrem com **¿** e exclamações com **¡**: **¿Dónde vives?**
+    examples:
+    - ["¿Dónde vives?", "Where do you live?", "Onde você mora?", "Dónde"]
+    match: {seq: [{word: [qué, quién, quiénes, dónde, cuándo, cómo, cuánto, cuánta, cuántos, cuántas, cuál, cuáles]}], gap: 0}
+    pool: [qué, quién, dónde, cuándo, cómo, cuánto, cuál]
+
+  - id: es-negation
+    title: no, nunca, nada
+    meaning: {en: "negation: no, nunca, nada, nadie", pt: "negação: no, nunca, nada, nadie"}
+    intro:
+      en: |
+        **no** before the verb: **No sé.** Double negatives are normal: **No veo nada. No viene nadie. No voy nunca** (or **Nunca voy**).
+      pt: |
+        **no** antes do verbo: **No sé.** "Não sei." Dupla negação é normal, como no português: **No veo nada. No viene nadie. No voy nunca** (ou **Nunca voy**).
+    examples:
+    - [No sé nada., I don't know anything., Não sei nada., nada]
+    match: {seq: [{word: [no, nunca, nada, nadie, tampoco, ningún, ninguna, jamás]}], gap: 0}
+    pool: [no, nunca, nada, nadie, tampoco]
+
+- title: {en: Pronouns, pt: Pronomes}
+  lessons:
+  - id: es-object-pronouns
+    title: lo, la, le
+    meaning: {en: "object pronouns: lo, la, le, se lo", pt: "pronomes objeto: lo, la, le, se lo"}
+    intro:
+      en: |
+        Direct **lo, la, los, las**; indirect **le, les**; also **me, te, nos, os**. They go before a conjugated verb (**Lo veo**), after an infinitive or command, joined (**Quiero verlo. ¡Dímelo!**). **le / les** become **se** before lo / la: **Se lo doy.**
+      pt: |
+        Diretos **lo, la, los, las**; indiretos **le, les**; também **me, te, nos, os**. Vêm antes do verbo conjugado (**Lo veo**), depois do infinitivo ou do imperativo, juntos (**Quiero verlo. ¡Dímelo!**). **le / les** viram **se** antes de lo / la: **Se lo doy.**
+    examples:
+    - [Lo veo., I see him., Eu o vejo., Lo]
+    match: {seq: [{word: [lo, la, los, las, le, les, me, te, nos, se]}, {pos: verb}], gap: 0}
+    pool: [lo, la, los, las, le, les, se]
+
+  - id: es-gustar
+    title: me gusta
+    meaning: {en: "gustar and verbs like it", pt: "gustar e verbos parecidos"}
+    intro:
+      en: |
+        **gustar** works backwards: the thing liked is the subject, the person an indirect object: **Me gusta el café.** "I like coffee." **Me gustan los libros.** Likewise **encantar, interesar, doler, faltar, parecer**.
+      pt: |
+        **gustar** funciona ao contrário: a coisa é o sujeito, a pessoa o objeto indireto: **Me gusta el café.** "Gosto de café." **Me gustan los libros.** Também **encantar, interesar, doler, faltar, parecer**.
+    examples:
+    - [Me gusta el café., I like coffee., Gosto de café., gusta]
+    match: {seq: [{word: [me, te, le, nos, os, les]}, {lemma: "^(gustar|encantar|interesar|doler|faltar|parecer)$"}], gap: 1, same: [tense, mood]}

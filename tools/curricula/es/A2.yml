@@ -1,0 +1,52 @@
+id: A2
+topics:
+
+- title: {en: The past, pt: O passado}
+  lessons:
+  - id: es-preterito
+    title: hablé, comí
+    meaning: {en: "the preterite: completed past", pt: "o pretérito indefinido: passado concluído"}
+    intro:
+      en: |
+        **-ar**: hablé, hablaste, habló, hablamos, hablasteis, hablaron. **-er / -ir**: comí, comiste, comió, comimos, comisteis, comieron. Irregular and common: **ser / ir → fui, fuiste, fue**; **tener → tuve**, **hacer → hice**, **estar → estuve**, **poder → pude**, **decir → dije**.
+      pt: |
+        **-ar**: hablé, hablaste, habló, hablamos, hablasteis, hablaron. **-er / -ir**: comí, comiste, comió, comimos, comisteis, comieron. Irregulares comuns: **ser / ir → fui, fuiste, fue**; **tener → tuve**, **hacer → hice**, **estar → estuve**, **poder → pude**, **decir → dije**.
+    examples:
+    - [Ayer comí paella., Yesterday I ate paella., Ontem comi paella., comí]
+    match: {seq: [{pos: verb, mood: ind, tense: past}], same: [person, number]}
+
+  - id: es-imperfecto
+    title: hablaba, comía
+    meaning: {en: "the imperfect: was doing, used to", pt: "o imperfeito: fazia, estava fazendo"}
+    intro:
+      en: |
+        **-ar**: hablaba, hablabas, hablaba, hablábamos, hablabais, hablaban; **-er / -ir**: comía, comías, comía… Only three irregulars: **ser → era**, **ir → iba**, **ver → veía**. Background, habits, descriptions — as in Portuguese.
+      pt: |
+        **-ar**: hablaba, hablabas, hablaba, hablábamos, hablabais, hablaban; **-er / -ir**: comía, comías, comía… Só três irregulares: **ser → era**, **ir → iba**, **ver → veía**. Cenário, hábitos, descrições — como no português.
+    examples:
+    - [Cuando era niño jugaba al fútbol., When I was a child I used to play football., Quando eu era criança jogava futebol., jugaba]
+    match: {seq: [{pos: verb, mood: ind, tense: impf}], same: [person, number]}
+
+  - id: es-perfecto
+    title: he hablado
+    meaning: {en: "the perfect: haber + participle", pt: "o pretérito perfeito composto: haber + particípio"}
+    intro:
+      en: |
+        **he, has, ha, hemos, habéis, han** + participle (**-ado, -ido**; irregular **hecho, dicho, visto, escrito, puesto, vuelto, abierto**): **He comido.** In Spain it is the past of today; in Latin America the preterite is more common.
+      pt: |
+        **he, has, ha, hemos, habéis, han** + particípio (**-ado, -ido**; irregulares **hecho, dicho, visto, escrito, puesto, vuelto, abierto**): **He comido.** "Comi (hoje)." Na Espanha é o passado do dia de hoje; na América Latina o pretérito é mais comum. Cuidado: não equivale ao "tenho comido" do português.
+    examples:
+    - [Ya he comido., I've already eaten., Já comi., comido]
+    match: {seq: [{lemma: "^haber$"}, {re: "(ado|ido|cho|sto|rto|elto|ierto)$"}], gap: 1, suffixes: [ado, ido, ada, ida, ar, er], attested: true}
+
+  - id: es-futuro
+    title: hablaré
+    meaning: {en: "the future and ir a + infinitive", pt: "o futuro e ir a + infinitivo"}
+    intro:
+      en: |
+        Infinitive + **-é, -ás, -á, -emos, -éis, -án**: **hablaré, comerás, vivirá**. Irregular stems: **tendr-, podr-, har-, dir-, saldr-, vendr-, querr-, sabr-, pondr-**. Everyday: **voy a + infinitive**: **Voy a comer.**
+      pt: |
+        Infinitivo + **-é, -ás, -á, -emos, -éis, -án**: **hablaré, comerás, vivirá**. Radicais irregulares: **tendr-, podr-, har-, dir-, saldr-, vendr-, querr-, sabr-, pondr-**. No dia a dia: **voy a + infinitivo**: **Voy a comer.**
+    examples:
+    - [Mañana lloverá., It'll rain tomorrow., Amanhã vai chover., lloverá]
+    match: {seq: [{pos: verb, mood: ind, tense: fut}], same: [person, number]}

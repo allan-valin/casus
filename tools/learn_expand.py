@@ -78,7 +78,7 @@ def expand(code: str, data: Path, index: dict, lessons: dict, questions: dict, s
     gl = json.loads((data / "glosses.en.json").read_text(encoding="utf-8"))
     paras = _paradigms(data)
     counts = word_counts(sentences)
-    levels = [lv["id"] for lv in index["levels"]]
+    levels = [lv["id"] for lv in index["levels"] if not lv.get("reference")]   # (not a reference grammar's own level)
     topics = {lv["id"]: lv["topics"] for lv in index["levels"]}
     taken = {(l.get("title") or "").lower() for l in lessons.values()}
     added = 0
