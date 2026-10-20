@@ -65,7 +65,6 @@ def problems(orig: str, out: str, src: str, ui: str | None = None, gloss=None) -
 
 def check_language(code: str, ui: str, sample: int = 20, seed: int = 1) -> dict:
     from translate_learn import gloss_test
-    gloss = gloss_test(code)
     flagged, clean = [], []
     for f in sorted((ROOT / "data" / code / "learn").glob("*.json")):
         if f.name.startswith("q-"):
@@ -83,7 +82,7 @@ def check_language(code: str, ui: str, sample: int = 20, seed: int = 1) -> dict:
             item = {"page": f.stem, "section": s.get("id"), "source": page.get("source", "")[:60]}
             # an imported page's intro is Casus's own English credit line, whatever the book's language
             src = "en" if s.get("id") == "intro" else page.get("src", "en")
-            p = problems(orig, h[ui], src, ui, gloss if src != code else None)
+            p = problems(orig, h[ui], src, ui, gloss_test(code, src) if src != code else None)
             (flagged if p else clean).append({**item, "problems": p} if p else item)
     random.Random(seed).shuffle(clean)
     report = {"code": code, "ui": ui, "flagged": flagged, "sample": clean[:sample], "checked": len(flagged) + len(clean)}

@@ -95,7 +95,7 @@ SRC_SCRIPT = {**{k: LATIN for k in ("en", "fr", "de", "es", "pt", "it", "nl", "p
 _FOREIGN = {}
 
 
-def protect_script(text: str, src: str, inline: list, gloss=None) -> str:
+def protect_script(text: str, src: str, inline: list, gloss=None, info: dict | None = None) -> str:
     """runs of words in a script other than the explanation's become placeholders [n] (their text appended to inline)"""
     # a transcription in [ ] or / / with a sign outside plain ASCII letters is kept exactly ([mak̚tɯ], /ˈmakto/)
     # (an example placeholder inside it is put back, so the whole transcription becomes one placeholder)
@@ -122,6 +122,8 @@ def protect_script(text: str, src: str, inline: list, gloss=None) -> str:
                 groups[-1][1] = m.end()
             else:
                 groups.append([m.start(), m.end()])
+        if groups and info is not None:
+            info["plain"] = True
         for a, b in reversed(groups):
             inline.append(text[a:b])
             text = text[:a] + f"[{len(inline)}]" + text[b:]
@@ -170,7 +172,8 @@ def segments(html: str, src: str = "en", gloss=None) -> list:
         nonlocal run, inline
         if not run:
             return
-        text = protect_script("".join(run), src, inline, gloss)
+        info = {}
+        text = protect_script("".join(run), src, inline, gloss, info)
         # a list line of forms with a gloss in brackets at its end ("backen (bäckt), backte, gebacken (to bake)"):
         # the forms are kept, the gloss alone is translated
         m = re.fullmatch(r"(.*?\S.*?)(\([^()]*\))(\s*)", text, re.S)
@@ -180,7 +183,10 @@ def segments(html: str, src: str = "en", gloss=None) -> list:
             inline.append(PH.sub(lambda p: inline[int(p.group(1)) - 1] if 0 < int(p.group(1)) <= len(inline) else p.group(0), m.group(1)))
             text = f"[{len(inline)}]" + m.group(2) + m.group(3)
         plain = PH.sub(" ", text)
-        out.append({"text": text, "inline": inline, "translate": is_prose(plain, src) and not crowded(text)})
+        # with taught-language words made placeholders, a German sentence can look English ("Sie [1] an"): the run
+        # must have been explanation before that, too
+        before = not info.get("plain") or is_prose(PH.sub(" ", "".join(run)), src)
+        out.append({"text": text, "inline": inline, "translate": is_prose(plain, src) and before and not crowded(text)})
         run, inline = [], []
 
     in_table = 0

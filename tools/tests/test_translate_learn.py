@@ -375,3 +375,12 @@ def test_a_page_explaining_the_language_in_itself_is_not_machine_translated(tmp_
     monkeypatch.setattr(T, "gloss_test", lambda code: None)
     tr = Fake("mk")
     assert T.translate_language("de", tr) == 0 and tr.sent == []
+
+
+def test_the_german_word_test_knows_the_language_a_book_explains_in():
+    import pytest
+    if not (T.ROOT / "data" / "es" / "forms").exists():
+        pytest.skip("Spanish data not built")
+    es = T.gloss_test("de", "es")
+    assert es.taught("Ich bin so groß wie du") and not es.taught("Las partículas interrogativas")
+    assert es("la mujer") and not es("die Frau")          # a bold Spanish gloss is explanation, a German form is not

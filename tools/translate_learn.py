@@ -348,32 +348,39 @@ GLOSS_COURSES = {"de"}
 
 
 @functools.lru_cache(maxsize=None)
-def gloss_test(code: str):
-    """for a course in GLOSS_COURSES, gloss(text) -> True when a bold run is English rather than a form of the taught
-    language: more of its words are English only (words of the course's English glosses) than forms of the course
-    only. A word of both languages ("was", "die") decides nothing, so such a run stays protected."""
+def gloss_test(code: str, src: str = "en"):
+    """for a course in GLOSS_COURSES, gloss(text) -> True when a bold run is in the book's explanation language `src`
+    rather than a form of the taught language: more of its words are explanation-only (English: the course's English
+    glosses and the system word lists; another language: its own course's forms) than forms of the course only. A
+    word of both languages ("was", "die") decides nothing, so such a run stays protected."""
     if code not in GLOSS_COURSES:
         return None
     data = ROOT / "data" / code
     forms = {k.lower() for f in (data / "forms").glob("*.json") for k in json.loads(f.read_text(encoding="utf-8"))}
-    counts = collections.Counter(w for v in json.loads((data / "glosses.en.json").read_text(encoding="utf-8")).values()
-                                 for w in re.findall(r"[a-z]+", v.lower()))
-    english = {w for w, c in counts.items() if c >= 3}
-    # and the system's English word lists, where there are some: "ran", "heck", "exceptions" are German forms too
-    for f in ("/usr/share/dict/american-english", "/usr/share/dict/british-english"):
-        if Path(f).exists():
-            english |= {w.strip().lower() for w in Path(f).read_text(encoding="utf-8", errors="ignore").splitlines() if w.strip().isalpha()}
+    if src == "en":
+        counts = collections.Counter(w for v in json.loads((data / "glosses.en.json").read_text(encoding="utf-8")).values()
+                                     for w in re.findall(r"[a-z]+", v.lower()))
+        explanation = {w for w, c in counts.items() if c >= 3}
+        # and the system's English word lists, where there are some: "ran", "heck", "exceptions" are German forms too
+        for f in ("/usr/share/dict/american-english", "/usr/share/dict/british-english"):
+            if Path(f).exists():
+                explanation |= {w.strip().lower() for w in Path(f).read_text(encoding="utf-8", errors="ignore").splitlines() if w.strip().isalpha()}
+    elif (ROOT / "data" / src / "forms").exists():
+        explanation = {k.lower() for f in (ROOT / "data" / src / "forms").glob("*.json") for k in json.loads(f.read_text(encoding="utf-8"))}
+    else:
+        return None
+    own = {"de": "äöüß"}.get(code, "")
 
-    def counts(text: str) -> tuple:
+    def counts_of(text: str) -> tuple:
         words = [w.lower() for w in re.findall(r"[^\W\d_]+", text)]
-        return (sum(w in english and w not in forms for w in words),
-                sum(w in forms and w not in english for w in words) + sum(not w.isascii() for w in words))
+        return (sum(w in explanation and w not in forms for w in words),
+                sum(w not in explanation and (w in forms or bool(own and re.search(f"[{own}]", w))) for w in words))
 
     def gloss(text: str) -> bool:
-        en, de = counts(text)
+        en, de = counts_of(text)
         return en > de
-    # a line that is certainly forms of the course (no English-only word, some course-only one): "backen, backte"
-    gloss.taught = lambda text: (lambda en, de: de > 0 and en == 0)(*counts(text))
+    # a line that is certainly forms of the course (no explanation-only word, some course-only one): "backen, backte"
+    gloss.taught = lambda text: (lambda en, de: de > 0 and en == 0)(*counts_of(text))
     return gloss
 
 
@@ -428,7 +435,7 @@ def translate_language(code: str, tr, redo: bool = False, only: str | None = Non
                 if isinstance(s.get(key), str) and s[key].strip():
                     s[key] = {"en": s[key]}
         changed = False
-        gloss = gloss_test(code) if src != code else None
+        gloss = gloss_test(code, src) if src != code else None
         for key in ("meaning", "topic"):
             if isinstance(page.get(key), dict):
                 changed |= text_field(page[key], tr, src)

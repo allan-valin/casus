@@ -208,3 +208,10 @@ def test_german_words_in_plain_text_are_protected_in_the_german_course():
     assert inline == ["Wie heißt du", "Danke", "sehr", "sein", "werden"]
     gl.taught = lambda t: t == "aren"          # a piece of an English contraction is never a German word
     assert protect_script("These mushrooms aren't edible.", "en", [], gl) == "These mushrooms aren't edible."
+
+
+def test_a_german_sentence_is_not_made_english_by_protecting_its_german_words():
+    gl = lambda t: False
+    gl.taught = lambda t: t.lower() in {"sie", "sah", "ihren", "blutigen", "finger"}
+    run = [s for s in segments("<p>Sie sah ihren blutigen Finger an und es war so.</p>", "en", gloss=gl) if "text" in s][0]
+    assert not run["translate"]
