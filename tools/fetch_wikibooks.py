@@ -32,7 +32,7 @@ def links_of(html, book):
     out = []
     for href in re.findall(r'href="/wiki/([^"#?]+)"', html):
         t = urllib.parse.unquote(href).replace("_", " ")
-        if t.startswith(book.replace("_", " ") + "/") and t not in out and ":" not in t.split("/")[0]:
+        if t.startswith(book.replace("_", " ") + "/") and t not in out:
             out.append(t)
     return out
 

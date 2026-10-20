@@ -41,3 +41,26 @@ def test_a_book_from_another_wikibooks_edition_links_there_and_says_its_language
     assert page["source"].startswith("Wikibooks (pt)")
     titles = [tp["title"]["en"] for lv in index["levels"] for tp in lv["topics"]]
     assert all(t.startswith("Wikibooks (Português)") for t in titles)
+
+
+def test_clean_drops_maintenance_boxes_without_a_class():
+    box = ('<table style="border:1px solid #cedff2"><tr><td><a href="/wiki/Ficheiro:Wikibooks-logo-pt.svg"></a></td>'
+           '<td>Este livro ou módulo precisa ser formatado segundo o modelo wiki.</td></tr></table>')
+    h = clean(box + "<p>Os adjetivos vêm antes.</p>", "pt")
+    assert "precisa ser formatado" not in h and "Os adjetivos" in h
+    data = '<table class="wikitable"><tr><td>book</td><td>livro</td></tr></table>'
+    assert "livro" in clean(data, "pt")
+
+
+def test_a_wikisource_book_is_credited_as_a_public_domain_text_there():
+    from learn_wikibooks import wikibooks_lessons
+    index = {"levels": [{"id": "Reference", "topics": []}]}
+    lessons, questions = {}, {}
+    body = "<p>" + "Le nom est un mot qui sert à désigner. " * 12 + "</p>"
+    n = wikibooks_lessons("fr", "L’Année préparatoire de Grammaire", [{"title": "L’Année préparatoire de Grammaire/Le nom", "html": body}],
+                          index, lessons, questions, edition="fr", prefix="fr-ws1", site="wikisource")
+    page = lessons["fr-ws1-1"]
+    assert n == 1 and "fr.wikisource.org/wiki/" in page["intro"]["en"]
+    assert "Wikisource" in page["intro"]["en"] and "public domain" in page["intro"]["en"] and "CC BY-SA" not in page["intro"]["en"]
+    assert page["source"].startswith("Wikisource (fr)")
+    assert index["levels"][0]["topics"][0]["title"]["en"].startswith("Wikisource (Français)")

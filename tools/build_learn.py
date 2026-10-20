@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import csv
 import json
+import zlib
 import sys
 from pathlib import Path
 
@@ -352,6 +353,17 @@ def builder(code: str):
 
 # languages whose lessons are extended with generated ones (tools/learn_expand.py): spaced scripts (word counts are
 # word-based), and Japanese already has its 1,160 lessons; case languages drill the noun after each preposition
+FOREIGN_WIKIBOOKS = {
+    "en": ["pt:Inglês", "es:Inglés"], "it": ["it:Italiano L2", "de:Italienisch", "fr:Enseignement de l'italien", "nl:Italiaans"],
+    "is": ["de:Isländisch", "pt:Islandês"], "uk": ["uk:Українська мова", "ru:Украинский язык", "pl:Ukraiński"],
+    "pl": ["de:Polnisch", "fr:Polonais", "nl:Pools"], "cs": ["cs:Čeština"], "hu": ["de:Ungarisch-Grammatik"],
+    "ru": ["pt:Russo", "it:Russo"], "el": ["pt:Grego moderno"], "tr": ["tr:Türkçe", "es:Turco"],
+    "fi": ["fi:Suomen kieli", "pt:Finlandês", "es:Finés"], "ar": ["it:Arabo"],
+    "grc": ["fr:Grec ancien", "it:Greco antico", "nl:Oudgrieks"], "la": ["de:Latein", "it:Latino", "fr:Latin", "pt:Latim"],
+    "pt": ["pt:Português para estrangeiros", "es:Portugués"], "es": ["es:Aprender español", "de:Spanisch"],
+    "fr": ["es:Francés", "nl:Frans"], "de": ["es:Alemán"], "nl": ["fr:Néerlandais", "nl:Nederlands"],
+    "ko": ["fr:Coréen"], "zh": ["es:Chino"], "sa": ["es:Sánscrito"],
+}
 EXPAND = {"mk", "ar", "la", "grc", "de", "ru", "ko", "fi", "el", "sa", "cs", "pl", "tr", "hu", "is", "pt", "fr", "es", "en", "it", "nl", "uk"}
 CASE_LANGS = {"la", "grc", "de", "ru", "fi", "el", "sa", "cs", "pl", "tr", "hu", "is", "uk"}
 T3 = {"mk": "mkd", "ar": "ara", "la": "lat", "grc": "grc", "de": "deu", "ru": "rus", "ko": "kor", "fi": "fin", "el": "ell", "sa": "san",
@@ -410,6 +422,18 @@ def main(code: str) -> None:
                  "imperative": {"seq": [{"pos": "verb", "mood": "imp"}], "same": ["person", "number"]},
                  "plural": {"seq": [{"pos": "noun", "number": "pl"}], "same": ["case"]}} if code in CASE_LANGS else {}
         print(f"{code}: {wikibooks_lessons(code, WIKIBOOKS[code], json.loads(wb.read_text(encoding='utf-8')), index, lessons, questions, levels=[lv['id'] for lv in index['levels'] if lv['id'] in ('A1', 'A2', 'B1')] or None, rules=rules)} lessons from Wikibooks")
+    # Wikibooks courses of this language in other editions (2026-10-20: every human-written open course found,
+    # docs/LEARN-SOURCES-NATIVE-2026-10-20.md; vendor/wikibooks/<edition>/<Book>/pages.json, tools/fetch_wikibooks.py)
+    for spec in FOREIGN_WIKIBOOKS.get(code, []):
+        edition, book = spec.split(":", 1)
+        fwb = ROOT / "vendor" / "wikibooks" / (book if edition == "en" else f"{edition}/{book}") / "pages.json"
+        if not fwb.exists():
+            continue
+        from learn_wikibooks import wikibooks_lessons
+        lvls = [lv["id"] for lv in index["levels"] if lv["id"] in ("A1", "A2", "B1")] or None
+        n = wikibooks_lessons(code, book, json.loads(fwb.read_text(encoding="utf-8")), index, lessons, questions, levels=lvls,
+                              edition=edition, prefix=f"{code}-wb{edition}{zlib.crc32(book.encode()) % 1000:03d}")
+        print(f"{code}: {n} lessons from Wikibooks ({edition}) {book}")
     if code == "fi" and (ROOT / "vendor" / "eliot" / "eliot.txt").exists():
         from learn_gutenberg import book_lessons
         t = (ROOT / "vendor" / "eliot" / "eliot.txt").read_text(encoding="utf-8")

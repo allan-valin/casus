@@ -2,11 +2,14 @@
   /* Feedback D14: what is on the screen, how to use it, and every resource behind it. */
   import Overlay from './Overlay.svelte';
   import { ui } from '../lib/i18n.svelte.js';
-  let { onclose } = $props();
+  import { HELP } from '../lib/i18n.help.js';
+  let { onclose, view = 'reader' } = $props();
 </script>
 
 <Overlay {onclose} label="help" panelClass="help">
-  {#if ui.lang === 'pt'}
+  {#if HELP[view]}
+  <div class="body" dir="auto">{@html HELP[view][ui.lang] ?? HELP[view].en}</div>
+  {:else if ui.lang === 'pt'}
   <div class="body">
     <h3>O que o Casus faz</h3>
     <p>A ordem das palavras em latim é livre, então as que pertencem juntas — um substantivo e seu adjetivo, uma

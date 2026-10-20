@@ -291,7 +291,7 @@
   {/if}
 
   {#if help}
-    <Help onclose={() => (help = false)} />
+    <Help view={route.view} onclose={() => (help = false)} />
   {/if}
 
   <ActivityLog {activity} />
