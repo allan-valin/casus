@@ -90,3 +90,22 @@ while read u; do f="$V/batepapo/$(basename "$u").html"; [ -s "$f" ] || { curl -s
 echo "Learn sources in $V"
 # Ancient Greek for Everyone (Major & Laughy, CC BY 4.0): no download offered and a Cloudflare check, so a headless browser
 [ -s "$V/agfe/html/chapter__48.html" ] || node "$ROOT/tools/fetch_agfe.mjs"
+# Public-domain books from Project Gutenberg, imported by build_learn.py GUTENBERG (2026-10-20)
+mkdir -p "$V/gutenberg"
+for n in 48011 15127 38124 44642 79190 15665 44653; do
+  [ -s "$V/gutenberg/$n.txt" ] || { curl -sfL "https://www.gutenberg.org/cache/epub/$n/pg$n.txt" -o "$V/gutenberg/$n.txt"; sleep 2; }
+done
+# Wikibooks courses of other editions and Wikisource grammars (build_learn.py FOREIGN_WIKIBOOKS, REFERENCE), one request a second
+python3 - "$ROOT" <<'PY'
+import re, sys, subprocess, ast
+t = open(f"{sys.argv[1]}/tools/build_learn.py", encoding="utf-8").read()
+specs = []
+for name in ("FOREIGN_WIKIBOOKS", "REFERENCE"):
+    for v in ast.literal_eval(re.search(name + r" = (\{.*?\n\})", t, re.S).group(1)).values():
+        specs += v
+for s in specs:
+    subprocess.run([sys.executable, f"{sys.argv[1]}/tools/fetch_wikibooks.py", s])
+PY
+# Polish: the official exam grammar lists A1–C2 (Dz.U. 2025 poz. 217, normative act), as text
+mkdir -p "$V/pl-exam"
+[ -s "$V/pl-exam/du.txt" ] || { curl -sfL https://eli.gov.pl/eli/DU/2025/217/ogl/pol/pdf -o "$V/pl-exam/du2025-217.pdf" && pdftotext -layout "$V/pl-exam/du2025-217.pdf" "$V/pl-exam/du.txt"; }

@@ -28,6 +28,47 @@ def parsed(title):
 SKIP = re.compile(r"(print version|contents|restructuring|about|contribut|computing|authors|todo|to do|glossary of terms|resources|external links|sandbox)", re.I)
 
 
+ROMAN = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100}
+
+
+def _roman(s):
+    total = 0
+    for a, b in zip(s, s[1:] + " "):
+        v = ROMAN[a]
+        total += -v if ROMAN.get(b, 0) > v else v
+    return total
+
+
+def book_order(names):
+    """subpage names in reading order: front matter first, then numbered parts by their number (Roman or Arabic)"""
+    def key(n):
+        m = re.search(r"\b([IVXLC]+|\d+)\b\s*$", n) or re.search(r"\b([IVXLC]+|\d+)\b", n)
+        if not m:
+            return (0 if re.match(r"(?i)(preface|introduction|einleitung|préface|prefacio|предисловие)", n) else 1, 0, n)
+        v = m.group(1)
+        return (2, int(v) if v.isdigit() else _roman(v), n)
+    return sorted(names, key=key)
+
+
+def split_page(book, html):
+    """a book that is one long page, cut at its second-level headings: [{title, html}]"""
+    parts = re.split(r"<h2\b[^>]*>(.*?)</h2>", html, flags=re.S)
+    out = []
+    if re.sub(r"<[^>]+>", "", parts[0]).strip():
+        out.append({"title": f"{book}/Introduction", "html": parts[0]})
+    for i in range(1, len(parts), 2):
+        name = re.sub(r"<[^>]+>", "", parts[i]).strip() or f"Part {i // 2 + 1}"
+        out.append({"title": f"{book}/{name}", "html": parts[i + 1]})
+    return out
+
+
+def subpages(book):
+    """the book's subpages from the wiki's page list, in reading order"""
+    got = get({"action": "query", "list": "allpages", "apprefix": book + "/", "aplimit": 500})["query"]["allpages"]
+    names = [p["title"].split("/", 1)[1] for p in got]
+    return [f"{book}/{n}" for n in book_order(names)]
+
+
 def links_of(html, book):
     out = []
     for href in re.findall(r'href="/wiki/([^"#?]+)"', html):
@@ -43,11 +84,22 @@ def main(spec):
     (Contents, Level I…) in its place, one level down"""
     global API
     edition, book = spec.split(":", 1) if ":" in spec else ("en", spec)
-    API = f"https://{edition}.wikibooks.org/w/api.php"
-    out = ROOT / "vendor" / "wikibooks" / (book if edition == "en" else f"{edition}/{book}")
+    site = "wikibooks"
+    if edition.startswith("ws-"):          # ws-fr:Title — a public-domain book on Wikisource
+        site, edition = "wikisource", edition[3:]
+    API = f"https://{edition}.{site}.org/w/api.php"
+    out = ROOT / "vendor" / site / edition / book if site == "wikisource" else ROOT / "vendor" / "wikibooks" / (book if edition == "en" else f"{edition}/{book}")
     out.mkdir(parents=True, exist_ok=True)
     order, pages, seen = [], [], set()
-    first = links_of(parsed(book), book)
+    main_html = parsed(book)
+    first = links_of(main_html, book)
+    if len(first) < 3:                     # Wikisource: no table of contents on the main page
+        first = subpages(book) or first
+    if not first:                          # one long page
+        pages = split_page(book, main_html)
+        (out / "pages.json").write_text(json.dumps(pages, ensure_ascii=False), encoding="utf-8")
+        print(book, len(pages), "sections of one page")
+        return
     for t in first:
         time.sleep(1)
         try:

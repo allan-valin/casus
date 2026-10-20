@@ -19,8 +19,25 @@ def _title(s: str) -> str:
 SUBHEAD = re.compile(r"_([A-Z][^_]{2,60})\._")
 
 
-def sections_of(text: str, subheads: bool = False) -> list[dict]:
-    """subheads: a line that is only an italic heading (_Declension._) starts a section of the current chapter"""
+def sections_of(text: str, subheads: bool = False, heading: str | None = None, min_chars: int = 0) -> list[dict]:
+    """subheads: a line that is only an italic heading (_Declension._) starts a section of the current chapter.
+    heading: the book's own section pattern (PREMIÈRE LEÇON, LESSON IV.): only lines matching it start sections, a
+    contents line (ending in a page number) does not, and what comes before the first one is left out; sections are
+    grouped ten to a topic. min_chars: shorter sections (title pages, blank plates) are dropped."""
+    if heading:
+        pat, out, current = re.compile(heading), [], None
+        for line in text.splitlines():
+            st = line.strip()
+            if pat.match(st) and not re.search(r"\s\d+$", st):
+                title = re.sub(r"\b([ivxlc]+)\b$", lambda m: m.group(1).upper(), _title(st.rstrip(".")))
+                current = {"title": title, "text": ""}
+                out.append(current)
+            elif current is not None:
+                current["text"] += line + "\n"
+        out = [x for x in out if len(x["text"].strip()) >= min_chars and x["title"].lower() not in ("contents", "index", "table des matières", "inhalt")]
+        for k, x in enumerate(out):
+            x["chapter"] = f"{out[k // 10 * 10]['title']} – {out[min(len(out) - 1, k // 10 * 10 + 9)]['title']}"
+        return out
     lines = text.splitlines()
     out, chapter, current, skip = [], None, None, False
     for i, line in enumerate(lines):
@@ -76,9 +93,10 @@ def to_html(text: str) -> str:
 
 
 def book_lessons(text: str, prefix: str, credit: dict, source: str, levels: list, index: dict, lessons: dict, questions: dict,
-                 rules: dict | None = None, topic_title: dict | None = None, subheads: bool = False) -> int:
+                 rules: dict | None = None, topic_title: dict | None = None, subheads: bool = False, heading: str | None = None,
+                 min_chars: int = 0) -> int:
     """sections spread over `levels` in order, one topic per chapter"""
-    secs = sections_of(text, subheads)
+    secs = sections_of(text, subheads, heading, min_chars)
     topics = {lv["id"]: lv["topics"] for lv in index["levels"]}
     per = {}
     for k, s in enumerate(secs):

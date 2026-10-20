@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import csv
 import json
+import re
 import zlib
 import sys
 from pathlib import Path
@@ -354,16 +355,52 @@ def builder(code: str):
 # languages whose lessons are extended with generated ones (tools/learn_expand.py): spaced scripts (word counts are
 # word-based), and Japanese already has its 1,160 lessons; case languages drill the noun after each preposition
 FOREIGN_WIKIBOOKS = {
-    "en": ["pt:Inglês", "es:Inglés"], "it": ["it:Italiano L2", "de:Italienisch", "fr:Enseignement de l'italien", "nl:Italiaans"],
-    "is": ["de:Isländisch", "pt:Islandês"], "uk": ["uk:Українська мова", "ru:Украинский язык", "pl:Ukraiński"],
-    "pl": ["de:Polnisch", "fr:Polonais", "nl:Pools"], "cs": ["cs:Čeština"], "hu": ["de:Ungarisch-Grammatik"],
-    "ru": ["pt:Russo", "it:Russo"], "el": ["pt:Grego moderno"], "tr": ["tr:Türkçe", "es:Turco"],
-    "fi": ["fi:Suomen kieli", "pt:Finlandês", "es:Finés"], "ar": ["it:Arabo"],
-    "grc": ["fr:Grec ancien", "it:Greco antico", "nl:Oudgrieks"], "la": ["de:Latein", "it:Latino", "fr:Latin", "pt:Latim"],
-    "pt": ["pt:Português para estrangeiros", "es:Portugués"], "es": ["es:Aprender español", "de:Spanisch"],
-    "fr": ["es:Francés", "nl:Frans"], "de": ["es:Alemán"], "nl": ["fr:Néerlandais", "nl:Nederlands"],
-    "ko": ["fr:Coréen"], "zh": ["es:Chino"], "sa": ["es:Sánscrito"],
+    "en": ["pt:Inglês", "es:Inglés"], "it": ["en:Italian", "it:Italiano L2", "de:Italienisch", "fr:Enseignement de l'italien", "nl:Italiaans"],
+    "is": ["en:Icelandic", "de:Isländisch", "pt:Islandês"], "uk": ["en:Ukrainian", "uk:Українська мова", "ru:Украинский язык", "pl:Ukraiński"],
+    "pl": ["en:Polish", "de:Polnisch", "fr:Polonais", "nl:Pools"], "mk": ["en:Macedonian"], "cs": ["cs:Čeština", "en:Czech"], "hu": ["en:Hungarian"],
+    "el": ["pt:Grego moderno"],
+    "fi": ["en:Finnish", "fi:Suomen kieli", "pt:Finlandês", "es:Finés"],
+    "grc": ["en:Ancient Greek", "fr:Grec ancien", "it:Greco antico", "nl:Oudgrieks"],
+    "la": ["en:Latin", "de:Latein", "it:Latino", "fr:Latin", "pt:Latim", "tr:Latince", "fi:Latinan kieli"],
+    "pt": ["en:Portuguese", "pt:Português para estrangeiros", "es:Portugués"], "es": ["es:Aprender español", "de:Spanisch"],
+    "fr": ["es:Francés", "nl:Frans"], "de": ["es:Alemán", "pl:Niemiecki"], "nl": ["fr:Néerlandais"],
+    "ko": ["en:Korean", "fr:Coréen"], "zh": ["en:Chinese (Mandarin)", "es:Chino", "zh:现代标准汉语"], "sa": ["en:Sanskrit", "es:Sánscrito"],
+    "ja": ["en:Japanese"], "ar": ["it:Arabo", "tr:Arapça"], "ru": ["pt:Russo", "it:Russo", "zh:俄语"], "tr": ["tr:Türkçe", "es:Turco"],
 }
+# full grammars for the Reference tab (Wikisource: public domain; Wikibooks: CC BY-SA); "ws-xx:" = Wikisource
+REFERENCE = {
+    "sa": ["ws-en:Sanskrit Grammar (Whitney)", "ws-sa:संस्कृत-व्याकरण की उपक्रमणिका"],
+    "hu": ["ws-en:Simplified Grammar of the Hungarian Language", "hu:Magyar nyelvtan", "de:Ungarisch-Grammatik"],
+    "grc": ["ws-el:Τέχνη Γραμματική"], "ar": ["ws-ar:الآجرومية"], "ja": ["ws-ja:改撰標準日本文法"], "zh": ["ws-zh:國語文法概論"],
+    "ru": ["ws-ru:Русская грамматика для первоначального обучения (Белинский)"], "es": ["es:Español"],
+    "it": ["ws-en:Italian with Grammar", "it:Grammatica contestuale"], "pt": ["pt:Português", "pt:Introdução à língua portuguesa"],
+    "nl": ["nl:Nederlands", "fr:Grammaire néerlandaise"], "pl": ["pl:Polski"], "el": ["de:Neugriechisch: Grammatik", "tr:Çağdaş Yunanca"],
+    "en": ["en:English Grammar", "en:English in Use", "de:Englisch: Grammatik", "pt:Gramática inglesa estrutural", "hu:Angol nyelvtan", "ja:高校英語の文法"],
+    "fi": ["hu:Finn nyelvtan"], "la": ["ws-la:Ars grammatica"],
+}
+
+
+# Project Gutenberg books: (number, the book's lesson/section heading pattern, course|reference, author and title, year)
+GUTENBERG = {
+    "fr": [("48011", r"[A-ZÈÉ][A-ZÈÉ -]+ LEÇON\.?\s*$|LEÇON SUPPLÉMENTAIRE", "course", "Albert A. Méras and B. Méras, <i>Le Premier Livre</i>", 1915)],
+    "es": [("15127", r"LESSON [IVXLC]+\.?\s*$", "course", "C. A. Toledano, <i>Pitman's Commercial Spanish Grammar</i>", 1917),
+           ("38124", r"LESSON [IVXLC]+\.?\s*$", "course", "Edith J. Broomhall, <i>Spanish Composition</i>", 1921)],
+    "de": [("44642", r"§\. ?\d+\.", "reference", "Hermann Bohm, <i>Kleine deutsche Sprachlehre</i> (spelling of 1879)", 1879)],
+    "pt": [("79190", r"[A-Z][A-Z ,]{4,}\.?$", "reference", "John Casper Branner, <i>A Brief Grammar of the Portuguese Language</i>", 1910)],
+}
+
+
+def reference_level(index):
+    """the language's Reference grammar tab (Latin's is Allen & Greenough, A&G), made on first use"""
+    for lv in index["levels"]:
+        if lv.get("reference"):
+            return lv["id"]
+    index["levels"].append({"id": "Reference", "reference": True, "topics": [],
+                            "title": {"en": "Reference grammar", "pt": "Gramática de referência", "de": "Referenzgrammatik",
+                                      "mk": "Референтна граматика", "ar": "مرجع النحو"}})
+    return "Reference"
+
+
 EXPAND = {"mk", "ar", "la", "grc", "de", "ru", "ko", "fi", "el", "sa", "cs", "pl", "tr", "hu", "is", "pt", "fr", "es", "en", "it", "nl", "uk"}
 CASE_LANGS = {"la", "grc", "de", "ru", "fi", "el", "sa", "cs", "pl", "tr", "hu", "is", "uk"}
 T3 = {"mk": "mkd", "ar": "ara", "la": "lat", "grc": "grc", "de": "deu", "ru": "rus", "ko": "kor", "fi": "fin", "el": "ell", "sa": "san",
@@ -423,17 +460,45 @@ def main(code: str) -> None:
                  "plural": {"seq": [{"pos": "noun", "number": "pl"}], "same": ["case"]}} if code in CASE_LANGS else {}
         print(f"{code}: {wikibooks_lessons(code, WIKIBOOKS[code], json.loads(wb.read_text(encoding='utf-8')), index, lessons, questions, levels=[lv['id'] for lv in index['levels'] if lv['id'] in ('A1', 'A2', 'B1')] or None, rules=rules)} lessons from Wikibooks")
     # Wikibooks courses of this language in other editions (2026-10-20: every human-written open course found,
-    # docs/LEARN-SOURCES-NATIVE-2026-10-20.md; vendor/wikibooks/<edition>/<Book>/pages.json, tools/fetch_wikibooks.py)
-    for spec in FOREIGN_WIKIBOOKS.get(code, []):
+    # docs/PLAN-2026-10-20-HUMAN-SOURCES.md; vendor/wikibooks/…/pages.json, tools/fetch_wikibooks.py), then the
+    # reference grammars: a "Reference grammar" tab for every language, as Latin has Allen & Greenough
+    from learn_wikibooks import wikibooks_lessons
+    for spec, reference in [(x, False) for x in FOREIGN_WIKIBOOKS.get(code, [])] + [(x, True) for x in REFERENCE.get(code, [])]:
         edition, book = spec.split(":", 1)
-        fwb = ROOT / "vendor" / "wikibooks" / (book if edition == "en" else f"{edition}/{book}") / "pages.json"
-        if not fwb.exists():
+        site = "wikisource" if edition.startswith("ws-") else "wikibooks"
+        edition = edition[3:] if site == "wikisource" else edition
+        folder = (ROOT / "vendor" / "wikisource" / edition / book) if site == "wikisource" else \
+            ROOT / "vendor" / "wikibooks" / (book if edition == "en" else f"{edition}/{book}")
+        if not (folder / "pages.json").exists():
             continue
-        from learn_wikibooks import wikibooks_lessons
-        lvls = [lv["id"] for lv in index["levels"] if lv["id"] in ("A1", "A2", "B1")] or None
-        n = wikibooks_lessons(code, book, json.loads(fwb.read_text(encoding="utf-8")), index, lessons, questions, levels=lvls,
-                              edition=edition, prefix=f"{code}-wb{edition}{zlib.crc32(book.encode()) % 1000:03d}")
-        print(f"{code}: {n} lessons from Wikibooks ({edition}) {book}")
+        if reference:
+            lvls = [reference_level(index)]
+        else:
+            lvls = [lv["id"] for lv in index["levels"] if lv["id"] in ("A1", "A2", "B1")] or None
+        tag = "ws" if site == "wikisource" else "wb"
+        n = wikibooks_lessons(code, book, json.loads((folder / "pages.json").read_text(encoding="utf-8")), index, lessons, questions,
+                              levels=lvls, edition=edition, prefix=f"{code}-{tag}{edition}{zlib.crc32(book.encode()) % 1000:03d}", site=site)
+        print(f"{code}: {n} lessons from {site} ({edition}) {book}{' → reference' if reference else ''}")
+    # public-domain books from Project Gutenberg (vendor/gutenberg/<n>.txt, tools/fetch_learn_sources.sh), each cut at its
+    # own lesson or section headings; a course goes to the first levels, a grammar to the Reference tab
+    for n, heading, kind, author_title, year in GUTENBERG.get(code, []):
+        f = ROOT / "vendor" / "gutenberg" / f"{n}.txt"
+        if not f.exists():
+            continue
+        from learn_gutenberg import book_lessons
+        t = f.read_text(encoding="utf-8")
+        t = t[max(0, t.find("*** START")):t.find("*** END") if "*** END" in t else len(t)]
+        lvls = [reference_level(index)] if kind == "reference" else \
+            ([lv["id"] for lv in index["levels"] if lv["id"] in ("A1", "A2", "B1")] or [lv["id"] for lv in index["levels"]][:2])
+        credit = {"en": f"<p><small>From {author_title} ({year}), Project Gutenberg #{n}, public domain.</small></p>",
+                  "pt": f"<p><small>De {author_title} ({year}), Projeto Gutenberg #{n}, domínio público.</small></p>"}
+        short = re.sub(r"<[^>]+>", "", author_title)
+        k = book_lessons(t, f"{code}-pg{n}", credit, f"{short} ({year}), Project Gutenberg #{n}, public domain", lvls, index, lessons,
+                         questions, None, {"en": f"{short.split(',')[0]}: ", "pt": f"{short.split(',')[0]}: "}, heading=heading, min_chars=300)
+        print(f"{code}: {k} sections from {short} (Gutenberg #{n}){' → reference' if kind == 'reference' else ''}")
+    if code == "pl" and (ROOT / "vendor" / "pl-exam" / "du.txt").exists():
+        from learn_pl_exam import pl_exam_lessons
+        print(f"pl: {pl_exam_lessons(ROOT / 'vendor' / 'pl-exam' / 'du.txt', index, lessons, questions)} points of the official exam grammar list (Dz.U. 2025 poz. 217)")
     if code == "fi" and (ROOT / "vendor" / "eliot" / "eliot.txt").exists():
         from learn_gutenberg import book_lessons
         t = (ROOT / "vendor" / "eliot" / "eliot.txt").read_text(encoding="utf-8")

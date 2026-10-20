@@ -64,3 +64,11 @@ def test_a_wikisource_book_is_credited_as_a_public_domain_text_there():
     assert "Wikisource" in page["intro"]["en"] and "public domain" in page["intro"]["en"] and "CC BY-SA" not in page["intro"]["en"]
     assert page["source"].startswith("Wikisource (fr)")
     assert index["levels"][0]["topics"][0]["title"]["en"].startswith("Wikisource (Français)")
+
+
+def test_fetcher_orders_chapters_by_roman_numeral_and_splits_a_one_page_book():
+    from fetch_wikibooks import book_order, split_page
+    names = ["Abbreviations", "Chapter I", "Chapter II", "Chapter IX", "Chapter V", "Chapter X", "Chapter IV", "Preface"]
+    assert book_order(names) == ["Preface", "Abbreviations", "Chapter I", "Chapter II", "Chapter IV", "Chapter V", "Chapter IX", "Chapter X"]
+    html = "<p>intro</p><h2>Le nom</h2><p>a</p><h2>Le verbe</h2><p>b</p>"
+    assert [p["title"] for p in split_page("Grammaire", html)] == ["Grammaire/Introduction", "Grammaire/Le nom", "Grammaire/Le verbe"]

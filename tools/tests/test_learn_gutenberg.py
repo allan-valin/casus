@@ -26,3 +26,23 @@ def test_italic_subheadings_split_a_long_section():
     s = sections_of(text, subheads=True)
     assert [x["title"] for x in s] == ["Nouns", "Declension", "Possessive suffixes"]
     assert all(x["chapter"] == "Nouns" for x in s) and "_Rule._" in s[1]["text"]
+
+
+def test_a_book_with_its_own_heading_pattern_skips_the_contents_and_front_matter():
+    from learn_gutenberg import sections_of
+    text = """LE PREMIER LIVRE
+
+  PREMIÈRE LEÇON. Être--Indicatif Présent                    17
+  DEUXIÈME LEÇON. Forme Négative                               18
+
+PREMIÈRE LEÇON
+
+I. ÉTUDE DE MOTS
+Je suis, tu es, il est. """ + "Phrase. " * 60 + """
+
+DEUXIÈME LEÇON
+
+Je ne suis pas. """ + "Phrase. " * 60 + "\n"
+    secs = sections_of(text, heading=r"[A-ZÈÉ]+ LEÇON\.?", min_chars=200)
+    assert [s["title"] for s in secs] == ["Première leçon", "Deuxième leçon"]
+    assert "Je suis" in secs[0]["text"] and "ÉTUDE DE MOTS" in secs[0]["text"]
