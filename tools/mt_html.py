@@ -118,6 +118,12 @@ def protect_script(text: str, src: str, inline: list) -> str:
     return rx.sub(sub, text)
 
 
+def crowded(text: str) -> bool:
+    """a run that is mostly placeholders (kanbun with a ruby on every character) is the studied text, not prose"""
+    n = len(PH.findall(text))
+    return n > 12 and n * 2 > len(re.findall(r"[^\W\d_]", PH.sub(" ", text)))
+
+
 def segments(html: str, src: str = "en") -> list:
     """the page as a list of pieces: {"raw": html kept as is} or a prose run {"text": with placeholders, "inline":
     [html of each placeholder], "translate": bool}"""
@@ -132,7 +138,7 @@ def segments(html: str, src: str = "en") -> list:
             return
         text = protect_script("".join(run), src, inline)
         plain = PH.sub(" ", text)
-        out.append({"text": text, "inline": inline, "translate": is_prose(plain, src)})
+        out.append({"text": text, "inline": inline, "translate": is_prose(plain, src) and not crowded(text)})
         run, inline = [], []
 
     in_table = 0

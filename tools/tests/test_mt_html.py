@@ -139,3 +139,11 @@ def test_short_lines_and_dialogue_in_the_explanation_language_are_prose():
     assert is_prose("Les consonnes", "fr") and is_prose("Par exemple :", "fr") and is_prose("avec contraction :", "fr")
     assert is_prose("John: Je suis John. Je suis professeur. Quel est ton nom?", "fr")
     assert not is_prose("puella", "en") and not is_prose("Corée", "fr")
+
+
+def test_a_run_that_is_mostly_examples_is_not_sent_to_the_model():
+    """kanbun with a ruby on every character is dozens of placeholders: text being studied, and it crashed the GPU"""
+    from mt_html import crowded
+    real = "[1]呂[2][3][4][5]翁[6][7][8][9]坐[10][77][11][12][13][14][15]其[16][17][18][19]傍[20][78][21][22]、[23][24][25]主[28][29]"
+    assert crowded(real)
+    assert not crowded("The particle [1] marks the topic, and [2] marks the subject of a sentence like [3] or [4].")
