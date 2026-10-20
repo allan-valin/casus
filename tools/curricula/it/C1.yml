@@ -1,0 +1,107 @@
+id: C1
+topics:
+
+- title: {en: Fine points of the subjunctive, pt: Sutilezas do subjuntivo}
+  lessons:
+  - id: it-c1-relative-subj
+    title: Cerco qualcuno che sappia…
+    meaning: {en: "subjunctive in relative clauses and after superlatives", pt: "subjuntivo em relativas e depois de superlativos"}
+    intro:
+      en: |
+        A relative clause about something sought, uncertain or unique takes the subjunctive: **Cerco una casa che abbia un giardino. È il libro più bello che abbia mai letto. Non c'è nessuno che lo sappia.**
+      pt: |
+        Uma relativa sobre algo procurado, incerto ou único pede o subjuntivo: **Cerco una casa che abbia un giardino** (que tenha). **È il libro più bello che abbia mai letto** (que já li). **Non c'è nessuno che lo sappia.**
+    examples:
+    - ["È la persona più gentile che io conosca.", "She is the kindest person I know.", "É a pessoa mais gentil que conheço.", "conosca"]
+    match: {seq: [{word: [più, unico, unica, primo, prima, ultimo, ultima, nessuno, qualcuno, qualcosa]}, {word: [che]}, {pos: verb, mood: subj}], near: 3, gap: 2}
+    pool: [abbia, ha, sia, è, conosca, conosco, sappia, sa]
+  - id: it-c1-indefinite
+    title: chiunque, qualunque, dovunque
+    meaning: {en: "-unque words with the subjunctive", pt: "palavras em -unque com subjuntivo"}
+    intro:
+      en: |
+        **chiunque** (whoever), **qualunque / qualsiasi** (whatever, any), **dovunque / ovunque** (wherever), **comunque** (however; also *anyway*): **Chiunque venga, digli di aspettare. Qualunque cosa tu faccia, fallo bene.**
+      pt: |
+        **chiunque** (quem quer que), **qualunque / qualsiasi** (qualquer), **dovunque / ovunque** (onde quer que), **comunque** (como quer que; também *de qualquer forma*): **Chiunque venga, digli di aspettare. Qualunque cosa tu faccia, fallo bene.**
+    examples:
+    - ["Qualunque cosa succeda, ti aiuterò.", "Whatever happens, I'll help you.", "Aconteça o que acontecer, vou te ajudar.", "Qualunque"]
+    match: {seq: [{word: [chiunque, qualunque, qualsiasi, dovunque, ovunque, comunque]}]}
+    pool: [chiunque, qualunque, qualsiasi, dovunque, comunque]
+  - id: it-c1-come-se
+    title: come se fosse
+    meaning: {en: "as if", pt: "como se"}
+    intro:
+      en: |
+        **come se** + imperfect or pluperfect subjunctive: **Parla come se sapesse tutto. Mi guardava come se non mi avesse mai visto.** **quasi** works the same in formal style.
+      pt: |
+        **come se** + imperfeito ou mais-que-perfeito do subjuntivo, como em português: **Parla come se sapesse tutto. Mi guardava come se non mi avesse mai visto.**
+    examples:
+    - ["Fa come se niente fosse.", "He acts as if nothing had happened.", "Ele age como se nada fosse.", "fosse"]
+    match: {seq: [{word: [come]}, {word: [se]}, {pos: verb, mood: subj}], near: 3, gap: 2}
+    pool: [fosse, è, sapesse, sa, avesse, ha, sia]
+  - id: it-c1-mica
+    title: mica, pure, magari
+    meaning: {en: "particles of speech", pt: "partículas da fala"}
+    intro:
+      en: |
+        **mica** strengthens a negation (**Non è mica facile!** — it's not easy at all); **pure** = also / go ahead (**Entri pure!**); **magari** = maybe, or "if only!" (**Magari!**); **mica** alone in a question = by any chance (**Hai mica visto Luca?**); **proprio** = really; **ormai** = by now.
+      pt: |
+        **mica** reforça a negação (**Non è mica facile!** — não é nada fácil); **pure** = também / à vontade (**Entri pure!**); **magari** = talvez, ou "tomara!" (**Magari!**); **mica** numa pergunta = por acaso (**Hai mica visto Luca?**); **proprio** = mesmo; **ormai** = a essa altura, já.
+    examples:
+    - ["Non è mica facile.", "It's not easy at all.", "Não é nada fácil.", "mica"]
+    - ["Magari fosse vero!", "If only it were true!", "Quem dera fosse verdade!", "Magari"]
+    match: {seq: [{word: [mica, pure, magari, proprio, ormai, appunto, mai]}]}
+    pool: [mica, pure, magari, proprio, ormai, appunto]
+
+- title: {en: Text and style, pt: Texto e estilo}
+  lessons:
+  - id: it-c1-dislocation
+    title: Il caffè, lo prendo amaro.
+    meaning: {en: "dislocation: topic first, pronoun repeats it", pt: "deslocamento: tópico na frente, pronome repete"}
+    intro:
+      en: |
+        Spoken Italian puts the topic first and repeats it with a pronoun: **Il caffè lo prendo amaro. Di questo ne parliamo dopo. A Maria le ho detto tutto.** Also on the right: **Lo conosci, Marco?** Cleft for focus: **È lui che ha vinto. Sono io che pago.**
+      pt: |
+        O italiano falado põe o tópico na frente e o repete com pronome: **Il caffè lo prendo amaro** (o café, eu tomo sem açúcar). **Di questo ne parliamo dopo. A Maria le ho detto tutto.** Também à direita: **Lo conosci, Marco?** Frase clivada: **È lui che ha vinto. Sono io che pago.**
+    examples:
+    - ["Il caffè lo prendo amaro.", "I take my coffee black.", "O café eu tomo sem açúcar.", "lo"]
+    - ["È lui che ha vinto.", "It's him who won.", "Foi ele que ganhou.", "lui"]
+    match: {seq: [{pos: noun, start: false}, {word: [lo, la, li, le, ne]}, {pos: verb}], gap: 1}
+    pool: [lo, la, li, le, ne, gli]
+  - id: it-c1-nominal
+    title: la realizzazione del progetto
+    meaning: {en: "nominal style", pt: "estilo nominal"}
+    intro:
+      en: |
+        Formal writing turns verbs into nouns: **realizzare → la realizzazione; decidere → la decisione; aumentare → l'aumento; chiudere → la chiusura**: **In seguito alla chiusura della fabbrica…** Suffixes **-zione, -mento, -tura, -enza**.
+      pt: |
+        A escrita formal transforma verbos em substantivos: **realizzare → la realizzazione; decidere → la decisione; aumentare → l'aumento; chiudere → la chiusura**: **In seguito alla chiusura della fabbrica…** Sufixos **-zione, -mento, -tura, -enza** (como *-ção, -mento, -tura, -ência*).
+    examples:
+    - ["La decisione è stata presa ieri.", "The decision was taken yesterday.", "A decisão foi tomada ontem.", "decisione"]
+    match: {seq: [{pos: noun, re: "(zione|mento|tura|enza|anza)$"}, {word: [del, dello, della, dei, degli, delle, di]}], gap: 0}
+  - id: it-c1-connectors
+    title: tuttavia, pertanto, nonostante ciò
+    meaning: {en: "formal connectors", pt: "conectores formais"}
+    intro:
+      en: |
+        **pertanto, dunque, di conseguenza** (therefore); **tuttavia, nondimeno, ciononostante** (nevertheless); **inoltre, per di più** (moreover); **in effetti** (indeed); **d'altronde / del resto** (after all); **ossia, ovvero** (that is); **qualora** + subjunctive (in case); **in quanto** (since, as).
+      pt: |
+        **pertanto, dunque, di conseguenza** (portanto); **tuttavia, nondimeno, ciononostante** (no entanto); **inoltre, per di più** (além disso); **in effetti** (de fato); **d'altronde / del resto** (afinal); **ossia, ovvero** (ou seja); **qualora** + subjuntivo (caso); **in quanto** (visto que).
+    examples:
+    - ["Qualora ci fossero problemi, chiamatemi.", "Should there be any problems, call me.", "Caso haja problemas, me liguem.", "Qualora"]
+    match: {seq: [{word: [pertanto, tuttavia, nondimeno, ciononostante, inoltre, qualora, ossia, ovvero, dunque, eppure]}]}
+    pool: [pertanto, tuttavia, inoltre, qualora, ossia, dunque, eppure]
+
+- title: {en: Word formation, pt: Formação de palavras}
+  lessons:
+  - id: it-c1-alterati
+    title: casetta, librone, ragazzaccio
+    meaning: {en: "diminutives, augmentatives, pejoratives", pt: "diminutivos, aumentativos, pejorativos"}
+    intro:
+      en: |
+        **-ino, -etto, -ello** (small, dear: gattino, casetta, alberello), **-one** (big: librone, ragazzone), **-accio** (bad: tempaccio, parolaccia), **-uccio** (small, sweet or shabby). Some are words of their own: **cavalletto** (easel), **lampone** (raspberry).
+      pt: |
+        **-ino, -etto, -ello** (pequeno, carinho: gattino, casetta, alberello), **-one** (grande: librone, ragazzone), **-accio** (ruim: tempaccio, parolaccia — palavrão), **-uccio**. Alguns viraram palavras próprias: **cavalletto** (cavalete), **lampone** (framboesa).
+    examples:
+    - ["Che tempaccio oggi!", "What awful weather today!", "Que tempo horrível hoje!", "tempaccio"]
+    match: {seq: [{pos: noun, re: "(in[oaie]|ett[oaie]|ell[oaie]|on[ei]|acci[oa]|acce)$"}], same: [number]}

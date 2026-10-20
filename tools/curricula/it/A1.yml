@@ -1,0 +1,175 @@
+id: A1
+topics:
+
+- title: {en: Articles and nouns, pt: Artigos e substantivos}
+  lessons:
+  - id: it-articles
+    title: il, lo, la, i, gli, le
+    meaning: {en: "the definite article", pt: "o artigo definido"}
+    intro:
+      en: |
+        Masculine **il** (il libro), **lo** before s + consonant, z, gn, ps, x, y (lo studente, lo zio), **l'** before a vowel (l'amico); plural **i** / **gli** (i libri, gli studenti, gli amici). Feminine **la**, **l'** before a vowel (la casa, l'amica), plural **le** (le case).
+      pt: |
+        Masculino **il** (il libro), **lo** antes de s + consoante, z, gn, ps, x, y (lo studente, lo zio), **l'** antes de vogal (l'amico); plural **i** / **gli** (i libri, gli studenti, gli amici). Feminino **la**, **l'** antes de vogal (la casa, l'amica), plural **le** (le case). O português só tem o/a/os/as; o italiano escolhe pela letra seguinte.
+    table:
+      head: {en: [" ", singular, plural], pt: [" ", singular, plural]}
+      rows:
+      - [{en: "masc.", pt: "masc."}, "il libro · lo zio · l'amico", "i libri · gli zii · gli amici"]
+      - [{en: "fem.", pt: "fem."}, "la casa · l'amica", "le case · le amiche"]
+    examples:
+    - [Il gatto dorme., The cat is sleeping., O gato está dormindo., Il]
+    - [Gli studenti studiano., The students study., Os estudantes estudam., Gli]
+    match: {seq: [{word: [il, lo, la, i, gli, le]}, {pos: noun}], gap: 0}
+    pool: [il, lo, la, i, gli, le]
+  - id: it-indef
+    title: un, uno, una, un'
+    meaning: {en: "the indefinite article", pt: "o artigo indefinido"}
+    intro:
+      en: |
+        **un** (un libro, un amico), **uno** where *lo* would be used (uno studente, uno zaino), **una** (una casa), **un'** before a vowel in the feminine (un'amica). No apostrophe in the masculine: **un amico**.
+      pt: |
+        **un** (un libro, un amico), **uno** onde se usaria *lo* (uno studente, uno zaino), **una** (una casa), **un'** antes de vogal no feminino (un'amica). Sem apóstrofo no masculino: **un amico**.
+    examples:
+    - [Ho un fratello., I have a brother., Tenho um irmão., un]
+    - [È una bella giornata., It's a beautiful day., É um dia bonito., una]
+    match: {seq: [{word: [un, uno, una, "un'"]}, {pos: [noun, adj]}], gap: 0}
+    pool: [un, uno, una, "un'"]
+  - id: it-plural
+    title: libro → libri, casa → case
+    meaning: {en: "the plural of nouns", pt: "o plural dos substantivos"}
+    intro:
+      en: |
+        **-o → -i** (libro, libri), **-a → -e** (casa, case), **-e → -i** (fiore, fiori). Masculine in **-a** → **-i** (problema, problemi). Unchanged: stressed final vowel (città), words ending in a consonant (film, bar). **-co/-go** often add *h* (amica → amiche, lago → laghi), but amico → amici.
+      pt: |
+        **-o → -i** (libro, libri), **-a → -e** (casa, case), **-e → -i** (fiore, fiori). Masculinos em **-a** → **-i** (problema, problemi). Não mudam: vogal final tônica (città), palavras terminadas em consoante (film, bar). **-co/-go** costumam ganhar *h* (amica → amiche, lago → laghi), mas amico → amici.
+    examples:
+    - [Ho due fratelli., I have two brothers., Tenho dois irmãos., fratelli]
+    - [Le case sono grandi., The houses are big., As casas são grandes., case]
+    match: {seq: [{pos: noun, number: pl}]}
+
+- title: {en: "Essere, avere and the present", pt: "Essere, avere e o presente"}
+  lessons:
+  - id: it-essere
+    title: sono, sei, è
+    meaning: {en: "essere, to be", pt: "essere, ser/estar"}
+    intro:
+      en: |
+        **sono, sei, è, siamo, siete, sono**. Italian uses **essere** for both *ser* and *estar* (with **stare** only in set uses: *Come stai?*). **C'è / ci sono** = *there is / there are*.
+      pt: |
+        **sono, sei, è, siamo, siete, sono**. O italiano usa **essere** para *ser* e *estar* (com **stare** só em usos fixos: *Come stai?*). **C'è / ci sono** = *há* (tem).
+    examples:
+    - [Sono brasiliano., I'm Brazilian., Sou brasileiro., Sono]
+    - ["Dove sei?", "Where are you?", "Onde você está?", sei]
+    match: {seq: [{word: [sono, sei, è, siamo, siete]}], gap: 0}
+    pool: [sono, sei, è, siamo, siete, ho, hai, ha]
+  - id: it-avere
+    title: ho, hai, ha
+    meaning: {en: "avere, to have", pt: "avere, ter"}
+    intro:
+      en: |
+        **ho, hai, ha, abbiamo, avete, hanno** (the *h* is silent). Also for age and feelings: **Ho vent'anni** (I'm twenty), **ho fame / sete / freddo / paura** (I'm hungry / thirsty / cold / afraid) — as in Portuguese *tenho fome*.
+      pt: |
+        **ho, hai, ha, abbiamo, avete, hanno** (o *h* não se pronuncia). Também para idade e sensações: **Ho vent'anni** (tenho vinte anos), **ho fame / sete / freddo / paura** — como *tenho fome* em português.
+    examples:
+    - [Ho fame., I'm hungry., Estou com fome., Ho]
+    - ["Quanti anni hai?", "How old are you?", "Quantos anos você tem?", hai]
+    match: {seq: [{word: [ho, hai, ha, abbiamo, avete, hanno]}], gap: 0}
+    pool: [ho, hai, ha, abbiamo, avete, hanno, sono, è]
+  - id: it-present
+    title: parlo, credo, dormo, finisco
+    meaning: {en: "the present: -are, -ere, -ire", pt: "o presente: -are, -ere, -ire"}
+    intro:
+      en: |
+        **-are** (parlare): parlo, parli, parla, parliamo, parlate, parlano. **-ere** (credere): credo, credi, crede, crediamo, credete, credono. **-ire** (dormire): dormo, dormi, dorme, dormiamo, dormite, dormono; many -ire verbs add **-isc-** (finire: finisco, finisci, finisce, finiamo, finite, finiscono). Stress: **pàrlano**, on the stem.
+      pt: |
+        **-are** (parlare): parlo, parli, parla, parliamo, parlate, parlano. **-ere** (credere): credo, credi, crede, crediamo, credete, credono. **-ire** (dormire): dormo, dormi, dorme, dormiamo, dormite, dormono; muitos verbos em -ire ganham **-isc-** (finire: finisco, finisci, finisce, finiamo, finite, finiscono). Acento: **pàrlano**, no radical.
+    examples:
+    - ["Parli italiano?", "Do you speak Italian?", "Você fala italiano?", Parli]
+    - [Finisco alle cinque., I finish at five., Termino às cinco., Finisco]
+    match: {seq: [{pos: verb, mood: ind, tense: pres, not: {lemma: "^(essere|avere)$"}}], same: [tense, mood]}
+
+- title: {en: Questions and negation, pt: Perguntas e negação}
+  lessons:
+  - id: it-non
+    title: non
+    meaning: {en: "negation", pt: "negação"}
+    intro:
+      en: |
+        **non** before the verb (and its clitics): **Non parlo inglese. Non lo so.** Double negatives are normal: **Non vedo niente / nessuno. Non vado mai.**
+      pt: |
+        **non** antes do verbo (e dos pronomes átonos): **Non parlo inglese. Non lo so.** Dupla negação é normal, como em português: **Non vedo niente / nessuno. Non vado mai.**
+    examples:
+    - [Non lo so., I don't know., Não sei., Non]
+    - [Non ho mai visto Roma., I've never seen Rome., Nunca vi Roma., mai]
+    match: {seq: [{word: [non]}, {word: [mai, niente, nulla, nessuno, più, ancora]}], near: 4, gap: 1}
+    pool: [mai, niente, nessuno, più, ancora, nulla]
+  - id: it-questions
+    title: chi, che cosa, dove, quando
+    meaning: {en: "question words", pt: "palavras interrogativas"}
+    intro:
+      en: |
+        **chi** (who), **che / cosa / che cosa** (what), **dove** (where), **quando** (when), **come** (how), **perché** (why — also *because*), **quanto/-a/-i/-e** (how much / many), **quale / quali** (which). Yes/no questions keep statement order; only the intonation rises.
+      pt: |
+        **chi** (quem), **che / cosa / che cosa** (o que), **dove** (onde), **quando**, **come** (como), **perché** (por que — e *porque*), **quanto/-a/-i/-e** (quanto), **quale / quali** (qual). Perguntas de sim/não mantêm a ordem da frase; só a entonação sobe.
+    examples:
+    - ["Dove abiti?", "Where do you live?", "Onde você mora?", Dove]
+    - ["Chi è quella ragazza?", "Who is that girl?", "Quem é aquela moça?", Chi]
+    match: {seq: [{word: [chi, che, cosa, dove, quando, come, perché, quanto, quanta, quanti, quante, quale, quali], start: true}]}
+    pool: [chi, cosa, dove, quando, come, perché, quanto, quale]
+
+- title: {en: Prepositions and possession, pt: Preposições e posse}
+  lessons:
+  - id: it-prep-art
+    title: del, al, nel, sul, dal
+    meaning: {en: "preposition + article", pt: "preposição + artigo"}
+    intro:
+      en: |
+        **di, a, da, in, su** merge with the article: **del, dello, della, dei, degli, delle**; **al, allo, alla, ai, agli, alle**; **dal…**; **nel…**; **sul…** (like Portuguese *do, ao, no*). **con** and **per** stay apart (con il).
+      pt: |
+        **di, a, da, in, su** se juntam com o artigo: **del, dello, della, dei, degli, delle**; **al, allo, alla, ai, agli, alle**; **dal…**; **nel…**; **sul…** (como *do, ao, no* em português). **con** e **per** ficam separados (con il).
+    examples:
+    - [Il libro è sul tavolo., The book is on the table., O livro está na mesa., sul]
+    - [Vado al mare., I'm going to the sea., Vou para o mar., al]
+    match: {seq: [{word: [del, dello, della, dei, degli, delle, al, allo, alla, ai, agli, alle, dal, dalla, dai, nel, nello, nella, nei, negli, nelle, sul, sulla, sui]}]}
+    pool: [del, della, al, alla, nel, nella, sul, sulla, dal, dalla]
+  - id: it-possessive
+    title: il mio, la mia
+    meaning: {en: "possessives with the article", pt: "possessivos com artigo"}
+    intro:
+      en: |
+        **il mio, la mia, i miei, le mie; il tuo…; il suo** (his / her / your formal); **il nostro, il vostro, il loro** (invariable). The article stays — **la mia casa** — but not with a single family member: **mia madre, mio fratello** (yet **la mia mamma, i miei fratelli, il loro padre**).
+      pt: |
+        **il mio, la mia, i miei, le mie; il tuo…; il suo** (dele / dela / do senhor); **il nostro, il vostro, il loro** (invariável). O artigo fica — **la mia casa** — mas não com um parente no singular: **mia madre, mio fratello** (porém **la mia mamma, i miei fratelli, il loro padre**).
+    examples:
+    - [Mia madre è medico., My mother is a doctor., Minha mãe é médica., Mia]
+    - [Questa è la mia macchina., This is my car., Este é o meu carro., mia]
+    match: {seq: [{word: [mio, mia, miei, mie, tuo, tua, tuoi, tue, suo, sua, suoi, sue, nostro, nostra, nostri, nostre, vostro, vostra, loro]}, {pos: noun}], gap: 0}
+    pool: [mio, mia, miei, mie, tuo, tua, suo, sua, nostro, nostra]
+
+- title: {en: Everyday basics, pt: O básico do dia a dia}
+  lessons:
+  - id: it-numbers
+    title: uno, due, tre…
+    meaning: {en: "numbers", pt: "números"}
+    intro:
+      en: |
+        uno, due, tre, quattro, cinque, sei, sette, otto, nove, dieci; undici, dodici… venti, ventuno, ventotto (drop the vowel before *uno/otto*), trenta… cento, mille, **duemila**.
+      pt: |
+        uno, due, tre, quattro, cinque, sei, sette, otto, nove, dieci; undici, dodici… venti, ventuno, ventotto (cai a vogal antes de *uno/otto*), trenta… cento, mille, **duemila**.
+    examples:
+    - [Ho tre figli., I have three children., Tenho três filhos., tre]
+    match: {seq: [{word: [due, tre, quattro, cinque, sei, sette, otto, nove, dieci, venti, trenta, cento, mille]}]}
+    pool: [due, tre, quattro, cinque, sei, sette, otto, nove, dieci]
+  - id: it-piacere
+    title: mi piace
+    meaning: {en: "liking: mi piace / mi piacciono", pt: "gostar: mi piace / mi piacciono"}
+    intro:
+      en: |
+        "I like" is said "it pleases me": **Mi piace la pizza. Mi piacciono i gatti.** The verb agrees with the thing liked; the person is indirect: **mi, ti, gli** (him), **le** (her), **ci, vi, gli** (them). **A Marco piace il calcio.**
+      pt: |
+        "Gostar" é "agradar a mim": **Mi piace la pizza. Mi piacciono i gatti.** O verbo concorda com o que se gosta; a pessoa é indireta: **mi, ti, gli** (a ele), **le** (a ela), **ci, vi, gli** (a eles). **A Marco piace il calcio.**
+    examples:
+    - [Mi piace la musica., I like music., Gosto de música., piace]
+    - ["Ti piacciono i gatti?", "Do you like cats?", "Você gosta de gatos?", piacciono]
+    match: {seq: [{word: [mi, ti, gli, le, ci, vi]}, {word: [piace, piacciono, piaceva, piacevano, è piaciuto, piacerebbe]}], gap: 1}
+    pool: [piace, piacciono, piaceva, piacevano, piacerebbe]

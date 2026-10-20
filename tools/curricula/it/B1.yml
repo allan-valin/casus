@@ -1,0 +1,174 @@
+id: B1
+topics:
+
+- title: {en: The subjunctive, pt: O congiuntivo}
+  lessons:
+  - id: it-cong-pres
+    title: che io parli, che sia
+    meaning: {en: "present subjunctive", pt: "presente do subjuntivo"}
+    intro:
+      en: |
+        After verbs of opinion, wish, doubt and feeling, and many conjunctions: **Penso che sia vero. Voglio che tu venga. Spero che vada bene.** Forms: **-are → -i** (che io/tu/lui parli, parliamo, parliate, parlino); **-ere/-ire → -a** (creda, dorma, finisca). Irregular: **sia, abbia, vada, faccia, possa, voglia, debba, venga, dica, sappia, stia, dia.** Italian uses it after *penso che* where Portuguese uses the indicative (*acho que é*).
+      pt: |
+        Depois de verbos de opinião, desejo, dúvida e sentimento, e de muitas conjunções: **Penso che sia vero. Voglio che tu venga. Spero che vada bene.** Formas: **-are → -i** (che io/tu/lui parli, parliamo, parliate, parlino); **-ere/-ire → -a** (creda, dorma, finisca). Irregulares: **sia, abbia, vada, faccia, possa, voglia, debba, venga, dica, sappia, stia, dia.** Atenção: depois de *penso che* o italiano usa o subjuntivo, onde o português usa o indicativo (*acho que é*).
+    examples:
+    - ["Penso che sia una buona idea.", "I think it's a good idea.", "Acho que é uma boa ideia.", "sia"]
+    - ["Voglio che tu venga con me.", "I want you to come with me.", "Quero que você venha comigo.", "venga"]
+    match: {seq: [{word: [che]}, {pos: verb, mood: subj, tense: pres}], near: 3, gap: 1}
+    pool: [sia, è, abbia, ha, vada, va, faccia, fa, possa, può, venga, viene]
+  - id: it-cong-conj
+    title: benché, affinché, prima che
+    meaning: {en: "conjunctions that take the subjunctive", pt: "conjunções que pedem o subjuntivo"}
+    intro:
+      en: |
+        **benché, sebbene, nonostante** (although), **affinché, perché** (so that), **prima che** (before), **a meno che (non)** (unless), **purché, a condizione che** (provided that), **senza che** (without): **Benché piova, esco. Te lo dico perché tu lo sappia.**
+      pt: |
+        **benché, sebbene, nonostante** (embora), **affinché, perché** (para que), **prima che** (antes que), **a meno che (non)** (a menos que), **purché, a condizione che** (desde que), **senza che** (sem que): **Benché piova, esco. Te lo dico perché tu lo sappia.**
+    examples:
+    - ["Benché sia tardi, resto ancora un po'.", "Although it's late, I'll stay a bit longer.", "Embora seja tarde, fico mais um pouco.", "Benché"]
+    - ["Torna prima che faccia buio.", "Come back before it gets dark.", "Volte antes que escureça.", "prima"]
+    match: {seq: [{word: [benché, sebbene, nonostante, affinché, purché, prima, senza, malgrado]}, {word: [che, sia, abbia, possa, faccia]}], near: 2, gap: 0}
+    pool: [benché, sebbene, affinché, purché, prima, senza, perché, quando]
+  - id: it-cong-imp
+    title: se avessi, che fosse
+    meaning: {en: "imperfect subjunctive", pt: "imperfeito do subjuntivo"}
+    intro:
+      en: |
+        **-assi, -assi, -asse, -assimo, -aste, -assero** (parlassi), **-essi** (credessi), **-issi** (dormissi). Irregular: **fossi, dessi, stessi, facessi, dicessi, bevessi**. After a past main verb (**Pensavo che fosse vero**) and in *se* clauses of unreal conditions (**Se avessi tempo…**). Exactly like Portuguese *se eu tivesse*.
+      pt: |
+        **-assi, -assi, -asse, -assimo, -aste, -assero** (parlassi), **-essi** (credessi), **-issi** (dormissi). Irregulares: **fossi, dessi, stessi, facessi, dicessi, bevessi**. Depois de um verbo principal no passado (**Pensavo che fosse vero**) e nas orações com *se* de condição irreal (**Se avessi tempo…**). Igual ao português *se eu tivesse*.
+    examples:
+    - ["Se avessi soldi, comprerei una casa.", "If I had money, I would buy a house.", "Se eu tivesse dinheiro, compraria uma casa.", "avessi"]
+    - ["Credevo che fosse italiano.", "I thought he was Italian.", "Eu achava que ele fosse italiano.", "fosse"]
+    match: {seq: [{pos: verb, mood: subj, tense: impf}], same: [person, number]}
+    pool: [fossi, fosse, avessi, avesse, facessi, facesse, potessi, volessi]
+
+- title: {en: Conditional and hypothesis, pt: Condicional e hipótese}
+  lessons:
+  - id: it-condizionale
+    title: parlerei, vorrei
+    meaning: {en: "the present conditional", pt: "o condicional (futuro do pretérito)"}
+    intro:
+      en: |
+        Future stem + **-ei, -esti, -ebbe, -emmo, -este, -ebbero**: parlerei, sarei, avrei, vorrei, potrei, dovrei, andrei, verrei. Polite requests (**Vorrei un caffè**), advice (**Dovresti riposare**), unreal results (**…comprerei una casa**), reported news (**Il ministro sarebbe malato** — "is said to be").
+      pt: |
+        Radical do futuro + **-ei, -esti, -ebbe, -emmo, -este, -ebbero**: parlerei, sarei, avrei, vorrei, potrei, dovrei, andrei, verrei. Pedidos educados (**Vorrei un caffè**), conselhos (**Dovresti riposare**), resultados irreais (**…comprerei una casa**), notícia não confirmada (**Il ministro sarebbe malato** — "estaria doente").
+    examples:
+    - ["Vorrei un bicchiere d'acqua.", "I'd like a glass of water.", "Eu queria um copo d'água.", "Vorrei"]
+    - ["Dovresti dormire di più.", "You should sleep more.", "Você deveria dormir mais.", "Dovresti"]
+    match: {seq: [{pos: verb, mood: cond}], same: [person, number]}
+    pool: [vorrei, potrei, dovrei, sarei, avrei, farei, andrei, vorresti, potresti, dovresti]
+  - id: it-periodo-ipotetico
+    title: se potessi, lo farei
+    meaning: {en: "if-sentences", pt: "o período hipotético"}
+    intro:
+      en: |
+        Real: **se** + present, present/future (**Se piove, resto a casa**). Possible: **se** + imperfect subjunctive, conditional (**Se piovesse, resterei a casa**). Unreal past: **se** + pluperfect subjunctive, past conditional (**Se avessi saputo, sarei venuto**). Never the conditional after *se*.
+      pt: |
+        Real: **se** + presente, presente/futuro (**Se piove, resto a casa**). Possível: **se** + imperfeito do subjuntivo, condicional (**Se piovesse, resterei a casa**). Irreal no passado: **se** + mais-que-perfeito do subjuntivo, condicional passado (**Se avessi saputo, sarei venuto**). Nunca condicional depois de *se*.
+    examples:
+    - ["Se fossi in te, non lo farei.", "If I were you, I wouldn't do it.", "Se eu fosse você, não faria isso.", "fossi"]
+    - ["Se avessi saputo, sarei venuto.", "If I had known, I would have come.", "Se eu soubesse, teria vindo.", "avessi"]
+    match: {seq: [{word: [se]}, {pos: verb, mood: subj}], near: 2, gap: 1}
+    pool: [fossi, fosse, avessi, avesse, potessi, sapessi, sono, ho]
+
+- title: {en: Relatives and the passive, pt: Relativos e passiva}
+  lessons:
+  - id: it-relatives
+    title: che, cui, il quale
+    meaning: {en: "relative pronouns", pt: "pronomes relativos"}
+    intro:
+      en: |
+        **che** = who / which / that, subject or direct object: **il libro che leggo**. After a preposition **cui**: **la ragazza con cui esco, la città in cui vivo**; **il cui** = whose (**l'autore il cui libro…**). **il quale / la quale / i quali / le quali** is a formal alternative. **chi** = he who (**Chi dorme non piglia pesci**).
+      pt: |
+        **che** = que, sujeito ou objeto: **il libro che leggo**. Depois de preposição **cui**: **la ragazza con cui esco, la città in cui vivo** (com quem, em que); **il cui** = cujo (**l'autore il cui libro…**). **il quale / la quale / i quali / le quali** é a alternativa formal (o qual). **chi** = quem (**Chi dorme non piglia pesci**).
+    examples:
+    - ["La città in cui vivo è piccola.", "The city I live in is small.", "A cidade em que moro é pequena.", "cui"]
+    - ["Il libro che mi hai dato è bello.", "The book you gave me is nice.", "O livro que você me deu é bonito.", "che"]
+    match: {seq: [{pos: prep}, {word: [cui]}], gap: 1}
+    pool: [cui, che, quale, chi, dove]
+  - id: it-passive
+    title: è stato scritto, viene fatto
+    meaning: {en: "the passive", pt: "a voz passiva"}
+    intro:
+      en: |
+        **essere** + participle (agreeing): **Il libro è stato scritto nel 1900.** **venire** instead of *essere* in simple tenses for an action: **La porta viene chiusa alle otto.** **andare** + participle = must be: **Il modulo va compilato.** Agent with **da**: **scritto da Dante**.
+      pt: |
+        **essere** + particípio (concordando): **Il libro è stato scritto nel 1900.** **venire** no lugar de *essere* nos tempos simples, para a ação: **La porta viene chiusa alle otto.** **andare** + particípio = deve ser: **Il modulo va compilato.** Agente com **da**: **scritto da Dante**.
+    examples:
+    - ["La Divina Commedia è stata scritta da Dante.", "The Divine Comedy was written by Dante.", "A Divina Comédia foi escrita por Dante.", "scritta"]
+    - ["La porta viene chiusa ogni sera.", "The door is shut every evening.", "A porta é fechada toda noite.", "viene"]
+    match:
+    - {seq: [{word: [viene, vengono, veniva, venivano, verrà]}, {pos: verb, re: "(at|ut|it|ss|tt|st)[oaie]$"}], gap: 0}
+    - {seq: [{word: [stato, stata, stati, state]}, {pos: verb, re: "(at|ut|it|ss|tt|st)[oaie]$"}, {word: [da, dal, dalla, dai, dagli, dalle]}], near: 1, gap: 0}
+    pool: [viene, vengono, veniva, stato, stata, stati, state]
+  - id: it-si-impersonale
+    title: si dice, si vendono
+    meaning: {en: "impersonal and passive si", pt: "o si impessoal e apassivador"}
+    intro:
+      en: |
+        **si** + 3rd person = one / people / is done: **In Italia si mangia bene. Qui si parla italiano. Si vendono case** (plural verb with a plural noun) — like Portuguese *vende-se / vendem-se* and *come-se bem*.
+      pt: |
+        **si** + 3ª pessoa = se (indeterminado ou apassivador): **In Italia si mangia bene. Qui si parla italiano. Si vendono case** (verbo no plural com nome no plural) — como *come-se bem* e *vendem-se casas*.
+    examples:
+    - ["Come si dice in italiano?", "How do you say it in Italian?", "Como se diz em italiano?", "si"]
+    - ["Qui si vendono biglietti.", "Tickets are sold here.", "Aqui se vendem ingressos.", "vendono"]
+    match: {seq: [{word: [si]}, {pos: verb, person: "3"}], gap: 0}
+    pool: [si, ci, ne, lo]
+
+- title: {en: Past narrative, pt: Narrativa no passado}
+  lessons:
+  - id: it-trapassato
+    title: avevo fatto, ero andato
+    meaning: {en: "the pluperfect", pt: "o mais-que-perfeito"}
+    intro:
+      en: |
+        Imperfect of **avere / essere** + participle: **avevo mangiato, ero partito.** An action before another past one: **Quando sono arrivato, il treno era già partito.**
+      pt: |
+        Imperfeito de **avere / essere** + particípio: **avevo mangiato, ero partito** (tinha comido, tinha partido). Ação anterior a outra no passado: **Quando sono arrivato, il treno era già partito.**
+    examples:
+    - ["Il film era già cominciato.", "The film had already started.", "O filme já tinha começado.", "era"]
+    - ["Non avevo mai visto il mare.", "I had never seen the sea.", "Eu nunca tinha visto o mar.", "avevo"]
+    match: {seq: [{word: [avevo, avevi, aveva, avevamo, avevate, avevano, ero, eri, era, eravamo, eravate, erano]}, {pos: verb, re: "(at|ut|it|tt|ss|st|rt)[oaie]$"}], near: 2, gap: 0}
+    pool: [avevo, aveva, avevamo, avevano, ero, era, eravamo, erano, ho, ha]
+  - id: it-passato-remoto
+    title: parlò, fu, ebbe
+    meaning: {en: "the passato remoto (recognition)", pt: "o passato remoto (reconhecer)"}
+    intro:
+      en: |
+        The past of history, novels and of southern speech: **parlai, parlasti, parlò, parlammo, parlaste, parlarono**; **credetti / credei, dormii**. Irregular: **fui, ebbi, feci, dissi, vidi, venni, presi, misi, scrissi, nacque, morì.** **Dante nacque a Firenze nel 1265.** In the north, the passato prossimo replaces it in speech.
+      pt: |
+        O passado da história, dos romances e da fala do sul: **parlai, parlasti, parlò, parlammo, parlaste, parlarono**; **credetti / credei, dormii**. Irregulares: **fui, ebbi, feci, dissi, vidi, venni, presi, misi, scrissi, nacque, morì.** **Dante nacque a Firenze nel 1265.** É o equivalente mais próximo do nosso pretérito perfeito simples (*falou*).
+    examples:
+    - ["Dante nacque a Firenze.", "Dante was born in Florence.", "Dante nasceu em Florença.", "nacque"]
+    - ["Fu un giorno felice.", "It was a happy day.", "Foi um dia feliz.", "Fu"]
+    match: {seq: [{pos: verb, tense: [past, aor], mood: ind}], same: [person, number]}
+    pool: [fu, ebbe, fece, disse, vide, venne, nacque, morì, è stato, ha fatto]
+
+- title: {en: Commands and connectors, pt: Imperativo e conectores}
+  lessons:
+  - id: it-imperativo
+    title: parla!, non parlare!, parli!
+    meaning: {en: "the imperative", pt: "o imperativo"}
+    intro:
+      en: |
+        tu: **parla, credi, dormi**; voi: **parlate**; noi: **parliamo**. Negative tu = **non** + infinitive: **Non parlare!** Formal Lei uses the subjunctive: **Parli piano, per favore. Venga!** Short forms: **va', da', fa', sta', di'** double the pronoun's consonant: **dimmi, fammi, vacci.**
+      pt: |
+        tu: **parla, credi, dormi**; voi: **parlate**; noi: **parliamo**. Negativo de tu = **non** + infinitivo: **Non parlare!** O formal (Lei) usa o subjuntivo: **Parli piano, per favore. Venga!** As formas curtas **va', da', fa', sta', di'** dobram a consoante do pronome: **dimmi, fammi, vacci.**
+    examples:
+    - ["Dimmi la verità!", "Tell me the truth!", "Me diga a verdade!", "Dimmi"]
+    - ["Non toccare!", "Don't touch!", "Não toque!", "toccare"]
+    match: {seq: [{pos: verb, mood: imp}], same: [person, number]}
+  - id: it-connectors
+    title: perciò, quindi, invece, però
+    meaning: {en: "linking words", pt: "conectores"}
+    intro:
+      en: |
+        **perciò, quindi, dunque** (so), **però, ma, tuttavia** (but, however), **invece** (instead, on the other hand), **anzi** (on the contrary, actually), **infatti** (indeed — not "in fact" as contrast!), **mentre** (while), **siccome** (since).
+      pt: |
+        **perciò, quindi, dunque** (então, portanto), **però, ma, tuttavia** (mas, porém), **invece** (em vez disso, por outro lado), **anzi** (pelo contrário, aliás), **infatti** (de fato — confirma, não contrasta), **mentre** (enquanto), **siccome** (como, já que).
+    examples:
+    - ["Pioveva, quindi sono rimasto a casa.", "It was raining, so I stayed home.", "Estava chovendo, então fiquei em casa.", "quindi"]
+    - ["Io bevo tè, lei invece beve caffè.", "I drink tea; she, on the other hand, drinks coffee.", "Eu bebo chá; ela, por outro lado, bebe café.", "invece"]
+    match: {seq: [{word: [perciò, quindi, dunque, però, tuttavia, invece, anzi, infatti, mentre, siccome, eppure]}]}
+    pool: [perciò, quindi, però, tuttavia, invece, anzi, infatti, mentre, siccome]

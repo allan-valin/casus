@@ -1,0 +1,140 @@
+id: B2
+topics:
+
+- title: {en: Compound tenses and the subjunctive, pt: Tempos compostos e subjuntivo}
+  lessons:
+  - id: it-cong-passato
+    title: che abbia fatto, che sia andato
+    meaning: {en: "past subjunctive", pt: "subjuntivo passado"}
+    intro:
+      en: |
+        **abbia / sia** + participle, for an earlier action under a present main verb: **Penso che abbia già mangiato. Mi dispiace che tu non sia venuto.**
+      pt: |
+        **abbia / sia** + particípio, para uma ação anterior com verbo principal no presente: **Penso che abbia già mangiato** (acho que ele já comeu). **Mi dispiace che tu non sia venuto** (pena que você não tenha vindo).
+    examples:
+    - ["Credo che sia già partito.", "I think he has already left.", "Acho que ele já partiu.", "sia"]
+    - ["È strano che non abbia telefonato.", "It's strange he hasn't called.", "É estranho que ele não tenha ligado.", "abbia"]
+    match: {seq: [{word: [che]}, {word: [abbia, abbiamo, abbiate, abbiano, sia, siamo, siate, siano]}, {pos: verb, re: "(at|ut|it|tt|ss|st|rt)[oaie]$"}], near: 2, gap: 1}
+    pool: [abbia, sia, ha, è, avesse, fosse, abbiano, siano]
+  - id: it-cong-trapassato
+    title: se avessi saputo
+    meaning: {en: "pluperfect subjunctive", pt: "mais-que-perfeito do subjuntivo"}
+    intro:
+      en: |
+        **avessi / fossi** + participle: unreal past conditions (**Se l'avessi saputo…**) and earlier actions under a past main verb (**Pensavo che fosse già arrivato**).
+      pt: |
+        **avessi / fossi** + particípio: condições irreais no passado (**Se l'avessi saputo…** — se eu tivesse sabido) e ações anteriores com verbo principal no passado (**Pensavo che fosse già arrivato**).
+    examples:
+    - ["Se fossi partito prima, non avrei perso il treno.", "If I had left earlier, I wouldn't have missed the train.", "Se eu tivesse saído antes, não teria perdido o trem.", "fossi"]
+    match: {seq: [{word: [avessi, avesse, avessimo, aveste, avessero, fossi, fosse, fossimo, foste, fossero]}, {pos: verb, re: "(at|ut|it|tt|ss|st|rt)[oaie]$"}], near: 1, gap: 0}
+    pool: [avessi, avesse, fossi, fosse, avrei, sarei, avevo, ero]
+  - id: it-cond-passato
+    title: avrei fatto, sarei venuto
+    meaning: {en: "past conditional; the future in the past", pt: "condicional passado; futuro do passado"}
+    intro:
+      en: |
+        **avrei / sarei** + participle: **Sarei venuto, ma ero malato.** Italian also uses it for a future seen from the past, where Portuguese and English use the simple conditional: **Ha detto che sarebbe venuto** (he said he would come).
+      pt: |
+        **avrei / sarei** + particípio: **Sarei venuto, ma ero malato** (eu teria vindo). O italiano também o usa para o futuro visto do passado, onde o português usa o condicional simples: **Ha detto che sarebbe venuto** (disse que viria).
+    examples:
+    - ["Ha detto che sarebbe arrivato alle otto.", "He said he would arrive at eight.", "Ele disse que chegaria às oito.", "sarebbe"]
+    - ["Avrei voluto aiutarti.", "I would have liked to help you.", "Eu teria gostado de te ajudar.", "Avrei"]
+    match: {seq: [{word: [avrei, avresti, avrebbe, avremmo, avreste, avrebbero, sarei, saresti, sarebbe, saremmo, sareste, sarebbero]}, {pos: verb, re: "(at|ut|it|tt|ss|st|rt)[oaie]$"}], near: 1, gap: 0}
+    pool: [avrei, avrebbe, sarei, sarebbe, avrò, sarò, avevo, ero]
+  - id: it-concordanza
+    title: Pensavo che venisse.
+    meaning: {en: "sequence of tenses", pt: "a concordância dos tempos"}
+    intro:
+      en: |
+        Main verb present → subjunctive present / past (**Penso che venga / sia venuto**); main verb past → imperfect / pluperfect subjunctive (**Pensavo che venisse / fosse venuto**), or past conditional for later (**Pensavo che sarebbe venuto**).
+      pt: |
+        Verbo principal no presente → subjuntivo presente / passado (**Penso che venga / sia venuto**); verbo principal no passado → imperfeito / mais-que-perfeito do subjuntivo (**Pensavo che venisse / fosse venuto**), ou condicional passado para depois (**Pensavo che sarebbe venuto**).
+    examples:
+    - ["Volevo che tu lo sapessi.", "I wanted you to know it.", "Eu queria que você soubesse.", "sapessi"]
+    match: {seq: [{pos: verb, tense: [impf, past], mood: ind}, {word: [che]}, {pos: verb, mood: subj, tense: [impf, past]}], near: 3, gap: 2}
+    pool: [fosse, sia, venisse, venga, sapessi, sappia, avesse, abbia]
+
+- title: {en: Implicit clauses, pt: Orações reduzidas}
+  lessons:
+  - id: it-gerundio
+    title: Studiando, ho imparato.
+    meaning: {en: "the gerund in place of a clause", pt: "o gerúndio no lugar de uma oração"}
+    intro:
+      en: |
+        The gerund (-ando / -endo) replaces a clause of time, cause, means or condition: **Tornando a casa, ho visto Marco** (while going home). **Studiando, impari** (by studying). Past gerund: **Avendo finito, sono uscito.** Its subject is normally that of the main verb.
+      pt: |
+        O gerúndio (-ando / -endo) substitui oração de tempo, causa, meio ou condição: **Tornando a casa, ho visto Marco** (voltando para casa). **Studiando, impari** (estudando, você aprende). Gerúndio passado: **Avendo finito, sono uscito** (tendo terminado).
+    examples:
+    - ["Sbagliando si impara.", "You learn by making mistakes.", "Errando se aprende.", "Sbagliando"]
+    - ["Avendo finito il lavoro, sono uscito.", "Having finished work, I went out.", "Tendo terminado o trabalho, saí.", "Avendo"]
+    match: {seq: [{re: "(ando|endo)$", start: true, pos: verb}]}
+  - id: it-infinito-passato
+    title: dopo aver mangiato
+    meaning: {en: "past infinitive", pt: "infinitivo passado"}
+    intro:
+      en: |
+        **aver(e) / esser(e)** + participle, after **dopo** and verbs like *ricordare, pensare*: **Dopo aver mangiato, siamo usciti. Dopo essere arrivata, mi ha chiamato.** **Mi ricordo di averlo visto.**
+      pt: |
+        **aver(e) / esser(e)** + particípio, depois de **dopo** e de verbos como *ricordare, pensare*: **Dopo aver mangiato, siamo usciti** (depois de ter comido). **Mi ricordo di averlo visto.**
+    examples:
+    - ["Dopo aver letto la lettera, ha pianto.", "After reading the letter, she cried.", "Depois de ler a carta, ela chorou.", "aver"]
+    match: {seq: [{word: [aver, avere, esser, essere, averlo, averla, averli, averle, averne]}, {pos: verb, re: "(at|ut|it|tt|ss|st|rt)[oaie]$"}], gap: 0}
+    pool: [aver, essere, avendo, essendo, avuto, stato]
+  - id: it-participio-presente
+    title: il mittente, una persona interessante
+    meaning: {en: "past and present participles as adjectives", pt: "particípios como adjetivos"}
+    intro:
+      en: |
+        Past participles shorten clauses (**Finita la lezione, siamo andati al bar** — the lesson over…) and act as adjectives (**un libro scritto bene**). Present participles in **-ante / -ente** are adjectives or nouns: **interessante, cantante, studente, presidente**.
+      pt: |
+        O particípio passado encurta orações (**Finita la lezione, siamo andati al bar** — terminada a aula…) e funciona como adjetivo (**un libro scritto bene**). O particípio presente em **-ante / -ente** vira adjetivo ou substantivo: **interessante, cantante, studente, presidente**.
+    examples:
+    - ["Finita la cena, siamo usciti.", "Dinner over, we went out.", "Terminado o jantar, saímos.", "Finita"]
+    match: {seq: [{pos: verb, re: "(at|ut|it|tt|ss|st|rt)[oaie]$", start: true}, {word: [la, il, lo, le, i, gli, "l'"]}], gap: 0}
+
+- title: {en: Causatives and verbs with particles, pt: Causativos e verbos pronominais}
+  lessons:
+  - id: it-fare-infinito
+    title: faccio riparare, lasciami parlare
+    meaning: {en: "fare / lasciare + infinitive", pt: "fare / lasciare + infinitivo"}
+    intro:
+      en: |
+        **fare + infinitive** = have something done or make someone do it: **Faccio riparare la macchina. Mi hai fatto ridere.** **farsi + infinitive**: **Mi sono fatto tagliare i capelli.** **lasciare + infinitive** = let: **Lasciami parlare!**
+      pt: |
+        **fare + infinitivo** = mandar fazer ou fazer alguém fazer: **Faccio riparare la macchina** (mando consertar o carro). **Mi hai fatto ridere.** **farsi + infinitivo**: **Mi sono fatto tagliare i capelli** (cortei o cabelo). **lasciare + infinitivo** = deixar: **Lasciami parlare!**
+    examples:
+    - ["Mi hai fatto ridere.", "You made me laugh.", "Você me fez rir.", "fatto"]
+    - ["Lasciami parlare!", "Let me speak!", "Me deixa falar!", "Lasciami"]
+    match: {seq: [{lemma: "^(fare|lasciare)$"}, {pos: verb, mood: inf}], gap: 0}
+    pool: [faccio, fa, fatto, fanno, lascio, lascia, lasciato]
+  - id: it-pronominal-verbs
+    title: andarsene, farcela, prendersela
+    meaning: {en: "verbs with ci and ne", pt: "verbos pronominais com ci e ne"}
+    intro:
+      en: |
+        Fixed verbs with particles, very common in speech: **andarsene** (to leave: *me ne vado*), **farcela** (to manage: *ce la faccio*), **prendersela** (to take offence: *non te la prendere*), **cavarsela** (to get by), **volerci** (to take time: *ci vuole un'ora*), **metterci** (to spend time: *ci metto dieci minuti*), **fregarsene** (not to care).
+      pt: |
+        Verbos fixos com partículas, muito comuns na fala: **andarsene** (ir embora: *me ne vado*), **farcela** (conseguir: *ce la faccio*), **prendersela** (ofender-se: *non te la prendere*), **cavarsela** (se virar), **volerci** (levar tempo: *ci vuole un'ora*), **metterci** (demorar: *ci metto dieci minuti*), **fregarsene** (não ligar).
+    examples:
+    - ["Ce la faccio da solo.", "I can manage on my own.", "Eu consigo sozinho.", "Ce"]
+    - ["Ci vuole un'ora.", "It takes an hour.", "Leva uma hora.", "vuole"]
+    match: {seq: [{word: [ce, ne, me, te, se, ci]}, {word: [la, ne, vuole, vogliono, metto, mette, faccio, fa, vado, va, frega]}], gap: 0}
+    pool: [ce, me, te, se, ne, ci]
+
+- title: {en: Register, pt: Registro}
+  lessons:
+  - id: it-lei
+    title: Lei, Le, La
+    meaning: {en: "formal address", pt: "tratamento formal"}
+    intro:
+      en: |
+        Formal *you* is **Lei** with 3rd-person verbs, its pronouns often capitalised in writing: **Come sta? La ringrazio. Le posso offrire un caffè?** Plural formal is **voi** today (**Loro** is very formal). Adjectives agree with the real person: **Lei è stanco, signor Rossi?**
+      pt: |
+        O *senhor / a senhora* é **Lei** com verbo na 3ª pessoa, pronomes muitas vezes com maiúscula na escrita: **Come sta? La ringrazio. Le posso offrire un caffè?** O plural formal hoje é **voi** (**Loro** é formalíssimo). O adjetivo concorda com a pessoa real: **Lei è stanco, signor Rossi?**
+    examples:
+    - ["Come sta, signora?", "How are you, madam?", "Como vai a senhora?", "sta"]
+    - ["La ringrazio molto.", "Thank you very much.", "Muito obrigado ao senhor.", "La"]
+    match:
+    - {seq: [{word: [la, le]}, {word: [ringrazio, prego, chiedo, disturbo, saluto, aspetto, auguro, consiglio]}], gap: 0}
+    - {seq: [{word: [sta, vuole, desidera, preferisce, scusi, senta, venga, prego]}, {word: [signora, signore, signor, dottore, dottoressa, professore, professoressa]}], near: 3, gap: 0}
+    pool: [sta, stai, vuole, vuoi, scusi, scusa, senta, senti, la, ti]

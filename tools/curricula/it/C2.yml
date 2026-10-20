@@ -1,0 +1,68 @@
+id: C2
+topics:
+
+- title: {en: Literary and formal Italian, pt: Italiano literário e formal}
+  lessons:
+  - id: it-c2-remoto-letterario
+    title: andò, vennero, ebbero
+    meaning: {en: "the passato remoto in narrative, all persons", pt: "o passato remoto na narrativa, todas as pessoas"}
+    intro:
+      en: |
+        Novels and history write the passato remoto throughout: **-ai, -asti, -ò, -ammo, -aste, -arono; -ei/-etti, -esti, -é/-ette, -emmo, -este, -erono/-ettero; -ii, -isti, -ì, -immo, -iste, -irono.** Irregulars follow 1-3-3 (**presi, prendesti, prese, prendemmo, prendeste, presero**). Its compound, the trapassato remoto (**ebbe finito**), only after *quando, appena, dopo che*.
+      pt: |
+        Romances e livros de história usam o passato remoto em tudo: **-ai, -asti, -ò, -ammo, -aste, -arono; -ei/-etti, -esti, -é/-ette, -emmo, -este, -erono/-ettero; -ii, -isti, -ì, -immo, -iste, -irono.** Os irregulares seguem 1-3-3 (**presi, prendesti, prese, prendemmo, prendeste, presero**). O composto, o trapassato remoto (**ebbe finito**), só depois de *quando, appena, dopo che*.
+    examples:
+    - ["Appena ebbe finito, se ne andò.", "As soon as he had finished, he left.", "Assim que terminou, foi embora.", "andò"]
+    - ["Vennero in molti alla festa.", "Many came to the party.", "Muitos vieram à festa.", "Vennero"]
+    match: {seq: [{pos: verb, re: "(ò|ì|é|arono|erono|irono|ettero|ssero|sero|nnero|ssi|ebbe|ebbero)$", tense: [past, aor]}], same: [person, number]}
+  - id: it-c2-bureaucratic
+    title: si prega di, è fatto divieto
+    meaning: {en: "bureaucratic Italian", pt: "o italiano burocrático"}
+    intro:
+      en: |
+        Official style: **si prega di** + infinitive (please…), **è fatto divieto di** (it is forbidden to), **il sottoscritto** (the undersigned), **in allegato** (attached), **previa autorizzazione** (subject to authorisation), **ai sensi dell'articolo 3** (under article 3), **entro e non oltre** (no later than), **in merito a** (regarding).
+      pt: |
+        Estilo oficial: **si prega di** + infinitivo (pede-se que…), **è fatto divieto di** (é proibido), **il sottoscritto** (o abaixo-assinado), **in allegato** (em anexo), **previa autorizzazione** (mediante autorização), **ai sensi dell'articolo 3** (nos termos do art. 3), **entro e non oltre** (até no máximo), **in merito a** (a respeito de).
+    examples:
+    - ["Si prega di non fumare.", "Please do not smoke.", "Pede-se não fumar.", "prega"]
+    match: {seq: [{word: [prega, divieto, sottoscritto, allegato, previa, sensi, merito, oltre]}]}
+    pool: [prega, divieto, sottoscritto, allegato, previa, sensi, merito]
+  - id: it-c2-participle-absolute
+    title: Detto questo, …
+    meaning: {en: "absolute participle and gerund", pt: "particípio e gerúndio absolutos"}
+    intro:
+      en: |
+        Formal Italian packs a whole clause into a participle or gerund with its own subject: **Detto questo, se ne andò. Partiti gli ospiti, si mise a dormire. Essendo il treno in ritardo, prendemmo un taxi.**
+      pt: |
+        O italiano formal condensa uma oração inteira num particípio ou gerúndio com sujeito próprio: **Detto questo, se ne andò** (dito isto). **Partiti gli ospiti, si mise a dormire** (partidos os convidados). **Essendo il treno in ritardo, prendemmo un taxi.**
+    examples:
+    - ["Detto questo, possiamo cominciare.", "That said, we can begin.", "Dito isso, podemos começar.", "Detto"]
+    match: {seq: [{word: [detto, fatto, finito, finita, visto, considerato, dato, data, essendo, avendo], start: true}]}
+    pool: [detto, fatto, finito, visto, considerato, dato, essendo, avendo]
+
+- title: {en: Variety, pt: Variação}
+  lessons:
+  - id: it-c2-regional
+    title: tipo, cioè, boh
+    meaning: {en: "spoken and regional Italian", pt: "italiano falado e regional"}
+    intro:
+      en: |
+        Speech fillers: **cioè** (I mean), **tipo** (like), **boh** (dunno), **dai** (come on), **mah** (well…), **figurati** (don't mention it / as if!), **magari**. Regional: in the north *passato prossimo* only, in the south *passato remoto* even for today; **tenere** for *avere* in the south (*tengo fame*), **'sto / 'sta** for *questo / questa* in Rome.
+      pt: |
+        Marcadores da fala: **cioè** (quer dizer), **tipo** (tipo), **boh** (sei lá), **dai** (vai!, para!), **mah** (sei não…), **figurati** (imagina! / até parece!), **magari**. Regionais: no norte só *passato prossimo*, no sul *passato remoto* até para hoje; **tenere** por *avere* no sul (*tengo fame*), **'sto / 'sta** por *questo / questa* em Roma.
+    examples:
+    - ["Grazie! — Figurati!", "Thanks! — Don't mention it!", "Obrigado! — Imagina!", "Figurati"]
+    match: {seq: [{word: [cioè, tipo, boh, dai, mah, figurati, figuriamoci, beh, insomma]}]}
+    pool: [cioè, tipo, boh, dai, mah, figurati, beh, insomma]
+  - id: it-c2-false-friends
+    title: burro, caldo, guardare
+    meaning: {en: "false friends for Portuguese speakers", pt: "falsos amigos para quem fala português"}
+    intro:
+      en: |
+        **burro** = butter (not donkey), **caldo** = hot (not broth), **guardare** = to look (not to keep), **salire** = to go up (not to go out), **squisito** = delicious, **lampada** = lamp/bulb, **morbido** = soft, **fermare** = to stop, **stanza** = room, **parenti** = relatives (not parents: *genitori*), **calzone** = trouser leg, **pronto** = hello! on the phone.
+      pt: |
+        **burro** = manteiga (não *asno*), **caldo** = quente (não *caldo*), **guardare** = olhar (não *guardar*), **salire** = subir (não *sair*), **squisito** = delicioso (não *esquisito*), **lampada** = lâmpada/abajur, **morbido** = macio, **fermare** = parar, **stanza** = quarto/sala, **parenti** = parentes (pais = *genitori*), **pronto** = alô ao telefone.
+    examples:
+    - ["Il pane con il burro è squisito.", "Bread with butter is delicious.", "Pão com manteiga é delicioso.", "burro"]
+    match: {seq: [{word: [burro, caldo, calda, guardare, guarda, salire, salgo, sale, squisito, squisita, morbido, morbida, fermare, ferma, stanza, parenti, genitori]}]}
+    pool: [burro, caldo, guarda, salire, squisito, morbido, ferma, stanza, parenti, genitori]

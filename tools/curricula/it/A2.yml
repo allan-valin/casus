@@ -1,0 +1,170 @@
+id: A2
+topics:
+
+- title: {en: The past, pt: O passado}
+  lessons:
+  - id: it-passato-prossimo
+    title: ho parlato, sono andato
+    meaning: {en: "the passato prossimo", pt: "o passato prossimo"}
+    intro:
+      en: |
+        The everyday past: **avere / essere** + past participle (**-ato, -uto, -ito**): **Ho mangiato. Abbiamo visto un film.** Verbs of motion and change, and reflexives, take **essere**, and the participle agrees: **Sono andata a Roma. Siamo arrivati. Mi sono svegliato.** Where Portuguese says *comi*, Italian usually says **ho mangiato**.
+      pt: |
+        O passado do dia a dia: **avere / essere** + particípio (**-ato, -uto, -ito**): **Ho mangiato. Abbiamo visto un film.** Verbos de movimento e mudança, e os reflexivos, usam **essere**, e o particípio concorda: **Sono andata a Roma. Siamo arrivati. Mi sono svegliato.** Onde o português diz *comi*, o italiano em geral diz **ho mangiato**.
+    examples:
+    - ["Ieri ho mangiato la pizza.", "Yesterday I ate pizza.", "Ontem comi pizza.", "mangiato"]
+    - ["Maria è partita stamattina.", "Maria left this morning.", "Maria partiu hoje de manhã.", "partita"]
+    match: {seq: [{word: [ho, hai, ha, abbiamo, avete, hanno, sono, sei, è, siamo, siete]}, {pos: verb, re: "(at|ut|it)[oaie]$"}], near: 1, gap: 0}
+    pool: [ho, hai, ha, abbiamo, avete, hanno, sono, sei, è, siamo, siete]
+  - id: it-participles
+    title: fatto, detto, visto, preso
+    meaning: {en: "irregular past participles", pt: "particípios irregulares"}
+    intro:
+      en: |
+        **fare → fatto, dire → detto, vedere → visto, prendere → preso, mettere → messo, scrivere → scritto, leggere → letto, aprire → aperto, venire → venuto, essere → stato, nascere → nato, morire → morto, rimanere → rimasto, scegliere → scelto, chiedere → chiesto, rispondere → risposto.**
+      pt: |
+        **fare → fatto, dire → detto, vedere → visto, prendere → preso, mettere → messo, scrivere → scritto, leggere → letto, aprire → aperto, venire → venuto, essere → stato, nascere → nato, morire → morto, rimanere → rimasto, scegliere → scelto, chiedere → chiesto, rispondere → risposto.**
+    examples:
+    - ["Che cosa hai detto?", "What did you say?", "O que você disse?", "detto"]
+    - ["Ho letto quel libro.", "I've read that book.", "Li aquele livro.", "letto"]
+    match: {seq: [{word: [fatto, fatta, detto, visto, vista, preso, presa, messo, scritto, letto, aperto, venuto, venuta, stato, stata, nato, nata, morto, rimasto, scelto, chiesto, risposto]}]}
+    pool: [fatto, detto, visto, preso, messo, scritto, letto, aperto, venuto, stato, chiesto, risposto]
+  - id: it-imperfetto
+    title: parlavo, ero, avevo
+    meaning: {en: "the imperfetto", pt: "o imperfeito"}
+    intro:
+      en: |
+        Background, habits, descriptions in the past: **-avo, -avi, -ava, -avamo, -avate, -avano** (parlavo), **-evo** (credevo), **-ivo** (dormivo). **essere: ero, eri, era, eravamo, eravate, erano.** **Quando ero piccolo, giocavo sempre.** Used just as the Portuguese *imperfeito*.
+      pt: |
+        Fundo, hábitos, descrições no passado: **-avo, -avi, -ava, -avamo, -avate, -avano** (parlavo), **-evo** (credevo), **-ivo** (dormivo). **essere: ero, eri, era, eravamo, eravate, erano.** **Quando ero piccolo, giocavo sempre.** Usa-se como o imperfeito português.
+    examples:
+    - ["Quando ero bambino, abitavo a Napoli.", "When I was a child, I lived in Naples.", "Quando eu era criança, morava em Nápoles.", "abitavo"]
+    - ["Faceva freddo.", "It was cold.", "Fazia frio.", "Faceva"]
+    match: {seq: [{pos: verb, tense: impf, mood: ind}], same: [person, number]}
+
+- title: {en: Pronouns, pt: Pronomes}
+  lessons:
+  - id: it-direct-pron
+    title: lo, la, li, le
+    meaning: {en: "direct object pronouns", pt: "pronomes objeto direto"}
+    intro:
+      en: |
+        **mi, ti, lo, la, ci, vi, li, le** before the conjugated verb: **Lo conosco. La vedo domani.** With the passato prossimo the participle agrees with lo/la/li/le: **L'ho vista. Li ho comprati.** Attached to infinitives and commands: **Voglio vederlo. Mangialo!**
+      pt: |
+        **mi, ti, lo, la, ci, vi, li, le** antes do verbo conjugado: **Lo conosco. La vedo domani.** No passato prossimo o particípio concorda com lo/la/li/le: **L'ho vista. Li ho comprati.** Presos ao infinitivo e ao imperativo: **Voglio vederlo. Mangialo!** (No Brasil diríamos *conheço ele*; em italiano o pronome vem antes.)
+    examples:
+    - ["Lo conosco bene.", "I know him well.", "Eu o conheço bem.", "Lo"]
+    - ["Li ho comprati ieri.", "I bought them yesterday.", "Comprei-os ontem.", "Li"]
+    match: {seq: [{word: [lo, la, li, le, mi, ti, ci, vi]}, {pos: verb}], gap: 0}
+    pool: [lo, la, li, le, gli, mi, ti, ci]
+  - id: it-indirect-pron
+    title: mi, ti, gli, le
+    meaning: {en: "indirect object pronouns", pt: "pronomes objeto indireto"}
+    intro:
+      en: |
+        **mi, ti, gli** (to him; colloquially also to them), **le** (to her; **Le** to you, formal), **ci, vi, gli / loro**. **Gli scrivo una lettera. Le telefono domani.** Combined with lo/la: **me lo, te la, glielo** (to him/her: **Glielo do.**).
+      pt: |
+        **mi, ti, gli** (a ele; na fala também a eles), **le** (a ela; **Le** ao senhor/à senhora), **ci, vi, gli / loro**. **Gli scrivo una lettera. Le telefono domani.** Com lo/la: **me lo, te la, glielo** (a ele/ela: **Glielo do.**).
+    examples:
+    - ["Gli ho detto la verità.", "I told him the truth.", "Eu disse a verdade a ele.", "Gli"]
+    - ["Te lo prometto.", "I promise you.", "Eu te prometo.", "Te"]
+    match: {seq: [{word: [gli, glielo, gliela, glieli, gliele, me, te, ce, ve]}, {pos: verb}], near: 1, gap: 0}
+    pool: [gli, le, mi, ti, ci, glielo, me, te]
+  - id: it-ci-ne
+    title: ci, ne
+    meaning: {en: "the particles ci (there) and ne (of it)", pt: "as partículas ci (lá) e ne (disso)"}
+    intro:
+      en: |
+        **ci** = there / about it: **Ci vado domani. Ci penso io.** **ne** = of it / some / from there: **Quanti ne vuoi? Ne voglio due. Non ne so niente. Me ne vado.** Portuguese has nothing similar in speech; think *"disso", "lá"*.
+      pt: |
+        **ci** = lá / nisso: **Ci vado domani. Ci penso io.** **ne** = disso / alguns / de lá: **Quanti ne vuoi? Ne voglio due. Non ne so niente. Me ne vado.** O português falado não tem algo assim; pense em *"disso", "lá"*.
+    examples:
+    - ["Ci vado domani.", "I'm going there tomorrow.", "Vou lá amanhã.", "Ci"]
+    - ["Ne voglio tre.", "I want three of them.", "Quero três.", "Ne"]
+    match: {seq: [{word: [ci, ne, "c'", "n'"]}, {pos: verb}], gap: 0}
+    pool: [ci, ne, lo, la, vi, si]
+  - id: it-reflexive
+    title: mi alzo, ti chiami
+    meaning: {en: "reflexive verbs", pt: "verbos reflexivos"}
+    intro:
+      en: |
+        **mi, ti, si, ci, vi, si** + verb: **mi chiamo, ti alzi, si lava, ci vediamo**. Many everyday verbs: alzarsi, svegliarsi, vestirsi, divertirsi, sentirsi, ricordarsi. Past with essere: **Mi sono divertita.**
+      pt: |
+        **mi, ti, si, ci, vi, si** + verbo: **mi chiamo, ti alzi, si lava, ci vediamo**. Muitos verbos do dia a dia: alzarsi, svegliarsi, vestirsi, divertirsi, sentirsi, ricordarsi. Passado com essere: **Mi sono divertita.**
+    examples:
+    - ["Come ti chiami?", "What's your name?", "Como você se chama?", "ti"]
+    - ["Mi alzo alle sette.", "I get up at seven.", "Eu me levanto às sete.", "Mi"]
+    match: {seq: [{word: [mi, ti, si, ci, vi]}, {lemma: "(arsi|ersi|irsi)$"}], gap: 0}
+    pool: [mi, ti, si, ci, vi]
+
+- title: {en: Comparing and the future, pt: Comparação e futuro}
+  lessons:
+  - id: it-comparison
+    title: più … di, meno … che, il più
+    meaning: {en: "comparatives and superlatives", pt: "comparativos e superlativos"}
+    intro:
+      en: |
+        **più / meno … di** before a noun or pronoun: **Marco è più alto di Luca.** **che** before adjectives, verbs, prepositions: **più bello che utile**. Superlative: **il più alto**; absolute **-issimo** (bellissimo). Irregular: **migliore, peggiore, maggiore, minore; meglio, peggio**.
+      pt: |
+        **più / meno … di** antes de substantivo ou pronome: **Marco è più alto di Luca** (mais alto *que* Luca). **che** antes de adjetivos, verbos, preposições: **più bello che utile**. Superlativo: **il più alto**; absoluto **-issimo** (bellissimo). Irregulares: **migliore, peggiore, maggiore, minore; meglio, peggio**.
+    examples:
+    - ["Roma è più grande di Firenze.", "Rome is bigger than Florence.", "Roma é maior que Florença.", "più"]
+    - ["È bellissimo!", "It's very beautiful!", "É lindíssimo!", "bellissimo"]
+    match: {seq: [{word: [più, meno, migliore, migliori, peggiore, meglio, peggio, maggiore, minore]}]}
+    pool: [più, meno, meglio, peggio, migliore, peggiore]
+  - id: it-futuro
+    title: parlerò, sarò, avrò
+    meaning: {en: "the simple future", pt: "o futuro simples"}
+    intro:
+      en: |
+        **-erò, -erai, -erà, -eremo, -erete, -eranno** (parlare → parlerò; credere → crederò; dormire → dormirò). Irregular stems: **sarò, avrò, andrò, farò, potrò, vorrò, dovrò, verrò, vedrò, berrò**. Also for guesses: **Saranno le tre** (it must be about three).
+      pt: |
+        **-erò, -erai, -erà, -eremo, -erete, -eranno** (parlare → parlerò; credere → crederò; dormire → dormirò). Radicais irregulares: **sarò, avrò, andrò, farò, potrò, vorrò, dovrò, verrò, vedrò, berrò**. Também para suposições: **Saranno le tre** (devem ser umas três).
+    examples:
+    - ["Domani pioverà.", "It will rain tomorrow.", "Amanhã vai chover.", "pioverà"]
+    - ["Sarò a casa alle otto.", "I'll be home at eight.", "Estarei em casa às oito.", "Sarò"]
+    match: {seq: [{pos: verb, tense: fut, mood: ind}], same: [person, number]}
+  - id: it-stare-gerund
+    title: sto parlando, stare per
+    meaning: {en: "stare + gerund; stare per", pt: "stare + gerúndio; stare per"}
+    intro:
+      en: |
+        **stare + gerund** (-ando, -endo) for an action in progress: **Sto mangiando. Che cosa stai facendo?** **stare per** + infinitive = about to: **Sto per uscire.** Less used than the Brazilian *estou comendo*: Italian often says just **mangio**.
+      pt: |
+        **stare + gerúndio** (-ando, -endo) para ação em andamento: **Sto mangiando. Che cosa stai facendo?** **stare per** + infinitivo = estar prestes a: **Sto per uscire.** Menos usado que o *estou comendo* brasileiro: o italiano muitas vezes diz só **mangio**.
+    examples:
+    - ["Sto leggendo un libro.", "I'm reading a book.", "Estou lendo um livro.", "Sto"]
+    - ["Stavo per uscire.", "I was about to go out.", "Eu estava para sair.", "Stavo"]
+    match: {seq: [{word: [sto, stai, sta, stiamo, state, stanno, stavo, stavi, stava, stavamo, stavano]}, {re: "(ando|endo)$"}], gap: 0}
+    pool: [sto, stai, sta, stiamo, stanno, stavo, stava]
+
+- title: {en: Modal verbs and time, pt: Verbos modais e tempo}
+  lessons:
+  - id: it-modals
+    title: posso, voglio, devo
+    meaning: {en: "potere, volere, dovere", pt: "potere, volere, dovere"}
+    intro:
+      en: |
+        **potere**: posso, puoi, può, possiamo, potete, possono. **volere**: voglio, vuoi, vuole, vogliamo, volete, vogliono. **dovere**: devo, devi, deve, dobbiamo, dovete, devono. **sapere** (to know how): so, sai, sa… **So nuotare.** Plus the bare infinitive: **Posso entrare?**
+      pt: |
+        **potere**: posso, puoi, può, possiamo, potete, possono. **volere**: voglio, vuoi, vuole, vogliamo, volete, vogliono. **dovere**: devo, devi, deve, dobbiamo, dovete, devono. **sapere** (saber fazer): so, sai, sa… **So nuotare.** Mais o infinitivo: **Posso entrare?**
+    examples:
+    - ["Posso entrare?", "May I come in?", "Posso entrar?", "Posso"]
+    - ["Devo andare.", "I have to go.", "Preciso ir.", "Devo"]
+    match: {seq: [{word: [posso, puoi, può, possiamo, potete, possono, voglio, vuoi, vuole, vogliamo, volete, vogliono, devo, devi, deve, dobbiamo, dovete, devono]}, {pos: verb}], near: 2, gap: 0}
+    pool: [posso, puoi, può, voglio, vuoi, vuole, devo, devi, deve]
+  - id: it-time-prep
+    title: da, fa, fra
+    meaning: {en: "for, ago, in (time)", pt: "há, atrás, daqui a"}
+    intro:
+      en: |
+        **da** + present = since / for (still going): **Studio l'italiano da due anni.** **fa** = ago: **due anni fa.** **fra / tra** = in (future): **fra una settimana.**
+      pt: |
+        **da** + presente = desde / há (ainda acontece): **Studio l'italiano da due anni** (estudo italiano há dois anos). **fa** = atrás: **due anni fa.** **fra / tra** = daqui a: **fra una settimana.**
+    examples:
+    - ["Abito qui da cinque anni.", "I've lived here for five years.", "Moro aqui há cinco anos.", "da"]
+    - ["Sono arrivato due ore fa.", "I arrived two hours ago.", "Cheguei há duas horas.", "fa"]
+    match:
+    - {seq: [{word: [anni, mesi, giorni, settimane, ore, minuti, tempo, anno, mese, giorno, settimana, ora]}, {word: [fa]}], gap: 1}
+    - {seq: [{word: [da, fra, tra]}, {word: [due, tre, quattro, cinque, sei, dieci, molto, poco, un, una, qualche, pochi, pochissimo]}], gap: 0}
+    pool: [da, fa, fra, tra, per, in]
