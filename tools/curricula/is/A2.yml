@@ -1,0 +1,88 @@
+id: A2
+topics:
+
+- title: {en: The other cases, pt: Os outros casos}
+  lessons:
+  - id: is-dative
+    title: með honum, frá Íslandi
+    meaning: {en: "the dative", pt: "o dativo"}
+    intro:
+      en: |
+        The dative follows **frá** (from), **hjá** (at someone's), **af** (of, off), **úr** (out of), **að** (towards), **móti** (against), and **í, á** for location (**í bænum** in town); **með** takes the dative for company (**með honum**). Many verbs take a dative object: **hjálpa** (help), **þakka**, **gefa** (indirect object): **Hún gaf mér bók.** Endings: masc./neut. **-i** (**hesti, barni**), fem. often **-u** (**konu**), plural always **-um**.
+      pt: |
+        O dativo vem depois de **frá** (de), **hjá** (na casa de), **af** (de, fora de), **úr** (de dentro de), **að** (em direção a), **móti** (contra), e de **í, á** para lugar (**í bænum** na cidade); **með** leva dativo para companhia (**með honum**). Muitos verbos pedem objeto no dativo: **hjálpa** (ajudar), **þakka**, **gefa** (objeto indireto): **Hún gaf mér bók.** Terminações: masc./neutro **-i** (**hesti, barni**), fem. muitas vezes **-u** (**konu**), plural sempre **-um**.
+    examples:
+    - [Ég kem frá Íslandi., I come from Iceland., Venho da Islândia., Íslandi]
+    match:
+    - {seq: [{word: [frá, hjá, af, úr, að, með, móti, í, á]}, {pos: noun, case: dat}], gap: 1, same: [number]}
+    - {seq: [{word: [frá, hjá, af, úr, með]}], gap: 0, pool: [frá, hjá, af, úr, með, til]}
+
+  - id: is-genitive
+    title: til Reykjavíkur, bók Jóns
+    meaning: {en: "the genitive", pt: "o genitivo"}
+    intro:
+      en: |
+        The genitive marks possession, usually after the noun: **bók Jóns** (Jón's book), **hús mannsins** (the man's house). It follows **til** (to), **án** (without), **vegna** (because of), **meðal** (among): **til Reykjavíkur**. Endings: masc. **-s / -ar** (**hests, dags / dagar** varies), fem. **-ar / -u** (**bókar, konu**), plural always **-a**.
+      pt: |
+        O genitivo marca posse, em geral depois do substantivo: **bók Jóns** (o livro de Jón), **hús mannsins** (a casa do homem). Vem depois de **til** (para), **án** (sem), **vegna** (por causa de), **meðal** (entre): **til Reykjavíkur**. Terminações: masc. **-s / -ar**, fem. **-ar / -u** (**bókar, konu**), plural sempre **-a**.
+    examples:
+    - [Ég fer til Reykjavíkur., I'm going to Reykjavík., Vou para Reykjavík., Reykjavíkur]
+    match:
+    - {seq: [{word: [til, án, vegna, meðal]}, {pos: noun, case: gen}], gap: 1, same: [number]}
+    - {seq: [{pos: noun}, {pos: noun, case: gen}], gap: 1, same: [number]}
+
+- title: {en: The past, pt: O passado}
+  lessons:
+  - id: is-past-weak
+    title: ég talaði
+    meaning: {en: "the past of weak verbs: -aði, -ði, -di, -ti", pt: "o passado dos verbos fracos: -aði, -ði, -di, -ti"}
+    intro:
+      en: |
+        Weak verbs add a dental: **tala → talaði**, **heyra → heyrði**, **læra → lærði**, **keyra → keyrði**, **kaupa → keypti**. Endings: **ég talaði, þú talaðir, hann talaði, við töluðum, þið töluðuð, þeir töluðu**.
+      pt: |
+        Os verbos fracos acrescentam uma dental: **tala → talaði**, **heyra → heyrði**, **læra → lærði**, **kaupa → keypti**. Terminações: **ég talaði, þú talaðir, hann talaði, við töluðum, þið töluðuð, þeir töluðu**.
+    paradigms:
+    - {word: tala, pos: verb, tense: past, mood: ind, label: {en: "tala to speak", pt: "tala falar"}}
+    examples:
+    - [Ég talaði við hann., I talked to him., Falei com ele., talaði]
+    match: {seq: [{pos: verb, tense: past, mood: ind, re: "(ði|di|ti|ðu|du|tu|ðum|dum|tum|ðir|dir|tir)$"}], same: [person, number]}
+
+  - id: is-past-strong
+    title: ég tók, ég fór
+    meaning: {en: "the past of strong verbs", pt: "o passado dos verbos fortes"}
+    intro:
+      en: |
+        Strong verbs change the vowel and add no dental: **taka → tók**, **fara → fór**, **koma → kom**, **sjá → sá**, **gefa → gaf**, **drekka → drakk**, **finna → fann**. The plural often has another vowel: **við fórum, við komum, við fundum**.
+      pt: |
+        Os verbos fortes mudam a vogal e não ganham dental: **taka → tók**, **fara → fór**, **koma → kom**, **sjá → sá**, **gefa → gaf**, **drekka → drakk**, **finna → fann**. O plural muitas vezes tem outra vogal: **við fórum, við komum, við fundum**.
+    examples:
+    - [Hann fór heim., He went home., Ele foi para casa., fór]
+    match: {seq: [{pos: verb, tense: past, mood: ind, re: "[^ðdt][iu]?m?$"}], same: [person, number]}
+
+- title: {en: Adjectives, pt: Adjetivos}
+  lessons:
+  - id: is-adjectives
+    title: góður, góð, gott
+    meaning: {en: "adjective agreement (strong forms)", pt: "concordância do adjetivo (formas fortes)"}
+    intro:
+      en: |
+        Adjectives agree in gender, number and case: **góður maður** (good man), **góð kona**, **gott barn**; plural **góðir menn, góðar konur, góð börn**. After the definite article or a demonstrative they take the weak forms: **góði maðurinn, góða konan, góða barnið**.
+      pt: |
+        Os adjetivos concordam em gênero, número e caso: **góður maður** (homem bom), **góð kona**, **gott barn**; plural **góðir menn, góðar konur, góð börn**. Depois do artigo definido ou de um demonstrativo, usam as formas fracas: **góði maðurinn, góða konan, góða barnið**.
+    paradigms:
+    - {word: góður, pos: adj, label: {en: "góður good", pt: "góður bom"}}
+    examples:
+    - [Þetta er gott veður., This is good weather., O tempo está bom., gott]
+    match: {seq: [{pos: adj}, {pos: noun}], gap: 0, same: [gender, number, case]}
+
+  - id: is-middle
+    title: ég hlakka til, við hittumst
+    meaning: {en: "-st verbs: reciprocal, reflexive, deponent", pt: "verbos em -st: recíproco, reflexivo, depoente"}
+    intro:
+      en: |
+        **-st** makes the middle voice: **hitta** (meet someone) → **hittast** (meet each other): **Við hittumst á morgun.** Some exist only in -st: **óttast** (fear), **ferðast** (travel), **eignast** (acquire). Others are reflexive: **klæða sig / klæðast** (dress).
+      pt: |
+        **-st** forma a voz média: **hitta** (encontrar alguém) → **hittast** (encontrar-se): **Við hittumst á morgun.** Alguns só existem com -st: **óttast** (temer), **ferðast** (viajar), **eignast** (adquirir). Outros são reflexivos: **klæða sig / klæðast** (vestir-se).
+    examples:
+    - [Við hittumst á morgun., We'll meet tomorrow., A gente se encontra amanhã., hittumst]
+    match: {seq: [{pos: verb, re: "st$"}], suffixes: [st, ""], attested: true}

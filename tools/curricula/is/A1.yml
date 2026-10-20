@@ -1,0 +1,133 @@
+id: A1
+topics:
+
+- title: {en: Sounds and spelling, pt: Sons e escrita}
+  lessons:
+  - id: is-sounds
+    title: þ, ð, æ, au, ll
+    meaning: {en: "the letters Icelandic adds", pt: "as letras que o islandês acrescenta"}
+    intro:
+      en: |
+        - **þ** = *th* in *thin* (only at the start of a word): **þú** (you), **þakka** (thank)
+        - **ð** = *th* in *this* (never at the start): **góður** (good), **við** (we)
+        - **æ** = *eye*; **au** = like French *œil* + *i*; **ei / ey** = *ay* in *day*
+        - an acute accent changes the vowel, it is not stress: **á** = *ow*, **ó** = *oh*, **ú** = *oo*, **é** = *ye*, **í / ý** = *ee*
+        - **ll** = *tl*: **fjall** (mountain), **Halló**; **hv** = *kv*: **hvað** (what)
+
+        Stress is always on the **first syllable**.
+      pt: |
+        - **þ** = *th* do inglês *thin* (só no começo da palavra): **þú** (você), **þakka** (agradecer)
+        - **ð** = *th* do inglês *this* (nunca no começo): **góður** (bom), **við** (nós)
+        - **æ** = *ai*; **au** = *ëi* arredondado; **ei / ey** = *ei*
+        - o acento agudo muda a vogal, não marca a tônica: **á** = *au*, **ó** = *ou*, **ú** = *u*, **é** = *ié*, **í / ý** = *i*
+        - **ll** = *tl*: **fjall** (montanha), **Halló**; **hv** = *kv*: **hvað** (o quê)
+
+        A tônica cai sempre na **primeira sílaba**.
+    examples:
+    - [Þakka þér fyrir., Thank you., Obrigado., Þakka]
+    match: {seq: [{pos: [noun, adj, verb], re: "[þðæáóúéíý]"}]}
+    swaps: {þ: [t, d], ð: [d], æ: [a, e], á: [a], ó: [o], ú: [u], é: [e], í: [i], ý: [y, i]}
+
+- title: {en: "Pronouns and 'vera'", pt: "Pronomes e 'vera'"}
+  lessons:
+  - id: is-vera
+    title: ég er, þú ert, hann er
+    meaning: {en: "vera: to be", pt: "vera: ser, estar"}
+    intro:
+      en: |
+        **ég er** (I am), **þú ert**, **hann / hún / það er** (he / she / it), **við erum**, **þið eruð**, **þeir / þær / þau eru**. The third person has three genders in the plural too: **þeir** (men), **þær** (women), **þau** (mixed or neuter). Past: **var, varst, var, vorum, voruð, voru**.
+      pt: |
+        **ég er** (eu sou), **þú ert**, **hann / hún / það er** (ele / ela / neutro), **við erum**, **þið eruð**, **þeir / þær / þau eru**. A terceira pessoa tem três gêneros também no plural: **þeir** (homens), **þær** (mulheres), **þau** (misto ou neutro). Passado: **var, varst, var, vorum, voruð, voru**.
+    paradigms:
+    - {word: vera, pos: verb, tense: pres, mood: ind, label: {en: "vera to be", pt: "vera ser, estar"}}
+    examples:
+    - [Ég er kennari., I am a teacher., Sou professor., er]
+    match: {seq: [{lemma: "^vera$", pos: verb}], same: [person, number]}
+
+  - id: is-pronouns
+    title: ég, mig, mér, mín
+    meaning: {en: "personal pronouns in four cases", pt: "pronomes pessoais em quatro casos"}
+    intro:
+      en: |
+        Pronouns decline: **ég – mig – mér – mín** (I, me, to me, of me), **þú – þig – þér – þín**, **hann – hann – honum – hans**, **hún – hana – henni – hennar**, **við – okkur – okkur – okkar**. The verb or preposition picks the case: **Hann sér mig** (accusative), **Hún gaf mér bók** (dative).
+      pt: |
+        Os pronomes declinam: **ég – mig – mér – mín** (eu, me, a mim, de mim), **þú – þig – þér – þín**, **hann – hann – honum – hans**, **hún – hana – henni – hennar**, **við – okkur – okkur – okkar**. O verbo ou a preposição escolhe o caso: **Hann sér mig** (acusativo), **Hún gaf mér bók** (dativo).
+    examples:
+    - [Hann sér mig., He sees me., Ele me vê., mig]
+    match: {seq: [{pos: pron, lemma: "^(ég|þú|hann|hún|það|við|þið|þeir|þær|þau)$"}], same: [number]}
+
+- title: {en: Nouns, pt: Substantivos}
+  lessons:
+  - id: is-gender
+    title: hestur, kona, barn
+    meaning: {en: "three genders, nominative endings", pt: "três gêneros, terminações do nominativo"}
+    intro:
+      en: |
+        Every noun is masculine, feminine or neuter. Typical nominatives: masculine **-ur** (**hestur** horse, **dagur** day), **-i** (**tími** time); feminine **-a** (**kona** woman, **saga** story) or a bare stem (**bók** book); neuter a bare stem (**barn** child, **hús** house) or **-a** (**auga** eye). Adjectives and the article agree in gender, number and case.
+      pt: |
+        Todo substantivo é masculino, feminino ou neutro. Nominativos típicos: masculino **-ur** (**hestur** cavalo, **dagur** dia), **-i** (**tími** tempo); feminino **-a** (**kona** mulher, **saga** história) ou o radical puro (**bók** livro); neutro o radical puro (**barn** criança, **hús** casa) ou **-a** (**auga** olho). Adjetivos e artigo concordam em gênero, número e caso.
+    paradigms:
+    - {word: hestur, pos: noun, label: {en: "hestur (m.) horse", pt: "hestur (m.) cavalo"}}
+    - {word: kona, pos: noun, label: {en: "kona (f.) woman", pt: "kona (f.) mulher"}}
+    - {word: barn, pos: noun, label: {en: "barn (n.) child", pt: "barn (n.) criança"}}
+    examples:
+    - [Barnið er hér., The child is here., A criança está aqui., Barnið]
+    match: {seq: [{pos: noun, case: nom}], same: [number]}
+
+  - id: is-definite
+    title: hesturinn, konan, barnið
+    meaning: {en: "the definite article is a suffix", pt: "o artigo definido é um sufixo"}
+    intro:
+      en: |
+        There is no word for *a*; *the* is added to the end and declines with the noun: **hestur → hesturinn**, **kona → konan**, **barn → barnið**; plural **hestarnir, konurnar, börnin**. In other cases both parts change: **hestinn** (acc.), **hestinum** (dat.), **hestsins** (gen.).
+      pt: |
+        Não há palavra para *um*; o *o / a* vai no fim e declina junto: **hestur → hesturinn**, **kona → konan**, **barn → barnið**; plural **hestarnir, konurnar, börnin**. Nos outros casos as duas partes mudam: **hestinn** (ac.), **hestinum** (dat.), **hestsins** (gen.).
+    mistakes:
+    - wrong: hestinnur
+      right: hesturinn
+      why: {en: "The article goes after the case ending.", pt: "O artigo vem depois da terminação de caso."}
+    examples:
+    - [Konan les bókina., The woman reads the book., A mulher lê o livro., bókina]
+    match: {seq: [{pos: noun, definite: def}], same: [number, case]}
+
+  - id: is-accusative
+    title: Ég sé hestinn
+    meaning: {en: "the accusative: direct object", pt: "o acusativo: objeto direto"}
+    intro:
+      en: |
+        Most verbs take their object in the accusative: **Ég sé hestinn** (I see the horse), **Hún á bíl** (she has a car). Masculine **-ur** drops: **hestur → hest**; feminine **-a → -u**: **kona → konu**; neuters do not change. After **um, í gegnum, kringum** always accusative; after **í, á** accusative for motion (**í bæinn** into town).
+      pt: |
+        A maioria dos verbos leva o objeto no acusativo: **Ég sé hestinn** (vejo o cavalo), **Hún á bíl** (ela tem carro). O masculino perde **-ur**: **hestur → hest**; o feminino **-a → -u**: **kona → konu**; o neutro não muda. Depois de **um, í gegnum, kringum**, sempre acusativo; depois de **í, á**, acusativo para movimento (**í bæinn** para a cidade).
+    examples:
+    - [Ég sé hestinn., I see the horse., Vejo o cavalo., hestinn]
+    match: {seq: [{pos: verb, mood: ind}, {pos: noun, case: acc}], gap: 1, same: [number]}
+
+- title: {en: Verbs, pt: Verbos}
+  lessons:
+  - id: is-present
+    title: ég tala, þú talar
+    meaning: {en: "the present tense", pt: "o presente"}
+    intro:
+      en: |
+        Weak verbs in **-a**: **tala** (speak) → **ég tala, þú talar, hann talar, við tölum, þið talið, þeir tala** (note **a → ö** before **-um**). Strong verbs change the vowel in the singular: **taka** (take) → **ég tek, þú tekur, hann tekur, við tökum**.
+      pt: |
+        Verbos fracos em **-a**: **tala** (falar) → **ég tala, þú talar, hann talar, við tölum, þið talið, þeir tala** (repare **a → ö** antes de **-um**). Verbos fortes mudam a vogal no singular: **taka** (pegar) → **ég tek, þú tekur, hann tekur, við tökum**.
+    paradigms:
+    - {word: tala, pos: verb, tense: pres, mood: ind, label: {en: "tala to speak", pt: "tala falar"}}
+    - {word: taka, pos: verb, tense: pres, mood: ind, label: {en: "taka to take", pt: "taka pegar"}}
+    examples:
+    - [Ég tala íslensku., I speak Icelandic., Falo islandês., tala]
+    match: {seq: [{pos: verb, tense: pres, mood: ind}], same: [person, number]}
+
+  - id: is-questions
+    title: Talar þú ensku?
+    meaning: {en: "questions and negation", pt: "perguntas e negação"}
+    intro:
+      en: |
+        Yes/no questions put the verb first: **Talar þú ensku?** Question words: **hvað** (what), **hver** (who), **hvar** (where), **hvenær** (when), **hvernig** (how), **af hverju** (why). Negation: **ekki** after the verb: **Ég tala ekki þýsku.**
+      pt: |
+        Perguntas sim/não começam pelo verbo: **Talar þú ensku?** Palavras interrogativas: **hvað** (o quê), **hver** (quem), **hvar** (onde), **hvenær** (quando), **hvernig** (como), **af hverju** (por quê). Negação: **ekki** depois do verbo: **Ég tala ekki þýsku.**
+    examples:
+    - ["Hvar býrð þú?", "Where do you live?", "Onde você mora?", "Hvar"]
+    match: {seq: [{word: [hvað, hver, hvar, hvenær, hvernig, hvaðan, hvert, ekki]}], gap: 0}
+    pool: [hvað, hver, hvar, hvenær, hvernig, ekki]

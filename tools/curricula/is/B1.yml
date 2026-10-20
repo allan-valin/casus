@@ -1,0 +1,60 @@
+id: B1
+topics:
+
+- title: {en: Mood and voice, pt: Modo e voz}
+  lessons:
+  - id: is-subjunctive
+    title: að hann komi
+    meaning: {en: "the subjunctive", pt: "o subjuntivo"}
+    intro:
+      en: |
+        Reported speech and many subordinate clauses take the subjunctive: **Hann segir að hún sé veik** (he says she is ill), **Ég vona að þú komir** (I hope you come). Present subjunctive ends in **-i** (**komi, tali, sé**); past subjunctive often has umlaut (**kæmi, færi, væri**): **Ef ég væri ríkur…** (if I were rich).
+      pt: |
+        O discurso indireto e muitas orações subordinadas pedem subjuntivo: **Hann segir að hún sé veik** (ele diz que ela está doente), **Ég vona að þú komir** (espero que você venha). O presente do subjuntivo termina em **-i** (**komi, tali, sé**); o passado muitas vezes tem metafonia (**kæmi, færi, væri**): **Ef ég væri ríkur…** (se eu fosse rico).
+    examples:
+    - [Ég vona að þú komir., I hope you come., Espero que você venha., komir]
+    match: {seq: [{pos: verb, mood: subj}], same: [person, number]}
+
+  - id: is-passive
+    title: bókin var skrifuð
+    meaning: {en: "the passive: vera / verða + participle", pt: "a passiva: vera / verða + particípio"}
+    intro:
+      en: |
+        **vera** (state) or **verða** (event) + a past participle agreeing with the subject: **Bókin var skrifuð árið 1900** (the book was written), **Húsið verður selt** (the house will be sold). The participle declines like an adjective: **skrifaður / skrifuð / skrifað**.
+      pt: |
+        **vera** (estado) ou **verða** (evento) + particípio que concorda com o sujeito: **Bókin var skrifuð árið 1900** (o livro foi escrito), **Húsið verður selt** (a casa será vendida). O particípio declina como adjetivo: **skrifaður / skrifuð / skrifað**.
+    examples:
+    - [Húsið var byggt árið 1900., The house was built in 1900., A casa foi construída em 1900., byggt]
+    match: {seq: [{lemma: "^(vera|verða)$"}, {pos: [verb, adj], mood: part}], gap: 1, near: 1, same: [number]}
+
+- title: {en: Subjects in other cases, pt: Sujeitos em outros casos}
+  lessons:
+  - id: is-oblique-subjects
+    title: mér er kalt, mig langar
+    meaning: {en: "dative and accusative subjects", pt: "sujeitos no dativo e no acusativo"}
+    intro:
+      en: |
+        Some verbs put the experiencer in the dative or accusative and the verb stays in the 3rd singular: **Mér er kalt** (I am cold), **Mér líkar þetta** (I like this), **Mig langar í kaffi** (I want coffee), **Mig vantar pening** (I need money), **Henni finnst gaman** (she enjoys it).
+      pt: |
+        Alguns verbos põem quem sente no dativo ou no acusativo, e o verbo fica na 3ª do singular: **Mér er kalt** (estou com frio), **Mér líkar þetta** (gosto disso), **Mig langar í kaffi** (quero café), **Mig vantar pening** (preciso de dinheiro), **Henni finnst gaman** (ela gosta).
+    mistakes:
+    - wrong: Ég langar í kaffi.
+      right: Mig langar í kaffi.
+      why: {en: "langa takes an accusative subject.", pt: "langa pede sujeito no acusativo."}
+    examples:
+    - [Mig langar í kaffi., I want coffee., Quero café., Mig]
+    match: {seq: [{word: [mér, mig, þér, þig, honum, hann, henni, hana, okkur, ykkur, þeim]}, {lemma: "^(vera|líka|langa|vanta|finnast|þykja|leiðast|kólna|hlakka)$"}], gap: 0, near: 1}
+    pool: [mér, mig, ég, þér, þig, þú]
+
+  - id: is-numbers
+    title: einn, tveir, þrír, fjórir
+    meaning: {en: "numbers 1–4 decline", pt: "os números de 1 a 4 declinam"}
+    intro:
+      en: |
+        **1–4** agree with the noun in gender and case: **einn maður, ein kona, eitt barn**; **tveir menn, tvær konur, tvö börn**; **þrír / þrjár / þrjú**; **fjórir / fjórar / fjögur**. From 5 on they do not decline: **fimm, sex, sjö, átta, níu, tíu**. Counting aloud uses the masculine: **einn, tveir, þrír**.
+      pt: |
+        De **1 a 4** concordam com o substantivo em gênero e caso: **einn maður, ein kona, eitt barn**; **tveir menn, tvær konur, tvö börn**; **þrír / þrjár / þrjú**; **fjórir / fjórar / fjögur**. Do 5 em diante não declinam: **fimm, sex, sjö, átta, níu, tíu**. Para contar usa-se o masculino: **einn, tveir, þrír**.
+    examples:
+    - [Ég á tvö börn., I have two children., Tenho dois filhos., tvö]
+    match: {seq: [{word: [einn, ein, eitt, tveir, tvær, tvö, þrír, þrjár, þrjú, fjórir, fjórar, fjögur]}], gap: 0}
+    pool: [tveir, tvær, tvö, þrír, þrjár, þrjú]
