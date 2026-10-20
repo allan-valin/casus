@@ -209,3 +209,26 @@ def test_a_long_japanese_sentence_is_cut_shorter_at_its_commas():
     long = "、".join(["これは長い文の一部です"] * 40) + "。"
     parts = T.pieces_of(long)
     assert len(parts) > 1 and all(len(p) <= 200 for p in parts) and "".join(parts) == long
+
+
+def test_the_batch_shrinks_when_the_inputs_are_long():
+    """16 short sentences fit the 6 GB GPU; 16 of 361 tokens did not (a CUDA error, 2026-10-20)"""
+    tr = object.__new__(T.Translator)
+    tr.ui = "pt"
+    sizes = []
+
+    class SP:
+        def encode(self, text, out_type=str):
+            return text.split()
+
+        def decode(self, toks):
+            return " ".join(toks)
+
+    class Model:
+        def translate_batch(self, toks, **kw):
+            sizes.append(kw["max_batch_size"])
+            return [type("R", (), {"hypotheses": [t]})() for t in toks]
+    tr.sp, tr.model = SP(), Model()
+    tr._raw(["short one"] * 20)
+    tr._raw(["word " * 360] * 20)
+    assert sizes[0] == 16 and sizes[1] <= 8
