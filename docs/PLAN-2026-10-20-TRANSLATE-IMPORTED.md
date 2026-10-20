@@ -57,3 +57,7 @@ ar 0.4M · uk 0.3M · is 0.2M · mk 0.03M.
   ~50% had problems, ~25% serious → all 602 NIKL examples translated by Claude into pt and en (tools/mt_fixes/pt.yml,
   en.yml; de/mk/ar still to do the same way). Rule from this: SHORT idiomatic example sentences = Claude; long prose =
   MADLAD (via English for CJK) + by-eye proofreading + fixes. Badge text now names MADLAD + Claude.
+- 2026-10-20 DECISION (Allan): core course per language translated by Claude; MADLAD + sample proofreading for the
+  rest. Workflow: tools/mt_pieces.py <code> --ui <ui> --source "<book>" lists the exact pieces (with placeholders) →
+  Claude translates them in batches into tools/mt_fixes/<ui>/<slug>.yml → translate_learn --cache-only --redo. ja>pt
+  held: JLPT (core) by Claude first; school books MADLAD with classical lines protected.
