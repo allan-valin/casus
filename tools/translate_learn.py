@@ -187,7 +187,7 @@ def _put(obj: dict, ui: str, out: str, src: str) -> None:
     obj[ui] = out
 
 
-EX = re.compile(r'(<div class="ex">\s*<p class="ja"[^>]*>(.*?)</p>)(\s*</div>)', re.S)
+EX = re.compile(r'(<div class="ex">\s*<p class="ja"[^>]*>((?:(?!</p>).)*)</p>)(\s*</div>)', re.S)
 
 
 def gloss_examples(html: str, tr) -> str:

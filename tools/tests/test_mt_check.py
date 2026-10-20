@@ -49,3 +49,11 @@ def test_an_example_without_its_meaning_is_flagged():
     """Allan, 2026-10-20: Korean examples showed no meaning at all"""
     orig = '<p>Uma partícula que marca o sujeito de uma frase.</p><div class="ex"><p class="ja">오늘 밤은 달이 참 밝다.</p></div>'
     assert "example without meaning: 오늘 밤은 달이 참 밝다." in problems(orig, orig.replace("Uma", "Una"), "pt")
+
+
+def test_an_example_with_its_meaning_line_is_fine_and_dense_text_may_double():
+    ex = '<div class="ex"><p class="ja">今日は寒い。</p><p class="en">Está frio hoje.</p></div>'
+    assert not any(p.startswith("example without") for p in problems(ex, ex, "en"))
+    ja = "<p>結論が冒頭と最後の両方に書かれる文章構成を双括式と言います。</p>"
+    pt = "<p>A estrutura de texto em que a conclusão aparece tanto no começo quanto no fim chama-se estrutura de dupla conclusão.</p>"
+    assert not any(p.startswith("length") for p in problems(ja, pt, "ja"))

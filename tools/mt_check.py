@@ -40,7 +40,7 @@ def problems(orig: str, out: str, src: str) -> list:
         plain = _text(INLINE_RE.sub(" ", para))
         if len(plain) > 10 and is_prose(plain, src) and plain in _text(INLINE_RE.sub(" ", orig)):
             found.append(f"untranslated: {plain[:80]}")
-    for m in re.finditer(r'<div class="ex">\s*<p class="ja"[^>]*>(.*?)</p>\s*</div>', out, re.S):
+    for m in re.finditer(r'<div class="ex">\s*<p class="ja"[^>]*>((?:(?!</p>).)*)</p>\s*</div>', out, re.S):
         found.append(f"example without meaning: {_text(m.group(1))[:60]}")
     def top(h):
         words = _text(h).split()
@@ -50,7 +50,8 @@ def problems(orig: str, out: str, src: str) -> list:
     if n >= 5 and n > 2 * n0 + 2:          # a loop of the model, not a pattern the original repeats too
         found.append(f"repetition: {' '.join(gram)}")
     a, b = len(_text(orig)), len(_text(out))
-    if a > 60 and not 0.6 <= b / a <= 1.8:
+    dense = len(re.findall(r"[\u3040-\u30ff\u4e00-\u9fff\uac00-\ud7af]", _text(orig))) > a // 3   # CJK: about half as many characters
+    if a > 60 and not 0.6 <= b / a <= (5 if dense else 1.8):
         found.append(f"length {b}/{a}")
     return found
 

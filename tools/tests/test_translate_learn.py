@@ -257,3 +257,8 @@ def test_an_example_without_a_translation_gets_one(tmp_path, monkeypatch):
     i = json.loads(f.read_text())["intro"]
     assert '<p class="en gloss">«pt»오늘 밤은 달이 참 밝다.</p></div>' in i["pt"]
     assert '<p class="en gloss">«en»오늘 밤은 달이 참 밝다.</p></div>' in i["en"] and i["orig"] == intro
+
+
+def test_an_example_that_has_its_meaning_gets_no_second_one():
+    ex = '<div class="ex"><p class="ja">今日は寒い。</p><p class="en">It is cold today.</p></div>'
+    assert T.gloss_examples(ex, Fake("pt")) == ex
