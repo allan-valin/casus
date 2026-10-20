@@ -310,6 +310,15 @@ def sentences_of(code: str) -> list:
 def main(code: str) -> None:
     """data/<code>/learn.json (the index), learn/<lesson>.json (one lesson), learn/questions-<level>.json"""
     index, lessons, questions = builder(code)()
+    if code == "pt" and (ROOT / "vendor" / "batepapo" / "chapters.txt").exists():
+        from learn_pressbooks import pressbooks_lessons
+        folder = ROOT / "vendor" / "batepapo"
+        slugs = [u.rstrip("/").split("/")[-1] for u in (folder / "chapters.txt").read_text().split()]
+        credit = {"en": "Bate-Papo, by Eduardo Viana da Silva (University of Washington), CC BY 4.0",
+                  "pt": "Bate-Papo, de Eduardo Viana da Silva (Universidade de Washington), CC BY 4.0"}
+        n = pressbooks_lessons(folder, slugs, "pt-bp", credit, "Bate-Papo: An Introduction to Portuguese (UW), CC BY 4.0",
+                               lambda slug: f"https://uw.pressbooks.pub/batepapo/chapter/{slug}/", ["A1", "A2"], index, lessons, questions)
+        print(f"pt: {n} lessons from Bate-Papo")
     if code == "hu" and (ROOT / "vendor" / "ginever" / "ginever.txt").exists():
         from learn_gutenberg import book_lessons
         t = (ROOT / "vendor" / "ginever" / "ginever.txt").read_text(encoding="utf-8")

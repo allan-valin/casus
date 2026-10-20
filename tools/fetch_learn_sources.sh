@@ -83,4 +83,8 @@ grep -o 'href="[^"]*/grammar/latin/[^"#?]*"' "$V/ag/alphabet.html" | sed 's/href
 mkdir -p "$V/ginever"; [ -s "$V/ginever/ginever.txt" ] || curl -sfL https://www.gutenberg.org/cache/epub/76725/pg76725.txt -o "$V/ginever/ginever.txt"
 # Finnish: Eliot, A Finnish Grammar (1890, PD, Gutenberg #59795)
 mkdir -p "$V/eliot"; [ -s "$V/eliot/eliot.txt" ] || curl -sfL https://www.gutenberg.org/cache/epub/59795/pg59795.txt -o "$V/eliot/eliot.txt"
+# Portuguese: Bate-Papo (UW, CC BY 4.0), its chapter pages, politely
+mkdir -p "$V/batepapo"; [ -s "$V/batepapo/index.html" ] || curl -sfL -A "Mozilla/5.0 Casus" https://uw.pressbooks.pub/batepapo/ -o "$V/batepapo/index.html"
+grep -o 'href="https://uw.pressbooks.pub/batepapo/chapter/[^"#]*' "$V/batepapo/index.html" | sed 's/href="//' | awk '!seen[$0]++' > "$V/batepapo/chapters.txt"
+while read u; do f="$V/batepapo/$(basename "$u").html"; [ -s "$f" ] || { curl -sfL -A "Mozilla/5.0 Casus" "$u" -o "$f"; sleep 1.5; }; done < "$V/batepapo/chapters.txt"
 echo "Learn sources in $V"

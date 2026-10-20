@@ -19,14 +19,23 @@
 const FEATURES = ['pos', 'tense', 'aspect', 'person', 'number', 'gender', 'case', 'mood', 'voice', 'state', 'degree', 'conj', 'infl', 'form', 'poss', 'polarity'];
 const lower = (s) => s.toLocaleLowerCase();
 
+// a rule's patterns compiled once (the exercise pass tries every rule on every word of hundreds of thousands of
+// sentences)
+const COMPILED = new WeakMap();
+function compiled(cond, field, flags) {
+  let m = COMPILED.get(cond);
+  if (!m) { m = {}; COMPILED.set(cond, m); }
+  return (m[field] ??= new RegExp(cond[field], flags));
+}
+
 function fitsAnalysis(a, cond, lemmaOf, dictOf) {
   for (const f of FEATURES) {
     if (cond[f] == null) continue;
     const want = Array.isArray(cond[f]) ? cond[f] : [cond[f]];
     if (!want.includes(a?.[f])) return false;
   }
-  if (cond.lemma && !(lemmaOf && new RegExp(cond.lemma, 'u').test(lemmaOf(a?.lemma) ?? ''))) return false;
-  if (cond.dict && !(dictOf && new RegExp(cond.dict, 'u').test(dictOf(a?.lemma) ?? ''))) return false;
+  if (cond.lemma && !(lemmaOf && compiled(cond, 'lemma', 'u').test(lemmaOf(a?.lemma) ?? ''))) return false;
+  if (cond.dict && !(dictOf && compiled(cond, 'dict', 'u').test(dictOf(a?.lemma) ?? ''))) return false;
   if (cond.not && fitsAnalysis(a, cond.not, lemmaOf, dictOf)) return false;
   return true;
 }
@@ -35,7 +44,7 @@ export function fits(block, cond, lemmaOf = null, dictOf = null, norm = lower) {
   if (cond.word && !cond.word.map(norm).includes(norm(block.token.surface))) return false;
   // (on the key and on the word as written: a key may strip accents the pattern names, Modern Greek -άς)
   if (cond.re) {
-    const re = new RegExp(cond.re, 'iu');
+    const re = compiled(cond, 're', 'iu');
     const s = block.token.surface;
     if (!re.test(norm === lower ? s : norm(s)) && !re.test(s.normalize('NFC').toLocaleLowerCase())) return false;
   }
