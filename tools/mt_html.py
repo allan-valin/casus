@@ -13,6 +13,7 @@ INLINE = {"b", "strong", "i", "em", "code", "span", "a", "small", "sup", "sub", 
 STOP = set("the a an is are was were of to and in for with it that this as on be by or not from at which when its their "
            "they you your used use after before into than only also can may must have has more most other each these those".split())
 PH = re.compile(r"\[(\d+)\]")
+TRANSPARENT = {"a", "span", "small", "abbr"}     # formatting around prose, not a form of the taught language
 
 
 def is_english(text: str) -> bool:
@@ -24,7 +25,7 @@ def is_english(text: str) -> bool:
 STOPS = {
     "en": STOP,
     "fr": set("le la les un une des de du et est sont en à au aux dans pour par sur avec que qui ne pas on il elle ce cette se son sa ses leur plus "
-              "comme mais ou si nous vous ils elles être avoir fait".split()),
+              "comme mais ou si nous vous ils elles être avoir fait je tu suis es sommes êtes ai as avons avez mon ma mes ton ta tes notre votre quel quelle".split()),
     "de": set("der die das den dem des ein eine einen einem einer und ist sind im in zu mit von für auf nicht sich auch als wie wird werden "
               "man es er sie wir ihr dass oder bei nach aus kann".split()),
     "es": set("el la los las un una unos de del y en es son que se con por para no al lo como más pero o su sus este esta".split()).union({"también"}),
@@ -51,9 +52,12 @@ def is_prose(text: str, lang: str) -> bool:
         letters = re.findall(r"[^\W\d_]", text)
         return len(letters) >= 8 and len(re.findall(SCRIPT[lang], text)) / len(letters) >= 0.6 and bool(re.search(r"[。、，．！？؟.,]", text) or len(letters) >= 20)
     words = re.findall(r"[^\W\d_]+(?:'[^\W\d_]+)?", text)
-    if len(words) < 3:
-        return False
     stops = STOPS.get(lang, STOP)
+    if len(words) < 3:
+        # a short line (a heading, "Par exemple :") is prose when it has a function word of the language and none
+        # of another
+        return len(words) >= 2 and any(w.lower() in stops for w in words) and \
+            not any(w.lower() in o for k, o in STOPS.items() if k != lang for w in words if w.lower() not in stops)
     return sum(w.lower() in stops for w in words) >= max(1, len(words) // 8) and \
         sum(w.lower() in stops for w in words) > max((sum(w.lower() in o for w in words) for k, o in STOPS.items() if k != lang), default=0) * 0.7
 
@@ -132,6 +136,7 @@ def segments(html: str, src: str = "en") -> list:
         run, inline = [], []
 
     in_table = 0
+    open_tags = {}
     for kind, tag, raw in p.out:
         if tag == "table":
             in_table += 1 if kind == "start" else -1 if kind == "end" else 0
@@ -146,6 +151,13 @@ def segments(html: str, src: str = "en") -> list:
                     run.append(f"[{len(inline)}]")
                     buf = []
             continue
+        # a link or a plain span is prose: only its tags become placeholders, its text is translated
+        if tag in TRANSPARENT and kind in ("start", "end") and not (kind == "start" and "lang=" in raw):
+            if kind == "start" or open_tags.get(tag):
+                open_tags[tag] = open_tags.get(tag, 0) + (1 if kind == "start" else -1)
+                inline.append(raw)
+                run.append(f"[{len(inline)}]")
+                continue
         if kind == "start" and tag in INLINE:
             depth, buf = 1, [raw]
             continue

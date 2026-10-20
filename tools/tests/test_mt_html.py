@@ -118,3 +118,24 @@ def test_quoted_japanese_in_a_japanese_explanation_is_protected():
     from mt_html import segments
     run = [s for s in segments("<p>「いとをかし」は「とても趣がある」という意味で、古文によく出てくる言葉です。</p>", src="ja") if "text" in s][0]
     assert run["translate"] and "「いとをかし」" in run["inline"] and "いとをかし" not in run["text"]
+
+
+def test_link_text_is_prose_and_gets_translated():
+    """« parlée en Corée du Sud » with the place as a link: the link text is translated, the link kept"""
+    from mt_html import translate_html
+    out = translate_html('<p>Elle est parlée en <a href="/wiki/Corée_du_Sud">Corée du Sud</a> et ailleurs dans le monde.</p>',
+                         lambda texts: [t.replace("Corée du Sud", "Coreia do Sul").replace("Elle est parlée en", "É falada na") for t in texts], "fr")
+    assert out == '<p>É falada na <a href="/wiki/Corée_du_Sud">Coreia do Sul</a> et ailleurs dans le monde.</p>'
+
+
+def test_an_element_marked_with_a_language_stays_protected():
+    from mt_html import segments
+    run = [s for s in segments('<p>Le mot <span lang="ko">한국</span> veut dire la Corée dans la langue.</p>', src="fr") if "text" in s][0]
+    assert '<span lang="ko">한국</span>' in run["inline"]
+
+
+def test_short_lines_and_dialogue_in_the_explanation_language_are_prose():
+    from mt_html import is_prose
+    assert is_prose("Les consonnes", "fr") and is_prose("Par exemple :", "fr") and is_prose("avec contraction :", "fr")
+    assert is_prose("John: Je suis John. Je suis professeur. Quel est ton nom?", "fr")
+    assert not is_prose("puella", "en") and not is_prose("Corée", "fr")
