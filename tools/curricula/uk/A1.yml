@@ -1,0 +1,109 @@
+id: A1
+topics:
+
+- title: {en: Sounds and letters, pt: Sons e letras}
+  lessons:
+  - id: uk-alphabet
+    title: і, ї, є, ґ, и
+    meaning: {en: "letters Ukrainian has (and Russian doesn't)", pt: "as letras próprias do ucraniano"}
+    intro:
+      en: |
+        **и** is a sound between *i* and *y* (like the vowel in *bit*), **і** is *i*, **ї** is *yi*, **є** is *ye*, **ґ** a hard *g* (rare), while **г** is a voiced *h*. **'** (apostrophe) separates a consonant from a following я, ю, є, ї: **м'ясо** (meat), **сім'я** (family). **щ** is *shch*.
+      pt: |
+        **и** é um som entre *i* e *ê* fechado, **і** é *i*, **ї** é *ii*, **є** é *ié*, **ґ** um *g* duro (raro), enquanto **г** é um *h* sonoro (aspirado). **'** (apóstrofo) separa uma consoante do я, ю, є, ї seguinte: **м'ясо** (carne), **сім'я** (família). **щ** soa *chtch*.
+    examples:
+    - ["Це моя сім'я.", "This is my family.", "Esta é minha família.", "сім'я"]
+    - ["Я їм хліб.", "I'm eating bread.", "Estou comendo pão.", "їм"]
+    match: {seq: [{re: "[іїєґ']", pos: [noun, verb, adj]}]}
+
+- title: {en: Nouns and gender, pt: Substantivos e gênero}
+  lessons:
+  - id: uk-gender
+    title: стіл, книга, вікно
+    meaning: {en: "three genders", pt: "três gêneros"}
+    intro:
+      en: |
+        Masculine: consonant ending (**стіл, брат, день**); feminine: **-а / -я** (**книга, земля**) and some in a soft sign or consonant (**ніч, сіль**); neuter: **-о, -е, -я** (**вікно, море, ім'я, життя**). No articles. **він / вона / воно** = he / she / it, used for things by gender.
+      pt: |
+        Masculino: termina em consoante (**стіл, брат, день**); feminino: **-а / -я** (**книга, земля**) e alguns em sinal brando ou consoante (**ніч, сіль**); neutro: **-о, -е, -я** (**вікно, море, ім'я, життя**). Sem artigos. **він / вона / воно** = ele / ela / ele(neutro), também para coisas conforme o gênero.
+    examples:
+    - ["Вікно відкрите.", "The window is open.", "A janela está aberta.", "Вікно"]
+    - ["Книга на столі.", "The book is on the table.", "O livro está na mesa.", "Книга"]
+    match: {seq: [{pos: noun, case: nom, number: sg}]}
+  - id: uk-plural
+    title: книги, столи, вікна
+    meaning: {en: "the nominative plural", pt: "o plural (nominativo)"}
+    intro:
+      en: |
+        Masculine and feminine: **-и / -і** (**столи, книги, дні, землі**); neuter: **-а / -я** (**вікна, моря**). Some irregular: **люди** (people), **діти** (children), **очі** (eyes).
+      pt: |
+        Masculinos e femininos: **-и / -і** (**столи, книги, дні, землі**); neutros: **-а / -я** (**вікна, моря**). Alguns irregulares: **люди** (pessoas), **діти** (crianças), **очі** (olhos).
+    examples:
+    - ["Діти граються.", "The children are playing.", "As crianças estão brincando.", "Діти"]
+    match: {seq: [{pos: noun, number: pl, case: nom}]}
+
+- title: {en: Pronouns and the present, pt: Pronomes e presente}
+  lessons:
+  - id: uk-pronouns
+    title: я, ти, він, вона, ми, ви, вони
+    meaning: {en: "personal pronouns", pt: "pronomes pessoais"}
+    intro:
+      en: |
+        **я** (I), **ти** (you), **він / вона / воно**, **ми**, **ви** (you plural and polite), **вони**. **Ви** with a capital in letters to one person.
+      pt: |
+        **я** (eu), **ти** (você/tu), **він / вона / воно**, **ми** (nós), **ви** (vocês e o tratamento formal), **вони** (eles). **Ви** com maiúscula em cartas a uma pessoa.
+    examples:
+    - ["Ми студенти.", "We are students.", "Somos estudantes.", "Ми"]
+    match: {seq: [{word: [я, ти, він, вона, воно, ми, ви, вони], start: true}]}
+    pool: [я, ти, він, вона, ми, ви, вони]
+  - id: uk-present
+    title: читаю, говорю
+    meaning: {en: "the present tense: two conjugations", pt: "o presente: duas conjugações"}
+    intro:
+      en: |
+        **I (-ати):** читаю, читаєш, читає, читаємо, читаєте, читають. **II (-ити):** говорю, говориш, говорить, говоримо, говорите, говорять. **бути** has only **є** in the present, and it is usually left out: **Я студент.**
+      pt: |
+        **I (-ати):** читаю, читаєш, читає, читаємо, читаєте, читають. **II (-ити):** говорю, говориш, говорить, говоримо, говорите, говорять. **бути** só tem **є** no presente, e em geral é omitido: **Я студент** (sou estudante).
+    examples:
+    - ["Я читаю книгу.", "I'm reading a book.", "Estou lendo um livro.", "читаю"]
+    - ["Ти говориш українською?", "Do you speak Ukrainian?", "Você fala ucraniano?", "говориш"]
+    match: {seq: [{pos: verb, tense: pres, mood: ind}], same: [person, number]}
+  - id: uk-possessive
+    title: мій, твій, наш, ваш, їхній
+    meaning: {en: "possessives", pt: "possessivos"}
+    intro:
+      en: |
+        **мій / моя / моє / мої** (my), **твій**, **наш**, **ваш**, agreeing with the noun; **його** (his), **її** (her), **їхній** (their); **свій** (one's own, referring to the subject): **Він любить свою матір.**
+      pt: |
+        **мій / моя / моє / мої** (meu), **твій**, **наш**, **ваш**, concordando com o substantivo; **його** (dele), **її** (dela), **їхній** (deles); **свій** (o próprio, referindo-se ao sujeito): **Він любить свою матір.**
+    examples:
+    - ["Це мій брат.", "This is my brother.", "Este é meu irmão.", "мій"]
+    match: {seq: [{word: [мій, моя, моє, мої, твій, твоя, твоє, твої, наш, наша, наше, наші, ваш, ваша, ваше, ваші, свій, своя, своє, свої]}]}
+    pool: [мій, моя, моє, мої, твій, твоя, наш, ваш, свій]
+
+- title: {en: Questions and negation, pt: Perguntas e negação}
+  lessons:
+  - id: uk-questions
+    title: хто, що, де, коли, чому
+    meaning: {en: "question words; чи", pt: "palavras interrogativas; чи"}
+    intro:
+      en: |
+        **хто** (who), **що** (what), **де** (where), **куди** (where to), **звідки** (from where), **коли** (when), **чому** (why), **як** (how), **скільки** (how much). Yes/no questions often start with **чи**: **Чи ти знаєш?**
+      pt: |
+        **хто** (quem), **що** (o que), **де** (onde), **куди** (para onde), **звідки** (de onde), **коли** (quando), **чому** (por que), **як** (como), **скільки** (quanto). Perguntas de sim/não muitas vezes começam com **чи**: **Чи ти знаєш?**
+    examples:
+    - ["Де ти живеш?", "Where do you live?", "Onde você mora?", "Де"]
+    match: {seq: [{word: [хто, що, де, куди, звідки, коли, чому, як, скільки, чи], start: true}]}
+    pool: [хто, що, де, куди, коли, чому, як, чи]
+  - id: uk-ne
+    title: не, ні
+    meaning: {en: "negation", pt: "negação"}
+    intro:
+      en: |
+        **не** before the verb: **Я не знаю.** **ні** = no; double negation is normal: **Я нічого не бачу. Ніхто не прийшов.** "There is no…" = **немає** + genitive: **Немає часу.**
+      pt: |
+        **не** antes do verbo: **Я не знаю.** **ні** = não; dupla negação é normal: **Я нічого не бачу** (não vejo nada). **Ніхто не прийшов.** "Não há…" = **немає** + genitivo: **Немає часу** (não tem tempo).
+    examples:
+    - ["Я нічого не знаю.", "I don't know anything.", "Não sei nada.", "нічого"]
+    match: {seq: [{word: [нічого, ніхто, ніколи, ніде, ніяк, немає, ні]}]}
+    pool: [нічого, ніхто, ніколи, ніде, немає]

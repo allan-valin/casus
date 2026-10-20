@@ -1,0 +1,97 @@
+id: A2
+topics:
+
+- title: {en: The cases (1), pt: Os casos (1)}
+  lessons:
+  - id: uk-acc
+    title: книгу, брата
+    meaning: {en: "accusative: the direct object", pt: "acusativo: o objeto direto"}
+    intro:
+      en: |
+        Feminine **-а → -у, -я → -ю** (книгу, землю); masculine animate = genitive (**брата, вчителя**), inanimate = nominative (**стіл**); neuter unchanged. After **в / у, на** for direction: **Я йду в школу.**
+      pt: |
+        Femininos **-а → -у, -я → -ю** (книгу, землю); masculinos animados = genitivo (**брата, вчителя**), inanimados = nominativo (**стіл**); neutros não mudam. Depois de **в / у, на** indicando direção: **Я йду в школу** (vou para a escola).
+    examples:
+    - ["Я читаю книгу.", "I'm reading a book.", "Estou lendo um livro.", "книгу"]
+    - ["Я бачу брата.", "I see my brother.", "Vejo meu irmão.", "брата"]
+    match: {seq: [{pos: verb}, {pos: noun, case: acc}], near: 1, gap: 1, same: [number]}
+  - id: uk-loc
+    title: у місті, на столі
+    meaning: {en: "locative: where?", pt: "locativo: onde?"}
+    intro:
+      en: |
+        Only after prepositions (**в / у, на, по, при, о**): **-і / -у / -ю**: **у місті, на столі, у Києві, на роботі.** Also about a topic with **о / про** — but **про** takes the accusative.
+      pt: |
+        Só depois de preposições (**в / у, на, по, при, о**): **-і / -у / -ю**: **у місті** (na cidade), **на столі** (na mesa), **у Києві**, **на роботі**.
+    examples:
+    - ["Я живу в Києві.", "I live in Kyiv.", "Moro em Kyiv.", "Києві"]
+    - ["Книга лежить на столі.", "The book is lying on the table.", "O livro está na mesa.", "столі"]
+    match: {seq: [{word: [в, у, на, при]}, {pos: noun, case: loc}], gap: 1, same: [number]}
+  - id: uk-gen
+    title: немає часу, склянка води
+    meaning: {en: "genitive: of, absence, quantity", pt: "genitivo: de, ausência, quantidade"}
+    intro:
+      en: |
+        **-и / -і** (feminine), **-а / -я** or **-у / -ю** (masculine), **-а** (neuter): possession (**книга брата**), after **немає** (**немає часу**), quantities (**склянка води, багато людей**), and after **з / із** (from), **до** (to), **від, для, без, біля, після**.
+      pt: |
+        **-и / -і** (feminino), **-а / -я** ou **-у / -ю** (masculino), **-а** (neutro): posse (**книга брата** — o livro do irmão), depois de **немає** (**немає часу**), quantidades (**склянка води, багато людей**), e depois de **з / із, до, від, для, без, біля, після**.
+    examples:
+    - ["У мене немає часу.", "I don't have time.", "Não tenho tempo.", "часу"]
+    - ["Я йду до магазину.", "I'm going to the shop.", "Vou à loja.", "магазину"]
+    match: {seq: [{word: [до, від, для, без, біля, після, немає, багато, мало, скільки]}, {pos: noun, case: gen}], gap: 1, same: [number]}
+
+- title: {en: Past and future, pt: Passado e futuro}
+  lessons:
+  - id: uk-past
+    title: читав, читала, читали
+    meaning: {en: "the past tense", pt: "o passado"}
+    intro:
+      en: |
+        Stem + **-в** (masc.), **-ла** (fem.), **-ло** (neut.), **-ли** (pl.): **він читав, вона читала, воно читало, вони читали**. It agrees in gender, not person: **я читав / я читала**. Irregular: **йти → ішов, ішла; могти → міг, могла; нести → ніс, несла**.
+      pt: |
+        Radical + **-в** (masc.), **-ла** (fem.), **-ло** (neutro), **-ли** (plural): **він читав, вона читала, воно читало, вони читали**. Concorda em gênero, não em pessoa: **я читав / я читала**. Irregulares: **йти → ішов, ішла; могти → міг, могла; нести → ніс, несла**.
+    examples:
+    - ["Вчора я читала книгу.", "Yesterday I read a book.", "Ontem li um livro.", "читала"]
+    match: {seq: [{pos: verb, tense: past}], same: [gender, number]}
+  - id: uk-aspect
+    title: робити – зробити
+    meaning: {en: "aspect: imperfective and perfective", pt: "aspecto: imperfectivo e perfectivo"}
+    intro:
+      en: |
+        Most verbs come in pairs: **imperfective** for process, repetition, the act itself (**Я писав листа** — I was writing / used to write), **perfective** for a completed result (**Я написав листа** — I wrote it, it's done). Pairs by prefix (**писати – написати, робити – зробити**) or suffix (**купувати – купити, давати – дати**). The perfective present means future: **Я зроблю.**
+      pt: |
+        A maioria dos verbos vem em pares: **imperfectivo** para processo, repetição, a ação em si (**Я писав листа** — eu escrevia), **perfectivo** para resultado concluído (**Я написав листа** — escrevi, está pronta). Pares por prefixo (**писати – написати, робити – зробити**) ou sufixo (**купувати – купити, давати – дати**). O presente do perfectivo é futuro: **Я зроблю** (vou fazer).
+    examples:
+    - ["Я вже зробив домашнє завдання.", "I've already done my homework.", "Já fiz a lição de casa.", "зробив"]
+    - ["Він завжди купує хліб тут.", "He always buys bread here.", "Ele sempre compra pão aqui.", "купує"]
+    match: {seq: [{word: [зробив, зробила, зробили, робив, робила, робили, написав, написала, писав, писала, прочитав, прочитала, читав, читала, купив, купила, купував, купувала, сказав, сказала, казав, дав, дала, давав, давала]}]}
+    pool: [зробив, робив, написав, писав, прочитав, читав, купив, купував, сказав, казав, дав, давав]
+  - id: uk-future
+    title: буду читати, читатиму
+    meaning: {en: "the future", pt: "o futuro"}
+    intro:
+      en: |
+        Imperfective: **буду, будеш, буде…** + infinitive (**буду читати**) or the one-word form **читатиму, читатимеш, читатиме, читатимемо, читатимете, читатимуть**. Perfective: its present forms (**прочитаю** — I'll read it through).
+      pt: |
+        Imperfectivo: **буду, будеш, буде…** + infinitivo (**буду читати**) ou a forma de uma palavra só **читатиму, читатимеш, читатиме…** Perfectivo: as formas do presente (**прочитаю** — vou ler até o fim).
+    examples:
+    - ["Завтра я буду працювати.", "Tomorrow I'll be working.", "Amanhã vou trabalhar.", "буду"]
+    match:
+    - {seq: [{word: [буду, будеш, буде, будемо, будете, будуть]}, {pos: verb, mood: inf}], gap: 0}
+    - {seq: [{re: "тиму|тимеш|тиме|тимемо|тимете|тимуть", pos: verb}]}
+    pool: [буду, будеш, буде, будемо, будете, будуть]
+
+- title: {en: Motion, pt: Movimento}
+  lessons:
+  - id: uk-motion
+    title: йти – ходити, їхати – їздити
+    meaning: {en: "verbs of motion", pt: "verbos de movimento"}
+    intro:
+      en: |
+        On foot: **йти** (one direction, now: *Я йду додому*) vs **ходити** (round trips, habit: *Я ходжу в школу*). By vehicle: **їхати** vs **їздити**. Prefixes give perfectives: **прийти** (arrive), **вийти** (go out), **увійти** (enter), **поїхати** (set off).
+      pt: |
+        A pé: **йти** (numa direção, agora: *Я йду додому* — vou para casa) × **ходити** (ida e volta, hábito: *Я ходжу в школу*). De veículo: **їхати** × **їздити**. Prefixos formam perfectivos: **прийти** (chegar), **вийти** (sair), **увійти** (entrar), **поїхати** (partir).
+    examples:
+    - ["Куди ти йдеш?", "Where are you going?", "Aonde você vai?", "йдеш"]
+    - ["Ми їдемо до Львова.", "We're going to Lviv.", "Estamos indo para Lviv.", "їдемо"]
+    match: {seq: [{lemma: "^(піти|йти|іти|ходити|їхати|їздити|прийти|вийти|увійти|поїхати|приїхати)$"}], same: [person, number]}

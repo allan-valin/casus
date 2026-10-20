@@ -1,0 +1,42 @@
+id: C2
+topics:
+
+- title: {en: Style and variety, pt: Estilo e variação}
+  lessons:
+  - id: uk-c2-imperative-1pl
+    title: ходімо, читаймо, нехай
+    meaning: {en: "let's and let him: the imperative of other persons", pt: "vamos e que ele: imperativo de outras pessoas"}
+    intro:
+      en: |
+        Ukrainian has a 1st-person plural imperative: **ходімо** (let's go), **читаймо, працюймо**. Third person with **нехай / хай** + present or future: **Нехай він прийде. Хай живе Україна!**
+      pt: |
+        O ucraniano tem imperativo na 1ª pessoa do plural: **ходімо** (vamos), **читаймо, працюймо**. Terceira pessoa com **нехай / хай** + presente ou futuro: **Нехай він прийде** (que ele venha). **Хай живе Україна!**
+    examples:
+    - ["Ходімо додому!", "Let's go home!", "Vamos para casa!", "Ходімо"]
+    match:
+    - {seq: [{word: [нехай, хай]}], gap: 0}
+    - {seq: [{re: "(ймо|імо)$", pos: verb}]}
+    pool: [нехай, хай, ходімо, давай]
+  - id: uk-c2-diminutive
+    title: сонечко, хатинка, зернятко
+    meaning: {en: "diminutives", pt: "diminutivos"}
+    intro:
+      en: |
+        Ukrainian is rich in diminutives: **-ик, -чик** (столик), **-очок / -ечок** (віночок), **-ка, -очка** (хатинка, ніченька), **-ятко, -ечко** (зернятко, сонечко), and doubled ones (**рученька, маленький → малесенький**). Folk songs and speech to children are full of them.
+      pt: |
+        O ucraniano é rico em diminutivos: **-ик, -чик** (столик), **-очок / -ечок** (віночок), **-ка, -очка** (хатинка, ніченька), **-ятко, -ечко** (зернятко, сонечко — solzinho), e dobrados (**рученька, малесенький**). Canções populares e a fala com crianças estão cheias deles.
+    examples:
+    - ["Сонечко світить.", "The sun is shining.", "O solzinho está brilhando.", "Сонечко"]
+    match: {seq: [{pos: noun, re: "(ечко|ятко|енька|онька|очок|ечок|инка)$"}]}
+  - id: uk-c2-literary
+    title: Шевченко, Франко, Леся Українка
+    meaning: {en: "reading classical literature", pt: "lendo a literatura clássica"}
+    intro:
+      en: |
+        Taras Shevchenko's verse (1840s–60s) keeps older forms: the 1st-person present **-ю** in **співаю**, the vocative everywhere, **єсть** for *є*, **оддати** for *віддати*, and many Church Slavonic words. Ivan Franko and Lesya Ukrainka write near-modern prose and verse; their spelling was later standardised. The reader marks modern forms; older ones may be unrecognised.
+      pt: |
+        Os versos de Taras Chevtchenko (1840–60) mantêm formas antigas: o vocativo por toda parte, **єсть** por *є*, **оддати** por *віддати*, e muitas palavras do eslavo eclesiástico. Ivan Franko e Lessia Ukraínka escrevem prosa e verso quase modernos; a grafia foi padronizada depois. O leitor reconhece formas modernas; as antigas podem ficar sem análise.
+    examples:
+    - ["Реве та стогне Дніпр широкий.", "The wide Dnieper roars and moans.", "Ruge e geme o largo Dnipró.", "Реве"]
+    match: {seq: [{word: [єсть, оддати, оцей, отой, мов, неначе, наче, немов]}]}
+    pool: [мов, неначе, наче, немов, як]

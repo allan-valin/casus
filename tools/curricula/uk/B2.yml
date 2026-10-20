@@ -1,0 +1,78 @@
+id: B2
+topics:
+
+- title: {en: Participles and adverbial participles, pt: Particípios e gerúndios}
+  lessons:
+  - id: uk-b2-participles
+    title: написаний, прочитана книга
+    meaning: {en: "passive participles", pt: "particípios passivos"}
+    intro:
+      en: |
+        **-ний / -тий** (написаний, відкритий) — the usual Ukrainian participles; they decline like adjectives: **прочитана книга, відкриті двері.** Active participles in *-учий / -ачий* are rare in good style; use a clause with **який** instead.
+      pt: |
+        **-ний / -тий** (написаний, відкритий) — os particípios usuais; declinam como adjetivos: **прочитана книга, відкриті двері.** Particípios ativos em *-учий / -ачий* são raros no bom estilo; prefere-se uma oração com **який**.
+    examples:
+    - ["Двері були відкриті.", "The door was open.", "A porta estava aberta.", "відкриті"]
+    match: {seq: [{pos: [adj, vpar], re: "(ний|на|не|ні|тий|та|те|ті)$", not: {re: "^(який|яка|яке|які|котрий|інший|кожний|сильний|вільний|давній|синій|останній|потрібний|важливий|можливий)$"}}]}
+  - id: uk-b2-no-to
+    title: Роботу зроблено.
+    meaning: {en: "impersonal -но / -то", pt: "a forma impessoal em -но / -то"}
+    intro:
+      en: |
+        A typically Ukrainian passive: **-но / -то** with the object in the accusative and no agent: **Роботу зроблено. Лист написано. Двері відчинено.** Preferred over *була зроблена* in official style.
+      pt: |
+        Uma passiva tipicamente ucraniana: **-но / -то** com o objeto no acusativo e sem agente: **Роботу зроблено** (o trabalho foi feito). **Лист написано. Двері відчинено.** Preferida a *була зроблена* no estilo oficial.
+    examples:
+    - ["Роботу вже зроблено.", "The work has already been done.", "O trabalho já foi feito.", "зроблено"]
+    match: {seq: [{re: "(ено|ано|ото|ито|яно)$", pos: [verb, vpar, adv, adj]}]}
+  - id: uk-b2-gerund
+    title: читаючи, прочитавши
+    meaning: {en: "adverbial participles", pt: "gerúndios (дієприслівники)"}
+    intro:
+      en: |
+        Imperfective **-учи / -ючи / -ачи / -ячи** = while doing (**Читаючи книгу, він заснув**); perfective **-вши / -ши** = having done (**Прочитавши лист, вона заплакала**). Same subject as the main verb.
+      pt: |
+        Imperfectivo **-учи / -ючи / -ачи / -ячи** = fazendo (**Читаючи книгу, він заснув** — lendo o livro, ele dormiu); perfectivo **-вши / -ши** = tendo feito (**Прочитавши лист, вона заплакала**). Mesmo sujeito do verbo principal.
+    examples:
+    - ["Прочитавши лист, вона заплакала.", "Having read the letter, she cried.", "Depois de ler a carta, ela chorou.", "Прочитавши"]
+    match: {seq: [{re: "(учи|ючи|ачи|ячи|вши)$"}]}
+
+- title: {en: Numbers and quantity, pt: Números e quantidade}
+  lessons:
+  - id: uk-b2-numerals
+    title: два брати, п'ять братів
+    meaning: {en: "numbers and their cases", pt: "números e os casos"}
+    intro:
+      en: |
+        **один** agrees like an adjective; **два / три / чотири** + nominative plural (**два брати, три книги**); **п'ять** and up + genitive plural (**п'ять братів, десять книг**). Collective **двоє, троє** for people and plural-only nouns (**двоє дітей**).
+      pt: |
+        **один** concorda como adjetivo; **два / три / чотири** + nominativo plural (**два брати, три книги**); **п'ять** em diante + genitivo plural (**п'ять братів, десять книг**). Coletivos **двоє, троє** para pessoas e nomes só plurais (**двоє дітей**).
+    examples:
+    - ["У мене п'ять братів.", "I have five brothers.", "Tenho cinco irmãos.", "братів"]
+    match: {seq: [{word: [два, дві, три, чотири, "п'ять", шість, сім, вісім, дев'ять, десять, двадцять, сто, двоє, троє, скільки, багато]}, {pos: noun}], gap: 1, same: [case]}
+
+- title: {en: Connectors and style, pt: Conectores e estilo}
+  lessons:
+  - id: uk-b2-connectors
+    title: однак, тому, проте, адже
+    meaning: {en: "linking words", pt: "conectores"}
+    intro:
+      en: |
+        **тому** (so), **тому що / бо** (because), **однак, проте, але** (but, however), **адже** (after all, since), **хоча** (although), **щоб** (so that, + past: *щоб він знав*), **оскільки** (since), **зате** (on the other hand).
+      pt: |
+        **тому** (por isso), **тому що / бо** (porque), **однак, проте, але** (mas, porém), **адже** (afinal, pois), **хоча** (embora), **щоб** (para que, + passado: *щоб він знав*), **оскільки** (já que), **зате** (em compensação).
+    examples:
+    - ["Я прийшов, щоб тобі допомогти.", "I came to help you.", "Vim para te ajudar.", "щоб"]
+    match: {seq: [{word: [тому, бо, однак, проте, адже, хоча, щоб, оскільки, зате, отже]}]}
+    pool: [тому, бо, однак, проте, адже, хоча, щоб, оскільки]
+  - id: uk-b2-reflexive
+    title: -ся, -сь
+    meaning: {en: "reflexive verbs in -ся", pt: "verbos reflexivos em -ся"}
+    intro:
+      en: |
+        **-ся** (after a vowel also **-сь** in speech): reflexive (**митися**), reciprocal (**зустрічатися**), feelings (**сміятися, боятися**), and passive in the 3rd person (**Будинок будується**).
+      pt: |
+        **-ся** (depois de vogal também **-сь** na fala): reflexivo (**митися** — lavar-se), recíproco (**зустрічатися** — encontrar-se), sentimentos (**сміятися, боятися**), e passivo na 3ª pessoa (**Будинок будується** — a casa está sendo construída).
+    examples:
+    - ["Ми зустрінемося завтра.", "We'll meet tomorrow.", "Vamos nos encontrar amanhã.", "зустрінемося"]
+    match: {seq: [{pos: verb, re: "(ся|сь)$"}], same: [person, number]}

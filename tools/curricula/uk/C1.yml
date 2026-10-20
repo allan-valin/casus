@@ -1,0 +1,55 @@
+id: C1
+topics:
+
+- title: {en: Formal Ukrainian, pt: Ucraniano formal}
+  lessons:
+  - id: uk-c1-prepositions
+    title: згідно з, відповідно до, у зв'язку з
+    meaning: {en: "complex prepositions", pt: "preposições compostas"}
+    intro:
+      en: |
+        Official style: **згідно з** + instrumental (according to), **відповідно до** + genitive (in accordance with), **у зв'язку з** (in connection with), **завдяки** + dative (thanks to), **внаслідок** + gen. (as a result of), **протягом** (during), **шляхом** (by means of). Avoid the Russianism *згідно* + dative.
+      pt: |
+        Estilo oficial: **згідно з** + instrumental (de acordo com), **відповідно до** + genitivo (em conformidade com), **у зв'язку з** (em relação a), **завдяки** + dativo (graças a), **внаслідок** + gen. (em consequência de), **протягом** (durante), **шляхом** (por meio de).
+    examples:
+    - ["Згідно з законом, це заборонено.", "According to the law, it is forbidden.", "De acordo com a lei, isso é proibido.", "Згідно"]
+    match: {seq: [{word: [згідно, відповідно, внаслідок, протягом, шляхом, завдяки, всупереч, незважаючи]}]}
+    pool: [згідно, відповідно, внаслідок, протягом, завдяки, незважаючи]
+  - id: uk-c1-nominal
+    title: виконання завдання
+    meaning: {en: "verbal nouns", pt: "substantivos verbais"}
+    intro:
+      en: |
+        **-ння / -ття** turn verbs into nouns: **виконати → виконання, відкрити → відкриття, навчати → навчання**. Common in official texts: **після закінчення навчання, для виконання завдання.**
+      pt: |
+        **-ння / -ття** transformam verbos em substantivos: **виконати → виконання, відкрити → відкриття, навчати → навчання**. Comuns em textos oficiais: **після закінчення навчання, для виконання завдання.**
+    examples:
+    - ["Після закінчення навчання він поїхав до Канади.", "After finishing his studies he went to Canada.", "Depois de terminar os estudos, foi para o Canadá.", "закінчення"]
+    match: {seq: [{pos: noun, re: "(ння|ття|нню|ттю|нням|ттям)$"}]}
+  - id: uk-c1-surzhyk
+    title: дякую, а не спасибі
+    meaning: {en: "Ukrainian or Russianism?", pt: "ucraniano ou russismo?"}
+    intro:
+      en: |
+        Standard Ukrainian prefers its own words to Russian loans heard in mixed speech (*суржик*): **дякую** (thanks; *спасибі* is also standard), **будь ласка** (please), **вибачте** (sorry, not *ізвініть*), **так** (yes, not *да*), **звичайно** (of course), **потрібно / треба** (necessary), **пам'ятати** (remember), **приймати участь → брати участь** (take part).
+      pt: |
+        O ucraniano padrão prefere suas próprias palavras aos empréstimos russos da fala mista (*суржик*): **дякую** (obrigado), **будь ласка** (por favor), **вибачте** (desculpe, não *ізвініть*), **так** (sim, não *да*), **звичайно** (claro), **треба** (é preciso), **брати участь** (participar, não *приймати участь*).
+    examples:
+    - ["Вибачте, будь ласка.", "Excuse me, please.", "Desculpe, por favor.", "Вибачте"]
+    match: {seq: [{word: [дякую, вибачте, будь, звичайно, треба, потрібно, участь]}]}
+    pool: [дякую, вибачте, звичайно, треба, потрібно, так]
+
+- title: {en: Nuance, pt: Nuance}
+  lessons:
+  - id: uk-c1-particles
+    title: ж, же, хіба, невже, ну
+    meaning: {en: "particles", pt: "partículas"}
+    intro:
+      en: |
+        **ж / же** (emphasis: *Я ж казав!* — I told you!), **хіба** (really? surely not), **невже** (can it be that…?), **адже** (after all), **ну** (well), **ось / от** (here, there's), **лише / тільки** (only), **навіть** (even), **аж** (as much as).
+      pt: |
+        **ж / же** (ênfase: *Я ж казав!* — eu bem que disse!), **хіба** (será que?), **невже** (não acredito que…?), **адже** (afinal), **ну** (bom…), **ось / от** (eis, olha), **лише / тільки** (só), **навіть** (até), **аж** (até, tanto quanto).
+    examples:
+    - ["Невже ти не знав?", "Did you really not know?", "Você não sabia mesmo?", "Невже"]
+    match: {seq: [{word: [ж, же, хіба, невже, ну, ось, от, лише, тільки, навіть, аж]}]}
+    pool: [ж, хіба, невже, ну, ось, лише, навіть]

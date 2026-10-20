@@ -1,0 +1,96 @@
+id: B1
+topics:
+
+- title: {en: The cases (2), pt: Os casos (2)}
+  lessons:
+  - id: uk-dat
+    title: мені, братові, мамі
+    meaning: {en: "dative: to whom", pt: "dativo: a quem"}
+    intro:
+      en: |
+        Masculine **-ові / -еві / -у** (братові, вчителеві), feminine **-і** (мамі), plural **-ам / -ям**. Indirect object (**Я дав братові книгу**), age and feelings (**Мені двадцять років. Мені холодно. Мені подобається…**), after **завдяки, всупереч**.
+      pt: |
+        Masculino **-ові / -еві / -у** (братові, вчителеві), feminino **-і** (мамі), plural **-ам / -ям**. Objeto indireto (**Я дав братові книгу**), idade e sensações (**Мені двадцять років. Мені холодно. Мені подобається…** — eu gosto de…), depois de **завдяки, всупереч**.
+    examples:
+    - ["Мені подобається ця пісня.", "I like this song.", "Gosto desta música.", "Мені"]
+    - ["Я подзвоню мамі.", "I'll call mum.", "Vou ligar para a mamãe.", "мамі"]
+    match:
+    - {seq: [{word: [мені, тобі, йому, їй, нам, вам, їм]}, {word: [подобається, подобаються, треба, потрібно, можна, холодно, жарко, сумно, двадцять, тридцять]}], gap: 0}
+    - {seq: [{pos: verb}, {pos: noun, case: dat}], near: 2, gap: 1, same: [number]}
+    pool: [мені, тобі, йому, їй, нам, вам, їм, мене, тебе]
+  - id: uk-ins
+    title: ручкою, з другом, лікарем
+    meaning: {en: "instrumental: with, by, as", pt: "instrumental: com, por, como"}
+    intro:
+      en: |
+        Masculine/neuter **-ом / -ем / -єм**, feminine **-ою / -ею / -єю**, plural **-ами / -ями**. Instrument (**пишу ручкою**), company with **з / із / зі** (**з другом**), profession after **бути, стати, працювати** (**Він працює лікарем**), and after **над, під, перед, за, між**.
+      pt: |
+        Masculino/neutro **-ом / -ем / -єм**, feminino **-ою / -ею / -єю**, plural **-ами / -ями**. Instrumento (**пишу ручкою** — escrevo com caneta), companhia com **з / із / зі** (**з другом**), profissão depois de **бути, стати, працювати** (**Він працює лікарем** — trabalha como médico), e depois de **над, під, перед, за, між**.
+    examples:
+    - ["Я пишу ручкою.", "I write with a pen.", "Escrevo com caneta.", "ручкою"]
+    - ["Він працює лікарем.", "He works as a doctor.", "Ele trabalha como médico.", "лікарем"]
+    match: {seq: [{pos: noun, case: ins}], same: [number]}
+  - id: uk-voc
+    title: Тарасе! Олено! Пане!
+    meaning: {en: "the vocative", pt: "o vocativo"}
+    intro:
+      en: |
+        Ukrainian addresses people in the vocative: **-е / -у / -ю** (masc.: **Тарасе, Андрію, пане**), **-о / -е / -є** (fem.: **Олено, мамо, Надіє**). Polite: **Пане Іване! Пані Олено!** Used in speech every day.
+      pt: |
+        O ucraniano chama as pessoas no vocativo: **-е / -у / -ю** (masc.: **Тарасе, Андрію, пане**), **-о / -е / -є** (fem.: **Олено, мамо, Надіє**). Formal: **Пане Іване! Пані Олено!** Usado na fala todo dia.
+    examples:
+    - ["Мамо, де мої ключі?", "Mum, where are my keys?", "Mãe, cadê minhas chaves?", "Мамо"]
+    match: {seq: [{pos: noun, case: voc}]}
+
+- title: {en: Adjectives and comparison, pt: Adjetivos e comparação}
+  lessons:
+  - id: uk-adj
+    title: новий, нова, нове, нові
+    meaning: {en: "adjective agreement", pt: "concordância do adjetivo"}
+    intro:
+      en: |
+        Hard **новий / нова / нове / нові**, soft **синій / синя / синє / сині**. They agree in gender, number and case: **у новому місті, з новою книгою.**
+      pt: |
+        Duros **новий / нова / нове / нові**, brandos **синій / синя / синє / сині**. Concordam em gênero, número e caso: **у новому місті** (na cidade nova), **з новою книгою**.
+    examples:
+    - ["Це дуже гарне місто.", "This is a very beautiful city.", "Esta é uma cidade muito bonita.", "гарне"]
+    match: {seq: [{pos: adj}, {pos: noun}], gap: 0, same: [case, number]}
+  - id: uk-comparison
+    title: більший, найбільший
+    meaning: {en: "comparatives and superlatives", pt: "comparativos e superlativos"}
+    intro:
+      en: |
+        **-іший / -ший** (новіший, дешевший), **ніж** or the genitive after **за**: **Київ більший, ніж Львів.** Superlative **най-** (найкращий). Irregular: **добрий → кращий, поганий → гірший, великий → більший, малий → менший**. Analytic: **більш / менш цікавий, найбільш цікавий**.
+      pt: |
+        **-іший / -ший** (новіший, дешевший), **ніж** (que): **Київ більший, ніж Львів.** Superlativo com **най-** (найкращий). Irregulares: **добрий → кращий, поганий → гірший, великий → більший, малий → менший**. Analítico: **більш / менш цікавий**.
+    examples:
+    - ["Це найкращий день у моєму житті.", "This is the best day of my life.", "É o melhor dia da minha vida.", "найкращий"]
+    match: {seq: [{re: "^(най|кращ|гірш|більш|менш)", pos: [adj, adv]}]}
+    pool: [кращий, найкращий, гірший, більший, менший, ніж]
+
+- title: {en: Clauses, pt: Orações}
+  lessons:
+  - id: uk-conditional
+    title: якби я знав, я б прийшов
+    meaning: {en: "the conditional with би", pt: "o condicional com би"}
+    intro:
+      en: |
+        Past form + **би / б**: **Я б хотів кави. Якби я мав час, я б прийшов.** Same form for present and past unreal conditions; **якщо** for real conditions with the future: **Якщо буде дощ, я залишуся вдома.**
+      pt: |
+        Forma do passado + **би / б**: **Я б хотів кави** (eu gostaria de um café). **Якби я мав час, я б прийшов.** A mesma forma para condições irreais no presente e no passado; **якщо** para condições reais com o futuro: **Якщо буде дощ, я залишуся вдома.**
+    examples:
+    - ["Я б хотіла поїхати в Одесу.", "I would like to go to Odesa.", "Eu gostaria de ir a Odessa.", "б"]
+    match: {seq: [{word: [би, б, якби]}], gap: 0}
+    pool: [би, б, якби, якщо, коли]
+  - id: uk-relative
+    title: який, яка, яке, що
+    meaning: {en: "relative clauses", pt: "orações relativas"}
+    intro:
+      en: |
+        **який / яка / яке / які** agree with the noun in gender and number, take their case from the clause: **Це людина, яку я знаю. Місто, в якому я живу.** **що** is a simpler relative in speech: **Книжка, що лежить на столі.**
+      pt: |
+        **який / яка / яке / які** concordam com o substantivo em gênero e número, e o caso vem da oração: **Це людина, яку я знаю** (a pessoa que conheço). **Місто, в якому я живу** (a cidade em que moro). **що** é o relativo simples da fala.
+    examples:
+    - ["Це місто, в якому я народився.", "This is the city where I was born.", "Esta é a cidade em que nasci.", "якому"]
+    match: {seq: [{word: [який, яка, яке, які, якого, якої, якому, якій, яким, якою, яких, яку, якими]}], gap: 0}
+    pool: [який, яка, яке, які, якого, якої, якому, яку, якою]
