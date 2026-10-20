@@ -36,9 +36,7 @@ def build_grc(src: Path, out: Path, drop_dialects: bool) -> dict:
     if drop_dialects:
         for e in entries:
             e["forms"] = _attic_koine_only(e["forms"])
-    entries = fold_form_of(entries)
     index = build_index(entries)
-    entries = used_entries(entries, index)
 
     def rows(analyses):
         groups: dict[tuple, list[str]] = {}
@@ -317,7 +315,9 @@ def build_generic(code: str, src: Path, out: Path) -> dict:
         before = len(entries)
         entries = merge_bin(entries, lambda: read_bin(bin_zip), frequent, start_id=max(e["id"] for e in entries) + 1)
         print(f"BÍN: forms merged, {len(entries) - before} frequent lemmas added")
+    entries = fold_form_of(entries)
     index = build_index(entries)
+    entries = used_entries(entries, index)
 
     def rows(analyses):
         groups: dict[int, list[str]] = {}
