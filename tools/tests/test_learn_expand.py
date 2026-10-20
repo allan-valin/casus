@@ -58,3 +58,8 @@ def test_expansion_adds_function_word_verb_and_vocabulary_lessons(tmp_path):
 def test_vowelled_forms_count_against_unvowelled_sentences():
     assert word_counts(["كتب الولد"]) == {"كتب": 1, "الولد": 1}
     assert word_counts(["كَتَبَ"]) == {"كتب": 1}
+
+
+def test_lemma_patterns_are_valid_javascript():
+    from learn_expand import js_escape
+    assert js_escape("кто-то") == "кто-то" and js_escape("a.b") == "a\\.b"

@@ -25,22 +25,46 @@ def parsed(title):
     return get({"action": "parse", "page": title, "prop": "text", "disableeditsection": 1, "redirects": 1})["parse"]["text"]
 
 
+SKIP = re.compile(r"(print version|contents|restructuring|about|contribut|computing|authors|todo|to do|glossary of terms|resources|external links|sandbox)", re.I)
+
+
+def links_of(html, book):
+    out = []
+    for href in re.findall(r'href="/wiki/([^"#?]+)"', html):
+        t = urllib.parse.unquote(href).replace("_", " ")
+        if t.startswith(book.replace("_", " ") + "/") and t not in out:
+            out.append(t)
+    return out
+
+
 def main(book):
+    """the book's pages in the order of its table of contents: the main page's links, and the links of an index page
+    (Contents, Level I…) in its place, one level down"""
     out = ROOT / "vendor" / "wikibooks" / book
     out.mkdir(parents=True, exist_ok=True)
-    main_html = parsed(book)
-    order = []
-    for href in re.findall(r'href="/wiki/([^"#?]+)"', main_html):
-        t = urllib.parse.unquote(href).replace("_", " ")
-        if t.startswith(book.replace("_", " ") + "/") and t not in order:
-            order.append(t)
-    pages = []
-    for t in order:
+    order, pages, seen = [], [], set()
+    first = links_of(parsed(book), book)
+    for t in first:
         time.sleep(1)
         try:
-            pages.append({"title": t, "html": parsed(t)})
+            h = parsed(t)
         except Exception as e:   # a red link, a deleted page
             print("skip", t, e)
+            continue
+        inner = [x for x in links_of(h, book) if x not in first and x not in seen]
+        if not SKIP.search(t.split("/")[-1]) or not inner:
+            if not SKIP.search(t.split("/")[-1]):
+                pages.append({"title": t, "html": h}); seen.add(t)
+        # an index page: its own links follow it, in order
+        if len(inner) >= 3:
+            for x in inner:
+                if x in seen or SKIP.search(x.split("/")[-1]):
+                    continue
+                time.sleep(1)
+                try:
+                    pages.append({"title": x, "html": parsed(x)}); seen.add(x)
+                except Exception as e:
+                    print("skip", x, e)
     (out / "pages.json").write_text(json.dumps(pages, ensure_ascii=False), encoding="utf-8")
     print(book, len(pages), "pages")
 

@@ -42,6 +42,11 @@ def key(w: str) -> str:
     return ARABIC_MARKS.sub("", w).lower()
 
 
+def js_escape(s: str) -> str:
+    """escape for a JavaScript unicode regex (Python's re.escape writes \\- and the like, which `u` mode rejects)"""
+    return re.sub(r"([.*+?^${}()|\[\]\\/])", r"\\\1", s)
+
+
 def word_counts(sentences) -> Counter:
     c = Counter()
     for s in sentences:
@@ -114,7 +119,7 @@ def expand(code: str, data: Path, index: dict, lessons: dict, questions: dict, s
             gloss = gl[lid]
             neighbours = [h for h in heads[max(0, k - 4): k + 5] if h != hw][:6]
             if pos in ("pron", "det", "verb") and len(forms) > 1:
-                match = {"seq": [{"lemma": f"^{re.escape(hw)}$", "pos": pos}]}
+                match = {"seq": [{"lemma": f"^{js_escape(hw)}$", "pos": pos}]}
                 pool = None
             elif pos == "prep" and cases:
                 match = [{"seq": [{"word": forms}, {"pos": "noun"}], "gap": 1, "same": ["number"]},
