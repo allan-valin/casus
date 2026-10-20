@@ -169,3 +169,10 @@ def test_a_proofread_correction_wins_over_the_model(tmp_path, monkeypatch):
     monkeypatch.setattr(T, "ROOT", tmp_path)
     tr = T.CacheOnly("pt", {"A connective ending used to mean [1].": "Uma terminação costumava significar [1]."})
     assert tr(["A connective ending used to mean [1]."]) == ["Uma terminação conectiva usada para dizer [1]."]
+
+
+def test_a_meaning_with_entities_reaches_the_model_as_plain_text():
+    tr = Fake("pt")
+    obj = {"en": "A connective ending used to mean &quot;as&quot; in a sentence."}
+    T.text_field(obj, tr, "en")
+    assert tr.sent == ['A connective ending used to mean "as" in a sentence.'] and "&quot;as&quot;" in obj["pt"]

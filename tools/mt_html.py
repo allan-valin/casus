@@ -94,10 +94,13 @@ _FOREIGN = {}
 def protect_script(text: str, src: str, inline: list) -> str:
     """runs of words in a script other than the explanation's become placeholders [n] (their text appended to inline)"""
     # a transcription in [ ] or / / with a sign outside plain ASCII letters is kept exactly ([mak̚tɯ], /ˈmakto/)
+    # (an example placeholder inside it is put back, so the whole transcription becomes one placeholder)
     def ipa(m):
-        inline.append(m.group(0))
+        whole = PH.sub(lambda p: inline[int(p.group(1)) - 1] if 0 < int(p.group(1)) <= len(inline) else p.group(0), m.group(0))
+        inline.append(whole)
         return f"[{len(inline)}]"
-    text = re.sub(r"\[(?!\d+\])[^\[\]\s]{1,40}\]|/[^/\s]{1,40}/", lambda m: ipa(m) if re.search(r"[^\x00-\x7f]", m.group(0)) else m.group(0), text)
+    text = re.sub(r"\[(?!\d+\])(?:[^\[\]\s]|\[\d+\]){1,60}\]|/[^/\s]{1,40}/",
+                  lambda m: ipa(m) if re.search(r"[^\x00-\x7f]", PH.sub("", m.group(0))) else m.group(0), text)
     own = SRC_SCRIPT.get(src)
     if not own:
         return text

@@ -18,6 +18,7 @@ import argparse
 import json
 import re
 import sys
+from html import unescape
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -184,7 +185,11 @@ def text_field(obj: dict, tr, src: str = "en") -> bool:
     if not (is_prose(orig, src) or len(orig.split()) <= 6):
         return False
     try:
-        _put(obj, tr.ui, tr([orig])[0], src)
+        # plain characters for the model (&quot; → "), escaped again when the original had entities
+        out = tr([unescape(orig)])[0]
+        if unescape(orig) != orig:
+            out = out.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
+        _put(obj, tr.ui, out, src)
     except Missing:
         return False
     return True

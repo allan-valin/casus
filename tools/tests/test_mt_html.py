@@ -104,3 +104,10 @@ def test_ipa_in_brackets_or_slashes_is_protected():
     from mt_html import segments
     run = [s for s in segments("<p>The word is pronounced [mak̚t͈ɯ] or /ˈmakto/ in normal speech here.</p>", src="en") if "text" in s][0]
     assert "[mak̚t͈ɯ]" in run["inline"] and "/ˈmakto/" in run["inline"] and "mak" not in run["text"]
+
+
+def test_ipa_with_an_example_inside_is_kept_whole():
+    from mt_html import translate_html
+    page = "<p>The word <b>막</b> is said [mak̚<b>ㄱ</b>i] when a consonant follows it here.</p>"
+    out = translate_html(page, lambda texts: [t.replace("The word", "A palavra").replace("\u031a", "\u031c") for t in texts], "en")
+    assert "[mak̚<b>ㄱ</b>i]" in out
