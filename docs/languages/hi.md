@@ -15,5 +15,7 @@ Allan accepted (hi, bn, id, vi, fa, sw, tl). On Casus Asia.
 - Voice: espeak-ng `hi` (no open Piper voice).
 - Samples: everyday sentences written for Casus (1/65 unknown, a name); Premchand, *Idgah* (1933; the author died in
   1936, public domain), opening (0/16); Wikipedia's *हिन्दी* (3/145).
+- Drills: no subtitle frequency list exists for Hindi (FrequencyWords has none), so the frequent-word and phrase
+  drills are empty; the form drills work.
 - Not yet: compound postpositions (के लिए, के साथ) as one unit, transliteration under the words, the ergative rule
   (ने with perfective transitive verbs, the verb agreeing with the object), Learn lessons.

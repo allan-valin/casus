@@ -82,6 +82,9 @@ def analysis(cfg: Config, pos: str, tags: set, gender: str | None) -> dict | Non
     if pos == "verb" and cfg.code == "he" and "present" in tags and _one(tags, NUMBERS) and not tags & set(PERSONS):
         # the Hebrew present is a participle by gender and number, any person (אני / אתה / הוא לומד)
         return {"pos": "verb", "tense": "pres", "mood": "ind", "number": _one(tags, NUMBERS), "gender": _one(tags, GENDERS)}
+    if pos == "verb" and cfg.code == "bn" and _one(tags, PERSONS) and not _one(tags, NUMBERS):
+        # Bengali verbs have person (and familiar / polite), not number: পড়ি, পড়িস, পড়েন
+        return {"pos": "verb", "person": _one(tags, PERSONS), "tense": _one(tags, TENSES) or "pres", "mood": _one(tags, MOODS) or "ind"}
     if pos == "verb":
         person, number = _one(tags, PERSONS), _one(tags, NUMBERS)
         if not person or not number:
@@ -244,6 +247,11 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
         word = cfg.clean(word)
         if cfg.caseless and pos in ("noun", "adj", "det", "pron", "num") and not any(t == word for t, _ in cells):
             cells.insert(0, (word, {"pos": pos, "number": "sg", "gender": gender or ("m" if pos == "adj" else None)}))  # the headword is the (masculine) singular
+        if cfg.code == "bn" and pos == "noun" and not form_of and not any(a.get("case") for _, a in cells):
+            from casus_build.bn import noun_forms as _bn_nouns
+            cells += _bn_nouns(cfg.clean(word))
+        if cfg.code == "bn" and pos == "pron" and not any(t == word for t, _ in cells):
+            cells.insert(0, (word, {"pos": "pron", "case": "nom"}))           # Bengali pronoun tables list only the other cases
         if cfg.code == "hu" and pos == "verb" and not any(t == word for t, _ in cells):
             cells.insert(0, (word, {"pos": "verb", "person": "3", "number": "sg", "tense": "pres", "mood": "ind"}))  # the headword is the 3rd singular
         if pos in ("verb",) and not any(t == word for t, _ in cells):
@@ -440,6 +448,15 @@ def _strip_sh(s: str) -> str:
     return strip_sh(s)
 
 
+def _clean_bn(t: str) -> str:
+    """Bengali cells carry their romanization and options in the same string (মানুষটি (manushṭa…), মানুষদের(কে)):
+    the Bengali word before them"""
+    import re as _re
+    return _re.split(r"[\s(/,]", t.strip(), maxsplit=1)[0]
+
+
+CONFIGS["bn"] = Config("bn", ["nom", "obj", "gen", "loc"], {"nominative": "nom", "objective": "obj", "genitive": "gen", "locative": "loc"},
+                       key=lambda f: __import__("unicodedata").normalize("NFC", f), clean=_clean_bn)
 CONFIGS["hi"] = Config("hi", ["dir", "obl", "voc", "erg", "dat", "gen"],
                        {"direct": "dir", "oblique": "obl", "indirect": "obl", "vocative": "voc", "ergative": "erg", "dative": "dat", "genitive": "gen"},
                        key=lambda f: __import__("unicodedata").normalize("NFC", f))
