@@ -1,0 +1,37 @@
+id: C1-25
+protagonist: f
+title: ["Advanced bureaucracy", "Burocracia avançada"]
+situation: ["Your application was rejected for a missing stamp. You write an appeal with Professor Ilievska's help.", "Seu pedido foi negado por falta de um carimbo. Você escreve um recurso com a ajuda da professora Ilievska."]
+learn: [c1-formal]
+culture: —
+items:
+  - [resenie, "решение", "decision (official)", "decisão / despacho"]
+  - [odbieno, "одбиено", "rejected", "indeferido"]
+  - [zalba-protiv, "жалба против", "appeal against", "recurso contra"]
+  - [vo-zakonski-rok, "во законски рок", "within the legal deadline", "dentro do prazo legal", {rare: true}]
+  - [pecat, "печат", "stamp", "carimbo"]
+  - [vo-prilog-dostavuvam, "во прилог доставувам", "I enclose", "segue em anexo"]
+  - [ve-molam-da-go-preispitate, "ве молам да го преиспитате", "I ask you to reconsider it", "peço que reconsidere", {rare: true}]
+  - [so-pocit-podnositel, "подносител", "applicant", "requerente", {rare: true}]
+  - [svoeracen-potpis, "своерачен потпис", "handwritten signature", "assinatura de próprio punho", {rare: true}]
+  - [preporacano, "препорачано", "by registered mail", "registrado (correio)"]
+dialogue:
+  - [protagonist, "Барањето ми е одбиено. Недостасувал печат.", "My application was rejected. A stamp was missing, they say.", "Meu pedido foi indeferido. Faltava um carimbo, dizem."]
+  - [profesorka, "Тогаш пишуваме жалба против решението, во законски рок.", "Then we write an appeal against the decision, within the legal deadline.", "Então escrevemos um recurso contra a decisão, dentro do prazo legal."]
+  - [protagonist, "Како почнува?", "How does it start?", "Como começa?"]
+  - [profesorka, "„Против решението бр. ... поднесувам жалба.“", "'Against decision no. ... I lodge an appeal.'", "'Contra a decisão nº ... apresento recurso.'"]
+  - [protagonist, "„Во прилог доставувам документ со печат.“", "'I enclose the document with the stamp.'", "'Segue em anexo o documento com carimbo.'"]
+  - [profesorka, "Добро. И: „Ве молам решението да го преиспитате.“", "Good. And: 'I ask you to reconsider the decision.'", "Bom. E: 'Peço que reconsiderem a decisão.'"]
+  - [protagonist, "Потоа — своерачен потпис?", "Then — a handwritten signature?", "Depois — assinatura de próprio punho?"]
+  - [profesorka, "Да, и испратете ја препорачано. Секогаш препорачано.", "Yes, and send it by registered mail. Always registered.", "Sim, e mande registrado. Sempre registrado."]
+teach:
+  - ask: ["Say: my application was rejected.", "Diga: meu pedido foi indeferido.", "Барањето ми е одбиено.", odbieno]
+  - ask: ["Say: a stamp was missing, reportedly.", "Diga: faltava um carimbo, dizem.", "Недостасувал печат.", pecat]
+  - ask: ["Say: an appeal against the decision.", "Diga: um recurso contra a decisão.", "Жалба против решението.", zalba-protiv, resenie]
+  - ask: ["Say: within the legal deadline.", "Diga: dentro do prazo legal.", "Во законски рок.", vo-zakonski-rok]
+  - ask: ["Write: I enclose…", "Escreva: segue em anexo…", "Во прилог доставувам…", vo-prilog-dostavuvam]
+  - ask: ["Write: I ask you to reconsider it.", "Escreva: peço que reconsiderem.", "Ве молам да го преиспитате.", ve-molam-da-go-preispitate]
+  - ask: ["Say: the applicant.", "Diga: o requerente.", "Подносителот.", so-pocit-podnositel]
+  - ask: ["Say: a handwritten signature.", "Diga: assinatura de próprio punho.", "Своерачен потпис.", svoeracen-potpis]
+  - ask: ["Say: by registered mail.", "Diga: registrado.", "Препорачано.", preporacano]
+  - note: ["An appeal (жалба) against a decision (решение) has a legal deadline written on the decision itself — read it the day you receive it. Send by registered mail and keep the receipt.", "Um recurso (жалба) contra uma decisão (решение) tem prazo legal escrito na própria decisão — leia no dia em que receber. Mande registrado e guarde o comprovante."]

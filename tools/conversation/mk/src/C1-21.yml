@@ -1,0 +1,37 @@
+id: C1-21
+protagonist: f
+title: ["Citizenship?", "Cidadania?"]
+situation: ["Five years in Skopje. At the Ministry, you ask about permanent residence.", "Cinco anos em Skopje. No Ministério, você pergunta sobre residência permanente."]
+learn: [c1-formal]
+culture: Check the current rules
+items:
+  - [postojan-prestoj, "постојан престој", "permanent residence", "residência permanente", {rare: true}]
+  - [drzavjanstvo, "државјанство", "citizenship", "cidadania", {rare: true}]
+  - [uslovite-se, "условите се", "the conditions are", "as condições são"]
+  - [neprekinato, "непрекинато", "continuously", "ininterruptamente", {rare: true}]
+  - [dokaz, "доказ", "proof", "comprovante / prova"]
+  - [sredstva, "средства за живот", "means of support", "meios de subsistência", {rare: true}]
+  - [se-menuvaat, "се менуваат", "change (themselves)", "mudam"]
+  - [aktuelni, "актуелни", "current (plural)", "atuais", {rare: true}]
+  - [na-oficijalnata-stranica, "на официјалната страница", "on the official website", "no site oficial"]
+  - [baranje-podnesuvam, "поднесувам барање", "I submit an application", "faço o requerimento"]
+dialogue:
+  - [protagonist, "Добар ден. Пет години живеам тука. Може ли постојан престој?", "Good morning. I've lived here five years. Can I get permanent residence?", "Bom dia. Moro aqui há cinco anos. Posso pedir residência permanente?"]
+  - [sluzbenicka, "Условите се: непрекинат престој, доказ за работа и средства за живот.", "The conditions are: continuous residence, proof of work and means of support.", "As condições são: residência ininterrupta, comprovante de trabalho e meios de subsistência."]
+  - [protagonist, "А државјанство?", "And citizenship?", "E cidadania?"]
+  - [sluzbenicka, "Тоа е посебна постапка, со подолг рок и испит по јазик.", "That's a separate procedure, with a longer period and a language exam.", "Isso é outro processo, com prazo maior e prova de língua."]
+  - [protagonist, "Колку години точно?", "How many years exactly?", "Quantos anos exatamente?"]
+  - [sluzbenicka, "Условите се менуваат. Проверете ги актуелните на официјалната страница.", "The conditions change. Check the current ones on the official website.", "As condições mudam. Confira as atuais no site oficial."]
+  - [protagonist, "Тогаш денеска поднесувам барање за постојан престој.", "Then today I'm submitting an application for permanent residence.", "Então hoje faço o requerimento de residência permanente."]
+  - [sluzbenicka, "Пополнете го образецот. Следен!", "Fill in the form. Next!", "Preencha o formulário. Próximo!"]
+teach:
+  - ask: ["Ask about permanent residence.", "Pergunte sobre residência permanente.", "Може ли постојан престој?", postojan-prestoj]
+  - ask: ["She says: the conditions are…", "Ela diz: as condições são…", "Условите се…", uslovite-se]
+  - ask: ["Say: continuous residence.", "Diga: residência ininterrupta.", "Непрекинат престој.", neprekinato]
+  - ask: ["Say: proof of work.", "Diga: comprovante de trabalho.", "Доказ за работа.", dokaz]
+  - ask: ["Say: means of support.", "Diga: meios de subsistência.", "Средства за живот.", sredstva]
+  - ask: ["Ask: and citizenship?", "Pergunte: e cidadania?", "А државјанство?", drzavjanstvo]
+  - ask: ["She says: the conditions change.", "Ela diz: as condições mudam.", "Условите се менуваат.", se-menuvaat]
+  - ask: ["Say: check the current ones on the official website.", "Diga: confira as atuais no site oficial.", "Проверете ги актуелните на официјалната страница.", aktuelni, na-oficijalnata-stranica]
+  - ask: ["Say: I'm submitting an application.", "Diga: faço o requerimento.", "Поднесувам барање.", baranje-podnesuvam]
+  - note: ["Residence and citizenship rules — years, exams, documents — change with new laws. The course gives you the words, not the numbers: check the Ministry of the Interior's current requirements before applying.", "As regras de residência e cidadania — anos, provas, documentos — mudam com novas leis. O curso dá as palavras, não os números: confira os requisitos atuais do Ministério do Interior antes de pedir."]

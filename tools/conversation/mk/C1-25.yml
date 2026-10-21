@@ -1,0 +1,583 @@
+# UNIT mk C1-25 — written by AI (Claude) for Casus; expanded from src/C1-25.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-25
+level: C1
+number: 25
+protagonist: f
+title:
+  en: Advanced bureaucracy
+  pt: Burocracia avançada
+situation:
+  en: Your application was rejected for a missing stamp. You write an appeal with Professor Ilievska's help.
+  pt: Seu pedido foi negado por falta de um carimbo. Você escreve um recurso com a ajuda da professora Ilievska.
+learn_lessons:
+- c1-formal
+culture: —
+new_items:
+- id: resenie
+  text: решение
+  meaning:
+    en: decision (official)
+    pt: decisão / despacho
+- id: odbieno
+  text: одбиено
+  meaning:
+    en: rejected
+    pt: indeferido
+- id: zalba-protiv
+  text: жалба против
+  meaning:
+    en: appeal against
+    pt: recurso contra
+- id: vo-zakonski-rok
+  text: во законски рок
+  meaning:
+    en: within the legal deadline
+    pt: dentro do prazo legal
+  rare: true
+- id: pecat
+  text: печат
+  meaning:
+    en: stamp
+    pt: carimbo
+- id: vo-prilog-dostavuvam
+  text: во прилог доставувам
+  meaning:
+    en: I enclose
+    pt: segue em anexo
+- id: ve-molam-da-go-preispitate
+  text: ве молам да го преиспитате
+  meaning:
+    en: I ask you to reconsider it
+    pt: peço que reconsidere
+  rare: true
+- id: so-pocit-podnositel
+  text: подносител
+  meaning:
+    en: applicant
+    pt: requerente
+  rare: true
+- id: svoeracen-potpis
+  text: своерачен потпис
+  meaning:
+    en: handwritten signature
+    pt: assinatura de próprio punho
+  rare: true
+- id: preporacano
+  text: препорачано
+  meaning:
+    en: by registered mail
+    pt: registrado (correio)
+reviews:
+- item: sto-gotvite
+  from: A1-18
+- item: testenini
+  from: A1-18
+- item: sporetot
+  from: A1-18
+- item: vrie
+  from: A1-18
+- item: uste-ne
+  from: A1-18
+- item: koga
+  from: A1-18
+- item: stavete
+  from: A1-18
+- item: sol
+  from: A1-18
+- item: gotovo
+  from: A1-18
+- item: bravo
+  from: A1-18
+- item: probajte
+  from: A1-18
+- item: sto-se-sluci
+  from: B1-22
+- item: prvo
+  from: B1-22
+- item: bev-zavrsil
+  from: B1-22
+- item: bese-zaminal
+  from: B1-22
+- item: koga-stignav
+  from: B1-22
+- item: potoa-zemav
+  from: B1-22
+- item: taksi
+  from: B1-22
+- item: na-krajot
+  from: B1-22
+- item: sepak
+  from: B1-22
+- item: na-vreme
+  from: B1-22
+- item: iseluvanje
+  from: B2-24
+- item: perspektiva
+  from: B2-24
+- item: tri-pati-pogolema
+  from: B2-24
+- item: od-moeto-drustvo
+  from: B2-24
+- item: cetvorica
+  from: B2-24
+- item: veke-zaminaa
+  from: B2-24
+- item: nema-koj
+  from: B2-24
+- item: korupcija
+  from: B2-24
+- item: sistemot
+  from: B2-24
+- item: ke-se-vratam
+  from: B2-24
+- item: kumstvo
+  from: C1-10
+- item: ni-be-kum
+  from: C1-10
+- item: cest-za-mene
+  from: C1-10
+- item: obvrska
+  from: C1-10
+- item: krstevka
+  from: C1-10
+- item: ima-da-gi-krstis
+  from: C1-10
+- item: decata-nasi
+  from: C1-10
+- item: ne-se-odbiva
+  from: C1-10
+- item: primam
+  from: C1-10
+- item: ke-se-trudam
+  from: C1-10
+- item: finale
+  from: C1-18
+- item: publikata
+  from: C1-18
+- item: poraz
+  from: C1-18
+- item: pobeda
+  from: C1-18
+- item: vo-poslednata-sekunda
+  from: C1-18
+- item: kosot-od-sredina
+  from: C1-18
+- item: sum-bil-na-klupa
+  from: C1-18
+- item: ste-pobedile
+  from: C1-18
+- item: mi-kazaa
+  from: C1-18
+- item: ne-poveruvav
+  from: C1-18
+- item: gradinka
+  from: C1-22
+- item: nema-mesto
+  from: C1-22
+- item: listata
+  from: C1-22
+- item: stoite
+  from: C1-22
+- item: ama-zarem
+  from: C1-22
+- item: baba-i-dedo
+  from: C1-22
+- item: ke-go-cuvame
+  from: C1-22
+- item: ni-trgaat
+  from: C1-22
+- item: pa-ete
+  from: C1-22
+- item: besplatno-cuvanje
+  from: C1-22
+- item: renovacija
+  from: C1-24
+- item: rokot-pomina
+  from: C1-24
+- item: plocki
+  from: C1-24
+- item: ne-stignaa
+  from: C1-24
+- item: ima-da-ceka
+  from: C1-24
+- item: faktura
+  from: C1-24
+- item: avans
+  from: C1-24
+- item: ostatokot
+  from: C1-24
+- item: koga-ke-zavrsite
+  from: C1-24
+- item: zbor-na-cest
+  from: C1-24
+steps:
+- type: narrator
+  text:
+    en: Your application was rejected for a missing stamp. You write an appeal with Professor Ilievska's help. Listen to the conversation; you don't need to understand it yet.
+    pt: Seu pedido foi negado por falta de um carimbo. Você escreve um recurso com a ajuda da professora Ilievska. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Барањето ми е одбиено. Недостасувал печат.
+    meaning:
+      en: My application was rejected. A stamp was missing, they say.
+      pt: Meu pedido foi indeferido. Faltava um carimbo, dizem.
+  - speaker: profesorka
+    text: Тогаш пишуваме жалба против решението, во законски рок.
+    meaning:
+      en: Then we write an appeal against the decision, within the legal deadline.
+      pt: Então escrevemos um recurso contra a decisão, dentro do prazo legal.
+  - speaker: protagonist
+    text: Како почнува?
+    meaning:
+      en: How does it start?
+      pt: Como começa?
+  - speaker: profesorka
+    text: „Против решението бр. ... поднесувам жалба.“
+    meaning:
+      en: '''Against decision no. ... I lodge an appeal.'''
+      pt: '''Contra a decisão nº ... apresento recurso.'''
+  - speaker: protagonist
+    text: „Во прилог доставувам документ со печат.“
+    meaning:
+      en: '''I enclose the document with the stamp.'''
+      pt: '''Segue em anexo o documento com carimbo.'''
+  - speaker: profesorka
+    text: 'Добро. И: „Ве молам решението да го преиспитате.“'
+    meaning:
+      en: 'Good. And: ''I ask you to reconsider the decision.'''
+      pt: 'Bom. E: ''Peço que reconsiderem a decisão.'''
+  - speaker: protagonist
+    text: Потоа — своерачен потпис?
+    meaning:
+      en: Then — a handwritten signature?
+      pt: Depois — assinatura de próprio punho?
+  - speaker: profesorka
+    text: Да, и испратете ја препорачано. Секогаш препорачано.
+    meaning:
+      en: Yes, and send it by registered mail. Always registered.
+      pt: Sim, e mande registrado. Sempre registrado.
+- type: prompt
+  ask:
+    en: 'Say: my application was rejected.'
+    pt: 'Diga: meu pedido foi indeferido.'
+  answer:
+    speaker: protagonist
+    text: Барањето ми е одбиено.
+  items:
+  - odbieno
+- type: prompt
+  ask:
+    en: 'Say: a stamp was missing, reportedly.'
+    pt: 'Diga: faltava um carimbo, dizem.'
+  answer:
+    speaker: protagonist
+    text: Недостасувал печат.
+  items:
+  - pecat
+- type: prompt
+  ask:
+    en: 'Say: an appeal against the decision.'
+    pt: 'Diga: um recurso contra a decisão.'
+  answer:
+    speaker: protagonist
+    text: Жалба против решението.
+  items:
+  - zalba-protiv
+  - resenie
+- type: prompt
+  ask:
+    en: 'Say: within the legal deadline.'
+    pt: 'Diga: dentro do prazo legal.'
+  answer:
+    speaker: protagonist
+    text: Во законски рок.
+  items:
+  - vo-zakonski-rok
+- type: prompt
+  ask:
+    en: 'Write: I enclose…'
+    pt: 'Escreva: segue em anexo…'
+  answer:
+    speaker: protagonist
+    text: Во прилог доставувам…
+  items:
+  - vo-prilog-dostavuvam
+- type: prompt
+  ask:
+    en: 'Write: I ask you to reconsider it.'
+    pt: 'Escreva: peço que reconsiderem.'
+  answer:
+    speaker: protagonist
+    text: Ве молам да го преиспитате.
+  items:
+  - ve-molam-da-go-preispitate
+- type: prompt
+  ask:
+    en: 'Say: the applicant.'
+    pt: 'Diga: o requerente.'
+  answer:
+    speaker: protagonist
+    text: Подносителот.
+  items:
+  - so-pocit-podnositel
+- type: prompt
+  ask:
+    en: 'Say: a handwritten signature.'
+    pt: 'Diga: assinatura de próprio punho.'
+  answer:
+    speaker: protagonist
+    text: Своерачен потпис.
+  items:
+  - svoeracen-potpis
+- type: prompt
+  ask:
+    en: 'Say: by registered mail.'
+    pt: 'Diga: registrado.'
+  answer:
+    speaker: protagonist
+    text: Препорачано.
+  items:
+  - preporacano
+- type: narrator
+  text:
+    en: An appeal (жалба) against a decision (решение) has a legal deadline written on the decision itself — read it the day you receive it. Send by registered mail and keep the receipt.
+    pt: Um recurso (жалба) contra uma decisão (решение) tem prazo legal escrito na própria decisão — leia no dia em que receber. Mande registrado e guarde o comprovante.
+- type: prompt
+  ask:
+    en: 'Once more: say “decision (official)”.'
+    pt: 'Mais uma vez: diga “decisão / despacho”.'
+  answer:
+    speaker: protagonist
+    text: решение
+  items:
+  - resenie
+- type: prompt
+  ask:
+    en: 'Once more: say “rejected”.'
+    pt: 'Mais uma vez: diga “indeferido”.'
+  answer:
+    speaker: protagonist
+    text: одбиено
+  items:
+  - odbieno
+- type: prompt
+  ask:
+    en: 'Once more: say “appeal against”.'
+    pt: 'Mais uma vez: diga “recurso contra”.'
+  answer:
+    speaker: protagonist
+    text: жалба против
+  items:
+  - zalba-protiv
+- type: prompt
+  ask:
+    en: 'Once more: say “within the legal deadline”.'
+    pt: 'Mais uma vez: diga “dentro do prazo legal”.'
+  answer:
+    speaker: protagonist
+    text: во законски рок
+  items:
+  - vo-zakonski-rok
+- type: prompt
+  ask:
+    en: 'Once more: say “stamp”.'
+    pt: 'Mais uma vez: diga “carimbo”.'
+  answer:
+    speaker: protagonist
+    text: печат
+  items:
+  - pecat
+- type: prompt
+  ask:
+    en: 'Once more: say “I enclose”.'
+    pt: 'Mais uma vez: diga “segue em anexo”.'
+  answer:
+    speaker: protagonist
+    text: во прилог доставувам
+  items:
+  - vo-prilog-dostavuvam
+- type: prompt
+  ask:
+    en: 'Once more: say “I ask you to reconsider it”.'
+    pt: 'Mais uma vez: diga “peço que reconsidere”.'
+  answer:
+    speaker: protagonist
+    text: ве молам да го преиспитате
+  items:
+  - ve-molam-da-go-preispitate
+- type: prompt
+  ask:
+    en: 'Once more: say “applicant”.'
+    pt: 'Mais uma vez: diga “requerente”.'
+  answer:
+    speaker: protagonist
+    text: подносител
+  items:
+  - so-pocit-podnositel
+- type: prompt
+  ask:
+    en: 'Once more: say “handwritten signature”.'
+    pt: 'Mais uma vez: diga “assinatura de próprio punho”.'
+  answer:
+    speaker: protagonist
+    text: своерачен потпис
+  items:
+  - svoeracen-potpis
+- type: prompt
+  ask:
+    en: 'Once more: say “by registered mail”.'
+    pt: 'Mais uma vez: diga “registrado (correio)”.'
+  answer:
+    speaker: protagonist
+    text: препорачано
+  items:
+  - preporacano
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “renovation — and “the deadline passed long ago — and “tiles — and “haven''t arrived — and “there''ll be some waiting — and “invoice — and “advance payment — and “the rest (of the money) —
+      and “when you finish — and “word of honour — and “kindergarten, nursery — and “there''s no place”.'
+    pt: 'Diga: “reforma — e “o prazo passou faz tempo — e “azulejos / pisos — e “não chegaram — e “vai ter que esperar — e “nota fiscal — e “adiantamento — e “o restante — e “quando terminarem — e “palavra
+      de honra — e “creche — e “não tem vaga”.'
+  answer:
+    speaker: protagonist
+    text: реновирање … рокот одамна помина … плочки … не стигнаа … има да се чека … фактура … аванс … остатокот … кога ќе завршите … збор на чест … градинка … нема место
+  items:
+  - renovacija
+  - rokot-pomina
+  - plocki
+  - ne-stignaa
+  - ima-da-ceka
+  - faktura
+  - avans
+  - ostatokot
+  - koga-ke-zavrsite
+  - zbor-na-cest
+  - gradinka
+  - nema-mesto
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the list — and “you''re on the list — and “but surely, really? — and “grandma and grandpa — and “we''ll look after him — and “we don''t need it — and “well, there you go — and “free childcare
+      — and “final — and “the crowd, audience — and “defeat — and “victory”.'
+    pt: 'Diga: “a lista — e “vocês estão na lista — e “mas será que — e “vô e vó — e “a gente cuida dele — e “não precisamos — e “pois é / aí está — e “cuidado de graça — e “final — e “a torcida / o público
+      — e “derrota — e “vitória”.'
+  answer:
+    speaker: protagonist
+    text: листата … сте на листа … ама зарем … баба и дедо … ќе го чуваме … не ни треба … па ете … бесплатно чување … финале … публиката … пораз … победа
+  items:
+  - listata
+  - stoite
+  - ama-zarem
+  - baba-i-dedo
+  - ke-go-cuvame
+  - ni-trgaat
+  - pa-ete
+  - besplatno-cuvanje
+  - finale
+  - publikata
+  - poraz
+  - pobeda
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “in the last second — and “a basket from mid-court — and “I was on the bench — and “you won (I hear) — and “they told me — and “I couldn''t believe it — and “the кум bond — and “to be our
+      кум — and “an honour for me — and “obligation, duty — and “christening — and “you''ll have to christen them”.'
+    pt: 'Diga: “no último segundo — e “cesta do meio da quadra — e “fiquei no banco — e “vocês teriam ganhado — e “me contaram — e “não acreditei — e “compadrio — e “ser nosso padrinho — e “uma honra para
+      mim — e “compromisso / obrigação — e “batizado — e “você vai ter que batizar”.'
+  answer:
+    speaker: protagonist
+    text: во последната секунда … кош од средина … бев на клупа … сте победиле … ми кажаа … не поверував … кумство … да ни бидеш кум … чест за мене … обврска … крштевка … има да ги крстиш
+  items:
+  - vo-poslednata-sekunda
+  - kosot-od-sredina
+  - sum-bil-na-klupa
+  - ste-pobedile
+  - mi-kazaa
+  - ne-poveruvav
+  - kumstvo
+  - ni-be-kum
+  - cest-za-mene
+  - obvrska
+  - krstevka
+  - ima-da-gi-krstis
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “our children — and “you can''t refuse it — and “I accept — and “I''ll do my best — and “emigration — and “prospects — and “three times bigger — and “from my group of friends — and “four (men
+      / people) — and “have already left — and “there''s nobody to — and “corruption”.'
+    pt: 'Diga: “nossos filhos — e “não se recusa — e “Aceito — e “vou me esforçar — e “emigração — e “perspectiva — e “três vezes maior — e “da minha turma — e “quatro (pessoas) — e “já foram embora — e
+      “não tem quem — e “corrupção”.'
+  answer:
+    speaker: protagonist
+    text: нашите деца … не се одбива … Примам … ќе се трудам … иселување … перспектива … три пати поголема … од моето друштво … четворица … веќе заминаа … нема кој да … корупција
+  items:
+  - decata-nasi
+  - ne-se-odbiva
+  - primam
+  - ke-se-trudam
+  - iseluvanje
+  - perspektiva
+  - tri-pati-pogolema
+  - od-moeto-drustvo
+  - cetvorica
+  - veke-zaminaa
+  - nema-koj
+  - korupcija
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the system — and “I''ll come back — and “What happened? — and “first — and “I had finished (a man) — and “had left (masculine) — and “when I arrived — and “then I took — and “taxi — and “in
+      the end — and “still, nevertheless — and “on time”.'
+    pt: 'Diga: “o sistema — e “vou voltar — e “O que aconteceu? — e “primeiro — e “eu tinha terminado — e “tinha saído / partido — e “quando cheguei — e “depois peguei — e “táxi — e “no fim — e “mesmo assim
+      — e “na hora / a tempo”.'
+  answer:
+    speaker: protagonist
+    text: системот … ќе се вратам … Што се случи? … прво … бев завршил … беше заминал … кога стигнав … потоа зедов … такси … на крајот … сепак … на време
+  items:
+  - sistemot
+  - ke-se-vratam
+  - sto-se-sluci
+  - prvo
+  - bev-zavrsil
+  - bese-zaminal
+  - koga-stignav
+  - potoa-zemav
+  - taksi
+  - na-krajot
+  - sepak
+  - na-vreme
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “What are you cooking? (formal) — and “pasta — and “the stove — and “boils / is boiling — and “not yet — and “when — and “put (formal) — and “salt — and “Done / ready — and “Well done! — and
+      “Try / taste (formal)”.'
+    pt: 'Diga: “O que o senhor está cozinhando? — e “macarrão — e “o fogão — e “ferve / está fervendo — e “ainda não — e “quando — e “coloque (formal) — e “sal — e “Pronto — e “Muito bem! — e “Prove (formal)”.'
+  answer:
+    speaker: protagonist
+    text: Што готвите? … тестенини … шпоретот … врие … уште не … кога … ставете … сол … Готово … Браво! … Пробајте
+  items:
+  - sto-gotvite
+  - testenini
+  - sporetot
+  - vrie
+  - uste-ne
+  - koga
+  - stavete
+  - sol
+  - gotovo
+  - bravo
+  - probajte
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

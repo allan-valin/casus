@@ -1,0 +1,36 @@
+id: C1-24
+protagonist: m
+title: ["Renovating the flat", "Reforma da casa"]
+situation: ["The new flat needs a new bathroom. The builder promised two weeks. It's week five.", "O apartamento novo precisa de banheiro novo. O pedreiro prometeu duas semanas. Já é a quinta."]
+learn: [c1-ima-da]
+culture: —
+items:
+  - [renovacija, "реновирање", "renovation", "reforma"]
+  - [rokot-pomina, "рокот одамна помина", "the deadline passed long ago", "o prazo passou faz tempo"]
+  - [plocki, "плочки", "tiles", "azulejos / pisos", {rare: true}]
+  - [ne-stignaa, "не стигнаа", "haven't arrived", "não chegaram"]
+  - [ima-da-ceka, "има да се чека", "there'll be some waiting", "vai ter que esperar"]
+  - [faktura, "фактура", "invoice", "nota fiscal", {rare: true}]
+  - [avans, "аванс", "advance payment", "adiantamento", {rare: true}]
+  - [ostatokot, "остатокот", "the rest (of the money)", "o restante"]
+  - [koga-ke-zavrsite, "кога ќе завршите", "when you finish", "quando terminarem"]
+  - [zbor-na-cest, "збор на чест", "word of honour", "palavra de honra"]
+dialogue:
+  - [protagonist, "Мајсторе, рокот одамна помина. Ветивте две недели.", "Master, the deadline passed long ago. You promised two weeks.", "Mestre, o prazo passou faz tempo. O senhor prometeu duas semanas."]
+  - [majstor, "Плочките не стигнаа од Италија. Има да се чека уште малку.", "The tiles haven't arrived from Italy. There'll be a bit more waiting.", "Os azulejos não chegaram da Itália. Vai ter que esperar mais um pouco."]
+  - [protagonist, "Колку малку?", "How little?", "Quanto é pouco?"]
+  - [majstor, "Една недела. Збор на чест.", "One week. Word of honour.", "Uma semana. Palavra de honra."]
+  - [protagonist, "Авансот го платив. Остатокот — кога ќе завршите.", "I paid the advance. The rest — when you finish.", "O adiantamento eu paguei. O restante — quando terminarem."]
+  - [majstor, "Секако. И фактура ќе ви дадам.", "Of course. And I'll give you an invoice.", "Claro. E vou dar nota fiscal."]
+  - [protagonist, "Со фактура, ве молам. За гаранција.", "With an invoice, please. For the guarantee.", "Com nota fiscal, por favor. Para a garantia."]
+  - [majstor, "Има да биде најубавата бања во зградата!", "It's going to be the most beautiful bathroom in the building!", "Vai ser o banheiro mais bonito do prédio!"]
+teach:
+  - ask: ["Say: the renovation.", "Diga: a reforma.", "Реновирањето.", renovacija]
+  - ask: ["Say: the deadline passed long ago.", "Diga: o prazo passou faz tempo.", "Рокот одамна помина.", rokot-pomina]
+  - ask: ["He says: the tiles haven't arrived.", "Ele diz: os azulejos não chegaram.", "Плочките не стигнаа.", plocki, ne-stignaa]
+  - ask: ["He says: there'll be a bit more waiting.", "Ele diz: vai ter que esperar mais um pouco.", "Има да се чека уште малку.", ima-da-ceka]
+  - ask: ["He swears: word of honour.", "Ele jura: palavra de honra.", "Збор на чест.", zbor-na-cest]
+  - ask: ["Say: I paid the advance.", "Diga: o adiantamento eu paguei.", "Авансот го платив.", avans]
+  - ask: ["Say: the rest when you finish.", "Diga: o restante quando terminarem.", "Остатокот кога ќе завршите.", ostatokot, koga-ke-zavrsite]
+  - ask: ["Say: with an invoice, please.", "Diga: com nota fiscal, por favor.", "Со фактура, ве молам.", faktura]
+  - note: ["Pay builders in stages — an advance, the rest on completion — and ask for an invoice (фактура): it is your guarantee. 'Има да биде…' promises with enthusiasm, not with dates.", "Pague o pedreiro em etapas — adiantamento, o resto no fim — e peça nota fiscal (фактура): é a sua garantia. 'Има да биде…' promete com entusiasmo, não com datas."]
