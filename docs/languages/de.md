@@ -147,7 +147,7 @@ syntax model of design §8).
 | REL1 | A relative pronoun takes gender and number from its antecedent; an article word followed by something that cannot continue a noun phrase is the pronoun. | done |
 | CL8a | No nominative in a zu-infinitive clause; *um/ohne/statt … zu* open with the conjunction. | done 2026-10-21 (clause.js zuOpenerStage + clauseStage; its first article word is no longer read as a relative pronoun; tests/lang/de.cl8a.test.js) |
 | NP11 | A nominalised infinitive after an article or contraction is a neuter singular noun (*das Wünschen, beim Essen*). | next |
-| NP13 | Saxon genitive (*Peters Buch*); proper names take case from article or preposition. | next |
+| NP13 | Saxon genitive (*Peters Buch*); proper names take case from article or preposition. | Saxon genitive done 2026-10-21 (clause.js saxonStage: name + -s before a noun, no article before it, the name in the dictionary; tests/lang/de.np13.test.js); names after article/preposition still next |
 | NP14 | *dessen/deren* + noun: the noun is not genitive. | next |
 | CL11 | Copula predicate is nominative; *als/wie* in comparisons take the case of what they compare. | next |
 | SUBJ | A clause with a finite verb has a subject: if exactly one head can be nominative, it is; if several can, the first is (Allan: word order, subject first unless case shows otherwise; *Den Mann sieht die Frau* stays OVS); if one is certainly nominative, the others are not. A relative clause is cut out of the clause around it. Two capitalised nouns without article are one name (*Gregor Samsa*). | done |

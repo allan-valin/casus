@@ -47,6 +47,14 @@ export function tokenize(sentenceText) {
     if (w.altKey || w.index === 0 || words[k + 1].index !== w.index + 1) continue;
     if (/^\p{Lu}/u.test(w.key) && /^\p{Lu}/u.test(words[k + 1].key) && /(e|en|em|er|es)$/.test(w.key)) w.altKey = w.key[0].toLowerCase() + w.key.slice(1);
   }
+  // NP13: a capitalised word in -s right before another capitalised word may be a name in the Saxon genitive
+  // (Peters Buch): its stem is looked up too
+  for (let k = 0; k + 1 < words.length; k += 1) {
+    const w = words[k];
+    if (words[k + 1].index !== w.index + 1 || !/^\p{Lu}\p{Ll}+[^s]s$/u.test(w.key) || !/^\p{Lu}/u.test(words[k + 1].key)) continue;
+    w.saxonKey = w.key.slice(0, -1);
+    w.extraKeys = [...(w.extraKeys ?? []), w.saxonKey];
+  }
   return tokens;
 }
 

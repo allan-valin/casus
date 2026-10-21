@@ -40,6 +40,30 @@ export function zuOpenerStage(blocks) {
   return out;
 }
 
+// NP13: the Saxon genitive — a name + -s right before a noun, with no article word before it, owns that noun
+// (Peters Buch, Annas Mutter); the word reads only as a noun and its stem is a noun in the dictionary
+export function saxonStage(blocks, ctx) {
+  const lookups = ctx?.lookups;
+  if (!lookups) return blocks;
+  const out = blocks.slice();
+  for (let i = 0; i + 1 < out.length; i += 1) {
+    const b = out[i];
+    const key = b.token.saxonKey;
+    if (!key || b.pinned) continue;
+    const prev = out[i - 1];
+    if (prev && prev.token.index === b.token.index - 1 && prev.candidates.some((c) => ['det', 'adj', 'num'].includes(c.analysis.pos))) continue;
+    if (!out[i + 1].candidates.some((c) => c.analysis.pos === 'noun')) continue;
+    if (b.candidates.some((c) => c.analysis.pos !== 'noun')) continue;              // Alles Gute: alles is no name
+    const names = (lookups.get(key) ?? []).filter((a) => a.pos === 'noun');
+    if (!names.length) continue;
+    let genders = [...new Set(names.map((a) => a.gender ?? 'x'))];
+    if (genders.length > 1) genders = genders.filter((g) => g !== 'x');
+    const r = `Saxon genitive: ${b.token.surface} = ${key} + -s, the owner of ${out[i + 1].token.surface}`;
+    out[i] = { ...b, candidates: genders.map((g) => ({ analysis: { lemma: names[0].lemma, pos: 'noun', case: 'gen', number: 'sg', gender: g }, reasons: ['lexicon: attested form', r], links: [] })) };
+  }
+  return out;
+}
+
 export function clauseStage(blocks) {
   const out = blocks.slice();
   const clauses = new Map();

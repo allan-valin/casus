@@ -65,6 +65,7 @@ const RULES = [
   [/^clause: the subject of (.+) \((\d)(sg|pl)\)$/, { pt: 'oração: o sujeito de $1 ($2$3)', de: 'Satz: das Subjekt von $1 ($2$3)', mk: 'реченица: подметот на $1 ($2$3)', ar: 'الجملة: فاعل $1 ($2$3)' }],
   [/^clause: the subject is (.+)$/, { pt: 'oração: o sujeito é $1', de: 'Satz: das Subjekt ist $1', mk: 'реченица: подметот е $1', ar: 'الجملة: الفاعل $1' }],
   [/^coordination: shares its case with (.+)$/, { pt: 'coordenação: tem o mesmo caso que $1', de: 'Koordination: teilt den Kasus mit $1', mk: 'координација: го дели падежот со $1', ar: 'العطف: يشارك $1 حالته' }],
+  [/^Saxon genitive: (.+) = (.+) \+ -s, the owner of (.+)$/, { pt: 'genitivo saxão: $1 = $2 + -s, o dono de $3', de: 'sächsischer Genitiv: $1 = $2 + -s, Besitzer von $3', mk: 'саксонски генитив: $1 = $2 + -s, сопственикот на $3', ar: 'الإضافة السكسونية: $1 = $2 + -s، مالك $3' }],
   [/^separable verb: (.+) … (.+) \(one verb\)$/, { pt: 'verbo separável: $1 … $2 (um só verbo)', de: 'trennbares Verb: $1 … $2 (ein Verb)', mk: 'разделив глагол: $1 … $2 (еден глагол)', ar: 'فعل منفصل: $1 … $2 (فعل واحد)' }],
   [/^after the article (.+): its case$/, { pt: 'depois do artigo $1: o caso dele', de: 'nach dem Artikel $1: sein Kasus', mk: 'по членот $1: неговиот падеж', ar: 'بعد أداة التعريف $1: حالتها' }],
   [/^-지 before (.+): the verb it negates$/, { pt: '-지 antes de $1: o verbo que ele nega', de: '-지 vor $1: das Verb, das es verneint', mk: '-지 пред $1: глаголот што го негира', ar: '-지 قبل $1: الفعل الذي ينفيه' }],
