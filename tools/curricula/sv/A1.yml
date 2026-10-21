@@ -88,7 +88,7 @@ topics:
         Na oração principal o verbo é sempre o segundo elemento. Se outra coisa vem primeiro (um tempo, um lugar, um objeto), o sujeito passa para depois do verbo: **Jag läser idag → Idag läser jag** (hoje eu leio). **I Sverige talar man svenska** (na Suécia fala-se sueco).
     examples:
     - ["Idag är det en vacker dag.", "Today is a beautiful day.", "Hoje está um dia bonito.", "är"]
-    match: {seq: [{pos: [adv, noun]}, {pos: verb}, {word: [jag, du, han, hon, vi, ni, de, det, man]}], gap: 2}
+    match: {seq: [{pos: verb}, {word: [jag, du, han, hon, vi, ni, de, man]}], gap: 0}
 
 - title: {en: Questions and negation, pt: Perguntas e negação}
   lessons:
