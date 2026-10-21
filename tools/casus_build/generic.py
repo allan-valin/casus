@@ -85,9 +85,6 @@ def analysis(cfg: Config, pos: str, tags: set, gender: str | None) -> dict | Non
         if not tags & {"present", "preterite", "past", "imperative", "subjunctive"}:
             return None
         return {"pos": "verb", "tense": tense, "mood": mood, **({"voice": "pass"} if "passive" in tags else {})}
-    if pos == "verb" and cfg.code == "he" and "present" in tags and _one(tags, NUMBERS) and not tags & set(PERSONS):
-        # the Hebrew present is a participle by gender and number, any person (אני / אתה / הוא לומד)
-        return {"pos": "verb", "tense": "pres", "mood": "ind", "number": _one(tags, NUMBERS), "gender": _one(tags, GENDERS)}
     if pos == "verb" and cfg.code == "bn" and _one(tags, PERSONS) and not _one(tags, NUMBERS):
         # Bengali verbs have person (and familiar / polite), not number: পড়ি, পড়িস, পড়েন
         return {"pos": "verb", "person": _one(tags, PERSONS), "tense": _one(tags, TENSES) or "pres", "mood": _one(tags, MOODS) or "ind"}
@@ -95,9 +92,6 @@ def analysis(cfg: Config, pos: str, tags: set, gender: str | None) -> dict | Non
         person, number = _one(tags, PERSONS), _one(tags, NUMBERS)
         if not person or not number:
             return None
-        if cfg.code == "he":
-            return {"pos": "verb", "person": person, "number": number, "tense": _one(tags, TENSES) or "pres", "mood": _one(tags, MOODS) or "ind",
-                    "gender": _one(tags, GENDERS), **({"voice": "pass"} if "passive" in tags else {})}
         return {"pos": "verb", "person": person, "number": number, "tense": _one(tags, TENSES) or "pres", "mood": _one(tags, MOODS) or "ind",
                 **({"voice": "pass"} if tags & {"passive", "mediopassive"} else {}), **({"polarity": "neg"} if "negative" in tags else {})}
     return None
@@ -170,7 +164,7 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
         # उवाच: perfect of वच्); kept only when the tags give a reading
         form_of_tags = set(senses[0].get("tags") or []) if form_of and pos not in ("prep", "conj", "particle", "adv") else None
         gender = next((v for k, v in GENDERS.items() if any(k in (s.get("tags") or []) for s in senses)), None)
-        if gender is None and cfg.code in ("lt", "he", "sh") and pos in ("noun",):
+        if gender is None and cfg.code in ("lt", "sh") and pos in ("noun",):
             # these dumps put the gender on the canonical form (kȕća: canonical, feminine), not on the senses
             canon = next((set(f.get("tags") or []) for f in d.get("forms") or [] if "canonical" in (f.get("tags") or [])), set())
             gender = _one(canon, GENDERS)
@@ -182,7 +176,7 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
         for f in d.get("forms") or []:
             tags = set(f.get("tags") or [])
             # Polish-style tables give 1st and 2nd person by row order only: supply the person from that order
-            if pos == "verb" and cfg.code != "he" and not tags & set(PERSONS) and _one(tags, NUMBERS) and _one(tags, TENSES) and not tags & {"impersonal", "infinitive", "participle"}:
+            if pos == "verb" and not tags & set(PERSONS) and _one(tags, NUMBERS) and _one(tags, TENSES) and not tags & {"impersonal", "infinitive", "participle"}:
                 k = (_one(tags, TENSES), _one(tags, NUMBERS), _one(tags, GENDERS), "virile" in tags)
                 n = seen_person.get(k, 0)
                 seen_person[k] = n + 1
@@ -247,9 +241,6 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
             tags = {t for f in d.get("forms") or [] for t in f.get("tags") or []}
             g = gender or ("m" if "masculine" in tags and "feminine" not in tags else "f" if "feminine" in tags and "masculine" not in tags else None)
             cells += noun_forms(word, g)
-        if cfg.code == "he":
-            from casus_build.he import plene, strip_he
-            cells += [(plene(t), dict(a)) for t, a in cells if plene(t) != strip_he(t)]   # the full spelling texts use
         if form_of_tags and not cells:
             fa = analysis(cfg, pos, form_of_tags, gender)
             if fa:
@@ -457,11 +448,6 @@ def _strip_lt(s: str) -> str:
     return strip_lt(s)
 
 
-def _strip_he(s: str) -> str:
-    from casus_build.he import strip_he
-    return strip_he(s)
-
-
 def _strip_sh(s: str) -> str:
     from casus_build.sh import strip_sh
     return strip_sh(s)
@@ -502,5 +488,4 @@ CONFIGS["hi"] = Config("hi", ["dir", "obl", "voc", "erg", "dat", "gen"],
 CONFIGS["sv"] = Config("sv", [], {}, caseless=True)
 CONFIGS["ro"] = Config("ro", ["nom", "acc", "gen", "dat", "voc"], {"nominative": "nom", "accusative": "acc", "genitive": "gen", "dative": "dat", "vocative": "voc"}, key=_key_ro)
 CONFIGS["sh"] = Config("sh", ["nom", "gen", "dat", "acc", "voc", "loc", "ins"], SLAVIC_TAGS, key=_strip_sh)
-CONFIGS["he"] = Config("he", [], {}, caseless=True, key=_strip_he, clean=lambda t: t.replace("\u05BE", ""))
 CONFIGS["lt"] = Config("lt", ["nom", "gen", "dat", "acc", "ins", "loc", "voc"], SLAVIC_TAGS, key=_strip_lt)
