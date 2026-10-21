@@ -1,0 +1,38 @@
+id: B1-27
+protagonist: f
+title: ["The languages of the Balkans", "As línguas dos Bálcãs"]
+situation: ["Bojan's Bulgarian cousin is visiting, and they understand each other. You ask how.", "O primo búlgaro do Bojan está de visita, e eles se entendem. Você pergunta como."]
+learn: [b1-relative]
+culture: Language and identity, handled gently
+items:
+  - [slicen, "сличен", "similar (masculine)", "parecido"]
+  - [se-razbirame, "се разбираме", "we understand each other", "a gente se entende"]
+  - [bugarski, "бугарски", "Bulgarian", "búlgaro"]
+  - [srpski, "српски", "Serbian", "sérvio"]
+  - [albanski, "албански", "Albanian", "albanês"]
+  - [sosema-razlicen, "сосема различен", "completely different", "completamente diferente"]
+  - [dijalekt, "дијалект", "dialect", "dialeto", {rare: true}]
+  - [cuvstvitelna-tema, "чувствителна тема", "sensitive topic", "tema delicada", {rare: true}]
+  - [sekoj-naroden, "секој народ", "every people / nation", "cada povo"]
+  - [svoj-jazik, "свој јазик", "its own language", "sua própria língua"]
+dialogue:
+  - [protagonist, "Како се разбирате со братучед ти?", "How do you understand your cousin?", "Como você entende o seu primo?"]
+  - [bojan, "Бугарскиот е многу сличен. Се разбираме добро.", "Bulgarian is very similar. We understand each other well.", "O búlgaro é muito parecido. A gente se entende bem."]
+  - [protagonist, "А српски?", "And Serbian?", "E o sérvio?"]
+  - [bojan, "И српски разбирам, од Југославија.", "I understand Serbian too, from the Yugoslav days.", "Sérvio também entendo, do tempo da Iugoslávia."]
+  - [protagonist, "А албански?", "And Albanian?", "E o albanês?"]
+  - [bojan, "Албанскиот е сосема различен — не е словенски јазик.", "Albanian is completely different — it's not a Slavic language.", "O albanês é completamente diferente — não é língua eslava."]
+  - [protagonist, "Значи, македонскиот е дијалект на бугарскиот?", "So Macedonian is a dialect of Bulgarian?", "Então o macedônio é um dialeto do búlgaro?"]
+  - [bojan, "Не! Тоа е чувствителна тема. Секој народ има свој јазик.", "No! That's a sensitive topic. Every people has its own language.", "Não! Isso é tema delicado. Cada povo tem sua própria língua."]
+  - [protagonist, "Разбрав. Нема повеќе такви прашања!", "Understood. No more questions like that!", "Entendi. Chega desse tipo de pergunta!"]
+teach:
+  - ask: ["Say: Bulgarian is very similar.", "Diga: o búlgaro é muito parecido.", "Бугарскиот е многу сличен.", bugarski, slicen]
+  - ask: ["Say: we understand each other well.", "Diga: a gente se entende bem.", "Се разбираме добро.", se-razbirame]
+  - ask: ["Ask: and Serbian?", "Pergunte: e o sérvio?", "А српски?", srpski]
+  - ask: ["Ask: and Albanian?", "Pergunte: e o albanês?", "А албански?", albanski]
+  - ask: ["Say: completely different.", "Diga: completamente diferente.", "Сосема различен.", sosema-razlicen]
+  - ask: ["Say: a dialect.", "Diga: um dialeto.", "Дијалект.", dijalekt]
+  - ask: ["Bojan: that's a sensitive topic.", "O Bojan: isso é tema delicado.", "Тоа е чувствителна тема.", cuvstvitelna-tema]
+  - ask: ["Say: every people has its own language.", "Diga: cada povo tem sua própria língua.", "Секој народ има свој јазик.", sekoj-naroden, svoj-jazik]
+  - note: ["Macedonian and Bulgarian are close, and Bulgaria disputes the separate history of Macedonian — the question you just asked is exactly the one that hurts. Linguists treat Macedonian as a standard language of its own since 1945; Albanian, the second big language of the country, is not Slavic at all.", "Macedônio e búlgaro são próximos, e a Bulgária contesta a história própria do macedônio — a pergunta que você fez é justamente a que dói. Os linguistas tratam o macedônio como língua padrão própria desde 1945; o albanês, a segunda grande língua do país, nem é eslavo."]
+  - pt_only: "É como perguntar a um português se o galego é português — só que com muito mais história em jogo. Melhor perguntar, ouvir, e não concluir."

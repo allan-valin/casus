@@ -1,0 +1,587 @@
+# UNIT mk B1-26 — written by AI (Claude) for Casus; expanded from src/B1-26.yml by tools/expand_unit.py. Edit the source.
+
+id: B1-26
+level: B1
+number: 26
+protagonist: m
+title:
+  en: The news
+  pt: As notícias
+situation:
+  en: Evening news at Vera's. Elections are coming.
+  pt: Telejornal na casa da Vera. As eleições estão chegando.
+learn_lessons:
+- b1-renarrative
+culture: Politics, carefully
+new_items:
+- id: vestite
+  text: вестите
+  meaning:
+    en: the news
+    pt: o noticiário
+- id: vladata
+  text: владата
+  meaning:
+    en: the government
+    pt: o governo
+- id: premierot
+  text: премиерот
+  meaning:
+    en: the prime minister
+    pt: o primeiro-ministro
+  rare: true
+- id: vetil
+  text: ветил
+  meaning:
+    en: promised (reportedly)
+    pt: teria prometido
+- id: povisoki
+  text: повисоки
+  meaning:
+    en: higher (plural)
+    pt: mais altos
+- id: plati-salaries
+  text: плати
+  meaning:
+    en: salaries
+    pt: salários
+- id: opozicijata
+  text: опозицијата
+  meaning:
+    en: the opposition
+    pt: a oposição
+  rare: true
+- id: ne-e-vistina
+  text: не е вистина
+  meaning:
+    en: it's not true
+    pt: não é verdade
+- id: za-kogo-glasas
+  text: За кого гласаш?
+  meaning:
+    en: Who do you vote for?
+    pt: Em quem você vota?
+- id: toa-e-tajna
+  text: Тоа е тајна
+  meaning:
+    en: That's a secret
+    pt: Isso é segredo
+- id: ne-moze-da-glasa
+  text: не можеш да гласаш
+  meaning:
+    en: you can't vote
+    pt: você não pode votar
+reviews:
+- item: tavce-gravce
+  from: A1-23
+- item: sarma
+  from: A1-23
+- item: mirise
+  from: A1-23
+- item: jadete
+  from: A1-23
+- item: uste-malku
+  from: A1-23
+- item: dosta-mi-e
+  from: A1-23
+- item: sita-sum
+  from: A1-23
+- item: samo-edna
+  from: A1-23
+- item: potoa
+  from: A1-23
+- item: kolac
+  from: A1-23
+- item: no-but
+  from: A1-23
+- item: daj-mi-go
+  from: A2-25
+- item: polnacot
+  from: A2-25
+- item: ti-go-dadov
+  from: A2-25
+- item: zaboraviv
+  from: A2-25
+- item: knigata
+  from: A2-25
+- item: ja-imas
+  from: A2-25
+- item: mu-ja-dadov
+  from: A2-25
+- item: vrati-mi-ja
+  from: A2-25
+- item: pozajmi-mi
+  from: A2-25
+- item: pari
+  from: A2-25
+- item: ke-ti-gi-vratam
+  from: A2-25
+- item: nevestata
+  from: B1-11
+- item: mladozenecot
+  from: B1-11
+- item: vencavkata
+  from: B1-11
+- item: crkva
+  from: B1-11
+- item: se-drzat
+  from: B1-11
+- item: kruni
+  from: B1-11
+- item: okolu
+  from: B1-11
+- item: pati
+  from: B1-11
+- item: prsten
+  from: B1-11
+- item: desnata-raka
+  from: B1-11
+- item: ubava-e
+  from: B1-11
+- item: kade-bese
+  from: B1-19
+- item: te-cekase
+  from: B1-19
+- item: ne-bese-namerno
+  from: B1-19
+- item: zgotvi
+  from: B1-19
+- item: ke-i-se-javam
+  from: B1-19
+- item: ke-i-se-izvinam
+  from: B1-19
+- item: ne-se-luti
+  from: B1-19
+- item: ne-se-lutam
+  from: B1-19
+- item: vetuvam
+  from: B1-19
+- item: orevi
+  from: B1-19
+- item: ke-odev
+  from: B1-23
+- item: ama
+  from: B1-23
+- item: vrnese
+  from: B1-23
+- item: planot
+  from: B1-23
+- item: propadna
+  from: B1-23
+- item: ke-gledavme
+  from: B1-23
+- item: se-razbolea
+  from: B1-23
+- item: namesto-toa
+  from: B1-23
+- item: spiev
+  from: B1-23
+- item: sledniot-vikend
+  from: B1-23
+- item: klucevite
+  from: B1-25
+- item: nikade
+  from: B1-25
+- item: nekade
+  from: B1-25
+- item: nekoj
+  from: B1-25
+- item: nikoj-ne
+  from: B1-25
+- item: pobaraj
+  from: B1-25
+- item: vo-dzebot
+  from: B1-25
+- item: jaknata
+  from: B1-25
+- item: gi-najdov
+  from: B1-25
+- item: bilo-sto
+  from: B1-25
+- item: pred
+  from: B1-05
+- item: izbori
+  from: B1-18
+steps:
+- type: narrator
+  text:
+    en: Evening news at Vera's. Elections are coming. Listen to the conversation; you don't need to understand it yet.
+    pt: Telejornal na casa da Vera. As eleições estão chegando. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: vera
+    text: Слушај ги вестите. Премиерот ветил повисоки плати.
+    meaning:
+      en: Listen to the news. The prime minister has promised higher salaries, they say.
+      pt: Escuta o noticiário. O primeiro-ministro teria prometido salários mais altos.
+  - speaker: protagonist
+    text: А опозицијата?
+    meaning:
+      en: And the opposition?
+      pt: E a oposição?
+  - speaker: vera
+    text: Опозицијата вели дека тоа не е вистина.
+    meaning:
+      en: The opposition says it isn't true.
+      pt: A oposição diz que não é verdade.
+  - speaker: protagonist
+    text: Пред избори секогаш е така.
+    meaning:
+      en: Before elections it's always like that.
+      pt: Antes das eleições é sempre assim.
+  - speaker: vera
+    text: Кај вас исто?
+    meaning:
+      en: The same where you're from?
+      pt: Lá com vocês também?
+  - speaker: protagonist
+    text: Исто! А ти, за кого гласаш?
+    meaning:
+      en: The same! And you, who do you vote for?
+      pt: Igualzinho! E você, em quem vota?
+  - speaker: vera
+    text: Тоа е тајна. А ти и онака не можеш да гласаш!
+    meaning:
+      en: That's a secret. And you can't vote anyway!
+      pt: Isso é segredo. E você nem pode votar mesmo!
+  - speaker: protagonist
+    text: Во право си. Само гледам.
+    meaning:
+      en: You're right. I'm just watching.
+      pt: Tem razão. Só estou assistindo.
+- type: prompt
+  ask:
+    en: 'Say: listen to the news.'
+    pt: 'Diga: escuta o noticiário.'
+  answer:
+    speaker: protagonist
+    text: Слушај ги вестите.
+  items:
+  - vestite
+- type: prompt
+  ask:
+    en: 'Say: the government.'
+    pt: 'Diga: o governo.'
+  answer:
+    speaker: protagonist
+    text: Владата.
+  items:
+  - vladata
+- type: prompt
+  ask:
+    en: 'Say: the prime minister promised, reportedly.'
+    pt: 'Diga: o primeiro-ministro teria prometido.'
+  answer:
+    speaker: protagonist
+    text: Премиерот ветил.
+  items:
+  - premierot
+  - vetil
+- type: prompt
+  ask:
+    en: 'Say: higher salaries.'
+    pt: 'Diga: salários mais altos.'
+  answer:
+    speaker: protagonist
+    text: Повисоки плати.
+  items:
+  - povisoki
+  - plati-salaries
+- type: prompt
+  ask:
+    en: 'Ask: and the opposition?'
+    pt: 'Pergunte: e a oposição?'
+  answer:
+    speaker: protagonist
+    text: А опозицијата?
+  items:
+  - opozicijata
+- type: prompt
+  ask:
+    en: 'Say: it''s not true.'
+    pt: 'Diga: não é verdade.'
+  answer:
+    speaker: protagonist
+    text: Тоа не е вистина.
+  items:
+  - ne-e-vistina
+- type: prompt
+  ask:
+    en: 'Say: before elections it''s always like that.'
+    pt: 'Diga: antes das eleições é sempre assim.'
+  answer:
+    speaker: protagonist
+    text: Пред избори секогаш е така.
+  items:
+  - pred
+  - izbori
+- type: prompt
+  ask:
+    en: Ask Vera who she votes for.
+    pt: Pergunte à Vera em quem ela vota.
+  answer:
+    speaker: protagonist
+    text: За кого гласаш?
+  items:
+  - za-kogo-glasas
+- type: prompt
+  ask:
+    en: 'Vera: that''s a secret.'
+    pt: 'A Vera: isso é segredo.'
+  answer:
+    speaker: protagonist
+    text: Тоа е тајна.
+  items:
+  - toa-e-tajna
+- type: prompt
+  ask:
+    en: 'Vera: you can''t vote anyway!'
+    pt: 'A Vera: você nem pode votar!'
+  answer:
+    speaker: protagonist
+    text: Не можеш да гласаш!
+  items:
+  - ne-moze-da-glasa
+- type: narrator
+  text:
+    en: The news anchor uses the reported form for promises ('ветил') to keep distance from them. Politics is lively here; ask questions, but don't take sides with people you don't know well.
+    pt: O jornal usa a forma de 'ouvi dizer' para promessas ('ветил') e mantém distância delas. A política aqui é animada; faça perguntas, mas não tome partido com quem você não conhece bem.
+- type: prompt
+  ask:
+    en: 'Once more: say “the news”.'
+    pt: 'Mais uma vez: diga “o noticiário”.'
+  answer:
+    speaker: protagonist
+    text: вестите
+  items:
+  - vestite
+- type: prompt
+  ask:
+    en: 'Once more: say “the government”.'
+    pt: 'Mais uma vez: diga “o governo”.'
+  answer:
+    speaker: protagonist
+    text: владата
+  items:
+  - vladata
+- type: prompt
+  ask:
+    en: 'Once more: say “the prime minister”.'
+    pt: 'Mais uma vez: diga “o primeiro-ministro”.'
+  answer:
+    speaker: protagonist
+    text: премиерот
+  items:
+  - premierot
+- type: prompt
+  ask:
+    en: 'Once more: say “promised (reportedly)”.'
+    pt: 'Mais uma vez: diga “teria prometido”.'
+  answer:
+    speaker: protagonist
+    text: ветил
+  items:
+  - vetil
+- type: prompt
+  ask:
+    en: 'Once more: say “higher (plural)”.'
+    pt: 'Mais uma vez: diga “mais altos”.'
+  answer:
+    speaker: protagonist
+    text: повисоки
+  items:
+  - povisoki
+- type: prompt
+  ask:
+    en: 'Once more: say “salaries”.'
+    pt: 'Mais uma vez: diga “salários”.'
+  answer:
+    speaker: protagonist
+    text: плати
+  items:
+  - plati-salaries
+- type: prompt
+  ask:
+    en: 'Once more: say “the opposition”.'
+    pt: 'Mais uma vez: diga “a oposição”.'
+  answer:
+    speaker: protagonist
+    text: опозицијата
+  items:
+  - opozicijata
+- type: prompt
+  ask:
+    en: 'Once more: say “it''s not true”.'
+    pt: 'Mais uma vez: diga “não é verdade”.'
+  answer:
+    speaker: protagonist
+    text: не е вистина
+  items:
+  - ne-e-vistina
+- type: prompt
+  ask:
+    en: 'Once more: say “Who do you vote for?”.'
+    pt: 'Mais uma vez: diga “Em quem você vota?”.'
+  answer:
+    speaker: protagonist
+    text: За кого гласаш?
+  items:
+  - za-kogo-glasas
+- type: prompt
+  ask:
+    en: 'Once more: say “That''s a secret”.'
+    pt: 'Mais uma vez: diga “Isso é segredo”.'
+  answer:
+    speaker: protagonist
+    text: Тоа е тајна
+  items:
+  - toa-e-tajna
+- type: prompt
+  ask:
+    en: 'Once more: say “you can''t vote”.'
+    pt: 'Mais uma vez: diga “você não pode votar”.'
+  answer:
+    speaker: protagonist
+    text: не можеш да гласаш
+  items:
+  - ne-moze-da-glasa
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the keys — and “nowhere — and “somewhere — and “someone — and “nobody — and “Look for (informal) — and “in the pocket — and “the jacket — and “I found them!”.'
+    pt: 'Diga: “as chaves — e “em lugar nenhum — e “em algum lugar — e “alguém — e “ninguém — e “Procura — e “no bolso — e “o casaco — e “Achei!”.'
+  answer:
+    speaker: protagonist
+    text: клучевите … никаде … некаде … некој … никој не … Побарај … во џебот … јакната … Ги најдов!
+  items:
+  - klucevite
+  - nikade
+  - nekade
+  - nekoj
+  - nikoj-ne
+  - pobaraj
+  - vo-dzebot
+  - jaknata
+  - gi-najdov
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “anything — and “I was going to go — and “but (colloquial) — and “it was raining — and “the plan — and “fell through — and “we were going to watch — and “got ill — and “instead”.'
+    pt: 'Diga: “qualquer coisa — e “eu ia — e “mas — e “estava chovendo — e “o plano — e “furou / deu errado — e “a gente ia assistir — e “ficou doente — e “em vez disso”.'
+  answer:
+    speaker: protagonist
+    text: било што … ќе одев … ама … врнеше … планот … пропадна … ќе гледавме … се разболе … наместо тоа
+  items:
+  - bilo-sto
+  - ke-odev
+  - ama
+  - vrnese
+  - planot
+  - propadna
+  - ke-gledavme
+  - se-razbolea
+  - namesto-toa
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I slept — and “next weekend — and “Where were you? (informal) — and “was waiting for you — and “it wasn''t on purpose — and “cooked — and “I''ll call her — and “I''ll apologise to her — and
+      “Don''t be angry (informal)”.'
+    pt: 'Diga: “dormi — e “no próximo fim de semana — e “Onde você estava? — e “estava te esperando — e “não foi de propósito — e “cozinhou — e “vou ligar para ela — e “vou pedir desculpas a ela — e “Não
+      fica bravo”.'
+  answer:
+    speaker: protagonist
+    text: спиев … следниот викенд … Каде беше? … те чекаше … не беше намерно … зготви … ќе ѝ се јавам … ќе ѝ се извинам … Не се лути
+  items:
+  - spiev
+  - sledniot-vikend
+  - kade-bese
+  - te-cekase
+  - ne-bese-namerno
+  - zgotvi
+  - ke-i-se-javam
+  - ke-i-se-izvinam
+  - ne-se-luti
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I''m not angry — and “I promise — and “walnuts — and “the bride — and “the groom — and “the wedding ceremony — and “church — and “are held — and “crowns”.'
+    pt: 'Diga: “não estou bravo — e “prometo — e “nozes — e “a noiva — e “o noivo — e “a cerimônia — e “igreja — e “são segurados / se seguram — e “coroas”.'
+  answer:
+    speaker: protagonist
+    text: не се лутам … ветувам … ореви … невестата … младоженецот … венчавката … црква … се држат … круни
+  items:
+  - ne-se-lutam
+  - vetuvam
+  - orevi
+  - nevestata
+  - mladozenecot
+  - vencavkata
+  - crkva
+  - se-drzat
+  - kruni
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “around — and “times — and “ring — and “the right hand — and “How beautiful she is! — and “Give it to me (informal, masculine thing) — and “the charger — and “I gave it to you — and “I forgot”.'
+    pt: 'Diga: “em volta de — e “vezes — e “anel / aliança — e “a mão direita — e “Como ela está linda! — e “Me dá (ele) — e “o carregador — e “te dei — e “esqueci”.'
+  answer:
+    speaker: protagonist
+    text: околу … пати … прстен … десната рака … Колку е убава! … Дај ми го … полначот … ти го дадов … заборавив
+  items:
+  - okolu
+  - pati
+  - prsten
+  - desnata-raka
+  - ubava-e
+  - daj-mi-go
+  - polnacot
+  - ti-go-dadov
+  - zaboraviv
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the book — and “Do you have it…? (feminine thing) — and “I gave it to him — and “give it back to me — and “Lend me (informal) — and “money — and “I''ll give them back to you — and “baked
+      beans (the national dish) — and “stuffed cabbage rolls”.'
+    pt: 'Diga: “o livro — e “Está com você…? — e “dei para ele — e “me devolve — e “Me empresta — e “dinheiro — e “te devolvo — e “feijão no forno (o prato nacional) — e “charuto de repolho”.'
+  answer:
+    speaker: protagonist
+    text: книгата … Ја имаш ли…? … му ја дадов … врати ми ја … Позајми ми … пари … ќе ти ги вратам … тавче гравче … сарма
+  items:
+  - knigata
+  - ja-imas
+  - mu-ja-dadov
+  - vrati-mi-ja
+  - pozajmi-mi
+  - pari
+  - ke-ti-gi-vratam
+  - tavce-gravce
+  - sarma
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “smells — and “Eat! (formal) — and “A little more? — and “I''ve had enough — and “I''m full (a woman) — and “just one (feminine) — and “then / afterwards — and “cake — and “but”.'
+    pt: 'Diga: “cheira — e “Coma! (formal) — e “Mais um pouquinho? — e “Para mim chega — e “Estou satisfeita — e “só uma — e “depois — e “bolo / doce — e “mas”.'
+  answer:
+    speaker: protagonist
+    text: мирише … Јадете! … Уште малку? … Доста ми е … Сита сум … само една … потоа … колач … но
+  items:
+  - mirise
+  - jadete
+  - uste-malku
+  - dosta-mi-e
+  - sita-sum
+  - samo-edna
+  - potoa
+  - kolac
+  - no-but
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

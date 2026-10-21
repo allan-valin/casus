@@ -1,0 +1,38 @@
+id: B1-24
+protagonist: m
+title: ["Literature", "Literatura"]
+situation: ["Vera's bookshelf. She takes down two books she has known since school.", "A estante da Vera. Ela tira dois livros que conhece desde a escola."]
+learn: [b1-verbal-noun]
+culture: Racin and Koneski
+items:
+  - [kniga, "книга", "book", "livro"]
+  - [poet, "поет", "poet", "poeta"]
+  - [pesni, "песни", "poems / songs", "poemas / canções"]
+  - [stih, "стих", "verse, line of poetry", "verso", {rare: true}]
+  - [napisal, "напишал", "wrote (reportedly, a man)", "escreveu"]
+  - [jazikot, "јазикот", "the language", "a língua"]
+  - [pravopis, "правопис", "spelling rules", "ortografia", {rare: true}]
+  - [ucenje, "учење", "learning, studying", "estudo / aprendizado"]
+  - [napamet, "напамет", "by heart", "de cor", {rare: true}]
+  - [procitaj, "Прочитај", "Read (informal, once)", "Lê"]
+dialogue:
+  - [vera, "Ова е Кочо Рацин, „Бели мугри“. Првата книга поезија на македонски.", "This is Kočo Racin, 'White Dawns'. The first book of poetry in Macedonian.", "Este é Kočo Racin, 'Auroras Brancas'. O primeiro livro de poesia em macedônio."]
+  - [protagonist, "Кога ја напишал?", "When did he write it?", "Quando ele escreveu?"]
+  - [vera, "Во 1939. Песни за работниците.", "In 1939. Poems about the workers.", "Em 1939. Poemas sobre os trabalhadores."]
+  - [protagonist, "А оваа книга?", "And this book?", "E este livro?"]
+  - [vera, "Блаже Конески. Поет, но и тој што го уредил јазикот и правописот.", "Blaže Koneski. A poet, and also the one who shaped the language and its spelling.", "Blaže Koneski. Poeta, e também quem organizou a língua e a ortografia."]
+  - [protagonist, "Ги знаеш напамет?", "Do you know them by heart?", "Você sabe de cor?"]
+  - [vera, "Некои стихови. Учењето напамет беше важно во училиште.", "Some lines. Learning by heart was important at school.", "Alguns versos. Decorar era importante na escola."]
+  - [protagonist, "Прочитај ми еден!", "Read me one!", "Lê um para mim!"]
+teach:
+  - ask: ["Say: the first book of poetry.", "Diga: o primeiro livro de poesia.", "Првата книга поезија.", kniga]
+  - ask: ["Ask when he wrote it.", "Pergunte quando ele escreveu.", "Кога ја напишал?", napisal]
+  - note: ["Vera says 'напишал' without 'е': she knows it from books, not from seeing it — the same reported form as Elena's engagement.", "A Vera diz 'напишал' sem 'е': ela sabe pelos livros, não porque viu — a mesma forma de 'ouvi dizer' do noivado da Elena."]
+  - ask: ["Say: poems about the workers.", "Diga: poemas sobre os trabalhadores.", "Песни за работниците.", pesni]
+  - ask: ["Say: a poet.", "Diga: um poeta.", "Поет.", poet]
+  - ask: ["Say: the language and its spelling.", "Diga: a língua e a ortografia.", "Јазикот и правописот.", jazikot, pravopis]
+  - ask: ["Ask if she knows them by heart.", "Pergunte se ela sabe de cor.", "Ги знаеш напамет?", napamet]
+  - ask: ["Say: some lines.", "Diga: alguns versos.", "Некои стихови.", stih]
+  - ask: ["Say: learning was important.", "Diga: o estudo era importante.", "Учењето беше важно.", ucenje]
+  - ask: ["Ask her to read you one.", "Peça para ela ler um.", "Прочитај ми еден!", procitaj]
+  - note: ["Kočo Racin's 'Бели мугри' (1939) is the founding book of modern Macedonian poetry. Blaže Koneski, poet and linguist, led the work on the standard language and its spelling after 1944.", "'Бели мугри' (1939), de Kočo Racin, é o livro fundador da poesia macedônia moderna. Blaže Koneski, poeta e linguista, liderou o trabalho da língua padrão e da ortografia depois de 1944."]
