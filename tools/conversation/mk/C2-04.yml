@@ -1,0 +1,588 @@
+# UNIT mk C2-04 — written by AI (Claude) for Casus; expanded from src/C2-04.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-04
+level: C2
+number: 4
+protagonist: m
+title:
+  en: Negotiating
+  pt: Negociar
+situation:
+  en: Your annual review. You want a real raise, and you are ready to say so.
+  pt: Sua avaliação anual. Você quer um aumento de verdade, e está pronto para dizer isso.
+learn_lessons:
+- c2-aspect-politeness
+culture: —
+new_items:
+- id: bi-mozele-da
+  text: би можеле да
+  meaning:
+    en: could you (formal)
+    pt: o senhor poderia
+- id: razmislite
+  text: размислите
+  meaning:
+    en: think it over (formal)
+    pt: pensar a respeito
+- id: pazarna-vrednost
+  text: пазарна вредност
+  meaning:
+    en: market value
+    pt: valor de mercado
+  rare: true
+- id: ponuda-od-drugade
+  text: понуда од друго место
+  meaning:
+    en: an offer from elsewhere
+    pt: uma proposta de outro lugar
+- id: ne-se-zakanuvam
+  text: не се заканувам
+  meaning:
+    en: I'm not threatening
+    pt: não estou ameaçando
+- id: pretpocituvam-da-ostanam
+  text: претпочитам да останам
+  meaning:
+    en: I prefer to stay
+    pt: prefiro ficar
+- id: uslov
+  text: услов
+  meaning:
+    en: condition
+    pt: condição
+- id: kompromisno
+  text: компромисно
+  meaning:
+    en: as a compromise
+    pt: como meio-termo
+  rare: true
+- id: od-noemvri
+  text: од ноември
+  meaning:
+    en: from November
+    pt: a partir de novembro
+- id: se-dogovorivme
+  text: се договоривме
+  meaning:
+    en: we agreed, deal
+    pt: combinado
+reviews:
+- item: kukjata
+  from: A1-27
+- item: selo
+  from: A1-27
+- item: kamen
+  from: A1-27
+- item: kamenata
+  from: A1-27
+- item: tesko
+  from: A1-27
+- item: lesno
+  from: A1-27
+- item: lete
+  from: A1-27
+- item: zime
+  from: A1-27
+- item: zgradata
+  from: A1-27
+- item: beton
+  from: A1-27
+- item: steklo
+  from: A1-27
+- item: zelezo
+  from: A1-27
+- item: ponuda
+  from: B2-01
+- item: rabotno-mesto
+  from: B2-01
+- item: se-bara
+  from: B2-01
+- item: uslovi
+  from: B2-01
+- item: iskustvo
+  from: B2-01
+- item: zainteresirana
+  from: B2-01
+- item: razgovor
+  from: B2-01
+- item: vi-odgovara
+  from: B2-01
+- item: mi-odgovara
+  from: B2-01
+- item: se-raboti
+  from: B2-01
+- item: od-devet-do-pet
+  from: B2-01
+- item: zakupodavec
+  from: C1-03
+- item: zakupec
+  from: C1-03
+- item: depozit
+  from: C1-03
+- item: vo-visina-na
+  from: C1-03
+- item: otkazen-rok
+  from: C1-03
+- item: se-obvrzuva
+  from: C1-03
+- item: komunalii
+  from: C1-03
+- item: vo-pismena-forma
+  from: C1-03
+- item: zaverka
+  from: C1-03
+- item: rakuvanje
+  from: C1-03
+- item: maticar
+  from: C1-19
+- item: izvod
+  from: C1-19
+- item: apostil
+  from: C1-19
+- item: preveden
+  from: C1-19
+- item: ovlasten-preveduvac
+  from: C1-19
+- item: ve-molam-dajte-mi-gi
+  from: C1-19
+- item: ke-vi-ja-zakazam
+  from: C1-19
+- item: datata
+  from: C1-19
+- item: svedocite
+  from: C1-19
+- item: licna-karta
+  from: C1-19
+- item: stres
+  from: C1-27
+- item: ne-spijam
+  from: C1-27
+- item: izgoruvanje
+  from: C1-27
+- item: psiholog
+  from: C1-27
+- item: pa-sto
+  from: C1-27
+- item: ne-si-luda
+  from: C1-27
+- item: se-sramam
+  from: C1-27
+- item: nema-za-sto
+  from: C1-27
+- item: granici
+  from: C1-27
+- item: odmor-vistinski
+  from: C1-27
+- item: pocituvani-gosti
+  from: C2-01
+- item: dozvolete-mi
+  from: C2-01
+- item: da-kazam-nekolku-zbora
+  from: C2-01
+- item: mladencite
+  from: C2-01
+- item: da-ziveat-vo-sloga
+  from: C2-01
+- item: vo-dobro-i-vo-zlo
+  from: C2-01
+- item: da-ostarat-zaedno
+  from: C2-01
+- item: kumata
+  from: C2-01
+- item: krenete-gi-casite
+  from: C2-01
+- item: ziveale
+  from: C2-01
+- item: gledacite
+  from: C2-03
+- item: izjava
+  from: C2-03
+- item: vo-zivo
+  from: C2-03
+- item: bi-sakala-da-istaknam
+  from: C2-03
+- item: zaednicata
+  from: C2-03
+- item: uspehot
+  from: C2-03
+- item: ne-e-slucaen
+  from: C2-03
+- item: poraka-do-mladite
+  from: C2-03
+- item: ne-se-otkazuvajte
+  from: C2-03
+- item: blagodaram-na-pokanata
+  from: C2-03
+steps:
+- type: narrator
+  text:
+    en: Your annual review. You want a real raise, and you are ready to say so. Listen to the conversation; you don't need to understand it yet.
+    pt: Sua avaliação anual. Você quer um aumento de verdade, e está pronto para dizer isso. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Господине Николовски, би можеле да размислите за покачување?
+    meaning:
+      en: Mr Nikolovski, could you consider a raise?
+      pt: Senhor Nikolovski, o senhor poderia pensar num aumento?
+  - speaker: nikolovski
+    text: Колку?
+    meaning:
+      en: How much?
+      pt: Quanto?
+  - speaker: protagonist
+    text: Петнаесет проценти. Тоа е мојата пазарна вредност.
+    meaning:
+      en: Fifteen per cent. That's my market value.
+      pt: Quinze por cento. É o meu valor de mercado.
+  - speaker: nikolovski
+    text: Петнаесет е многу.
+    meaning:
+      en: Fifteen is a lot.
+      pt: Quinze é muito.
+  - speaker: protagonist
+    text: Имам понуда од друго место. Не се заканувам — претпочитам да останам.
+    meaning:
+      en: I have an offer from elsewhere. I'm not threatening — I prefer to stay.
+      pt: Tenho uma proposta de outro lugar. Não estou ameaçando — prefiro ficar.
+  - speaker: nikolovski
+    text: 'Компромисно: десет сега, пет од ноември, под услов проектот да заврши навреме.'
+    meaning:
+      en: 'As a compromise: ten now, five from November, on condition the project finishes on time.'
+      pt: 'Meio-termo: dez agora, cinco a partir de novembro, com a condição de o projeto terminar no prazo.'
+  - speaker: protagonist
+    text: Тоа е фер. Се договоривме.
+    meaning:
+      en: That's fair. Deal.
+      pt: É justo. Combinado.
+  - speaker: nikolovski
+    text: Добро преговаравте. Не очекував.
+    meaning:
+      en: You negotiated well. I didn't expect it.
+      pt: O senhor negociou bem. Não esperava.
+- type: narrator
+  text:
+    en: 'Polite requests choose the completed verb in the conditional: ''би можеле да размислите'' (could you think it over, once and decide). The ongoing form — ''да размислувате'' — would sound like ''keep
+      thinking about it''.'
+    pt: 'Pedidos educados escolhem o verbo completo no condicional: ''би можеле да размислите'' (poderia pensar e decidir). A forma em andamento — ''да размислувате'' — soaria como ''fique pensando nisso''.'
+- type: prompt
+  ask:
+    en: 'Ask: could you consider a raise?'
+    pt: 'Pergunte: o senhor poderia pensar num aumento?'
+  answer:
+    speaker: protagonist
+    text: Би можеле да размислите за покачување?
+  items:
+  - bi-mozele-da
+  - razmislite
+- type: prompt
+  ask:
+    en: 'Say: that''s my market value.'
+    pt: 'Diga: é o meu valor de mercado.'
+  answer:
+    speaker: protagonist
+    text: Тоа е мојата пазарна вредност.
+  items:
+  - pazarna-vrednost
+- type: prompt
+  ask:
+    en: 'Say: I have an offer from elsewhere.'
+    pt: 'Diga: tenho uma proposta de outro lugar.'
+  answer:
+    speaker: protagonist
+    text: Имам понуда од друго место.
+  items:
+  - ponuda-od-drugade
+- type: prompt
+  ask:
+    en: 'Say: I''m not threatening.'
+    pt: 'Diga: não estou ameaçando.'
+  answer:
+    speaker: protagonist
+    text: Не се заканувам.
+  items:
+  - ne-se-zakanuvam
+- type: prompt
+  ask:
+    en: 'Say: I prefer to stay.'
+    pt: 'Diga: prefiro ficar.'
+  answer:
+    speaker: protagonist
+    text: Претпочитам да останам.
+  items:
+  - pretpocituvam-da-ostanam
+- type: prompt
+  ask:
+    en: 'He says: as a compromise.'
+    pt: 'Ele diz: como meio-termo.'
+  answer:
+    speaker: protagonist
+    text: Компромисно.
+  items:
+  - kompromisno
+- type: prompt
+  ask:
+    en: 'Say: from November.'
+    pt: 'Diga: a partir de novembro.'
+  answer:
+    speaker: protagonist
+    text: Од ноември.
+  items:
+  - od-noemvri
+- type: prompt
+  ask:
+    en: 'Say: on one condition.'
+    pt: 'Diga: com uma condição.'
+  answer:
+    speaker: protagonist
+    text: Под еден услов.
+  items:
+  - uslov
+- type: prompt
+  ask:
+    en: 'Say: deal.'
+    pt: 'Diga: combinado.'
+  answer:
+    speaker: protagonist
+    text: Се договоривме.
+  items:
+  - se-dogovorivme
+- type: prompt
+  ask:
+    en: 'Once more: say “could you (formal)”.'
+    pt: 'Mais uma vez: diga “o senhor poderia”.'
+  answer:
+    speaker: protagonist
+    text: би можеле да
+  items:
+  - bi-mozele-da
+- type: prompt
+  ask:
+    en: 'Once more: say “think it over (formal)”.'
+    pt: 'Mais uma vez: diga “pensar a respeito”.'
+  answer:
+    speaker: protagonist
+    text: размислите
+  items:
+  - razmislite
+- type: prompt
+  ask:
+    en: 'Once more: say “market value”.'
+    pt: 'Mais uma vez: diga “valor de mercado”.'
+  answer:
+    speaker: protagonist
+    text: пазарна вредност
+  items:
+  - pazarna-vrednost
+- type: prompt
+  ask:
+    en: 'Once more: say “an offer from elsewhere”.'
+    pt: 'Mais uma vez: diga “uma proposta de outro lugar”.'
+  answer:
+    speaker: protagonist
+    text: понуда од друго место
+  items:
+  - ponuda-od-drugade
+- type: prompt
+  ask:
+    en: 'Once more: say “I''m not threatening”.'
+    pt: 'Mais uma vez: diga “não estou ameaçando”.'
+  answer:
+    speaker: protagonist
+    text: не се заканувам
+  items:
+  - ne-se-zakanuvam
+- type: prompt
+  ask:
+    en: 'Once more: say “I prefer to stay”.'
+    pt: 'Mais uma vez: diga “prefiro ficar”.'
+  answer:
+    speaker: protagonist
+    text: претпочитам да останам
+  items:
+  - pretpocituvam-da-ostanam
+- type: prompt
+  ask:
+    en: 'Once more: say “condition”.'
+    pt: 'Mais uma vez: diga “condição”.'
+  answer:
+    speaker: protagonist
+    text: услов
+  items:
+  - uslov
+- type: prompt
+  ask:
+    en: 'Once more: say “as a compromise”.'
+    pt: 'Mais uma vez: diga “como meio-termo”.'
+  answer:
+    speaker: protagonist
+    text: компромисно
+  items:
+  - kompromisno
+- type: prompt
+  ask:
+    en: 'Once more: say “from November”.'
+    pt: 'Mais uma vez: diga “a partir de novembro”.'
+  answer:
+    speaker: protagonist
+    text: од ноември
+  items:
+  - od-noemvri
+- type: prompt
+  ask:
+    en: 'Once more: say “we agreed, deal”.'
+    pt: 'Mais uma vez: diga “combinado”.'
+  answer:
+    speaker: protagonist
+    text: се договоривме
+  items:
+  - se-dogovorivme
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the viewers — and “statement — and “live — and “I''d like to emphasise — and “the community — and “the success — and “is no accident — and “a message to young people — and “don''t give up
+      (formal/plural) — and “thank you for the invitation — and “Honoured guests — and “Allow me — and “to say a few words”.'
+    pt: 'Diga: “os telespectadores — e “declaração — e “ao vivo — e “gostaria de destacar — e “a comunidade — e “o sucesso — e “não é por acaso — e “um recado para os jovens — e “não desistam — e “obrigada
+      pelo convite — e “Prezados convidados — e “Permitam-me — e “dizer algumas palavras”.'
+  answer:
+    speaker: protagonist
+    text: гледачите … изјава … во живо … би сакала да истакнам … заедницата … успехот … не е случаен … порака до младите … не се откажувајте … благодарам на поканата … Почитувани гости … Дозволете ми …
+      да кажам неколку зборови
+  items:
+  - gledacite
+  - izjava
+  - vo-zivo
+  - bi-sakala-da-istaknam
+  - zaednicata
+  - uspehot
+  - ne-e-slucaen
+  - poraka-do-mladite
+  - ne-se-otkazuvajte
+  - blagodaram-na-pokanata
+  - pocituvani-gosti
+  - dozvolete-mi
+  - da-kazam-nekolku-zbora
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the newlyweds — and “may they live in harmony — and “for better or for worse — and “may they grow old together — and “the кума (female кум) — and “raise your glasses — and “Long live (them)!
+      (toast) — and “stress — and “I''m not sleeping — and “burnout — and “psychologist — and “so what — and “you''re not crazy”.'
+    pt: 'Diga: “os noivos — e “que vivam em harmonia — e “na alegria e na tristeza — e “que envelheçam juntos — e “a madrinha (кума) — e “levantem os copos — e “Vivam! — e “estresse — e “não estou dormindo
+      — e “esgotamento (burnout) — e “psicólogo — e “e daí — e “você não é louca”.'
+  answer:
+    speaker: protagonist
+    text: младенците … да живеат во слога … во добро и во зло … да остарат заедно … кумата … кренете ги чашите … Живееле! … стрес … не спијам … изгорување … психолог … па што … не си луда
+  items:
+  - mladencite
+  - da-ziveat-vo-sloga
+  - vo-dobro-i-vo-zlo
+  - da-ostarat-zaedno
+  - kumata
+  - krenete-gi-casite
+  - ziveale
+  - stres
+  - ne-spijam
+  - izgoruvanje
+  - psiholog
+  - pa-sto
+  - ne-si-luda
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I''m ashamed, embarrassed — and “there''s nothing to (be ashamed of) — and “limits, boundaries — and “a real holiday — and “registrar — and “birth certificate (extract) — and “apostille —
+      and “translated (masculine) — and “sworn translator — and “give them to me (formal) — and “I''ll book it for you — and “the date — and “the witnesses”.'
+    pt: 'Diga: “tenho vergonha — e “não tem por quê — e “limites — e “férias de verdade — e “oficial de registro civil — e “certidão de nascimento — e “apostila — e “traduzido — e “tradutor juramentado
+      — e “me entregue — e “vou marcar para vocês — e “a data — e “as testemunhas”.'
+  answer:
+    speaker: protagonist
+    text: се срамам … нема за што … граници … вистински одмор … матичар … извод од матична книга … апостил … преведен … овластен преведувач … дајте ми ги … ќе ви ја закажам … датата … сведоците
+  items:
+  - se-sramam
+  - nema-za-sto
+  - granici
+  - odmor-vistinski
+  - maticar
+  - izvod
+  - apostil
+  - preveden
+  - ovlasten-preveduvac
+  - ve-molam-dajte-mi-gi
+  - ke-vi-ja-zakazam
+  - datata
+  - svedocite
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “ID card — and “landlord — and “tenant — and “deposit — and “in the amount of — and “notice period — and “undertakes, commits — and “utilities — and “in writing — and “notarisation — and “handshake
+      — and “offer — and “job, position”.'
+    pt: 'Diga: “carteira de identidade — e “locador — e “locatário — e “caução — e “no valor de — e “aviso prévio — e “se compromete — e “contas (água, luz, condomínio) — e “por escrito — e “reconhecimento
+      em cartório — e “aperto de mão — e “oferta / proposta — e “vaga / posto de trabalho”.'
+  answer:
+    speaker: protagonist
+    text: лична карта … закуподавач … закупец … депозит … во висина на … отказен рок … се обврзува … комуналии … во писмена форма … заверка кај нотар … ракување … понуда … работно место
+  items:
+  - licna-karta
+  - zakupodavec
+  - zakupec
+  - depozit
+  - vo-visina-na
+  - otkazen-rok
+  - se-obvrzuva
+  - komunalii
+  - vo-pismena-forma
+  - zaverka
+  - rakuvanje
+  - ponuda
+  - rabotno-mesto
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “is wanted, is required — and “conditions, terms — and “experience — and “interested (a woman) — and “interview, conversation — and “Does … suit you? (formal) — and “suits me — and “one works,
+      people work — and “from nine to five — and “the house — and “village — and “stone — and “the stone (one, feminine)”.'
+    pt: 'Diga: “procura-se / exige-se — e “condições — e “experiência — e “interessada — e “entrevista / conversa — e “Para a senhora serve…? — e “me serve — e “trabalha-se — e “das nove às cinco — e “a
+      casa — e “aldeia / interior — e “pedra — e “a de pedra”.'
+  answer:
+    speaker: protagonist
+    text: се бара … услови … искуство … заинтересирана … разговор … Ви одговара ли…? … ми одговара … се работи … од девет до пет … куќата … село … камен … камената
+  items:
+  - se-bara
+  - uslovi
+  - iskustvo
+  - zainteresirana
+  - razgovor
+  - vi-odgovara
+  - mi-odgovara
+  - se-raboti
+  - od-devet-do-pet
+  - kukjata
+  - selo
+  - kamen
+  - kamenata
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “hard, difficult / heavy — and “easy / light — and “in summer — and “in winter — and “the building — and “concrete — and “glass — and “iron”.'
+    pt: 'Diga: “difícil / pesado — e “fácil / leve — e “no verão — e “no inverno — e “o prédio — e “concreto — e “vidro — e “ferro”.'
+  answer:
+    speaker: protagonist
+    text: тешко … лесно … лете … зиме … зградата … бетон … стакло … железо
+  items:
+  - tesko
+  - lesno
+  - lete
+  - zime
+  - zgradata
+  - beton
+  - steklo
+  - zelezo
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
