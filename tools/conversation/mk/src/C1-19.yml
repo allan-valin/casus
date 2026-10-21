@@ -1,0 +1,36 @@
+id: C1-19
+protagonist: f
+title: ["Civil wedding", "Casamento civil"]
+situation: ["The registry office. The registrar checks your documents before the date can be set.", "O cartório de registro civil. A oficial confere os seus documentos antes de marcar a data."]
+learn: [c1-clitic-clusters]
+culture: Papers from abroad
+items:
+  - [maticar, "матичар", "registrar", "oficial de registro civil", {rare: true}]
+  - [izvod, "извод од матична книга", "birth certificate (extract)", "certidão de nascimento", {rare: true}]
+  - [apostil, "апостил", "apostille", "apostila", {rare: true}]
+  - [preveden, "преведен", "translated (masculine)", "traduzido"]
+  - [ovlasten-preveduvac, "овластен преведувач", "sworn translator", "tradutor juramentado", {rare: true}]
+  - [ve-molam-dajte-mi-gi, "дајте ми ги", "give them to me (formal)", "me entregue"]
+  - [ke-vi-ja-zakazam, "ќе ви ја закажам", "I'll book it for you", "vou marcar para vocês"]
+  - [datata, "датата", "the date", "a data"]
+  - [svedocite, "сведоците", "the witnesses", "as testemunhas"]
+  - [licna-karta, "лична карта", "ID card", "carteira de identidade"]
+dialogue:
+  - [sluzbenicka, "Дајте ми ги документите, ве молам.", "Give me the documents, please.", "Me entregue os documentos, por favor."]
+  - [protagonist, "Еве: пасош, извод од матична книга, со апостил.", "Here: passport, birth certificate, with an apostille.", "Aqui: passaporte, certidão de nascimento, com apostila."]
+  - [sluzbenicka, "Изводот е на португалски. Мора да биде преведен од овластен преведувач.", "The certificate is in Portuguese. It must be translated by a sworn translator.", "A certidão está em português. Precisa ser traduzida por tradutor juramentado."]
+  - [protagonist, "Преводот е тука. Го направи преведувачот од списокот.", "The translation is here. The translator from the list did it.", "A tradução está aqui. Foi o tradutor da lista que fez."]
+  - [sluzbenicka, "Добро. А сведоците?", "Good. And the witnesses?", "Bom. E as testemunhas?"]
+  - [bojan, "Кумовите — Марко и неговата сопруга. Ги имаат личните карти.", "Our кумови — Marko and his wife. They have their ID cards.", "Os padrinhos — o Marko e a esposa. Eles têm as identidades."]
+  - [sluzbenicka, "Тогаш ќе ви ја закажам датата. Сабота, петнаесетти?", "Then I'll book the date for you. Saturday the fifteenth?", "Então vou marcar a data para vocês. Sábado, dia quinze?"]
+  - [protagonist, "Совршено!", "Perfect!", "Perfeito!"]
+teach:
+  - ask: ["She says: give me the documents (formal).", "Ela diz: me entregue os documentos.", "Дајте ми ги документите.", ve-molam-dajte-mi-gi, dokument]
+  - ask: ["Say: the birth certificate, with an apostille.", "Diga: a certidão de nascimento, com apostila.", "Извод од матична книга, со апостил.", izvod, apostil]
+  - ask: ["She says: it must be translated.", "Ela diz: precisa ser traduzida.", "Мора да биде преведен.", preveden]
+  - ask: ["Say: by a sworn translator.", "Diga: por tradutor juramentado.", "Од овластен преведувач.", ovlasten-preveduvac]
+  - ask: ["Ask: and the witnesses?", "Pergunte: e as testemunhas?", "А сведоците?", svedocite]
+  - ask: ["Say: they have their ID cards.", "Diga: eles têm as identidades.", "Ги имаат личните карти.", licna-karta]
+  - ask: ["She says: I'll book the date for you.", "Ela diz: vou marcar a data para vocês.", "Ќе ви ја закажам датата.", ke-vi-ja-zakazam, datata]
+  - ask: ["Say: the registrar.", "Diga: a oficial de registro.", "Матичарот.", maticar]
+  - note: ["Foreign documents usually need an apostille and a sworn translation, and the list of papers changes — ask the registry office (матична служба) before you start.", "Documentos estrangeiros normalmente precisam de apostila e tradução juramentada, e a lista de papéis muda — pergunte no registro civil (матична служба) antes de começar."]

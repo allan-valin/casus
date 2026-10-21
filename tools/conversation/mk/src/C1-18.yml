@@ -1,0 +1,36 @@
+id: C1-18
+protagonist: m
+title: ["The championship final", "Final do campeonato"]
+situation: ["The club reached the amateur final. You were on the bench; Vera only heard about it.", "O clube chegou à final amadora. Você ficou no banco; a Vera só ouviu falar."]
+learn: [c1-renarrative-full]
+culture: —
+items:
+  - [finale, "финале", "final", "final"]
+  - [publikata, "публиката", "the crowd, audience", "a torcida / o público"]
+  - [poraz, "пораз", "defeat", "derrota"]
+  - [pobeda, "победа", "victory", "vitória"]
+  - [vo-poslednata-sekunda, "во последната секунда", "in the last second", "no último segundo"]
+  - [kosot-od-sredina, "кош од средина", "a basket from mid-court", "cesta do meio da quadra", {rare: true}]
+  - [sum-bil-na-klupa, "бев на клупа", "I was on the bench", "fiquei no banco"]
+  - [ste-pobedile, "сте победиле", "you won (I hear)", "vocês teriam ganhado"]
+  - [mi-kazaa, "ми кажаа", "they told me", "me contaram"]
+  - [ne-poveruvav, "не поверував", "I couldn't believe it", "não acreditei"]
+dialogue:
+  - [vera, "Ми кажаа дека сте победиле во финалето! Во последната секунда?", "They told me you won the final! In the last second?", "Me contaram que vocês ganharam a final! No último segundo?"]
+  - [protagonist, "Да! Марко дал кош од средина... не, не дал — јас го видов!", "Yes! Marko scored from mid-court... no, not 'reportedly' — I saw it!", "Sim! O Marko fez uma cesta do meio... não, não 'teria' — eu vi!"]
+  - [vera, "Значи вие сте биле на терен?", "So you were on the court?", "Então o senhor estava em quadra?"]
+  - [protagonist, "Не, бев на клупа. Но гледав сè.", "No, I was on the bench. But I saw everything.", "Não, fiquei no banco. Mas vi tudo."]
+  - [vera, "А публиката?", "And the crowd?", "E a torcida?"]
+  - [protagonist, "Илјада луѓе! По минатогодишниот пораз, оваа победа е слатка.", "A thousand people! After last year's defeat, this victory is sweet.", "Mil pessoas! Depois da derrota do ano passado, essa vitória é doce."]
+  - [vera, "Не поверував кога ми кажаа.", "I couldn't believe it when they told me.", "Não acreditei quando me contaram."]
+  - [protagonist, "Ни јас — а бев таму!", "Neither could I — and I was there!", "Nem eu — e eu estava lá!"]
+teach:
+  - ask: ["Vera: they told me you won (I hear).", "A Vera: me contaram que vocês teriam ganhado.", "Ми кажаа дека сте победиле.", mi-kazaa, ste-pobedile]
+  - ask: ["Say: in the final.", "Diga: na final.", "Во финалето.", finale]
+  - ask: ["Say: in the last second.", "Diga: no último segundo.", "Во последната секунда.", vo-poslednata-sekunda]
+  - ask: ["Say: a basket from mid-court.", "Diga: uma cesta do meio da quadra.", "Кош од средина.", kosot-od-sredina]
+  - note: ["Vera uses the л-form ('сте победиле') because she heard it; you correct to what you saw ('јас го видов'). Choosing the form says who is the witness.", "A Vera usa a forma em -л ('сте победиле') porque ouviu dizer; você corrige para o que viu ('јас го видов'). Escolher a forma diz quem é a testemunha."]
+  - ask: ["Say: I was on the bench.", "Diga: fiquei no banco.", "Бев на клупа.", sum-bil-na-klupa]
+  - ask: ["Say: the crowd.", "Diga: a torcida.", "Публиката.", publikata]
+  - ask: ["Say: after the defeat, this victory is sweet.", "Diga: depois da derrota, essa vitória é doce.", "По поразот, оваа победа е слатка.", poraz, pobeda]
+  - ask: ["Vera: I couldn't believe it.", "A Vera: não acreditei.", "Не поверував.", ne-poveruvav]

@@ -1,0 +1,38 @@
+id: C1-16
+protagonist: m
+title: ["Volunteering", "Voluntariado"]
+situation: ["A Red Cross blood drive in the square. Ana signs you up.", "Uma campanha de doação de sangue da Cruz Vermelha na praça. A Ana inscreve você."]
+learn: [c1-particles]
+culture: —
+items:
+  - [krvodaruvanje, "крводарување", "blood donation", "doação de sangue", {rare: true}]
+  - [crven-krst, "Црвен крст", "Red Cross", "Cruz Vermelha"]
+  - [volonter, "волонтер", "volunteer", "voluntário"]
+  - [krvna-grupa, "крвна група", "blood type", "tipo sanguíneo", {rare: true}]
+  - [boli-li, "Боли ли?", "Does it hurt?", "Dói?"]
+  - [ma-kakvo, "ма какво", "oh come on, not at all", "que nada"]
+  - [samo-ubod, "само убод", "just a prick", "só uma picada", {rare: true}]
+  - [ti-se-vrti, "ти се врти ли", "do you feel dizzy", "está tonto?"]
+  - [ednas-godisno, "еднаш годишно", "once a year", "uma vez por ano"]
+  - [spasuva-zivot, "спасува живот", "saves a life", "salva uma vida"]
+dialogue:
+  - [ana, "Црвен крст собира крв. Ајде, ќе дадеме и ние!", "The Red Cross is collecting blood. Come on, we'll give too!", "A Cruz Vermelha está coletando sangue. Vamos, a gente doa também!"]
+  - [protagonist, "Боли ли?", "Does it hurt?", "Dói?"]
+  - [ana, "Ма какво боли! Само убод.", "Hurt, come on! Just a prick.", "Que nada! Só uma picada."]
+  - [protagonist, "Која е мојата крвна група? Не знам.", "What's my blood type? I don't know.", "Qual é o meu tipo sanguíneo? Não sei."]
+  - [volonter-c, "Ќе ја провериме. Седнете тука.", "We'll check it. Sit here.", "A gente verifica. Sente aqui."]
+  - [volonter-c, "Готово. Ви се врти ли?", "Done. Do you feel dizzy?", "Pronto. Está tonto?"]
+  - [protagonist, "Малку... но добро сум.", "A little... but I'm fine.", "Um pouco... mas estou bem."]
+  - [volonter-c, "Еднаш годишно е доволно. Спасивте живот!", "Once a year is enough. You've saved a life!", "Uma vez por ano basta. O senhor salvou uma vida!"]
+  - [ana, "Сега си вистински волонтер!", "Now you're a real volunteer!", "Agora você é um voluntário de verdade!"]
+teach:
+  - ask: ["Say: the Red Cross is collecting blood.", "Diga: a Cruz Vermelha está coletando sangue.", "Црвен крст собира крв.", crven-krst]
+  - ask: ["Say: blood donation.", "Diga: doação de sangue.", "Крводарување.", krvodaruvanje]
+  - ask: ["Ask: does it hurt?", "Pergunte: dói?", "Боли ли?", boli-li]
+  - ask: ["Ana: come on, not at all! Just a prick.", "A Ana: que nada! Só uma picada.", "Ма какво! Само убод.", ma-kakvo, samo-ubod]
+  - ask: ["Say: my blood type.", "Diga: meu tipo sanguíneo.", "Мојата крвна група.", krvna-grupa]
+  - ask: ["Ask him: do you feel dizzy? (informal)", "Pergunte: está tonto? (informal)", "Ти се врти ли?", ti-se-vrti]
+  - ask: ["Say: once a year is enough.", "Diga: uma vez por ano basta.", "Еднаш годишно е доволно.", ednas-godisno, dovolno]
+  - ask: ["Say: it saves a life.", "Diga: salva uma vida.", "Спасува живот.", spasuva-zivot]
+  - ask: ["Say: a real volunteer.", "Diga: um voluntário de verdade.", "Вистински волонтер.", volonter, vistinski]
+  - note: ["'Ма какво!' brushes a worry aside: 'Ма какво боли!' — hurt? come on! The particle 'ма' adds the shrug.", "'Ма какво!' afasta a preocupação: 'Ма какво боли!' — doer? que nada! A partícula 'ма' põe o dar de ombros."]
