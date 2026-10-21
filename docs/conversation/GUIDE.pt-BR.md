@@ -35,7 +35,7 @@ e não apenas ouvido.
 
 Cada item volta em intervalos cada vez maiores: dentro da unidade alguns passos depois e de novo perto do fim;
 depois na **unidade seguinte**, então em até 2 unidades, em até 4, em até 8. Cada retorno é uma **situação nova**:
-o cumprimento aprendido na porta da senhoria volta no corredor com uma vizinha idosa e, mais tarde, numa padaria.
+o cumprimento aprendido na porta da dona do apartamento volta no corredor com uma vizinha idosa e, mais tarde, numa padaria.
 Cerca de **um quarto** das perguntas de uma unidade são revisão desse tipo. As mesmas falas nunca se repetem.
 
 ### Construção de trás para frente

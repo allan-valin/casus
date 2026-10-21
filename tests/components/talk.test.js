@@ -3,6 +3,7 @@ import { describe, it, expect, afterEach } from 'vitest';
 import { render, fireEvent } from '@testing-library/svelte';
 import { tick } from 'svelte';
 import Talk from '../../src/app/components/Talk.svelte';
+import PracticeStub from '../fixtures/PracticeStub.svelte';
 import { getLanguage } from '../../src/lang/registry.js';
 import { langFromPath, talkPath } from '../../src/app/lib/route.js';
 import { setLang } from '../../src/app/lib/i18n.svelte.js';
@@ -13,7 +14,7 @@ const COURSE = {
   language: 'de', example: true, narrator_languages: ['pt', 'en'],
   cast: { becker: { name: 'Frau Becker' }, protagonist: { name: null } },
   units: [
-    { id: 'A1-01', level: 'A1', number: 1, title: { pt: 'A senhoria', en: 'The landlady' }, situation: { pt: 'Você chegou.', en: 'You arrived.' },
+    { id: 'A1-01', level: 'A1', number: 1, title: { pt: 'A dona do apartamento', en: 'The landlady' }, situation: { pt: 'Você chegou.', en: 'You arrived.' },
       new_items: [{ id: 'danke', text: 'Danke', meaning: { pt: 'Obrigada', en: 'Thank you' } }, { id: 'ent', text: 'Entschuldigung', meaning: { pt: 'Desculpe', en: 'Sorry' } }],
       steps: [
         { type: 'narrator', text: { pt: 'Escute.', en: 'Listen.' } },
@@ -63,10 +64,10 @@ describe('Conversation practice tab (Allan, 2026-10-20/21: narrator in the inter
     expect(container.querySelector('.talk-example')).not.toBeNull();
     const rows = [...container.querySelectorAll('.unit-row')];
     expect(rows.map((r) => r.dataset.unit)).toEqual(['A1-01', 'A1-02']);
-    expect(rows[0].textContent).toContain('A senhoria');
+    expect(rows[0].textContent).toContain('A dona do apartamento');
     await fireEvent.click(rows[0]);
     await flush();
-    expect(container.querySelector('.unit-page h3').textContent).toContain('A senhoria');
+    expect(container.querySelector('.unit-page h3').textContent).toContain('A dona do apartamento');
     expect(container.querySelectorAll('.step').length).toBe(7);
   });
 
@@ -115,7 +116,7 @@ describe('Conversation practice tab (Allan, 2026-10-20/21: narrator in the inter
     expect(spoken[0]).toEqual(['pt', 'Escute.']);
   });
 
-  it('a prompt asks first; the answer appears and plays only on request; a typed answer is checked', async () => {
+  it('a prompt asks first; the answer appears and plays only on request; no typing box (Allan 2026-10-21)', async () => {
     setLang('en');
     const { p, spoken } = props();
     const { container } = render(Talk, p);
@@ -125,17 +126,90 @@ describe('Conversation practice tab (Allan, 2026-10-20/21: narrator in the inter
     const prompt = container.querySelector('.step[data-type="prompt"]');
     expect(prompt.querySelector('.ask').textContent).toBe('Thank her.');
     expect(prompt.querySelector('.taught')).toBeNull();
-    const input = prompt.querySelector('input.typed');
-    await fireEvent.input(input, { target: { value: 'danke' } });
-    await fireEvent.click(prompt.querySelector('.check'));
-    expect(prompt.querySelector('.verdict').dataset.ok).toBe('true');
-    await fireEvent.input(input, { target: { value: 'bitte' } });
-    await fireEvent.click(prompt.querySelector('.check'));
-    expect(prompt.querySelector('.verdict').dataset.ok).toBe('false');
+    expect(prompt.querySelector('input')).toBeNull();
     await fireEvent.click(prompt.querySelector('.answer'));
     await flush();
     expect(prompt.querySelector('.taught').textContent).toBe('Danke!');
     expect(spoken.at(-1)).toEqual(['de', 'Danke!']);
+  });
+
+  it('every prompt opens the pronunciation helper in place, on the answer (Allan 2026-10-21)', async () => {
+    const { p } = props({ Practice: PracticeStub });
+    const { container } = render(Talk, p);
+    await flush();
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    const prompt = container.querySelector('.step[data-type="prompt"]');
+    expect(prompt.querySelector('.practice-stub')).toBeNull();
+    await fireEvent.click(prompt.querySelector('.practise'));
+    await flush();
+    expect(prompt.querySelector('.practice-stub').textContent).toBe('Danke!');
+    await fireEvent.click(prompt.querySelector('.practise'));
+    await flush();
+    expect(prompt.querySelector('.practice-stub')).toBeNull();
+  });
+
+  it('▶ becomes ⏸ while playing; ⏸ pauses the voice, ▶ resumes it (Allan 2026-10-21)', async () => {
+    let finish;
+    const calls = [];
+    const { p } = props({ speakNarrator: () => new Promise((r) => { finish = r; }), control: { pause: () => calls.push('pause'), resume: () => calls.push('resume') } });
+    const { container } = render(Talk, p);
+    await flush();
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    const btn = () => container.querySelector('.step[data-type="narrator"] .play');
+    await fireEvent.click(btn());
+    await flush();
+    expect(btn().classList.contains('playing')).toBe(true);
+    await fireEvent.click(btn());
+    expect(calls).toEqual(['pause']);
+    expect(btn().classList.contains('paused')).toBe(true);
+    await fireEvent.click(btn());
+    expect(calls).toEqual(['pause', 'resume']);
+    finish();
+    await flush();
+    expect(btn().classList.contains('playing')).toBe(false);
+  });
+
+  it('before a unit, the natural voices are offered for download instead of the robotic fallback (Allan 2026-10-21)', async () => {
+    let ready = false;
+    const downloads = [];
+    const voice = { natural: { name: 'Dimitar', sizeMB: 63 }, naturalReady: () => ready, downloadNatural: async (pr) => { downloads.push('mk'); pr?.(1); ready = true; } };
+    const { p } = props({ voices: [voice] });
+    const { container } = render(Talk, p);
+    await flush();
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    expect(container.querySelector('.voice-gate')).not.toBeNull();
+    expect(container.querySelector('.voice-gate').textContent).toContain('Dimitar');
+    await fireEvent.click(container.querySelector('.voice-gate .get-voices'));
+    await flush();
+    expect(downloads).toEqual(['mk']);
+    expect(container.querySelector('.voice-gate')).toBeNull();
+  });
+
+  it('a How-this-works panel explains every button, open on the first visit', async () => {
+    const { p } = props();
+    const { container } = render(Talk, p);
+    await flush();
+    const help = container.querySelector('details.howto');
+    expect(help.open).toBe(true);
+    for (const k of ['▶', '⏸', '🎤']) expect(help.textContent).toContain(k);
+    expect(p.storage.getItem('casus:talk:help-seen')).toBe('1');
+  });
+
+  it('the last step clicked keeps a highlighted background, so you do not lose your place (Allan 2026-10-21)', async () => {
+    const { p } = props();
+    const { container } = render(Talk, p);
+    await flush();
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    await fireEvent.click(container.querySelector('.step[data-type="line"] .play'));
+    await flush();
+    expect([...container.querySelectorAll('.step.current')].map((e) => e.dataset.type)).toEqual(['line']);
+    await fireEvent.click(container.querySelector('.step[data-type="prompt"] .answer'));
+    await flush();
+    expect([...container.querySelectorAll('.step.current')].map((e) => e.dataset.type)).toEqual(['prompt']);
   });
 
   it('the self-check marks the unit done, kept in the browser and shown in the list', async () => {

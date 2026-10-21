@@ -1,14 +1,17 @@
 <script>
   /* Conversation practice (Allan, 2026-10-20/21; docs/PROPOSAL-2026-10-20-CONVERSATION-PRACTICE.md): a unit is a list
    * of steps, each with ▶; the narrator speaks the interface language, the characters the taught language; the
-   * taught-language text stays hidden until clicked; a prompt asks first and gives its answer only on request (or
-   * checks a typed one); the unit ends with the four-in-five self-check. Units are written to the guide in
+   * taught-language text stays hidden until clicked; a prompt asks first and gives its answer only on request, and
+   * opens the pronunciation helper in place (Allan, 2026-10-21: no typing — it distracts from speaking); ▶ turns into
+   * ⏸ while playing; the natural voices are offered before a unit instead of the robotic fallback; the last step
+   * clicked stays highlighted; the unit ends with the four-in-five self-check. Units are written to the guide in
    * docs/conversation/ and built by tools/build_conversation.py. Progress is kept in this browser. */
   import { onMount } from 'svelte';
   import { t, ui } from '../lib/i18n.svelte.js';
   import { voicePitches, pitchOf } from '../lib/talkvoices.js';
   let { lang, loadTalk, storage = null, speakTaught = async () => {}, speakNarrator = async () => {}, trainerHref = null,
-    say = () => {}, pause = (ms) => new Promise((r) => setTimeout(r, ms)) } = $props();
+    say = () => {}, pause = (ms) => new Promise((r) => setTimeout(r, ms)), Practice = null, practiceProps = {}, control = null,
+    voices = [], narratorVoiceOf = null } = $props();
 
   const GUIDE = 'https://github.com/allan-valin/casus/blob/main/docs/conversation';
   const GUIDES = [['en', 'English'], ['pt-BR', 'Português (Brasil)'], ['de', 'Deutsch'], ['mk', 'Македонски'], ['ar', 'العربية']];
@@ -19,9 +22,29 @@
   let loaded = $state(false);
   let unit = $state(null);
   let shown = $state({});        // step index (or "index.line") → text revealed
-  let typed = $state({});
-  let verdict = $state({});
   let done = $state(readDone());
+  let current = $state(null);    // the step clicked last: highlighted so the learner keeps their place
+  let playing = $state(null);    // the step whose sound is playing
+  let paused = $state(false);
+  let practising = $state(null); // the step whose pronunciation helper is open
+  let gateClosed = $state(false);
+  let fetching = $state(null);   // 0–100 while the natural voices download
+  const HELP_KEY = 'casus:talk:help-seen';
+  const helpOpen = (() => { try { return storage?.getItem(HELP_KEY) !== '1'; } catch { return true; } })();
+  try { storage?.setItem(HELP_KEY, '1'); } catch { /* not kept */ }
+  let tickVoices = $state(0);      // bumped after a download: naturalReady() reads the browser, not Svelte state
+  const missing = $derived((tickVoices, [...new Set([...voices, narratorVoiceOf?.(narratorLang)])].filter((v) => v?.natural && !v.naturalReady?.())));
+  const needVoices = $derived(!gateClosed && missing.length > 0);
+  async function getVoices() {
+    fetching = 0;
+    const list = missing.slice();
+    try {
+      for (const [k, v] of list.entries()) await v.downloadNatural((x) => { fetching = Math.round(((k + x) / list.length) * 100); });
+      say(t('talk.voices.got'), 'ok');
+    } catch (e) { say(t('talk.voices.failed', { error: e?.message ?? '' }), 'err'); }
+    fetching = null;
+    tickVoices += 1;
+  }
 
   function readDone() {
     try { return JSON.parse(storage?.getItem(KEY) ?? '[]'); } catch { return []; }
@@ -40,43 +63,49 @@
   const firstDialogue = $derived(unit?.steps.find((s) => s.type === 'dialogue' && !s.again) ?? null);
   const linesOf = (s) => (s.again ? firstDialogue?.lines ?? [] : s.lines ?? []);
 
-  function open(u) { unit = u; shown = {}; typed = {}; verdict = {}; say(t('talk.opened', { unit: nar(u.title) })); }
+  function open(u) { unit = u; shown = {}; current = null; practising = null; say(t('talk.opened', { unit: nar(u.title) })); }
   function back() { unit = null; }
   function toggle(key) { shown = { ...shown, [key]: !shown[key] }; }
 
   async function sayTaught(text, who = null) {
     try { await speakTaught(text, { pitch: who ? pitchOf(course, unit, who, pitches) : 1 }); } catch (e) { say(t('talk.speakFailed', { text, error: e?.message ?? '' }), 'err'); throw e; }
   }
+  // ▶ starts the step; while it plays the same button pauses (⏸) and resumes (▶) it
+  async function waitWhilePaused() { while (paused && playing !== null) await new Promise((r) => setTimeout(r, 120)); }
   async function play(s, n) {
+    current = n;
+    if (playing === n) {
+      if (paused) { paused = false; control?.resume?.(); say(t('talk.resumed')); } else { paused = true; control?.pause?.(); say(t('talk.paused')); }
+      return;
+    }
+    playing = n;
+    paused = false;
     try {
       if (s.type === 'narrator') { await speakNarrator(nar(s.text), narratorLang); say(t('talk.played.narrator')); }
       else if (s.type === 'dialogue') {
-        for (const ln of linesOf(s)) { await sayTaught(ln.text, ln.speaker); await pause(400); }
+        for (const ln of linesOf(s)) { await waitWhilePaused(); if (playing !== n) break; await sayTaught(ln.text, ln.speaker); await pause(400); }
         say(t('talk.played.dialogue', { n: linesOf(s).length }));
       } else if (s.type === 'line') { await sayTaught(items[s.item]?.text ?? '', s.speaker); say(t('talk.played.line', { text: items[s.item]?.text ?? '' })); }
       else if (s.type === 'buildup') {
-        for (const part of s.parts) { await sayTaught(part); await pause(600); }
+        for (const part of s.parts) { await waitWhilePaused(); if (playing !== n) break; await sayTaught(part); await pause(600); }
         say(t('talk.played.buildup', { text: s.parts.at(-1) }));
       } else if (s.type === 'prompt') { await speakNarrator(nar(s.ask), narratorLang); say(t('talk.played.ask')); }
     } catch { /* already reported */ }
+    if (playing === n) { playing = null; paused = false; }
   }
   async function answer(s, n) {
+    current = n;
     shown = { ...shown, [n]: true };
     try { await sayTaught(s.answer.text, s.answer.speaker ?? 'protagonist'); say(t('talk.played.answer', { text: s.answer.text })); } catch { /* reported */ }
   }
-  const norm = (x) => String(x ?? '').toLowerCase().normalize('NFC').replace(/[\p{P}\s]+/gu, ' ').trim();
-  function check(s, n) {
-    const ok = norm(typed[n]) === norm(s.answer.text);
-    verdict = { ...verdict, [n]: ok };
-    say(t(ok ? 'talk.typed.right' : 'talk.typed.wrong', { text: s.answer.text }), ok ? 'ok' : undefined);
-  }
+  function practise(n) { current = n; practising = practising === n ? null : n; }
   function markDone(ok) {
     if (ok && !done.includes(unit.id)) {
       done = [...done, unit.id];
       try { storage?.setItem(KEY, JSON.stringify(done)); } catch { /* not kept */ }
     }
     say(t(ok ? 'talk.selfcheck.yes.said' : 'talk.selfcheck.no.said'), ok ? 'ok' : undefined);
-    if (!ok) { shown = {}; typed = {}; verdict = {}; }
+    if (!ok) { shown = {}; current = null; practising = null; }
   }
 </script>
 
@@ -97,6 +126,10 @@
     <p>{t('talk.guide.intro')}</p>
     <ul class="guides">{#each GUIDES as [code, name]}<li><a class="guide" href={`${GUIDE}/GUIDE.${code}.md`} target="_blank" rel="noopener">{name}</a></li>{/each}</ul>
   {:else if !unit}
+    <details class="howto" open={helpOpen}>
+      <summary>{t('talk.howto.title')}</summary>
+      <div class="prose">{@html t('talk.howto.html')}</div>
+    </details>
     {#if course.example}<p class="talk-example">{t('talk.example')}</p>{/if}
     {#if narratorLang !== ui.lang}<p class="narrator-fallback">{t('talk.narratorFallback', { lang: NAMES[narratorLang] ?? narratorLang })}</p>{/if}
     {#each levels as level}
@@ -115,10 +148,21 @@
       <button class="back" onclick={back}>← {t('talk.back')}</button>
       <h3>{unit.id} · {nar(unit.title)}</h3>
       <p class="situation">{nar(unit.situation)}</p>
+      {#if needVoices}
+        <div class="voice-gate">
+          <p>{t('talk.voices.need', { names: missing.map((v) => v.natural.name).join(', '), mb: missing.reduce((n, v) => n + (v.natural.sizeMB ?? 0), 0) })}</p>
+          <button class="get-voices primary" disabled={fetching !== null} onclick={getVoices}>⬇ {t('talk.voices.get')}</button>
+          {#if fetching !== null}<progress max="100" value={fetching}></progress>{/if}
+          <button class="robot-anyway" onclick={() => (gateClosed = true)}>{t('talk.voices.robot')}</button>
+        </div>
+      {/if}
+      <details class="howto"><summary>{t('talk.howto.title')}</summary><div class="prose">{@html t('talk.howto.html')}</div></details>
       <ol class="steps">
         {#each unit.steps as s, n}
-          <li class="step" data-type={s.type}>
-            {#if s.type !== 'selfcheck'}<button class="play" aria-label={t('talk.play')} onclick={() => play(s, n)}>▶</button>{/if}
+          <li class="step" class:current={current === n} data-type={s.type}>
+            {#if s.type !== 'selfcheck'}<button class="play" class:playing={playing === n && !paused} class:paused={playing === n && paused}
+              aria-label={playing === n && !paused ? t('talk.pause') : t('talk.play')} title={playing === n && !paused ? t('talk.pause') : t('talk.play')}
+              onclick={() => play(s, n)}>{playing === n && !paused ? '⏸' : '▶'}</button>{/if}
             {#if s.type === 'narrator'}
               <span class="narration">{nar(s.text)}</span>
             {:else if s.type === 'dialogue'}
@@ -134,15 +178,15 @@
               <span class="kind">{t('talk.buildup')}</span>
               <button class="reveal" aria-expanded={!!shown[n]} onclick={() => toggle(n)}>{shown[n] ? t('talk.hide') : t('talk.show')}</button>
               {#if shown[n]}<span class="taught" lang={lang.bcp47}>{s.parts.join(' … ')}</span>{/if}
+              {#if Practice}<button class="practise" aria-expanded={practising === n} onclick={() => practise(n)}>🎤 {t('talk.practise')}</button>{/if}
+              {#if Practice && practising === n}<div class="practice"><Practice text={s.parts.at(-1)} {...practiceProps} /></div>{/if}
             {:else if s.type === 'prompt'}
               <span class="ask">{nar(s.ask)}</span>{#if s.review} <span class="review-tag">{t('talk.review')}</span>{/if}
               <span class="pause-hint">{t('talk.sayIt')}</span>
-              <span class="typing"><input class="typed" lang={lang.bcp47} placeholder={t('talk.typeIt')} value={typed[n] ?? ''} oninput={(e) => (typed = { ...typed, [n]: e.currentTarget.value })} onkeydown={(e) => e.key === 'Enter' && check(s, n)} />
-                <button class="check" onclick={() => check(s, n)}>{t('talk.check')}</button>
-                {#if verdict[n] != null}<span class="verdict" data-ok={String(verdict[n])}>{verdict[n] ? '✓' : '✗'}</span>{/if}</span>
               <button class="answer" onclick={() => answer(s, n)}>{t('talk.answer')}</button>
-              {#if shown[n]}<span class="taught" lang={lang.bcp47}>{s.answer.text}</span>
-                {#if trainerHref}<a class="trainer" href={trainerHref(s.answer.text)} title={t('talk.trainer')}>🎤</a>{/if}{/if}
+              {#if Practice}<button class="practise" aria-expanded={practising === n} onclick={() => practise(n)}>🎤 {t('talk.practise')}</button>{/if}
+              {#if shown[n]}<span class="taught" lang={lang.bcp47}>{s.answer.text}</span>{/if}
+              {#if Practice && practising === n}<div class="practice"><Practice text={s.answer.text} {...practiceProps} /></div>{/if}
             {:else if s.type === 'selfcheck'}
               <span class="kind">{t('talk.selfcheck')}</span>
               <button class="done-yes" onclick={() => markDone(true)}>{t('talk.selfcheck.yes')}</button>
@@ -157,6 +201,12 @@
 
 <style>
   .talk h3.level { margin: 14px 0 4px; }
+  .step.current { background: color-mix(in srgb, var(--accent, #6a4c93) 14%, transparent); border-radius: 8px; }
+  .play.playing, .play.paused { outline: 2px solid var(--accent, #6a4c93); }
+  .voice-gate { border: 1px solid var(--accent, #6a4c93); border-radius: 8px; padding: 8px 12px; margin: 8px 0; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .voice-gate p { flex-basis: 100%; margin: 0; }
+  .howto { margin: 8px 0; }
+  .practice { flex-basis: 100%; margin-top: 6px; }
   .units { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; }
   .unit-row { width: 100%; text-align: start; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--card, transparent); color: var(--ink); cursor: pointer; }
   .unit-row:hover { border-color: var(--accent); }

@@ -13,7 +13,7 @@ tense**, which comes with A2). Each unit: 15–30 new items, one 8–10-line dia
 
 | # | Title (pt) | Situation | Functions / new items (examples) | Learn lessons | Clash |
 |---|---|---|---|---|---|
-| 01 | A senhoria | arriving at the building; Vera opens | Добар ден, Јас сум…, од Бразил, Извинете, не разбирам, Зборувате ли англиски?, Благодарам | a1-sum, a1-pronouns | ти/first name with Vera |
+| 01 | A dona do apartamento | arriving at the building; Vera opens | Добар ден, Јас сум…, од Бразил, Извинете, не разбирам, Зборувате ли англиски?, Благодарам | a1-sum, a1-pronouns | ти/first name with Vera |
 | 02 | As chaves | Vera shows the flat | ова е…, клучот, станот, кујна, бања, каде е…?, тука/таму, добро | a1-article, a1-demonstratives | — |
 | 03 | Um café na casa dela | Vera invites him downstairs | Повелете, влезете, влечки, кафе/чај, сакам, не сакам, малку, многу | a1-pres-a | shoes; refusing coffee |
 | 04 | O mercadinho | Dragan's маркет | леб, млеко, вода, јајца, колку чини?, денари, еден/два, имате ли…? | a1-numbers, a1-imam | — |

@@ -16,7 +16,7 @@
   import LanguageBar from './components/LanguageBar.svelte';
   import { getLanguage, LANGUAGES } from '../lang/registry.js';
   import { langFromPath } from './lib/route.js';
-  import { createVoice } from './lib/voice.js';
+  import { createVoice, pausePlayback, resumePlayback } from './lib/voice.js';
   import { t, ui, setLang, uiDir } from './lib/i18n.svelte.js';
   import { createActivity } from './lib/activity.svelte.js';
   import ActivityLog from './components/ActivityLog.svelte';
@@ -254,6 +254,8 @@
       speakTaught={async (text, opts) => { if (!voice) throw new Error('no voice'); await voice.speak(text, opts); }}
       speakNarrator={async (text, code) => { await narratorVoice(code)?.speak(text); }}
       trainerHref={(text) => speakHref(withBase(speakPath(LANGUAGES.find((l) => l.code === lang.code) ?? { path: '/' })), text)}
+      Practice={Trainer} practiceProps={{ lang, voice, fetchImpl, data: DATA, base: withBase('/'), lexicon, storage, compact: true, say: (msg, kind) => activity.say(msg, kind) }}
+      control={{ pause: pausePlayback, resume: resumePlayback }} voices={[voice]} narratorVoiceOf={narratorVoice}
       say={(msg, kind) => activity.say(msg, kind)} />
   {:else if route.view === 'learn'}
     <Learn {lang} {storage} {award} {progression} lookup={(w) => (lexicon ? lexicon.lookup(w) : Promise.resolve([]))} loadInfo={loadEntryInfo} loadParadigm={loadParadigmOf} speak={(text) => speakHref(withBase(speakPath(LANGUAGES.find((l) => l.code === lang.code) ?? { path: '/' })), text)} loadLearn={() => fetchImpl(`${DATA}/learn.json`).then((r) => (r.ok ? r.json() : null))}

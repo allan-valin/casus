@@ -16,7 +16,7 @@ A1 grammar: 해요체 present (-아요/어요), 이에요/예요, 있어요/없�
 
 | # | Title (pt) | Situation | Functions / new items (examples) | Clash |
 |---|---|---|---|---|
-| 01 | A senhoria | arriving; 박 할머니 opens | 안녕하세요, 처음 뵙겠습니다, 저는 … 이에요, 브라질 사람이에요, 감사합니다, 네 / 아니요 | hug vs bow |
+| 01 | A dona do apartamento | arriving; 박 할머니 opens | 안녕하세요, 처음 뵙겠습니다, 저는 … 이에요, 브라질 사람이에요, 감사합니다, 네 / 아니요 | hug vs bow |
 | 02 | O quarto | the 원룸: shoes, heating, the door code | 여기, 저기, 방, 화장실, 비밀번호, 신발 벗으세요 | shoes |
 | 03 | A loja de conveniência | buying water and ramyeon | 이거 주세요, 얼마예요?, 봉투 필요하세요?, 카드 돼요? | two hands |
 | 04 | O escritório | first day, 팀장님 | 잘 부탁드립니다, 팀장님, 회사, 동료, 이름이 뭐예요? | first name to the boss |

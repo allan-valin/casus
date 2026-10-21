@@ -13,10 +13,11 @@
   import WordEntry from './WordEntry.svelte';
   import { loadGlosses } from '../lib/fetchers.js';
 
-  let { lang, voice = null, fetchImpl, data, base = '/', lexicon = null, say = () => {}, storage = null, award = null, loadParadigm = null } = $props();
+  let { lang, voice = null, fetchImpl, data, base = '/', lexicon = null, say = () => {}, storage = null, award = null, loadParadigm = null,
+    text: given = null, compact = false } = $props();   // compact: inside a conversation step, on the given sentence (Allan, 2026-10-21)
 
   const params = typeof location !== 'undefined' ? new URLSearchParams(location.search) : new URLSearchParams();
-  let text = $state(params.get('text') ?? '');
+  let text = $state(given ?? params.get('text') ?? '');
   let expected = $state([]);
   let ready = $state(false);
   let samples = $state({});
@@ -221,16 +222,16 @@
   }
 </script>
 
-<section class="card trainer">
-  <h2>{t('speak.title')}</h2>
-  <p class="intro">{t('speak.intro')}</p>
-  <div class="tools">
+<section class="card trainer" class:compact>
+  {#if !compact}<h2>{t('speak.title')}</h2>
+  <p class="intro">{t('speak.intro')}</p>{/if}
+  {#if !compact}  <div class="tools">
     <button class="tool" class:on={panel === 'chart'} onclick={() => toggle('chart')}>{t('speak.chart')}</button>
     <button class="tool" class:on={panel === 'howto'} onclick={() => toggle('howto')}>{t('speak.howto')}</button>
     <button class="tool" class:on={panel === 'help'} onclick={() => toggle('help')}>{t('speak.help')}</button>
     <button class="tool" class:on={panel === 'use'} onclick={() => toggle('use')}>{t('speak.use')}</button>
     <button class="tool" class:on={panel === 'options'} onclick={() => toggle('options')}>⚙ {t('speak.options')}</button>
-  </div>
+  </div>{/if}
   {#if panel === 'use'}
     <div class="help-panel"><div class="prose">{@html t('speak.use.html')}</div><button class="close" onclick={() => (panel = null)}>✕ {t('speak.close')}</button></div>
   {/if}
@@ -267,7 +268,7 @@
     </div>
   {/if}
 
-  <textarea class="sentence" lang={lang.bcp47} dir="auto" rows="2" placeholder={t('speak.text.ph', { language: langName })} bind:value={text} oninput={edited}></textarea>
+  {#if !compact}<textarea class="sentence" lang={lang.bcp47} dir="auto" rows="2" placeholder={t('speak.text.ph', { language: langName })} bind:value={text} oninput={edited}></textarea>{/if}
 
   {#if expected.length}
     <h3>{t('speak.expected')} {#if voice}<Speaker text={text} {voice} />{/if}</h3>

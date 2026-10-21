@@ -11,18 +11,14 @@ from build_conversation import build  # noqa: E402
 TEMPLATE = Path(__file__).resolve().parents[1] / "conversation" / "_template"
 
 
-def test_template_builds_as_the_example_course(tmp_path):
+def test_template_is_checked_but_not_published(tmp_path):
+    # Allan, 2026-10-21: the German template units looked like a German course for Portuguese speakers on the site
     src = tmp_path / "conversation"
     shutil.copytree(TEMPLATE, src / "_template")
     out = tmp_path / "talk"
     report = build(src, out)
-    data = json.loads((out / "de.json").read_text(encoding="utf-8"))
-    assert data["example"] is True and data["narrator_languages"] == ["pt", "en"]
-    assert [u["id"] for u in data["units"]] == ["A1-01", "A1-02"]
-    assert data["cast"]["becker"]["name"] == "Frau Becker"
-    # review items need their text in later units: every introduced item is listed course-wide
-    assert {"guten-tag", "hallo"} <= {i["id"] for i in data["items"]}
-    assert report["de"]["errors"] == []
+    assert not (out / "de.json").exists()
+    assert report["de"]["errors"] == [] and report["de"]["units"] == 2
 
 
 def test_a_real_course_replaces_the_example(tmp_path):

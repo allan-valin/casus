@@ -15,7 +15,7 @@ dialogue, ~25 % review in a new setting. Protagonist f in odd units, m in even u
 
 | # | Title (pt) | Situation | Functions / new items (examples) | Clash |
 |---|---|---|---|---|
-| 01 | A senhoria | arriving; 鈴木さん opens | こんにちは, はじめまして, 〜です, ブラジルから来ました, よろしくお願いします | hug, shoes |
+| 01 | A dona do apartamento | arriving; 鈴木さん opens | こんにちは, はじめまして, 〜です, ブラジルから来ました, よろしくお願いします | hug, shoes |
 | 02 | O genkan | shoes, slippers, toilet slippers | 靴, スリッパ, どうぞ, 失礼します, トイレ | toilet slippers |
 | 03 | A konbini | lunch at the convenience store | これください, いくらですか, 温めますか?, 袋いりますか? | — |
 | 04 | Hiragana | reading signs with the 店長 | ひらがな, 読みます, 出口, 入口, 駅 | — |

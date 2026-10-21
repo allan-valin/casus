@@ -16,14 +16,26 @@ export async function loadPiperFromCdn() {
   return import(/* @vite-ignore */ PIPER_URL);
 }
 
+// what is playing now, so a sentence can be paused and resumed (Allan, 2026-10-21: "I need to be able to pause it")
+let currentAudio = null;
+export function pausePlayback() {
+  currentAudio?.pause();
+  if (context?.state === 'running') context.suspend();
+}
+export function resumePlayback() {
+  currentAudio?.play().catch(() => {});
+  if (context?.state === 'suspended') context.resume();
+}
+
 export async function playBlobAudio(blob, { rate = 1 } = {}) {
   const url = URL.createObjectURL(blob);
   try {
     const audio = new Audio(url);
+    currentAudio = audio;
     // a character's own pitch (Conversation practice): a faster rate without pitch correction raises the voice
     if (rate !== 1) { audio.preservesPitch = false; audio.playbackRate = rate; }
     await new Promise((resolve, reject) => { audio.onended = resolve; audio.onerror = () => reject(new Error('audio failed')); audio.play().catch(reject); });
-  } finally { URL.revokeObjectURL(url); }
+  } finally { if (currentAudio?.src === url) currentAudio = null; URL.revokeObjectURL(url); }
 }
 
 function defaultStore() {

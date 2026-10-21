@@ -43,7 +43,7 @@ def build(src=ROOT / "tools" / "conversation", out=ROOT / "public" / "talk"):
     report = {}
     for code, c in courses.items():
         report[code] = {"errors": c["errors"], "warnings": c["warnings"], "units": len(c["units"])}
-        if c["errors"]:
+        if c["errors"] or c["example"]:          # the template is checked, never published (Allan, 2026-10-21)
             continue
         b = c["bible"]
         data = {
