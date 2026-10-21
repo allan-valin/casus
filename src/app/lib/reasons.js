@@ -68,6 +68,8 @@ const RULES = [
   [/^separable verb: (.+) … (.+) \(one verb\)$/, { pt: 'verbo separável: $1 … $2 (um só verbo)', de: 'trennbares Verb: $1 … $2 (ein Verb)', mk: 'разделив глагол: $1 … $2 (еден глагол)', ar: 'فعل منفصل: $1 … $2 (فعل واحد)' }],
   [/^after the article (.+): its case$/, { pt: 'depois do artigo $1: o caso dele', de: 'nach dem Artikel $1: sein Kasus', mk: 'по членот $1: неговиот падеж', ar: 'بعد أداة التعريف $1: حالتها' }],
   [/^-지 before (.+): the verb it negates$/, { pt: '-지 antes de $1: o verbo que ele nega', de: '-지 vor $1: das Verb, das es verneint', mk: '-지 пред $1: глаголот што го негира', ar: '-지 قبل $1: الفعل الذي ينفيه' }],
+  [/^before ने: the oblique, the subject of a perfective verb$/, { pt: 'antes de ने: o oblíquo, o sujeito de um verbo perfectivo', de: 'vor ने: der Obliquus, das Subjekt eines perfektiven Verbs', mk: 'пред ने: облик, подметот на свршен глагол', ar: 'قبل ने: الحالة المائلة، فاعل فعل تامّ' }],
+  [/^before the postposition (.+): the oblique$/, { pt: 'antes da posposição $1: o oblíquo', de: 'vor der Postposition $1: der Obliquus', mk: 'пред постпозицијата $1: облик', ar: 'قبل الأداة اللاحقة $1: الحالة المائلة' }],
   [/^(\S+) \+ noun after the verb: the indirect object$/, { pt: '$1 + substantivo depois do verbo: o objeto indireto', de: '$1 + Nomen nach dem Verb: das indirekte Objekt', mk: '$1 + именка по глаголот: индиректниот објект', ar: '$1 + اسم بعد الفعل: المفعول غير المباشر' }],
 ];
 

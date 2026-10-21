@@ -1,0 +1,28 @@
+id: B2
+topics:
+
+- title: {en: Register, pt: Registro}
+  lessons:
+  - id: hi-register
+    title: आप, जी, कृपया; शुद्ध हिन्दी और हिंदुस्तानी
+    meaning: {en: "politeness and the two vocabularies", pt: "cortesia e os dois vocabulários"}
+    intro:
+      en: |
+        **आप** with plural verbs, **जी** after names and answers (**हाँ जी**, **शर्मा जी**), **कृपया** (please) in writing. Formal Hindi borrows from Sanskrit (**धन्यवाद** thanks, **प्रश्न** question), everyday Hindustani from Persian and Arabic (**शुक्रिया**, **सवाल**) — the vocabulary it shares with Urdu.
+      pt: |
+        **आप** com o verbo no plural, **जी** depois de nomes e respostas (**हाँ जी** sim, senhor; **शर्मा जी**), **कृपया** (por favor) na escrita. O hindi formal toma palavras do sânscrito (**धन्यवाद** obrigado, **प्रश्न** pergunta), o hindustâni do dia a dia do persa e do árabe (**शुक्रिया**, **सवाल**) — o vocabulário que compartilha com o urdu.
+    examples:
+    - ["धन्यवाद, शर्मा जी।", "Thank you, Mr Sharma.", "Obrigado, senhor Sharma.", "जी"]
+    match: {seq: [{word: [जी, कृपया, धन्यवाद, शुक्रिया, आप]}]}
+    pool: [जी, कृपया, धन्यवाद, शुक्रिया]
+  - id: hi-passive
+    title: किया जाता है, लिखा गया
+    meaning: {en: "the passive with जाना", pt: "a voz passiva com जाना"}
+    intro:
+      en: |
+        Perfective participle + **जाना**: **यह किताब हिंदी में लिखी गई** (this book was written in Hindi), **यहाँ हिंदी बोली जाती है** (Hindi is spoken here). The agent with **द्वारा** in writing: **प्रेमचंद द्वारा लिखी गई कहानी**.
+      pt: |
+        Particípio perfectivo + **जाना**: **यह किताब हिंदी में लिखी गई** (este livro foi escrito em hindi), **यहाँ हिंदी बोली जाती है** (aqui se fala hindi). O agente com **द्वारा** na escrita: **प्रेमचंद द्वारा लिखी गई कहानी** (um conto escrito por Premchand).
+    examples:
+    - ["यहाँ हिंदी बोली जाती है।", "Hindi is spoken here.", "Aqui se fala hindi.", "जाती"]
+    match: {seq: [{pos: verb, mood: part}, {word: [जाता, जाती, जाते, गया, गई, गए, जाएगा]}], gap: 1}

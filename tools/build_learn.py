@@ -358,7 +358,7 @@ FOREIGN_WIKIBOOKS = {
     "en": ["pt:Inglês", "es:Inglés"], "it": ["en:Italian", "it:Italiano L2", "de:Italienisch", "fr:Enseignement de l'italien", "nl:Italiaans"],
     "is": ["en:Icelandic", "de:Isländisch", "pt:Islandês"], "uk": ["en:Ukrainian", "uk:Українська мова", "ru:Украинский язык", "pl:Ukraiński"],
     "pl": ["en:Polish", "de:Polnisch", "fr:Polonais", "nl:Pools"], "mk": ["en:Macedonian"], "cs": ["cs:Čeština", "en:Czech"], "hu": ["en:Hungarian"],
-    "el": ["pt:Grego moderno"], "lt": ["en:Lithuanian", "de:Litauisch"], "he": ["en:Hebrew", "de:Hebräisch", "pt:Hebraico"], "sh": ["en:Serbo-Croatian", "en:Serbian", "en:Croatian", "de:Kroatisch"], "ro": ["en:Romanian"], "sv": ["en:Swedish", "de:Schwedisch"],
+    "el": ["pt:Grego moderno"], "lt": ["en:Lithuanian", "de:Litauisch"], "he": ["en:Hebrew", "de:Hebräisch", "pt:Hebraico"], "sh": ["en:Serbo-Croatian", "en:Serbian", "en:Croatian", "de:Kroatisch"], "ro": ["en:Romanian"], "sv": ["en:Swedish", "de:Schwedisch"], "hi": ["en:Hindi", "de:Hindi"],
     "fi": ["en:Finnish", "fi:Suomen kieli", "pt:Finlandês", "es:Finés"],
     "grc": ["en:Ancient Greek", "fr:Grec ancien", "it:Greco antico", "nl:Oudgrieks"],
     "la": ["en:Latin", "de:Latein", "it:Latino", "fr:Latin", "pt:Latim", "tr:Latince", "fi:Latinan kieli"],
@@ -461,10 +461,10 @@ def reference_level(index):
     return "Reference"
 
 
-EXPAND = {"mk", "ar", "la", "grc", "de", "ru", "ko", "fi", "el", "sa", "cs", "pl", "tr", "hu", "is", "pt", "fr", "es", "en", "it", "nl", "uk", "lt", "he", "sh", "ro", "sv"}
-CASE_LANGS = {"la", "grc", "de", "ru", "fi", "el", "sa", "cs", "pl", "tr", "hu", "is", "uk", "lt", "sh", "ro"}
+EXPAND = {"mk", "ar", "la", "grc", "de", "ru", "ko", "fi", "el", "sa", "cs", "pl", "tr", "hu", "is", "pt", "fr", "es", "en", "it", "nl", "uk", "lt", "he", "sh", "ro", "sv", "hi"}
+CASE_LANGS = {"la", "grc", "de", "ru", "fi", "el", "sa", "cs", "pl", "tr", "hu", "is", "uk", "lt", "sh", "ro", "hi"}
 T3 = {"mk": "mkd", "ar": "ara", "la": "lat", "grc": "grc", "de": "deu", "ru": "rus", "ko": "kor", "fi": "fin", "el": "ell", "sa": "san",
-      "cs": "ces", "pl": "pol", "tr": "tur", "hu": "hun", "is": "isl", "pt": "por", "fr": "fra", "es": "spa", "en": "eng", "it": "ita", "nl": "nld", "uk": "ukr", "lt": "lit", "he": "heb", "sh": "srp", "ro": "ron", "sv": "swe"}
+      "cs": "ces", "pl": "pol", "tr": "tur", "hu": "hun", "is": "isl", "pt": "por", "fr": "fra", "es": "spa", "en": "eng", "it": "ita", "nl": "nld", "uk": "ukr", "lt": "lit", "he": "heb", "sh": "srp", "ro": "ron", "sv": "swe", "hi": "hin"}
 
 
 def sentences_of(code: str) -> list:

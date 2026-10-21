@@ -440,6 +440,9 @@ def _strip_sh(s: str) -> str:
     return strip_sh(s)
 
 
+CONFIGS["hi"] = Config("hi", ["dir", "obl", "voc", "erg", "dat", "gen"],
+                       {"direct": "dir", "oblique": "obl", "indirect": "obl", "vocative": "voc", "ergative": "erg", "dative": "dat", "genitive": "gen"},
+                       key=lambda f: __import__("unicodedata").normalize("NFC", f))
 CONFIGS["sv"] = Config("sv", [], {}, caseless=True)
 CONFIGS["ro"] = Config("ro", ["nom", "acc", "gen", "dat", "voc"], {"nominative": "nom", "accusative": "acc", "genitive": "gen", "dative": "dat", "vocative": "voc"}, key=_key_ro)
 CONFIGS["sh"] = Config("sh", ["nom", "gen", "dat", "acc", "voc", "loc", "ins"], SLAVIC_TAGS, key=_strip_sh)

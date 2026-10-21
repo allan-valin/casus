@@ -66,7 +66,7 @@ const FLAG = {
 export const LANGUAGE_FLAGS = {
   la: ['spqr', 'va'], grc: ['athens', 'sparta', 'gr'], el: ['gr', 'cy'], de: ['de', 'at', 'ch'], ja: ['jp'], ar: ['arab', 'eg', 'ma'], ru: ['ru'],
   ko: ['kr'], zh: ['cn', 'tw'], mk: ['mk'], fi: ['fi'], sa: ['in', 'np'], cs: ['cz'], pl: ['pl'], tr: ['tr'], hu: ['hu'],
-  is: ['is'], pt: ['br', 'pt', 'ao', 'mz'], en: ['gb', 'us', 'au'], es: ['es', 'mx', 'ar', 'co'], fr: ['fr', 'be', 'ca', 'ch'], it: ['it', 'ch', 'sm'], nl: ['nl', 'be', 'sr'], uk: ['ua'], lt: ['lt'], he: ['il'], sh: ['hr', 'rs', 'ba', 'me'], ro: ['ro', 'md'], sv: ['se', 'fi'],
+  is: ['is'], pt: ['br', 'pt', 'ao', 'mz'], en: ['gb', 'us', 'au'], es: ['es', 'mx', 'ar', 'co'], fr: ['fr', 'be', 'ca', 'ch'], it: ['it', 'ch', 'sm'], nl: ['nl', 'be', 'sr'], uk: ['ua'], lt: ['lt'], he: ['il'], sh: ['hr', 'rs', 'ba', 'me'], ro: ['ro', 'md'], sv: ['se', 'fi'], hi: ['in'],
 };
 
 export const MODE_KEY = 'casus:mode';

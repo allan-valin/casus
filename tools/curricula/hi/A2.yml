@@ -1,0 +1,66 @@
+id: A2
+topics:
+
+- title: {en: Past and future, pt: Passado e futuro}
+  lessons:
+  - id: hi-past
+    title: गया, आई, पढ़ा
+    meaning: {en: "the perfective past", pt: "o passado perfectivo"}
+    intro:
+      en: |
+        Stem + **-ā / -ī / -e / -ī̃** agreeing in gender and number: **वह घर गया** (he went home), **वह घर गई** (she went home), **वे आए**. Irregular: **जाना → गया**, **करना → किया**, **देना → दिया**, **लेना → लिया**, **होना → हुआ**.
+      pt: |
+        Radical + **-ā / -ī / -e / -ī̃** concordando em gênero e número: **वह घर गया** (ele foi para casa), **वह घर गई** (ela foi para casa), **वे आए**. Irregulares: **जाना → गया**, **करना → किया**, **देना → दिया**, **लेना → लिया**, **होना → हुआ**.
+    examples:
+    - ["वह कल दिल्ली गया।", "He went to Delhi yesterday.", "Ele foi para Délhi ontem.", "गया"]
+    match: {seq: [{pos: verb, mood: part}]}
+  - id: hi-ne
+    title: मैंने किताब पढ़ी।
+    meaning: {en: "ने: the ergative with transitive verbs in the past", pt: "ने: o ergativo com verbos transitivos no passado"}
+    intro:
+      en: |
+        With a transitive verb in the perfective, the subject takes **ने** and the verb agrees with the *object*: **लड़के ने किताब पढ़ी** (the boy read the book — **पढ़ी** is feminine for **किताब**), **मैंने खाना खाया**. Pronouns fuse: **मैंने, तुमने, उसने, हमने**. With **को** on the object the verb stays masculine singular: **मैंने लड़की को देखा**.
+      pt: |
+        Com verbo transitivo no perfectivo, o sujeito leva **ने** e o verbo concorda com o *objeto*: **लड़के ने किताब पढ़ी** (o menino leu o livro — **पढ़ी** está no feminino por causa de **किताब**), **मैंने खाना खाया** (comi). Os pronomes se fundem: **मैंने, तुमने, उसने, हमने**. Com **को** no objeto o verbo fica no masculino singular: **मैंने लड़की को देखा** (vi a menina).
+    examples:
+    - ["मैंने अपने दोस्त को एक तोहफ़ा दिया।", "I gave my friend a present.", "Dei um presente ao meu amigo.", "मैंने"]
+    match: {seq: [{word: [ने, मैंने, तुमने, उसने, हमने, आपने, उन्होंने]}]}
+    pool: [ने, मैंने, तुमने, उसने, हमने, उन्होंने]
+  - id: hi-future
+    title: जाऊँगा, जाएगी
+    meaning: {en: "the future", pt: "o futuro"}
+    intro:
+      en: |
+        Subjunctive + **-gā / -gī / -ge**: **मैं जाऊँगा / जाऊँगी** (I'll go), **वह आएगा**, **हम चलेंगे**. **होना → होगा** also means *must be*: **वह घर पर होगा** (he must be at home).
+      pt: |
+        Subjuntivo + **-gā / -gī / -ge**: **मैं जाऊँगा / जाऊँगी** (irei), **वह आएगा**, **हम चलेंगे**. **होना → होगा** também quer dizer *deve estar*: **वह घर पर होगा** (ele deve estar em casa).
+    examples:
+    - ["कल बारिश होगी।", "It will rain tomorrow.", "Amanhã vai chover.", "होगी"]
+    match: {seq: [{pos: verb, tense: fut}]}
+
+- title: {en: Pronouns and postpositions, pt: Pronomes e posposições}
+  lessons:
+  - id: hi-mujhe
+    title: मुझे, उसे; मुझे पसंद है
+    meaning: {en: "the dative: I like, I must, I know", pt: "o dativo: eu gosto, eu preciso, eu sei"}
+    intro:
+      en: |
+        **मुझे, तुम्हें, उसे, हमें, उन्हें** (= **मुझको…**) mark the experiencer: **मुझे चाय पसंद है** (I like tea), **मुझे जाना है** (I have to go), **मुझे पता है** (I know), **मुझे भूख लगी है** (I'm hungry).
+      pt: |
+        **मुझे, तुम्हें, उसे, हमें, उन्हें** (= **मुझको…**) marcam quem sente: **मुझे चाय पसंद है** (gosto de chá), **मुझे जाना है** (tenho que ir), **मुझे पता है** (eu sei), **मुझे भूख लगी है** (estou com fome).
+    examples:
+    - ["मुझे चाय पसंद है।", "I like tea.", "Gosto de chá.", "मुझे"]
+    match: {seq: [{word: [मुझे, तुम्हें, उसे, हमें, उन्हें, आपको, मुझको]}]}
+    pool: [मुझे, तुम्हें, उसे, हमें, उन्हें, आपको]
+  - id: hi-compound-postp
+    title: के लिए, के साथ, के बाद
+    meaning: {en: "compound postpositions", pt: "posposições compostas"}
+    intro:
+      en: |
+        **के** + a noun-like word: **के लिए** (for), **के साथ** (with), **के बाद** (after), **के पहले / से पहले** (before), **के पास** (near; at someone's), **के बारे में** (about), **की तरफ़** (towards): **मेरे लिए**, **दोस्तों के साथ**.
+      pt: |
+        **के** + uma palavra nominal: **के लिए** (para), **के साथ** (com), **के बाद** (depois de), **के पहले / से पहले** (antes de), **के पास** (perto de; com alguém), **के बारे में** (sobre), **की तरफ़** (em direção a): **मेरे लिए** (para mim), **दोस्तों के साथ** (com os amigos).
+    examples:
+    - ["मैं दोस्तों के साथ फ़िल्म देखने गया।", "I went to see a film with friends.", "Fui ver um filme com amigos.", "साथ"]
+    match: {seq: [{word: [के, की]}, {word: [लिए, साथ, बाद, पहले, पास, बारे, तरफ़, ऊपर, नीचे, अंदर, बाहर]}], gap: 1}
+    pool: [लिए, साथ, बाद, पहले, पास, बारे]

@@ -1,0 +1,149 @@
+id: A1
+topics:
+
+- title: {en: Sounds and letters, pt: Sons e letras}
+  lessons:
+  - id: hi-devanagari
+    title: अ आ इ ई … क ख ग; ा ि ी
+    meaning: {en: "Devanagari: letters and vowel signs", pt: "devanágari: letras e sinais vocálicos"}
+    intro:
+      en: |
+        Devanagari is written left to right under a top line. Each consonant carries an *a*: **क** *ka*; other vowels are signs around it: **का** *kā*, **कि** *ki*, **की** *kī*, **कु** *ku*, **के** *ke*, **को** *ko*. At the start of a word vowels have their own letters (**अ आ इ ई उ ऊ ए ओ**). Aspirated pairs (**क / ख, ग / घ, त / थ**) and retroflex ones (**ट ड** against **त द**) are distinct sounds. The dot below (**ड़, ढ़, ज़, फ़**) makes new sounds.
+      pt: |
+        O devanágari se escreve da esquerda para a direita, sob uma linha superior. Cada consoante traz um *a*: **क** *ka*; as outras vogais são sinais ao redor: **का** *kā*, **कि** *ki*, **की** *kī*, **कु** *ku*, **के** *ke*, **को** *ko*. No começo da palavra as vogais têm letras próprias (**अ आ इ ई उ ऊ ए ओ**). Os pares aspirados (**क / ख, ग / घ, त / थ**) e os retroflexos (**ट ड** contra **त द**) são sons distintos. O ponto embaixo (**ड़, ढ़, ज़, फ़**) cria sons novos.
+    examples:
+    - ["मेरा नाम अनीता है।", "My name is Anita.", "Meu nome é Anita.", "नाम"]
+    match: {seq: [{re: "[ािीुूेैोौ]", pos: [noun, verb, adj]}]}
+
+- title: {en: Nouns and gender, pt: Substantivos e gênero}
+  lessons:
+  - id: hi-gender
+    title: लड़का, लड़की, घर, किताब
+    meaning: {en: "two genders", pt: "dois gêneros"}
+    intro:
+      en: |
+        Every noun is masculine or feminine. Masculines in **-ā** (**लड़का** boy, **कमरा** room) and feminines in **-ī** (**लड़की** girl, **नदी** river) show it; others must be learnt: **घर** (house, m.), **किताब** (book, f.), **पानी** (water, m.). Adjectives and verbs agree with the gender.
+      pt: |
+        Todo nome é masculino ou feminino. Os masculinos em **-ā** (**लड़का** menino, **कमरा** quarto) e os femininos em **-ī** (**लड़की** menina, **नदी** rio) o mostram; os outros precisam ser decorados: **घर** (casa, m.), **किताब** (livro, f.), **पानी** (água, m.). Adjetivos e verbos concordam com o gênero.
+    examples:
+    - ["लड़की पढ़ रही है।", "The girl is reading.", "A menina está lendo.", "लड़की"]
+    match: {seq: [{pos: noun, case: dir, number: sg}]}
+  - id: hi-plural
+    title: लड़के, लड़कियाँ, किताबें
+    meaning: {en: "the direct plural", pt: "o plural direto"}
+    intro:
+      en: |
+        Masculine **-ā → -e** (**लड़का → लड़के**), other masculines unchanged (**घर → घर**); feminine **-ī → -iyā̃** (**लड़की → लड़कियाँ**), other feminines **-ẽ** (**किताब → किताबें**).
+      pt: |
+        Masculino **-ā → -e** (**लड़का → लड़के**), os outros masculinos não mudam (**घर → घर**); feminino **-ī → -iyā̃** (**लड़की → लड़कियाँ**), os outros femininos **-ẽ** (**किताब → किताबें**).
+    examples:
+    - ["बच्चे पार्क में खेल रहे हैं।", "The children are playing in the park.", "As crianças estão brincando no parque.", "बच्चे"]
+    match: {seq: [{pos: noun, number: pl, case: dir}]}
+
+- title: {en: Pronouns and being, pt: Pronomes e o verbo ser}
+  lessons:
+  - id: hi-pronouns
+    title: मैं, तुम, आप, वह, हम, वे
+    meaning: {en: "personal pronouns; three yous", pt: "pronomes pessoais; três formas de você"}
+    intro:
+      en: |
+        **मैं** (I), **तू** (you, very intimate), **तुम** (you, familiar), **आप** (you, polite — the safe default), **यह / वह** (he, she, it: this one / that one), **हम** (we), **ये / वे** (they). Verbs follow: **आप कैसे हैं?** (how are you?, polite).
+      pt: |
+        **मैं** (eu), **तू** (tu, muito íntimo), **तुम** (você, familiar), **आप** (o senhor/a senhora — o padrão seguro), **यह / वह** (ele, ela: este / aquele), **हम** (nós), **ये / वे** (eles). Os verbos acompanham: **आप कैसे हैं?** (como vai o senhor?).
+    examples:
+    - ["आप कैसे हैं?", "How are you?", "Como vai?", "आप"]
+    match: {seq: [{word: [मैं, तू, तुम, आप, यह, वह, हम, ये, वे], start: true}]}
+    pool: [मैं, तुम, आप, वह, यह, हम, वे]
+  - id: hi-hona
+    title: हूँ, है, हो, हैं; था, थी
+    meaning: {en: "होना, to be", pt: "होना, ser/estar"}
+    intro:
+      en: |
+        Present: **मैं हूँ, तू है, तुम हो, आप हैं, वह है, हम हैं, वे हैं**. Past by gender and number: **था, थी, थे, थीं**: **वह घर पर था / थी.** The verb comes last: **यह किताब है** (this is a book).
+      pt: |
+        Presente: **मैं हूँ, तू है, तुम हो, आप हैं, वह है, हम हैं, वे हैं**. Passado por gênero e número: **था, थी, थे, थीं**: **वह घर पर था / थी** (ele / ela estava em casa). O verbo vem por último: **यह किताब है** (isto é um livro).
+    examples:
+    - ["आज बहुत अच्छा दिन है।", "Today is a very good day.", "Hoje está um dia muito bom.", "है"]
+    match: {seq: [{word: [हूँ, है, हो, हैं, था, थी, थे, थीं]}]}
+    pool: [हूँ, है, हो, हैं, था, थी, थे]
+
+- title: {en: Postpositions, pt: Posposições}
+  lessons:
+  - id: hi-postpositions
+    title: में, पर, से, को, तक
+    meaning: {en: "postpositions and the oblique", pt: "posposições e o oblíquo"}
+    intro:
+      en: |
+        Hindi puts *in, on, from, to* after the noun: **घर में** (in the house), **मेज़ पर** (on the table), **दिल्ली से** (from Delhi), **बच्चे को** (to the child), **शाम तक** (until evening). The noun before them takes the oblique: **कमरा → कमरे में**, **लड़कियाँ → लड़कियों को**.
+      pt: |
+        O hindi põe *em, sobre, de, para* depois do nome: **घर में** (em casa), **मेज़ पर** (sobre a mesa), **दिल्ली से** (de Délhi), **बच्चे को** (para a criança), **शाम तक** (até a tarde). O nome antes delas vai para o oblíquo: **कमरा → कमरे में**, **लड़कियाँ → लड़कियों को**.
+    examples:
+    - ["किताब मेज़ पर है।", "The book is on the table.", "O livro está sobre a mesa.", "पर"]
+    - ["मैं दिल्ली में रहती हूँ।", "I live in Delhi.", "Moro em Délhi.", "में"]
+    match: {seq: [{pos: noun}, {word: [में, पर, से, को, तक]}], gap: 1}
+    pool: [में, पर, से, को, तक]
+  - id: hi-ka
+    title: का, की, के; मेरा, तुम्हारा
+    meaning: {en: "possession: का agrees with the thing owned", pt: "posse: का concorda com a coisa possuída"}
+    intro:
+      en: |
+        **X का Y** = X's Y, and **का / की / के** agree with Y: **राम का घर** (Ram's house), **राम की किताब** (Ram's book), **राम के बच्चे** (Ram's children). Possessive pronouns too: **मेरा / मेरी / मेरे** (my), **तुम्हारा, आपका, उसका, हमारा, उनका**.
+      pt: |
+        **X का Y** = o Y de X, e **का / की / के** concordam com Y: **राम का घर** (a casa do Ram), **राम की किताब** (o livro do Ram), **राम के बच्चे** (os filhos do Ram). Os possessivos também: **मेरा / मेरी / मेरे** (meu), **तुम्हारा, आपका, उसका, हमारा, उनका**.
+    examples:
+    - ["मेरा भाई बैंक में काम करता है।", "My brother works in a bank.", "Meu irmão trabalha num banco.", "मेरा"]
+    match: {seq: [{word: [का, की, के, मेरा, मेरी, मेरे, तुम्हारा, तुम्हारी, आपका, आपकी, उसका, उसकी, हमारा, उनका]}]}
+    pool: [का, की, के, मेरा, मेरी, मेरे, आपका]
+
+- title: {en: The present, pt: O presente}
+  lessons:
+  - id: hi-present
+    title: पढ़ता हूँ, पढ़ती है
+    meaning: {en: "the habitual present: -tā + होना", pt: "o presente habitual: -tā + होना"}
+    intro:
+      en: |
+        Stem + **-tā / -tī / -te** (agreeing with the subject) + the present of **होना**: **मैं पढ़ता हूँ** (I read, m.), **मैं पढ़ती हूँ** (f.), **वे पढ़ते हैं**. It says what one does regularly: **हम बस से शहर जाते हैं.**
+      pt: |
+        Radical + **-tā / -tī / -te** (concordando com o sujeito) + o presente de **होना**: **मैं पढ़ता हूँ** (eu leio, m.), **मैं पढ़ती हूँ** (f.), **वे पढ़ते हैं**. Diz o que se faz regularmente: **हम बस से शहर जाते हैं** (vamos à cidade de ônibus).
+    examples:
+    - ["हम बस से शहर जाते हैं।", "We go to town by bus.", "Vamos à cidade de ônibus.", "जाते"]
+    match: {seq: [{re: "(ता|ती|ते)$", pos: verb}, {word: [हूँ, है, हो, हैं]}], gap: 0}
+  - id: hi-progressive
+    title: पढ़ रहा हूँ
+    meaning: {en: "the continuous: stem + रहा + होना", pt: "o contínuo: radical + रहा + होना"}
+    intro:
+      en: |
+        Stem + **रहा / रही / रहे** + **होना**: **मैं किताब पढ़ रही हूँ** (I'm reading a book, f.), **बच्चे खेल रहे हैं** (the children are playing). For the past: **पढ़ रहा था**.
+      pt: |
+        Radical + **रहा / रही / रहे** + **होना**: **मैं किताब पढ़ रही हूँ** (estou lendo um livro, f.), **बच्चे खेल रहे हैं** (as crianças estão brincando). No passado: **पढ़ रहा था** (estava lendo).
+    examples:
+    - ["माँ रसोई में खाना बना रही है।", "Mum is cooking in the kitchen.", "A mãe está cozinhando na cozinha.", "रही"]
+    match: {seq: [{word: [रहा, रही, रहे]}], gap: 0}
+    pool: [रहा, रही, रहे]
+
+- title: {en: Questions and negation, pt: Perguntas e negação}
+  lessons:
+  - id: hi-questions
+    title: क्या, कौन, कहाँ, कब, क्यों, कैसे
+    meaning: {en: "question words; क्या for yes/no", pt: "palavras interrogativas; क्या para sim/não"}
+    intro:
+      en: |
+        **क्या** (what; and at the start, a yes/no question: **क्या आप अंग्रेज़ी बोलते हैं?**), **कौन** (who), **कहाँ** (where), **कब** (when), **क्यों** (why), **कैसे** (how), **कितना / कितनी** (how much). The question word stands where the answer would: **आप कहाँ रहते हैं?**
+      pt: |
+        **क्या** (o que; e no começo, pergunta de sim/não: **क्या आप अंग्रेज़ी बोलते हैं?** você fala inglês?), **कौन** (quem), **कहाँ** (onde), **कब** (quando), **क्यों** (por quê), **कैसे** (como), **कितना / कितनी** (quanto). A palavra interrogativa fica onde estaria a resposta: **आप कहाँ रहते हैं?** (onde você mora?)
+    examples:
+    - ["आप कहाँ रहते हैं?", "Where do you live?", "Onde você mora?", "कहाँ"]
+    match: {seq: [{word: [क्या, कौन, कहाँ, कब, क्यों, कैसे, कितना, कितनी, कितने]}]}
+    pool: [क्या, कौन, कहाँ, कब, क्यों, कैसे]
+  - id: hi-nahin
+    title: नहीं, न, मत
+    meaning: {en: "negation", pt: "negação"}
+    intro:
+      en: |
+        **नहीं** before the verb, the auxiliary often dropped: **मैं नहीं समझता** (I don't understand). **मत** with commands: **मत जाओ** (don't go); **न** in some set phrases and the subjunctive.
+      pt: |
+        **नहीं** antes do verbo, muitas vezes sem o auxiliar: **मैं नहीं समझता** (não entendo). **मत** com ordens: **मत जाओ** (não vá); **न** em certas expressões e no subjuntivo.
+    examples:
+    - ["मैं नहीं समझता।", "I don't understand.", "Não entendo.", "नहीं"]
+    match: {seq: [{word: [नहीं, मत, न]}], gap: 0}
+    pool: [नहीं, मत, न]

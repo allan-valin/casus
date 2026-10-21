@@ -161,6 +161,12 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
 - Sample passages: sentences written for Casus; Richard Dybeck, *Du gamla, du fria* (1844), public domain; Wikipedia,
   *Svenska*, CC BY-SA 4.0.
 
+## Hindi — CC BY-SA
+
+- Dictionary, forms, IPA, phrases: the English Wiktionary via wiktextract / kaikki.org, CC BY-SA 4.0.
+- Sample passages: sentences written for Casus; Premchand, *Idgah* (1933), public domain; Wikipedia, *हिन्दी*,
+  CC BY-SA 4.0.
+
 ## Learn tab
 
 - Japanese grammar lessons: **JLPT Grammar Enhanced** (github.com/maitodesu/jlpt-grammar-enhanced, commit a4254e0),

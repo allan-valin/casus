@@ -1,0 +1,43 @@
+id: B1
+topics:
+
+- title: {en: Moods and compound verbs, pt: Modos e verbos compostos}
+  lessons:
+  - id: hi-subjunctive
+    title: शायद, चाहिए, ताकि
+    meaning: {en: "the subjunctive and चाहिए", pt: "o subjuntivo e चाहिए"}
+    intro:
+      en: |
+        Stem + **-ū̃, -e, -o, -ẽ**: **मैं जाऊँ?** (shall I go?), **शायद वह आए** (perhaps he'll come), after **ताकि** (so that) and wishes. *Should* is **चाहिए** with the dative: **आपको आराम करना चाहिए** (you should rest).
+      pt: |
+        Radical + **-ū̃, -e, -o, -ẽ**: **मैं जाऊँ?** (devo ir?), **शायद वह आए** (talvez ele venha), depois de **ताकि** (para que) e em desejos. *Deveria* é **चाहिए** com o dativo: **आपको आराम करना चाहिए** (o senhor deveria descansar).
+    examples:
+    - ["आपको आराम करना चाहिए।", "You should rest.", "O senhor deveria descansar.", "चाहिए"]
+    match: {seq: [{word: [चाहिए, शायद, ताकि]}]}
+    pool: [चाहिए, शायद, ताकि]
+  - id: hi-compound-verbs
+    title: खा लेना, गिर जाना, बता देना
+    meaning: {en: "compound verbs: completion and colour", pt: "verbos compostos: conclusão e matiz"}
+    intro:
+      en: |
+        A stem + a light verb (**लेना, देना, जाना, डालना, पड़ना**) adds completion or nuance: **खा लो** (eat it up, for yourself), **बता दो** (tell me, for my sake), **वह गिर गया** (he fell down), **मुझे जाना पड़ा** (I had to go).
+      pt: |
+        Um radical + um verbo leve (**लेना, देना, जाना, डालना, पड़ना**) acrescenta conclusão ou matiz: **खा लो** (come tudo, para você), **बता दो** (me diz, por favor), **वह गिर गया** (ele caiu), **मुझे जाना पड़ा** (tive que ir).
+    examples:
+    - ["मुझे बता दो।", "Tell me.", "Me diga.", "दो"]
+    match: {seq: [{pos: verb}, {word: [लो, लिया, ली, दो, दिया, दी, गया, गई, गए, डाला, पड़ा]}], gap: 1}
+
+- title: {en: Clauses, pt: Orações}
+  lessons:
+  - id: hi-ki
+    title: कि, जो … वह, अगर … तो
+    meaning: {en: "that, who, if", pt: "que, quem, se"}
+    intro:
+      en: |
+        **कि** (that): **मुझे पता है कि वह आएगा**. Relative clauses pair **जो** (who, which) with **वह** (that one): **जो लड़का वहाँ खड़ा है, वह मेरा भाई है**. Conditions: **अगर … तो …**: **अगर बारिश हुई तो हम घर पर रहेंगे**. **क्योंकि** (because), **लेकिन** (but).
+      pt: |
+        **कि** (que): **मुझे पता है कि वह आएगा** (sei que ele virá). As relativas juntam **जो** (que, quem) e **वह** (aquele): **जो लड़का वहाँ खड़ा है, वह मेरा भाई है** (o menino que está ali é meu irmão). Condições: **अगर … तो …**: **अगर बारिश हुई तो हम घर पर रहेंगे** (se chover, ficamos em casa). **क्योंकि** (porque), **लेकिन** (mas).
+    examples:
+    - ["मुझे पता है कि वह आएगा।", "I know he will come.", "Sei que ele virá.", "कि"]
+    match: {seq: [{word: [कि, जो, अगर, तो, क्योंकि, लेकिन, जब, जहाँ]}]}
+    pool: [कि, जो, अगर, तो, क्योंकि, लेकिन, जब]

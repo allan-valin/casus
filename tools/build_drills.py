@@ -82,6 +82,8 @@ MODELS = {
            ("finire", "verb", "to finish", "terminar"), ("essere", "verb", "to be", "ser, estar"), ("avere", "verb", "to have", "ter"), ("andare", "verb", "to go", "ir"), ("fare", "verb", "to do, make", "fazer")],
     "nl": [("werken", "verb", "to work", "trabalhar"), ("zijn", "verb", "to be", "ser, estar"), ("hebben", "verb", "to have", "ter"), ("gaan", "verb", "to go", "ir"),
            ("komen", "verb", "to come", "vir"), ("lopen", "verb", "to walk", "andar")],
+    "hi": [("लड़का", "noun", "boy", "menino"), ("लड़की", "noun", "girl", "menina"), ("किताब", "noun", "book", "livro"), ("घर", "noun", "house", "casa"),
+           ("अच्छा", "adj", "good", "bom"), ("मैं", "pron", "I", "eu"), ("पढ़ना", "verb", "to read", "ler"), ("होना", "verb", "to be", "ser, estar"), ("जाना", "verb", "to go", "ir")],
     "sv": [("bok", "noun", "book", "livro"), ("hus", "noun", "house", "casa"), ("flicka", "noun", "girl", "menina"), ("stor", "adj", "big", "grande"),
            ("läsa", "verb", "to read", "ler"), ("tala", "verb", "to speak", "falar"), ("vara", "verb", "to be", "ser, estar"), ("ha", "verb", "to have", "ter")],
     "ro": [("om", "noun", "man, person", "homem, pessoa"), ("casă", "noun", "house", "casa"), ("oraș", "noun", "town", "cidade"), ("bun", "adj", "good", "bom"),
@@ -114,7 +116,7 @@ XREF = re.compile(r"^(synonym|alternative (form|spelling)|[\w-]+ form|abbreviati
 IRREGULAR = {"la": {"sum", "eo", "uolo", "fero", "ego", "hic", "qui"}, "grc": {"εἰμί", "ὁ", "δίδωμι"},
              "de": {"der", "ein", "ich", "er", "sein", "haben", "werden", "können"},
              "ja": {"いい", "行く", "する", "来る"}, "ar": {"رأى"},
-             "ru": {"время", "быть", "идти", "я", "он", "этот"}, "ko": {"하다", "듣다", "살다"}, "mk": {"сум", "има"}, "fi": {"olla"}, "el": {"είμαι"}, "cs": {"být"}, "is": {"vera"}, "pl": {"być"}, "pt": {"ser", "ter", "ir"}, "fr": {"être", "avoir", "aller", "faire"}, "es": {"ser", "estar", "tener", "ir"}, "en": {"be", "have", "go", "write", "take"}, "it": {"essere", "avere", "andare", "fare"}, "nl": {"zijn", "hebben", "gaan", "komen"}, "uk": {"бути", "йти", "я"}, "lt": {"būti", "eiti", "aš"}, "he": {"היה"}, "sh": {"biti", "ići", "ja"}, "ro": {"fi", "avea", "eu"}, "sv": {"vara", "ha"}}
+             "ru": {"время", "быть", "идти", "я", "он", "этот"}, "ko": {"하다", "듣다", "살다"}, "mk": {"сум", "има"}, "fi": {"olla"}, "el": {"είμαι"}, "cs": {"být"}, "is": {"vera"}, "pl": {"być"}, "pt": {"ser", "ter", "ir"}, "fr": {"être", "avoir", "aller", "faire"}, "es": {"ser", "estar", "tener", "ir"}, "en": {"be", "have", "go", "write", "take"}, "it": {"essere", "avere", "andare", "fare"}, "nl": {"zijn", "hebben", "gaan", "komen"}, "uk": {"бути", "йти", "я"}, "lt": {"būti", "eiti", "aš"}, "he": {"היה"}, "sh": {"biti", "ići", "ja"}, "ro": {"fi", "avea", "eu"}, "sv": {"vara", "ha"}, "hi": {"होना", "जाना", "मैं"}}
 POOL = 60
 
 
