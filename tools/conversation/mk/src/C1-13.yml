@@ -1,0 +1,36 @@
+id: C1-13
+protagonist: f
+title: ["Local elections", "Eleições locais"]
+situation: ["A candidate for the municipal council rings your doorbell.", "Um candidato à câmara municipal toca a sua campainha."]
+learn: [c1-renarrative-full]
+culture: —
+items:
+  - [kandidat, "кандидат", "candidate", "candidato"]
+  - [opstina, "општина", "municipality", "município / prefeitura"]
+  - [vetuvanje, "ветување", "promise", "promessa"]
+  - [ke-izgradime, "ќе изградиме", "we'll build", "vamos construir"]
+  - [park, "парк", "park", "parque"]
+  - [ne-mozam-da-glasam, "не можам да гласам", "I can't vote", "não posso votar"]
+  - [stranski-drzavjanin, "странски државјанин", "foreign national", "estrangeiro", {rare: true}]
+  - [prethodniot, "претходниот", "the previous one", "o anterior"]
+  - [vetil-sto-park, "ветил сто паркови", "promised a hundred parks (reportedly)", "teria prometido cem parques"]
+  - [ke-vidime, "ќе видиме", "we'll see", "veremos"]
+dialogue:
+  - [sosed2, "Добар ден! Јас сум кандидат за советник во општината.", "Good afternoon! I'm a candidate for the municipal council.", "Boa tarde! Sou candidato a vereador no município."]
+  - [protagonist, "Добар ден. Што ветувате?", "Good afternoon. What do you promise?", "Boa tarde. O que o senhor promete?"]
+  - [sosed2, "Ќе изградиме нов парк и нова градинка.", "We'll build a new park and a new kindergarten.", "Vamos construir um parque novo e uma creche nova."]
+  - [protagonist, "Претходниот кандидат ветил сто паркови.", "The previous candidate promised a hundred parks, I hear.", "O candidato anterior teria prometido cem parques."]
+  - [sosed2, "Тој не е од нашата партија!", "He's not from our party!", "Ele não é do nosso partido!"]
+  - [protagonist, "Впрочем, јас сум странски државјанин. Не можам да гласам.", "Besides, I'm a foreign national. I can't vote.", "Aliás, sou estrangeira. Não posso votar."]
+  - [sosed2, "Тогаш кажете им на соседите!", "Then tell the neighbours!", "Então fale para os vizinhos!"]
+  - [protagonist, "Ќе видиме што ќе изградите.", "We'll see what you build.", "Veremos o que vocês vão construir."]
+teach:
+  - ask: ["Say: a candidate.", "Diga: um candidato.", "Кандидат.", kandidat]
+  - ask: ["Say: in the municipality.", "Diga: no município.", "Во општината.", opstina]
+  - ask: ["Ask what he promises.", "Pergunte o que ele promete.", "Што ветувате?", vetuvanje]
+  - ask: ["He says: we'll build a new park.", "Ele diz: vamos construir um parque novo.", "Ќе изградиме нов парк.", ke-izgradime, park]
+  - ask: ["Say: the previous candidate promised a hundred parks, I hear.", "Diga: o candidato anterior teria prometido cem parques.", "Претходниот кандидат ветил сто паркови.", prethodniot, vetil-sto-park]
+  - ask: ["Say: I'm a foreign national.", "Diga: sou estrangeira.", "Јас сум странски државјанин.", stranski-drzavjanin]
+  - ask: ["Say: I can't vote.", "Diga: não posso votar.", "Не можам да гласам.", ne-mozam-da-glasam]
+  - ask: ["Say: we'll see.", "Diga: veremos.", "Ќе видиме.", ke-vidime]
+  - note: ["The reported л-form ('ветил') lets you quote a promise without vouching for it — handy in politics.", "A forma em -л ('ветил') permite citar uma promessa sem se responsabilizar por ela — útil em política."]

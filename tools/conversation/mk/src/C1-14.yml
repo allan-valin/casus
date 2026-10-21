@@ -1,0 +1,35 @@
+id: C1-14
+protagonist: m
+title: ["Protest", "Protesto"]
+situation: ["A Saturday march for clean air in front of the government building. Ana carries a banner.", "Uma marcha de sábado por ar limpo em frente ao prédio do governo. A Ana carrega uma faixa."]
+learn: [c1-formal]
+culture: Civic life
+items:
+  - [protest, "протест", "protest", "protesto"]
+  - [baranja, "барања", "demands", "reivindicações"]
+  - [transparent, "транспарент", "banner", "faixa", {rare: true}]
+  - [cist-vozduh, "чист воздух", "clean air", "ar limpo"]
+  - [baram-od-vladata, "бараме од Владата", "we demand of the government", "exigimos do governo"]
+  - [merki, "мерки", "measures", "medidas"]
+  - [miren, "мирен", "peaceful (masculine)", "pacífico"]
+  - [graganite, "граѓаните", "the citizens", "os cidadãos"]
+  - [imaat-pravo, "имаат право", "have the right", "têm direito"]
+  - [potpisa, "потписи", "signatures", "assinaturas"]
+dialogue:
+  - [ana, "Држи го транспарентот: „Чист воздух за сите!“", "Hold the banner: 'Clean air for everyone!'", "Segura a faixa: 'Ar limpo para todos!'"]
+  - [protagonist, "Кои се барањата?", "What are the demands?", "Quais são as reivindicações?"]
+  - [ana, "Бараме од Владата итни мерки: јавен превоз, филтри во фабриките.", "We demand urgent measures from the government: public transport, filters in factories.", "Exigimos medidas urgentes do governo: transporte público, filtros nas fábricas."]
+  - [protagonist, "Протестот е мирен?", "Is the protest peaceful?", "O protesto é pacífico?"]
+  - [ana, "Секогаш. Граѓаните имаат право да бараат.", "Always. Citizens have the right to demand.", "Sempre. Os cidadãos têm direito de exigir."]
+  - [protagonist, "Јас не сум граѓанин, но дишам ист воздух.", "I'm not a citizen, but I breathe the same air.", "Eu não sou cidadão, mas respiro o mesmo ar."]
+  - [ana, "Тогаш потпиши ја петицијата. Собираме потписи.", "Then sign the petition. We're collecting signatures.", "Então assina o abaixo-assinado. A gente está coletando assinaturas."]
+  - [protagonist, "Со задоволство.", "With pleasure.", "Com prazer."]
+teach:
+  - ask: ["Say: the banner.", "Diga: a faixa.", "Транспарентот.", transparent]
+  - ask: ["Say: clean air for everyone!", "Diga: ar limpo para todos!", "Чист воздух за сите!", cist-vozduh]
+  - ask: ["Ask what the demands are.", "Pergunte quais são as reivindicações.", "Кои се барањата?", baranja]
+  - ask: ["Say: we demand urgent measures from the government.", "Diga: exigimos medidas urgentes do governo.", "Бараме од Владата итни мерки.", baram-od-vladata, merki]
+  - ask: ["Ask: is the protest peaceful?", "Pergunte: o protesto é pacífico?", "Протестот е мирен?", protest, miren]
+  - ask: ["Say: citizens have the right to demand.", "Diga: os cidadãos têm direito de exigir.", "Граѓаните имаат право да бараат.", graganite, imaat-pravo]
+  - ask: ["Say: we're collecting signatures.", "Diga: estamos coletando assinaturas.", "Собираме потписи.", potpisa]
+  - note: ["Formal demands use set wording: 'бараме од Владата', 'итни мерки', 'граѓаните имаат право'. As a foreigner, a peaceful march and a signature are fine; check your residence rules before anything more.", "Reivindicações formais usam frases feitas: 'бараме од Владата', 'итни мерки', 'граѓаните имаат право'. Como estrangeiro, marcha pacífica e assinatura tudo bem; confira as regras da sua residência antes de qualquer coisa a mais."]

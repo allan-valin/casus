@@ -1,0 +1,579 @@
+# UNIT mk C1-15 — written by AI (Claude) for Casus; expanded from src/C1-15.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-15
+level: C1
+number: 15
+protagonist: f
+title:
+  en: The specialist
+  pt: O médico especialista
+situation:
+  en: Your knee hurts after basketball. Dr Petrovska writes a referral.
+  pt: Seu joelho dói depois do basquete. A doutora Petrovska faz um encaminhamento.
+learn_lessons:
+- c1-ima-da
+culture: Public versus private
+new_items:
+- id: uput
+  text: упат
+  meaning:
+    en: referral
+    pt: encaminhamento
+  rare: true
+- id: specijalist
+  text: специјалист
+  meaning:
+    en: specialist
+    pt: especialista
+- id: ortoped
+  text: ортопед
+  meaning:
+    en: orthopaedist
+    pt: ortopedista
+  rare: true
+- id: listata-na-cekanje
+  text: листата на чекање
+  meaning:
+    en: the waiting list
+    pt: a fila de espera
+- id: ima-da-cekate
+  text: има да чекате
+  meaning:
+    en: you'll have to wait
+    pt: vai ter que esperar
+- id: dva-meseci
+  text: два месеци
+  meaning:
+    en: two months
+    pt: dois meses
+- id: privatno
+  text: приватно
+  meaning:
+    en: privately
+    pt: no particular
+- id: od-svoj-dzeb
+  text: од свој џеб
+  meaning:
+    en: out of your own pocket
+    pt: do próprio bolso
+- id: koleno
+  text: колено
+  meaning:
+    en: knee
+    pt: joelho
+- id: itno
+  text: итно
+  meaning:
+    en: urgent
+    pt: urgente
+reviews:
+- item: ulica
+  from: A1-08
+- item: odete
+  from: A1-08
+- item: pravo
+  from: A1-08
+- item: pa
+  from: A1-08
+- item: levo
+  from: A1-08
+- item: desno
+  from: A1-08
+- item: daleku
+  from: A1-08
+- item: blizu
+  from: A1-08
+- item: pet
+  from: A1-08
+- item: minuti
+  from: A1-08
+- item: peski
+  from: A1-08
+- item: stanicata
+  from: A1-08
+- item: do
+  from: A1-08
+- item: anketa
+  from: B1-12
+- item: pokazuva
+  from: B1-12
+- item: mladite
+  from: B1-12
+- item: sakaat-da-zaminat
+  from: B1-12
+- item: prosek
+  from: B1-12
+- item: plata
+  from: B1-12
+- item: grafikon
+  from: B1-12
+- item: od-sto-hundred
+  from: B1-12
+- item: ne-znaci
+  from: B1-12
+- item: kje-zaminat
+  from: B1-12
+- item: moja-ideja
+  from: B2-14
+- item: toa-beshe
+  from: B2-14
+- item: ja-pretstavi
+  from: B2-14
+- item: kako-tvoja
+  from: B2-14
+- item: ne-sum-mislel
+  from: B2-14
+- item: zaedno-ja-razvivme
+  from: B2-14
+- item: prvo-ja-predlozhiv
+  from: B2-14
+- item: sledniot-pat-kazi
+  from: B2-14
+- item: vazi
+  from: B2-14
+- item: korektno
+  from: B2-14
+- item: idninata
+  from: B2-30
+- item: kade-ke-ziveete
+  from: B2-30
+- item: kupivme
+  from: B2-30
+- item: kredit
+  from: B2-30
+- item: dvaeset-godini
+  from: B2-30
+- item: vo-istata-zgrada
+  from: B2-30
+- item: plani
+  from: B2-30
+- item: deca
+  from: B2-30
+- item: poleka-poleka
+  from: B2-30
+- item: ke-ti-bidam-baba
+  from: B2-30
+- item: poloven-avtomobil
+  from: C1-08
+- item: kilometri
+  from: C1-08
+- item: vozel-samo
+  from: C1-08
+- item: penzionerka
+  from: C1-08
+- item: proverka
+  from: C1-08
+- item: kaj-mehanicar
+  from: C1-08
+- item: ne-veruvaj
+  from: C1-08
+- item: site-taka-velat
+  from: C1-08
+- item: papirite
+  from: C1-08
+- item: vo-red-se
+  from: C1-08
+- item: bavca
+  from: C1-12
+- item: kokoski
+  from: C1-12
+- item: jajca-svezi
+  from: C1-12
+- item: daj-mu-gi
+  from: C1-12
+- item: ke-ti-gi-spakuvam
+  from: C1-12
+- item: prazni-kukji
+  from: C1-12
+- item: samo-starci
+  from: C1-12
+- item: tisina
+  from: C1-12
+- item: ne-moze-da-se-kupi
+  from: C1-12
+- item: ke-dojdete-pak
+  from: C1-12
+- item: protest
+  from: C1-14
+- item: baranja
+  from: C1-14
+- item: transparent
+  from: C1-14
+- item: cist-vozduh
+  from: C1-14
+- item: baram-od-vladata
+  from: C1-14
+- item: merki
+  from: C1-14
+- item: miren
+  from: C1-14
+- item: graganite
+  from: C1-14
+- item: imaat-pravo
+  from: C1-14
+- item: potpisa
+  from: C1-14
+steps:
+- type: narrator
+  text:
+    en: Your knee hurts after basketball. Dr Petrovska writes a referral. Listen to the conversation; you don't need to understand it yet.
+    pt: Seu joelho dói depois do basquete. A doutora Petrovska faz um encaminhamento. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: doktorka
+    text: Коленото треба да го види специјалист. Ќе ви дадам упат за ортопед.
+    meaning:
+      en: A specialist should see the knee. I'll give you a referral to an orthopaedist.
+      pt: Um especialista precisa ver o joelho. Vou dar um encaminhamento para ortopedista.
+  - speaker: protagonist
+    text: Колку се чека?
+    meaning:
+      en: How long is the wait?
+      pt: Quanto tempo de espera?
+  - speaker: doktorka
+    text: Листата на чекање е долга. Има да чекате два месеци.
+    meaning:
+      en: The waiting list is long. You'll have to wait two months.
+      pt: A fila de espera é longa. Vai ter que esperar dois meses.
+  - speaker: protagonist
+    text: Два месеци! А ако е итно?
+    meaning:
+      en: Two months! And if it's urgent?
+      pt: Dois meses! E se for urgente?
+  - speaker: doktorka
+    text: Не е итно. Но може приватно — за неколку дена.
+    meaning:
+      en: It isn't urgent. But you can go privately — in a few days.
+      pt: Não é urgente. Mas pode ir no particular — em poucos dias.
+  - speaker: protagonist
+    text: Приватно значи од свој џеб.
+    meaning:
+      en: Privately means out of my own pocket.
+      pt: Particular quer dizer do próprio bolso.
+  - speaker: doktorka
+    text: Да. Државното е бесплатно, но бавно.
+    meaning:
+      en: Yes. The public system is free, but slow.
+      pt: Sim. O público é gratuito, mas lento.
+  - speaker: protagonist
+    text: 'Како во Бразил: СУС или приватно.'
+    meaning:
+      en: 'Like in Brazil: SUS or private.'
+      pt: 'Como no Brasil: SUS ou particular.'
+- type: prompt
+  ask:
+    en: 'Say: the knee.'
+    pt: 'Diga: o joelho.'
+  answer:
+    speaker: protagonist
+    text: Коленото.
+  items:
+  - koleno
+- type: prompt
+  ask:
+    en: 'She says: I''ll give you a referral.'
+    pt: 'Ela diz: vou dar um encaminhamento.'
+  answer:
+    speaker: protagonist
+    text: Ќе ви дадам упат.
+  items:
+  - uput
+- type: prompt
+  ask:
+    en: 'Say: to an orthopaedist.'
+    pt: 'Diga: para ortopedista.'
+  answer:
+    speaker: protagonist
+    text: За ортопед.
+  items:
+  - ortoped
+- type: prompt
+  ask:
+    en: 'Say: a specialist.'
+    pt: 'Diga: um especialista.'
+  answer:
+    speaker: protagonist
+    text: Специјалист.
+  items:
+  - specijalist
+- type: prompt
+  ask:
+    en: 'Say: the waiting list is long.'
+    pt: 'Diga: a fila de espera é longa.'
+  answer:
+    speaker: protagonist
+    text: Листата на чекање е долга.
+  items:
+  - listata-na-cekanje
+- type: prompt
+  ask:
+    en: 'She says: you''ll have to wait two months.'
+    pt: 'Ela diz: vai ter que esperar dois meses.'
+  answer:
+    speaker: protagonist
+    text: Има да чекате два месеци.
+  items:
+  - ima-da-cekate
+  - dva-meseci
+- type: prompt
+  ask:
+    en: 'Ask: and if it''s urgent?'
+    pt: 'Pergunte: e se for urgente?'
+  answer:
+    speaker: protagonist
+    text: А ако е итно?
+  items:
+  - itno
+- type: prompt
+  ask:
+    en: 'Say: privately — out of my own pocket.'
+    pt: 'Diga: no particular — do próprio bolso.'
+  answer:
+    speaker: protagonist
+    text: Приватно — од свој џеб.
+  items:
+  - privatno
+  - od-svoj-dzeb
+- type: narrator
+  text:
+    en: Public care needs a referral (упат) from your family doctor and can mean long waits; private clinics are fast and paid directly. Many people mix both, as in Brazil with SUS and private plans.
+    pt: O atendimento público exige encaminhamento (упат) do médico de família e pode ter espera longa; clínicas particulares são rápidas e pagas na hora. Muita gente mistura os dois, como no Brasil com
+      SUS e plano.
+- type: prompt
+  ask:
+    en: 'Once more: say “referral”.'
+    pt: 'Mais uma vez: diga “encaminhamento”.'
+  answer:
+    speaker: protagonist
+    text: упат
+  items:
+  - uput
+- type: prompt
+  ask:
+    en: 'Once more: say “specialist”.'
+    pt: 'Mais uma vez: diga “especialista”.'
+  answer:
+    speaker: protagonist
+    text: специјалист
+  items:
+  - specijalist
+- type: prompt
+  ask:
+    en: 'Once more: say “orthopaedist”.'
+    pt: 'Mais uma vez: diga “ortopedista”.'
+  answer:
+    speaker: protagonist
+    text: ортопед
+  items:
+  - ortoped
+- type: prompt
+  ask:
+    en: 'Once more: say “the waiting list”.'
+    pt: 'Mais uma vez: diga “a fila de espera”.'
+  answer:
+    speaker: protagonist
+    text: листата на чекање
+  items:
+  - listata-na-cekanje
+- type: prompt
+  ask:
+    en: 'Once more: say “you''ll have to wait”.'
+    pt: 'Mais uma vez: diga “vai ter que esperar”.'
+  answer:
+    speaker: protagonist
+    text: има да чекате
+  items:
+  - ima-da-cekate
+- type: prompt
+  ask:
+    en: 'Once more: say “two months”.'
+    pt: 'Mais uma vez: diga “dois meses”.'
+  answer:
+    speaker: protagonist
+    text: два месеци
+  items:
+  - dva-meseci
+- type: prompt
+  ask:
+    en: 'Once more: say “privately”.'
+    pt: 'Mais uma vez: diga “no particular”.'
+  answer:
+    speaker: protagonist
+    text: приватно
+  items:
+  - privatno
+- type: prompt
+  ask:
+    en: 'Once more: say “out of your own pocket”.'
+    pt: 'Mais uma vez: diga “do próprio bolso”.'
+  answer:
+    speaker: protagonist
+    text: од свој џеб
+  items:
+  - od-svoj-dzeb
+- type: prompt
+  ask:
+    en: 'Once more: say “knee”.'
+    pt: 'Mais uma vez: diga “joelho”.'
+  answer:
+    speaker: protagonist
+    text: колено
+  items:
+  - koleno
+- type: prompt
+  ask:
+    en: 'Once more: say “urgent”.'
+    pt: 'Mais uma vez: diga “urgente”.'
+  answer:
+    speaker: protagonist
+    text: итно
+  items:
+  - itno
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “protest — and “demands — and “banner — and “clean air — and “we demand of the government — and “measures — and “peaceful (masculine) — and “the citizens — and “have the right — and “signatures
+      — and “vegetable garden — and “hens — and “fresh eggs”.'
+    pt: 'Diga: “protesto — e “reivindicações — e “faixa — e “ar limpo — e “exigimos do governo — e “medidas — e “pacífico — e “os cidadãos — e “têm direito — e “assinaturas — e “horta — e “galinhas — e
+      “ovos frescos”.'
+  answer:
+    speaker: protagonist
+    text: протест … барања … транспарент … чист воздух … бараме од Владата … мерки … мирен … граѓаните … имаат право … потписи … бавча … кокошки … свежи јајца
+  items:
+  - protest
+  - baranja
+  - transparent
+  - cist-vozduh
+  - baram-od-vladata
+  - merki
+  - miren
+  - graganite
+  - imaat-pravo
+  - potpisa
+  - bavca
+  - kokoski
+  - jajca-svezi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “give them to him — and “I''ll pack them for you — and “empty houses — and “only old people — and “silence, quiet — and “can''t be bought — and “you''ll come again — and “used car — and “kilometres
+      — and “drove only (reportedly) — and “pensioner (a woman) — and “check, inspection — and “at a mechanic''s”.'
+    pt: 'Diga: “dá para ele — e “vou embalar para você — e “casas vazias — e “só velhos — e “silêncio — e “não se compra — e “vocês voltam — e “carro usado — e “quilômetros — e “teria dirigido só — e “aposentada
+      — e “verificação / revisão — e “num mecânico”.'
+  answer:
+    speaker: protagonist
+    text: дај му ги … ќе ти ги спакувам … празни куќи … само старци … тишина … не може да се купи … ќе дојдете пак … половен автомобил … километри … возел само … пензионерка … проверка … кај механичар
+  items:
+  - daj-mu-gi
+  - ke-ti-gi-spakuvam
+  - prazni-kukji
+  - samo-starci
+  - tisina
+  - ne-moze-da-se-kupi
+  - ke-dojdete-pak
+  - poloven-avtomobil
+  - kilometri
+  - vozel-samo
+  - penzionerka
+  - proverka
+  - kaj-mehanicar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “don''t believe (informal) — and “they all say that — and “the papers — and “they''re in order — and “the future — and “Where will you (two) live? — and “we bought — and “loan, mortgage —
+      and “twenty years — and “in the same building — and “plans — and “children — and “little by little”.'
+    pt: 'Diga: “não acredita — e “todos dizem isso — e “os documentos — e “estão em ordem — e “o futuro — e “Onde vocês vão morar? — e “compramos — e “financiamento — e “vinte anos — e “no mesmo prédio
+      — e “planos — e “filhos / crianças — e “devagarinho”.'
+  answer:
+    speaker: protagonist
+    text: не верувај … сите така велат … папирите … во ред се … иднината … Каде ќе живеете? … купивме … кредит … дваесет години … во истата зграда … планови … деца … полека-полека
+  items:
+  - ne-veruvaj
+  - site-taka-velat
+  - papirite
+  - vo-red-se
+  - idninata
+  - kade-ke-ziveete
+  - kupivme
+  - kredit
+  - dvaeset-godini
+  - vo-istata-zgrada
+  - plani
+  - deca
+  - poleka-poleka
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I''ll be a grandmother to them — and “my idea — and “that was — and “you presented it — and “as yours — and “I didn''t mean to — and “we developed it together — and “I proposed it first —
+      and “next time say — and “OK, deal — and “fair, correct — and “survey, poll — and “shows”.'
+    pt: 'Diga: “vou ser avó deles — e “minha ideia — e “aquilo foi — e “você apresentou — e “como sua — e “não foi minha intenção — e “a gente desenvolveu junto — e “eu propus primeiro — e “da próxima vez
+      diga — e “Valeu / combinado — e “correto / justo — e “pesquisa — e “mostra”.'
+  answer:
+    speaker: protagonist
+    text: ќе им бидам баба … моја идеја … тоа беше … ја претстави … како твоја … не сум мислел … заедно ја развивме … прв ја предложив … следниот пат кажи … Важи … коректно … анкета … покажува
+  items:
+  - ke-ti-bidam-baba
+  - moja-ideja
+  - toa-beshe
+  - ja-pretstavi
+  - kako-tvoja
+  - ne-sum-mislel
+  - zaedno-ja-razvivme
+  - prvo-ja-predlozhiv
+  - sledniot-pat-kazi
+  - vazi
+  - korektno
+  - anketa
+  - pokazuva
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “young people — and “want to leave — and “average — and “salary — and “chart — and “out of a hundred — and “doesn''t mean — and “will leave — and “street — and “Go (formal) — and “straight
+      on — and “then — and “(to the) left”.'
+    pt: 'Diga: “os jovens — e “querem ir embora — e “média — e “salário — e “gráfico — e “de cada cem — e “não quer dizer — e “vão embora — e “rua — e “Vá (formal) — e “em frente — e “depois / e então —
+      e “à esquerda”.'
+  answer:
+    speaker: protagonist
+    text: младите … сакаат да заминат … просек … плата … графикон … од сто … не значи … ќе заминат … улица … Одете … право … па … лево
+  items:
+  - mladite
+  - sakaat-da-zaminat
+  - prosek
+  - plata
+  - grafikon
+  - od-sto-hundred
+  - ne-znaci
+  - kje-zaminat
+  - ulica
+  - odete
+  - pravo
+  - pa
+  - levo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “(to the) right — and “far — and “near — and “five — and “minutes — and “on foot — and “the (bus) stop — and “next to / to”.'
+    pt: 'Diga: “à direita — e “longe — e “perto — e “cinco — e “minutos — e “a pé — e “o ponto (de ônibus) — e “ao lado de / até”.'
+  answer:
+    speaker: protagonist
+    text: десно … далеку … близу … пет … минути … пешки … станицата … до
+  items:
+  - desno
+  - daleku
+  - blizu
+  - pet
+  - minuti
+  - peski
+  - stanicata
+  - do
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

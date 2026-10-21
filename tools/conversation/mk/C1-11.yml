@@ -1,0 +1,612 @@
+# UNIT mk C1-11 — written by AI (Claude) for Casus; expanded from src/C1-11.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-11
+level: C1
+number: 11
+protagonist: f
+title:
+  en: A funeral
+  pt: Um funeral
+situation:
+  en: Vera's brother has died. You visit her with Bojan.
+  pt: O irmão da Vera morreu. Você visita ela com o Bojan.
+learn_lessons:
+- c1-particles
+culture: The 40-day memorial
+new_items:
+- id: iskreno-socuvstvo
+  text: Искрено сочувство
+  meaning:
+    en: My sincere condolences
+    pt: Meus sinceros pêsames
+- id: bog-da-go-prosti
+  text: Бог да го прости
+  meaning:
+    en: May God rest his soul
+    pt: Que Deus o tenha
+- id: pocina
+  text: почина
+  meaning:
+    en: passed away
+    pt: faleceu
+- id: ve-boli
+  text: ве боли
+  meaning:
+    en: it hurts you, you're grieving
+    pt: dói na senhora
+- id: eh
+  text: ех
+  meaning:
+    en: ah, oh (sigh)
+    pt: ai / ah
+- id: cetirieseti-den
+  text: четириесетница
+  meaning:
+    en: forty-day memorial
+    pt: missa de quarenta dias
+  rare: true
+- id: panihida
+  text: панихида
+  meaning:
+    en: memorial service
+    pt: missa / culto fúnebre
+  rare: true
+- id: zito
+  text: жито
+  meaning:
+    en: boiled wheat (memorial food)
+    pt: trigo cozido (comida do luto)
+  rare: true
+- id: da-ste-zivi-vie
+  text: да сте живи вие
+  meaning:
+    en: may you live (condolence)
+    pt: que a senhora tenha vida
+- id: ako-vi-treba-nesto
+  text: ако ви треба нешто
+  meaning:
+    en: if you need anything
+    pt: se precisar de alguma coisa
+reviews:
+- item: leb
+  from: A1-04
+- item: mleko
+  from: A1-04
+- item: voda
+  from: A1-04
+- item: imate-li
+  from: A1-04
+- item: imame
+  from: A1-04
+- item: eden
+  from: A1-04
+- item: dve
+  from: A1-04
+- item: ve-molam
+  from: A1-04
+- item: uste-nesto
+  from: A1-04
+- item: toa-e-se
+  from: A1-04
+- item: kolku-cini
+  from: A1-04
+- item: denari
+  from: A1-04
+- item: sto
+  from: A1-04
+- item: kese
+  from: A1-04
+- item: prijatno
+  from: A1-04
+- item: pokana
+  from: B1-08
+- item: se-mazi
+  from: B1-08
+- item: cestitki
+  from: B1-08
+- item: bi-sakal
+  from: B1-08
+- item: kum
+  from: B1-08
+- item: svedok
+  from: B1-08
+- item: podocna
+  from: B1-08
+- item: decata
+  from: B1-08
+- item: za-cel-zivot
+  from: B1-08
+- item: bi-mozel
+  from: B1-08
+- item: govorot
+  from: B1-08
+- item: pocituvani
+  from: B2-10
+- item: pocituvan-gospodine
+  from: B2-10
+- item: vo-prilog
+  from: B2-10
+- item: ve-molime
+  from: B2-10
+- item: odgovor
+  from: B2-10
+- item: so-pocit
+  from: B2-10
+- item: marko-voc
+  from: B2-10
+- item: druze
+  from: B2-10
+- item: pozdrav
+  from: B2-10
+- item: srdecen-pozdrav
+  from: B2-10
+- item: trener
+  from: B2-26
+- item: treninzi
+  from: B2-26
+- item: dvapati-nedelno
+  from: B2-26
+- item: clen
+  from: B2-26
+- item: clenarina
+  from: B2-26
+- item: zagrevanje
+  from: B2-26
+- item: brate
+  from: B2-26
+- item: zorane
+  from: B2-26
+- item: frli
+  from: B2-26
+- item: koj-te-nauci
+  from: B2-26
+- item: buchava
+  from: C1-04
+- item: izvinete-sto-ve-voznemiruvam
+  from: C1-04
+- item: imajte-razbiranje
+  from: C1-04
+- item: utre-rano
+  from: C1-04
+- item: malku-potiho
+  from: C1-04
+- item: ama-sega
+  from: C1-04
+- item: ne-znaev
+  from: C1-04
+- item: se-slusa
+  from: C1-04
+- item: vazi-togas
+  from: C1-04
+- item: kucen-red
+  from: C1-04
+- item: poloven-avtomobil
+  from: C1-08
+- item: kilometri
+  from: C1-08
+- item: vozel-samo
+  from: C1-08
+- item: penzionerka
+  from: C1-08
+- item: proverka
+  from: C1-08
+- item: kaj-mehanicar
+  from: C1-08
+- item: ne-veruvaj
+  from: C1-08
+- item: site-taka-velat
+  from: C1-08
+- item: papirite
+  from: C1-08
+- item: vo-red-se
+  from: C1-08
+- item: kumstvo
+  from: C1-10
+- item: ni-be-kum
+  from: C1-10
+- item: cest-za-mene
+  from: C1-10
+- item: obvrska
+  from: C1-10
+- item: krstevka
+  from: C1-10
+- item: ima-da-gi-krstis
+  from: C1-10
+- item: decata-nasi
+  from: C1-10
+- item: ne-se-odbiva
+  from: C1-10
+- item: primam
+  from: C1-10
+- item: ke-se-trudam
+  from: C1-10
+steps:
+- type: narrator
+  text:
+    en: Vera's brother has died. You visit her with Bojan. Listen to the conversation; you don't need to understand it yet.
+    pt: O irmão da Vera morreu. Você visita ela com o Bojan. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Вера... искрено сочувство. Бог да го прости.
+    meaning:
+      en: Vera... my sincere condolences. May God rest his soul.
+      pt: Vera... meus sinceros pêsames. Que Deus o tenha.
+  - speaker: vera
+    text: Благодарам, душо. Да сте живи вие.
+    meaning:
+      en: Thank you, dear. May you live.
+      pt: Obrigada, querida. Que vocês tenham vida.
+  - speaker: bojan
+    text: Кога почина?
+    meaning:
+      en: When did he pass away?
+      pt: Quando ele faleceu?
+  - speaker: vera
+    text: Во вторник. Ех, беше постар од мене само две години...
+    meaning:
+      en: On Tuesday. Ah, he was only two years older than me...
+      pt: Na terça. Ai, ele era só dois anos mais velho que eu...
+  - speaker: protagonist
+    text: Знам колку ве боли.
+    meaning:
+      en: I know how much it hurts.
+      pt: Sei o quanto dói.
+  - speaker: vera
+    text: На четириесетница ќе има панихида. Ќе дојдете?
+    meaning:
+      en: At the forty-day memorial there'll be a service. Will you come?
+      pt: Na missa de quarenta dias vai ter culto. Vocês vêm?
+  - speaker: bojan
+    text: Секако. Ќе донесеме нешто.
+    meaning:
+      en: Of course. We'll bring something.
+      pt: Claro. A gente leva alguma coisa.
+  - speaker: vera
+    text: Жито ќе правам јас. Само дојдете.
+    meaning:
+      en: I'll make the wheat. Just come.
+      pt: O trigo eu faço. Só venham.
+  - speaker: protagonist
+    text: Ако ви треба нешто — било што — кажете ни.
+    meaning:
+      en: If you need anything — anything — tell us.
+      pt: Se precisar de alguma coisa — qualquer coisa — fale com a gente.
+- type: prompt
+  ask:
+    en: Offer condolences.
+    pt: Dê os pêsames.
+  answer:
+    speaker: protagonist
+    text: Искрено сочувство.
+  items:
+  - iskreno-socuvstvo
+- type: prompt
+  ask:
+    en: 'Add: may God rest his soul.'
+    pt: 'Acrescente: que Deus o tenha.'
+  answer:
+    speaker: protagonist
+    text: Бог да го прости.
+  items:
+  - bog-da-go-prosti
+- type: prompt
+  ask:
+    en: 'Vera''s answer: may you live.'
+    pt: 'A resposta da Vera: que vocês tenham vida.'
+  answer:
+    speaker: protagonist
+    text: Да сте живи вие.
+  items:
+  - da-ste-zivi-vie
+- type: prompt
+  ask:
+    en: Ask when he passed away.
+    pt: Pergunte quando ele faleceu.
+  answer:
+    speaker: protagonist
+    text: Кога почина?
+  items:
+  - pocina
+- type: prompt
+  ask:
+    en: 'Vera sighs: ah…'
+    pt: 'A Vera suspira: ai…'
+  answer:
+    speaker: protagonist
+    text: Ех…
+  items:
+  - eh
+- type: prompt
+  ask:
+    en: 'Say: I know how much it hurts.'
+    pt: 'Diga: sei o quanto dói.'
+  answer:
+    speaker: protagonist
+    text: Знам колку ве боли.
+  items:
+  - ve-boli
+- type: prompt
+  ask:
+    en: 'Say: the forty-day memorial.'
+    pt: 'Diga: a missa de quarenta dias.'
+  answer:
+    speaker: protagonist
+    text: Четириесетница.
+  items:
+  - cetirieseti-den
+- type: prompt
+  ask:
+    en: 'Say: a memorial service.'
+    pt: 'Diga: um culto fúnebre.'
+  answer:
+    speaker: protagonist
+    text: Панихида.
+  items:
+  - panihida
+- type: prompt
+  ask:
+    en: 'Say: the boiled wheat.'
+    pt: 'Diga: o trigo cozido.'
+  answer:
+    speaker: protagonist
+    text: Жито.
+  items:
+  - zito
+- type: prompt
+  ask:
+    en: 'Say: if you need anything, tell us.'
+    pt: 'Diga: se precisar de alguma coisa, fale com a gente.'
+  answer:
+    speaker: protagonist
+    text: Ако ви треба нешто, кажете ни.
+  items:
+  - ako-vi-treba-nesto
+- type: narrator
+  text:
+    en: 'Set phrases do the work at a death: ''Искрено сочувство'', ''Бог да го прости''; the family answers ''Да сте живи''. Memorials follow at 40 days, six months and a year, with boiled wheat (жито)
+      shared by everyone.'
+    pt: 'Frases feitas fazem o trabalho num luto: ''Искрено сочувство'', ''Бог да го прости''; a família responde ''Да сте живи''. Há memórias aos 40 dias, seis meses e um ano, com trigo cozido (жито) para
+      todos.'
+- type: prompt
+  ask:
+    en: 'Once more: say “My sincere condolences”.'
+    pt: 'Mais uma vez: diga “Meus sinceros pêsames”.'
+  answer:
+    speaker: protagonist
+    text: Искрено сочувство
+  items:
+  - iskreno-socuvstvo
+- type: prompt
+  ask:
+    en: 'Once more: say “May God rest his soul”.'
+    pt: 'Mais uma vez: diga “Que Deus o tenha”.'
+  answer:
+    speaker: protagonist
+    text: Бог да го прости
+  items:
+  - bog-da-go-prosti
+- type: prompt
+  ask:
+    en: 'Once more: say “passed away”.'
+    pt: 'Mais uma vez: diga “faleceu”.'
+  answer:
+    speaker: protagonist
+    text: почина
+  items:
+  - pocina
+- type: prompt
+  ask:
+    en: 'Once more: say “it hurts you, you''re grieving”.'
+    pt: 'Mais uma vez: diga “dói na senhora”.'
+  answer:
+    speaker: protagonist
+    text: ве боли
+  items:
+  - ve-boli
+- type: prompt
+  ask:
+    en: 'Once more: say “ah, oh (sigh)”.'
+    pt: 'Mais uma vez: diga “ai / ah”.'
+  answer:
+    speaker: protagonist
+    text: ех
+  items:
+  - eh
+- type: prompt
+  ask:
+    en: 'Once more: say “forty-day memorial”.'
+    pt: 'Mais uma vez: diga “missa de quarenta dias”.'
+  answer:
+    speaker: protagonist
+    text: четириесетница
+  items:
+  - cetirieseti-den
+- type: prompt
+  ask:
+    en: 'Once more: say “memorial service”.'
+    pt: 'Mais uma vez: diga “missa / culto fúnebre”.'
+  answer:
+    speaker: protagonist
+    text: панихида
+  items:
+  - panihida
+- type: prompt
+  ask:
+    en: 'Once more: say “boiled wheat (memorial food)”.'
+    pt: 'Mais uma vez: diga “trigo cozido (comida do luto)”.'
+  answer:
+    speaker: protagonist
+    text: жито
+  items:
+  - zito
+- type: prompt
+  ask:
+    en: 'Once more: say “may you live (condolence)”.'
+    pt: 'Mais uma vez: diga “que a senhora tenha vida”.'
+  answer:
+    speaker: protagonist
+    text: да сте живи вие
+  items:
+  - da-ste-zivi-vie
+- type: prompt
+  ask:
+    en: 'Once more: say “if you need anything”.'
+    pt: 'Mais uma vez: diga “se precisar de alguma coisa”.'
+  answer:
+    speaker: protagonist
+    text: ако ви треба нешто
+  items:
+  - ako-vi-treba-nesto
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the кум bond — and “to be our кум — and “an honour for me — and “obligation, duty — and “christening — and “you''ll have to christen them — and “our children — and “you can''t refuse it —
+      and “I accept — and “I''ll do my best — and “used car — and “kilometres — and “drove only (reportedly)”.'
+    pt: 'Diga: “compadrio — e “ser nosso padrinho — e “uma honra para mim — e “compromisso / obrigação — e “batizado — e “você vai ter que batizar — e “nossos filhos — e “não se recusa — e “Aceito — e “vou
+      me esforçar — e “carro usado — e “quilômetros — e “teria dirigido só”.'
+  answer:
+    speaker: protagonist
+    text: кумство … да ни бидеш кум … чест за мене … обврска … крштевка … има да ги крстиш … нашите деца … не се одбива … Примам … ќе се трудам … половен автомобил … километри … возел само
+  items:
+  - kumstvo
+  - ni-be-kum
+  - cest-za-mene
+  - obvrska
+  - krstevka
+  - ima-da-gi-krstis
+  - decata-nasi
+  - ne-se-odbiva
+  - primam
+  - ke-se-trudam
+  - poloven-avtomobil
+  - kilometri
+  - vozel-samo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “pensioner (a woman) — and “check, inspection — and “at a mechanic''s — and “don''t believe (informal) — and “they all say that — and “the papers — and “they''re in order — and “noise — and
+      “Sorry to disturb you — and “please be understanding — and “early tomorrow — and “a bit quieter — and “but now, right now”.'
+    pt: 'Diga: “aposentada — e “verificação / revisão — e “num mecânico — e “não acredita — e “todos dizem isso — e “os documentos — e “estão em ordem — e “barulho — e “Desculpe incomodar — e “tenha compreensão
+      — e “amanhã cedo — e “um pouco mais baixo — e “mas agora”.'
+  answer:
+    speaker: protagonist
+    text: пензионерка … проверка … кај механичар … не верувај … сите така велат … папирите … во ред се … бучава … Извинете што ве вознемирувам … имајте разбирање … утре рано … малку потивко … ама сега
+  items:
+  - penzionerka
+  - proverka
+  - kaj-mehanicar
+  - ne-veruvaj
+  - site-taka-velat
+  - papirite
+  - vo-red-se
+  - buchava
+  - izvinete-sto-ve-voznemiruvam
+  - imajte-razbiranje
+  - utre-rano
+  - malku-potiho
+  - ama-sega
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I didn''t know — and “can be heard — and “OK then — and “house rules — and “coach — and “training sessions — and “twice a week — and “member — and “membership fee — and “warm-up — and “bro
+      (vocative of брат) — and “Zoran! (calling him) — and “throw, shoot (informal)”.'
+    pt: 'Diga: “eu não sabia — e “dá para ouvir — e “tá certo então — e “regras do prédio — e “técnico — e “treinos — e “duas vezes por semana — e “sócio / membro — e “mensalidade — e “aquecimento — e “mano
+      / irmão — e “Zoran! (chamando) — e “arremessa”.'
+  answer:
+    speaker: protagonist
+    text: не знаев … се слуша … важи тогаш … куќен ред … тренер … тренинзи … двапати неделно … член … членарина … загревање … брате … Зоране … фрли
+  items:
+  - ne-znaev
+  - se-slusa
+  - vazi-togas
+  - kucen-red
+  - trener
+  - treninzi
+  - dvapati-nedelno
+  - clen
+  - clenarina
+  - zagrevanje
+  - brate
+  - zorane
+  - frli
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Who taught you? — and “Dear (formal, plural) — and “Dear Sir — and “attached — and “we kindly ask you — and “answer, reply — and “Yours sincerely — and “Marko (calling him) — and “mate, buddy
+      (vocative) — and “Greetings / Best — and “Kind regards — and “invitation — and “(she) is getting married”.'
+    pt: 'Diga: “Quem te ensinou? — e “Prezados — e “Prezado senhor — e “em anexo — e “pedimos a gentileza — e “resposta — e “Atenciosamente — e “Marko — e “camarada / mano — e “Abraço — e “Cordialmente
+      — e “convite — e “vai se casar (ela)”.'
+  answer:
+    speaker: protagonist
+    text: Кој те научи? … Почитувани … Почитуван господине … во прилог … ве молиме … одговор … Со почит … Марко … друже … Поздрав … Срдечен поздрав … покана … се мажи
+  items:
+  - koj-te-nauci
+  - pocituvani
+  - pocituvan-gospodine
+  - vo-prilog
+  - ve-molime
+  - odgovor
+  - so-pocit
+  - marko-voc
+  - druze
+  - pozdrav
+  - srdecen-pozdrav
+  - pokana
+  - se-mazi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Congratulations! — and “I''d like (a man) — and “best man / godfather (кум) — and “witness — and “later — and “the children — and “for life — and “could you (to a man) — and “the speech —
+      and “bread — and “milk — and “water — and “Do you have…? (formal)”.'
+    pt: 'Diga: “Parabéns! — e “eu gostaria — e “padrinho (кум) — e “testemunha — e “mais tarde / depois — e “as crianças / os filhos — e “para a vida toda — e “você poderia — e “o discurso — e “pão — e
+      “leite — e “água — e “O senhor tem…? (formal)”.'
+  answer:
+    speaker: protagonist
+    text: Честитки! … би сакал … кум … сведок … подоцна … децата … за цел живот … би можел … говорот … леб … млеко … вода … Имате ли…?
+  items:
+  - cestitki
+  - bi-sakal
+  - kum
+  - svedok
+  - podocna
+  - decata
+  - za-cel-zivot
+  - bi-mozel
+  - govorot
+  - leb
+  - mleko
+  - voda
+  - imate-li
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “We have — and “one (with a masculine word) — and “two (with feminine and neuter words) — and “please (formal) — and “Anything else? — and “That''s all — and “How much is it? — and “denars
+      (the money) — and “a hundred — and “a (plastic) bag — and “Have a nice day! / Enjoy!”.'
+    pt: 'Diga: “Temos — e “um — e “duas / dois — e “por favor (formal) — e “Mais alguma coisa? — e “É só isso — e “Quanto custa? — e “dinares (a moeda) — e “cem — e “uma sacolinha — e “Bom dia! / Bom proveito!”.'
+  answer:
+    speaker: protagonist
+    text: Имаме … еден … две … ве молам … Уште нешто? … Тоа е сè … Колку чини? … денари … сто … кесе … Пријатно!
+  items:
+  - imame
+  - eden
+  - dve
+  - ve-molam
+  - uste-nesto
+  - toa-e-se
+  - kolku-cini
+  - denari
+  - sto
+  - kese
+  - prijatno
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

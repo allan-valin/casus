@@ -1,0 +1,36 @@
+id: C1-15
+protagonist: f
+title: ["The specialist", "O médico especialista"]
+situation: ["Your knee hurts after basketball. Dr Petrovska writes a referral.", "Seu joelho dói depois do basquete. A doutora Petrovska faz um encaminhamento."]
+learn: [c1-ima-da]
+culture: Public versus private
+items:
+  - [uput, "упат", "referral", "encaminhamento", {rare: true}]
+  - [specijalist, "специјалист", "specialist", "especialista"]
+  - [ortoped, "ортопед", "orthopaedist", "ortopedista", {rare: true}]
+  - [listata-na-cekanje, "листата на чекање", "the waiting list", "a fila de espera"]
+  - [ima-da-cekate, "има да чекате", "you'll have to wait", "vai ter que esperar"]
+  - [dva-meseci, "два месеци", "two months", "dois meses"]
+  - [privatno, "приватно", "privately", "no particular"]
+  - [od-svoj-dzeb, "од свој џеб", "out of your own pocket", "do próprio bolso"]
+  - [koleno, "колено", "knee", "joelho"]
+  - [itno, "итно", "urgent", "urgente"]
+dialogue:
+  - [doktorka, "Коленото треба да го види специјалист. Ќе ви дадам упат за ортопед.", "A specialist should see the knee. I'll give you a referral to an orthopaedist.", "Um especialista precisa ver o joelho. Vou dar um encaminhamento para ortopedista."]
+  - [protagonist, "Колку се чека?", "How long is the wait?", "Quanto tempo de espera?"]
+  - [doktorka, "Листата на чекање е долга. Има да чекате два месеци.", "The waiting list is long. You'll have to wait two months.", "A fila de espera é longa. Vai ter que esperar dois meses."]
+  - [protagonist, "Два месеци! А ако е итно?", "Two months! And if it's urgent?", "Dois meses! E se for urgente?"]
+  - [doktorka, "Не е итно. Но може приватно — за неколку дена.", "It isn't urgent. But you can go privately — in a few days.", "Não é urgente. Mas pode ir no particular — em poucos dias."]
+  - [protagonist, "Приватно значи од свој џеб.", "Privately means out of my own pocket.", "Particular quer dizer do próprio bolso."]
+  - [doktorka, "Да. Државното е бесплатно, но бавно.", "Yes. The public system is free, but slow.", "Sim. O público é gratuito, mas lento."]
+  - [protagonist, "Како во Бразил: СУС или приватно.", "Like in Brazil: SUS or private.", "Como no Brasil: SUS ou particular."]
+teach:
+  - ask: ["Say: the knee.", "Diga: o joelho.", "Коленото.", koleno]
+  - ask: ["She says: I'll give you a referral.", "Ela diz: vou dar um encaminhamento.", "Ќе ви дадам упат.", uput]
+  - ask: ["Say: to an orthopaedist.", "Diga: para ortopedista.", "За ортопед.", ortoped]
+  - ask: ["Say: a specialist.", "Diga: um especialista.", "Специјалист.", specijalist]
+  - ask: ["Say: the waiting list is long.", "Diga: a fila de espera é longa.", "Листата на чекање е долга.", listata-na-cekanje]
+  - ask: ["She says: you'll have to wait two months.", "Ela diz: vai ter que esperar dois meses.", "Има да чекате два месеци.", ima-da-cekate, dva-meseci]
+  - ask: ["Ask: and if it's urgent?", "Pergunte: e se for urgente?", "А ако е итно?", itno]
+  - ask: ["Say: privately — out of my own pocket.", "Diga: no particular — do próprio bolso.", "Приватно — од свој џеб.", privatno, od-svoj-dzeb]
+  - note: ["Public care needs a referral (упат) from your family doctor and can mean long waits; private clinics are fast and paid directly. Many people mix both, as in Brazil with SUS and private plans.", "O atendimento público exige encaminhamento (упат) do médico de família e pode ter espera longa; clínicas particulares são rápidas e pagas na hora. Muita gente mistura os dois, como no Brasil com SUS e plano."]
