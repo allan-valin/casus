@@ -1,0 +1,580 @@
+# UNIT mk C2-24 — written by AI (Claude) for Casus; expanded from src/C2-24.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-24
+level: C2
+number: 24
+protagonist: m
+title:
+  en: Local politics
+  pt: Política local
+situation:
+  en: A public hearing on the Karpoš budget. You ask about the park that was promised in C1.
+  pt: Uma audiência pública sobre o orçamento de Karpoš. Você pergunta pelo parque prometido no C1.
+learn_lessons:
+- c2-register
+culture: —
+new_items:
+- id: javna-rasprava
+  text: јавна расправа
+  meaning:
+    en: public hearing
+    pt: audiência pública
+- id: budzetot
+  text: буџетот
+  meaning:
+    en: the budget
+    pt: o orçamento
+- id: sovetnik
+  text: советник
+  meaning:
+    en: councillor
+    pt: vereador
+- id: dozvolete-prasanje
+  text: дозволете едно прашање
+  meaning:
+    en: allow me one question
+    pt: permitam uma pergunta
+- id: predviden
+  text: предвиден
+  meaning:
+    en: planned, foreseen (masculine)
+    pt: previsto
+- id: sredstvata
+  text: средствата
+  meaning:
+    en: the funds
+    pt: os recursos
+- id: odlozeno
+  text: одложено
+  meaning:
+    en: postponed
+    pt: adiado
+- id: transparentno
+  text: транспарентно
+  meaning:
+    en: transparently
+    pt: com transparência
+  rare: true
+- id: graganite-zasluzuvaat
+  text: граѓаните заслужуваат
+  meaning:
+    en: citizens deserve
+    pt: os cidadãos merecem
+- id: pismen-odgovor
+  text: писмен одговор
+  meaning:
+    en: a written answer
+    pt: uma resposta por escrito
+reviews:
+- item: stignavme
+  from: A2-17
+- item: rezervacija
+  from: A2-17
+- item: soba-za-dvajca
+  from: A2-17
+- item: na-koe-ime
+  from: A2-17
+- item: pogled
+  from: A2-17
+- item: pojadokot
+  from: A2-17
+- item: od-sedum
+  from: A2-17
+- item: plazata
+  from: A2-17
+- item: kade-mozeme
+  from: A2-17
+- item: prijaten-prestoj
+  from: A2-17
+- item: bajram
+  from: B2-21
+- item: baklava
+  from: B2-21
+- item: komsija
+  from: B2-21
+- item: muslimani
+  from: B2-21
+- item: pravoslavni
+  from: B2-21
+- item: obicai
+  from: B2-21
+- item: vera-faith
+  from: B2-21
+- item: pocit
+  from: B2-21
+- item: si-cestitame
+  from: B2-21
+- item: parcence
+  from: B2-21
+- item: dvojazicen
+  from: C1-23
+- item: mesa
+  from: C1-23
+- item: doma-portugalski
+  from: C1-23
+- item: nadvor-makedonski
+  from: C1-23
+- item: ke-mu-go-naucis
+  from: C1-23
+- item: ednata-roditel
+  from: C1-23
+- item: ke-se-zbuni
+  from: C1-23
+- item: naprotiv
+  from: C1-23
+- item: prednost
+  from: C1-23
+- item: baba-od-brazil
+  from: C1-23
+- item: povelete-sednete
+  from: C2-09
+- item: dojdete-za-moment
+  from: C2-09
+- item: ke-mozes-li
+  from: C2-09
+- item: ako-ne-ti-e-tesko
+  from: C2-09
+- item: bi-bilo-dobro
+  from: C2-09
+- item: pogledni-go
+  from: C2-09
+- item: ne-gledaj-go-cel-den
+  from: C2-09
+- item: blagodaram-odnapred
+  from: C2-09
+- item: nemoj
+  from: C2-09
+- item: nemoj-da-se-sekiras
+  from: C2-09
+- item: navreda
+  from: C2-17
+- item: ne-mislev-taka
+  from: C2-17
+- item: se-navredila
+  from: C2-17
+- item: kaj-nas-toa-e-pofalba
+  from: C2-17
+- item: zbor-po-zbor
+  from: C2-17
+- item: ne-se-preveduva
+  from: C2-17
+- item: ve-molam-prostete
+  from: C2-17
+- item: nema-vrska
+  from: C2-17
+- item: smesno-bilo
+  from: C2-17
+- item: nauciv-lekcija
+  from: C2-17
+- item: tuka-sum-za-tebe
+  from: C2-21
+- item: poddrska
+  from: C2-21
+- item: ne-mora-da-zboruvas
+  from: C2-21
+- item: samo-te-slusam
+  from: C2-21
+- item: se-cuvstvuvam-prazno
+  from: C2-21
+- item: razbirlivo-e
+  from: C2-21
+- item: ke-pomine
+  from: C2-21
+- item: ne-si-sam
+  from: C2-21
+- item: dojdi-utre-na-rucek
+  from: C2-21
+- item: cekor-po-cekor
+  from: C2-21
+- item: mi-nedostiga
+  from: C2-23
+- item: mi-nedostigaat
+  from: C2-23
+- item: kopnez
+  from: C2-23
+- item: ne-postoi-zbor
+  from: C2-23
+- item: taga-i-radost
+  from: C2-23
+- item: zaedno-vo-eden-zbor
+  from: C2-23
+- item: nie-sme-imale
+  from: C2-23
+- item: zal
+  from: C2-23
+- item: za-nekoj-sto-go-nema
+  from: C2-23
+- item: ubav-zbor
+  from: C2-23
+steps:
+- type: narrator
+  text:
+    en: A public hearing on the Karpoš budget. You ask about the park that was promised in C1. Listen to the conversation; you don't need to understand it yet.
+    pt: Uma audiência pública sobre o orçamento de Karpoš. Você pergunta pelo parque prometido no C1. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Дозволете едно прашање. Паркот беше предвиден во буџетот пред две години.
+    meaning:
+      en: Allow me one question. The park was planned in the budget two years ago.
+      pt: Permitam uma pergunta. O parque estava previsto no orçamento há dois anos.
+  - speaker: sovetnik-c
+    text: Точно. Но средствата беа пренасочени.
+    meaning:
+      en: Correct. But the funds were redirected.
+      pt: Correto. Mas os recursos foram remanejados.
+  - speaker: protagonist
+    text: Каде?
+    meaning:
+      en: Where?
+      pt: Para onde?
+  - speaker: sovetnik-c
+    text: За поправка на улици. Паркот е одложен.
+    meaning:
+      en: To repairing streets. The park is postponed.
+      pt: Para conserto de ruas. O parque foi adiado.
+  - speaker: protagonist
+    text: Граѓаните заслужуваат да знаат транспарентно — колку и каде.
+    meaning:
+      en: Citizens deserve to know transparently — how much and where.
+      pt: Os cidadãos merecem saber com transparência — quanto e onde.
+  - speaker: sovetnik-c
+    text: Ќе добиете писмен одговор.
+    meaning:
+      en: You'll receive a written answer.
+      pt: O senhor vai receber uma resposta por escrito.
+  - speaker: protagonist
+    text: Благодарам. Ќе го чекам — и ќе го објавам.
+    meaning:
+      en: Thank you. I'll wait for it — and publish it.
+      pt: Obrigado. Vou esperar — e vou publicar.
+  - speaker: ana
+    text: Од странец стана граѓанин!
+    meaning:
+      en: From a foreigner you became a citizen!
+      pt: De estrangeiro você virou cidadão!
+- type: prompt
+  ask:
+    en: 'Say: allow me one question.'
+    pt: 'Diga: permitam uma pergunta.'
+  answer:
+    speaker: protagonist
+    text: Дозволете едно прашање.
+  items:
+  - dozvolete-prasanje
+- type: prompt
+  ask:
+    en: 'Say: the park was planned in the budget.'
+    pt: 'Diga: o parque estava previsto no orçamento.'
+  answer:
+    speaker: protagonist
+    text: Паркот беше предвиден во буџетот.
+  items:
+  - predviden
+  - budzetot
+- type: prompt
+  ask:
+    en: 'He says: the funds were redirected.'
+    pt: 'Ele diz: os recursos foram remanejados.'
+  answer:
+    speaker: protagonist
+    text: Средствата беа пренасочени.
+  items:
+  - sredstvata
+- type: prompt
+  ask:
+    en: 'He says: the park is postponed.'
+    pt: 'Ele diz: o parque foi adiado.'
+  answer:
+    speaker: protagonist
+    text: Паркот е одложен.
+  items:
+  - odlozeno
+- type: prompt
+  ask:
+    en: 'Say: citizens deserve to know.'
+    pt: 'Diga: os cidadãos merecem saber.'
+  answer:
+    speaker: protagonist
+    text: Граѓаните заслужуваат да знаат.
+  items:
+  - graganite-zasluzuvaat
+- type: prompt
+  ask:
+    en: 'Say: transparently.'
+    pt: 'Diga: com transparência.'
+  answer:
+    speaker: protagonist
+    text: Транспарентно.
+  items:
+  - transparentno
+- type: prompt
+  ask:
+    en: 'He says: you''ll receive a written answer.'
+    pt: 'Ele diz: vai receber uma resposta por escrito.'
+  answer:
+    speaker: protagonist
+    text: Ќе добиете писмен одговор.
+  items:
+  - pismen-odgovor
+- type: prompt
+  ask:
+    en: 'Say: a public hearing.'
+    pt: 'Diga: uma audiência pública.'
+  answer:
+    speaker: protagonist
+    text: Јавна расправа.
+  items:
+  - javna-rasprava
+- type: prompt
+  ask:
+    en: 'Say: the councillor.'
+    pt: 'Diga: o vereador.'
+  answer:
+    speaker: protagonist
+    text: Советникот.
+  items:
+  - sovetnik
+- type: narrator
+  text:
+    en: 'Public hearings (јавна расправа) are open to residents, foreigners included. Formal questions win answers: cite the budget line, ask ''колку и каде'', and request it in writing.'
+    pt: 'Audiências públicas (јавна расправа) são abertas aos moradores, estrangeiros inclusive. Perguntas formais ganham respostas: cite a rubrica do orçamento, pergunte ''колку и каде'', e peça por escrito.'
+- type: prompt
+  ask:
+    en: 'Once more: say “public hearing”.'
+    pt: 'Mais uma vez: diga “audiência pública”.'
+  answer:
+    speaker: protagonist
+    text: јавна расправа
+  items:
+  - javna-rasprava
+- type: prompt
+  ask:
+    en: 'Once more: say “the budget”.'
+    pt: 'Mais uma vez: diga “o orçamento”.'
+  answer:
+    speaker: protagonist
+    text: буџетот
+  items:
+  - budzetot
+- type: prompt
+  ask:
+    en: 'Once more: say “councillor”.'
+    pt: 'Mais uma vez: diga “vereador”.'
+  answer:
+    speaker: protagonist
+    text: советник
+  items:
+  - sovetnik
+- type: prompt
+  ask:
+    en: 'Once more: say “allow me one question”.'
+    pt: 'Mais uma vez: diga “permitam uma pergunta”.'
+  answer:
+    speaker: protagonist
+    text: дозволете едно прашање
+  items:
+  - dozvolete-prasanje
+- type: prompt
+  ask:
+    en: 'Once more: say “planned, foreseen (masculine)”.'
+    pt: 'Mais uma vez: diga “previsto”.'
+  answer:
+    speaker: protagonist
+    text: предвиден
+  items:
+  - predviden
+- type: prompt
+  ask:
+    en: 'Once more: say “the funds”.'
+    pt: 'Mais uma vez: diga “os recursos”.'
+  answer:
+    speaker: protagonist
+    text: средствата
+  items:
+  - sredstvata
+- type: prompt
+  ask:
+    en: 'Once more: say “postponed”.'
+    pt: 'Mais uma vez: diga “adiado”.'
+  answer:
+    speaker: protagonist
+    text: одложено
+  items:
+  - odlozeno
+- type: prompt
+  ask:
+    en: 'Once more: say “transparently”.'
+    pt: 'Mais uma vez: diga “com transparência”.'
+  answer:
+    speaker: protagonist
+    text: транспарентно
+  items:
+  - transparentno
+- type: prompt
+  ask:
+    en: 'Once more: say “citizens deserve”.'
+    pt: 'Mais uma vez: diga “os cidadãos merecem”.'
+  answer:
+    speaker: protagonist
+    text: граѓаните заслужуваат
+  items:
+  - graganite-zasluzuvaat
+- type: prompt
+  ask:
+    en: 'Once more: say “a written answer”.'
+    pt: 'Mais uma vez: diga “uma resposta por escrito”.'
+  answer:
+    speaker: protagonist
+    text: писмен одговор
+  items:
+  - pismen-odgovor
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I miss (it/him/her) — and “I miss (them) — and “longing — and “there''s no word — and “sadness and joy — and “together in one word — and “we have, it turns out — and “sorrowful longing (old
+      word) — and “for someone who is gone — and “a beautiful word — and “I''m here for you — and “support”.'
+    pt: 'Diga: “sinto falta de — e “sinto falta deles — e “anseio — e “não existe palavra — e “tristeza e alegria — e “juntas numa palavra — e “a gente tem, pelo jeito — e “pesar / saudade (palavra antiga)
+      — e “por alguém que não está — e “uma palavra bonita — e “estou aqui para você — e “apoio”.'
+  answer:
+    speaker: protagonist
+    text: ми недостига … ми недостигаат … копнеж … не постои збор … тага и радост … заедно во еден збор … ние сме имале … жал … за некој што го нема … убав збор … тука сум за тебе … поддршка
+  items:
+  - mi-nedostiga
+  - mi-nedostigaat
+  - kopnez
+  - ne-postoi-zbor
+  - taga-i-radost
+  - zaedno-vo-eden-zbor
+  - nie-sme-imale
+  - zal
+  - za-nekoj-sto-go-nema
+  - ubav-zbor
+  - tuka-sum-za-tebe
+  - poddrska
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “you don''t have to talk — and “I''m just listening — and “I feel empty — and “it''s understandable — and “it will pass — and “you''re not alone — and “come for lunch tomorrow — and “step
+      by step — and “insult, offence — and “I didn''t mean it like that — and “got offended (reportedly) — and “back home that''s a compliment”.'
+    pt: 'Diga: “não precisa falar — e “só estou ouvindo — e “me sinto vazio — e “é compreensível — e “vai passar — e “você não está sozinho — e “vem almoçar amanhã — e “passo a passo — e “ofensa — e “não
+      quis dizer isso — e “teria se ofendido — e “lá em casa isso é elogio”.'
+  answer:
+    speaker: protagonist
+    text: не мора да зборуваш … само те слушам … се чувствувам празно … разбирливо е … ќе помине … не си сам … дојди утре на ручек … чекор по чекор … навреда … не мислев така … се навредила … кај нас тоа
+      е пофалба
+  items:
+  - ne-mora-da-zboruvas
+  - samo-te-slusam
+  - se-cuvstvuvam-prazno
+  - razbirlivo-e
+  - ke-pomine
+  - ne-si-sam
+  - dojdi-utre-na-rucek
+  - cekor-po-cekor
+  - navreda
+  - ne-mislev-taka
+  - se-navredila
+  - kaj-nas-toa-e-pofalba
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “word for word — and “doesn''t translate — and “please forgive me — and “never mind, no matter — and “it was funny, after all — and “I learned a lesson — and “please, take a seat — and “come
+      for a moment — and “Would you be able to…? — and “if it''s no trouble — and “it would be good — and “have a look at it”.'
+    pt: 'Diga: “ao pé da letra — e “não se traduz — e “por favor, me perdoe — e “não tem problema — e “até que foi engraçado — e “aprendi a lição — e “por favor, sente-se — e “venha um momento — e “Você
+      conseguiria…? — e “se não for incômodo — e “seria bom — e “dá uma olhada”.'
+  answer:
+    speaker: protagonist
+    text: збор по збор … не се преведува … ве молам, простете … нема врска … смешно било … научив лекција … повелете, седнете … дојдете за момент … Ќе можеш ли…? … ако не ти е тешко … би било добро … погледни
+      го
+  items:
+  - zbor-po-zbor
+  - ne-se-preveduva
+  - ve-molam-prostete
+  - nema-vrska
+  - smesno-bilo
+  - nauciv-lekcija
+  - povelete-sednete
+  - dojdete-za-moment
+  - ke-mozes-li
+  - ako-ne-ti-e-tesko
+  - bi-bilo-dobro
+  - pogledni-go
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “don''t keep looking at it all day — and “thanks in advance — and “don''t (softer) — and “don''t worry — and “bilingual (masculine) — and “mixes — and “Portuguese at home — and “Macedonian
+      outside — and “you''ll teach it to him — and “one parent, one language — and “will get confused — and “on the contrary”.'
+    pt: 'Diga: “não fica olhando o dia todo — e “obrigada desde já — e “não (mais suave) — e “não se preocupa — e “bilíngue — e “mistura — e “português em casa — e “macedônio na rua — e “você vai ensinar
+      para ele — e “um pai, uma língua — e “vai se confundir — e “pelo contrário”.'
+  answer:
+    speaker: protagonist
+    text: не гледај го цел ден … благодарам однапред … немој … немој да се секираш … двојазичен … меша … дома португалски … надвор македонски … ќе му го научиш … еден родител — еден јазик … ќе се збуни
+      … напротив
+  items:
+  - ne-gledaj-go-cel-den
+  - blagodaram-odnapred
+  - nemoj
+  - nemoj-da-se-sekiras
+  - dvojazicen
+  - mesa
+  - doma-portugalski
+  - nadvor-makedonski
+  - ke-mu-go-naucis
+  - ednata-roditel
+  - ke-se-zbuni
+  - naprotiv
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “advantage — and “grandma from Brazil — and “Bayram (Eid) — and “baklava — and “neighbour (colloquial) — and “Muslims — and “Orthodox (Christians) — and “customs — and “faith, religion — and
+      “respect — and “we congratulate each other — and “a little piece”.'
+    pt: 'Diga: “vantagem — e “a avó do Brasil — e “Bairão (Eid) — e “baklava — e “vizinho — e “muçulmanos — e “ortodoxos — e “costumes — e “fé / religião — e “respeito — e “a gente se cumprimenta — e “um
+      pedacinho”.'
+  answer:
+    speaker: protagonist
+    text: предност … баба од Бразил … Бајрам … баклава … комшија … муслимани … православни … обичаи … вера … почит … си честитаме … парченце
+  items:
+  - prednost
+  - baba-od-brazil
+  - bajram
+  - baklava
+  - komsija
+  - muslimani
+  - pravoslavni
+  - obicai
+  - vera-faith
+  - pocit
+  - si-cestitame
+  - parcence
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “We''ve arrived! — and “reservation — and “double room / room for two — and “In what name? — and “view — and “the breakfast — and “from seven — and “the beach — and “Where can we…? — and “Enjoy
+      your stay!”.'
+    pt: 'Diga: “Chegamos! — e “reserva — e “quarto para dois — e “Em nome de quem? — e “vista — e “o café da manhã — e “das sete — e “a praia — e “Onde a gente pode…? — e “Boa estadia!”.'
+  answer:
+    speaker: protagonist
+    text: Стигнавме! … резервација … соба за двајца … На кое име? … поглед … појадокот … од седум … плажата … Каде можеме…? … Пријатен престој!
+  items:
+  - stignavme
+  - rezervacija
+  - soba-za-dvajca
+  - na-koe-ime
+  - pogled
+  - pojadokot
+  - od-sedum
+  - plazata
+  - kade-mozeme
+  - prijaten-prestoj
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

@@ -1,0 +1,587 @@
+# UNIT mk C2-23 — written by AI (Claude) for Casus; expanded from src/C2-23.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-23
+level: C2
+number: 23
+protagonist: f
+title:
+  en: Saudade
+  pt: Saudade
+situation:
+  en: Vera asks what the Portuguese word on your mug means.
+  pt: A Vera pergunta o que significa a palavra em português na sua caneca.
+learn_lessons:
+- c2-admirative
+culture: —
+new_items:
+- id: mi-nedostiga
+  text: ми недостига
+  meaning:
+    en: I miss (it/him/her)
+    pt: sinto falta de
+- id: mi-nedostigaat
+  text: ми недостигаат
+  meaning:
+    en: I miss (them)
+    pt: sinto falta deles
+- id: kopnez
+  text: копнеж
+  meaning:
+    en: longing
+    pt: anseio
+  rare: true
+- id: ne-postoi-zbor
+  text: не постои збор
+  meaning:
+    en: there's no word
+    pt: não existe palavra
+- id: taga-i-radost
+  text: тага и радост
+  meaning:
+    en: sadness and joy
+    pt: tristeza e alegria
+- id: zaedno-vo-eden-zbor
+  text: заедно во еден збор
+  meaning:
+    en: together in one word
+    pt: juntas numa palavra
+- id: nie-sme-imale
+  text: ние сме имале
+  meaning:
+    en: we have, it turns out
+    pt: a gente tem, pelo jeito
+- id: zal
+  text: жал
+  meaning:
+    en: sorrowful longing (old word)
+    pt: pesar / saudade (palavra antiga)
+  rare: true
+- id: za-nekoj-sto-go-nema
+  text: за некој што го нема
+  meaning:
+    en: for someone who is gone
+    pt: por alguém que não está
+- id: ubav-zbor
+  text: убав збор
+  meaning:
+    en: a beautiful word
+    pt: uma palavra bonita
+reviews:
+- item: ziveevte
+  from: A2-16
+- item: koga-bevte-mala
+  from: A2-16
+- item: kaj
+  from: A2-16
+- item: ziveevme
+  from: A2-16
+- item: sekoe-leto
+  from: A2-16
+- item: odevme
+  from: A2-16
+- item: plivavme
+  from: A2-16
+- item: nemavme
+  from: A2-16
+- item: citavme
+  from: A2-16
+- item: pecka
+  from: A2-16
+- item: togas
+  from: A2-16
+- item: drugo
+  from: A2-16
+- item: zalba
+  from: B2-20
+- item: ve-razbiram-potpolno
+  from: B2-20
+- item: se-slucilo
+  from: B2-20
+- item: mi-e-zal
+  from: B2-20
+- item: se-proveruva
+  from: B2-20
+- item: vednas-ke
+  from: B2-20
+- item: ve-izvestam
+  from: B2-20
+- item: ne-smee-da-se-sluci
+  from: B2-20
+- item: nadomest
+  from: B2-20
+- item: ke-razgovaram-so
+  from: B2-20
+- item: gradinka
+  from: C1-22
+- item: nema-mesto
+  from: C1-22
+- item: listata
+  from: C1-22
+- item: stoite
+  from: C1-22
+- item: ama-zarem
+  from: C1-22
+- item: baba-i-dedo
+  from: C1-22
+- item: ke-go-cuvame
+  from: C1-22
+- item: ni-trgaat
+  from: C1-22
+- item: pa-ete
+  from: C1-22
+- item: besplatno-cuvanje
+  from: C1-22
+- item: romanot
+  from: C2-08
+- item: glavniot-lik
+  from: C2-08
+- item: krajot
+  from: C2-08
+- item: me-dopre
+  from: C2-08
+- item: na-prv-pogled
+  from: C2-08
+- item: megju-redovite
+  from: C2-08
+- item: simbolizira
+  from: C2-08
+- item: otvoren-kraj
+  from: C2-08
+- item: sekoj-si-go-cita
+  from: C2-08
+- item: preporacuvam
+  from: C2-08
+- item: jubilej
+  from: C2-16
+- item: pedeset-godini
+  from: C2-16
+- item: ni-e-cest
+  from: C2-16
+- item: da-go-pozdravime
+  from: C2-16
+- item: osnovacite
+  from: C2-16
+- item: ne-se-so-nas
+  from: C2-16
+- item: minuta-molk
+  from: C2-16
+- item: i-ponatamu
+  from: C2-16
+- item: za-uste-pedeset
+  from: C2-16
+- item: so-golema-gordost
+  from: C2-16
+- item: vikendica
+  from: C2-20
+- item: podelba-na-trosocite
+  from: C2-20
+- item: na-tri-dela
+  from: C2-20
+- item: po-glava
+  from: C2-20
+- item: kasata
+  from: C2-20
+- item: sekoj-dava-po
+  from: C2-20
+- item: smetkite-cisti
+  from: C2-20
+- item: deca-ne-se-brojat
+  from: C2-20
+- item: pravedno
+  from: C2-20
+- item: se-soglasivme
+  from: C2-20
+- item: nemam-zborovi
+  from: C2-22
+- item: tolku-lugje
+  from: C2-22
+- item: ja-zatvoraat-ulicata
+  from: C2-22
+- item: vo-nedela
+  from: C2-22
+- item: nostalgija
+  from: C2-22
+- item: za-skopje
+  from: C2-22
+- item: obratno
+  from: C2-22
+- item: sega-razbiram-zosto
+  from: C2-22
+- item: kafe-ovde
+  from: C2-22
+- item: vo-stoeje
+  from: C2-22
+steps:
+- type: narrator
+  text:
+    en: Vera asks what the Portuguese word on your mug means. Listen to the conversation; you don't need to understand it yet.
+    pt: A Vera pergunta o que significa a palavra em português na sua caneca. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: vera
+    text: Што пишува на шолјата? „Саудаде“?
+    meaning:
+      en: What does it say on the mug? 'Saudade'?
+      pt: O que está escrito na caneca? 'Saudade'?
+  - speaker: protagonist
+    text: Тоа е кога некој или нешто многу ти недостига. Но не е само тага.
+    meaning:
+      en: It's when you miss someone or something very much. But it isn't just sadness.
+      pt: É quando você sente muita falta de alguém ou de alguma coisa. Mas não é só tristeza.
+  - speaker: vera
+    text: Тага и радост, заедно во еден збор?
+    meaning:
+      en: Sadness and joy, together in one word?
+      pt: Tristeza e alegria, juntas numa palavra?
+  - speaker: protagonist
+    text: Точно. Копнеж, со убаво сеќавање.
+    meaning:
+      en: Exactly. Longing, with a beautiful memory.
+      pt: Isso. Anseio, com uma lembrança bonita.
+  - speaker: vera
+    text: Кај нас велат „жал“ — за некој што го нема.
+    meaning:
+      en: Here we say 'жал' — for someone who is gone.
+      pt: Aqui a gente diz 'жал' — por alguém que não está.
+  - speaker: protagonist
+    text: Значи и вие сте имале таков збор!
+    meaning:
+      en: So you have a word like that too!
+      pt: Então vocês também têm uma palavra assim!
+  - speaker: vera
+    text: Имаме. Ми недостига брат ми — тоа е жал.
+    meaning:
+      en: We do. I miss my brother — that's жал.
+      pt: Temos. Sinto falta do meu irmão — isso é жал.
+  - speaker: protagonist
+    text: А мене ми недостигаат моите. Убав збор — и тежок.
+    meaning:
+      en: And I miss my family. A beautiful word — and a heavy one.
+      pt: E eu sinto falta dos meus. Palavra bonita — e pesada.
+- type: prompt
+  ask:
+    en: 'Say: I miss him very much.'
+    pt: 'Diga: sinto muita falta dele.'
+  answer:
+    speaker: protagonist
+    text: Многу ми недостига.
+  items:
+  - mi-nedostiga
+- type: prompt
+  ask:
+    en: 'Say: I miss my family.'
+    pt: 'Diga: sinto falta dos meus.'
+  answer:
+    speaker: protagonist
+    text: Ми недостигаат моите.
+  items:
+  - mi-nedostigaat
+- type: prompt
+  ask:
+    en: 'Say: sadness and joy.'
+    pt: 'Diga: tristeza e alegria.'
+  answer:
+    speaker: protagonist
+    text: Тага и радост.
+  items:
+  - taga-i-radost
+- type: prompt
+  ask:
+    en: 'Say: together in one word.'
+    pt: 'Diga: juntas numa palavra.'
+  answer:
+    speaker: protagonist
+    text: Заедно во еден збор.
+  items:
+  - zaedno-vo-eden-zbor
+- type: prompt
+  ask:
+    en: 'Say: longing.'
+    pt: 'Diga: anseio.'
+  answer:
+    speaker: protagonist
+    text: Копнеж.
+  items:
+  - kopnez
+- type: prompt
+  ask:
+    en: 'Vera: for someone who is gone.'
+    pt: 'A Vera: por alguém que não está.'
+  answer:
+    speaker: protagonist
+    text: За некој што го нема.
+  items:
+  - za-nekoj-sto-go-nema
+  - zal
+- type: prompt
+  ask:
+    en: 'Surprised: so you have a word like that too!'
+    pt: 'Surpresa: então vocês também têm uma palavra assim!'
+  answer:
+    speaker: protagonist
+    text: И вие сте имале таков збор!
+  items:
+  - nie-sme-imale
+- type: prompt
+  ask:
+    en: 'Say: there''s no single word.'
+    pt: 'Diga: não existe uma palavra só.'
+  answer:
+    speaker: protagonist
+    text: Не постои еден збор.
+  items:
+  - ne-postoi-zbor
+- type: prompt
+  ask:
+    en: 'Say: a beautiful word.'
+    pt: 'Diga: uma palavra bonita.'
+  answer:
+    speaker: protagonist
+    text: Убав збор.
+  items:
+  - ubav-zbor
+- type: narrator
+  text:
+    en: '''Ми недостига'' works like ''it is lacking to me'': the thing missed is the subject. For several: ''ми недостигаат''. ''Жал'' is an older, poetic word for sorrowful longing — the closest Macedonian
+      comes to saudade.'
+    pt: '''Ми недостига'' funciona como ''me falta'': o que falta é o sujeito. Para vários: ''ми недостигаат''. ''Жал'' é uma palavra mais antiga e poética para o pesar com anseio — o mais perto que o macedônio
+      chega da saudade.'
+- type: prompt
+  ask:
+    en: 'Once more: say “I miss (it/him/her)”.'
+    pt: 'Mais uma vez: diga “sinto falta de”.'
+  answer:
+    speaker: protagonist
+    text: ми недостига
+  items:
+  - mi-nedostiga
+- type: prompt
+  ask:
+    en: 'Once more: say “I miss (them)”.'
+    pt: 'Mais uma vez: diga “sinto falta deles”.'
+  answer:
+    speaker: protagonist
+    text: ми недостигаат
+  items:
+  - mi-nedostigaat
+- type: prompt
+  ask:
+    en: 'Once more: say “longing”.'
+    pt: 'Mais uma vez: diga “anseio”.'
+  answer:
+    speaker: protagonist
+    text: копнеж
+  items:
+  - kopnez
+- type: prompt
+  ask:
+    en: 'Once more: say “there''s no word”.'
+    pt: 'Mais uma vez: diga “não existe palavra”.'
+  answer:
+    speaker: protagonist
+    text: не постои збор
+  items:
+  - ne-postoi-zbor
+- type: prompt
+  ask:
+    en: 'Once more: say “sadness and joy”.'
+    pt: 'Mais uma vez: diga “tristeza e alegria”.'
+  answer:
+    speaker: protagonist
+    text: тага и радост
+  items:
+  - taga-i-radost
+- type: prompt
+  ask:
+    en: 'Once more: say “together in one word”.'
+    pt: 'Mais uma vez: diga “juntas numa palavra”.'
+  answer:
+    speaker: protagonist
+    text: заедно во еден збор
+  items:
+  - zaedno-vo-eden-zbor
+- type: prompt
+  ask:
+    en: 'Once more: say “we have, it turns out”.'
+    pt: 'Mais uma vez: diga “a gente tem, pelo jeito”.'
+  answer:
+    speaker: protagonist
+    text: ние сме имале
+  items:
+  - nie-sme-imale
+- type: prompt
+  ask:
+    en: 'Once more: say “sorrowful longing (old word)”.'
+    pt: 'Mais uma vez: diga “pesar / saudade (palavra antiga)”.'
+  answer:
+    speaker: protagonist
+    text: жал
+  items:
+  - zal
+- type: prompt
+  ask:
+    en: 'Once more: say “for someone who is gone”.'
+    pt: 'Mais uma vez: diga “por alguém que não está”.'
+  answer:
+    speaker: protagonist
+    text: за некој што го нема
+  items:
+  - za-nekoj-sto-go-nema
+- type: prompt
+  ask:
+    en: 'Once more: say “a beautiful word”.'
+    pt: 'Mais uma vez: diga “uma palavra bonita”.'
+  answer:
+    speaker: protagonist
+    text: убав збор
+  items:
+  - ubav-zbor
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I''m speechless — and “so many people — and “they close the street — and “on Sundays — and “nostalgia, homesickness — and “for Skopje — and “the other way round — and “now I understand why
+      — and “the coffee here — and “standing up — and “holiday cottage — and “splitting the costs”.'
+    pt: 'Diga: “estou sem palavras — e “tanta gente — e “fecham a rua — e “no domingo — e “nostalgia / saudade — e “de Skopje — e “ao contrário — e “agora entendo por que — e “o café daqui — e “em pé —
+      e “casa de veraneio — e “divisão das despesas”.'
+  answer:
+    speaker: protagonist
+    text: немам зборови … толку многу луѓе … ја затвораат улицата … во недела … носталгија … за Скопје … обратно … сега разбирам зошто … кафето овде … во стоење … викендица … поделба на трошоците
+  items:
+  - nemam-zborovi
+  - tolku-lugje
+  - ja-zatvoraat-ulicata
+  - vo-nedela
+  - nostalgija
+  - za-skopje
+  - obratno
+  - sega-razbiram-zosto
+  - kafe-ovde
+  - vo-stoeje
+  - vikendica
+  - podelba-na-trosocite
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “into three parts — and “per head — and “the kitty, the common fund — and “everyone gives (each) — and “clear accounts, long friendship — and “children don''t count — and “fair(ly) — and “we
+      agreed — and “anniversary, jubilee — and “fifty years — and “it''s an honour for us — and “to welcome him”.'
+    pt: 'Diga: “em três partes — e “por pessoa — e “a caixinha — e “cada um dá — e “amigos, amigos, negócios à parte — e “criança não conta — e “justo — e “concordamos — e “jubileu — e “cinquenta anos —
+      e “é uma honra para nós — e “saudar”.'
+  answer:
+    speaker: protagonist
+    text: на три дела … по глава … касата … секој дава по … чисти сметки, долга љубов … децата не се бројат … праведно … се согласивме … јубилеј … педесет години … ни е чест … да го поздравиме
+  items:
+  - na-tri-dela
+  - po-glava
+  - kasata
+  - sekoj-dava-po
+  - smetkite-cisti
+  - deca-ne-se-brojat
+  - pravedno
+  - se-soglasivme
+  - jubilej
+  - pedeset-godini
+  - ni-e-cest
+  - da-go-pozdravime
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the founders — and “are no longer with us — and “a minute''s silence — and “onward, and further — and “to fifty more — and “with great pride — and “the novel — and “the main character — and
+      “the ending — and “touched me — and “at first sight — and “between the lines”.'
+    pt: 'Diga: “os fundadores — e “não estão mais conosco — e “um minuto de silêncio — e “e adiante — e “a mais cinquenta — e “com muito orgulho — e “o romance — e “o protagonista — e “o final — e “me tocou
+      — e “à primeira vista — e “nas entrelinhas”.'
+  answer:
+    speaker: protagonist
+    text: основачите … не се веќе со нас … минута молк … и понатаму … за уште педесет … со голема гордост … романот … главниот лик … крајот … ме допре … на прв поглед … меѓу редовите
+  items:
+  - osnovacite
+  - ne-se-so-nas
+  - minuta-molk
+  - i-ponatamu
+  - za-uste-pedeset
+  - so-golema-gordost
+  - romanot
+  - glavniot-lik
+  - krajot
+  - me-dopre
+  - na-prv-pogled
+  - megju-redovite
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “symbolises — and “open ending — and “everyone reads it their own way — and “I recommend — and “kindergarten, nursery — and “there''s no place — and “the list — and “you''re on the list —
+      and “but surely, really? — and “grandma and grandpa — and “we''ll look after him — and “we don''t need it”.'
+    pt: 'Diga: “simboliza — e “final aberto — e “cada um lê do seu jeito — e “recomendo — e “creche — e “não tem vaga — e “a lista — e “vocês estão na lista — e “mas será que — e “vô e vó — e “a gente cuida
+      dele — e “não precisamos”.'
+  answer:
+    speaker: protagonist
+    text: симболизира … отворен крај … секој си го чита на свој начин … препорачувам … градинка … нема место … листата … сте на листа … ама зарем … баба и дедо … ќе го чуваме … не ни треба
+  items:
+  - simbolizira
+  - otvoren-kraj
+  - sekoj-si-go-cita
+  - preporacuvam
+  - gradinka
+  - nema-mesto
+  - listata
+  - stoite
+  - ama-zarem
+  - baba-i-dedo
+  - ke-go-cuvame
+  - ni-trgaat
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “well, there you go — and “free childcare — and “complaint — and “I completely understand you — and “happened (reportedly) — and “I''m sorry — and “is being checked — and “right away I''ll
+      — and “inform you — and “must not happen — and “compensation — and “I''ll speak with”.'
+    pt: 'Diga: “pois é / aí está — e “cuidado de graça — e “reclamação — e “entendo perfeitamente — e “aconteceu — e “sinto muito — e “está sendo verificado — e “já vou — e “informar o senhor — e “não pode
+      acontecer — e “compensação — e “vou conversar com”.'
+  answer:
+    speaker: protagonist
+    text: па ете … бесплатно чување … жалба … потполно ве разбирам … се случило … ми е жал … се проверува … веднаш ќе … ве известам … не смее да се случи … надомест … ќе разговарам со
+  items:
+  - pa-ete
+  - besplatno-cuvanje
+  - zalba
+  - ve-razbiram-potpolno
+  - se-slucilo
+  - mi-e-zal
+  - se-proveruva
+  - vednas-ke
+  - ve-izvestam
+  - ne-smee-da-se-sluci
+  - nadomest
+  - ke-razgovaram-so
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “you lived / used to live (formal) — and “when you were little (formal, to a woman) — and “near / at — and “we lived / used to live — and “every summer — and “we used to go — and “we used
+      to swim — and “we didn''t have — and “we used to read — and “the stove — and “then, back then — and “different / other (neuter)”.'
+    pt: 'Diga: “a senhora morava — e “quando a senhora era pequena — e “perto de / em — e “a gente morava — e “todo verão — e “a gente ia — e “a gente nadava — e “a gente não tinha — e “a gente lia — e
+      “o fogão a lenha — e “naquela época / então — e “outro / diferente”.'
+  answer:
+    speaker: protagonist
+    text: живеевте … кога бевте мала … кај … живеевме … секое лето … одевме … пливавме … немавме … читавме … печката … тогаш … друго
+  items:
+  - ziveevte
+  - koga-bevte-mala
+  - kaj
+  - ziveevme
+  - sekoe-leto
+  - odevme
+  - plivavme
+  - nemavme
+  - citavme
+  - pecka
+  - togas
+  - drugo
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

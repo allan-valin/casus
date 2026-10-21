@@ -1,0 +1,586 @@
+# UNIT mk C2-25 — written by AI (Claude) for Casus; expanded from src/C2-25.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-25
+level: C2
+number: 25
+protagonist: f
+title:
+  en: Language at work
+  pt: A língua no trabalho
+situation:
+  en: A new young colleague wrote 'Ej, што има?' to a client. You show her the difference.
+  pt: Uma colega nova escreveu 'Ej, што има?' para um cliente. Você mostra a diferença.
+learn_lessons:
+- c2-register
+culture: —
+new_items:
+- id: formalno
+  text: формално
+  meaning:
+    en: formal(ly)
+    pt: formal
+- id: neformalno
+  text: неформално
+  meaning:
+    en: informal(ly)
+    pt: informal
+- id: sto-ima
+  text: Што има?
+  meaning:
+    en: What's up?
+    pt: E aí?
+- id: ne-dolikuva
+  text: не доликува
+  meaning:
+    en: isn't appropriate
+    pt: não fica bem
+  rare: true
+- id: prvo-vie
+  text: прво „Вие“
+  meaning:
+    en: first 'Вие'
+    pt: primeiro 'Вие'
+- id: dodeka-ne-ponudi
+  text: додека не понуди
+  meaning:
+    en: until he offers
+    pt: até ele oferecer
+- id: ne-se-lutam-na-tebe
+  text: не ти се лутам
+  meaning:
+    en: I'm not angry with you
+    pt: não estou brava com você
+- id: site-pocnavme-taka
+  text: сите почнавме така
+  meaning:
+    en: we all started like that
+    pt: todo mundo começou assim
+- id: preformuliraj
+  text: преформулирај
+  meaning:
+    en: rephrase (informal)
+    pt: reformula
+  rare: true
+- id: ke-zvuci-podobro
+  text: ќе звучи подобро
+  meaning:
+    en: will sound better
+    pt: vai soar melhor
+reviews:
+- item: planinata
+  from: A2-18
+- item: megju
+  from: A2-18
+- item: dvete
+  from: A2-18
+- item: povisoko
+  from: A2-18
+- item: najvisokata
+  from: A2-18
+- item: granicata
+  from: A2-18
+- item: nad
+  from: A2-18
+- item: reka
+  from: A2-18
+- item: najgolemata
+  from: A2-18
+- item: tece
+  from: A2-18
+- item: more
+  from: A2-18
+- item: zatoa
+  from: A2-18
+- item: ilinden
+  from: B2-22
+- item: drzaven-praznik
+  from: B2-22
+- item: vostanie
+  from: B2-22
+- item: prodolzen-vikend
+  from: B2-22
+- item: dvajca
+  from: B2-22
+- item: trojca
+  from: B2-22
+- item: neka-zemat
+  from: B2-22
+- item: slobodni-denovi
+  from: B2-22
+- item: dezuren
+  from: B2-22
+- item: na-more
+  from: B2-22
+- item: renovacija
+  from: C1-24
+- item: rokot-pomina
+  from: C1-24
+- item: plocki
+  from: C1-24
+- item: ne-stignaa
+  from: C1-24
+- item: ima-da-ceka
+  from: C1-24
+- item: faktura
+  from: C1-24
+- item: avans
+  from: C1-24
+- item: ostatokot
+  from: C1-24
+- item: koga-ke-zavrsite
+  from: C1-24
+- item: zbor-na-cest
+  from: C1-24
+- item: brzata-kucka
+  from: C2-10
+- item: koj-ne-raboti
+  from: C2-10
+- item: utroto-e-pomudro
+  from: C2-10
+- item: tivka-voda
+  from: C2-10
+- item: poleka-se-stiga
+  from: C2-10
+- item: bez-maka
+  from: C2-10
+- item: se-ispravija
+  from: C2-10
+- item: na-vreme-recen
+  from: C2-10
+- item: ima-pogovorka
+  from: C2-10
+- item: za-sekoja-situacija
+  from: C2-10
+- item: integracija
+  from: C2-18
+- item: zosto-ostanavte
+  from: C2-18
+- item: najgolem-predizvik
+  from: C2-18
+- item: birokratijata
+  from: C2-18
+- item: toplinata-na-lugjeto
+  from: C2-18
+- item: kako-domasni
+  from: C2-18
+- item: poraka-do-stranci
+  from: C2-18
+- item: naucete-go-jazikot
+  from: C2-18
+- item: klucot-za-se
+  from: C2-18
+- item: smeam-li-da-ve-citiram
+  from: C2-18
+- item: nemam-zborovi
+  from: C2-22
+- item: tolku-lugje
+  from: C2-22
+- item: ja-zatvoraat-ulicata
+  from: C2-22
+- item: vo-nedela
+  from: C2-22
+- item: nostalgija
+  from: C2-22
+- item: za-skopje
+  from: C2-22
+- item: obratno
+  from: C2-22
+- item: sega-razbiram-zosto
+  from: C2-22
+- item: kafe-ovde
+  from: C2-22
+- item: vo-stoeje
+  from: C2-22
+- item: javna-rasprava
+  from: C2-24
+- item: budzetot
+  from: C2-24
+- item: sovetnik
+  from: C2-24
+- item: dozvolete-prasanje
+  from: C2-24
+- item: predviden
+  from: C2-24
+- item: sredstvata
+  from: C2-24
+- item: odlozeno
+  from: C2-24
+- item: transparentno
+  from: C2-24
+- item: graganite-zasluzuvaat
+  from: C2-24
+- item: pismen-odgovor
+  from: C2-24
+steps:
+- type: narrator
+  text:
+    en: A new young colleague wrote 'Ej, што има?' to a client. You show her the difference. Listen to the conversation; you don't need to understand it yet.
+    pt: Uma colega nova escreveu 'Ej, што има?' para um cliente. Você mostra a diferença. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: kolegicka
+    text: 'Му пишав на клиентот: „Еј, што има?“ Не одговара.'
+    meaning:
+      en: 'I wrote to the client: ''Hey, what''s up?'' He''s not answering.'
+      pt: 'Escrevi para o cliente: ''E aí, beleza?'' Ele não responde.'
+  - speaker: protagonist
+    text: Тоа е неформално. Со клиент не доликува.
+    meaning:
+      en: That's informal. With a client it isn't appropriate.
+      pt: Isso é informal. Com cliente não fica bem.
+  - speaker: kolegicka
+    text: А како?
+    meaning:
+      en: So how?
+      pt: E como?
+  - speaker: protagonist
+    text: 'Формално: „Почитуван господине…“ И прво „Вие“, додека не понуди „ти“.'
+    meaning:
+      en: 'Formally: ''Dear Sir…'' And first ''Вие'', until he offers ''ти''.'
+      pt: 'Formal: ''Prezado senhor…'' E primeiro ''Вие'', até ele oferecer ''ти''.'
+  - speaker: kolegicka
+    text: Се срамам...
+    meaning:
+      en: I'm embarrassed...
+      pt: Que vergonha...
+  - speaker: protagonist
+    text: Не ти се лутам. Сите почнавме така. И јас викав „ти“ на госпоѓа Стојановска.
+    meaning:
+      en: I'm not angry with you. We all started like that. I too said 'ти' to Mrs Stojanovska.
+      pt: Não estou brava com você. Todo mundo começou assim. Eu também chamei a senhora Stojanovska de 'ти'.
+  - speaker: kolegicka
+    text: Ќе преформулирам.
+    meaning:
+      en: I'll rephrase it.
+      pt: Vou reformular.
+  - speaker: protagonist
+    text: Преформулирај — ќе звучи подобро. И додај „Со почит“.
+    meaning:
+      en: Rephrase — it'll sound better. And add 'Со почит'.
+      pt: Reformula — vai soar melhor. E acrescenta 'Со почит'.
+- type: prompt
+  ask:
+    en: 'Say: what''s up? (very informal)'
+    pt: 'Diga: e aí? (bem informal)'
+  answer:
+    speaker: protagonist
+    text: Што има?
+  items:
+  - sto-ima
+- type: prompt
+  ask:
+    en: 'Say: that''s informal.'
+    pt: 'Diga: isso é informal.'
+  answer:
+    speaker: protagonist
+    text: Тоа е неформално.
+  items:
+  - neformalno
+- type: prompt
+  ask:
+    en: 'Say: with a client it isn''t appropriate.'
+    pt: 'Diga: com cliente não fica bem.'
+  answer:
+    speaker: protagonist
+    text: Со клиент не доликува.
+  items:
+  - ne-dolikuva
+- type: prompt
+  ask:
+    en: 'Say: formally.'
+    pt: 'Diga: formal.'
+  answer:
+    speaker: protagonist
+    text: Формално.
+  items:
+  - formalno
+- type: prompt
+  ask:
+    en: 'Say: first ''Вие'', until he offers ''ти''.'
+    pt: 'Diga: primeiro ''Вие'', até ele oferecer ''ти''.'
+  answer:
+    speaker: protagonist
+    text: Прво „Вие“, додека не понуди „ти“.
+  items:
+  - prvo-vie
+  - dodeka-ne-ponudi
+- type: prompt
+  ask:
+    en: 'Say: I''m not angry with you.'
+    pt: 'Diga: não estou brava com você.'
+  answer:
+    speaker: protagonist
+    text: Не ти се лутам.
+  items:
+  - ne-se-lutam-na-tebe
+- type: prompt
+  ask:
+    en: 'Say: we all started like that.'
+    pt: 'Diga: todo mundo começou assim.'
+  answer:
+    speaker: protagonist
+    text: Сите почнавме така.
+  items:
+  - site-pocnavme-taka
+- type: prompt
+  ask:
+    en: 'Say: rephrase it.'
+    pt: 'Diga: reformula.'
+  answer:
+    speaker: protagonist
+    text: Преформулирај.
+  items:
+  - preformuliraj
+- type: prompt
+  ask:
+    en: 'Say: it''ll sound better.'
+    pt: 'Diga: vai soar melhor.'
+  answer:
+    speaker: protagonist
+    text: Ќе звучи подобро.
+  items:
+  - ke-zvuci-podobro
+- type: narrator
+  text:
+    en: 'The whole course in one rule: ''Вие'' first, and wait for the offer of ''ти'' — from the older person, the client, the boss. Now you''re the one who teaches it.'
+    pt: 'O curso inteiro numa regra: primeiro ''Вие'', e espere a oferta do ''ти'' — do mais velho, do cliente, do chefe. Agora é você quem ensina.'
+- type: prompt
+  ask:
+    en: 'Once more: say “formal(ly)”.'
+    pt: 'Mais uma vez: diga “formal”.'
+  answer:
+    speaker: protagonist
+    text: формално
+  items:
+  - formalno
+- type: prompt
+  ask:
+    en: 'Once more: say “informal(ly)”.'
+    pt: 'Mais uma vez: diga “informal”.'
+  answer:
+    speaker: protagonist
+    text: неформално
+  items:
+  - neformalno
+- type: prompt
+  ask:
+    en: 'Once more: say “What''s up?”.'
+    pt: 'Mais uma vez: diga “E aí?”.'
+  answer:
+    speaker: protagonist
+    text: Што има?
+  items:
+  - sto-ima
+- type: prompt
+  ask:
+    en: 'Once more: say “isn''t appropriate”.'
+    pt: 'Mais uma vez: diga “não fica bem”.'
+  answer:
+    speaker: protagonist
+    text: не доликува
+  items:
+  - ne-dolikuva
+- type: prompt
+  ask:
+    en: 'Once more: say “first ''Вие''”.'
+    pt: 'Mais uma vez: diga “primeiro ''Вие''”.'
+  answer:
+    speaker: protagonist
+    text: прво „Вие“
+  items:
+  - prvo-vie
+- type: prompt
+  ask:
+    en: 'Once more: say “until he offers”.'
+    pt: 'Mais uma vez: diga “até ele oferecer”.'
+  answer:
+    speaker: protagonist
+    text: додека не понуди
+  items:
+  - dodeka-ne-ponudi
+- type: prompt
+  ask:
+    en: 'Once more: say “I''m not angry with you”.'
+    pt: 'Mais uma vez: diga “não estou brava com você”.'
+  answer:
+    speaker: protagonist
+    text: не ти се лутам
+  items:
+  - ne-se-lutam-na-tebe
+- type: prompt
+  ask:
+    en: 'Once more: say “we all started like that”.'
+    pt: 'Mais uma vez: diga “todo mundo começou assim”.'
+  answer:
+    speaker: protagonist
+    text: сите почнавме така
+  items:
+  - site-pocnavme-taka
+- type: prompt
+  ask:
+    en: 'Once more: say “rephrase (informal)”.'
+    pt: 'Mais uma vez: diga “reformula”.'
+  answer:
+    speaker: protagonist
+    text: преформулирај
+  items:
+  - preformuliraj
+- type: prompt
+  ask:
+    en: 'Once more: say “will sound better”.'
+    pt: 'Mais uma vez: diga “vai soar melhor”.'
+  answer:
+    speaker: protagonist
+    text: ќе звучи подобро
+  items:
+  - ke-zvuci-podobro
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “public hearing — and “the budget — and “councillor — and “allow me one question — and “planned, foreseen (masculine) — and “the funds — and “postponed — and “transparently — and “citizens
+      deserve — and “a written answer — and “I''m speechless — and “so many people”.'
+    pt: 'Diga: “audiência pública — e “o orçamento — e “vereador — e “permitam uma pergunta — e “previsto — e “os recursos — e “adiado — e “com transparência — e “os cidadãos merecem — e “uma resposta por
+      escrito — e “estou sem palavras — e “tanta gente”.'
+  answer:
+    speaker: protagonist
+    text: јавна расправа … буџетот … советник … дозволете едно прашање … предвиден … средствата … одложено … транспарентно … граѓаните заслужуваат … писмен одговор … немам зборови … толку многу луѓе
+  items:
+  - javna-rasprava
+  - budzetot
+  - sovetnik
+  - dozvolete-prasanje
+  - predviden
+  - sredstvata
+  - odlozeno
+  - transparentno
+  - graganite-zasluzuvaat
+  - pismen-odgovor
+  - nemam-zborovi
+  - tolku-lugje
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “they close the street — and “on Sundays — and “nostalgia, homesickness — and “for Skopje — and “the other way round — and “now I understand why — and “the coffee here — and “standing up —
+      and “integration — and “Why did you stay? — and “the biggest challenge — and “bureaucracy”.'
+    pt: 'Diga: “fecham a rua — e “no domingo — e “nostalgia / saudade — e “de Skopje — e “ao contrário — e “agora entendo por que — e “o café daqui — e “em pé — e “integração — e “Por que o senhor ficou?
+      — e “o maior desafio — e “a burocracia”.'
+  answer:
+    speaker: protagonist
+    text: ја затвораат улицата … во недела … носталгија … за Скопје … обратно … сега разбирам зошто … кафето овде … во стоење … интеграција … Зошто останавте? … најголем предизвик … бирократијата
+  items:
+  - ja-zatvoraat-ulicata
+  - vo-nedela
+  - nostalgija
+  - za-skopje
+  - obratno
+  - sega-razbiram-zosto
+  - kafe-ovde
+  - vo-stoeje
+  - integracija
+  - zosto-ostanavte
+  - najgolem-predizvik
+  - birokratijata
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the warmth of the people — and “like locals — and “a message to other foreigners — and “learn the language — and “the key to everything — and “may I quote you — and “Haste makes waste (the
+      hasty bitch has blind pups) — and “Who doesn''t work shouldn''t eat — and “Sleep on it (morning is wiser than evening) — and “Still waters run deep — and “Slow and steady goes far — and “No pain,
+      no gain (no toil, no learning)”.'
+    pt: 'Diga: “o calor humano — e “como locais — e “um recado para outros estrangeiros — e “aprendam a língua — e “a chave de tudo — e “posso citar o senhor — e “A pressa é inimiga da perfeição — e “Quem
+      não trabalha não come — e “A noite é boa conselheira — e “Água mole em pedra dura... — e “Devagar se vai ao longe — e “Sem esforço não se aprende”.'
+  answer:
+    speaker: protagonist
+    text: топлината на луѓето … како домашни … порака до другите странци … научете го јазикот … клучот за сè … смеам ли да ве цитирам … Брзата кучка слепи ги раѓа … Кој не работи, не треба да јаде … Утрото
+      е помудро од вечерта … Тивка вода брег рони … Полека се стига далеку … Без мака нема наука
+  items:
+  - toplinata-na-lugjeto
+  - kako-domasni
+  - poraka-do-stranci
+  - naucete-go-jazikot
+  - klucot-za-se
+  - smeam-li-da-ve-citiram
+  - brzata-kucka
+  - koj-ne-raboti
+  - utroto-e-pomudro
+  - tivka-voda
+  - poleka-se-stiga
+  - bez-maka
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “were put right — and “said at the right time — and “there''s a saying — and “for every situation — and “renovation — and “the deadline passed long ago — and “tiles — and “haven''t arrived
+      — and “there''ll be some waiting — and “invoice — and “advance payment — and “the rest (of the money)”.'
+    pt: 'Diga: “foram corrigidos — e “dito na hora certa — e “tem um ditado — e “para cada situação — e “reforma — e “o prazo passou faz tempo — e “azulejos / pisos — e “não chegaram — e “vai ter que esperar
+      — e “nota fiscal — e “adiantamento — e “o restante”.'
+  answer:
+    speaker: protagonist
+    text: се исправија … навреме речено … има поговорка … за секоја ситуација … реновирање … рокот одамна помина … плочки … не стигнаа … има да се чека … фактура … аванс … остатокот
+  items:
+  - se-ispravija
+  - na-vreme-recen
+  - ima-pogovorka
+  - za-sekoja-situacija
+  - renovacija
+  - rokot-pomina
+  - plocki
+  - ne-stignaa
+  - ima-da-ceka
+  - faktura
+  - avans
+  - ostatokot
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “when you finish — and “word of honour — and “Ilinden (2 August) — and “public holiday — and “uprising — and “long weekend — and “two (people) — and “three (people) — and “let them take —
+      and “days off — and “on duty (masculine) — and “to the seaside”.'
+    pt: 'Diga: “quando terminarem — e “palavra de honra — e “Ilinden (2 de agosto) — e “feriado nacional — e “levante / revolta — e “feriadão — e “dois (pessoas) — e “três (pessoas) — e “que eles tirem
+      — e “dias de folga — e “de plantão — e “para a praia”.'
+  answer:
+    speaker: protagonist
+    text: кога ќе завршите … збор на чест … Илинден … државен празник … востание … продолжен викенд … двајца … тројца … нека земат … слободни денови … дежурен … на море
+  items:
+  - koga-ke-zavrsite
+  - zbor-na-cest
+  - ilinden
+  - drzaven-praznik
+  - vostanie
+  - prodolzen-vikend
+  - dvajca
+  - trojca
+  - neka-zemat
+  - slobodni-denovi
+  - dezuren
+  - na-more
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the mountain — and “between — and “the two (feminine/neuter) — and “higher — and “the highest (feminine) — and “the border — and “over, above — and “river — and “the biggest (feminine) —
+      and “flows — and “sea — and “that''s why”.'
+    pt: 'Diga: “a montanha — e “entre — e “os dois / as duas — e “mais alto — e “a mais alta — e “a fronteira — e “acima de / mais de — e “rio — e “a maior — e “corre / passa — e “mar — e “por isso”.'
+  answer:
+    speaker: protagonist
+    text: планината … меѓу … двете … повисоко … највисоката … границата … над … река … најголемата … тече … море … затоа
+  items:
+  - planinata
+  - megju
+  - dvete
+  - povisoko
+  - najvisokata
+  - granicata
+  - nad
+  - reka
+  - najgolemata
+  - tece
+  - more
+  - zatoa
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

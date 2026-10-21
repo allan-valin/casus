@@ -1,0 +1,37 @@
+id: C2-24
+protagonist: m
+title: ["Local politics", "Política local"]
+situation: ["A public hearing on the Karpoš budget. You ask about the park that was promised in C1.", "Uma audiência pública sobre o orçamento de Karpoš. Você pergunta pelo parque prometido no C1."]
+learn: [c2-register]
+culture: —
+items:
+  - [javna-rasprava, "јавна расправа", "public hearing", "audiência pública"]
+  - [budzetot, "буџетот", "the budget", "o orçamento"]
+  - [sovetnik, "советник", "councillor", "vereador"]
+  - [dozvolete-prasanje, "дозволете едно прашање", "allow me one question", "permitam uma pergunta"]
+  - [predviden, "предвиден", "planned, foreseen (masculine)", "previsto"]
+  - [sredstvata, "средствата", "the funds", "os recursos"]
+  - [odlozeno, "одложено", "postponed", "adiado"]
+  - [transparentno, "транспарентно", "transparently", "com transparência", {rare: true}]
+  - [graganite-zasluzuvaat, "граѓаните заслужуваат", "citizens deserve", "os cidadãos merecem"]
+  - [pismen-odgovor, "писмен одговор", "a written answer", "uma resposta por escrito"]
+dialogue:
+  - [protagonist, "Дозволете едно прашање. Паркот беше предвиден во буџетот пред две години.", "Allow me one question. The park was planned in the budget two years ago.", "Permitam uma pergunta. O parque estava previsto no orçamento há dois anos."]
+  - [sovetnik-c, "Точно. Но средствата беа пренасочени.", "Correct. But the funds were redirected.", "Correto. Mas os recursos foram remanejados."]
+  - [protagonist, "Каде?", "Where?", "Para onde?"]
+  - [sovetnik-c, "За поправка на улици. Паркот е одложен.", "To repairing streets. The park is postponed.", "Para conserto de ruas. O parque foi adiado."]
+  - [protagonist, "Граѓаните заслужуваат да знаат транспарентно — колку и каде.", "Citizens deserve to know transparently — how much and where.", "Os cidadãos merecem saber com transparência — quanto e onde."]
+  - [sovetnik-c, "Ќе добиете писмен одговор.", "You'll receive a written answer.", "O senhor vai receber uma resposta por escrito."]
+  - [protagonist, "Благодарам. Ќе го чекам — и ќе го објавам.", "Thank you. I'll wait for it — and publish it.", "Obrigado. Vou esperar — e vou publicar."]
+  - [ana, "Од странец стана граѓанин!", "From a foreigner you became a citizen!", "De estrangeiro você virou cidadão!"]
+teach:
+  - ask: ["Say: allow me one question.", "Diga: permitam uma pergunta.", "Дозволете едно прашање.", dozvolete-prasanje]
+  - ask: ["Say: the park was planned in the budget.", "Diga: o parque estava previsto no orçamento.", "Паркот беше предвиден во буџетот.", predviden, budzetot]
+  - ask: ["He says: the funds were redirected.", "Ele diz: os recursos foram remanejados.", "Средствата беа пренасочени.", sredstvata]
+  - ask: ["He says: the park is postponed.", "Ele diz: o parque foi adiado.", "Паркот е одложен.", odlozeno]
+  - ask: ["Say: citizens deserve to know.", "Diga: os cidadãos merecem saber.", "Граѓаните заслужуваат да знаат.", graganite-zasluzuvaat]
+  - ask: ["Say: transparently.", "Diga: com transparência.", "Транспарентно.", transparentno]
+  - ask: ["He says: you'll receive a written answer.", "Ele diz: vai receber uma resposta por escrito.", "Ќе добиете писмен одговор.", pismen-odgovor]
+  - ask: ["Say: a public hearing.", "Diga: uma audiência pública.", "Јавна расправа.", javna-rasprava]
+  - ask: ["Say: the councillor.", "Diga: o vereador.", "Советникот.", sovetnik]
+  - note: ["Public hearings (јавна расправа) are open to residents, foreigners included. Formal questions win answers: cite the budget line, ask 'колку и каде', and request it in writing.", "Audiências públicas (јавна расправа) são abertas aos moradores, estrangeiros inclusive. Perguntas formais ganham respostas: cite a rubrica do orçamento, pergunte 'колку и каде', e peça por escrito."]
