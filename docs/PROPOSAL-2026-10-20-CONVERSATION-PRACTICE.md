@@ -130,3 +130,13 @@ language adds similar effort. This runs over days and weeks, alongside his revie
 - **Pronunciation-trainer link on every phrase**: yes. Pipeline: as proposed.
 - **Effort**: it is text that gets synthesized; a unit script takes minutes to review. The real time goes into
   agreeing on the material — so the story bible, culture notes and unit plans come to Allan first.
+
+## Voice audit (2026-10-21, Piper model cards)
+- **Open (CC0 / CC BY)**: pt_BR cadu, faber, jeff (CC0), edresson (CC BY); bg_BG dimitar (CC0); uk_UA ukrainian_tts
+  (3 speakers, CC0); de thorsten etc.
+- **NC — excluded by the open-licence rule**: ko_KR kss (CC BY-NC-SA), ja_JP hi_fi_captain (CC BY-NC-SA), sr_RS
+  serbski_institut (CC BY-NC-SA); MMS-TTS (all languages, CC BY-NC). ar_JO kareem: licence "see URL", unverified.
+- **Macedonian**: no voice; proposal = Bulgarian dimitar fed Macedonian phonemes (spikes/mk-voice-2026-10-21/).
+- **Consequence for the order**: ko · pt-BR and ja · pt-BR have no open Piper character voice. Options for Allan:
+  the reader's own browser/OS voice (speechSynthesis — Android and Windows ship ko and ja voices; nothing is
+  distributed by Casus), or leave them out per the "no voice → left out" rule.

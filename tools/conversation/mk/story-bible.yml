@@ -1,0 +1,117 @@
+# STORY BIBLE — Macedonian, narrator Brazilian Portuguese. DRAFT 2026-10-21 for Allan's review: nothing here is
+# settled until he has read it; units are written only after. Guide: docs/conversation/GUIDE.en.md.
+
+language: mk
+narrator_languages: [pt]
+country: North Macedonia
+standard: >-
+  Standard Macedonian (the Skopje-based literary norm of the grammars: Lunt, Friedman, Конески). Fixed
+  antepenultimate stress; no dialect forms (no Ohrid/Struga or eastern variants) in the units.
+
+voices:
+  # No open-licence Macedonian Piper voice exists (MMS-TTS mkd and the Serbian Piper voice are NC). Proposal: the
+  # Bulgarian Piper voice (CC0), fed Macedonian phonemes from espeak-ng's mk rules — a sister-language voice, as
+  # decided. Samples to judge: spikes/mk-voice-2026-10-21/*.wav. The female voices are the same model shifted up;
+  # if Allan finds them unusable, female characters fall back to espeak-ng mk (GPL-3, robotic) or stay male-only.
+  - {id: nar-pt, role: narrator, lang: pt, tts: "piper:pt_BR-cadu-medium"}            # CC0
+  - {id: mk-m, role: character, lang: mk, gender: m, tts: "piper:bg_BG-dimitar-medium+mk-phonemes"}  # CC0
+  - {id: mk-m2, role: character, lang: mk, gender: m, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 0.9}
+  - {id: mk-f, role: character, lang: mk, gender: f, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 1.25}
+  - {id: mk-f2, role: character, lang: mk, gender: f, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 1.35}
+
+protagonist:
+  forms: {f: mk-f, m: mk-m}
+  name: null                    # addressed as "você" by the narrator
+  background: >-
+    Brazilian from São Paulo, about 30, moves to Skopje for a one-year job at a software company whose working
+    language is English. Knows no Macedonian, no Cyrillic. Rents a flat in Карпош.
+  alternation: odd units f, even units m (l-forms and adjectives agree with the speaker — била/бил,
+    уморна/уморен — so both sets appear)
+
+cast:
+  - id: vera
+    name: Вера Стојановска (госпоѓа Стојановска)
+    role: landlady, about 65, retired teacher, lives in the flat below
+    voice: mk-f2
+    register: formal
+    arc: Вие throughout A; fusses, feeds the protagonist, offers coffee every visit; in B1 offers "Ајде да си зборуваме на ти"
+  - id: marko
+    name: Марко
+    role: neighbour, about 28, works in IT, plays basketball
+    voice: mk-m
+    register: informal
+    arc: ти from the first meeting (young people); takes the protagonist to cafés, a name-day party, Охрид in B1
+  - id: ana
+    name: Ана
+    role: colleague, about 32, project manager; Macedonian, speaks English at work
+    voice: mk-f
+    register: formal
+    arc: Вие at the first meeting in the office, ти from the next day when she offers it (unit A1-08); a friend in B
+  - id: dragan
+    name: Драган
+    role: owner of the corner shop (маркет) and kiosk, about 50
+    voice: mk-m2
+    register: formal
+    arc: says "Повелете!" to everyone; becomes the protagonist's informal teacher of everyday words; never switches to ти
+
+formality:
+  summary: >-
+    Вие (plural verb forms; capitalised in writing when it addresses one person) with strangers, older people,
+    officials, shop staff and in professional first meetings; ти with friends, family, children and among young
+    people from the start. Switching from Вие to ти without being offered it is felt as rude; the older or senior
+    person offers it. Formal greeting Добар ден / Добро утро / Добровечер; Здраво among friends. Titles: господине /
+    госпоѓо + surname (vocative), or професоре / професорке at the university.
+  rules:
+    - Вие + plural verb with Vera, Dragan, officials, and with Ana until she offers ти.
+    - ти with Marko from the first line.
+    - Participles/adjectives with Вие addressing one person agree with the person's sex in the singular in everyday
+      speech ("Вие сте уморна?") — NATIVE CHECK, grammars differ; the units avoid the construction in A1.
+    - Offering ti is a scene (A1-08 with Ana; B1 with Vera).
+  sources:
+    - {title: "Wikipedia: Macedonian pronouns (Вие, capitalisation)", url: "https://en.wikipedia.org/wiki/Macedonian_pronouns", licence: CC BY-SA}
+    - {title: "Cultural Atlas: Macedonian culture — greetings, etiquette", url: "https://theculturalatlas.org/macedonian-culture/macedonian-culture-etiquette", licence: "read only, facts cited"}
+    - {title: "Friedman, Macedonian (grammar) — on the drive; to read for Вие agreement", url: null, licence: "reference"}
+
+culture:
+  taught:
+    - {topic: coffee, note: "A visit means coffee (Turkish coffee, турско кафе, or espresso); refusing without a reason seems cold — accept even if you don't finish. Don't drink before the host.", source: Cultural Atlas}
+    - {topic: shoes, note: "Shoes come off at the door; hosts offer slippers (влечки).", source: Cultural Atlas}
+    - {topic: draught, note: "Промаја: a cross-draught (two windows open) is believed to cause illness; people close windows, keep children's necks covered, avoid air conditioning blowing on them.", source: Cultural Atlas}
+    - {topic: meals, note: "Lunch (ручек) is the main meal, around 14:00; dinner late; meals last two hours; hosts serve too much and insist; leave the plate empty.", source: Cultural Atlas}
+    - {topic: toasts, note: "На здравје! with eye contact; rakija (ракија) before or with salad (шопска салата).", source: Cultural Atlas}
+    - {topic: time, note: "Relaxed punctuality; meetings run over.", source: Cultural Atlas}
+    - {topic: visits, note: "Family and friends visit unannounced; guests do not bring food — the host provides everything.", source: Cultural Atlas}
+    - {topic: tipping, note: "No obligatory tip and no service charge on the bill; rounding up is common.", source: Cultural Atlas}
+    - {topic: flowers, note: "Odd number of flowers; even numbers are for funerals.", source: Cultural Atlas}
+    - {topic: name days, note: "Имендени — the saint's day of one's name is celebrated like a birthday (Св. Никола, Св. Ѓорѓи…); colleagues bring sweets.", source: "general knowledge — VERIFY"}
+    - {topic: Easter, note: "Велигден on the Orthodox date; red eggs, egg-tapping; greeting Христос воскресе! — Вистина воскресе!", source: "general knowledge — VERIFY"}
+    - {topic: alphabet, note: "Everything is in Cyrillic; signs, menus and bus lines have to be read on day one.", source: observation}
+  narrator:
+    - {lang: pt, topic: greetings, note: "Brazilians greet acquaintances with one kiss (São Paulo) or two (Rio); men shake hands and hug. Strangers are addressed with você; o senhor / a senhora only with the elderly or in very formal service."}
+    - {lang: pt, topic: meals, note: "Lunch around 12:00–13:00 is the main meal; rice and beans; dinner around 20:00."}
+    - {lang: pt, topic: shoes, note: "Many Brazilian homes keep shoes on indoors; asking guests to take them off is less usual."}
+    - {lang: pt, topic: air, note: "Fans and air conditioning blowing directly are normal; open windows mean fresh air, not illness."}
+    - {lang: pt, topic: tipping, note: "Restaurants add 10 % service (taxa de serviço) to the bill."}
+    - {lang: pt, topic: documents, note: "The CPF number is asked for in every shop and office."}
+    - {lang: pt, topic: coffee, note: "Cafezinho is quick, small, sweet, drunk standing; a coffee visit of an hour is not the default."}
+  clashes:
+    - {situation: "Calling the landlady 'você'-style (ти) and by her first name", unit: A1-01}
+    - {situation: "Entering the landlady's flat with shoes on; she brings slippers", unit: A1-03}
+    - {situation: "Refusing the coffee because of being in a hurry; Vera is hurt", unit: A1-03}
+    - {situation: "Opening both windows on a hot day; Vera warns about промаја", unit: A1-11}
+    - {situation: "Arriving hungry at 12:00 for lunch at 14:00; then too much food", unit: A1-15}
+    - {situation: "Looking for the 10 % service on the bill; leaving the plate half-full", unit: A2}
+    - {situation: "Not knowing about Marko's name day; no sweets at the office", unit: A2}
+    - {situation: "Greeting a colleague with one kiss at the first meeting", unit: A1-08}
+
+arc:
+  - {level: A1, units: 20, summary: "Arrival in Skopje: landlady, keys, the corner shop, Cyrillic signs, coffee at Vera's, the office, Ana offers ти, the bus, the bazaar (Стара чаршија), a café with Marko, промаја, lunch at 14:00."}
+  - {level: A2, units: 20, summary: "Settling in: residence permit (МВР), bank, doctor, heating in winter and the smog, a name day, Easter, the bill and the tip, a weekend in Ohrid."}
+  - {level: B1, units: 20, summary: "Friends: Marko's group, opinions, football and basketball, a wedding, Vera says ти, a misunderstanding over plans."}
+  - {level: B2, units: 20, summary: "Work: a local job offer, CV, interview, meetings in Macedonian, e-mail register, a conflict."}
+  - {level: C1, units: 20, summary: "University evening courses: talk about biology, chemistry, physics, maths at school level."}
+  - {level: C2, units: 20, summary: "Ideas: philosophy, history debates handled with care, humour, register shifts."}
+
+native_check:
+  - "Вие + singular adjective/participle agreement (rule 3 under formality)"
+  - "Every mk line of every unit until a native speaker has read it"
