@@ -187,3 +187,13 @@ describe('phrase government stops where the phrase does (review I1)', () => {
     expect(cases(out[2])).toEqual(['acc', 'dat', 'nom']);
   });
 });
+
+describe('reasons never print "undefined" (2026-10-21: Czech "se + ins (object starou is undefined)")', () => {
+  it('instrumental and prepositional objects are named', () => {
+    const s = [{ lemma: 's:prep:1', pos: 'prep' }];
+    const obj = [{ lemma: 'x:noun:1', pos: 'noun', case: 'ins', number: 'sg', gender: 'f' }];
+    const out = narrow(blocksFor([['se', s], ['x', obj]]), (b) => governmentStage(b, { se: ['ins'] }));
+    const reasons = out.flatMap((b) => b.candidates.flatMap((c) => c.reasons)).join(' | ');
+    expect(reasons).not.toContain('undefined');
+  });
+});

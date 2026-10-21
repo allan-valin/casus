@@ -73,7 +73,7 @@ function agrees(a, b) {
 }
 
 function describe(a) {
-  return `${a.case} ${a.number} ${a.gender}`;
+  return `${a.case ?? 'x'} ${a.number ?? 'x'} ${a.gender ?? 'x'}`;
 }
 
 /**
@@ -132,7 +132,7 @@ function matchAgainst(targets, witnesses, witnessPos) {
 }
 
 
-const CASE_NAME = { nom: 'nominative', voc: 'vocative', gen: 'genitive', loc: 'locative', dat: 'dative', abl: 'ablative', acc: 'accusative' };
+const CASE_NAME = { nom: 'nominative', voc: 'vocative', gen: 'genitive', loc: 'locative', dat: 'dative', abl: 'ablative', acc: 'accusative', ins: 'instrumental', pre: 'prepositional' };
 
 function ownGoverns(analysis) {
   if (analysis.governs && analysis.governs !== 'x') {
@@ -230,7 +230,7 @@ export function governmentStage(blocks, government = GOVERNMENT, { phrase = fals
     }
     if (shared.length === 1) {
       const theCase = shared[0];
-      const prepReason = `government: ${name} + ${theCase} (object ${head.token.surface} is ${CASE_NAME[theCase]})`;
+      const prepReason = `government: ${name} + ${theCase} (object ${head.token.surface} is ${CASE_NAME[theCase] ?? theCase})`;
       out[i] = {
         ...out[i],
         candidates: out[i].candidates.map((c) => (c.analysis.pos === 'prep'
