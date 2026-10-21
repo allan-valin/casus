@@ -1,0 +1,107 @@
+# STORY BIBLE — Japanese, narrator Brazilian Portuguese (Allan's pair ja·pt-BR, "jp>pt", 5th in his order). DRAFT
+# 2026-10-21 for Allan's review, written by AI (Claude) after the guide; units come after.
+# The story is set in Hamamatsu, home of one of Japan's largest Brazilian communities, so Brazil is in the story too.
+
+language: ja
+narrator_languages: [pt]
+country: Japan
+standard: >-
+  Standard Japanese (標準語) in the polite です・ます form; plain form among friends once agreed; 敬語 (respectful and
+  humble forms) in set phrases from A1 and as grammar from B2. Hamamatsu dialect (遠州弁, …だら) appears only in a
+  B-level unit as colour.
+
+voices:
+  # Piper ja_JP-hi_fi_captain-medium (CC BY-NC-SA — allowed, Casus is not sold; Allan 2026-10-21): TWO real
+  # speakers, female (0) and male (1) — no pitch trick needed. Its phonemes are a Japanese set (phoneme_type
+  # "japanese"), not espeak: the browser needs a kana → sound step (the units carry their kana; Casus already reads
+  # kana for Japanese). Technical step before the first unit.
+  - {id: nar-pt, role: narrator, lang: pt, tts: "piper:pt_BR-cadu-medium"}            # CC0
+  - {id: ja-f, role: character, lang: ja, gender: f, tts: "piper:ja_JP-hi_fi_captain-medium#female"}
+  - {id: ja-f2, role: character, lang: ja, gender: f, tts: "piper:ja_JP-hi_fi_captain-medium#female", pitch: 0.94}
+  - {id: ja-m, role: character, lang: ja, gender: m, tts: "piper:ja_JP-hi_fi_captain-medium#male"}
+  - {id: ja-m2, role: character, lang: ja, gender: m, tts: "piper:ja_JP-hi_fi_captain-medium#male", pitch: 0.92}
+
+protagonist:
+  forms: {f: ja-f, m: ja-m}
+  name: null
+  background: >-
+    Brazilian from São Paulo, about 30, grandchild of a Japanese immigrant (日系三世) but speaks no Japanese; comes to
+    Hamamatsu for a year as a Portuguese–English interpreter at a car-parts factory. Knows a few words from the
+    grandmother (いただきます, おばあちゃん), no kana.
+  alternation: odd units f, even units m (first person 私 for both in polite speech; 僕 / あたし only among friends, later)
+
+cast:
+  - id: suzuki
+    name: 鈴木 和子 (鈴木さん, 大家さん)
+    role: landlady, about 70, lives next door, grows vegetables
+    voice: ja-f2
+    register: formal
+    arc: polite form throughout; teaches the rubbish days and brings vegetables; explains why the grandmother's words sound old-fashioned
+  - id: kenta
+    name: 田中 健太
+    role: neighbour, 27, works at the same factory on the line, plays futsal with Brazilians
+    voice: ja-m
+    register: formal
+    arc: です・ます at first; proposes plain form (タメ口でいいよ) in A1-14; knows some Portuguese swear words
+  - id: sato
+    name: 佐藤 美穂
+    role: colleague, 31, section chief (課長) in the office
+    voice: ja-f
+    register: formal
+    arc: 佐藤課長 / 佐藤さん, never 美穂; business cards in A1-08; indirect refusals (ちょっと…)
+  - id: tencho
+    name: コンビニの店長
+    role: convenience-store manager, about 50
+    voice: ja-m2
+    register: formal
+    arc: いらっしゃいませ, 温めますか?, ポイントカードはお持ちですか?; the protagonist's everyday teacher
+
+formality:
+  summary: >-
+    Polite です・ます with anyone not a close friend; plain form (だ, 食べる) with friends, family, younger people,
+    once agreed. 敬語: respectful forms for others (いらっしゃる, 召し上がる), humble forms for oneself (参る, いただく),
+    heard in shops and at work from day one. Names: family name + さん; titles at work (課長); second-person あなた is
+    avoided — use the name. First names only among friends.
+  rules:
+    - です・ます with everyone in A1; set 敬語 phrases are learnt as whole phrases (よろしくお願いします).
+    - Plain form only with Kenta after he proposes it (A1-14).
+    - Never あなた to a person you know; family name + さん, or the title.
+  sources:
+    - {title: "Wikipedia: Honorific speech in Japanese", url: "https://en.wikipedia.org/wiki/Honorific_speech_in_Japanese", licence: CC BY-SA}
+    - {title: "Wikipedia: Brazilians in Japan (Hamamatsu)", url: "https://en.wikipedia.org/wiki/Brazilians_in_Japan", licence: CC BY-SA}
+
+culture:
+  taught:
+    - {topic: bowing, note: "A bow instead of a handshake; deeper for apologies and thanks to superiors."}
+    - {topic: shoes, note: "Shoes off in the 玄関; slippers inside; separate toilet slippers; no slippers on tatami."}
+    - {topic: rubbish, note: "Rubbish by type on fixed days (burnable, plastics, cans, bottles), in the town's bags, before 8 am; the neighbourhood notices mistakes."}
+    - {topic: quiet, note: "No phone calls on trains; low voices in public; no noise at night in flats."}
+    - {topic: refusals, note: "No is said indirectly: ちょっと…, 検討します; reading the situation (空気を読む) is expected."}
+    - {topic: cards, note: "Business cards (名刺) given and taken with both hands, read, kept on the table during the meeting."}
+    - {topic: gifts, note: "お土産 from trips for colleagues; gifts are wrapped and received with both hands, often not opened at once."}
+    - {topic: eating, note: "いただきます / ごちそうさま; don't stick chopsticks upright in rice or pass food chopstick to chopstick; slurping noodles is fine; no tipping."}
+    - {topic: punctuality, note: "Trains and meetings start on the minute; five minutes early is on time."}
+    - {topic: bath, note: "Onsen and sentō: wash before entering, no swimsuits, tattoos often not allowed."}
+    - {topic: Brazilians, note: "Hamamatsu has Brazilian shops, schools and churches; Portuguese signs at the station and city hall."}
+  narrator:
+    - {lang: pt, topic: contact, note: "Brazilians kiss and hug; in Japan a bow, almost no touching."}
+    - {lang: pt, topic: refusals, note: "A Brazilian 'vou ver' is also a soft no; a Japanese ちょっと… is a clear no."}
+    - {lang: pt, topic: noise, note: "Brazilian social life is loud and in the street; Japanese public space is quiet."}
+    - {lang: pt, topic: time, note: "Brazilian 'chego às oito' means around eight; Japanese 8時 means 7:55."}
+    - {lang: pt, topic: rubbish, note: "In Brazil rubbish goes out any day; in Japan the day decides."}
+    - {lang: pt, topic: nikkei, note: "Japanese Brazilians are 'japonês' in Brazil and 'ブラジル人' in Japan — an identity theme for B levels."}
+  clashes:
+    - {situation: "Hugging the landlady and walking in with shoes on", unit: A1-01}
+    - {situation: "Putting out plastics on burnable day; the bag comes back with a note", unit: A1-05}
+    - {situation: "Calling the section chief by her first name", unit: A1-08}
+    - {situation: "Taking ちょっと… as a yes", unit: A1-12}
+    - {situation: "A phone call on the train", unit: A1-10}
+    - {situation: "Arriving at 9:00 for a 9:00 meeting", unit: A2}
+
+arc:
+  - {level: A1, units: 20, summary: "Arrival in Hamamatsu: the landlady, shoes and slippers, the konbini, hiragana, rubbish days, the factory office, business cards, the train, a Brazilian bakery, Kenta proposes plain form."}
+  - {level: A2, units: 20, summary: "Settling in: residence card at city hall, bank, clinic, a 飲み会, the summer festival, onsen, the grandmother's village."}
+  - {level: B1, units: 20, summary: "Friends: futsal with Kenta, karaoke, opinions, nikkei identity, a misunderstanding by indirectness."}
+  - {level: B2, units: 20, summary: "Work: 敬語 in earnest, meetings, e-mails, phone calls, interpreting for Brazilian workers."}
+  - {level: C1, units: 20, summary: "Evening courses: science talked about at school level."}
+  - {level: C2, units: 20, summary: "Ideas: philosophy, history handled with care, humour, register."}
