@@ -159,6 +159,16 @@ syntax model of design §8).
 | RNG | *bis* between two numbers is a range, not a preposition. | done |
 | CMP | **Compounds** (Allan): a compound noun is split into its dictionary roots (with linking -s-, -es-, -n-, -en-, -er-) and each root is drawn in its own ink inside the block. | done |
 
+### Open, found 2026-10-21
+
+- *der Peter*: Wiktionary has a second, genderless entry for many first names (the surname), so *der* keeps its
+  dative-feminine reading by agreeing with it. Dropping genderless readings would break *Frau Peter*; needs a rule that
+  knows titles (Frau/Herr) before deciding.
+- Verb + preposition pairs (*warten auf* + acc, *denken an* + acc, *teilnehmen an* + dat) would settle the two-way
+  prepositions after those verbs; needs a list like valency.json.
+- *den Mann zu sehen*: *Mann* keeps dative plural (the unit plural *drei Mann*); the verb's valency is not applied
+  inside zu-infinitive clauses yet.
+
 ### Order of the cascade (German)
 
 government (NP4, NP5) → noun phrases (NP1–NP3, NP12) → government again → noun phrases again → clauses (CL1–CL8, D1, REL1) → noun phrases again → clauses again → government.
