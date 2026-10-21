@@ -63,6 +63,8 @@ def classical(text: str) -> bool:
     cjk = len(re.findall(r"[\u4e00-\u9fff]", bare))
     if cjk >= 6 and not re.search(r"[\u3040-\u30ff]", bare) and (re.search(r"[。、，；？！]", bare) or cjk >= 12):
         return True
+    if not re.search(r"[\u3041-\u3096\u30a1-\u30fa]", bare) and re.search(r"[（(][\u3040-\u30ff・\-ー\s　]+[）)]", text):
+        return True                       # a kanji with its readings (楽（ガク・ラク）), a poem's kana reading
     if re.match(r"\s*[（(]?例文", text):     # a school book's example sentence is classical text
         return True
     return len(KOBUN.findall(bare)) + 2 * len(KOBUN_STRONG.findall(bare)) >= 2
@@ -175,7 +177,8 @@ def protect_script(text: str, src: str, inline: list, gloss=None, info: dict | N
 def crowded(text: str) -> bool:
     """a run that is mostly placeholders (kanbun with a ruby on every character) is the studied text, not prose"""
     n = len(PH.findall(text))
-    return n > 12 and n * 2 > len(re.findall(r"[^\W\d_]", PH.sub(" ", text)))
+    # (a sentence of four Latin words or more in it, a JLPT mistake line's English note, is prose all the same)
+    return n > 12 and n * 2 > len(re.findall(r"[^\W\d_]", PH.sub(" ", text))) and not re.search(r"(?:[A-Za-z]{2,}[ ,'-]+){3}[A-Za-z]{2,}", PH.sub(" ", text))
 
 
 GLOSSABLE = {"b", "strong", "i", "em"}
@@ -325,6 +328,25 @@ JA_TERMS = {
            "置き字": "okiji (caractere não lido)", "枕詞": "makurakotoba (epíteto poético)",
            "掛詞": "kakekotoba (trocadilho poético)", "反語": "pergunta retórica (hango)", "打消": "negação", "推量": "conjectura"},
 }
+# names in the school books, as Portuguese writes them (MADLAD made 項羽 "Genjiwa", 清少納言 "Kiyoshonagagon")
+JA_TERMS["pt"].update({
+    "項羽": "Xiang Yu", "項王": "o rei Xiang (Xiang Yu)", "沛公": "o duque de Pei (Liu Bang)", "劉邦": "Liu Bang",
+    "范増": "Fan Zeng", "張良": "Zhang Liang", "樊噲": "Fan Kuai", "項荘": "Xiang Zhuang", "項伯": "Xiang Bo",
+    "杜甫": "Du Fu", "李白": "Li Bai", "白居易": "Bai Juyi", "陶淵明": "Tao Yuanming", "王維": "Wang Wei",
+    "孟浩然": "Meng Haoran", "蘇軾": "Su Shi", "韓愈": "Han Yu", "柳宗元": "Liu Zongyuan", "屈原": "Qu Yuan",
+    "司馬遷": "Sima Qian", "孔子": "Confúcio", "孟子": "Mêncio", "荘子": "Zhuangzi", "老子": "Laozi", "韓非子": "Han Feizi",
+    "魯迅": "Lu Xun", "兼好法師": "o monge Kenkō", "吉田兼好": "Yoshida Kenkō", "清少納言": "Sei Shōnagon",
+    "紫式部": "Murasaki Shikibu", "松尾芭蕉": "Matsuo Bashō", "芭蕉": "Bashō", "鴨長明": "Kamo no Chōmei",
+    "紀貫之": "Ki no Tsurayuki", "在原業平": "Ariwara no Narihira", "菅原道真": "Sugawara no Michizane",
+    "光源氏": "Hikaru Genji", "夏目漱石": "Natsume Sōseki", "芥川龍之介": "Akutagawa Ryūnosuke", "太宰治": "Dazai Osamu",
+    "森鴎外": "Mori Ōgai", "宮沢賢治": "Miyazawa Kenji", "新美南吉": "Niimi Nankichi", "木曾義仲": "Kiso Yoshinaka",
+    "義経": "Yoshitsune", "今井四郎": "Imai Shirō", "敦盛": "Atsumori", "熊谷直実": "Kumagai Naozane", "那須与一": "Nasu no Yoichi",
+    "源氏物語": "Genji Monogatari", "平家物語": "Heike Monogatari", "枕草子": "Makura no Sōshi", "徒然草": "Tsurezuregusa",
+    "方丈記": "Hōjōki", "土佐日記": "Tosa Nikki", "竹取物語": "Taketori Monogatari", "伊勢物語": "Ise Monogatari",
+    "更級日記": "Sarashina Nikki", "奥の細道": "Oku no Hosomichi", "おくのほそ道": "Oku no Hosomichi", "大鏡": "Ōkagami",
+    "宇治拾遺物語": "Uji Shūi Monogatari", "今昔物語集": "Konjaku Monogatarishū", "今昔物語": "Konjaku Monogatari",
+    "平家": "os Taira (Heike)",
+})
 _TERM_RE = {}
 
 

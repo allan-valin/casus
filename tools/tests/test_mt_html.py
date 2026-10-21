@@ -260,3 +260,29 @@ def test_japanese_school_grammar_terms_are_kept_from_the_model():
     text, terms = protect_terms("助動詞[1]は連体形に接続し、尊敬語を作る。", "pt", "ja")
     assert text == "[2][1]は[3]に接続し、[4]を作る。" and terms == ["verbo auxiliar", "forma rentai (atributiva)", "linguagem honorífica (sonkeigo)"]
     assert protect_terms("体言とは", "pt", "en") == ("体言とは", [])
+
+
+def test_names_in_japanese_school_books_come_from_the_glossary():
+    # 項羽 came out "Genjiwa", 清少納言 "Kiyoshonagagon", 孟子 "Momoko" (Allan's ja>pt check, 2026-10-21)
+    from mt_html import protect_terms
+    text, terms = protect_terms("清少納言と紫式部、そして項羽と沛公。", "pt", "ja")
+    assert text == "[1]と[2]、そして[3]と[4]。" and terms == ["Sei Shōnagon", "Murasaki Shikibu", "Xiang Yu", "o duque de Pei (Liu Bang)"]
+
+
+def test_kanji_reading_lists_and_poem_readings_are_kept():
+    # "楽：（がく・ラク）…" came out "Cancro: (gaku-rak)…", a waka's kana reading as romanised nonsense
+    assert classical("楽　：（がく・ラク）（たの-しい・たの-しむ）") and classical("務（ム）・義務（ぎむ）・事務（じむ）。")
+    assert classical("（おくやまに　もみじふみわけ　なくしかの　こえきくときぞ　あきワかなしき）")
+    assert not classical("実際には道兼（みちかね）は出家をしなかった。")
+
+
+def test_an_english_note_after_a_ruby_heavy_example_is_still_translated():
+    # JLPT's mistake lines: "❌ <ruby>…</ruby>… → ✅ …  A single past event only. Habits take と or たびに." had more
+    # than twelve rubies, so the run counted as crowded kanbun and its English note stayed English
+    rb = "".join(f"<ruby>雨<rt>あめ</rt></ruby>が" for _ in range(14))
+    html = f"<p>❌ {rb}ってしまう。 → ✅ {rb}ると。 A single past event only. Habits take と or たびに.</p>"
+    assert [s for s in segments(html, "en") if s.get("translate")]
+    chart = "".join(f"[ <b>{k}</b> ] " for k in ("a", "ka", "sa", "ta", "na", "ha", "ma", "ya", "ra")) + "[ <b>wa, wo, n</b> ]"
+    assert not [s for s in segments(f"<p>{chart}</p>", "en") if s.get("translate")]      # a romaji kana chart
+    kanbun = "".join(f"<ruby>{c}<rt>x</rt></ruby>" for c in "項王軍壁垓下兵少食尽漢軍及諸侯")
+    assert not [s for s in segments(f"<p>{kanbun}</p>", "ja") if s.get("translate")]

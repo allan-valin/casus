@@ -25,7 +25,7 @@ ar 0.4M · uk 0.3M · is 0.2M · mk 0.03M.
 4. [x] Learn page: ⇄ AI-translated badge + toggle translation / original (default translation in UI language); tests
 5. [x] Proofreading: automatic checks (examples intact, ratio, untranslated runs, placeholder loss) + sample read per book
 6. [ ] Pairs done (translated → checked → released):
-       - [x] ko>pt  - [ ] ja>pt  - [x] de>ar  - [x] de>mk  - [ ] fr>pt  - [ ] en>pt  - [ ] it>pt  - [ ] …
+       - [x] ko>pt  - [x] ja>pt  - [x] de>ar  - [x] de>mk  - [ ] fr>pt  - [ ] en>pt  - [ ] it>pt  - [ ] …
 
 ## Log
 - 2026-10-20: steps 2–3 (any explanation language, any UI; original kept as html.orig when translating into English).
@@ -83,3 +83,20 @@ ar 0.4M · uk 0.3M · is 0.2M · mk 0.03M.
   in 141 English + 32 French/Spanish sentences → فاعل; "object" → كائن (creature) in 42 → مفعول به (شيء where it
   means a thing; duals → مفعولين); "décliner" read as "negate" → تصريف; 8 sentences rewritten by hand. Re-applied
   cache-only, released data-de, deployed. de>mk labels re-applied the same way (376 Claude + MADLAD-400).
+- 2026-10-21: ja>pt core done — JLPT Grammar Enhanced translated by Claude, all 48,670 pieces (847 pages labelled
+  Claude). Checking the real pages found three more gaps, each fixed with a test: (1) short English runs the prose
+  test misses (table labels Form / Example / Verb (negative), 636 example meanings without function words) stayed
+  English → tools/mt_fixes/pt/labels.yml, 1,751 runs translated by Claude, used in courses in another script;
+  (2) the school books (Wikibooks ja) had been frozen by the German-in-German rule → CJK books are translated again,
+  examples are in 「」 and kept; (3) MADLAD translated the classical texts themselves (徒然草 → "…a lua está apenas
+  na forma de um kumma") → kobun/kanbun lines and 例文 sentences are kept (judged on the whole line and sentence by
+  sentence). By-eye sample of 30 school-book sentences: ~half fine; systematic errors in grammar terms (体言 →
+  "linguagem corporal", 終止形 → "formulário de rescisão", 係り結び → "nó associativo") and names (項羽 → "Genjiwa",
+  清少納言 → "Kiyoshonagagon") → a Japanese-side glossary (mt_html.JA_TERMS: 43 terms, 66 names/works) makes them
+  placeholders; the 1,082 cached sentences with a term were purged and retranslated on the GPU.
+  Names (755 sentences) retranslated the same way. Second by-eye sample (25): ~15 good, terms and names right
+  (kaeriten, Sei Shōnagon, Xiang Yu); kanji reading lists ("楽（ガク・ラク）" → "Cancro…") and poems' kana readings
+  now kept. JLPT mistake lines with many rubies had their English note skipped as "crowded" → a run with an English
+  sentence is prose; 88 more JLPT pieces by Claude. mt_check: 201/5867 sections flagged (romaji charts, pattern
+  formulas "A であれ B であれ", English Wikibooks lists). Still MADLAD-weak: literary prose (坊っちゃん, 魯迅) —
+  readable, often loose. RELEASED ja>pt 2026-10-21.
