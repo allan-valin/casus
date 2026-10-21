@@ -23,6 +23,8 @@ voices:
   - {id: mk-m2, role: character, lang: mk, gender: m, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 0.8, speed: 1.1}
   - {id: mk-f, role: character, lang: mk, gender: f, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 1.42}
   - {id: mk-f2, role: character, lang: mk, gender: f, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 1.12, speed: 1.12}
+  - {id: mk-x-m, role: character, lang: mk, gender: m, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 0.94, speed: 0.95}
+  - {id: mk-x-f, role: character, lang: mk, gender: f, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 1.22, speed: 0.95}
 
 protagonist:
   forms: {f: mk-p-f, m: mk-p-m}
@@ -58,6 +60,25 @@ cast:
     voice: mk-m2
     register: formal
     arc: says "Повелете!" to everyone; becomes the protagonist's informal teacher of everyday words; never switches to ти
+
+  - id: passerby
+    name: Минувачка
+    role: a woman in the street, asked the way
+    voice: mk-x-f
+    register: formal
+    arc: one scene at a time
+  - id: seller
+    name: Продавачка
+    role: shop assistant in clothes shops and at the market
+    voice: mk-x-f
+    register: formal
+    arc: one scene at a time
+  - id: driver
+    name: Возач
+    role: bus driver
+    voice: mk-x-m
+    register: formal
+    arc: one scene at a time
 
 formality:
   summary: >-

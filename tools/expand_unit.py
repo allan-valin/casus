@@ -95,12 +95,11 @@ def expand(src: dict, earlier: list) -> dict:
     if pending:
         steps.append({"type": "narrator", "text": {"en": "Now some things from earlier units, in this new situation.",
                                                    "pt": "Agora, coisas de unidades anteriores, nesta situação nova."}})
-        fresh = [i for i in pending if intro[i] == k - 1]
-        older = [i for i in pending if intro[i] != k - 1]
-        # about a quarter of the questions: fresh items alone while few, otherwise in pairs; older ones in threes
+        # reviews stay near a quarter of the questions: due items are bundled into at most own/3 prompts, newest first
         own = sum(1 for st in steps if st["type"] == "prompt")
-        per_fresh = 1 if len(fresh) <= own // 3 else 2
-        groups = [fresh[j:j + per_fresh] for j in range(0, len(fresh), per_fresh)] + [older[j:j + 3] for j in range(0, len(older), 3)]
+        pending.sort(key=lambda i: -intro[i])
+        size = max(1, -(-len(pending) // max(1, own // 3)))
+        groups = [pending[j:j + size] for j in range(0, len(pending), size)]
         for g in groups:
             ens = " — and “".join(item_mean[i]["en"] for i in g)
             pts = " — e “".join(item_mean[i]["pt"] for i in g)

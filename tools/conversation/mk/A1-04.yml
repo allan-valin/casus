@@ -480,136 +480,91 @@ steps:
 - type: prompt
   review: true
   ask:
-    en: 'Say: “What''s wrong? (formal) — and “… hurts (me)”.'
-    pt: 'Diga: “O que a senhora tem? (formal) — e “Me dói…”.'
+    en: 'Say: “What''s wrong? (formal) — and “… hurts (me) — and “the arm / the hand — and “the head”.'
+    pt: 'Diga: “O que a senhora tem? (formal) — e “Me dói… — e “o braço / a mão — e “a cabeça”.'
   answer:
     speaker: protagonist
-    text: Што ви е? … Ме боли
+    text: Што ви е? … Ме боли … раката … главата
   items:
   - sto-vi-e
   - me-boli
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “the arm / the hand — and “the head”.'
-    pt: 'Diga: “o braço / a mão — e “a cabeça”.'
-  answer:
-    speaker: protagonist
-    text: раката … главата
-  items:
   - rakata
   - glavata
 - type: prompt
   review: true
   ask:
-    en: 'Say: “the leg / the foot — and “the eye”.'
-    pt: 'Diga: “a perna / o pé — e “o olho”.'
+    en: 'Say: “the leg / the foot — and “the eye — and “the bag — and “heavy (with a feminine word)”.'
+    pt: 'Diga: “a perna / o pé — e “o olho — e “a sacola — e “pesada (com palavra feminina)”.'
   answer:
     speaker: protagonist
-    text: ногата … окото
+    text: ногата … окото … торбата … тешка
   items:
   - nogata
   - okoto
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “the bag — and “heavy (with a feminine word)”.'
-    pt: 'Diga: “a sacola — e “pesada (com palavra feminina)”.'
-  answer:
-    speaker: protagonist
-    text: торбата … тешка
-  items:
   - torbata
   - teska
 - type: prompt
   review: true
   ask:
-    en: 'Say: “Can I help you? (formal) — and “doctor”.'
-    pt: 'Diga: “Posso ajudar a senhora? (formal) — e “médico”.'
+    en: 'Say: “Can I help you? (formal) — and “doctor — and “It''s nothing serious — and “Rest (formal)”.'
+    pt: 'Diga: “Posso ajudar a senhora? (formal) — e “médico — e “Não é nada grave — e “Descanse (formal)”.'
   answer:
     speaker: protagonist
-    text: Да ви помогнам? … лекар
+    text: Да ви помогнам? … лекар … Не е страшно … Одморете се
   items:
   - da-vi-pomognam
   - lekar
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “It''s nothing serious — and “Rest (formal)”.'
-    pt: 'Diga: “Não é nada grave — e “Descanse (formal)”.'
-  answer:
-    speaker: protagonist
-    text: Не е страшно … Одморете се
-  items:
   - ne-e-strasno
   - odmorete-se
 - type: prompt
   review: true
   ask:
-    en: 'Say: “I''m fine”.'
-    pt: 'Diga: “Estou bem”.'
+    en: 'Say: “I''m fine — and “Good day / hello — and “Excuse me / sorry (formal) — and “I don''t understand”.'
+    pt: 'Diga: “Estou bem — e “Bom dia / boa tarde — e “Com licença / desculpe (formal) — e “Não entendo”.'
   answer:
     speaker: protagonist
-    text: Добро сум
+    text: Добро сум … Добар ден … Извинете … Не разбирам
   items:
   - dobro-sum
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “Good day / hello — and “Excuse me / sorry (formal) — and “I don''t understand”.'
-    pt: 'Diga: “Bom dia / boa tarde — e “Com licença / desculpe (formal) — e “Não entendo”.'
-  answer:
-    speaker: protagonist
-    text: Добар ден … Извинете … Не разбирам
-  items:
   - dobar-den
   - izvinete
   - ne-razbiram
 - type: prompt
   review: true
   ask:
-    en: 'Say: “Do you speak English? (formal) — and “Yes — and “I''m from Brazil”.'
-    pt: 'Diga: “A senhora fala inglês? — e “Sim — e “Sou do Brasil”.'
+    en: 'Say: “Do you speak English? (formal) — and “Yes — and “I''m from Brazil — and “A little”.'
+    pt: 'Diga: “A senhora fala inglês? — e “Sim — e “Sou do Brasil — e “Um pouco”.'
   answer:
     speaker: protagonist
-    text: Зборувате ли англиски? … Да … Од Бразил сум
+    text: Зборувате ли англиски? … Да … Од Бразил сум … Малку
   items:
   - zboruvate-angliski
   - da
   - od-brazil
+  - malku
 - type: prompt
   review: true
   ask:
-    en: 'Say: “A little — and “I am — and “the new tenant (a woman)”.'
-    pt: 'Diga: “Um pouco — e “Eu sou — e “a nova inquilina”.'
+    en: 'Say: “I am — and “the new tenant (a woman) — and “Here you are / come in / help yourself (formal) — and “This is”.'
+    pt: 'Diga: “Eu sou — e “a nova inquilina — e “Aqui está / pode entrar / sirva-se (formal) — e “Este é / isto é”.'
   answer:
     speaker: protagonist
-    text: Малку … Јас сум … новата станарка
+    text: Јас сум … новата станарка … Повелете … Ова е
   items:
-  - malku
   - jas-sum
   - novata-stanarka
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “Here you are / come in / help yourself (formal) — and “This is — and “the key”.'
-    pt: 'Diga: “Aqui está / pode entrar / sirva-se (formal) — e “Este é / isto é — e “a chave”.'
-  answer:
-    speaker: protagonist
-    text: Повелете … Ова е … клучот
-  items:
   - povelete
   - ova-e
-  - klucot
 - type: prompt
   review: true
   ask:
-    en: 'Say: “Mrs Stojanovska (calling her) — and “You''re welcome — and “Welcome (formal)”.'
-    pt: 'Diga: “senhora Stojanovska (chamando-a) — e “De nada — e “Bem-vinda / bem-vindos (formal)”.'
+    en: 'Say: “the key — and “Mrs Stojanovska (calling her) — and “You''re welcome — and “Welcome (formal)”.'
+    pt: 'Diga: “a chave — e “senhora Stojanovska (chamando-a) — e “De nada — e “Bem-vinda / bem-vindos (formal)”.'
   answer:
     speaker: protagonist
-    text: госпоѓо Стојановска … Нема зошто … Добредојдовте
+    text: клучот … госпоѓо Стојановска … Нема зошто … Добредојдовте
   items:
+  - klucot
   - gospogjo
   - nema-zosto
   - dobredojdovte

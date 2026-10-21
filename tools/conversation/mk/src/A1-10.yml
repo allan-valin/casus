@@ -1,0 +1,43 @@
+id: A1-10
+protagonist: m
+title: [The bus, O ônibus]
+situation: ["At the stop. Which bus goes to the centre?", "No ponto. Qual ônibus vai para o centro?"]
+learn: [a1-numbers, a1-pres-e]
+culture: Buying a ticket from the driver
+items:
+  - [odi-li-do, "Оди ли до…?", "Does it go to…?", "Vai até…?"]
+  - [centar, "центар", "the centre", "o centro"]
+  - [brojot, "бројот", "(the) number", "o número"]
+  - [vi-treba, "Ви треба", "You need (formal)", "O senhor precisa de"]
+  - [sedum, "седум", "seven", "sete"]
+  - [cekajte, "Чекајте", "Wait (formal)", "Espere (formal)"]
+  - [posle, "после", "after, later", "depois"]
+  - [karta, "карта", "ticket", "passagem"]
+  - [edna, "една", "one (with a feminine word)", "uma"]
+  - [cetirieset, "четириесет", "forty", "quarenta"]
+  - [kade-da-slezam, "Каде да слезам?", "Where should I get off?", "Onde devo descer?"]
+  - [slednata, "следната", "the next (feminine)", "a próxima"]
+dialogue:
+  - [protagonist, "Добар ден. Оди ли до центар?", "Hello. Does it go to the centre?", "Bom dia. Vai até o centro?"]
+  - [driver, "Не, ова е бројот пет. Ви треба седум.", "No, this is number five. You need seven.", "Não, este é o cinco. O senhor precisa do sete."]
+  - [protagonist, "Седум? Каде е седум?", "Seven? Where is seven?", "Sete? Onde está o sete?"]
+  - [driver, "Чекајте тука. Доаѓа после пет минути.", "Wait here. It comes in five minutes.", "Espere aqui. Chega daqui a cinco minutos."]
+  - [protagonist, "Една карта до центар, ве молам.", "One ticket to the centre, please.", "Uma passagem até o centro, por favor."]
+  - [driver, "Четириесет денари.", "Forty denars.", "Quarenta dinares."]
+  - [protagonist, "Каде да слезам?", "Where should I get off?", "Onde devo descer?"]
+  - [driver, "Следната станица. Центар.", "The next stop. The centre.", "Na próxima parada. Centro."]
+teach:
+  - note: ["To ask if a bus goes somewhere: 'Оди ли до …?'.", "Para perguntar se um ônibus vai a algum lugar: 'Оди ли до …?'."]
+  - ask: ["Ask the driver if it goes to the centre.", "Pergunte ao motorista se vai até o centro.", "Оди ли до центар?", odi-li-do, centar]
+  - ask: ["He says: this is number five. How?", "Ele diz: este é o número cinco. Como?", "Ова е бројот пет.", brojot, pet]
+  - ask: ["He says you need seven.", "Ele diz que o senhor precisa do sete.", "Ви треба седум.", vi-treba, sedum]
+  - ask: ["Ask where seven is.", "Pergunte onde está o sete.", "Каде е седум?", kade-e, sedum]
+  - ask: ["He tells you to wait here.", "Ele diz para esperar aqui.", "Чекајте тука.", cekajte, tuka]
+  - ask: ["Say: after five minutes.", "Diga: depois de cinco minutos.", "После пет минути.", posle, pet, minuti]
+  - note: ["'Една' is 'one' with feminine words: 'една карта'. Remember 'еден леб', 'една карта'.", "'Една' é 'uma' com palavras femininas: 'една карта'. Lembre: 'еден леб', 'една карта'."]
+  - ask: ["Buy one ticket to the centre.", "Compre uma passagem até o centro.", "Една карта до центар, ве молам.", edna, karta, centar]
+  - build: [cetirieset, ["-сет", "-ириесет", "четириесет"]]
+  - ask: ["Say: forty denars.", "Diga: quarenta dinares.", "Четириесет денари.", cetirieset, denari]
+  - ask: ["Ask where you should get off.", "Pergunte onde deve descer.", "Каде да слезам?", kade-da-slezam]
+  - ask: ["He says: the next stop.", "Ele diz: na próxima parada.", "Следната станица.", slednata, stanicata]
+  - pt_only: "Em Skopje muitos ônibus são vermelhos de dois andares, como em Londres. O bilhete se compra com cartão ou no quiosque."

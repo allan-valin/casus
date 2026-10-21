@@ -417,100 +417,73 @@ steps:
 - type: prompt
   review: true
   ask:
-    en: 'Say: “Come in (formal) — and “the flat”.'
-    pt: 'Diga: “Entre / entrem (formal) — e “o apartamento”.'
+    en: 'Say: “Come in (formal) — and “the flat — and “It''s nice”.'
+    pt: 'Diga: “Entre / entrem (formal) — e “o apartamento — e “É bonito”.'
   answer:
     speaker: protagonist
-    text: Влезете … станот
+    text: Влезете … станот … Убав е
   items:
   - vlezete
   - stanot
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “It''s nice — and “Where is…?”.'
-    pt: 'Diga: “É bonito — e “Onde fica…? / Onde está…?”.'
-  answer:
-    speaker: protagonist
-    text: Убав е … Каде е…?
-  items:
   - ubav-e
-  - kade-e
 - type: prompt
   review: true
   ask:
-    en: 'Say: “the kitchen — and “here”.'
-    pt: 'Diga: “a cozinha — e “aqui”.'
+    en: 'Say: “Where is…? — and “the kitchen — and “here”.'
+    pt: 'Diga: “Onde fica…? / Onde está…? — e “a cozinha — e “aqui”.'
   answer:
     speaker: protagonist
-    text: кујната … тука
+    text: Каде е…? … кујната … тука
   items:
+  - kade-e
   - kujnata
   - tuka
 - type: prompt
   review: true
   ask:
-    en: 'Say: “there — and “And the …? (asking about something else)”.'
-    pt: 'Diga: “ali / lá — e “E o/a …? (perguntando por outra coisa)”.'
+    en: 'Say: “there — and “And the …? (asking about something else) — and “the bathroom”.'
+    pt: 'Diga: “ali / lá — e “E o/a …? (perguntando por outra coisa) — e “o banheiro”.'
   answer:
     speaker: protagonist
-    text: таму … А …?
+    text: таму … А …? … бањата
   items:
   - tamu
   - a-sto
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “the bathroom — and “the room”.'
-    pt: 'Diga: “o banheiro — e “o quarto”.'
-  answer:
-    speaker: protagonist
-    text: бањата … собата
-  items:
   - banjata
-  - sobata
 - type: prompt
   review: true
   ask:
-    en: 'Say: “big (with a feminine word: собата) — and “very”.'
-    pt: 'Diga: “grande (com palavra feminina: собата) — e “muito”.'
+    en: 'Say: “the room — and “big (with a feminine word: собата) — and “very”.'
+    pt: 'Diga: “o quarto — e “grande (com palavra feminina: собата) — e “muito”.'
   answer:
     speaker: protagonist
-    text: голема … многу
+    text: собата … голема … многу
   items:
+  - sobata
   - golema
   - mnogu
 - type: prompt
   review: true
   ask:
-    en: 'Say: “the window — and “small (with a masculine word: прозорецот)”.'
-    pt: 'Diga: “a janela — e “pequeno (com palavra masculina: прозорецот)”.'
+    en: 'Say: “the window — and “small (with a masculine word: прозорецот) — and “Good / all right”.'
+    pt: 'Diga: “a janela — e “pequeno (com palavra masculina: прозорецот) — e “Bem / está bem / bom”.'
   answer:
     speaker: protagonist
-    text: прозорецот … мал
+    text: прозорецот … мал … Добро
   items:
   - prozorecot
   - mal
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “Good / all right — and “downstairs”.'
-    pt: 'Diga: “Bem / está bem / bom — e “embaixo / lá embaixo”.'
-  answer:
-    speaker: protagonist
-    text: Добро … долу
-  items:
   - dobro
-  - dolu
 - type: prompt
   review: true
   ask:
-    en: 'Say: “slippers (for indoors)”.'
-    pt: 'Diga: “chinelos (de usar em casa)”.'
+    en: 'Say: “downstairs — and “slippers (for indoors)”.'
+    pt: 'Diga: “embaixo / lá embaixo — e “chinelos (de usar em casa)”.'
   answer:
     speaker: protagonist
-    text: влечки
+    text: долу … влечки
   items:
+  - dolu
   - papuci
 - type: narrator
   text:

@@ -433,137 +433,92 @@ steps:
 - type: prompt
   review: true
   ask:
-    en: 'Say: “It''s raining — and “cold”.'
-    pt: 'Diga: “Está chovendo — e “frio”.'
+    en: 'Say: “It''s raining — and “cold — and “warm — and “today”.'
+    pt: 'Diga: “Está chovendo — e “frio — e “quente — e “hoje”.'
   answer:
     speaker: protagonist
-    text: Врне … ладно
+    text: Врне … ладно … топло … денеска
   items:
   - vrne
   - ladno
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “warm — and “today”.'
-    pt: 'Diga: “quente — e “hoje”.'
-  answer:
-    speaker: protagonist
-    text: топло … денеска
-  items:
   - toplo
   - denes
 - type: prompt
   review: true
   ask:
-    en: 'Say: “isn''t it? / right? — and “summer”.'
-    pt: 'Diga: “né? — e “verão”.'
+    en: 'Say: “isn''t it? / right? — and “summer — and “winter — and “now”.'
+    pt: 'Diga: “né? — e “verão — e “inverno — e “agora”.'
   answer:
     speaker: protagonist
-    text: нели? … лето
+    text: нели? … лето … зима … сега
   items:
   - neli
   - leto
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “winter — and “now”.'
-    pt: 'Diga: “inverno — e “agora”.'
-  answer:
-    speaker: protagonist
-    text: зима … сега
-  items:
   - zima
   - sega
 - type: prompt
   review: true
   ask:
-    en: 'Say: “in — and “December”.'
-    pt: 'Diga: “em — e “dezembro”.'
+    en: 'Say: “in — and “December — and “I don''t have — and “umbrella”.'
+    pt: 'Diga: “em — e “dezembro — e “eu não tenho — e “guarda-chuva”.'
   answer:
     speaker: protagonist
-    text: во … декември
+    text: во … декември … немам … чадор
   items:
   - vo
   - dekemvri
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “I don''t have — and “umbrella”.'
-    pt: 'Diga: “eu não tenho — e “guarda-chuva”.'
-  answer:
-    speaker: protagonist
-    text: немам … чадор
-  items:
   - nemam
   - cador
 - type: prompt
   review: true
   ask:
-    en: 'Say: “I have — and “nice weather”.'
-    pt: 'Diga: “eu tenho — e “tempo bom”.'
+    en: 'Say: “I have — and “nice weather — and “bread — and “milk”.'
+    pt: 'Diga: “eu tenho — e “tempo bom — e “pão — e “leite”.'
   answer:
     speaker: protagonist
-    text: имам … убаво време
+    text: имам … убаво време … леб … млеко
   items:
   - imam
   - ubavo-vreme
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “bread — and “milk — and “water”.'
-    pt: 'Diga: “pão — e “leite — e “água”.'
-  answer:
-    speaker: protagonist
-    text: леб … млеко … вода
-  items:
   - leb
   - mleko
-  - voda
 - type: prompt
   review: true
   ask:
-    en: 'Say: “Do you have…? (formal) — and “one (with a masculine word) — and “two (with feminine and neuter words)”.'
-    pt: 'Diga: “O senhor tem…? (formal) — e “um — e “duas / dois”.'
+    en: 'Say: “water — and “Do you have…? (formal) — and “one (with a masculine word) — and “two (with feminine and neuter words)”.'
+    pt: 'Diga: “água — e “O senhor tem…? (formal) — e “um — e “duas / dois”.'
   answer:
     speaker: protagonist
-    text: Имате ли…? … еден … две
+    text: вода … Имате ли…? … еден … две
   items:
+  - voda
   - imate-li
   - eden
   - dve
 - type: prompt
   review: true
   ask:
-    en: 'Say: “Anything else? — and “That''s all — and “How much is it?”.'
-    pt: 'Diga: “Mais alguma coisa? — e “É só isso — e “Quanto custa?”.'
+    en: 'Say: “Anything else? — and “That''s all — and “How much is it? — and “denars (the money)”.'
+    pt: 'Diga: “Mais alguma coisa? — e “É só isso — e “Quanto custa? — e “dinares (a moeda)”.'
   answer:
     speaker: protagonist
-    text: Уште нешто? … Тоа е сè … Колку чини?
+    text: Уште нешто? … Тоа е сè … Колку чини? … денари
   items:
   - uste-nesto
   - toa-e-se
   - kolku-cini
+  - denari
 - type: prompt
   review: true
   ask:
-    en: 'Say: “denars (the money) — and “a hundred — and “a (plastic) bag”.'
-    pt: 'Diga: “dinares (a moeda) — e “cem — e “uma sacolinha”.'
+    en: 'Say: “a hundred — and “a (plastic) bag — and “Have a nice day! / Enjoy!”.'
+    pt: 'Diga: “cem — e “uma sacolinha — e “Bom dia! / Bom proveito!”.'
   answer:
     speaker: protagonist
-    text: денари … сто … кесе
+    text: сто … кесе … Пријатно!
   items:
-  - denari
   - sto
   - kese
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “Have a nice day! / Enjoy!”.'
-    pt: 'Diga: “Bom dia! / Bom proveito!”.'
-  answer:
-    speaker: protagonist
-    text: Пријатно!
-  items:
   - prijatno
 - type: narrator
   text:

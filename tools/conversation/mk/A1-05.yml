@@ -465,148 +465,103 @@ steps:
 - type: prompt
   review: true
   ask:
-    en: 'Say: “bread — and “milk”.'
-    pt: 'Diga: “pão — e “leite”.'
+    en: 'Say: “bread — and “milk — and “water — and “Do you have…? (formal)”.'
+    pt: 'Diga: “pão — e “leite — e “água — e “O senhor tem…? (formal)”.'
   answer:
     speaker: protagonist
-    text: леб … млеко
+    text: леб … млеко … вода … Имате ли…?
   items:
   - leb
   - mleko
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “water — and “Do you have…? (formal)”.'
-    pt: 'Diga: “água — e “O senhor tem…? (formal)”.'
-  answer:
-    speaker: protagonist
-    text: вода … Имате ли…?
-  items:
   - voda
   - imate-li
 - type: prompt
   review: true
   ask:
-    en: 'Say: “We have — and “one (with a masculine word)”.'
-    pt: 'Diga: “Temos — e “um”.'
+    en: 'Say: “We have — and “one (with a masculine word) — and “two (with feminine and neuter words) — and “please (formal)”.'
+    pt: 'Diga: “Temos — e “um — e “duas / dois — e “por favor (formal)”.'
   answer:
     speaker: protagonist
-    text: Имаме … еден
+    text: Имаме … еден … две … ве молам
   items:
   - imame
   - eden
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “two (with feminine and neuter words) — and “please (formal)”.'
-    pt: 'Diga: “duas / dois — e “por favor (formal)”.'
-  answer:
-    speaker: protagonist
-    text: две … ве молам
-  items:
   - dve
   - ve-molam
 - type: prompt
   review: true
   ask:
-    en: 'Say: “Anything else? — and “That''s all”.'
-    pt: 'Diga: “Mais alguma coisa? — e “É só isso”.'
+    en: 'Say: “Anything else? — and “That''s all — and “How much is it? — and “denars (the money)”.'
+    pt: 'Diga: “Mais alguma coisa? — e “É só isso — e “Quanto custa? — e “dinares (a moeda)”.'
   answer:
     speaker: protagonist
-    text: Уште нешто? … Тоа е сè
+    text: Уште нешто? … Тоа е сè … Колку чини? … денари
   items:
   - uste-nesto
   - toa-e-se
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “How much is it? — and “denars (the money)”.'
-    pt: 'Diga: “Quanto custa? — e “dinares (a moeda)”.'
-  answer:
-    speaker: protagonist
-    text: Колку чини? … денари
-  items:
   - kolku-cini
   - denari
 - type: prompt
   review: true
   ask:
-    en: 'Say: “a hundred — and “a (plastic) bag”.'
-    pt: 'Diga: “cem — e “uma sacolinha”.'
+    en: 'Say: “a hundred — and “a (plastic) bag — and “Have a nice day! / Enjoy! — and “Come in (formal)”.'
+    pt: 'Diga: “cem — e “uma sacolinha — e “Bom dia! / Bom proveito! — e “Entre / entrem (formal)”.'
   answer:
     speaker: protagonist
-    text: сто … кесе
+    text: сто … кесе … Пријатно! … Влезете
   items:
   - sto
   - kese
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “Have a nice day! / Enjoy!”.'
-    pt: 'Diga: “Bom dia! / Bom proveito!”.'
-  answer:
-    speaker: protagonist
-    text: Пријатно!
-  items:
   - prijatno
+  - vlezete
 - type: prompt
   review: true
   ask:
-    en: 'Say: “Come in (formal) — and “the flat — and “It''s nice”.'
-    pt: 'Diga: “Entre / entrem (formal) — e “o apartamento — e “É bonito”.'
+    en: 'Say: “the flat — and “It''s nice — and “Where is…? — and “the kitchen”.'
+    pt: 'Diga: “o apartamento — e “É bonito — e “Onde fica…? / Onde está…? — e “a cozinha”.'
   answer:
     speaker: protagonist
-    text: Влезете … станот … Убав е
+    text: станот … Убав е … Каде е…? … кујната
   items:
-  - vlezete
   - stanot
   - ubav-e
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “Where is…? — and “the kitchen — and “And the …? (asking about something else)”.'
-    pt: 'Diga: “Onde fica…? / Onde está…? — e “a cozinha — e “E o/a …? (perguntando por outra coisa)”.'
-  answer:
-    speaker: protagonist
-    text: Каде е…? … кујната … А …?
-  items:
   - kade-e
   - kujnata
-  - a-sto
 - type: prompt
   review: true
   ask:
-    en: 'Say: “the bathroom — and “the room — and “big (with a feminine word: собата)”.'
-    pt: 'Diga: “o banheiro — e “o quarto — e “grande (com palavra feminina: собата)”.'
+    en: 'Say: “And the …? (asking about something else) — and “the bathroom — and “the room — and “big (with a feminine word: собата)”.'
+    pt: 'Diga: “E o/a …? (perguntando por outra coisa) — e “o banheiro — e “o quarto — e “grande (com palavra feminina: собата)”.'
   answer:
     speaker: protagonist
-    text: бањата … собата … голема
+    text: А …? … бањата … собата … голема
   items:
+  - a-sto
   - banjata
   - sobata
   - golema
 - type: prompt
   review: true
   ask:
-    en: 'Say: “very — and “the window — and “small (with a masculine word: прозорецот)”.'
-    pt: 'Diga: “muito — e “a janela — e “pequeno (com palavra masculina: прозорецот)”.'
+    en: 'Say: “very — and “the window — and “small (with a masculine word: прозорецот) — and “Good / all right”.'
+    pt: 'Diga: “muito — e “a janela — e “pequeno (com palavra masculina: прозорецот) — e “Bem / está bem / bom”.'
   answer:
     speaker: protagonist
-    text: многу … прозорецот … мал
+    text: многу … прозорецот … мал … Добро
   items:
   - mnogu
   - prozorecot
   - mal
+  - dobro
 - type: prompt
   review: true
   ask:
-    en: 'Say: “Good / all right — and “downstairs — and “slippers (for indoors)”.'
-    pt: 'Diga: “Bem / está bem / bom — e “embaixo / lá embaixo — e “chinelos (de usar em casa)”.'
+    en: 'Say: “downstairs — and “slippers (for indoors)”.'
+    pt: 'Diga: “embaixo / lá embaixo — e “chinelos (de usar em casa)”.'
   answer:
     speaker: protagonist
-    text: Добро … долу … влечки
+    text: долу … влечки
   items:
-  - dobro
   - dolu
   - papuci
 - type: narrator

@@ -1,0 +1,40 @@
+id: A1-15
+protagonist: f
+title: [Numbers and shapes, Números e formas]
+situation: ["You want a table for the flat. Mrs Stojanovska helps you measure the room.", "Você quer uma mesa para o apartamento. A senhora Stojanovska ajuda a medir o quarto."]
+learn: [a1-numbers]
+culture: Measuring in metres
+items:
+  - [nova, "нова", "new (feminine)", "nova"]
+  - [siroka, "широка", "wide (feminine)", "larga"]
+  - [dolga, "долга", "long (feminine)", "comprida"]
+  - [kolku-e, "Колку е…?", "How … is it?", "Quanto tem…? / Qual é…?"]
+  - [tri, "три", "three", "três"]
+  - [cetiri, "четири", "four", "quatro"]
+  - [metri, "метри", "metres", "metros"]
+  - [pol, "пол", "half", "meio"]
+  - [trkalezna, "тркалезна", "round (feminine)", "redonda", {rare: true}]
+  - [kvadratna, "квадратна", "square (feminine)", "quadrada", {rare: true}]
+  - [povekje, "повеќе", "more", "mais"]
+  - [mesto, "место", "space, place", "espaço, lugar"]
+dialogue:
+  - [vera, "Сакате нова маса?", "You want a new table?", "A senhora quer uma mesa nova?"]
+  - [protagonist, "Да. Колку е широка собата?", "Yes. How wide is the room?", "Sim. Qual é a largura do quarto?"]
+  - [vera, "Три метри.", "Three metres.", "Três metros."]
+  - [protagonist, "А колку е долга?", "And how long is it?", "E o comprimento?"]
+  - [vera, "Четири метри и пол.", "Four and a half metres.", "Quatro metros e meio."]
+  - [protagonist, "Тркалезна маса или квадратна?", "A round table or a square one?", "Mesa redonda ou quadrada?"]
+  - [vera, "Тркалезна. Има повеќе место.", "Round. There's more space.", "Redonda. Sobra mais espaço."]
+  - [protagonist, "Добро, тркалезна!", "All right, round!", "Está bem, redonda!"]
+teach:
+  - note: ["'Колку е …?' asks how wide, how long, how much: 'Колку е широка собата?'", "'Колку е …?' pergunta a largura, o comprimento, o preço: 'Колку е широка собата?' (qual a largura do quarto?)"]
+  - ask: ["Ask how wide the room is.", "Pergunte a largura do quarto.", "Колку е широка собата?", kolku-e, siroka, sobata]
+  - ask: ["Ask how long it is.", "Pergunte o comprimento.", "Колку е долга?", kolku-e, dolga]
+  - ask: ["Say: three metres.", "Diga: três metros.", "Три метри.", tri, metri]
+  - ask: ["Say: four and a half metres.", "Diga: quatro metros e meio.", "Четири метри и пол.", cetiri, metri, pol]
+  - ask: ["Say you want a new table.", "Diga que quer uma mesa nova.", "Сакам нова маса.", sakam, nova, masa]
+  - build: [trkalezna, ["-лезна", "тркалезна"]]
+  - ask: ["Ask: a round table or a square one?", "Pergunte: mesa redonda ou quadrada?", "Тркалезна или квадратна?", trkalezna, ili, kvadratna]
+  - ask: ["Say: there's more space.", "Diga: sobra mais espaço.", "Има повеќе место.", povekje, mesto]
+  - ask: ["Decide: all right, round!", "Decida: está bem, redonda!", "Добро, тркалезна!", trkalezna]
+  - pt_only: "Os números de 1 a 4 você já sabe: еден, две, три, четири. O resto vem com o tempo — e nos preços."

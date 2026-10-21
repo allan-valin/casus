@@ -1,0 +1,476 @@
+# UNIT mk A1-15 — written by AI (Claude) for Casus; expanded from src/A1-15.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-15
+level: A1
+number: 15
+protagonist: f
+title:
+  en: Numbers and shapes
+  pt: Números e formas
+situation:
+  en: You want a table for the flat. Mrs Stojanovska helps you measure the room.
+  pt: Você quer uma mesa para o apartamento. A senhora Stojanovska ajuda a medir o quarto.
+learn_lessons:
+- a1-numbers
+culture: Measuring in metres
+new_items:
+- id: nova
+  text: нова
+  meaning:
+    en: new (feminine)
+    pt: nova
+- id: siroka
+  text: широка
+  meaning:
+    en: wide (feminine)
+    pt: larga
+- id: dolga
+  text: долга
+  meaning:
+    en: long (feminine)
+    pt: comprida
+- id: kolku-e
+  text: Колку е…?
+  meaning:
+    en: How … is it?
+    pt: Quanto tem…? / Qual é…?
+- id: tri
+  text: три
+  meaning:
+    en: three
+    pt: três
+- id: cetiri
+  text: четири
+  meaning:
+    en: four
+    pt: quatro
+- id: metri
+  text: метри
+  meaning:
+    en: metres
+    pt: metros
+- id: pol
+  text: пол
+  meaning:
+    en: half
+    pt: meio
+- id: trkalezna
+  text: тркалезна
+  meaning:
+    en: round (feminine)
+    pt: redonda
+  rare: true
+- id: kvadratna
+  text: квадратна
+  meaning:
+    en: square (feminine)
+    pt: quadrada
+  rare: true
+- id: povekje
+  text: повеќе
+  meaning:
+    en: more
+    pt: mais
+- id: mesto
+  text: место
+  meaning:
+    en: space, place
+    pt: espaço, lugar
+reviews:
+- item: ulica
+  from: A1-08
+- item: odete
+  from: A1-08
+- item: pravo
+  from: A1-08
+- item: pa
+  from: A1-08
+- item: levo
+  from: A1-08
+- item: desno
+  from: A1-08
+- item: daleku
+  from: A1-08
+- item: blizu
+  from: A1-08
+- item: pet
+  from: A1-08
+- item: minuti
+  from: A1-08
+- item: peski
+  from: A1-08
+- item: stanicata
+  from: A1-08
+- item: do
+  from: A1-08
+- item: zdravo
+  from: A1-12
+- item: ti-si
+  from: A1-12
+- item: sosed
+  from: A1-12
+- item: kuce
+  from: A1-12
+- item: ne-se-plasi
+  from: A1-12
+- item: ne-kasa
+  from: A1-12
+- item: kako-se-vika
+  from: A1-12
+- item: se-vika
+  from: A1-12
+- item: imas-li
+  from: A1-12
+- item: macka
+  from: A1-12
+- item: super
+  from: A1-12
+- item: gladen-li
+  from: A1-14
+- item: gladen
+  from: A1-14
+- item: sto-jades
+  from: A1-14
+- item: jadam
+  from: A1-14
+- item: salata
+  from: A1-14
+- item: meso
+  from: A1-14
+- item: supa
+  from: A1-14
+- item: ne-jadam
+  from: A1-14
+- item: vegetarijanka
+  from: A1-14
+- item: sto-pies
+  from: A1-14
+- item: sok
+  from: A1-14
+- item: od
+  from: A1-14
+- item: sobata
+  from: A1-02
+- item: sakam
+  from: A1-07
+- item: ili
+  from: A1-09
+- item: masa
+  from: A1-11
+steps:
+- type: narrator
+  text:
+    en: You want a table for the flat. Mrs Stojanovska helps you measure the room. Listen to the conversation; you don't need to understand it yet.
+    pt: Você quer uma mesa para o apartamento. A senhora Stojanovska ajuda a medir o quarto. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: vera
+    text: Сакате нова маса?
+    meaning:
+      en: You want a new table?
+      pt: A senhora quer uma mesa nova?
+  - speaker: protagonist
+    text: Да. Колку е широка собата?
+    meaning:
+      en: Yes. How wide is the room?
+      pt: Sim. Qual é a largura do quarto?
+  - speaker: vera
+    text: Три метри.
+    meaning:
+      en: Three metres.
+      pt: Três metros.
+  - speaker: protagonist
+    text: А колку е долга?
+    meaning:
+      en: And how long is it?
+      pt: E o comprimento?
+  - speaker: vera
+    text: Четири метри и пол.
+    meaning:
+      en: Four and a half metres.
+      pt: Quatro metros e meio.
+  - speaker: protagonist
+    text: Тркалезна маса или квадратна?
+    meaning:
+      en: A round table or a square one?
+      pt: Mesa redonda ou quadrada?
+  - speaker: vera
+    text: Тркалезна. Има повеќе место.
+    meaning:
+      en: Round. There's more space.
+      pt: Redonda. Sobra mais espaço.
+  - speaker: protagonist
+    text: Добро, тркалезна!
+    meaning:
+      en: All right, round!
+      pt: Está bem, redonda!
+- type: narrator
+  text:
+    en: '''Колку е …?'' asks how wide, how long, how much: ''Колку е широка собата?'''
+    pt: '''Колку е …?'' pergunta a largura, o comprimento, o preço: ''Колку е широка собата?'' (qual a largura do quarto?)'
+- type: prompt
+  ask:
+    en: Ask how wide the room is.
+    pt: Pergunte a largura do quarto.
+  answer:
+    speaker: protagonist
+    text: Колку е широка собата?
+  items:
+  - kolku-e
+  - siroka
+  - sobata
+- type: prompt
+  ask:
+    en: Ask how long it is.
+    pt: Pergunte o comprimento.
+  answer:
+    speaker: protagonist
+    text: Колку е долга?
+  items:
+  - kolku-e
+  - dolga
+- type: prompt
+  ask:
+    en: 'Say: three metres.'
+    pt: 'Diga: três metros.'
+  answer:
+    speaker: protagonist
+    text: Три метри.
+  items:
+  - tri
+  - metri
+- type: prompt
+  ask:
+    en: 'Say: four and a half metres.'
+    pt: 'Diga: quatro metros e meio.'
+  answer:
+    speaker: protagonist
+    text: Четири метри и пол.
+  items:
+  - cetiri
+  - metri
+  - pol
+- type: prompt
+  ask:
+    en: Say you want a new table.
+    pt: Diga que quer uma mesa nova.
+  answer:
+    speaker: protagonist
+    text: Сакам нова маса.
+  items:
+  - sakam
+  - nova
+  - masa
+- type: buildup
+  item: trkalezna
+  parts:
+  - -лезна
+  - тркалезна
+- type: prompt
+  ask:
+    en: 'Ask: a round table or a square one?'
+    pt: 'Pergunte: mesa redonda ou quadrada?'
+  answer:
+    speaker: protagonist
+    text: Тркалезна или квадратна?
+  items:
+  - trkalezna
+  - ili
+  - kvadratna
+- type: prompt
+  ask:
+    en: 'Say: there''s more space.'
+    pt: 'Diga: sobra mais espaço.'
+  answer:
+    speaker: protagonist
+    text: Има повеќе место.
+  items:
+  - povekje
+  - mesto
+- type: prompt
+  ask:
+    en: 'Decide: all right, round!'
+    pt: 'Decida: está bem, redonda!'
+  answer:
+    speaker: protagonist
+    text: Добро, тркалезна!
+  items:
+  - trkalezna
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'Os números de 1 a 4 você já sabe: еден, две, три, четири. O resto vem com o tempo — e nos preços.'
+- type: prompt
+  ask:
+    en: 'Once more: say “new (feminine)”.'
+    pt: 'Mais uma vez: diga “nova”.'
+  answer:
+    speaker: protagonist
+    text: нова
+  items:
+  - nova
+- type: prompt
+  ask:
+    en: 'Once more: say “wide (feminine)”.'
+    pt: 'Mais uma vez: diga “larga”.'
+  answer:
+    speaker: protagonist
+    text: широка
+  items:
+  - siroka
+- type: prompt
+  ask:
+    en: 'Once more: say “long (feminine)”.'
+    pt: 'Mais uma vez: diga “comprida”.'
+  answer:
+    speaker: protagonist
+    text: долга
+  items:
+  - dolga
+- type: prompt
+  ask:
+    en: 'Once more: say “three”.'
+    pt: 'Mais uma vez: diga “três”.'
+  answer:
+    speaker: protagonist
+    text: три
+  items:
+  - tri
+- type: prompt
+  ask:
+    en: 'Once more: say “four”.'
+    pt: 'Mais uma vez: diga “quatro”.'
+  answer:
+    speaker: protagonist
+    text: четири
+  items:
+  - cetiri
+- type: prompt
+  ask:
+    en: 'Once more: say “half”.'
+    pt: 'Mais uma vez: diga “meio”.'
+  answer:
+    speaker: protagonist
+    text: пол
+  items:
+  - pol
+- type: prompt
+  ask:
+    en: 'Once more: say “square (feminine)”.'
+    pt: 'Mais uma vez: diga “quadrada”.'
+  answer:
+    speaker: protagonist
+    text: квадратна
+  items:
+  - kvadratna
+- type: prompt
+  ask:
+    en: 'Once more: say “more”.'
+    pt: 'Mais uma vez: diga “mais”.'
+  answer:
+    speaker: protagonist
+    text: повеќе
+  items:
+  - povekje
+- type: prompt
+  ask:
+    en: 'Once more: say “space, place”.'
+    pt: 'Mais uma vez: diga “espaço, lugar”.'
+  answer:
+    speaker: protagonist
+    text: место
+  items:
+  - mesto
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Are you hungry? (to a man, informal) — and “hungry (a man) — and “What are you eating? / What will you have? — and “I eat — and “salad — and “meat — and “soup — and “I don''t eat”.'
+    pt: 'Diga: “Você está com fome? — e “com fome (homem) — e “O que você vai comer? — e “eu como — e “salada — e “carne — e “sopa — e “eu não como”.'
+  answer:
+    speaker: protagonist
+    text: Гладен ли си? … гладен … Што јадеш? … јадам … салата … месо … супа … не јадам
+  items:
+  - gladen-li
+  - gladen
+  - sto-jades
+  - jadam
+  - salata
+  - meso
+  - supa
+  - ne-jadam
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “vegetarian (a woman) — and “What are you drinking? (informal) — and “juice — and “of / from — and “Hi / hello (informal) — and “Are you…? (informal) — and “neighbour (a man) — and “dog”.'
+    pt: 'Diga: “vegetariana — e “O que você vai beber? — e “suco — e “de — e “Oi — e “Você é…? — e “vizinho — e “cachorro”.'
+  answer:
+    speaker: protagonist
+    text: вегетаријанка … Што пиеш? … сок … од … Здраво … Ти си…? … сосед … куче
+  items:
+  - vegetarijanka
+  - sto-pies
+  - sok
+  - od
+  - zdravo
+  - ti-si
+  - sosed
+  - kuce
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Don''t be afraid (informal) — and “doesn''t bite — and “What''s its / his name? — and “is called — and “Do you have…? (informal) — and “cat — and “Great — and “street”.'
+    pt: 'Diga: “Não tenha medo — e “não morde — e “Como se chama? — e “se chama — e “Você tem…? — e “gato — e “Legal / ótimo — e “rua”.'
+  answer:
+    speaker: protagonist
+    text: Не се плаши … не каса … Како се вика? … се вика … Имаш ли…? … мачка … Супер … улица
+  items:
+  - ne-se-plasi
+  - ne-kasa
+  - kako-se-vika
+  - se-vika
+  - imas-li
+  - macka
+  - super
+  - ulica
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Go (formal) — and “straight on — and “then — and “(to the) left — and “(to the) right — and “far — and “near — and “five”.'
+    pt: 'Diga: “Vá (formal) — e “em frente — e “depois / e então — e “à esquerda — e “à direita — e “longe — e “perto — e “cinco”.'
+  answer:
+    speaker: protagonist
+    text: Одете … право … па … лево … десно … далеку … близу … пет
+  items:
+  - odete
+  - pravo
+  - pa
+  - levo
+  - desno
+  - daleku
+  - blizu
+  - pet
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “minutes — and “on foot — and “the (bus) stop — and “next to / to”.'
+    pt: 'Diga: “minutos — e “a pé — e “o ponto (de ônibus) — e “ao lado de / até”.'
+  answer:
+    speaker: protagonist
+    text: минути … пешки … станицата … до
+  items:
+  - minuti
+  - peski
+  - stanicata
+  - do
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

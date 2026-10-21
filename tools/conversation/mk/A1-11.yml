@@ -1,0 +1,548 @@
+# UNIT mk A1-11 — written by AI (Claude) for Casus; expanded from src/A1-11.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-11
+level: A1
+number: 11
+protagonist: f
+title:
+  en: The office
+  pt: O escritório
+situation:
+  en: First day at the software company. Ana, the project manager, welcomes you.
+  pt: Primeiro dia na empresa de software. Ana, a gerente de projeto, recebe você.
+learn_lessons:
+- a1-pres-a
+- a1-pronouns
+culture: A handshake, not a kiss, at the first meeting
+new_items:
+- id: dobro-utro
+  text: Добро утро
+  meaning:
+    en: Good morning
+    pt: Bom dia
+- id: koleska
+  text: колешка
+  meaning:
+    en: colleague (a woman)
+    pt: colega (mulher)
+- id: programerka
+  text: програмерка
+  meaning:
+    en: programmer (a woman)
+    pt: programadora
+  rare: true
+- id: milo-mi-e
+  text: Мило ми е
+  meaning:
+    en: Nice to meet you
+    pt: Muito prazer
+- id: od-kade-ste
+  text: Од каде сте?
+  meaning:
+    en: Where are you from? (formal)
+    pt: De onde a senhora é?
+- id: grad
+  text: град
+  meaning:
+    en: city
+    pt: cidade
+- id: golem
+  text: голем
+  meaning:
+    en: big (masculine)
+    pt: grande
+- id: masa
+  text: маса
+  meaning:
+    en: desk, table
+    pt: mesa
+- id: mojata
+  text: мојата
+  meaning:
+    en: my (with a feminine word)
+    pt: a minha
+- id: vasiot
+  text: вашиот
+  meaning:
+    en: your (formal, with a masculine word)
+    pt: o seu
+- id: kompjuter
+  text: компјутер
+  meaning:
+    en: computer
+    pt: computador
+  rare: true
+- id: rabotam
+  text: работам
+  meaning:
+    en: I work
+    pt: eu trabalho
+reviews:
+- item: leb
+  from: A1-04
+- item: mleko
+  from: A1-04
+- item: voda
+  from: A1-04
+- item: imate-li
+  from: A1-04
+- item: imame
+  from: A1-04
+- item: eden
+  from: A1-04
+- item: dve
+  from: A1-04
+- item: ve-molam
+  from: A1-04
+- item: uste-nesto
+  from: A1-04
+- item: toa-e-se
+  from: A1-04
+- item: kolku-cini
+  from: A1-04
+- item: denari
+  from: A1-04
+- item: sto
+  from: A1-04
+- item: kese
+  from: A1-04
+- item: prijatno
+  from: A1-04
+- item: ulica
+  from: A1-08
+- item: odete
+  from: A1-08
+- item: pravo
+  from: A1-08
+- item: pa
+  from: A1-08
+- item: levo
+  from: A1-08
+- item: desno
+  from: A1-08
+- item: daleku
+  from: A1-08
+- item: blizu
+  from: A1-08
+- item: pet
+  from: A1-08
+- item: minuti
+  from: A1-08
+- item: peski
+  from: A1-08
+- item: stanicata
+  from: A1-08
+- item: do
+  from: A1-08
+- item: odi-li-do
+  from: A1-10
+- item: centar
+  from: A1-10
+- item: brojot
+  from: A1-10
+- item: vi-treba
+  from: A1-10
+- item: sedum
+  from: A1-10
+- item: cekajte
+  from: A1-10
+- item: posle
+  from: A1-10
+- item: karta
+  from: A1-10
+- item: edna
+  from: A1-10
+- item: cetirieset
+  from: A1-10
+- item: kade-da-slezam
+  from: A1-10
+- item: slednata
+  from: A1-10
+- item: od-brazil
+  from: A1-01
+- item: jas-sum
+  from: A1-01
+- item: tuka
+  from: A1-02
+steps:
+- type: narrator
+  text:
+    en: First day at the software company. Ana, the project manager, welcomes you. Listen to the conversation; you don't need to understand it yet.
+    pt: Primeiro dia na empresa de software. Ana, a gerente de projeto, recebe você. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: ana
+    text: Добро утро! Вие сте новата колешка?
+    meaning:
+      en: Good morning! Are you the new colleague?
+      pt: Bom dia! Você é a nova colega?
+  - speaker: protagonist
+    text: Да, добро утро. Јас сум програмерка.
+    meaning:
+      en: Yes, good morning. I'm a programmer.
+      pt: Sim, bom dia. Sou programadora.
+  - speaker: ana
+    text: Мило ми е. Јас сум Ана.
+    meaning:
+      en: Nice to meet you. I'm Ana.
+      pt: Muito prazer. Eu sou a Ana.
+  - speaker: protagonist
+    text: Мило ми е, Ана.
+    meaning:
+      en: Nice to meet you, Ana.
+      pt: Muito prazer, Ana.
+  - speaker: ana
+    text: Од каде сте?
+    meaning:
+      en: Where are you from?
+      pt: De onde você é?
+  - speaker: protagonist
+    text: Од Бразил, од Сао Паоло.
+    meaning:
+      en: From Brazil, from São Paulo.
+      pt: Do Brasil, de São Paulo.
+  - speaker: ana
+    text: Сао Паоло е многу голем град!
+    meaning:
+      en: São Paulo is a very big city!
+      pt: São Paulo é uma cidade muito grande!
+  - speaker: protagonist
+    text: Да. Ова е мојата маса?
+    meaning:
+      en: Yes. Is this my desk?
+      pt: Sim. Esta é a minha mesa?
+  - speaker: ana
+    text: Да, тука работите. Ова е вашиот компјутер.
+    meaning:
+      en: Yes, you work here. This is your computer.
+      pt: Sim, você trabalha aqui. Este é o seu computador.
+- type: narrator
+  text:
+    en: At work you meet people with a handshake and 'Мило ми е' — nice to meet you.
+    pt: No trabalho as pessoas se apresentam com um aperto de mão e 'Мило ми е' — muito prazer.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'Nada de beijinho no primeiro encontro de trabalho: aperto de mão. O beijo fica para os amigos.'
+- type: prompt
+  ask:
+    en: Greet her in the morning.
+    pt: Cumprimente-a de manhã.
+  answer:
+    speaker: protagonist
+    text: Добро утро!
+  items:
+  - dobro-utro
+- type: prompt
+  ask:
+    en: Say you're a programmer.
+    pt: Diga que é programadora.
+  answer:
+    speaker: protagonist
+    text: Јас сум програмерка.
+  items:
+  - jas-sum
+  - programerka
+- type: prompt
+  ask:
+    en: Say nice to meet you.
+    pt: Diga muito prazer.
+  answer:
+    speaker: protagonist
+    text: Мило ми е.
+  items:
+  - milo-mi-e
+- type: prompt
+  ask:
+    en: Ask her, politely, where she is from.
+    pt: Pergunte com educação de onde ela é.
+  answer:
+    speaker: protagonist
+    text: Од каде сте?
+  items:
+  - od-kade-ste
+- type: prompt
+  ask:
+    en: 'Answer: from Brazil, from São Paulo.'
+    pt: 'Responda: do Brasil, de São Paulo.'
+  answer:
+    speaker: protagonist
+    text: Од Бразил, од Сао Паоло.
+  items:
+  - od-brazil
+- type: prompt
+  ask:
+    en: 'Say: São Paulo is a very big city.'
+    pt: 'Diga: São Paulo é uma cidade muito grande.'
+  answer:
+    speaker: protagonist
+    text: Сао Паоло е многу голем град.
+  items:
+  - golem
+  - grad
+- type: narrator
+  text:
+    en: '''My'' agrees with the thing: ''мојата маса'' (my desk), ''вашиот компјутер'' (your computer).'
+    pt: '''Meu'' concorda com a coisa: ''мојата маса'' (a minha mesa), ''вашиот компјутер'' (o seu computador).'
+- type: prompt
+  ask:
+    en: 'Ask: is this my desk?'
+    pt: 'Pergunte: esta é a minha mesa?'
+  answer:
+    speaker: protagonist
+    text: Ова е мојата маса?
+  items:
+  - mojata
+  - masa
+- type: prompt
+  ask:
+    en: 'Say for her: this is your computer.'
+    pt: 'Diga por ela: este é o seu computador.'
+  answer:
+    speaker: protagonist
+    text: Ова е вашиот компјутер.
+  items:
+  - vasiot
+  - kompjuter
+- type: prompt
+  ask:
+    en: 'Say: I work here.'
+    pt: 'Diga: eu trabalho aqui.'
+  answer:
+    speaker: protagonist
+    text: Работам тука.
+  items:
+  - rabotam
+  - tuka
+- type: prompt
+  ask:
+    en: 'Introduce yourself to another colleague: I''m the new colleague.'
+    pt: 'Apresente-se a outra colega: eu sou a nova colega.'
+  answer:
+    speaker: protagonist
+    text: Јас сум новата колешка.
+  items:
+  - koleska
+- type: prompt
+  ask:
+    en: 'Once more: say “Good morning”.'
+    pt: 'Mais uma vez: diga “Bom dia”.'
+  answer:
+    speaker: protagonist
+    text: Добро утро
+  items:
+  - dobro-utro
+- type: prompt
+  ask:
+    en: 'Once more: say “colleague (a woman)”.'
+    pt: 'Mais uma vez: diga “colega (mulher)”.'
+  answer:
+    speaker: protagonist
+    text: колешка
+  items:
+  - koleska
+- type: prompt
+  ask:
+    en: 'Once more: say “programmer (a woman)”.'
+    pt: 'Mais uma vez: diga “programadora”.'
+  answer:
+    speaker: protagonist
+    text: програмерка
+  items:
+  - programerka
+- type: prompt
+  ask:
+    en: 'Once more: say “Nice to meet you”.'
+    pt: 'Mais uma vez: diga “Muito prazer”.'
+  answer:
+    speaker: protagonist
+    text: Мило ми е
+  items:
+  - milo-mi-e
+- type: prompt
+  ask:
+    en: 'Once more: say “Where are you from? (formal)”.'
+    pt: 'Mais uma vez: diga “De onde a senhora é?”.'
+  answer:
+    speaker: protagonist
+    text: Од каде сте?
+  items:
+  - od-kade-ste
+- type: prompt
+  ask:
+    en: 'Once more: say “city”.'
+    pt: 'Mais uma vez: diga “cidade”.'
+  answer:
+    speaker: protagonist
+    text: град
+  items:
+  - grad
+- type: prompt
+  ask:
+    en: 'Once more: say “big (masculine)”.'
+    pt: 'Mais uma vez: diga “grande”.'
+  answer:
+    speaker: protagonist
+    text: голем
+  items:
+  - golem
+- type: prompt
+  ask:
+    en: 'Once more: say “desk, table”.'
+    pt: 'Mais uma vez: diga “mesa”.'
+  answer:
+    speaker: protagonist
+    text: маса
+  items:
+  - masa
+- type: prompt
+  ask:
+    en: 'Once more: say “my (with a feminine word)”.'
+    pt: 'Mais uma vez: diga “a minha”.'
+  answer:
+    speaker: protagonist
+    text: мојата
+  items:
+  - mojata
+- type: prompt
+  ask:
+    en: 'Once more: say “your (formal, with a masculine word)”.'
+    pt: 'Mais uma vez: diga “o seu”.'
+  answer:
+    speaker: protagonist
+    text: вашиот
+  items:
+  - vasiot
+- type: prompt
+  ask:
+    en: 'Once more: say “computer”.'
+    pt: 'Mais uma vez: diga “computador”.'
+  answer:
+    speaker: protagonist
+    text: компјутер
+  items:
+  - kompjuter
+- type: prompt
+  ask:
+    en: 'Once more: say “I work”.'
+    pt: 'Mais uma vez: diga “eu trabalho”.'
+  answer:
+    speaker: protagonist
+    text: работам
+  items:
+  - rabotam
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Does it go to…? — and “the centre — and “(the) number — and “You need (formal) — and “seven — and “Wait (formal)”.'
+    pt: 'Diga: “Vai até…? — e “o centro — e “o número — e “O senhor precisa de — e “sete — e “Espere (formal)”.'
+  answer:
+    speaker: protagonist
+    text: Оди ли до…? … центар … бројот … Ви треба … седум … Чекајте
+  items:
+  - odi-li-do
+  - centar
+  - brojot
+  - vi-treba
+  - sedum
+  - cekajte
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “after, later — and “ticket — and “one (with a feminine word) — and “forty — and “Where should I get off? — and “the next (feminine)”.'
+    pt: 'Diga: “depois — e “passagem — e “uma — e “quarenta — e “Onde devo descer? — e “a próxima”.'
+  answer:
+    speaker: protagonist
+    text: после … карта … една … четириесет … Каде да слезам? … следната
+  items:
+  - posle
+  - karta
+  - edna
+  - cetirieset
+  - kade-da-slezam
+  - slednata
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “street — and “Go (formal) — and “straight on — and “then — and “(to the) left — and “(to the) right”.'
+    pt: 'Diga: “rua — e “Vá (formal) — e “em frente — e “depois / e então — e “à esquerda — e “à direita”.'
+  answer:
+    speaker: protagonist
+    text: улица … Одете … право … па … лево … десно
+  items:
+  - ulica
+  - odete
+  - pravo
+  - pa
+  - levo
+  - desno
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “far — and “near — and “five — and “minutes — and “on foot — and “the (bus) stop”.'
+    pt: 'Diga: “longe — e “perto — e “cinco — e “minutos — e “a pé — e “o ponto (de ônibus)”.'
+  answer:
+    speaker: protagonist
+    text: далеку … близу … пет … минути … пешки … станицата
+  items:
+  - daleku
+  - blizu
+  - pet
+  - minuti
+  - peski
+  - stanicata
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “next to / to — and “bread — and “milk — and “water — and “Do you have…? (formal) — and “We have”.'
+    pt: 'Diga: “ao lado de / até — e “pão — e “leite — e “água — e “O senhor tem…? (formal) — e “Temos”.'
+  answer:
+    speaker: protagonist
+    text: до … леб … млеко … вода … Имате ли…? … Имаме
+  items:
+  - do
+  - leb
+  - mleko
+  - voda
+  - imate-li
+  - imame
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “one (with a masculine word) — and “two (with feminine and neuter words) — and “please (formal) — and “Anything else? — and “That''s all — and “How much is it?”.'
+    pt: 'Diga: “um — e “duas / dois — e “por favor (formal) — e “Mais alguma coisa? — e “É só isso — e “Quanto custa?”.'
+  answer:
+    speaker: protagonist
+    text: еден … две … ве молам … Уште нешто? … Тоа е сè … Колку чини?
+  items:
+  - eden
+  - dve
+  - ve-molam
+  - uste-nesto
+  - toa-e-se
+  - kolku-cini
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “denars (the money) — and “a hundred — and “a (plastic) bag — and “Have a nice day! / Enjoy!”.'
+    pt: 'Diga: “dinares (a moeda) — e “cem — e “uma sacolinha — e “Bom dia! / Bom proveito!”.'
+  answer:
+    speaker: protagonist
+    text: денари … сто … кесе … Пријатно!
+  items:
+  - denari
+  - sto
+  - kese
+  - prijatno
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

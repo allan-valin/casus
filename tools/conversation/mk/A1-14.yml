@@ -1,0 +1,525 @@
+# UNIT mk A1-14 — written by AI (Claude) for Casus; expanded from src/A1-14.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-14
+level: A1
+number: 14
+protagonist: m
+title:
+  en: Lunch at work
+  pt: O almoço do trabalho
+situation:
+  en: Lunch break with Ana at a place near the office.
+  pt: Hora do almoço com a Ana num lugar perto do escritório.
+learn_lessons:
+- a1-adjectives
+culture: Lunch is the main meal
+new_items:
+- id: gladen-li
+  text: Гладен ли си?
+  meaning:
+    en: Are you hungry? (to a man, informal)
+    pt: Você está com fome?
+- id: gladen
+  text: гладен
+  meaning:
+    en: hungry (a man)
+    pt: com fome (homem)
+- id: sto-jades
+  text: Што јадеш?
+  meaning:
+    en: What are you eating? / What will you have?
+    pt: O que você vai comer?
+- id: jadam
+  text: јадам
+  meaning:
+    en: I eat
+    pt: eu como
+- id: salata
+  text: салата
+  meaning:
+    en: salad
+    pt: salada
+- id: meso
+  text: месо
+  meaning:
+    en: meat
+    pt: carne
+- id: supa
+  text: супа
+  meaning:
+    en: soup
+    pt: sopa
+  rare: true
+- id: ne-jadam
+  text: не јадам
+  meaning:
+    en: I don't eat
+    pt: eu não como
+- id: vegetarijanka
+  text: вегетаријанка
+  meaning:
+    en: vegetarian (a woman)
+    pt: vegetariana
+  rare: true
+- id: sto-pies
+  text: Што пиеш?
+  meaning:
+    en: What are you drinking? (informal)
+    pt: O que você vai beber?
+- id: sok
+  text: сок
+  meaning:
+    en: juice
+    pt: suco
+  rare: true
+- id: od
+  text: од
+  meaning:
+    en: of / from
+    pt: de
+reviews:
+- item: sednete
+  from: A1-07
+- item: kafe
+  from: A1-07
+- item: caj
+  from: A1-07
+- item: sakate-li
+  from: A1-07
+- item: sakam
+  from: A1-07
+- item: ne-sakam
+  from: A1-07
+- item: so
+  from: A1-07
+- item: bez
+  from: A1-07
+- item: secer
+  from: A1-07
+- item: turski
+  from: A1-07
+- item: vkusno
+  from: A1-07
+- item: brzam
+  from: A1-07
+- item: samo-edno
+  from: A1-07
+- item: vreme
+  from: A1-07
+- item: dobro-utro
+  from: A1-11
+- item: koleska
+  from: A1-11
+- item: programerka
+  from: A1-11
+- item: milo-mi-e
+  from: A1-11
+- item: od-kade-ste
+  from: A1-11
+- item: grad
+  from: A1-11
+- item: golem
+  from: A1-11
+- item: masa
+  from: A1-11
+- item: mojata
+  from: A1-11
+- item: vasiot
+  from: A1-11
+- item: kompjuter
+  from: A1-11
+- item: rabotam
+  from: A1-11
+- item: kako-ste
+  from: A1-13
+- item: a-vie
+  from: A1-13
+- item: ajde-na-ti
+  from: A1-13
+- item: moze
+  from: A1-13
+- item: sekako
+  from: A1-13
+- item: kako-si
+  from: A1-13
+- item: a-ti
+  from: A1-13
+- item: odlicno
+  from: A1-13
+- item: rucek
+  from: A1-13
+- item: se-gledame
+  from: A1-13
+- item: cao
+  from: A1-13
+- item: prijatno
+  from: A1-04
+steps:
+- type: narrator
+  text:
+    en: Lunch break with Ana at a place near the office. Listen to the conversation; you don't need to understand it yet.
+    pt: Hora do almoço com a Ana num lugar perto do escritório. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: ana
+    text: Гладен ли си?
+    meaning:
+      en: Are you hungry?
+      pt: Está com fome?
+  - speaker: protagonist
+    text: Да, многу сум гладен!
+    meaning:
+      en: Yes, I'm very hungry!
+      pt: Sim, estou com muita fome!
+  - speaker: ana
+    text: Што јадеш? Јас јадам салата.
+    meaning:
+      en: What are you having? I'm having a salad.
+      pt: O que você vai comer? Eu vou de salada.
+  - speaker: protagonist
+    text: Јас јадам месо и супа.
+    meaning:
+      en: I'll have meat and soup.
+      pt: Eu vou de carne e sopa.
+  - speaker: ana
+    text: Јас не јадам месо.
+    meaning:
+      en: I don't eat meat.
+      pt: Eu não como carne.
+  - speaker: protagonist
+    text: Вегетаријанка си?
+    meaning:
+      en: Are you vegetarian?
+      pt: Você é vegetariana?
+  - speaker: ana
+    text: Да. Што пиеш?
+    meaning:
+      en: Yes. What are you drinking?
+      pt: Sou. O que você vai beber?
+  - speaker: protagonist
+    text: Сок од портокал.
+    meaning:
+      en: Orange juice.
+      pt: Suco de laranja.
+  - speaker: ana
+    text: Пријатно!
+    meaning:
+      en: Enjoy your meal!
+      pt: Bom apetite!
+- type: narrator
+  text:
+    en: '''Гладен'' agrees with the person: a man is ''гладен'', a woman ''гладна''.'
+    pt: '''Гладен'' concorda com a pessoa: um homem está ''гладен'', uma mulher ''гладна''.'
+- type: prompt
+  ask:
+    en: Ask a man if he's hungry.
+    pt: Pergunte a um homem se ele está com fome.
+  answer:
+    speaker: protagonist
+    text: Гладен ли си?
+  items:
+  - gladen-li
+- type: prompt
+  ask:
+    en: Say you're very hungry.
+    pt: Diga que está com muita fome.
+  answer:
+    speaker: protagonist
+    text: Многу сум гладен.
+  items:
+  - gladen
+- type: prompt
+  ask:
+    en: Ask her what she's having.
+    pt: Pergunte o que ela vai comer.
+  answer:
+    speaker: protagonist
+    text: Што јадеш?
+  items:
+  - sto-jades
+- type: prompt
+  ask:
+    en: 'Say: I''m having a salad.'
+    pt: 'Diga: eu vou de salada.'
+  answer:
+    speaker: protagonist
+    text: Јадам салата.
+  items:
+  - jadam
+  - salata
+- type: prompt
+  ask:
+    en: 'Say: meat and soup.'
+    pt: 'Diga: carne e sopa.'
+  answer:
+    speaker: protagonist
+    text: Месо и супа.
+  items:
+  - meso
+  - supa
+- type: prompt
+  ask:
+    en: 'Say she doesn''t eat meat — for her: I don''t eat meat.'
+    pt: 'Diga por ela: eu não como carne.'
+  answer:
+    speaker: protagonist
+    text: Не јадам месо.
+  items:
+  - ne-jadam
+  - meso
+- type: prompt
+  ask:
+    en: 'Ask: are you vegetarian?'
+    pt: 'Pergunte: você é vegetariana?'
+  answer:
+    speaker: protagonist
+    text: Вегетаријанка си?
+  items:
+  - vegetarijanka
+- type: prompt
+  ask:
+    en: Ask what she's drinking.
+    pt: Pergunte o que ela vai beber.
+  answer:
+    speaker: protagonist
+    text: Што пиеш?
+  items:
+  - sto-pies
+- type: narrator
+  text:
+    en: 'Juice ''of'' a fruit: ''сок од портокал'' — orange juice.'
+    pt: 'Suco ''de'' uma fruta: ''сок од портокал'' — suco de laranja.'
+- type: prompt
+  ask:
+    en: Order orange juice.
+    pt: Peça suco de laranja.
+  answer:
+    speaker: protagonist
+    text: Сок од портокал, ве молам.
+  items:
+  - sok
+  - od
+- type: prompt
+  ask:
+    en: Wish her a good meal.
+    pt: Deseje bom apetite.
+  answer:
+    speaker: protagonist
+    text: Пријатно!
+  items:
+  - prijatno
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: O almoço aqui é a refeição principal, como no Brasil — mas em casa costuma ser mais tarde, lá pelas duas.
+- type: prompt
+  ask:
+    en: 'Once more: say “Are you hungry? (to a man, informal)”.'
+    pt: 'Mais uma vez: diga “Você está com fome?”.'
+  answer:
+    speaker: protagonist
+    text: Гладен ли си?
+  items:
+  - gladen-li
+- type: prompt
+  ask:
+    en: 'Once more: say “hungry (a man)”.'
+    pt: 'Mais uma vez: diga “com fome (homem)”.'
+  answer:
+    speaker: protagonist
+    text: гладен
+  items:
+  - gladen
+- type: prompt
+  ask:
+    en: 'Once more: say “What are you eating? / What will you have?”.'
+    pt: 'Mais uma vez: diga “O que você vai comer?”.'
+  answer:
+    speaker: protagonist
+    text: Што јадеш?
+  items:
+  - sto-jades
+- type: prompt
+  ask:
+    en: 'Once more: say “I eat”.'
+    pt: 'Mais uma vez: diga “eu como”.'
+  answer:
+    speaker: protagonist
+    text: јадам
+  items:
+  - jadam
+- type: prompt
+  ask:
+    en: 'Once more: say “salad”.'
+    pt: 'Mais uma vez: diga “salada”.'
+  answer:
+    speaker: protagonist
+    text: салата
+  items:
+  - salata
+- type: prompt
+  ask:
+    en: 'Once more: say “soup”.'
+    pt: 'Mais uma vez: diga “sopa”.'
+  answer:
+    speaker: protagonist
+    text: супа
+  items:
+  - supa
+- type: prompt
+  ask:
+    en: 'Once more: say “I don''t eat”.'
+    pt: 'Mais uma vez: diga “eu não como”.'
+  answer:
+    speaker: protagonist
+    text: не јадам
+  items:
+  - ne-jadam
+- type: prompt
+  ask:
+    en: 'Once more: say “vegetarian (a woman)”.'
+    pt: 'Mais uma vez: diga “vegetariana”.'
+  answer:
+    speaker: protagonist
+    text: вегетаријанка
+  items:
+  - vegetarijanka
+- type: prompt
+  ask:
+    en: 'Once more: say “What are you drinking? (informal)”.'
+    pt: 'Mais uma vez: diga “O que você vai beber?”.'
+  answer:
+    speaker: protagonist
+    text: Што пиеш?
+  items:
+  - sto-pies
+- type: prompt
+  ask:
+    en: 'Once more: say “juice”.'
+    pt: 'Mais uma vez: diga “suco”.'
+  answer:
+    speaker: protagonist
+    text: сок
+  items:
+  - sok
+- type: prompt
+  ask:
+    en: 'Once more: say “of / from”.'
+    pt: 'Mais uma vez: diga “de”.'
+  answer:
+    speaker: protagonist
+    text: од
+  items:
+  - od
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “How are you? (formal) — and “And you? (formal) — and “Let''s say ти (be informal) — and “Sure / it''s possible — and “Of course — and “How are you? (informal)”.'
+    pt: 'Diga: “Como vai a senhora? — e “E a senhora? — e “Vamos nos tratar por ти — e “Pode ser — e “Claro — e “Como você está?”.'
+  answer:
+    speaker: protagonist
+    text: Како сте? … А вие? … Ајде на ти … Може … Секако … Како си?
+  items:
+  - kako-ste
+  - a-vie
+  - ajde-na-ti
+  - moze
+  - sekako
+  - kako-si
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “And you? (informal) — and “Excellent — and “lunch — and “See you — and “Bye (informal) — and “Good morning”.'
+    pt: 'Diga: “E você? — e “Ótimo — e “almoço — e “A gente se vê — e “Tchau — e “Bom dia”.'
+  answer:
+    speaker: protagonist
+    text: А ти? … Одлично … ручек … Се гледаме … Чао … Добро утро
+  items:
+  - a-ti
+  - odlicno
+  - rucek
+  - se-gledame
+  - cao
+  - dobro-utro
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “colleague (a woman) — and “programmer (a woman) — and “Nice to meet you — and “Where are you from? (formal) — and “city — and “big (masculine)”.'
+    pt: 'Diga: “colega (mulher) — e “programadora — e “Muito prazer — e “De onde a senhora é? — e “cidade — e “grande”.'
+  answer:
+    speaker: protagonist
+    text: колешка … програмерка … Мило ми е … Од каде сте? … град … голем
+  items:
+  - koleska
+  - programerka
+  - milo-mi-e
+  - od-kade-ste
+  - grad
+  - golem
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “desk, table — and “my (with a feminine word) — and “your (formal, with a masculine word) — and “computer — and “I work — and “Sit down (formal)”.'
+    pt: 'Diga: “mesa — e “a minha — e “o seu — e “computador — e “eu trabalho — e “Sente-se (formal)”.'
+  answer:
+    speaker: protagonist
+    text: маса … мојата … вашиот … компјутер … работам … Седнете
+  items:
+  - masa
+  - mojata
+  - vasiot
+  - kompjuter
+  - rabotam
+  - sednete
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “coffee — and “tea — and “Would you like…? (formal) — and “I want / I like — and “I don''t want — and “with”.'
+    pt: 'Diga: “café — e “chá — e “A senhora quer…? (formal) — e “eu quero / eu gosto — e “eu não quero — e “com”.'
+  answer:
+    speaker: protagonist
+    text: кафе … чај … Сакате ли…? … сакам … не сакам … со
+  items:
+  - kafe
+  - caj
+  - sakate-li
+  - sakam
+  - ne-sakam
+  - so
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “without — and “sugar — and “Turkish coffee — and “tasty — and “I''m in a hurry — and “just one”.'
+    pt: 'Diga: “sem — e “açúcar — e “café turco — e “gostoso — e “Estou com pressa — e “só um”.'
+  answer:
+    speaker: protagonist
+    text: без … шеќер … турско кафе … вкусно … Брзам … само едно
+  items:
+  - bez
+  - secer
+  - turski
+  - vkusno
+  - brzam
+  - samo-edno
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “time”.'
+    pt: 'Diga: “tempo”.'
+  answer:
+    speaker: protagonist
+    text: време
+  items:
+  - vreme
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

@@ -147,11 +147,11 @@ reviews:
   from: A1-05
 - item: izlez
   from: A1-05
-- item: mnogu
-  from: A1-02
 - item: tamu
   from: A1-02
 - item: tuka
+  from: A1-02
+- item: mnogu
   from: A1-02
 steps:
 - type: narrator
@@ -412,137 +412,83 @@ steps:
 - type: prompt
   review: true
   ask:
-    en: 'Say: “What does it say? — and “it says (written)”.'
-    pt: 'Diga: “O que está escrito? — e “está escrito”.'
+    en: 'Say: “What does it say? — and “it says (written) — and “closed — and “open — and “pharmacy”.'
+    pt: 'Diga: “O que está escrito? — e “está escrito — e “fechado — e “aberto — e “farmácia”.'
   answer:
     speaker: protagonist
-    text: Што пишува? … пишува
+    text: Што пишува? … пишува … затворено … отворено … аптека
   items:
   - sto-pisuva
   - pisuva
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “closed — and “open”.'
-    pt: 'Diga: “fechado — e “aberto”.'
-  answer:
-    speaker: protagonist
-    text: затворено … отворено
-  items:
   - zatvoreno
   - otvoreno
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “pharmacy — and “Russian”.'
-    pt: 'Diga: “farmácia — e “russo”.'
-  answer:
-    speaker: protagonist
-    text: аптека … руски
-  items:
   - apteka
-  - ruski
 - type: prompt
   review: true
   ask:
-    en: 'Say: “Macedonian — and “Cyrillic”.'
-    pt: 'Diga: “macedônio — e “cirílico”.'
+    en: 'Say: “Russian — and “Macedonian — and “Cyrillic — and “I read — and “slowly”.'
+    pt: 'Diga: “russo — e “macedônio — e “cirílico — e “eu leio — e “devagar”.'
   answer:
     speaker: protagonist
-    text: македонски … кирилица
+    text: руски … македонски … кирилица … читам … бавно
   items:
+  - ruski
   - makedonski
   - kirilica
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “I read — and “slowly”.'
-    pt: 'Diga: “eu leio — e “devagar”.'
-  answer:
-    speaker: protagonist
-    text: читам … бавно
-  items:
   - citam
   - bavno
 - type: prompt
   review: true
   ask:
-    en: 'Say: “No problem — and “slowly, take it easy”.'
-    pt: 'Diga: “Sem problema — e “com calma, devagar”.'
+    en: 'Say: “No problem — and “slowly, take it easy — and “entrance — and “exit — and “What''s wrong? (formal)”.'
+    pt: 'Diga: “Sem problema — e “com calma, devagar — e “entrada — e “saída — e “O que a senhora tem? (formal)”.'
   answer:
     speaker: protagonist
-    text: Нема проблем … полека
+    text: Нема проблем … полека … влез … излез … Што ви е?
   items:
   - nema-problem
   - poleka
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “entrance — and “exit”.'
-    pt: 'Diga: “entrada — e “saída”.'
-  answer:
-    speaker: protagonist
-    text: влез … излез
-  items:
   - vlez
   - izlez
+  - sto-vi-e
 - type: prompt
   review: true
   ask:
-    en: 'Say: “What''s wrong? (formal) — and “… hurts (me) — and “the arm / the hand”.'
-    pt: 'Diga: “O que a senhora tem? (formal) — e “Me dói… — e “o braço / a mão”.'
+    en: 'Say: “… hurts (me) — and “the arm / the hand — and “the head — and “the leg / the foot — and “the eye”.'
+    pt: 'Diga: “Me dói… — e “o braço / a mão — e “a cabeça — e “a perna / o pé — e “o olho”.'
   answer:
     speaker: protagonist
-    text: Што ви е? … Ме боли … раката
+    text: Ме боли … раката … главата … ногата … окото
   items:
-  - sto-vi-e
   - me-boli
   - rakata
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “the head — and “the leg / the foot — and “the eye”.'
-    pt: 'Diga: “a cabeça — e “a perna / o pé — e “o olho”.'
-  answer:
-    speaker: protagonist
-    text: главата … ногата … окото
-  items:
   - glavata
   - nogata
   - okoto
 - type: prompt
   review: true
   ask:
-    en: 'Say: “the bag — and “heavy (with a feminine word) — and “Can I help you? (formal)”.'
-    pt: 'Diga: “a sacola — e “pesada (com palavra feminina) — e “Posso ajudar a senhora? (formal)”.'
+    en: 'Say: “the bag — and “heavy (with a feminine word) — and “Can I help you? (formal) — and “and / also — and “doctor”.'
+    pt: 'Diga: “a sacola — e “pesada (com palavra feminina) — e “Posso ajudar a senhora? (formal) — e “e / também — e “médico”.'
   answer:
     speaker: protagonist
-    text: торбата … тешка … Да ви помогнам?
+    text: торбата … тешка … Да ви помогнам? … и … лекар
   items:
   - torbata
   - teska
   - da-vi-pomognam
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “and / also — and “doctor — and “It''s nothing serious”.'
-    pt: 'Diga: “e / também — e “médico — e “Não é nada grave”.'
-  answer:
-    speaker: protagonist
-    text: и … лекар … Не е страшно
-  items:
   - i
   - lekar
-  - ne-e-strasno
 - type: prompt
   review: true
   ask:
-    en: 'Say: “Rest (formal) — and “I''m fine”.'
-    pt: 'Diga: “Descanse (formal) — e “Estou bem”.'
+    en: 'Say: “It''s nothing serious — and “Rest (formal) — and “I''m fine”.'
+    pt: 'Diga: “Não é nada grave — e “Descanse (formal) — e “Estou bem”.'
   answer:
     speaker: protagonist
-    text: Одморете се … Добро сум
+    text: Не е страшно … Одморете се … Добро сум
   items:
+  - ne-e-strasno
   - odmorete-se
   - dobro-sum
 - type: narrator
