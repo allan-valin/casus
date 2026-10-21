@@ -1,0 +1,28 @@
+id: C1
+topics:
+
+- title: {en: Talking about ideas, pt: Falando de ideias}
+  lessons:
+  - id: he-abstract
+    title: חירות, שוויון, אחריות
+    meaning: {en: "abstract nouns and academic Hebrew", pt: "substantivos abstratos e hebraico acadêmico"}
+    intro:
+      en: |
+        **-ות** makes abstracts (**חירות** freedom, **אחריות** responsibility, **מציאות** reality); **-יות** from adjectives (**אנושיות** humanity); international words take Hebrew endings (**דמוקרטיה, טכנולוגיה, ביולוגיה**). Academic prose likes the construct and verbal nouns: **שמירת הסביבה** (protecting the environment).
+      pt: |
+        **-ות** forma abstratos (**חירות** liberdade, **אחריות** responsabilidade, **מציאות** realidade); **-יות** a partir de adjetivos (**אנושיות** humanidade); palavras internacionais recebem terminações hebraicas (**דמוקרטיה, טכנולוגיה, ביולוגיה**). A prosa acadêmica gosta do construto e dos nomes verbais: **שמירת הסביבה** (a proteção do meio ambiente).
+    examples:
+    - ["החירות היא ערך חשוב.", "Freedom is an important value.", "A liberdade é um valor importante.", "החירות"]
+    match: {seq: [{pos: noun, re: "(ות|יות|יה)$"}]}
+  - id: he-numbers-formal
+    title: מאה, אלף, שנת 1948
+    meaning: {en: "large numbers, dates and ordinals", pt: "números grandes, datas e ordinais"}
+    intro:
+      en: |
+        **מאה** (100), **מאתיים** (200), **אלף** (1,000), **אלפיים** (2,000), **מיליון**. Ordinals up to ten: **ראשון, שני, שלישי… עשירי**; beyond, the cardinal: **הקומה העשרים**. Years: **בשנת 1948** (in the year 1948); the Hebrew calendar writes them in letters: **תשפ"ז**.
+      pt: |
+        **מאה** (100), **מאתיים** (200), **אלף** (1.000), **אלפיים** (2.000), **מיליון**. Ordinais até dez: **ראשון, שני, שלישי… עשירי**; depois, o cardinal: **הקומה העשרים** (o vigésimo andar). Anos: **בשנת 1948** (no ano de 1948); o calendário hebraico os escreve em letras: **תשפ"ז**.
+    examples:
+    - ["המדינה קמה בשנת 1948.", "The state was founded in 1948.", "O Estado foi fundado em 1948.", "בשנת"]
+    match: {seq: [{word: [מאה, מאתיים, אלף, אלפיים, מיליון, שנת, ראשון, שני, שלישי, עשירי]}]}
+    pool: [מאה, אלף, מיליון, ראשון, שני]

@@ -1,0 +1,98 @@
+id: A2
+topics:
+
+- title: {en: Past and future, pt: Passado e futuro}
+  lessons:
+  - id: he-past
+    title: כתבתי, כתבת, כתב, כתבה
+    meaning: {en: "the past tense: suffixes", pt: "o passado: sufixos"}
+    intro:
+      en: |
+        The past adds endings for person, number and gender: **כתבתי** (I wrote), **כתבת** (you, m.), **כתבת** (you, f.), **כתב** (he), **כתבה** (she), **כתבנו** (we), **כתבתם / כתבתן** (you pl.), **כתבו** (they). The pronoun is often left out: **כתבתי מכתב**. *Was* is **הייתי, היית, היה, הייתה…**.
+      pt: |
+        O passado acrescenta terminações de pessoa, número e gênero: **כתבתי** (escrevi), **כתבת** (você, m.), **כתבת** (você, f.), **כתב** (ele), **כתבה** (ela), **כתבנו** (nós), **כתבתם / כתבתן** (vocês), **כתבו** (eles). O pronome muitas vezes some: **כתבתי מכתב** (escrevi uma carta). *Era/estava* é **הייתי, היית, היה, הייתה…**.
+    examples:
+    - ["נתתי לחבר שלי מתנה.", "I gave my friend a present.", "Dei um presente ao meu amigo.", "נתתי"]
+    - ["אתמול הייתי בבית.", "Yesterday I was at home.", "Ontem eu estava em casa.", "הייתי"]
+    match: {seq: [{pos: verb, tense: past}]}
+  - id: he-future
+    title: אכתוב, תכתוב, יכתוב
+    meaning: {en: "the future tense: prefixes", pt: "o futuro: prefixos"}
+    intro:
+      en: |
+        The future adds prefixes (and some endings): **אכתוב** (I'll write), **תכתוב** (you, m. / she), **תכתבי** (you, f.), **יכתוב** (he), **נכתוב** (we), **תכתבו** (you pl.), **יכתבו** (they). It also serves as a polite command: **תכתוב לי** (write to me). Near future: **אני הולך לכתוב**.
+      pt: |
+        O futuro acrescenta prefixos (e algumas terminações): **אכתוב** (escreverei), **תכתוב** (você, m. / ela), **תכתבי** (você, f.), **יכתוב** (ele), **נכתוב** (nós), **תכתבו** (vocês), **יכתבו** (eles). Também serve de ordem educada: **תכתוב לי** (me escreva). Futuro próximo: **אני הולך לכתוב** (vou escrever).
+    examples:
+    - ["מחר אני אסע לחיפה.", "Tomorrow I'll go to Haifa.", "Amanhã vou para Haifa.", "אסע"]
+    match: {seq: [{pos: verb, tense: fut}]}
+  - id: he-imperative
+    title: כתוב! שבי! בואו!
+    meaning: {en: "the imperative", pt: "o imperativo"}
+    intro:
+      en: |
+        From the future without its prefix: **תכתוב → כתוב!**, **תשבי → שבי!** (sit, to a woman), **תבואו → בואו!** (come, plural). Negative commands use **אל** + future: **אל תדאג** (don't worry). In speech the plain future is softer: **תשב, בבקשה**.
+      pt: |
+        Vem do futuro sem o prefixo: **תכתוב → כתוב!**, **תשבי → שבי!** (sente-se, a uma mulher), **תבואו → בואו!** (venham). Ordens negativas usam **אל** + futuro: **אל תדאג** (não se preocupe). Na fala o futuro simples é mais suave: **תשב, בבקשה** (sente-se, por favor).
+    examples:
+    - ["בואו נלך הביתה!", "Let's go home!", "Vamos para casa!", "בואו"]
+    match:
+    - {seq: [{pos: verb, mood: imp}]}
+    - {seq: [{word: [אל]}, {pos: verb, tense: fut}], gap: 0}
+    pool: [אל, בוא, בואי, בואו, בבקשה]
+
+- title: {en: Adjectives and the construct, pt: Adjetivos e o estado construto}
+  lessons:
+  - id: he-adj
+    title: ילד טוב, ילדה טובה
+    meaning: {en: "adjectives follow and agree", pt: "os adjetivos vêm depois e concordam"}
+    intro:
+      en: |
+        Adjectives come after the noun and agree in gender, number and definiteness: **ילד טוב, ילדה טובה, ילדים טובים, ילדות טובות; הילד הטוב.** Comparison: **יותר / פחות … מ-** (**גדול יותר מ…**), superlative **הכי** (**הכי טוב**) or **ביותר** in writing.
+      pt: |
+        Os adjetivos vêm depois do nome e concordam em gênero, número e definição: **ילד טוב, ילדה טובה, ילדים טובים, ילדות טובות; הילד הטוב.** Comparação: **יותר / פחות … מ-** (**גדול יותר מ…** maior que), superlativo **הכי** (**הכי טוב** o melhor) ou **ביותר** na escrita.
+    examples:
+    - ["זה ספר טוב מאוד.", "This is a very good book.", "Este é um livro muito bom.", "טוב"]
+    - ["הוא הכי גבוה בכיתה.", "He's the tallest in the class.", "Ele é o mais alto da classe.", "הכי"]
+    match: {seq: [{pos: noun}, {pos: adj}], same: [number], gap: 0}
+    pool: [יותר, פחות, הכי, מאוד]
+  - id: he-smikhut
+    title: בית ספר, בית הספר
+    meaning: {en: "the construct state: noun + noun", pt: "o estado construto: nome + nome"}
+    intro:
+      en: |
+        Two nouns in a row make one: the first, in the *construct* form, means *X of*: **בית ספר** (school, "house of book"), **עוגת שוקולד** (chocolate cake; **עוגה → עוגת**), **ילדי השכונה** (the children of the neighbourhood; **ילדים → ילדי**). The article goes on the second noun only: **בית הספר** (the school).
+      pt: |
+        Dois nomes seguidos formam um só: o primeiro, na forma *construta*, quer dizer *X de*: **בית ספר** (escola, "casa de livro"), **עוגת שוקולד** (bolo de chocolate; **עוגה → עוגת**), **ילדי השכונה** (as crianças do bairro; **ילדים → ילדי**). O artigo vai só no segundo nome: **בית הספר** (a escola).
+    examples:
+    - ["הילדים הולכים לבית הספר.", "The children go to school.", "As crianças vão à escola.", "בית"]
+    match: {seq: [{pos: noun}, {word: [ה]}, {pos: noun}], gap: 0}
+
+- title: {en: Prepositions with endings, pt: Preposições com terminações}
+  lessons:
+  - id: he-prep-suffix
+    title: לי, איתי, אצלי, עליו
+    meaning: {en: "prepositions take pronoun endings", pt: "as preposições levam terminações pronominais"}
+    intro:
+      en: |
+        A preposition cannot stand before a pronoun; it takes an ending: **ל → לי, לך, לו, לה, לנו, לכם, להם** (to me, to you…), **עם → איתי, איתך, איתו** (with me…), **אצל → אצלי** (at my place), **על → עליי, עליו**, **של → שלי**. **תן לי** (give me), **בוא איתי** (come with me).
+      pt: |
+        A preposição não fica antes de um pronome; recebe uma terminação: **ל → לי, לך, לו, לה, לנו, לכם, להם** (para mim, para você…), **עם → איתי, איתך, איתו** (comigo…), **אצל → אצלי** (na minha casa), **על → עליי, עליו**, **של → שלי**. **תן לי** (me dá), **בוא איתי** (vem comigo).
+    examples:
+    - ["תבוא איתי?", "Will you come with me?", "Você vem comigo?", "איתי"]
+    match: {seq: [{word: [לי, לך, לו, לה, לנו, לכם, להם, איתי, איתך, איתו, איתה, אצלי, אצלך, אצלו, עליי, עליו, עליה, ממני, ממך, ממנו]}]}
+    pool: [לי, לך, לו, לה, איתי, אצלי, עליו]
+
+- title: {en: Verb patterns, pt: Padrões verbais}
+  lessons:
+  - id: he-binyanim
+    title: כתב, דיבר, הסביר, התלבש, נכנס
+    meaning: {en: "the seven binyanim", pt: "os sete binyanim"}
+    intro:
+      en: |
+        The same root goes into seven patterns (*binyanim*), each with its own conjugation and a typical meaning: **פעל** (plain: **כתב** wrote), **פיעל** (intensive: **דיבר** spoke), **הפעיל** (causative: **הסביר** explained), **התפעל** (reflexive: **התלבש** got dressed), **נפעל** (passive of pa'al: **נכתב** was written), and the passives **פועל, הופעל**. Learn each verb with its binyan.
+      pt: |
+        A mesma raiz entra em sete padrões (*binyanim*), cada um com sua conjugação e um sentido típico: **פעל** (simples: **כתב** escreveu), **פיעל** (intensivo: **דיבר** falou), **הפעיל** (causativo: **הסביר** explicou), **התפעל** (reflexivo: **התלבש** vestiu-se), **נפעל** (passivo do pa'al: **נכתב** foi escrito), e os passivos **פועל, הופעל**. Aprenda cada verbo com seu binyan.
+    examples:
+    - ["המורה הסביר את השיעור.", "The teacher explained the lesson.", "O professor explicou a lição.", "הסביר"]
+    match: {seq: [{re: "^(ה|הת|נ|מת|מ)", pos: verb}]}

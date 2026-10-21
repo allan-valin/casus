@@ -1,0 +1,40 @@
+id: C2
+topics:
+
+- title: {en: Older layers and style, pt: Camadas antigas e estilo}
+  lessons:
+  - id: he-biblical
+    title: ויאמר, ויהי, בראשית ברא
+    meaning: {en: "Biblical Hebrew: the vav that turns tense", pt: "hebraico bíblico: o vav que inverte o tempo"}
+    intro:
+      en: |
+        Biblical narrative tells the past with **ו** + future form (*vav-consecutive*): **ויאמר** (and he said), **ויהי** (and it was), **וירא** (and he saw). Word order is verb first; spelling is shorter (**היתה, בקר, חשך** for *הייתה, בוקר, חושך*). The reader reads them as future forms with **ו** — the narrative sense is past.
+      pt: |
+        A narrativa bíblica conta o passado com **ו** + forma de futuro (*vav consecutivo*): **ויאמר** (e disse), **ויהי** (e foi), **וירא** (e viu). A ordem começa pelo verbo; a grafia é mais curta (**היתה, בקר, חשך** por *הייתה, בוקר, חושך*). O leitor os lê como futuros com **ו** — o sentido narrativo é passado.
+    examples:
+    - ["ויאמר אלהים יהי אור ויהי אור.", "And God said, Let there be light: and there was light.", "E disse Deus: Haja luz. E houve luz.", "ויאמר"]
+    match: {seq: [{word: [ו]}, {pos: verb, tense: fut}], gap: 0}
+  - id: he-literature
+    title: ביאליק, עגנון, עמיחי
+    meaning: {en: "reading modern Hebrew literature", pt: "lendo a literatura hebraica moderna"}
+    intro:
+      en: |
+        Hayim Nahman Bialik (1873–1934) wrote the poems every Israeli knows (*El ha-tsipor*, 1891), in a Hebrew rich in biblical and rabbinic words; S. Y. Agnon (Nobel 1966) mixes rabbinic style into modern prose; Yehuda Amichai (1924–2000) writes in plain spoken Hebrew. Poetry is often pointed, prose not.
+      pt: |
+        Haim Nahman Bialik (1873–1934) escreveu os poemas que todo israelense conhece (*El ha-tsipor*, 1891), num hebraico rico em palavras bíblicas e rabínicas; S. Y. Agnon (Nobel de 1966) mistura o estilo rabínico à prosa moderna; Yehuda Amichai (1924–2000) escreve em hebraico falado simples. A poesia muitas vezes vem com niqqud, a prosa não.
+    examples:
+    - ["שלום רב שובך, ציפורה נחמדת.", "Peace be upon your return, lovely bird.", "Paz ao teu regresso, passarinha querida.", "ציפורה"]
+    match: {seq: [{word: [שובך, ציפורה, נחמדת, ציפור, ציפורי]}]}
+    pool: [ציפור, שלום, שיר, משורר]
+  - id: he-slang
+    title: סבבה, יאללה, אחלה
+    meaning: {en: "everyday speech and loanwords", pt: "fala do dia a dia e empréstimos"}
+    intro:
+      en: |
+        Spoken Israeli Hebrew borrows freely: from Arabic **יאללה** (come on), **אחלה** (great), **סבבה** (fine, cool), **וואלה** (really?); from Yiddish **שלומיאל** (bungler); from English **אוקיי, ביי**. **אחי** (bro) and **נשמה** (dear, "soul") are friendly address. The reader knows those Wiktionary lists.
+      pt: |
+        O hebraico falado em Israel empresta à vontade: do árabe **יאללה** (vamos!), **אחלה** (ótimo), **סבבה** (beleza, tranquilo), **וואלה** (sério?); do iídiche **שלומיאל** (desastrado); do inglês **אוקיי, ביי**. **אחי** (mano) e **נשמה** (querido, "alma") são formas de tratamento amigáveis. O leitor conhece as que o Wikcionário lista.
+    examples:
+    - ["יאללה, בואו נלך!", "Come on, let's go!", "Vamos lá, vamos embora!", "יאללה"]
+    match: {seq: [{word: [סבבה, יאללה, אחלה, וואלה, נשמה, אחי]}]}
+    pool: [סבבה, יאללה, אחלה, וואלה]

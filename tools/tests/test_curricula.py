@@ -189,3 +189,15 @@ def test_macedonian_overlays_have_no_latin_lookalikes_inside_words():
         for w in re.findall(r"[Ѐ-ӿ]+[a-zA-Z]+[Ѐ-ӿ]*|[a-zA-Z]+[Ѐ-ӿ]+", f.read_text(encoding="utf-8")):
             bad.append(f"{f.parent.parent.name}/{f.name}: {w}")
     assert not bad, bad
+
+
+def test_every_gap_names_a_word_of_its_rule():
+    """a gap index beyond the rule's sequence crashed the exercise pass (Lithuanian, 2026-10-21)"""
+    root = Path(__file__).resolve().parents[1] / "curricula"
+    for f in sorted(root.glob("*/[ABC][12].yml")):
+        for t in (yaml.safe_load(f.read_text(encoding="utf-8")) or {}).get("topics") or []:
+            for l in t["lessons"]:
+                rules = l.get("match") or []
+                for m in rules if isinstance(rules, list) else [rules]:
+                    if "gap" in m:
+                        assert m["gap"] < len(m["seq"]), (f.name, l["id"])

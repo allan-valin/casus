@@ -16,7 +16,7 @@ topics:
     - ["Parašiau laišką mamai.", "I wrote a letter to mum.", "Escrevi uma carta para a mamãe.", "mamai"]
     match:
     - {seq: [{word: [man, tau, jam, jai, mums, jums, jiems, joms]}, {word: [patinka, patiko, reikia, reikėjo, šalta, karšta, liūdna, gera, gaila]}], gap: 0}
-    - {seq: [{pos: verb}, {pos: noun, case: dat}], near: 3, gap: 2}
+    - {seq: [{pos: verb}, {pos: noun, case: dat}], near: 3, gap: 1}
     pool: [man, tau, jam, jai, mums, jums, jiems]
   - id: lt-ins
     title: su draugu, autobusu, peiliu
@@ -119,7 +119,7 @@ topics:
     examples:
     - ["Knyga guli ant stalo.", "The book is lying on the table.", "O livro está em cima da mesa.", "ant"]
     - ["Grįžau iš darbo.", "I came back from work.", "Voltei do trabalho.", "iš"]
-    match: {seq: [{pos: prep}, {pos: noun}], gap: 1}
+    match: {seq: [{pos: prep}, {pos: noun}], gap: 0}
     pool: [į, iš, ant, prie, su, po, be, per, apie, pas]
   - id: lt-reflexive
     title: praustis, prausiuosi, nusiprausti

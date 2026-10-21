@@ -358,7 +358,7 @@ FOREIGN_WIKIBOOKS = {
     "en": ["pt:Inglês", "es:Inglés"], "it": ["en:Italian", "it:Italiano L2", "de:Italienisch", "fr:Enseignement de l'italien", "nl:Italiaans"],
     "is": ["en:Icelandic", "de:Isländisch", "pt:Islandês"], "uk": ["en:Ukrainian", "uk:Українська мова", "ru:Украинский язык", "pl:Ukraiński"],
     "pl": ["en:Polish", "de:Polnisch", "fr:Polonais", "nl:Pools"], "mk": ["en:Macedonian"], "cs": ["cs:Čeština", "en:Czech"], "hu": ["en:Hungarian"],
-    "el": ["pt:Grego moderno"], "lt": ["en:Lithuanian", "de:Litauisch"],
+    "el": ["pt:Grego moderno"], "lt": ["en:Lithuanian", "de:Litauisch"], "he": ["en:Hebrew", "de:Hebräisch", "pt:Hebraico"],
     "fi": ["en:Finnish", "fi:Suomen kieli", "pt:Finlandês", "es:Finés"],
     "grc": ["en:Ancient Greek", "fr:Grec ancien", "it:Greco antico", "nl:Oudgrieks"],
     "la": ["en:Latin", "de:Latein", "it:Latino", "fr:Latin", "pt:Latim", "tr:Latince", "fi:Latinan kieli"],
@@ -461,10 +461,10 @@ def reference_level(index):
     return "Reference"
 
 
-EXPAND = {"mk", "ar", "la", "grc", "de", "ru", "ko", "fi", "el", "sa", "cs", "pl", "tr", "hu", "is", "pt", "fr", "es", "en", "it", "nl", "uk", "lt"}
+EXPAND = {"mk", "ar", "la", "grc", "de", "ru", "ko", "fi", "el", "sa", "cs", "pl", "tr", "hu", "is", "pt", "fr", "es", "en", "it", "nl", "uk", "lt", "he"}
 CASE_LANGS = {"la", "grc", "de", "ru", "fi", "el", "sa", "cs", "pl", "tr", "hu", "is", "uk", "lt"}
 T3 = {"mk": "mkd", "ar": "ara", "la": "lat", "grc": "grc", "de": "deu", "ru": "rus", "ko": "kor", "fi": "fin", "el": "ell", "sa": "san",
-      "cs": "ces", "pl": "pol", "tr": "tur", "hu": "hun", "is": "isl", "pt": "por", "fr": "fra", "es": "spa", "en": "eng", "it": "ita", "nl": "nld", "uk": "ukr", "lt": "lit"}
+      "cs": "ces", "pl": "pol", "tr": "tur", "hu": "hun", "is": "isl", "pt": "por", "fr": "fra", "es": "spa", "en": "eng", "it": "ita", "nl": "nld", "uk": "ukr", "lt": "lit", "he": "heb"}
 
 
 def sentences_of(code: str) -> list:
