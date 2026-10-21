@@ -163,3 +163,17 @@ def test_bible_needs_both_cultures(bible):
     b = copy.deepcopy(bible)
     b["culture"]["narrator"] = []
     assert any("narrator" in e for e in check_bible(b))
+
+
+def test_audience_steps_and_tracks_need_only_their_languages(bible, units):
+    """Allan, 2026-10-21: neutral English plus comparisons for one audience; units for one track only."""
+    unit = copy.deepcopy(units[0])
+    one = bible["narrator_languages"][0]
+    unit["steps"].insert(0, {"type": "narrator", "for": [one], "text": {one: "only for one audience"}})
+    errors, _ = check_unit(unit, bible)
+    assert not [e for e in errors if "narrator text lacks" in e]
+    unit["tracks"] = [one]
+    for i in unit["new_items"]:
+        i["meaning"] = {one: "x"}
+    errors, _ = check_unit(unit, bible)
+    assert not [e for e in errors if "lacks" in e]

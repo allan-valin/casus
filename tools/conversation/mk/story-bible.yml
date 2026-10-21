@@ -2,7 +2,7 @@
 # phonemes, pitched for women); units follow in this folder. Guide: docs/conversation/GUIDE.en.md.
 
 language: mk
-narrator_languages: [pt]
+narrator_languages: [en, pt]          # en: neutral (Allan 2026-10-21, for international offices); pt: with Brazil comparisons
 country: North Macedonia
 standard: >-
   Standard Macedonian (the Skopje-based literary norm of the grammars: Lunt, Friedman, Конески). Fixed
@@ -13,6 +13,7 @@ voices:
   # Bulgarian Piper voice (CC0), fed Macedonian phonemes from espeak-ng's mk rules — a sister-language voice, as
   # decided. Samples to judge: spikes/mk-voice-2026-10-21/*.wav. The female voices are the same model shifted up;
   # if Allan finds them unusable, female characters fall back to espeak-ng mk (GPL-3, robotic) or stay male-only.
+  - {id: nar-en, role: narrator, lang: en, tts: "piper:en_US-lessac-medium"}         # neutral narrator (international offices)
   - {id: nar-pt, role: narrator, lang: pt, tts: "piper:pt_BR-cadu-medium"}            # CC0
   - {id: mk-m, role: character, lang: mk, gender: m, tts: "piper:bg_BG-dimitar-medium+mk-phonemes"}  # CC0
   - {id: mk-m2, role: character, lang: mk, gender: m, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 0.9}
@@ -87,6 +88,11 @@ culture:
     - {topic: Easter, note: "Велигден on the Orthodox date; red eggs, egg-tapping; greeting Христос воскресе! — Вистина воскресе!", source: "general knowledge — VERIFY"}
     - {topic: alphabet, note: "Everything is in Cyrillic; signs, menus and bus lines have to be read on day one.", source: observation}
   narrator:
+    # neutral English (Allan, 2026-10-21): the curious note without "back home"
+    - {lang: en, topic: greetings, note: "Strangers and older people get Вие and a handshake; kisses on the cheek are for friends and family."}
+    - {lang: en, topic: coffee, note: "A visit means coffee, and coffee means an hour or two of talk; refusing it seems cold."}
+    - {lang: en, topic: draught, note: "Промаја, the draught between two open windows, is believed to make you ill."}
+    - {lang: en, topic: meals, note: "Lunch is the main meal, around two; hosts serve too much and insist."}
     - {lang: pt, topic: greetings, note: "Brazilians greet acquaintances with one kiss (São Paulo) or two (Rio); men shake hands and hug. Strangers are addressed with você; o senhor / a senhora only with the elderly or in very formal service."}
     - {lang: pt, topic: meals, note: "Lunch around 12:00–13:00 is the main meal; rice and beans; dinner around 20:00."}
     - {lang: pt, topic: shoes, note: "Many Brazilian homes keep shoes on indoors; asking guests to take them off is less usual."}

@@ -56,14 +56,17 @@
 
   const narratorLang = $derived(course ? (course.narrator_languages.includes(ui.lang) ? ui.lang : course.narrator_languages[0]) : ui.lang);
   const nar = (x) => (x == null ? '' : typeof x === 'string' ? x : (x[narratorLang] ?? Object.values(x)[0] ?? ''));
-  const levels = $derived(course ? [...new Set(course.units.map((u) => u.level))] : []);
+  // a unit or a narrator step may be for some audiences only (tracks / for: narrator languages); the rest is neutral
+  const forMe = (x) => !x || x.includes(narratorLang);
+  const shownUnits = $derived(course ? course.units.filter((u) => forMe(u.tracks)) : []);
+  const levels = $derived([...new Set(shownUnits.map((u) => u.level))]);
   const items = $derived(unit ? Object.fromEntries((unit.new_items ?? []).concat(course.items ?? []).map((i) => [i.id, i])) : {});
   const speaker = (id) => (id === 'protagonist' ? t('talk.you') : course?.cast?.[id]?.name ?? id);
   const pitches = $derived(voicePitches(course));
   const firstDialogue = $derived(unit?.steps.find((s) => s.type === 'dialogue' && !s.again) ?? null);
   const linesOf = (s) => (s.again ? firstDialogue?.lines ?? [] : s.lines ?? []);
 
-  function open(u) { unit = u; shown = {}; current = null; practising = null; say(t('talk.opened', { unit: nar(u.title) })); }
+  function open(u) { unit = { ...u, steps: u.steps.filter((x) => forMe(x.for)) }; shown = {}; current = null; practising = null; say(t('talk.opened', { unit: nar(u.title) })); }
   function back() { unit = null; }
   function toggle(key) { shown = { ...shown, [key]: !shown[key] }; }
 
@@ -196,7 +199,7 @@
     {#each levels as level}
       <h3 class="level">{level}</h3>
       <ul class="units">
-        {#each course.units.filter((u) => u.level === level) as u (u.id)}
+        {#each shownUnits.filter((u) => u.level === level) as u (u.id)}
           <li><button class="unit-row" class:done={done.includes(u.id)} data-unit={u.id} onclick={() => open(u)}>
             <span class="u-id">{u.id}</span> <span class="u-title">{nar(u.title)}</span>{#if done.includes(u.id)} <span class="tick">✓</span>{/if}
           </button></li>

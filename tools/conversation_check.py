@@ -71,7 +71,8 @@ def check_unit(u, b):
             errors.append(f"{uid}: missing {key}")
     if errors:
         return errors, warnings
-    langs = b["narrator_languages"]
+    # a unit for some audiences only (tracks) needs only their narrator languages (Allan, 2026-10-21)
+    langs = [l for l in b["narrator_languages"] if not u.get("tracks") or l in u["tracks"]]
     speakers = {c["id"] for c in b["cast"]} | {"protagonist"}
     if u["level"] not in LEVELS:
         errors.append(f"{uid}: level {u['level']} is not a CEFR level")
@@ -98,7 +99,8 @@ def check_unit(u, b):
             errors.append(f"{where}: unknown step type {t}")
             continue
         if t == "narrator":
-            for l in _missing_langs(s.get("text"), langs):
+            # a comparison with one audience's home (for: [pt]) needs only that language
+            for l in _missing_langs(s.get("text"), [l for l in langs if not s.get("for") or l in s["for"]]):
                 errors.append(f"{where}: narrator text lacks {l}")
         elif t == "dialogue":
             if s.get("again"):

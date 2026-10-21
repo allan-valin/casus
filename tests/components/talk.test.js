@@ -270,6 +270,21 @@ describe('Conversation practice tab (Allan, 2026-10-20/21: narrator in the inter
     delete globalThis.navigator.mediaSession;
   });
 
+  it('narrator steps for other audiences and units of other tracks are left out (Allan 2026-10-21: neutral English)', async () => {
+    setLang('en');
+    const course = { ...COURSE, units: [
+      { ...COURSE.units[0], steps: [{ type: 'narrator', text: { en: 'Listen.', pt: 'Escute.' } }, { type: 'narrator', for: ['pt'], text: { pt: 'No Brasil é diferente.' } }, { type: 'selfcheck' }] },
+      { ...COURSE.units[1], id: 'A1-02', tracks: ['pt'] },
+    ] };
+    const { p } = props({ loadTalk: async () => course });
+    const { container } = render(Talk, p);
+    await flush();
+    expect([...container.querySelectorAll('.unit-row')].map((r) => r.dataset.unit)).toEqual(['A1-01']);
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    expect(container.querySelectorAll('.step[data-type="narrator"]').length).toBe(1);
+  });
+
   it('the self-check marks the unit done, kept in the browser and shown in the list', async () => {
     const { p } = props();
     const { container } = render(Talk, p);
