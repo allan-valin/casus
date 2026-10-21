@@ -140,6 +140,13 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
 - Sample passages: sentences written for Casus; Hayim Nahman Bialik, *El ha-tsipor* (1891), public domain (text from
   he.wikisource); Genesis 1:1–5, public domain.
 
+## Serbo-Croatian — CC BY-SA
+
+- Dictionary, forms, IPA, phrases: the English Wiktionary via wiktextract / kaikki.org, CC BY-SA 4.0. Frequency:
+  Hermit Dave, *FrequencyWords* (OpenSubtitles 2018, Croatian list), CC BY-SA 4.0.
+- Sample passages: sentences written for Casus; *Hasanaginica* (folk ballad, public domain) in the modern ijekavian
+  adaptation of hr.wikisource (CC BY-SA); Wikipedia, *Srpskohrvatski jezik*, CC BY-SA 4.0.
+
 ## Learn tab
 
 - Japanese grammar lessons: **JLPT Grammar Enhanced** (github.com/maitodesu/jlpt-grammar-enhanced, commit a4254e0),

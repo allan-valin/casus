@@ -150,6 +150,10 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
         # उवाच: perfect of वच्); kept only when the tags give a reading
         form_of_tags = set(senses[0].get("tags") or []) if form_of and pos not in ("prep", "conj", "particle", "adv") else None
         gender = next((v for k, v in GENDERS.items() if any(k in (s.get("tags") or []) for s in senses)), None)
+        if gender is None and cfg.code in ("lt", "he", "sh") and pos in ("noun",):
+            # these dumps put the gender on the canonical form (kȕća: canonical, feminine), not on the senses
+            canon = next((set(f.get("tags") or []) for f in d.get("forms") or [] if "canonical" in (f.get("tags") or [])), set())
+            gender = _one(canon, GENDERS)
         # intransitive: some sense says so and none says transitive (chegar "to arrive")
         intransitive = pos == "verb" and any("intransitive" in (x.get("tags") or []) for x in senses) \
             and not any("transitive" in (x.get("tags") or []) for x in senses)
@@ -394,5 +398,11 @@ def _strip_he(s: str) -> str:
     return strip_he(s)
 
 
+def _strip_sh(s: str) -> str:
+    from casus_build.sh import strip_sh
+    return strip_sh(s)
+
+
+CONFIGS["sh"] = Config("sh", ["nom", "gen", "dat", "acc", "voc", "loc", "ins"], SLAVIC_TAGS, key=_strip_sh)
 CONFIGS["he"] = Config("he", [], {}, caseless=True, key=_strip_he, clean=lambda t: t.replace("\u05BE", ""))
 CONFIGS["lt"] = Config("lt", ["nom", "gen", "dat", "acc", "ins", "loc", "voc"], SLAVIC_TAGS, key=_strip_lt)
