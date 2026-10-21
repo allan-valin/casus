@@ -1,0 +1,36 @@
+id: C2-07
+protagonist: f
+title: ["Letter to the ministry", "Carta ao ministério"]
+situation: ["The bus line to your neighbourhood was cut. You write to the minister on behalf of the residents.", "A linha de ônibus do seu bairro foi cortada. Você escreve ao ministro em nome dos moradores."]
+learn: [c2-register]
+culture: —
+items:
+  - [pocituvan-ministre, "Почитуван министре", "Dear Minister", "Prezado Senhor Ministro"]
+  - [vo-ime-na, "во име на", "on behalf of", "em nome de"]
+  - [zitelite, "жителите", "the residents", "os moradores"]
+  - [se-obrakjame, "се обраќаме", "we are writing to you, we address", "nos dirigimos"]
+  - [linijata, "линијата", "the (bus) line", "a linha"]
+  - [ukinata, "укината", "abolished, cut", "extinta / cortada", {rare: true}]
+  - [posledicite, "последиците", "the consequences", "as consequências"]
+  - [ve-molime-da-prezemete, "ве молиме да преземете мерки", "we ask you to take measures", "pedimos que tome providências", {rare: true}]
+  - [vo-iscekuvanje, "во очекување на ваш одговор", "awaiting your reply", "no aguardo de sua resposta"]
+  - [so-pocit-vas, "со почит", "respectfully", "respeitosamente"]
+dialogue:
+  - [profesorka, "Како ќе почнете?", "How will you begin?", "Como a senhora vai começar?"]
+  - [protagonist, "„Почитуван министре, во име на жителите на Карпош ви се обраќаме…“", "'Dear Minister, on behalf of the residents of Karpoš we are writing to you…'", "'Prezado Senhor Ministro, em nome dos moradores de Karpoš nos dirigimos ao senhor…'"]
+  - [profesorka, "Одлично. Понатаму?", "Excellent. Next?", "Excelente. E depois?"]
+  - [protagonist, "„…поради укинувањето на линијата 7. Последиците се сериозни за постарите жители.“", "'…regarding the cutting of line 7. The consequences are serious for older residents.'", "'…em razão da extinção da linha 7. As consequências são graves para os moradores idosos.'"]
+  - [profesorka, "А барањето?", "And the request?", "E o pedido?"]
+  - [protagonist, "„Ве молиме да преземете мерки линијата да се врати.“", "'We ask you to take measures to restore the line.'", "'Pedimos que tome providências para que a linha volte.'"]
+  - [profesorka, "Завршеток?", "Closing?", "Encerramento?"]
+  - [protagonist, "„Во очекување на ваш одговор, со почит.“ И сто потписи.", "'Awaiting your reply, respectfully.' And a hundred signatures.", "'No aguardo de sua resposta, respeitosamente.' E cem assinaturas."]
+teach:
+  - ask: ["Open the letter: Dear Minister.", "Abra a carta: Prezado Senhor Ministro.", "Почитуван министре,", pocituvan-ministre]
+  - ask: ["Write: on behalf of the residents.", "Escreva: em nome dos moradores.", "Во име на жителите.", vo-ime-na, zitelite]
+  - ask: ["Write: we are writing to you.", "Escreva: nos dirigimos ao senhor.", "Ви се обраќаме.", se-obrakjame]
+  - ask: ["Write: line 7 was cut.", "Escreva: a linha 7 foi extinta.", "Линијата 7 е укината.", linijata, ukinata]
+  - ask: ["Write: the consequences are serious.", "Escreva: as consequências são graves.", "Последиците се сериозни.", posledicite]
+  - ask: ["Write: we ask you to take measures.", "Escreva: pedimos que tome providências.", "Ве молиме да преземете мерки.", ve-molime-da-prezemete]
+  - ask: ["Close: awaiting your reply.", "Encerre: no aguardo de sua resposta.", "Во очекување на ваш одговор.", vo-iscekuvanje]
+  - ask: ["Sign off: respectfully.", "Assine: respeitosamente.", "Со почит.", so-pocit-vas]
+  - note: ["Official letters follow a fixed order: address with the calling form (министре), who writes (во име на), the problem, the request (ве молиме да…), the closing (во очекување на ваш одговор). Signatures give weight.", "Cartas oficiais seguem ordem fixa: tratamento no vocativo (министре), quem escreve (во име на), o problema, o pedido (ве молиме да…), o fecho (во очекување на ваш одговор). Assinaturas dão peso."]

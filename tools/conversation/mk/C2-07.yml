@@ -1,0 +1,575 @@
+# UNIT mk C2-07 — written by AI (Claude) for Casus; expanded from src/C2-07.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-07
+level: C2
+number: 7
+protagonist: f
+title:
+  en: Letter to the ministry
+  pt: Carta ao ministério
+situation:
+  en: The bus line to your neighbourhood was cut. You write to the minister on behalf of the residents.
+  pt: A linha de ônibus do seu bairro foi cortada. Você escreve ao ministro em nome dos moradores.
+learn_lessons:
+- c2-register
+culture: —
+new_items:
+- id: pocituvan-ministre
+  text: Почитуван министре
+  meaning:
+    en: Dear Minister
+    pt: Prezado Senhor Ministro
+- id: vo-ime-na
+  text: во име на
+  meaning:
+    en: on behalf of
+    pt: em nome de
+- id: zitelite
+  text: жителите
+  meaning:
+    en: the residents
+    pt: os moradores
+- id: se-obrakjame
+  text: се обраќаме
+  meaning:
+    en: we are writing to you, we address
+    pt: nos dirigimos
+- id: linijata
+  text: линијата
+  meaning:
+    en: the (bus) line
+    pt: a linha
+- id: ukinata
+  text: укината
+  meaning:
+    en: abolished, cut
+    pt: extinta / cortada
+  rare: true
+- id: posledicite
+  text: последиците
+  meaning:
+    en: the consequences
+    pt: as consequências
+- id: ve-molime-da-prezemete
+  text: ве молиме да преземете мерки
+  meaning:
+    en: we ask you to take measures
+    pt: pedimos que tome providências
+  rare: true
+- id: vo-iscekuvanje
+  text: во очекување на ваш одговор
+  meaning:
+    en: awaiting your reply
+    pt: no aguardo de sua resposta
+- id: so-pocit-vas
+  text: со почит
+  meaning:
+    en: respectfully
+    pt: respeitosamente
+reviews:
+- item: igras-li
+  from: A1-30
+- item: kosarka
+  from: A1-30
+- item: igram
+  from: A1-30
+- item: fudbal
+  from: A1-30
+- item: ajde
+  from: A1-30
+- item: trcaj
+  from: A1-30
+- item: skokni
+  from: A1-30
+- item: visok
+  from: A1-30
+- item: brz
+  from: A1-30
+- item: silen
+  from: A1-30
+- item: pivo
+  from: A1-30
+- item: kazete-mi
+  from: B2-04
+- item: silni-strani
+  from: B2-04
+- item: slabi-strani
+  from: B2-04
+- item: odgovoren
+  from: B2-04
+- item: rabotam-vo-tim
+  from: B2-04
+- item: ponekogas
+  from: B2-04
+- item: premnogu-detali
+  from: B2-04
+- item: zosto-bas-nas
+  from: B2-04
+- item: da-rastam
+  from: B2-04
+- item: ostanam
+  from: B2-04
+- item: diskusija
+  from: C1-06
+- item: argument
+  from: C1-06
+- item: prepraskajte
+  from: C1-06
+- item: bil-otvoren
+  from: C1-06
+- item: gradonacalnikot
+  from: C1-06
+- item: izjavil
+  from: C1-06
+- item: kostal
+  from: C1-06
+- item: nie-ne-sme-bile
+  from: C1-06
+- item: zatoa-l-formata
+  from: C1-06
+- item: tocno-taka
+  from: C1-06
+- item: gradinka
+  from: C1-22
+- item: nema-mesto
+  from: C1-22
+- item: listata
+  from: C1-22
+- item: stoite
+  from: C1-22
+- item: ama-zarem
+  from: C1-22
+- item: baba-i-dedo
+  from: C1-22
+- item: ke-go-cuvame
+  from: C1-22
+- item: ni-trgaat
+  from: C1-22
+- item: pa-ete
+  from: C1-22
+- item: besplatno-cuvanje
+  from: C1-22
+- item: se-sekavas
+  from: C1-30
+- item: prviot-den
+  from: C1-30
+- item: ne-znaese-nisto
+  from: C1-30
+- item: sega-zboruvas
+  from: C1-30
+- item: kako-domasen
+  from: C1-30
+- item: vreme-leta
+  from: C1-30
+- item: za-uste-mnogu
+  from: C1-30
+- item: blagodaram-za-se
+  from: C1-30
+- item: od-srce
+  from: C1-30
+- item: srekjen-rodenden-brate
+  from: C1-30
+- item: bi-mozele-da
+  from: C2-04
+- item: razmislite
+  from: C2-04
+- item: pazarna-vrednost
+  from: C2-04
+- item: ponuda-od-drugade
+  from: C2-04
+- item: ne-se-zakanuvam
+  from: C2-04
+- item: pretpocituvam-da-ostanam
+  from: C2-04
+- item: uslov
+  from: C2-04
+- item: kompromisno
+  from: C2-04
+- item: od-noemvri
+  from: C2-04
+- item: se-dogovorivme
+  from: C2-04
+- item: komicar
+  from: C2-06
+- item: prv-red
+  from: C2-06
+- item: sme-bile
+  from: C2-06
+- item: poznati-po
+  from: C2-06
+- item: smeata
+  from: C2-06
+- item: se-navredi
+  from: C2-06
+- item: na-svoja-smetka
+  from: C2-06
+- item: pogodi
+  from: C2-06
+- item: samoironija
+  from: C2-06
+- item: aplauz
+  from: C2-06
+steps:
+- type: narrator
+  text:
+    en: The bus line to your neighbourhood was cut. You write to the minister on behalf of the residents. Listen to the conversation; you don't need to understand it yet.
+    pt: A linha de ônibus do seu bairro foi cortada. Você escreve ao ministro em nome dos moradores. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: profesorka
+    text: Како ќе почнете?
+    meaning:
+      en: How will you begin?
+      pt: Como a senhora vai começar?
+  - speaker: protagonist
+    text: „Почитуван министре, во име на жителите на Карпош ви се обраќаме…“
+    meaning:
+      en: '''Dear Minister, on behalf of the residents of Karpoš we are writing to you…'''
+      pt: '''Prezado Senhor Ministro, em nome dos moradores de Karpoš nos dirigimos ao senhor…'''
+  - speaker: profesorka
+    text: Одлично. Понатаму?
+    meaning:
+      en: Excellent. Next?
+      pt: Excelente. E depois?
+  - speaker: protagonist
+    text: „…поради укинувањето на линијата 7. Последиците се сериозни за постарите жители.“
+    meaning:
+      en: '''…regarding the cutting of line 7. The consequences are serious for older residents.'''
+      pt: '''…em razão da extinção da linha 7. As consequências são graves para os moradores idosos.'''
+  - speaker: profesorka
+    text: А барањето?
+    meaning:
+      en: And the request?
+      pt: E o pedido?
+  - speaker: protagonist
+    text: „Ве молиме да преземете мерки линијата да се врати.“
+    meaning:
+      en: '''We ask you to take measures to restore the line.'''
+      pt: '''Pedimos que tome providências para que a linha volte.'''
+  - speaker: profesorka
+    text: Завршеток?
+    meaning:
+      en: Closing?
+      pt: Encerramento?
+  - speaker: protagonist
+    text: „Во очекување на ваш одговор, со почит.“ И сто потписи.
+    meaning:
+      en: '''Awaiting your reply, respectfully.'' And a hundred signatures.'
+      pt: '''No aguardo de sua resposta, respeitosamente.'' E cem assinaturas.'
+- type: prompt
+  ask:
+    en: 'Open the letter: Dear Minister.'
+    pt: 'Abra a carta: Prezado Senhor Ministro.'
+  answer:
+    speaker: protagonist
+    text: Почитуван министре,
+  items:
+  - pocituvan-ministre
+- type: prompt
+  ask:
+    en: 'Write: on behalf of the residents.'
+    pt: 'Escreva: em nome dos moradores.'
+  answer:
+    speaker: protagonist
+    text: Во име на жителите.
+  items:
+  - vo-ime-na
+  - zitelite
+- type: prompt
+  ask:
+    en: 'Write: we are writing to you.'
+    pt: 'Escreva: nos dirigimos ao senhor.'
+  answer:
+    speaker: protagonist
+    text: Ви се обраќаме.
+  items:
+  - se-obrakjame
+- type: prompt
+  ask:
+    en: 'Write: line 7 was cut.'
+    pt: 'Escreva: a linha 7 foi extinta.'
+  answer:
+    speaker: protagonist
+    text: Линијата 7 е укината.
+  items:
+  - linijata
+  - ukinata
+- type: prompt
+  ask:
+    en: 'Write: the consequences are serious.'
+    pt: 'Escreva: as consequências são graves.'
+  answer:
+    speaker: protagonist
+    text: Последиците се сериозни.
+  items:
+  - posledicite
+- type: prompt
+  ask:
+    en: 'Write: we ask you to take measures.'
+    pt: 'Escreva: pedimos que tome providências.'
+  answer:
+    speaker: protagonist
+    text: Ве молиме да преземете мерки.
+  items:
+  - ve-molime-da-prezemete
+- type: prompt
+  ask:
+    en: 'Close: awaiting your reply.'
+    pt: 'Encerre: no aguardo de sua resposta.'
+  answer:
+    speaker: protagonist
+    text: Во очекување на ваш одговор.
+  items:
+  - vo-iscekuvanje
+- type: prompt
+  ask:
+    en: 'Sign off: respectfully.'
+    pt: 'Assine: respeitosamente.'
+  answer:
+    speaker: protagonist
+    text: Со почит.
+  items:
+  - so-pocit-vas
+- type: narrator
+  text:
+    en: 'Official letters follow a fixed order: address with the calling form (министре), who writes (во име на), the problem, the request (ве молиме да…), the closing (во очекување на ваш одговор). Signatures
+      give weight.'
+    pt: 'Cartas oficiais seguem ordem fixa: tratamento no vocativo (министре), quem escreve (во име на), o problema, o pedido (ве молиме да…), o fecho (во очекување на ваш одговор). Assinaturas dão peso.'
+- type: prompt
+  ask:
+    en: 'Once more: say “Dear Minister”.'
+    pt: 'Mais uma vez: diga “Prezado Senhor Ministro”.'
+  answer:
+    speaker: protagonist
+    text: Почитуван министре
+  items:
+  - pocituvan-ministre
+- type: prompt
+  ask:
+    en: 'Once more: say “on behalf of”.'
+    pt: 'Mais uma vez: diga “em nome de”.'
+  answer:
+    speaker: protagonist
+    text: во име на
+  items:
+  - vo-ime-na
+- type: prompt
+  ask:
+    en: 'Once more: say “the residents”.'
+    pt: 'Mais uma vez: diga “os moradores”.'
+  answer:
+    speaker: protagonist
+    text: жителите
+  items:
+  - zitelite
+- type: prompt
+  ask:
+    en: 'Once more: say “we are writing to you, we address”.'
+    pt: 'Mais uma vez: diga “nos dirigimos”.'
+  answer:
+    speaker: protagonist
+    text: се обраќаме
+  items:
+  - se-obrakjame
+- type: prompt
+  ask:
+    en: 'Once more: say “the (bus) line”.'
+    pt: 'Mais uma vez: diga “a linha”.'
+  answer:
+    speaker: protagonist
+    text: линијата
+  items:
+  - linijata
+- type: prompt
+  ask:
+    en: 'Once more: say “abolished, cut”.'
+    pt: 'Mais uma vez: diga “extinta / cortada”.'
+  answer:
+    speaker: protagonist
+    text: укината
+  items:
+  - ukinata
+- type: prompt
+  ask:
+    en: 'Once more: say “the consequences”.'
+    pt: 'Mais uma vez: diga “as consequências”.'
+  answer:
+    speaker: protagonist
+    text: последиците
+  items:
+  - posledicite
+- type: prompt
+  ask:
+    en: 'Once more: say “we ask you to take measures”.'
+    pt: 'Mais uma vez: diga “pedimos que tome providências”.'
+  answer:
+    speaker: protagonist
+    text: ве молиме да преземете мерки
+  items:
+  - ve-molime-da-prezemete
+- type: prompt
+  ask:
+    en: 'Once more: say “awaiting your reply”.'
+    pt: 'Mais uma vez: diga “no aguardo de sua resposta”.'
+  answer:
+    speaker: protagonist
+    text: во очекување на ваш одговор
+  items:
+  - vo-iscekuvanje
+- type: prompt
+  ask:
+    en: 'Once more: say “respectfully”.'
+    pt: 'Mais uma vez: diga “respeitosamente”.'
+  answer:
+    speaker: protagonist
+    text: со почит
+  items:
+  - so-pocit-vas
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “comedian — and “front row — and “we are, it turns out (surprise) — and “famous for — and “laughs — and “got offended — and “at one''s own expense — and “hit the mark — and “self-irony — and
+      “applause — and “could you (formal) — and “think it over (formal)”.'
+    pt: 'Diga: “comediante — e “primeira fila — e “a gente é, pelo jeito — e “famosos por — e “ri — e “se ofendeu — e “às próprias custas — e “acertou — e “autoironia — e “aplauso — e “o senhor poderia
+      — e “pensar a respeito”.'
+  answer:
+    speaker: protagonist
+    text: комичар … прв ред … сме биле … познати по … се смее … се навреди … на своја сметка … погоди … самоиронија … аплауз … би можеле да … размислите
+  items:
+  - komicar
+  - prv-red
+  - sme-bile
+  - poznati-po
+  - smeata
+  - se-navredi
+  - na-svoja-smetka
+  - pogodi
+  - samoironija
+  - aplauz
+  - bi-mozele-da
+  - razmislite
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “market value — and “an offer from elsewhere — and “I''m not threatening — and “I prefer to stay — and “condition — and “as a compromise — and “from November — and “we agreed, deal — and “Do
+      you remember…? (informal) — and “the first day — and “you didn''t know anything — and “now you speak”.'
+    pt: 'Diga: “valor de mercado — e “uma proposta de outro lugar — e “não estou ameaçando — e “prefiro ficar — e “condição — e “como meio-termo — e “a partir de novembro — e “combinado — e “Você lembra…?
+      — e “o primeiro dia — e “você não sabia nada — e “agora você fala”.'
+  answer:
+    speaker: protagonist
+    text: пазарна вредност … понуда од друго место … не се заканувам … претпочитам да останам … услов … компромисно … од ноември … се договоривме … Се сеќаваш ли…? … првиот ден … не знаеше ништо … сега
+      зборуваш
+  items:
+  - pazarna-vrednost
+  - ponuda-od-drugade
+  - ne-se-zakanuvam
+  - pretpocituvam-da-ostanam
+  - uslov
+  - kompromisno
+  - od-noemvri
+  - se-dogovorivme
+  - se-sekavas
+  - prviot-den
+  - ne-znaese-nisto
+  - sega-zboruvas
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “like a local — and “time flies — and “to many more — and “thank you for everything — and “from the heart — and “Happy birthday, bro! — and “kindergarten, nursery — and “there''s no place
+      — and “the list — and “you''re on the list — and “but surely, really? — and “grandma and grandpa”.'
+    pt: 'Diga: “como um daqui — e “o tempo voa — e “a muitos mais — e “obrigado por tudo — e “de coração — e “Feliz aniversário, mano! — e “creche — e “não tem vaga — e “a lista — e “vocês estão na lista
+      — e “mas será que — e “vô e vó”.'
+  answer:
+    speaker: protagonist
+    text: како домашен … времето лета … за уште многу … благодарам за сè … од срце … Среќен роденден, брате! … градинка … нема место … листата … сте на листа … ама зарем … баба и дедо
+  items:
+  - kako-domasen
+  - vreme-leta
+  - za-uste-mnogu
+  - blagodaram-za-se
+  - od-srce
+  - srekjen-rodenden-brate
+  - gradinka
+  - nema-mesto
+  - listata
+  - stoite
+  - ama-zarem
+  - baba-i-dedo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “we''ll look after him — and “we don''t need it — and “well, there you go — and “free childcare — and “discussion — and “argument (reason) — and “retell (formal) — and “was opened (reportedly)
+      — and “the mayor — and “stated (reportedly) — and “cost (reportedly) — and “we weren''t there”.'
+    pt: 'Diga: “a gente cuida dele — e “não precisamos — e “pois é / aí está — e “cuidado de graça — e “discussão — e “argumento — e “reconte — e “teria sido aberto — e “o prefeito — e “teria declarado
+      — e “teria custado — e “não estivemos lá”.'
+  answer:
+    speaker: protagonist
+    text: ќе го чуваме … не ни треба … па ете … бесплатно чување … дискусија … аргумент … прераскажете … бил отворен … градоначалникот … изјавил … чинел … не сме биле таму
+  items:
+  - ke-go-cuvame
+  - ni-trgaat
+  - pa-ete
+  - besplatno-cuvanje
+  - diskusija
+  - argument
+  - prepraskajte
+  - bil-otvoren
+  - gradonacalnikot
+  - izjavil
+  - kostal
+  - nie-ne-sme-bile
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “that''s why the л-form — and “Exactly — and “Tell me something about yourself — and “strengths — and “weaknesses — and “responsible (masculine) — and “I work in a team — and “sometimes —
+      and “too many details — and “Why us in particular? — and “to grow (professionally) — and “to stay”.'
+    pt: 'Diga: “por isso a forma em -л — e “Exatamente — e “Fale um pouco sobre o senhor — e “pontos fortes — e “pontos fracos — e “responsável — e “trabalho em equipe — e “às vezes — e “detalhes demais
+      — e “Por que justamente nós? — e “crescer — e “ficar”.'
+  answer:
+    speaker: protagonist
+    text: затоа л-формата … Точно така … Кажете ми нешто за себе … силни страни … слаби страни … одговорен … работам во тим … понекогаш … премногу детали … Зошто баш нас? … да растам … да останам
+  items:
+  - zatoa-l-formata
+  - tocno-taka
+  - kazete-mi
+  - silni-strani
+  - slabi-strani
+  - odgovoren
+  - rabotam-vo-tim
+  - ponekogas
+  - premnogu-detali
+  - zosto-bas-nas
+  - da-rastam
+  - ostanam
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Do you play…? (informal) — and “basketball — and “I play — and “football (soccer) — and “Come on! / Let''s go! — and “Run! (informal) — and “Jump! (informal) — and “tall (masculine) — and
+      “fast (masculine) — and “strong (masculine) — and “beer”.'
+    pt: 'Diga: “Você joga…? — e “basquete — e “eu jogo — e “futebol — e “Vamos! / Bora! — e “Corre! — e “Pula! — e “alto — e “rápido — e “forte — e “cerveja”.'
+  answer:
+    speaker: protagonist
+    text: Играш ли…? … кошарка … играм … фудбал … Ајде! … Трчај! … Скокни! … висок … брз … силен … пиво
+  items:
+  - igras-li
+  - kosarka
+  - igram
+  - fudbal
+  - ajde
+  - trcaj
+  - skokni
+  - visok
+  - brz
+  - silen
+  - pivo
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

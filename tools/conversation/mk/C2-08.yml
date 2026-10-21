@@ -1,0 +1,581 @@
+# UNIT mk C2-08 — written by AI (Claude) for Casus; expanded from src/C2-08.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-08
+level: C2
+number: 8
+protagonist: m
+title:
+  en: The book club
+  pt: Clube de leitura
+situation:
+  en: Ana's book club reads a Macedonian novel. Your turn to speak.
+  pt: O clube de leitura da Ana lê um romance macedônio. Sua vez de falar.
+learn_lessons:
+- c2-set-phrases
+culture: —
+new_items:
+- id: romanot
+  text: романот
+  meaning:
+    en: the novel
+    pt: o romance
+- id: glavniot-lik
+  text: главниот лик
+  meaning:
+    en: the main character
+    pt: o protagonista
+- id: krajot
+  text: крајот
+  meaning:
+    en: the ending
+    pt: o final
+- id: me-dopre
+  text: ме допре
+  meaning:
+    en: touched me
+    pt: me tocou
+- id: na-prv-pogled
+  text: на прв поглед
+  meaning:
+    en: at first sight
+    pt: à primeira vista
+- id: megju-redovite
+  text: меѓу редовите
+  meaning:
+    en: between the lines
+    pt: nas entrelinhas
+- id: simbolizira
+  text: симболизира
+  meaning:
+    en: symbolises
+    pt: simboliza
+  rare: true
+- id: otvoren-kraj
+  text: отворен крај
+  meaning:
+    en: open ending
+    pt: final aberto
+- id: sekoj-si-go-cita
+  text: секој си го чита на свој начин
+  meaning:
+    en: everyone reads it their own way
+    pt: cada um lê do seu jeito
+- id: preporacuvam
+  text: препорачувам
+  meaning:
+    en: I recommend
+    pt: recomendo
+reviews:
+- item: sto-praves
+  from: A2-01
+- item: vikendot
+  from: A2-01
+- item: otidov
+  from: A2-01
+- item: bev
+  from: A2-01
+- item: vcera
+  from: A2-01
+- item: vidov
+  from: A2-01
+- item: film
+  from: A2-01
+- item: koj
+  from: A2-01
+- item: ne-razbrav
+  from: A2-01
+- item: normalno
+  from: A2-01
+- item: i-jas
+  from: A2-01
+- item: neto
+  from: B2-05
+- item: bruto
+  from: B2-05
+- item: mesecno
+  from: B2-05
+- item: probna-rabota
+  from: B2-05
+- item: tri-meseci
+  from: B2-05
+- item: neopredeleno
+  from: B2-05
+- item: ke-bidam-zavrsila
+  from: B2-05
+- item: otkaz
+  from: B2-05
+- item: od-prvi
+  from: B2-05
+- item: dogovor-imame
+  from: B2-05
+- item: svekrva
+  from: C1-07
+- item: svekor
+  from: C1-07
+- item: daj-mi-ja
+  from: C1-07
+- item: ke-ti-ja-dadam
+  from: C1-07
+- item: receptot
+  from: C1-07
+- item: ne-mu-go-davaj
+  from: C1-07
+- item: test
+  from: C1-07
+- item: go-pomina
+  from: C1-07
+- item: ostanatoto
+  from: C1-07
+- item: da-vi-pomognam-so-sadovite
+  from: C1-07
+- item: dvojazicen
+  from: C1-23
+- item: mesa
+  from: C1-23
+- item: doma-portugalski
+  from: C1-23
+- item: nadvor-makedonski
+  from: C1-23
+- item: ke-mu-go-naucis
+  from: C1-23
+- item: ednata-roditel
+  from: C1-23
+- item: ke-se-zbuni
+  from: C1-23
+- item: naprotiv
+  from: C1-23
+- item: prednost
+  from: C1-23
+- item: baba-od-brazil
+  from: C1-23
+- item: pocituvani-gosti
+  from: C2-01
+- item: dozvolete-mi
+  from: C2-01
+- item: da-kazam-nekolku-zbora
+  from: C2-01
+- item: mladencite
+  from: C2-01
+- item: da-ziveat-vo-sloga
+  from: C2-01
+- item: vo-dobro-i-vo-zlo
+  from: C2-01
+- item: da-ostarat-zaedno
+  from: C2-01
+- item: kumata
+  from: C2-01
+- item: krenete-gi-casite
+  from: C2-01
+- item: ziveale
+  from: C2-01
+- item: dijalektot
+  from: C2-05
+- item: izgovor
+  from: C2-05
+- item: razlicno-zboruvaat
+  from: C2-05
+- item: standardniot-jazik
+  from: C2-05
+- item: osnovata
+  from: C2-05
+- item: zapadnite-dijalekti
+  from: C2-05
+- item: istocno
+  from: C2-05
+- item: ne-te-razbrav-dobro
+  from: C2-05
+- item: povtori-poleka
+  from: C2-05
+- item: sekoj-kraj
+  from: C2-05
+- item: pocituvan-ministre
+  from: C2-07
+- item: vo-ime-na
+  from: C2-07
+- item: zitelite
+  from: C2-07
+- item: se-obrakjame
+  from: C2-07
+- item: linijata
+  from: C2-07
+- item: ukinata
+  from: C2-07
+- item: posledicite
+  from: C2-07
+- item: ve-molime-da-prezemete
+  from: C2-07
+- item: vo-iscekuvanje
+  from: C2-07
+- item: so-pocit-vas
+  from: C2-07
+steps:
+- type: narrator
+  text:
+    en: Ana's book club reads a Macedonian novel. Your turn to speak. Listen to the conversation; you don't need to understand it yet.
+    pt: O clube de leitura da Ana lê um romance macedônio. Sua vez de falar. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: ana
+    text: Што мислиш за романот?
+    meaning:
+      en: What do you think of the novel?
+      pt: O que você achou do romance?
+  - speaker: protagonist
+    text: На прв поглед — едноставна приказна. Но меѓу редовите има многу.
+    meaning:
+      en: At first sight — a simple story. But there's a lot between the lines.
+      pt: À primeira vista — uma história simples. Mas nas entrelinhas tem muita coisa.
+  - speaker: ana
+    text: А главниот лик?
+    meaning:
+      en: And the main character?
+      pt: E o protagonista?
+  - speaker: protagonist
+    text: Ме допре. Тој заминува и се враќа — како многу луѓе тука.
+    meaning:
+      en: He touched me. He leaves and comes back — like many people here.
+      pt: Me tocou. Ele vai embora e volta — como muita gente aqui.
+  - speaker: goran
+    text: Мене крајот не ми се допадна. Отворен крај!
+    meaning:
+      en: I didn't like the ending. An open ending!
+      pt: Eu não gostei do final. Final aberto!
+  - speaker: protagonist
+    text: Отворениот крај симболизира избор. Секој си го чита на свој начин.
+    meaning:
+      en: The open ending symbolises choice. Everyone reads it their own way.
+      pt: O final aberto simboliza escolha. Cada um lê do seu jeito.
+  - speaker: ana
+    text: Убаво кажано. Би го препорачал?
+    meaning:
+      en: Nicely said. Would you recommend it?
+      pt: Bem dito. Você recomendaria?
+  - speaker: protagonist
+    text: Препорачувам — особено на странци што сакаат да ја разберат земјата.
+    meaning:
+      en: I recommend it — especially to foreigners who want to understand the country.
+      pt: Recomendo — principalmente para estrangeiros que querem entender o país.
+- type: prompt
+  ask:
+    en: 'Say: the novel.'
+    pt: 'Diga: o romance.'
+  answer:
+    speaker: protagonist
+    text: Романот.
+  items:
+  - romanot
+- type: prompt
+  ask:
+    en: 'Say: at first sight.'
+    pt: 'Diga: à primeira vista.'
+  answer:
+    speaker: protagonist
+    text: На прв поглед.
+  items:
+  - na-prv-pogled
+- type: prompt
+  ask:
+    en: 'Say: between the lines.'
+    pt: 'Diga: nas entrelinhas.'
+  answer:
+    speaker: protagonist
+    text: Меѓу редовите.
+  items:
+  - megju-redovite
+- type: prompt
+  ask:
+    en: 'Say: the main character touched me.'
+    pt: 'Diga: o protagonista me tocou.'
+  answer:
+    speaker: protagonist
+    text: Главниот лик ме допре.
+  items:
+  - glavniot-lik
+  - me-dopre
+- type: prompt
+  ask:
+    en: 'Say: an open ending.'
+    pt: 'Diga: um final aberto.'
+  answer:
+    speaker: protagonist
+    text: Отворен крај.
+  items:
+  - otvoren-kraj
+- type: prompt
+  ask:
+    en: 'Say: the ending.'
+    pt: 'Diga: o final.'
+  answer:
+    speaker: protagonist
+    text: Крајот.
+  items:
+  - krajot
+- type: prompt
+  ask:
+    en: 'Say: it symbolises choice.'
+    pt: 'Diga: simboliza escolha.'
+  answer:
+    speaker: protagonist
+    text: Симболизира избор.
+  items:
+  - simbolizira
+- type: prompt
+  ask:
+    en: 'Say: everyone reads it their own way.'
+    pt: 'Diga: cada um lê do seu jeito.'
+  answer:
+    speaker: protagonist
+    text: Секој си го чита на свој начин.
+  items:
+  - sekoj-si-go-cita
+- type: prompt
+  ask:
+    en: 'Say: I recommend it.'
+    pt: 'Diga: recomendo.'
+  answer:
+    speaker: protagonist
+    text: Препорачувам.
+  items:
+  - preporacuvam
+- type: narrator
+  text:
+    en: 'Talking about books uses fixed expressions that also work in Portuguese: на прв поглед (à primeira vista), меѓу редовите (nas entrelinhas), отворен крај (final aberto).'
+    pt: 'Falar de livros usa expressões fixas que existem também em português: на прв поглед (à primeira vista), меѓу редовите (nas entrelinhas), отворен крај (final aberto).'
+- type: prompt
+  ask:
+    en: 'Once more: say “the novel”.'
+    pt: 'Mais uma vez: diga “o romance”.'
+  answer:
+    speaker: protagonist
+    text: романот
+  items:
+  - romanot
+- type: prompt
+  ask:
+    en: 'Once more: say “the main character”.'
+    pt: 'Mais uma vez: diga “o protagonista”.'
+  answer:
+    speaker: protagonist
+    text: главниот лик
+  items:
+  - glavniot-lik
+- type: prompt
+  ask:
+    en: 'Once more: say “the ending”.'
+    pt: 'Mais uma vez: diga “o final”.'
+  answer:
+    speaker: protagonist
+    text: крајот
+  items:
+  - krajot
+- type: prompt
+  ask:
+    en: 'Once more: say “touched me”.'
+    pt: 'Mais uma vez: diga “me tocou”.'
+  answer:
+    speaker: protagonist
+    text: ме допре
+  items:
+  - me-dopre
+- type: prompt
+  ask:
+    en: 'Once more: say “at first sight”.'
+    pt: 'Mais uma vez: diga “à primeira vista”.'
+  answer:
+    speaker: protagonist
+    text: на прв поглед
+  items:
+  - na-prv-pogled
+- type: prompt
+  ask:
+    en: 'Once more: say “between the lines”.'
+    pt: 'Mais uma vez: diga “nas entrelinhas”.'
+  answer:
+    speaker: protagonist
+    text: меѓу редовите
+  items:
+  - megju-redovite
+- type: prompt
+  ask:
+    en: 'Once more: say “symbolises”.'
+    pt: 'Mais uma vez: diga “simboliza”.'
+  answer:
+    speaker: protagonist
+    text: симболизира
+  items:
+  - simbolizira
+- type: prompt
+  ask:
+    en: 'Once more: say “open ending”.'
+    pt: 'Mais uma vez: diga “final aberto”.'
+  answer:
+    speaker: protagonist
+    text: отворен крај
+  items:
+  - otvoren-kraj
+- type: prompt
+  ask:
+    en: 'Once more: say “everyone reads it their own way”.'
+    pt: 'Mais uma vez: diga “cada um lê do seu jeito”.'
+  answer:
+    speaker: protagonist
+    text: секој си го чита на свој начин
+  items:
+  - sekoj-si-go-cita
+- type: prompt
+  ask:
+    en: 'Once more: say “I recommend”.'
+    pt: 'Mais uma vez: diga “recomendo”.'
+  answer:
+    speaker: protagonist
+    text: препорачувам
+  items:
+  - preporacuvam
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Dear Minister — and “on behalf of — and “the residents — and “we are writing to you, we address — and “the (bus) line — and “abolished, cut — and “the consequences — and “we ask you to take
+      measures — and “awaiting your reply — and “respectfully — and “the dialect — and “pronunciation”.'
+    pt: 'Diga: “Prezado Senhor Ministro — e “em nome de — e “os moradores — e “nos dirigimos — e “a linha — e “extinta / cortada — e “as consequências — e “pedimos que tome providências — e “no aguardo
+      de sua resposta — e “respeitosamente — e “o dialeto — e “pronúncia”.'
+  answer:
+    speaker: protagonist
+    text: Почитуван министре … во име на … жителите … се обраќаме … линијата … укината … последиците … ве молиме да преземете мерки … во очекување на ваш одговор … со почит … дијалектот … изговор
+  items:
+  - pocituvan-ministre
+  - vo-ime-na
+  - zitelite
+  - se-obrakjame
+  - linijata
+  - ukinata
+  - posledicite
+  - ve-molime-da-prezemete
+  - vo-iscekuvanje
+  - so-pocit-vas
+  - dijalektot
+  - izgovor
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “speak differently — and “the standard language — and “the basis — and “the western dialects — and “in the east — and “I didn''t understand you well — and “repeat slowly — and “every region
+      — and “Honoured guests — and “Allow me — and “to say a few words — and “the newlyweds”.'
+    pt: 'Diga: “falam diferente — e “a língua padrão — e “a base — e “os dialetos do oeste — e “no leste — e “não te entendi direito — e “repete devagar — e “cada região — e “Prezados convidados — e “Permitam-me
+      — e “dizer algumas palavras — e “os noivos”.'
+  answer:
+    speaker: protagonist
+    text: различно зборуваат … стандардниот јазик … основата … западните дијалекти … источно … не те разбрав добро … повтори полека … секој крај … Почитувани гости … Дозволете ми … да кажам неколку зборови
+      … младенците
+  items:
+  - razlicno-zboruvaat
+  - standardniot-jazik
+  - osnovata
+  - zapadnite-dijalekti
+  - istocno
+  - ne-te-razbrav-dobro
+  - povtori-poleka
+  - sekoj-kraj
+  - pocituvani-gosti
+  - dozvolete-mi
+  - da-kazam-nekolku-zbora
+  - mladencite
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “may they live in harmony — and “for better or for worse — and “may they grow old together — and “the кума (female кум) — and “raise your glasses — and “Long live (them)! (toast) — and “bilingual
+      (masculine) — and “mixes — and “Portuguese at home — and “Macedonian outside — and “you''ll teach it to him — and “one parent, one language”.'
+    pt: 'Diga: “que vivam em harmonia — e “na alegria e na tristeza — e “que envelheçam juntos — e “a madrinha (кума) — e “levantem os copos — e “Vivam! — e “bilíngue — e “mistura — e “português em casa
+      — e “macedônio na rua — e “você vai ensinar para ele — e “um pai, uma língua”.'
+  answer:
+    speaker: protagonist
+    text: да живеат во слога … во добро и во зло … да остарат заедно … кумата … кренете ги чашите … Живееле! … двојазичен … меша … дома португалски … надвор македонски … ќе му го научиш … еден родител —
+      еден јазик
+  items:
+  - da-ziveat-vo-sloga
+  - vo-dobro-i-vo-zlo
+  - da-ostarat-zaedno
+  - kumata
+  - krenete-gi-casite
+  - ziveale
+  - dvojazicen
+  - mesa
+  - doma-portugalski
+  - nadvor-makedonski
+  - ke-mu-go-naucis
+  - ednata-roditel
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “will get confused — and “on the contrary — and “advantage — and “grandma from Brazil — and “mother-in-law (husband''s mother) — and “father-in-law (husband''s father) — and “give it to me
+      (feminine thing) — and “I''ll give it to you — and “the recipe — and “don''t give it to him — and “test — and “you passed it”.'
+    pt: 'Diga: “vai se confundir — e “pelo contrário — e “vantagem — e “a avó do Brasil — e “sogra — e “sogro — e “me dá ela — e “vou te dar — e “a receita — e “não dá para ele — e “teste — e “você passou”.'
+  answer:
+    speaker: protagonist
+    text: ќе се збуни … напротив … предност … баба од Бразил … свекрва … свекор … дај ми ја … ќе ти ја дадам … рецептот … не му го давај … тест … го помина
+  items:
+  - ke-se-zbuni
+  - naprotiv
+  - prednost
+  - baba-od-brazil
+  - svekrva
+  - svekor
+  - daj-mi-ja
+  - ke-ti-ja-dadam
+  - receptot
+  - ne-mu-go-davaj
+  - test
+  - go-pomina
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the rest — and “let me help with the dishes — and “net (after tax) — and “gross (before tax) — and “monthly — and “probation period — and “three months — and “permanent (open-ended) — and
+      “I will have finished (a woman) — and “notice period — and “from the first (of the month) — and “We have a deal”.'
+    pt: 'Diga: “o resto — e “deixa eu ajudar com a louça — e “líquido — e “bruto — e “por mês — e “período de experiência — e “três meses — e “por tempo indeterminado — e “terei terminado — e “aviso prévio
+      — e “a partir do dia primeiro — e “Fechado”.'
+  answer:
+    speaker: protagonist
+    text: останатото … да ви помогнам со садовите … нето … бруто … месечно … пробна работа … три месеци … на неопределено време … ќе бидам завршила … отказен рок … од први … Имаме договор
+  items:
+  - ostanatoto
+  - da-vi-pomognam-so-sadovite
+  - neto
+  - bruto
+  - mesecno
+  - probna-rabota
+  - tri-meseci
+  - neopredeleno
+  - ke-bidam-zavrsila
+  - otkaz
+  - od-prvi
+  - dogovor-imame
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “What were you doing…? / What did you do…? (informal) — and “the weekend — and “I went — and “I was — and “yesterday — and “I saw — and “film — and “Which…? / Who…? — and “I didn''t understand
+      — and “Naturally / of course — and “me too”.'
+    pt: 'Diga: “O que você fez…? — e “o fim de semana — e “eu fui — e “eu estava / eu fui — e “ontem — e “eu vi — e “filme — e “Qual…? / Quem…? — e “eu não entendi — e “Normal / claro — e “eu também”.'
+  answer:
+    speaker: protagonist
+    text: Што правеше…? … викендот … отидов … бев … вчера … видов … филм … Кој…? … не разбрав … Нормално … и јас
+  items:
+  - sto-praves
+  - vikendot
+  - otidov
+  - bev
+  - vcera
+  - vidov
+  - film
+  - koj
+  - ne-razbrav
+  - normalno
+  - i-jas
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
