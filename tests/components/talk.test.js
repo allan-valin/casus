@@ -73,6 +73,37 @@ describe('Conversation practice tab (Allan, 2026-10-20/21: narrator in the inter
     expect(container.querySelectorAll('.step').length).toBe(7);
   });
 
+  it('levels are tabs: opens on the first unfinished level, switches without reloading, remembers the choice (Allan, 2026-10-22)', async () => {
+    setLang('pt');
+    const lvl = (id, level, number) => ({ id, level, number, title: { pt: id, en: id }, situation: { pt: '', en: '' }, new_items: [], steps: [] });
+    const course = { ...COURSE, units: [lvl('A1-01', 'A1', 1), lvl('A1-02', 'A1', 2), lvl('A2-01', 'A2', 1), lvl('A2-02', 'A2', 2)] };
+    let loads = 0;
+    const storage = store();
+    storage.setItem('casus:talk:de:done', JSON.stringify(['A1-01', 'A1-02']));
+    const { p } = props({ loadTalk: async () => { loads += 1; return course; }, storage });
+    const { container, unmount } = render(Talk, p);
+    await flush();
+    const tabs = () => [...container.querySelectorAll('.level-tab')];
+    expect(tabs().map((b) => b.dataset.level)).toEqual(['A1', 'A2']);
+    expect(tabs()[0].textContent).toContain('2/2');
+    const rows = () => [...container.querySelectorAll('.unit-row')].map((r) => r.dataset.unit);
+    expect(rows()).toEqual(['A2-01', 'A2-02']);                 // A1 finished: opens where you left off
+    await fireEvent.click(tabs()[0]);
+    await flush();
+    expect(rows()).toEqual(['A1-01', 'A1-02']);
+    expect(tabs()[0].getAttribute('aria-selected')).toBe('true');
+    expect(loads).toBe(1);
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    await fireEvent.click(container.querySelector('.back'));
+    await flush();
+    expect(rows()).toEqual(['A1-01', 'A1-02']);                 // back from a unit keeps the tab
+    unmount();
+    const again = render(Talk, props({ loadTalk: async () => course, storage }).p);
+    await flush();
+    expect([...again.container.querySelectorAll('.unit-row')].map((r) => r.dataset.unit)).toEqual(['A1-01', 'A1-02']);
+  });
+
   it('taught-language text is hidden until clicked, then shows with its meaning; a second click hides it', async () => {
     setLang('pt');
     const { p } = props();

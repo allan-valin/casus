@@ -62,6 +62,14 @@
   const forMe = (x) => !x || x.includes(narratorLang);
   const shownUnits = $derived(course ? course.units.filter((u) => forMe(u.tracks)) : []);
   const levels = $derived([...new Set(shownUnits.map((u) => u.level))]);
+  // levels are tabs (Allan, 2026-10-22): one level at a time, no reload; opens where you left off, remembers your pick
+  const LEVEL_KEY = `casus:talk:${lang.code}:level`;
+  let pickedLevel = $state((() => { try { return storage?.getItem(LEVEL_KEY) ?? null; } catch { return null; } })());
+  const level = $derived(levels.includes(pickedLevel) ? pickedLevel
+    : (shownUnits.find((u) => !done.includes(u.id))?.level ?? levels[levels.length - 1] ?? null));
+  function pickLevel(l) { pickedLevel = l; try { storage?.setItem(LEVEL_KEY, l); } catch { /* not kept */ } }
+  const doneIn = (l) => shownUnits.filter((u) => u.level === l && done.includes(u.id)).length;
+  const countIn = (l) => shownUnits.filter((u) => u.level === l).length;
   const items = $derived(unit ? Object.fromEntries((unit.new_items ?? []).concat(course.items ?? []).map((i) => [i.id, i])) : {});
   const speaker = (id) => (id === 'protagonist' ? t('talk.you') : course?.cast?.[id]?.name ?? id);
   const pitches = $derived(voicePitches(course));
@@ -276,16 +284,22 @@
     </details>
     {#if course.example}<p class="talk-example">{t('talk.example')}</p>{/if}
     {#if narratorLang !== ui.lang}<p class="narrator-fallback">{t('talk.narratorFallback', { lang: NAMES[narratorLang] ?? narratorLang })}</p>{/if}
-    {#each levels as level}
-      <h3 class="level">{level}</h3>
-      <ul class="units">
+    <div class="level-tabs" role="tablist">
+      {#each levels as l}
+        <button class="level-tab" role="tab" data-level={l} aria-selected={l === level} class:active={l === level} onclick={() => pickLevel(l)}>
+          {l} <span class="level-count">{doneIn(l)}/{countIn(l)}</span>
+        </button>
+      {/each}
+    </div>
+    {#if level}
+      <ul class="units" role="tabpanel">
         {#each shownUnits.filter((u) => u.level === level) as u (u.id)}
           <li><button class="unit-row" class:done={done.includes(u.id)} data-unit={u.id} onclick={() => open(u)}>
             <span class="u-id">{u.id}</span> <span class="u-title">{nar(u.title)}</span>{#if done.includes(u.id)} <span class="tick">✓</span>{/if}
           </button></li>
         {/each}
       </ul>
-    {/each}
+    {/if}
     <p class="guide-line">{t('talk.guide.write')} <a class="guide" href={`${GUIDE}/GUIDE.${ui.lang === 'pt' ? 'pt-BR' : ui.lang}.md`} target="_blank" rel="noopener">{t('talk.guide.link')}</a></p>
   {:else}
     <div class="unit-page">
@@ -355,7 +369,10 @@
 </section>
 
 <style>
-  .talk h3.level { margin: 14px 0 4px; }
+  .level-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 8px; }
+  .level-tab { padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); color: var(--ink); cursor: pointer; font-weight: 600; }
+  .level-tab.active { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 18%, var(--panel)); }
+  .level-count { font-weight: 400; opacity: 0.75; font-size: 0.85em; }
   .step.sounding { outline: 2px solid var(--accent, #6a4c93); outline-offset: 2px; }   /* the step whose audio is playing */
   .step.current { background: color-mix(in srgb, var(--accent, #6a4c93) 14%, transparent); border-radius: 8px; }
   .play.playing, .play.paused { outline: 2px solid var(--accent, #6a4c93); }
