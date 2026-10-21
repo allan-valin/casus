@@ -603,6 +603,28 @@ describe('character pitches', async () => {
     for (const x of Object.values(q)) expect(x).toBeGreaterThan(0.5);
   });
 
+  it('in every dialogue of every course, two speakers never sound alike (pitch 0.06 or speed 0.08 apart)', async () => {
+    const { readFileSync, readdirSync } = await import('node:fs');
+    const { speedOf } = await import('../../src/app/lib/talkvoices.js');
+    const clashes = [];
+    for (const f of readdirSync('public/talk').filter((x) => x.endsWith('.json'))) {
+      const c = JSON.parse(readFileSync(`public/talk/${f}`, 'utf8'));
+      const pitches = voicePitches(c);
+      for (const u of c.units ?? []) {
+        for (const st of u.steps ?? []) {
+          const who = [...new Set((st.lines ?? []).map((l) => l.speaker))];
+          for (let i = 0; i < who.length; i += 1) for (let j = i + 1; j < who.length; j += 1) {
+            const [a, b] = [who[i], who[j]];
+            const dp = Math.abs(pitchOf(c, u, a, pitches) - pitchOf(c, u, b, pitches));
+            const ds = Math.abs(speedOf(c, u, a) - speedOf(c, u, b));
+            if (dp < 0.06 && ds < 0.08) clashes.push(`${f} ${u.id}: ${a}/${b}`);
+          }
+        }
+      }
+    }
+    expect(clashes).toEqual([]);
+  });
+
   it('a voice may speak slower: speedOf gives the voice speed (older characters; Allan 2026-10-21)', async () => {
     const { speedOf } = await import('../../src/app/lib/talkvoices.js');
     const c = { ...course, voices: [...course.voices, { id: 'old', role: 'character', gender: 'f', pitch: 1.12, speed: 1.12 }], cast: { ...course.cast, vera: { voice: 'old' } } };
