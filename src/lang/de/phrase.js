@@ -40,7 +40,8 @@ function blocksBefore(blocks, i) {
     const b = blocks[j];
     if (b.candidates.some((c) => c.analysis.pos === 'prep')) break;                  // NP4 comes first
     // a der-word opening a later clause may be a relative pronoun (Die Frau, die Kinder liebt)
-    if ((b.token.clause ?? 0) > 0 && j > 0 && blocks[j - 1].token.clause !== b.token.clause && /^(der|die|das|dem|den|deren|dessen|denen)$/i.test(b.token.surface)) break;
+    if ((b.token.clause ?? 0) > 0 && j > 0 && blocks[j - 1].token.clause !== b.token.clause && /^(der|die|das|dem|den|deren|dessen|denen)$/i.test(b.token.surface)
+      && b.candidates.some((c) => c.analysis.pos === 'pron')) break;   // (not once CL8a has ruled the pronoun out)
     const member = b.candidates.some((c) => isMember(c, b));
     const uninflected = b.candidates.length > 0 && b.candidates.every((c) => !cased(c.analysis) && ['adv', 'adj', 'num', 'particle'].includes(c.analysis.pos));
     if (!member && !uninflected) break;

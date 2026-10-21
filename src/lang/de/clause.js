@@ -26,6 +26,20 @@ const NONFINITE = new Set(['inf', 'ppl1', 'ppl2']);
 const isFinite = (a) => a.pos === 'verb' && FINITE.has(a.mood) && a.person !== '0';
 const withReason = (c, r) => (c.reasons.includes(r) ? c : { ...c, reasons: [...c.reasons, r] });
 
+// CL8a, before government: um/ohne/(an)statt opening a comma clause that ends in zu + a word are conjunctions
+export function zuOpenerStage(blocks) {
+  const out = blocks.slice();
+  const clauses = new Map();
+  out.forEach((b, i) => { const k = b.token.clause ?? 0; if (k > 0) { if (!clauses.has(k)) clauses.set(k, []); clauses.get(k).push(i); } });
+  for (const members of clauses.values()) {
+    if (members.length < 3 || out[members[members.length - 2]].token.key.toLowerCase() !== 'zu') continue;
+    const first = out[members[0]];
+    if (first.pinned || !/^(um|ohne|statt|anstatt)$/i.test(first.token.key) || !first.candidates.some((c) => c.analysis.pos === 'conj')) continue;
+    out[members[0]] = { ...first, candidates: first.candidates.filter((c) => c.analysis.pos === 'conj').map((c) => withReason(c, 'clause: um/ohne/statt … zu opens an infinitive clause')) };
+  }
+  return out;
+}
+
 export function clauseStage(blocks) {
   const out = blocks.slice();
   const clauses = new Map();
@@ -66,6 +80,25 @@ export function clauseStage(blocks) {
       const others = z.candidates.some((c) => c.analysis.pos === 'particle') ? z.candidates.filter((c) => c.analysis.pos === 'particle') : z.candidates.filter((c) => c.analysis.pos !== 'prep');
       if (others.length && others.length < z.candidates.length) out[members[k]] = { ...z, candidates: others.map((c) => withReason(c, 'clause: zu before the infinitive that ends the clause')) };
       if (!v.pinned) out[last0] = { ...v, candidates: v.candidates.filter((c) => c.analysis.mood === 'inf').map((c) => withReason(c, 'clause: infinitive with zu at the end of the clause')) };
+    }
+    // CL8a: a zu-infinitive clause after a comma has no subject, so no nominative; um/ohne/(an)statt open it as
+    // conjunctions, and its first article word starts a noun phrase rather than a relative clause
+    if ((out[members[0]].token.clause ?? 0) > 0 && members.length > 2 && out[members[members.length - 2]].token.key.toLowerCase() === 'zu'
+      && out[last0].candidates.length && out[last0].candidates.every((c) => c.analysis.mood === 'inf')) {
+      const first = out[members[0]];
+      if (!first.pinned && /^(um|ohne|statt|anstatt)$/i.test(first.token.key) && first.candidates.some((c) => c.analysis.pos === 'conj')) {
+        out[members[0]] = { ...first, candidates: first.candidates.filter((c) => c.analysis.pos === 'conj').map((c) => withReason(c, 'clause: um/ohne/statt … zu opens an infinitive clause')) };
+      }
+      const NOMINAL = new Set(['noun', 'det', 'adj', 'pron', 'num']);
+      for (let m = 0; m < members.length - 2; m += 1) {
+        const i = members[m];
+        const b = out[i];
+        if (b.pinned) continue;
+        let keep = b.candidates.filter((c) => !(NOMINAL.has(c.analysis.pos) && c.analysis.case === 'nom'));
+        const next = out[members[m + 1]];
+        if (keep.some((c) => c.analysis.pos === 'det') && next.candidates.some((c) => ['noun', 'adj', 'num'].includes(c.analysis.pos))) keep = keep.filter((c) => c.analysis.pos !== 'pron');
+        if (keep.length && keep.length < b.candidates.length) out[i] = { ...b, candidates: keep.map((c) => withReason(c, 'clause: an infinitive clause with zu has no subject, so nothing in it is nominative')) };
+      }
     }
     const sentenceStart = (out[members[0]].token.clause ?? 0) === 0 && members[0] === 0;
     // C5 / NP0: a capitalised first word whose small-letter form is a pronoun, adverb, conjunction or

@@ -145,7 +145,7 @@ syntax model of design §8).
 | CL6a | A clause-final word with nothing after it to govern is not a preposition (*ruft … an*), postpositions excepted. | done |
 | D1 | One nominative per clause: once the subject is certain the other phrases are not nominative (copula predicates excepted). | done |
 | REL1 | A relative pronoun takes gender and number from its antecedent; an article word followed by something that cannot continue a noun phrase is the pronoun. | done |
-| CL8a | No nominative in a zu-infinitive clause; *um/ohne/statt … zu* open with the conjunction. | next |
+| CL8a | No nominative in a zu-infinitive clause; *um/ohne/statt … zu* open with the conjunction. | done 2026-10-21 (clause.js zuOpenerStage + clauseStage; its first article word is no longer read as a relative pronoun; tests/lang/de.cl8a.test.js) |
 | NP11 | A nominalised infinitive after an article or contraction is a neuter singular noun (*das Wünschen, beim Essen*). | next |
 | NP13 | Saxon genitive (*Peters Buch*); proper names take case from article or preposition. | next |
 | NP14 | *dessen/deren* + noun: the noun is not genitive. | next |
