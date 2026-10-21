@@ -590,6 +590,19 @@ describe('character pitches', async () => {
     expect(p.f).toBe(1.25); expect(p.m).toBe(1); expect(p.m2).not.toBe(1); expect(p.m3).toBe(1.12);
     expect(new Set(Object.values(p)).size).toBe(4);
   });
+  it('many voices: a set pitch is kept exactly and the spreading always ends (Allan, 2026-10-22: B1-20 sounded like one voice)', async () => {
+    const { readFileSync } = await import('node:fs');
+    const mk = JSON.parse(readFileSync('public/talk/mk.json', 'utf8'));
+    const p = voicePitches(mk);
+    expect(p['mk-s-f']).toBe(1.18);
+    expect(p['mk-p-m']).toBe(1);
+    expect(pitchOf(mk, { protagonist: 'm' }, 'sara')).not.toBe(pitchOf(mk, { protagonist: 'm' }, 'protagonist'));
+    const crowd = { voices: Array.from({ length: 40 }, (_, i) => ({ id: `v${i}`, role: 'character', gender: i % 2 ? 'f' : 'm' })) };
+    const q = voicePitches(crowd);
+    expect(Object.keys(q).length).toBe(40);
+    for (const x of Object.values(q)) expect(x).toBeGreaterThan(0.5);
+  });
+
   it('a voice may speak slower: speedOf gives the voice speed (older characters; Allan 2026-10-21)', async () => {
     const { speedOf } = await import('../../src/app/lib/talkvoices.js');
     const c = { ...course, voices: [...course.voices, { id: 'old', role: 'character', gender: 'f', pitch: 1.12, speed: 1.12 }], cast: { ...course.cast, vera: { voice: 'old' } } };

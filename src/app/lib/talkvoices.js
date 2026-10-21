@@ -4,11 +4,19 @@
  * female voices, and voices that would sound alike are spread apart. */
 export function voicePitches(course) {
   const out = {};
-  const used = [];
-  for (const v of course?.voices ?? []) {
-    if (v.role !== 'character') continue;
-    let p = v.pitch ?? (v.gender === 'f' ? 1.25 : 1);
-    while (used.some((u) => Math.abs(u - p) < 0.06)) p = Math.round((p * 0.9) * 100) / 100;
+  const chars = (course?.voices ?? []).filter((v) => v.role === 'character');
+  // a pitch the story bible sets is kept exactly: the writer spread those voices by pitch and speed together
+  // (Allan, 2026-10-22: pushing set pitches around made Sara and the protagonist sound alike in B1-20)
+  for (const v of chars) if (v.pitch != null) out[v.id] = v.pitch;
+  const used = Object.values(out);
+  const near = (p) => used.some((u) => Math.abs(u - p) < 0.06);
+  for (const v of chars) {
+    if (v.pitch != null) continue;
+    const base = v.gender === 'f' ? 1.25 : 1;
+    let p = base;
+    // nearest free pitch, alternating below and above, within a range that still sounds human; never loops forever
+    for (let k = 1; near(p) && k <= 20; k += 1) p = Math.round((base + (k % 2 ? -1 : 1) * Math.ceil(k / 2) * 0.06) * 100) / 100;
+    p = Math.min(1.6, Math.max(0.6, p));
     used.push(p);
     out[v.id] = p;
   }
