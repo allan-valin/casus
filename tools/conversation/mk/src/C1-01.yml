@@ -1,0 +1,37 @@
+id: C1-01
+protagonist: f
+title: ["The evening school", "A escola noturna"]
+situation: ["You want proper Macedonian, written and formal. You enrol in an evening course.", "Você quer um macedônio de verdade, escrito e formal. Você se matricula num curso noturno."]
+learn: [c1-formal]
+culture: Learning for life
+items:
+  - [kurs, "курс", "course", "curso"]
+  - [zapisuvanje, "запишување", "enrolment", "matrícula", {rare: true}]
+  - [bi-sakala-da-se-zapisam, "би сакала да се запишам", "I'd like to enrol (a woman)", "gostaria de me matricular"]
+  - [napredno-nivo, "напредно ниво", "advanced level", "nível avançado"]
+  - [pismeno, "писмено", "written, in writing", "por escrito"]
+  - [sluzben-jazik, "службен јазик", "official, formal language", "linguagem formal"]
+  - [ve-molam-popolnete, "ве молам, пополнете", "please fill in", "por favor, preencha"]
+  - [obrazecot, "образецот", "the form", "o formulário", {rare: true}]
+  - [casovite, "часовите", "the classes", "as aulas"]
+  - [se-odrzuvaat, "се одржуваат", "are held", "acontecem / são realizadas"]
+  - [nikogas-ne-e-docna, "никогаш не е доцна", "it's never too late", "nunca é tarde"]
+dialogue:
+  - [protagonist, "Добровечер. Би сакала да се запишам на курсот по македонски.", "Good evening. I'd like to enrol in the Macedonian course.", "Boa noite. Gostaria de me matricular no curso de macedônio."]
+  - [profesorka, "Кое ниво?", "Which level?", "Qual nível?"]
+  - [protagonist, "Напредно. Зборувам добро, но пишувам слабо, особено службен јазик.", "Advanced. I speak well, but I write poorly, especially formal language.", "Avançado. Falo bem, mas escrevo mal, principalmente a linguagem formal."]
+  - [profesorka, "Тогаш сте на вистинското место. Ве молам, пополнете го образецот.", "Then you're in the right place. Please fill in the form.", "Então está no lugar certo. Por favor, preencha o formulário."]
+  - [protagonist, "Кога се одржуваат часовите?", "When are the classes held?", "Quando acontecem as aulas?"]
+  - [profesorka, "Вторник и четврток, од шест до осум.", "Tuesday and Thursday, six to eight.", "Terça e quinta, das seis às oito."]
+  - [protagonist, "Вторник имам кошарка... но курсот е поважен.", "On Tuesdays I have basketball... but the course is more important.", "Terça eu tenho basquete... mas o curso é mais importante."]
+  - [profesorka, "Никогаш не е доцна за учење. Добредојдовте.", "It's never too late to learn. Welcome.", "Nunca é tarde para aprender. Seja bem-vinda."]
+teach:
+  - ask: ["Say: I'd like to enrol in the course.", "Diga: gostaria de me matricular no curso.", "Би сакала да се запишам на курсот.", bi-sakala-da-se-zapisam, kurs]
+  - ask: ["Say: advanced level.", "Diga: nível avançado.", "Напредно ниво.", napredno-nivo]
+  - ask: ["Say: I write poorly, especially formal language.", "Diga: escrevo mal, principalmente a linguagem formal.", "Пишувам слабо, особено службен јазик.", sluzben-jazik]
+  - ask: ["Say: in writing.", "Diga: por escrito.", "Писмено.", pismeno]
+  - ask: ["She says: please fill in the form.", "Ela diz: por favor, preencha o formulário.", "Ве молам, пополнете го образецот.", ve-molam-popolnete, obrazecot]
+  - ask: ["Ask when the classes are held.", "Pergunte quando acontecem as aulas.", "Кога се одржуваат часовите?", casovite, se-odrzuvaat]
+  - ask: ["Say: enrolment.", "Diga: matrícula.", "Запишување.", zapisuvanje]
+  - ask: ["She says: it's never too late.", "Ela diz: nunca é tarde.", "Никогаш не е доцна.", nikogas-ne-e-docna]
+  - note: ["Formal Macedonian prefers set phrases and full forms: 'ве молам, пополнете' instead of 'пополни', 'се одржуваат' instead of 'имаме'. Offices and letters expect it.", "O macedônio formal prefere frases feitas e formas completas: 'ве молам, пополнете' em vez de 'пополни', 'се одржуваат' em vez de 'имаме'. Repartições e cartas esperam isso."]

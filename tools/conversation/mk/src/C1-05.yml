@@ -1,0 +1,38 @@
+id: C1-05
+protagonist: f
+title: ["Taxes", "Impostos"]
+situation: ["Your first tax return in Macedonia. The Public Revenue Office.", "Sua primeira declaração de imposto na Macedônia. A Receita Pública."]
+learn: [c1-ima-da]
+culture: Check the current rules
+items:
+  - [danok, "данок", "tax", "imposto"]
+  - [godisna-prijava, "годишна пријава", "annual return", "declaração anual"]
+  - [ima-da-platite, "има да платите", "you'll have to pay", "a senhora vai ter que pagar"]
+  - [dopolnitelni-prihodi, "дополнителни приходи", "additional income", "renda extra", {rare: true}]
+  - [rokot-istekuva, "рокот истекува", "the deadline expires", "o prazo vence"]
+  - [elektronski, "електронски", "electronically", "eletronicamente"]
+  - [kazna, "казна", "fine, penalty", "multa"]
+  - [ima-da-cekam, "има да чекам", "I'll be waiting (for ages)", "vou ficar esperando"]
+  - [na-vreme-podneseno, "навреме поднесено", "filed on time", "entregue no prazo", {rare: true}]
+  - [potvrda, "потврда", "confirmation, certificate", "comprovante"]
+dialogue:
+  - [sluzbenicka, "Дали имавте дополнителни приходи минатата година?", "Did you have any additional income last year?", "A senhora teve renda extra no ano passado?"]
+  - [protagonist, "Да, мал проект за една фирма од Бразил.", "Yes, a small project for a company from Brazil.", "Sim, um projeto pequeno para uma empresa do Brasil."]
+  - [sluzbenicka, "Тогаш поднесувате годишна пријава. Може електронски.", "Then you file an annual return. It can be done electronically.", "Então a senhora entrega a declaração anual. Pode ser eletrônica."]
+  - [protagonist, "Кога истекува рокот?", "When does the deadline expire?", "Quando vence o prazo?"]
+  - [sluzbenicka, "Проверете го на страницата — секоја година е објавен. Ако задоцните, има да платите казна.", "Check it on the website — it's published every year. If you're late, you'll have to pay a fine.", "Confira no site — é publicado todo ano. Se atrasar, vai ter que pagar multa."]
+  - [protagonist, "А ако одам лично?", "And if I go in person?", "E se eu for pessoalmente?"]
+  - [sluzbenicka, "Има да чекате цел ден. Електронски е побрзо.", "You'll be waiting all day. Online is faster.", "Vai ficar esperando o dia inteiro. Pela internet é mais rápido."]
+  - [protagonist, "Ќе ја поднесам електронски и ќе ја зачувам потврдата.", "I'll file it online and keep the confirmation.", "Vou entregar pela internet e guardar o comprovante."]
+teach:
+  - ask: ["Say: additional income.", "Diga: renda extra.", "Дополнителни приходи.", dopolnitelni-prihodi]
+  - ask: ["Say: the annual return.", "Diga: a declaração anual.", "Годишната пријава.", godisna-prijava]
+  - ask: ["Say: tax.", "Diga: imposto.", "Данок.", danok]
+  - ask: ["Ask when the deadline expires.", "Pergunte quando vence o prazo.", "Кога истекува рокот?", rokot-istekuva]
+  - note: ["'Има да' + verb says 'will have to' — often with a warning or a sigh: 'има да платите казна' (you'll have to pay a fine), 'има да чекате' (you'll be waiting).", "'Има да' + verbo diz 'vai ter que' — muitas vezes com aviso ou suspiro: 'има да платите казна' (vai ter que pagar multa), 'има да чекате' (vai ficar esperando)."]
+  - ask: ["She warns: you'll have to pay a fine.", "Ela avisa: vai ter que pagar multa.", "Има да платите казна.", ima-da-platite, kazna]
+  - ask: ["Say: I'll be waiting all day.", "Diga: vou ficar esperando o dia inteiro.", "Има да чекам цел ден.", ima-da-cekam]
+  - ask: ["Say: electronically.", "Diga: eletronicamente.", "Електронски.", elektronski]
+  - ask: ["Say: the confirmation.", "Diga: o comprovante.", "Потврдата.", potvrda]
+  - ask: ["Say: filed on time.", "Diga: entregue no prazo.", "Навреме поднесено.", na-vreme-podneseno]
+  - note: ["Deadlines, rates and who must file change from year to year — the course won't give numbers. Check the Public Revenue Office (УЈП) site or ask an accountant each year.", "Prazos, alíquotas e quem precisa declarar mudam de ano para ano — o curso não dá números. Confira o site da Receita (УЈП) ou pergunte a um contador todo ano."]

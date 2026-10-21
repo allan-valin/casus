@@ -1,0 +1,36 @@
+id: C1-03
+protagonist: f
+title: ["The rental contract", "Contrato de aluguel"]
+situation: ["Before buying, a bigger rented flat. The landlord brings the contract.", "Antes de comprar, um apartamento alugado maior. O proprietário traz o contrato."]
+learn: [c1-formal]
+culture: Contracts by handshake
+items:
+  - [zakupodavec, "закуподавач", "landlord", "locador", {rare: true}]
+  - [zakupec, "закупец", "tenant", "locatário", {rare: true}]
+  - [depozit, "депозит", "deposit", "caução"]
+  - [vo-visina-na, "во висина на", "in the amount of", "no valor de"]
+  - [otkazen-rok, "отказен рок", "notice period", "aviso prévio"]
+  - [se-obvrzuva, "се обврзува", "undertakes, commits", "se compromete"]
+  - [komunalii, "комуналии", "utilities", "contas (água, luz, condomínio)", {rare: true}]
+  - [vo-pismena-forma, "во писмена форма", "in writing", "por escrito"]
+  - [zaverka, "заверка кај нотар", "notarisation", "reconhecimento em cartório", {rare: true}]
+  - [rakuvanje, "ракување", "handshake", "aperto de mão", {rare: true}]
+dialogue:
+  - [sosed2, "Еве го договорот. Депозит во висина на една кирија.", "Here's the contract. A deposit of one month's rent.", "Aqui o contrato. Caução no valor de um aluguel."]
+  - [protagonist, "Кој ги плаќа комуналиите?", "Who pays the utilities?", "Quem paga as contas?"]
+  - [sosed2, "Закупецот се обврзува да ги плаќа. Тоа сте вие.", "The tenant undertakes to pay them. That's you.", "O locatário se compromete a pagar. É a senhora."]
+  - [protagonist, "А отказниот рок?", "And the notice period?", "E o aviso prévio?"]
+  - [sosed2, "Еден месец, во писмена форма.", "One month, in writing.", "Um mês, por escrito."]
+  - [protagonist, "Дали договорот ќе се завери кај нотар?", "Will the contract be notarised?", "O contrato vai ser reconhecido em cartório?"]
+  - [sosed2, "Нотар? Повеќето се договараат со ракување!", "A notary? Most people agree with a handshake!", "Cartório? A maioria combina com um aperto de mão!"]
+  - [protagonist, "Јас би сакала сепак со нотар. За секој случај.", "I'd still like a notary. Just in case.", "Eu preferiria cartório mesmo assim. Por via das dúvidas."]
+teach:
+  - ask: ["Say: a deposit of one month's rent.", "Diga: caução no valor de um aluguel.", "Депозит во висина на една кирија.", depozit, vo-visina-na]
+  - ask: ["Ask who pays the utilities.", "Pergunte quem paga as contas.", "Кој ги плаќа комуналиите?", komunalii]
+  - ask: ["Say: the tenant undertakes to pay.", "Diga: o locatário se compromete a pagar.", "Закупецот се обврзува да плаќа.", zakupec, se-obvrzuva]
+  - ask: ["Ask about the notice period.", "Pergunte do aviso prévio.", "А отказниот рок?", otkazen-rok]
+  - ask: ["Say: in writing.", "Diga: por escrito.", "Во писмена форма.", vo-pismena-forma]
+  - ask: ["Ask: will it be notarised?", "Pergunte: vai ser reconhecido em cartório?", "Ќе се завери кај нотар?", zaverka]
+  - ask: ["Say: the landlord.", "Diga: o locador.", "Закуподавачот.", zakupodavec]
+  - ask: ["Say: with a handshake.", "Diga: com um aperto de mão.", "Со ракување.", rakuvanje]
+  - note: ["Many rentals still run on a handshake. A written contract — ideally notarised — protects your deposit and your residence papers, which may require a registered address.", "Muitos aluguéis ainda funcionam no aperto de mão. Um contrato escrito — de preferência em cartório — protege a caução e a documentação de residência, que pode exigir endereço registrado."]

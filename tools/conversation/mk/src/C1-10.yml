@@ -1,0 +1,36 @@
+id: C1-10
+protagonist: m
+title: ["A кум for real", "Kum de verdade"]
+situation: ["Marko and his fiancée ask you to be their кум.", "O Marko e a noiva pedem para você ser o кум deles."]
+learn: [c1-ima-da]
+culture: The кум is for life
+items:
+  - [kumstvo, "кумство", "the кум bond", "compadrio", {rare: true}]
+  - [ni-be-kum, "да ни бидеш кум", "to be our кум", "ser nosso padrinho"]
+  - [cest-za-mene, "чест за мене", "an honour for me", "uma honra para mim"]
+  - [obvrska, "обврска", "obligation, duty", "compromisso / obrigação"]
+  - [krstevka, "крштевка", "christening", "batizado", {rare: true}]
+  - [ima-da-gi-krstis, "има да ги крстиш", "you'll have to christen them", "você vai ter que batizar"]
+  - [decata-nasi, "нашите деца", "our children", "nossos filhos"]
+  - [ne-se-odbiva, "не се одбива", "you can't refuse it", "não se recusa"]
+  - [primam, "Примам", "I accept", "Aceito"]
+  - [ke-se-trudam, "ќе се трудам", "I'll do my best", "vou me esforçar"]
+dialogue:
+  - [marko, "Брате, имаме едно прашање. Сакаме да ни бидеш кум.", "Bro, we have a question. We want you to be our кум.", "Mano, temos uma pergunta. Queremos que você seja nosso кум."]
+  - [protagonist, "Јас? Странец?", "Me? A foreigner?", "Eu? Um estrangeiro?"]
+  - [marko, "Ти си ни најдобар пријател. Кумство не се одбива!", "You're our best friend. You can't refuse being кум!", "Você é nosso melhor amigo. Compadrio não se recusa!"]
+  - [protagonist, "Тоа е голема чест за мене. Но и обврска.", "It's a great honour for me. But also a duty.", "É uma grande honra para mim. Mas também um compromisso."]
+  - [marko, "Да. Има да ги крстиш и нашите деца.", "Yes. You'll have to christen our children too.", "É. Você vai ter que batizar nossos filhos também."]
+  - [protagonist, "На крштевка ќе бидам и на македонски и на португалски!", "At the christening I'll be there in Macedonian and in Portuguese!", "No batizado vou estar em macedônio e em português!"]
+  - [marko, "Значи — да?", "So — yes?", "Então — sim?"]
+  - [protagonist, "Примам. Ќе се трудам да бидам добар кум.", "I accept. I'll do my best to be a good кум.", "Aceito. Vou me esforçar para ser um bom кум."]
+teach:
+  - ask: ["Marko: we want you to be our кум.", "O Marko: queremos que você seja nosso кум.", "Сакаме да ни бидеш кум.", ni-be-kum]
+  - ask: ["Marko: you can't refuse!", "O Marko: não se recusa!", "Кумство не се одбива!", kumstvo, ne-se-odbiva]
+  - ask: ["Say: it's a great honour for me.", "Diga: é uma grande honra para mim.", "Тоа е голема чест за мене.", cest-za-mene]
+  - ask: ["Say: but also a duty.", "Diga: mas também um compromisso.", "Но и обврска.", obvrska]
+  - ask: ["Marko: you'll have to christen our children.", "O Marko: você vai ter que batizar nossos filhos.", "Има да ги крстиш нашите деца.", ima-da-gi-krstis, decata-nasi]
+  - ask: ["Say: at the christening.", "Diga: no batizado.", "На крштевката.", krstevka]
+  - ask: ["Say: I accept.", "Diga: aceito.", "Примам.", primam]
+  - ask: ["Say: I'll do my best.", "Diga: vou me esforçar.", "Ќе се трудам.", ke-se-trudam]
+  - note: ["Being asked to be кум is among the highest honours of friendship; refusing would hurt. The кум stands at the wedding and christens the children — a tie that families keep for generations.", "Ser convidado para кум é uma das maiores honras da amizade; recusar magoaria. O кум fica no altar e batiza os filhos — um laço que as famílias mantêm por gerações."]

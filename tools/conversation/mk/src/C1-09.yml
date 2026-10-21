@@ -1,0 +1,36 @@
+id: C1-09
+protagonist: f
+title: ["The accident", "O acidente"]
+situation: ["A car taps your bumper at a traffic light. Nobody is hurt.", "Um carro bate no seu para-choque no semáforo. Ninguém se machuca."]
+learn: [c1-formal]
+culture: —
+items:
+  - [povredeni, "повредени", "injured (plural)", "feridos"]
+  - [osiguruvanje, "осигурување", "insurance", "seguro"]
+  - [evropski-zapisnik, "европски записник", "European accident report", "declaração amigável de acidente", {rare: true}]
+  - [da-go-popolnime, "да го пополниме", "to fill it in", "preencher"]
+  - [vinovnik, "виновник", "the one at fault", "culpado", {rare: true}]
+  - [priznavam, "признавам", "I admit", "admito"]
+  - [polisa, "полиса", "insurance policy", "apólice", {rare: true}]
+  - [registracija, "регистрација", "registration (plate)", "placa / registro"]
+  - [stetata, "штетата", "the damage", "o dano / o prejuízo"]
+  - [ke-ja-nadomesti, "ќе ја надомести", "will cover it", "vai cobrir"]
+dialogue:
+  - [sosed2, "Извинете! Дали сте повредени?", "Sorry! Are you hurt?", "Desculpe! A senhora se machucou?"]
+  - [protagonist, "Не, добро сум. Но браникот...", "No, I'm fine. But the bumper...", "Não, estou bem. Mas o para-choque..."]
+  - [sosed2, "Признавам, јас не закочив навреме.", "I admit it, I didn't brake in time.", "Admito, não freei a tempo."]
+  - [protagonist, "Тогаш да го пополниме европскиот записник.", "Then let's fill in the European accident report.", "Então vamos preencher a declaração amigável."]
+  - [sosed2, "Еве ја мојата полиса и регистрацијата.", "Here's my policy and registration.", "Aqui está minha apólice e a placa."]
+  - [protagonist, "Вие сте виновник, значи вашето осигурување ќе ја надомести штетата.", "You're at fault, so your insurance will cover the damage.", "O senhor é o culpado, então o seu seguro cobre o prejuízo."]
+  - [sosed2, "Точно. Потпишете тука.", "Right. Sign here.", "Certo. Assine aqui."]
+  - [protagonist, "Без полиција?", "Without the police?", "Sem polícia?"]
+  - [sosed2, "Ако нема повредени и се согласуваме — без полиција.", "If nobody's hurt and we agree — no police.", "Se ninguém se machucou e estamos de acordo — sem polícia."]
+teach:
+  - ask: ["Ask: are you hurt? (formal)", "Pergunte: o senhor se machucou?", "Дали сте повредени?", povredeni]
+  - ask: ["He says: I admit it.", "Ele diz: admito.", "Признавам.", priznavam]
+  - ask: ["Say: let's fill in the European report.", "Diga: vamos preencher a declaração amigável.", "Да го пополниме европскиот записник.", da-go-popolnime, evropski-zapisnik]
+  - ask: ["Say: the policy and the registration.", "Diga: a apólice e a placa.", "Полисата и регистрацијата.", polisa, registracija]
+  - ask: ["Say: you're at fault.", "Diga: o senhor é o culpado.", "Вие сте виновник.", vinovnik]
+  - ask: ["Say: your insurance will cover the damage.", "Diga: o seu seguro cobre o prejuízo.", "Вашето осигурување ќе ја надомести штетата.", osiguruvanje, ke-ja-nadomesti, stetata]
+  - ask: ["Ask: without the police?", "Pergunte: sem polícia?", "Без полиција?", bez]
+  - note: ["For a small accident with no injuries, both drivers fill in the European accident report (европски записник) and sign it; call the police if someone is hurt or you disagree. Check your own insurer's rules.", "Num acidente pequeno sem feridos, os dois motoristas preenchem a declaração amigável europeia (европски записник) e assinam; chame a polícia se alguém se machucou ou se vocês não concordam. Confira as regras da sua seguradora."]

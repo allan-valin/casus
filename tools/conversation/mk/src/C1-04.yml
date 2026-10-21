@@ -1,0 +1,38 @@
+id: C1-04
+protagonist: m
+title: ["The noisy neighbour", "O vizinho barulhento"]
+situation: ["Midnight. Music from upstairs, again. You go up.", "Meia-noite. Música no andar de cima, de novo. Você sobe."]
+learn: [c1-particles]
+culture: —
+items:
+  - [buchava, "бучава", "noise", "barulho"]
+  - [izvinete-sto-ve-voznemiruvam, "Извинете што ве вознемирувам", "Sorry to disturb you", "Desculpe incomodar"]
+  - [imajte-razbiranje, "имајте разбирање", "please be understanding", "tenha compreensão"]
+  - [utre-rano, "утре рано", "early tomorrow", "amanhã cedo"]
+  - [malku-potiho, "малку потивко", "a bit quieter", "um pouco mais baixo"]
+  - [ama-sega, "ама сега", "but now, right now", "mas agora"]
+  - [ne-znaev, "не знаев", "I didn't know", "eu não sabia"]
+  - [se-slusa, "се слуша", "can be heard", "dá para ouvir"]
+  - [vazi-togas, "важи тогаш", "OK then", "tá certo então"]
+  - [kucen-red, "куќен ред", "house rules", "regras do prédio", {rare: true}]
+dialogue:
+  - [protagonist, "Добровечер. Извинете што ве вознемирувам.", "Good evening. Sorry to disturb you.", "Boa noite. Desculpe incomodar."]
+  - [sosed2, "Повелете?", "Yes?", "Pois não?"]
+  - [protagonist, "Музиката многу се слуша долу. Утре рано работам.", "The music can really be heard downstairs. I work early tomorrow.", "A música dá para ouvir muito lá embaixo. Amanhã trabalho cedo."]
+  - [sosed2, "Се слуша? Не знаев.", "It can be heard? I didn't know.", "Dá para ouvir? Eu não sabia."]
+  - [protagonist, "Имајте разбирање — само малку потивко, ве молам.", "Please be understanding — just a bit quieter, please.", "Tenha compreensão — só um pouco mais baixo, por favor."]
+  - [sosed2, "Ама сега имам гости, роденден е...", "But right now I have guests, it's a birthday...", "Mas agora tenho visita, é aniversário..."]
+  - [protagonist, "Честит роденден! Според куќниот ред, тишина е по десет.", "Happy birthday! By the house rules, it's quiet after ten.", "Feliz aniversário! Pelas regras do prédio, silêncio depois das dez."]
+  - [sosed2, "Важи тогаш. Ќе го намалам.", "OK then. I'll turn it down.", "Tá certo então. Vou abaixar."]
+teach:
+  - ask: ["Open politely: sorry to disturb you.", "Comece educado: desculpe incomodar.", "Извинете што ве вознемирувам.", izvinete-sto-ve-voznemiruvam]
+  - ask: ["Say: the music can be heard downstairs.", "Diga: dá para ouvir a música lá embaixo.", "Музиката се слуша долу.", se-slusa, dolu]
+  - ask: ["Say: I work early tomorrow.", "Diga: amanhã trabalho cedo.", "Утре рано работам.", utre-rano]
+  - ask: ["He says: I didn't know.", "Ele diz: eu não sabia.", "Не знаев.", ne-znaev]
+  - ask: ["Say: please be understanding.", "Diga: tenha compreensão.", "Имајте разбирање.", imajte-razbiranje]
+  - ask: ["Say: just a bit quieter, please.", "Diga: só um pouco mais baixo, por favor.", "Само малку потивко, ве молам.", malku-potiho]
+  - ask: ["He says: but right now I have guests.", "Ele diz: mas agora tenho visita.", "Ама сега имам гости.", ama-sega, gosti]
+  - ask: ["Say: by the house rules, quiet after ten.", "Diga: pelas regras do prédio, silêncio depois das dez.", "Според куќниот ред, тишина по десет.", kucen-red]
+  - ask: ["He agrees: OK then.", "Ele concorda: tá certo então.", "Важи тогаш.", vazi-togas]
+  - ask: ["Say: the noise.", "Diga: o barulho.", "Бучавата.", buchava]
+  - note: ["Polite firmness: apologise for disturbing, give a reason, ask for 'a little', then point to the rule. A birthday wish softens it.", "Firmeza educada: peça desculpa por incomodar, dê um motivo, peça 'só um pouco', depois cite a regra. Um parabéns ameniza."]
