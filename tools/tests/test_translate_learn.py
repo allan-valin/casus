@@ -387,3 +387,24 @@ def test_the_german_word_test_knows_the_language_a_book_explains_in():
     if (T.ROOT / "data" / "fr" / "forms").exists():
         fr = T.gloss_test("de", "fr")
         assert not fr.taught("au") and not fr.taught("du") and fr.taught("Ich bin der Mann")   # French function words
+
+
+def test_a_stopped_run_keeps_what_it_translated(tmp_path, monkeypatch):
+    # 2026-10-21: a four-hour EuroLLM run killed midway saved nothing since its last 960-sentence checkpoint
+    page(tmp_path / "data", "de-x", sections=[{"id": "s", "html": {"en": "<p>A sentence that is long enough to send.</p>"}}])
+    (tmp_path / "data" / "xx" / "learn.json").write_text(json.dumps({"levels": []}))
+    monkeypatch.setattr(T, "ROOT", tmp_path)
+
+    class Stopped(Fake):
+        saved = 0
+
+        def __call__(self, texts):
+            raise KeyboardInterrupt
+
+        def save(self):
+            self.saved += 1
+    tr = Stopped("mk")
+    import pytest
+    with pytest.raises(KeyboardInterrupt):
+        T.translate_language("xx", tr)
+    assert tr.saved == 1

@@ -400,6 +400,14 @@ def html_field(obj: dict, tr, src: str = "en", gloss=None) -> bool:
 
 
 def translate_language(code: str, tr, redo: bool = False, only: str | None = None, write: bool = True) -> int:
+    """the pages of `code` translated into tr.ui; what was translated is saved even when the run is stopped"""
+    try:
+        return _translate_language(code, tr, redo, only, write)
+    finally:
+        tr.save()
+
+
+def _translate_language(code: str, tr, redo: bool, only: str | None, write: bool) -> int:
     """the imported pages of one language into tr.ui; then the index's titles and meanings of those pages"""
     data = ROOT / "data" / code
     srcs, n = {}, 0
@@ -480,7 +488,6 @@ def translate_language(code: str, tr, redo: bool = False, only: str | None = Non
                         text_field(m, tr, srcs[e["id"]])
         if write:
             index_file.write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    tr.save()
     return n
 
 
@@ -492,6 +499,8 @@ if __name__ == "__main__":
     ap.add_argument("--redo", action="store_true", help="translate again pages already translated into this language")
     ap.add_argument("--engine", choices=list(ENGINES), default="madlad", help="eurollm: a llama.cpp server at $CASUS_LLM_URL (tools/llm_server.sh)")
     a = ap.parse_args()
+    import signal
+    signal.signal(signal.SIGTERM, lambda *_: sys.exit(1))      # a kill runs the save in translate_language
     tr = CacheOnly(a.ui) if a.cache_only else Translator(a.ui, a.engine)
     for c in a.codes:
         print(f"{c}: {translate_language(c, tr, a.redo)} pages machine-translated into {a.ui} ({tr.new} new sentences so far)", flush=True)
