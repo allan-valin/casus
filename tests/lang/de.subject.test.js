@@ -63,6 +63,13 @@ describe('CL10: verb valency', () => {
     expect(C(by(b, 'Frau'))).toEqual(['dat']);
     expect(C(by(b, 'der'))).toEqual(['dat']);
   });
+  it('NP6: a genitive right after a noun is explained by that noun, not by the verb (Er sieht das Buch der Frau)', async () => {
+    const b = await read('Er sieht das Buch der Frau.');
+    const frau = by(b, 'Frau');
+    expect(C(frau)).toEqual(['gen']);
+    expect(frau.candidates[0].reasons.some((r) => r.startsWith('valency:'))).toBe(false);
+    expect(frau.candidates[0].reasons).toContain('genitive: right after Buch, it belongs to Buch');
+  });
   it('the valency of the participle counts, not the auxiliary: Er hat der Frau geholfen', async () => {
     const b = await read('Er hat der Frau geholfen.');
     expect(C(by(b, 'Frau'))).toEqual(['dat']);

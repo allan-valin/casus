@@ -108,7 +108,7 @@ syntax model of design §8).
 | NP3 | Before its noun an article word is an article word, not a pronoun (*seinem Bett*: not *seiner*). | done |
 | NP4 | A word directly followed by the phrase it governs is the preposition (*in*, *zu* lose their adverb/adjective readings). | done |
 | NP5 | A preposition governs its whole phrase; a personal pronoun is a whole phrase (*mit ihm*). | done |
-| NP6 | A genitive phrase right after a noun phrase belongs to it (*das Haus **des Vaters***): glue it to the preceding phrase. | next |
+| NP6 | A genitive phrase right after a noun phrase belongs to it (*das Haus **des Vaters***): glue it to the preceding phrase. | case + reason done 2026-10-21 (subject.js: the kept genitive is explained by the noun, not the verb's valency); the visual glue (one link between the two phrases) still next |
 | NP7 | An adjective without a noun after its article is a noun (*der Alte*, *das Gute*): nominalised, keeps adjective endings. | next |
 | NP8 | Appositions between commas repeat the case of the phrase they explain (*Gregor, **der Reisende**,*). | next |
 | NP9 | Coordinated phrases (*mit dem Vater und der Mutter*) share the preposition and the case. | next |

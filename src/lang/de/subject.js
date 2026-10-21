@@ -121,8 +121,12 @@ export function subjectStage(blocks, ctx) {
       let j = i - 1;
       while (j >= 0 && group.includes(j) && out[j].candidates.length && out[j].candidates.every((c) => ['det', 'adj', 'num'].includes(c.analysis.pos))) j -= 1;
       const afterNoun = j >= 0 && group.includes(j) && out[j].candidates.some((c) => c.analysis.pos === 'noun');
-      narrow(out, i, (c) => !isNounish(c) || c.analysis.case === 'nom' || takes.has(c.analysis.case) || (afterNoun && c.analysis.case === 'gen'),
-        `valency: ${speaker.token.surface} takes ${[...takes].map((x) => ({ acc: 'an accusative', dat: 'a dative', gen: 'a genitive' }[x])).join(' and ')}`);
+      const keepFn = (c) => !isNounish(c) || c.analysis.case === 'nom' || takes.has(c.analysis.case) || (afterNoun && c.analysis.case === 'gen');
+      // NP6: when only the genitive after a noun survives, that noun explains it, not the verb
+      const kept = out[i].candidates.filter(keepFn).filter(isNounish);
+      const owner = afterNoun && kept.length && kept.every((c) => c.analysis.case === 'gen') && !takes.has('gen') ? out[j].token.surface : null;
+      narrow(out, i, keepFn, owner ? `genitive: right after ${owner}, it belongs to ${owner}`
+        : `valency: ${speaker.token.surface} takes ${[...takes].map((x) => ({ acc: 'an accusative', dat: 'a dative', gen: 'a genitive' }[x])).join(' and ')}`);
     }
   }
   return out;
