@@ -1,0 +1,576 @@
+# UNIT mk C2-12 — written by AI (Claude) for Casus; expanded from src/C2-12.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-12
+level: C2
+number: 12
+protagonist: m
+title:
+  en: The family business
+  pt: O negócio da família
+situation:
+  en: Elena wants to open a bakery with her husband. She asks you to check the business plan.
+  pt: A Elena quer abrir uma padaria com o marido. Ela pede para você revisar o plano de negócios.
+learn_lessons:
+- c2-aspect-politeness
+culture: Family business
+new_items:
+- id: biznis-plan
+  text: бизнис план
+  meaning:
+    en: business plan
+    pt: plano de negócios
+- id: pekara
+  text: пекара
+  meaning:
+    en: bakery
+    pt: padaria
+- id: rizik
+  text: ризик
+  meaning:
+    en: risk
+    pt: risco
+- id: trosocite
+  text: трошоците
+  meaning:
+    en: the costs
+    pt: os custos
+- id: prihodite
+  text: приходите
+  meaning:
+    en: the income
+    pt: a receita
+- id: bi-mozela-li
+  text: би можела ли
+  meaning:
+    en: could you perhaps
+    pt: você poderia
+- id: da-gi-presmetame
+  text: да ги пресметаме
+  meaning:
+    en: to calculate them
+    pt: calcular
+- id: na-sopstvena-odgovornost
+  text: на своја одговорност
+  meaning:
+    en: at one's own risk
+    pt: por conta e risco
+- id: semejna-firma
+  text: семејна фирма
+  meaning:
+    en: family firm
+    pt: empresa familiar
+- id: ke-se-isplati
+  text: ќе се исплати
+  meaning:
+    en: will pay off
+    pt: vai compensar
+reviews:
+- item: sto-ve-boli
+  from: A2-05
+- item: grloto
+  from: A2-05
+- item: temperatura
+  from: A2-05
+- item: od-koga
+  from: A2-05
+- item: mislam-deka
+  from: A2-05
+- item: pijte
+  from: A2-05
+- item: med
+  from: A2-05
+- item: lekovi
+  from: A2-05
+- item: recept
+  from: A2-05
+- item: pati-na-den
+  from: A2-05
+- item: ne-odete
+  from: A2-05
+- item: dva-dena
+  from: A2-05
+- item: galaksija
+  from: B2-09
+- item: svetlosna-godina
+  from: B2-09
+- item: patuva
+  from: B2-09
+- item: doagja
+  from: B2-09
+- item: izgasnala
+  from: B2-09
+- item: mozebi-vekje
+  from: B2-09
+- item: ja-gledame
+  from: B2-09
+- item: vo-minatoto
+  from: B2-09
+- item: ogromen
+  from: B2-09
+- item: se-cuvstvuvam-mala
+  from: B2-09
+- item: iskreno-socuvstvo
+  from: C1-11
+- item: bog-da-go-prosti
+  from: C1-11
+- item: pocina
+  from: C1-11
+- item: ve-boli
+  from: C1-11
+- item: eh
+  from: C1-11
+- item: cetirieseti-den
+  from: C1-11
+- item: panihida
+  from: C1-11
+- item: zito
+  from: C1-11
+- item: da-ste-zivi-vie
+  from: C1-11
+- item: ako-vi-treba-nesto
+  from: C1-11
+- item: stres
+  from: C1-27
+- item: ne-spijam
+  from: C1-27
+- item: izgoruvanje
+  from: C1-27
+- item: psiholog
+  from: C1-27
+- item: pa-sto
+  from: C1-27
+- item: ne-si-luda
+  from: C1-27
+- item: se-sramam
+  from: C1-27
+- item: nema-za-sto
+  from: C1-27
+- item: granici
+  from: C1-27
+- item: odmor-vistinski
+  from: C1-27
+- item: dijalektot
+  from: C2-05
+- item: izgovor
+  from: C2-05
+- item: razlicno-zboruvaat
+  from: C2-05
+- item: standardniot-jazik
+  from: C2-05
+- item: osnovata
+  from: C2-05
+- item: zapadnite-dijalekti
+  from: C2-05
+- item: istocno
+  from: C2-05
+- item: ne-te-razbrav-dobro
+  from: C2-05
+- item: povtori-poleka
+  from: C2-05
+- item: sekoj-kraj
+  from: C2-05
+- item: povelete-sednete
+  from: C2-09
+- item: dojdete-za-moment
+  from: C2-09
+- item: ke-mozes-li
+  from: C2-09
+- item: ako-ne-ti-e-tesko
+  from: C2-09
+- item: bi-bilo-dobro
+  from: C2-09
+- item: pogledni-go
+  from: C2-09
+- item: ne-gledaj-go-cel-den
+  from: C2-09
+- item: blagodaram-odnapred
+  from: C2-09
+- item: nemoj
+  from: C2-09
+- item: nemoj-da-se-sekiras
+  from: C2-09
+- item: tuzba
+  from: C2-11
+- item: advokat
+  from: C2-11
+- item: sudot
+  from: C2-11
+- item: sudijata
+  from: C2-11
+- item: ke-svedocite
+  from: C2-11
+- item: samo-fakti
+  from: C2-11
+- item: bez-emocii
+  from: C2-11
+- item: dokazite
+  from: C2-11
+- item: vo-moja-korist
+  from: C2-11
+- item: presudata
+  from: C2-11
+steps:
+- type: narrator
+  text:
+    en: Elena wants to open a bakery with her husband. She asks you to check the business plan. Listen to the conversation; you don't need to understand it yet.
+    pt: A Elena quer abrir uma padaria com o marido. Ela pede para você revisar o plano de negócios. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: elena
+    text: Ова е бизнис планот за пекарата. Би можел ли да го погледнеш?
+    meaning:
+      en: This is the business plan for the bakery. Could you look at it?
+      pt: Este é o plano de negócios da padaria. Você poderia dar uma olhada?
+  - speaker: protagonist
+    text: Секако. Трошоците ги имаш — ама приходите се многу оптимистички.
+    meaning:
+      en: Of course. You have the costs — but the income is very optimistic.
+      pt: Claro. Os custos você tem — mas a receita está muito otimista.
+  - speaker: elena
+    text: Во Карпош нема пекара. Луѓето ќе дојдат.
+    meaning:
+      en: There's no bakery in Karpoš. People will come.
+      pt: Em Karpoš não tem padaria. As pessoas vão vir.
+  - speaker: protagonist
+    text: Можеби. Но ризикот е голем. Ајде да ги пресметаме трите месеци без ниту една муштерија.
+    meaning:
+      en: Maybe. But the risk is big. Let's calculate three months without a single customer.
+      pt: Talvez. Mas o risco é grande. Vamos calcular três meses sem nenhum cliente.
+  - speaker: elena
+    text: Тогаш кредитот е проблем.
+    meaning:
+      en: Then the loan is a problem.
+      pt: Aí o empréstimo é um problema.
+  - speaker: protagonist
+    text: Семејна фирма — и роднините ќе помогнат, нели?
+    meaning:
+      en: A family firm — and the relatives will help, right?
+      pt: Empresa familiar — e os parentes vão ajudar, né?
+  - speaker: elena
+    text: Мајка ми ќе меси, татко ми ќе продава.
+    meaning:
+      en: My mother will knead, my father will sell.
+      pt: Minha mãe vai sovar, meu pai vai vender.
+  - speaker: protagonist
+    text: Тогаш ќе се исплати. Само почни мало.
+    meaning:
+      en: Then it'll pay off. Just start small.
+      pt: Então vai compensar. Só começa pequeno.
+- type: prompt
+  ask:
+    en: 'Say: the business plan for the bakery.'
+    pt: 'Diga: o plano de negócios da padaria.'
+  answer:
+    speaker: protagonist
+    text: Бизнис планот за пекарата.
+  items:
+  - biznis-plan
+  - pekara
+- type: prompt
+  ask:
+    en: 'Ask Elena: could you perhaps send it?'
+    pt: 'Pergunte à Elena: você poderia mandar?'
+  answer:
+    speaker: protagonist
+    text: Би можела ли да го пратиш?
+  items:
+  - bi-mozela-li
+- type: prompt
+  ask:
+    en: 'Say: the costs and the income.'
+    pt: 'Diga: os custos e a receita.'
+  answer:
+    speaker: protagonist
+    text: Трошоците и приходите.
+  items:
+  - trosocite
+  - prihodite
+- type: prompt
+  ask:
+    en: 'Say: the risk is big.'
+    pt: 'Diga: o risco é grande.'
+  answer:
+    speaker: protagonist
+    text: Ризикот е голем.
+  items:
+  - rizik
+- type: prompt
+  ask:
+    en: 'Say: let''s calculate them.'
+    pt: 'Diga: vamos calcular.'
+  answer:
+    speaker: protagonist
+    text: Ајде да ги пресметаме.
+  items:
+  - da-gi-presmetame
+- type: prompt
+  ask:
+    en: 'Say: a family firm.'
+    pt: 'Diga: uma empresa familiar.'
+  answer:
+    speaker: protagonist
+    text: Семејна фирма.
+  items:
+  - semejna-firma
+- type: prompt
+  ask:
+    en: 'Say: it''ll pay off.'
+    pt: 'Diga: vai compensar.'
+  answer:
+    speaker: protagonist
+    text: Ќе се исплати.
+  items:
+  - ke-se-isplati
+- type: prompt
+  ask:
+    en: 'Say: at one''s own risk.'
+    pt: 'Diga: por conta e risco.'
+  answer:
+    speaker: protagonist
+    text: На своја одговорност.
+  items:
+  - na-sopstvena-odgovornost
+- type: narrator
+  text:
+    en: 'Criticism among friends goes softly: agree first (''секако''), then ''ама…'', and suggest with ''ајде да…'' instead of ''треба да''. Family businesses lean on relatives for work and money.'
+    pt: 'Crítica entre amigos vai com jeito: concorde primeiro (''секако''), depois ''ама…'', e sugira com ''ајде да…'' em vez de ''треба да''. Negócios de família contam com os parentes para trabalho e
+      dinheiro.'
+- type: prompt
+  ask:
+    en: 'Once more: say “business plan”.'
+    pt: 'Mais uma vez: diga “plano de negócios”.'
+  answer:
+    speaker: protagonist
+    text: бизнис план
+  items:
+  - biznis-plan
+- type: prompt
+  ask:
+    en: 'Once more: say “bakery”.'
+    pt: 'Mais uma vez: diga “padaria”.'
+  answer:
+    speaker: protagonist
+    text: пекара
+  items:
+  - pekara
+- type: prompt
+  ask:
+    en: 'Once more: say “risk”.'
+    pt: 'Mais uma vez: diga “risco”.'
+  answer:
+    speaker: protagonist
+    text: ризик
+  items:
+  - rizik
+- type: prompt
+  ask:
+    en: 'Once more: say “the costs”.'
+    pt: 'Mais uma vez: diga “os custos”.'
+  answer:
+    speaker: protagonist
+    text: трошоците
+  items:
+  - trosocite
+- type: prompt
+  ask:
+    en: 'Once more: say “the income”.'
+    pt: 'Mais uma vez: diga “a receita”.'
+  answer:
+    speaker: protagonist
+    text: приходите
+  items:
+  - prihodite
+- type: prompt
+  ask:
+    en: 'Once more: say “could you perhaps”.'
+    pt: 'Mais uma vez: diga “você poderia”.'
+  answer:
+    speaker: protagonist
+    text: би можела ли
+  items:
+  - bi-mozela-li
+- type: prompt
+  ask:
+    en: 'Once more: say “to calculate them”.'
+    pt: 'Mais uma vez: diga “calcular”.'
+  answer:
+    speaker: protagonist
+    text: да ги пресметаме
+  items:
+  - da-gi-presmetame
+- type: prompt
+  ask:
+    en: 'Once more: say “at one''s own risk”.'
+    pt: 'Mais uma vez: diga “por conta e risco”.'
+  answer:
+    speaker: protagonist
+    text: на своја одговорност
+  items:
+  - na-sopstvena-odgovornost
+- type: prompt
+  ask:
+    en: 'Once more: say “family firm”.'
+    pt: 'Mais uma vez: diga “empresa familiar”.'
+  answer:
+    speaker: protagonist
+    text: семејна фирма
+  items:
+  - semejna-firma
+- type: prompt
+  ask:
+    en: 'Once more: say “will pay off”.'
+    pt: 'Mais uma vez: diga “vai compensar”.'
+  answer:
+    speaker: protagonist
+    text: ќе се исплати
+  items:
+  - ke-se-isplati
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “lawsuit — and “lawyer — and “the court — and “the judge — and “you will testify — and “only facts — and “without emotion — and “the evidence — and “in my favour — and “the verdict — and “please,
+      take a seat — and “come for a moment”.'
+    pt: 'Diga: “ação judicial — e “advogado — e “o tribunal — e “o juiz — e “a senhora vai depor — e “só fatos — e “sem emoção — e “as provas — e “a meu favor — e “a sentença — e “por favor, sente-se —
+      e “venha um momento”.'
+  answer:
+    speaker: protagonist
+    text: тужба … адвокат … судот … судијата … ќе сведочите … само факти … без емоции … доказите … во моја корист … пресудата … повелете, седнете … дојдете за момент
+  items:
+  - tuzba
+  - advokat
+  - sudot
+  - sudijata
+  - ke-svedocite
+  - samo-fakti
+  - bez-emocii
+  - dokazite
+  - vo-moja-korist
+  - presudata
+  - povelete-sednete
+  - dojdete-za-moment
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Would you be able to…? — and “if it''s no trouble — and “it would be good — and “have a look at it — and “don''t keep looking at it all day — and “thanks in advance — and “don''t (softer)
+      — and “don''t worry — and “the dialect — and “pronunciation — and “speak differently — and “the standard language”.'
+    pt: 'Diga: “Você conseguiria…? — e “se não for incômodo — e “seria bom — e “dá uma olhada — e “não fica olhando o dia todo — e “obrigada desde já — e “não (mais suave) — e “não se preocupa — e “o dialeto
+      — e “pronúncia — e “falam diferente — e “a língua padrão”.'
+  answer:
+    speaker: protagonist
+    text: Ќе можеш ли…? … ако не ти е тешко … би било добро … погледни го … не гледај го цел ден … благодарам однапред … немој … немој да се секираш … дијалектот … изговор … различно зборуваат … стандардниот
+      јазик
+  items:
+  - ke-mozes-li
+  - ako-ne-ti-e-tesko
+  - bi-bilo-dobro
+  - pogledni-go
+  - ne-gledaj-go-cel-den
+  - blagodaram-odnapred
+  - nemoj
+  - nemoj-da-se-sekiras
+  - dijalektot
+  - izgovor
+  - razlicno-zboruvaat
+  - standardniot-jazik
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the basis — and “the western dialects — and “in the east — and “I didn''t understand you well — and “repeat slowly — and “every region — and “stress — and “I''m not sleeping — and “burnout
+      — and “psychologist — and “so what — and “you''re not crazy”.'
+    pt: 'Diga: “a base — e “os dialetos do oeste — e “no leste — e “não te entendi direito — e “repete devagar — e “cada região — e “estresse — e “não estou dormindo — e “esgotamento (burnout) — e “psicólogo
+      — e “e daí — e “você não é louca”.'
+  answer:
+    speaker: protagonist
+    text: основата … западните дијалекти … источно … не те разбрав добро … повтори полека … секој крај … стрес … не спијам … изгорување … психолог … па што … не си луда
+  items:
+  - osnovata
+  - zapadnite-dijalekti
+  - istocno
+  - ne-te-razbrav-dobro
+  - povtori-poleka
+  - sekoj-kraj
+  - stres
+  - ne-spijam
+  - izgoruvanje
+  - psiholog
+  - pa-sto
+  - ne-si-luda
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I''m ashamed, embarrassed — and “there''s nothing to (be ashamed of) — and “limits, boundaries — and “a real holiday — and “My sincere condolences — and “May God rest his soul — and “passed
+      away — and “it hurts you, you''re grieving — and “ah, oh (sigh) — and “forty-day memorial — and “memorial service — and “boiled wheat (memorial food)”.'
+    pt: 'Diga: “tenho vergonha — e “não tem por quê — e “limites — e “férias de verdade — e “Meus sinceros pêsames — e “Que Deus o tenha — e “faleceu — e “dói na senhora — e “ai / ah — e “missa de quarenta
+      dias — e “missa / culto fúnebre — e “trigo cozido (comida do luto)”.'
+  answer:
+    speaker: protagonist
+    text: се срамам … нема за што … граници … вистински одмор … Искрено сочувство … Бог да го прости … почина … ве боли … ех … четириесетница … панихида … жито
+  items:
+  - se-sramam
+  - nema-za-sto
+  - granici
+  - odmor-vistinski
+  - iskreno-socuvstvo
+  - bog-da-go-prosti
+  - pocina
+  - ve-boli
+  - eh
+  - cetirieseti-den
+  - panihida
+  - zito
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “may you live (condolence) — and “if you need anything — and “galaxy — and “light year — and “travels — and “comes, arrives — and “gone out, died (feminine, reportedly) — and “maybe already
+      — and “we see it — and “in the past — and “huge (masculine) — and “I feel small (a woman)”.'
+    pt: 'Diga: “que a senhora tenha vida — e “se precisar de alguma coisa — e “galáxia — e “ano-luz — e “viaja — e “chega — e “apagada / extinta — e “talvez já — e “a gente vê — e “no passado — e “enorme
+      — e “me sinto pequena”.'
+  answer:
+    speaker: protagonist
+    text: да сте живи вие … ако ви треба нешто … галаксија … светлосна година … патува … доаѓа … изгаснала … можеби веќе … ја гледаме … во минатото … огромен … се чувствувам мала
+  items:
+  - da-ste-zivi-vie
+  - ako-vi-treba-nesto
+  - galaksija
+  - svetlosna-godina
+  - patuva
+  - doagja
+  - izgasnala
+  - mozebi-vekje
+  - ja-gledame
+  - vo-minatoto
+  - ogromen
+  - se-cuvstvuvam-mala
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “What hurts? (formal) — and “the throat — and “a temperature, fever — and “Since when? — and “I think (that) — and “Drink (formal) — and “honey — and “medicine — and “prescription / recipe
+      — and “three times a day — and “don''t go (formal) — and “two days”.'
+    pt: 'Diga: “O que está doendo? — e “a garganta — e “febre — e “Desde quando? — e “acho que — e “Beba (formal) — e “mel — e “remédios — e “receita — e “três vezes ao dia — e “não vá — e “dois dias”.'
+  answer:
+    speaker: protagonist
+    text: Што ве боли? … грлото … температура … Од кога? … мислам дека … Пијте … мед … лекови … рецепт … три пати на ден … не одете … два дена
+  items:
+  - sto-ve-boli
+  - grloto
+  - temperatura
+  - od-koga
+  - mislam-deka
+  - pijte
+  - med
+  - lekovi
+  - recept
+  - pati-na-den
+  - ne-odete
+  - dva-dena
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

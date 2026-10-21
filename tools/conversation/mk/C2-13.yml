@@ -1,0 +1,593 @@
+# UNIT mk C2-13 — written by AI (Claude) for Casus; expanded from src/C2-13.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-13
+level: C2
+number: 13
+protagonist: f
+title:
+  en: A talk
+  pt: Uma palestra
+situation:
+  en: Your first talk at Skopje's IT meetup — in Macedonian. Questions from the floor.
+  pt: Sua primeira palestra no meetup de TI de Skopje — em macedônio. Perguntas da plateia.
+learn_lessons:
+- c2-register
+culture: —
+new_items:
+- id: predavanje
+  text: предавање
+  meaning:
+    en: lecture, talk
+    pt: palestra
+- id: slajdovite
+  text: слајдовите
+  meaning:
+    en: the slides
+    pt: os slides
+  rare: true
+- id: prasanja-od-publikata
+  text: прашања од публиката
+  meaning:
+    en: questions from the audience
+    pt: perguntas da plateia
+- id: dobro-prasanje
+  text: добро прашање
+  meaning:
+    en: good question
+    pt: boa pergunta
+- id: ke-se-vratam-na-toa
+  text: ќе се вратам на тоа
+  meaning:
+    en: I'll come back to that
+    pt: volto nisso
+- id: nakratko
+  text: накратко
+  meaning:
+    en: briefly
+    pt: resumindo
+- id: vo-praksa
+  text: во пракса
+  meaning:
+    en: in practice
+    pt: na prática
+- id: ne-znam-odgovor
+  text: не знам, ќе проверам
+  meaning:
+    en: I don't know, I'll check
+    pt: não sei, vou verificar
+- id: vi-blagodaram-na-vnimanieto
+  text: ви благодарам на вниманието
+  meaning:
+    en: thank you for your attention
+    pt: obrigada pela atenção
+- id: publikata-aplauz
+  text: аплаузот
+  meaning:
+    en: the applause
+    pt: os aplausos
+reviews:
+- item: vnimavajte
+  from: A2-06
+- item: mraz
+  from: A2-06
+- item: ke-bide
+  from: A2-06
+- item: potoplo
+  from: A2-06
+- item: se-topi
+  from: A2-06
+- item: ke-se-stopi
+  from: A2-06
+- item: vekje
+  from: A2-06
+- item: pareata
+  from: A2-06
+- item: znaete-li
+  from: A2-06
+- item: ezeroto
+  from: A2-06
+- item: cista
+  from: A2-06
+- item: tolku
+  from: A2-06
+- item: pocituvani
+  from: B2-10
+- item: pocituvan-gospodine
+  from: B2-10
+- item: vo-prilog
+  from: B2-10
+- item: ve-molime
+  from: B2-10
+- item: odgovor
+  from: B2-10
+- item: so-pocit
+  from: B2-10
+- item: marko-voc
+  from: B2-10
+- item: druze
+  from: B2-10
+- item: pozdrav
+  from: B2-10
+- item: srdecen-pozdrav
+  from: B2-10
+- item: bavca
+  from: C1-12
+- item: kokoski
+  from: C1-12
+- item: jajca-svezi
+  from: C1-12
+- item: daj-mu-gi
+  from: C1-12
+- item: ke-ti-gi-spakuvam
+  from: C1-12
+- item: prazni-kukji
+  from: C1-12
+- item: samo-starci
+  from: C1-12
+- item: tisina
+  from: C1-12
+- item: ne-moze-da-se-kupi
+  from: C1-12
+- item: ke-dojdete-pak
+  from: C1-12
+- item: vodic
+  from: C1-28
+- item: prevod
+  from: C1-28
+- item: mu-go-preveduvam
+  from: C1-28
+- item: i-go-kazi
+  from: C1-28
+- item: sporedba
+  from: C1-28
+- item: slicno
+  from: C1-28
+- item: isto-kako-kaj-nas
+  from: C1-28
+- item: gostoprimstvo
+  from: C1-28
+- item: vi-blagodarat
+  from: C1-28
+- item: dojdete-vo-brazil
+  from: C1-28
+- item: komicar
+  from: C2-06
+- item: prv-red
+  from: C2-06
+- item: sme-bile
+  from: C2-06
+- item: poznati-po
+  from: C2-06
+- item: smeata
+  from: C2-06
+- item: se-navredi
+  from: C2-06
+- item: na-svoja-smetka
+  from: C2-06
+- item: pogodi
+  from: C2-06
+- item: samoironija
+  from: C2-06
+- item: aplauz
+  from: C2-06
+- item: brzata-kucka
+  from: C2-10
+- item: koj-ne-raboti
+  from: C2-10
+- item: utroto-e-pomudro
+  from: C2-10
+- item: tivka-voda
+  from: C2-10
+- item: poleka-se-stiga
+  from: C2-10
+- item: bez-maka
+  from: C2-10
+- item: se-ispravija
+  from: C2-10
+- item: na-vreme-recen
+  from: C2-10
+- item: ima-pogovorka
+  from: C2-10
+- item: za-sekoja-situacija
+  from: C2-10
+- item: biznis-plan
+  from: C2-12
+- item: pekara
+  from: C2-12
+- item: rizik
+  from: C2-12
+- item: trosocite
+  from: C2-12
+- item: prihodite
+  from: C2-12
+- item: bi-mozela-li
+  from: C2-12
+- item: da-gi-presmetame
+  from: C2-12
+- item: na-sopstvena-odgovornost
+  from: C2-12
+- item: semejna-firma
+  from: C2-12
+- item: ke-se-isplati
+  from: C2-12
+steps:
+- type: narrator
+  text:
+    en: Your first talk at Skopje's IT meetup — in Macedonian. Questions from the floor. Listen to the conversation; you don't need to understand it yet.
+    pt: Sua primeira palestra no meetup de TI de Skopje — em macedônio. Perguntas da plateia. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: 'Добровечер. Накратко: ќе зборувам за брзи апликации во пракса.'
+    meaning:
+      en: 'Good evening. Briefly: I''ll talk about fast apps in practice.'
+      pt: 'Boa noite. Resumindo: vou falar de aplicativos rápidos na prática.'
+  - speaker: protagonist
+    text: 'На слајдовите: три грешки што ги направивме.'
+    meaning:
+      en: 'On the slides: three mistakes we made.'
+      pt: 'Nos slides: três erros que a gente cometeu.'
+  - speaker: protagonist
+    text: Прашања од публиката?
+    meaning:
+      en: Questions from the audience?
+      pt: Perguntas da plateia?
+  - speaker: darko
+    text: Зошто не користевте кеш?
+    meaning:
+      en: Why didn't you use a cache?
+      pt: Por que vocês não usaram cache?
+  - speaker: protagonist
+    text: Добро прашање — ќе се вратам на тоа на крајот.
+    meaning:
+      en: Good question — I'll come back to that at the end.
+      pt: Boa pergunta — volto nisso no final.
+  - speaker: klient
+    text: Колку чини серверот месечно?
+    meaning:
+      en: How much does the server cost a month?
+      pt: Quanto custa o servidor por mês?
+  - speaker: protagonist
+    text: Искрено, не знам точно. Ќе проверам и ќе ви пишам.
+    meaning:
+      en: Honestly, I don't know exactly. I'll check and write to you.
+      pt: Sinceramente, não sei exatamente. Vou verificar e te escrevo.
+  - speaker: protagonist
+    text: Ви благодарам на вниманието.
+    meaning:
+      en: Thank you for your attention.
+      pt: Obrigada pela atenção.
+- type: prompt
+  ask:
+    en: 'Open: briefly, I''ll talk about…'
+    pt: 'Abra: resumindo, vou falar de…'
+  answer:
+    speaker: protagonist
+    text: Накратко, ќе зборувам за…
+  items:
+  - nakratko
+- type: prompt
+  ask:
+    en: 'Say: in practice.'
+    pt: 'Diga: na prática.'
+  answer:
+    speaker: protagonist
+    text: Во пракса.
+  items:
+  - vo-praksa
+- type: prompt
+  ask:
+    en: 'Say: on the slides.'
+    pt: 'Diga: nos slides.'
+  answer:
+    speaker: protagonist
+    text: На слајдовите.
+  items:
+  - slajdovite
+- type: prompt
+  ask:
+    en: Invite questions from the audience.
+    pt: Convide perguntas da plateia.
+  answer:
+    speaker: protagonist
+    text: Прашања од публиката?
+  items:
+  - prasanja-od-publikata
+- type: prompt
+  ask:
+    en: 'Say: good question.'
+    pt: 'Diga: boa pergunta.'
+  answer:
+    speaker: protagonist
+    text: Добро прашање.
+  items:
+  - dobro-prasanje
+- type: prompt
+  ask:
+    en: 'Say: I''ll come back to that.'
+    pt: 'Diga: volto nisso.'
+  answer:
+    speaker: protagonist
+    text: Ќе се вратам на тоа.
+  items:
+  - ke-se-vratam-na-toa
+- type: prompt
+  ask:
+    en: 'Say: I don''t know, I''ll check.'
+    pt: 'Diga: não sei, vou verificar.'
+  answer:
+    speaker: protagonist
+    text: Не знам, ќе проверам.
+  items:
+  - ne-znam-odgovor
+- type: prompt
+  ask:
+    en: 'Close: thank you for your attention.'
+    pt: 'Encerre: obrigada pela atenção.'
+  answer:
+    speaker: protagonist
+    text: Ви благодарам на вниманието.
+  items:
+  - vi-blagodaram-na-vnimanieto
+- type: prompt
+  ask:
+    en: 'Say: the talk.'
+    pt: 'Diga: a palestra.'
+  answer:
+    speaker: protagonist
+    text: Предавањето.
+  items:
+  - predavanje
+- type: prompt
+  ask:
+    en: 'Say: the applause.'
+    pt: 'Diga: os aplausos.'
+  answer:
+    speaker: protagonist
+    text: Аплаузот.
+  items:
+  - publikata-aplauz
+- type: narrator
+  text:
+    en: Admitting 'не знам, ќе проверам' in public earns more trust than a vague answer — and keeps the talk in your control.
+    pt: Admitir 'не знам, ќе проверам' em público ganha mais confiança que uma resposta vaga — e mantém a palestra sob controle.
+- type: prompt
+  ask:
+    en: 'Once more: say “lecture, talk”.'
+    pt: 'Mais uma vez: diga “palestra”.'
+  answer:
+    speaker: protagonist
+    text: предавање
+  items:
+  - predavanje
+- type: prompt
+  ask:
+    en: 'Once more: say “the slides”.'
+    pt: 'Mais uma vez: diga “os slides”.'
+  answer:
+    speaker: protagonist
+    text: слајдовите
+  items:
+  - slajdovite
+- type: prompt
+  ask:
+    en: 'Once more: say “questions from the audience”.'
+    pt: 'Mais uma vez: diga “perguntas da plateia”.'
+  answer:
+    speaker: protagonist
+    text: прашања од публиката
+  items:
+  - prasanja-od-publikata
+- type: prompt
+  ask:
+    en: 'Once more: say “good question”.'
+    pt: 'Mais uma vez: diga “boa pergunta”.'
+  answer:
+    speaker: protagonist
+    text: добро прашање
+  items:
+  - dobro-prasanje
+- type: prompt
+  ask:
+    en: 'Once more: say “I''ll come back to that”.'
+    pt: 'Mais uma vez: diga “volto nisso”.'
+  answer:
+    speaker: protagonist
+    text: ќе се вратам на тоа
+  items:
+  - ke-se-vratam-na-toa
+- type: prompt
+  ask:
+    en: 'Once more: say “briefly”.'
+    pt: 'Mais uma vez: diga “resumindo”.'
+  answer:
+    speaker: protagonist
+    text: накратко
+  items:
+  - nakratko
+- type: prompt
+  ask:
+    en: 'Once more: say “in practice”.'
+    pt: 'Mais uma vez: diga “na prática”.'
+  answer:
+    speaker: protagonist
+    text: во пракса
+  items:
+  - vo-praksa
+- type: prompt
+  ask:
+    en: 'Once more: say “I don''t know, I''ll check”.'
+    pt: 'Mais uma vez: diga “não sei, vou verificar”.'
+  answer:
+    speaker: protagonist
+    text: не знам, ќе проверам
+  items:
+  - ne-znam-odgovor
+- type: prompt
+  ask:
+    en: 'Once more: say “thank you for your attention”.'
+    pt: 'Mais uma vez: diga “obrigada pela atenção”.'
+  answer:
+    speaker: protagonist
+    text: ви благодарам на вниманието
+  items:
+  - vi-blagodaram-na-vnimanieto
+- type: prompt
+  ask:
+    en: 'Once more: say “the applause”.'
+    pt: 'Mais uma vez: diga “os aplausos”.'
+  answer:
+    speaker: protagonist
+    text: аплаузот
+  items:
+  - publikata-aplauz
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “business plan — and “bakery — and “risk — and “the costs — and “the income — and “could you perhaps — and “to calculate them — and “at one''s own risk — and “family firm — and “will pay off
+      — and “Haste makes waste (the hasty bitch has blind pups) — and “Who doesn''t work shouldn''t eat”.'
+    pt: 'Diga: “plano de negócios — e “padaria — e “risco — e “os custos — e “a receita — e “você poderia — e “calcular — e “por conta e risco — e “empresa familiar — e “vai compensar — e “A pressa é inimiga
+      da perfeição — e “Quem não trabalha não come”.'
+  answer:
+    speaker: protagonist
+    text: бизнис план … пекара … ризик … трошоците … приходите … би можела ли … да ги пресметаме … на своја одговорност … семејна фирма … ќе се исплати … Брзата кучка слепи ги раѓа … Кој не работи, не треба
+      да јаде
+  items:
+  - biznis-plan
+  - pekara
+  - rizik
+  - trosocite
+  - prihodite
+  - bi-mozela-li
+  - da-gi-presmetame
+  - na-sopstvena-odgovornost
+  - semejna-firma
+  - ke-se-isplati
+  - brzata-kucka
+  - koj-ne-raboti
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Sleep on it (morning is wiser than evening) — and “Still waters run deep — and “Slow and steady goes far — and “No pain, no gain (no toil, no learning) — and “were put right — and “said at
+      the right time — and “there''s a saying — and “for every situation — and “comedian — and “front row — and “we are, it turns out (surprise) — and “famous for”.'
+    pt: 'Diga: “A noite é boa conselheira — e “Água mole em pedra dura... — e “Devagar se vai ao longe — e “Sem esforço não se aprende — e “foram corrigidos — e “dito na hora certa — e “tem um ditado —
+      e “para cada situação — e “comediante — e “primeira fila — e “a gente é, pelo jeito — e “famosos por”.'
+  answer:
+    speaker: protagonist
+    text: Утрото е помудро од вечерта … Тивка вода брег рони … Полека се стига далеку … Без мака нема наука … се исправија … навреме речено … има поговорка … за секоја ситуација … комичар … прв ред … сме
+      биле … познати по
+  items:
+  - utroto-e-pomudro
+  - tivka-voda
+  - poleka-se-stiga
+  - bez-maka
+  - se-ispravija
+  - na-vreme-recen
+  - ima-pogovorka
+  - za-sekoja-situacija
+  - komicar
+  - prv-red
+  - sme-bile
+  - poznati-po
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “laughs — and “got offended — and “at one''s own expense — and “hit the mark — and “self-irony — and “applause — and “guide — and “translation — and “I translate it for him — and “tell it
+      to her (informal) — and “comparison — and “similar”.'
+    pt: 'Diga: “ri — e “se ofendeu — e “às próprias custas — e “acertou — e “autoironia — e “aplauso — e “guia — e “tradução — e “traduzo para ele — e “fala para ela — e “comparação — e “parecido”.'
+  answer:
+    speaker: protagonist
+    text: се смее … се навреди … на своја сметка … погоди … самоиронија … аплауз … водич … превод … му го преведувам … кажи ѝ го … споредба … слично
+  items:
+  - smeata
+  - se-navredi
+  - na-svoja-smetka
+  - pogodi
+  - samoironija
+  - aplauz
+  - vodic
+  - prevod
+  - mu-go-preveduvam
+  - i-go-kazi
+  - sporedba
+  - slicno
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “just like with us — and “hospitality — and “they thank you — and “come to Brazil — and “vegetable garden — and “hens — and “fresh eggs — and “give them to him — and “I''ll pack them for you
+      — and “empty houses — and “only old people — and “silence, quiet”.'
+    pt: 'Diga: “igual ao nosso — e “hospitalidade — e “eles agradecem — e “venha ao Brasil — e “horta — e “galinhas — e “ovos frescos — e “dá para ele — e “vou embalar para você — e “casas vazias — e “só
+      velhos — e “silêncio”.'
+  answer:
+    speaker: protagonist
+    text: исто како кај нас … гостопримство … ви благодарат … дојдете во Бразил … бавча … кокошки … свежи јајца … дај му ги … ќе ти ги спакувам … празни куќи … само старци … тишина
+  items:
+  - isto-kako-kaj-nas
+  - gostoprimstvo
+  - vi-blagodarat
+  - dojdete-vo-brazil
+  - bavca
+  - kokoski
+  - jajca-svezi
+  - daj-mu-gi
+  - ke-ti-gi-spakuvam
+  - prazni-kukji
+  - samo-starci
+  - tisina
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “can''t be bought — and “you''ll come again — and “Dear (formal, plural) — and “Dear Sir — and “attached — and “we kindly ask you — and “answer, reply — and “Yours sincerely — and “Marko (calling
+      him) — and “mate, buddy (vocative) — and “Greetings / Best — and “Kind regards”.'
+    pt: 'Diga: “não se compra — e “vocês voltam — e “Prezados — e “Prezado senhor — e “em anexo — e “pedimos a gentileza — e “resposta — e “Atenciosamente — e “Marko — e “camarada / mano — e “Abraço — e
+      “Cordialmente”.'
+  answer:
+    speaker: protagonist
+    text: не може да се купи … ќе дојдете пак … Почитувани … Почитуван господине … во прилог … ве молиме … одговор … Со почит … Марко … друже … Поздрав … Срдечен поздрав
+  items:
+  - ne-moze-da-se-kupi
+  - ke-dojdete-pak
+  - pocituvani
+  - pocituvan-gospodine
+  - vo-prilog
+  - ve-molime
+  - odgovor
+  - so-pocit
+  - marko-voc
+  - druze
+  - pozdrav
+  - srdecen-pozdrav
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Careful! (formal) — and “ice, frost — and “will be — and “warmer — and “is melting — and “will melt (completely) — and “already — and “the steam — and “Do you know…? (formal) — and “the lake
+      — and “clean (feminine) — and “so (much)”.'
+    pt: 'Diga: “Cuidado! (formal) — e “gelo / geada — e “vai ser / vai estar — e “mais quente — e “está derretendo — e “vai derreter — e “já — e “o vapor — e “O senhor sabe…? — e “o lago — e “limpa — e
+      “tão / tanto”.'
+  answer:
+    speaker: protagonist
+    text: Внимавајте! … мраз … ќе биде … потопло … се топи … ќе се стопи … веќе … пареата … Знаете ли…? … езерото … чиста … толку
+  items:
+  - vnimavajte
+  - mraz
+  - ke-bide
+  - potoplo
+  - se-topi
+  - ke-se-stopi
+  - vekje
+  - pareata
+  - znaete-li
+  - ezeroto
+  - cista
+  - tolku
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

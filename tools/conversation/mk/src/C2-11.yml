@@ -1,0 +1,36 @@
+id: C2-11
+protagonist: f
+title: ["A lawsuit", "Um processo"]
+situation: ["The old landlord kept your deposit. Your lawyer prepares you for court.", "O antigo proprietário ficou com a sua caução. Seu advogado te prepara para o tribunal."]
+learn: [c2-register]
+culture: —
+items:
+  - [tuzba, "тужба", "lawsuit", "ação judicial", {rare: true}]
+  - [advokat, "адвокат", "lawyer", "advogado"]
+  - [sudot, "судот", "the court", "o tribunal"]
+  - [sudijata, "судијата", "the judge", "o juiz"]
+  - [ke-svedocite, "ќе сведочите", "you will testify", "a senhora vai depor"]
+  - [samo-fakti, "само факти", "only facts", "só fatos"]
+  - [bez-emocii, "без емоции", "without emotion", "sem emoção"]
+  - [dokazite, "доказите", "the evidence", "as provas"]
+  - [vo-moja-korist, "во моја корист", "in my favour", "a meu favor"]
+  - [presudata, "пресудата", "the verdict", "a sentença", {rare: true}]
+dialogue:
+  - [advokat, "Тужбата е поднесена. Во четврток сте пред судот.", "The lawsuit is filed. On Thursday you're in court.", "A ação foi protocolada. Na quinta a senhora vai ao tribunal."]
+  - [protagonist, "Што да кажам пред судијата?", "What should I say before the judge?", "O que eu digo diante do juiz?"]
+  - [advokat, "Ќе сведочите само факти, без емоции. Кога, колку, што пишува во договорот.", "You'll testify only facts, without emotion. When, how much, what the contract says.", "A senhora vai depor só fatos, sem emoção. Quando, quanto, o que diz o contrato."]
+  - [protagonist, "Доказите — договорот кај нотар и фотографиите од станот.", "The evidence — the notarised contract and the photos of the flat.", "As provas — o contrato em cartório e as fotos do apartamento."]
+  - [advokat, "Тоа е многу. Нотарскиот договор е во ваша корист.", "That's a lot. The notarised contract is in your favour.", "Isso é muito. O contrato em cartório está a seu favor."]
+  - [protagonist, "Значи, вредеше да се оди кај нотар.", "So it was worth going to a notary.", "Então valeu a pena ir ao cartório."]
+  - [advokat, "Секогаш вреди. Пресудата ја очекуваме за еден месец.", "It's always worth it. We expect the verdict within a month.", "Sempre vale. A sentença a gente espera para daqui a um mês."]
+  - [protagonist, "Во моја корист, се надевам.", "In my favour, I hope.", "A meu favor, espero."]
+teach:
+  - ask: ["Say: the lawsuit is filed.", "Diga: a ação foi protocolada.", "Тужбата е поднесена.", tuzba]
+  - ask: ["Say: before the court, before the judge.", "Diga: diante do tribunal, diante do juiz.", "Пред судот, пред судијата.", sudot, sudijata]
+  - ask: ["Say: you'll testify only facts.", "Diga: a senhora vai depor só fatos.", "Ќе сведочите само факти.", ke-svedocite, samo-fakti]
+  - ask: ["Say: without emotion.", "Diga: sem emoção.", "Без емоции.", bez-emocii]
+  - ask: ["Say: the evidence.", "Diga: as provas.", "Доказите.", dokazite]
+  - ask: ["Say: in my favour.", "Diga: a meu favor.", "Во моја корист.", vo-moja-korist]
+  - ask: ["Say: the verdict.", "Diga: a sentença.", "Пресудата.", presudata]
+  - ask: ["Say: the lawyer.", "Diga: o advogado.", "Адвокатот.", advokat]
+  - note: ["Legal register strips feeling out: 'само факти, без емоции'. The notarised contract from C1-03 pays off — written proof wins where a handshake can't.", "O registro jurídico tira o sentimento: 'само факти, без емоции'. O contrato em cartório do C1-03 compensa — prova escrita ganha onde o aperto de mão não chega."]

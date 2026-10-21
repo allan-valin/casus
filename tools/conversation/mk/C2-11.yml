@@ -1,0 +1,575 @@
+# UNIT mk C2-11 — written by AI (Claude) for Casus; expanded from src/C2-11.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-11
+level: C2
+number: 11
+protagonist: f
+title:
+  en: A lawsuit
+  pt: Um processo
+situation:
+  en: The old landlord kept your deposit. Your lawyer prepares you for court.
+  pt: O antigo proprietário ficou com a sua caução. Seu advogado te prepara para o tribunal.
+learn_lessons:
+- c2-register
+culture: —
+new_items:
+- id: tuzba
+  text: тужба
+  meaning:
+    en: lawsuit
+    pt: ação judicial
+  rare: true
+- id: advokat
+  text: адвокат
+  meaning:
+    en: lawyer
+    pt: advogado
+- id: sudot
+  text: судот
+  meaning:
+    en: the court
+    pt: o tribunal
+- id: sudijata
+  text: судијата
+  meaning:
+    en: the judge
+    pt: o juiz
+- id: ke-svedocite
+  text: ќе сведочите
+  meaning:
+    en: you will testify
+    pt: a senhora vai depor
+- id: samo-fakti
+  text: само факти
+  meaning:
+    en: only facts
+    pt: só fatos
+- id: bez-emocii
+  text: без емоции
+  meaning:
+    en: without emotion
+    pt: sem emoção
+- id: dokazite
+  text: доказите
+  meaning:
+    en: the evidence
+    pt: as provas
+- id: vo-moja-korist
+  text: во моја корист
+  meaning:
+    en: in my favour
+    pt: a meu favor
+- id: presudata
+  text: пресудата
+  meaning:
+    en: the verdict
+    pt: a sentença
+  rare: true
+reviews:
+- item: mi-treba
+  from: A2-04
+- item: smetka
+  from: A2-04
+- item: banka
+  from: A2-04
+- item: potpisete
+  from: A2-04
+- item: kartickata
+  from: A2-04
+- item: ke-ja-dobijam
+  from: A2-04
+- item: za-edna-nedela
+  from: A2-04
+- item: poraka
+  from: A2-04
+- item: aplikacijata
+  from: A2-04
+- item: besplatna
+  from: A2-04
+- item: mu-treba
+  from: A2-04
+- item: dneven-red
+  from: B2-08
+- item: prva-tocka
+  from: B2-08
+- item: predlagam
+  from: B2-08
+- item: neka
+  from: B2-08
+- item: neka-kaze
+  from: B2-08
+- item: soglasen
+  from: B2-08
+- item: ne-se-soglasuvam
+  from: B2-08
+- item: zaklucok
+  from: B2-08
+- item: prodolzime
+  from: B2-08
+- item: vreme-isteklo
+  from: B2-08
+- item: kumstvo
+  from: C1-10
+- item: ni-be-kum
+  from: C1-10
+- item: cest-za-mene
+  from: C1-10
+- item: obvrska
+  from: C1-10
+- item: krstevka
+  from: C1-10
+- item: ima-da-gi-krstis
+  from: C1-10
+- item: decata-nasi
+  from: C1-10
+- item: ne-se-odbiva
+  from: C1-10
+- item: primam
+  from: C1-10
+- item: ke-se-trudam
+  from: C1-10
+- item: se-penzionira
+  from: C1-26
+- item: blagodarnost
+  from: C1-26
+- item: naslednik
+  from: C1-26
+- item: velat-deka-pocnal
+  from: C1-26
+- item: trieset-godini
+  from: C1-26
+- item: generacii
+  from: C1-26
+- item: ne-ni-dozvoli
+  from: C1-26
+- item: da-se-otkazeme
+  from: C1-26
+- item: ostanuva-vo-srceto
+  from: C1-26
+- item: za-treneru
+  from: C1-26
+- item: bi-mozele-da
+  from: C2-04
+- item: razmislite
+  from: C2-04
+- item: pazarna-vrednost
+  from: C2-04
+- item: ponuda-od-drugade
+  from: C2-04
+- item: ne-se-zakanuvam
+  from: C2-04
+- item: pretpocituvam-da-ostanam
+  from: C2-04
+- item: uslov
+  from: C2-04
+- item: kompromisno
+  from: C2-04
+- item: od-noemvri
+  from: C2-04
+- item: se-dogovorivme
+  from: C2-04
+- item: romanot
+  from: C2-08
+- item: glavniot-lik
+  from: C2-08
+- item: krajot
+  from: C2-08
+- item: me-dopre
+  from: C2-08
+- item: na-prv-pogled
+  from: C2-08
+- item: megju-redovite
+  from: C2-08
+- item: simbolizira
+  from: C2-08
+- item: otvoren-kraj
+  from: C2-08
+- item: sekoj-si-go-cita
+  from: C2-08
+- item: preporacuvam
+  from: C2-08
+- item: brzata-kucka
+  from: C2-10
+- item: koj-ne-raboti
+  from: C2-10
+- item: utroto-e-pomudro
+  from: C2-10
+- item: tivka-voda
+  from: C2-10
+- item: poleka-se-stiga
+  from: C2-10
+- item: bez-maka
+  from: C2-10
+- item: se-ispravija
+  from: C2-10
+- item: na-vreme-recen
+  from: C2-10
+- item: ima-pogovorka
+  from: C2-10
+- item: za-sekoja-situacija
+  from: C2-10
+steps:
+- type: narrator
+  text:
+    en: The old landlord kept your deposit. Your lawyer prepares you for court. Listen to the conversation; you don't need to understand it yet.
+    pt: O antigo proprietário ficou com a sua caução. Seu advogado te prepara para o tribunal. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: advokat
+    text: Тужбата е поднесена. Во четврток сте пред судот.
+    meaning:
+      en: The lawsuit is filed. On Thursday you're in court.
+      pt: A ação foi protocolada. Na quinta a senhora vai ao tribunal.
+  - speaker: protagonist
+    text: Што да кажам пред судијата?
+    meaning:
+      en: What should I say before the judge?
+      pt: O que eu digo diante do juiz?
+  - speaker: advokat
+    text: Ќе сведочите само факти, без емоции. Кога, колку, што пишува во договорот.
+    meaning:
+      en: You'll testify only facts, without emotion. When, how much, what the contract says.
+      pt: A senhora vai depor só fatos, sem emoção. Quando, quanto, o que diz o contrato.
+  - speaker: protagonist
+    text: Доказите — договорот кај нотар и фотографиите од станот.
+    meaning:
+      en: The evidence — the notarised contract and the photos of the flat.
+      pt: As provas — o contrato em cartório e as fotos do apartamento.
+  - speaker: advokat
+    text: Тоа е многу. Нотарскиот договор е во ваша корист.
+    meaning:
+      en: That's a lot. The notarised contract is in your favour.
+      pt: Isso é muito. O contrato em cartório está a seu favor.
+  - speaker: protagonist
+    text: Значи, вредеше да се оди кај нотар.
+    meaning:
+      en: So it was worth going to a notary.
+      pt: Então valeu a pena ir ao cartório.
+  - speaker: advokat
+    text: Секогаш вреди. Пресудата ја очекуваме за еден месец.
+    meaning:
+      en: It's always worth it. We expect the verdict within a month.
+      pt: Sempre vale. A sentença a gente espera para daqui a um mês.
+  - speaker: protagonist
+    text: Во моја корист, се надевам.
+    meaning:
+      en: In my favour, I hope.
+      pt: A meu favor, espero.
+- type: prompt
+  ask:
+    en: 'Say: the lawsuit is filed.'
+    pt: 'Diga: a ação foi protocolada.'
+  answer:
+    speaker: protagonist
+    text: Тужбата е поднесена.
+  items:
+  - tuzba
+- type: prompt
+  ask:
+    en: 'Say: before the court, before the judge.'
+    pt: 'Diga: diante do tribunal, diante do juiz.'
+  answer:
+    speaker: protagonist
+    text: Пред судот, пред судијата.
+  items:
+  - sudot
+  - sudijata
+- type: prompt
+  ask:
+    en: 'Say: you''ll testify only facts.'
+    pt: 'Diga: a senhora vai depor só fatos.'
+  answer:
+    speaker: protagonist
+    text: Ќе сведочите само факти.
+  items:
+  - ke-svedocite
+  - samo-fakti
+- type: prompt
+  ask:
+    en: 'Say: without emotion.'
+    pt: 'Diga: sem emoção.'
+  answer:
+    speaker: protagonist
+    text: Без емоции.
+  items:
+  - bez-emocii
+- type: prompt
+  ask:
+    en: 'Say: the evidence.'
+    pt: 'Diga: as provas.'
+  answer:
+    speaker: protagonist
+    text: Доказите.
+  items:
+  - dokazite
+- type: prompt
+  ask:
+    en: 'Say: in my favour.'
+    pt: 'Diga: a meu favor.'
+  answer:
+    speaker: protagonist
+    text: Во моја корист.
+  items:
+  - vo-moja-korist
+- type: prompt
+  ask:
+    en: 'Say: the verdict.'
+    pt: 'Diga: a sentença.'
+  answer:
+    speaker: protagonist
+    text: Пресудата.
+  items:
+  - presudata
+- type: prompt
+  ask:
+    en: 'Say: the lawyer.'
+    pt: 'Diga: o advogado.'
+  answer:
+    speaker: protagonist
+    text: Адвокатот.
+  items:
+  - advokat
+- type: narrator
+  text:
+    en: 'Legal register strips feeling out: ''само факти, без емоции''. The notarised contract from C1-03 pays off — written proof wins where a handshake can''t.'
+    pt: 'O registro jurídico tira o sentimento: ''само факти, без емоции''. O contrato em cartório do C1-03 compensa — prova escrita ganha onde o aperto de mão não chega.'
+- type: prompt
+  ask:
+    en: 'Once more: say “lawsuit”.'
+    pt: 'Mais uma vez: diga “ação judicial”.'
+  answer:
+    speaker: protagonist
+    text: тужба
+  items:
+  - tuzba
+- type: prompt
+  ask:
+    en: 'Once more: say “lawyer”.'
+    pt: 'Mais uma vez: diga “advogado”.'
+  answer:
+    speaker: protagonist
+    text: адвокат
+  items:
+  - advokat
+- type: prompt
+  ask:
+    en: 'Once more: say “the court”.'
+    pt: 'Mais uma vez: diga “o tribunal”.'
+  answer:
+    speaker: protagonist
+    text: судот
+  items:
+  - sudot
+- type: prompt
+  ask:
+    en: 'Once more: say “the judge”.'
+    pt: 'Mais uma vez: diga “o juiz”.'
+  answer:
+    speaker: protagonist
+    text: судијата
+  items:
+  - sudijata
+- type: prompt
+  ask:
+    en: 'Once more: say “you will testify”.'
+    pt: 'Mais uma vez: diga “a senhora vai depor”.'
+  answer:
+    speaker: protagonist
+    text: ќе сведочите
+  items:
+  - ke-svedocite
+- type: prompt
+  ask:
+    en: 'Once more: say “only facts”.'
+    pt: 'Mais uma vez: diga “só fatos”.'
+  answer:
+    speaker: protagonist
+    text: само факти
+  items:
+  - samo-fakti
+- type: prompt
+  ask:
+    en: 'Once more: say “without emotion”.'
+    pt: 'Mais uma vez: diga “sem emoção”.'
+  answer:
+    speaker: protagonist
+    text: без емоции
+  items:
+  - bez-emocii
+- type: prompt
+  ask:
+    en: 'Once more: say “the evidence”.'
+    pt: 'Mais uma vez: diga “as provas”.'
+  answer:
+    speaker: protagonist
+    text: доказите
+  items:
+  - dokazite
+- type: prompt
+  ask:
+    en: 'Once more: say “in my favour”.'
+    pt: 'Mais uma vez: diga “a meu favor”.'
+  answer:
+    speaker: protagonist
+    text: во моја корист
+  items:
+  - vo-moja-korist
+- type: prompt
+  ask:
+    en: 'Once more: say “the verdict”.'
+    pt: 'Mais uma vez: diga “a sentença”.'
+  answer:
+    speaker: protagonist
+    text: пресудата
+  items:
+  - presudata
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Haste makes waste (the hasty bitch has blind pups) — and “Who doesn''t work shouldn''t eat — and “Sleep on it (morning is wiser than evening) — and “Still waters run deep — and “Slow and
+      steady goes far — and “No pain, no gain (no toil, no learning) — and “were put right — and “said at the right time — and “there''s a saying — and “for every situation — and “the novel — and “the main
+      character”.'
+    pt: 'Diga: “A pressa é inimiga da perfeição — e “Quem não trabalha não come — e “A noite é boa conselheira — e “Água mole em pedra dura... — e “Devagar se vai ao longe — e “Sem esforço não se aprende
+      — e “foram corrigidos — e “dito na hora certa — e “tem um ditado — e “para cada situação — e “o romance — e “o protagonista”.'
+  answer:
+    speaker: protagonist
+    text: Брзата кучка слепи ги раѓа … Кој не работи, не треба да јаде … Утрото е помудро од вечерта … Тивка вода брег рони … Полека се стига далеку … Без мака нема наука … се исправија … навреме речено
+      … има поговорка … за секоја ситуација … романот … главниот лик
+  items:
+  - brzata-kucka
+  - koj-ne-raboti
+  - utroto-e-pomudro
+  - tivka-voda
+  - poleka-se-stiga
+  - bez-maka
+  - se-ispravija
+  - na-vreme-recen
+  - ima-pogovorka
+  - za-sekoja-situacija
+  - romanot
+  - glavniot-lik
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the ending — and “touched me — and “at first sight — and “between the lines — and “symbolises — and “open ending — and “everyone reads it their own way — and “I recommend — and “could you
+      (formal) — and “think it over (formal) — and “market value — and “an offer from elsewhere”.'
+    pt: 'Diga: “o final — e “me tocou — e “à primeira vista — e “nas entrelinhas — e “simboliza — e “final aberto — e “cada um lê do seu jeito — e “recomendo — e “o senhor poderia — e “pensar a respeito
+      — e “valor de mercado — e “uma proposta de outro lugar”.'
+  answer:
+    speaker: protagonist
+    text: крајот … ме допре … на прв поглед … меѓу редовите … симболизира … отворен крај … секој си го чита на свој начин … препорачувам … би можеле да … размислите … пазарна вредност … понуда од друго
+      место
+  items:
+  - krajot
+  - me-dopre
+  - na-prv-pogled
+  - megju-redovite
+  - simbolizira
+  - otvoren-kraj
+  - sekoj-si-go-cita
+  - preporacuvam
+  - bi-mozele-da
+  - razmislite
+  - pazarna-vrednost
+  - ponuda-od-drugade
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I''m not threatening — and “I prefer to stay — and “condition — and “as a compromise — and “from November — and “we agreed, deal — and “is retiring — and “gratitude — and “successor — and
+      “they say he started — and “thirty years — and “generations”.'
+    pt: 'Diga: “não estou ameaçando — e “prefiro ficar — e “condição — e “como meio-termo — e “a partir de novembro — e “combinado — e “se aposenta — e “gratidão — e “sucessor — e “dizem que ele começou
+      — e “trinta anos — e “gerações”.'
+  answer:
+    speaker: protagonist
+    text: не се заканувам … претпочитам да останам … услов … компромисно … од ноември … се договоривме … се пензионира … благодарност … наследник … велат дека почнал … триесет години … генерации
+  items:
+  - ne-se-zakanuvam
+  - pretpocituvam-da-ostanam
+  - uslov
+  - kompromisno
+  - od-noemvri
+  - se-dogovorivme
+  - se-penzionira
+  - blagodarnost
+  - naslednik
+  - velat-deka-pocnal
+  - trieset-godini
+  - generacii
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “didn''t let us — and “to give up — and “stays in the heart — and “to the coach — and “the кум bond — and “to be our кум — and “an honour for me — and “obligation, duty — and “christening
+      — and “you''ll have to christen them — and “our children — and “you can''t refuse it”.'
+    pt: 'Diga: “não deixou a gente — e “desistir — e “fica no coração — e “ao técnico — e “compadrio — e “ser nosso padrinho — e “uma honra para mim — e “compromisso / obrigação — e “batizado — e “você
+      vai ter que batizar — e “nossos filhos — e “não se recusa”.'
+  answer:
+    speaker: protagonist
+    text: не ни дозволи … да се откажеме … останува во срцето … за тренерот … кумство … да ни бидеш кум … чест за мене … обврска … крштевка … има да ги крстиш … нашите деца … не се одбива
+  items:
+  - ne-ni-dozvoli
+  - da-se-otkazeme
+  - ostanuva-vo-srceto
+  - za-treneru
+  - kumstvo
+  - ni-be-kum
+  - cest-za-mene
+  - obvrska
+  - krstevka
+  - ima-da-gi-krstis
+  - decata-nasi
+  - ne-se-odbiva
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I accept — and “I''ll do my best — and “agenda — and “first item, point one — and “I propose — and “let (someone do) — and “let him/her speak — and “agreed (a man) — and “I don''t agree —
+      and “conclusion — and “to continue — and “time is up”.'
+    pt: 'Diga: “Aceito — e “vou me esforçar — e “pauta — e “primeiro item — e “proponho — e “que (deixa) — e “que ele fale — e “de acordo — e “não concordo — e “conclusão — e “continuar — e “o tempo acabou”.'
+  answer:
+    speaker: protagonist
+    text: Примам … ќе се трудам … дневен ред … прва точка … предлагам … нека … нека каже … согласен … не се согласувам … заклучок … да продолжиме … времето истече
+  items:
+  - primam
+  - ke-se-trudam
+  - dneven-red
+  - prva-tocka
+  - predlagam
+  - neka
+  - neka-kaze
+  - soglasen
+  - ne-se-soglasuvam
+  - zaklucok
+  - prodolzime
+  - vreme-isteklo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I need — and “account / bill — and “bank — and “Sign (formal) — and “the (bank) card — and “I''ll get it — and “in a week — and “message — and “the app — and “free (of charge, feminine) —
+      and “he needs”.'
+    pt: 'Diga: “Eu preciso de — e “conta — e “banco — e “Assine (formal) — e “o cartão — e “vou receber — e “em uma semana — e “mensagem — e “o aplicativo — e “gratuita — e “ele precisa”.'
+  answer:
+    speaker: protagonist
+    text: Ми треба … сметка … банка … Потпишете … картичката … ќе ја добијам … за една недела … порака … апликацијата … бесплатна … му треба
+  items:
+  - mi-treba
+  - smetka
+  - banka
+  - potpisete
+  - kartickata
+  - ke-ja-dobijam
+  - za-edna-nedela
+  - poraka
+  - aplikacijata
+  - besplatna
+  - mu-treba
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
