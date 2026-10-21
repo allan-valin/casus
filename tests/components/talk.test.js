@@ -401,6 +401,51 @@ describe('Conversation practice tab (Allan, 2026-10-20/21: narrator in the inter
     expect([...container.querySelectorAll('.step .num')].slice(0, 3).map((e) => e.textContent)).toEqual(['1', '2', '3']);
   });
 
+  it('hands-free plays each step exactly once, in order (Allan 2026-10-21: "it presses play twice and skips")', async () => {
+    const spoken = [];
+    const later = (t) => new Promise((r) => setTimeout(() => { spoken.push(t); r(); }, 5));
+    const { p } = props({ speakNarrator: later, speakTaught: later, pause: () => new Promise((r) => setTimeout(r, 1)),
+      control: { pause: () => {}, resume: () => {}, stop: () => {} } });
+    const { container } = render(Talk, p);
+    await flush();
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    await fireEvent.click(container.querySelector('.hands-free'));
+    for (let i = 0; i < 400 && container.querySelector('.hands-free.on'); i += 1) await new Promise((r) => setTimeout(r, 5));
+    expect(spoken).toEqual(['Listen.', 'Guten Tag.', 'Danke!', 'Danke', '-gung', '-digung', 'Entschuldigung', 'Thank her.', 'Danke!', 'Guten Tag.', 'Danke!']);
+  });
+
+  it('lock-screen play and pause are not toggles: play while playing, or pause while paused, change nothing (Allan 2026-10-21 phone bug)', async () => {
+    const handlers = {};
+    globalThis.navigator.mediaSession = { setActionHandler: (a, f) => { handlers[a] = f; }, metadata: null, playbackState: 'none' };
+    globalThis.MediaMetadata = class { constructor(o) { Object.assign(this, o); } };
+    let release;
+    const spoken = [];
+    const calls = [];
+    const { p } = props({ speakNarrator: (t) => { spoken.push(t); return new Promise((r) => { release = r; }); },
+      control: { pause: () => calls.push('pause'), resume: () => calls.push('resume'), stop: () => calls.push('stop') } });
+    const { container } = render(Talk, p);
+    await flush();
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    await fireEvent.click(container.querySelector('.hands-free'));
+    await flush();
+    handlers.play();                 // the phone says "play" while it plays
+    await flush();
+    expect(calls).not.toContain('pause');
+    expect(spoken).toEqual(['Listen.']);
+    expect(navigator.mediaSession.playbackState).toBe('playing');
+    handlers.pause(); handlers.pause();
+    await flush();
+    expect(calls.filter((c) => c === 'pause')).toHaveLength(1);
+    expect(navigator.mediaSession.playbackState).toBe('paused');
+    handlers.play();
+    await flush();
+    expect(calls).toContain('resume');
+    release();
+    delete globalThis.navigator.mediaSession;
+  });
+
   it('the self-check marks the unit done, kept in the browser and shown in the list', async () => {
     const { p } = props();
     const { container } = render(Talk, p);

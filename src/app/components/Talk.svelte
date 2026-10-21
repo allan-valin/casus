@@ -190,14 +190,22 @@
     if (playing !== null) { play(unit.steps[playing], playing); return; }
     stepTo(current ?? 0);
   }
+  // tell the phone the real state, so its button shows the right thing
+  $effect(() => {
+    const ms = typeof navigator !== 'undefined' ? navigator.mediaSession : null;
+    if (!ms) return;
+    try { ms.playbackState = paused ? 'paused' : (playing !== null || handsFree) ? 'playing' : 'none'; } catch { /* old browsers */ }
+  });
   // the lock screen / notification controls (Media Session API), while a unit is open
   $effect(() => {
     const ms = typeof navigator !== 'undefined' ? navigator.mediaSession : null;
     if (!ms || !unit) return;
     try {
       if (typeof MediaMetadata !== 'undefined') ms.metadata = new MediaMetadata({ title: `${unit.id} · ${nar(unit.title)}`, artist: 'Casus', album: t('talk.heading') });
-      ms.setActionHandler('play', () => playPause());
-      ms.setActionHandler('pause', () => playPause());
+      // play and pause are commands, not toggles: phones send them on their own (Allan, 2026-10-21: hands-free
+      // "pressed play twice and skipped")
+      ms.setActionHandler('play', () => { if (playing === null ? (handsFree ? paused : true) : paused) playPause(); });
+      ms.setActionHandler('pause', () => { if (!paused && (playing !== null || handsFree)) playPause(); });
       ms.setActionHandler('nexttrack', () => next());
       ms.setActionHandler('previoustrack', () => prev());
     } catch { /* not supported */ }
