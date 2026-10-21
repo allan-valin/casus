@@ -1,0 +1,93 @@
+id: A1
+topics:
+
+- title: {en: Sounds and tones, pt: Sons e tons}
+  lessons:
+  - id: vi-tones
+    title: ma, mà, má, mả, mã, mạ
+    meaning: {en: "six tones, marked on the vowel", pt: "seis tons, marcados na vogal"}
+    intro:
+      en: |
+        Vietnamese has six tones, written over or under the vowel, and they change the word: **ma** (ghost), **mà** (but), **má** (cheek, mother), **mả** (grave), **mã** (horse), **mạ** (rice seedling). Extra letters: **ă â ê ô ơ ư** are other vowels, **đ** is *d*, **d** and **gi** are *z* (north) or *y* (south).
+      pt: |
+        O vietnamita tem seis tons, escritos sobre ou sob a vogal, e eles mudam a palavra: **ma** (fantasma), **mà** (mas), **má** (bochecha, mãe), **mả** (túmulo), **mã** (cavalo), **mạ** (muda de arroz). Letras a mais: **ă â ê ô ơ ư** são outras vogais, **đ** é *d*, **d** e **gi** soam *z* (norte) ou *i* (sul).
+    examples:
+    - ["Tên tôi là Lan.", "My name is Lan.", "Meu nome é Lan.", "Tên"]
+    match: {seq: [{re: "[àáảãạằắẳẵặầấẩẫậèéẻẽẹềếểễệìíỉĩịòóỏõọồốổỗộờớởỡợùúủũụừứửữựỳýỷỹỵ]", pos: [noun, verb, adj]}]}
+  - id: vi-words
+    title: học sinh, Việt Nam, bệnh viện
+    meaning: {en: "words of several syllables", pt: "palavras de várias sílabas"}
+    intro:
+      en: |
+        Each syllable is written apart, but many words have two or three: **học sinh** (student: "study" + "pupil"), **bệnh viện** (hospital), **Việt Nam**. The reader joins them from the dictionary. Most are built from Chinese-origin syllables, like Latin and Greek roots in European words.
+      pt: |
+        Cada sílaba se escreve separada, mas muitas palavras têm duas ou três: **học sinh** (estudante: "estudar" + "aluno"), **bệnh viện** (hospital), **Việt Nam**. O leitor as junta a partir do dicionário. A maioria se forma com sílabas de origem chinesa, como as raízes gregas e latinas no português.
+    examples:
+    - ["Tôi là học sinh.", "I'm a student.", "Sou estudante.", "học sinh"]
+    match: {seq: [{re: " ", pos: [noun, verb, adj]}]}
+
+- title: {en: Pronouns and sentences, pt: Pronomes e frases}
+  lessons:
+  - id: vi-pronouns
+    title: tôi, bạn, anh, chị, em, ông, bà
+    meaning: {en: "pronouns are kinship words", pt: "os pronomes são palavras de parentesco"}
+    intro:
+      en: |
+        **tôi** (I, neutral), **bạn** (you, friend); but most of the time people address each other as relatives by age: **anh** (older brother: a man a bit older), **chị** (older sister), **em** (younger sibling), **ông / bà** (grandfather / grandmother: older people), **cô / chú** (aunt / uncle). Plural with **chúng** or **các**: **chúng tôi** (we, not you), **chúng ta** (we, with you), **các bạn** (you all), **họ** (they).
+      pt: |
+        **tôi** (eu, neutro), **bạn** (você, amigo); mas na maioria das vezes as pessoas se tratam como parentes conforme a idade: **anh** (irmão mais velho: um homem um pouco mais velho), **chị** (irmã mais velha), **em** (irmão mais novo), **ông / bà** (avô / avó: pessoas idosas), **cô / chú** (tia / tio). Plural com **chúng** ou **các**: **chúng tôi** (nós, sem você), **chúng ta** (nós, com você), **các bạn** (vocês), **họ** (eles).
+    examples:
+    - ["Chị ơi, cho em hỏi.", "Excuse me, miss, may I ask.", "Moça, posso perguntar.", "Chị"]
+    match: {seq: [{word: [tôi, bạn, anh, chị, em, ông, bà, cô, chú, họ, "chúng tôi", "chúng ta"]}]}
+    pool: [tôi, bạn, anh, chị, em, ông, bà, họ]
+  - id: vi-la
+    title: là, có, ở
+    meaning: {en: "to be (là), to have and there is (có), to be at (ở)", pt: "ser (là), ter e haver (có), estar em (ở)"}
+    intro:
+      en: |
+        **là** joins two nouns: **Tôi là học sinh.** Adjectives need no verb: **Trời đẹp** (the weather is nice). **có** = to have and there is: **Tôi có một em gái**, **Ở đây có quán cà phê**. **ở** = to be at, to live: **Tôi ở Hà Nội.**
+      pt: |
+        **là** liga dois nomes: **Tôi là học sinh** (sou estudante). Adjetivos dispensam verbo: **Trời đẹp** (o tempo está bonito). **có** = ter e haver: **Tôi có một em gái** (tenho uma irmã mais nova), **Ở đây có quán cà phê** (aqui há um café). **ở** = estar em, morar: **Tôi ở Hà Nội** (moro em Hanói).
+    examples:
+    - ["Tôi sống ở Hà Nội.", "I live in Hanoi.", "Moro em Hanói.", "ở"]
+    match: {seq: [{word: [là, có, ở]}]}
+    pool: [là, có, ở]
+  - id: vi-order
+    title: nhà to, sách của tôi
+    meaning: {en: "the modifier follows; của", pt: "o modificador vem depois; của"}
+    intro:
+      en: |
+        Adjectives and owners come after the noun: **nhà to** (a big house), **sách của tôi** or **sách tôi** (my book). Subject – verb – object: **Tôi đọc sách.** Classifiers stand before counted nouns: **một quyển sách** (a book), **hai con mèo** (two cats).
+      pt: |
+        Adjetivos e possuidores vêm depois do nome: **nhà to** (uma casa grande), **sách của tôi** ou **sách tôi** (meu livro). Sujeito – verbo – objeto: **Tôi đọc sách** (leio livros). Os classificadores ficam antes dos nomes contados: **một quyển sách** (um livro), **hai con mèo** (dois gatos).
+    examples:
+    - ["Quyển sách ở trên bàn.", "The book is on the table.", "O livro está sobre a mesa.", "Quyển"]
+    match: {seq: [{word: [của, quyển, con, cái, chiếc, người]}]}
+    pool: [của, quyển, con, cái, chiếc]
+
+- title: {en: Time and questions, pt: Tempo e perguntas}
+  lessons:
+  - id: vi-time
+    title: đã, đang, sẽ, rồi, chưa
+    meaning: {en: "time words instead of tenses", pt: "palavras de tempo em vez de tempos verbais"}
+    intro:
+      en: |
+        Verbs never change: **đã** (past), **đang** (in progress), **sẽ** (future), **rồi** (already, at the end), **chưa** (not yet): **Tôi đã ăn rồi** (I've already eaten), **Tôi đang đọc sách** (I'm reading), **Mai tôi sẽ đi** (I'll go tomorrow). Often context is enough and they are left out.
+      pt: |
+        Os verbos nunca mudam: **đã** (passado), **đang** (em curso), **sẽ** (futuro), **rồi** (já, no fim), **chưa** (ainda não): **Tôi đã ăn rồi** (já comi), **Tôi đang đọc sách** (estou lendo), **Mai tôi sẽ đi** (amanhã eu vou). Muitas vezes o contexto basta e elas somem.
+    examples:
+    - ["Tôi đang đọc sách.", "I'm reading a book.", "Estou lendo um livro.", "đang"]
+    match: {seq: [{word: [đã, đang, sẽ, rồi, chưa, vừa, sắp]}]}
+    pool: [đã, đang, sẽ, rồi, chưa]
+  - id: vi-questions
+    title: gì, ai, đâu, khi nào, tại sao, không?
+    meaning: {en: "question words; … không?", pt: "palavras interrogativas; … không?"}
+    intro:
+      en: |
+        **gì** (what), **ai** (who), **đâu** (where), **khi nào / bao giờ** (when), **tại sao / vì sao** (why), **thế nào** (how), **bao nhiêu** (how much) — they stand where the answer would: **Bạn tên là gì?** (what's your name?). Yes/no: **có … không?**: **Bạn có nói tiếng Anh không?** Negative: **không** before the verb: **Tôi không hiểu.**
+      pt: |
+        **gì** (o que), **ai** (quem), **đâu** (onde), **khi nào / bao giờ** (quando), **tại sao / vì sao** (por quê), **thế nào** (como), **bao nhiêu** (quanto) — ficam onde estaria a resposta: **Bạn tên là gì?** (como você se chama?). Sim/não: **có … không?**: **Bạn có nói tiếng Anh không?** (você fala inglês?). Negação: **không** antes do verbo: **Tôi không hiểu** (não entendo).
+    examples:
+    - ["Bạn có nói tiếng Anh không?", "Do you speak English?", "Você fala inglês?", "không"]
+    match: {seq: [{word: [gì, ai, đâu, "khi nào", "bao giờ", "tại sao", "thế nào", "bao nhiêu", không]}]}
+    pool: [gì, ai, đâu, không]
