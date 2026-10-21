@@ -20,7 +20,7 @@ describe('Downloads panel', () => {
     const { container } = render(Downloads, { fetchImpl, caches, storage: null, current: 'cs', onsay: (k) => said.push(k) });
     await flush();
     const rows = container.querySelectorAll('.dl-row');
-    expect(rows.length).toBe(14);                       // Casus's own languages (the sites split 2026-10-19; Ukrainian joined 2026-10-20)
+    expect(rows.length).toBe(15);                       // Casus's own languages (the sites split 2026-10-19; Ukrainian joined 2026-10-20, Lithuanian 2026-10-21)
     const cs = container.querySelector('.dl-row[data-code="cs"]');
     expect(cs.textContent).toMatch(/2(\.0)? MB/);
     await fireEvent.click(cs.querySelector('button.dl-get'));

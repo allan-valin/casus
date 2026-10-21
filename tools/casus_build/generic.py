@@ -198,6 +198,13 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
                 if intransitive and a.get("pos") == "verb":
                     a["valency"] = "intr"
                 cells.append((text, a))
+        if cfg.code == "lt" and pos == "verb":
+            cells += _lt_verb_cells(d.get("forms") or [], word)
+        if cfg.code == "lt" and pos == "noun" and not cells and not form_of:
+            from casus_build.lt import noun_forms
+            tags = {t for f in d.get("forms") or [] for t in f.get("tags") or []}
+            g = gender or ("m" if "masculine" in tags and "feminine" not in tags else "f" if "feminine" in tags and "masculine" not in tags else None)
+            cells += noun_forms(word, g)
         if form_of_tags and not cells:
             fa = analysis(cfg, pos, form_of_tags, gender)
             if fa:
@@ -216,6 +223,20 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
         base = next((f.get("word") for x in senses for f in (x.get("form_of") or []) if f.get("word")), None) if form_of else None
         yield {"id": i, "headword": word, "pos": pos, "gender": gender, "cells": cells, "gloss_en": gloss, "ipa": ipa[:3], "form_of": bool(form_of),
                **({"form_of_word": base} if base else {})}
+
+
+def _lt_verb_cells(forms: list[dict], word: str) -> list:
+    """Lithuanian finite forms: the full table by position, else from the principal parts (casus_build/lt.py)"""
+    from casus_build.lt import table_forms, verb_forms
+    table = [f.get("form") or "" for f in forms if "error-unrecognized-form" in (f.get("tags") or [])]
+    p3 = next((f["form"] for f in forms if set(f.get("tags") or []) == {"present", "third-person"}), None)
+    q3 = next((f["form"] for f in forms if set(f.get("tags") or []) == {"past", "third-person"}), None)
+    cells = table_forms(table) if len(table) == 53 else verb_forms(word, p3, q3) if p3 and q3 else []
+    # negation is written as one word with the verb (nesuprantu, nebuvo); nėra is the negated yra
+    neg = [("ne" + f, {**a, "polarity": "neg"}) for f, a in cells if a.get("mood") in ("ind", "cond", "imp")]
+    if word == "būti":
+        neg += [("nėra", {"pos": "verb", "tense": "pres", "mood": "ind", "person": "3", "number": n, "polarity": "neg"}) for n in ("sg", "pl")]
+    return cells + neg
 
 
 def fold_form_of(entries: list[dict]) -> list[dict]:
@@ -352,3 +373,11 @@ CONFIGS["en"] = Config("en", [], {}, caseless=True)
 CONFIGS["it"] = Config("it", [], {}, caseless=True)
 CONFIGS["nl"] = Config("nl", [], {}, caseless=True)
 CONFIGS["uk"] = Config("uk", ["nom", "gen", "dat", "acc", "ins", "loc", "voc"], SLAVIC_TAGS)
+
+
+def _strip_lt(s: str) -> str:
+    from casus_build.lt import strip_lt
+    return strip_lt(s)
+
+
+CONFIGS["lt"] = Config("lt", ["nom", "gen", "dat", "acc", "ins", "loc", "voc"], SLAVIC_TAGS, key=_strip_lt)

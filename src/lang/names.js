@@ -12,5 +12,5 @@ export const NAMES = {
   is: { de: 'Isländisch', mk: 'исландски', ar: 'الآيسلندية' }, pt: { de: 'Portugiesisch', mk: 'португалски', ar: 'البرتغالية' },
   fr: { de: 'Französisch', mk: 'француски', ar: 'الفرنسية' }, en: { de: 'Englisch', mk: 'англиски', ar: 'الإنجليزية' },
   es: { de: 'Spanisch', mk: 'шпански', ar: 'الإسبانية' }, it: { de: 'Italienisch', mk: 'италијански', ar: 'الإيطالية' },
-  nl: { de: 'Niederländisch', mk: 'холандски', ar: 'الهولندية' }, uk: { de: 'Ukrainisch', mk: 'украински', ar: 'الأوكرانية' },
+  nl: { de: 'Niederländisch', mk: 'холандски', ar: 'الهولندية' }, uk: { de: 'Ukrainisch', mk: 'украински', ar: 'الأوكرانية' }, lt: { de: 'Litauisch', mk: 'литвански', ar: 'الليتوانية' },
 };
