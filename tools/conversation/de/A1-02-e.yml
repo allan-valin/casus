@@ -1,0 +1,442 @@
+# UNIT de A1-02-e — written by AI (Claude) for Casus; expanded from src/A1-02-e.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-02-e
+level: A1
+number: 2
+protagonist: m
+tracks:
+- en
+title:
+  en: The flat
+situation:
+  en: Frau Becker shows you the flat. You look for the kitchen.
+learn_lessons:
+- a1-article
+culture: No kitchen, not even a sink
+new_items:
+- id: die-wohnung
+  text: die Wohnung
+  meaning:
+    en: the flat
+- id: das-zimmer
+  text: das Zimmer
+  meaning:
+    en: the room
+- id: und-die
+  text: Und die …?
+  meaning:
+    en: And the …?
+- id: die-kueche
+  text: die Küche
+  meaning:
+    en: the kitchen
+- id: es-gibt-keine
+  text: Es gibt keine …
+  meaning:
+    en: There is no … (feminine)
+- id: nur
+  text: nur
+  meaning:
+    en: only
+- id: die-anschluesse
+  text: die Anschlüsse
+  meaning:
+    en: the connections (water, power)
+  rare: true
+- id: die-spuele
+  text: die Spüle
+  meaning:
+    en: the sink
+  rare: true
+- id: selbst
+  text: selbst
+  meaning:
+    en: yourself, myself
+- id: wo
+  text: Wo …?
+  meaning:
+    en: Where …?
+- id: kaufe-ich
+  text: kaufe ich
+  meaning:
+    en: do I buy
+- id: gebraucht
+  text: gebraucht
+  meaning:
+    en: second-hand, used
+- id: der-kuehlschrank
+  text: der Kühlschrank
+  meaning:
+    en: the fridge
+  rare: true
+- id: auch-nicht
+  text: auch nicht
+  meaning:
+    en: not … either
+- id: viel-glueck
+  text: Viel Glück!
+  meaning:
+    en: Good luck!
+reviews:
+- item: guten-tag
+  from: A1-01
+- item: entschuldigung
+  from: A1-01
+- item: ich-verstehe-nicht
+  from: A1-01
+- item: sie-sind
+  from: A1-01
+- item: neu-hier
+  from: A1-01
+- item: ja
+  from: A1-01
+- item: ich-bin
+  from: A1-01
+- item: sprechen-sie-englisch
+  from: A1-01
+- item: ein-bisschen
+  from: A1-01
+- item: ich-wohne
+  from: A1-01
+- item: unten
+  from: A1-01
+- item: freut-mich
+  from: A1-01
+- item: willkommen
+  from: A1-01
+- item: der-schluessel
+  from: A1-01
+- item: danke-schoen
+  from: A1-01
+- item: bitte-schoen
+  from: A1-01
+- item: auf-wiedersehen
+  from: A1-01
+steps:
+- type: narrator
+  text:
+    en: Frau Becker shows you the flat. You look for the kitchen. Listen to the conversation; you don't need to understand it yet.
+- type: dialogue
+  lines:
+  - speaker: becker
+    text: Hier ist die Wohnung. Das ist das Zimmer.
+    meaning:
+      en: Here's the flat. This is the room.
+  - speaker: protagonist
+    text: Schön! Und die Küche?
+    meaning:
+      en: Nice! And the kitchen?
+  - speaker: becker
+    text: Es gibt keine Küche. Nur die Anschlüsse.
+    meaning:
+      en: There's no kitchen. Only the connections.
+  - speaker: protagonist
+    text: Keine Küche? Auch keine Spüle?
+    meaning:
+      en: No kitchen? No sink either?
+  - speaker: becker
+    text: Nein. Die Küche kaufen Sie selbst.
+    meaning:
+      en: No. You buy the kitchen yourself.
+  - speaker: protagonist
+    text: Wo kaufe ich eine Küche?
+    meaning:
+      en: Where do I buy a kitchen?
+  - speaker: becker
+    text: Im Möbelhaus, oder gebraucht im Internet.
+    meaning:
+      en: At a furniture store, or second-hand online.
+  - speaker: protagonist
+    text: Und der Kühlschrank?
+    meaning:
+      en: And the fridge?
+  - speaker: becker
+    text: Auch nicht. Viel Glück!
+    meaning:
+      en: Not that either. Good luck!
+- type: narrator
+  text:
+    en: 'German nouns have three genders, and ''the'' shows them: «der» (masculine), «die» (feminine), «das» (neuter). Learn every noun with its article: «der Kühlschrank», «die Küche», «das Zimmer».'
+- type: prompt
+  ask:
+    en: 'Say: here is the flat.'
+  answer:
+    speaker: protagonist
+    text: Hier ist die Wohnung.
+  items:
+  - die-wohnung
+- type: prompt
+  ask:
+    en: 'Say: this is the room.'
+  answer:
+    speaker: protagonist
+    text: Das ist das Zimmer.
+  items:
+  - das-zimmer
+- type: prompt
+  ask:
+    en: 'Ask: and the kitchen?'
+  answer:
+    speaker: protagonist
+    text: Und die Küche?
+  items:
+  - und-die
+  - die-kueche
+- type: prompt
+  ask:
+    en: 'She says: there''s no kitchen.'
+  answer:
+    speaker: protagonist
+    text: Es gibt keine Küche.
+  items:
+  - es-gibt-keine
+  - die-kueche
+- type: prompt
+  ask:
+    en: 'Say: only the connections.'
+  answer:
+    speaker: protagonist
+    text: Nur die Anschlüsse.
+  items:
+  - nur
+  - die-anschluesse
+- type: prompt
+  ask:
+    en: 'Ask: no sink either?'
+  answer:
+    speaker: protagonist
+    text: Auch keine Spüle?
+  items:
+  - auch-nicht
+  - die-spuele
+- type: narrator
+  text:
+    en: Unfurnished flats often come without a kitchen — not even a sink, only the water and power connections. A kitchen the landlord supplies is the landlord's to repair, so many supply none. Tenants
+      buy one, bring one, or buy the previous tenant's.
+- type: prompt
+  ask:
+    en: 'Say: you buy the kitchen yourself.'
+  answer:
+    speaker: protagonist
+    text: Die Küche kaufen Sie selbst.
+  items:
+  - selbst
+- type: prompt
+  ask:
+    en: Ask where you buy a kitchen.
+  answer:
+    speaker: protagonist
+    text: Wo kaufe ich eine Küche?
+  items:
+  - wo
+  - kaufe-ich
+- type: prompt
+  ask:
+    en: 'Say: second-hand, online.'
+  answer:
+    speaker: protagonist
+    text: Gebraucht, im Internet.
+  items:
+  - gebraucht
+- type: prompt
+  ask:
+    en: 'Ask: and the fridge?'
+  answer:
+    speaker: protagonist
+    text: Und der Kühlschrank?
+  items:
+  - der-kuehlschrank
+- type: prompt
+  ask:
+    en: 'She says: good luck!'
+  answer:
+    speaker: protagonist
+    text: Viel Glück!
+  items:
+  - viel-glueck
+- type: prompt
+  ask:
+    en: 'Once more: say “the flat”.'
+  answer:
+    speaker: protagonist
+    text: die Wohnung
+  items:
+  - die-wohnung
+- type: prompt
+  ask:
+    en: 'Once more: say “the room”.'
+  answer:
+    speaker: protagonist
+    text: das Zimmer
+  items:
+  - das-zimmer
+- type: prompt
+  ask:
+    en: 'Once more: say “And the …?”.'
+  answer:
+    speaker: protagonist
+    text: Und die …?
+  items:
+  - und-die
+- type: prompt
+  ask:
+    en: 'Once more: say “There is no … (feminine)”.'
+  answer:
+    speaker: protagonist
+    text: Es gibt keine …
+  items:
+  - es-gibt-keine
+- type: prompt
+  ask:
+    en: 'Once more: say “only”.'
+  answer:
+    speaker: protagonist
+    text: nur
+  items:
+  - nur
+- type: prompt
+  ask:
+    en: 'Once more: say “the connections (water, power)”.'
+  answer:
+    speaker: protagonist
+    text: die Anschlüsse
+  items:
+  - die-anschluesse
+- type: prompt
+  ask:
+    en: 'Once more: say “the sink”.'
+  answer:
+    speaker: protagonist
+    text: die Spüle
+  items:
+  - die-spuele
+- type: prompt
+  ask:
+    en: 'Once more: say “yourself, myself”.'
+  answer:
+    speaker: protagonist
+    text: selbst
+  items:
+  - selbst
+- type: prompt
+  ask:
+    en: 'Once more: say “Where …?”.'
+  answer:
+    speaker: protagonist
+    text: Wo …?
+  items:
+  - wo
+- type: prompt
+  ask:
+    en: 'Once more: say “do I buy”.'
+  answer:
+    speaker: protagonist
+    text: kaufe ich
+  items:
+  - kaufe-ich
+- type: prompt
+  ask:
+    en: 'Once more: say “second-hand, used”.'
+  answer:
+    speaker: protagonist
+    text: gebraucht
+  items:
+  - gebraucht
+- type: prompt
+  ask:
+    en: 'Once more: say “the fridge”.'
+  answer:
+    speaker: protagonist
+    text: der Kühlschrank
+  items:
+  - der-kuehlschrank
+- type: prompt
+  ask:
+    en: 'Once more: say “not … either”.'
+  answer:
+    speaker: protagonist
+    text: auch nicht
+  items:
+  - auch-nicht
+- type: prompt
+  ask:
+    en: 'Once more: say “Good luck!”.'
+  answer:
+    speaker: protagonist
+    text: Viel Glück!
+  items:
+  - viel-glueck
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Good day / hello — and “Excuse me / sorry — and “I don''t understand”.'
+  answer:
+    speaker: protagonist
+    text: Guten Tag … Entschuldigung … Ich verstehe nicht
+  items:
+  - guten-tag
+  - entschuldigung
+  - ich-verstehe-nicht
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “you are (polite) — and “new here — and “Yes”.'
+  answer:
+    speaker: protagonist
+    text: Sie sind … neu hier … Ja
+  items:
+  - sie-sind
+  - neu-hier
+  - ja
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I am — and “Do you speak English? (polite) — and “a little”.'
+  answer:
+    speaker: protagonist
+    text: ich bin … Sprechen Sie Englisch? … ein bisschen
+  items:
+  - ich-bin
+  - sprechen-sie-englisch
+  - ein-bisschen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I live — and “downstairs — and “Nice to meet you”.'
+  answer:
+    speaker: protagonist
+    text: ich wohne … unten … Freut mich
+  items:
+  - ich-wohne
+  - unten
+  - freut-mich
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Welcome — and “the key — and “Thank you very much”.'
+  answer:
+    speaker: protagonist
+    text: Willkommen … der Schlüssel … Danke schön
+  items:
+  - willkommen
+  - der-schluessel
+  - danke-schoen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “You''re welcome / here you are — and “Goodbye”.'
+  answer:
+    speaker: protagonist
+    text: Bitte schön … Auf Wiedersehen
+  items:
+  - bitte-schoen
+  - auf-wiedersehen
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+- type: dialogue
+  again: true
+- type: selfcheck

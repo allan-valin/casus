@@ -1,0 +1,412 @@
+# UNIT de A1-02-m — written by AI (Claude) for Casus; expanded from src/A1-02-m.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-02-m
+level: A1
+number: 2
+protagonist: m
+tracks:
+- mk
+title:
+  mk: Градинката
+situation:
+  mk: Прв пат сами го земате внукот Лука од градинката (Kita). Ве пречекува воспитувачката.
+learn_lessons:
+- a1-article
+culture: The Kita
+new_items:
+- id: der-opa
+  text: der Opa
+  meaning:
+    mk: дедото
+- id: ich-hole-ab
+  text: ich hole … ab
+  meaning:
+    mk: доаѓам да го земам (некого)
+- id: die-kita
+  text: die Kita
+  meaning:
+    mk: градинката (Kita)
+- id: die-erzieherin
+  text: die Erzieherin
+  meaning:
+    mk: воспитувачката
+- id: ist-da
+  text: … ist da
+  meaning:
+    mk: … е тука, дојде
+- id: hallo
+  text: Hallo
+  meaning:
+    mk: Здраво
+- id: mein-schatz
+  text: mein Schatz
+  meaning:
+    mk: душо моја, срце мое
+- id: der-ausweis
+  text: der Ausweis
+  meaning:
+    mk: личната карта / документот
+- id: hier
+  text: hier
+  meaning:
+    mk: тука, еве
+- id: die-mama-hat-gesagt
+  text: die Mama hat es gesagt
+  meaning:
+    mk: мама кажа
+- id: tschuess
+  text: Tschüss!
+  meaning:
+    mk: Чао!
+- id: bis-morgen
+  text: Bis morgen!
+  meaning:
+    mk: До утре!
+- id: das-ist
+  text: Das ist …
+  meaning:
+    mk: Ова е …
+reviews:
+- item: guten-tag
+  from: A1-01
+- item: entschuldigung
+  from: A1-01
+- item: ich-verstehe-nicht
+  from: A1-01
+- item: sie-sind
+  from: A1-01
+- item: neu-hier
+  from: A1-01
+- item: ja
+  from: A1-01
+- item: ich-bin
+  from: A1-01
+- item: sprechen-sie-englisch
+  from: A1-01
+- item: ein-bisschen
+  from: A1-01
+- item: ich-wohne
+  from: A1-01
+- item: unten
+  from: A1-01
+- item: freut-mich
+  from: A1-01
+- item: willkommen
+  from: A1-01
+- item: der-schluessel
+  from: A1-01
+- item: danke-schoen
+  from: A1-01
+- item: bitte-schoen
+  from: A1-01
+- item: auf-wiedersehen
+  from: A1-01
+steps:
+- type: narrator
+  text:
+    mk: Прв пат сами го земате внукот Лука од градинката (Kita). Ве пречекува воспитувачката. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: kruger
+    text: Guten Tag! Kann ich Ihnen helfen?
+    meaning:
+      mk: Добар ден! Можам ли да ви помогнам?
+  - speaker: protagonist
+    text: Guten Tag. Ich bin der Opa von Luka. Ich hole Luka ab.
+    meaning:
+      mk: Добар ден. Јас сум дедото на Лука. Дојдов да го земам Лука.
+  - speaker: kruger
+    text: Ah, der Opa aus Mazedonien! Ich bin Frau Krüger, die Erzieherin.
+    meaning:
+      mk: А, дедото од Македонија! Јас сум госпоѓа Кригер, воспитувачката.
+  - speaker: kruger
+    text: Luka! Dein Opa ist da!
+    meaning:
+      mk: Лука! Дедо ти дојде!
+  - speaker: luka
+    text: Opa!
+    meaning:
+      mk: Дедо!
+  - speaker: protagonist
+    text: Hallo, mein Schatz!
+    meaning:
+      mk: Здраво, душо моја!
+  - speaker: kruger
+    text: Haben Sie den Ausweis, bitte?
+    meaning:
+      mk: Ја имате ли личната карта, ве молам?
+  - speaker: protagonist
+    text: Ja, hier. Das ist der Ausweis.
+    meaning:
+      mk: Да, еве. Ова е документот.
+  - speaker: kruger
+    text: Danke. Die Mama hat es gesagt. Tschüss, Luka! Bis morgen!
+    meaning:
+      mk: Благодарам. Мама кажа. Чао, Лука! До утре!
+  - speaker: protagonist
+    text: Tschüss! Bis morgen!
+    meaning:
+      mk: Чао! До утре!
+- type: narrator
+  text:
+    mk: 'Германските именки имаат три рода, а членот го покажува: «der» (машки), «die» (женски), «das» (среден). «der Opa», «die Kita», «das Kind». Секоја именка учете ја со членот.'
+- type: prompt
+  ask:
+    mk: 'Претставете се: јас сум дедото на Лука.'
+  answer:
+    speaker: protagonist
+    text: Ich bin der Opa von Luka.
+  items:
+  - ich-bin
+  - der-opa
+- type: narrator
+  text:
+    mk: '«abholen» е одделив глагол: «Ich hole Luka ab» — доаѓам да го земам Лука. Делот «ab» оди на крајот од реченицата.'
+- type: prompt
+  ask:
+    mk: 'Кажете: дојдов да го земам Лука.'
+  answer:
+    speaker: protagonist
+    text: Ich hole Luka ab.
+  items:
+  - ich-hole-ab
+- type: prompt
+  ask:
+    mk: 'Кажете: воспитувачката.'
+  answer:
+    speaker: protagonist
+    text: Die Erzieherin.
+  items:
+  - die-erzieherin
+- type: prompt
+  ask:
+    mk: 'Таа го вика Лука: дедо ти дојде! Како?'
+  answer:
+    speaker: protagonist
+    text: Dein Opa ist da!
+  items:
+  - ist-da
+- type: prompt
+  ask:
+    mk: 'Поздравете го внукот: здраво, душо моја!'
+  answer:
+    speaker: protagonist
+    text: Hallo, mein Schatz!
+  items:
+  - hallo
+  - mein-schatz
+- type: narrator
+  text:
+    mk: Детето смее да го земе само тој што родителите однапред го пријавиле во градинката — затоа бараат документ. Носете го пасошот или личната карта секој пат.
+- type: prompt
+  ask:
+    mk: 'Таа го бара документот. Кажете: еве, ова е документот.'
+  answer:
+    speaker: protagonist
+    text: Hier. Das ist der Ausweis.
+  items:
+  - hier
+  - das-ist
+  - der-ausweis
+- type: prompt
+  ask:
+    mk: 'Таа вели: мама кажа.'
+  answer:
+    speaker: protagonist
+    text: Die Mama hat es gesagt.
+  items:
+  - die-mama-hat-gesagt
+- type: prompt
+  ask:
+    mk: 'Кажете: ова е градинката.'
+  answer:
+    speaker: protagonist
+    text: Das ist die Kita.
+  items:
+  - das-ist
+  - die-kita
+- type: prompt
+  ask:
+    mk: Поздравете се неформално.
+  answer:
+    speaker: protagonist
+    text: Tschüss!
+  items:
+  - tschuess
+- type: prompt
+  ask:
+    mk: 'И додадете: до утре!'
+  answer:
+    speaker: protagonist
+    text: Bis morgen!
+  items:
+  - bis-morgen
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „дедото“.'
+  answer:
+    speaker: protagonist
+    text: der Opa
+  items:
+  - der-opa
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „доаѓам да го земам (некого)“.'
+  answer:
+    speaker: protagonist
+    text: ich hole … ab
+  items:
+  - ich-hole-ab
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „градинката (Kita)“.'
+  answer:
+    speaker: protagonist
+    text: die Kita
+  items:
+  - die-kita
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „воспитувачката“.'
+  answer:
+    speaker: protagonist
+    text: die Erzieherin
+  items:
+  - die-erzieherin
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „… е тука, дојде“.'
+  answer:
+    speaker: protagonist
+    text: … ist da
+  items:
+  - ist-da
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „Здраво“.'
+  answer:
+    speaker: protagonist
+    text: Hallo
+  items:
+  - hallo
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „душо моја, срце мое“.'
+  answer:
+    speaker: protagonist
+    text: mein Schatz
+  items:
+  - mein-schatz
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „личната карта / документот“.'
+  answer:
+    speaker: protagonist
+    text: der Ausweis
+  items:
+  - der-ausweis
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „тука, еве“.'
+  answer:
+    speaker: protagonist
+    text: hier
+  items:
+  - hier
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „мама кажа“.'
+  answer:
+    speaker: protagonist
+    text: die Mama hat es gesagt
+  items:
+  - die-mama-hat-gesagt
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „Чао!“.'
+  answer:
+    speaker: protagonist
+    text: Tschüss!
+  items:
+  - tschuess
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „До утре!“.'
+  answer:
+    speaker: protagonist
+    text: Bis morgen!
+  items:
+  - bis-morgen
+- type: narrator
+  text:
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „Добар ден“ — и „Извинете“ — и „Не разбирам“.'
+  answer:
+    speaker: protagonist
+    text: Guten Tag … Entschuldigung … Ich verstehe nicht
+  items:
+  - guten-tag
+  - entschuldigung
+  - ich-verstehe-nicht
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „Вие сте“ — и „нов тука“ — и „Да“.'
+  answer:
+    speaker: protagonist
+    text: Sie sind … neu hier … Ja
+  items:
+  - sie-sind
+  - neu-hier
+  - ja
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „Зборувате ли англиски?“ — и „малку“ — и „живеам“.'
+  answer:
+    speaker: protagonist
+    text: Sprechen Sie Englisch? … ein bisschen … ich wohne
+  items:
+  - sprechen-sie-englisch
+  - ein-bisschen
+  - ich-wohne
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „долу“ — и „Мило ми е“ — и „Добредојдовте“.'
+  answer:
+    speaker: protagonist
+    text: unten … Freut mich … Willkommen
+  items:
+  - unten
+  - freut-mich
+  - willkommen
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „клучот“ — и „Благодарам многу“ — и „Нема зошто / повелете“.'
+  answer:
+    speaker: protagonist
+    text: der Schlüssel … Danke schön … Bitte schön
+  items:
+  - der-schluessel
+  - danke-schoen
+  - bitte-schoen
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „Довидување“.'
+  answer:
+    speaker: protagonist
+    text: Auf Wiedersehen
+  items:
+  - auf-wiedersehen
+- type: narrator
+  text:
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

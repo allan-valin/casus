@@ -1,0 +1,454 @@
+# UNIT de A1-02-a — written by AI (Claude) for Casus; expanded from src/A1-02-a.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-02-a
+level: A1
+number: 2
+protagonist: m
+tracks:
+- ar
+title:
+  ar: الحضانة
+situation:
+  ar: اليوم الأول لابنتك يارا في الحضانة (الكيتا). ترافقها إلى الباب وتستقبلكما المربية.
+learn_lessons:
+- a1-article
+culture: The Kita
+new_items:
+- id: guten-morgen
+  text: Guten Morgen
+  meaning:
+    ar: صباح الخير
+- id: der-papa
+  text: der Papa
+  meaning:
+    ar: الأب، بابا
+- id: das-ist
+  text: Das ist …
+  meaning:
+    ar: هذا / هذه …
+- id: die-kita
+  text: die Kita
+  meaning:
+    ar: الحضانة (الكيتا)
+- id: die-erzieherin
+  text: die Erzieherin
+  meaning:
+    ar: المربية
+- id: hallo
+  text: Hallo
+  meaning:
+    ar: مرحبًا (غير رسمي)
+- id: ich-will
+  text: ich will
+  meaning:
+    ar: أريد
+- id: nach-hause
+  text: nach Hause
+  meaning:
+    ar: إلى البيت
+- id: keine-angst
+  text: Keine Angst!
+  meaning:
+    ar: لا تخف! / لا تخافي!
+- id: wann
+  text: Wann …?
+  meaning:
+    ar: متى …؟
+- id: holen-ab
+  text: holen … ab
+  meaning:
+    ar: تأخذون (أحدًا) من مكان، تأتون لأخذه
+- id: um-drei-uhr
+  text: um drei Uhr
+  meaning:
+    ar: في الساعة الثالثة
+- id: tschuess
+  text: Tschüss!
+  meaning:
+    ar: إلى اللقاء! (غير رسمي)
+- id: bis-spaeter
+  text: Bis später!
+  meaning:
+    ar: أراك لاحقًا!
+reviews:
+- item: guten-tag
+  from: A1-01
+- item: entschuldigung
+  from: A1-01
+- item: ich-verstehe-nicht
+  from: A1-01
+- item: sie-sind
+  from: A1-01
+- item: neu-hier
+  from: A1-01
+- item: ja
+  from: A1-01
+- item: ich-bin
+  from: A1-01
+- item: sprechen-sie-englisch
+  from: A1-01
+- item: ein-bisschen
+  from: A1-01
+- item: ich-wohne
+  from: A1-01
+- item: unten
+  from: A1-01
+- item: freut-mich
+  from: A1-01
+- item: willkommen
+  from: A1-01
+- item: der-schluessel
+  from: A1-01
+- item: danke-schoen
+  from: A1-01
+- item: bitte-schoen
+  from: A1-01
+- item: auf-wiedersehen
+  from: A1-01
+steps:
+- type: narrator
+  text:
+    ar: اليوم الأول لابنتك يارا في الحضانة (الكيتا). ترافقها إلى الباب وتستقبلكما المربية. استمع إلى المحادثة؛ لا داعي لأن تفهمها الآن.
+- type: dialogue
+  lines:
+  - speaker: kruger
+    text: Guten Morgen! Sie sind der Papa von Yara?
+    meaning:
+      ar: صباح الخير! أنت والد يارا؟
+  - speaker: protagonist
+    text: Ja, guten Morgen. Das ist Yara.
+    meaning:
+      ar: نعم، صباح الخير. هذه يارا.
+  - speaker: kruger
+    text: Hallo, Yara! Ich bin Frau Krüger, die Erzieherin.
+    meaning:
+      ar: مرحبًا يا يارا! أنا السيدة كروغر، المربية.
+  - speaker: yara
+    text: Papa, ich will nach Hause!
+    meaning:
+      ar: بابا، أريد أن أذهب إلى البيت!
+  - speaker: protagonist
+    text: Yara, das ist die Kita. Das ist gut.
+    meaning:
+      ar: يارا، هذه هي الحضانة. هذا جيد.
+  - speaker: kruger
+    text: Keine Angst, Yara. Wann holen Sie Yara ab?
+    meaning:
+      ar: لا تخافي يا يارا. متى تأتي لأخذ يارا؟
+  - speaker: protagonist
+    text: Um drei Uhr.
+    meaning:
+      ar: في الساعة الثالثة.
+  - speaker: kruger
+    text: Gut. Tschüss, Papa! Bis später!
+    meaning:
+      ar: حسنًا. إلى اللقاء يا بابا! أراك لاحقًا!
+  - speaker: protagonist
+    text: Tschüss, Yara! Bis später!
+    meaning:
+      ar: إلى اللقاء يا يارا! أراكِ لاحقًا!
+- type: narrator
+  text:
+    ar: في الصباح يقول الناس «Guten Morgen». ومع الأطفال والأصدقاء يكفي «Hallo».
+- type: prompt
+  ask:
+    ar: حيِّ المربية في الصباح.
+  answer:
+    speaker: protagonist
+    text: Guten Morgen.
+  items:
+  - guten-morgen
+- type: prompt
+  ask:
+    ar: 'تسألك إن كنت والد يارا. قل: نعم، أنا الأب.'
+  answer:
+    speaker: protagonist
+    text: Ja, ich bin der Papa.
+  items:
+  - ja
+  - ich-bin
+  - der-papa
+- type: narrator
+  text:
+    ar: 'لكل اسم في الألمانية جنس، وأداة التعريف تُظهره: «der» للمذكر، و«die» للمؤنث، و«das» للمحايد. «der Papa»، «die Kita»، «das Kind». احفظ كل اسم مع أداته.'
+- type: prompt
+  ask:
+    ar: 'قدّم ابنتك: هذه يارا.'
+  answer:
+    speaker: protagonist
+    text: Das ist Yara.
+  items:
+  - das-ist
+- type: prompt
+  ask:
+    ar: 'قل: هذه هي الحضانة.'
+  answer:
+    speaker: protagonist
+    text: Das ist die Kita.
+  items:
+  - das-ist
+  - die-kita
+- type: prompt
+  ask:
+    ar: 'قل بلسانها: أنا المربية.'
+  answer:
+    speaker: protagonist
+    text: Ich bin die Erzieherin.
+  items:
+  - die-erzieherin
+- type: prompt
+  ask:
+    ar: حيِّ يارا كما تحييها المربية.
+  answer:
+    speaker: protagonist
+    text: Hallo, Yara!
+  items:
+  - hallo
+- type: prompt
+  ask:
+    ar: 'يارا تبكي: أريد أن أذهب إلى البيت! قلها.'
+  answer:
+    speaker: protagonist
+    text: Ich will nach Hause!
+  items:
+  - ich-will
+  - nach-hause
+- type: prompt
+  ask:
+    ar: 'طمئنها: لا تخافي!'
+  answer:
+    speaker: protagonist
+    text: Keine Angst!
+  items:
+  - keine-angst
+- type: narrator
+  text:
+    ar: '«abholen» فعل منفصل: «Ich hole Yara ab» — آتي لأخذ يارا. الجزء «ab» يذهب إلى آخر الجملة.'
+- type: prompt
+  ask:
+    ar: 'تسألك المربية: متى تأتي لأخذ يارا؟'
+  answer:
+    speaker: protagonist
+    text: Wann holen Sie Yara ab?
+  items:
+  - wann
+  - holen-ab
+- type: prompt
+  ask:
+    ar: 'أجب: في الساعة الثالثة.'
+  answer:
+    speaker: protagonist
+    text: Um drei Uhr.
+  items:
+  - um-drei-uhr
+- type: prompt
+  ask:
+    ar: ودّع يارا بطريقة غير رسمية.
+  answer:
+    speaker: protagonist
+    text: Tschüss, Yara!
+  items:
+  - tschuess
+- type: prompt
+  ask:
+    ar: 'وأضف: أراكِ لاحقًا!'
+  answer:
+    speaker: protagonist
+    text: Bis später!
+  items:
+  - bis-spaeter
+- type: narrator
+  text:
+    ar: 'الأسابيع الأولى في الحضانة «Eingewöhnung»، أي فترة التعوّد: يبقى أحد الوالدين مع الطفل في البداية ساعة أو ساعتين، ثم وقتًا أقل كل يوم. وتبدأ المواعيد بدقة: من يتأخر في أخذ الطفل يتلقى اتصالًا.'
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قل “صباح الخير”.'
+  answer:
+    speaker: protagonist
+    text: Guten Morgen
+  items:
+  - guten-morgen
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قل “الأب، بابا”.'
+  answer:
+    speaker: protagonist
+    text: der Papa
+  items:
+  - der-papa
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قل “الحضانة (الكيتا)”.'
+  answer:
+    speaker: protagonist
+    text: die Kita
+  items:
+  - die-kita
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قل “المربية”.'
+  answer:
+    speaker: protagonist
+    text: die Erzieherin
+  items:
+  - die-erzieherin
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قل “مرحبًا (غير رسمي)”.'
+  answer:
+    speaker: protagonist
+    text: Hallo
+  items:
+  - hallo
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قل “أريد”.'
+  answer:
+    speaker: protagonist
+    text: ich will
+  items:
+  - ich-will
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قل “إلى البيت”.'
+  answer:
+    speaker: protagonist
+    text: nach Hause
+  items:
+  - nach-hause
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قل “لا تخف! / لا تخافي!”.'
+  answer:
+    speaker: protagonist
+    text: Keine Angst!
+  items:
+  - keine-angst
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قل “متى …؟”.'
+  answer:
+    speaker: protagonist
+    text: Wann …?
+  items:
+  - wann
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قل “تأخذون (أحدًا) من مكان، تأتون لأخذه”.'
+  answer:
+    speaker: protagonist
+    text: holen … ab
+  items:
+  - holen-ab
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قل “في الساعة الثالثة”.'
+  answer:
+    speaker: protagonist
+    text: um drei Uhr
+  items:
+  - um-drei-uhr
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قل “إلى اللقاء! (غير رسمي)”.'
+  answer:
+    speaker: protagonist
+    text: Tschüss!
+  items:
+  - tschuess
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قل “أراك لاحقًا!”.'
+  answer:
+    speaker: protagonist
+    text: Bis später!
+  items:
+  - bis-spaeter
+- type: narrator
+  text:
+    ar: والآن بعض ما تعلمتَه في الوحدات السابقة، في هذا الموقف الجديد.
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “نهارك سعيد / مرحبًا — و“عفوًا / المعذرة”.'
+  answer:
+    speaker: protagonist
+    text: Guten Tag … Entschuldigung
+  items:
+  - guten-tag
+  - entschuldigung
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “لا أفهم — و“أنتِ / أنتَ (بصيغة الاحترام)”.'
+  answer:
+    speaker: protagonist
+    text: Ich verstehe nicht … Sie sind
+  items:
+  - ich-verstehe-nicht
+  - sie-sind
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “جديد هنا — و“هل تتكلمين الإنجليزية؟ (بصيغة الاحترام)”.'
+  answer:
+    speaker: protagonist
+    text: neu hier … Sprechen Sie Englisch?
+  items:
+  - neu-hier
+  - sprechen-sie-englisch
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “قليلًا — و“أسكن”.'
+  answer:
+    speaker: protagonist
+    text: ein bisschen … ich wohne
+  items:
+  - ein-bisschen
+  - ich-wohne
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “في الأسفل — و“تشرفنا”.'
+  answer:
+    speaker: protagonist
+    text: unten … Freut mich
+  items:
+  - unten
+  - freut-mich
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “أهلًا وسهلًا — و“المفتاح”.'
+  answer:
+    speaker: protagonist
+    text: Willkommen … der Schlüssel
+  items:
+  - willkommen
+  - der-schluessel
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “شكرًا جزيلًا — و“عفوًا / تفضّلي”.'
+  answer:
+    speaker: protagonist
+    text: Danke schön … Bitte schön
+  items:
+  - danke-schoen
+  - bitte-schoen
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “مع السلامة”.'
+  answer:
+    speaker: protagonist
+    text: Auf Wiedersehen
+  items:
+  - auf-wiedersehen
+- type: narrator
+  text:
+    ar: استمع إلى المحادثة مرة أخرى. الآن تفهمها.
+- type: dialogue
+  again: true
+- type: selfcheck

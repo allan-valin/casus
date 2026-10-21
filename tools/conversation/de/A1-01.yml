@@ -1,0 +1,517 @@
+# UNIT de A1-01 — written by AI (Claude) for Casus; expanded from src/A1-01.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-01
+level: A1
+number: 1
+protagonist: f
+title:
+  en: Good day
+  ar: نهارك سعيد
+  mk: Добар ден
+situation:
+  en: Your first day in Leipzig. A woman opens the door of the ground-floor flat.
+  ar: يومك الأول في لايبزيغ. امرأة تفتح باب الشقة في الطابق الأرضي.
+  mk: Вашиот прв ден во Лајпциг. Една жена ја отвора вратата на станот во приземјето.
+learn_lessons:
+- a1-sein
+culture: Sie and a handshake
+new_items:
+- id: guten-tag
+  text: Guten Tag
+  meaning:
+    en: Good day / hello
+    ar: نهارك سعيد / مرحبًا
+    mk: Добар ден
+- id: entschuldigung
+  text: Entschuldigung
+  meaning:
+    en: Excuse me / sorry
+    ar: عفوًا / المعذرة
+    mk: Извинете
+- id: ich-verstehe-nicht
+  text: Ich verstehe nicht
+  meaning:
+    en: I don't understand
+    ar: لا أفهم
+    mk: Не разбирам
+- id: sie-sind
+  text: Sie sind
+  meaning:
+    en: you are (polite)
+    ar: أنتِ / أنتَ (بصيغة الاحترام)
+    mk: Вие сте
+- id: neu-hier
+  text: neu hier
+  meaning:
+    en: new here
+    ar: جديد هنا
+    mk: нов тука
+- id: ja
+  text: Ja
+  meaning:
+    en: 'Yes'
+    ar: نعم
+    mk: Да
+- id: ich-bin
+  text: ich bin
+  meaning:
+    en: I am
+    ar: أنا (أكون)
+    mk: јас сум
+- id: sprechen-sie-englisch
+  text: Sprechen Sie Englisch?
+  meaning:
+    en: Do you speak English? (polite)
+    ar: هل تتكلمين الإنجليزية؟ (بصيغة الاحترام)
+    mk: Зборувате ли англиски?
+- id: ein-bisschen
+  text: ein bisschen
+  meaning:
+    en: a little
+    ar: قليلًا
+    mk: малку
+- id: ich-wohne
+  text: ich wohne
+  meaning:
+    en: I live
+    ar: أسكن
+    mk: живеам
+- id: unten
+  text: unten
+  meaning:
+    en: downstairs
+    ar: في الأسفل
+    mk: долу
+- id: freut-mich
+  text: Freut mich
+  meaning:
+    en: Nice to meet you
+    ar: تشرفنا
+    mk: Мило ми е
+- id: willkommen
+  text: Willkommen
+  meaning:
+    en: Welcome
+    ar: أهلًا وسهلًا
+    mk: Добредојдовте
+- id: der-schluessel
+  text: der Schlüssel
+  meaning:
+    en: the key
+    ar: المفتاح
+    mk: клучот
+- id: danke-schoen
+  text: Danke schön
+  meaning:
+    en: Thank you very much
+    ar: شكرًا جزيلًا
+    mk: Благодарам многу
+- id: bitte-schoen
+  text: Bitte schön
+  meaning:
+    en: You're welcome / here you are
+    ar: عفوًا / تفضّلي
+    mk: Нема зошто / повелете
+- id: auf-wiedersehen
+  text: Auf Wiedersehen
+  meaning:
+    en: Goodbye
+    ar: مع السلامة
+    mk: Довидување
+reviews: []
+steps:
+- type: narrator
+  text:
+    en: Your first day in Leipzig. A woman opens the door of the ground-floor flat. Listen to the conversation; you don't need to understand it yet.
+    ar: يومك الأول في لايبزيغ. امرأة تفتح باب الشقة في الطابق الأرضي. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.
+    mk: Вашиот прв ден во Лајпциг. Една жена ја отвора вратата на станот во приземјето. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: becker
+    text: Guten Tag! Sie sind neu hier, oder?
+    meaning:
+      en: Hello! You're new here, aren't you?
+      ar: نهارك سعيد! أنتِ جديدة هنا، أليس كذلك؟
+      mk: Добар ден! Вие сте нова тука, нели?
+  - speaker: protagonist
+    text: Guten Tag. Entschuldigung, ich verstehe nicht.
+    meaning:
+      en: Hello. Sorry, I don't understand.
+      ar: نهارك سعيد. عفوًا، لا أفهم.
+      mk: Добар ден. Извинете, не разбирам.
+  - speaker: becker
+    text: Sie – sind – neu – hier?
+    meaning:
+      en: You – are – new – here?
+      ar: أنتِ – جديدة – هنا؟
+      mk: Вие – сте – нова – тука?
+  - speaker: protagonist
+    text: Ah! Ja, ich bin neu hier. Sprechen Sie Englisch?
+    meaning:
+      en: Ah! Yes, I'm new here. Do you speak English?
+      ar: آه! نعم، أنا جديدة هنا. هل تتكلمين الإنجليزية؟
+      mk: А! Да, нова сум тука. Зборувате ли англиски?
+  - speaker: becker
+    text: Ein bisschen. Ich bin Frau Becker. Ich wohne unten.
+    meaning:
+      en: A little. I'm Mrs Becker. I live downstairs.
+      ar: قليلًا. أنا السيدة بيكر. أسكن في الأسفل.
+      mk: Малку. Јас сум госпоѓа Бекер. Живеам долу.
+  - speaker: protagonist
+    text: Freut mich, Frau Becker.
+    meaning:
+      en: Nice to meet you, Mrs Becker.
+      ar: تشرفنا يا سيدة بيكر.
+      mk: Мило ми е, госпоѓо Бекер.
+  - speaker: becker
+    text: Willkommen im Haus! Hier ist der Schlüssel für die Haustür.
+    meaning:
+      en: Welcome to the house! Here is the key for the front door.
+      ar: أهلًا بك في البيت! هذا مفتاح باب العمارة.
+      mk: Добредојдовте во зградата! Еве го клучот за влезната врата.
+  - speaker: protagonist
+    text: Danke schön!
+    meaning:
+      en: Thank you very much!
+      ar: شكرًا جزيلًا!
+      mk: Благодарам многу!
+  - speaker: becker
+    text: Bitte schön. Auf Wiedersehen!
+    meaning:
+      en: You're welcome. Goodbye!
+      ar: عفوًا. مع السلامة!
+      mk: Нема зошто. Довидување!
+  - speaker: protagonist
+    text: Auf Wiedersehen!
+    meaning:
+      en: Goodbye!
+      ar: مع السلامة!
+      mk: Довидување!
+- type: narrator
+  text:
+    en: 'To greet someone you don''t know: «Guten Tag». In the evening: «Guten Abend».'
+    ar: 'لتحية شخص لا تعرفينه: «Guten Tag». وفي المساء: «Guten Abend».'
+    mk: 'За поздрав со непознат: «Guten Tag». Навечер: «Guten Abend».'
+- type: prompt
+  ask:
+    en: Greet the woman at the door.
+    ar: حيّي المرأة عند الباب.
+    mk: Поздравете ја жената на вратата.
+  answer:
+    speaker: protagonist
+    text: Guten Tag.
+  items:
+  - guten-tag
+- type: prompt
+  ask:
+    en: 'Say politely: excuse me, I don''t understand.'
+    ar: 'قولي بأدب: عفوًا، لا أفهم.'
+    mk: 'Кажете учтиво: извинете, не разбирам.'
+  answer:
+    speaker: protagonist
+    text: Entschuldigung, ich verstehe nicht.
+  items:
+  - entschuldigung
+  - ich-verstehe-nicht
+- type: narrator
+  text:
+    en: «Sie» is the polite 'you', written with a capital S — for strangers, officials and older people. Friends say «du».
+    ar: «Sie» هي صيغة المخاطبة المؤدبة، وتُكتب بحرف S كبير — مع الغرباء والموظفين وكبار السن. أما الأصدقاء فيقولون «du».
+    mk: «Sie» е учтивото „Вие“, со голема буква — за непознати, службеници и постари. Пријателите си велат «du».
+- type: prompt
+  ask:
+    en: She asks if you are new here. How?
+    ar: تسألك إن كنتِ جديدة هنا. كيف تقول ذلك؟
+    mk: Ве прашува дали сте нова тука. Како?
+  answer:
+    speaker: protagonist
+    text: Sie sind neu hier?
+  items:
+  - sie-sind
+  - neu-hier
+- type: narrator
+  text:
+    en: '«ich bin» — I am; «Sie sind» — you are, polite. The same verb: «sein», to be.'
+    ar: '«ich bin» تعني: أنا أكون؛ و«Sie sind»: أنتِ تكونين، بصيغة الاحترام. الفعل نفسه: «sein»، أي يكون.'
+    mk: '«ich bin» — јас сум; «Sie sind» — Вие сте. Истиот глагол: «sein», сум.'
+- type: prompt
+  ask:
+    en: 'Answer: yes, I''m new here.'
+    ar: 'أجيبي: نعم، أنا جديدة هنا.'
+    mk: 'Одговорете: да, нова сум тука.'
+  answer:
+    speaker: protagonist
+    text: Ja, ich bin neu hier.
+  items:
+  - ja
+  - ich-bin
+  - neu-hier
+- type: prompt
+  ask:
+    en: Ask if she speaks English.
+    ar: اسأليها إن كانت تتكلم الإنجليزية.
+    mk: Прашајте ја дали зборува англиски.
+  answer:
+    speaker: protagonist
+    text: Sprechen Sie Englisch?
+  items:
+  - sprechen-sie-englisch
+- type: prompt
+  ask:
+    en: 'She says: a little.'
+    ar: 'تقول: قليلًا.'
+    mk: 'Таа вели: малку.'
+  answer:
+    speaker: protagonist
+    text: Ein bisschen.
+  items:
+  - ein-bisschen
+- type: prompt
+  ask:
+    en: 'Say it for her: I live downstairs.'
+    ar: 'قوليها بلسانها: أسكن في الأسفل.'
+    mk: 'Кажете наместо неа: живеам долу.'
+  answer:
+    speaker: protagonist
+    text: Ich wohne unten.
+  items:
+  - ich-wohne
+  - unten
+- type: prompt
+  ask:
+    en: 'Say: nice to meet you, Mrs Becker.'
+    ar: 'قولي: تشرفنا يا سيدة بيكر.'
+    mk: 'Кажете: мило ми е, госпоѓо Бекер.'
+  answer:
+    speaker: protagonist
+    text: Freut mich, Frau Becker.
+  items:
+  - freut-mich
+- type: narrator
+  text:
+    en: 'Germans shake hands when they meet: brief and firm, with eye contact. No cheek kisses between strangers.'
+    ar: 'يتصافح الألمان عند التعارف: مصافحة قصيرة وثابتة مع النظر في العينين، ولا قُبلات على الخد بين الغرباء.'
+    mk: 'Германците се ракуваат при запознавање: кратко и цврсто, со поглед во очи. Бакнежи во образ меѓу непознати нема.'
+- type: narrator
+  for:
+  - ar
+  text:
+    ar: إن كنتِ لا تصافحين الرجال، فضعي يدك على صدرك وابتسمي وقولي «Freut mich» — هذا مفهوم في ألمانيا ومقبول.
+- type: prompt
+  ask:
+    en: She welcomes you. How?
+    ar: ترحّب بك. كيف؟
+    mk: Ви посакува добредојде. Како?
+  answer:
+    speaker: protagonist
+    text: Willkommen!
+  items:
+  - willkommen
+- type: prompt
+  ask:
+    en: 'Say: here is the key.'
+    ar: 'قولي: هذا هو المفتاح.'
+    mk: 'Кажете: еве го клучот.'
+  answer:
+    speaker: protagonist
+    text: Hier ist der Schlüssel.
+  items:
+  - der-schluessel
+- type: prompt
+  ask:
+    en: Thank her.
+    ar: اشكريها.
+    mk: Заблагодарете ѝ.
+  answer:
+    speaker: protagonist
+    text: Danke schön!
+  items:
+  - danke-schoen
+- type: prompt
+  ask:
+    en: 'She answers: you''re welcome.'
+    ar: 'تجيب: عفوًا.'
+    mk: 'Таа одговара: нема зошто.'
+  answer:
+    speaker: protagonist
+    text: Bitte schön.
+  items:
+  - bitte-schoen
+- type: prompt
+  ask:
+    en: Say goodbye.
+    ar: ودّعيها.
+    mk: Поздравете се.
+  answer:
+    speaker: protagonist
+    text: Auf Wiedersehen!
+  items:
+  - auf-wiedersehen
+- type: prompt
+  ask:
+    en: 'Once more: say “Good day / hello”.'
+    ar: 'مرة أخرى: قولي “نهارك سعيد / مرحبًا”.'
+    mk: 'Уште еднаш: кажете „Добар ден“.'
+  answer:
+    speaker: protagonist
+    text: Guten Tag
+  items:
+  - guten-tag
+- type: prompt
+  ask:
+    en: 'Once more: say “Excuse me / sorry”.'
+    ar: 'مرة أخرى: قولي “عفوًا / المعذرة”.'
+    mk: 'Уште еднаш: кажете „Извинете“.'
+  answer:
+    speaker: protagonist
+    text: Entschuldigung
+  items:
+  - entschuldigung
+- type: prompt
+  ask:
+    en: 'Once more: say “I don''t understand”.'
+    ar: 'مرة أخرى: قولي “لا أفهم”.'
+    mk: 'Уште еднаш: кажете „Не разбирам“.'
+  answer:
+    speaker: protagonist
+    text: Ich verstehe nicht
+  items:
+  - ich-verstehe-nicht
+- type: prompt
+  ask:
+    en: 'Once more: say “you are (polite)”.'
+    ar: 'مرة أخرى: قولي “أنتِ / أنتَ (بصيغة الاحترام)”.'
+    mk: 'Уште еднаш: кажете „Вие сте“.'
+  answer:
+    speaker: protagonist
+    text: Sie sind
+  items:
+  - sie-sind
+- type: prompt
+  ask:
+    en: 'Once more: say “Yes”.'
+    ar: 'مرة أخرى: قولي “نعم”.'
+    mk: 'Уште еднаш: кажете „Да“.'
+  answer:
+    speaker: protagonist
+    text: Ja
+  items:
+  - ja
+- type: prompt
+  ask:
+    en: 'Once more: say “I am”.'
+    ar: 'مرة أخرى: قولي “أنا (أكون)”.'
+    mk: 'Уште еднаш: кажете „јас сум“.'
+  answer:
+    speaker: protagonist
+    text: ich bin
+  items:
+  - ich-bin
+- type: prompt
+  ask:
+    en: 'Once more: say “Do you speak English? (polite)”.'
+    ar: 'مرة أخرى: قولي “هل تتكلمين الإنجليزية؟ (بصيغة الاحترام)”.'
+    mk: 'Уште еднаш: кажете „Зборувате ли англиски?“.'
+  answer:
+    speaker: protagonist
+    text: Sprechen Sie Englisch?
+  items:
+  - sprechen-sie-englisch
+- type: prompt
+  ask:
+    en: 'Once more: say “a little”.'
+    ar: 'مرة أخرى: قولي “قليلًا”.'
+    mk: 'Уште еднаш: кажете „малку“.'
+  answer:
+    speaker: protagonist
+    text: ein bisschen
+  items:
+  - ein-bisschen
+- type: prompt
+  ask:
+    en: 'Once more: say “I live”.'
+    ar: 'مرة أخرى: قولي “أسكن”.'
+    mk: 'Уште еднаш: кажете „живеам“.'
+  answer:
+    speaker: protagonist
+    text: ich wohne
+  items:
+  - ich-wohne
+- type: prompt
+  ask:
+    en: 'Once more: say “downstairs”.'
+    ar: 'مرة أخرى: قولي “في الأسفل”.'
+    mk: 'Уште еднаш: кажете „долу“.'
+  answer:
+    speaker: protagonist
+    text: unten
+  items:
+  - unten
+- type: prompt
+  ask:
+    en: 'Once more: say “Nice to meet you”.'
+    ar: 'مرة أخرى: قولي “تشرفنا”.'
+    mk: 'Уште еднаш: кажете „Мило ми е“.'
+  answer:
+    speaker: protagonist
+    text: Freut mich
+  items:
+  - freut-mich
+- type: prompt
+  ask:
+    en: 'Once more: say “Welcome”.'
+    ar: 'مرة أخرى: قولي “أهلًا وسهلًا”.'
+    mk: 'Уште еднаш: кажете „Добредојдовте“.'
+  answer:
+    speaker: protagonist
+    text: Willkommen
+  items:
+  - willkommen
+- type: prompt
+  ask:
+    en: 'Once more: say “the key”.'
+    ar: 'مرة أخرى: قولي “المفتاح”.'
+    mk: 'Уште еднаш: кажете „клучот“.'
+  answer:
+    speaker: protagonist
+    text: der Schlüssel
+  items:
+  - der-schluessel
+- type: prompt
+  ask:
+    en: 'Once more: say “Thank you very much”.'
+    ar: 'مرة أخرى: قولي “شكرًا جزيلًا”.'
+    mk: 'Уште еднаш: кажете „Благодарам многу“.'
+  answer:
+    speaker: protagonist
+    text: Danke schön
+  items:
+  - danke-schoen
+- type: prompt
+  ask:
+    en: 'Once more: say “You''re welcome / here you are”.'
+    ar: 'مرة أخرى: قولي “عفوًا / تفضّلي”.'
+    mk: 'Уште еднаш: кажете „Нема зошто / повелете“.'
+  answer:
+    speaker: protagonist
+    text: Bitte schön
+  items:
+  - bitte-schoen
+- type: prompt
+  ask:
+    en: 'Once more: say “Goodbye”.'
+    ar: 'مرة أخرى: قولي “مع السلامة”.'
+    mk: 'Уште еднаш: кажете „Довидување“.'
+  answer:
+    speaker: protagonist
+    text: Auf Wiedersehen
+  items:
+  - auf-wiedersehen
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

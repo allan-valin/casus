@@ -1,0 +1,465 @@
+# UNIT de A1-05-m — written by AI (Claude) for Casus; expanded from src/A1-05-m.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-05-m
+level: A1
+number: 5
+protagonist: f
+tracks:
+- mk
+title:
+  mk: Лука има температура
+situation:
+  mk: Лука се разболе, а родителите се на работа. Со картичката од осигурувањето го носите кај детската лекарка.
+learn_lessons:
+- a1-accusative
+culture: The yellow check-up booklet
+new_items:
+- id: die-oma
+  text: die Oma
+  meaning:
+    mk: бабата
+- id: hat-fieber
+  text: hat Fieber
+  meaning:
+    mk: има температура
+- id: seit-heute-morgen
+  text: seit heute Morgen
+  meaning:
+    mk: од утрово
+- id: die-eltern
+  text: die Eltern
+  meaning:
+    mk: родителите
+- id: arbeiten
+  text: arbeiten
+  meaning:
+    mk: работат
+- id: die-karte
+  text: die Karte
+  meaning:
+    mk: картичката
+- id: das-u-heft
+  text: das U-Heft
+  meaning:
+    mk: жолтата книшка за прегледи
+  rare: true
+- id: hustet
+  text: hustet
+  meaning:
+    mk: кашла
+- id: ich-gebe-ihnen
+  text: Ich gebe Ihnen …
+  meaning:
+    mk: Ви давам …
+- id: einen-saft
+  text: einen Saft
+  meaning:
+    mk: сируп
+- id: dreimal-am-tag
+  text: dreimal am Tag
+  meaning:
+    mk: три пати на ден
+- id: gute-besserung
+  text: Gute Besserung!
+  meaning:
+    mk: Брзо оздравување!
+- id: vielen-dank
+  text: Vielen Dank
+  meaning:
+    mk: Многу благодарам
+reviews:
+- item: der-opa
+  from: A1-02-m
+- item: ich-hole-ab
+  from: A1-02-m
+- item: die-kita
+  from: A1-02-m
+- item: die-erzieherin
+  from: A1-02-m
+- item: ist-da
+  from: A1-02-m
+- item: hallo
+  from: A1-02-m
+- item: mein-schatz
+  from: A1-02-m
+- item: der-ausweis
+  from: A1-02-m
+- item: hier
+  from: A1-02-m
+- item: die-mama-hat-gesagt
+  from: A1-02-m
+- item: tschuess
+  from: A1-02-m
+- item: bis-morgen
+  from: A1-02-m
+- item: das-ist
+  from: A1-02-m
+- item: einen-termin
+  from: A1-04
+- item: ich-moechte
+  from: A1-04
+- item: mich-anmelden
+  from: A1-04
+- item: das-formular
+  from: A1-04
+- item: die-wgb
+  from: A1-04
+- item: wo-wohnen-sie
+  from: A1-04
+- item: welche
+  from: A1-04
+- item: die-religion
+  from: A1-04
+- item: warum
+  from: A1-04
+- item: keins-von-beiden
+  from: A1-04
+- item: die-kirchensteuer
+  from: A1-04
+- item: fertig
+  from: A1-04
+- item: das-wars
+  from: A1-04
+- item: schoenen-tag-noch
+  from: A1-04
+- item: ich-bin
+  from: A1-01
+steps:
+- type: narrator
+  text:
+    mk: Лука се разболе, а родителите се на работа. Со картичката од осигурувањето го носите кај детската лекарка. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: wagner
+    text: Guten Tag. Sie sind …?
+    meaning:
+      mk: Добар ден. Вие сте …?
+  - speaker: protagonist
+    text: Ich bin die Oma von Luka. Die Eltern arbeiten.
+    meaning:
+      mk: Јас сум бабата на Лука. Родителите се на работа.
+  - speaker: wagner
+    text: Gut. Was fehlt Luka?
+    meaning:
+      mk: Добро. Што му е на Лука?
+  - speaker: protagonist
+    text: Luka hat Fieber. Seit heute Morgen.
+    meaning:
+      mk: Лука има температура. Од утрово.
+  - speaker: wagner
+    text: Haben Sie die Karte und das U-Heft?
+    meaning:
+      mk: Ги имате ли картичката и жолтата книшка?
+  - speaker: protagonist
+    text: Die Karte, ja. Das U-Heft ... nein.
+    meaning:
+      mk: Картичката, да. Книшката ... не.
+  - speaker: wagner
+    text: Kein Problem. Hustet er auch?
+    meaning:
+      mk: Нема проблем. Кашла ли?
+  - speaker: protagonist
+    text: Ja, ein bisschen.
+    meaning:
+      mk: Да, малку.
+  - speaker: wagner
+    text: Ich gebe Ihnen einen Saft. Dreimal am Tag. Gute Besserung, Luka!
+    meaning:
+      mk: Ќе ви дадам сируп. Три пати на ден. Брзо оздравување, Лука!
+  - speaker: protagonist
+    text: Vielen Dank!
+    meaning:
+      mk: Многу благодарам!
+- type: prompt
+  ask:
+    mk: 'Претставете се: јас сум бабата на Лука.'
+  answer:
+    speaker: protagonist
+    text: Ich bin die Oma von Luka.
+  items:
+  - ich-bin
+  - die-oma
+- type: prompt
+  ask:
+    mk: 'Кажете: родителите работат.'
+  answer:
+    speaker: protagonist
+    text: Die Eltern arbeiten.
+  items:
+  - die-eltern
+  - arbeiten
+- type: prompt
+  ask:
+    mk: 'Кажете: Лука има температура.'
+  answer:
+    speaker: protagonist
+    text: Luka hat Fieber.
+  items:
+  - hat-fieber
+- type: prompt
+  ask:
+    mk: 'Кажете: од утрово.'
+  answer:
+    speaker: protagonist
+    text: Seit heute Morgen.
+  items:
+  - seit-heute-morgen
+- type: narrator
+  text:
+    mk: «das U-Heft» е жолта книшка што се добива при раѓање, со сите редовни прегледи на детето (U1 до U9). Замолете ги Петар и Ања да ви ја дадат заедно со картичката, кога вие го носите Лука.
+- type: prompt
+  ask:
+    mk: 'Кажете: картичката, да.'
+  answer:
+    speaker: protagonist
+    text: Die Karte, ja.
+  items:
+  - die-karte
+- type: prompt
+  ask:
+    mk: 'Кажете: жолтата книшка — не.'
+  answer:
+    speaker: protagonist
+    text: Das U-Heft ... nein.
+  items:
+  - das-u-heft
+- type: prompt
+  ask:
+    mk: Таа прашува дали кашла.
+  answer:
+    speaker: protagonist
+    text: Hustet er?
+  items:
+  - hustet
+- type: narrator
+  text:
+    mk: 'По глаголи како «geben» и «haben» се менува само машкиот предмет: «ein Saft» станува «einen Saft» — «Ich gebe Ihnen einen Saft». Женскиот и средниот род остануваат исти.'
+- type: prompt
+  ask:
+    mk: 'Кажете наместо неа: ќе ви дадам сируп.'
+  answer:
+    speaker: protagonist
+    text: Ich gebe Ihnen einen Saft.
+  items:
+  - ich-gebe-ihnen
+  - einen-saft
+- type: prompt
+  ask:
+    mk: 'Кажете: три пати на ден.'
+  answer:
+    speaker: protagonist
+    text: Dreimal am Tag.
+  items:
+  - dreimal-am-tag
+- type: prompt
+  ask:
+    mk: Таа му посакува на Лука брзо оздравување.
+  answer:
+    speaker: protagonist
+    text: Gute Besserung!
+  items:
+  - gute-besserung
+- type: prompt
+  ask:
+    mk: Заблагодарете се.
+  answer:
+    speaker: protagonist
+    text: Vielen Dank!
+  items:
+  - vielen-dank
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „бабата“.'
+  answer:
+    speaker: protagonist
+    text: die Oma
+  items:
+  - die-oma
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „има температура“.'
+  answer:
+    speaker: protagonist
+    text: hat Fieber
+  items:
+  - hat-fieber
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „од утрово“.'
+  answer:
+    speaker: protagonist
+    text: seit heute Morgen
+  items:
+  - seit-heute-morgen
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „родителите“.'
+  answer:
+    speaker: protagonist
+    text: die Eltern
+  items:
+  - die-eltern
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „работат“.'
+  answer:
+    speaker: protagonist
+    text: arbeiten
+  items:
+  - arbeiten
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „картичката“.'
+  answer:
+    speaker: protagonist
+    text: die Karte
+  items:
+  - die-karte
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „жолтата книшка за прегледи“.'
+  answer:
+    speaker: protagonist
+    text: das U-Heft
+  items:
+  - das-u-heft
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „кашла“.'
+  answer:
+    speaker: protagonist
+    text: hustet
+  items:
+  - hustet
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „Ви давам …“.'
+  answer:
+    speaker: protagonist
+    text: Ich gebe Ihnen …
+  items:
+  - ich-gebe-ihnen
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „сируп“.'
+  answer:
+    speaker: protagonist
+    text: einen Saft
+  items:
+  - einen-saft
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „три пати на ден“.'
+  answer:
+    speaker: protagonist
+    text: dreimal am Tag
+  items:
+  - dreimal-am-tag
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „Брзо оздравување!“.'
+  answer:
+    speaker: protagonist
+    text: Gute Besserung!
+  items:
+  - gute-besserung
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „Многу благодарам“.'
+  answer:
+    speaker: protagonist
+    text: Vielen Dank
+  items:
+  - vielen-dank
+- type: narrator
+  text:
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „термин“ — и „би сакал“ — и „да се пријавам“ — и „формуларот“.'
+  answer:
+    speaker: protagonist
+    text: einen Termin … ich möchte … mich anmelden … das Formular
+  items:
+  - einen-termin
+  - ich-moechte
+  - mich-anmelden
+  - das-formular
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „потврдата од сопственикот на станот“ — и „Каде живеете?“ — и „Која …?“ — и „вероисповеста“.'
+  answer:
+    speaker: protagonist
+    text: die Wohnungsgeberbestätigung … Wo wohnen Sie? … Welche …? … die Religion
+  items:
+  - die-wgb
+  - wo-wohnen-sie
+  - welche
+  - die-religion
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „Зошто?“ — и „ниту едно ниту друго“ — и „црковниот данок“ — и „готово“.'
+  answer:
+    speaker: protagonist
+    text: Warum? … keins von beiden … die Kirchensteuer … fertig
+  items:
+  - warum
+  - keins-von-beiden
+  - die-kirchensteuer
+  - fertig
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „Толку ли беше?“ — и „Убав ден!“ — и „дедото“ — и „доаѓам да го земам (некого)“.'
+  answer:
+    speaker: protagonist
+    text: Das war's? … Schönen Tag noch! … der Opa … ich hole … ab
+  items:
+  - das-wars
+  - schoenen-tag-noch
+  - der-opa
+  - ich-hole-ab
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „градинката (Kita)“ — и „воспитувачката“ — и „… е тука, дојде“ — и „Здраво“.'
+  answer:
+    speaker: protagonist
+    text: die Kita … die Erzieherin … … ist da … Hallo
+  items:
+  - die-kita
+  - die-erzieherin
+  - ist-da
+  - hallo
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „душо моја, срце мое“ — и „личната карта / документот“ — и „тука, еве“ — и „мама кажа“.'
+  answer:
+    speaker: protagonist
+    text: mein Schatz … der Ausweis … hier … die Mama hat es gesagt
+  items:
+  - mein-schatz
+  - der-ausweis
+  - hier
+  - die-mama-hat-gesagt
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „Чао!“ — и „До утре!“ — и „Ова е …“.'
+  answer:
+    speaker: protagonist
+    text: Tschüss! … Bis morgen! … Das ist …
+  items:
+  - tschuess
+  - bis-morgen
+  - das-ist
+- type: narrator
+  text:
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

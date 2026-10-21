@@ -1,0 +1,455 @@
+# UNIT de A1-05-a — written by AI (Claude) for Casus; expanded from src/A1-05-a.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-05-a
+level: A1
+number: 5
+protagonist: f
+tracks:
+- ar
+title:
+  ar: طبيبة الأطفال
+situation:
+  ar: حرارة يارا مرتفعة منذ الليل. عيادة طبيبة الأطفال، ومعكِ الدفتر الأصفر.
+learn_lessons:
+- a1-accusative
+culture: The yellow check-up booklet
+new_items:
+- id: die-mama
+  text: die Mama
+  meaning:
+    ar: الأم، ماما
+- id: hat-fieber
+  text: hat Fieber
+  meaning:
+    ar: عندها حرارة
+- id: seit-heute-nacht
+  text: seit heute Nacht
+  meaning:
+    ar: منذ الليلة الماضية
+- id: das-u-heft
+  text: das U-Heft
+  meaning:
+    ar: دفتر الفحوص الأصفر
+  rare: true
+- id: die-karte
+  text: die Karte
+  meaning:
+    ar: البطاقة (بطاقة التأمين)
+- id: die-versichertenkarte
+  text: die Versichertenkarte
+  meaning:
+    ar: بطاقة التأمين الصحي
+  rare: true
+- id: hustet
+  text: hustet
+  meaning:
+    ar: تسعل
+- id: ich-gebe-ihnen
+  text: Ich gebe Ihnen …
+  meaning:
+    ar: أعطيكِ …
+- id: den-saft-medizin
+  text: einen Saft
+  meaning:
+    ar: شرابًا (دواء سائل)
+- id: dreimal-am-tag
+  text: dreimal am Tag
+  meaning:
+    ar: ثلاث مرات في اليوم
+- id: gute-besserung
+  text: Gute Besserung!
+  meaning:
+    ar: شفاءً عاجلًا!
+- id: vielen-dank
+  text: Vielen Dank
+  meaning:
+    ar: شكرًا جزيلًا
+reviews:
+- item: guten-morgen
+  from: A1-02-a
+- item: der-papa
+  from: A1-02-a
+- item: das-ist
+  from: A1-02-a
+- item: die-kita
+  from: A1-02-a
+- item: die-erzieherin
+  from: A1-02-a
+- item: hallo
+  from: A1-02-a
+- item: ich-will
+  from: A1-02-a
+- item: nach-hause
+  from: A1-02-a
+- item: keine-angst
+  from: A1-02-a
+- item: wann
+  from: A1-02-a
+- item: holen-ab
+  from: A1-02-a
+- item: um-drei-uhr
+  from: A1-02-a
+- item: tschuess
+  from: A1-02-a
+- item: bis-spaeter
+  from: A1-02-a
+- item: einen-termin
+  from: A1-04
+- item: ich-moechte
+  from: A1-04
+- item: mich-anmelden
+  from: A1-04
+- item: das-formular
+  from: A1-04
+- item: die-wgb
+  from: A1-04
+- item: wo-wohnen-sie
+  from: A1-04
+- item: welche
+  from: A1-04
+- item: die-religion
+  from: A1-04
+- item: warum
+  from: A1-04
+- item: keins-von-beiden
+  from: A1-04
+- item: die-kirchensteuer
+  from: A1-04
+- item: fertig
+  from: A1-04
+- item: das-wars
+  from: A1-04
+- item: schoenen-tag-noch
+  from: A1-04
+- item: ein-bisschen
+  from: A1-01
+- item: frau-doktor
+  from: A1-03
+steps:
+- type: narrator
+  text:
+    ar: حرارة يارا مرتفعة منذ الليل. عيادة طبيبة الأطفال، ومعكِ الدفتر الأصفر. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.
+- type: dialogue
+  lines:
+  - speaker: wagner
+    text: Guten Morgen. Was fehlt Yara?
+    meaning:
+      ar: صباح الخير. ما بها يارا؟
+  - speaker: protagonist
+    text: Yara hat Fieber. Seit heute Nacht.
+    meaning:
+      ar: يارا عندها حرارة. منذ الليلة الماضية.
+  - speaker: wagner
+    text: Haben Sie die Versichertenkarte und das U-Heft?
+    meaning:
+      ar: هل معكِ بطاقة التأمين والدفتر الأصفر؟
+  - speaker: protagonist
+    text: Ja, hier ist die Karte. Und das U-Heft.
+    meaning:
+      ar: نعم، هذه البطاقة. وهذا الدفتر.
+  - speaker: wagner
+    text: Danke. Hustet Yara auch?
+    meaning:
+      ar: شكرًا. هل تسعل يارا أيضًا؟
+  - speaker: protagonist
+    text: Ja, ein bisschen.
+    meaning:
+      ar: نعم، قليلًا.
+  - speaker: wagner
+    text: Das ist eine Erkältung. Ich gebe Ihnen einen Saft. Dreimal am Tag.
+    meaning:
+      ar: هذه نزلة برد. سأعطيكِ شرابًا. ثلاث مرات في اليوم.
+  - speaker: protagonist
+    text: Vielen Dank, Frau Doktor.
+    meaning:
+      ar: شكرًا جزيلًا يا حضرة الطبيبة.
+  - speaker: wagner
+    text: Gute Besserung, Yara!
+    meaning:
+      ar: شفاءً عاجلًا يا يارا!
+- type: prompt
+  ask:
+    ar: 'قولي: يارا عندها حرارة.'
+  answer:
+    speaker: protagonist
+    text: Yara hat Fieber.
+  items:
+  - hat-fieber
+- type: prompt
+  ask:
+    ar: 'قولي: منذ الليلة الماضية.'
+  answer:
+    speaker: protagonist
+    text: Seit heute Nacht.
+  items:
+  - seit-heute-nacht
+- type: prompt
+  ask:
+    ar: تطلب الطبيبة بطاقة التأمين. قوليها.
+  answer:
+    speaker: protagonist
+    text: Die Versichertenkarte.
+  items:
+  - die-versichertenkarte
+- type: narrator
+  text:
+    ar: '«das U-Heft» دفتر أصفر يُعطى عند الولادة، فيه كل فحوص الطفل الدورية (U1 إلى U9). احمليه في كل زيارة لطبيب الأطفال. وإن لم يكن معكِ، اسألي الطبيبة: سيبدأون دفترًا جديدًا.'
+- type: prompt
+  ask:
+    ar: 'قولي: هذه البطاقة، وهذا الدفتر الأصفر.'
+  answer:
+    speaker: protagonist
+    text: Hier ist die Karte. Und das U-Heft.
+  items:
+  - die-karte
+  - das-u-heft
+- type: prompt
+  ask:
+    ar: 'تسأل: هل تسعل يارا؟'
+  answer:
+    speaker: protagonist
+    text: Hustet Yara?
+  items:
+  - hustet
+- type: prompt
+  ask:
+    ar: 'أجيبي: قليلًا.'
+  answer:
+    speaker: protagonist
+    text: Ein bisschen.
+  items:
+  - ein-bisschen
+- type: narrator
+  text:
+    ar: 'بعد أفعال مثل «geben» و«haben» يتغير المفعول به المذكر فقط: «ein Saft» يصبح «einen Saft» — «Ich gebe Ihnen einen Saft». أما «eine» و«ein» للمؤنث والمحايد فلا تتغيران.'
+- type: prompt
+  ask:
+    ar: 'قولي بلسانها: سأعطيكِ شرابًا.'
+  answer:
+    speaker: protagonist
+    text: Ich gebe Ihnen einen Saft.
+  items:
+  - ich-gebe-ihnen
+  - den-saft-medizin
+- type: prompt
+  ask:
+    ar: 'قولي: ثلاث مرات في اليوم.'
+  answer:
+    speaker: protagonist
+    text: Dreimal am Tag.
+  items:
+  - dreimal-am-tag
+- type: prompt
+  ask:
+    ar: اشكريها شكرًا جزيلًا.
+  answer:
+    speaker: protagonist
+    text: Vielen Dank, Frau Doktor.
+  items:
+  - vielen-dank
+  - frau-doktor
+- type: prompt
+  ask:
+    ar: تتمنى ليارا الشفاء. كيف؟
+  answer:
+    speaker: protagonist
+    text: Gute Besserung!
+  items:
+  - gute-besserung
+- type: prompt
+  ask:
+    ar: 'قولي: الأم.'
+  answer:
+    speaker: protagonist
+    text: Die Mama.
+  items:
+  - die-mama
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “الأم، ماما”.'
+  answer:
+    speaker: protagonist
+    text: die Mama
+  items:
+  - die-mama
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “عندها حرارة”.'
+  answer:
+    speaker: protagonist
+    text: hat Fieber
+  items:
+  - hat-fieber
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “منذ الليلة الماضية”.'
+  answer:
+    speaker: protagonist
+    text: seit heute Nacht
+  items:
+  - seit-heute-nacht
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “دفتر الفحوص الأصفر”.'
+  answer:
+    speaker: protagonist
+    text: das U-Heft
+  items:
+  - das-u-heft
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “البطاقة (بطاقة التأمين)”.'
+  answer:
+    speaker: protagonist
+    text: die Karte
+  items:
+  - die-karte
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “بطاقة التأمين الصحي”.'
+  answer:
+    speaker: protagonist
+    text: die Versichertenkarte
+  items:
+  - die-versichertenkarte
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “تسعل”.'
+  answer:
+    speaker: protagonist
+    text: hustet
+  items:
+  - hustet
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “أعطيكِ …”.'
+  answer:
+    speaker: protagonist
+    text: Ich gebe Ihnen …
+  items:
+  - ich-gebe-ihnen
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “شرابًا (دواء سائل)”.'
+  answer:
+    speaker: protagonist
+    text: einen Saft
+  items:
+  - den-saft-medizin
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “ثلاث مرات في اليوم”.'
+  answer:
+    speaker: protagonist
+    text: dreimal am Tag
+  items:
+  - dreimal-am-tag
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “شفاءً عاجلًا!”.'
+  answer:
+    speaker: protagonist
+    text: Gute Besserung!
+  items:
+  - gute-besserung
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “شكرًا جزيلًا”.'
+  answer:
+    speaker: protagonist
+    text: Vielen Dank
+  items:
+  - vielen-dank
+- type: narrator
+  text:
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “موعدًا — و“أودّ — و“أن أسجّل نفسي — و“الاستمارة”.'
+  answer:
+    speaker: protagonist
+    text: einen Termin … ich möchte … mich anmelden … das Formular
+  items:
+  - einen-termin
+  - ich-moechte
+  - mich-anmelden
+  - das-formular
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “تأكيد المؤجِّر — و“أين تسكن؟ (بصيغة الاحترام) — و“أيّ …؟ — و“الديانة”.'
+  answer:
+    speaker: protagonist
+    text: die Wohnungsgeberbestätigung … Wo wohnen Sie? … Welche …? … die Religion
+  items:
+  - die-wgb
+  - wo-wohnen-sie
+  - welche
+  - die-religion
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “لماذا؟ — و“ولا واحد منهما — و“ضريبة الكنيسة — و“انتهينا، جاهز”.'
+  answer:
+    speaker: protagonist
+    text: Warum? … keins von beiden … die Kirchensteuer … fertig
+  items:
+  - warum
+  - keins-von-beiden
+  - die-kirchensteuer
+  - fertig
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “هل هذا كل شيء؟ — و“يومًا سعيدًا! — و“صباح الخير — و“الأب، بابا”.'
+  answer:
+    speaker: protagonist
+    text: Das war's? … Schönen Tag noch! … Guten Morgen … der Papa
+  items:
+  - das-wars
+  - schoenen-tag-noch
+  - guten-morgen
+  - der-papa
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “هذا / هذه … — و“الحضانة (الكيتا) — و“المربية — و“مرحبًا (غير رسمي)”.'
+  answer:
+    speaker: protagonist
+    text: Das ist … … die Kita … die Erzieherin … Hallo
+  items:
+  - das-ist
+  - die-kita
+  - die-erzieherin
+  - hallo
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “أريد — و“إلى البيت — و“لا تخف! / لا تخافي! — و“متى …؟”.'
+  answer:
+    speaker: protagonist
+    text: ich will … nach Hause … Keine Angst! … Wann …?
+  items:
+  - ich-will
+  - nach-hause
+  - keine-angst
+  - wann
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “تأخذون (أحدًا) من مكان، تأتون لأخذه — و“في الساعة الثالثة — و“إلى اللقاء! (غير رسمي) — و“أراك لاحقًا!”.'
+  answer:
+    speaker: protagonist
+    text: holen … ab … um drei Uhr … Tschüss! … Bis später!
+  items:
+  - holen-ab
+  - um-drei-uhr
+  - tschuess
+  - bis-spaeter
+- type: narrator
+  text:
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+- type: dialogue
+  again: true
+- type: selfcheck

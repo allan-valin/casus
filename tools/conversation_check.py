@@ -147,9 +147,13 @@ def check_unit(u, b):
     if not NEW_ITEMS[0] <= len(new) <= NEW_ITEMS[1]:
         warnings.append(f"{uid}: {len(new)} new items (target {NEW_ITEMS[0]}–{NEW_ITEMS[1]})")
     if u["number"] > 1 and prompts:
-        share = review_prompts / prompts
-        if not REVIEW_SHARE[0] <= share <= REVIEW_SHARE[1]:
-            warnings.append(f"{uid}: review is {share:.0%} of the prompts (target about 25%)")
+        # per audience: the prompts it hears (review prompts may be for some audiences only)
+        for l in langs:
+            mine = [s for s in u["steps"] if s.get("type") == "prompt" and (not s.get("for") or l in s["for"])]
+            share = sum(bool(s.get("review")) for s in mine) / max(1, len(mine))
+            if not REVIEW_SHARE[0] <= share <= REVIEW_SHARE[1]:
+                warnings.append(f"{uid}: review is {share:.0%} of the prompts (target about 25%)")
+                break
     if not any(s.get("type") == "selfcheck" for s in u["steps"]):
         warnings.append(f"{uid}: no self-check step at the end")
     return errors, warnings

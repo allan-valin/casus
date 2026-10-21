@@ -1,0 +1,646 @@
+# UNIT de A1-04 — written by AI (Claude) for Casus; expanded from src/A1-04.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-04
+level: A1
+number: 4
+protagonist: m
+title:
+  en: Registration
+  ar: تسجيل السكن
+  mk: Пријавата
+situation:
+  en: The Bürgeramt, to register your address. Herr Schulz has a form — and an unexpected question.
+  ar: في دائرة المواطنين (Bürgeramt) لتسجيل عنوانك. السيد شولتس معه استمارة — وسؤال غير متوقع.
+  mk: Во општинската служба (Bürgeramt), да ја пријавите адресата. Господин Шулц има формулар — и неочекувано прашање.
+learn_lessons:
+- a1-w-questions
+culture: The religion box and church tax
+new_items:
+- id: einen-termin
+  text: einen Termin
+  meaning:
+    en: an appointment
+    ar: موعدًا
+    mk: термин
+- id: ich-moechte
+  text: ich möchte
+  meaning:
+    en: I'd like
+    ar: أودّ
+    mk: би сакал
+- id: mich-anmelden
+  text: mich anmelden
+  meaning:
+    en: to register (myself)
+    ar: أن أسجّل نفسي
+    mk: да се пријавам
+- id: das-formular
+  text: das Formular
+  meaning:
+    en: the form
+    ar: الاستمارة
+    mk: формуларот
+- id: die-wgb
+  text: die Wohnungsgeberbestätigung
+  meaning:
+    en: the landlord's confirmation
+    ar: تأكيد المؤجِّر
+    mk: потврдата од сопственикот на станот
+  rare: true
+- id: wo-wohnen-sie
+  text: Wo wohnen Sie?
+  meaning:
+    en: Where do you live? (polite)
+    ar: أين تسكن؟ (بصيغة الاحترام)
+    mk: Каде живеете?
+- id: welche
+  text: Welche …?
+  meaning:
+    en: Which …? (feminine)
+    ar: أيّ …؟
+    mk: Која …?
+- id: die-religion
+  text: die Religion
+  meaning:
+    en: religion
+    ar: الديانة
+    mk: вероисповеста
+- id: warum
+  text: Warum?
+  meaning:
+    en: Why?
+    ar: لماذا؟
+    mk: Зошто?
+- id: keins-von-beiden
+  text: keins von beiden
+  meaning:
+    en: neither
+    ar: ولا واحد منهما
+    mk: ниту едно ниту друго
+- id: die-kirchensteuer
+  text: die Kirchensteuer
+  meaning:
+    en: church tax
+    ar: ضريبة الكنيسة
+    mk: црковниот данок
+  rare: true
+- id: fertig
+  text: fertig
+  meaning:
+    en: done, finished
+    ar: انتهينا، جاهز
+    mk: готово
+- id: das-wars
+  text: Das war's?
+  meaning:
+    en: Is that it?
+    ar: هل هذا كل شيء؟
+    mk: Толку ли беше?
+- id: schoenen-tag-noch
+  text: Schönen Tag noch!
+  meaning:
+    en: Have a nice day!
+    ar: يومًا سعيدًا!
+    mk: Убав ден!
+reviews:
+- item: guten-tag
+  from: A1-01
+- item: entschuldigung
+  from: A1-01
+- item: ich-verstehe-nicht
+  from: A1-01
+- item: sie-sind
+  from: A1-01
+- item: neu-hier
+  from: A1-01
+- item: ja
+  from: A1-01
+- item: ich-bin
+  from: A1-01
+- item: sprechen-sie-englisch
+  from: A1-01
+- item: ein-bisschen
+  from: A1-01
+- item: ich-wohne
+  from: A1-01
+- item: unten
+  from: A1-01
+- item: freut-mich
+  from: A1-01
+- item: willkommen
+  from: A1-01
+- item: der-schluessel
+  from: A1-01
+- item: danke-schoen
+  from: A1-01
+- item: bitte-schoen
+  from: A1-01
+- item: auf-wiedersehen
+  from: A1-01
+- item: was-fehlt-ihnen
+  from: A1-03
+- item: mein
+  from: A1-03
+- item: der-kopf
+  from: A1-03
+- item: tut-weh
+  from: A1-03
+- item: der-bauch
+  from: A1-03
+- item: seit-wann
+  from: A1-03
+- item: seit-gestern
+  from: A1-03
+- item: haben-sie
+  from: A1-03
+- item: fieber
+  from: A1-03
+- item: kein
+  from: A1-03
+- item: der-arm
+  from: A1-03
+- item: auch
+  from: A1-03
+- item: nicht-schlimm
+  from: A1-03
+- item: viel-wasser
+  from: A1-03
+- item: frau-doktor
+  from: A1-03
+steps:
+- type: narrator
+  text:
+    en: The Bürgeramt, to register your address. Herr Schulz has a form — and an unexpected question. Listen to the conversation; you don't need to understand it yet.
+    ar: في دائرة المواطنين (Bürgeramt) لتسجيل عنوانك. السيد شولتس معه استمارة — وسؤال غير متوقع. استمع إلى المحادثة؛ لا داعي لأن تفهمها الآن.
+    mk: Во општинската служба (Bürgeramt), да ја пријавите адресата. Господин Шулц има формулар — и неочекувано прашање. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: schulz
+    text: Guten Tag. Haben Sie einen Termin?
+    meaning:
+      en: Good morning. Do you have an appointment?
+      ar: صباح الخير. هل عندك موعد؟
+      mk: Добар ден. Имате ли термин?
+  - speaker: protagonist
+    text: Ja, um zehn Uhr. Ich möchte mich anmelden.
+    meaning:
+      en: Yes, at ten. I'd like to register.
+      ar: نعم، في العاشرة. أودّ أن أسجّل عنواني.
+      mk: Да, во десет. Би сакал да се пријавам.
+  - speaker: schulz
+    text: Gut. Das Formular, bitte. Und die Wohnungsgeberbestätigung.
+    meaning:
+      en: Good. The form, please. And the landlord's confirmation.
+      ar: حسنًا. الاستمارة من فضلك. وتأكيد المؤجِّر.
+      mk: Добро. Формуларот, ве молам. И потврдата од сопственикот на станот.
+  - speaker: protagonist
+    text: Hier, bitte.
+    meaning:
+      en: Here you are.
+      ar: تفضّل.
+      mk: Повелете.
+  - speaker: schulz
+    text: Wo wohnen Sie?
+    meaning:
+      en: Where do you live?
+      ar: أين تسكن؟
+      mk: Каде живеете?
+  - speaker: protagonist
+    text: In der Karl-Liebknecht-Straße, Nummer zwölf.
+    meaning:
+      en: On Karl-Liebknecht-Straße, number twelve.
+      ar: في شارع كارل ليبكنشت، رقم اثني عشر.
+      mk: На улица Карл Либкнехт, број дванаесет.
+  - speaker: schulz
+    text: Welche Religion haben Sie? Katholisch oder evangelisch?
+    meaning:
+      en: What religion are you? Catholic or Protestant?
+      ar: ما ديانتك؟ كاثوليكي أم إنجيلي؟
+      mk: Која вероисповест? Католичка или евангелска?
+  - speaker: protagonist
+    text: Warum? ... Keins von beiden.
+    meaning:
+      en: Why? ... Neither.
+      ar: لماذا؟ ... ولا واحد منهما.
+      mk: Зошто? ... Ниту едно ниту друго.
+  - speaker: schulz
+    text: Für die Kirchensteuer. Gut, dann keine. Fertig!
+    meaning:
+      en: For the church tax. Fine, then none. Done!
+      ar: من أجل ضريبة الكنيسة. حسنًا، إذن لا شيء. انتهينا!
+      mk: За црковниот данок. Добро, тогаш ништо. Готово!
+  - speaker: protagonist
+    text: Das war's? Danke! Schönen Tag noch!
+    meaning:
+      en: Is that it? Thanks! Have a nice day!
+      ar: هل هذا كل شيء؟ شكرًا! يومًا سعيدًا!
+      mk: Толку ли беше? Благодарам! Убав ден!
+- type: prompt
+  ask:
+    en: He asks if you have an appointment. How?
+    ar: يسألك إن كان عندك موعد. كيف؟
+    mk: Ве прашува дали имате термин. Како?
+  answer:
+    speaker: protagonist
+    text: Haben Sie einen Termin?
+  items:
+  - haben-sie
+  - einen-termin
+- type: prompt
+  ask:
+    en: 'Say: I''d like to register.'
+    ar: 'قل: أودّ أن أسجّل عنواني.'
+    mk: 'Кажете: би сакал да се пријавам.'
+  answer:
+    speaker: protagonist
+    text: Ich möchte mich anmelden.
+  items:
+  - ich-moechte
+  - mich-anmelden
+- type: prompt
+  ask:
+    en: He asks for the form.
+    ar: يطلب الاستمارة.
+    mk: Го бара формуларот.
+  answer:
+    speaker: protagonist
+    text: Das Formular, bitte.
+  items:
+  - das-formular
+- type: prompt
+  ask:
+    en: And the landlord's confirmation.
+    ar: وتأكيد المؤجِّر.
+    mk: И потврдата од сопственикот на станот.
+  answer:
+    speaker: protagonist
+    text: Die Wohnungsgeberbestätigung.
+  items:
+  - die-wgb
+- type: narrator
+  text:
+    en: 'Question words come first: «Wo?» (where), «Wann?» (when), «Warum?» (why), «Welche?» (which). The verb comes right after: «Wo wohnen Sie?»'
+    ar: 'كلمات السؤال تأتي أولًا: «Wo?» (أين)، «Wann?» (متى)، «Warum?» (لماذا)، «Welche?» (أيّ). ويأتي الفعل بعدها مباشرة: «Wo wohnen Sie?»'
+    mk: 'Прашалните зборови одат напред: «Wo?» (каде), «Wann?» (кога), «Warum?» (зошто), «Welche?» (која). Глаголот веднаш потоа: «Wo wohnen Sie?»'
+- type: prompt
+  ask:
+    en: He asks where you live.
+    ar: يسألك أين تسكن.
+    mk: Ве прашува каде живеете.
+  answer:
+    speaker: protagonist
+    text: Wo wohnen Sie?
+  items:
+  - wo-wohnen-sie
+- type: prompt
+  ask:
+    en: He asks your religion.
+    ar: يسألك عن ديانتك.
+    mk: Ве прашува за вероисповеста.
+  answer:
+    speaker: protagonist
+    text: Welche Religion haben Sie?
+  items:
+  - welche
+  - die-religion
+- type: prompt
+  ask:
+    en: 'Ask: why?'
+    ar: 'اسأل: لماذا؟'
+    mk: 'Прашајте: зошто?'
+  answer:
+    speaker: protagonist
+    text: Warum?
+  items:
+  - warum
+- type: prompt
+  ask:
+    en: 'Say: neither.'
+    ar: 'قل: ولا واحد منهما.'
+    mk: 'Кажете: ниту едно ниту друго.'
+  answer:
+    speaker: protagonist
+    text: Keins von beiden.
+  items:
+  - keins-von-beiden
+- type: narrator
+  text:
+    en: 'The religion box decides church tax: members of the Catholic and Protestant churches pay it through their salary. Ask the office which churches levy it before you answer.'
+    ar: 'خانة الديانة تحدّد ضريبة الكنيسة: أعضاء الكنيستين الكاثوليكية والإنجيلية يدفعونها من رواتبهم. اسأل الموظف أيّ الطوائف تُفرض عليها قبل أن تجيب.'
+    mk: 'Полето за вероисповест одлучува за црковниот данок: членовите на католичката и евангелската црква го плаќаат од платата. Прашајте во службата кои цркви го наплаќаат пред да одговорите.'
+- type: narrator
+  for:
+  - ar
+  - mk
+  text:
+    ar: لا تُفرض ضريبة الكنيسة على المسلمين؛ يمكنك أن تقول «Ich bin Muslim» أو ببساطة «keins von beiden».
+    mk: Православните во Германија вообичаено не плаќаат црковен данок. Како граѓани на ЕУ (со бугарски пасош) само се пријавувате — без виза.
+- type: prompt
+  ask:
+    en: 'He says: church tax.'
+    ar: 'يقول: ضريبة الكنيسة.'
+    mk: 'Тој вели: црковниот данок.'
+  answer:
+    speaker: protagonist
+    text: Die Kirchensteuer.
+  items:
+  - die-kirchensteuer
+- type: prompt
+  ask:
+    en: 'He says: done!'
+    ar: 'يقول: انتهينا!'
+    mk: 'Тој вели: готово!'
+  answer:
+    speaker: protagonist
+    text: Fertig!
+  items:
+  - fertig
+- type: prompt
+  ask:
+    en: 'Ask: is that it?'
+    ar: 'اسأل: هل هذا كل شيء؟'
+    mk: 'Прашајте: толку ли беше?'
+  answer:
+    speaker: protagonist
+    text: Das war's?
+  items:
+  - das-wars
+- type: prompt
+  ask:
+    en: Wish him a nice day.
+    ar: تمنَّ له يومًا سعيدًا.
+    mk: Посакајте му убав ден.
+  answer:
+    speaker: protagonist
+    text: Schönen Tag noch!
+  items:
+  - schoenen-tag-noch
+- type: narrator
+  text:
+    en: You register within two weeks of moving in, with the landlord's confirmation. Appointments are booked online and can be weeks ahead — book as soon as you know the address.
+    ar: يجب التسجيل خلال أسبوعين من السكن، مع تأكيد المؤجِّر. المواعيد تُحجز عبر الإنترنت وقد تكون بعد أسابيع — احجز فور معرفة العنوان.
+    mk: Пријавата е во рок од две недели по вселувањето, со потврдата од сопственикот на станот. Термините се закажуваат на интернет и може да чекате со недели — закажете штом ја знаете адресата.
+- type: prompt
+  ask:
+    en: 'Once more: say “an appointment”.'
+    ar: 'مرة أخرى: قل “موعدًا”.'
+    mk: 'Уште еднаш: кажете „термин“.'
+  answer:
+    speaker: protagonist
+    text: einen Termin
+  items:
+  - einen-termin
+- type: prompt
+  ask:
+    en: 'Once more: say “I''d like”.'
+    ar: 'مرة أخرى: قل “أودّ”.'
+    mk: 'Уште еднаш: кажете „би сакал“.'
+  answer:
+    speaker: protagonist
+    text: ich möchte
+  items:
+  - ich-moechte
+- type: prompt
+  ask:
+    en: 'Once more: say “to register (myself)”.'
+    ar: 'مرة أخرى: قل “أن أسجّل نفسي”.'
+    mk: 'Уште еднаш: кажете „да се пријавам“.'
+  answer:
+    speaker: protagonist
+    text: mich anmelden
+  items:
+  - mich-anmelden
+- type: prompt
+  ask:
+    en: 'Once more: say “the form”.'
+    ar: 'مرة أخرى: قل “الاستمارة”.'
+    mk: 'Уште еднаш: кажете „формуларот“.'
+  answer:
+    speaker: protagonist
+    text: das Formular
+  items:
+  - das-formular
+- type: prompt
+  ask:
+    en: 'Once more: say “the landlord''s confirmation”.'
+    ar: 'مرة أخرى: قل “تأكيد المؤجِّر”.'
+    mk: 'Уште еднаш: кажете „потврдата од сопственикот на станот“.'
+  answer:
+    speaker: protagonist
+    text: die Wohnungsgeberbestätigung
+  items:
+  - die-wgb
+- type: prompt
+  ask:
+    en: 'Once more: say “Where do you live? (polite)”.'
+    ar: 'مرة أخرى: قل “أين تسكن؟ (بصيغة الاحترام)”.'
+    mk: 'Уште еднаш: кажете „Каде живеете?“.'
+  answer:
+    speaker: protagonist
+    text: Wo wohnen Sie?
+  items:
+  - wo-wohnen-sie
+- type: prompt
+  ask:
+    en: 'Once more: say “Which …? (feminine)”.'
+    ar: 'مرة أخرى: قل “أيّ …؟”.'
+    mk: 'Уште еднаш: кажете „Која …?“.'
+  answer:
+    speaker: protagonist
+    text: Welche …?
+  items:
+  - welche
+- type: prompt
+  ask:
+    en: 'Once more: say “religion”.'
+    ar: 'مرة أخرى: قل “الديانة”.'
+    mk: 'Уште еднаш: кажете „вероисповеста“.'
+  answer:
+    speaker: protagonist
+    text: die Religion
+  items:
+  - die-religion
+- type: prompt
+  ask:
+    en: 'Once more: say “Why?”.'
+    ar: 'مرة أخرى: قل “لماذا؟”.'
+    mk: 'Уште еднаш: кажете „Зошто?“.'
+  answer:
+    speaker: protagonist
+    text: Warum?
+  items:
+  - warum
+- type: prompt
+  ask:
+    en: 'Once more: say “neither”.'
+    ar: 'مرة أخرى: قل “ولا واحد منهما”.'
+    mk: 'Уште еднаш: кажете „ниту едно ниту друго“.'
+  answer:
+    speaker: protagonist
+    text: keins von beiden
+  items:
+  - keins-von-beiden
+- type: prompt
+  ask:
+    en: 'Once more: say “church tax”.'
+    ar: 'مرة أخرى: قل “ضريبة الكنيسة”.'
+    mk: 'Уште еднаш: кажете „црковниот данок“.'
+  answer:
+    speaker: protagonist
+    text: die Kirchensteuer
+  items:
+  - die-kirchensteuer
+- type: prompt
+  ask:
+    en: 'Once more: say “done, finished”.'
+    ar: 'مرة أخرى: قل “انتهينا، جاهز”.'
+    mk: 'Уште еднаш: кажете „готово“.'
+  answer:
+    speaker: protagonist
+    text: fertig
+  items:
+  - fertig
+- type: prompt
+  ask:
+    en: 'Once more: say “Is that it?”.'
+    ar: 'مرة أخرى: قل “هل هذا كل شيء؟”.'
+    mk: 'Уште еднаш: кажете „Толку ли беше?“.'
+  answer:
+    speaker: protagonist
+    text: Das war's?
+  items:
+  - das-wars
+- type: prompt
+  ask:
+    en: 'Once more: say “Have a nice day!”.'
+    ar: 'مرة أخرى: قل “يومًا سعيدًا!”.'
+    mk: 'Уште еднаш: кажете „Убав ден!“.'
+  answer:
+    speaker: protagonist
+    text: Schönen Tag noch!
+  items:
+  - schoenen-tag-noch
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتَه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “What''s wrong? (polite) — and “my — and “the head — and “hurts”.'
+    ar: 'قل: “ما بكِ؟ (بصيغة الاحترام) — و“ـي (ضمير الملكية) — و“الرأس — و“يؤلم”.'
+    mk: 'Кажете: „Што ви е?“ — и „мој“ — и „главата“ — и „боли“.'
+  answer:
+    speaker: protagonist
+    text: Was fehlt Ihnen? … mein … der Kopf … tut weh
+  items:
+  - was-fehlt-ihnen
+  - mein
+  - der-kopf
+  - tut-weh
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the belly — and “Since when? — and “since yesterday — and “fever, temperature”.'
+    ar: 'قل: “البطن — و“منذ متى؟ — و“منذ أمس — و“حمّى، حرارة”.'
+    mk: 'Кажете: „стомакот“ — и „Од кога?“ — и „од вчера“ — и „температура“.'
+  answer:
+    speaker: protagonist
+    text: der Bauch … Seit wann? … seit gestern … Fieber
+  items:
+  - der-bauch
+  - seit-wann
+  - seit-gestern
+  - fieber
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “no, not a — and “the arm — and “too, also — and “not serious”.'
+    ar: 'قل: “لا … (نفي الاسم) — و“الذراع — و“أيضًا — و“ليس خطيرًا”.'
+    mk: 'Кажете: „нема, ниту еден“ — и „раката“ — и „исто така“ — и „не е страшно“.'
+  answer:
+    speaker: protagonist
+    text: kein … der Arm … auch … nicht schlimm
+  items:
+  - kein
+  - der-arm
+  - auch
+  - nicht-schlimm
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “plenty of water — and “Doctor (addressing a woman) — and “Good day / hello — and “Excuse me / sorry”.'
+    ar: 'قل: “ماء كثير — و“حضرة الطبيبة — و“نهارك سعيد / مرحبًا — و“عفوًا / المعذرة”.'
+    mk: 'Кажете: „многу вода“ — и „госпоѓо докторке“ — и „Добар ден“ — и „Извинете“.'
+  answer:
+    speaker: protagonist
+    text: viel Wasser … Frau Doktor … Guten Tag … Entschuldigung
+  items:
+  - viel-wasser
+  - frau-doktor
+  - guten-tag
+  - entschuldigung
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I don''t understand — and “you are (polite) — and “new here — and “Yes”.'
+    ar: 'قل: “لا أفهم — و“أنتِ / أنتَ (بصيغة الاحترام) — و“جديد هنا — و“نعم”.'
+    mk: 'Кажете: „Не разбирам“ — и „Вие сте“ — и „нов тука“ — и „Да“.'
+  answer:
+    speaker: protagonist
+    text: Ich verstehe nicht … Sie sind … neu hier … Ja
+  items:
+  - ich-verstehe-nicht
+  - sie-sind
+  - neu-hier
+  - ja
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I am — and “Do you speak English? (polite) — and “a little — and “I live”.'
+    ar: 'قل: “أنا (أكون) — و“هل تتكلمين الإنجليزية؟ (بصيغة الاحترام) — و“قليلًا — و“أسكن”.'
+    mk: 'Кажете: „јас сум“ — и „Зборувате ли англиски?“ — и „малку“ — и „живеам“.'
+  answer:
+    speaker: protagonist
+    text: ich bin … Sprechen Sie Englisch? … ein bisschen … ich wohne
+  items:
+  - ich-bin
+  - sprechen-sie-englisch
+  - ein-bisschen
+  - ich-wohne
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “downstairs — and “Nice to meet you — and “Welcome — and “the key”.'
+    ar: 'قل: “في الأسفل — و“تشرفنا — و“أهلًا وسهلًا — و“المفتاح”.'
+    mk: 'Кажете: „долу“ — и „Мило ми е“ — и „Добредојдовте“ — и „клучот“.'
+  answer:
+    speaker: protagonist
+    text: unten … Freut mich … Willkommen … der Schlüssel
+  items:
+  - unten
+  - freut-mich
+  - willkommen
+  - der-schluessel
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Thank you very much — and “You''re welcome / here you are — and “Goodbye”.'
+    ar: 'قل: “شكرًا جزيلًا — و“عفوًا / تفضّلي — و“مع السلامة”.'
+    mk: 'Кажете: „Благодарам многу“ — и „Нема зошто / повелете“ — и „Довидување“.'
+  answer:
+    speaker: protagonist
+    text: Danke schön … Bitte schön … Auf Wiedersehen
+  items:
+  - danke-schoen
+  - bitte-schoen
+  - auf-wiedersehen
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمع إلى المحادثة مرة أخرى. الآن تفهمها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

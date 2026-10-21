@@ -1,0 +1,422 @@
+# UNIT de A1-05-e — written by AI (Claude) for Casus; expanded from src/A1-05-e.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-05-e
+level: A1
+number: 5
+protagonist: f
+tracks:
+- en
+title:
+  en: The supermarket
+situation:
+  en: Your first big shop. At the till, the cashier asks about bottles and bags.
+learn_lessons:
+- a1-accusative
+culture: Pfand
+new_items:
+- id: ich-nehme
+  text: Ich nehme …
+  meaning:
+    en: I'll take …
+- id: den-saft
+  text: den Saft
+  meaning:
+    en: the juice (as an object)
+- id: eine-tuete
+  text: eine Tüte
+  meaning:
+    en: a bag
+- id: brauchen-sie
+  text: Brauchen Sie …?
+  meaning:
+    en: Do you need …? (polite)
+- id: das-pfand
+  text: das Pfand
+  meaning:
+    en: the deposit (on bottles)
+- id: die-flaschen
+  text: die Flaschen
+  meaning:
+    en: the bottles
+- id: zurueck
+  text: zurück
+  meaning:
+    en: back
+- id: der-automat
+  text: der Automat
+  meaning:
+    en: the machine
+- id: mit-karte
+  text: mit Karte
+  meaning:
+    en: by card
+- id: bar
+  text: bar
+  meaning:
+    en: in cash
+- id: der-bon
+  text: der Bon
+  meaning:
+    en: the receipt
+  rare: true
+- id: das-macht
+  text: Das macht …
+  meaning:
+    en: That comes to …
+reviews:
+- item: die-wohnung
+  from: A1-02-e
+- item: das-zimmer
+  from: A1-02-e
+- item: und-die
+  from: A1-02-e
+- item: die-kueche
+  from: A1-02-e
+- item: es-gibt-keine
+  from: A1-02-e
+- item: nur
+  from: A1-02-e
+- item: die-anschluesse
+  from: A1-02-e
+- item: die-spuele
+  from: A1-02-e
+- item: selbst
+  from: A1-02-e
+- item: wo
+  from: A1-02-e
+- item: kaufe-ich
+  from: A1-02-e
+- item: gebraucht
+  from: A1-02-e
+- item: der-kuehlschrank
+  from: A1-02-e
+- item: auch-nicht
+  from: A1-02-e
+- item: viel-glueck
+  from: A1-02-e
+- item: einen-termin
+  from: A1-04
+- item: ich-moechte
+  from: A1-04
+- item: mich-anmelden
+  from: A1-04
+- item: das-formular
+  from: A1-04
+- item: die-wgb
+  from: A1-04
+- item: wo-wohnen-sie
+  from: A1-04
+- item: welche
+  from: A1-04
+- item: die-religion
+  from: A1-04
+- item: warum
+  from: A1-04
+- item: keins-von-beiden
+  from: A1-04
+- item: die-kirchensteuer
+  from: A1-04
+- item: fertig
+  from: A1-04
+- item: das-wars
+  from: A1-04
+- item: schoenen-tag-noch
+  from: A1-04
+steps:
+- type: narrator
+  text:
+    en: Your first big shop. At the till, the cashier asks about bottles and bags. Listen to the conversation; you don't need to understand it yet.
+- type: dialogue
+  lines:
+  - speaker: kasse
+    text: Hallo! Brauchen Sie eine Tüte?
+    meaning:
+      en: Hi! Do you need a bag?
+  - speaker: protagonist
+    text: Ja, bitte. Ich nehme eine Tüte.
+    meaning:
+      en: Yes, please. I'll take a bag.
+  - speaker: kasse
+    text: Das macht zwölf Euro achtzig. Mit Karte oder bar?
+    meaning:
+      en: That comes to twelve euros eighty. Card or cash?
+  - speaker: protagonist
+    text: Mit Karte. ... Warum ist der Saft so teuer?
+    meaning:
+      en: By card. ... Why is the juice so expensive?
+  - speaker: kasse
+    text: Das ist das Pfand. Fünfundzwanzig Cent pro Flasche.
+    meaning:
+      en: That's the deposit. Twenty-five cents a bottle.
+  - speaker: protagonist
+    text: Pfand? Was ist das?
+    meaning:
+      en: Deposit? What's that?
+  - speaker: kasse
+    text: Sie bringen die Flaschen zurück, in den Automaten. Dann bekommen Sie das Geld zurück.
+    meaning:
+      en: You bring the bottles back, into the machine. Then you get the money back.
+  - speaker: protagonist
+    text: Ah! Wo ist der Automat?
+    meaning:
+      en: Ah! Where's the machine?
+  - speaker: kasse
+    text: Dort hinten, links. Hier ist Ihr Bon.
+    meaning:
+      en: Back there, on the left. Here's your receipt.
+- type: prompt
+  ask:
+    en: She asks if you need a bag.
+  answer:
+    speaker: protagonist
+    text: Brauchen Sie eine Tüte?
+  items:
+  - brauchen-sie
+  - eine-tuete
+- type: prompt
+  ask:
+    en: 'Say: yes, I''ll take a bag.'
+  answer:
+    speaker: protagonist
+    text: Ja, ich nehme eine Tüte.
+  items:
+  - ich-nehme
+  - eine-tuete
+- type: narrator
+  text:
+    en: 'After «nehmen», «haben», «brauchen» the object changes only in the masculine: «der Saft» becomes «den Saft» — «Ich nehme den Saft». «die» and «das» stay the same.'
+- type: prompt
+  ask:
+    en: 'Say: I''ll take the juice.'
+  answer:
+    speaker: protagonist
+    text: Ich nehme den Saft.
+  items:
+  - ich-nehme
+  - den-saft
+- type: prompt
+  ask:
+    en: 'She says: that comes to twelve euros.'
+  answer:
+    speaker: protagonist
+    text: Das macht zwölf Euro.
+  items:
+  - das-macht
+- type: prompt
+  ask:
+    en: 'Say: by card.'
+  answer:
+    speaker: protagonist
+    text: Mit Karte.
+  items:
+  - mit-karte
+- type: prompt
+  ask:
+    en: 'Or: in cash.'
+  answer:
+    speaker: protagonist
+    text: Bar.
+  items:
+  - bar
+- type: prompt
+  ask:
+    en: 'She explains: the deposit.'
+  answer:
+    speaker: protagonist
+    text: Das ist das Pfand.
+  items:
+  - das-pfand
+- type: prompt
+  ask:
+    en: 'Say: I bring the bottles back.'
+  answer:
+    speaker: protagonist
+    text: Ich bringe die Flaschen zurück.
+  items:
+  - die-flaschen
+  - zurueck
+- type: prompt
+  ask:
+    en: Ask where the machine is.
+  answer:
+    speaker: protagonist
+    text: Wo ist der Automat?
+  items:
+  - der-automat
+- type: prompt
+  ask:
+    en: 'She hands you the receipt. Say it: the receipt.'
+  answer:
+    speaker: protagonist
+    text: Der Bon.
+  items:
+  - der-bon
+- type: narrator
+  text:
+    en: Most bottles and cans carry a deposit, paid at the till and refunded at a machine in the shop, which prints a voucher. Cash is still common, though cards work almost everywhere.
+- type: prompt
+  ask:
+    en: 'Once more: say “the juice (as an object)”.'
+  answer:
+    speaker: protagonist
+    text: den Saft
+  items:
+  - den-saft
+- type: prompt
+  ask:
+    en: 'Once more: say “Do you need …? (polite)”.'
+  answer:
+    speaker: protagonist
+    text: Brauchen Sie …?
+  items:
+  - brauchen-sie
+- type: prompt
+  ask:
+    en: 'Once more: say “the deposit (on bottles)”.'
+  answer:
+    speaker: protagonist
+    text: das Pfand
+  items:
+  - das-pfand
+- type: prompt
+  ask:
+    en: 'Once more: say “the bottles”.'
+  answer:
+    speaker: protagonist
+    text: die Flaschen
+  items:
+  - die-flaschen
+- type: prompt
+  ask:
+    en: 'Once more: say “back”.'
+  answer:
+    speaker: protagonist
+    text: zurück
+  items:
+  - zurueck
+- type: prompt
+  ask:
+    en: 'Once more: say “the machine”.'
+  answer:
+    speaker: protagonist
+    text: der Automat
+  items:
+  - der-automat
+- type: prompt
+  ask:
+    en: 'Once more: say “by card”.'
+  answer:
+    speaker: protagonist
+    text: mit Karte
+  items:
+  - mit-karte
+- type: prompt
+  ask:
+    en: 'Once more: say “in cash”.'
+  answer:
+    speaker: protagonist
+    text: bar
+  items:
+  - bar
+- type: prompt
+  ask:
+    en: 'Once more: say “the receipt”.'
+  answer:
+    speaker: protagonist
+    text: der Bon
+  items:
+  - der-bon
+- type: prompt
+  ask:
+    en: 'Once more: say “That comes to …”.'
+  answer:
+    speaker: protagonist
+    text: Das macht …
+  items:
+  - das-macht
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “an appointment — and “I''d like — and “to register (myself) — and “the form — and “the landlord''s confirmation”.'
+  answer:
+    speaker: protagonist
+    text: einen Termin … ich möchte … mich anmelden … das Formular … die Wohnungsgeberbestätigung
+  items:
+  - einen-termin
+  - ich-moechte
+  - mich-anmelden
+  - das-formular
+  - die-wgb
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Where do you live? (polite) — and “Which …? (feminine) — and “religion — and “Why? — and “neither”.'
+  answer:
+    speaker: protagonist
+    text: Wo wohnen Sie? … Welche …? … die Religion … Warum? … keins von beiden
+  items:
+  - wo-wohnen-sie
+  - welche
+  - die-religion
+  - warum
+  - keins-von-beiden
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “church tax — and “done, finished — and “Is that it? — and “Have a nice day! — and “the flat”.'
+  answer:
+    speaker: protagonist
+    text: die Kirchensteuer … fertig … Das war's? … Schönen Tag noch! … die Wohnung
+  items:
+  - die-kirchensteuer
+  - fertig
+  - das-wars
+  - schoenen-tag-noch
+  - die-wohnung
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the room — and “And the …? — and “the kitchen — and “There is no … (feminine) — and “only”.'
+  answer:
+    speaker: protagonist
+    text: das Zimmer … Und die …? … die Küche … Es gibt keine … … nur
+  items:
+  - das-zimmer
+  - und-die
+  - die-kueche
+  - es-gibt-keine
+  - nur
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the connections (water, power) — and “the sink — and “yourself, myself — and “Where …? — and “do I buy”.'
+  answer:
+    speaker: protagonist
+    text: die Anschlüsse … die Spüle … selbst … Wo …? … kaufe ich
+  items:
+  - die-anschluesse
+  - die-spuele
+  - selbst
+  - wo
+  - kaufe-ich
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “second-hand, used — and “the fridge — and “not … either — and “Good luck!”.'
+  answer:
+    speaker: protagonist
+    text: gebraucht … der Kühlschrank … auch nicht … Viel Glück!
+  items:
+  - gebraucht
+  - der-kuehlschrank
+  - auch-nicht
+  - viel-glueck
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+- type: dialogue
+  again: true
+- type: selfcheck

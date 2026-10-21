@@ -1,0 +1,52 @@
+id: A1-04
+protagonist: m
+title: ["Registration", "تسجيل السكن", "Пријавата"]
+situation:
+  - "The Bürgeramt, to register your address. Herr Schulz has a form — and an unexpected question."
+  - "في دائرة المواطنين (Bürgeramt) لتسجيل عنوانك. السيد شولتس معه استمارة — وسؤال غير متوقع."
+  - "Во општинската служба (Bürgeramt), да ја пријавите адресата. Господин Шулц има формулар — и неочекувано прашање."
+learn: [a1-w-questions]
+culture: The religion box and church tax
+items:
+  - [einen-termin, "einen Termin", "an appointment", "موعدًا", "термин"]
+  - [ich-moechte, "ich möchte", "I'd like", "أودّ", "би сакал"]
+  - [mich-anmelden, "mich anmelden", "to register (myself)", "أن أسجّل نفسي", "да се пријавам"]
+  - [das-formular, "das Formular", "the form", "الاستمارة", "формуларот"]
+  - [die-wgb, "die Wohnungsgeberbestätigung", "the landlord's confirmation", "تأكيد المؤجِّر", "потврдата од сопственикот на станот", {rare: true}]
+  - [wo-wohnen-sie, "Wo wohnen Sie?", "Where do you live? (polite)", "أين تسكن؟ (بصيغة الاحترام)", "Каде живеете?"]
+  - [welche, "Welche …?", "Which …? (feminine)", "أيّ …؟", "Која …?"]
+  - [die-religion, "die Religion", "religion", "الديانة", "вероисповеста"]
+  - [warum, "Warum?", "Why?", "لماذا؟", "Зошто?"]
+  - [keins-von-beiden, "keins von beiden", "neither", "ولا واحد منهما", "ниту едно ниту друго"]
+  - [die-kirchensteuer, "die Kirchensteuer", "church tax", "ضريبة الكنيسة", "црковниот данок", {rare: true}]
+  - [fertig, "fertig", "done, finished", "انتهينا، جاهز", "готово"]
+  - [das-wars, "Das war's?", "Is that it?", "هل هذا كل شيء؟", "Толку ли беше?"]
+  - [schoenen-tag-noch, "Schönen Tag noch!", "Have a nice day!", "يومًا سعيدًا!", "Убав ден!"]
+dialogue:
+  - [schulz, "Guten Tag. Haben Sie einen Termin?", "Good morning. Do you have an appointment?", "صباح الخير. هل عندك موعد؟", "Добар ден. Имате ли термин?"]
+  - [protagonist, "Ja, um zehn Uhr. Ich möchte mich anmelden.", "Yes, at ten. I'd like to register.", "نعم، في العاشرة. أودّ أن أسجّل عنواني.", "Да, во десет. Би сакал да се пријавам."]
+  - [schulz, "Gut. Das Formular, bitte. Und die Wohnungsgeberbestätigung.", "Good. The form, please. And the landlord's confirmation.", "حسنًا. الاستمارة من فضلك. وتأكيد المؤجِّر.", "Добро. Формуларот, ве молам. И потврдата од сопственикот на станот."]
+  - [protagonist, "Hier, bitte.", "Here you are.", "تفضّل.", "Повелете."]
+  - [schulz, "Wo wohnen Sie?", "Where do you live?", "أين تسكن؟", "Каде живеете?"]
+  - [protagonist, "In der Karl-Liebknecht-Straße, Nummer zwölf.", "On Karl-Liebknecht-Straße, number twelve.", "في شارع كارل ليبكنشت، رقم اثني عشر.", "На улица Карл Либкнехт, број дванаесет."]
+  - [schulz, "Welche Religion haben Sie? Katholisch oder evangelisch?", "What religion are you? Catholic or Protestant?", "ما ديانتك؟ كاثوليكي أم إنجيلي؟", "Која вероисповест? Католичка или евангелска?"]
+  - [protagonist, "Warum? ... Keins von beiden.", "Why? ... Neither.", "لماذا؟ ... ولا واحد منهما.", "Зошто? ... Ниту едно ниту друго."]
+  - [schulz, "Für die Kirchensteuer. Gut, dann keine. Fertig!", "For the church tax. Fine, then none. Done!", "من أجل ضريبة الكنيسة. حسنًا، إذن لا شيء. انتهينا!", "За црковниот данок. Добро, тогаш ништо. Готово!"]
+  - [protagonist, "Das war's? Danke! Schönen Tag noch!", "Is that it? Thanks! Have a nice day!", "هل هذا كل شيء؟ شكرًا! يومًا سعيدًا!", "Толку ли беше? Благодарам! Убав ден!"]
+teach:
+  - ask: ["He asks if you have an appointment. How?", "يسألك إن كان عندك موعد. كيف؟", "Ве прашува дали имате термин. Како?", "Haben Sie einen Termin?", haben-sie, einen-termin]
+  - ask: ["Say: I'd like to register.", "قل: أودّ أن أسجّل عنواني.", "Кажете: би сакал да се пријавам.", "Ich möchte mich anmelden.", ich-moechte, mich-anmelden]
+  - ask: ["He asks for the form.", "يطلب الاستمارة.", "Го бара формуларот.", "Das Formular, bitte.", das-formular]
+  - ask: ["And the landlord's confirmation.", "وتأكيد المؤجِّر.", "И потврдата од сопственикот на станот.", "Die Wohnungsgeberbestätigung.", die-wgb]
+  - note: ["Question words come first: «Wo?» (where), «Wann?» (when), «Warum?» (why), «Welche?» (which). The verb comes right after: «Wo wohnen Sie?»", "كلمات السؤال تأتي أولًا: «Wo?» (أين)، «Wann?» (متى)، «Warum?» (لماذا)، «Welche?» (أيّ). ويأتي الفعل بعدها مباشرة: «Wo wohnen Sie?»", "Прашалните зборови одат напред: «Wo?» (каде), «Wann?» (кога), «Warum?» (зошто), «Welche?» (која). Глаголот веднаш потоа: «Wo wohnen Sie?»"]
+  - ask: ["He asks where you live.", "يسألك أين تسكن.", "Ве прашува каде живеете.", "Wo wohnen Sie?", wo-wohnen-sie]
+  - ask: ["He asks your religion.", "يسألك عن ديانتك.", "Ве прашува за вероисповеста.", "Welche Religion haben Sie?", welche, die-religion]
+  - ask: ["Ask: why?", "اسأل: لماذا؟", "Прашајте: зошто?", "Warum?", warum]
+  - ask: ["Say: neither.", "قل: ولا واحد منهما.", "Кажете: ниту едно ниту друго.", "Keins von beiden.", keins-von-beiden]
+  - note: ["The religion box decides church tax: members of the Catholic and Protestant churches pay it through their salary. Ask the office which churches levy it before you answer.", "خانة الديانة تحدّد ضريبة الكنيسة: أعضاء الكنيستين الكاثوليكية والإنجيلية يدفعونها من رواتبهم. اسأل الموظف أيّ الطوائف تُفرض عليها قبل أن تجيب.", "Полето за вероисповест одлучува за црковниот данок: членовите на католичката и евангелската црква го плаќаат од платата. Прашајте во службата кои цркви го наплаќаат пред да одговорите."]
+  - only: {ar: "لا تُفرض ضريبة الكنيسة على المسلمين؛ يمكنك أن تقول «Ich bin Muslim» أو ببساطة «keins von beiden».", mk: "Православните во Германија вообичаено не плаќаат црковен данок. Како граѓани на ЕУ (со бугарски пасош) само се пријавувате — без виза."}
+  - ask: ["He says: church tax.", "يقول: ضريبة الكنيسة.", "Тој вели: црковниот данок.", "Die Kirchensteuer.", die-kirchensteuer]
+  - ask: ["He says: done!", "يقول: انتهينا!", "Тој вели: готово!", "Fertig!", fertig]
+  - ask: ["Ask: is that it?", "اسأل: هل هذا كل شيء؟", "Прашајте: толку ли беше?", "Das war's?", das-wars]
+  - ask: ["Wish him a nice day.", "تمنَّ له يومًا سعيدًا.", "Посакајте му убав ден.", "Schönen Tag noch!", schoenen-tag-noch]
+  - note: ["You register within two weeks of moving in, with the landlord's confirmation. Appointments are booked online and can be weeks ahead — book as soon as you know the address.", "يجب التسجيل خلال أسبوعين من السكن، مع تأكيد المؤجِّر. المواعيد تُحجز عبر الإنترنت وقد تكون بعد أسابيع — احجز فور معرفة العنوان.", "Пријавата е во рок од две недели по вселувањето, со потврдата од сопственикот на станот. Термините се закажуваат на интернет и може да чекате со недели — закажете штом ја знаете адресата."]

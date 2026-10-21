@@ -171,9 +171,12 @@ def expand(src: dict, earlier: list, langs=("en", "pt")) -> dict:
         groups = {}
         for i in pending:
             groups.setdefault(tuple(due_for[i]), []).append(i)
+        # an audience may see several groups (its own and the shared one): they share its budget
+        seen = {l: sum(1 for who in groups if l in who) for l in langs}
         for who, group in groups.items():
+            budget = max(1, min(-(-(own // 3) // seen[l]) for l in who))
             group.sort(key=lambda i: -intro_at[i])
-            size = max(1, -(-len(group) // max(1, own // 3)))
+            size = max(1, -(-len(group) // budget))
             for j in range(0, len(group), size):
                 g = group[j:j + size]
                 st = {"type": "prompt", "review": True,

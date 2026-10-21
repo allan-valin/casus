@@ -14,6 +14,18 @@ voices:
   - {id: de-m, role: character, lang: de, gender: m, tts: "piper:de_DE-thorsten-medium"}      # CC0
   - {id: de-f2, role: character, lang: de, gender: f, tts: "piper:de_DE-kerstin-low", pitch: 0.9}
   - {id: de-m2, role: character, lang: de, gender: m, tts: "piper:de_DE-thorsten-medium", pitch: 1.12}
+  # more characters, spread by pitch and speed (one natural German voice speaks them all; tests/components/talk.test.js
+  # checks that no two speakers of a dialogue sound alike)
+  - {id: de-s-m, role: character, lang: de, gender: m, tts: "piper:de_DE-thorsten-medium", pitch: 0.82, speed: 0.9}
+  - {id: de-me-f, role: character, lang: de, gender: f, tts: "piper:de_DE-thorsten-medium", pitch: 1.12, speed: 0.94}
+  - {id: de-k-f, role: character, lang: de, gender: f, tts: "piper:de_DE-thorsten-medium", pitch: 1.36, speed: 1.04}
+  - {id: de-w-f, role: character, lang: de, gender: f, tts: "piper:de_DE-thorsten-medium", pitch: 1.2, speed: 0.9}
+  - {id: de-c-f, role: character, lang: de, gender: f, tts: "piper:de_DE-thorsten-medium", pitch: 1.44, speed: 1.1}
+  - {id: de-d-m, role: character, lang: de, gender: m, tts: "piper:de_DE-thorsten-medium", pitch: 0.9, speed: 1.06}
+  - {id: de-y-m, role: character, lang: de, gender: m, tts: "piper:de_DE-thorsten-medium", pitch: 0.76, speed: 1.0}
+  - {id: de-sohn-m, role: character, lang: de, gender: m, tts: "piper:de_DE-thorsten-medium", pitch: 0.94, speed: 0.98}
+  - {id: de-anja-f, role: character, lang: de, gender: f, tts: "piper:de_DE-thorsten-medium", pitch: 1.3, speed: 0.98}
+  - {id: de-kind, role: character, lang: de, gender: m, tts: "piper:de_DE-thorsten-medium", pitch: 1.5, speed: 1.12}
   # Narrators: no open Macedonian voice (see tools/conversation/mk/story-bible.yml: Bulgarian Piper + mk phonemes,
   # pending Allan's ear); the Arabic Piper voice (ar_JO-kareem) has no stated licence, so the reader's own browser
   # voice or espeak-ng speaks Arabic until one is found.
@@ -34,8 +46,18 @@ protagonist:
 cast:
   - {id: becker, name: Frau Becker, role: "landlady, about 60, ground floor", voice: de-f2, register: formal, arc: "Sie throughout; strict about the house rules (Mülltrennung, Ruhezeiten), warm underneath"}
   - {id: jonas, name: Jonas, role: "neighbour, about 25, student", voice: de-m2, register: informal, arc: "du at once; becomes a friend"}
-  - {id: schulz, name: Herr Schulz, role: "official at the Bürgeramt, later the Ausländerbehörde", voice: de-m, register: formal, arc: "appears in every paperwork unit; patient, precise"}
-  - {id: meier, name: Dr. Meier, role: "the protagonist's boss at the hospital / university", voice: de-f, register: formal, arc: "Sie, then du offered at the Christmas party (B1)"}
+  - {id: schulz, name: Herr Schulz, role: "official at the Bürgeramt, later the Ausländerbehörde", voice: de-s-m, register: formal, arc: "appears in every paperwork unit; patient, precise"}
+  - {id: meier, name: Dr. Meier, role: "the protagonist's boss at the hospital / university", voice: de-me-f, register: formal, arc: "Sie, then du offered at the Christmas party (B1)"}
+
+  - {id: kruger, name: Frau Krüger, role: "Erzieherin at the Kita (A/M units)", voice: de-k-f, register: formal, arc: "Sie with the parents; warm with the child"}
+  - {id: wagner, name: Dr. Wagner, role: "family doctor, and the paediatrician's practice next door", voice: de-w-f, register: formal, arc: "calm, precise; recurs whenever someone is ill"}
+  - {id: kasse, name: Kassiererin, role: "cashier, shop assistants — one scene at a time", voice: de-c-f, register: formal, arc: "one scene at a time"}
+  - {id: fahrer, name: Busfahrer, role: "bus and tram drivers, passers-by — one scene at a time", voice: de-d-m, register: formal, arc: "one scene at a time"}
+  - {id: yilmaz, name: Herr Yilmaz, role: "greengrocer at the corner and the Saturday market, Turkish-German, from Leipzig", voice: de-y-m, register: formal, arc: "jokes, gives tips, recurs at the market"}
+  - {id: petar, name: Petar, role: "the Macedonian couple's son, about 32, an engineer in Leipzig (M units); speaks to his parents in German when he teaches them", voice: de-sohn-m, register: informal, arc: "M units"}
+  - {id: anja, name: Anja, role: "Petar's German wife (M units)", voice: de-anja-f, register: informal, arc: "du with her parents-in-law from the start; M units"}
+  - {id: luka, name: Luka, role: "Petar and Anja's son, four; in A units the couple's child is Yara (girl) — same voice", voice: de-kind, register: informal, arc: "Kita, playground"}
+  - {id: yara, name: Yara, role: "the Syrian couple's daughter, four (A units)", voice: de-kind, register: informal, arc: "Kita, playground"}
 
 formality:
   summary: >-
@@ -107,5 +129,5 @@ arc:
   - {level: C2, units: 30, summary: "Ideas: philosophy, politics handled with care, humour (irony), register shifts."}
 
 native_check:
-  - "Every Macedonian and Arabic narrator line until a native speaker has read it"
+  - "SETTLED 2026-10-21 (Allan): no native review — every Macedonian, Arabic and German line goes through the proofreader (tools/proof_files.mjs); German words inside narration are marked «…» so the German voice reads them"
   - "DECIDED 2026-10-21: Syria is the frame; other Arab countries enter through the German characters' friends (other_arab_countries)"
