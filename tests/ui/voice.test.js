@@ -143,3 +143,29 @@ describe('natural voice tier (Piper, languages phase 3 Task 6)', () => {
     expect(await v.tier()).toBe('espeak');
   });
 });
+
+describe('a character’s own pitch (Conversation practice, Allan 2026-10-21: alter pitch to make another character)', () => {
+  it('browser voice: the utterance carries the pitch', async () => {
+    const synth = fakeSynth(['de-DE']);
+    const v = createVoice({ bcp47: 'de', espeakVoice: 'de', synth, loadEspeak: vi.fn() });
+    await v.speak('Hallo', { pitch: 1.3 });
+    expect(synth.speak.mock.calls[0][0].pitch).toBe(1.3);
+    await v.speak('Hallo');
+    expect(synth.speak.mock.calls[1][0].pitch ?? 1).toBe(1);
+  });
+  it('espeak-ng: the samples play at a shifted rate', async () => {
+    const play = vi.fn(async () => {});
+    const v = createVoice({ bcp47: 'mk', espeakVoice: 'mk', synth: fakeSynth([]), play,
+      loadEspeak: async () => ({ synthesize: async () => ({ sampleRate: 22050, audio: new Float32Array(4) }) }) });
+    await v.speak('Здраво', { pitch: 1.2 });
+    expect(play.mock.calls[0][1]).toBeCloseTo(22050 * 1.2);
+  });
+  it('natural voice: the clip plays at the pitch rate', async () => {
+    const store = { m: new Map([['casus:voice:de_DE-thorsten-medium', 'stored']]), getItem(k) { return this.m.get(k) ?? null; }, setItem() {}, removeItem() {} };
+    const playBlob = vi.fn(async () => {});
+    const v = createVoice({ bcp47: 'de', espeakVoice: 'de', synth: fakeSynth([]), store, playBlob,
+      natural: { voiceId: 'de_DE-thorsten-medium' }, loadPiper: async () => ({ predict: async () => new Blob(['x']) }) });
+    await v.speak('Hallo', { pitch: 0.9 });
+    expect(playBlob.mock.calls[0][1]).toEqual({ rate: 0.9 });
+  });
+});

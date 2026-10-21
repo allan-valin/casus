@@ -6,6 +6,7 @@
    * docs/conversation/ and built by tools/build_conversation.py. Progress is kept in this browser. */
   import { onMount } from 'svelte';
   import { t, ui } from '../lib/i18n.svelte.js';
+  import { voicePitches, pitchOf } from '../lib/talkvoices.js';
   let { lang, loadTalk, storage = null, speakTaught = async () => {}, speakNarrator = async () => {}, trainerHref = null,
     say = () => {}, pause = (ms) => new Promise((r) => setTimeout(r, ms)) } = $props();
 
@@ -35,6 +36,7 @@
   const levels = $derived(course ? [...new Set(course.units.map((u) => u.level))] : []);
   const items = $derived(unit ? Object.fromEntries((unit.new_items ?? []).concat(course.items ?? []).map((i) => [i.id, i])) : {});
   const speaker = (id) => (id === 'protagonist' ? t('talk.you') : course?.cast?.[id]?.name ?? id);
+  const pitches = $derived(voicePitches(course));
   const firstDialogue = $derived(unit?.steps.find((s) => s.type === 'dialogue' && !s.again) ?? null);
   const linesOf = (s) => (s.again ? firstDialogue?.lines ?? [] : s.lines ?? []);
 
@@ -42,16 +44,16 @@
   function back() { unit = null; }
   function toggle(key) { shown = { ...shown, [key]: !shown[key] }; }
 
-  async function sayTaught(text) {
-    try { await speakTaught(text); } catch (e) { say(t('talk.speakFailed', { text, error: e?.message ?? '' }), 'err'); throw e; }
+  async function sayTaught(text, who = null) {
+    try { await speakTaught(text, { pitch: who ? pitchOf(course, unit, who, pitches) : 1 }); } catch (e) { say(t('talk.speakFailed', { text, error: e?.message ?? '' }), 'err'); throw e; }
   }
   async function play(s, n) {
     try {
       if (s.type === 'narrator') { await speakNarrator(nar(s.text), narratorLang); say(t('talk.played.narrator')); }
       else if (s.type === 'dialogue') {
-        for (const ln of linesOf(s)) { await sayTaught(ln.text); await pause(400); }
+        for (const ln of linesOf(s)) { await sayTaught(ln.text, ln.speaker); await pause(400); }
         say(t('talk.played.dialogue', { n: linesOf(s).length }));
-      } else if (s.type === 'line') { await sayTaught(items[s.item]?.text ?? ''); say(t('talk.played.line', { text: items[s.item]?.text ?? '' })); }
+      } else if (s.type === 'line') { await sayTaught(items[s.item]?.text ?? '', s.speaker); say(t('talk.played.line', { text: items[s.item]?.text ?? '' })); }
       else if (s.type === 'buildup') {
         for (const part of s.parts) { await sayTaught(part); await pause(600); }
         say(t('talk.played.buildup', { text: s.parts.at(-1) }));
@@ -60,7 +62,7 @@
   }
   async function answer(s, n) {
     shown = { ...shown, [n]: true };
-    try { await sayTaught(s.answer.text); say(t('talk.played.answer', { text: s.answer.text })); } catch { /* reported */ }
+    try { await sayTaught(s.answer.text, s.answer.speaker ?? 'protagonist'); say(t('talk.played.answer', { text: s.answer.text })); } catch { /* reported */ }
   }
   const norm = (x) => String(x ?? '').toLowerCase().normalize('NFC').replace(/[\p{P}\s]+/gu, ' ').trim();
   function check(s, n) {

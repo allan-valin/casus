@@ -251,7 +251,7 @@
       loadParadigm={(id) => fetchImpl(`${DATA}/paradigms/${Number(id) % 512}.json`).then((r) => (r.ok ? r.json() : {})).then((b) => b[String(id)] ?? null).catch(() => null)} say={(msg, kind) => activity.say(msg, kind)} />
   {:else if route.view === 'talk'}
     <Talk {lang} {storage} loadTalk={() => fetchImpl(withBase(`/talk/${lang.code}.json`)).then((r) => (r.ok ? r.json() : null))}
-      speakTaught={async (text) => { if (!voice) throw new Error('no voice'); await voice.speak(text); }}
+      speakTaught={async (text, opts) => { if (!voice) throw new Error('no voice'); await voice.speak(text, opts); }}
       speakNarrator={async (text, code) => { await narratorVoice(code)?.speak(text); }}
       trainerHref={(text) => speakHref(withBase(speakPath(LANGUAGES.find((l) => l.code === lang.code) ?? { path: '/' })), text)}
       say={(msg, kind) => activity.say(msg, kind)} />

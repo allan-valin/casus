@@ -152,3 +152,20 @@ describe('Conversation practice tab (Allan, 2026-10-20/21: narrator in the inter
     expect(container.querySelector('.unit-row[data-unit="A1-01"]').classList.contains('done')).toBe(true);
   });
 });
+
+describe('character pitches', async () => {
+  const { voicePitches, pitchOf } = await import('../../src/app/lib/talkvoices.js');
+  const course = { voices: [{ id: 'n', role: 'narrator' }, { id: 'f', role: 'character', gender: 'f' }, { id: 'm', role: 'character', gender: 'm' },
+    { id: 'm2', role: 'character', gender: 'm' }, { id: 'm3', role: 'character', gender: 'm', pitch: 1.12 }],
+    protagonist: { f: 'f', m: 'm' }, cast: { jonas: { voice: 'm3' }, opa: { voice: 'm2' } } };
+  it('every character voice gets its own pitch; a set pitch is kept', () => {
+    const p = voicePitches(course);
+    expect(p.f).toBe(1.25); expect(p.m).toBe(1); expect(p.m2).not.toBe(1); expect(p.m3).toBe(1.12);
+    expect(new Set(Object.values(p)).size).toBe(4);
+  });
+  it('the protagonist speaks with the unit’s form; cast members with their voice', () => {
+    expect(pitchOf(course, { protagonist: 'f' }, 'protagonist')).toBe(1.25);
+    expect(pitchOf(course, { protagonist: 'm' }, 'jonas')).toBe(1.12);
+    expect(pitchOf(course, {}, 'nobody')).toBe(1);
+  });
+});

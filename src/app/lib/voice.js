@@ -14,10 +14,12 @@ export async function loadPiperFromCdn() {
   return import(/* @vite-ignore */ PIPER_URL);
 }
 
-export async function playBlobAudio(blob) {
+export async function playBlobAudio(blob, { rate = 1 } = {}) {
   const url = URL.createObjectURL(blob);
   try {
     const audio = new Audio(url);
+    // a character's own pitch (Conversation practice): a faster rate without pitch correction raises the voice
+    if (rate !== 1) { audio.preservesPitch = false; audio.playbackRate = rate; }
     await new Promise((resolve, reject) => { audio.onended = resolve; audio.onerror = () => reject(new Error('audio failed')); audio.play().catch(reject); });
   } finally { URL.revokeObjectURL(url); }
 }
@@ -106,13 +108,13 @@ export function createVoice({ bcp47, espeakVoice, natural = null, synth = global
     engineLoad ??= withTimeout(loadEspeak());
     try { return await engineLoad; } catch (e) { engineLoad = null; throw new Error(`no voice for ${bcp47}: espeak-ng could not be loaded (${e.message})`); }
   }
-  async function speak(text) {
+  async function speak(text, { pitch = 1 } = {}) {
     let fellBack = false;
     if (naturalReady()) {
       let p = null;
       try {
         p = await piper();
-        await playBlob(await p.predict({ text, voiceId: natural.voiceId }));
+        await (pitch === 1 ? playBlob(await p.predict({ text, voiceId: natural.voiceId })) : playBlob(await p.predict({ text, voiceId: natural.voiceId }), { rate: pitch }));
         return { tier: 'natural', fellBack: false };
       } catch {
         fellBack = true;
@@ -131,6 +133,7 @@ export function createVoice({ bcp47, espeakVoice, natural = null, synth = global
         const u = new SpeechSynthesisUtterance(text);
         u.voice = v;
         u.lang = v.lang;
+        if (pitch !== 1) u.pitch = Math.max(0, Math.min(2, pitch));
         u.onend = () => resolve();
         u.onerror = (e) => reject(new Error(e?.error ?? 'speech failed'));
         if (synth.speaking) synth.cancel?.();
@@ -144,7 +147,7 @@ export function createVoice({ bcp47, espeakVoice, natural = null, synth = global
     if (!espeakVoice) throw new Error(`no voice for ${bcp47}`);
     const e = await engine();
     const { audio, sampleRate } = await e.synthesize(text, espeakVoice);
-    await play(audio, sampleRate);
+    await play(audio, sampleRate * pitch);
     return { tier: 'espeak', fellBack };
   }
   return { tier, speak, onchange, natural, naturalReady, downloadNatural, removeNatural };
