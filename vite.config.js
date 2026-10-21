@@ -11,6 +11,9 @@ const DATA = resolve('data');
 /* The natural voices' engine files, served by our own site (Allan, 2026-10-21: no CDN that can change under us). The
  * packages are pinned at exact versions in package.json; src/app/lib/voice.js points the voices at <base>engine/. */
 const ENGINE_FILES = {
+  // onnxruntime itself, as its own file: its worker (env.wasm.proxy) starts from the file it was loaded from, which inside
+  // our bundle would be the whole app ("document is not defined"); the build leaves the import pointing here
+  'ort.wasm.min.mjs': 'node_modules/onnxruntime-web/dist/ort.wasm.min.mjs',
   'ort-wasm-simd-threaded.mjs': 'node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.mjs',
   'ort-wasm-simd-threaded.wasm': 'node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.wasm',
   'piper_phonemize.wasm': 'node_modules/@diffusionstudio/piper-wasm/build/piper_phonemize.wasm',
@@ -86,6 +89,8 @@ export default defineConfig({
   // package's browser field) converts cleanly (proofreading, 2026-10-19)
   resolve: process.env.VITEST ? { conditions: ['browser'] } : { alias: [{ find: /^hunspell-asm$/, replacement: 'hunspell-asm/dist/cjs/index.js' }] },
   optimizeDeps: { include: ['hunspell-asm/dist/cjs/index.js'] },
+  // onnxruntime stays out of the bundle and is loaded from <base>engine/ (see ENGINE_FILES)
+  build: { rollupOptions: { external: ['onnxruntime-web/wasm'], output: { paths: { 'onnxruntime-web/wasm': `${process.env.CASUS_BASE || '/'}engine/ort.wasm.min.mjs` } } } },
   test: {
     environment: 'node',
   },

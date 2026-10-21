@@ -280,3 +280,39 @@ describe('a character speed slows the voice further', () => {
     expect([...out.slice(-4)]).toEqual([1, 2, 3, 4]);
   });
 });
+
+describe('a sentence still being computed when you stop or skip is not played afterwards (Allan 2026-10-21: lag, two at once)', () => {
+  it('stopPlayback during synthesis: the late sound is discarded', async () => {
+    const { createVoice, stopPlayback } = await import('../../src/app/lib/voice.js');
+    let finish;
+    const played = [];
+    const v = createVoice({ bcp47: 'pt', espeakVoice: 'pt', natural: { voiceId: 'v' }, store: { getItem: () => 'stored', setItem() {}, removeItem() {} },
+      loadPiper: async () => ({ predict: () => new Promise((r) => { finish = () => r(new Blob(['x'])); }) }), playBlob: async (b) => { played.push(b); } });
+    const said = v.speak('olá');
+    await new Promise((r) => setTimeout(r, 0));
+    stopPlayback();                    // ⏭ pressed while the sentence was being computed
+    finish();
+    const res = await said;
+    expect(played).toHaveLength(0);
+    expect(res.tier).toBe('natural');
+    expect(res.dropped).toBe(true);
+  });
+});
+
+describe('a pause pressed while a sentence is computed holds it until resume', () => {
+  it('playBlobAudio does not start while paused; resume starts it', async () => {
+    const { playBlobAudio, pausePlayback, resumePlayback, stopPlayback } = await import('../../src/app/lib/voice.js');
+    const started = [];
+    globalThis.URL.createObjectURL ??= () => 'blob:x';
+    globalThis.URL.revokeObjectURL ??= () => {};
+    globalThis.Audio = class { constructor() { this.paused = true; } play() { started.push(1); this.paused = false; setTimeout(() => this.onended?.(), 0); return Promise.resolve(); } pause() { this.paused = true; } };
+    pausePlayback();
+    const done = playBlobAudio(new Blob(['x']));
+    await new Promise((r) => setTimeout(r, 5));
+    expect(started).toHaveLength(0);
+    resumePlayback();
+    await done;
+    expect(started).toHaveLength(1);
+    stopPlayback();
+  });
+});

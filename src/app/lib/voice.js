@@ -16,9 +16,13 @@ import { createPhonemePiper } from './phonemePiper.js';
 // fell back to espeak. Nothing here may point at a CDN (tests/ui/voice.test.js).
 export const ENGINE = `${(typeof import.meta !== 'undefined' && import.meta.env?.BASE_URL) || '/'}engine/`;
 
-export async function loadPiperEngine(importer = () => import('@mintplex-labs/piper-tts-web'),
+export async function loadPiperEngine(importer = null,
   { storage = () => navigator.storage.getDirectory(), fetchImpl = (...a) => fetch(...a) } = {}) {
+  const importerGiven = !!importer;
+  importer ??= () => import('@mintplex-labs/piper-tts-web');
   const mod = await importer();
+  // the voice is computed in a worker, so the page stays responsive meanwhile (the library shares our onnxruntime)
+  if (!importerGiven) { try { const ort = await import('onnxruntime-web/wasm'); (ort.default ?? ort).env.wasm.proxy = true; } catch { /* runs on the page then */ } }
   // The library's download() does not wait for its save, and a failed save leaves an empty file it then reads as
   // "stored" forever (Allan, 2026-10-21: the voice failed right after downloading). Downloads happen here instead, into
   // the same place the library reads (the origin's private file system, folder piper/), awaited and size-checked.
@@ -72,18 +76,24 @@ export async function loadPiperEngine(importer = () => import('@mintplex-labs/pi
 
 // what is playing now, so a sentence can be paused and resumed (Allan, 2026-10-21: "I need to be able to pause it")
 let currentAudio = null;
+let held = false;          // paused: a sound that becomes ready now waits for resume (Allan, 2026-10-21)
 export function pausePlayback() {
+  held = true;
   currentAudio?.pause();
   if (context?.state === 'running') context.suspend();
 }
-// ends what is playing now (another step was started): the audio stops and its promise settles
+// every stop bumps the epoch: a sentence still being computed when it happened is not played afterwards
+let epoch = 0;
 export function stopPlayback() {
+  epoch += 1;
+  held = false;
   if (currentAudio) { const a = currentAudio; currentAudio = null; a.pause(); a.onended?.(); }
   if (currentSource) { const src = currentSource; currentSource = null; try { src.onended = null; src.stop(); } catch { /* already stopped */ } currentSourceDone?.(); }
   if (context?.state === 'suspended') context.resume();
   try { globalThis.speechSynthesis?.cancel?.(); } catch { /* none */ }
 }
 export function resumePlayback() {
+  held = false;
   currentAudio?.play().catch(() => {});
   if (context?.state === 'suspended') context.resume();
 }
@@ -112,7 +122,10 @@ export async function playBlobAudio(blob, { rate = 1 } = {}) {
     currentAudio = audio;
     // a character's own pitch (Conversation practice): a faster rate without pitch correction raises the voice
     if (rate !== 1) { audio.preservesPitch = false; audio.playbackRate = rate; }
-    await new Promise((resolve, reject) => { audio.onended = resolve; audio.onerror = () => reject(new Error('audio failed')); audio.play().catch(reject); });
+    await new Promise((resolve, reject) => {
+      audio.onended = resolve; audio.onerror = () => reject(new Error('audio failed'));
+      if (!held) audio.play().catch(reject);      // paused meanwhile: resumePlayback starts it
+    });
   } finally { if (currentAudio?.src === url) currentAudio = null; URL.revokeObjectURL(url); }
 }
 
@@ -233,7 +246,9 @@ export function createVoice({ bcp47, espeakVoice, natural = null, synth = global
         // higher voice does not also make it quicker (Allan, 2026-10-21: "mk feels a bit fast")
         const lengthScale = natural.phonemes ? (natural.speed ?? 1) * speed * pitch : undefined;
         // a short silence first: audio output that has just woken cuts the first syllable (Allan, 2026-10-21)
+        const mine = epoch;
         const blob = await padWav(await p.predict({ text, voiceId: natural.voiceId, ...(lengthScale ? { lengthScale } : {}) }), 120);
+        if (mine !== epoch) return { tier: 'natural', fellBack: false, dropped: true };   // stopped or skipped meanwhile
         await (pitch === 1 ? playBlob(blob) : playBlob(blob, { rate: pitch }));
         return { tier: 'natural', fellBack: false };
       } catch (e) {

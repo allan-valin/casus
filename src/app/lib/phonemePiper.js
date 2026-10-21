@@ -17,6 +17,8 @@ export async function loadOrtEngine() {
   const o = ort.default ?? ort;
   if (o.env?.wasm) {
     o.env.wasm.wasmPaths = ENGINE;
+    // the voice is computed in a worker, so the page stays responsive meanwhile (Allan, 2026-10-21: buttons lagged)
+    o.env.wasm.proxy = true;
     if (!globalThis.crossOriginIsolated) o.env.wasm.numThreads = 1;   // threads need cross-origin isolation, which Pages lacks
   }
   return o;
