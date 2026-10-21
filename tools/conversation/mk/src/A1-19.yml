@@ -1,0 +1,42 @@
+id: A1-19
+protagonist: f
+title: [The market, A feira]
+situation: ["Saturday at Bit Pazar, the big market, with Marko.", "Sábado no Bit Pazar, a grande feira, com o Marko."]
+learn: [a1-plural]
+culture: Bargaining a little at the market
+items:
+  - [pazar, "пазар", "market", "feira / mercado"]
+  - [evtino, "евтино", "cheap", "barato"]
+  - [skapo, "скапо", "expensive", "caro"]
+  - [kolku-cinat, "Колку чинат…?", "How much are…? (plural)", "Quanto custam…?"]
+  - [domatite, "доматите", "the tomatoes", "os tomates", {rare: true}]
+  - [domati, "домати", "tomatoes", "tomates", {rare: true}]
+  - [piperki, "пиперки", "peppers", "pimentões", {rare: true}]
+  - [kiloto, "килото", "the kilo (per kilo)", "o quilo", {rare: true}]
+  - [kila, "кила", "kilos", "quilos", {rare: true}]
+  - [sezdeset, "шеесет", "sixty", "sessenta"]
+  - [pedeset, "педесет", "fifty", "cinquenta"]
+  - [se, "се", "are (plural)", "são"]
+  - [sve, "сè", "everything", "tudo", {rare: true}]
+dialogue:
+  - [marko, "Ова е Бит Пазар. Тука сè е евтино.", "This is Bit Pazar. Everything is cheap here.", "Isto é o Bit Pazar. Aqui tudo é barato."]
+  - [protagonist, "Добар ден. Колку чинат доматите?", "Hello. How much are the tomatoes?", "Bom dia. Quanto custam os tomates?"]
+  - [seller, "Шеесет денари килото.", "Sixty denars a kilo.", "Sessenta dinares o quilo."]
+  - [protagonist, "Скапо е! Педесет?", "That's expensive! Fifty?", "Está caro! Cinquenta?"]
+  - [seller, "Добро, педесет. Колку кила?", "All right, fifty. How many kilos?", "Está bem, cinquenta. Quantos quilos?"]
+  - [protagonist, "Две кила домати и едно кило пиперки.", "Two kilos of tomatoes and one kilo of peppers.", "Dois quilos de tomate e um quilo de pimentão."]
+  - [seller, "Пиперките се убави, од Струмица.", "The peppers are lovely, from Strumica.", "Os pimentões são ótimos, de Strumica."]
+  - [marko, "Браво! Добро се пазариш!", "Well done! You bargain well!", "Muito bem! Você sabe pechinchar!"]
+teach:
+  - note: ["Plural: most words take -и: домат → домати, пиперка → пиперки. With 'the': доматите, пиперките.", "Plural: a maioria das palavras leva -и: домат → домати, пиперка → пиперки. Com artigo: доматите (os tomates), пиперките."]
+  - ask: ["Say: this is the market. Everything is cheap.", "Diga: esta é a feira. Tudo é barato.", "Ова е пазар. Сè е евтино.", pazar, sve, evtino]
+  - ask: ["Ask how much the tomatoes are.", "Pergunte quanto custam os tomates.", "Колку чинат доматите?", kolku-cinat, domatite]
+  - ask: ["She says sixty a kilo. How?", "Ela diz sessenta o quilo. Como?", "Шеесет денари килото.", sezdeset, denari, kiloto]
+  - note: ["At the market, offering a bit less is normal — once, with a smile. In shops with price tags, no.", "Na feira, oferecer um pouco menos é normal — uma vez, sorrindo. Em loja com etiqueta de preço, não."]
+  - ask: ["Say it's expensive and offer fifty.", "Diga que está caro e ofereça cinquenta.", "Скапо е! Педесет?", skapo, pedeset]
+  - ask: ["Ask for two kilos of tomatoes.", "Peça dois quilos de tomate.", "Две кила домати.", dve, kila, domati]
+  - ask: ["And one kilo of peppers.", "E um quilo de pimentão.", "И едно кило пиперки.", i, piperki]
+  - ask: ["Say: the peppers are lovely.", "Diga: os pimentões são ótimos.", "Пиперките се убави.", piperki, se]
+  - ask: ["Say: it's cheap here.", "Diga: aqui é barato.", "Тука е евтино.", tuka, evtino]
+  - ask: ["Ask how much the peppers are.", "Pergunte quanto custam os pimentões.", "Колку чинат пиперките?", kolku-cinat, piperki]
+  - pt_only: "Como na feira daqui do Brasil: chegue cedo, e o fim da feira é mais barato."

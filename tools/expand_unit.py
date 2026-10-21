@@ -46,7 +46,7 @@ def expand(src: dict, earlier: list) -> dict:
     level = src["id"].split("-")[0]
     items = []
     for it in src["items"]:
-        if not re.fullmatch(r"[a-z0-9-]+", it[0]):
+        if not isinstance(it[0], str) or not re.fullmatch(r"[a-z0-9-]+", it[0]):   # YAML reads a bare no/yes/on as a boolean
             raise ValueError(f"{src['id']}: item id {it[0]!r} must be plain ascii (a Cyrillic letter slipped in?)")
         d = {"id": it[0], "text": it[1], "meaning": {"en": it[2], "pt": it[3]}}
         if len(it) > 4 and isinstance(it[4], dict):

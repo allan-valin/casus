@@ -1,0 +1,40 @@
+id: A1-25
+protagonist: f
+title: [A toast, Um brinde]
+situation: ["Marko's father, Metodija, offers you his home-made rakija.", "O pai do Marko, Metodija, oferece a rakija que ele mesmo faz."]
+learn: [a1-pres-e]
+culture: Eye contact when toasting
+items:
+  - [domasna, "домашна", "home-made (feminine)", "caseira"]
+  - [rakija, "ракија", "rakija (fruit brandy)", "rakija (aguardente de fruta)", {rare: true}]
+  - [samo-malku, "само малку", "just a little", "só um pouco"]
+  - [na-zdravje, "На здравје!", "Cheers! (to health)", "Saúde!"]
+  - [pogledni-me, "погледни ме во очи", "look me in the eyes (informal)", "olhe nos meus olhos"]
+  - [e-sega, "Е, сега може", "There, now it's right", "Pronto, agora sim"]
+  - [jaka, "јака", "strong (feminine)", "forte"]
+  - [slivi, "сливи", "plums", "ameixas", {rare: true}]
+  - [ne-blagodaram, "Не, благодарам", "No, thank you", "Não, obrigada"]
+  - [sam-ja-pravam, "Сам ја правам", "I make it myself", "Eu mesmo faço"]
+dialogue:
+  - [metodija, "Ова е домашна ракија. Повели!", "This is home-made rakija. Here you go!", "Esta é rakija caseira. Toma!"]
+  - [protagonist, "Благодарам. Само малку.", "Thank you. Just a little.", "Obrigada. Só um pouco."]
+  - [metodija, "На здравје!", "Cheers!", "Saúde!"]
+  - [protagonist, "На здравје!", "Cheers!", "Saúde!"]
+  - [metodija, "Не, не — погледни ме во очи!", "No, no — look me in the eyes!", "Não, não — olhe nos meus olhos!"]
+  - [protagonist, "Извинете! На здравје!", "Sorry! Cheers!", "Desculpe! Saúde!"]
+  - [metodija, "Е, сега може. Уште малку?", "There, now it's right. A little more?", "Pronto, agora sim. Mais um pouquinho?"]
+  - [protagonist, "Не, благодарам, јака е!", "No, thank you, it's strong!", "Não, obrigada, é forte!"]
+  - [metodija, "Од сливи е. Сам ја правам.", "It's from plums. I make it myself.", "É de ameixa. Eu mesmo faço."]
+teach:
+  - note: ["Metodija is older, so he says ти to you at once; you answer with Вие. That is normal — the older person decides.", "O Metodija é mais velho, então já usa ти com você; você responde com Вие. É normal — quem decide é o mais velho."]
+  - ask: ["Take the glass: thank you, just a little.", "Pegue o copo: obrigada, só um pouco.", "Благодарам. Само малку.", blagodaram, samo-malku]
+  - ask: ["Say: home-made rakija.", "Diga: rakija caseira.", "Домашна ракија.", domasna, rakija]
+  - ask: ["Toast!", "Brinde!", "На здравје!", na-zdravje]
+  - note: ["When you toast, look each person in the eyes and clink. Looking away is rude — some say it brings bad luck.", "No brinde, olhe cada pessoa nos olhos e bata o copo. Desviar o olhar é falta de educação — tem quem diga que dá azar."]
+  - ask: ["He tells you to look him in the eyes. How?", "Ele pede para olhar nos olhos dele. Como?", "Погледни ме во очи!", pogledni-me]
+  - ask: ["Say sorry, politely, and toast again.", "Peça desculpa, com educação, e brinde de novo.", "Извинете! На здравје!", izvinete, na-zdravje]
+  - ask: ["He's satisfied. How does he say it?", "Ele fica satisfeito. Como diz?", "Е, сега може.", e-sega]
+  - ask: ["He offers more. How?", "Ele oferece mais. Como?", "Уште малку?", uste-malku]
+  - ask: ["Say: no, thank you, it's strong!", "Diga: não, obrigada, é forte!", "Не, благодарам, јака е!", ne-blagodaram, jaka]
+  - ask: ["Say for him: it's from plums. I make it myself.", "Diga por ele: é de ameixa. Eu mesmo faço.", "Од сливи е. Сам ја правам.", slivi, sam-ja-pravam]
+  - pt_only: "Rakija é como a nossa cachaça de alambique: cada família faz a sua, e o orgulho vem junto com o copo."

@@ -1,0 +1,41 @@
+id: A1-23
+protagonist: f
+title: [Lunch at two, Almoço às duas]
+situation: ["Sunday. Mrs Stojanovska invites you to lunch, at two o'clock.", "Domingo. A senhora Stojanovska convida você para almoçar, às duas."]
+learn: [a1-pres-i]
+culture: Lunch at 14:00, and too much food
+items:
+  - [tavce-gravce, "тавче гравче", "baked beans (the national dish)", "feijão no forno (o prato nacional)", {rare: true}]
+  - [sarma, "сарма", "stuffed cabbage rolls", "charuto de repolho", {rare: true}]
+  - [mirise, "мирише", "smells", "cheira"]
+  - [jadete, "Јадете!", "Eat! (formal)", "Coma! (formal)"]
+  - [uste-malku, "Уште малку?", "A little more?", "Mais um pouquinho?"]
+  - [dosta-mi-e, "Доста ми е", "I've had enough", "Para mim chega"]
+  - [sita-sum, "Сита сум", "I'm full (a woman)", "Estou satisfeita"]
+  - [samo-edna, "само една", "just one (feminine)", "só uma"]
+  - [potoa, "потоа", "then / afterwards", "depois"]
+  - [kolac, "колач", "cake", "bolo / doce", {rare: true}]
+  - [no-but, "но", "but", "mas"]
+dialogue:
+  - [vera, "Повелете, седнете! Ова е тавче гравче, а ова сарма.", "Here, sit down! This is baked beans, and this is sarma.", "Pode sentar! Isto é feijão no forno, e isto é sarma."]
+  - [protagonist, "Мирише многу убаво!", "It smells very good!", "Está cheirando muito bem!"]
+  - [vera, "Јадете, јадете!", "Eat, eat!", "Coma, coma!"]
+  - [protagonist, "Многу е вкусно.", "It's very tasty.", "Está muito gostoso."]
+  - [vera, "Уште малку сарма?", "A little more sarma?", "Mais um pouquinho de sarma?"]
+  - [protagonist, "Не, благодарам, доста ми е. Сита сум.", "No, thank you, I've had enough. I'm full.", "Não, obrigada, para mim chega. Estou satisfeita."]
+  - [vera, "Само една!", "Just one!", "Só uma!"]
+  - [protagonist, "Добро, но само една!", "All right, but just one!", "Está bem, mas só uma!"]
+  - [vera, "А потоа колач!", "And then cake!", "E depois tem doce!"]
+teach:
+  - note: ["Sunday lunch at home is late — around two — and long. The host keeps offering; saying no once is just politeness.", "O almoço de domingo em casa é tarde — lá pelas duas — e demorado. A anfitriã oferece de novo e de novo; recusar uma vez é só educação."]
+  - pt_only: "Igual à avó brasileira: o primeiro 'não, obrigada' não vale."
+  - ask: ["Say: it smells very good!", "Diga: está cheirando muito bem!", "Мирише многу убаво!", mirise]
+  - ask: ["Vera insists: eat! How?", "A Vera insiste: coma! Como?", "Јадете!", jadete]
+  - ask: ["Say it's very tasty.", "Diga que está muito gostoso.", "Многу е вкусно.", vkusno]
+  - ask: ["She offers more. How does she ask?", "Ela oferece mais. Como pergunta?", "Уште малку?", uste-malku]
+  - ask: ["Say: no, thank you, I've had enough.", "Diga: não, obrigada, para mim chega.", "Не, благодарам, доста ми е.", blagodaram, dosta-mi-e]
+  - note: ["'Сита' agrees with you: a woman is 'сита', a man 'сит'.", "'Сита' concorda com você: mulher diz 'сита', homem diz 'сит'."]
+  - ask: ["Say you're full.", "Diga que está satisfeita.", "Сита сум.", sita-sum]
+  - ask: ["Give in: all right, but just one!", "Ceda: está bem, mas só uma!", "Добро, но само една!", no-but, samo-edna]
+  - ask: ["Vera says: and then cake! Say it.", "A Vera diz: e depois tem doce! Diga.", "А потоа колач!", potoa, kolac]
+  - ask: ["Name the dishes: baked beans and sarma.", "Diga os pratos: feijão no forno e sarma.", "Тавче гравче и сарма.", tavce-gravce, sarma]

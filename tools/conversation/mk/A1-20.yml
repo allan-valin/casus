@@ -1,0 +1,584 @@
+# UNIT mk A1-20 — written by AI (Claude) for Casus; expanded from src/A1-20.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-20
+level: A1
+number: 20
+protagonist: m
+title:
+  en: The days of the week
+  pt: Os dias da semana
+situation:
+  en: Ana needs a day for a meeting with a client.
+  pt: A Ana precisa marcar um dia para uma reunião com um cliente.
+learn_lessons:
+- a1-days
+- a1-negation
+culture: —
+new_items:
+- id: sostanok
+  text: состанок
+  meaning:
+    en: meeting
+    pt: reunião
+- id: koga-imas-vreme
+  text: Кога имаш време?
+  meaning:
+    en: When do you have time? (informal)
+    pt: Quando você tem tempo?
+- id: nemam-vreme
+  text: немам време
+  meaning:
+    en: I don't have time
+    pt: não tenho tempo
+- id: utre
+  text: утре
+  meaning:
+    en: tomorrow
+    pt: amanhã
+- id: sreda
+  text: среда
+  meaning:
+    en: Wednesday
+    pt: quarta-feira
+  rare: true
+- id: ne-mozam
+  text: не можам
+  meaning:
+    en: I can't
+    pt: não posso
+- id: cetvrtok
+  text: четврток
+  meaning:
+    en: Thursday
+    pt: quinta-feira
+  rare: true
+- id: petok
+  text: петок
+  meaning:
+    en: Friday
+    pt: sexta-feira
+- id: podobro
+  text: подобро
+  meaning:
+    en: better
+    pt: melhor
+- id: sabota
+  text: сабота
+  meaning:
+    en: Saturday
+    pt: sábado
+- id: nedela
+  text: недела
+  meaning:
+    en: Sunday
+    pt: domingo
+- id: ponedelnik
+  text: понеделник
+  meaning:
+    en: Monday
+    pt: segunda-feira
+- id: vtornik
+  text: вторник
+  meaning:
+    en: Tuesday
+    pt: terça-feira
+  rare: true
+- id: rabota
+  text: работа
+  meaning:
+    en: work
+    pt: trabalho
+reviews:
+- item: sto-pisuva
+  from: A1-05
+- item: pisuva
+  from: A1-05
+- item: zatvoreno
+  from: A1-05
+- item: otvoreno
+  from: A1-05
+- item: apteka
+  from: A1-05
+- item: ruski
+  from: A1-05
+- item: makedonski
+  from: A1-05
+- item: kirilica
+  from: A1-05
+- item: citam
+  from: A1-05
+- item: bavno
+  from: A1-05
+- item: nema-problem
+  from: A1-05
+- item: poleka
+  from: A1-05
+- item: vlez
+  from: A1-05
+- item: izlez
+  from: A1-05
+- item: kako-ste
+  from: A1-13
+- item: a-vie
+  from: A1-13
+- item: ajde-na-ti
+  from: A1-13
+- item: moze
+  from: A1-13
+- item: sekako
+  from: A1-13
+- item: kako-si
+  from: A1-13
+- item: a-ti
+  from: A1-13
+- item: odlicno
+  from: A1-13
+- item: rucek
+  from: A1-13
+- item: se-gledame
+  from: A1-13
+- item: cao
+  from: A1-13
+- item: zesko
+  from: A1-17
+- item: otvoren
+  from: A1-17
+- item: vratata
+  from: A1-17
+- item: promaja
+  from: A1-17
+- item: sto-e-toa
+  from: A1-17
+- item: veter
+  from: A1-17
+- item: ke-nastinete
+  from: A1-17
+- item: nema
+  from: A1-17
+- item: klima
+  from: A1-17
+- item: zatvorete
+  from: A1-17
+- item: vednas
+  from: A1-17
+- item: poloso
+  from: A1-17
+- item: pazar
+  from: A1-19
+- item: evtino
+  from: A1-19
+- item: skapo
+  from: A1-19
+- item: kolku-cinat
+  from: A1-19
+- item: domatite
+  from: A1-19
+- item: domati
+  from: A1-19
+- item: piperki
+  from: A1-19
+- item: kiloto
+  from: A1-19
+- item: kila
+  from: A1-19
+- item: sezdeset
+  from: A1-19
+- item: pedeset
+  from: A1-19
+- item: se
+  from: A1-19
+- item: sve
+  from: A1-19
+- item: imame
+  from: A1-04
+- item: denes
+  from: A1-06
+- item: vo
+  from: A1-06
+steps:
+- type: narrator
+  text:
+    en: Ana needs a day for a meeting with a client. Listen to the conversation; you don't need to understand it yet.
+    pt: A Ana precisa marcar um dia para uma reunião com um cliente. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: ana
+    text: Имаме состанок со клиентот. Кога имаш време?
+    meaning:
+      en: We have a meeting with the client. When do you have time?
+      pt: Temos reunião com o cliente. Quando você tem tempo?
+  - speaker: protagonist
+    text: Денеска немам време. Утре?
+    meaning:
+      en: Today I don't have time. Tomorrow?
+      pt: Hoje não tenho tempo. Amanhã?
+  - speaker: ana
+    text: Утре е среда. Во среда не можам.
+    meaning:
+      en: Tomorrow is Wednesday. On Wednesday I can't.
+      pt: Amanhã é quarta. Na quarta não posso.
+  - speaker: protagonist
+    text: Во четврток?
+    meaning:
+      en: On Thursday?
+      pt: Na quinta?
+  - speaker: ana
+    text: Четврток може. Или петок.
+    meaning:
+      en: Thursday works. Or Friday.
+      pt: Quinta pode. Ou sexta.
+  - speaker: protagonist
+    text: Петок е подобро.
+    meaning:
+      en: Friday is better.
+      pt: Sexta é melhor.
+  - speaker: ana
+    text: Добро, во петок. Понеделник и вторник се тешки денови.
+    meaning:
+      en: Fine, on Friday. Monday and Tuesday are hard days.
+      pt: Combinado, na sexta. Segunda e terça são dias pesados.
+  - speaker: protagonist
+    text: А сабота и недела — викенд, нема работа!
+    meaning:
+      en: And Saturday and Sunday — weekend, no work!
+      pt: E sábado e domingo — fim de semana, sem trabalho!
+- type: narrator
+  text:
+    en: 'The days, from Monday: понеделник, вторник, среда, четврток, петок, сабота, недела. ''On Friday'' is ''во петок''.'
+    pt: 'Os dias, a partir de segunda: понеделник, вторник, среда, четврток, петок, сабота, недела. ''Na sexta'' é ''во петок''.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'Repare: четврток e петок vêm de ''quarto'' e ''quinto'' — como a nossa quarta, quinta e sexta-feira, contando os dias.'
+- type: prompt
+  ask:
+    en: 'Say: we have a meeting.'
+    pt: 'Diga: temos uma reunião.'
+  answer:
+    speaker: protagonist
+    text: Имаме состанок.
+  items:
+  - imame
+  - sostanok
+- type: prompt
+  ask:
+    en: Ask her when she has time.
+    pt: Pergunte quando ela tem tempo.
+  answer:
+    speaker: protagonist
+    text: Кога имаш време?
+  items:
+  - koga-imas-vreme
+- type: prompt
+  ask:
+    en: 'Say: today I don''t have time.'
+    pt: 'Diga: hoje não tenho tempo.'
+  answer:
+    speaker: protagonist
+    text: Денеска немам време.
+  items:
+  - denes
+  - nemam-vreme
+- type: prompt
+  ask:
+    en: Suggest tomorrow.
+    pt: Sugira amanhã.
+  answer:
+    speaker: protagonist
+    text: Утре?
+  items:
+  - utre
+- type: prompt
+  ask:
+    en: 'Say: on Wednesday I can''t.'
+    pt: 'Diga: na quarta não posso.'
+  answer:
+    speaker: protagonist
+    text: Во среда не можам.
+  items:
+  - sreda
+  - ne-mozam
+- type: prompt
+  ask:
+    en: Suggest Thursday.
+    pt: Sugira quinta.
+  answer:
+    speaker: protagonist
+    text: Во четврток?
+  items:
+  - vo
+  - cetvrtok
+- type: prompt
+  ask:
+    en: 'Say: Friday is better.'
+    pt: 'Diga: sexta é melhor.'
+  answer:
+    speaker: protagonist
+    text: Петок е подобро.
+  items:
+  - petok
+  - podobro
+- type: prompt
+  ask:
+    en: 'Say: Monday and Tuesday.'
+    pt: 'Diga: segunda e terça.'
+  answer:
+    speaker: protagonist
+    text: Понеделник и вторник.
+  items:
+  - ponedelnik
+  - vtornik
+- type: prompt
+  ask:
+    en: 'Say: Saturday and Sunday, no work!'
+    pt: 'Diga: sábado e domingo, sem trabalho!'
+  answer:
+    speaker: protagonist
+    text: Сабота и недела, нема работа!
+  items:
+  - sabota
+  - nedela
+  - nema
+  - rabota
+- type: prompt
+  ask:
+    en: Say you can't on Monday.
+    pt: Diga que na segunda não pode.
+  answer:
+    speaker: protagonist
+    text: Во понеделник не можам.
+  items:
+  - ponedelnik
+  - ne-mozam
+- type: prompt
+  ask:
+    en: 'Once more: say “meeting”.'
+    pt: 'Mais uma vez: diga “reunião”.'
+  answer:
+    speaker: protagonist
+    text: состанок
+  items:
+  - sostanok
+- type: prompt
+  ask:
+    en: 'Once more: say “When do you have time? (informal)”.'
+    pt: 'Mais uma vez: diga “Quando você tem tempo?”.'
+  answer:
+    speaker: protagonist
+    text: Кога имаш време?
+  items:
+  - koga-imas-vreme
+- type: prompt
+  ask:
+    en: 'Once more: say “I don''t have time”.'
+    pt: 'Mais uma vez: diga “não tenho tempo”.'
+  answer:
+    speaker: protagonist
+    text: немам време
+  items:
+  - nemam-vreme
+- type: prompt
+  ask:
+    en: 'Once more: say “tomorrow”.'
+    pt: 'Mais uma vez: diga “amanhã”.'
+  answer:
+    speaker: protagonist
+    text: утре
+  items:
+  - utre
+- type: prompt
+  ask:
+    en: 'Once more: say “Wednesday”.'
+    pt: 'Mais uma vez: diga “quarta-feira”.'
+  answer:
+    speaker: protagonist
+    text: среда
+  items:
+  - sreda
+- type: prompt
+  ask:
+    en: 'Once more: say “Thursday”.'
+    pt: 'Mais uma vez: diga “quinta-feira”.'
+  answer:
+    speaker: protagonist
+    text: четврток
+  items:
+  - cetvrtok
+- type: prompt
+  ask:
+    en: 'Once more: say “Friday”.'
+    pt: 'Mais uma vez: diga “sexta-feira”.'
+  answer:
+    speaker: protagonist
+    text: петок
+  items:
+  - petok
+- type: prompt
+  ask:
+    en: 'Once more: say “better”.'
+    pt: 'Mais uma vez: diga “melhor”.'
+  answer:
+    speaker: protagonist
+    text: подобро
+  items:
+  - podobro
+- type: prompt
+  ask:
+    en: 'Once more: say “Saturday”.'
+    pt: 'Mais uma vez: diga “sábado”.'
+  answer:
+    speaker: protagonist
+    text: сабота
+  items:
+  - sabota
+- type: prompt
+  ask:
+    en: 'Once more: say “Sunday”.'
+    pt: 'Mais uma vez: diga “domingo”.'
+  answer:
+    speaker: protagonist
+    text: недела
+  items:
+  - nedela
+- type: prompt
+  ask:
+    en: 'Once more: say “Tuesday”.'
+    pt: 'Mais uma vez: diga “terça-feira”.'
+  answer:
+    speaker: protagonist
+    text: вторник
+  items:
+  - vtornik
+- type: prompt
+  ask:
+    en: 'Once more: say “work”.'
+    pt: 'Mais uma vez: diga “trabalho”.'
+  answer:
+    speaker: protagonist
+    text: работа
+  items:
+  - rabota
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “market — and “cheap — and “expensive — and “How much are…? (plural) — and “the tomatoes — and “tomatoes — and “peppers”.'
+    pt: 'Diga: “feira / mercado — e “barato — e “caro — e “Quanto custam…? — e “os tomates — e “tomates — e “pimentões”.'
+  answer:
+    speaker: protagonist
+    text: пазар … евтино … скапо … Колку чинат…? … доматите … домати … пиперки
+  items:
+  - pazar
+  - evtino
+  - skapo
+  - kolku-cinat
+  - domatite
+  - domati
+  - piperki
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the kilo (per kilo) — and “kilos — and “sixty — and “fifty — and “are (plural) — and “everything — and “hot”.'
+    pt: 'Diga: “o quilo — e “quilos — e “sessenta — e “cinquenta — e “são — e “tudo — e “quente (calor)”.'
+  answer:
+    speaker: protagonist
+    text: килото … кила … шеесет … педесет … се … сè … жешко
+  items:
+  - kiloto
+  - kila
+  - sezdeset
+  - pedeset
+  - se
+  - sve
+  - zesko
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “open (masculine) — and “the door — and “a draft (air flowing through) — and “What is that? — and “wind — and “You''ll catch a cold! (formal) — and “air conditioning”.'
+    pt: 'Diga: “aberto — e “a porta — e “corrente de ar — e “O que é isso? — e “vento — e “A senhora vai se resfriar! — e “ar-condicionado”.'
+  answer:
+    speaker: protagonist
+    text: отворен … вратата … промаја … Што е тоа? … ветер … Ќе настинете! … клима
+  items:
+  - otvoren
+  - vratata
+  - promaja
+  - sto-e-toa
+  - veter
+  - ke-nastinete
+  - klima
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Close (formal) — and “right away — and “Even worse! — and “How are you? (formal) — and “And you? (formal) — and “Let''s say ти (be informal) — and “Sure / it''s possible”.'
+    pt: 'Diga: “Feche (formal) — e “já / agora mesmo — e “Pior ainda! — e “Como vai a senhora? — e “E a senhora? — e “Vamos nos tratar por ти — e “Pode ser”.'
+  answer:
+    speaker: protagonist
+    text: Затворете … веднаш … Уште полошо! … Како сте? … А вие? … Ајде на ти … Може
+  items:
+  - zatvorete
+  - vednas
+  - poloso
+  - kako-ste
+  - a-vie
+  - ajde-na-ti
+  - moze
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Of course — and “How are you? (informal) — and “And you? (informal) — and “Excellent — and “lunch — and “See you — and “Bye (informal)”.'
+    pt: 'Diga: “Claro — e “Como você está? — e “E você? — e “Ótimo — e “almoço — e “A gente se vê — e “Tchau”.'
+  answer:
+    speaker: protagonist
+    text: Секако … Како си? … А ти? … Одлично … ручек … Се гледаме … Чао
+  items:
+  - sekako
+  - kako-si
+  - a-ti
+  - odlicno
+  - rucek
+  - se-gledame
+  - cao
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “What does it say? — and “it says (written) — and “closed — and “open — and “pharmacy — and “Russian — and “Macedonian”.'
+    pt: 'Diga: “O que está escrito? — e “está escrito — e “fechado — e “aberto — e “farmácia — e “russo — e “macedônio”.'
+  answer:
+    speaker: protagonist
+    text: Што пишува? … пишува … затворено … отворено … аптека … руски … македонски
+  items:
+  - sto-pisuva
+  - pisuva
+  - zatvoreno
+  - otvoreno
+  - apteka
+  - ruski
+  - makedonski
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Cyrillic — and “I read — and “slowly — and “No problem — and “slowly, take it easy — and “entrance — and “exit”.'
+    pt: 'Diga: “cirílico — e “eu leio — e “devagar — e “Sem problema — e “com calma, devagar — e “entrada — e “saída”.'
+  answer:
+    speaker: protagonist
+    text: кирилица … читам … бавно … Нема проблем … полека … влез … излез
+  items:
+  - kirilica
+  - citam
+  - bavno
+  - nema-problem
+  - poleka
+  - vlez
+  - izlez
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

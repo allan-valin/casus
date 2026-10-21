@@ -1,0 +1,572 @@
+# UNIT mk A1-29 — written by AI (Claude) for Casus; expanded from src/A1-29.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-29
+level: A1
+number: 29
+protagonist: f
+title:
+  en: A problem in the flat
+  pt: Um problema no apartamento
+situation:
+  en: No hot water. You tell Mrs Stojanovska; she calls the repairman.
+  pt: Não tem água quente. Você avisa a senhora Stojanovska; ela chama o técnico.
+learn_lessons:
+- a1-questions
+culture: The мајстор who fixes everything
+new_items:
+- id: bojlerot
+  text: бојлерот
+  meaning:
+    en: the water heater
+    pt: o aquecedor de água
+  rare: true
+- id: ne-raboti
+  text: не работи
+  meaning:
+    en: doesn't work
+    pt: não funciona
+- id: topla-voda
+  text: топла вода
+  meaning:
+    en: hot water
+    pt: água quente
+- id: pak
+  text: Пак?
+  meaning:
+    en: Again?
+    pt: De novo?
+- id: majstorot
+  text: мајсторот
+  meaning:
+    en: the repairman
+    pt: o técnico / o faz-tudo
+- id: mozete-li
+  text: Можете ли…?
+  meaning:
+    en: Can you…? (formal)
+    pt: O senhor pode…?
+- id: da-go-popravite
+  text: да го поправите
+  meaning:
+    en: to fix it (formal)
+    pt: consertar (formal)
+  rare: true
+- id: mozam
+  text: можам
+  meaning:
+    en: I can
+    pt: eu posso
+- id: treba
+  text: треба
+  meaning:
+    en: (it) needs / is needed
+    pt: precisa
+- id: del
+  text: дел
+  meaning:
+    en: part
+    pt: peça
+- id: cas
+  text: час
+  meaning:
+    en: hour
+    pt: hora
+reviews:
+- item: gladen-li
+  from: A1-14
+- item: gladen
+  from: A1-14
+- item: sto-jades
+  from: A1-14
+- item: jadam
+  from: A1-14
+- item: salata
+  from: A1-14
+- item: meso
+  from: A1-14
+- item: supa
+  from: A1-14
+- item: ne-jadam
+  from: A1-14
+- item: vegetarijanka
+  from: A1-14
+- item: sto-pies
+  from: A1-14
+- item: sok
+  from: A1-14
+- item: od
+  from: A1-14
+- item: izvini
+  from: A1-22
+- item: docnam
+  from: A1-22
+- item: kolku-e-casot
+  from: A1-22
+- item: deset
+  from: A1-22
+- item: polovina
+  from: A1-22
+- item: stignuvam
+  from: A1-22
+- item: opusteno
+  from: A1-22
+- item: kade-si
+  from: A1-22
+- item: doma
+  from: A1-22
+- item: uste
+  from: A1-22
+- item: vo-tri
+  from: A1-22
+- item: starata
+  from: A1-26
+- item: stara
+  from: A1-26
+- item: sakam-da-kupam
+  from: A1-26
+- item: podarok
+  from: A1-26
+- item: ova-ili-ona
+  from: A1-26
+- item: ona
+  from: A1-26
+- item: maloto
+  from: A1-26
+- item: poubavo
+  from: A1-26
+- item: srebro
+  from: A1-26
+- item: go-zemam
+  from: A1-26
+- item: petstotini
+  from: A1-26
+- item: familija
+  from: A1-28
+- item: sin
+  from: A1-28
+- item: zivee
+  from: A1-28
+- item: kerka
+  from: A1-28
+- item: brat
+  from: A1-28
+- item: sestra
+  from: A1-28
+- item: kolku-godini
+  from: A1-28
+- item: godini
+  from: A1-28
+- item: trieset
+  from: A1-28
+- item: dvaeset-i-pet
+  from: A1-28
+- item: majka
+  from: A1-28
+- item: tatko
+  from: A1-28
+- item: tie
+  from: A1-28
+- item: banjata
+  from: A1-02
+- item: eden
+  from: A1-04
+- item: denes
+  from: A1-06
+- item: vo
+  from: A1-06
+- item: kafe
+  from: A1-07
+- item: vreme
+  from: A1-07
+- item: sakate-li
+  from: A1-07
+- item: nema
+  from: A1-17
+steps:
+- type: narrator
+  text:
+    en: No hot water. You tell Mrs Stojanovska; she calls the repairman. Listen to the conversation; you don't need to understand it yet.
+    pt: Não tem água quente. Você avisa a senhora Stojanovska; ela chama o técnico. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Госпоѓо Стојановска, бојлерот не работи. Нема топла вода!
+    meaning:
+      en: Mrs Stojanovska, the water heater isn't working. There's no hot water!
+      pt: Senhora Stojanovska, o aquecedor não funciona. Não tem água quente!
+  - speaker: vera
+    text: Пак? Ќе го викнам мајсторот.
+    meaning:
+      en: Again? I'll call the repairman.
+      pt: De novo? Vou chamar o técnico.
+  - speaker: majstor
+    text: Добар ден. Каде е бојлерот?
+    meaning:
+      en: Good afternoon. Where's the water heater?
+      pt: Boa tarde. Onde está o aquecedor?
+  - speaker: protagonist
+    text: Во бањата. Можете ли да го поправите денеска?
+    meaning:
+      en: In the bathroom. Can you fix it today?
+      pt: No banheiro. O senhor pode consertar hoje?
+  - speaker: majstor
+    text: Можам, но треба нов дел.
+    meaning:
+      en: I can, but it needs a new part.
+      pt: Posso, mas precisa de uma peça nova.
+  - speaker: protagonist
+    text: Колку време?
+    meaning:
+      en: How long?
+      pt: Quanto tempo?
+  - speaker: majstor
+    text: Еден час.
+    meaning:
+      en: One hour.
+      pt: Uma hora.
+  - speaker: protagonist
+    text: Одлично. Сакате ли кафе?
+    meaning:
+      en: Excellent. Would you like a coffee?
+      pt: Ótimo. O senhor quer um café?
+  - speaker: majstor
+    text: Може, без шеќер.
+    meaning:
+      en: Sure, no sugar.
+      pt: Pode ser, sem açúcar.
+- type: narrator
+  text:
+    en: Most flats heat water in a бојлер, an electric tank in the bathroom. Switch it on some time before your shower.
+    pt: A maioria dos apartamentos esquenta a água num бојлер, um tanque elétrico no banheiro. Ligue um tempo antes do banho.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'Nada de chuveiro elétrico como no Brasil: aqui a água esquenta no tanque, e quando acaba, acaba.'
+- type: prompt
+  ask:
+    en: 'Say: the water heater isn''t working.'
+    pt: 'Diga: o aquecedor não funciona.'
+  answer:
+    speaker: protagonist
+    text: Бојлерот не работи.
+  items:
+  - bojlerot
+  - ne-raboti
+- type: prompt
+  ask:
+    en: 'Say: there''s no hot water!'
+    pt: 'Diga: não tem água quente!'
+  answer:
+    speaker: protagonist
+    text: Нема топла вода!
+  items:
+  - nema
+  - topla-voda
+- type: prompt
+  ask:
+    en: 'Vera sighs: again? Say it.'
+    pt: 'A Vera suspira: de novo? Diga.'
+  answer:
+    speaker: protagonist
+    text: Пак?
+  items:
+  - pak
+- type: prompt
+  ask:
+    en: 'Say for her: I''ll call the repairman. (just: the repairman)'
+    pt: 'Diga: o técnico.'
+  answer:
+    speaker: protagonist
+    text: Мајсторот.
+  items:
+  - majstorot
+- type: prompt
+  ask:
+    en: 'Tell him where it is: in the bathroom.'
+    pt: 'Diga onde está: no banheiro.'
+  answer:
+    speaker: protagonist
+    text: Во бањата.
+  items:
+  - vo
+  - banjata
+- type: prompt
+  ask:
+    en: 'Ask him: can you fix it today?'
+    pt: 'Pergunte: o senhor pode consertar hoje?'
+  answer:
+    speaker: protagonist
+    text: Можете ли да го поправите денеска?
+  items:
+  - mozete-li
+  - da-go-popravite
+  - denes
+- type: prompt
+  ask:
+    en: 'Answer for him: I can.'
+    pt: 'Responda por ele: posso.'
+  answer:
+    speaker: protagonist
+    text: Можам.
+  items:
+  - mozam
+- type: prompt
+  ask:
+    en: 'Say: it needs a new part.'
+    pt: 'Diga: precisa de uma peça nova.'
+  answer:
+    speaker: protagonist
+    text: Треба нов дел.
+  items:
+  - treba
+  - del
+- type: prompt
+  ask:
+    en: Ask how long.
+    pt: Pergunte quanto tempo.
+  answer:
+    speaker: protagonist
+    text: Колку време?
+  items:
+  - vreme
+- type: prompt
+  ask:
+    en: He says one hour.
+    pt: Ele diz uma hora.
+  answer:
+    speaker: protagonist
+    text: Еден час.
+  items:
+  - eden
+  - cas
+- type: prompt
+  ask:
+    en: Offer him a coffee.
+    pt: Ofereça um café.
+  answer:
+    speaker: protagonist
+    text: Сакате ли кафе?
+  items:
+  - sakate-li
+  - kafe
+- type: prompt
+  ask:
+    en: 'Once more: say “the water heater”.'
+    pt: 'Mais uma vez: diga “o aquecedor de água”.'
+  answer:
+    speaker: protagonist
+    text: бојлерот
+  items:
+  - bojlerot
+- type: prompt
+  ask:
+    en: 'Once more: say “doesn''t work”.'
+    pt: 'Mais uma vez: diga “não funciona”.'
+  answer:
+    speaker: protagonist
+    text: не работи
+  items:
+  - ne-raboti
+- type: prompt
+  ask:
+    en: 'Once more: say “hot water”.'
+    pt: 'Mais uma vez: diga “água quente”.'
+  answer:
+    speaker: protagonist
+    text: топла вода
+  items:
+  - topla-voda
+- type: prompt
+  ask:
+    en: 'Once more: say “Again?”.'
+    pt: 'Mais uma vez: diga “De novo?”.'
+  answer:
+    speaker: protagonist
+    text: Пак?
+  items:
+  - pak
+- type: prompt
+  ask:
+    en: 'Once more: say “the repairman”.'
+    pt: 'Mais uma vez: diga “o técnico / o faz-tudo”.'
+  answer:
+    speaker: protagonist
+    text: мајсторот
+  items:
+  - majstorot
+- type: prompt
+  ask:
+    en: 'Once more: say “Can you…? (formal)”.'
+    pt: 'Mais uma vez: diga “O senhor pode…?”.'
+  answer:
+    speaker: protagonist
+    text: Можете ли…?
+  items:
+  - mozete-li
+- type: prompt
+  ask:
+    en: 'Once more: say “to fix it (formal)”.'
+    pt: 'Mais uma vez: diga “consertar (formal)”.'
+  answer:
+    speaker: protagonist
+    text: да го поправите
+  items:
+  - da-go-popravite
+- type: prompt
+  ask:
+    en: 'Once more: say “I can”.'
+    pt: 'Mais uma vez: diga “eu posso”.'
+  answer:
+    speaker: protagonist
+    text: можам
+  items:
+  - mozam
+- type: prompt
+  ask:
+    en: 'Once more: say “(it) needs / is needed”.'
+    pt: 'Mais uma vez: diga “precisa”.'
+  answer:
+    speaker: protagonist
+    text: треба
+  items:
+  - treba
+- type: prompt
+  ask:
+    en: 'Once more: say “part”.'
+    pt: 'Mais uma vez: diga “peça”.'
+  answer:
+    speaker: protagonist
+    text: дел
+  items:
+  - del
+- type: prompt
+  ask:
+    en: 'Once more: say “hour”.'
+    pt: 'Mais uma vez: diga “hora”.'
+  answer:
+    speaker: protagonist
+    text: час
+  items:
+  - cas
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “family — and “son — and “lives — and “daughter — and “brother — and “sister — and “How old…? (how many years)”.'
+    pt: 'Diga: “família — e “filho — e “mora — e “filha — e “irmão — e “irmã — e “Quantos anos…?”.'
+  answer:
+    speaker: protagonist
+    text: фамилија … син … живее … ќерка … брат … сестра … Колку години…?
+  items:
+  - familija
+  - sin
+  - zivee
+  - kerka
+  - brat
+  - sestra
+  - kolku-godini
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “years — and “thirty — and “twenty-five — and “mother — and “father — and “they — and “the old (feminine)”.'
+    pt: 'Diga: “anos — e “trinta — e “vinte e cinco — e “mãe — e “pai — e “eles — e “a velha / antiga”.'
+  answer:
+    speaker: protagonist
+    text: години … триесет … дваесет и пет … мајка … татко … тие … старата
+  items:
+  - godini
+  - trieset
+  - dvaeset-i-pet
+  - majka
+  - tatko
+  - tie
+  - starata
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “old (feminine) — and “I''d like to buy… — and “present, gift — and “This or that? — and “that (one) — and “the small one — and “nicer, prettier”.'
+    pt: 'Diga: “velha / antiga — e “Quero comprar… — e “presente — e “Isto ou aquilo? — e “aquilo / aquele — e “o pequeno — e “mais bonito”.'
+  answer:
+    speaker: protagonist
+    text: стара … Сакам да купам… … подарок … Ова или она? … она … малото … поубаво
+  items:
+  - stara
+  - sakam-da-kupam
+  - podarok
+  - ova-ili-ona
+  - ona
+  - maloto
+  - poubavo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “silver — and “I''ll take it — and “five hundred — and “Sorry (informal) — and “I''m late — and “What time is it? — and “ten”.'
+    pt: 'Diga: “prata — e “Vou levar — e “quinhentos — e “Desculpa — e “estou atrasado — e “Que horas são? — e “dez”.'
+  answer:
+    speaker: protagonist
+    text: сребро … Го земам … петстотини … Извини … доцнам … Колку е часот? … десет
+  items:
+  - srebro
+  - go-zemam
+  - petstotini
+  - izvini
+  - docnam
+  - kolku-e-casot
+  - deset
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “half — and “I arrive / I''m getting there — and “Relax / no stress — and “Where are you? (informal) — and “at home — and “still — and “at three (o''clock)”.'
+    pt: 'Diga: “meia — e “eu chego / estou chegando — e “Relaxa / tranquilo — e “Onde você está? — e “em casa — e “ainda — e “às três”.'
+  answer:
+    speaker: protagonist
+    text: половина … стигнувам … Опуштено … Каде си? … дома … уште … во три
+  items:
+  - polovina
+  - stignuvam
+  - opusteno
+  - kade-si
+  - doma
+  - uste
+  - vo-tri
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Are you hungry? (to a man, informal) — and “hungry (a man) — and “What are you eating? / What will you have? — and “I eat — and “salad — and “meat — and “soup”.'
+    pt: 'Diga: “Você está com fome? — e “com fome (homem) — e “O que você vai comer? — e “eu como — e “salada — e “carne — e “sopa”.'
+  answer:
+    speaker: protagonist
+    text: Гладен ли си? … гладен … Што јадеш? … јадам … салата … месо … супа
+  items:
+  - gladen-li
+  - gladen
+  - sto-jades
+  - jadam
+  - salata
+  - meso
+  - supa
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I don''t eat — and “vegetarian (a woman) — and “What are you drinking? (informal) — and “juice — and “of / from”.'
+    pt: 'Diga: “eu não como — e “vegetariana — e “O que você vai beber? — e “suco — e “de”.'
+  answer:
+    speaker: protagonist
+    text: не јадам … вегетаријанка … Што пиеш? … сок … од
+  items:
+  - ne-jadam
+  - vegetarijanka
+  - sto-pies
+  - sok
+  - od
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

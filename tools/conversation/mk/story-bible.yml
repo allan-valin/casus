@@ -24,6 +24,7 @@ voices:
   - {id: mk-f, role: character, lang: mk, gender: f, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 1.42}
   - {id: mk-f2, role: character, lang: mk, gender: f, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 1.12, speed: 1.12}
   - {id: mk-x-m, role: character, lang: mk, gender: m, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 0.94, speed: 0.95}
+  - {id: mk-o-m, role: character, lang: mk, gender: m, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 0.72, speed: 0.9}
   - {id: mk-x-f, role: character, lang: mk, gender: f, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 1.22, speed: 0.95}
 
 protagonist:
@@ -76,6 +77,19 @@ cast:
   - id: driver
     name: Возач
     role: bus driver
+    voice: mk-x-m
+    register: formal
+    arc: one scene at a time
+
+  - id: metodija
+    name: Методија
+    role: Marko's father; makes his own rakija
+    voice: mk-o-m
+    register: informal
+    arc: says ти to the young neighbour, who answers with Вие
+  - id: majstor
+    name: Мајстор
+    role: the repairman Vera calls
     voice: mk-x-m
     register: formal
     arc: one scene at a time

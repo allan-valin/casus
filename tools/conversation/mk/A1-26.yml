@@ -1,0 +1,524 @@
+# UNIT mk A1-26 — written by AI (Claude) for Casus; expanded from src/A1-26.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-26
+level: A1
+number: 26
+protagonist: m
+title:
+  en: The Čaršija
+  pt: A Čaršija
+situation:
+  en: Ana takes you to the Old Bazaar, the Stara čaršija. You want a present.
+  pt: A Ana leva você ao Velho Bazar, a Stara čaršija. Você quer um presente.
+learn_lessons:
+- a1-demonstratives
+- a1-adj-article
+culture: The Old Bazaar, from Ottoman times
+new_items:
+- id: starata
+  text: старата
+  meaning:
+    en: the old (feminine)
+    pt: a velha / antiga
+- id: stara
+  text: стара
+  meaning:
+    en: old (feminine)
+    pt: velha / antiga
+- id: sakam-da-kupam
+  text: Сакам да купам…
+  meaning:
+    en: I'd like to buy…
+    pt: Quero comprar…
+- id: podarok
+  text: подарок
+  meaning:
+    en: present, gift
+    pt: presente
+- id: ova-ili-ona
+  text: Ова или она?
+  meaning:
+    en: This or that?
+    pt: Isto ou aquilo?
+- id: ona
+  text: она
+  meaning:
+    en: that (one)
+    pt: aquilo / aquele
+- id: maloto
+  text: малото
+  meaning:
+    en: the small one
+    pt: o pequeno
+- id: poubavo
+  text: поубаво
+  meaning:
+    en: nicer, prettier
+    pt: mais bonito
+- id: srebro
+  text: сребро
+  meaning:
+    en: silver
+    pt: prata
+  rare: true
+- id: go-zemam
+  text: Го земам
+  meaning:
+    en: I'll take it
+    pt: Vou levar
+- id: petstotini
+  text: петстотини
+  meaning:
+    en: five hundred
+    pt: quinhentos
+  rare: true
+reviews:
+- item: dobro-utro
+  from: A1-11
+- item: koleska
+  from: A1-11
+- item: programerka
+  from: A1-11
+- item: milo-mi-e
+  from: A1-11
+- item: od-kade-ste
+  from: A1-11
+- item: grad
+  from: A1-11
+- item: golem
+  from: A1-11
+- item: masa
+  from: A1-11
+- item: mojata
+  from: A1-11
+- item: vasiot
+  from: A1-11
+- item: kompjuter
+  from: A1-11
+- item: rabotam
+  from: A1-11
+- item: pazar
+  from: A1-19
+- item: evtino
+  from: A1-19
+- item: skapo
+  from: A1-19
+- item: kolku-cinat
+  from: A1-19
+- item: domatite
+  from: A1-19
+- item: domati
+  from: A1-19
+- item: piperki
+  from: A1-19
+- item: kiloto
+  from: A1-19
+- item: kila
+  from: A1-19
+- item: sezdeset
+  from: A1-19
+- item: pedeset
+  from: A1-19
+- item: se
+  from: A1-19
+- item: sve
+  from: A1-19
+- item: tavce-gravce
+  from: A1-23
+- item: sarma
+  from: A1-23
+- item: mirise
+  from: A1-23
+- item: jadete
+  from: A1-23
+- item: uste-malku
+  from: A1-23
+- item: dosta-mi-e
+  from: A1-23
+- item: sita-sum
+  from: A1-23
+- item: samo-edna
+  from: A1-23
+- item: potoa
+  from: A1-23
+- item: kolac
+  from: A1-23
+- item: no-but
+  from: A1-23
+- item: domasna
+  from: A1-25
+- item: rakija
+  from: A1-25
+- item: samo-malku
+  from: A1-25
+- item: na-zdravje
+  from: A1-25
+- item: pogledni-me
+  from: A1-25
+- item: e-sega
+  from: A1-25
+- item: jaka
+  from: A1-25
+- item: slivi
+  from: A1-25
+- item: ne-blagodaram
+  from: A1-25
+- item: sam-ja-pravam
+  from: A1-25
+- item: kolku-cini
+  from: A1-04
+steps:
+- type: narrator
+  text:
+    en: Ana takes you to the Old Bazaar, the Stara čaršija. You want a present. Listen to the conversation; you don't need to understand it yet.
+    pt: A Ana leva você ao Velho Bazar, a Stara čaršija. Você quer um presente. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: ana
+    text: Ова е Старата чаршија. Многу е стара, од турско време.
+    meaning:
+      en: This is the Old Bazaar. It's very old, from Ottoman times.
+      pt: Esta é a Stara čaršija. É muito antiga, do tempo dos turcos.
+  - speaker: protagonist
+    text: Сакам да купам подарок.
+    meaning:
+      en: I'd like to buy a present.
+      pt: Quero comprar um presente.
+  - speaker: ana
+    text: Тука има накит од сребро.
+    meaning:
+      en: Here there's silver jewellery.
+      pt: Aqui tem joias de prata.
+  - speaker: protagonist
+    text: Ова или она?
+    meaning:
+      en: This or that?
+      pt: Isto ou aquilo?
+  - speaker: ana
+    text: Она, малото. Поубаво е.
+    meaning:
+      en: That one, the small one. It's nicer.
+      pt: Aquele, o pequeno. É mais bonito.
+  - speaker: protagonist
+    text: Колку чини малото?
+    meaning:
+      en: How much is the small one?
+      pt: Quanto custa o pequeno?
+  - speaker: seller
+    text: Илјада и петстотини денари.
+    meaning:
+      en: One thousand five hundred denars.
+      pt: Mil e quinhentos dinares.
+  - speaker: protagonist
+    text: Скапо е... но убаво. Го земам!
+    meaning:
+      en: It's expensive... but nice. I'll take it!
+      pt: É caro... mas é bonito. Vou levar!
+- type: narrator
+  text:
+    en: 'The Old Bazaar was the Ottoman market: stone streets, mosques, an old inn, craftsmen. North Macedonia was part of the Ottoman Empire for five hundred years, until 1912.'
+    pt: 'O Velho Bazar era o mercado otomano: ruas de pedra, mesquitas, uma antiga hospedaria, artesãos. A Macedônia do Norte fez parte do Império Otomano por quinhentos anos, até 1912.'
+- type: narrator
+  text:
+    en: 'With an adjective, ''the'' goes on the adjective, not on the noun: стара чаршија → старата чаршија.'
+    pt: 'Com adjetivo, o artigo vai no adjetivo, não no substantivo: стара чаршија → старата чаршија (a velha čaršija).'
+- type: prompt
+  ask:
+    en: 'Say: the old bazaar.'
+    pt: 'Diga: o velho bazar.'
+  answer:
+    speaker: protagonist
+    text: Старата чаршија.
+  items:
+  - starata
+- type: prompt
+  ask:
+    en: 'Say: it''s very old.'
+    pt: 'Diga: é muito antiga.'
+  answer:
+    speaker: protagonist
+    text: Многу е стара.
+  items:
+  - stara
+- type: prompt
+  ask:
+    en: Say you'd like to buy a present.
+    pt: Diga que quer comprar um presente.
+  answer:
+    speaker: protagonist
+    text: Сакам да купам подарок.
+  items:
+  - sakam-da-kupam
+  - podarok
+- type: prompt
+  ask:
+    en: 'Ask: this or that?'
+    pt: 'Pergunte: isto ou aquilo?'
+  answer:
+    speaker: protagonist
+    text: Ова или она?
+  items:
+  - ova-ili-ona
+- type: prompt
+  ask:
+    en: 'Ana chooses: that one, the small one.'
+    pt: 'A Ana escolhe: aquele, o pequeno.'
+  answer:
+    speaker: protagonist
+    text: Она, малото.
+  items:
+  - ona
+  - maloto
+- type: prompt
+  ask:
+    en: 'Say: it''s nicer.'
+    pt: 'Diga: é mais bonito.'
+  answer:
+    speaker: protagonist
+    text: Поубаво е.
+  items:
+  - poubavo
+- type: prompt
+  ask:
+    en: Ask how much the small one is.
+    pt: Pergunte quanto custa o pequeno.
+  answer:
+    speaker: protagonist
+    text: Колку чини малото?
+  items:
+  - kolku-cini
+  - maloto
+- type: prompt
+  ask:
+    en: 'Say: one thousand five hundred.'
+    pt: 'Diga: mil e quinhentos.'
+  answer:
+    speaker: protagonist
+    text: Илјада и петстотини.
+  items:
+  - petstotini
+- type: prompt
+  ask:
+    en: 'Say: silver.'
+    pt: 'Diga: prata.'
+  answer:
+    speaker: protagonist
+    text: Сребро.
+  items:
+  - srebro
+- type: prompt
+  ask:
+    en: 'Decide: it''s expensive, but I''ll take it!'
+    pt: 'Decida: é caro, mas vou levar!'
+  answer:
+    speaker: protagonist
+    text: Скапо е, но го земам!
+  items:
+  - skapo
+  - no-but
+  - go-zemam
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: Prata trabalhada em filigrana é a lembrança clássica da Čaršija — como a pedra-sabão em Ouro Preto.
+- type: prompt
+  ask:
+    en: 'Once more: say “the old (feminine)”.'
+    pt: 'Mais uma vez: diga “a velha / antiga”.'
+  answer:
+    speaker: protagonist
+    text: старата
+  items:
+  - starata
+- type: prompt
+  ask:
+    en: 'Once more: say “old (feminine)”.'
+    pt: 'Mais uma vez: diga “velha / antiga”.'
+  answer:
+    speaker: protagonist
+    text: стара
+  items:
+  - stara
+- type: prompt
+  ask:
+    en: 'Once more: say “I''d like to buy…”.'
+    pt: 'Mais uma vez: diga “Quero comprar…”.'
+  answer:
+    speaker: protagonist
+    text: Сакам да купам…
+  items:
+  - sakam-da-kupam
+- type: prompt
+  ask:
+    en: 'Once more: say “present, gift”.'
+    pt: 'Mais uma vez: diga “presente”.'
+  answer:
+    speaker: protagonist
+    text: подарок
+  items:
+  - podarok
+- type: prompt
+  ask:
+    en: 'Once more: say “This or that?”.'
+    pt: 'Mais uma vez: diga “Isto ou aquilo?”.'
+  answer:
+    speaker: protagonist
+    text: Ова или она?
+  items:
+  - ova-ili-ona
+- type: prompt
+  ask:
+    en: 'Once more: say “that (one)”.'
+    pt: 'Mais uma vez: diga “aquilo / aquele”.'
+  answer:
+    speaker: protagonist
+    text: она
+  items:
+  - ona
+- type: prompt
+  ask:
+    en: 'Once more: say “nicer, prettier”.'
+    pt: 'Mais uma vez: diga “mais bonito”.'
+  answer:
+    speaker: protagonist
+    text: поубаво
+  items:
+  - poubavo
+- type: prompt
+  ask:
+    en: 'Once more: say “silver”.'
+    pt: 'Mais uma vez: diga “prata”.'
+  answer:
+    speaker: protagonist
+    text: сребро
+  items:
+  - srebro
+- type: prompt
+  ask:
+    en: 'Once more: say “I''ll take it”.'
+    pt: 'Mais uma vez: diga “Vou levar”.'
+  answer:
+    speaker: protagonist
+    text: Го земам
+  items:
+  - go-zemam
+- type: prompt
+  ask:
+    en: 'Once more: say “five hundred”.'
+    pt: 'Mais uma vez: diga “quinhentos”.'
+  answer:
+    speaker: protagonist
+    text: петстотини
+  items:
+  - petstotini
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “home-made (feminine) — and “rakija (fruit brandy) — and “just a little — and “Cheers! (to health) — and “look me in the eyes (informal) — and “There, now it''s right — and “strong (feminine)
+      — and “plums”.'
+    pt: 'Diga: “caseira — e “rakija (aguardente de fruta) — e “só um pouco — e “Saúde! — e “olhe nos meus olhos — e “Pronto, agora sim — e “forte — e “ameixas”.'
+  answer:
+    speaker: protagonist
+    text: домашна … ракија … само малку … На здравје! … погледни ме во очи … Е, сега може … јака … сливи
+  items:
+  - domasna
+  - rakija
+  - samo-malku
+  - na-zdravje
+  - pogledni-me
+  - e-sega
+  - jaka
+  - slivi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “No, thank you — and “I make it myself — and “baked beans (the national dish) — and “stuffed cabbage rolls — and “smells — and “Eat! (formal) — and “A little more? — and “I''ve had enough”.'
+    pt: 'Diga: “Não, obrigada — e “Eu mesmo faço — e “feijão no forno (o prato nacional) — e “charuto de repolho — e “cheira — e “Coma! (formal) — e “Mais um pouquinho? — e “Para mim chega”.'
+  answer:
+    speaker: protagonist
+    text: Не, благодарам … Сам ја правам … тавче гравче … сарма … мирише … Јадете! … Уште малку? … Доста ми е
+  items:
+  - ne-blagodaram
+  - sam-ja-pravam
+  - tavce-gravce
+  - sarma
+  - mirise
+  - jadete
+  - uste-malku
+  - dosta-mi-e
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I''m full (a woman) — and “just one (feminine) — and “then / afterwards — and “cake — and “market — and “cheap — and “How much are…? (plural) — and “the tomatoes”.'
+    pt: 'Diga: “Estou satisfeita — e “só uma — e “depois — e “bolo / doce — e “feira / mercado — e “barato — e “Quanto custam…? — e “os tomates”.'
+  answer:
+    speaker: protagonist
+    text: Сита сум … само една … потоа … колач … пазар … евтино … Колку чинат…? … доматите
+  items:
+  - sita-sum
+  - samo-edna
+  - potoa
+  - kolac
+  - pazar
+  - evtino
+  - kolku-cinat
+  - domatite
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “tomatoes — and “peppers — and “the kilo (per kilo) — and “kilos — and “sixty — and “fifty — and “are (plural) — and “everything”.'
+    pt: 'Diga: “tomates — e “pimentões — e “o quilo — e “quilos — e “sessenta — e “cinquenta — e “são — e “tudo”.'
+  answer:
+    speaker: protagonist
+    text: домати … пиперки … килото … кила … шеесет … педесет … се … сè
+  items:
+  - domati
+  - piperki
+  - kiloto
+  - kila
+  - sezdeset
+  - pedeset
+  - se
+  - sve
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Good morning — and “colleague (a woman) — and “programmer (a woman) — and “Nice to meet you — and “Where are you from? (formal) — and “city — and “big (masculine) — and “desk, table”.'
+    pt: 'Diga: “Bom dia — e “colega (mulher) — e “programadora — e “Muito prazer — e “De onde a senhora é? — e “cidade — e “grande — e “mesa”.'
+  answer:
+    speaker: protagonist
+    text: Добро утро … колешка … програмерка … Мило ми е … Од каде сте? … град … голем … маса
+  items:
+  - dobro-utro
+  - koleska
+  - programerka
+  - milo-mi-e
+  - od-kade-ste
+  - grad
+  - golem
+  - masa
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “my (with a feminine word) — and “your (formal, with a masculine word) — and “computer — and “I work”.'
+    pt: 'Diga: “a minha — e “o seu — e “computador — e “eu trabalho”.'
+  answer:
+    speaker: protagonist
+    text: мојата … вашиот … компјутер … работам
+  items:
+  - mojata
+  - vasiot
+  - kompjuter
+  - rabotam
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

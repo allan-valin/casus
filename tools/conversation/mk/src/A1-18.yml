@@ -1,0 +1,42 @@
+id: A1-18
+protagonist: m
+title: [Food and the kitchen, Comida e cozinha]
+situation: ["You are cooking pasta. Mrs Stojanovska looks in to check.", "Você está cozinhando macarrão. A senhora Stojanovska passa para conferir."]
+learn: [a1-pres-i]
+culture: —
+items:
+  - [sto-gotvite, "Што готвите?", "What are you cooking? (formal)", "O que o senhor está cozinhando?"]
+  - [testenini, "тестенини", "pasta", "macarrão", {rare: true}]
+  - [sporetot, "шпоретот", "the stove", "o fogão", {rare: true}]
+  - [vrie, "врие", "boils / is boiling", "ferve / está fervendo"]
+  - [uste-ne, "уште не", "not yet", "ainda não"]
+  - [koga, "кога", "when", "quando"]
+  - [stavete, "ставете", "put (formal)", "coloque (formal)"]
+  - [sol, "сол", "salt", "sal"]
+  - [gotovo, "Готово", "Done / ready", "Pronto"]
+  - [bravo, "Браво!", "Well done!", "Muito bem!"]
+  - [probajte, "Пробајте", "Try / taste (formal)", "Prove (formal)"]
+dialogue:
+  - [vera, "Добар ден! Што готвите?", "Hello! What are you cooking?", "Boa tarde! O que o senhor está cozinhando?"]
+  - [protagonist, "Тестенини. Водата е на шпоретот.", "Pasta. The water is on the stove.", "Macarrão. A água está no fogão."]
+  - [vera, "Врие ли водата?", "Is the water boiling?", "A água está fervendo?"]
+  - [protagonist, "Не, уште не врие.", "No, it isn't boiling yet.", "Não, ainda não ferveu."]
+  - [vera, "Кога врие, ставете сол. Малку сол, не многу.", "When it boils, put in salt. A little salt, not much.", "Quando ferver, coloque sal. Um pouco, não muito."]
+  - [protagonist, "А шеќер?", "And sugar?", "E açúcar?"]
+  - [vera, "Шеќер во тестенини? Не!", "Sugar in pasta? No!", "Açúcar no macarrão? Não!"]
+  - [protagonist, "Сега врие! Сол... готово. Пробајте!", "Now it's boiling! Salt... done. Try it!", "Agora ferveu! Sal... pronto. Prove!"]
+  - [vera, "Мммм. Браво!", "Mmm. Well done!", "Hum. Muito bem!"]
+teach:
+  - ask: ["Ask her, politely: what are you cooking? (as if she were cooking)", "Pergunte com educação: o que a senhora está cozinhando?", "Што готвите?", sto-gotvite]
+  - ask: ["Say: pasta.", "Diga: macarrão.", "Тестенини.", testenini]
+  - ask: ["Say: the water is on the stove.", "Diga: a água está no fogão.", "Водата е на шпоретот.", na, sporetot]
+  - note: ["'Вода' with 'the' becomes 'водата'. Ask with 'ли': 'Врие ли водата?' — is the water boiling?", "'Вода' com artigo vira 'водата'. Pergunte com 'ли': 'Врие ли водата?' — a água está fervendo?"]
+  - ask: ["Ask: is the water boiling?", "Pergunte: a água está fervendo?", "Врие ли водата?", vrie, voda]
+  - ask: ["Answer: not yet.", "Responda: ainda não.", "Уште не.", uste-ne]
+  - ask: ["Say: when it boils, put in salt.", "Diga: quando ferver, coloque sal.", "Кога врие, ставете сол.", koga, vrie, stavete, sol]
+  - ask: ["Say: a little salt, not much.", "Diga: um pouco de sal, não muito.", "Малку сол, не многу.", malku, sol, mnogu]
+  - ask: ["Ask: and sugar?", "Pergunte: e açúcar?", "А шеќер?", secer]
+  - ask: ["Say: done!", "Diga: pronto!", "Готово!", gotovo]
+  - ask: ["Ask her to try it.", "Peça para ela provar.", "Пробајте!", probajte]
+  - ask: ["She praises you. How?", "Ela elogia você. Como?", "Браво!", bravo]
+  - pt_only: "Açúcar no macarrão é escândalo nos dois países."

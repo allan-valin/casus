@@ -1,0 +1,551 @@
+# UNIT mk A1-18 — written by AI (Claude) for Casus; expanded from src/A1-18.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-18
+level: A1
+number: 18
+protagonist: m
+title:
+  en: Food and the kitchen
+  pt: Comida e cozinha
+situation:
+  en: You are cooking pasta. Mrs Stojanovska looks in to check.
+  pt: Você está cozinhando macarrão. A senhora Stojanovska passa para conferir.
+learn_lessons:
+- a1-pres-i
+culture: —
+new_items:
+- id: sto-gotvite
+  text: Што готвите?
+  meaning:
+    en: What are you cooking? (formal)
+    pt: O que o senhor está cozinhando?
+- id: testenini
+  text: тестенини
+  meaning:
+    en: pasta
+    pt: macarrão
+  rare: true
+- id: sporetot
+  text: шпоретот
+  meaning:
+    en: the stove
+    pt: o fogão
+  rare: true
+- id: vrie
+  text: врие
+  meaning:
+    en: boils / is boiling
+    pt: ferve / está fervendo
+- id: uste-ne
+  text: уште не
+  meaning:
+    en: not yet
+    pt: ainda não
+- id: koga
+  text: кога
+  meaning:
+    en: when
+    pt: quando
+- id: stavete
+  text: ставете
+  meaning:
+    en: put (formal)
+    pt: coloque (formal)
+- id: sol
+  text: сол
+  meaning:
+    en: salt
+    pt: sal
+- id: gotovo
+  text: Готово
+  meaning:
+    en: Done / ready
+    pt: Pronto
+- id: bravo
+  text: Браво!
+  meaning:
+    en: Well done!
+    pt: Muito bem!
+- id: probajte
+  text: Пробајте
+  meaning:
+    en: Try / taste (formal)
+    pt: Prove (formal)
+reviews:
+- item: sto-vi-e
+  from: A1-03
+- item: me-boli
+  from: A1-03
+- item: rakata
+  from: A1-03
+- item: glavata
+  from: A1-03
+- item: nogata
+  from: A1-03
+- item: okoto
+  from: A1-03
+- item: torbata
+  from: A1-03
+- item: teska
+  from: A1-03
+- item: da-vi-pomognam
+  from: A1-03
+- item: i
+  from: A1-03
+- item: lekar
+  from: A1-03
+- item: ne-e-strasno
+  from: A1-03
+- item: odmorete-se
+  from: A1-03
+- item: dobro-sum
+  from: A1-03
+- item: dobro-utro
+  from: A1-11
+- item: koleska
+  from: A1-11
+- item: programerka
+  from: A1-11
+- item: milo-mi-e
+  from: A1-11
+- item: od-kade-ste
+  from: A1-11
+- item: grad
+  from: A1-11
+- item: golem
+  from: A1-11
+- item: masa
+  from: A1-11
+- item: mojata
+  from: A1-11
+- item: vasiot
+  from: A1-11
+- item: kompjuter
+  from: A1-11
+- item: rabotam
+  from: A1-11
+- item: nova
+  from: A1-15
+- item: siroka
+  from: A1-15
+- item: dolga
+  from: A1-15
+- item: kolku-e
+  from: A1-15
+- item: tri
+  from: A1-15
+- item: cetiri
+  from: A1-15
+- item: metri
+  from: A1-15
+- item: pol
+  from: A1-15
+- item: trkalezna
+  from: A1-15
+- item: kvadratna
+  from: A1-15
+- item: povekje
+  from: A1-15
+- item: mesto
+  from: A1-15
+- item: zesko
+  from: A1-17
+- item: otvoren
+  from: A1-17
+- item: vratata
+  from: A1-17
+- item: promaja
+  from: A1-17
+- item: sto-e-toa
+  from: A1-17
+- item: veter
+  from: A1-17
+- item: ke-nastinete
+  from: A1-17
+- item: nema
+  from: A1-17
+- item: klima
+  from: A1-17
+- item: zatvorete
+  from: A1-17
+- item: vednas
+  from: A1-17
+- item: poloso
+  from: A1-17
+- item: malku
+  from: A1-01
+- item: mnogu
+  from: A1-02
+- item: voda
+  from: A1-04
+- item: secer
+  from: A1-07
+- item: na
+  from: A1-16
+steps:
+- type: narrator
+  text:
+    en: You are cooking pasta. Mrs Stojanovska looks in to check. Listen to the conversation; you don't need to understand it yet.
+    pt: Você está cozinhando macarrão. A senhora Stojanovska passa para conferir. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: vera
+    text: Добар ден! Што готвите?
+    meaning:
+      en: Hello! What are you cooking?
+      pt: Boa tarde! O que o senhor está cozinhando?
+  - speaker: protagonist
+    text: Тестенини. Водата е на шпоретот.
+    meaning:
+      en: Pasta. The water is on the stove.
+      pt: Macarrão. A água está no fogão.
+  - speaker: vera
+    text: Врие ли водата?
+    meaning:
+      en: Is the water boiling?
+      pt: A água está fervendo?
+  - speaker: protagonist
+    text: Не, уште не врие.
+    meaning:
+      en: No, it isn't boiling yet.
+      pt: Não, ainda não ferveu.
+  - speaker: vera
+    text: Кога врие, ставете сол. Малку сол, не многу.
+    meaning:
+      en: When it boils, put in salt. A little salt, not much.
+      pt: Quando ferver, coloque sal. Um pouco, não muito.
+  - speaker: protagonist
+    text: А шеќер?
+    meaning:
+      en: And sugar?
+      pt: E açúcar?
+  - speaker: vera
+    text: Шеќер во тестенини? Не!
+    meaning:
+      en: Sugar in pasta? No!
+      pt: Açúcar no macarrão? Não!
+  - speaker: protagonist
+    text: Сега врие! Сол... готово. Пробајте!
+    meaning:
+      en: Now it's boiling! Salt... done. Try it!
+      pt: Agora ferveu! Sal... pronto. Prove!
+  - speaker: vera
+    text: Мммм. Браво!
+    meaning:
+      en: Mmm. Well done!
+      pt: Hum. Muito bem!
+- type: prompt
+  ask:
+    en: 'Ask her, politely: what are you cooking? (as if she were cooking)'
+    pt: 'Pergunte com educação: o que a senhora está cozinhando?'
+  answer:
+    speaker: protagonist
+    text: Што готвите?
+  items:
+  - sto-gotvite
+- type: prompt
+  ask:
+    en: 'Say: pasta.'
+    pt: 'Diga: macarrão.'
+  answer:
+    speaker: protagonist
+    text: Тестенини.
+  items:
+  - testenini
+- type: prompt
+  ask:
+    en: 'Say: the water is on the stove.'
+    pt: 'Diga: a água está no fogão.'
+  answer:
+    speaker: protagonist
+    text: Водата е на шпоретот.
+  items:
+  - na
+  - sporetot
+- type: narrator
+  text:
+    en: '''Вода'' with ''the'' becomes ''водата''. Ask with ''ли'': ''Врие ли водата?'' — is the water boiling?'
+    pt: '''Вода'' com artigo vira ''водата''. Pergunte com ''ли'': ''Врие ли водата?'' — a água está fervendo?'
+- type: prompt
+  ask:
+    en: 'Ask: is the water boiling?'
+    pt: 'Pergunte: a água está fervendo?'
+  answer:
+    speaker: protagonist
+    text: Врие ли водата?
+  items:
+  - vrie
+  - voda
+- type: prompt
+  ask:
+    en: 'Answer: not yet.'
+    pt: 'Responda: ainda não.'
+  answer:
+    speaker: protagonist
+    text: Уште не.
+  items:
+  - uste-ne
+- type: prompt
+  ask:
+    en: 'Say: when it boils, put in salt.'
+    pt: 'Diga: quando ferver, coloque sal.'
+  answer:
+    speaker: protagonist
+    text: Кога врие, ставете сол.
+  items:
+  - koga
+  - vrie
+  - stavete
+  - sol
+- type: prompt
+  ask:
+    en: 'Say: a little salt, not much.'
+    pt: 'Diga: um pouco de sal, não muito.'
+  answer:
+    speaker: protagonist
+    text: Малку сол, не многу.
+  items:
+  - malku
+  - sol
+  - mnogu
+- type: prompt
+  ask:
+    en: 'Ask: and sugar?'
+    pt: 'Pergunte: e açúcar?'
+  answer:
+    speaker: protagonist
+    text: А шеќер?
+  items:
+  - secer
+- type: prompt
+  ask:
+    en: 'Say: done!'
+    pt: 'Diga: pronto!'
+  answer:
+    speaker: protagonist
+    text: Готово!
+  items:
+  - gotovo
+- type: prompt
+  ask:
+    en: Ask her to try it.
+    pt: Peça para ela provar.
+  answer:
+    speaker: protagonist
+    text: Пробајте!
+  items:
+  - probajte
+- type: prompt
+  ask:
+    en: She praises you. How?
+    pt: Ela elogia você. Como?
+  answer:
+    speaker: protagonist
+    text: Браво!
+  items:
+  - bravo
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: Açúcar no macarrão é escândalo nos dois países.
+- type: prompt
+  ask:
+    en: 'Once more: say “What are you cooking? (formal)”.'
+    pt: 'Mais uma vez: diga “O que o senhor está cozinhando?”.'
+  answer:
+    speaker: protagonist
+    text: Што готвите?
+  items:
+  - sto-gotvite
+- type: prompt
+  ask:
+    en: 'Once more: say “pasta”.'
+    pt: 'Mais uma vez: diga “macarrão”.'
+  answer:
+    speaker: protagonist
+    text: тестенини
+  items:
+  - testenini
+- type: prompt
+  ask:
+    en: 'Once more: say “the stove”.'
+    pt: 'Mais uma vez: diga “o fogão”.'
+  answer:
+    speaker: protagonist
+    text: шпоретот
+  items:
+  - sporetot
+- type: prompt
+  ask:
+    en: 'Once more: say “not yet”.'
+    pt: 'Mais uma vez: diga “ainda não”.'
+  answer:
+    speaker: protagonist
+    text: уште не
+  items:
+  - uste-ne
+- type: prompt
+  ask:
+    en: 'Once more: say “when”.'
+    pt: 'Mais uma vez: diga “quando”.'
+  answer:
+    speaker: protagonist
+    text: кога
+  items:
+  - koga
+- type: prompt
+  ask:
+    en: 'Once more: say “put (formal)”.'
+    pt: 'Mais uma vez: diga “coloque (formal)”.'
+  answer:
+    speaker: protagonist
+    text: ставете
+  items:
+  - stavete
+- type: prompt
+  ask:
+    en: 'Once more: say “Done / ready”.'
+    pt: 'Mais uma vez: diga “Pronto”.'
+  answer:
+    speaker: protagonist
+    text: Готово
+  items:
+  - gotovo
+- type: prompt
+  ask:
+    en: 'Once more: say “Well done!”.'
+    pt: 'Mais uma vez: diga “Muito bem!”.'
+  answer:
+    speaker: protagonist
+    text: Браво!
+  items:
+  - bravo
+- type: prompt
+  ask:
+    en: 'Once more: say “Try / taste (formal)”.'
+    pt: 'Mais uma vez: diga “Prove (formal)”.'
+  answer:
+    speaker: protagonist
+    text: Пробајте
+  items:
+  - probajte
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “hot — and “open (masculine) — and “the door — and “a draft (air flowing through) — and “What is that? — and “wind — and “You''ll catch a cold! (formal) — and “there isn''t / there''s no —
+      and “air conditioning”.'
+    pt: 'Diga: “quente (calor) — e “aberto — e “a porta — e “corrente de ar — e “O que é isso? — e “vento — e “A senhora vai se resfriar! — e “não tem / não há — e “ar-condicionado”.'
+  answer:
+    speaker: protagonist
+    text: жешко … отворен … вратата … промаја … Што е тоа? … ветер … Ќе настинете! … нема … клима
+  items:
+  - zesko
+  - otvoren
+  - vratata
+  - promaja
+  - sto-e-toa
+  - veter
+  - ke-nastinete
+  - nema
+  - klima
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Close (formal) — and “right away — and “Even worse! — and “new (feminine) — and “wide (feminine) — and “long (feminine) — and “How … is it? — and “three — and “four”.'
+    pt: 'Diga: “Feche (formal) — e “já / agora mesmo — e “Pior ainda! — e “nova — e “larga — e “comprida — e “Quanto tem…? / Qual é…? — e “três — e “quatro”.'
+  answer:
+    speaker: protagonist
+    text: Затворете … веднаш … Уште полошо! … нова … широка … долга … Колку е…? … три … четири
+  items:
+  - zatvorete
+  - vednas
+  - poloso
+  - nova
+  - siroka
+  - dolga
+  - kolku-e
+  - tri
+  - cetiri
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “metres — and “half — and “round (feminine) — and “square (feminine) — and “more — and “space, place — and “Good morning — and “colleague (a woman) — and “programmer (a woman)”.'
+    pt: 'Diga: “metros — e “meio — e “redonda — e “quadrada — e “mais — e “espaço, lugar — e “Bom dia — e “colega (mulher) — e “programadora”.'
+  answer:
+    speaker: protagonist
+    text: метри … пол … тркалезна … квадратна … повеќе … место … Добро утро … колешка … програмерка
+  items:
+  - metri
+  - pol
+  - trkalezna
+  - kvadratna
+  - povekje
+  - mesto
+  - dobro-utro
+  - koleska
+  - programerka
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Nice to meet you — and “Where are you from? (formal) — and “city — and “big (masculine) — and “desk, table — and “my (with a feminine word) — and “your (formal, with a masculine word) — and
+      “computer — and “I work”.'
+    pt: 'Diga: “Muito prazer — e “De onde a senhora é? — e “cidade — e “grande — e “mesa — e “a minha — e “o seu — e “computador — e “eu trabalho”.'
+  answer:
+    speaker: protagonist
+    text: Мило ми е … Од каде сте? … град … голем … маса … мојата … вашиот … компјутер … работам
+  items:
+  - milo-mi-e
+  - od-kade-ste
+  - grad
+  - golem
+  - masa
+  - mojata
+  - vasiot
+  - kompjuter
+  - rabotam
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “What''s wrong? (formal) — and “… hurts (me) — and “the arm / the hand — and “the head — and “the leg / the foot — and “the eye — and “the bag — and “heavy (with a feminine word) — and “Can
+      I help you? (formal)”.'
+    pt: 'Diga: “O que a senhora tem? (formal) — e “Me dói… — e “o braço / a mão — e “a cabeça — e “a perna / o pé — e “o olho — e “a sacola — e “pesada (com palavra feminina) — e “Posso ajudar a senhora?
+      (formal)”.'
+  answer:
+    speaker: protagonist
+    text: Што ви е? … Ме боли … раката … главата … ногата … окото … торбата … тешка … Да ви помогнам?
+  items:
+  - sto-vi-e
+  - me-boli
+  - rakata
+  - glavata
+  - nogata
+  - okoto
+  - torbata
+  - teska
+  - da-vi-pomognam
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “and / also — and “doctor — and “It''s nothing serious — and “Rest (formal) — and “I''m fine”.'
+    pt: 'Diga: “e / também — e “médico — e “Não é nada grave — e “Descanse (formal) — e “Estou bem”.'
+  answer:
+    speaker: protagonist
+    text: и … лекар … Не е страшно … Одморете се … Добро сум
+  items:
+  - i
+  - lekar
+  - ne-e-strasno
+  - odmorete-se
+  - dobro-sum
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

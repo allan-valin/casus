@@ -1,0 +1,548 @@
+# UNIT mk A1-19 — written by AI (Claude) for Casus; expanded from src/A1-19.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-19
+level: A1
+number: 19
+protagonist: f
+title:
+  en: The market
+  pt: A feira
+situation:
+  en: Saturday at Bit Pazar, the big market, with Marko.
+  pt: Sábado no Bit Pazar, a grande feira, com o Marko.
+learn_lessons:
+- a1-plural
+culture: Bargaining a little at the market
+new_items:
+- id: pazar
+  text: пазар
+  meaning:
+    en: market
+    pt: feira / mercado
+- id: evtino
+  text: евтино
+  meaning:
+    en: cheap
+    pt: barato
+- id: skapo
+  text: скапо
+  meaning:
+    en: expensive
+    pt: caro
+- id: kolku-cinat
+  text: Колку чинат…?
+  meaning:
+    en: How much are…? (plural)
+    pt: Quanto custam…?
+- id: domatite
+  text: доматите
+  meaning:
+    en: the tomatoes
+    pt: os tomates
+  rare: true
+- id: domati
+  text: домати
+  meaning:
+    en: tomatoes
+    pt: tomates
+  rare: true
+- id: piperki
+  text: пиперки
+  meaning:
+    en: peppers
+    pt: pimentões
+  rare: true
+- id: kiloto
+  text: килото
+  meaning:
+    en: the kilo (per kilo)
+    pt: o quilo
+  rare: true
+- id: kila
+  text: кила
+  meaning:
+    en: kilos
+    pt: quilos
+  rare: true
+- id: sezdeset
+  text: шеесет
+  meaning:
+    en: sixty
+    pt: sessenta
+- id: pedeset
+  text: педесет
+  meaning:
+    en: fifty
+    pt: cinquenta
+- id: se
+  text: се
+  meaning:
+    en: are (plural)
+    pt: são
+- id: sve
+  text: сè
+  meaning:
+    en: everything
+    pt: tudo
+  rare: true
+reviews:
+- item: leb
+  from: A1-04
+- item: mleko
+  from: A1-04
+- item: voda
+  from: A1-04
+- item: imate-li
+  from: A1-04
+- item: imame
+  from: A1-04
+- item: eden
+  from: A1-04
+- item: dve
+  from: A1-04
+- item: ve-molam
+  from: A1-04
+- item: uste-nesto
+  from: A1-04
+- item: toa-e-se
+  from: A1-04
+- item: kolku-cini
+  from: A1-04
+- item: denari
+  from: A1-04
+- item: sto
+  from: A1-04
+- item: kese
+  from: A1-04
+- item: prijatno
+  from: A1-04
+- item: zdravo
+  from: A1-12
+- item: ti-si
+  from: A1-12
+- item: sosed
+  from: A1-12
+- item: kuce
+  from: A1-12
+- item: ne-se-plasi
+  from: A1-12
+- item: ne-kasa
+  from: A1-12
+- item: kako-se-vika
+  from: A1-12
+- item: se-vika
+  from: A1-12
+- item: imas-li
+  from: A1-12
+- item: macka
+  from: A1-12
+- item: super
+  from: A1-12
+- item: tvojot
+  from: A1-16
+- item: mojot
+  from: A1-16
+- item: velosiped
+  from: A1-16
+- item: kola
+  from: A1-16
+- item: devojka
+  from: A1-16
+- item: taa
+  from: A1-16
+- item: kat
+  from: A1-16
+- item: na
+  from: A1-16
+- item: tretiot
+  from: A1-16
+- item: vtoriot
+  from: A1-16
+- item: nie-sme
+  from: A1-16
+- item: znaci
+  from: A1-16
+- item: tvojata
+  from: A1-16
+- item: sto-gotvite
+  from: A1-18
+- item: testenini
+  from: A1-18
+- item: sporetot
+  from: A1-18
+- item: vrie
+  from: A1-18
+- item: uste-ne
+  from: A1-18
+- item: koga
+  from: A1-18
+- item: stavete
+  from: A1-18
+- item: sol
+  from: A1-18
+- item: gotovo
+  from: A1-18
+- item: bravo
+  from: A1-18
+- item: probajte
+  from: A1-18
+- item: tuka
+  from: A1-02
+- item: i
+  from: A1-03
+steps:
+- type: narrator
+  text:
+    en: Saturday at Bit Pazar, the big market, with Marko. Listen to the conversation; you don't need to understand it yet.
+    pt: Sábado no Bit Pazar, a grande feira, com o Marko. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: marko
+    text: Ова е Бит Пазар. Тука сè е евтино.
+    meaning:
+      en: This is Bit Pazar. Everything is cheap here.
+      pt: Isto é o Bit Pazar. Aqui tudo é barato.
+  - speaker: protagonist
+    text: Добар ден. Колку чинат доматите?
+    meaning:
+      en: Hello. How much are the tomatoes?
+      pt: Bom dia. Quanto custam os tomates?
+  - speaker: seller
+    text: Шеесет денари килото.
+    meaning:
+      en: Sixty denars a kilo.
+      pt: Sessenta dinares o quilo.
+  - speaker: protagonist
+    text: Скапо е! Педесет?
+    meaning:
+      en: That's expensive! Fifty?
+      pt: Está caro! Cinquenta?
+  - speaker: seller
+    text: Добро, педесет. Колку кила?
+    meaning:
+      en: All right, fifty. How many kilos?
+      pt: Está bem, cinquenta. Quantos quilos?
+  - speaker: protagonist
+    text: Две кила домати и едно кило пиперки.
+    meaning:
+      en: Two kilos of tomatoes and one kilo of peppers.
+      pt: Dois quilos de tomate e um quilo de pimentão.
+  - speaker: seller
+    text: Пиперките се убави, од Струмица.
+    meaning:
+      en: The peppers are lovely, from Strumica.
+      pt: Os pimentões são ótimos, de Strumica.
+  - speaker: marko
+    text: Браво! Добро се пазариш!
+    meaning:
+      en: Well done! You bargain well!
+      pt: Muito bem! Você sabe pechinchar!
+- type: narrator
+  text:
+    en: 'Plural: most words take -и: домат → домати, пиперка → пиперки. With ''the'': доматите, пиперките.'
+    pt: 'Plural: a maioria das palavras leva -и: домат → домати, пиперка → пиперки. Com artigo: доматите (os tomates), пиперките.'
+- type: prompt
+  ask:
+    en: 'Say: this is the market. Everything is cheap.'
+    pt: 'Diga: esta é a feira. Tudo é barato.'
+  answer:
+    speaker: protagonist
+    text: Ова е пазар. Сè е евтино.
+  items:
+  - pazar
+  - sve
+  - evtino
+- type: prompt
+  ask:
+    en: Ask how much the tomatoes are.
+    pt: Pergunte quanto custam os tomates.
+  answer:
+    speaker: protagonist
+    text: Колку чинат доматите?
+  items:
+  - kolku-cinat
+  - domatite
+- type: prompt
+  ask:
+    en: She says sixty a kilo. How?
+    pt: Ela diz sessenta o quilo. Como?
+  answer:
+    speaker: protagonist
+    text: Шеесет денари килото.
+  items:
+  - sezdeset
+  - denari
+  - kiloto
+- type: narrator
+  text:
+    en: At the market, offering a bit less is normal — once, with a smile. In shops with price tags, no.
+    pt: Na feira, oferecer um pouco menos é normal — uma vez, sorrindo. Em loja com etiqueta de preço, não.
+- type: prompt
+  ask:
+    en: Say it's expensive and offer fifty.
+    pt: Diga que está caro e ofereça cinquenta.
+  answer:
+    speaker: protagonist
+    text: Скапо е! Педесет?
+  items:
+  - skapo
+  - pedeset
+- type: prompt
+  ask:
+    en: Ask for two kilos of tomatoes.
+    pt: Peça dois quilos de tomate.
+  answer:
+    speaker: protagonist
+    text: Две кила домати.
+  items:
+  - dve
+  - kila
+  - domati
+- type: prompt
+  ask:
+    en: And one kilo of peppers.
+    pt: E um quilo de pimentão.
+  answer:
+    speaker: protagonist
+    text: И едно кило пиперки.
+  items:
+  - i
+  - piperki
+- type: prompt
+  ask:
+    en: 'Say: the peppers are lovely.'
+    pt: 'Diga: os pimentões são ótimos.'
+  answer:
+    speaker: protagonist
+    text: Пиперките се убави.
+  items:
+  - piperki
+  - se
+- type: prompt
+  ask:
+    en: 'Say: it''s cheap here.'
+    pt: 'Diga: aqui é barato.'
+  answer:
+    speaker: protagonist
+    text: Тука е евтино.
+  items:
+  - tuka
+  - evtino
+- type: prompt
+  ask:
+    en: Ask how much the peppers are.
+    pt: Pergunte quanto custam os pimentões.
+  answer:
+    speaker: protagonist
+    text: Колку чинат пиперките?
+  items:
+  - kolku-cinat
+  - piperki
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'Como na feira daqui do Brasil: chegue cedo, e o fim da feira é mais barato.'
+- type: prompt
+  ask:
+    en: 'Once more: say “market”.'
+    pt: 'Mais uma vez: diga “feira / mercado”.'
+  answer:
+    speaker: protagonist
+    text: пазар
+  items:
+  - pazar
+- type: prompt
+  ask:
+    en: 'Once more: say “expensive”.'
+    pt: 'Mais uma vez: diga “caro”.'
+  answer:
+    speaker: protagonist
+    text: скапо
+  items:
+  - skapo
+- type: prompt
+  ask:
+    en: 'Once more: say “the tomatoes”.'
+    pt: 'Mais uma vez: diga “os tomates”.'
+  answer:
+    speaker: protagonist
+    text: доматите
+  items:
+  - domatite
+- type: prompt
+  ask:
+    en: 'Once more: say “tomatoes”.'
+    pt: 'Mais uma vez: diga “tomates”.'
+  answer:
+    speaker: protagonist
+    text: домати
+  items:
+  - domati
+- type: prompt
+  ask:
+    en: 'Once more: say “the kilo (per kilo)”.'
+    pt: 'Mais uma vez: diga “o quilo”.'
+  answer:
+    speaker: protagonist
+    text: килото
+  items:
+  - kiloto
+- type: prompt
+  ask:
+    en: 'Once more: say “kilos”.'
+    pt: 'Mais uma vez: diga “quilos”.'
+  answer:
+    speaker: protagonist
+    text: кила
+  items:
+  - kila
+- type: prompt
+  ask:
+    en: 'Once more: say “sixty”.'
+    pt: 'Mais uma vez: diga “sessenta”.'
+  answer:
+    speaker: protagonist
+    text: шеесет
+  items:
+  - sezdeset
+- type: prompt
+  ask:
+    en: 'Once more: say “fifty”.'
+    pt: 'Mais uma vez: diga “cinquenta”.'
+  answer:
+    speaker: protagonist
+    text: педесет
+  items:
+  - pedeset
+- type: prompt
+  ask:
+    en: 'Once more: say “are (plural)”.'
+    pt: 'Mais uma vez: diga “são”.'
+  answer:
+    speaker: protagonist
+    text: се
+  items:
+  - se
+- type: prompt
+  ask:
+    en: 'Once more: say “everything”.'
+    pt: 'Mais uma vez: diga “tudo”.'
+  answer:
+    speaker: protagonist
+    text: сè
+  items:
+  - sve
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “What are you cooking? (formal) — and “pasta — and “the stove — and “boils / is boiling — and “not yet — and “when — and “put (formal) — and “salt”.'
+    pt: 'Diga: “O que o senhor está cozinhando? — e “macarrão — e “o fogão — e “ferve / está fervendo — e “ainda não — e “quando — e “coloque (formal) — e “sal”.'
+  answer:
+    speaker: protagonist
+    text: Што готвите? … тестенини … шпоретот … врие … уште не … кога … ставете … сол
+  items:
+  - sto-gotvite
+  - testenini
+  - sporetot
+  - vrie
+  - uste-ne
+  - koga
+  - stavete
+  - sol
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Done / ready — and “Well done! — and “Try / taste (formal) — and “your (informal, with a masculine word) — and “my (with a masculine word) — and “bicycle — and “car — and “girlfriend / girl”.'
+    pt: 'Diga: “Pronto — e “Muito bem! — e “Prove (formal) — e “o seu / o teu (informal, palavra masculina) — e “o meu — e “bicicleta — e “carro — e “namorada / moça”.'
+  answer:
+    speaker: protagonist
+    text: Готово … Браво! … Пробајте … твојот … мојот … велосипед … кола … девојка
+  items:
+  - gotovo
+  - bravo
+  - probajte
+  - tvojot
+  - mojot
+  - velosiped
+  - kola
+  - devojka
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “she — and “floor (storey) — and “on / at — and “the third — and “the second — and “we are — and “so / that means — and “your (informal, with a feminine word)”.'
+    pt: 'Diga: “ela — e “andar — e “em / no — e “o terceiro — e “o segundo — e “nós somos — e “então / quer dizer — e “a sua / a tua (informal, palavra feminina)”.'
+  answer:
+    speaker: protagonist
+    text: таа … кат … на … третиот … вториот … ние сме … значи … твојата
+  items:
+  - taa
+  - kat
+  - na
+  - tretiot
+  - vtoriot
+  - nie-sme
+  - znaci
+  - tvojata
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Hi / hello (informal) — and “Are you…? (informal) — and “neighbour (a man) — and “dog — and “Don''t be afraid (informal) — and “doesn''t bite — and “What''s its / his name? — and “is called”.'
+    pt: 'Diga: “Oi — e “Você é…? — e “vizinho — e “cachorro — e “Não tenha medo — e “não morde — e “Como se chama? — e “se chama”.'
+  answer:
+    speaker: protagonist
+    text: Здраво … Ти си…? … сосед … куче … Не се плаши … не каса … Како се вика? … се вика
+  items:
+  - zdravo
+  - ti-si
+  - sosed
+  - kuce
+  - ne-se-plasi
+  - ne-kasa
+  - kako-se-vika
+  - se-vika
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Do you have…? (informal) — and “cat — and “Great — and “bread — and “milk — and “water — and “Do you have…? (formal) — and “We have”.'
+    pt: 'Diga: “Você tem…? — e “gato — e “Legal / ótimo — e “pão — e “leite — e “água — e “O senhor tem…? (formal) — e “Temos”.'
+  answer:
+    speaker: protagonist
+    text: Имаш ли…? … мачка … Супер … леб … млеко … вода … Имате ли…? … Имаме
+  items:
+  - imas-li
+  - macka
+  - super
+  - leb
+  - mleko
+  - voda
+  - imate-li
+  - imame
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “one (with a masculine word) — and “please (formal) — and “Anything else? — and “That''s all — and “How much is it? — and “a hundred — and “a (plastic) bag — and “Have a nice day! / Enjoy!”.'
+    pt: 'Diga: “um — e “por favor (formal) — e “Mais alguma coisa? — e “É só isso — e “Quanto custa? — e “cem — e “uma sacolinha — e “Bom dia! / Bom proveito!”.'
+  answer:
+    speaker: protagonist
+    text: еден … ве молам … Уште нешто? … Тоа е сè … Колку чини? … сто … кесе … Пријатно!
+  items:
+  - eden
+  - ve-molam
+  - uste-nesto
+  - toa-e-se
+  - kolku-cini
+  - sto
+  - kese
+  - prijatno
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

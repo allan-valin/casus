@@ -1,0 +1,43 @@
+id: A1-20
+protagonist: m
+title: [The days of the week, Os dias da semana]
+situation: ["Ana needs a day for a meeting with a client.", "A Ana precisa marcar um dia para uma reunião com um cliente."]
+learn: [a1-days, a1-negation]
+culture: —
+items:
+  - [sostanok, "состанок", "meeting", "reunião"]
+  - [koga-imas-vreme, "Кога имаш време?", "When do you have time? (informal)", "Quando você tem tempo?"]
+  - [nemam-vreme, "немам време", "I don't have time", "não tenho tempo"]
+  - [utre, "утре", "tomorrow", "amanhã"]
+  - [sreda, "среда", "Wednesday", "quarta-feira", {rare: true}]
+  - [ne-mozam, "не можам", "I can't", "não posso"]
+  - [cetvrtok, "четврток", "Thursday", "quinta-feira", {rare: true}]
+  - [petok, "петок", "Friday", "sexta-feira"]
+  - [podobro, "подобро", "better", "melhor"]
+  - [sabota, "сабота", "Saturday", "sábado"]
+  - [nedela, "недела", "Sunday", "domingo"]
+  - [ponedelnik, "понеделник", "Monday", "segunda-feira"]
+  - [vtornik, "вторник", "Tuesday", "terça-feira", {rare: true}]
+  - [rabota, "работа", "work", "trabalho"]
+dialogue:
+  - [ana, "Имаме состанок со клиентот. Кога имаш време?", "We have a meeting with the client. When do you have time?", "Temos reunião com o cliente. Quando você tem tempo?"]
+  - [protagonist, "Денеска немам време. Утре?", "Today I don't have time. Tomorrow?", "Hoje não tenho tempo. Amanhã?"]
+  - [ana, "Утре е среда. Во среда не можам.", "Tomorrow is Wednesday. On Wednesday I can't.", "Amanhã é quarta. Na quarta não posso."]
+  - [protagonist, "Во четврток?", "On Thursday?", "Na quinta?"]
+  - [ana, "Четврток може. Или петок.", "Thursday works. Or Friday.", "Quinta pode. Ou sexta."]
+  - [protagonist, "Петок е подобро.", "Friday is better.", "Sexta é melhor."]
+  - [ana, "Добро, во петок. Понеделник и вторник се тешки денови.", "Fine, on Friday. Monday and Tuesday are hard days.", "Combinado, na sexta. Segunda e terça são dias pesados."]
+  - [protagonist, "А сабота и недела — викенд, нема работа!", "And Saturday and Sunday — weekend, no work!", "E sábado e domingo — fim de semana, sem trabalho!"]
+teach:
+  - note: ["The days, from Monday: понеделник, вторник, среда, четврток, петок, сабота, недела. 'On Friday' is 'во петок'.", "Os dias, a partir de segunda: понеделник, вторник, среда, четврток, петок, сабота, недела. 'Na sexta' é 'во петок'."]
+  - pt_only: "Repare: четврток e петок vêm de 'quarto' e 'quinto' — como a nossa quarta, quinta e sexta-feira, contando os dias."
+  - ask: ["Say: we have a meeting.", "Diga: temos uma reunião.", "Имаме состанок.", imame, sostanok]
+  - ask: ["Ask her when she has time.", "Pergunte quando ela tem tempo.", "Кога имаш време?", koga-imas-vreme]
+  - ask: ["Say: today I don't have time.", "Diga: hoje não tenho tempo.", "Денеска немам време.", denes, nemam-vreme]
+  - ask: ["Suggest tomorrow.", "Sugira amanhã.", "Утре?", utre]
+  - ask: ["Say: on Wednesday I can't.", "Diga: na quarta não posso.", "Во среда не можам.", sreda, ne-mozam]
+  - ask: ["Suggest Thursday.", "Sugira quinta.", "Во четврток?", vo, cetvrtok]
+  - ask: ["Say: Friday is better.", "Diga: sexta é melhor.", "Петок е подобро.", petok, podobro]
+  - ask: ["Say: Monday and Tuesday.", "Diga: segunda e terça.", "Понеделник и вторник.", ponedelnik, vtornik]
+  - ask: ["Say: Saturday and Sunday, no work!", "Diga: sábado e domingo, sem trabalho!", "Сабота и недела, нема работа!", sabota, nedela, nema, rabota]
+  - ask: ["Say you can't on Monday.", "Diga que na segunda não pode.", "Во понеделник не можам.", ponedelnik, ne-mozam]
