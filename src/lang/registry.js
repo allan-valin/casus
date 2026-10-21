@@ -26,6 +26,7 @@ import { ukrainian } from './uk/index.js';
 import { lithuanian } from './lt/index.js';
 import { hebrew } from './he/index.js';
 import { serboCroatian } from './sh/index.js';
+import { romanian } from './ro/index.js';
 import { english } from './en/index.js';
 
 export const LANGUAGES = [
@@ -55,10 +56,11 @@ export const LANGUAGES = [
   { code: 'lt', path: '/lt/', name: { en: 'Lithuanian', pt: 'Lituano' } },
   { code: 'he', path: '/he/', name: { en: 'Hebrew', pt: 'Hebraico' } },
   { code: 'sh', path: '/sh/', name: { en: 'Serbo-Croatian', pt: 'Servo-croata' } },
+  { code: 'ro', path: '/ro/', name: { en: 'Romanian', pt: 'Romeno' } },
   { code: 'en', path: '/en/', name: { en: 'English', pt: 'Inglês' } },
 ];
 
-const DEFINITIONS = { la: latin, grc: greek, de: german, ja: japanese, ar: arabic, ru: russian, ko: korean, zh: chinese, mk: macedonian, fi: finnish, el: modernGreek, sa: sanskrit, cs: czech, pl: polish, is: icelandic, tr: turkish, hu: hungarian, pt: portuguese, fr: french, es: spanish, it: italian, nl: dutch, uk: ukrainian, lt: lithuanian, he: hebrew, sh: serboCroatian, en: english };
+const DEFINITIONS = { la: latin, grc: greek, de: german, ja: japanese, ar: arabic, ru: russian, ko: korean, zh: chinese, mk: macedonian, fi: finnish, el: modernGreek, sa: sanskrit, cs: czech, pl: polish, is: icelandic, tr: turkish, hu: hungarian, pt: portuguese, fr: french, es: spanish, it: italian, nl: dutch, uk: ukrainian, lt: lithuanian, he: hebrew, sh: serboCroatian, ro: romanian, en: english };
 
 // names in every interface language (src/lang/names.js), filled in where a language has none of its own
 for (const l of [...LANGUAGES, ...Object.values(DEFINITIONS)]) if (l?.name && NAMES[l.code]) l.name = { ...NAMES[l.code], ...l.name };

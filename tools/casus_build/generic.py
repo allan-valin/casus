@@ -182,6 +182,8 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
                     tags = {"past" if "past" in tags else "present", "indicative", {"1": "first-person", "2": "second-person", "3": "third-person"}[person],
                             {"sg": "singular", "pl": "plural"}[number]}
             skip = SKIP - {"error-unrecognized-form"} if pos in ("pron", "det", "num") else SKIP
+            if cfg.code == "ro" and pos == "adj":
+                skip = skip - {"error-unrecognized-form"}      # Romanian adjective tables come untagged for case
             if pos == "verb" and "participle" in tags:
                 # the Slavic past is the l-participle by gender and number (Czech byl, byla); other participles are
                 # kept as participles (Turkish yüzen "swimming")
@@ -199,6 +201,12 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
             if cfg.code == "tr" and pos == "verb" and tags & set(PERSONS):
                 person, number = turkish_person(text)            # the table's own person tags are a row off
                 tags = (tags - set(PERSONS) - set(NUMBERS)) | {{"1": "first-person", "2": "second-person", "3": "third-person"}[person], {"sg": "singular", "pl": "plural"}[number]}
+            if cfg.code == "ro" and pos in ("noun", "adj", "pron", "det", "num"):
+                for tg in _ro_cases(tags, text):
+                    a = analysis(cfg, pos, tg, gender)
+                    if a:
+                        cells.append((text, a))
+                continue
             a = analysis(cfg, pos, tags, gender)
             if a:
                 if owner:
@@ -236,6 +244,24 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
         base = next((f.get("word") for x in senses for f in (x.get("form_of") or []) if f.get("word")), None) if form_of else None
         yield {"id": i, "headword": word, "pos": pos, "gender": gender, "cells": cells, "gloss_en": gloss, "ipa": ipa[:3], "form_of": bool(form_of),
                **({"form_of_word": base} if base else {})}
+
+
+_RO_CASES = ("nominative", "accusative", "genitive", "dative", "vocative")
+
+
+def _ro_cases(tags: set, text: str) -> list[set]:
+    """Romanian cells name two cases at once (nominative-accusative, genitive-dative): one reading each; adjective
+    cells name none, so the ending decides (-ului, -ei, -lor: genitive-dative)"""
+    have = [c for c in _RO_CASES if c in tags]
+    base = tags - set(_RO_CASES) - {"error-unrecognized-form"}
+    if not have:
+        have = ["genitive", "dative"] if text.lower().endswith(("ului", "ei", "lor")) else ["nominative", "accusative"]
+    return [base | {c} for c in have]
+
+
+def _key_ro(s: str) -> str:
+    """Romanian keys: lower case, the old cedilla letters ş ţ folded into the comma ones ș ț (mirror of src/lang/ro/script.js)"""
+    return s.lower().replace("ş", "ș").replace("ţ", "ț")
 
 
 def _lt_verb_cells(forms: list[dict], word: str) -> list:
@@ -403,6 +429,7 @@ def _strip_sh(s: str) -> str:
     return strip_sh(s)
 
 
+CONFIGS["ro"] = Config("ro", ["nom", "acc", "gen", "dat", "voc"], {"nominative": "nom", "accusative": "acc", "genitive": "gen", "dative": "dat", "vocative": "voc"}, key=_key_ro)
 CONFIGS["sh"] = Config("sh", ["nom", "gen", "dat", "acc", "voc", "loc", "ins"], SLAVIC_TAGS, key=_strip_sh)
 CONFIGS["he"] = Config("he", [], {}, caseless=True, key=_strip_he, clean=lambda t: t.replace("\u05BE", ""))
 CONFIGS["lt"] = Config("lt", ["nom", "gen", "dat", "acc", "ins", "loc", "voc"], SLAVIC_TAGS, key=_strip_lt)
