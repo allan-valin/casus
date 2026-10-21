@@ -1,0 +1,200 @@
+id: A1
+topics:
+
+- title: {en: Sounds and letters, pt: Sons e letras}
+  lessons:
+  - id: sh-alphabet
+    title: č ć dž đ š ž lj nj — ч ћ џ ђ ш ж љ њ
+    meaning: {en: "two alphabets, one sound per letter", pt: "dois alfabetos, um som por letra"}
+    intro:
+      en: |
+        Serbo-Croatian is written as it is spoken, in Latin or Cyrillic, letter for letter: **č / ч** (*ch*, hard), **ć / ћ** (*ch*, soft), **dž / џ** (*j*, hard), **đ / ђ** (*j*, soft), **š / ш** (*sh*), **ž / ж** (*zh*), **lj / љ, nj / њ** (*lli, ny*), **c / ц** (*ts*), **j / ј** (*y*). Croatia and Bosnia write mostly Latin; Serbia and Montenegro both. The reader reads both.
+      pt: |
+        O servo-croata se escreve como se fala, em latino ou cirílico, letra por letra: **č / ч** (*tch* duro), **ć / ћ** (*tch* suave), **dž / џ** (*dj* duro), **đ / ђ** (*dj* suave), **š / ш** (*ch*), **ž / ж** (*j*), **lj / љ, nj / њ** (*lh, nh*), **c / ц** (*ts*), **j / ј** (*i*). A Croácia e a Bósnia escrevem sobretudo em latino; a Sérvia e Montenegro, nos dois. O leitor lê os dois.
+    examples:
+    - ["Ovo je moja kuća.", "This is my house.", "Esta é a minha casa.", "kuća"]
+    - ["Ово је моја кућа.", "This is my house.", "Esta é a minha casa.", "кућа"]
+    match: {seq: [{re: "[čćšžđчћшжђџљњ]", pos: [noun, verb, adj]}]}
+  - id: sh-ije
+    title: mlijeko / mleko, dijete / dete
+    meaning: {en: "ijekavian and ekavian", pt: "ijekavo e ekavo"}
+    intro:
+      en: |
+        An old vowel (*jat*) comes out two ways: **ije / je** in Croatia, Bosnia and Montenegro (*ijekavian*: **mlijeko, dijete, rijeka, lijep**), **e** in most of Serbia (*ekavian*: **mleko, dete, reka, lep**). Both are standard. The lessons write ijekavian and name the ekavian form.
+      pt: |
+        Uma vogal antiga (*jat*) sai de duas formas: **ije / je** na Croácia, na Bósnia e em Montenegro (*ijekavo*: **mlijeko, dijete, rijeka, lijep**), **e** na maior parte da Sérvia (*ekavo*: **mleko, dete, reka, lep**). As duas são padrão. As lições escrevem em ijekavo e citam a forma ekava.
+    examples:
+    - ["Dijete pije mlijeko.", "The child is drinking milk.", "A criança está bebendo leite.", "mlijeko"]
+    match: {seq: [{re: "(ije|je)"}]}
+
+- title: {en: Nouns and gender, pt: Substantivos e gênero}
+  lessons:
+  - id: sh-gender
+    title: grad, žena, selo
+    meaning: {en: "three genders, told by the ending", pt: "três gêneros, indicados pela terminação"}
+    intro:
+      en: |
+        Masculine: a consonant (**grad** town, **stol / sto** table, **prijatelj** friend); feminine: **-a** (**žena** woman, **kuća** house) and some in a consonant (**stvar** thing, **noć** night, **ljubav** love); neuter: **-o, -e** (**selo** village, **more** sea). No articles.
+      pt: |
+        Masculino: consoante (**grad** cidade, **stol / sto** mesa, **prijatelj** amigo); feminino: **-a** (**žena** mulher, **kuća** casa) e alguns em consoante (**stvar** coisa, **noć** noite, **ljubav** amor); neutro: **-o, -e** (**selo** aldeia, **more** mar). Não há artigos.
+    examples:
+    - ["Grad je velik.", "The town is big.", "A cidade é grande.", "Grad"]
+    - ["More je toplo.", "The sea is warm.", "O mar está quente.", "More"]
+    match: {seq: [{pos: noun, case: nom, number: sg}]}
+  - id: sh-plural
+    title: gradovi, žene, sela
+    meaning: {en: "the nominative plural", pt: "o plural (nominativo)"}
+    intro:
+      en: |
+        Masculine **-i**, often with **-ovi / -evi** for short nouns (**grad → gradovi**, **prijatelj → prijatelji**, **muž → muževi**); feminine **-e** (**žene, kuće**), feminine in a consonant **-i** (**stvari**); neuter **-a** (**sela, mora**). Irregular: **čovjek → ljudi** (people), **dijete → djeca** (children), **oko → oči**.
+      pt: |
+        Masculino **-i**, muitas vezes com **-ovi / -evi** nos nomes curtos (**grad → gradovi**, **prijatelj → prijatelji**, **muž → muževi**); feminino **-e** (**žene, kuće**), feminino em consoante **-i** (**stvari**); neutro **-a** (**sela, mora**). Irregulares: **čovjek → ljudi** (pessoas), **dijete → djeca** (crianças), **oko → oči** (olhos).
+    examples:
+    - ["Djeca se igraju u parku.", "The children are playing in the park.", "As crianças estão brincando no parque.", "Djeca"]
+    match: {seq: [{pos: noun, number: pl, case: nom}]}
+
+- title: {en: Pronouns and the present, pt: Pronomes e presente}
+  lessons:
+  - id: sh-pronouns
+    title: ja, ti, on, ona, ono, mi, vi, oni
+    meaning: {en: "personal pronouns", pt: "pronomes pessoais"}
+    intro:
+      en: |
+        **ja** (I), **ti** (you), **on / ona / ono** (he / she / it), **mi** (we), **vi** (you plural, and the polite *you*, often **Vi** in letters), **oni / one / ona** (they, m. / f. / n.). The verb ending shows the person, so the pronoun is usually dropped: **Radim** = I work.
+      pt: |
+        **ja** (eu), **ti** (tu/você), **on / ona / ono** (ele / ela / neutro), **mi** (nós), **vi** (vocês, e o tratamento formal, muitas vezes **Vi** em cartas), **oni / one / ona** (eles, m. / f. / n.). A terminação do verbo mostra a pessoa, então o pronome em geral cai: **Radim** = trabalho.
+    examples:
+    - ["Mi smo studenti.", "We are students.", "Somos estudantes.", "Mi"]
+    match: {seq: [{word: [ja, ti, 'on', ona, ono, mi, vi, oni, one], start: true}]}
+    pool: [ja, ti, 'on', ona, mi, vi, oni]
+  - id: sh-present
+    title: čitam, govorim, pišem
+    meaning: {en: "the present tense: -am, -im, -em", pt: "o presente: -am, -im, -em"}
+    intro:
+      en: |
+        Three types by the 1st person: **-am** (**čitati → čitam, čitaš, čita, čitamo, čitate, čitaju**), **-im** (**govoriti → govorim, govoriš, govori, govorimo, govorite, govore**), **-em** (**pisati → pišem, pišeš, piše, pišemo, pišete, pišu**). Learn each verb with its 1st person.
+      pt: |
+        Três tipos pela 1ª pessoa: **-am** (**čitati → čitam, čitaš, čita, čitamo, čitate, čitaju**), **-im** (**govoriti → govorim, govoriš, govori, govorimo, govorite, govore**), **-em** (**pisati → pišem, pišeš, piše, pišemo, pišete, pišu**). Aprenda cada verbo com sua 1ª pessoa.
+    examples:
+    - ["Čitam knjigu.", "I'm reading a book.", "Estou lendo um livro.", "Čitam"]
+    - ["Govoriš li engleski?", "Do you speak English?", "Você fala inglês?", "Govoriš"]
+    match: {seq: [{pos: verb, tense: pres, mood: ind}], same: [person, number]}
+  - id: sh-biti
+    title: sam, si, je; jesam; nisam
+    meaning: {en: "biti, to be: short, long and negative forms", pt: "biti, ser/estar: formas curtas, longas e negativas"}
+    intro:
+      en: |
+        Short forms, never first in the sentence: **sam, si, je, smo, ste, su** (**Ja sam student. Student sam.**); long forms for emphasis and questions: **jesam, jesi, jest(e)…** (**Jesi li umoran?**); negative: **nisam, nisi, nije, nismo, niste, nisu**.
+      pt: |
+        Formas curtas, nunca no começo da frase: **sam, si, je, smo, ste, su** (**Ja sam student. Student sam.**); formas longas para ênfase e perguntas: **jesam, jesi, jest(e)…** (**Jesi li umoran?** — você está cansado?); negativas: **nisam, nisi, nije, nismo, niste, nisu**.
+    examples:
+    - ["Ja sam iz Brazila.", "I'm from Brazil.", "Sou do Brasil.", "sam"]
+    - ["Nije kod kuće.", "He isn't at home.", "Ele não está em casa.", "Nije"]
+    match: {seq: [{word: [sam, si, je, smo, ste, su, nisam, nisi, nije, nismo, niste, nisu, jesam, jesi]}]}
+    pool: [sam, si, je, smo, ste, su, nisam, nije]
+  - id: sh-imati
+    title: imam, nemam
+    meaning: {en: "to have; there is (ima), there isn't (nema)", pt: "ter; há (ima), não há (nema)"}
+    intro:
+      en: |
+        **imati**: **imam, imaš, ima, imamo, imate, imaju**; negative **nemam, nemaš, nema…** **Ima** also means *there is*, **nema** *there isn't*, with the genitive: **Nema kruha / hleba** (there's no bread). **Nemam vremena** (I have no time).
+      pt: |
+        **imati**: **imam, imaš, ima, imamo, imate, imaju**; negativo **nemam, nemaš, nema…** **Ima** também quer dizer *há*, **nema** *não há*, com o genitivo: **Nema kruha / hleba** (não tem pão). **Nemam vremena** (não tenho tempo).
+    examples:
+    - ["Imam brata i sestru.", "I have a brother and a sister.", "Tenho um irmão e uma irmã.", "Imam"]
+    - ["Nemam vremena.", "I have no time.", "Não tenho tempo.", "Nemam"]
+    match: {seq: [{word: [imam, imaš, ima, imamo, imate, imaju, nemam, nemaš, nema, nemamo, nemate, nemaju]}]}
+    pool: [imam, imaš, ima, nemam, nema]
+
+- title: {en: Questions and negation, pt: Perguntas e negação}
+  lessons:
+  - id: sh-questions
+    title: što / šta, tko / ko, gdje, kada, zašto, li
+    meaning: {en: "question words; li and da li", pt: "palavras interrogativas; li e da li"}
+    intro:
+      en: |
+        **što / šta** (what), **tko / ko** (who), **gdje / gde** (where), **kamo / kuda** (where to), **kada** (when), **zašto** (why), **kako** (how), **koliko** (how much). Yes/no questions: verb + **li** (**Govoriš li…?**), or **da li** + verb (**Da li govoriš…?**, common in Serbia).
+      pt: |
+        **što / šta** (o que), **tko / ko** (quem), **gdje / gde** (onde), **kamo / kuda** (para onde), **kada** (quando), **zašto** (por quê), **kako** (como), **koliko** (quanto). Perguntas de sim/não: verbo + **li** (**Govoriš li…?**), ou **da li** + verbo (**Da li govoriš…?**, comum na Sérvia).
+    examples:
+    - ["Gdje živiš?", "Where do you live?", "Onde você mora?", "Gdje"]
+    match: {seq: [{word: [što, šta, tko, ko, gdje, gde, kamo, kuda, kada, kad, zašto, kako, koliko, li], start: true}]}
+    pool: [što, šta, tko, ko, gdje, kada, zašto, kako, koliko]
+  - id: sh-ne
+    title: ne, ništa, nitko / niko
+    meaning: {en: "negation and double negation", pt: "negação e dupla negação"}
+    intro:
+      en: |
+        **ne** before the verb: **Ne razumijem** (I don't understand); with *be*, *have* and *want* it merges: **nisam, nemam, neću**. Double negation is the rule: **Nitko / niko ništa ne zna** (nobody knows anything), **Nikad nisam bio tamo**.
+      pt: |
+        **ne** antes do verbo: **Ne razumijem** (não entendo); com *ser*, *ter* e *querer* se funde: **nisam, nemam, neću**. A dupla negação é a regra: **Nitko / niko ništa ne zna** (ninguém sabe nada), **Nikad nisam bio tamo** (nunca estive lá).
+    examples:
+    - ["Ne razumijem.", "I don't understand.", "Não entendo.", "Ne"]
+    match: {seq: [{word: [ne, ništa, nitko, niko, nikad, nikada, nigdje, nigde]}]}
+    pool: [ne, ništa, nitko, niko, nikad, nigdje]
+
+- title: {en: The cases (1), pt: Os casos (1)}
+  lessons:
+  - id: sh-acc
+    title: knjigu, grad, prijatelja
+    meaning: {en: "accusative: the direct object; where to", pt: "acusativo: o objeto direto; para onde"}
+    intro:
+      en: |
+        Feminine **-a → -u** (**knjiga → knjigu**); masculine things stay (**vidim grad**), masculine persons and animals take **-a** (**vidim prijatelja**); neuter stays. Also *where to* after **u, na** (**idem u školu, na posao**) and time (**svaki dan**).
+      pt: |
+        Feminino **-a → -u** (**knjiga → knjigu**); masculinos inanimados ficam iguais (**vidim grad**), pessoas e animais masculinos levam **-a** (**vidim prijatelja**); o neutro não muda. Também *para onde* depois de **u, na** (**idem u školu** vou à escola, **na posao** ao trabalho) e o tempo (**svaki dan** todo dia).
+    examples:
+    - ["Čitam knjigu.", "I'm reading a book.", "Estou lendo um livro.", "knjigu"]
+    - ["Idem u školu.", "I'm going to school.", "Vou à escola.", "školu"]
+    match: {seq: [{pos: verb}, {pos: noun, case: acc}], near: 3, gap: 1}
+  - id: sh-gen
+    title: kuće, grada, iz Zagreba
+    meaning: {en: "genitive: of, from, some, after numbers", pt: "genitivo: de, um pouco de, depois de números"}
+    intro:
+      en: |
+        Masculine/neuter **-a** (**grada, sela**), feminine **-e** (**kuće**), plural **-a** (with a long vowel) or **-i**. *Of* (**kuća moga oca**), *from* after **iz, od** (**iz Zagreba**), after **bez, do, kod, blizu, zbog**, *some* (**daj mi vode**), and after numbers from five (**pet godina**) and **mnogo, malo, koliko**.
+      pt: |
+        Masculino/neutro **-a** (**grada, sela**), feminino **-e** (**kuće**), plural **-a** (com vogal longa) ou **-i**. *De* (**kuća moga oca** a casa do meu pai), *de onde* após **iz, od** (**iz Zagreba**), depois de **bez, do, kod, blizu, zbog**, *um pouco de* (**daj mi vode** me dá água), e depois de números a partir de cinco (**pet godina** cinco anos) e de **mnogo, malo, koliko**.
+    examples:
+    - ["Ona je iz Zagreba.", "She is from Zagreb.", "Ela é de Zagreb.", "Zagreba"]
+    - ["Imam pet godina.", "I'm five years old.", "Tenho cinco anos.", "godina"]
+    match: {seq: [{pos: prep}, {pos: noun, case: gen}], gap: 1}
+  - id: sh-loc
+    title: u gradu, na moru, o tebi
+    meaning: {en: "locative: in, on, about", pt: "locativo: em, sobre"}
+    intro:
+      en: |
+        Always after a preposition: **u** (in), **na** (on, at), **o** (about), **po** (around, along), **pri**. Masculine/neuter **-u** (**u gradu, na moru**), feminine **-i** (**u kući, na ulici**), plural **-ima / -ama**. **Živim u Zagrebu. Pričamo o filmu.**
+      pt: |
+        Sempre depois de preposição: **u** (em, dentro), **na** (sobre, em), **o** (sobre, a respeito de), **po** (por, ao longo de), **pri**. Masculino/neutro **-u** (**u gradu** na cidade, **na moru** no mar), feminino **-i** (**u kući** em casa, **na ulici** na rua), plural **-ima / -ama**. **Živim u Zagrebu** (moro em Zagreb). **Pričamo o filmu** (falamos do filme).
+    examples:
+    - ["Živim u Zagrebu.", "I live in Zagreb.", "Moro em Zagreb.", "Zagrebu"]
+    - ["Knjiga je na stolu.", "The book is on the table.", "O livro está na mesa.", "stolu"]
+    match: {seq: [{pos: prep}, {pos: noun, case: loc}], gap: 1}
+
+- title: {en: Numbers and time, pt: Números e tempo}
+  lessons:
+  - id: sh-numbers
+    title: jedan, dva, tri, četiri, pet
+    meaning: {en: "numbers and the noun after them", pt: "números e o substantivo depois deles"}
+    intro:
+      en: |
+        **jedan (jedna, jedno), dva (dvije / dve), tri, četiri, pet, šest, sedam, osam, devet, deset**, **jedanaest… dvadeset, sto, tisuća / hiljada**. After **2, 3, 4** a special form (old dual, = genitive singular): **dva grada, tri kuće**; from **5** the genitive plural: **pet gradova, deset kuća**.
+      pt: |
+        **jedan (jedna, jedno), dva (dvije / dve), tri, četiri, pet, šest, sedam, osam, devet, deset**, **jedanaest… dvadeset, sto, tisuća / hiljada**. Depois de **2, 3, 4** uma forma especial (antigo dual, = genitivo singular): **dva grada, tri kuće**; a partir de **5** o genitivo plural: **pet gradova, deset kuća**.
+    examples:
+    - ["Imam dva brata.", "I have two brothers.", "Tenho dois irmãos.", "dva"]
+    match: {seq: [{word: [jedan, jedna, jedno, dva, dvije, dve, tri, četiri, pet, šest, sedam, osam, devet, deset, sto]}]}
+    pool: [jedan, dva, tri, četiri, pet, deset, sto]
+  - id: sh-days
+    title: ponedjeljak, danas, sutra
+    meaning: {en: "days and time words", pt: "dias e palavras de tempo"}
+    intro:
+      en: |
+        **ponedjeljak / ponedeljak** (Monday), **utorak, srijeda / sreda, četvrtak, petak, subota, nedjelja / nedelja**. *On Monday* = **u ponedjeljak**. **danas** (today), **sutra** (tomorrow), **jučer / juče** (yesterday), **sada** (now), **ujutro, navečer / uveče** (in the morning, in the evening).
+      pt: |
+        **ponedjeljak / ponedeljak** (segunda), **utorak, srijeda / sreda, četvrtak, petak, subota, nedjelja / nedelja**. *Na segunda* = **u ponedjeljak**. **danas** (hoje), **sutra** (amanhã), **jučer / juče** (ontem), **sada** (agora), **ujutro, navečer / uveče** (de manhã, à noite).
+    examples:
+    - ["Danas je lijep dan.", "It's a beautiful day today.", "Hoje está um dia bonito.", "Danas"]
+    match: {seq: [{word: [danas, sutra, jučer, juče, sada, sad, ujutro, navečer, uveče, ponedjeljak, ponedeljak, utorak, srijeda, sreda, četvrtak, petak, subota, nedjelja, nedelja]}]}
+    pool: [danas, sutra, jučer, juče, sada]

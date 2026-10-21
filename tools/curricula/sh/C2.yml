@@ -1,0 +1,28 @@
+id: C2
+topics:
+
+- title: {en: Dialects and literature, pt: Dialetos e literatura}
+  lessons:
+  - id: sh-dialects
+    title: što, kaj, ča
+    meaning: {en: "Štokavian, Kajkavian, Čakavian", pt: "štokaviano, kajkaviano, čakaviano"}
+    intro:
+      en: |
+        The dialects are named after their word for *what*: **što / šta** (Štokavian, the base of all four standards), **kaj** (Kajkavian, around Zagreb), **ča** (Čakavian, Istria and the islands). Literature exists in all three: Krleža wrote Kajkavian verse, Marulić (1501) Čakavian.
+      pt: |
+        Os dialetos levam o nome da palavra para *o que*: **što / šta** (štokaviano, base dos quatro padrões), **kaj** (kajkaviano, em torno de Zagreb), **ča** (čakaviano, Ístria e ilhas). Há literatura nos três: Krleža escreveu versos kajkavianos, Marulić (1501) em čakaviano.
+    examples:
+    - ["Štokavsko narječje osnova je standardnog jezika.", "The Štokavian dialect is the basis of the standard language.", "O dialeto štokaviano é a base da língua padrão.", "narječje"]
+    match: {seq: [{word: [narječje, narečje, dijalekt, govor, kaj, ča]}]}
+    pool: [narječje, dijalekt, govor]
+  - id: sh-literature
+    title: Njegoš, Andrić, Krleža, Selimović
+    meaning: {en: "reading the classics", pt: "lendo os clássicos"}
+    intro:
+      en: |
+        Folk epics collected by Vuk Karadžić (1814–) and the ballad *Hasanaginica* stand at the start; Njegoš's *Gorski vijenac* (1847) in old Montenegrin; Ivo Andrić (Nobel 1961, *Na Drini ćuprija*), Miroslav Krleža and Meša Selimović (*Derviš i smrt*) in the 20th century. Folk and old texts use the aorist, the imperfect and archaic forms the reader may not know.
+      pt: |
+        Os épicos populares recolhidos por Vuk Karadžić (1814–) e a balada *Hasanaginica* estão no começo; *Gorski vijenac* (1847) de Njegoš, em montenegrino antigo; Ivo Andrić (Nobel 1961, *Na Drini ćuprija*), Miroslav Krleža e Meša Selimović (*Derviš i smrt*) no século XX. Textos populares e antigos usam o aoristo, o imperfeito e formas arcaicas que o leitor pode não conhecer.
+    examples:
+    - ["Što se bijeli u gori zelenoj?", "What is that white thing in the green forest?", "O que é aquilo branco na floresta verde?", "bijeli"]
+    match: {seq: [{pos: verb, tense: [aor, impf]}]}

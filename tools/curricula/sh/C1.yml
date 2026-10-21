@@ -1,0 +1,28 @@
+id: C1
+topics:
+
+- title: {en: Talking about ideas, pt: Falando de ideias}
+  lessons:
+  - id: sh-abstract
+    title: sloboda, jednakost, razvoj
+    meaning: {en: "abstract nouns and word formation", pt: "substantivos abstratos e formação de palavras"}
+    intro:
+      en: |
+        **-ost** (**jednakost** equality, **mladost** youth), **-stvo** (**prijateljstvo** friendship, **djetinjstvo** childhood), **-nje / -enje** from verbs (**čitanje** reading, **razumijevanje** understanding), **-ba** (**borba** struggle). Croatian prefers home-grown words where Serbian keeps international ones: **zrakoplov / avion**, **znanost / nauka**, **glazba / muzika**.
+      pt: |
+        **-ost** (**jednakost** igualdade, **mladost** juventude), **-stvo** (**prijateljstvo** amizade, **djetinjstvo** infância), **-nje / -enje** de verbos (**čitanje** leitura, **razumijevanje** compreensão), **-ba** (**borba** luta). O croata prefere palavras próprias onde o sérvio mantém as internacionais: **zrakoplov / avion** (avião), **znanost / nauka** (ciência), **glazba / muzika** (música).
+    examples:
+    - ["Prijateljstvo je važnije od novca.", "Friendship is more important than money.", "A amizade é mais importante que o dinheiro.", "Prijateljstvo"]
+    match: {seq: [{pos: noun, re: "(ost|stvo|nje|enje)$"}]}
+  - id: sh-variants
+    title: kruh / hleb, tisuća / hiljada, vlak / voz
+    meaning: {en: "the four standards: Croatian, Serbian, Bosnian, Montenegrin", pt: "os quatro padrões: croata, sérvio, bósnio, montenegrino"}
+    intro:
+      en: |
+        One language, four standards, a few hundred words that differ: **kruh / hljeb / hleb** (bread), **tisuća / hiljada** (thousand), **vlak / voz** (train), **tjedan / sedmica / nedelja** (week), **kava / kafa** (coffee), and Croatian **tko, što** against **ko, šta**. Grammar is the same; speakers understand each other fully.
+      pt: |
+        Uma língua, quatro padrões, algumas centenas de palavras diferentes: **kruh / hljeb / hleb** (pão), **tisuća / hiljada** (mil), **vlak / voz** (trem), **tjedan / sedmica / nedelja** (semana), **kava / kafa** (café), e o croata **tko, što** contra **ko, šta**. A gramática é a mesma; os falantes se entendem perfeitamente.
+    examples:
+    - ["Popio sam kavu i pojeo kruh.", "I drank a coffee and ate some bread.", "Tomei um café e comi pão.", "kavu"]
+    match: {seq: [{word: [kruh, hljeb, hleb, tisuća, hiljada, vlak, voz, tjedan, sedmica, kava, kafa, tko, ko, što, šta]}]}
+    pool: [kruh, hleb, tisuća, hiljada, vlak, voz, kava, kafa]

@@ -1,0 +1,38 @@
+id: B2
+topics:
+
+- title: {en: Literary tenses and participles, pt: Tempos literários e particípios}
+  lessons:
+  - id: sh-aorist
+    title: rekoh, reče, dođoše
+    meaning: {en: "the aorist and imperfect", pt: "o aoristo e o imperfeito"}
+    intro:
+      en: |
+        Writing and lively storytelling keep two simple pasts. The *aorist*, mostly of perfectives, for a just-finished action: **rekoh, reče, rekosmo, rekoše** (I said, he said…), **Dođe i ode** (he came and went). The *imperfect*, rarer, for a past state: **bijaše** (was), **govoraše**. The everyday past is the perfect.
+      pt: |
+        A escrita e a narração viva guardam dois passados simples. O *aoristo*, sobretudo de perfectivos, para uma ação acabada: **rekoh, reče, rekosmo, rekoše** (eu disse, ele disse…), **Dođe i ode** (veio e foi embora). O *imperfeito*, mais raro, para um estado passado: **bijaše** (era), **govoraše**. O passado do dia a dia é o perfeito.
+    examples:
+    - ["Dođe i ode bez riječi.", "He came and went without a word.", "Ele veio e foi embora sem uma palavra.", "Dođe"]
+    match: {seq: [{pos: verb, tense: aor}]}
+  - id: sh-passive
+    title: pisan, napisan, kuća je prodana
+    meaning: {en: "the passive participle", pt: "o particípio passivo"}
+    intro:
+      en: |
+        **-n / -en / -t** (**napisan, prodan / prodat, otvoren, uzet**), agreeing like adjectives: **Pismo je napisano. Kuća je prodana.** Speech often uses **se** instead: **Ovdje se govori engleski** (English is spoken here), **Kuća se prodaje** (the house is for sale).
+      pt: |
+        **-n / -en / -t** (**napisan, prodan / prodat, otvoren, uzet**), concordando como adjetivos: **Pismo je napisano** (a carta está escrita). **Kuća je prodana** (a casa foi vendida). A fala usa muitas vezes **se**: **Ovdje se govori engleski** (aqui se fala inglês), **Kuća se prodaje** (vende-se a casa).
+    examples:
+    - ["Prozor je otvoren.", "The window is open.", "A janela está aberta.", "otvoren"]
+    match: {seq: [{re: "(an|ana|ano|en|ena|eno|ven|t)$", pos: [adj, verb]}]}
+  - id: sh-gerund
+    title: čitajući, pročitavši
+    meaning: {en: "verbal adverbs: while doing, having done", pt: "advérbios verbais: fazendo, tendo feito"}
+    intro:
+      en: |
+        **-ći** (present, imperfectives): **Čitajući knjigu, zaspao je** (while reading a book, he fell asleep). **-vši** (past, perfectives): **Pročitavši pismo, otišla je** (having read the letter, she left). Mostly written style.
+      pt: |
+        **-ći** (presente, imperfectivos): **Čitajući knjigu, zaspao je** (lendo um livro, ele adormeceu). **-vši** (passado, perfectivos): **Pročitavši pismo, otišla je** (tendo lido a carta, ela saiu). Sobretudo na escrita.
+    examples:
+    - ["Čitajući knjigu, zaspao je.", "While reading a book, he fell asleep.", "Lendo um livro, ele adormeceu.", "Čitajući"]
+    match: {seq: [{re: "(jući|ući|vši)$"}]}

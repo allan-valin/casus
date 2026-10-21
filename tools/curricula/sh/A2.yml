@@ -1,0 +1,105 @@
+id: A2
+topics:
+
+- title: {en: The cases (2), pt: Os casos (2)}
+  lessons:
+  - id: sh-dat
+    title: prijatelju, mami, meni
+    meaning: {en: "dative: to whom; I like", pt: "dativo: a quem; eu gosto"}
+    intro:
+      en: |
+        Masculine/neuter **-u** (**prijatelju**), feminine **-i** (**mami, ženi**), plural **-ima / -ama**. Indirect object (**Dajem prijatelju poklon**), *like* (**Sviđa mi se** — it pleases me), feelings (**Hladno mi je**), and after **k / ka, prema**.
+      pt: |
+        Masculino/neutro **-u** (**prijatelju**), feminino **-i** (**mami, ženi**), plural **-ima / -ama**. Objeto indireto (**Dajem prijatelju poklon** — dou um presente ao amigo), *gostar* (**Sviđa mi se** — me agrada), sensações (**Hladno mi je** — estou com frio), e depois de **k / ka, prema**.
+    examples:
+    - ["Dajem prijatelju poklon.", "I'm giving my friend a present.", "Estou dando um presente ao meu amigo.", "prijatelju"]
+    - ["Sviđa mi se ova pjesma.", "I like this song.", "Gosto desta música.", "mi"]
+    match:
+    - {seq: [{word: [mi, ti, mu, joj, nam, vam, im, meni, tebi, njemu, njoj]}, {word: [je, se, sviđa, sviđaju, treba, hladno, toplo, drago, žao]}], gap: 0}
+    - {seq: [{pos: verb}, {pos: noun, case: dat}], near: 3, gap: 1}
+    pool: [mi, ti, mu, joj, nam, vam, im, meni, tebi]
+  - id: sh-ins
+    title: sa sestrom, autobusom, olovkom
+    meaning: {en: "instrumental: with, by", pt: "instrumental: com, de (meio)"}
+    intro:
+      en: |
+        Masculine/neuter **-om / -em** (**autobusom, prijateljem**), feminine **-om** (**sestrom, olovkom**), plural **-ima / -ama**. Means (**pišem olovkom**, **idem autobusom**), company with **s / sa** (**sa sestrom**), and after **pod, nad, pred, među, za** for place.
+      pt: |
+        Masculino/neutro **-om / -em** (**autobusom, prijateljem**), feminino **-om** (**sestrom, olovkom**), plural **-ima / -ama**. Meio (**pišem olovkom** escrevo a lápis, **idem autobusom** vou de ônibus), companhia com **s / sa** (**sa sestrom** com a irmã), e depois de **pod, nad, pred, među, za** para lugar.
+    examples:
+    - ["Idemo autobusom u grad.", "We're going to town by bus.", "Vamos de ônibus para a cidade.", "autobusom"]
+    match: {seq: [{pos: noun, case: ins}]}
+  - id: sh-voc
+    title: Ana! Ivane! gospodine!
+    meaning: {en: "vocative: calling someone", pt: "vocativo: chamar alguém"}
+    intro:
+      en: |
+        Used whenever you address someone: **Ivan → Ivane!**, **prijatelj → prijatelju!**, **gospodin → gospodine!**, **Ana → Ana! / Ano!**, **mama → mama!**, **sestra → sestro!**. Common in greetings and letters: **Dragi Marko!**
+      pt: |
+        Usado sempre que se chama alguém: **Ivan → Ivane!**, **prijatelj → prijatelju!**, **gospodin → gospodine!**, **Ana → Ana! / Ano!**, **mama → mama!**, **sestra → sestro!**. Comum em saudações e cartas: **Dragi Marko!** (Querido Marko!)
+    examples:
+    - ["Dobar dan, gospodine!", "Good afternoon, sir!", "Boa tarde, senhor!", "gospodine"]
+    match: {seq: [{pos: noun, case: voc}]}
+
+- title: {en: Past and future, pt: Passado e futuro}
+  lessons:
+  - id: sh-past
+    title: radio sam, bila je
+    meaning: {en: "the past: biti + the l-participle", pt: "o passado: biti + o particípio em -l"}
+    intro:
+      en: |
+        The everyday past (*perfekt*) is the short form of **biti** + a participle that agrees in gender and number: **radio / radila / radilo, radili / radile / radila**. **Ja sam radio** (m.), **ja sam radila** (f.); **Bio sam u Beogradu.** With the pronoun dropped, the auxiliary comes second: **Radila sam cijeli dan.**
+      pt: |
+        O passado do dia a dia (*perfekt*) é a forma curta de **biti** + um particípio que concorda em gênero e número: **radio / radila / radilo, radili / radile / radila**. **Ja sam radio** (m.), **ja sam radila** (f.); **Bio sam u Beogradu** (estive em Belgrado). Sem o pronome, o auxiliar vem em segundo: **Radila sam cijeli dan** (trabalhei o dia todo).
+    examples:
+    - ["Jučer sam bio kod kuće.", "Yesterday I was at home.", "Ontem eu estava em casa.", "bio"]
+    match: {seq: [{word: [sam, si, je, smo, ste, su]}, {re: "(o|la|lo|li|le)$", pos: verb}], near: 3, gap: 1}
+  - id: sh-future
+    title: radit ću / radiću, ići ćemo
+    meaning: {en: "the future: ću + infinitive", pt: "o futuro: ću + infinitivo"}
+    intro:
+      en: |
+        **ću, ćeš, će, ćemo, ćete, će** + infinitive: **Ja ću raditi** or, the pronoun dropped, **Radit ću** (Croatian spelling) / **Radiću** (Serbian, written as one word). Negative: **neću, nećeš…** (**Neću doći**). In Serbia also **ću da** + present: **Ja ću da radim.**
+      pt: |
+        **ću, ćeš, će, ćemo, ćete, će** + infinitivo: **Ja ću raditi** ou, sem o pronome, **Radit ću** (grafia croata) / **Radiću** (sérvia, numa só palavra). Negativo: **neću, nećeš…** (**Neću doći** não vou vir). Na Sérvia também **ću da** + presente: **Ja ću da radim.**
+    examples:
+    - ["Sutra ćemo ići na more.", "Tomorrow we'll go to the seaside.", "Amanhã vamos à praia.", "ćemo"]
+    match: {seq: [{word: [ću, ćeš, će, ćemo, ćete, neću, nećeš, neće, nećemo, nećete]}]}
+    pool: [ću, ćeš, će, ćemo, ćete, neću]
+  - id: sh-aspect
+    title: pisati / napisati, kupovati / kupiti
+    meaning: {en: "aspect: unfinished and finished", pt: "aspecto: inacabado e acabado"}
+    intro:
+      en: |
+        Most verbs come in pairs: *imperfective* for an ongoing or repeated action, *perfective* for a completed one. **Pisao sam pismo** (I was writing a letter) vs **Napisao sam pismo** (I wrote it, finished). Perfectives are made with prefixes (**pisati → napisati**, **čitati → pročitati**) or a different stem (**kupovati → kupiti**, **davati → dati**).
+      pt: |
+        A maioria dos verbos vem em pares: *imperfectivo* para ação em curso ou repetida, *perfectivo* para ação concluída. **Pisao sam pismo** (eu estava escrevendo uma carta) vs **Napisao sam pismo** (escrevi, terminei). Os perfectivos se formam com prefixos (**pisati → napisati**, **čitati → pročitati**) ou outro radical (**kupovati → kupiti**, **davati → dati**).
+    examples:
+    - ["Pročitao sam cijelu knjigu.", "I read the whole book.", "Li o livro inteiro.", "Pročitao"]
+    match: {seq: [{re: "^(na|pro|po|iz|za|u|do|pre|s)", pos: verb}]}
+
+- title: {en: Adjectives and little words, pt: Adjetivos e palavras pequenas}
+  lessons:
+  - id: sh-adj
+    title: dobar, dobra, dobro; bolji, najbolji
+    meaning: {en: "adjectives agree; comparison", pt: "adjetivos concordam; comparação"}
+    intro:
+      en: |
+        Adjectives agree in gender, number and case: **dobar čovjek, dobra žena, dobro dijete; s dobrim prijateljem.** Comparative **-iji / -ji** (**star → stariji**, **lijep → ljepši**), irregular **dobar → bolji, loš → gori, velik → veći**; superlative **naj-** (**najbolji**). *Than* = **od** + genitive or **nego**.
+      pt: |
+        Os adjetivos concordam em gênero, número e caso: **dobar čovjek, dobra žena, dobro dijete; s dobrim prijateljem.** Comparativo **-iji / -ji** (**star → stariji**, **lijep → ljepši**), irregulares **dobar → bolji, loš → gori, velik → veći**; superlativo **naj-** (**najbolji**). *Do que* = **od** + genitivo ou **nego**.
+    examples:
+    - ["To je vrlo dobra knjiga.", "That's a very good book.", "É um livro muito bom.", "dobra"]
+    match: {seq: [{pos: adj}, {pos: noun}], same: [case, number, gender], gap: 0}
+  - id: sh-se
+    title: se, igrati se, zovem se
+    meaning: {en: "se: reflexive verbs", pt: "se: verbos reflexivos"}
+    intro:
+      en: |
+        **se** (and **sebe**) makes a verb reflexive or reciprocal: **prati → prati se** (to wash oneself), **igrati se** (to play), **smijati se** (to laugh), **zvati se** (to be called: **Kako se zoveš? Zovem se Ana.**). Like the short forms of *biti*, **se** comes second in the sentence.
+      pt: |
+        **se** (e **sebe**) torna o verbo reflexivo ou recíproco: **prati → prati se** (lavar-se), **igrati se** (brincar), **smijati se** (rir), **zvati se** (chamar-se: **Kako se zoveš?** como você se chama? **Zovem se Ana.**). Como as formas curtas de *biti*, **se** vem em segundo lugar na frase.
+    examples:
+    - ["Kako se zoveš?", "What's your name?", "Como você se chama?", "se"]
+    match: {seq: [{word: [se]}], gap: 0}
+    pool: [se, sebe, sebi]

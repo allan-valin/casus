@@ -1,0 +1,70 @@
+id: B1
+topics:
+
+- title: {en: Moods, pt: Modos}
+  lessons:
+  - id: sh-conditional
+    title: bih, bi, bismo
+    meaning: {en: "the conditional: would", pt: "o condicional: -ria"}
+    intro:
+      en: |
+        **bih, bi, bi, bismo, biste, bi** + the l-participle: **Ja bih htio / htjela kavu** (I'd like a coffee), **Bilo bi lijepo.** Unreal conditions with **kad / kada** or **da**: **Kad bih imao vremena, došao bih.**
+      pt: |
+        **bih, bi, bi, bismo, biste, bi** + o particípio em -l: **Ja bih htio / htjela kavu** (eu queria um café), **Bilo bi lijepo** (seria bom). Condições irreais com **kad / kada** ou **da**: **Kad bih imao vremena, došao bih** (se eu tivesse tempo, viria).
+    examples:
+    - ["Htio bih kavu, molim.", "I'd like a coffee, please.", "Eu queria um café, por favor.", "bih"]
+    match: {seq: [{word: [bih, bismo, biste, bi]}]}
+    pool: [bih, bi, bismo, biste]
+  - id: sh-imperative
+    title: čitaj! govori! idemo!
+    meaning: {en: "the imperative", pt: "o imperativo"}
+    intro:
+      en: |
+        From the present stem: **čitaj, čitajte** (read!), **govori, govorite** (speak!), **piši, pišite** (write!); *let's* is **-mo** (**čitajmo**) or simply **idemo!** (let's go). Negative commands use **nemoj** + infinitive: **Nemoj brinuti** (don't worry).
+      pt: |
+        Vem do radical do presente: **čitaj, čitajte** (lê!, leiam!), **govori, govorite** (fala!), **piši, pišite** (escreve!); *vamos* é **-mo** (**čitajmo**) ou simplesmente **idemo!** (vamos!). Ordens negativas usam **nemoj** + infinitivo: **Nemoj brinuti** (não se preocupe).
+    examples:
+    - ["Nemoj brinuti!", "Don't worry!", "Não se preocupe!", "Nemoj"]
+    match:
+    - {seq: [{pos: verb, mood: imp}]}
+    - {seq: [{word: [nemoj, nemojte]}], gap: 0}
+    pool: [nemoj, nemojte, idemo, hajde]
+
+- title: {en: Clauses, pt: Orações}
+  lessons:
+  - id: sh-koji
+    title: koji, koja, koje
+    meaning: {en: "which, who: relative clauses", pt: "que, o qual: orações relativas"}
+    intro:
+      en: |
+        **koji / koja / koje** takes gender and number from the noun and its case from its own clause: **Čovjek koji tamo stoji je moj otac. Knjiga koju čitam je zanimljiva.** **što / šta** after *sve, ono*: **Sve što kažeš.**
+      pt: |
+        **koji / koja / koje** toma gênero e número do substantivo e o caso da própria oração: **Čovjek koji tamo stoji je moj otac** (o homem que está ali é meu pai). **Knjiga koju čitam je zanimljiva** (o livro que leio é interessante). **što / šta** depois de *sve, ono*: **Sve što kažeš** (tudo o que você diz).
+    examples:
+    - ["Knjiga koju čitam je zanimljiva.", "The book I'm reading is interesting.", "O livro que estou lendo é interessante.", "koju"]
+    match: {seq: [{word: [koji, koja, koje, kojeg, kojega, koju, kojem, kojoj, kojim, kojih, kojima]}], gap: 0}
+    pool: [koji, koja, koje, koju, kojeg, kojem]
+  - id: sh-conjunctions
+    title: da, jer, ako, kad, iako, ali
+    meaning: {en: "joining clauses", pt: "ligando orações"}
+    intro:
+      en: |
+        **da** (that; to: **Želim da dođeš**), **jer** (because), **ako** (if), **kad / kada** (when), **iako** (although), **dok** (while), **ali / no** (but), **pa** (and so), **zato što** (because). **Idem kući jer sam umoran.**
+      pt: |
+        **da** (que; para: **Želim da dođeš** quero que você venha), **jer** (porque), **ako** (se), **kad / kada** (quando), **iako** (embora), **dok** (enquanto), **ali / no** (mas), **pa** (e então), **zato što** (porque). **Idem kući jer sam umoran** (vou para casa porque estou cansado).
+    examples:
+    - ["Idem kući jer sam umoran.", "I'm going home because I'm tired.", "Vou para casa porque estou cansado.", "jer"]
+    match: {seq: [{word: [da, jer, ako, kad, kada, iako, dok, ali, zato]}]}
+    pool: [da, jer, ako, kad, iako, dok, ali]
+  - id: sh-clitics
+    title: Dao sam mu ga.
+    meaning: {en: "the order of the short words", pt: "a ordem das palavras curtas"}
+    intro:
+      en: |
+        Short pronouns and auxiliaries cluster in second place, in a fixed order: **li** – auxiliary (**sam, ću, bih**) – dative – accusative – **se** – **je**: **Dao sam mu ga** (I gave it to him), **Hoćeš li mi ga dati?**, **Sviđa mi se.** Only **je** comes after **se**: **Smijao se je** → usually **Smijao se.**
+      pt: |
+        Pronomes curtos e auxiliares se agrupam em segundo lugar, numa ordem fixa: **li** – auxiliar (**sam, ću, bih**) – dativo – acusativo – **se** – **je**: **Dao sam mu ga** (dei-lho), **Hoćeš li mi ga dati?** (você me dá?), **Sviđa mi se** (gosto). Só **je** vem depois de **se**: **Smijao se je** → em geral **Smijao se.**
+    examples:
+    - ["Dao sam mu ga.", "I gave it to him.", "Eu dei a ele.", "mu"]
+    match: {seq: [{word: [sam, si, je, smo, ste, su, ću, ćeš, će, bih, bi]}, {word: [mi, ti, mu, joj, nam, vam, im]}], gap: 1}
+    pool: [mi, ti, mu, joj, ga, je, ih, se]
