@@ -212,6 +212,64 @@ describe('Conversation practice tab (Allan, 2026-10-20/21: narrator in the inter
     expect([...container.querySelectorAll('.step.current')].map((e) => e.dataset.type)).toEqual(['prompt']);
   });
 
+  it('a player bar at the bottom: ⏭ and ⏮ move to the next and previous step and play it (Allan 2026-10-21)', async () => {
+    const { p, spoken } = props();
+    const { container } = render(Talk, p);
+    await flush();
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    const bar = container.querySelector('.player-bar');
+    expect(bar).not.toBeNull();
+    await fireEvent.click(bar.querySelector('.next'));
+    await flush();
+    expect(container.querySelector('.step.current').dataset.type).toBe('narrator');
+    expect(spoken.at(-1)).toEqual(['en', 'Listen.']);
+    await fireEvent.click(bar.querySelector('.next'));
+    await flush();
+    expect(container.querySelector('.step.current').dataset.type).toBe('dialogue');
+    await fireEvent.click(bar.querySelector('.prev'));
+    await flush();
+    expect(container.querySelector('.step.current').dataset.type).toBe('narrator');
+    expect(bar.querySelector('.where').textContent).toContain('1');
+  });
+
+  it('hands-free: steps play one after another; a question waits 10 seconds, then gives its answer (Allan 2026-10-21)', async () => {
+    const waits = [];
+    const { p, spoken } = props({ pause: (ms) => { waits.push(ms); return Promise.resolve(); } });
+    const { container } = render(Talk, p);
+    await flush();
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    const toggle = container.querySelector('.hands-free');
+    expect(toggle.textContent.length).toBeGreaterThan(5);
+    await fireEvent.click(toggle);
+    for (let i = 0; i < 20; i += 1) await flush();
+    const texts = spoken.map(([, t]) => t);
+    expect(texts.slice(0, 2)).toEqual(['Listen.', 'Guten Tag.']);
+    const ask = texts.indexOf('Thank her.');
+    expect(ask).toBeGreaterThan(0);
+    expect(texts[ask + 1]).toBe('Danke!');                 // the answer, after the wait
+    expect(waits).toContain(10000);
+    expect(container.querySelector('.step.current').dataset.type).toBe('selfcheck');   // stops at the self-check
+  });
+
+  it('the lock-screen controls (Media Session) drive the same player', async () => {
+    const handlers = {};
+    globalThis.navigator.mediaSession = { setActionHandler: (a, f) => { handlers[a] = f; }, metadata: null };
+    globalThis.MediaMetadata = class { constructor(o) { Object.assign(this, o); } };
+    const { p, spoken } = props();
+    const { container } = render(Talk, p);
+    await flush();
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    expect(Object.keys(handlers)).toEqual(expect.arrayContaining(['play', 'pause', 'nexttrack', 'previoustrack']));
+    expect(navigator.mediaSession.metadata.title).toContain('A1-01');
+    handlers.nexttrack();
+    await flush();
+    expect(spoken.at(-1)).toEqual(['en', 'Listen.']);
+    delete globalThis.navigator.mediaSession;
+  });
+
   it('the self-check marks the unit done, kept in the browser and shown in the list', async () => {
     const { p } = props();
     const { container } = render(Talk, p);

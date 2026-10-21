@@ -72,12 +72,9 @@
   }
   // ▶ starts the step; while it plays the same button pauses (⏸) and resumes (▶) it
   async function waitWhilePaused() { while (paused && playing !== null) await new Promise((r) => setTimeout(r, 120)); }
-  async function play(s, n) {
-    current = n;
-    if (playing === n) {
-      if (paused) { paused = false; control?.resume?.(); say(t('talk.resumed')); } else { paused = true; control?.pause?.(); say(t('talk.paused')); }
-      return;
-    }
+  // one step's sound; `auto` (hands-free) leaves time to answer a question and to repeat each piece
+  const THINK_MS = 10000;
+  async function perform(s, n, auto = false) {
     playing = n;
     paused = false;
     try {
@@ -87,12 +84,76 @@
         say(t('talk.played.dialogue', { n: linesOf(s).length }));
       } else if (s.type === 'line') { await sayTaught(items[s.item]?.text ?? '', s.speaker); say(t('talk.played.line', { text: items[s.item]?.text ?? '' })); }
       else if (s.type === 'buildup') {
-        for (const part of s.parts) { await waitWhilePaused(); if (playing !== n) break; await sayTaught(part); await pause(600); }
+        for (const part of s.parts) { await waitWhilePaused(); if (playing !== n) break; await sayTaught(part); await pause(auto ? 2500 : 600); }
         say(t('talk.played.buildup', { text: s.parts.at(-1) }));
-      } else if (s.type === 'prompt') { await speakNarrator(nar(s.ask), narratorLang); say(t('talk.played.ask')); }
+      } else if (s.type === 'prompt') {
+        await speakNarrator(nar(s.ask), narratorLang); say(t('talk.played.ask'));
+        if (auto) {
+          await waitWhilePaused(); await pause(THINK_MS); await waitWhilePaused();
+          if (playing === n) await answer(s, n);
+        }
+      }
     } catch { /* already reported */ }
     if (playing === n) { playing = null; paused = false; }
   }
+  async function play(s, n) {
+    current = n;
+    if (playing === n) {
+      if (paused) { paused = false; control?.resume?.(); say(t('talk.resumed')); } else { paused = true; control?.pause?.(); say(t('talk.paused')); }
+      return;
+    }
+    if (handsFree) handsFree = false;
+    await perform(s, n);
+  }
+
+  // hands-free (Allan, 2026-10-21): the steps play one after another until the self-check, so the phone can stay in a
+  // pocket; the bottom bar and the lock-screen controls move through the steps
+  let handsFree = $state(false);
+  async function runHandsFree(from) {
+    handsFree = true;
+    say(t('talk.handsFree.on'));
+    for (let k = from; k < unit.steps.length && handsFree; k += 1) {
+      current = k;
+      if (unit.steps[k].type === 'selfcheck') break;
+      await perform(unit.steps[k], k, true);
+      if (handsFree) await pause(800);
+    }
+    handsFree = false;
+  }
+  function toggleHandsFree() {
+    if (handsFree) { handsFree = false; playing = null; paused = false; control?.pause?.(); say(t('talk.handsFree.off')); return; }
+    runHandsFree(current ?? 0);
+  }
+  function stepTo(k) {
+    if (!unit) return;
+    const to = Math.max(0, Math.min(unit.steps.length - 1, k));
+    const wasFree = handsFree;
+    handsFree = false;
+    playing = null;
+    paused = false;
+    current = to;
+    if (wasFree) runHandsFree(to);
+    else if (unit.steps[to].type !== 'selfcheck') perform(unit.steps[to], to);
+  }
+  const next = () => stepTo(current == null ? 0 : current + 1);
+  const prev = () => stepTo(current == null ? 0 : current - 1);
+  function playPause() {
+    if (playing !== null) { play(unit.steps[playing], playing); return; }
+    stepTo(current ?? 0);
+  }
+  // the lock screen / notification controls (Media Session API), while a unit is open
+  $effect(() => {
+    const ms = typeof navigator !== 'undefined' ? navigator.mediaSession : null;
+    if (!ms || !unit) return;
+    try {
+      if (typeof MediaMetadata !== 'undefined') ms.metadata = new MediaMetadata({ title: `${unit.id} · ${nar(unit.title)}`, artist: 'Casus', album: t('talk.heading') });
+      ms.setActionHandler('play', () => playPause());
+      ms.setActionHandler('pause', () => playPause());
+      ms.setActionHandler('nexttrack', () => next());
+      ms.setActionHandler('previoustrack', () => prev());
+    } catch { /* not supported */ }
+    return () => { try { for (const a of ['play', 'pause', 'nexttrack', 'previoustrack']) ms.setActionHandler(a, null); } catch { /* fine */ } };
+  });
   async function answer(s, n) {
     current = n;
     shown = { ...shown, [n]: true };
@@ -195,6 +256,15 @@
           </li>
         {/each}
       </ol>
+      <div class="player-bar" role="toolbar" aria-label={t('talk.player')}>
+        <button class="hands-free" class:on={handsFree} aria-pressed={handsFree} onclick={toggleHandsFree}>🎧 {handsFree ? t('talk.handsFree.stop') : t('talk.handsFree.start')}</button>
+        <div class="transport">
+          <button class="prev" aria-label={t('talk.prev')} title={t('talk.prev')} onclick={prev}>⏮</button>
+          <button class="playpause" aria-label={playing !== null && !paused ? t('talk.pause') : t('talk.play')} onclick={playPause}>{playing !== null && !paused ? '⏸' : '▶'}</button>
+          <button class="next" aria-label={t('talk.next')} title={t('talk.next')} onclick={next}>⏭</button>
+        </div>
+        <span class="where">{t('talk.where', { n: (current ?? -1) + 1, total: unit.steps.length })}</span>
+      </div>
     </div>
   {/if}
 </section>
@@ -207,6 +277,15 @@
   .voice-gate p { flex-basis: 100%; margin: 0; }
   .howto { margin: 8px 0; }
   .practice { flex-basis: 100%; margin-top: 6px; }
+  .unit-page { padding-bottom: 120px; }
+  .player-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px;
+    padding: 8px 16px calc(8px + env(safe-area-inset-bottom)); background: var(--card, #fff); border-top: 2px solid var(--accent, #6a4c93); box-shadow: 0 -2px 10px rgb(0 0 0 / 0.15); }
+  .transport { display: flex; gap: 14px; align-items: center; }
+  .transport button { font-size: 1.6rem; min-width: 52px; min-height: 52px; border-radius: 50%; }
+  .transport .playpause { font-size: 2rem; min-width: 64px; min-height: 64px; }
+  .hands-free { font-size: 1.05rem; font-weight: 700; padding: 10px 16px; border-radius: 24px; border: 2px solid var(--accent, #6a4c93); }
+  .hands-free.on { background: var(--accent, #6a4c93); color: #fff; }
+  .where { font-size: 0.9rem; opacity: 0.8; }
   .units { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; }
   .unit-row { width: 100%; text-align: start; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--card, transparent); color: var(--ink); cursor: pointer; }
   .unit-row:hover { border-color: var(--accent); }
