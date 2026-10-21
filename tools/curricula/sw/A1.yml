@@ -1,0 +1,127 @@
+id: A1
+topics:
+
+- title: {en: Sounds and nouns, pt: Sons e nomes}
+  lessons:
+  - id: sw-sounds
+    title: a e i o u; ng', ny, dh, th
+    meaning: {en: "spelling as spoken; stress on the second-last syllable", pt: "escrita como se fala; acento na penúltima"}
+    intro:
+      en: |
+        Five vowels, each always the same: **a e i o u**. **ch** as in *church*, **ny** as in *canyon*, **ng'** as in *singer*, **dh** and **th** as in *this* and *thin* (from Arabic). Stress always falls on the second-last syllable: **ki-TA-bu**, **ki-ta-BU-ni**.
+      pt: |
+        Cinco vogais, sempre iguais: **a e i o u**. **ch** como *tch*, **ny** como *nh*, **ng'** como o *ng* do inglês *singer*, **dh** e **th** como no inglês *this* e *thin* (do árabe). O acento cai sempre na penúltima sílaba: **ki-TA-bu**, **ki-ta-BU-ni**.
+    examples:
+    - ["Jina langu ni Amina.", "My name is Amina.", "Meu nome é Amina.", "Jina"]
+    match: {seq: [{re: "(ch|ny|ng'|dh|th)", pos: [noun, verb, adj]}]}
+  - id: sw-classes
+    title: mtoto / watoto, kitabu / vitabu
+    meaning: {en: "noun classes in pairs", pt: "classes de nomes em pares"}
+    intro:
+      en: |
+        Nouns fall into classes marked by a prefix, singular and plural in pairs: **m-/wa-** for people (**mtoto / watoto** child / children), **m-/mi-** (**mti / miti** tree), **ki-/vi-** (**kitabu / vitabu** book), **ji-/ma-** (**jicho / macho** eye), **n-** (same in both: **nyumba** house, houses). Everything that agrees with the noun takes the class prefix.
+      pt: |
+        Os nomes se dividem em classes marcadas por um prefixo, singular e plural em pares: **m-/wa-** para pessoas (**mtoto / watoto** criança / crianças), **m-/mi-** (**mti / miti** árvore), **ki-/vi-** (**kitabu / vitabu** livro), **ji-/ma-** (**jicho / macho** olho), **n-** (igual nos dois: **nyumba** casa, casas). Tudo o que concorda com o nome leva o prefixo da classe.
+    examples:
+    - ["Watoto wanacheza katika bustani.", "The children are playing in the garden.", "As crianças brincam no jardim.", "Watoto"]
+    match: {seq: [{pos: noun, number: pl, re: "^(wa|mi|vi|ma)"}]}
+  - id: sw-agreement
+    title: kitabu kizuri, vitabu vizuri
+    meaning: {en: "adjectives agree by class", pt: "os adjetivos concordam pela classe"}
+    intro:
+      en: |
+        Adjectives follow the noun and take its prefix: **mtoto mzuri** (a good child), **watoto wazuri**, **kitabu kizuri**, **vitabu vizuri**, **nyumba nzuri**. Some, mostly from Arabic, never change: **safi** (clean), **ghali** (expensive).
+      pt: |
+        Os adjetivos vêm depois do nome e levam seu prefixo: **mtoto mzuri** (uma criança boa), **watoto wazuri**, **kitabu kizuri**, **vitabu vizuri**, **nyumba nzuri**. Alguns, sobretudo do árabe, nunca mudam: **safi** (limpo), **ghali** (caro).
+    examples:
+    - ["Leo hali ya hewa ni nzuri.", "Today the weather is good.", "Hoje o tempo está bom.", "nzuri"]
+    match: {seq: [{pos: noun}, {pos: adj}], gap: 0}
+
+- title: {en: Pronouns and being, pt: Pronomes e o ser}
+  lessons:
+  - id: sw-pronouns
+    title: mimi, wewe, yeye, sisi, ninyi, wao
+    meaning: {en: "pronouns; possessives -angu, -ako", pt: "pronomes; possessivos -angu, -ako"}
+    intro:
+      en: |
+        **mimi** (I), **wewe** (you), **yeye** (he, she), **sisi** (we), **ninyi** (you all), **wao** (they) — often left out, since the verb shows the person. Possessives agree with the thing owned: **kitabu changu** (my book), **vitabu vyangu**, **jina langu** (my name), **kaka yangu** (my brother).
+      pt: |
+        **mimi** (eu), **wewe** (você), **yeye** (ele, ela), **sisi** (nós), **ninyi** (vocês), **wao** (eles) — muitas vezes omitidos, pois o verbo mostra a pessoa. Os possessivos concordam com a coisa possuída: **kitabu changu** (meu livro), **vitabu vyangu**, **jina langu** (meu nome), **kaka yangu** (meu irmão).
+    examples:
+    - ["Kaka yangu anafanya kazi benki.", "My brother works at a bank.", "Meu irmão trabalha num banco.", "yangu"]
+    match: {seq: [{word: [mimi, wewe, yeye, sisi, ninyi, wao, yangu, langu, changu, wangu, yako, lako, chako, wako]}]}
+    pool: [mimi, wewe, yeye, sisi, wao, yangu]
+  - id: sw-ni
+    title: ni, si, -ko, -po, -mo
+    meaning: {en: "to be (ni), not to be (si), to be somewhere (-ko)", pt: "ser (ni), não ser (si), estar em algum lugar (-ko)"}
+    intro:
+      en: |
+        **ni** (is, am, are) for every person: **Mimi ni mwalimu** (I'm a teacher); negative **si**: **Yeye si mwalimu**. Location with subject prefix + **-ko / -po / -mo**: **Kitabu kiko mezani** (the book is on the table), **Yuko nyumbani** (he's at home). *To have*: **kuwa na**: **Nina kitabu** (I have a book).
+      pt: |
+        **ni** (é, sou, são) para todas as pessoas: **Mimi ni mwalimu** (sou professor); negativo **si**: **Yeye si mwalimu**. Lugar com prefixo de sujeito + **-ko / -po / -mo**: **Kitabu kiko mezani** (o livro está na mesa), **Yuko nyumbani** (ele está em casa). *Ter*: **kuwa na**: **Nina kitabu** (tenho um livro).
+    examples:
+    - ["Kitabu kiko mezani.", "The book is on the table.", "O livro está na mesa.", "kiko"]
+    match: {seq: [{word: [ni, si, niko, uko, yuko, tuko, mko, wako, kiko, viko, iko, ziko, nina, una, ana, tuna, wana]}]}
+    pool: [ni, si, yuko, kiko, nina]
+
+- title: {en: Verbs, pt: Verbos}
+  lessons:
+  - id: sw-verb
+    title: ni-na-soma, a-li-soma, tu-ta-soma
+    meaning: {en: "subject + tense + stem", pt: "sujeito + tempo + radical"}
+    intro:
+      en: |
+        A verb is built from prefixes: subject (**ni** I, **u** you, **a** he/she, **tu** we, **m** you all, **wa** they) + tense (**na** now, **li** past, **ta** future, **me** perfect) + stem: **ninasoma** (I'm reading), **alisoma** (he read), **tutasoma** (we'll read), **wamefika** (they have arrived). Infinitive **ku-**: **kusoma** (to read).
+      pt: |
+        O verbo se forma com prefixos: sujeito (**ni** eu, **u** você, **a** ele/ela, **tu** nós, **m** vocês, **wa** eles) + tempo (**na** agora, **li** passado, **ta** futuro, **me** perfeito) + radical: **ninasoma** (estou lendo), **alisoma** (ele leu), **tutasoma** (vamos ler), **wamefika** (eles chegaram). Infinitivo **ku-**: **kusoma** (ler).
+    examples:
+    - ["Ninasoma kitabu.", "I'm reading a book.", "Estou lendo um livro.", "Ninasoma"]
+    match: {seq: [{pos: verb, tense: [pres, past, fut]}]}
+  - id: sw-negative
+    title: sisomi, hakusoma, hatutasoma
+    meaning: {en: "the negative: ha- and changed tenses", pt: "a negação: ha- e tempos alterados"}
+    intro:
+      en: |
+        Negative subject prefixes: **si** (I not), **hu** (you not), **ha** (he not), **hatu**, **ham**, **hawa**. Present drops **-na-** and ends in **-i**: **sisomi** (I don't read); past uses **-ku-**: **hakusoma** (he didn't read); future keeps **-ta-**: **hatutasoma**. **Sielewi** = I don't understand.
+      pt: |
+        Prefixos negativos de sujeito: **si** (eu não), **hu** (você não), **ha** (ele não), **hatu**, **ham**, **hawa**. O presente perde o **-na-** e termina em **-i**: **sisomi** (não leio); o passado usa **-ku-**: **hakusoma** (ele não leu); o futuro mantém **-ta-**: **hatutasoma**. **Sielewi** = não entendo.
+    examples:
+    - ["Sielewi.", "I don't understand.", "Não entendo.", "Sielewi"]
+    match: {seq: [{pos: verb, polarity: neg}]}
+  - id: sw-object
+    title: ni-na-ki-soma, a-li-ni-pa
+    meaning: {en: "the object prefix", pt: "o prefixo de objeto"}
+    intro:
+      en: |
+        An object prefix goes right before the stem: **ninakisoma** (I'm reading it — the book, class ki-), **alinipa zawadi** (he gave me a present), **nakupenda** (I love you). For people it is usual even with the noun: **nilimwona Juma** (I saw Juma).
+      pt: |
+        Um prefixo de objeto vem logo antes do radical: **ninakisoma** (estou lendo-o — o livro, classe ki-), **alinipa zawadi** (ele me deu um presente), **nakupenda** (eu te amo). Para pessoas é comum mesmo com o nome: **nilimwona Juma** (vi o Juma).
+    examples:
+    - ["Alinipa zawadi.", "He gave me a present.", "Ele me deu um presente.", "Alinipa"]
+    match: {seq: [{re: "^(ni|u|a|tu|m|wa)(na|li|ta|me)(ni|ku|m|mw|tu|wa|ki|vi)", pos: verb}]}
+
+- title: {en: Questions and places, pt: Perguntas e lugares}
+  lessons:
+  - id: sw-questions
+    title: nini, nani, wapi, lini, kwa nini, je
+    meaning: {en: "question words", pt: "palavras interrogativas"}
+    intro:
+      en: |
+        **nini** (what), **nani** (who), **wapi** (where), **lini** (when), **kwa nini** (why), **vipi / jinsi gani** (how), **ngapi** (how many) — after the verb: **Unakwenda wapi?** (where are you going?). Yes/no: rising voice, or **je** at the start: **Je, unasema Kiingereza?**
+      pt: |
+        **nini** (o que), **nani** (quem), **wapi** (onde), **lini** (quando), **kwa nini** (por quê), **vipi / jinsi gani** (como), **ngapi** (quantos) — depois do verbo: **Unakwenda wapi?** (aonde você vai?). Sim/não: entonação, ou **je** no começo: **Je, unasema Kiingereza?** (você fala inglês?)
+    examples:
+    - ["Unakwenda wapi?", "Where are you going?", "Aonde você vai?", "wapi"]
+    match: {seq: [{word: [nini, nani, wapi, lini, vipi, ngapi, je]}]}
+    pool: [nini, nani, wapi, lini, je]
+  - id: sw-ni-locative
+    title: mezani, nyumbani, katika, kwa
+    meaning: {en: "places: -ni, katika, kwa", pt: "lugares: -ni, katika, kwa"}
+    intro:
+      en: |
+        **-ni** on a noun makes a place: **meza → mezani** (on / at the table), **nyumba → nyumbani** (at home), **jiko → jikoni** (in the kitchen). Prepositions: **katika** (in), **kwa** (with, by, at someone's: **kwa basi** by bus), **kutoka** (from), **mpaka / hadi** (until, to).
+      pt: |
+        **-ni** num nome faz um lugar: **meza → mezani** (na mesa), **nyumba → nyumbani** (em casa), **jiko → jikoni** (na cozinha). Preposições: **katika** (em), **kwa** (com, por, na casa de alguém: **kwa basi** de ônibus), **kutoka** (de), **mpaka / hadi** (até).
+    examples:
+    - ["Mama anapika chakula jikoni.", "Mother is cooking food in the kitchen.", "A mãe cozinha a comida na cozinha.", "jikoni"]
+    match: {seq: [{re: "ni$", pos: noun}]}

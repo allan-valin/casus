@@ -1,0 +1,16 @@
+id: B2
+topics:
+
+- title: {en: Verb extensions, pt: Extensões verbais}
+  lessons:
+  - id: sw-extensions
+    title: somea, someshwa, somana
+    meaning: {en: "for, cause, be done, each other", pt: "para, causar, ser feito, um ao outro"}
+    intro:
+      en: |
+        Suffixes change what a verb means: **-ea / -ia** for someone (**somea** read to), **-isha / -esha** cause (**somesha** teach, make read), **-wa** passive (**somwa** be read, **pendwa** be loved), **-ana** each other (**pendana** love each other), **-ika** can be (**someka** be readable).
+      pt: |
+        Sufixos mudam o sentido do verbo: **-ea / -ia** para alguém (**somea** ler para), **-isha / -esha** causar (**somesha** ensinar, fazer ler), **-wa** passiva (**somwa** ser lido, **pendwa** ser amado), **-ana** um ao outro (**pendana** amar-se), **-ika** poder ser (**someka** ser legível).
+    examples:
+    - ["Wanapendana sana.", "They love each other very much.", "Eles se amam muito.", "Wanapendana"]
+    match: {seq: [{re: "(ana|wa|isha|esha|ika|eka)$", pos: verb}]}
