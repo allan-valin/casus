@@ -25,7 +25,7 @@ from html import unescape
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from mt_html import PH, dedupe, is_prose, protect_terms, translate_html  # noqa: E402
+from mt_html import PH, STOPS, dedupe, is_prose, protect_terms, translate_html  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 MODEL = ROOT / "vendor" / "mt" / "madlad400-3b-ct2"
@@ -367,6 +367,7 @@ def gloss_test(code: str, src: str = "en"):
                 explanation |= {w.strip().lower() for w in Path(f).read_text(encoding="utf-8", errors="ignore").splitlines() if w.strip().isalpha()}
     elif (ROOT / "data" / src / "forms").exists():
         explanation = {k.lower() for f in (ROOT / "data" / src / "forms").glob("*.json") for k in json.loads(f.read_text(encoding="utf-8"))}
+        explanation |= STOPS.get(src, set())        # the forms lists leave out function words ("au", "du", "i")
     else:
         return None
     own = {"de": "äöüß"}.get(code, "")

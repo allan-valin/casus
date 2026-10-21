@@ -384,3 +384,6 @@ def test_the_german_word_test_knows_the_language_a_book_explains_in():
     es = T.gloss_test("de", "es")
     assert es.taught("Ich bin so groß wie du") and not es.taught("Las partículas interrogativas")
     assert es("la mujer") and not es("die Frau")          # a bold Spanish gloss is explanation, a German form is not
+    if (T.ROOT / "data" / "fr" / "forms").exists():
+        fr = T.gloss_test("de", "fr")
+        assert not fr.taught("au") and not fr.taught("du") and fr.taught("Ich bin der Mann")   # French function words
