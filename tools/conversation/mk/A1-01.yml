@@ -1,0 +1,185 @@
+# UNIT mk·pt-BR A1-01 — written by AI (Claude) for Casus, 2026-10-21, after the accepted plan
+# (docs/conversation/PLAN-mk-pt-BR-A1.md) and story bible. Checked with tools/conversation_check.py and the proofreader.
+
+id: A1-01
+level: A1
+number: 1
+protagonist: f
+title: {pt: "A senhoria"}
+situation:
+  pt: "Você acabou de chegar ao prédio em Skopje, no bairro de Karpoš. A senhoria, a senhora Stojanovska, abre a porta."
+learn_lessons: [a1-sum, a1-pronouns]
+culture: Calling the landlady by her first name
+
+new_items:
+  - {id: dobar-den, text: "Добар ден", meaning: {pt: "Bom dia / boa tarde"}, register: formal}
+  - {id: izvinete, text: "Извинете", meaning: {pt: "Com licença / desculpe (formal)"}, register: formal}
+  - {id: ne-razbiram, text: "Не разбирам", meaning: {pt: "Não entendo"}}
+  - {id: zboruvate-angliski, text: "Зборувате ли англиски?", meaning: {pt: "A senhora fala inglês?"}, register: formal}
+  - {id: da, text: "Да", meaning: {pt: "Sim"}}
+  - {id: od-brazil, text: "Од Бразил сум", meaning: {pt: "Sou do Brasil"}}
+  - {id: malku, text: "Малку", meaning: {pt: "Um pouco"}}
+  - {id: jas-sum, text: "Јас сум", meaning: {pt: "Eu sou"}}
+  - {id: novata-stanarka, text: "новата станарка", meaning: {pt: "a nova inquilina"}}
+  - {id: povelete, text: "Повелете", meaning: {pt: "Aqui está / pode entrar / sirva-se (formal)"}, register: formal}
+  - {id: ova-e, text: "Ова е", meaning: {pt: "Este é / isto é"}}
+  - {id: klucot, text: "клучот", meaning: {pt: "a chave"}}
+  - {id: blagodaram, text: "Благодарам", meaning: {pt: "Obrigada / obrigado"}}
+  - {id: gospogjo, text: "госпоѓо Стојановска", meaning: {pt: "senhora Stojanovska (chamando-a)"}, register: formal}
+  - {id: nema-zosto, text: "Нема зошто", meaning: {pt: "De nada"}}
+  - {id: dobredojdovte, text: "Добредојдовте", meaning: {pt: "Bem-vinda / bem-vindos (formal)"}, register: formal}
+
+reviews: []
+
+steps:
+  - type: narrator
+    text:
+      pt: "Você acabou de chegar à Macedônia do Norte. Escute a conversa com a senhoria. Ainda não precisa entender."
+  - type: dialogue
+    lines:
+      - {speaker: protagonist, text: "Добар ден!", meaning: {pt: "Boa tarde!"}}
+      - {speaker: vera, text: "Добар ден. Вие сте новата станарка?", meaning: {pt: "Boa tarde. A senhora é a nova inquilina?"}}
+      - {speaker: protagonist, text: "Извинете, не разбирам.", meaning: {pt: "Desculpe, não entendo."}}
+      - {speaker: vera, text: "Новата станарка? Од Бразил?", meaning: {pt: "A nova inquilina? Do Brasil?"}}
+      - {speaker: protagonist, text: "Да, од Бразил сум. Зборувате ли англиски?", meaning: {pt: "Sim, sou do Brasil. A senhora fala inglês?"}}
+      - {speaker: vera, text: "Малку. Јас сум Вера Стојановска.", meaning: {pt: "Um pouco. Eu sou Vera Stojanovska."}}
+      - {speaker: vera, text: "Повелете, ова е клучот.", meaning: {pt: "Aqui está, esta é a chave."}}
+      - {speaker: protagonist, text: "Благодарам, госпоѓо Стојановска!", meaning: {pt: "Obrigada, senhora Stojanovska!"}}
+      - {speaker: vera, text: "Нема зошто. Добредојдовте во Скопје!", meaning: {pt: "De nada. Bem-vinda a Skopje!"}}
+  - type: narrator
+    text:
+      pt: "Para cumprimentar alguém que você não conhece, diga 'Добар ден'. Escute."
+  - {type: line, speaker: vera, item: dobar-den}
+  - type: prompt
+    ask: {pt: "Cumprimente a senhoria."}
+    answer: {speaker: protagonist, text: "Добар ден!"}
+    items: [dobar-den]
+  - type: narrator
+    text:
+      pt: "'Извинете' é 'desculpe' ou 'com licença', na forma educada. Repare: a força cai em 'ВИ'."
+  - type: buildup
+    item: izvinete
+    parts: ["-нете", "-винете", "Извинете"]
+  - type: prompt
+    ask: {pt: "Peça licença para falar com ela."}
+    answer: {speaker: protagonist, text: "Извинете!"}
+    items: [izvinete]
+  - {type: line, speaker: vera, item: ne-razbiram}
+  - type: prompt
+    ask: {pt: "Diga que você não entende."}
+    answer: {speaker: protagonist, text: "Не разбирам."}
+    items: [ne-razbiram]
+  - type: prompt
+    ask: {pt: "Peça desculpas e diga que não entende."}
+    answer: {speaker: protagonist, text: "Извинете, не разбирам."}
+    items: [izvinete, ne-razbiram]
+  - type: narrator
+    text:
+      pt: "Ela pergunta se você é do Brasil. 'Сум' é 'sou'; ele vem depois: 'од Бразил сум', 'do Brasil sou'."
+  - type: prompt
+    ask: {pt: "Diga que é do Brasil."}
+    answer: {speaker: protagonist, text: "Од Бразил сум."}
+    items: [od-brazil]
+  - type: prompt
+    ask: {pt: "Responda 'sim, sou do Brasil'."}
+    answer: {speaker: protagonist, text: "Да, од Бразил сум."}
+    items: [da, od-brazil]
+  - type: narrator
+    text:
+      pt: "Com uma senhora mais velha que você não conhece, use 'Вие', o tratamento educado. Pergunte se ela fala inglês."
+  - type: buildup
+    item: zboruvate-angliski
+    parts: ["англиски?", "ли англиски?", "Зборувате ли англиски?"]
+  - type: prompt
+    ask: {pt: "Pergunte: a senhora fala inglês?"}
+    answer: {speaker: protagonist, text: "Зборувате ли англиски?"}
+    items: [zboruvate-angliski]
+  - {type: line, speaker: vera, item: malku}
+  - type: prompt
+    ask: {pt: "Ela fala inglês só um pouco. Como ela disse 'um pouco'?"}
+    answer: {speaker: protagonist, text: "Малку."}
+    items: [malku]
+  - type: narrator
+    text:
+      pt: "Para se apresentar: 'Јас сум' e o seu nome. Ela diz: 'Јас сум Вера Стојановска'."
+  - type: prompt
+    ask: {pt: "Diga 'eu sou do Brasil', começando por 'eu sou'."}
+    answer: {speaker: protagonist, text: "Јас сум од Бразил."}
+    items: [jas-sum]
+  - type: prompt
+    ask: {pt: "Diga que você é a nova inquilina."}
+    answer: {speaker: protagonist, text: "Јас сум новата станарка."}
+    items: [jas-sum, novata-stanarka]
+  - type: narrator
+    text:
+      pt: "Ela entrega a chave: 'Повелете, ова е клучот'. 'Повелете' serve para oferecer qualquer coisa, e para convidar a entrar."
+  - {type: line, speaker: vera, item: povelete}
+  - type: prompt
+    ask: {pt: "Mostre a chave: 'esta é a chave'."}
+    answer: {speaker: protagonist, text: "Ова е клучот."}
+    items: [ova-e, klucot]
+  - type: prompt
+    ask: {pt: "Agradeça."}
+    answer: {speaker: protagonist, text: "Благодарам!"}
+    items: [blagodaram]
+  - type: narrator
+    text:
+      pt: "Não a chame de Vera: use 'госпоѓо' e o sobrenome. Ao chamar alguém, 'госпоѓа' vira 'госпоѓо'."
+  - type: buildup
+    item: gospogjo
+    parts: ["-новска", "Стојановска", "госпоѓо Стојановска"]
+  - type: prompt
+    ask: {pt: "Agradeça, chamando-a pelo sobrenome."}
+    answer: {speaker: protagonist, text: "Благодарам, госпоѓо Стојановска!"}
+    items: [blagodaram, gospogjo]
+  - {type: line, speaker: vera, item: nema-zosto}
+  - type: prompt
+    ask: {pt: "Alguém lhe agradece. Responda 'de nada'."}
+    answer: {speaker: protagonist, text: "Нема зошто."}
+    items: [nema-zosto]
+  - {type: line, speaker: vera, item: dobredojdovte}
+  - type: prompt
+    ask: {pt: "Como ela disse 'bem-vinda'?"}
+    answer: {speaker: protagonist, text: "Добредојдовте!"}
+    items: [dobredojdovte]
+  - type: prompt
+    ask: {pt: "Ela ofereceu a chave com uma palavra. Qual?"}
+    answer: {speaker: protagonist, text: "Повелете."}
+    items: [povelete]
+  - type: prompt
+    ask: {pt: "Cumprimente de novo e pergunte se ela fala inglês."}
+    answer: {speaker: protagonist, text: "Добар ден! Зборувате ли англиски?"}
+    items: [dobar-den, zboruvate-angliski]
+  - type: prompt
+    ask: {pt: "Diga: desculpe, não entendo, eu sou do Brasil."}
+    answer: {speaker: protagonist, text: "Извинете, не разбирам. Јас сум од Бразил."}
+    items: [izvinete, ne-razbiram, jas-sum]
+  - type: prompt
+    ask: {pt: "Ela diz 'bem-vinda'. Agradeça, chamando-a pelo sobrenome."}
+    answer: {speaker: protagonist, text: "Благодарам, госпоѓо Стојановска!"}
+    items: [blagodaram, gospogjo]
+  - type: prompt
+    ask: {pt: "Ela fala inglês? Responda por ela: 'sim, um pouco'."}
+    answer: {speaker: protagonist, text: "Да, малку."}
+    items: [da, malku]
+  - type: prompt
+    ask: {pt: "Ofereça a chave a um vizinho, com educação: 'aqui está, esta é a chave'."}
+    answer: {speaker: protagonist, text: "Повелете, ова е клучот."}
+    items: [povelete, ova-e, klucot]
+  - type: prompt
+    ask: {pt: "Ela pergunta de novo se você é a nova inquilina. Responda 'sim, eu sou a nova inquilina'."}
+    answer: {speaker: protagonist, text: "Да, јас сум новата станарка."}
+    items: [da, jas-sum, novata-stanarka]
+  - type: prompt
+    ask: {pt: "Um amigo chega do Brasil. Dê as boas-vindas a ele e aos pais dele, na forma educada."}
+    answer: {speaker: protagonist, text: "Добредојдовте!"}
+    items: [dobredojdovte]
+  - type: prompt
+    ask: {pt: "Eles agradecem. Responda 'de nada'."}
+    answer: {speaker: protagonist, text: "Нема зошто."}
+    items: [nema-zosto]
+  - type: narrator
+    text:
+      pt: "Escute a conversa outra vez. Agora você entende."
+  - {type: dialogue, again: true}
+  - type: selfcheck

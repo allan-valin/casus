@@ -41,7 +41,11 @@ for (const file of files) {
     if (sp) for (const i of spellIssues(text, sp, { suggest: true })) if (SCRIPT.test(i.word)) found.push(`spelling «${i.word}» → ${i.replacements.slice(0, 3).join(', ') || '?'}`);
     if (LT_CODE[code]) {
       const g = await checkGrammar(text, code, { fetchImpl: fetch, allowPublic: false, localMs: 60000 });
-      for (const i of g.issues) found.push(`${i.kind}: «${text.slice(i.offset, i.offset + i.length)}» ${i.message} → ${i.replacements.slice(0, 3).join(', ') || '?'}`);
+      for (const i of g.issues) {
+        const span = text.slice(i.offset, i.offset + i.length);
+        if (!SCRIPT.test(span)) continue;                  // examples in the taught language are not this language's text
+        found.push(`${i.kind}: «${span}» ${i.message.replace(/\s+/g, ' ')} → ${i.replacements.slice(0, 3).join(', ') || '?'}`);
+      }
     }
     for (const f of found) console.log(`${file}:${n + 1}: ${f}`);
     total += found.length;

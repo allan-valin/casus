@@ -25,6 +25,8 @@ export const macedonian = {
   eras: [{ id: 'modern', label: 'Standard Macedonian', authors: '', ages: [], ipa: [] }],
   dataPath: '/data/mk',
   samplesPath: '/samples/mk',
-  voice: { espeak: 'mk', natural: null },
+  // no Macedonian voice exists: the Bulgarian Piper voice (CC0) reads Macedonian sounds (src/lang/mk/phonemes.js;
+  // Allan chose it by ear, 2026-10-21)
+  voice: { espeak: 'mk', natural: { voiceId: 'bg_BG-dimitar-medium', name: 'Dimitar (Bulgarian voice reading Macedonian)', sizeMB: 63, phonemes: 'mk' } },
   game: { ROWS, LETTERS, createGame, createGrid },
 };

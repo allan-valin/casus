@@ -1,4 +1,4 @@
-# Conversation practice de · mk and de · ar — A1 unit plan (DRAFT for Allan, 2026-10-21)
+# Conversation practice de · mk and de · ar — A1 unit plan (ACCEPTED by Allan 2026-10-21)
 
 Story bible: `tools/conversation/de/story-bible.yml` — one German course, two narrators (Macedonian, Arabic), each with
 its own protagonist background (a nurse from Bitola / an engineer from Aleppo) and its own culture notes, so the clash

@@ -7,6 +7,8 @@
  *   4. none: the button is disabled and says so.
  * No modern-language voice stands in for an ancient one.
  */
+import { createPhonemePiper } from './phonemePiper.js';
+
 const PIPER_URL = 'https://cdn.jsdelivr.net/npm/@mintplex-labs/piper-tts-web@1.0.5/+esm';
 
 /** Piper in the browser (MIT): download(voiceId, progress), predict({ text, voiceId }) -> WAV Blob, remove(voiceId). */
@@ -62,7 +64,9 @@ export async function playPcm(audio, sampleRate) {
 }
 
 export function createVoice({ bcp47, espeakVoice, natural = null, synth = globalThis.speechSynthesis ?? null, loadEspeak = loadEspeakFromCdn, play = playPcm,
-  loadPiper = loadPiperFromCdn, playBlob = playBlobAudio, store = defaultStore(), timeoutMs = 30000 }) {
+  loadPiper = null, playBlob = playBlobAudio, store = defaultStore(), timeoutMs = 30000 }) {
+  // a voice fed with our own sounds (Macedonian through the Bulgarian voice) runs on its own small engine
+  loadPiper ??= natural?.phonemes ? async () => createPhonemePiper({ phonemes: natural.phonemes }) : loadPiperFromCdn;
   // a natural voice the reader downloaded: remembered in the browser, so deciding the tier loads nothing
   const naturalKey = natural ? `casus:voice:${natural.voiceId}` : null;
   const naturalReady = () => { try { return !!naturalKey && store?.getItem(naturalKey) === 'stored'; } catch { return false; } };

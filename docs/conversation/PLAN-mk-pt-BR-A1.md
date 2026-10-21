@@ -1,15 +1,11 @@
-# Conversation practice mk · pt-BR — A1 unit plan (DRAFT for Allan, 2026-10-21)
+# Conversation practice mk · pt-BR — A1 unit plan (ACCEPTED by Allan 2026-10-21)
 
 Story bible: `tools/conversation/mk/story-bible.yml` (cast, politeness research, culture notes on both sides,
-clashes, voice proposal). Nothing below is written as a unit yet; this list is for you to change first.
+clashes, voice proposal). Units: tools/conversation/mk/A1-NN.yml.
 
-**Before units: three decisions only you can make**
-1. **Voice.** No open-licence Macedonian voice exists (MMS mkd and Serbian Piper are NC). Proposal: the Bulgarian
-   Piper voice (CC0) reading Macedonian phonemes. Listen: `spikes/mk-voice-2026-10-21/mkbg-1…5.wav` (male) and
-   `mkbg-1…3-pitch.wav` (the same, shifted up for female characters). Acceptable? If the female version is not,
-   female characters use espeak-ng (robotic) or the cast becomes male-only.
-2. **Cast.** Vera (landlady, Вие), Marko (neighbour, ти), Ana (colleague, Вие → ти in A1-08), Dragan (shop, Вие).
-3. **City.** Skopje, flat in Карпош; protagonist from São Paulo working in English for a software company.
+**Decided by Allan 2026-10-21:** voice = the Bulgarian Piper voice reading Macedonian phonemes, pitched ×1.25 for
+the women (mkbg-1-pitch), plain for the men (mkbg-2); cast and city as below; units are now being written.
+Language check: Casus's proofreader (tools/proof_files.mjs), no native review queue.
 
 A1 grammar follows Learn mk A1 (present tense, сум/имам, article, adjectives, numbers, prepositions — **no past
 tense**, which comes with A2). Each unit: 15–30 new items, one 8–10-line dialogue, ~25 % review in a new setting,
@@ -44,4 +40,4 @@ tense**, which comes with A2). Each unit: 15–30 new items, one 8–10-line dia
 Dragan → Ana → Marko, Вие vs ти each time), thanks and please, numbers and prices (shop → bus → bazaar → Čaršija),
 "не разбирам / зборувате ли англиски" (shop → bus driver → office), сакам / не сакам (coffee → lunch → rakija).
 
-**Native check:** every Macedonian line; specially Вие + adjective agreement, the toast customs, the dishes named.
+**Language check:** the proofreader on every Macedonian line; watch Вие + adjective agreement, toasts, dishes.

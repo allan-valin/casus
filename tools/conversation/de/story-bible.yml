@@ -1,5 +1,5 @@
-# STORY BIBLE — German, narrators Macedonian and Arabic (Allan's pairs de·mk and de·ar). DRAFT 2026-10-21 for Allan's
-# review; units come after. The template (tools/conversation/_template) shows German units with a Portuguese
+# STORY BIBLE — German, narrators Macedonian and Arabic (Allan's pairs de·mk and de·ar). ACCEPTED by Allan 2026-10-21;
+# units come next. The template (tools/conversation/_template) shows German units with a Portuguese
 # narrator; this course is its own, built for newcomers from North Macedonia and from the Arab world.
 
 language: de
@@ -25,7 +25,7 @@ protagonist:
   name: null
   background:
     mk: "From Bitola, about 30, nurse; moves to Leipzig for a job at a hospital (German hospitals recruit nurses from North Macedonia). Knows Macedonian, some English, school German from long ago."
-    ar: "From Aleppo by way of Amman, about 30, engineer; comes to Leipzig for a master's degree and a job. Knows Arabic and good English, no German."
+    ar: "From Aleppo, Syria, about 30, engineer; comes to Leipzig for a master's degree and a job. Knows Arabic (Syrian at home, Standard Arabic from school) and good English, no German. The Arab-world notes are framed from Syria (Allan, 2026-10-21)."
   alternation: odd units f, even units m
 
 cast:
@@ -63,6 +63,13 @@ culture:
     - {lang: ar, topic: weekend, note: "Friday is the day off in much of the Arab world; in Germany Sunday is, and Sunday quiet is strict."}
     - {lang: ar, topic: food, note: "Halal food and pork in everything (Wurst, Gelatine); labels must be read."}
     - {lang: ar, topic: time, note: "Appointments are approximate; in Germany the doctor's appointment at 9:15 means 9:15."}
+  other_arab_countries:
+    # Allan, 2026-10-21: the frame is Syria; the German characters widen it now and then by mentioning a friend from
+    # another Arab country who does a thing differently — one line, never a lecture.
+    - {who: jonas, unit: A1-04, line: "Mein Freund aus Marokko sagt immer dreimal nein, bevor er ja sagt.", note: "Moroccan politeness ritual vs. the Syrian one"}
+    - {who: becker, unit: A1-06, line: "Meine Nachbarin aus Ägypten macht am Freitag auch nichts.", note: "Friday off in Egypt too; Sunday quiet here"}
+    - {who: meier, unit: A2, line: "Ein Kollege aus Tunesien gibt allen die Hand, eine Kollegin aus Saudi-Arabien nicht.", note: "handshake habits differ across the Arab world"}
+    - {who: jonas, unit: B1, line: "Mein Mitbewohner aus dem Libanon spricht mit mir halb Französisch.", note: "Lebanese French/Arabic mixing"}
   clashes:
     - {situation: "Frau Becker offers nothing at the first visit; the protagonist waits for coffee (mk) / insists on bringing food (ar)", unit: A1-03}
     - {situation: "Saying 'no, thanks' out of politeness and getting nothing (ar: the host asks only once)", unit: A1-04}
@@ -83,4 +90,4 @@ arc:
 
 native_check:
   - "Every Macedonian and Arabic narrator line until a native speaker has read it"
-  - "The Arab-world notes generalise across countries: Allan to say whether one country (Syria?) should be the frame"
+  - "DECIDED 2026-10-21: Syria is the frame; other Arab countries enter through the German characters' friends (other_arab_countries)"
