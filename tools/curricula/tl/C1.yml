@@ -1,0 +1,16 @@
+id: C1
+topics:
+
+- title: {en: Word building, pt: Formação de palavras}
+  lessons:
+  - id: tl-affixes
+    title: pinaka-, ka-…-an, pang-
+    meaning: {en: "superlatives, abstracts, purpose", pt: "superlativos, abstratos, finalidade"}
+    intro:
+      en: |
+        **pinaka-** the most (**pinakamaganda** the most beautiful), **ka-…-an** abstracts and groups (**kalayaan** freedom, **kaibigan** friend), **pang-** for (**pambansa** national, **pangkalahatan** general), **ma-** adjectives (**maganda**, **masaya** happy).
+      pt: |
+        **pinaka-** o mais (**pinakamaganda** o mais bonito), **ka-…-an** abstratos e grupos (**kalayaan** liberdade, **kaibigan** amigo), **pang-** para (**pambansa** nacional, **pangkalahatan** geral), **ma-** adjetivos (**maganda** bonito, **masaya** feliz).
+    examples:
+    - ["Mahalaga ang kalayaan.", "Freedom is important.", "A liberdade é importante.", "kalayaan"]
+    match: {seq: [{re: "^(pinaka|ka.*an$|pan)", pos: [noun, adj]}]}

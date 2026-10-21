@@ -1,0 +1,104 @@
+id: A1
+topics:
+
+- title: {en: Markers and pronouns, pt: Marcadores e pronomes}
+  lessons:
+  - id: tl-ang-ng-sa
+    title: ang, ng, sa; si, ni, kay
+    meaning: {en: "every noun phrase has a marker", pt: "todo sintagma nominal tem um marcador"}
+    intro:
+      en: |
+        Tagalog marks each noun phrase: **ang** (the topic, what the sentence is about), **ng** (*nang*: the other actor or object), **sa** (place, goal, *to*). With names: **si**, **ni**, **kay**. **Bumasa ang bata ng aklat** (the child read a book), **Kumain si Maria sa bahay** (Maria ate at home). Plural with **mga**: **ang mga bata** (the children).
+      pt: |
+        O tagalo marca cada sintagma nominal: **ang** (o tópico, aquilo de que a frase fala), **ng** (*nang*: o outro agente ou objeto), **sa** (lugar, destino, *para*). Com nomes próprios: **si**, **ni**, **kay**. **Bumasa ang bata ng aklat** (a criança leu um livro), **Kumain si Maria sa bahay** (Maria comeu em casa). Plural com **mga**: **ang mga bata** (as crianças).
+    examples:
+    - ["Bumasa ang bata ng aklat.", "The child read a book.", "A criança leu um livro.", "ang"]
+    match: {seq: [{word: [ang, ng, sa, si, ni, kay]}]}
+    pool: [ang, ng, sa, si, kay]
+  - id: tl-pronouns
+    title: ako / ko / akin
+    meaning: {en: "three sets of pronouns", pt: "três séries de pronomes"}
+    intro:
+      en: |
+        Pronouns come in the same three sets: topic **ako, ikaw / ka, siya, kami, tayo, kayo, sila**; ng-set **ko, mo, niya, namin, natin, ninyo, nila** (also *my, your*: **bahay ko** my house); sa-set **akin, iyo, kaniya…** (**sa akin** to me). **kami** = we without you, **tayo** = we with you.
+      pt: |
+        Os pronomes vêm nas mesmas três séries: tópico **ako, ikaw / ka, siya, kami, tayo, kayo, sila**; série ng **ko, mo, niya, namin, natin, ninyo, nila** (também *meu, teu*: **bahay ko** minha casa); série sa **akin, iyo, kaniya…** (**sa akin** para mim). **kami** = nós sem você, **tayo** = nós com você.
+    examples:
+    - ["Nakatira ako sa Maynila.", "I live in Manila.", "Moro em Manila.", "ako"]
+    match: {seq: [{word: [ako, ikaw, ka, siya, kami, tayo, kayo, sila, ko, mo, niya, nila, akin]}]}
+    pool: [ako, ikaw, siya, kami, tayo, sila, ko, mo]
+  - id: tl-ay
+    title: Ang pangalan ko ay Maria; po
+    meaning: {en: "no verb 'to be'; ay; po and opo", pt: "sem verbo 'ser'; ay; po e opo"}
+    intro:
+      en: |
+        Predicate first, no *to be*: **Guro siya** (he's a teacher), **Maganda ang panahon** (the weather is nice). **ay** turns the order round: **Ang pangalan ko ay Maria**. Respect: **po** / **opo** (yes, sir / ma'am) to elders: **Salamat po.**
+      pt: |
+        Predicado primeiro, sem *ser*: **Guro siya** (ele é professor), **Maganda ang panahon** (o tempo está bonito). **ay** inverte a ordem: **Ang pangalan ko ay Maria** (meu nome é Maria). Respeito: **po** / **opo** (sim, senhor) com os mais velhos: **Salamat po** (obrigado).
+    examples:
+    - ["Ang pangalan ko ay Maria.", "My name is Maria.", "Meu nome é Maria.", "ay"]
+    match: {seq: [{word: [ay, po, opo]}]}
+    pool: [ay, po, opo]
+
+- title: {en: Verbs, pt: Verbos}
+  lessons:
+  - id: tl-um
+    title: bumasa, bumabasa, babasa
+    meaning: {en: "-um- verbs and the three aspects", pt: "verbos em -um- e os três aspectos"}
+    intro:
+      en: |
+        Verbs show aspect, not tense: completed **bumasa** (read), ongoing **bumabasa** (is reading), not begun **babasa** (will read). With **-um-** (actor focus) the infix goes after the first consonant: **basa → bumasa**, **kain → kumain**; the ongoing form doubles the first syllable.
+      pt: |
+        Os verbos mostram aspecto, não tempo: concluído **bumasa** (leu), em curso **bumabasa** (está lendo), não começado **babasa** (vai ler). Com **-um-** (foco no agente) o infixo entra depois da primeira consoante: **basa → bumasa**, **kain → kumain**; a forma em curso dobra a primeira sílaba.
+    examples:
+    - ["Kumain si Maria sa bahay.", "Maria ate at home.", "Maria comeu em casa.", "Kumain"]
+    match: {seq: [{re: "^[^aeiou]um", pos: verb}]}
+  - id: tl-mag
+    title: magluto, nagluto, nagluluto, magluluto
+    meaning: {en: "mag- verbs", pt: "verbos em mag-"}
+    intro:
+      en: |
+        **mag-** verbs: **magluto** (to cook) → **nagluto** (cooked), **nagluluto** (is cooking), **magluluto** (will cook). **Nagluluto ang nanay sa kusina** (mother is cooking in the kitchen). Many verbs from Spanish and English use mag-: **mag-aral** (study), **mag-text**.
+      pt: |
+        Verbos em **mag-**: **magluto** (cozinhar) → **nagluto** (cozinhou), **nagluluto** (está cozinhando), **magluluto** (vai cozinhar). **Nagluluto ang nanay sa kusina** (a mãe está cozinhando na cozinha). Muitos verbos do espanhol e do inglês usam mag-: **mag-aral** (estudar), **mag-text**.
+    examples:
+    - ["Nagluluto ang nanay sa kusina.", "Mother is cooking in the kitchen.", "A mãe cozinha na cozinha.", "Nagluluto"]
+    match: {seq: [{re: "^(mag|nag)", pos: verb}]}
+  - id: tl-focus
+    title: binasa, ibinigay, pinuntahan
+    meaning: {en: "focus: the verb points at the ang phrase", pt: "foco: o verbo aponta para o sintagma com ang"}
+    intro:
+      en: |
+        The affix tells which phrase is the topic: actor **-um- / mag-** (**Bumasa ang bata ng aklat** — the child read a book), object **-in** (**Binasa ng bata ang aklat** — the book was read by the child, *the* book), giving **i-** (**Ibinigay ko ang regalo kay Juan** — I gave the present to Juan), place **-an** (**Pinuntahan namin ang parke**).
+      pt: |
+        O afixo diz qual sintagma é o tópico: agente **-um- / mag-** (**Bumasa ang bata ng aklat** — a criança leu um livro), objeto **-in** (**Binasa ng bata ang aklat** — o livro foi lido pela criança, *o* livro), o que se dá **i-** (**Ibinigay ko ang regalo kay Juan** — dei o presente ao Juan), lugar **-an** (**Pinuntahan namin ang parke** — fomos ao parque).
+    examples:
+    - ["Ibinigay ko ang regalo kay Juan.", "I gave the present to Juan.", "Dei o presente ao Juan.", "Ibinigay"]
+    match: {seq: [{re: "(^i|in|an$)", pos: verb}]}
+
+- title: {en: Questions and negation, pt: Perguntas e negação}
+  lessons:
+  - id: tl-questions
+    title: ano, sino, saan, kailan, bakit, ba
+    meaning: {en: "question words; ba", pt: "palavras interrogativas; ba"}
+    intro:
+      en: |
+        **ano** (what), **sino** (who), **saan** (where), **kailan** (when), **bakit** (why), **paano** (how), **ilan** (how many), **magkano** (how much). **ba** marks a question: **Nagsasalita ka ba ng Ingles?** (do you speak English?)
+      pt: |
+        **ano** (o que), **sino** (quem), **saan** (onde), **kailan** (quando), **bakit** (por quê), **paano** (como), **ilan** (quantos), **magkano** (quanto custa). **ba** marca a pergunta: **Nagsasalita ka ba ng Ingles?** (você fala inglês?)
+    examples:
+    - ["Nagsasalita ka ba ng Ingles?", "Do you speak English?", "Você fala inglês?", "ba"]
+    match: {seq: [{word: [ano, sino, saan, kailan, bakit, paano, ilan, magkano, ba]}]}
+    pool: [ano, sino, saan, kailan, bakit, ba]
+  - id: tl-hindi
+    title: hindi, wala, huwag
+    meaning: {en: "not, there is none, don't", pt: "não, não há, não faça"}
+    intro:
+      en: |
+        **hindi** (not): **Hindi ko naiintindihan** (I don't understand); **wala** (there is no, have no) against **may / mayroon** (there is): **Wala akong pera** (I have no money); **huwag** (don't): **Huwag kang umalis!** Pronouns jump forward after these: **hindi *ko*…**
+      pt: |
+        **hindi** (não): **Hindi ko naiintindihan** (não entendo); **wala** (não há, não tenho) contra **may / mayroon** (há): **Wala akong pera** (não tenho dinheiro); **huwag** (não faça): **Huwag kang umalis!** (não vá embora!). Os pronomes saltam para a frente depois deles: **hindi *ko*…**
+    examples:
+    - ["Hindi ko naiintindihan.", "I don't understand.", "Não entendo.", "Hindi"]
+    match: {seq: [{word: [hindi, wala, huwag, may, mayroon]}]}
+    pool: [hindi, wala, huwag, may]

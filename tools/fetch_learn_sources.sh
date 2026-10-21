@@ -16,7 +16,7 @@ if [ ! -d "$V/jlpt-grammar-enhanced" ]; then
 fi
 # Tatoeba, CC BY 2.0 FR: sentences and translation links per language
 # one Tatoeba code per Learn language (tools/learn_curriculum.mjs TATOEBA), plus English and Portuguese for translations
-for t3 in jpn mkd ara lat grc deu rus kor cmn fin ell san ces pol tur hun isl por fra spa ita nld ukr lit heb srp ron swe hin ben ind vie pes swh; do
+for t3 in jpn mkd ara lat grc deu rus kor cmn fin ell san ces pol tur hun isl por fra spa ita nld ukr lit heb srp ron swe hin ben ind vie pes swh tgl; do
   for f in "$t3/${t3}_sentences.tsv.bz2" "$t3/$t3-eng_links.tsv.bz2" "$t3/$t3-por_links.tsv.bz2"; do
     [ -f "$V/tatoeba/$(basename $f)" ] || curl -sfL -o "$V/tatoeba/$(basename $f)" "https://downloads.tatoeba.org/exports/per_language/$f" || true
   done
