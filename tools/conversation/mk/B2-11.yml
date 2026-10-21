@@ -1,0 +1,556 @@
+# UNIT mk B2-11 — written by AI (Claude) for Casus; expanded from src/B2-11.yml by tools/expand_unit.py. Edit the source.
+
+id: B2-11
+level: B2
+number: 11
+protagonist: f
+title:
+  en: On the phone
+  pt: Ao telefone
+situation:
+  en: A client calls the office. You pick up.
+  pt: Um cliente liga para o escritório. Você atende.
+learn_lessons:
+- b2-da-wishes
+culture: —
+new_items:
+- id: ve-slusam
+  text: Ве слушам
+  meaning:
+    en: I'm listening (formal phone answer)
+    pt: Pois não / Estou ouvindo
+- id: so-kogo-zboruvam
+  text: Со кого зборувам?
+  meaning:
+    en: Who am I speaking to?
+    pt: Com quem eu falo?
+- id: ke-ve-povrzam
+  text: ќе ве поврзам
+  meaning:
+    en: I'll put you through
+    pt: vou transferir
+- id: moment
+  text: Момент
+  meaning:
+    en: One moment
+    pt: Um momento
+- id: zafaten
+  text: зафатен
+  meaning:
+    en: busy (masculine)
+    pt: ocupado
+- id: da-mu-prenesam
+  text: Да му пренесам порака?
+  meaning:
+    en: Shall I give him a message?
+    pt: Quer deixar recado?
+- id: da-ve-povika
+  text: да ве повика
+  meaning:
+    en: to call you back
+    pt: retornar a ligação
+- id: broj-na-telefon
+  text: број на телефон
+  meaning:
+    en: phone number
+    pt: número de telefone
+- id: da-ste-ziv-i-zdrav
+  text: Да сте живи и здрави
+  meaning:
+    en: Be well (may you be alive and healthy)
+    pt: Fique com Deus / tudo de bom
+- id: prijaten-den
+  text: Пријатен ден
+  meaning:
+    en: Have a nice day
+    pt: Tenha um bom dia
+reviews:
+- item: cestit-imenden
+  from: A2-08
+- item: za-vas
+  from: A2-08
+- item: ne-trebase
+  from: A2-08
+- item: naucuv
+  from: A2-08
+- item: torta
+  from: A2-08
+- item: ja-napravi
+  from: A2-08
+- item: gosti
+  from: A2-08
+- item: site
+  from: A2-08
+- item: doagjaat
+  from: A2-08
+- item: bez-pokana
+  from: A2-08
+- item: vnuk
+  from: A2-08
+- item: sto-da-im-kupam
+  from: B1-10
+- item: nisto
+  from: B1-10
+- item: ne-kupuvajte
+  from: B1-10
+- item: plik
+  from: B1-10
+- item: obicaj
+  from: B1-10
+- item: sekoj
+  from: B1-10
+- item: dava
+  from: B1-10
+- item: cestitka
+  from: B1-10
+- item: kolku-sto-mozete
+  from: B1-10
+- item: najmalku
+  from: B1-10
+- item: ke-napisam
+  from: B1-10
+- item: vestite
+  from: B1-26
+- item: vladata
+  from: B1-26
+- item: premierot
+  from: B1-26
+- item: vetil
+  from: B1-26
+- item: povisoki
+  from: B1-26
+- item: plati-salaries
+  from: B1-26
+- item: opozicijata
+  from: B1-26
+- item: ne-e-vistina
+  from: B1-26
+- item: za-kogo-glasas
+  from: B1-26
+- item: toa-e-tajna
+  from: B1-26
+- item: ne-moze-da-glasa
+  from: B1-26
+- item: kazete-mi
+  from: B2-04
+- item: silni-strani
+  from: B2-04
+- item: slabi-strani
+  from: B2-04
+- item: odgovoren
+  from: B2-04
+- item: rabotam-vo-tim
+  from: B2-04
+- item: ponekogas
+  from: B2-04
+- item: premnogu-detali
+  from: B2-04
+- item: zosto-bas-nas
+  from: B2-04
+- item: da-rastam
+  from: B2-04
+- item: ostanam
+  from: B2-04
+- item: dneven-red
+  from: B2-08
+- item: prva-tocka
+  from: B2-08
+- item: predlagam
+  from: B2-08
+- item: neka
+  from: B2-08
+- item: neka-kaze
+  from: B2-08
+- item: soglasen
+  from: B2-08
+- item: ne-se-soglasuvam
+  from: B2-08
+- item: zaklucok
+  from: B2-08
+- item: prodolzime
+  from: B2-08
+- item: vreme-isteklo
+  from: B2-08
+- item: pocituvani
+  from: B2-10
+- item: pocituvan-gospodine
+  from: B2-10
+- item: vo-prilog
+  from: B2-10
+- item: ve-molime
+  from: B2-10
+- item: odgovor
+  from: B2-10
+- item: so-pocit
+  from: B2-10
+- item: marko-voc
+  from: B2-10
+- item: druze
+  from: B2-10
+- item: pozdrav
+  from: B2-10
+- item: srdecen-pozdrav
+  from: B2-10
+steps:
+- type: narrator
+  text:
+    en: A client calls the office. You pick up. Listen to the conversation; you don't need to understand it yet.
+    pt: Um cliente liga para o escritório. Você atende. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: „Вардар Софт“, ве слушам.
+    meaning:
+      en: Vardar Soft, how can I help?
+      pt: Vardar Soft, pois não.
+  - speaker: klient
+    text: Добар ден, го барам г. Николовски.
+    meaning:
+      en: Good morning, I'm looking for Mr Nikolovski.
+      pt: Bom dia, procuro o senhor Nikolovski.
+  - speaker: protagonist
+    text: Со кого зборувам?
+    meaning:
+      en: Who am I speaking to?
+      pt: Com quem eu falo?
+  - speaker: klient
+    text: Трајковски, од банката.
+    meaning:
+      en: Trajkovski, from the bank.
+      pt: Trajkovski, do banco.
+  - speaker: protagonist
+    text: Момент, ќе ве поврзам... Жал ми е, зафатен е.
+    meaning:
+      en: One moment, I'll put you through... I'm sorry, he's busy.
+      pt: Um momento, vou transferir... Sinto muito, ele está ocupado.
+  - speaker: protagonist
+    text: Да му пренесам порака?
+    meaning:
+      en: Shall I give him a message?
+      pt: Quer deixar recado?
+  - speaker: klient
+    text: Да ме повика денеска. Бројот го има.
+    meaning:
+      en: For him to call me back today. He has the number.
+      pt: Que ele me retorne hoje. Ele tem o número.
+  - speaker: protagonist
+    text: Ќе му кажам. Пријатен ден!
+    meaning:
+      en: I'll tell him. Have a nice day!
+      pt: Vou avisar. Tenha um bom dia!
+  - speaker: klient
+    text: Да сте живи и здрави!
+    meaning:
+      en: Be well!
+      pt: Tudo de bom!
+- type: prompt
+  ask:
+    en: Answer the office phone.
+    pt: Atenda o telefone do escritório.
+  answer:
+    speaker: protagonist
+    text: „Вардар Софт“, ве слушам.
+  items:
+  - ve-slusam
+- type: prompt
+  ask:
+    en: Ask who you're speaking to.
+    pt: Pergunte com quem fala.
+  answer:
+    speaker: protagonist
+    text: Со кого зборувам?
+  items:
+  - so-kogo-zboruvam
+- type: prompt
+  ask:
+    en: 'Say: one moment, I''ll put you through.'
+    pt: 'Diga: um momento, vou transferir.'
+  answer:
+    speaker: protagonist
+    text: Момент, ќе ве поврзам.
+  items:
+  - moment
+  - ke-ve-povrzam
+- type: prompt
+  ask:
+    en: 'Say: I''m sorry, he''s busy.'
+    pt: 'Diga: sinto muito, ele está ocupado.'
+  answer:
+    speaker: protagonist
+    text: Жал ми е, зафатен е.
+  items:
+  - zafaten
+- type: prompt
+  ask:
+    en: Offer to take a message.
+    pt: Ofereça anotar recado.
+  answer:
+    speaker: protagonist
+    text: Да му пренесам порака?
+  items:
+  - da-mu-prenesam
+- type: narrator
+  text:
+    en: 'Да + a verb on its own makes a wish or a polite request: ''да ме повика'' — (I''d like) him to call me; ''да сте живи и здрави'' — may you be alive and well, a warm goodbye.'
+    pt: 'Да + verbo sozinho faz um desejo ou pedido educado: ''да ме повика'' — (quero) que ele me ligue; ''да сте живи и здрави'' — que o senhor tenha vida e saúde, uma despedida calorosa.'
+- type: prompt
+  ask:
+    en: 'Say: for him to call you back.'
+    pt: 'Diga: que ele retorne a ligação.'
+  answer:
+    speaker: protagonist
+    text: Да ве повика.
+  items:
+  - da-ve-povika
+- type: prompt
+  ask:
+    en: 'Say: the phone number.'
+    pt: 'Diga: o número de telefone.'
+  answer:
+    speaker: protagonist
+    text: Бројот на телефон.
+  items:
+  - broj-na-telefon
+- type: prompt
+  ask:
+    en: 'End the call: have a nice day!'
+    pt: 'Encerre: tenha um bom dia!'
+  answer:
+    speaker: protagonist
+    text: Пријатен ден!
+  items:
+  - prijaten-den
+- type: prompt
+  ask:
+    en: His warm goodbye. How?
+    pt: A despedida calorosa dele. Como?
+  answer:
+    speaker: protagonist
+    text: Да сте живи и здрави!
+  items:
+  - da-ste-ziv-i-zdrav
+- type: prompt
+  ask:
+    en: 'Once more: say “I''m listening (formal phone answer)”.'
+    pt: 'Mais uma vez: diga “Pois não / Estou ouvindo”.'
+  answer:
+    speaker: protagonist
+    text: Ве слушам
+  items:
+  - ve-slusam
+- type: prompt
+  ask:
+    en: 'Once more: say “Who am I speaking to?”.'
+    pt: 'Mais uma vez: diga “Com quem eu falo?”.'
+  answer:
+    speaker: protagonist
+    text: Со кого зборувам?
+  items:
+  - so-kogo-zboruvam
+- type: prompt
+  ask:
+    en: 'Once more: say “I''ll put you through”.'
+    pt: 'Mais uma vez: diga “vou transferir”.'
+  answer:
+    speaker: protagonist
+    text: ќе ве поврзам
+  items:
+  - ke-ve-povrzam
+- type: prompt
+  ask:
+    en: 'Once more: say “One moment”.'
+    pt: 'Mais uma vez: diga “Um momento”.'
+  answer:
+    speaker: protagonist
+    text: Момент
+  items:
+  - moment
+- type: prompt
+  ask:
+    en: 'Once more: say “busy (masculine)”.'
+    pt: 'Mais uma vez: diga “ocupado”.'
+  answer:
+    speaker: protagonist
+    text: зафатен
+  items:
+  - zafaten
+- type: prompt
+  ask:
+    en: 'Once more: say “Shall I give him a message?”.'
+    pt: 'Mais uma vez: diga “Quer deixar recado?”.'
+  answer:
+    speaker: protagonist
+    text: Да му пренесам порака?
+  items:
+  - da-mu-prenesam
+- type: prompt
+  ask:
+    en: 'Once more: say “to call you back”.'
+    pt: 'Mais uma vez: diga “retornar a ligação”.'
+  answer:
+    speaker: protagonist
+    text: да ве повика
+  items:
+  - da-ve-povika
+- type: prompt
+  ask:
+    en: 'Once more: say “phone number”.'
+    pt: 'Mais uma vez: diga “número de telefone”.'
+  answer:
+    speaker: protagonist
+    text: број на телефон
+  items:
+  - broj-na-telefon
+- type: prompt
+  ask:
+    en: 'Once more: say “Be well (may you be alive and healthy)”.'
+    pt: 'Mais uma vez: diga “Fique com Deus / tudo de bom”.'
+  answer:
+    speaker: protagonist
+    text: Да сте живи и здрави
+  items:
+  - da-ste-ziv-i-zdrav
+- type: prompt
+  ask:
+    en: 'Once more: say “Have a nice day”.'
+    pt: 'Mais uma vez: diga “Tenha um bom dia”.'
+  answer:
+    speaker: protagonist
+    text: Пријатен ден
+  items:
+  - prijaten-den
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Dear (formal, plural) — and “Dear Sir — and “attached — and “we kindly ask you — and “answer, reply — and “Yours sincerely — and “Marko (calling him) — and “mate, buddy (vocative) — and “Greetings
+      / Best — and “Kind regards — and “agenda”.'
+    pt: 'Diga: “Prezados — e “Prezado senhor — e “em anexo — e “pedimos a gentileza — e “resposta — e “Atenciosamente — e “Marko — e “camarada / mano — e “Abraço — e “Cordialmente — e “pauta”.'
+  answer:
+    speaker: protagonist
+    text: Почитувани … Почитуван господине … во прилог … ве молиме … одговор … Со почит … Марко … друже … Поздрав … Срдечен поздрав … дневен ред
+  items:
+  - pocituvani
+  - pocituvan-gospodine
+  - vo-prilog
+  - ve-molime
+  - odgovor
+  - so-pocit
+  - marko-voc
+  - druze
+  - pozdrav
+  - srdecen-pozdrav
+  - dneven-red
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “first item, point one — and “I propose — and “let (someone do) — and “let him/her speak — and “agreed (a man) — and “I don''t agree — and “conclusion — and “to continue — and “time is up
+      — and “Tell me something about yourself — and “strengths”.'
+    pt: 'Diga: “primeiro item — e “proponho — e “que (deixa) — e “que ele fale — e “de acordo — e “não concordo — e “conclusão — e “continuar — e “o tempo acabou — e “Fale um pouco sobre o senhor — e “pontos
+      fortes”.'
+  answer:
+    speaker: protagonist
+    text: прва точка … предлагам … нека … нека каже … согласен … не се согласувам … заклучок … да продолжиме … времето истече … Кажете ми нешто за себе … силни страни
+  items:
+  - prva-tocka
+  - predlagam
+  - neka
+  - neka-kaze
+  - soglasen
+  - ne-se-soglasuvam
+  - zaklucok
+  - prodolzime
+  - vreme-isteklo
+  - kazete-mi
+  - silni-strani
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “weaknesses — and “responsible (masculine) — and “I work in a team — and “sometimes — and “too many details — and “Why us in particular? — and “to grow (professionally) — and “to stay — and
+      “the news — and “the government — and “the prime minister”.'
+    pt: 'Diga: “pontos fracos — e “responsável — e “trabalho em equipe — e “às vezes — e “detalhes demais — e “Por que justamente nós? — e “crescer — e “ficar — e “o noticiário — e “o governo — e “o primeiro-ministro”.'
+  answer:
+    speaker: protagonist
+    text: слаби страни … одговорен … работам во тим … понекогаш … премногу детали … Зошто баш нас? … да растам … да останам … вестите … владата … премиерот
+  items:
+  - slabi-strani
+  - odgovoren
+  - rabotam-vo-tim
+  - ponekogas
+  - premnogu-detali
+  - zosto-bas-nas
+  - da-rastam
+  - ostanam
+  - vestite
+  - vladata
+  - premierot
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “promised (reportedly) — and “higher (plural) — and “salaries — and “the opposition — and “it''s not true — and “Who do you vote for? — and “That''s a secret — and “you can''t vote — and “What
+      should I buy them? — and “nothing — and “don''t buy (formal)”.'
+    pt: 'Diga: “teria prometido — e “mais altos — e “salários — e “a oposição — e “não é verdade — e “Em quem você vota? — e “Isso é segredo — e “você não pode votar — e “O que eu compro para eles? — e
+      “nada — e “não compre”.'
+  answer:
+    speaker: protagonist
+    text: ветил … повисоки … плати … опозицијата … не е вистина … За кого гласаш? … Тоа е тајна … не можеш да гласаш … Што да им купам? … ништо … не купувајте
+  items:
+  - vetil
+  - povisoki
+  - plati-salaries
+  - opozicijata
+  - ne-e-vistina
+  - za-kogo-glasas
+  - toa-e-tajna
+  - ne-moze-da-glasa
+  - sto-da-im-kupam
+  - nisto
+  - ne-kupuvajte
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “envelope — and “custom — and “everyone, each — and “gives — and “greeting card — and “as much as you can — and “at least — and “I''ll write — and “Happy name day! — and “for you (formal)
+      — and “You shouldn''t have!”.'
+    pt: 'Diga: “envelope — e “costume / tradição — e “cada um / todo mundo — e “dá — e “cartão — e “quanto puder — e “pelo menos — e “vou escrever — e “Feliz dia do santo! — e “para a senhora — e “Não precisava!”.'
+  answer:
+    speaker: protagonist
+    text: плик … обичај … секој … дава … честитка … колку што можете … најмалку … ќе напишам … Честит именден! … за вас … Не требаше!
+  items:
+  - plik
+  - obicaj
+  - sekoj
+  - dava
+  - cestitka
+  - kolku-sto-mozete
+  - najmalku
+  - ke-napisam
+  - cestit-imenden
+  - za-vas
+  - ne-trebase
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I learned — and “cake (layered) — and “made it — and “guests — and “everyone, all — and “(they) come — and “without an invitation — and “grandson / nephew”.'
+    pt: 'Diga: “Aprendi — e “torta / bolo — e “fez — e “convidados / visitas — e “todos — e “vêm — e “sem convite — e “neto / sobrinho”.'
+  answer:
+    speaker: protagonist
+    text: Научив … торта … ја направи … гости … сите … доаѓаат … без покана … внук
+  items:
+  - naucuv
+  - torta
+  - ja-napravi
+  - gosti
+  - site
+  - doagjaat
+  - bez-pokana
+  - vnuk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

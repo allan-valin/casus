@@ -1,0 +1,556 @@
+# UNIT mk B2-12 — written by AI (Claude) for Casus; expanded from src/B2-12.yml by tools/expand_unit.py. Edit the source.
+
+id: B2-12
+level: B2
+number: 12
+protagonist: m
+title:
+  en: Probability
+  pt: Probabilidade
+situation:
+  en: Darko buys a lottery ticket every week. You do the maths.
+  pt: O Darko compra bilhete de loteria toda semana. Você faz as contas.
+learn_lessons:
+- b2-da-wishes
+culture: —
+new_items:
+- id: loto
+  text: лото
+  meaning:
+    en: lottery
+    pt: loteria
+  rare: true
+- id: da-dobijam
+  text: Да добијам!
+  meaning:
+    en: If only I'd win! (wish)
+    pt: Tomara que eu ganhe!
+- id: verojatnost
+  text: веројатност
+  meaning:
+    en: probability
+    pt: probabilidade
+  rare: true
+- id: sansa
+  text: шанса
+  meaning:
+    en: chance
+    pt: chance
+- id: edna-vo-milion
+  text: една во милион
+  meaning:
+    en: one in a million
+    pt: uma em um milhão
+- id: pomala
+  text: помала
+  meaning:
+    en: smaller (feminine)
+    pt: menor
+- id: grom
+  text: гром
+  meaning:
+    en: lightning, thunder
+    pt: raio / trovão
+- id: prognozata
+  text: прогнозата
+  meaning:
+    en: the forecast
+    pt: a previsão
+- id: sedumdeset-procenti
+  text: седумдесет проценти
+  meaning:
+    en: seventy per cent
+    pt: setenta por cento
+- id: da-ne-vrne
+  text: Да не врне!
+  meaning:
+    en: Hopefully it won't rain!
+    pt: Tomara que não chova!
+reviews:
+- item: struja
+  from: A2-09
+- item: grealkata
+  from: A2-09
+- item: zaedno
+  from: A2-09
+- item: masinata
+  from: A2-09
+- item: premnogu
+  from: A2-09
+- item: osiguruvacot
+  from: A2-09
+- item: padna
+  from: A2-09
+- item: isklucete
+  from: A2-09
+- item: kreneete
+  from: A2-09
+- item: vkluci
+  from: A2-09
+- item: ne-vklucuvajte
+  from: A2-09
+- item: odednas
+  from: A2-09
+- item: nevestata
+  from: B1-11
+- item: mladozenecot
+  from: B1-11
+- item: vencavkata
+  from: B1-11
+- item: crkva
+  from: B1-11
+- item: se-drzat
+  from: B1-11
+- item: kruni
+  from: B1-11
+- item: okolu
+  from: B1-11
+- item: pati
+  from: B1-11
+- item: prsten
+  from: B1-11
+- item: desnata-raka
+  from: B1-11
+- item: ubava-e
+  from: B1-11
+- item: slicen
+  from: B1-27
+- item: se-razbirame
+  from: B1-27
+- item: bugarski
+  from: B1-27
+- item: srpski
+  from: B1-27
+- item: albanski
+  from: B1-27
+- item: sosema-razlicen
+  from: B1-27
+- item: dijalekt
+  from: B1-27
+- item: cuvstvitelna-tema
+  from: B1-27
+- item: sekoj-naroden
+  from: B1-27
+- item: svoj-jazik
+  from: B1-27
+- item: neto
+  from: B2-05
+- item: bruto
+  from: B2-05
+- item: mesecno
+  from: B2-05
+- item: probna-rabota
+  from: B2-05
+- item: tri-meseci
+  from: B2-05
+- item: neopredeleno
+  from: B2-05
+- item: ke-bidam-zavrsila
+  from: B2-05
+- item: otkaz
+  from: B2-05
+- item: od-prvi
+  from: B2-05
+- item: dogovor-imame
+  from: B2-05
+- item: galaksija
+  from: B2-09
+- item: svetlosna-godina
+  from: B2-09
+- item: patuva
+  from: B2-09
+- item: doagja
+  from: B2-09
+- item: izgasnala
+  from: B2-09
+- item: mozebi-vekje
+  from: B2-09
+- item: ja-gledame
+  from: B2-09
+- item: vo-minatoto
+  from: B2-09
+- item: ogromen
+  from: B2-09
+- item: se-cuvstvuvam-mala
+  from: B2-09
+- item: ve-slusam
+  from: B2-11
+- item: so-kogo-zboruvam
+  from: B2-11
+- item: ke-ve-povrzam
+  from: B2-11
+- item: moment
+  from: B2-11
+- item: zafaten
+  from: B2-11
+- item: da-mu-prenesam
+  from: B2-11
+- item: da-ve-povika
+  from: B2-11
+- item: broj-na-telefon
+  from: B2-11
+- item: da-ste-ziv-i-zdrav
+  from: B2-11
+- item: prijaten-den
+  from: B2-11
+steps:
+- type: narrator
+  text:
+    en: Darko buys a lottery ticket every week. You do the maths. Listen to the conversation; you don't need to understand it yet.
+    pt: O Darko compra bilhete de loteria toda semana. Você faz as contas. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: darko
+    text: Купив лото. Да добијам, ќе одам на Малдиви!
+    meaning:
+      en: I bought a lottery ticket. If only I win, I'm off to the Maldives!
+      pt: Comprei loteria. Tomara que eu ganhe, vou para as Maldivas!
+  - speaker: protagonist
+    text: Знаеш колкава е веројатноста?
+    meaning:
+      en: Do you know what the probability is?
+      pt: Você sabe qual é a probabilidade?
+  - speaker: darko
+    text: Една во милион?
+    meaning:
+      en: One in a million?
+      pt: Uma em um milhão?
+  - speaker: protagonist
+    text: Помала! Поголема шанса имаш да те удри гром.
+    meaning:
+      en: Smaller! You have a bigger chance of being struck by lightning.
+      pt: Menor! Você tem mais chance de ser atingido por um raio.
+  - speaker: darko
+    text: Тогаш да не излегувам кога врне.
+    meaning:
+      en: Then I'd better not go out when it rains.
+      pt: Então é melhor não sair quando chover.
+  - speaker: protagonist
+    text: Прогнозата вели седумдесет проценти дожд за утре.
+    meaning:
+      en: The forecast says seventy per cent rain for tomorrow.
+      pt: A previsão diz setenta por cento de chuva amanhã.
+  - speaker: darko
+    text: Да не врне! Утре е викенд.
+    meaning:
+      en: Hopefully it won't rain! Tomorrow's the weekend.
+      pt: Tomara que não chova! Amanhã é fim de semana.
+  - speaker: protagonist
+    text: Седумдесет проценти — ти би купил чадор или лото?
+    meaning:
+      en: Seventy per cent — would you buy an umbrella or a lottery ticket?
+      pt: Setenta por cento — você compraria guarda-chuva ou loteria?
+- type: prompt
+  ask:
+    en: 'Darko wishes: if only I win! How?'
+    pt: 'O Darko deseja: tomara que eu ganhe! Como?'
+  answer:
+    speaker: protagonist
+    text: Да добијам!
+  items:
+  - da-dobijam
+- type: prompt
+  ask:
+    en: 'Say: the lottery.'
+    pt: 'Diga: a loteria.'
+  answer:
+    speaker: protagonist
+    text: Лото.
+  items:
+  - loto
+- type: prompt
+  ask:
+    en: Ask what the probability is.
+    pt: Pergunte qual é a probabilidade.
+  answer:
+    speaker: protagonist
+    text: Колкава е веројатноста?
+  items:
+  - verojatnost
+- type: prompt
+  ask:
+    en: 'Say: one in a million.'
+    pt: 'Diga: uma em um milhão.'
+  answer:
+    speaker: protagonist
+    text: Една во милион.
+  items:
+  - edna-vo-milion
+- type: prompt
+  ask:
+    en: 'Say: smaller!'
+    pt: 'Diga: menor!'
+  answer:
+    speaker: protagonist
+    text: Помала!
+  items:
+  - pomala
+- type: prompt
+  ask:
+    en: 'Say: a bigger chance.'
+    pt: 'Diga: mais chance.'
+  answer:
+    speaker: protagonist
+    text: Поголема шанса.
+  items:
+  - sansa
+- type: prompt
+  ask:
+    en: 'Say: lightning.'
+    pt: 'Diga: raio.'
+  answer:
+    speaker: protagonist
+    text: Гром.
+  items:
+  - grom
+- type: prompt
+  ask:
+    en: 'Say: the forecast says seventy per cent.'
+    pt: 'Diga: a previsão diz setenta por cento.'
+  answer:
+    speaker: protagonist
+    text: Прогнозата вели седумдесет проценти.
+  items:
+  - prognozata
+  - sedumdeset-procenti
+- type: prompt
+  ask:
+    en: 'Wish: hopefully it won''t rain!'
+    pt: 'Deseje: tomara que não chova!'
+  answer:
+    speaker: protagonist
+    text: Да не врне!
+  items:
+  - da-ne-vrne
+- type: narrator
+  text:
+    en: 'Big lotteries often have odds of one in several million per ticket — far worse than ''one in a million''. Being struck by lightning in a lifetime is far likelier. A ''70 % chance of rain'' means:
+      on days like this, it rained seven times out of ten.'
+    pt: 'Loterias grandes costumam ter chance de uma em vários milhões por bilhete — muito pior que ''uma em um milhão''. Ser atingido por raio na vida é bem mais provável. ''70 % de chance de chuva'' quer
+      dizer: em dias assim, choveu sete vezes em dez.'
+- type: prompt
+  ask:
+    en: 'Once more: say “lottery”.'
+    pt: 'Mais uma vez: diga “loteria”.'
+  answer:
+    speaker: protagonist
+    text: лото
+  items:
+  - loto
+- type: prompt
+  ask:
+    en: 'Once more: say “If only I''d win! (wish)”.'
+    pt: 'Mais uma vez: diga “Tomara que eu ganhe!”.'
+  answer:
+    speaker: protagonist
+    text: Да добијам!
+  items:
+  - da-dobijam
+- type: prompt
+  ask:
+    en: 'Once more: say “probability”.'
+    pt: 'Mais uma vez: diga “probabilidade”.'
+  answer:
+    speaker: protagonist
+    text: веројатност
+  items:
+  - verojatnost
+- type: prompt
+  ask:
+    en: 'Once more: say “chance”.'
+    pt: 'Mais uma vez: diga “chance”.'
+  answer:
+    speaker: protagonist
+    text: шанса
+  items:
+  - sansa
+- type: prompt
+  ask:
+    en: 'Once more: say “one in a million”.'
+    pt: 'Mais uma vez: diga “uma em um milhão”.'
+  answer:
+    speaker: protagonist
+    text: една во милион
+  items:
+  - edna-vo-milion
+- type: prompt
+  ask:
+    en: 'Once more: say “smaller (feminine)”.'
+    pt: 'Mais uma vez: diga “menor”.'
+  answer:
+    speaker: protagonist
+    text: помала
+  items:
+  - pomala
+- type: prompt
+  ask:
+    en: 'Once more: say “lightning, thunder”.'
+    pt: 'Mais uma vez: diga “raio / trovão”.'
+  answer:
+    speaker: protagonist
+    text: гром
+  items:
+  - grom
+- type: prompt
+  ask:
+    en: 'Once more: say “the forecast”.'
+    pt: 'Mais uma vez: diga “a previsão”.'
+  answer:
+    speaker: protagonist
+    text: прогнозата
+  items:
+  - prognozata
+- type: prompt
+  ask:
+    en: 'Once more: say “seventy per cent”.'
+    pt: 'Mais uma vez: diga “setenta por cento”.'
+  answer:
+    speaker: protagonist
+    text: седумдесет проценти
+  items:
+  - sedumdeset-procenti
+- type: prompt
+  ask:
+    en: 'Once more: say “Hopefully it won''t rain!”.'
+    pt: 'Mais uma vez: diga “Tomara que não chova!”.'
+  answer:
+    speaker: protagonist
+    text: Да не врне!
+  items:
+  - da-ne-vrne
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I''m listening (formal phone answer) — and “Who am I speaking to? — and “I''ll put you through — and “One moment — and “busy (masculine) — and “Shall I give him a message? — and “to call
+      you back — and “phone number — and “Be well (may you be alive and healthy) — and “Have a nice day — and “galaxy”.'
+    pt: 'Diga: “Pois não / Estou ouvindo — e “Com quem eu falo? — e “vou transferir — e “Um momento — e “ocupado — e “Quer deixar recado? — e “retornar a ligação — e “número de telefone — e “Fique com Deus
+      / tudo de bom — e “Tenha um bom dia — e “galáxia”.'
+  answer:
+    speaker: protagonist
+    text: Ве слушам … Со кого зборувам? … ќе ве поврзам … Момент … зафатен … Да му пренесам порака? … да ве повика … број на телефон … Да сте живи и здрави … Пријатен ден … галаксија
+  items:
+  - ve-slusam
+  - so-kogo-zboruvam
+  - ke-ve-povrzam
+  - moment
+  - zafaten
+  - da-mu-prenesam
+  - da-ve-povika
+  - broj-na-telefon
+  - da-ste-ziv-i-zdrav
+  - prijaten-den
+  - galaksija
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “light year — and “travels — and “comes, arrives — and “gone out, died (feminine, reportedly) — and “maybe already — and “we see it — and “in the past — and “huge (masculine) — and “I feel
+      small (a woman) — and “net (after tax) — and “gross (before tax)”.'
+    pt: 'Diga: “ano-luz — e “viaja — e “chega — e “apagada / extinta — e “talvez já — e “a gente vê — e “no passado — e “enorme — e “me sinto pequena — e “líquido — e “bruto”.'
+  answer:
+    speaker: protagonist
+    text: светлосна година … патува … доаѓа … изгаснала … можеби веќе … ја гледаме … во минатото … огромен … се чувствувам мала … нето … бруто
+  items:
+  - svetlosna-godina
+  - patuva
+  - doagja
+  - izgasnala
+  - mozebi-vekje
+  - ja-gledame
+  - vo-minatoto
+  - ogromen
+  - se-cuvstvuvam-mala
+  - neto
+  - bruto
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “monthly — and “probation period — and “three months — and “permanent (open-ended) — and “I will have finished (a woman) — and “notice period — and “from the first (of the month) — and “We
+      have a deal — and “similar (masculine) — and “we understand each other — and “Bulgarian”.'
+    pt: 'Diga: “por mês — e “período de experiência — e “três meses — e “por tempo indeterminado — e “terei terminado — e “aviso prévio — e “a partir do dia primeiro — e “Fechado — e “parecido — e “a gente
+      se entende — e “búlgaro”.'
+  answer:
+    speaker: protagonist
+    text: месечно … пробна работа … три месеци … на неопределено време … ќе бидам завршила … отказен рок … од први … Имаме договор … сличен … се разбираме … бугарски
+  items:
+  - mesecno
+  - probna-rabota
+  - tri-meseci
+  - neopredeleno
+  - ke-bidam-zavrsila
+  - otkaz
+  - od-prvi
+  - dogovor-imame
+  - slicen
+  - se-razbirame
+  - bugarski
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Serbian — and “Albanian — and “completely different — and “dialect — and “sensitive topic — and “every people / nation — and “its own language — and “the bride — and “the groom — and “the
+      wedding ceremony — and “church”.'
+    pt: 'Diga: “sérvio — e “albanês — e “completamente diferente — e “dialeto — e “tema delicada — e “cada povo — e “sua própria língua — e “a noiva — e “o noivo — e “a cerimônia — e “igreja”.'
+  answer:
+    speaker: protagonist
+    text: српски … албански … сосема различен … дијалект … чувствителна тема … секој народ … свој јазик … невестата … младоженецот … венчавката … црква
+  items:
+  - srpski
+  - albanski
+  - sosema-razlicen
+  - dijalekt
+  - cuvstvitelna-tema
+  - sekoj-naroden
+  - svoj-jazik
+  - nevestata
+  - mladozenecot
+  - vencavkata
+  - crkva
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “are held — and “crowns — and “around — and “times — and “ring — and “the right hand — and “How beautiful she is! — and “electricity / power — and “the heater — and “together — and “the washing
+      machine”.'
+    pt: 'Diga: “são segurados / se seguram — e “coroas — e “em volta de — e “vezes — e “anel / aliança — e “a mão direita — e “Como ela está linda! — e “luz / energia elétrica — e “o aquecedor — e “junto
+      — e “a máquina de lavar”.'
+  answer:
+    speaker: protagonist
+    text: се држат … круни … околу … пати … прстен … десната рака … Колку е убава! … струја … греалката … заедно … машината за перење
+  items:
+  - se-drzat
+  - kruni
+  - okolu
+  - pati
+  - prsten
+  - desnata-raka
+  - ubava-e
+  - struja
+  - grealkata
+  - zaedno
+  - masinata
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “too much — and “the fuse — and “fell, went down — and “Switch off (formal) — and “lift / put up (formal) — and “switch on — and “don''t switch on (formal) — and “all at once”.'
+    pt: 'Diga: “demais — e “o disjuntor — e “caiu — e “Desligue (formal) — e “levante (formal) — e “ligar — e “não ligue — e “de uma vez”.'
+  answer:
+    speaker: protagonist
+    text: премногу … осигурувачот … падна … Исклучете … кренете … вклучи … не вклучувајте … одеднаш
+  items:
+  - premnogu
+  - osiguruvacot
+  - padna
+  - isklucete
+  - kreneete
+  - vkluci
+  - ne-vklucuvajte
+  - odednas
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
