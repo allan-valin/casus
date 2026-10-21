@@ -377,6 +377,19 @@ def test_a_page_explaining_the_language_in_itself_is_not_machine_translated(tmp_
     assert T.translate_language("de", tr) == 0 and tr.sent == []
 
 
+def test_a_japanese_school_book_in_japanese_is_still_translated(tmp_path, monkeypatch):
+    # unlike Bohm's German, a Japanese school book quotes its examples in 「」 (kept) and its classical texts are
+    # protected; the same-language rule had frozen these pages at an older translation (Allan's ja>pt plan)
+    d = tmp_path / "data" / "ja" / "learn"
+    d.mkdir(parents=True)
+    (d / "ja-wb-1.json").write_text(json.dumps({"source": "Wikibooks (ja), 高等学校古文/徒然草 (CC BY-SA 4.0)", "sections": [{"id": "s",
+        "html": {"en": "<p>この段では、作者は「花は盛りに」と書いて、満開の花だけを見るべきではないと述べている。</p>"}}]}))
+    (tmp_path / "data" / "ja" / "learn.json").write_text(json.dumps({"levels": []}))
+    monkeypatch.setattr(T, "ROOT", tmp_path)
+    tr = Fake("pt")
+    assert T.translate_language("ja", tr) == 1 and tr.sent and "「花は盛りに」" not in tr.sent[0]
+
+
 def test_the_german_word_test_knows_the_language_a_book_explains_in():
     import pytest
     if not (T.ROOT / "data" / "es" / "forms").exists():
@@ -408,3 +421,47 @@ def test_a_stopped_run_keeps_what_it_translated(tmp_path, monkeypatch):
     with pytest.raises(KeyboardInterrupt):
         T.translate_language("xx", tr)
     assert tr.saved == 1
+
+
+def test_a_short_table_label_claude_translated_is_used_in_a_non_latin_course(tmp_path, monkeypatch):
+    """tools/mt_fixes/<ui>/labels.yml: the short English cells of a course in another script ("Form", "Verb (negative)"),
+    which are no prose and so stayed English (Allan's ja>pt check, 2026-10-21); in a Latin-script course ("Form" in German) a short cell may be a form"""
+    (tmp_path / "tools" / "mt_fixes" / "pt").mkdir(parents=True)
+    (tmp_path / "tools" / "mt_fixes" / "pt" / "labels.yml").write_text('"Form": "Forma"\n', encoding="utf-8")
+    body = "<p>It attaches to a noun with no change at all.</p><table><tr><th>Form</th><th>Example</th></tr></table>"
+    for code in ("ja", "xx"):
+        d = tmp_path / "data" / code / "learn"
+        d.mkdir(parents=True)
+        (d / "n5-1.json").write_text(json.dumps({"id": "n5-1", "source": "JLPT Grammar Enhanced (CC BY-SA 4.0)", "sections": [{"id": "a", "html": {"en": body}}]}))
+        (d.parent / "learn.json").write_text(json.dumps({"levels": []}))
+    monkeypatch.setattr(T, "ROOT", tmp_path)
+    cache = {"It attaches to a noun with no change at all.": "Liga-se a um substantivo sem mudança nenhuma."}
+    T.translate_language("ja", T.CacheOnly("pt", dict(cache)))
+    T.translate_language("xx", T.CacheOnly("pt", dict(cache)))
+    ja = json.loads((tmp_path / "data" / "ja" / "learn" / "n5-1.json").read_text())["sections"][0]["html"]["pt"]
+    xx = json.loads((tmp_path / "data" / "xx" / "learn" / "n5-1.json").read_text())["sections"][0]["html"]["pt"]
+    assert "<th>Forma</th><th>Example</th>" in ja and "<th>Form</th>" in xx
+
+
+def test_a_whole_run_in_the_cache_is_used_whole():
+    """a label of two sentences ("Money? I haven't got a coin.") is translated whole in labels.yml, not by sentence"""
+    tr = T.CacheOnly("pt", {"Money? I haven't got a coin.": "Dinheiro? Não tenho nem um tostão."})
+    assert tr(["Money? I haven't got a coin."]) == ["Dinheiro? Não tenho nem um tostão."]
+
+
+def test_a_classical_sentence_inside_a_modern_run_keeps_its_words():
+    """a gloss run "・らうあり - 物慣れている。 例文 玉縁はいとらうありて…（大鏡）": the explanation is translated, the
+    classical example sentence in it is not (Allan's ja>pt check, 2026-10-21)"""
+    tr = T.CacheOnly("pt", {"・らうあり - 物慣れている。": "・らうあり – experiente."})
+    tr.src = "ja"
+    text = "・らうあり - 物慣れている。 例文 玉縁はいとらうありて、歌などいとよく詠み、（大鏡）"
+    assert tr([text]) == ["・らうあり – experiente. 例文 玉縁はいとらうありて、歌などいとよく詠み、（大鏡）"]
+    assert T.classical("（例文）見捨てたてまつりてまかる空よりも落ちぬべき心地する」と書き置く。")
+
+
+def test_a_sentence_that_begins_with_a_protected_term_begins_with_a_capital():
+    tr = T.Translator.__new__(T.Translator)
+    tr.ui, tr.src, tr.cache, tr.new = "pt", "ja", {}, 0
+    tr.save = lambda: None
+    tr._model = lambda texts, *a: [t.replace("は", " é ").replace("。", ".") for t in texts]
+    assert tr(["助動詞は大事。"]) == ["Verbo auxiliar é 大事."]

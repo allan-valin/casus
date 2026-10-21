@@ -4,7 +4,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from mt_html import is_english, segments, translate_html  # noqa: E402
+from mt_html import classical, is_english, is_prose, segments, translate_html  # noqa: E402
 
 
 def test_english_prose_is_told_from_forms():
@@ -215,3 +215,48 @@ def test_a_german_sentence_is_not_made_english_by_protecting_its_german_words():
     gl.taught = lambda t: t.lower() in {"sie", "sah", "ihren", "blutigen", "finger"}
     run = [s for s in segments("<p>Sie sah ihren blutigen Finger an und es war so.</p>", "en", gloss=gl) if "text" in s][0]
     assert not run["translate"]
+
+
+def test_a_short_english_cell_with_a_known_label_is_translated():
+    # JLPT Grammar Enhanced's tables: "Form", "Example", "Verb (negative)" are under three words, so they stayed
+    # English in every UI (Allan's ja>pt check, 2026-10-21); a label Claude translated is used, other short runs stay
+    html = "<table><tr><th>Form</th><th>Example</th></tr><tr><td>Verb (negative)</td><td>食べない</td></tr></table>"
+    assert not [s for s in segments(html, "en") if s.get("translate")]
+    known = {"Form": "Forma", "Verb (negative)": "Verbo (negativo)"}
+    runs = [s["text"] for s in segments(html, "en", label=known.__contains__) if s.get("translate")]
+    assert runs == ["Form", "Verb (negative)"]
+    out = translate_html(html, lambda xs: [known[x] for x in xs], "en", label=known.__contains__)
+    assert out == "<table><tr><th>Forma</th><th>Example</th></tr><tr><td>Verbo (negativo)</td><td>食べない</td></tr></table>"
+
+
+def test_classical_japanese_and_kanbun_lines_are_the_studied_text():
+    # Wikibooks (ja) school books: MADLAD turned Tsurezuregusa's own words into Portuguese ("…a lua está apenas na
+    # forma de um kumma", Allan's ja>pt check, 2026-10-21); the classical text stays, its modern rendering is translated
+    kobun = "花は盛りに、月は隈（くま）なきをのみ見るものかは。雨に向かひて月を恋ひ、垂れ込めて春の行方知らぬも、なほあはれに情け深し。"
+    kanbun = "項王軍壁垓下。兵少食尽。漢軍及諸侯兵囲之数重。"
+    modern = "（はたして、）桜の花は咲いているときだけを見るべきだろうか、月は曇りないときだけを見るべきなのだろうか。"
+    gloss = "・見るものかは - 見るものだろうか。（いや、そうではない。）反語表現になっている。「かは」は反語を表す係助詞。"
+    assert not is_prose(kobun, "ja") and not is_prose(kanbun, "ja")
+    assert is_prose(modern, "ja") and is_prose(gloss, "ja")
+    # modern words that end like classical auxiliaries (避ける, 無ければ) and an all-kanji heading are not classical
+    assert is_prose("世の中に避けることの出来ない別れが無ければ、親に先年と生きてほしいと思う、子供のために。", "ja")
+    # one strong sign is enough (べし, 哉 in a kakikudashi line), and a book's 例文 line is its classical example
+    assert classical("→応に故郷の事を知るべし。") and classical("豈に千里を遠しとせん哉。")
+    assert classical("例文 菰積みたる舟のありくこそ、いみじうおかしかりしか。（枕）")
+    assert is_prose("・あさましき身 - 落ちぶれた身。現代語の「あさましい」とは意味が違う。", "ja")
+    assert not classical("本文/現代語訳") and classical("夕日のかかやいたるに、白波の上に漂ひ、浮きぬ沈みぬ揺られければ、沖には平家、船端をたたいて感じたり、")
+
+
+def test_a_classical_line_with_bold_key_words_is_still_the_studied_text():
+    # the school book bolds the words it glosses below (見るものかは, 恋ひ): as placeholders they hid the classical signs
+    html = "<p>花は盛りに、月は隈（くま）なきをのみ<b>見るものかは</b>。<b>雨に向かひて月を恋ひ</b>、<b>垂れ込めて春の行方知らぬ</b>も、<b>なほ</b>あはれに情け深し。</p>"
+    assert not [s for s in segments(html, "ja") if s.get("translate")]
+
+
+def test_japanese_school_grammar_terms_are_kept_from_the_model():
+    # MADLAD (through English) made 体言 "linguagem corporal", 終止形 "formulário de rescisão", 係り結び "nó
+    # associativo" (Allan's ja>pt check, 2026-10-21): each term is a placeholder, filled from the glossary
+    from mt_html import protect_terms
+    text, terms = protect_terms("助動詞[1]は連体形に接続し、尊敬語を作る。", "pt", "ja")
+    assert text == "[2][1]は[3]に接続し、[4]を作る。" and terms == ["verbo auxiliar", "forma rentai (atributiva)", "linguagem honorífica (sonkeigo)"]
+    assert protect_terms("体言とは", "pt", "en") == ("体言とは", [])

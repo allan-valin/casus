@@ -25,7 +25,7 @@ from html import unescape
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from mt_html import PH, STOPS, dedupe, is_prose, protect_terms, translate_html  # noqa: E402
+from mt_html import PH, SCRIPT, STOPS, classical, dedupe, is_prose, protect_terms, translate_html  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 MODEL = ROOT / "vendor" / "mt" / "madlad400-3b-ct2"
@@ -63,6 +63,15 @@ def fixes(ui: str) -> dict:
         if f.exists():
             out.update(yaml.safe_load(f.read_text(encoding="utf-8")) or {})
     return out
+
+
+def labels(ui: str) -> dict:
+    """the English runs the prose test misses, translated by Claude (tools/mt_fixes/<ui>/labels.yml): table labels
+    ("Form", "Verb (negative)") and example meanings without function words ("He looks well."); used only in a course
+    written in another script, where an English run cannot be a form of the taught language"""
+    import yaml
+    f = ROOT / "tools" / "mt_fixes" / ui / "labels.yml"
+    return (yaml.safe_load(f.read_text(encoding="utf-8")) or {}) if f.exists() else {}
 
 
 LLM_URL = os.environ.get("CASUS_LLM_URL", "http://127.0.0.1:8099")
@@ -104,8 +113,8 @@ class Recorder:
 
     def __call__(self, texts: list) -> list:
         for t in texts:
-            for p in pieces_of(t):
-                if p.strip() and p.strip() not in self.cache:
+            for p in split(t, self.cache):
+                if p.strip() and p.strip() not in self.cache and not studied(p, self.src):
                     self.seen.setdefault(p.strip(), None)
         raise Missing
 
@@ -118,6 +127,17 @@ def pieces_for(code: str, ui: str, only: str) -> list:
     rec = Recorder(ui)
     translate_language(code, rec, redo=True, only=only, write=False)   # (earlier machine translations ignored)
     return list(rec.seen)
+
+
+def studied(piece: str, src: str) -> bool:
+    """a classical Japanese or kanbun sentence inside a Japanese explanation: the text studied, kept as it is"""
+    return src == "ja" and classical(piece.strip())
+
+
+def split(text: str, cache: dict) -> list:
+    """a text's pieces: the text itself when it is in the cache whole (a label of two sentences Claude translated as
+    one), else its sentences"""
+    return [text] if text.strip() in cache else pieces_of(text)
 
 
 def too_long(src: str) -> int:
@@ -199,10 +219,10 @@ class Translator:
 
     def __call__(self, texts: list) -> list:
         """each text cut into sentences, each sentence translated once ever"""
-        pieces = [pieces_of(t) for t in texts]
-        todo = sorted({p.strip() for ps in pieces for p in ps if p.strip() and p.strip() not in self.cache})
+        pieces = [split(t, self.cache) for t in texts]
+        todo = sorted({p.strip() for ps in pieces for p in ps if p.strip() and p.strip() not in self.cache and not studied(p, getattr(self, "src", "en"))})
         for k in range(0, len(todo), 96):
-            batch = [protect_terms(x, self.ui) for x in todo[k:k + 96]]
+            batch = [protect_terms(x, self.ui, getattr(self, "src", "en")) for x in todo[k:k + 96]]
             outs = self._model([x for x, _ in batch])
             # a lost placeholder: one more try with {n} (the model keeps braces better), brought back to [n]
             bad = [i for i, ((prot, _), out) in enumerate(zip(batch, outs)) if sorted(PH.findall(out)) != sorted(PH.findall(prot))]
@@ -216,6 +236,8 @@ class Translator:
                 if sorted(PH.findall(out)) != sorted(PH.findall(prot)) or len(out) > too_long(src):
                     self.cache[src] = src          # (a much longer output is the model looping or inventing)
                 else:
+                    if terms and re.match(rf"\[{first + 1}\]", out.lstrip()):     # a sentence that begins with a term
+                        terms[0] = terms[0][:1].upper() + terms[0][1:]
                     out = PH.sub(lambda m: terms[int(m.group(1)) - first - 1] if first < int(m.group(1)) <= first + len(terms) else m.group(0), out)
                     self.cache[src] = dedupe(out, src)
                 if hasattr(self, "own"):
@@ -251,10 +273,11 @@ class CacheOnly:
             self.cache.update(fixes(ui))
 
     def __call__(self, texts: list) -> list:
-        pieces = [pieces_of(t) for t in texts]
-        if any(p.strip() and p.strip() not in self.cache for ps in pieces for p in ps):
+        src = getattr(self, "src", "en")
+        pieces = [split(t, self.cache) for t in texts]
+        if any(p.strip() and p.strip() not in self.cache and not studied(p, src) for ps in pieces for p in ps):
             raise Missing
-        self.used.update(self.label.get(p.strip(), "MADLAD-400") for ps in pieces for p in ps if p.strip())
+        self.used.update(self.label.get(p.strip(), "MADLAD-400") for ps in pieces for p in ps if p.strip() and not studied(p, src))
         return [join(ps, self.cache) for ps in pieces]
 
     def save(self):
@@ -385,12 +408,12 @@ def gloss_test(code: str, src: str = "en"):
     return gloss
 
 
-def html_field(obj: dict, tr, src: str = "en", gloss=None) -> bool:
+def html_field(obj: dict, tr, src: str = "en", gloss=None, label=None) -> bool:
     orig = _orig(obj)
     if not orig or src == tr.ui or not _todo(obj, tr.ui):
         return False
     try:
-        out = translate_html(orig, tr, src, gloss)
+        out = translate_html(orig, tr, src, gloss, label)
     except Missing:
         return False
     if out != orig:
@@ -411,6 +434,7 @@ def _translate_language(code: str, tr, redo: bool, only: str | None, write: bool
     """the imported pages of one language into tr.ui; then the index's titles and meanings of those pages"""
     data = ROOT / "data" / code
     srcs, n = {}, 0
+    label = labels(tr.ui).__contains__ if code in SCRIPT else None
     for f in sorted((data / "learn").glob("*.json")):
         if f.name.startswith("q-"):
             continue
@@ -420,7 +444,8 @@ def _translate_language(code: str, tr, redo: bool, only: str | None, write: bool
         src = source_language(page)
         # a grammar of the language written in it (Bohm's Sprachlehre): explanation and examples are one language and
         # a model translates the examples away (Allan's de>mk check, 2026-10-21), so the page stays as the book has it
-        if not src or src == code or only and only not in (page.get("source") or ""):
+        # (a Japanese, Chinese or Korean one quotes its examples in 「」, which are kept, so it is translated)
+        if not src or src == code and code not in SCRIPT or only and only not in (page.get("source") or ""):
             continue
         srcs[page.get("id", f.stem)] = src
         tr.src, tr.course = src, code
@@ -449,12 +474,12 @@ def _translate_language(code: str, tr, redo: bool, only: str | None, write: bool
             if isinstance(page.get(key), dict):
                 changed |= text_field(page[key], tr, src)
         if isinstance(page.get("intro"), dict):
-            changed |= html_field(page["intro"], tr, src, gloss)
+            changed |= html_field(page["intro"], tr, src, gloss, label)
         for s in page.get("sections", []):
             if isinstance(s.get("title"), dict):
                 changed |= text_field(s["title"], tr, src)
             if isinstance(s.get("html"), dict):
-                changed |= html_field(s["html"], tr, src, gloss)
+                changed |= html_field(s["html"], tr, src, gloss, label)
         # examples without a translation (the NIKL dictionary's) get one, even when the page is in tr.ui already
         tr.src = code          # the examples are in the taught language
         for obj in [page.get("intro")] + [s.get("html") for s in page.get("sections", [])]:

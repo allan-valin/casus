@@ -46,8 +46,32 @@ SCRIPT = {"ja": r"[\u3040-\u30ff\u4e00-\u9fff]", "zh": r"[\u4e00-\u9fff]", "ko":
           "ar": r"[\u0600-\u06ff]", "grc": r"[\u0370-\u03ff\u1f00-\u1fff]", "sa": r"[\u0900-\u097f]"}
 
 
+# classical Japanese (kobun) and kanbun read as Japanese to the prose test, but in a school book they are the studied
+# text: kobun has its own auxiliaries and old kana spelling (向かひ, 言ふ), kanbun is kanji without kana; a line that
+# also speaks modern Japanese (です, ている, だろう) is the book's explanation and is translated
+KOBUN = re.compile(r"けり|(?<=[りにしたひきれ])け[るれ]|けむ|らむ|べし|べから|ざり|ざる|ざれ|まじ|めり|なむ|侍[りる]|候ふ|給[ふひへ]|たま[ふひへ]"
+                   r"|[かや]は[。、]|にき|ぬる|ぬれ|ぬべ|つる|つれ|[\u4e00-\u9fff][ひふ](?=[てし、。もはをにど]|$)")
+KOBUN_STRONG = re.compile(r"けり|べし|めり|侍[りる]|候ふ|給[ふひ]|たま[ふひ]|いみじ|をかし|[哉豈乎焉]")
+MODERN = re.compile(r"です|ます|である|だろう|でしょう|ている|ていた|ていない|った[。、]|ない[。、]|ません|ように|という")
+
+
+def classical(text: str) -> bool:
+    """a line of classical Japanese or kanbun (quoted 「…」 words in an explanation do not count)"""
+    bare = re.sub(r"「[^」]*」|（[^）]*）|\([^)]*\)", "", text)
+    if MODERN.search(bare):
+        return False
+    cjk = len(re.findall(r"[\u4e00-\u9fff]", bare))
+    if cjk >= 6 and not re.search(r"[\u3040-\u30ff]", bare) and (re.search(r"[。、，；？！]", bare) or cjk >= 12):
+        return True
+    if re.match(r"\s*[（(]?例文", text):     # a school book's example sentence is classical text
+        return True
+    return len(KOBUN.findall(bare)) + 2 * len(KOBUN_STRONG.findall(bare)) >= 2
+
+
 def is_prose(text: str, lang: str) -> bool:
     """is this run explanation in `lang` (worth translating), not a form or list of forms of the taught language?"""
+    if lang == "ja" and classical(text):
+        return False
     if lang in SCRIPT:
         letters = re.findall(r"[^\W\d_]", text)
         return len(letters) >= 8 and len(re.findall(SCRIPT[lang], text)) / len(letters) >= 0.6 and bool(re.search(r"[。、，．！？؟.,]", text) or len(letters) >= 20)
@@ -158,11 +182,12 @@ GLOSSABLE = {"b", "strong", "i", "em"}
 PLAIN_EXAMPLES = True     # unmarked words of the taught language are protected (off only to migrate older translations)
 
 
-def segments(html: str, src: str = "en", gloss=None) -> list:
+def segments(html: str, src: str = "en", gloss=None, label=None) -> list:
     """the page as a list of pieces: {"raw": html kept as is} or a prose run {"text": with placeholders, "inline":
     [html of each placeholder], "translate": bool}. gloss(text) -> bool, when given, tells a bold or italic word
     in the explanation language (Grimm Grammar bolds the English gloss of each example) from a form of the taught
-    language: a gloss keeps only its tags as placeholders and is translated with its sentence."""
+    language: a gloss keeps only its tags as placeholders and is translated with its sentence. label(text) -> bool,
+    when given, names short runs (a table's "Form", "Verb (negative)") that are translated although not prose."""
     p = _Tokens()
     p.feed(html)
     p.close()
@@ -186,7 +211,11 @@ def segments(html: str, src: str = "en", gloss=None) -> list:
         # with taught-language words made placeholders, a German sentence can look English ("Sie [1] an"): the run
         # must have been explanation before that, too
         before = not info.get("plain") or is_prose(PH.sub(" ", "".join(run)), src)
-        out.append({"text": text, "inline": inline, "translate": is_prose(plain, src) and before and not crowded(text)})
+        known = bool(label) and not inline and label(unescape(text).strip())
+        # a classical line is judged whole, its bolded key words put back (they carry the classical signs)
+        whole = unescape(re.sub(r"<[^>]+>", "", PH.sub(lambda p: inline[int(p.group(1)) - 1] if 0 < int(p.group(1)) <= len(inline) else " ", text)))
+        studied = src == "ja" and classical(whole)
+        out.append({"text": text, "inline": inline, "translate": known or not studied and is_prose(plain, src) and before and not crowded(text)})
         run, inline = [], []
 
     in_table = 0
@@ -235,10 +264,10 @@ def segments(html: str, src: str = "en", gloss=None) -> list:
     return out
 
 
-def translate_html(html: str, translate, src: str = "en", gloss=None) -> str:
+def translate_html(html: str, translate, src: str = "en", gloss=None, label=None) -> str:
     """translate(list of strings) -> list of strings, the model call; returns the page with its prose in `src` (the
     book's explanation language) replaced"""
-    segs = segments(html, src, gloss)
+    segs = segments(html, src, gloss, label)
     todo = [s for s in segs if "text" in s and s["translate"]]
     # the model gets plain characters (&quot; → "), and its answer is escaped again for the page
     done = translate([unescape(s["text"].strip()) for s in todo]) if todo else []
@@ -275,16 +304,39 @@ TERMS = {
     # Portuguese: only what the model gets wrong (a placeholder hides a noun's gender, so the list stays short)
     "pt": {"fortis": "fortis", "lenis": "lenis"},
 }
+# the Japanese school grammar's terms, for a page explained in Japanese (MADLAD through English made 体言 "linguagem
+# corporal", 終止形 "formulário de rescisão", 係り結び "nó associativo"; Allan's ja>pt check, 2026-10-21): the
+# romanised term with a short gloss, as a learner meets it in Japanese books
+JA_TERMS = {
+    "pt": {"体言": "taigen (substantivo)", "用言": "yōgen (palavra flexionável)", "活用形": "forma de conjugação",
+           "活用語尾": "terminação de conjugação", "活用": "conjugação", "連体形": "forma rentai (atributiva)",
+           "連用形": "forma ren'yō (conjuntiva)", "終止形": "forma shūshi (conclusiva)", "未然形": "forma mizen (irrealis)",
+           "已然形": "forma izen (realis)", "命令形": "forma imperativa", "仮定形": "forma hipotética",
+           "謙譲語": "linguagem humilde (kenjōgo)", "尊敬語": "linguagem honorífica (sonkeigo)",
+           "丁寧語": "linguagem polida (teineigo)", "敬語": "linguagem honorífica (keigo)", "助動詞": "verbo auxiliar",
+           "格助詞": "partícula de caso", "係助詞": "partícula kakari (de realce)", "副助詞": "partícula adverbial",
+           "接続助詞": "partícula conjuntiva", "終助詞": "partícula final", "助詞": "partícula", "送り仮名": "okurigana",
+           "訓読み": "leitura kun", "音読み": "leitura on", "訓読": "kundoku (leitura do chinês clássico em japonês)",
+           "返り点": "kaeriten (marcas de ordem de leitura)", "書き下し文": "kakikudashi (texto reescrito em japonês)",
+           "書き下し": "kakikudashi", "白文": "hakubun (texto chinês sem marcas)", "係り結び": "kakari-musubi",
+           "品詞": "classe de palavras", "自立語": "palavra independente", "付属語": "palavra dependente",
+           "形容動詞": "adjetivo-verbo (keiyō dōshi)", "連体詞": "rentaishi (pré-nominal)", "接続詞": "conjunção",
+           "感動詞": "interjeição", "再読文字": "caractere de dupla leitura (saidoku moji)",
+           "置き字": "okiji (caractere não lido)", "枕詞": "makurakotoba (epíteto poético)",
+           "掛詞": "kakekotoba (trocadilho poético)", "反語": "pergunta retórica (hango)", "打消": "negação", "推量": "conjectura"},
+}
 _TERM_RE = {}
 
 
-def protect_terms(text: str, ui: str) -> tuple:
+def protect_terms(text: str, ui: str, src: str = "en") -> tuple:
     """the text with each known grammar term replaced by a placeholder [N] (numbered after any already there), and
-    the target-language terms in placeholder order"""
-    table = TERMS.get(ui)
+    the target-language terms in placeholder order (the Japanese school terms when the page explains in Japanese)"""
+    table = JA_TERMS.get(ui) if src == "ja" else TERMS.get(ui)
     if not table:
         return text, []
-    rx = _TERM_RE.get(ui) or _TERM_RE.setdefault(ui, re.compile(r"\b(" + "|".join(sorted(map(re.escape, table), key=len, reverse=True)) + r")\b", re.I))
+    key = src + ui if src == "ja" else ui
+    edge = "" if src == "ja" else r"\b"
+    rx = _TERM_RE.get(key) or _TERM_RE.setdefault(key, re.compile(edge + "(" + "|".join(sorted(map(re.escape, table), key=len, reverse=True)) + ")" + edge, re.I))
     start = max([int(n) for n in PH.findall(text)] or [0])
     terms = []
 
