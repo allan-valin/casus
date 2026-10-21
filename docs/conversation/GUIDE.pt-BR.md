@@ -80,7 +80,7 @@ rápidas.
    narrador; escreva as cenas em que as duas esperam coisas diferentes.
 5. Respeite o nível **QECR** da unidade e os temas das lições correspondentes do Aprender; troque um tema só quando
    outro combinar melhor com a dificuldade.
-6. Cada unidade apresenta **15–30 itens novos** (palavras ou expressões fixas) e tem **um diálogo de 8–10 falas**.
+6. Cada unidade apresenta **10–20 itens novos** (palavras ou expressões fixas) e tem **um diálogo de 8–10 falas**.
 7. Cada item novo é **pedido numa pergunta** pelo menos duas vezes na sua unidade, com espaço entre elas, e **volta**
    na unidade seguinte e depois em intervalos de 2, 4 e 8 unidades.
 8. Cerca de **25 %** das perguntas de uma unidade são revisão, cada uma numa **situação nova** que combine com a

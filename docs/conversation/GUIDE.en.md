@@ -79,7 +79,7 @@ help. If so, they go on; if not, they repeat the unit. Moving on with less makes
    write the scenes where the two expect different things.
 5. Keep to the **CEFR** level of the unit and to the topics of the matching Learn lessons; change a topic only where
    another one fits the difficulty better.
-6. Each unit introduces **15–30 new items** (words or fixed phrases) and has **one dialogue of 8–10 lines**.
+6. Each unit introduces **10–20 new items** (words or fixed phrases) and has **one dialogue of 8–10 lines**.
 7. Every new item is **asked for in a prompt** at least twice in its unit, spaced apart, and **comes back** in the
    next unit and then at intervals of 2, 4 and 8 units.
 8. About **25 %** of a unit's prompts are review, each in a **new situation** that fits the story; never repeat an

@@ -13,7 +13,7 @@ import yaml
 
 STEP_TYPES = {"narrator", "dialogue", "line", "prompt", "buildup", "selfcheck"}
 LEVELS = {"A1", "A2", "B1", "B2", "C1", "C2"}
-NEW_ITEMS = (15, 30)
+NEW_ITEMS = (10, 20)            # Allan 2026-10-21: the pace of the classic audio courses (its German I reaches modals + weil in 30 units)
 DIALOGUE_LINES = (8, 10)
 REVIEW_SHARE = (0.15, 0.40)
 

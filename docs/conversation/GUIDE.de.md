@@ -84,7 +84,7 @@ Einheiten schwerer, nicht schneller.
    der Kultur des Erzählers; schreiben Sie die Szenen, in denen beide Verschiedenes erwarten.
 5. Halten Sie sich an das **GER**-Niveau der Einheit und an die Themen der passenden Lernen-Lektionen; tauschen Sie
    ein Thema nur, wo ein anderes besser zur Schwierigkeit passt.
-6. Jede Einheit führt **15–30 neue Elemente** ein (Wörter oder feste Wendungen) und hat **einen Dialog von 8–10
+6. Jede Einheit führt **10–20 neue Elemente** ein (Wörter oder feste Wendungen) und hat **einen Dialog von 8–10
    Zeilen**.
 7. Jedes neue Element wird in seiner Einheit mindestens zweimal **in einer Frage abgefragt**, mit Abstand, und
    **kommt zurück** in der nächsten Einheit und dann in Abständen von 2, 4 und 8 Einheiten.

@@ -14,14 +14,12 @@ Checker: `python3 tools/conversation_check.py tools/conversation/<code>`.
 
 Planned courses, in order (taught language · narrator): mk · pt-BR, de · mk, ko · pt-BR, de · ar, ja · pt-BR.
 
-Courses (Allan's order: mk·pt-BR, de·mk, ko·pt-BR, de·ar, ja·pt-BR):
-- mk · pt-BR — bible + A1 plan ACCEPTED 2026-10-21, units A1-01… in `tools/conversation/mk/`;
-  A2–C2 plan DRAFT: [PLAN-mk-pt-BR-A2-C2.md](PLAN-mk-pt-BR-A2-C2.md)
-- de · mk and de · ar — bible + A1 plan ACCEPTED 2026-10-21 ([PLAN-de-mk-ar-A1.md](PLAN-de-mk-ar-A1.md));
-  A2–C2 plan DRAFT: [PLAN-de-mk-ar-A2-C2.md](PLAN-de-mk-ar-A2-C2.md)
-- ko · pt-BR — bible + A1 plan DRAFT: `tools/conversation/ko/story-bible.yml`, [PLAN-ko-pt-BR-A1.md](PLAN-ko-pt-BR-A1.md)
-- ja · pt-BR — bible + A1 plan DRAFT: `tools/conversation/ja/story-bible.yml`, [PLAN-ja-pt-BR-A1.md](PLAN-ja-pt-BR-A1.md)
-- ko · pt-BR and ja · pt-BR — on hold: the open Korean and Japanese Piper voices are NC (see the proposal's voice audit).
+Courses (Allan's order: mk·pt-BR, de·mk, ko·pt-BR, de·ar, ja·pt-BR). Plans redone after Allan's review of
+2026-10-21 (30 units per level, life/life/topic rhythm, a Reviewed column, the pace of the classic audio courses):
+- mk · pt-BR — [PLAN-mk-pt-BR.md](PLAN-mk-pt-BR.md) (A1–C2, 180 units); units A1-01… in `tools/conversation/mk/`
+- de · mk and de · ar — [PLAN-de-mk-ar.md](PLAN-de-mk-ar.md) (A1–C2, 180 units)
+- ko · pt-BR — [PLAN-ko-pt-BR.md](PLAN-ko-pt-BR.md) (A1 in full, A2–C2 outlined)
+- ja · pt-BR — [PLAN-ja-pt-BR.md](PLAN-ja-pt-BR.md) (A1 in full, A2–C2 outlined)
 
 The Macedonian and Arabic versions were written by an AI and await a native speaker's reading.
 
