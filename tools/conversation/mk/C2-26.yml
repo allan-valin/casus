@@ -1,0 +1,581 @@
+# UNIT mk C2-26 — written by AI (Claude) for Casus; expanded from src/C2-26.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-26
+level: C2
+number: 26
+protagonist: m
+title:
+  en: A poem
+  pt: Um poema
+situation:
+  en: 'The evening course''s last-year reunion: everyone reads a poem aloud. You chose Koneski.'
+  pt: 'Reencontro do curso noturno: cada um lê um poema em voz alta. Você escolheu Koneski.'
+learn_lessons:
+- c2-set-phrases
+culture: —
+new_items:
+- id: na-glas
+  text: на глас
+  meaning:
+    en: aloud
+    pt: em voz alta
+- id: rima
+  text: рима
+  meaning:
+    en: rhyme
+    pt: rima
+- id: stihovite
+  text: стиховите
+  meaning:
+    en: the lines (of verse)
+    pt: os versos
+- id: me-pogodi
+  text: ме погоди
+  meaning:
+    en: struck me
+    pt: me atingiu
+- id: na-moj-nacin
+  text: на мој начин
+  meaning:
+    en: in my way
+    pt: do meu jeito
+- id: akcentot-ti-e
+  text: акцентот ти е
+  meaning:
+    en: your stress is
+    pt: seu acento está
+- id: vo-red-e
+  text: во ред е
+  meaning:
+    en: it's all right
+    pt: está bom
+- id: poezijata-ne-se-preveduva
+  text: поезијата не се преведува
+  meaning:
+    en: poetry can't be translated
+    pt: poesia não se traduz
+- id: se-pretskazuva
+  text: се препева
+  meaning:
+    en: is recreated (in translation)
+    pt: se recria (na tradução)
+  rare: true
+- id: mojot-omilen
+  text: мојот омилен
+  meaning:
+    en: my favourite
+    pt: o meu favorito
+reviews:
+- item: dali-si-bila
+  from: A2-19
+- item: nekogas
+  from: A2-19
+- item: brod
+  from: A2-19
+- item: sum-bila
+  from: A2-19
+- item: tvrdinata
+  from: A2-19
+- item: kolku-e-stara
+  from: A2-19
+- item: glavniot-grad
+  from: A2-19
+- item: slikaj-me
+  from: A2-19
+- item: nasmevni-se
+  from: A2-19
+- item: ocite
+  from: A2-19
+- item: uste-edna
+  from: A2-19
+- item: unapreduvanje
+  from: B2-23
+- item: zasluzivte
+  from: B2-23
+- item: nov-raboten-oddel
+  from: B2-23
+- item: pogolema-odgovornost
+  from: B2-23
+- item: povisoka-plata
+  from: B2-23
+- item: ne-ocekuvav
+  from: B2-23
+- item: ke-ste-zaminale
+  from: B2-23
+- item: za-godina-dena
+  from: B2-23
+- item: ostanuvam
+  from: B2-23
+- item: se-raduvam
+  from: B2-23
+- item: resenie
+  from: C1-25
+- item: odbieno
+  from: C1-25
+- item: zalba-protiv
+  from: C1-25
+- item: vo-zakonski-rok
+  from: C1-25
+- item: pecat
+  from: C1-25
+- item: vo-prilog-dostavuvam
+  from: C1-25
+- item: ve-molam-da-go-preispitate
+  from: C1-25
+- item: so-pocit-podnositel
+  from: C1-25
+- item: svoeracen-potpis
+  from: C1-25
+- item: preporacano
+  from: C1-25
+- item: tuzba
+  from: C2-11
+- item: advokat
+  from: C2-11
+- item: sudot
+  from: C2-11
+- item: sudijata
+  from: C2-11
+- item: ke-svedocite
+  from: C2-11
+- item: samo-fakti
+  from: C2-11
+- item: bez-emocii
+  from: C2-11
+- item: dokazite
+  from: C2-11
+- item: vo-moja-korist
+  from: C2-11
+- item: presudata
+  from: C2-11
+- item: dijagnoza
+  from: C2-19
+- item: tretman
+  from: C2-19
+- item: vtoro-mislenje
+  from: C2-19
+- item: stitnata-zlezda
+  from: C2-19
+- item: hronicno
+  from: C2-19
+- item: se-kontrolira
+  from: C2-19
+- item: dozivotno
+  from: C2-19
+- item: bi-sakala-da-pobaram
+  from: C2-19
+- item: sekako-imate-pravo
+  from: C2-19
+- item: ve-molam-objasnete
+  from: C2-19
+- item: mi-nedostiga
+  from: C2-23
+- item: mi-nedostigaat
+  from: C2-23
+- item: kopnez
+  from: C2-23
+- item: ne-postoi-zbor
+  from: C2-23
+- item: taga-i-radost
+  from: C2-23
+- item: zaedno-vo-eden-zbor
+  from: C2-23
+- item: nie-sme-imale
+  from: C2-23
+- item: zal
+  from: C2-23
+- item: za-nekoj-sto-go-nema
+  from: C2-23
+- item: ubav-zbor
+  from: C2-23
+- item: formalno
+  from: C2-25
+- item: neformalno
+  from: C2-25
+- item: sto-ima
+  from: C2-25
+- item: ne-dolikuva
+  from: C2-25
+- item: prvo-vie
+  from: C2-25
+- item: dodeka-ne-ponudi
+  from: C2-25
+- item: ne-se-lutam-na-tebe
+  from: C2-25
+- item: site-pocnavme-taka
+  from: C2-25
+- item: preformuliraj
+  from: C2-25
+- item: ke-zvuci-podobro
+  from: C2-25
+steps:
+- type: narrator
+  text:
+    en: 'The evening course''s last-year reunion: everyone reads a poem aloud. You chose Koneski. Listen to the conversation; you don''t need to understand it yet.'
+    pt: 'Reencontro do curso noturno: cada um lê um poema em voz alta. Você escolheu Koneski. Escute a conversa; ainda não precisa entender.'
+- type: dialogue
+  lines:
+  - speaker: profesorka
+    text: Повелете, прочитајте на глас.
+    meaning:
+      en: Please, read aloud.
+      pt: Por favor, leia em voz alta.
+  - speaker: protagonist
+    text: Избрав Конески. Овие стихови ме погодија најмногу.
+    meaning:
+      en: I chose Koneski. These lines struck me the most.
+      pt: Escolhi Koneski. Estes versos me atingiram mais.
+  - speaker: profesorka
+    text: Зошто?
+    meaning:
+      en: Why?
+      pt: Por quê?
+  - speaker: protagonist
+    text: Зборува за јазикот како за дом. Тоа и јас го чувствувам, на мој начин.
+    meaning:
+      en: He speaks of the language as a home. I feel that too, in my way.
+      pt: Ele fala da língua como de uma casa. Eu sinto isso também, do meu jeito.
+  - speaker: profesorka
+    text: Акцентот ти е убав. Само римата — внимавај на крајот на стихот.
+    meaning:
+      en: Your stress is lovely. Only the rhyme — watch the end of the line.
+      pt: Seu acento está bonito. Só a rima — cuidado com o fim do verso.
+  - speaker: protagonist
+    text: Би сакал да го преведам на португалски.
+    meaning:
+      en: I'd like to translate it into Portuguese.
+      pt: Gostaria de traduzir para o português.
+  - speaker: profesorka
+    text: Поезијата не се преведува — се препева.
+    meaning:
+      en: Poetry isn't translated — it's re-sung.
+      pt: Poesia não se traduz — se recria.
+  - speaker: protagonist
+    text: Тогаш ќе го препеам. Тоа е мојот омилен.
+    meaning:
+      en: Then I'll re-sing it. It's my favourite.
+      pt: Então vou recriar. É o meu favorito.
+- type: prompt
+  ask:
+    en: 'She says: please, read aloud.'
+    pt: 'Ela diz: por favor, leia em voz alta.'
+  answer:
+    speaker: protagonist
+    text: Прочитајте на глас.
+  items:
+  - na-glas
+- type: prompt
+  ask:
+    en: 'Say: these lines struck me the most.'
+    pt: 'Diga: estes versos me atingiram mais.'
+  answer:
+    speaker: protagonist
+    text: Овие стихови ме погодија најмногу.
+  items:
+  - stihovite
+  - me-pogodi
+- type: prompt
+  ask:
+    en: 'Say: in my way.'
+    pt: 'Diga: do meu jeito.'
+  answer:
+    speaker: protagonist
+    text: На мој начин.
+  items:
+  - na-moj-nacin
+- type: prompt
+  ask:
+    en: 'She says: your stress is lovely.'
+    pt: 'Ela diz: seu acento está bonito.'
+  answer:
+    speaker: protagonist
+    text: Акцентот ти е убав.
+  items:
+  - akcentot-ti-e
+- type: prompt
+  ask:
+    en: 'Say: the rhyme.'
+    pt: 'Diga: a rima.'
+  answer:
+    speaker: protagonist
+    text: Римата.
+  items:
+  - rima
+- type: prompt
+  ask:
+    en: 'Say: poetry can''t be translated.'
+    pt: 'Diga: poesia não se traduz.'
+  answer:
+    speaker: protagonist
+    text: Поезијата не се преведува.
+  items:
+  - poezijata-ne-se-preveduva
+- type: prompt
+  ask:
+    en: 'Say: it''s re-sung (recreated).'
+    pt: 'Diga: se recria.'
+  answer:
+    speaker: protagonist
+    text: Се препева.
+  items:
+  - se-pretskazuva
+- type: prompt
+  ask:
+    en: 'Say: it''s my favourite.'
+    pt: 'Diga: é o meu favorito.'
+  answer:
+    speaker: protagonist
+    text: Тоа е мојот омилен.
+  items:
+  - mojot-omilen
+- type: prompt
+  ask:
+    en: 'Say: it''s all right.'
+    pt: 'Diga: está bom.'
+  answer:
+    speaker: protagonist
+    text: Во ред е.
+  items:
+  - vo-red-e
+- type: narrator
+  text:
+    en: 'Macedonian has a word for translating poetry: препева — to ''re-sing'' it, recreating rhythm and rhyme rather than words. Koneski himself re-sang Shakespeare and Heine into Macedonian.'
+    pt: 'O macedônio tem uma palavra para traduzir poesia: препева — ''recantar'', recriando ritmo e rima em vez das palavras. O próprio Koneski recriou Shakespeare e Heine em macedônio.'
+- type: prompt
+  ask:
+    en: 'Once more: say “aloud”.'
+    pt: 'Mais uma vez: diga “em voz alta”.'
+  answer:
+    speaker: protagonist
+    text: на глас
+  items:
+  - na-glas
+- type: prompt
+  ask:
+    en: 'Once more: say “rhyme”.'
+    pt: 'Mais uma vez: diga “rima”.'
+  answer:
+    speaker: protagonist
+    text: рима
+  items:
+  - rima
+- type: prompt
+  ask:
+    en: 'Once more: say “the lines (of verse)”.'
+    pt: 'Mais uma vez: diga “os versos”.'
+  answer:
+    speaker: protagonist
+    text: стиховите
+  items:
+  - stihovite
+- type: prompt
+  ask:
+    en: 'Once more: say “struck me”.'
+    pt: 'Mais uma vez: diga “me atingiu”.'
+  answer:
+    speaker: protagonist
+    text: ме погоди
+  items:
+  - me-pogodi
+- type: prompt
+  ask:
+    en: 'Once more: say “in my way”.'
+    pt: 'Mais uma vez: diga “do meu jeito”.'
+  answer:
+    speaker: protagonist
+    text: на мој начин
+  items:
+  - na-moj-nacin
+- type: prompt
+  ask:
+    en: 'Once more: say “your stress is”.'
+    pt: 'Mais uma vez: diga “seu acento está”.'
+  answer:
+    speaker: protagonist
+    text: акцентот ти е
+  items:
+  - akcentot-ti-e
+- type: prompt
+  ask:
+    en: 'Once more: say “it''s all right”.'
+    pt: 'Mais uma vez: diga “está bom”.'
+  answer:
+    speaker: protagonist
+    text: во ред е
+  items:
+  - vo-red-e
+- type: prompt
+  ask:
+    en: 'Once more: say “poetry can''t be translated”.'
+    pt: 'Mais uma vez: diga “poesia não se traduz”.'
+  answer:
+    speaker: protagonist
+    text: поезијата не се преведува
+  items:
+  - poezijata-ne-se-preveduva
+- type: prompt
+  ask:
+    en: 'Once more: say “is recreated (in translation)”.'
+    pt: 'Mais uma vez: diga “se recria (na tradução)”.'
+  answer:
+    speaker: protagonist
+    text: се препева
+  items:
+  - se-pretskazuva
+- type: prompt
+  ask:
+    en: 'Once more: say “my favourite”.'
+    pt: 'Mais uma vez: diga “o meu favorito”.'
+  answer:
+    speaker: protagonist
+    text: мојот омилен
+  items:
+  - mojot-omilen
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “formal(ly) — and “informal(ly) — and “What''s up? — and “isn''t appropriate — and “first ''Вие'' — and “until he offers — and “I''m not angry with you — and “we all started like that — and
+      “rephrase (informal) — and “will sound better — and “I miss (it/him/her) — and “I miss (them)”.'
+    pt: 'Diga: “formal — e “informal — e “E aí? — e “não fica bem — e “primeiro ''Вие'' — e “até ele oferecer — e “não estou brava com você — e “todo mundo começou assim — e “reformula — e “vai soar melhor
+      — e “sinto falta de — e “sinto falta deles”.'
+  answer:
+    speaker: protagonist
+    text: формално … неформално … Што има? … не доликува … прво „Вие“ … додека не понуди … не ти се лутам … сите почнавме така … преформулирај … ќе звучи подобро … ми недостига … ми недостигаат
+  items:
+  - formalno
+  - neformalno
+  - sto-ima
+  - ne-dolikuva
+  - prvo-vie
+  - dodeka-ne-ponudi
+  - ne-se-lutam-na-tebe
+  - site-pocnavme-taka
+  - preformuliraj
+  - ke-zvuci-podobro
+  - mi-nedostiga
+  - mi-nedostigaat
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “longing — and “there''s no word — and “sadness and joy — and “together in one word — and “we have, it turns out — and “sorrowful longing (old word) — and “for someone who is gone — and “a
+      beautiful word — and “diagnosis — and “treatment — and “second opinion — and “the thyroid”.'
+    pt: 'Diga: “anseio — e “não existe palavra — e “tristeza e alegria — e “juntas numa palavra — e “a gente tem, pelo jeito — e “pesar / saudade (palavra antiga) — e “por alguém que não está — e “uma palavra
+      bonita — e “diagnóstico — e “tratamento — e “segunda opinião — e “a tireoide”.'
+  answer:
+    speaker: protagonist
+    text: копнеж … не постои збор … тага и радост … заедно во еден збор … ние сме имале … жал … за некој што го нема … убав збор … дијагноза … третман … второ мислење … штитната жлезда
+  items:
+  - kopnez
+  - ne-postoi-zbor
+  - taga-i-radost
+  - zaedno-vo-eden-zbor
+  - nie-sme-imale
+  - zal
+  - za-nekoj-sto-go-nema
+  - ubav-zbor
+  - dijagnoza
+  - tretman
+  - vtoro-mislenje
+  - stitnata-zlezda
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “chronic — and “can be controlled — and “for life — and “I''d like to ask for — and “of course, you have the right — and “please explain to me — and “lawsuit — and “lawyer — and “the court
+      — and “the judge — and “you will testify — and “only facts”.'
+    pt: 'Diga: “crônico — e “se controla — e “pelo resto da vida — e “gostaria de pedir — e “claro, a senhora tem direito — e “por favor, me explique — e “ação judicial — e “advogado — e “o tribunal — e
+      “o juiz — e “a senhora vai depor — e “só fatos”.'
+  answer:
+    speaker: protagonist
+    text: хронично … се контролира … доживотно … би сакала да побарам … секако, имате право … ве молам, објаснете ми … тужба … адвокат … судот … судијата … ќе сведочите … само факти
+  items:
+  - hronicno
+  - se-kontrolira
+  - dozivotno
+  - bi-sakala-da-pobaram
+  - sekako-imate-pravo
+  - ve-molam-objasnete
+  - tuzba
+  - advokat
+  - sudot
+  - sudijata
+  - ke-svedocite
+  - samo-fakti
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “without emotion — and “the evidence — and “in my favour — and “the verdict — and “decision (official) — and “rejected — and “appeal against — and “within the legal deadline — and “stamp —
+      and “I enclose — and “I ask you to reconsider it — and “applicant”.'
+    pt: 'Diga: “sem emoção — e “as provas — e “a meu favor — e “a sentença — e “decisão / despacho — e “indeferido — e “recurso contra — e “dentro do prazo legal — e “carimbo — e “segue em anexo — e “peço
+      que reconsidere — e “requerente”.'
+  answer:
+    speaker: protagonist
+    text: без емоции … доказите … во моја корист … пресудата … решение … одбиено … жалба против … во законски рок … печат … во прилог доставувам … ве молам да го преиспитате … подносител
+  items:
+  - bez-emocii
+  - dokazite
+  - vo-moja-korist
+  - presudata
+  - resenie
+  - odbieno
+  - zalba-protiv
+  - vo-zakonski-rok
+  - pecat
+  - vo-prilog-dostavuvam
+  - ve-molam-da-go-preispitate
+  - so-pocit-podnositel
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “handwritten signature — and “by registered mail — and “promotion — and “you earned it (formal) — and “team lead — and “more responsibility — and “a higher salary — and “I didn''t expect —
+      and “you''ll have left (I assume) — and “in a year''s time — and “I''m staying — and “I''m glad”.'
+    pt: 'Diga: “assinatura de próprio punho — e “registrado (correio) — e “promoção — e “a senhora mereceu — e “líder de equipe — e “mais responsabilidade — e “um salário maior — e “eu não esperava — e
+      “a senhora deve ter ido — e “daqui a um ano — e “eu fico — e “fico feliz”.'
+  answer:
+    speaker: protagonist
+    text: своерачен потпис … препорачано … унапредување … заслуживте … водач на тим … поголема одговорност … повисока плата … не очекував … ќе сте заминале … за година дена … останувам … се радувам
+  items:
+  - svoeracen-potpis
+  - preporacano
+  - unapreduvanje
+  - zasluzivte
+  - nov-raboten-oddel
+  - pogolema-odgovornost
+  - povisoka-plata
+  - ne-ocekuvav
+  - ke-ste-zaminale
+  - za-godina-dena
+  - ostanuvam
+  - se-raduvam
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Have you (ever) been…? (to a woman, informal) — and “ever / once — and “boat, ship — and “I have been (a woman) — and “the fortress — and “How old is it? (feminine) — and “the capital — and
+      “Take my picture! (informal) — and “Smile! (informal) — and “the eyes — and “One more!”.'
+    pt: 'Diga: “Você já esteve…? (para mulher) — e “alguma vez / uma vez — e “barco — e “já estive (mulher) — e “a fortaleza — e “Quantos anos ela tem? — e “a capital — e “Tira uma foto minha! — e “Sorria!
+      — e “os olhos — e “Mais uma!”.'
+  answer:
+    speaker: protagonist
+    text: Дали си била…? … некогаш … брод … сум била … тврдината … Колку е стара? … главниот град … Сликај ме! … Насмевни се! … очите … Уште една!
+  items:
+  - dali-si-bila
+  - nekogas
+  - brod
+  - sum-bila
+  - tvrdinata
+  - kolku-e-stara
+  - glavniot-grad
+  - slikaj-me
+  - nasmevni-se
+  - ocite
+  - uste-edna
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
