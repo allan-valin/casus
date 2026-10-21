@@ -71,3 +71,17 @@ describe('Candidates folds identical readings', () => {
     expect(reader.blocks[0].pinned.lemma).toBe('1');
   });
 });
+
+describe('reasons in the interface language (2026-10-21)', async () => {
+  const { setLang } = await import('../../src/app/lib/i18n.svelte.js');
+  it('a Portuguese interface shows the reasons in Portuguese', async () => {
+    const { render } = await import('@testing-library/svelte');
+    const Candidates = (await import('../../src/app/components/Candidates.svelte')).default;
+    setLang('pt');
+    const block = { token: { index: 0, surface: 'rosa' }, candidates: [{ analysis: { lemma: 1, pos: 'noun', case: 'nom', number: 'sg', gender: 'f' }, reasons: ['lexicon: attested form'], links: [] }, { analysis: { lemma: 1, pos: 'noun', case: 'abl', number: 'sg', gender: 'f' }, reasons: ['lexicon: attested form'], links: [] }] };
+    const reader = { lexiconExtras: null, pin: () => {}, unpin: () => {}, blocks: [block] };
+    const { container } = render(Candidates, { props: { block, reader } });
+    expect(container.querySelector('.reasons li').textContent).toBe('dicionário: forma atestada');
+    setLang('en');
+  });
+});

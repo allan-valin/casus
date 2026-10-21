@@ -1,6 +1,7 @@
 <script>
   import { describeAnalysis } from '../lib/colors.js';
-  import { t } from '../lib/i18n.svelte.js';
+  import { t, ui } from '../lib/i18n.svelte.js';
+  import { reasonText } from '../lib/reasons.js';
   let { block, reader } = $props();
   const index = $derived(block.token.index);
 
@@ -39,7 +40,7 @@
         {:else}
           <button class="pin" onclick={() => reader.pin(index, row.candidate.analysis)}>{t('cand.pin')}</button>
         {/if}
-        <ul class="reasons">{#each row.candidate.reasons as r}<li>{r}</li>{/each}</ul>
+        <ul class="reasons">{#each row.candidate.reasons as r}<li>{reasonText(r, ui.lang)}</li>{/each}</ul>
       </li>
     {/each}
   </ul>
