@@ -1,0 +1,36 @@
+id: B2-26
+protagonist: m
+title: ["The basketball club", "O clube de basquete"]
+situation: ["Marko takes you to his amateur club. Coach Zoran looks you over.", "O Marko leva você ao clube amador dele. O técnico Zoran te avalia."]
+learn: [b2-vocative]
+culture: Clubs and the gym
+items:
+  - [trener, "тренер", "coach", "técnico"]
+  - [treninzi, "тренинзи", "training sessions", "treinos"]
+  - [dvapati-nedelno, "двапати неделно", "twice a week", "duas vezes por semana"]
+  - [clen, "член", "member", "sócio / membro"]
+  - [clenarina, "членарина", "membership fee", "mensalidade", {rare: true}]
+  - [zagrevanje, "загревање", "warm-up", "aquecimento", {rare: true}]
+  - [brate, "брате", "bro (vocative of брат)", "mano / irmão"]
+  - [zorane, "Зоране", "Zoran! (calling him)", "Zoran! (chamando)"]
+  - [frli, "фрли", "throw, shoot (informal)", "arremessa"]
+  - [koj-te-nauci, "Кој те научи?", "Who taught you?", "Quem te ensinou?"]
+dialogue:
+  - [marko, "Зоране, ова е мојот сосед. Сака да игра.", "Zoran, this is my neighbour. He wants to play.", "Zoran, esse é o meu vizinho. Ele quer jogar."]
+  - [zoran, "Добредојде. Тренинзи имаме двапати неделно, вторник и четврток.", "Welcome. We train twice a week, Tuesday and Thursday.", "Bem-vindo. Treino duas vezes por semana, terça e quinta."]
+  - [protagonist, "Колку е членарината?", "How much is the membership fee?", "Quanto é a mensalidade?"]
+  - [zoran, "Илјада денари месечно. Прво загревање, па фрли на кош.", "A thousand denars a month. First warm up, then shoot.", "Mil dinares por mês. Primeiro aquecimento, depois arremessa."]
+  - [protagonist, "...Влезе!", "...It went in!", "...Entrou!"]
+  - [zoran, "Убаво фрли. Кој те научи?", "Nice shot. Who taught you?", "Belo arremesso. Quem te ensinou?"]
+  - [protagonist, "Никој. Бразилец сум — играм со нозе!", "Nobody. I'm Brazilian — I play with my feet!", "Ninguém. Sou brasileiro — jogo com os pés!"]
+  - [marko, "Брате, сега си член.", "Bro, now you're a member.", "Mano, agora você é sócio."]
+teach:
+  - ask: ["Call Zoran.", "Chame o Zoran.", "Зоране!", zorane]
+  - ask: ["Say: the coach.", "Diga: o técnico.", "Тренерот.", trener]
+  - ask: ["Say: training twice a week.", "Diga: treino duas vezes por semana.", "Тренинзи двапати неделно.", treninzi, dvapati-nedelno]
+  - ask: ["Ask how much the membership fee is.", "Pergunte quanto é a mensalidade.", "Колку е членарината?", clenarina]
+  - ask: ["Say: first a warm-up.", "Diga: primeiro aquecimento.", "Прво загревање.", zagrevanje]
+  - ask: ["Zoran: shoot!", "O Zoran: arremessa!", "Фрли на кош!", frli]
+  - ask: ["Zoran asks who taught you.", "O Zoran pergunta quem te ensinou.", "Кој те научи?", koj-te-nauci]
+  - ask: ["Marko: bro, now you're a member.", "O Marko: mano, agora você é sócio.", "Брате, сега си член.", brate, clen]
+  - note: ["The calling form again: Зоран → Зоране, брат → брате, друг → друже. 'Брате' between friends is like Brazilian 'mano'.", "A forma de chamamento de novo: Зоран → Зоране, брат → брате, друг → друже. 'Брате' entre amigos é como o 'mano' brasileiro."]

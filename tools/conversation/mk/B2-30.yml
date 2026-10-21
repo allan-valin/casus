@@ -1,0 +1,585 @@
+# UNIT mk B2-30 — written by AI (Claude) for Casus; expanded from src/B2-30.yml by tools/expand_unit.py. Edit the source.
+
+id: B2-30
+level: B2
+number: 30
+protagonist: m
+title:
+  en: The future
+  pt: O futuro
+situation:
+  en: December, Vera's kitchen. Where will you live, and what comes next? B2 comes back.
+  pt: Dezembro, na cozinha da Vera. Onde você vai morar, e o que vem agora? O B2 volta.
+learn_lessons: []
+culture: —
+new_items:
+- id: idninata
+  text: иднината
+  meaning:
+    en: the future
+    pt: o futuro
+- id: kade-ke-ziveete
+  text: Каде ќе живеете?
+  meaning:
+    en: Where will you (two) live?
+    pt: Onde vocês vão morar?
+- id: kupivme
+  text: купивме
+  meaning:
+    en: we bought
+    pt: compramos
+- id: kredit
+  text: кредит
+  meaning:
+    en: loan, mortgage
+    pt: financiamento
+  rare: true
+- id: dvaeset-godini
+  text: дваесет години
+  meaning:
+    en: twenty years
+    pt: vinte anos
+- id: vo-istata-zgrada
+  text: во истата зграда
+  meaning:
+    en: in the same building
+    pt: no mesmo prédio
+- id: plani
+  text: планови
+  meaning:
+    en: plans
+    pt: planos
+- id: deca
+  text: деца
+  meaning:
+    en: children
+    pt: filhos / crianças
+- id: poleka-poleka
+  text: полека-полека
+  meaning:
+    en: little by little
+    pt: devagarinho
+- id: ke-ti-bidam-baba
+  text: ќе им бидам баба
+  meaning:
+    en: I'll be a grandmother to them
+    pt: vou ser avó deles
+reviews:
+- item: rano
+  from: A2-27
+- item: velese
+  from: A2-27
+- item: mene
+  from: A2-27
+- item: sto-znaci
+  from: A2-27
+- item: stanes
+  from: A2-27
+- item: srekja
+  from: A2-27
+- item: kaj-nas
+  from: A2-27
+- item: velat
+  from: A2-27
+- item: isto
+  from: A2-27
+- item: tivka
+  from: A2-27
+- item: nego
+  from: A2-27
+- item: da-ziveeme
+  from: B1-29
+- item: bi-sakala
+  from: B1-29
+- item: sto-bi-rekle
+  from: B1-29
+- item: pred-svadba
+  from: B1-29
+- item: staromodni
+  from: B1-29
+- item: ke-se-naviknat
+  from: B1-29
+- item: poevtino
+  from: B1-29
+- item: kirija
+  from: B1-29
+- item: da-gi-prasame
+  from: B1-29
+- item: zaedno-stan
+  from: B1-29
+- item: naslovot
+  from: B2-15
+- item: se-spodeluva
+  from: B2-15
+- item: lazna-vest
+  from: B2-15
+- item: izvor
+  from: B2-15
+- item: kade-pisuva
+  from: B2-15
+- item: sajt
+  from: B2-15
+- item: nepoznat
+  from: B2-15
+- item: proveri
+  from: B2-15
+- item: vistina
+  from: B2-15
+- item: se-pretera
+  from: B2-15
+- item: unapreduvanje
+  from: B2-23
+- item: zasluzivte
+  from: B2-23
+- item: nov-raboten-oddel
+  from: B2-23
+- item: pogolema-odgovornost
+  from: B2-23
+- item: povisoka-plata
+  from: B2-23
+- item: ne-ocekuvav
+  from: B2-23
+- item: ke-ste-zaminale
+  from: B2-23
+- item: za-godina-dena
+  from: B2-23
+- item: ostanuvam
+  from: B2-23
+- item: se-raduvam
+  from: B2-23
+- item: vesnik
+  from: B2-27
+- item: kolumna
+  from: B2-27
+- item: avtorot
+  from: B2-27
+- item: go-citam
+  from: B2-27
+- item: na-internet
+  from: B2-27
+- item: portali
+  from: B2-27
+- item: premnogu-reklami
+  from: B2-27
+- item: pretplata
+  from: B2-27
+- item: ja-sakam-hartijata
+  from: B2-27
+- item: krstozbor
+  from: B2-27
+- item: nervozen
+  from: B2-29
+- item: ke-se-zememe
+  from: B2-29
+- item: zasekogas
+  from: B2-29
+- item: prstenot
+  from: B2-29
+- item: na-baba-mi
+  from: B2-29
+- item: gi-prasav
+  from: B2-29
+- item: tvoite-roditeli
+  from: B2-29
+- item: preku-video
+  from: B2-29
+- item: da-ni-e-srekno
+  from: B2-29
+- item: svrsuvanje
+  from: B2-29
+- item: stanot
+  from: A1-02
+- item: bi-sakal-da-razgovarame
+  from: B2-16
+- item: ajde-na-kafe
+  from: B2-17
+- item: ve-razbiram-potpolno
+  from: B2-20
+- item: nazdravje
+  from: B2-28
+- item: za-nas
+  from: B2-28
+steps:
+- type: narrator
+  text:
+    en: December, Vera's kitchen. Where will you live, and what comes next? B2 comes back. Listen to the conversation; you don't need to understand it yet.
+    pt: Dezembro, na cozinha da Vera. Onde você vai morar, e o que vem agora? O B2 volta. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: vera
+    text: Значи, свадба наесен. Каде ќе живеете?
+    meaning:
+      en: So, a wedding in autumn. Where will you live?
+      pt: Então, casamento no outono. Onde vocês vão morar?
+  - speaker: protagonist
+    text: Купивме стан — со кредит, на дваесет години.
+    meaning:
+      en: We bought a flat — with a mortgage, over twenty years.
+      pt: Compramos um apartamento — financiado, em vinte anos.
+  - speaker: vera
+    text: Каде?
+    meaning:
+      en: Where?
+      pt: Onde?
+  - speaker: protagonist
+    text: Тука, во истата зграда. На четвртиот кат.
+    meaning:
+      en: Here, in the same building. On the fourth floor.
+      pt: Aqui, no mesmo prédio. No quarto andar.
+  - speaker: vera
+    text: Не! Навистина? Ќе плачам.
+    meaning:
+      en: No! Really? I'm going to cry.
+      pt: Não! Sério? Vou chorar.
+  - speaker: protagonist
+    text: А плановите за иднината — полека-полека. Можеби деца.
+    meaning:
+      en: And plans for the future — little by little. Maybe children.
+      pt: E os planos para o futuro — devagarinho. Talvez filhos.
+  - speaker: vera
+    text: Ќе им бидам баба! Секој ден кафе, како порано.
+    meaning:
+      en: I'll be their grandmother! Coffee every day, like before.
+      pt: Vou ser avó deles! Café todo dia, como antes.
+  - speaker: protagonist
+    text: Како во A1 — само сега разбирам сè.
+    meaning:
+      en: Like in A1 — only now I understand everything.
+      pt: Como no A1 — só que agora entendo tudo.
+- type: prompt
+  ask:
+    en: Vera asks where you'll live.
+    pt: A Vera pergunta onde vocês vão morar.
+  answer:
+    speaker: protagonist
+    text: Каде ќе живеете?
+  items:
+  - kade-ke-ziveete
+- type: prompt
+  ask:
+    en: 'Say: we bought a flat.'
+    pt: 'Diga: compramos um apartamento.'
+  answer:
+    speaker: protagonist
+    text: Купивме стан.
+  items:
+  - kupivme
+  - stanot
+- type: prompt
+  ask:
+    en: 'Say: with a mortgage, over twenty years.'
+    pt: 'Diga: financiado, em vinte anos.'
+  answer:
+    speaker: protagonist
+    text: Со кредит, на дваесет години.
+  items:
+  - kredit
+  - dvaeset-godini
+- type: prompt
+  ask:
+    en: 'Say: in the same building.'
+    pt: 'Diga: no mesmo prédio.'
+  answer:
+    speaker: protagonist
+    text: Во истата зграда.
+  items:
+  - vo-istata-zgrada
+- type: prompt
+  ask:
+    en: 'Say: plans for the future.'
+    pt: 'Diga: planos para o futuro.'
+  answer:
+    speaker: protagonist
+    text: Планови за иднината.
+  items:
+  - plani
+  - idninata
+- type: prompt
+  ask:
+    en: 'Say: little by little. Maybe children.'
+    pt: 'Diga: devagarinho. Talvez filhos.'
+  answer:
+    speaker: protagonist
+    text: Полека-полека. Можеби деца.
+  items:
+  - poleka-poleka
+  - deca
+- type: prompt
+  ask:
+    en: 'Vera: I''ll be their grandmother!'
+    pt: 'A Vera: vou ser avó deles!'
+  answer:
+    speaker: protagonist
+    text: Ќе им бидам баба!
+  items:
+  - ke-ti-bidam-baba
+- type: narrator
+  text:
+    en: End of B2. Some more from the whole level.
+    pt: Fim do B2. Mais um pouco de todo o nível.
+- type: prompt
+  ask:
+    en: 'To the boss: I''d like us to talk.'
+    pt: 'Para o chefe: gostaria de conversar.'
+  answer:
+    speaker: protagonist
+    text: Би сакал да разговараме.
+  items:
+  - bi-sakal-da-razgovarame
+- type: prompt
+  ask:
+    en: 'To a client: I completely understand you.'
+    pt: 'Para um cliente: entendo perfeitamente.'
+  answer:
+    speaker: protagonist
+    text: Потполно ве разбирам.
+  items:
+  - ve-razbiram-potpolno
+- type: prompt
+  ask:
+    en: 'Toast: to us — cheers!'
+    pt: 'Brinde: a nós — saúde!'
+  answer:
+    speaker: protagonist
+    text: За нас — наздравје!
+  items:
+  - za-nas
+  - nazdravje
+- type: prompt
+  ask:
+    en: 'Ana: let''s go for coffee!'
+    pt: 'A Ana: bora tomar um café!'
+  answer:
+    speaker: protagonist
+    text: Ајде на кафе!
+  items:
+  - ajde-na-kafe
+- type: prompt
+  ask:
+    en: 'Once more: say “the future”.'
+    pt: 'Mais uma vez: diga “o futuro”.'
+  answer:
+    speaker: protagonist
+    text: иднината
+  items:
+  - idninata
+- type: prompt
+  ask:
+    en: 'Once more: say “Where will you (two) live?”.'
+    pt: 'Mais uma vez: diga “Onde vocês vão morar?”.'
+  answer:
+    speaker: protagonist
+    text: Каде ќе живеете?
+  items:
+  - kade-ke-ziveete
+- type: prompt
+  ask:
+    en: 'Once more: say “we bought”.'
+    pt: 'Mais uma vez: diga “compramos”.'
+  answer:
+    speaker: protagonist
+    text: купивме
+  items:
+  - kupivme
+- type: prompt
+  ask:
+    en: 'Once more: say “loan, mortgage”.'
+    pt: 'Mais uma vez: diga “financiamento”.'
+  answer:
+    speaker: protagonist
+    text: кредит
+  items:
+  - kredit
+- type: prompt
+  ask:
+    en: 'Once more: say “twenty years”.'
+    pt: 'Mais uma vez: diga “vinte anos”.'
+  answer:
+    speaker: protagonist
+    text: дваесет години
+  items:
+  - dvaeset-godini
+- type: prompt
+  ask:
+    en: 'Once more: say “in the same building”.'
+    pt: 'Mais uma vez: diga “no mesmo prédio”.'
+  answer:
+    speaker: protagonist
+    text: во истата зграда
+  items:
+  - vo-istata-zgrada
+- type: prompt
+  ask:
+    en: 'Once more: say “plans”.'
+    pt: 'Mais uma vez: diga “planos”.'
+  answer:
+    speaker: protagonist
+    text: планови
+  items:
+  - plani
+- type: prompt
+  ask:
+    en: 'Once more: say “children”.'
+    pt: 'Mais uma vez: diga “filhos / crianças”.'
+  answer:
+    speaker: protagonist
+    text: деца
+  items:
+  - deca
+- type: prompt
+  ask:
+    en: 'Once more: say “little by little”.'
+    pt: 'Mais uma vez: diga “devagarinho”.'
+  answer:
+    speaker: protagonist
+    text: полека-полека
+  items:
+  - poleka-poleka
+- type: prompt
+  ask:
+    en: 'Once more: say “I''ll be a grandmother to them”.'
+    pt: 'Mais uma vez: diga “vou ser avó deles”.'
+  answer:
+    speaker: protagonist
+    text: ќе им бидам баба
+  items:
+  - ke-ti-bidam-baba
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “nervous (masculine) — and “Will you marry me? (shall we marry?) — and “forever — and “the ring — and “my grandmother''s — and “I asked them — and “your parents — and “by video — and “May
+      it bring us luck!”.'
+    pt: 'Diga: “nervoso — e “Casa comigo? — e “para sempre — e “o anel — e “da minha avó — e “eu perguntei a eles — e “os seus pais — e “por vídeo — e “Que nos traga felicidade!”.'
+  answer:
+    speaker: protagonist
+    text: нервозен … Ќе се земеме? … засекогаш … прстенот … на баба ми … ги прашав … твоите родители … преку видео … Да ни е среќно!
+  items:
+  - nervozen
+  - ke-se-zememe
+  - zasekogas
+  - prstenot
+  - na-baba-mi
+  - gi-prasav
+  - tvoite-roditeli
+  - preku-video
+  - da-ni-e-srekno
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “engagement — and “newspaper — and “column (opinion) — and “the author — and “I read it — and “online — and “news websites — and “too many ads — and “subscription”.'
+    pt: 'Diga: “noivado — e “jornal — e “coluna — e “o autor — e “eu leio — e “na internet — e “portais — e “anúncio demais — e “assinatura”.'
+  answer:
+    speaker: protagonist
+    text: свршување … весник … колумна … авторот … го читам … на интернет … портали … премногу реклами … претплата
+  items:
+  - svrsuvanje
+  - vesnik
+  - kolumna
+  - avtorot
+  - go-citam
+  - na-internet
+  - portali
+  - premnogu-reklami
+  - pretplata
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I love the paper (itself) — and “crossword — and “promotion — and “you earned it (formal) — and “team lead — and “more responsibility — and “a higher salary — and “I didn''t expect — and
+      “you''ll have left (I assume)”.'
+    pt: 'Diga: “eu gosto do papel — e “palavras cruzadas — e “promoção — e “a senhora mereceu — e “líder de equipe — e “mais responsabilidade — e “um salário maior — e “eu não esperava — e “a senhora deve
+      ter ido”.'
+  answer:
+    speaker: protagonist
+    text: ја сакам хартијата … крстозбор … унапредување … заслуживте … водач на тим … поголема одговорност … повисока плата … не очекував … ќе сте заминале
+  items:
+  - ja-sakam-hartijata
+  - krstozbor
+  - unapreduvanje
+  - zasluzivte
+  - nov-raboten-oddel
+  - pogolema-odgovornost
+  - povisoka-plata
+  - ne-ocekuvav
+  - ke-ste-zaminale
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “in a year''s time — and “I''m staying — and “I''m glad — and “the headline — and “is being shared — and “fake news — and “source — and “Where is it written? — and “website”.'
+    pt: 'Diga: “daqui a um ano — e “eu fico — e “fico feliz — e “a manchete — e “está sendo compartilhado — e “notícia falsa — e “fonte — e “Onde está escrito? — e “site”.'
+  answer:
+    speaker: protagonist
+    text: за година дена … останувам … се радувам … насловот … се споделува … лажна вест … извор … Каде пишува? … сајт
+  items:
+  - za-godina-dena
+  - ostanuvam
+  - se-raduvam
+  - naslovot
+  - se-spodeluva
+  - lazna-vest
+  - izvor
+  - kade-pisuva
+  - sajt
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “unknown (masculine) — and “check (informal) — and “truth, true — and “it''s exaggerated — and “to live together — and “I''d like (a woman) — and “what would (they) say — and “before the wedding
+      — and “old-fashioned (plural)”.'
+    pt: 'Diga: “desconhecido — e “verifica — e “verdade — e “é exagerado — e “morar junto — e “eu gostaria — e “o que (eles) diriam — e “antes do casamento — e “antiquados”.'
+  answer:
+    speaker: protagonist
+    text: непознат … провери … вистина … се претера … да живееме заедно … би сакала … што би рекле … пред свадба … старомодни
+  items:
+  - nepoznat
+  - proveri
+  - vistina
+  - se-pretera
+  - da-ziveeme
+  - bi-sakala
+  - sto-bi-rekle
+  - pred-svadba
+  - staromodni
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “they''ll get used to it — and “cheaper — and “rent — and “to ask them — and “a shared flat — and “early — and “(she) used to say — and “me (stressed) — and “What does … mean?”.'
+    pt: 'Diga: “vão se acostumar — e “mais barato — e “aluguel — e “perguntar a eles — e “um apartamento juntos — e “cedo — e “dizia — e “mim / eu — e “O que significa…?”.'
+  answer:
+    speaker: protagonist
+    text: ќе се навикнат … поевтино … кирија … да ги прашаме … заеднички стан … рано … велеше … мене … Што значи…?
+  items:
+  - ke-se-naviknat
+  - poevtino
+  - kirija
+  - da-gi-prasame
+  - zaedno-stan
+  - rano
+  - velese
+  - mene
+  - sto-znaci
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “(you) get up — and “luck, happiness — and “where we come from, at our place — and “(they) say — and “the same — and “quiet (feminine) — and “him (stressed)”.'
+    pt: 'Diga: “(você) levanta — e “sorte / felicidade — e “lá na nossa terra / com a gente — e “dizem — e “igual / o mesmo — e “quieta / mansa — e “ele”.'
+  answer:
+    speaker: protagonist
+    text: станеш … среќа … кај нас … велат … исто … тивка … него
+  items:
+  - stanes
+  - srekja
+  - kaj-nas
+  - velat
+  - isto
+  - tivka
+  - nego
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
