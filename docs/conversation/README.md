@@ -17,7 +17,7 @@ Planned courses, in order (taught language · narrator): mk · pt-BR, de · mk, 
 Courses (Allan's order: mk·pt-BR, de·mk, ko·pt-BR, de·ar, ja·pt-BR). Plans redone after Allan's review of
 2026-10-21 (30 units per level, life/life/topic rhythm, a Reviewed column, the pace of the classic audio courses):
 - mk · pt-BR — [PLAN-mk-pt-BR.md](PLAN-mk-pt-BR.md) (A1–C2, 180 units); units A1-01… in `tools/conversation/mk/`
-- de · mk and de · ar — [PLAN-de-mk-ar.md](PLAN-de-mk-ar.md) (A1–C2, 180 units)
+- de · en (neutral), de · ar, de · mk — [PLAN-de.md](PLAN-de.md) (A1–C2, 180 units, three audiences)
 - ko · pt-BR — [PLAN-ko-pt-BR.md](PLAN-ko-pt-BR.md) (A1 in full, A2–C2 outlined)
 - ja · pt-BR — [PLAN-ja-pt-BR.md](PLAN-ja-pt-BR.md) (A1 in full, A2–C2 outlined)
 

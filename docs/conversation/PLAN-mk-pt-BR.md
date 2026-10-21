@@ -4,6 +4,11 @@ Story bible: `tools/conversation/mk/story-bible.yml` (Skopje, Карпош; Vera
 colleague, Dragan at the corner shop; later Dr. Petrovska, Goran, Elena, Mr. Nikolovski, Prof. Ilievska, coach
 Zoran). Written by AI (Claude); change anything. Units A1-01 and A1-02 are written and live.
 
+**English version (Allan, 2026-10-21):** the same units with a neutral English narrator (for international offices): the
+Brazilian comparisons are narrator steps marked `for: [pt]`, so the English version simply leaves them out and keeps
+the curious note. The protagonist stays the story's Brazilian character (changing nationality would fork every dialogue).
+
+
 **Shape, after Allan's review (2026-10-21):**
 - 30 units per level. A1–B2: 20 **daily-life** units (L) and 10 **topic** units (T), in the rhythm L L T, so no two
   topic units come together. The topics are the former C1/C2 science and ideas themes, made easier at lower levels.

@@ -3,7 +3,7 @@
 # narrator; this course is its own, built for newcomers from North Macedonia and from the Arab world.
 
 language: de
-narrator_languages: [mk, ar]
+narrator_languages: [en, ar, mk]        # en neutral (international offices); ar and mk with their comparisons
 country: Germany
 standard: >-
   Standard German (Hochdeutsch) as taught in grammars and at integration courses; no dialect in the units. An
@@ -17,17 +17,20 @@ voices:
   # Narrators: no open Macedonian voice (see tools/conversation/mk/story-bible.yml: Bulgarian Piper + mk phonemes,
   # pending Allan's ear); the Arabic Piper voice (ar_JO-kareem) has no stated licence, so the reader's own browser
   # voice or espeak-ng speaks Arabic until one is found.
+  - {id: nar-en, role: narrator, lang: en, tts: "piper:en_US-lessac-medium"}
   - {id: nar-mk, role: narrator, lang: mk, tts: "piper:bg_BG-dimitar-medium+mk-phonemes"}
   - {id: nar-ar, role: narrator, lang: ar, tts: "browser:ar, else espeak-ng:ar"}
 
 protagonist:
   forms: {f: de-f, m: de-m}
   name: null
+  # one protagonist pair per audience (Allan, 2026-10-21); odd units the woman, even units the man; rows with
+  # different needs have E / A / M versions (docs/conversation/PLAN-de.md, unit field `tracks`)
   background:
-    mk: "From Bitola, about 30, nurse; moves to Leipzig for a job at a hospital (German hospitals recruit nurses from North Macedonia). Knows Macedonian, some English, school German from long ago."
-    ar: "From Aleppo, Syria, about 30, engineer; comes to Leipzig for a master's degree and a job. Knows Arabic (Syrian at home, Standard Arabic from school) and good English, no German. The Arab-world notes are framed from Syria (Allan, 2026-10-21)."
+    en: "An international student, about 25, starting a master's in Leipzig; English, no German."
+    ar: "A Syrian couple from Aleppo. She, about 25, married through the families, Muslim, came through family reunification with their small child and no German (spouses of Blue Card holders need no A1 first). He, about 30, an engineer with a Blue Card at a Leipzig firm."
+    mk: "A Macedonian couple from Bitola, about 60, with Bulgarian (EU) passports like many Macedonians; their son lives in Leipzig with his German wife and their child. They come for months at a time and cannot talk to the in-laws, the neighbours or the Kita."
   alternation: odd units f, even units m
-
 cast:
   - {id: becker, name: Frau Becker, role: "landlady, about 60, ground floor", voice: de-f2, register: formal, arc: "Sie throughout; strict about the house rules (Mülltrennung, Ruhezeiten), warm underneath"}
   - {id: jonas, name: Jonas, role: "neighbour, about 25, student", voice: de-m2, register: informal, arc: "du at once; becomes a friend"}
@@ -62,6 +65,13 @@ culture:
     - {topic: money, note: "Payslip: income tax, Soli (few still pay), church tax for members of churches that levy it, health, care, pension and unemployment insurance; the employer pays its share on top. Minijob: no health insurance through it; a second job is taxed in class VI. Students: the public student rate ends around 30; private insurance means no way back during studies; students get no Bürgergeld. Never amounts in units.", source: "Allan; finanztip.de"}
     - {topic: cash and cards, note: "Cash still common; EC card everywhere, credit cards less.", source: "Bundesbank payment studies"}
   narrator:
+    # neutral English: the curious note, no "back home"
+    - {lang: en, topic: language, note: "In big cities people switch to English when you hesitate — keep going in German; in small towns you hear 'you speak so well!' for trying."}
+    - {lang: en, topic: queues, note: "Often one queue per till or machine; 'Entschuldigung, ich war zuerst da' when someone steps in."}
+    - {lang: en, topic: winter, note: "Grey from nine to three, then dark; three layers outside, an overheated room inside."}
+    - {lang: en, topic: offices, note: "Bring every document; nobody works out your case for you."}
+    - {lang: ar, topic: family reunification, note: "Spouses usually need A1 German before the visa — not the spouse of a Blue Card holder; the Integrationskurs comes after arrival."}
+    - {lang: mk, topic: EU passports, note: "Many Macedonians hold Bulgarian passports and live in Germany as EU citizens: registration, no visa; others come under the Western Balkans rule."}
     - {lang: mk, topic: hospitality, note: "Guests are offered coffee and food at once and refusing is impolite; Germans may offer nothing unannounced, or only water."}
     - {lang: mk, topic: time, note: "Relaxed punctuality at home; a coffee that lasts two hours is normal."}
     - {lang: mk, topic: shoes and drafts, note: "Shoes off and slippers at home; fear of промаја — Germans air rooms with open windows (Stoßlüften) even in winter."}

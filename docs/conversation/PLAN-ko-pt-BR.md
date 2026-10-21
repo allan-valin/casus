@@ -5,6 +5,11 @@ Story bible: `tools/conversation/ko/story-bible.yml` (Seoul, 마포구; landlady
 rhythm up to B2, C1–C2 daily life with grammar; 10–20 new items per unit; a **Reviewed** column; no yearly amounts.
 A1 in full below; A2–C2 as outlines until you confirm the shape on mk and de.
 
+**English version (Allan, 2026-10-21):** the same units with a neutral English narrator (for international offices): the
+Brazilian comparisons are narrator steps marked `for: [pt]`, so the English version simply leaves them out and keeps
+the curious note. The protagonist stays the story's Brazilian character (changing nationality would fork every dialogue).
+
+
 **Before units:** the Korean voice (Piper kss, one female speaker; men pitched down — samples for your ear) and a
 hangul → sound converter for our browser engine.
 

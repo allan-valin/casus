@@ -5,6 +5,11 @@ nikkei grandchild who speaks no Japanese; landlady 鈴木さん, neighbour 健�
 Same shape as the other plans: 30 units per level, L L T up to B2, C1–C2 daily life with grammar; 10–20 new items per
 unit; a **Reviewed** column; no yearly amounts. A1 in full; A2–C2 as outlines until you confirm the shape.
 
+**English version (Allan, 2026-10-21):** the same units with a neutral English narrator (for international offices): the
+Brazilian comparisons are narrator steps marked `for: [pt]`, so the English version simply leaves them out and keeps
+the curious note. The protagonist stays the story's Brazilian character (changing nationality would fork every dialogue).
+
+
 **Before units:** the Japanese voice (Piper hi_fi_captain, a real female and male speaker) and a kana → sound
 converter for our browser engine.
 
