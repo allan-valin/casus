@@ -1,0 +1,145 @@
+id: A1
+topics:
+
+- title: {en: Sounds and words, pt: Sons e palavras}
+  lessons:
+  - id: id-spelling
+    title: c, j, ng, ny
+    meaning: {en: "spelling is regular", pt: "a grafia é regular"}
+    intro:
+      en: |
+        Indonesian is written as it is spoken: **c** is *ch* (**cari** to look for), **j** is *j* (**jalan** road), **ng** as in *sing*, **ny** like Spanish *ñ*, **r** rolled. Stress is light, usually on the second-to-last syllable. No articles, no gender, no plural ending, no verb conjugation.
+      pt: |
+        O indonésio se escreve como se fala: **c** é *tch* (**cari** procurar), **j** é *dj* (**jalan** rua), **ng** como em inglês *sing*, **ny** como *nh*, **r** vibrante. O acento é leve, em geral na penúltima. Não há artigos, gênero, terminação de plural nem conjugação.
+    examples:
+    - ["Nama saya Sari.", "My name is Sari.", "Meu nome é Sari.", "Nama"]
+    match: {seq: [{re: "(ng|ny|c)", pos: [noun, verb, adj]}]}
+  - id: id-plural
+    title: anak-anak, banyak anak
+    meaning: {en: "plural by doubling, or not at all", pt: "plural pela repetição, ou nenhum"}
+    intro:
+      en: |
+        A noun is singular or plural by context; to stress plurality it is doubled: **anak-anak** (children), **buku-buku** (books). After numbers and **banyak** (many) it is not doubled: **dua buku**, **banyak anak**.
+      pt: |
+        O nome é singular ou plural pelo contexto; para ressaltar o plural, ele se repete: **anak-anak** (crianças), **buku-buku** (livros). Depois de números e de **banyak** (muitos) não se repete: **dua buku** (dois livros), **banyak anak** (muitas crianças).
+    examples:
+    - ["Anak-anak bermain di taman.", "The children are playing in the park.", "As crianças brincam no parque.", "Anak-anak"]
+    match: {seq: [{re: "^(.+)-\\1$"}]}
+
+- title: {en: Pronouns and sentences, pt: Pronomes e frases}
+  lessons:
+  - id: id-pronouns
+    title: saya, aku, Anda, kamu, dia, kami, kita, mereka
+    meaning: {en: "pronouns; we with and without you", pt: "pronomes; nós com e sem você"}
+    intro:
+      en: |
+        **saya** (I, neutral) / **aku** (I, familiar), **Anda** (you, polite) / **kamu** (you, familiar), **dia** (he, she), **kami** (we, *not* you) / **kita** (we, *including* you), **kalian** (you all), **mereka** (they). Possession follows the noun: **rumah saya** (my house), **buku dia** or **bukunya**.
+      pt: |
+        **saya** (eu, neutro) / **aku** (eu, familiar), **Anda** (o senhor, formal) / **kamu** (você, familiar), **dia** (ele, ela), **kami** (nós, *sem* você) / **kita** (nós, *com* você), **kalian** (vocês), **mereka** (eles). A posse vem depois do nome: **rumah saya** (minha casa), **buku dia** ou **bukunya** (o livro dele).
+    examples:
+    - ["Kami tinggal di Jakarta.", "We live in Jakarta.", "Moramos em Jacarta.", "Kami"]
+    match: {seq: [{word: [saya, aku, anda, kamu, dia, ia, kami, kita, kalian, mereka]}]}
+    pool: [saya, aku, Anda, kamu, dia, kami, kita, mereka]
+  - id: id-adalah
+    title: Saya guru. Ini adalah buku.
+    meaning: {en: "no verb 'to be'; adalah, ini, itu", pt: "sem verbo 'ser'; adalah, ini, itu"}
+    intro:
+      en: |
+        Nouns and adjectives are joined without a verb: **Saya guru** (I am a teacher), **Rumahnya besar** (his house is big). **adalah** links two nouns in writing: **Jakarta adalah ibu kota Indonesia.** **ini** (this) and **itu** (that) follow the noun: **buku ini** (this book).
+      pt: |
+        Nomes e adjetivos se juntam sem verbo: **Saya guru** (sou professor), **Rumahnya besar** (a casa dele é grande). **adalah** liga dois nomes na escrita: **Jakarta adalah ibu kota Indonesia** (Jacarta é a capital da Indonésia). **ini** (este) e **itu** (aquele) vêm depois do nome: **buku ini** (este livro).
+    examples:
+    - ["Jakarta adalah ibu kota Indonesia.", "Jakarta is the capital of Indonesia.", "Jacarta é a capital da Indonésia.", "adalah"]
+    match: {seq: [{word: [adalah, ialah, ini, itu, merupakan]}]}
+    pool: [adalah, ini, itu]
+  - id: id-word-order
+    title: rumah besar, buku saya
+    meaning: {en: "the modifier follows", pt: "o modificador vem depois"}
+    intro:
+      en: |
+        Everything that describes a noun comes after it: **rumah besar** (a big house), **rumah besar saya** (my big house), **rumah besar itu** (that big house). Subject – verb – object: **Saya membaca buku.**
+      pt: |
+        Tudo o que descreve o nome vem depois dele: **rumah besar** (uma casa grande), **rumah besar saya** (minha casa grande), **rumah besar itu** (aquela casa grande). Sujeito – verbo – objeto: **Saya membaca buku** (leio um livro).
+    examples:
+    - ["Saya membaca buku.", "I'm reading a book.", "Estou lendo um livro.", "buku"]
+    match: {seq: [{pos: noun}, {pos: adj}], gap: 1}
+
+- title: {en: Verbs, pt: Verbos}
+  lessons:
+  - id: id-men
+    title: membaca, menulis, makan
+    meaning: {en: "the active prefix meN-", pt: "o prefixo ativo meN-"}
+    intro:
+      en: |
+        Most action verbs take **meN-**, which changes with the first sound: **baca → membaca** (to read), **tulis → menulis** (to write), **kirim → mengirim** (to send), **sapu → menyapu** (to sweep). Some common verbs have none: **makan, minum, pergi, tidur**.
+      pt: |
+        A maioria dos verbos de ação leva **meN-**, que muda conforme o primeiro som: **baca → membaca** (ler), **tulis → menulis** (escrever), **kirim → mengirim** (enviar), **sapu → menyapu** (varrer). Alguns verbos comuns não têm prefixo: **makan, minum, pergi, tidur** (comer, beber, ir, dormir).
+    examples:
+    - ["Saya sedang membaca buku.", "I'm reading a book.", "Estou lendo um livro.", "membaca"]
+    match: {seq: [{re: "^me(m|n|ng|ny)?", pos: verb}]}
+  - id: id-time
+    title: sudah, sedang, akan, belum
+    meaning: {en: "time words instead of tenses", pt: "palavras de tempo em vez de tempos verbais"}
+    intro:
+      en: |
+        Verbs do not change for time; little words do it: **sudah** (already, done), **sedang** (in the middle of), **akan** (will), **belum** (not yet), **pernah** (ever, once). **Saya sudah makan** (I've eaten), **Dia akan datang** (he will come).
+      pt: |
+        Os verbos não mudam com o tempo; palavrinhas fazem isso: **sudah** (já), **sedang** (estar fazendo), **akan** (vai), **belum** (ainda não), **pernah** (já, alguma vez). **Saya sudah makan** (já comi), **Dia akan datang** (ele vai vir).
+    examples:
+    - ["Saya sudah makan.", "I've already eaten.", "Já comi.", "sudah"]
+    match: {seq: [{word: [sudah, sedang, akan, belum, pernah, telah, masih]}]}
+    pool: [sudah, sedang, akan, belum, pernah, masih]
+
+- title: {en: Questions and negation, pt: Perguntas e negação}
+  lessons:
+  - id: id-questions
+    title: apa, siapa, di mana, kapan, mengapa, bagaimana
+    meaning: {en: "question words; apakah", pt: "palavras interrogativas; apakah"}
+    intro:
+      en: |
+        **apa** (what), **siapa** (who), **di mana** (where), **ke mana** (where to), **kapan** (when), **mengapa / kenapa** (why), **bagaimana** (how), **berapa** (how many). Yes/no questions: rising voice, or **apakah** at the start: **Apakah Anda bisa berbahasa Inggris?**
+      pt: |
+        **apa** (o que), **siapa** (quem), **di mana** (onde), **ke mana** (para onde), **kapan** (quando), **mengapa / kenapa** (por quê), **bagaimana** (como), **berapa** (quantos). Perguntas de sim/não: entonação, ou **apakah** no começo: **Apakah Anda bisa berbahasa Inggris?** (o senhor fala inglês?)
+    examples:
+    - ["Di mana Anda tinggal?", "Where do you live?", "Onde o senhor mora?", "mana"]
+    match: {seq: [{word: [apa, siapa, mana, kapan, mengapa, kenapa, bagaimana, berapa, apakah]}]}
+    pool: [apa, siapa, kapan, mengapa, bagaimana, berapa, apakah]
+  - id: id-tidak
+    title: tidak, bukan, jangan
+    meaning: {en: "three negations", pt: "três negações"}
+    intro:
+      en: |
+        **tidak** negates verbs and adjectives (**Saya tidak mengerti**), **bukan** negates nouns (**Dia bukan guru** — he isn't a teacher), **jangan** forbids (**Jangan pergi!** don't go). **belum** = not yet.
+      pt: |
+        **tidak** nega verbos e adjetivos (**Saya tidak mengerti** não entendo), **bukan** nega nomes (**Dia bukan guru** — ele não é professor), **jangan** proíbe (**Jangan pergi!** não vá). **belum** = ainda não.
+    examples:
+    - ["Saya tidak mengerti.", "I don't understand.", "Não entendo.", "tidak"]
+    match: {seq: [{word: [tidak, bukan, jangan, belum, tak]}]}
+    pool: [tidak, bukan, jangan, belum]
+
+- title: {en: Places and numbers, pt: Lugares e números}
+  lessons:
+  - id: id-di-ke-dari
+    title: di, ke, dari
+    meaning: {en: "at, to, from", pt: "em, para, de"}
+    intro:
+      en: |
+        **di** (at, in: **di rumah** at home), **ke** (to: **ke kota** to town), **dari** (from: **dari Bandung**). With place words: **di atas** (on top), **di bawah** (under), **di dalam** (inside), **di depan** (in front).
+      pt: |
+        **di** (em: **di rumah** em casa), **ke** (para: **ke kota** para a cidade), **dari** (de: **dari Bandung**). Com palavras de lugar: **di atas** (em cima), **di bawah** (embaixo), **di dalam** (dentro), **di depan** (na frente).
+    examples:
+    - ["Kami naik bus ke kota.", "We take the bus to town.", "Pegamos o ônibus para a cidade.", "ke"]
+    match: {seq: [{word: [di, ke, dari]}, {pos: noun}], gap: 0}
+    pool: [di, ke, dari]
+  - id: id-numbers
+    title: satu, dua, tiga … sepuluh, seratus
+    meaning: {en: "numbers and classifiers", pt: "números e classificadores"}
+    intro:
+      en: |
+        **satu, dua, tiga, empat, lima, enam, tujuh, delapan, sembilan, sepuluh**; **sebelas** (11), **dua puluh** (20), **seratus** (100), **seribu** (1000). Counting words: **seorang** (one person), **sebuah** (one thing), **dua ekor kucing** (two cats).
+      pt: |
+        **satu, dua, tiga, empat, lima, enam, tujuh, delapan, sembilan, sepuluh**; **sebelas** (11), **dua puluh** (20), **seratus** (100), **seribu** (1000). Classificadores: **seorang** (uma pessoa), **sebuah** (uma coisa), **dua ekor kucing** (dois gatos).
+    examples:
+    - ["Saya punya dua saudara.", "I have two siblings.", "Tenho dois irmãos.", "dua"]
+    match: {seq: [{word: [satu, dua, tiga, empat, lima, enam, tujuh, delapan, sembilan, sepuluh, seratus, seribu, seorang, sebuah]}]}
+    pool: [satu, dua, tiga, lima, sepuluh, seorang, sebuah]

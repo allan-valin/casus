@@ -1,0 +1,38 @@
+id: A2
+topics:
+
+- title: {en: Verb affixes, pt: Afixos verbais}
+  lessons:
+  - id: id-di
+    title: dibaca, ditulis
+    meaning: {en: "the passive di-", pt: "a passiva di-"}
+    intro:
+      en: |
+        **di-** + root makes the passive, very common in Indonesian: **Buku itu dibaca oleh Sari** (that book is read by Sari), **Surat ini ditulis kemarin** (this letter was written yesterday). With *I* or *you* the agent goes before the root: **buku itu saya baca** (I read that book).
+      pt: |
+        **di-** + raiz forma a passiva, muito comum em indonésio: **Buku itu dibaca oleh Sari** (aquele livro é lido pela Sari), **Surat ini ditulis kemarin** (esta carta foi escrita ontem). Com *eu* ou *você* o agente vem antes da raiz: **buku itu saya baca** (aquele livro eu li).
+    examples:
+    - ["Surat ini ditulis kemarin.", "This letter was written yesterday.", "Esta carta foi escrita ontem.", "ditulis"]
+    match: {seq: [{pos: verb, voice: pass}]}
+  - id: id-ber
+    title: bermain, berbahasa, bekerja
+    meaning: {en: "ber-: doing, having", pt: "ber-: fazer, ter"}
+    intro:
+      en: |
+        **ber-** makes intransitive verbs of activity or having: **main → bermain** (to play), **kerja → bekerja** (to work), **bahasa → berbahasa** (to speak a language), **sepeda → bersepeda** (to cycle).
+      pt: |
+        **ber-** forma verbos intransitivos de atividade ou de ter: **main → bermain** (brincar), **kerja → bekerja** (trabalhar), **bahasa → berbahasa** (falar uma língua), **sepeda → bersepeda** (andar de bicicleta).
+    examples:
+    - ["Kakak saya bekerja di bank.", "My older sibling works at a bank.", "Meu irmão mais velho trabalha num banco.", "bekerja"]
+    match: {seq: [{re: "^be(r|l)?", pos: verb}]}
+  - id: id-kan-i
+    title: memberikan, menanyai
+    meaning: {en: "the suffixes -kan and -i", pt: "os sufixos -kan e -i"}
+    intro:
+      en: |
+        **-kan** often means *cause* or *for someone*: **memberikan** (to give something), **membukakan** (to open for someone); **-i** points to a place or person affected: **menanyai** (to question someone), **mendekati** (to approach).
+      pt: |
+        **-kan** muitas vezes quer dizer *causar* ou *para alguém*: **memberikan** (dar algo), **membukakan** (abrir para alguém); **-i** aponta para um lugar ou pessoa afetada: **menanyai** (interrogar alguém), **mendekati** (aproximar-se de).
+    examples:
+    - ["Saya memberikan hadiah kepada teman saya.", "I give a present to my friend.", "Dou um presente ao meu amigo.", "memberikan"]
+    match: {seq: [{re: "(kan|i)$", pos: verb}]}
