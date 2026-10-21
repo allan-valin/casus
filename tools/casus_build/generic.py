@@ -68,10 +68,16 @@ def analysis(cfg: Config, pos: str, tags: set, gender: str | None) -> dict | Non
     if pos == "verb" and "participle" in tags:
         return {"pos": "verb", "mood": "part", "tense": _one(tags, TENSES), "gender": _one(tags, GENDERS), "number": _one(tags, NUMBERS),
                 **({"voice": "pass"} if "passive" in tags else {})}
+    if pos == "verb" and cfg.code == "he" and "present" in tags and _one(tags, NUMBERS) and not tags & set(PERSONS):
+        # the Hebrew present is a participle by gender and number, any person (אני / אתה / הוא לומד)
+        return {"pos": "verb", "tense": "pres", "mood": "ind", "number": _one(tags, NUMBERS), "gender": _one(tags, GENDERS)}
     if pos == "verb":
         person, number = _one(tags, PERSONS), _one(tags, NUMBERS)
         if not person or not number:
             return None
+        if cfg.code == "he":
+            return {"pos": "verb", "person": person, "number": number, "tense": _one(tags, TENSES) or "pres", "mood": _one(tags, MOODS) or "ind",
+                    "gender": _one(tags, GENDERS), **({"voice": "pass"} if "passive" in tags else {})}
         return {"pos": "verb", "person": person, "number": number, "tense": _one(tags, TENSES) or "pres", "mood": _one(tags, MOODS) or "ind",
                 **({"voice": "pass"} if tags & {"passive", "mediopassive"} else {}), **({"polarity": "neg"} if "negative" in tags else {})}
     return None
@@ -152,7 +158,7 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
         for f in d.get("forms") or []:
             tags = set(f.get("tags") or [])
             # Polish-style tables give 1st and 2nd person by row order only: supply the person from that order
-            if pos == "verb" and not tags & set(PERSONS) and _one(tags, NUMBERS) and _one(tags, TENSES) and not tags & {"impersonal", "infinitive", "participle"}:
+            if pos == "verb" and cfg.code != "he" and not tags & set(PERSONS) and _one(tags, NUMBERS) and _one(tags, TENSES) and not tags & {"impersonal", "infinitive", "participle"}:
                 k = (_one(tags, TENSES), _one(tags, NUMBERS), _one(tags, GENDERS), "virile" in tags)
                 n = seen_person.get(k, 0)
                 seen_person[k] = n + 1
@@ -205,6 +211,9 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
             tags = {t for f in d.get("forms") or [] for t in f.get("tags") or []}
             g = gender or ("m" if "masculine" in tags and "feminine" not in tags else "f" if "feminine" in tags and "masculine" not in tags else None)
             cells += noun_forms(word, g)
+        if cfg.code == "he":
+            from casus_build.he import plene, strip_he
+            cells += [(plene(t), dict(a)) for t, a in cells if plene(t) != strip_he(t)]   # the full spelling texts use
         if form_of_tags and not cells:
             fa = analysis(cfg, pos, form_of_tags, gender)
             if fa:
@@ -380,4 +389,10 @@ def _strip_lt(s: str) -> str:
     return strip_lt(s)
 
 
+def _strip_he(s: str) -> str:
+    from casus_build.he import strip_he
+    return strip_he(s)
+
+
+CONFIGS["he"] = Config("he", [], {}, caseless=True, key=_strip_he, clean=lambda t: t.replace("\u05BE", ""))
 CONFIGS["lt"] = Config("lt", ["nom", "gen", "dat", "acc", "ins", "loc", "voc"], SLAVIC_TAGS, key=_strip_lt)

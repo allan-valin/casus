@@ -89,6 +89,8 @@ const FIXED = {
   'before the verb: the subject': { pt: 'antes do verbo: o sujeito', de: 'vor dem Verb: das Subjekt', mk: 'пред глаголот: подметот', ar: 'قبل الفعل: الفاعل' },
   'after the verb, no preposition: the direct object': { pt: 'depois do verbo, sem preposição: o objeto direto', de: 'nach dem Verb, ohne Präposition: das direkte Objekt', mk: 'по глаголот, без предлог: директниот објект', ar: 'بعد الفعل، دون حرف جر: المفعول المباشر' },
   'after an intransitive verb with nothing before it: the subject': { pt: 'depois de um verbo intransitivo sem nada antes: o sujeito', de: 'nach einem intransitiven Verb, vor dem nichts steht: das Subjekt', mk: 'по непреоден глагол пред кој нема ништо: подметот', ar: 'بعد فعل لازم لا يسبقه شيء: الفاعل' },
+  'את before a noun: the direct-object marker': { pt: 'את antes de um substantivo: a marca do objeto direto', de: 'את vor einem Nomen: die Markierung des direkten Objekts', mk: 'את пред именка: ознака за директен објект', ar: 'את قبل اسم: علامة المفعول به' },
+  'after את: the direct object': { pt: 'depois de את: o objeto direto', de: 'nach את: das direkte Objekt', mk: 'по את: директниот објект', ar: 'بعد את: المفعول به' },
   'the object pronoun': { pt: 'o pronome objeto', de: 'das Objektpronomen', mk: 'заменката за објект', ar: 'ضمير المفعول' },
   'lhe/lhes: the indirect object': { pt: 'lhe/lhes: o objeto indireto', de: 'lhe/lhes: das indirekte Objekt', mk: 'lhe/lhes: индиректниот објект', ar: 'lhe/lhes: المفعول غير المباشر' },
   'between two numbers: a range, not a preposition': { pt: 'entre dois números: um intervalo, não uma preposição', de: 'zwischen zwei Zahlen: ein Bereich, keine Präposition', mk: 'меѓу два броја: распон, не предлог', ar: 'بين عددين: مدى، لا حرف جر' },
