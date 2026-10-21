@@ -25,7 +25,7 @@ ar 0.4M · uk 0.3M · is 0.2M · mk 0.03M.
 4. [x] Learn page: ⇄ AI-translated badge + toggle translation / original (default translation in UI language); tests
 5. [x] Proofreading: automatic checks (examples intact, ratio, untranslated runs, placeholder loss) + sample read per book
 6. [ ] Pairs done (translated → checked → released):
-       - [x] ko>pt  - [ ] ja>pt  - [ ] de>ar  - [ ] de>mk  - [ ] fr>pt  - [ ] en>pt  - [ ] it>pt  - [ ] …
+       - [x] ko>pt  - [ ] ja>pt  - [x] de>ar  - [x] de>mk  - [ ] fr>pt  - [ ] en>pt  - [ ] it>pt  - [ ] …
 
 ## Log
 - 2026-10-20: steps 2–3 (any explanation language, any UI; original kept as html.orig when translating into English).
@@ -76,3 +76,10 @@ ar 0.4M · uk 0.3M · is 0.2M · mk 0.03M.
   pages (Bohm's Sprachlehre, Kontrastive Syntax) left in German (model cannot tell example from explanation);
   MADLAD's rejected sentences (673, mostly lost placeholders) and 190 verb glosses translated by Claude
   (tools/mt_fixes/mk/de-rescue.yml). Released Korean/Japanese pairs re-checked: 0 sentences missing after the changes.
+- 2026-10-21 morning: de>ar EuroLLM run finished (444 pages, 12,110 new sentences; 529 pages carry Arabic: 321
+  EuroLLM-9B, 116 Claude + EuroLLM-9B, 92 Claude). mt_check: 213/630 sections flagged, almost all German examples
+  read as "untranslated" (same pattern as de>mk); English one-word glosses in word lists stay English, as in mk.
+  Read by eye and fixed in the cache: grammar terms the model got systematically wrong — "subject" → موضوع (topic)
+  in 141 English + 32 French/Spanish sentences → فاعل; "object" → كائن (creature) in 42 → مفعول به (شيء where it
+  means a thing; duals → مفعولين); "décliner" read as "negate" → تصريف; 8 sentences rewritten by hand. Re-applied
+  cache-only, released data-de, deployed. de>mk labels re-applied the same way (376 Claude + MADLAD-400).
