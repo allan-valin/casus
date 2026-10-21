@@ -245,6 +245,7 @@ describe('Conversation practice tab (Allan, 2026-10-20/21: narrator in the inter
     const toggle = container.querySelector('.hands-free');
     expect(toggle.textContent.length).toBeGreaterThan(5);
     await fireEvent.click(toggle);
+    await fireEvent.click(container.querySelector('.player-bar .playpause'));
     for (let i = 0; i < 20; i += 1) await flush();
     const texts = spoken.map(([, t]) => t);
     expect(texts.slice(0, 2)).toEqual(['Listen.', 'Guten Tag.']);
@@ -382,6 +383,7 @@ describe('Conversation practice tab (Allan, 2026-10-20/21: narrator in the inter
     await fireEvent.click(container.querySelector('.unit-row'));
     await flush();
     await fireEvent.click(container.querySelector('.hands-free'));
+    await fireEvent.click(container.querySelector('.player-bar .playpause'));   // start
     await flush();
     await fireEvent.click(container.querySelector('.player-bar .playpause'));   // pause during the first step
     hold();                                                                      // its sentence ends anyway
@@ -411,7 +413,9 @@ describe('Conversation practice tab (Allan, 2026-10-20/21: narrator in the inter
     await fireEvent.click(container.querySelector('.unit-row'));
     await flush();
     await fireEvent.click(container.querySelector('.hands-free'));
-    for (let i = 0; i < 400 && container.querySelector('.hands-free.on'); i += 1) await new Promise((r) => setTimeout(r, 5));
+    await fireEvent.click(container.querySelector('.player-bar .playpause'));
+    for (let i = 0; i < 400 && !container.querySelector('.step.current[data-type="selfcheck"]'); i += 1) await new Promise((r) => setTimeout(r, 5));
+    for (let i = 0; i < 20; i += 1) await new Promise((r) => setTimeout(r, 5));
     expect(spoken).toEqual(['Listen.', 'Guten Tag.', 'Danke!', 'Danke', '-gung', '-digung', 'Entschuldigung', 'Thank her.', 'Danke!', 'Guten Tag.', 'Danke!']);
   });
 
@@ -429,6 +433,7 @@ describe('Conversation practice tab (Allan, 2026-10-20/21: narrator in the inter
     await fireEvent.click(container.querySelector('.unit-row'));
     await flush();
     await fireEvent.click(container.querySelector('.hands-free'));
+    await fireEvent.click(container.querySelector('.player-bar .playpause'));
     await flush();
     handlers.play();                 // the phone says "play" while it plays
     await flush();
@@ -459,6 +464,74 @@ describe('Conversation practice tab (Allan, 2026-10-20/21: narrator in the inter
     for (let i = 0; i < 5; i += 1) await flush();
     expect(asked[0]).toEqual(['Guten Tag.', { pitch: 1.12, speed: 1.12 }]);
     expect(asked[1][1]).toEqual({ pitch: 1.32, speed: 1 });
+  });
+
+  it('hands-free is a mode switch: on during a step lets it finish, then the next plays; off lets it finish and nothing follows (Allan 2026-10-21)', async () => {
+    const spoken = [];
+    const holds = [];
+    const speakNarrator = (t) => { spoken.push(t); return new Promise((r) => { holds.push(r); }); };
+    const speakTaught = (t) => { spoken.push(t); return new Promise((r) => { holds.push(r); }); };
+    const calls = [];
+    const { p } = props({ speakNarrator, speakTaught, control: { pause: () => calls.push('pause'), resume: () => {}, stop: () => calls.push('stop') } });
+    const { container } = render(Talk, p);
+    await flush();
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    await fireEvent.click(container.querySelector('.step[data-type="narrator"] .play'));   // step 1 plays
+    await flush();
+    calls.length = 0;
+    await fireEvent.click(container.querySelector('.hands-free'));                          // mode on
+    await flush();
+    expect(calls).toEqual([]);                                                               // nothing interrupted or restarted
+    expect(spoken).toEqual(['Listen.']);
+    holds.shift()();                                                                         // step 1 ends by itself
+    for (let i = 0; i < 100 && spoken.length < 2; i += 1) await new Promise((r) => setTimeout(r, 10));
+    expect(spoken[1]).toBe('Guten Tag.');                                                   // the next step followed
+    await fireEvent.click(container.querySelector('.hands-free'));                          // mode off during step 2
+    expect(calls).toEqual([]);
+    for (let i = 0; i < 6; i += 1) { holds.shift()?.(); for (let j = 0; j < 10; j += 1) await new Promise((r) => setTimeout(r, 5)); }
+    expect(spoken).toEqual(['Listen.', 'Guten Tag.', 'Danke!']);                           // step 2 finished; step 3 never started
+  });
+
+  it('turning hands-free on with nothing playing starts nothing; the next ▶ starts the chain', async () => {
+    const spoken = [];
+    const { p } = props({ speakNarrator: async (t) => { spoken.push(t); }, speakTaught: async (t) => { spoken.push(t); }, pause: () => Promise.resolve() });
+    const { container } = render(Talk, p);
+    await flush();
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    await fireEvent.click(container.querySelector('.hands-free'));
+    for (let i = 0; i < 5; i += 1) await flush();
+    expect(spoken).toEqual([]);
+    expect(container.querySelector('.hands-free').classList.contains('on')).toBe(true);
+    await fireEvent.click(container.querySelector('.step[data-type="line"] .play'));
+    for (let i = 0; i < 30; i += 1) await flush();
+    expect(spoken.slice(0, 2)).toEqual(['Danke', '-gung']);
+  });
+
+  it('with hands-free on, ⏭ and ⏮ play the step they land on once, and the run goes on from there (Allan 2026-10-21 bug)', async () => {
+    const spoken = [];
+    const holds = [];
+    const speakNarrator = (t) => { spoken.push(t); return new Promise((r) => { holds.push(r); }); };
+    const speakTaught = (t) => { spoken.push(t); return new Promise((r) => { holds.push(r); }); };
+    const { p } = props({ speakNarrator, speakTaught, pause: () => Promise.resolve(), control: { pause: () => {}, resume: () => {}, stop: () => { while (holds.length) holds.shift()(); } } });
+    const { container } = render(Talk, p);
+    await flush();
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    await fireEvent.click(container.querySelector('.hands-free'));
+    const bar = container.querySelector('.player-bar');
+    await fireEvent.click(bar.querySelector('.next'));        // → step 1, held
+    await flush();
+    await fireEvent.click(bar.querySelector('.next'));        // → step 2 (stops step 1)
+    for (let i = 0; i < 10; i += 1) await flush();
+    await fireEvent.click(bar.querySelector('.prev'));        // → back to step 1
+    for (let i = 0; i < 10; i += 1) await flush();
+    expect(spoken).toEqual(['Listen.', 'Guten Tag.', 'Listen.']);
+    expect(container.querySelector('.step.current .num').textContent).toBe('1');
+    holds.shift()();                                          // step 1 ends by itself → step 2 follows, once
+    for (let i = 0; i < 20; i += 1) await flush();
+    expect(spoken).toEqual(['Listen.', 'Guten Tag.', 'Listen.', 'Guten Tag.']);
   });
 
   it('the self-check marks the unit done, kept in the browser and shown in the list', async () => {

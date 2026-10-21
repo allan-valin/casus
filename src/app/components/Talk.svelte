@@ -110,13 +110,19 @@
       else noteFallback(await speakNarrator(part.text, narratorLang));
     }
   }
-  // one step's sound; `auto` (hands-free) leaves time to answer a question and to repeat each piece
+  // one step's sound. Hands-free (Allan, 2026-10-21) is a mode switch, not start/stop: while it is on, a step that ends by
+  // itself is followed by the next (a question gets THINK_MS to answer aloud, then its answer); switching it on or off
+  // never interrupts or restarts what is playing. A pause holds the run; ⏮/⏭, the lock screen or another ▶ move it.
   const THINK_MS = 5000;   // Allan, 2026-10-21: five seconds is enough
-  async function perform(s, n, auto = false) {
-    control?.stop?.();
+  let handsFree = $state(false);
+  let chainWaiting = $state(false);   // between two steps of a hands-free run
+  async function holding(my) { while (paused && handsFree && my === run) await new Promise((r) => setTimeout(r, 120)); }
+  async function perform(s, n) {
+    if (playing !== null) control?.stop?.();   // only when something plays: a chained step starts in silence
     const my = ++run;
     playing = n;
-    if (!auto) paused = false;
+    paused = false;
+    chainWaiting = false;
     try {
       if (s.type === 'narrator') { await narrate(nar(s.text), my); say(t('talk.played.narrator')); }
       else if (s.type === 'dialogue') {
@@ -124,77 +130,64 @@
         say(t('talk.played.dialogue', { n: linesOf(s).length }));
       } else if (s.type === 'line') { await sayTaught(items[s.item]?.text ?? '', s.speaker); say(t('talk.played.line', { text: items[s.item]?.text ?? '' })); }
       else if (s.type === 'buildup') {
-        for (const part of s.parts) { await waitWhilePaused(my); if (my !== run) break; await sayTaught(part); if (my !== run) break; await pause(auto ? 2500 : 600); }
+        for (const part of s.parts) { await waitWhilePaused(my); if (my !== run) break; await sayTaught(part); if (my !== run) break; await pause(handsFree ? 2500 : 600); }
         say(t('talk.played.buildup', { text: s.parts.at(-1) }));
       } else if (s.type === 'prompt') {
         await narrate(nar(s.ask), my); say(t('talk.played.ask'));
-        if (auto) {
+        if (handsFree && my === run) {
           await waitWhilePaused(my); if (my === run) await pause(THINK_MS); await waitWhilePaused(my);
           if (my === run) await answer(s, n, true);
         }
       }
     } catch { /* already reported */ }
-    if (my === run) { playing = null; if (!auto) paused = false; }   // in hands-free a pause holds the whole run
+    if (my !== run) return;                       // replaced or stopped: no chain
+    playing = null;
+    if (!handsFree) { paused = false; return; }
+    // hands-free: the next step follows
+    chainWaiting = true;
+    await holding(my);
+    if (handsFree && my === run) await pause(800);
+    await holding(my);
+    chainWaiting = false;
+    if (!handsFree || my !== run) return;
+    const k = n + 1;
+    if (k >= unit.steps.length) return;
+    current = k;
+    if (unit.steps[k].type === 'selfcheck') return;
+    await perform(unit.steps[k], k);
   }
-  function stopAll() { control?.stop?.(); run += 1; playing = null; paused = false; }
+  function stopAll() { control?.stop?.(); run += 1; playing = null; paused = false; chainWaiting = false; }
   async function play(s, n) {
     current = n;
     if (playing === n) {
       if (paused) { paused = false; control?.resume?.(); say(t('talk.resumed')); } else { paused = true; control?.pause?.(); say(t('talk.paused')); }
       return;
     }
-    if (handsFree) handsFree = false;
-    paused = false;
     await perform(s, n);
   }
-
-  // hands-free (Allan, 2026-10-21): the steps play one after another until the self-check, so the phone can stay in a
-  // pocket; the bottom bar and the lock-screen controls move through the steps
-  let handsFree = $state(false);
-  async function runHandsFree(from) {
-    handsFree = true;
-    say(t('talk.handsFree.on'));
-    paused = false;
-    const holding = async () => { while (paused && handsFree) await new Promise((r) => setTimeout(r, 120)); };
-    for (let k = from; k < unit.steps.length && handsFree; k += 1) {
-      await holding();
-      if (!handsFree) break;
-      current = k;
-      if (unit.steps[k].type === 'selfcheck') break;
-      await perform(unit.steps[k], k, true);
-      await holding();
-      if (handsFree) await pause(800);
-    }
-    handsFree = false;
-  }
   function toggleHandsFree() {
-    if (handsFree) { handsFree = false; stopAll(); say(t('talk.handsFree.off')); return; }
-    runHandsFree(current ?? 0);
+    handsFree = !handsFree;
+    say(t(handsFree ? 'talk.handsFree.on' : 'talk.handsFree.off'));
   }
   function stepTo(k) {
     if (!unit) return;
     const to = Math.max(0, Math.min(unit.steps.length - 1, k));
-    const wasFree = handsFree;
-    handsFree = false;
     stopAll();
     current = to;
-    if (wasFree) runHandsFree(to);
-    else if (unit.steps[to].type !== 'selfcheck') perform(unit.steps[to], to);
+    if (unit.steps[to].type !== 'selfcheck') perform(unit.steps[to], to);
   }
   const next = () => stepTo(current == null ? 0 : current + 1);
   const prev = () => stepTo(current == null ? 0 : current - 1);
   function playPause() {
-    if (handsFree && playing === null) {          // paused between steps of hands-free: resume the run
-      paused = !paused; say(t(paused ? 'talk.paused' : 'talk.resumed')); return;
-    }
     if (playing !== null) { play(unit.steps[playing], playing); return; }
+    if (chainWaiting) { paused = !paused; say(t(paused ? 'talk.paused' : 'talk.resumed')); return; }   // between two steps
     stepTo(current ?? 0);
   }
   // tell the phone the real state, so its button shows the right thing
   $effect(() => {
     const ms = typeof navigator !== 'undefined' ? navigator.mediaSession : null;
     if (!ms) return;
-    try { ms.playbackState = paused ? 'paused' : (playing !== null || handsFree) ? 'playing' : 'none'; } catch { /* old browsers */ }
+    try { ms.playbackState = paused ? 'paused' : (playing !== null || chainWaiting) ? 'playing' : 'none'; } catch { /* old browsers */ }
   });
   // the lock screen / notification controls (Media Session API), while a unit is open
   $effect(() => {
@@ -204,8 +197,8 @@
       if (typeof MediaMetadata !== 'undefined') ms.metadata = new MediaMetadata({ title: `${unit.id} · ${nar(unit.title)}`, artist: 'Casus', album: t('talk.heading') });
       // play and pause are commands, not toggles: phones send them on their own (Allan, 2026-10-21: hands-free
       // "pressed play twice and skipped")
-      ms.setActionHandler('play', () => { if (playing === null ? (handsFree ? paused : true) : paused) playPause(); });
-      ms.setActionHandler('pause', () => { if (!paused && (playing !== null || handsFree)) playPause(); });
+      ms.setActionHandler('play', () => { if ((playing === null && !chainWaiting) || paused) playPause(); });
+      ms.setActionHandler('pause', () => { if (!paused && (playing !== null || chainWaiting)) playPause(); });
       ms.setActionHandler('nexttrack', () => next());
       ms.setActionHandler('previoustrack', () => prev());
       // some phones show seek buttons instead of track buttons: both move between steps (Allan, 2026-10-21)
