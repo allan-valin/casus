@@ -32,7 +32,7 @@ Codes in the grammar column are the Learn lessons (`tools/curricula/mk/`).
 | 02 | L | O apartamento | Vera shows the flat | влезете, станот, кујната, тука/таму, голема/мал, влечки | a1-article | all of 01 | shoes off, slippers |
 | 03 | T | O corpo | Vera's hand hurts; body words | глава, рака, нога, око, ме боли… (fixed) | a1-article | 02 all; 01 izvinete, ne-razbiram | — |
 | 04 | L | O mercadinho | Dragan's маркет | леб, млеко, вода, колку чини?, денари, еден/два | a1-numbers | 03 all; 02 tuka/tamu; 01 blagodaram | — |
-| 05 | L | Letras novas | Cyrillic signs with Dragan | влез/излез, отворено, аптека, читам | a1-alphabet | 04 all; 03 body; 01 od-brazil | Cyrillic everywhere |
+| 05 | L | Letras novas | signs with Dragan: Cyrillic, Albanian in Latin letters, English menus, Macedonian typed in Latin on phones — "is this Russia?" | влез/излез, отворено, аптека, читам, кирилица, латиница | a1-alphabet | 04 all; 03 body; 01 od-brazil | the narrator tells how it came to be: the alphabet set in 1945 inside Yugoslavia, independence in 1991, the name dispute with Greece (Prespa, 2018–19), Bulgaria's objections, the road to the EU |
 | 06 | T | O tempo e as estações | rain at the bus stop | дожд, сонце, ладно, топло, зима, лето | a1-adjectives | 05 all; 04 numbers; 02 golema/mal | — |
 | 07 | L | Um café na casa dela | Vera invites; coffee | повелете, кафе, чај, сакам, не сакам, малку | a1-pres-a | 06 all; 05 reading; 03 body | refusing coffee is cold |
 | 08 | L | O caminho | to the office | лево, десно, право, близу, далеку, каде е…? | a1-prepositions | 07 all; 06 weather; 04 prices | — |
