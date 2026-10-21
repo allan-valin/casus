@@ -20,7 +20,7 @@ Clash column: **mk** / **ar** = whose narrator gets the note; both = both.
 | # | Kind | Title | Situation | New (examples) | Grammar | Reviewed | Clash |
 |---|---|---|---|---|---|---|---|
 | 01 | L | Die Vermieterin | Frau Becker at the door | Guten Tag, Entschuldigung, ich verstehe nicht, danke | sein, Sie | — | both: handshake, Sie |
-| 02 | L | Die Wohnung ohne Küche | the flat has no kitchen! | Küche, leer, mitbringen, gebraucht kaufen | articles | 01 all | both: kitchens are the tenant's |
+| 02 | L | Die Wohnung ohne Küche | the flat has no kitchen — not even a sink, only the connections | Küche, Spüle, Anschluss, leer, gebraucht kaufen | articles | 01 all | both: kitchens are the tenant's (a landlord's kitchen is his to repair, so many offer none) |
 | 03 | T | Der Körper | the nurse's / engineer's medical check | Kopf, Arm, Bein, tut weh | possessive mein | 02 all; 01 danke | — |
 | 04 | L | Die Anmeldung | Bürgeramt, Herr Schulz | Termin, Formular, Wohnungsgeberbestätigung | W-questions | 03 all; 02 Küche; 01 Sie | ar: appointment means exact time |
 | 05 | L | Der Supermarkt | Pfand, the cash desk | Pfand, Tüte, mit Karte, bar | accusative | 04 all; 03 body; 01 verstehe nicht | ar: pork and gelatine labels |
@@ -95,7 +95,7 @@ Clash column: **mk** / **ar** = whose narrator gets the note; both = both.
 | 04 | L | Fußball | RB Leipzig | Spiel, Tor, Fan | Präteritum | 03 all; 02 Meinung; A2-21 Wende | — |
 | 05 | L | Wenn ich reich wäre | dreams over beer and tea | wäre, hätte, würde | Konjunktiv II | 04 all; 03 Zelle; 01 Putzplan | ar: tea, not beer |
 | 06 | T | Energie | the heating bill, solar | Energie, sparen, Solaranlage | passive | 05 all; 04 Tor; 02 finde | — |
-| 07 | L | Der Brief vom Anwalt | an Abmahnung for filesharing | Abmahnung, Urheberrecht, Unterlassungserklärung, Anwalt | passive | 06 all; 05 wäre; 03 passive | both: P2P sharing costs money; get advice, don't sign at once |
+| 07 | L | Der Brief vom Anwalt | an Abmahnung for filesharing; Jonas's cousin had one | Abmahnung, Urheberrecht, Unterlassungserklärung, eigener Anwalt, verhandeln | passive | 06 all; 05 wäre; 03 passive | both: P2P sharing costs money; don't pay or sign at once — a lawyer of your own often costs less than the demand and negotiates it down (no amounts) |
 | 08 | L | Nein heißt nein | Jonas offers once only | „Nein, danke" heißt nein | indirect questions | 07 all; 06 Energie; 04 Präteritum | ar: the offer is not repeated |
 | 09 | T | Erdbeben und Vulkane | the Eifel, why Germany is quiet | Vulkan, Erdbeben, Platte | Präteritum | 08 all; 07 Abmahnung; 05 würde | — |
 | 10 | L | Kein Bürgergeld für Studis | the engineer loses a minijob | Bürgergeld, Studierende, Wohngeld, Studentenwerk | weil/obwohl | 09 all; 08 nein; 06 sparen | ar: students have no right to unemployment aid — what helps instead; mk: the nurse's Arbeitslosengeld via insurance |
@@ -117,7 +117,7 @@ Clash column: **mk** / **ar** = whose narrator gets the note; both = both.
 | 26 | L | Silvester | fireworks, resolutions | Feuerwerk, Vorsätze | future I | 25 all; 24 Goethe; 22 freiwillig | — |
 | 27 | T | Dialekte | Saxon in Leipzig | „nu", Gaffee | indirect speech (intro) | 26 all; 25 Streit; 23 wählen | — |
 | 28 | L | Turnier | the Verein's tournament | Turnier, Schiedsrichter | Präteritum | 27 all; 26 Silvester; 24 Vers | — |
-| 29 | L | Ost und West | Leipzig's history, salaries, prejudice | Ossi/Wessi, Vorurteil | passive past | 28 all; 27 Saxon; 25 mediate | both: Germany's own divides |
+| 29 | L | Ost und West | Leipzig's history, salaries, the Soli argument at a barbecue | Ossi/Wessi, Vorurteil, Solidaritätszuschlag | passive past | 28 all; 27 Saxon; 25 mediate | both: Germany's own divides; the Soli was paid in East and West alike, today mostly by high earners and companies — check the current rule |
 | 30 | T | Ironie | Jonas's dry humour; New Year review | na toll!, sehr witzig (review mostly) | all B1 | 29 all; everything of B1 | — |
 
 ## B2 — work (formal register, nominal style, Konjunktiv I, passive forms)
