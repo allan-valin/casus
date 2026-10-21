@@ -1,0 +1,603 @@
+# UNIT mk B1-08 — written by AI (Claude) for Casus; expanded from src/B1-08.yml by tools/expand_unit.py. Edit the source.
+
+id: B1-08
+level: B1
+number: 8
+protagonist: m
+title:
+  en: The invitation
+  pt: O convite
+situation:
+  en: 'Marko hands you an envelope: his sister is getting married, and he will be the кум.'
+  pt: 'O Marko entrega um envelope: a irmã dele vai casar, e ele vai ser o кум.'
+learn_lessons:
+- b1-conditional
+culture: The кум, a bond for life
+new_items:
+- id: pokana
+  text: покана
+  meaning:
+    en: invitation
+    pt: convite
+- id: se-mazi
+  text: се мажи
+  meaning:
+    en: (she) is getting married
+    pt: vai se casar (ela)
+- id: cestitki
+  text: Честитки!
+  meaning:
+    en: Congratulations!
+    pt: Parabéns!
+- id: bi-sakal
+  text: би сакал
+  meaning:
+    en: I'd like (a man)
+    pt: eu gostaria
+- id: kum
+  text: кум
+  meaning:
+    en: best man / godfather (кум)
+    pt: padrinho (кум)
+  rare: true
+- id: svedok
+  text: сведок
+  meaning:
+    en: witness
+    pt: testemunha
+  rare: true
+- id: podocna
+  text: подоцна
+  meaning:
+    en: later
+    pt: mais tarde / depois
+- id: decata
+  text: децата
+  meaning:
+    en: the children
+    pt: as crianças / os filhos
+- id: za-cel-zivot
+  text: за цел живот
+  meaning:
+    en: for life
+    pt: para a vida toda
+- id: bi-mozel
+  text: би можел
+  meaning:
+    en: could you (to a man)
+    pt: você poderia
+- id: govorot
+  text: говорот
+  meaning:
+    en: the speech
+    pt: o discurso
+reviews:
+- item: sto-pisuva
+  from: A1-05
+- item: pisuva
+  from: A1-05
+- item: zatvoreno
+  from: A1-05
+- item: otvoreno
+  from: A1-05
+- item: apteka
+  from: A1-05
+- item: ruski
+  from: A1-05
+- item: makedonski
+  from: A1-05
+- item: kirilica
+  from: A1-05
+- item: citam
+  from: A1-05
+- item: bavno
+  from: A1-05
+- item: nema-problem
+  from: A1-05
+- item: poleka
+  from: A1-05
+- item: vlez
+  from: A1-05
+- item: izlez
+  from: A1-05
+- item: sto-mislat
+  from: A2-07
+- item: mislese
+  from: A2-07
+- item: opasen
+  from: A2-07
+- item: pobezbedno
+  from: A2-07
+- item: bezbedno
+  from: A2-07
+- item: vsusnost
+  from: A2-07
+- item: se-cuvstvuvam
+  from: A2-07
+- item: nokje
+  from: A2-07
+- item: setam
+  from: A2-07
+- item: sama
+  from: A2-07
+- item: kako-sekade
+  from: A2-07
+- item: predrasuda
+  from: A2-07
+- item: ovie
+  from: A2-23
+- item: onie
+  from: A2-23
+- item: koj-broj
+  from: A2-23
+- item: nosam
+  from: A2-23
+- item: probam
+  from: A2-23
+- item: tesni
+  from: A2-23
+- item: pogolem-broj
+  from: A2-23
+- item: ovoj
+  from: A2-23
+- item: onoj
+  from: A2-23
+- item: ovaa
+  from: A2-23
+- item: onaa
+  from: A2-23
+- item: udobni
+  from: A2-23
+- item: druzinata
+  from: B1-01
+- item: sekoj-petok
+  from: B1-01
+- item: dobredojde
+  from: B1-01
+- item: imam-slusnato
+  from: B1-01
+- item: dobri-raboti
+  from: B1-01
+- item: se-nadevam
+  from: B1-01
+- item: imas-li-probano
+  from: B1-01
+- item: nemam-probano
+  from: B1-01
+- item: kajsii
+  from: B1-01
+- item: mora-da
+  from: B1-01
+- item: pat
+  from: B1-01
+- item: te-ceka
+  from: B1-05
+- item: pred
+  from: B1-05
+- item: mesec
+  from: B1-05
+- item: vrska
+  from: B1-05
+- item: decko
+  from: B1-05
+- item: znak
+  from: B1-05
+- item: gi-zapoznavas
+  from: B1-05
+- item: otkako
+  from: B1-05
+- item: roditelite
+  from: B1-05
+- item: seriozno
+  from: B1-05
+- item: dodeka
+  from: B1-05
+- item: slusna-li
+  from: B1-07
+- item: se-svrsila
+  from: B1-07
+- item: so-kogo
+  from: B1-07
+- item: navodno
+  from: B1-07
+- item: se-zapoznale
+  from: B1-07
+- item: letuvanje
+  from: B1-07
+- item: svadbata
+  from: B1-07
+- item: koj-ti-kaza
+  from: B1-07
+- item: nemu
+  from: B1-07
+- item: kazala
+  from: B1-07
+- item: ne-veruvam
+  from: B1-07
+steps:
+- type: narrator
+  text:
+    en: 'Marko hands you an envelope: his sister is getting married, and he will be the кум. Listen to the conversation; you don''t need to understand it yet.'
+    pt: 'O Marko entrega um envelope: a irmã dele vai casar, e ele vai ser o кум. Escute a conversa; ainda não precisa entender.'
+- type: dialogue
+  lines:
+  - speaker: marko
+    text: Ова е покана. Сестра ми се мажи во мај!
+    meaning:
+      en: This is an invitation. My sister's getting married in May!
+      pt: Isto é um convite. Minha irmã vai casar em maio!
+  - speaker: protagonist
+    text: Честитки! Би сакал да дојдам.
+    meaning:
+      en: Congratulations! I'd love to come.
+      pt: Parabéns! Eu gostaria de ir.
+  - speaker: marko
+    text: Мора да дојдеш. А јас сум кум!
+    meaning:
+      en: You have to come. And I'm the кум!
+      pt: Tem que vir. E eu sou o кум!
+  - speaker: protagonist
+    text: Што прави кумот?
+    meaning:
+      en: What does the кум do?
+      pt: O que o кум faz?
+  - speaker: marko
+    text: Тој е сведок на венчавката. Подоцна ги крштева децата.
+    meaning:
+      en: He's the witness at the wedding. Later he baptises the children.
+      pt: Ele é a testemunha do casamento. Depois batiza os filhos.
+  - speaker: protagonist
+    text: Значи, врска за цел живот.
+    meaning:
+      en: So a bond for life.
+      pt: Então, um laço para a vida toda.
+  - speaker: marko
+    text: Точно. Би можел да ми помогнеш со говорот?
+    meaning:
+      en: Exactly. Could you help me with the speech?
+      pt: Isso. Você poderia me ajudar com o discurso?
+  - speaker: protagonist
+    text: Би сакал, но на македонски?!
+    meaning:
+      en: I'd like to, but in Macedonian?!
+      pt: Gostaria, mas em macedônio?!
+- type: prompt
+  ask:
+    en: 'Say: this is an invitation.'
+    pt: 'Diga: isto é um convite.'
+  answer:
+    speaker: protagonist
+    text: Ова е покана.
+  items:
+  - pokana
+- type: prompt
+  ask:
+    en: 'Say: my sister''s getting married.'
+    pt: 'Diga: minha irmã vai casar.'
+  answer:
+    speaker: protagonist
+    text: Сестра ми се мажи.
+  items:
+  - se-mazi
+- type: prompt
+  ask:
+    en: Congratulate him.
+    pt: Dê parabéns.
+  answer:
+    speaker: protagonist
+    text: Честитки!
+  items:
+  - cestitki
+- type: narrator
+  text:
+    en: '''Would'': би + the л-form: би сакал (I''d like, a man), би сакала (a woman), би можел (could).'
+    pt: '''Gostaria'': би + a forma em -л: би сакал (eu gostaria, homem), би сакала (mulher), би можел (poderia).'
+- type: prompt
+  ask:
+    en: 'Say: I''d love to come.'
+    pt: 'Diga: eu gostaria de ir.'
+  answer:
+    speaker: protagonist
+    text: Би сакал да дојдам.
+  items:
+  - bi-sakal
+- type: prompt
+  ask:
+    en: Ask what the кум does.
+    pt: Pergunte o que o кум faz.
+  answer:
+    speaker: protagonist
+    text: Што прави кумот?
+  items:
+  - kum
+- type: prompt
+  ask:
+    en: 'Say: he''s the witness.'
+    pt: 'Diga: ele é a testemunha.'
+  answer:
+    speaker: protagonist
+    text: Тој е сведок.
+  items:
+  - svedok
+- type: prompt
+  ask:
+    en: 'Say: later he baptises the children.'
+    pt: 'Diga: depois batiza os filhos.'
+  answer:
+    speaker: protagonist
+    text: Подоцна ги крштева децата.
+  items:
+  - podocna
+  - decata
+- type: prompt
+  ask:
+    en: 'Say: a bond for life.'
+    pt: 'Diga: um laço para a vida toda.'
+  answer:
+    speaker: protagonist
+    text: Врска за цел живот.
+  items:
+  - vrska
+  - za-cel-zivot
+- type: prompt
+  ask:
+    en: 'Marko asks: could you help me with the speech?'
+    pt: 'O Marko pede: você poderia me ajudar com o discurso?'
+  answer:
+    speaker: protagonist
+    text: Би можел да ми помогнеш со говорот?
+  items:
+  - bi-mozel
+  - govorot
+- type: narrator
+  text:
+    en: The кум is the wedding witness and then godfather of the couple's children — a family tie that lasts generations. Asking someone to be кум is a great honour, and very hard to refuse.
+    pt: O кум é a testemunha do casamento e depois padrinho dos filhos do casal — um laço de família que atravessa gerações. Ser convidado para кум é uma grande honra, e muito difícil de recusar.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: É como o nosso padrinho de casamento e de batismo juntos — o 'compadre' de verdade.
+- type: prompt
+  ask:
+    en: 'Once more: say “invitation”.'
+    pt: 'Mais uma vez: diga “convite”.'
+  answer:
+    speaker: protagonist
+    text: покана
+  items:
+  - pokana
+- type: prompt
+  ask:
+    en: 'Once more: say “(she) is getting married”.'
+    pt: 'Mais uma vez: diga “vai se casar (ela)”.'
+  answer:
+    speaker: protagonist
+    text: се мажи
+  items:
+  - se-mazi
+- type: prompt
+  ask:
+    en: 'Once more: say “Congratulations!”.'
+    pt: 'Mais uma vez: diga “Parabéns!”.'
+  answer:
+    speaker: protagonist
+    text: Честитки!
+  items:
+  - cestitki
+- type: prompt
+  ask:
+    en: 'Once more: say “I''d like (a man)”.'
+    pt: 'Mais uma vez: diga “eu gostaria”.'
+  answer:
+    speaker: protagonist
+    text: би сакал
+  items:
+  - bi-sakal
+- type: prompt
+  ask:
+    en: 'Once more: say “best man / godfather (кум)”.'
+    pt: 'Mais uma vez: diga “padrinho (кум)”.'
+  answer:
+    speaker: protagonist
+    text: кум
+  items:
+  - kum
+- type: prompt
+  ask:
+    en: 'Once more: say “witness”.'
+    pt: 'Mais uma vez: diga “testemunha”.'
+  answer:
+    speaker: protagonist
+    text: сведок
+  items:
+  - svedok
+- type: prompt
+  ask:
+    en: 'Once more: say “later”.'
+    pt: 'Mais uma vez: diga “mais tarde / depois”.'
+  answer:
+    speaker: protagonist
+    text: подоцна
+  items:
+  - podocna
+- type: prompt
+  ask:
+    en: 'Once more: say “the children”.'
+    pt: 'Mais uma vez: diga “as crianças / os filhos”.'
+  answer:
+    speaker: protagonist
+    text: децата
+  items:
+  - decata
+- type: prompt
+  ask:
+    en: 'Once more: say “for life”.'
+    pt: 'Mais uma vez: diga “para a vida toda”.'
+  answer:
+    speaker: protagonist
+    text: за цел живот
+  items:
+  - za-cel-zivot
+- type: prompt
+  ask:
+    en: 'Once more: say “could you (to a man)”.'
+    pt: 'Mais uma vez: diga “você poderia”.'
+  answer:
+    speaker: protagonist
+    text: би можел
+  items:
+  - bi-mozel
+- type: prompt
+  ask:
+    en: 'Once more: say “the speech”.'
+    pt: 'Mais uma vez: diga “o discurso”.'
+  answer:
+    speaker: protagonist
+    text: говорот
+  items:
+  - govorot
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Did you hear? (informal) — and “(she) got engaged, reportedly — and “With whom? — and “supposedly, reportedly — and “(they) met, reportedly — and “summer holiday — and “the wedding — and
+      “Who told you? — and “to him (stressed) — and “(she) told, reportedly — and “I don''t believe it! — and “is waiting for you”.'
+    pt: 'Diga: “Ficou sabendo? — e “(ela) teria ficado noiva — e “Com quem? — e “supostamente — e “teriam se conhecido — e “férias de verão — e “o casamento — e “Quem te contou? — e “a ele — e “teria contado
+      — e “Não acredito! — e “está te esperando”.'
+  answer:
+    speaker: protagonist
+    text: Слушна ли? … се свршила … Со кого? … наводно … се запознале … летување … свадбата … Кој ти кажа? … нему … кажала … Не верувам! … те чека
+  items:
+  - slusna-li
+  - se-svrsila
+  - so-kogo
+  - navodno
+  - se-zapoznale
+  - letuvanje
+  - svadbata
+  - koj-ti-kaza
+  - nemu
+  - kazala
+  - ne-veruvam
+  - te-ceka
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “in front of / before / ago — and “month — and “boyfriend — and “sign — and “you meet them, get to know them — and “after (+ clause) — and “the parents — and “serious(ly) — and “while — and
+      “the group of friends — and “every Friday — and “Welcome! (informal)”.'
+    pt: 'Diga: “na frente de / antes / há — e “mês — e “namorado — e “sinal — e “você conhece (eles) — e “depois que — e “os pais — e “sério — e “enquanto — e “a turma — e “toda sexta — e “Bem-vinda!”.'
+  answer:
+    speaker: protagonist
+    text: пред … месец … дечко … знак … ги запознаваш … откако … родителите … сериозно … додека … дружината … секој петок … Добредојде!
+  items:
+  - pred
+  - mesec
+  - decko
+  - znak
+  - gi-zapoznavas
+  - otkako
+  - roditelite
+  - seriozno
+  - dodeka
+  - druzinata
+  - sekoj-petok
+  - dobredojde
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I have heard — and “good things — and “I hope — and “Have you (ever) tried…? (informal) — and “I haven''t tried — and “apricots — and “must, have to — and “time (occasion) — and “these —
+      and “those — and “What size do you wear? (formal) — and “I wear / I carry”.'
+    pt: 'Diga: “já ouvi falar — e “coisas boas — e “espero — e “Você já provou…? — e “nunca provei — e “damascos — e “tem que — e “vez — e “estes — e “aqueles — e “Que número a senhora calça? — e “eu calço
+      / eu uso”.'
+  answer:
+    speaker: protagonist
+    text: имам слушнато … добри работи … се надевам … Имаш ли пробано…? … немам пробано … кајсии … мора да … пат … овие … оние … Кој број носите? … носам
+  items:
+  - imam-slusnato
+  - dobri-raboti
+  - se-nadevam
+  - imas-li-probano
+  - nemam-probano
+  - kajsii
+  - mora-da
+  - pat
+  - ovie
+  - onie
+  - koj-broj
+  - nosam
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “May I try them on? — and “tight (plural) — and “a bigger size — and “this (masculine) — and “that (masculine) — and “this (feminine) — and “that (feminine) — and “comfortable (plural) — and
+      “What do (they) think…? — and “(she) thought — and “dangerous (masculine) — and “safer”.'
+    pt: 'Diga: “Posso experimentar? — e “apertados — e “um número maior — e “este — e “aquele — e “esta — e “aquela — e “confortáveis — e “O que (eles) acham…? — e “(ela) achava — e “perigoso — e “mais
+      seguro”.'
+  answer:
+    speaker: protagonist
+    text: Може да ги пробам? … тесни … поголем број … овој … оној … оваа … онаа … удобни … Што мислат…? … мислеше … опасен … побезбедно
+  items:
+  - probam
+  - tesni
+  - pogolem-broj
+  - ovoj
+  - onoj
+  - ovaa
+  - onaa
+  - udobni
+  - sto-mislat
+  - mislese
+  - opasen
+  - pobezbedno
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “safe — and “actually — and “I feel — and “at night — and “I walk (around) — and “alone (a woman) — and “like everywhere — and “prejudice — and “What does it say? — and “it says (written)
+      — and “closed — and “open”.'
+    pt: 'Diga: “seguro — e “na verdade — e “me sinto — e “à noite — e “eu ando / passeio — e “sozinha — e “como em todo lugar — e “preconceito — e “O que está escrito? — e “está escrito — e “fechado — e
+      “aberto”.'
+  answer:
+    speaker: protagonist
+    text: безбедно … всушност … се чувствувам … ноќе … шетам … сама … како секаде … предрасуда … Што пишува? … пишува … затворено … отворено
+  items:
+  - bezbedno
+  - vsusnost
+  - se-cuvstvuvam
+  - nokje
+  - setam
+  - sama
+  - kako-sekade
+  - predrasuda
+  - sto-pisuva
+  - pisuva
+  - zatvoreno
+  - otvoreno
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “pharmacy — and “Russian — and “Macedonian — and “Cyrillic — and “I read — and “slowly — and “No problem — and “slowly, take it easy — and “entrance — and “exit”.'
+    pt: 'Diga: “farmácia — e “russo — e “macedônio — e “cirílico — e “eu leio — e “devagar — e “Sem problema — e “com calma, devagar — e “entrada — e “saída”.'
+  answer:
+    speaker: protagonist
+    text: аптека … руски … македонски … кирилица … читам … бавно … Нема проблем … полека … влез … излез
+  items:
+  - apteka
+  - ruski
+  - makedonski
+  - kirilica
+  - citam
+  - bavno
+  - nema-problem
+  - poleka
+  - vlez
+  - izlez
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

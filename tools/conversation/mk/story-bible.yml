@@ -28,6 +28,8 @@ voices:
   - {id: mk-d-f, role: character, lang: mk, gender: f, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 1.05, speed: 0.92}
   - {id: mk-g-m, role: character, lang: mk, gender: m, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 1.1, speed: 1.15}
   - {id: mk-e-f, role: character, lang: mk, gender: f, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 1.3, speed: 1.1}
+  - {id: mk-b-m, role: character, lang: mk, gender: m, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 0.84, speed: 1.05}
+  - {id: mk-s-f, role: character, lang: mk, gender: f, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 1.18, speed: 1.0}
   - {id: mk-x-f, role: character, lang: mk, gender: f, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 1.22, speed: 0.95}
 
 protagonist:
@@ -127,6 +129,19 @@ cast:
     voice: mk-x-m
     register: formal
     arc: one scene at a time
+
+  - id: bojan
+    name: Бојан
+    role: the partner in units with the female protagonist form (from B1)
+    voice: mk-b-m
+    register: informal
+    arc: dating from B1-05; the protagonist alternates form, so the partner follows it — Бојан in odd units, Сара in even ones
+  - id: sara
+    name: Сара
+    role: the partner in units with the male protagonist form (from B1)
+    voice: mk-s-f
+    register: informal
+    arc: same relationship as Бојан's, seen from the male form
 
 formality:
   summary: >-

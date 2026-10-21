@@ -1,0 +1,38 @@
+id: B1-04
+protagonist: m
+title: ["Football", "Futebol"]
+situation: ["Marko has tickets for Vardar's match tomorrow.", "O Marko tem ingressos para o jogo do Vardar amanhã."]
+learn: [b1-if-real]
+culture: Football and the two communities, handled calmly
+items:
+  - [natprevar, "натпревар", "match, game", "jogo / partida"]
+  - [protiv, "против", "against", "contra"]
+  - [doagjas, "Доаѓаш?", "Are you coming? (informal)", "Você vem?"]
+  - [za-kogo, "За кого…?", "For whom…?", "Para quem…?"]
+  - [navivas, "навиваш", "you support (a team)", "você torce"]
+  - [semejstvo, "семејство", "family", "família"]
+  - [ako, "ако", "if", "se"]
+  - [pobedat, "победат", "(they) win", "ganharem"]
+  - [izgubat, "изгубат", "(they) lose", "perderem"]
+  - [ke-molcime, "ќе молчиме", "we'll keep quiet", "a gente fica quieto", {rare: true}]
+  - [vistinski, "вистински", "real, true (masculine)", "de verdade"]
+dialogue:
+  - [marko, "Утре е натпревар, Вардар против Шкупи. Доаѓаш?", "Tomorrow there's a match, Vardar against Shkupi. Are you coming?", "Amanhã tem jogo, Vardar contra Shkupi. Você vem?"]
+  - [protagonist, "Може! За кого навиваш?", "Sure! Who do you support?", "Claro! Para quem você torce?"]
+  - [marko, "За Вардар, секако. Цело семејство навива за Вардар.", "Vardar, of course. The whole family supports Vardar.", "Vardar, claro. A família inteira torce para o Vardar."]
+  - [protagonist, "Ако победат, ќе славиме?", "If they win, will we celebrate?", "Se ganharem, a gente comemora?"]
+  - [marko, "Ако победат, ќе пиеме до утрото. Ако изгубат, ќе молчиме.", "If they win, we'll drink till morning. If they lose, we'll keep quiet.", "Se ganharem, a gente bebe até de manhã. Se perderem, a gente fica quieto."]
+  - [protagonist, "Во Бразил навивам за Коринтијанс.", "In Brazil I support Corinthians.", "No Brasil eu torço para o Corinthians."]
+  - [marko, "Е, тоа е вистински фудбал!", "Well, that's real football!", "Aí sim é futebol de verdade!"]
+  - [protagonist, "Тогаш утре ќе навивам за Вардар.", "Then tomorrow I'll support Vardar.", "Então amanhã eu torço para o Vardar."]
+teach:
+  - ask: ["Say: tomorrow there's a match.", "Diga: amanhã tem jogo.", "Утре е натпревар.", utre, natprevar]
+  - ask: ["Say: Vardar against Shkupi.", "Diga: Vardar contra Shkupi.", "Вардар против Шкупи.", protiv]
+  - ask: ["Ask Marko if he's coming.", "Pergunte ao Marko se ele vem.", "Доаѓаш?", doagjas]
+  - ask: ["Ask who he supports.", "Pergunte para quem ele torce.", "За кого навиваш?", za-kogo, navivas]
+  - ask: ["Say: the whole family supports Vardar.", "Diga: a família inteira torce para o Vardar.", "Цело семејство навива за Вардар.", semejstvo]
+  - note: ["A real condition: ако + present, then ќе: 'ако победат, ќе славиме' — if they win, we'll celebrate.", "Condição real: ако + presente, depois ќе: 'ако победат, ќе славиме' — se ganharem, vamos comemorar."]
+  - ask: ["Ask: if they win, will we celebrate?", "Pergunte: se ganharem, a gente comemora?", "Ако победат, ќе славиме?", ako, pobedat]
+  - ask: ["Say: if they lose, we'll keep quiet.", "Diga: se perderem, a gente fica quieto.", "Ако изгубат, ќе молчиме.", izgubat, ke-molcime]
+  - ask: ["Marko: that's real football! How?", "O Marko: aí sim é futebol! Como?", "Тоа е вистински фудбал!", vistinski, fudbal]
+  - note: ["Vardar's fans are mostly ethnic Macedonians, Shkupi's mostly Albanians, so derbies can be tense and the police are out in force. Sit in the home stands with a local, and leave the politics at the gate.", "A torcida do Vardar é na maioria de macedônios, a do Shkupi na maioria de albaneses, então os clássicos podem ser tensos e a polícia aparece em peso. Sente na arquibancada da casa com um local, e deixe a política no portão."]

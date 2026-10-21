@@ -1,0 +1,609 @@
+# UNIT mk B1-06 — written by AI (Claude) for Casus; expanded from src/B1-06.yml by tools/expand_unit.py. Edit the source.
+
+id: B1-06
+level: B1
+number: 6
+protagonist: m
+title:
+  en: Energy
+  pt: Energia
+situation:
+  en: Mrs Stojanovska waves the electricity bill at you on the stairs.
+  pt: A senhora Stojanovska balança a conta de luz na sua frente, na escada.
+learn_lessons:
+- b1-cause-conj
+culture: —
+new_items:
+- id: poskapa
+  text: поскапа
+  meaning:
+    en: more expensive (feminine)
+    pt: mais cara
+- id: dvojno
+  text: двојно
+  meaning:
+    en: double, twice as
+    pt: o dobro
+- id: zatoa-sto
+  text: затоа што
+  meaning:
+    en: because
+    pt: porque
+- id: cenata
+  text: цената
+  meaning:
+    en: the price
+    pt: o preço
+- id: energijata
+  text: енергијата
+  meaning:
+    en: the energy
+    pt: a energia
+- id: porasna
+  text: порасна
+  meaning:
+    en: went up, grew
+    pt: subiu
+- id: bidejkji
+  text: бидејќи
+  meaning:
+    en: since, because
+    pt: como / já que
+- id: da-stedime
+  text: да штедиме
+  meaning:
+    en: to save (money, energy)
+    pt: economizar
+- id: navecer
+  text: навечер
+  meaning:
+    en: in the evening
+    pt: à noite
+- id: soncevi-paneli
+  text: сончеви панели
+  meaning:
+    en: solar panels
+    pt: painéis solares
+  rare: true
+- id: skapi
+  text: скапи
+  meaning:
+    en: expensive (plural)
+    pt: caros
+reviews:
+- item: sto-vi-e
+  from: A1-03
+- item: me-boli
+  from: A1-03
+- item: rakata
+  from: A1-03
+- item: glavata
+  from: A1-03
+- item: nogata
+  from: A1-03
+- item: okoto
+  from: A1-03
+- item: torbata
+  from: A1-03
+- item: teska
+  from: A1-03
+- item: da-vi-pomognam
+  from: A1-03
+- item: i
+  from: A1-03
+- item: lekar
+  from: A1-03
+- item: ne-e-strasno
+  from: A1-03
+- item: odmorete-se
+  from: A1-03
+- item: dobro-sum
+  from: A1-03
+- item: sto-ve-boli
+  from: A2-05
+- item: grloto
+  from: A2-05
+- item: temperatura
+  from: A2-05
+- item: od-koga
+  from: A2-05
+- item: mislam-deka
+  from: A2-05
+- item: pijte
+  from: A2-05
+- item: med
+  from: A2-05
+- item: lekovi
+  from: A2-05
+- item: recept
+  from: A2-05
+- item: pati-na-den
+  from: A2-05
+- item: ne-odete
+  from: A2-05
+- item: dva-dena
+  from: A2-05
+- item: casovnikot
+  from: A2-21
+- item: zastana
+  from: A2-21
+- item: zemjotres
+  from: A2-21
+- item: utroto
+  from: A2-21
+- item: urnat
+  from: A2-21
+- item: zaginaa
+  from: A2-21
+- item: pomogna
+  from: A2-21
+- item: svetot
+  from: A2-21
+- item: obnova
+  from: A2-21
+- item: ostana
+  from: A2-21
+- item: za-spomen
+  from: A2-21
+- item: klub
+  from: A2-29
+- item: pocnuva
+  from: A2-29
+- item: polnokj
+  from: A2-29
+- item: docna
+  from: A2-29
+- item: kafulinjata
+  from: A2-29
+- item: glasna
+  from: A2-29
+- item: ne-te-slusam
+  from: A2-29
+- item: da-tancuvame
+  from: A2-29
+- item: ne-tancuvam
+  from: A2-29
+- item: dali-si-bil
+  from: A2-29
+- item: sum-bil
+  from: A2-29
+- item: ispit
+  from: B1-03
+- item: me-prasa
+  from: B1-03
+- item: sostavena
+  from: B1-03
+- item: kletkata
+  from: B1-03
+- item: jadro
+  from: B1-03
+- item: ja-cuva
+  from: B1-03
+- item: se-deli
+  from: B1-03
+- item: na-dve
+  from: B1-03
+- item: teloto
+  from: B1-03
+- item: ti-znaes
+  from: B1-03
+- item: medicinska-sestra
+  from: B1-03
+- item: te-ceka
+  from: B1-05
+- item: pred
+  from: B1-05
+- item: mesec
+  from: B1-05
+- item: vrska
+  from: B1-05
+- item: decko
+  from: B1-05
+- item: znak
+  from: B1-05
+- item: gi-zapoznavas
+  from: B1-05
+- item: otkako
+  from: B1-05
+- item: roditelite
+  from: B1-05
+- item: seriozno
+  from: B1-05
+- item: dodeka
+  from: B1-05
+- item: zima
+  from: A1-06
+- item: treba
+  from: A1-29
+- item: tolku
+  from: A2-06
+- item: zosto
+  from: A2-10
+steps:
+- type: narrator
+  text:
+    en: Mrs Stojanovska waves the electricity bill at you on the stairs. Listen to the conversation; you don't need to understand it yet.
+    pt: A senhora Stojanovska balança a conta de luz na sua frente, na escada. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: vera
+    text: Ја видовте ли сметката за струја? Двојно поскапа!
+    meaning:
+      en: Did you see the electricity bill? Twice as expensive!
+      pt: O senhor viu a conta de luz? O dobro do preço!
+  - speaker: protagonist
+    text: Зошто толку многу?
+    meaning:
+      en: Why so much?
+      pt: Por que tanto?
+  - speaker: vera
+    text: Затоа што цената на енергијата порасна.
+    meaning:
+      en: Because the price of energy went up.
+      pt: Porque o preço da energia subiu.
+  - speaker: vera
+    text: И бидејќи е зима, сите грееме на струја.
+    meaning:
+      en: And since it's winter, everyone heats with electricity.
+      pt: E como é inverno, todo mundo esquenta a casa com luz.
+  - speaker: protagonist
+    text: Треба да штедиме. Бојлерот ќе го палам само навечер.
+    meaning:
+      en: We need to save. I'll only turn the water heater on in the evening.
+      pt: A gente precisa economizar. Vou ligar o boiler só à noite.
+  - speaker: vera
+    text: Синот во Германија има сончеви панели.
+    meaning:
+      en: My son in Germany has solar panels.
+      pt: Meu filho na Alemanha tem painéis solares.
+  - speaker: protagonist
+    text: Тука има уште повеќе сонце!
+    meaning:
+      en: There's even more sun here!
+      pt: Aqui tem ainda mais sol!
+  - speaker: vera
+    text: Да, ама панелите се скапи.
+    meaning:
+      en: Yes, but the panels are expensive.
+      pt: Sim, mas os painéis são caros.
+- type: prompt
+  ask:
+    en: 'Say: twice as expensive!'
+    pt: 'Diga: o dobro do preço!'
+  answer:
+    speaker: protagonist
+    text: Двојно поскапа!
+  items:
+  - dvojno
+  - poskapa
+- type: prompt
+  ask:
+    en: Ask why so much.
+    pt: Pergunte por que tanto.
+  answer:
+    speaker: protagonist
+    text: Зошто толку многу?
+  items:
+  - zosto
+  - tolku
+- type: narrator
+  text:
+    en: 'Reasons: затоа што (because), бидејќи (since — often at the start). ''Затоа'' alone means ''that''s why''.'
+    pt: 'Causas: затоа што (porque), бидејќи (como / já que — muitas vezes no começo). ''Затоа'' sozinho quer dizer ''por isso''.'
+- type: prompt
+  ask:
+    en: 'Say: because the price went up.'
+    pt: 'Diga: porque o preço subiu.'
+  answer:
+    speaker: protagonist
+    text: Затоа што цената порасна.
+  items:
+  - zatoa-sto
+  - cenata
+  - porasna
+- type: prompt
+  ask:
+    en: 'Say: the price of energy.'
+    pt: 'Diga: o preço da energia.'
+  answer:
+    speaker: protagonist
+    text: Цената на енергијата.
+  items:
+  - energijata
+- type: prompt
+  ask:
+    en: 'Say: since it''s winter…'
+    pt: 'Diga: como é inverno…'
+  answer:
+    speaker: protagonist
+    text: Бидејќи е зима…
+  items:
+  - bidejkji
+  - zima
+- type: prompt
+  ask:
+    en: 'Say: we need to save.'
+    pt: 'Diga: a gente precisa economizar.'
+  answer:
+    speaker: protagonist
+    text: Треба да штедиме.
+  items:
+  - treba
+  - da-stedime
+- type: prompt
+  ask:
+    en: 'Say: only in the evening.'
+    pt: 'Diga: só à noite.'
+  answer:
+    speaker: protagonist
+    text: Само навечер.
+  items:
+  - navecer
+- type: prompt
+  ask:
+    en: 'Say: solar panels.'
+    pt: 'Diga: painéis solares.'
+  answer:
+    speaker: protagonist
+    text: Сончеви панели.
+  items:
+  - soncevi-paneli
+- type: prompt
+  ask:
+    en: 'Say: but the panels are expensive.'
+    pt: 'Diga: mas os painéis são caros.'
+  answer:
+    speaker: protagonist
+    text: Но панелите се скапи.
+  items:
+  - skapi
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil a conta sobe no verão, com o ar-condicionado; aqui sobe no inverno, com o aquecimento.
+- type: prompt
+  ask:
+    en: 'Once more: say “more expensive (feminine)”.'
+    pt: 'Mais uma vez: diga “mais cara”.'
+  answer:
+    speaker: protagonist
+    text: поскапа
+  items:
+  - poskapa
+- type: prompt
+  ask:
+    en: 'Once more: say “double, twice as”.'
+    pt: 'Mais uma vez: diga “o dobro”.'
+  answer:
+    speaker: protagonist
+    text: двојно
+  items:
+  - dvojno
+- type: prompt
+  ask:
+    en: 'Once more: say “because”.'
+    pt: 'Mais uma vez: diga “porque”.'
+  answer:
+    speaker: protagonist
+    text: затоа што
+  items:
+  - zatoa-sto
+- type: prompt
+  ask:
+    en: 'Once more: say “the price”.'
+    pt: 'Mais uma vez: diga “o preço”.'
+  answer:
+    speaker: protagonist
+    text: цената
+  items:
+  - cenata
+- type: prompt
+  ask:
+    en: 'Once more: say “the energy”.'
+    pt: 'Mais uma vez: diga “a energia”.'
+  answer:
+    speaker: protagonist
+    text: енергијата
+  items:
+  - energijata
+- type: prompt
+  ask:
+    en: 'Once more: say “went up, grew”.'
+    pt: 'Mais uma vez: diga “subiu”.'
+  answer:
+    speaker: protagonist
+    text: порасна
+  items:
+  - porasna
+- type: prompt
+  ask:
+    en: 'Once more: say “since, because”.'
+    pt: 'Mais uma vez: diga “como / já que”.'
+  answer:
+    speaker: protagonist
+    text: бидејќи
+  items:
+  - bidejkji
+- type: prompt
+  ask:
+    en: 'Once more: say “to save (money, energy)”.'
+    pt: 'Mais uma vez: diga “economizar”.'
+  answer:
+    speaker: protagonist
+    text: да штедиме
+  items:
+  - da-stedime
+- type: prompt
+  ask:
+    en: 'Once more: say “in the evening”.'
+    pt: 'Mais uma vez: diga “à noite”.'
+  answer:
+    speaker: protagonist
+    text: навечер
+  items:
+  - navecer
+- type: prompt
+  ask:
+    en: 'Once more: say “solar panels”.'
+    pt: 'Mais uma vez: diga “painéis solares”.'
+  answer:
+    speaker: protagonist
+    text: сончеви панели
+  items:
+  - soncevi-paneli
+- type: prompt
+  ask:
+    en: 'Once more: say “expensive (plural)”.'
+    pt: 'Mais uma vez: diga “caros”.'
+  answer:
+    speaker: protagonist
+    text: скапи
+  items:
+  - skapi
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “is waiting for you — and “in front of / before / ago — and “month — and “relationship — and “boyfriend — and “sign — and “you meet them, get to know them — and “after (+ clause) — and “the
+      parents — and “serious(ly) — and “while — and “exam”.'
+    pt: 'Diga: “está te esperando — e “na frente de / antes / há — e “mês — e “relacionamento / namoro — e “namorado — e “sinal — e “você conhece (eles) — e “depois que — e “os pais — e “sério — e “enquanto
+      — e “prova / exame”.'
+  answer:
+    speaker: protagonist
+    text: те чека … пред … месец … врска … дечко … знак … ги запознаваш … откако … родителите … сериозно … додека … испит
+  items:
+  - te-ceka
+  - pred
+  - mesec
+  - vrska
+  - decko
+  - znak
+  - gi-zapoznavas
+  - otkako
+  - roditelite
+  - seriozno
+  - dodeka
+  - ispit
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “asked me — and “made up of, composed (feminine) — and “the cell — and “nucleus — and “keeps it, protects it — and “divides (itself) — and “in two — and “the body — and “You know…! (informal)
+      — and “nurse — and “club — and “starts”.'
+    pt: 'Diga: “me perguntou — e “composta — e “a célula — e “núcleo — e “guarda / protege — e “se divide — e “em duas — e “o corpo — e “Você entende de…! — e “enfermeira — e “balada / boate — e “começa”.'
+  answer:
+    speaker: protagonist
+    text: ме праша … составена … клетката … јадро … ја чува … се дели … на две … телото … Ти знаеш…! … медицинска сестра … клуб … почнува
+  items:
+  - me-prasa
+  - sostavena
+  - kletkata
+  - jadro
+  - ja-cuva
+  - se-deli
+  - na-dve
+  - teloto
+  - ti-znaes
+  - medicinska-sestra
+  - klub
+  - pocnuva
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “midnight — and “late — and “the cafés — and “loud (feminine) — and “I can''t hear you! — and “Let''s dance! — and “I don''t dance — and “Have you been…? (to a man, informal) — and “I have
+      been (a man) — and “the clock — and “stopped — and “earthquake”.'
+    pt: 'Diga: “meia-noite — e “tarde — e “os cafés — e “alta — e “Não estou te ouvindo! — e “Vamos dançar! — e “eu não danço — e “Você já esteve…? (para homem) — e “já estive (homem) — e “o relógio — e
+      “parou — e “terremoto”.'
+  answer:
+    speaker: protagonist
+    text: полноќ … доцна … кафулињата … гласна … Не те слушам! … Ајде да танцуваме! … не танцувам … Дали си бил…? … сум бил … часовникот … застана … земјотрес
+  items:
+  - polnokj
+  - docna
+  - kafulinjata
+  - glasna
+  - ne-te-slusam
+  - da-tancuvame
+  - ne-tancuvam
+  - dali-si-bil
+  - sum-bil
+  - casovnikot
+  - zastana
+  - zemjotres
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “in the morning — and “destroyed, collapsed (masculine) — and “(they) died, were killed — and “helped — and “the world — and “rebuilding — and “remained, was left — and “as a memorial — and
+      “What hurts? (formal) — and “the throat — and “a temperature, fever — and “Since when?”.'
+    pt: 'Diga: “de manhã — e “destruído / desabado — e “morreram — e “ajudou — e “o mundo — e “reconstrução — e “ficou / restou — e “como lembrança — e “O que está doendo? — e “a garganta — e “febre — e
+      “Desde quando?”.'
+  answer:
+    speaker: protagonist
+    text: утрото … урнат … загинаа … помогна … светот … обнова … остана … за спомен … Што ве боли? … грлото … температура … Од кога?
+  items:
+  - utroto
+  - urnat
+  - zaginaa
+  - pomogna
+  - svetot
+  - obnova
+  - ostana
+  - za-spomen
+  - sto-ve-boli
+  - grloto
+  - temperatura
+  - od-koga
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I think (that) — and “Drink (formal) — and “honey — and “medicine — and “prescription / recipe — and “three times a day — and “don''t go (formal) — and “two days — and “What''s wrong? (formal)
+      — and “… hurts (me) — and “the arm / the hand — and “the head”.'
+    pt: 'Diga: “acho que — e “Beba (formal) — e “mel — e “remédios — e “receita — e “três vezes ao dia — e “não vá — e “dois dias — e “O que a senhora tem? (formal) — e “Me dói… — e “o braço / a mão — e
+      “a cabeça”.'
+  answer:
+    speaker: protagonist
+    text: мислам дека … Пијте … мед … лекови … рецепт … три пати на ден … не одете … два дена … Што ви е? … Ме боли … раката … главата
+  items:
+  - mislam-deka
+  - pijte
+  - med
+  - lekovi
+  - recept
+  - pati-na-den
+  - ne-odete
+  - dva-dena
+  - sto-vi-e
+  - me-boli
+  - rakata
+  - glavata
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the leg / the foot — and “the eye — and “the bag — and “heavy (with a feminine word) — and “Can I help you? (formal) — and “and / also — and “doctor — and “It''s nothing serious — and “Rest
+      (formal) — and “I''m fine”.'
+    pt: 'Diga: “a perna / o pé — e “o olho — e “a sacola — e “pesada (com palavra feminina) — e “Posso ajudar a senhora? (formal) — e “e / também — e “médico — e “Não é nada grave — e “Descanse (formal)
+      — e “Estou bem”.'
+  answer:
+    speaker: protagonist
+    text: ногата … окото … торбата … тешка … Да ви помогнам? … и … лекар … Не е страшно … Одморете се … Добро сум
+  items:
+  - nogata
+  - okoto
+  - torbata
+  - teska
+  - da-vi-pomognam
+  - i
+  - lekar
+  - ne-e-strasno
+  - odmorete-se
+  - dobro-sum
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

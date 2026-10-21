@@ -1,0 +1,38 @@
+id: B1-03
+protagonist: f
+title: ["The cell", "A célula"]
+situation: ["Ana's sister has a biology exam tomorrow and phoned with a question Ana can't answer.", "A irmã da Ana tem prova de biologia amanhã e ligou com uma pergunta que a Ana não sabe responder."]
+learn: [b1-passive]
+culture: —
+items:
+  - [ispit, "испит", "exam", "prova / exame"]
+  - [me-prasa, "ме праша", "asked me", "me perguntou"]
+  - [sostavena, "составена", "made up of, composed (feminine)", "composta", {rare: true}]
+  - [kletkata, "клетката", "the cell", "a célula", {rare: true}]
+  - [jadro, "јадро", "nucleus", "núcleo", {rare: true}]
+  - [ja-cuva, "ја чува", "keeps it, protects it", "guarda / protege"]
+  - [se-deli, "се дели", "divides (itself)", "se divide"]
+  - [na-dve, "на две", "in two", "em duas"]
+  - [teloto, "телото", "the body", "o corpo"]
+  - [ti-znaes, "Ти знаеш…!", "You know…! (informal)", "Você entende de…!"]
+  - [medicinska-sestra, "медицинска сестра", "nurse", "enfermeira", {rare: true}]
+dialogue:
+  - [ana, "Сестра ми има испит по биологија. Ме праша нешто, а не знам.", "My sister has a biology exam. She asked me something and I don't know.", "Minha irmã tem prova de biologia. Me perguntou uma coisa e eu não sei."]
+  - [protagonist, "Што те праша?", "What did she ask you?", "O que ela perguntou?"]
+  - [ana, "Од што е составена клетката?", "What is the cell made of?", "Do que a célula é composta?"]
+  - [protagonist, "Клетката има јадро, а јадрото ја чува ДНК.", "The cell has a nucleus, and the nucleus keeps the DNA.", "A célula tem núcleo, e o núcleo guarda o DNA."]
+  - [ana, "И клетката се дели?", "And the cell divides?", "E a célula se divide?"]
+  - [protagonist, "Да, се дели на две. Така расте телото.", "Yes, it divides in two. That's how the body grows.", "Sim, se divide em duas. É assim que o corpo cresce."]
+  - [ana, "Ти знаеш биологија!", "You know biology!", "Você entende de biologia!"]
+  - [protagonist, "Малку. Мајка ми е медицинска сестра.", "A little. My mother is a nurse.", "Um pouco. Minha mãe é enfermeira."]
+teach:
+  - ask: ["Say: my sister has an exam.", "Diga: minha irmã tem prova.", "Сестра ми има испит.", sestra, ispit]
+  - ask: ["Say: she asked me something.", "Diga: ela me perguntou uma coisa.", "Ме праша нешто.", me-prasa, nesto]
+  - note: ["'Е составена од' — is made up of — works like Portuguese 'é composta de'. 'Се' also makes a passive: 'се дели' — divides, is divided.", "'Е составена од' funciona como 'é composta de'. 'Се' também faz voz passiva: 'се дели' — se divide."]
+  - ask: ["Ask what the cell is made of.", "Pergunte do que a célula é composta.", "Од што е составена клетката?", od-sto, sostavena, kletkata]
+  - ask: ["Say: the cell has a nucleus.", "Diga: a célula tem núcleo.", "Клетката има јадро.", kletkata, jadro]
+  - ask: ["Say: the nucleus keeps the DNA.", "Diga: o núcleo guarda o DNA.", "Јадрото ја чува ДНК.", ja-cuva]
+  - ask: ["Say: it divides in two.", "Diga: se divide em duas.", "Се дели на две.", se-deli, na-dve]
+  - ask: ["Say: that's how the body grows.", "Diga: é assim que o corpo cresce.", "Така расте телото.", raste, teloto]
+  - ask: ["Ana is impressed: you know biology!", "A Ana se impressiona: você entende de biologia!", "Ти знаеш биологија!", ti-znaes]
+  - ask: ["Say: my mother is a nurse.", "Diga: minha mãe é enfermeira.", "Мајка ми е медицинска сестра.", majka, medicinska-sestra]

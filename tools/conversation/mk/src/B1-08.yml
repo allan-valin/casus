@@ -1,0 +1,40 @@
+id: B1-08
+protagonist: m
+title: ["The invitation", "O convite"]
+situation: ["Marko hands you an envelope: his sister is getting married, and he will be the кум.", "O Marko entrega um envelope: a irmã dele vai casar, e ele vai ser o кум."]
+learn: [b1-conditional]
+culture: The кум, a bond for life
+items:
+  - [pokana, "покана", "invitation", "convite"]
+  - [se-mazi, "се мажи", "(she) is getting married", "vai se casar (ela)"]
+  - [cestitki, "Честитки!", "Congratulations!", "Parabéns!"]
+  - [bi-sakal, "би сакал", "I'd like (a man)", "eu gostaria"]
+  - [kum, "кум", "best man / godfather (кум)", "padrinho (кум)", {rare: true}]
+  - [svedok, "сведок", "witness", "testemunha", {rare: true}]
+  - [podocna, "подоцна", "later", "mais tarde / depois"]
+  - [decata, "децата", "the children", "as crianças / os filhos"]
+  - [za-cel-zivot, "за цел живот", "for life", "para a vida toda"]
+  - [bi-mozel, "би можел", "could you (to a man)", "você poderia"]
+  - [govorot, "говорот", "the speech", "o discurso"]
+dialogue:
+  - [marko, "Ова е покана. Сестра ми се мажи во мај!", "This is an invitation. My sister's getting married in May!", "Isto é um convite. Minha irmã vai casar em maio!"]
+  - [protagonist, "Честитки! Би сакал да дојдам.", "Congratulations! I'd love to come.", "Parabéns! Eu gostaria de ir."]
+  - [marko, "Мора да дојдеш. А јас сум кум!", "You have to come. And I'm the кум!", "Tem que vir. E eu sou o кум!"]
+  - [protagonist, "Што прави кумот?", "What does the кум do?", "O que o кум faz?"]
+  - [marko, "Тој е сведок на венчавката. Подоцна ги крштева децата.", "He's the witness at the wedding. Later he baptises the children.", "Ele é a testemunha do casamento. Depois batiza os filhos."]
+  - [protagonist, "Значи, врска за цел живот.", "So a bond for life.", "Então, um laço para a vida toda."]
+  - [marko, "Точно. Би можел да ми помогнеш со говорот?", "Exactly. Could you help me with the speech?", "Isso. Você poderia me ajudar com o discurso?"]
+  - [protagonist, "Би сакал, но на македонски?!", "I'd like to, but in Macedonian?!", "Gostaria, mas em macedônio?!"]
+teach:
+  - ask: ["Say: this is an invitation.", "Diga: isto é um convite.", "Ова е покана.", pokana]
+  - ask: ["Say: my sister's getting married.", "Diga: minha irmã vai casar.", "Сестра ми се мажи.", se-mazi]
+  - ask: ["Congratulate him.", "Dê parabéns.", "Честитки!", cestitki]
+  - note: ["'Would': би + the л-form: би сакал (I'd like, a man), би сакала (a woman), би можел (could).", "'Gostaria': би + a forma em -л: би сакал (eu gostaria, homem), би сакала (mulher), би можел (poderia)."]
+  - ask: ["Say: I'd love to come.", "Diga: eu gostaria de ir.", "Би сакал да дојдам.", bi-sakal]
+  - ask: ["Ask what the кум does.", "Pergunte o que o кум faz.", "Што прави кумот?", kum]
+  - ask: ["Say: he's the witness.", "Diga: ele é a testemunha.", "Тој е сведок.", svedok]
+  - ask: ["Say: later he baptises the children.", "Diga: depois batiza os filhos.", "Подоцна ги крштева децата.", podocna, decata]
+  - ask: ["Say: a bond for life.", "Diga: um laço para a vida toda.", "Врска за цел живот.", vrska, za-cel-zivot]
+  - ask: ["Marko asks: could you help me with the speech?", "O Marko pede: você poderia me ajudar com o discurso?", "Би можел да ми помогнеш со говорот?", bi-mozel, govorot]
+  - note: ["The кум is the wedding witness and then godfather of the couple's children — a family tie that lasts generations. Asking someone to be кум is a great honour, and very hard to refuse.", "O кум é a testemunha do casamento e depois padrinho dos filhos do casal — um laço de família que atravessa gerações. Ser convidado para кум é uma grande honra, e muito difícil de recusar."]
+  - pt_only: "É como o nosso padrinho de casamento e de batismo juntos — o 'compadre' de verdade."
