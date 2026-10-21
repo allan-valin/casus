@@ -1,0 +1,28 @@
+id: B1
+topics:
+
+- title: {en: Clauses and moods, pt: Orações e modos}
+  lessons:
+  - id: bn-je
+    title: যে, যদি … তাহলে, কারণ
+    meaning: {en: "that, if, because", pt: "que, se, porque"}
+    intro:
+      en: |
+        **যে** (that; who): **আমি জানি যে সে আসবে** (I know he'll come); relative pairs **যে … সে**: **যে ছেলেটা ওখানে দাঁড়িয়ে আছে, সে আমার ভাই**. Conditions **যদি … তাহলে**: **যদি বৃষ্টি হয়, তাহলে আমরা বাড়িতে থাকব**. **কারণ** (because), **কিন্তু** (but).
+      pt: |
+        **যে** (que; quem): **আমি জানি যে সে আসবে** (sei que ele virá); pares relativos **যে … সে**: **যে ছেলেটা ওখানে দাঁড়িয়ে আছে, সে আমার ভাই** (o menino que está ali é meu irmão). Condições **যদি … তাহলে**: **যদি বৃষ্টি হয়, তাহলে আমরা বাড়িতে থাকব** (se chover, ficamos em casa). **কারণ** (porque), **কিন্তু** (mas).
+    examples:
+    - ["আমি জানি যে সে আসবে।", "I know he will come.", "Sei que ele virá.", "যে"]
+    match: {seq: [{word: [যে, যদি, তাহলে, কারণ, কিন্তু, যখন, তখন]}]}
+    pool: [যে, যদি, তাহলে, কারণ, কিন্তু, যখন]
+  - id: bn-imperative
+    title: পড়ো, পড়ুন, বসুন
+    meaning: {en: "the imperative by politeness", pt: "o imperativo por nível de cortesia"}
+    intro:
+      en: |
+        **পড়্** (intimate), **পড়ো** (familiar), **পড়ুন** (polite): **বসুন** (please sit), **এসো** (come). Negative with **না**: **যেও না** (don't go). **দয়া করে** (please) softens a request.
+      pt: |
+        **পড়্** (íntimo), **পড়ো** (familiar), **পড়ুন** (formal): **বসুন** (sente-se, por favor), **এসো** (venha). Negativo com **না**: **যেও না** (não vá). **দয়া করে** (por favor) suaviza o pedido.
+    examples:
+    - ["দয়া করে বসুন।", "Please sit down.", "Sente-se, por favor.", "বসুন"]
+    match: {seq: [{pos: verb, mood: imp}]}

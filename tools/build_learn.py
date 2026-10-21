@@ -461,10 +461,10 @@ def reference_level(index):
     return "Reference"
 
 
-EXPAND = {"mk", "ar", "la", "grc", "de", "ru", "ko", "fi", "el", "sa", "cs", "pl", "tr", "hu", "is", "pt", "fr", "es", "en", "it", "nl", "uk", "lt", "he", "sh", "ro", "sv", "hi"}
-CASE_LANGS = {"la", "grc", "de", "ru", "fi", "el", "sa", "cs", "pl", "tr", "hu", "is", "uk", "lt", "sh", "ro", "hi"}
+EXPAND = {"mk", "ar", "la", "grc", "de", "ru", "ko", "fi", "el", "sa", "cs", "pl", "tr", "hu", "is", "pt", "fr", "es", "en", "it", "nl", "uk", "lt", "he", "sh", "ro", "sv", "hi", "bn"}
+CASE_LANGS = {"la", "grc", "de", "ru", "fi", "el", "sa", "cs", "pl", "tr", "hu", "is", "uk", "lt", "sh", "ro", "hi", "bn"}
 T3 = {"mk": "mkd", "ar": "ara", "la": "lat", "grc": "grc", "de": "deu", "ru": "rus", "ko": "kor", "fi": "fin", "el": "ell", "sa": "san",
-      "cs": "ces", "pl": "pol", "tr": "tur", "hu": "hun", "is": "isl", "pt": "por", "fr": "fra", "es": "spa", "en": "eng", "it": "ita", "nl": "nld", "uk": "ukr", "lt": "lit", "he": "heb", "sh": "srp", "ro": "ron", "sv": "swe", "hi": "hin"}
+      "cs": "ces", "pl": "pol", "tr": "tur", "hu": "hun", "is": "isl", "pt": "por", "fr": "fra", "es": "spa", "en": "eng", "it": "ita", "nl": "nld", "uk": "ukr", "lt": "lit", "he": "heb", "sh": "srp", "ro": "ron", "sv": "swe", "hi": "hin", "bn": "ben"}
 
 
 def sentences_of(code: str) -> list:

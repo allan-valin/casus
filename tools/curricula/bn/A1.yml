@@ -1,0 +1,144 @@
+id: A1
+topics:
+
+- title: {en: Sounds and letters, pt: Sons e letras}
+  lessons:
+  - id: bn-script
+    title: অ আ ই … ক খ গ; া ি ী
+    meaning: {en: "the Bengali script", pt: "a escrita bengali"}
+    intro:
+      en: |
+        Bengali is written left to right under a top line, like Devanagari, which it resembles. Each consonant carries an *o* (or *ô*): **ক** *ko*; vowel signs change it: **কা** *ka*, **কি** *ki*, **কু** *ku*, **কে** *ke*, **কো** *ko*. Independent vowels start words (**অ আ ই উ এ ও**). Conjuncts join consonants (**ক্ষ, ন্ত, স্ত**).
+      pt: |
+        O bengali se escreve da esquerda para a direita sob uma linha superior, como o devanágari, com que se parece. Cada consoante traz um *ó* (ou *o* aberto): **ক** *ko*; os sinais vocálicos o mudam: **কা** *ka*, **কি** *ki*, **কু** *ku*, **কে** *ke*, **কো** *ko*. As vogais independentes começam as palavras (**অ আ ই উ এ ও**). Os conjuntos juntam consoantes (**ক্ষ, ন্ত, স্ত**).
+    examples:
+    - ["আমার নাম রিনা।", "My name is Rina.", "Meu nome é Rina.", "নাম"]
+    match: {seq: [{re: "[ািীুূেৈোৌ]", pos: [noun, verb, adj]}]}
+
+- title: {en: Nouns and classifiers, pt: Substantivos e classificadores}
+  lessons:
+  - id: bn-classifier
+    title: বইটা, ছেলেটি, একটা বই
+    meaning: {en: "no gender; the classifiers -টা / -টি", pt: "sem gênero; os classificadores -টা / -টি"}
+    intro:
+      en: |
+        Bengali has no grammatical gender and no article. *The* is a classifier on the noun: **বই** (a book, books) → **বইটা / বইটি** (the book; **-টি** is more formal or tender). With numbers too: **একটা বই** (one book, a book), **দুটো বই** (two books).
+      pt: |
+        O bengali não tem gênero gramatical nem artigo. *O / a* é um classificador no nome: **বই** (um livro, livros) → **বইটা / বইটি** (o livro; **-টি** é mais formal ou carinhoso). Também com números: **একটা বই** (um livro), **দুটো বই** (dois livros).
+    examples:
+    - ["বইটা টেবিলের উপর আছে।", "The book is on the table.", "O livro está sobre a mesa.", "বইটা"]
+    match: {seq: [{pos: noun, re: "(টা|টি)$"}]}
+  - id: bn-plural
+    title: ছেলেরা, বইগুলো
+    meaning: {en: "plurals: -রা for people, -গুলো for things", pt: "plurais: -রা para pessoas, -গুলো para coisas"}
+    intro:
+      en: |
+        **-রা / -এরা** for people (**ছেলেরা** the boys, **মানুষেরা**), **-গুলো / -গুলি** for things and animals (**বইগুলো** the books). After numbers and words like **অনেক** (many) no plural ending: **অনেক বই**.
+      pt: |
+        **-রা / -এরা** para pessoas (**ছেলেরা** os meninos, **মানুষেরা**), **-গুলো / -গুলি** para coisas e animais (**বইগুলো** os livros). Depois de números e de palavras como **অনেক** (muitos) não há terminação de plural: **অনেক বই** (muitos livros).
+    examples:
+    - ["শিশুরা পার্কে খেলছে।", "The children are playing in the park.", "As crianças estão brincando no parque.", "শিশুরা"]
+    match: {seq: [{pos: noun, number: pl}]}
+
+- title: {en: Pronouns and the present, pt: Pronomes e presente}
+  lessons:
+  - id: bn-pronouns
+    title: আমি, তুমি, আপনি, সে, তিনি
+    meaning: {en: "personal pronouns and three levels of you", pt: "pronomes pessoais e três níveis de você"}
+    intro:
+      en: |
+        **আমি** (I), **তুই** (you, intimate), **তুমি** (you, familiar), **আপনি** (you, polite), **সে / তিনি** (he or she; **তিনি** polite), **আমরা** (we), **তোমরা / আপনারা** (you plural), **তারা / তাঁরা** (they). The verb follows the level, not the number.
+      pt: |
+        **আমি** (eu), **তুই** (tu, íntimo), **তুমি** (você, familiar), **আপনি** (o senhor, formal), **সে / তিনি** (ele ou ela; **তিনি** formal), **আমরা** (nós), **তোমরা / আপনারা** (vocês), **তারা / তাঁরা** (eles). O verbo segue o nível, não o número.
+    examples:
+    - ["আপনি কি ইংরেজি বলেন?", "Do you speak English?", "O senhor fala inglês?", "আপনি"]
+    match: {seq: [{word: [আমি, তুই, তুমি, আপনি, সে, তিনি, আমরা, তোমরা, আপনারা, তারা], start: true}]}
+    pool: [আমি, তুমি, আপনি, সে, তিনি, আমরা, তারা]
+  - id: bn-present
+    title: পড়ি, পড়ো, পড়েন, পড়ে
+    meaning: {en: "the simple present by person", pt: "o presente simples por pessoa"}
+    intro:
+      en: |
+        **আমি পড়ি** (I read), **তুই পড়িস**, **তুমি পড়ো**, **আপনি পড়েন**, **সে পড়ে**, **তিনি পড়েন**; plural subjects take the same forms: **আমরা পড়ি**, **তারা পড়ে**. The verb comes last: **আমি বই পড়ি**.
+      pt: |
+        **আমি পড়ি** (eu leio), **তুই পড়িস**, **তুমি পড়ো**, **আপনি পড়েন**, **সে পড়ে**, **তিনি পড়েন**; os sujeitos no plural usam as mesmas formas: **আমরা পড়ি**, **তারা পড়ে**. O verbo vem no fim: **আমি বই পড়ি** (eu leio livros).
+    examples:
+    - ["আমি ঢাকায় থাকি।", "I live in Dhaka.", "Moro em Daca.", "থাকি"]
+    match: {seq: [{pos: verb, tense: pres}]}
+  - id: bn-ache
+    title: আছে, নেই, আমার … আছে
+    meaning: {en: "there is, to have", pt: "há, ter"}
+    intro:
+      en: |
+        **আছে** (there is; is somewhere): **বইটা টেবিলে আছে**. Negative **নেই**: **বাড়িতে কেউ নেই** (nobody's at home). *Have* is the genitive + **আছে**: **আমার একটা ভাই আছে** (I have a brother). *Is* (identity) is often unsaid: **আমি ছাত্র** (I'm a student).
+      pt: |
+        **আছে** (há; está em algum lugar): **বইটা টেবিলে আছে** (o livro está na mesa). Negativo **নেই**: **বাড়িতে কেউ নেই** (não há ninguém em casa). *Ter* é o genitivo + **আছে**: **আমার একটা ভাই আছে** (tenho um irmão). *Ser* (identidade) muitas vezes não se diz: **আমি ছাত্র** (sou estudante).
+    examples:
+    - ["আমার একটা ভাই আছে।", "I have a brother.", "Tenho um irmão.", "আছে"]
+    match: {seq: [{word: [আছে, আছি, আছো, আছেন, নেই]}]}
+    pool: [আছে, আছি, আছেন, নেই]
+
+- title: {en: The cases, pt: Os casos}
+  lessons:
+  - id: bn-ke
+    title: তোমাকে, ছেলেটাকে
+    meaning: {en: "the objective -কে: whom, to whom", pt: "o objetivo -কে: a quem"}
+    intro:
+      en: |
+        **-কে** marks a person (or a definite thing) as object or receiver: **আমি তোমাকে দেখি** (I see you), **ছেলেটাকে বইটা দাও** (give the book to the boy). Pronouns: **আমাকে, তোমাকে, আপনাকে, তাকে, আমাদের**.
+      pt: |
+        **-কে** marca uma pessoa (ou coisa definida) como objeto ou destinatário: **আমি তোমাকে দেখি** (eu te vejo), **ছেলেটাকে বইটা দাও** (dê o livro ao menino). Pronomes: **আমাকে, তোমাকে, আপনাকে, তাকে, আমাদের**.
+    examples:
+    - ["আমি আমার বন্ধুকে একটি উপহার দিলাম।", "I gave my friend a present.", "Dei um presente ao meu amigo.", "বন্ধুকে"]
+    match: {seq: [{re: "কে$", pos: [noun, pron]}]}
+    pool: [আমাকে, তোমাকে, আপনাকে, তাকে]
+  - id: bn-er
+    title: আমার, ছেলের, বইয়ের
+    meaning: {en: "the genitive -এর / -র: of, my", pt: "o genitivo -এর / -র: de, meu"}
+    intro:
+      en: |
+        **-এর** after a consonant, **-র** after a vowel (**বাড়ির**, **ছেলের**, **রিনার**): **রিনার বই** (Rina's book). Pronouns: **আমার** (my), **তোমার, আপনার, তার, আমাদের**. Many postpositions follow a genitive: **টেবিলের উপর** (on the table), **বাড়ির পাশে** (next to the house).
+      pt: |
+        **-এর** depois de consoante, **-র** depois de vogal (**বাড়ির**, **ছেলের**, **রিনার**): **রিনার বই** (o livro da Rina). Pronomes: **আমার** (meu), **তোমার, আপনার, তার, আমাদের**. Muitas posposições vêm depois de um genitivo: **টেবিলের উপর** (sobre a mesa), **বাড়ির পাশে** (ao lado da casa).
+    examples:
+    - ["আমার ভাই ব্যাংকে কাজ করে।", "My brother works in a bank.", "Meu irmão trabalha num banco.", "আমার"]
+    match: {seq: [{re: "(র|ের)$", pos: [noun, pron]}]}
+    pool: [আমার, তোমার, আপনার, তার, আমাদের]
+  - id: bn-loc
+    title: ঢাকায়, বাড়িতে, শহরে
+    meaning: {en: "the locative -এ / -তে: in, at", pt: "o locativo -এ / -তে: em"}
+    intro:
+      en: |
+        **-এ** after a consonant (**শহরে** in the city), **-তে** or **-য়** after a vowel (**বাড়িতে** at home, **ঢাকায়** in Dhaka). It also says *by* and *at what time*: **বাসে** (by bus), **সকালে** (in the morning).
+      pt: |
+        **-এ** depois de consoante (**শহরে** na cidade), **-তে** ou **-য়** depois de vogal (**বাড়িতে** em casa, **ঢাকায়** em Daca). Também diz *de (meio)* e *quando*: **বাসে** (de ônibus), **সকালে** (de manhã).
+    examples:
+    - ["আমরা বাসে শহরে যাই।", "We go to town by bus.", "Vamos de ônibus à cidade.", "বাসে"]
+    match: {seq: [{pos: noun, case: loc}]}
+
+- title: {en: Questions and negation, pt: Perguntas e negação}
+  lessons:
+  - id: bn-questions
+    title: কী, কে, কোথায়, কখন, কেন, কেমন
+    meaning: {en: "question words; কি for yes/no", pt: "palavras interrogativas; কি para sim/não"}
+    intro:
+      en: |
+        **কী** (what), **কে** (who), **কোথায়** (where), **কখন** (when), **কেন** (why), **কেমন** (how), **কত** (how much). Yes/no questions add **কি** after the subject: **আপনি কি ইংরেজি বলেন?** **কেমন আছেন?** (how are you?).
+      pt: |
+        **কী** (o que), **কে** (quem), **কোথায়** (onde), **কখন** (quando), **কেন** (por quê), **কেমন** (como), **কত** (quanto). Perguntas de sim/não acrescentam **কি** depois do sujeito: **আপনি কি ইংরেজি বলেন?** **কেমন আছেন?** (como vai?).
+    examples:
+    - ["তুমি কোথায় থাকো?", "Where do you live?", "Onde você mora?", "কোথায়"]
+    match: {seq: [{word: [কী, কি, কে, কোথায়, কখন, কেন, কেমন, কত]}]}
+    pool: [কী, কে, কোথায়, কখন, কেন, কেমন]
+  - id: bn-na
+    title: না, নেই, নি
+    meaning: {en: "negation after the verb", pt: "negação depois do verbo"}
+    intro:
+      en: |
+        **না** follows the verb: **আমি বুঝি না** (I don't understand). The past is negated with the present + **নি**: **আমি যাইনি** (I didn't go). **নেই** is *there isn't*.
+      pt: |
+        **না** vem depois do verbo: **আমি বুঝি না** (não entendo). O passado se nega com o presente + **নি**: **আমি যাইনি** (não fui). **নেই** é *não há*.
+    examples:
+    - ["আমি বুঝি না।", "I don't understand.", "Não entendo.", "না"]
+    match: {seq: [{pos: verb}, {word: [না]}], gap: 1}
+    pool: [না, নেই, নি]

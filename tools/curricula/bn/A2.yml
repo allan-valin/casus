@@ -1,0 +1,64 @@
+id: A2
+topics:
+
+- title: {en: "Past, future and continuous", pt: "Passado, futuro e contínuo"}
+  lessons:
+  - id: bn-past
+    title: পড়লাম, পড়লে, পড়ল
+    meaning: {en: "the simple past -ল-", pt: "o passado simples -ল-"}
+    intro:
+      en: |
+        Stem + **-লাম** (I), **-লি** (you, intimate), **-লে** (you, familiar), **-লেন** (you or he, polite), **-ল** (he, she): **আমি বইটা পড়লাম** (I read the book), **সে এল** (he came). Irregular: **যাওয়া → গেলাম**, **দেওয়া → দিলাম**.
+      pt: |
+        Radical + **-লাম** (eu), **-লি** (tu), **-লে** (você), **-লেন** (o senhor, ele formal), **-ল** (ele, ela): **আমি বইটা পড়লাম** (li o livro), **সে এল** (ele veio). Irregulares: **যাওয়া → গেলাম**, **দেওয়া → দিলাম**.
+    examples:
+    - ["আমি তোমাকে একটা বই দিলাম।", "I gave you a book.", "Dei um livro para você.", "দিলাম"]
+    match: {seq: [{pos: verb, tense: past}]}
+  - id: bn-future
+    title: পড়ব, পড়বে, পড়বেন
+    meaning: {en: "the future -ব-", pt: "o futuro -ব-"}
+    intro:
+      en: |
+        Stem + **-ব** (I), **-বি** (you, intimate), **-বে** (you familiar; he), **-বেন** (polite): **আমি কাল যাব** (I'll go tomorrow), **সে আসবে** (he'll come).
+      pt: |
+        Radical + **-ব** (eu), **-বি** (tu), **-বে** (você; ele), **-বেন** (formal): **আমি কাল যাব** (amanhã eu vou), **সে আসবে** (ele virá).
+    examples:
+    - ["আমি কাল ঢাকায় যাব।", "I'll go to Dhaka tomorrow.", "Amanhã vou a Daca.", "যাব"]
+    match: {seq: [{pos: verb, tense: fut}]}
+  - id: bn-continuous
+    title: পড়ছি, খেলছে, করছেন
+    meaning: {en: "the present continuous -ছ-", pt: "o presente contínuo -ছ-"}
+    intro:
+      en: |
+        Stem + **-ছি** (I), **-ছিস**, **-ছ**, **-ছেন**, **-ছে**: **আমি একটা বই পড়ছি** (I'm reading a book), **শিশুরা খেলছে** (the children are playing), **মা রান্না করছেন** (mother is cooking, polite).
+      pt: |
+        Radical + **-ছি** (eu), **-ছিস**, **-ছ**, **-ছেন**, **-ছে**: **আমি একটা বই পড়ছি** (estou lendo um livro), **শিশুরা খেলছে** (as crianças estão brincando), **মা রান্না করছেন** (a mãe está cozinhando, formal).
+    examples:
+    - ["আমি একটি বই পড়ছি।", "I'm reading a book.", "Estou lendo um livro.", "পড়ছি"]
+    match: {seq: [{re: "(ছি|ছিস|ছ|ছেন|ছে)$"}]}
+
+- title: {en: Postpositions and compound verbs, pt: Posposições e verbos compostos}
+  lessons:
+  - id: bn-postpositions
+    title: উপর, নিচে, সঙ্গে, জন্য, থেকে
+    meaning: {en: "postpositions after the genitive", pt: "posposições depois do genitivo"}
+    intro:
+      en: |
+        **টেবিলের উপর** (on the table), **খাটের নিচে** (under the bed), **বন্ধুর সঙ্গে / সাথে** (with a friend), **তোমার জন্য** (for you), **বাড়ি থেকে** (from home), **স্কুল পর্যন্ত** (as far as school). Most take the genitive; **থেকে** follows the plain form.
+      pt: |
+        **টেবিলের উপর** (sobre a mesa), **খাটের নিচে** (debaixo da cama), **বন্ধুর সঙ্গে / সাথে** (com um amigo), **তোমার জন্য** (para você), **বাড়ি থেকে** (de casa), **স্কুল পর্যন্ত** (até a escola). A maioria pede o genitivo; **থেকে** vem depois da forma simples.
+    examples:
+    - ["আমি বন্ধুর সঙ্গে সিনেমা দেখতে গেলাম।", "I went to see a film with a friend.", "Fui ver um filme com um amigo.", "সঙ্গে"]
+    match: {seq: [{word: [উপর, উপরে, নিচে, সঙ্গে, সাথে, জন্য, থেকে, পর্যন্ত, কাছে, পাশে]}]}
+    pool: [উপর, নিচে, সঙ্গে, জন্য, থেকে, কাছে, পাশে]
+  - id: bn-kora
+    title: কাজ করা, রান্না করা, পছন্দ করা
+    meaning: {en: "noun + করা: many verbs", pt: "nome + করা: muitos verbos"}
+    intro:
+      en: |
+        Bengali makes countless verbs with a noun + **করা** (to do): **কাজ করা** (to work), **রান্না করা** (to cook), **পছন্দ করা** (to like), **চেষ্টা করা** (to try), **ফোন করা** (to phone). Only **করা** is conjugated: **আমি কাজ করি, সে রান্না করছে**.
+      pt: |
+        O bengali faz inúmeros verbos com um nome + **করা** (fazer): **কাজ করা** (trabalhar), **রান্না করা** (cozinhar), **পছন্দ করা** (gostar), **চেষ্টা করা** (tentar), **ফোন করা** (telefonar). Só **করা** se conjuga: **আমি কাজ করি, সে রান্না করছে**.
+    examples:
+    - ["আমার ভাই ব্যাংকে কাজ করে।", "My brother works in a bank.", "Meu irmão trabalha num banco.", "করে"]
+    match: {seq: [{pos: noun}, {re: "^কর"}], gap: 1}
