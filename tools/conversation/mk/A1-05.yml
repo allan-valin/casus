@@ -1,0 +1,618 @@
+# UNIT mk A1-05 — written by AI (Claude) for Casus; expanded from src/A1-05.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-05
+level: A1
+number: 5
+protagonist: f
+title:
+  en: New letters
+  pt: Letras novas
+situation:
+  en: In the street every sign is a puzzle. Dragan, at his shop door, reads them with you.
+  pt: Na rua, cada placa é um enigma. O Dragan, na porta da loja, lê com você.
+learn_lessons:
+- a1-alphabet
+culture: Cyrillic, and Latin letters beside it; how it came to be
+new_items:
+- id: sto-pisuva
+  text: Што пишува?
+  meaning:
+    en: What does it say?
+    pt: O que está escrito?
+- id: pisuva
+  text: пишува
+  meaning:
+    en: it says (written)
+    pt: está escrito
+- id: zatvoreno
+  text: затворено
+  meaning:
+    en: closed
+    pt: fechado
+- id: otvoreno
+  text: отворено
+  meaning:
+    en: open
+    pt: aberto
+- id: apteka
+  text: аптека
+  meaning:
+    en: pharmacy
+    pt: farmácia
+  rare: true
+- id: ruski
+  text: руски
+  meaning:
+    en: Russian
+    pt: russo
+- id: makedonski
+  text: македонски
+  meaning:
+    en: Macedonian
+    pt: macedônio
+- id: kirilica
+  text: кирилица
+  meaning:
+    en: Cyrillic
+    pt: cirílico
+  rare: true
+- id: citam
+  text: читам
+  meaning:
+    en: I read
+    pt: eu leio
+- id: bavno
+  text: бавно
+  meaning:
+    en: slowly
+    pt: devagar
+- id: nema-problem
+  text: Нема проблем
+  meaning:
+    en: No problem
+    pt: Sem problema
+- id: poleka
+  text: полека
+  meaning:
+    en: slowly, take it easy
+    pt: com calma, devagar
+- id: vlez
+  text: влез
+  meaning:
+    en: entrance
+    pt: entrada
+  rare: true
+- id: izlez
+  text: излез
+  meaning:
+    en: exit
+    pt: saída
+  rare: true
+reviews:
+- item: vlezete
+  from: A1-02
+- item: stanot
+  from: A1-02
+- item: ubav-e
+  from: A1-02
+- item: kade-e
+  from: A1-02
+- item: kujnata
+  from: A1-02
+- item: tuka
+  from: A1-02
+- item: tamu
+  from: A1-02
+- item: a-sto
+  from: A1-02
+- item: banjata
+  from: A1-02
+- item: sobata
+  from: A1-02
+- item: golema
+  from: A1-02
+- item: mnogu
+  from: A1-02
+- item: prozorecot
+  from: A1-02
+- item: mal
+  from: A1-02
+- item: dobro
+  from: A1-02
+- item: dolu
+  from: A1-02
+- item: papuci
+  from: A1-02
+- item: leb
+  from: A1-04
+- item: mleko
+  from: A1-04
+- item: voda
+  from: A1-04
+- item: imate-li
+  from: A1-04
+- item: imame
+  from: A1-04
+- item: eden
+  from: A1-04
+- item: dve
+  from: A1-04
+- item: ve-molam
+  from: A1-04
+- item: uste-nesto
+  from: A1-04
+- item: toa-e-se
+  from: A1-04
+- item: kolku-cini
+  from: A1-04
+- item: denari
+  from: A1-04
+- item: sto
+  from: A1-04
+- item: kese
+  from: A1-04
+- item: prijatno
+  from: A1-04
+steps:
+- type: narrator
+  text:
+    en: In the street every sign is a puzzle. Dragan, at his shop door, reads them with you. Listen to the conversation; you don't need to understand it yet.
+    pt: Na rua, cada placa é um enigma. O Dragan, na porta da loja, lê com você. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Извинете, што пишува тука?
+    meaning:
+      en: Excuse me, what does it say here?
+      pt: Com licença, o que está escrito aqui?
+  - speaker: dragan
+    text: Пишува „затворено“.
+    meaning:
+      en: It says 'closed'.
+      pt: Está escrito 'fechado'.
+  - speaker: protagonist
+    text: А таму?
+    meaning:
+      en: And there?
+      pt: E ali?
+  - speaker: dragan
+    text: Таму пишува „аптека“.
+    meaning:
+      en: There it says 'pharmacy'.
+      pt: Ali está escrito 'farmácia'.
+  - speaker: protagonist
+    text: Ова е руски?
+    meaning:
+      en: Is this Russian?
+      pt: Isto é russo?
+  - speaker: dragan
+    text: Не, ова е македонски! Кирилица.
+    meaning:
+      en: No, this is Macedonian! Cyrillic.
+      pt: Não, isto é macedônio! Cirílico.
+  - speaker: protagonist
+    text: Читам многу бавно.
+    meaning:
+      en: I read very slowly.
+      pt: Eu leio muito devagar.
+  - speaker: dragan
+    text: Нема проблем. Полека.
+    meaning:
+      en: No problem. Take it easy.
+      pt: Sem problema. Com calma.
+  - speaker: protagonist
+    text: А влез и излез?
+    meaning:
+      en: And entrance and exit?
+      pt: E entrada e saída?
+  - speaker: dragan
+    text: Влезот е тука, излезот е таму.
+    meaning:
+      en: The entrance is here, the exit is there.
+      pt: A entrada é aqui, a saída é ali.
+- type: narrator
+  text:
+    en: 'Macedonian is written in Cyrillic — but you will also see Latin letters: Albanian, an official language too, uses them, shops write in English, and people often type Macedonian in Latin letters
+      on their phones.'
+    pt: 'O macedônio se escreve em cirílico — mas você também vai ver letras latinas: o albanês, também língua oficial, usa o alfabeto latino, as lojas escrevem em inglês, e muita gente digita macedônio
+      com letras latinas no celular.'
+- type: prompt
+  ask:
+    en: Ask Dragan what it says here.
+    pt: Pergunte ao Dragan o que está escrito aqui.
+  answer:
+    speaker: protagonist
+    text: Што пишува тука?
+  items:
+  - sto-pisuva
+  - tuka
+- type: line
+  speaker: dragan
+  item: zatvoreno
+- type: prompt
+  ask:
+    en: The door says 'closed'. Say it.
+    pt: A porta diz 'fechado'. Diga.
+  answer:
+    speaker: protagonist
+    text: Затворено.
+  items:
+  - zatvoreno
+- type: prompt
+  ask:
+    en: 'Another door: open.'
+    pt: 'Outra porta: aberto.'
+  answer:
+    speaker: protagonist
+    text: Отворено.
+  items:
+  - otvoreno
+- type: prompt
+  ask:
+    en: 'Say: there it says ''pharmacy''.'
+    pt: 'Diga: ali está escrito ''farmácia''.'
+  answer:
+    speaker: protagonist
+    text: Таму пишува „аптека“.
+  items:
+  - tamu
+  - pisuva
+  - apteka
+- type: narrator
+  text:
+    en: 'Many visitors think it is Russian. It is not: Macedonian is its own language, close to Bulgarian. The alphabet was fixed in 1945, when North Macedonia was a republic of Yugoslavia; the country
+      became independent in 1991.'
+    pt: 'Muitos visitantes acham que é russo. Não é: o macedônio é uma língua própria, parecida com o búlgaro. O alfabeto foi fixado em 1945, quando a Macedônia do Norte era uma república da Iugoslávia;
+      o país ficou independente em 1991.'
+- type: prompt
+  ask:
+    en: 'Ask: is this Russian?'
+    pt: 'Pergunte: isto é russo?'
+  answer:
+    speaker: protagonist
+    text: Ова е руски?
+  items:
+  - ruski
+- type: prompt
+  ask:
+    en: 'Answer for Dragan: no, this is Macedonian.'
+    pt: 'Responda pelo Dragan: não, isto é macedônio.'
+  answer:
+    speaker: protagonist
+    text: Не, ова е македонски.
+  items:
+  - makedonski
+- type: buildup
+  item: kirilica
+  parts:
+  - -лица
+  - кирилица
+- type: prompt
+  ask:
+    en: 'Say: Cyrillic.'
+    pt: 'Diga: cirílico.'
+  answer:
+    speaker: protagonist
+    text: Кирилица.
+  items:
+  - kirilica
+- type: narrator
+  text:
+    en: 'Its name has a history too: Greece objected to ''Macedonia'' for decades, and in 2018–19 the Prespa Agreement made it ''North Macedonia''. Bulgaria still argues about the language''s history —
+      a reason EU talks have been slow.'
+    pt: 'O nome também tem história: a Grécia contestou ''Macedônia'' por décadas, e em 2018–19 o Acordo de Prespa fez dele ''Macedônia do Norte''. A Bulgária ainda discute a história da língua — um motivo
+      de as negociações com a UE andarem devagar.'
+- type: prompt
+  ask:
+    en: 'Say: I read very slowly.'
+    pt: 'Diga: eu leio muito devagar.'
+  answer:
+    speaker: protagonist
+    text: Читам многу бавно.
+  items:
+  - citam
+  - bavno
+- type: prompt
+  ask:
+    en: He reassures you. How?
+    pt: Ele tranquiliza você. Como?
+  answer:
+    speaker: protagonist
+    text: Нема проблем. Полека.
+  items:
+  - nema-problem
+  - poleka
+- type: prompt
+  ask:
+    en: 'Read the sign: entrance.'
+    pt: 'Leia a placa: entrada.'
+  answer:
+    speaker: protagonist
+    text: Влез.
+  items:
+  - vlez
+- type: prompt
+  ask:
+    en: 'And the other one: exit.'
+    pt: 'E a outra: saída.'
+  answer:
+    speaker: protagonist
+    text: Излез.
+  items:
+  - izlez
+- type: prompt
+  ask:
+    en: 'A friend reads too fast. Tell him: slowly, no problem.'
+    pt: 'Um amigo lê rápido demais. Diga: devagar, sem problema.'
+  answer:
+    speaker: protagonist
+    text: Полека, нема проблем.
+  items:
+  - poleka
+  - nema-problem
+- type: prompt
+  ask:
+    en: 'Once more: say “What does it say?”.'
+    pt: 'Mais uma vez: diga “O que está escrito?”.'
+  answer:
+    speaker: protagonist
+    text: Што пишува?
+  items:
+  - sto-pisuva
+- type: prompt
+  ask:
+    en: 'Once more: say “it says (written)”.'
+    pt: 'Mais uma vez: diga “está escrito”.'
+  answer:
+    speaker: protagonist
+    text: пишува
+  items:
+  - pisuva
+- type: prompt
+  ask:
+    en: 'Once more: say “closed”.'
+    pt: 'Mais uma vez: diga “fechado”.'
+  answer:
+    speaker: protagonist
+    text: затворено
+  items:
+  - zatvoreno
+- type: prompt
+  ask:
+    en: 'Once more: say “open”.'
+    pt: 'Mais uma vez: diga “aberto”.'
+  answer:
+    speaker: protagonist
+    text: отворено
+  items:
+  - otvoreno
+- type: prompt
+  ask:
+    en: 'Once more: say “pharmacy”.'
+    pt: 'Mais uma vez: diga “farmácia”.'
+  answer:
+    speaker: protagonist
+    text: аптека
+  items:
+  - apteka
+- type: prompt
+  ask:
+    en: 'Once more: say “Russian”.'
+    pt: 'Mais uma vez: diga “russo”.'
+  answer:
+    speaker: protagonist
+    text: руски
+  items:
+  - ruski
+- type: prompt
+  ask:
+    en: 'Once more: say “Macedonian”.'
+    pt: 'Mais uma vez: diga “macedônio”.'
+  answer:
+    speaker: protagonist
+    text: македонски
+  items:
+  - makedonski
+- type: prompt
+  ask:
+    en: 'Once more: say “Cyrillic”.'
+    pt: 'Mais uma vez: diga “cirílico”.'
+  answer:
+    speaker: protagonist
+    text: кирилица
+  items:
+  - kirilica
+- type: prompt
+  ask:
+    en: 'Once more: say “I read”.'
+    pt: 'Mais uma vez: diga “eu leio”.'
+  answer:
+    speaker: protagonist
+    text: читам
+  items:
+  - citam
+- type: prompt
+  ask:
+    en: 'Once more: say “slowly”.'
+    pt: 'Mais uma vez: diga “devagar”.'
+  answer:
+    speaker: protagonist
+    text: бавно
+  items:
+  - bavno
+- type: prompt
+  ask:
+    en: 'Once more: say “entrance”.'
+    pt: 'Mais uma vez: diga “entrada”.'
+  answer:
+    speaker: protagonist
+    text: влез
+  items:
+  - vlez
+- type: prompt
+  ask:
+    en: 'Once more: say “exit”.'
+    pt: 'Mais uma vez: diga “saída”.'
+  answer:
+    speaker: protagonist
+    text: излез
+  items:
+  - izlez
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “bread — and “milk”.'
+    pt: 'Diga: “pão — e “leite”.'
+  answer:
+    speaker: protagonist
+    text: леб … млеко
+  items:
+  - leb
+  - mleko
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “water — and “Do you have…? (formal)”.'
+    pt: 'Diga: “água — e “O senhor tem…? (formal)”.'
+  answer:
+    speaker: protagonist
+    text: вода … Имате ли…?
+  items:
+  - voda
+  - imate-li
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “We have — and “one (with a masculine word)”.'
+    pt: 'Diga: “Temos — e “um”.'
+  answer:
+    speaker: protagonist
+    text: Имаме … еден
+  items:
+  - imame
+  - eden
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “two (with feminine and neuter words) — and “please (formal)”.'
+    pt: 'Diga: “duas / dois — e “por favor (formal)”.'
+  answer:
+    speaker: protagonist
+    text: две … ве молам
+  items:
+  - dve
+  - ve-molam
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Anything else? — and “That''s all”.'
+    pt: 'Diga: “Mais alguma coisa? — e “É só isso”.'
+  answer:
+    speaker: protagonist
+    text: Уште нешто? … Тоа е сè
+  items:
+  - uste-nesto
+  - toa-e-se
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “How much is it? — and “denars (the money)”.'
+    pt: 'Diga: “Quanto custa? — e “dinares (a moeda)”.'
+  answer:
+    speaker: protagonist
+    text: Колку чини? … денари
+  items:
+  - kolku-cini
+  - denari
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “a hundred — and “a (plastic) bag”.'
+    pt: 'Diga: “cem — e “uma sacolinha”.'
+  answer:
+    speaker: protagonist
+    text: сто … кесе
+  items:
+  - sto
+  - kese
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Have a nice day! / Enjoy!”.'
+    pt: 'Diga: “Bom dia! / Bom proveito!”.'
+  answer:
+    speaker: protagonist
+    text: Пријатно!
+  items:
+  - prijatno
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Come in (formal) — and “the flat — and “It''s nice”.'
+    pt: 'Diga: “Entre / entrem (formal) — e “o apartamento — e “É bonito”.'
+  answer:
+    speaker: protagonist
+    text: Влезете … станот … Убав е
+  items:
+  - vlezete
+  - stanot
+  - ubav-e
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Where is…? — and “the kitchen — and “And the …? (asking about something else)”.'
+    pt: 'Diga: “Onde fica…? / Onde está…? — e “a cozinha — e “E o/a …? (perguntando por outra coisa)”.'
+  answer:
+    speaker: protagonist
+    text: Каде е…? … кујната … А …?
+  items:
+  - kade-e
+  - kujnata
+  - a-sto
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the bathroom — and “the room — and “big (with a feminine word: собата)”.'
+    pt: 'Diga: “o banheiro — e “o quarto — e “grande (com palavra feminina: собата)”.'
+  answer:
+    speaker: protagonist
+    text: бањата … собата … голема
+  items:
+  - banjata
+  - sobata
+  - golema
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “very — and “the window — and “small (with a masculine word: прозорецот)”.'
+    pt: 'Diga: “muito — e “a janela — e “pequeno (com palavra masculina: прозорецот)”.'
+  answer:
+    speaker: protagonist
+    text: многу … прозорецот … мал
+  items:
+  - mnogu
+  - prozorecot
+  - mal
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Good / all right — and “downstairs — and “slippers (for indoors)”.'
+    pt: 'Diga: “Bem / está bem / bom — e “embaixo / lá embaixo — e “chinelos (de usar em casa)”.'
+  answer:
+    speaker: protagonist
+    text: Добро … долу … влечки
+  items:
+  - dobro
+  - dolu
+  - papuci
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

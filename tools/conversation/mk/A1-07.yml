@@ -1,0 +1,574 @@
+# UNIT mk A1-07 — written by AI (Claude) for Casus; expanded from src/A1-07.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-07
+level: A1
+number: 7
+protagonist: f
+title:
+  en: Coffee at her place
+  pt: Um café na casa dela
+situation:
+  en: Mrs Stojanovska invites you down for coffee. You are in a hurry.
+  pt: A senhora Stojanovska convida você para um café. Você está com pressa.
+learn_lessons:
+- a1-pres-a
+culture: Refusing coffee seems cold
+new_items:
+- id: sednete
+  text: Седнете
+  meaning:
+    en: Sit down (formal)
+    pt: Sente-se (formal)
+- id: kafe
+  text: кафе
+  meaning:
+    en: coffee
+    pt: café
+- id: caj
+  text: чај
+  meaning:
+    en: tea
+    pt: chá
+  rare: true
+- id: sakate-li
+  text: Сакате ли…?
+  meaning:
+    en: Would you like…? (formal)
+    pt: A senhora quer…? (formal)
+- id: sakam
+  text: сакам
+  meaning:
+    en: I want / I like
+    pt: eu quero / eu gosto
+- id: ne-sakam
+  text: не сакам
+  meaning:
+    en: I don't want
+    pt: eu não quero
+- id: so
+  text: со
+  meaning:
+    en: with
+    pt: com
+- id: bez
+  text: без
+  meaning:
+    en: without
+    pt: sem
+- id: secer
+  text: шеќер
+  meaning:
+    en: sugar
+    pt: açúcar
+  rare: true
+- id: turski
+  text: турско кафе
+  meaning:
+    en: Turkish coffee
+    pt: café turco
+  rare: true
+- id: vkusno
+  text: вкусно
+  meaning:
+    en: tasty
+    pt: gostoso
+  rare: true
+- id: brzam
+  text: Брзам
+  meaning:
+    en: I'm in a hurry
+    pt: Estou com pressa
+  rare: true
+- id: samo-edno
+  text: само едно
+  meaning:
+    en: just one
+    pt: só um
+- id: vreme
+  text: време
+  meaning:
+    en: time
+    pt: tempo
+reviews:
+- item: leb
+  from: A1-04
+- item: mleko
+  from: A1-04
+- item: voda
+  from: A1-04
+- item: imate-li
+  from: A1-04
+- item: imame
+  from: A1-04
+- item: eden
+  from: A1-04
+- item: dve
+  from: A1-04
+- item: ve-molam
+  from: A1-04
+- item: uste-nesto
+  from: A1-04
+- item: toa-e-se
+  from: A1-04
+- item: kolku-cini
+  from: A1-04
+- item: denari
+  from: A1-04
+- item: sto
+  from: A1-04
+- item: kese
+  from: A1-04
+- item: prijatno
+  from: A1-04
+- item: vrne
+  from: A1-06
+- item: ladno
+  from: A1-06
+- item: toplo
+  from: A1-06
+- item: denes
+  from: A1-06
+- item: neli
+  from: A1-06
+- item: leto
+  from: A1-06
+- item: zima
+  from: A1-06
+- item: sega
+  from: A1-06
+- item: vo
+  from: A1-06
+- item: dekemvri
+  from: A1-06
+- item: nemam
+  from: A1-06
+- item: cador
+  from: A1-06
+- item: imam
+  from: A1-06
+- item: ubavo-vreme
+  from: A1-06
+- item: izvinete
+  from: A1-01
+- item: dobro
+  from: A1-02
+steps:
+- type: narrator
+  text:
+    en: Mrs Stojanovska invites you down for coffee. You are in a hurry. Listen to the conversation; you don't need to understand it yet.
+    pt: A senhora Stojanovska convida você para um café. Você está com pressa. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: vera
+    text: Повелете, влезете. Седнете!
+    meaning:
+      en: Please, come in. Sit down!
+      pt: Por favor, entre. Sente-se!
+  - speaker: protagonist
+    text: Благодарам многу, госпоѓо.
+    meaning:
+      en: Thank you very much.
+      pt: Muito obrigada, senhora.
+  - speaker: vera
+    text: Сакате ли кафе или чај?
+    meaning:
+      en: Would you like coffee or tea?
+      pt: A senhora quer café ou chá?
+  - speaker: protagonist
+    text: Извинете, брзам.
+    meaning:
+      en: Sorry, I'm in a hurry.
+      pt: Desculpe, estou com pressa.
+  - speaker: vera
+    text: Само едно кафе! Турско кафе.
+    meaning:
+      en: Just one coffee! Turkish coffee.
+      pt: Só um café! Café turco.
+  - speaker: protagonist
+    text: Добро, само едно. Без шеќер, ве молам.
+    meaning:
+      en: All right, just one. Without sugar, please.
+      pt: Está bem, só um. Sem açúcar, por favor.
+  - speaker: vera
+    text: Без шеќер? Јас сакам со шеќер.
+    meaning:
+      en: Without sugar? I like it with sugar.
+      pt: Sem açúcar? Eu gosto com açúcar.
+  - speaker: protagonist
+    text: Мммм, многу е вкусно!
+    meaning:
+      en: Mmm, it's very tasty!
+      pt: Hum, está muito gostoso!
+  - speaker: vera
+    text: Седнете, имаме време.
+    meaning:
+      en: Sit down, we have time.
+      pt: Sente-se, temos tempo.
+- type: narrator
+  text:
+    en: A visit means coffee, and coffee means time. Saying no because you are in a hurry seems cold — accept one, even a small one.
+    pt: Visita é café, e café é tempo. Recusar porque está com pressa parece frio — aceite um, nem que seja pequeno.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil o cafezinho é rápido, em pé. Aqui um café em casa dura uma ou duas horas.
+- type: prompt
+  ask:
+    en: She invites you to sit. How did she say it?
+    pt: Ela convida você a sentar. Como ela disse?
+  answer:
+    speaker: protagonist
+    text: Седнете!
+  items:
+  - sednete
+- type: prompt
+  ask:
+    en: 'Ask her, politely: would you like coffee?'
+    pt: 'Pergunte com educação: a senhora quer café?'
+  answer:
+    speaker: protagonist
+    text: Сакате ли кафе?
+  items:
+  - sakate-li
+  - kafe
+- type: prompt
+  ask:
+    en: 'Now: would you like tea?'
+    pt: 'Agora: a senhora quer chá?'
+  answer:
+    speaker: protagonist
+    text: Сакате ли чај?
+  items:
+  - sakate-li
+  - caj
+- type: prompt
+  ask:
+    en: Say you're in a hurry, sorry.
+    pt: Diga que está com pressa, desculpe.
+  answer:
+    speaker: protagonist
+    text: Извинете, брзам.
+  items:
+  - izvinete
+  - brzam
+- type: prompt
+  ask:
+    en: 'She insists: just one coffee. Accept: all right, just one.'
+    pt: 'Ela insiste: só um café. Aceite: está bem, só um.'
+  answer:
+    speaker: protagonist
+    text: Добро, само едно.
+  items:
+  - dobro
+  - samo-edno
+- type: narrator
+  text:
+    en: '''Со'' is with, ''без'' is without: ''со шеќер'', ''без шеќер''.'
+    pt: '''Со'' é com, ''без'' é sem: ''со шеќер'' (com açúcar), ''без шеќер'' (sem açúcar).'
+- type: prompt
+  ask:
+    en: Ask for it without sugar, please.
+    pt: Peça sem açúcar, por favor.
+  answer:
+    speaker: protagonist
+    text: Без шеќер, ве молам.
+  items:
+  - bez
+  - secer
+  - ve-molam
+- type: prompt
+  ask:
+    en: 'Say: I like it with sugar.'
+    pt: 'Diga: eu gosto com açúcar.'
+  answer:
+    speaker: protagonist
+    text: Сакам со шеќер.
+  items:
+  - sakam
+  - so
+  - secer
+- type: prompt
+  ask:
+    en: 'Say: I don''t want sugar.'
+    pt: 'Diga: não quero açúcar.'
+  answer:
+    speaker: protagonist
+    text: Не сакам шеќер.
+  items:
+  - ne-sakam
+  - secer
+- type: prompt
+  ask:
+    en: Taste it and say it's very tasty.
+    pt: Prove e diga que está muito gostoso.
+  answer:
+    speaker: protagonist
+    text: Многу е вкусно!
+  items:
+  - vkusno
+- type: prompt
+  ask:
+    en: Ask for a Turkish coffee.
+    pt: Peça um café turco.
+  answer:
+    speaker: protagonist
+    text: Турско кафе, ве молам.
+  items:
+  - turski
+- type: prompt
+  ask:
+    en: 'She says: sit down, we have time. Say it.'
+    pt: 'Ela diz: sente-se, temos tempo. Diga.'
+  answer:
+    speaker: protagonist
+    text: Седнете, имаме време.
+  items:
+  - sednete
+  - imame
+  - vreme
+- type: prompt
+  ask:
+    en: 'Once more: say “coffee”.'
+    pt: 'Mais uma vez: diga “café”.'
+  answer:
+    speaker: protagonist
+    text: кафе
+  items:
+  - kafe
+- type: prompt
+  ask:
+    en: 'Once more: say “tea”.'
+    pt: 'Mais uma vez: diga “chá”.'
+  answer:
+    speaker: protagonist
+    text: чај
+  items:
+  - caj
+- type: prompt
+  ask:
+    en: 'Once more: say “I want / I like”.'
+    pt: 'Mais uma vez: diga “eu quero / eu gosto”.'
+  answer:
+    speaker: protagonist
+    text: сакам
+  items:
+  - sakam
+- type: prompt
+  ask:
+    en: 'Once more: say “I don''t want”.'
+    pt: 'Mais uma vez: diga “eu não quero”.'
+  answer:
+    speaker: protagonist
+    text: не сакам
+  items:
+  - ne-sakam
+- type: prompt
+  ask:
+    en: 'Once more: say “with”.'
+    pt: 'Mais uma vez: diga “com”.'
+  answer:
+    speaker: protagonist
+    text: со
+  items:
+  - so
+- type: prompt
+  ask:
+    en: 'Once more: say “without”.'
+    pt: 'Mais uma vez: diga “sem”.'
+  answer:
+    speaker: protagonist
+    text: без
+  items:
+  - bez
+- type: prompt
+  ask:
+    en: 'Once more: say “Turkish coffee”.'
+    pt: 'Mais uma vez: diga “café turco”.'
+  answer:
+    speaker: protagonist
+    text: турско кафе
+  items:
+  - turski
+- type: prompt
+  ask:
+    en: 'Once more: say “tasty”.'
+    pt: 'Mais uma vez: diga “gostoso”.'
+  answer:
+    speaker: protagonist
+    text: вкусно
+  items:
+  - vkusno
+- type: prompt
+  ask:
+    en: 'Once more: say “I''m in a hurry”.'
+    pt: 'Mais uma vez: diga “Estou com pressa”.'
+  answer:
+    speaker: protagonist
+    text: Брзам
+  items:
+  - brzam
+- type: prompt
+  ask:
+    en: 'Once more: say “just one”.'
+    pt: 'Mais uma vez: diga “só um”.'
+  answer:
+    speaker: protagonist
+    text: само едно
+  items:
+  - samo-edno
+- type: prompt
+  ask:
+    en: 'Once more: say “time”.'
+    pt: 'Mais uma vez: diga “tempo”.'
+  answer:
+    speaker: protagonist
+    text: време
+  items:
+  - vreme
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “It''s raining — and “cold”.'
+    pt: 'Diga: “Está chovendo — e “frio”.'
+  answer:
+    speaker: protagonist
+    text: Врне … ладно
+  items:
+  - vrne
+  - ladno
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “warm — and “today”.'
+    pt: 'Diga: “quente — e “hoje”.'
+  answer:
+    speaker: protagonist
+    text: топло … денеска
+  items:
+  - toplo
+  - denes
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “isn''t it? / right? — and “summer”.'
+    pt: 'Diga: “né? — e “verão”.'
+  answer:
+    speaker: protagonist
+    text: нели? … лето
+  items:
+  - neli
+  - leto
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “winter — and “now”.'
+    pt: 'Diga: “inverno — e “agora”.'
+  answer:
+    speaker: protagonist
+    text: зима … сега
+  items:
+  - zima
+  - sega
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “in — and “December”.'
+    pt: 'Diga: “em — e “dezembro”.'
+  answer:
+    speaker: protagonist
+    text: во … декември
+  items:
+  - vo
+  - dekemvri
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I don''t have — and “umbrella”.'
+    pt: 'Diga: “eu não tenho — e “guarda-chuva”.'
+  answer:
+    speaker: protagonist
+    text: немам … чадор
+  items:
+  - nemam
+  - cador
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I have — and “nice weather”.'
+    pt: 'Diga: “eu tenho — e “tempo bom”.'
+  answer:
+    speaker: protagonist
+    text: имам … убаво време
+  items:
+  - imam
+  - ubavo-vreme
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “bread — and “milk — and “water”.'
+    pt: 'Diga: “pão — e “leite — e “água”.'
+  answer:
+    speaker: protagonist
+    text: леб … млеко … вода
+  items:
+  - leb
+  - mleko
+  - voda
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Do you have…? (formal) — and “one (with a masculine word) — and “two (with feminine and neuter words)”.'
+    pt: 'Diga: “O senhor tem…? (formal) — e “um — e “duas / dois”.'
+  answer:
+    speaker: protagonist
+    text: Имате ли…? … еден … две
+  items:
+  - imate-li
+  - eden
+  - dve
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Anything else? — and “That''s all — and “How much is it?”.'
+    pt: 'Diga: “Mais alguma coisa? — e “É só isso — e “Quanto custa?”.'
+  answer:
+    speaker: protagonist
+    text: Уште нешто? … Тоа е сè … Колку чини?
+  items:
+  - uste-nesto
+  - toa-e-se
+  - kolku-cini
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “denars (the money) — and “a hundred — and “a (plastic) bag”.'
+    pt: 'Diga: “dinares (a moeda) — e “cem — e “uma sacolinha”.'
+  answer:
+    speaker: protagonist
+    text: денари … сто … кесе
+  items:
+  - denari
+  - sto
+  - kese
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Have a nice day! / Enjoy!”.'
+    pt: 'Diga: “Bom dia! / Bom proveito!”.'
+  answer:
+    speaker: protagonist
+    text: Пријатно!
+  items:
+  - prijatno
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

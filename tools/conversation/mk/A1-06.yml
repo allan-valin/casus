@@ -1,0 +1,554 @@
+# UNIT mk A1-06 — written by AI (Claude) for Casus; expanded from src/A1-06.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-06
+level: A1
+number: 6
+protagonist: m
+title:
+  en: Weather and seasons
+  pt: O tempo e as estações
+situation:
+  en: It is raining at the bus stop. Dragan is waiting too.
+  pt: Está chovendo no ponto de ônibus. O Dragan também está esperando.
+learn_lessons:
+- a1-adjectives
+culture: The seasons are the other way round
+new_items:
+- id: vrne
+  text: Врне
+  meaning:
+    en: It's raining
+    pt: Está chovendo
+- id: ladno
+  text: ладно
+  meaning:
+    en: cold
+    pt: frio
+  rare: true
+- id: toplo
+  text: топло
+  meaning:
+    en: warm
+    pt: quente
+  rare: true
+- id: denes
+  text: денеска
+  meaning:
+    en: today
+    pt: hoje
+- id: neli
+  text: нели?
+  meaning:
+    en: isn't it? / right?
+    pt: né?
+- id: leto
+  text: лето
+  meaning:
+    en: summer
+    pt: verão
+  rare: true
+- id: zima
+  text: зима
+  meaning:
+    en: winter
+    pt: inverno
+  rare: true
+- id: sega
+  text: сега
+  meaning:
+    en: now
+    pt: agora
+- id: vo
+  text: во
+  meaning:
+    en: in
+    pt: em
+- id: dekemvri
+  text: декември
+  meaning:
+    en: December
+    pt: dezembro
+  rare: true
+- id: nemam
+  text: немам
+  meaning:
+    en: I don't have
+    pt: eu não tenho
+- id: cador
+  text: чадор
+  meaning:
+    en: umbrella
+    pt: guarda-chuva
+  rare: true
+- id: imam
+  text: имам
+  meaning:
+    en: I have
+    pt: eu tenho
+- id: ubavo-vreme
+  text: убаво време
+  meaning:
+    en: nice weather
+    pt: tempo bom
+reviews:
+- item: sto-vi-e
+  from: A1-03
+- item: me-boli
+  from: A1-03
+- item: rakata
+  from: A1-03
+- item: glavata
+  from: A1-03
+- item: nogata
+  from: A1-03
+- item: okoto
+  from: A1-03
+- item: torbata
+  from: A1-03
+- item: teska
+  from: A1-03
+- item: da-vi-pomognam
+  from: A1-03
+- item: i
+  from: A1-03
+- item: lekar
+  from: A1-03
+- item: ne-e-strasno
+  from: A1-03
+- item: odmorete-se
+  from: A1-03
+- item: dobro-sum
+  from: A1-03
+- item: sto-pisuva
+  from: A1-05
+- item: pisuva
+  from: A1-05
+- item: zatvoreno
+  from: A1-05
+- item: otvoreno
+  from: A1-05
+- item: apteka
+  from: A1-05
+- item: ruski
+  from: A1-05
+- item: makedonski
+  from: A1-05
+- item: kirilica
+  from: A1-05
+- item: citam
+  from: A1-05
+- item: bavno
+  from: A1-05
+- item: nema-problem
+  from: A1-05
+- item: poleka
+  from: A1-05
+- item: vlez
+  from: A1-05
+- item: izlez
+  from: A1-05
+- item: mnogu
+  from: A1-02
+- item: tamu
+  from: A1-02
+- item: tuka
+  from: A1-02
+steps:
+- type: narrator
+  text:
+    en: It is raining at the bus stop. Dragan is waiting too. Listen to the conversation; you don't need to understand it yet.
+    pt: Está chovendo no ponto de ônibus. O Dragan também está esperando. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: dragan
+    text: Добар ден! Врне, а?
+    meaning:
+      en: Hello! It's raining, eh?
+      pt: Bom dia! Está chovendo, hein?
+  - speaker: protagonist
+    text: Да, врне. Многу е ладно денеска.
+    meaning:
+      en: Yes, it's raining. It's very cold today.
+      pt: Sim, está chovendo. Está muito frio hoje.
+  - speaker: dragan
+    text: Во Бразил е топло, нели?
+    meaning:
+      en: In Brazil it's warm, isn't it?
+      pt: No Brasil é quente, né?
+  - speaker: protagonist
+    text: Да, таму е лето сега. Тука е зима.
+    meaning:
+      en: Yes, it's summer there now. Here it's winter.
+      pt: Sim, lá é verão agora. Aqui é inverno.
+  - speaker: dragan
+    text: Лето во декември? Убаво!
+    meaning:
+      en: Summer in December? Lovely!
+      pt: Verão em dezembro? Que bom!
+  - speaker: protagonist
+    text: Немам чадор.
+    meaning:
+      en: I don't have an umbrella.
+      pt: Não tenho guarda-chuva.
+  - speaker: dragan
+    text: Повелете, имам два.
+    meaning:
+      en: Here you are, I have two.
+      pt: Tome, eu tenho dois.
+  - speaker: protagonist
+    text: Благодарам многу! Утре е убаво време?
+    meaning:
+      en: Thank you very much! Is tomorrow nice weather?
+      pt: Muito obrigado! Amanhã faz tempo bom?
+  - speaker: dragan
+    text: Не знам. Можеби.
+    meaning:
+      en: I don't know. Maybe.
+      pt: Não sei. Talvez.
+- type: narrator
+  text:
+    en: '''Врне'' is ''it''s raining'' — one word, no ''it''.'
+    pt: '''Врне'' é ''está chovendo'' — uma palavra só.'
+- type: prompt
+  ask:
+    en: Say that it's raining.
+    pt: Diga que está chovendo.
+  answer:
+    speaker: protagonist
+    text: Врне.
+  items:
+  - vrne
+- type: narrator
+  text:
+    en: 'For weather you say ''е'' and a word in -о: ''ладно е'' (it''s cold), ''топло е'' (it''s warm).'
+    pt: 'Para o tempo diz-se ''е'' e uma palavra em -о: ''ладно е'' (está frio), ''топло е'' (está quente).'
+- type: prompt
+  ask:
+    en: 'Say: it''s very cold today.'
+    pt: 'Diga: está muito frio hoje.'
+  answer:
+    speaker: protagonist
+    text: Многу е ладно денеска.
+  items:
+  - mnogu
+  - ladno
+  - denes
+- type: prompt
+  ask:
+    en: 'Say: in Brazil it''s warm, isn''t it?'
+    pt: 'Diga: no Brasil é quente, né?'
+  answer:
+    speaker: protagonist
+    text: Во Бразил е топло, нели?
+  items:
+  - vo
+  - toplo
+  - neli
+- type: narrator
+  text:
+    en: 'South of the equator the seasons are the other way round: December is summer in Brazil, winter here.'
+    pt: 'Ao sul do equador as estações são invertidas: dezembro é verão no Brasil e inverno aqui.'
+- type: prompt
+  ask:
+    en: 'Say: it''s summer there now.'
+    pt: 'Diga: lá é verão agora.'
+  answer:
+    speaker: protagonist
+    text: Таму е лето сега.
+  items:
+  - tamu
+  - leto
+  - sega
+- type: prompt
+  ask:
+    en: 'Say: here it''s winter.'
+    pt: 'Diga: aqui é inverno.'
+  answer:
+    speaker: protagonist
+    text: Тука е зима.
+  items:
+  - tuka
+  - zima
+- type: prompt
+  ask:
+    en: 'Dragan is surprised: summer in December? Say it.'
+    pt: 'O Dragan se espanta: verão em dezembro? Diga.'
+  answer:
+    speaker: protagonist
+    text: Лето во декември?
+  items:
+  - leto
+  - vo
+  - dekemvri
+- type: prompt
+  ask:
+    en: Say that you don't have an umbrella.
+    pt: Diga que não tem guarda-chuva.
+  answer:
+    speaker: protagonist
+    text: Немам чадор.
+  items:
+  - nemam
+  - cador
+- type: prompt
+  ask:
+    en: 'Dragan has two. Say it for him: I have two.'
+    pt: 'O Dragan tem dois. Diga por ele: eu tenho dois.'
+  answer:
+    speaker: protagonist
+    text: Имам два.
+  items:
+  - imam
+- type: prompt
+  ask:
+    en: Say it's nice weather today.
+    pt: Diga que hoje faz tempo bom.
+  answer:
+    speaker: protagonist
+    text: Денеска е убаво време.
+  items:
+  - denes
+  - ubavo-vreme
+- type: prompt
+  ask:
+    en: 'Say: it''s warm now.'
+    pt: 'Diga: agora está quente.'
+  answer:
+    speaker: protagonist
+    text: Сега е топло.
+  items:
+  - sega
+  - toplo
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'Em Skopje o inverno é de verdade: neve, e a fumaça do aquecimento no ar. O verão chega a quarenta graus.'
+- type: prompt
+  ask:
+    en: 'Once more: say “It''s raining”.'
+    pt: 'Mais uma vez: diga “Está chovendo”.'
+  answer:
+    speaker: protagonist
+    text: Врне
+  items:
+  - vrne
+- type: prompt
+  ask:
+    en: 'Once more: say “cold”.'
+    pt: 'Mais uma vez: diga “frio”.'
+  answer:
+    speaker: protagonist
+    text: ладно
+  items:
+  - ladno
+- type: prompt
+  ask:
+    en: 'Once more: say “isn''t it? / right?”.'
+    pt: 'Mais uma vez: diga “né?”.'
+  answer:
+    speaker: protagonist
+    text: нели?
+  items:
+  - neli
+- type: prompt
+  ask:
+    en: 'Once more: say “winter”.'
+    pt: 'Mais uma vez: diga “inverno”.'
+  answer:
+    speaker: protagonist
+    text: зима
+  items:
+  - zima
+- type: prompt
+  ask:
+    en: 'Once more: say “December”.'
+    pt: 'Mais uma vez: diga “dezembro”.'
+  answer:
+    speaker: protagonist
+    text: декември
+  items:
+  - dekemvri
+- type: prompt
+  ask:
+    en: 'Once more: say “I don''t have”.'
+    pt: 'Mais uma vez: diga “eu não tenho”.'
+  answer:
+    speaker: protagonist
+    text: немам
+  items:
+  - nemam
+- type: prompt
+  ask:
+    en: 'Once more: say “umbrella”.'
+    pt: 'Mais uma vez: diga “guarda-chuva”.'
+  answer:
+    speaker: protagonist
+    text: чадор
+  items:
+  - cador
+- type: prompt
+  ask:
+    en: 'Once more: say “I have”.'
+    pt: 'Mais uma vez: diga “eu tenho”.'
+  answer:
+    speaker: protagonist
+    text: имам
+  items:
+  - imam
+- type: prompt
+  ask:
+    en: 'Once more: say “nice weather”.'
+    pt: 'Mais uma vez: diga “tempo bom”.'
+  answer:
+    speaker: protagonist
+    text: убаво време
+  items:
+  - ubavo-vreme
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “What does it say? — and “it says (written)”.'
+    pt: 'Diga: “O que está escrito? — e “está escrito”.'
+  answer:
+    speaker: protagonist
+    text: Што пишува? … пишува
+  items:
+  - sto-pisuva
+  - pisuva
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “closed — and “open”.'
+    pt: 'Diga: “fechado — e “aberto”.'
+  answer:
+    speaker: protagonist
+    text: затворено … отворено
+  items:
+  - zatvoreno
+  - otvoreno
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “pharmacy — and “Russian”.'
+    pt: 'Diga: “farmácia — e “russo”.'
+  answer:
+    speaker: protagonist
+    text: аптека … руски
+  items:
+  - apteka
+  - ruski
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Macedonian — and “Cyrillic”.'
+    pt: 'Diga: “macedônio — e “cirílico”.'
+  answer:
+    speaker: protagonist
+    text: македонски … кирилица
+  items:
+  - makedonski
+  - kirilica
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I read — and “slowly”.'
+    pt: 'Diga: “eu leio — e “devagar”.'
+  answer:
+    speaker: protagonist
+    text: читам … бавно
+  items:
+  - citam
+  - bavno
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “No problem — and “slowly, take it easy”.'
+    pt: 'Diga: “Sem problema — e “com calma, devagar”.'
+  answer:
+    speaker: protagonist
+    text: Нема проблем … полека
+  items:
+  - nema-problem
+  - poleka
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “entrance — and “exit”.'
+    pt: 'Diga: “entrada — e “saída”.'
+  answer:
+    speaker: protagonist
+    text: влез … излез
+  items:
+  - vlez
+  - izlez
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “What''s wrong? (formal) — and “… hurts (me) — and “the arm / the hand”.'
+    pt: 'Diga: “O que a senhora tem? (formal) — e “Me dói… — e “o braço / a mão”.'
+  answer:
+    speaker: protagonist
+    text: Што ви е? … Ме боли … раката
+  items:
+  - sto-vi-e
+  - me-boli
+  - rakata
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the head — and “the leg / the foot — and “the eye”.'
+    pt: 'Diga: “a cabeça — e “a perna / o pé — e “o olho”.'
+  answer:
+    speaker: protagonist
+    text: главата … ногата … окото
+  items:
+  - glavata
+  - nogata
+  - okoto
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the bag — and “heavy (with a feminine word) — and “Can I help you? (formal)”.'
+    pt: 'Diga: “a sacola — e “pesada (com palavra feminina) — e “Posso ajudar a senhora? (formal)”.'
+  answer:
+    speaker: protagonist
+    text: торбата … тешка … Да ви помогнам?
+  items:
+  - torbata
+  - teska
+  - da-vi-pomognam
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “and / also — and “doctor — and “It''s nothing serious”.'
+    pt: 'Diga: “e / também — e “médico — e “Não é nada grave”.'
+  answer:
+    speaker: protagonist
+    text: и … лекар … Не е страшно
+  items:
+  - i
+  - lekar
+  - ne-e-strasno
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Rest (formal) — and “I''m fine”.'
+    pt: 'Diga: “Descanse (formal) — e “Estou bem”.'
+  answer:
+    speaker: protagonist
+    text: Одморете се … Добро сум
+  items:
+  - odmorete-se
+  - dobro-sum
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

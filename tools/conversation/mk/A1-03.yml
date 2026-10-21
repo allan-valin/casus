@@ -1,0 +1,521 @@
+# UNIT mk A1-03 — written by AI (Claude) for Casus; expanded from src/A1-03.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-03
+level: A1
+number: 3
+protagonist: f
+title:
+  en: The body
+  pt: O corpo
+situation:
+  en: You meet Mrs Stojanovska on the stairs with a heavy bag. Her arm hurts.
+  pt: Você encontra a senhora Stojanovska na escada com uma sacola pesada. O braço dela dói.
+learn_lessons:
+- a1-article
+culture: Asking an older neighbour if she needs help
+new_items:
+- id: sto-vi-e
+  text: Што ви е?
+  meaning:
+    en: What's wrong? (formal)
+    pt: O que a senhora tem? (formal)
+- id: me-boli
+  text: Ме боли
+  meaning:
+    en: … hurts (me)
+    pt: Me dói…
+- id: rakata
+  text: раката
+  meaning:
+    en: the arm / the hand
+    pt: o braço / a mão
+- id: glavata
+  text: главата
+  meaning:
+    en: the head
+    pt: a cabeça
+- id: nogata
+  text: ногата
+  meaning:
+    en: the leg / the foot
+    pt: a perna / o pé
+- id: okoto
+  text: окото
+  meaning:
+    en: the eye
+    pt: o olho
+- id: torbata
+  text: торбата
+  meaning:
+    en: the bag
+    pt: a sacola
+- id: teska
+  text: тешка
+  meaning:
+    en: heavy (with a feminine word)
+    pt: pesada (com palavra feminina)
+- id: da-vi-pomognam
+  text: Да ви помогнам?
+  meaning:
+    en: Can I help you? (formal)
+    pt: Posso ajudar a senhora? (formal)
+- id: i
+  text: и
+  meaning:
+    en: and / also
+    pt: e / também
+- id: lekar
+  text: лекар
+  meaning:
+    en: doctor
+    pt: médico
+- id: ne-e-strasno
+  text: Не е страшно
+  meaning:
+    en: It's nothing serious
+    pt: Não é nada grave
+- id: odmorete-se
+  text: Одморете се
+  meaning:
+    en: Rest (formal)
+    pt: Descanse (formal)
+- id: dobro-sum
+  text: Добро сум
+  meaning:
+    en: I'm fine
+    pt: Estou bem
+reviews:
+- item: vlezete
+  from: A1-02
+- item: stanot
+  from: A1-02
+- item: ubav-e
+  from: A1-02
+- item: kade-e
+  from: A1-02
+- item: kujnata
+  from: A1-02
+- item: tuka
+  from: A1-02
+- item: tamu
+  from: A1-02
+- item: a-sto
+  from: A1-02
+- item: banjata
+  from: A1-02
+- item: sobata
+  from: A1-02
+- item: golema
+  from: A1-02
+- item: mnogu
+  from: A1-02
+- item: prozorecot
+  from: A1-02
+- item: mal
+  from: A1-02
+- item: dobro
+  from: A1-02
+- item: dolu
+  from: A1-02
+- item: papuci
+  from: A1-02
+steps:
+- type: narrator
+  text:
+    en: You meet Mrs Stojanovska on the stairs with a heavy bag. Her arm hurts. Listen to the conversation; you don't need to understand it yet.
+    pt: Você encontra a senhora Stojanovska na escada com uma sacola pesada. O braço dela dói. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Добар ден, госпоѓо Стојановска! Што ви е?
+    meaning:
+      en: Good afternoon, Mrs Stojanovska! What's wrong?
+      pt: Boa tarde, senhora Stojanovska! O que a senhora tem?
+  - speaker: vera
+    text: Ме боли раката. Торбата е многу тешка.
+    meaning:
+      en: My arm hurts. The bag is very heavy.
+      pt: Meu braço dói. A sacola é muito pesada.
+  - speaker: protagonist
+    text: Да ви помогнам?
+    meaning:
+      en: Can I help you?
+      pt: Posso ajudar?
+  - speaker: vera
+    text: Да, благодарам. И главата ме боли малку.
+    meaning:
+      en: Yes, thank you. My head hurts a little too.
+      pt: Sim, obrigada. A cabeça também dói um pouco.
+  - speaker: protagonist
+    text: Главата? Лекар?
+    meaning:
+      en: Your head? A doctor?
+      pt: A cabeça? Médico?
+  - speaker: vera
+    text: Не, не е страшно.
+    meaning:
+      en: No, it's nothing serious.
+      pt: Não, não é nada grave.
+  - speaker: protagonist
+    text: Одморете се, госпоѓо Стојановска.
+    meaning:
+      en: Rest, Mrs Stojanovska.
+      pt: Descanse, senhora Stojanovska.
+  - speaker: vera
+    text: Благодарам. Сега добро сум.
+    meaning:
+      en: Thank you. Now I'm fine.
+      pt: Obrigada. Agora estou bem.
+- type: narrator
+  text:
+    en: 'To ask an older person what is wrong, politely: ''Што ви е?'''
+    pt: 'Para perguntar a uma pessoa mais velha o que ela tem, com educação: ''Што ви е?'''
+- type: prompt
+  ask:
+    en: Ask her what's wrong.
+    pt: Pergunte o que ela tem.
+  answer:
+    speaker: protagonist
+    text: Што ви е?
+  items:
+  - sto-vi-e
+- type: narrator
+  text:
+    en: She says 'Ме боли раката' — word for word 'me hurts the arm'. The thing that hurts comes after.
+    pt: Ela diz 'Ме боли раката' — palavra por palavra 'me dói o braço', como em português. O que dói vem depois.
+- type: line
+  speaker: vera
+  item: me-boli
+- type: narrator
+  text:
+    en: '''The'' is at the end of the word: рака → раката, глава → главата, нога → ногата. Words in -о take -то: око → окото.'
+    pt: 'O artigo vem no fim da palavra: рака → раката (o braço), глава → главата, нога → ногата. Palavras em -о levam -то: око → окото.'
+- type: buildup
+  item: rakata
+  parts:
+  - -ката
+  - раката
+- type: prompt
+  ask:
+    en: Say that your arm hurts.
+    pt: Diga que o braço dói.
+  answer:
+    speaker: protagonist
+    text: Ме боли раката.
+  items:
+  - me-boli
+  - rakata
+- type: prompt
+  ask:
+    en: Say that your head hurts.
+    pt: Diga que a cabeça dói.
+  answer:
+    speaker: protagonist
+    text: Ме боли главата.
+  items:
+  - me-boli
+  - glavata
+- type: prompt
+  ask:
+    en: Now the leg.
+    pt: Agora a perna.
+  answer:
+    speaker: protagonist
+    text: Ме боли ногата.
+  items:
+  - me-boli
+  - nogata
+- type: prompt
+  ask:
+    en: And the eye.
+    pt: E o olho.
+  answer:
+    speaker: protagonist
+    text: Ме боли окото.
+  items:
+  - me-boli
+  - okoto
+- type: narrator
+  text:
+    en: '''Торбата е тешка'': the bag is heavy. ''Тешка'' ends in -а because ''торба'' is feminine.'
+    pt: '''Торбата е тешка'': a sacola é pesada. ''Тешка'' termina em -а porque ''торба'' é feminina.'
+- type: prompt
+  ask:
+    en: 'Say: the bag is heavy.'
+    pt: 'Diga: a sacola é pesada.'
+  answer:
+    speaker: protagonist
+    text: Торбата е тешка.
+  items:
+  - torbata
+  - teska
+- type: prompt
+  ask:
+    en: Offer to help her, politely.
+    pt: Ofereça ajuda, com educação.
+  answer:
+    speaker: protagonist
+    text: Да ви помогнам?
+  items:
+  - da-vi-pomognam
+- type: prompt
+  ask:
+    en: 'Say: my head hurts, and my arm too.'
+    pt: 'Diga: a cabeça dói, e o braço também.'
+  answer:
+    speaker: protagonist
+    text: Ме боли главата и раката.
+  items:
+  - me-boli
+  - glavata
+  - i
+  - rakata
+- type: prompt
+  ask:
+    en: 'Ask: a doctor?'
+    pt: 'Pergunte: médico?'
+  answer:
+    speaker: protagonist
+    text: Лекар?
+  items:
+  - lekar
+- type: prompt
+  ask:
+    en: She says it's nothing serious. How?
+    pt: Ela diz que não é nada grave. Como?
+  answer:
+    speaker: protagonist
+    text: Не е страшно.
+  items:
+  - ne-e-strasno
+- type: prompt
+  ask:
+    en: Tell her to rest.
+    pt: Diga para ela descansar.
+  answer:
+    speaker: protagonist
+    text: Одморете се.
+  items:
+  - odmorete-se
+- type: prompt
+  ask:
+    en: Someone asks how you are. Say you're fine.
+    pt: Alguém pergunta como você está. Diga que está bem.
+  answer:
+    speaker: protagonist
+    text: Добро сум.
+  items:
+  - dobro-sum
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'Repare: ''Ме боли'' funciona como ''me dói'' em português. Uma das poucas vezes em que a ordem é igual!'
+- type: prompt
+  ask:
+    en: 'Once more: say “What''s wrong? (formal)”.'
+    pt: 'Mais uma vez: diga “O que a senhora tem? (formal)”.'
+  answer:
+    speaker: protagonist
+    text: Што ви е?
+  items:
+  - sto-vi-e
+- type: prompt
+  ask:
+    en: 'Once more: say “the leg / the foot”.'
+    pt: 'Mais uma vez: diga “a perna / o pé”.'
+  answer:
+    speaker: protagonist
+    text: ногата
+  items:
+  - nogata
+- type: prompt
+  ask:
+    en: 'Once more: say “the eye”.'
+    pt: 'Mais uma vez: diga “o olho”.'
+  answer:
+    speaker: protagonist
+    text: окото
+  items:
+  - okoto
+- type: prompt
+  ask:
+    en: 'Once more: say “the bag”.'
+    pt: 'Mais uma vez: diga “a sacola”.'
+  answer:
+    speaker: protagonist
+    text: торбата
+  items:
+  - torbata
+- type: prompt
+  ask:
+    en: 'Once more: say “heavy (with a feminine word)”.'
+    pt: 'Mais uma vez: diga “pesada (com palavra feminina)”.'
+  answer:
+    speaker: protagonist
+    text: тешка
+  items:
+  - teska
+- type: prompt
+  ask:
+    en: 'Once more: say “Can I help you? (formal)”.'
+    pt: 'Mais uma vez: diga “Posso ajudar a senhora? (formal)”.'
+  answer:
+    speaker: protagonist
+    text: Да ви помогнам?
+  items:
+  - da-vi-pomognam
+- type: prompt
+  ask:
+    en: 'Once more: say “and / also”.'
+    pt: 'Mais uma vez: diga “e / também”.'
+  answer:
+    speaker: protagonist
+    text: и
+  items:
+  - i
+- type: prompt
+  ask:
+    en: 'Once more: say “doctor”.'
+    pt: 'Mais uma vez: diga “médico”.'
+  answer:
+    speaker: protagonist
+    text: лекар
+  items:
+  - lekar
+- type: prompt
+  ask:
+    en: 'Once more: say “It''s nothing serious”.'
+    pt: 'Mais uma vez: diga “Não é nada grave”.'
+  answer:
+    speaker: protagonist
+    text: Не е страшно
+  items:
+  - ne-e-strasno
+- type: prompt
+  ask:
+    en: 'Once more: say “Rest (formal)”.'
+    pt: 'Mais uma vez: diga “Descanse (formal)”.'
+  answer:
+    speaker: protagonist
+    text: Одморете се
+  items:
+  - odmorete-se
+- type: prompt
+  ask:
+    en: 'Once more: say “I''m fine”.'
+    pt: 'Mais uma vez: diga “Estou bem”.'
+  answer:
+    speaker: protagonist
+    text: Добро сум
+  items:
+  - dobro-sum
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Come in (formal) — and “the flat”.'
+    pt: 'Diga: “Entre / entrem (formal) — e “o apartamento”.'
+  answer:
+    speaker: protagonist
+    text: Влезете … станот
+  items:
+  - vlezete
+  - stanot
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “It''s nice — and “Where is…?”.'
+    pt: 'Diga: “É bonito — e “Onde fica…? / Onde está…?”.'
+  answer:
+    speaker: protagonist
+    text: Убав е … Каде е…?
+  items:
+  - ubav-e
+  - kade-e
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the kitchen — and “here”.'
+    pt: 'Diga: “a cozinha — e “aqui”.'
+  answer:
+    speaker: protagonist
+    text: кујната … тука
+  items:
+  - kujnata
+  - tuka
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “there — and “And the …? (asking about something else)”.'
+    pt: 'Diga: “ali / lá — e “E o/a …? (perguntando por outra coisa)”.'
+  answer:
+    speaker: protagonist
+    text: таму … А …?
+  items:
+  - tamu
+  - a-sto
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the bathroom — and “the room”.'
+    pt: 'Diga: “o banheiro — e “o quarto”.'
+  answer:
+    speaker: protagonist
+    text: бањата … собата
+  items:
+  - banjata
+  - sobata
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “big (with a feminine word: собата) — and “very”.'
+    pt: 'Diga: “grande (com palavra feminina: собата) — e “muito”.'
+  answer:
+    speaker: protagonist
+    text: голема … многу
+  items:
+  - golema
+  - mnogu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the window — and “small (with a masculine word: прозорецот)”.'
+    pt: 'Diga: “a janela — e “pequeno (com palavra masculina: прозорецот)”.'
+  answer:
+    speaker: protagonist
+    text: прозорецот … мал
+  items:
+  - prozorecot
+  - mal
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Good / all right — and “downstairs”.'
+    pt: 'Diga: “Bem / está bem / bom — e “embaixo / lá embaixo”.'
+  answer:
+    speaker: protagonist
+    text: Добро … долу
+  items:
+  - dobro
+  - dolu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “slippers (for indoors)”.'
+    pt: 'Diga: “chinelos (de usar em casa)”.'
+  answer:
+    speaker: protagonist
+    text: влечки
+  items:
+  - papuci
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

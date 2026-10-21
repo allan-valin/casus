@@ -57,7 +57,7 @@ async function main(code) {
   const head = (id) => bare(lemmas[id]?.headword ?? lemmas[id]?.dict_form ?? '');
   const rankOf = async (w) => {
     const ranks = [rankByHead.get(w.toLowerCase())];
-    for (const a of await lexicon.lookup(w)) {
+    for (const a of [...await lexicon.lookup(w), ...(w !== w.toLowerCase() ? await lexicon.lookup(w.toLowerCase()) : [])]) {
       if (CLOSED.has(a.pos)) return 1;                       // function words are frequent whatever list files them
       ranks.push(rankByHead.get(head(a.lemma)));
     }
