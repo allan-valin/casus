@@ -9,9 +9,19 @@
   $effect(() => voice?.onchange?.(() => { ready = voice.naturalReady(); }));
   async function download() {
     error = ''; progress = 0;
-    try { await voice.downloadNatural((p) => { progress = p; }); ready = voice.naturalReady(); onaction('downloaded'); }
+    try {
+      await voice.downloadNatural((p) => { progress = p; }, { onAttempt: (n, why) => { if (n > 1) onaction('retry', `${n}: ${why}`); } });
+      ready = voice.naturalReady(); onaction('downloaded');
+    }
     catch (e) { error = e.message; onaction('failed', e.message); }
     finally { progress = null; }
+  }
+  // a stored voice that misbehaves: clear it and fetch it again (Allan, 2026-10-21)
+  async function again() {
+    error = '';
+    try { await voice.removeNatural(); } catch { /* fetch anyway */ }
+    ready = false;
+    await download();
   }
   async function remove() {
     error = '';
@@ -26,6 +36,7 @@
       <span>{t('voice.natural.what', { name: voice.natural.name, size: voice.natural.sizeMB })}</span>
       {#if ready}
         <span class="ok">{t('voice.natural.ready')}</span>
+        <button class="again" onclick={again}>{t('voice.natural.again')}</button>
         <button class="remove" onclick={remove}>{t('voice.natural.remove')}</button>
       {:else if progress !== null}
         <progress max="1" value={progress}></progress> <span>{Math.round(progress * 100)} %</span>

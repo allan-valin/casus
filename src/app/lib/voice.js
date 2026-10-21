@@ -9,22 +9,56 @@
  */
 import { createPhonemePiper } from './phonemePiper.js';
 
-// One onnxruntime version for every natural voice (Allan, 2026-10-21: "no available backend found … .mjs"): the CDN
-// bundle of the Piper library pulled the newest onnxruntime-web but pointed it at the 1.18.0 engine files, which have
-// no .mjs — so the voice failed in Firefox and fell back to espeak. The library is loaded with onnxruntime pinned, and
-// its engine files come from the same version; src/app/lib/phonemePiper.js uses it too.
-export const ORT_VERSION = '1.27.0';
-export const ORT_DIST = `https://cdn.jsdelivr.net/npm/onnxruntime-web@${ORT_VERSION}/dist/`;
-const PIPER_URL = `https://esm.sh/@mintplex-labs/piper-tts-web@1.0.5?deps=onnxruntime-web@${ORT_VERSION}`;
+// Natural voices run on engine files served by our own site (Allan, 2026-10-21: "do it version agnostic so it does not
+// break again"). The Piper library, its phonemizer and onnxruntime-web are pinned in package.json at exact versions;
+// vite.config.js copies their engine files into <site>/engine/. Before, the library's CDN bundle pulled the newest
+// onnxruntime but loaded its engine files from the 1.18.0 folder (no .mjs there), so the voice failed in Firefox and
+// fell back to espeak. Nothing here may point at a CDN (tests/ui/voice.test.js).
+export const ENGINE = `${(typeof import.meta !== 'undefined' && import.meta.env?.BASE_URL) || '/'}engine/`;
 
-/** Piper in the browser (MIT): download(voiceId, progress), predict({ text, voiceId }) -> WAV Blob, remove(voiceId). */
-export async function loadPiperFromCdn(importer = (u) => import(/* @vite-ignore */ u)) {
-  const mod = await importer(PIPER_URL);
-  // the library's own predict() builds its session with its built-in 1.18.0 paths (its constructor starts loading
-  // before it stores the paths it is given, and ignores WASM_LOCATIONS): sessions are created here with ours
-  // It also keeps one global session and reuses it whatever paths or voice are asked next, so each voice gets its own
-  // session here, created with the global cleared first.
-  const wasmPaths = { onnxWasm: ORT_DIST, piperData: `${mod.WASM_BASE}.data`, piperWasm: `${mod.WASM_BASE}.wasm` };
+export async function loadPiperEngine(importer = () => import('@mintplex-labs/piper-tts-web'),
+  { storage = () => navigator.storage.getDirectory(), fetchImpl = (...a) => fetch(...a) } = {}) {
+  const mod = await importer();
+  // The library's download() does not wait for its save, and a failed save leaves an empty file it then reads as
+  // "stored" forever (Allan, 2026-10-21: the voice failed right after downloading). Downloads happen here instead, into
+  // the same place the library reads (the origin's private file system, folder piper/), awaited and size-checked.
+  const urlsOf = (voiceId) => { const p = mod.PATH_MAP?.[voiceId]; if (!p) throw new Error(`unknown voice ${voiceId}`); return [`${mod.HF_BASE}/${p}`, `${mod.HF_BASE}/${p}.json`]; };
+  const nameOf = (url) => url.split('/').at(-1);
+  const piperDir = async () => (await storage()).getDirectoryHandle('piper', { create: true });
+  async function sizeOf(dir, name) { try { return (await (await dir.getFileHandle(name)).getFile()).size; } catch { return -1; } }
+  async function download(voiceId, progress) {
+    const dir = await piperDir();
+    for (const url of urlsOf(voiceId)) {
+      const res = await fetchImpl(url);
+      if (!res.ok) throw new Error(`${nameOf(url)}: ${res.status}`);
+      const blob = await res.blob();
+      const want = Number(res.headers.get('Content-Length') ?? 0);
+      if (!blob.size || (want && blob.size !== want)) throw new Error(`${nameOf(url)}: incomplete download (${blob.size} of ${want} bytes)`);
+      const w = await (await dir.getFileHandle(nameOf(url), { create: true })).createWritable();
+      await w.write(blob);
+      await w.close();
+      if ((await sizeOf(dir, nameOf(url))) !== blob.size) throw new Error(`${nameOf(url)}: could not be saved in this browser`);
+      progress?.({ loaded: blob.size, total: blob.size });
+    }
+  }
+  async function stored() {
+    const dir = await piperDir();
+    const out = [];
+    for (const id of Object.keys(mod.PATH_MAP ?? {})) {
+      const sizes = await Promise.all(urlsOf(id).map((u) => sizeOf(dir, nameOf(u))));
+      if (sizes.every((n) => n > 0)) out.push(id);
+      else for (const [k, u] of urlsOf(id).entries()) if (sizes[k] === 0) try { await dir.removeEntry(nameOf(u)); } catch { /* gone */ }
+    }
+    return out;
+  }
+  async function remove(voiceId) {
+    const dir = await piperDir();
+    for (const u of urlsOf(voiceId)) try { await dir.removeEntry(nameOf(u)); } catch { /* gone */ }
+    sessions.delete(voiceId);
+  }
+  // The library's own predict() ignores the paths it is given (its constructor starts loading before storing them) and
+  // reuses one global session whatever voice is asked next: each voice gets its own session here, global cleared first.
+  const wasmPaths = { onnxWasm: ENGINE, piperData: `${ENGINE}piper_phonemize.data`, piperWasm: `${ENGINE}piper_phonemize.wasm` };
   const sessions = new Map();
   const sessionFor = (voiceId) => {
     if (!sessions.has(voiceId)) {
@@ -33,7 +67,7 @@ export async function loadPiperFromCdn(importer = (u) => import(/* @vite-ignore 
     }
     return sessions.get(voiceId);
   };
-  return { ...mod, predict: async ({ text, voiceId }) => (await sessionFor(voiceId)).predict(text) };
+  return { ...mod, download, stored, remove, predict: async ({ text, voiceId }) => (await sessionFor(voiceId)).predict(text) };
 }
 
 // what is playing now, so a sentence can be paused and resumed (Allan, 2026-10-21: "I need to be able to pause it")
@@ -109,7 +143,7 @@ export async function playPcm(audio, sampleRate) {
 export function createVoice({ bcp47, espeakVoice, natural = null, synth = globalThis.speechSynthesis ?? null, loadEspeak = loadEspeakFromCdn, play = playPcm,
   loadPiper = null, playBlob = playBlobAudio, store = defaultStore(), timeoutMs = 30000 }) {
   // a voice fed with our own sounds (Macedonian through the Bulgarian voice) runs on its own small engine
-  loadPiper ??= natural?.phonemes ? async () => createPhonemePiper({ phonemes: natural.phonemes }) : loadPiperFromCdn;
+  loadPiper ??= natural?.phonemes ? async () => createPhonemePiper({ phonemes: natural.phonemes }) : loadPiperEngine;
   // a natural voice the reader downloaded: remembered in the browser, so deciding the tier loads nothing
   const naturalKey = natural ? `casus:voice:${natural.voiceId}` : null;
   const naturalReady = () => { try { return !!naturalKey && store?.getItem(naturalKey) === 'stored'; } catch { return false; } };
@@ -118,12 +152,27 @@ export function createVoice({ bcp47, espeakVoice, natural = null, synth = global
     piperLoad ??= withTimeout(loadPiper());
     try { return await piperLoad; } catch (e) { piperLoad = null; throw e; }
   }
-  async function downloadNatural(progress = () => {}) {
+  // a download counts only when the engine finds the voice complete afterwards; otherwise it is cleared and tried again,
+  // up to three times, every attempt reported (Allan, 2026-10-21)
+  async function downloadNatural(progress = () => {}, { onAttempt = () => {}, tries = 3 } = {}) {
     const p = await piper();
-    await p.download(natural.voiceId, (x) => progress(x.total ? x.loaded / x.total : 0));
-    progress(1);
-    try { store?.setItem(naturalKey, 'stored'); } catch { /* storage refused */ }
-    for (const fn of listeners) fn();
+    let why = '';
+    for (let n = 1; n <= tries; n += 1) {
+      onAttempt(n, why);
+      try {
+        await p.download(natural.voiceId, (x) => progress(x.total ? x.loaded / x.total : 0));
+        const ok = (await p.stored?.() ?? [natural.voiceId]).includes(natural.voiceId);
+        if (ok) {
+          progress(1);
+          try { store?.setItem(naturalKey, 'stored'); } catch { /* storage refused */ }
+          for (const fn of listeners) fn();
+          return;
+        }
+        why = 'the saved voice was incomplete';
+      } catch (e) { why = e?.message ?? String(e); }
+      try { await p.remove?.(natural.voiceId); } catch { /* nothing to clear */ }
+    }
+    throw new Error(`${natural.name ?? natural.voiceId}: ${tries} attempts failed — ${why}`);
   }
   async function removeNatural() {
     const p = await piper();

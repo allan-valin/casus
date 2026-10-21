@@ -170,18 +170,80 @@ describe('a character’s own pitch (Conversation practice, Allan 2026-10-21: al
   });
 });
 
-describe('one onnxruntime version for every natural voice (Allan 2026-10-21: "no available backend found … ort-wasm-simd-threaded.mjs")', () => {
-  it('the Piper library is loaded with onnxruntime pinned, and every session is created with the engine files of the same version', async () => {
-    const { loadPiperFromCdn, ORT_VERSION } = await import('../../src/app/lib/voice.js');
-    const asked = [];
+describe('natural voices run on engine files of our own site, one pinned onnxruntime (Allan 2026-10-21)', () => {
+  it('the Piper library comes from the installed package, and each voice gets a session on our engine folder', async () => {
+    const { loadPiperEngine, ENGINE } = await import('../../src/app/lib/voice.js');
+    expect(ENGINE).toMatch(/\/engine\/$/);
+    expect(ENGINE).not.toMatch(/cdn|esm\.sh|cdnjs/);
     const made = [];
-    const mod = { WASM_BASE: 'https://x/piper_phonemize',
-      TtsSession: { _instance: { stale: true }, create: async (o) => { made.push({ ...o, cleared: mod.TtsSession._instance === null }); return { predict: async (text) => `wav:${text}` }; } } };
-    const got = await loadPiperFromCdn((u) => { asked.push(u); return Promise.resolve(mod); });
-    expect(asked[0]).toContain(`onnxruntime-web@${ORT_VERSION}`);
+    const mod = { TtsSession: { _instance: { stale: true }, create: async (o) => { made.push({ ...o, cleared: mod.TtsSession._instance === null }); return { predict: async (text) => `wav:${text}` }; } } };
+    const got = await loadPiperEngine(async () => mod);
     expect(await got.predict({ text: 'olá', voiceId: 'pt_BR-faber-medium' })).toBe('wav:olá');
     await got.predict({ text: 'de novo', voiceId: 'pt_BR-faber-medium' });
     expect(made).toHaveLength(1);                                  // one session per voice, reused
-    expect(made[0]).toMatchObject({ cleared: true, voiceId: 'pt_BR-faber-medium', wasmPaths: { onnxWasm: `https://cdn.jsdelivr.net/npm/onnxruntime-web@${ORT_VERSION}/dist/`, piperData: 'https://x/piper_phonemize.data', piperWasm: 'https://x/piper_phonemize.wasm' } });
+    expect(made[0]).toMatchObject({ cleared: true, voiceId: 'pt_BR-faber-medium',
+      wasmPaths: { onnxWasm: ENGINE, piperData: `${ENGINE}piper_phonemize.data`, piperWasm: `${ENGINE}piper_phonemize.wasm` } });
+  });
+  it('no voice code points at a CDN', async () => {
+    const fs = await import('node:fs');
+    for (const f of ['src/app/lib/voice.js', 'src/app/lib/phonemePiper.js']) {
+      const src = fs.readFileSync(f, 'utf8');
+      expect(src, f).not.toMatch(/esm\.sh|cdnjs|jsdelivr\.net\/npm\/(onnxruntime|@mintplex|@diffusionstudio)/);
+    }
+  });
+});
+
+describe('voice downloads are complete before they count (Allan 2026-10-21: the library did not wait for its save)', () => {
+  function fakeOpfs() {
+    const files = new Map();
+    const dir = {
+      getFileHandle: async (name, o = {}) => {
+        if (!files.has(name)) { if (!o.create) throw new Error('NotFound'); files.set(name, new Uint8Array(0)); }
+        return { getFile: async () => new Blob([files.get(name)]), createWritable: async () => { let buf = []; return { write: async (b) => { buf.push(new Uint8Array(await b.arrayBuffer())); }, close: async () => { files.set(name, new Uint8Array(buf.flatMap((x) => [...x]))); } }; } };
+      },
+      removeEntry: async (name) => { files.delete(name); },
+      entries: async function* () { for (const [k] of files) yield [k, { kind: 'file', getFile: async () => new Blob([files.get(k)]) }]; },
+    };
+    return { files, root: { getDirectoryHandle: async () => dir } };
+  }
+  it('download waits for the save and checks the size; stored() ignores an empty leftover', async () => {
+    const { loadPiperEngine } = await import('../../src/app/lib/voice.js');
+    const opfs = fakeOpfs();
+    const mod = { HF_BASE: 'https://huggingface.co/x', PATH_MAP: { v: 'a/v.onnx' }, TtsSession: { create: async () => ({ predict: async () => 'wav' }) } };
+    const fetchImpl = async (u) => new Response(u.endsWith('.json') ? '{"a":1}' : new Uint8Array([1, 2, 3, 4]), { headers: { 'Content-Length': u.endsWith('.json') ? '7' : '4' } });
+    const got = await loadPiperEngine(async () => mod, { storage: async () => opfs.root, fetchImpl });
+    opfs.files.set('v.onnx', new Uint8Array(0));                  // an empty leftover from an earlier failed save
+    expect(await got.stored()).toEqual([]);
+    await got.download('v');
+    expect(opfs.files.get('v.onnx').length).toBe(4);
+    expect(opfs.files.get('v.onnx.json').length).toBe(7);
+    expect(await got.stored()).toEqual(['v']);
+    await got.remove('v');
+    expect(await got.stored()).toEqual([]);
+  });
+});
+
+describe('downloadNatural checks the stored voice and tries again (Allan 2026-10-21: "a debug that checks the size and tries again")', () => {
+  it('a download that is not complete afterwards is removed and tried again, up to three times, each attempt reported', async () => {
+    const { createVoice } = await import('../../src/app/lib/voice.js');
+    let tries = 0;
+    const p = { download: async () => { tries += 1; }, stored: async () => (tries >= 2 ? ['v'] : []), remove: async () => {} };
+    const store = new Map();
+    const v = createVoice({ bcp47: 'pt', espeakVoice: 'pt', natural: { voiceId: 'v' }, loadPiper: async () => p,
+      store: { getItem: (k) => store.get(k) ?? null, setItem: (k, x) => store.set(k, x), removeItem: (k) => store.delete(k) } });
+    const attempts = [];
+    await v.downloadNatural(() => {}, { onAttempt: (n, why) => attempts.push([n, why]) });
+    expect(tries).toBe(2);
+    expect(attempts.map(([n]) => n)).toEqual([1, 2]);
+    expect(v.naturalReady()).toBe(true);
+  });
+  it('after three failed attempts it says why and is not marked stored', async () => {
+    const { createVoice } = await import('../../src/app/lib/voice.js');
+    const p = { download: async () => {}, stored: async () => [], remove: async () => {} };
+    const store = new Map();
+    const v = createVoice({ bcp47: 'pt', espeakVoice: 'pt', natural: { voiceId: 'v' }, loadPiper: async () => p,
+      store: { getItem: (k) => store.get(k) ?? null, setItem: (k, x) => store.set(k, x), removeItem: (k) => store.delete(k) } });
+    await expect(v.downloadNatural(() => {})).rejects.toThrow(/3/);
+    expect(v.naturalReady()).toBe(false);
   });
 });

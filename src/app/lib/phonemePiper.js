@@ -9,14 +9,14 @@ import { phonemeIds as mkIds } from '../../lang/mk/phonemes.js';
 
 const HF = 'https://huggingface.co/rhasspy/piper-voices/resolve/main';
 const PATHS = { 'bg_BG-dimitar-medium': 'bg/bg_BG/dimitar/medium/bg_BG-dimitar-medium.onnx' };
-import { ORT_DIST } from './voice.js';   // the same onnxruntime as the other natural voices
+import { ENGINE } from './voice.js';   // the same onnxruntime, on our own site, as the other natural voices
 const PHONEMES = { mk: mkIds };
 
-export async function loadOrtFromCdn() {
-  const ort = await import(/* @vite-ignore */ `${ORT_DIST}ort.wasm.min.mjs`);
+export async function loadOrtEngine() {
+  const ort = await import('onnxruntime-web/wasm');
   const o = ort.default ?? ort;
   if (o.env?.wasm) {
-    o.env.wasm.wasmPaths = ORT_DIST;
+    o.env.wasm.wasmPaths = ENGINE;
     if (!globalThis.crossOriginIsolated) o.env.wasm.numThreads = 1;   // threads need cross-origin isolation, which Pages lacks
   }
   return o;
@@ -33,7 +33,7 @@ function wav(pcm, rate) {
   return new Blob([buf], { type: 'audio/wav' });
 }
 
-export function createPhonemePiper({ phonemes, fetchImpl = (...a) => fetch(...a), openCache = () => caches.open('casus-voices'), loadOrt = loadOrtFromCdn } = {}) {
+export function createPhonemePiper({ phonemes, fetchImpl = (...a) => fetch(...a), openCache = () => caches.open('casus-voices'), loadOrt = loadOrtEngine } = {}) {
   const toIds = PHONEMES[phonemes];
   if (!toIds) throw new Error(`no sound rules for ${phonemes}`);
   const urls = (voiceId) => { const p = PATHS[voiceId]; if (!p) throw new Error(`unknown voice ${voiceId}`); return [`${HF}/${p}.json`, `${HF}/${p}`]; };

@@ -41,7 +41,7 @@
     fetching = 0;
     const list = missing.slice();
     try {
-      for (const [k, v] of list.entries()) await v.downloadNatural((x) => { fetching = Math.round(((k + x) / list.length) * 100); });
+      for (const [k, v] of list.entries()) await v.downloadNatural((x) => { fetching = Math.round(((k + x) / list.length) * 100); }, { onAttempt: (n, why) => { if (n > 1) say(t('talk.voices.retry', { name: v.natural.name, n, why })); } });
       say(t('talk.voices.got'), 'ok');
     } catch (e) { say(t('talk.voices.failed', { error: e?.message ?? '' }), 'err'); }
     fetching = null;
@@ -229,7 +229,7 @@
 {#snippet gearPanel()}
   {#if VoiceBox && allVoices.length}
     <details class="voice-gear"><summary>⚙ {t('talk.voices.gear')}</summary>
-      {#each allVoices as v}<VoiceBox voice={v} onaction={() => { tickVoices += 1; }} />{/each}
+      {#each allVoices as v}<VoiceBox voice={v} onaction={(kind, detail) => { tickVoices += 1; if (kind === 'retry') say(t('talk.voices.retry', { name: v.natural.name, n: detail.split(':')[0], why: detail.split(': ').slice(1).join(': ') })); else if (kind === 'failed') say(t('talk.voices.failed', { error: detail ?? '' }), 'err'); }} />{/each}
     </details>
   {/if}
 {/snippet}

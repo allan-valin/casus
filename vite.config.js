@@ -8,6 +8,34 @@ import { LANGUAGES } from './src/lang/registry.js';
 
 const DATA = resolve('data');
 
+/* The natural voices' engine files, served by our own site (Allan, 2026-10-21: no CDN that can change under us). The
+ * packages are pinned at exact versions in package.json; src/app/lib/voice.js points the voices at <base>engine/. */
+const ENGINE_FILES = {
+  'ort-wasm-simd-threaded.mjs': 'node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.mjs',
+  'ort-wasm-simd-threaded.wasm': 'node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.wasm',
+  'piper_phonemize.wasm': 'node_modules/@diffusionstudio/piper-wasm/build/piper_phonemize.wasm',
+  'piper_phonemize.data': 'node_modules/@diffusionstudio/piper-wasm/build/piper_phonemize.data',
+};
+const ENGINE_TYPES = { '.mjs': 'text/javascript', '.wasm': 'application/wasm', '.data': 'application/octet-stream' };
+function serveEngine() {
+  return {
+    name: 'casus-voice-engine',
+    configureServer(server) {
+      server.middlewares.use('/engine', (req, res, next) => {
+        const name = decodeURIComponent(req.url.split('?')[0]).replace(/^\//, '');
+        const file = ENGINE_FILES[name];
+        if (!file || !existsSync(file)) return next();
+        res.setHeader('Content-Type', ENGINE_TYPES[name.slice(name.lastIndexOf('.'))] ?? 'application/octet-stream');
+        createReadStream(file).on('error', () => next()).pipe(res);
+      });
+    },
+    closeBundle() {
+      mkdirSync(resolve('dist/engine'), { recursive: true });
+      for (const [name, file] of Object.entries(ENGINE_FILES)) copyFileSync(resolve(file), resolve('dist/engine', name));
+    },
+  };
+}
+
 /** Serves the gitignored data/ at /data in dev; copies it next to the bundle on build. */
 function serveData() {
   return {
@@ -51,7 +79,7 @@ function serveData() {
 export default defineConfig({
   // '/' in dev and for a root deployment; the Pages workflow sets CASUS_BASE=/casus/
   base: process.env.CASUS_BASE || '/',
-  plugins: [svelte(), serveData()],
+  plugins: [svelte(), serveData(), serveEngine()],
   // under vitest, resolve Svelte's browser build so components mount in jsdom
   // (component tests carry `// @vitest-environment jsdom` at the top of the file)
   // hunspell-asm's ESM build imports its wasm runtime as a namespace, not a function; its CommonJS build (with the
