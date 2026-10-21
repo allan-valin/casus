@@ -479,6 +479,7 @@ def _clean_fa(s: str) -> str:
     return clean_fa(s)
 
 
+CONFIGS["sw"] = Config("sw", [], {}, caseless=True)
 CONFIGS["fa"] = Config("fa", [], {}, caseless=True, key=_strip_fa, clean=_clean_fa)
 CONFIGS["vi"] = Config("vi", [], {}, caseless=True)
 CONFIGS["id"] = Config("id", [], {}, caseless=True)

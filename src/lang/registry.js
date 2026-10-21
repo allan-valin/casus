@@ -33,6 +33,7 @@ import { bengali } from './bn/index.js';
 import { indonesian } from './id/index.js';
 import { vietnamese } from './vi/index.js';
 import { persian } from './fa/index.js';
+import { swahili } from './sw/index.js';
 import { english } from './en/index.js';
 
 export const LANGUAGES = [
@@ -69,10 +70,11 @@ export const LANGUAGES = [
   { code: 'id', path: '/id/', name: { en: 'Indonesian', pt: 'Indonésio' } },
   { code: 'vi', path: '/vi/', name: { en: 'Vietnamese', pt: 'Vietnamita' } },
   { code: 'fa', path: '/fa/', name: { en: 'Persian', pt: 'Persa' } },
+  { code: 'sw', path: '/sw/', name: { en: 'Swahili', pt: 'Suaíli' } },
   { code: 'en', path: '/en/', name: { en: 'English', pt: 'Inglês' } },
 ];
 
-const DEFINITIONS = { la: latin, grc: greek, de: german, ja: japanese, ar: arabic, ru: russian, ko: korean, zh: chinese, mk: macedonian, fi: finnish, el: modernGreek, sa: sanskrit, cs: czech, pl: polish, is: icelandic, tr: turkish, hu: hungarian, pt: portuguese, fr: french, es: spanish, it: italian, nl: dutch, uk: ukrainian, lt: lithuanian, he: hebrew, sh: serboCroatian, ro: romanian, sv: swedish, hi: hindi, bn: bengali, id: indonesian, vi: vietnamese, fa: persian, en: english };
+const DEFINITIONS = { la: latin, grc: greek, de: german, ja: japanese, ar: arabic, ru: russian, ko: korean, zh: chinese, mk: macedonian, fi: finnish, el: modernGreek, sa: sanskrit, cs: czech, pl: polish, is: icelandic, tr: turkish, hu: hungarian, pt: portuguese, fr: french, es: spanish, it: italian, nl: dutch, uk: ukrainian, lt: lithuanian, he: hebrew, sh: serboCroatian, ro: romanian, sv: swedish, hi: hindi, bn: bengali, id: indonesian, vi: vietnamese, fa: persian, sw: swahili, en: english };
 
 // names in every interface language (src/lang/names.js), filled in where a language has none of its own
 for (const l of [...LANGUAGES, ...Object.values(DEFINITIONS)]) if (l?.name && NAMES[l.code]) l.name = { ...NAMES[l.code], ...l.name };

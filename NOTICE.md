@@ -193,6 +193,11 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
 - Sample passages: sentences written for Casus; Hafez, *Divan* (14th c.), public domain; Wikipedia, *زبان فارسی*,
   CC BY-SA 4.0.
 
+## Swahili — CC BY-SA
+
+- Dictionary: the English Wiktionary via wiktextract / kaikki.org, CC BY-SA 4.0.
+- Sample passages: sentences written for Casus; Wikipedia, *Kiswahili*, CC BY-SA 4.0.
+
 ## Learn tab
 
 - Japanese grammar lessons: **JLPT Grammar Enhanced** (github.com/maitodesu/jlpt-grammar-enhanced, commit a4254e0),
