@@ -1,0 +1,233 @@
+# UNIT mk·pt-BR A1-02 — written by AI (Claude) for Casus, 2026-10-21, after the accepted plan.
+
+id: A1-02
+level: A1
+number: 2
+protagonist: m
+title: {pt: "O apartamento"}
+situation:
+  pt: "A senhora Stojanovska mostra o apartamento: a cozinha, o banheiro, o quarto."
+learn_lessons: [a1-article, a1-demonstratives]
+culture: Shoes off at the door
+
+new_items:
+  - {id: vlezete, text: "Влезете", meaning: {pt: "Entre / entrem (formal)"}, register: formal}
+  - {id: stanot, text: "станот", meaning: {pt: "o apartamento"}}
+  - {id: ubav-e, text: "Убав е", meaning: {pt: "É bonito"}}
+  - {id: kade-e, text: "Каде е…?", meaning: {pt: "Onde fica…? / Onde está…?"}}
+  - {id: kujnata, text: "кујната", meaning: {pt: "a cozinha"}}
+  - {id: tuka, text: "тука", meaning: {pt: "aqui"}}
+  - {id: tamu, text: "таму", meaning: {pt: "ali / lá"}}
+  - {id: a-sto, text: "А …?", meaning: {pt: "E o/a …? (perguntando por outra coisa)"}}
+  - {id: banjata, text: "бањата", meaning: {pt: "o banheiro"}}
+  - {id: sobata, text: "собата", meaning: {pt: "o quarto"}}
+  - {id: golema, text: "голема", meaning: {pt: "grande (com palavra feminina: собата)"}}
+  - {id: mnogu, text: "многу", meaning: {pt: "muito"}}
+  - {id: prozorecot, text: "прозорецот", meaning: {pt: "a janela"}}
+  - {id: mal, text: "мал", meaning: {pt: "pequeno (com palavra masculina: прозорецот)"}}
+  - {id: dobro, text: "Добро", meaning: {pt: "Bem / está bem / bom"}}
+  - {id: dolu, text: "долу", meaning: {pt: "embaixo / lá embaixo"}}
+  - {id: papuci, text: "влечки", meaning: {pt: "chinelos (de usar em casa)"}}
+
+reviews:
+  - {item: dobar-den, from: A1-01}
+  - {item: izvinete, from: A1-01}
+  - {item: ne-razbiram, from: A1-01}
+  - {item: zboruvate-angliski, from: A1-01}
+  - {item: da, from: A1-01}
+  - {item: od-brazil, from: A1-01}
+  - {item: malku, from: A1-01}
+  - {item: jas-sum, from: A1-01}
+  - {item: novata-stanarka, from: A1-01}
+  - {item: povelete, from: A1-01}
+  - {item: ova-e, from: A1-01}
+  - {item: klucot, from: A1-01}
+  - {item: blagodaram, from: A1-01}
+  - {item: gospogjo, from: A1-01}
+  - {item: nema-zosto, from: A1-01}
+  - {item: dobredojdovte, from: A1-01}
+
+steps:
+  - type: narrator
+    text:
+      pt: "No dia seguinte, a senhora Stojanovska mostra o apartamento. Escute; ainda não precisa entender."
+  - type: dialogue
+    lines:
+      - {speaker: vera, text: "Повелете, влезете. Ова е станот.", meaning: {pt: "Por favor, entre. Este é o apartamento."}}
+      - {speaker: protagonist, text: "Убав е! Каде е кујната?", meaning: {pt: "É bonito! Onde fica a cozinha?"}}
+      - {speaker: vera, text: "Кујната е тука.", meaning: {pt: "A cozinha é aqui."}}
+      - {speaker: protagonist, text: "А бањата?", meaning: {pt: "E o banheiro?"}}
+      - {speaker: vera, text: "Бањата е таму. Собата е многу голема.", meaning: {pt: "O banheiro é ali. O quarto é muito grande."}}
+      - {speaker: protagonist, text: "Да, голема е. А прозорецот?", meaning: {pt: "Sim, é grande. E a janela?"}}
+      - {speaker: vera, text: "Прозорецот е мал, но убав.", meaning: {pt: "A janela é pequena, mas bonita."}}
+      - {speaker: vera, text: "Повелете, влечки.", meaning: {pt: "Aqui estão uns chinelos."}}
+      - {speaker: protagonist, text: "Добро. Благодарам многу, госпоѓо Стојановска!", meaning: {pt: "Está bem. Muito obrigado, senhora Stojanovska!"}}
+      - {speaker: vera, text: "Нема зошто. Јас сум долу.", meaning: {pt: "De nada. Eu fico lá embaixo."}}
+  - type: narrator
+    text:
+      pt: "Na Macedônia, em casa, as pessoas tiram os sapatos na porta e usam chinelos. Ela vai oferecer um par."
+  - {type: line, speaker: vera, item: vlezete}
+  - type: prompt
+    ask: {pt: "Ela diz 'entre'. Como ela disse?"}
+    answer: {speaker: protagonist, text: "Влезете."}
+    items: [vlezete]
+  - type: prompt
+    review: true
+    ask: {pt: "Cumprimente-a primeiro, com educação."}
+    answer: {speaker: protagonist, text: "Добар ден, госпоѓо Стојановска!"}
+    items: [dobar-den, gospogjo]
+  - type: prompt
+    ask: {pt: "Ela mostra o apartamento. Diga: este é o apartamento."}
+    answer: {speaker: protagonist, text: "Ова е станот."}
+    items: [ova-e, stanot]
+  - type: prompt
+    ask: {pt: "Diga que é bonito."}
+    answer: {speaker: protagonist, text: "Убав е!"}
+    items: [ubav-e]
+  - type: narrator
+    text:
+      pt: "Para perguntar onde fica algo: 'Каде е' e a coisa. 'Кујната' é 'a cozinha': o 'a' do português vem no fim, '-та'."
+  - type: buildup
+    item: kujnata
+    parts: ["-та", "-јната", "кујната"]
+  - type: prompt
+    ask: {pt: "Pergunte onde fica a cozinha."}
+    answer: {speaker: protagonist, text: "Каде е кујната?"}
+    items: [kade-e, kujnata]
+  - {type: line, speaker: vera, item: tuka}
+  - type: prompt
+    ask: {pt: "A cozinha é aqui. Diga isso."}
+    answer: {speaker: protagonist, text: "Кујната е тука."}
+    items: [kujnata, tuka]
+  - type: narrator
+    text:
+      pt: "Para perguntar 'e o …?', basta 'А' e a coisa: 'А бањата?'"
+  - type: prompt
+    ask: {pt: "Pergunte: e o banheiro?"}
+    answer: {speaker: protagonist, text: "А бањата?"}
+    items: [a-sto, banjata]
+  - {type: line, speaker: vera, item: tamu}
+  - type: prompt
+    ask: {pt: "O banheiro é ali. Diga isso."}
+    answer: {speaker: protagonist, text: "Бањата е таму."}
+    items: [banjata, tamu]
+  - type: prompt
+    ask: {pt: "Pergunte onde fica o banheiro."}
+    answer: {speaker: protagonist, text: "Каде е бањата?"}
+    items: [kade-e, banjata]
+  - type: narrator
+    text:
+      pt: "'Собата' é 'o quarto'; a palavra é feminina, então 'grande' é 'голема'. 'Многу' é 'muito'."
+  - type: prompt
+    ask: {pt: "Diga: o quarto é grande."}
+    answer: {speaker: protagonist, text: "Собата е голема."}
+    items: [sobata, golema]
+  - type: prompt
+    ask: {pt: "Agora: o quarto é muito grande."}
+    answer: {speaker: protagonist, text: "Собата е многу голема."}
+    items: [sobata, mnogu, golema]
+  - type: narrator
+    text:
+      pt: "'Прозорецот' é 'a janela'; em macedônio a palavra é masculina, e 'pequeno' é 'мал'."
+  - type: buildup
+    item: prozorecot
+    parts: ["-цот", "-зорецот", "прозорецот"]
+  - type: prompt
+    ask: {pt: "Pergunte: e a janela?"}
+    answer: {speaker: protagonist, text: "А прозорецот?"}
+    items: [a-sto, prozorecot]
+  - type: prompt
+    ask: {pt: "Diga: a janela é pequena."}
+    answer: {speaker: protagonist, text: "Прозорецот е мал."}
+    items: [prozorecot, mal]
+  - {type: line, speaker: vera, item: papuci}
+  - type: prompt
+    ask: {pt: "Ela oferece chinelos. Agradeça muito."}
+    answer: {speaker: protagonist, text: "Благодарам многу!"}
+    items: [blagodaram, mnogu]
+  - type: prompt
+    ask: {pt: "Ofereça os chinelos a um amigo que chega, com 'aqui está'."}
+    answer: {speaker: protagonist, text: "Повелете, влечки."}
+    items: [povelete, papuci]
+  - type: prompt
+    ask: {pt: "Ela pergunta se está tudo bem. Diga 'está bem'."}
+    answer: {speaker: protagonist, text: "Добро."}
+    items: [dobro]
+  - {type: line, speaker: vera, item: dolu}
+  - type: prompt
+    ask: {pt: "Ela mora lá embaixo. Diga por ela: eu fico lá embaixo."}
+    answer: {speaker: protagonist, text: "Јас сум долу."}
+    items: [jas-sum, dolu]
+  - type: narrator
+    text:
+      pt: "Agora, revisão em situação nova: um técnico da internet chega ao apartamento."
+  - type: prompt
+    review: true
+    ask: {pt: "Ele fala depressa. Peça desculpas e diga que não entende."}
+    answer: {speaker: protagonist, text: "Извинете, не разбирам."}
+    items: [izvinete, ne-razbiram]
+  - type: prompt
+    review: true
+    ask: {pt: "Pergunte se ele fala inglês."}
+    answer: {speaker: protagonist, text: "Зборувате ли англиски?"}
+    items: [zboruvate-angliski]
+  - type: prompt
+    review: true
+    ask: {pt: "Ele diz que fala um pouco. Repita: um pouco."}
+    answer: {speaker: protagonist, text: "Малку."}
+    items: [malku]
+  - type: prompt
+    review: true
+    ask: {pt: "Ele pergunta de onde você é. Responda: sim, sou do Brasil."}
+    answer: {speaker: protagonist, text: "Да, од Бразил сум."}
+    items: [da, od-brazil]
+  - type: prompt
+    review: true
+    ask: {pt: "Ele pergunta pela nova inquilina de cima, sua amiga. Diga: a nova inquilina é do Brasil."}
+    answer: {speaker: protagonist, text: "Новата станарка е од Бразил."}
+    items: [novata-stanarka, od-brazil]
+  - type: prompt
+    review: true
+    ask: {pt: "Mostre onde está a chave: aqui está a chave."}
+    answer: {speaker: protagonist, text: "Клучот е тука."}
+    items: [klucot, tuka]
+  - type: prompt
+    review: true
+    ask: {pt: "Ele agradece. Responda 'de nada'."}
+    answer: {speaker: protagonist, text: "Нема зошто."}
+    items: [nema-zosto]
+  - type: prompt
+    review: true
+    ask: {pt: "Chega outro amigo brasileiro com a família. Dê as boas-vindas e convide a entrar."}
+    answer: {speaker: protagonist, text: "Добредојдовте! Влезете."}
+    items: [dobredojdovte, vlezete]
+  - type: prompt
+    review: true
+    ask: {pt: "Mostre o apartamento a eles: este é o apartamento, a cozinha é aqui."}
+    answer: {speaker: protagonist, text: "Ова е станот. Кујната е тука."}
+    items: [ova-e, stanot, kujnata, tuka]
+  - type: prompt
+    ask: {pt: "Os amigos olham a janela. Diga: a janela é pequena, mas é bonita."}
+    answer: {speaker: protagonist, text: "Прозорецот е мал, но убав е."}
+    items: [prozorecot, mal, ubav-e]
+  - type: prompt
+    ask: {pt: "Eles perguntam pelo banheiro. Diga: o banheiro é ali."}
+    answer: {speaker: protagonist, text: "Бањата е таму."}
+    items: [banjata, tamu]
+  - type: prompt
+    ask: {pt: "Ofereça chinelos a eles."}
+    answer: {speaker: protagonist, text: "Повелете, влечки."}
+    items: [povelete, papuci]
+  - type: prompt
+    ask: {pt: "Eles perguntam onde mora a senhoria. Diga: lá embaixo."}
+    answer: {speaker: protagonist, text: "Долу."}
+    items: [dolu]
+  - type: prompt
+    ask: {pt: "Eles gostaram. Diga 'está bem, muito bem'."}
+    answer: {speaker: protagonist, text: "Добро, многу добро."}
+    items: [dobro, mnogu]
+  - type: narrator
+    text:
+      pt: "Escute a conversa com a senhoria outra vez. Agora você entende."
+  - {type: dialogue, again: true}
+  - type: selfcheck
