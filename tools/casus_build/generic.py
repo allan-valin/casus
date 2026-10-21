@@ -160,7 +160,7 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
         d = json.loads(line)
         pos = POS.get(d.get("pos", ""))
         word = (d.get("word") or "").strip()
-        if not pos or not word or " " in word:
+        if not pos or not word or (" " in word and cfg.code != "vi"):   # Vietnamese words are space-separated syllables
             continue                                  # names stay (Praha, Praze: v + locative)
         senses = d.get("senses") or []
         # an alternative form of a closed-class word is a word of its own (Czech ve for v before some consonants)
@@ -460,6 +460,7 @@ def _clean_bn(t: str) -> str:
     return _re.split(r"[\s(/,]", t.strip(), maxsplit=1)[0]
 
 
+CONFIGS["vi"] = Config("vi", [], {}, caseless=True)
 CONFIGS["id"] = Config("id", [], {}, caseless=True)
 CONFIGS["bn"] = Config("bn", ["nom", "obj", "gen", "loc"], {"nominative": "nom", "objective": "obj", "genitive": "gen", "locative": "loc"},
                        key=lambda f: __import__("unicodedata").normalize("NFC", f), clean=_clean_bn)

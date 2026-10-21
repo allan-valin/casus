@@ -82,6 +82,7 @@ MODELS = {
            ("finire", "verb", "to finish", "terminar"), ("essere", "verb", "to be", "ser, estar"), ("avere", "verb", "to have", "ter"), ("andare", "verb", "to go", "ir"), ("fare", "verb", "to do, make", "fazer")],
     "nl": [("werken", "verb", "to work", "trabalhar"), ("zijn", "verb", "to be", "ser, estar"), ("hebben", "verb", "to have", "ter"), ("gaan", "verb", "to go", "ir"),
            ("komen", "verb", "to come", "vir"), ("lopen", "verb", "to walk", "andar")],
+    "vi": [("đọc", "verb", "to read", "ler"), ("ăn", "verb", "to eat", "comer"), ("nhà", "noun", "house", "casa"), ("sách", "noun", "book", "livro")],
     "id": [("baca", "verb", "to read", "ler"), ("makan", "verb", "to eat", "comer"), ("tulis", "verb", "to write", "escrever"), ("rumah", "noun", "house", "casa"), ("anak", "noun", "child", "criança")],
     "bn": [("বই", "noun", "book", "livro"), ("ছেলে", "noun", "boy", "menino"), ("মানুষ", "noun", "person", "pessoa"), ("পড়া", "verb", "to read", "ler"), ("করা", "verb", "to do", "fazer")],
     "hi": [("लड़का", "noun", "boy", "menino"), ("लड़की", "noun", "girl", "menina"), ("किताब", "noun", "book", "livro"), ("घर", "noun", "house", "casa"),
