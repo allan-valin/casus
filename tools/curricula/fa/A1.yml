@@ -1,0 +1,132 @@
+id: A1
+topics:
+
+- title: {en: Letters and words, pt: Letras e palavras}
+  lessons:
+  - id: fa-script
+    title: پ چ ژ گ; می‌روم
+    meaning: {en: "the Persian alphabet; the non-joiner", pt: "o alfabeto persa; o não-juntor"}
+    intro:
+      en: |
+        Persian uses the Arabic alphabet, right to left, plus **پ** (p), **چ** (ch), **ژ** (zh), **گ** (g); **ی** and **ک** have their own Persian shapes. Short vowels are usually not written: **کتاب** *ketâb* (book). A half-space (the zero-width non-joiner) keeps parts of one word apart: **می‌روم** (I go), **کتاب‌ها** (books).
+      pt: |
+        O persa usa o alfabeto árabe, da direita para a esquerda, com **پ** (p), **چ** (tch), **ژ** (j), **گ** (g); **ی** e **ک** têm formas persas próprias. As vogais breves em geral não se escrevem: **کتاب** *ketâb* (livro). Um meio-espaço (o não-juntor) mantém separadas partes de uma mesma palavra: **می‌روم** (vou), **کتاب‌ها** (livros).
+    examples:
+    - ["اسم من مریم است.", "My name is Maryam.", "Meu nome é Maryam.", "اسم"]
+    match: {seq: [{re: "[پچژگ]", pos: [noun, verb, adj]}]}
+
+- title: {en: Nouns and the ezafe, pt: Nomes e a ezafe}
+  lessons:
+  - id: fa-plural
+    title: کتاب‌ها، کتابی
+    meaning: {en: "plural -hā, indefinite -i; no gender, no article", pt: "plural -hā, indefinido -i; sem gênero nem artigo"}
+    intro:
+      en: |
+        No gender and no *the*. Plural **-hā** (**کتاب‌ها** books), for people also **-ān** (**دوستان** friends); *a / some* with **-i** or **یک**: **کتابی** / **یک کتاب** (a book). After numbers the noun stays singular: **دو کتاب**.
+      pt: |
+        Sem gênero e sem *o / a*. Plural **-hā** (**کتاب‌ها** livros), para pessoas também **-ān** (**دوستان** amigos); *um / algum* com **-i** ou **یک**: **کتابی** / **یک کتاب** (um livro). Depois de números o nome fica no singular: **دو کتاب** (dois livros).
+    examples:
+    - ["بچه‌ها در پارک بازی می‌کنند.", "The children are playing in the park.", "As crianças brincam no parque.", "بچه‌ها"]
+    match: {seq: [{pos: noun, number: pl}]}
+  - id: fa-ezafe
+    title: کتابِ من، خانهٔ بزرگ
+    meaning: {en: "the ezafe: noun -e + what describes it", pt: "a ezafe: nome -e + o que o descreve"}
+    intro:
+      en: |
+        Adjectives and owners follow the noun, linked by an unwritten **-e** (*ezafe*): **کتابِ من** *ketâb-e man* (my book), **خانهٔ بزرگ** *xâne-ye bozorg* (a big house), **شهرِ تهران** (the city of Tehran). After a vowel it is **-ye**, written **ی** or **ٔ**.
+      pt: |
+        Adjetivos e possuidores vêm depois do nome, ligados por um **-e** não escrito (*ezafe*): **کتابِ من** *ketâb-e man* (meu livro), **خانهٔ بزرگ** *xâne-ye bozorg* (uma casa grande), **شهرِ تهران** (a cidade de Teerã). Depois de vogal é **-ye**, escrito **ی** ou **ٔ**.
+    examples:
+    - ["خانهٔ ما بزرگ است.", "Our house is big.", "Nossa casa é grande.", "خانهٔ"]
+    match: {seq: [{pos: noun}, {pos: [adj, pron]}], gap: 0}
+
+- title: {en: Pronouns and being, pt: Pronomes e o ser}
+  lessons:
+  - id: fa-pronouns
+    title: من، تو، او، ما، شما، آن‌ها
+    meaning: {en: "personal pronouns; شما is polite", pt: "pronomes pessoais; شما é formal"}
+    intro:
+      en: |
+        **من** (I), **تو** (you, familiar), **او** (he, she), **ما** (we), **شما** (you plural, and the polite *you*), **آن‌ها / ایشان** (they). Endings do the same on nouns: **کتابم** (my book), **کتابت**, **کتابش** (his / her book).
+      pt: |
+        **من** (eu), **تو** (tu, familiar), **او** (ele, ela), **ما** (nós), **شما** (vocês, e o tratamento formal), **آن‌ها / ایشان** (eles). As terminações fazem o mesmo nos nomes: **کتابم** (meu livro), **کتابت**, **کتابش** (o livro dele / dela).
+    examples:
+    - ["ما در تهران زندگی می‌کنیم.", "We live in Tehran.", "Moramos em Teerã.", "ما"]
+    match: {seq: [{word: [من, تو, او, ما, شما, آنها, ایشان], start: true}]}
+    pool: [من, تو, او, ما, شما, آنها]
+  - id: fa-ast
+    title: است، هستم، نیست
+    meaning: {en: "to be", pt: "ser/estar"}
+    intro:
+      en: |
+        **هستم, هستی, است (هست), هستیم, هستید, هستند**, or short endings: **خوبم** (I'm fine), **دانشجوست** (he's a student). Negative **نیستم, نیست…**. Past **بودم, بود…**.
+      pt: |
+        **هستم, هستی, است (هست), هستیم, هستید, هستند**, ou terminações curtas: **خوبم** (estou bem), **دانشجوست** (ele é estudante). Negativo **نیستم, نیست…**. Passado **بودم, بود…**.
+    examples:
+    - ["امروز هوا خوب است.", "The weather is nice today.", "Hoje o tempo está bom.", "است"]
+    match: {seq: [{word: [است, هست, هستم, هستی, هستیم, هستید, هستند, نیست, نیستم, بود, بودم]}]}
+    pool: [است, هستم, هستند, نیست, بود]
+
+- title: {en: Verbs, pt: Verbos}
+  lessons:
+  - id: fa-present
+    title: می‌روم، می‌خوانی، می‌کند
+    meaning: {en: "the present: می + stem + ending", pt: "o presente: می + radical + terminação"}
+    intro:
+      en: |
+        **می** + present stem + **-am, -i, -ad, -im, -id, -and**: **رفتن** (to go, stem **رو**) → **می‌روم** (I go), **می‌روی**, **می‌رود**, **می‌رویم**, **می‌روید**, **می‌روند**. The verb comes last: **من نان می‌خورم** (I eat bread).
+      pt: |
+        **می** + radical do presente + **-am, -i, -ad, -im, -id, -and**: **رفتن** (ir, radical **رو**) → **می‌روم** (vou), **می‌روی**, **می‌رود**, **می‌رویم**, **می‌روید**, **می‌روند**. O verbo vem no fim: **من نان می‌خورم** (eu como pão).
+    examples:
+    - ["ما با اتوبوس به شهر می‌رویم.", "We go to town by bus.", "Vamos de ônibus à cidade.", "می‌رویم"]
+    match: {seq: [{re: "^می", pos: verb}]}
+  - id: fa-past
+    title: رفتم، خواندی، دید
+    meaning: {en: "the past: past stem + ending", pt: "o passado: radical do passado + terminação"}
+    intro:
+      en: |
+        Infinitive minus **-an** = past stem: **رفتن → رفت** → **رفتم** (I went), **رفتی**, **رفت** (he went), **رفتیم**, **رفتید**, **رفتند**. Negative with **ن-**: **نرفتم** (I didn't go).
+      pt: |
+        Infinitivo menos **-an** = radical do passado: **رفتن → رفت** → **رفتم** (fui), **رفتی**, **رفت** (ele foi), **رفتیم**, **رفتید**, **رفتند**. Negativo com **ن-**: **نرفتم** (não fui).
+    examples:
+    - ["من کتاب را خواندم.", "I read the book.", "Li o livro.", "خواندم"]
+    match: {seq: [{pos: verb, tense: past}]}
+  - id: fa-ra
+    title: را
+    meaning: {en: "را: the definite direct object", pt: "را: o objeto direto definido"}
+    intro:
+      en: |
+        **را** follows a definite direct object: **کتاب را خواندم** (I read the book) — but **کتاب خواندم** (I read [a book / books]). With pronouns: **او را دیدم** (I saw him), colloquially **رو**: **کتابو خوندم**.
+      pt: |
+        **را** vem depois de um objeto direto definido: **کتاب را خواندم** (li o livro) — mas **کتاب خواندم** (li [livro / livros]). Com pronomes: **او را دیدم** (eu o vi); na fala **رو**: **کتابو خوندم**.
+    examples:
+    - ["من کتاب را خواندم.", "I read the book.", "Li o livro.", "را"]
+    match: {seq: [{word: [را, رو]}], gap: 0}
+    pool: [را]
+
+- title: {en: Questions and little words, pt: Perguntas e palavras pequenas}
+  lessons:
+  - id: fa-questions
+    title: چه، کی، کجا، چرا، چطور، آیا
+    meaning: {en: "question words; آیا", pt: "palavras interrogativas; آیا"}
+    intro:
+      en: |
+        **چه / چی** (what), **کی** (who; when), **کجا** (where), **چرا** (why), **چطور** (how), **چند** (how many). Yes/no: rising voice, or **آیا** at the start in writing: **آیا شما انگلیسی صحبت می‌کنید؟**
+      pt: |
+        **چه / چی** (o que), **کی** (quem; quando), **کجا** (onde), **چرا** (por quê), **چطور** (como), **چند** (quantos). Sim/não: entonação, ou **آیا** no começo, na escrita: **آیا شما انگلیسی صحبت می‌کنید؟** (o senhor fala inglês?)
+    examples:
+    - ["شما کجا زندگی می‌کنید؟", "Where do you live?", "Onde o senhor mora?", "کجا"]
+    match: {seq: [{word: [چه, چی, کی, کجا, چرا, چطور, چند, آیا]}]}
+    pool: [چه, کی, کجا, چرا, چطور, آیا]
+  - id: fa-prepositions
+    title: به، از، در، با، برای
+    meaning: {en: "prepositions", pt: "preposições"}
+    intro:
+      en: |
+        **به** (to), **از** (from; than), **در** (in), **با** (with), **برای** (for), **تا** (until), **بی** (without). Place words take the ezafe: **روی میز** (on the table), **زیرِ میز** (under the table), **کنارِ خانه** (next to the house).
+      pt: |
+        **به** (para), **از** (de; do que), **در** (em), **با** (com), **برای** (para), **تا** (até), **بی** (sem). Palavras de lugar levam a ezafe: **روی میز** (sobre a mesa), **زیرِ میز** (debaixo da mesa), **کنارِ خانه** (ao lado da casa).
+    examples:
+    - ["او به دوستش هدیه داد.", "He gave his friend a present.", "Ele deu um presente ao amigo.", "به"]
+    match: {seq: [{word: [به, از, در, با, برای, تا, بی]}, {pos: [noun, pron]}], gap: 0}
+    pool: [به, از, در, با, برای]

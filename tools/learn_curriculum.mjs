@@ -15,7 +15,7 @@ import path from 'node:path';
 import { matchRule, formPool, preferAttested, looksLikeName, dropMarked, dropPartners, shareStem, spellingVariants, prefixVariants, suffixVariants, unsuitable, markOf, rewrite, rowFor, consonantV, followSpelling, rolesOf } from './learn_match.mjs';
 import { gapRoman } from './learn_examples.mjs';
 
-export const TATOEBA = { mk: 'mkd', ar: 'ara', la: 'lat', grc: 'grc', de: 'deu', ru: 'rus', ko: 'kor', zh: 'cmn', fi: 'fin', el: 'ell', sa: 'san', cs: 'ces', pl: 'pol', tr: 'tur', hu: 'hun', is: 'isl', pt: 'por', en: 'eng', es: 'spa', fr: 'fra', it: 'ita', nl: 'nld', uk: 'ukr', lt: 'lit', he: 'heb', sh: 'srp', ro: 'ron', sv: 'swe', hi: 'hin', bn: 'ben', id: 'ind', vi: 'vie' };
+export const TATOEBA = { mk: 'mkd', ar: 'ara', la: 'lat', grc: 'grc', de: 'deu', ru: 'rus', ko: 'kor', zh: 'cmn', fi: 'fin', el: 'ell', sa: 'san', cs: 'ces', pl: 'pol', tr: 'tur', hu: 'hun', is: 'isl', pt: 'por', en: 'eng', es: 'spa', fr: 'fra', it: 'ita', nl: 'nld', uk: 'ukr', lt: 'lit', he: 'heb', sh: 'srp', ro: 'ron', sv: 'swe', hi: 'hin', bn: 'ben', id: 'ind', vi: 'vie', fa: 'pes' };
 const PER_LESSON = 200;
 
 /** simpler first: fewer words, and words from the top of the frequency list */

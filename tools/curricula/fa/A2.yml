@@ -1,0 +1,28 @@
+id: A2
+topics:
+
+- title: {en: More verb forms, pt: Mais formas verbais}
+  lessons:
+  - id: fa-future-subj
+    title: خواهم رفت، بروم
+    meaning: {en: "future and subjunctive", pt: "futuro e subjuntivo"}
+    intro:
+      en: |
+        Future (formal): **خواهم, خواهی, خواهد…** + past stem: **خواهم رفت** (I will go); speech uses the present. Subjunctive **ب-** + present stem: **می‌خواهم بروم** (I want to go), **باید بروم** (I must go).
+      pt: |
+        Futuro (formal): **خواهم, خواهی, خواهد…** + radical do passado: **خواهم رفت** (irei); a fala usa o presente. Subjuntivo **ب-** + radical do presente: **می‌خواهم بروم** (quero ir), **باید بروم** (tenho que ir).
+    examples:
+    - ["می‌خواهم به خانه بروم.", "I want to go home.", "Quero ir para casa.", "بروم"]
+    match: {seq: [{word: [خواهم, خواهی, خواهد, خواهیم, خواهید, خواهند, باید]}]}
+    pool: [خواهم, خواهد, باید]
+  - id: fa-compound
+    title: کار کردن، زندگی کردن
+    meaning: {en: "compound verbs with کردن, شدن, دادن", pt: "verbos compostos com کردن, شدن, دادن"}
+    intro:
+      en: |
+        Most verbs are a noun or adjective + a light verb: **کار کردن** (to work), **زندگی کردن** (to live), **صحبت کردن** (to speak), **باز کردن** (to open), **تمام شدن** (to end), **گوش دادن** (to listen). Only the light verb is conjugated: **من کار می‌کنم**.
+      pt: |
+        A maioria dos verbos é um nome ou adjetivo + um verbo leve: **کار کردن** (trabalhar), **زندگی کردن** (viver), **صحبت کردن** (falar), **باز کردن** (abrir), **تمام شدن** (terminar), **گوش دادن** (escutar). Só o verbo leve se conjuga: **من کار می‌کنم** (eu trabalho).
+    examples:
+    - ["برادرم در بانک کار می‌کند.", "My brother works at a bank.", "Meu irmão trabalha num banco.", "کار"]
+    match: {seq: [{pos: [noun, adj]}, {re: "(کن|کرد|شد|شو|داد|ده)"}], gap: 0}

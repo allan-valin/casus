@@ -1,0 +1,16 @@
+id: C1
+topics:
+
+- title: {en: Learned words, pt: Palavras eruditas}
+  lessons:
+  - id: fa-arabic
+    title: آزادی، برابری، علم
+    meaning: {en: "Persian and Arabic layers of vocabulary", pt: "camadas persa e árabe do vocabulário"}
+    intro:
+      en: |
+        Learned Persian mixes native words (**آزادی** freedom, **برابری** equality, **دانش** knowledge) with Arabic ones (**علم** science, **حقوق** law, rights, **انقلاب** revolution); abstracts in **-ی** (**آزادی**) and **-یت** (**جمعیت** population). The Academy coins Persian replacements (**رایانه** for *computer*).
+      pt: |
+        O persa culto mistura palavras nativas (**آزادی** liberdade, **برابری** igualdade, **دانش** conhecimento) com palavras árabes (**علم** ciência, **حقوق** direito, direitos, **انقلاب** revolução); abstratos em **-ی** (**آزادی**) e **-یت** (**جمعیت** população). A Academia cria substitutos persas (**رایانه** para *computador*).
+    examples:
+    - ["آزادی حق همه است.", "Freedom is everyone's right.", "A liberdade é direito de todos.", "آزادی"]
+    match: {seq: [{pos: noun, re: "(ی|یت)$"}]}
