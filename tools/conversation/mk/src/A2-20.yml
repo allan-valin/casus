@@ -1,0 +1,38 @@
+id: A2-20
+protagonist: m
+title: ["Ohrid (3)", "Ohrid (3)"]
+situation: ["The last lunch by the lake, then the bus back.", "O último almoço à beira do lago, depois o ônibus de volta."]
+learn: [a2-direct-clitics]
+culture: The protected Ohrid trout
+items:
+  - [pastrmka, "пастрмка", "trout", "truta", {rare: true}]
+  - [zastitena, "заштитена", "protected (feminine)", "protegida", {rare: true}]
+  - [ne-smeeme, "не смееме", "we're not allowed", "não podemos (é proibido)"]
+  - [ja-prodavame, "да ја продаваме", "to sell it", "vendê-la", {rare: true}]
+  - [ja-plativ, "ја платив", "I paid it", "paguei"]
+  - [ja-zede, "ја зеде", "(you) took it", "(você) pegou"]
+  - [ja-imam, "ја имам", "I have it (feminine)", "estou com ela"]
+  - [gi-imam, "ги имам", "I have them", "estou com eles"]
+  - [sliki, "слики", "photos", "fotos"]
+  - [avtobusot, "автобусот", "the bus", "o ônibus"]
+dialogue:
+  - [konobar, "Што ќе нарачате?", "What will you have?", "O que vão pedir?"]
+  - [protagonist, "Охридска пастрмка, ве молам.", "Ohrid trout, please.", "Truta de Ohrid, por favor."]
+  - [konobar, "Охридската е заштитена, не смееме да ја продаваме. Имаме друга пастрмка.", "The Ohrid one is protected, we're not allowed to sell it. We have another trout.", "A de Ohrid é protegida, não podemos vender. Temos outra truta."]
+  - [protagonist, "Добро, друга тогаш.", "All right, another one then.", "Tá bom, outra então."]
+  - [protagonist, "Сметката ја платив. Ајде, автобусот е во пет.", "I paid the bill. Come on, the bus is at five.", "Paguei a conta. Vamos, o ônibus é às cinco."]
+  - [ana, "Ја зеде ли картата?", "Did you take the ticket?", "Você pegou a passagem?"]
+  - [protagonist, "Да, ја имам. И сликите ги имам — сто слики!", "Yes, I have it. And I have the photos — a hundred photos!", "Sim, está comigo. E as fotos também — cem fotos!"]
+  - [ana, "Охрид многу ми се допадна. Следниот пат — Преспа!", "I really liked Ohrid. Next time — Prespa!", "Gostei muito de Ohrid. Da próxima vez — Prespa!"]
+teach:
+  - note: ["The Ohrid trout lives only in this lake and was overfished. Since 2004 catching and selling it has been banned, so honest restaurants serve another trout.", "A truta de Ohrid só vive neste lago e foi pescada demais. Desde 2004 é proibido pescar e vender, então restaurante honesto serve outra truta."]
+  - ask: ["Order Ohrid trout.", "Peça truta de Ohrid.", "Охридска пастрмка, ве молам.", pastrmka]
+  - ask: ["Say for the waiter: it's protected.", "Diga pelo garçom: é protegida.", "Заштитена е.", zastitena]
+  - ask: ["Say: we're not allowed to sell it.", "Diga: não podemos vender.", "Не смееме да ја продаваме.", ne-smeeme, ja-prodavame]
+  - note: ["'It' and 'them' before the verb: го (him, it — masculine), ја (her, it — feminine), ги (them). A known object gets one even when named: 'сметката ја платив' — the bill, I paid it.", "'O', 'a', 'os' antes do verbo: го (masculino), ја (feminino), ги (plural). Um objeto conhecido leva o pronome mesmo quando nomeado: 'сметката ја платив' — a conta, eu paguei."]
+  - ask: ["Say: I paid the bill.", "Diga: paguei a conta.", "Сметката ја платив.", smetkata, ja-plativ]
+  - ask: ["Say: the bus is at five.", "Diga: o ônibus é às cinco.", "Автобусот е во пет.", avtobusot, pet]
+  - ask: ["Ana asks if you took the ticket. How?", "A Ana pergunta se você pegou a passagem. Como?", "Ја зеде ли картата?", ja-zede, karta]
+  - ask: ["Say: yes, I have it.", "Diga: sim, está comigo.", "Да, ја имам.", ja-imam]
+  - ask: ["Say: I have the photos.", "Diga: as fotos estão comigo.", "Сликите ги имам.", gi-imam, sliki]
+  - ask: ["Say: a hundred photos!", "Diga: cem fotos!", "Сто слики!", sto, sliki]
