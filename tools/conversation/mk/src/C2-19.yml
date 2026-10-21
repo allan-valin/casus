@@ -1,0 +1,36 @@
+id: C2-19
+protagonist: f
+title: ["The family doctor", "Médico de família"]
+situation: ["Test results are back. Dr Petrovska explains a diagnosis in detail.", "Os resultados dos exames chegaram. A doutora Petrovska explica um diagnóstico em detalhes."]
+learn: [c2-aspect-politeness]
+culture: —
+items:
+  - [dijagnoza, "дијагноза", "diagnosis", "diagnóstico"]
+  - [tretman, "третман", "treatment", "tratamento"]
+  - [vtoro-mislenje, "второ мислење", "second opinion", "segunda opinião"]
+  - [stitnata-zlezda, "штитната жлезда", "the thyroid", "a tireoide", {rare: true}]
+  - [hronicno, "хронично", "chronic", "crônico"]
+  - [se-kontrolira, "се контролира", "can be controlled", "se controla"]
+  - [dozivotno, "доживотно", "for life", "pelo resto da vida", {rare: true}]
+  - [bi-sakala-da-pobaram, "би сакала да побарам", "I'd like to ask for", "gostaria de pedir"]
+  - [sekako-imate-pravo, "секако, имате право", "of course, you have the right", "claro, a senhora tem direito"]
+  - [ve-molam-objasnete, "ве молам, објаснете ми", "please explain to me", "por favor, me explique"]
+dialogue:
+  - [doktorka, "Резултатите покажуваат проблем со штитната жлезда.", "The results show a problem with the thyroid.", "Os resultados mostram um problema na tireoide."]
+  - [protagonist, "Ве молам, објаснете ми ја дијагнозата.", "Please explain the diagnosis to me.", "Por favor, me explique o diagnóstico."]
+  - [doktorka, "Хронично е, но се контролира со таблета секое утро.", "It's chronic, but it can be controlled with a tablet every morning.", "É crônico, mas se controla com um comprimido toda manhã."]
+  - [protagonist, "Доживотно?", "For life?", "Pelo resto da vida?"]
+  - [doktorka, "Најверојатно. Третманот е едноставен.", "Most likely. The treatment is simple.", "Provavelmente. O tratamento é simples."]
+  - [protagonist, "Би сакала да побарам и второ мислење, ако не ве навредувам.", "I'd also like to ask for a second opinion, if that doesn't offend you.", "Gostaria de pedir também uma segunda opinião, se não ofender a senhora."]
+  - [doktorka, "Секако, имате право. Ќе ви дадам упат и копија од резултатите.", "Of course, you have the right. I'll give you a referral and a copy of the results.", "Claro, a senhora tem direito. Vou dar um encaminhamento e uma cópia dos resultados."]
+  - [protagonist, "Ви благодарам за трпението.", "Thank you for your patience.", "Obrigada pela paciência."]
+teach:
+  - ask: ["Say: please explain the diagnosis to me.", "Diga: por favor, me explique o diagnóstico.", "Ве молам, објаснете ми ја дијагнозата.", ve-molam-objasnete, dijagnoza]
+  - ask: ["Say: the thyroid.", "Diga: a tireoide.", "Штитната жлезда.", stitnata-zlezda]
+  - ask: ["She says: it's chronic.", "Ela diz: é crônico.", "Хронично е.", hronicno]
+  - ask: ["She says: it can be controlled.", "Ela diz: se controla.", "Се контролира.", se-kontrolira]
+  - ask: ["Ask: for life?", "Pergunte: pelo resto da vida?", "Доживотно?", dozivotno]
+  - ask: ["Say: the treatment.", "Diga: o tratamento.", "Третманот.", tretman]
+  - ask: ["Say: I'd like to ask for a second opinion.", "Diga: gostaria de pedir uma segunda opinião.", "Би сакала да побарам второ мислење.", bi-sakala-da-pobaram, vtoro-mislenje]
+  - ask: ["She says: of course, you have the right.", "Ela diz: claro, a senhora tem direito.", "Секако, имате право.", sekako-imate-pravo]
+  - note: ["Asking for a second opinion is your right; softening it ('ако не ве навредувам') keeps the relationship with your family doctor. The completed verbs (објаснете, побарам) ask for one clear action.", "Pedir segunda opinião é direito seu; suavizar ('ако не ве навредувам') preserva a relação com o médico de família. Os verbos completos (објаснете, побарам) pedem uma ação clara."]

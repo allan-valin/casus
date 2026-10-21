@@ -1,0 +1,593 @@
+# UNIT mk C2-20 — written by AI (Claude) for Casus; expanded from src/C2-20.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-20
+level: C2
+number: 20
+protagonist: m
+title:
+  en: The house by the lake
+  pt: A casa na praia
+situation:
+  en: Three families rent a summer house at Ohrid together. Who pays what?
+  pt: Três famílias alugam juntas uma casa de verão em Ohrid. Quem paga o quê?
+learn_lessons:
+- c2-set-phrases
+culture: —
+new_items:
+- id: vikendica
+  text: викендица
+  meaning:
+    en: holiday cottage
+    pt: casa de veraneio
+  rare: true
+- id: podelba-na-trosocite
+  text: поделба на трошоците
+  meaning:
+    en: splitting the costs
+    pt: divisão das despesas
+- id: na-tri-dela
+  text: на три дела
+  meaning:
+    en: into three parts
+    pt: em três partes
+- id: po-glava
+  text: по глава
+  meaning:
+    en: per head
+    pt: por pessoa
+- id: kasata
+  text: касата
+  meaning:
+    en: the kitty, the common fund
+    pt: a caixinha
+  rare: true
+- id: sekoj-dava-po
+  text: секој дава по
+  meaning:
+    en: everyone gives (each)
+    pt: cada um dá
+- id: smetkite-cisti
+  text: чисти сметки, долга љубов
+  meaning:
+    en: clear accounts, long friendship
+    pt: amigos, amigos, negócios à parte
+- id: deca-ne-se-brojat
+  text: децата не се бројат
+  meaning:
+    en: children don't count
+    pt: criança não conta
+- id: pravedno
+  text: праведно
+  meaning:
+    en: fair(ly)
+    pt: justo
+- id: se-soglasivme
+  text: се согласивме
+  meaning:
+    en: we agreed
+    pt: concordamos
+reviews:
+- item: ti-se-dopagja
+  from: A2-13
+- item: mi-se-dopagja
+  from: A2-13
+- item: muzika
+  from: A2-13
+- item: povekje-sakam
+  from: A2-13
+- item: sviram
+  from: A2-13
+- item: gitara
+  from: A2-13
+- item: sviri
+  from: A2-13
+- item: pesna
+  from: A2-13
+- item: site-go-sakaat
+  from: A2-13
+- item: koj-e-toj
+  from: A2-13
+- item: pejac
+  from: A2-13
+- item: mlad
+  from: A2-13
+- item: ajde-na-kafe
+  from: B2-17
+- item: kafence
+  from: B2-17
+- item: muabet
+  from: B2-17
+- item: samo-pet-minuti
+  from: B2-17
+- item: casa
+  from: B2-17
+- item: casicka
+  from: B2-17
+- item: malku-vodicka
+  from: B2-17
+- item: ke-se-vratime
+  from: B2-17
+- item: pominaa
+  from: B2-17
+- item: ne-se-broi
+  from: B2-17
+- item: maticar
+  from: C1-19
+- item: izvod
+  from: C1-19
+- item: apostil
+  from: C1-19
+- item: preveden
+  from: C1-19
+- item: ovlasten-preveduvac
+  from: C1-19
+- item: ve-molam-dajte-mi-gi
+  from: C1-19
+- item: ke-vi-ja-zakazam
+  from: C1-19
+- item: datata
+  from: C1-19
+- item: svedocite
+  from: C1-19
+- item: licna-karta
+  from: C1-19
+- item: dijalektot
+  from: C2-05
+- item: izgovor
+  from: C2-05
+- item: razlicno-zboruvaat
+  from: C2-05
+- item: standardniot-jazik
+  from: C2-05
+- item: osnovata
+  from: C2-05
+- item: zapadnite-dijalekti
+  from: C2-05
+- item: istocno
+  from: C2-05
+- item: ne-te-razbrav-dobro
+  from: C2-05
+- item: povtori-poleka
+  from: C2-05
+- item: sekoj-kraj
+  from: C2-05
+- item: predavanje
+  from: C2-13
+- item: slajdovite
+  from: C2-13
+- item: prasanja-od-publikata
+  from: C2-13
+- item: dobro-prasanje
+  from: C2-13
+- item: ke-se-vratam-na-toa
+  from: C2-13
+- item: nakratko
+  from: C2-13
+- item: vo-praksa
+  from: C2-13
+- item: ne-znam-odgovor
+  from: C2-13
+- item: vi-blagodaram-na-vnimanieto
+  from: C2-13
+- item: publikata-aplauz
+  from: C2-13
+- item: navreda
+  from: C2-17
+- item: ne-mislev-taka
+  from: C2-17
+- item: se-navredila
+  from: C2-17
+- item: kaj-nas-toa-e-pofalba
+  from: C2-17
+- item: zbor-po-zbor
+  from: C2-17
+- item: ne-se-preveduva
+  from: C2-17
+- item: ve-molam-prostete
+  from: C2-17
+- item: nema-vrska
+  from: C2-17
+- item: smesno-bilo
+  from: C2-17
+- item: nauciv-lekcija
+  from: C2-17
+- item: dijagnoza
+  from: C2-19
+- item: tretman
+  from: C2-19
+- item: vtoro-mislenje
+  from: C2-19
+- item: stitnata-zlezda
+  from: C2-19
+- item: hronicno
+  from: C2-19
+- item: se-kontrolira
+  from: C2-19
+- item: dozivotno
+  from: C2-19
+- item: bi-sakala-da-pobaram
+  from: C2-19
+- item: sekako-imate-pravo
+  from: C2-19
+- item: ve-molam-objasnete
+  from: C2-19
+steps:
+- type: narrator
+  text:
+    en: Three families rent a summer house at Ohrid together. Who pays what? Listen to the conversation; you don't need to understand it yet.
+    pt: Três famílias alugam juntas uma casa de verão em Ohrid. Quem paga o quê? Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: goran
+    text: Викендицата чини илјада евра за една недела.
+    meaning:
+      en: The cottage costs a thousand euros for a week.
+      pt: A casa custa mil euros por uma semana.
+  - speaker: marko
+    text: Поделба на три дела, по семејство?
+    meaning:
+      en: Split into three parts, per family?
+      pt: Divide em três, por família?
+  - speaker: protagonist
+    text: Или по глава? Ние сме четворица, Горан е сам.
+    meaning:
+      en: Or per head? We're four, Goran is alone.
+      pt: Ou por pessoa? A gente é em quatro, o Goran está sozinho.
+  - speaker: goran
+    text: Децата не се бројат!
+    meaning:
+      en: Children don't count!
+      pt: Criança não conta!
+  - speaker: marko
+    text: За храната — каса. Секој дава по сто евра.
+    meaning:
+      en: For food — a kitty. Everyone gives a hundred euros.
+      pt: Para a comida — uma caixinha. Cada um dá cem euros.
+  - speaker: protagonist
+    text: Праведно. Чисти сметки, долга љубов.
+    meaning:
+      en: Fair. Clear accounts, long friendship.
+      pt: Justo. Amigos, amigos, negócios à parte.
+  - speaker: goran
+    text: Се согласивме! А ракијата?
+    meaning:
+      en: Agreed! And the rakija?
+      pt: Combinado! E a rakija?
+  - speaker: marko
+    text: Ракијата е од дедо — бесплатна!
+    meaning:
+      en: The rakija's from grandpa — free!
+      pt: A rakija é do vô — de graça!
+- type: prompt
+  ask:
+    en: 'Say: the cottage costs a thousand euros.'
+    pt: 'Diga: a casa custa mil euros.'
+  answer:
+    speaker: protagonist
+    text: Викендицата чини илјада евра.
+  items:
+  - vikendica
+- type: prompt
+  ask:
+    en: 'Say: splitting the costs.'
+    pt: 'Diga: divisão das despesas.'
+  answer:
+    speaker: protagonist
+    text: Поделба на трошоците.
+  items:
+  - podelba-na-trosocite
+- type: prompt
+  ask:
+    en: 'Say: into three parts.'
+    pt: 'Diga: em três partes.'
+  answer:
+    speaker: protagonist
+    text: На три дела.
+  items:
+  - na-tri-dela
+- type: prompt
+  ask:
+    en: 'Say: or per head?'
+    pt: 'Diga: ou por pessoa?'
+  answer:
+    speaker: protagonist
+    text: Или по глава?
+  items:
+  - po-glava
+- type: prompt
+  ask:
+    en: 'Goran: children don''t count!'
+    pt: 'O Goran: criança não conta!'
+  answer:
+    speaker: protagonist
+    text: Децата не се бројат!
+  items:
+  - deca-ne-se-brojat
+- type: prompt
+  ask:
+    en: 'Say: a kitty for food.'
+    pt: 'Diga: uma caixinha para a comida.'
+  answer:
+    speaker: protagonist
+    text: Каса за храната.
+  items:
+  - kasata
+- type: prompt
+  ask:
+    en: 'Say: everyone gives a hundred euros.'
+    pt: 'Diga: cada um dá cem euros.'
+  answer:
+    speaker: protagonist
+    text: Секој дава по сто евра.
+  items:
+  - sekoj-dava-po
+- type: prompt
+  ask:
+    en: 'Say: fair.'
+    pt: 'Diga: justo.'
+  answer:
+    speaker: protagonist
+    text: Праведно.
+  items:
+  - pravedno
+- type: prompt
+  ask:
+    en: 'Say: clear accounts, long friendship.'
+    pt: 'Diga: amigos, amigos, negócios à parte.'
+  answer:
+    speaker: protagonist
+    text: Чисти сметки, долга љубов.
+  items:
+  - smetkite-cisti
+- type: prompt
+  ask:
+    en: 'Say: we agreed!'
+    pt: 'Diga: combinado!'
+  answer:
+    speaker: protagonist
+    text: Се согласивме!
+  items:
+  - se-soglasivme
+- type: narrator
+  text:
+    en: '''Чисти сметки, долга љубов'' — clear accounts, long love — is the saying for splitting money between friends. ''По'' with a number means ''each'': секој дава по сто.'
+    pt: '''Чисти сметки, долга љубов'' — contas claras, amor longo — é o ditado para dividir dinheiro entre amigos. ''По'' com número quer dizer ''cada'': секој дава по сто.'
+- type: prompt
+  ask:
+    en: 'Once more: say “holiday cottage”.'
+    pt: 'Mais uma vez: diga “casa de veraneio”.'
+  answer:
+    speaker: protagonist
+    text: викендица
+  items:
+  - vikendica
+- type: prompt
+  ask:
+    en: 'Once more: say “splitting the costs”.'
+    pt: 'Mais uma vez: diga “divisão das despesas”.'
+  answer:
+    speaker: protagonist
+    text: поделба на трошоците
+  items:
+  - podelba-na-trosocite
+- type: prompt
+  ask:
+    en: 'Once more: say “into three parts”.'
+    pt: 'Mais uma vez: diga “em três partes”.'
+  answer:
+    speaker: protagonist
+    text: на три дела
+  items:
+  - na-tri-dela
+- type: prompt
+  ask:
+    en: 'Once more: say “per head”.'
+    pt: 'Mais uma vez: diga “por pessoa”.'
+  answer:
+    speaker: protagonist
+    text: по глава
+  items:
+  - po-glava
+- type: prompt
+  ask:
+    en: 'Once more: say “the kitty, the common fund”.'
+    pt: 'Mais uma vez: diga “a caixinha”.'
+  answer:
+    speaker: protagonist
+    text: касата
+  items:
+  - kasata
+- type: prompt
+  ask:
+    en: 'Once more: say “everyone gives (each)”.'
+    pt: 'Mais uma vez: diga “cada um dá”.'
+  answer:
+    speaker: protagonist
+    text: секој дава по
+  items:
+  - sekoj-dava-po
+- type: prompt
+  ask:
+    en: 'Once more: say “clear accounts, long friendship”.'
+    pt: 'Mais uma vez: diga “amigos, amigos, negócios à parte”.'
+  answer:
+    speaker: protagonist
+    text: чисти сметки, долга љубов
+  items:
+  - smetkite-cisti
+- type: prompt
+  ask:
+    en: 'Once more: say “children don''t count”.'
+    pt: 'Mais uma vez: diga “criança não conta”.'
+  answer:
+    speaker: protagonist
+    text: децата не се бројат
+  items:
+  - deca-ne-se-brojat
+- type: prompt
+  ask:
+    en: 'Once more: say “fair(ly)”.'
+    pt: 'Mais uma vez: diga “justo”.'
+  answer:
+    speaker: protagonist
+    text: праведно
+  items:
+  - pravedno
+- type: prompt
+  ask:
+    en: 'Once more: say “we agreed”.'
+    pt: 'Mais uma vez: diga “concordamos”.'
+  answer:
+    speaker: protagonist
+    text: се согласивме
+  items:
+  - se-soglasivme
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “diagnosis — and “treatment — and “second opinion — and “the thyroid — and “chronic — and “can be controlled — and “for life — and “I''d like to ask for — and “of course, you have the right
+      — and “please explain to me — and “insult, offence — and “I didn''t mean it like that”.'
+    pt: 'Diga: “diagnóstico — e “tratamento — e “segunda opinião — e “a tireoide — e “crônico — e “se controla — e “pelo resto da vida — e “gostaria de pedir — e “claro, a senhora tem direito — e “por favor,
+      me explique — e “ofensa — e “não quis dizer isso”.'
+  answer:
+    speaker: protagonist
+    text: дијагноза … третман … второ мислење … штитната жлезда … хронично … се контролира … доживотно … би сакала да побарам … секако, имате право … ве молам, објаснете ми … навреда … не мислев така
+  items:
+  - dijagnoza
+  - tretman
+  - vtoro-mislenje
+  - stitnata-zlezda
+  - hronicno
+  - se-kontrolira
+  - dozivotno
+  - bi-sakala-da-pobaram
+  - sekako-imate-pravo
+  - ve-molam-objasnete
+  - navreda
+  - ne-mislev-taka
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “got offended (reportedly) — and “back home that''s a compliment — and “word for word — and “doesn''t translate — and “please forgive me — and “never mind, no matter — and “it was funny, after
+      all — and “I learned a lesson — and “lecture, talk — and “the slides — and “questions from the audience — and “good question”.'
+    pt: 'Diga: “teria se ofendido — e “lá em casa isso é elogio — e “ao pé da letra — e “não se traduz — e “por favor, me perdoe — e “não tem problema — e “até que foi engraçado — e “aprendi a lição — e
+      “palestra — e “os slides — e “perguntas da plateia — e “boa pergunta”.'
+  answer:
+    speaker: protagonist
+    text: се навредила … кај нас тоа е пофалба … збор по збор … не се преведува … ве молам, простете … нема врска … смешно било … научив лекција … предавање … слајдовите … прашања од публиката … добро прашање
+  items:
+  - se-navredila
+  - kaj-nas-toa-e-pofalba
+  - zbor-po-zbor
+  - ne-se-preveduva
+  - ve-molam-prostete
+  - nema-vrska
+  - smesno-bilo
+  - nauciv-lekcija
+  - predavanje
+  - slajdovite
+  - prasanja-od-publikata
+  - dobro-prasanje
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I''ll come back to that — and “briefly — and “in practice — and “I don''t know, I''ll check — and “thank you for your attention — and “the applause — and “the dialect — and “pronunciation
+      — and “speak differently — and “the standard language — and “the basis — and “the western dialects”.'
+    pt: 'Diga: “volto nisso — e “resumindo — e “na prática — e “não sei, vou verificar — e “obrigada pela atenção — e “os aplausos — e “o dialeto — e “pronúncia — e “falam diferente — e “a língua padrão
+      — e “a base — e “os dialetos do oeste”.'
+  answer:
+    speaker: protagonist
+    text: ќе се вратам на тоа … накратко … во пракса … не знам, ќе проверам … ви благодарам на вниманието … аплаузот … дијалектот … изговор … различно зборуваат … стандардниот јазик … основата … западните
+      дијалекти
+  items:
+  - ke-se-vratam-na-toa
+  - nakratko
+  - vo-praksa
+  - ne-znam-odgovor
+  - vi-blagodaram-na-vnimanieto
+  - publikata-aplauz
+  - dijalektot
+  - izgovor
+  - razlicno-zboruvaat
+  - standardniot-jazik
+  - osnovata
+  - zapadnite-dijalekti
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “in the east — and “I didn''t understand you well — and “repeat slowly — and “every region — and “registrar — and “birth certificate (extract) — and “apostille — and “translated (masculine)
+      — and “sworn translator — and “give them to me (formal) — and “I''ll book it for you — and “the date”.'
+    pt: 'Diga: “no leste — e “não te entendi direito — e “repete devagar — e “cada região — e “oficial de registro civil — e “certidão de nascimento — e “apostila — e “traduzido — e “tradutor juramentado
+      — e “me entregue — e “vou marcar para vocês — e “a data”.'
+  answer:
+    speaker: protagonist
+    text: источно … не те разбрав добро … повтори полека … секој крај … матичар … извод од матична книга … апостил … преведен … овластен преведувач … дајте ми ги … ќе ви ја закажам … датата
+  items:
+  - istocno
+  - ne-te-razbrav-dobro
+  - povtori-poleka
+  - sekoj-kraj
+  - maticar
+  - izvod
+  - apostil
+  - preveden
+  - ovlasten-preveduvac
+  - ve-molam-dajte-mi-gi
+  - ke-vi-ja-zakazam
+  - datata
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the witnesses — and “ID card — and “Let''s go for coffee! — and “a little coffee — and “chat, good conversation — and “just five minutes — and “glass / cup — and “a little cup — and “a little
+      water — and “we''ll come back — and “(they) passed, went by — and “doesn''t count”.'
+    pt: 'Diga: “as testemunhas — e “carteira de identidade — e “Bora tomar um café! — e “um cafezinho — e “papo / conversa — e “só cinco minutos — e “copo / xícara — e “xicrinha — e “uma aguinha — e “a
+      gente volta — e “passaram — e “não conta”.'
+  answer:
+    speaker: protagonist
+    text: сведоците … лична карта … Ајде на кафе! … кафенце … муабет … само пет минути … чаша … чашка … малку водичка … ќе се вратиме … поминаа … не се брои
+  items:
+  - svedocite
+  - licna-karta
+  - ajde-na-kafe
+  - kafence
+  - muabet
+  - samo-pet-minuti
+  - casa
+  - casicka
+  - malku-vodicka
+  - ke-se-vratime
+  - pominaa
+  - ne-se-broi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Do you like…? (informal) — and “I like it — and “music — and “I prefer — and “I play (an instrument) — and “guitar — and “Play! (informal) — and “song — and “everyone loves him — and “Who
+      is he? — and “singer — and “young (masculine)”.'
+    pt: 'Diga: “Você gosta de…? — e “Eu gosto — e “música — e “prefiro — e “eu toco — e “violão / guitarra — e “Toca! — e “música / canção — e “todo mundo gosta dele — e “Quem é ele? — e “cantor — e “jovem”.'
+  answer:
+    speaker: protagonist
+    text: Ти се допаѓа…? … Ми се допаѓа … музика … повеќе сакам … свирам … гитара … Свири! … песна … сите го сакаат … Кој е тој? … пејач … млад
+  items:
+  - ti-se-dopagja
+  - mi-se-dopagja
+  - muzika
+  - povekje-sakam
+  - sviram
+  - gitara
+  - sviri
+  - pesna
+  - site-go-sakaat
+  - koj-e-toj
+  - pejac
+  - mlad
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

@@ -1,0 +1,588 @@
+# UNIT mk C2-18 — written by AI (Claude) for Casus; expanded from src/C2-18.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-18
+level: C2
+number: 18
+protagonist: m
+title:
+  en: The journalist
+  pt: O jornalista
+situation:
+  en: A newspaper is writing about foreigners in Skopje. The journalist interviews you.
+  pt: Um jornal está escrevendo sobre estrangeiros em Skopje. O jornalista entrevista você.
+learn_lessons:
+- c2-register
+culture: —
+new_items:
+- id: integracija
+  text: интеграција
+  meaning:
+    en: integration
+    pt: integração
+- id: zosto-ostanavte
+  text: Зошто останавте?
+  meaning:
+    en: Why did you stay?
+    pt: Por que o senhor ficou?
+- id: najgolem-predizvik
+  text: најголем предизвик
+  meaning:
+    en: the biggest challenge
+    pt: o maior desafio
+- id: birokratijata
+  text: бирократијата
+  meaning:
+    en: bureaucracy
+    pt: a burocracia
+- id: toplinata-na-lugjeto
+  text: топлината на луѓето
+  meaning:
+    en: the warmth of the people
+    pt: o calor humano
+- id: kako-domasni
+  text: како домашни
+  meaning:
+    en: like locals
+    pt: como locais
+- id: poraka-do-stranci
+  text: порака до другите странци
+  meaning:
+    en: a message to other foreigners
+    pt: um recado para outros estrangeiros
+- id: naucete-go-jazikot
+  text: научете го јазикот
+  meaning:
+    en: learn the language
+    pt: aprendam a língua
+- id: klucot-za-se
+  text: клучот за сè
+  meaning:
+    en: the key to everything
+    pt: a chave de tudo
+- id: smeam-li-da-ve-citiram
+  text: смеам ли да ве цитирам
+  meaning:
+    en: may I quote you
+    pt: posso citar o senhor
+reviews:
+- item: sto-ke-naracate
+  from: A2-11
+- item: sopska
+  from: A2-11
+- item: skara
+  from: A2-11
+- item: za-dvajca
+  from: A2-11
+- item: kelner
+  from: A2-11
+- item: smetkata
+  from: A2-11
+- item: ke-platam
+  from: A2-11
+- item: plati
+  from: A2-11
+- item: minatiot-pat
+  from: A2-11
+- item: sledniot-pat
+  from: A2-11
+- item: baksis
+  from: A2-11
+- item: ti-se-dopadna
+  from: A2-11
+- item: naslovot
+  from: B2-15
+- item: se-spodeluva
+  from: B2-15
+- item: lazna-vest
+  from: B2-15
+- item: izvor
+  from: B2-15
+- item: kade-pisuva
+  from: B2-15
+- item: sajt
+  from: B2-15
+- item: nepoznat
+  from: B2-15
+- item: proveri
+  from: B2-15
+- item: vistina
+  from: B2-15
+- item: se-pretera
+  from: B2-15
+- item: od-edna-strana
+  from: C1-17
+- item: od-druga-strana
+  from: C1-17
+- item: smetam-deka
+  from: C1-17
+- item: sepak-mislam
+  from: C1-17
+- item: zabrana
+  from: C1-17
+- item: trgovcite
+  from: C1-17
+- item: ke-izgubat
+  from: C1-17
+- item: kompromis
+  from: C1-17
+- item: zaklucuvam
+  from: C1-17
+- item: argumentot-vi
+  from: C1-17
+- item: gledacite
+  from: C2-03
+- item: izjava
+  from: C2-03
+- item: vo-zivo
+  from: C2-03
+- item: bi-sakala-da-istaknam
+  from: C2-03
+- item: zaednicata
+  from: C2-03
+- item: uspehot
+  from: C2-03
+- item: ne-e-slucaen
+  from: C2-03
+- item: poraka-do-mladite
+  from: C2-03
+- item: ne-se-otkazuvajte
+  from: C2-03
+- item: blagodaram-na-pokanata
+  from: C2-03
+- item: tuzba
+  from: C2-11
+- item: advokat
+  from: C2-11
+- item: sudot
+  from: C2-11
+- item: sudijata
+  from: C2-11
+- item: ke-svedocite
+  from: C2-11
+- item: samo-fakti
+  from: C2-11
+- item: bez-emocii
+  from: C2-11
+- item: dokazite
+  from: C2-11
+- item: vo-moja-korist
+  from: C2-11
+- item: presudata
+  from: C2-11
+- item: tolkuvanje
+  from: C2-15
+- item: glediste
+  from: C2-15
+- item: istoricarite
+  from: C2-15
+- item: ne-se-soglasuvaat
+  from: C2-15
+- item: izvorite
+  from: C2-15
+- item: od-dve-strani
+  from: C2-15
+- item: cuvstvitelno
+  from: C2-15
+- item: so-pocit-kon
+  from: C2-15
+- item: ne-sum-istoricarka
+  from: C2-15
+- item: slusam-i-ucam
+  from: C2-15
+- item: navreda
+  from: C2-17
+- item: ne-mislev-taka
+  from: C2-17
+- item: se-navredila
+  from: C2-17
+- item: kaj-nas-toa-e-pofalba
+  from: C2-17
+- item: zbor-po-zbor
+  from: C2-17
+- item: ne-se-preveduva
+  from: C2-17
+- item: ve-molam-prostete
+  from: C2-17
+- item: nema-vrska
+  from: C2-17
+- item: smesno-bilo
+  from: C2-17
+- item: nauciv-lekcija
+  from: C2-17
+steps:
+- type: narrator
+  text:
+    en: A newspaper is writing about foreigners in Skopje. The journalist interviews you. Listen to the conversation; you don't need to understand it yet.
+    pt: Um jornal está escrevendo sobre estrangeiros em Skopje. O jornalista entrevista você. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: novinar
+    text: Зошто останавте во Скопје?
+    meaning:
+      en: Why did you stay in Skopje?
+      pt: Por que o senhor ficou em Skopje?
+  - speaker: protagonist
+    text: Поради топлината на луѓето. Ме прифатија како домашен.
+    meaning:
+      en: Because of the warmth of the people. They accepted me like a local.
+      pt: Pelo calor humano. Me acolheram como se eu fosse daqui.
+  - speaker: novinar
+    text: Најголемиот предизвик?
+    meaning:
+      en: The biggest challenge?
+      pt: O maior desafio?
+  - speaker: protagonist
+    text: Бирократијата — и падежите што ги немате, ама ги имате во заменките!
+    meaning:
+      en: Bureaucracy — and the cases you don't have, but do have in the pronouns!
+      pt: A burocracia — e os casos que vocês não têm, mas têm nos pronomes!
+  - speaker: novinar
+    text: А интеграцијата?
+    meaning:
+      en: And integration?
+      pt: E a integração?
+  - speaker: protagonist
+    text: Интеграцијата почнува со јазикот. Тој е клучот за сè.
+    meaning:
+      en: Integration starts with the language. It's the key to everything.
+      pt: A integração começa pela língua. Ela é a chave de tudo.
+  - speaker: novinar
+    text: Порака до другите странци?
+    meaning:
+      en: A message to other foreigners?
+      pt: Um recado para outros estrangeiros?
+  - speaker: protagonist
+    text: Научете го јазикот, и пијте кафе со соседите.
+    meaning:
+      en: Learn the language, and drink coffee with your neighbours.
+      pt: Aprendam a língua, e tomem café com os vizinhos.
+  - speaker: novinar
+    text: Смеам ли да ве цитирам?
+    meaning:
+      en: May I quote you?
+      pt: Posso citar o senhor?
+- type: prompt
+  ask:
+    en: 'He asks: why did you stay?'
+    pt: 'Ele pergunta: por que o senhor ficou?'
+  answer:
+    speaker: protagonist
+    text: Зошто останавте?
+  items:
+  - zosto-ostanavte
+- type: prompt
+  ask:
+    en: 'Say: because of the warmth of the people.'
+    pt: 'Diga: pelo calor humano.'
+  answer:
+    speaker: protagonist
+    text: Поради топлината на луѓето.
+  items:
+  - toplinata-na-lugjeto
+- type: prompt
+  ask:
+    en: 'Say: they accepted me like a local.'
+    pt: 'Diga: me acolheram como um local.'
+  answer:
+    speaker: protagonist
+    text: Ме прифатија како домашен.
+  items:
+  - kako-domasni
+- type: prompt
+  ask:
+    en: 'Say: the biggest challenge — bureaucracy.'
+    pt: 'Diga: o maior desafio — a burocracia.'
+  answer:
+    speaker: protagonist
+    text: Најголемиот предизвик — бирократијата.
+  items:
+  - najgolem-predizvik
+  - birokratijata
+- type: prompt
+  ask:
+    en: 'Say: integration starts with the language.'
+    pt: 'Diga: a integração começa pela língua.'
+  answer:
+    speaker: protagonist
+    text: Интеграцијата почнува со јазикот.
+  items:
+  - integracija
+- type: prompt
+  ask:
+    en: 'Say: it''s the key to everything.'
+    pt: 'Diga: é a chave de tudo.'
+  answer:
+    speaker: protagonist
+    text: Тој е клучот за сè.
+  items:
+  - klucot-za-se
+- type: prompt
+  ask:
+    en: 'Say: a message to other foreigners.'
+    pt: 'Diga: um recado para outros estrangeiros.'
+  answer:
+    speaker: protagonist
+    text: Порака до другите странци.
+  items:
+  - poraka-do-stranci
+- type: prompt
+  ask:
+    en: 'Say: learn the language!'
+    pt: 'Diga: aprendam a língua!'
+  answer:
+    speaker: protagonist
+    text: Научете го јазикот!
+  items:
+  - naucete-go-jazikot
+- type: prompt
+  ask:
+    en: 'He asks: may I quote you?'
+    pt: 'Ele pergunta: posso citar o senhor?'
+  answer:
+    speaker: protagonist
+    text: Смеам ли да ве цитирам?
+  items:
+  - smeam-li-da-ve-citiram
+- type: narrator
+  text:
+    en: 'For print you speak in quotable lines: short, concrete, warm. Macedonian lost its noun cases but kept them in pronouns (него, му, го) — a fair complaint for the newspaper.'
+    pt: 'Para o jornal, fale em frases citáveis: curtas, concretas, calorosas. O macedônio perdeu os casos nos substantivos mas manteve nos pronomes (него, му, го) — reclamação justa para o jornal.'
+- type: prompt
+  ask:
+    en: 'Once more: say “integration”.'
+    pt: 'Mais uma vez: diga “integração”.'
+  answer:
+    speaker: protagonist
+    text: интеграција
+  items:
+  - integracija
+- type: prompt
+  ask:
+    en: 'Once more: say “Why did you stay?”.'
+    pt: 'Mais uma vez: diga “Por que o senhor ficou?”.'
+  answer:
+    speaker: protagonist
+    text: Зошто останавте?
+  items:
+  - zosto-ostanavte
+- type: prompt
+  ask:
+    en: 'Once more: say “the biggest challenge”.'
+    pt: 'Mais uma vez: diga “o maior desafio”.'
+  answer:
+    speaker: protagonist
+    text: најголем предизвик
+  items:
+  - najgolem-predizvik
+- type: prompt
+  ask:
+    en: 'Once more: say “bureaucracy”.'
+    pt: 'Mais uma vez: diga “a burocracia”.'
+  answer:
+    speaker: protagonist
+    text: бирократијата
+  items:
+  - birokratijata
+- type: prompt
+  ask:
+    en: 'Once more: say “the warmth of the people”.'
+    pt: 'Mais uma vez: diga “o calor humano”.'
+  answer:
+    speaker: protagonist
+    text: топлината на луѓето
+  items:
+  - toplinata-na-lugjeto
+- type: prompt
+  ask:
+    en: 'Once more: say “like locals”.'
+    pt: 'Mais uma vez: diga “como locais”.'
+  answer:
+    speaker: protagonist
+    text: како домашни
+  items:
+  - kako-domasni
+- type: prompt
+  ask:
+    en: 'Once more: say “a message to other foreigners”.'
+    pt: 'Mais uma vez: diga “um recado para outros estrangeiros”.'
+  answer:
+    speaker: protagonist
+    text: порака до другите странци
+  items:
+  - poraka-do-stranci
+- type: prompt
+  ask:
+    en: 'Once more: say “learn the language”.'
+    pt: 'Mais uma vez: diga “aprendam a língua”.'
+  answer:
+    speaker: protagonist
+    text: научете го јазикот
+  items:
+  - naucete-go-jazikot
+- type: prompt
+  ask:
+    en: 'Once more: say “the key to everything”.'
+    pt: 'Mais uma vez: diga “a chave de tudo”.'
+  answer:
+    speaker: protagonist
+    text: клучот за сè
+  items:
+  - klucot-za-se
+- type: prompt
+  ask:
+    en: 'Once more: say “may I quote you”.'
+    pt: 'Mais uma vez: diga “posso citar o senhor”.'
+  answer:
+    speaker: protagonist
+    text: смеам ли да ве цитирам
+  items:
+  - smeam-li-da-ve-citiram
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “insult, offence — and “I didn''t mean it like that — and “got offended (reportedly) — and “back home that''s a compliment — and “word for word — and “doesn''t translate — and “please forgive
+      me — and “never mind, no matter — and “it was funny, after all — and “I learned a lesson — and “interpretation — and “point of view”.'
+    pt: 'Diga: “ofensa — e “não quis dizer isso — e “teria se ofendido — e “lá em casa isso é elogio — e “ao pé da letra — e “não se traduz — e “por favor, me perdoe — e “não tem problema — e “até que foi
+      engraçado — e “aprendi a lição — e “interpretação — e “ponto de vista”.'
+  answer:
+    speaker: protagonist
+    text: навреда … не мислев така … се навредила … кај нас тоа е пофалба … збор по збор … не се преведува … ве молам, простете … нема врска … смешно било … научив лекција … толкување … гледиште
+  items:
+  - navreda
+  - ne-mislev-taka
+  - se-navredila
+  - kaj-nas-toa-e-pofalba
+  - zbor-po-zbor
+  - ne-se-preveduva
+  - ve-molam-prostete
+  - nema-vrska
+  - smesno-bilo
+  - nauciv-lekcija
+  - tolkuvanje
+  - glediste
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “historians — and “don''t agree — and “the sources — and “from both sides — and “sensitive — and “with respect for — and “I''m not a historian (a woman) — and “I listen and learn — and “lawsuit
+      — and “lawyer — and “the court — and “the judge”.'
+    pt: 'Diga: “os historiadores — e “não concordam — e “as fontes — e “dos dois lados — e “delicado — e “com respeito a — e “não sou historiadora — e “ouço e aprendo — e “ação judicial — e “advogado —
+      e “o tribunal — e “o juiz”.'
+  answer:
+    speaker: protagonist
+    text: историчарите … не се согласуваат … изворите … од двете страни … чувствително … со почит кон … не сум историчарка … слушам и учам … тужба … адвокат … судот … судијата
+  items:
+  - istoricarite
+  - ne-se-soglasuvaat
+  - izvorite
+  - od-dve-strani
+  - cuvstvitelno
+  - so-pocit-kon
+  - ne-sum-istoricarka
+  - slusam-i-ucam
+  - tuzba
+  - advokat
+  - sudot
+  - sudijata
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “you will testify — and “only facts — and “without emotion — and “the evidence — and “in my favour — and “the verdict — and “the viewers — and “statement — and “live — and “I''d like to emphasise
+      — and “the community — and “the success”.'
+    pt: 'Diga: “a senhora vai depor — e “só fatos — e “sem emoção — e “as provas — e “a meu favor — e “a sentença — e “os telespectadores — e “declaração — e “ao vivo — e “gostaria de destacar — e “a comunidade
+      — e “o sucesso”.'
+  answer:
+    speaker: protagonist
+    text: ќе сведочите … само факти … без емоции … доказите … во моја корист … пресудата … гледачите … изјава … во живо … би сакала да истакнам … заедницата … успехот
+  items:
+  - ke-svedocite
+  - samo-fakti
+  - bez-emocii
+  - dokazite
+  - vo-moja-korist
+  - presudata
+  - gledacite
+  - izjava
+  - vo-zivo
+  - bi-sakala-da-istaknam
+  - zaednicata
+  - uspehot
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “is no accident — and “a message to young people — and “don''t give up (formal/plural) — and “thank you for the invitation — and “on the one hand — and “on the other hand — and “I consider
+      that — and “nevertheless — and “ban — and “shopkeepers — and “will lose — and “compromise”.'
+    pt: 'Diga: “não é por acaso — e “um recado para os jovens — e “não desistam — e “obrigada pelo convite — e “por um lado — e “por outro lado — e “considero que — e “no entanto — e “proibição — e “os
+      comerciantes — e “vão perder — e “meio-termo / acordo”.'
+  answer:
+    speaker: protagonist
+    text: не е случаен … порака до младите … не се откажувајте … благодарам на поканата … од една страна … од друга страна … сметам дека … сепак … забрана … трговците … ќе изгубат … компромис
+  items:
+  - ne-e-slucaen
+  - poraka-do-mladite
+  - ne-se-otkazuvajte
+  - blagodaram-na-pokanata
+  - od-edna-strana
+  - od-druga-strana
+  - smetam-deka
+  - sepak-mislam
+  - zabrana
+  - trgovcite
+  - ke-izgubat
+  - kompromis
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I conclude — and “your argument — and “the headline — and “is being shared — and “fake news — and “source — and “Where is it written? — and “website — and “unknown (masculine) — and “check
+      (informal) — and “truth, true — and “it''s exaggerated”.'
+    pt: 'Diga: “concluo — e “o seu argumento — e “a manchete — e “está sendo compartilhado — e “notícia falsa — e “fonte — e “Onde está escrito? — e “site — e “desconhecido — e “verifica — e “verdade —
+      e “é exagerado”.'
+  answer:
+    speaker: protagonist
+    text: заклучувам … вашиот аргумент … насловот … се споделува … лажна вест … извор … Каде пишува? … сајт … непознат … провери … вистина … се претера
+  items:
+  - zaklucuvam
+  - argumentot-vi
+  - naslovot
+  - se-spodeluva
+  - lazna-vest
+  - izvor
+  - kade-pisuva
+  - sajt
+  - nepoznat
+  - proveri
+  - vistina
+  - se-pretera
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “What will you order? (formal) — and “shopska salad — and “grilled meat — and “for two (people) — and “Waiter! — and “the bill — and “I''ll pay — and “(you) paid — and “last time — and “next
+      time — and “tip — and “you liked it (informal)”.'
+    pt: 'Diga: “O que vão pedir? — e “salada shopska — e “churrasco / grelhado — e “para dois — e “Garçom! — e “a conta — e “eu pago — e “(você) pagou — e “da última vez — e “da próxima vez — e “gorjeta
+      — e “você gostou”.'
+  answer:
+    speaker: protagonist
+    text: Што ќе нарачате? … шопска салата … скара … за двајца … Келнер! … сметката … ќе платам … плати … минатиот пат … следниот пат … бакшиш … ти се допадна
+  items:
+  - sto-ke-naracate
+  - sopska
+  - skara
+  - za-dvajca
+  - kelner
+  - smetkata
+  - ke-platam
+  - plati
+  - minatiot-pat
+  - sledniot-pat
+  - baksis
+  - ti-se-dopadna
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

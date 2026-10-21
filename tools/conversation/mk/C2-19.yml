@@ -1,0 +1,578 @@
+# UNIT mk C2-19 — written by AI (Claude) for Casus; expanded from src/C2-19.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-19
+level: C2
+number: 19
+protagonist: f
+title:
+  en: The family doctor
+  pt: Médico de família
+situation:
+  en: Test results are back. Dr Petrovska explains a diagnosis in detail.
+  pt: Os resultados dos exames chegaram. A doutora Petrovska explica um diagnóstico em detalhes.
+learn_lessons:
+- c2-aspect-politeness
+culture: —
+new_items:
+- id: dijagnoza
+  text: дијагноза
+  meaning:
+    en: diagnosis
+    pt: diagnóstico
+- id: tretman
+  text: третман
+  meaning:
+    en: treatment
+    pt: tratamento
+- id: vtoro-mislenje
+  text: второ мислење
+  meaning:
+    en: second opinion
+    pt: segunda opinião
+- id: stitnata-zlezda
+  text: штитната жлезда
+  meaning:
+    en: the thyroid
+    pt: a tireoide
+  rare: true
+- id: hronicno
+  text: хронично
+  meaning:
+    en: chronic
+    pt: crônico
+- id: se-kontrolira
+  text: се контролира
+  meaning:
+    en: can be controlled
+    pt: se controla
+- id: dozivotno
+  text: доживотно
+  meaning:
+    en: for life
+    pt: pelo resto da vida
+  rare: true
+- id: bi-sakala-da-pobaram
+  text: би сакала да побарам
+  meaning:
+    en: I'd like to ask for
+    pt: gostaria de pedir
+- id: sekako-imate-pravo
+  text: секако, имате право
+  meaning:
+    en: of course, you have the right
+    pt: claro, a senhora tem direito
+- id: ve-molam-objasnete
+  text: ве молам, објаснете ми
+  meaning:
+    en: please explain to me
+    pt: por favor, me explique
+reviews:
+- item: niz
+  from: A2-12
+- item: magla
+  from: A2-12
+- item: zagaduvanje
+  from: A2-12
+- item: sekoja-zima
+  from: A2-12
+- item: od-sto
+  from: A2-12
+- item: drva
+  from: A2-12
+- item: kolite
+  from: A2-12
+- item: maska
+  from: A2-12
+- item: vozduhot
+  from: A2-12
+- item: los
+  from: A2-12
+- item: nema-da
+  from: A2-12
+- item: ni-jas
+  from: A2-12
+- item: imate-li-minuta
+  from: B2-16
+- item: bi-sakal-da-razgovarame
+  from: B2-16
+- item: za-petocite
+  from: B2-16
+- item: od-doma
+  from: B2-16
+- item: poproduktiven
+  from: B2-16
+- item: neka-probame
+  from: B2-16
+- item: eden-mesec
+  from: B2-16
+- item: pa-ke-vidime
+  from: B2-16
+- item: ve-razbiram
+  from: B2-16
+- item: vi-blagodaram
+  from: B2-16
+- item: finale
+  from: C1-18
+- item: publikata
+  from: C1-18
+- item: poraz
+  from: C1-18
+- item: pobeda
+  from: C1-18
+- item: vo-poslednata-sekunda
+  from: C1-18
+- item: kosot-od-sredina
+  from: C1-18
+- item: sum-bil-na-klupa
+  from: C1-18
+- item: ste-pobedile
+  from: C1-18
+- item: mi-kazaa
+  from: C1-18
+- item: ne-poveruvav
+  from: C1-18
+- item: bi-mozele-da
+  from: C2-04
+- item: razmislite
+  from: C2-04
+- item: pazarna-vrednost
+  from: C2-04
+- item: ponuda-od-drugade
+  from: C2-04
+- item: ne-se-zakanuvam
+  from: C2-04
+- item: pretpocituvam-da-ostanam
+  from: C2-04
+- item: uslov
+  from: C2-04
+- item: kompromisno
+  from: C2-04
+- item: od-noemvri
+  from: C2-04
+- item: se-dogovorivme
+  from: C2-04
+- item: biznis-plan
+  from: C2-12
+- item: pekara
+  from: C2-12
+- item: rizik
+  from: C2-12
+- item: trosocite
+  from: C2-12
+- item: prihodite
+  from: C2-12
+- item: bi-mozela-li
+  from: C2-12
+- item: da-gi-presmetame
+  from: C2-12
+- item: na-sopstvena-odgovornost
+  from: C2-12
+- item: semejna-firma
+  from: C2-12
+- item: ke-se-isplati
+  from: C2-12
+- item: jubilej
+  from: C2-16
+- item: pedeset-godini
+  from: C2-16
+- item: ni-e-cest
+  from: C2-16
+- item: da-go-pozdravime
+  from: C2-16
+- item: osnovacite
+  from: C2-16
+- item: ne-se-so-nas
+  from: C2-16
+- item: minuta-molk
+  from: C2-16
+- item: i-ponatamu
+  from: C2-16
+- item: za-uste-pedeset
+  from: C2-16
+- item: so-golema-gordost
+  from: C2-16
+- item: integracija
+  from: C2-18
+- item: zosto-ostanavte
+  from: C2-18
+- item: najgolem-predizvik
+  from: C2-18
+- item: birokratijata
+  from: C2-18
+- item: toplinata-na-lugjeto
+  from: C2-18
+- item: kako-domasni
+  from: C2-18
+- item: poraka-do-stranci
+  from: C2-18
+- item: naucete-go-jazikot
+  from: C2-18
+- item: klucot-za-se
+  from: C2-18
+- item: smeam-li-da-ve-citiram
+  from: C2-18
+steps:
+- type: narrator
+  text:
+    en: Test results are back. Dr Petrovska explains a diagnosis in detail. Listen to the conversation; you don't need to understand it yet.
+    pt: Os resultados dos exames chegaram. A doutora Petrovska explica um diagnóstico em detalhes. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: doktorka
+    text: Резултатите покажуваат проблем со штитната жлезда.
+    meaning:
+      en: The results show a problem with the thyroid.
+      pt: Os resultados mostram um problema na tireoide.
+  - speaker: protagonist
+    text: Ве молам, објаснете ми ја дијагнозата.
+    meaning:
+      en: Please explain the diagnosis to me.
+      pt: Por favor, me explique o diagnóstico.
+  - speaker: doktorka
+    text: Хронично е, но се контролира со таблета секое утро.
+    meaning:
+      en: It's chronic, but it can be controlled with a tablet every morning.
+      pt: É crônico, mas se controla com um comprimido toda manhã.
+  - speaker: protagonist
+    text: Доживотно?
+    meaning:
+      en: For life?
+      pt: Pelo resto da vida?
+  - speaker: doktorka
+    text: Најверојатно. Третманот е едноставен.
+    meaning:
+      en: Most likely. The treatment is simple.
+      pt: Provavelmente. O tratamento é simples.
+  - speaker: protagonist
+    text: Би сакала да побарам и второ мислење, ако не ве навредувам.
+    meaning:
+      en: I'd also like to ask for a second opinion, if that doesn't offend you.
+      pt: Gostaria de pedir também uma segunda opinião, se não ofender a senhora.
+  - speaker: doktorka
+    text: Секако, имате право. Ќе ви дадам упат и копија од резултатите.
+    meaning:
+      en: Of course, you have the right. I'll give you a referral and a copy of the results.
+      pt: Claro, a senhora tem direito. Vou dar um encaminhamento e uma cópia dos resultados.
+  - speaker: protagonist
+    text: Ви благодарам за трпението.
+    meaning:
+      en: Thank you for your patience.
+      pt: Obrigada pela paciência.
+- type: prompt
+  ask:
+    en: 'Say: please explain the diagnosis to me.'
+    pt: 'Diga: por favor, me explique o diagnóstico.'
+  answer:
+    speaker: protagonist
+    text: Ве молам, објаснете ми ја дијагнозата.
+  items:
+  - ve-molam-objasnete
+  - dijagnoza
+- type: prompt
+  ask:
+    en: 'Say: the thyroid.'
+    pt: 'Diga: a tireoide.'
+  answer:
+    speaker: protagonist
+    text: Штитната жлезда.
+  items:
+  - stitnata-zlezda
+- type: prompt
+  ask:
+    en: 'She says: it''s chronic.'
+    pt: 'Ela diz: é crônico.'
+  answer:
+    speaker: protagonist
+    text: Хронично е.
+  items:
+  - hronicno
+- type: prompt
+  ask:
+    en: 'She says: it can be controlled.'
+    pt: 'Ela diz: se controla.'
+  answer:
+    speaker: protagonist
+    text: Се контролира.
+  items:
+  - se-kontrolira
+- type: prompt
+  ask:
+    en: 'Ask: for life?'
+    pt: 'Pergunte: pelo resto da vida?'
+  answer:
+    speaker: protagonist
+    text: Доживотно?
+  items:
+  - dozivotno
+- type: prompt
+  ask:
+    en: 'Say: the treatment.'
+    pt: 'Diga: o tratamento.'
+  answer:
+    speaker: protagonist
+    text: Третманот.
+  items:
+  - tretman
+- type: prompt
+  ask:
+    en: 'Say: I''d like to ask for a second opinion.'
+    pt: 'Diga: gostaria de pedir uma segunda opinião.'
+  answer:
+    speaker: protagonist
+    text: Би сакала да побарам второ мислење.
+  items:
+  - bi-sakala-da-pobaram
+  - vtoro-mislenje
+- type: prompt
+  ask:
+    en: 'She says: of course, you have the right.'
+    pt: 'Ela diz: claro, a senhora tem direito.'
+  answer:
+    speaker: protagonist
+    text: Секако, имате право.
+  items:
+  - sekako-imate-pravo
+- type: narrator
+  text:
+    en: Asking for a second opinion is your right; softening it ('ако не ве навредувам') keeps the relationship with your family doctor. The completed verbs (објаснете, побарам) ask for one clear action.
+    pt: Pedir segunda opinião é direito seu; suavizar ('ако не ве навредувам') preserva a relação com o médico de família. Os verbos completos (објаснете, побарам) pedem uma ação clara.
+- type: prompt
+  ask:
+    en: 'Once more: say “diagnosis”.'
+    pt: 'Mais uma vez: diga “diagnóstico”.'
+  answer:
+    speaker: protagonist
+    text: дијагноза
+  items:
+  - dijagnoza
+- type: prompt
+  ask:
+    en: 'Once more: say “treatment”.'
+    pt: 'Mais uma vez: diga “tratamento”.'
+  answer:
+    speaker: protagonist
+    text: третман
+  items:
+  - tretman
+- type: prompt
+  ask:
+    en: 'Once more: say “second opinion”.'
+    pt: 'Mais uma vez: diga “segunda opinião”.'
+  answer:
+    speaker: protagonist
+    text: второ мислење
+  items:
+  - vtoro-mislenje
+- type: prompt
+  ask:
+    en: 'Once more: say “the thyroid”.'
+    pt: 'Mais uma vez: diga “a tireoide”.'
+  answer:
+    speaker: protagonist
+    text: штитната жлезда
+  items:
+  - stitnata-zlezda
+- type: prompt
+  ask:
+    en: 'Once more: say “chronic”.'
+    pt: 'Mais uma vez: diga “crônico”.'
+  answer:
+    speaker: protagonist
+    text: хронично
+  items:
+  - hronicno
+- type: prompt
+  ask:
+    en: 'Once more: say “can be controlled”.'
+    pt: 'Mais uma vez: diga “se controla”.'
+  answer:
+    speaker: protagonist
+    text: се контролира
+  items:
+  - se-kontrolira
+- type: prompt
+  ask:
+    en: 'Once more: say “for life”.'
+    pt: 'Mais uma vez: diga “pelo resto da vida”.'
+  answer:
+    speaker: protagonist
+    text: доживотно
+  items:
+  - dozivotno
+- type: prompt
+  ask:
+    en: 'Once more: say “I''d like to ask for”.'
+    pt: 'Mais uma vez: diga “gostaria de pedir”.'
+  answer:
+    speaker: protagonist
+    text: би сакала да побарам
+  items:
+  - bi-sakala-da-pobaram
+- type: prompt
+  ask:
+    en: 'Once more: say “of course, you have the right”.'
+    pt: 'Mais uma vez: diga “claro, a senhora tem direito”.'
+  answer:
+    speaker: protagonist
+    text: секако, имате право
+  items:
+  - sekako-imate-pravo
+- type: prompt
+  ask:
+    en: 'Once more: say “please explain to me”.'
+    pt: 'Mais uma vez: diga “por favor, me explique”.'
+  answer:
+    speaker: protagonist
+    text: ве молам, објаснете ми
+  items:
+  - ve-molam-objasnete
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “integration — and “Why did you stay? — and “the biggest challenge — and “bureaucracy — and “the warmth of the people — and “like locals — and “a message to other foreigners — and “learn the
+      language — and “the key to everything — and “may I quote you — and “anniversary, jubilee — and “fifty years”.'
+    pt: 'Diga: “integração — e “Por que o senhor ficou? — e “o maior desafio — e “a burocracia — e “o calor humano — e “como locais — e “um recado para outros estrangeiros — e “aprendam a língua — e “a
+      chave de tudo — e “posso citar o senhor — e “jubileu — e “cinquenta anos”.'
+  answer:
+    speaker: protagonist
+    text: интеграција … Зошто останавте? … најголем предизвик … бирократијата … топлината на луѓето … како домашни … порака до другите странци … научете го јазикот … клучот за сè … смеам ли да ве цитирам
+      … јубилеј … педесет години
+  items:
+  - integracija
+  - zosto-ostanavte
+  - najgolem-predizvik
+  - birokratijata
+  - toplinata-na-lugjeto
+  - kako-domasni
+  - poraka-do-stranci
+  - naucete-go-jazikot
+  - klucot-za-se
+  - smeam-li-da-ve-citiram
+  - jubilej
+  - pedeset-godini
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “it''s an honour for us — and “to welcome him — and “the founders — and “are no longer with us — and “a minute''s silence — and “onward, and further — and “to fifty more — and “with great
+      pride — and “business plan — and “bakery — and “risk — and “the costs”.'
+    pt: 'Diga: “é uma honra para nós — e “saudar — e “os fundadores — e “não estão mais conosco — e “um minuto de silêncio — e “e adiante — e “a mais cinquenta — e “com muito orgulho — e “plano de negócios
+      — e “padaria — e “risco — e “os custos”.'
+  answer:
+    speaker: protagonist
+    text: ни е чест … да го поздравиме … основачите … не се веќе со нас … минута молк … и понатаму … за уште педесет … со голема гордост … бизнис план … пекара … ризик … трошоците
+  items:
+  - ni-e-cest
+  - da-go-pozdravime
+  - osnovacite
+  - ne-se-so-nas
+  - minuta-molk
+  - i-ponatamu
+  - za-uste-pedeset
+  - so-golema-gordost
+  - biznis-plan
+  - pekara
+  - rizik
+  - trosocite
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the income — and “could you perhaps — and “to calculate them — and “at one''s own risk — and “family firm — and “will pay off — and “could you (formal) — and “think it over (formal) — and
+      “market value — and “an offer from elsewhere — and “I''m not threatening — and “I prefer to stay”.'
+    pt: 'Diga: “a receita — e “você poderia — e “calcular — e “por conta e risco — e “empresa familiar — e “vai compensar — e “o senhor poderia — e “pensar a respeito — e “valor de mercado — e “uma proposta
+      de outro lugar — e “não estou ameaçando — e “prefiro ficar”.'
+  answer:
+    speaker: protagonist
+    text: приходите … би можела ли … да ги пресметаме … на своја одговорност … семејна фирма … ќе се исплати … би можеле да … размислите … пазарна вредност … понуда од друго место … не се заканувам … претпочитам
+      да останам
+  items:
+  - prihodite
+  - bi-mozela-li
+  - da-gi-presmetame
+  - na-sopstvena-odgovornost
+  - semejna-firma
+  - ke-se-isplati
+  - bi-mozele-da
+  - razmislite
+  - pazarna-vrednost
+  - ponuda-od-drugade
+  - ne-se-zakanuvam
+  - pretpocituvam-da-ostanam
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “condition — and “as a compromise — and “from November — and “we agreed, deal — and “final — and “the crowd, audience — and “defeat — and “victory — and “in the last second — and “a basket
+      from mid-court — and “I was on the bench — and “you won (I hear)”.'
+    pt: 'Diga: “condição — e “como meio-termo — e “a partir de novembro — e “combinado — e “final — e “a torcida / o público — e “derrota — e “vitória — e “no último segundo — e “cesta do meio da quadra
+      — e “fiquei no banco — e “vocês teriam ganhado”.'
+  answer:
+    speaker: protagonist
+    text: услов … компромисно … од ноември … се договоривме … финале … публиката … пораз … победа … во последната секунда … кош од средина … бев на клупа … сте победиле
+  items:
+  - uslov
+  - kompromisno
+  - od-noemvri
+  - se-dogovorivme
+  - finale
+  - publikata
+  - poraz
+  - pobeda
+  - vo-poslednata-sekunda
+  - kosot-od-sredina
+  - sum-bil-na-klupa
+  - ste-pobedile
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “they told me — and “I couldn''t believe it — and “Do you have a minute? (formal) — and “I''d like us to talk (a man) — and “about Fridays — and “from home — and “more productive (masculine)
+      — and “let''s try — and “one month — and “and then we''ll see — and “I understand you (formal) — and “Thank you (formal, warmer)”.'
+    pt: 'Diga: “me contaram — e “não acreditei — e “O senhor tem um minuto? — e “gostaria de conversar — e “sobre as sextas — e “de casa — e “mais produtivo — e “vamos experimentar — e “um mês — e “e depois
+      a gente vê — e “entendo o senhor — e “Agradeço”.'
+  answer:
+    speaker: protagonist
+    text: ми кажаа … не поверував … Имате ли една минута? … би сакал да разговараме … за петоците … од дома … попродуктивен … нека пробаме … еден месец … па ќе видиме … ве разбирам … Ви благодарам
+  items:
+  - mi-kazaa
+  - ne-poveruvav
+  - imate-li-minuta
+  - bi-sakal-da-razgovarame
+  - za-petocite
+  - od-doma
+  - poproduktiven
+  - neka-probame
+  - eden-mesec
+  - pa-ke-vidime
+  - ve-razbiram
+  - vi-blagodaram
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “through — and “fog — and “pollution — and “every winter — and “From what? — and “firewood — and “the cars — and “mask — and “the air — and “bad (masculine) — and “won''t (future negative)
+      — and “me neither”.'
+    pt: 'Diga: “através de / pela — e “neblina — e “poluição — e “todo inverno — e “Do quê? — e “lenha — e “os carros — e “máscara — e “o ar — e “ruim — e “não vou / não vai — e “nem eu”.'
+  answer:
+    speaker: protagonist
+    text: низ … магла … загадување … секоја зима … Од што? … дрва … колите … маска … воздухот … лош … нема да … ни јас
+  items:
+  - niz
+  - magla
+  - zagaduvanje
+  - sekoja-zima
+  - od-sto
+  - drva
+  - kolite
+  - maska
+  - vozduhot
+  - los
+  - nema-da
+  - ni-jas
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
