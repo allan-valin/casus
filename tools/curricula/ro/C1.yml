@@ -1,0 +1,28 @@
+id: C1
+topics:
+
+- title: {en: Talking about ideas, pt: Falando de ideias}
+  lessons:
+  - id: ro-abstract
+    title: libertate, egalitate, dezvoltare
+    meaning: {en: "abstract nouns and word formation", pt: "substantivos abstratos e formação de palavras"}
+    intro:
+      en: |
+        **-tate** (**libertate** freedom, **egalitate** equality, **societate**), **-ie** (**democrație, istorie**), **-re** from verbs (**dezvoltare** development, **învățare** learning), **-ism** (**romantism**). Romanian shares much of this vocabulary with French and Italian.
+      pt: |
+        **-tate** (**libertate** liberdade, **egalitate** igualdade, **societate** sociedade), **-ie** (**democrație, istorie**), **-re** de verbos (**dezvoltare** desenvolvimento, **învățare** aprendizagem), **-ism** (**romantism**). O romeno compartilha muito desse vocabulário com o francês e o italiano — e o português.
+    examples:
+    - ["Libertatea este un drept fundamental.", "Freedom is a fundamental right.", "A liberdade é um direito fundamental.", "Libertatea"]
+    match: {seq: [{pos: noun, re: "(tate|tatea|ție|ția|re|rea|ism)$"}]}
+  - id: ro-latin
+    title: apă, lapte, frate
+    meaning: {en: "the Latin core and the other layers", pt: "o núcleo latino e as outras camadas"}
+    intro:
+      en: |
+        Romanian is the Romance language of the east: **apă** (aqua), **lapte** (lactem), **frate** (frater), **a cânta** (cantare). Slavic gave many everyday words (**a iubi** to love, **da** yes, **prieten** friend), Greek, Turkish and Hungarian others; French and Italian the modern vocabulary.
+      pt: |
+        O romeno é a língua românica do leste: **apă** (aqua — água), **lapte** (lactem — leite), **frate** (frater — irmão), **a cânta** (cantare — cantar). O eslavo deu muitas palavras do dia a dia (**a iubi** amar, **da** sim, **prieten** amigo), o grego, o turco e o húngaro outras; o francês e o italiano o vocabulário moderno.
+    examples:
+    - ["Beau apă și lapte.", "I drink water and milk.", "Bebo água e leite.", "apă"]
+    match: {seq: [{word: [apă, lapte, frate, soră, pâine, cânta, iubi, prieten, da]}]}
+    pool: [apă, lapte, frate, pâine, prieten]

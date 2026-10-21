@@ -1,0 +1,55 @@
+id: B1
+topics:
+
+- title: {en: Moods, pt: Modos}
+  lessons:
+  - id: ro-conditional
+    title: aș vrea, ar fi
+    meaning: {en: "the conditional: would", pt: "o condicional: -ria"}
+    intro:
+      en: |
+        **aș, ai, ar, am, ați, ar** + infinitive: **Aș vrea o cafea** (I'd like a coffee), **Ar fi bine** (that would be good). Conditions: **Dacă aș avea timp, aș veni** (if I had time, I'd come).
+      pt: |
+        **aș, ai, ar, am, ați, ar** + infinitivo: **Aș vrea o cafea** (eu queria um café), **Ar fi bine** (seria bom). Condições: **Dacă aș avea timp, aș veni** (se eu tivesse tempo, viria).
+    examples:
+    - ["Aș vrea o cafea, vă rog.", "I'd like a coffee, please.", "Eu queria um café, por favor.", "Aș"]
+    match: {seq: [{word: [aș, ar, ați]}, {pos: verb, mood: inf}], gap: 0}
+    pool: [aș, ai, ar, am, ați]
+  - id: ro-imperative
+    title: vino! citește! nu fuma!
+    meaning: {en: "the imperative", pt: "o imperativo"}
+    intro:
+      en: |
+        Singular often like the 3rd or 2nd person present: **citește!** (read!), **cântă!**, irregular **vino!** (come!), **fă!** (do!), **du-te!** (go!); plural like the 2nd plural: **citiți!** Negative singular **nu** + infinitive: **Nu fuma!** (don't smoke).
+      pt: |
+        O singular muitas vezes como a 3ª ou a 2ª do presente: **citește!** (lê!), **cântă!**, irregulares **vino!** (vem!), **fă!** (faz!), **du-te!** (vai!); o plural como a 2ª do plural: **citiți!** Negativo singular **nu** + infinitivo: **Nu fuma!** (não fume).
+    examples:
+    - ["Vino aici!", "Come here!", "Vem aqui!", "Vino"]
+    match: {seq: [{pos: verb, mood: imp}]}
+
+- title: {en: Clauses, pt: Orações}
+  lessons:
+  - id: ro-care
+    title: care, pe care, căruia
+    meaning: {en: "which, who: relative clauses", pt: "que, o qual: orações relativas"}
+    intro:
+      en: |
+        **care** (who, which) for subjects and with prepositions; as a person object **pe care** (+ doubling): **Omul pe care l-am văzut** (the man I saw); genitive-dative **căruia / căreia / cărora**: **Prietenul căruia i-am scris** (the friend I wrote to).
+      pt: |
+        **care** (que, o qual) para sujeitos e com preposições; como objeto pessoa **pe care** (+ duplicação): **Omul pe care l-am văzut** (o homem que eu vi); genitivo-dativo **căruia / căreia / cărora**: **Prietenul căruia i-am scris** (o amigo a quem escrevi).
+    examples:
+    - ["Cartea pe care o citesc este interesantă.", "The book I'm reading is interesting.", "O livro que estou lendo é interessante.", "care"]
+    match: {seq: [{word: [care, căruia, căreia, cărora]}], gap: 0}
+    pool: [care, căruia, căreia, cărora, ce]
+  - id: ro-conjunctions
+    title: că, pentru că, dacă, când, deși
+    meaning: {en: "joining clauses", pt: "ligando orações"}
+    intro:
+      en: |
+        **că** (that), **pentru că / fiindcă** (because), **dacă** (if, whether), **când** (when), **deși** (although), **ca să** (so that), **dar / însă** (but), **deci** (so). **Știu că vine. Plec acasă pentru că sunt obosit.**
+      pt: |
+        **că** (que), **pentru că / fiindcă** (porque), **dacă** (se), **când** (quando), **deși** (embora), **ca să** (para que), **dar / însă** (mas), **deci** (então). **Știu că vine** (sei que ele vem). **Plec acasă pentru că sunt obosit** (vou para casa porque estou cansado).
+    examples:
+    - ["Plec acasă pentru că sunt obosit.", "I'm going home because I'm tired.", "Vou para casa porque estou cansado.", "pentru"]
+    match: {seq: [{word: [că, dacă, când, deși, dar, însă, deci, fiindcă]}]}
+    pool: [că, dacă, când, deși, dar, însă, deci]

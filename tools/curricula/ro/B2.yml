@@ -1,0 +1,38 @@
+id: B2
+topics:
+
+- title: {en: Literary forms, pt: Formas literárias}
+  lessons:
+  - id: ro-simple-past
+    title: cântai, făcu, fură
+    meaning: {en: "the simple past and the pluperfect", pt: "o perfeito simples e o mais-que-perfeito"}
+    intro:
+      en: |
+        Literature narrates with the *simple past*: **cântai, cântă, cântarăm** (I sang, he sang…), **făcu, fu** (he did, he was); in Oltenia it is still spoken. The pluperfect **cântasem, făcuse** (had sung, had done) is one word: **Când am ajuns, trenul plecase.**
+      pt: |
+        A literatura narra com o *perfeito simples*: **cântai, cântă, cântarăm** (cantei, cantou…), **făcu, fu** (fez, foi); na Oltênia ainda se fala. O mais-que-perfeito **cântasem, făcuse** (tinha cantado, tinha feito) é uma só palavra: **Când am ajuns, trenul plecase** (quando cheguei, o trem já tinha saído).
+    examples:
+    - ["Când am ajuns, trenul plecase.", "When I arrived, the train had left.", "Quando cheguei, o trem tinha saído.", "plecase"]
+    match: {seq: [{re: "(sem|seși|se|serăm|serăți|seră)$", pos: verb}]}
+  - id: ro-passive
+    title: este scrisă, se vinde
+    meaning: {en: "the passive", pt: "a voz passiva"}
+    intro:
+      en: |
+        **a fi** + participle (agreeing): **Cartea este scrisă de Eminescu** (the book is written by Eminescu), **Casa a fost vândută.** Very common is the reflexive passive with **se**: **Aici se vorbește engleza** (English is spoken here), **Casa se vinde.**
+      pt: |
+        **a fi** + particípio (concordando): **Cartea este scrisă de Eminescu** (o livro foi escrito por Eminescu), **Casa a fost vândută** (a casa foi vendida). Muito comum é a passiva reflexiva com **se**: **Aici se vorbește engleza** (aqui se fala inglês), **Casa se vinde** (vende-se a casa).
+    examples:
+    - ["Aici se vorbește engleza.", "English is spoken here.", "Aqui se fala inglês.", "se"]
+    match: {seq: [{word: [se]}, {pos: verb, person: '3'}], gap: 0}
+  - id: ro-gerund
+    title: citind, mergând
+    meaning: {en: "the gerund: while doing", pt: "o gerúndio"}
+    intro:
+      en: |
+        **-ând / -ind** (**mergând, citind, făcând**): **Mergând pe stradă, am întâlnit un prieten** (walking down the street, I met a friend). Pronouns attach with a hyphen: **văzându-l** (seeing him).
+      pt: |
+        **-ând / -ind** (**mergând, citind, făcând**): **Mergând pe stradă, am întâlnit un prieten** (andando pela rua, encontrei um amigo). Os pronomes se ligam com hífen: **văzându-l** (vendo-o).
+    examples:
+    - ["Mergând pe stradă, am întâlnit un prieten.", "Walking down the street, I met a friend.", "Andando pela rua, encontrei um amigo.", "Mergând"]
+    match: {seq: [{re: "(ând|ind)$"}]}

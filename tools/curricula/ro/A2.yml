@@ -1,0 +1,92 @@
+id: A2
+topics:
+
+- title: {en: Past and future, pt: Passado e futuro}
+  lessons:
+  - id: ro-perfect
+    title: am cântat, a citit, au fost
+    meaning: {en: "the compound past", pt: "o pretérito composto"}
+    intro:
+      en: |
+        **am, ai, a, am, ați, au** + the past participle (**cântat, văzut, făcut, citit, fost**): **Am citit cartea** (I read the book), **Ieri a fost cald.** It is the everyday past; the participle does not change.
+      pt: |
+        **am, ai, a, am, ați, au** + o particípio passado (**cântat, văzut, făcut, citit, fost**): **Am citit cartea** (li o livro), **Ieri a fost cald** (ontem fez calor). É o passado do dia a dia; o particípio não varia.
+    examples:
+    - ["Ieri am fost acasă.", "Yesterday I was at home.", "Ontem estive em casa.", "fost"]
+    match: {seq: [{word: [am, ai, a, ați, au]}, {pos: verb, mood: part}], gap: 1}
+  - id: ro-future
+    title: voi merge, o să merg
+    meaning: {en: "the future", pt: "o futuro"}
+    intro:
+      en: |
+        Formal **voi, vei, va, vom, veți, vor** + infinitive: **Voi merge mâine.** Everyday **o să** + subjunctive: **O să merg mâine.** Also **am să merg** (I'm going to go).
+      pt: |
+        Formal **voi, vei, va, vom, veți, vor** + infinitivo: **Voi merge mâine** (irei amanhã). No dia a dia **o să** + subjuntivo: **O să merg mâine** (vou amanhã). Também **am să merg** (vou ir).
+    examples:
+    - ["O să plouă mâine.", "It's going to rain tomorrow.", "Vai chover amanhã.", "să"]
+    match: {seq: [{word: [voi, vei, va, vom, veți, vor]}, {pos: verb, mood: inf}], gap: 0}
+    pool: [voi, vei, va, vom, veți, vor]
+  - id: ro-imperfect
+    title: cântam, eram, aveam
+    meaning: {en: "the imperfect: used to, was doing", pt: "o imperfeito: costumava, estava fazendo"}
+    intro:
+      en: |
+        **-am, -ai, -a, -am, -ați, -au** on the stem: **cântam** (I was singing, I used to sing), **eram** (I was), **aveam** (I had). For background and habits: **Când eram mic, locuiam la țară.**
+      pt: |
+        **-am, -ai, -a, -am, -ați, -au** no radical: **cântam** (eu cantava), **eram** (eu era), **aveam** (eu tinha). Para o pano de fundo e os hábitos: **Când eram mic, locuiam la țară** (quando eu era pequeno, morava no campo).
+    examples:
+    - ["Când eram mic, locuiam la țară.", "When I was little, I lived in the country.", "Quando eu era pequeno, morava no campo.", "eram"]
+    match: {seq: [{pos: verb, tense: impf}]}
+
+- title: {en: Pronouns and the subjunctive, pt: Pronomes e o subjuntivo}
+  lessons:
+  - id: ro-clitics
+    title: mă, te, îl, o; îmi, îți, îi
+    meaning: {en: "short object pronouns", pt: "pronomes objeto curtos"}
+    intro:
+      en: |
+        Accusative **mă, te, îl / o, ne, vă, îi / le**; dative **îmi, îți, îi, ne, vă, le**, before the verb: **Te văd** (I see you), **Îi dau cartea** (I give him the book). Romanian often doubles the object: **Îl văd pe Ion** (I see Ion), **Îi dau mamei** (I give to mother). Before a vowel they shorten: **l-am văzut, mi-a spus**.
+      pt: |
+        Acusativo **mă, te, îl / o, ne, vă, îi / le**; dativo **îmi, îți, îi, ne, vă, le**, antes do verbo: **Te văd** (eu te vejo), **Îi dau cartea** (dou-lhe o livro). O romeno muitas vezes duplica o objeto: **Îl văd pe Ion** (vejo o Ion), **Îi dau mamei** (dou à mãe). Antes de vogal encurtam: **l-am văzut, mi-a spus**.
+    examples:
+    - ["Îi dau prietenului meu un cadou.", "I'm giving my friend a present.", "Dou um presente ao meu amigo.", "Îi"]
+    match: {seq: [{word: [mă, te, îl, ne, vă, îi, le, îmi, îți]}, {pos: verb}], gap: 0}
+    pool: [mă, te, îl, o, ne, vă, îi, le, îmi, îți]
+  - id: ro-pe
+    title: pe Ion, pe ea
+    meaning: {en: "pe: the marked direct object", pt: "pe: o objeto direto marcado"}
+    intro:
+      en: |
+        Before a person named or pointed out as direct object Romanian puts **pe** (and doubles with a short pronoun): **Îl văd pe Ion. O caut pe Maria. Pe cine aștepți?** With things there is no **pe**: **Văd casa.**
+      pt: |
+        Antes de uma pessoa nomeada ou destacada como objeto direto o romeno põe **pe** (e duplica com um pronome curto) — como o *a* pessoal do espanhol: **Îl văd pe Ion** (vejo o Ion). **O caut pe Maria. Pe cine aștepți?** (quem você espera?). Com coisas não há **pe**: **Văd casa.**
+    examples:
+    - ["Îl aștept pe Ion.", "I'm waiting for Ion.", "Estou esperando o Ion.", "pe"]
+    match: {seq: [{word: [pe]}, {pos: [noun, pron]}], gap: 0}
+  - id: ro-subjunctive
+    title: să merg, vreau să
+    meaning: {en: "the subjunctive with să", pt: "o subjuntivo com să"}
+    intro:
+      en: |
+        **să** + a present form (3rd person **-e / -ă**: **să cânte, să meargă**) replaces the infinitive after most verbs: **Vreau să merg** (I want to go), **Trebuie să plec** (I have to leave), **Pot să intru?** (may I come in?).
+      pt: |
+        **să** + uma forma de presente (3ª pessoa **-e / -ă**: **să cânte, să meargă**) substitui o infinitivo depois da maioria dos verbos: **Vreau să merg** (quero ir), **Trebuie să plec** (tenho que sair), **Pot să intru?** (posso entrar?).
+    examples:
+    - ["Vreau să merg acasă.", "I want to go home.", "Quero ir para casa.", "să"]
+    match: {seq: [{word: [să]}, {pos: verb}], gap: 0}
+    pool: [să, vreau, trebuie, pot]
+
+- title: {en: Adjectives, pt: Adjetivos}
+  lessons:
+  - id: ro-adj
+    title: bun, bună, buni, bune; mai bun, cel mai bun
+    meaning: {en: "adjectives follow and agree; comparison", pt: "adjetivos vêm depois e concordam; comparação"}
+    intro:
+      en: |
+        Adjectives usually follow the noun and agree: **un om bun, o femeie bună, oameni buni, femei bune.** Comparative with **mai** (**mai mare decât** bigger than), superlative with **cel / cea / cei / cele mai** (**cel mai bun** the best). An adjective put first takes the article: **frumoasa casă**.
+      pt: |
+        Os adjetivos em geral vêm depois do nome e concordam: **un om bun, o femeie bună, oameni buni, femei bune.** Comparativo com **mai** (**mai mare decât** maior que), superlativo com **cel / cea / cei / cele mai** (**cel mai bun** o melhor). Um adjetivo posto antes leva o artigo: **frumoasa casă** (a bela casa).
+    examples:
+    - ["Este cea mai frumoasă zi.", "It's the most beautiful day.", "É o dia mais bonito.", "cea"]
+    match: {seq: [{pos: noun}, {pos: adj}], same: [number], gap: 0}
+    pool: [mai, decât, cel, cea, cei, cele, foarte]

@@ -1,0 +1,195 @@
+id: A1
+topics:
+
+- title: {en: Sounds and letters, pt: Sons e letras}
+  lessons:
+  - id: ro-alphabet
+    title: ă, â, î, ș, ț
+    meaning: {en: "the Romanian letters", pt: "as letras do romeno"}
+    intro:
+      en: |
+        **ă** is the vowel of English *about*; **â** and **î** are the same sound, a central *i* (î at the start and end of a word, â inside: **înțeleg, român**); **ș** is *sh*, **ț** is *ts*. **c, g** before **e, i** are *ch, j* (**cine, ger**); **che, chi, ghe, ghi** are hard *k, g*. Old texts write ş ţ with a cedilla; the reader takes both.
+      pt: |
+        **ă** é a vogal de *e* fechado e breve (como o *e* final átono em português europeu); **â** e **î** são o mesmo som, um *i* central (î no começo e no fim da palavra, â no meio: **înțeleg, român**); **ș** é *ch*, **ț** é *ts*. **c, g** antes de **e, i** soam *tch, dj* (**cine, ger**); **che, chi, ghe, ghi** são *k, g* duros. Textos antigos escrevem ş ţ com cedilha; o leitor aceita os dois.
+    examples:
+    - ["Nu înțeleg.", "I don't understand.", "Não entendo.", "înțeleg"]
+    match: {seq: [{re: "[ăâîșț]", pos: [noun, verb, adj]}]}
+
+- title: {en: Nouns and the article, pt: Substantivos e o artigo}
+  lessons:
+  - id: ro-gender
+    title: un om, o casă, un oraș
+    meaning: {en: "three genders; the indefinite article", pt: "três gêneros; o artigo indefinido"}
+    intro:
+      en: |
+        Masculine (**un om** a man, **un băiat**), feminine (**o casă** a house, **o femeie**), and neuter — masculine in the singular, feminine in the plural (**un oraș, două orașe**). The indefinite article: **un** (m./n.), **o** (f.); plural **niște** (some).
+      pt: |
+        Masculino (**un om** um homem, **un băiat**), feminino (**o casă** uma casa, **o femeie**), e neutro — masculino no singular, feminino no plural (**un oraș, două orașe**). O artigo indefinido: **un** (m./n.), **o** (f.); plural **niște** (uns, algumas).
+    examples:
+    - ["Am o casă mare.", "I have a big house.", "Tenho uma casa grande.", "casă"]
+    match: {seq: [{word: [un, o, niște]}, {pos: noun}], gap: 0}
+    pool: [un, o, niște, unui, unei]
+  - id: ro-definite
+    title: omul, casa, orașul
+    meaning: {en: "the definite article is an ending", pt: "o artigo definido é uma terminação"}
+    intro:
+      en: |
+        *The* is added to the end of the noun: **om → omul** (the man), **oraș → orașul**, **casă → casa** (the house), **carte → cartea**; plural **oamenii, orașele, casele**. After most prepositions the article is dropped: **pe masă** (on the table), but **cu** keeps it: **cu prietenul**.
+      pt: |
+        *O / a* vai no fim do nome: **om → omul** (o homem), **oraș → orașul**, **casă → casa** (a casa), **carte → cartea**; plural **oamenii, orașele, casele**. Depois da maioria das preposições o artigo cai: **pe masă** (na mesa), mas **cu** o conserva: **cu prietenul** (com o amigo).
+    examples:
+    - ["Cartea este pe masă.", "The book is on the table.", "O livro está na mesa.", "Cartea"]
+    match: {seq: [{pos: noun, re: "(ul|le|a|lui|ei|lor|ii)$"}]}
+  - id: ro-plural
+    title: case, orașe, băieți
+    meaning: {en: "the plural", pt: "o plural"}
+    intro:
+      en: |
+        Masculine **-i** (**băiat → băieți**, with sound changes: t → ț, s → ș, d → z), feminine **-e** or **-i** (**casă → case**, **carte → cărți**), neuter **-e** or **-uri** (**oraș → orașe**, **tren → trenuri**). Learn each noun with its plural.
+      pt: |
+        Masculino **-i** (**băiat → băieți**, com mudanças de som: t → ț, s → ș, d → z), feminino **-e** ou **-i** (**casă → case**, **carte → cărți**), neutro **-e** ou **-uri** (**oraș → orașe**, **tren → trenuri**). Aprenda cada nome com seu plural.
+    examples:
+    - ["Copiii se joacă în parc.", "The children are playing in the park.", "As crianças estão brincando no parque.", "Copiii"]
+    match: {seq: [{pos: noun, number: pl}]}
+
+- title: {en: Pronouns and the present, pt: Pronomes e presente}
+  lessons:
+  - id: ro-pronouns
+    title: eu, tu, el, ea, noi, voi, ei, ele
+    meaning: {en: "personal pronouns; dumneavoastră", pt: "pronomes pessoais; dumneavoastră"}
+    intro:
+      en: |
+        **eu** (I), **tu** (you), **el / ea** (he / she), **noi** (we), **voi** (you plural), **ei / ele** (they). The polite *you* is **dumneavoastră** (with the 2nd person plural verb). The verb shows the person, so the pronoun is often left out: **Lucrez** = I work.
+      pt: |
+        **eu** (eu), **tu** (tu/você), **el / ea** (ele / ela), **noi** (nós), **voi** (vocês), **ei / ele** (eles / elas). O tratamento formal é **dumneavoastră** (com o verbo na 2ª do plural). O verbo mostra a pessoa, então o pronome muitas vezes some: **Lucrez** = trabalho.
+    examples:
+    - ["Noi suntem studenți.", "We are students.", "Somos estudantes.", "Noi"]
+    match: {seq: [{word: [eu, tu, el, ea, noi, voi, ei, ele, dumneavoastră], start: true}]}
+    pool: [eu, tu, el, ea, noi, voi, ei, ele]
+  - id: ro-present
+    title: cânt, văd, citesc, lucrez
+    meaning: {en: "the present tense: four conjugations", pt: "o presente: quatro conjugações"}
+    intro:
+      en: |
+        Infinitives end in **-a, -ea, -e, -i/-î**: **a cânta, a vedea, a face, a citi**. Many verbs add **-ez** or **-esc** in the present: **lucrez, lucrezi, lucrează** (I work…), **citesc, citești, citește**. Others are plain: **cânt, cânți, cântă, cântăm, cântați, cântă**. The 3rd persons singular and plural are often the same.
+      pt: |
+        Os infinitivos terminam em **-a, -ea, -e, -i/-î**: **a cânta, a vedea, a face, a citi**. Muitos verbos acrescentam **-ez** ou **-esc** no presente: **lucrez, lucrezi, lucrează** (trabalho…), **citesc, citești, citește**. Outros são simples: **cânt, cânți, cântă, cântăm, cântați, cântă**. A 3ª do singular e a do plural muitas vezes coincidem.
+    examples:
+    - ["Citesc o carte.", "I'm reading a book.", "Estou lendo um livro.", "Citesc"]
+    - ["Vorbești engleză?", "Do you speak English?", "Você fala inglês?", "Vorbești"]
+    match: {seq: [{pos: verb, tense: pres, mood: ind}], same: [person, number]}
+  - id: ro-fi
+    title: sunt, ești, este, suntem
+    meaning: {en: "a fi, to be", pt: "a fi, ser/estar"}
+    intro:
+      en: |
+        **sunt, ești, este (e), suntem, sunteți, sunt**. **Sunt român / româncă** (I'm Romanian, m. / f.). Negative with **nu**: **Nu sunt acasă** (I'm not at home). **E** is the everyday form of **este**.
+      pt: |
+        **sunt, ești, este (e), suntem, sunteți, sunt**. **Sunt român / româncă** (sou romeno / romena). Negativo com **nu**: **Nu sunt acasă** (não estou em casa). **E** é a forma do dia a dia de **este**.
+    examples:
+    - ["Astăzi este o zi frumoasă.", "Today is a beautiful day.", "Hoje é um dia bonito.", "este"]
+    match: {seq: [{word: [sunt, ești, este, e, suntem, sunteți]}]}
+    pool: [sunt, ești, este, suntem, sunteți]
+  - id: ro-avea
+    title: am, ai, are
+    meaning: {en: "a avea, to have", pt: "a avea, ter"}
+    intro:
+      en: |
+        **am, ai, are, avem, aveți, au**: **Am un frate** (I have a brother), **Nu am timp** (I don't have time). The same short forms **am, ai, a, am, ați, au** make the past (A2).
+      pt: |
+        **am, ai, are, avem, aveți, au**: **Am un frate** (tenho um irmão), **Nu am timp** (não tenho tempo). As mesmas formas curtas **am, ai, a, am, ați, au** formam o passado (A2).
+    examples:
+    - ["Am un frate și o soră.", "I have a brother and a sister.", "Tenho um irmão e uma irmã.", "Am"]
+    match: {seq: [{word: [am, ai, are, avem, aveți, au]}, {pos: [noun, det]}], gap: 0}
+    pool: [am, ai, are, avem, aveți, au]
+
+- title: {en: Questions and negation, pt: Perguntas e negação}
+  lessons:
+  - id: ro-questions
+    title: ce, cine, unde, când, de ce, cum, cât
+    meaning: {en: "question words", pt: "palavras interrogativas"}
+    intro:
+      en: |
+        **ce** (what), **cine** (who), **unde** (where), **când** (when), **de ce** (why), **cum** (how), **cât / câtă / câți / câte** (how much, how many), **care** (which). Yes/no questions only change the voice: **Vorbești română?**
+      pt: |
+        **ce** (o que), **cine** (quem), **unde** (onde), **când** (quando), **de ce** (por quê), **cum** (como), **cât / câtă / câți / câte** (quanto, quantos), **care** (qual). Perguntas de sim/não só mudam a entonação: **Vorbești română?**
+    examples:
+    - ["Unde locuiești?", "Where do you live?", "Onde você mora?", "Unde"]
+    match: {seq: [{word: [ce, cine, unde, când, cum, cât, câtă, câți, câte, care], start: true}]}
+    pool: [ce, cine, unde, când, cum, cât, care]
+  - id: ro-nu
+    title: nu, nimic, nimeni, niciodată
+    meaning: {en: "negation and double negation", pt: "negação e dupla negação"}
+    intro:
+      en: |
+        **nu** before the verb: **Nu înțeleg.** Double negation is the rule: **Nimeni nu știe nimic** (nobody knows anything), **N-am fost niciodată acolo** (I've never been there — **n-** is **nu** before a vowel).
+      pt: |
+        **nu** antes do verbo: **Nu înțeleg** (não entendo). A dupla negação é a regra: **Nimeni nu știe nimic** (ninguém sabe nada), **N-am fost niciodată acolo** (nunca estive lá — **n-** é **nu** antes de vogal).
+    examples:
+    - ["Nu înțeleg.", "I don't understand.", "Não entendo.", "Nu"]
+    match: {seq: [{word: [nu, nimic, nimeni, niciodată, nicăieri]}]}
+    pool: [nu, nimic, nimeni, niciodată]
+
+- title: {en: The cases, pt: Os casos}
+  lessons:
+  - id: ro-gen-dat
+    title: casei, omului, mamei
+    meaning: {en: "genitive-dative: of, to", pt: "genitivo-dativo: de, a"}
+    intro:
+      en: |
+        One form serves both: with the article **-ului** (m./n.: **omului, orașului**), **-ei** (f.: **casei, mamei**), plural **-lor** (**copiilor**). Genitive *of* after the noun: **casa mamei** (mother's house); dative *to*: **Dau cartea mamei** (I give the book to mother). Without the article: **unui, unei, unor**.
+      pt: |
+        Uma só forma serve para os dois: com artigo **-ului** (m./n.: **omului, orașului**), **-ei** (f.: **casei, mamei**), plural **-lor** (**copiilor**). Genitivo *de* depois do nome: **casa mamei** (a casa da mãe); dativo *a, para*: **Dau cartea mamei** (dou o livro à mãe). Sem artigo: **unui, unei, unor**.
+    examples:
+    - ["Casa mamei este mare.", "Mother's house is big.", "A casa da mãe é grande.", "mamei"]
+    match: {seq: [{pos: noun, re: "(ului|ei|lor)$"}]}
+  - id: ro-al
+    title: al, a, ai, ale
+    meaning: {en: "the genitive article", pt: "o artigo genitivo"}
+    intro:
+      en: |
+        When the genitive does not follow a definite noun directly, **al / a / ai / ale** (agreeing with the thing owned) links it: **un prieten al lui Ion** (a friend of Ion's), **Cartea aceasta este a mamei** (this book is mother's). Possessives too: **al meu, a mea, ai mei, ale mele** (mine).
+      pt: |
+        Quando o genitivo não vem logo depois de um nome definido, **al / a / ai / ale** (concordando com a coisa possuída) o liga: **un prieten al lui Ion** (um amigo do Ion), **Cartea aceasta este a mamei** (este livro é da mãe). Também os possessivos: **al meu, a mea, ai mei, ale mele** (o meu).
+    examples:
+    - ["Este un prieten al meu.", "He's a friend of mine.", "É um amigo meu.", "al"]
+    match: {seq: [{word: [al, ai, ale]}], gap: 0}
+    pool: [al, a, ai, ale]
+  - id: ro-voc
+    title: Ioane! Mario! domnule!
+    meaning: {en: "vocative: calling someone", pt: "vocativo: chamar alguém"}
+    intro:
+      en: |
+        Masculine **-e** or **-ule** (**Ion → Ioane!**, **domn → domnule!**, **prieten → prietene!**), feminine **-o** (**Maria → Mario!**, **soră → soro!**), plural **-lor** (**Doamnelor și domnilor!** Ladies and gentlemen!). With names the plain form is also common: **Maria!**
+      pt: |
+        Masculino **-e** ou **-ule** (**Ion → Ioane!**, **domn → domnule!**, **prieten → prietene!**), feminino **-o** (**Maria → Mario!**, **soră → soro!**), plural **-lor** (**Doamnelor și domnilor!** Senhoras e senhores!). Com nomes, a forma simples também é comum: **Maria!**
+    examples:
+    - ["Bună ziua, domnule!", "Good afternoon, sir!", "Boa tarde, senhor!", "domnule"]
+    match: {seq: [{pos: noun, case: voc}]}
+
+- title: {en: Numbers and time, pt: Números e tempo}
+  lessons:
+  - id: ro-numbers
+    title: unu, doi, trei … douăzeci de
+    meaning: {en: "numbers; de after twenty", pt: "números; de depois de vinte"}
+    intro:
+      en: |
+        **unu (un, o), doi (două), trei, patru, cinci, șase, șapte, opt, nouă, zece**; **unsprezece, doisprezece… douăzeci, o sută, o mie**. From twenty on, the noun takes **de**: **douăzeci de ani** (twenty years), but **zece ani**. **Doi / două** agree: **doi frați, două surori**.
+      pt: |
+        **unu (un, o), doi (două), trei, patru, cinci, șase, șapte, opt, nouă, zece**; **unsprezece, doisprezece… douăzeci, o sută, o mie**. A partir de vinte, o nome leva **de**: **douăzeci de ani** (vinte anos), mas **zece ani**. **Doi / două** concordam: **doi frați, două surori**.
+    examples:
+    - ["Am douăzeci de ani.", "I'm twenty.", "Tenho vinte anos.", "douăzeci"]
+    match: {seq: [{word: [unu, doi, două, trei, patru, cinci, șase, șapte, opt, nouă, zece, douăzeci, sută, mie]}]}
+    pool: [doi, două, trei, cinci, zece, douăzeci]
+  - id: ro-days
+    title: luni, azi, mâine
+    meaning: {en: "days and time words", pt: "dias e palavras de tempo"}
+    intro:
+      en: |
+        **luni, marți, miercuri, joi, vineri, sâmbătă, duminică** (Monday … Sunday); *on Monday* is just **luni**, *every Monday* **lunea**. **azi / astăzi** (today), **mâine** (tomorrow), **ieri** (yesterday), **acum** (now), **dimineața, seara** (in the morning, in the evening).
+      pt: |
+        **luni, marți, miercuri, joi, vineri, sâmbătă, duminică** (segunda … domingo); *na segunda* é só **luni**, *toda segunda* **lunea**. **azi / astăzi** (hoje), **mâine** (amanhã), **ieri** (ontem), **acum** (agora), **dimineața, seara** (de manhã, à noite).
+    examples:
+    - ["Mâine mergem la mare.", "Tomorrow we're going to the seaside.", "Amanhã vamos à praia.", "Mâine"]
+    match: {seq: [{word: [azi, astăzi, mâine, ieri, acum, dimineața, seara, luni, marți, miercuri, joi, vineri, sâmbătă, duminică]}]}
+    pool: [azi, mâine, ieri, acum, luni, duminică]
