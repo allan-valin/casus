@@ -88,6 +88,23 @@ export function resumePlayback() {
   if (context?.state === 'suspended') context.resume();
 }
 
+/** the same 16-bit PCM WAV with `ms` of silence before the sound; anything else is returned as it is */
+export async function padWav(blob, ms) {
+  const buf = new Uint8Array(await blob.arrayBuffer());
+  const dv = new DataView(buf.buffer);
+  const tag = (o) => String.fromCharCode(...buf.slice(o, o + 4));
+  if (buf.length < 44 || tag(0) !== 'RIFF' || tag(8) !== 'WAVE' || tag(36) !== 'data' || dv.getUint16(34, true) !== 16) return blob;
+  const channels = dv.getUint16(22, true);
+  const pad = Math.round((dv.getUint32(24, true) * ms) / 1000) * 2 * channels;
+  const out = new Uint8Array(buf.length + pad);
+  out.set(buf.slice(0, 44));
+  out.set(buf.slice(44), 44 + pad);
+  const ov = new DataView(out.buffer);
+  ov.setUint32(4, out.length - 8, true);
+  ov.setUint32(40, dv.getUint32(40, true) + pad, true);
+  return new Blob([out], { type: 'audio/wav' });
+}
+
 export async function playBlobAudio(blob, { rate = 1 } = {}) {
   const url = URL.createObjectURL(blob);
   try {
@@ -205,7 +222,7 @@ export function createVoice({ bcp47, espeakVoice, natural = null, synth = global
     try { return await engineLoad; } catch (e) { engineLoad = null; throw new Error(`no voice for ${bcp47}: espeak-ng could not be loaded (${e.message})`); }
   }
   let lastError = null;
-  async function speak(text, { pitch = 1 } = {}) {
+  async function speak(text, { pitch = 1, speed = 1 } = {}) {
     let fellBack = false;
     lastError = null;
     if (naturalReady()) {
@@ -214,8 +231,9 @@ export function createVoice({ bcp47, espeakVoice, natural = null, synth = global
         p = await piper();
         // our own engine can stretch the speech: by the voice's speed, and by the pitch so that playing it faster for a
         // higher voice does not also make it quicker (Allan, 2026-10-21: "mk feels a bit fast")
-        const lengthScale = natural.phonemes ? (natural.speed ?? 1) * pitch : undefined;
-        const blob = await p.predict({ text, voiceId: natural.voiceId, ...(lengthScale ? { lengthScale } : {}) });
+        const lengthScale = natural.phonemes ? (natural.speed ?? 1) * speed * pitch : undefined;
+        // a short silence first: audio output that has just woken cuts the first syllable (Allan, 2026-10-21)
+        const blob = await padWav(await p.predict({ text, voiceId: natural.voiceId, ...(lengthScale ? { lengthScale } : {}) }), 120);
         await (pitch === 1 ? playBlob(blob) : playBlob(blob, { rate: pitch }));
         return { tier: 'natural', fellBack: false };
       } catch (e) {

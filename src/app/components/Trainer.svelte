@@ -342,10 +342,10 @@
   .cmp th { text-align: start; padding: 2px 8px 2px 0; font-size: .85em; color: var(--ink-2); white-space: nowrap; }
   .cmp td { border: 1px solid var(--line); text-align: center; padding: 2px; min-width: 32px; }
   /* mixed with the card colour, not transparent, so a red theme (Macedonia) does not muddy them (Allan, 2026-10-21) */
-  .cmp td.ok { background: color-mix(in srgb, #1fbf5f 45%, var(--card, #fff)); box-shadow: inset 0 -3px 0 #16a34a; }
-  .cmp td.near { background: color-mix(in srgb, #f5b800 50%, var(--card, #fff)); box-shadow: inset 0 -3px 0 #d99a00; }
-  .cmp td.sub { background: color-mix(in srgb, #e0453a 35%, var(--card, #fff)); box-shadow: inset 0 -3px 0 #c0392b; }
-  .cmp td.del, .cmp td.ins { background: color-mix(in srgb, #e0453a 18%, var(--card, #fff)); box-shadow: inset 0 -3px 0 #e0453a; }
+  .cmp td.ok { background: color-mix(in srgb, #1fbf5f 45%, var(--panel)); box-shadow: inset 0 -3px 0 #16a34a; }
+  .cmp td.near { background: color-mix(in srgb, #f5b800 50%, var(--panel)); box-shadow: inset 0 -3px 0 #d99a00; }
+  .cmp td.sub { background: color-mix(in srgb, #e0453a 35%, var(--panel)); box-shadow: inset 0 -3px 0 #c0392b; }
+  .cmp td.del, .cmp td.ins { background: color-mix(in srgb, #e0453a 18%, var(--panel)); box-shadow: inset 0 -3px 0 #e0453a; }
   .cmp td.wild { color: var(--muted); }
   .cmp .snd { min-height: 26px; min-width: 26px; padding: 0 3px; }
   .score { font-weight: 600; margin-inline-start: 8px; }

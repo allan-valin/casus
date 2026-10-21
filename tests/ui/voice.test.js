@@ -258,3 +258,25 @@ describe('a pitched voice is stretched by its pitch, so the pitch does not speed
     expect(asked[0].lengthScale).toBeCloseTo(1.375);
   });
 });
+
+describe('a character speed slows the voice further', () => {
+  it('lengthScale = voice speed × character speed × pitch', async () => {
+    const { createVoice } = await import('../../src/app/lib/voice.js');
+    const asked = [];
+    const v = createVoice({ bcp47: 'mk', espeakVoice: 'mk', natural: { voiceId: 'v', phonemes: 'mk', speed: 1.1 }, store: { getItem: () => 'stored', setItem() {}, removeItem() {} },
+      loadPiper: async () => ({ predict: async (o) => { asked.push(o); return new Blob(['x']); } }), playBlob: async () => {} });
+    await v.speak('да', { pitch: 1.2, speed: 1.1 });
+    expect(asked[0].lengthScale).toBeCloseTo(1.1 * 1.1 * 1.2);
+  });
+  it('the first sound gets a short silence before it, so its first syllable is not cut (Allan 2026-10-21)', async () => {
+    const { padWav } = await import('../../src/app/lib/voice.js');
+    const head = new Uint8Array(44); const dv = new DataView(head.buffer);
+    [...'RIFF'].forEach((c, i) => { head[i] = c.charCodeAt(0); }); [...'WAVE'].forEach((c, i) => { head[8 + i] = c.charCodeAt(0); }); [...'data'].forEach((c, i) => { head[36 + i] = c.charCodeAt(0); });
+    dv.setUint16(22, 1, true); dv.setUint32(24, 1000, true); dv.setUint16(34, 16, true); dv.setUint32(40, 4, true);
+    const wav = new Blob([head, new Uint8Array([1, 2, 3, 4])], { type: 'audio/wav' });
+    const out = new Uint8Array(await (await padWav(wav, 100)).arrayBuffer());
+    expect(out.length).toBe(44 + 200 + 4);                       // 100 ms at 1000 Hz, 16-bit = 200 bytes of silence
+    expect(new DataView(out.buffer).getUint32(40, true)).toBe(204);
+    expect([...out.slice(-4)]).toEqual([1, 2, 3, 4]);
+  });
+});

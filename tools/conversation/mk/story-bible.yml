@@ -15,13 +15,17 @@ voices:
   # if Allan finds them unusable, female characters fall back to espeak-ng mk (GPL-3, robotic) or stay male-only.
   - {id: nar-en, role: narrator, lang: en, tts: "piper:en_US-lessac-medium"}         # neutral narrator (international offices)
   - {id: nar-pt, role: narrator, lang: pt, tts: "piper:pt_BR-cadu-medium"}            # CC0
-  - {id: mk-m, role: character, lang: mk, gender: m, tts: "piper:bg_BG-dimitar-medium+mk-phonemes"}  # CC0
-  - {id: mk-m2, role: character, lang: mk, gender: m, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 0.9}
-  - {id: mk-f, role: character, lang: mk, gender: f, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 1.25}
-  - {id: mk-f2, role: character, lang: mk, gender: f, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 1.35}
+  # one Piper voice for everyone, told apart by pitch and speed (Allan, 2026-10-21: the landlady and "you" sounded like
+  # one person): the older characters speak lower and slower
+  - {id: mk-p-f, role: character, lang: mk, gender: f, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 1.32}
+  - {id: mk-p-m, role: character, lang: mk, gender: m, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 1.0}
+  - {id: mk-m, role: character, lang: mk, gender: m, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 0.88}
+  - {id: mk-m2, role: character, lang: mk, gender: m, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 0.8, speed: 1.1}
+  - {id: mk-f, role: character, lang: mk, gender: f, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 1.42}
+  - {id: mk-f2, role: character, lang: mk, gender: f, tts: "piper:bg_BG-dimitar-medium+mk-phonemes", pitch: 1.12, speed: 1.12}
 
 protagonist:
-  forms: {f: mk-f, m: mk-m}
+  forms: {f: mk-p-f, m: mk-p-m}
   name: null                    # addressed as "você" by the narrator
   background: >-
     Brazilian from São Paulo, about 30, moves to Skopje for a one-year job at a software company whose working

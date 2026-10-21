@@ -8,7 +8,7 @@
    * docs/conversation/ and built by tools/build_conversation.py. Progress is kept in this browser. */
   import { onMount } from 'svelte';
   import { t, ui } from '../lib/i18n.svelte.js';
-  import { voicePitches, pitchOf } from '../lib/talkvoices.js';
+  import { voicePitches, pitchOf, speedOf } from '../lib/talkvoices.js';
   let { lang, loadTalk, storage = null, speakTaught = async () => {}, speakNarrator = async () => {}, trainerHref = null,
     say = () => {}, pause = (ms) => new Promise((r) => setTimeout(r, ms)), Practice = null, practiceProps = {}, control = null,
     voices = [], narratorVoiceOf = null, Entry = null, entryProps = {}, VoiceBox = null } = $props();
@@ -78,7 +78,7 @@
     if (r?.fellBack && !warnedFallback) { warnedFallback = true; say(t('talk.voice.fellBack', { error: r.error ?? '' }), 'err'); }
   }
   async function sayTaught(text, who = null) {
-    try { noteFallback(await speakTaught(text, { pitch: who ? pitchOf(course, unit, who, pitches) : 1 })); } catch (e) { say(t('talk.speakFailed', { text, error: e?.message ?? '' }), 'err'); throw e; }
+    try { noteFallback(await speakTaught(text, { pitch: who ? pitchOf(course, unit, who, pitches) : 1, speed: who ? speedOf(course, unit, who) : 1 })); } catch (e) { say(t('talk.speakFailed', { text, error: e?.message ?? '' }), 'err'); throw e; }
   }
   // ▶ starts the step; while it plays the same button pauses (⏸) and resumes (▶) it
   // every playback has a run number; starting another stops the sound and ends the old run (Allan, 2026-10-21: two at once)
@@ -208,8 +208,10 @@
       ms.setActionHandler('pause', () => { if (!paused && (playing !== null || handsFree)) playPause(); });
       ms.setActionHandler('nexttrack', () => next());
       ms.setActionHandler('previoustrack', () => prev());
+      // some phones show seek buttons instead of track buttons: both move between steps (Allan, 2026-10-21)
+      try { ms.setActionHandler('seekforward', () => next()); ms.setActionHandler('seekbackward', () => prev()); } catch { /* not supported */ }
     } catch { /* not supported */ }
-    return () => { try { for (const a of ['play', 'pause', 'nexttrack', 'previoustrack']) ms.setActionHandler(a, null); } catch { /* fine */ } };
+    return () => { for (const a of ['play', 'pause', 'nexttrack', 'previoustrack', 'seekforward', 'seekbackward']) try { ms.setActionHandler(a, null); } catch { /* fine */ } };
   });
   async function answer(s, n, inner = false) {
     if (!inner) stopAll();
@@ -233,6 +235,16 @@
     if (!ok) { shown = {}; current = null; practising = null; }
   }
 </script>
+
+{#snippet icon(kind)}
+  <!-- drawn, not font glyphs: a glyph sits differently on every device's font (Allan, 2026-10-21) -->
+  <svg class="ic" viewBox="0 0 24 24" aria-hidden="true">
+    {#if kind === 'play'}<path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/>
+    {:else if kind === 'pause'}<rect x="6.5" y="5.5" width="4" height="13" rx="1" fill="currentColor"/><rect x="13.5" y="5.5" width="4" height="13" rx="1" fill="currentColor"/>
+    {:else if kind === 'prev'}<rect x="5.5" y="6" width="2.5" height="12" rx="1" fill="currentColor"/><path d="M19 6v12l-9.5-6z" fill="currentColor"/>
+    {:else}<path d="M5 6v12l9.5-6z" fill="currentColor"/><rect x="16" y="6" width="2.5" height="12" rx="1" fill="currentColor"/>{/if}
+  </svg>
+{/snippet}
 
 {#snippet gearPanel()}
   {#if VoiceBox && allVoices.length}
@@ -303,7 +315,7 @@
             <span class="num">{n + 1}</span>
             {#if s.type !== 'selfcheck'}<button class="play" class:playing={playing === n && !paused} class:paused={playing === n && paused}
               aria-label={playing === n && !paused ? t('talk.pause') : t('talk.play')} title={playing === n && !paused ? t('talk.pause') : t('talk.play')}
-              onclick={() => play(s, n)}>{playing === n && !paused ? '⏸' : '▶'}</button>{/if}
+              onclick={() => play(s, n)}>{@render icon(playing === n && !paused ? 'pause' : 'play')}</button>{/if}
             {#if s.type === 'narrator'}
               <span class="narration">{shownNarration(nar(s.text))}</span>
             {:else if s.type === 'dialogue'}
@@ -339,9 +351,9 @@
       <div class="player-bar" role="toolbar" aria-label={t('talk.player')}>
         <button class="hands-free" class:on={handsFree} aria-pressed={handsFree} onclick={toggleHandsFree}>🎧 {handsFree ? t('talk.handsFree.stop') : t('talk.handsFree.start')}</button>
         <div class="transport">
-          <button class="prev" aria-label={t('talk.prev')} title={t('talk.prev')} onclick={prev}><span class="glyph">⏮</span></button>
-          <button class="playpause" aria-label={playing !== null && !paused ? t('talk.pause') : t('talk.play')} onclick={playPause}><span class="glyph" class:tri={!(playing !== null && !paused)}>{playing !== null && !paused ? '⏸' : '▶'}</span></button>
-          <button class="next" aria-label={t('talk.next')} title={t('talk.next')} onclick={next}><span class="glyph">⏭</span></button>
+          <button class="prev" aria-label={t('talk.prev')} title={t('talk.prev')} onclick={prev}>{@render icon('prev')}</button>
+          <button class="playpause" aria-label={playing !== null && !paused ? t('talk.pause') : t('talk.play')} onclick={playPause}>{@render icon(playing !== null && !paused ? 'pause' : 'play')}</button>
+          <button class="next" aria-label={t('talk.next')} title={t('talk.next')} onclick={next}>{@render icon('next')}</button>
         </div>
         <span class="where">{current == null ? t('talk.steps', { total: unit.steps.length }) : t('talk.where', { n: current + 1, total: unit.steps.length })}</span>
       </div>
@@ -360,15 +372,17 @@
   .practice { flex-basis: 100%; margin-top: 6px; }
   .unit-page { padding-bottom: 120px; }
   .player-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px;
-    padding: 8px 16px calc(8px + env(safe-area-inset-bottom)); background: var(--card, #fff); border-top: 2px solid var(--accent, #6a4c93); box-shadow: 0 -2px 10px rgb(0 0 0 / 0.15); }
+    padding: 8px 16px calc(8px + env(safe-area-inset-bottom)); background: var(--panel); color: var(--ink); border-top: 2px solid var(--accent); box-shadow: 0 -2px 10px rgb(0 0 0 / 0.15); }
+  .player-bar button { color: var(--ink); background: var(--panel-hi, var(--panel)); border: 1px solid var(--line); }
+  .ic { width: 60%; height: 60%; display: block; }
+  .play { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; padding: 0; border-radius: 50%; }
+  .play .ic { width: 70%; height: 70%; }
   .transport { display: flex; gap: 14px; align-items: center; }
   .transport button { font-size: 1.6rem; width: 52px; height: 52px; border-radius: 50%; padding: 0; line-height: 1; display: inline-flex; align-items: center; justify-content: center; }
-  .transport .glyph { display: block; line-height: 1; }
-  .transport .glyph.tri { transform: translateX(8%); }   /* a triangle's visual centre sits left of its box */
   .transport .playpause { font-size: 2rem; width: 64px; height: 64px; }
   .hands-free { font-size: 1.05rem; font-weight: 700; padding: 10px 16px; border-radius: 24px; border: 2px solid var(--accent, #6a4c93); }
-  .hands-free.on { background: var(--accent, #6a4c93); color: #fff; }
-  .where { font-size: 0.9rem; opacity: 0.8; }
+  .player-bar .hands-free.on { background: var(--accent); color: var(--accent-ink); }
+  .where { flex-basis: 100%; text-align: center; font-size: 0.9rem; color: var(--muted); }   /* own line: the controls stay centred */
   button.w { background: none; border: 0; padding: 0 1px; font: inherit; color: inherit; cursor: pointer; border-bottom: 1px dotted currentColor; }
   button.w:hover { background: color-mix(in srgb, var(--accent, #6a4c93) 15%, transparent); }
   .roman { display: block; font-size: 0.85em; opacity: 0.75; font-style: italic; }

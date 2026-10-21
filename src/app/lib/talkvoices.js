@@ -20,3 +20,9 @@ export function pitchOf(course, unit, speaker, pitches = voicePitches(course)) {
   const voice = speaker === 'protagonist' ? course?.protagonist?.[unit?.protagonist] : course?.cast?.[speaker]?.voice;
   return pitches[voice] ?? 1;
 }
+
+/** how much slower a speaker talks (an older character: a voice's `speed` in the story bible), 1 by default */
+export function speedOf(course, unit, speaker) {
+  const id = speaker === 'protagonist' ? course?.protagonist?.[unit?.protagonist] : course?.cast?.[speaker]?.voice;
+  return (course?.voices ?? []).find((v) => v.id === id)?.speed ?? 1;
+}

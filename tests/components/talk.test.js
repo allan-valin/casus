@@ -388,7 +388,7 @@ describe('Conversation practice tab (Allan, 2026-10-20/21: narrator in the inter
     for (let i = 0; i < 10; i += 1) await flush();
     expect(spoken).toEqual(['Listen.']);                                         // nothing new while paused
     await fireEvent.click(container.querySelector('.player-bar .playpause'));   // resume
-    for (let i = 0; i < 10; i += 1) await flush();
+    for (let i = 0; i < 100 && spoken.length < 2; i += 1) await new Promise((r) => setTimeout(r, 20));   // the run checks every 120 ms
     expect(spoken.slice(0, 2)).toEqual(['Listen.', 'Guten Tag.']);
   });
 
@@ -446,6 +446,21 @@ describe('Conversation practice tab (Allan, 2026-10-20/21: narrator in the inter
     delete globalThis.navigator.mediaSession;
   });
 
+  it('dialogue lines go to the voice with the character pitch and speed', async () => {
+    const asked = [];
+    const course = { ...COURSE, voices: [{ id: 'f2', role: 'character', gender: 'f', pitch: 1.12, speed: 1.12 }, { id: 'p', role: 'character', gender: 'f', pitch: 1.32 }],
+      protagonist: { f: 'p', m: 'p' }, cast: { becker: { name: 'Frau Becker', voice: 'f2' } }, units: COURSE.units.map((u) => ({ ...u, protagonist: 'f' })) };
+    const { p } = props({ loadTalk: async () => course, speakTaught: async (t, o) => { asked.push([t, o]); } });
+    const { container } = render(Talk, p);
+    await flush();
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    await fireEvent.click(container.querySelector('.step[data-type="dialogue"] .play'));
+    for (let i = 0; i < 5; i += 1) await flush();
+    expect(asked[0]).toEqual(['Guten Tag.', { pitch: 1.12, speed: 1.12 }]);
+    expect(asked[1][1]).toEqual({ pitch: 1.32, speed: 1 });
+  });
+
   it('the self-check marks the unit done, kept in the browser and shown in the list', async () => {
     const { p } = props();
     const { container } = render(Talk, p);
@@ -470,6 +485,12 @@ describe('character pitches', async () => {
     const p = voicePitches(course);
     expect(p.f).toBe(1.25); expect(p.m).toBe(1); expect(p.m2).not.toBe(1); expect(p.m3).toBe(1.12);
     expect(new Set(Object.values(p)).size).toBe(4);
+  });
+  it('a voice may speak slower: speedOf gives the voice speed (older characters; Allan 2026-10-21)', async () => {
+    const { speedOf } = await import('../../src/app/lib/talkvoices.js');
+    const c = { ...course, voices: [...course.voices, { id: 'old', role: 'character', gender: 'f', pitch: 1.12, speed: 1.12 }], cast: { ...course.cast, vera: { voice: 'old' } } };
+    expect(speedOf(c, {}, 'vera')).toBe(1.12);
+    expect(speedOf(c, { protagonist: 'f' }, 'protagonist')).toBe(1);
   });
   it('the protagonist speaks with the unit’s form; cast members with their voice', () => {
     expect(pitchOf(course, { protagonist: 'f' }, 'protagonist')).toBe(1.25);
