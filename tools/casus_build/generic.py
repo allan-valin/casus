@@ -7,6 +7,7 @@ from __future__ import annotations
 import json
 import re
 import string
+import unicodedata
 from collections.abc import Iterable, Iterator
 
 _WORD = re.compile(r"[^\W\d_]")
@@ -200,6 +201,10 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
                     person, number = hungarian_person(text, word, definite="definite" in tags, past="past" in tags)
                     tags = {"past" if "past" in tags else "present", "indicative", {"1": "first-person", "2": "second-person", "3": "third-person"}[person],
                             {"sg": "singular", "pl": "plural"}[number]}
+            if cfg.code == "tl" and pos == "verb":
+                # Tagalog aspect: completive (bumasa, nagbasa) as past, progressive (bumabasa) as present,
+                # contemplative (babasa) as future
+                tags = {{"completive": "past", "progressive": "present", "contemplative": "future"}.get(t, t) for t in tags}
             skip = SKIP - {"error-unrecognized-form"} if pos in ("pron", "det", "num") else SKIP
             if cfg.code == "ro" and pos == "adj":
                 skip = skip - {"error-unrecognized-form"}      # Romanian adjective tables come untagged for case
@@ -479,6 +484,12 @@ def _clean_fa(s: str) -> str:
     return clean_fa(s)
 
 
+def _strip_tl(s: str) -> str:
+    # Wiktionary writes the stress and glottal stop (aklát, bumasâ); texts do not
+    return unicodedata.normalize("NFC", "".join(c for c in unicodedata.normalize("NFD", s) if c not in "\u0301\u0300\u0302")).lower()
+
+
+CONFIGS["tl"] = Config("tl", [], {}, caseless=True, key=_strip_tl)
 CONFIGS["sw"] = Config("sw", [], {}, caseless=True)
 CONFIGS["fa"] = Config("fa", [], {}, caseless=True, key=_strip_fa, clean=_clean_fa)
 CONFIGS["vi"] = Config("vi", [], {}, caseless=True)

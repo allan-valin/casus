@@ -198,6 +198,12 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
 - Dictionary: the English Wiktionary via wiktextract / kaikki.org, CC BY-SA 4.0.
 - Sample passages: sentences written for Casus; Wikipedia, *Kiswahili*, CC BY-SA 4.0.
 
+## Tagalog — CC BY-SA
+
+- Dictionary: the English Wiktionary via wiktextract / kaikki.org, CC BY-SA 4.0.
+- Sample passages: sentences written for Casus; *Sa Aking Mga Kabata* (19th c.), public domain; Wikipedia,
+  *Wikang Tagalog*, CC BY-SA 4.0.
+
 ## Learn tab
 
 - Japanese grammar lessons: **JLPT Grammar Enhanced** (github.com/maitodesu/jlpt-grammar-enhanced, commit a4254e0),
