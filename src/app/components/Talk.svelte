@@ -11,7 +11,7 @@
   import { voicePitches, pitchOf } from '../lib/talkvoices.js';
   let { lang, loadTalk, storage = null, speakTaught = async () => {}, speakNarrator = async () => {}, trainerHref = null,
     say = () => {}, pause = (ms) => new Promise((r) => setTimeout(r, ms)), Practice = null, practiceProps = {}, control = null,
-    voices = [], narratorVoiceOf = null, Entry = null, entryProps = {} } = $props();
+    voices = [], narratorVoiceOf = null, Entry = null, entryProps = {}, VoiceBox = null } = $props();
 
   const GUIDE = 'https://github.com/allan-valin/casus/blob/main/docs/conversation';
   const GUIDES = [['en', 'English'], ['pt-BR', 'Português (Brasil)'], ['de', 'Deutsch'], ['mk', 'Македонски'], ['ar', 'العربية']];
@@ -35,6 +35,8 @@
   let tickVoices = $state(0);      // bumped after a download: naturalReady() reads the browser, not Svelte state
   const missing = $derived((tickVoices, [...new Set([...voices, narratorVoiceOf?.(narratorLang)])].filter((v) => v?.natural && !v.naturalReady?.())));
   const needVoices = $derived(!gateClosed && missing.length > 0);
+  // every voice this course uses, for the ⚙ panel (download, delete, download again — Allan, 2026-10-21)
+  const allVoices = $derived([...new Set([...voices, narratorVoiceOf?.(narratorLang)])].filter((v) => v?.natural));
   async function getVoices() {
     fetching = 0;
     const list = missing.slice();
@@ -82,15 +84,41 @@
   // every playback has a run number; starting another stops the sound and ends the old run (Allan, 2026-10-21: two at once)
   let run = 0;
   async function waitWhilePaused(my) { while (paused && my === run) await new Promise((r) => setTimeout(r, 120)); }
+  // narration with words of the taught language: those go to the taught voice (Allan, 2026-10-21: the Portuguese voice
+  // spelled Cyrillic letter by letter). Quoted words in another alphabet are found by themselves; «…» marks any.
+  const LATIN = /^[\p{Script=Latin}\p{N}\p{P}\p{Z}\p{M}]*$/u;
+  function narrationParts(text) {
+    const out = [];
+    const re = /«([^»]+)»|['‘’"“”]([^'‘’"“”]+)['‘’"“”]/gu;
+    let at = 0;
+    for (const m of String(text).matchAll(re)) {
+      const inner = m[1] ?? m[2];
+      const taught = m[1] != null || !LATIN.test(inner);
+      if (!taught) continue;
+      if (m.index > at) out.push({ text: text.slice(at, m.index), taught: false });
+      out.push({ text: inner, taught: true });
+      at = m.index + m[0].length;
+    }
+    if (at < text.length) out.push({ text: text.slice(at), taught: false });
+    return out.map((p) => ({ ...p, text: p.taught ? p.text.trim() : p.text.replace(/^[\s\p{P}]+(?=\p{L})/u, '').trim() })).filter((p) => /[\p{L}\p{N}]/u.test(p.text));
+  }
+  const shownNarration = (text) => String(text ?? '').replace(/«([^»]+)»/g, '$1');
+  async function narrate(text, my) {
+    for (const part of narrationParts(text)) {
+      if (my !== undefined && my !== run) break;
+      if (part.taught) await sayTaught(part.text);
+      else noteFallback(await speakNarrator(part.text, narratorLang));
+    }
+  }
   // one step's sound; `auto` (hands-free) leaves time to answer a question and to repeat each piece
-  const THINK_MS = 10000;
+  const THINK_MS = 5000;   // Allan, 2026-10-21: five seconds is enough
   async function perform(s, n, auto = false) {
     control?.stop?.();
     const my = ++run;
     playing = n;
-    paused = false;
+    if (!auto) paused = false;
     try {
-      if (s.type === 'narrator') { noteFallback(await speakNarrator(nar(s.text), narratorLang)); say(t('talk.played.narrator')); }
+      if (s.type === 'narrator') { await narrate(nar(s.text), my); say(t('talk.played.narrator')); }
       else if (s.type === 'dialogue') {
         for (const ln of linesOf(s)) { await waitWhilePaused(my); if (my !== run) break; await sayTaught(ln.text, ln.speaker); if (my !== run) break; await pause(400); }
         say(t('talk.played.dialogue', { n: linesOf(s).length }));
@@ -99,14 +127,14 @@
         for (const part of s.parts) { await waitWhilePaused(my); if (my !== run) break; await sayTaught(part); if (my !== run) break; await pause(auto ? 2500 : 600); }
         say(t('talk.played.buildup', { text: s.parts.at(-1) }));
       } else if (s.type === 'prompt') {
-        noteFallback(await speakNarrator(nar(s.ask), narratorLang)); say(t('talk.played.ask'));
+        await narrate(nar(s.ask), my); say(t('talk.played.ask'));
         if (auto) {
           await waitWhilePaused(my); if (my === run) await pause(THINK_MS); await waitWhilePaused(my);
           if (my === run) await answer(s, n, true);
         }
       }
     } catch { /* already reported */ }
-    if (my === run) { playing = null; paused = false; }
+    if (my === run) { playing = null; if (!auto) paused = false; }   // in hands-free a pause holds the whole run
   }
   function stopAll() { control?.stop?.(); run += 1; playing = null; paused = false; }
   async function play(s, n) {
@@ -116,6 +144,7 @@
       return;
     }
     if (handsFree) handsFree = false;
+    paused = false;
     await perform(s, n);
   }
 
@@ -125,10 +154,15 @@
   async function runHandsFree(from) {
     handsFree = true;
     say(t('talk.handsFree.on'));
+    paused = false;
+    const holding = async () => { while (paused && handsFree) await new Promise((r) => setTimeout(r, 120)); };
     for (let k = from; k < unit.steps.length && handsFree; k += 1) {
+      await holding();
+      if (!handsFree) break;
       current = k;
       if (unit.steps[k].type === 'selfcheck') break;
       await perform(unit.steps[k], k, true);
+      await holding();
       if (handsFree) await pause(800);
     }
     handsFree = false;
@@ -150,6 +184,9 @@
   const next = () => stepTo(current == null ? 0 : current + 1);
   const prev = () => stepTo(current == null ? 0 : current - 1);
   function playPause() {
+    if (handsFree && playing === null) {          // paused between steps of hands-free: resume the run
+      paused = !paused; say(t(paused ? 'talk.paused' : 'talk.resumed')); return;
+    }
     if (playing !== null) { play(unit.steps[playing], playing); return; }
     stepTo(current ?? 0);
   }
@@ -189,6 +226,14 @@
   }
 </script>
 
+{#snippet gearPanel()}
+  {#if VoiceBox && allVoices.length}
+    <details class="voice-gear"><summary>⚙ {t('talk.voices.gear')}</summary>
+      {#each allVoices as v}<VoiceBox voice={v} onaction={() => { tickVoices += 1; }} />{/each}
+    </details>
+  {/if}
+{/snippet}
+
 {#snippet words(key, text)}
   <span class="taught" lang={lang.bcp47}>{#each pieces(text) as p}{#if p.word && Entry}<button class="w" onclick={() => openWord(key, p.x)}>{p.x}</button>{:else}{p.x}{/if}{/each}</span>{#if romanize}<span class="roman">{romanOf(text)}</span>{/if}
   {#if Entry && entry?.key === key}<div class="entry"><Entry word={entry.word} {lang} {...entryProps} onclose={() => (entry = null)} /></div>{/if}
@@ -211,6 +256,7 @@
     <p>{t('talk.guide.intro')}</p>
     <ul class="guides">{#each GUIDES as [code, name]}<li><a class="guide" href={`${GUIDE}/GUIDE.${code}.md`} target="_blank" rel="noopener">{name}</a></li>{/each}</ul>
   {:else if !unit}
+    {@render gearPanel()}
     <details class="howto" open={helpOpen}>
       <summary>{t('talk.howto.title')}</summary>
       <div class="prose">{@html t('talk.howto.html')}</div>
@@ -241,15 +287,17 @@
           <button class="robot-anyway" onclick={() => (gateClosed = true)}>{t('talk.voices.robot')}</button>
         </div>
       {/if}
+      {@render gearPanel()}
       <details class="howto"><summary>{t('talk.howto.title')}</summary><div class="prose">{@html t('talk.howto.html')}</div></details>
       <ol class="steps">
         {#each unit.steps as s, n}
-          <li class="step" class:current={current === n} data-type={s.type}>
+          <li class="step" class:current={current === n} class:sounding={playing === n} data-type={s.type}>
+            <span class="num">{n + 1}</span>
             {#if s.type !== 'selfcheck'}<button class="play" class:playing={playing === n && !paused} class:paused={playing === n && paused}
               aria-label={playing === n && !paused ? t('talk.pause') : t('talk.play')} title={playing === n && !paused ? t('talk.pause') : t('talk.play')}
               onclick={() => play(s, n)}>{playing === n && !paused ? '⏸' : '▶'}</button>{/if}
             {#if s.type === 'narrator'}
-              <span class="narration">{nar(s.text)}</span>
+              <span class="narration">{shownNarration(nar(s.text))}</span>
             {:else if s.type === 'dialogue'}
               <span class="kind">{s.again ? t('talk.dialogue.again') : t('talk.dialogue')}</span>
               <button class="reveal" aria-expanded={!!shown[n]} onclick={() => toggle(n)}>{shown[n] ? t('talk.hide') : t('talk.show')}</button>
@@ -266,7 +314,7 @@
               {#if Practice}<button class="practise" aria-expanded={practising === n} onclick={() => practise(n)}>🎤 {t('talk.practise')}</button>{/if}
               {#if Practice && practising === n}<div class="practice"><Practice text={s.parts.at(-1)} {...practiceProps} /></div>{/if}
             {:else if s.type === 'prompt'}
-              <span class="ask">{nar(s.ask)}</span>{#if s.review} <span class="review-tag">{t('talk.review')}</span>{/if}
+              <span class="ask">{shownNarration(nar(s.ask))}</span>{#if s.review} <span class="review-tag">{t('talk.review')}</span>{/if}
               <span class="pause-hint">{t('talk.sayIt')}</span>
               <button class="answer" onclick={() => answer(s, n)}>{t('talk.answer')}</button>
               {#if Practice}<button class="practise" aria-expanded={practising === n} onclick={() => practise(n)}>🎤 {t('talk.practise')}</button>{/if}
@@ -295,6 +343,7 @@
 
 <style>
   .talk h3.level { margin: 14px 0 4px; }
+  .step.sounding { outline: 2px solid var(--accent, #6a4c93); outline-offset: 2px; }   /* the step whose audio is playing */
   .step.current { background: color-mix(in srgb, var(--accent, #6a4c93) 14%, transparent); border-radius: 8px; }
   .play.playing, .play.paused { outline: 2px solid var(--accent, #6a4c93); }
   .voice-gate { border: 1px solid var(--accent, #6a4c93); border-radius: 8px; padding: 8px 12px; margin: 8px 0; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
@@ -316,6 +365,7 @@
   button.w:hover { background: color-mix(in srgb, var(--accent, #6a4c93) 15%, transparent); }
   .roman { display: block; font-size: 0.85em; opacity: 0.75; font-style: italic; }
   .entry { flex-basis: 100%; margin-top: 6px; max-width: 100%; overflow-x: auto; }
+  .num { display: inline-block; min-width: 1.8em; text-align: right; opacity: 0.6; font-variant-numeric: tabular-nums; margin-right: 4px; }
   .units { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; }
   .unit-row { width: 100%; text-align: start; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--card, transparent); color: var(--ink); cursor: pointer; }
   .unit-row:hover { border-color: var(--accent); }

@@ -5,6 +5,7 @@ import { tick } from 'svelte';
 import Talk from '../../src/app/components/Talk.svelte';
 import PracticeStub from '../fixtures/PracticeStub.svelte';
 import EntryStub from '../fixtures/EntryStub.svelte';
+import VoiceStub from '../fixtures/VoiceStub.svelte';
 import { getLanguage } from '../../src/lang/registry.js';
 import { langFromPath, talkPath } from '../../src/app/lib/route.js';
 import { setLang } from '../../src/app/lib/i18n.svelte.js';
@@ -250,7 +251,7 @@ describe('Conversation practice tab (Allan, 2026-10-20/21: narrator in the inter
     const ask = texts.indexOf('Thank her.');
     expect(ask).toBeGreaterThan(0);
     expect(texts[ask + 1]).toBe('Danke!');                 // the answer, after the wait
-    expect(waits).toContain(10000);
+    expect(waits).toContain(5000);
     expect(container.querySelector('.step.current').dataset.type).toBe('selfcheck');   // stops at the self-check
   });
 
@@ -335,6 +336,69 @@ describe('Conversation practice tab (Allan, 2026-10-20/21: narrator in the inter
     await fireEvent.click(dlg.querySelector('button.w'));
     await flush();
     expect(dlg.querySelector('.entry-stub').textContent).toBe('Guten');
+  });
+
+  it('a ⚙ voices panel manages each voice the course uses: download, delete, download again (Allan 2026-10-21)', async () => {
+    const mk = { natural: { name: 'Dimitar' }, naturalReady: () => true };
+    const pt = { natural: { name: 'Faber' }, naturalReady: () => true };
+    const { p } = props({ VoiceBox: VoiceStub, voices: [mk], narratorVoiceOf: () => pt });
+    const { container } = render(Talk, p);
+    await flush();
+    const gear = container.querySelector('details.voice-gear');
+    expect(gear.querySelector('summary').textContent).toContain('⚙');
+    expect([...gear.querySelectorAll('.voice-stub')].map((e) => e.textContent)).toEqual(['Dimitar', 'Faber']);
+  });
+
+  it('narration speaks the taught-language words with the taught voice: other alphabets found by themselves, «…» marks any (Allan 2026-10-21)', async () => {
+    setLang('en');
+    const spoken = [];
+    const lang = { ...getLanguage('mk') };
+    const course = { ...COURSE, language: 'mk', units: [{ ...COURSE.units[0], steps: [
+      { type: 'narrator', text: { en: "To greet, say 'Добар ден'. Listen." } },
+      { type: 'narrator', text: { en: 'In German: «Guten Tag».' } }, { type: 'selfcheck' }] }] };
+    const { p } = props({ lang, loadTalk: async () => course, speakTaught: async (t) => { spoken.push(['taught', t]); }, speakNarrator: async (t) => { spoken.push(['narrator', t]); } });
+    const { container } = render(Talk, p);
+    await flush();
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    const plays = container.querySelectorAll('.step[data-type="narrator"] .play');
+    await fireEvent.click(plays[0]);
+    await flush();
+    expect(spoken).toEqual([['narrator', "To greet, say"], ['taught', 'Добар ден'], ['narrator', 'Listen.']]);
+    spoken.length = 0;
+    await fireEvent.click(plays[1]);
+    await flush();
+    expect(spoken).toEqual([['narrator', 'In German:'], ['taught', 'Guten Tag']]);
+    expect(container.querySelectorAll('.step[data-type="narrator"]')[1].textContent).not.toContain('«');
+  });
+
+  it('hands-free: a pause holds the whole run — the next step does not start until resumed (Allan 2026-10-21 bug)', async () => {
+    const spoken = [];
+    let hold;
+    const speakNarrator = async (t) => { spoken.push(t); if (t === 'Listen.') await new Promise((r) => { hold = r; }); };
+    const { p } = props({ speakNarrator, speakTaught: async (t) => { spoken.push(t); }, control: { pause: () => {}, resume: () => {}, stop: () => {} } });
+    const { container } = render(Talk, p);
+    await flush();
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    await fireEvent.click(container.querySelector('.hands-free'));
+    await flush();
+    await fireEvent.click(container.querySelector('.player-bar .playpause'));   // pause during the first step
+    hold();                                                                      // its sentence ends anyway
+    for (let i = 0; i < 10; i += 1) await flush();
+    expect(spoken).toEqual(['Listen.']);                                         // nothing new while paused
+    await fireEvent.click(container.querySelector('.player-bar .playpause'));   // resume
+    for (let i = 0; i < 10; i += 1) await flush();
+    expect(spoken.slice(0, 2)).toEqual(['Listen.', 'Guten Tag.']);
+  });
+
+  it('each step shows its number left of ▶', async () => {
+    const { p } = props();
+    const { container } = render(Talk, p);
+    await flush();
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    expect([...container.querySelectorAll('.step .num')].slice(0, 3).map((e) => e.textContent)).toEqual(['1', '2', '3']);
   });
 
   it('the self-check marks the unit done, kept in the browser and shown in the list', async () => {

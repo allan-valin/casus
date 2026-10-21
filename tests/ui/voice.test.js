@@ -169,3 +169,19 @@ describe('a character’s own pitch (Conversation practice, Allan 2026-10-21: al
     expect(playBlob.mock.calls[0][1]).toEqual({ rate: 0.9 });
   });
 });
+
+describe('one onnxruntime version for every natural voice (Allan 2026-10-21: "no available backend found … ort-wasm-simd-threaded.mjs")', () => {
+  it('the Piper library is loaded with onnxruntime pinned, and every session is created with the engine files of the same version', async () => {
+    const { loadPiperFromCdn, ORT_VERSION } = await import('../../src/app/lib/voice.js');
+    const asked = [];
+    const made = [];
+    const mod = { WASM_BASE: 'https://x/piper_phonemize',
+      TtsSession: { _instance: { stale: true }, create: async (o) => { made.push({ ...o, cleared: mod.TtsSession._instance === null }); return { predict: async (text) => `wav:${text}` }; } } };
+    const got = await loadPiperFromCdn((u) => { asked.push(u); return Promise.resolve(mod); });
+    expect(asked[0]).toContain(`onnxruntime-web@${ORT_VERSION}`);
+    expect(await got.predict({ text: 'olá', voiceId: 'pt_BR-faber-medium' })).toBe('wav:olá');
+    await got.predict({ text: 'de novo', voiceId: 'pt_BR-faber-medium' });
+    expect(made).toHaveLength(1);                                  // one session per voice, reused
+    expect(made[0]).toMatchObject({ cleared: true, voiceId: 'pt_BR-faber-medium', wasmPaths: { onnxWasm: `https://cdn.jsdelivr.net/npm/onnxruntime-web@${ORT_VERSION}/dist/`, piperData: 'https://x/piper_phonemize.data', piperWasm: 'https://x/piper_phonemize.wasm' } });
+  });
+});

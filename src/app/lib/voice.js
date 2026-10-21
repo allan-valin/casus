@@ -9,11 +9,31 @@
  */
 import { createPhonemePiper } from './phonemePiper.js';
 
-const PIPER_URL = 'https://cdn.jsdelivr.net/npm/@mintplex-labs/piper-tts-web@1.0.5/+esm';
+// One onnxruntime version for every natural voice (Allan, 2026-10-21: "no available backend found … .mjs"): the CDN
+// bundle of the Piper library pulled the newest onnxruntime-web but pointed it at the 1.18.0 engine files, which have
+// no .mjs — so the voice failed in Firefox and fell back to espeak. The library is loaded with onnxruntime pinned, and
+// its engine files come from the same version; src/app/lib/phonemePiper.js uses it too.
+export const ORT_VERSION = '1.27.0';
+export const ORT_DIST = `https://cdn.jsdelivr.net/npm/onnxruntime-web@${ORT_VERSION}/dist/`;
+const PIPER_URL = `https://esm.sh/@mintplex-labs/piper-tts-web@1.0.5?deps=onnxruntime-web@${ORT_VERSION}`;
 
 /** Piper in the browser (MIT): download(voiceId, progress), predict({ text, voiceId }) -> WAV Blob, remove(voiceId). */
-export async function loadPiperFromCdn() {
-  return import(/* @vite-ignore */ PIPER_URL);
+export async function loadPiperFromCdn(importer = (u) => import(/* @vite-ignore */ u)) {
+  const mod = await importer(PIPER_URL);
+  // the library's own predict() builds its session with its built-in 1.18.0 paths (its constructor starts loading
+  // before it stores the paths it is given, and ignores WASM_LOCATIONS): sessions are created here with ours
+  // It also keeps one global session and reuses it whatever paths or voice are asked next, so each voice gets its own
+  // session here, created with the global cleared first.
+  const wasmPaths = { onnxWasm: ORT_DIST, piperData: `${mod.WASM_BASE}.data`, piperWasm: `${mod.WASM_BASE}.wasm` };
+  const sessions = new Map();
+  const sessionFor = (voiceId) => {
+    if (!sessions.has(voiceId)) {
+      if (mod.TtsSession) mod.TtsSession._instance = null;
+      sessions.set(voiceId, mod.TtsSession.create({ voiceId, wasmPaths }).catch((e) => { sessions.delete(voiceId); throw e; }));
+    }
+    return sessions.get(voiceId);
+  };
+  return { ...mod, predict: async ({ text, voiceId }) => (await sessionFor(voiceId)).predict(text) };
 }
 
 // what is playing now, so a sentence can be paused and resumed (Allan, 2026-10-21: "I need to be able to pause it")

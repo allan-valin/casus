@@ -9,13 +9,16 @@ import { phonemeIds as mkIds } from '../../lang/mk/phonemes.js';
 
 const HF = 'https://huggingface.co/rhasspy/piper-voices/resolve/main';
 const PATHS = { 'bg_BG-dimitar-medium': 'bg/bg_BG/dimitar/medium/bg_BG-dimitar-medium.onnx' };
-const ORT_VERSION = '1.18.0';
+import { ORT_DIST } from './voice.js';   // the same onnxruntime as the other natural voices
 const PHONEMES = { mk: mkIds };
 
 export async function loadOrtFromCdn() {
-  const ort = await import(/* @vite-ignore */ `https://cdn.jsdelivr.net/npm/onnxruntime-web@${ORT_VERSION}/dist/esm/ort.min.js`);
+  const ort = await import(/* @vite-ignore */ `${ORT_DIST}ort.wasm.min.mjs`);
   const o = ort.default ?? ort;
-  if (o.env?.wasm) o.env.wasm.wasmPaths = `https://cdn.jsdelivr.net/npm/onnxruntime-web@${ORT_VERSION}/dist/`;
+  if (o.env?.wasm) {
+    o.env.wasm.wasmPaths = ORT_DIST;
+    if (!globalThis.crossOriginIsolated) o.env.wasm.numThreads = 1;   // threads need cross-origin isolation, which Pages lacks
+  }
   return o;
 }
 

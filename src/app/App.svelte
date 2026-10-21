@@ -27,6 +27,7 @@
   import Learn from './components/Learn.svelte';
   import Trainer from './components/Trainer.svelte';
   import Talk from './components/Talk.svelte';
+  import VoiceSettings from './components/VoiceSettings.svelte';
   import WordEntry from './components/WordEntry.svelte';
   import { speakPath } from './lib/route.js';
   import { speakHref } from './lib/pronounce.js';
@@ -256,6 +257,7 @@
       speakNarrator={async (text, code) => narratorVoice(code)?.speak(text)}
       trainerHref={(text) => speakHref(withBase(speakPath(LANGUAGES.find((l) => l.code === lang.code) ?? { path: '/' })), text)}
       Entry={WordEntry} entryProps={{ lookup: (w) => (lexicon ? lexicon.lookup(w) : Promise.resolve([])), loadInfo: loadEntryInfo, loadParadigm: loadParadigmOf, voice }}
+      VoiceBox={VoiceSettings}
       Practice={Trainer} practiceProps={{ lang, voice, fetchImpl, data: DATA, base: withBase('/'), lexicon, storage, compact: true, say: (msg, kind) => activity.say(msg, kind) }}
       control={{ pause: pausePlayback, resume: resumePlayback, stop: stopPlayback }} voices={[voice]} narratorVoiceOf={narratorVoice}
       say={(msg, kind) => activity.say(msg, kind)} />
