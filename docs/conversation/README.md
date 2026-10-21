@@ -14,6 +14,11 @@ Checker: `python3 tools/conversation_check.py tools/conversation/<code>`.
 
 Planned courses, in order (taught language · narrator): mk · pt-BR, de · mk, ko · pt-BR, de · ar, ja · pt-BR.
 
+Drafts awaiting Allan's review (nothing written as units yet):
+- mk · pt-BR — `tools/conversation/mk/story-bible.yml`, [PLAN-mk-pt-BR-A1.md](PLAN-mk-pt-BR-A1.md)
+- de · mk and de · ar — `tools/conversation/de/story-bible.yml`, [PLAN-de-mk-ar-A1.md](PLAN-de-mk-ar-A1.md)
+- ko · pt-BR and ja · pt-BR — on hold: the open Korean and Japanese Piper voices are NC (see the proposal's voice audit).
+
 The Macedonian and Arabic versions were written by an AI and await a native speaker's reading.
 
 Build for the site: `python3 tools/build_conversation.py` checks every course and writes `public/talk/<code>.json`,

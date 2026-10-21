@@ -1,0 +1,86 @@
+# STORY BIBLE — German, narrators Macedonian and Arabic (Allan's pairs de·mk and de·ar). DRAFT 2026-10-21 for Allan's
+# review; units come after. The template (tools/conversation/_template) shows German units with a Portuguese
+# narrator; this course is its own, built for newcomers from North Macedonia and from the Arab world.
+
+language: de
+narrator_languages: [mk, ar]
+country: Germany
+standard: >-
+  Standard German (Hochdeutsch) as taught in grammars and at integration courses; no dialect in the units. An
+  optional chapter could meet Swabian, Bavarian or Saxon (no open voice for them yet).
+
+voices:
+  - {id: de-f, role: character, lang: de, gender: f, tts: "piper:de_DE-kerstin-low"}          # CC0
+  - {id: de-m, role: character, lang: de, gender: m, tts: "piper:de_DE-thorsten-medium"}      # CC0
+  - {id: de-f2, role: character, lang: de, gender: f, tts: "piper:de_DE-kerstin-low", pitch: 0.9}
+  - {id: de-m2, role: character, lang: de, gender: m, tts: "piper:de_DE-thorsten-medium", pitch: 1.12}
+  # Narrators: no open Macedonian voice (see tools/conversation/mk/story-bible.yml: Bulgarian Piper + mk phonemes,
+  # pending Allan's ear); the Arabic Piper voice (ar_JO-kareem) has no stated licence, so the reader's own browser
+  # voice or espeak-ng speaks Arabic until one is found.
+  - {id: nar-mk, role: narrator, lang: mk, tts: "piper:bg_BG-dimitar-medium+mk-phonemes"}
+  - {id: nar-ar, role: narrator, lang: ar, tts: "browser:ar, else espeak-ng:ar"}
+
+protagonist:
+  forms: {f: de-f, m: de-m}
+  name: null
+  background:
+    mk: "From Bitola, about 30, nurse; moves to Leipzig for a job at a hospital (German hospitals recruit nurses from North Macedonia). Knows Macedonian, some English, school German from long ago."
+    ar: "From Aleppo by way of Amman, about 30, engineer; comes to Leipzig for a master's degree and a job. Knows Arabic and good English, no German."
+  alternation: odd units f, even units m
+
+cast:
+  - {id: becker, name: Frau Becker, role: "landlady, about 60, ground floor", voice: de-f2, register: formal, arc: "Sie throughout; strict about the house rules (Mülltrennung, Ruhezeiten), warm underneath"}
+  - {id: jonas, name: Jonas, role: "neighbour, about 25, student", voice: de-m2, register: informal, arc: "du at once; becomes a friend"}
+  - {id: schulz, name: Herr Schulz, role: "official at the Bürgeramt, later the Ausländerbehörde", voice: de-m, register: formal, arc: "appears in every paperwork unit; patient, precise"}
+  - {id: meier, name: Dr. Meier, role: "the protagonist's boss at the hospital / university", voice: de-f, register: formal, arc: "Sie, then du offered at the Christmas party (B1)"}
+
+formality:
+  summary: >-
+    Sie + surname with strangers, officials, older people, at work until du is offered; du with friends, family,
+    children, among young people and students. Offering du is a step, usually by the older or more senior person.
+  rules:
+    - "Sie with Frau Becker, Herr Schulz and Dr. Meier; du with Jonas from the first line."
+    - "Titles: Herr / Frau + surname; Dr. kept in formal settings (Frau Dr. Meier)."
+    - "The du offer is a scene of its own (B1, Christmas party)."
+  sources:
+    - {title: "Wikipedia: Siezen und Duzen", url: "https://de.wikipedia.org/wiki/Siezen", licence: CC BY-SA}
+
+culture:
+  taught:
+    - {topic: registration, note: "Anmeldung at the Bürgeramt within two weeks, with the landlord's Wohnungsgeberbestätigung; appointments booked online, often weeks ahead.", source: "Bundesmeldegesetz §17, §19"}
+    - {topic: Sunday, note: "Shops closed on Sundays and holidays; bakeries on Sunday mornings; quiet hours (Ruhezeiten) in house rules.", source: "Ladenschlussgesetz; Hausordnung"}
+    - {topic: waste, note: "Mülltrennung: paper, packaging (gelber Sack), glass by colour, organic, residual; Pfand on bottles returned at machines.", source: "Verpackungsgesetz"}
+    - {topic: punctuality, note: "Being on time is expected; five minutes late needs an apology; appointments (Termine) for almost everything.", source: "general"}
+    - {topic: directness, note: "Criticism and refusals are said plainly; 'Nein' is not rude; small talk is short.", source: "general"}
+    - {topic: cash and cards, note: "Cash still common; EC card everywhere, credit cards less.", source: "Bundesbank payment studies"}
+  narrator:
+    - {lang: mk, topic: hospitality, note: "Guests are offered coffee and food at once and refusing is impolite; Germans may offer nothing unannounced, or only water."}
+    - {lang: mk, topic: time, note: "Relaxed punctuality at home; a coffee that lasts two hours is normal."}
+    - {lang: mk, topic: shoes and drafts, note: "Shoes off and slippers at home; fear of промаја — Germans air rooms with open windows (Stoßlüften) even in winter."}
+    - {lang: mk, topic: bureaucracy, note: "Paperwork with personal contacts helps; in Germany everything goes by appointment and form."}
+    - {lang: ar, topic: greetings, note: "Long greetings and questions about family before business; between men and women a handshake may be avoided — in Germany a refused handshake can be misread."}
+    - {lang: ar, topic: hospitality, note: "A guest is fed generously and the host insists; in Germany one may be asked 'Möchtest du etwas trinken?' only once — saying no the first time means no."}
+    - {lang: ar, topic: weekend, note: "Friday is the day off in much of the Arab world; in Germany Sunday is, and Sunday quiet is strict."}
+    - {lang: ar, topic: food, note: "Halal food and pork in everything (Wurst, Gelatine); labels must be read."}
+    - {lang: ar, topic: time, note: "Appointments are approximate; in Germany the doctor's appointment at 9:15 means 9:15."}
+  clashes:
+    - {situation: "Frau Becker offers nothing at the first visit; the protagonist waits for coffee (mk) / insists on bringing food (ar)", unit: A1-03}
+    - {situation: "Saying 'no, thanks' out of politeness and getting nothing (ar: the host asks only once)", unit: A1-04}
+    - {situation: "Shopping on Sunday; the Friday/Sunday weekend (ar)", unit: A1-06}
+    - {situation: "Stoßlüften in winter against the fear of промаја (mk)", unit: A1-10}
+    - {situation: "Arriving 20 minutes late at the Bürgeramt and losing the appointment", unit: A1-12}
+    - {situation: "A handshake refused or offered across genders at work (ar)", unit: A2}
+    - {situation: "Reading the label: Gelatine and pork in sweets (ar)", unit: A2}
+    - {situation: "The direct 'Das geht so nicht' from the boss read as anger", unit: B2}
+
+arc:
+  - {level: A1, units: 20, summary: "Arrival in Leipzig: landlady and keys, the Anmeldung, SIM card, bank account, Sunday, the supermarket and Pfand, the bus, first day at work."}
+  - {level: A2, units: 20, summary: "Settling in: Ausländerbehörde, doctor and Krankenkasse, Mülltrennung, neighbours and Ruhezeiten, colleagues, the canteen, a cinema evening."}
+  - {level: B1, units: 20, summary: "Friends: Jonas's group, a Grillabend, opinions, the Christmas party and the du offer, a misunderstanding."}
+  - {level: B2, units: 20, summary: "Work: feedback talks, meetings, e-mail register, a conflict with the boss, a job interview elsewhere."}
+  - {level: C1, units: 20, summary: "University evening courses: biology, chemistry, physics, maths talked about at school level."}
+  - {level: C2, units: 20, summary: "Ideas: philosophy, politics handled with care, humour (irony), register shifts."}
+
+native_check:
+  - "Every Macedonian and Arabic narrator line until a native speaker has read it"
+  - "The Arab-world notes generalise across countries: Allan to say whether one country (Syria?) should be the frame"
