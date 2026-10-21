@@ -73,7 +73,7 @@ lessons it practises, and Learn lessons link back to it).
   only where the Piper model downloads); (b) **pre-rendered** clips, small Opus files per step, cached (instant, costs
   storage: roughly 20 units × 6 levels × ~60 clips ≈ 7 000 clips per language per narrator language).
 - Voice gaps must be audited first (not every Casus language has an open Piper voice, let alone two; classical
-  languages have none). Licences checked per voice — no NC.
+  languages have none). Licences checked per voice; NC voices are allowed (Casus is free and not sold).
 
 ## Authoring pipeline
 1. **Story bible** + cast + country notes per language — Allan reviews.
@@ -134,7 +134,7 @@ language adds similar effort. This runs over days and weeks, alongside his revie
 ## Voice audit (2026-10-21, Piper model cards)
 - **Open (CC0 / CC BY)**: pt_BR cadu, faber, jeff (CC0), edresson (CC BY); bg_BG dimitar (CC0); uk_UA ukrainian_tts
   (3 speakers, CC0); de thorsten etc.
-- **NC — excluded by the open-licence rule**: ko_KR kss (CC BY-NC-SA), ja_JP hi_fi_captain (CC BY-NC-SA), sr_RS
+- **NC — allowed (Allan 2026-10-21: "i'm not selling this"; earlier excluded by my misreading of the open-source rule)**: ko_KR kss (CC BY-NC-SA), ja_JP hi_fi_captain (CC BY-NC-SA), sr_RS
   serbski_institut (CC BY-NC-SA); MMS-TTS (all languages, CC BY-NC). ar_JO kareem: licence "see URL", unverified.
 - **Macedonian**: no voice; proposal = Bulgarian dimitar fed Macedonian phonemes (spikes/mk-voice-2026-10-21/).
 - **Consequence for the order**: ko · pt-BR and ja · pt-BR have no open Piper character voice. Options for Allan:
