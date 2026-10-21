@@ -1,0 +1,37 @@
+id: B2-05
+protagonist: f
+title: ["The interview (2)", "A entrevista (2)"]
+situation: ["Second round: money and the contract.", "Segunda rodada: dinheiro e contrato."]
+learn: [b2-future-perfect]
+culture: Net and gross pay
+items:
+  - [neto, "нето", "net (after tax)", "líquido"]
+  - [bruto, "бруто", "gross (before tax)", "bruto"]
+  - [mesecno, "месечно", "monthly", "por mês"]
+  - [probna-rabota, "пробна работа", "probation period", "período de experiência"]
+  - [tri-meseci, "три месеци", "three months", "três meses"]
+  - [neopredeleno, "на неопределено време", "permanent (open-ended)", "por tempo indeterminado", {rare: true}]
+  - [ke-bidam-zavrsila, "ќе бидам завршила", "I will have finished (a woman)", "terei terminado"]
+  - [otkaz, "отказен рок", "notice period", "aviso prévio", {rare: true}]
+  - [od-prvi, "од први", "from the first (of the month)", "a partir do dia primeiro"]
+  - [dogovor-imame, "Имаме договор", "We have a deal", "Fechado"]
+dialogue:
+  - [nikolovski, "Платата е шеесет илјади денари нето месечно.", "The salary is sixty thousand denars net a month.", "O salário é sessenta mil dinares líquidos por mês."]
+  - [protagonist, "Нето, не бруто?", "Net, not gross?", "Líquido, não bruto?"]
+  - [nikolovski, "Нето. Прво три месеци пробна работа, потоа договор на неопределено време.", "Net. First three months' probation, then a permanent contract.", "Líquido. Primeiro três meses de experiência, depois contrato por tempo indeterminado."]
+  - [protagonist, "Кога би почнала?", "When would I start?", "Quando eu começaria?"]
+  - [nikolovski, "Од први март, ако ви одговара.", "From the first of March, if it suits you.", "A partir de primeiro de março, se for bom para a senhora."]
+  - [protagonist, "Дотогаш ќе бидам завршила со сегашната фирма. Отказниот рок е еден месец.", "By then I'll have finished with my current company. The notice period is one month.", "Até lá terei terminado com a empresa atual. O aviso prévio é de um mês."]
+  - [nikolovski, "Совршено. Имаме договор?", "Perfect. Do we have a deal?", "Perfeito. Fechado?"]
+  - [protagonist, "Имаме договор!", "We have a deal!", "Fechado!"]
+teach:
+  - ask: ["Say: net a month.", "Diga: líquido por mês.", "Нето месечно.", neto, mesecno]
+  - ask: ["Ask: net, not gross?", "Pergunte: líquido, não bruto?", "Нето, не бруто?", bruto]
+  - ask: ["Say: three months' probation.", "Diga: três meses de experiência.", "Три месеци пробна работа.", tri-meseci, probna-rabota]
+  - ask: ["Say: a permanent contract.", "Diga: contrato por tempo indeterminado.", "Договор на неопределено време.", neopredeleno]
+  - ask: ["Say: from the first of March.", "Diga: a partir de primeiro de março.", "Од први март.", od-prvi, mart]
+  - note: ["'Will have done': ќе бидам + the л-form — ќе бидам завршила (I'll have finished, a woman), ќе биде заминал (he'll have left).", "'Terei feito': ќе бидам + a forma em -л — ќе бидам завршила (terei terminado, mulher), ќе биде заминал (ele terá saído)."]
+  - ask: ["Say: by then I'll have finished.", "Diga: até lá terei terminado.", "Дотогаш ќе бидам завршила.", ke-bidam-zavrsila]
+  - ask: ["Say: the notice period is one month.", "Diga: o aviso prévio é de um mês.", "Отказниот рок е еден месец.", otkaz, mesec]
+  - ask: ["Say: we have a deal!", "Diga: fechado!", "Имаме договор!", dogovor-imame]
+  - note: ["Salaries are usually quoted net here, the opposite of many countries; always ask which. Exact tax and contribution rates change, so check the current figures with the employer or the Public Revenue Office (УЈП).", "Aqui o salário costuma ser dito líquido, ao contrário de muitos países; pergunte sempre qual. As alíquotas de impostos e contribuições mudam, então confira os números atuais com o empregador ou com a Receita (УЈП)."]

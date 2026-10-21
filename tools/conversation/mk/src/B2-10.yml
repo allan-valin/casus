@@ -1,0 +1,38 @@
+id: B2-10
+protagonist: m
+title: ["E-mails", "E-mails"]
+situation: ["Two e-mails to write: one to a client, one to Marko.", "Dois e-mails para escrever: um para um cliente, um para o Marko."]
+learn: [b2-vocative]
+culture: —
+items:
+  - [pocituvani, "Почитувани", "Dear (formal, plural)", "Prezados"]
+  - [pocituvan-gospodine, "Почитуван господине", "Dear Sir", "Prezado senhor"]
+  - [vo-prilog, "во прилог", "attached", "em anexo", {rare: true}]
+  - [ve-molime, "ве молиме", "we kindly ask you", "pedimos a gentileza"]
+  - [odgovor, "одговор", "answer, reply", "resposta"]
+  - [so-pocit, "Со почит", "Yours sincerely", "Atenciosamente"]
+  - [marko-voc, "Марко", "Marko (calling him)", "Marko"]
+  - [druze, "друже", "mate, buddy (vocative)", "camarada / mano"]
+  - [pozdrav, "Поздрав", "Greetings / Best", "Abraço"]
+  - [srdecen-pozdrav, "Срдечен поздрав", "Kind regards", "Cordialmente", {rare: true}]
+dialogue:
+  - [darko, "Пишуваш до клиентот? Почни со „Почитувани“.", "Writing to the client? Start with 'Почитувани'.", "Vai escrever para o cliente? Começa com 'Почитувани'."]
+  - [protagonist, "„Почитувани, во прилог ви ја праќаме понудата.“", "'Dear Sirs, attached please find our offer.'", "'Prezados, em anexo enviamos a proposta.'"]
+  - [darko, "Добро. Потоа: „Ве молиме за одговор до петок.“", "Good. Then: 'We kindly ask for a reply by Friday.'", "Bom. Depois: 'Pedimos a gentileza de responder até sexta.'"]
+  - [protagonist, "И на крајот: „Со почит“.", "And at the end: 'Yours sincerely'.", "E no fim: 'Atenciosamente'."]
+  - [darko, "Совршено. А до Марко?", "Perfect. And to Marko?", "Perfeito. E para o Marko?"]
+  - [protagonist, "„Друже, вечерва кафана? Поздрав.“", "'Mate, кафана tonight? Cheers.'", "'Mano, кафана hoje à noite? Abraço.'"]
+  - [darko, "Ха! Само не мешај ги двата мејла.", "Ha! Just don't mix up the two e-mails.", "Ha! Só não troca os dois e-mails."]
+  - [protagonist, "Тоа би било интересно за клиентот.", "That would be interesting for the client.", "Isso seria interessante para o cliente."]
+teach:
+  - ask: ["Start a formal e-mail.", "Comece um e-mail formal.", "Почитувани,", pocituvani]
+  - ask: ["To one man: Dear Sir.", "Para um homem: prezado senhor.", "Почитуван господине,", pocituvan-gospodine]
+  - ask: ["Say: attached, we send you the offer.", "Diga: em anexo enviamos a proposta.", "Во прилог ви ја праќаме понудата.", vo-prilog, ponuda]
+  - ask: ["Say: we kindly ask for a reply.", "Diga: pedimos a gentileza de responder.", "Ве молиме за одговор.", ve-molime, odgovor]
+  - ask: ["End formally.", "Termine formalmente.", "Со почит,", so-pocit]
+  - note: ["Macedonian has a calling form (vocative): господин → господине, друг → друже, госпоѓа → госпоѓо (you've used it since A1). Names in -о often stay: Марко!", "O macedônio tem uma forma de chamamento (vocativo): господин → господине, друг → друже, госпоѓа → госпоѓо (você usa desde o A1). Nomes em -о costumam ficar iguais: Марко!"]
+  - ask: ["A warmer formal ending: kind regards.", "Um fecho formal mais caloroso: cordialmente.", "Срдечен поздрав,", srdecen-pozdrav]
+  - ask: ["Call Marko a buddy.", "Chame o Marko de mano.", "Друже!", druze]
+  - ask: ["End informally.", "Termine informalmente.", "Поздрав!", pozdrav]
+  - ask: ["Call Mrs Stojanovska, the old way.", "Chame a senhora Stojanovska, do jeito antigo.", "Госпоѓо Стојановска!", gospogjo]
+  - ask: ["Say: Marko, tonight?", "Diga: Marko, hoje à noite?", "Марко, вечерва?", marko-voc]

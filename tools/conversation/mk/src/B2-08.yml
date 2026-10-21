@@ -1,0 +1,37 @@
+id: B2-08
+protagonist: m
+title: ["The meeting", "A reunião"]
+situation: ["Your first meeting in Macedonian. It was meant to take thirty minutes.", "Sua primeira reunião em macedônio. Era para durar trinta minutos."]
+learn: [b2-neka]
+culture: Meetings run over
+items:
+  - [dneven-red, "дневен ред", "agenda", "pauta"]
+  - [prva-tocka, "прва точка", "first item, point one", "primeiro item"]
+  - [predlagam, "предлагам", "I propose", "proponho"]
+  - [neka, "нека", "let (someone do)", "que (deixa)"]
+  - [neka-kaze, "нека каже", "let him/her speak", "que ele fale"]
+  - [soglasen, "согласен", "agreed (a man)", "de acordo"]
+  - [ne-se-soglasuvam, "не се согласувам", "I don't agree", "não concordo"]
+  - [zaklucok, "заклучок", "conclusion", "conclusão", {rare: true}]
+  - [prodolzime, "да продолжиме", "to continue", "continuar"]
+  - [vreme-isteklo, "времето истече", "time is up", "o tempo acabou"]
+dialogue:
+  - [darko, "Дневен ред: прва точка — новата апликација.", "Agenda: item one — the new app.", "Pauta: primeiro item — o aplicativo novo."]
+  - [protagonist, "Предлагам прво да ги видиме грешките.", "I propose we look at the bugs first.", "Proponho que a gente veja os erros primeiro."]
+  - [nikolovski, "Нека каже Ана што мисли.", "Let Ana say what she thinks.", "Que a Ana diga o que acha."]
+  - [ana, "Согласна сум. Нека ги видиме грешките.", "I agree. Let's look at the bugs.", "Concordo. Vamos ver os erros."]
+  - [darko, "Јас не се согласувам. Прво дизајнот.", "I don't agree. Design first.", "Eu não concordo. Primeiro o design."]
+  - [protagonist, "Можеме и двете, но времето истече.", "We can do both, but time is up.", "Dá para fazer os dois, mas o tempo acabou."]
+  - [nikolovski, "Добро, заклучок: нека продолжиме утре.", "All right, conclusion: let's continue tomorrow.", "Certo, conclusão: vamos continuar amanhã."]
+  - [protagonist, "Состанокот траеше два часа...", "The meeting lasted two hours...", "A reunião durou duas horas..."]
+teach:
+  - ask: ["Say: the agenda.", "Diga: a pauta.", "Дневниот ред.", dneven-red]
+  - ask: ["Say: item one.", "Diga: primeiro item.", "Прва точка.", prva-tocka]
+  - ask: ["Say: I propose we look at the bugs first.", "Diga: proponho que a gente veja os erros primeiro.", "Предлагам прво да ги видиме грешките.", predlagam, greska]
+  - note: ["'Нека' says 'let': нека каже — let her say; нека продолжиме — let's continue. It also wishes: нека ти е среќно — may it be lucky for you.", "'Нека' diz 'que' ou 'deixa': нека каже — que ela diga; нека продолжиме — vamos continuar. Também deseja: нека ти е среќно — que te traga sorte."]
+  - ask: ["Say: let Ana say what she thinks.", "Diga: que a Ana diga o que acha.", "Нека каже Ана што мисли.", neka, neka-kaze]
+  - ask: ["Say: I agree. (a man)", "Diga: concordo.", "Согласен сум.", soglasen]
+  - ask: ["Say: I don't agree.", "Diga: não concordo.", "Не се согласувам.", ne-se-soglasuvam]
+  - ask: ["Say: time is up.", "Diga: o tempo acabou.", "Времето истече.", vreme-isteklo]
+  - ask: ["Say: conclusion: let's continue tomorrow.", "Diga: conclusão: vamos continuar amanhã.", "Заклучок: нека продолжиме утре.", zaklucok, prodolzime]
+  - note: ["Meetings often start late and run long, and decisions sometimes wait for the boss. Bring the decision you need written down, and send a short summary afterwards.", "Reuniões muitas vezes começam atrasadas e se alongam, e as decisões às vezes esperam o chefe. Leve por escrito a decisão de que precisa, e mande um resumo curto depois."]
