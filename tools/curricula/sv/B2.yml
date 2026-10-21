@@ -1,0 +1,42 @@
+id: B2
+topics:
+
+- title: {en: Words, pt: Palavras}
+  lessons:
+  - id: sv-compounds
+    title: sjukhus, järnväg, kylskåp
+    meaning: {en: "compounds", pt: "palavras compostas"}
+    intro:
+      en: |
+        Swedish writes compounds as one word, the last part deciding gender and meaning: **sjuk + hus → sjukhuset** (the hospital), **järn + väg → järnväg** (railway), **kyl + skåp → kylskåp** (fridge). A linking **-s-** often joins them: **arbetsplats** (workplace).
+      pt: |
+        O sueco escreve os compostos numa só palavra, a última parte decidindo o gênero e o sentido: **sjuk + hus → sjukhuset** (o hospital, "casa de doentes"), **järn + väg → järnväg** (ferrovia), **kyl + skåp → kylskåp** (geladeira). Um **-s-** de ligação muitas vezes os une: **arbetsplats** (local de trabalho).
+    examples:
+    - ["Hon arbetar på sjukhuset.", "She works at the hospital.", "Ela trabalha no hospital.", "sjukhuset"]
+    match: {seq: [{pos: noun, re: "(hus|väg|skåp|plats|bord|rum|land|stad)(et|en|a|ar|en)?$"}]}
+  - id: sv-genitive
+    title: Annas bok, Sveriges huvudstad
+    meaning: {en: "the genitive -s", pt: "o genitivo em -s"}
+    intro:
+      en: |
+        **-s** on the owner, without an apostrophe, and the thing owned without the article: **Annas bok** (Anna's book), **Sveriges huvudstad** (Sweden's capital), **barnets leksaker**. With **av** for things: **taket av huset** is rarer than **husets tak**.
+      pt: |
+        **-s** no possuidor, sem apóstrofo, e a coisa possuída sem artigo: **Annas bok** (o livro da Anna), **Sveriges huvudstad** (a capital da Suécia), **barnets leksaker** (os brinquedos da criança). Com **av** para coisas: **taket av huset** é mais raro que **husets tak**.
+    examples:
+    - ["Stockholm är Sveriges huvudstad.", "Stockholm is Sweden's capital.", "Estocolmo é a capital da Suécia.", "Sveriges"]
+    match: {seq: [{re: "s$", pos: noun}, {pos: noun}], gap: 0}
+
+- title: {en: Register, pt: Registro}
+  lessons:
+  - id: sv-du-reform
+    title: du, ni, man
+    meaning: {en: "address and the impersonal man", pt: "tratamento e o impessoal man"}
+    intro:
+      en: |
+        Since the *du-reform* of the 1960s nearly everyone says **du**, even to the king's staff; titles are rare. The impersonal **man** (one, people) is everywhere: **Man får inte röka här** (smoking isn't allowed here), **Hur säger man…?** (how do you say…?).
+      pt: |
+        Desde a *reforma do du* dos anos 1960, quase todos dizem **du**; títulos são raros. O impessoal **man** (a gente, as pessoas) está em toda parte: **Man får inte röka här** (não se pode fumar aqui), **Hur säger man…?** (como se diz…?).
+    examples:
+    - ["Hur säger man det på svenska?", "How do you say that in Swedish?", "Como se diz isso em sueco?", "man"]
+    match: {seq: [{word: [man, en]}, {pos: verb}], gap: 0}
+    pool: [man, du, ni]

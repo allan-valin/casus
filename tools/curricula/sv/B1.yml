@@ -1,0 +1,54 @@
+id: B1
+topics:
+
+- title: {en: Clauses, pt: Orações}
+  lessons:
+  - id: sv-subclause
+    title: att, som, när, om, eftersom
+    meaning: {en: "subordinate clauses: inte before the verb", pt: "subordinadas: inte antes do verbo"}
+    intro:
+      en: |
+        **att** (that), **som** (who, which), **när** (when), **om** (if, whether), **eftersom** (because), **fast / trots att** (although), **innan** (before). In a subordinate clause the subject comes first and **inte, aldrig** go *before* the verb: **Jag vet att han inte kommer. Boken som jag läser är bra.**
+      pt: |
+        **att** (que), **som** (que, o qual), **när** (quando), **om** (se), **eftersom** (porque), **fast / trots att** (embora), **innan** (antes que). Na subordinada o sujeito vem primeiro e **inte, aldrig** vão *antes* do verbo: **Jag vet att han inte kommer** (sei que ele não vem). **Boken som jag läser är bra** (o livro que leio é bom).
+    examples:
+    - ["Jag vet att han inte kommer.", "I know he isn't coming.", "Sei que ele não vem.", "att"]
+    match: {seq: [{word: [att, som, när, om, eftersom, fast, innan, medan, därför]}]}
+    pool: [att, som, när, om, eftersom, innan]
+  - id: sv-particle-verbs
+    title: tycka om, ringa upp, ge upp
+    meaning: {en: "particle verbs", pt: "verbos com partícula"}
+    intro:
+      en: |
+        Many verbs take a stressed particle that changes the meaning: **tycka om** (to like), **ringa upp** (to call up), **ge upp** (to give up), **hålla med** (to agree), **tycka till** (to give an opinion). The particle follows the verb: **Jag tycker om dig.**
+      pt: |
+        Muitos verbos levam uma partícula tônica que muda o sentido: **tycka om** (gostar), **ringa upp** (ligar para), **ge upp** (desistir), **hålla med** (concordar), **tycka till** (dar opinião). A partícula vem depois do verbo: **Jag tycker om dig** (gosto de você).
+    examples:
+    - ["Jag tycker om att läsa.", "I like reading.", "Gosto de ler.", "om"]
+    match: {seq: [{pos: verb}, {word: [om, upp, med, till, ut, in, bort, av, på]}], gap: 1}
+    pool: [om, upp, med, till, ut, bort]
+
+- title: {en: Verb forms, pt: Formas verbais}
+  lessons:
+  - id: sv-passive
+    title: byggs, byggdes, säljs
+    meaning: {en: "the s-passive", pt: "a passiva em -s"}
+    intro:
+      en: |
+        Add **-s**: **bygga → byggs** (is built), **byggdes** (was built), **har byggts**; the agent with **av**: **Huset byggdes av min farfar.** Also **bli** + participle: **Han blev sjuk.** Notices: **Huset säljs** (house for sale).
+      pt: |
+        Acrescenta-se **-s**: **bygga → byggs** (é construído), **byggdes** (foi construído), **har byggts**; o agente com **av**: **Huset byggdes av min farfar** (a casa foi construída pelo meu avô). Também **bli** + particípio: **Han blev sjuk** (ele ficou doente). Avisos: **Huset säljs** (vende-se a casa).
+    examples:
+    - ["Huset byggdes av min farfar.", "The house was built by my grandfather.", "A casa foi construída pelo meu avô.", "byggdes"]
+    match: {seq: [{pos: verb, voice: pass}]}
+  - id: sv-imperative
+    title: Läs! Kom! Var så god!
+    meaning: {en: "the imperative", pt: "o imperativo"}
+    intro:
+      en: |
+        The stem of the verb: **läsa → läs!**, **komma → kom!**, **tala → tala!** Softened with **gärna, snälla**: **Kom gärna!** **Var så god** (here you are; please). Negative: **Gör inte så!**
+      pt: |
+        O radical do verbo: **läsa → läs!**, **komma → kom!**, **tala → tala!** Suavizado com **gärna, snälla**: **Kom gärna!** (venha, com prazer). **Var så god** (aqui está; por favor). Negativo: **Gör inte så!** (não faça assim).
+    examples:
+    - ["Kom hit!", "Come here!", "Vem aqui!", "Kom"]
+    match: {seq: [{pos: verb, mood: imp}]}

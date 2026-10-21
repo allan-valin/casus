@@ -1,0 +1,94 @@
+id: A2
+topics:
+
+- title: {en: Past and future, pt: Passado e futuro}
+  lessons:
+  - id: sv-past
+    title: talade, läste, bodde, skrev
+    meaning: {en: "the past tense", pt: "o pretérito"}
+    intro:
+      en: |
+        Weak verbs add **-ade, -de, -te, -dde**: **tala → talade**, **höra → hörde**, **läsa → läste**, **bo → bodde**. Strong verbs change the vowel: **skriva → skrev**, **dricka → drack**, **gå → gick**, **vara → var**, **ha → hade**. One form for all persons.
+      pt: |
+        Os verbos fracos acrescentam **-ade, -de, -te, -dde**: **tala → talade**, **höra → hörde**, **läsa → läste**, **bo → bodde**. Os fortes mudam a vogal: **skriva → skrev**, **dricka → drack**, **gå → gick**, **vara → var**, **ha → hade**. Uma forma para todas as pessoas.
+    examples:
+    - ["Igår var jag hemma.", "Yesterday I was at home.", "Ontem eu estava em casa.", "var"]
+    match: {seq: [{pos: verb, tense: past, mood: ind}]}
+  - id: sv-perfect
+    title: har talat, har skrivit
+    meaning: {en: "the perfect: har + supine", pt: "o perfeito: har + supino"}
+    intro:
+      en: |
+        **har** + the *supine*, a special form: **talat, läst, bott, skrivit, varit**: **Jag har läst boken** (I've read the book), **Har du varit i Sverige?** The pluperfect uses **hade**: **Jag hade redan ätit.**
+      pt: |
+        **har** + o *supino*, uma forma especial: **talat, läst, bott, skrivit, varit**: **Jag har läst boken** (li o livro), **Har du varit i Sverige?** (você já esteve na Suécia?). O mais-que-perfeito usa **hade**: **Jag hade redan ätit** (eu já tinha comido).
+    examples:
+    - ["Har du varit i Sverige?", "Have you been to Sweden?", "Você já esteve na Suécia?", "varit"]
+    match: {seq: [{word: [har, hade]}, {pos: verb, mood: part}], near: 3, gap: 1}
+    pool: [har, hade]
+  - id: sv-future
+    title: ska resa, kommer att regna
+    meaning: {en: "the future", pt: "o futuro"}
+    intro:
+      en: |
+        **ska** + infinitive for plans and intentions: **Jag ska resa till Malmö** (I'm going to travel to Malmö); **kommer att** + infinitive for what will happen: **Det kommer att regna.** The present often does the job: **Jag åker imorgon.**
+      pt: |
+        **ska** + infinitivo para planos e intenções: **Jag ska resa till Malmö** (vou viajar para Malmö); **kommer att** + infinitivo para o que vai acontecer: **Det kommer att regna** (vai chover). O presente muitas vezes basta: **Jag åker imorgon** (viajo amanhã).
+    examples:
+    - ["Det kommer att regna imorgon.", "It's going to rain tomorrow.", "Vai chover amanhã.", "kommer"]
+    match: {seq: [{word: [ska, kommer]}, {pos: verb, mood: inf}], near: 3, gap: 0}
+    pool: [ska, kommer, att]
+
+- title: {en: Adjectives and possessives, pt: Adjetivos e possessivos}
+  lessons:
+  - id: sv-adj
+    title: stor, stort, stora
+    meaning: {en: "adjectives agree", pt: "os adjetivos concordam"}
+    intro:
+      en: |
+        **-** for en-words, **-t** for ett-words, **-a** in the plural and after *the*: **en stor bil, ett stort hus, stora bilar, den stora bilen.** Comparison **-are, -ast** (**varm → varmare → varmast**), irregular **bra → bättre → bäst**, **stor → större → störst**.
+      pt: |
+        **-** para palavras en, **-t** para palavras ett, **-a** no plural e depois de *o/a*: **en stor bil, ett stort hus, stora bilar, den stora bilen.** Comparação **-are, -ast** (**varm → varmare → varmast**), irregulares **bra → bättre → bäst**, **stor → större → störst**.
+    examples:
+    - ["Det här är ett stort hus.", "This is a big house.", "Esta é uma casa grande.", "stort"]
+    match: {seq: [{pos: adj}, {pos: noun}], gap: 0}
+    pool: [mer, mest, än, mycket]
+  - id: sv-possessive
+    title: min, mitt, mina; sin
+    meaning: {en: "possessives; sin", pt: "possessivos; sin"}
+    intro:
+      en: |
+        **min / mitt / mina** (my), **din, hans, hennes, vår, er, deras**: **min bok, mitt hus, mina barn.** **sin / sitt / sina** points back to the subject: **Han läser sin bok** (his own) vs **Han läser hans bok** (someone else's).
+      pt: |
+        **min / mitt / mina** (meu), **din, hans, hennes, vår, er, deras**: **min bok, mitt hus, mina barn.** **sin / sitt / sina** remete ao sujeito: **Han läser sin bok** (o próprio livro) vs **Han läser hans bok** (o livro de outro).
+    examples:
+    - ["Det här är mitt hus.", "This is my house.", "Esta é a minha casa.", "mitt"]
+    match: {seq: [{word: [min, mitt, mina, din, ditt, dina, sin, sitt, sina, vår, vårt, våra, hans, hennes, deras]}]}
+    pool: [min, mitt, mina, din, sin, sitt, sina]
+
+- title: {en: Little words, pt: Palavras pequenas}
+  lessons:
+  - id: sv-prepositions
+    title: i, på, till, från, med, om
+    meaning: {en: "prepositions", pt: "preposições"}
+    intro:
+      en: |
+        **i** (in), **på** (on, at), **till** (to), **från** (from), **med** (with), **om** (about), **för** (for), **av** (of, by), **hos** (at someone's), **under, över, efter, utan**. Swedish says **på jobbet** (at work), **i Sverige**, **på svenska** (in Swedish).
+      pt: |
+        **i** (em, dentro), **på** (sobre, em), **till** (para), **från** (de), **med** (com), **om** (sobre, a respeito de), **för** (para, por), **av** (de, por), **hos** (na casa de), **under, över, efter, utan**. Em sueco se diz **på jobbet** (no trabalho), **i Sverige**, **på svenska** (em sueco).
+    examples:
+    - ["Min bror arbetar på en bank.", "My brother works at a bank.", "Meu irmão trabalha num banco.", "på"]
+    match: {seq: [{word: [i, på, till, från, med, om, för, av, hos]}, {pos: [noun, pron, det]}], gap: 0}
+    pool: [i, på, till, från, med, om, för]
+  - id: sv-modals
+    title: kan, vill, måste, får
+    meaning: {en: "modal verbs + infinitive", pt: "verbos modais + infinitivo"}
+    intro:
+      en: |
+        **kan** (can), **vill** (want), **måste** (must), **får** (may), **ska** (shall), **bör** (should) + infinitive without **att**: **Jag kan simma. Får jag komma in?** Other verbs take **att**: **Jag tycker om att läsa.**
+      pt: |
+        **kan** (poder, saber), **vill** (querer), **måste** (dever), **får** (poder, ter permissão), **ska** (ir, dever), **bör** (dever) + infinitivo sem **att**: **Jag kan simma** (sei nadar). **Får jag komma in?** (posso entrar?). Outros verbos levam **att**: **Jag tycker om att läsa** (gosto de ler).
+    examples:
+    - ["Får jag komma in?", "May I come in?", "Posso entrar?", "Får"]
+    match: {seq: [{word: [kan, vill, måste, får, ska, bör, kunde, ville, skulle]}, {pos: verb, mood: inf}], near: 3, gap: 0}
+    pool: [kan, vill, måste, får, ska, bör]

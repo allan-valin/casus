@@ -1,0 +1,145 @@
+id: A1
+topics:
+
+- title: {en: Sounds and letters, pt: Sons e letras}
+  lessons:
+  - id: sv-alphabet
+    title: å, ä, ö; sj, tj, k
+    meaning: {en: "the Swedish letters and sounds", pt: "as letras e os sons do sueco"}
+    intro:
+      en: |
+        **å** is a long *o* (**båt** boat), **ä** an open *e* (**här** here), **ö** like German *ö* (**öga** eye). **sj, skj, stj** and **sk** before a soft vowel are a breathy *sh* (**sju** seven, **skön**); **tj, kj** and **k** before a soft vowel are *ch* as in *church*, softer (**tjugo, kör**). A vowel is long before one consonant, short before two (**tak** roof, **tack** thanks).
+      pt: |
+        **å** é um *ô* longo (**båt** barco), **ä** um *é* aberto (**här** aqui), **ö** como o *ö* alemão (**öga** olho). **sj, skj, stj** e **sk** antes de vogal suave são um *ch* soprado (**sju** sete, **skön**); **tj, kj** e **k** antes de vogal suave soam *tch* suave (**tjugo, kör**). A vogal é longa antes de uma consoante e breve antes de duas (**tak** telhado, **tack** obrigado).
+    examples:
+    - ["Tack så mycket!", "Thank you very much!", "Muito obrigado!", "Tack"]
+    match: {seq: [{re: "[åäö]", pos: [noun, verb, adj]}]}
+
+- title: {en: Nouns and the article, pt: Substantivos e o artigo}
+  lessons:
+  - id: sv-en-ett
+    title: en bok, ett hus
+    meaning: {en: "two genders: en and ett", pt: "dois gêneros: en e ett"}
+    intro:
+      en: |
+        Nouns are *common* (**en**: **en bok** a book, **en flicka** a girl) or *neuter* (**ett**: **ett hus** a house, **ett barn** a child). About three in four are **en**-words; learn each noun with its article.
+      pt: |
+        Os nomes são de gênero *comum* (**en**: **en bok** um livro, **en flicka** uma menina) ou *neutro* (**ett**: **ett hus** uma casa, **ett barn** uma criança). Cerca de três em cada quatro são palavras **en**; aprenda cada nome com seu artigo.
+    examples:
+    - ["Jag läser en bok.", "I'm reading a book.", "Estou lendo um livro.", "en"]
+    match: {seq: [{word: [en, ett]}, {pos: noun}], gap: 0}
+    pool: [en, ett]
+  - id: sv-definite
+    title: boken, huset, böckerna
+    meaning: {en: "the definite article is an ending", pt: "o artigo definido é uma terminação"}
+    intro:
+      en: |
+        *The* is added at the end: **en bok → boken** (the book), **ett hus → huset** (the house); plural **böckerna, husen**. With an adjective, *the* appears twice: **den stora boken, det stora huset, de stora husen**.
+      pt: |
+        *O / a* vai no fim: **en bok → boken** (o livro), **ett hus → huset** (a casa); plural **böckerna, husen**. Com adjetivo, o artigo aparece duas vezes: **den stora boken** (o livro grande), **det stora huset, de stora husen**.
+    examples:
+    - ["Boken ligger på bordet.", "The book is on the table.", "O livro está na mesa.", "Boken"]
+    match: {seq: [{pos: noun, re: "(en|et|na|n|t)$"}]}
+  - id: sv-plural
+    title: flickor, bilar, bussar, äpplen, barn
+    meaning: {en: "five plural groups", pt: "cinco grupos de plural"}
+    intro:
+      en: |
+        **-or** (**flicka → flickor**), **-ar** (**bil → bilar**), **-er** (**stad → städer**), **-n** (**äpple → äpplen**), and no ending (**barn → barn**, **hus → hus**). Some change the vowel: **bok → böcker**, **man → män**.
+      pt: |
+        **-or** (**flicka → flickor**), **-ar** (**bil → bilar**), **-er** (**stad → städer**), **-n** (**äpple → äpplen**), e sem terminação (**barn → barn**, **hus → hus**). Alguns mudam a vogal: **bok → böcker**, **man → män**.
+    examples:
+    - ["Barnen leker i parken.", "The children are playing in the park.", "As crianças estão brincando no parque.", "Barnen"]
+    match: {seq: [{pos: noun, number: pl}]}
+
+- title: {en: Pronouns and the present, pt: Pronomes e presente}
+  lessons:
+  - id: sv-pronouns
+    title: jag, du, han, hon, vi, ni, de
+    meaning: {en: "personal pronouns", pt: "pronomes pessoais"}
+    intro:
+      en: |
+        **jag** (I), **du** (you), **han / hon** (he / she), **den / det** (it, for en- and ett-words), **vi** (we), **ni** (you plural), **de** (they, pronounced *dom*). **Du** is used with almost everyone in Sweden; **ni** to one person is rare and old-fashioned.
+      pt: |
+        **jag** (eu), **du** (tu/você), **han / hon** (ele / ela), **den / det** (ele/ela para coisas: palavras en e ett), **vi** (nós), **ni** (vocês), **de** (eles, pronuncia-se *dom*). Na Suécia usa-se **du** com quase todo mundo; **ni** para uma pessoa é raro e antiquado.
+    examples:
+    - ["Vi bor i Stockholm.", "We live in Stockholm.", "Moramos em Estocolmo.", "Vi"]
+    match: {seq: [{word: [jag, du, han, hon, den, det, vi, ni, de], start: true}]}
+    pool: [jag, du, han, hon, vi, ni, de]
+  - id: sv-present
+    title: läser, talar, bor
+    meaning: {en: "the present: one form for all persons", pt: "o presente: uma forma para todas as pessoas"}
+    intro:
+      en: |
+        Swedish verbs do not change for the person: **jag läser, du läser, hon läser, vi läser**. The present ends in **-r**: **tala → talar**, **läsa → läser**, **bo → bor**. **vara** (to be) → **är**, **ha** (to have) → **har**.
+      pt: |
+        Os verbos suecos não mudam com a pessoa: **jag läser, du läser, hon läser, vi läser**. O presente termina em **-r**: **tala → talar**, **läsa → läser**, **bo → bor**. **vara** (ser/estar) → **är**, **ha** (ter) → **har**.
+    examples:
+    - ["Talar du engelska?", "Do you speak English?", "Você fala inglês?", "Talar"]
+    - ["Jag bor i Göteborg.", "I live in Gothenburg.", "Moro em Gotemburgo.", "bor"]
+    match: {seq: [{pos: verb, tense: pres, mood: ind}]}
+  - id: sv-v2
+    title: Idag läser jag.
+    meaning: {en: "the verb comes second", pt: "o verbo vem em segundo lugar"}
+    intro:
+      en: |
+        In a main clause the verb is always the second element. If something else comes first (a time, a place, an object), the subject moves after the verb: **Jag läser idag → Idag läser jag.** **I Sverige talar man svenska.**
+      pt: |
+        Na oração principal o verbo é sempre o segundo elemento. Se outra coisa vem primeiro (um tempo, um lugar, um objeto), o sujeito passa para depois do verbo: **Jag läser idag → Idag läser jag** (hoje eu leio). **I Sverige talar man svenska** (na Suécia fala-se sueco).
+    examples:
+    - ["Idag är det en vacker dag.", "Today is a beautiful day.", "Hoje está um dia bonito.", "är"]
+    match: {seq: [{pos: [adv, noun]}, {pos: verb}, {word: [jag, du, han, hon, vi, ni, de, det, man]}], gap: 2}
+
+- title: {en: Questions and negation, pt: Perguntas e negação}
+  lessons:
+  - id: sv-questions
+    title: vad, vem, var, när, varför, hur
+    meaning: {en: "questions: the verb first", pt: "perguntas: o verbo primeiro"}
+    intro:
+      en: |
+        **vad** (what), **vem** (who), **var** (where), **vart** (where to), **när** (when), **varför** (why), **hur** (how), **hur mycket / många** (how much / many). Yes/no questions start with the verb: **Talar du svenska? Bor du här?**
+      pt: |
+        **vad** (o que), **vem** (quem), **var** (onde), **vart** (para onde), **när** (quando), **varför** (por quê), **hur** (como), **hur mycket / många** (quanto / quantos). Perguntas de sim/não começam pelo verbo: **Talar du svenska? Bor du här?**
+    examples:
+    - ["Var bor du?", "Where do you live?", "Onde você mora?", "Var"]
+    match: {seq: [{word: [vad, vem, var, vart, när, varför, hur], start: true}]}
+    pool: [vad, vem, var, när, varför, hur]
+  - id: sv-inte
+    title: inte, aldrig, ingen
+    meaning: {en: "negation: inte after the verb", pt: "negação: inte depois do verbo"}
+    intro:
+      en: |
+        **inte** (not) comes right after the verb in a main clause: **Jag förstår inte** (I don't understand). **aldrig** (never), **ingen / inget / inga** (no, nobody), **ingenting** (nothing). In a subordinate clause **inte** goes before the verb: **…att han inte kommer.**
+      pt: |
+        **inte** (não) vem logo depois do verbo na oração principal: **Jag förstår inte** (não entendo). **aldrig** (nunca), **ingen / inget / inga** (nenhum, ninguém), **ingenting** (nada). Na subordinada **inte** vai antes do verbo: **…att han inte kommer** (que ele não vem).
+    examples:
+    - ["Jag förstår inte.", "I don't understand.", "Não entendo.", "inte"]
+    match: {seq: [{pos: verb}, {word: [inte, aldrig]}], gap: 1}
+    pool: [inte, aldrig, ingen, inget, ingenting]
+
+- title: {en: Numbers and time, pt: Números e tempo}
+  lessons:
+  - id: sv-numbers
+    title: en, två, tre … tjugo, hundra
+    meaning: {en: "numbers", pt: "números"}
+    intro:
+      en: |
+        **en / ett, två, tre, fyra, fem, sex, sju, åtta, nio, tio, elva, tolv… tjugo, trettio, hundra, tusen**. **en** or **ett** agrees with the noun: **en bok, ett hus**; from two on, no change: **två böcker, tre hus**.
+      pt: |
+        **en / ett, två, tre, fyra, fem, sex, sju, åtta, nio, tio, elva, tolv… tjugo, trettio, hundra, tusen**. **en** ou **ett** concorda com o nome: **en bok, ett hus**; a partir de dois, não muda: **två böcker, tre hus**.
+    examples:
+    - ["Jag har två bröder.", "I have two brothers.", "Tenho dois irmãos.", "två"]
+    match: {seq: [{word: [två, tre, fyra, fem, sex, sju, åtta, nio, tio, elva, tolv, tjugo, hundra, tusen]}]}
+    pool: [två, tre, fyra, fem, tio, tjugo, hundra]
+  - id: sv-days
+    title: måndag, idag, imorgon
+    meaning: {en: "days and time words", pt: "dias e palavras de tempo"}
+    intro:
+      en: |
+        **måndag, tisdag, onsdag, torsdag, fredag, lördag, söndag** (lower case). *On Monday* = **på måndag**; *on Mondays* = **på måndagar**. **idag** (today), **imorgon** (tomorrow), **igår** (yesterday), **nu** (now), **på morgonen, på kvällen** (in the morning, in the evening).
+      pt: |
+        **måndag, tisdag, onsdag, torsdag, fredag, lördag, söndag** (com minúscula). *Na segunda* = **på måndag**; *às segundas* = **på måndagar**. **idag** (hoje), **imorgon** (amanhã), **igår** (ontem), **nu** (agora), **på morgonen, på kvällen** (de manhã, à noite).
+    examples:
+    - ["Imorgon åker vi till havet.", "Tomorrow we're going to the sea.", "Amanhã vamos à praia.", "Imorgon"]
+    match: {seq: [{word: [idag, imorgon, igår, nu, måndag, tisdag, onsdag, torsdag, fredag, lördag, söndag]}]}
+    pool: [idag, imorgon, igår, nu]

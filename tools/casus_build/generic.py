@@ -68,6 +68,17 @@ def analysis(cfg: Config, pos: str, tags: set, gender: str | None) -> dict | Non
     if pos == "verb" and "participle" in tags:
         return {"pos": "verb", "mood": "part", "tense": _one(tags, TENSES), "gender": _one(tags, GENDERS), "number": _one(tags, NUMBERS),
                 **({"voice": "pass"} if "passive" in tags else {})}
+    if pos == "verb" and cfg.code == "sv" and not tags & set(PERSONS):
+        # Swedish verbs have no persons: läser (present), läste (preterite), läs (imperative), läst (supine)
+        if "infinitive" in tags:
+            return {"pos": "verb", "mood": "inf", **({"voice": "pass"} if "passive" in tags else {})}
+        if "supine" in tags:
+            return {"pos": "verb", "mood": "part", "tense": "past", **({"voice": "pass"} if "passive" in tags else {})}
+        mood = "imp" if "imperative" in tags else "subj" if "subjunctive" in tags else "ind"
+        tense = "past" if tags & {"preterite", "past"} else "pres"
+        if not tags & {"present", "preterite", "past", "imperative", "subjunctive"}:
+            return None
+        return {"pos": "verb", "tense": tense, "mood": mood, **({"voice": "pass"} if "passive" in tags else {})}
     if pos == "verb" and cfg.code == "he" and "present" in tags and _one(tags, NUMBERS) and not tags & set(PERSONS):
         # the Hebrew present is a participle by gender and number, any person (אני / אתה / הוא לומד)
         return {"pos": "verb", "tense": "pres", "mood": "ind", "number": _one(tags, NUMBERS), "gender": _one(tags, GENDERS)}
@@ -429,6 +440,7 @@ def _strip_sh(s: str) -> str:
     return strip_sh(s)
 
 
+CONFIGS["sv"] = Config("sv", [], {}, caseless=True)
 CONFIGS["ro"] = Config("ro", ["nom", "acc", "gen", "dat", "voc"], {"nominative": "nom", "accusative": "acc", "genitive": "gen", "dative": "dat", "vocative": "voc"}, key=_key_ro)
 CONFIGS["sh"] = Config("sh", ["nom", "gen", "dat", "acc", "voc", "loc", "ins"], SLAVIC_TAGS, key=_strip_sh)
 CONFIGS["he"] = Config("he", [], {}, caseless=True, key=_strip_he, clean=lambda t: t.replace("\u05BE", ""))
