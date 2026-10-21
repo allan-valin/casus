@@ -49,3 +49,33 @@ def test_item_ids_must_be_plain_ascii():
     import pytest
     with pytest.raises(ValueError, match="ascii"):
         expand({**_src(1, ["polekа"], []), "items": [["polekа", "полека", "slowly", "devagar"]]}, [])
+
+
+def test_audience_versions_get_reviews_for_their_own_audience_only():
+    """German course (Allan, 2026-10-22): E / A / M versions of a slot; a core unit after them reviews each audience's
+    items only for that audience, and the checker accepts the result per audience"""
+    langs = ["en", "ar", "mk"]
+    bible = {"narrator_languages": langs, "cast": [{"id": "vera", "name": "B"}], "protagonist": {"forms": {"f": "a", "m": "b"}}}
+    def src(uid, ids, tracks=None):
+        ls = [l for l in langs if not tracks or l in tracks]
+        d = {"id": uid, "protagonist": "f", "title": ["T"] * len(ls), "situation": ["S"] * len(ls), "learn": [],
+             "items": [[i, f"Wort{i}", *[f"{l}{i}" for l in ls]] for i in ids],
+             "dialogue": [["vera", f"Satz {uid} eins zwei", *["x"] * len(ls)], ["protagonist", f"Antwort {uid} drei", *["y"] * len(ls)]],
+             "teach": []}
+        if tracks:
+            d["tracks"] = tracks
+        return d
+    units = []
+    units.append(expand(src("A1-01", [f"c{k}" for k in range(10)]), units, langs))
+    units.append(expand(src("A1-02", [f"e{k}" for k in range(10)], ["en"]), units, langs))
+    units.append(expand(src("A1-02-am", [f"a{k}" for k in range(10)], ["ar", "mk"]), units, langs))
+    third = expand(src("A1-03", [f"d{k}" for k in range(10)]), units, langs)
+    units.append(third)
+    rev = [s for s in third["steps"] if s.get("review")]
+    assert any(s.get("for") == ["en"] and "e0" in s["items"] for s in rev)
+    assert any(s.get("for") == ["ar", "mk"] and "a0" in s["items"] for s in rev)
+    assert not any("c0" in s["items"] for s in rev)            # core items: due at positions 1 and 3, not 2
+    assert "قولي" in rev[0]["ask"].get("ar", "قولي")
+    assert check_course(units, bible) == []
+    for u in units:
+        assert check_unit(u, bible)[0] == []

@@ -121,7 +121,7 @@ def check_unit(u, b):
         elif t == "prompt":
             prompts += 1
             review_prompts += bool(s.get("review"))
-            for l in _missing_langs(s.get("ask"), langs):
+            for l in _missing_langs(s.get("ask"), [l for l in langs if not s.get("for") or l in s["for"]]):
                 errors.append(f"{where}: prompt lacks {l}")
             ans = s.get("answer") or {}
             if not str(ans.get("text") or "").strip():
@@ -168,7 +168,26 @@ def _norm(text):
     return re.sub(r"[^\w\s]", "", str(text).lower()).split()
 
 
+def _as_seen_by(u, lang):
+    """the unit as one audience gets it: steps and reviews marked for others left out"""
+    return {**u, "steps": [s for s in u["steps"] if not s.get("for") or lang in s["for"]],
+            "reviews": [r for r in u.get("reviews") or [] if not r.get("for") or lang in r["for"]]}
+
+
 def check_course(units, b):
+    """the course rules, once per audience over the units it sees (Allan, 2026-10-22: some slots have E / A / M
+    versions): a version for one audience neither breaks nor satisfies another's schedule"""
+    errors = []
+    langs = b.get("narrator_languages") or [None]
+    for lang in langs:
+        seen = [u if lang is None else _as_seen_by(u, lang) for u in units if lang is None or not u.get("tracks") or lang in u["tracks"]]
+        for e in _check_sequence(seen):
+            if e not in errors:
+                errors.append(e)
+    return errors
+
+
+def _check_sequence(units):
     """rules across units: items come back on a doubling schedule (next unit, then within 2, 4, 8…), reviews name
     items met earlier, and no dialogue line of three words or more is copied from an earlier unit"""
     errors = []

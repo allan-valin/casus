@@ -177,3 +177,61 @@ def test_audience_steps_and_tracks_need_only_their_languages(bible, units):
         i["meaning"] = {one: "x"}
     errors, _ = check_unit(unit, bible)
     assert not [e for e in errors if "lacks" in e]
+
+
+# --- courses with audience versions (Allan, 2026-10-22: the German course has E / A / M versions of some slots) -----
+
+TRACK_BIBLE = {"narrator_languages": ["en", "ar"], "protagonist": {"forms": {"f": "x", "m": "y"}},
+               "cast": [{"id": "becker", "name": "B"}]}
+
+
+def _u(uid, number, items, uses=(), tracks=None, reviews=(), review_for=None):
+    steps = [{"type": "prompt", "ask": {"en": "a", "ar": "a"}, "answer": {"text": "x"}, "items": [i]} for i in items for _ in range(2)]
+    for r in uses:
+        st = {"type": "prompt", "review": True, "ask": {"en": "a", "ar": "a"}, "answer": {"text": "x"}, "items": [r]}
+        if review_for and r in review_for:
+            st["for"] = review_for[r]
+            st["ask"] = {l: "a" for l in review_for[r]}
+        steps.append(st)
+    u = {"id": uid, "level": "A1", "number": number, "title": {"en": "t", "ar": "t"}, "situation": {"en": "s", "ar": "s"},
+         "protagonist": "f", "new_items": [{"id": i, "text": i, "meaning": {"en": i, "ar": i}} for i in items],
+         "reviews": [{"item": r, "from": "?", **({"for": review_for[r]} if review_for and r in review_for else {})} for r in reviews],
+         "steps": steps + [{"type": "selfcheck"}]}
+    if tracks:
+        u["tracks"] = tracks
+    return u
+
+
+def test_audience_versions_have_their_own_schedule():
+    units = [
+        _u("A1-01", 1, ["a"]),
+        _u("A1-02", 2, ["e"], uses=["a"], reviews=["a"], tracks=["en"]),
+        _u("A1-02-ar", 2, ["r"], uses=["a"], reviews=["a"], tracks=["ar"]),
+        _u("A1-03", 3, ["c"], uses=["e", "r"], reviews=["e", "r"], review_for={"e": ["en"], "r": ["ar"]}),
+    ]
+    assert check_course(units, TRACK_BIBLE) == []
+
+
+def test_an_audience_still_needs_its_reviews():
+    units = [
+        _u("A1-01", 1, ["a"]),
+        _u("A1-02", 2, ["e"], uses=["a"], reviews=["a"], tracks=["en"]),
+        _u("A1-02-ar", 2, ["r"], uses=["a"], reviews=["a"], tracks=["ar"]),
+        _u("A1-03", 3, ["c"], uses=["r"], reviews=["r"], review_for={"r": ["ar"]}),
+        _u("A1-04", 4, ["d"], uses=["c"], reviews=["c"]),
+    ]
+    errors = check_course(units, TRACK_BIBLE)
+    assert any("schedule" in e and "e (" in e for e in errors)
+    assert not any("r (" in e for e in errors)
+
+
+def test_disjoint_versions_may_introduce_the_same_item():
+    units = [_u("A1-01", 1, ["a"]), _u("A1-02", 2, ["kita"], uses=["a"], reviews=["a"], tracks=["en"]),
+             _u("A1-02-ar", 2, ["kita"], uses=["a"], reviews=["a"], tracks=["ar"])]
+    assert not [e for e in check_course(units, TRACK_BIBLE) if "already introduced" in e]
+
+
+def test_a_prompt_for_one_audience_needs_only_its_language():
+    u = _u("A1-02", 2, ["b"], uses=["a"], reviews=["a"], review_for={"a": ["ar"]})
+    errors, _ = check_unit(u, TRACK_BIBLE)
+    assert not [e for e in errors if "prompt lacks" in e]
