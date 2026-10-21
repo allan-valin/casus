@@ -1,0 +1,165 @@
+"""Conversation practice: the published guidelines and templates hold together, and the checker catches the slips
+the writing rules forbid (a unit that never brings an item back, review that repeats old lines, a missing narrator
+language, a speaker outside the cast)."""
+import copy
+import re
+import sys
+from pathlib import Path
+
+import pytest
+import yaml
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from conversation_check import check_bible, check_course, check_unit  # noqa: E402
+
+ROOT = Path(__file__).resolve().parents[2]
+TEMPLATE = ROOT / "tools" / "conversation" / "_template"
+GUIDES = ROOT / "docs" / "conversation"
+UI = ["en", "pt-BR", "de", "mk", "ar"]
+
+
+def _yaml(p):
+    return yaml.safe_load(p.read_text(encoding="utf-8"))
+
+
+@pytest.fixture
+def bible():
+    return _yaml(TEMPLATE / "story-bible.yml")
+
+
+@pytest.fixture
+def units():
+    return [_yaml(p) for p in sorted(TEMPLATE.glob("A1-*.yml"))]
+
+
+# --- the published guidelines ------------------------------------------------------------------------------------
+
+@pytest.mark.parametrize("lang", UI)
+def test_guide_exists_in_every_interface_language(lang):
+    assert (GUIDES / f"GUIDE.{lang}.md").exists()
+
+
+def test_guides_have_the_same_sections():
+    """a translation that drops a section leaves its readers without that rule"""
+    def shape(lang):
+        text = (GUIDES / f"GUIDE.{lang}.md").read_text(encoding="utf-8")
+        return [len(m.group(1)) for m in re.finditer(r"^(#+) ", text, re.M)], len(re.findall(r"^\d+\. ", text, re.M))
+    en = shape("en")
+    for lang in UI[1:]:
+        assert shape(lang) == en, lang
+
+
+def test_no_brand_name_anywhere():
+    """the technique is described, never attributed to a commercial course"""
+    files = list(GUIDES.glob("*.md")) + list(TEMPLATE.glob("*.yml"))
+    for f in files:
+        assert "pimsleur" not in f.read_text(encoding="utf-8").lower(), f.name
+
+
+def test_index_links_every_guide():
+    index = (GUIDES / "README.md").read_text(encoding="utf-8")
+    for lang in UI:
+        assert f"GUIDE.{lang}.md" in index
+
+
+# --- the templates are themselves valid --------------------------------------------------------------------------
+
+def test_template_bible_is_valid(bible):
+    assert check_bible(bible) == []
+
+
+def test_template_units_are_valid(bible, units):
+    assert len(units) >= 2
+    for u in units:
+        errors, _ = check_unit(u, bible)
+        assert errors == [], u["id"]
+    assert check_course(units, bible) == []
+
+
+# --- the checker catches each rule -------------------------------------------------------------------------------
+
+def test_missing_narrator_language_is_an_error(bible, units):
+    u = copy.deepcopy(units[0])
+    step = next(s for s in u["steps"] if s["type"] == "narrator")
+    step["text"].pop(bible["narrator_languages"][-1])
+    errors, _ = check_unit(u, bible)
+    assert any("narrator" in e for e in errors)
+
+
+def test_unknown_speaker_is_an_error(bible, units):
+    u = copy.deepcopy(units[0])
+    next(s for s in u["steps"] if s["type"] == "dialogue")["lines"][0]["speaker"] = "nobody"
+    errors, _ = check_unit(u, bible)
+    assert any("nobody" in e for e in errors)
+
+
+def test_unknown_step_type_is_an_error(bible, units):
+    u = copy.deepcopy(units[0])
+    u["steps"].append({"type": "lecture"})
+    errors, _ = check_unit(u, bible)
+    assert any("lecture" in e for e in errors)
+
+
+def test_new_item_never_prompted_is_an_error(bible, units):
+    """anticipation: every new item is asked for, not only heard"""
+    u = copy.deepcopy(units[0])
+    u["new_items"].append({"id": "ghost", "text": "Gespenst", "meaning": {l: "x" for l in bible["narrator_languages"]}})
+    errors, _ = check_unit(u, bible)
+    assert any("ghost" in e for e in errors)
+
+
+def test_prompt_for_an_item_not_in_the_unit_is_an_error(bible, units):
+    u = copy.deepcopy(units[0])
+    next(s for s in u["steps"] if s["type"] == "prompt")["items"] = ["never-introduced"]
+    errors, _ = check_unit(u, bible)
+    assert any("never-introduced" in e for e in errors)
+
+
+def test_item_dropped_after_its_unit_breaks_the_schedule(bible, units):
+    """graduated-interval recall: an item comes back in the next unit"""
+    later = copy.deepcopy(units[1])
+    first_items = {i["id"] for i in units[0]["new_items"]}
+    later["reviews"] = [r for r in later["reviews"] if r["item"] not in first_items]
+    for s in later["steps"]:
+        if s["type"] == "prompt":
+            s["items"] = [i for i in s.get("items", []) if i not in first_items]
+    errors = check_course([units[0], later], bible)
+    assert errors and any("schedule" in e for e in errors)
+
+
+def test_review_repeating_an_old_line_is_an_error(bible, units):
+    """review is a new situation, never the same lines again"""
+    later = copy.deepcopy(units[1])
+    old = next(ln for ln in next(s for s in units[0]["steps"] if s["type"] == "dialogue")["lines"] if len(ln["text"].split()) >= 3)
+    next(s for s in later["steps"] if s["type"] == "dialogue")["lines"][0] = copy.deepcopy(old)
+    errors = check_course([units[0], later], bible)
+    assert any("repeats" in e for e in errors)
+
+
+def test_review_share_far_from_a_quarter_is_a_warning(bible, units):
+    later = copy.deepcopy(units[1])
+    for s in later["steps"]:
+        if s["type"] == "prompt" and s.get("review"):
+            s["review"] = False
+    _, warnings = check_unit(later, bible)
+    assert any("review" in w for w in warnings)
+
+
+def test_protagonist_form_must_exist_in_the_bible(bible, units):
+    u = copy.deepcopy(units[0])
+    u["protagonist"] = "x"
+    errors, _ = check_unit(u, bible)
+    assert any("protagonist" in e for e in errors)
+
+
+def test_bible_cast_voice_must_be_declared(bible):
+    b = copy.deepcopy(bible)
+    b["cast"][0]["voice"] = "no-such-voice"
+    assert any("no-such-voice" in e for e in check_bible(b))
+
+
+def test_bible_needs_both_cultures(bible):
+    """culture notes of the taught country AND the narrator's, so the clashes can be written"""
+    b = copy.deepcopy(bible)
+    b["culture"]["narrator"] = []
+    assert any("narrator" in e for e in check_bible(b))

@@ -1,0 +1,79 @@
+# STORY BIBLE — template, filled in with a short German example (taught language German, narrator Portuguese and
+# English). Copy this file to tools/conversation/<code>/story-bible.yml and replace every value. The guide that
+# explains each field is docs/conversation/GUIDE.<your language>.md, section "Story bible".
+# Check with:  python3 tools/conversation_check.py tools/conversation/<code>
+
+language: de                    # code of the taught language, as in Casus
+narrator_languages: [pt, en]    # interface languages the narrator speaks (pt = Brazilian Portuguese)
+country: Germany                # the country that matches the language's name
+standard: >-                    # the standard taught in grammars; dialects only in an optional chapter
+  Standard German (Hochdeutsch) as taught in grammars; no regional forms in the units.
+
+voices:                         # open-licence voices only; check the licence of each (no NC)
+  - {id: nar-pt, role: narrator, lang: pt, tts: "piper:pt_BR-cadu-medium"}
+  - {id: nar-en, role: narrator, lang: en, tts: "piper:en_US-lessac-medium"}
+  - {id: de-f, role: character, lang: de, gender: f, tts: "piper:de_DE-kerstin-low"}
+  - {id: de-m, role: character, lang: de, gender: m, tts: "piper:de_DE-thorsten-medium"}
+  - {id: de-f2, role: character, lang: de, gender: f, tts: "piper:de_DE-eva_k-x_low"}
+  # too few voices: the same model with another pitch makes a second character
+  - {id: de-m2, role: character, lang: de, gender: m, tts: "piper:de_DE-thorsten-medium", pitch: 1.12}
+
+protagonist:                    # the learner; one form per available voice, alternated between units
+  forms: {f: de-f, m: de-m}
+  name: null                    # null = addressed as "you"; a name only if the story needs one
+  background: >-
+    Has just moved from Brazil to Leipzig for a job; knows no German; speaks English at work.
+  alternation: odd units f, even units m (so both sets of forms are practised)
+
+cast:                           # small and recurring; each person keeps one voice for the whole course
+  - id: becker
+    name: Frau Becker
+    role: landlady, about 60, lives on the ground floor
+    voice: de-f2
+    register: formal            # how this person and the protagonist address each other at first
+    arc: formal throughout; warms up by B1, never offers "du"
+  - id: jonas
+    name: Jonas
+    role: neighbour, about 25, student
+    voice: de-m2
+    register: informal
+    arc: offers "du" at once (usual among young people); becomes a friend in B1
+
+formality:                      # researched per language and country, with sources
+  summary: >-
+    Sie with strangers, officials, shop staff and older people; du with friends, family, children, and usually among
+    young people and in many workplaces once offered. Switching to du is offered, normally by the older or more
+    senior person.
+  rules:
+    - Use Sie + surname (Frau Becker, Herr Schulz) until du is offered.
+    - Among students and people under about 30, du from the start is normal.
+    - Offering du is an event worth a scene (B1).
+  sources:
+    - {title: "Wikipedia: T–V distinction (German)", url: "https://de.wikipedia.org/wiki/Siezen", licence: CC BY-SA}
+
+culture:
+  taught:                       # what surprises newcomers to the taught country
+    - {topic: Sunday closures, note: "Shops are closed on Sundays and public holidays; bakeries open on Sunday mornings, kiosks and petrol stations sell basics.", source: "Ladenschlussgesetz; Wikipedia: Ladenöffnungszeit"}
+    - {topic: registration, note: "Every new resident registers the address at the Bürgeramt within two weeks (Anmeldung); you need the landlord's confirmation (Wohnungsgeberbestätigung).", source: "Bundesmeldegesetz §17, §19"}
+    - {topic: bottle deposit, note: "Most bottles and cans carry a deposit (Pfand), returned at machines in supermarkets.", source: "Verpackungsgesetz"}
+    - {topic: quiet hours, note: "Many house rules forbid noise on Sundays and after 22:00.", source: "typical Hausordnung"}
+  narrator:                     # the narrator language's own culture — one block per narrator language
+    - {lang: pt, topic: shops on Sunday, note: "In Brazil malls and supermarkets open on Sundays."}
+    - {lang: pt, topic: greetings, note: "Friends greet with a kiss on the cheek; strangers are addressed with você almost always."}
+    - {lang: pt, topic: documents, note: "The CPF number is asked for everywhere; address registration with the city does not exist."}
+    - {lang: en, topic: shops on Sunday, note: "In the UK and the US most shops open on Sundays."}
+    - {lang: en, topic: names, note: "First names are used quickly, also at work and with older people."}
+  clashes:                      # scenes where the two cultures expect different things — these become units
+    - {situation: "Sunday shopping trip finds every shop closed", unit: A1-02}
+    - {situation: "Calling the landlady by her first name / greeting her with a kiss", unit: A1-01}
+    - {situation: "Throwing bottles away instead of returning them", unit: A1-05}
+
+arc:                            # the story per level; each level about 20 units; topics follow CEFR and Learn
+  - {level: A1, units: 20, summary: "Arrival and the first weeks: landlady, Anmeldung, SIM card, supermarket, Sunday, asking the way."}
+  - {level: A2, units: 20, summary: "Settling in: bank, doctor, bins, neighbours, transport, repairs."}
+  - {level: B1, units: 20, summary: "Social life: friends, plans, opinions, the du offer, a misunderstanding."}
+  - {level: B2, units: 20, summary: "Work: job ads, CV, interview, meetings, e-mail register."}
+  - {level: C1, units: 20, summary: "University: talk about school-level biology, chemistry, physics, maths."}
+  - {level: C2, units: 20, summary: "Ideas: philosophy, debate, humour, register shifts."}
+
+native_check: []                # lines a native speaker must confirm before release (Macedonian: always some)

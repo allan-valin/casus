@@ -1,0 +1,104 @@
+# UNIT 2 of the template: shows review. Every item of unit 1 comes back (the schedule: next unit, then within 2,
+# 4, 8 units), but in a new situation — a different person, place and need — never the old lines again.
+
+id: A1-02
+level: A1
+number: 2
+protagonist: m                  # alternated: unit 1 was f
+title: {pt: "Domingo", en: "Sunday"}
+situation:
+  pt: "É domingo de manhã e você quer fazer compras. O supermercado está fechado. No corredor, você encontra o vizinho, Jonas."
+  en: "It is Sunday morning and you want to go shopping. The supermarket is closed. On the stairs you meet your neighbour, Jonas."
+learn_lessons: []
+culture: Sunday shopping trip finds every shop closed
+
+new_items:
+  - {id: hallo, text: "Hallo", meaning: {pt: "Oi", en: "Hi"}, register: informal}
+  - {id: geschlossen, text: "geschlossen", meaning: {pt: "fechado", en: "closed"}}
+  - {id: heute-ist-sonntag, text: "Heute ist Sonntag", meaning: {pt: "Hoje é domingo", en: "Today is Sunday"}}
+  - {id: baeckerei, text: "die Bäckerei", meaning: {pt: "a padaria", en: "the bakery"}}
+  - {id: offen, text: "offen", meaning: {pt: "aberto", en: "open"}}
+
+reviews:                        # items from earlier units, each used in a new situation below
+  - {item: guten-tag, from: A1-01}
+  - {item: entschuldigung, from: A1-01}
+  - {item: verstehe-nicht, from: A1-01}
+  - {item: sprechen-englisch, from: A1-01}
+  - {item: danke, from: A1-01}
+
+steps:
+  - type: narrator
+    text:
+      pt: "Domingo de manhã. Escute a conversa no corredor."
+      en: "Sunday morning. Listen to the conversation on the stairs."
+  - type: dialogue
+    lines:
+      - {speaker: jonas, text: "Hallo! Du bist der Neue, oder?", meaning: {pt: "Oi! Você é o novo vizinho, né?", en: "Hi! You're the new guy, right?"}}
+      - {speaker: protagonist, text: "Hallo! Der Supermarkt ist geschlossen.", meaning: {pt: "Oi! O supermercado está fechado.", en: "Hi! The supermarket is closed."}}
+      - {speaker: jonas, text: "Klar, heute ist Sonntag.", meaning: {pt: "Claro, hoje é domingo.", en: "Sure, today is Sunday."}}
+      - {speaker: protagonist, text: "Alles ist geschlossen?", meaning: {pt: "Tudo está fechado?", en: "Everything is closed?"}}
+      - {speaker: jonas, text: "Die Bäckerei ist offen. Bis zwölf.", meaning: {pt: "A padaria está aberta. Até o meio-dia.", en: "The bakery is open. Until twelve."}}
+      - {speaker: protagonist, text: "Wo ist die Bäckerei?", meaning: {pt: "Onde fica a padaria?", en: "Where is the bakery?"}}
+      - {speaker: jonas, text: "Da vorne, an der Ecke.", meaning: {pt: "Ali na frente, na esquina.", en: "Up there, on the corner."}}
+      - {speaker: protagonist, text: "Danke, Jonas!", meaning: {pt: "Obrigado, Jonas!", en: "Thanks, Jonas!"}}
+  - type: narrator
+    text:
+      pt: "Jonas é jovem e usa 'du', a forma informal. Entre jovens isso é normal. Com ele, diga 'Hallo'."
+      en: "Jonas is young and uses 'du', the informal form. Among young people that is normal. With him, say 'Hallo'."
+  - {type: line, speaker: jonas, item: hallo}
+  - type: prompt
+    ask: {pt: "Cumprimente Jonas.", en: "Greet Jonas."}
+    answer: {speaker: protagonist, text: "Hallo!"}
+    items: [hallo]
+  - type: prompt                # review in a new setting: unit 1 greeted the landlady at her door
+    ask: {pt: "Agora entra uma senhora idosa no corredor. Cumprimente-a.", en: "Now an elderly lady comes onto the stairs. Greet her."}
+    answer: {speaker: protagonist, text: "Guten Tag!"}
+    items: [guten-tag]
+    review: true
+  - {type: line, speaker: jonas, item: geschlossen}
+  - type: prompt
+    ask: {pt: "Diga que está fechado.", en: "Say that it is closed."}
+    answer: {speaker: protagonist, text: "Geschlossen!"}
+    items: [geschlossen]
+  - type: prompt
+    ask: {pt: "Explique por quê: hoje é domingo.", en: "Explain why: today is Sunday."}
+    answer: {speaker: protagonist, text: "Heute ist Sonntag."}
+    items: [heute-ist-sonntag]
+  - type: prompt
+    ask: {pt: "Jonas fala rápido demais. Peça desculpas e diga que não entende.", en: "Jonas speaks too fast. Apologise and say you don't understand."}
+    answer: {speaker: protagonist, text: "Entschuldigung, ich verstehe nicht."}
+    items: [entschuldigung, verstehe-nicht]
+    review: true
+  - {type: line, speaker: jonas, item: baeckerei}
+  - type: prompt
+    ask: {pt: "Diga: a padaria.", en: "Say: the bakery."}
+    answer: {speaker: protagonist, text: "die Bäckerei"}
+    items: [baeckerei]
+  - type: prompt
+    ask: {pt: "Diga que a padaria está aberta.", en: "Say that the bakery is open."}
+    answer: {speaker: protagonist, text: "Die Bäckerei ist offen."}
+    items: [baeckerei, offen]
+  - type: prompt
+    ask: {pt: "Na padaria, a vendedora fala só alemão? Pergunte, com educação, se ela fala inglês.", en: "At the bakery: does the shop assistant only speak German? Ask her politely whether she speaks English."}
+    answer: {speaker: protagonist, text: "Sprechen Sie Englisch?"}
+    items: [sprechen-englisch]
+    review: true
+  - type: prompt
+    ask: {pt: "E hoje, a padaria está aberta ou fechada? Diga que está aberta.", en: "And today, is the bakery open or closed? Say it is open."}
+    answer: {speaker: protagonist, text: "Offen. Heute ist Sonntag, die Bäckerei ist offen."}
+    items: [offen, heute-ist-sonntag]
+  - type: prompt
+    ask: {pt: "Ela lhe dá os pãezinhos. Agradeça.", en: "She gives you the bread rolls. Thank her."}
+    answer: {speaker: protagonist, text: "Danke!"}
+    items: [danke]
+    review: true
+  - type: prompt
+    ask: {pt: "De volta ao prédio, diga a Jonas que o supermercado está fechado.", en: "Back home, tell Jonas the supermarket is closed."}
+    answer: {speaker: protagonist, text: "Hallo! Der Supermarkt ist geschlossen."}
+    items: [hallo, geschlossen]
+  - type: narrator
+    text:
+      pt: "Escute a conversa outra vez. Agora você entende."
+      en: "Listen to the conversation again. Now you understand it."
+  - {type: dialogue, again: true}
+  - type: selfcheck
