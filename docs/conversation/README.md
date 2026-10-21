@@ -15,3 +15,7 @@ Checker: `python3 tools/conversation_check.py tools/conversation/<code>`.
 Planned courses, in order (taught language · narrator): mk · pt-BR, de · mk, ko · pt-BR, de · ar, ja · pt-BR.
 
 The Macedonian and Arabic versions were written by an AI and await a native speaker's reading.
+
+Build for the site: `python3 tools/build_conversation.py` checks every course and writes `public/talk/<code>.json`,
+which the Conversation tab (`/<code>/talk/`) reads. Until a language has its own course, the template's German
+units appear on `/de/talk/` as an example.

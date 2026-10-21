@@ -28,7 +28,7 @@ function serveData() {
       if (!existsSync(html)) return;
       // a language that moved to another site: its old addresses redirect there
       for (const l of LANGUAGES.filter((x) => !SITE.languages.includes(x.code) && x.path !== '/')) {
-        for (const view of ['reader', 'drills', 'proof', 'learn', 'speak', 'game']) {
+        for (const view of ['reader', 'drills', 'proof', 'learn', 'speak', 'talk', 'game']) {
           const out = resolve('dist' + l.path + (view === 'reader' ? '' : `${view}/`));
           mkdirSync(out, { recursive: true });
           const to = siteUrl(l.code, view === 'game' ? 'drills' : view);
@@ -38,7 +38,7 @@ function serveData() {
       for (const l of LANGUAGES.filter((x) => SITE.languages.includes(x.code))) {
         const at = l.path.replace(/\/$/, '');
         // the reader (Latin's is the root itself), the drills, and the old /game/ links
-        for (const dir of [...(l.path === '/' ? [] : [l.path]), `${at}/drills/`, `${at}/proof/`, `${at}/learn/`, `${at}/speak/`, ...(l.path === '/' ? [] : [`${at}/game/`])]) {
+        for (const dir of [...(l.path === '/' ? [] : [l.path]), `${at}/drills/`, `${at}/proof/`, `${at}/learn/`, `${at}/speak/`, `${at}/talk/`, ...(l.path === '/' ? [] : [`${at}/game/`])]) {
           const out = resolve('dist' + dir);
           mkdirSync(out, { recursive: true });
           copyFileSync(html, join(out, 'index.html'));

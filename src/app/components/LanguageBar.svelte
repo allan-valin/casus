@@ -4,7 +4,7 @@
    * a language name opens that language's drills; 2026-10-19: proofreading). */
   import { SITE, SITES, siteLanguages, siteUrl } from '../../sites.js';
   const LANGUAGES = siteLanguages();
-  import { drillsPath, proofPath, learnPath, speakPath } from '../lib/route.js';
+  import { drillsPath, proofPath, learnPath, speakPath, talkPath } from '../lib/route.js';
   import { withBase } from '../lib/paths.js';
   import { t, ui } from '../lib/i18n.svelte.js';
   import { languageFlag } from '../lib/theme.js';
@@ -16,7 +16,7 @@
 
 <nav class="languages" aria-label={t('nav.label')}>
   {#each LANGUAGES as l (l.code)}
-    <a href={withBase(view === 'drills' ? drillsPath(l) : view === 'proof' ? proofPath(l) : view === 'learn' ? learnPath(l) : view === 'speak' ? speakPath(l) : l.path)} aria-current={l.code === current ? 'page' : undefined}>{#if languageFlag(l.code)}<img class="flag" src={languageFlag(l.code)} alt="" />{/if}{l.name[ui.lang] ?? l.name.en}</a>
+    <a href={withBase(view === 'drills' ? drillsPath(l) : view === 'proof' ? proofPath(l) : view === 'learn' ? learnPath(l) : view === 'speak' ? speakPath(l) : view === 'talk' ? talkPath(l) : l.path)} aria-current={l.code === current ? 'page' : undefined}>{#if languageFlag(l.code)}<img class="flag" src={languageFlag(l.code)} alt="" />{/if}{l.name[ui.lang] ?? l.name.en}</a>
   {/each}
 </nav>
 <!-- the other two sites (Allan, 2026-10-19: one codebase, three sites) -->
@@ -27,6 +27,7 @@
   <a data-view="reader" href={withBase(here.path)} aria-current={view === 'reader' ? 'page' : undefined}>{t('nav.reader')}</a>
   <a data-view="drills" href={withBase(drillsPath(here))} aria-current={view === 'drills' ? 'page' : undefined}>{t('nav.game')}</a>
   <a data-view="learn" href={withBase(learnPath(here))} aria-current={view === 'learn' ? 'page' : undefined}>{t('nav.learn')}</a>
+  <a data-view="talk" href={withBase(talkPath(here))} aria-current={view === 'talk' ? 'page' : undefined}>{t('nav.talk')}</a>
   <a data-view="speak" href={withBase(speakPath(here))} aria-current={view === 'speak' ? 'page' : undefined}>{t('nav.speak')}</a>
   <a data-view="proof" href={withBase(proofPath(here))} aria-current={view === 'proof' ? 'page' : undefined}>{t('nav.proof')}</a>
 </nav>

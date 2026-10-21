@@ -12,10 +12,11 @@ describe('LanguageBar', () => {
     expect(langs.find((a) => a.textContent.includes('Latin')).getAttribute('href')).toMatch(/\/$/);
     expect(langs.some((a) => /drills/i.test(a.textContent))).toBe(false);
     const views = [...container.querySelectorAll('nav.views a')];
-    expect(views.map((a) => a.dataset.view)).toEqual(['reader', 'drills', 'learn', 'speak', 'proof']);   // learn, proofreading added 2026-10-19; pronunciation 2026-10-20
-    expect(views[4].getAttribute('href')).toMatch(/\/grc\/proof\/$/);
+    expect(views.map((a) => a.dataset.view)).toEqual(['reader', 'drills', 'learn', 'talk', 'speak', 'proof']);   // learn, proofreading added 2026-10-19; pronunciation 2026-10-20; conversation 2026-10-21
+    expect(views[5].getAttribute('href')).toMatch(/\/grc\/proof\/$/);
+    expect(views[3].getAttribute('href')).toMatch(/\/grc\/talk\/$/);
     expect(views[1].getAttribute('href')).toMatch(/\/grc\/drills\/$/);
-    expect(views[3].getAttribute('href')).toMatch(/\/grc\/speak\/$/);
+    expect(views[4].getAttribute('href')).toMatch(/\/grc\/speak\/$/);
     expect(container.querySelector('nav.views a[aria-current=page]').dataset.view).toBe('reader');
   });
   it('drills: a language name opens its drills, and the current language stays marked', () => {

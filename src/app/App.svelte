@@ -26,6 +26,7 @@
   import Proofread from './components/Proofread.svelte';
   import Learn from './components/Learn.svelte';
   import Trainer from './components/Trainer.svelte';
+  import Talk from './components/Talk.svelte';
   import { speakPath } from './lib/route.js';
   import { speakHref } from './lib/pronounce.js';
   import ThemeControls from './components/ThemeControls.svelte';
@@ -53,6 +54,16 @@
     schedule = (fn, ms) => setTimeout(fn, ms),
     cancel = (t) => clearTimeout(t),
   } = $props();
+  // the Conversation narrator speaks the interface language, with that language's own voice tiers
+  const narrators = new Map();
+  function narratorVoice(code) {
+    if (typeof window === 'undefined') return null;
+    if (!narrators.has(code)) {
+      const l = getLanguage(code);
+      narrators.set(code, createVoice({ bcp47: l.bcp47, espeakVoice: l.voice?.espeak, natural: l.voice?.natural ?? null }));
+    }
+    return narrators.get(code);
+  }
   const activity = createActivity({ slowText: () => t('activity.slow') });
   const fetchImpl = activity.wrap(rawFetch);
   const say = (key, vars, kind) => activity.say(t(key, vars), kind);
@@ -238,6 +249,12 @@
   {#if route.view === 'speak'}
     <Trainer {lang} {voice} {fetchImpl} data={DATA} base={withBase('/')} {lexicon} {storage} {award}
       loadParadigm={(id) => fetchImpl(`${DATA}/paradigms/${Number(id) % 512}.json`).then((r) => (r.ok ? r.json() : {})).then((b) => b[String(id)] ?? null).catch(() => null)} say={(msg, kind) => activity.say(msg, kind)} />
+  {:else if route.view === 'talk'}
+    <Talk {lang} {storage} loadTalk={() => fetchImpl(withBase(`/talk/${lang.code}.json`)).then((r) => (r.ok ? r.json() : null))}
+      speakTaught={async (text) => { if (!voice) throw new Error('no voice'); await voice.speak(text); }}
+      speakNarrator={async (text, code) => { await narratorVoice(code)?.speak(text); }}
+      trainerHref={(text) => speakHref(withBase(speakPath(LANGUAGES.find((l) => l.code === lang.code) ?? { path: '/' })), text)}
+      say={(msg, kind) => activity.say(msg, kind)} />
   {:else if route.view === 'learn'}
     <Learn {lang} {storage} {award} {progression} lookup={(w) => (lexicon ? lexicon.lookup(w) : Promise.resolve([]))} loadInfo={loadEntryInfo} loadParadigm={loadParadigmOf} speak={(text) => speakHref(withBase(speakPath(LANGUAGES.find((l) => l.code === lang.code) ?? { path: '/' })), text)} loadLearn={() => fetchImpl(`${DATA}/learn.json`).then((r) => (r.ok ? r.json() : null))}
       loadLesson={(id) => fetchImpl(`${DATA}/learn/${id}.json`).then((r) => r.json())}
