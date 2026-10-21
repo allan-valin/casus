@@ -11,7 +11,7 @@
   import { voicePitches, pitchOf } from '../lib/talkvoices.js';
   let { lang, loadTalk, storage = null, speakTaught = async () => {}, speakNarrator = async () => {}, trainerHref = null,
     say = () => {}, pause = (ms) => new Promise((r) => setTimeout(r, ms)), Practice = null, practiceProps = {}, control = null,
-    voices = [], narratorVoiceOf = null } = $props();
+    voices = [], narratorVoiceOf = null, Entry = null, entryProps = {} } = $props();
 
   const GUIDE = 'https://github.com/allan-valin/casus/blob/main/docs/conversation';
   const GUIDES = [['en', 'English'], ['pt-BR', 'Português (Brasil)'], ['de', 'Deutsch'], ['mk', 'Македонски'], ['ar', 'العربية']];
@@ -70,35 +70,45 @@
   function back() { unit = null; }
   function toggle(key) { shown = { ...shown, [key]: !shown[key] }; }
 
+  // the natural voice failing must show (Allan, 2026-10-21: "still the robot voice"): once per unit, with the reason
+  let warnedFallback = false;
+  function noteFallback(r) {
+    if (r?.fellBack && !warnedFallback) { warnedFallback = true; say(t('talk.voice.fellBack', { error: r.error ?? '' }), 'err'); }
+  }
   async function sayTaught(text, who = null) {
-    try { await speakTaught(text, { pitch: who ? pitchOf(course, unit, who, pitches) : 1 }); } catch (e) { say(t('talk.speakFailed', { text, error: e?.message ?? '' }), 'err'); throw e; }
+    try { noteFallback(await speakTaught(text, { pitch: who ? pitchOf(course, unit, who, pitches) : 1 })); } catch (e) { say(t('talk.speakFailed', { text, error: e?.message ?? '' }), 'err'); throw e; }
   }
   // ▶ starts the step; while it plays the same button pauses (⏸) and resumes (▶) it
-  async function waitWhilePaused() { while (paused && playing !== null) await new Promise((r) => setTimeout(r, 120)); }
+  // every playback has a run number; starting another stops the sound and ends the old run (Allan, 2026-10-21: two at once)
+  let run = 0;
+  async function waitWhilePaused(my) { while (paused && my === run) await new Promise((r) => setTimeout(r, 120)); }
   // one step's sound; `auto` (hands-free) leaves time to answer a question and to repeat each piece
   const THINK_MS = 10000;
   async function perform(s, n, auto = false) {
+    control?.stop?.();
+    const my = ++run;
     playing = n;
     paused = false;
     try {
-      if (s.type === 'narrator') { await speakNarrator(nar(s.text), narratorLang); say(t('talk.played.narrator')); }
+      if (s.type === 'narrator') { noteFallback(await speakNarrator(nar(s.text), narratorLang)); say(t('talk.played.narrator')); }
       else if (s.type === 'dialogue') {
-        for (const ln of linesOf(s)) { await waitWhilePaused(); if (playing !== n) break; await sayTaught(ln.text, ln.speaker); await pause(400); }
+        for (const ln of linesOf(s)) { await waitWhilePaused(my); if (my !== run) break; await sayTaught(ln.text, ln.speaker); if (my !== run) break; await pause(400); }
         say(t('talk.played.dialogue', { n: linesOf(s).length }));
       } else if (s.type === 'line') { await sayTaught(items[s.item]?.text ?? '', s.speaker); say(t('talk.played.line', { text: items[s.item]?.text ?? '' })); }
       else if (s.type === 'buildup') {
-        for (const part of s.parts) { await waitWhilePaused(); if (playing !== n) break; await sayTaught(part); await pause(auto ? 2500 : 600); }
+        for (const part of s.parts) { await waitWhilePaused(my); if (my !== run) break; await sayTaught(part); if (my !== run) break; await pause(auto ? 2500 : 600); }
         say(t('talk.played.buildup', { text: s.parts.at(-1) }));
       } else if (s.type === 'prompt') {
-        await speakNarrator(nar(s.ask), narratorLang); say(t('talk.played.ask'));
+        noteFallback(await speakNarrator(nar(s.ask), narratorLang)); say(t('talk.played.ask'));
         if (auto) {
-          await waitWhilePaused(); await pause(THINK_MS); await waitWhilePaused();
-          if (playing === n) await answer(s, n);
+          await waitWhilePaused(my); if (my === run) await pause(THINK_MS); await waitWhilePaused(my);
+          if (my === run) await answer(s, n, true);
         }
       }
     } catch { /* already reported */ }
-    if (playing === n) { playing = null; paused = false; }
+    if (my === run) { playing = null; paused = false; }
   }
+  function stopAll() { control?.stop?.(); run += 1; playing = null; paused = false; }
   async function play(s, n) {
     current = n;
     if (playing === n) {
@@ -124,7 +134,7 @@
     handsFree = false;
   }
   function toggleHandsFree() {
-    if (handsFree) { handsFree = false; playing = null; paused = false; control?.pause?.(); say(t('talk.handsFree.off')); return; }
+    if (handsFree) { handsFree = false; stopAll(); say(t('talk.handsFree.off')); return; }
     runHandsFree(current ?? 0);
   }
   function stepTo(k) {
@@ -132,8 +142,7 @@
     const to = Math.max(0, Math.min(unit.steps.length - 1, k));
     const wasFree = handsFree;
     handsFree = false;
-    playing = null;
-    paused = false;
+    stopAll();
     current = to;
     if (wasFree) runHandsFree(to);
     else if (unit.steps[to].type !== 'selfcheck') perform(unit.steps[to], to);
@@ -157,11 +166,18 @@
     } catch { /* not supported */ }
     return () => { try { for (const a of ['play', 'pause', 'nexttrack', 'previoustrack']) ms.setActionHandler(a, null); } catch { /* fine */ } };
   });
-  async function answer(s, n) {
+  async function answer(s, n, inner = false) {
+    if (!inner) stopAll();
     current = n;
     shown = { ...shown, [n]: true };
     try { await sayTaught(s.answer.text, s.answer.speaker ?? 'protagonist'); say(t('talk.played.answer', { text: s.answer.text })); } catch { /* reported */ }
   }
+  // shown words open their dictionary entry; non-Latin text gets its romanization below (Allan, 2026-10-21)
+  let entry = $state(null);      // { key, word }
+  const romanize = $derived(lang.script?.romanize ?? null);
+  const pieces = (text) => (String(text).match(/[\p{L}\p{M}]+|[^\p{L}\p{M}]+/gu) ?? []).map((x) => ({ x, word: /\p{L}/u.test(x) }));
+  const romanOf = (text) => pieces(text).map((p) => (p.word ? romanize(p.x) : p.x)).join('');
+  function openWord(key, word) { entry = entry?.key === key && entry.word === word ? null : { key, word }; }
   function practise(n) { current = n; practising = practising === n ? null : n; }
   function markDone(ok) {
     if (ok && !done.includes(unit.id)) {
@@ -173,10 +189,15 @@
   }
 </script>
 
+{#snippet words(key, text)}
+  <span class="taught" lang={lang.bcp47}>{#each pieces(text) as p}{#if p.word && Entry}<button class="w" onclick={() => openWord(key, p.x)}>{p.x}</button>{:else}{p.x}{/if}{/each}</span>{#if romanize}<span class="roman">{romanOf(text)}</span>{/if}
+  {#if Entry && entry?.key === key}<div class="entry"><Entry word={entry.word} {lang} {...entryProps} onclose={() => (entry = null)} /></div>{/if}
+{/snippet}
+
 {#snippet taught(key, text, meaning)}
   <button class="reveal" aria-expanded={!!shown[key]} onclick={() => toggle(key)}>{shown[key] ? t('talk.hide') : t('talk.show')}</button>
   {#if shown[key]}
-    <span class="taught" lang={lang.bcp47}>{text}</span>{#if meaning}<span class="meaning">{meaning}</span>{/if}
+    {@render words(key, text)}{#if meaning}<span class="meaning">{meaning}</span>{/if}
     {#if trainerHref}<a class="trainer" href={trainerHref(text)} title={t('talk.trainer')}>🎤</a>{/if}
   {/if}
 {/snippet}
@@ -233,7 +254,7 @@
               <span class="kind">{s.again ? t('talk.dialogue.again') : t('talk.dialogue')}</span>
               <button class="reveal" aria-expanded={!!shown[n]} onclick={() => toggle(n)}>{shown[n] ? t('talk.hide') : t('talk.show')}</button>
               {#if shown[n]}
-                <ul class="lines">{#each linesOf(s) as ln}<li><b class="who">{speaker(ln.speaker)}:</b> <span class="taught" lang={lang.bcp47}>{ln.text}</span> <span class="meaning">{nar(ln.meaning)}</span>
+                <ul class="lines">{#each linesOf(s) as ln, li}<li><b class="who">{speaker(ln.speaker)}:</b> {@render words(`${n}.${li}`, ln.text)} <span class="meaning">{nar(ln.meaning)}</span>
                   {#if trainerHref}<a class="trainer" href={trainerHref(ln.text)} title={t('talk.trainer')}>🎤</a>{/if}</li>{/each}</ul>
               {/if}
             {:else if s.type === 'line'}
@@ -241,7 +262,7 @@
             {:else if s.type === 'buildup'}
               <span class="kind">{t('talk.buildup')}</span>
               <button class="reveal" aria-expanded={!!shown[n]} onclick={() => toggle(n)}>{shown[n] ? t('talk.hide') : t('talk.show')}</button>
-              {#if shown[n]}<span class="taught" lang={lang.bcp47}>{s.parts.join(' … ')}</span>{/if}
+              {#if shown[n]}{@render words(n, s.parts.at(-1))}{/if}
               {#if Practice}<button class="practise" aria-expanded={practising === n} onclick={() => practise(n)}>🎤 {t('talk.practise')}</button>{/if}
               {#if Practice && practising === n}<div class="practice"><Practice text={s.parts.at(-1)} {...practiceProps} /></div>{/if}
             {:else if s.type === 'prompt'}
@@ -249,7 +270,7 @@
               <span class="pause-hint">{t('talk.sayIt')}</span>
               <button class="answer" onclick={() => answer(s, n)}>{t('talk.answer')}</button>
               {#if Practice}<button class="practise" aria-expanded={practising === n} onclick={() => practise(n)}>🎤 {t('talk.practise')}</button>{/if}
-              {#if shown[n]}<span class="taught" lang={lang.bcp47}>{s.answer.text}</span>{/if}
+              {#if shown[n]}{@render words(n, s.answer.text)}{/if}
               {#if Practice && practising === n}<div class="practice"><Practice text={s.answer.text} {...practiceProps} /></div>{/if}
             {:else if s.type === 'selfcheck'}
               <span class="kind">{t('talk.selfcheck')}</span>
@@ -262,11 +283,11 @@
       <div class="player-bar" role="toolbar" aria-label={t('talk.player')}>
         <button class="hands-free" class:on={handsFree} aria-pressed={handsFree} onclick={toggleHandsFree}>🎧 {handsFree ? t('talk.handsFree.stop') : t('talk.handsFree.start')}</button>
         <div class="transport">
-          <button class="prev" aria-label={t('talk.prev')} title={t('talk.prev')} onclick={prev}>⏮</button>
-          <button class="playpause" aria-label={playing !== null && !paused ? t('talk.pause') : t('talk.play')} onclick={playPause}>{playing !== null && !paused ? '⏸' : '▶'}</button>
-          <button class="next" aria-label={t('talk.next')} title={t('talk.next')} onclick={next}>⏭</button>
+          <button class="prev" aria-label={t('talk.prev')} title={t('talk.prev')} onclick={prev}><span class="glyph">⏮</span></button>
+          <button class="playpause" aria-label={playing !== null && !paused ? t('talk.pause') : t('talk.play')} onclick={playPause}><span class="glyph" class:tri={!(playing !== null && !paused)}>{playing !== null && !paused ? '⏸' : '▶'}</span></button>
+          <button class="next" aria-label={t('talk.next')} title={t('talk.next')} onclick={next}><span class="glyph">⏭</span></button>
         </div>
-        <span class="where">{t('talk.where', { n: (current ?? -1) + 1, total: unit.steps.length })}</span>
+        <span class="where">{current == null ? t('talk.steps', { total: unit.steps.length }) : t('talk.where', { n: current + 1, total: unit.steps.length })}</span>
       </div>
     </div>
   {/if}
@@ -284,11 +305,17 @@
   .player-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px;
     padding: 8px 16px calc(8px + env(safe-area-inset-bottom)); background: var(--card, #fff); border-top: 2px solid var(--accent, #6a4c93); box-shadow: 0 -2px 10px rgb(0 0 0 / 0.15); }
   .transport { display: flex; gap: 14px; align-items: center; }
-  .transport button { font-size: 1.6rem; min-width: 52px; min-height: 52px; border-radius: 50%; }
-  .transport .playpause { font-size: 2rem; min-width: 64px; min-height: 64px; }
+  .transport button { font-size: 1.6rem; width: 52px; height: 52px; border-radius: 50%; padding: 0; line-height: 1; display: inline-flex; align-items: center; justify-content: center; }
+  .transport .glyph { display: block; line-height: 1; }
+  .transport .glyph.tri { transform: translateX(8%); }   /* a triangle's visual centre sits left of its box */
+  .transport .playpause { font-size: 2rem; width: 64px; height: 64px; }
   .hands-free { font-size: 1.05rem; font-weight: 700; padding: 10px 16px; border-radius: 24px; border: 2px solid var(--accent, #6a4c93); }
   .hands-free.on { background: var(--accent, #6a4c93); color: #fff; }
   .where { font-size: 0.9rem; opacity: 0.8; }
+  button.w { background: none; border: 0; padding: 0 1px; font: inherit; color: inherit; cursor: pointer; border-bottom: 1px dotted currentColor; }
+  button.w:hover { background: color-mix(in srgb, var(--accent, #6a4c93) 15%, transparent); }
+  .roman { display: block; font-size: 0.85em; opacity: 0.75; font-style: italic; }
+  .entry { flex-basis: 100%; margin-top: 6px; max-width: 100%; overflow-x: auto; }
   .units { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; }
   .unit-row { width: 100%; text-align: start; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--card, transparent); color: var(--ink); cursor: pointer; }
   .unit-row:hover { border-color: var(--accent); }

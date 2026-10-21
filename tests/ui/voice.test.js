@@ -122,7 +122,7 @@ describe('natural voice tier (Piper, languages phase 3 Task 6)', () => {
     const synth = fakeSynth(['de-DE']);
     const v = createVoice({ bcp47: 'de', espeakVoice: 'de', natural, synth, loadPiper: async () => piper, playBlob: async () => {}, store });
     const heard = vi.fn(); v.onchange(heard);
-    expect(await v.speak('Haus')).toEqual({ tier: 'browser', fellBack: true });
+    expect(await v.speak('Haus')).toMatchObject({ tier: 'browser', fellBack: true, error: expect.any(String) });
     expect(synth.speak).toHaveBeenCalledTimes(1);
     expect(store.getItem('casus:voice:de_DE-thorsten-medium')).toBe(null);
     expect(heard).toHaveBeenCalled();
@@ -131,7 +131,7 @@ describe('natural voice tier (Piper, languages phase 3 Task 6)', () => {
     const piper = { ...fakePiper(), predict: vi.fn(async () => { throw new Error('network'); }), stored: vi.fn(async () => ['de_DE-thorsten-medium']) };
     const store = memory(); store.setItem('casus:voice:de_DE-thorsten-medium', 'stored');
     const v = createVoice({ bcp47: 'de', espeakVoice: 'de', natural, synth: fakeSynth(['de-DE']), loadPiper: async () => piper, playBlob: async () => {}, store });
-    expect(await v.speak('Haus')).toEqual({ tier: 'browser', fellBack: true });
+    expect(await v.speak('Haus')).toMatchObject({ tier: 'browser', fellBack: true, error: expect.any(String) });
     expect(store.getItem('casus:voice:de_DE-thorsten-medium')).toBe('stored');
   });
   it('removes the natural voice', async () => {

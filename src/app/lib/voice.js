@@ -22,6 +22,13 @@ export function pausePlayback() {
   currentAudio?.pause();
   if (context?.state === 'running') context.suspend();
 }
+// ends what is playing now (another step was started): the audio stops and its promise settles
+export function stopPlayback() {
+  if (currentAudio) { const a = currentAudio; currentAudio = null; a.pause(); a.onended?.(); }
+  if (currentSource) { const src = currentSource; currentSource = null; try { src.onended = null; src.stop(); } catch { /* already stopped */ } currentSourceDone?.(); }
+  if (context?.state === 'suspended') context.resume();
+  try { globalThis.speechSynthesis?.cancel?.(); } catch { /* none */ }
+}
 export function resumePlayback() {
   currentAudio?.play().catch(() => {});
   if (context?.state === 'suspended') context.resume();
@@ -64,6 +71,8 @@ export async function loadEspeakFromCdn() {
 }
 
 let context = null;
+let currentSource = null;
+let currentSourceDone = null;
 export async function playPcm(audio, sampleRate) {
   context ??= new AudioContext();
   if (context.state === 'suspended') await context.resume();
@@ -72,7 +81,9 @@ export async function playPcm(audio, sampleRate) {
   const source = context.createBufferSource();
   source.buffer = buffer;
   source.connect(context.destination);
-  await new Promise((resolve) => { source.onended = resolve; source.start(); });
+  currentSource = source;
+  await new Promise((resolve) => { currentSourceDone = resolve; source.onended = resolve; source.start(); });
+  if (currentSource === source) { currentSource = null; currentSourceDone = null; }
 }
 
 export function createVoice({ bcp47, espeakVoice, natural = null, synth = globalThis.speechSynthesis ?? null, loadEspeak = loadEspeakFromCdn, play = playPcm,
@@ -124,16 +135,19 @@ export function createVoice({ bcp47, espeakVoice, natural = null, synth = global
     engineLoad ??= withTimeout(loadEspeak());
     try { return await engineLoad; } catch (e) { engineLoad = null; throw new Error(`no voice for ${bcp47}: espeak-ng could not be loaded (${e.message})`); }
   }
+  let lastError = null;
   async function speak(text, { pitch = 1 } = {}) {
     let fellBack = false;
+    lastError = null;
     if (naturalReady()) {
       let p = null;
       try {
         p = await piper();
         await (pitch === 1 ? playBlob(await p.predict({ text, voiceId: natural.voiceId })) : playBlob(await p.predict({ text, voiceId: natural.voiceId }), { rate: pitch }));
         return { tier: 'natural', fellBack: false };
-      } catch {
+      } catch (e) {
         fellBack = true;
+        lastError = e?.message ?? String(e);
         // forget the voice only when the browser no longer has the model (review I7); otherwise keep it
         let missing = false;
         try { missing = !(await p?.stored?.() ?? [natural.voiceId]).includes(natural.voiceId); } catch { missing = false; }
@@ -158,13 +172,13 @@ export function createVoice({ bcp47, espeakVoice, natural = null, synth = global
       // Chrome can report a fresh utterance as interrupted right after another one was cancelled: say it again once
       // (Allan, 2026-10-20: the button showed an error, a second click worked)
       try { await say(); } catch (e) { if (!/interrupted|canceled/.test(e.message)) throw e; await say(); }
-      return { tier: 'browser', fellBack };
+      return { tier: 'browser', fellBack, error: lastError };
     }
     if (!espeakVoice) throw new Error(`no voice for ${bcp47}`);
     const e = await engine();
     const { audio, sampleRate } = await e.synthesize(text, espeakVoice);
     await play(audio, sampleRate * pitch);
-    return { tier: 'espeak', fellBack };
+    return { tier: 'espeak', fellBack, error: lastError };
   }
   return { tier, speak, onchange, natural, naturalReady, downloadNatural, removeNatural };
 }

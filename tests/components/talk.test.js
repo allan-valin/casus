@@ -4,6 +4,7 @@ import { render, fireEvent } from '@testing-library/svelte';
 import { tick } from 'svelte';
 import Talk from '../../src/app/components/Talk.svelte';
 import PracticeStub from '../fixtures/PracticeStub.svelte';
+import EntryStub from '../fixtures/EntryStub.svelte';
 import { getLanguage } from '../../src/lang/registry.js';
 import { langFromPath, talkPath } from '../../src/app/lib/route.js';
 import { setLang } from '../../src/app/lib/i18n.svelte.js';
@@ -283,6 +284,57 @@ describe('Conversation practice tab (Allan, 2026-10-20/21: narrator in the inter
     await fireEvent.click(container.querySelector('.unit-row'));
     await flush();
     expect(container.querySelectorAll('.step[data-type="narrator"]').length).toBe(1);
+  });
+
+  it('starting another step stops the paused one — never two at once (Allan 2026-10-21 bug)', async () => {
+    let release;
+    const said = [];
+    const calls = [];
+    const speakTaught = (text) => { said.push(text); return text === 'Guten Tag.' ? new Promise((r) => { release = r; }) : Promise.resolve(); };
+    const { p } = props({ speakTaught, control: { pause: () => calls.push('pause'), resume: () => calls.push('resume'), stop: () => calls.push('stop') } });
+    const { container } = render(Talk, p);
+    await flush();
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    const dlg = container.querySelector('.step[data-type="dialogue"] .play');
+    await fireEvent.click(dlg);              // plays 'Guten Tag.' (held)
+    await flush();
+    await fireEvent.click(dlg);              // pause
+    await fireEvent.click(container.querySelector('.step[data-type="line"] .play'));   // another step
+    await flush();
+    expect(calls).toContain('stop');
+    release();                               // the held line ends
+    for (let i = 0; i < 5; i += 1) await flush();
+    expect(said).toEqual(['Guten Tag.', 'Danke']);   // the dialogue's second line never plays
+  });
+
+  it('when the natural voice fails, the tab says so with the reason (Allan 2026-10-21: "still the robot voice")', async () => {
+    const { p, said } = props({ speakTaught: async () => ({ tier: 'espeak', fellBack: true, error: 'onnx failed' }) });
+    const { container } = render(Talk, p);
+    await flush();
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    await fireEvent.click(container.querySelector('.step[data-type="line"] .play'));
+    await flush();
+    expect(said.some(([m, k]) => k === 'err' && m.includes('onnx failed'))).toBe(true);
+  });
+
+  it('shown words open their dictionary entry; non-Latin text gets its romanization below (Allan 2026-10-21)', async () => {
+    const lang = { ...getLanguage('de'), script: { ...getLanguage('de').script, romanize: (w) => w.toUpperCase() } };
+    const { p } = props({ lang, Entry: EntryStub });
+    const { container } = render(Talk, p);
+    await flush();
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    const dlg = container.querySelector('.step[data-type="dialogue"]');
+    await fireEvent.click(dlg.querySelector('.reveal'));
+    await flush();
+    const words = [...dlg.querySelectorAll('button.w')].map((b) => b.textContent);
+    expect(words.slice(0, 2)).toEqual(['Guten', 'Tag']);
+    expect(dlg.querySelector('.roman').textContent).toContain('GUTEN TAG');
+    await fireEvent.click(dlg.querySelector('button.w'));
+    await flush();
+    expect(dlg.querySelector('.entry-stub').textContent).toBe('Guten');
   });
 
   it('the self-check marks the unit done, kept in the browser and shown in the list', async () => {
