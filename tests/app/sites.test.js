@@ -11,7 +11,7 @@ describe('three sites from one codebase (Allan, 2026-10-19)', () => {
     expect(siteOf('mk').id).toBe('world');
   });
   it('a site lists only its languages, in language-bar order', () => {
-    expect(siteLanguages(SITES.asia).map((l) => l.code)).toEqual(['ja', 'ko', 'zh', 'hi', 'bn']);   // Hindi and Bengali joined 2026-10-21
+    expect(siteLanguages(SITES.asia).map((l) => l.code)).toEqual(['ja', 'ko', 'zh', 'hi', 'bn', 'id']);   // Hindi, Bengali, Indonesian joined 2026-10-21
     expect(siteLanguages(SITES.casus)[0].code).toBe('la');
   });
   it('a language’s page on its own site', () => {

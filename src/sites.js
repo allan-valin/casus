@@ -6,7 +6,7 @@ import { LANGUAGES } from './lang/registry.js';
 const ORIGIN = 'https://allan-valin.github.io';
 export const SITES = {
   casus: { id: 'casus', title: 'Casus', base: '/casus/', languages: ['la', 'grc', 'de', 'ar', 'ru', 'fi', 'el', 'sa', 'cs', 'pl', 'tr', 'hu', 'is', 'uk', 'lt', 'sh', 'ro'] },
-  asia: { id: 'asia', title: 'Casus Asia', base: '/casus-asia/', languages: ['ja', 'ko', 'zh', 'hi', 'bn'] },
+  asia: { id: 'asia', title: 'Casus Asia', base: '/casus-asia/', languages: ['ja', 'ko', 'zh', 'hi', 'bn', 'id'] },
   world: { id: 'world', title: 'Casus World', base: '/casus-world/', languages: ['pt', 'mk', 'fr', 'en', 'es', 'it', 'nl', 'he', 'sv'] },
 };
 

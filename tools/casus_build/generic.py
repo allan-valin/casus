@@ -68,6 +68,11 @@ def analysis(cfg: Config, pos: str, tags: set, gender: str | None) -> dict | Non
     if pos == "verb" and "participle" in tags:
         return {"pos": "verb", "mood": "part", "tense": _one(tags, TENSES), "gender": _one(tags, GENDERS), "number": _one(tags, NUMBERS),
                 **({"voice": "pass"} if "passive" in tags else {})}
+    if pos == "verb" and cfg.code == "id":
+        # Indonesian verbs show voice, not person or tense: membaca (active), dibaca (passive), baca (imperative, bare)
+        if tags & {"active", "passive", "imperative"}:
+            return {"pos": "verb", "mood": "imp" if "imperative" in tags else "ind", **({"voice": "pass"} if "passive" in tags else {})}
+        return None
     if pos == "verb" and cfg.code == "sv" and not tags & set(PERSONS):
         # Swedish verbs have no persons: läser (present), läste (preterite), läs (imperative), läst (supine)
         if "infinitive" in tags:
@@ -455,6 +460,7 @@ def _clean_bn(t: str) -> str:
     return _re.split(r"[\s(/,]", t.strip(), maxsplit=1)[0]
 
 
+CONFIGS["id"] = Config("id", [], {}, caseless=True)
 CONFIGS["bn"] = Config("bn", ["nom", "obj", "gen", "loc"], {"nominative": "nom", "objective": "obj", "genitive": "gen", "locative": "loc"},
                        key=lambda f: __import__("unicodedata").normalize("NFC", f), clean=_clean_bn)
 CONFIGS["hi"] = Config("hi", ["dir", "obl", "voc", "erg", "dat", "gen"],

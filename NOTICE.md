@@ -174,6 +174,12 @@ Built by `tools/build_lang.py de`. The preposition table follows the Duden *Gram
 - Sample passages: sentences written for Casus; Rabindranath Tagore, *Amar Sonar Bangla* (1905), public domain;
   Wikipedia, *বাংলা ভাষা*, CC BY-SA 4.0.
 
+## Indonesian — CC BY-SA
+
+- Dictionary, forms: the English Wiktionary via wiktextract / kaikki.org, CC BY-SA 4.0.
+- Sample passages: sentences written for Casus; the *Sumpah Pemuda* (1928), public domain; Wikipedia, *Bahasa
+  Indonesia*, CC BY-SA 4.0.
+
 ## Learn tab
 
 - Japanese grammar lessons: **JLPT Grammar Enhanced** (github.com/maitodesu/jlpt-grammar-enhanced, commit a4254e0),
