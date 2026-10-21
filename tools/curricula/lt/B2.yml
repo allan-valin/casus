@@ -1,0 +1,73 @@
+id: B2
+topics:
+
+- title: {en: Aspect and prefixes, pt: Aspecto e prefixos}
+  lessons:
+  - id: lt-prefixes
+    title: rašyti → parašyti, eiti → išeiti
+    meaning: {en: "prefixes: finished actions and directions", pt: "prefixos: ações concluídas e direções"}
+    intro:
+      en: |
+        A prefix usually makes the action complete: **rašiau laišką** (I was writing a letter) vs **parašiau laišką** (I wrote it, done). Prefixes of motion give direction: **at-** (towards: **ateiti** to come), **iš-** (out: **išeiti**), **į-** (in: **įeiti**), **nu-** (away, down: **nueiti**), **per-** (across, over again: **pereiti, perskaityti**), **pri-** (up to: **prieiti**), **su-** (together: **sueiti**).
+      pt: |
+        Um prefixo em geral torna a ação concluída: **rašiau laišką** (eu estava escrevendo uma carta) vs **parašiau laišką** (escrevi, acabou). Prefixos de movimento dão a direção: **at-** (para cá: **ateiti** vir), **iš-** (para fora: **išeiti** sair), **į-** (para dentro: **įeiti** entrar), **nu-** (para lá, para baixo: **nueiti**), **per-** (através, de novo: **pereiti, perskaityti**), **pri-** (até junto: **prieiti**), **su-** (juntos: **sueiti**).
+    examples:
+    - ["Perskaičiau visą knygą.", "I read the whole book.", "Li o livro inteiro.", "Perskaičiau"]
+    - ["Jis išėjo iš namų.", "He left the house.", "Ele saiu de casa.", "išėjo"]
+    match: {seq: [{re: "^(pa|per|at|iš|į|nu|pri|su|už|ap|pra)", pos: verb, tense: past}]}
+
+- title: {en: Reported speech, pt: Discurso relatado}
+  lessons:
+  - id: lt-reported
+    title: esąs, atvažiavęs, sakoma
+    meaning: {en: "the oblique mood: what others say", pt: "o modo relatado: o que dizem os outros"}
+    intro:
+      en: |
+        Instead of a finite verb, a participle shows that you only heard it (*netiesioginė nuosaka*): **Jis esąs ligonis** (he is said to be ill), **Kaimynas išvažiavęs** (the neighbour has apparently left). Tales are told this way: **Gyveno kartą senelis** → **Gyvenęs kartą senelis**. Impersonal reports use the neuter passive: **Sakoma, kad…** (it is said that…).
+      pt: |
+        Em vez de um verbo finito, um particípio mostra que você só ouviu falar (*netiesioginė nuosaka*): **Jis esąs ligonis** (dizem que ele está doente), **Kaimynas išvažiavęs** (o vizinho, ao que parece, viajou). Os contos se narram assim: **Gyveno kartą senelis** → **Gyvenęs kartą senelis** (era uma vez um velhinho). Relatos impessoais usam o passivo neutro: **Sakoma, kad…** (diz-se que…).
+    examples:
+    - ["Sakoma, kad čia gyvenęs karalius.", "They say a king lived here.", "Dizem que aqui viveu um rei.", "gyvenęs"]
+    match: {seq: [{word: [esąs, esanti, sakoma, girdėti, rašoma, kalbama]}]}
+    pool: [sakoma, kalbama, rašoma, esą, esąs]
+
+- title: {en: Numbers and words, pt: Números e palavras}
+  lessons:
+  - id: lt-collective
+    title: dveji marškiniai, treji metai
+    meaning: {en: "numbers with plural-only nouns", pt: "números com substantivos só do plural"}
+    intro:
+      en: |
+        Nouns that exist only in the plural (**marškiniai** shirt, **durys** door, **metai** year, **vestuvės** wedding) are counted with **vieneri, dveji, treji, ketveri…**: **dveji marškiniai** (two shirts), **treji metai** (three years). They decline: **Turiu dvejus marškinius.**
+      pt: |
+        Substantivos que só existem no plural (**marškiniai** camisa, **durys** porta, **metai** ano, **vestuvės** casamento) são contados com **vieneri, dveji, treji, ketveri…**: **dveji marškiniai** (duas camisas), **treji metai** (três anos). Declinam: **Turiu dvejus marškinius** (tenho duas camisas).
+    examples:
+    - ["Praėjo treji metai.", "Three years have passed.", "Passaram-se três anos.", "treji"]
+    match: {seq: [{word: [vieneri, vienerios, dveji, dvejos, treji, trejos, ketveri, penkeri, dvejus, trejus, dvejų, trejų]}]}
+    pool: [vieneri, dveji, treji, ketveri, penkeri]
+  - id: lt-diminutives
+    title: namelis, mergaitė, broliukas
+    meaning: {en: "diminutives", pt: "diminutivos"}
+    intro:
+      en: |
+        Very common and affectionate: **-elis / -ėlis** (**namelis** little house, **paukštelis**), **-ukas / -iukas** (**broliukas, šuniukas** puppy), **-utis / -ytis** (**sūnutis**), **-aitė / -ytė / -utė** (**mergaitė** girl, **sesutė**). Many have lost the "small" meaning: **mergaitė** is simply *girl*.
+      pt: |
+        Muito comuns e afetuosos: **-elis / -ėlis** (**namelis** casinha, **paukštelis** passarinho), **-ukas / -iukas** (**broliukas, šuniukas** cachorrinho), **-utis / -ytis** (**sūnutis**), **-aitė / -ytė / -utė** (**mergaitė** menina, **sesutė** irmãzinha). Muitos perderam o sentido de "pequeno": **mergaitė** é só *menina*.
+    examples:
+    - ["Mergaitė žaidžia su šuniuku.", "The girl is playing with the puppy.", "A menina brinca com o cachorrinho.", "šuniuku"]
+    match: {seq: [{pos: noun, re: "(elis|ėlis|ukas|iukas|utis|ytis|aitė|ytė|utė|elio|ėlio|uko|iuko|uku|iuku|aitės|ytės|utės)$"}]}
+
+- title: {en: Writing and register, pt: Escrita e registro}
+  lessons:
+  - id: lt-formal
+    title: Jūs, gerbiamas, prašom
+    meaning: {en: "polite and formal language", pt: "linguagem educada e formal"}
+    intro:
+      en: |
+        **Jūs** (capitalised in letters) for one person you don't know well, with plural verbs: **Ar Jūs kalbate angliškai?** Address: **Gerbiamas pone / Gerbiamoji ponia** (Dear Sir / Madam), **ponas Jonaitis, ponia Jonaitienė.** **Prašom** (please; here you are), **Atsiprašau** (sorry, excuse me), **Ačiū, labai ačiū.**
+      pt: |
+        **Jūs** (com maiúscula em cartas) para uma pessoa que você não conhece bem, com o verbo no plural: **Ar Jūs kalbate angliškai?** (o senhor fala inglês?). Tratamento: **Gerbiamas pone / Gerbiamoji ponia** (Prezado senhor / Prezada senhora), **ponas Jonaitis, ponia Jonaitienė.** **Prašom** (por favor; aqui está), **Atsiprašau** (desculpe, com licença), **Ačiū, labai ačiū** (obrigado, muito obrigado).
+    examples:
+    - ["Atsiprašau, ar Jūs kalbate angliškai?", "Excuse me, do you speak English?", "Com licença, o senhor fala inglês?", "Atsiprašau"]
+    match: {seq: [{word: [prašom, prašau, atsiprašau, ačiū, gerbiamas, gerbiamoji, ponas, ponia, pone, Jūs]}]}
+    pool: [prašom, prašau, atsiprašau, ačiū, ponas, ponia]

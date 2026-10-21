@@ -1,0 +1,56 @@
+id: C1
+topics:
+
+- title: {en: Rarer verb forms, pt: Formas verbais mais raras}
+  lessons:
+  - id: lt-budinys
+    title: bėgte bėgo, tylute tylėjo
+    meaning: {en: "the būdinys: doing it intensely", pt: "o būdinys: fazer algo com intensidade"}
+    intro:
+      en: |
+        **-te** (*būdinys*) with the same verb strengthens it: **bėgte bėgo** (ran and ran, really ran), **tylute tylėjo** (kept completely silent). Found in folk tales and lively speech; it never changes form.
+      pt: |
+        **-te** (*būdinys*) com o mesmo verbo o intensifica: **bėgte bėgo** (correu e correu, correu mesmo), **tylute tylėjo** (ficou em completo silêncio). Aparece em contos populares e na fala viva; nunca muda de forma.
+    examples:
+    - ["Vaikas bėgte bėgo namo.", "The child ran all the way home.", "A criança correu e correu até em casa.", "bėgte"]
+    match: {seq: [{re: "(te|ute)$", pos: adv}, {pos: verb}], gap: 0}
+  - id: lt-necessity
+    title: skaitytinas, darytina
+    meaning: {en: "-tinas: what must be done", pt: "-tinas: o que deve ser feito"}
+    intro:
+      en: |
+        **-tinas / -tina** = *that must be done*: **skaitytina knyga** (a must-read), **Tai darytina iš karto** (it must be done at once). In speech **reikia** + infinitive is usual: **Reikia skaityti** (one must read).
+      pt: |
+        **-tinas / -tina** = *que deve ser feito*: **skaitytina knyga** (um livro de leitura obrigatória), **Tai darytina iš karto** (isso deve ser feito de imediato). Na fala é mais comum **reikia** + infinitivo: **Reikia skaityti** (é preciso ler).
+    examples:
+    - ["Tai privaloma ir skaitytina knyga.", "It's a required, must-read book.", "É um livro obrigatório, de leitura indispensável.", "skaitytina"]
+    match: {seq: [{re: "tin(as|a|i|os|ą|o)$"}]}
+
+- title: {en: Impersonal and passive, pt: Impessoal e passiva}
+  lessons:
+  - id: lt-impersonal
+    title: buvo kalbama, čia rūkoma
+    meaning: {en: "the neuter passive: it was talked about", pt: "a passiva neutra: falava-se"}
+    intro:
+      en: |
+        A neuter passive participle, without a subject, says that *people* do something: **Čia nerūkoma** (no smoking here), **Apie tai buvo daug kalbama** (there was much talk about it), **Vakare buvo šokama** (in the evening there was dancing). With a genitive agent it can even report: **Čia būta vilko** (a wolf has been here).
+      pt: |
+        Um particípio passivo neutro, sem sujeito, diz que *as pessoas* fazem algo: **Čia nerūkoma** (proibido fumar aqui), **Apie tai buvo daug kalbama** (falou-se muito disso), **Vakare buvo šokama** (à noite houve dança). Com um agente no genitivo pode até relatar: **Čia būta vilko** (um lobo passou por aqui).
+    examples:
+    - ["Apie tai buvo daug kalbama.", "There was a lot of talk about it.", "Falou-se muito sobre isso.", "kalbama"]
+    match: {seq: [{re: "(ama|oma|ima|ta)$"}], gap: 0}
+    pool: [kalbama, rašoma, sakoma, daroma, būta]
+
+- title: {en: Talking about ideas, pt: Falando de ideias}
+  lessons:
+  - id: lt-abstract
+    title: -imas, -ybė, -umas
+    meaning: {en: "abstract nouns", pt: "substantivos abstratos"}
+    intro:
+      en: |
+        From verbs **-imas** (**skaitymas** reading, **mokymasis** learning), from adjectives **-umas** (**gerumas** goodness, **gražumas**), **-ybė** (**lygybė** equality), **-ystė** (**draugystė** friendship, **vaikystė** childhood). They are the words of science and argument: **Lygybė prieš įstatymą.**
+      pt: |
+        De verbos **-imas** (**skaitymas** leitura, **mokymasis** aprendizagem), de adjetivos **-umas** (**gerumas** bondade, **gražumas** beleza), **-ybė** (**lygybė** igualdade), **-ystė** (**draugystė** amizade, **vaikystė** infância). São as palavras da ciência e da argumentação: **Lygybė prieš įstatymą** (igualdade perante a lei).
+    examples:
+    - ["Draugystė yra svarbiausia.", "Friendship is what matters most.", "A amizade é o mais importante.", "Draugystė"]
+    match: {seq: [{pos: noun, re: "(imas|imo|imą|umas|umo|umą|ybė|ybės|ystė|ystės)$"}]}

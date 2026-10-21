@@ -1,0 +1,40 @@
+id: C2
+topics:
+
+- title: {en: Style and variety, pt: Estilo e variação}
+  lessons:
+  - id: lt-c2-short-loc
+    title: kapuos, namuos, laukuos
+    meaning: {en: "short forms in poetry and speech", pt: "formas curtas na poesia e na fala"}
+    intro:
+      en: |
+        Verse and speech shorten endings: the plural locative **-uose → -uos** (**kapuos** in the graves, **namuos** at home), **-ose → -os**; infinitives **-ti → -t** (**dirbt**); the 1st and 2nd plural **-ame → -am, -ate → -at** (**dirbam, dirbat**); reflexive **-asi → -as** (**mokos** for *mokosi*). Maironis: *Šalis, kur miega kapuos didvyriai.*
+      pt: |
+        O verso e a fala encurtam terminações: o locativo plural **-uose → -uos** (**kapuos** nos túmulos, **namuos** em casa), **-ose → -os**; infinitivos **-ti → -t** (**dirbt**); a 1ª e a 2ª do plural **-ame → -am, -ate → -at** (**dirbam, dirbat**); reflexivo **-asi → -as** (**mokos** por *mokosi*). Maironis: *Šalis, kur miega kapuos didvyriai* (a terra onde dormem nos túmulos os heróis).
+    examples:
+    - ["Šalis, kur miega kapuos didvyriai.", "The land where heroes sleep in their graves.", "A terra onde heróis dormem nos túmulos.", "kapuos"]
+    match: {seq: [{re: "(uos|ėms|am|at)$", pos: [noun, verb]}]}
+  - id: lt-c2-dialects
+    title: aukštaičiai, žemaičiai
+    meaning: {en: "the two dialect groups", pt: "os dois grupos de dialetos"}
+    intro:
+      en: |
+        **Aukštaičiai** (Highlanders, east and south) and **žemaičiai** (Samogitians, north-west) differ in sounds, stress and words; Samogitian is so different it has its own written tradition (**Labas rītos!** for *Labas rytas*). The standard language rests on the western Highland speech of the Kaunas area. The reader knows the standard only.
+      pt: |
+        Os **aukštaičiai** (das terras altas, leste e sul) e os **žemaičiai** (samogícios, noroeste) diferem em sons, acento e vocabulário; o samogício é tão diferente que tem tradição escrita própria (**Labas rītos!** por *Labas rytas*). A língua padrão se baseia na fala das terras altas ocidentais, da região de Kaunas. O leitor conhece só o padrão.
+    examples:
+    - ["Žemaičiai gyvena šiaurės vakarų Lietuvoje.", "The Samogitians live in north-western Lithuania.", "Os samogícios vivem no noroeste da Lituânia.", "Žemaičiai"]
+    match: {seq: [{word: [aukštaičiai, žemaičiai, tarmė, tarmės, šnekta, Žemaitija, Aukštaitija]}]}
+    pool: [tarmė, šnekta, aukštaičiai, žemaičiai]
+  - id: lt-c2-literary
+    title: Donelaitis, Maironis, Biliūnas
+    meaning: {en: "reading classical literature", pt: "lendo a literatura clássica"}
+    intro:
+      en: |
+        Kristijonas Donelaitis' *Metai* (*The Seasons*, 1760s, printed 1818) is the first great Lithuanian poem, in the Lithuania Minor dialect and an older spelling (**w** for *v*, **sz** for *š*). Maironis (*Pavasario balsai*, 1895) shaped the modern poetic language; Jonas Biliūnas' short prose (1900s) reads almost like today's. Older spellings and forms may stay unrecognised in the reader.
+      pt: |
+        *Metai* (*As estações*, anos 1760, impresso em 1818), de Kristijonas Donelaitis, é o primeiro grande poema lituano, no dialeto da Lituânia Menor e em grafia antiga (**w** por *v*, **sz** por *š*). Maironis (*Pavasario balsai*, 1895) moldou a língua poética moderna; a prosa curta de Jonas Biliūnas (anos 1900) se lê quase como a de hoje. Grafias e formas antigas podem ficar sem análise no leitor.
+    examples:
+    - ["Graži tu, mano brangi tėvyne.", "Beautiful you are, my dear fatherland.", "Bela és tu, minha querida pátria.", "tėvyne"]
+    match: {seq: [{word: [tėvyne, tėvynė, didvyriai, dainos, dainas, širdis, brangi]}]}
+    pool: [tėvynė, širdis, daina, šalis]

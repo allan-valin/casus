@@ -1,0 +1,111 @@
+id: B1
+topics:
+
+- title: {en: Moods, pt: Modos}
+  lessons:
+  - id: lt-conditional
+    title: norėčiau, dirbtum, būtų
+    meaning: {en: "the conditional: would", pt: "o condicional: -ria"}
+    intro:
+      en: |
+        Infinitive stem + **-čiau, -tum, -tų, -tume, -tumėte**: **norėti → norėčiau** (I'd like), **dirbtum, būtų**. Polite requests (**Norėčiau kavos**), wishes and unreal conditions: **Jei turėčiau laiko, ateičiau.**
+      pt: |
+        Radical do infinitivo + **-čiau, -tum, -tų, -tume, -tumėte**: **norėti → norėčiau** (eu gostaria), **dirbtum, būtų**. Pedidos educados (**Norėčiau kavos** — eu queria um café), desejos e condições irreais: **Jei turėčiau laiko, ateičiau** (se eu tivesse tempo, viria).
+    examples:
+    - ["Norėčiau puodelio arbatos.", "I'd like a cup of tea.", "Eu queria uma xícara de chá.", "Norėčiau"]
+    - ["Būtų gerai.", "That would be good.", "Seria bom.", "Būtų"]
+    match: {seq: [{pos: verb, mood: cond}]}
+  - id: lt-imperative
+    title: dirbk, dirbkime, tegul
+    meaning: {en: "the imperative", pt: "o imperativo"}
+    intro:
+      en: |
+        Infinitive stem + **-k** (you), **-kime** (let's), **-kite** (you all, polite): **dirbti → dirbk, dirbkime, dirbkite**; **eiti → eik**; **bėgti → bėk** (g + k = k). Third person with **tegul / tegu** + present: **Tegul jis ateina.** Softer: **Prašom atsisėsti** (please sit down).
+      pt: |
+        Radical do infinitivo + **-k** (tu), **-kime** (vamos), **-kite** (vocês, formal): **dirbti → dirbk, dirbkime, dirbkite**; **eiti → eik**; **bėgti → bėk** (g + k = k). Terceira pessoa com **tegul / tegu** + presente: **Tegul jis ateina** (que ele venha). Mais suave: **Prašom atsisėsti** (sente-se, por favor).
+    examples:
+    - ["Atidaryk langą!", "Open the window!", "Abra a janela!", "Atidaryk"]
+    - ["Eikime namo!", "Let's go home!", "Vamos para casa!", "Eikime"]
+    match:
+    - {seq: [{pos: verb, mood: imp}]}
+    - {seq: [{word: [tegul, tegu]}], gap: 0}
+    pool: [tegul, tegu, prašom, eik, eikime]
+
+- title: {en: Participles, pt: Particípios}
+  lessons:
+  - id: lt-participle-active
+    title: skaitantis, skaitęs, skaitysiantis
+    meaning: {en: "active participles: who reads, who has read", pt: "particípios ativos: que lê, que leu"}
+    intro:
+      en: |
+        Lithuanian uses participles far more than English. Present **-ąs / -antis, -ąs / -iantis** (**skaitantis vaikas** a reading child), past **-ęs / -usi** (**perskaitęs** having read; fem. **perskaičiusi**), future **-siantis**. They decline like adjectives: **skaitančio vaiko, su skaitančiu vaiku**. They also report what one has heard (B2).
+      pt: |
+        O lituano usa particípios muito mais que o português. Presente **-ąs / -antis, -ąs / -iantis** (**skaitantis vaikas** — uma criança que lê), passado **-ęs / -usi** (**perskaitęs** — tendo lido; fem. **perskaičiusi**), futuro **-siantis**. Declinam como adjetivos: **skaitančio vaiko, su skaitančiu vaiku**. Servem também para contar o que se ouviu dizer (B2).
+    examples:
+    - ["Prie lango sėdi skaitantis vaikas.", "A child sits reading by the window.", "Junto à janela está sentada uma criança lendo.", "skaitantis"]
+    match: {seq: [{re: "(antis|ančio|ančiu|ančią|ančiai|antys|iantis|ęs|usi|usio|usios|usiam|usiomis)$"}]}
+  - id: lt-participle-passive
+    title: skaitomas, skaitytas, skaitytinas
+    meaning: {en: "passive participles: being read, read", pt: "particípios passivos: sendo lido, lido"}
+    intro:
+      en: |
+        Present **-mas / -ma** (**skaitomas** being read), past **-tas / -ta** (**parašytas** written): **Knyga parašyta lietuviškai.** With **būti** they make the passive: **Namas buvo pastatytas 1900 metais.** The agent is in the genitive: **Jono parašytas laiškas** (a letter written by Jonas).
+      pt: |
+        Presente **-mas / -ma** (**skaitomas** — sendo lido), passado **-tas / -ta** (**parašytas** — escrito): **Knyga parašyta lietuviškai** (o livro está escrito em lituano). Com **būti** formam a voz passiva: **Namas buvo pastatytas 1900 metais** (a casa foi construída em 1900). O agente fica no genitivo: **Jono parašytas laiškas** (uma carta escrita pelo Jonas).
+    examples:
+    - ["Ši knyga parašyta lietuviškai.", "This book is written in Lithuanian.", "Este livro está escrito em lituano.", "parašyta"]
+    match: {seq: [{re: "(omas|oma|imas|ima|amas|ama|ytas|yta|tas|ta)$", pos: [adj, verb]}]}
+  - id: lt-gerund
+    title: skaitydamas, saulei tekant
+    meaning: {en: "while doing: the half participle and the gerund", pt: "enquanto: o semiparticípio e o gerúndio"}
+    intro:
+      en: |
+        **-damas / -dama** (*pusdalyvis*) = while doing something, same subject: **Grįždamas namo sutikau draugą** (going home, I met a friend). **-ant / -us** (*padalyvis*) = while *someone else* does, often with a dative: **Saulei tekant išėjome** (as the sun rose, we set out).
+      pt: |
+        **-damas / -dama** (*pusdalyvis*) = enquanto se faz algo, mesmo sujeito: **Grįždamas namo sutikau draugą** (voltando para casa, encontrei um amigo). **-ant / -us** (*padalyvis*) = enquanto *outra pessoa* faz, muitas vezes com dativo: **Saulei tekant išėjome** (ao nascer do sol, saímos).
+    examples:
+    - ["Grįždamas namo sutikau draugą.", "Going home, I met a friend.", "Voltando para casa, encontrei um amigo.", "Grįždamas"]
+    - ["Saulei tekant išėjome į kelią.", "As the sun rose, we set off.", "Ao nascer do sol, pegamos a estrada.", "tekant"]
+    match: {seq: [{re: "(damas|dama|dami|damos|ant|iant|us)$", pos: [verb, adv]}]}
+
+- title: {en: Clauses, pt: Orações}
+  lessons:
+  - id: lt-relative
+    title: kuris, kuri, kurie
+    meaning: {en: "which, who: relative clauses", pt: "que, o qual: orações relativas"}
+    intro:
+      en: |
+        **kuris / kuri / kurie / kurios** takes gender and number from the noun, case from its own clause: **Žmogus, kuris čia gyvena, yra gydytojas. Knyga, kurią skaitau, įdomi.** **kas** after *viskas, tas*: **Tai, ką sakai, tiesa.** A comma always opens the clause.
+      pt: |
+        **kuris / kuri / kurie / kurios** pega gênero e número do substantivo e o caso da própria oração: **Žmogus, kuris čia gyvena, yra gydytojas** (o homem que mora aqui é médico). **Knyga, kurią skaitau, įdomi** (o livro que estou lendo é interessante). **kas** depois de *viskas, tas*: **Tai, ką sakai, tiesa** (o que você diz é verdade). A vírgula sempre abre a oração.
+    examples:
+    - ["Žmogus, kuris čia gyvena, yra gydytojas.", "The man who lives here is a doctor.", "O homem que mora aqui é médico.", "kuris"]
+    match: {seq: [{word: [kuris, kuri, kurie, kurios, kurį, kurią, kuriuos, kurias, kurio, kurios, kuriam, kuriai, kuriuo, kuria, kuriame, kurioje, kurių]}], gap: 0}
+    pool: [kuris, kuri, kurie, kurios, kurį, kurią, kas, ką]
+  - id: lt-conjunctions
+    title: kad, nes, kai, jei, nors, todėl
+    meaning: {en: "joining clauses", pt: "ligando orações"}
+    intro:
+      en: |
+        **kad** (that; so that), **nes** (because), **kai** (when), **jei / jeigu** (if), **nors** (although), **todėl** (therefore), **o** (and, whereas), **bet** (but), **ar** (whether). **Nežinau, ar jis ateis. Einu namo, nes pavargau.**
+      pt: |
+        **kad** (que; para que), **nes** (porque), **kai** (quando), **jei / jeigu** (se), **nors** (embora), **todėl** (por isso), **o** (e, enquanto que), **bet** (mas), **ar** (se — em perguntas indiretas). **Nežinau, ar jis ateis** (não sei se ele vem). **Einu namo, nes pavargau** (vou para casa porque estou cansado).
+    examples:
+    - ["Einu namo, nes pavargau.", "I'm going home because I'm tired.", "Vou para casa porque estou cansado.", "nes"]
+    - ["Sakė, kad ateis vėliau.", "He said he'd come later.", "Disse que viria mais tarde.", "kad"]
+    match: {seq: [{word: [kad, nes, kai, jei, jeigu, nors, todėl, tačiau, bet]}]}
+    pool: [kad, nes, kai, jei, nors, todėl, bet, tačiau]
+
+- title: {en: Definite adjectives, pt: Adjetivos definidos}
+  lessons:
+  - id: lt-definite
+    title: gerasis, geroji, Didysis
+    meaning: {en: "pronominal (definite) adjectives: the good one", pt: "adjetivos pronominais (definidos): o bom"}
+    intro:
+      en: |
+        Lithuanian has no article, but an adjective can be made *definite* by fusing a pronoun on: **geras → gerasis** (the good one), **gera → geroji**, **didelis → didysis**. They name kinds and titles: **baltasis gandras** (the white stork), **Vytautas Didysis** (the Great), and stand for *the one that*: **Imk raudonąjį** (take the red one).
+      pt: |
+        O lituano não tem artigo, mas um adjetivo pode ficar *definido* juntando-se a ele um pronome: **geras → gerasis** (o bom), **gera → geroji**, **didelis → didysis**. Nomeiam espécies e títulos: **baltasis gandras** (a cegonha-branca), **Vytautas Didysis** (o Grande), e valem por *aquele que*: **Imk raudonąjį** (pegue o vermelho).
+    examples:
+    - ["Vytautas Didysis buvo Lietuvos didysis kunigaikštis.", "Vytautas the Great was a Lithuanian grand duke.", "Vytautas, o Grande, foi um grão-duque lituano.", "Didysis"]
+    match: {seq: [{re: "(asis|ysis|oji|ieji|osios|ąjį|ąją|ojo|osios|uosius)$"}]}

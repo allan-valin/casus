@@ -1,0 +1,135 @@
+id: A2
+topics:
+
+- title: {en: The cases (2), pt: Os casos (2)}
+  lessons:
+  - id: lt-dat
+    title: draugui, mamai, man
+    meaning: {en: "dative: to whom, for whom", pt: "dativo: a quem, para quem"}
+    intro:
+      en: |
+        **-ui, -iui, -ai, -ei, -iai**; plural **-ams, -iams, -oms, -ėms, -ims**. Indirect object (**Duodu draugui knygą**), feelings and age (**Man šalta. Man dvidešimt metų.**), *like* (**Man patinka muzika** — music pleases me), and *need* (**Man reikia laiko**).
+      pt: |
+        **-ui, -iui, -ai, -ei, -iai**; plural **-ams, -iams, -oms, -ėms, -ims**. Objeto indireto (**Duodu draugui knygą** — dou o livro ao amigo), sensações e idade (**Man šalta** — estou com frio. **Man dvidešimt metų** — tenho vinte anos), *gostar* (**Man patinka muzika** — a música me agrada) e *precisar* (**Man reikia laiko**).
+    examples:
+    - ["Man patinka ši daina.", "I like this song.", "Gosto desta música.", "Man"]
+    - ["Parašiau laišką mamai.", "I wrote a letter to mum.", "Escrevi uma carta para a mamãe.", "mamai"]
+    match:
+    - {seq: [{word: [man, tau, jam, jai, mums, jums, jiems, joms]}, {word: [patinka, patiko, reikia, reikėjo, šalta, karšta, liūdna, gera, gaila]}], gap: 0}
+    - {seq: [{pos: verb}, {pos: noun, case: dat}], near: 3, gap: 2}
+    pool: [man, tau, jam, jai, mums, jums, jiems]
+  - id: lt-ins
+    title: su draugu, autobusu, peiliu
+    meaning: {en: "instrumental: with, by", pt: "instrumental: com, por meio de"}
+    intro:
+      en: |
+        **-u, -iu, -umi, -a, -e, -imi**; plural **-ais, -iais, -omis, -ėmis, -imis**. Instrument and means (**rašau pieštuku** with a pencil, **važiuoju autobusu** by bus), company with **su** (**su draugu**), what one becomes or works as (**Jis dirba gydytoju**), and the route (**eiti mišku** through the forest).
+      pt: |
+        **-u, -iu, -umi, -a, -e, -imi**; plural **-ais, -iais, -omis, -ėmis, -imis**. Instrumento e meio (**rašau pieštuku** — escrevo a lápis, **važiuoju autobusu** — vou de ônibus), companhia com **su** (**su draugu** — com o amigo), o que se é ou como se trabalha (**Jis dirba gydytoju** — trabalha como médico), e o caminho (**eiti mišku** — andar pela floresta).
+    examples:
+    - ["Važiuojame traukiniu.", "We're going by train.", "Vamos de trem.", "traukiniu"]
+    - ["Einu į kiną su drauge.", "I'm going to the cinema with a friend.", "Vou ao cinema com uma amiga.", "drauge"]
+    match: {seq: [{pos: noun, case: ins}]}
+  - id: lt-voc
+    title: Jonai! Ona! drauge!
+    meaning: {en: "vocative: calling someone", pt: "vocativo: chamar alguém"}
+    intro:
+      en: |
+        Used every time you address someone: **Jonas → Jonai!**, **Tomas → Tomai!**, **brolis → broli!**, **Ona → Ona!**, **Rūta → Rūta!**, **draugas → drauge!**, **mama → mama!**. Polite: **Gerbiamas profesoriau!** Names in **-is, -ys** shorten: **Kęstutis → Kęstuti!**
+      pt: |
+        Usado sempre que se fala com alguém: **Jonas → Jonai!**, **Tomas → Tomai!**, **brolis → broli!**, **Ona → Ona!**, **draugas → drauge!**, **mama → mama!**. Formal: **Gerbiamas profesoriau!** (prezado professor). Nomes em **-is, -ys** encurtam: **Kęstutis → Kęstuti!**
+    examples:
+    - ["Labas, Jonai!", "Hi, Jonas!", "Oi, Jonas!", "Jonai"]
+    match: {seq: [{pos: noun, case: voc}]}
+
+- title: {en: Past and future, pt: Passado e futuro}
+  lessons:
+  - id: lt-past
+    title: dirbau, mylėjau, skaičiau
+    meaning: {en: "the past tense", pt: "o pretérito"}
+    intro:
+      en: |
+        From the third principal part: **-o:** dirbau, dirbai, dirbo, dirbome, dirbote (**dirbti – dirba – dirbo**); **-ė:** skaičiau, skaitei, skaitė, skaitėme, skaitėte (**t → č, d → dž** before *-iau*: **vedžiau**). The past stem must be learnt: **eiti → ėjo**, **būti → buvo**, **gerti → gėrė**.
+      pt: |
+        Vem da terceira forma principal: **-o:** dirbau, dirbai, dirbo, dirbome, dirbote (**dirbti – dirba – dirbo**); **-ė:** skaičiau, skaitei, skaitė, skaitėme, skaitėte (**t → č, d → dž** antes de *-iau*: **vedžiau**). O radical do passado precisa ser decorado: **eiti → ėjo** (ir), **būti → buvo**, **gerti → gėrė** (beber).
+    examples:
+    - ["Vakar dirbau visą dieną.", "Yesterday I worked all day.", "Ontem trabalhei o dia todo.", "dirbau"]
+    - ["Jis buvo Vilniuje.", "He was in Vilnius.", "Ele esteve em Vilnius.", "buvo"]
+    match: {seq: [{pos: verb, tense: past, mood: ind}], same: [person, number]}
+  - id: lt-future
+    title: dirbsiu, skaitysi, bus
+    meaning: {en: "the future tense", pt: "o futuro"}
+    intro:
+      en: |
+        Infinitive stem + **-siu, -si, -s, -sime, -site**: **dirbti → dirbsiu, dirbsi, dirbs**. After **s, š, z, ž** the *s* merges: **nešti → nešiu, neš**; **vežti → vešiu**. **būti → būsiu, bus**.
+      pt: |
+        Radical do infinitivo + **-siu, -si, -s, -sime, -site**: **dirbti → dirbsiu, dirbsi, dirbs**. Depois de **s, š, z, ž** o *s* se funde: **nešti → nešiu, neš** (levar); **vežti → vešiu**. **būti → būsiu, bus**.
+    examples:
+    - ["Rytoj važiuosiu į Kauną.", "Tomorrow I'll go to Kaunas.", "Amanhã vou a Kaunas.", "važiuosiu"]
+    - ["Ar tu būsi namie?", "Will you be at home?", "Você vai estar em casa?", "būsi"]
+    match: {seq: [{pos: verb, tense: fut}]}
+  - id: lt-frequentative
+    title: dirbdavau, būdavo
+    meaning: {en: "the past of habit: used to", pt: "o passado habitual: costumava"}
+    intro:
+      en: |
+        Infinitive stem + **-davau, -davai, -davo, -davome, -davote** = *used to*: **Vaikystėje dažnai žaisdavau kieme.** **Būdavo** opens stories: *it used to be…*. (Casus files it as the imperfect.)
+      pt: |
+        Radical do infinitivo + **-davau, -davai, -davo, -davome, -davote** = *costumava*: **Vaikystėje dažnai žaisdavau kieme** (na infância eu brincava muito no quintal). **Būdavo** abre histórias: *era uma vez…*. (O Casus o classifica como imperfeito.)
+    examples:
+    - ["Vasarą važiuodavome prie jūros.", "In summer we used to go to the sea.", "No verão íamos à praia.", "važiuodavome"]
+    match: {seq: [{re: "dav(au|ai|o|ome|ote)$", pos: verb}]}
+
+- title: {en: Adjectives and comparison, pt: Adjetivos e comparação}
+  lessons:
+  - id: lt-adj
+    title: geras, gera; gražus, graži
+    meaning: {en: "adjectives agree in gender, number and case", pt: "adjetivos concordam em gênero, número e caso"}
+    intro:
+      en: |
+        Three types: **geras / gera** (good), **žalias / žalia** (green), **gražus / graži** (beautiful). They agree with the noun: **geras draugas, gera knyga, geri draugai, geros knygos, su geru draugu.** With *it* or *that*, the neuter **gera, gražu** is used: **Čia gražu** (it's beautiful here).
+      pt: |
+        Três tipos: **geras / gera** (bom), **žalias / žalia** (verde), **gražus / graži** (bonito). Concordam com o substantivo: **geras draugas, gera knyga, geri draugai, geros knygos, su geru draugu.** Com *isso*, usa-se o neutro **gera, gražu**: **Čia gražu** (aqui é bonito).
+    examples:
+    - ["Tai labai gera knyga.", "This is a very good book.", "Este é um livro muito bom.", "gera"]
+    match: {seq: [{pos: adj}, {pos: noun}], same: [case, number, gender], gap: 0}
+  - id: lt-comparison
+    title: didesnis, didžiausias, nei
+    meaning: {en: "comparative and superlative", pt: "comparativo e superlativo"}
+    intro:
+      en: |
+        **-esnis / -esnė** (bigger), **-iausias / -iausia** (biggest): **didelis → didesnis → didžiausias**, **geras → geresnis → geriausias**. *Than* = **nei** or **už** + accusative: **Šis namas didesnis nei tas / už tą.**
+      pt: |
+        **-esnis / -esnė** (maior), **-iausias / -iausia** (o maior): **didelis → didesnis → didžiausias**, **geras → geresnis → geriausias**. *Do que* = **nei** ou **už** + acusativo: **Šis namas didesnis nei tas / už tą** (esta casa é maior que aquela).
+    examples:
+    - ["Mano brolis vyresnis už mane.", "My brother is older than me.", "Meu irmão é mais velho do que eu.", "vyresnis"]
+    match: {seq: [{re: "(esnis|esnė|esni|esnės|iausias|iausia|iausi)$"}]}
+    pool: [nei, už, labiau, mažiau]
+
+- title: {en: Prepositions and reflexive verbs, pt: Preposições e verbos reflexivos}
+  lessons:
+  - id: lt-prepositions
+    title: į, iš, ant, prie, su, po
+    meaning: {en: "prepositions and their cases", pt: "preposições e seus casos"}
+    intro:
+      en: |
+        **+ genitive:** iš (out of, from), be (without), nuo (from, since), prie (by, at), ant (on), iki (until), dėl (because of), po (after), virš, tarp. **+ accusative:** į (into, to), per (through, during), pro (past), prieš (before, against), apie (about), pas (to someone's place), pagal. **+ instrumental:** su (with), ties, po (under: **po stalu**).
+      pt: |
+        **+ genitivo:** iš (de dentro de, de), be (sem), nuo (desde, a partir de), prie (junto a), ant (sobre, em cima de), iki (até), dėl (por causa de), po (depois de), virš, tarp. **+ acusativo:** į (para dentro de, para), per (através de, durante), pro (passando por), prieš (antes de, contra), apie (sobre, a respeito de), pas (à casa de alguém), pagal. **+ instrumental:** su (com), ties, po (debaixo de: **po stalu**).
+    examples:
+    - ["Knyga guli ant stalo.", "The book is lying on the table.", "O livro está em cima da mesa.", "ant"]
+    - ["Grįžau iš darbo.", "I came back from work.", "Voltei do trabalho.", "iš"]
+    match: {seq: [{pos: prep}, {pos: noun}], gap: 1}
+    pool: [į, iš, ant, prie, su, po, be, per, apie, pas]
+  - id: lt-reflexive
+    title: praustis, prausiuosi, nusiprausti
+    meaning: {en: "reflexive verbs: -si, -s", pt: "verbos reflexivos: -si, -s"}
+    intro:
+      en: |
+        The reflexive ending **-si / -s** goes at the end: **prausti** (to wash) → **praustis** (to wash oneself): **prausiuosi, prausiesi, prausiasi, prausiamės, prausiatės.** With a prefix (or **ne-**) it moves inside: **nusiprausti, nusiprausiu; nesiprausiu.** Many common verbs are reflexive: **mokytis** (to learn), **juoktis** (to laugh), **vadintis** (to be called — **Kaip tu vadiniesi?**).
+      pt: |
+        A terminação reflexiva **-si / -s** vai no fim: **prausti** (lavar) → **praustis** (lavar-se): **prausiuosi, prausiesi, prausiasi, prausiamės, prausiatės.** Com prefixo (ou **ne-**) ela entra no meio: **nusiprausti, nusiprausiu; nesiprausiu.** Muitos verbos comuns são reflexivos: **mokytis** (estudar), **juoktis** (rir), **vadintis** (chamar-se — **Kaip tu vadiniesi?** como você se chama?).
+    examples:
+    - ["Aš mokausi lietuvių kalbos.", "I'm learning Lithuanian.", "Estou aprendendo lituano.", "mokausi"]
+    match: {seq: [{re: "(si|s|osi|uosi|iesi|asi|amės|atės|ėsi|iuosi)$", pos: verb}]}
+    pool: [mokytis, juoktis, vadintis, praustis, rengtis]

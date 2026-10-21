@@ -1,0 +1,192 @@
+id: A1
+topics:
+
+- title: {en: Sounds and letters, pt: Sons e letras}
+  lessons:
+  - id: lt-alphabet
+    title: ą, ę, į, ų, ė, ū, y, č, š, ž
+    meaning: {en: "the Lithuanian letters", pt: "as letras do lituano"}
+    intro:
+      en: |
+        The "nasal" letters **ą ę į ų** are today simply long **a e i u** (**ąžuolas** oak). **ė** is a long closed *e*, **y** = long *i*, **ū** = long *u*. **č š ž** are *ch, sh, zh*; **c** is *ts*; **j** is *y*. Stress is free and moves within a word's forms; dictionaries mark it (**nãmas**, **namaĩ**), ordinary texts do not, and neither does the reader.
+      pt: |
+        As letras "nasais" **ą ę į ų** hoje são só **a e i u** longos (**ąžuolas** carvalho). **ė** é um *ê* longo e fechado, **y** = *i* longo, **ū** = *u* longo. **č š ž** soam *tch, ch, j*; **c** é *ts*; **j** é *i* (como em *iate*). O acento é livre e muda entre as formas de uma palavra; os dicionários o marcam (**nãmas**, **namaĩ**), os textos comuns não — nem o leitor.
+    examples:
+    - ["Ąžuolas yra medis.", "The oak is a tree.", "O carvalho é uma árvore.", "Ąžuolas"]
+    - ["Čia gyvena šeima.", "A family lives here.", "Aqui mora uma família.", "šeima"]
+    match: {seq: [{re: "[ąęįųėūčšž]", pos: [noun, verb, adj]}]}
+
+- title: {en: Nouns and gender, pt: Substantivos e gênero}
+  lessons:
+  - id: lt-gender
+    title: namas, brolis, knyga, upė
+    meaning: {en: "two genders, told by the ending", pt: "dois gêneros, indicados pela terminação"}
+    intro:
+      en: |
+        Lithuanian nouns are masculine or feminine (neuter survives only in some adjectives and pronouns). Masculine: **-as, -is, -ys, -us** (**namas** house, **brolis** brother, **arklys** horse, **sūnus** son); feminine: **-a, -ė** (**knyga** book, **upė** river) and some in **-is** (**naktis** night). No articles: **namas** is *a house* or *the house*.
+      pt: |
+        Os substantivos lituanos são masculinos ou femininos (o neutro só sobrevive em alguns adjetivos e pronomes). Masculinos: **-as, -is, -ys, -us** (**namas** casa, **brolis** irmão, **arklys** cavalo, **sūnus** filho); femininos: **-a, -ė** (**knyga** livro, **upė** rio) e alguns em **-is** (**naktis** noite). Não há artigos: **namas** é *uma casa* ou *a casa*.
+    examples:
+    - ["Namas didelis.", "The house is big.", "A casa é grande.", "Namas"]
+    - ["Knyga įdomi.", "The book is interesting.", "O livro é interessante.", "Knyga"]
+    match: {seq: [{pos: noun, case: nom, number: sg}]}
+  - id: lt-plural
+    title: namai, broliai, knygos, upės
+    meaning: {en: "the nominative plural", pt: "o plural (nominativo)"}
+    intro:
+      en: |
+        **-as → -ai** (**namai**), **-is, -ys → -iai** (**broliai, arkliai**), **-us → -ūs** (**sūnūs**), **-a → -os** (**knygos**), **-ė → -ės** (**upės**), feminine **-is → -ys** (**naktys**). Some nouns exist only in the plural: **marškiniai** (shirt), **durys** (door), **Vilniaus vartai**.
+      pt: |
+        **-as → -ai** (**namai**), **-is, -ys → -iai** (**broliai, arkliai**), **-us → -ūs** (**sūnūs**), **-a → -os** (**knygos**), **-ė → -ės** (**upės**), feminino **-is → -ys** (**naktys**). Alguns só existem no plural: **marškiniai** (camisa), **durys** (porta).
+    examples:
+    - ["Vaikai žaidžia.", "The children are playing.", "As crianças estão brincando.", "Vaikai"]
+    match: {seq: [{pos: noun, number: pl, case: nom}]}
+
+- title: {en: Pronouns and the present, pt: Pronomes e presente}
+  lessons:
+  - id: lt-pronouns
+    title: aš, tu, jis, ji, mes, jūs, jie, jos
+    meaning: {en: "personal pronouns", pt: "pronomes pessoais"}
+    intro:
+      en: |
+        **aš** (I), **tu** (you), **jis / ji** (he / she), **mes** (we), **jūs** (you plural, and the polite *you*), **jie / jos** (they, masculine / feminine). The verb shows the person, so the pronoun is often left out: **Dirbu** = I work.
+      pt: |
+        **aš** (eu), **tu** (tu/você), **jis / ji** (ele / ela), **mes** (nós), **jūs** (vocês, e o tratamento formal), **jie / jos** (eles / elas). O verbo mostra a pessoa, então o pronome muitas vezes some: **Dirbu** = trabalho.
+    examples:
+    - ["Mes esame studentai.", "We are students.", "Somos estudantes.", "Mes"]
+    match: {seq: [{word: [aš, tu, jis, ji, mes, jūs, jie, jos], start: true}]}
+    pool: [aš, tu, jis, ji, mes, jūs, jie, jos]
+  - id: lt-present
+    title: dirbu, myliu, skaitau
+    meaning: {en: "the present tense: three conjugations", pt: "o presente: três conjugações"}
+    intro:
+      en: |
+        Learn every verb with three forms: infinitive, present 3rd person, past 3rd person (**dirbti – dirba – dirbo**). The 3rd person shows the conjugation. **-a:** dirbu, dirbi, dirba, dirbame, dirbate. **-i:** myliu, myli, myli, mylime, mylite. **-o:** skaitau, skaitai, skaito, skaitome, skaitote. The 3rd person is the same in the singular and plural: **jis dirba, jie dirba**.
+      pt: |
+        Aprenda cada verbo com três formas: infinitivo, 3ª pessoa do presente, 3ª pessoa do passado (**dirbti – dirba – dirbo**). A 3ª pessoa mostra a conjugação. **-a:** dirbu, dirbi, dirba, dirbame, dirbate. **-i:** myliu, myli, myli, mylime, mylite. **-o:** skaitau, skaitai, skaito, skaitome, skaitote. A 3ª pessoa é igual no singular e no plural: **jis dirba, jie dirba** (ele trabalha, eles trabalham).
+    examples:
+    - ["Aš skaitau knygą.", "I'm reading a book.", "Estou lendo um livro.", "skaitau"]
+    - ["Ar tu kalbi lietuviškai?", "Do you speak Lithuanian?", "Você fala lituano?", "kalbi"]
+    match: {seq: [{pos: verb, tense: pres, mood: ind}], same: [person, number]}
+  - id: lt-buti
+    title: esu, esi, yra
+    meaning: {en: "būti, to be", pt: "būti, ser/estar"}
+    intro:
+      en: |
+        **esu, esi, yra, esame, esate, yra**. Unlike Russian, the verb is used: **Aš esu mokytojas.** **yra** also means *there is*: **Čia yra parduotuvė.** Negated: **nesu, nesi, nėra** — and *there is no* takes the genitive: **Čia nėra parduotuvės.**
+      pt: |
+        **esu, esi, yra, esame, esate, yra**. Ao contrário do russo, o verbo é usado: **Aš esu mokytojas** (sou professor). **yra** também quer dizer *há*: **Čia yra parduotuvė** (aqui há uma loja). Negado: **nesu, nesi, nėra** — e *não há* pede o genitivo: **Čia nėra parduotuvės.**
+    examples:
+    - ["Aš esu studentas.", "I am a student.", "Sou estudante.", "esu"]
+    - ["Šiandien nėra pamokų.", "There are no lessons today.", "Hoje não há aulas.", "nėra"]
+    match: {seq: [{word: [esu, esi, yra, esame, esate, nesu, nesi, nėra, nesame, nesate]}]}
+    pool: [esu, esi, yra, esame, esate, nėra]
+  - id: lt-tureti
+    title: turiu, turi, neturiu
+    meaning: {en: "to have", pt: "ter"}
+    intro:
+      en: |
+        **turėti** (to have): **turiu, turi, turi, turime, turite**. **Turiu brolį** (accusative). With negation the object goes into the genitive: **Neturiu brolio. Neturiu laiko.**
+      pt: |
+        **turėti** (ter): **turiu, turi, turi, turime, turite**. **Turiu brolį** (tenho um irmão; acusativo). Com negação o objeto vai para o genitivo: **Neturiu brolio. Neturiu laiko** (não tenho tempo).
+    examples:
+    - ["Aš turiu seserį.", "I have a sister.", "Tenho uma irmã.", "turiu"]
+    - ["Neturiu laiko.", "I have no time.", "Não tenho tempo.", "Neturiu"]
+    match: {seq: [{word: [turiu, turi, turime, turite, neturiu, neturi, neturime, neturite]}]}
+    pool: [turiu, turi, turime, turite, neturiu, neturi]
+
+- title: {en: Questions and negation, pt: Perguntas e negação}
+  lessons:
+  - id: lt-questions
+    title: ar, kas, kur, kada, kodėl, kiek
+    meaning: {en: "question words; ar", pt: "palavras interrogativas; ar"}
+    intro:
+      en: |
+        Yes/no questions start with **ar**: **Ar tu esi namie?** Question words: **kas** (who, what), **kur** (where), **kada** (when), **kodėl** (why), **kaip** (how), **kiek** (how much), **koks / kokia** (what kind), **kuris / kuri** (which).
+      pt: |
+        Perguntas de sim/não começam com **ar**: **Ar tu esi namie?** (você está em casa?). Palavras interrogativas: **kas** (quem, o que), **kur** (onde), **kada** (quando), **kodėl** (por quê), **kaip** (como), **kiek** (quanto), **koks / kokia** (que tipo), **kuris / kuri** (qual).
+    examples:
+    - ["Kur tu gyveni?", "Where do you live?", "Onde você mora?", "Kur"]
+    - ["Ar tu supranti?", "Do you understand?", "Você entende?", "Ar"]
+    match: {seq: [{word: [ar, kas, kur, kada, kodėl, kaip, kiek, koks, kokia, kuris, kuri], start: true}]}
+    pool: [ar, kas, kur, kada, kodėl, kaip, kiek]
+  - id: lt-ne
+    title: nežinau, niekas, niekada
+    meaning: {en: "negation: ne- joined to the verb", pt: "negação: ne- junto ao verbo"}
+    intro:
+      en: |
+        **ne** is written together with the verb: **žinau → nežinau** (I don't know), **buvo → nebuvo**. Double negation is normal: **Niekas nieko nežino. Niekada ten nebuvau.** A negated verb puts its object in the **genitive**: **Nematau namo.**
+      pt: |
+        **ne** se escreve junto com o verbo: **žinau → nežinau** (não sei), **buvo → nebuvo**. Dupla negação é normal: **Niekas nieko nežino** (ninguém sabe nada). **Niekada ten nebuvau** (nunca estive lá). Um verbo negado põe o objeto no **genitivo**: **Nematau namo** (não vejo a casa).
+    examples:
+    - ["Aš nieko nežinau.", "I don't know anything.", "Não sei nada.", "nežinau"]
+    match: {seq: [{re: "^ne", pos: verb}]}
+    pool: [niekas, nieko, niekada, niekur, ne, nėra]
+
+- title: {en: The cases (1), pt: Os casos (1)}
+  lessons:
+  - id: lt-acc
+    title: knygą, namą, brolį
+    meaning: {en: "accusative: the direct object", pt: "acusativo: o objeto direto"}
+    intro:
+      en: |
+        Singular endings are a nasal vowel: **-ą, -į, -ų, -ę** (**namą, brolį, sūnų, upę, knygą**); plural **-us, -as, -es, -is** (**namus, knygas, upes**). Direct object (**Skaitau knygą**), time (**visą dieną** all day, **kiekvieną rytą**), and after **į, per, pro, prieš, apie, pas**.
+      pt: |
+        As terminações do singular são vogais "nasais": **-ą, -į, -ų, -ę** (**namą, brolį, sūnų, upę, knygą**); plural **-us, -as, -es, -is** (**namus, knygas, upes**). Objeto direto (**Skaitau knygą**), tempo (**visą dieną** o dia todo, **kiekvieną rytą** toda manhã), e depois de **į, per, pro, prieš, apie, pas**.
+    examples:
+    - ["Mama verda sriubą.", "Mum is cooking soup.", "A mamãe está fazendo sopa.", "sriubą"]
+    - ["Einu į parduotuvę.", "I'm going to the shop.", "Vou à loja.", "parduotuvę"]
+    match: {seq: [{pos: verb}, {pos: noun, case: acc}], near: 3, gap: 2}
+  - id: lt-gen
+    title: Jono, knygos, namų
+    meaning: {en: "genitive: of, some, none", pt: "genitivo: de, um pouco de, nenhum"}
+    intro:
+      en: |
+        **-o, -io, -aus, -os, -ės, -ies**; plural **-ų, -ių**. Possession comes first: **Jono knyga** (Jonas's book), **Lietuvos sostinė**. Also *some* (**Duok vandens** give me some water), after negation (**Neturiu laiko**), after numbers from ten (**dešimt knygų**), and after **iš, be, nuo, prie, ant, iki, dėl, po**.
+      pt: |
+        **-o, -io, -aus, -os, -ės, -ies**; plural **-ų, -ių**. O possuidor vem antes: **Jono knyga** (o livro do Jonas), **Lietuvos sostinė** (a capital da Lituânia). Também *um pouco de* (**Duok vandens** — me dá água), depois de negação (**Neturiu laiko**), depois de números a partir de dez (**dešimt knygų**), e depois de **iš, be, nuo, prie, ant, iki, dėl, po**.
+    examples:
+    - ["Tai Jono knyga.", "This is Jonas's book.", "Este é o livro do Jonas.", "Jono"]
+    - ["Vilnius yra Lietuvos sostinė.", "Vilnius is the capital of Lithuania.", "Vilnius é a capital da Lituânia.", "Lietuvos"]
+    match: {seq: [{pos: noun, case: gen}, {pos: noun}], gap: 0}
+  - id: lt-loc
+    title: Vilniuje, mieste, namuose
+    meaning: {en: "locative: in, at", pt: "locativo: em"}
+    intro:
+      en: |
+        Lithuanian says *in* with a case, no preposition: **-e** (**mieste** in the city), **-yje** (**kelyje** on the road),**-oje** (**mokykloje**), **-ėje** (**gatvėje**), **-uje** (**sūnuje**); plural **-uose, -ose, -ėse** (**namuose**, **mokyklose**). **Gyvenu Vilniuje. Dirbu banke.**
+      pt: |
+        O lituano diz *em* com um caso, sem preposição: **-e** (**mieste** na cidade), **-yje** (**kelyje** na estrada), **-oje** (**mokykloje** na escola), **-ėje** (**gatvėje** na rua), **-uje** (**sūnuje**); plural **-uose, -ose, -ėse** (**namuose** em casa, **mokyklose**). **Gyvenu Vilniuje** (moro em Vilnius). **Dirbu banke** (trabalho num banco).
+    examples:
+    - ["Mes gyvename Vilniuje.", "We live in Vilnius.", "Moramos em Vilnius.", "Vilniuje"]
+    - ["Jis dirba mokykloje.", "He works at a school.", "Ele trabalha numa escola.", "mokykloje"]
+    match: {seq: [{pos: noun, case: loc}]}
+
+- title: {en: Numbers and time, pt: Números e tempo}
+  lessons:
+  - id: lt-numbers
+    title: vienas, du, trys, dešimt
+    meaning: {en: "numbers and the noun after them", pt: "números e o substantivo depois deles"}
+    intro:
+      en: |
+        **vienas (viena), du (dvi), trys, keturi, penki, šeši, septyni, aštuoni, devyni, dešimt**; 11–19 **-olika** (**vienuolika, dvylika**); **dvidešimt, šimtas, tūkstantis**. 1–9 agree like adjectives (**du broliai, dvi seserys**); **dešimt, -olika, -dešimt, šimtas** take the genitive plural: **dešimt knygų, dvylika metų**.
+      pt: |
+        **vienas (viena), du (dvi), trys, keturi, penki, šeši, septyni, aštuoni, devyni, dešimt**; 11–19 em **-olika** (**vienuolika, dvylika**); **dvidešimt, šimtas, tūkstantis**. De 1 a 9 concordam como adjetivos (**du broliai, dvi seserys**); **dešimt, -olika, -dešimt, šimtas** pedem o genitivo plural: **dešimt knygų** (dez livros), **dvylika metų** (doze anos).
+    examples:
+    - ["Turiu du brolius.", "I have two brothers.", "Tenho dois irmãos.", "du"]
+    - ["Jam dvylika metų.", "He is twelve.", "Ele tem doze anos.", "dvylika"]
+    match: {seq: [{word: [vienas, viena, du, dvi, trys, keturi, keturios, penki, penkios, šeši, šešios, septyni, aštuoni, devyni, dešimt, vienuolika, dvylika, dvidešimt, šimtas, šimtą, tūkstantis]}]}
+    pool: [vienas, du, dvi, trys, keturi, penki, dešimt, dvylika, šimtas]
+  - id: lt-days
+    title: pirmadienis, šiandien, rytoj
+    meaning: {en: "days and time words", pt: "dias e palavras de tempo"}
+    intro:
+      en: |
+        Days are numbered: **pirmadienis** (Monday, "first day"), **antradienis, trečiadienis, ketvirtadienis, penktadienis, šeštadienis, sekmadienis**. *On Monday* = **pirmadienį** (accusative). **šiandien** (today), **rytoj** (tomorrow), **vakar** (yesterday), **dabar** (now), **ryte, vakare** (in the morning, in the evening).
+      pt: |
+        Os dias são numerados: **pirmadienis** (segunda, "primeiro dia"), **antradienis, trečiadienis, ketvirtadienis, penktadienis, šeštadienis, sekmadienis**. *Na segunda* = **pirmadienį** (acusativo). **šiandien** (hoje), **rytoj** (amanhã), **vakar** (ontem), **dabar** (agora), **ryte, vakare** (de manhã, à noite).
+    examples:
+    - ["Šiandien yra pirmadienis.", "Today is Monday.", "Hoje é segunda-feira.", "pirmadienis"]
+    - ["Rytoj važiuosiu namo.", "Tomorrow I'll go home.", "Amanhã vou para casa.", "Rytoj"]
+    match: {seq: [{word: [šiandien, rytoj, vakar, dabar, ryte, vakare, pirmadienis, antradienis, trečiadienis, ketvirtadienis, penktadienis, šeštadienis, sekmadienis, pirmadienį, sekmadienį]}]}
+    pool: [šiandien, rytoj, vakar, dabar, ryte, vakare]
