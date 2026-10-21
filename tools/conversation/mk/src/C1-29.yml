@@ -1,0 +1,38 @@
+id: C1-29
+protagonist: f
+title: ["The final exam", "A prova final"]
+situation: ["The evening course ends with a written exam. Professor Ilievska announces the results.", "O curso noturno termina com uma prova escrita. A professora Ilievska anuncia os resultados."]
+learn: [c1-formal]
+culture: —
+items:
+  - [polozav, "положив", "I passed (an exam)", "passei"]
+  - [ne-polozi, "не положи", "failed", "não passou / reprovou"]
+  - [ocenka, "оценка", "grade, mark", "nota"]
+  - [odlicen, "одличен", "excellent (top grade)", "excelente"]
+  - [sertifikat, "сертификат", "certificate", "certificado"]
+  - [vi-cestitam, "ви честитам", "I congratulate you (formal)", "parabenizo a senhora"]
+  - [pismeniot-del, "писмениот дел", "the written part", "a parte escrita"]
+  - [usniot-del, "усниот дел", "the oral part", "a parte oral", {rare: true}]
+  - [greski-vo-akcent, "грешки во акцентот", "stress mistakes", "erros de acento tônico", {rare: true}]
+  - [zasluzena, "заслужена", "deserved (feminine)", "merecida"]
+dialogue:
+  - [profesorka, "Резултатите. Писмениот дел: сите положивте.", "The results. The written part: you all passed.", "Os resultados. A parte escrita: todos passaram."]
+  - [protagonist, "И јас? Положив?", "Me too? I passed?", "Eu também? Passei?"]
+  - [profesorka, "Положивте — со оценка одличен.", "You passed — with the top grade, excellent.", "Passou — com nota excelente."]
+  - [protagonist, "Не верувам! А усниот дел?", "I can't believe it! And the oral part?", "Não acredito! E a parte oral?"]
+  - [profesorka, "Усниот — многу добар. Мали грешки во акцентот, ништо страшно.", "The oral — very good. Small stress mistakes, nothing serious.", "A oral — muito bom. Pequenos erros de acento, nada grave."]
+  - [protagonist, "Акцентот... на третиот слог од крајот!", "The stress... on the third syllable from the end!", "O acento... na antepenúltima sílaba!"]
+  - [profesorka, "Точно. Еве го сертификатот. Ви честитам.", "Exactly. Here's the certificate. Congratulations.", "Exato. Aqui está o certificado. Parabéns."]
+  - [protagonist, "Благодарам, професорке. Пет години труд.", "Thank you, professor. Five years of work.", "Obrigada, professora. Cinco anos de esforço."]
+  - [profesorka, "Заслужена оценка.", "A deserved grade.", "Nota merecida."]
+teach:
+  - ask: ["She says: the written part — you all passed.", "Ela diz: a parte escrita — todos passaram.", "Писмениот дел: сите положивте.", pismeniot-del]
+  - ask: ["Ask: did I pass?", "Pergunte: eu passei?", "Положив?", polozav]
+  - ask: ["Say: with the top grade.", "Diga: com nota excelente.", "Со оценка одличен.", ocenka, odlicen]
+  - ask: ["Ask: and the oral part?", "Pergunte: e a parte oral?", "А усниот дел?", usniot-del]
+  - ask: ["Say: small stress mistakes.", "Diga: pequenos erros de acento.", "Мали грешки во акцентот.", greski-vo-akcent]
+  - ask: ["Say: the certificate.", "Diga: o certificado.", "Сертификатот.", sertifikat]
+  - ask: ["She says: I congratulate you.", "Ela diz: parabéns.", "Ви честитам.", vi-cestitam]
+  - ask: ["Say: a deserved grade.", "Diga: nota merecida.", "Заслужена оценка.", zasluzena]
+  - ask: ["Say: one classmate failed. (he failed)", "Diga: um colega reprovou.", "Еден не положи.", ne-polozi]
+  - note: ["Macedonian stress falls on the third syllable from the end of the word (or the first in short words): МА-ке-дон-ски → ма-ке-ДОН-ски. Grades run from 1 to 5; 5 is одличен.", "O acento tônico macedônio cai na antepenúltima sílaba (ou na primeira em palavras curtas): ма-ке-ДОН-ски. As notas vão de 1 a 5; 5 é одличен."]

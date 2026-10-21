@@ -1,0 +1,585 @@
+# UNIT mk C1-26 — written by AI (Claude) for Casus; expanded from src/C1-26.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-26
+level: C1
+number: 26
+protagonist: m
+title:
+  en: The coach retires
+  pt: O treinador se aposenta
+situation:
+  en: Coach Zoran is retiring after thirty years. The team asks you to give the speech.
+  pt: O técnico Zoran se aposenta depois de trinta anos. A equipe pede para você fazer o discurso.
+learn_lessons:
+- c1-renarrative-full
+culture: —
+new_items:
+- id: se-penzionira
+  text: се пензионира
+  meaning:
+    en: is retiring
+    pt: se aposenta
+- id: blagodarnost
+  text: благодарност
+  meaning:
+    en: gratitude
+    pt: gratidão
+- id: naslednik
+  text: наследник
+  meaning:
+    en: successor
+    pt: sucessor
+  rare: true
+- id: velat-deka-pocnal
+  text: велат дека почнал
+  meaning:
+    en: they say he started
+    pt: dizem que ele começou
+- id: trieset-godini
+  text: триесет години
+  meaning:
+    en: thirty years
+    pt: trinta anos
+- id: generacii
+  text: генерации
+  meaning:
+    en: generations
+    pt: gerações
+- id: ne-ni-dozvoli
+  text: не ни дозволи
+  meaning:
+    en: didn't let us
+    pt: não deixou a gente
+- id: da-se-otkazeme
+  text: да се откажеме
+  meaning:
+    en: to give up
+    pt: desistir
+- id: ostanuva-vo-srceto
+  text: останува во срцето
+  meaning:
+    en: stays in the heart
+    pt: fica no coração
+- id: za-treneru
+  text: за тренерот
+  meaning:
+    en: to the coach
+    pt: ao técnico
+reviews:
+- item: pazar
+  from: A1-19
+- item: evtino
+  from: A1-19
+- item: skapo
+  from: A1-19
+- item: kolku-cinat
+  from: A1-19
+- item: domatite
+  from: A1-19
+- item: domati
+  from: A1-19
+- item: piperki
+  from: A1-19
+- item: kiloto
+  from: A1-19
+- item: kila
+  from: A1-19
+- item: sezdeset
+  from: A1-19
+- item: pedeset
+  from: A1-19
+- item: se
+  from: A1-19
+- item: sve
+  from: A1-19
+- item: ke-odev
+  from: B1-23
+- item: ama
+  from: B1-23
+- item: vrnese
+  from: B1-23
+- item: planot
+  from: B1-23
+- item: propadna
+  from: B1-23
+- item: ke-gledavme
+  from: B1-23
+- item: se-razbolea
+  from: B1-23
+- item: namesto-toa
+  from: B1-23
+- item: spiev
+  from: B1-23
+- item: sledniot-vikend
+  from: B1-23
+- item: rasporedot
+  from: B2-25
+- item: video-povik
+  from: B2-25
+- item: ne-me-prekinuvaj
+  from: B2-25
+- item: mikrofonot
+  from: B2-25
+- item: isklucen
+  from: B2-25
+- item: pauza
+  from: B2-25
+- item: ke-napravam
+  from: B2-25
+- item: rucek-za-dvajca
+  from: B2-25
+- item: koncentriram
+  from: B2-25
+- item: vo-kancelarija
+  from: B2-25
+- item: iskreno-socuvstvo
+  from: C1-11
+- item: bog-da-go-prosti
+  from: C1-11
+- item: pocina
+  from: C1-11
+- item: ve-boli
+  from: C1-11
+- item: eh
+  from: C1-11
+- item: cetirieseti-den
+  from: C1-11
+- item: panihida
+  from: C1-11
+- item: zito
+  from: C1-11
+- item: da-ste-zivi-vie
+  from: C1-11
+- item: ako-vi-treba-nesto
+  from: C1-11
+- item: maticar
+  from: C1-19
+- item: izvod
+  from: C1-19
+- item: apostil
+  from: C1-19
+- item: preveden
+  from: C1-19
+- item: ovlasten-preveduvac
+  from: C1-19
+- item: ve-molam-dajte-mi-gi
+  from: C1-19
+- item: ke-vi-ja-zakazam
+  from: C1-19
+- item: datata
+  from: C1-19
+- item: svedocite
+  from: C1-19
+- item: licna-karta
+  from: C1-19
+- item: dvojazicen
+  from: C1-23
+- item: mesa
+  from: C1-23
+- item: doma-portugalski
+  from: C1-23
+- item: nadvor-makedonski
+  from: C1-23
+- item: ke-mu-go-naucis
+  from: C1-23
+- item: ednata-roditel
+  from: C1-23
+- item: ke-se-zbuni
+  from: C1-23
+- item: naprotiv
+  from: C1-23
+- item: prednost
+  from: C1-23
+- item: baba-od-brazil
+  from: C1-23
+- item: resenie
+  from: C1-25
+- item: odbieno
+  from: C1-25
+- item: zalba-protiv
+  from: C1-25
+- item: vo-zakonski-rok
+  from: C1-25
+- item: pecat
+  from: C1-25
+- item: vo-prilog-dostavuvam
+  from: C1-25
+- item: ve-molam-da-go-preispitate
+  from: C1-25
+- item: so-pocit-podnositel
+  from: C1-25
+- item: svoeracen-potpis
+  from: C1-25
+- item: preporacano
+  from: C1-25
+- item: trener
+  from: B2-26
+- item: nazdravje
+  from: B2-28
+steps:
+- type: narrator
+  text:
+    en: Coach Zoran is retiring after thirty years. The team asks you to give the speech. Listen to the conversation; you don't need to understand it yet.
+    pt: O técnico Zoran se aposenta depois de trinta anos. A equipe pede para você fazer o discurso. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Драги пријатели, денеска нашиот тренер се пензионира.
+    meaning:
+      en: Dear friends, today our coach retires.
+      pt: Queridos amigos, hoje o nosso técnico se aposenta.
+  - speaker: protagonist
+    text: Велат дека почнал во клубот пред триесет години, како играч.
+    meaning:
+      en: They say he started at the club thirty years ago, as a player.
+      pt: Dizem que ele começou no clube há trinta anos, como jogador.
+  - speaker: protagonist
+    text: Тренирал генерации. Јас сум само еден од нив — и најлошиот.
+    meaning:
+      en: He trained generations. I'm just one of them — and the worst.
+      pt: Treinou gerações. Eu sou só um deles — e o pior.
+  - speaker: zoran
+    text: Не е вистина!
+    meaning:
+      en: That's not true!
+      pt: Não é verdade!
+  - speaker: protagonist
+    text: Тој никогаш не ни дозволи да се откажеме.
+    meaning:
+      en: He never let us give up.
+      pt: Ele nunca deixou a gente desistir.
+  - speaker: protagonist
+    text: Неговиот наследник има големи патики да ги наполни.
+    meaning:
+      en: His successor has big shoes to fill.
+      pt: O sucessor dele tem um tênis grande para calçar.
+  - speaker: protagonist
+    text: Зоране — со голема благодарност. Останувате во срцето на клубот.
+    meaning:
+      en: Zoran — with great gratitude. You stay in the heart of the club.
+      pt: Zoran — com muita gratidão. O senhor fica no coração do clube.
+  - speaker: marko
+    text: За тренерот — наздравје!
+    meaning:
+      en: To the coach — cheers!
+      pt: Ao técnico — saúde!
+- type: prompt
+  ask:
+    en: 'Say: today our coach retires.'
+    pt: 'Diga: hoje o nosso técnico se aposenta.'
+  answer:
+    speaker: protagonist
+    text: Денеска нашиот тренер се пензионира.
+  items:
+  - se-penzionira
+  - trener
+- type: prompt
+  ask:
+    en: 'Say: they say he started thirty years ago.'
+    pt: 'Diga: dizem que ele começou há trinta anos.'
+  answer:
+    speaker: protagonist
+    text: Велат дека почнал пред триесет години.
+  items:
+  - velat-deka-pocnal
+  - trieset-godini
+- type: prompt
+  ask:
+    en: 'Say: he trained generations.'
+    pt: 'Diga: treinou gerações.'
+  answer:
+    speaker: protagonist
+    text: Тренирал генерации.
+  items:
+  - generacii
+- type: prompt
+  ask:
+    en: 'Say: he never let us give up.'
+    pt: 'Diga: ele nunca deixou a gente desistir.'
+  answer:
+    speaker: protagonist
+    text: Никогаш не ни дозволи да се откажеме.
+  items:
+  - ne-ni-dozvoli
+  - da-se-otkazeme
+- type: prompt
+  ask:
+    en: 'Say: his successor.'
+    pt: 'Diga: o sucessor dele.'
+  answer:
+    speaker: protagonist
+    text: Неговиот наследник.
+  items:
+  - naslednik
+- type: prompt
+  ask:
+    en: 'Say: with great gratitude.'
+    pt: 'Diga: com muita gratidão.'
+  answer:
+    speaker: protagonist
+    text: Со голема благодарност.
+  items:
+  - blagodarnost
+- type: prompt
+  ask:
+    en: 'Say: you stay in the heart of the club.'
+    pt: 'Diga: o senhor fica no coração do clube.'
+  answer:
+    speaker: protagonist
+    text: Останувате во срцето на клубот.
+  items:
+  - ostanuva-vo-srceto
+- type: prompt
+  ask:
+    en: 'Marko: to the coach — cheers!'
+    pt: 'O Marko: ao técnico — saúde!'
+  answer:
+    speaker: protagonist
+    text: За тренерот — наздравје!
+  items:
+  - za-treneru
+  - nazdravje
+- type: narrator
+  text:
+    en: In a speech, what you know only from stories goes in the л-form ('почнал', 'тренирал'); what you lived yourself goes in the plain past ('не ни дозволи'). The mix tells listeners which parts you
+      witnessed.
+    pt: Num discurso, o que você só sabe de ouvir vai na forma em -л ('почнал', 'тренирал'); o que você viveu vai no passado comum ('не ни дозволи'). A mistura mostra o que você presenciou.
+- type: prompt
+  ask:
+    en: 'Once more: say “is retiring”.'
+    pt: 'Mais uma vez: diga “se aposenta”.'
+  answer:
+    speaker: protagonist
+    text: се пензионира
+  items:
+  - se-penzionira
+- type: prompt
+  ask:
+    en: 'Once more: say “gratitude”.'
+    pt: 'Mais uma vez: diga “gratidão”.'
+  answer:
+    speaker: protagonist
+    text: благодарност
+  items:
+  - blagodarnost
+- type: prompt
+  ask:
+    en: 'Once more: say “successor”.'
+    pt: 'Mais uma vez: diga “sucessor”.'
+  answer:
+    speaker: protagonist
+    text: наследник
+  items:
+  - naslednik
+- type: prompt
+  ask:
+    en: 'Once more: say “they say he started”.'
+    pt: 'Mais uma vez: diga “dizem que ele começou”.'
+  answer:
+    speaker: protagonist
+    text: велат дека почнал
+  items:
+  - velat-deka-pocnal
+- type: prompt
+  ask:
+    en: 'Once more: say “thirty years”.'
+    pt: 'Mais uma vez: diga “trinta anos”.'
+  answer:
+    speaker: protagonist
+    text: триесет години
+  items:
+  - trieset-godini
+- type: prompt
+  ask:
+    en: 'Once more: say “generations”.'
+    pt: 'Mais uma vez: diga “gerações”.'
+  answer:
+    speaker: protagonist
+    text: генерации
+  items:
+  - generacii
+- type: prompt
+  ask:
+    en: 'Once more: say “didn''t let us”.'
+    pt: 'Mais uma vez: diga “não deixou a gente”.'
+  answer:
+    speaker: protagonist
+    text: не ни дозволи
+  items:
+  - ne-ni-dozvoli
+- type: prompt
+  ask:
+    en: 'Once more: say “to give up”.'
+    pt: 'Mais uma vez: diga “desistir”.'
+  answer:
+    speaker: protagonist
+    text: да се откажеме
+  items:
+  - da-se-otkazeme
+- type: prompt
+  ask:
+    en: 'Once more: say “stays in the heart”.'
+    pt: 'Mais uma vez: diga “fica no coração”.'
+  answer:
+    speaker: protagonist
+    text: останува во срцето
+  items:
+  - ostanuva-vo-srceto
+- type: prompt
+  ask:
+    en: 'Once more: say “to the coach”.'
+    pt: 'Mais uma vez: diga “ao técnico”.'
+  answer:
+    speaker: protagonist
+    text: за тренерот
+  items:
+  - za-treneru
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “decision (official) — and “rejected — and “appeal against — and “within the legal deadline — and “stamp — and “I enclose — and “I ask you to reconsider it — and “applicant — and “handwritten
+      signature — and “by registered mail — and “bilingual (masculine) — and “mixes — and “Portuguese at home”.'
+    pt: 'Diga: “decisão / despacho — e “indeferido — e “recurso contra — e “dentro do prazo legal — e “carimbo — e “segue em anexo — e “peço que reconsidere — e “requerente — e “assinatura de próprio punho
+      — e “registrado (correio) — e “bilíngue — e “mistura — e “português em casa”.'
+  answer:
+    speaker: protagonist
+    text: решение … одбиено … жалба против … во законски рок … печат … во прилог доставувам … ве молам да го преиспитате … подносител … своерачен потпис … препорачано … двојазичен … меша … дома португалски
+  items:
+  - resenie
+  - odbieno
+  - zalba-protiv
+  - vo-zakonski-rok
+  - pecat
+  - vo-prilog-dostavuvam
+  - ve-molam-da-go-preispitate
+  - so-pocit-podnositel
+  - svoeracen-potpis
+  - preporacano
+  - dvojazicen
+  - mesa
+  - doma-portugalski
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Macedonian outside — and “you''ll teach it to him — and “one parent, one language — and “will get confused — and “on the contrary — and “advantage — and “grandma from Brazil — and “registrar
+      — and “birth certificate (extract) — and “apostille — and “translated (masculine) — and “sworn translator — and “give them to me (formal)”.'
+    pt: 'Diga: “macedônio na rua — e “você vai ensinar para ele — e “um pai, uma língua — e “vai se confundir — e “pelo contrário — e “vantagem — e “a avó do Brasil — e “oficial de registro civil — e “certidão
+      de nascimento — e “apostila — e “traduzido — e “tradutor juramentado — e “me entregue”.'
+  answer:
+    speaker: protagonist
+    text: надвор македонски … ќе му го научиш … еден родител — еден јазик … ќе се збуни … напротив … предност … баба од Бразил … матичар … извод од матична книга … апостил … преведен … овластен преведувач
+      … дајте ми ги
+  items:
+  - nadvor-makedonski
+  - ke-mu-go-naucis
+  - ednata-roditel
+  - ke-se-zbuni
+  - naprotiv
+  - prednost
+  - baba-od-brazil
+  - maticar
+  - izvod
+  - apostil
+  - preveden
+  - ovlasten-preveduvac
+  - ve-molam-dajte-mi-gi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I''ll book it for you — and “the date — and “the witnesses — and “ID card — and “My sincere condolences — and “May God rest his soul — and “passed away — and “it hurts you, you''re grieving
+      — and “ah, oh (sigh) — and “forty-day memorial — and “memorial service — and “boiled wheat (memorial food) — and “may you live (condolence)”.'
+    pt: 'Diga: “vou marcar para vocês — e “a data — e “as testemunhas — e “carteira de identidade — e “Meus sinceros pêsames — e “Que Deus o tenha — e “faleceu — e “dói na senhora — e “ai / ah — e “missa
+      de quarenta dias — e “missa / culto fúnebre — e “trigo cozido (comida do luto) — e “que a senhora tenha vida”.'
+  answer:
+    speaker: protagonist
+    text: ќе ви ја закажам … датата … сведоците … лична карта … Искрено сочувство … Бог да го прости … почина … ве боли … ех … четириесетница … панихида … жито … да сте живи вие
+  items:
+  - ke-vi-ja-zakazam
+  - datata
+  - svedocite
+  - licna-karta
+  - iskreno-socuvstvo
+  - bog-da-go-prosti
+  - pocina
+  - ve-boli
+  - eh
+  - cetirieseti-den
+  - panihida
+  - zito
+  - da-ste-zivi-vie
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “if you need anything — and “the schedule — and “video call — and “don''t interrupt me — and “the microphone — and “switched off (masculine) — and “break — and “I''ll make, I''ll do — and
+      “lunch for two — and “I concentrate — and “at the office — and “I was going to go — and “but (colloquial)”.'
+    pt: 'Diga: “se precisar de alguma coisa — e “a agenda / o horário — e “videochamada — e “não me interrompe — e “o microfone — e “desligado — e “pausa / intervalo — e “vou fazer — e “almoço para dois
+      — e “me concentro — e “no escritório — e “eu ia — e “mas”.'
+  answer:
+    speaker: protagonist
+    text: ако ви треба нешто … распоредот … видео-повик … не ме прекинувај … микрофонот … исклучен … пауза … ќе направам … ручек за двајца … се концентрирам … во канцеларија … ќе одев … ама
+  items:
+  - ako-vi-treba-nesto
+  - rasporedot
+  - video-povik
+  - ne-me-prekinuvaj
+  - mikrofonot
+  - isklucen
+  - pauza
+  - ke-napravam
+  - rucek-za-dvajca
+  - koncentriram
+  - vo-kancelarija
+  - ke-odev
+  - ama
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “it was raining — and “the plan — and “fell through — and “we were going to watch — and “got ill — and “instead — and “I slept — and “next weekend — and “market — and “cheap — and “expensive
+      — and “How much are…? (plural) — and “the tomatoes”.'
+    pt: 'Diga: “estava chovendo — e “o plano — e “furou / deu errado — e “a gente ia assistir — e “ficou doente — e “em vez disso — e “dormi — e “no próximo fim de semana — e “feira / mercado — e “barato
+      — e “caro — e “Quanto custam…? — e “os tomates”.'
+  answer:
+    speaker: protagonist
+    text: врнеше … планот … пропадна … ќе гледавме … се разболе … наместо тоа … спиев … следниот викенд … пазар … евтино … скапо … Колку чинат…? … доматите
+  items:
+  - vrnese
+  - planot
+  - propadna
+  - ke-gledavme
+  - se-razbolea
+  - namesto-toa
+  - spiev
+  - sledniot-vikend
+  - pazar
+  - evtino
+  - skapo
+  - kolku-cinat
+  - domatite
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “tomatoes — and “peppers — and “the kilo (per kilo) — and “kilos — and “sixty — and “fifty — and “are (plural) — and “everything”.'
+    pt: 'Diga: “tomates — e “pimentões — e “o quilo — e “quilos — e “sessenta — e “cinquenta — e “são — e “tudo”.'
+  answer:
+    speaker: protagonist
+    text: домати … пиперки … килото … кила … шеесет … педесет … се … сè
+  items:
+  - domati
+  - piperki
+  - kiloto
+  - kila
+  - sezdeset
+  - pedeset
+  - se
+  - sve
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

@@ -1,0 +1,599 @@
+# UNIT mk C1-27 — written by AI (Claude) for Casus; expanded from src/C1-27.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-27
+level: C1
+number: 27
+protagonist: f
+title:
+  en: Mental health
+  pt: Saúde mental
+situation:
+  en: Months of overtime. You can't sleep. Ana suggests a psychologist.
+  pt: Meses de hora extra. Você não consegue dormir. A Ana sugere uma psicóloga.
+learn_lessons:
+- c1-particles
+culture: A taboo slowly lifting
+new_items:
+- id: stres
+  text: стрес
+  meaning:
+    en: stress
+    pt: estresse
+- id: ne-spijam
+  text: не спијам
+  meaning:
+    en: I'm not sleeping
+    pt: não estou dormindo
+- id: izgoruvanje
+  text: изгорување
+  meaning:
+    en: burnout
+    pt: esgotamento (burnout)
+  rare: true
+- id: psiholog
+  text: психолог
+  meaning:
+    en: psychologist
+    pt: psicólogo
+- id: pa-sto
+  text: па што
+  meaning:
+    en: so what
+    pt: e daí
+- id: ne-si-luda
+  text: не си луда
+  meaning:
+    en: you're not crazy
+    pt: você não é louca
+- id: se-sramam
+  text: се срамам
+  meaning:
+    en: I'm ashamed, embarrassed
+    pt: tenho vergonha
+- id: nema-za-sto
+  text: нема за што
+  meaning:
+    en: there's nothing to (be ashamed of)
+    pt: não tem por quê
+- id: granici
+  text: граници
+  meaning:
+    en: limits, boundaries
+    pt: limites
+- id: odmor-vistinski
+  text: вистински одмор
+  meaning:
+    en: a real holiday
+    pt: férias de verdade
+reviews:
+- item: sostanok
+  from: A1-20
+- item: koga-imas-vreme
+  from: A1-20
+- item: nemam-vreme
+  from: A1-20
+- item: utre
+  from: A1-20
+- item: sreda
+  from: A1-20
+- item: ne-mozam
+  from: A1-20
+- item: cetvrtok
+  from: A1-20
+- item: petok
+  from: A1-20
+- item: podobro
+  from: A1-20
+- item: sabota
+  from: A1-20
+- item: nedela
+  from: A1-20
+- item: ponedelnik
+  from: A1-20
+- item: vtornik
+  from: A1-20
+- item: rabota
+  from: A1-20
+- item: kniga
+  from: B1-24
+- item: poet
+  from: B1-24
+- item: pesni
+  from: B1-24
+- item: stih
+  from: B1-24
+- item: napisal
+  from: B1-24
+- item: jazikot
+  from: B1-24
+- item: pravopis
+  from: B1-24
+- item: ucenje
+  from: B1-24
+- item: napamet
+  from: B1-24
+- item: procitaj
+  from: B1-24
+- item: trener
+  from: B2-26
+- item: treninzi
+  from: B2-26
+- item: dvapati-nedelno
+  from: B2-26
+- item: clen
+  from: B2-26
+- item: clenarina
+  from: B2-26
+- item: zagrevanje
+  from: B2-26
+- item: brate
+  from: B2-26
+- item: zorane
+  from: B2-26
+- item: frli
+  from: B2-26
+- item: koj-te-nauci
+  from: B2-26
+- item: bavca
+  from: C1-12
+- item: kokoski
+  from: C1-12
+- item: jajca-svezi
+  from: C1-12
+- item: daj-mu-gi
+  from: C1-12
+- item: ke-ti-gi-spakuvam
+  from: C1-12
+- item: prazni-kukji
+  from: C1-12
+- item: samo-starci
+  from: C1-12
+- item: tisina
+  from: C1-12
+- item: ne-moze-da-se-kupi
+  from: C1-12
+- item: ke-dojdete-pak
+  from: C1-12
+- item: bremena
+  from: C1-20
+- item: ke-imame-bebe
+  from: C1-20
+- item: terminot
+  from: C1-20
+- item: ginekolog
+  from: C1-20
+- item: ima-da-jades
+  from: C1-20
+- item: ne-krevaj
+  from: C1-20
+- item: sovet
+  from: C1-20
+- item: sekoj-ima-sovet
+  from: C1-20
+- item: cestitam
+  from: C1-20
+- item: da-vi-e-zivo-i-zdravo
+  from: C1-20
+- item: renovacija
+  from: C1-24
+- item: rokot-pomina
+  from: C1-24
+- item: plocki
+  from: C1-24
+- item: ne-stignaa
+  from: C1-24
+- item: ima-da-ceka
+  from: C1-24
+- item: faktura
+  from: C1-24
+- item: avans
+  from: C1-24
+- item: ostatokot
+  from: C1-24
+- item: koga-ke-zavrsite
+  from: C1-24
+- item: zbor-na-cest
+  from: C1-24
+- item: se-penzionira
+  from: C1-26
+- item: blagodarnost
+  from: C1-26
+- item: naslednik
+  from: C1-26
+- item: velat-deka-pocnal
+  from: C1-26
+- item: trieset-godini
+  from: C1-26
+- item: generacii
+  from: C1-26
+- item: ne-ni-dozvoli
+  from: C1-26
+- item: da-se-otkazeme
+  from: C1-26
+- item: ostanuva-vo-srceto
+  from: C1-26
+- item: za-treneru
+  from: C1-26
+steps:
+- type: narrator
+  text:
+    en: Months of overtime. You can't sleep. Ana suggests a psychologist. Listen to the conversation; you don't need to understand it yet.
+    pt: Meses de hora extra. Você não consegue dormir. A Ana sugere uma psicóloga. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: ana
+    text: Изгледаш уморно. Што ти е?
+    meaning:
+      en: You look tired. What's wrong?
+      pt: Você está com cara de cansada. O que você tem?
+  - speaker: protagonist
+    text: Стрес. Не спијам веќе месец дена.
+    meaning:
+      en: Stress. I haven't been sleeping for a month.
+      pt: Estresse. Faz um mês que não durmo.
+  - speaker: ana
+    text: Тоа е изгорување. Оди кај психолог.
+    meaning:
+      en: That's burnout. Go to a psychologist.
+      pt: Isso é burnout. Vai numa psicóloga.
+  - speaker: protagonist
+    text: Психолог? Се срамам. Што ќе речат луѓето?
+    meaning:
+      en: A psychologist? I'm embarrassed. What will people say?
+      pt: Psicóloga? Tenho vergonha. O que as pessoas vão dizer?
+  - speaker: ana
+    text: Па што? Нема за што да се срамиш. Не си луда.
+    meaning:
+      en: So what? There's nothing to be ashamed of. You're not crazy.
+      pt: E daí? Não tem por que ter vergonha. Você não é louca.
+  - speaker: ana
+    text: И јас одев минатата година.
+    meaning:
+      en: I went too, last year.
+      pt: Eu também fui, no ano passado.
+  - speaker: protagonist
+    text: Ти? Не знаев.
+    meaning:
+      en: You? I didn't know.
+      pt: Você? Eu não sabia.
+  - speaker: ana
+    text: Научив да поставувам граници. И земи вистински одмор.
+    meaning:
+      en: I learned to set limits. And take a real holiday.
+      pt: Aprendi a colocar limites. E tira férias de verdade.
+- type: prompt
+  ask:
+    en: 'Say: stress.'
+    pt: 'Diga: estresse.'
+  answer:
+    speaker: protagonist
+    text: Стрес.
+  items:
+  - stres
+- type: prompt
+  ask:
+    en: 'Say: I haven''t been sleeping for a month.'
+    pt: 'Diga: faz um mês que não durmo.'
+  answer:
+    speaker: protagonist
+    text: Не спијам веќе месец дена.
+  items:
+  - ne-spijam
+- type: prompt
+  ask:
+    en: 'Ana: that''s burnout.'
+    pt: 'A Ana: isso é burnout.'
+  answer:
+    speaker: protagonist
+    text: Тоа е изгорување.
+  items:
+  - izgoruvanje
+- type: prompt
+  ask:
+    en: 'Ana: go to a psychologist.'
+    pt: 'A Ana: vai numa psicóloga.'
+  answer:
+    speaker: protagonist
+    text: Оди кај психолог.
+  items:
+  - psiholog
+- type: prompt
+  ask:
+    en: 'Say: I''m embarrassed.'
+    pt: 'Diga: tenho vergonha.'
+  answer:
+    speaker: protagonist
+    text: Се срамам.
+  items:
+  - se-sramam
+- type: prompt
+  ask:
+    en: 'Ana: so what?'
+    pt: 'A Ana: e daí?'
+  answer:
+    speaker: protagonist
+    text: Па што?
+  items:
+  - pa-sto
+- type: prompt
+  ask:
+    en: 'Ana: there''s nothing to be ashamed of.'
+    pt: 'A Ana: não tem por que ter vergonha.'
+  answer:
+    speaker: protagonist
+    text: Нема за што да се срамиш.
+  items:
+  - nema-za-sto
+- type: prompt
+  ask:
+    en: 'Ana: you''re not crazy.'
+    pt: 'A Ana: você não é louca.'
+  answer:
+    speaker: protagonist
+    text: Не си луда.
+  items:
+  - ne-si-luda
+- type: prompt
+  ask:
+    en: 'Say: set limits.'
+    pt: 'Diga: colocar limites.'
+  answer:
+    speaker: protagonist
+    text: Поставувај граници.
+  items:
+  - granici
+- type: prompt
+  ask:
+    en: 'Say: a real holiday.'
+    pt: 'Diga: férias de verdade.'
+  answer:
+    speaker: protagonist
+    text: Вистински одмор.
+  items:
+  - odmor-vistinski
+- type: narrator
+  text:
+    en: Seeing a psychologist is still stigmatised for many older people ('what will people say?'), but younger people talk about it more openly. Your family doctor can refer you, and private practices
+      exist.
+    pt: Ir ao psicólogo ainda é estigma para muitos mais velhos ('o que as pessoas vão dizer?'), mas os mais jovens falam disso com mais abertura. O médico de família pode encaminhar, e há consultórios
+      particulares.
+- type: prompt
+  ask:
+    en: 'Once more: say “stress”.'
+    pt: 'Mais uma vez: diga “estresse”.'
+  answer:
+    speaker: protagonist
+    text: стрес
+  items:
+  - stres
+- type: prompt
+  ask:
+    en: 'Once more: say “I''m not sleeping”.'
+    pt: 'Mais uma vez: diga “não estou dormindo”.'
+  answer:
+    speaker: protagonist
+    text: не спијам
+  items:
+  - ne-spijam
+- type: prompt
+  ask:
+    en: 'Once more: say “burnout”.'
+    pt: 'Mais uma vez: diga “esgotamento (burnout)”.'
+  answer:
+    speaker: protagonist
+    text: изгорување
+  items:
+  - izgoruvanje
+- type: prompt
+  ask:
+    en: 'Once more: say “psychologist”.'
+    pt: 'Mais uma vez: diga “psicólogo”.'
+  answer:
+    speaker: protagonist
+    text: психолог
+  items:
+  - psiholog
+- type: prompt
+  ask:
+    en: 'Once more: say “so what”.'
+    pt: 'Mais uma vez: diga “e daí”.'
+  answer:
+    speaker: protagonist
+    text: па што
+  items:
+  - pa-sto
+- type: prompt
+  ask:
+    en: 'Once more: say “you''re not crazy”.'
+    pt: 'Mais uma vez: diga “você não é louca”.'
+  answer:
+    speaker: protagonist
+    text: не си луда
+  items:
+  - ne-si-luda
+- type: prompt
+  ask:
+    en: 'Once more: say “I''m ashamed, embarrassed”.'
+    pt: 'Mais uma vez: diga “tenho vergonha”.'
+  answer:
+    speaker: protagonist
+    text: се срамам
+  items:
+  - se-sramam
+- type: prompt
+  ask:
+    en: 'Once more: say “there''s nothing to (be ashamed of)”.'
+    pt: 'Mais uma vez: diga “não tem por quê”.'
+  answer:
+    speaker: protagonist
+    text: нема за што
+  items:
+  - nema-za-sto
+- type: prompt
+  ask:
+    en: 'Once more: say “limits, boundaries”.'
+    pt: 'Mais uma vez: diga “limites”.'
+  answer:
+    speaker: protagonist
+    text: граници
+  items:
+  - granici
+- type: prompt
+  ask:
+    en: 'Once more: say “a real holiday”.'
+    pt: 'Mais uma vez: diga “férias de verdade”.'
+  answer:
+    speaker: protagonist
+    text: вистински одмор
+  items:
+  - odmor-vistinski
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “is retiring — and “gratitude — and “successor — and “they say he started — and “thirty years — and “generations — and “didn''t let us — and “to give up — and “stays in the heart — and “to
+      the coach — and “renovation — and “the deadline passed long ago — and “tiles”.'
+    pt: 'Diga: “se aposenta — e “gratidão — e “sucessor — e “dizem que ele começou — e “trinta anos — e “gerações — e “não deixou a gente — e “desistir — e “fica no coração — e “ao técnico — e “reforma
+      — e “o prazo passou faz tempo — e “azulejos / pisos”.'
+  answer:
+    speaker: protagonist
+    text: се пензионира … благодарност … наследник … велат дека почнал … триесет години … генерации … не ни дозволи … да се откажеме … останува во срцето … за тренерот … реновирање … рокот одамна помина
+      … плочки
+  items:
+  - se-penzionira
+  - blagodarnost
+  - naslednik
+  - velat-deka-pocnal
+  - trieset-godini
+  - generacii
+  - ne-ni-dozvoli
+  - da-se-otkazeme
+  - ostanuva-vo-srceto
+  - za-treneru
+  - renovacija
+  - rokot-pomina
+  - plocki
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “haven''t arrived — and “there''ll be some waiting — and “invoice — and “advance payment — and “the rest (of the money) — and “when you finish — and “word of honour — and “pregnant — and “we''re
+      having a baby — and “the due date / appointment — and “gynaecologist — and “you''ll have to eat for two — and “don''t lift anything heavy”.'
+    pt: 'Diga: “não chegaram — e “vai ter que esperar — e “nota fiscal — e “adiantamento — e “o restante — e “quando terminarem — e “palavra de honra — e “grávida — e “vamos ter um bebê — e “a data prevista
+      / a consulta — e “ginecologista — e “vai ter que comer por dois — e “não levanta peso”.'
+  answer:
+    speaker: protagonist
+    text: не стигнаа … има да се чека … фактура … аванс … остатокот … кога ќе завршите … збор на чест … бремена … ќе имаме бебе … терминот … гинеколог … има да јадеш за двајца … не кревај тешко
+  items:
+  - ne-stignaa
+  - ima-da-ceka
+  - faktura
+  - avans
+  - ostatokot
+  - koga-ke-zavrsite
+  - zbor-na-cest
+  - bremena
+  - ke-imame-bebe
+  - terminot
+  - ginekolog
+  - ima-da-jades
+  - ne-krevaj
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “piece of advice — and “everyone has advice — and “Congratulations! — and “May it be alive and healthy! — and “vegetable garden — and “hens — and “fresh eggs — and “give them to him — and
+      “I''ll pack them for you — and “empty houses — and “only old people — and “silence, quiet — and “can''t be bought”.'
+    pt: 'Diga: “conselho — e “todo mundo tem conselho — e “Parabéns! — e “Que venha com saúde! — e “horta — e “galinhas — e “ovos frescos — e “dá para ele — e “vou embalar para você — e “casas vazias —
+      e “só velhos — e “silêncio — e “não se compra”.'
+  answer:
+    speaker: protagonist
+    text: совет … секој има совет … Честитам! … Да ви е живо и здраво! … бавча … кокошки … свежи јајца … дај му ги … ќе ти ги спакувам … празни куќи … само старци … тишина … не може да се купи
+  items:
+  - sovet
+  - sekoj-ima-sovet
+  - cestitam
+  - da-vi-e-zivo-i-zdravo
+  - bavca
+  - kokoski
+  - jajca-svezi
+  - daj-mu-gi
+  - ke-ti-gi-spakuvam
+  - prazni-kukji
+  - samo-starci
+  - tisina
+  - ne-moze-da-se-kupi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “you''ll come again — and “coach — and “training sessions — and “twice a week — and “member — and “membership fee — and “warm-up — and “bro (vocative of брат) — and “Zoran! (calling him) —
+      and “throw, shoot (informal) — and “Who taught you? — and “book — and “poet”.'
+    pt: 'Diga: “vocês voltam — e “técnico — e “treinos — e “duas vezes por semana — e “sócio / membro — e “mensalidade — e “aquecimento — e “mano / irmão — e “Zoran! (chamando) — e “arremessa — e “Quem
+      te ensinou? — e “livro — e “poeta”.'
+  answer:
+    speaker: protagonist
+    text: ќе дојдете пак … тренер … тренинзи … двапати неделно … член … членарина … загревање … брате … Зоране … фрли … Кој те научи? … книга … поет
+  items:
+  - ke-dojdete-pak
+  - trener
+  - treninzi
+  - dvapati-nedelno
+  - clen
+  - clenarina
+  - zagrevanje
+  - brate
+  - zorane
+  - frli
+  - koj-te-nauci
+  - kniga
+  - poet
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “poems / songs — and “verse, line of poetry — and “wrote (reportedly, a man) — and “the language — and “spelling rules — and “learning, studying — and “by heart — and “Read (informal, once)
+      — and “meeting — and “When do you have time? (informal) — and “I don''t have time — and “tomorrow — and “Wednesday”.'
+    pt: 'Diga: “poemas / canções — e “verso — e “escreveu — e “a língua — e “ortografia — e “estudo / aprendizado — e “de cor — e “Lê — e “reunião — e “Quando você tem tempo? — e “não tenho tempo — e “amanhã
+      — e “quarta-feira”.'
+  answer:
+    speaker: protagonist
+    text: песни … стих … напишал … јазикот … правопис … учење … напамет … Прочитај … состанок … Кога имаш време? … немам време … утре … среда
+  items:
+  - pesni
+  - stih
+  - napisal
+  - jazikot
+  - pravopis
+  - ucenje
+  - napamet
+  - procitaj
+  - sostanok
+  - koga-imas-vreme
+  - nemam-vreme
+  - utre
+  - sreda
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I can''t — and “Thursday — and “Friday — and “better — and “Saturday — and “Sunday — and “Monday — and “Tuesday — and “work”.'
+    pt: 'Diga: “não posso — e “quinta-feira — e “sexta-feira — e “melhor — e “sábado — e “domingo — e “segunda-feira — e “terça-feira — e “trabalho”.'
+  answer:
+    speaker: protagonist
+    text: не можам … четврток … петок … подобро … сабота … недела … понеделник … вторник … работа
+  items:
+  - ne-mozam
+  - cetvrtok
+  - petok
+  - podobro
+  - sabota
+  - nedela
+  - ponedelnik
+  - vtornik
+  - rabota
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
