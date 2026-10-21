@@ -10,7 +10,7 @@ describe('the ? button explains the tab it is on (Allan, 2026-10-20)', () => {
     const { container } = render(Help, { props: { onclose: () => {}, view: 'reader' } });
     expect(container.ownerDocument.body.textContent).toContain('What Casus does');
   });
-  for (const [view, word] of [['learn', 'Learn'], ['drills', 'Drills'], ['speak', 'Pronunciation'], ['proof', 'Proofreading']]) {
+  for (const [view, word] of [['learn', 'Learn'], ['drills', 'Drills'], ['speak', 'Pronunciation'], ['proof', 'Proofreading'], ['talk', 'Conversation practice']]) {
     it(`${view} shows help about ${view}, not the reader's`, () => {
       setLang('en');
       document.body.innerHTML = '';
