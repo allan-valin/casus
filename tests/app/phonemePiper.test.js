@@ -34,4 +34,11 @@ describe('phoneme Piper', () => {
     await p.remove('bg_BG-dimitar-medium');
     expect(await p.stored()).toEqual([]);
   });
+  it('speech can be slowed: lengthScale multiplies the model own scale (Allan 2026-10-21: "mk feels a bit fast")', async () => {
+    const f = fakes();
+    const p = createPhonemePiper({ phonemes: 'mk', fetchImpl: f.fetchImpl, openCache: async () => f.cache, loadOrt: f.loadOrt });
+    await p.download('bg_BG-dimitar-medium');
+    await p.predict({ text: 'да', voiceId: 'bg_BG-dimitar-medium', lengthScale: 1.25 });
+    expect([...f.runs[0].scales.data][1]).toBeCloseTo(1.25);
+  });
 });

@@ -74,13 +74,13 @@ export function createPhonemePiper({ phonemes, fetchImpl = (...a) => fetch(...a)
       for (const u of urls(voiceId)) await cache.delete(u);
       sessions.delete(voiceId);
     },
-    async predict({ text, voiceId }) {
+    async predict({ text, voiceId, lengthScale = 1 }) {   // lengthScale > 1: slower (multiplies the model's own)
       const { cfg, ort, s } = await session(voiceId);
       const ids = toIds(text, cfg.phoneme_id_map);
       const big = BigInt64Array.from(ids.map(BigInt));
       const { noise_scale: ns, length_scale: ls, noise_w: nw } = cfg.inference;
       const out = await s.run({ input: new ort.Tensor('int64', big, [1, big.length]), input_lengths: new ort.Tensor('int64', BigInt64Array.from([BigInt(big.length)]), [1]),
-        scales: new ort.Tensor('float32', Float32Array.from([ns, ls, nw]), [3]) });
+        scales: new ort.Tensor('float32', Float32Array.from([ns, ls * lengthScale, nw]), [3]) });
       return wav(out[s.outputNames[0]].data, cfg.audio.sample_rate);
     },
   };

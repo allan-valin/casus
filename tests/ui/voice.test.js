@@ -247,3 +247,14 @@ describe('downloadNatural checks the stored voice and tries again (Allan 2026-10
     expect(v.naturalReady()).toBe(false);
   });
 });
+
+describe('a pitched voice is stretched by its pitch, so the pitch does not speed it up (Allan 2026-10-21)', () => {
+  it('our own engine gets lengthScale = the voice speed × the pitch', async () => {
+    const { createVoice } = await import('../../src/app/lib/voice.js');
+    const asked = [];
+    const v = createVoice({ bcp47: 'mk', espeakVoice: 'mk', natural: { voiceId: 'v', phonemes: 'mk', speed: 1.1 }, store: { getItem: () => 'stored', setItem() {}, removeItem() {} },
+      loadPiper: async () => ({ predict: async (o) => { asked.push(o); return new Blob(['x']); } }), playBlob: async () => {} });
+    await v.speak('да', { pitch: 1.25 });
+    expect(asked[0].lengthScale).toBeCloseTo(1.375);
+  });
+});

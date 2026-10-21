@@ -27,6 +27,6 @@ export const macedonian = {
   samplesPath: '/samples/mk',
   // no Macedonian voice exists: the Bulgarian Piper voice (CC0) reads Macedonian sounds (src/lang/mk/phonemes.js;
   // Allan chose it by ear, 2026-10-21)
-  voice: { espeak: 'mk', natural: { voiceId: 'bg_BG-dimitar-medium', name: 'Dimitar (Bulgarian voice reading Macedonian)', sizeMB: 63, phonemes: 'mk' } },
+  voice: { espeak: 'mk', natural: { voiceId: 'bg_BG-dimitar-medium', name: 'Dimitar (Bulgarian voice reading Macedonian)', sizeMB: 63, phonemes: 'mk', speed: 1.15 } },
   game: { ROWS, LETTERS, createGame, createGrid },
 };

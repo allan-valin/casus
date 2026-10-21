@@ -212,7 +212,11 @@ export function createVoice({ bcp47, espeakVoice, natural = null, synth = global
       let p = null;
       try {
         p = await piper();
-        await (pitch === 1 ? playBlob(await p.predict({ text, voiceId: natural.voiceId })) : playBlob(await p.predict({ text, voiceId: natural.voiceId }), { rate: pitch }));
+        // our own engine can stretch the speech: by the voice's speed, and by the pitch so that playing it faster for a
+        // higher voice does not also make it quicker (Allan, 2026-10-21: "mk feels a bit fast")
+        const lengthScale = natural.phonemes ? (natural.speed ?? 1) * pitch : undefined;
+        const blob = await p.predict({ text, voiceId: natural.voiceId, ...(lengthScale ? { lengthScale } : {}) });
+        await (pitch === 1 ? playBlob(blob) : playBlob(blob, { rate: pitch }));
         return { tier: 'natural', fellBack: false };
       } catch (e) {
         fellBack = true;
