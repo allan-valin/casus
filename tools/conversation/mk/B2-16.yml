@@ -1,0 +1,552 @@
+# UNIT mk B2-16 — written by AI (Claude) for Casus; expanded from src/B2-16.yml by tools/expand_unit.py. Edit the source.
+
+id: B2-16
+level: B2
+number: 16
+protagonist: m
+title:
+  en: Talking to the boss
+  pt: Falar com o chefe
+situation:
+  en: You want to work from home on Fridays. Mr Nikolovski's door is half open.
+  pt: Você quer trabalhar de casa às sextas. A porta do senhor Nikolovski está entreaberta.
+learn_lessons:
+- b2-neka
+culture: Hierarchy
+new_items:
+- id: imate-li-minuta
+  text: Имате ли една минута?
+  meaning:
+    en: Do you have a minute? (formal)
+    pt: O senhor tem um minuto?
+- id: bi-sakal-da-razgovarame
+  text: би сакал да разговараме
+  meaning:
+    en: I'd like us to talk (a man)
+    pt: gostaria de conversar
+- id: za-petocite
+  text: за петоците
+  meaning:
+    en: about Fridays
+    pt: sobre as sextas
+- id: od-doma
+  text: од дома
+  meaning:
+    en: from home
+    pt: de casa
+- id: poproduktiven
+  text: попродуктивен
+  meaning:
+    en: more productive (masculine)
+    pt: mais produtivo
+  rare: true
+- id: neka-probame
+  text: нека пробаме
+  meaning:
+    en: let's try
+    pt: vamos experimentar
+- id: eden-mesec
+  text: еден месец
+  meaning:
+    en: one month
+    pt: um mês
+- id: pa-ke-vidime
+  text: па ќе видиме
+  meaning:
+    en: and then we'll see
+    pt: e depois a gente vê
+- id: ve-razbiram
+  text: ве разбирам
+  meaning:
+    en: I understand you (formal)
+    pt: entendo o senhor
+- id: vi-blagodaram
+  text: Ви благодарам
+  meaning:
+    en: Thank you (formal, warmer)
+    pt: Agradeço
+reviews:
+- item: ti-se-dopagja
+  from: A2-13
+- item: mi-se-dopagja
+  from: A2-13
+- item: muzika
+  from: A2-13
+- item: povekje-sakam
+  from: A2-13
+- item: sviram
+  from: A2-13
+- item: gitara
+  from: A2-13
+- item: sviri
+  from: A2-13
+- item: pesna
+  from: A2-13
+- item: site-go-sakaat
+  from: A2-13
+- item: koj-e-toj
+  from: A2-13
+- item: pejac
+  from: A2-13
+- item: mlad
+  from: A2-13
+- item: srekjen
+  from: B1-15
+- item: srekjna
+  from: B1-15
+- item: sto-te-pravi
+  from: B1-15
+- item: lugje-koi
+  from: B1-15
+- item: gi-sakam
+  from: B1-15
+- item: zadovolstvo
+  from: B1-15
+- item: smisla
+  from: B1-15
+- item: rabotata-sto
+  from: B1-15
+- item: ima-smisla
+  from: B1-15
+- item: dovolno
+  from: B1-15
+- item: pari-ne-se
+  from: B1-15
+- item: ponuda
+  from: B2-01
+- item: rabotno-mesto
+  from: B2-01
+- item: se-bara
+  from: B2-01
+- item: uslovi
+  from: B2-01
+- item: iskustvo
+  from: B2-01
+- item: zainteresirana
+  from: B2-01
+- item: razgovor
+  from: B2-01
+- item: vi-odgovara
+  from: B2-01
+- item: mi-odgovara
+  from: B2-01
+- item: se-raboti
+  from: B2-01
+- item: od-devet-do-pet
+  from: B2-01
+- item: galaksija
+  from: B2-09
+- item: svetlosna-godina
+  from: B2-09
+- item: patuva
+  from: B2-09
+- item: doagja
+  from: B2-09
+- item: izgasnala
+  from: B2-09
+- item: mozebi-vekje
+  from: B2-09
+- item: ja-gledame
+  from: B2-09
+- item: vo-minatoto
+  from: B2-09
+- item: ogromen
+  from: B2-09
+- item: se-cuvstvuvam-mala
+  from: B2-09
+- item: rokot
+  from: B2-13
+- item: ni-pomina
+  from: B2-13
+- item: docnime
+  from: B2-13
+- item: zavrsuvame
+  from: B2-13
+- item: ke-zavrsime
+  from: B2-13
+- item: najdocna
+  from: B2-13
+- item: vetuvaj
+  from: B2-13
+- item: klientot-ceka
+  from: B2-13
+- item: polno-raboti
+  from: B2-13
+- item: se-slucija
+  from: B2-13
+- item: naslovot
+  from: B2-15
+- item: se-spodeluva
+  from: B2-15
+- item: lazna-vest
+  from: B2-15
+- item: izvor
+  from: B2-15
+- item: kade-pisuva
+  from: B2-15
+- item: sajt
+  from: B2-15
+- item: nepoznat
+  from: B2-15
+- item: proveri
+  from: B2-15
+- item: vistina
+  from: B2-15
+- item: se-pretera
+  from: B2-15
+- item: dali
+  from: A2-03
+steps:
+- type: narrator
+  text:
+    en: You want to work from home on Fridays. Mr Nikolovski's door is half open. Listen to the conversation; you don't need to understand it yet.
+    pt: Você quer trabalhar de casa às sextas. A porta do senhor Nikolovski está entreaberta. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Господине Николовски, имате ли една минута?
+    meaning:
+      en: Mr Nikolovski, do you have a minute?
+      pt: Senhor Nikolovski, o senhor tem um minuto?
+  - speaker: nikolovski
+    text: Повелете, седнете.
+    meaning:
+      en: Please, sit down.
+      pt: Pois não, sente-se.
+  - speaker: protagonist
+    text: Би сакал да разговараме за петоците. Дали може да работам од дома?
+    meaning:
+      en: I'd like to talk about Fridays. Could I work from home?
+      pt: Gostaria de conversar sobre as sextas. Posso trabalhar de casa?
+  - speaker: nikolovski
+    text: Зошто?
+    meaning:
+      en: Why?
+      pt: Por quê?
+  - speaker: protagonist
+    text: Дома сум попродуктивен — нема прекини.
+    meaning:
+      en: At home I'm more productive — no interruptions.
+      pt: Em casa sou mais produtivo — sem interrupções.
+  - speaker: nikolovski
+    text: Ве разбирам. Нека пробаме еден месец, па ќе видиме.
+    meaning:
+      en: I understand. Let's try it for a month, and then we'll see.
+      pt: Entendo. Vamos experimentar um mês, e depois a gente vê.
+  - speaker: protagonist
+    text: Ви благодарам многу.
+    meaning:
+      en: Thank you very much.
+      pt: Agradeço muito.
+  - speaker: nikolovski
+    text: Но во понеделник — сите во канцеларија.
+    meaning:
+      en: But on Monday — everyone in the office.
+      pt: Mas na segunda — todo mundo no escritório.
+- type: prompt
+  ask:
+    en: Ask the boss if he has a minute.
+    pt: Pergunte ao chefe se ele tem um minuto.
+  answer:
+    speaker: protagonist
+    text: Имате ли една минута?
+  items:
+  - imate-li-minuta
+- type: prompt
+  ask:
+    en: 'Say: I''d like us to talk about Fridays.'
+    pt: 'Diga: gostaria de conversar sobre as sextas.'
+  answer:
+    speaker: protagonist
+    text: Би сакал да разговараме за петоците.
+  items:
+  - bi-sakal-da-razgovarame
+  - za-petocite
+- type: prompt
+  ask:
+    en: 'Ask: could I work from home?'
+    pt: 'Pergunte: posso trabalhar de casa?'
+  answer:
+    speaker: protagonist
+    text: Дали може да работам од дома?
+  items:
+  - dali
+  - od-doma
+- type: prompt
+  ask:
+    en: 'Say: at home I''m more productive.'
+    pt: 'Diga: em casa sou mais produtivo.'
+  answer:
+    speaker: protagonist
+    text: Дома сум попродуктивен.
+  items:
+  - poproduktiven
+- type: prompt
+  ask:
+    en: 'He says: I understand you.'
+    pt: 'Ele diz: entendo.'
+  answer:
+    speaker: protagonist
+    text: Ве разбирам.
+  items:
+  - ve-razbiram
+- type: prompt
+  ask:
+    en: 'He says: let''s try it for a month.'
+    pt: 'Ele diz: vamos experimentar um mês.'
+  answer:
+    speaker: protagonist
+    text: Нека пробаме еден месец.
+  items:
+  - neka-probame
+  - eden-mesec
+- type: prompt
+  ask:
+    en: And then we'll see.
+    pt: E depois a gente vê.
+  answer:
+    speaker: protagonist
+    text: Па ќе видиме.
+  items:
+  - pa-ke-vidime
+- type: prompt
+  ask:
+    en: Thank him warmly.
+    pt: Agradeça calorosamente.
+  answer:
+    speaker: protagonist
+    text: Ви благодарам многу.
+  items:
+  - vi-blagodaram
+- type: narrator
+  text:
+    en: 'Bosses expect Вие and a request, not a demand: ''би сакал да разговараме'', ''дали може''. Give one reason that helps the company, and accept a trial.'
+    pt: 'O chefe espera Вие e um pedido, não uma exigência: ''би сакал да разговараме'', ''дали може''. Dê um motivo que ajude a empresa, e aceite um período de teste.'
+- type: prompt
+  ask:
+    en: 'Once more: say “Do you have a minute? (formal)”.'
+    pt: 'Mais uma vez: diga “O senhor tem um minuto?”.'
+  answer:
+    speaker: protagonist
+    text: Имате ли една минута?
+  items:
+  - imate-li-minuta
+- type: prompt
+  ask:
+    en: 'Once more: say “I''d like us to talk (a man)”.'
+    pt: 'Mais uma vez: diga “gostaria de conversar”.'
+  answer:
+    speaker: protagonist
+    text: би сакал да разговараме
+  items:
+  - bi-sakal-da-razgovarame
+- type: prompt
+  ask:
+    en: 'Once more: say “about Fridays”.'
+    pt: 'Mais uma vez: diga “sobre as sextas”.'
+  answer:
+    speaker: protagonist
+    text: за петоците
+  items:
+  - za-petocite
+- type: prompt
+  ask:
+    en: 'Once more: say “from home”.'
+    pt: 'Mais uma vez: diga “de casa”.'
+  answer:
+    speaker: protagonist
+    text: од дома
+  items:
+  - od-doma
+- type: prompt
+  ask:
+    en: 'Once more: say “more productive (masculine)”.'
+    pt: 'Mais uma vez: diga “mais produtivo”.'
+  answer:
+    speaker: protagonist
+    text: попродуктивен
+  items:
+  - poproduktiven
+- type: prompt
+  ask:
+    en: 'Once more: say “let''s try”.'
+    pt: 'Mais uma vez: diga “vamos experimentar”.'
+  answer:
+    speaker: protagonist
+    text: нека пробаме
+  items:
+  - neka-probame
+- type: prompt
+  ask:
+    en: 'Once more: say “one month”.'
+    pt: 'Mais uma vez: diga “um mês”.'
+  answer:
+    speaker: protagonist
+    text: еден месец
+  items:
+  - eden-mesec
+- type: prompt
+  ask:
+    en: 'Once more: say “and then we''ll see”.'
+    pt: 'Mais uma vez: diga “e depois a gente vê”.'
+  answer:
+    speaker: protagonist
+    text: па ќе видиме
+  items:
+  - pa-ke-vidime
+- type: prompt
+  ask:
+    en: 'Once more: say “I understand you (formal)”.'
+    pt: 'Mais uma vez: diga “entendo o senhor”.'
+  answer:
+    speaker: protagonist
+    text: ве разбирам
+  items:
+  - ve-razbiram
+- type: prompt
+  ask:
+    en: 'Once more: say “Thank you (formal, warmer)”.'
+    pt: 'Mais uma vez: diga “Agradeço”.'
+  answer:
+    speaker: protagonist
+    text: Ви благодарам
+  items:
+  - vi-blagodaram
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the headline — and “is being shared — and “fake news — and “source — and “Where is it written? — and “website — and “unknown (masculine) — and “check (informal) — and “truth, true — and “it''s
+      exaggerated — and “the deadline”.'
+    pt: 'Diga: “a manchete — e “está sendo compartilhado — e “notícia falsa — e “fonte — e “Onde está escrito? — e “site — e “desconhecido — e “verifica — e “verdade — e “é exagerado — e “o prazo”.'
+  answer:
+    speaker: protagonist
+    text: насловот … се споделува … лажна вест … извор … Каде пишува? … сајт … непознат … провери … вистина … се претера … рокот
+  items:
+  - naslovot
+  - se-spodeluva
+  - lazna-vest
+  - izvor
+  - kade-pisuva
+  - sajt
+  - nepoznat
+  - proveri
+  - vistina
+  - se-pretera
+  - rokot
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “passed us by, we missed — and “we''re late — and “we''re finishing — and “we''ll finish (completely) — and “at the latest — and “Promise! (informal) — and “the client is waiting — and “loads
+      of things — and “happened (plural) — and “galaxy — and “light year”.'
+    pt: 'Diga: “passou / perdemos — e “estamos atrasados — e “estamos terminando — e “vamos terminar — e “no máximo — e “Promete! — e “o cliente está esperando — e “um monte de coisas — e “aconteceram —
+      e “galáxia — e “ano-luz”.'
+  answer:
+    speaker: protagonist
+    text: ни помина … доцниме … завршуваме … ќе завршиме … најдоцна … Ветувај! … клиентот чека … полно работи … се случија … галаксија … светлосна година
+  items:
+  - ni-pomina
+  - docnime
+  - zavrsuvame
+  - ke-zavrsime
+  - najdocna
+  - vetuvaj
+  - klientot-ceka
+  - polno-raboti
+  - se-slucija
+  - galaksija
+  - svetlosna-godina
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “travels — and “comes, arrives — and “gone out, died (feminine, reportedly) — and “maybe already — and “we see it — and “in the past — and “huge (masculine) — and “I feel small (a woman) —
+      and “offer — and “job, position — and “is wanted, is required”.'
+    pt: 'Diga: “viaja — e “chega — e “apagada / extinta — e “talvez já — e “a gente vê — e “no passado — e “enorme — e “me sinto pequena — e “oferta / proposta — e “vaga / posto de trabalho — e “procura-se
+      / exige-se”.'
+  answer:
+    speaker: protagonist
+    text: патува … доаѓа … изгаснала … можеби веќе … ја гледаме … во минатото … огромен … се чувствувам мала … понуда … работно место … се бара
+  items:
+  - patuva
+  - doagja
+  - izgasnala
+  - mozebi-vekje
+  - ja-gledame
+  - vo-minatoto
+  - ogromen
+  - se-cuvstvuvam-mala
+  - ponuda
+  - rabotno-mesto
+  - se-bara
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “conditions, terms — and “experience — and “interested (a woman) — and “interview, conversation — and “Does … suit you? (formal) — and “suits me — and “one works, people work — and “from nine
+      to five — and “happy (masculine) — and “happy (feminine) — and “What makes you…?”.'
+    pt: 'Diga: “condições — e “experiência — e “interessada — e “entrevista / conversa — e “Para a senhora serve…? — e “me serve — e “trabalha-se — e “das nove às cinco — e “feliz — e “feliz — e “O que
+      te deixa…?”.'
+  answer:
+    speaker: protagonist
+    text: услови … искуство … заинтересирана … разговор … Ви одговара ли…? … ми одговара … се работи … од девет до пет … среќен … среќна … Што те прави…?
+  items:
+  - uslovi
+  - iskustvo
+  - zainteresirana
+  - razgovor
+  - vi-odgovara
+  - mi-odgovara
+  - se-raboti
+  - od-devet-do-pet
+  - srekjen
+  - srekjna
+  - sto-te-pravi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “people who — and “I love them — and “satisfaction, pleasure — and “meaning, sense — and “the work that — and “makes sense, has meaning — and “enough — and “money isn''t everything — and “Do
+      you like…? (informal) — and “I like it — and “music”.'
+    pt: 'Diga: “pessoas que — e “eu amo / gosto deles — e “satisfação / prazer — e “sentido — e “o trabalho que — e “faz sentido — e “suficiente — e “dinheiro não é tudo — e “Você gosta de…? — e “Eu gosto
+      — e “música”.'
+  answer:
+    speaker: protagonist
+    text: луѓе кои … ги сакам … задоволство … смисла … работата што … има смисла … доволно … парите не се сè … Ти се допаѓа…? … Ми се допаѓа … музика
+  items:
+  - lugje-koi
+  - gi-sakam
+  - zadovolstvo
+  - smisla
+  - rabotata-sto
+  - ima-smisla
+  - dovolno
+  - pari-ne-se
+  - ti-se-dopagja
+  - mi-se-dopagja
+  - muzika
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I prefer — and “I play (an instrument) — and “guitar — and “Play! (informal) — and “song — and “everyone loves him — and “Who is he? — and “singer — and “young (masculine)”.'
+    pt: 'Diga: “prefiro — e “eu toco — e “violão / guitarra — e “Toca! — e “música / canção — e “todo mundo gosta dele — e “Quem é ele? — e “cantor — e “jovem”.'
+  answer:
+    speaker: protagonist
+    text: повеќе сакам … свирам … гитара … Свири! … песна … сите го сакаат … Кој е тој? … пејач … млад
+  items:
+  - povekje-sakam
+  - sviram
+  - gitara
+  - sviri
+  - pesna
+  - site-go-sakaat
+  - koj-e-toj
+  - pejac
+  - mlad
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

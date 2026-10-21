@@ -1,0 +1,36 @@
+id: B2-20
+protagonist: m
+title: ["The difficult client", "O cliente difícil"]
+situation: ["An angry client calls: the app crashed in front of his own boss.", "Um cliente bravo liga: o aplicativo travou na frente do chefe dele."]
+learn: [b2-impersonal]
+culture: —
+items:
+  - [zalba, "жалба", "complaint", "reclamação"]
+  - [ve-razbiram-potpolno, "потполно ве разбирам", "I completely understand you", "entendo perfeitamente"]
+  - [se-slucilo, "се случило", "happened (reportedly)", "aconteceu"]
+  - [mi-e-zal, "ми е жал", "I'm sorry", "sinto muito"]
+  - [se-proveruva, "се проверува", "is being checked", "está sendo verificado"]
+  - [vednas-ke, "веднаш ќе", "right away I'll", "já vou"]
+  - [ve-izvestam, "ве известам", "inform you", "informar o senhor", {rare: true}]
+  - [ne-smee-da-se-sluci, "не смее да се случи", "must not happen", "não pode acontecer"]
+  - [nadomest, "надомест", "compensation", "compensação", {rare: true}]
+  - [ke-razgovaram-so, "ќе разговарам со", "I'll speak with", "vou conversar com"]
+dialogue:
+  - [klient, "Имам жалба! Апликацијата падна пред мојот директор!", "I have a complaint! The app crashed in front of my director!", "Tenho uma reclamação! O aplicativo caiu na frente do meu diretor!"]
+  - [protagonist, "Потполно ве разбирам. Ми е жал. Кога се случило?", "I completely understand. I'm sorry. When did it happen?", "Entendo perfeitamente. Sinto muito. Quando aconteceu?"]
+  - [klient, "Утрово, во девет!", "This morning, at nine!", "Hoje de manhã, às nove!"]
+  - [protagonist, "Проблемот веќе се проверува. Веднаш ќе ве известам.", "The problem is already being checked. I'll let you know right away.", "O problema já está sendo verificado. Já vou informar o senhor."]
+  - [klient, "Ова не смее да се случи пак.", "This must not happen again.", "Isso não pode acontecer de novo."]
+  - [protagonist, "Се согласувам. Ќе разговарам со г. Николовски за надомест.", "I agree. I'll speak with Mr Nikolovski about compensation.", "Concordo. Vou conversar com o senhor Nikolovski sobre uma compensação."]
+  - [klient, "...Добро. Чекам одговор до пладне.", "...All right. I expect an answer by noon.", "...Tá bom. Espero resposta até meio-dia."]
+  - [protagonist, "До пладне. Ви благодарам за трпението.", "By noon. Thank you for your patience.", "Até meio-dia. Obrigado pela paciência."]
+teach:
+  - ask: ["Say: I completely understand you.", "Diga: entendo perfeitamente.", "Потполно ве разбирам.", ve-razbiram-potpolno]
+  - ask: ["Say: I'm sorry.", "Diga: sinto muito.", "Ми е жал.", mi-e-zal]
+  - ask: ["Ask when it happened.", "Pergunte quando aconteceu.", "Кога се случило?", se-slucilo]
+  - ask: ["Say: the problem is being checked.", "Diga: o problema está sendo verificado.", "Проблемот се проверува.", se-proveruva]
+  - ask: ["Say: I'll let you know right away.", "Diga: já vou informar o senhor.", "Веднаш ќе ве известам.", vednas-ke, ve-izvestam]
+  - ask: ["He says: this must not happen again.", "Ele diz: isso não pode acontecer de novo.", "Ова не смее да се случи пак.", ne-smee-da-se-sluci]
+  - ask: ["Say: I'll speak with the boss about compensation.", "Diga: vou conversar com o chefe sobre uma compensação.", "Ќе разговарам со шефот за надомест.", ke-razgovaram-so, nadomest]
+  - ask: ["Say: a complaint.", "Diga: uma reclamação.", "Жалба.", zalba]
+  - note: ["With an angry client: understand, apologise, say what is already being done ('се проверува'), give a time — and keep it.", "Com cliente bravo: compreenda, peça desculpa, diga o que já está sendo feito ('се проверува'), dê um prazo — e cumpra."]

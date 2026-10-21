@@ -1,0 +1,535 @@
+# UNIT mk B2-20 — written by AI (Claude) for Casus; expanded from src/B2-20.yml by tools/expand_unit.py. Edit the source.
+
+id: B2-20
+level: B2
+number: 20
+protagonist: m
+title:
+  en: The difficult client
+  pt: O cliente difícil
+situation:
+  en: 'An angry client calls: the app crashed in front of his own boss.'
+  pt: 'Um cliente bravo liga: o aplicativo travou na frente do chefe dele.'
+learn_lessons:
+- b2-impersonal
+culture: —
+new_items:
+- id: zalba
+  text: жалба
+  meaning:
+    en: complaint
+    pt: reclamação
+- id: ve-razbiram-potpolno
+  text: потполно ве разбирам
+  meaning:
+    en: I completely understand you
+    pt: entendo perfeitamente
+- id: se-slucilo
+  text: се случило
+  meaning:
+    en: happened (reportedly)
+    pt: aconteceu
+- id: mi-e-zal
+  text: ми е жал
+  meaning:
+    en: I'm sorry
+    pt: sinto muito
+- id: se-proveruva
+  text: се проверува
+  meaning:
+    en: is being checked
+    pt: está sendo verificado
+- id: vednas-ke
+  text: веднаш ќе
+  meaning:
+    en: right away I'll
+    pt: já vou
+- id: ve-izvestam
+  text: ве известам
+  meaning:
+    en: inform you
+    pt: informar o senhor
+  rare: true
+- id: ne-smee-da-se-sluci
+  text: не смее да се случи
+  meaning:
+    en: must not happen
+    pt: não pode acontecer
+- id: nadomest
+  text: надомест
+  meaning:
+    en: compensation
+    pt: compensação
+  rare: true
+- id: ke-razgovaram-so
+  text: ќе разговарам со
+  meaning:
+    en: I'll speak with
+    pt: vou conversar com
+reviews:
+- item: stignavme
+  from: A2-17
+- item: rezervacija
+  from: A2-17
+- item: soba-za-dvajca
+  from: A2-17
+- item: na-koe-ime
+  from: A2-17
+- item: pogled
+  from: A2-17
+- item: pojadokot
+  from: A2-17
+- item: od-sedum
+  from: A2-17
+- item: plazata
+  from: A2-17
+- item: kade-mozeme
+  from: A2-17
+- item: prijaten-prestoj
+  from: A2-17
+- item: kade-bese
+  from: B1-19
+- item: te-cekase
+  from: B1-19
+- item: ne-bese-namerno
+  from: B1-19
+- item: zgotvi
+  from: B1-19
+- item: ke-i-se-javam
+  from: B1-19
+- item: ke-i-se-izvinam
+  from: B1-19
+- item: ne-se-luti
+  from: B1-19
+- item: ne-se-lutam
+  from: B1-19
+- item: vetuvam
+  from: B1-19
+- item: orevi
+  from: B1-19
+- item: neto
+  from: B2-05
+- item: bruto
+  from: B2-05
+- item: mesecno
+  from: B2-05
+- item: probna-rabota
+  from: B2-05
+- item: tri-meseci
+  from: B2-05
+- item: neopredeleno
+  from: B2-05
+- item: ke-bidam-zavrsila
+  from: B2-05
+- item: otkaz
+  from: B2-05
+- item: od-prvi
+  from: B2-05
+- item: dogovor-imame
+  from: B2-05
+- item: rokot
+  from: B2-13
+- item: ni-pomina
+  from: B2-13
+- item: docnime
+  from: B2-13
+- item: zavrsuvame
+  from: B2-13
+- item: ke-zavrsime
+  from: B2-13
+- item: najdocna
+  from: B2-13
+- item: vetuvaj
+  from: B2-13
+- item: klientot-ceka
+  from: B2-13
+- item: polno-raboti
+  from: B2-13
+- item: se-slucija
+  from: B2-13
+- item: ajde-na-kafe
+  from: B2-17
+- item: kafence
+  from: B2-17
+- item: muabet
+  from: B2-17
+- item: samo-pet-minuti
+  from: B2-17
+- item: casa
+  from: B2-17
+- item: casicka
+  from: B2-17
+- item: malku-vodicka
+  from: B2-17
+- item: ke-se-vratime
+  from: B2-17
+- item: pominaa
+  from: B2-17
+- item: ne-se-broi
+  from: B2-17
+- item: da-pocnam-so
+  from: B2-19
+- item: celta
+  from: B2-19
+- item: rezultati
+  from: B2-19
+- item: podobrivme
+  from: B2-19
+- item: namalivme
+  from: B2-19
+- item: zgolemivme
+  from: B2-19
+- item: za-dvaeset-procenti
+  from: B2-19
+- item: na-krajot-sakam
+  from: B2-19
+- item: da-mu-se-zablagodaram
+  from: B2-19
+- item: prasanja
+  from: B2-19
+steps:
+- type: narrator
+  text:
+    en: 'An angry client calls: the app crashed in front of his own boss. Listen to the conversation; you don''t need to understand it yet.'
+    pt: 'Um cliente bravo liga: o aplicativo travou na frente do chefe dele. Escute a conversa; ainda não precisa entender.'
+- type: dialogue
+  lines:
+  - speaker: klient
+    text: Имам жалба! Апликацијата падна пред мојот директор!
+    meaning:
+      en: I have a complaint! The app crashed in front of my director!
+      pt: Tenho uma reclamação! O aplicativo caiu na frente do meu diretor!
+  - speaker: protagonist
+    text: Потполно ве разбирам. Ми е жал. Кога се случило?
+    meaning:
+      en: I completely understand. I'm sorry. When did it happen?
+      pt: Entendo perfeitamente. Sinto muito. Quando aconteceu?
+  - speaker: klient
+    text: Утрово, во девет!
+    meaning:
+      en: This morning, at nine!
+      pt: Hoje de manhã, às nove!
+  - speaker: protagonist
+    text: Проблемот веќе се проверува. Веднаш ќе ве известам.
+    meaning:
+      en: The problem is already being checked. I'll let you know right away.
+      pt: O problema já está sendo verificado. Já vou informar o senhor.
+  - speaker: klient
+    text: Ова не смее да се случи пак.
+    meaning:
+      en: This must not happen again.
+      pt: Isso não pode acontecer de novo.
+  - speaker: protagonist
+    text: Се согласувам. Ќе разговарам со г. Николовски за надомест.
+    meaning:
+      en: I agree. I'll speak with Mr Nikolovski about compensation.
+      pt: Concordo. Vou conversar com o senhor Nikolovski sobre uma compensação.
+  - speaker: klient
+    text: '...Добро. Чекам одговор до пладне.'
+    meaning:
+      en: '...All right. I expect an answer by noon.'
+      pt: '...Tá bom. Espero resposta até meio-dia.'
+  - speaker: protagonist
+    text: До пладне. Ви благодарам за трпението.
+    meaning:
+      en: By noon. Thank you for your patience.
+      pt: Até meio-dia. Obrigado pela paciência.
+- type: prompt
+  ask:
+    en: 'Say: I completely understand you.'
+    pt: 'Diga: entendo perfeitamente.'
+  answer:
+    speaker: protagonist
+    text: Потполно ве разбирам.
+  items:
+  - ve-razbiram-potpolno
+- type: prompt
+  ask:
+    en: 'Say: I''m sorry.'
+    pt: 'Diga: sinto muito.'
+  answer:
+    speaker: protagonist
+    text: Ми е жал.
+  items:
+  - mi-e-zal
+- type: prompt
+  ask:
+    en: Ask when it happened.
+    pt: Pergunte quando aconteceu.
+  answer:
+    speaker: protagonist
+    text: Кога се случило?
+  items:
+  - se-slucilo
+- type: prompt
+  ask:
+    en: 'Say: the problem is being checked.'
+    pt: 'Diga: o problema está sendo verificado.'
+  answer:
+    speaker: protagonist
+    text: Проблемот се проверува.
+  items:
+  - se-proveruva
+- type: prompt
+  ask:
+    en: 'Say: I''ll let you know right away.'
+    pt: 'Diga: já vou informar o senhor.'
+  answer:
+    speaker: protagonist
+    text: Веднаш ќе ве известам.
+  items:
+  - vednas-ke
+  - ve-izvestam
+- type: prompt
+  ask:
+    en: 'He says: this must not happen again.'
+    pt: 'Ele diz: isso não pode acontecer de novo.'
+  answer:
+    speaker: protagonist
+    text: Ова не смее да се случи пак.
+  items:
+  - ne-smee-da-se-sluci
+- type: prompt
+  ask:
+    en: 'Say: I''ll speak with the boss about compensation.'
+    pt: 'Diga: vou conversar com o chefe sobre uma compensação.'
+  answer:
+    speaker: protagonist
+    text: Ќе разговарам со шефот за надомест.
+  items:
+  - ke-razgovaram-so
+  - nadomest
+- type: prompt
+  ask:
+    en: 'Say: a complaint.'
+    pt: 'Diga: uma reclamação.'
+  answer:
+    speaker: protagonist
+    text: Жалба.
+  items:
+  - zalba
+- type: narrator
+  text:
+    en: 'With an angry client: understand, apologise, say what is already being done (''се проверува''), give a time — and keep it.'
+    pt: 'Com cliente bravo: compreenda, peça desculpa, diga o que já está sendo feito (''се проверува''), dê um prazo — e cumpra.'
+- type: prompt
+  ask:
+    en: 'Once more: say “complaint”.'
+    pt: 'Mais uma vez: diga “reclamação”.'
+  answer:
+    speaker: protagonist
+    text: жалба
+  items:
+  - zalba
+- type: prompt
+  ask:
+    en: 'Once more: say “I completely understand you”.'
+    pt: 'Mais uma vez: diga “entendo perfeitamente”.'
+  answer:
+    speaker: protagonist
+    text: потполно ве разбирам
+  items:
+  - ve-razbiram-potpolno
+- type: prompt
+  ask:
+    en: 'Once more: say “happened (reportedly)”.'
+    pt: 'Mais uma vez: diga “aconteceu”.'
+  answer:
+    speaker: protagonist
+    text: се случило
+  items:
+  - se-slucilo
+- type: prompt
+  ask:
+    en: 'Once more: say “I''m sorry”.'
+    pt: 'Mais uma vez: diga “sinto muito”.'
+  answer:
+    speaker: protagonist
+    text: ми е жал
+  items:
+  - mi-e-zal
+- type: prompt
+  ask:
+    en: 'Once more: say “is being checked”.'
+    pt: 'Mais uma vez: diga “está sendo verificado”.'
+  answer:
+    speaker: protagonist
+    text: се проверува
+  items:
+  - se-proveruva
+- type: prompt
+  ask:
+    en: 'Once more: say “right away I''ll”.'
+    pt: 'Mais uma vez: diga “já vou”.'
+  answer:
+    speaker: protagonist
+    text: веднаш ќе
+  items:
+  - vednas-ke
+- type: prompt
+  ask:
+    en: 'Once more: say “inform you”.'
+    pt: 'Mais uma vez: diga “informar o senhor”.'
+  answer:
+    speaker: protagonist
+    text: ве известам
+  items:
+  - ve-izvestam
+- type: prompt
+  ask:
+    en: 'Once more: say “must not happen”.'
+    pt: 'Mais uma vez: diga “não pode acontecer”.'
+  answer:
+    speaker: protagonist
+    text: не смее да се случи
+  items:
+  - ne-smee-da-se-sluci
+- type: prompt
+  ask:
+    en: 'Once more: say “compensation”.'
+    pt: 'Mais uma vez: diga “compensação”.'
+  answer:
+    speaker: protagonist
+    text: надомест
+  items:
+  - nadomest
+- type: prompt
+  ask:
+    en: 'Once more: say “I''ll speak with”.'
+    pt: 'Mais uma vez: diga “vou conversar com”.'
+  answer:
+    speaker: protagonist
+    text: ќе разговарам со
+  items:
+  - ke-razgovaram-so
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “let me start with — and “the goal — and “results — and “we improved — and “we reduced — and “we increased — and “by twenty per cent — and “finally I''d like — and “to thank him — and “questions”.'
+    pt: 'Diga: “começo com — e “o objetivo — e “resultados — e “melhoramos — e “reduzimos — e “aumentamos — e “em vinte por cento — e “por fim quero — e “agradecer a ele — e “perguntas”.'
+  answer:
+    speaker: protagonist
+    text: да почнам со … целта … резултати … подобривме … намаливме … зголемивме … за дваесет проценти … на крајот сакам … да му се заблагодарам … прашања
+  items:
+  - da-pocnam-so
+  - celta
+  - rezultati
+  - podobrivme
+  - namalivme
+  - zgolemivme
+  - za-dvaeset-procenti
+  - na-krajot-sakam
+  - da-mu-se-zablagodaram
+  - prasanja
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Let''s go for coffee! — and “a little coffee — and “chat, good conversation — and “just five minutes — and “glass / cup — and “a little cup — and “a little water — and “we''ll come back —
+      and “(they) passed, went by — and “doesn''t count”.'
+    pt: 'Diga: “Bora tomar um café! — e “um cafezinho — e “papo / conversa — e “só cinco minutos — e “copo / xícara — e “xicrinha — e “uma aguinha — e “a gente volta — e “passaram — e “não conta”.'
+  answer:
+    speaker: protagonist
+    text: Ајде на кафе! … кафенце … муабет … само пет минути … чаша … чашка … малку водичка … ќе се вратиме … поминаа … не се брои
+  items:
+  - ajde-na-kafe
+  - kafence
+  - muabet
+  - samo-pet-minuti
+  - casa
+  - casicka
+  - malku-vodicka
+  - ke-se-vratime
+  - pominaa
+  - ne-se-broi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the deadline — and “passed us by, we missed — and “we''re late — and “we''re finishing — and “we''ll finish (completely) — and “at the latest — and “Promise! (informal) — and “the client
+      is waiting — and “loads of things — and “happened (plural)”.'
+    pt: 'Diga: “o prazo — e “passou / perdemos — e “estamos atrasados — e “estamos terminando — e “vamos terminar — e “no máximo — e “Promete! — e “o cliente está esperando — e “um monte de coisas — e “aconteceram”.'
+  answer:
+    speaker: protagonist
+    text: рокот … ни помина … доцниме … завршуваме … ќе завршиме … најдоцна … Ветувај! … клиентот чека … полно работи … се случија
+  items:
+  - rokot
+  - ni-pomina
+  - docnime
+  - zavrsuvame
+  - ke-zavrsime
+  - najdocna
+  - vetuvaj
+  - klientot-ceka
+  - polno-raboti
+  - se-slucija
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “net (after tax) — and “gross (before tax) — and “monthly — and “probation period — and “three months — and “permanent (open-ended) — and “I will have finished (a woman) — and “notice period
+      — and “from the first (of the month) — and “We have a deal”.'
+    pt: 'Diga: “líquido — e “bruto — e “por mês — e “período de experiência — e “três meses — e “por tempo indeterminado — e “terei terminado — e “aviso prévio — e “a partir do dia primeiro — e “Fechado”.'
+  answer:
+    speaker: protagonist
+    text: нето … бруто … месечно … пробна работа … три месеци … на неопределено време … ќе бидам завршила … отказен рок … од први … Имаме договор
+  items:
+  - neto
+  - bruto
+  - mesecno
+  - probna-rabota
+  - tri-meseci
+  - neopredeleno
+  - ke-bidam-zavrsila
+  - otkaz
+  - od-prvi
+  - dogovor-imame
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Where were you? (informal) — and “was waiting for you — and “it wasn''t on purpose — and “cooked — and “I''ll call her — and “I''ll apologise to her — and “Don''t be angry (informal) — and
+      “I''m not angry — and “I promise — and “walnuts”.'
+    pt: 'Diga: “Onde você estava? — e “estava te esperando — e “não foi de propósito — e “cozinhou — e “vou ligar para ela — e “vou pedir desculpas a ela — e “Não fica bravo — e “não estou bravo — e “prometo
+      — e “nozes”.'
+  answer:
+    speaker: protagonist
+    text: Каде беше? … те чекаше … не беше намерно … зготви … ќе ѝ се јавам … ќе ѝ се извинам … Не се лути … не се лутам … ветувам … ореви
+  items:
+  - kade-bese
+  - te-cekase
+  - ne-bese-namerno
+  - zgotvi
+  - ke-i-se-javam
+  - ke-i-se-izvinam
+  - ne-se-luti
+  - ne-se-lutam
+  - vetuvam
+  - orevi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “We''ve arrived! — and “reservation — and “double room / room for two — and “In what name? — and “view — and “the breakfast — and “from seven — and “the beach — and “Where can we…? — and “Enjoy
+      your stay!”.'
+    pt: 'Diga: “Chegamos! — e “reserva — e “quarto para dois — e “Em nome de quem? — e “vista — e “o café da manhã — e “das sete — e “a praia — e “Onde a gente pode…? — e “Boa estadia!”.'
+  answer:
+    speaker: protagonist
+    text: Стигнавме! … резервација … соба за двајца … На кое име? … поглед … појадокот … од седум … плажата … Каде можеме…? … Пријатен престој!
+  items:
+  - stignavme
+  - rezervacija
+  - soba-za-dvajca
+  - na-koe-ime
+  - pogled
+  - pojadokot
+  - od-sedum
+  - plazata
+  - kade-mozeme
+  - prijaten-prestoj
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

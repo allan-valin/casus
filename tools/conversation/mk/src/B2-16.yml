@@ -1,0 +1,36 @@
+id: B2-16
+protagonist: m
+title: ["Talking to the boss", "Falar com o chefe"]
+situation: ["You want to work from home on Fridays. Mr Nikolovski's door is half open.", "Você quer trabalhar de casa às sextas. A porta do senhor Nikolovski está entreaberta."]
+learn: [b2-neka]
+culture: Hierarchy
+items:
+  - [imate-li-minuta, "Имате ли една минута?", "Do you have a minute? (formal)", "O senhor tem um minuto?"]
+  - [bi-sakal-da-razgovarame, "би сакал да разговараме", "I'd like us to talk (a man)", "gostaria de conversar"]
+  - [za-petocite, "за петоците", "about Fridays", "sobre as sextas"]
+  - [od-doma, "од дома", "from home", "de casa"]
+  - [poproduktiven, "попродуктивен", "more productive (masculine)", "mais produtivo", {rare: true}]
+  - [neka-probame, "нека пробаме", "let's try", "vamos experimentar"]
+  - [eden-mesec, "еден месец", "one month", "um mês"]
+  - [pa-ke-vidime, "па ќе видиме", "and then we'll see", "e depois a gente vê"]
+  - [ve-razbiram, "ве разбирам", "I understand you (formal)", "entendo o senhor"]
+  - [vi-blagodaram, "Ви благодарам", "Thank you (formal, warmer)", "Agradeço"]
+dialogue:
+  - [protagonist, "Господине Николовски, имате ли една минута?", "Mr Nikolovski, do you have a minute?", "Senhor Nikolovski, o senhor tem um minuto?"]
+  - [nikolovski, "Повелете, седнете.", "Please, sit down.", "Pois não, sente-se."]
+  - [protagonist, "Би сакал да разговараме за петоците. Дали може да работам од дома?", "I'd like to talk about Fridays. Could I work from home?", "Gostaria de conversar sobre as sextas. Posso trabalhar de casa?"]
+  - [nikolovski, "Зошто?", "Why?", "Por quê?"]
+  - [protagonist, "Дома сум попродуктивен — нема прекини.", "At home I'm more productive — no interruptions.", "Em casa sou mais produtivo — sem interrupções."]
+  - [nikolovski, "Ве разбирам. Нека пробаме еден месец, па ќе видиме.", "I understand. Let's try it for a month, and then we'll see.", "Entendo. Vamos experimentar um mês, e depois a gente vê."]
+  - [protagonist, "Ви благодарам многу.", "Thank you very much.", "Agradeço muito."]
+  - [nikolovski, "Но во понеделник — сите во канцеларија.", "But on Monday — everyone in the office.", "Mas na segunda — todo mundo no escritório."]
+teach:
+  - ask: ["Ask the boss if he has a minute.", "Pergunte ao chefe se ele tem um minuto.", "Имате ли една минута?", imate-li-minuta]
+  - ask: ["Say: I'd like us to talk about Fridays.", "Diga: gostaria de conversar sobre as sextas.", "Би сакал да разговараме за петоците.", bi-sakal-da-razgovarame, za-petocite]
+  - ask: ["Ask: could I work from home?", "Pergunte: posso trabalhar de casa?", "Дали може да работам од дома?", dali, od-doma]
+  - ask: ["Say: at home I'm more productive.", "Diga: em casa sou mais produtivo.", "Дома сум попродуктивен.", poproduktiven]
+  - ask: ["He says: I understand you.", "Ele diz: entendo.", "Ве разбирам.", ve-razbiram]
+  - ask: ["He says: let's try it for a month.", "Ele diz: vamos experimentar um mês.", "Нека пробаме еден месец.", neka-probame, eden-mesec]
+  - ask: ["And then we'll see.", "E depois a gente vê.", "Па ќе видиме.", pa-ke-vidime]
+  - ask: ["Thank him warmly.", "Agradeça calorosamente.", "Ви благодарам многу.", vi-blagodaram]
+  - note: ["Bosses expect Вие and a request, not a demand: 'би сакал да разговараме', 'дали може'. Give one reason that helps the company, and accept a trial.", "O chefe espera Вие e um pedido, não uma exigência: 'би сакал да разговараме', 'дали може'. Dê um motivo que ajude a empresa, e aceite um período de teste."]
