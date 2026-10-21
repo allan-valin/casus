@@ -16,7 +16,7 @@ const LEX = {
   Er: [N('nom', 'sg', 'm', 'pron', 'er')], ging: [V('3', 'sg', 'pret')], ohne: [{ lemma: 'ohne', pos: 'prep', governs: 'acc' }, { lemma: 'ohne', pos: 'conj' }],
   füttern: [V('0', 'x', 'x', 'inf', 'füttern'), V('3', 'pl', 'pres', 'ind', 'füttern')],
 };
-const lexicon = { lookupAll: async (keys) => new Map(keys.map((k) => [k, LEX[k] ?? []])) };
+const lexicon = { lookupAll: async (keys) => new Map(keys.map((k) => [k, LEX[k] ?? []])), file: async (n) => (n === 'valency.json' ? { sehen: ['acc'] } : null) };
 async function read(text) { const s = createState({ text, lexicon, lang: de }); await s.load(); return s.blocks(); }
 const R = (b) => [...new Set(b.candidates.map((c) => [c.analysis.pos, c.analysis.case, c.analysis.number, c.analysis.gender].filter((x) => x && x !== 'x').join(' ')))].sort();
 const by = (blocks, surface) => blocks.find((b) => b.token.surface === surface);
@@ -31,5 +31,11 @@ describe('CL8a: no nominative in a zu-infinitive clause', () => {
     const b = await read('Er ging, ohne den Hund zu füttern.');
     expect(R(by(b, 'ohne'))).toEqual(['conj']);
     expect(R(by(b, 'Hund'))).toEqual(['noun acc sg m']);
+  });
+  it('the valency of the infinitive counts inside the clause: Mann (also a dative-plural unit form) is accusative after sehen', async () => {
+    LEX.Mann = [...LEX.Mann, N('dat', 'pl', 'm', 'noun', 'Mann')];
+    const b = await read('Ich hoffe, den Mann zu sehen.');
+    expect(R(by(b, 'Mann'))).toEqual(['noun acc sg m']);
+    expect(R(by(b, 'den'))).toEqual(['det acc sg m']);
   });
 });

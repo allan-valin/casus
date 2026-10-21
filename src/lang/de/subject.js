@@ -65,6 +65,21 @@ export function subjectStage(blocks, ctx) {
       if (at > 0 && group.length > 1 && out[i].candidates.some((c) => c.analysis.pos === 'interj')) narrow(out, i, (c) => c.analysis.pos !== 'interj', 'inside a clause, so not an interjection');
     });
     const finite = group.filter((i) => out[i].candidates.length && out[i].candidates.every((c) => c.analysis.pos === 'verb' && (FINITE.has(c.analysis.mood) || c.analysis.mood === 'imp')) && out[i].candidates.some((c) => FINITE.has(c.analysis.mood)));
+    // CL10 in a zu-infinitive clause (den Mann zu sehen): no finite verb, the infinitive's valency settles the objects
+    if (!finite.length && valency && group.length > 2 && out[group[group.length - 2]].token.key.toLowerCase() === 'zu') {
+      const inf = out[group[group.length - 1]];
+      const lemmas = [...new Set(inf.candidates.map((c) => String(c.analysis.lemma)))];
+      if (inf.candidates.length && inf.candidates.every((c) => c.analysis.mood === 'inf') && lemmas.length === 1 && valency[lemmas[0]]) {
+        const takes = new Set(valency[lemmas[0]]);
+        for (const i of group.slice(0, -2)) {
+          const b = out[i];
+          if (!b.candidates.some(isNounish) || governed(b) || TIME.test(b.token.key)) continue;
+          const prevNoun = out[i - 1] && group.includes(i - 1) && out[i - 1].candidates.some((c) => c.analysis.pos === 'noun');
+          narrow(out, i, (c) => !isNounish(c) || takes.has(c.analysis.case) || (prevNoun && c.analysis.case === 'gen'),
+            `valency: ${inf.token.surface} takes ${[...takes].map((x) => ({ acc: 'an accusative', dat: 'a dative', gen: 'a genitive' }[x])).join(' and ')}`);
+        }
+      }
+    }
     if (finite.length !== 1) continue;
     const verb = out[finite[0]];
     if (group.slice(1).some((i) => BREAKERS.has(out[i].token.key.toLowerCase()))) continue;   // als/wie opening the clause is a subordinator

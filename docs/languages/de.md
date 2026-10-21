@@ -129,7 +129,7 @@ syntax model of design §8).
 | CL7 | The finite verb agrees in number with the nominative subject (*die Kinder **spielen***): one certain nominative subject and no *und/oder* → its number. | done |
 | CL8 | *zu* + infinitive at the clause end is an infinitive group (*um … zu*, *ohne … zu*, *statt … zu*); *zu* there is not a preposition. | done |
 | CL9 | Compound tenses and the passive: *haben/sein* + Partizip II = Perfekt; *werden* + Infinitiv = Futur; *werden* + Partizip II = Passiv. Mark the pair. | next |
-| CL10 | Verb valency: which case a verb takes for its objects (*helfen* + dat, *gedenken* + gen, *geben* + dat + acc) settles the remaining nominal cases. Needs a valency list per verb. | done for 148 common verbs (tools/casus_build/de/valency.py) |
+| CL10 | Verb valency: which case a verb takes for its objects (*helfen* + dat, *gedenken* + gen, *geben* + dat + acc) settles the remaining nominal cases. Needs a valency list per verb. | done for 148 common verbs (tools/casus_build/de/valency.py); inside zu-infinitive clauses too since 2026-10-21 (*den Mann zu sehen*) |
 
 ### Added from the German-teacher review (2026-10-18, 98 sentences)
 
@@ -166,8 +166,6 @@ syntax model of design §8).
   knows titles (Frau/Herr) before deciding.
 - Verb + preposition pairs (*warten auf* + acc, *denken an* + acc, *teilnehmen an* + dat) would settle the two-way
   prepositions after those verbs; needs a list like valency.json.
-- *den Mann zu sehen*: *Mann* keeps dative plural (the unit plural *drei Mann*); the verb's valency is not applied
-  inside zu-infinitive clauses yet.
 
 ### Order of the cascade (German)
 
