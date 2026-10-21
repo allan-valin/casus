@@ -404,6 +404,28 @@ describe('Conversation practice tab (Allan, 2026-10-20/21: narrator in the inter
     expect(container.querySelectorAll('.step[data-type="narrator"]')[1].textContent).not.toContain('«');
   });
 
+  it('an apostrophe in “don\u2019t” is not a quote, and unquoted Cyrillic still goes to the taught voice (Allan 2026-10-22: English read the Macedonian)', async () => {
+    setLang('en');
+    const spoken = [];
+    const course = { ...COURSE, language: 'mk', units: [{ ...COURSE.units[0], steps: [
+      { type: 'narrator', text: { en: "To greet someone you don't know, say 'Добар ден'. Listen." } },
+      { type: 'narrator', text: { en: "Words in -о take -то: око → окото. It's easy." } }, { type: 'selfcheck' }] }] };
+    const { p } = props({ lang: { ...getLanguage('mk') }, loadTalk: async () => course, speakTaught: async (t) => { spoken.push(['taught', t]); }, speakNarrator: async (t) => { spoken.push(['narrator', t]); } });
+    const { container } = render(Talk, p);
+    await flush();
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    const plays = container.querySelectorAll('.step[data-type="narrator"] .play');
+    await fireEvent.click(plays[0]);
+    await flush();
+    expect(spoken).toEqual([['narrator', "To greet someone you don't know, say"], ['taught', 'Добар ден'], ['narrator', 'Listen.']]);
+    spoken.length = 0;
+    await fireEvent.click(plays[1]);
+    await flush();
+    for (const [who, text] of spoken) if (who === 'narrator') expect(text).not.toMatch(/\p{Script=Cyrillic}/u);
+    expect(spoken.filter(([w]) => w === 'taught').map(([, t]) => t)).toEqual(['о', 'то', 'око', 'окото']);
+  });
+
   it('hands-free: a pause holds the whole run — the next step does not start until resumed (Allan 2026-10-21 bug)', async () => {
     const spoken = [];
     let hold;
@@ -635,5 +657,38 @@ describe('character pitches', async () => {
     expect(pitchOf(course, { protagonist: 'f' }, 'protagonist')).toBe(1.25);
     expect(pitchOf(course, { protagonist: 'm' }, 'jonas')).toBe(1.12);
     expect(pitchOf(course, {}, 'nobody')).toBe(1);
+  });
+});
+
+describe('narration split over the real courses', () => {
+  it('no narrator part of any course still contains another alphabet', async () => {
+    const { readFileSync, readdirSync } = await import('node:fs');
+    const { narrationParts, taughtLetters } = await import('../../src/app/lib/narration.js');
+    const bad = [];
+    for (const f of readdirSync('public/talk').filter((x) => x.endsWith('.json'))) {
+      const c = JSON.parse(readFileSync(`public/talk/${f}`, 'utf8'));
+      const letters = taughtLetters(c.language, c.units.flatMap((u) => u.steps ?? []).find((x) => x.lines?.length)?.lines[0].text);
+      for (const u of c.units ?? []) for (const st of u.steps ?? []) {
+        if (st.type !== 'narrator') continue;
+        for (const [l, text] of Object.entries(st.text ?? {})) {
+          if (['ar', 'mk'].includes(l)) {   // a non-Latin narrator of a Latin-script course keeps its own voice
+            if (!letters) expect(narrationParts(text, letters).every((x) => !x.taught || /«/.test(text))).toBe(true);
+            continue;
+          }
+          for (const part of narrationParts(text, letters)) if (!part.taught && /[^\p{Script=Latin}\P{L}]/u.test(part.text)) bad.push(`${f} ${u.id} ${l}: ${part.text}`);
+        }
+      }
+    }
+    expect(bad.slice(0, 10)).toEqual([]);
+  });
+});
+
+describe('narration in a non-Latin narrator language', () => {
+  it('a German course narrated in Arabic or Macedonian keeps the narration in the narrator voice', async () => {
+    const { narrationParts, taughtLetters } = await import('../../src/app/lib/narration.js');
+    const letters = taughtLetters('de', 'Guten Tag, Frau Becker.');
+    expect(letters).toBeNull();
+    expect(narrationParts('За поздрав кажете «Guten Tag». Слушајте.', letters)).toEqual([
+      { text: 'За поздрав кажете', taught: false }, { text: 'Guten Tag', taught: true }, { text: 'Слушајте.', taught: false }]);
   });
 });

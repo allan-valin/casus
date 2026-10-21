@@ -9,6 +9,7 @@
   import { onMount } from 'svelte';
   import { t, ui } from '../lib/i18n.svelte.js';
   import { voicePitches, pitchOf, speedOf } from '../lib/talkvoices.js';
+  import { narrationParts, taughtLetters } from '../lib/narration.js';
   let { lang, loadTalk, storage = null, speakTaught = async () => {}, speakNarrator = async () => {}, trainerHref = null,
     say = () => {}, pause = (ms) => new Promise((r) => setTimeout(r, ms)), Practice = null, practiceProps = {}, control = null,
     voices = [], narratorVoiceOf = null, Entry = null, entryProps = {}, VoiceBox = null } = $props();
@@ -73,6 +74,8 @@
   const items = $derived(unit ? Object.fromEntries((unit.new_items ?? []).concat(course.items ?? []).map((i) => [i.id, i])) : {});
   const speaker = (id) => (id === 'protagonist' ? t('talk.you') : course?.cast?.[id]?.name ?? id);
   const pitches = $derived(voicePitches(course));
+  // the taught language's alphabet, from its first dialogue line (Latin-script courses: only «…» marks taught words)
+  const letters = $derived(taughtLetters(course?.language, course?.units?.flatMap((u) => u.steps ?? []).find((x) => x.lines?.length)?.lines[0].text));
   const firstDialogue = $derived(unit?.steps.find((s) => s.type === 'dialogue' && !s.again) ?? null);
   const linesOf = (s) => (s.again ? firstDialogue?.lines ?? [] : s.lines ?? []);
 
@@ -94,25 +97,9 @@
   async function waitWhilePaused(my) { while (paused && my === run) await new Promise((r) => setTimeout(r, 120)); }
   // narration with words of the taught language: those go to the taught voice (Allan, 2026-10-21: the Portuguese voice
   // spelled Cyrillic letter by letter). Quoted words in another alphabet are found by themselves; «…» marks any.
-  const LATIN = /^[\p{Script=Latin}\p{N}\p{P}\p{Z}\p{M}]*$/u;
-  function narrationParts(text) {
-    const out = [];
-    const re = /«([^»]+)»|['‘’"“”]([^'‘’"“”]+)['‘’"“”]/gu;
-    let at = 0;
-    for (const m of String(text).matchAll(re)) {
-      const inner = m[1] ?? m[2];
-      const taught = m[1] != null || !LATIN.test(inner);
-      if (!taught) continue;
-      if (m.index > at) out.push({ text: text.slice(at, m.index), taught: false });
-      out.push({ text: inner, taught: true });
-      at = m.index + m[0].length;
-    }
-    if (at < text.length) out.push({ text: text.slice(at), taught: false });
-    return out.map((p) => ({ ...p, text: p.taught ? p.text.trim() : p.text.replace(/^[\s\p{P}]+(?=\p{L})/u, '').trim() })).filter((p) => /[\p{L}\p{N}]/u.test(p.text));
-  }
   const shownNarration = (text) => String(text ?? '').replace(/«([^»]+)»/g, '$1');
   async function narrate(text, my) {
-    for (const part of narrationParts(text)) {
+    for (const part of narrationParts(text, letters)) {
       if (my !== undefined && my !== run) break;
       if (part.taught) await sayTaught(part.text);
       else noteFallback(await speakNarrator(part.text, narratorLang));
