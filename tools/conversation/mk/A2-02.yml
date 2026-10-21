@@ -1,0 +1,645 @@
+# UNIT mk A2-02 — written by AI (Claude) for Casus; expanded from src/A2-02.yml by tools/expand_unit.py. Edit the source.
+
+id: A2-02
+level: A2
+number: 2
+protagonist: m
+title:
+  en: The residence permit
+  pt: A autorização de residência
+situation:
+  en: At the Ministry of the Interior (МВР), for your residence permit. One paper is missing.
+  pt: No Ministério do Interior (МВР), para a autorização de residência. Falta um papel.
+learn_lessons:
+- a2-future
+culture: Papers, copies, and 'knowing someone'
+new_items:
+- id: dojdov
+  text: дојдов
+  meaning:
+    en: I came
+    pt: eu vim
+- id: dozvola
+  text: дозвола за престој
+  meaning:
+    en: residence permit
+    pt: autorização de residência
+  rare: true
+- id: pasos
+  text: пасош
+  meaning:
+    en: passport
+    pt: passaporte
+- id: slika
+  text: слика
+  meaning:
+    en: photo / picture
+    pt: foto / quadro
+- id: eve
+  text: еве
+  meaning:
+    en: here is / here are
+    pt: aqui está / eis
+- id: nedostasuva
+  text: недостасува
+  meaning:
+    en: is missing
+    pt: está faltando
+  rare: true
+- id: dokument
+  text: документ
+  meaning:
+    en: document
+    pt: documento
+- id: dogovorot
+  text: договорот за работа
+  meaning:
+    en: the work contract
+    pt: o contrato de trabalho
+  rare: true
+- id: ke-dojdam
+  text: ќе дојдам
+  meaning:
+    en: I'll come
+    pt: eu venho / virei
+- id: ne-rabotime
+  text: не работиме
+  meaning:
+    en: we're closed (we don't work)
+    pt: não abrimos (não trabalhamos)
+- id: vo-kolku-casot
+  text: Во колку часот?
+  meaning:
+    en: At what time?
+    pt: A que horas?
+- id: osum
+  text: осум
+  meaning:
+    en: eight
+    pt: oito
+- id: kopija
+  text: копија
+  meaning:
+    en: copy
+    pt: cópia
+  rare: true
+reviews:
+- item: dobar-den
+  from: A1-01
+- item: izvinete
+  from: A1-01
+- item: ne-razbiram
+  from: A1-01
+- item: zboruvate-angliski
+  from: A1-01
+- item: da
+  from: A1-01
+- item: od-brazil
+  from: A1-01
+- item: malku
+  from: A1-01
+- item: jas-sum
+  from: A1-01
+- item: novata-stanarka
+  from: A1-01
+- item: povelete
+  from: A1-01
+- item: ova-e
+  from: A1-01
+- item: klucot
+  from: A1-01
+- item: blagodaram
+  from: A1-01
+- item: gospogjo
+  from: A1-01
+- item: nema-zosto
+  from: A1-01
+- item: dobredojdovte
+  from: A1-01
+- item: zesko
+  from: A1-17
+- item: otvoren
+  from: A1-17
+- item: vratata
+  from: A1-17
+- item: promaja
+  from: A1-17
+- item: sto-e-toa
+  from: A1-17
+- item: veter
+  from: A1-17
+- item: ke-nastinete
+  from: A1-17
+- item: nema
+  from: A1-17
+- item: klima
+  from: A1-17
+- item: zatvorete
+  from: A1-17
+- item: vednas
+  from: A1-17
+- item: poloso
+  from: A1-17
+- item: domasna
+  from: A1-25
+- item: rakija
+  from: A1-25
+- item: samo-malku
+  from: A1-25
+- item: na-zdravje
+  from: A1-25
+- item: pogledni-me
+  from: A1-25
+- item: e-sega
+  from: A1-25
+- item: jaka
+  from: A1-25
+- item: slivi
+  from: A1-25
+- item: ne-blagodaram
+  from: A1-25
+- item: sam-ja-pravam
+  from: A1-25
+- item: bojlerot
+  from: A1-29
+- item: ne-raboti
+  from: A1-29
+- item: topla-voda
+  from: A1-29
+- item: pak
+  from: A1-29
+- item: majstorot
+  from: A1-29
+- item: mozete-li
+  from: A1-29
+- item: da-go-popravite
+  from: A1-29
+- item: mozam
+  from: A1-29
+- item: treba
+  from: A1-29
+- item: del
+  from: A1-29
+- item: cas
+  from: A1-29
+- item: sto-praves
+  from: A2-01
+- item: vikendot
+  from: A2-01
+- item: otidov
+  from: A2-01
+- item: bev
+  from: A2-01
+- item: vcera
+  from: A2-01
+- item: vidov
+  from: A2-01
+- item: film
+  from: A2-01
+- item: koj
+  from: A2-01
+- item: ne-razbrav
+  from: A2-01
+- item: normalno
+  from: A2-01
+- item: i-jas
+  from: A2-01
+- item: imate-li
+  from: A1-04
+- item: ve-molam
+  from: A1-04
+- item: od
+  from: A1-14
+- item: utre
+  from: A1-20
+- item: doma
+  from: A1-22
+steps:
+- type: narrator
+  text:
+    en: At the Ministry of the Interior (МВР), for your residence permit. One paper is missing. Listen to the conversation; you don't need to understand it yet.
+    pt: No Ministério do Interior (МВР), para a autorização de residência. Falta um papel. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Добар ден. Дојдов за дозвола за престој.
+    meaning:
+      en: Good morning. I've come for a residence permit.
+      pt: Bom dia. Vim pela autorização de residência.
+  - speaker: sluzbenicka
+    text: Пасош, ве молам. Имате ли слика?
+    meaning:
+      en: Passport, please. Do you have a photo?
+      pt: Passaporte, por favor. O senhor tem foto?
+  - speaker: protagonist
+    text: Да, еве ги.
+    meaning:
+      en: Yes, here they are.
+      pt: Sim, aqui estão.
+  - speaker: sluzbenicka
+    text: Недостасува еден документ — договорот за работа.
+    meaning:
+      en: One document is missing — the work contract.
+      pt: Falta um documento — o contrato de trabalho.
+  - speaker: protagonist
+    text: Договорот е дома. Утре ќе дојдам.
+    meaning:
+      en: The contract is at home. I'll come tomorrow.
+      pt: O contrato está em casa. Venho amanhã.
+  - speaker: sluzbenicka
+    text: Утре не работиме. Во понеделник.
+    meaning:
+      en: We're closed tomorrow. On Monday.
+      pt: Amanhã não abrimos. Na segunda.
+  - speaker: protagonist
+    text: Добро, ќе дојдам во понеделник. Во колку часот?
+    meaning:
+      en: All right, I'll come on Monday. At what time?
+      pt: Está bem, venho na segunda. A que horas?
+  - speaker: sluzbenicka
+    text: Од осум. И донесете копија.
+    meaning:
+      en: From eight. And bring a copy.
+      pt: A partir das oito. E traga uma cópia.
+- type: narrator
+  text:
+    en: 'The future is easy: ''ќе'' before the present. дојдам → ќе дојдам (I''ll come), работам → ќе работам.'
+    pt: 'O futuro é fácil: ''ќе'' antes do presente. дојдам → ќе дојдам (virei), работам → ќе работам (vou trabalhar).'
+- type: prompt
+  ask:
+    en: 'Say why you came: for a residence permit.'
+    pt: 'Diga por que veio: pela autorização de residência.'
+  answer:
+    speaker: protagonist
+    text: Дојдов за дозвола за престој.
+  items:
+  - dojdov
+  - dozvola
+- type: prompt
+  ask:
+    en: She asks for your passport. How?
+    pt: Ela pede o passaporte. Como?
+  answer:
+    speaker: protagonist
+    text: Пасош, ве молам.
+  items:
+  - pasos
+  - ve-molam
+- type: prompt
+  ask:
+    en: 'Ask: do you have a photo? (as she did)'
+    pt: 'Pergunte: tem foto? (como ela)'
+  answer:
+    speaker: protagonist
+    text: Имате ли слика?
+  items:
+  - imate-li
+  - slika
+- type: prompt
+  ask:
+    en: 'Hand them over: here they are.'
+    pt: 'Entregue: aqui estão.'
+  answer:
+    speaker: protagonist
+    text: Еве ги.
+  items:
+  - eve
+- type: prompt
+  ask:
+    en: She says a document is missing. How?
+    pt: Ela diz que falta um documento. Como?
+  answer:
+    speaker: protagonist
+    text: Недостасува еден документ.
+  items:
+  - nedostasuva
+  - dokument
+- type: prompt
+  ask:
+    en: 'Say: the work contract is at home.'
+    pt: 'Diga: o contrato de trabalho está em casa.'
+  answer:
+    speaker: protagonist
+    text: Договорот за работа е дома.
+  items:
+  - dogovorot
+  - doma
+- type: prompt
+  ask:
+    en: 'Say: I''ll come tomorrow.'
+    pt: 'Diga: venho amanhã.'
+  answer:
+    speaker: protagonist
+    text: Утре ќе дојдам.
+  items:
+  - utre
+  - ke-dojdam
+- type: prompt
+  ask:
+    en: She says they're closed tomorrow.
+    pt: Ela diz que amanhã não abrem.
+  answer:
+    speaker: protagonist
+    text: Утре не работиме.
+  items:
+  - ne-rabotime
+- type: prompt
+  ask:
+    en: 'Ask: at what time?'
+    pt: 'Pergunte: a que horas?'
+  answer:
+    speaker: protagonist
+    text: Во колку часот?
+  items:
+  - vo-kolku-casot
+- type: prompt
+  ask:
+    en: 'Say for her: from eight.'
+    pt: 'Diga por ela: a partir das oito.'
+  answer:
+    speaker: protagonist
+    text: Од осум.
+  items:
+  - od
+  - osum
+- type: prompt
+  ask:
+    en: 'Say: I''ll bring a copy. (just: a copy)'
+    pt: 'Diga: uma cópia.'
+  answer:
+    speaker: protagonist
+    text: Копија.
+  items:
+  - kopija
+- type: narrator
+  text:
+    en: Offices want originals and copies of everything — bring both. You will hear that things go faster 'if you know someone' (врски, connections). Don't try it; bring a Macedonian colleague to translate
+      instead.
+    pt: As repartições querem original e cópia de tudo — leve os dois. Você vai ouvir que as coisas andam mais rápido 'se você conhece alguém' (врски, conhecidos). Não tente; leve um colega macedônio para
+      traduzir.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'Para quem conhece o cartório brasileiro, nada de novo: fila, carimbo e ''falta um papel''.'
+- type: prompt
+  ask:
+    en: 'Once more: say “I came”.'
+    pt: 'Mais uma vez: diga “eu vim”.'
+  answer:
+    speaker: protagonist
+    text: дојдов
+  items:
+  - dojdov
+- type: prompt
+  ask:
+    en: 'Once more: say “residence permit”.'
+    pt: 'Mais uma vez: diga “autorização de residência”.'
+  answer:
+    speaker: protagonist
+    text: дозвола за престој
+  items:
+  - dozvola
+- type: prompt
+  ask:
+    en: 'Once more: say “passport”.'
+    pt: 'Mais uma vez: diga “passaporte”.'
+  answer:
+    speaker: protagonist
+    text: пасош
+  items:
+  - pasos
+- type: prompt
+  ask:
+    en: 'Once more: say “photo / picture”.'
+    pt: 'Mais uma vez: diga “foto / quadro”.'
+  answer:
+    speaker: protagonist
+    text: слика
+  items:
+  - slika
+- type: prompt
+  ask:
+    en: 'Once more: say “here is / here are”.'
+    pt: 'Mais uma vez: diga “aqui está / eis”.'
+  answer:
+    speaker: protagonist
+    text: еве
+  items:
+  - eve
+- type: prompt
+  ask:
+    en: 'Once more: say “is missing”.'
+    pt: 'Mais uma vez: diga “está faltando”.'
+  answer:
+    speaker: protagonist
+    text: недостасува
+  items:
+  - nedostasuva
+- type: prompt
+  ask:
+    en: 'Once more: say “document”.'
+    pt: 'Mais uma vez: diga “documento”.'
+  answer:
+    speaker: protagonist
+    text: документ
+  items:
+  - dokument
+- type: prompt
+  ask:
+    en: 'Once more: say “the work contract”.'
+    pt: 'Mais uma vez: diga “o contrato de trabalho”.'
+  answer:
+    speaker: protagonist
+    text: договорот за работа
+  items:
+  - dogovorot
+- type: prompt
+  ask:
+    en: 'Once more: say “I''ll come”.'
+    pt: 'Mais uma vez: diga “eu venho / virei”.'
+  answer:
+    speaker: protagonist
+    text: ќе дојдам
+  items:
+  - ke-dojdam
+- type: prompt
+  ask:
+    en: 'Once more: say “we''re closed (we don''t work)”.'
+    pt: 'Mais uma vez: diga “não abrimos (não trabalhamos)”.'
+  answer:
+    speaker: protagonist
+    text: не работиме
+  items:
+  - ne-rabotime
+- type: prompt
+  ask:
+    en: 'Once more: say “At what time?”.'
+    pt: 'Mais uma vez: diga “A que horas?”.'
+  answer:
+    speaker: protagonist
+    text: Во колку часот?
+  items:
+  - vo-kolku-casot
+- type: prompt
+  ask:
+    en: 'Once more: say “eight”.'
+    pt: 'Mais uma vez: diga “oito”.'
+  answer:
+    speaker: protagonist
+    text: осум
+  items:
+  - osum
+- type: prompt
+  ask:
+    en: 'Once more: say “copy”.'
+    pt: 'Mais uma vez: diga “cópia”.'
+  answer:
+    speaker: protagonist
+    text: копија
+  items:
+  - kopija
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “What were you doing…? / What did you do…? (informal) — and “the weekend — and “I went — and “I was — and “yesterday — and “I saw — and “film — and “Which…? / Who…?”.'
+    pt: 'Diga: “O que você fez…? — e “o fim de semana — e “eu fui — e “eu estava / eu fui — e “ontem — e “eu vi — e “filme — e “Qual…? / Quem…?”.'
+  answer:
+    speaker: protagonist
+    text: Што правеше…? … викендот … отидов … бев … вчера … видов … филм … Кој…?
+  items:
+  - sto-praves
+  - vikendot
+  - otidov
+  - bev
+  - vcera
+  - vidov
+  - film
+  - koj
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I didn''t understand — and “Naturally / of course — and “me too — and “the water heater — and “doesn''t work — and “hot water — and “Again? — and “the repairman”.'
+    pt: 'Diga: “eu não entendi — e “Normal / claro — e “eu também — e “o aquecedor de água — e “não funciona — e “água quente — e “De novo? — e “o técnico / o faz-tudo”.'
+  answer:
+    speaker: protagonist
+    text: не разбрав … Нормално … и јас … бојлерот … не работи … топла вода … Пак? … мајсторот
+  items:
+  - ne-razbrav
+  - normalno
+  - i-jas
+  - bojlerot
+  - ne-raboti
+  - topla-voda
+  - pak
+  - majstorot
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Can you…? (formal) — and “to fix it (formal) — and “I can — and “(it) needs / is needed — and “part — and “hour — and “home-made (feminine) — and “rakija (fruit brandy)”.'
+    pt: 'Diga: “O senhor pode…? — e “consertar (formal) — e “eu posso — e “precisa — e “peça — e “hora — e “caseira — e “rakija (aguardente de fruta)”.'
+  answer:
+    speaker: protagonist
+    text: Можете ли…? … да го поправите … можам … треба … дел … час … домашна … ракија
+  items:
+  - mozete-li
+  - da-go-popravite
+  - mozam
+  - treba
+  - del
+  - cas
+  - domasna
+  - rakija
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “just a little — and “Cheers! (to health) — and “look me in the eyes (informal) — and “There, now it''s right — and “strong (feminine) — and “plums — and “No, thank you — and “I make it myself”.'
+    pt: 'Diga: “só um pouco — e “Saúde! — e “olhe nos meus olhos — e “Pronto, agora sim — e “forte — e “ameixas — e “Não, obrigada — e “Eu mesmo faço”.'
+  answer:
+    speaker: protagonist
+    text: само малку … На здравје! … погледни ме во очи … Е, сега може … јака … сливи … Не, благодарам … Сам ја правам
+  items:
+  - samo-malku
+  - na-zdravje
+  - pogledni-me
+  - e-sega
+  - jaka
+  - slivi
+  - ne-blagodaram
+  - sam-ja-pravam
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “hot — and “open (masculine) — and “the door — and “a draft (air flowing through) — and “What is that? — and “wind — and “You''ll catch a cold! (formal) — and “there isn''t / there''s no”.'
+    pt: 'Diga: “quente (calor) — e “aberto — e “a porta — e “corrente de ar — e “O que é isso? — e “vento — e “A senhora vai se resfriar! — e “não tem / não há”.'
+  answer:
+    speaker: protagonist
+    text: жешко … отворен … вратата … промаја … Што е тоа? … ветер … Ќе настинете! … нема
+  items:
+  - zesko
+  - otvoren
+  - vratata
+  - promaja
+  - sto-e-toa
+  - veter
+  - ke-nastinete
+  - nema
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “air conditioning — and “Close (formal) — and “right away — and “Even worse! — and “Good day / hello — and “Excuse me / sorry (formal) — and “I don''t understand — and “Do you speak English?
+      (formal)”.'
+    pt: 'Diga: “ar-condicionado — e “Feche (formal) — e “já / agora mesmo — e “Pior ainda! — e “Bom dia / boa tarde — e “Com licença / desculpe (formal) — e “Não entendo — e “A senhora fala inglês?”.'
+  answer:
+    speaker: protagonist
+    text: клима … Затворете … веднаш … Уште полошо! … Добар ден … Извинете … Не разбирам … Зборувате ли англиски?
+  items:
+  - klima
+  - zatvorete
+  - vednas
+  - poloso
+  - dobar-den
+  - izvinete
+  - ne-razbiram
+  - zboruvate-angliski
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Yes — and “I''m from Brazil — and “A little — and “I am — and “the new tenant (a woman) — and “Here you are / come in / help yourself (formal) — and “This is — and “the key”.'
+    pt: 'Diga: “Sim — e “Sou do Brasil — e “Um pouco — e “Eu sou — e “a nova inquilina — e “Aqui está / pode entrar / sirva-se (formal) — e “Este é / isto é — e “a chave”.'
+  answer:
+    speaker: protagonist
+    text: Да … Од Бразил сум … Малку … Јас сум … новата станарка … Повелете … Ова е … клучот
+  items:
+  - da
+  - od-brazil
+  - malku
+  - jas-sum
+  - novata-stanarka
+  - povelete
+  - ova-e
+  - klucot
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Thank you — and “Mrs Stojanovska (calling her) — and “You''re welcome — and “Welcome (formal)”.'
+    pt: 'Diga: “Obrigada / obrigado — e “senhora Stojanovska (chamando-a) — e “De nada — e “Bem-vinda / bem-vindos (formal)”.'
+  answer:
+    speaker: protagonist
+    text: Благодарам … госпоѓо Стојановска … Нема зошто … Добредојдовте
+  items:
+  - blagodaram
+  - gospogjo
+  - nema-zosto
+  - dobredojdovte
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

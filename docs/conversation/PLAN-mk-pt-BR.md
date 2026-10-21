@@ -70,7 +70,7 @@ Codes in the grammar column are the Learn lessons (`tools/curricula/mk/`).
 | 05 | L | Na médica | a cold | ме боли грло, температура, лекови, пијте чај | a2-imperative | 04 all; 03 heart; A1-17 promaja | herbal tea medicine |
 | 06 | T | A água | rain, ice, steam — Ohrid lake water | мраз, пареа, се топи, врие | a2-aspect | 05 all; 04 bank; 02 future | — |
 | 07 | L | Os Bálcãs são perigosos? | Brazilian friend on video call fears Skopje | безбедно, криминал, предрасуда, всушност | a2-comparison | 06 all; 05 imperative; 01 past | the myth of the dangerous Balkans |
-| 08 | L | O dia do santo | Vera's name day | Честит имендент, подарок, торта | a2-possessive-clitics | 07 all; 06 water; 04 mi treba | name days over birthdays |
+| 08 | L | O dia do santo | Vera's name day | Честит именден, подарок, торта | a2-possessive-clitics | 07 all; 06 water; 04 mi treba | name days over birthdays |
 | 09 | T | Eletricidade em casa | the fuse, the heater | струја, осигурувач, вклучи/исклучи | a2-imperative | 08 all; 07 safety; 03 health | — |
 | 10 | L | A Páscoa | painted eggs | Христос воскресе!, Воистина воскресе, јајца | a2-reflexive | 09 all; 08 gifts; 05 lekovi | the Easter greeting |
 | 11 | L | A conta | restaurant with Marko | сметката, јас ќе платам, бакшиш | a2-dopagja | 10 all; 09 electricity; 06 aspect | fighting to pay, no 10 % |

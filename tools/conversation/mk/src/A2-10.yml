@@ -1,0 +1,41 @@
+id: A2-10
+protagonist: m
+title: [Easter, A Páscoa]
+situation: ["Easter Sunday. Mrs Stojanovska meets you on the stairs with red eggs.", "Domingo de Páscoa. A senhora Stojanovska encontra você na escada com ovos vermelhos."]
+learn: [a2-reflexive]
+culture: The Easter greeting
+items:
+  - [hristos-voskrese, "Христос воскресе!", "Christ is risen! (the Easter greeting)", "Cristo ressuscitou! (a saudação de Páscoa)", {rare: true}]
+  - [voistina, "Воистина воскресе!", "Truly he is risen! (the answer)", "Verdadeiramente ressuscitou! (a resposta)", {rare: true}]
+  - [naucivte, "научивте", "you learned (formal)", "a senhora aprendeu / o senhor aprendeu"]
+  - [crveno, "црвено", "red (neuter)", "vermelho"]
+  - [jajce, "јајце", "egg", "ovo"]
+  - [zosto, "Зошто…?", "Why…?", "Por que…?"]
+  - [jajcata, "јајцата", "the eggs", "os ovos"]
+  - [se-boi, "се бои", "is dyed / is painted", "é tingido / se pinta"]
+  - [ajde-da, "Ајде да…", "Let's…", "Vamos…"]
+  - [moeto, "моето", "mine (neuter)", "o meu"]
+  - [se-skrsi, "се скрши", "broke (itself)", "quebrou"]
+  - [vaseto, "вашето", "yours (formal, neuter)", "o seu"]
+dialogue:
+  - [vera, "Христос воскресе!", "Christ is risen!", "Cristo ressuscitou!"]
+  - [protagonist, "Воистина воскресе!", "Truly he is risen!", "Verdadeiramente ressuscitou!"]
+  - [vera, "Браво, научивте! Повелете, црвено јајце.", "Well done, you learned! Here, a red egg.", "Muito bem, aprendeu! Tome, um ovo vermelho."]
+  - [protagonist, "Зошто се црвени јајцата?", "Why are the eggs red?", "Por que os ovos são vermelhos?"]
+  - [vera, "Првото јајце секогаш се бои црвено. На Велики четврток.", "The first egg is always dyed red. On Holy Thursday.", "O primeiro ovo sempre se pinta de vermelho. Na Quinta-Feira Santa."]
+  - [vera, "Ајде да се чукнеме!", "Let's crack eggs!", "Vamos bater os ovos!"]
+  - [protagonist, "Моето е цело... вашето се скрши!", "Mine is whole... yours broke!", "O meu está inteiro... o seu quebrou!"]
+  - [vera, "Ха! Вие сте победникот оваа година.", "Ha! You're the winner this year.", "Ha! O senhor é o vencedor deste ano."]
+teach:
+  - note: ["At Easter the greeting changes: one says 'Христос воскресе!' and the other answers 'Воистина воскресе!' People use it instead of hello until Ascension Day. Orthodox Easter follows the old calendar and often falls a week or more after Catholic Easter.", "Na Páscoa o cumprimento muda: um diz 'Христос воскресе!' e o outro responde 'Воистина воскресе!' Usa-se no lugar de 'oi' até a Ascensão. A Páscoa ortodoxa segue o calendário antigo e muitas vezes cai uma semana ou mais depois da católica."]
+  - ask: ["Greet her the Easter way.", "Cumprimente-a do jeito da Páscoa.", "Христос воскресе!", hristos-voskrese]
+  - ask: ["Give the answer.", "Dê a resposta.", "Воистина воскресе!", voistina]
+  - ask: ["She praises you: well done, you learned!", "Ela elogia: muito bem, aprendeu!", "Браво, научивте!", bravo, naucivte]
+  - ask: ["Say: a red egg.", "Diga: um ovo vermelho.", "Црвено јајце.", crveno, jajce]
+  - ask: ["Ask why the eggs are red.", "Pergunte por que os ovos são vermelhos.", "Зошто се црвени јајцата?", zosto, jajcata]
+  - note: ["'Се' turns many verbs inward: бои (dyes) → се бои (is dyed); скрши (broke something) → се скрши (broke, by itself).", "'Се' vira muitos verbos para dentro: бои (tinge) → се бои (se tinge, é tingido); скрши (quebrou algo) → се скрши (quebrou, sozinho)."]
+  - ask: ["Say: the egg is dyed red.", "Diga: o ovo se pinta de vermelho.", "Јајцето се бои црвено.", se-boi]
+  - ask: ["She says: let's crack eggs! (just: let's…)", "Ela diz: vamos…! (só o começo)", "Ајде да се чукнеме!", ajde-da]
+  - ask: ["Say: mine is whole.", "Diga: o meu está inteiro.", "Моето е цело.", moeto]
+  - ask: ["Say: yours broke!", "Diga: o seu quebrou!", "Вашето се скрши!", vaseto, se-skrsi]
+  - pt_only: "Nada de ovo de chocolate: aqui o ovo é de galinha, cozido, pintado — e a brincadeira é ver qual não quebra."

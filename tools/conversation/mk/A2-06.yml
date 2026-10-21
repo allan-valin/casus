@@ -1,0 +1,610 @@
+# UNIT mk A2-06 — written by AI (Claude) for Casus; expanded from src/A2-06.yml by tools/expand_unit.py. Edit the source.
+
+id: A2-06
+level: A2
+number: 6
+protagonist: m
+title:
+  en: Water
+  pt: A água
+situation:
+  en: January. The street outside is icy. Mrs Stojanovska calls you in for tea.
+  pt: Janeiro. A rua está congelada. A senhora Stojanovska chama você para um chá.
+learn_lessons:
+- a2-aspect
+culture: —
+new_items:
+- id: vnimavajte
+  text: Внимавајте!
+  meaning:
+    en: Careful! (formal)
+    pt: Cuidado! (formal)
+- id: mraz
+  text: мраз
+  meaning:
+    en: ice, frost
+    pt: gelo / geada
+- id: ke-bide
+  text: ќе биде
+  meaning:
+    en: will be
+    pt: vai ser / vai estar
+- id: potoplo
+  text: потопло
+  meaning:
+    en: warmer
+    pt: mais quente
+- id: se-topi
+  text: се топи
+  meaning:
+    en: is melting
+    pt: está derretendo
+- id: ke-se-stopi
+  text: ќе се стопи
+  meaning:
+    en: will melt (completely)
+    pt: vai derreter
+  rare: true
+- id: vekje
+  text: веќе
+  meaning:
+    en: already
+    pt: já
+- id: pareata
+  text: пареата
+  meaning:
+    en: the steam
+    pt: o vapor
+  rare: true
+- id: znaete-li
+  text: Знаете ли…?
+  meaning:
+    en: Do you know…? (formal)
+    pt: O senhor sabe…?
+- id: ezeroto
+  text: езерото
+  meaning:
+    en: the lake
+    pt: o lago
+- id: cista
+  text: чиста
+  meaning:
+    en: clean (feminine)
+    pt: limpa
+- id: tolku
+  text: толку
+  meaning:
+    en: so (much)
+    pt: tão / tanto
+reviews:
+- item: sto-pisuva
+  from: A1-05
+- item: pisuva
+  from: A1-05
+- item: zatvoreno
+  from: A1-05
+- item: otvoreno
+  from: A1-05
+- item: apteka
+  from: A1-05
+- item: ruski
+  from: A1-05
+- item: makedonski
+  from: A1-05
+- item: kirilica
+  from: A1-05
+- item: citam
+  from: A1-05
+- item: bavno
+  from: A1-05
+- item: nema-problem
+  from: A1-05
+- item: poleka
+  from: A1-05
+- item: vlez
+  from: A1-05
+- item: izlez
+  from: A1-05
+- item: balkon
+  from: A1-21
+- item: rastat
+  from: A1-21
+- item: cvekja
+  from: A1-21
+- item: cvekje
+  from: A1-21
+- item: bosilok
+  from: A1-21
+- item: drvo
+  from: A1-21
+- item: limon
+  from: A1-21
+- item: raste
+  from: A1-21
+- item: pie
+  from: A1-21
+- item: kupuvam
+  from: A1-21
+- item: sest
+  from: A1-21
+- item: nikogas
+  from: A1-21
+- item: listovite
+  from: A1-21
+- item: bojlerot
+  from: A1-29
+- item: ne-raboti
+  from: A1-29
+- item: topla-voda
+  from: A1-29
+- item: pak
+  from: A1-29
+- item: majstorot
+  from: A1-29
+- item: mozete-li
+  from: A1-29
+- item: da-go-popravite
+  from: A1-29
+- item: mozam
+  from: A1-29
+- item: treba
+  from: A1-29
+- item: del
+  from: A1-29
+- item: cas
+  from: A1-29
+- item: pritisokot
+  from: A2-03
+- item: dali
+  from: A2-03
+- item: vo-red
+  from: A2-03
+- item: normalen
+  from: A2-03
+- item: srceto
+  from: A2-03
+- item: krvta
+  from: A2-03
+- item: rezultatite
+  from: A2-03
+- item: ke-bidat
+  from: A2-03
+- item: gotovi
+  from: A2-03
+- item: treba-da
+  from: A2-03
+- item: jadete-zdravo
+  from: A2-03
+- item: setajte
+  from: A2-03
+- item: sekoj-den
+  from: A2-03
+- item: sto-ve-boli
+  from: A2-05
+- item: grloto
+  from: A2-05
+- item: temperatura
+  from: A2-05
+- item: od-koga
+  from: A2-05
+- item: mislam-deka
+  from: A2-05
+- item: pijte
+  from: A2-05
+- item: med
+  from: A2-05
+- item: lekovi
+  from: A2-05
+- item: recept
+  from: A2-05
+- item: pati-na-den
+  from: A2-05
+- item: ne-odete
+  from: A2-05
+- item: dva-dena
+  from: A2-05
+- item: voda
+  from: A1-04
+- item: sega
+  from: A1-06
+- item: ulica
+  from: A1-08
+- item: vrie
+  from: A1-18
+steps:
+- type: narrator
+  text:
+    en: January. The street outside is icy. Mrs Stojanovska calls you in for tea. Listen to the conversation; you don't need to understand it yet.
+    pt: Janeiro. A rua está congelada. A senhora Stojanovska chama você para um chá. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: vera
+    text: Внимавајте, има мраз на улицата!
+    meaning:
+      en: Careful, there's ice on the street!
+      pt: Cuidado, tem gelo na rua!
+  - speaker: protagonist
+    text: Мраз! Во Сао Паоло никогаш нема мраз.
+    meaning:
+      en: Ice! In São Paulo there's never ice.
+      pt: Gelo! Em São Paulo nunca tem gelo.
+  - speaker: vera
+    text: Утре ќе биде потопло. Мразот ќе се стопи.
+    meaning:
+      en: Tomorrow will be warmer. The ice will melt.
+      pt: Amanhã vai estar mais quente. O gelo vai derreter.
+  - speaker: protagonist
+    text: Сега се топи малку, на сонце.
+    meaning:
+      en: It's melting a bit now, in the sun.
+      pt: Agora está derretendo um pouco, no sol.
+  - speaker: vera
+    text: Влезете. Водата веќе врие — ја гледате пареата?
+    meaning:
+      en: Come in. The water's already boiling — see the steam?
+      pt: Entre. A água já está fervendo — está vendo o vapor?
+  - speaker: protagonist
+    text: Да. Убаво е топло тука.
+    meaning:
+      en: Yes. It's nice and warm here.
+      pt: Sim. Está quentinho aqui.
+  - speaker: vera
+    text: Знаете ли дека Охридското Езеро е толку чисто?
+    meaning:
+      en: Do you know the Ohrid lake is so clean?
+      pt: O senhor sabia que o lago de Ohrid é tão limpo?
+  - speaker: protagonist
+    text: Колку чисто?
+    meaning:
+      en: How clean?
+      pt: Limpo quanto?
+  - speaker: vera
+    text: Се гледа дното, дваесет метри!
+    meaning:
+      en: You can see the bottom, twenty metres down!
+      pt: Dá para ver o fundo, a vinte metros!
+- type: prompt
+  ask:
+    en: 'Warn her: careful! (formal)'
+    pt: 'Avise: cuidado! (formal)'
+  answer:
+    speaker: protagonist
+    text: Внимавајте!
+  items:
+  - vnimavajte
+- type: prompt
+  ask:
+    en: 'Say: there''s ice on the street.'
+    pt: 'Diga: tem gelo na rua.'
+  answer:
+    speaker: protagonist
+    text: Има мраз на улицата.
+  items:
+  - mraz
+  - ulica
+- type: prompt
+  ask:
+    en: 'Say: tomorrow will be warmer.'
+    pt: 'Diga: amanhã vai estar mais quente.'
+  answer:
+    speaker: protagonist
+    text: Утре ќе биде потопло.
+  items:
+  - ke-bide
+  - potoplo
+- type: narrator
+  text:
+    en: 'Many verbs come in pairs: one for an action going on (се топи — is melting), one for an action completed (ќе се стопи — will melt away). Macedonian chooses every time; Portuguese and English mostly
+      don''t.'
+    pt: 'Muitos verbos vêm em pares: um para a ação em andamento (се топи — está derretendo), outro para a ação completa (ќе се стопи — vai derreter de vez). O macedônio escolhe sempre; o português quase
+      nunca.'
+- type: prompt
+  ask:
+    en: 'Say: it''s melting now.'
+    pt: 'Diga: agora está derretendo.'
+  answer:
+    speaker: protagonist
+    text: Сега се топи.
+  items:
+  - sega
+  - se-topi
+- type: prompt
+  ask:
+    en: 'Say: the ice will melt.'
+    pt: 'Diga: o gelo vai derreter.'
+  answer:
+    speaker: protagonist
+    text: Мразот ќе се стопи.
+  items:
+  - mraz
+  - ke-se-stopi
+- type: prompt
+  ask:
+    en: 'Say: the water is already boiling.'
+    pt: 'Diga: a água já está fervendo.'
+  answer:
+    speaker: protagonist
+    text: Водата веќе врие.
+  items:
+  - vekje
+  - vrie
+- type: prompt
+  ask:
+    en: 'Say: the steam.'
+    pt: 'Diga: o vapor.'
+  answer:
+    speaker: protagonist
+    text: Пареата.
+  items:
+  - pareata
+- type: prompt
+  ask:
+    en: 'Ask her: do you know Ohrid?'
+    pt: 'Pergunte: a senhora conhece Ohrid?'
+  answer:
+    speaker: protagonist
+    text: Знаете ли Охрид?
+  items:
+  - znaete-li
+- type: prompt
+  ask:
+    en: 'Say: the lake is so clean.'
+    pt: 'Diga: o lago é tão limpo.'
+  answer:
+    speaker: protagonist
+    text: Езерото е толку чисто.
+  items:
+  - ezeroto
+  - tolku
+- type: prompt
+  ask:
+    en: 'Say: the water is clean.'
+    pt: 'Diga: a água é limpa.'
+  answer:
+    speaker: protagonist
+    text: Водата е чиста.
+  items:
+  - voda
+  - cista
+- type: narrator
+  text:
+    en: Lake Ohrid is one of the oldest lakes in the world — over a million years old — and a UNESCO site. On calm days you can see many metres down.
+    pt: O lago de Ohrid é um dos mais antigos do mundo — mais de um milhão de anos — e patrimônio da UNESCO. Em dia calmo dá para ver muitos metros de profundidade.
+- type: prompt
+  ask:
+    en: 'Once more: say “Careful! (formal)”.'
+    pt: 'Mais uma vez: diga “Cuidado! (formal)”.'
+  answer:
+    speaker: protagonist
+    text: Внимавајте!
+  items:
+  - vnimavajte
+- type: prompt
+  ask:
+    en: 'Once more: say “will be”.'
+    pt: 'Mais uma vez: diga “vai ser / vai estar”.'
+  answer:
+    speaker: protagonist
+    text: ќе биде
+  items:
+  - ke-bide
+- type: prompt
+  ask:
+    en: 'Once more: say “warmer”.'
+    pt: 'Mais uma vez: diga “mais quente”.'
+  answer:
+    speaker: protagonist
+    text: потопло
+  items:
+  - potoplo
+- type: prompt
+  ask:
+    en: 'Once more: say “is melting”.'
+    pt: 'Mais uma vez: diga “está derretendo”.'
+  answer:
+    speaker: protagonist
+    text: се топи
+  items:
+  - se-topi
+- type: prompt
+  ask:
+    en: 'Once more: say “will melt (completely)”.'
+    pt: 'Mais uma vez: diga “vai derreter”.'
+  answer:
+    speaker: protagonist
+    text: ќе се стопи
+  items:
+  - ke-se-stopi
+- type: prompt
+  ask:
+    en: 'Once more: say “already”.'
+    pt: 'Mais uma vez: diga “já”.'
+  answer:
+    speaker: protagonist
+    text: веќе
+  items:
+  - vekje
+- type: prompt
+  ask:
+    en: 'Once more: say “the steam”.'
+    pt: 'Mais uma vez: diga “o vapor”.'
+  answer:
+    speaker: protagonist
+    text: пареата
+  items:
+  - pareata
+- type: prompt
+  ask:
+    en: 'Once more: say “Do you know…? (formal)”.'
+    pt: 'Mais uma vez: diga “O senhor sabe…?”.'
+  answer:
+    speaker: protagonist
+    text: Знаете ли…?
+  items:
+  - znaete-li
+- type: prompt
+  ask:
+    en: 'Once more: say “the lake”.'
+    pt: 'Mais uma vez: diga “o lago”.'
+  answer:
+    speaker: protagonist
+    text: езерото
+  items:
+  - ezeroto
+- type: prompt
+  ask:
+    en: 'Once more: say “clean (feminine)”.'
+    pt: 'Mais uma vez: diga “limpa”.'
+  answer:
+    speaker: protagonist
+    text: чиста
+  items:
+  - cista
+- type: prompt
+  ask:
+    en: 'Once more: say “so (much)”.'
+    pt: 'Mais uma vez: diga “tão / tanto”.'
+  answer:
+    speaker: protagonist
+    text: толку
+  items:
+  - tolku
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “What hurts? (formal) — and “the throat — and “a temperature, fever — and “Since when? — and “I think (that) — and “Drink (formal) — and “honey — and “medicine — and “prescription / recipe”.'
+    pt: 'Diga: “O que está doendo? — e “a garganta — e “febre — e “Desde quando? — e “acho que — e “Beba (formal) — e “mel — e “remédios — e “receita”.'
+  answer:
+    speaker: protagonist
+    text: Што ве боли? … грлото … температура … Од кога? … мислам дека … Пијте … мед … лекови … рецепт
+  items:
+  - sto-ve-boli
+  - grloto
+  - temperatura
+  - od-koga
+  - mislam-deka
+  - pijte
+  - med
+  - lekovi
+  - recept
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “three times a day — and “don''t go (formal) — and “two days — and “the blood pressure — and “(question word: is it…? does…?) — and “all right, in order — and “normal (masculine) — and “the
+      heart — and “the blood”.'
+    pt: 'Diga: “três vezes ao dia — e “não vá — e “dois dias — e “a pressão — e “(palavra de pergunta: será que…?) — e “em ordem / tudo certo — e “normal — e “o coração — e “o sangue”.'
+  answer:
+    speaker: protagonist
+    text: три пати на ден … не одете … два дена … притисокот … Дали…? … во ред … нормален … срцето … крвта
+  items:
+  - pati-na-den
+  - ne-odete
+  - dva-dena
+  - pritisokot
+  - dali
+  - vo-red
+  - normalen
+  - srceto
+  - krvta
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the results — and “will be (plural) — and “ready (plural) — and “should / have to — and “Eat healthily (formal) — and “walk (formal) — and “every day — and “the water heater — and “doesn''t
+      work”.'
+    pt: 'Diga: “os resultados — e “vão estar / serão — e “prontos — e “deve / tem que — e “Coma de forma saudável — e “caminhe — e “todo dia — e “o aquecedor de água — e “não funciona”.'
+  answer:
+    speaker: protagonist
+    text: резултатите … ќе бидат … готови … треба да … Јадете здраво … шетајте … секој ден … бојлерот … не работи
+  items:
+  - rezultatite
+  - ke-bidat
+  - gotovi
+  - treba-da
+  - jadete-zdravo
+  - setajte
+  - sekoj-den
+  - bojlerot
+  - ne-raboti
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “hot water — and “Again? — and “the repairman — and “Can you…? (formal) — and “to fix it (formal) — and “I can — and “(it) needs / is needed — and “part — and “hour”.'
+    pt: 'Diga: “água quente — e “De novo? — e “o técnico / o faz-tudo — e “O senhor pode…? — e “consertar (formal) — e “eu posso — e “precisa — e “peça — e “hora”.'
+  answer:
+    speaker: protagonist
+    text: топла вода … Пак? … мајсторот … Можете ли…? … да го поправите … можам … треба … дел … час
+  items:
+  - topla-voda
+  - pak
+  - majstorot
+  - mozete-li
+  - da-go-popravite
+  - mozam
+  - treba
+  - del
+  - cas
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “balcony — and “(they) grow — and “flowers — and “flowers (a bunch) — and “basil — and “tree / wood — and “lemon (tree) — and “(it) grows — and “drinks”.'
+    pt: 'Diga: “varanda / sacada — e “crescem — e “flores — e “flores (um buquê) — e “manjericão — e “árvore / madeira — e “limão / limoeiro — e “cresce — e “bebe”.'
+  answer:
+    speaker: protagonist
+    text: балкон … растат … цвеќиња … цвеќе … босилок … дрво … лимон … расте … пие
+  items:
+  - balkon
+  - rastat
+  - cvekja
+  - cvekje
+  - bosilok
+  - drvo
+  - limon
+  - raste
+  - pie
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I buy — and “six — and “never — and “the leaves — and “What does it say? — and “it says (written) — and “closed — and “open — and “pharmacy”.'
+    pt: 'Diga: “eu compro — e “seis — e “nunca — e “as folhas — e “O que está escrito? — e “está escrito — e “fechado — e “aberto — e “farmácia”.'
+  answer:
+    speaker: protagonist
+    text: купувам … шест … никогаш … листовите … Што пишува? … пишува … затворено … отворено … аптека
+  items:
+  - kupuvam
+  - sest
+  - nikogas
+  - listovite
+  - sto-pisuva
+  - pisuva
+  - zatvoreno
+  - otvoreno
+  - apteka
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Russian — and “Macedonian — and “Cyrillic — and “I read — and “slowly — and “No problem — and “slowly, take it easy — and “entrance — and “exit”.'
+    pt: 'Diga: “russo — e “macedônio — e “cirílico — e “eu leio — e “devagar — e “Sem problema — e “com calma, devagar — e “entrada — e “saída”.'
+  answer:
+    speaker: protagonist
+    text: руски … македонски … кирилица … читам … бавно … Нема проблем … полека … влез … излез
+  items:
+  - ruski
+  - makedonski
+  - kirilica
+  - citam
+  - bavno
+  - nema-problem
+  - poleka
+  - vlez
+  - izlez
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

@@ -1,0 +1,666 @@
+# UNIT mk A2-05 — written by AI (Claude) for Casus; expanded from src/A2-05.yml by tools/expand_unit.py. Edit the source.
+
+id: A2-05
+level: A2
+number: 5
+protagonist: f
+title:
+  en: At the doctor's
+  pt: Na médica
+situation:
+  en: You caught a cold. Back to Dr Petrovska.
+  pt: Você pegou um resfriado. De volta à doutora Petrovska.
+learn_lessons:
+- a2-imperative
+culture: Mountain tea and home remedies
+new_items:
+- id: sto-ve-boli
+  text: Што ве боли?
+  meaning:
+    en: What hurts? (formal)
+    pt: O que está doendo?
+- id: grloto
+  text: грлото
+  meaning:
+    en: the throat
+    pt: a garganta
+- id: temperatura
+  text: температура
+  meaning:
+    en: a temperature, fever
+    pt: febre
+- id: od-koga
+  text: Од кога?
+  meaning:
+    en: Since when?
+    pt: Desde quando?
+- id: mislam-deka
+  text: мислам дека
+  meaning:
+    en: I think (that)
+    pt: acho que
+- id: pijte
+  text: Пијте
+  meaning:
+    en: Drink (formal)
+    pt: Beba (formal)
+- id: med
+  text: мед
+  meaning:
+    en: honey
+    pt: mel
+  rare: true
+- id: lekovi
+  text: лекови
+  meaning:
+    en: medicine
+    pt: remédios
+- id: recept
+  text: рецепт
+  meaning:
+    en: prescription / recipe
+    pt: receita
+  rare: true
+- id: pati-na-den
+  text: три пати на ден
+  meaning:
+    en: three times a day
+    pt: três vezes ao dia
+- id: ne-odete
+  text: не одете
+  meaning:
+    en: don't go (formal)
+    pt: não vá
+- id: dva-dena
+  text: два дена
+  meaning:
+    en: two days
+    pt: dois dias
+reviews:
+- item: leb
+  from: A1-04
+- item: mleko
+  from: A1-04
+- item: voda
+  from: A1-04
+- item: imate-li
+  from: A1-04
+- item: imame
+  from: A1-04
+- item: eden
+  from: A1-04
+- item: dve
+  from: A1-04
+- item: ve-molam
+  from: A1-04
+- item: uste-nesto
+  from: A1-04
+- item: toa-e-se
+  from: A1-04
+- item: kolku-cini
+  from: A1-04
+- item: denari
+  from: A1-04
+- item: sto
+  from: A1-04
+- item: kese
+  from: A1-04
+- item: prijatno
+  from: A1-04
+- item: sostanok
+  from: A1-20
+- item: koga-imas-vreme
+  from: A1-20
+- item: nemam-vreme
+  from: A1-20
+- item: utre
+  from: A1-20
+- item: sreda
+  from: A1-20
+- item: ne-mozam
+  from: A1-20
+- item: cetvrtok
+  from: A1-20
+- item: petok
+  from: A1-20
+- item: podobro
+  from: A1-20
+- item: sabota
+  from: A1-20
+- item: nedela
+  from: A1-20
+- item: ponedelnik
+  from: A1-20
+- item: vtornik
+  from: A1-20
+- item: rabota
+  from: A1-20
+- item: familija
+  from: A1-28
+- item: sin
+  from: A1-28
+- item: zivee
+  from: A1-28
+- item: kerka
+  from: A1-28
+- item: brat
+  from: A1-28
+- item: sestra
+  from: A1-28
+- item: kolku-godini
+  from: A1-28
+- item: godini
+  from: A1-28
+- item: trieset
+  from: A1-28
+- item: dvaeset-i-pet
+  from: A1-28
+- item: majka
+  from: A1-28
+- item: tatko
+  from: A1-28
+- item: tie
+  from: A1-28
+- item: dojdov
+  from: A2-02
+- item: dozvola
+  from: A2-02
+- item: pasos
+  from: A2-02
+- item: slika
+  from: A2-02
+- item: eve
+  from: A2-02
+- item: nedostasuva
+  from: A2-02
+- item: dokument
+  from: A2-02
+- item: dogovorot
+  from: A2-02
+- item: ke-dojdam
+  from: A2-02
+- item: ne-rabotime
+  from: A2-02
+- item: vo-kolku-casot
+  from: A2-02
+- item: osum
+  from: A2-02
+- item: kopija
+  from: A2-02
+- item: mi-treba
+  from: A2-04
+- item: smetka
+  from: A2-04
+- item: banka
+  from: A2-04
+- item: potpisete
+  from: A2-04
+- item: kartickata
+  from: A2-04
+- item: ke-ja-dobijam
+  from: A2-04
+- item: za-edna-nedela
+  from: A2-04
+- item: poraka
+  from: A2-04
+- item: aplikacijata
+  from: A2-04
+- item: besplatna
+  from: A2-04
+- item: mu-treba
+  from: A2-04
+- item: me-boli
+  from: A1-03
+- item: imam
+  from: A1-06
+- item: so
+  from: A1-07
+- item: caj
+  from: A1-07
+- item: od
+  from: A1-14
+- item: promaja
+  from: A1-17
+- item: limon
+  from: A1-21
+- item: vcera
+  from: A2-01
+steps:
+- type: narrator
+  text:
+    en: You caught a cold. Back to Dr Petrovska. Listen to the conversation; you don't need to understand it yet.
+    pt: Você pegou um resfriado. De volta à doutora Petrovska. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: doktorka
+    text: Што ве боли?
+    meaning:
+      en: What hurts?
+      pt: O que está doendo?
+  - speaker: protagonist
+    text: Ме боли грлото и имам температура.
+    meaning:
+      en: My throat hurts and I have a temperature.
+      pt: Minha garganta dói e estou com febre.
+  - speaker: doktorka
+    text: Од кога?
+    meaning:
+      en: Since when?
+      pt: Desde quando?
+  - speaker: protagonist
+    text: Од вчера. Мислам дека е од промајата!
+    meaning:
+      en: Since yesterday. I think it's from the draft!
+      pt: Desde ontem. Acho que foi a corrente de ar!
+  - speaker: doktorka
+    text: Можеби. Пијте многу чај, со мед и лимон.
+    meaning:
+      en: Maybe. Drink lots of tea, with honey and lemon.
+      pt: Talvez. Beba bastante chá, com mel e limão.
+  - speaker: protagonist
+    text: А лекови?
+    meaning:
+      en: And medicine?
+      pt: E remédio?
+  - speaker: doktorka
+    text: Еве рецепт. Една таблета три пати на ден.
+    meaning:
+      en: Here's a prescription. One tablet three times a day.
+      pt: Aqui a receita. Um comprimido três vezes ao dia.
+  - speaker: protagonist
+    text: Благодарам.
+    meaning:
+      en: Thank you.
+      pt: Obrigada.
+  - speaker: doktorka
+    text: И не одете на работа два дена.
+    meaning:
+      en: And don't go to work for two days.
+      pt: E não vá trabalhar por dois dias.
+- type: prompt
+  ask:
+    en: The doctor asks what hurts. How?
+    pt: A médica pergunta o que dói. Como?
+  answer:
+    speaker: protagonist
+    text: Што ве боли?
+  items:
+  - sto-ve-boli
+- type: prompt
+  ask:
+    en: 'Say: my throat hurts.'
+    pt: 'Diga: minha garganta dói.'
+  answer:
+    speaker: protagonist
+    text: Ме боли грлото.
+  items:
+  - me-boli
+  - grloto
+- type: prompt
+  ask:
+    en: 'Say: I have a temperature.'
+    pt: 'Diga: estou com febre.'
+  answer:
+    speaker: protagonist
+    text: Имам температура.
+  items:
+  - imam
+  - temperatura
+- type: prompt
+  ask:
+    en: She asks since when.
+    pt: Ela pergunta desde quando.
+  answer:
+    speaker: protagonist
+    text: Од кога?
+  items:
+  - od-koga
+- type: prompt
+  ask:
+    en: 'Say: since yesterday.'
+    pt: 'Diga: desde ontem.'
+  answer:
+    speaker: protagonist
+    text: Од вчера.
+  items:
+  - od
+  - vcera
+- type: prompt
+  ask:
+    en: 'Say: I think it''s from the draft!'
+    pt: 'Diga: acho que foi a corrente de ar!'
+  answer:
+    speaker: protagonist
+    text: Мислам дека е од промајата!
+  items:
+  - mislam-deka
+  - promaja
+- type: narrator
+  text:
+    en: 'Telling people what to do: пиј, пијте (drink), јади, јадете (eat), оди, одете (go). The -те form is for Вие and for several people.'
+    pt: 'Para dizer o que fazer: пиј, пијте (beba), јади, јадете (coma), оди, одете (vá). A forma com -те é para Вие e para várias pessoas.'
+- type: prompt
+  ask:
+    en: 'Her advice: drink lots of tea.'
+    pt: 'O conselho dela: beba bastante chá.'
+  answer:
+    speaker: protagonist
+    text: Пијте многу чај.
+  items:
+  - pijte
+  - caj
+- type: prompt
+  ask:
+    en: With honey and lemon.
+    pt: Com mel e limão.
+  answer:
+    speaker: protagonist
+    text: Со мед и лимон.
+  items:
+  - so
+  - med
+  - limon
+- type: prompt
+  ask:
+    en: 'Ask: and medicine?'
+    pt: 'Pergunte: e remédio?'
+  answer:
+    speaker: protagonist
+    text: А лекови?
+  items:
+  - lekovi
+- type: prompt
+  ask:
+    en: 'Say: one tablet three times a day.'
+    pt: 'Diga: um comprimido três vezes ao dia.'
+  answer:
+    speaker: protagonist
+    text: Една таблета три пати на ден.
+  items:
+  - pati-na-den
+- type: prompt
+  ask:
+    en: 'She says: don''t go to work for two days.'
+    pt: 'Ela diz: não vá trabalhar por dois dias.'
+  answer:
+    speaker: protagonist
+    text: Не одете на работа два дена.
+  items:
+  - ne-odete
+  - rabota
+  - dva-dena
+- type: narrator
+  text:
+    en: 'Before the pharmacy, many people reach for tea: mountain tea (планински чај), camomile, or ''tea'' with a little rakija for a cold.'
+    pt: 'Antes da farmácia, muita gente recorre ao chá: chá da montanha (планински чај), camomila, ou ''chá'' com um pouco de rakija para o resfriado.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: Como o chá da avó no Brasil — só que aqui o chá da montanha cresce no Šar e no Galičica.
+- type: prompt
+  ask:
+    en: 'Get a prescription: ask for one. (just: a prescription)'
+    pt: 'Peça uma receita. (só: receita)'
+  answer:
+    speaker: protagonist
+    text: Рецепт.
+  items:
+  - recept
+- type: prompt
+  ask:
+    en: 'Once more: say “What hurts? (formal)”.'
+    pt: 'Mais uma vez: diga “O que está doendo?”.'
+  answer:
+    speaker: protagonist
+    text: Што ве боли?
+  items:
+  - sto-ve-boli
+- type: prompt
+  ask:
+    en: 'Once more: say “the throat”.'
+    pt: 'Mais uma vez: diga “a garganta”.'
+  answer:
+    speaker: protagonist
+    text: грлото
+  items:
+  - grloto
+- type: prompt
+  ask:
+    en: 'Once more: say “a temperature, fever”.'
+    pt: 'Mais uma vez: diga “febre”.'
+  answer:
+    speaker: protagonist
+    text: температура
+  items:
+  - temperatura
+- type: prompt
+  ask:
+    en: 'Once more: say “Since when?”.'
+    pt: 'Mais uma vez: diga “Desde quando?”.'
+  answer:
+    speaker: protagonist
+    text: Од кога?
+  items:
+  - od-koga
+- type: prompt
+  ask:
+    en: 'Once more: say “I think (that)”.'
+    pt: 'Mais uma vez: diga “acho que”.'
+  answer:
+    speaker: protagonist
+    text: мислам дека
+  items:
+  - mislam-deka
+- type: prompt
+  ask:
+    en: 'Once more: say “Drink (formal)”.'
+    pt: 'Mais uma vez: diga “Beba (formal)”.'
+  answer:
+    speaker: protagonist
+    text: Пијте
+  items:
+  - pijte
+- type: prompt
+  ask:
+    en: 'Once more: say “honey”.'
+    pt: 'Mais uma vez: diga “mel”.'
+  answer:
+    speaker: protagonist
+    text: мед
+  items:
+  - med
+- type: prompt
+  ask:
+    en: 'Once more: say “medicine”.'
+    pt: 'Mais uma vez: diga “remédios”.'
+  answer:
+    speaker: protagonist
+    text: лекови
+  items:
+  - lekovi
+- type: prompt
+  ask:
+    en: 'Once more: say “prescription / recipe”.'
+    pt: 'Mais uma vez: diga “receita”.'
+  answer:
+    speaker: protagonist
+    text: рецепт
+  items:
+  - recept
+- type: prompt
+  ask:
+    en: 'Once more: say “three times a day”.'
+    pt: 'Mais uma vez: diga “três vezes ao dia”.'
+  answer:
+    speaker: protagonist
+    text: три пати на ден
+  items:
+  - pati-na-den
+- type: prompt
+  ask:
+    en: 'Once more: say “don''t go (formal)”.'
+    pt: 'Mais uma vez: diga “não vá”.'
+  answer:
+    speaker: protagonist
+    text: не одете
+  items:
+  - ne-odete
+- type: prompt
+  ask:
+    en: 'Once more: say “two days”.'
+    pt: 'Mais uma vez: diga “dois dias”.'
+  answer:
+    speaker: protagonist
+    text: два дена
+  items:
+  - dva-dena
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I need — and “account / bill — and “bank — and “Sign (formal) — and “the (bank) card — and “I''ll get it — and “in a week — and “message — and “the app”.'
+    pt: 'Diga: “Eu preciso de — e “conta — e “banco — e “Assine (formal) — e “o cartão — e “vou receber — e “em uma semana — e “mensagem — e “o aplicativo”.'
+  answer:
+    speaker: protagonist
+    text: Ми треба … сметка … банка … Потпишете … картичката … ќе ја добијам … за една недела … порака … апликацијата
+  items:
+  - mi-treba
+  - smetka
+  - banka
+  - potpisete
+  - kartickata
+  - ke-ja-dobijam
+  - za-edna-nedela
+  - poraka
+  - aplikacijata
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “free (of charge, feminine) — and “he needs — and “I came — and “residence permit — and “passport — and “photo / picture — and “here is / here are — and “is missing — and “document”.'
+    pt: 'Diga: “gratuita — e “ele precisa — e “eu vim — e “autorização de residência — e “passaporte — e “foto / quadro — e “aqui está / eis — e “está faltando — e “documento”.'
+  answer:
+    speaker: protagonist
+    text: бесплатна … му треба … дојдов … дозвола за престој … пасош … слика … еве … недостасува … документ
+  items:
+  - besplatna
+  - mu-treba
+  - dojdov
+  - dozvola
+  - pasos
+  - slika
+  - eve
+  - nedostasuva
+  - dokument
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the work contract — and “I''ll come — and “we''re closed (we don''t work) — and “At what time? — and “eight — and “copy — and “family — and “son — and “lives”.'
+    pt: 'Diga: “o contrato de trabalho — e “eu venho / virei — e “não abrimos (não trabalhamos) — e “A que horas? — e “oito — e “cópia — e “família — e “filho — e “mora”.'
+  answer:
+    speaker: protagonist
+    text: договорот за работа … ќе дојдам … не работиме … Во колку часот? … осум … копија … фамилија … син … живее
+  items:
+  - dogovorot
+  - ke-dojdam
+  - ne-rabotime
+  - vo-kolku-casot
+  - osum
+  - kopija
+  - familija
+  - sin
+  - zivee
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “daughter — and “brother — and “sister — and “How old…? (how many years) — and “years — and “thirty — and “twenty-five — and “mother — and “father”.'
+    pt: 'Diga: “filha — e “irmão — e “irmã — e “Quantos anos…? — e “anos — e “trinta — e “vinte e cinco — e “mãe — e “pai”.'
+  answer:
+    speaker: protagonist
+    text: ќерка … брат … сестра … Колку години…? … години … триесет … дваесет и пет … мајка … татко
+  items:
+  - kerka
+  - brat
+  - sestra
+  - kolku-godini
+  - godini
+  - trieset
+  - dvaeset-i-pet
+  - majka
+  - tatko
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “they — and “meeting — and “When do you have time? (informal) — and “I don''t have time — and “tomorrow — and “Wednesday — and “I can''t — and “Thursday — and “Friday”.'
+    pt: 'Diga: “eles — e “reunião — e “Quando você tem tempo? — e “não tenho tempo — e “amanhã — e “quarta-feira — e “não posso — e “quinta-feira — e “sexta-feira”.'
+  answer:
+    speaker: protagonist
+    text: тие … состанок … Кога имаш време? … немам време … утре … среда … не можам … четврток … петок
+  items:
+  - tie
+  - sostanok
+  - koga-imas-vreme
+  - nemam-vreme
+  - utre
+  - sreda
+  - ne-mozam
+  - cetvrtok
+  - petok
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “better — and “Saturday — and “Sunday — and “Monday — and “Tuesday — and “bread — and “milk — and “water — and “Do you have…? (formal)”.'
+    pt: 'Diga: “melhor — e “sábado — e “domingo — e “segunda-feira — e “terça-feira — e “pão — e “leite — e “água — e “O senhor tem…? (formal)”.'
+  answer:
+    speaker: protagonist
+    text: подобро … сабота … недела … понеделник … вторник … леб … млеко … вода … Имате ли…?
+  items:
+  - podobro
+  - sabota
+  - nedela
+  - ponedelnik
+  - vtornik
+  - leb
+  - mleko
+  - voda
+  - imate-li
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “We have — and “one (with a masculine word) — and “two (with feminine and neuter words) — and “please (formal) — and “Anything else? — and “That''s all — and “How much is it? — and “denars
+      (the money) — and “a hundred”.'
+    pt: 'Diga: “Temos — e “um — e “duas / dois — e “por favor (formal) — e “Mais alguma coisa? — e “É só isso — e “Quanto custa? — e “dinares (a moeda) — e “cem”.'
+  answer:
+    speaker: protagonist
+    text: Имаме … еден … две … ве молам … Уште нешто? … Тоа е сè … Колку чини? … денари … сто
+  items:
+  - imame
+  - eden
+  - dve
+  - ve-molam
+  - uste-nesto
+  - toa-e-se
+  - kolku-cini
+  - denari
+  - sto
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “a (plastic) bag — and “Have a nice day! / Enjoy!”.'
+    pt: 'Diga: “uma sacolinha — e “Bom dia! / Bom proveito!”.'
+  answer:
+    speaker: protagonist
+    text: кесе … Пријатно!
+  items:
+  - kese
+  - prijatno
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

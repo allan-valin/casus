@@ -1,0 +1,618 @@
+# UNIT mk A2-03 — written by AI (Claude) for Casus; expanded from src/A2-03.yml by tools/expand_unit.py. Edit the source.
+
+id: A2-03
+level: A2
+number: 3
+protagonist: f
+title:
+  en: The heart and health
+  pt: O coração e a saúde
+situation:
+  en: A check-up for work with Dr Petrovska, your family doctor.
+  pt: Um check-up do trabalho com a doutora Petrovska, sua médica de família.
+learn_lessons:
+- a2-future
+culture: —
+new_items:
+- id: pritisokot
+  text: притисокот
+  meaning:
+    en: the blood pressure
+    pt: a pressão
+  rare: true
+- id: dali
+  text: Дали…?
+  meaning:
+    en: '(question word: is it…? does…?)'
+    pt: '(palavra de pergunta: será que…?)'
+- id: vo-red
+  text: во ред
+  meaning:
+    en: all right, in order
+    pt: em ordem / tudo certo
+- id: normalen
+  text: нормален
+  meaning:
+    en: normal (masculine)
+    pt: normal
+- id: srceto
+  text: срцето
+  meaning:
+    en: the heart
+    pt: o coração
+- id: krvta
+  text: крвта
+  meaning:
+    en: the blood
+    pt: o sangue
+  rare: true
+- id: rezultatite
+  text: резултатите
+  meaning:
+    en: the results
+    pt: os resultados
+  rare: true
+- id: ke-bidat
+  text: ќе бидат
+  meaning:
+    en: will be (plural)
+    pt: vão estar / serão
+- id: gotovi
+  text: готови
+  meaning:
+    en: ready (plural)
+    pt: prontos
+- id: treba-da
+  text: треба да
+  meaning:
+    en: should / have to
+    pt: deve / tem que
+- id: jadete-zdravo
+  text: Јадете здраво
+  meaning:
+    en: Eat healthily (formal)
+    pt: Coma de forma saudável
+- id: setajte
+  text: шетајте
+  meaning:
+    en: walk (formal)
+    pt: caminhe
+- id: sekoj-den
+  text: секој ден
+  meaning:
+    en: every day
+    pt: todo dia
+reviews:
+- item: vlezete
+  from: A1-02
+- item: stanot
+  from: A1-02
+- item: ubav-e
+  from: A1-02
+- item: kade-e
+  from: A1-02
+- item: kujnata
+  from: A1-02
+- item: tuka
+  from: A1-02
+- item: tamu
+  from: A1-02
+- item: a-sto
+  from: A1-02
+- item: banjata
+  from: A1-02
+- item: sobata
+  from: A1-02
+- item: golema
+  from: A1-02
+- item: mnogu
+  from: A1-02
+- item: prozorecot
+  from: A1-02
+- item: mal
+  from: A1-02
+- item: dobro
+  from: A1-02
+- item: dolu
+  from: A1-02
+- item: papuci
+  from: A1-02
+- item: sto-gotvite
+  from: A1-18
+- item: testenini
+  from: A1-18
+- item: sporetot
+  from: A1-18
+- item: vrie
+  from: A1-18
+- item: uste-ne
+  from: A1-18
+- item: koga
+  from: A1-18
+- item: stavete
+  from: A1-18
+- item: sol
+  from: A1-18
+- item: gotovo
+  from: A1-18
+- item: bravo
+  from: A1-18
+- item: probajte
+  from: A1-18
+- item: starata
+  from: A1-26
+- item: stara
+  from: A1-26
+- item: sakam-da-kupam
+  from: A1-26
+- item: podarok
+  from: A1-26
+- item: ova-ili-ona
+  from: A1-26
+- item: ona
+  from: A1-26
+- item: maloto
+  from: A1-26
+- item: poubavo
+  from: A1-26
+- item: srebro
+  from: A1-26
+- item: go-zemam
+  from: A1-26
+- item: petstotini
+  from: A1-26
+- item: igras-li
+  from: A1-30
+- item: kosarka
+  from: A1-30
+- item: igram
+  from: A1-30
+- item: fudbal
+  from: A1-30
+- item: ajde
+  from: A1-30
+- item: trcaj
+  from: A1-30
+- item: skokni
+  from: A1-30
+- item: visok
+  from: A1-30
+- item: brz
+  from: A1-30
+- item: silen
+  from: A1-30
+- item: pivo
+  from: A1-30
+- item: dojdov
+  from: A2-02
+- item: dozvola
+  from: A2-02
+- item: pasos
+  from: A2-02
+- item: slika
+  from: A2-02
+- item: eve
+  from: A2-02
+- item: nedostasuva
+  from: A2-02
+- item: dokument
+  from: A2-02
+- item: dogovorot
+  from: A2-02
+- item: ke-dojdam
+  from: A2-02
+- item: ne-rabotime
+  from: A2-02
+- item: vo-kolku-casot
+  from: A2-02
+- item: osum
+  from: A2-02
+- item: kopija
+  from: A2-02
+- item: do
+  from: A1-08
+- item: sve
+  from: A1-19
+- item: rabota
+  from: A1-20
+steps:
+- type: narrator
+  text:
+    en: A check-up for work with Dr Petrovska, your family doctor. Listen to the conversation; you don't need to understand it yet.
+    pt: Um check-up do trabalho com a doutora Petrovska, sua médica de família. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: doktorka
+    text: Седнете. Прво притисокот.
+    meaning:
+      en: Sit down. First, the blood pressure.
+      pt: Sente-se. Primeiro, a pressão.
+  - speaker: protagonist
+    text: Дали е сè во ред?
+    meaning:
+      en: Is everything all right?
+      pt: Está tudo certo?
+  - speaker: doktorka
+    text: Притисокот е нормален. И срцето е добро.
+    meaning:
+      en: Your blood pressure is normal. And your heart is fine.
+      pt: A pressão está normal. E o coração está bem.
+  - speaker: protagonist
+    text: А крвта?
+    meaning:
+      en: And the blood test?
+      pt: E o exame de sangue?
+  - speaker: doktorka
+    text: Резултатите ќе бидат готови утре.
+    meaning:
+      en: The results will be ready tomorrow.
+      pt: Os resultados ficam prontos amanhã.
+  - speaker: protagonist
+    text: Што треба да правам?
+    meaning:
+      en: What should I do?
+      pt: O que eu devo fazer?
+  - speaker: doktorka
+    text: Јадете здраво и шетајте секој ден.
+    meaning:
+      en: Eat healthily and walk every day.
+      pt: Coma de forma saudável e caminhe todo dia.
+  - speaker: protagonist
+    text: Секој ден? Добро, ќе шетам до работа.
+    meaning:
+      en: Every day? All right, I'll walk to work.
+      pt: Todo dia? Está bem, vou a pé para o trabalho.
+- type: narrator
+  text:
+    en: '''Дали'' starts a yes-no question, like ''ли'' after the verb: ''Дали е сè во ред?'' — is everything all right?'
+    pt: '''Дали'' abre uma pergunta de sim ou não, como o ''ли'' depois do verbo: ''Дали е сè во ред?'' — está tudo certo?'
+- type: prompt
+  ask:
+    en: 'Ask: is everything all right?'
+    pt: 'Pergunte: está tudo certo?'
+  answer:
+    speaker: protagonist
+    text: Дали е сè во ред?
+  items:
+  - dali
+  - sve
+  - vo-red
+- type: prompt
+  ask:
+    en: 'Say for her: the blood pressure is normal.'
+    pt: 'Diga por ela: a pressão está normal.'
+  answer:
+    speaker: protagonist
+    text: Притисокот е нормален.
+  items:
+  - pritisokot
+  - normalen
+- type: prompt
+  ask:
+    en: 'Say: the heart is fine.'
+    pt: 'Diga: o coração está bem.'
+  answer:
+    speaker: protagonist
+    text: Срцето е добро.
+  items:
+  - srceto
+- type: prompt
+  ask:
+    en: 'Ask about the blood test: and the blood?'
+    pt: 'Pergunte do exame: e o sangue?'
+  answer:
+    speaker: protagonist
+    text: А крвта?
+  items:
+  - krvta
+- type: prompt
+  ask:
+    en: 'Say: the results will be ready tomorrow.'
+    pt: 'Diga: os resultados ficam prontos amanhã.'
+  answer:
+    speaker: protagonist
+    text: Резултатите ќе бидат готови утре.
+  items:
+  - rezultatite
+  - ke-bidat
+  - gotovi
+- type: prompt
+  ask:
+    en: 'Ask: what should I do?'
+    pt: 'Pergunte: o que eu devo fazer?'
+  answer:
+    speaker: protagonist
+    text: Што треба да правам?
+  items:
+  - treba-da
+- type: prompt
+  ask:
+    en: 'Her advice: eat healthily.'
+    pt: 'O conselho dela: coma de forma saudável.'
+  answer:
+    speaker: protagonist
+    text: Јадете здраво.
+  items:
+  - jadete-zdravo
+- type: prompt
+  ask:
+    en: And walk every day.
+    pt: E caminhe todo dia.
+  answer:
+    speaker: protagonist
+    text: Шетајте секој ден.
+  items:
+  - setajte
+  - sekoj-den
+- type: prompt
+  ask:
+    en: 'Say: I''ll walk to work. (future of шетам)'
+    pt: 'Diga: vou caminhar até o trabalho.'
+  answer:
+    speaker: protagonist
+    text: Ќе шетам до работа.
+  items:
+  - do
+  - rabota
+- type: narrator
+  text:
+    en: Everyone registers with a family doctor (матичен лекар), who refers you to specialists. Book visits through the national system, Мој термин.
+    pt: Todo mundo se registra com um médico de família (матичен лекар), que encaminha aos especialistas. As consultas se marcam pelo sistema nacional, Мој термин.
+- type: prompt
+  ask:
+    en: 'Once more: say “the blood pressure”.'
+    pt: 'Mais uma vez: diga “a pressão”.'
+  answer:
+    speaker: protagonist
+    text: притисокот
+  items:
+  - pritisokot
+- type: prompt
+  ask:
+    en: 'Once more: say “(question word: is it…? does…?)”.'
+    pt: 'Mais uma vez: diga “(palavra de pergunta: será que…?)”.'
+  answer:
+    speaker: protagonist
+    text: Дали…?
+  items:
+  - dali
+- type: prompt
+  ask:
+    en: 'Once more: say “all right, in order”.'
+    pt: 'Mais uma vez: diga “em ordem / tudo certo”.'
+  answer:
+    speaker: protagonist
+    text: во ред
+  items:
+  - vo-red
+- type: prompt
+  ask:
+    en: 'Once more: say “normal (masculine)”.'
+    pt: 'Mais uma vez: diga “normal”.'
+  answer:
+    speaker: protagonist
+    text: нормален
+  items:
+  - normalen
+- type: prompt
+  ask:
+    en: 'Once more: say “the heart”.'
+    pt: 'Mais uma vez: diga “o coração”.'
+  answer:
+    speaker: protagonist
+    text: срцето
+  items:
+  - srceto
+- type: prompt
+  ask:
+    en: 'Once more: say “the blood”.'
+    pt: 'Mais uma vez: diga “o sangue”.'
+  answer:
+    speaker: protagonist
+    text: крвта
+  items:
+  - krvta
+- type: prompt
+  ask:
+    en: 'Once more: say “the results”.'
+    pt: 'Mais uma vez: diga “os resultados”.'
+  answer:
+    speaker: protagonist
+    text: резултатите
+  items:
+  - rezultatite
+- type: prompt
+  ask:
+    en: 'Once more: say “will be (plural)”.'
+    pt: 'Mais uma vez: diga “vão estar / serão”.'
+  answer:
+    speaker: protagonist
+    text: ќе бидат
+  items:
+  - ke-bidat
+- type: prompt
+  ask:
+    en: 'Once more: say “ready (plural)”.'
+    pt: 'Mais uma vez: diga “prontos”.'
+  answer:
+    speaker: protagonist
+    text: готови
+  items:
+  - gotovi
+- type: prompt
+  ask:
+    en: 'Once more: say “should / have to”.'
+    pt: 'Mais uma vez: diga “deve / tem que”.'
+  answer:
+    speaker: protagonist
+    text: треба да
+  items:
+  - treba-da
+- type: prompt
+  ask:
+    en: 'Once more: say “Eat healthily (formal)”.'
+    pt: 'Mais uma vez: diga “Coma de forma saudável”.'
+  answer:
+    speaker: protagonist
+    text: Јадете здраво
+  items:
+  - jadete-zdravo
+- type: prompt
+  ask:
+    en: 'Once more: say “walk (formal)”.'
+    pt: 'Mais uma vez: diga “caminhe”.'
+  answer:
+    speaker: protagonist
+    text: шетајте
+  items:
+  - setajte
+- type: prompt
+  ask:
+    en: 'Once more: say “every day”.'
+    pt: 'Mais uma vez: diga “todo dia”.'
+  answer:
+    speaker: protagonist
+    text: секој ден
+  items:
+  - sekoj-den
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I came — and “residence permit — and “passport — and “photo / picture — and “here is / here are — and “is missing — and “document — and “the work contract — and “I''ll come”.'
+    pt: 'Diga: “eu vim — e “autorização de residência — e “passaporte — e “foto / quadro — e “aqui está / eis — e “está faltando — e “documento — e “o contrato de trabalho — e “eu venho / virei”.'
+  answer:
+    speaker: protagonist
+    text: дојдов … дозвола за престој … пасош … слика … еве … недостасува … документ … договорот за работа … ќе дојдам
+  items:
+  - dojdov
+  - dozvola
+  - pasos
+  - slika
+  - eve
+  - nedostasuva
+  - dokument
+  - dogovorot
+  - ke-dojdam
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “we''re closed (we don''t work) — and “At what time? — and “eight — and “copy — and “Do you play…? (informal) — and “basketball — and “I play — and “football (soccer) — and “Come on! / Let''s
+      go!”.'
+    pt: 'Diga: “não abrimos (não trabalhamos) — e “A que horas? — e “oito — e “cópia — e “Você joga…? — e “basquete — e “eu jogo — e “futebol — e “Vamos! / Bora!”.'
+  answer:
+    speaker: protagonist
+    text: не работиме … Во колку часот? … осум … копија … Играш ли…? … кошарка … играм … фудбал … Ајде!
+  items:
+  - ne-rabotime
+  - vo-kolku-casot
+  - osum
+  - kopija
+  - igras-li
+  - kosarka
+  - igram
+  - fudbal
+  - ajde
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Run! (informal) — and “Jump! (informal) — and “tall (masculine) — and “fast (masculine) — and “strong (masculine) — and “beer — and “the old (feminine) — and “old (feminine) — and “I''d like
+      to buy…”.'
+    pt: 'Diga: “Corre! — e “Pula! — e “alto — e “rápido — e “forte — e “cerveja — e “a velha / antiga — e “velha / antiga — e “Quero comprar…”.'
+  answer:
+    speaker: protagonist
+    text: Трчај! … Скокни! … висок … брз … силен … пиво … старата … стара … Сакам да купам…
+  items:
+  - trcaj
+  - skokni
+  - visok
+  - brz
+  - silen
+  - pivo
+  - starata
+  - stara
+  - sakam-da-kupam
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “present, gift — and “This or that? — and “that (one) — and “the small one — and “nicer, prettier — and “silver — and “I''ll take it — and “five hundred — and “What are you cooking? (formal)”.'
+    pt: 'Diga: “presente — e “Isto ou aquilo? — e “aquilo / aquele — e “o pequeno — e “mais bonito — e “prata — e “Vou levar — e “quinhentos — e “O que o senhor está cozinhando?”.'
+  answer:
+    speaker: protagonist
+    text: подарок … Ова или она? … она … малото … поубаво … сребро … Го земам … петстотини … Што готвите?
+  items:
+  - podarok
+  - ova-ili-ona
+  - ona
+  - maloto
+  - poubavo
+  - srebro
+  - go-zemam
+  - petstotini
+  - sto-gotvite
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “pasta — and “the stove — and “boils / is boiling — and “not yet — and “when — and “put (formal) — and “salt — and “Done / ready — and “Well done!”.'
+    pt: 'Diga: “macarrão — e “o fogão — e “ferve / está fervendo — e “ainda não — e “quando — e “coloque (formal) — e “sal — e “Pronto — e “Muito bem!”.'
+  answer:
+    speaker: protagonist
+    text: тестенини … шпоретот … врие … уште не … кога … ставете … сол … Готово … Браво!
+  items:
+  - testenini
+  - sporetot
+  - vrie
+  - uste-ne
+  - koga
+  - stavete
+  - sol
+  - gotovo
+  - bravo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Try / taste (formal) — and “Come in (formal) — and “the flat — and “It''s nice — and “Where is…? — and “the kitchen — and “here — and “there — and “And the …? (asking about something else)”.'
+    pt: 'Diga: “Prove (formal) — e “Entre / entrem (formal) — e “o apartamento — e “É bonito — e “Onde fica…? / Onde está…? — e “a cozinha — e “aqui — e “ali / lá — e “E o/a …? (perguntando por outra coisa)”.'
+  answer:
+    speaker: protagonist
+    text: Пробајте … Влезете … станот … Убав е … Каде е…? … кујната … тука … таму … А …?
+  items:
+  - probajte
+  - vlezete
+  - stanot
+  - ubav-e
+  - kade-e
+  - kujnata
+  - tuka
+  - tamu
+  - a-sto
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the bathroom — and “the room — and “big (with a feminine word: собата) — and “very — and “the window — and “small (with a masculine word: прозорецот) — and “Good / all right — and “downstairs
+      — and “slippers (for indoors)”.'
+    pt: 'Diga: “o banheiro — e “o quarto — e “grande (com palavra feminina: собата) — e “muito — e “a janela — e “pequeno (com palavra masculina: прозорецот) — e “Bem / está bem / bom — e “embaixo / lá
+      embaixo — e “chinelos (de usar em casa)”.'
+  answer:
+    speaker: protagonist
+    text: бањата … собата … голема … многу … прозорецот … мал … Добро … долу … влечки
+  items:
+  - banjata
+  - sobata
+  - golema
+  - mnogu
+  - prozorecot
+  - mal
+  - dobro
+  - dolu
+  - papuci
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

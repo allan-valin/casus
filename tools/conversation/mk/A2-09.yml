@@ -1,0 +1,583 @@
+# UNIT mk A2-09 — written by AI (Claude) for Casus; expanded from src/A2-09.yml by tools/expand_unit.py. Edit the source.
+
+id: A2-09
+level: A2
+number: 9
+protagonist: f
+title:
+  en: Electricity at home
+  pt: Eletricidade em casa
+situation:
+  en: The heater, the water heater and the washing machine at once. The lights go out.
+  pt: O aquecedor, o boiler e a máquina de lavar ao mesmo tempo. A luz cai.
+learn_lessons:
+- a2-imperative
+culture: —
+new_items:
+- id: struja
+  text: струја
+  meaning:
+    en: electricity / power
+    pt: luz / energia elétrica
+- id: grealkata
+  text: греалката
+  meaning:
+    en: the heater
+    pt: o aquecedor
+  rare: true
+- id: zaedno
+  text: заедно
+  meaning:
+    en: together
+    pt: junto
+- id: masinata
+  text: машината за перење
+  meaning:
+    en: the washing machine
+    pt: a máquina de lavar
+  rare: true
+- id: premnogu
+  text: премногу
+  meaning:
+    en: too much
+    pt: demais
+- id: osiguruvacot
+  text: осигурувачот
+  meaning:
+    en: the fuse
+    pt: o disjuntor
+  rare: true
+- id: padna
+  text: падна
+  meaning:
+    en: fell, went down
+    pt: caiu
+- id: isklucete
+  text: Исклучете
+  meaning:
+    en: Switch off (formal)
+    pt: Desligue (formal)
+- id: kreneete
+  text: кренете
+  meaning:
+    en: lift / put up (formal)
+    pt: levante (formal)
+  rare: true
+- id: vkluci
+  text: вклучи
+  meaning:
+    en: switch on
+    pt: ligar
+- id: ne-vklucuvajte
+  text: не вклучувајте
+  meaning:
+    en: don't switch on (formal)
+    pt: não ligue
+  rare: true
+- id: odednas
+  text: одеднаш
+  meaning:
+    en: all at once
+    pt: de uma vez
+  rare: true
+reviews:
+- item: ulica
+  from: A1-08
+- item: odete
+  from: A1-08
+- item: pravo
+  from: A1-08
+- item: pa
+  from: A1-08
+- item: levo
+  from: A1-08
+- item: desno
+  from: A1-08
+- item: daleku
+  from: A1-08
+- item: blizu
+  from: A1-08
+- item: pet
+  from: A1-08
+- item: minuti
+  from: A1-08
+- item: peski
+  from: A1-08
+- item: stanicata
+  from: A1-08
+- item: do
+  from: A1-08
+- item: pogledni
+  from: A1-24
+- item: se-gleda
+  from: A1-24
+- item: nok
+  from: A1-24
+- item: dzvezdi
+  from: A1-24
+- item: dzvezda
+  from: A1-24
+- item: planeta
+  from: A1-24
+- item: mesecinata
+  from: A1-24
+- item: ista
+  from: A1-24
+- item: drugi
+  from: A1-24
+- item: popladne
+  from: A1-24
+- item: sonce
+  from: A1-24
+- item: navistina
+  from: A1-24
+- item: dojdov
+  from: A2-02
+- item: dozvola
+  from: A2-02
+- item: pasos
+  from: A2-02
+- item: slika
+  from: A2-02
+- item: eve
+  from: A2-02
+- item: nedostasuva
+  from: A2-02
+- item: dokument
+  from: A2-02
+- item: dogovorot
+  from: A2-02
+- item: ke-dojdam
+  from: A2-02
+- item: ne-rabotime
+  from: A2-02
+- item: vo-kolku-casot
+  from: A2-02
+- item: osum
+  from: A2-02
+- item: kopija
+  from: A2-02
+- item: vnimavajte
+  from: A2-06
+- item: mraz
+  from: A2-06
+- item: ke-bide
+  from: A2-06
+- item: potoplo
+  from: A2-06
+- item: se-topi
+  from: A2-06
+- item: ke-se-stopi
+  from: A2-06
+- item: vekje
+  from: A2-06
+- item: pareata
+  from: A2-06
+- item: znaete-li
+  from: A2-06
+- item: ezeroto
+  from: A2-06
+- item: cista
+  from: A2-06
+- item: tolku
+  from: A2-06
+- item: cestit-imenden
+  from: A2-08
+- item: za-vas
+  from: A2-08
+- item: ne-trebase
+  from: A2-08
+- item: naucuv
+  from: A2-08
+- item: torta
+  from: A2-08
+- item: ja-napravi
+  from: A2-08
+- item: gosti
+  from: A2-08
+- item: site
+  from: A2-08
+- item: doagjaat
+  from: A2-08
+- item: bez-pokana
+  from: A2-08
+- item: vnuk
+  from: A2-08
+- item: kade-e
+  from: A1-02
+- item: stanot
+  from: A1-02
+- item: nema
+  from: A1-17
+- item: sve
+  from: A1-19
+- item: bojlerot
+  from: A1-29
+steps:
+- type: narrator
+  text:
+    en: The heater, the water heater and the washing machine at once. The lights go out. Listen to the conversation; you don't need to understand it yet.
+    pt: O aquecedor, o boiler e a máquina de lavar ao mesmo tempo. A luz cai. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Госпоѓо Стојановска, нема струја во станот!
+    meaning:
+      en: Mrs Stojanovska, there's no power in the flat!
+      pt: Senhora Stojanovska, acabou a luz no apartamento!
+  - speaker: vera
+    text: Дали ги вклучивте греалката и бојлерот заедно?
+    meaning:
+      en: Did you switch on the heater and the water heater together?
+      pt: A senhora ligou o aquecedor e o boiler juntos?
+  - speaker: protagonist
+    text: Да... и машината за перење.
+    meaning:
+      en: Yes... and the washing machine.
+      pt: Sim... e a máquina de lavar.
+  - speaker: vera
+    text: Е, тоа е премногу. Осигурувачот падна.
+    meaning:
+      en: Well, that's too much. The fuse went.
+      pt: Pois é, é demais. O disjuntor caiu.
+  - speaker: protagonist
+    text: Каде е осигурувачот?
+    meaning:
+      en: Where's the fuse box?
+      pt: Onde fica o disjuntor?
+  - speaker: vera
+    text: Во ходникот. Исклучете ја машината, па кренете го осигурувачот.
+    meaning:
+      en: In the hall. Switch off the machine, then put the fuse back up.
+      pt: No corredor. Desligue a máquina, depois levante o disjuntor.
+  - speaker: protagonist
+    text: Сега има струја!
+    meaning:
+      en: Now there's power!
+      pt: Agora voltou a luz!
+  - speaker: vera
+    text: Не вклучувајте сè одеднаш.
+    meaning:
+      en: Don't switch everything on at once.
+      pt: Não ligue tudo de uma vez.
+- type: prompt
+  ask:
+    en: 'Say: there''s no power in the flat!'
+    pt: 'Diga: acabou a luz no apartamento!'
+  answer:
+    speaker: protagonist
+    text: Нема струја во станот!
+  items:
+  - nema
+  - struja
+  - stanot
+- type: prompt
+  ask:
+    en: 'Say: the heater and the water heater together.'
+    pt: 'Diga: o aquecedor e o boiler juntos.'
+  answer:
+    speaker: protagonist
+    text: Греалката и бојлерот заедно.
+  items:
+  - grealkata
+  - bojlerot
+  - zaedno
+- type: prompt
+  ask:
+    en: And the washing machine.
+    pt: E a máquina de lavar.
+  answer:
+    speaker: protagonist
+    text: И машината за перење.
+  items:
+  - masinata
+- type: prompt
+  ask:
+    en: 'Say: that''s too much.'
+    pt: 'Diga: é demais.'
+  answer:
+    speaker: protagonist
+    text: Тоа е премногу.
+  items:
+  - premnogu
+- type: prompt
+  ask:
+    en: 'Say: the fuse went.'
+    pt: 'Diga: o disjuntor caiu.'
+  answer:
+    speaker: protagonist
+    text: Осигурувачот падна.
+  items:
+  - osiguruvacot
+  - padna
+- type: prompt
+  ask:
+    en: Ask where the fuse is.
+    pt: Pergunte onde fica o disjuntor.
+  answer:
+    speaker: protagonist
+    text: Каде е осигурувачот?
+  items:
+  - kade-e
+  - osiguruvacot
+- type: prompt
+  ask:
+    en: 'She says: switch off the machine.'
+    pt: 'Ela diz: desligue a máquina.'
+  answer:
+    speaker: protagonist
+    text: Исклучете ја машината.
+  items:
+  - isklucete
+  - masinata
+- type: prompt
+  ask:
+    en: 'Then: put the fuse back up.'
+    pt: 'Depois: levante o disjuntor.'
+  answer:
+    speaker: protagonist
+    text: Кренете го осигурувачот.
+  items:
+  - kreneete
+  - osiguruvacot
+- type: narrator
+  text:
+    en: 'Telling someone not to do something uses the ''ongoing'' verb: вклучи (switch on, once) but не вклучувај / не вклучувајте (don''t be switching on).'
+    pt: 'Para dizer ''não faça'', usa-se o verbo ''em andamento'': вклучи (ligue, uma vez), mas не вклучувај / не вклучувајте (não fique ligando).'
+- type: prompt
+  ask:
+    en: 'Say: switch on the heater. (to Marko, informal)'
+    pt: 'Diga: liga o aquecedor. (para o Marko, informal)'
+  answer:
+    speaker: protagonist
+    text: Вклучи ја греалката.
+  items:
+  - vkluci
+  - grealkata
+- type: prompt
+  ask:
+    en: 'Vera: don''t switch everything on at once.'
+    pt: 'A Vera: não ligue tudo de uma vez.'
+  answer:
+    speaker: protagonist
+    text: Не вклучувајте сè одеднаш.
+  items:
+  - ne-vklucuvajte
+  - sve
+  - odednas
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'Em prédio antigo daqui o disjuntor é fraco: aquecedor, boiler e máquina juntos derrubam tudo — o equivalente do chuveiro elétrico no Brasil.'
+- type: prompt
+  ask:
+    en: 'Once more: say “electricity / power”.'
+    pt: 'Mais uma vez: diga “luz / energia elétrica”.'
+  answer:
+    speaker: protagonist
+    text: струја
+  items:
+  - struja
+- type: prompt
+  ask:
+    en: 'Once more: say “together”.'
+    pt: 'Mais uma vez: diga “junto”.'
+  answer:
+    speaker: protagonist
+    text: заедно
+  items:
+  - zaedno
+- type: prompt
+  ask:
+    en: 'Once more: say “too much”.'
+    pt: 'Mais uma vez: diga “demais”.'
+  answer:
+    speaker: protagonist
+    text: премногу
+  items:
+  - premnogu
+- type: prompt
+  ask:
+    en: 'Once more: say “fell, went down”.'
+    pt: 'Mais uma vez: diga “caiu”.'
+  answer:
+    speaker: protagonist
+    text: падна
+  items:
+  - padna
+- type: prompt
+  ask:
+    en: 'Once more: say “Switch off (formal)”.'
+    pt: 'Mais uma vez: diga “Desligue (formal)”.'
+  answer:
+    speaker: protagonist
+    text: Исклучете
+  items:
+  - isklucete
+- type: prompt
+  ask:
+    en: 'Once more: say “lift / put up (formal)”.'
+    pt: 'Mais uma vez: diga “levante (formal)”.'
+  answer:
+    speaker: protagonist
+    text: кренете
+  items:
+  - kreneete
+- type: prompt
+  ask:
+    en: 'Once more: say “switch on”.'
+    pt: 'Mais uma vez: diga “ligar”.'
+  answer:
+    speaker: protagonist
+    text: вклучи
+  items:
+  - vkluci
+- type: prompt
+  ask:
+    en: 'Once more: say “don''t switch on (formal)”.'
+    pt: 'Mais uma vez: diga “não ligue”.'
+  answer:
+    speaker: protagonist
+    text: не вклучувајте
+  items:
+  - ne-vklucuvajte
+- type: prompt
+  ask:
+    en: 'Once more: say “all at once”.'
+    pt: 'Mais uma vez: diga “de uma vez”.'
+  answer:
+    speaker: protagonist
+    text: одеднаш
+  items:
+  - odednas
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Happy name day! — and “for you (formal) — and “You shouldn''t have! — and “I learned — and “cake (layered) — and “made it — and “guests — and “everyone, all — and “(they) come — and “without
+      an invitation — and “grandson / nephew”.'
+    pt: 'Diga: “Feliz dia do santo! — e “para a senhora — e “Não precisava! — e “Aprendi — e “torta / bolo — e “fez — e “convidados / visitas — e “todos — e “vêm — e “sem convite — e “neto / sobrinho”.'
+  answer:
+    speaker: protagonist
+    text: Честит именден! … за вас … Не требаше! … Научив … торта … ја направи … гости … сите … доаѓаат … без покана … внук
+  items:
+  - cestit-imenden
+  - za-vas
+  - ne-trebase
+  - naucuv
+  - torta
+  - ja-napravi
+  - gosti
+  - site
+  - doagjaat
+  - bez-pokana
+  - vnuk
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Careful! (formal) — and “ice, frost — and “will be — and “warmer — and “is melting — and “will melt (completely) — and “already — and “the steam — and “Do you know…? (formal) — and “the lake
+      — and “clean (feminine)”.'
+    pt: 'Diga: “Cuidado! (formal) — e “gelo / geada — e “vai ser / vai estar — e “mais quente — e “está derretendo — e “vai derreter — e “já — e “o vapor — e “O senhor sabe…? — e “o lago — e “limpa”.'
+  answer:
+    speaker: protagonist
+    text: Внимавајте! … мраз … ќе биде … потопло … се топи … ќе се стопи … веќе … пареата … Знаете ли…? … езерото … чиста
+  items:
+  - vnimavajte
+  - mraz
+  - ke-bide
+  - potoplo
+  - se-topi
+  - ke-se-stopi
+  - vekje
+  - pareata
+  - znaete-li
+  - ezeroto
+  - cista
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “so (much) — and “I came — and “residence permit — and “passport — and “photo / picture — and “here is / here are — and “is missing — and “document — and “the work contract — and “I''ll come
+      — and “we''re closed (we don''t work)”.'
+    pt: 'Diga: “tão / tanto — e “eu vim — e “autorização de residência — e “passaporte — e “foto / quadro — e “aqui está / eis — e “está faltando — e “documento — e “o contrato de trabalho — e “eu venho
+      / virei — e “não abrimos (não trabalhamos)”.'
+  answer:
+    speaker: protagonist
+    text: толку … дојдов … дозвола за престој … пасош … слика … еве … недостасува … документ … договорот за работа … ќе дојдам … не работиме
+  items:
+  - tolku
+  - dojdov
+  - dozvola
+  - pasos
+  - slika
+  - eve
+  - nedostasuva
+  - dokument
+  - dogovorot
+  - ke-dojdam
+  - ne-rabotime
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “At what time? — and “eight — and “copy — and “Look! (informal) — and “can be seen — and “night — and “stars — and “star — and “planet — and “the moon — and “the same (feminine)”.'
+    pt: 'Diga: “A que horas? — e “oito — e “cópia — e “Olha! — e “dá para ver — e “noite — e “estrelas — e “estrela — e “planeta — e “a lua — e “a mesma”.'
+  answer:
+    speaker: protagonist
+    text: Во колку часот? … осум … копија … Погледни! … се гледа … ноќ … ѕвезди … ѕвезда … планета … месечината … иста
+  items:
+  - vo-kolku-casot
+  - osum
+  - kopija
+  - pogledni
+  - se-gleda
+  - nok
+  - dzvezdi
+  - dzvezda
+  - planeta
+  - mesecinata
+  - ista
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “other / different (plural) — and “afternoon — and “sun — and “Really? — and “street — and “Go (formal) — and “straight on — and “then — and “(to the) left — and “(to the) right — and “far”.'
+    pt: 'Diga: “outras / diferentes — e “tarde — e “sol — e “Sério? — e “rua — e “Vá (formal) — e “em frente — e “depois / e então — e “à esquerda — e “à direita — e “longe”.'
+  answer:
+    speaker: protagonist
+    text: други … попладне … сонце … Навистина? … улица … Одете … право … па … лево … десно … далеку
+  items:
+  - drugi
+  - popladne
+  - sonce
+  - navistina
+  - ulica
+  - odete
+  - pravo
+  - pa
+  - levo
+  - desno
+  - daleku
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “near — and “five — and “minutes — and “on foot — and “the (bus) stop — and “next to / to”.'
+    pt: 'Diga: “perto — e “cinco — e “minutos — e “a pé — e “o ponto (de ônibus) — e “ao lado de / até”.'
+  answer:
+    speaker: protagonist
+    text: близу … пет … минути … пешки … станицата … до
+  items:
+  - blizu
+  - pet
+  - minuti
+  - peski
+  - stanicata
+  - do
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
