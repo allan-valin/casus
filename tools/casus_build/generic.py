@@ -252,6 +252,15 @@ def parse_entries(cfg: Config, lines: Iterable[str]) -> Iterator[dict]:
         word = cfg.clean(word)
         if cfg.caseless and pos in ("noun", "adj", "det", "pron", "num") and not any(t == word for t, _ in cells):
             cells.insert(0, (word, {"pos": pos, "number": "sg", "gender": gender or ("m" if pos == "adj" else None)}))  # the headword is the (masculine) singular
+        if cfg.code == "fa" and pos in ("noun", "adj") and not form_of:
+            # Persian: the plural -ها and the ezafe / indefinite -ی are written on (with or without the non-joiner)
+            base = cfg.clean(word)
+            extra = [(base + "ها", {"pos": pos, "number": "pl"}), (base + "های", {"pos": pos, "number": "pl"}),
+                     (base + ("ی" if not base.endswith(("ا", "و", "ه", "ی")) else "یی" if base.endswith(("ا", "و")) else "ی"), {"pos": pos, "number": "sg"})]
+            cells += [(t, a) for t, a in extra if not any(t == x for x, _ in cells)]
+        if cfg.code == "fa" and pos == "verb":
+            # negation is the prefix ن- (نمی‌روم, نرفتم)
+            cells += [("ن" + t, {**a, "polarity": "neg"}) for t, a in cells if a.get("mood") in ("ind", "subj", "imp") and not t.startswith("ن")]
         if cfg.code == "bn" and pos == "noun" and not form_of and not any(a.get("case") for _, a in cells):
             from casus_build.bn import noun_forms as _bn_nouns
             cells += _bn_nouns(cfg.clean(word))
@@ -460,6 +469,17 @@ def _clean_bn(t: str) -> str:
     return _re.split(r"[\s(/,]", t.strip(), maxsplit=1)[0]
 
 
+def _strip_fa(s: str) -> str:
+    from casus_build.fa import strip_fa
+    return strip_fa(s)
+
+
+def _clean_fa(s: str) -> str:
+    from casus_build.fa import clean_fa
+    return clean_fa(s)
+
+
+CONFIGS["fa"] = Config("fa", [], {}, caseless=True, key=_strip_fa, clean=_clean_fa)
 CONFIGS["vi"] = Config("vi", [], {}, caseless=True)
 CONFIGS["id"] = Config("id", [], {}, caseless=True)
 CONFIGS["bn"] = Config("bn", ["nom", "obj", "gen", "loc"], {"nominative": "nom", "objective": "obj", "genitive": "gen", "locative": "loc"},

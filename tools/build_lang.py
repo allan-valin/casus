@@ -429,7 +429,7 @@ def measure(out: Path) -> dict:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("code", choices=["grc", "de", "ja", "ar", "ru", "ko", "zh", "mk", "fi", "cs", "pl", "tr", "hu", "is", "el", "sa", "pt", "fr", "es", "en", "it", "nl", "uk", "lt", "he", "sh", "ro", "sv", "hi", "bn", "id", "vi"])
+    ap.add_argument("code", choices=["grc", "de", "ja", "ar", "ru", "ko", "zh", "mk", "fi", "cs", "pl", "tr", "hu", "is", "el", "sa", "pt", "fr", "es", "en", "it", "nl", "uk", "lt", "he", "sh", "ro", "sv", "hi", "bn", "id", "vi", "fa"])
     ap.add_argument("--vendor", default="vendor/wiktextract", type=Path)
     ap.add_argument("--data", default="data", type=Path)
     ap.add_argument("--drop-dialects", action="store_true", help="keep only Attic, Koine and unlabelled tables")
@@ -438,8 +438,8 @@ def main(argv=None) -> int:
     t0 = time.time()
     if args.code == "grc":
         manifest = build_grc(args.vendor / "kaikki.org-dictionary-AncientGreek.jsonl", out, args.drop_dialects)
-    elif args.code in ("fi", "cs", "pl", "tr", "hu", "is", "el", "sa", "pt", "fr", "es", "en", "it", "nl", "uk", "lt", "he", "sh", "ro", "sv", "hi", "bn", "id", "vi"):
-        names = {"fi": "Finnish", "cs": "Czech", "pl": "Polish", "tr": "Turkish", "hu": "Hungarian", "is": "Icelandic", "el": "Greek", "sa": "Sanskrit", "pt": "Portuguese", "fr": "French", "es": "Spanish", "en": "English", "it": "Italian", "nl": "Dutch", "uk": "Ukrainian", "lt": "Lithuanian", "he": "Hebrew", "sh": "SerboCroatian", "ro": "Romanian", "sv": "Swedish", "hi": "Hindi", "bn": "Bengali", "id": "Indonesian", "vi": "Vietnamese"}
+    elif args.code in ("fi", "cs", "pl", "tr", "hu", "is", "el", "sa", "pt", "fr", "es", "en", "it", "nl", "uk", "lt", "he", "sh", "ro", "sv", "hi", "bn", "id", "vi", "fa"):
+        names = {"fi": "Finnish", "cs": "Czech", "pl": "Polish", "tr": "Turkish", "hu": "Hungarian", "is": "Icelandic", "el": "Greek", "sa": "Sanskrit", "pt": "Portuguese", "fr": "French", "es": "Spanish", "en": "English", "it": "Italian", "nl": "Dutch", "uk": "Ukrainian", "lt": "Lithuanian", "he": "Hebrew", "sh": "SerboCroatian", "ro": "Romanian", "sv": "Swedish", "hi": "Hindi", "bn": "Bengali", "id": "Indonesian", "vi": "Vietnamese", "fa": "Persian"}
         manifest = build_generic(args.code, args.vendor / f"kaikki.org-dictionary-{names[args.code]}.jsonl", out)
     elif args.code == "mk":
         manifest = build_mk(args.vendor / "kaikki.org-dictionary-Macedonian.jsonl", out)
