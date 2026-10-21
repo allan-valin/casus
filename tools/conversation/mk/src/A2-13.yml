@@ -1,0 +1,42 @@
+id: A2-13
+protagonist: f
+title: ["I like it", "Eu gosto"]
+situation: ["At Marko's, his friend Goran has a guitar.", "Na casa do Marko, o amigo dele, Goran, está com o violão."]
+learn: [a2-dopagja]
+culture: Toše Proeski
+items:
+  - [ti-se-dopagja, "Ти се допаѓа…?", "Do you like…? (informal)", "Você gosta de…?"]
+  - [mi-se-dopagja, "Ми се допаѓа", "I like it", "Eu gosto"]
+  - [muzika, "музика", "music", "música"]
+  - [povekje-sakam, "повеќе сакам", "I prefer", "prefiro"]
+  - [sviram, "свирам", "I play (an instrument)", "eu toco", {rare: true}]
+  - [gitara, "гитара", "guitar", "violão / guitarra", {rare: true}]
+  - [sviri, "Свири!", "Play! (informal)", "Toca!"]
+  - [pesna, "песна", "song", "música / canção"]
+  - [site-go-sakaat, "сите го сакаат", "everyone loves him", "todo mundo gosta dele"]
+  - [koj-e-toj, "Кој е тој?", "Who is he?", "Quem é ele?"]
+  - [pejac, "пејач", "singer", "cantor", {rare: true}]
+  - [mlad, "млад", "young (masculine)", "jovem"]
+dialogue:
+  - [goran, "Ти се допаѓа македонска музика?", "Do you like Macedonian music?", "Você gosta de música macedônia?"]
+  - [protagonist, "Да, ми се допаѓа. Но повеќе сакам бразилска.", "Yes, I like it. But I prefer Brazilian.", "Gosto. Mas prefiro a brasileira."]
+  - [goran, "Боса нова! Свирам една песна на гитара.", "Bossa nova! I play one song on the guitar.", "Bossa nova! Eu toco uma música no violão."]
+  - [protagonist, "Навистина? Ајде, свири!", "Really? Go on, play!", "Sério? Vai, toca!"]
+  - [goran, "Ти се допадна?", "Did you like it?", "Gostou?"]
+  - [protagonist, "Многу! А која македонска песна да слушам?", "A lot! And which Macedonian song should I listen to?", "Muito! E que música macedônia eu devo ouvir?"]
+  - [goran, "Тоше Проески. Сите го сакаат.", "Toše Proeski. Everyone loves him.", "Toše Proeski. Todo mundo gosta dele."]
+  - [protagonist, "Кој е тој?", "Who is he?", "Quem é ele?"]
+  - [goran, "Најпознатиот пејач. Почина млад.", "The most famous singer. He died young.", "O cantor mais famoso. Morreu jovem."]
+teach:
+  - ask: ["Ask Goran if he likes Brazilian music.", "Pergunte ao Goran se ele gosta de música brasileira.", "Ти се допаѓа бразилска музика?", ti-se-dopagja, muzika]
+  - ask: ["Say: I like it.", "Diga: eu gosto.", "Ми се допаѓа.", mi-se-dopagja]
+  - ask: ["Say: but I prefer Brazilian.", "Diga: mas prefiro a brasileira.", "Но повеќе сакам бразилска.", no-but, povekje-sakam]
+  - ask: ["Say for Goran: I play the guitar.", "Diga pelo Goran: eu toco violão.", "Свирам гитара.", sviram, gitara]
+  - ask: ["Tell him to play!", "Peça para ele tocar!", "Ајде, свири!", ajde, sviri]
+  - ask: ["Ask him: did you like it?", "Pergunte: você gostou?", "Ти се допадна?", ti-se-dopadna]
+  - ask: ["Say: one song.", "Diga: uma música.", "Една песна.", edna, pesna]
+  - ask: ["Say: everyone loves him.", "Diga: todo mundo gosta dele.", "Сите го сакаат.", site-go-sakaat]
+  - ask: ["Ask who he is.", "Pergunte quem é ele.", "Кој е тој?", koj-e-toj]
+  - ask: ["Say: a young singer.", "Diga: um cantor jovem.", "Млад пејач.", mlad, pejac]
+  - note: ["Toše Proeski was the best-loved pop singer of the region. He died in a car accident in 2007, aged 26; his home town, Kruševo, has a memorial house.", "Toše Proeski foi o cantor pop mais querido da região. Morreu num acidente de carro em 2007, aos 26 anos; a cidade dele, Kruševo, tem uma casa memorial."]
+  - pt_only: "Para o macedônio, Toše é um pouco o que o Cazuza ou o Renato Russo são para o Brasil — morreu jovem e virou lenda."

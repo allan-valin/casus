@@ -1,0 +1,41 @@
+id: A2-11
+protagonist: f
+title: ["The bill", "A conta"]
+situation: ["Dinner with Marko. The bill comes, and so does the fight over who pays.", "Jantar com o Marko. Chega a conta, e com ela a briga para ver quem paga."]
+learn: [a2-dopagja]
+culture: Fighting to pay; no 10 % service charge
+items:
+  - [sto-ke-naracate, "Што ќе нарачате?", "What will you order? (formal)", "O que vão pedir?"]
+  - [sopska, "шопска салата", "shopska salad", "salada shopska", {rare: true}]
+  - [skara, "скара", "grilled meat", "churrasco / grelhado", {rare: true}]
+  - [za-dvajca, "за двајца", "for two (people)", "para dois"]
+  - [kelner, "Келнер!", "Waiter!", "Garçom!"]
+  - [smetkata, "сметката", "the bill", "a conta"]
+  - [ke-platam, "ќе платам", "I'll pay", "eu pago"]
+  - [plati, "плати", "(you) paid", "(você) pagou"]
+  - [minatiot-pat, "минатиот пат", "last time", "da última vez"]
+  - [sledniot-pat, "следниот пат", "next time", "da próxima vez"]
+  - [baksis, "бакшиш", "tip", "gorjeta", {rare: true}]
+  - [ti-se-dopadna, "ти се допадна", "you liked it (informal)", "você gostou"]
+dialogue:
+  - [konobar, "Повелете. Што ќе нарачате?", "Good evening. What will you have?", "Boa noite. O que vão pedir?"]
+  - [marko, "Две шопски салати и скара за двајца.", "Two shopska salads and a grill for two.", "Duas saladas shopska e um grelhado para dois."]
+  - [protagonist, "Келнер, сметката, ве молам!", "Waiter, the bill, please!", "Garçom, a conta, por favor!"]
+  - [marko, "Јас ќе платам.", "I'll pay.", "Eu pago."]
+  - [protagonist, "Не, јас ќе платам! Ти плати минатиот пат.", "No, I'll pay! You paid last time.", "Não, eu pago! Você pagou da última vez."]
+  - [marko, "Добро, следниот пат ти.", "Fine, next time it's you.", "Tá bom, da próxima vez é você."]
+  - [protagonist, "Колку бакшиш?", "How much of a tip?", "Quanto de gorjeta?"]
+  - [marko, "Заокружи. Или десет проценти, ако ти се допадна.", "Round it up. Or ten per cent, if you liked it.", "Arredonda. Ou dez por cento, se você gostou."]
+teach:
+  - ask: ["The waiter asks what you'll order. How?", "O garçom pergunta o que vão pedir. Como?", "Што ќе нарачате?", sto-ke-naracate]
+  - ask: ["Order: two shopska salads.", "Peça: duas saladas shopska.", "Две шопски салати.", dve, sopska]
+  - ask: ["And a grill for two.", "E um grelhado para dois.", "И скара за двајца.", skara, za-dvajca]
+  - ask: ["Call the waiter for the bill.", "Chame o garçom e peça a conta.", "Келнер, сметката, ве молам!", kelner, smetkata]
+  - ask: ["Say: I'll pay.", "Diga: eu pago.", "Јас ќе платам.", ke-platam]
+  - ask: ["Say: you paid last time.", "Diga: você pagou da última vez.", "Ти плати минатиот пат.", plati, minatiot-pat]
+  - ask: ["Say: next time it's you.", "Diga: da próxima vez é você.", "Следниот пат ти.", sledniot-pat]
+  - note: ["Friends argue over the bill — and the one who invited usually wins. Keep count and pay next time.", "Amigos brigam pela conta — e quem convidou costuma ganhar. Guarde na memória e pague na próxima."]
+  - ask: ["Ask how much of a tip.", "Pergunte quanto de gorjeta.", "Колку бакшиш?", kolku-cini, baksis]
+  - note: ["'Ми се допаѓа' is 'I like it' — word for word 'it pleases me'. Past: 'ми се допадна', I liked it; 'ти се допадна', you liked it.", "'Ми се допаѓа' é 'eu gosto' — palavra por palavra 'me agrada'. No passado: 'ми се допадна', gostei; 'ти се допадна', você gostou."]
+  - ask: ["Say for Marko: if you liked it.", "Diga pelo Marko: se você gostou.", "Ако ти се допадна.", ti-se-dopadna]
+  - pt_only: "Aqui não vem os 10% na conta. Gorjeta é arredondar o valor, ou uns dez por cento se o serviço foi bom."
