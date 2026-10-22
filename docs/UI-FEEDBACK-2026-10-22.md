@@ -40,3 +40,6 @@ capital below; the engine's marks spanning such a break are dropped (LanguageToo
        816, Bavaria 62 …) — show all with their region and score against the closest. espeak accent voices exist for
        English (us, gb, rp, scotland, nyc, 029, two English regions), Portuguese (pt, pt-br), Spanish (es, es-419),
        French (fr, be, ch), Russian (ru, ru-lv): generate inflected forms per accent there. German has one espeak voice.
+18. [x] Gear: ALL languages of all three sites, in collapsible language-family groups (src/app/lib/families.js, 15
+       families, names in 5 UI languages); the current family open; another site's language marked ↗ and linked
+       there, same view. The sites keep their own order — only the menu is grouped.

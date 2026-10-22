@@ -43,4 +43,20 @@ describe('LanguageBar', () => {
     expect(picker.querySelector('summary').textContent).toMatch(/Learn/);
     expect([...picker.querySelectorAll('a')].map((a) => a.dataset.view)).toEqual(['reader', 'drills', 'learn', 'talk', 'speak', 'proof']);
   });
+  it('the language list shows every language of all three sites, by family, the current family open (Allan, 2026-10-22)', () => {
+    const { container } = render(LanguageBar, { current: 'grc', view: 'learn', parts: ['languages'] });
+    const families = [...container.querySelectorAll('nav.languages details.family')];
+    expect(families.length).toBeGreaterThan(8);
+    const open = families.filter((f) => f.open);
+    expect(open).toHaveLength(1);
+    expect(open[0].querySelector('a[aria-current=page]').textContent).toMatch(/Ancient Greek/);
+    const all = [...container.querySelectorAll('nav.languages a')];
+    expect(all.length).toBe(35);                                      // every language, not only this site's
+    const ja = all.find((a) => a.textContent.includes('Japanese'));
+    expect(ja.getAttribute('href')).toBe('https://allan-valin.github.io/casus-asia/ja/learn/');
+    const de = all.find((a) => a.textContent.includes('German'));
+    expect(de.getAttribute('href')).toMatch(/^\/de\/learn\/$/);         // this site: a local link
+    const germanic = families.find((f) => f.querySelector('a') && [...f.querySelectorAll('a')].some((a) => a.textContent.includes('German')));
+    expect([...germanic.querySelectorAll('a')].map((a) => a.textContent.replace('↗', '').trim())).toEqual(expect.arrayContaining(['German', 'English', 'Dutch', 'Swedish', 'Icelandic']));
+  });
 });

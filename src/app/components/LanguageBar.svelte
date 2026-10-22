@@ -2,7 +2,9 @@
   /* The navigation: every shipped language on the first row, the current one marked; on a second row, what to do
    * with it — read, or drill (Allan, 2026-10-19: the drills link moved under the languages, and on the drills page
    * a language name opens that language's drills; 2026-10-19: proofreading). */
-  import { SITE, SITES, siteLanguages, siteUrl } from '../../sites.js';
+  import { SITE, SITES, siteLanguages, siteUrl, siteOf } from '../../sites.js';
+  import { LANGUAGES as ALL } from '../../lang/registry.js';
+  import { FAMILIES } from '../lib/families.js';
   const LANGUAGES = siteLanguages();
   import { drillsPath, proofPath, learnPath, speakPath, talkPath } from '../lib/route.js';
   import { withBase } from '../lib/paths.js';
@@ -13,14 +15,23 @@
   const SITE_LOOK = { casus: { mark: '🏛', colour: '#6b4e9b' }, asia: { mark: '⛩', colour: '#bc002d' }, world: { mark: '🌍', colour: '#00796b' } };
   // which rows to draw (Allan, 2026-10-22: the header shows the sites and the views; the languages live behind the gear)
   let { current, view = 'reader', parts = ['languages', 'sites', 'views'] } = $props();
+  // a language of this site: a local link to the same view; of another site: that site's page, same view
+  const pathOf = (l) => (view === 'drills' ? drillsPath(l) : view === 'proof' ? proofPath(l) : view === 'learn' ? learnPath(l) : view === 'speak' ? speakPath(l) : view === 'talk' ? talkPath(l) : l.path);
+  const hrefOf = (l) => (siteOf(l.code).id === SITE.id ? withBase(pathOf(l)) : siteUrl(l.code, view));
   const VIEW_KEY = { reader: 'nav.reader', drills: 'nav.game', learn: 'nav.learn', talk: 'nav.talk', speak: 'nav.speak', proof: 'nav.proof' };
   const here = $derived(LANGUAGES.find((l) => l.code === current) ?? LANGUAGES[0]);
 </script>
 
 {#if parts.includes('languages')}<nav class="languages" aria-label={t('nav.label')}>
-  {#each LANGUAGES as l (l.code)}
-    <a href={withBase(view === 'drills' ? drillsPath(l) : view === 'proof' ? proofPath(l) : view === 'learn' ? learnPath(l) : view === 'speak' ? speakPath(l) : view === 'talk' ? talkPath(l) : l.path)} aria-current={l.code === current ? 'page' : undefined}>{#if languageFlag(l.code)}<img class="flag" src={languageFlag(l.code)} alt="" />{/if}{l.name[ui.lang] ?? l.name.en}</a>
-  {/each}
+  <!-- every language of all three sites, by family; another site's language links there (Allan, 2026-10-22) -->
+  {#each FAMILIES as f (f.id)}{@const members = f.codes.map((c) => ALL.find((l) => l.code === c)).filter(Boolean)}{#if members.length}
+    <details class="family" open={f.codes.includes(current)}>
+      <summary>{f.name[ui.lang] ?? f.name.en} <span class="family-n">{members.length}</span></summary>
+      <div class="family-langs">
+        {#each members as l (l.code)}<a href={hrefOf(l)} aria-current={l.code === current ? 'page' : undefined} data-site={siteOf(l.code).id}>{#if languageFlag(l.code)}<img class="flag" src={languageFlag(l.code)} alt="" />{/if}{l.name[ui.lang] ?? l.name.en}{#if siteOf(l.code).id !== SITE.id}<span class="other-site" title={siteOf(l.code).title}>↗</span>{/if}</a>{/each}
+      </div>
+    </details>
+  {/if}{/each}
 </nav>{/if}
 <!-- the other two sites (Allan, 2026-10-19: one codebase, three sites) -->
 {#if parts.includes('sites')}<nav class="sites" aria-label={t('nav.sites')} style:--site-here={SITE_LOOK[SITE.id]?.colour}>
@@ -52,7 +63,11 @@
 </div>{/if}
 
 <style>
-  .languages { display: flex; flex-wrap: wrap; gap: 4px; }
+  .languages { display: flex; flex-direction: column; gap: 4px; }
+  .family summary { cursor: pointer; font-weight: 700; font-size: 0.9rem; padding: 6px 4px; list-style-position: inside; }
+  .family-n { display: inline-block; min-width: 1.4em; padding: 0 6px; border-radius: 999px; background: var(--line); color: var(--ink-2); font-size: 0.8em; text-align: center; font-weight: 600; }
+  .family-langs { display: flex; flex-wrap: wrap; gap: 4px; padding: 2px 0 8px 14px; }
+  .other-site { margin-inline-start: 4px; color: var(--muted); font-size: 0.85em; }
   .sites { display: flex; flex-wrap: wrap; gap: 6px; font-size: 0.85rem; margin: 8px 0 0; }
   .site { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px 4px 6px; border-radius: 8px; border: 2px solid var(--site); color: var(--site); text-decoration: none; font-weight: 700; background: var(--panel); }
   .site.here { background: var(--site); color: #fff; }
