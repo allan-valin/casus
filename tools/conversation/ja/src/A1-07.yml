@@ -1,0 +1,40 @@
+id: A1-07
+protagonist: f
+title: [Rubbish day, O dia do lixo]
+situation: ["Your bag of plastics comes back with a sticker on it. Mrs Suzuki explains.", "Sua sacola de plástico volta com um adesivo. A senhora Suzuki explica."]
+learn: []
+culture: Rubbish by type, on fixed days
+items:
+  - [gomi, "ごみ", "rubbish", "lixo"]
+  - [moeru-gomi, "燃[も]える ごみ", "burnable rubbish", "lixo queimável"]
+  - [purasuchikku, "プラスチック", "plastic", "plástico"]
+  - [nanyoubi, "何曜日[なんようび]", "what day of the week", "que dia da semana"]
+  - [getsuyoubi, "月曜日[げつようび]", "Monday", "segunda-feira"]
+  - [mokuyoubi, "木曜日[もくようび]", "Thursday", "quinta-feira"]
+  - [dashimasu, "出[だ]します", "put out (rubbish)", "pôr para fora (o lixo)"]
+  - [asa, "朝[あさ]", "morning", "manhã"]
+  - [hachiji, "八時[はちじ]", "eight o'clock", "oito horas"]
+  - [made-ni, "まで に", "by (a time)", "até (um horário)"]
+  - [ki-o-tsukemasu, "気[き] を つけます", "I'll be careful", "vou tomar cuidado"]
+dialogue:
+  - [suzuki, "これ、 あなた の ごみ です ね。", "This is your rubbish, isn't it.", "Isto é o seu lixo, né?"]
+  - [protagonist, "はい…。 すみません。 何[なん] です か。", "Yes… Sorry. What's wrong?", "Sim… Desculpe. O que foi?"]
+  - [suzuki, "今日[きょう] は 燃[も]える ごみ の 日[ひ] です。 プラスチック は 木曜日[もくようび] です。", "Today is burnable rubbish day. Plastics are on Thursday.", "Hoje é dia de lixo queimável. Plástico é na quinta."]
+  - [protagonist, "燃[も]える ごみ は 何曜日[なんようび] です か。", "What day is burnable rubbish?", "Lixo queimável é em que dia?"]
+  - [suzuki, "月曜日[げつようび] と 木曜日[もくようび]。 朝[あさ] 八時[はちじ] まで に 出[だ]します。", "Monday and Thursday. You put it out by eight in the morning.", "Segunda e quinta. Põe-se para fora até as oito da manhã."]
+  - [protagonist, "八時[はちじ] まで に。 わかりました。", "By eight. Understood.", "Até as oito. Entendi."]
+  - [suzuki, "この 紙[かみ] に 全部[ぜんぶ] あります。", "It's all on this sheet.", "Está tudo nesta folha."]
+  - [protagonist, "ありがとう ございます。 気[き] を つけます。", "Thank you. I'll be careful.", "Obrigada. Vou tomar cuidado."]
+teach:
+  - note: ["Rubbish is sorted by type and goes out on fixed days. A wrong bag comes back with a sticker.", "O lixo é separado por tipo e sai em dias fixos. A sacola errada volta com um adesivo."]
+  - ask: ["Say: rubbish.", "Diga: lixo.", "ごみ", gomi]
+  - ask: ["Say: burnable rubbish.", "Diga: lixo queimável.", "燃[も]える ごみ", moeru-gomi]
+  - ask: ["Say: plastic.", "Diga: plástico.", "プラスチック", purasuchikku]
+  - note: ["Days end in «曜日[ようび]». «何曜日[なんようび]» asks which day.", "Os dias terminam em «曜日[ようび]». «何曜日[なんようび]» pergunta que dia."]
+  - ask: ["Ask what day burnable rubbish is.", "Pergunte em que dia é o lixo queimável.", "燃[も]える ごみ は 何曜日[なんようび] です か。", moeru-gomi, nanyoubi]
+  - ask: ["Say: Monday.", "Diga: segunda-feira.", "月曜日[げつようび]", getsuyoubi]
+  - ask: ["Say: Thursday.", "Diga: quinta-feira.", "木曜日[もくようび]", mokuyoubi]
+  - note: ["Verbs in the polite form end in «ます»: «出[だ]します» — I put it out. «まで に» means by a time.", "Os verbos na forma educada terminam em «ます»: «出[だ]します» — ponho para fora. «まで に» quer dizer até um horário."]
+  - ask: ["Say: I put it out by eight in the morning.", "Diga: ponho para fora até as oito da manhã.", "朝[あさ] 八時[はちじ] まで に 出[だ]します。", asa, hachiji, made-ni, dashimasu]
+  - ask: ["Promise to be careful.", "Prometa tomar cuidado.", "気[き] を つけます。", ki-o-tsukemasu]
+  - pt_only: "No Brasil o lixo sai em qualquer dia; no Japão, o dia decide. A prefeitura dá uma tabela — muitas vezes em português, em Hamamatsu."

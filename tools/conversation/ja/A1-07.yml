@@ -1,0 +1,435 @@
+# UNIT ja A1-07 — written by AI (Claude) for Casus; expanded from src/A1-07.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-07
+level: A1
+number: 7
+protagonist: f
+title:
+  en: Rubbish day
+  pt: O dia do lixo
+situation:
+  en: Your bag of plastics comes back with a sticker on it. Mrs Suzuki explains.
+  pt: Sua sacola de plástico volta com um adesivo. A senhora Suzuki explica.
+learn_lessons: []
+culture: Rubbish by type, on fixed days
+new_items:
+- id: gomi
+  text: ごみ
+  meaning:
+    en: rubbish
+    pt: lixo
+- id: moeru-gomi
+  text: 燃[も]える ごみ
+  meaning:
+    en: burnable rubbish
+    pt: lixo queimável
+- id: purasuchikku
+  text: プラスチック
+  meaning:
+    en: plastic
+    pt: plástico
+- id: nanyoubi
+  text: 何曜日[なんようび]
+  meaning:
+    en: what day of the week
+    pt: que dia da semana
+- id: getsuyoubi
+  text: 月曜日[げつようび]
+  meaning:
+    en: Monday
+    pt: segunda-feira
+- id: mokuyoubi
+  text: 木曜日[もくようび]
+  meaning:
+    en: Thursday
+    pt: quinta-feira
+- id: dashimasu
+  text: 出[だ]します
+  meaning:
+    en: put out (rubbish)
+    pt: pôr para fora (o lixo)
+- id: asa
+  text: 朝[あさ]
+  meaning:
+    en: morning
+    pt: manhã
+- id: hachiji
+  text: 八時[はちじ]
+  meaning:
+    en: eight o'clock
+    pt: oito horas
+- id: made-ni
+  text: まで に
+  meaning:
+    en: by (a time)
+    pt: até (um horário)
+- id: ki-o-tsukemasu
+  text: 気[き] を つけます
+  meaning:
+    en: I'll be careful
+    pt: vou tomar cuidado
+reviews:
+- item: irasshaimase
+  from: A1-04
+- item: kore-kudasai
+  from: A1-04
+- item: kudasai
+  from: A1-04
+- item: atatamemasu-ka
+  from: A1-04
+- item: onegaishimasu
+  from: A1-04
+- item: fukuro
+  from: A1-04
+- item: irimasen
+  from: A1-04
+- item: ikura
+  from: A1-04
+- item: en
+  from: A1-04
+- item: hyaku
+  from: A1-04
+- item: kaado
+  from: A1-04
+- item: arigatou-gozaimashita
+  from: A1-04
+- item: ame
+  from: A1-06
+- item: tsuyu
+  from: A1-06
+- item: atsui
+  from: A1-06
+- item: samui
+  from: A1-06
+- item: mushiatsui
+  from: A1-06
+- item: kyou
+  from: A1-06
+- item: ashita
+  from: A1-06
+- item: ii-tenki
+  from: A1-06
+- item: desu-ne
+  from: A1-06
+- item: kasa
+  from: A1-06
+- item: ohayou
+  from: A1-06
+steps:
+- type: narrator
+  text:
+    en: Your bag of plastics comes back with a sticker on it. Mrs Suzuki explains. Listen to the conversation; you don't need to understand it yet.
+    pt: Sua sacola de plástico volta com um adesivo. A senhora Suzuki explica. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: suzuki
+    text: これ、 あなた の ごみ です ね。
+    meaning:
+      en: This is your rubbish, isn't it.
+      pt: Isto é o seu lixo, né?
+  - speaker: protagonist
+    text: はい…。 すみません。 何[なん] です か。
+    meaning:
+      en: Yes… Sorry. What's wrong?
+      pt: Sim… Desculpe. O que foi?
+  - speaker: suzuki
+    text: 今日[きょう] は 燃[も]える ごみ の 日[ひ] です。 プラスチック は 木曜日[もくようび] です。
+    meaning:
+      en: Today is burnable rubbish day. Plastics are on Thursday.
+      pt: Hoje é dia de lixo queimável. Plástico é na quinta.
+  - speaker: protagonist
+    text: 燃[も]える ごみ は 何曜日[なんようび] です か。
+    meaning:
+      en: What day is burnable rubbish?
+      pt: Lixo queimável é em que dia?
+  - speaker: suzuki
+    text: 月曜日[げつようび] と 木曜日[もくようび]。 朝[あさ] 八時[はちじ] まで に 出[だ]します。
+    meaning:
+      en: Monday and Thursday. You put it out by eight in the morning.
+      pt: Segunda e quinta. Põe-se para fora até as oito da manhã.
+  - speaker: protagonist
+    text: 八時[はちじ] まで に。 わかりました。
+    meaning:
+      en: By eight. Understood.
+      pt: Até as oito. Entendi.
+  - speaker: suzuki
+    text: この 紙[かみ] に 全部[ぜんぶ] あります。
+    meaning:
+      en: It's all on this sheet.
+      pt: Está tudo nesta folha.
+  - speaker: protagonist
+    text: ありがとう ございます。 気[き] を つけます。
+    meaning:
+      en: Thank you. I'll be careful.
+      pt: Obrigada. Vou tomar cuidado.
+- type: narrator
+  text:
+    en: Rubbish is sorted by type and goes out on fixed days. A wrong bag comes back with a sticker.
+    pt: O lixo é separado por tipo e sai em dias fixos. A sacola errada volta com um adesivo.
+- type: prompt
+  ask:
+    en: 'Say: rubbish.'
+    pt: 'Diga: lixo.'
+  answer:
+    speaker: protagonist
+    text: ごみ
+  items:
+  - gomi
+- type: prompt
+  ask:
+    en: 'Say: burnable rubbish.'
+    pt: 'Diga: lixo queimável.'
+  answer:
+    speaker: protagonist
+    text: 燃[も]える ごみ
+  items:
+  - moeru-gomi
+- type: prompt
+  ask:
+    en: 'Say: plastic.'
+    pt: 'Diga: plástico.'
+  answer:
+    speaker: protagonist
+    text: プラスチック
+  items:
+  - purasuchikku
+- type: narrator
+  text:
+    en: Days end in «曜日[ようび]». «何曜日[なんようび]» asks which day.
+    pt: Os dias terminam em «曜日[ようび]». «何曜日[なんようび]» pergunta que dia.
+- type: prompt
+  ask:
+    en: Ask what day burnable rubbish is.
+    pt: Pergunte em que dia é o lixo queimável.
+  answer:
+    speaker: protagonist
+    text: 燃[も]える ごみ は 何曜日[なんようび] です か。
+  items:
+  - moeru-gomi
+  - nanyoubi
+- type: prompt
+  ask:
+    en: 'Say: Monday.'
+    pt: 'Diga: segunda-feira.'
+  answer:
+    speaker: protagonist
+    text: 月曜日[げつようび]
+  items:
+  - getsuyoubi
+- type: prompt
+  ask:
+    en: 'Say: Thursday.'
+    pt: 'Diga: quinta-feira.'
+  answer:
+    speaker: protagonist
+    text: 木曜日[もくようび]
+  items:
+  - mokuyoubi
+- type: narrator
+  text:
+    en: 'Verbs in the polite form end in «ます»: «出[だ]します» — I put it out. «まで に» means by a time.'
+    pt: 'Os verbos na forma educada terminam em «ます»: «出[だ]します» — ponho para fora. «まで に» quer dizer até um horário.'
+- type: prompt
+  ask:
+    en: 'Say: I put it out by eight in the morning.'
+    pt: 'Diga: ponho para fora até as oito da manhã.'
+  answer:
+    speaker: protagonist
+    text: 朝[あさ] 八時[はちじ] まで に 出[だ]します。
+  items:
+  - asa
+  - hachiji
+  - made-ni
+  - dashimasu
+- type: prompt
+  ask:
+    en: Promise to be careful.
+    pt: Prometa tomar cuidado.
+  answer:
+    speaker: protagonist
+    text: 気[き] を つけます。
+  items:
+  - ki-o-tsukemasu
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil o lixo sai em qualquer dia; no Japão, o dia decide. A prefeitura dá uma tabela — muitas vezes em português, em Hamamatsu.
+- type: prompt
+  ask:
+    en: 'Once more: say “rubbish”.'
+    pt: 'Mais uma vez: diga “lixo”.'
+  answer:
+    speaker: protagonist
+    text: ごみ
+  items:
+  - gomi
+- type: prompt
+  ask:
+    en: 'Once more: say “plastic”.'
+    pt: 'Mais uma vez: diga “plástico”.'
+  answer:
+    speaker: protagonist
+    text: プラスチック
+  items:
+  - purasuchikku
+- type: prompt
+  ask:
+    en: 'Once more: say “what day of the week”.'
+    pt: 'Mais uma vez: diga “que dia da semana”.'
+  answer:
+    speaker: protagonist
+    text: 何曜日[なんようび]
+  items:
+  - nanyoubi
+- type: prompt
+  ask:
+    en: 'Once more: say “Monday”.'
+    pt: 'Mais uma vez: diga “segunda-feira”.'
+  answer:
+    speaker: protagonist
+    text: 月曜日[げつようび]
+  items:
+  - getsuyoubi
+- type: prompt
+  ask:
+    en: 'Once more: say “Thursday”.'
+    pt: 'Mais uma vez: diga “quinta-feira”.'
+  answer:
+    speaker: protagonist
+    text: 木曜日[もくようび]
+  items:
+  - mokuyoubi
+- type: prompt
+  ask:
+    en: 'Once more: say “put out (rubbish)”.'
+    pt: 'Mais uma vez: diga “pôr para fora (o lixo)”.'
+  answer:
+    speaker: protagonist
+    text: 出[だ]します
+  items:
+  - dashimasu
+- type: prompt
+  ask:
+    en: 'Once more: say “morning”.'
+    pt: 'Mais uma vez: diga “manhã”.'
+  answer:
+    speaker: protagonist
+    text: 朝[あさ]
+  items:
+  - asa
+- type: prompt
+  ask:
+    en: 'Once more: say “eight o''clock”.'
+    pt: 'Mais uma vez: diga “oito horas”.'
+  answer:
+    speaker: protagonist
+    text: 八時[はちじ]
+  items:
+  - hachiji
+- type: prompt
+  ask:
+    en: 'Once more: say “by (a time)”.'
+    pt: 'Mais uma vez: diga “até (um horário)”.'
+  answer:
+    speaker: protagonist
+    text: まで に
+  items:
+  - made-ni
+- type: prompt
+  ask:
+    en: 'Once more: say “I''ll be careful”.'
+    pt: 'Mais uma vez: diga “vou tomar cuidado”.'
+  answer:
+    speaker: protagonist
+    text: 気[き] を つけます
+  items:
+  - ki-o-tsukemasu
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “rain — and “the rainy season (June–July) — and “hot (weather) — and “cold (weather)”.'
+    pt: 'Diga: “chuva — e “a estação das chuvas (junho–julho) — e “quente (tempo) — e “frio (tempo)”.'
+  answer:
+    speaker: protagonist
+    text: 雨[あめ] … 梅雨[つゆ] … 暑[あつ]い … 寒[さむ]い
+  items:
+  - ame
+  - tsuyu
+  - atsui
+  - samui
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “hot and humid — and “today — and “tomorrow — and “nice weather”.'
+    pt: 'Diga: “abafado — e “hoje — e “amanhã — e “tempo bom”.'
+  answer:
+    speaker: protagonist
+    text: 蒸[む]し暑[あつ]い … 今日[きょう] … 明日[あした] … いい 天気[てんき]
+  items:
+  - mushiatsui
+  - kyou
+  - ashita
+  - ii-tenki
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “isn''t it (agreeing) — and “umbrella — and “good morning — and “welcome (shop staff)”.'
+    pt: 'Diga: “né (concordando) — e “guarda-chuva — e “bom dia — e “bem-vindo (dito pelos funcionários)”.'
+  answer:
+    speaker: protagonist
+    text: です ね … 傘[かさ] … おはよう ございます … いらっしゃいませ
+  items:
+  - desu-ne
+  - kasa
+  - ohayou
+  - irasshaimase
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “this, please — and “please (give me) — and “shall I heat it? — and “please (yes, do)”.'
+    pt: 'Diga: “isto, por favor — e “por favor (me dê) — e “quer que esquente? — e “por favor (sim, faça)”.'
+  answer:
+    speaker: protagonist
+    text: これ ください … ください … 温[あたた]めます か … お願[ねが]いします
+  items:
+  - kore-kudasai
+  - kudasai
+  - atatamemasu-ka
+  - onegaishimasu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “bag — and “I don''t need it — and “how much is it? — and “yen”.'
+    pt: 'Diga: “sacola — e “não preciso — e “quanto é? — e “iene”.'
+  answer:
+    speaker: protagonist
+    text: 袋[ふくろ] … いりません … いくら です か … 円[えん]
+  items:
+  - fukuro
+  - irimasen
+  - ikura
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “hundred — and “card — and “thank you (for what was done)”.'
+    pt: 'Diga: “cem — e “cartão — e “obrigado (pelo que foi feito)”.'
+  answer:
+    speaker: protagonist
+    text: 百[ひゃく] … カード … ありがとう ございました
+  items:
+  - hyaku
+  - kaado
+  - arigatou-gozaimashita
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

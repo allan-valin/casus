@@ -1,0 +1,463 @@
+# UNIT ja A1-09 — written by AI (Claude) for Casus; expanded from src/A1-09.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-09
+level: A1
+number: 9
+protagonist: f
+title:
+  en: Colours
+  pt: Cores
+situation:
+  en: At the factory you get your uniform. Kenta helps you choose a helmet.
+  pt: Na fábrica você recebe o uniforme. O Kenta ajuda você a escolher um capacete.
+learn_lessons: []
+culture: —
+new_items:
+- id: aka
+  text: 赤[あか]
+  meaning:
+    en: red
+    pt: vermelho
+- id: ao
+  text: 青[あお]
+  meaning:
+    en: blue
+    pt: azul
+- id: shiro
+  text: 白[しろ]
+  meaning:
+    en: white
+    pt: branco
+- id: kuro
+  text: 黒[くろ]
+  meaning:
+    en: black
+    pt: preto
+- id: kiiro
+  text: 黄色[きいろ]
+  meaning:
+    en: yellow
+    pt: amarelo
+- id: seifuku
+  text: 制服[せいふく]
+  meaning:
+    en: uniform
+    pt: uniforme
+- id: herumetto
+  text: ヘルメット
+  meaning:
+    en: helmet
+    pt: capacete
+- id: kirei
+  text: きれい
+  meaning:
+    en: pretty, clean
+    pt: bonito, limpo
+- id: suki
+  text: 好[す]き
+  meaning:
+    en: liked, favourite
+    pt: gosta de, preferido
+- id: nani-iro
+  text: 何色[なにいろ]
+  meaning:
+    en: what colour
+    pt: que cor
+- id: dou-desu-ka
+  text: どう です か
+  meaning:
+    en: how about it?
+    pt: que tal?
+reviews:
+- item: genkan
+  from: A1-02
+- item: kutsu
+  from: A1-02
+- item: surippa
+  from: A1-02
+- item: douzo
+  from: A1-02
+- item: shitsurei
+  from: A1-02
+- item: koko
+  from: A1-02
+- item: kore
+  from: A1-02
+- item: sore
+  from: A1-02
+- item: nan-desu-ka
+  from: A1-02
+- item: toire
+  from: A1-02
+- item: no-particle
+  from: A1-02
+- item: arigatou
+  from: A1-02
+- item: wakarimashita
+  from: A1-02
+- item: ame
+  from: A1-06
+- item: tsuyu
+  from: A1-06
+- item: atsui
+  from: A1-06
+- item: samui
+  from: A1-06
+- item: mushiatsui
+  from: A1-06
+- item: kyou
+  from: A1-06
+- item: ashita
+  from: A1-06
+- item: ii-tenki
+  from: A1-06
+- item: desu-ne
+  from: A1-06
+- item: kasa
+  from: A1-06
+- item: ohayou
+  from: A1-06
+- item: kaisha
+  from: A1-08
+- item: kachou
+  from: A1-08
+- item: tsuuyaku
+  from: A1-08
+- item: kyou-kara
+  from: A1-08
+- item: hairimasu
+  from: A1-08
+- item: shigoto
+  from: A1-08
+- item: portugarugo
+  from: A1-08
+- item: eigo
+  from: A1-08
+- item: ganbatte
+  from: A1-08
+- item: onegaishimasu-yoroshiku
+  from: A1-08
+steps:
+- type: narrator
+  text:
+    en: At the factory you get your uniform. Kenta helps you choose a helmet. Listen to the conversation; you don't need to understand it yet.
+    pt: Na fábrica você recebe o uniforme. O Kenta ajuda você a escolher um capacete. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: kenta
+    text: これ が 制服[せいふく] です。 青[あお] です。
+    meaning:
+      en: This is the uniform. It's blue.
+      pt: Este é o uniforme. É azul.
+  - speaker: protagonist
+    text: きれい です ね。 ヘルメット は 何色[なにいろ] です か。
+    meaning:
+      en: It's nice. What colour is the helmet?
+      pt: Que bonito. O capacete é de que cor?
+  - speaker: kenta
+    text: 白[しろ] と 黄色[きいろ] が あります。
+    meaning:
+      en: There are white and yellow ones.
+      pt: Tem branco e amarelo.
+  - speaker: protagonist
+    text: 赤[あか] は？
+    meaning:
+      en: And red?
+      pt: E vermelho?
+  - speaker: kenta
+    text: 赤[あか] は 課長[かちょう] の 色[いろ] です。
+    meaning:
+      en: Red is the chiefs' colour.
+      pt: Vermelho é a cor dos chefes.
+  - speaker: protagonist
+    text: じゃあ、 黄色[きいろ] が 好[す]き です。
+    meaning:
+      en: Then I like yellow.
+      pt: Então eu gosto do amarelo.
+  - speaker: kenta
+    text: 黄色[きいろ] は 新人[しんじん] の 色[いろ] です よ。
+    meaning:
+      en: Yellow is the newcomers' colour.
+      pt: Amarelo é a cor dos novatos.
+  - speaker: protagonist
+    text: ぴったり です ね！
+    meaning:
+      en: Perfect, then!
+      pt: Perfeito, então!
+- type: prompt
+  ask:
+    en: 'Say: blue.'
+    pt: 'Diga: azul.'
+  answer:
+    speaker: protagonist
+    text: 青[あお]
+  items:
+  - ao
+- type: prompt
+  ask:
+    en: 'Say: red.'
+    pt: 'Diga: vermelho.'
+  answer:
+    speaker: protagonist
+    text: 赤[あか]
+  items:
+  - aka
+- type: prompt
+  ask:
+    en: 'Say: white.'
+    pt: 'Diga: branco.'
+  answer:
+    speaker: protagonist
+    text: 白[しろ]
+  items:
+  - shiro
+- type: prompt
+  ask:
+    en: 'Say: black.'
+    pt: 'Diga: preto.'
+  answer:
+    speaker: protagonist
+    text: 黒[くろ]
+  items:
+  - kuro
+- type: prompt
+  ask:
+    en: 'Say: yellow.'
+    pt: 'Diga: amarelo.'
+  answer:
+    speaker: protagonist
+    text: 黄色[きいろ]
+  items:
+  - kiiro
+- type: prompt
+  ask:
+    en: Ask what colour the helmet is.
+    pt: Pergunte de que cor é o capacete.
+  answer:
+    speaker: protagonist
+    text: ヘルメット は 何色[なにいろ] です か。
+  items:
+  - herumetto
+  - nani-iro
+- type: narrator
+  text:
+    en: 'Some adjectives take «な» before a noun and stand alone before «です»: «きれい です», «好[す]き です» — you like it.'
+    pt: 'Alguns adjetivos levam «な» antes de um substantivo e ficam sozinhos antes de «です»: «きれい です», «好[す]き です» — você gosta.'
+- type: prompt
+  ask:
+    en: 'Say: the uniform is pretty.'
+    pt: 'Diga: o uniforme é bonito.'
+  answer:
+    speaker: protagonist
+    text: 制服[せいふく] は きれい です。
+  items:
+  - seifuku
+  - kirei
+- type: prompt
+  ask:
+    en: 'Say: I like yellow.'
+    pt: 'Diga: eu gosto de amarelo.'
+  answer:
+    speaker: protagonist
+    text: 黄色[きいろ] が 好[す]き です。
+  items:
+  - kiiro
+  - suki
+- type: prompt
+  ask:
+    en: 'Ask: how about it?'
+    pt: 'Pergunte: que tal?'
+  answer:
+    speaker: protagonist
+    text: どう です か。
+  items:
+  - dou-desu-ka
+- type: prompt
+  ask:
+    en: 'Once more: say “red”.'
+    pt: 'Mais uma vez: diga “vermelho”.'
+  answer:
+    speaker: protagonist
+    text: 赤[あか]
+  items:
+  - aka
+- type: prompt
+  ask:
+    en: 'Once more: say “blue”.'
+    pt: 'Mais uma vez: diga “azul”.'
+  answer:
+    speaker: protagonist
+    text: 青[あお]
+  items:
+  - ao
+- type: prompt
+  ask:
+    en: 'Once more: say “white”.'
+    pt: 'Mais uma vez: diga “branco”.'
+  answer:
+    speaker: protagonist
+    text: 白[しろ]
+  items:
+  - shiro
+- type: prompt
+  ask:
+    en: 'Once more: say “black”.'
+    pt: 'Mais uma vez: diga “preto”.'
+  answer:
+    speaker: protagonist
+    text: 黒[くろ]
+  items:
+  - kuro
+- type: prompt
+  ask:
+    en: 'Once more: say “uniform”.'
+    pt: 'Mais uma vez: diga “uniforme”.'
+  answer:
+    speaker: protagonist
+    text: 制服[せいふく]
+  items:
+  - seifuku
+- type: prompt
+  ask:
+    en: 'Once more: say “helmet”.'
+    pt: 'Mais uma vez: diga “capacete”.'
+  answer:
+    speaker: protagonist
+    text: ヘルメット
+  items:
+  - herumetto
+- type: prompt
+  ask:
+    en: 'Once more: say “pretty, clean”.'
+    pt: 'Mais uma vez: diga “bonito, limpo”.'
+  answer:
+    speaker: protagonist
+    text: きれい
+  items:
+  - kirei
+- type: prompt
+  ask:
+    en: 'Once more: say “liked, favourite”.'
+    pt: 'Mais uma vez: diga “gosta de, preferido”.'
+  answer:
+    speaker: protagonist
+    text: 好[す]き
+  items:
+  - suki
+- type: prompt
+  ask:
+    en: 'Once more: say “what colour”.'
+    pt: 'Mais uma vez: diga “que cor”.'
+  answer:
+    speaker: protagonist
+    text: 何色[なにいろ]
+  items:
+  - nani-iro
+- type: prompt
+  ask:
+    en: 'Once more: say “how about it?”.'
+    pt: 'Mais uma vez: diga “que tal?”.'
+  answer:
+    speaker: protagonist
+    text: どう です か
+  items:
+  - dou-desu-ka
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “company — and “section chief — and “interpreter — and “from today — and “join, enter — and “work, job”.'
+    pt: 'Diga: “empresa — e “chefe de seção — e “intérprete — e “a partir de hoje — e “entro, começo — e “trabalho”.'
+  answer:
+    speaker: protagonist
+    text: 会社[かいしゃ] … 課長[かちょう] … 通訳[つうやく] … 今日[きょう] から … 入[はい]ります … 仕事[しごと]
+  items:
+  - kaisha
+  - kachou
+  - tsuuyaku
+  - kyou-kara
+  - hairimasu
+  - shigoto
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Portuguese (language) — and “English — and “do your best (encouragement) — and “pleased to meet you (very polite) — and “rain — and “the rainy season (June–July)”.'
+    pt: 'Diga: “português (língua) — e “inglês — e “força! (incentivo) — e “muito prazer (bem formal) — e “chuva — e “a estação das chuvas (junho–julho)”.'
+  answer:
+    speaker: protagonist
+    text: ポルトガル語[ご] … 英語[えいご] … 頑張[がんば]って ください … どうぞ よろしく お願[ねが]いします … 雨[あめ] … 梅雨[つゆ]
+  items:
+  - portugarugo
+  - eigo
+  - ganbatte
+  - onegaishimasu-yoroshiku
+  - ame
+  - tsuyu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “hot (weather) — and “cold (weather) — and “hot and humid — and “today — and “tomorrow — and “nice weather”.'
+    pt: 'Diga: “quente (tempo) — e “frio (tempo) — e “abafado — e “hoje — e “amanhã — e “tempo bom”.'
+  answer:
+    speaker: protagonist
+    text: 暑[あつ]い … 寒[さむ]い … 蒸[む]し暑[あつ]い … 今日[きょう] … 明日[あした] … いい 天気[てんき]
+  items:
+  - atsui
+  - samui
+  - mushiatsui
+  - kyou
+  - ashita
+  - ii-tenki
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “isn''t it (agreeing) — and “umbrella — and “good morning — and “entrance hall (where shoes come off) — and “shoes — and “slippers”.'
+    pt: 'Diga: “né (concordando) — e “guarda-chuva — e “bom dia — e “entrada (onde se tiram os sapatos) — e “sapatos — e “chinelos”.'
+  answer:
+    speaker: protagonist
+    text: です ね … 傘[かさ] … おはよう ございます … 玄関[げんかん] … 靴[くつ] … スリッパ
+  items:
+  - desu-ne
+  - kasa
+  - ohayou
+  - genkan
+  - kutsu
+  - surippa
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “please (go ahead / here you are) — and “excuse me (entering) — and “here — and “this (near me) — and “that (near you) — and “what is it?”.'
+    pt: 'Diga: “por favor (pode entrar / aqui está) — e “com licença (ao entrar) — e “aqui — e “isto (perto de mim) — e “isso (perto de você) — e “o que é?”.'
+  answer:
+    speaker: protagonist
+    text: どうぞ … 失礼[しつれい] します … ここ … これ … それ … 何[なん] です か
+  items:
+  - douzo
+  - shitsurei
+  - koko
+  - kore
+  - sore
+  - nan-desu-ka
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “toilet — and “''s / of — and “thank you (polite) — and “understood / I see”.'
+    pt: 'Diga: “banheiro — e “de (posse) — e “obrigado (educado) — e “entendi”.'
+  answer:
+    speaker: protagonist
+    text: トイレ … の … ありがとう ございます … わかりました
+  items:
+  - toire
+  - no-particle
+  - arigatou
+  - wakarimashita
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

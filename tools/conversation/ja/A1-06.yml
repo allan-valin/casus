@@ -1,0 +1,442 @@
+# UNIT ja A1-06 — written by AI (Claude) for Casus; expanded from src/A1-06.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-06
+level: A1
+number: 6
+protagonist: m
+title:
+  en: The weather
+  pt: O tempo
+situation:
+  en: June. It has rained for a week. Kenta, your neighbour, meets you on the stairs.
+  pt: Junho. Chove há uma semana. Kenta, seu vizinho, encontra você na escada.
+learn_lessons: []
+culture: The rainy season
+new_items:
+- id: ame
+  text: 雨[あめ]
+  meaning:
+    en: rain
+    pt: chuva
+- id: tsuyu
+  text: 梅雨[つゆ]
+  meaning:
+    en: the rainy season (June–July)
+    pt: a estação das chuvas (junho–julho)
+- id: atsui
+  text: 暑[あつ]い
+  meaning:
+    en: hot (weather)
+    pt: quente (tempo)
+- id: samui
+  text: 寒[さむ]い
+  meaning:
+    en: cold (weather)
+    pt: frio (tempo)
+- id: mushiatsui
+  text: 蒸[む]し暑[あつ]い
+  meaning:
+    en: hot and humid
+    pt: abafado
+- id: kyou
+  text: 今日[きょう]
+  meaning:
+    en: today
+    pt: hoje
+- id: ashita
+  text: 明日[あした]
+  meaning:
+    en: tomorrow
+    pt: amanhã
+- id: ii-tenki
+  text: いい 天気[てんき]
+  meaning:
+    en: nice weather
+    pt: tempo bom
+- id: desu-ne
+  text: です ね
+  meaning:
+    en: isn't it (agreeing)
+    pt: né (concordando)
+- id: kasa
+  text: 傘[かさ]
+  meaning:
+    en: umbrella
+    pt: guarda-chuva
+- id: ohayou
+  text: おはよう ございます
+  meaning:
+    en: good morning
+    pt: bom dia
+reviews:
+- item: daijoubu
+  from: A1-03
+- item: itai
+  from: A1-03
+- item: hiza
+  from: A1-03
+- item: atama
+  from: A1-03
+- item: te
+  from: A1-03
+- item: ashi
+  from: A1-03
+- item: ga
+  from: A1-03
+- item: sukoshi
+  from: A1-03
+- item: doko
+  from: A1-03
+- item: byouin
+  from: A1-03
+- item: iie
+  from: A1-03
+- item: tetsudaimashou-ka
+  from: A1-03
+- item: hiragana
+  from: A1-05
+- item: katakana
+  from: A1-05
+- item: kanji
+  from: A1-05
+- item: eki
+  from: A1-05
+- item: deguchi
+  from: A1-05
+- item: iriguchi
+  from: A1-05
+- item: asoko
+  from: A1-05
+- item: yomemasu-ka
+  from: A1-05
+- item: muzukashii
+  from: A1-05
+- item: ganbarimasu
+  from: A1-05
+- item: doko-desu-ka
+  from: A1-05
+steps:
+- type: narrator
+  text:
+    en: June. It has rained for a week. Kenta, your neighbour, meets you on the stairs. Listen to the conversation; you don't need to understand it yet.
+    pt: Junho. Chove há uma semana. Kenta, seu vizinho, encontra você na escada. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: kenta
+    text: おはよう ございます。 また 雨[あめ] です ね。
+    meaning:
+      en: Good morning. Rain again.
+      pt: Bom dia. Chuva de novo, né?
+  - speaker: protagonist
+    text: おはよう ございます。 梅雨[つゆ] です か。
+    meaning:
+      en: Good morning. Is it the rainy season?
+      pt: Bom dia. É a estação das chuvas?
+  - speaker: kenta
+    text: はい。 七月[しちがつ] まで です。
+    meaning:
+      en: Yes. Until July.
+      pt: Sim. Até julho.
+  - speaker: protagonist
+    text: 蒸[む]し暑[あつ]い です ね。
+    meaning:
+      en: It's hot and humid, isn't it.
+      pt: Que abafado, né?
+  - speaker: kenta
+    text: ブラジル は 暑[あつ]い です か。
+    meaning:
+      en: Is Brazil hot?
+      pt: O Brasil é quente?
+  - speaker: protagonist
+    text: はい。 でも 冬[ふゆ] は 少[すこ]し 寒[さむ]い です。
+    meaning:
+      en: Yes. But winter is a little cold.
+      pt: Sim. Mas o inverno é um pouco frio.
+  - speaker: kenta
+    text: 明日[あした] は いい 天気[てんき] です よ。
+    meaning:
+      en: Tomorrow the weather will be nice.
+      pt: Amanhã vai fazer tempo bom.
+  - speaker: protagonist
+    text: よかった！ 今日[きょう] は 傘[かさ] です ね。
+    meaning:
+      en: Good! Today it's an umbrella, then.
+      pt: Que bom! Hoje é guarda-chuva, né?
+- type: narrator
+  text:
+    en: Mornings start with «おはよう ございます» — good morning — until about ten.
+    pt: As manhãs começam com «おはよう ございます» — bom dia — até umas dez horas.
+- type: prompt
+  ask:
+    en: Greet Kenta in the morning.
+    pt: Cumprimente o Kenta de manhã.
+  answer:
+    speaker: protagonist
+    text: おはよう ございます。
+  items:
+  - ohayou
+- type: narrator
+  text:
+    en: '«です ね» at the end asks for agreement, like ''né'' in Portuguese: «雨[あめ] です ね» — rain, isn''t it.'
+    pt: '«です ね» no fim pede concordância, como o ''né'' do português: «雨[あめ] です ね» — chuva, né?'
+- type: prompt
+  ask:
+    en: 'Say: rain again, isn''t it.'
+    pt: 'Diga: chuva de novo, né?'
+  answer:
+    speaker: protagonist
+    text: また 雨[あめ] です ね。
+  items:
+  - ame
+  - desu-ne
+- type: prompt
+  ask:
+    en: Ask if it's the rainy season.
+    pt: Pergunte se é a estação das chuvas.
+  answer:
+    speaker: protagonist
+    text: 梅雨[つゆ] です か。
+  items:
+  - tsuyu
+- type: narrator
+  text:
+    en: 'Adjectives ending in «い» go straight before «です»: «暑[あつ]い です» — it''s hot.'
+    pt: 'Adjetivos terminados em «い» vão direto antes de «です»: «暑[あつ]い です» — está quente.'
+- type: prompt
+  ask:
+    en: 'Say: it''s hot.'
+    pt: 'Diga: está quente.'
+  answer:
+    speaker: protagonist
+    text: 暑[あつ]い です。
+  items:
+  - atsui
+- type: prompt
+  ask:
+    en: 'Say: it''s cold.'
+    pt: 'Diga: está frio.'
+  answer:
+    speaker: protagonist
+    text: 寒[さむ]い です。
+  items:
+  - samui
+- type: prompt
+  ask:
+    en: 'Say: it''s hot and humid, isn''t it.'
+    pt: 'Diga: que abafado, né?'
+  answer:
+    speaker: protagonist
+    text: 蒸[む]し暑[あつ]い です ね。
+  items:
+  - mushiatsui
+  - desu-ne
+- type: prompt
+  ask:
+    en: 'Say: today.'
+    pt: 'Diga: hoje.'
+  answer:
+    speaker: protagonist
+    text: 今日[きょう]
+  items:
+  - kyou
+- type: prompt
+  ask:
+    en: 'Say: tomorrow the weather will be nice.'
+    pt: 'Diga: amanhã vai fazer tempo bom.'
+  answer:
+    speaker: protagonist
+    text: 明日[あした] は いい 天気[てんき] です。
+  items:
+  - ashita
+  - ii-tenki
+- type: prompt
+  ask:
+    en: 'Say: an umbrella.'
+    pt: 'Diga: guarda-chuva.'
+  answer:
+    speaker: protagonist
+    text: 傘[かさ]
+  items:
+  - kasa
+- type: narrator
+  text:
+    en: The rainy season, «梅雨[つゆ]», runs from June to mid-July; then summer is hot and very humid. Shops sell plastic umbrellas everywhere, and many are left in a stand at the door.
+    pt: A estação das chuvas, «梅雨[つゆ]», vai de junho a meados de julho; depois o verão é quente e muito úmido. Vendem guarda-chuva de plástico em todo lugar, e muitos ficam num suporte na porta.
+- type: prompt
+  ask:
+    en: 'Once more: say “rain”.'
+    pt: 'Mais uma vez: diga “chuva”.'
+  answer:
+    speaker: protagonist
+    text: 雨[あめ]
+  items:
+  - ame
+- type: prompt
+  ask:
+    en: 'Once more: say “the rainy season (June–July)”.'
+    pt: 'Mais uma vez: diga “a estação das chuvas (junho–julho)”.'
+  answer:
+    speaker: protagonist
+    text: 梅雨[つゆ]
+  items:
+  - tsuyu
+- type: prompt
+  ask:
+    en: 'Once more: say “hot (weather)”.'
+    pt: 'Mais uma vez: diga “quente (tempo)”.'
+  answer:
+    speaker: protagonist
+    text: 暑[あつ]い
+  items:
+  - atsui
+- type: prompt
+  ask:
+    en: 'Once more: say “cold (weather)”.'
+    pt: 'Mais uma vez: diga “frio (tempo)”.'
+  answer:
+    speaker: protagonist
+    text: 寒[さむ]い
+  items:
+  - samui
+- type: prompt
+  ask:
+    en: 'Once more: say “hot and humid”.'
+    pt: 'Mais uma vez: diga “abafado”.'
+  answer:
+    speaker: protagonist
+    text: 蒸[む]し暑[あつ]い
+  items:
+  - mushiatsui
+- type: prompt
+  ask:
+    en: 'Once more: say “today”.'
+    pt: 'Mais uma vez: diga “hoje”.'
+  answer:
+    speaker: protagonist
+    text: 今日[きょう]
+  items:
+  - kyou
+- type: prompt
+  ask:
+    en: 'Once more: say “tomorrow”.'
+    pt: 'Mais uma vez: diga “amanhã”.'
+  answer:
+    speaker: protagonist
+    text: 明日[あした]
+  items:
+  - ashita
+- type: prompt
+  ask:
+    en: 'Once more: say “nice weather”.'
+    pt: 'Mais uma vez: diga “tempo bom”.'
+  answer:
+    speaker: protagonist
+    text: いい 天気[てんき]
+  items:
+  - ii-tenki
+- type: prompt
+  ask:
+    en: 'Once more: say “umbrella”.'
+    pt: 'Mais uma vez: diga “guarda-chuva”.'
+  answer:
+    speaker: protagonist
+    text: 傘[かさ]
+  items:
+  - kasa
+- type: prompt
+  ask:
+    en: 'Once more: say “good morning”.'
+    pt: 'Mais uma vez: diga “bom dia”.'
+  answer:
+    speaker: protagonist
+    text: おはよう ございます
+  items:
+  - ohayou
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “hiragana (the round script) — and “katakana (the angular script, for foreign words) — and “kanji (Chinese characters) — and “station”.'
+    pt: 'Diga: “hiragana (a escrita arredondada) — e “katakana (a escrita angulosa, para palavras estrangeiras) — e “kanji (caracteres chineses) — e “estação”.'
+  answer:
+    speaker: protagonist
+    text: ひらがな … カタカナ … 漢字[かんじ] … 駅[えき]
+  items:
+  - hiragana
+  - katakana
+  - kanji
+  - eki
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “exit — and “entrance — and “over there — and “can you read (it)?”.'
+    pt: 'Diga: “saída — e “entrada — e “ali, lá — e “consegue ler?”.'
+  answer:
+    speaker: protagonist
+    text: 出口[でぐち] … 入口[いりぐち] … あそこ … 読[よ]めます か
+  items:
+  - deguchi
+  - iriguchi
+  - asoko
+  - yomemasu-ka
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “difficult — and “I''ll do my best — and “where is it? — and “are you all right?”.'
+    pt: 'Diga: “difícil — e “vou me esforçar — e “onde fica? — e “a senhora está bem?”.'
+  answer:
+    speaker: protagonist
+    text: 難[むずか]しい … 頑張[がんば]ります … どこ です か … 大丈夫[だいじょうぶ] です か
+  items:
+  - muzukashii
+  - ganbarimasu
+  - doko-desu-ka
+  - daijoubu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “painful, it hurts — and “knee — and “head — and “hand”.'
+    pt: 'Diga: “dói, dolorido — e “joelho — e “cabeça — e “mão”.'
+  answer:
+    speaker: protagonist
+    text: 痛[いた]い … 膝[ひざ] … 頭[あたま] … 手[て]
+  items:
+  - itai
+  - hiza
+  - atama
+  - te
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “foot, leg — and “(marks who or what does something) — and “a little — and “where”.'
+    pt: 'Diga: “pé, perna — e “(marca quem ou o que faz algo) — e “um pouco — e “onde”.'
+  answer:
+    speaker: protagonist
+    text: 足[あし] … が … 少[すこ]し … どこ
+  items:
+  - ashi
+  - ga
+  - sukoshi
+  - doko
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “hospital, clinic — and “no — and “shall I help?”.'
+    pt: 'Diga: “hospital, clínica — e “não — e “posso ajudar?”.'
+  answer:
+    speaker: protagonist
+    text: 病院[びょういん] … いいえ … 手伝[てつだ]いましょう か
+  items:
+  - byouin
+  - iie
+  - tetsudaimashou-ka
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
