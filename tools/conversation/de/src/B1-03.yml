@@ -1,0 +1,40 @@
+id: B1-03
+protagonist: f
+title: ["The cell", "الخلية", "Клетката"]
+situation:
+  - "A biology evening at the VHS. Professor Hartmann puts a microscope in front of you."
+  - "أمسية علوم الأحياء في الجامعة الشعبية. البروفيسور هارتمان يضع أمامكِ مجهرًا."
+  - "Вечер по биологија на народниот универзитет. Професорот Хартман става микроскоп пред вас."
+learn: [b1-passive]
+culture: —
+items:
+  - [die-zelle, "die Zelle", "the cell", "الخلية", "клетката"]
+  - [der-kern, "der Zellkern", "the nucleus", "نواة الخلية", "јадрото", {rare: true}]
+  - [das-mikroskop, "das Mikroskop", "the microscope", "المجهر", "микроскопот"]
+  - [wird-geteilt, "wird geteilt", "is divided", "تنقسم", "се дели"]
+  - [wird-gespeichert, "wird gespeichert", "is stored", "تُخزَّن", "се чува"]
+  - [die-information, "die Information", "the information", "المعلومة", "информацијата"]
+  - [der-koerper, "der Körper", "the body", "الجسم", "телото"]
+  - [besteht-aus, "besteht aus", "consists of", "يتكوّن من", "се состои од"]
+  - [millionen, "Millionen", "millions", "ملايين", "милиони"]
+  - [erklaeren, "erklären", "explain", "يشرح", "објаснува"]
+  - [unglaublich, "unglaublich", "unbelievable", "لا يُصدَّق", "неверојатно"]
+dialogue:
+  - [hartmann, "Schauen Sie ins Mikroskop. Was sehen Sie?", "Look into the microscope. What do you see?", "انظري في المجهر. ماذا ترين؟", "Погледнете во микроскопот. Што гледате?"]
+  - [protagonist, "Kleine Kreise. Sind das Zellen?", "Little circles. Are those cells?", "دوائر صغيرة. هل هذه خلايا؟", "Мали кругови. Дали тоа се клетки?"]
+  - [hartmann, "Genau. Und in der Mitte ist der Zellkern.", "Exactly. And in the middle is the nucleus.", "بالضبط. وفي الوسط نواة الخلية.", "Точно. А во средината е јадрото."]
+  - [protagonist, "Was macht der Zellkern?", "What does the nucleus do?", "ماذا تفعل النواة؟", "Што прави јадрото?"]
+  - [hartmann, "Dort wird die Information gespeichert — die DNA.", "That's where the information is stored — the DNA.", "هناك تُخزَّن المعلومات — الحمض النووي.", "Таму се чува информацијата — ДНК."]
+  - [protagonist, "Und wie wächst der Körper?", "And how does the body grow?", "وكيف ينمو الجسم؟", "А како расте телото?"]
+  - [hartmann, "Die Zelle wird geteilt — aus einer werden zwei. Der Körper besteht aus Millionen Zellen.", "The cell divides — one becomes two. The body consists of millions of cells.", "الخلية تنقسم — من واحدة تصبح اثنتين. والجسم يتكوّن من ملايين الخلايا.", "Клетката се дели — од една стануваат две. Телото се состои од милиони клетки."]
+  - [protagonist, "Unglaublich! Sie erklären das sehr gut.", "Unbelievable! You explain it very well.", "لا يُصدَّق! أنت تشرح ذلك جيدًا جدًا.", "Неверојатно! Многу добро објаснувате."]
+teach:
+  - ask: ["Say: the microscope.", "قولي: المجهر.", "Кажете: микроскопот.", "Das Mikroskop.", das-mikroskop]
+  - ask: ["Ask: are those cells?", "اسألي: هل هذه خلايا؟", "Прашајте: дали тоа се клетки?", "Sind das Zellen?", die-zelle]
+  - ask: ["Say: in the middle is the nucleus.", "قولي: في الوسط نواة الخلية.", "Кажете: во средината е јадрото.", "In der Mitte ist der Zellkern.", der-kern]
+  - note: ["The passive uses «werden» + participle: «Die Information wird gespeichert» (is stored), «Die Zelle wird geteilt» (is divided). The doer often disappears.", "المبني للمجهول يستعمل «werden» مع اسم المفعول: «Die Information wird gespeichert» (تُخزَّن)، «Die Zelle wird geteilt» (تنقسم). والفاعل يختفي غالبًا.", "Пасивот користи «werden» + партицип: «Die Information wird gespeichert» (се чува), «Die Zelle wird geteilt» (се дели). Вршителот често исчезнува."]
+  - ask: ["Say: the information is stored there.", "قولي: هناك تُخزَّن المعلومات.", "Кажете: таму се чува информацијата.", "Dort wird die Information gespeichert.", wird-gespeichert, die-information]
+  - ask: ["Say: the cell is divided.", "قولي: الخلية تنقسم.", "Кажете: клетката се дели.", "Die Zelle wird geteilt.", wird-geteilt]
+  - ask: ["Say: the body consists of millions of cells.", "قولي: الجسم يتكوّن من ملايين الخلايا.", "Кажете: телото се состои од милиони клетки.", "Der Körper besteht aus Millionen Zellen.", der-koerper, besteht-aus, millionen]
+  - ask: ["Say: unbelievable!", "قولي: لا يُصدَّق!", "Кажете: неверојатно!", "Unglaublich!", unglaublich]
+  - ask: ["Say: you explain it very well.", "قولي: أنت تشرح ذلك جيدًا جدًا.", "Кажете: многу добро објаснувате.", "Sie erklären das sehr gut.", erklaeren]

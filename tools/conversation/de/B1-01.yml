@@ -1,0 +1,772 @@
+# UNIT de B1-01 — written by AI (Claude) for Casus; expanded from src/B1-01.yml by tools/expand_unit.py. Edit the source.
+
+id: B1-01
+level: B1
+number: 1
+protagonist: f
+title:
+  en: Jonas's flat-share
+  ar: سكن يوناس المشترك
+  mk: Заедничкиот стан на Јонас
+situation:
+  en: 'Jonas moves into a WG, a shared flat, and shows you round. On the fridge: the cleaning rota.'
+  ar: 'يوناس ينتقل إلى سكن مشترك ويريكِ المكان. على الثلاجة: جدول التنظيف.'
+  mk: 'Јонас се сели во заеднички стан и ви го покажува. На фрижидерот: распоредот за чистење.'
+learn_lessons:
+- b1-relative
+culture: The cleaning rota
+new_items:
+- id: die-wg
+  text: die WG
+  meaning:
+    en: the flat-share
+    ar: السكن المشترك
+    mk: заедничкиот стан
+- id: der-mitbewohner
+  text: der Mitbewohner
+  meaning:
+    en: the flatmate
+    ar: شريك السكن
+    mk: цимерот
+- id: der-putzplan
+  text: der Putzplan
+  meaning:
+    en: the cleaning rota
+    ar: جدول التنظيف
+    mk: распоредот за чистење
+  rare: true
+- id: die-person-die
+  text: die Person, die …
+  meaning:
+    en: the person who …
+    ar: الشخص الذي …
+    mk: лицето што …
+- id: das-zimmer-das
+  text: das Zimmer, das …
+  meaning:
+    en: the room that …
+    ar: الغرفة التي …
+    mk: собата што …
+- id: die-gemeinschaftskueche
+  text: die Gemeinschaftsküche
+  meaning:
+    en: the shared kitchen
+    ar: المطبخ المشترك
+    mk: заедничката кујна
+  rare: true
+- id: diese-woche
+  text: diese Woche
+  meaning:
+    en: this week
+    ar: هذا الأسبوع
+    mk: оваа недела
+- id: ist-dran
+  text: ist dran
+  meaning:
+    en: it's (someone's) turn
+    ar: دور (فلان)
+    mk: е на ред
+- id: das-bad-putzen
+  text: das Bad putzen
+  meaning:
+    en: clean the bathroom
+    ar: ينظف الحمام
+    mk: чисти бањата
+- id: streng
+  text: streng
+  meaning:
+    en: strict
+    ar: صارم
+    mk: строго
+- id: die-regel
+  text: die Regel
+  meaning:
+    en: the rule
+    ar: القاعدة
+    mk: правилото
+reviews:
+- item: der-verein
+  from: A1-30
+- item: das-training
+  from: A1-30
+- item: mitglied
+  from: A1-30
+- item: probetraining
+  from: A1-30
+- item: mitmachen
+  from: A1-30
+- item: schnell
+  from: A1-30
+- item: anstrengend
+  from: A1-30
+- item: die-umkleide
+  from: A1-30
+- item: die-sporthalle
+  from: A1-30
+- item: das-naechste-training
+  from: A1-30
+- item: das-baby-e
+  from: A2-16-e
+  for:
+  - en
+- item: war-e
+  from: A2-16-e
+  for:
+  - en
+- item: hatte-e
+  from: A2-16-e
+  for:
+  - en
+- item: schwer-e
+  from: A2-16-e
+  for:
+  - en
+- item: das-kindergeld-e
+  from: A2-16-e
+  for:
+  - en
+- item: der-antrag-e
+  from: A2-16-e
+  for:
+  - en
+- item: die-familienkasse-e
+  from: A2-16-e
+  for:
+  - en
+- item: das-urlaubssemester-e
+  from: A2-16-e
+  for:
+  - en
+- item: die-kita-uni-e
+  from: A2-16-e
+  for:
+  - en
+- item: unterstuetzung-e
+  from: A2-16-e
+  for:
+  - en
+- item: der-chor
+  from: A2-24
+- item: das-konzert
+  from: A2-24
+- item: gefaellt-mir
+  from: A2-24
+- item: gehoert
+  from: A2-24
+- item: hilft-dir
+  from: A2-24
+- item: schmeckt-mir
+  from: A2-24
+- item: der-komponist
+  from: A2-24
+- item: beruehmt
+  from: A2-24
+- item: das-grab
+  from: A2-24
+- item: klassisch
+  from: A2-24
+- item: das-heimweh
+  from: A2-28
+- item: einsam
+  from: A2-28
+- item: ich-vermisse
+  from: A2-28
+- item: ich-mache-mir-sorgen
+  from: A2-28
+- item: ich-wuensche-mir
+  from: A2-28
+- item: das-ist-normal
+  from: A2-28
+- item: am-anfang
+  from: A2-28
+- item: es-wird-besser
+  from: A2-28
+- item: komm-rein
+  from: A2-28
+- item: ich-koche-uns
+  from: A2-28
+- item: der-witz
+  from: A2-30
+- item: die-pointe
+  from: A2-30
+- item: lustig
+  from: A2-30
+- item: ich-verstehe-den-witz-nicht
+  from: A2-30
+- item: das-wortspiel
+  from: A2-30
+- item: trocken
+  from: A2-30
+- item: lachen
+  from: A2-30
+- item: der-humor
+  from: A2-30
+- item: das-sommerfest
+  from: A2-30
+- item: prost
+  from: A2-30
+- item: der-antrag-a
+  from: A2-16-a
+  for:
+  - ar
+- item: die-familienkasse-a
+  from: A2-16-a
+  for:
+  - ar
+- item: die-geburtsurkunde-a
+  from: A2-16-a
+  for:
+  - ar
+- item: uebersetzt-a
+  from: A2-16-a
+  for:
+  - ar
+- item: war-a
+  from: A2-16-a
+  for:
+  - ar
+- item: hatte-a
+  from: A2-16-a
+  for:
+  - ar
+- item: die-steuer-id-kind-a
+  from: A2-16-a
+  for:
+  - ar
+- item: rueckwirkend-a
+  from: A2-16-a
+  for:
+  - ar
+- item: die-bearbeitung-a
+  from: A2-16-a
+  for:
+  - ar
+- item: der-bescheid-a
+  from: A2-16-a
+  for:
+  - ar
+- item: das-kindergeld-m
+  from: A2-16-m
+  for:
+  - mk
+- item: jeden-monat-k-m
+  from: A2-16-m
+  for:
+  - mk
+- item: war-m
+  from: A2-16-m
+  for:
+  - mk
+- item: hatte-m
+  from: A2-16-m
+  for:
+  - mk
+- item: das-elterngeld-m
+  from: A2-16-m
+  for:
+  - mk
+- item: nach-der-geburt-m
+  from: A2-16-m
+  for:
+  - mk
+- item: zu-hause-bleiben-m
+  from: A2-16-m
+  for:
+  - mk
+- item: als-ich-klein-war-m
+  from: A2-16-m
+  for:
+  - mk
+- item: anders-m
+  from: A2-16-m
+  for:
+  - mk
+- item: der-staat-m
+  from: A2-16-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: 'Jonas moves into a WG, a shared flat, and shows you round. On the fridge: the cleaning rota. Listen to the conversation; you don''t need to understand it yet.'
+    ar: 'يوناس ينتقل إلى سكن مشترك ويريكِ المكان. على الثلاجة: جدول التنظيف. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.'
+    mk: 'Јонас се сели во заеднички стан и ви го покажува. На фрижидерот: распоредот за чистење. Слушнете го разговорот; уште не мора да го разберете.'
+- type: dialogue
+  lines:
+  - speaker: jonas
+    text: Willkommen in meiner WG! Das ist Paul, der Mitbewohner, der Physik studiert.
+    meaning:
+      en: Welcome to my flat-share! This is Paul, the flatmate who studies physics.
+      ar: أهلًا بكِ في سكني المشترك! هذا باول، شريك السكن الذي يدرس الفيزياء.
+      mk: Добредојде во мојот заеднички стан! Ова е Паул, цимерот што студира физика.
+  - speaker: protagonist
+    text: Hallo! Und das ist dein Zimmer?
+    meaning:
+      en: Hi! And this is your room?
+      ar: مرحبًا! وهذه غرفتك؟
+      mk: Здраво! А ова е твојата соба?
+  - speaker: jonas
+    text: Ja, das Zimmer, das zum Hof geht. Und hier die Gemeinschaftsküche.
+    meaning:
+      en: Yes, the room that faces the courtyard. And here's the shared kitchen.
+      ar: نعم، الغرفة التي تطلّ على الفناء. وهنا المطبخ المشترك.
+      mk: Да, собата што гледа кон дворот. А тука заедничката кујна.
+  - speaker: protagonist
+    text: Was ist das am Kühlschrank?
+    meaning:
+      en: What's that on the fridge?
+      ar: ما هذا على الثلاجة؟
+      mk: Што е тоа на фрижидерот?
+  - speaker: jonas
+    text: Der Putzplan. Jede Woche ist eine Person dran.
+    meaning:
+      en: The cleaning rota. Every week one person has a turn.
+      ar: جدول التنظيف. كل أسبوع يأتي دور شخص.
+      mk: Распоредот за чистење. Секоја недела е некој на ред.
+  - speaker: protagonist
+    text: Und wer ist diese Woche dran?
+    meaning:
+      en: And whose turn is it this week?
+      ar: ودور من هذا الأسبوع؟
+      mk: А кој е на ред оваа недела?
+  - speaker: jonas
+    text: Ich. Ich muss das Bad putzen. Die Regeln sind streng!
+    meaning:
+      en: Me. I have to clean the bathroom. The rules are strict!
+      ar: دوري. يجب أن أنظف الحمام. القواعد صارمة!
+      mk: Јас. Морам да ја исчистам бањата. Правилата се строги!
+  - speaker: protagonist
+    text: Und die Person, die nicht putzt?
+    meaning:
+      en: And the person who doesn't clean?
+      ar: والشخص الذي لا ينظّف؟
+      mk: А лицето што не чисти?
+  - speaker: jonas
+    text: Die kauft Bier für alle!
+    meaning:
+      en: That person buys beer for everyone!
+      ar: يشتري البيرة للجميع!
+      mk: Тоа купува пиво за сите!
+- type: prompt
+  ask:
+    en: 'Say: the flat-share.'
+    ar: 'قولي: السكن المشترك.'
+    mk: 'Кажете: заедничкиот стан.'
+  answer:
+    speaker: protagonist
+    text: Die WG.
+  items:
+  - die-wg
+- type: narrator
+  text:
+    en: 'Relative clauses describe a noun and send the verb to the end; the pronoun matches the noun: «der Mitbewohner, der Physik studiert», «das Zimmer, das zum Hof geht», «die Person, die nicht putzt».'
+    ar: 'جمل الصلة تصف الاسم وترسل الفعل إلى الآخر، والضمير يطابق الاسم: «der Mitbewohner, der Physik studiert»، «das Zimmer, das zum Hof geht»، «die Person, die nicht putzt».'
+    mk: 'Релативните реченици опишуваат именка и го праќаат глаголот на крајот; заменката се согласува со именката: «der Mitbewohner, der Physik studiert», «das Zimmer, das zum Hof geht», «die Person, die
+      nicht putzt».'
+- type: prompt
+  ask:
+    en: 'Say: the flatmate who studies physics.'
+    ar: 'قولي: شريك السكن الذي يدرس الفيزياء.'
+    mk: 'Кажете: цимерот што студира физика.'
+  answer:
+    speaker: protagonist
+    text: Der Mitbewohner, der Physik studiert.
+  items:
+  - der-mitbewohner
+- type: prompt
+  ask:
+    en: 'Say: the room that faces the courtyard.'
+    ar: 'قولي: الغرفة التي تطلّ على الفناء.'
+    mk: 'Кажете: собата што гледа кон дворот.'
+  answer:
+    speaker: protagonist
+    text: Das Zimmer, das zum Hof geht.
+  items:
+  - das-zimmer-das
+- type: prompt
+  ask:
+    en: 'Say: the shared kitchen.'
+    ar: 'قولي: المطبخ المشترك.'
+    mk: 'Кажете: заедничката кујна.'
+  answer:
+    speaker: protagonist
+    text: Die Gemeinschaftsküche.
+  items:
+  - die-gemeinschaftskueche
+- type: prompt
+  ask:
+    en: 'Say: the cleaning rota.'
+    ar: 'قولي: جدول التنظيف.'
+    mk: 'Кажете: распоредот за чистење.'
+  answer:
+    speaker: protagonist
+    text: Der Putzplan.
+  items:
+  - der-putzplan
+- type: prompt
+  ask:
+    en: 'Ask: whose turn is it this week?'
+    ar: 'اسألي: دور من هذا الأسبوع؟'
+    mk: 'Прашајте: кој е на ред оваа недела?'
+  answer:
+    speaker: protagonist
+    text: Wer ist diese Woche dran?
+  items:
+  - diese-woche
+  - ist-dran
+- type: prompt
+  ask:
+    en: 'Say: I have to clean the bathroom.'
+    ar: 'قولي: يجب أن أنظف الحمام.'
+    mk: 'Кажете: морам да ја исчистам бањата.'
+  answer:
+    speaker: protagonist
+    text: Ich muss das Bad putzen.
+  items:
+  - das-bad-putzen
+- type: prompt
+  ask:
+    en: 'Say: the rules are strict!'
+    ar: 'قولي: القواعد صارمة!'
+    mk: 'Кажете: правилата се строги!'
+  answer:
+    speaker: protagonist
+    text: Die Regeln sind streng!
+  items:
+  - die-regel
+  - streng
+- type: prompt
+  ask:
+    en: 'Ask: and the person who doesn''t clean?'
+    ar: 'اسألي: والشخص الذي لا ينظّف؟'
+    mk: 'Прашајте: а лицето што не чисти?'
+  answer:
+    speaker: protagonist
+    text: Und die Person, die nicht putzt?
+  items:
+  - die-person-die
+- type: narrator
+  text:
+    en: Flat-shares (WGs) are how many students and young workers live. A Putzplan on the fridge decides who cleans what each week — and breaking it is a real source of conflict.
+    ar: السكن المشترك (WG) هو طريقة عيش كثير من الطلاب والشباب العاملين. وجدول التنظيف على الثلاجة يحدّد من ينظّف ماذا كل أسبوع — ومخالفته مصدر حقيقي للخلاف.
+    mk: Заедничките станови (WG) се начинот на кој живеат многу студенти и млади вработени. Распоредот на фрижидерот одлучува кој што чисти секоја недела — а неговото кршење е вистински извор на кавги.
+- type: prompt
+  ask:
+    en: 'Once more: say “the flat-share”.'
+    ar: 'مرة أخرى: قولي “السكن المشترك”.'
+    mk: 'Уште еднаш: кажете „заедничкиот стан“.'
+  answer:
+    speaker: protagonist
+    text: die WG
+  items:
+  - die-wg
+- type: prompt
+  ask:
+    en: 'Once more: say “the flatmate”.'
+    ar: 'مرة أخرى: قولي “شريك السكن”.'
+    mk: 'Уште еднаш: кажете „цимерот“.'
+  answer:
+    speaker: protagonist
+    text: der Mitbewohner
+  items:
+  - der-mitbewohner
+- type: prompt
+  ask:
+    en: 'Once more: say “the cleaning rota”.'
+    ar: 'مرة أخرى: قولي “جدول التنظيف”.'
+    mk: 'Уште еднаш: кажете „распоредот за чистење“.'
+  answer:
+    speaker: protagonist
+    text: der Putzplan
+  items:
+  - der-putzplan
+- type: prompt
+  ask:
+    en: 'Once more: say “the person who …”.'
+    ar: 'مرة أخرى: قولي “الشخص الذي …”.'
+    mk: 'Уште еднаш: кажете „лицето што …“.'
+  answer:
+    speaker: protagonist
+    text: die Person, die …
+  items:
+  - die-person-die
+- type: prompt
+  ask:
+    en: 'Once more: say “the room that …”.'
+    ar: 'مرة أخرى: قولي “الغرفة التي …”.'
+    mk: 'Уште еднаш: кажете „собата што …“.'
+  answer:
+    speaker: protagonist
+    text: das Zimmer, das …
+  items:
+  - das-zimmer-das
+- type: prompt
+  ask:
+    en: 'Once more: say “the shared kitchen”.'
+    ar: 'مرة أخرى: قولي “المطبخ المشترك”.'
+    mk: 'Уште еднаш: кажете „заедничката кујна“.'
+  answer:
+    speaker: protagonist
+    text: die Gemeinschaftsküche
+  items:
+  - die-gemeinschaftskueche
+- type: prompt
+  ask:
+    en: 'Once more: say “this week”.'
+    ar: 'مرة أخرى: قولي “هذا الأسبوع”.'
+    mk: 'Уште еднаш: кажете „оваа недела“.'
+  answer:
+    speaker: protagonist
+    text: diese Woche
+  items:
+  - diese-woche
+- type: prompt
+  ask:
+    en: 'Once more: say “it''s (someone''s) turn”.'
+    ar: 'مرة أخرى: قولي “دور (فلان)”.'
+    mk: 'Уште еднаш: кажете „е на ред“.'
+  answer:
+    speaker: protagonist
+    text: ist dran
+  items:
+  - ist-dran
+- type: prompt
+  ask:
+    en: 'Once more: say “clean the bathroom”.'
+    ar: 'مرة أخرى: قولي “ينظف الحمام”.'
+    mk: 'Уште еднаш: кажете „чисти бањата“.'
+  answer:
+    speaker: protagonist
+    text: das Bad putzen
+  items:
+  - das-bad-putzen
+- type: prompt
+  ask:
+    en: 'Once more: say “strict”.'
+    ar: 'مرة أخرى: قولي “صارم”.'
+    mk: 'Уште еднаш: кажете „строго“.'
+  answer:
+    speaker: protagonist
+    text: streng
+  items:
+  - streng
+- type: prompt
+  ask:
+    en: 'Once more: say “the rule”.'
+    ar: 'مرة أخرى: قولي “القاعدة”.'
+    mk: 'Уште еднаш: кажете „правилото“.'
+  answer:
+    speaker: protagonist
+    text: die Regel
+  items:
+  - die-regel
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the joke — and “the punchline — and “funny — and “I don''t get the joke — and “the pun — and “dry, deadpan — and “laugh — and “humour — and “the summer party — and “Cheers! — and “homesickness
+      — and “lonely — and “I miss — and “I''m worried”.'
+    ar: 'قولي: “النكتة — و“ذروة النكتة — و“مضحك — و“لم أفهم النكتة — و“التلاعب بالألفاظ — و“جاف (فكاهة جافة) — و“يضحك — و“الفكاهة — و“حفلة الصيف — و“في صحتك! — و“الحنين إلى الوطن — و“وحيد — و“أشتاق إلى
+      — و“أنا قلق”.'
+    mk: 'Кажете: „шегата“ — и „поентата“ — и „смешно“ — и „Не ја разбирам шегата“ — и „игра на зборови“ — и „суво“ — и „се смее“ — и „хуморот“ — и „летната забава“ — и „Наздравје!“ — и „носталгијата“ —
+      и „осамено“ — и „ми недостига“ — и „се грижам“.'
+  answer:
+    speaker: protagonist
+    text: der Witz … die Pointe … lustig … Ich verstehe den Witz nicht … das Wortspiel … trocken … lachen … der Humor … das Sommerfest … Prost! … das Heimweh … einsam … ich vermisse … ich mache mir Sorgen
+  items:
+  - der-witz
+  - die-pointe
+  - lustig
+  - ich-verstehe-den-witz-nicht
+  - das-wortspiel
+  - trocken
+  - lachen
+  - der-humor
+  - das-sommerfest
+  - prost
+  - das-heimweh
+  - einsam
+  - ich-vermisse
+  - ich-mache-mir-sorgen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I wish for — and “that''s normal — and “at the beginning — and “it gets better — and “Come in! (informal) — and “I''ll cook us … — and “the choir — and “the concert — and “I like it (it pleases
+      me) — and “belongs to — and “helps you — and “I like the taste — and “the composer — and “famous”.'
+    ar: 'قولي: “أتمنى — و“هذا طبيعي — و“في البداية — و“سيتحسّن الوضع — و“ادخل! — و“أطبخ لنا … — و“الجوقة — و“الحفلة الموسيقية — و“يعجبني — و“يعود إلى، ملك — و“يساعدك — و“يعجبني طعمه — و“المؤلف الموسيقي
+      — و“مشهور”.'
+    mk: 'Кажете: „посакувам“ — и „тоа е нормално“ — и „на почетокот“ — и „ќе биде подобро“ — и „Влези!“ — и „ќе ни зготвам …“ — и „хорот“ — и „концертот“ — и „ми се допаѓа“ — и „му припаѓа“ — и „ти помага“
+      — и „ми е вкусно“ — и „композиторот“ — и „познат“.'
+  answer:
+    speaker: protagonist
+    text: ich wünsche mir … das ist normal … am Anfang … es wird besser … Komm rein! … ich koche uns … … der Chor … das Konzert … gefällt mir … gehört … hilft dir … schmeckt mir … der Komponist … berühmt
+  items:
+  - ich-wuensche-mir
+  - das-ist-normal
+  - am-anfang
+  - es-wird-besser
+  - komm-rein
+  - ich-koche-uns
+  - der-chor
+  - das-konzert
+  - gefaellt-mir
+  - gehoert
+  - hilft-dir
+  - schmeckt-mir
+  - der-komponist
+  - beruehmt
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the grave — and “classical — and “the club — and “training — and “member — and “a trial session — and “join in — and “fast — and “tiring, hard — and “the changing room — and “the sports hall
+      — and “the next training”.'
+    ar: 'قولي: “القبر — و“كلاسيكي — و“النادي — و“التمرين — و“عضو — و“تمرين تجريبي — و“يشارك — و“سريع — و“متعب — و“غرفة تغيير الملابس — و“الصالة الرياضية — و“التمرين القادم”.'
+    mk: 'Кажете: „гробот“ — и „класично“ — и „клубот“ — и „тренингот“ — и „член“ — и „пробен тренинг“ — и „учествува“ — и „брзо“ — и „напорно“ — и „соблекувалната“ — и „спортската сала“ — и „следниот тренинг“.'
+  answer:
+    speaker: protagonist
+    text: das Grab … klassisch … der Verein … das Training … Mitglied … ein Probetraining … mitmachen … schnell … anstrengend … die Umkleide … die Sporthalle … das nächste Training
+  items:
+  - das-grab
+  - klassisch
+  - der-verein
+  - das-training
+  - mitglied
+  - probetraining
+  - mitmachen
+  - schnell
+  - anstrengend
+  - die-umkleide
+  - die-sporthalle
+  - das-naechste-training
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the baby — and “was — and “had — and “hard, difficult”.'
+  answer:
+    speaker: protagonist
+    text: das Baby … war … hatte … schwer
+  items:
+  - das-baby-e
+  - war-e
+  - hatte-e
+  - schwer-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “child benefit — and “the application — and “the family benefits office — and “a semester off”.'
+  answer:
+    speaker: protagonist
+    text: das Kindergeld … der Antrag … die Familienkasse … das Urlaubssemester
+  items:
+  - das-kindergeld-e
+  - der-antrag-e
+  - die-familienkasse-e
+  - das-urlaubssemester-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the university nursery — and “support”.'
+  answer:
+    speaker: protagonist
+    text: die Uni-Kita … die Unterstützung
+  items:
+  - die-kita-uni-e
+  - unterstuetzung-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “الطلب — و“مكتب إعانات العائلة — و“شهادة الميلاد — و“مترجَم”.'
+  answer:
+    speaker: protagonist
+    text: der Antrag … die Familienkasse … die Geburtsurkunde … übersetzt
+  items:
+  - der-antrag-a
+  - die-familienkasse-a
+  - die-geburtsurkunde-a
+  - uebersetzt-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “كان — و“كان عندي — و“الرقم الضريبي للطفل — و“بأثر رجعي”.'
+  answer:
+    speaker: protagonist
+    text: war … hatte … die Steuer-ID des Kindes … rückwirkend
+  items:
+  - war-a
+  - hatte-a
+  - die-steuer-id-kind-a
+  - rueckwirkend-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “معالجة الطلب — و“القرار الرسمي (الإشعار)”.'
+  answer:
+    speaker: protagonist
+    text: die Bearbeitung … der Bescheid
+  items:
+  - die-bearbeitung-a
+  - der-bescheid-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „детскиот додаток“ — и „секој месец“ — и „беше“ — и „имаше“.'
+  answer:
+    speaker: protagonist
+    text: das Kindergeld … jeden Monat … war … hatte
+  items:
+  - das-kindergeld-m
+  - jeden-monat-k-m
+  - war-m
+  - hatte-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „родителскиот надомест“ — и „по раѓањето“ — и „да остане дома“ — и „кога бев мал“.'
+  answer:
+    speaker: protagonist
+    text: das Elterngeld … nach der Geburt … zu Hause bleiben … als ich klein war
+  items:
+  - das-elterngeld-m
+  - nach-der-geburt-m
+  - zu-hause-bleiben-m
+  - als-ich-klein-war-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „поинаку“ — и „државата“.'
+  answer:
+    speaker: protagonist
+    text: anders … der Staat
+  items:
+  - anders-m
+  - der-staat-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

@@ -1,0 +1,558 @@
+# UNIT de B1-02 — written by AI (Claude) for Casus; expanded from src/B1-02.yml by tools/expand_unit.py. Edit the source.
+
+id: B1-02
+level: B1
+number: 2
+protagonist: m
+title:
+  en: Opinions
+  ar: الآراء
+  mk: Мислења
+situation:
+  en: In the WG kitchen. Paul wants to ban cars from the city centre. Jonas disagrees.
+  ar: في مطبخ السكن المشترك. باول يريد منع السيارات من وسط المدينة. يوناس لا يوافق.
+  mk: Во кујната на заедничкиот стан. Паул сака да ги забрани колите од центарот. Јонас не се согласува.
+learn_lessons:
+- b1-dass-opinion
+culture: Direct disagreement
+new_items:
+- id: ich-finde-dass
+  text: Ich finde, dass …
+  meaning:
+    en: I think that …
+    ar: أرى أنّ …
+    mk: Мислам дека …
+- id: meiner-meinung-nach
+  text: meiner Meinung nach
+  meaning:
+    en: in my opinion
+    ar: في رأيي
+    mk: според мене
+- id: das-klima
+  text: das Klima
+  meaning:
+    en: the climate
+    ar: المناخ
+    mk: климата
+- id: verbieten
+  text: verbieten
+  meaning:
+    en: ban, forbid
+    ar: يمنع
+    mk: забранува
+- id: ich-bin-dagegen
+  text: ich bin dagegen
+  meaning:
+    en: I'm against it
+    ar: أنا ضد ذلك
+    mk: јас сум против
+- id: ich-bin-dafuer
+  text: ich bin dafür
+  meaning:
+    en: I'm for it
+    ar: أنا مع ذلك
+    mk: јас сум за
+- id: das-stimmt-zwar
+  text: das stimmt zwar, aber …
+  meaning:
+    en: that's true, but …
+    ar: صحيح، لكن …
+    mk: тоа е точно, но …
+- id: der-nahverkehr
+  text: der Nahverkehr
+  meaning:
+    en: local public transport
+    ar: النقل المحلي
+    mk: градскиот превоз
+  rare: true
+- id: streiten
+  text: streiten
+  meaning:
+    en: argue
+    ar: يتجادل
+    mk: се расправа
+- id: wir-sind-uns-einig
+  text: wir sind uns einig
+  meaning:
+    en: we agree
+    ar: نحن متفقون
+    mk: се согласуваме
+reviews:
+- item: was-hast-du-gemacht
+  from: A2-01
+- item: ich-habe-gemacht
+  from: A2-01
+- item: ich-bin-gegangen
+  from: A2-01
+- item: am-samstag
+  from: A2-01
+- item: am-sonntag
+  from: A2-01
+- item: gesehen
+  from: A2-01
+- item: gegessen
+  from: A2-01
+- item: geschlafen
+  from: A2-01
+- item: lange
+  from: A2-01
+- item: toll
+  from: A2-01
+- item: und-du-was
+  from: A2-01
+- item: nichts
+  from: A2-01
+- item: das-gleis
+  from: A2-17
+- item: nach-dresden
+  from: A2-17
+- item: in-den-zug
+  from: A2-17
+- item: auf-gleis
+  from: A2-17
+- item: faellt-aus
+  from: A2-17
+- item: die-durchsage
+  from: A2-17
+- item: zum-bahnsteig
+  from: A2-17
+- item: mit-verspaetung
+  from: A2-17
+- item: der-anschluss
+  from: A2-17
+- item: entschaedigung
+  from: A2-17
+- item: das-wartezimmer
+  from: A2-25
+- item: niemand
+  from: A2-25
+- item: schweigen
+  from: A2-25
+- item: ich-frage-mich
+  from: A2-25
+- item: ob
+  from: A2-25
+- item: warum-alle
+  from: A2-25
+- item: unhoeflich
+  from: A2-25
+- item: die-privatsphaere
+  from: A2-25
+- item: der-smalltalk
+  from: A2-25
+- item: zuhoeren
+  from: A2-25
+- item: weiss-nicht
+  from: A2-25
+- item: die-volkshochschule
+  from: A2-29
+- item: ich-habe-vor
+  from: A2-29
+- item: es-ist-schwer
+  from: A2-29
+- item: der-einstufungstest
+  from: A2-29
+- item: das-niveau
+  from: A2-29
+- item: abends
+  from: A2-29
+- item: zweimal-pro-woche
+  from: A2-29
+- item: hast-du-lust
+  from: A2-29
+- item: anfangen
+  from: A2-29
+- item: die-gebuehr
+  from: A2-29
+- item: die-wg
+  from: B1-01
+- item: der-mitbewohner
+  from: B1-01
+- item: der-putzplan
+  from: B1-01
+- item: die-person-die
+  from: B1-01
+- item: das-zimmer-das
+  from: B1-01
+- item: die-gemeinschaftskueche
+  from: B1-01
+- item: diese-woche
+  from: B1-01
+- item: ist-dran
+  from: B1-01
+- item: das-bad-putzen
+  from: B1-01
+- item: streng
+  from: B1-01
+- item: die-regel
+  from: B1-01
+steps:
+- type: narrator
+  text:
+    en: In the WG kitchen. Paul wants to ban cars from the city centre. Jonas disagrees. Listen to the conversation; you don't need to understand it yet.
+    ar: في مطبخ السكن المشترك. باول يريد منع السيارات من وسط المدينة. يوناس لا يوافق. استمع إلى المحادثة؛ لا داعي لأن تفهمها الآن.
+    mk: Во кујната на заедничкиот стан. Паул сака да ги забрани колите од центарот. Јонас не се согласува. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: paul
+    text: Ich finde, dass Autos in der Innenstadt verboten werden sollten.
+    meaning:
+      en: I think cars should be banned from the city centre.
+      ar: أرى أنّ السيارات يجب أن تُمنع في وسط المدينة.
+      mk: Мислам дека колите треба да се забранат во центарот.
+  - speaker: jonas
+    text: Ich bin dagegen. Meine Oma kann nicht laufen.
+    meaning:
+      en: I'm against it. My grandma can't walk.
+      ar: أنا ضد ذلك. جدتي لا تستطيع المشي.
+      mk: Јас сум против. Баба ми не може да оди.
+  - speaker: paul
+    text: Das stimmt zwar, aber das Klima!
+    meaning:
+      en: That's true, but the climate!
+      ar: صحيح، لكن المناخ!
+      mk: Тоа е точно, но климата!
+  - speaker: protagonist
+    text: Und was ist deine Meinung, Jonas?
+    meaning:
+      en: And what's your opinion, Jonas?
+      ar: وما رأيك يا يوناس؟
+      mk: А кое е твоето мислење, Јонас?
+  - speaker: jonas
+    text: Meiner Meinung nach brauchen wir besseren Nahverkehr. Dann fahren weniger Autos.
+    meaning:
+      en: In my opinion we need better public transport. Then fewer cars will drive.
+      ar: في رأيي نحتاج نقلًا محليًا أفضل. عندها تقلّ السيارات.
+      mk: Според мене ни треба подобар градски превоз. Тогаш ќе има помалку коли.
+  - speaker: protagonist
+    text: Da bin ich dafür.
+    meaning:
+      en: I'm for that.
+      ar: أنا مع ذلك.
+      mk: За тоа сум.
+  - speaker: paul
+    text: Okay. Dann sind wir uns einig.
+    meaning:
+      en: OK. Then we agree.
+      ar: حسنًا. إذن نحن متفقون.
+      mk: Добро. Тогаш се согласуваме.
+  - speaker: protagonist
+    text: Ihr streitet so offen! Ist das normal?
+    meaning:
+      en: You argue so openly! Is that normal?
+      ar: تتجادلون بصراحة شديدة! هل هذا عادي؟
+      mk: Толку отворено се расправате! Дали е тоа нормално?
+  - speaker: jonas
+    text: Klar. Wir streiten über die Sache, nicht über die Person.
+    meaning:
+      en: Sure. We argue about the issue, not the person.
+      ar: طبعًا. نتجادل في الموضوع، لا في الشخص.
+      mk: Секако. Се расправаме за работата, не за човекот.
+- type: prompt
+  ask:
+    en: 'Say: I think that cars should be banned.'
+    ar: 'قل: أرى أنّ السيارات يجب أن تُمنع.'
+    mk: 'Кажете: мислам дека колите треба да се забранат.'
+  answer:
+    speaker: protagonist
+    text: Ich finde, dass Autos verboten werden sollten.
+  items:
+  - ich-finde-dass
+  - verbieten
+- type: prompt
+  ask:
+    en: 'Say: I''m against it.'
+    ar: 'قل: أنا ضد ذلك.'
+    mk: 'Кажете: јас сум против.'
+  answer:
+    speaker: protagonist
+    text: Ich bin dagegen.
+  items:
+  - ich-bin-dagegen
+- type: prompt
+  ask:
+    en: 'Say: that''s true, but the climate!'
+    ar: 'قل: صحيح، لكن المناخ!'
+    mk: 'Кажете: тоа е точно, но климата!'
+  answer:
+    speaker: protagonist
+    text: Das stimmt zwar, aber das Klima!
+  items:
+  - das-stimmt-zwar
+  - das-klima
+- type: prompt
+  ask:
+    en: 'Say: in my opinion we need better transport.'
+    ar: 'قل: في رأيي نحتاج نقلًا أفضل.'
+    mk: 'Кажете: според мене ни треба подобар превоз.'
+  answer:
+    speaker: protagonist
+    text: Meiner Meinung nach brauchen wir besseren Nahverkehr.
+  items:
+  - meiner-meinung-nach
+  - der-nahverkehr
+- type: prompt
+  ask:
+    en: 'Say: I''m for it.'
+    ar: 'قل: أنا مع ذلك.'
+    mk: 'Кажете: за тоа сум.'
+  answer:
+    speaker: protagonist
+    text: Ich bin dafür.
+  items:
+  - ich-bin-dafuer
+- type: prompt
+  ask:
+    en: 'Say: then we agree.'
+    ar: 'قل: إذن نحن متفقون.'
+    mk: 'Кажете: тогаш се согласуваме.'
+  answer:
+    speaker: protagonist
+    text: Dann sind wir uns einig.
+  items:
+  - wir-sind-uns-einig
+- type: prompt
+  ask:
+    en: 'Say: you argue so openly!'
+    ar: 'قل: تتجادلون بصراحة شديدة!'
+    mk: 'Кажете: толку отворено се расправате!'
+  answer:
+    speaker: protagonist
+    text: Ihr streitet so offen!
+  items:
+  - streiten
+- type: narrator
+  text:
+    en: 'Disagreeing openly — «Ich bin dagegen», «Das stimmt nicht» — is normal among friends and colleagues and isn''t taken personally: the argument is about the issue.'
+    ar: 'الاختلاف الصريح — «Ich bin dagegen»، «Das stimmt nicht» — أمر عادي بين الأصدقاء والزملاء ولا يُؤخذ على محمل شخصي: النقاش حول الموضوع.'
+    mk: 'Отвореното несогласување — «Ich bin dagegen», «Das stimmt nicht» — е нормално меѓу пријатели и колеги и не се зема лично: расправата е за работата.'
+- type: narrator
+  for:
+  - ar
+  - mk
+  text:
+    ar: قد تبدو هذه الصراحة جافة؛ عندنا نلطّف الاعتراض كثيرًا. هنا يُعدّ الوضوح احترامًا.
+    mk: Кај нас расправата лесно станува лична; тука се расправа жестоко, па се оди заедно на пиво.
+- type: prompt
+  ask:
+    en: 'Once more: say “I think that …”.'
+    ar: 'مرة أخرى: قل “أرى أنّ …”.'
+    mk: 'Уште еднаш: кажете „Мислам дека …“.'
+  answer:
+    speaker: protagonist
+    text: Ich finde, dass …
+  items:
+  - ich-finde-dass
+- type: prompt
+  ask:
+    en: 'Once more: say “in my opinion”.'
+    ar: 'مرة أخرى: قل “في رأيي”.'
+    mk: 'Уште еднаш: кажете „според мене“.'
+  answer:
+    speaker: protagonist
+    text: meiner Meinung nach
+  items:
+  - meiner-meinung-nach
+- type: prompt
+  ask:
+    en: 'Once more: say “the climate”.'
+    ar: 'مرة أخرى: قل “المناخ”.'
+    mk: 'Уште еднаш: кажете „климата“.'
+  answer:
+    speaker: protagonist
+    text: das Klima
+  items:
+  - das-klima
+- type: prompt
+  ask:
+    en: 'Once more: say “ban, forbid”.'
+    ar: 'مرة أخرى: قل “يمنع”.'
+    mk: 'Уште еднаш: кажете „забранува“.'
+  answer:
+    speaker: protagonist
+    text: verbieten
+  items:
+  - verbieten
+- type: prompt
+  ask:
+    en: 'Once more: say “I''m against it”.'
+    ar: 'مرة أخرى: قل “أنا ضد ذلك”.'
+    mk: 'Уште еднаш: кажете „јас сум против“.'
+  answer:
+    speaker: protagonist
+    text: ich bin dagegen
+  items:
+  - ich-bin-dagegen
+- type: prompt
+  ask:
+    en: 'Once more: say “I''m for it”.'
+    ar: 'مرة أخرى: قل “أنا مع ذلك”.'
+    mk: 'Уште еднаш: кажете „јас сум за“.'
+  answer:
+    speaker: protagonist
+    text: ich bin dafür
+  items:
+  - ich-bin-dafuer
+- type: prompt
+  ask:
+    en: 'Once more: say “that''s true, but …”.'
+    ar: 'مرة أخرى: قل “صحيح، لكن …”.'
+    mk: 'Уште еднаш: кажете „тоа е точно, но …“.'
+  answer:
+    speaker: protagonist
+    text: das stimmt zwar, aber …
+  items:
+  - das-stimmt-zwar
+- type: prompt
+  ask:
+    en: 'Once more: say “local public transport”.'
+    ar: 'مرة أخرى: قل “النقل المحلي”.'
+    mk: 'Уште еднаш: кажете „градскиот превоз“.'
+  answer:
+    speaker: protagonist
+    text: der Nahverkehr
+  items:
+  - der-nahverkehr
+- type: prompt
+  ask:
+    en: 'Once more: say “argue”.'
+    ar: 'مرة أخرى: قل “يتجادل”.'
+    mk: 'Уште еднаш: кажете „се расправа“.'
+  answer:
+    speaker: protagonist
+    text: streiten
+  items:
+  - streiten
+- type: prompt
+  ask:
+    en: 'Once more: say “we agree”.'
+    ar: 'مرة أخرى: قل “نحن متفقون”.'
+    mk: 'Уште еднаш: кажете „се согласуваме“.'
+  answer:
+    speaker: protagonist
+    text: wir sind uns einig
+  items:
+  - wir-sind-uns-einig
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتَه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the flat-share — and “the flatmate — and “the cleaning rota — and “the person who … — and “the room that … — and “the shared kitchen — and “this week — and “it''s (someone''s) turn — and
+      “clean the bathroom — and “strict — and “the rule”.'
+    ar: 'قل: “السكن المشترك — و“شريك السكن — و“جدول التنظيف — و“الشخص الذي … — و“الغرفة التي … — و“المطبخ المشترك — و“هذا الأسبوع — و“دور (فلان) — و“ينظف الحمام — و“صارم — و“القاعدة”.'
+    mk: 'Кажете: „заедничкиот стан“ — и „цимерот“ — и „распоредот за чистење“ — и „лицето што …“ — и „собата што …“ — и „заедничката кујна“ — и „оваа недела“ — и „е на ред“ — и „чисти бањата“ — и „строго“
+      — и „правилото“.'
+  answer:
+    speaker: protagonist
+    text: die WG … der Mitbewohner … der Putzplan … die Person, die … … das Zimmer, das … … die Gemeinschaftsküche … diese Woche … ist dran … das Bad putzen … streng … die Regel
+  items:
+  - die-wg
+  - der-mitbewohner
+  - der-putzplan
+  - die-person-die
+  - das-zimmer-das
+  - die-gemeinschaftskueche
+  - diese-woche
+  - ist-dran
+  - das-bad-putzen
+  - streng
+  - die-regel
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the adult education centre — and “I plan to … — and “it''s hard to … — and “the placement test — and “the level — and “in the evenings — and “twice a week — and “feel like … — and “start
+      — and “the fee — and “the waiting room”.'
+    ar: 'قل: “الجامعة الشعبية — و“أنوي أن … — و“من الصعب أن … — و“اختبار تحديد المستوى — و“المستوى — و“مساءً — و“مرتين في الأسبوع — و“يرغب في … — و“يبدأ — و“الرسوم — و“غرفة الانتظار”.'
+    mk: 'Кажете: „народниот универзитет“ — и „планирам да …“ — и „тешко е да …“ — и „тестот за ниво“ — и „нивото“ — и „навечер“ — и „двапати неделно“ — и „има желба да …“ — и „почнува“ — и „таксата“ — и
+      „чекалната“.'
+  answer:
+    speaker: protagonist
+    text: die Volkshochschule … ich habe vor, … zu … es ist schwer, … zu … der Einstufungstest … das Niveau … abends … zweimal pro Woche … Lust haben, … zu … anfangen … die Gebühr … das Wartezimmer
+  items:
+  - die-volkshochschule
+  - ich-habe-vor
+  - es-ist-schwer
+  - der-einstufungstest
+  - das-niveau
+  - abends
+  - zweimal-pro-woche
+  - hast-du-lust
+  - anfangen
+  - die-gebuehr
+  - das-wartezimmer
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “nobody — and “be silent — and “I wonder — and “whether, if — and “why everyone … — and “impolite — and “privacy — and “small talk — and “listen — and “I don''t know … — and “the platform
+      (track)”.'
+    ar: 'قل: “لا أحد — و“يصمت — و“أتساءل — و“إن كان — و“لماذا الجميع … — و“غير مؤدب — و“الخصوصية — و“الدردشة الخفيفة — و“يستمع — و“لا أعرف … — و“الرصيف (السكة)”.'
+    mk: 'Кажете: „никој“ — и „молчи“ — и „се прашувам“ — и „дали“ — и „зошто сите …“ — и „неучтиво“ — и „приватноста“ — и „краток разговор“ — и „слуша“ — и „Не знам …“ — и „перонот“.'
+  answer:
+    speaker: protagonist
+    text: niemand … schweigen … ich frage mich … ob … warum alle … … unhöflich … die Privatsphäre … der Smalltalk … zuhören … Ich weiß nicht, … … das Gleis
+  items:
+  - niemand
+  - schweigen
+  - ich-frage-mich
+  - ob
+  - warum-alle
+  - unhoeflich
+  - die-privatsphaere
+  - der-smalltalk
+  - zuhoeren
+  - weiss-nicht
+  - das-gleis
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “to Dresden — and “into the train — and “on platform five — and “is cancelled — and “the announcement — and “to the platform — and “with a delay — and “the connection — and “compensation —
+      and “What did you do? (informal) — and “I did …”.'
+    ar: 'قل: “إلى دريسدن — و“إلى داخل القطار — و“على الرصيف خمسة — و“أُلغي — و“الإعلان — و“إلى الرصيف — و“متأخرًا — و“القطار الموصل — و“تعويض — و“ماذا فعلتِ؟ — و“فعلتُ …”.'
+    mk: 'Кажете: „за Дрезден“ — и „во возот“ — и „на перон пет“ — и „е откажан“ — и „најавата“ — и „до перонот“ — и „со доцнење“ — и „врската“ — и „надомест“ — и „Што прави?“ — и „направив …“.'
+  answer:
+    speaker: protagonist
+    text: nach Dresden … in den Zug … auf Gleis fünf … fällt aus … die Durchsage … zum Bahnsteig … mit Verspätung … der Anschluss … eine Entschädigung … Was hast du gemacht? … ich habe … gemacht
+  items:
+  - nach-dresden
+  - in-den-zug
+  - auf-gleis
+  - faellt-aus
+  - die-durchsage
+  - zum-bahnsteig
+  - mit-verspaetung
+  - der-anschluss
+  - entschaedigung
+  - was-hast-du-gemacht
+  - ich-habe-gemacht
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I went … — and “on Saturday — and “on Sunday — and “seen — and “eaten — and “slept — and “for a long time — and “great — and “And you? What did you do? — and “nothing”.'
+    ar: 'قل: “ذهبتُ … — و“يوم السبت — و“يوم الأحد — و“رأيتُ — و“أكلتُ — و“نمتُ — و“طويلًا — و“رائع — و“وأنت؟ ماذا فعلت؟ — و“لا شيء”.'
+    mk: 'Кажете: „отидов …“ — и „во сабота“ — и „во недела“ — и „видов“ — и „јадев“ — и „спиев“ — и „долго“ — и „супер“ — и „А ти? Што прави?“ — и „ништо“.'
+  answer:
+    speaker: protagonist
+    text: ich bin … gegangen … am Samstag … am Sonntag … gesehen … gegessen … geschlafen … lange … toll … Und du? Was hast du gemacht? … nichts
+  items:
+  - ich-bin-gegangen
+  - am-samstag
+  - am-sonntag
+  - gesehen
+  - gegessen
+  - geschlafen
+  - lange
+  - toll
+  - und-du-was
+  - nichts
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمع إلى المحادثة مرة أخرى. الآن تفهمها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck
