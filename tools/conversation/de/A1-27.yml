@@ -1,0 +1,565 @@
+# UNIT de A1-27 — written by AI (Claude) for Casus; expanded from src/A1-27.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-27
+level: A1
+number: 27
+protagonist: f
+title:
+  en: The house and its materials
+  ar: البيت ومواده
+  mk: Куќата и материјалите
+situation:
+  en: Your flat is in an old building from 1905. Frau Becker explains why it stays warm.
+  ar: شقتكِ في مبنى قديم من عام 1905. السيدة بيكر تشرح لماذا يبقى دافئًا.
+  mk: Станот ви е во стара зграда од 1905. Госпоѓа Бекер објаснува зошто останува топол.
+learn_lessons:
+- a1-adjectives
+culture: Altbau and Neubau
+new_items:
+- id: der-altbau
+  text: der Altbau
+  meaning:
+    en: the old building
+    ar: المبنى القديم
+    mk: старата зграда
+  rare: true
+- id: der-neubau
+  text: der Neubau
+  meaning:
+    en: the new building
+    ar: المبنى الجديد
+    mk: новоградбата
+  rare: true
+- id: aus-stein
+  text: aus Stein
+  meaning:
+    en: made of stone
+    ar: من الحجر
+    mk: од камен
+- id: aus-holz
+  text: aus Holz
+  meaning:
+    en: made of wood
+    ar: من الخشب
+    mk: од дрво
+- id: dick
+  text: dick
+  meaning:
+    en: thick
+    ar: سميك
+    mk: дебел
+- id: die-waende
+  text: die Wände
+  meaning:
+    en: the walls
+    ar: الجدران
+    mk: ѕидовите
+- id: hoch
+  text: hoch
+  meaning:
+    en: high
+    ar: عالٍ
+    mk: висок
+- id: die-decke
+  text: die Decke
+  meaning:
+    en: the ceiling
+    ar: السقف
+    mk: таванот
+- id: die-daemmung
+  text: die Dämmung
+  meaning:
+    en: the insulation
+    ar: العزل
+    mk: изолацијата
+  rare: true
+- id: doppelte-fenster
+  text: doppelte Fenster
+  meaning:
+    en: double-glazed windows
+    ar: نوافذ مزدوجة
+    mk: двојни прозорци
+- id: modern
+  text: modern
+  meaning:
+    en: modern
+    ar: حديث
+    mk: модерен
+reviews:
+- item: der-hund
+  from: A1-12
+- item: lieb
+  from: A1-12
+- item: duerfen-mit
+  from: A1-12
+- item: die-leine
+  from: A1-12
+- item: wie-heisst-er
+  from: A1-12
+- item: tiere
+  from: A1-12
+- item: zwei-katzen
+  from: A1-12
+- item: voegel
+  from: A1-12
+- item: tauben
+  from: A1-12
+- item: fuettern
+  from: A1-12
+- item: verboten
+  from: A1-12
+- item: zurueckrufen
+  from: A1-12
+- item: hast-du-zeit
+  from: A1-20
+- item: am-montag
+  from: A1-20
+- item: keine-zeit
+  from: A1-20
+- item: am-dienstag
+  from: A1-20
+- item: am-mittwoch
+  from: A1-20
+- item: am-donnerstag
+  from: A1-20
+- item: am-freitag
+  from: A1-20
+- item: am-wochenende
+  from: A1-20
+- item: heute
+  from: A1-20
+- item: morgen
+  from: A1-20
+- item: passt-dir
+  from: A1-20
+- item: abgemacht
+  from: A1-20
+- item: der-himmel
+  from: A1-24
+- item: die-sterne
+  from: A1-24
+- item: der-mond
+  from: A1-24
+- item: am-himmel
+  from: A1-24
+- item: auf-dem-turm
+  from: A1-24
+- item: in-der-stadt
+  from: A1-24
+- item: der-planet
+  from: A1-24
+- item: hell-wie
+  from: A1-24
+- item: schau-mal
+  from: A1-24
+- item: klar-himmel
+  from: A1-24
+- item: wunderschoen
+  from: A1-24
+- item: darf-ich-mich-vorstellen
+  from: A1-26
+- item: mein-name-ist
+  from: A1-26
+- item: im-ersten-stock
+  from: A1-26
+- item: freut-mich-auch
+  from: A1-26
+- item: schon-lange
+  from: A1-26
+- item: seit-drei-monaten
+  from: A1-26
+- item: wie-gefaellt-es-ihnen
+  from: A1-26
+- item: der-fruehling
+  from: A1-26
+- item: klingeln-sie
+  from: A1-26
+- item: gleichfalls
+  from: A1-26
+- item: die-hand
+  from: A1-26
+steps:
+- type: narrator
+  text:
+    en: Your flat is in an old building from 1905. Frau Becker explains why it stays warm. Listen to the conversation; you don't need to understand it yet.
+    ar: شقتكِ في مبنى قديم من عام 1905. السيدة بيكر تشرح لماذا يبقى دافئًا. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.
+    mk: Станот ви е во стара зграда од 1905. Госпоѓа Бекер објаснува зошто останува топол. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: becker
+    text: Das Haus ist von 1905. Ein Altbau.
+    meaning:
+      en: The house is from 1905. An old building.
+      ar: البيت من عام 1905. مبنى قديم.
+      mk: Куќата е од 1905. Стара зграда.
+  - speaker: protagonist
+    text: Darum sind die Decken so hoch!
+    meaning:
+      en: That's why the ceilings are so high!
+      ar: لهذا السقوف عالية جدًا!
+      mk: Затоа таваните се толку високи!
+  - speaker: becker
+    text: Genau. Und die Wände sind aus Stein, sehr dick.
+    meaning:
+      en: Exactly. And the walls are stone, very thick.
+      ar: بالضبط. والجدران من الحجر، سميكة جدًا.
+      mk: Точно. А ѕидовите се од камен, многу дебели.
+  - speaker: protagonist
+    text: Und der Boden ist aus Holz.
+    meaning:
+      en: And the floor is wood.
+      ar: والأرضية من الخشب.
+      mk: А подот е од дрво.
+  - speaker: becker
+    text: Ja, alt, aber schön. Im Winter ist es warm, im Sommer kühl.
+    meaning:
+      en: Yes, old, but lovely. In winter it's warm, in summer cool.
+      ar: نعم، قديمة لكنها جميلة. في الشتاء دافئ وفي الصيف بارد.
+      mk: Да, стар, но убав. Во зима е топло, во лето свежо.
+  - speaker: protagonist
+    text: Mein Freund wohnt in einem Neubau.
+    meaning:
+      en: My friend lives in a new building.
+      ar: صديقي يسكن في مبنى جديد.
+      mk: Мојот пријател живее во новоградба.
+  - speaker: becker
+    text: Neubauten sind modern, mit Dämmung und doppelten Fenstern.
+    meaning:
+      en: New buildings are modern, with insulation and double glazing.
+      ar: المباني الجديدة حديثة، فيها عزل ونوافذ مزدوجة.
+      mk: Новоградбите се модерни, со изолација и двојни прозорци.
+  - speaker: protagonist
+    text: Und was ist besser?
+    meaning:
+      en: And which is better?
+      ar: وأيّهما أفضل؟
+      mk: А што е подобро?
+  - speaker: becker
+    text: Altbau ist schöner. Neubau ist billiger zu heizen.
+    meaning:
+      en: Old buildings are nicer. New ones are cheaper to heat.
+      ar: المبنى القديم أجمل. والجديد تدفئته أرخص.
+      mk: Старата е поубава. Новата е поевтина за греење.
+- type: prompt
+  ask:
+    en: 'Say: an old building.'
+    ar: 'قولي: مبنى قديم.'
+    mk: 'Кажете: стара зграда.'
+  answer:
+    speaker: protagonist
+    text: Ein Altbau.
+  items:
+  - der-altbau
+- type: prompt
+  ask:
+    en: 'Say: the ceilings are so high!'
+    ar: 'قولي: السقوف عالية جدًا!'
+    mk: 'Кажете: таваните се толку високи!'
+  answer:
+    speaker: protagonist
+    text: Die Decken sind so hoch!
+  items:
+  - die-decke
+  - hoch
+- type: prompt
+  ask:
+    en: 'Say: the walls are stone, very thick.'
+    ar: 'قولي: الجدران من الحجر، سميكة جدًا.'
+    mk: 'Кажете: ѕидовите се од камен, многу дебели.'
+  answer:
+    speaker: protagonist
+    text: Die Wände sind aus Stein, sehr dick.
+  items:
+  - die-waende
+  - aus-stein
+  - dick
+- type: prompt
+  ask:
+    en: 'Say: the floor is wood.'
+    ar: 'قولي: الأرضية من الخشب.'
+    mk: 'Кажете: подот е од дрво.'
+  answer:
+    speaker: protagonist
+    text: Der Boden ist aus Holz.
+  items:
+  - aus-holz
+- type: narrator
+  text:
+    en: '«aus» says what something is made of: «aus Stein», «aus Holz», «aus Glas».'
+    ar: '«aus» تدل على المادة: «aus Stein» (من الحجر)، «aus Holz» (من الخشب)، «aus Glas» (من الزجاج).'
+    mk: '«aus» кажува од што е нешто: «aus Stein», «aus Holz», «aus Glas».'
+- type: prompt
+  ask:
+    en: 'Say: a new building.'
+    ar: 'قولي: مبنى جديد.'
+    mk: 'Кажете: новоградба.'
+  answer:
+    speaker: protagonist
+    text: Ein Neubau.
+  items:
+  - der-neubau
+- type: prompt
+  ask:
+    en: 'Say: with insulation.'
+    ar: 'قولي: مع العزل.'
+    mk: 'Кажете: со изолација.'
+  answer:
+    speaker: protagonist
+    text: Mit Dämmung.
+  items:
+  - die-daemmung
+- type: prompt
+  ask:
+    en: 'Say: double-glazed windows.'
+    ar: 'قولي: نوافذ مزدوجة.'
+    mk: 'Кажете: двојни прозорци.'
+  answer:
+    speaker: protagonist
+    text: Doppelte Fenster.
+  items:
+  - doppelte-fenster
+- type: prompt
+  ask:
+    en: 'Say: modern.'
+    ar: 'قولي: حديث.'
+    mk: 'Кажете: модерно.'
+  answer:
+    speaker: protagonist
+    text: Modern.
+  items:
+  - modern
+- type: narrator
+  text:
+    en: «Altbau» flats (built before about 1950) have high ceilings, wooden floors and thick walls; «Neubau» flats are insulated and cheaper to heat. Many Germans love the Altbau — and its creaking floors.
+    ar: شقق «Altbau» (المبنية قبل 1950 تقريبًا) سقوفها عالية وأرضياتها خشبية وجدرانها سميكة؛ وشقق «Neubau» معزولة وتدفئتها أرخص. كثير من الألمان يحبون الـAltbau — وصرير أرضياته.
+    mk: Становите «Altbau» (градени пред околу 1950) имаат високи тавани, дрвени подови и дебели ѕидови; «Neubau» се изолирани и поевтини за греење. Многу Германци го сакаат Altbau — и подот што крцка.
+- type: prompt
+  ask:
+    en: 'Once more: say “the old building”.'
+    ar: 'مرة أخرى: قولي “المبنى القديم”.'
+    mk: 'Уште еднаш: кажете „старата зграда“.'
+  answer:
+    speaker: protagonist
+    text: der Altbau
+  items:
+  - der-altbau
+- type: prompt
+  ask:
+    en: 'Once more: say “the new building”.'
+    ar: 'مرة أخرى: قولي “المبنى الجديد”.'
+    mk: 'Уште еднаш: кажете „новоградбата“.'
+  answer:
+    speaker: protagonist
+    text: der Neubau
+  items:
+  - der-neubau
+- type: prompt
+  ask:
+    en: 'Once more: say “made of stone”.'
+    ar: 'مرة أخرى: قولي “من الحجر”.'
+    mk: 'Уште еднаш: кажете „од камен“.'
+  answer:
+    speaker: protagonist
+    text: aus Stein
+  items:
+  - aus-stein
+- type: prompt
+  ask:
+    en: 'Once more: say “made of wood”.'
+    ar: 'مرة أخرى: قولي “من الخشب”.'
+    mk: 'Уште еднаш: кажете „од дрво“.'
+  answer:
+    speaker: protagonist
+    text: aus Holz
+  items:
+  - aus-holz
+- type: prompt
+  ask:
+    en: 'Once more: say “thick”.'
+    ar: 'مرة أخرى: قولي “سميك”.'
+    mk: 'Уште еднаш: кажете „дебел“.'
+  answer:
+    speaker: protagonist
+    text: dick
+  items:
+  - dick
+- type: prompt
+  ask:
+    en: 'Once more: say “the walls”.'
+    ar: 'مرة أخرى: قولي “الجدران”.'
+    mk: 'Уште еднаш: кажете „ѕидовите“.'
+  answer:
+    speaker: protagonist
+    text: die Wände
+  items:
+  - die-waende
+- type: prompt
+  ask:
+    en: 'Once more: say “high”.'
+    ar: 'مرة أخرى: قولي “عالٍ”.'
+    mk: 'Уште еднаш: кажете „висок“.'
+  answer:
+    speaker: protagonist
+    text: hoch
+  items:
+  - hoch
+- type: prompt
+  ask:
+    en: 'Once more: say “the ceiling”.'
+    ar: 'مرة أخرى: قولي “السقف”.'
+    mk: 'Уште еднаш: кажете „таванот“.'
+  answer:
+    speaker: protagonist
+    text: die Decke
+  items:
+  - die-decke
+- type: prompt
+  ask:
+    en: 'Once more: say “the insulation”.'
+    ar: 'مرة أخرى: قولي “العزل”.'
+    mk: 'Уште еднаш: кажете „изолацијата“.'
+  answer:
+    speaker: protagonist
+    text: die Dämmung
+  items:
+  - die-daemmung
+- type: prompt
+  ask:
+    en: 'Once more: say “double-glazed windows”.'
+    ar: 'مرة أخرى: قولي “نوافذ مزدوجة”.'
+    mk: 'Уште еднаш: кажете „двојни прозорци“.'
+  answer:
+    speaker: protagonist
+    text: doppelte Fenster
+  items:
+  - doppelte-fenster
+- type: prompt
+  ask:
+    en: 'Once more: say “modern”.'
+    ar: 'مرة أخرى: قولي “حديث”.'
+    mk: 'Уште еднаш: кажете „модерен“.'
+  answer:
+    speaker: protagonist
+    text: modern
+  items:
+  - modern
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “May I introduce myself? — and “My name is … — and “on the first floor — and “Nice to meet you too — and “for a long time already — and “for three months — and “How do you like it? (polite)
+      — and “spring”.'
+    ar: 'قولي: “هل تسمح لي بأن أعرّفك بنفسي؟ — و“اسمي … — و“في الطابق الأول — و“تشرفنا أيضًا — و“منذ وقت طويل — و“منذ ثلاثة أشهر — و“كيف تجد المكان؟ — و“الربيع”.'
+    mk: 'Кажете: „Може ли да се претставам?“ — и „Моето име е …“ — и „на првиот кат“ — и „И мене ми е мило“ — и „веќе долго“ — и „веќе три месеци“ — и „Како ви се допаѓа?“ — и „пролетта“.'
+  answer:
+    speaker: protagonist
+    text: Darf ich mich vorstellen? … Mein Name ist … … im ersten Stock … Freut mich auch … schon lange … seit drei Monaten … Wie gefällt es Ihnen? … der Frühling
+  items:
+  - darf-ich-mich-vorstellen
+  - mein-name-ist
+  - im-ersten-stock
+  - freut-mich-auch
+  - schon-lange
+  - seit-drei-monaten
+  - wie-gefaellt-es-ihnen
+  - der-fruehling
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Just ring the bell (polite) — and “Likewise! — and “the hand — and “the sky — and “the stars — and “the moon — and “in the sky — and “on the tower”.'
+    ar: 'قولي: “فقط اقرع الجرس — و“وأنت أيضًا! — و“اليد — و“السماء — و“النجوم — و“القمر — و“في السماء — و“على البرج”.'
+    mk: 'Кажете: „Само ѕвонете“ — и „Исто така!“ — и „раката“ — и „небото“ — и „ѕвездите“ — и „месечината“ — и „на небото“ — и „на кулата“.'
+  answer:
+    speaker: protagonist
+    text: Klingeln Sie einfach … Gleichfalls! … die Hand … der Himmel … die Sterne … der Mond … am Himmel … auf dem Turm
+  items:
+  - klingeln-sie
+  - gleichfalls
+  - die-hand
+  - der-himmel
+  - die-sterne
+  - der-mond
+  - am-himmel
+  - auf-dem-turm
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “in the city — and “the planet — and “so bright — and “Look! (informal) — and “clear — and “beautiful — and “Do you have time? (informal) — and “on Monday”.'
+    ar: 'قولي: “في المدينة — و“الكوكب — و“مضيء جدًا — و“انظر! — و“صافٍ — و“رائع الجمال — و“هل عندك وقت؟ — و“يوم الاثنين”.'
+    mk: 'Кажете: „во градот“ — и „планетата“ — и „толку светло“ — и „Погледни!“ — и „ведро“ — и „прекрасно“ — и „Имаш ли време?“ — и „во понеделник“.'
+  answer:
+    speaker: protagonist
+    text: in der Stadt … der Planet … so hell … Schau mal! … klar … wunderschön … Hast du Zeit? … am Montag
+  items:
+  - in-der-stadt
+  - der-planet
+  - hell-wie
+  - schau-mal
+  - klar-himmel
+  - wunderschoen
+  - hast-du-zeit
+  - am-montag
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “no time — and “on Tuesday — and “on Wednesday — and “on Thursday — and “on Friday — and “at the weekend — and “today — and “tomorrow”.'
+    ar: 'قولي: “لا وقت — و“يوم الثلاثاء — و“يوم الأربعاء — و“يوم الخميس — و“يوم الجمعة — و“في عطلة نهاية الأسبوع — و“اليوم — و“غدًا”.'
+    mk: 'Кажете: „немам време“ — и „во вторник“ — и „во среда“ — и „во четврток“ — и „во петок“ — и „за викендот“ — и „денес“ — и „утре“.'
+  answer:
+    speaker: protagonist
+    text: keine Zeit … am Dienstag … am Mittwoch … am Donnerstag … am Freitag … am Wochenende … heute … morgen
+  items:
+  - keine-zeit
+  - am-dienstag
+  - am-mittwoch
+  - am-donnerstag
+  - am-freitag
+  - am-wochenende
+  - heute
+  - morgen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Does … suit you? (informal) — and “Deal! — and “the dog — and “sweet, good-natured — and “are allowed to ride along — and “the lead, the leash — and “What''s his name? — and “animals, pets”.'
+    ar: 'قولي: “هل يناسبك …؟ — و“اتفقنا! — و“الكلب — و“لطيف، وديع — و“يُسمح لها بالركوب — و“المقود — و“ما اسمه؟ — و“حيوانات”.'
+    mk: 'Кажете: „Ти одговара ли …?“ — и „Договорено!“ — и „кучето“ — и „мило, добро“ — и „смеат да се возат“ — и „поводникот“ — и „Како се вика?“ — и „животни“.'
+  answer:
+    speaker: protagonist
+    text: Passt dir …? … Abgemacht! … der Hund … lieb … dürfen mitfahren … die Leine … Wie heißt er? … Tiere
+  items:
+  - passt-dir
+  - abgemacht
+  - der-hund
+  - lieb
+  - duerfen-mit
+  - die-leine
+  - wie-heisst-er
+  - tiere
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “two cats — and “birds — and “pigeons — and “feed — and “forbidden — and “call back (a dog)”.'
+    ar: 'قولي: “قطتان — و“طيور — و“حمام — و“يُطعم — و“ممنوع — و“يستدعي (الكلب)”.'
+    mk: 'Кажете: „две мачки“ — и „птици“ — и „гулаби“ — и „хранат“ — и „забрането“ — и „да го повикате назад“.'
+  answer:
+    speaker: protagonist
+    text: zwei Katzen … Vögel … Tauben … füttern … verboten … zurückrufen
+  items:
+  - zwei-katzen
+  - voegel
+  - tauben
+  - fuettern
+  - verboten
+  - zurueckrufen
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

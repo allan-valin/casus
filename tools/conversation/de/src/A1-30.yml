@@ -1,0 +1,47 @@
+id: A1-30
+protagonist: m
+title: ["The sports club", "النادي الرياضي", "Спортскиот клуб"]
+situation:
+  - "A trial evening at the Sportverein. Trainer Petra says du to everyone — and A1 comes back."
+  - "أمسية تجريبية في النادي الرياضي. المدرّبة بيترا تخاطب الجميع بـ«du» — والمستوى A1 يعود."
+  - "Пробна вечер во спортскиот клуб. Тренерката Петра на сите им вели «du» — и A1 се враќа."
+learn: []
+culture: Clubs are how Germans meet
+items:
+  - [der-verein, "der Verein", "the club", "النادي", "клубот"]
+  - [das-training, "das Training", "training", "التمرين", "тренингот"]
+  - [mitglied, "Mitglied", "member", "عضو", "член"]
+  - [probetraining, "ein Probetraining", "a trial session", "تمرين تجريبي", "пробен тренинг", {rare: true}]
+  - [mitmachen, "mitmachen", "join in", "يشارك", "учествува"]
+  - [schnell, "schnell", "fast", "سريع", "брзо"]
+  - [anstrengend, "anstrengend", "tiring, hard", "متعب", "напорно"]
+  - [die-umkleide, "die Umkleide", "the changing room", "غرفة تغيير الملابس", "соблекувалната", {rare: true}]
+  - [die-sporthalle, "die Sporthalle", "the sports hall", "الصالة الرياضية", "спортската сала"]
+  - [das-naechste-training, "das nächste Training", "the next training", "التمرين القادم", "следниот тренинг"]
+dialogue:
+  - [petra, "Hallo! Ich bin Petra, die Trainerin. Bist du neu?", "Hi! I'm Petra, the trainer. Are you new?", "مرحبًا! أنا بيترا، المدرّبة. هل أنت جديد؟", "Здраво! Јас сум Петра, тренерката. Нов си?"]
+  - [protagonist, "Ja. Ich möchte ein Probetraining machen.", "Yes. I'd like to do a trial session.", "نعم. أودّ أن أجرّب تمرينًا.", "Да. Би сакал да направам пробен тренинг."]
+  - [petra, "Super! Mach einfach mit. Im Verein sagen alle du.", "Great! Just join in. In the club everyone says du.", "رائع! شارك فقط. في النادي الجميع يقولون «du».", "Супер! Само придружи се. Во клубот сите си велат «du»."]
+  - [protagonist, "Okay! Das Training ist schnell...", "OK! The training is fast...", "حسنًا! التمرين سريع...", "Во ред! Тренингот е брз..."]
+  - [petra, "Schnell und anstrengend! Kannst du noch?", "Fast and tiring! Can you keep going?", "سريع ومتعب! هل ما زلت تستطيع؟", "Брз и напорен! Можеш ли уште?"]
+  - [protagonist, "Ein bisschen. Mein Arm tut weh!", "A bit. My arm hurts!", "قليلًا. ذراعي تؤلمني!", "Малку. Ме боли раката!"]
+  - [petra, "Willst du Mitglied werden?", "Do you want to become a member?", "هل تريد أن تصبح عضوًا؟", "Сакаш ли да станеш член?"]
+  - [protagonist, "Ja, gern! Wann ist das nächste Training?", "Yes, gladly! When's the next training?", "نعم، بكل سرور! متى التمرين القادم؟", "Да, со задоволство! Кога е следниот тренинг?"]
+  - [petra, "Am Donnerstag um sieben. Bis dann!", "On Thursday at seven. See you then!", "يوم الخميس في السابعة. إلى اللقاء!", "Во четврток во седум. Се гледаме!"]
+teach:
+  - ask: ["Petra asks: are you new? How?", "بيترا تسأل: هل أنت جديد؟ كيف؟", "Петра прашува: нов ли си? Како?", "Bist du neu?", du-bist]
+  - ask: ["Say: I'd like to do a trial session.", "قل: أودّ أن أجرّب تمرينًا.", "Кажете: би сакал пробен тренинг.", "Ich möchte ein Probetraining machen.", ich-moechte, probetraining]
+  - ask: ["She says: just join in.", "تقول: شارك فقط.", "Таа вели: само придружи се.", "Mach einfach mit.", mitmachen]
+  - ask: ["Say: in the club.", "قل: في النادي.", "Кажете: во клубот.", "Im Verein.", der-verein]
+  - ask: ["Say: the training is fast and tiring.", "قل: التمرين سريع ومتعب.", "Кажете: тренингот е брз и напорен.", "Das Training ist schnell und anstrengend.", das-training, schnell, anstrengend]
+  - ask: ["She asks if you want to be a member.", "تسألك إن كنت تريد أن تصبح عضوًا.", "Те прашува дали сакаш да станеш член.", "Willst du Mitglied werden?", mitglied]
+  - ask: ["Ask when the next training is.", "اسأل متى التمرين القادم.", "Прашајте кога е следниот тренинг.", "Wann ist das nächste Training?", das-naechste-training]
+  - ask: ["Ask where the changing room is.", "اسأل أين غرفة تغيير الملابس.", "Прашајте каде е соблекувалната.", "Wo ist die Umkleide?", wo, die-umkleide]
+  - ask: ["Say: in the sports hall.", "قل: في الصالة الرياضية.", "Кажете: во спортската сала.", "In der Sporthalle.", die-sporthalle]
+  - note: ["End of A1. Some more from the whole level.", "نهاية المستوى A1. مزيد من المستوى كله.", "Крај на A1. Уште малку од целото ниво."]
+  - ask: ["At the door: good day, sorry, I don't understand.", "عند الباب: نهارك سعيد، عفوًا، لا أفهم.", "На вратата: добар ден, извинете, не разбирам.", "Guten Tag. Entschuldigung, ich verstehe nicht.", guten-tag, ich-verstehe-nicht]
+  - ask: ["At the Bürgeramt: I'd like to register.", "في دائرة المواطنين: أودّ أن أسجّل عنواني.", "Во општината: би сакал да се пријавам.", "Ich möchte mich anmelden.", mich-anmelden]
+  - ask: ["On the tram: leave me alone!", "في الترام: اتركني وشأني!", "Во трамвајот: оставете ме на мира!", "Lassen Sie mich in Ruhe!", lassen-sie-mich]
+  - ask: ["To Jonas: in German, please!", "ليوناس: بالألمانية من فضلك!", "На Јонас: на германски, те молам!", "Bitte auf Deutsch!", auf-deutsch]
+  - note: ["Clubs (Vereine) are how many Germans make friends: sport, choirs, gardening. Membership is cheap, and everyone says du.", "الأندية (Vereine) هي طريق كثير من الألمان لتكوين الصداقات: رياضة، جوقات، بستنة. العضوية رخيصة، والجميع يتخاطبون بـ«du».", "Клубовите (Vereine) се начинот на кој многу Германци стекнуваат пријатели: спорт, хорови, градинарство. Членарината е ниска и сите си велат «du»."]
+  - only: {ar: "كثير من المسابح والنوادي تقدّم أوقاتًا للنساء فقط — اسألي: «Gibt es Zeiten nur für Frauen?»"}

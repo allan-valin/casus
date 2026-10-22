@@ -1,0 +1,623 @@
+# UNIT de A1-30 — written by AI (Claude) for Casus; expanded from src/A1-30.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-30
+level: A1
+number: 30
+protagonist: m
+title:
+  en: The sports club
+  ar: النادي الرياضي
+  mk: Спортскиот клуб
+situation:
+  en: A trial evening at the Sportverein. Trainer Petra says du to everyone — and A1 comes back.
+  ar: أمسية تجريبية في النادي الرياضي. المدرّبة بيترا تخاطب الجميع بـ«du» — والمستوى A1 يعود.
+  mk: Пробна вечер во спортскиот клуб. Тренерката Петра на сите им вели «du» — и A1 се враќа.
+learn_lessons: []
+culture: Clubs are how Germans meet
+new_items:
+- id: der-verein
+  text: der Verein
+  meaning:
+    en: the club
+    ar: النادي
+    mk: клубот
+- id: das-training
+  text: das Training
+  meaning:
+    en: training
+    ar: التمرين
+    mk: тренингот
+- id: mitglied
+  text: Mitglied
+  meaning:
+    en: member
+    ar: عضو
+    mk: член
+- id: probetraining
+  text: ein Probetraining
+  meaning:
+    en: a trial session
+    ar: تمرين تجريبي
+    mk: пробен тренинг
+  rare: true
+- id: mitmachen
+  text: mitmachen
+  meaning:
+    en: join in
+    ar: يشارك
+    mk: учествува
+- id: schnell
+  text: schnell
+  meaning:
+    en: fast
+    ar: سريع
+    mk: брзо
+- id: anstrengend
+  text: anstrengend
+  meaning:
+    en: tiring, hard
+    ar: متعب
+    mk: напорно
+- id: die-umkleide
+  text: die Umkleide
+  meaning:
+    en: the changing room
+    ar: غرفة تغيير الملابس
+    mk: соблекувалната
+  rare: true
+- id: die-sporthalle
+  text: die Sporthalle
+  meaning:
+    en: the sports hall
+    ar: الصالة الرياضية
+    mk: спортската сала
+- id: das-naechste-training
+  text: das nächste Training
+  meaning:
+    en: the next training
+    ar: التمرين القادم
+    mk: следниот тренинг
+reviews:
+- item: das-sofa
+  from: A1-15
+- item: passt
+  from: A1-15
+- item: messen
+  from: A1-15
+- item: wie-breit
+  from: A1-15
+- item: meter
+  from: A1-15
+- item: zentimeter
+  from: A1-15
+- item: lang
+  from: A1-15
+- item: die-ecke
+  from: A1-15
+- item: rund
+  from: A1-15
+- item: eckig
+  from: A1-15
+- item: genau
+  from: A1-15
+- item: zu-gross
+  from: A1-15
+- item: zu-laut
+  from: A1-23
+- item: nach-zehn-uhr
+  from: A1-23
+- item: die-ruhezeit
+  from: A1-23
+- item: man-darf
+  from: A1-23
+- item: nicht-mehr
+  from: A1-23
+- item: leise
+  from: A1-23
+- item: ich-schlafe
+  from: A1-23
+- item: die-gaeste
+  from: A1-23
+- item: darf-ich
+  from: A1-23
+- item: natuerlich
+  from: A1-23
+- item: gute-nacht
+  from: A1-23
+- item: der-altbau
+  from: A1-27
+- item: der-neubau
+  from: A1-27
+- item: aus-stein
+  from: A1-27
+- item: aus-holz
+  from: A1-27
+- item: dick
+  from: A1-27
+- item: die-waende
+  from: A1-27
+- item: hoch
+  from: A1-27
+- item: die-decke
+  from: A1-27
+- item: die-daemmung
+  from: A1-27
+- item: doppelte-fenster
+  from: A1-27
+- item: modern
+  from: A1-27
+- item: kaputt
+  from: A1-29
+- item: die-hausverwaltung
+  from: A1-29
+- item: kalt-in-der-wohnung
+  from: A1-29
+- item: seit-heute-morgen
+  from: A1-29
+- item: der-handwerker
+  from: A1-29
+- item: kann-kommen
+  from: A1-29
+- item: das-ist-zu-spaet
+  from: A1-29
+- item: der-notdienst
+  from: A1-29
+- item: ich-muss-warten
+  from: A1-29
+- item: die-nummer
+  from: A1-29
+- item: guten-tag
+  from: A1-01
+- item: ich-verstehe-nicht
+  from: A1-01
+- item: wo
+  from: A1-02-e
+- item: ich-moechte
+  from: A1-04
+- item: mich-anmelden
+  from: A1-04
+- item: auf-deutsch
+  from: A1-10
+- item: du-bist
+  from: A1-10
+- item: lassen-sie-mich
+  from: A1-25
+steps:
+- type: narrator
+  text:
+    en: A trial evening at the Sportverein. Trainer Petra says du to everyone — and A1 comes back. Listen to the conversation; you don't need to understand it yet.
+    ar: أمسية تجريبية في النادي الرياضي. المدرّبة بيترا تخاطب الجميع بـ«du» — والمستوى A1 يعود. استمع إلى المحادثة؛ لا داعي لأن تفهمها الآن.
+    mk: Пробна вечер во спортскиот клуб. Тренерката Петра на сите им вели «du» — и A1 се враќа. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: petra
+    text: Hallo! Ich bin Petra, die Trainerin. Bist du neu?
+    meaning:
+      en: Hi! I'm Petra, the trainer. Are you new?
+      ar: مرحبًا! أنا بيترا، المدرّبة. هل أنت جديد؟
+      mk: Здраво! Јас сум Петра, тренерката. Нов си?
+  - speaker: protagonist
+    text: Ja. Ich möchte ein Probetraining machen.
+    meaning:
+      en: Yes. I'd like to do a trial session.
+      ar: نعم. أودّ أن أجرّب تمرينًا.
+      mk: Да. Би сакал да направам пробен тренинг.
+  - speaker: petra
+    text: Super! Mach einfach mit. Im Verein sagen alle du.
+    meaning:
+      en: Great! Just join in. In the club everyone says du.
+      ar: رائع! شارك فقط. في النادي الجميع يقولون «du».
+      mk: Супер! Само придружи се. Во клубот сите си велат «du».
+  - speaker: protagonist
+    text: Okay! Das Training ist schnell...
+    meaning:
+      en: OK! The training is fast...
+      ar: حسنًا! التمرين سريع...
+      mk: Во ред! Тренингот е брз...
+  - speaker: petra
+    text: Schnell und anstrengend! Kannst du noch?
+    meaning:
+      en: Fast and tiring! Can you keep going?
+      ar: سريع ومتعب! هل ما زلت تستطيع؟
+      mk: Брз и напорен! Можеш ли уште?
+  - speaker: protagonist
+    text: Ein bisschen. Mein Arm tut weh!
+    meaning:
+      en: A bit. My arm hurts!
+      ar: قليلًا. ذراعي تؤلمني!
+      mk: Малку. Ме боли раката!
+  - speaker: petra
+    text: Willst du Mitglied werden?
+    meaning:
+      en: Do you want to become a member?
+      ar: هل تريد أن تصبح عضوًا؟
+      mk: Сакаш ли да станеш член?
+  - speaker: protagonist
+    text: Ja, gern! Wann ist das nächste Training?
+    meaning:
+      en: Yes, gladly! When's the next training?
+      ar: نعم، بكل سرور! متى التمرين القادم؟
+      mk: Да, со задоволство! Кога е следниот тренинг?
+  - speaker: petra
+    text: Am Donnerstag um sieben. Bis dann!
+    meaning:
+      en: On Thursday at seven. See you then!
+      ar: يوم الخميس في السابعة. إلى اللقاء!
+      mk: Во четврток во седум. Се гледаме!
+- type: prompt
+  ask:
+    en: 'Petra asks: are you new? How?'
+    ar: 'بيترا تسأل: هل أنت جديد؟ كيف؟'
+    mk: 'Петра прашува: нов ли си? Како?'
+  answer:
+    speaker: protagonist
+    text: Bist du neu?
+  items:
+  - du-bist
+- type: prompt
+  ask:
+    en: 'Say: I''d like to do a trial session.'
+    ar: 'قل: أودّ أن أجرّب تمرينًا.'
+    mk: 'Кажете: би сакал пробен тренинг.'
+  answer:
+    speaker: protagonist
+    text: Ich möchte ein Probetraining machen.
+  items:
+  - ich-moechte
+  - probetraining
+- type: prompt
+  ask:
+    en: 'She says: just join in.'
+    ar: 'تقول: شارك فقط.'
+    mk: 'Таа вели: само придружи се.'
+  answer:
+    speaker: protagonist
+    text: Mach einfach mit.
+  items:
+  - mitmachen
+- type: prompt
+  ask:
+    en: 'Say: in the club.'
+    ar: 'قل: في النادي.'
+    mk: 'Кажете: во клубот.'
+  answer:
+    speaker: protagonist
+    text: Im Verein.
+  items:
+  - der-verein
+- type: prompt
+  ask:
+    en: 'Say: the training is fast and tiring.'
+    ar: 'قل: التمرين سريع ومتعب.'
+    mk: 'Кажете: тренингот е брз и напорен.'
+  answer:
+    speaker: protagonist
+    text: Das Training ist schnell und anstrengend.
+  items:
+  - das-training
+  - schnell
+  - anstrengend
+- type: prompt
+  ask:
+    en: She asks if you want to be a member.
+    ar: تسألك إن كنت تريد أن تصبح عضوًا.
+    mk: Те прашува дали сакаш да станеш член.
+  answer:
+    speaker: protagonist
+    text: Willst du Mitglied werden?
+  items:
+  - mitglied
+- type: prompt
+  ask:
+    en: Ask when the next training is.
+    ar: اسأل متى التمرين القادم.
+    mk: Прашајте кога е следниот тренинг.
+  answer:
+    speaker: protagonist
+    text: Wann ist das nächste Training?
+  items:
+  - das-naechste-training
+- type: prompt
+  ask:
+    en: Ask where the changing room is.
+    ar: اسأل أين غرفة تغيير الملابس.
+    mk: Прашајте каде е соблекувалната.
+  answer:
+    speaker: protagonist
+    text: Wo ist die Umkleide?
+  items:
+  - wo
+  - die-umkleide
+- type: prompt
+  ask:
+    en: 'Say: in the sports hall.'
+    ar: 'قل: في الصالة الرياضية.'
+    mk: 'Кажете: во спортската сала.'
+  answer:
+    speaker: protagonist
+    text: In der Sporthalle.
+  items:
+  - die-sporthalle
+- type: narrator
+  text:
+    en: End of A1. Some more from the whole level.
+    ar: نهاية المستوى A1. مزيد من المستوى كله.
+    mk: Крај на A1. Уште малку од целото ниво.
+- type: prompt
+  ask:
+    en: 'At the door: good day, sorry, I don''t understand.'
+    ar: 'عند الباب: نهارك سعيد، عفوًا، لا أفهم.'
+    mk: 'На вратата: добар ден, извинете, не разбирам.'
+  answer:
+    speaker: protagonist
+    text: Guten Tag. Entschuldigung, ich verstehe nicht.
+  items:
+  - guten-tag
+  - ich-verstehe-nicht
+- type: prompt
+  ask:
+    en: 'At the Bürgeramt: I''d like to register.'
+    ar: 'في دائرة المواطنين: أودّ أن أسجّل عنواني.'
+    mk: 'Во општината: би сакал да се пријавам.'
+  answer:
+    speaker: protagonist
+    text: Ich möchte mich anmelden.
+  items:
+  - mich-anmelden
+- type: prompt
+  ask:
+    en: 'On the tram: leave me alone!'
+    ar: 'في الترام: اتركني وشأني!'
+    mk: 'Во трамвајот: оставете ме на мира!'
+  answer:
+    speaker: protagonist
+    text: Lassen Sie mich in Ruhe!
+  items:
+  - lassen-sie-mich
+- type: prompt
+  ask:
+    en: 'To Jonas: in German, please!'
+    ar: 'ليوناس: بالألمانية من فضلك!'
+    mk: 'На Јонас: на германски, те молам!'
+  answer:
+    speaker: protagonist
+    text: Bitte auf Deutsch!
+  items:
+  - auf-deutsch
+- type: narrator
+  text:
+    en: 'Clubs (Vereine) are how many Germans make friends: sport, choirs, gardening. Membership is cheap, and everyone says du.'
+    ar: 'الأندية (Vereine) هي طريق كثير من الألمان لتكوين الصداقات: رياضة، جوقات، بستنة. العضوية رخيصة، والجميع يتخاطبون بـ«du».'
+    mk: 'Клубовите (Vereine) се начинот на кој многу Германци стекнуваат пријатели: спорт, хорови, градинарство. Членарината е ниска и сите си велат «du».'
+- type: narrator
+  for:
+  - ar
+  text:
+    ar: 'كثير من المسابح والنوادي تقدّم أوقاتًا للنساء فقط — اسألي: «Gibt es Zeiten nur für Frauen?»'
+- type: prompt
+  ask:
+    en: 'Once more: say “the club”.'
+    ar: 'مرة أخرى: قل “النادي”.'
+    mk: 'Уште еднаш: кажете „клубот“.'
+  answer:
+    speaker: protagonist
+    text: der Verein
+  items:
+  - der-verein
+- type: prompt
+  ask:
+    en: 'Once more: say “training”.'
+    ar: 'مرة أخرى: قل “التمرين”.'
+    mk: 'Уште еднаш: кажете „тренингот“.'
+  answer:
+    speaker: protagonist
+    text: das Training
+  items:
+  - das-training
+- type: prompt
+  ask:
+    en: 'Once more: say “member”.'
+    ar: 'مرة أخرى: قل “عضو”.'
+    mk: 'Уште еднаш: кажете „член“.'
+  answer:
+    speaker: protagonist
+    text: Mitglied
+  items:
+  - mitglied
+- type: prompt
+  ask:
+    en: 'Once more: say “a trial session”.'
+    ar: 'مرة أخرى: قل “تمرين تجريبي”.'
+    mk: 'Уште еднаш: кажете „пробен тренинг“.'
+  answer:
+    speaker: protagonist
+    text: ein Probetraining
+  items:
+  - probetraining
+- type: prompt
+  ask:
+    en: 'Once more: say “join in”.'
+    ar: 'مرة أخرى: قل “يشارك”.'
+    mk: 'Уште еднаш: кажете „учествува“.'
+  answer:
+    speaker: protagonist
+    text: mitmachen
+  items:
+  - mitmachen
+- type: prompt
+  ask:
+    en: 'Once more: say “fast”.'
+    ar: 'مرة أخرى: قل “سريع”.'
+    mk: 'Уште еднаш: кажете „брзо“.'
+  answer:
+    speaker: protagonist
+    text: schnell
+  items:
+  - schnell
+- type: prompt
+  ask:
+    en: 'Once more: say “tiring, hard”.'
+    ar: 'مرة أخرى: قل “متعب”.'
+    mk: 'Уште еднаш: кажете „напорно“.'
+  answer:
+    speaker: protagonist
+    text: anstrengend
+  items:
+  - anstrengend
+- type: prompt
+  ask:
+    en: 'Once more: say “the changing room”.'
+    ar: 'مرة أخرى: قل “غرفة تغيير الملابس”.'
+    mk: 'Уште еднаш: кажете „соблекувалната“.'
+  answer:
+    speaker: protagonist
+    text: die Umkleide
+  items:
+  - die-umkleide
+- type: prompt
+  ask:
+    en: 'Once more: say “the sports hall”.'
+    ar: 'مرة أخرى: قل “الصالة الرياضية”.'
+    mk: 'Уште еднаш: кажете „спортската сала“.'
+  answer:
+    speaker: protagonist
+    text: die Sporthalle
+  items:
+  - die-sporthalle
+- type: prompt
+  ask:
+    en: 'Once more: say “the next training”.'
+    ar: 'مرة أخرى: قل “التمرين القادم”.'
+    mk: 'Уште еднаш: кажете „следниот тренинг“.'
+  answer:
+    speaker: protagonist
+    text: das nächste Training
+  items:
+  - das-naechste-training
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتَه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “broken — and “the property management — and “cold in the flat — and “since this morning — and “the repairman — and “can come — and “That''s too late”.'
+    ar: 'قل: “معطّل — و“إدارة العقار — و“بارد في الشقة — و“منذ صباح اليوم — و“الفني، الحرفي — و“يمكنه أن يأتي — و“هذا متأخر جدًا”.'
+    mk: 'Кажете: „расипано“ — и „управата на зградата“ — и „ладно во станот“ — и „од утрово“ — и „мајсторот“ — и „може да дојде“ — и „Тоа е предоцна“.'
+  answer:
+    speaker: protagonist
+    text: kaputt … die Hausverwaltung … kalt in der Wohnung … seit heute Morgen … der Handwerker … kann … kommen … Das ist zu spät
+  items:
+  - kaputt
+  - die-hausverwaltung
+  - kalt-in-der-wohnung
+  - seit-heute-morgen
+  - der-handwerker
+  - kann-kommen
+  - das-ist-zu-spaet
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the emergency service — and “I have to wait — and “the number — and “the old building — and “the new building — and “made of stone — and “made of wood”.'
+    ar: 'قل: “خدمة الطوارئ — و“يجب أن أنتظر — و“الرقم — و“المبنى القديم — و“المبنى الجديد — و“من الحجر — و“من الخشب”.'
+    mk: 'Кажете: „дежурната служба“ — и „морам да чекам“ — и „бројот“ — и „старата зграда“ — и „новоградбата“ — и „од камен“ — и „од дрво“.'
+  answer:
+    speaker: protagonist
+    text: der Notdienst … ich muss warten … die Nummer … der Altbau … der Neubau … aus Stein … aus Holz
+  items:
+  - der-notdienst
+  - ich-muss-warten
+  - die-nummer
+  - der-altbau
+  - der-neubau
+  - aus-stein
+  - aus-holz
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “thick — and “the walls — and “high — and “the ceiling — and “the insulation — and “double-glazed windows — and “modern”.'
+    ar: 'قل: “سميك — و“الجدران — و“عالٍ — و“السقف — و“العزل — و“نوافذ مزدوجة — و“حديث”.'
+    mk: 'Кажете: „дебел“ — и „ѕидовите“ — и „висок“ — и „таванот“ — и „изолацијата“ — и „двојни прозорци“ — и „модерен“.'
+  answer:
+    speaker: protagonist
+    text: dick … die Wände … hoch … die Decke … die Dämmung … doppelte Fenster … modern
+  items:
+  - dick
+  - die-waende
+  - hoch
+  - die-decke
+  - die-daemmung
+  - doppelte-fenster
+  - modern
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “too loud — and “after ten o''clock — and “the quiet hours — and “you''re allowed to … (one may) — and “no longer, not any more — and “quiet — and “I sleep”.'
+    ar: 'قل: “عالٍ جدًا — و“بعد الساعة العاشرة — و“ساعات الهدوء — و“يُسمح لـ … (يجوز) — و“لم يعد — و“بهدوء — و“أنام”.'
+    mk: 'Кажете: „премногу бучно“ — и „по десет часот“ — и „времето за мир“ — и „смее да се …“ — и „веќе не“ — и „тивко“ — и „спијам“.'
+  answer:
+    speaker: protagonist
+    text: zu laut … nach zehn Uhr … die Ruhezeit … man darf … … nicht mehr … leise … ich schlafe
+  items:
+  - zu-laut
+  - nach-zehn-uhr
+  - die-ruhezeit
+  - man-darf
+  - nicht-mehr
+  - leise
+  - ich-schlafe
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the guests — and “May I …? — and “of course — and “Good night! — and “the sofa — and “fits — and “measure”.'
+    ar: 'قل: “الضيوف — و“هل يُسمح لي …؟ — و“طبعًا — و“تصبحين على خير! — و“الأريكة — و“يتسع، يناسب — و“يقيس”.'
+    mk: 'Кажете: „гостите“ — и „Смеам ли …?“ — и „секако“ — и „Добра ноќ!“ — и „каучот“ — и „собира, одговара“ — и „мериме“.'
+  answer:
+    speaker: protagonist
+    text: die Gäste … Darf ich …? … natürlich … Gute Nacht! … das Sofa … passt … messen
+  items:
+  - die-gaeste
+  - darf-ich
+  - natuerlich
+  - gute-nacht
+  - das-sofa
+  - passt
+  - messen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “How wide …? — and “metres — and “centimetres — and “long — and “the corner — and “round — and “square, angular”.'
+    ar: 'قل: “كم عرض …؟ — و“متر — و“سنتيمتر — و“طويل — و“الزاوية — و“مستدير — و“مربّع الشكل”.'
+    mk: 'Кажете: „Колку е широк …?“ — и „метри“ — и „сантиметри“ — и „долг“ — и „аголот“ — и „тркалезно“ — и „аглесто“.'
+  answer:
+    speaker: protagonist
+    text: Wie breit …? … Meter … Zentimeter … lang … die Ecke … rund … eckig
+  items:
+  - wie-breit
+  - meter
+  - zentimeter
+  - lang
+  - die-ecke
+  - rund
+  - eckig
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “exactly — and “too big”.'
+    ar: 'قل: “بالضبط — و“كبير جدًا”.'
+    mk: 'Кажете: „точно“ — и „преголемо“.'
+  answer:
+    speaker: protagonist
+    text: genau … zu groß
+  items:
+  - genau
+  - zu-gross
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمع إلى المحادثة مرة أخرى. الآن تفهمها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

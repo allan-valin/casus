@@ -1,0 +1,626 @@
+# UNIT de A1-29 — written by AI (Claude) for Casus; expanded from src/A1-29.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-29
+level: A1
+number: 29
+protagonist: f
+title:
+  en: The heating is broken
+  ar: التدفئة معطّلة
+  mk: Греењето не работи
+situation:
+  en: Saturday, minus eight, and the radiators are cold. You call the property management.
+  ar: يوم السبت، ثماني درجات تحت الصفر، والمدافئ باردة. تتصلين بإدارة العقار.
+  mk: Сабота, минус осум, а радијаторите се ладни. Се јавувате во управата на зградата.
+learn_lessons:
+- a1-modal-infinitive
+culture: The landlord's duty
+new_items:
+- id: kaputt
+  text: kaputt
+  meaning:
+    en: broken
+    ar: معطّل
+    mk: расипано
+- id: die-hausverwaltung
+  text: die Hausverwaltung
+  meaning:
+    en: the property management
+    ar: إدارة العقار
+    mk: управата на зградата
+  rare: true
+- id: kalt-in-der-wohnung
+  text: kalt in der Wohnung
+  meaning:
+    en: cold in the flat
+    ar: بارد في الشقة
+    mk: ладно во станот
+- id: seit-heute-morgen
+  text: seit heute Morgen
+  meaning:
+    en: since this morning
+    ar: منذ صباح اليوم
+    mk: од утрово
+- id: der-handwerker
+  text: der Handwerker
+  meaning:
+    en: the repairman
+    ar: الفني، الحرفي
+    mk: мајсторот
+- id: kann-kommen
+  text: kann … kommen
+  meaning:
+    en: can come
+    ar: يمكنه أن يأتي
+    mk: може да дојде
+- id: das-ist-zu-spaet
+  text: Das ist zu spät
+  meaning:
+    en: That's too late
+    ar: هذا متأخر جدًا
+    mk: Тоа е предоцна
+- id: der-notdienst
+  text: der Notdienst
+  meaning:
+    en: the emergency service
+    ar: خدمة الطوارئ
+    mk: дежурната служба
+  rare: true
+- id: ich-muss-warten
+  text: ich muss warten
+  meaning:
+    en: I have to wait
+    ar: يجب أن أنتظر
+    mk: морам да чекам
+- id: die-nummer
+  text: die Nummer
+  meaning:
+    en: the number
+    ar: الرقم
+    mk: бројот
+reviews:
+- item: moment-mal
+  from: A1-14
+- item: der-muell
+  from: A1-14
+- item: trennen
+  from: A1-14
+- item: die-gelbe-tonne
+  from: A1-14
+- item: das-plastik
+  from: A1-14
+- item: das-papier
+  from: A1-14
+- item: die-blaue
+  from: A1-14
+- item: der-biomuell
+  from: A1-14
+- item: der-restmuell
+  from: A1-14
+- item: das-glas
+  from: A1-14
+- item: bringen-sie
+  from: A1-14
+- item: zum-container
+  from: A1-14
+- item: wie-spaet-ist-es
+  from: A1-22-e
+- item: halb-acht
+  from: A1-22-e
+  for:
+  - en
+- item: viertel-nach
+  from: A1-22-e
+- item: viertel-vor
+  from: A1-22-e
+- item: genau-acht
+  from: A1-22-e
+  for:
+  - en
+- item: zu-spaet
+  from: A1-22-e
+- item: die-verspaetung
+  from: A1-22-e
+- item: frueh
+  from: A1-22-e
+  for:
+  - en
+- item: schon-da
+  from: A1-22-e
+  for:
+  - en
+- item: das-naechste-mal
+  from: A1-22-e
+- item: darf-ich-mich-vorstellen
+  from: A1-26
+- item: mein-name-ist
+  from: A1-26
+- item: im-ersten-stock
+  from: A1-26
+- item: freut-mich-auch
+  from: A1-26
+- item: schon-lange
+  from: A1-26
+- item: seit-drei-monaten
+  from: A1-26
+- item: wie-gefaellt-es-ihnen
+  from: A1-26
+- item: der-fruehling
+  from: A1-26
+- item: klingeln-sie
+  from: A1-26
+- item: gleichfalls
+  from: A1-26
+- item: die-hand
+  from: A1-26
+- item: die-familie
+  from: A1-28
+- item: meine-schwester
+  from: A1-28
+- item: ihre-kinder
+  from: A1-28
+- item: mein-bruder
+  from: A1-28
+- item: sein-sohn
+  from: A1-28
+- item: ist-das-ihre
+  from: A1-28
+- item: die-eltern-meine
+  from: A1-28
+- item: vermisse
+  from: A1-28
+- item: wie-viele
+  from: A1-28
+- item: geschwister
+  from: A1-28
+- item: gruessen-sie
+  from: A1-28
+- item: halb-fuenf
+  from: A1-22-a
+  for:
+  - ar
+  - mk
+- item: puenktlich-a
+  from: A1-22-a
+  for:
+  - ar
+- item: rufen-sie-an
+  from: A1-22-a
+  for:
+  - ar
+  - mk
+- item: es-tut-mir-leid
+  from: A1-22-a
+  for:
+  - ar
+  - mk
+- item: puenktlich-m
+  from: A1-22-m
+  for:
+  - mk
+- item: die-heizung
+  from: A1-17
+- item: am-montag
+  from: A1-20
+steps:
+- type: narrator
+  text:
+    en: Saturday, minus eight, and the radiators are cold. You call the property management. Listen to the conversation; you don't need to understand it yet.
+    ar: يوم السبت، ثماني درجات تحت الصفر، والمدافئ باردة. تتصلين بإدارة العقار. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.
+    mk: Сабота, минус осум, а радијаторите се ладни. Се јавувате во управата на зградата. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: verwaltung
+    text: Hausverwaltung Meyer, guten Tag.
+    meaning:
+      en: Meyer Property Management, good morning.
+      ar: إدارة عقارات ماير، نهارك سعيد.
+      mk: Управа Мајер, добар ден.
+  - speaker: protagonist
+    text: Guten Tag. Die Heizung ist kaputt. Es ist sehr kalt in der Wohnung.
+    meaning:
+      en: Good morning. The heating is broken. It's very cold in the flat.
+      ar: نهارك سعيد. التدفئة معطّلة. الجو بارد جدًا في الشقة.
+      mk: Добар ден. Греењето е расипано. Многу е ладно во станот.
+  - speaker: verwaltung
+    text: Seit wann?
+    meaning:
+      en: Since when?
+      ar: منذ متى؟
+      mk: Од кога?
+  - speaker: protagonist
+    text: Seit heute Morgen.
+    meaning:
+      en: Since this morning.
+      ar: منذ صباح اليوم.
+      mk: Од утрово.
+  - speaker: verwaltung
+    text: Der Handwerker kann am Montag kommen.
+    meaning:
+      en: The repairman can come on Monday.
+      ar: الفني يمكنه أن يأتي يوم الاثنين.
+      mk: Мајсторот може да дојде во понеделник.
+  - speaker: protagonist
+    text: Am Montag? Das ist zu spät! Es sind minus acht Grad.
+    meaning:
+      en: On Monday? That's too late! It's minus eight.
+      ar: يوم الاثنين؟ هذا متأخر جدًا! الحرارة ثماني درجات تحت الصفر.
+      mk: Во понеделник? Тоа е предоцна! Минус осум е.
+  - speaker: verwaltung
+    text: Dann rufen Sie den Notdienst an. Ich gebe Ihnen die Nummer.
+    meaning:
+      en: Then call the emergency service. I'll give you the number.
+      ar: إذن اتصلي بخدمة الطوارئ. سأعطيك الرقم.
+      mk: Тогаш јавете се на дежурната служба. Ќе ви го дадам бројот.
+  - speaker: protagonist
+    text: Muss ich etwas bezahlen?
+    meaning:
+      en: Do I have to pay anything?
+      ar: هل يجب أن أدفع شيئًا؟
+      mk: Морам ли нешто да платам?
+  - speaker: verwaltung
+    text: Nein, die Heizung ist Sache des Vermieters.
+    meaning:
+      en: No, the heating is the landlord's responsibility.
+      ar: لا، التدفئة من مسؤولية المؤجِّر.
+      mk: Не, греењето е обврска на сопственикот на станот.
+- type: prompt
+  ask:
+    en: 'Say: the heating is broken.'
+    ar: 'قولي: التدفئة معطّلة.'
+    mk: 'Кажете: греењето е расипано.'
+  answer:
+    speaker: protagonist
+    text: Die Heizung ist kaputt.
+  items:
+  - kaputt
+  - die-heizung
+- type: prompt
+  ask:
+    en: 'Say: it''s very cold in the flat.'
+    ar: 'قولي: الجو بارد جدًا في الشقة.'
+    mk: 'Кажете: многу е ладно во станот.'
+  answer:
+    speaker: protagonist
+    text: Es ist sehr kalt in der Wohnung.
+  items:
+  - kalt-in-der-wohnung
+- type: prompt
+  ask:
+    en: 'Say: since this morning.'
+    ar: 'قولي: منذ صباح اليوم.'
+    mk: 'Кажете: од утрово.'
+  answer:
+    speaker: protagonist
+    text: Seit heute Morgen.
+  items:
+  - seit-heute-morgen
+- type: prompt
+  ask:
+    en: 'Say: the property management.'
+    ar: 'قولي: إدارة العقار.'
+    mk: 'Кажете: управата на зградата.'
+  answer:
+    speaker: protagonist
+    text: Die Hausverwaltung.
+  items:
+  - die-hausverwaltung
+- type: narrator
+  text:
+    en: 'Modal verbs send the main verb to the end: «Der Handwerker kann am Montag kommen», «Ich muss warten».'
+    ar: 'الأفعال المساعدة ترسل الفعل الأساسي إلى آخر الجملة: «Der Handwerker kann am Montag kommen»، «Ich muss warten».'
+    mk: 'Модалните глаголи го праќаат главниот глагол на крајот: «Der Handwerker kann am Montag kommen», «Ich muss warten».'
+- type: prompt
+  ask:
+    en: 'He says: the repairman can come on Monday.'
+    ar: 'يقول: الفني يمكنه أن يأتي يوم الاثنين.'
+    mk: 'Тој вели: мајсторот може да дојде во понеделник.'
+  answer:
+    speaker: protagonist
+    text: Der Handwerker kann am Montag kommen.
+  items:
+  - der-handwerker
+  - kann-kommen
+  - am-montag
+- type: prompt
+  ask:
+    en: 'Say: that''s too late!'
+    ar: 'قولي: هذا متأخر جدًا!'
+    mk: 'Кажете: тоа е предоцна!'
+  answer:
+    speaker: protagonist
+    text: Das ist zu spät!
+  items:
+  - das-ist-zu-spaet
+- type: prompt
+  ask:
+    en: 'Say: I can''t wait. (I have to wait? No!)'
+    ar: 'قولي: يجب أن أنتظر؟ لا!'
+    mk: 'Кажете: морам да чекам? Не!'
+  answer:
+    speaker: protagonist
+    text: Ich muss warten? Nein!
+  items:
+  - ich-muss-warten
+- type: prompt
+  ask:
+    en: 'He says: call the emergency service.'
+    ar: 'يقول: اتصلي بخدمة الطوارئ.'
+    mk: 'Тој вели: јавете се на дежурната служба.'
+  answer:
+    speaker: protagonist
+    text: Rufen Sie den Notdienst an.
+  items:
+  - der-notdienst
+- type: prompt
+  ask:
+    en: 'He gives you the number. Say: the number.'
+    ar: 'يعطيك الرقم. قولي: الرقم.'
+    mk: 'Ви го дава бројот. Кажете: бројот.'
+  answer:
+    speaker: protagonist
+    text: Die Nummer.
+  items:
+  - die-nummer
+- type: narrator
+  text:
+    en: Heating in winter is the landlord's duty; outside office hours property managers name an emergency service. Report defects in writing too, by e-mail — it counts later if the rent is reduced.
+    ar: التدفئة في الشتاء من واجب المؤجِّر؛ وخارج ساعات العمل تعطي إدارات العقار رقم خدمة طوارئ. أبلغي عن العطل كتابيًا أيضًا، بالبريد الإلكتروني — فهذا يُعتدّ به لاحقًا إن خُفّض الإيجار.
+    mk: Греењето во зима е обврска на сопственикот на станот; надвор од работното време управите даваат дежурна служба. Пријавете го дефектот и писмено, по е-пошта — тоа се смета подоцна ако се намалува
+      киријата.
+- type: prompt
+  ask:
+    en: 'Once more: say “broken”.'
+    ar: 'مرة أخرى: قولي “معطّل”.'
+    mk: 'Уште еднаш: кажете „расипано“.'
+  answer:
+    speaker: protagonist
+    text: kaputt
+  items:
+  - kaputt
+- type: prompt
+  ask:
+    en: 'Once more: say “the property management”.'
+    ar: 'مرة أخرى: قولي “إدارة العقار”.'
+    mk: 'Уште еднаш: кажете „управата на зградата“.'
+  answer:
+    speaker: protagonist
+    text: die Hausverwaltung
+  items:
+  - die-hausverwaltung
+- type: prompt
+  ask:
+    en: 'Once more: say “cold in the flat”.'
+    ar: 'مرة أخرى: قولي “بارد في الشقة”.'
+    mk: 'Уште еднаш: кажете „ладно во станот“.'
+  answer:
+    speaker: protagonist
+    text: kalt in der Wohnung
+  items:
+  - kalt-in-der-wohnung
+- type: prompt
+  ask:
+    en: 'Once more: say “since this morning”.'
+    ar: 'مرة أخرى: قولي “منذ صباح اليوم”.'
+    mk: 'Уште еднаш: кажете „од утрово“.'
+  answer:
+    speaker: protagonist
+    text: seit heute Morgen
+  items:
+  - seit-heute-morgen
+- type: prompt
+  ask:
+    en: 'Once more: say “the repairman”.'
+    ar: 'مرة أخرى: قولي “الفني، الحرفي”.'
+    mk: 'Уште еднаш: кажете „мајсторот“.'
+  answer:
+    speaker: protagonist
+    text: der Handwerker
+  items:
+  - der-handwerker
+- type: prompt
+  ask:
+    en: 'Once more: say “can come”.'
+    ar: 'مرة أخرى: قولي “يمكنه أن يأتي”.'
+    mk: 'Уште еднаш: кажете „може да дојде“.'
+  answer:
+    speaker: protagonist
+    text: kann … kommen
+  items:
+  - kann-kommen
+- type: prompt
+  ask:
+    en: 'Once more: say “That''s too late”.'
+    ar: 'مرة أخرى: قولي “هذا متأخر جدًا”.'
+    mk: 'Уште еднаш: кажете „Тоа е предоцна“.'
+  answer:
+    speaker: protagonist
+    text: Das ist zu spät
+  items:
+  - das-ist-zu-spaet
+- type: prompt
+  ask:
+    en: 'Once more: say “the emergency service”.'
+    ar: 'مرة أخرى: قولي “خدمة الطوارئ”.'
+    mk: 'Уште еднаш: кажете „дежурната служба“.'
+  answer:
+    speaker: protagonist
+    text: der Notdienst
+  items:
+  - der-notdienst
+- type: prompt
+  ask:
+    en: 'Once more: say “I have to wait”.'
+    ar: 'مرة أخرى: قولي “يجب أن أنتظر”.'
+    mk: 'Уште еднаш: кажете „морам да чекам“.'
+  answer:
+    speaker: protagonist
+    text: ich muss warten
+  items:
+  - ich-muss-warten
+- type: prompt
+  ask:
+    en: 'Once more: say “the number”.'
+    ar: 'مرة أخرى: قولي “الرقم”.'
+    mk: 'Уште еднаш: кажете „бројот“.'
+  answer:
+    speaker: protagonist
+    text: die Nummer
+  items:
+  - die-nummer
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the family — and “my sister — and “her children — and “my brother — and “his son — and “Is that your …? (polite) — and “my parents — and “I miss — and “How many …? — and “brothers and sisters
+      — and “Say hello to … (polite) — and “May I introduce myself? — and “My name is … — and “on the first floor — and “Nice to meet you too — and “for a long time already — and “for three months — and
+      “How do you like it? (polite) — and “spring — and “Just ring the bell (polite)”.'
+    ar: 'قولي: “العائلة — و“أختي — و“أولادها — و“أخي — و“ابنه — و“هل هذه …؟ (بصيغة الاحترام) — و“والداي — و“أشتاق إلى — و“كم …؟ — و“إخوة وأخوات — و“سلّم على … — و“هل تسمح لي بأن أعرّفك بنفسي؟ — و“اسمي …
+      — و“في الطابق الأول — و“تشرفنا أيضًا — و“منذ وقت طويل — و“منذ ثلاثة أشهر — و“كيف تجد المكان؟ — و“الربيع — و“فقط اقرع الجرس”.'
+    mk: 'Кажете: „семејството“ — и „сестра ми“ — и „нејзините деца“ — и „брат ми“ — и „неговиот син“ — и „Дали е ова вашата …?“ — и „моите родители“ — и „ми недостига“ — и „Колку …?“ — и „браќа и сестри“
+      — и „Поздравете …“ — и „Може ли да се претставам?“ — и „Моето име е …“ — и „на првиот кат“ — и „И мене ми е мило“ — и „веќе долго“ — и „веќе три месеци“ — и „Како ви се допаѓа?“ — и „пролетта“ — и
+      „Само ѕвонете“.'
+  answer:
+    speaker: protagonist
+    text: die Familie … meine Schwester … ihre Kinder … mein Bruder … sein Sohn … Ist das Ihre …? … meine Eltern … ich vermisse … Wie viele …? … Geschwister … Grüßen Sie … … Darf ich mich vorstellen? …
+      Mein Name ist … … im ersten Stock … Freut mich auch … schon lange … seit drei Monaten … Wie gefällt es Ihnen? … der Frühling … Klingeln Sie einfach
+  items:
+  - die-familie
+  - meine-schwester
+  - ihre-kinder
+  - mein-bruder
+  - sein-sohn
+  - ist-das-ihre
+  - die-eltern-meine
+  - vermisse
+  - wie-viele
+  - geschwister
+  - gruessen-sie
+  - darf-ich-mich-vorstellen
+  - mein-name-ist
+  - im-ersten-stock
+  - freut-mich-auch
+  - schon-lange
+  - seit-drei-monaten
+  - wie-gefaellt-es-ihnen
+  - der-fruehling
+  - klingeln-sie
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Likewise! — and “the hand — and “What time is it? — and “quarter past — and “quarter to — and “too late — and “the delay — and “next time — and “Hang on a moment! — and “the rubbish — and
+      “separate, sort — and “the yellow bin (packaging) — and “plastic — and “paper — and “the blue one — and “food waste — and “general waste — and “glass — and “Take … (polite command) — and “to the container”.'
+    ar: 'قولي: “وأنت أيضًا! — و“اليد — و“كم الساعة؟ — و“وربع — و“إلا ربعًا — و“متأخر — و“التأخير — و“في المرة القادمة — و“لحظة من فضلك! — و“النفايات — و“يفرز — و“الحاوية الصفراء (التغليف) — و“البلاستيك
+      — و“الورق — و“الزرقاء — و“النفايات العضوية — و“بقية النفايات — و“الزجاج — و“خذ … (أمر مؤدب) — و“إلى الحاوية”.'
+    mk: 'Кажете: „Исто така!“ — и „раката“ — и „Колку е часот?“ — и „и петнаесет“ — и „помалку петнаесет“ — и „доцна“ — и „доцнењето“ — и „следниот пат“ — и „Чекајте малку!“ — и „ѓубрето“ — и „одвојува“
+      — и „жолтиот контејнер (амбалажа)“ — и „пластиката“ — и „хартијата“ — и „синиот“ — и „органскиот отпад“ — и „останатиот отпад“ — и „стаклото“ — и „Однесете …“ — и „до контејнерот“.'
+  answer:
+    speaker: protagonist
+    text: Gleichfalls! … die Hand … Wie spät ist es? … Viertel nach … Viertel vor … zu spät … die Verspätung … das nächste Mal … Moment mal! … der Müll … trennen … die gelbe Tonne … das Plastik … das Papier
+      … die blaue … der Biomüll … der Restmüll … das Glas … Bringen Sie … … zum Container
+  items:
+  - gleichfalls
+  - die-hand
+  - wie-spaet-ist-es
+  - viertel-nach
+  - viertel-vor
+  - zu-spaet
+  - die-verspaetung
+  - das-naechste-mal
+  - moment-mal
+  - der-muell
+  - trennen
+  - die-gelbe-tonne
+  - das-plastik
+  - das-papier
+  - die-blaue
+  - der-biomuell
+  - der-restmuell
+  - das-glas
+  - bringen-sie
+  - zum-container
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “half past seven (half to eight) — and “exactly eight”.'
+  answer:
+    speaker: protagonist
+    text: halb acht … genau acht
+  items:
+  - halb-acht
+  - genau-acht
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “early — and “already there”.'
+  answer:
+    speaker: protagonist
+    text: früh … schon da
+  items:
+  - frueh
+  - schon-da
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “الرابعة والنصف — و“اتصل (أمر مؤدب)”.'
+    mk: 'Кажете: „четири и пол“ — и „Јавете се“.'
+  answer:
+    speaker: protagonist
+    text: halb fünf … Rufen Sie an
+  items:
+  - halb-fuenf
+  - rufen-sie-an
+  for:
+  - ar
+  - mk
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “آسف”.'
+    mk: 'Кажете: „Жал ми е“.'
+  answer:
+    speaker: protagonist
+    text: Es tut mir leid
+  items:
+  - es-tut-mir-leid
+  for:
+  - ar
+  - mk
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “في الموعد”.'
+  answer:
+    speaker: protagonist
+    text: pünktlich
+  items:
+  - puenktlich-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „точно, навреме“.'
+  answer:
+    speaker: protagonist
+    text: pünktlich
+  items:
+  - puenktlich-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck
