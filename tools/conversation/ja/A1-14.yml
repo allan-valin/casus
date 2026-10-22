@@ -1,0 +1,439 @@
+# UNIT ja A1-14 — written by AI (Claude) for Casus; expanded from src/A1-14.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-14
+level: A1
+number: 14
+protagonist: m
+title:
+  en: Silence
+  pt: Silêncio
+situation:
+  en: A full train in the morning. Your phone rings loudly. An elderly woman looks at you.
+  pt: Trem cheio de manhã. Seu celular toca alto. Uma senhora idosa olha para você.
+learn_lessons: []
+culture: Phones silent on trains
+new_items:
+- id: denwa
+  text: 電話[でんわ]
+  meaning:
+    en: telephone, phone call
+    pt: telefone, ligação
+- id: keitai
+  text: 携帯[けいたい]
+  meaning:
+    en: mobile phone
+    pt: celular
+- id: shizuka-ni
+  text: 静[しず]か に
+  meaning:
+    en: quietly
+    pt: em silêncio
+- id: dekimasen
+  text: できません
+  meaning:
+    en: can't (do)
+    pt: não pode, não dá
+- id: mainaa-moodo
+  text: マナー モード
+  meaning:
+    en: silent mode
+    pt: modo silencioso
+- id: shimasu
+  text: します
+  meaning:
+    en: do
+    pt: faço
+- id: hanasimasen
+  text: 話[はな]しません
+  meaning:
+    en: don't talk
+    pt: não falo
+- id: shitsurei-shimashita
+  text: 失礼[しつれい] しました
+  meaning:
+    en: excuse me (for what I did)
+    pt: desculpe (pelo que fiz)
+- id: ki-ni-shinaide
+  text: 気[き] に しないで
+  meaning:
+    en: don't worry about it
+    pt: não se preocupe
+- id: mukashi
+  text: 昔[むかし]
+  meaning:
+    en: long ago, in the old days
+    pt: antigamente
+reviews:
+- item: gomi
+  from: A1-07
+- item: moeru-gomi
+  from: A1-07
+- item: purasuchikku
+  from: A1-07
+- item: nanyoubi
+  from: A1-07
+- item: getsuyoubi
+  from: A1-07
+- item: mokuyoubi
+  from: A1-07
+- item: dashimasu
+  from: A1-07
+- item: asa
+  from: A1-07
+- item: hachiji
+  from: A1-07
+- item: made-ni
+  from: A1-07
+- item: ki-o-tsukemasu
+  from: A1-07
+- item: meishi
+  from: A1-11
+- item: choudai
+  from: A1-11
+- item: ryoute-de
+  from: A1-11
+- item: wo
+  from: A1-11
+- item: douzo-yoroshiku
+  from: A1-11
+- item: mochimasu
+  from: A1-11
+- item: mimasu
+  from: A1-11
+- item: tsukue
+  from: A1-11
+- item: oku
+  from: A1-11
+- item: kochira-koso
+  from: A1-11
+- item: shoukai
+  from: A1-11
+- item: kippu
+  from: A1-13
+- item: nanbansen
+  from: A1-13
+- item: norikae
+  from: A1-13
+- item: ni-iku
+  from: A1-13
+- item: de
+  from: A1-13
+- item: densha
+  from: A1-13
+- item: eki-de
+  from: A1-13
+- item: ikura-desu-ka2
+  from: A1-13
+- item: nanji
+  from: A1-13
+- item: tsugi
+  from: A1-13
+- item: ichiban
+  from: A1-13
+steps:
+- type: narrator
+  text:
+    en: A full train in the morning. Your phone rings loudly. An elderly woman looks at you. Listen to the conversation; you don't need to understand it yet.
+    pt: Trem cheio de manhã. Seu celular toca alto. Uma senhora idosa olha para você. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: obaasan
+    text: …
+    meaning:
+      en: (silence — a look)
+      pt: (silêncio — um olhar)
+  - speaker: protagonist
+    text: すみません！ 失礼[しつれい] しました。
+    meaning:
+      en: Sorry! Excuse me.
+      pt: Desculpe! Perdão.
+  - speaker: obaasan
+    text: 電車[でんしゃ] で は 電話[でんわ] は できません よ。
+    meaning:
+      en: You can't make calls on the train.
+      pt: No trem não se fala ao telefone.
+  - speaker: protagonist
+    text: はい。 マナー モード に します。
+    meaning:
+      en: Yes. I'll put it on silent.
+      pt: Sim. Vou pôr no silencioso.
+  - speaker: obaasan
+    text: 日本[にほん] の 電車[でんしゃ] は 静[しず]か です から ね。
+    meaning:
+      en: Japanese trains are quiet, you see.
+      pt: Os trens japoneses são silenciosos, sabe.
+  - speaker: protagonist
+    text: ブラジル で は みんな 話[はな]します。
+    meaning:
+      en: In Brazil everyone talks.
+      pt: No Brasil todo mundo conversa.
+  - speaker: obaasan
+    text: そう です か。 気[き] に しないで。 昔[むかし] は 私[わたし] も うるさかった です。
+    meaning:
+      en: Is that so. Don't worry. I was loud too, long ago.
+      pt: É mesmo? Não se preocupe. Antigamente eu também era barulhenta.
+  - speaker: protagonist
+    text: ありがとう ございます。 静[しず]か に します。
+    meaning:
+      en: Thank you. I'll be quiet.
+      pt: Obrigado. Vou ficar quieto.
+- type: prompt
+  ask:
+    en: Apologise for what you just did.
+    pt: Peça desculpas pelo que acabou de fazer.
+  answer:
+    speaker: protagonist
+    text: 失礼[しつれい] しました。
+  items:
+  - shitsurei-shimashita
+- type: narrator
+  text:
+    en: 'Negative polite verbs end in «ません»: «できます» — can, «できません» — can''t; «話[はな]します» — talk, «話[はな]しません» — don''t talk.'
+    pt: 'Os verbos educados no negativo terminam em «ません»: «できます» — pode, «できません» — não pode; «話[はな]します» — falo, «話[はな]しません» — não falo.'
+- type: prompt
+  ask:
+    en: 'Say: on the train you can''t make phone calls.'
+    pt: 'Diga: no trem não se pode telefonar.'
+  answer:
+    speaker: protagonist
+    text: 電車[でんしゃ] で は 電話[でんわ] は できません。
+  items:
+  - denwa
+  - dekimasen
+- type: prompt
+  ask:
+    en: 'Say: I don''t talk.'
+    pt: 'Diga: não falo.'
+  answer:
+    speaker: protagonist
+    text: 話[はな]しません。
+  items:
+  - hanasimasen
+- type: prompt
+  ask:
+    en: 'Say: silent mode.'
+    pt: 'Diga: modo silencioso.'
+  answer:
+    speaker: protagonist
+    text: マナー モード
+  items:
+  - mainaa-moodo
+- type: prompt
+  ask:
+    en: 'Say: I''ll put it on silent.'
+    pt: 'Diga: vou pôr no silencioso.'
+  answer:
+    speaker: protagonist
+    text: マナー モード に します。
+  items:
+  - mainaa-moodo
+  - shimasu
+- type: prompt
+  ask:
+    en: 'Say: mobile phone.'
+    pt: 'Diga: celular.'
+  answer:
+    speaker: protagonist
+    text: 携帯[けいたい]
+  items:
+  - keitai
+- type: prompt
+  ask:
+    en: 'Say: I''ll be quiet.'
+    pt: 'Diga: vou ficar em silêncio.'
+  answer:
+    speaker: protagonist
+    text: 静[しず]か に します。
+  items:
+  - shizuka-ni
+  - shimasu
+- type: prompt
+  ask:
+    en: She says don't worry. How?
+    pt: Ela diz para não se preocupar. Como?
+  answer:
+    speaker: protagonist
+    text: 気[き] に しないで。
+  items:
+  - ki-ni-shinaide
+- type: prompt
+  ask:
+    en: 'Say: long ago.'
+    pt: 'Diga: antigamente.'
+  answer:
+    speaker: protagonist
+    text: 昔[むかし]
+  items:
+  - mukashi
+- type: narrator
+  text:
+    en: On trains and buses phones are on silent ('manner mode'), no calls, quiet voices. Priority seats near the doors are for elderly, pregnant and disabled people; near them, phones should even be switched
+      off on some lines.
+    pt: Em trens e ônibus o celular fica no silencioso ('manner mode'), sem ligações, vozes baixas. Os assentos preferenciais perto das portas são para idosos, grávidas e pessoas com deficiência; perto
+      deles, em algumas linhas, o celular deve até ficar desligado.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: A vida social brasileira é barulhenta e na rua; o espaço público japonês é silencioso. Não é frieza — é consideração com quem está perto.
+- type: prompt
+  ask:
+    en: 'Once more: say “telephone, phone call”.'
+    pt: 'Mais uma vez: diga “telefone, ligação”.'
+  answer:
+    speaker: protagonist
+    text: 電話[でんわ]
+  items:
+  - denwa
+- type: prompt
+  ask:
+    en: 'Once more: say “mobile phone”.'
+    pt: 'Mais uma vez: diga “celular”.'
+  answer:
+    speaker: protagonist
+    text: 携帯[けいたい]
+  items:
+  - keitai
+- type: prompt
+  ask:
+    en: 'Once more: say “quietly”.'
+    pt: 'Mais uma vez: diga “em silêncio”.'
+  answer:
+    speaker: protagonist
+    text: 静[しず]か に
+  items:
+  - shizuka-ni
+- type: prompt
+  ask:
+    en: 'Once more: say “can''t (do)”.'
+    pt: 'Mais uma vez: diga “não pode, não dá”.'
+  answer:
+    speaker: protagonist
+    text: できません
+  items:
+  - dekimasen
+- type: prompt
+  ask:
+    en: 'Once more: say “don''t talk”.'
+    pt: 'Mais uma vez: diga “não falo”.'
+  answer:
+    speaker: protagonist
+    text: 話[はな]しません
+  items:
+  - hanasimasen
+- type: prompt
+  ask:
+    en: 'Once more: say “excuse me (for what I did)”.'
+    pt: 'Mais uma vez: diga “desculpe (pelo que fiz)”.'
+  answer:
+    speaker: protagonist
+    text: 失礼[しつれい] しました
+  items:
+  - shitsurei-shimashita
+- type: prompt
+  ask:
+    en: 'Once more: say “don''t worry about it”.'
+    pt: 'Mais uma vez: diga “não se preocupe”.'
+  answer:
+    speaker: protagonist
+    text: 気[き] に しないで
+  items:
+  - ki-ni-shinaide
+- type: prompt
+  ask:
+    en: 'Once more: say “long ago, in the old days”.'
+    pt: 'Mais uma vez: diga “antigamente”.'
+  answer:
+    speaker: protagonist
+    text: 昔[むかし]
+  items:
+  - mukashi
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “ticket — and “which platform — and “transfer, change of trains — and “go to — and “at, by (place of action, means) — and “train — and “at the station”.'
+    pt: 'Diga: “passagem, bilhete — e “qual plataforma — e “baldeação — e “vou para — e “em, de (lugar da ação, meio) — e “trem — e “na estação”.'
+  answer:
+    speaker: protagonist
+    text: 切符[きっぷ] … 何番線[なんばんせん] … 乗[の]り換[か]え … に 行[い]きます … で … 電車[でんしゃ] … 駅[えき] で
+  items:
+  - kippu
+  - nanbansen
+  - norikae
+  - ni-iku
+  - de
+  - densha
+  - eki-de
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “how much is it? — and “what time — and “next — and “platform one — and “business card — and “I humbly receive it — and “with both hands”.'
+    pt: 'Diga: “quanto é? — e “que horas — e “próximo — e “plataforma um — e “cartão de visita — e “recebo com gratidão — e “com as duas mãos”.'
+  answer:
+    speaker: protagonist
+    text: いくら です か … 何時[なんじ] … 次[つぎ] … 一番線[いちばんせん] … 名刺[めいし] … 頂戴[ちょうだい] します … 両手[りょうて] で
+  items:
+  - ikura-desu-ka2
+  - nanji
+  - tsugi
+  - ichiban
+  - meishi
+  - choudai
+  - ryoute-de
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “(marks the object) — and “pleased to meet you (short) — and “hold — and “look at — and “desk, table — and “put, place — and “likewise, the pleasure is mine”.'
+    pt: 'Diga: “(marca o objeto) — e “muito prazer (curto) — e “segurar — e “olhar — e “mesa — e “colocar — e “igualmente”.'
+  answer:
+    speaker: protagonist
+    text: を … どうぞ よろしく … 持[も]ちます … 見[み]ます … 机[つくえ] … 置[お]きます … こちら こそ
+  items:
+  - wo
+  - douzo-yoroshiku
+  - mochimasu
+  - mimasu
+  - tsukue
+  - oku
+  - kochira-koso
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “let me introduce — and “rubbish — and “burnable rubbish — and “plastic — and “what day of the week — and “Monday — and “Thursday”.'
+    pt: 'Diga: “apresento — e “lixo — e “lixo queimável — e “plástico — e “que dia da semana — e “segunda-feira — e “quinta-feira”.'
+  answer:
+    speaker: protagonist
+    text: 紹介[しょうかい] します … ごみ … 燃[も]える ごみ … プラスチック … 何曜日[なんようび] … 月曜日[げつようび] … 木曜日[もくようび]
+  items:
+  - shoukai
+  - gomi
+  - moeru-gomi
+  - purasuchikku
+  - nanyoubi
+  - getsuyoubi
+  - mokuyoubi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “put out (rubbish) — and “morning — and “eight o''clock — and “by (a time) — and “I''ll be careful”.'
+    pt: 'Diga: “pôr para fora (o lixo) — e “manhã — e “oito horas — e “até (um horário) — e “vou tomar cuidado”.'
+  answer:
+    speaker: protagonist
+    text: 出[だ]します … 朝[あさ] … 八時[はちじ] … まで に … 気[き] を つけます
+  items:
+  - dashimasu
+  - asa
+  - hachiji
+  - made-ni
+  - ki-o-tsukemasu
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

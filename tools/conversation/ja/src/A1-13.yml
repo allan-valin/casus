@@ -1,0 +1,38 @@
+id: A1-13
+protagonist: f
+title: [The train, O trem]
+situation: ["Saturday trip to Nagoya. At Hamamatsu station you ask a station attendant.", "Passeio de sábado a Nagoya. Na estação de Hamamatsu você pergunta a um funcionário."]
+learn: []
+culture: Platforms by number, transfers by colour
+items:
+  - [kippu, "切符[きっぷ]", "ticket", "passagem, bilhete"]
+  - [nanbansen, "何番線[なんばんせん]", "which platform", "qual plataforma"]
+  - [norikae, "乗[の]り換[か]え", "transfer, change of trains", "baldeação"]
+  - [ni-iku, "に 行[い]きます", "go to", "vou para"]
+  - [de, "で", "at, by (place of action, means)", "em, de (lugar da ação, meio)"]
+  - [densha, "電車[でんしゃ]", "train", "trem"]
+  - [eki-de, "駅[えき] で", "at the station", "na estação"]
+  - [ikura-desu-ka2, "いくら です か", "how much is it?", "quanto é?"]
+  - [nanji, "何時[なんじ]", "what time", "que horas"]
+  - [tsugi, "次[つぎ]", "next", "próximo"]
+  - [ichiban, "一番線[いちばんせん]", "platform one", "plataforma um"]
+dialogue:
+  - [protagonist, "すみません。 名古屋[なごや] に 行[い]きます。 何番線[なんばんせん] です か。", "Excuse me. I'm going to Nagoya. Which platform?", "Com licença. Vou para Nagoya. Qual plataforma?"]
+  - [ekiin, "一番線[いちばんせん] です。 豊橋[とよはし] で 乗[の]り換[か]え です。", "Platform one. You change at Toyohashi.", "Plataforma um. Baldeação em Toyohashi."]
+  - [protagonist, "乗[の]り換[か]え？ 何番線[なんばんせん] で？", "Change? On which platform?", "Baldeação? Em que plataforma?"]
+  - [ekiin, "豊橋[とよはし] 駅[えき] で 聞[き]いて ください。", "Please ask at Toyohashi station.", "Pergunte na estação de Toyohashi."]
+  - [protagonist, "切符[きっぷ] は いくら です か。", "How much is the ticket?", "Quanto é a passagem?"]
+  - [ekiin, "千[せん] 三百[さんびゃく] 二十[にじゅう] 円[えん] です。 カード でも 乗[の]れます。", "1,320 yen. You can also ride with a card.", "1.320 ienes. Também dá para usar o cartão."]
+  - [protagonist, "次[つぎ] の 電車[でんしゃ] は 何時[なんじ] です か。", "What time is the next train?", "A que horas é o próximo trem?"]
+  - [ekiin, "十時[じゅうじ] 五分[ごふん] です。", "Five past ten.", "Dez e cinco."]
+teach:
+  - note: ["«に» marks where you go: «名古屋[なごや] に 行[い]きます» — I'm going to Nagoya.", "«に» marca para onde se vai: «名古屋[なごや] に 行[い]きます» — vou para Nagoya."]
+  - ask: ["Say you're going to Nagoya.", "Diga que vai para Nagoya.", "名古屋[なごや] に 行[い]きます。", ni-iku]
+  - ask: ["Ask which platform.", "Pergunte qual plataforma.", "何番線[なんばんせん] です か。", nanbansen]
+  - ask: ["Say: platform one.", "Diga: plataforma um.", "一番線[いちばんせん]", ichiban]
+  - note: ["«で» marks where something happens: «豊橋[とよはし] で 乗[の]り換[か]え» — change at Toyohashi.", "«で» marca onde algo acontece: «豊橋[とよはし] で 乗[の]り換[か]え» — baldeação em Toyohashi."]
+  - ask: ["Say: change at Toyohashi.", "Diga: baldeação em Toyohashi.", "豊橋[とよはし] で 乗[の]り換[か]え です。", de, norikae]
+  - ask: ["Say: at the station.", "Diga: na estação.", "駅[えき] で", eki-de]
+  - ask: ["Ask how much the ticket is.", "Pergunte quanto é a passagem.", "切符[きっぷ] は いくら です か。", kippu, ikura-desu-ka2]
+  - ask: ["Ask what time the next train is.", "Pergunte a que horas é o próximo trem.", "次[つぎ] の 電車[でんしゃ] は 何時[なんじ] です か。", tsugi, densha, nanji]
+  - note: ["Rechargeable IC cards (TOICA here, Suica in Tokyo) work on most trains and buses and in konbini. Trains leave on the minute — the platform number is on every ticket screen.", "Cartões recarregáveis (TOICA aqui, Suica em Tóquio) funcionam na maioria dos trens e ônibus e nas konbini. Os trens saem no minuto exato — o número da plataforma aparece em todo painel."]

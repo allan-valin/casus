@@ -1,0 +1,461 @@
+# UNIT ja A1-12 — written by AI (Claude) for Casus; expanded from src/A1-12.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-12
+level: A1
+number: 12
+protagonist: m
+title:
+  en: Animals
+  pt: Animais
+situation:
+  en: Sunday at the small shrine near your flat. Kenta shows you the cats that live there.
+  pt: Domingo no pequeno santuário perto de casa. O Kenta mostra os gatos que moram ali.
+learn_lessons: []
+culture: いる for the living, ある for things
+new_items:
+- id: neko
+  text: 猫[ねこ]
+  meaning:
+    en: cat
+    pt: gato
+- id: inu
+  text: 犬[いぬ]
+  meaning:
+    en: dog
+    pt: cachorro
+- id: tori
+  text: 鳥[とり]
+  meaning:
+    en: bird
+    pt: pássaro
+- id: kawaii
+  text: かわいい
+  meaning:
+    en: cute
+    pt: fofo
+- id: imasu
+  text: います
+  meaning:
+    en: there is (living things)
+    pt: há, tem (seres vivos)
+- id: arimasu
+  text: あります
+  meaning:
+    en: there is (things)
+    pt: há, tem (coisas)
+- id: jinja
+  text: 神社[じんじゃ]
+  meaning:
+    en: shrine
+    pt: santuário
+- id: nanbiki
+  text: 何匹[なんびき]
+  meaning:
+    en: how many (animals)
+    pt: quantos (animais)
+- id: ooi
+  text: 多[おお]い
+  meaning:
+    en: many
+    pt: muitos
+- id: sawaru
+  text: 触[さわ]っても いい です か
+  meaning:
+    en: may I touch?
+    pt: posso tocar?
+- id: dame
+  text: だめ
+  meaning:
+    en: no good, not allowed
+    pt: não pode
+reviews:
+- item: hiragana
+  from: A1-05
+- item: katakana
+  from: A1-05
+- item: kanji
+  from: A1-05
+- item: eki
+  from: A1-05
+- item: deguchi
+  from: A1-05
+- item: iriguchi
+  from: A1-05
+- item: asoko
+  from: A1-05
+- item: yomemasu-ka
+  from: A1-05
+- item: muzukashii
+  from: A1-05
+- item: ganbarimasu
+  from: A1-05
+- item: doko-desu-ka
+  from: A1-05
+- item: aka
+  from: A1-09
+- item: ao
+  from: A1-09
+- item: shiro
+  from: A1-09
+- item: kuro
+  from: A1-09
+- item: kiiro
+  from: A1-09
+- item: seifuku
+  from: A1-09
+- item: herumetto
+  from: A1-09
+- item: kirei
+  from: A1-09
+- item: suki
+  from: A1-09
+- item: nani-iro
+  from: A1-09
+- item: dou-desu-ka
+  from: A1-09
+- item: meishi
+  from: A1-11
+- item: choudai
+  from: A1-11
+- item: ryoute-de
+  from: A1-11
+- item: wo
+  from: A1-11
+- item: douzo-yoroshiku
+  from: A1-11
+- item: mochimasu
+  from: A1-11
+- item: mimasu
+  from: A1-11
+- item: tsukue
+  from: A1-11
+- item: oku
+  from: A1-11
+- item: kochira-koso
+  from: A1-11
+- item: shoukai
+  from: A1-11
+steps:
+- type: narrator
+  text:
+    en: Sunday at the small shrine near your flat. Kenta shows you the cats that live there. Listen to the conversation; you don't need to understand it yet.
+    pt: Domingo no pequeno santuário perto de casa. O Kenta mostra os gatos que moram ali. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: kenta
+    text: ここ が 神社[じんじゃ] です。 猫[ねこ] が います よ。
+    meaning:
+      en: This is the shrine. There are cats.
+      pt: Este é o santuário. Tem gatos.
+  - speaker: protagonist
+    text: 本当[ほんとう] だ！ かわいい！ 何匹[なんびき] います か。
+    meaning:
+      en: Really! Cute! How many are there?
+      pt: É verdade! Que fofos! Quantos tem?
+  - speaker: kenta
+    text: 五匹[ごひき] くらい。 鳥[とり] も 多[おお]い です。
+    meaning:
+      en: About five. There are lots of birds too.
+      pt: Uns cinco. Tem muitos pássaros também.
+  - speaker: protagonist
+    text: 犬[いぬ] は？
+    meaning:
+      en: And dogs?
+      pt: E cachorros?
+  - speaker: kenta
+    text: 犬[いぬ] は いません。 あそこ に お守[まも]り が あります。
+    meaning:
+      en: No dogs. Over there are amulets.
+      pt: Cachorros, não. Ali tem amuletos.
+  - speaker: protagonist
+    text: 猫[ねこ] を 触[さわ]っても いい です か。
+    meaning:
+      en: May I touch the cats?
+      pt: Posso tocar nos gatos?
+  - speaker: kenta
+    text: うーん、 ちょっと だめ です ね。
+    meaning:
+      en: Hmm, better not.
+      pt: Hmm, melhor não.
+  - speaker: protagonist
+    text: わかりました。 見[み]る だけ。
+    meaning:
+      en: Understood. Just looking.
+      pt: Entendi. Só olhando.
+- type: prompt
+  ask:
+    en: 'Say: cat.'
+    pt: 'Diga: gato.'
+  answer:
+    speaker: protagonist
+    text: 猫[ねこ]
+  items:
+  - neko
+- type: prompt
+  ask:
+    en: 'Say: dog.'
+    pt: 'Diga: cachorro.'
+  answer:
+    speaker: protagonist
+    text: 犬[いぬ]
+  items:
+  - inu
+- type: prompt
+  ask:
+    en: 'Say: bird.'
+    pt: 'Diga: pássaro.'
+  answer:
+    speaker: protagonist
+    text: 鳥[とり]
+  items:
+  - tori
+- type: prompt
+  ask:
+    en: 'Say: cute!'
+    pt: 'Diga: que fofo!'
+  answer:
+    speaker: protagonist
+    text: かわいい！
+  items:
+  - kawaii
+- type: narrator
+  text:
+    en: '''There is'' has two verbs: «います» for living things, «あります» for things. «猫[ねこ] が います», but «お守[まも]り が あります».'
+    pt: '''Há'' tem dois verbos: «います» para seres vivos, «あります» para coisas. «猫[ねこ] が います», mas «お守[まも]り が あります».'
+- type: prompt
+  ask:
+    en: 'Say: there are cats.'
+    pt: 'Diga: tem gatos.'
+  answer:
+    speaker: protagonist
+    text: 猫[ねこ] が います。
+  items:
+  - neko
+  - imasu
+- type: prompt
+  ask:
+    en: 'Say: there are no dogs.'
+    pt: 'Diga: não tem cachorros.'
+  answer:
+    speaker: protagonist
+    text: 犬[いぬ] は いません。
+  items:
+  - inu
+  - imasu
+- type: prompt
+  ask:
+    en: 'Say: there are amulets over there.'
+    pt: 'Diga: ali tem amuletos.'
+  answer:
+    speaker: protagonist
+    text: あそこ に お守[まも]り が あります。
+  items:
+  - arimasu
+- type: prompt
+  ask:
+    en: Ask how many there are (animals).
+    pt: Pergunte quantos tem (animais).
+  answer:
+    speaker: protagonist
+    text: 何匹[なんびき] います か。
+  items:
+  - nanbiki
+  - imasu
+- type: prompt
+  ask:
+    en: 'Say: the shrine.'
+    pt: 'Diga: o santuário.'
+  answer:
+    speaker: protagonist
+    text: 神社[じんじゃ]
+  items:
+  - jinja
+- type: prompt
+  ask:
+    en: 'Say: there are many birds.'
+    pt: 'Diga: tem muitos pássaros.'
+  answer:
+    speaker: protagonist
+    text: 鳥[とり] が 多[おお]い です。
+  items:
+  - tori
+  - ooi
+- type: prompt
+  ask:
+    en: Ask if you may touch the cat.
+    pt: Pergunte se pode tocar no gato.
+  answer:
+    speaker: protagonist
+    text: 猫[ねこ] を 触[さわ]っても いい です か。
+  items:
+  - sawaru
+- type: prompt
+  ask:
+    en: He says it's not allowed, softly. What's the word?
+    pt: Ele diz que não pode, com jeito. Qual a palavra?
+  answer:
+    speaker: protagonist
+    text: だめ
+  items:
+  - dame
+- type: prompt
+  ask:
+    en: 'Once more: say “cute”.'
+    pt: 'Mais uma vez: diga “fofo”.'
+  answer:
+    speaker: protagonist
+    text: かわいい
+  items:
+  - kawaii
+- type: prompt
+  ask:
+    en: 'Once more: say “there is (things)”.'
+    pt: 'Mais uma vez: diga “há, tem (coisas)”.'
+  answer:
+    speaker: protagonist
+    text: あります
+  items:
+  - arimasu
+- type: prompt
+  ask:
+    en: 'Once more: say “shrine”.'
+    pt: 'Mais uma vez: diga “santuário”.'
+  answer:
+    speaker: protagonist
+    text: 神社[じんじゃ]
+  items:
+  - jinja
+- type: prompt
+  ask:
+    en: 'Once more: say “how many (animals)”.'
+    pt: 'Mais uma vez: diga “quantos (animais)”.'
+  answer:
+    speaker: protagonist
+    text: 何匹[なんびき]
+  items:
+  - nanbiki
+- type: prompt
+  ask:
+    en: 'Once more: say “many”.'
+    pt: 'Mais uma vez: diga “muitos”.'
+  answer:
+    speaker: protagonist
+    text: 多[おお]い
+  items:
+  - ooi
+- type: prompt
+  ask:
+    en: 'Once more: say “may I touch?”.'
+    pt: 'Mais uma vez: diga “posso tocar?”.'
+  answer:
+    speaker: protagonist
+    text: 触[さわ]っても いい です か
+  items:
+  - sawaru
+- type: prompt
+  ask:
+    en: 'Once more: say “no good, not allowed”.'
+    pt: 'Mais uma vez: diga “não pode”.'
+  answer:
+    speaker: protagonist
+    text: だめ
+  items:
+  - dame
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “business card — and “I humbly receive it — and “with both hands — and “(marks the object) — and “pleased to meet you (short) — and “hold”.'
+    pt: 'Diga: “cartão de visita — e “recebo com gratidão — e “com as duas mãos — e “(marca o objeto) — e “muito prazer (curto) — e “segurar”.'
+  answer:
+    speaker: protagonist
+    text: 名刺[めいし] … 頂戴[ちょうだい] します … 両手[りょうて] で … を … どうぞ よろしく … 持[も]ちます
+  items:
+  - meishi
+  - choudai
+  - ryoute-de
+  - wo
+  - douzo-yoroshiku
+  - mochimasu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “look at — and “desk, table — and “put, place — and “likewise, the pleasure is mine — and “let me introduce — and “red”.'
+    pt: 'Diga: “olhar — e “mesa — e “colocar — e “igualmente — e “apresento — e “vermelho”.'
+  answer:
+    speaker: protagonist
+    text: 見[み]ます … 机[つくえ] … 置[お]きます … こちら こそ … 紹介[しょうかい] します … 赤[あか]
+  items:
+  - mimasu
+  - tsukue
+  - oku
+  - kochira-koso
+  - shoukai
+  - aka
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “blue — and “white — and “black — and “yellow — and “uniform — and “helmet”.'
+    pt: 'Diga: “azul — e “branco — e “preto — e “amarelo — e “uniforme — e “capacete”.'
+  answer:
+    speaker: protagonist
+    text: 青[あお] … 白[しろ] … 黒[くろ] … 黄色[きいろ] … 制服[せいふく] … ヘルメット
+  items:
+  - ao
+  - shiro
+  - kuro
+  - kiiro
+  - seifuku
+  - herumetto
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “pretty, clean — and “liked, favourite — and “what colour — and “how about it? — and “hiragana (the round script) — and “katakana (the angular script, for foreign words)”.'
+    pt: 'Diga: “bonito, limpo — e “gosta de, preferido — e “que cor — e “que tal? — e “hiragana (a escrita arredondada) — e “katakana (a escrita angulosa, para palavras estrangeiras)”.'
+  answer:
+    speaker: protagonist
+    text: きれい … 好[す]き … 何色[なにいろ] … どう です か … ひらがな … カタカナ
+  items:
+  - kirei
+  - suki
+  - nani-iro
+  - dou-desu-ka
+  - hiragana
+  - katakana
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “kanji (Chinese characters) — and “station — and “exit — and “entrance — and “over there — and “can you read (it)?”.'
+    pt: 'Diga: “kanji (caracteres chineses) — e “estação — e “saída — e “entrada — e “ali, lá — e “consegue ler?”.'
+  answer:
+    speaker: protagonist
+    text: 漢字[かんじ] … 駅[えき] … 出口[でぐち] … 入口[いりぐち] … あそこ … 読[よ]めます か
+  items:
+  - kanji
+  - eki
+  - deguchi
+  - iriguchi
+  - asoko
+  - yomemasu-ka
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “difficult — and “I''ll do my best — and “where is it?”.'
+    pt: 'Diga: “difícil — e “vou me esforçar — e “onde fica?”.'
+  answer:
+    speaker: protagonist
+    text: 難[むずか]しい … 頑張[がんば]ります … どこ です か
+  items:
+  - muzukashii
+  - ganbarimasu
+  - doko-desu-ka
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

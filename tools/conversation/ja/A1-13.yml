@@ -1,0 +1,463 @@
+# UNIT ja A1-13 — written by AI (Claude) for Casus; expanded from src/A1-13.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-13
+level: A1
+number: 13
+protagonist: f
+title:
+  en: The train
+  pt: O trem
+situation:
+  en: Saturday trip to Nagoya. At Hamamatsu station you ask a station attendant.
+  pt: Passeio de sábado a Nagoya. Na estação de Hamamatsu você pergunta a um funcionário.
+learn_lessons: []
+culture: Platforms by number, transfers by colour
+new_items:
+- id: kippu
+  text: 切符[きっぷ]
+  meaning:
+    en: ticket
+    pt: passagem, bilhete
+- id: nanbansen
+  text: 何番線[なんばんせん]
+  meaning:
+    en: which platform
+    pt: qual plataforma
+- id: norikae
+  text: 乗[の]り換[か]え
+  meaning:
+    en: transfer, change of trains
+    pt: baldeação
+- id: ni-iku
+  text: に 行[い]きます
+  meaning:
+    en: go to
+    pt: vou para
+- id: de
+  text: で
+  meaning:
+    en: at, by (place of action, means)
+    pt: em, de (lugar da ação, meio)
+- id: densha
+  text: 電車[でんしゃ]
+  meaning:
+    en: train
+    pt: trem
+- id: eki-de
+  text: 駅[えき] で
+  meaning:
+    en: at the station
+    pt: na estação
+- id: ikura-desu-ka2
+  text: いくら です か
+  meaning:
+    en: how much is it?
+    pt: quanto é?
+- id: nanji
+  text: 何時[なんじ]
+  meaning:
+    en: what time
+    pt: que horas
+- id: tsugi
+  text: 次[つぎ]
+  meaning:
+    en: next
+    pt: próximo
+- id: ichiban
+  text: 一番線[いちばんせん]
+  meaning:
+    en: platform one
+    pt: plataforma um
+reviews:
+- item: ame
+  from: A1-06
+- item: tsuyu
+  from: A1-06
+- item: atsui
+  from: A1-06
+- item: samui
+  from: A1-06
+- item: mushiatsui
+  from: A1-06
+- item: kyou
+  from: A1-06
+- item: ashita
+  from: A1-06
+- item: ii-tenki
+  from: A1-06
+- item: desu-ne
+  from: A1-06
+- item: kasa
+  from: A1-06
+- item: ohayou
+  from: A1-06
+- item: hitotsu
+  from: A1-10
+- item: futatsu
+  from: A1-10
+- item: mittsu
+  from: A1-10
+- item: ichi
+  from: A1-10
+- item: ni
+  from: A1-10
+- item: san
+  from: A1-10
+- item: juu
+  from: A1-10
+- item: nanko
+  from: A1-10
+- item: ko
+  from: A1-10
+- item: hako
+  from: A1-10
+- item: tarimasen
+  from: A1-10
+- item: zenbu
+  from: A1-10
+- item: neko
+  from: A1-12
+- item: inu
+  from: A1-12
+- item: tori
+  from: A1-12
+- item: kawaii
+  from: A1-12
+- item: imasu
+  from: A1-12
+- item: arimasu
+  from: A1-12
+- item: jinja
+  from: A1-12
+- item: nanbiki
+  from: A1-12
+- item: ooi
+  from: A1-12
+- item: sawaru
+  from: A1-12
+- item: dame
+  from: A1-12
+steps:
+- type: narrator
+  text:
+    en: Saturday trip to Nagoya. At Hamamatsu station you ask a station attendant. Listen to the conversation; you don't need to understand it yet.
+    pt: Passeio de sábado a Nagoya. Na estação de Hamamatsu você pergunta a um funcionário. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: すみません。 名古屋[なごや] に 行[い]きます。 何番線[なんばんせん] です か。
+    meaning:
+      en: Excuse me. I'm going to Nagoya. Which platform?
+      pt: Com licença. Vou para Nagoya. Qual plataforma?
+  - speaker: ekiin
+    text: 一番線[いちばんせん] です。 豊橋[とよはし] で 乗[の]り換[か]え です。
+    meaning:
+      en: Platform one. You change at Toyohashi.
+      pt: Plataforma um. Baldeação em Toyohashi.
+  - speaker: protagonist
+    text: 乗[の]り換[か]え？ 何番線[なんばんせん] で？
+    meaning:
+      en: Change? On which platform?
+      pt: Baldeação? Em que plataforma?
+  - speaker: ekiin
+    text: 豊橋[とよはし] 駅[えき] で 聞[き]いて ください。
+    meaning:
+      en: Please ask at Toyohashi station.
+      pt: Pergunte na estação de Toyohashi.
+  - speaker: protagonist
+    text: 切符[きっぷ] は いくら です か。
+    meaning:
+      en: How much is the ticket?
+      pt: Quanto é a passagem?
+  - speaker: ekiin
+    text: 千[せん] 三百[さんびゃく] 二十[にじゅう] 円[えん] です。 カード でも 乗[の]れます。
+    meaning:
+      en: 1,320 yen. You can also ride with a card.
+      pt: 1.320 ienes. Também dá para usar o cartão.
+  - speaker: protagonist
+    text: 次[つぎ] の 電車[でんしゃ] は 何時[なんじ] です か。
+    meaning:
+      en: What time is the next train?
+      pt: A que horas é o próximo trem?
+  - speaker: ekiin
+    text: 十時[じゅうじ] 五分[ごふん] です。
+    meaning:
+      en: Five past ten.
+      pt: Dez e cinco.
+- type: narrator
+  text:
+    en: '«に» marks where you go: «名古屋[なごや] に 行[い]きます» — I''m going to Nagoya.'
+    pt: '«に» marca para onde se vai: «名古屋[なごや] に 行[い]きます» — vou para Nagoya.'
+- type: prompt
+  ask:
+    en: Say you're going to Nagoya.
+    pt: Diga que vai para Nagoya.
+  answer:
+    speaker: protagonist
+    text: 名古屋[なごや] に 行[い]きます。
+  items:
+  - ni-iku
+- type: prompt
+  ask:
+    en: Ask which platform.
+    pt: Pergunte qual plataforma.
+  answer:
+    speaker: protagonist
+    text: 何番線[なんばんせん] です か。
+  items:
+  - nanbansen
+- type: prompt
+  ask:
+    en: 'Say: platform one.'
+    pt: 'Diga: plataforma um.'
+  answer:
+    speaker: protagonist
+    text: 一番線[いちばんせん]
+  items:
+  - ichiban
+- type: narrator
+  text:
+    en: '«で» marks where something happens: «豊橋[とよはし] で 乗[の]り換[か]え» — change at Toyohashi.'
+    pt: '«で» marca onde algo acontece: «豊橋[とよはし] で 乗[の]り換[か]え» — baldeação em Toyohashi.'
+- type: prompt
+  ask:
+    en: 'Say: change at Toyohashi.'
+    pt: 'Diga: baldeação em Toyohashi.'
+  answer:
+    speaker: protagonist
+    text: 豊橋[とよはし] で 乗[の]り換[か]え です。
+  items:
+  - de
+  - norikae
+- type: prompt
+  ask:
+    en: 'Say: at the station.'
+    pt: 'Diga: na estação.'
+  answer:
+    speaker: protagonist
+    text: 駅[えき] で
+  items:
+  - eki-de
+- type: prompt
+  ask:
+    en: Ask how much the ticket is.
+    pt: Pergunte quanto é a passagem.
+  answer:
+    speaker: protagonist
+    text: 切符[きっぷ] は いくら です か。
+  items:
+  - kippu
+  - ikura-desu-ka2
+- type: prompt
+  ask:
+    en: Ask what time the next train is.
+    pt: Pergunte a que horas é o próximo trem.
+  answer:
+    speaker: protagonist
+    text: 次[つぎ] の 電車[でんしゃ] は 何時[なんじ] です か。
+  items:
+  - tsugi
+  - densha
+  - nanji
+- type: narrator
+  text:
+    en: Rechargeable IC cards (TOICA here, Suica in Tokyo) work on most trains and buses and in konbini. Trains leave on the minute — the platform number is on every ticket screen.
+    pt: Cartões recarregáveis (TOICA aqui, Suica em Tóquio) funcionam na maioria dos trens e ônibus e nas konbini. Os trens saem no minuto exato — o número da plataforma aparece em todo painel.
+- type: prompt
+  ask:
+    en: 'Once more: say “ticket”.'
+    pt: 'Mais uma vez: diga “passagem, bilhete”.'
+  answer:
+    speaker: protagonist
+    text: 切符[きっぷ]
+  items:
+  - kippu
+- type: prompt
+  ask:
+    en: 'Once more: say “which platform”.'
+    pt: 'Mais uma vez: diga “qual plataforma”.'
+  answer:
+    speaker: protagonist
+    text: 何番線[なんばんせん]
+  items:
+  - nanbansen
+- type: prompt
+  ask:
+    en: 'Once more: say “transfer, change of trains”.'
+    pt: 'Mais uma vez: diga “baldeação”.'
+  answer:
+    speaker: protagonist
+    text: 乗[の]り換[か]え
+  items:
+  - norikae
+- type: prompt
+  ask:
+    en: 'Once more: say “go to”.'
+    pt: 'Mais uma vez: diga “vou para”.'
+  answer:
+    speaker: protagonist
+    text: に 行[い]きます
+  items:
+  - ni-iku
+- type: prompt
+  ask:
+    en: 'Once more: say “at, by (place of action, means)”.'
+    pt: 'Mais uma vez: diga “em, de (lugar da ação, meio)”.'
+  answer:
+    speaker: protagonist
+    text: で
+  items:
+  - de
+- type: prompt
+  ask:
+    en: 'Once more: say “train”.'
+    pt: 'Mais uma vez: diga “trem”.'
+  answer:
+    speaker: protagonist
+    text: 電車[でんしゃ]
+  items:
+  - densha
+- type: prompt
+  ask:
+    en: 'Once more: say “at the station”.'
+    pt: 'Mais uma vez: diga “na estação”.'
+  answer:
+    speaker: protagonist
+    text: 駅[えき] で
+  items:
+  - eki-de
+- type: prompt
+  ask:
+    en: 'Once more: say “how much is it?”.'
+    pt: 'Mais uma vez: diga “quanto é?”.'
+  answer:
+    speaker: protagonist
+    text: いくら です か
+  items:
+  - ikura-desu-ka2
+- type: prompt
+  ask:
+    en: 'Once more: say “what time”.'
+    pt: 'Mais uma vez: diga “que horas”.'
+  answer:
+    speaker: protagonist
+    text: 何時[なんじ]
+  items:
+  - nanji
+- type: prompt
+  ask:
+    en: 'Once more: say “next”.'
+    pt: 'Mais uma vez: diga “próximo”.'
+  answer:
+    speaker: protagonist
+    text: 次[つぎ]
+  items:
+  - tsugi
+- type: prompt
+  ask:
+    en: 'Once more: say “platform one”.'
+    pt: 'Mais uma vez: diga “plataforma um”.'
+  answer:
+    speaker: protagonist
+    text: 一番線[いちばんせん]
+  items:
+  - ichiban
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “cat — and “dog — and “bird — and “cute — and “there is (living things) — and “there is (things)”.'
+    pt: 'Diga: “gato — e “cachorro — e “pássaro — e “fofo — e “há, tem (seres vivos) — e “há, tem (coisas)”.'
+  answer:
+    speaker: protagonist
+    text: 猫[ねこ] … 犬[いぬ] … 鳥[とり] … かわいい … います … あります
+  items:
+  - neko
+  - inu
+  - tori
+  - kawaii
+  - imasu
+  - arimasu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “shrine — and “how many (animals) — and “many — and “may I touch? — and “no good, not allowed — and “one (thing)”.'
+    pt: 'Diga: “santuário — e “quantos (animais) — e “muitos — e “posso tocar? — e “não pode — e “um (objeto)”.'
+  answer:
+    speaker: protagonist
+    text: 神社[じんじゃ] … 何匹[なんびき] … 多[おお]い … 触[さわ]っても いい です か … だめ … ひとつ
+  items:
+  - jinja
+  - nanbiki
+  - ooi
+  - sawaru
+  - dame
+  - hitotsu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “two (things) — and “three (things) — and “one — and “two — and “three — and “ten”.'
+    pt: 'Diga: “dois (objetos) — e “três (objetos) — e “um — e “dois — e “três — e “dez”.'
+  answer:
+    speaker: protagonist
+    text: ふたつ … みっつ … 一[いち] … 二[に] … 三[さん] … 十[じゅう]
+  items:
+  - futatsu
+  - mittsu
+  - ichi
+  - ni
+  - san
+  - juu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “how many (small things) — and “(counter for small things) — and “box — and “it''s not enough, one is missing — and “all — and “rain”.'
+    pt: 'Diga: “quantos (objetos pequenos) — e “(contador para objetos pequenos) — e “caixa — e “falta, não é suficiente — e “tudo — e “chuva”.'
+  answer:
+    speaker: protagonist
+    text: 何個[なんこ] … 個[こ] … 箱[はこ] … 足[た]りません … 全部[ぜんぶ] … 雨[あめ]
+  items:
+  - nanko
+  - ko
+  - hako
+  - tarimasen
+  - zenbu
+  - ame
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the rainy season (June–July) — and “hot (weather) — and “cold (weather) — and “hot and humid — and “today — and “tomorrow”.'
+    pt: 'Diga: “a estação das chuvas (junho–julho) — e “quente (tempo) — e “frio (tempo) — e “abafado — e “hoje — e “amanhã”.'
+  answer:
+    speaker: protagonist
+    text: 梅雨[つゆ] … 暑[あつ]い … 寒[さむ]い … 蒸[む]し暑[あつ]い … 今日[きょう] … 明日[あした]
+  items:
+  - tsuyu
+  - atsui
+  - samui
+  - mushiatsui
+  - kyou
+  - ashita
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “nice weather — and “isn''t it (agreeing) — and “umbrella — and “good morning”.'
+    pt: 'Diga: “tempo bom — e “né (concordando) — e “guarda-chuva — e “bom dia”.'
+  answer:
+    speaker: protagonist
+    text: いい 天気[てんき] … です ね … 傘[かさ] … おはよう ございます
+  items:
+  - ii-tenki
+  - desu-ne
+  - kasa
+  - ohayou
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

@@ -1,0 +1,446 @@
+# UNIT ja A1-11 — written by AI (Claude) for Casus; expanded from src/A1-11.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-11
+level: A1
+number: 11
+protagonist: f
+title:
+  en: The business card
+  pt: O cartão de visita
+situation:
+  en: Mr Yamada from a supplier visits the factory. Chief Sato introduces you. Cards come out.
+  pt: O senhor Yamada, de um fornecedor, visita a fábrica. A chefe Sato apresenta você. Os cartões aparecem.
+learn_lessons: []
+culture: Cards with both hands
+new_items:
+- id: meishi
+  text: 名刺[めいし]
+  meaning:
+    en: business card
+    pt: cartão de visita
+- id: choudai
+  text: 頂戴[ちょうだい] します
+  meaning:
+    en: I humbly receive it
+    pt: recebo com gratidão
+- id: ryoute-de
+  text: 両手[りょうて] で
+  meaning:
+    en: with both hands
+    pt: com as duas mãos
+- id: wo
+  text: を
+  meaning:
+    en: (marks the object)
+    pt: (marca o objeto)
+- id: douzo-yoroshiku
+  text: どうぞ よろしく
+  meaning:
+    en: pleased to meet you (short)
+    pt: muito prazer (curto)
+- id: mochimasu
+  text: 持[も]ちます
+  meaning:
+    en: hold
+    pt: segurar
+- id: mimasu
+  text: 見[み]ます
+  meaning:
+    en: look at
+    pt: olhar
+- id: tsukue
+  text: 机[つくえ]
+  meaning:
+    en: desk, table
+    pt: mesa
+- id: oku
+  text: 置[お]きます
+  meaning:
+    en: put, place
+    pt: colocar
+- id: kochira-koso
+  text: こちら こそ
+  meaning:
+    en: likewise, the pleasure is mine
+    pt: igualmente
+- id: shoukai
+  text: 紹介[しょうかい] します
+  meaning:
+    en: let me introduce
+    pt: apresento
+reviews:
+- item: irasshaimase
+  from: A1-04
+- item: kore-kudasai
+  from: A1-04
+- item: kudasai
+  from: A1-04
+- item: atatamemasu-ka
+  from: A1-04
+- item: onegaishimasu
+  from: A1-04
+- item: fukuro
+  from: A1-04
+- item: irimasen
+  from: A1-04
+- item: ikura
+  from: A1-04
+- item: en
+  from: A1-04
+- item: hyaku
+  from: A1-04
+- item: kaado
+  from: A1-04
+- item: arigatou-gozaimashita
+  from: A1-04
+- item: kaisha
+  from: A1-08
+- item: kachou
+  from: A1-08
+- item: tsuuyaku
+  from: A1-08
+- item: kyou-kara
+  from: A1-08
+- item: hairimasu
+  from: A1-08
+- item: shigoto
+  from: A1-08
+- item: portugarugo
+  from: A1-08
+- item: eigo
+  from: A1-08
+- item: ganbatte
+  from: A1-08
+- item: onegaishimasu-yoroshiku
+  from: A1-08
+- item: hitotsu
+  from: A1-10
+- item: futatsu
+  from: A1-10
+- item: mittsu
+  from: A1-10
+- item: ichi
+  from: A1-10
+- item: ni
+  from: A1-10
+- item: san
+  from: A1-10
+- item: juu
+  from: A1-10
+- item: nanko
+  from: A1-10
+- item: ko
+  from: A1-10
+- item: hako
+  from: A1-10
+- item: tarimasen
+  from: A1-10
+- item: zenbu
+  from: A1-10
+steps:
+- type: narrator
+  text:
+    en: Mr Yamada from a supplier visits the factory. Chief Sato introduces you. Cards come out. Listen to the conversation; you don't need to understand it yet.
+    pt: O senhor Yamada, de um fornecedor, visita a fábrica. A chefe Sato apresenta você. Os cartões aparecem. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: sato
+    text: 山田[やまだ] さん、 紹介[しょうかい] します。 新[あたら]しい 通訳[つうやく] です。
+    meaning:
+      en: Mr Yamada, let me introduce our new interpreter.
+      pt: Senhor Yamada, apresento nossa nova intérprete.
+  - speaker: yamada
+    text: はじめまして。 山田[やまだ] です。
+    meaning:
+      en: Nice to meet you. I'm Yamada.
+      pt: Muito prazer. Sou Yamada.
+  - speaker: protagonist
+    text: はじめまして。 どうぞ よろしく お願[ねが]いします。
+    meaning:
+      en: Nice to meet you. Pleased to meet you.
+      pt: Muito prazer. É um prazer conhecê-lo.
+  - speaker: yamada
+    text: こちら こそ。 名刺[めいし] を どうぞ。
+    meaning:
+      en: Likewise. Here is my card.
+      pt: Igualmente. Aqui está meu cartão.
+  - speaker: protagonist
+    text: 頂戴[ちょうだい] します。
+    meaning:
+      en: Thank you, I receive it.
+      pt: Recebo com gratidão.
+  - speaker: sato
+    text: 名刺[めいし] は 両手[りょうて] で 持[も]ちます。 そして、 よく 見[み]ます。
+    meaning:
+      en: You hold the card with both hands. And look at it well.
+      pt: O cartão se segura com as duas mãos. E se olha bem.
+  - speaker: protagonist
+    text: ポケット は？
+    meaning:
+      en: In the pocket?
+      pt: No bolso?
+  - speaker: sato
+    text: いいえ。 会議[かいぎ] の 間[あいだ] は 机[つくえ] の 上[うえ] に 置[お]きます。
+    meaning:
+      en: No. During the meeting you put it on the table.
+      pt: Não. Durante a reunião ele fica em cima da mesa.
+- type: prompt
+  ask:
+    en: 'Say: pleased to meet you, the short way.'
+    pt: 'Diga: muito prazer, a forma curta.'
+  answer:
+    speaker: protagonist
+    text: どうぞ よろしく。
+  items:
+  - douzo-yoroshiku
+- type: prompt
+  ask:
+    en: He says the pleasure is his. How?
+    pt: Ele diz que o prazer é dele. Como?
+  answer:
+    speaker: protagonist
+    text: こちら こそ。
+  items:
+  - kochira-koso
+- type: narrator
+  text:
+    en: '«を» marks the object, the thing you hold or give: «名刺[めいし] を どうぞ» — here, the card.'
+    pt: '«を» marca o objeto, a coisa que se segura ou se dá: «名刺[めいし] を どうぞ» — aqui está o cartão.'
+- type: prompt
+  ask:
+    en: Offer your card.
+    pt: Ofereça seu cartão.
+  answer:
+    speaker: protagonist
+    text: 名刺[めいし] を どうぞ。
+  items:
+  - meishi
+  - wo
+- type: narrator
+  text:
+    en: Receiving it, say «頂戴[ちょうだい] します» — a humble 'I receive'.
+    pt: Ao receber, diga «頂戴[ちょうだい] します» — um 'recebo' humilde.
+- type: prompt
+  ask:
+    en: Receive his card.
+    pt: Receba o cartão dele.
+  answer:
+    speaker: protagonist
+    text: 頂戴[ちょうだい] します。
+  items:
+  - choudai
+- type: prompt
+  ask:
+    en: 'Say: with both hands.'
+    pt: 'Diga: com as duas mãos.'
+  answer:
+    speaker: protagonist
+    text: 両手[りょうて] で
+  items:
+  - ryoute-de
+- type: prompt
+  ask:
+    en: 'Say: I hold the card with both hands.'
+    pt: 'Diga: seguro o cartão com as duas mãos.'
+  answer:
+    speaker: protagonist
+    text: 名刺[めいし] を 両手[りょうて] で 持[も]ちます。
+  items:
+  - meishi
+  - ryoute-de
+  - mochimasu
+- type: prompt
+  ask:
+    en: 'Say: I look at it well.'
+    pt: 'Diga: olho bem.'
+  answer:
+    speaker: protagonist
+    text: よく 見[み]ます。
+  items:
+  - mimasu
+- type: prompt
+  ask:
+    en: 'Say: I put it on the table.'
+    pt: 'Diga: coloco em cima da mesa.'
+  answer:
+    speaker: protagonist
+    text: 机[つくえ] の 上[うえ] に 置[お]きます。
+  items:
+  - tsukue
+  - oku
+- type: prompt
+  ask:
+    en: Introduce Kenta to someone.
+    pt: Apresente o Kenta a alguém.
+  answer:
+    speaker: protagonist
+    text: 健太[けんた] さん を 紹介[しょうかい] します。
+  items:
+  - shoukai
+  - wo
+- type: narrator
+  text:
+    en: 'A business card is the person: given and taken with both hands, read, kept on the table during the meeting, never written on or pocketed in front of them.'
+    pt: 'O cartão de visita é a pessoa: dado e recebido com as duas mãos, lido, deixado sobre a mesa durante a reunião, nunca rabiscado nem guardado no bolso na frente dela.'
+- type: prompt
+  ask:
+    en: 'Once more: say “I humbly receive it”.'
+    pt: 'Mais uma vez: diga “recebo com gratidão”.'
+  answer:
+    speaker: protagonist
+    text: 頂戴[ちょうだい] します
+  items:
+  - choudai
+- type: prompt
+  ask:
+    en: 'Once more: say “pleased to meet you (short)”.'
+    pt: 'Mais uma vez: diga “muito prazer (curto)”.'
+  answer:
+    speaker: protagonist
+    text: どうぞ よろしく
+  items:
+  - douzo-yoroshiku
+- type: prompt
+  ask:
+    en: 'Once more: say “hold”.'
+    pt: 'Mais uma vez: diga “segurar”.'
+  answer:
+    speaker: protagonist
+    text: 持[も]ちます
+  items:
+  - mochimasu
+- type: prompt
+  ask:
+    en: 'Once more: say “look at”.'
+    pt: 'Mais uma vez: diga “olhar”.'
+  answer:
+    speaker: protagonist
+    text: 見[み]ます
+  items:
+  - mimasu
+- type: prompt
+  ask:
+    en: 'Once more: say “desk, table”.'
+    pt: 'Mais uma vez: diga “mesa”.'
+  answer:
+    speaker: protagonist
+    text: 机[つくえ]
+  items:
+  - tsukue
+- type: prompt
+  ask:
+    en: 'Once more: say “put, place”.'
+    pt: 'Mais uma vez: diga “colocar”.'
+  answer:
+    speaker: protagonist
+    text: 置[お]きます
+  items:
+  - oku
+- type: prompt
+  ask:
+    en: 'Once more: say “likewise, the pleasure is mine”.'
+    pt: 'Mais uma vez: diga “igualmente”.'
+  answer:
+    speaker: protagonist
+    text: こちら こそ
+  items:
+  - kochira-koso
+- type: prompt
+  ask:
+    en: 'Once more: say “let me introduce”.'
+    pt: 'Mais uma vez: diga “apresento”.'
+  answer:
+    speaker: protagonist
+    text: 紹介[しょうかい] します
+  items:
+  - shoukai
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “one (thing) — and “two (things) — and “three (things) — and “one — and “two — and “three — and “ten”.'
+    pt: 'Diga: “um (objeto) — e “dois (objetos) — e “três (objetos) — e “um — e “dois — e “três — e “dez”.'
+  answer:
+    speaker: protagonist
+    text: ひとつ … ふたつ … みっつ … 一[いち] … 二[に] … 三[さん] … 十[じゅう]
+  items:
+  - hitotsu
+  - futatsu
+  - mittsu
+  - ichi
+  - ni
+  - san
+  - juu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “how many (small things) — and “(counter for small things) — and “box — and “it''s not enough, one is missing — and “all — and “company — and “section chief”.'
+    pt: 'Diga: “quantos (objetos pequenos) — e “(contador para objetos pequenos) — e “caixa — e “falta, não é suficiente — e “tudo — e “empresa — e “chefe de seção”.'
+  answer:
+    speaker: protagonist
+    text: 何個[なんこ] … 個[こ] … 箱[はこ] … 足[た]りません … 全部[ぜんぶ] … 会社[かいしゃ] … 課長[かちょう]
+  items:
+  - nanko
+  - ko
+  - hako
+  - tarimasen
+  - zenbu
+  - kaisha
+  - kachou
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “interpreter — and “from today — and “join, enter — and “work, job — and “Portuguese (language) — and “English — and “do your best (encouragement)”.'
+    pt: 'Diga: “intérprete — e “a partir de hoje — e “entro, começo — e “trabalho — e “português (língua) — e “inglês — e “força! (incentivo)”.'
+  answer:
+    speaker: protagonist
+    text: 通訳[つうやく] … 今日[きょう] から … 入[はい]ります … 仕事[しごと] … ポルトガル語[ご] … 英語[えいご] … 頑張[がんば]って ください
+  items:
+  - tsuuyaku
+  - kyou-kara
+  - hairimasu
+  - shigoto
+  - portugarugo
+  - eigo
+  - ganbatte
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “pleased to meet you (very polite) — and “welcome (shop staff) — and “this, please — and “please (give me) — and “shall I heat it? — and “please (yes, do) — and “bag”.'
+    pt: 'Diga: “muito prazer (bem formal) — e “bem-vindo (dito pelos funcionários) — e “isto, por favor — e “por favor (me dê) — e “quer que esquente? — e “por favor (sim, faça) — e “sacola”.'
+  answer:
+    speaker: protagonist
+    text: どうぞ よろしく お願[ねが]いします … いらっしゃいませ … これ ください … ください … 温[あたた]めます か … お願[ねが]いします … 袋[ふくろ]
+  items:
+  - onegaishimasu-yoroshiku
+  - irasshaimase
+  - kore-kudasai
+  - kudasai
+  - atatamemasu-ka
+  - onegaishimasu
+  - fukuro
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I don''t need it — and “how much is it? — and “yen — and “hundred — and “card — and “thank you (for what was done)”.'
+    pt: 'Diga: “não preciso — e “quanto é? — e “iene — e “cem — e “cartão — e “obrigado (pelo que foi feito)”.'
+  answer:
+    speaker: protagonist
+    text: いりません … いくら です か … 円[えん] … 百[ひゃく] … カード … ありがとう ございました
+  items:
+  - irimasen
+  - ikura
+  - en
+  - hyaku
+  - kaado
+  - arigatou-gozaimashita
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

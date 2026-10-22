@@ -1,0 +1,490 @@
+# UNIT ja A1-15 — written by AI (Claude) for Casus; expanded from src/A1-15.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-15
+level: A1
+number: 15
+protagonist: f
+title:
+  en: Numbers and shapes
+  pt: Números e formas
+situation:
+  en: Mrs Suzuki helps you measure the tatami room for a new carpet.
+  pt: A senhora Suzuki ajuda você a medir o quarto de tatame para um tapete novo.
+learn_lessons: []
+culture: Rooms measured in tatami
+new_items:
+- id: tatami
+  text: 畳[たたみ]
+  meaning:
+    en: tatami mat
+    pt: tatame
+- id: hiroi
+  text: 広[ひろ]い
+  meaning:
+    en: spacious, wide
+    pt: espaçoso, largo
+- id: semai
+  text: 狭[せま]い
+  meaning:
+    en: narrow, small (room)
+    pt: apertado, pequeno (cômodo)
+- id: rokujou
+  text: 六畳[ろくじょう]
+  meaning:
+    en: six tatami (a room size)
+    pt: seis tatames (tamanho de cômodo)
+- id: heya
+  text: 部屋[へや]
+  meaning:
+    en: room
+    pt: quarto, cômodo
+- id: nagai
+  text: 長[なが]い
+  meaning:
+    en: long
+    pt: comprido
+- id: shikaku
+  text: 四角[しかく]
+  meaning:
+    en: square, rectangle
+    pt: quadrado, retângulo
+- id: meetoru
+  text: メートル
+  meaning:
+    en: metre
+    pt: metro
+- id: han
+  text: 半[はん]
+  meaning:
+    en: half
+    pt: meio
+- id: chodo
+  text: ちょうど
+  meaning:
+    en: exactly
+    pt: exatamente
+- id: ookii
+  text: 大[おお]きい
+  meaning:
+    en: big
+    pt: grande
+- id: chiisai
+  text: 小[ちい]さい
+  meaning:
+    en: small
+    pt: pequeno
+reviews:
+- item: kaisha
+  from: A1-08
+- item: kachou
+  from: A1-08
+- item: tsuuyaku
+  from: A1-08
+- item: kyou-kara
+  from: A1-08
+- item: hairimasu
+  from: A1-08
+- item: shigoto
+  from: A1-08
+- item: portugarugo
+  from: A1-08
+- item: eigo
+  from: A1-08
+- item: ganbatte
+  from: A1-08
+- item: onegaishimasu-yoroshiku
+  from: A1-08
+- item: neko
+  from: A1-12
+- item: inu
+  from: A1-12
+- item: tori
+  from: A1-12
+- item: kawaii
+  from: A1-12
+- item: imasu
+  from: A1-12
+- item: arimasu
+  from: A1-12
+- item: jinja
+  from: A1-12
+- item: nanbiki
+  from: A1-12
+- item: ooi
+  from: A1-12
+- item: sawaru
+  from: A1-12
+- item: dame
+  from: A1-12
+- item: denwa
+  from: A1-14
+- item: keitai
+  from: A1-14
+- item: shizuka-ni
+  from: A1-14
+- item: dekimasen
+  from: A1-14
+- item: mainaa-moodo
+  from: A1-14
+- item: shimasu
+  from: A1-14
+- item: hanasimasen
+  from: A1-14
+- item: shitsurei-shimashita
+  from: A1-14
+- item: ki-ni-shinaide
+  from: A1-14
+- item: mukashi
+  from: A1-14
+steps:
+- type: narrator
+  text:
+    en: Mrs Suzuki helps you measure the tatami room for a new carpet. Listen to the conversation; you don't need to understand it yet.
+    pt: A senhora Suzuki ajuda você a medir o quarto de tatame para um tapete novo. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: suzuki
+    text: この 部屋[へや] は 六畳[ろくじょう] です。
+    meaning:
+      en: This room is six tatami.
+      pt: Este quarto é de seis tatames.
+  - speaker: protagonist
+    text: 六畳[ろくじょう]？ 広[ひろ]い です か、 狭[せま]い です か。
+    meaning:
+      en: Six tatami? Is that big or small?
+      pt: Seis tatames? É grande ou pequeno?
+  - speaker: suzuki
+    text: 少[すこ]し 狭[せま]い です ね。 一畳[いちじょう] は 約[やく] 一[いち] メートル 半[はん] と 一[いち] メートル です。
+    meaning:
+      en: A little small. One tatami is about one and a half metres by one metre.
+      pt: Um pouco pequeno. Um tatame tem cerca de um metro e meio por um metro.
+  - speaker: protagonist
+    text: じゃあ、 部屋[へや] は 三[さん] メートル と 三[さん] メートル ぐらい？
+    meaning:
+      en: So the room is about three by three metres?
+      pt: Então o quarto tem uns três por três metros?
+  - speaker: suzuki
+    text: ちょうど です。 頭[あたま] が いい です ね！
+    meaning:
+      en: Exactly. You're clever!
+      pt: Exatamente. Que inteligente!
+  - speaker: protagonist
+    text: この カーペット は 大[おお]きい です か。
+    meaning:
+      en: Is this carpet big?
+      pt: Este tapete é grande?
+  - speaker: suzuki
+    text: 長[なが]い です ね。 小[ちい]さい の が いい です。
+    meaning:
+      en: It's long. A small one is better.
+      pt: É comprido. Um pequeno é melhor.
+  - speaker: protagonist
+    text: わかりました。 四角[しかく] の 小[ちい]さい の に します。
+    meaning:
+      en: I see. I'll take a small square one.
+      pt: Entendi. Vou escolher um pequeno quadrado.
+- type: prompt
+  ask:
+    en: 'Say: this room is six tatami.'
+    pt: 'Diga: este quarto é de seis tatames.'
+  answer:
+    speaker: protagonist
+    text: この 部屋[へや] は 六畳[ろくじょう] です。
+  items:
+  - heya
+  - rokujou
+- type: prompt
+  ask:
+    en: 'Say: tatami.'
+    pt: 'Diga: tatame.'
+  answer:
+    speaker: protagonist
+    text: 畳[たたみ]
+  items:
+  - tatami
+- type: prompt
+  ask:
+    en: Ask if it is spacious or small.
+    pt: Pergunte se é espaçoso ou pequeno.
+  answer:
+    speaker: protagonist
+    text: 広[ひろ]い です か、 狭[せま]い です か。
+  items:
+  - hiroi
+  - semai
+- type: narrator
+  text:
+    en: 'Rooms are measured in tatami: «六畳[ろくじょう]» — six mats, about ten square metres. The counter for mats is «畳[じょう]».'
+    pt: 'Os cômodos se medem em tatames: «六畳[ろくじょう]» — seis tatames, cerca de dez metros quadrados. O contador de tatames é «畳[じょう]».'
+- type: prompt
+  ask:
+    en: 'Say: one and a half metres.'
+    pt: 'Diga: um metro e meio.'
+  answer:
+    speaker: protagonist
+    text: 一[いち] メートル 半[はん]
+  items:
+  - meetoru
+  - han
+- type: prompt
+  ask:
+    en: She says exactly. How?
+    pt: Ela diz exatamente. Como?
+  answer:
+    speaker: protagonist
+    text: ちょうど です。
+  items:
+  - chodo
+- type: prompt
+  ask:
+    en: Ask if the carpet is big.
+    pt: Pergunte se o tapete é grande.
+  answer:
+    speaker: protagonist
+    text: カーペット は 大[おお]きい です か。
+  items:
+  - ookii
+- type: prompt
+  ask:
+    en: 'Say: it''s long.'
+    pt: 'Diga: é comprido.'
+  answer:
+    speaker: protagonist
+    text: 長[なが]い です。
+  items:
+  - nagai
+- type: prompt
+  ask:
+    en: 'Say: a small one is better.'
+    pt: 'Diga: um pequeno é melhor.'
+  answer:
+    speaker: protagonist
+    text: 小[ちい]さい の が いい です。
+  items:
+  - chiisai
+- type: prompt
+  ask:
+    en: 'Say: square.'
+    pt: 'Diga: quadrado.'
+  answer:
+    speaker: protagonist
+    text: 四角[しかく]
+  items:
+  - shikaku
+- type: narrator
+  text:
+    en: Flat adverts give room sizes in 畳 and layouts like 1K or 2LDK (rooms + Living, Dining, Kitchen). A six-mat room is a normal bedroom.
+    pt: Anúncios de apartamento dão os cômodos em 畳 e plantas como 1K ou 2LDK (quartos + sala, jantar, cozinha). Um quarto de seis tatames é um quarto normal.
+- type: prompt
+  ask:
+    en: 'Once more: say “tatami mat”.'
+    pt: 'Mais uma vez: diga “tatame”.'
+  answer:
+    speaker: protagonist
+    text: 畳[たたみ]
+  items:
+  - tatami
+- type: prompt
+  ask:
+    en: 'Once more: say “spacious, wide”.'
+    pt: 'Mais uma vez: diga “espaçoso, largo”.'
+  answer:
+    speaker: protagonist
+    text: 広[ひろ]い
+  items:
+  - hiroi
+- type: prompt
+  ask:
+    en: 'Once more: say “narrow, small (room)”.'
+    pt: 'Mais uma vez: diga “apertado, pequeno (cômodo)”.'
+  answer:
+    speaker: protagonist
+    text: 狭[せま]い
+  items:
+  - semai
+- type: prompt
+  ask:
+    en: 'Once more: say “six tatami (a room size)”.'
+    pt: 'Mais uma vez: diga “seis tatames (tamanho de cômodo)”.'
+  answer:
+    speaker: protagonist
+    text: 六畳[ろくじょう]
+  items:
+  - rokujou
+- type: prompt
+  ask:
+    en: 'Once more: say “room”.'
+    pt: 'Mais uma vez: diga “quarto, cômodo”.'
+  answer:
+    speaker: protagonist
+    text: 部屋[へや]
+  items:
+  - heya
+- type: prompt
+  ask:
+    en: 'Once more: say “long”.'
+    pt: 'Mais uma vez: diga “comprido”.'
+  answer:
+    speaker: protagonist
+    text: 長[なが]い
+  items:
+  - nagai
+- type: prompt
+  ask:
+    en: 'Once more: say “square, rectangle”.'
+    pt: 'Mais uma vez: diga “quadrado, retângulo”.'
+  answer:
+    speaker: protagonist
+    text: 四角[しかく]
+  items:
+  - shikaku
+- type: prompt
+  ask:
+    en: 'Once more: say “metre”.'
+    pt: 'Mais uma vez: diga “metro”.'
+  answer:
+    speaker: protagonist
+    text: メートル
+  items:
+  - meetoru
+- type: prompt
+  ask:
+    en: 'Once more: say “half”.'
+    pt: 'Mais uma vez: diga “meio”.'
+  answer:
+    speaker: protagonist
+    text: 半[はん]
+  items:
+  - han
+- type: prompt
+  ask:
+    en: 'Once more: say “exactly”.'
+    pt: 'Mais uma vez: diga “exatamente”.'
+  answer:
+    speaker: protagonist
+    text: ちょうど
+  items:
+  - chodo
+- type: prompt
+  ask:
+    en: 'Once more: say “big”.'
+    pt: 'Mais uma vez: diga “grande”.'
+  answer:
+    speaker: protagonist
+    text: 大[おお]きい
+  items:
+  - ookii
+- type: prompt
+  ask:
+    en: 'Once more: say “small”.'
+    pt: 'Mais uma vez: diga “pequeno”.'
+  answer:
+    speaker: protagonist
+    text: 小[ちい]さい
+  items:
+  - chiisai
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “telephone, phone call — and “mobile phone — and “quietly — and “can''t (do) — and “silent mode”.'
+    pt: 'Diga: “telefone, ligação — e “celular — e “em silêncio — e “não pode, não dá — e “modo silencioso”.'
+  answer:
+    speaker: protagonist
+    text: 電話[でんわ] … 携帯[けいたい] … 静[しず]か に … できません … マナー モード
+  items:
+  - denwa
+  - keitai
+  - shizuka-ni
+  - dekimasen
+  - mainaa-moodo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “do — and “don''t talk — and “excuse me (for what I did) — and “don''t worry about it — and “long ago, in the old days”.'
+    pt: 'Diga: “faço — e “não falo — e “desculpe (pelo que fiz) — e “não se preocupe — e “antigamente”.'
+  answer:
+    speaker: protagonist
+    text: します … 話[はな]しません … 失礼[しつれい] しました … 気[き] に しないで … 昔[むかし]
+  items:
+  - shimasu
+  - hanasimasen
+  - shitsurei-shimashita
+  - ki-ni-shinaide
+  - mukashi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “cat — and “dog — and “bird — and “cute — and “there is (living things)”.'
+    pt: 'Diga: “gato — e “cachorro — e “pássaro — e “fofo — e “há, tem (seres vivos)”.'
+  answer:
+    speaker: protagonist
+    text: 猫[ねこ] … 犬[いぬ] … 鳥[とり] … かわいい … います
+  items:
+  - neko
+  - inu
+  - tori
+  - kawaii
+  - imasu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “there is (things) — and “shrine — and “how many (animals) — and “many — and “may I touch?”.'
+    pt: 'Diga: “há, tem (coisas) — e “santuário — e “quantos (animais) — e “muitos — e “posso tocar?”.'
+  answer:
+    speaker: protagonist
+    text: あります … 神社[じんじゃ] … 何匹[なんびき] … 多[おお]い … 触[さわ]っても いい です か
+  items:
+  - arimasu
+  - jinja
+  - nanbiki
+  - ooi
+  - sawaru
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “no good, not allowed — and “company — and “section chief — and “interpreter — and “from today”.'
+    pt: 'Diga: “não pode — e “empresa — e “chefe de seção — e “intérprete — e “a partir de hoje”.'
+  answer:
+    speaker: protagonist
+    text: だめ … 会社[かいしゃ] … 課長[かちょう] … 通訳[つうやく] … 今日[きょう] から
+  items:
+  - dame
+  - kaisha
+  - kachou
+  - tsuuyaku
+  - kyou-kara
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “join, enter — and “work, job — and “Portuguese (language) — and “English — and “do your best (encouragement)”.'
+    pt: 'Diga: “entro, começo — e “trabalho — e “português (língua) — e “inglês — e “força! (incentivo)”.'
+  answer:
+    speaker: protagonist
+    text: 入[はい]ります … 仕事[しごと] … ポルトガル語[ご] … 英語[えいご] … 頑張[がんば]って ください
+  items:
+  - hairimasu
+  - shigoto
+  - portugarugo
+  - eigo
+  - ganbatte
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “pleased to meet you (very polite)”.'
+    pt: 'Diga: “muito prazer (bem formal)”.'
+  answer:
+    speaker: protagonist
+    text: どうぞ よろしく お願[ねが]いします
+  items:
+  - onegaishimasu-yoroshiku
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
