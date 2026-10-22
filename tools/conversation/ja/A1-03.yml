@@ -1,0 +1,400 @@
+# UNIT ja A1-03 — written by AI (Claude) for Casus; expanded from src/A1-03.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-03
+level: A1
+number: 3
+protagonist: f
+title:
+  en: The body
+  pt: O corpo
+situation:
+  en: Mrs Suzuki is in her vegetable garden, holding her knee.
+  pt: A senhora Suzuki está na horta, segurando o joelho.
+learn_lessons: []
+culture: —
+new_items:
+- id: daijoubu
+  text: 大丈夫[だいじょうぶ] です か
+  meaning:
+    en: are you all right?
+    pt: a senhora está bem?
+- id: itai
+  text: 痛[いた]い
+  meaning:
+    en: painful, it hurts
+    pt: dói, dolorido
+- id: hiza
+  text: 膝[ひざ]
+  meaning:
+    en: knee
+    pt: joelho
+- id: atama
+  text: 頭[あたま]
+  meaning:
+    en: head
+    pt: cabeça
+- id: te
+  text: 手[て]
+  meaning:
+    en: hand
+    pt: mão
+- id: ashi
+  text: 足[あし]
+  meaning:
+    en: foot, leg
+    pt: pé, perna
+- id: ga
+  text: が
+  meaning:
+    en: (marks who or what does something)
+    pt: (marca quem ou o que faz algo)
+- id: sukoshi
+  text: 少[すこ]し
+  meaning:
+    en: a little
+    pt: um pouco
+- id: doko
+  text: どこ
+  meaning:
+    en: where
+    pt: onde
+- id: byouin
+  text: 病院[びょういん]
+  meaning:
+    en: hospital, clinic
+    pt: hospital, clínica
+- id: iie
+  text: いいえ
+  meaning:
+    en: 'no'
+    pt: não
+- id: tetsudaimashou-ka
+  text: 手伝[てつだ]いましょう か
+  meaning:
+    en: shall I help?
+    pt: posso ajudar?
+reviews:
+- item: genkan
+  from: A1-02
+- item: kutsu
+  from: A1-02
+- item: surippa
+  from: A1-02
+- item: douzo
+  from: A1-02
+- item: shitsurei
+  from: A1-02
+- item: koko
+  from: A1-02
+- item: kore
+  from: A1-02
+- item: sore
+  from: A1-02
+- item: nan-desu-ka
+  from: A1-02
+- item: toire
+  from: A1-02
+- item: no-particle
+  from: A1-02
+- item: arigatou
+  from: A1-02
+- item: wakarimashita
+  from: A1-02
+steps:
+- type: narrator
+  text:
+    en: Mrs Suzuki is in her vegetable garden, holding her knee. Listen to the conversation; you don't need to understand it yet.
+    pt: A senhora Suzuki está na horta, segurando o joelho. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: 鈴木[すずき] さん、 大丈夫[だいじょうぶ] です か。
+    meaning:
+      en: Mrs Suzuki, are you all right?
+      pt: Senhora Suzuki, a senhora está bem?
+  - speaker: suzuki
+    text: 膝[ひざ] が 少[すこ]し 痛[いた]い です。
+    meaning:
+      en: My knee hurts a little.
+      pt: O joelho dói um pouco.
+  - speaker: protagonist
+    text: 膝[ひざ]？ どこ です か。
+    meaning:
+      en: Your knee? Where?
+      pt: O joelho? Onde?
+  - speaker: suzuki
+    text: ここ です。 年[とし] です ね。
+    meaning:
+      en: Here. It's my age.
+      pt: Aqui. É a idade.
+  - speaker: protagonist
+    text: 病院[びょういん] は？
+    meaning:
+      en: And the clinic?
+      pt: E o médico?
+  - speaker: suzuki
+    text: いいえ、 大丈夫[だいじょうぶ] です。
+    meaning:
+      en: No, I'm fine.
+      pt: Não, estou bem.
+  - speaker: protagonist
+    text: 手伝[てつだ]いましょう か。
+    meaning:
+      en: Shall I help?
+      pt: Posso ajudar?
+  - speaker: suzuki
+    text: ありがとう。 優[やさ]しい です ね。
+    meaning:
+      en: Thank you. You're kind.
+      pt: Obrigada. Você é gentil.
+- type: narrator
+  text:
+    en: 'To ask if someone is all right: «大丈夫[だいじょうぶ] です か». The same word answers: «大丈夫[だいじょうぶ] です» — I''m fine.'
+    pt: 'Para perguntar se alguém está bem: «大丈夫[だいじょうぶ] です か». A mesma palavra responde: «大丈夫[だいじょうぶ] です» — estou bem.'
+- type: prompt
+  ask:
+    en: Ask her if she is all right.
+    pt: Pergunte se ela está bem.
+  answer:
+    speaker: protagonist
+    text: 大丈夫[だいじょうぶ] です か。
+  items:
+  - daijoubu
+- type: narrator
+  text:
+    en: «膝[ひざ] が 痛[いた]い です» — my knee hurts. The part of the body, then «が», then «痛[いた]い です».
+    pt: «膝[ひざ] が 痛[いた]い です» — o joelho dói. A parte do corpo, depois «が», depois «痛[いた]い です».
+- type: line
+  speaker: suzuki
+  item: hiza
+- type: prompt
+  ask:
+    en: Say your knee hurts.
+    pt: Diga que o joelho dói.
+  answer:
+    speaker: protagonist
+    text: 膝[ひざ] が 痛[いた]い です。
+  items:
+  - hiza
+  - ga
+  - itai
+- type: prompt
+  ask:
+    en: Your head hurts.
+    pt: A cabeça dói.
+  answer:
+    speaker: protagonist
+    text: 頭[あたま] が 痛[いた]い です。
+  items:
+  - atama
+  - ga
+  - itai
+- type: prompt
+  ask:
+    en: Your hand hurts.
+    pt: A mão dói.
+  answer:
+    speaker: protagonist
+    text: 手[て] が 痛[いた]い です。
+  items:
+  - te
+  - ga
+  - itai
+- type: prompt
+  ask:
+    en: Your foot hurts a little.
+    pt: O pé dói um pouco.
+  answer:
+    speaker: protagonist
+    text: 足[あし] が 少[すこ]し 痛[いた]い です。
+  items:
+  - ashi
+  - sukoshi
+  - itai
+- type: prompt
+  ask:
+    en: Ask where it hurts — 'where is it?'
+    pt: Pergunte onde dói — 'onde é?'
+  answer:
+    speaker: protagonist
+    text: どこ です か。
+  items:
+  - doko
+- type: prompt
+  ask:
+    en: Suggest the clinic, as a short question.
+    pt: Sugira o médico, numa pergunta curta.
+  answer:
+    speaker: protagonist
+    text: 病院[びょういん] は？
+  items:
+  - byouin
+- type: prompt
+  ask:
+    en: She says no, she's fine. How?
+    pt: Ela diz que não, está bem. Como?
+  answer:
+    speaker: protagonist
+    text: いいえ、 大丈夫[だいじょうぶ] です。
+  items:
+  - iie
+  - daijoubu
+- type: prompt
+  ask:
+    en: Offer to help.
+    pt: Ofereça ajuda.
+  answer:
+    speaker: protagonist
+    text: 手伝[てつだ]いましょう か。
+  items:
+  - tetsudaimashou-ka
+- type: prompt
+  ask:
+    en: 'Once more: say “knee”.'
+    pt: 'Mais uma vez: diga “joelho”.'
+  answer:
+    speaker: protagonist
+    text: 膝[ひざ]
+  items:
+  - hiza
+- type: prompt
+  ask:
+    en: 'Once more: say “head”.'
+    pt: 'Mais uma vez: diga “cabeça”.'
+  answer:
+    speaker: protagonist
+    text: 頭[あたま]
+  items:
+  - atama
+- type: prompt
+  ask:
+    en: 'Once more: say “hand”.'
+    pt: 'Mais uma vez: diga “mão”.'
+  answer:
+    speaker: protagonist
+    text: 手[て]
+  items:
+  - te
+- type: prompt
+  ask:
+    en: 'Once more: say “foot, leg”.'
+    pt: 'Mais uma vez: diga “pé, perna”.'
+  answer:
+    speaker: protagonist
+    text: 足[あし]
+  items:
+  - ashi
+- type: prompt
+  ask:
+    en: 'Once more: say “a little”.'
+    pt: 'Mais uma vez: diga “um pouco”.'
+  answer:
+    speaker: protagonist
+    text: 少[すこ]し
+  items:
+  - sukoshi
+- type: prompt
+  ask:
+    en: 'Once more: say “where”.'
+    pt: 'Mais uma vez: diga “onde”.'
+  answer:
+    speaker: protagonist
+    text: どこ
+  items:
+  - doko
+- type: prompt
+  ask:
+    en: 'Once more: say “hospital, clinic”.'
+    pt: 'Mais uma vez: diga “hospital, clínica”.'
+  answer:
+    speaker: protagonist
+    text: 病院[びょういん]
+  items:
+  - byouin
+- type: prompt
+  ask:
+    en: 'Once more: say “no”.'
+    pt: 'Mais uma vez: diga “não”.'
+  answer:
+    speaker: protagonist
+    text: いいえ
+  items:
+  - iie
+- type: prompt
+  ask:
+    en: 'Once more: say “shall I help?”.'
+    pt: 'Mais uma vez: diga “posso ajudar?”.'
+  answer:
+    speaker: protagonist
+    text: 手伝[てつだ]いましょう か
+  items:
+  - tetsudaimashou-ka
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “entrance hall (where shoes come off) — and “shoes — and “slippers”.'
+    pt: 'Diga: “entrada (onde se tiram os sapatos) — e “sapatos — e “chinelos”.'
+  answer:
+    speaker: protagonist
+    text: 玄関[げんかん] … 靴[くつ] … スリッパ
+  items:
+  - genkan
+  - kutsu
+  - surippa
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “please (go ahead / here you are) — and “excuse me (entering) — and “here”.'
+    pt: 'Diga: “por favor (pode entrar / aqui está) — e “com licença (ao entrar) — e “aqui”.'
+  answer:
+    speaker: protagonist
+    text: どうぞ … 失礼[しつれい] します … ここ
+  items:
+  - douzo
+  - shitsurei
+  - koko
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “this (near me) — and “that (near you) — and “what is it?”.'
+    pt: 'Diga: “isto (perto de mim) — e “isso (perto de você) — e “o que é?”.'
+  answer:
+    speaker: protagonist
+    text: これ … それ … 何[なん] です か
+  items:
+  - kore
+  - sore
+  - nan-desu-ka
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “toilet — and “''s / of — and “thank you (polite)”.'
+    pt: 'Diga: “banheiro — e “de (posse) — e “obrigado (educado)”.'
+  answer:
+    speaker: protagonist
+    text: トイレ … の … ありがとう ございます
+  items:
+  - toire
+  - no-particle
+  - arigatou
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “understood / I see”.'
+    pt: 'Diga: “entendi”.'
+  answer:
+    speaker: protagonist
+    text: わかりました
+  items:
+  - wakarimashita
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

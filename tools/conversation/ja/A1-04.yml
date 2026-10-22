@@ -1,0 +1,489 @@
+# UNIT ja A1-04 — written by AI (Claude) for Casus; expanded from src/A1-04.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-04
+level: A1
+number: 4
+protagonist: m
+title:
+  en: The konbini
+  pt: A konbini
+situation:
+  en: Lunch at the convenience store near the factory. The manager is at the till.
+  pt: Almoço na loja de conveniência perto da fábrica. O gerente está no caixa.
+learn_lessons: []
+culture: Heated food, bags and points cards at the till
+new_items:
+- id: irasshaimase
+  text: いらっしゃいませ
+  meaning:
+    en: welcome (shop staff)
+    pt: bem-vindo (dito pelos funcionários)
+- id: kore-kudasai
+  text: これ ください
+  meaning:
+    en: this, please
+    pt: isto, por favor
+- id: kudasai
+  text: ください
+  meaning:
+    en: please (give me)
+    pt: por favor (me dê)
+- id: atatamemasu-ka
+  text: 温[あたた]めます か
+  meaning:
+    en: shall I heat it?
+    pt: quer que esquente?
+- id: onegaishimasu
+  text: お願[ねが]いします
+  meaning:
+    en: please (yes, do)
+    pt: por favor (sim, faça)
+- id: fukuro
+  text: 袋[ふくろ]
+  meaning:
+    en: bag
+    pt: sacola
+- id: irimasen
+  text: いりません
+  meaning:
+    en: I don't need it
+    pt: não preciso
+- id: ikura
+  text: いくら です か
+  meaning:
+    en: how much is it?
+    pt: quanto é?
+- id: en
+  text: 円[えん]
+  meaning:
+    en: yen
+    pt: iene
+- id: hyaku
+  text: 百[ひゃく]
+  meaning:
+    en: hundred
+    pt: cem
+- id: kaado
+  text: カード
+  meaning:
+    en: card
+    pt: cartão
+- id: arigatou-gozaimashita
+  text: ありがとう ございました
+  meaning:
+    en: thank you (for what was done)
+    pt: obrigado (pelo que foi feito)
+reviews:
+- item: konnichiwa
+  from: A1-01
+- item: hajimemashite
+  from: A1-01
+- item: desu
+  from: A1-01
+- item: yoroshiku
+  from: A1-01
+- item: burajiru
+  from: A1-01
+- item: kara
+  from: A1-01
+- item: kimashita
+  from: A1-01
+- item: watashi
+  from: A1-01
+- item: suzuki-san
+  from: A1-01
+- item: hai
+  from: A1-01
+- item: sumimasen
+  from: A1-01
+- item: wakarimasen
+  from: A1-01
+- item: daijoubu
+  from: A1-03
+- item: itai
+  from: A1-03
+- item: hiza
+  from: A1-03
+- item: atama
+  from: A1-03
+- item: te
+  from: A1-03
+- item: ashi
+  from: A1-03
+- item: ga
+  from: A1-03
+- item: sukoshi
+  from: A1-03
+- item: doko
+  from: A1-03
+- item: byouin
+  from: A1-03
+- item: iie
+  from: A1-03
+- item: tetsudaimashou-ka
+  from: A1-03
+steps:
+- type: narrator
+  text:
+    en: Lunch at the convenience store near the factory. The manager is at the till. Listen to the conversation; you don't need to understand it yet.
+    pt: Almoço na loja de conveniência perto da fábrica. O gerente está no caixa. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: tencho
+    text: いらっしゃいませ。
+    meaning:
+      en: Welcome.
+      pt: Bem-vindo.
+  - speaker: protagonist
+    text: これ ください。
+    meaning:
+      en: This, please.
+      pt: Isto, por favor.
+  - speaker: tencho
+    text: お弁当[べんとう] です ね。 温[あたた]めます か。
+    meaning:
+      en: A lunch box. Shall I heat it?
+      pt: Uma marmita. Quer que esquente?
+  - speaker: protagonist
+    text: はい、 お願[ねが]いします。
+    meaning:
+      en: Yes, please.
+      pt: Sim, por favor.
+  - speaker: tencho
+    text: 袋[ふくろ] は？
+    meaning:
+      en: A bag?
+      pt: Sacola?
+  - speaker: protagonist
+    text: いいえ、 いりません。 いくら です か。
+    meaning:
+      en: No, I don't need one. How much is it?
+      pt: Não, não preciso. Quanto é?
+  - speaker: tencho
+    text: 五百[ごひゃく] 円[えん] です。
+    meaning:
+      en: Five hundred yen.
+      pt: Quinhentos ienes.
+  - speaker: protagonist
+    text: カード で お願[ねが]いします。
+    meaning:
+      en: By card, please.
+      pt: No cartão, por favor.
+  - speaker: tencho
+    text: ありがとう ございました。
+    meaning:
+      en: Thank you very much.
+      pt: Muito obrigado.
+- type: narrator
+  text:
+    en: Staff greet you with «いらっしゃいませ». You don't answer it — a small nod is enough.
+    pt: Os funcionários dizem «いらっしゃいませ». Não se responde — basta um aceno de cabeça.
+- type: narrator
+  text:
+    en: 'To buy: point and say «これ ください» — this, please.'
+    pt: 'Para comprar: aponte e diga «これ ください» — isto, por favor.'
+- type: prompt
+  ask:
+    en: Ask for the lunch box you are holding.
+    pt: Peça a marmita que você está segurando.
+  answer:
+    speaker: protagonist
+    text: これ ください。
+  items:
+  - kore-kudasai
+- type: narrator
+  text:
+    en: 'He asks «温[あたた]めます か» — shall I heat it? Yes: «はい、 お願[ねが]いします».'
+    pt: 'Ele pergunta «温[あたた]めます か» — quer que esquente? Sim: «はい、 お願[ねが]いします».'
+- type: line
+  speaker: tencho
+  item: atatamemasu-ka
+- type: prompt
+  ask:
+    en: Say yes, please.
+    pt: Diga sim, por favor.
+  answer:
+    speaker: protagonist
+    text: はい、 お願[ねが]いします。
+  items:
+  - onegaishimasu
+- type: prompt
+  ask:
+    en: He offers a bag. Say you don't need one.
+    pt: Ele oferece uma sacola. Diga que não precisa.
+  answer:
+    speaker: protagonist
+    text: いいえ、 いりません。
+  items:
+  - irimasen
+- type: prompt
+  ask:
+    en: Ask how much it is.
+    pt: Pergunte quanto é.
+  answer:
+    speaker: protagonist
+    text: いくら です か。
+  items:
+  - ikura
+- type: narrator
+  text:
+    en: '«百[ひゃく]» is a hundred, «円[えん]» is yen: five hundred yen is «五百[ごひゃく] 円[えん]».'
+    pt: '«百[ひゃく]» é cem, «円[えん]» é iene: quinhentos ienes é «五百[ごひゃく] 円[えん]».'
+- type: prompt
+  ask:
+    en: 'Say: one hundred yen.'
+    pt: 'Diga: cem ienes.'
+  answer:
+    speaker: protagonist
+    text: 百[ひゃく] 円[えん]
+  items:
+  - hyaku
+  - en
+- type: prompt
+  ask:
+    en: Say you'll pay by card.
+    pt: Diga que vai pagar no cartão.
+  answer:
+    speaker: protagonist
+    text: カード で お願[ねが]いします。
+  items:
+  - kaado
+  - onegaishimasu
+- type: prompt
+  ask:
+    en: How does he thank you as you leave?
+    pt: Como ele agradece quando você sai?
+  answer:
+    speaker: protagonist
+    text: ありがとう ございました。
+  items:
+  - arigatou-gozaimashita
+- type: prompt
+  ask:
+    en: Ask for something, with 'please' alone.
+    pt: Peça algo, só com 'por favor'.
+  answer:
+    speaker: protagonist
+    text: ください。
+  items:
+  - kudasai
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'Sem gorjeta no Japão — o preço é o preço. E a konbini é muito mais que conveniência: ali se pagam contas, se imprime documento e se manda encomenda.'
+- type: prompt
+  ask:
+    en: 'Once more: say “welcome (shop staff)”.'
+    pt: 'Mais uma vez: diga “bem-vindo (dito pelos funcionários)”.'
+  answer:
+    speaker: protagonist
+    text: いらっしゃいませ
+  items:
+  - irasshaimase
+- type: prompt
+  ask:
+    en: 'Once more: say “welcome (shop staff)”.'
+    pt: 'Mais uma vez: diga “bem-vindo (dito pelos funcionários)”.'
+  answer:
+    speaker: protagonist
+    text: いらっしゃいませ
+  items:
+  - irasshaimase
+- type: prompt
+  ask:
+    en: 'Once more: say “this, please”.'
+    pt: 'Mais uma vez: diga “isto, por favor”.'
+  answer:
+    speaker: protagonist
+    text: これ ください
+  items:
+  - kore-kudasai
+- type: prompt
+  ask:
+    en: 'Once more: say “please (give me)”.'
+    pt: 'Mais uma vez: diga “por favor (me dê)”.'
+  answer:
+    speaker: protagonist
+    text: ください
+  items:
+  - kudasai
+- type: prompt
+  ask:
+    en: 'Once more: say “shall I heat it?”.'
+    pt: 'Mais uma vez: diga “quer que esquente?”.'
+  answer:
+    speaker: protagonist
+    text: 温[あたた]めます か
+  items:
+  - atatamemasu-ka
+- type: prompt
+  ask:
+    en: 'Once more: say “shall I heat it?”.'
+    pt: 'Mais uma vez: diga “quer que esquente?”.'
+  answer:
+    speaker: protagonist
+    text: 温[あたた]めます か
+  items:
+  - atatamemasu-ka
+- type: prompt
+  ask:
+    en: 'Once more: say “bag”.'
+    pt: 'Mais uma vez: diga “sacola”.'
+  answer:
+    speaker: protagonist
+    text: 袋[ふくろ]
+  items:
+  - fukuro
+- type: prompt
+  ask:
+    en: 'Once more: say “bag”.'
+    pt: 'Mais uma vez: diga “sacola”.'
+  answer:
+    speaker: protagonist
+    text: 袋[ふくろ]
+  items:
+  - fukuro
+- type: prompt
+  ask:
+    en: 'Once more: say “I don''t need it”.'
+    pt: 'Mais uma vez: diga “não preciso”.'
+  answer:
+    speaker: protagonist
+    text: いりません
+  items:
+  - irimasen
+- type: prompt
+  ask:
+    en: 'Once more: say “how much is it?”.'
+    pt: 'Mais uma vez: diga “quanto é?”.'
+  answer:
+    speaker: protagonist
+    text: いくら です か
+  items:
+  - ikura
+- type: prompt
+  ask:
+    en: 'Once more: say “yen”.'
+    pt: 'Mais uma vez: diga “iene”.'
+  answer:
+    speaker: protagonist
+    text: 円[えん]
+  items:
+  - en
+- type: prompt
+  ask:
+    en: 'Once more: say “hundred”.'
+    pt: 'Mais uma vez: diga “cem”.'
+  answer:
+    speaker: protagonist
+    text: 百[ひゃく]
+  items:
+  - hyaku
+- type: prompt
+  ask:
+    en: 'Once more: say “card”.'
+    pt: 'Mais uma vez: diga “cartão”.'
+  answer:
+    speaker: protagonist
+    text: カード
+  items:
+  - kaado
+- type: prompt
+  ask:
+    en: 'Once more: say “thank you (for what was done)”.'
+    pt: 'Mais uma vez: diga “obrigado (pelo que foi feito)”.'
+  answer:
+    speaker: protagonist
+    text: ありがとう ございました
+  items:
+  - arigatou-gozaimashita
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “are you all right? — and “painful, it hurts — and “knee — and “head”.'
+    pt: 'Diga: “a senhora está bem? — e “dói, dolorido — e “joelho — e “cabeça”.'
+  answer:
+    speaker: protagonist
+    text: 大丈夫[だいじょうぶ] です か … 痛[いた]い … 膝[ひざ] … 頭[あたま]
+  items:
+  - daijoubu
+  - itai
+  - hiza
+  - atama
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “hand — and “foot, leg — and “(marks who or what does something) — and “a little”.'
+    pt: 'Diga: “mão — e “pé, perna — e “(marca quem ou o que faz algo) — e “um pouco”.'
+  answer:
+    speaker: protagonist
+    text: 手[て] … 足[あし] … が … 少[すこ]し
+  items:
+  - te
+  - ashi
+  - ga
+  - sukoshi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “where — and “hospital, clinic — and “no — and “shall I help?”.'
+    pt: 'Diga: “onde — e “hospital, clínica — e “não — e “posso ajudar?”.'
+  answer:
+    speaker: protagonist
+    text: どこ … 病院[びょういん] … いいえ … 手伝[てつだ]いましょう か
+  items:
+  - doko
+  - byouin
+  - iie
+  - tetsudaimashou-ka
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Hello / good afternoon — and “Nice to meet you (first meeting) — and “am / is / are (polite) — and “Please treat me kindly (said when meeting)”.'
+    pt: 'Diga: “Olá / boa tarde — e “Muito prazer (no primeiro encontro) — e “sou / é (educado) — e “Conto com a senhora (dito ao se conhecer)”.'
+  answer:
+    speaker: protagonist
+    text: こんにちは … はじめまして … です … よろしく お願[ねが]いします
+  items:
+  - konnichiwa
+  - hajimemashite
+  - desu
+  - yoroshiku
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Brazil — and “from — and “came — and “I”.'
+    pt: 'Diga: “Brasil — e “de (origem) — e “vim — e “eu”.'
+  answer:
+    speaker: protagonist
+    text: ブラジル … から … 来[き]ました … 私[わたし]
+  items:
+  - burajiru
+  - kara
+  - kimashita
+  - watashi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Mrs Suzuki — and “yes — and “excuse me / sorry — and “I don''t understand”.'
+    pt: 'Diga: “senhora Suzuki — e “sim — e “com licença / desculpe — e “não entendo”.'
+  answer:
+    speaker: protagonist
+    text: 鈴木[すずき] さん … はい … すみません … わかりません
+  items:
+  - suzuki-san
+  - hai
+  - sumimasen
+  - wakarimasen
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

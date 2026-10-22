@@ -47,10 +47,10 @@ def espeak(words, voice, chunk=2000):
     out = []
     for i in range(0, len(words), chunk):
         part = words[i:i + chunk]
-        got = subprocess.run(['espeak-ng', '-q', '--ipa', '-v', voice, '--stdin'], input=' . '.join(part),
-                             capture_output=True, text=True).stdout.split()
-        if len(got) != len(part):
-            got = [subprocess.run(['espeak-ng', '-q', '--ipa', '-v', voice, w], capture_output=True, text=True).stdout.strip().replace(' ', '') for w in part]
+        run = lambda args, text: subprocess.run(args, input=text.encode(), capture_output=True).stdout.decode('utf-8', 'replace')
+        got = run(['espeak-ng', '-q', '--ipa', '-v', voice, '--stdin'], ' . '.join(part)).split()
+        if len(got) != len(part):        # espeak merged or split something: this chunk word by word
+            got = [run(['espeak-ng', '-q', '--ipa', '-v', voice, '--stdin'], w).strip().replace(' ', '') for w in part]
         out += [clean_espeak(g) for g in got]
     return out
 
@@ -158,14 +158,17 @@ def main(code):
     lemmas = json.loads((root / 'lemmas.json').read_text())
     WORD = re.compile(r"^[\w'’-]+$")
     pairs = [(lemmas[k]['headword'], v[0]['ipa']) for k, v in ipa.items()
-             if k in lemmas and v and WORD.match(lemmas[k]['headword']) and v[0]['ipa'].startswith('/')]
+             if k in lemmas and v and WORD.match(lemmas[k]['headword']) and v[0]['ipa'][:1] in '/[']
     random.seed(7)
     random.shuffle(pairs)
     pairs = pairs[:3000]
     got = espeak([w for w, _ in pairs], voice)
     seg = [(segments(g), segments(w)) for g, (_, w) in zip(got, pairs)]
-    train, test = seg[:2000], seg[2000:]
-    rules = learn(train)
+    cut = 2000 if len(seg) >= 3000 else (2 * len(seg)) // 3
+    train, test = seg[:cut], seg[cut:]
+    rules = learn(train) if len(test) >= 150 else []
+    if len(test) < 150:
+        print(f'{code}: only {len(seg)} lemmas with IPA — not calibrated (raw espeak notation)')
     raw, raw_ex = per(test, [])
     cal, cal_ex = per(test, rules)
     print(f'{code}: {len(rules)} rules; held-out {len(test)} lemmas: phone disagreement {raw:.1f}% → {cal:.1f}%, exact {raw_ex:.1f}% → {cal_ex:.1f}%')

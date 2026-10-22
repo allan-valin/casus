@@ -1,0 +1,446 @@
+# UNIT ja A1-05 — written by AI (Claude) for Casus; expanded from src/A1-05.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-05
+level: A1
+number: 5
+protagonist: f
+title:
+  en: Hiragana
+  pt: Hiragana
+situation:
+  en: After work the konbini manager walks with you to the station and shows you the signs.
+  pt: Depois do trabalho o gerente da konbini vai com você até a estação e mostra as placas.
+learn_lessons: []
+culture: Three scripts at once
+new_items:
+- id: hiragana
+  text: ひらがな
+  meaning:
+    en: hiragana (the round script)
+    pt: hiragana (a escrita arredondada)
+- id: katakana
+  text: カタカナ
+  meaning:
+    en: katakana (the angular script, for foreign words)
+    pt: katakana (a escrita angulosa, para palavras estrangeiras)
+- id: kanji
+  text: 漢字[かんじ]
+  meaning:
+    en: kanji (Chinese characters)
+    pt: kanji (caracteres chineses)
+- id: eki
+  text: 駅[えき]
+  meaning:
+    en: station
+    pt: estação
+- id: deguchi
+  text: 出口[でぐち]
+  meaning:
+    en: exit
+    pt: saída
+- id: iriguchi
+  text: 入口[いりぐち]
+  meaning:
+    en: entrance
+    pt: entrada
+- id: asoko
+  text: あそこ
+  meaning:
+    en: over there
+    pt: ali, lá
+- id: yomemasu-ka
+  text: 読[よ]めます か
+  meaning:
+    en: can you read (it)?
+    pt: consegue ler?
+- id: muzukashii
+  text: 難[むずか]しい
+  meaning:
+    en: difficult
+    pt: difícil
+- id: ganbarimasu
+  text: 頑張[がんば]ります
+  meaning:
+    en: I'll do my best
+    pt: vou me esforçar
+- id: doko-desu-ka
+  text: どこ です か
+  meaning:
+    en: where is it?
+    pt: onde fica?
+reviews:
+- item: genkan
+  from: A1-02
+- item: kutsu
+  from: A1-02
+- item: surippa
+  from: A1-02
+- item: douzo
+  from: A1-02
+- item: shitsurei
+  from: A1-02
+- item: koko
+  from: A1-02
+- item: kore
+  from: A1-02
+- item: sore
+  from: A1-02
+- item: nan-desu-ka
+  from: A1-02
+- item: toire
+  from: A1-02
+- item: no-particle
+  from: A1-02
+- item: arigatou
+  from: A1-02
+- item: wakarimashita
+  from: A1-02
+- item: irasshaimase
+  from: A1-04
+- item: kore-kudasai
+  from: A1-04
+- item: kudasai
+  from: A1-04
+- item: atatamemasu-ka
+  from: A1-04
+- item: onegaishimasu
+  from: A1-04
+- item: fukuro
+  from: A1-04
+- item: irimasen
+  from: A1-04
+- item: ikura
+  from: A1-04
+- item: en
+  from: A1-04
+- item: hyaku
+  from: A1-04
+- item: kaado
+  from: A1-04
+- item: arigatou-gozaimashita
+  from: A1-04
+- item: ga
+  from: A1-03
+steps:
+- type: narrator
+  text:
+    en: After work the konbini manager walks with you to the station and shows you the signs. Listen to the conversation; you don't need to understand it yet.
+    pt: Depois do trabalho o gerente da konbini vai com você até a estação e mostra as placas. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: tencho
+    text: あそこ が 駅[えき] です。
+    meaning:
+      en: That's the station over there.
+      pt: Ali é a estação.
+  - speaker: protagonist
+    text: あの 字[じ] は？ 読[よ]めません。
+    meaning:
+      en: Those characters? I can't read them.
+      pt: Aquelas letras? Não consigo ler.
+  - speaker: tencho
+    text: 漢字[かんじ] です。 「出口[でぐち]」。 外[そと] に 出[で]る 所[ところ] です。
+    meaning:
+      en: 'They''re kanji: ''exit''. Where you go out.'
+      pt: 'São kanji: ''saída''. Onde se sai.'
+  - speaker: protagonist
+    text: 入口[いりぐち] は どこ です か。
+    meaning:
+      en: Where's the entrance?
+      pt: Onde fica a entrada?
+  - speaker: tencho
+    text: あそこ です。 ひらがな は 読[よ]めます か。
+    meaning:
+      en: Over there. Can you read hiragana?
+      pt: Ali. Consegue ler hiragana?
+  - speaker: protagonist
+    text: 少[すこ]し。 カタカナ も 少[すこ]し。
+    meaning:
+      en: A little. Katakana too, a little.
+      pt: Um pouco. Katakana também, um pouco.
+  - speaker: tencho
+    text: 日本語[にほんご] は 難[むずか]しい です ね。
+    meaning:
+      en: Japanese is difficult, isn't it.
+      pt: Japonês é difícil, né?
+  - speaker: protagonist
+    text: はい。 でも 頑張[がんば]ります！
+    meaning:
+      en: Yes. But I'll do my best!
+      pt: Sim. Mas vou me esforçar!
+- type: narrator
+  text:
+    en: 'Japanese uses three scripts at once: round «ひらがな», angular «カタカナ» for foreign words, and «漢字[かんじ]», characters from Chinese.'
+    pt: 'O japonês usa três escritas ao mesmo tempo: a arredondada «ひらがな», a angulosa «カタカナ» para palavras estrangeiras, e «漢字[かんじ]», caracteres vindos do chinês.'
+- type: prompt
+  ask:
+    en: 'Say: hiragana.'
+    pt: 'Diga: hiragana.'
+  answer:
+    speaker: protagonist
+    text: ひらがな
+  items:
+  - hiragana
+- type: prompt
+  ask:
+    en: 'Say: katakana.'
+    pt: 'Diga: katakana.'
+  answer:
+    speaker: protagonist
+    text: カタカナ
+  items:
+  - katakana
+- type: prompt
+  ask:
+    en: 'Say: kanji.'
+    pt: 'Diga: kanji.'
+  answer:
+    speaker: protagonist
+    text: 漢字[かんじ]
+  items:
+  - kanji
+- type: narrator
+  text:
+    en: '«あそこ が 駅[えき] です» — over there is the station. «が» points at the one: that one, over there.'
+    pt: '«あそこ が 駅[えき] です» — ali é a estação. «が» aponta: aquela, ali.'
+- type: prompt
+  ask:
+    en: 'Say: the station is over there.'
+    pt: 'Diga: a estação é ali.'
+  answer:
+    speaker: protagonist
+    text: あそこ が 駅[えき] です。
+  items:
+  - asoko
+  - ga
+  - eki
+- type: prompt
+  ask:
+    en: 'Say: exit.'
+    pt: 'Diga: saída.'
+  answer:
+    speaker: protagonist
+    text: 出口[でぐち]
+  items:
+  - deguchi
+- type: prompt
+  ask:
+    en: Ask where the entrance is.
+    pt: Pergunte onde fica a entrada.
+  answer:
+    speaker: protagonist
+    text: 入口[いりぐち] は どこ です か。
+  items:
+  - iriguchi
+  - doko-desu-ka
+- type: prompt
+  ask:
+    en: He asks if you can read hiragana. How?
+    pt: Ele pergunta se você consegue ler hiragana. Como?
+  answer:
+    speaker: protagonist
+    text: ひらがな は 読[よ]めます か。
+  items:
+  - yomemasu-ka
+- type: prompt
+  ask:
+    en: 'Say: Japanese is difficult.'
+    pt: 'Diga: japonês é difícil.'
+  answer:
+    speaker: protagonist
+    text: 日本語[にほんご] は 難[むずか]しい です。
+  items:
+  - muzukashii
+- type: prompt
+  ask:
+    en: Promise to do your best.
+    pt: Prometa se esforçar.
+  answer:
+    speaker: protagonist
+    text: 頑張[がんば]ります！
+  items:
+  - ganbarimasu
+- type: narrator
+  text:
+    en: Signs at the station are also in English, and in Hamamatsu many are in Portuguese too. Learning «出口[でぐち]» and «入口[いりぐち]» first saves you every day.
+    pt: As placas da estação também estão em inglês, e em Hamamatsu muitas em português. Aprender «出口[でぐち]» e «入口[いりぐち]» primeiro salva você todo dia.
+- type: prompt
+  ask:
+    en: 'Once more: say “hiragana (the round script)”.'
+    pt: 'Mais uma vez: diga “hiragana (a escrita arredondada)”.'
+  answer:
+    speaker: protagonist
+    text: ひらがな
+  items:
+  - hiragana
+- type: prompt
+  ask:
+    en: 'Once more: say “katakana (the angular script, for foreign words)”.'
+    pt: 'Mais uma vez: diga “katakana (a escrita angulosa, para palavras estrangeiras)”.'
+  answer:
+    speaker: protagonist
+    text: カタカナ
+  items:
+  - katakana
+- type: prompt
+  ask:
+    en: 'Once more: say “kanji (Chinese characters)”.'
+    pt: 'Mais uma vez: diga “kanji (caracteres chineses)”.'
+  answer:
+    speaker: protagonist
+    text: 漢字[かんじ]
+  items:
+  - kanji
+- type: prompt
+  ask:
+    en: 'Once more: say “station”.'
+    pt: 'Mais uma vez: diga “estação”.'
+  answer:
+    speaker: protagonist
+    text: 駅[えき]
+  items:
+  - eki
+- type: prompt
+  ask:
+    en: 'Once more: say “exit”.'
+    pt: 'Mais uma vez: diga “saída”.'
+  answer:
+    speaker: protagonist
+    text: 出口[でぐち]
+  items:
+  - deguchi
+- type: prompt
+  ask:
+    en: 'Once more: say “entrance”.'
+    pt: 'Mais uma vez: diga “entrada”.'
+  answer:
+    speaker: protagonist
+    text: 入口[いりぐち]
+  items:
+  - iriguchi
+- type: prompt
+  ask:
+    en: 'Once more: say “over there”.'
+    pt: 'Mais uma vez: diga “ali, lá”.'
+  answer:
+    speaker: protagonist
+    text: あそこ
+  items:
+  - asoko
+- type: prompt
+  ask:
+    en: 'Once more: say “can you read (it)?”.'
+    pt: 'Mais uma vez: diga “consegue ler?”.'
+  answer:
+    speaker: protagonist
+    text: 読[よ]めます か
+  items:
+  - yomemasu-ka
+- type: prompt
+  ask:
+    en: 'Once more: say “difficult”.'
+    pt: 'Mais uma vez: diga “difícil”.'
+  answer:
+    speaker: protagonist
+    text: 難[むずか]しい
+  items:
+  - muzukashii
+- type: prompt
+  ask:
+    en: 'Once more: say “I''ll do my best”.'
+    pt: 'Mais uma vez: diga “vou me esforçar”.'
+  answer:
+    speaker: protagonist
+    text: 頑張[がんば]ります
+  items:
+  - ganbarimasu
+- type: prompt
+  ask:
+    en: 'Once more: say “where is it?”.'
+    pt: 'Mais uma vez: diga “onde fica?”.'
+  answer:
+    speaker: protagonist
+    text: どこ です か
+  items:
+  - doko-desu-ka
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “welcome (shop staff) — and “this, please — and “please (give me) — and “shall I heat it? — and “please (yes, do)”.'
+    pt: 'Diga: “bem-vindo (dito pelos funcionários) — e “isto, por favor — e “por favor (me dê) — e “quer que esquente? — e “por favor (sim, faça)”.'
+  answer:
+    speaker: protagonist
+    text: いらっしゃいませ … これ ください … ください … 温[あたた]めます か … お願[ねが]いします
+  items:
+  - irasshaimase
+  - kore-kudasai
+  - kudasai
+  - atatamemasu-ka
+  - onegaishimasu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “bag — and “I don''t need it — and “how much is it? — and “yen — and “hundred”.'
+    pt: 'Diga: “sacola — e “não preciso — e “quanto é? — e “iene — e “cem”.'
+  answer:
+    speaker: protagonist
+    text: 袋[ふくろ] … いりません … いくら です か … 円[えん] … 百[ひゃく]
+  items:
+  - fukuro
+  - irimasen
+  - ikura
+  - en
+  - hyaku
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “card — and “thank you (for what was done) — and “entrance hall (where shoes come off) — and “shoes — and “slippers”.'
+    pt: 'Diga: “cartão — e “obrigado (pelo que foi feito) — e “entrada (onde se tiram os sapatos) — e “sapatos — e “chinelos”.'
+  answer:
+    speaker: protagonist
+    text: カード … ありがとう ございました … 玄関[げんかん] … 靴[くつ] … スリッパ
+  items:
+  - kaado
+  - arigatou-gozaimashita
+  - genkan
+  - kutsu
+  - surippa
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “please (go ahead / here you are) — and “excuse me (entering) — and “here — and “this (near me) — and “that (near you)”.'
+    pt: 'Diga: “por favor (pode entrar / aqui está) — e “com licença (ao entrar) — e “aqui — e “isto (perto de mim) — e “isso (perto de você)”.'
+  answer:
+    speaker: protagonist
+    text: どうぞ … 失礼[しつれい] します … ここ … これ … それ
+  items:
+  - douzo
+  - shitsurei
+  - koko
+  - kore
+  - sore
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “what is it? — and “toilet — and “''s / of — and “thank you (polite) — and “understood / I see”.'
+    pt: 'Diga: “o que é? — e “banheiro — e “de (posse) — e “obrigado (educado) — e “entendi”.'
+  answer:
+    speaker: protagonist
+    text: 何[なん] です か … トイレ … の … ありがとう ございます … わかりました
+  items:
+  - nan-desu-ka
+  - toire
+  - no-particle
+  - arigatou
+  - wakarimashita
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

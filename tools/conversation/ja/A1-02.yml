@@ -1,0 +1,444 @@
+# UNIT ja A1-02 — written by AI (Claude) for Casus; expanded from src/A1-02.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-02
+level: A1
+number: 2
+protagonist: m
+title:
+  en: The genkan
+  pt: O genkan
+situation:
+  en: Mrs Suzuki shows you the flat. At the door there is a low step — the genkan.
+  pt: A senhora Suzuki mostra o apartamento. Na porta há um degrau baixo — o genkan.
+learn_lessons: []
+culture: Shoes off, slippers on — and toilet slippers
+new_items:
+- id: genkan
+  text: 玄関[げんかん]
+  meaning:
+    en: entrance hall (where shoes come off)
+    pt: entrada (onde se tiram os sapatos)
+- id: kutsu
+  text: 靴[くつ]
+  meaning:
+    en: shoes
+    pt: sapatos
+- id: surippa
+  text: スリッパ
+  meaning:
+    en: slippers
+    pt: chinelos
+- id: douzo
+  text: どうぞ
+  meaning:
+    en: please (go ahead / here you are)
+    pt: por favor (pode entrar / aqui está)
+- id: shitsurei
+  text: 失礼[しつれい] します
+  meaning:
+    en: excuse me (entering)
+    pt: com licença (ao entrar)
+- id: koko
+  text: ここ
+  meaning:
+    en: here
+    pt: aqui
+- id: kore
+  text: これ
+  meaning:
+    en: this (near me)
+    pt: isto (perto de mim)
+- id: sore
+  text: それ
+  meaning:
+    en: that (near you)
+    pt: isso (perto de você)
+- id: nan-desu-ka
+  text: 何[なん] です か
+  meaning:
+    en: what is it?
+    pt: o que é?
+- id: toire
+  text: トイレ
+  meaning:
+    en: toilet
+    pt: banheiro
+- id: no-particle
+  text: の
+  meaning:
+    en: '''s / of'
+    pt: de (posse)
+- id: arigatou
+  text: ありがとう ございます
+  meaning:
+    en: thank you (polite)
+    pt: obrigado (educado)
+- id: wakarimashita
+  text: わかりました
+  meaning:
+    en: understood / I see
+    pt: entendi
+reviews:
+- item: konnichiwa
+  from: A1-01
+- item: hajimemashite
+  from: A1-01
+- item: desu
+  from: A1-01
+- item: yoroshiku
+  from: A1-01
+- item: burajiru
+  from: A1-01
+- item: kara
+  from: A1-01
+- item: kimashita
+  from: A1-01
+- item: watashi
+  from: A1-01
+- item: suzuki-san
+  from: A1-01
+- item: hai
+  from: A1-01
+- item: sumimasen
+  from: A1-01
+- item: wakarimasen
+  from: A1-01
+steps:
+- type: narrator
+  text:
+    en: Mrs Suzuki shows you the flat. At the door there is a low step — the genkan. Listen to the conversation; you don't need to understand it yet.
+    pt: A senhora Suzuki mostra o apartamento. Na porta há um degrau baixo — o genkan. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: suzuki
+    text: どうぞ。 ここ は 玄関[げんかん] です。
+    meaning:
+      en: Please come in. This is the genkan.
+      pt: Pode entrar. Aqui é o genkan.
+  - speaker: protagonist
+    text: 失礼[しつれい] します。
+    meaning:
+      en: Excuse me.
+      pt: Com licença.
+  - speaker: suzuki
+    text: あ、 靴[くつ]！ 靴[くつ] は ここ です。
+    meaning:
+      en: Oh, your shoes! Shoes stay here.
+      pt: Ah, os sapatos! Os sapatos ficam aqui.
+  - speaker: protagonist
+    text: すみません。 これ は 何[なん] です か。
+    meaning:
+      en: Sorry. What is this?
+      pt: Desculpe. O que é isto?
+  - speaker: suzuki
+    text: それ は スリッパ です。 どうぞ。
+    meaning:
+      en: Those are slippers. Here you are.
+      pt: Isso são chinelos. Aqui estão.
+  - speaker: protagonist
+    text: ありがとう ございます。
+    meaning:
+      en: Thank you.
+      pt: Obrigado.
+  - speaker: suzuki
+    text: これ は トイレ の スリッパ です。
+    meaning:
+      en: These are the toilet slippers.
+      pt: Estes são os chinelos do banheiro.
+  - speaker: protagonist
+    text: トイレ の スリッパ？ はい、 わかりました。
+    meaning:
+      en: Toilet slippers? Yes, I see.
+      pt: Chinelos do banheiro? Sim, entendi.
+- type: narrator
+  text:
+    en: When you enter someone's home, say «失礼[しつれい] します» — literally 'I commit a rudeness'.
+    pt: Ao entrar na casa de alguém, diga «失礼[しつれい] します» — literalmente 'cometo uma falta de educação'.
+- type: prompt
+  ask:
+    en: Enter, politely.
+    pt: Entre, com educação.
+  answer:
+    speaker: protagonist
+    text: 失礼[しつれい] します。
+  items:
+  - shitsurei
+- type: narrator
+  text:
+    en: The low step at the door is the «玄関[げんかん]». Shoes stay there, always.
+    pt: O degrau baixo na porta é o «玄関[げんかん]». Os sapatos ficam ali, sempre.
+- type: prompt
+  ask:
+    en: 'Say: shoes.'
+    pt: 'Diga: sapatos.'
+  answer:
+    speaker: protagonist
+    text: 靴[くつ]
+  items:
+  - kutsu
+- type: prompt
+  ask:
+    en: 'Say: the genkan.'
+    pt: 'Diga: o genkan.'
+  answer:
+    speaker: protagonist
+    text: 玄関[げんかん]
+  items:
+  - genkan
+- type: prompt
+  ask:
+    en: 'Say: shoes stay here — ''shoes, here it is''.'
+    pt: 'Diga: os sapatos ficam aqui — ''sapatos, é aqui''.'
+  answer:
+    speaker: protagonist
+    text: 靴[くつ] は ここ です。
+  items:
+  - kutsu
+  - koko
+- type: narrator
+  text:
+    en: «これ» is something near you, «それ» something near the other person. «何[なん] です か» asks what it is.
+    pt: «これ» é algo perto de você, «それ» algo perto da outra pessoa. «何[なん] です か» pergunta o que é.
+- type: prompt
+  ask:
+    en: Point at something near you and ask what it is.
+    pt: Aponte para algo perto de você e pergunte o que é.
+  answer:
+    speaker: protagonist
+    text: これ は 何[なん] です か。
+  items:
+  - kore
+  - nan-desu-ka
+- type: prompt
+  ask:
+    en: 'She holds slippers. Say: those are slippers.'
+    pt: 'Ela segura chinelos. Diga: isso são chinelos.'
+  answer:
+    speaker: protagonist
+    text: それ は スリッパ です。
+  items:
+  - sore
+  - surippa
+- type: prompt
+  ask:
+    en: She hands them to you with «どうぞ». Thank her.
+    pt: Ela entrega com «どうぞ». Agradeça.
+  answer:
+    speaker: protagonist
+    text: ありがとう ございます。
+  items:
+  - arigatou
+- type: narrator
+  text:
+    en: '«の» joins two nouns like ''de'': «トイレ の スリッパ» — slippers of the toilet. They stay in the toilet; never walk out in them.'
+    pt: '«の» junta dois substantivos como ''de'': «トイレ の スリッパ» — chinelos do banheiro. Ficam no banheiro; nunca saia com eles.'
+- type: prompt
+  ask:
+    en: 'Say: toilet slippers.'
+    pt: 'Diga: chinelos do banheiro.'
+  answer:
+    speaker: protagonist
+    text: トイレ の スリッパ
+  items:
+  - toire
+  - no-particle
+  - surippa
+- type: prompt
+  ask:
+    en: 'Say: I see, understood.'
+    pt: 'Diga: entendi.'
+  answer:
+    speaker: protagonist
+    text: わかりました。
+  items:
+  - wakarimashita
+- type: prompt
+  ask:
+    en: 'Offer her something: here you are.'
+    pt: 'Ofereça algo a ela: aqui está.'
+  answer:
+    speaker: protagonist
+    text: どうぞ。
+  items:
+  - douzo
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil muita gente entra de sapato em casa. No Japão, nunca — e no tatame, nem de chinelo.
+- type: prompt
+  ask:
+    en: 'Once more: say “entrance hall (where shoes come off)”.'
+    pt: 'Mais uma vez: diga “entrada (onde se tiram os sapatos)”.'
+  answer:
+    speaker: protagonist
+    text: 玄関[げんかん]
+  items:
+  - genkan
+- type: prompt
+  ask:
+    en: 'Once more: say “please (go ahead / here you are)”.'
+    pt: 'Mais uma vez: diga “por favor (pode entrar / aqui está)”.'
+  answer:
+    speaker: protagonist
+    text: どうぞ
+  items:
+  - douzo
+- type: prompt
+  ask:
+    en: 'Once more: say “excuse me (entering)”.'
+    pt: 'Mais uma vez: diga “com licença (ao entrar)”.'
+  answer:
+    speaker: protagonist
+    text: 失礼[しつれい] します
+  items:
+  - shitsurei
+- type: prompt
+  ask:
+    en: 'Once more: say “here”.'
+    pt: 'Mais uma vez: diga “aqui”.'
+  answer:
+    speaker: protagonist
+    text: ここ
+  items:
+  - koko
+- type: prompt
+  ask:
+    en: 'Once more: say “this (near me)”.'
+    pt: 'Mais uma vez: diga “isto (perto de mim)”.'
+  answer:
+    speaker: protagonist
+    text: これ
+  items:
+  - kore
+- type: prompt
+  ask:
+    en: 'Once more: say “that (near you)”.'
+    pt: 'Mais uma vez: diga “isso (perto de você)”.'
+  answer:
+    speaker: protagonist
+    text: それ
+  items:
+  - sore
+- type: prompt
+  ask:
+    en: 'Once more: say “what is it?”.'
+    pt: 'Mais uma vez: diga “o que é?”.'
+  answer:
+    speaker: protagonist
+    text: 何[なん] です か
+  items:
+  - nan-desu-ka
+- type: prompt
+  ask:
+    en: 'Once more: say “toilet”.'
+    pt: 'Mais uma vez: diga “banheiro”.'
+  answer:
+    speaker: protagonist
+    text: トイレ
+  items:
+  - toire
+- type: prompt
+  ask:
+    en: 'Once more: say “''s / of”.'
+    pt: 'Mais uma vez: diga “de (posse)”.'
+  answer:
+    speaker: protagonist
+    text: の
+  items:
+  - no-particle
+- type: prompt
+  ask:
+    en: 'Once more: say “thank you (polite)”.'
+    pt: 'Mais uma vez: diga “obrigado (educado)”.'
+  answer:
+    speaker: protagonist
+    text: ありがとう ございます
+  items:
+  - arigatou
+- type: prompt
+  ask:
+    en: 'Once more: say “understood / I see”.'
+    pt: 'Mais uma vez: diga “entendi”.'
+  answer:
+    speaker: protagonist
+    text: わかりました
+  items:
+  - wakarimashita
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Hello / good afternoon — and “Nice to meet you (first meeting)”.'
+    pt: 'Diga: “Olá / boa tarde — e “Muito prazer (no primeiro encontro)”.'
+  answer:
+    speaker: protagonist
+    text: こんにちは … はじめまして
+  items:
+  - konnichiwa
+  - hajimemashite
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “am / is / are (polite) — and “Please treat me kindly (said when meeting)”.'
+    pt: 'Diga: “sou / é (educado) — e “Conto com a senhora (dito ao se conhecer)”.'
+  answer:
+    speaker: protagonist
+    text: です … よろしく お願[ねが]いします
+  items:
+  - desu
+  - yoroshiku
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Brazil — and “from”.'
+    pt: 'Diga: “Brasil — e “de (origem)”.'
+  answer:
+    speaker: protagonist
+    text: ブラジル … から
+  items:
+  - burajiru
+  - kara
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “came — and “I”.'
+    pt: 'Diga: “vim — e “eu”.'
+  answer:
+    speaker: protagonist
+    text: 来[き]ました … 私[わたし]
+  items:
+  - kimashita
+  - watashi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Mrs Suzuki — and “yes”.'
+    pt: 'Diga: “senhora Suzuki — e “sim”.'
+  answer:
+    speaker: protagonist
+    text: 鈴木[すずき] さん … はい
+  items:
+  - suzuki-san
+  - hai
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “excuse me / sorry — and “I don''t understand”.'
+    pt: 'Diga: “com licença / desculpe — e “não entendo”.'
+  answer:
+    speaker: protagonist
+    text: すみません … わかりません
+  items:
+  - sumimasen
+  - wakarimasen
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
