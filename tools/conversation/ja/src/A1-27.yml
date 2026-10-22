@@ -1,0 +1,43 @@
+id: A1-27
+protagonist: f
+title: [The house, A casa]
+situation: ["At night the building shakes for a few seconds. In the morning Mrs Suzuki explains earthquakes, and why her house is made of wood.", "À noite o prédio treme por alguns segundos. De manhã a senhora Suzuki explica os terremotos, e por que a casa dela é de madeira."]
+learn: []
+culture: Earthquake drills
+items:
+  - [jishin, "地震[じしん]", "earthquake", "terremoto"]
+  - [yuremashita, "揺[ゆ]れました", "(it) shook", "tremeu"]
+  - [kowai, "怖[こわ]い", "scary, I'm scared", "dá medo, estou com medo"]
+  - [ie, "家[いえ]", "house, home", "casa"]
+  - [mokuzou, "木造[もくぞう]", "made of wood", "de madeira", {rare: true}]
+  - [tsukue-no-shita, "机[つくえ] の 下[した]", "under the desk/table", "debaixo da mesa"]
+  - [kara-because, "〜から", "because, so", "porque, então"]
+  - [abunai, "危[あぶ]ない", "dangerous", "perigoso"]
+  - [nigemasu, "逃[に]げます", "escape, run away", "fujo, saio correndo"]
+  - [kunren, "訓練[くんれん]", "drill, training", "simulado, treinamento"]
+  - [daijoubu-datta, "大丈夫[だいじょうぶ] でした か", "were you okay?", "você estava bem?"]
+dialogue:
+  - [suzuki, "昨日[きのう] の 夜[よる]、 地震[じしん] が ありました ね。 大丈夫[だいじょうぶ] でした か。", "There was an earthquake last night. Were you okay?", "Ontem à noite teve terremoto. Você estava bem?"]
+  - [protagonist, "はい。 でも すごく 揺[ゆ]れました。 怖[こわ]かった です。", "Yes. But it shook a lot. It was scary.", "Sim. Mas tremeu muito. Deu medo."]
+  - [suzuki, "日本[にほん] は 地震[じしん] が 多[おお]い です から。", "Japan has many earthquakes, you see.", "É que no Japão tem muito terremoto."]
+  - [protagonist, "鈴木[すずき] さん の 家[いえ] は 木造[もくぞう] です か。", "Is your house made of wood?", "A sua casa é de madeira?"]
+  - [suzuki, "はい。 木[き] は 揺[ゆ]れます から、 倒[たお]れません。", "Yes. Wood sways, so it doesn't fall.", "É. A madeira balança, por isso não cai."]
+  - [protagonist, "地震[じしん] の 時[とき]、 何[なに] を します か。", "What do you do in an earthquake?", "O que se faz num terremoto?"]
+  - [suzuki, "まず 机[つくえ] の 下[した] に 入[はい]ります。 外[そと] は 危[あぶ]ない です。", "First get under the table. Outside is dangerous.", "Primeiro entre debaixo da mesa. Lá fora é perigoso."]
+  - [suzuki, "来週[らいしゅう]、 町[まち] の 訓練[くんれん] が あります よ。 一緒[いっしょ] に 行[い]きましょう。", "There's a town drill next week. Let's go together.", "Semana que vem tem simulado do bairro. Vamos juntas."]
+teach:
+  - ask: ["Say: an earthquake.", "Diga: um terremoto.", "地震[じしん]", jishin]
+  - ask: ["Say: it shook.", "Diga: tremeu.", "揺[ゆ]れました。", yuremashita]
+  - ask: ["Say: it's scary.", "Diga: dá medo.", "怖[こわ]い です。", kowai]
+  - ask: ["Ask her: were you okay?", "Pergunte a ela: você estava bem?", "大丈夫[だいじょうぶ] でした か。", daijoubu-datta]
+  - ask: ["Say: a house.", "Diga: uma casa.", "家[いえ]", ie]
+  - ask: ["Say: made of wood.", "Diga: de madeira.", "木造[もくぞう]", mokuzou]
+  - note: ["«から» after a sentence gives the reason: «木[き] は 揺[ゆ]れます から、 倒[たお]れません» — wood sways, so it doesn't fall. The reason comes first, then what follows — the opposite order of «porque».", "«から» depois de uma frase dá o motivo: «木[き] は 揺[ゆ]れます から、 倒[たお]れません» — a madeira balança, por isso não cai. O motivo vem antes, depois a consequência — ao contrário do «porque»."]
+  - ask: ["Say the word for because.", "Diga a palavra para «porque».", "〜から", kara-because]
+  - ask: ["Say: it's dangerous, so…", "Diga: é perigoso, então…", "危[あぶ]ない です から…", abunai, kara-because]
+  - build: [tsukue-no-shita, ["下[した]", "机[つくえ] の 下[した]"]]
+  - ask: ["Say where to go: under the table.", "Diga para onde ir: debaixo da mesa.", "机[つくえ] の 下[した]", tsukue-no-shita]
+  - ask: ["Say: escape, run away.", "Diga: fugir.", "逃[に]げます。", nigemasu]
+  - ask: ["Say: a drill.", "Diga: um simulado.", "訓練[くんれん]", kunren]
+  - note: ["In a quake: under a table, hold its legs, wait. Don't run outside while it shakes — roof tiles and glass fall. Schools and towns hold drills, «訓練[くんれん]», and phones sound an alarm seconds before strong shaking.", "No terremoto: debaixo da mesa, segure os pés dela, espere. Não saia correndo enquanto treme — caem telhas e vidro. Escolas e bairros fazem simulados, «訓練[くんれん]», e o celular toca um alarme segundos antes de um tremor forte."]
+  - pt_only: "O Brasil quase não tem terremoto, então ninguém aprende o que fazer. No Japão até as crianças pequenas sabem: mesa, cabeça protegida, esperar."
