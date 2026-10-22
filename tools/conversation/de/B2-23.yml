@@ -1,0 +1,944 @@
+# UNIT de B2-23 — written by AI (Claude) for Casus; expanded from src/B2-23.yml by tools/expand_unit.py. Edit the source.
+
+id: B2-23
+level: B2
+number: 23
+protagonist: f
+title:
+  en: Small talk at the fair
+  ar: الدردشة في المعرض
+  mk: Мал разговор на саемот
+situation:
+  en: The Leipzig Book Fair. In the queue for coffee, a stranger starts talking. Small talk — German style.
+  ar: معرض لايبزيغ للكتاب. في طابور القهوة يبدأ غريب الحديث. دردشة — على الطريقة الألمانية.
+  mk: Саемот на книгата во Лајпциг. Во редот за кафе, непознат почнува разговор. Мал разговор — на германски начин.
+learn_lessons:
+- b2-question-tags
+culture: Small talk with strangers
+new_items:
+- id: die-buchmesse
+  text: die Buchmesse
+  meaning:
+    en: the book fair
+    ar: معرض الكتاب
+    mk: саемот на книгата
+- id: oder-tag
+  text: …, oder?
+  meaning:
+    en: …, isn't it? / right?
+    ar: …، أليس كذلك؟
+    mk: …, нели?
+- id: ne-tag
+  text: …, ne?
+  meaning:
+    en: …, right? (colloquial)
+    ar: …، صح؟ (عاميًا)
+    mk: …, а? (разговорно)
+- id: gell
+  text: …, gell?
+  meaning:
+    en: …, right? (southern)
+    ar: …، صح؟ (جنوبيًا)
+    mk: …, нели? (јужно)
+  rare: true
+- id: voll-heute
+  text: ganz schön voll
+  meaning:
+    en: pretty crowded
+    ar: مزدحم جدًا
+    mk: прилично полно
+- id: die-schlange
+  text: die Schlange
+  meaning:
+    en: the queue
+    ar: الطابور
+    mk: редицата
+- id: erwischt
+  text: Erwischt!
+  meaning:
+    en: Caught out!
+    ar: كشفتِني!
+    mk: Ме фативте!
+- id: beruflich-oder-privat
+  text: beruflich oder privat
+  meaning:
+    en: for work or for pleasure
+    ar: للعمل أم للمتعة
+    mk: службено или приватно
+- id: die-lesung
+  text: die Lesung
+  meaning:
+    en: the reading (by an author)
+    ar: القراءة (من الكاتب)
+    mk: читањето
+- id: viel-spass-auf
+  text: Viel Spaß auf der Messe!
+  meaning:
+    en: Enjoy the fair!
+    ar: استمتع بالمعرض!
+    mk: Уживајте на саемот!
+reviews:
+- item: der-tuersteher-e
+  from: A2-20-e
+  for:
+  - en
+- item: wie-viele-seid-ihr-e
+  from: A2-20-e
+  for:
+  - en
+- item: wir-freuen-uns-e
+  from: A2-20-e
+  for:
+  - en
+- item: ich-ziehe-mich-um-e
+  from: A2-20-e
+  for:
+  - en
+- item: sich-treffen-e
+  from: A2-20-e
+  for:
+  - en
+- item: heute-nicht-rein-e
+  from: A2-20-e
+  for:
+  - en
+- item: keine-fotos-e
+  from: A2-20-e
+  for:
+  - en
+- item: die-garderobe-e
+  from: A2-20-e
+  for:
+  - en
+- item: tanzen-e
+  from: A2-20-e
+  for:
+  - en
+- item: bis-morgens-e
+  from: A2-20-e
+  for:
+  - en
+- item: die-tafel
+  from: B1-22
+- item: freiwillig
+  from: B1-22
+- item: begleiten
+  from: B1-22
+- item: der-termin-amt
+  from: B1-22
+- item: lebensmittel
+  from: B1-22
+- item: verteilen
+  from: B1-22
+- item: die-tuer-oeffnen
+  from: B1-22
+- item: ohne-sie
+  from: B1-22
+- item: es-macht-mir-spass
+  from: B1-22
+- item: zurueckgeben
+  from: B1-22
+- item: der-rentner
+  from: B1-22
+- item: sehr-geehrte
+  from: B2-08
+- item: mfg
+  from: B2-08
+- item: der-betreff
+  from: B2-08
+- item: hiermit-teile-ich
+  from: B2-08
+- item: ich-bitte-um
+  from: B2-08
+- item: die-rueckmeldung
+  from: B2-08
+- item: umgehend
+  from: B2-08
+- item: der-anhang
+  from: B2-08
+- item: die-mietminderung
+  from: B2-08
+- item: schriftlich
+  from: B2-08
+- item: der-konflikt
+  from: B2-16
+- item: die-loesung
+  from: B2-16
+- item: der-kompromiss
+  from: B2-16
+- item: vermitteln
+  from: B2-16
+- item: dennoch
+  from: B2-16
+- item: obwohl-b2
+  from: B2-16
+- item: der-standpunkt
+  from: B2-16
+- item: die-probephase
+  from: B2-16
+- item: einverstanden
+  from: B2-16
+- item: blockieren
+  from: B2-16
+- item: der-betriebsrat
+  from: B2-20
+- item: die-ueberstunden
+  from: B2-20
+- item: die-urlaubstage
+  from: B2-20
+- item: der-urlaubsantrag
+  from: B2-20
+- item: ist-geregelt
+  from: B2-20
+- item: ist-festgelegt
+  from: B2-20
+- item: ist-abgelehnt
+  from: B2-20
+- item: der-brueckentag
+  from: B2-20
+- item: ausgleichen
+  from: B2-20
+- item: das-arbeitszeitgesetz
+  from: B2-20
+- item: der-betriebsuebergang-ea
+  from: B2-22-ea
+  for:
+  - en
+  - ar
+- item: die-kenntnisnahme-ea
+  from: B2-22-ea
+  for:
+  - en
+  - ar
+- item: unterschreiben-ohne-ea
+  from: B2-22-ea
+  for:
+  - en
+  - ar
+- item: die-vertragsaenderung-ea
+  from: B2-22-ea
+  for:
+  - en
+  - ar
+- item: die-nachzahlung-ea
+  from: B2-22-ea
+  for:
+  - en
+  - ar
+- item: die-ratenzahlung-ea
+  from: B2-22-ea
+  for:
+  - en
+  - ar
+- item: das-arbeitsgericht-ea
+  from: B2-22-ea
+  for:
+  - en
+  - ar
+- item: der-lohnrueckstand-ea
+  from: B2-22-ea
+  for:
+  - en
+  - ar
+- item: die-pruefung-durch-ea
+  from: B2-22-ea
+  for:
+  - en
+  - ar
+- item: der-versicherungsstatus-ea
+  from: B2-22-ea
+  for:
+  - en
+  - ar
+- item: sich-treffen-a
+  from: A2-20-a
+  for:
+  - ar
+- item: ich-freue-mich-a
+  from: A2-20-a
+  for:
+  - ar
+- item: nach-der-arbeit-a
+  from: A2-20-a
+  for:
+  - ar
+- item: ich-trinke-keinen-a
+  from: A2-20-a
+  for:
+  - ar
+- item: eine-limo-a
+  from: A2-20-a
+  for:
+  - ar
+- item: die-kollegen-a
+  from: A2-20-a
+  for:
+  - ar
+- item: sich-unterhalten-a
+  from: A2-20-a
+  for:
+  - ar
+- item: entspannt-a
+  from: A2-20-a
+  for:
+  - ar
+- item: nicht-so-spaet-a
+  from: A2-20-a
+  for:
+  - ar
+- item: ich-muss-los-a
+  from: A2-20-a
+  for:
+  - ar
+- item: sich-treffen-m
+  from: A2-20-m
+  for:
+  - mk
+- item: ich-freue-mich-m
+  from: A2-20-m
+  for:
+  - mk
+- item: die-livemusik-m
+  from: A2-20-m
+  for:
+  - mk
+- item: wie-zu-hause-m
+  from: A2-20-m
+  for:
+  - mk
+- item: sich-setzen-m
+  from: A2-20-m
+  for:
+  - mk
+- item: tanzen-m
+  from: A2-20-m
+  for:
+  - mk
+- item: mitmachen-m
+  from: A2-20-m
+  for:
+  - mk
+- item: ich-erinnere-mich-m
+  from: A2-20-m
+  for:
+  - mk
+- item: laut-m
+  from: A2-20-m
+  for:
+  - mk
+- item: ich-fuehle-mich-wohl-m
+  from: A2-20-m
+  for:
+  - mk
+- item: die-kenntnisnahme-m
+  from: B2-22-m
+  for:
+  - mk
+- item: der-neue-besitzer-m
+  from: B2-22-m
+  for:
+  - mk
+- item: unterschreiben-ohne-m
+  from: B2-22-m
+  for:
+  - mk
+- item: die-vertragsaenderung-m
+  from: B2-22-m
+  for:
+  - mk
+- item: die-nachzahlung-m
+  from: B2-22-m
+  for:
+  - mk
+- item: die-ratenzahlung-m
+  from: B2-22-m
+  for:
+  - mk
+- item: die-beratung-m-m
+  from: B2-22-m
+  for:
+  - mk
+- item: die-formalitaet-m
+  from: B2-22-m
+  for:
+  - mk
+- item: verspaetet-m
+  from: B2-22-m
+  for:
+  - mk
+- item: der-dolmetscher-m
+  from: B2-22-m
+  for:
+  - mk
+- item: schoenen-tag-noch
+  from: A1-04
+- item: der-smalltalk
+  from: A2-25
+steps:
+- type: narrator
+  text:
+    en: The Leipzig Book Fair. In the queue for coffee, a stranger starts talking. Small talk — German style. Listen to the conversation; you don't need to understand it yet.
+    ar: معرض لايبزيغ للكتاب. في طابور القهوة يبدأ غريب الحديث. دردشة — على الطريقة الألمانية. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.
+    mk: Саемот на книгата во Лајпциг. Во редот за кафе, непознат почнува разговор. Мал разговор — на германски начин. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: fahrer
+    text: Ganz schön voll heute, oder?
+    meaning:
+      en: Pretty crowded today, isn't it?
+      ar: مزدحم جدًا اليوم، أليس كذلك؟
+      mk: Прилично полно денес, нели?
+  - speaker: protagonist
+    text: Ja! Die Schlange ist so lang wie das Buch, das ich kaufen will.
+    meaning:
+      en: Yes! The queue is as long as the book I want to buy.
+      ar: نعم! الطابور طويل مثل الكتاب الذي أريد شراءه.
+      mk: Да! Редицата е долга како книгата што сакам да ја купам.
+  - speaker: fahrer
+    text: Ha! Sind Sie beruflich oder privat hier?
+    meaning:
+      en: Ha! Are you here for work or for pleasure?
+      ar: ها! هل أنتِ هنا للعمل أم للمتعة؟
+      mk: Ха! Тука сте службено или приватно?
+  - speaker: protagonist
+    text: Privat. Ich will zur Lesung um drei. Die Autorin ist toll, ne?
+    meaning:
+      en: For pleasure. I want to go to the reading at three. The author is great, right?
+      ar: للمتعة. أريد حضور القراءة في الثالثة. الكاتبة رائعة، صح؟
+      mk: Приватно. Сакам да одам на читањето во три. Авторката е одлична, а?
+  - speaker: fahrer
+    text: Sehr! Sie kommen nicht aus Leipzig, oder?
+    meaning:
+      en: Very! You're not from Leipzig, are you?
+      ar: جدًا! أنتِ لستِ من لايبزيغ، أليس كذلك؟
+      mk: Многу! Вие не сте од Лајпциг, нели?
+  - speaker: protagonist
+    text: Nein, aber ich wohne hier. Und Sie? Sie klingen wie aus Bayern, gell?
+    meaning:
+      en: No, but I live here. And you? You sound like you're from Bavaria, right?
+      ar: لا، لكنني أسكن هنا. وأنت؟ تبدو من بافاريا، صح؟
+      mk: Не, но живеам тука. А вие? Звучите како од Баварија, нели?
+  - speaker: fahrer
+    text: Erwischt! ... Oh, ich bin dran. Schönen Tag noch!
+    meaning:
+      en: Caught out! ... Oh, it's my turn. Have a nice day!
+      ar: كشفتِني! ... آه، جاء دوري. يومًا سعيدًا!
+      mk: Ме фативте! ... О, јас сум на ред. Убав ден уште!
+  - speaker: protagonist
+    text: Ihnen auch! Viel Spaß auf der Messe.
+    meaning:
+      en: You too! Enjoy the fair.
+      ar: ولك أيضًا! استمتع بالمعرض.
+      mk: И вам! Уживајте на саемот.
+- type: prompt
+  ask:
+    en: 'Say: the book fair.'
+    ar: 'قولي: معرض الكتاب.'
+    mk: 'Кажете: саемот на книгата.'
+  answer:
+    speaker: protagonist
+    text: Die Buchmesse.
+  items:
+  - die-buchmesse
+- type: prompt
+  ask:
+    en: 'He says: pretty crowded today.'
+    ar: 'يقول: مزدحم جدًا اليوم.'
+    mk: 'Тој вели: прилично полно денес.'
+  answer:
+    speaker: protagonist
+    text: Ganz schön voll heute.
+  items:
+  - voll-heute
+- type: narrator
+  text:
+    en: 'Question tags invite agreement: «…, oder?» (everywhere), «…, ne?» (north and centre, casual), «…, gell?» (south). They make a statement friendly: «Die Autorin ist toll, ne?».'
+    ar: 'أدوات التذييل تدعو إلى الموافقة: «…, oder?» (في كل مكان)، «…, ne?» (الشمال والوسط، عاميًا)، «…, gell?» (الجنوب). تجعل الجملة ودّية: «Die Autorin ist toll, ne?».'
+    mk: 'Прашалните додатоци бараат согласност: «…, oder?» (насекаде), «…, ne?» (север и центар, разговорно), «…, gell?» (југ). Ја прават изјавата пријателска: «Die Autorin ist toll, ne?».'
+- type: prompt
+  ask:
+    en: 'Say: crowded, isn''t it?'
+    ar: 'قولي: مزدحم، أليس كذلك؟'
+    mk: 'Кажете: полно, нели?'
+  answer:
+    speaker: protagonist
+    text: Voll, oder?
+  items:
+  - oder-tag
+- type: prompt
+  ask:
+    en: 'Say casually: the author is great, right?'
+    ar: 'قولي عاميًا: الكاتبة رائعة، صح؟'
+    mk: 'Кажете разговорно: авторката е одлична, а?'
+  answer:
+    speaker: protagonist
+    text: Die Autorin ist toll, ne?
+  items:
+  - ne-tag
+- type: prompt
+  ask:
+    en: 'Say the southern way: from Bavaria, right?'
+    ar: 'قوليها على الطريقة الجنوبية: من بافاريا، صح؟'
+    mk: 'Кажете на јужен начин: од Баварија, нели?'
+  answer:
+    speaker: protagonist
+    text: Aus Bayern, gell?
+  items:
+  - gell
+- type: prompt
+  ask:
+    en: 'Say: the queue is long.'
+    ar: 'قولي: الطابور طويل.'
+    mk: 'Кажете: редицата е долга.'
+  answer:
+    speaker: protagonist
+    text: Die Schlange ist lang.
+  items:
+  - die-schlange
+- type: prompt
+  ask:
+    en: 'He asks: work or pleasure?'
+    ar: 'يسأل: للعمل أم للمتعة؟'
+    mk: 'Тој прашува: службено или приватно?'
+  answer:
+    speaker: protagonist
+    text: Beruflich oder privat?
+  items:
+  - beruflich-oder-privat
+- type: prompt
+  ask:
+    en: 'Say: the reading at three.'
+    ar: 'قولي: القراءة في الثالثة.'
+    mk: 'Кажете: читањето во три.'
+  answer:
+    speaker: protagonist
+    text: Die Lesung um drei.
+  items:
+  - die-lesung
+- type: prompt
+  ask:
+    en: 'Say goodbye: have a nice day!'
+    ar: 'ودّعي: يومًا سعيدًا!'
+    mk: 'Поздравете: убав ден уште!'
+  answer:
+    speaker: protagonist
+    text: Schönen Tag noch!
+  items:
+  - schoenen-tag-noch
+- type: prompt
+  ask:
+    en: 'Say: small talk.'
+    ar: 'قولي: الدردشة.'
+    mk: 'Кажете: мал разговор.'
+  answer:
+    speaker: protagonist
+    text: Der Smalltalk.
+  items:
+  - der-smalltalk
+- type: prompt
+  ask:
+    en: 'He says: caught out!'
+    ar: 'يقول: كشفتِني!'
+    mk: 'Тој вели: ме фативте!'
+  answer:
+    speaker: protagonist
+    text: Erwischt!
+  items:
+  - erwischt
+- type: prompt
+  ask:
+    en: 'Wish him: enjoy the fair!'
+    ar: 'تمنّي له: استمتع بالمعرض!'
+    mk: 'Посакајте му: уживајте на саемот!'
+  answer:
+    speaker: protagonist
+    text: Viel Spaß auf der Messe!
+  items:
+  - viel-spass-auf
+- type: narrator
+  text:
+    en: 'Small talk with strangers is short and light: the weather, the queue, the event — not salary, religion or politics. It ends without fuss: «Schönen Tag noch!». At fairs and conferences it''s the
+      normal way to start; follow-up comes with a business card.'
+    ar: 'الدردشة مع الغرباء قصيرة وخفيفة: الطقس، الطابور، الحدث — لا الراتب ولا الدين ولا السياسة. وتنتهي ببساطة: «Schönen Tag noch!». في المعارض والمؤتمرات هي الطريقة المعتادة للبدء؛ والمتابعة تأتي ببطاقة
+      العمل.'
+    mk: 'Малиот разговор со непознати е краток и лесен: времето, редицата, настанот — не плата, религија или политика. Завршува без церемонии: «Schönen Tag noch!». На саеми и конференции тоа е нормалниот
+      почеток; продолжението доаѓа со визит-карта.'
+- type: prompt
+  ask:
+    en: 'Once more: say “the book fair”.'
+    ar: 'مرة أخرى: قولي “معرض الكتاب”.'
+    mk: 'Уште еднаш: кажете „саемот на книгата“.'
+  answer:
+    speaker: protagonist
+    text: die Buchmesse
+  items:
+  - die-buchmesse
+- type: prompt
+  ask:
+    en: 'Once more: say “…, isn''t it? / right?”.'
+    ar: 'مرة أخرى: قولي “…، أليس كذلك؟”.'
+    mk: 'Уште еднаш: кажете „…, нели?“.'
+  answer:
+    speaker: protagonist
+    text: …, oder?
+  items:
+  - oder-tag
+- type: prompt
+  ask:
+    en: 'Once more: say “…, right? (colloquial)”.'
+    ar: 'مرة أخرى: قولي “…، صح؟ (عاميًا)”.'
+    mk: 'Уште еднаш: кажете „…, а? (разговорно)“.'
+  answer:
+    speaker: protagonist
+    text: …, ne?
+  items:
+  - ne-tag
+- type: prompt
+  ask:
+    en: 'Once more: say “…, right? (southern)”.'
+    ar: 'مرة أخرى: قولي “…، صح؟ (جنوبيًا)”.'
+    mk: 'Уште еднаш: кажете „…, нели? (јужно)“.'
+  answer:
+    speaker: protagonist
+    text: …, gell?
+  items:
+  - gell
+- type: prompt
+  ask:
+    en: 'Once more: say “pretty crowded”.'
+    ar: 'مرة أخرى: قولي “مزدحم جدًا”.'
+    mk: 'Уште еднаш: кажете „прилично полно“.'
+  answer:
+    speaker: protagonist
+    text: ganz schön voll
+  items:
+  - voll-heute
+- type: prompt
+  ask:
+    en: 'Once more: say “the queue”.'
+    ar: 'مرة أخرى: قولي “الطابور”.'
+    mk: 'Уште еднаш: кажете „редицата“.'
+  answer:
+    speaker: protagonist
+    text: die Schlange
+  items:
+  - die-schlange
+- type: prompt
+  ask:
+    en: 'Once more: say “Caught out!”.'
+    ar: 'مرة أخرى: قولي “كشفتِني!”.'
+    mk: 'Уште еднаш: кажете „Ме фативте!“.'
+  answer:
+    speaker: protagonist
+    text: Erwischt!
+  items:
+  - erwischt
+- type: prompt
+  ask:
+    en: 'Once more: say “for work or for pleasure”.'
+    ar: 'مرة أخرى: قولي “للعمل أم للمتعة”.'
+    mk: 'Уште еднаш: кажете „службено или приватно“.'
+  answer:
+    speaker: protagonist
+    text: beruflich oder privat
+  items:
+  - beruflich-oder-privat
+- type: prompt
+  ask:
+    en: 'Once more: say “the reading (by an author)”.'
+    ar: 'مرة أخرى: قولي “القراءة (من الكاتب)”.'
+    mk: 'Уште еднаш: кажете „читањето“.'
+  answer:
+    speaker: protagonist
+    text: die Lesung
+  items:
+  - die-lesung
+- type: prompt
+  ask:
+    en: 'Once more: say “Enjoy the fair!”.'
+    ar: 'مرة أخرى: قولي “استمتع بالمعرض!”.'
+    mk: 'Уште еднаш: кажете „Уживајте на саемот!“.'
+  answer:
+    speaker: protagonist
+    text: Viel Spaß auf der Messe!
+  items:
+  - viel-spass-auf
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the bouncer — and “How many of you are there? — and “we''re looking forward — and “I change (clothes)”.'
+  answer:
+    speaker: protagonist
+    text: der Türsteher … Wie viele seid ihr? … wir freuen uns … ich ziehe mich um
+  items:
+  - der-tuersteher-e
+  - wie-viele-seid-ihr-e
+  - wir-freuen-uns-e
+  - ich-ziehe-mich-um-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “we meet — and “not tonight — and “no photos — and “the cloakroom”.'
+  answer:
+    speaker: protagonist
+    text: wir treffen uns … heute nicht … keine Fotos … die Garderobe
+  items:
+  - sich-treffen-e
+  - heute-nicht-rein-e
+  - keine-fotos-e
+  - die-garderobe-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “dance — and “until the morning”.'
+  answer:
+    speaker: protagonist
+    text: tanzen … bis morgens
+  items:
+  - tanzen-e
+  - bis-morgens-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the works council — and “overtime — and “holiday days — and “the holiday request — and “is regulated, is set out — and “is fixed — and “is refused — and “a bridge day (between holiday and
+      weekend) — and “compensate (with time off) — and “the working hours law — and “the conflict — and “the solution — and “the compromise — and “mediate”.'
+    ar: 'قولي: “مجلس العاملين — و“الساعات الإضافية — و“أيام الإجازة — و“طلب الإجازة — و“منظَّم — و“محدَّد — و“مرفوض — و“يوم الجسر — و“يعوّض — و“قانون ساعات العمل — و“الخلاف — و“الحل — و“الحل الوسط — و“يتوسّط”.'
+    mk: 'Кажете: „работничкиот совет“ — и „прекувремената работа“ — и „деновите одмор“ — и „барањето за одмор“ — и „е регулирано“ — и „е утврдено“ — и „е одбиено“ — и „мостен ден“ — и „надоместува“ — и
+      „законот за работно време“ — и „конфликтот“ — и „решението“ — и „компромисот“ — и „посредува“.'
+  answer:
+    speaker: protagonist
+    text: der Betriebsrat … die Überstunden … die Urlaubstage … der Urlaubsantrag … ist geregelt … ist festgelegt … ist abgelehnt … der Brückentag … ausgleichen … das Arbeitszeitgesetz … der Konflikt …
+      die Lösung … der Kompromiss … vermitteln
+  items:
+  - der-betriebsrat
+  - die-ueberstunden
+  - die-urlaubstage
+  - der-urlaubsantrag
+  - ist-geregelt
+  - ist-festgelegt
+  - ist-abgelehnt
+  - der-brueckentag
+  - ausgleichen
+  - das-arbeitszeitgesetz
+  - der-konflikt
+  - die-loesung
+  - der-kompromiss
+  - vermitteln
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “nonetheless — and “although both are right — and “the point of view — and “a trial phase — and “agreed — and “block — and “Dear Sir or Madam — and “Yours sincerely — and “the subject line
+      — and “I hereby inform you — and “I request … — and “a reply — and “promptly — and “attached”.'
+    ar: 'قولي: “ومع ذلك — و“مع أنّ الاثنين على حق — و“وجهة النظر — و“مرحلة تجريبية — و“موافق — و“يعرقل — و“السادة المحترمون — و“مع أطيب التحيات — و“الموضوع — و“أبلغكم بموجب هذا — و“أرجو … — و“الرد — و“فورًا،
+      على وجه السرعة — و“في المرفق”.'
+    mk: 'Кажете: „сепак“ — и „иако и двајцата се во право“ — и „гледиштето“ — и „пробна фаза“ — и „се согласувам“ — и „блокира“ — и „Почитувани“ — и „Со почит“ — и „предметот“ — и „со ова ве известувам“
+      — и „ве молам за …“ — и „одговорот“ — и „веднаш“ — и „во прилог“.'
+  answer:
+    speaker: protagonist
+    text: dennoch … obwohl beide recht haben … der Standpunkt … eine Testphase … einverstanden … blockieren … Sehr geehrte Damen und Herren … Mit freundlichen Grüßen … der Betreff … hiermit teile ich Ihnen
+      mit … ich bitte um … … die Rückmeldung … umgehend … im Anhang
+  items:
+  - dennoch
+  - obwohl-b2
+  - der-standpunkt
+  - die-probephase
+  - einverstanden
+  - blockieren
+  - sehr-geehrte
+  - mfg
+  - der-betreff
+  - hiermit-teile-ich
+  - ich-bitte-um
+  - die-rueckmeldung
+  - umgehend
+  - der-anhang
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “a rent reduction — and “in writing — and “the food bank — and “voluntary, voluntarily — and “accompany — and “to the appointment — and “food, groceries — and “hand out, distribute — and “open
+      doors — and “without you — and “I enjoy it — and “give something back — and “the pensioner”.'
+    ar: 'قولي: “تخفيض الإيجار — و“كتابيًا — و“بنك الطعام — و“طوعًا — و“يرافق — و“إلى الموعد — و“مواد غذائية — و“يوزّع — و“يفتح الأبواب — و“بدونك — و“أستمتع بذلك — و“يردّ الجميل — و“المتقاعد”.'
+    mk: 'Кажете: „намалување на киријата“ — и „писмено“ — и „банката за храна“ — и „доброволно“ — и „придружува“ — и „на терминот“ — и „намирници“ — и „дели“ — и „отвора врати“ — и „без вас“ — и „ми е забавно“
+      — и „враќа нешто“ — и „пензионерот“.'
+  answer:
+    speaker: protagonist
+    text: die Mietminderung … schriftlich … die Tafel … freiwillig … begleiten … zum Termin … Lebensmittel … verteilen … Türen öffnen … ohne Sie … es macht mir Spaß … etwas zurückgeben … der Rentner
+  items:
+  - die-mietminderung
+  - schriftlich
+  - die-tafel
+  - freiwillig
+  - begleiten
+  - der-termin-amt
+  - lebensmittel
+  - verteilen
+  - die-tuer-oeffnen
+  - ohne-sie
+  - es-macht-mir-spass
+  - zurueckgeben
+  - der-rentner
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “transfer of the business — and “for acknowledgement — and “sign without reading — and “the change of contract”.'
+    ar: 'قولي: “انتقال ملكية المنشأة — و“للعلم — و“يوقّع دون قراءة — و“تعديل العقد”.'
+  answer:
+    speaker: protagonist
+    text: der Betriebsübergang … zur Kenntnisnahme … ohne zu lesen unterschreiben … die Vertragsänderung
+  items:
+  - der-betriebsuebergang-ea
+  - die-kenntnisnahme-ea
+  - unterschreiben-ohne-ea
+  - die-vertragsaenderung-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the back payment — and “payment in instalments — and “the labour court — and “wages in arrears”.'
+    ar: 'قولي: “المبلغ المستحق المتأخر — و“الدفع بالتقسيط — و“محكمة العمل — و“الأجور المتأخرة”.'
+  answer:
+    speaker: protagonist
+    text: die Nachzahlung … die Ratenzahlung … das Arbeitsgericht … der Lohnrückstand
+  items:
+  - die-nachzahlung-ea
+  - die-ratenzahlung-ea
+  - das-arbeitsgericht-ea
+  - der-lohnrueckstand-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “a check by a lawyer — and “insurance status”.'
+    ar: 'قولي: “مراجعة من محامٍ — و“وضع التأمين”.'
+  answer:
+    speaker: protagonist
+    text: die Prüfung durch einen Anwalt … der Versicherungsstatus
+  items:
+  - die-pruefung-durch-ea
+  - der-versicherungsstatus-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “نلتقي — و“يسعدني، أتطلّع — و“بعد العمل — و“لا أشرب الكحول”.'
+  answer:
+    speaker: protagonist
+    text: wir treffen uns … ich freue mich … nach der Arbeit … ich trinke keinen Alkohol
+  items:
+  - sich-treffen-a
+  - ich-freue-mich-a
+  - nach-der-arbeit-a
+  - ich-trinke-keinen-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “مشروب غازي (ليموناضة) — و“الزملاء — و“نتحدث، ندردش — و“مسترخٍ، هادئ”.'
+  answer:
+    speaker: protagonist
+    text: eine Limo … die Kollegen … wir unterhalten uns … entspannt
+  items:
+  - eine-limo-a
+  - die-kollegen-a
+  - sich-unterhalten-a
+  - entspannt-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “ليس متأخرًا جدًا — و“يجب أن أذهب”.'
+  answer:
+    speaker: protagonist
+    text: nicht so spät … Ich muss los
+  items:
+  - nicht-so-spaet-a
+  - ich-muss-los-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „за знаење“ — и „новиот сопственик“ — и „потпишува без да прочита“ — и „измената на договорот“ — и „доплатата“.'
+  answer:
+    speaker: protagonist
+    text: zur Kenntnisnahme … der neue Besitzer … ohne zu lesen unterschreiben … die Vertragsänderung … die Nachzahlung
+  items:
+  - die-kenntnisnahme-m
+  - der-neue-besitzer-m
+  - unterschreiben-ohne-m
+  - die-vertragsaenderung-m
+  - die-nachzahlung-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „плаќањето на рати“ — и „советувалиштето“ — и „само формалност“ — и „со задоцнување“ — и „преведувачот“.'
+  answer:
+    speaker: protagonist
+    text: die Ratenzahlung … die Beratungsstelle … nur eine Formalität … verspätet … der Dolmetscher
+  items:
+  - die-ratenzahlung-m
+  - die-beratung-m-m
+  - die-formalitaet-m
+  - verspaetet-m
+  - der-dolmetscher-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „се среќаваме“ — и „ми е драго, се радувам“ — и „живата музика“ — и „како дома“ — и „да седнеме“.'
+  answer:
+    speaker: protagonist
+    text: wir treffen uns … ich freue mich … die Livemusik … wie zu Hause … setzen wir uns
+  items:
+  - sich-treffen-m
+  - ich-freue-mich-m
+  - die-livemusik-m
+  - wie-zu-hause-m
+  - sich-setzen-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „играат, танцуваат“ — и „да се приклучи“ — и „се сеќавам“ — и „гласно“ — и „се чувствувам убаво“.'
+  answer:
+    speaker: protagonist
+    text: tanzen … mitmachen … ich erinnere mich … laut … ich fühle mich wohl
+  items:
+  - tanzen-m
+  - mitmachen-m
+  - ich-erinnere-mich-m
+  - laut-m
+  - ich-fuehle-mich-wohl-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

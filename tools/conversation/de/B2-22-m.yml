@@ -1,0 +1,512 @@
+# UNIT de B2-22-m — written by AI (Claude) for Casus; expanded from src/B2-22-m.yml by tools/expand_unit.py. Edit the source.
+
+id: B2-22-m
+level: B2
+number: 22
+protagonist: m
+tracks:
+- mk
+title:
+  mk: Приказната на соседката
+situation:
+  mk: 'Гордана е загрижена: потпишала хартија кај новиот шеф, а сега здравствената каса бара пари. Ви раскажува.'
+learn_lessons:
+- b2-nominal-style
+culture: Never sign what you haven't read
+new_items:
+- id: die-kenntnisnahme-m
+  text: zur Kenntnisnahme
+  meaning:
+    mk: за знаење
+  rare: true
+- id: der-neue-besitzer-m
+  text: der neue Besitzer
+  meaning:
+    mk: новиот сопственик
+- id: unterschreiben-ohne-m
+  text: ohne zu lesen unterschreiben
+  meaning:
+    mk: потпишува без да прочита
+- id: die-vertragsaenderung-m
+  text: die Vertragsänderung
+  meaning:
+    mk: измената на договорот
+  rare: true
+- id: die-nachzahlung-m
+  text: die Nachzahlung
+  meaning:
+    mk: доплатата
+- id: die-ratenzahlung-m
+  text: die Ratenzahlung
+  meaning:
+    mk: плаќањето на рати
+- id: die-beratung-m-m
+  text: die Beratungsstelle
+  meaning:
+    mk: советувалиштето
+- id: die-formalitaet-m
+  text: nur eine Formalität
+  meaning:
+    mk: само формалност
+- id: verspaetet-m
+  text: verspätet
+  meaning:
+    mk: со задоцнување
+- id: der-dolmetscher-m
+  text: der Dolmetscher
+  meaning:
+    mk: преведувачот
+reviews:
+- item: das-fahrrad
+  from: A2-19
+- item: ein-gebrauchtes
+  from: A2-19
+- item: die-bremse
+  from: A2-19
+- item: funktioniert
+  from: A2-19
+- item: das-licht-rad
+  from: A2-19
+- item: ein-gutes-schloss
+  from: A2-19
+- item: der-korb
+  from: A2-19
+- item: eine-probefahrt
+  from: A2-19
+- item: der-reifen
+  from: A2-19
+- item: neue-reifen
+  from: A2-19
+- item: der-radweg
+  from: A2-19
+- item: das-gemaelde
+  from: B1-21
+- item: der-eindruck
+  from: B1-21
+- item: der-maler
+  from: B1-21
+- item: die-farbe
+  from: B1-21
+- item: der-nebel
+  from: B1-21
+- item: das-licht
+  from: B1-21
+- item: die-ausstellung
+  from: B1-21
+- item: wirkt
+  from: B1-21
+- item: das-meer-im-bild
+  from: B1-21
+- item: mir-gefaellt-am-besten
+  from: B1-21
+- item: die-tagesordnung
+  from: B2-07
+- item: das-protokoll
+  from: B2-07
+- item: protokoll-fuehren
+  from: B2-07
+- item: der-punkt
+  from: B2-07
+- item: muss-entschieden-werden
+  from: B2-07
+- item: kann-verschoben-werden
+  from: B2-07
+- item: die-frist-einhalten
+  from: B2-07
+- item: wer-uebernimmt
+  from: B2-07
+- item: zum-schluss
+  from: B2-07
+- item: verschiedenes
+  from: B2-07
+- item: die-behauptung
+  from: B2-15
+- item: der-beweis
+  from: B2-15
+- item: die-falschmeldung
+  from: B2-15
+- item: ueberpruefen
+  from: B2-15
+- item: zwar-aber
+  from: B2-15
+- item: trotzdem
+  from: B2-15
+- item: auch-wenn
+  from: B2-15
+- item: teilen
+  from: B2-15
+- item: der-faktencheck
+  from: B2-15
+- item: die-hetze
+  from: B2-15
+- item: die-praesentation
+  from: B2-19
+- item: zunaechst
+  from: B2-19
+- item: anschliessend
+  from: B2-19
+- item: zusammenfassend
+  from: B2-19
+- item: die-gliederung
+  from: B2-19
+- item: die-folie
+  from: B2-19
+- item: die-heimatstadt
+  from: B2-19
+- item: der-blickkontakt
+  from: B2-19
+- item: vielen-dank-fuer-ihre
+  from: B2-19
+- item: gibt-es-fragen
+  from: B2-19
+- item: der-glaube
+  from: B2-21
+- item: glaeubig
+  from: B2-21
+- item: konfessionslos
+  from: B2-21
+- item: die-moschee
+  from: B2-21
+- item: der-kirchenaustritt
+  from: B2-21
+- item: das-mitglied-kirche
+  from: B2-21
+- item: die-gemeinde
+  from: B2-21
+- item: sie-seien
+  from: B2-21
+- item: es-gebe
+  from: B2-21
+- item: die-religionsfreiheit
+  from: B2-21
+- item: respektieren
+  from: B2-21
+steps:
+- type: narrator
+  text:
+    mk: 'Гордана е загрижена: потпишала хартија кај новиот шеф, а сега здравствената каса бара пари. Ви раскажува. Слушнете го разговорот; уште не мора да го разберете.'
+- type: dialogue
+  lines:
+  - speaker: gordana
+    text: Der Pflegedienst hat einen neuen Besitzer. Er sagte, ich soll nur zur Kenntnisnahme unterschreiben.
+    meaning:
+      mk: Службата за нега има нов сопственик. Рече само да потпишам за знаење.
+  - speaker: protagonist
+    text: Und was stand im Papier?
+    meaning:
+      mk: А што пишуваше во хартијата?
+  - speaker: gordana
+    text: Ich weiß es nicht genau. Er sagte, das sei nur eine Formalität.
+    meaning:
+      mk: Не знам точно. Рече дека тоа е само формалност.
+  - speaker: petar
+    text: Zeig mal. ... Eine Vertragsänderung! Jetzt bist du nur noch Minijobberin.
+    meaning:
+      mk: Покажи. ... Измена на договорот! Сега си само на Minijob.
+  - speaker: gordana
+    text: Und der Lohn kommt verspätet. Und jetzt will die Krankenkasse eine Nachzahlung!
+    meaning:
+      mk: А платата доаѓа со задоцнување. А сега касата бара доплата!
+  - speaker: protagonist
+    text: Bei uns hätte man so etwas nie ohne Dolmetscher unterschrieben.
+    meaning:
+      mk: Кај нас такво нешто никој не би потпишал без преведувач.
+  - speaker: petar
+    text: Geh zur Beratungsstelle. Und bitte die Krankenkasse um Ratenzahlung.
+    meaning:
+      mk: Оди во советувалиштето. И замоли ја касата за плаќање на рати.
+  - speaker: gordana
+    text: Nie wieder ohne zu lesen unterschreiben.
+    meaning:
+      mk: Никогаш повеќе нема да потпишам без да прочитам.
+- type: prompt
+  ask:
+    mk: 'Таа вели: службата има нов сопственик.'
+  answer:
+    speaker: protagonist
+    text: Der Pflegedienst hat einen neuen Besitzer.
+  items:
+  - der-neue-besitzer-m
+- type: prompt
+  ask:
+    mk: 'Кажете: за знаење.'
+  answer:
+    speaker: protagonist
+    text: Zur Kenntnisnahme.
+  items:
+  - die-kenntnisnahme-m
+- type: prompt
+  ask:
+    mk: 'Таа вели: само формалност.'
+  answer:
+    speaker: protagonist
+    text: Nur eine Formalität.
+  items:
+  - die-formalitaet-m
+- type: narrator
+  text:
+    mk: 'Официјалните хартии ги пакуваат дејствијата во именки: «zur Kenntnisnahme» (= за да се запознаете), «Vertragsänderung» (= договорот се менува). Распакувајте ги пред да потпишете.'
+- type: prompt
+  ask:
+    mk: 'Петар вели: измена на договорот!'
+  answer:
+    speaker: protagonist
+    text: Eine Vertragsänderung!
+  items:
+  - die-vertragsaenderung-m
+- type: prompt
+  ask:
+    mk: 'Таа вели: платата доаѓа со задоцнување.'
+  answer:
+    speaker: protagonist
+    text: Der Lohn kommt verspätet.
+  items:
+  - verspaetet-m
+- type: prompt
+  ask:
+    mk: 'Кажете: касата бара доплата.'
+  answer:
+    speaker: protagonist
+    text: Die Krankenkasse will eine Nachzahlung.
+  items:
+  - die-nachzahlung-m
+- type: prompt
+  ask:
+    mk: 'Кажете: без преведувач.'
+  answer:
+    speaker: protagonist
+    text: Ohne Dolmetscher.
+  items:
+  - der-dolmetscher-m
+- type: prompt
+  ask:
+    mk: 'Кажете: оди во советувалиштето.'
+  answer:
+    speaker: protagonist
+    text: Geh zur Beratungsstelle.
+  items:
+  - die-beratung-m-m
+- type: prompt
+  ask:
+    mk: 'Кажете: плаќање на рати.'
+  answer:
+    speaker: protagonist
+    text: Die Ratenzahlung.
+  items:
+  - die-ratenzahlung-m
+- type: prompt
+  ask:
+    mk: 'Кажете: никогаш без да прочитам.'
+  answer:
+    speaker: protagonist
+    text: Nie wieder ohne zu lesen unterschreiben.
+  items:
+  - unterschreiben-ohne-m
+- type: narrator
+  text:
+    mk: 'Никогаш не потпишувајте нешто што не сте го прочитале и разбрале — „само формалност“ е знак за предупредување. Новиот сопственик ги презема постојните договори непроменети; секоја измена бара ваш
+      потпис. Ако касата подоцна бара придонеси, побарајте плаќање на рати — речиси секогаш се одобрува. За неплатени плати има кратки рокови: побарајте совет брзо.'
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „за знаење“.'
+  answer:
+    speaker: protagonist
+    text: zur Kenntnisnahme
+  items:
+  - die-kenntnisnahme-m
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „новиот сопственик“.'
+  answer:
+    speaker: protagonist
+    text: der neue Besitzer
+  items:
+  - der-neue-besitzer-m
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „потпишува без да прочита“.'
+  answer:
+    speaker: protagonist
+    text: ohne zu lesen unterschreiben
+  items:
+  - unterschreiben-ohne-m
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „измената на договорот“.'
+  answer:
+    speaker: protagonist
+    text: die Vertragsänderung
+  items:
+  - die-vertragsaenderung-m
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „доплатата“.'
+  answer:
+    speaker: protagonist
+    text: die Nachzahlung
+  items:
+  - die-nachzahlung-m
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „плаќањето на рати“.'
+  answer:
+    speaker: protagonist
+    text: die Ratenzahlung
+  items:
+  - die-ratenzahlung-m
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „советувалиштето“.'
+  answer:
+    speaker: protagonist
+    text: die Beratungsstelle
+  items:
+  - die-beratung-m-m
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „само формалност“.'
+  answer:
+    speaker: protagonist
+    text: nur eine Formalität
+  items:
+  - die-formalitaet-m
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „со задоцнување“.'
+  answer:
+    speaker: protagonist
+    text: verspätet
+  items:
+  - verspaetet-m
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „преведувачот“.'
+  answer:
+    speaker: protagonist
+    text: der Dolmetscher
+  items:
+  - der-dolmetscher-m
+- type: narrator
+  text:
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „верата“ — и „верник“ — и „без вероисповед“ — и „џамијата“ — и „излегувањето од црквата“ — и „член на црквата“ — и „заедницата“ — и „(пренесено) дека се …“ — и „(пренесено) дека има …“
+      — и „слободата на вероисповед“ — и „почитува“.'
+  answer:
+    speaker: protagonist
+    text: der Glaube … gläubig … konfessionslos … die Moschee … der Kirchenaustritt … Mitglied der Kirche … die Gemeinde … sie seien … … es gebe … … die Religionsfreiheit … respektieren
+  items:
+  - der-glaube
+  - glaeubig
+  - konfessionslos
+  - die-moschee
+  - der-kirchenaustritt
+  - das-mitglied-kirche
+  - die-gemeinde
+  - sie-seien
+  - es-gebe
+  - die-religionsfreiheit
+  - respektieren
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „презентацијата“ — и „најпрвин“ — и „потоа“ — и „накратко, сумирано“ — и „структурата“ — и „слајдот“ — и „родниот град“ — и „контактот со очите“ — и „Благодарам за вниманието“ — и „Има
+      ли прашања?“ — и „тврдењето“.'
+  answer:
+    speaker: protagonist
+    text: die Präsentation … zunächst … anschließend … zusammenfassend … die Gliederung … die Folie … die Heimatstadt … der Blickkontakt … Vielen Dank für Ihre Aufmerksamkeit … Gibt es Fragen? … die Behauptung
+  items:
+  - die-praesentation
+  - zunaechst
+  - anschliessend
+  - zusammenfassend
+  - die-gliederung
+  - die-folie
+  - die-heimatstadt
+  - der-blickkontakt
+  - vielen-dank-fuer-ihre
+  - gibt-es-fragen
+  - die-behauptung
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „доказот“ — и „лажната вест“ — и „проверува“ — и „иако … сепак“ — и „сепак“ — и „дури и ако“ — и „споделува“ — и „проверката на факти“ — и „поттикнувањето омраза“ — и „дневниот ред“ — и
+      „записникот“.'
+  answer:
+    speaker: protagonist
+    text: der Beweis … die Falschmeldung … überprüfen … zwar … aber … trotzdem … auch wenn … teilen … der Faktencheck … die Hetze … die Tagesordnung … das Protokoll
+  items:
+  - der-beweis
+  - die-falschmeldung
+  - ueberpruefen
+  - zwar-aber
+  - trotzdem
+  - auch-wenn
+  - teilen
+  - der-faktencheck
+  - die-hetze
+  - die-tagesordnung
+  - das-protokoll
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „води записник“ — и „точката од дневниот ред“ — и „мора да се одлучи“ — и „може да се одложи“ — и „го почитува рокот“ — и „Кој го презема тоа?“ — и „на крајот“ — и „разно“ — и „сликата“
+      — и „впечатокот“ — и „сликарот“.'
+  answer:
+    speaker: protagonist
+    text: Protokoll führen … der Tagesordnungspunkt … muss entschieden werden … kann verschoben werden … die Frist einhalten … Wer übernimmt das? … zum Schluss … Verschiedenes … das Gemälde … der Eindruck
+      … der Maler
+  items:
+  - protokoll-fuehren
+  - der-punkt
+  - muss-entschieden-werden
+  - kann-verschoben-werden
+  - die-frist-einhalten
+  - wer-uebernimmt
+  - zum-schluss
+  - verschiedenes
+  - das-gemaelde
+  - der-eindruck
+  - der-maler
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „бојата“ — и „маглата“ — и „светлината“ — и „изложбата“ — и „делува“ — и „во позадината“ — и „Најмногу ми се допаѓа …“ — и „велосипедот“ — и „половен велосипед“ — и „сопирачката“ — и „работи“.'
+  answer:
+    speaker: protagonist
+    text: die Farbe … der Nebel … das Licht … die Ausstellung … wirkt … im Hintergrund … Am besten gefällt mir … … das Fahrrad … ein gebrauchtes Fahrrad … die Bremse … funktioniert
+  items:
+  - die-farbe
+  - der-nebel
+  - das-licht
+  - die-ausstellung
+  - wirkt
+  - das-meer-im-bild
+  - mir-gefaellt-am-besten
+  - das-fahrrad
+  - ein-gebrauchtes
+  - die-bremse
+  - funktioniert
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „светлото“ — и „добра брава“ — и „кошничката“ — и „пробно возење“ — и „гумата“ — и „нови гуми“ — и „велосипедската патека“.'
+  answer:
+    speaker: protagonist
+    text: das Licht … ein gutes Schloss … der Korb … eine Probefahrt … der Reifen … neue Reifen … der Radweg
+  items:
+  - das-licht-rad
+  - ein-gutes-schloss
+  - der-korb
+  - eine-probefahrt
+  - der-reifen
+  - neue-reifen
+  - der-radweg
+- type: narrator
+  text:
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck
