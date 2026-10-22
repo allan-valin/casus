@@ -1,0 +1,771 @@
+# UNIT de C1-21 — written by AI (Claude) for Casus; expanded from src/C1-21.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-21
+level: C1
+number: 21
+protagonist: f
+title:
+  en: Two languages
+  ar: لغتان
+  mk: Два јазика
+situation:
+  en: Lena's husband is Polish. Their son mixes Polish and German — and a neighbour said it's bad for him. Lena asks you.
+  ar: زوج لينا بولندي. ابنهما يخلط البولندية بالألمانية — وقالت جارة إن ذلك يضرّه. لينا تسألكِ.
+  mk: Мажот на Лена е Полјак. Нивниот син ги меша полскиот и германскиот — а една соседка рекла дека тоа му штети. Лена ве прашува.
+learn_lessons:
+- c1-particles
+culture: Raising a child in two languages
+new_items:
+- id: zweisprachig
+  text: zweisprachig
+  meaning:
+    en: bilingual
+    ar: ثنائي اللغة
+    mk: двојазично
+- id: die-muttersprache
+  text: die Muttersprache
+  meaning:
+    en: the mother tongue
+    ar: اللغة الأم
+    mk: мајчиниот јазик
+- id: mischen
+  text: mischen
+  meaning:
+    en: mix
+    ar: يخلط
+    mk: меша
+- id: die-familiensprache
+  text: die Familiensprache
+  meaning:
+    en: the language spoken at home
+    ar: لغة البيت
+    mk: јазикот во семејството
+- id: denn-frage
+  text: denn
+  meaning:
+    en: (particle in questions) then, actually
+    ar: (أداة استفهام) إذن، يا ترى
+    mk: (честичка во прашања) па
+- id: etwa
+  text: etwa
+  meaning:
+    en: (particle) surely not…?
+    ar: (أداة) هل يُعقل…؟
+    mk: (честичка) зар…?
+- id: ruhig-partikel
+  text: ruhig
+  meaning:
+    en: (particle) go ahead, feel free
+    ar: (أداة) لا بأس، تفضّلي
+    mk: (честичка) слободно
+- id: eine-person-eine-sprache
+  text: eine Person, eine Sprache
+  meaning:
+    en: one person, one language
+    ar: شخص واحد، لغة واحدة
+    mk: една личност, еден јазик
+- id: der-vorteil
+  text: der Vorteil
+  meaning:
+    en: the advantage
+    ar: الميزة
+    mk: предноста
+- id: das-gehirn
+  text: das Gehirn
+  meaning:
+    en: the brain
+    ar: الدماغ
+    mk: мозокот
+reviews:
+- item: moment-mal
+  from: A1-14
+- item: der-muell
+  from: A1-14
+- item: trennen
+  from: A1-14
+- item: die-gelbe-tonne
+  from: A1-14
+- item: das-plastik
+  from: A1-14
+- item: das-papier
+  from: A1-14
+- item: die-blaue
+  from: A1-14
+- item: der-biomuell
+  from: A1-14
+- item: der-restmuell
+  from: A1-14
+- item: das-glas
+  from: A1-14
+- item: bringen-sie
+  from: A1-14
+- item: zum-container
+  from: A1-14
+- item: das-grundgesetz
+  from: B1-18
+- item: die-wuerde
+  from: B1-18
+- item: unantastbar
+  from: B1-18
+- item: das-recht-auf
+  from: B1-18
+- item: die-meinungsfreiheit
+  from: B1-18
+- item: haette-gedacht
+  from: B1-18
+- item: waere-gewesen
+  from: B1-18
+- item: wenn-ich-gewusst-haette
+  from: B1-18
+- item: kritisieren
+  from: B1-18
+- item: die-regierung
+  from: B1-18
+- item: nach-dem-krieg
+  from: B1-18
+- item: der-betriebsrat
+  from: B2-20
+- item: die-ueberstunden
+  from: B2-20
+- item: die-urlaubstage
+  from: B2-20
+- item: der-urlaubsantrag
+  from: B2-20
+- item: ist-geregelt
+  from: B2-20
+- item: ist-festgelegt
+  from: B2-20
+- item: ist-abgelehnt
+  from: B2-20
+- item: der-brueckentag
+  from: B2-20
+- item: ausgleichen
+  from: B2-20
+- item: das-arbeitszeitgesetz
+  from: B2-20
+- item: der-unfall
+  from: C1-06
+- item: der-unfallbericht
+  from: C1-06
+- item: der-zeuge
+  from: C1-06
+- item: die-aussage
+  from: C1-06
+- item: die-kreuzung
+  from: C1-06
+- item: abbiegen
+  from: C1-06
+- item: er-behauptet-ich-sei
+  from: C1-06
+- item: er-habe-gesehen
+  from: C1-06
+- item: die-vorfahrt
+  from: C1-06
+- item: die-prellung
+  from: C1-06
+- item: das-aktenzeichen
+  from: C1-06
+- item: das-kommunale-wahlrecht-ea
+  from: C1-14-ea
+  for:
+  - en
+  - ar
+- item: der-migrationsbeirat-ea
+  from: C1-14-ea
+  for:
+  - en
+  - ar
+- item: die-wahlbenachrichtigung-ea
+  from: C1-14-ea
+  for:
+  - en
+  - ar
+- item: das-wahllokal-ea
+  from: C1-14-ea
+  for:
+  - en
+  - ar
+- item: der-stadtrat-ea
+  from: C1-14-ea
+  for:
+  - en
+  - ar
+- item: kandidieren-ea
+  from: C1-14-ea
+  for:
+  - en
+  - ar
+- item: es-heisse-ea
+  from: C1-14-ea
+  for:
+  - en
+  - ar
+- item: er-werde-ea
+  from: C1-14-ea
+  for:
+  - en
+  - ar
+- item: mitbestimmen-ea
+  from: C1-14-ea
+  for:
+  - en
+  - ar
+- item: die-stimme-abgeben-ea
+  from: C1-14-ea
+  for:
+  - en
+  - ar
+- item: die-aufklaerung
+  from: C1-18
+- item: die-pflicht
+  from: C1-18
+- item: der-verstand
+  from: C1-18
+- item: der-mut
+  from: C1-18
+- item: der-kategorische-imperativ
+  from: C1-18
+- item: die-vernunft
+  from: C1-18
+- item: der-zu-befolgende
+  from: C1-18
+- item: allgemein-gueltig
+  from: C1-18
+- item: die-muendigkeit
+  from: C1-18
+- item: handeln
+  from: C1-18
+- item: die-hebamme
+  from: C1-20
+- item: die-geburt
+  from: C1-20
+- item: das-wochenbett
+  from: C1-20
+- item: wurde-geboren
+  from: C1-20
+- item: wird-gewogen
+  from: C1-20
+- item: ist-angemeldet
+  from: C1-20
+- item: die-geburtsurkunde
+  from: C1-20
+- item: stillen
+  from: C1-20
+- item: das-kindergeld
+  from: C1-20
+- item: wird-bezahlt-c1
+  from: C1-20
+- item: herzlichen-glueckwunsch-geburt
+  from: C1-20
+- item: die-wahlbenachrichtigung-m
+  from: C1-14-m
+  for:
+  - mk
+- item: das-kommunale-wahlrecht-m
+  from: C1-14-m
+  for:
+  - mk
+- item: das-wahllokal-m
+  from: C1-14-m
+  for:
+  - mk
+- item: der-stadtrat-m
+  from: C1-14-m
+  for:
+  - mk
+- item: der-stimmzettel-m
+  from: C1-14-m
+  for:
+  - mk
+- item: es-heisse-m
+  from: C1-14-m
+  for:
+  - mk
+- item: man-duerfe-m
+  from: C1-14-m
+  for:
+  - mk
+- item: ankreuzen-m
+  from: C1-14-m
+  for:
+  - mk
+- item: die-briefwahl-m
+  from: C1-14-m
+  for:
+  - mk
+- item: die-europawahl-m
+  from: C1-14-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: Lena's husband is Polish. Their son mixes Polish and German — and a neighbour said it's bad for him. Lena asks you. Listen to the conversation; you don't need to understand it yet.
+    ar: زوج لينا بولندي. ابنهما يخلط البولندية بالألمانية — وقالت جارة إن ذلك يضرّه. لينا تسألكِ. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.
+    mk: Мажот на Лена е Полјак. Нивниот син ги меша полскиот и германскиот — а една соседка рекла дека тоа му штети. Лена ве прашува. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: lena
+    text: Jan sagt „Ich will mleko“. Ist das etwa schlecht? Die Nachbarin meint ja.
+    meaning:
+      en: Jan says 'I want mleko'. That's surely not bad, is it? The neighbour thinks so.
+      ar: يان يقول «أريد mleko». هل يُعقل أن يكون هذا سيئًا؟ الجارة تظن ذلك.
+      mk: Јан вели „Ich will mleko“. Зар е тоа лошо? Соседката мисли дека е.
+  - speaker: protagonist
+    text: Nein! Mischen ist bei zweisprachigen Kindern ganz normal. Das hört von selbst auf.
+    meaning:
+      en: No! Mixing is completely normal for bilingual children. It stops by itself.
+      ar: لا! الخلط طبيعي تمامًا عند الأطفال ثنائيي اللغة. يتوقّف من تلقاء نفسه.
+      mk: Не! Мешањето е сосема нормално кај двојазичните деца. Само по себе престанува.
+  - speaker: lena
+    text: Und welche Sprache soll Tomasz denn mit ihm sprechen?
+    meaning:
+      en: And which language should Tomasz speak with him, then?
+      ar: وبأي لغة يجب أن يكلّمه توماش إذن؟
+      mk: А на кој јазик па треба Томаш да зборува со него?
+  - speaker: protagonist
+    text: Seine Muttersprache. Viele machen „eine Person, eine Sprache“.
+    meaning:
+      en: His mother tongue. Many do 'one person, one language'.
+      ar: لغته الأم. كثيرون يتّبعون «شخص واحد، لغة واحدة».
+      mk: Својот мајчин јазик. Многумина прават „една личност, еден јазик“.
+  - speaker: lena
+    text: Und Deutsch lernt er trotzdem gut?
+    meaning:
+      en: And he still learns German well?
+      ar: وسيتعلّم الألمانية جيدًا مع ذلك؟
+      mk: И сепак добро ќе научи германски?
+  - speaker: protagonist
+    text: In der Kita sowieso. Zwei Sprachen sind ein Vorteil fürs Gehirn, kein Problem.
+    meaning:
+      en: At the Kita anyway. Two languages are an advantage for the brain, not a problem.
+      ar: في الروضة على أي حال. لغتان ميزة للدماغ، لا مشكلة.
+      mk: Во градинката секако. Два јазика се предност за мозокот, не проблем.
+  - speaker: lena
+    text: Dann sag ich der Nachbarin das mal.
+    meaning:
+      en: Then I'll tell the neighbour that.
+      ar: إذن سأقول هذا للجارة.
+      mk: Тогаш ќе ѝ кажам на соседката.
+  - speaker: protagonist
+    text: Sag es ihr ruhig. Und sprecht zu Hause, was ihr fühlt.
+    meaning:
+      en: Go ahead and tell her. And at home speak what you feel.
+      ar: قوليها لها بلا تردّد. وتكلّموا في البيت باللغة التي تشعرون بها.
+      mk: Слободно кажи ѝ. А дома зборувајте на јазикот што го чувствувате.
+- type: prompt
+  ask:
+    en: 'Say: bilingual.'
+    ar: 'قولي: ثنائي اللغة.'
+    mk: 'Кажете: двојазично.'
+  answer:
+    speaker: protagonist
+    text: Zweisprachig.
+  items:
+  - zweisprachig
+- type: narrator
+  text:
+    en: 'Particles in questions and advice: «Ist das etwa schlecht?» (surely not bad? — hoping for ''no''), «Welche Sprache denn?» (which language, then? — real interest), «Sag es ihr ruhig» (go ahead —
+      encouraging).'
+    ar: 'أدوات في الأسئلة والنصائح: «Ist das etwa schlecht?» (هل يُعقل أنه سيئ؟ — مع رجاء «لا»)، «Welche Sprache denn?» (أي لغة إذن؟ — اهتمام حقيقي)، «Sag es ihr ruhig» (قوليها بلا تردّد — تشجيع).'
+    mk: 'Честички во прашања и совети: «Ist das etwa schlecht?» (зар е лошо? — со надеж за „не“), «Welche Sprache denn?» (па кој јазик? — вистински интерес), «Sag es ihr ruhig» (слободно кажи ѝ — охрабрување).'
+- type: prompt
+  ask:
+    en: 'Ask hopefully: that''s surely not bad?'
+    ar: 'اسألي برجاء: هل يُعقل أنه سيئ؟'
+    mk: 'Прашајте со надеж: зар е тоа лошо?'
+  answer:
+    speaker: protagonist
+    text: Ist das etwa schlecht?
+  items:
+  - etwa
+- type: prompt
+  ask:
+    en: 'Say: mixing is normal.'
+    ar: 'قولي: الخلط طبيعي.'
+    mk: 'Кажете: мешањето е нормално.'
+  answer:
+    speaker: protagonist
+    text: Mischen ist normal.
+  items:
+  - mischen
+- type: prompt
+  ask:
+    en: 'Ask: which language, then?'
+    ar: 'اسألي: بأي لغة إذن؟'
+    mk: 'Прашајте: на кој јазик па?'
+  answer:
+    speaker: protagonist
+    text: Welche Sprache denn?
+  items:
+  - denn-frage
+- type: prompt
+  ask:
+    en: 'Say: his mother tongue.'
+    ar: 'قولي: لغته الأم.'
+    mk: 'Кажете: мајчиниот јазик.'
+  answer:
+    speaker: protagonist
+    text: Seine Muttersprache.
+  items:
+  - die-muttersprache
+- type: prompt
+  ask:
+    en: 'Say: one person, one language.'
+    ar: 'قولي: شخص واحد، لغة واحدة.'
+    mk: 'Кажете: една личност, еден јазик.'
+  answer:
+    speaker: protagonist
+    text: Eine Person, eine Sprache.
+  items:
+  - eine-person-eine-sprache
+- type: prompt
+  ask:
+    en: 'Say: an advantage for the brain.'
+    ar: 'قولي: ميزة للدماغ.'
+    mk: 'Кажете: предност за мозокот.'
+  answer:
+    speaker: protagonist
+    text: Ein Vorteil fürs Gehirn.
+  items:
+  - der-vorteil
+  - das-gehirn
+- type: prompt
+  ask:
+    en: 'Say: go ahead and tell her.'
+    ar: 'قولي: قوليها لها بلا تردّد.'
+    mk: 'Кажете: слободно кажи ѝ.'
+  answer:
+    speaker: protagonist
+    text: Sag es ihr ruhig.
+  items:
+  - ruhig-partikel
+- type: prompt
+  ask:
+    en: 'Say: the language spoken at home.'
+    ar: 'قولي: لغة البيت.'
+    mk: 'Кажете: јазикот во семејството.'
+  answer:
+    speaker: protagonist
+    text: Die Familiensprache.
+  items:
+  - die-familiensprache
+- type: narrator
+  text:
+    en: 'Research is clear: children can grow up with two or more languages without harm; mixing is a normal stage. Parents should speak the language they''re most at ease in — a warm, rich home language
+      helps German too, not the other way round. Some cities offer heritage-language classes.'
+    ar: 'الأبحاث واضحة: يمكن للأطفال أن ينشؤوا بلغتين أو أكثر دون ضرر؛ والخلط مرحلة طبيعية. وعلى الوالدين أن يتكلّما اللغة التي يرتاحان فيها أكثر — فلغة البيت الدافئة الغنية تساعد الألمانية أيضًا، لا العكس.
+      وبعض المدن تقدّم دروسًا في لغة الأصل.'
+    mk: 'Истражувањата се јасни: децата можат да растат со два или повеќе јазика без штета; мешањето е нормална фаза. Родителите треба да зборуваат на јазикот на кој им е најлесно — топол, богат домашен
+      јазик му помага и на германскиот, не обратно. Некои градови нудат часови по мајчин јазик.'
+- type: prompt
+  ask:
+    en: 'Once more: say “bilingual”.'
+    ar: 'مرة أخرى: قولي “ثنائي اللغة”.'
+    mk: 'Уште еднаш: кажете „двојазично“.'
+  answer:
+    speaker: protagonist
+    text: zweisprachig
+  items:
+  - zweisprachig
+- type: prompt
+  ask:
+    en: 'Once more: say “the mother tongue”.'
+    ar: 'مرة أخرى: قولي “اللغة الأم”.'
+    mk: 'Уште еднаш: кажете „мајчиниот јазик“.'
+  answer:
+    speaker: protagonist
+    text: die Muttersprache
+  items:
+  - die-muttersprache
+- type: prompt
+  ask:
+    en: 'Once more: say “mix”.'
+    ar: 'مرة أخرى: قولي “يخلط”.'
+    mk: 'Уште еднаш: кажете „меша“.'
+  answer:
+    speaker: protagonist
+    text: mischen
+  items:
+  - mischen
+- type: prompt
+  ask:
+    en: 'Once more: say “the language spoken at home”.'
+    ar: 'مرة أخرى: قولي “لغة البيت”.'
+    mk: 'Уште еднаш: кажете „јазикот во семејството“.'
+  answer:
+    speaker: protagonist
+    text: die Familiensprache
+  items:
+  - die-familiensprache
+- type: prompt
+  ask:
+    en: 'Once more: say “(particle in questions) then, actually”.'
+    ar: 'مرة أخرى: قولي “(أداة استفهام) إذن، يا ترى”.'
+    mk: 'Уште еднаш: кажете „(честичка во прашања) па“.'
+  answer:
+    speaker: protagonist
+    text: denn
+  items:
+  - denn-frage
+- type: prompt
+  ask:
+    en: 'Once more: say “(particle) surely not…?”.'
+    ar: 'مرة أخرى: قولي “(أداة) هل يُعقل…؟”.'
+    mk: 'Уште еднаш: кажете „(честичка) зар…?“.'
+  answer:
+    speaker: protagonist
+    text: etwa
+  items:
+  - etwa
+- type: prompt
+  ask:
+    en: 'Once more: say “(particle) go ahead, feel free”.'
+    ar: 'مرة أخرى: قولي “(أداة) لا بأس، تفضّلي”.'
+    mk: 'Уште еднаш: кажете „(честичка) слободно“.'
+  answer:
+    speaker: protagonist
+    text: ruhig
+  items:
+  - ruhig-partikel
+- type: prompt
+  ask:
+    en: 'Once more: say “one person, one language”.'
+    ar: 'مرة أخرى: قولي “شخص واحد، لغة واحدة”.'
+    mk: 'Уште еднаш: кажете „една личност, еден јазик“.'
+  answer:
+    speaker: protagonist
+    text: eine Person, eine Sprache
+  items:
+  - eine-person-eine-sprache
+- type: prompt
+  ask:
+    en: 'Once more: say “the advantage”.'
+    ar: 'مرة أخرى: قولي “الميزة”.'
+    mk: 'Уште еднаш: кажете „предноста“.'
+  answer:
+    speaker: protagonist
+    text: der Vorteil
+  items:
+  - der-vorteil
+- type: prompt
+  ask:
+    en: 'Once more: say “the brain”.'
+    ar: 'مرة أخرى: قولي “الدماغ”.'
+    mk: 'Уште еднаш: кажете „мозокот“.'
+  answer:
+    speaker: protagonist
+    text: das Gehirn
+  items:
+  - das-gehirn
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the midwife — and “the birth — and “the first weeks after birth — and “was born — and “is weighed — and “is registered — and “the birth certificate — and “breastfeed — and “child benefit
+      — and “is paid — and “Congratulations on the birth! — and “the Enlightenment — and “duty — and “reason, understanding — and “courage — and “the categorical imperative — and “reason — and “the rule
+      to be followed — and “universally valid — and “intellectual maturity, autonomy — and “act — and “the accident”.'
+    ar: 'قولي: “القابلة — و“الولادة — و“فترة النفاس — و“وُلدت — و“يُوزن — و“مسجَّل — و“شهادة الميلاد — و“ترضع — و“علاوة الأطفال — و“يُدفع — و“مبروك المولودة! — و“عصر التنوير — و“الواجب — و“العقل — و“الشجاعة
+      — و“الأمر المطلق — و“العقل، المنطق — و“القاعدة الواجب اتّباعها — و“صالح للجميع — و“الرشد — و“يتصرّف — و“الحادث”.'
+    mk: 'Кажете: „бабицата“ — и „раѓањето“ — и „бабињето“ — и „е родена“ — и „се мери“ — и „е пријавено“ — и „изводот од матичната книга на родени“ — и „дои“ — и „детскиот додаток“ — и „се плаќа“ — и „Честитки
+      за раѓањето!“ — и „просветителството“ — и „должноста“ — и „разумот“ — и „храброста“ — и „категоричкиот императив“ — и „умот“ — и „правилото што треба да се следи“ — и „општо важечко“ — и „полнолетството
+      (на умот)“ — и „постапува“ — и „несреќата“.'
+  answer:
+    speaker: protagonist
+    text: die Hebamme … die Geburt … das Wochenbett … wurde geboren … wird gewogen … ist angemeldet … die Geburtsurkunde … stillen … das Kindergeld … wird bezahlt … Herzlichen Glückwunsch zur Geburt! …
+      die Aufklärung … die Pflicht … der Verstand … der Mut … der kategorische Imperativ … die Vernunft … die zu befolgende Regel … allgemein gültig … die Mündigkeit … handeln … der Unfall
+  items:
+  - die-hebamme
+  - die-geburt
+  - das-wochenbett
+  - wurde-geboren
+  - wird-gewogen
+  - ist-angemeldet
+  - die-geburtsurkunde
+  - stillen
+  - das-kindergeld
+  - wird-bezahlt-c1
+  - herzlichen-glueckwunsch-geburt
+  - die-aufklaerung
+  - die-pflicht
+  - der-verstand
+  - der-mut
+  - der-kategorische-imperativ
+  - die-vernunft
+  - der-zu-befolgende
+  - allgemein-gueltig
+  - die-muendigkeit
+  - handeln
+  - der-unfall
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the accident report — and “the witness — and “the statement — and “the crossing, junction — and “turn (off) — and “he claims I was … — and “(reported) he saw … — and “right of way — and “the
+      bruise — and “the case number — and “the works council — and “overtime — and “holiday days — and “the holiday request — and “is regulated, is set out — and “is fixed — and “is refused — and “a bridge
+      day (between holiday and weekend) — and “compensate (with time off) — and “the working hours law — and “the Basic Law (constitution) — and “dignity”.'
+    ar: 'قولي: “تقرير الحادث — و“الشاهد — و“الإفادة — و“التقاطع — و“ينعطف — و“يدّعي أنني … — و“(منقولًا) إنه رأى … — و“أولوية المرور — و“الكدمة — و“رقم الملف — و“مجلس العاملين — و“الساعات الإضافية — و“أيام
+      الإجازة — و“طلب الإجازة — و“منظَّم — و“محدَّد — و“مرفوض — و“يوم الجسر — و“يعوّض — و“قانون ساعات العمل — و“القانون الأساسي — و“الكرامة”.'
+    mk: 'Кажете: „записникот за несреќата“ — и „сведокот“ — и „изјавата“ — и „раскрсницата“ — и „свртува“ — и „тврди дека сум …“ — и „(пренесено) дека видел …“ — и „првенството“ — и „модринката“ — и „бројот
+      на предметот“ — и „работничкиот совет“ — и „прекувремената работа“ — и „деновите одмор“ — и „барањето за одмор“ — и „е регулирано“ — и „е утврдено“ — и „е одбиено“ — и „мостен ден“ — и „надоместува“
+      — и „законот за работно време“ — и „Основниот закон“ — и „достоинството“.'
+  answer:
+    speaker: protagonist
+    text: der Unfallbericht … der Zeuge … die Aussage … die Kreuzung … abbiegen … er behauptet, ich sei … … er habe … gesehen … die Vorfahrt … die Prellung … das Aktenzeichen … der Betriebsrat … die Überstunden
+      … die Urlaubstage … der Urlaubsantrag … ist geregelt … ist festgelegt … ist abgelehnt … der Brückentag … ausgleichen … das Arbeitszeitgesetz … das Grundgesetz … die Würde
+  items:
+  - der-unfallbericht
+  - der-zeuge
+  - die-aussage
+  - die-kreuzung
+  - abbiegen
+  - er-behauptet-ich-sei
+  - er-habe-gesehen
+  - die-vorfahrt
+  - die-prellung
+  - das-aktenzeichen
+  - der-betriebsrat
+  - die-ueberstunden
+  - die-urlaubstage
+  - der-urlaubsantrag
+  - ist-geregelt
+  - ist-festgelegt
+  - ist-abgelehnt
+  - der-brueckentag
+  - ausgleichen
+  - das-arbeitszeitgesetz
+  - das-grundgesetz
+  - die-wuerde
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “inviolable — and “the right to … — and “freedom of expression — and “would have thought — and “would have been — and “if I had known — and “criticise — and “the government — and “after the
+      war — and “Hang on a moment! — and “the rubbish — and “separate, sort — and “the yellow bin (packaging) — and “plastic — and “paper — and “the blue one — and “food waste — and “general waste — and
+      “glass — and “Take … (polite command) — and “to the container”.'
+    ar: 'قولي: “لا تُمسّ — و“الحق في … — و“حرية الرأي — و“كنتُ سأظن — و“كان سيكون — و“لو كنتُ أعرف — و“ينتقد — و“الحكومة — و“بعد الحرب — و“لحظة من فضلك! — و“النفايات — و“يفرز — و“الحاوية الصفراء (التغليف)
+      — و“البلاستيك — و“الورق — و“الزرقاء — و“النفايات العضوية — و“بقية النفايات — و“الزجاج — و“خذ … (أمر مؤدب) — و“إلى الحاوية”.'
+    mk: 'Кажете: „неприкосновено“ — и „правото на …“ — и „слободата на мислење“ — и „би помислил“ — и „ќе беше“ — и „да знаев“ — и „критикува“ — и „владата“ — и „по војната“ — и „Чекајте малку!“ — и „ѓубрето“
+      — и „одвојува“ — и „жолтиот контејнер (амбалажа)“ — и „пластиката“ — и „хартијата“ — и „синиот“ — и „органскиот отпад“ — и „останатиот отпад“ — и „стаклото“ — и „Однесете …“ — и „до контејнерот“.'
+  answer:
+    speaker: protagonist
+    text: unantastbar … das Recht auf … … die Meinungsfreiheit … hätte gedacht … wäre gewesen … wenn ich gewusst hätte … kritisieren … die Regierung … nach dem Krieg … Moment mal! … der Müll … trennen …
+      die gelbe Tonne … das Plastik … das Papier … die blaue … der Biomüll … der Restmüll … das Glas … Bringen Sie … … zum Container
+  items:
+  - unantastbar
+  - das-recht-auf
+  - die-meinungsfreiheit
+  - haette-gedacht
+  - waere-gewesen
+  - wenn-ich-gewusst-haette
+  - kritisieren
+  - die-regierung
+  - nach-dem-krieg
+  - moment-mal
+  - der-muell
+  - trennen
+  - die-gelbe-tonne
+  - das-plastik
+  - das-papier
+  - die-blaue
+  - der-biomuell
+  - der-restmuell
+  - das-glas
+  - bringen-sie
+  - zum-container
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the right to vote locally — and “the migrants'' advisory council — and “the polling card — and “the polling station”.'
+    ar: 'قولي: “حق التصويت المحلي — و“مجلس الهجرة الاستشاري — و“بطاقة إشعار الانتخاب — و“مركز الاقتراع”.'
+  answer:
+    speaker: protagonist
+    text: das kommunale Wahlrecht … der Migrationsbeirat … die Wahlbenachrichtigung … das Wahllokal
+  items:
+  - das-kommunale-wahlrecht-ea
+  - der-migrationsbeirat-ea
+  - die-wahlbenachrichtigung-ea
+  - das-wahllokal-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the city council — and “stand (as a candidate) — and “(reported) it says … — and “(reported) it will be …”.'
+    ar: 'قولي: “مجلس المدينة — و“يترشّح — و“(منقولًا) يُقال إنّ … — و“(منقولًا) سيكون …”.'
+  answer:
+    speaker: protagonist
+    text: der Stadtrat … kandidieren … es heiße … … er werde …
+  items:
+  - der-stadtrat-ea
+  - kandidieren-ea
+  - es-heisse-ea
+  - er-werde-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “have a say — and “cast one''s vote”.'
+    ar: 'قولي: “يشارك في القرار — و“يُدلي بصوته”.'
+  answer:
+    speaker: protagonist
+    text: mitbestimmen … seine Stimme abgeben
+  items:
+  - mitbestimmen-ea
+  - die-stimme-abgeben-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „известувањето за гласање“ — и „правото на глас на локални избори“ — и „избирачкото место“ — и „градскиот совет“.'
+  answer:
+    speaker: protagonist
+    text: die Wahlbenachrichtigung … das kommunale Wahlrecht … das Wahllokal … der Stadtrat
+  items:
+  - die-wahlbenachrichtigung-m
+  - das-kommunale-wahlrecht-m
+  - das-wahllokal-m
+  - der-stadtrat-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „гласачкото ливче“ — и „(пренесено) се вели дека …“ — и „(пренесено) дека смее …“ — и „заокружува со крст“.'
+  answer:
+    speaker: protagonist
+    text: der Stimmzettel … es heiße … … man dürfe … … ankreuzen
+  items:
+  - der-stimmzettel-m
+  - es-heisse-m
+  - man-duerfe-m
+  - ankreuzen-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „гласањето по пошта“ — и „европските избори“.'
+  answer:
+    speaker: protagonist
+    text: die Briefwahl … die Europawahl
+  items:
+  - die-briefwahl-m
+  - die-europawahl-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

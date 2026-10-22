@@ -1,0 +1,845 @@
+# UNIT de C1-22 — written by AI (Claude) for Casus; expanded from src/C1-22.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-22
+level: C1
+number: 22
+protagonist: m
+title:
+  en: Inheritance
+  ar: الإرث
+  mk: Наследство
+situation:
+  en: Frau Becker has been to the notary to make her will. Over coffee she tells you what the notary explained.
+  ar: السيدة بيكر ذهبت إلى كاتب العدل لتكتب وصيتها. على القهوة تحكي لك ما شرحه كاتب العدل.
+  mk: Госпоѓа Бекер била кај нотар за да го состави тестаментот. На кафе ви раскажува што ѝ објаснил нотарот.
+learn_lessons:
+- c1-konjunktiv-i
+culture: Wills and the compulsory share
+new_items:
+- id: das-testament
+  text: das Testament
+  meaning:
+    en: the will
+    ar: الوصية
+    mk: тестаментот
+- id: die-erbschaft
+  text: die Erbschaft
+  meaning:
+    en: the inheritance
+    ar: الإرث
+    mk: наследството
+- id: erben
+  text: erben
+  meaning:
+    en: inherit
+    ar: يرث
+    mk: наследува
+- id: der-erbe
+  text: der Erbe / die Erbin
+  meaning:
+    en: the heir
+    ar: الوريث
+    mk: наследникот
+- id: der-pflichtteil
+  text: der Pflichtteil
+  meaning:
+    en: the compulsory share
+    ar: الحصة الإلزامية
+    mk: задолжителниот дел
+  rare: true
+- id: die-gesetzliche-erbfolge
+  text: die gesetzliche Erbfolge
+  meaning:
+    en: statutory succession
+    ar: الإرث القانوني
+    mk: законскиот наследен ред
+  rare: true
+- id: handschriftlich
+  text: handschriftlich
+  meaning:
+    en: handwritten
+    ar: بخط اليد
+    mk: рачно напишан
+- id: der-nachlass
+  text: der Nachlass
+  meaning:
+    en: the estate
+    ar: التركة
+    mk: оставината
+  rare: true
+- id: er-sagte-es-gebe
+  text: er sagte, es gebe …
+  meaning:
+    en: he said there was …
+    ar: قال إنه يوجد …
+    mk: рече дека има …
+- id: vererben-c1
+  text: vermachen
+  meaning:
+    en: bequeath
+    ar: يوصي بـ
+    mk: остава во аманет
+reviews:
+- item: das-sofa
+  from: A1-15
+- item: passt
+  from: A1-15
+- item: messen
+  from: A1-15
+- item: wie-breit
+  from: A1-15
+- item: meter
+  from: A1-15
+- item: zentimeter
+  from: A1-15
+- item: lang
+  from: A1-15
+- item: die-ecke
+  from: A1-15
+- item: rund
+  from: A1-15
+- item: eckig
+  from: A1-15
+- item: genau
+  from: A1-15
+- item: zu-gross
+  from: A1-15
+- item: die-unterkunft-e
+  from: B1-19-e
+  for:
+  - en
+- item: kam-an-e
+  from: B1-19-e
+  for:
+  - en
+- item: ist-angekommen-e
+  from: B1-19-e
+  for:
+  - en
+- item: das-asylverfahren-e
+  from: B1-19-e
+  for:
+  - en
+- item: die-anerkennung-e
+  from: B1-19-e
+  for:
+  - en
+- item: die-schule-nachgeholt-e
+  from: B1-19-e
+  for:
+  - en
+- item: hat-angefangen-e
+  from: B1-19-e
+  for:
+  - en
+- item: zog-um-e
+  from: B1-19-e
+  for:
+  - en
+- item: allein-e
+  from: B1-19-e
+  for:
+  - en
+- item: stolz-e
+  from: B1-19-e
+  for:
+  - en
+- item: der-glaube
+  from: B2-21
+- item: glaeubig
+  from: B2-21
+- item: konfessionslos
+  from: B2-21
+- item: die-moschee
+  from: B2-21
+- item: der-kirchenaustritt
+  from: B2-21
+- item: das-mitglied-kirche
+  from: B2-21
+- item: die-gemeinde
+  from: B2-21
+- item: sie-seien
+  from: B2-21
+- item: es-gebe
+  from: B2-21
+- item: die-religionsfreiheit
+  from: B2-21
+- item: respektieren
+  from: B2-21
+- item: kaffee-und-kuchen
+  from: C1-07
+- item: die-schwiegereltern
+  from: C1-07
+- item: ja-mal
+  from: C1-07
+- item: doch-mal-c1
+  from: C1-07
+- item: wohl
+  from: C1-07
+- item: selbst-gebacken
+  from: C1-07
+- item: der-sonntagskuchen
+  from: C1-07
+- item: puenktlich-um
+  from: C1-07
+- item: nehmen-sie-doch
+  from: C1-07
+- item: sich-verabschieden
+  from: C1-07
+- item: die-kundgebung
+  from: C1-15
+- item: die-zivilcourage
+  from: C1-15
+- item: das-plakat-demo
+  from: C1-15
+- item: der-zusammenhalt
+  from: C1-15
+- item: eingreifen
+  from: C1-15
+- item: laut-ansprechen
+  from: C1-15
+- item: halt-mal
+  from: C1-15
+- item: eigentlich-c1
+  from: C1-15
+- item: bloss
+  from: C1-15
+- item: die-solidaritaet
+  from: C1-15
+- item: der-kleingarten
+  from: C1-19
+- item: die-hecke
+  from: C1-19
+- item: die-schlichtung
+  from: C1-19
+- item: die-schiedsperson
+  from: C1-19
+- item: das-grundstueck
+  from: C1-19
+- item: die-gartenordnung
+  from: C1-19
+- item: wenngleich
+  from: C1-19
+- item: selbst-wenn
+  from: C1-19
+- item: zurueckschneiden
+  from: C1-19
+- item: die-einigung
+  from: C1-19
+- item: zweisprachig
+  from: C1-21
+- item: die-muttersprache
+  from: C1-21
+- item: mischen
+  from: C1-21
+- item: die-familiensprache
+  from: C1-21
+- item: denn-frage
+  from: C1-21
+- item: etwa
+  from: C1-21
+- item: ruhig-partikel
+  from: C1-21
+- item: eine-person-eine-sprache
+  from: C1-21
+- item: der-vorteil
+  from: C1-21
+- item: das-gehirn
+  from: C1-21
+- item: die-unterkunft-a
+  from: B1-19-a
+  for:
+  - ar
+- item: kam-an-a
+  from: B1-19-a
+  for:
+  - ar
+- item: das-landratsamt-a
+  from: B1-19-a
+  for:
+  - ar
+- item: die-anerkennung-a
+  from: B1-19-a
+  for:
+  - ar
+- item: kein-deutschkurs-a
+  from: B1-19-a
+  for:
+  - ar
+- item: gruessten-nicht-mehr-a
+  from: B1-19-a
+  for:
+  - ar
+- item: der-stand-a
+  from: B1-19-a
+  for:
+  - ar
+- item: das-stadtfest-a
+  from: B1-19-a
+  for:
+  - ar
+- item: der-gebetsraum-a
+  from: B1-19-a
+  for:
+  - ar
+- item: machte-auf-a
+  from: B1-19-a
+  for:
+  - ar
+- item: zog-um-a
+  from: B1-19-a
+  for:
+  - ar
+- item: kam-an-m
+  from: B1-19-m
+  for:
+  - mk
+- item: der-eu-buerger-m
+  from: B1-19-m
+  for:
+  - mk
+- item: die-westbalkanregelung-m
+  from: B1-19-m
+  for:
+  - mk
+- item: der-bulgarische-pass-m
+  from: B1-19-m
+  for:
+  - mk
+- item: ein-arbeitsvertrag-m
+  from: B1-19-m
+  for:
+  - mk
+- item: zog-um-m
+  from: B1-19-m
+  for:
+  - mk
+- item: rief-an-m
+  from: B1-19-m
+  for:
+  - mk
+- item: fing-an-m
+  from: B1-19-m
+  for:
+  - mk
+- item: der-pflegedienst-m
+  from: B1-19-m
+  for:
+  - mk
+- item: viele-von-uns-m
+  from: B1-19-m
+  for:
+  - mk
+- item: der-notar
+  from: C1-17
+steps:
+- type: narrator
+  text:
+    en: Frau Becker has been to the notary to make her will. Over coffee she tells you what the notary explained. Listen to the conversation; you don't need to understand it yet.
+    ar: السيدة بيكر ذهبت إلى كاتب العدل لتكتب وصيتها. على القهوة تحكي لك ما شرحه كاتب العدل. استمع إلى المحادثة؛ لا داعي لأن تفهمها الآن.
+    mk: Госпоѓа Бекер била кај нотар за да го состави тестаментот. На кафе ви раскажува што ѝ објаснил нотарот. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: becker
+    text: Ich war beim Notar. Mit sechzig sollte man ein Testament haben.
+    meaning:
+      en: I went to the notary. At sixty you should have a will.
+      ar: ذهبتُ إلى كاتب العدل. في الستين يجب أن تكون للمرء وصية.
+      mk: Бев кај нотар. На шеесет години треба да имаш тестамент.
+  - speaker: protagonist
+    text: Braucht man dafür einen Notar?
+    meaning:
+      en: Do you need a notary for that?
+      ar: هل يحتاج ذلك إلى كاتب عدل؟
+      mk: Дали за тоа треба нотар?
+  - speaker: becker
+    text: Nein. Er sagte, ein handschriftliches Testament sei auch gültig — ganz mit der Hand geschrieben und unterschrieben.
+    meaning:
+      en: No. He said a handwritten will is also valid — written entirely by hand and signed.
+      ar: لا. قال إنّ الوصية المكتوبة بخط اليد صالحة أيضًا — مكتوبة كلها باليد وموقَّعة.
+      mk: Не. Рече дека и рачно напишан тестамент е важечки — целиот напишан со рака и потпишан.
+  - speaker: protagonist
+    text: Und kann man alles vermachen, wem man will?
+    meaning:
+      en: And can you leave everything to whoever you want?
+      ar: وهل يمكن أن يوصي المرء بكل شيء لمن يشاء؟
+      mk: А може ли да се остави сè на кого сакаш?
+  - speaker: becker
+    text: Fast. Er sagte, es gebe einen Pflichtteil für die Kinder. Den bekommen sie immer.
+    meaning:
+      en: Almost. He said there's a compulsory share for the children. They always get that.
+      ar: تقريبًا. قال إنّ هناك حصة إلزامية للأولاد. يحصلون عليها دائمًا.
+      mk: Речиси. Рече дека постои задолжителен дел за децата. Тој секогаш го добиваат.
+  - speaker: protagonist
+    text: Und ohne Testament?
+    meaning:
+      en: And without a will?
+      ar: وبلا وصية؟
+      mk: А без тестамент?
+  - speaker: becker
+    text: Dann gilt die gesetzliche Erbfolge. Ehepartner und Kinder erben zuerst.
+    meaning:
+      en: Then statutory succession applies. Spouses and children inherit first.
+      ar: عندها يسري الإرث القانوني. الزوج والأولاد يرثون أولًا.
+      mk: Тогаш важи законскиот наследен ред. Брачниот другар и децата наследуваат први.
+  - speaker: protagonist
+    text: Bei uns regelt das oft die Familie, ohne Papier.
+    meaning:
+      en: With us the family often settles it, without paper.
+      ar: عندنا كثيرًا ما تنظّم العائلة ذلك، بلا أوراق.
+      mk: Кај нас тоа често го решава семејството, без хартија.
+  - speaker: becker
+    text: Und genau das führt hier oft zu Streit. Mein Fahrrad bekommst übrigens du!
+    meaning:
+      en: And that's exactly what often leads to quarrels here. By the way, you're getting my bike!
+      ar: وهذا بالضبط ما يؤدّي هنا غالبًا إلى الخلاف. بالمناسبة، دراجتي ستكون لك!
+      mk: А токму тоа тука често води до кавги. Патем, мојот велосипед е твој!
+- type: prompt
+  ask:
+    en: 'Say: a will.'
+    ar: 'قل: وصية.'
+    mk: 'Кажете: тестамент.'
+  answer:
+    speaker: protagonist
+    text: Ein Testament.
+  items:
+  - das-testament
+- type: prompt
+  ask:
+    en: 'Ask: do you need a notary?'
+    ar: 'اسأل: هل يحتاج ذلك إلى كاتب عدل؟'
+    mk: 'Прашајте: дали треба нотар?'
+  answer:
+    speaker: protagonist
+    text: Braucht man einen Notar?
+  items:
+  - der-notar
+- type: narrator
+  text:
+    en: 'Reporting what the notary said, Konjunktiv I: «Er sagte, ein handschriftliches Testament sei gültig», «es gebe einen Pflichtteil». Becker keeps the source clear — it''s the notary''s word.'
+    ar: 'نقل ما قاله كاتب العدل بصيغة Konjunktiv I: «Er sagte, ein handschriftliches Testament sei gültig»، «es gebe einen Pflichtteil». بيكر توضّح المصدر — إنه كلام كاتب العدل.'
+    mk: 'Пренесување што рекол нотарот, Konjunktiv I: «Er sagte, ein handschriftliches Testament sei gültig», «es gebe einen Pflichtteil». Бекер го држи изворот јасен — тоа е зборот на нотарот.'
+- type: prompt
+  ask:
+    en: 'Report: a handwritten will is valid.'
+    ar: 'انقل: الوصية بخط اليد صالحة.'
+    mk: 'Пренесете: рачно напишан тестамент е важечки.'
+  answer:
+    speaker: protagonist
+    text: Ein handschriftliches Testament sei gültig.
+  items:
+  - handschriftlich
+- type: prompt
+  ask:
+    en: 'Report: there''s a compulsory share.'
+    ar: 'انقل: هناك حصة إلزامية.'
+    mk: 'Пренесете: постои задолжителен дел.'
+  answer:
+    speaker: protagonist
+    text: Es gebe einen Pflichtteil.
+  items:
+  - er-sagte-es-gebe
+  - der-pflichtteil
+- type: prompt
+  ask:
+    en: 'Ask: can you leave everything to whoever you want?'
+    ar: 'اسأل: هل يمكن الإيصاء بكل شيء لمن يشاء؟'
+    mk: 'Прашајте: може ли да се остави сè на кого сакаш?'
+  answer:
+    speaker: protagonist
+    text: Kann man alles vermachen, wem man will?
+  items:
+  - vererben-c1
+- type: prompt
+  ask:
+    en: 'Say: statutory succession.'
+    ar: 'قل: الإرث القانوني.'
+    mk: 'Кажете: законскиот наследен ред.'
+  answer:
+    speaker: protagonist
+    text: Die gesetzliche Erbfolge.
+  items:
+  - die-gesetzliche-erbfolge
+- type: prompt
+  ask:
+    en: 'Say: children inherit first.'
+    ar: 'قل: الأولاد يرثون أولًا.'
+    mk: 'Кажете: децата наследуваат први.'
+  answer:
+    speaker: protagonist
+    text: Kinder erben zuerst.
+  items:
+  - erben
+- type: prompt
+  ask:
+    en: 'Say: the heir.'
+    ar: 'قل: الوريث.'
+    mk: 'Кажете: наследникот.'
+  answer:
+    speaker: protagonist
+    text: Der Erbe.
+  items:
+  - der-erbe
+- type: prompt
+  ask:
+    en: 'Say: the inheritance and the estate.'
+    ar: 'قل: الإرث والتركة.'
+    mk: 'Кажете: наследството и оставината.'
+  answer:
+    speaker: protagonist
+    text: Die Erbschaft und der Nachlass.
+  items:
+  - die-erbschaft
+  - der-nachlass
+- type: narrator
+  text:
+    en: A will is valid if handwritten entirely by you and signed, or made at a notary (safer, registered centrally). Children and spouse always keep a compulsory share (Pflichtteil). Without a will, statutory
+      succession applies. Inheritance tax applies only above generous allowances for close family. For property abroad, foreign law may apply — ask a notary.
+    ar: الوصية صالحة إذا كتبتها كلها بخط يدك ووقّعتها، أو حرّرتها عند كاتب عدل (أكثر أمانًا، وتُسجَّل مركزيًا). ويحتفظ الأولاد والزوج دائمًا بحصة إلزامية. وبلا وصية يسري الإرث القانوني. ولا تُفرض ضريبة
+      الإرث إلا فوق إعفاءات سخية للعائلة القريبة. وللعقارات في الخارج قد يسري القانون الأجنبي — اسأل كاتب عدل.
+    mk: Тестаментот е важечки ако е целиот рачно напишан и потпишан од вас, или составен кај нотар (посигурно, централно регистрирано). Децата и брачниот другар секогаш го задржуваат задолжителниот дел.
+      Без тестамент важи законскиот ред. Данок на наследство има само над големи ослободувања за блиско семејство. За имот во странство може да важи странско право — прашајте нотар.
+- type: prompt
+  ask:
+    en: 'Once more: say “the will”.'
+    ar: 'مرة أخرى: قل “الوصية”.'
+    mk: 'Уште еднаш: кажете „тестаментот“.'
+  answer:
+    speaker: protagonist
+    text: das Testament
+  items:
+  - das-testament
+- type: prompt
+  ask:
+    en: 'Once more: say “the inheritance”.'
+    ar: 'مرة أخرى: قل “الإرث”.'
+    mk: 'Уште еднаш: кажете „наследството“.'
+  answer:
+    speaker: protagonist
+    text: die Erbschaft
+  items:
+  - die-erbschaft
+- type: prompt
+  ask:
+    en: 'Once more: say “inherit”.'
+    ar: 'مرة أخرى: قل “يرث”.'
+    mk: 'Уште еднаш: кажете „наследува“.'
+  answer:
+    speaker: protagonist
+    text: erben
+  items:
+  - erben
+- type: prompt
+  ask:
+    en: 'Once more: say “the heir”.'
+    ar: 'مرة أخرى: قل “الوريث”.'
+    mk: 'Уште еднаш: кажете „наследникот“.'
+  answer:
+    speaker: protagonist
+    text: der Erbe / die Erbin
+  items:
+  - der-erbe
+- type: prompt
+  ask:
+    en: 'Once more: say “the compulsory share”.'
+    ar: 'مرة أخرى: قل “الحصة الإلزامية”.'
+    mk: 'Уште еднаш: кажете „задолжителниот дел“.'
+  answer:
+    speaker: protagonist
+    text: der Pflichtteil
+  items:
+  - der-pflichtteil
+- type: prompt
+  ask:
+    en: 'Once more: say “statutory succession”.'
+    ar: 'مرة أخرى: قل “الإرث القانوني”.'
+    mk: 'Уште еднаш: кажете „законскиот наследен ред“.'
+  answer:
+    speaker: protagonist
+    text: die gesetzliche Erbfolge
+  items:
+  - die-gesetzliche-erbfolge
+- type: prompt
+  ask:
+    en: 'Once more: say “handwritten”.'
+    ar: 'مرة أخرى: قل “بخط اليد”.'
+    mk: 'Уште еднаш: кажете „рачно напишан“.'
+  answer:
+    speaker: protagonist
+    text: handschriftlich
+  items:
+  - handschriftlich
+- type: prompt
+  ask:
+    en: 'Once more: say “the estate”.'
+    ar: 'مرة أخرى: قل “التركة”.'
+    mk: 'Уште еднаш: кажете „оставината“.'
+  answer:
+    speaker: protagonist
+    text: der Nachlass
+  items:
+  - der-nachlass
+- type: prompt
+  ask:
+    en: 'Once more: say “he said there was …”.'
+    ar: 'مرة أخرى: قل “قال إنه يوجد …”.'
+    mk: 'Уште еднаш: кажете „рече дека има …“.'
+  answer:
+    speaker: protagonist
+    text: er sagte, es gebe …
+  items:
+  - er-sagte-es-gebe
+- type: prompt
+  ask:
+    en: 'Once more: say “bequeath”.'
+    ar: 'مرة أخرى: قل “يوصي بـ”.'
+    mk: 'Уште еднаш: кажете „остава во аманет“.'
+  answer:
+    speaker: protagonist
+    text: vermachen
+  items:
+  - vererben-c1
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتَه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “bilingual — and “the mother tongue — and “mix — and “the language spoken at home — and “(particle in questions) then, actually — and “(particle) surely not…? — and “(particle) go ahead, feel
+      free — and “one person, one language — and “the advantage — and “the brain — and “the allotment garden — and “the hedge — and “mediation, arbitration — and “the local mediator — and “the plot (of
+      land) — and “the garden rules — and “even though (formal) — and “even if — and “cut back — and “the agreement — and “the rally”.'
+    ar: 'قل: “ثنائي اللغة — و“اللغة الأم — و“يخلط — و“لغة البيت — و“(أداة استفهام) إذن، يا ترى — و“(أداة) هل يُعقل…؟ — و“(أداة) لا بأس، تفضّلي — و“شخص واحد، لغة واحدة — و“الميزة — و“الدماغ — و“الحديقة الصغيرة
+      المستأجرة — و“السياج النباتي — و“التسوية الودية — و“الوسيط المحلي — و“قطعة الأرض — و“نظام الحدائق — و“وإن كان — و“حتى لو — و“يقلّم — و“الاتفاق — و“التجمّع”.'
+    mk: 'Кажете: „двојазично“ — и „мајчиниот јазик“ — и „меша“ — и „јазикот во семејството“ — и „(честичка во прашања) па“ — и „(честичка) зар…?“ — и „(честичка) слободно“ — и „една личност, еден јазик“
+      — и „предноста“ — и „мозокот“ — и „малата градина“ — и „живата ограда“ — и „помирувањето“ — и „помирувачот“ — и „парцелата“ — и „правилникот на градините“ — и „иако (формално)“ — и „дури и ако“ —
+      и „поткаструва“ — и „договорот, спогодбата“ — и „собирот“.'
+  answer:
+    speaker: protagonist
+    text: zweisprachig … die Muttersprache … mischen … die Familiensprache … denn … etwa … ruhig … eine Person, eine Sprache … der Vorteil … das Gehirn … der Kleingarten … die Hecke … die Schlichtung …
+      die Schiedsperson … das Grundstück … die Gartenordnung … wenngleich … selbst wenn … zurückschneiden … die Einigung … die Kundgebung
+  items:
+  - zweisprachig
+  - die-muttersprache
+  - mischen
+  - die-familiensprache
+  - denn-frage
+  - etwa
+  - ruhig-partikel
+  - eine-person-eine-sprache
+  - der-vorteil
+  - das-gehirn
+  - der-kleingarten
+  - die-hecke
+  - die-schlichtung
+  - die-schiedsperson
+  - das-grundstueck
+  - die-gartenordnung
+  - wenngleich
+  - selbst-wenn
+  - zurueckschneiden
+  - die-einigung
+  - die-kundgebung
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “civil courage — and “the placard, sign — and “solidarity, cohesion — and “intervene — and “address loudly — and “(particle) just, hold on — and “(particle) actually, by the way — and “(particle)
+      just, only — urgent — and “solidarity — and “afternoon coffee and cake — and “the parents-in-law — and “(particle) just, for once — and “(particle) after all, do — and “(particle) probably — and “home-made
+      (baked) — and “plum cake — and “at three sharp — and “Do have another piece! — and “say goodbye, take one''s leave — and “faith — and “religious, believing”.'
+    ar: 'قل: “الشجاعة المدنية — و“اللافتة — و“التماسك — و“يتدخّل — و“يخاطب بصوت عالٍ — و“(أداة) لحظة، فقط — و“(أداة) في الحقيقة — و“(أداة) فقط — بإلحاح — و“التضامن — و“القهوة والكعك (عصرًا) — و“الأصهار
+      — و“(أداة) مرة، هيا — و“(أداة) ولكن، هيا — و“(أداة) على الأرجح — و“من صنع البيت — و“كعكة البرقوق — و“في الثالثة تمامًا — و“خذي قطعة أخرى! — و“يستأذن، يودّع — و“الإيمان — و“مؤمن، متديّن”.'
+    mk: 'Кажете: „граѓанската храброст“ — и „таблата“ — и „заедништвото“ — и „интервенира“ — и „гласно се обраќа“ — и „(честичка) чекај малку“ — и „(честичка) всушност“ — и „(честичка) само — итно“ — и
+      „солидарноста“ — и „кафе и колач“ — и „свекор и свекрва / тест и тешта“ — и „(честичка) ајде, еднаш“ — и „(честичка) сепак, ајде“ — и „(честичка) веројатно“ — и „домашно печен“ — и „колачот со сливи“
+      — и „точно во три“ — и „Земете уште едно парче!“ — и „се поздравува, си заминува“ — и „верата“ — и „верник“.'
+  answer:
+    speaker: protagonist
+    text: die Zivilcourage … das Schild … der Zusammenhalt … eingreifen … laut ansprechen … halt mal … eigentlich … bloß … die Solidarität … Kaffee und Kuchen … die Schwiegereltern … ja mal … doch … wohl
+      … selbst gebacken … der Pflaumenkuchen … pünktlich um drei … Nehmen Sie doch noch ein Stück! … sich verabschieden … der Glaube … gläubig
+  items:
+  - die-zivilcourage
+  - das-plakat-demo
+  - der-zusammenhalt
+  - eingreifen
+  - laut-ansprechen
+  - halt-mal
+  - eigentlich-c1
+  - bloss
+  - die-solidaritaet
+  - kaffee-und-kuchen
+  - die-schwiegereltern
+  - ja-mal
+  - doch-mal-c1
+  - wohl
+  - selbst-gebacken
+  - der-sonntagskuchen
+  - puenktlich-um
+  - nehmen-sie-doch
+  - sich-verabschieden
+  - der-glaube
+  - glaeubig
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “without religious affiliation — and “the mosque — and “leaving the church (officially) — and “church member — and “the congregation, community — and “(reported) they are … — and “(reported)
+      there is … — and “freedom of religion — and “respect — and “the sofa — and “fits — and “measure — and “How wide …? — and “metres — and “centimetres — and “long — and “the corner — and “round — and
+      “square, angular — and “exactly — and “too big”.'
+    ar: 'قل: “بلا انتماء ديني — و“المسجد — و“الخروج الرسمي من الكنيسة — و“عضو في الكنيسة — و“الجماعة، الرعية — و“(منقولًا) إنهم … — و“(منقولًا) إنه يوجد … — و“حرية الدين — و“يحترم — و“الأريكة — و“يتسع،
+      يناسب — و“يقيس — و“كم عرض …؟ — و“متر — و“سنتيمتر — و“طويل — و“الزاوية — و“مستدير — و“مربّع الشكل — و“بالضبط — و“كبير جدًا”.'
+    mk: 'Кажете: „без вероисповед“ — и „џамијата“ — и „излегувањето од црквата“ — и „член на црквата“ — и „заедницата“ — и „(пренесено) дека се …“ — и „(пренесено) дека има …“ — и „слободата на вероисповед“
+      — и „почитува“ — и „каучот“ — и „собира, одговара“ — и „мериме“ — и „Колку е широк …?“ — и „метри“ — и „сантиметри“ — и „долг“ — и „аголот“ — и „тркалезно“ — и „аглесто“ — и „точно“ — и „преголемо“.'
+  answer:
+    speaker: protagonist
+    text: konfessionslos … die Moschee … der Kirchenaustritt … Mitglied der Kirche … die Gemeinde … sie seien … … es gebe … … die Religionsfreiheit … respektieren … das Sofa … passt … messen … Wie breit
+      …? … Meter … Zentimeter … lang … die Ecke … rund … eckig … genau … zu groß
+  items:
+  - konfessionslos
+  - die-moschee
+  - der-kirchenaustritt
+  - das-mitglied-kirche
+  - die-gemeinde
+  - sie-seien
+  - es-gebe
+  - die-religionsfreiheit
+  - respektieren
+  - das-sofa
+  - passt
+  - messen
+  - wie-breit
+  - meter
+  - zentimeter
+  - lang
+  - die-ecke
+  - rund
+  - eckig
+  - genau
+  - zu-gross
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the shelter, accommodation — and “arrived — and “has arrived — and “the asylum procedure”.'
+  answer:
+    speaker: protagonist
+    text: die Unterkunft … kam an … ist angekommen … das Asylverfahren
+  items:
+  - die-unterkunft-e
+  - kam-an-e
+  - ist-angekommen-e
+  - das-asylverfahren-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “recognition (of status) — and “caught up on school-leaving exams — and “started — and “moved (house)”.'
+  answer:
+    speaker: protagonist
+    text: die Anerkennung … das Abitur nachgeholt … hat angefangen … zog um
+  items:
+  - die-anerkennung-e
+  - die-schule-nachgeholt-e
+  - hat-angefangen-e
+  - zog-um-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “alone — and “proud”.'
+  answer:
+    speaker: protagonist
+    text: allein … stolz
+  items:
+  - allein-e
+  - stolz-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “مسكن اللاجئين — و“وصلتُ — و“دائرة المقاطعة — و“الاعتراف (باللجوء)”.'
+  answer:
+    speaker: protagonist
+    text: die Unterkunft … kam an … das Landratsamt … die Anerkennung
+  items:
+  - die-unterkunft-a
+  - kam-an-a
+  - das-landratsamt-a
+  - die-anerkennung-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “لا دورة ألمانية — و“لم يعودوا يحيّون — و“الكشك — و“حفلة المدينة”.'
+  answer:
+    speaker: protagonist
+    text: kein Deutschkurs … grüßten nicht mehr … der Stand … das Stadtfest
+  items:
+  - kein-deutschkurs-a
+  - gruessten-nicht-mehr-a
+  - der-stand-a
+  - das-stadtfest-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “المصلّى — و“فتحتُ — و“انتقلتُ (من سكن)”.'
+  answer:
+    speaker: protagonist
+    text: der Gebetsraum … machte auf … zog um
+  items:
+  - der-gebetsraum-a
+  - machte-auf-a
+  - zog-um-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „пристигна“ — и „граѓани на ЕУ“ — и „правилото за Западен Балкан“ — и „бугарскиот пасош“.'
+  answer:
+    speaker: protagonist
+    text: kam an … EU-Bürger … die Westbalkanregelung … der bulgarische Pass
+  items:
+  - kam-an-m
+  - der-eu-buerger-m
+  - die-westbalkanregelung-m
+  - der-bulgarische-pass-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „договор за работа“ — и „се пресели“ — и „се јави“ — и „почна“.'
+  answer:
+    speaker: protagonist
+    text: ein Arbeitsvertrag … zog um … rief an … fing an
+  items:
+  - ein-arbeitsvertrag-m
+  - zog-um-m
+  - rief-an-m
+  - fing-an-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „службата за нега“ — и „многумина од нас“.'
+  answer:
+    speaker: protagonist
+    text: der Pflegedienst … viele von uns
+  items:
+  - der-pflegedienst-m
+  - viele-von-uns-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمع إلى المحادثة مرة أخرى. الآن تفهمها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck
