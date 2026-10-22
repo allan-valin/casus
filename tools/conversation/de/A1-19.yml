@@ -1,0 +1,589 @@
+# UNIT de A1-19 — written by AI (Claude) for Casus; expanded from src/A1-19.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-19
+level: A1
+number: 19
+protagonist: f
+title:
+  en: The market
+  ar: السوق
+  mk: Пазарот
+situation:
+  en: Saturday market. Herr Yilmaz sells fruit and vegetables and jokes with everyone.
+  ar: سوق السبت. السيد يلماز يبيع الخضار والفاكهة ويمازح الجميع.
+  mk: Сабота, пазарот. Господин Јилмаз продава овошје и зеленчук и се шегува со сите.
+learn_lessons:
+- a1-numbers
+culture: Weekly markets
+new_items:
+- id: frisch
+  text: frisch
+  meaning:
+    en: fresh
+    ar: طازج
+    mk: свежо
+- id: ein-kilo
+  text: ein Kilo
+  meaning:
+    en: a kilo
+    ar: كيلو
+    mk: едно кило
+- id: tomaten
+  text: Tomaten
+  meaning:
+    en: tomatoes
+    ar: طماطم
+    mk: домати
+- id: ein-stueck
+  text: ein Stück
+  meaning:
+    en: a piece
+    ar: قطعة
+    mk: парче
+- id: aepfel
+  text: Äpfel
+  meaning:
+    en: apples
+    ar: تفاح
+    mk: јаболка
+- id: noch-etwas
+  text: Noch etwas?
+  meaning:
+    en: Anything else?
+    ar: شيء آخر؟
+    mk: Уште нешто?
+- id: das-wars-alles
+  text: Das ist alles
+  meaning:
+    en: That's all
+    ar: هذا كل شيء
+    mk: Тоа е сè
+- id: zusammen
+  text: zusammen
+  meaning:
+    en: altogether
+    ar: المجموع
+    mk: вкупно
+- id: stimmt-so
+  text: Stimmt so
+  meaning:
+    en: Keep the change
+    ar: احتفظ بالباقي
+    mk: Нема потреба од кусур
+- id: geschenkt
+  text: geschenkt
+  meaning:
+    en: free, a gift
+    ar: هدية، مجانًا
+    mk: подарок, бесплатно
+- id: ein-halbes-kilo
+  text: ein halbes Kilo
+  meaning:
+    en: half a kilo
+    ar: نصف كيلو
+    mk: половина кило
+reviews:
+- item: einen-termin
+  from: A1-04
+- item: ich-moechte
+  from: A1-04
+- item: mich-anmelden
+  from: A1-04
+- item: das-formular
+  from: A1-04
+- item: die-wgb
+  from: A1-04
+- item: wo-wohnen-sie
+  from: A1-04
+- item: welche
+  from: A1-04
+- item: die-religion
+  from: A1-04
+- item: warum
+  from: A1-04
+- item: keins-von-beiden
+  from: A1-04
+- item: die-kirchensteuer
+  from: A1-04
+- item: fertig
+  from: A1-04
+- item: das-wars
+  from: A1-04
+- item: schoenen-tag-noch
+  from: A1-04
+- item: der-hund
+  from: A1-12
+- item: lieb
+  from: A1-12
+- item: duerfen-mit
+  from: A1-12
+- item: die-leine
+  from: A1-12
+- item: wie-heisst-er
+  from: A1-12
+- item: tiere
+  from: A1-12
+- item: zwei-katzen
+  from: A1-12
+- item: voegel
+  from: A1-12
+- item: tauben
+  from: A1-12
+- item: fuettern
+  from: A1-12
+- item: verboten
+  from: A1-12
+- item: zurueckrufen
+  from: A1-12
+- item: ich-will
+  from: A1-16
+- item: ein-konto
+  from: A1-16
+- item: eroeffnen
+  from: A1-16
+- item: welche-unterlagen
+  from: A1-16
+- item: den-pass
+  from: A1-16
+- item: die-meldebescheinigung
+  from: A1-16
+- item: die-steuer-id
+  from: A1-16
+- item: habe-ich-nicht
+  from: A1-16
+- item: kommt-per-post
+  from: A1-16
+- item: unterschreiben
+  from: A1-16
+- item: die-karte-kommt
+  from: A1-16
+- item: wollen-sie
+  from: A1-16
+- item: ich-koche
+  from: A1-18
+- item: den-reis
+  from: A1-18
+- item: das-gemuese
+  from: A1-18
+- item: der-herd
+  from: A1-18
+- item: heiss
+  from: A1-18
+- item: salzig
+  from: A1-18
+- item: scharf
+  from: A1-18
+- item: probier-mal
+  from: A1-18
+- item: schmeckt
+  from: A1-18
+- item: das-rezept
+  from: A1-18
+- item: mitgebracht
+  from: A1-18
+- item: guten-appetit
+  from: A1-18
+- item: was-kostet
+  from: A1-09
+steps:
+- type: narrator
+  text:
+    en: Saturday market. Herr Yilmaz sells fruit and vegetables and jokes with everyone. Listen to the conversation; you don't need to understand it yet.
+    ar: سوق السبت. السيد يلماز يبيع الخضار والفاكهة ويمازح الجميع. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.
+    mk: Сабота, пазарот. Господин Јилмаз продава овошје и зеленчук и се шегува со сите. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: yilmaz
+    text: Guten Morgen! Alles frisch, alles aus der Region!
+    meaning:
+      en: Good morning! All fresh, all local!
+      ar: صباح الخير! كله طازج، كله من المنطقة!
+      mk: Добро утро! Сè свежо, сè од регионот!
+  - speaker: protagonist
+    text: Guten Morgen. Ein Kilo Tomaten, bitte.
+    meaning:
+      en: Good morning. A kilo of tomatoes, please.
+      ar: صباح الخير. كيلو طماطم من فضلك.
+      mk: Добро утро. Едно кило домати, ве молам.
+  - speaker: yilmaz
+    text: Gern! Noch etwas?
+    meaning:
+      en: With pleasure! Anything else?
+      ar: بكل سرور! شيء آخر؟
+      mk: Со задоволство! Уште нешто?
+  - speaker: protagonist
+    text: Ein halbes Kilo Äpfel. Und eine Gurke.
+    meaning:
+      en: Half a kilo of apples. And a cucumber.
+      ar: نصف كيلو تفاح. وخيارة.
+      mk: Половина кило јаболка. И една краставица.
+  - speaker: yilmaz
+    text: Die Gurke kostet achtzig Cent das Stück.
+    meaning:
+      en: The cucumber is eighty cents each.
+      ar: الخيارة بثمانين سنتًا للقطعة.
+      mk: Краставицата чини осумдесет центи парчето.
+  - speaker: protagonist
+    text: Gut. Das ist alles. Was kostet das zusammen?
+    meaning:
+      en: Good. That's all. How much is that altogether?
+      ar: حسنًا. هذا كل شيء. كم المجموع؟
+      mk: Добро. Тоа е сè. Колку чини вкупно?
+  - speaker: yilmaz
+    text: Fünf Euro zwanzig.
+    meaning:
+      en: Five euros twenty.
+      ar: خمسة يورو وعشرون.
+      mk: Пет евра и дваесет.
+  - speaker: protagonist
+    text: Hier sind sechs Euro. Stimmt so!
+    meaning:
+      en: Here are six euros. Keep the change!
+      ar: هذه ستة يورو. احتفظ بالباقي!
+      mk: Еве шест евра. Нема потреба од кусур!
+  - speaker: yilmaz
+    text: Danke! Und die Petersilie ist geschenkt.
+    meaning:
+      en: Thanks! And the parsley's on the house.
+      ar: شكرًا! والبقدونس هدية.
+      mk: Благодарам! А магдоносот е подарок.
+- type: prompt
+  ask:
+    en: 'He says: all fresh!'
+    ar: 'يقول: كله طازج!'
+    mk: 'Тој вели: сè свежо!'
+  answer:
+    speaker: protagonist
+    text: Alles frisch!
+  items:
+  - frisch
+- type: prompt
+  ask:
+    en: Ask for a kilo of tomatoes.
+    ar: اطلبي كيلو طماطم.
+    mk: Побарајте едно кило домати.
+  answer:
+    speaker: protagonist
+    text: Ein Kilo Tomaten, bitte.
+  items:
+  - ein-kilo
+  - tomaten
+- type: prompt
+  ask:
+    en: 'He asks: anything else?'
+    ar: 'يسأل: شيء آخر؟'
+    mk: 'Тој прашува: уште нешто?'
+  answer:
+    speaker: protagonist
+    text: Noch etwas?
+  items:
+  - noch-etwas
+- type: prompt
+  ask:
+    en: Ask for half a kilo of apples.
+    ar: اطلبي نصف كيلو تفاح.
+    mk: Побарајте половина кило јаболка.
+  answer:
+    speaker: protagonist
+    text: Ein halbes Kilo Äpfel.
+  items:
+  - ein-halbes-kilo
+  - aepfel
+- type: prompt
+  ask:
+    en: 'He says: eighty cents a piece.'
+    ar: 'يقول: ثمانون سنتًا للقطعة.'
+    mk: 'Тој вели: осумдесет центи парчето.'
+  answer:
+    speaker: protagonist
+    text: Achtzig Cent das Stück.
+  items:
+  - ein-stueck
+- type: prompt
+  ask:
+    en: 'Say: that''s all.'
+    ar: 'قولي: هذا كل شيء.'
+    mk: 'Кажете: тоа е сè.'
+  answer:
+    speaker: protagonist
+    text: Das ist alles.
+  items:
+  - das-wars-alles
+- type: prompt
+  ask:
+    en: Ask how much it is altogether.
+    ar: اسألي كم المجموع.
+    mk: Прашајте колку чини вкупно.
+  answer:
+    speaker: protagonist
+    text: Was kostet das zusammen?
+  items:
+  - zusammen
+  - was-kostet
+- type: narrator
+  text:
+    en: Rounding up and saying «Stimmt so» is how you tip at a market stall, café or taxi — never compulsory.
+    ar: التقريب وقول «Stimmt so» هو طريقة إعطاء البقشيش في كشك السوق أو المقهى أو التاكسي — وهو ليس إلزاميًا أبدًا.
+    mk: Заокружувањето и «Stimmt so» е начинот на бакшиш на тезга, во кафуле или такси — никогаш задолжително.
+- type: prompt
+  ask:
+    en: 'Hand over six euros: keep the change!'
+    ar: 'أعطيه ستة يورو: احتفظ بالباقي!'
+    mk: 'Дајте шест евра: нема потреба од кусур!'
+  answer:
+    speaker: protagonist
+    text: Hier sind sechs Euro. Stimmt so!
+  items:
+  - stimmt-so
+- type: prompt
+  ask:
+    en: 'He says: the parsley''s free.'
+    ar: 'يقول: البقدونس هدية.'
+    mk: 'Тој вели: магдоносот е подарок.'
+  answer:
+    speaker: protagonist
+    text: Die Petersilie ist geschenkt.
+  items:
+  - geschenkt
+- type: narrator
+  text:
+    en: 'Most towns hold a weekly market in the main square: farmers, bakers, stalls run by families from Turkey, Vietnam, Italy. Prices are fixed; bargaining isn''t usual, but a regular gets a little extra.'
+    ar: 'في معظم المدن سوق أسبوعي في الساحة الرئيسية: مزارعون وخبّازون وأكشاك تديرها عائلات من تركيا وفيتنام وإيطاليا. الأسعار ثابتة والمساومة ليست عادة، لكن الزبون الدائم يحصل على شيء إضافي.'
+    mk: 'Во повеќето градови има неделен пазар на главниот плоштад: земјоделци, пекари, тезги на семејства од Турција, Виетнам, Италија. Цените се фиксни; пазарење не е обичај, но редовниот купувач добива
+      нешто повеќе.'
+- type: prompt
+  ask:
+    en: 'Once more: say “fresh”.'
+    ar: 'مرة أخرى: قولي “طازج”.'
+    mk: 'Уште еднаш: кажете „свежо“.'
+  answer:
+    speaker: protagonist
+    text: frisch
+  items:
+  - frisch
+- type: prompt
+  ask:
+    en: 'Once more: say “a kilo”.'
+    ar: 'مرة أخرى: قولي “كيلو”.'
+    mk: 'Уште еднаш: кажете „едно кило“.'
+  answer:
+    speaker: protagonist
+    text: ein Kilo
+  items:
+  - ein-kilo
+- type: prompt
+  ask:
+    en: 'Once more: say “tomatoes”.'
+    ar: 'مرة أخرى: قولي “طماطم”.'
+    mk: 'Уште еднаш: кажете „домати“.'
+  answer:
+    speaker: protagonist
+    text: Tomaten
+  items:
+  - tomaten
+- type: prompt
+  ask:
+    en: 'Once more: say “a piece”.'
+    ar: 'مرة أخرى: قولي “قطعة”.'
+    mk: 'Уште еднаш: кажете „парче“.'
+  answer:
+    speaker: protagonist
+    text: ein Stück
+  items:
+  - ein-stueck
+- type: prompt
+  ask:
+    en: 'Once more: say “apples”.'
+    ar: 'مرة أخرى: قولي “تفاح”.'
+    mk: 'Уште еднаш: кажете „јаболка“.'
+  answer:
+    speaker: protagonist
+    text: Äpfel
+  items:
+  - aepfel
+- type: prompt
+  ask:
+    en: 'Once more: say “Anything else?”.'
+    ar: 'مرة أخرى: قولي “شيء آخر؟”.'
+    mk: 'Уште еднаш: кажете „Уште нешто?“.'
+  answer:
+    speaker: protagonist
+    text: Noch etwas?
+  items:
+  - noch-etwas
+- type: prompt
+  ask:
+    en: 'Once more: say “That''s all”.'
+    ar: 'مرة أخرى: قولي “هذا كل شيء”.'
+    mk: 'Уште еднаш: кажете „Тоа е сè“.'
+  answer:
+    speaker: protagonist
+    text: Das ist alles
+  items:
+  - das-wars-alles
+- type: prompt
+  ask:
+    en: 'Once more: say “altogether”.'
+    ar: 'مرة أخرى: قولي “المجموع”.'
+    mk: 'Уште еднаш: кажете „вкупно“.'
+  answer:
+    speaker: protagonist
+    text: zusammen
+  items:
+  - zusammen
+- type: prompt
+  ask:
+    en: 'Once more: say “Keep the change”.'
+    ar: 'مرة أخرى: قولي “احتفظ بالباقي”.'
+    mk: 'Уште еднаш: кажете „Нема потреба од кусур“.'
+  answer:
+    speaker: protagonist
+    text: Stimmt so
+  items:
+  - stimmt-so
+- type: prompt
+  ask:
+    en: 'Once more: say “free, a gift”.'
+    ar: 'مرة أخرى: قولي “هدية، مجانًا”.'
+    mk: 'Уште еднаш: кажете „подарок, бесплатно“.'
+  answer:
+    speaker: protagonist
+    text: geschenkt
+  items:
+  - geschenkt
+- type: prompt
+  ask:
+    en: 'Once more: say “half a kilo”.'
+    ar: 'مرة أخرى: قولي “نصف كيلو”.'
+    mk: 'Уште еднаш: кажете „половина кило“.'
+  answer:
+    speaker: protagonist
+    text: ein halbes Kilo
+  items:
+  - ein-halbes-kilo
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I cook — and “the rice (object) — and “the vegetables — and “the stove — and “hot — and “salty — and “spicy — and “Have a taste! (informal) — and “tastes (good)”.'
+    ar: 'قولي: “أطبخ — و“الأرز — و“الخضار — و“الموقد — و“ساخن — و“مالح — و“حار (حرّيف) — و“ذُق! — و“طعمه (طيب)”.'
+    mk: 'Кажете: „готвам“ — и „оризот“ — и „зеленчукот“ — и „шпоретот“ — и „жешко“ — и „солено“ — и „луто“ — и „Проба!“ — и „има вкус, е вкусно“.'
+  answer:
+    speaker: protagonist
+    text: ich koche … den Reis … das Gemüse … der Herd … heiß … salzig … scharf … Probier mal! … schmeckt
+  items:
+  - ich-koche
+  - den-reis
+  - das-gemuese
+  - der-herd
+  - heiss
+  - salzig
+  - scharf
+  - probier-mal
+  - schmeckt
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the recipe — and “brought along — and “Enjoy your meal! — and “I want — and “an account — and “open (an account) — and “Which documents? — and “the passport (object) — and “the registration
+      certificate”.'
+    ar: 'قولي: “الوصفة — و“أحضرنا معنا — و“بالهناء والشفاء! — و“أريد — و“حسابًا — و“يفتح (حسابًا) — و“أيّ أوراق؟ — و“جواز السفر — و“شهادة تسجيل السكن”.'
+    mk: 'Кажете: „рецептот“ — и „донесовме“ — и „Пријатно!“ — и „сакам“ — и „сметка“ — и „отвора“ — и „Кои документи?“ — и „пасошот“ — и „потврдата за пријава“.'
+  answer:
+    speaker: protagonist
+    text: das Rezept … mitgebracht … Guten Appetit! … ich will … ein Konto … eröffnen … Welche Unterlagen? … den Pass … die Meldebescheinigung
+  items:
+  - das-rezept
+  - mitgebracht
+  - guten-appetit
+  - ich-will
+  - ein-konto
+  - eroeffnen
+  - welche-unterlagen
+  - den-pass
+  - die-meldebescheinigung
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the tax ID — and “I don''t have (it) — and “comes by post — and “sign — and “the card comes — and “Do you want …? (polite) — and “the dog — and “sweet, good-natured — and “are allowed to
+      ride along”.'
+    ar: 'قولي: “الرقم الضريبي — و“ليس معي — و“يأتي بالبريد — و“يوقّع — و“البطاقة تصل — و“هل تريد …؟ — و“الكلب — و“لطيف، وديع — و“يُسمح لها بالركوب”.'
+    mk: 'Кажете: „даночниот број“ — и „немам“ — и „доаѓа по пошта“ — и „потпишува“ — и „картичката доаѓа“ — и „Сакате ли …?“ — и „кучето“ — и „мило, добро“ — и „смеат да се возат“.'
+  answer:
+    speaker: protagonist
+    text: die Steuer-ID … habe ich nicht … kommt per Post … unterschreiben … die Karte kommt … Wollen Sie …? … der Hund … lieb … dürfen mitfahren
+  items:
+  - die-steuer-id
+  - habe-ich-nicht
+  - kommt-per-post
+  - unterschreiben
+  - die-karte-kommt
+  - wollen-sie
+  - der-hund
+  - lieb
+  - duerfen-mit
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the lead, the leash — and “What''s his name? — and “animals, pets — and “two cats — and “birds — and “pigeons — and “feed — and “forbidden — and “call back (a dog)”.'
+    ar: 'قولي: “المقود — و“ما اسمه؟ — و“حيوانات — و“قطتان — و“طيور — و“حمام — و“يُطعم — و“ممنوع — و“يستدعي (الكلب)”.'
+    mk: 'Кажете: „поводникот“ — и „Како се вика?“ — и „животни“ — и „две мачки“ — и „птици“ — и „гулаби“ — и „хранат“ — и „забрането“ — и „да го повикате назад“.'
+  answer:
+    speaker: protagonist
+    text: die Leine … Wie heißt er? … Tiere … zwei Katzen … Vögel … Tauben … füttern … verboten … zurückrufen
+  items:
+  - die-leine
+  - wie-heisst-er
+  - tiere
+  - zwei-katzen
+  - voegel
+  - tauben
+  - fuettern
+  - verboten
+  - zurueckrufen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “an appointment — and “I''d like — and “to register (myself) — and “the form — and “the landlord''s confirmation — and “Where do you live? (polite) — and “Which …? (feminine) — and “religion
+      — and “Why?”.'
+    ar: 'قولي: “موعدًا — و“أودّ — و“أن أسجّل نفسي — و“الاستمارة — و“تأكيد المؤجِّر — و“أين تسكن؟ (بصيغة الاحترام) — و“أيّ …؟ — و“الديانة — و“لماذا؟”.'
+    mk: 'Кажете: „термин“ — и „би сакал“ — и „да се пријавам“ — и „формуларот“ — и „потврдата од сопственикот на станот“ — и „Каде живеете?“ — и „Која …?“ — и „вероисповеста“ — и „Зошто?“.'
+  answer:
+    speaker: protagonist
+    text: einen Termin … ich möchte … mich anmelden … das Formular … die Wohnungsgeberbestätigung … Wo wohnen Sie? … Welche …? … die Religion … Warum?
+  items:
+  - einen-termin
+  - ich-moechte
+  - mich-anmelden
+  - das-formular
+  - die-wgb
+  - wo-wohnen-sie
+  - welche
+  - die-religion
+  - warum
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “neither — and “church tax — and “done, finished — and “Is that it? — and “Have a nice day!”.'
+    ar: 'قولي: “ولا واحد منهما — و“ضريبة الكنيسة — و“انتهينا، جاهز — و“هل هذا كل شيء؟ — و“يومًا سعيدًا!”.'
+    mk: 'Кажете: „ниту едно ниту друго“ — и „црковниот данок“ — и „готово“ — и „Толку ли беше?“ — и „Убав ден!“.'
+  answer:
+    speaker: protagonist
+    text: keins von beiden … die Kirchensteuer … fertig … Das war's? … Schönen Tag noch!
+  items:
+  - keins-von-beiden
+  - die-kirchensteuer
+  - fertig
+  - das-wars
+  - schoenen-tag-noch
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

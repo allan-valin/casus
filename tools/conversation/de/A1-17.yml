@@ -1,0 +1,801 @@
+# UNIT de A1-17 — written by AI (Claude) for Casus; expanded from src/A1-17.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-17
+level: A1
+number: 17
+protagonist: f
+title:
+  en: Airing the room
+  ar: تهوية الغرفة
+  mk: Проветрување
+situation:
+  en: January, minus five. Frau Becker sees your windows always closed — and the damp in the corner.
+  ar: يناير، خمس درجات تحت الصفر. السيدة بيكر ترى نوافذك مغلقة دائمًا — والرطوبة في الزاوية.
+  mk: Јануари, минус пет. Госпоѓа Бекер гледа дека прозорците ви се секогаш затворени — и влагата во аголот.
+learn_lessons:
+- a1-imperative
+culture: Stoßlüften
+new_items:
+- id: lueften
+  text: lüften
+  meaning:
+    en: air (a room)
+    ar: يهوّي
+    mk: проветрува
+- id: das-fenster
+  text: das Fenster
+  meaning:
+    en: the window
+    ar: النافذة
+    mk: прозорецот
+- id: ganz-auf
+  text: ganz auf
+  meaning:
+    en: wide open
+    ar: مفتوح تمامًا
+    mk: целосно отворен
+- id: fuenf-minuten
+  text: fünf Minuten
+  meaning:
+    en: five minutes
+    ar: خمس دقائق
+    mk: пет минути
+- id: die-heizung
+  text: die Heizung
+  meaning:
+    en: the heating
+    ar: التدفئة
+    mk: греењето
+- id: aus
+  text: aus
+  meaning:
+    en: 'off'
+    ar: مطفأ
+    mk: исклучено
+- id: machen-sie
+  text: Machen Sie …
+  meaning:
+    en: Make / do … (polite command)
+    ar: اجعلي / افعلي … (أمر مؤدب)
+    mk: Направете …
+- id: der-schimmel
+  text: der Schimmel
+  meaning:
+    en: the mould
+    ar: العفن
+    mk: мувлата
+  rare: true
+- id: feucht
+  text: feucht
+  meaning:
+    en: damp
+    ar: رطب
+    mk: влажно
+- id: kippen
+  text: kippen
+  meaning:
+    en: tilt (a window)
+    ar: يميل (النافذة)
+    mk: накосува
+- id: zweimal-am-tag
+  text: zweimal am Tag
+  meaning:
+    en: twice a day
+    ar: مرتين في اليوم
+    mk: двапати на ден
+reviews:
+- item: die-wohnung
+  from: A1-02-e
+  for:
+  - en
+- item: das-zimmer
+  from: A1-02-e
+  for:
+  - en
+- item: und-die
+  from: A1-02-e
+  for:
+  - en
+- item: die-kueche
+  from: A1-02-e
+  for:
+  - en
+- item: es-gibt-keine
+  from: A1-02-e
+  for:
+  - en
+- item: nur
+  from: A1-02-e
+  for:
+  - en
+- item: die-anschluesse
+  from: A1-02-e
+  for:
+  - en
+- item: die-spuele
+  from: A1-02-e
+  for:
+  - en
+- item: selbst
+  from: A1-02-e
+  for:
+  - en
+- item: wo
+  from: A1-02-e
+  for:
+  - en
+- item: kaufe-ich
+  from: A1-02-e
+  for:
+  - en
+- item: gebraucht
+  from: A1-02-e
+  for:
+  - en
+- item: der-kuehlschrank
+  from: A1-02-e
+  for:
+  - en
+- item: auch-nicht
+  from: A1-02-e
+  for:
+  - en
+- item: viel-glueck
+  from: A1-02-e
+  for:
+  - en
+- item: du-bist
+  from: A1-10
+- item: oben
+  from: A1-10
+- item: und-du
+  from: A1-10
+- item: im-zweiten-stock
+  from: A1-10
+- item: wie-gehts
+  from: A1-10
+- item: und-dir
+  from: A1-10
+- item: sprichst-du
+  from: A1-10
+- item: oder-lieber
+  from: A1-10
+- item: ich-lerne
+  from: A1-10
+- item: auf-deutsch
+  from: A1-10
+- item: langsam
+  from: A1-10
+- item: klar
+  from: A1-10
+- item: moment-mal
+  from: A1-14
+- item: der-muell
+  from: A1-14
+- item: trennen
+  from: A1-14
+- item: die-gelbe-tonne
+  from: A1-14
+- item: das-plastik
+  from: A1-14
+- item: das-papier
+  from: A1-14
+- item: die-blaue
+  from: A1-14
+- item: der-biomuell
+  from: A1-14
+- item: der-restmuell
+  from: A1-14
+- item: das-glas
+  from: A1-14
+- item: bringen-sie
+  from: A1-14
+- item: zum-container
+  from: A1-14
+- item: ich-will
+  from: A1-16
+- item: ein-konto
+  from: A1-16
+- item: eroeffnen
+  from: A1-16
+- item: welche-unterlagen
+  from: A1-16
+- item: den-pass
+  from: A1-16
+- item: die-meldebescheinigung
+  from: A1-16
+- item: die-steuer-id
+  from: A1-16
+- item: habe-ich-nicht
+  from: A1-16
+- item: kommt-per-post
+  from: A1-16
+- item: unterschreiben
+  from: A1-16
+- item: die-karte-kommt
+  from: A1-16
+- item: wollen-sie
+  from: A1-16
+- item: guten-morgen
+  from: A1-02-a
+  for:
+  - ar
+- item: der-papa
+  from: A1-02-a
+  for:
+  - ar
+- item: das-ist
+  from: A1-02-a
+  for:
+  - ar
+  - mk
+- item: die-kita
+  from: A1-02-a
+  for:
+  - ar
+  - mk
+- item: die-erzieherin
+  from: A1-02-a
+  for:
+  - ar
+  - mk
+- item: hallo
+  from: A1-02-a
+  for:
+  - ar
+  - mk
+- item: ich-will-k
+  from: A1-02-a
+  for:
+  - ar
+- item: nach-hause
+  from: A1-02-a
+  for:
+  - ar
+- item: keine-angst
+  from: A1-02-a
+  for:
+  - ar
+- item: wann
+  from: A1-02-a
+  for:
+  - ar
+- item: holen-ab
+  from: A1-02-a
+  for:
+  - ar
+- item: um-drei-uhr
+  from: A1-02-a
+  for:
+  - ar
+- item: tschuess
+  from: A1-02-a
+  for:
+  - ar
+  - mk
+- item: bis-spaeter
+  from: A1-02-a
+  for:
+  - ar
+- item: der-opa
+  from: A1-02-m
+  for:
+  - mk
+- item: ich-hole-ab
+  from: A1-02-m
+  for:
+  - mk
+- item: ist-da
+  from: A1-02-m
+  for:
+  - mk
+- item: mein-schatz
+  from: A1-02-m
+  for:
+  - mk
+- item: der-ausweis
+  from: A1-02-m
+  for:
+  - mk
+- item: hier
+  from: A1-02-m
+  for:
+  - mk
+- item: die-mama-hat-gesagt
+  from: A1-02-m
+  for:
+  - mk
+- item: bis-morgen
+  from: A1-02-m
+  for:
+  - mk
+- item: lieber-nicht
+  from: A1-07
+steps:
+- type: narrator
+  text:
+    en: January, minus five. Frau Becker sees your windows always closed — and the damp in the corner. Listen to the conversation; you don't need to understand it yet.
+    ar: يناير، خمس درجات تحت الصفر. السيدة بيكر ترى نوافذك مغلقة دائمًا — والرطوبة في الزاوية. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.
+    mk: Јануари, минус пет. Госпоѓа Бекер гледа дека прозорците ви се секогаш затворени — и влагата во аголот. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: becker
+    text: Guten Morgen! Lüften Sie nicht?
+    meaning:
+      en: Good morning! Don't you air the flat?
+      ar: صباح الخير! ألا تهوّين الشقة؟
+      mk: Добро утро! Не проветрувате ли?
+  - speaker: protagonist
+    text: Lüften? Es ist so kalt!
+    meaning:
+      en: Air it? It's so cold!
+      ar: أهوّيها؟ الجو بارد جدًا!
+      mk: Да проветрувам? Толку е ладно!
+  - speaker: becker
+    text: Sehen Sie die Ecke? Das ist Schimmel. Die Wohnung ist feucht.
+    meaning:
+      en: See the corner? That's mould. The flat is damp.
+      ar: هل ترين الزاوية؟ هذا عفن. الشقة رطبة.
+      mk: Го гледате аголот? Тоа е мувла. Станот е влажен.
+  - speaker: protagonist
+    text: Was soll ich machen?
+    meaning:
+      en: What should I do?
+      ar: ماذا أفعل؟
+      mk: Што да правам?
+  - speaker: becker
+    text: Machen Sie das Fenster ganz auf. Fünf Minuten, zweimal am Tag.
+    meaning:
+      en: Open the window wide. Five minutes, twice a day.
+      ar: افتحي النافذة تمامًا. خمس دقائق، مرتين في اليوم.
+      mk: Отворете го прозорецот целосно. Пет минути, двапати на ден.
+  - speaker: protagonist
+    text: Und die Heizung?
+    meaning:
+      en: And the heating?
+      ar: والتدفئة؟
+      mk: А греењето?
+  - speaker: becker
+    text: Die Heizung machen Sie dann aus.
+    meaning:
+      en: Turn the heating off for that time.
+      ar: أطفئي التدفئة في هذه المدة.
+      mk: Греењето тогаш исклучете го.
+  - speaker: protagonist
+    text: Und das Fenster kippen?
+    meaning:
+      en: And tilting the window?
+      ar: وأميل النافذة؟
+      mk: А да го накосам прозорецот?
+  - speaker: becker
+    text: Lieber nicht. Das kostet nur Heizung.
+    meaning:
+      en: Better not. That only wastes heating.
+      ar: الأفضل لا. هذا يهدر التدفئة فقط.
+      mk: Подобро не. Тоа само троши греење.
+- type: prompt
+  ask:
+    en: 'She asks: don''t you air the flat?'
+    ar: 'تسأل: ألا تهوّين الشقة؟'
+    mk: 'Таа прашува: не проветрувате ли?'
+  answer:
+    speaker: protagonist
+    text: Lüften Sie nicht?
+  items:
+  - lueften
+- type: prompt
+  ask:
+    en: 'She says: that''s mould.'
+    ar: 'تقول: هذا عفن.'
+    mk: 'Таа вели: тоа е мувла.'
+  answer:
+    speaker: protagonist
+    text: Das ist Schimmel.
+  items:
+  - der-schimmel
+- type: prompt
+  ask:
+    en: 'Say: the flat is damp.'
+    ar: 'قولي: الشقة رطبة.'
+    mk: 'Кажете: станот е влажен.'
+  answer:
+    speaker: protagonist
+    text: Die Wohnung ist feucht.
+  items:
+  - feucht
+- type: prompt
+  ask:
+    en: 'She says: open the window wide.'
+    ar: 'تقول: افتحي النافذة تمامًا.'
+    mk: 'Таа вели: отворете го прозорецот целосно.'
+  answer:
+    speaker: protagonist
+    text: Machen Sie das Fenster ganz auf.
+  items:
+  - machen-sie
+  - das-fenster
+  - ganz-auf
+- type: prompt
+  ask:
+    en: 'Say: five minutes, twice a day.'
+    ar: 'قولي: خمس دقائق، مرتين في اليوم.'
+    mk: 'Кажете: пет минути, двапати на ден.'
+  answer:
+    speaker: protagonist
+    text: Fünf Minuten, zweimal am Tag.
+  items:
+  - fuenf-minuten
+  - zweimal-am-tag
+- type: prompt
+  ask:
+    en: 'Ask: and the heating?'
+    ar: 'اسألي: والتدفئة؟'
+    mk: 'Прашајте: а греењето?'
+  answer:
+    speaker: protagonist
+    text: Und die Heizung?
+  items:
+  - die-heizung
+- type: prompt
+  ask:
+    en: 'She says: turn the heating off then.'
+    ar: 'تقول: أطفئي التدفئة حينها.'
+    mk: 'Таа вели: тогаш исклучете го греењето.'
+  answer:
+    speaker: protagonist
+    text: Die Heizung machen Sie dann aus.
+  items:
+  - aus
+- type: prompt
+  ask:
+    en: 'Ask: and tilting the window?'
+    ar: 'اسألي: وأميل النافذة؟'
+    mk: 'Прашајте: а да го накосам прозорецот?'
+  answer:
+    speaker: protagonist
+    text: Und das Fenster kippen?
+  items:
+  - kippen
+- type: prompt
+  ask:
+    en: 'She says: better not.'
+    ar: 'تقول: الأفضل لا.'
+    mk: 'Таа вели: подобро не.'
+  answer:
+    speaker: protagonist
+    text: Lieber nicht.
+  items:
+  - lieber-nicht
+- type: narrator
+  text:
+    en: '«Stoßlüften»: windows wide open for a few minutes, several times a day, even in deep winter — it changes the air without cooling the walls, and stops mould. A tilted window all day only cools the
+      room and wastes heating.'
+    ar: '«Stoßlüften»: النوافذ مفتوحة تمامًا لبضع دقائق، عدة مرات في اليوم، حتى في عزّ الشتاء — يتجدّد الهواء دون أن تبرد الجدران، فلا يتكوّن العفن. أما النافذة المائلة طوال اليوم فتبرّد الغرفة وتهدر التدفئة
+      فقط.'
+    mk: '«Stoßlüften»: прозорците широко отворени неколку минути, неколку пати на ден, дури и во најлута зима — воздухот се менува без ѕидовите да изладат, па нема мувла. Накосен прозорец цел ден само ја
+      лади собата и троши греење.'
+- type: narrator
+  for:
+  - mk
+  text:
+    mk: Да, ова е токму промајата од која се плашиме дома. Германците сметаат дека кратката промаја е здрава — а мувлата е опасна. Ако ве плаши, излезете од собата за тие пет минути.
+- type: prompt
+  ask:
+    en: 'Once more: say “air (a room)”.'
+    ar: 'مرة أخرى: قولي “يهوّي”.'
+    mk: 'Уште еднаш: кажете „проветрува“.'
+  answer:
+    speaker: protagonist
+    text: lüften
+  items:
+  - lueften
+- type: prompt
+  ask:
+    en: 'Once more: say “the window”.'
+    ar: 'مرة أخرى: قولي “النافذة”.'
+    mk: 'Уште еднаш: кажете „прозорецот“.'
+  answer:
+    speaker: protagonist
+    text: das Fenster
+  items:
+  - das-fenster
+- type: prompt
+  ask:
+    en: 'Once more: say “wide open”.'
+    ar: 'مرة أخرى: قولي “مفتوح تمامًا”.'
+    mk: 'Уште еднаш: кажете „целосно отворен“.'
+  answer:
+    speaker: protagonist
+    text: ganz auf
+  items:
+  - ganz-auf
+- type: prompt
+  ask:
+    en: 'Once more: say “five minutes”.'
+    ar: 'مرة أخرى: قولي “خمس دقائق”.'
+    mk: 'Уште еднаш: кажете „пет минути“.'
+  answer:
+    speaker: protagonist
+    text: fünf Minuten
+  items:
+  - fuenf-minuten
+- type: prompt
+  ask:
+    en: 'Once more: say “the heating”.'
+    ar: 'مرة أخرى: قولي “التدفئة”.'
+    mk: 'Уште еднаш: кажете „греењето“.'
+  answer:
+    speaker: protagonist
+    text: die Heizung
+  items:
+  - die-heizung
+- type: prompt
+  ask:
+    en: 'Once more: say “off”.'
+    ar: 'مرة أخرى: قولي “مطفأ”.'
+    mk: 'Уште еднаш: кажете „исклучено“.'
+  answer:
+    speaker: protagonist
+    text: aus
+  items:
+  - aus
+- type: prompt
+  ask:
+    en: 'Once more: say “Make / do … (polite command)”.'
+    ar: 'مرة أخرى: قولي “اجعلي / افعلي … (أمر مؤدب)”.'
+    mk: 'Уште еднаш: кажете „Направете …“.'
+  answer:
+    speaker: protagonist
+    text: Machen Sie …
+  items:
+  - machen-sie
+- type: prompt
+  ask:
+    en: 'Once more: say “the mould”.'
+    ar: 'مرة أخرى: قولي “العفن”.'
+    mk: 'Уште еднаш: кажете „мувлата“.'
+  answer:
+    speaker: protagonist
+    text: der Schimmel
+  items:
+  - der-schimmel
+- type: prompt
+  ask:
+    en: 'Once more: say “damp”.'
+    ar: 'مرة أخرى: قولي “رطب”.'
+    mk: 'Уште еднаш: кажете „влажно“.'
+  answer:
+    speaker: protagonist
+    text: feucht
+  items:
+  - feucht
+- type: prompt
+  ask:
+    en: 'Once more: say “tilt (a window)”.'
+    ar: 'مرة أخرى: قولي “يميل (النافذة)”.'
+    mk: 'Уште еднаш: кажете „накосува“.'
+  answer:
+    speaker: protagonist
+    text: kippen
+  items:
+  - kippen
+- type: prompt
+  ask:
+    en: 'Once more: say “twice a day”.'
+    ar: 'مرة أخرى: قولي “مرتين في اليوم”.'
+    mk: 'Уште еднаш: кажете „двапати на ден“.'
+  answer:
+    speaker: protagonist
+    text: zweimal am Tag
+  items:
+  - zweimal-am-tag
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the flat — and “the room — and “And the …? — and “the kitchen — and “There is no … (feminine)”.'
+  answer:
+    speaker: protagonist
+    text: die Wohnung … das Zimmer … Und die …? … die Küche … Es gibt keine …
+  items:
+  - die-wohnung
+  - das-zimmer
+  - und-die
+  - die-kueche
+  - es-gibt-keine
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “only — and “the connections (water, power) — and “the sink — and “yourself, myself — and “Where …?”.'
+  answer:
+    speaker: protagonist
+    text: nur … die Anschlüsse … die Spüle … selbst … Wo …?
+  items:
+  - nur
+  - die-anschluesse
+  - die-spuele
+  - selbst
+  - wo
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “do I buy — and “second-hand, used — and “the fridge — and “not … either — and “Good luck!”.'
+  answer:
+    speaker: protagonist
+    text: kaufe ich … gebraucht … der Kühlschrank … auch nicht … Viel Glück!
+  items:
+  - kaufe-ich
+  - gebraucht
+  - der-kuehlschrank
+  - auch-nicht
+  - viel-glueck
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I want — and “an account — and “open (an account) — and “Which documents? — and “the passport (object) — and “the registration certificate — and “the tax ID — and “I don''t have (it) — and
+      “comes by post — and “sign — and “the card comes — and “Do you want …? (polite) — and “Hang on a moment! — and “the rubbish — and “separate, sort — and “the yellow bin (packaging) — and “plastic —
+      and “paper”.'
+    ar: 'قولي: “أريد — و“حسابًا — و“يفتح (حسابًا) — و“أيّ أوراق؟ — و“جواز السفر — و“شهادة تسجيل السكن — و“الرقم الضريبي — و“ليس معي — و“يأتي بالبريد — و“يوقّع — و“البطاقة تصل — و“هل تريد …؟ — و“لحظة من
+      فضلك! — و“النفايات — و“يفرز — و“الحاوية الصفراء (التغليف) — و“البلاستيك — و“الورق”.'
+    mk: 'Кажете: „сакам“ — и „сметка“ — и „отвора“ — и „Кои документи?“ — и „пасошот“ — и „потврдата за пријава“ — и „даночниот број“ — и „немам“ — и „доаѓа по пошта“ — и „потпишува“ — и „картичката доаѓа“
+      — и „Сакате ли …?“ — и „Чекајте малку!“ — и „ѓубрето“ — и „одвојува“ — и „жолтиот контејнер (амбалажа)“ — и „пластиката“ — и „хартијата“.'
+  answer:
+    speaker: protagonist
+    text: ich will … ein Konto … eröffnen … Welche Unterlagen? … den Pass … die Meldebescheinigung … die Steuer-ID … habe ich nicht … kommt per Post … unterschreiben … die Karte kommt … Wollen Sie …? …
+      Moment mal! … der Müll … trennen … die gelbe Tonne … das Plastik … das Papier
+  items:
+  - ich-will
+  - ein-konto
+  - eroeffnen
+  - welche-unterlagen
+  - den-pass
+  - die-meldebescheinigung
+  - die-steuer-id
+  - habe-ich-nicht
+  - kommt-per-post
+  - unterschreiben
+  - die-karte-kommt
+  - wollen-sie
+  - moment-mal
+  - der-muell
+  - trennen
+  - die-gelbe-tonne
+  - das-plastik
+  - das-papier
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the blue one — and “food waste — and “general waste — and “glass — and “Take … (polite command) — and “to the container — and “you are (informal) — and “upstairs — and “And you? (informal)
+      — and “on the second floor — and “How are you? (informal) — and “And you? (after ''how are you'') — and “Do you speak …? (informal) — and “or would you rather …? — and “I''m learning — and “in German
+      — and “slowly — and “Sure! Of course!”.'
+    ar: 'قولي: “الزرقاء — و“النفايات العضوية — و“بقية النفايات — و“الزجاج — و“خذ … (أمر مؤدب) — و“إلى الحاوية — و“أنتَ (غير رسمي) — و“في الأعلى — و“وأنت؟ — و“في الطابق الثاني — و“كيف الحال؟ — و“وأنت؟ (بعد
+      كيف الحال) — و“هل تتكلم …؟ — و“أم تفضّل …؟ — و“أتعلّم — و“بالألمانية — و“ببطء — و“طبعًا!”.'
+    mk: 'Кажете: „синиот“ — и „органскиот отпад“ — и „останатиот отпад“ — и „стаклото“ — и „Однесете …“ — и „до контејнерот“ — и „ти си“ — и „горе“ — и „А ти?“ — и „на вториот кат“ — и „Како си?“ — и „А
+      ти?“ — и „Зборуваш ли …?“ — и „или повеќе сакаш …?“ — и „учам“ — и „на германски“ — и „полека“ — и „Секако!“.'
+  answer:
+    speaker: protagonist
+    text: die blaue … der Biomüll … der Restmüll … das Glas … Bringen Sie … … zum Container … du bist … oben … Und du? … im zweiten Stock … Wie geht's? … Und dir? … Sprichst du …? … oder lieber …? … ich
+      lerne … auf Deutsch … langsam … Klar!
+  items:
+  - die-blaue
+  - der-biomuell
+  - der-restmuell
+  - das-glas
+  - bringen-sie
+  - zum-container
+  - du-bist
+  - oben
+  - und-du
+  - im-zweiten-stock
+  - wie-gehts
+  - und-dir
+  - sprichst-du
+  - oder-lieber
+  - ich-lerne
+  - auf-deutsch
+  - langsam
+  - klar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “صباح الخير — و“الأب، بابا — و“أريد — و“إلى البيت — و“لا تخف! / لا تخافي!”.'
+  answer:
+    speaker: protagonist
+    text: Guten Morgen … der Papa … ich will … nach Hause … Keine Angst!
+  items:
+  - guten-morgen
+  - der-papa
+  - ich-will-k
+  - nach-hause
+  - keine-angst
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “متى …؟ — و“تأخذون (أحدًا) من مكان، تأتون لأخذه — و“في الساعة الثالثة — و“أراك لاحقًا!”.'
+  answer:
+    speaker: protagonist
+    text: Wann …? … holen … ab … um drei Uhr … Bis später!
+  items:
+  - wann
+  - holen-ab
+  - um-drei-uhr
+  - bis-spaeter
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “هذا / هذه … — و“الحضانة (الكيتا) — و“المربية”.'
+    mk: 'Кажете: „Ова е …“ — и „градинката (Kita)“ — и „воспитувачката“.'
+  answer:
+    speaker: protagonist
+    text: Das ist … … die Kita … die Erzieherin
+  items:
+  - das-ist
+  - die-kita
+  - die-erzieherin
+  for:
+  - ar
+  - mk
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “مرحبًا (غير رسمي) — و“إلى اللقاء! (غير رسمي)”.'
+    mk: 'Кажете: „Здраво“ — и „Чао!“.'
+  answer:
+    speaker: protagonist
+    text: Hallo … Tschüss!
+  items:
+  - hallo
+  - tschuess
+  for:
+  - ar
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „дедото“ — и „доаѓам да го земам (некого)“ — и „… е тука, дојде“ — и „душо моја, срце мое“.'
+  answer:
+    speaker: protagonist
+    text: der Opa … ich hole … ab … … ist da … mein Schatz
+  items:
+  - der-opa
+  - ich-hole-ab
+  - ist-da
+  - mein-schatz
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „личната карта / документот“ — и „тука, еве“ — и „мама кажа“ — и „До утре!“.'
+  answer:
+    speaker: protagonist
+    text: der Ausweis … hier … die Mama hat es gesagt … Bis morgen!
+  items:
+  - der-ausweis
+  - hier
+  - die-mama-hat-gesagt
+  - bis-morgen
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

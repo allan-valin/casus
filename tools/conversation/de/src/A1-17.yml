@@ -1,0 +1,43 @@
+id: A1-17
+protagonist: f
+title: ["Airing the room", "تهوية الغرفة", "Проветрување"]
+situation:
+  - "January, minus five. Frau Becker sees your windows always closed — and the damp in the corner."
+  - "يناير، خمس درجات تحت الصفر. السيدة بيكر ترى نوافذك مغلقة دائمًا — والرطوبة في الزاوية."
+  - "Јануари, минус пет. Госпоѓа Бекер гледа дека прозорците ви се секогаш затворени — и влагата во аголот."
+learn: [a1-imperative]
+culture: Stoßlüften
+items:
+  - [lueften, "lüften", "air (a room)", "يهوّي", "проветрува"]
+  - [das-fenster, "das Fenster", "the window", "النافذة", "прозорецот"]
+  - [ganz-auf, "ganz auf", "wide open", "مفتوح تمامًا", "целосно отворен"]
+  - [fuenf-minuten, "fünf Minuten", "five minutes", "خمس دقائق", "пет минути"]
+  - [die-heizung, "die Heizung", "the heating", "التدفئة", "греењето"]
+  - [aus, "aus", "off", "مطفأ", "исклучено"]
+  - [machen-sie, "Machen Sie …", "Make / do … (polite command)", "اجعلي / افعلي … (أمر مؤدب)", "Направете …"]
+  - [der-schimmel, "der Schimmel", "the mould", "العفن", "мувлата", {rare: true}]
+  - [feucht, "feucht", "damp", "رطب", "влажно"]
+  - [kippen, "kippen", "tilt (a window)", "يميل (النافذة)", "накосува"]
+  - [zweimal-am-tag, "zweimal am Tag", "twice a day", "مرتين في اليوم", "двапати на ден"]
+dialogue:
+  - [becker, "Guten Morgen! Lüften Sie nicht?", "Good morning! Don't you air the flat?", "صباح الخير! ألا تهوّين الشقة؟", "Добро утро! Не проветрувате ли?"]
+  - [protagonist, "Lüften? Es ist so kalt!", "Air it? It's so cold!", "أهوّيها؟ الجو بارد جدًا!", "Да проветрувам? Толку е ладно!"]
+  - [becker, "Sehen Sie die Ecke? Das ist Schimmel. Die Wohnung ist feucht.", "See the corner? That's mould. The flat is damp.", "هل ترين الزاوية؟ هذا عفن. الشقة رطبة.", "Го гледате аголот? Тоа е мувла. Станот е влажен."]
+  - [protagonist, "Was soll ich machen?", "What should I do?", "ماذا أفعل؟", "Што да правам?"]
+  - [becker, "Machen Sie das Fenster ganz auf. Fünf Minuten, zweimal am Tag.", "Open the window wide. Five minutes, twice a day.", "افتحي النافذة تمامًا. خمس دقائق، مرتين في اليوم.", "Отворете го прозорецот целосно. Пет минути, двапати на ден."]
+  - [protagonist, "Und die Heizung?", "And the heating?", "والتدفئة؟", "А греењето?"]
+  - [becker, "Die Heizung machen Sie dann aus.", "Turn the heating off for that time.", "أطفئي التدفئة في هذه المدة.", "Греењето тогаш исклучете го."]
+  - [protagonist, "Und das Fenster kippen?", "And tilting the window?", "وأميل النافذة؟", "А да го накосам прозорецот?"]
+  - [becker, "Lieber nicht. Das kostet nur Heizung.", "Better not. That only wastes heating.", "الأفضل لا. هذا يهدر التدفئة فقط.", "Подобро не. Тоа само троши греење."]
+teach:
+  - ask: ["She asks: don't you air the flat?", "تسأل: ألا تهوّين الشقة؟", "Таа прашува: не проветрувате ли?", "Lüften Sie nicht?", lueften]
+  - ask: ["She says: that's mould.", "تقول: هذا عفن.", "Таа вели: тоа е мувла.", "Das ist Schimmel.", der-schimmel]
+  - ask: ["Say: the flat is damp.", "قولي: الشقة رطبة.", "Кажете: станот е влажен.", "Die Wohnung ist feucht.", feucht]
+  - ask: ["She says: open the window wide.", "تقول: افتحي النافذة تمامًا.", "Таа вели: отворете го прозорецот целосно.", "Machen Sie das Fenster ganz auf.", machen-sie, das-fenster, ganz-auf]
+  - ask: ["Say: five minutes, twice a day.", "قولي: خمس دقائق، مرتين في اليوم.", "Кажете: пет минути, двапати на ден.", "Fünf Minuten, zweimal am Tag.", fuenf-minuten, zweimal-am-tag]
+  - ask: ["Ask: and the heating?", "اسألي: والتدفئة؟", "Прашајте: а греењето?", "Und die Heizung?", die-heizung]
+  - ask: ["She says: turn the heating off then.", "تقول: أطفئي التدفئة حينها.", "Таа вели: тогаш исклучете го греењето.", "Die Heizung machen Sie dann aus.", aus]
+  - ask: ["Ask: and tilting the window?", "اسألي: وأميل النافذة؟", "Прашајте: а да го накосам прозорецот?", "Und das Fenster kippen?", kippen]
+  - ask: ["She says: better not.", "تقول: الأفضل لا.", "Таа вели: подобро не.", "Lieber nicht.", lieber-nicht]
+  - note: ["«Stoßlüften»: windows wide open for a few minutes, several times a day, even in deep winter — it changes the air without cooling the walls, and stops mould. A tilted window all day only cools the room and wastes heating.", "«Stoßlüften»: النوافذ مفتوحة تمامًا لبضع دقائق، عدة مرات في اليوم، حتى في عزّ الشتاء — يتجدّد الهواء دون أن تبرد الجدران، فلا يتكوّن العفن. أما النافذة المائلة طوال اليوم فتبرّد الغرفة وتهدر التدفئة فقط.", "«Stoßlüften»: прозорците широко отворени неколку минути, неколку пати на ден, дури и во најлута зима — воздухот се менува без ѕидовите да изладат, па нема мувла. Накосен прозорец цел ден само ја лади собата и троши греење."]
+  - only: {mk: "Да, ова е токму промајата од која се плашиме дома. Германците сметаат дека кратката промаја е здрава — а мувлата е опасна. Ако ве плаши, излезете од собата за тие пет минути."}

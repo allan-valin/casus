@@ -1,0 +1,772 @@
+# UNIT de A1-16 — written by AI (Claude) for Casus; expanded from src/A1-16.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-16
+level: A1
+number: 16
+protagonist: m
+title:
+  en: The bank
+  ar: البنك
+  mk: Банката
+situation:
+  en: You want an account. The clerk is in a hurry and asks for papers you don't have.
+  ar: تريد فتح حساب. الموظف مستعجل ويطلب أوراقًا ليست معك.
+  mk: Сакате сметка. Службеникот брза и бара документи што ги немате.
+learn_lessons:
+- a1-modal-wollen
+culture: Bring every document
+new_items:
+- id: ich-will
+  text: ich will
+  meaning:
+    en: I want
+    ar: أريد
+    mk: сакам
+- id: ein-konto
+  text: ein Konto
+  meaning:
+    en: an account
+    ar: حسابًا
+    mk: сметка
+- id: eroeffnen
+  text: eröffnen
+  meaning:
+    en: open (an account)
+    ar: يفتح (حسابًا)
+    mk: отвора
+- id: welche-unterlagen
+  text: Welche Unterlagen?
+  meaning:
+    en: Which documents?
+    ar: أيّ أوراق؟
+    mk: Кои документи?
+- id: den-pass
+  text: den Pass
+  meaning:
+    en: the passport (object)
+    ar: جواز السفر
+    mk: пасошот
+- id: die-meldebescheinigung
+  text: die Meldebescheinigung
+  meaning:
+    en: the registration certificate
+    ar: شهادة تسجيل السكن
+    mk: потврдата за пријава
+  rare: true
+- id: die-steuer-id
+  text: die Steuer-ID
+  meaning:
+    en: the tax ID
+    ar: الرقم الضريبي
+    mk: даночниот број
+  rare: true
+- id: habe-ich-nicht
+  text: habe ich nicht
+  meaning:
+    en: I don't have (it)
+    ar: ليس معي
+    mk: немам
+- id: kommt-per-post
+  text: kommt per Post
+  meaning:
+    en: comes by post
+    ar: يأتي بالبريد
+    mk: доаѓа по пошта
+- id: unterschreiben
+  text: unterschreiben
+  meaning:
+    en: sign
+    ar: يوقّع
+    mk: потпишува
+- id: die-karte-kommt
+  text: die Karte kommt
+  meaning:
+    en: the card comes
+    ar: البطاقة تصل
+    mk: картичката доаѓа
+- id: wollen-sie
+  text: Wollen Sie …?
+  meaning:
+    en: Do you want …? (polite)
+    ar: هل تريد …؟
+    mk: Сакате ли …?
+reviews:
+- item: guten-tag
+  from: A1-01
+- item: entschuldigung
+  from: A1-01
+- item: ich-verstehe-nicht
+  from: A1-01
+- item: sie-sind
+  from: A1-01
+- item: neu-hier
+  from: A1-01
+- item: ja
+  from: A1-01
+- item: ich-bin
+  from: A1-01
+- item: sprechen-sie-englisch
+  from: A1-01
+- item: ein-bisschen
+  from: A1-01
+- item: ich-wohne
+  from: A1-01
+- item: unten
+  from: A1-01
+- item: freut-mich
+  from: A1-01
+- item: willkommen
+  from: A1-01
+- item: der-schluessel
+  from: A1-01
+- item: danke-schoen
+  from: A1-01
+- item: bitte-schoen
+  from: A1-01
+- item: auf-wiedersehen
+  from: A1-01
+- item: ich-suche
+  from: A1-09
+- item: die-lampe
+  from: A1-09
+- item: so
+  from: A1-09
+- item: viele
+  from: A1-09
+- item: welche-farbe
+  from: A1-09
+- item: weiss
+  from: A1-09
+- item: diese
+  from: A1-09
+- item: zu
+  from: A1-09
+- item: warmes-licht
+  from: A1-09
+- item: gelb
+  from: A1-09
+- item: klein
+  from: A1-09
+- item: was-kostet
+  from: A1-09
+- item: die-kleine
+  from: A1-09
+- item: die-mensa
+  from: A1-13-e
+  for:
+  - en
+- item: die-schlange
+  from: A1-13-e
+  for:
+  - en
+- item: ich-war-zuerst-da
+  from: A1-13-e
+  for:
+  - en
+- item: stimmt
+  from: A1-13-e
+  for:
+  - en
+- item: kein-problem
+  from: A1-13-e
+  for:
+  - en
+- item: das-essen
+  from: A1-13-e
+  for:
+  - en
+- item: vegetarisch
+  from: A1-13-e
+  for:
+  - en
+- item: kein-fleisch
+  from: A1-13-e
+  for:
+  - en
+- item: nicht-so-gut
+  from: A1-13-e
+  for:
+  - en
+- item: der-kaffee
+  from: A1-13-e
+  for:
+  - en
+- item: heute-nicht
+  from: A1-13-e
+  for:
+  - en
+- item: das-sofa
+  from: A1-15
+- item: passt
+  from: A1-15
+- item: messen
+  from: A1-15
+- item: wie-breit
+  from: A1-15
+- item: meter
+  from: A1-15
+- item: zentimeter
+  from: A1-15
+- item: lang
+  from: A1-15
+- item: die-ecke
+  from: A1-15
+- item: rund
+  from: A1-15
+- item: eckig
+  from: A1-15
+- item: genau
+  from: A1-15
+- item: zu-gross
+  from: A1-15
+- item: der-spielplatz
+  from: A1-13-a
+  for:
+  - ar
+  - mk
+- item: die-schaukel
+  from: A1-13-a
+  for:
+  - ar
+  - mk
+- item: wie-alt-ist-sie
+  from: A1-13-a
+  for:
+  - ar
+- item: vier-jahre-alt
+  from: A1-13-a
+  for:
+  - ar
+  - mk
+- item: in-welche-kita
+  from: A1-13-a
+  for:
+  - ar
+- item: geht
+  from: A1-13-a
+  for:
+  - ar
+- item: das-mittagessen
+  from: A1-13-a
+  for:
+  - ar
+- item: kein-schweinefleisch
+  from: A1-13-a
+  for:
+  - ar
+- item: isst
+  from: A1-13-a
+  for:
+  - ar
+- item: nicht
+  from: A1-13-a
+  for:
+  - ar
+  - mk
+- item: bis-bald
+  from: A1-13-a
+  for:
+  - ar
+  - mk
+- item: wie-alt-ist-er
+  from: A1-13-m
+  for:
+  - mk
+- item: ihr-enkel
+  from: A1-13-m
+  for:
+  - mk
+- item: ich-bin-oma
+  from: A1-13-m
+  for:
+  - mk
+- item: nicht-von-hier
+  from: A1-13-m
+  for:
+  - mk
+- item: kein-deutsch
+  from: A1-13-m
+  for:
+  - mk
+- item: nur-ein-bisschen
+  from: A1-13-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: You want an account. The clerk is in a hurry and asks for papers you don't have. Listen to the conversation; you don't need to understand it yet.
+    ar: تريد فتح حساب. الموظف مستعجل ويطلب أوراقًا ليست معك. استمع إلى المحادثة؛ لا داعي لأن تفهمها الآن.
+    mk: Сакате сметка. Службеникот брза и бара документи што ги немате. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Guten Tag. Ich will ein Konto eröffnen.
+    meaning:
+      en: Hello. I want to open an account.
+      ar: نهارك سعيد. أريد أن أفتح حسابًا.
+      mk: Добар ден. Сакам да отворам сметка.
+  - speaker: kasse
+    text: Haben Sie einen Termin?
+    meaning:
+      en: Do you have an appointment?
+      ar: هل عندك موعد؟
+      mk: Имате ли термин?
+  - speaker: protagonist
+    text: Ja, um elf. Welche Unterlagen brauchen Sie?
+    meaning:
+      en: Yes, at eleven. Which documents do you need?
+      ar: نعم، في الحادية عشرة. أيّ أوراق تحتاجون؟
+      mk: Да, во единаесет. Кои документи ви требаат?
+  - speaker: kasse
+    text: Den Pass, die Meldebescheinigung und die Steuer-ID.
+    meaning:
+      en: The passport, the registration certificate and the tax ID.
+      ar: جواز السفر، وشهادة تسجيل السكن، والرقم الضريبي.
+      mk: Пасошот, потврдата за пријава и даночниот број.
+  - speaker: protagonist
+    text: Die Steuer-ID habe ich nicht.
+    meaning:
+      en: I don't have the tax ID.
+      ar: الرقم الضريبي ليس معي.
+      mk: Даночниот број го немам.
+  - speaker: kasse
+    text: Die kommt per Post, nach der Anmeldung. Wollen Sie heute schon unterschreiben?
+    meaning:
+      en: It comes by post, after registration. Do you want to sign today already?
+      ar: يأتي بالبريد بعد تسجيل السكن. هل تريد أن توقّع اليوم؟
+      mk: Доаѓа по пошта, по пријавата. Сакате ли денес да потпишете?
+  - speaker: protagonist
+    text: Ja, bitte.
+    meaning:
+      en: Yes, please.
+      ar: نعم، من فضلك.
+      mk: Да, ве молам.
+  - speaker: kasse
+    text: Hier unterschreiben. Die Karte kommt in einer Woche. Nächster, bitte!
+    meaning:
+      en: Sign here. The card comes in a week. Next, please!
+      ar: وقّع هنا. البطاقة تصل خلال أسبوع. التالي من فضلك!
+      mk: Потпишете тука. Картичката доаѓа за една недела. Следен, ве молам!
+- type: prompt
+  ask:
+    en: 'Say: I want to open an account.'
+    ar: 'قل: أريد أن أفتح حسابًا.'
+    mk: 'Кажете: сакам да отворам сметка.'
+  answer:
+    speaker: protagonist
+    text: Ich will ein Konto eröffnen.
+  items:
+  - ich-will
+  - ein-konto
+  - eroeffnen
+- type: narrator
+  text:
+    en: '«wollen» — want: «ich will», «Sie wollen». Softer and politer is «ich möchte». The second verb goes to the end.'
+    ar: '«wollen» يعني: يريد. «ich will»، «Sie wollen». والأكثر لطفًا وأدبًا: «ich möchte». والفعل الثاني يذهب إلى آخر الجملة.'
+    mk: '«wollen» — сака: «ich will», «Sie wollen». Помеко и поучтиво е «ich möchte». Вториот глагол оди на крајот.'
+- type: prompt
+  ask:
+    en: Ask which documents they need.
+    ar: اسأل أيّ أوراق يحتاجون.
+    mk: Прашајте кои документи им требаат.
+  answer:
+    speaker: protagonist
+    text: Welche Unterlagen brauchen Sie?
+  items:
+  - welche-unterlagen
+- type: prompt
+  ask:
+    en: 'Say: the passport.'
+    ar: 'قل: جواز السفر.'
+    mk: 'Кажете: пасошот.'
+  answer:
+    speaker: protagonist
+    text: Den Pass.
+  items:
+  - den-pass
+- type: prompt
+  ask:
+    en: 'Say: the registration certificate.'
+    ar: 'قل: شهادة تسجيل السكن.'
+    mk: 'Кажете: потврдата за пријава.'
+  answer:
+    speaker: protagonist
+    text: Die Meldebescheinigung.
+  items:
+  - die-meldebescheinigung
+- type: prompt
+  ask:
+    en: 'Say: I don''t have the tax ID.'
+    ar: 'قل: الرقم الضريبي ليس معي.'
+    mk: 'Кажете: даночниот број го немам.'
+  answer:
+    speaker: protagonist
+    text: Die Steuer-ID habe ich nicht.
+  items:
+  - die-steuer-id
+  - habe-ich-nicht
+- type: prompt
+  ask:
+    en: 'She says: it comes by post.'
+    ar: 'تقول: يأتي بالبريد.'
+    mk: 'Таа вели: доаѓа по пошта.'
+  answer:
+    speaker: protagonist
+    text: Die kommt per Post.
+  items:
+  - kommt-per-post
+- type: prompt
+  ask:
+    en: She asks if you want to sign today. How?
+    ar: تسألك إن كنت تريد أن توقّع اليوم. كيف؟
+    mk: Ве прашува дали сакате денес да потпишете. Како?
+  answer:
+    speaker: protagonist
+    text: Wollen Sie heute unterschreiben?
+  items:
+  - wollen-sie
+  - unterschreiben
+- type: prompt
+  ask:
+    en: 'She says: the card comes in a week.'
+    ar: 'تقول: البطاقة تصل خلال أسبوع.'
+    mk: 'Таа вели: картичката доаѓа за една недела.'
+  answer:
+    speaker: protagonist
+    text: Die Karte kommt in einer Woche.
+  items:
+  - die-karte-kommt
+- type: narrator
+  text:
+    en: Offices and banks do exactly what the form says and rarely work out your case for you. Bring every document you have, in originals and copies; many things — the tax ID, the card, the PIN — arrive
+      later by post, in separate letters.
+    ar: الدوائر والبنوك تتبع الاستمارة حرفيًا ونادرًا ما تحلّ حالتك عنك. أحضر كل أوراقك، الأصل والنسخة؛ وكثير من الأشياء — الرقم الضريبي، البطاقة، الرقم السري — تصل لاحقًا بالبريد، في رسائل منفصلة.
+    mk: Службите и банките работат точно според формуларот и ретко сами ќе го решат вашиот случај. Носете ги сите документи, оригинал и копија; многу работи — даночниот број, картичката, ПИН-от — доаѓаат
+      подоцна по пошта, во посебни писма.
+- type: prompt
+  ask:
+    en: 'Once more: say “I want”.'
+    ar: 'مرة أخرى: قل “أريد”.'
+    mk: 'Уште еднаш: кажете „сакам“.'
+  answer:
+    speaker: protagonist
+    text: ich will
+  items:
+  - ich-will
+- type: prompt
+  ask:
+    en: 'Once more: say “an account”.'
+    ar: 'مرة أخرى: قل “حسابًا”.'
+    mk: 'Уште еднаш: кажете „сметка“.'
+  answer:
+    speaker: protagonist
+    text: ein Konto
+  items:
+  - ein-konto
+- type: prompt
+  ask:
+    en: 'Once more: say “open (an account)”.'
+    ar: 'مرة أخرى: قل “يفتح (حسابًا)”.'
+    mk: 'Уште еднаш: кажете „отвора“.'
+  answer:
+    speaker: protagonist
+    text: eröffnen
+  items:
+  - eroeffnen
+- type: prompt
+  ask:
+    en: 'Once more: say “Which documents?”.'
+    ar: 'مرة أخرى: قل “أيّ أوراق؟”.'
+    mk: 'Уште еднаш: кажете „Кои документи?“.'
+  answer:
+    speaker: protagonist
+    text: Welche Unterlagen?
+  items:
+  - welche-unterlagen
+- type: prompt
+  ask:
+    en: 'Once more: say “the passport (object)”.'
+    ar: 'مرة أخرى: قل “جواز السفر”.'
+    mk: 'Уште еднаш: кажете „пасошот“.'
+  answer:
+    speaker: protagonist
+    text: den Pass
+  items:
+  - den-pass
+- type: prompt
+  ask:
+    en: 'Once more: say “the registration certificate”.'
+    ar: 'مرة أخرى: قل “شهادة تسجيل السكن”.'
+    mk: 'Уште еднаш: кажете „потврдата за пријава“.'
+  answer:
+    speaker: protagonist
+    text: die Meldebescheinigung
+  items:
+  - die-meldebescheinigung
+- type: prompt
+  ask:
+    en: 'Once more: say “the tax ID”.'
+    ar: 'مرة أخرى: قل “الرقم الضريبي”.'
+    mk: 'Уште еднаш: кажете „даночниот број“.'
+  answer:
+    speaker: protagonist
+    text: die Steuer-ID
+  items:
+  - die-steuer-id
+- type: prompt
+  ask:
+    en: 'Once more: say “I don''t have (it)”.'
+    ar: 'مرة أخرى: قل “ليس معي”.'
+    mk: 'Уште еднаш: кажете „немам“.'
+  answer:
+    speaker: protagonist
+    text: habe ich nicht
+  items:
+  - habe-ich-nicht
+- type: prompt
+  ask:
+    en: 'Once more: say “comes by post”.'
+    ar: 'مرة أخرى: قل “يأتي بالبريد”.'
+    mk: 'Уште еднаш: кажете „доаѓа по пошта“.'
+  answer:
+    speaker: protagonist
+    text: kommt per Post
+  items:
+  - kommt-per-post
+- type: prompt
+  ask:
+    en: 'Once more: say “sign”.'
+    ar: 'مرة أخرى: قل “يوقّع”.'
+    mk: 'Уште еднаш: кажете „потпишува“.'
+  answer:
+    speaker: protagonist
+    text: unterschreiben
+  items:
+  - unterschreiben
+- type: prompt
+  ask:
+    en: 'Once more: say “the card comes”.'
+    ar: 'مرة أخرى: قل “البطاقة تصل”.'
+    mk: 'Уште еднаш: кажете „картичката доаѓа“.'
+  answer:
+    speaker: protagonist
+    text: die Karte kommt
+  items:
+  - die-karte-kommt
+- type: prompt
+  ask:
+    en: 'Once more: say “Do you want …? (polite)”.'
+    ar: 'مرة أخرى: قل “هل تريد …؟”.'
+    mk: 'Уште еднаш: кажете „Сакате ли …?“.'
+  answer:
+    speaker: protagonist
+    text: Wollen Sie …?
+  items:
+  - wollen-sie
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتَه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the sofa — and “fits — and “measure — and “How wide …? — and “metres — and “centimetres — and “long — and “the corner — and “round — and “square, angular — and “exactly — and “too big — and
+      “I''m looking for … — and “the lamp — and “so — and “many — and “What colour? — and “white — and “this (feminine) — and “too — and “warm light”.'
+    ar: 'قل: “الأريكة — و“يتسع، يناسب — و“يقيس — و“كم عرض …؟ — و“متر — و“سنتيمتر — و“طويل — و“الزاوية — و“مستدير — و“مربّع الشكل — و“بالضبط — و“كبير جدًا — و“أبحث عن … — و“المصباح — و“جدًا، هكذا — و“كثير
+      من — و“أيّ لون؟ — و“أبيض — و“هذه — و“أكثر من اللازم — و“ضوء دافئ”.'
+    mk: 'Кажете: „каучот“ — и „собира, одговара“ — и „мериме“ — и „Колку е широк …?“ — и „метри“ — и „сантиметри“ — и „долг“ — и „аголот“ — и „тркалезно“ — и „аглесто“ — и „точно“ — и „преголемо“ — и „Барам
+      …“ — и „ламбата“ — и „толку“ — и „многу“ — и „Која боја?“ — и „бело“ — и „оваа“ — и „премногу“ — и „топла светлина“.'
+  answer:
+    speaker: protagonist
+    text: das Sofa … passt … messen … Wie breit …? … Meter … Zentimeter … lang … die Ecke … rund … eckig … genau … zu groß … Ich suche … … die Lampe … so … viele … Welche Farbe? … weiß … diese … zu … warmes
+      Licht
+  items:
+  - das-sofa
+  - passt
+  - messen
+  - wie-breit
+  - meter
+  - zentimeter
+  - lang
+  - die-ecke
+  - rund
+  - eckig
+  - genau
+  - zu-gross
+  - ich-suche
+  - die-lampe
+  - so
+  - viele
+  - welche-farbe
+  - weiss
+  - diese
+  - zu
+  - warmes-licht
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “yellow — and “small — and “How much is …? — and “the small one — and “Good day / hello — and “Excuse me / sorry — and “I don''t understand — and “you are (polite) — and “new here — and “Yes
+      — and “I am — and “Do you speak English? (polite) — and “a little — and “I live — and “downstairs — and “Nice to meet you — and “Welcome — and “the key — and “Thank you very much — and “You''re welcome
+      / here you are — and “Goodbye”.'
+    ar: 'قل: “أصفر — و“صغير — و“كم سعر …؟ — و“الصغيرة — و“نهارك سعيد / مرحبًا — و“عفوًا / المعذرة — و“لا أفهم — و“أنتِ / أنتَ (بصيغة الاحترام) — و“جديد هنا — و“نعم — و“أنا (أكون) — و“هل تتكلمين الإنجليزية؟
+      (بصيغة الاحترام) — و“قليلًا — و“أسكن — و“في الأسفل — و“تشرفنا — و“أهلًا وسهلًا — و“المفتاح — و“شكرًا جزيلًا — و“عفوًا / تفضّلي — و“مع السلامة”.'
+    mk: 'Кажете: „жолто“ — и „мало“ — и „Колку чини …?“ — и „малата“ — и „Добар ден“ — и „Извинете“ — и „Не разбирам“ — и „Вие сте“ — и „нов тука“ — и „Да“ — и „јас сум“ — и „Зборувате ли англиски?“ — и
+      „малку“ — и „живеам“ — и „долу“ — и „Мило ми е“ — и „Добредојдовте“ — и „клучот“ — и „Благодарам многу“ — и „Нема зошто / повелете“ — и „Довидување“.'
+  answer:
+    speaker: protagonist
+    text: gelb … klein … Was kostet …? … die kleine … Guten Tag … Entschuldigung … Ich verstehe nicht … Sie sind … neu hier … Ja … ich bin … Sprechen Sie Englisch? … ein bisschen … ich wohne … unten … Freut
+      mich … Willkommen … der Schlüssel … Danke schön … Bitte schön … Auf Wiedersehen
+  items:
+  - gelb
+  - klein
+  - was-kostet
+  - die-kleine
+  - guten-tag
+  - entschuldigung
+  - ich-verstehe-nicht
+  - sie-sind
+  - neu-hier
+  - ja
+  - ich-bin
+  - sprechen-sie-englisch
+  - ein-bisschen
+  - ich-wohne
+  - unten
+  - freut-mich
+  - willkommen
+  - der-schluessel
+  - danke-schoen
+  - bitte-schoen
+  - auf-wiedersehen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the university canteen — and “the queue (also: snake) — and “I was here first — and “That''s right”.'
+  answer:
+    speaker: protagonist
+    text: die Mensa … die Schlange … Ich war zuerst da … Stimmt
+  items:
+  - die-mensa
+  - die-schlange
+  - ich-war-zuerst-da
+  - stimmt
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “no problem — and “the food, the meal — and “vegetarian — and “no meat”.'
+  answer:
+    speaker: protagonist
+    text: kein Problem … das Essen … vegetarisch … kein Fleisch
+  items:
+  - kein-problem
+  - das-essen
+  - vegetarisch
+  - kein-fleisch
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “not so good — and “the coffee — and “not today”.'
+  answer:
+    speaker: protagonist
+    text: nicht so gut … der Kaffee … heute nicht
+  items:
+  - nicht-so-gut
+  - der-kaffee
+  - heute-nicht
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “ملعب الأطفال — و“الأرجوحة — و“أربع سنوات”.'
+    mk: 'Кажете: „игралиштето“ — и „лулашката“ — и „четири години“.'
+  answer:
+    speaker: protagonist
+    text: der Spielplatz … die Schaukel … vier Jahre alt
+  items:
+  - der-spielplatz
+  - die-schaukel
+  - vier-jahre-alt
+  for:
+  - ar
+  - mk
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “لا (نفي) — و“إلى اللقاء قريبًا!”.'
+    mk: 'Кажете: „не“ — и „Се гледаме наскоро!“.'
+  answer:
+    speaker: protagonist
+    text: nicht … Bis bald!
+  items:
+  - nicht
+  - bis-bald
+  for:
+  - ar
+  - mk
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “كم عمرها؟ — و“إلى أيّ حضانة …؟ — و“تذهب”.'
+  answer:
+    speaker: protagonist
+    text: Wie alt ist sie? … In welche Kita …? … geht
+  items:
+  - wie-alt-ist-sie
+  - in-welche-kita
+  - geht
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “الغداء — و“بلا لحم خنزير — و“تأكل”.'
+  answer:
+    speaker: protagonist
+    text: das Mittagessen … kein Schweinefleisch … isst
+  items:
+  - das-mittagessen
+  - kein-schweinefleisch
+  - isst
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „Колку години има?“ — и „вашиот внук“ — и „јас сум бабата“.'
+  answer:
+    speaker: protagonist
+    text: Wie alt ist er? … Ihr Enkel … ich bin die Oma
+  items:
+  - wie-alt-ist-er
+  - ihr-enkel
+  - ich-bin-oma
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „не сум одовде“ — и „не (зборувам) германски“ — и „само малку“.'
+  answer:
+    speaker: protagonist
+    text: nicht von hier … kein Deutsch … nur ein bisschen
+  items:
+  - nicht-von-hier
+  - kein-deutsch
+  - nur-ein-bisschen
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمع إلى المحادثة مرة أخرى. الآن تفهمها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

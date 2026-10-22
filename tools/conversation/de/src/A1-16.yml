@@ -1,0 +1,42 @@
+id: A1-16
+protagonist: m
+title: ["The bank", "البنك", "Банката"]
+situation:
+  - "You want an account. The clerk is in a hurry and asks for papers you don't have."
+  - "تريد فتح حساب. الموظف مستعجل ويطلب أوراقًا ليست معك."
+  - "Сакате сметка. Службеникот брза и бара документи што ги немате."
+learn: [a1-modal-wollen]
+culture: Bring every document
+items:
+  - [ich-will, "ich will", "I want", "أريد", "сакам"]
+  - [ein-konto, "ein Konto", "an account", "حسابًا", "сметка"]
+  - [eroeffnen, "eröffnen", "open (an account)", "يفتح (حسابًا)", "отвора"]
+  - [welche-unterlagen, "Welche Unterlagen?", "Which documents?", "أيّ أوراق؟", "Кои документи?"]
+  - [den-pass, "den Pass", "the passport (object)", "جواز السفر", "пасошот"]
+  - [die-meldebescheinigung, "die Meldebescheinigung", "the registration certificate", "شهادة تسجيل السكن", "потврдата за пријава", {rare: true}]
+  - [die-steuer-id, "die Steuer-ID", "the tax ID", "الرقم الضريبي", "даночниот број", {rare: true}]
+  - [habe-ich-nicht, "habe ich nicht", "I don't have (it)", "ليس معي", "немам"]
+  - [kommt-per-post, "kommt per Post", "comes by post", "يأتي بالبريد", "доаѓа по пошта"]
+  - [unterschreiben, "unterschreiben", "sign", "يوقّع", "потпишува"]
+  - [die-karte-kommt, "die Karte kommt", "the card comes", "البطاقة تصل", "картичката доаѓа"]
+  - [wollen-sie, "Wollen Sie …?", "Do you want …? (polite)", "هل تريد …؟", "Сакате ли …?"]
+dialogue:
+  - [protagonist, "Guten Tag. Ich will ein Konto eröffnen.", "Hello. I want to open an account.", "نهارك سعيد. أريد أن أفتح حسابًا.", "Добар ден. Сакам да отворам сметка."]
+  - [kasse, "Haben Sie einen Termin?", "Do you have an appointment?", "هل عندك موعد؟", "Имате ли термин?"]
+  - [protagonist, "Ja, um elf. Welche Unterlagen brauchen Sie?", "Yes, at eleven. Which documents do you need?", "نعم، في الحادية عشرة. أيّ أوراق تحتاجون؟", "Да, во единаесет. Кои документи ви требаат?"]
+  - [kasse, "Den Pass, die Meldebescheinigung und die Steuer-ID.", "The passport, the registration certificate and the tax ID.", "جواز السفر، وشهادة تسجيل السكن، والرقم الضريبي.", "Пасошот, потврдата за пријава и даночниот број."]
+  - [protagonist, "Die Steuer-ID habe ich nicht.", "I don't have the tax ID.", "الرقم الضريبي ليس معي.", "Даночниот број го немам."]
+  - [kasse, "Die kommt per Post, nach der Anmeldung. Wollen Sie heute schon unterschreiben?", "It comes by post, after registration. Do you want to sign today already?", "يأتي بالبريد بعد تسجيل السكن. هل تريد أن توقّع اليوم؟", "Доаѓа по пошта, по пријавата. Сакате ли денес да потпишете?"]
+  - [protagonist, "Ja, bitte.", "Yes, please.", "نعم، من فضلك.", "Да, ве молам."]
+  - [kasse, "Hier unterschreiben. Die Karte kommt in einer Woche. Nächster, bitte!", "Sign here. The card comes in a week. Next, please!", "وقّع هنا. البطاقة تصل خلال أسبوع. التالي من فضلك!", "Потпишете тука. Картичката доаѓа за една недела. Следен, ве молам!"]
+teach:
+  - ask: ["Say: I want to open an account.", "قل: أريد أن أفتح حسابًا.", "Кажете: сакам да отворам сметка.", "Ich will ein Konto eröffnen.", ich-will, ein-konto, eroeffnen]
+  - note: ["«wollen» — want: «ich will», «Sie wollen». Softer and politer is «ich möchte». The second verb goes to the end.", "«wollen» يعني: يريد. «ich will»، «Sie wollen». والأكثر لطفًا وأدبًا: «ich möchte». والفعل الثاني يذهب إلى آخر الجملة.", "«wollen» — сака: «ich will», «Sie wollen». Помеко и поучтиво е «ich möchte». Вториот глагол оди на крајот."]
+  - ask: ["Ask which documents they need.", "اسأل أيّ أوراق يحتاجون.", "Прашајте кои документи им требаат.", "Welche Unterlagen brauchen Sie?", welche-unterlagen]
+  - ask: ["Say: the passport.", "قل: جواز السفر.", "Кажете: пасошот.", "Den Pass.", den-pass]
+  - ask: ["Say: the registration certificate.", "قل: شهادة تسجيل السكن.", "Кажете: потврдата за пријава.", "Die Meldebescheinigung.", die-meldebescheinigung]
+  - ask: ["Say: I don't have the tax ID.", "قل: الرقم الضريبي ليس معي.", "Кажете: даночниот број го немам.", "Die Steuer-ID habe ich nicht.", die-steuer-id, habe-ich-nicht]
+  - ask: ["She says: it comes by post.", "تقول: يأتي بالبريد.", "Таа вели: доаѓа по пошта.", "Die kommt per Post.", kommt-per-post]
+  - ask: ["She asks if you want to sign today. How?", "تسألك إن كنت تريد أن توقّع اليوم. كيف؟", "Ве прашува дали сакате денес да потпишете. Како?", "Wollen Sie heute unterschreiben?", wollen-sie, unterschreiben]
+  - ask: ["She says: the card comes in a week.", "تقول: البطاقة تصل خلال أسبوع.", "Таа вели: картичката доаѓа за една недела.", "Die Karte kommt in einer Woche.", die-karte-kommt]
+  - note: ["Offices and banks do exactly what the form says and rarely work out your case for you. Bring every document you have, in originals and copies; many things — the tax ID, the card, the PIN — arrive later by post, in separate letters.", "الدوائر والبنوك تتبع الاستمارة حرفيًا ونادرًا ما تحلّ حالتك عنك. أحضر كل أوراقك، الأصل والنسخة؛ وكثير من الأشياء — الرقم الضريبي، البطاقة، الرقم السري — تصل لاحقًا بالبريد، في رسائل منفصلة.", "Службите и банките работат точно според формуларот и ретко сами ќе го решат вашиот случај. Носете ги сите документи, оригинал и копија; многу работи — даночниот број, картичката, ПИН-от — доаѓаат подоцна по пошта, во посебни писма."]
