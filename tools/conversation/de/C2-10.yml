@@ -1,0 +1,832 @@
+# UNIT de C2-10 — written by AI (Claude) for Casus; expanded from src/C2-10.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-10
+level: C2
+number: 10
+protagonist: m
+title:
+  en: In court
+  ar: في المحكمة
+  mk: На суд
+situation:
+  en: Your old landlord kept the deposit. You sued at the local court. The judge proposes a settlement.
+  ar: مؤجّرك القديم احتفظ بالتأمين. رفعتَ دعوى في المحكمة المحلية. القاضية تقترح تسوية.
+  mk: Поранешниот станодавец го задржа депозитот. Поднесовте тужба на основниот суд. Судијката предлага порамнување.
+learn_lessons:
+- c2-legal-register
+culture: Settlements
+new_items:
+- id: die-klage
+  text: die Klage
+  meaning:
+    en: the lawsuit
+    ar: الدعوى
+    mk: тужбата
+- id: der-klaeger
+  text: der Kläger
+  meaning:
+    en: the plaintiff
+    ar: المدّعي
+    mk: тужителот
+  rare: true
+- id: der-beklagte
+  text: der Beklagte
+  meaning:
+    en: the defendant
+    ar: المدّعى عليه
+    mk: тужениот
+  rare: true
+- id: der-vergleich
+  text: der Vergleich
+  meaning:
+    en: the settlement
+    ar: التسوية
+    mk: порамнувањето
+- id: das-amtsgericht
+  text: das Amtsgericht
+  meaning:
+    en: the local court
+    ar: المحكمة المحلية
+    mk: основниот суд
+- id: die-verhandlung
+  text: die mündliche Verhandlung
+  meaning:
+    en: the oral hearing
+    ar: الجلسة الشفهية
+    mk: усната расправа
+- id: der-sachverhalt
+  text: der Sachverhalt
+  meaning:
+    en: the facts of the case
+    ar: وقائع القضية
+    mk: фактичката состојба
+  rare: true
+- id: die-rueckzahlung
+  text: die Rückzahlung der Kaution
+  meaning:
+    en: repayment of the deposit
+    ar: ردّ التأمين
+    mk: враќањето на депозитот
+- id: die-kosten-tragen
+  text: die Kosten tragen
+  meaning:
+    en: bear the costs
+    ar: يتحمّل التكاليف
+    mk: ги сноси трошоците
+- id: hohes-gericht
+  text: Frau Vorsitzende
+  meaning:
+    en: Madam Chair (to the judge)
+    ar: سيدتي الرئيسة (للقاضية)
+    mk: Госпоѓо претседателке (до судијката)
+reviews:
+- item: der-blutdruck
+  from: A2-03
+- item: das-herz
+  from: A2-03
+- item: gesund
+  from: A2-03
+- item: wie-geht-es-ihnen
+  from: A2-03
+- item: mir-geht-es-gut
+  from: A2-03
+- item: ich-zeige-ihnen
+  from: A2-03
+- item: ein-bisschen-hoch
+  from: A2-03
+- item: weniger-salz
+  from: A2-03
+- item: mehr-bewegung
+  from: A2-03
+- item: hilft-mir
+  from: A2-03
+- item: in-einem-monat
+  from: A2-03
+- item: die-tagesordnung
+  from: B2-07
+- item: das-protokoll
+  from: B2-07
+- item: protokoll-fuehren
+  from: B2-07
+- item: der-punkt
+  from: B2-07
+- item: muss-entschieden-werden
+  from: B2-07
+- item: kann-verschoben-werden
+  from: B2-07
+- item: die-frist-einhalten
+  from: B2-07
+- item: wer-uebernimmt
+  from: B2-07
+- item: zum-schluss
+  from: B2-07
+- item: verschiedenes
+  from: B2-07
+- item: die-ueberweisung
+  from: C1-09
+- item: der-facharzt
+  from: C1-09
+- item: der-orthopaede
+  from: C1-09
+- item: die-wartezeit-arzt
+  from: C1-09
+- item: gesetzlich-versichert
+  from: C1-09
+- item: privat-versichert
+  from: C1-09
+- item: die-terminservicestelle
+  from: C1-09
+- item: die-dringlichkeit
+  from: C1-09
+- item: die-vermittlung
+  from: C1-09
+- item: die-absage
+  from: C1-09
+- item: die-gleichberechtigung-e
+  from: C1-25-e
+  for:
+  - en
+- item: die-selbstbestimmung-e
+  from: C1-25-e
+  for:
+  - en
+- item: das-opfer-e
+  from: C1-25-e
+  for:
+  - en
+- item: die-schuld-e
+  from: C1-25-e
+  for:
+  - en
+- item: die-zwangsheirat-e
+  from: C1-25-e
+  for:
+  - en
+- item: das-hilfetelefon-e
+  from: C1-25-e
+  for:
+  - en
+- item: das-frauenhaus-e
+  from: C1-25-e
+  for:
+  - en
+- item: anonym-e
+  from: C1-25-e
+  for:
+  - en
+- item: die-entscheidung-ueber-e
+  from: C1-25-e
+  for:
+  - en
+- item: niemand-darf-e
+  from: C1-25-e
+  for:
+  - en
+- item: die-stellungnahme
+  from: C2-03
+- item: das-interview
+  from: C2-03
+- item: vor-der-kamera
+  from: C2-03
+- item: im-namen-des-vereins
+  from: C2-03
+- item: es-freut-uns-sehr
+  from: C2-03
+- item: die-foerderung-c2
+  from: C2-03
+- item: die-integration-durch-sport
+  from: C2-03
+- item: darauf-moechte-ich-hinweisen
+  from: C2-03
+- item: abschliessend
+  from: C2-03
+- item: nervoes
+  from: C2-03
+- item: sehr-geehrter-herr-ob
+  from: C2-07
+- item: ich-wende-mich-an-sie
+  from: C2-07
+- item: mit-bedauern
+  from: C2-07
+- item: die-hallenzeit
+  from: C2-07
+- item: ersatzlos-gestrichen
+  from: C2-07
+- item: ihnen-dankbar
+  from: C2-07
+- item: in-kopie
+  from: C2-07
+- item: das-anliegen
+  from: C2-07
+- item: mit-freundlichen-gruessen-c2
+  from: C2-07
+- item: die-betroffenen
+  from: C2-07
+- item: da-steppt-der-baer
+  from: C2-09
+- item: nur-bahnhof
+  from: C2-09
+- item: nicht-mein-bier
+  from: C2-09
+- item: daumen-druecken
+  from: C2-09
+- item: tomaten-auf-den-augen
+  from: C2-09
+- item: den-nagel-auf-den-kopf
+  from: C2-09
+- item: ins-fettnaepfchen
+  from: C2-09
+- item: hals-und-beinbruch
+  from: C2-09
+- item: die-redewendung
+  from: C2-09
+- item: im-richtigen-moment
+  from: C2-09
+- item: die-gleichberechtigung-a
+  from: C1-25-a
+  for:
+  - ar
+- item: die-selbstbestimmung-a
+  from: C1-25-a
+  for:
+  - ar
+- item: das-opfer-a
+  from: C1-25-a
+  for:
+  - ar
+- item: die-schuld-a
+  from: C1-25-a
+  for:
+  - ar
+- item: die-zwangsheirat-a
+  from: C1-25-a
+  for:
+  - ar
+- item: das-hilfetelefon-a
+  from: C1-25-a
+  for:
+  - ar
+- item: das-frauenhaus-a
+  from: C1-25-a
+  for:
+  - ar
+- item: anonym-a
+  from: C1-25-a
+  for:
+  - ar
+- item: die-entscheidung-ueber-a
+  from: C1-25-a
+  for:
+  - ar
+- item: niemand-darf-a
+  from: C1-25-a
+  for:
+  - ar
+- item: die-gleichberechtigung-m
+  from: C1-25-m
+  for:
+  - mk
+- item: die-selbstbestimmung-m
+  from: C1-25-m
+  for:
+  - mk
+- item: das-opfer-m
+  from: C1-25-m
+  for:
+  - mk
+- item: die-schuld-m
+  from: C1-25-m
+  for:
+  - mk
+- item: die-haeusliche-gewalt-m
+  from: C1-25-m
+  for:
+  - mk
+- item: das-hilfetelefon-m
+  from: C1-25-m
+  for:
+  - mk
+- item: das-frauenhaus-m
+  from: C1-25-m
+  for:
+  - mk
+- item: anonym-m
+  from: C1-25-m
+  for:
+  - mk
+- item: die-entscheidung-ueber-m
+  from: C1-25-m
+  for:
+  - mk
+- item: schweigen-m
+  from: C1-25-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: Your old landlord kept the deposit. You sued at the local court. The judge proposes a settlement. Listen to the conversation; you don't need to understand it yet.
+    ar: مؤجّرك القديم احتفظ بالتأمين. رفعتَ دعوى في المحكمة المحلية. القاضية تقترح تسوية. استمع إلى المحادثة؛ لا داعي لأن تفهمها الآن.
+    mk: Поранешниот станодавец го задржа депозитот. Поднесовте тужба на основниот суд. Судијката предлага порамнување. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: richterin
+    text: Ich eröffne die mündliche Verhandlung. Kläger ist der frühere Mieter, Beklagter der Vermieter.
+    meaning:
+      en: I open the oral hearing. The plaintiff is the former tenant, the defendant the landlord.
+      ar: أفتتح الجلسة الشفهية. المدّعي هو المستأجر السابق، والمدّعى عليه المؤجِّر.
+      mk: Ја отворам усната расправа. Тужител е поранешниот станар, тужен е станодавецот.
+  - speaker: richterin
+    text: 'Zum Sachverhalt: Der Kläger verlangt die Rückzahlung der Kaution.'
+    meaning:
+      en: 'On the facts: the plaintiff demands repayment of the deposit.'
+      ar: 'عن وقائع القضية: المدّعي يطالب بردّ التأمين.'
+      mk: 'За фактичката состојба: тужителот бара враќање на депозитот.'
+  - speaker: verwaltung
+    text: Die Wohnung war in schlechtem Zustand. Wir mussten renovieren.
+    meaning:
+      en: The flat was in poor condition. We had to renovate.
+      ar: كانت الشقة في حالة سيئة. اضطررنا إلى الترميم.
+      mk: Станот беше во лоша состојба. Моравме да реновираме.
+  - speaker: protagonist
+    text: 'Frau Vorsitzende, hier ist das Übergabeprotokoll: keine Schäden, nur normale Abnutzung.'
+    meaning:
+      en: 'Madam Chair, here''s the handover report: no damage, only normal wear and tear.'
+      ar: 'سيدتي الرئيسة، هذا محضر التسليم: لا أضرار، فقط استهلاك عادي.'
+      mk: 'Госпоѓо претседателке, еве го записникот за предавање: без штети, само нормално абење.'
+  - speaker: richterin
+    text: 'Das Protokoll spricht für den Kläger. Ich schlage einen Vergleich vor: achtzig Prozent zurück.'
+    meaning:
+      en: 'The report favours the plaintiff. I propose a settlement: eighty per cent back.'
+      ar: 'المحضر في صالح المدّعي. أقترح تسوية: ثمانون بالمئة تُردّ.'
+      mk: 'Записникот е во корист на тужителот. Предлагам порамнување: осумдесет проценти назад.'
+  - speaker: protagonist
+    text: Und wer trägt die Kosten?
+    meaning:
+      en: And who bears the costs?
+      ar: ومن يتحمّل التكاليف؟
+      mk: А кој ги сноси трошоците?
+  - speaker: richterin
+    text: Bei einem Vergleich teilen Sie sie. Ohne Vergleich entscheide ich — mit offenem Ausgang.
+    meaning:
+      en: In a settlement you share them. Without a settlement I decide — with an open outcome.
+      ar: في التسوية تتقاسمونها. وبلا تسوية أقرّر أنا — والنتيجة مفتوحة.
+      mk: Со порамнување ги делите. Без порамнување одлучувам јас — со неизвесен исход.
+  - speaker: protagonist
+    text: Dann nehme ich den Vergleich an.
+    meaning:
+      en: Then I accept the settlement.
+      ar: إذن أقبل التسوية.
+      mk: Тогаш го прифаќам порамнувањето.
+- type: prompt
+  ask:
+    en: 'Say: the local court.'
+    ar: 'قل: المحكمة المحلية.'
+    mk: 'Кажете: основниот суд.'
+  answer:
+    speaker: protagonist
+    text: Das Amtsgericht.
+  items:
+  - das-amtsgericht
+- type: prompt
+  ask:
+    en: 'Say: the oral hearing.'
+    ar: 'قل: الجلسة الشفهية.'
+    mk: 'Кажете: усната расправа.'
+  answer:
+    speaker: protagonist
+    text: Die mündliche Verhandlung.
+  items:
+  - die-verhandlung
+- type: narrator
+  text:
+    en: 'Legal register names roles, not people: «der Kläger» (plaintiff), «der Beklagte» (defendant), «der Sachverhalt» (the facts), and speaks of «die Rückzahlung der Kaution» rather than ''giving the
+      money back''. Address the judge as «Frau Vorsitzende» / «Herr Vorsitzender».'
+    ar: 'الأسلوب القانوني يسمّي الأدوار لا الأشخاص: «der Kläger» (المدّعي)، «der Beklagte» (المدّعى عليه)، «der Sachverhalt» (الوقائع)، ويقول «die Rückzahlung der Kaution» بدلًا من «إرجاع المال». وتُخاطَب
+      القاضية بـ«Frau Vorsitzende» / والقاضي بـ«Herr Vorsitzender».'
+    mk: 'Правниот регистар ги именува улогите, не луѓето: «der Kläger» (тужител), «der Beklagte» (тужен), «der Sachverhalt» (фактите), и вели «die Rückzahlung der Kaution» наместо „враќање на парите“. На
+      судијата се обраќа со «Frau Vorsitzende» / «Herr Vorsitzender».'
+- type: prompt
+  ask:
+    en: 'Say: the plaintiff and the defendant.'
+    ar: 'قل: المدّعي والمدّعى عليه.'
+    mk: 'Кажете: тужителот и тужениот.'
+  answer:
+    speaker: protagonist
+    text: Der Kläger und der Beklagte.
+  items:
+  - der-klaeger
+  - der-beklagte
+- type: prompt
+  ask:
+    en: 'Say: the facts of the case.'
+    ar: 'قل: وقائع القضية.'
+    mk: 'Кажете: фактичката состојба.'
+  answer:
+    speaker: protagonist
+    text: Der Sachverhalt.
+  items:
+  - der-sachverhalt
+- type: prompt
+  ask:
+    en: 'Say: repayment of the deposit.'
+    ar: 'قل: ردّ التأمين.'
+    mk: 'Кажете: враќање на депозитот.'
+  answer:
+    speaker: protagonist
+    text: Die Rückzahlung der Kaution.
+  items:
+  - die-rueckzahlung
+- type: prompt
+  ask:
+    en: Address the judge.
+    ar: خاطب القاضية.
+    mk: Обратете ѝ се на судијката.
+  answer:
+    speaker: protagonist
+    text: Frau Vorsitzende, …
+  items:
+  - hohes-gericht
+- type: prompt
+  ask:
+    en: 'Say: a settlement.'
+    ar: 'قل: تسوية.'
+    mk: 'Кажете: порамнување.'
+  answer:
+    speaker: protagonist
+    text: Ein Vergleich.
+  items:
+  - der-vergleich
+- type: prompt
+  ask:
+    en: 'Ask: who bears the costs?'
+    ar: 'اسأل: من يتحمّل التكاليف؟'
+    mk: 'Прашајте: кој ги сноси трошоците?'
+  answer:
+    speaker: protagonist
+    text: Wer trägt die Kosten?
+  items:
+  - die-kosten-tragen
+- type: prompt
+  ask:
+    en: 'Say: the lawsuit.'
+    ar: 'قل: الدعوى.'
+    mk: 'Кажете: тужбата.'
+  answer:
+    speaker: protagonist
+    text: Die Klage.
+  items:
+  - die-klage
+- type: narrator
+  text:
+    en: Small claims go to the Amtsgericht; below a certain amount you don't need a lawyer. Judges almost always propose a settlement (Vergleich) first — it's quick and cheaper. Legal-expenses insurance
+      or the tenants' association often covers costs; people on low incomes can get legal aid (Prozesskostenhilfe).
+    ar: الدعاوى الصغيرة تذهب إلى المحكمة المحلية (Amtsgericht)؛ وتحت مبلغ معيّن لا تحتاج محاميًا. والقضاة يقترحون أولًا تسوية (Vergleich) دائمًا تقريبًا — فهي سريعة وأرخص. وتأمين الحماية القانونية أو جمعية
+      المستأجرين يغطّي غالبًا التكاليف؛ وذوو الدخل المنخفض يمكنهم الحصول على المساعدة القضائية (Prozesskostenhilfe).
+    mk: Малите спорови одат на Amtsgericht; под одреден износ не ви треба адвокат. Судиите речиси секогаш прво предлагаат порамнување (Vergleich) — брзо е и поевтино. Осигурувањето за правна заштита или
+      здружението на станари често ги покрива трошоците; луѓето со ниски примања можат да добијат правна помош (Prozesskostenhilfe).
+- type: prompt
+  ask:
+    en: 'Once more: say “the lawsuit”.'
+    ar: 'مرة أخرى: قل “الدعوى”.'
+    mk: 'Уште еднаш: кажете „тужбата“.'
+  answer:
+    speaker: protagonist
+    text: die Klage
+  items:
+  - die-klage
+- type: prompt
+  ask:
+    en: 'Once more: say “the plaintiff”.'
+    ar: 'مرة أخرى: قل “المدّعي”.'
+    mk: 'Уште еднаш: кажете „тужителот“.'
+  answer:
+    speaker: protagonist
+    text: der Kläger
+  items:
+  - der-klaeger
+- type: prompt
+  ask:
+    en: 'Once more: say “the defendant”.'
+    ar: 'مرة أخرى: قل “المدّعى عليه”.'
+    mk: 'Уште еднаш: кажете „тужениот“.'
+  answer:
+    speaker: protagonist
+    text: der Beklagte
+  items:
+  - der-beklagte
+- type: prompt
+  ask:
+    en: 'Once more: say “the settlement”.'
+    ar: 'مرة أخرى: قل “التسوية”.'
+    mk: 'Уште еднаш: кажете „порамнувањето“.'
+  answer:
+    speaker: protagonist
+    text: der Vergleich
+  items:
+  - der-vergleich
+- type: prompt
+  ask:
+    en: 'Once more: say “the local court”.'
+    ar: 'مرة أخرى: قل “المحكمة المحلية”.'
+    mk: 'Уште еднаш: кажете „основниот суд“.'
+  answer:
+    speaker: protagonist
+    text: das Amtsgericht
+  items:
+  - das-amtsgericht
+- type: prompt
+  ask:
+    en: 'Once more: say “the oral hearing”.'
+    ar: 'مرة أخرى: قل “الجلسة الشفهية”.'
+    mk: 'Уште еднаш: кажете „усната расправа“.'
+  answer:
+    speaker: protagonist
+    text: die mündliche Verhandlung
+  items:
+  - die-verhandlung
+- type: prompt
+  ask:
+    en: 'Once more: say “the facts of the case”.'
+    ar: 'مرة أخرى: قل “وقائع القضية”.'
+    mk: 'Уште еднаш: кажете „фактичката состојба“.'
+  answer:
+    speaker: protagonist
+    text: der Sachverhalt
+  items:
+  - der-sachverhalt
+- type: prompt
+  ask:
+    en: 'Once more: say “repayment of the deposit”.'
+    ar: 'مرة أخرى: قل “ردّ التأمين”.'
+    mk: 'Уште еднаш: кажете „враќањето на депозитот“.'
+  answer:
+    speaker: protagonist
+    text: die Rückzahlung der Kaution
+  items:
+  - die-rueckzahlung
+- type: prompt
+  ask:
+    en: 'Once more: say “bear the costs”.'
+    ar: 'مرة أخرى: قل “يتحمّل التكاليف”.'
+    mk: 'Уште еднаш: кажете „ги сноси трошоците“.'
+  answer:
+    speaker: protagonist
+    text: die Kosten tragen
+  items:
+  - die-kosten-tragen
+- type: prompt
+  ask:
+    en: 'Once more: say “Madam Chair (to the judge)”.'
+    ar: 'مرة أخرى: قل “سيدتي الرئيسة (للقاضية)”.'
+    mk: 'Уште еднаш: кажете „Госпоѓо претседателке (до судијката)“.'
+  answer:
+    speaker: protagonist
+    text: Frau Vorsitzende
+  items:
+  - hohes-gericht
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتَه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “It''s buzzing there (a great party) — and “It''s all Greek to me — and “That''s not my business — and “I''ll keep my fingers crossed for you — and “be blind to something obvious — and “hit
+      the nail on the head — and “put your foot in it — and “Break a leg! — and “the idiom — and “at the right moment — and “Dear Lord Mayor — and “I am writing to you to ask … — and “I note with regret
+      that … — and “the hall slot — and “cancelled without replacement — and “I would be grateful for a prompt reply — and “copied to (cc) — and “the concern, request — and “Yours faithfully (very formal)
+      — and “those affected — and “the statement”.'
+    ar: 'قل: “هناك حفلة صاخبة — و“لا أفهم شيئًا — و“ليس هذا من شأني — و“أتمنّى لكِ التوفيق — و“لا يرى الواضح — و“يصيب كبد الحقيقة — و“يرتكب زلّة محرجة — و“بالتوفيق! (حرفيًا: كسر العنق والساق) — و“التعبير
+      الاصطلاحي — و“في اللحظة المناسبة — و“حضرة رئيس البلدية المحترم — و“أتوجّه إليكم راجيةً … — و“علمتُ بأسف أنّ … — و“وقت القاعة — و“أُلغي دون بديل — و“سأكون ممتنة لردّ قريب — و“نسخة إلى — و“الطلب، الشأن
+      — و“وتفضّلوا بقبول فائق الاحترام — و“المتضرّرون — و“التصريح”.'
+    mk: 'Кажете: „Таму е луда журка“ — и „Ништо не разбирам“ — и „Тоа не е моја работа“ — и „Ќе ти стискам палци“ — и „да не гледаш очигледно“ — и „погодува во десетка“ — и „згазува во лајно (прави гаф)“
+      — и „Среќно! (буквално: скршен врат и нога)“ — и „идиомот“ — и „во вистинскиот момент“ — и „Почитуван господине градоначалник“ — и „Ви се обраќам со молба …“ — и „Со жалење дознав дека …“ — и „терминот
+      во салата“ — и „укинат без замена“ — и „Би ви била благодарна за брз одговор“ — и „во копија“ — и „барањето, грижата“ — и „Со длабока почит“ — и „засегнатите“ — и „изјавата“.'
+  answer:
+    speaker: protagonist
+    text: Da steppt der Bär … Ich verstehe nur Bahnhof … Das ist nicht mein Bier … Ich drücke dir die Daumen … Tomaten auf den Augen haben … den Nagel auf den Kopf treffen … ins Fettnäpfchen treten … Hals-
+      und Beinbruch! … die Redewendung … im richtigen Moment … Sehr geehrter Herr Oberbürgermeister … Ich wende mich an Sie mit der Bitte, … … Mit Bedauern habe ich zur Kenntnis genommen, dass … … die Hallenzeit
+      … ersatzlos gestrichen … Für eine baldige Antwort wäre ich Ihnen dankbar … in Kopie … das Anliegen … Hochachtungsvoll … die Betroffenen … die Stellungnahme
+  items:
+  - da-steppt-der-baer
+  - nur-bahnhof
+  - nicht-mein-bier
+  - daumen-druecken
+  - tomaten-auf-den-augen
+  - den-nagel-auf-den-kopf
+  - ins-fettnaepfchen
+  - hals-und-beinbruch
+  - die-redewendung
+  - im-richtigen-moment
+  - sehr-geehrter-herr-ob
+  - ich-wende-mich-an-sie
+  - mit-bedauern
+  - die-hallenzeit
+  - ersatzlos-gestrichen
+  - ihnen-dankbar
+  - in-kopie
+  - das-anliegen
+  - mit-freundlichen-gruessen-c2
+  - die-betroffenen
+  - die-stellungnahme
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the interview — and “on camera — and “on behalf of the club — and “We''re very pleased that … — and “support, funding — and “integration through sport — and “I''d like to point out that …
+      — and “in conclusion — and “nervous — and “the referral — and “the specialist — and “the orthopaedist — and “the wait for an appointment — and “publicly insured — and “privately insured — and “the
+      appointment service (116117) — and “urgency — and “arranging, placement — and “a cancellation — and “the agenda — and “the minutes”.'
+    ar: 'قل: “المقابلة — و“أمام الكاميرا — و“باسم النادي — و“يسعدنا كثيرًا أنّ … — و“الدعم — و“الاندماج عبر الرياضة — و“أودّ أن أشير إلى أنّ … — و“ختامًا — و“متوتّر — و“التحويل الطبي — و“الطبيب الأخصائي
+      — و“طبيب العظام — و“مدة انتظار الموعد — و“مؤمَّن في التأمين العام — و“مؤمَّن تأمينًا خاصًا — و“خدمة المواعيد (116117) — و“الاستعجال — و“الترتيب، الوساطة — و“إلغاء موعد — و“جدول الأعمال — و“المحضر”.'
+    mk: 'Кажете: „интервјуто“ — и „пред камерата“ — и „во име на клубот“ — и „Многу нè радува што …“ — и „поддршката“ — и „интеграција преку спорт“ — и „Би сакала да укажам дека …“ — и „на крајот, заклучно“
+      — и „нервозна“ — и „упатот“ — и „специјалистот“ — и „ортопедот“ — и „чекањето за термин“ — и „јавно осигурен“ — и „приватно осигурен“ — и „службата за термини (116117)“ — и „итноста“ — и „посредувањето“
+      — и „откажувањето“ — и „дневниот ред“ — и „записникот“.'
+  answer:
+    speaker: protagonist
+    text: das Interview … vor der Kamera … im Namen des Vereins … Es freut uns sehr, dass … … die Förderung … Integration durch Sport … Ich möchte darauf hinweisen, dass … … abschließend … nervös … die
+      Überweisung … der Facharzt … der Orthopäde … die Wartezeit auf einen Termin … gesetzlich versichert … privat versichert … die Terminservicestelle … die Dringlichkeit … die Vermittlung … die Absage
+      … die Tagesordnung … das Protokoll
+  items:
+  - das-interview
+  - vor-der-kamera
+  - im-namen-des-vereins
+  - es-freut-uns-sehr
+  - die-foerderung-c2
+  - die-integration-durch-sport
+  - darauf-moechte-ich-hinweisen
+  - abschliessend
+  - nervoes
+  - die-ueberweisung
+  - der-facharzt
+  - der-orthopaede
+  - die-wartezeit-arzt
+  - gesetzlich-versichert
+  - privat-versichert
+  - die-terminservicestelle
+  - die-dringlichkeit
+  - die-vermittlung
+  - die-absage
+  - die-tagesordnung
+  - das-protokoll
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “take the minutes — and “the agenda item — and “must be decided — and “can be postponed — and “meet the deadline — and “Who''ll take that on? — and “finally, at the end — and “any other business
+      — and “blood pressure — and “the heart — and “healthy — and “How are you? (polite) — and “I''m well — and “I''ll show you … — and “a bit high — and “less salt — and “more exercise — and “that helps
+      me — and “in a month”.'
+    ar: 'قل: “يكتب المحضر — و“بند جدول الأعمال — و“يجب أن يُقرَّر — و“يمكن أن يُؤجَّل — و“يلتزم بالمهلة — و“من يتولّى ذلك؟ — و“في الختام — و“متفرقات — و“ضغط الدم — و“القلب — و“صحّي، سليم — و“كيف حالكِ؟
+      — و“أنا بخير — و“سأريكِ … — و“مرتفع قليلًا — و“ملح أقل — و“حركة أكثر — و“هذا يساعدني — و“بعد شهر”.'
+    mk: 'Кажете: „води записник“ — и „точката од дневниот ред“ — и „мора да се одлучи“ — и „може да се одложи“ — и „го почитува рокот“ — и „Кој го презема тоа?“ — и „на крајот“ — и „разно“ — и „крвниот
+      притисок“ — и „срцето“ — и „здраво“ — и „Како сте?“ — и „Добро сум“ — и „Ќе ви покажам …“ — и „малку висок“ — и „помалку сол“ — и „повеќе движење“ — и „тоа ми помага“ — и „за еден месец“.'
+  answer:
+    speaker: protagonist
+    text: Protokoll führen … der Tagesordnungspunkt … muss entschieden werden … kann verschoben werden … die Frist einhalten … Wer übernimmt das? … zum Schluss … Verschiedenes … der Blutdruck … das Herz
+      … gesund … Wie geht es Ihnen? … Mir geht es gut … Ich zeige Ihnen … … ein bisschen hoch … weniger Salz … mehr Bewegung … das hilft mir … in einem Monat
+  items:
+  - protokoll-fuehren
+  - der-punkt
+  - muss-entschieden-werden
+  - kann-verschoben-werden
+  - die-frist-einhalten
+  - wer-uebernimmt
+  - zum-schluss
+  - verschiedenes
+  - der-blutdruck
+  - das-herz
+  - gesund
+  - wie-geht-es-ihnen
+  - mir-geht-es-gut
+  - ich-zeige-ihnen
+  - ein-bisschen-hoch
+  - weniger-salz
+  - mehr-bewegung
+  - hilft-mir
+  - in-einem-monat
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “equal rights — and “self-determination — and “the victim — and “the blame, guilt”.'
+  answer:
+    speaker: protagonist
+    text: die Gleichberechtigung … die Selbstbestimmung … das Opfer … die Schuld
+  items:
+  - die-gleichberechtigung-e
+  - die-selbstbestimmung-e
+  - das-opfer-e
+  - die-schuld-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “forced marriage — and “the helpline — and “the women''s shelter — and “anonymous”.'
+  answer:
+    speaker: protagonist
+    text: die Zwangsheirat … das Hilfetelefon … das Frauenhaus … anonym
+  items:
+  - die-zwangsheirat-e
+  - das-hilfetelefon-e
+  - das-frauenhaus-e
+  - anonym-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the decision about one''s own life — and “no one may …”.'
+  answer:
+    speaker: protagonist
+    text: die Entscheidung über das eigene Leben … niemand darf …
+  items:
+  - die-entscheidung-ueber-e
+  - niemand-darf-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “المساواة في الحقوق — و“تقرير المصير — و“الضحية — و“اللوم، الذنب”.'
+  answer:
+    speaker: protagonist
+    text: die Gleichberechtigung … die Selbstbestimmung … das Opfer … die Schuld
+  items:
+  - die-gleichberechtigung-a
+  - die-selbstbestimmung-a
+  - das-opfer-a
+  - die-schuld-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “الزواج القسري — و“خط المساعدة الهاتفي — و“دار حماية النساء — و“دون كشف الهوية”.'
+  answer:
+    speaker: protagonist
+    text: die Zwangsheirat … das Hilfetelefon … das Frauenhaus … anonym
+  items:
+  - die-zwangsheirat-a
+  - das-hilfetelefon-a
+  - das-frauenhaus-a
+  - anonym-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “القرار في الحياة الخاصة — و“لا يحق لأحد …”.'
+  answer:
+    speaker: protagonist
+    text: die Entscheidung über das eigene Leben … niemand darf …
+  items:
+  - die-entscheidung-ueber-a
+  - niemand-darf-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „еднаквите права“ — и „самоопределувањето“ — и „жртвата“ — и „вината“.'
+  answer:
+    speaker: protagonist
+    text: die Gleichberechtigung … die Selbstbestimmung … das Opfer … die Schuld
+  items:
+  - die-gleichberechtigung-m
+  - die-selbstbestimmung-m
+  - das-opfer-m
+  - die-schuld-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „семејното насилство“ — и „телефонската линија за помош“ — и „засолништето за жени“ — и „анонимно“.'
+  answer:
+    speaker: protagonist
+    text: die häusliche Gewalt … das Hilfetelefon … das Frauenhaus … anonym
+  items:
+  - die-haeusliche-gewalt-m
+  - das-hilfetelefon-m
+  - das-frauenhaus-m
+  - anonym-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „одлуката за сопствениот живот“ — и „молчи“.'
+  answer:
+    speaker: protagonist
+    text: die Entscheidung über das eigene Leben … schweigen
+  items:
+  - die-entscheidung-ueber-m
+  - schweigen-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمع إلى المحادثة مرة أخرى. الآن تفهمها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

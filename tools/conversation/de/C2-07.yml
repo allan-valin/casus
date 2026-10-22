@@ -1,0 +1,832 @@
+# UNIT de C2-07 — written by AI (Claude) for Casus; expanded from src/C2-07.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-07
+level: C2
+number: 7
+protagonist: f
+title:
+  en: A letter to the mayor
+  ar: رسالة إلى العمدة
+  mk: Писмо до градоначалникот
+situation:
+  en: The youth team has lost its hall time. The city didn't answer. Lena helps you write to the Lord Mayor directly.
+  ar: فريق الناشئين خسر وقته في القاعة. المدينة لم تردّ. لينا تساعدكِ على الكتابة إلى رئيس البلدية مباشرة.
+  mk: Младинската екипа го изгуби терминот во салата. Градот не одговори. Лена ви помага да му пишете директно на градоначалникот.
+learn_lessons:
+- c2-formal-register
+culture: Writing to the top
+new_items:
+- id: sehr-geehrter-herr-ob
+  text: Sehr geehrter Herr Oberbürgermeister
+  meaning:
+    en: Dear Lord Mayor
+    ar: حضرة رئيس البلدية المحترم
+    mk: Почитуван господине градоначалник
+- id: ich-wende-mich-an-sie
+  text: Ich wende mich an Sie mit der Bitte, …
+  meaning:
+    en: I am writing to you to ask …
+    ar: أتوجّه إليكم راجيةً …
+    mk: Ви се обраќам со молба …
+- id: mit-bedauern
+  text: Mit Bedauern habe ich zur Kenntnis genommen, dass …
+  meaning:
+    en: I note with regret that …
+    ar: علمتُ بأسف أنّ …
+    mk: Со жалење дознав дека …
+- id: die-hallenzeit
+  text: die Hallenzeit
+  meaning:
+    en: the hall slot
+    ar: وقت القاعة
+    mk: терминот во салата
+  rare: true
+- id: ersatzlos-gestrichen
+  text: ersatzlos gestrichen
+  meaning:
+    en: cancelled without replacement
+    ar: أُلغي دون بديل
+    mk: укинат без замена
+  rare: true
+- id: ihnen-dankbar
+  text: Für eine baldige Antwort wäre ich Ihnen dankbar
+  meaning:
+    en: I would be grateful for a prompt reply
+    ar: سأكون ممتنة لردّ قريب
+    mk: Би ви била благодарна за брз одговор
+- id: in-kopie
+  text: in Kopie
+  meaning:
+    en: copied to (cc)
+    ar: نسخة إلى
+    mk: во копија
+- id: das-anliegen
+  text: das Anliegen
+  meaning:
+    en: the concern, request
+    ar: الطلب، الشأن
+    mk: барањето, грижата
+- id: mit-freundlichen-gruessen-c2
+  text: Hochachtungsvoll
+  meaning:
+    en: Yours faithfully (very formal)
+    ar: وتفضّلوا بقبول فائق الاحترام
+    mk: Со длабока почит
+- id: die-betroffenen
+  text: die Betroffenen
+  meaning:
+    en: those affected
+    ar: المتضرّرون
+    mk: засегнатите
+reviews:
+- item: der-verein
+  from: A1-30
+- item: das-training
+  from: A1-30
+- item: mitglied
+  from: A1-30
+- item: probetraining
+  from: A1-30
+- item: mitmachen
+  from: A1-30
+- item: schnell
+  from: A1-30
+- item: anstrengend
+  from: A1-30
+- item: die-umkleide
+  from: A1-30
+- item: die-sporthalle
+  from: A1-30
+- item: das-naechste-training
+  from: A1-30
+- item: der-club-e
+  from: B2-04-e
+  for:
+  - en
+- item: bis-dahin-e
+  from: B2-04-e
+  for:
+  - en
+- item: das-anerkennungsverfahren-e
+  from: B2-04-e
+  for:
+  - en
+- item: die-berufserlaubnis-e
+  from: B2-04-e
+  for:
+  - en
+- item: ueberqualifiziert-e
+  from: B2-04-e
+  for:
+  - en
+- item: wurde-anerkannt-e
+  from: B2-04-e
+  for:
+  - en
+- item: wurden-verlangt-e
+  from: B2-04-e
+  for:
+  - en
+- item: die-pflegekraft-e
+  from: B2-04-e
+  for:
+  - en
+- item: die-kenntnispruefung-e
+  from: B2-04-e
+  for:
+  - en
+- item: die-unterlagen-e
+  from: B2-04-e
+  for:
+  - en
+- item: beglaubigt-e
+  from: B2-04-e
+  for:
+  - en
+- item: der-unfall
+  from: C1-06
+- item: der-unfallbericht
+  from: C1-06
+- item: der-zeuge
+  from: C1-06
+- item: die-aussage
+  from: C1-06
+- item: die-kreuzung
+  from: C1-06
+- item: abbiegen
+  from: C1-06
+- item: er-behauptet-ich-sei
+  from: C1-06
+- item: er-habe-gesehen
+  from: C1-06
+- item: die-vorfahrt
+  from: C1-06
+- item: die-prellung
+  from: C1-06
+- item: das-aktenzeichen
+  from: C1-06
+- item: das-testament
+  from: C1-22
+- item: die-erbschaft
+  from: C1-22
+- item: erben
+  from: C1-22
+- item: der-erbe
+  from: C1-22
+- item: der-pflichtteil
+  from: C1-22
+- item: die-gesetzliche-erbfolge
+  from: C1-22
+- item: handschriftlich
+  from: C1-22
+- item: der-nachlass
+  from: C1-22
+- item: er-sagte-es-gebe
+  from: C1-22
+- item: vererben-c1
+  from: C1-22
+- item: rueckblickend
+  from: C1-30
+- item: die-veraenderung
+  from: C1-30
+- item: dankbar
+  from: C1-30
+- item: vertraut
+  from: C1-30
+- item: die-fremde
+  from: C1-30
+- item: die-wahlheimat
+  from: C1-30
+- item: auf-die-naechsten
+  from: C1-30
+- item: die-kritik
+  from: C1-30
+- item: die-stufe
+  from: C1-30
+- item: weisst-du-noch
+  from: C1-30
+- item: die-gehaltsverhandlung
+  from: C2-04
+- item: das-gegenangebot
+  from: C2-04
+- item: der-marktwert
+  from: C2-04
+- item: ich-haette-mir-vorgestellt
+  from: C2-04
+- item: waere-es-denkbar
+  from: C2-04
+- item: ich-wuerde-vorschlagen
+  from: C2-04
+- item: die-gehaltserhoehung
+  from: C2-04
+- item: das-budget-c2
+  from: C2-04
+- item: der-zusatzurlaub
+  from: C2-04
+- item: die-vereinbarung
+  from: C2-04
+- item: das-kabarett
+  from: C2-06
+- item: die-satire
+  from: C2-06
+- item: der-kabarettist
+  from: C2-06
+- item: doppeldeutig
+  from: C2-06
+- item: auf-die-schippe-nehmen
+  from: C2-06
+- item: der-seitenhieb
+  from: C2-06
+- item: schwarzer-humor
+  from: C2-06
+- item: der-zug-faellt-aus
+  from: C2-06
+- item: die-anspielung
+  from: C2-06
+- item: wer-a-sagt
+  from: C2-06
+- item: die-garderobe-a
+  from: B2-04-a
+  for:
+  - ar
+- item: die-approbation-a
+  from: B2-04-a
+  for:
+  - ar
+- item: die-zeugnisbewertung-a
+  from: B2-04-a
+  for:
+  - ar
+- item: wurde-anerkannt-a
+  from: B2-04-a
+  for:
+  - ar
+- item: wurde-gepruft-a
+  from: B2-04-a
+  for:
+  - ar
+- item: ueberqualifiziert-a
+  from: B2-04-a
+  for:
+  - ar
+- item: die-kenntnispruefung-a
+  from: B2-04-a
+  for:
+  - ar
+- item: die-fachsprachpruefung-a
+  from: B2-04-a
+  for:
+  - ar
+- item: das-dauert-a
+  from: B2-04-a
+  for:
+  - ar
+- item: nachts-a
+  from: B2-04-a
+  for:
+  - ar
+- item: die-anerkennung-m-m
+  from: B2-04-m
+  for:
+  - mk
+- item: wurde-anerkannt-m
+  from: B2-04-m
+  for:
+  - mk
+- item: wurde-uebersetzt-m
+  from: B2-04-m
+  for:
+  - mk
+- item: das-diplom-m
+  from: B2-04-m
+  for:
+  - mk
+- item: ueberqualifiziert-m
+  from: B2-04-m
+  for:
+  - mk
+- item: im-lager-m
+  from: B2-04-m
+  for:
+  - mk
+- item: die-erste-stelle-m
+  from: B2-04-m
+  for:
+  - mk
+- item: stolz-auf-dich-m
+  from: B2-04-m
+  for:
+  - mk
+- item: die-geduld-m
+  from: B2-04-m
+  for:
+  - mk
+- item: zwei-jahre-lang-m
+  from: B2-04-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: The youth team has lost its hall time. The city didn't answer. Lena helps you write to the Lord Mayor directly. Listen to the conversation; you don't need to understand it yet.
+    ar: فريق الناشئين خسر وقته في القاعة. المدينة لم تردّ. لينا تساعدكِ على الكتابة إلى رئيس البلدية مباشرة. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.
+    mk: Младинската екипа го изгуби терминот во салата. Градот не одговори. Лена ви помага да му пишете директно на градоначалникот. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: lena
+    text: 'Bürgermeister schreibt man: „Sehr geehrter Herr Oberbürgermeister“. Nicht „Hallo“!'
+    meaning:
+      en: 'To a mayor you write: ''Dear Lord Mayor''. Not ''Hello''!'
+      ar: 'إلى رئيس البلدية تكتبين: «حضرة رئيس البلدية المحترم». لا «مرحبًا»!'
+      mk: 'До градоначалник се пишува: „Почитуван господине градоначалник“. Не „Здраво“!'
+  - speaker: protagonist
+    text: „Mit Bedauern habe ich zur Kenntnis genommen, dass die Hallenzeit ersatzlos gestrichen wurde.“
+    meaning:
+      en: '''I note with regret that the hall slot has been cancelled without replacement.'''
+      ar: «علمتُ بأسف أنّ وقت القاعة أُلغي دون بديل.»
+      mk: „Со жалење дознав дека терминот во салата е укинат без замена.“
+  - speaker: lena
+    text: Gut. Jetzt das Anliegen — höflich, aber klar.
+    meaning:
+      en: Good. Now the request — polite but clear.
+      ar: جيد. الآن الطلب — بأدب لكن بوضوح.
+      mk: Добро. Сега барањето — учтиво, но јасно.
+  - speaker: protagonist
+    text: „Ich wende mich an Sie mit der Bitte, eine neue Hallenzeit für vierzig Kinder zu finden.“
+    meaning:
+      en: '''I am writing to ask you to find a new hall slot for forty children.'''
+      ar: «أتوجّه إليكم راجيةً إيجاد وقت جديد في القاعة لأربعين طفلًا.»
+      mk: „Ви се обраќам со молба да се најде нов термин во салата за четириесет деца.“
+  - speaker: lena
+    text: 'Nenn die Betroffenen: Kinder aus zwölf Nationen. Das zählt.'
+    meaning:
+      en: 'Name those affected: children from twelve nations. That counts.'
+      ar: 'اذكري المتضرّرين: أطفال من اثنتي عشرة جنسية. هذا مهم.'
+      mk: 'Наведи ги засегнатите: деца од дванаесет нации. Тоа е важно.'
+  - speaker: protagonist
+    text: „Für eine baldige Antwort wäre ich Ihnen dankbar. Hochachtungsvoll …“ Zu viel?
+    meaning:
+      en: '''I would be grateful for a prompt reply. Yours faithfully…'' Too much?'
+      ar: «سأكون ممتنة لردّ قريب. وتفضّلوا بقبول فائق الاحترام…» مبالغ فيه؟
+      mk: „Би ви била благодарна за брз одговор. Со длабока почит…“ Премногу?
+  - speaker: lena
+    text: „Mit freundlichen Grüßen“ reicht heute. Und das Sportamt in Kopie!
+    meaning:
+      en: '''Kind regards'' is enough today. And copy in the sports office!'
+      ar: «مع أطيب التحيات» تكفي اليوم. وأرسلي نسخة إلى مكتب الرياضة!
+      mk: „Со почит“ денес е доволно. И спортската служба во копија!
+  - speaker: protagonist
+    text: 'Abgeschickt. Jetzt heißt es: warten — und Daumen drücken.'
+    meaning:
+      en: 'Sent. Now it''s: wait — and keep fingers crossed.'
+      ar: 'أُرسلت. الآن: الانتظار — والدعاء بالتوفيق.'
+      mk: 'Испратено. Сега: чекање — и стискање палци.'
+- type: prompt
+  ask:
+    en: Address the mayor.
+    ar: خاطبي رئيس البلدية.
+    mk: Обратете му се на градоначалникот.
+  answer:
+    speaker: protagonist
+    text: Sehr geehrter Herr Oberbürgermeister,
+  items:
+  - sehr-geehrter-herr-ob
+- type: narrator
+  text:
+    en: 'Very formal written register: «Mit Bedauern habe ich zur Kenntnis genommen, dass…», «Ich wende mich an Sie mit der Bitte, … zu …», «Für eine baldige Antwort wäre ich Ihnen dankbar». «Hochachtungsvoll»
+      is old-fashioned; «Mit freundlichen Grüßen» is standard even to a mayor.'
+    ar: 'الأسلوب المكتوب الرسمي جدًا: «Mit Bedauern habe ich zur Kenntnis genommen, dass…»، «Ich wende mich an Sie mit der Bitte, … zu …»، «Für eine baldige Antwort wäre ich Ihnen dankbar». و«Hochachtungsvoll»
+      قديمة الطراز؛ و«Mit freundlichen Grüßen» هي المعتادة حتى مع رئيس البلدية.'
+    mk: 'Многу формален писмен регистар: «Mit Bedauern habe ich zur Kenntnis genommen, dass…», «Ich wende mich an Sie mit der Bitte, … zu …», «Für eine baldige Antwort wäre ich Ihnen dankbar». «Hochachtungsvoll»
+      е старомодно; «Mit freundlichen Grüßen» е стандардно дури и до градоначалник.'
+- type: prompt
+  ask:
+    en: 'Write: I note with regret that…'
+    ar: 'اكتبي: علمتُ بأسف أنّ…'
+    mk: 'Напишете: со жалење дознав дека…'
+  answer:
+    speaker: protagonist
+    text: Mit Bedauern habe ich zur Kenntnis genommen, dass…
+  items:
+  - mit-bedauern
+- type: prompt
+  ask:
+    en: 'Write: the hall slot was cancelled without replacement.'
+    ar: 'اكتبي: وقت القاعة أُلغي دون بديل.'
+    mk: 'Напишете: терминот е укинат без замена.'
+  answer:
+    speaker: protagonist
+    text: Die Hallenzeit wurde ersatzlos gestrichen.
+  items:
+  - die-hallenzeit
+  - ersatzlos-gestrichen
+- type: prompt
+  ask:
+    en: 'Write: I am writing to you to ask…'
+    ar: 'اكتبي: أتوجّه إليكم راجيةً…'
+    mk: 'Напишете: ви се обраќам со молба…'
+  answer:
+    speaker: protagonist
+    text: Ich wende mich an Sie mit der Bitte, …
+  items:
+  - ich-wende-mich-an-sie
+- type: prompt
+  ask:
+    en: 'Say: the request.'
+    ar: 'قولي: الطلب.'
+    mk: 'Кажете: барањето.'
+  answer:
+    speaker: protagonist
+    text: Das Anliegen.
+  items:
+  - das-anliegen
+- type: prompt
+  ask:
+    en: 'Say: name those affected.'
+    ar: 'قولي: اذكري المتضرّرين.'
+    mk: 'Кажете: наведи ги засегнатите.'
+  answer:
+    speaker: protagonist
+    text: Die Betroffenen nennen.
+  items:
+  - die-betroffenen
+- type: prompt
+  ask:
+    en: 'Write: I''d be grateful for a prompt reply.'
+    ar: 'اكتبي: سأكون ممتنة لردّ قريب.'
+    mk: 'Напишете: би ви била благодарна за брз одговор.'
+  answer:
+    speaker: protagonist
+    text: Für eine baldige Antwort wäre ich Ihnen dankbar.
+  items:
+  - ihnen-dankbar
+- type: prompt
+  ask:
+    en: 'Say: an old-fashioned very formal closing.'
+    ar: 'قولي: ختامًا رسميًا جدًا قديم الطراز.'
+    mk: 'Кажете: старомоден многу формален завршеток.'
+  answer:
+    speaker: protagonist
+    text: Hochachtungsvoll.
+  items:
+  - mit-freundlichen-gruessen-c2
+- type: prompt
+  ask:
+    en: 'Say: copy in the sports office.'
+    ar: 'قولي: نسخة إلى مكتب الرياضة.'
+    mk: 'Кажете: спортската служба во копија.'
+  answer:
+    speaker: protagonist
+    text: Das Sportamt in Kopie.
+  items:
+  - in-kopie
+- type: narrator
+  text:
+    en: Any resident may write to the Oberbürgermeister; letters are answered, usually by the responsible office. Name the facts, those affected and one concrete request, and copy in the office concerned.
+      Local newspapers and the city council's question time are the next steps.
+    ar: يحق لأي مقيم الكتابة إلى رئيس البلدية؛ والرسائل يُردّ عليها، عادةً من المكتب المختص. اذكري الوقائع والمتضرّرين وطلبًا محدّدًا واحدًا، وأرسلي نسخة إلى المكتب المعني. والصحف المحلية ووقت أسئلة المواطنين
+      في مجلس المدينة هي الخطوات التالية.
+    mk: Секој жител може да му пишува на градоначалникот; на писмата се одговара, обично од надлежната служба. Наведете ги фактите, засегнатите и едно конкретно барање и ставете ја надлежната служба во
+      копија. Локалните весници и часот за прашања на граѓаните во советот се следните чекори.
+- type: prompt
+  ask:
+    en: 'Once more: say “Dear Lord Mayor”.'
+    ar: 'مرة أخرى: قولي “حضرة رئيس البلدية المحترم”.'
+    mk: 'Уште еднаш: кажете „Почитуван господине градоначалник“.'
+  answer:
+    speaker: protagonist
+    text: Sehr geehrter Herr Oberbürgermeister
+  items:
+  - sehr-geehrter-herr-ob
+- type: prompt
+  ask:
+    en: 'Once more: say “I am writing to you to ask …”.'
+    ar: 'مرة أخرى: قولي “أتوجّه إليكم راجيةً …”.'
+    mk: 'Уште еднаш: кажете „Ви се обраќам со молба …“.'
+  answer:
+    speaker: protagonist
+    text: Ich wende mich an Sie mit der Bitte, …
+  items:
+  - ich-wende-mich-an-sie
+- type: prompt
+  ask:
+    en: 'Once more: say “I note with regret that …”.'
+    ar: 'مرة أخرى: قولي “علمتُ بأسف أنّ …”.'
+    mk: 'Уште еднаш: кажете „Со жалење дознав дека …“.'
+  answer:
+    speaker: protagonist
+    text: Mit Bedauern habe ich zur Kenntnis genommen, dass …
+  items:
+  - mit-bedauern
+- type: prompt
+  ask:
+    en: 'Once more: say “the hall slot”.'
+    ar: 'مرة أخرى: قولي “وقت القاعة”.'
+    mk: 'Уште еднаш: кажете „терминот во салата“.'
+  answer:
+    speaker: protagonist
+    text: die Hallenzeit
+  items:
+  - die-hallenzeit
+- type: prompt
+  ask:
+    en: 'Once more: say “cancelled without replacement”.'
+    ar: 'مرة أخرى: قولي “أُلغي دون بديل”.'
+    mk: 'Уште еднаш: кажете „укинат без замена“.'
+  answer:
+    speaker: protagonist
+    text: ersatzlos gestrichen
+  items:
+  - ersatzlos-gestrichen
+- type: prompt
+  ask:
+    en: 'Once more: say “I would be grateful for a prompt reply”.'
+    ar: 'مرة أخرى: قولي “سأكون ممتنة لردّ قريب”.'
+    mk: 'Уште еднаш: кажете „Би ви била благодарна за брз одговор“.'
+  answer:
+    speaker: protagonist
+    text: Für eine baldige Antwort wäre ich Ihnen dankbar
+  items:
+  - ihnen-dankbar
+- type: prompt
+  ask:
+    en: 'Once more: say “copied to (cc)”.'
+    ar: 'مرة أخرى: قولي “نسخة إلى”.'
+    mk: 'Уште еднаш: кажете „во копија“.'
+  answer:
+    speaker: protagonist
+    text: in Kopie
+  items:
+  - in-kopie
+- type: prompt
+  ask:
+    en: 'Once more: say “the concern, request”.'
+    ar: 'مرة أخرى: قولي “الطلب، الشأن”.'
+    mk: 'Уште еднаш: кажете „барањето, грижата“.'
+  answer:
+    speaker: protagonist
+    text: das Anliegen
+  items:
+  - das-anliegen
+- type: prompt
+  ask:
+    en: 'Once more: say “Yours faithfully (very formal)”.'
+    ar: 'مرة أخرى: قولي “وتفضّلوا بقبول فائق الاحترام”.'
+    mk: 'Уште еднаш: кажете „Со длабока почит“.'
+  answer:
+    speaker: protagonist
+    text: Hochachtungsvoll
+  items:
+  - mit-freundlichen-gruessen-c2
+- type: prompt
+  ask:
+    en: 'Once more: say “those affected”.'
+    ar: 'مرة أخرى: قولي “المتضرّرون”.'
+    mk: 'Уште еднаш: кажете „засегнатите“.'
+  answer:
+    speaker: protagonist
+    text: die Betroffenen
+  items:
+  - die-betroffenen
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “political cabaret — and “satire — and “the cabaret artist (f) — and “ambiguous, double meaning — and “make fun of, pull someone''s leg — and “a dig, a jibe — and “black humour — and “The
+      train is cancelled — and “the allusion — and “Whoever says A needn''t say B — and “the salary negotiation — and “the counter-offer — and “the market value — and “I had in mind … — and “Would it be
+      conceivable that …? — and “I would suggest … — and “the pay rise — and “the budget is limited — and “extra holiday days — and “the agreement — and “looking back”.'
+    ar: 'قولي: “الكباريه السياسي — و“الهجاء الساخر — و“فنانة الكباريه — و“ذو معنيين — و“يسخر من — و“غمزة لاذعة — و“الفكاهة السوداء — و“القطار أُلغي — و“التلميح — و“من قال ألف لا يلزمه أن يقول باء — و“التفاوض
+      على الراتب — و“العرض المضاد — و“القيمة السوقية — و“كنتُ أتصوّر … — و“هل من الممكن أن …؟ — و“أقترح … — و“زيادة الراتب — و“الميزانية محدودة — و“أيام إجازة إضافية — و“الاتفاق — و“بالنظر إلى الماضي”.'
+    mk: 'Кажете: „кабарето“ — и „сатирата“ — и „кабаретската уметница“ — и „двосмислено“ — и „зафркава“ — и „боцкањето“ — и „црниот хумор“ — и „Возот е откажан“ — и „алузијата“ — и „Кој кажал А, не мора
+      да каже Б“ — и „преговорите за плата“ — и „контрапонудата“ — и „пазарната вредност“ — и „Замислував …“ — и „Дали би било замисливо …?“ — и „Би предложил …“ — и „покачувањето на платата“ — и „буџетот
+      е ограничен“ — и „дополнителни денови одмор“ — и „договорот“ — и „гледајќи наназад“.'
+  answer:
+    speaker: protagonist
+    text: das Kabarett … die Satire … die Kabarettistin … doppeldeutig … auf die Schippe nehmen … der Seitenhieb … schwarzer Humor … Der Zug fällt aus … die Anspielung … Wer A sagt, muss nicht B sagen …
+      die Gehaltsverhandlung … das Gegenangebot … der Marktwert … Ich hätte mir … vorgestellt … Wäre es denkbar, dass …? … Ich würde vorschlagen, … … die Gehaltserhöhung … das Budget ist begrenzt … zusätzliche
+      Urlaubstage … die Vereinbarung … rückblickend
+  items:
+  - das-kabarett
+  - die-satire
+  - der-kabarettist
+  - doppeldeutig
+  - auf-die-schippe-nehmen
+  - der-seitenhieb
+  - schwarzer-humor
+  - der-zug-faellt-aus
+  - die-anspielung
+  - wer-a-sagt
+  - die-gehaltsverhandlung
+  - das-gegenangebot
+  - der-marktwert
+  - ich-haette-mir-vorgestellt
+  - waere-es-denkbar
+  - ich-wuerde-vorschlagen
+  - die-gehaltserhoehung
+  - das-budget-c2
+  - der-zusatzurlaub
+  - die-vereinbarung
+  - rueckblickend
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the change — and “grateful — and “familiar — and “foreign parts, being abroad — and “adopted home — and “to the next five years — and “criticism — and “the level, stage — and “Do you remember
+      …? — and “the will — and “the inheritance — and “inherit — and “the heir — and “the compulsory share — and “statutory succession — and “handwritten — and “the estate — and “he said there was … — and
+      “bequeath — and “the accident — and “the accident report”.'
+    ar: 'قولي: “التغيير — و“ممتنّ — و“مألوف — و“الغربة — و“الوطن المختار — و“نخب السنوات الخمس القادمة — و“النقد — و“المستوى، المرحلة — و“أتذكر …؟ — و“الوصية — و“الإرث — و“يرث — و“الوريث — و“الحصة الإلزامية
+      — و“الإرث القانوني — و“بخط اليد — و“التركة — و“قال إنه يوجد … — و“يوصي بـ — و“الحادث — و“تقرير الحادث”.'
+    mk: 'Кажете: „промената“ — и „благодарен“ — и „блиско, познато“ — и „туѓината“ — и „избраната татковина“ — и „за следните пет години“ — и „критиката“ — и „нивото, степенот“ — и „Се сеќаваш ли …?“ —
+      и „тестаментот“ — и „наследството“ — и „наследува“ — и „наследникот“ — и „задолжителниот дел“ — и „законскиот наследен ред“ — и „рачно напишан“ — и „оставината“ — и „рече дека има …“ — и „остава во
+      аманет“ — и „несреќата“ — и „записникот за несреќата“.'
+  answer:
+    speaker: protagonist
+    text: die Veränderung … dankbar … vertraut … die Fremde … die Wahlheimat … auf die nächsten fünf Jahre … die Kritik … die Stufe … Weißt du noch …? … das Testament … die Erbschaft … erben … der Erbe
+      / die Erbin … der Pflichtteil … die gesetzliche Erbfolge … handschriftlich … der Nachlass … er sagte, es gebe … … vermachen … der Unfall … der Unfallbericht
+  items:
+  - die-veraenderung
+  - dankbar
+  - vertraut
+  - die-fremde
+  - die-wahlheimat
+  - auf-die-naechsten
+  - die-kritik
+  - die-stufe
+  - weisst-du-noch
+  - das-testament
+  - die-erbschaft
+  - erben
+  - der-erbe
+  - der-pflichtteil
+  - die-gesetzliche-erbfolge
+  - handschriftlich
+  - der-nachlass
+  - er-sagte-es-gebe
+  - vererben-c1
+  - der-unfall
+  - der-unfallbericht
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the witness — and “the statement — and “the crossing, junction — and “turn (off) — and “he claims I was … — and “(reported) he saw … — and “right of way — and “the bruise — and “the case
+      number — and “the club — and “training — and “member — and “a trial session — and “join in — and “fast — and “tiring, hard — and “the changing room — and “the sports hall — and “the next training”.'
+    ar: 'قولي: “الشاهد — و“الإفادة — و“التقاطع — و“ينعطف — و“يدّعي أنني … — و“(منقولًا) إنه رأى … — و“أولوية المرور — و“الكدمة — و“رقم الملف — و“النادي — و“التمرين — و“عضو — و“تمرين تجريبي — و“يشارك — و“سريع
+      — و“متعب — و“غرفة تغيير الملابس — و“الصالة الرياضية — و“التمرين القادم”.'
+    mk: 'Кажете: „сведокот“ — и „изјавата“ — и „раскрсницата“ — и „свртува“ — и „тврди дека сум …“ — и „(пренесено) дека видел …“ — и „првенството“ — и „модринката“ — и „бројот на предметот“ — и „клубот“
+      — и „тренингот“ — и „член“ — и „пробен тренинг“ — и „учествува“ — и „брзо“ — и „напорно“ — и „соблекувалната“ — и „спортската сала“ — и „следниот тренинг“.'
+  answer:
+    speaker: protagonist
+    text: der Zeuge … die Aussage … die Kreuzung … abbiegen … er behauptet, ich sei … … er habe … gesehen … die Vorfahrt … die Prellung … das Aktenzeichen … der Verein … das Training … Mitglied … ein Probetraining
+      … mitmachen … schnell … anstrengend … die Umkleide … die Sporthalle … das nächste Training
+  items:
+  - der-zeuge
+  - die-aussage
+  - die-kreuzung
+  - abbiegen
+  - er-behauptet-ich-sei
+  - er-habe-gesehen
+  - die-vorfahrt
+  - die-prellung
+  - das-aktenzeichen
+  - der-verein
+  - das-training
+  - mitglied
+  - probetraining
+  - mitmachen
+  - schnell
+  - anstrengend
+  - die-umkleide
+  - die-sporthalle
+  - das-naechste-training
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the club — and “until then — and “the recognition procedure — and “the licence to practise”.'
+  answer:
+    speaker: protagonist
+    text: der Club … bis dahin … das Anerkennungsverfahren … die Berufserlaubnis
+  items:
+  - der-club-e
+  - bis-dahin-e
+  - das-anerkennungsverfahren-e
+  - die-berufserlaubnis-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “overqualified — and “was recognised — and “were required — and “the qualified nurse”.'
+  answer:
+    speaker: protagonist
+    text: überqualifiziert … wurde anerkannt … wurden verlangt … die Pflegefachkraft
+  items:
+  - ueberqualifiziert-e
+  - wurde-anerkannt-e
+  - wurden-verlangt-e
+  - die-pflegekraft-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the knowledge exam — and “the documents — and “certified”.'
+  answer:
+    speaker: protagonist
+    text: die Kenntnisprüfung … die Unterlagen … beglaubigt
+  items:
+  - die-kenntnispruefung-e
+  - die-unterlagen-e
+  - beglaubigt-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “غرفة المعاطف — و“ترخيص مزاولة الطب — و“تقييم الشهادة — و“اعتُرف به”.'
+  answer:
+    speaker: protagonist
+    text: die Garderobe … die Approbation … die Zeugnisbewertung … wurde anerkannt
+  items:
+  - die-garderobe-a
+  - die-approbation-a
+  - die-zeugnisbewertung-a
+  - wurde-anerkannt-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “فُحص، دُقّق — و“مؤهَّل أكثر من اللازم — و“امتحان المعرفة — و“امتحان اللغة المهنية”.'
+  answer:
+    speaker: protagonist
+    text: wurde geprüft … überqualifiziert … die Kenntnisprüfung … die Fachsprachprüfung
+  items:
+  - wurde-gepruft-a
+  - ueberqualifiziert-a
+  - die-kenntnispruefung-a
+  - die-fachsprachpruefung-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “هذا يستغرق وقتًا — و“ليلًا”.'
+  answer:
+    speaker: protagonist
+    text: das dauert … nachts
+  items:
+  - das-dauert-a
+  - nachts-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „признавањето“ — и „беше признаена“ — и „беше преведена“ — и „дипломата“.'
+  answer:
+    speaker: protagonist
+    text: die Anerkennung … wurde anerkannt … wurde übersetzt … das Diplom
+  items:
+  - die-anerkennung-m-m
+  - wurde-anerkannt-m
+  - wurde-uebersetzt-m
+  - das-diplom-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „преквалификуван“ — и „во магацин“ — и „првата работа“ — и „горд на тебе“.'
+  answer:
+    speaker: protagonist
+    text: überqualifiziert … im Lager … die erste Stelle … stolz auf dich
+  items:
+  - ueberqualifiziert-m
+  - im-lager-m
+  - die-erste-stelle-m
+  - stolz-auf-dich-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „трпението“ — и „две години“.'
+  answer:
+    speaker: protagonist
+    text: die Geduld … zwei Jahre lang
+  items:
+  - die-geduld-m
+  - zwei-jahre-lang-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

@@ -1,0 +1,41 @@
+id: C2-10
+protagonist: m
+title: ["In court", "في المحكمة", "На суд"]
+situation:
+  - "Your old landlord kept the deposit. You sued at the local court. The judge proposes a settlement."
+  - "مؤجّرك القديم احتفظ بالتأمين. رفعتَ دعوى في المحكمة المحلية. القاضية تقترح تسوية."
+  - "Поранешниот станодавец го задржа депозитот. Поднесовте тужба на основниот суд. Судијката предлага порамнување."
+learn: [c2-legal-register]
+culture: Settlements
+items:
+  - [die-klage, "die Klage", "the lawsuit", "الدعوى", "тужбата"]
+  - [der-klaeger, "der Kläger", "the plaintiff", "المدّعي", "тужителот", {rare: true}]
+  - [der-beklagte, "der Beklagte", "the defendant", "المدّعى عليه", "тужениот", {rare: true}]
+  - [der-vergleich, "der Vergleich", "the settlement", "التسوية", "порамнувањето"]
+  - [das-amtsgericht, "das Amtsgericht", "the local court", "المحكمة المحلية", "основниот суд"]
+  - [die-verhandlung, "die mündliche Verhandlung", "the oral hearing", "الجلسة الشفهية", "усната расправа"]
+  - [der-sachverhalt, "der Sachverhalt", "the facts of the case", "وقائع القضية", "фактичката состојба", {rare: true}]
+  - [die-rueckzahlung, "die Rückzahlung der Kaution", "repayment of the deposit", "ردّ التأمين", "враќањето на депозитот"]
+  - [die-kosten-tragen, "die Kosten tragen", "bear the costs", "يتحمّل التكاليف", "ги сноси трошоците"]
+  - [hohes-gericht, "Frau Vorsitzende", "Madam Chair (to the judge)", "سيدتي الرئيسة (للقاضية)", "Госпоѓо претседателке (до судијката)"]
+dialogue:
+  - [richterin, "Ich eröffne die mündliche Verhandlung. Kläger ist der frühere Mieter, Beklagter der Vermieter.", "I open the oral hearing. The plaintiff is the former tenant, the defendant the landlord.", "أفتتح الجلسة الشفهية. المدّعي هو المستأجر السابق، والمدّعى عليه المؤجِّر.", "Ја отворам усната расправа. Тужител е поранешниот станар, тужен е станодавецот."]
+  - [richterin, "Zum Sachverhalt: Der Kläger verlangt die Rückzahlung der Kaution.", "On the facts: the plaintiff demands repayment of the deposit.", "عن وقائع القضية: المدّعي يطالب بردّ التأمين.", "За фактичката состојба: тужителот бара враќање на депозитот."]
+  - [verwaltung, "Die Wohnung war in schlechtem Zustand. Wir mussten renovieren.", "The flat was in poor condition. We had to renovate.", "كانت الشقة في حالة سيئة. اضطررنا إلى الترميم.", "Станот беше во лоша состојба. Моравме да реновираме."]
+  - [protagonist, "Frau Vorsitzende, hier ist das Übergabeprotokoll: keine Schäden, nur normale Abnutzung.", "Madam Chair, here's the handover report: no damage, only normal wear and tear.", "سيدتي الرئيسة، هذا محضر التسليم: لا أضرار، فقط استهلاك عادي.", "Госпоѓо претседателке, еве го записникот за предавање: без штети, само нормално абење."]
+  - [richterin, "Das Protokoll spricht für den Kläger. Ich schlage einen Vergleich vor: achtzig Prozent zurück.", "The report favours the plaintiff. I propose a settlement: eighty per cent back.", "المحضر في صالح المدّعي. أقترح تسوية: ثمانون بالمئة تُردّ.", "Записникот е во корист на тужителот. Предлагам порамнување: осумдесет проценти назад."]
+  - [protagonist, "Und wer trägt die Kosten?", "And who bears the costs?", "ومن يتحمّل التكاليف؟", "А кој ги сноси трошоците?"]
+  - [richterin, "Bei einem Vergleich teilen Sie sie. Ohne Vergleich entscheide ich — mit offenem Ausgang.", "In a settlement you share them. Without a settlement I decide — with an open outcome.", "في التسوية تتقاسمونها. وبلا تسوية أقرّر أنا — والنتيجة مفتوحة.", "Со порамнување ги делите. Без порамнување одлучувам јас — со неизвесен исход."]
+  - [protagonist, "Dann nehme ich den Vergleich an.", "Then I accept the settlement.", "إذن أقبل التسوية.", "Тогаш го прифаќам порамнувањето."]
+teach:
+  - ask: ["Say: the local court.", "قل: المحكمة المحلية.", "Кажете: основниот суд.", "Das Amtsgericht.", das-amtsgericht]
+  - ask: ["Say: the oral hearing.", "قل: الجلسة الشفهية.", "Кажете: усната расправа.", "Die mündliche Verhandlung.", die-verhandlung]
+  - note: ["Legal register names roles, not people: «der Kläger» (plaintiff), «der Beklagte» (defendant), «der Sachverhalt» (the facts), and speaks of «die Rückzahlung der Kaution» rather than 'giving the money back'. Address the judge as «Frau Vorsitzende» / «Herr Vorsitzender».", "الأسلوب القانوني يسمّي الأدوار لا الأشخاص: «der Kläger» (المدّعي)، «der Beklagte» (المدّعى عليه)، «der Sachverhalt» (الوقائع)، ويقول «die Rückzahlung der Kaution» بدلًا من «إرجاع المال». وتُخاطَب القاضية بـ«Frau Vorsitzende» / والقاضي بـ«Herr Vorsitzender».", "Правниот регистар ги именува улогите, не луѓето: «der Kläger» (тужител), «der Beklagte» (тужен), «der Sachverhalt» (фактите), и вели «die Rückzahlung der Kaution» наместо „враќање на парите“. На судијата се обраќа со «Frau Vorsitzende» / «Herr Vorsitzender»."]
+  - ask: ["Say: the plaintiff and the defendant.", "قل: المدّعي والمدّعى عليه.", "Кажете: тужителот и тужениот.", "Der Kläger und der Beklagte.", der-klaeger, der-beklagte]
+  - ask: ["Say: the facts of the case.", "قل: وقائع القضية.", "Кажете: фактичката состојба.", "Der Sachverhalt.", der-sachverhalt]
+  - ask: ["Say: repayment of the deposit.", "قل: ردّ التأمين.", "Кажете: враќање на депозитот.", "Die Rückzahlung der Kaution.", die-rueckzahlung]
+  - ask: ["Address the judge.", "خاطب القاضية.", "Обратете ѝ се на судијката.", "Frau Vorsitzende, …", hohes-gericht]
+  - ask: ["Say: a settlement.", "قل: تسوية.", "Кажете: порамнување.", "Ein Vergleich.", der-vergleich]
+  - ask: ["Ask: who bears the costs?", "اسأل: من يتحمّل التكاليف؟", "Прашајте: кој ги сноси трошоците?", "Wer trägt die Kosten?", die-kosten-tragen]
+  - ask: ["Say: the lawsuit.", "قل: الدعوى.", "Кажете: тужбата.", "Die Klage.", die-klage]
+  - note: ["Small claims go to the Amtsgericht; below a certain amount you don't need a lawyer. Judges almost always propose a settlement (Vergleich) first — it's quick and cheaper. Legal-expenses insurance or the tenants' association often covers costs; people on low incomes can get legal aid (Prozesskostenhilfe).", "الدعاوى الصغيرة تذهب إلى المحكمة المحلية (Amtsgericht)؛ وتحت مبلغ معيّن لا تحتاج محاميًا. والقضاة يقترحون أولًا تسوية (Vergleich) دائمًا تقريبًا — فهي سريعة وأرخص. وتأمين الحماية القانونية أو جمعية المستأجرين يغطّي غالبًا التكاليف؛ وذوو الدخل المنخفض يمكنهم الحصول على المساعدة القضائية (Prozesskostenhilfe).", "Малите спорови одат на Amtsgericht; под одреден износ не ви треба адвокат. Судиите речиси секогаш прво предлагаат порамнување (Vergleich) — брзо е и поевтино. Осигурувањето за правна заштита или здружението на станари често ги покрива трошоците; луѓето со ниски примања можат да добијат правна помош (Prozesskostenhilfe)."]
