@@ -3,7 +3,7 @@
 Story bible: `tools/conversation/ko/story-bible.yml` (Seoul, 마포구; landlady 박순자 할머니, neighbour 민준, team lead
 이지은 팀장님, the convenience-store 사장님). Same shape as the Macedonian and German plans: 30 units per level, L L T
 rhythm up to B2, C1–C2 daily life with grammar; 10–20 new items per unit; a **Reviewed** column; no yearly amounts.
-A1 in full below; A2–C2 as outlines until you confirm the shape on mk and de.
+A1 in full; **A2–C2 added 2026-10-22 (draft for your review)** in the same shape as the finished Macedonian course.
 
 **English version (Allan, 2026-10-21):** the same units with a neutral English narrator (for international offices): the
 Brazilian comparisons are narrator steps marked `for: [pt]`, so the English version simply leaves them out and keeps
@@ -48,16 +48,182 @@ hangul → sound converter for our browser engine.
 | 29 | L | Sinto muito | a mistake at work | 죄송합니다, 괜찮아요 | 합쇼체 set phrases | 28 all; 27 온돌; 25 깎아 | apology register |
 | 30 | T | Esporte | a hike with 민준's father; review | 등산, 산, 힘들어요 (review mostly) | all A1 | 29 all; everything of A1 | hiking culture |
 
-## A2–C2 outline (rows after you confirm the shape)
+## A2 — settling in (past, future, -고 있어요, -(으)ㄹ 수 있어요, -지만/-(으)면/-아서, honorific -(으)시-, irregulars)
 
-- **A2 — settling in:** alien registration (외국인등록증), bank, hospital, 회식 and soju etiquette, a first date and
-  couples culture (커플, 100-day anniversaries), a club in Hongdae, 추석 at 민준's parents', tipping (none),
-  topic units: water, electricity, money and percent, geography (mountains everywhere), music beyond K-pop, sayings.
-- **B1 — friends:** 찜질방, a relationship, meeting the parents early, opinions, 반말 misunderstandings, a wedding
-  (envelopes), topic units: the cell, energy, statistics, happiness, freedom, art, literature, irony.
-- **B2 — work:** honorifics at meetings, e-mails, an interview, overtime, topics: genes, chemistry, the universe,
-  probability, truth and media, politics with care, religion, **the job market and why young Koreans leave or
-  don't marry** (social problems), the future.
-- **C1 — life in depth:** contracts and 전세, a car, a funeral, a referral, protests, mental health, raising a child,
-  the evening course and a hiking club.
-- **C2 — mastery:** speeches, irony, dialect (Busan), negotiation, a lecture, staying or leaving.
+| # | Kind | Title (pt) | Situation | New (examples) | Grammar | Reviewed | Clash / culture |
+|---|---|---|---|---|---|---|---|
+| 01 | L | O que você fez no sábado? | 민준 asks about the weekend | 했어요, 갔어요, 주말, 어제 | past -았/었어요 | A1-30 all; A1-29; A1-27 | — |
+| 02 | L | O cartão de estrangeiro | 출입국사무소: the 외국인등록증, a numbered ticket | 외국인등록증, 신청서, 번호표, 기다려요 | -(으)러 가요 | 01 all; A1-30; A1-28 | booking online, numbered tickets |
+| 03 | T | A água | tap water, filters, the Han river | 수돗물, 정수기, 끓여요, 깨끗해요 | -지만 | 02 all; 01 했어요; A1-29 | most homes filter or buy water |
+| 04 | L | O banco | an account; the foreigner ID, phone verification | 통장, 계좌, 체크카드, 본인인증 | -(으)ㄹ 수 있어요/없어요 | 03 all; 02 외국인등록증; A1-30 | phone-number verification for everything |
+| 05 | L | No médico | a cold at the 내과, then the pharmacy | 감기, 열, 약국, 처방전 | -지 마세요 | 04 all; 03 수돗물; 01 했어요 | clinics on every block, short waits |
+| 06 | T | Eletricidade | 220 V, the summer air-conditioning bill | 전기, 에어컨, 켜요, 꺼요 | -고 있어요 | 05 all; 04 통장; 02 외국인등록증 | progressive electricity pricing (the idea, no amounts) |
+| 07 | L | O 회식 | team dinner and soju | 회식, 소주, 건배, 따라 드릴게요 | -(으)ㄹ게요 | 06 all; 05 감기; 03 수돗물 | pour for elders, turn your head to drink |
+| 08 | L | Chuseok | at 민준's parents' house | 추석, 송편, 차례, 고향 | honorific -(으)시- | 07 all; 06 전기; 04 통장 | the holiday exodus |
+| 09 | T | Dinheiro e porcentagem | sales, 1+1, tax refund | 할인, 퍼센트, 반값, 만 원 | big numbers: 만 | 08 all; 07 회식; 05 감기 | counting in tens of thousands |
+| 10 | L | Um encontro arranjado | a 소개팅 set up by a colleague | 소개팅, 연락처, 마음에 들어요, 커피 | -아/어서 (sequence) | 09 all; 08 추석; 06 전기 | blind dates via friends |
+| 11 | L | Casais | 100-day anniversary, matching outfits | 커플, 100일, 선물, 사귀어요 | -기 전에 | 10 all; 09 할인; 07 회식 | couple culture |
+| 12 | T | Geografia | mountains everywhere, islands, the peninsula | 산, 바다, 섬, 반도 | 보다, 제일 | 11 all; 10 소개팅; 08 추석 | about 70 % mountains |
+| 13 | L | Hongdae à noite | a club, the ID check, the last subway | 클럽, 신분증, 춤춰요, 첫차 | -(으)면 | 12 all; 11 커플; 09 할인 | nights out till the first train |
+| 14 | L | Brasil = futebol e perigo? | colleagues' questions about Brazil | 브라질, 축구, 위험해요?, 오해 | -(으)니까 | 13 all; 12 산; 10 소개팅 | stereotypes both ways — and theirs about Brazil |
+| 15 | T | Música | trot and ballads with 할머니 | 트로트, 발라드, 가사, 노래방 | -네요 | 14 all; 13 클럽; 11 커플 | trot is not only for the old |
+| 16 | L | Gorjeta? Não | paying at a restaurant, splitting | 계산, 더치페이, 팁, 제가 낼게요 | -아/어야 해요 | 15 all; 14 브라질; 12 산 | no tipping; fighting to pay |
+| 17 | L | O celular quebrou | the repair shop | 고장 났어요, 수리, 며칠, 액정 | -아/어 주세요 | 16 all; 15 트로트; 13 클럽 | — |
+| 18 | T | Provérbios | 할머니's sayings | 속담, 시작이 반이다, 빨리빨리 | -다고 해요 (fixed) | 17 all; 16 계산; 14 브라질 | — |
+| 19 | L | Mudança | a moving company does everything | 이사, 짐, 상자, 이삿짐센터 | -(으)ㄴ 후에 | 18 all; 17 고장 났어요; 15 트로트 | full-service moves |
+| 20 | L | Futsal no domingo | joining 민준's futsal team | 풋살, 팀, 골, 이겼어요 | 못 negation | 19 all; 18 속담; 16 계산 | — |
+| 21 | T | Alertas no celular | emergency texts: cold waves, dust | 재난 문자, 대피, 안전, 한파 | -(으)세요 review | 20 all; 19 이사; 17 고장 났어요 | loud alerts for weather and dust |
+| 22 | L | Ar poluído | fine-dust days | 미세먼지, 마스크, 공기, 앱 | -지 않아요 | 21 all; 20 풋살; 18 속담 | checking the dust app |
+| 23 | L | Comida de rua | a 포장마차 at night | 떡볶이, 어묵, 포장마차, 매워요 | ㅂ irregular (매워요) | 22 all; 21 재난 문자; 19 이사 | — |
+| 24 | T | Dormir pouco | study cafés open all night | 잠, 피곤해요, 스터디카페, 밤새 | -아/어서 (reason) | 23 all; 22 미세먼지; 20 풋살 | the study culture |
+| 25 | L | O cabeleireiro | a haircut, explained with gestures | 머리, 잘라 주세요, 짧게, 파마 | adverbs -게 | 24 all; 23 떡볶이; 21 재난 문자 | — |
+| 26 | L | A confissão | 민준 explains 고백 | 고백, 좋아해요, 사귀자, 썸 | -(으)ㄹ까요? review | 25 all; 24 잠; 22 미세먼지 | 'some' (썸) before dating |
+| 27 | T | Aparência | skincare and appearance pressure | 피부, 화장품, 외모, 성형 | -아/어 보여요 | 26 all; 25 머리; 23 떡볶이 | lookism — a social problem, lightly |
+| 28 | L | Viagem a Busan | the KTX, the sea, raw fish | 기차, 표, 바다, 회 | -(으)ㄹ 거예요 | 27 all; 26 고백; 24 잠 | — |
+| 29 | L | Saudade de casa | a video call to Brazil, twelve hours apart | 보고 싶어요, 그리워요, 시차, 영상통화 | 보고 싶다 | 28 all; 27 피부; 25 머리 | the time difference |
+| 30 | T | Piadas | dad jokes at a 회식; review | 아재개그, 웃겨요, 썰렁해요 (review mostly) | all A2 | 29 all; 28 기차; 26 고백 | 아재개그 |
+
+## B1 — friends (adnominals, -는 것 같아요, -잖아요, reported speech -대요/-냐고, passives, -(으)려고, -느라고)
+
+| # | Kind | Title (pt) | Situation | New (examples) | Grammar | Reviewed | Clash / culture |
+|---|---|---|---|---|---|---|---|
+| 01 | L | O 찜질방 | with 민준's family | 찜질방, 식혜, 땀, 양머리 | adnominal -는 | A2-30 all; A2-29; A2-27 | sleeping at the sauna |
+| 02 | L | O que você acha? | opinions about Seoul | 제 생각에는, 편해요, 복잡해요 | -는 것 같아요 | 01 all; A2-30; A2-28 | opinions softened |
+| 03 | T | A célula | 민준's sister studies biology | 세포, 핵, 나뉘어요, 생물 | passive -이/히/리/기 | 02 all; 01 찜질방; A2-29 | — |
+| 04 | L | Namorando | a relationship begins (서연 / 준호) | 여자친구, 남자친구, 데이트, 사귀어요 | -(으)ㄴ 적이 있어요 | 03 all; 02 제 생각에는; A2-30 | meeting the friends early |
+| 05 | L | Os pais | meeting the partner's parents | 부모님, 인사드려요, 드세요, 계세요 | honorific verbs | 04 all; 03 세포; 01 찜질방 | questions about job and family |
+| 06 | T | Energia | nuclear power and summer peaks | 원자력, 에너지, 절약, 발전소 | -기 때문에 | 05 all; 04 여자친구; 02 제 생각에는 | — |
+| 07 | L | 반말 errado | 반말 to the wrong person | 반말, 실례, 기분 나빠요, 나이 | -(으)면 안 돼요 | 06 all; 05 부모님; 03 세포 | the age hierarchy |
+| 08 | L | O casamento | a wedding hall and the money envelope | 결혼식, 축의금, 봉투, 웨딩홀 | -아/어도 돼요 | 07 all; 06 원자력; 04 여자친구 | thirty-minute weddings |
+| 09 | T | Estatística | a survey about young people | 조사, 평균, 통계, 응답 | -다고 해요 (reported) | 08 all; 07 반말; 05 부모님 | — |
+| 10 | L | O serviço militar | 민준's friend enlists | 군대, 입대, 휴가, 제대 | -게 되다 | 09 all; 08 결혼식; 06 원자력 | conscription for men (length: check the current rule) |
+| 11 | L | Fofoca | the office group chat | 소문, 카톡, 단톡방, 비밀 | -대요 | 10 all; 09 조사; 07 반말 | group-chat culture |
+| 12 | T | Felicidade | pressure, competition, happiness | 행복, 경쟁, 스트레스, 여유 | -(으)ㄹ수록 | 11 all; 10 군대; 08 결혼식 | competition — a social problem |
+| 13 | L | A ressaca | the morning after the 회식 | 숙취, 해장국, 술, 필름이 끊겼어요 | -았/었으면 좋겠어요 | 12 all; 11 소문; 09 조사 | hangover soup |
+| 14 | L | Briga de casal | the first quarrel | 싸워요, 미안해, 서운해, 화났어 | -잖아요 | 13 all; 12 행복; 10 군대 | 서운하다, hard to translate |
+| 15 | T | Liberdade | school uniforms and rules | 자유, 규칙, 교복, 두발 | -지 않아도 돼요 | 14 all; 13 숙취; 11 소문 | — |
+| 16 | L | Desculpas | making up | 사과해요, 화 풀어, 다시는 | -(으)ㄹ게 (promise) | 15 all; 14 싸워요; 12 행복 | — |
+| 17 | L | Saída número 7 | a meeting at the wrong subway exit | 출구, 몇 번 출구, 헷갈려요, 기다렸어 | -냐고 물어봤어요 | 16 all; 15 자유; 13 숙취 | meeting at numbered exits |
+| 18 | T | Arte | the National Museum, hanbok | 한복, 박물관, 전통, 고궁 | -아/어 보다 | 17 all; 16 사과해요; 14 싸워요 | free palace entry in hanbok |
+| 19 | L | Planos que mudaram | a trip cancelled by rain | 계획, 취소, 장마, 미뤄요 | -(으)려고 했어요 | 18 all; 17 출구; 15 자유 | — |
+| 20 | L | Alguém, ninguém | a lost wallet comes back | 지갑, 아무도, 누군가, 찾았어요 | 아무 + negation | 19 all; 18 한복; 16 사과해요 | lost things returned |
+| 21 | T | Literatura | a poem by Yun Dong-ju (public domain) | 시, 윤동주, 별, 시인 | -던 | 20 all; 19 계획; 17 출구 | — |
+| 22 | L | As notícias | evening news with 할머니 | 뉴스, 선거, 대통령, 정당 | -다고 하다 | 21 all; 20 지갑; 18 한복 | politics carefully |
+| 23 | L | PC bang | gaming all night with 민준 | PC방, 게임, 밤새, 라면 | -느라고 | 22 all; 21 시; 19 계획 | — |
+| 24 | T | Línguas | Hangul, Hanja and the neighbours' languages | 한자, 한글, 세종대왕, 비슷해요 | -기로 하다 | 23 all; 22 뉴스; 20 지갑 | Hangul Day (9 October) |
+| 25 | L | Morar junto? | cohabitation and the parents | 동거, 결혼 전, 반대, 부모님 | -(으)ㄹ 것 같아요 | 24 all; 23 PC방; 21 시 | the parents' opinion |
+| 26 | L | Aniversário | seaweed soup and cake | 생일, 미역국, 케이크, 선물 | -아/어 주다 | 25 all; 24 한자; 22 뉴스 | seaweed soup on birthdays |
+| 27 | T | Ironia | 민준's sarcasm | 퍽이나, 잘한다, 참 대단하다 | intonation; -네 | 26 all; 25 동거; 23 PC방 | — |
+| 28 | L | A estação das chuvas | the 장마 summer | 장마, 습해요, 우산, 곰팡이 | -는 동안 | 27 all; 26 생일; 24 한자 | — |
+| 29 | L | A vizinha sozinha | 할머니's elderly friend lives alone | 혼자, 외로워요, 자주, 노인 | -도록 | 28 all; 27 퍽이나; 25 동거 | elderly poverty and loneliness — a social problem |
+| 30 | T | Sexta à noite | friends at a 포차; review | (review mostly) | all B1 | 29 all; 28 장마; 26 생일 | — |
+
+## B2 — work (합쇼체, titles, honorific verbs, -더라고요, -(으)ㄹ 텐데, -는 바람에, written register)
+
+| # | Kind | Title (pt) | Situation | New (examples) | Grammar | Reviewed | Clash / culture |
+|---|---|---|---|---|---|---|---|
+| 01 | L | A entrevista | a job interview at a Korean company | 면접, 자기소개, 장점, 지원 동기 | 합쇼체 -습니다 | B1-30 all; B1-29; B1-27 | interview formality |
+| 02 | L | O contrato | annual salary and probation | 연봉, 계약서, 수습, 퇴직금 | -기로 했습니다 | 01 all; B1-30; B1-28 | salary quoted per year |
+| 03 | T | DNA | genes and family resemblance | 유전자, 닮았어요, 유전, 가족력 | -(으)ㄴ/는 반면에 | 02 all; 01 면접; B1-29 | — |
+| 04 | L | O primeiro dia | titles: 대리, 과장, 부장 | 직급, 대리님, 과장님, 부장님 | title + 님 | 03 all; 02 연봉; B1-30 | you call people by title |
+| 05 | L | A reunião | the meeting where the boss decides | 회의, 의견, 결정, 안건 | -는 바람에 | 04 all; 03 유전자; 01 면접 | — |
+| 06 | T | Química | mixing cleaning products | 화학, 섞다, 위험, 락스 | -(으)ㄹ 뿐만 아니라 | 05 all; 04 직급; 02 연봉 | — |
+| 07 | L | E-mails formais | writing to a client | 메일, 첨부, 회신, 수고하세요 | formal writing | 06 all; 05 회의; 03 유전자 | — |
+| 08 | L | Hora extra | overtime and leaving on time | 야근, 칼퇴, 눈치, 퇴근 | -더라고요 | 07 all; 06 화학; 04 직급 | 눈치, reading the room |
+| 09 | T | O universo | the Nuri rocket, the night sky | 우주, 로켓, 위성, 은하 | -(으)ㄹ 텐데 | 08 all; 07 메일; 05 회의 | — |
+| 10 | L | O telefone | transferring a call | 여보세요, 연결해 드릴게요, 메모, 자리에 안 계세요 | honorific 계시다 | 09 all; 08 야근; 06 화학 | — |
+| 11 | L | O 회식 é obrigatório? | skipping the team dinner | 빠져도 돼요?, 사정, 참석, 눈치 | -기는 하지만 | 10 all; 09 우주; 07 메일 | norms changing among the young |
+| 12 | T | Probabilidade | lottery and forecasts | 확률, 복권, 당첨, 강수 확률 | -(으)ㄹ수록 review | 11 all; 10 여보세요; 08 야근 | — |
+| 13 | L | O prazo | a missed deadline | 마감, 늦어서 죄송합니다, 연장, 보고서 | -느라고 review | 12 all; 11 빠져도 돼요?; 09 우주 | — |
+| 14 | L | O chefe difícil | a 꼰대 boss | 꼰대, 갑질, 참아요, 신고 | -는데도 | 13 all; 12 확률; 10 여보세요 | 갑질 — a social problem |
+| 15 | T | Verdade e mídia | fake news in the group chat | 가짜 뉴스, 출처, 확인, 기사 | -에 따르면 | 14 all; 13 마감; 11 빠져도 돼요? | — |
+| 16 | L | Pedir folga | asking for annual leave | 연차, 휴가, 결재, 눈치 보여요 | -아/어도 될까요? | 15 all; 14 꼰대; 12 확률 | using your leave is hard |
+| 17 | L | Café no trabalho | the afternoon coffee run | 커피 타임, 수다, 내기, 사다리 타기 | -다가 | 16 all; 15 가짜 뉴스; 13 마감 | coffee bets |
+| 18 | T | Política sem briga | elections at the partner's family dinner | 정치, 선거, 진보, 보수 | -더라도 | 17 all; 16 연차; 14 꼰대 | handled with care |
+| 19 | L | A apresentação | a project talk | 발표, 자료, 질문, 결론 | -고 나서 | 18 all; 17 커피 타임; 15 가짜 뉴스 | — |
+| 20 | L | O cliente | complaint handling | 불만, 처리, 사과, 감정 노동 | -(으)ㄴ 채로 | 19 all; 18 정치; 16 연차 | emotional labour — a social problem |
+| 21 | T | Religião | churches, temples, shamans | 교회, 절, 무당, 믿어요 | -든지 | 20 all; 19 발표; 17 커피 타임 | red neon crosses at night |
+| 22 | L | Ano-novo lunar | the New Year bow and money | 설날, 세배, 세뱃돈, 떡국 | counting age (check the current legal rule) | 21 all; 20 불만; 18 정치 | the bow to elders |
+| 23 | L | A promoção | a promotion | 승진, 축하드립니다, 책임, 연봉 인상 | -았/었더라면 | 22 all; 21 교회; 19 발표 | — |
+| 24 | T | O mercado de trabalho | why young Koreans struggle: specs and big firms | 취업, 스펙, 대기업, 공무원 시험 | -기 위해서 | 23 all; 22 설날; 20 불만 | the job market — a social problem |
+| 25 | L | Home office | remote work | 재택근무, 화상 회의, 출근, 집중 | -는 대로 | 24 all; 23 승진; 21 교회 | — |
+| 26 | L | Crew de corrida | a running club along the river | 러닝크루, 회원, 완주, 기록 | -(으)ㄹ 겸 | 25 all; 24 취업; 22 설날 | — |
+| 27 | T | Por que não casar? | marriage, housing, the birth rate | 결혼, 출산율, 집값, 비혼 | -다 보니 | 26 all; 25 재택근무; 23 승진 | the world's lowest birth rate — a social problem |
+| 28 | L | A festa de fim de ano | toast slogans at the 송년회 | 송년회, 건배사, 위하여, 한 해 | toast formulas | 27 all; 26 러닝크루; 24 취업 | everyone shouts the slogan |
+| 29 | L | O pedido | the proposal and the families' meeting | 프러포즈, 반지, 상견례, 예물 | -(으)ㄹ래요? | 28 all; 27 결혼; 25 재택근무 | 상견례, the families meet |
+| 30 | T | O futuro | stay or go; review | (review mostly) | all B2 | 29 all; 28 송년회; 26 러닝크루 | — |
+
+## C1 — life in depth (written -다체, -는 셈이다, -기 마련이다, -(으)ㄹ 뻔하다, official style); the evening course and the hiking club as threads
+
+| # | Title (pt) | Situation | New (examples) | Grammar | Reviewed | Clash / culture |
+|---|---|---|---|---|---|---|
+| 01 | O curso noturno | enrolling in a lifelong-learning course | 수강 신청, 강의, 교수님, 과제 | written -다/한다체 | B2-30 all; B2-29; B2-27 | lifelong learning |
+| 02 | O clube de trilhas | the 산악회, the summit | 산악회, 정상, 등산화, 막걸리 | -(으)ㄹ 뻔하다 | 01 all; B2-30; B2-28 | hiking clubs and makgeolli |
+| 03 | Jeonse | a 전세 contract and the deposit | 전세, 보증금, 계약, 등기부 | -는 셈이다 | 02 all; 01 수강 신청; B2-29 | jeonse fraud — check the registry |
+| 04 | O vizinho de cima | noise between floors | 층간소음, 발소리, 관리사무소, 쪽지 | -(으)ㄹ 지경이다 | 03 all; 02 산악회; B2-30 | a common conflict |
+| 05 | Impostos | the year-end tax settlement | 연말정산, 공제, 영수증, 환급 | -기 마련이다 | 04 all; 03 전세; 01 수강 신청 | the idea, no amounts — check the rules |
+| 06 | Debate na aula | defending a view | 토론, 찬성, 반대, 근거 | -다시피 | 05 all; 04 층간소음; 02 산악회 | — |
+| 07 | Os sogros | a holiday at the in-laws' | 시댁, 처가, 명절, 며느리 | -고 말다 | 06 all; 05 연말정산; 03 전세 | holiday stress (명절 증후군) |
+| 08 | Comprar um carro | the used-car market | 중고차, 주행거리, 사고 이력, 시운전 | -(으)ㄹ 리가 없다 | 07 all; 06 토론; 04 층간소음 | — |
+| 09 | O acidente | a fender-bender, insurance | 접촉 사고, 보험, 블랙박스, 과실 | -(으)므로 | 08 all; 07 시댁; 05 연말정산 | dashcams everywhere |
+| 10 | O primeiro aniversário | a 돌잔치 and the 돌잡이 | 돌잔치, 돌잡이, 한복, 축하 | -다니 | 09 all; 08 중고차; 06 토론 | the first-birthday pick |
+| 11 | Um funeral | a hospital funeral hall | 장례식장, 조의금, 삼가 고인의 명복을 빕니다, 상주 | condolence formulas | 10 all; 09 접촉 사고; 07 시댁 | funerals in hospital halls |
+| 12 | A aldeia do avô | farm work with 민준's grandfather | 시골, 농사, 고추, 밭 | -더니 | 11 all; 10 돌잔치; 08 중고차 | — |
+| 13 | Eleições locais | a candidate's promises | 후보, 공약, 투표, 구청장 | -다면서요? | 12 all; 11 장례식장; 09 접촉 사고 | — |
+| 14 | Protesto | a candlelight rally | 촛불집회, 시위, 요구, 광장 | -(으)며 | 13 all; 12 시골; 10 돌잔치 | candlelight protests |
+| 15 | O especialista | a university hospital and the wait | 대학병원, 대기, 진료의뢰서, 검사 | -는 한 | 14 all; 13 후보; 11 장례식장 | — |
+| 16 | Voluntariado | delivering coal briquettes | 봉사, 연탄, 기부, 어려운 이웃 | -아/어 가다 | 15 all; 14 촛불집회; 12 시골 | — |
+| 17 | Igualdade | parental leave at work | 육아휴직, 성평등, 맞벌이, 눈치 | -(으)ㄴ 나머지 | 16 all; 15 대학병원; 13 후보 | handled with care |
+| 18 | A maratona | the hiking club runs a race | 마라톤, 완주, 응원, 근육통 | -(으)ㄴ 끝에 | 17 all; 16 봉사; 14 촛불집회 | — |
+| 19 | O registro de casamento | the 혼인신고 forms | 혼인신고, 증인, 구청, 서류 | official forms | 18 all; 17 육아휴직; 15 대학병원 | registration is the marriage |
+| 20 | Uma criança | pregnancy and the postpartum centre | 임신, 산후조리원, 출산, 태명 | -(으)ㄹ까 봐 | 19 all; 18 마라톤; 16 봉사 | postpartum care centres |
+| 21 | Residência permanente | a long-term visa | 영주권, 체류 자격, 서류, 심사 | -에 의하면 | 20 all; 19 혼인신고; 17 육아휴직 | check the current rules |
+| 22 | A creche | the daycare waiting list | 어린이집, 대기, 등원, 하원 | -든가 | 21 all; 20 임신; 18 마라톤 | — |
+| 23 | Bilinguismo | Portuguese at home, Korean outside | 이중언어, 섞어요, 집에서, 밖에서 | -아/어 버리다 | 22 all; 21 영주권; 19 혼인신고 | — |
+| 24 | A reforma | builders and delays | 인테리어, 공사, 견적, 지연 | -(으)ㄴ 탓에 | 23 all; 22 어린이집; 20 임신 | — |
+| 25 | Burocracia avançada | a formal complaint to an office | 민원, 이의 신청, 공문, 처리 기한 | official style | 24 all; 23 이중언어; 21 영주권 | — |
+| 26 | A despedida do líder | the hiking club leader retires | 은퇴, 감사패, 회장님, 추억 | speech forms | 25 all; 24 인테리어; 22 어린이집 | — |
+| 27 | Saúde mental | burnout and a counsellor | 번아웃, 우울증, 상담, 도움 | -(으)ㄹ까 봐 review | 26 all; 25 민원; 23 이중언어 | stigma lifting; a national helpline (check the number) |
+| 28 | Visitas do Brasil | parents visit; you translate | 통역, 소개해 드릴게요, 비교, 처음 | -아/어 드리다 | 27 all; 26 은퇴; 24 인테리어 | two cultures at one table |
+| 29 | O exame | the TOPIK level exam | TOPIK, 급, 합격, 시험장 | -(으)ㄴ 덕분에 | 28 all; 27 번아웃; 25 민원 | — |
+| 30 | Três anos | a birthday at the old 포차; review | (review mostly) | all C1 | 29 all; 28 통역; 26 은퇴 | — |
+
+## C2 — mastery (four-character idioms, dialect, register shifts, rhetoric)
+
+| # | Title (pt) | Situation | New (examples) | Grammar | Reviewed | Clash / culture |
+|---|---|---|---|---|---|---|
+| 01 | O discurso | a wedding speech (축사) | 축사, 백년해로, 앞날, 축복 | four-character idioms | C1-30 all; C1-29; C1-27 | — |
+| 02 | Ironia fina | pretending to agree | -는 척하다, 참 잘됐네, 비꼬다 | irony by register | 01 all; C1-30; C1-28 | — |
+| 03 | Entrevista na TV | the hiking club on local TV | 방송, 인터뷰, 시청자, 소감 | broadcast register | 02 all; 01 축사; C1-29 | — |
+| 04 | Negociar | a salary negotiation | 연봉 협상, 조건, 양보, 타협 | aspect and politeness in requests | 03 all; 02 -는 척하다; C1-30 | — |
+| 05 | O sotaque de Busan | a friend's dialect | 사투리, 머하노, 억양, 표준어 | dialect forms | 04 all; 03 방송; 01 축사 | Busan pride |
+| 06 | Stand-up | a comedy night in Hongdae | 개그, 관객, 웃음, 자학 개그 | -는 셈 치다 | 05 all; 04 연봉 협상; 02 -는 척하다 | self-mocking humour |
+| 07 | Carta ao governo | a petition about a bus line | 청원, 민원, 요청, 존경하는 | letter style | 06 all; 05 사투리; 03 방송 | — |
+| 08 | Clube de leitura | a novel by Han Kang | 소설, 인물, 결말, 상징 | literary vocabulary | 07 all; 06 개그; 04 연봉 협상 | — |
+| 09 | Pedidos educados | running your own team | -아/어 주시겠어요?, 부탁, 혹시 | politeness gradations | 08 all; 07 청원; 05 사투리 | — |
+| 10 | Provérbios no trabalho | sayings at the right moment | 속담, 가는 말이 고와야 오는 말이 곱다 | proverbs | 09 all; 08 소설; 06 개그 | — |
+| 11 | Um processo | a landlord dispute in court | 소송, 변호사, 증거, 판결 | legal register | 10 all; 09 -아/어 주시겠어요?; 07 청원 | — |
+| 12 | O negócio da família | everyone opens a chicken shop | 창업, 치킨집, 대출, 위험 | -(으)ㄹ 바에야 | 11 all; 10 속담; 08 소설 | the self-employment trap |
+| 13 | Uma palestra | a talk at a tech meetup | 강연, 슬라이드, 질의응답, 청중 | presentation register | 12 all; 11 소송; 09 -아/어 주시겠어요? | — |
+| 14 | Criar filhos | private academies and pressure | 사교육, 학원, 입시, 경쟁 | -(으)ㄴ/는 마당에 | 13 all; 12 창업; 10 속담 | private education — a social problem |
+| 15 | A história, com cuidado | a museum and a painful century | 역사, 식민지, 분단, 해석 | careful phrasing | 14 all; 13 강연; 11 소송 | history handled with care |
+| 16 | O aniversário do clube | twenty years of the hiking club | 창립, 기념, 회원, 세대 | ceremony phrases | 15 all; 14 사교육; 12 창업 | — |
+| 17 | Mal-entendido cultural | a joke that went wrong | 오해, 실수, 그런 뜻이 아니었어요 | admitting and repairing | 16 all; 15 역사; 13 강연 | humour across cultures |
+| 18 | O jornalista | an interview about foreigners | 외국인, 정착, 차별, 다문화 | quotable register | 17 all; 16 창립; 14 사교육 | — |
+| 19 | O diagnóstico | a second opinion | 진단, 치료, 다른 병원, 소견 | aspect and politeness | 18 all; 17 오해; 15 역사 | — |
+| 20 | A casa na praia | a 펜션 with friends, splitting costs | 펜션, 회비, 정산, 바비큐 | -씩 | 19 all; 18 외국인; 16 창립 | — |
+| 21 | Um amigo em crise | listening and helping | 힘들지?, 곁에 있을게, 위로 | comfort phrases | 20 all; 19 진단; 17 오해 | — |
+| 22 | Reencontro em São Paulo | Korean friends in Bom Retiro | 봉헤치로, 한인, 이민, 비교 | register shift | 21 all; 20 펜션; 18 외국인 | the Korean community in São Paulo |
+| 23 | 정 e 한 | explaining saudade with 정 and 한 | 정, 한, 그리움, 사무치다 | untranslatables | 22 all; 21 힘들지?; 19 진단 | — |
+| 24 | Política local | a town-hall meeting | 주민 설명회, 예산, 구의원, 공청회 | public speaking | 23 all; 22 봉헤치로; 20 펜션 | — |
+| 25 | A língua no trabalho | correcting a colleague's register | 존댓말, 반말, 실수, 바로잡다 | register rule | 24 all; 23 정; 21 힘들지? | — |
+| 26 | Um poema | Kim Sowol aloud (public domain) | 김소월, 진달래꽃, 운율, 낭독 | poetic forms | 25 all; 24 주민 설명회; 22 봉헤치로 | — |
+| 27 | A herança | 할머니 leaves the house | 상속, 유산, 이사, 정리 | aspect in farewells | 26 all; 25 존댓말; 23 정 | — |
+| 28 | Ficar ou ir | the big decision | 결정, 장점, 단점, 뿌리 | admirative-like -네 / -구나 | 27 all; 26 김소월; 24 주민 설명회 | — |
+| 29 | A despedida da 할머니 | a farewell lunch | 작별, 보고 싶을 거예요, 건강하세요 | set farewells | 28 all; 27 상속; 25 존댓말 | — |
+| 30 | Cinco anos | the whole story; review | (review only) | all C2 | 29 all; 28 결정; 26 김소월 | — |
+
+
+**Social topics (Allan, 2026-10-21):** the job market, why young Koreans leave or don't marry, competition, lookism, elderly poverty, power abuse at work (갑질), emotional labour, private education — each as one unit, handled with care, never as a lecture.
+
+**Before units:** the hangul → sound converter for the browser voice, as for Macedonian.
