@@ -42,6 +42,32 @@ describe('Learn tab, second version (Allan, 2026-10-19: topics listed under each
     expect([...topics[0].querySelectorAll('.lesson-row .l-title')].map((x) => x.textContent)).toEqual(['は', 'も']);
     expect(topics[0].querySelector('.lesson-row .l-meaning-text').textContent).toBe('as for; topic');
   });
+  it('the levels sit under one button that shows the current level (Allan, 2026-10-22)', async () => {
+    const { container } = render(Learn, props());
+    await flush();
+    const picker = container.querySelector('details.picker.level-picker');
+    expect(picker).not.toBe(null);
+    expect(picker.querySelector('summary').textContent).toContain('N5');
+    picker.open = true;
+    await fireEvent.click(picker.querySelector('.level-tab[data-level="N4"]'));
+    await flush();
+    expect(picker.open).toBe(false);
+    expect(picker.querySelector('summary').textContent).toContain('N4');
+  });
+  it('opening a lesson fetches its neighbours in the background and never fetches a lesson twice (Allan, 2026-10-22: Learn felt like a reload)', async () => {
+    const calls = [];
+    const { container } = render(Learn, props({ loadLesson: async (id) => { calls.push(id); return LESSONS[id] ?? { ...LESSONS['n5-004'], id }; } }));
+    await flush();
+    await fireEvent.click(container.querySelector('.lesson-row[data-lesson="n5-004"]'));
+    await flush();
+    expect(calls).toContain('n5-004');
+    expect(calls).toContain('n5-005');                  // the next lesson, fetched ahead
+    const before = calls.length;
+    await fireEvent.click(container.querySelector('.next-lesson'));
+    await flush();
+    expect(calls.length).toBe(before + 1);              // n5-005 came from memory; only its own next one is new
+    expect(calls.filter((x) => x === 'n5-005')).toHaveLength(1);
+  });
   it('a lesson is a page: intro, sections with a contents bar, examples with furigana and romaji, the book’s practice with answers to reveal', async () => {
     const { container } = render(Learn, props());
     await flush();

@@ -117,6 +117,23 @@ describe('Conversation practice tab (Allan, 2026-10-20/21: narrator in the inter
     expect([...again.container.querySelectorAll('.unit-row')].map((r) => r.dataset.unit)).toEqual(['A1-01', 'A1-02']);
   });
 
+  it('the levels sit under one button showing the current level and its progress (Allan, 2026-10-22)', async () => {
+    const lvl = (id, level, number) => ({ id, level, number, title: { pt: id, en: id }, situation: { pt: '', en: '' }, new_items: [], steps: [] });
+    const course = { ...COURSE, units: [lvl('A1-01', 'A1', 1), lvl('A1-02', 'A1', 2), lvl('A2-01', 'A2', 1)] };
+    const storage = store();
+    storage.setItem('casus:talk:de:done', JSON.stringify(['A1-01']));
+    const { container } = render(Talk, props({ loadTalk: async () => course, storage }).p);
+    await flush();
+    const picker = container.querySelector('details.picker.level-picker');
+    expect(picker).not.toBe(null);
+    expect(picker.querySelector('summary').textContent).toMatch(/A1.*1\/2/);
+    picker.open = true;
+    await fireEvent.click(picker.querySelector('.level-tab[data-level="A2"]'));
+    await flush();
+    expect(picker.open).toBe(false);
+    expect(picker.querySelector('summary').textContent).toMatch(/A2.*0\/1/);
+  });
+
   it('taught-language text is hidden until clicked, then shows with its meaning; a second click hides it', async () => {
     setLang('pt');
     const { p } = props();

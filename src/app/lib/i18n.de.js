@@ -107,6 +107,7 @@ export default {
   'quiz.noteBy': 'Anmerkung für Casus geschrieben', 'quiz.wikiSource': '(Wikipedia: {title})',
   'cheat.word': 'Wort', 'cheat.meaning': 'Bedeutung', 'cheat.phrase': 'Wendung', 'cheat.small': 'klein', 'cheat.capital': 'groß', 'cheat.name': 'Name', 'cheat.sound': 'Laut',
   'drills.language': 'Sprache', 'drills.letters': 'Buchstaben', 'drills.nouns': 'Nominalendungen', 'drills.verbs': 'Verbendungen',
+  'drills.pick': 'Übung wählen', 'level.pick': 'Stufe wählen', 'settings.open': 'Einstellungen', 'nav.learnTarget': 'Sprache, die du lernst', 'nav.learningIn': 'Du lernst auf',
   'drills.letters.hint': 'Lerne das Alphabet: Tippe den Laut (oder den Namen) jedes Buchstabens.',
   'drills.nouns.hint': 'Die ganze Deklination eines Modellworts mit leeren Feldern: Fülle sie in beliebiger Reihenfolge. Enter oder das Verlassen eines Feldes prüft es.',
   'drills.verbs.hint': 'Die Konjugation eines Modellverbs, eine Tabelle nach der anderen (Tempus und Modus wählen), Felder leer: Fülle sie in beliebiger Reihenfolge.',

@@ -22,14 +22,23 @@ const loadData = async (name) => DATA[name] ?? [];
 const tick2 = async () => { await tick(); await new Promise((r) => setTimeout(r, 0)); await tick(); };
 
 describe('Drills page', () => {
-  it('offers every language with drills, the current one selected, and navigates on change', async () => {
-    const go = vi.fn();
-    const { container } = render(Drills, { lang: getLanguage('la'), loadData, navigate: go });
-    const select = container.querySelector('select.drill-language');
-    expect([...select.options].map((o) => o.value)).toEqual(expect.arrayContaining(['la', 'grc', 'de']));
-    expect(select.value).toBe('la');
-    await fireEvent.change(select, { target: { value: 'grc' } });
-    expect(go).toHaveBeenCalledWith('/grc/drills/');
+  it('has no language dropdown: the language nav already picks it (Allan, 2026-10-22)', () => {
+    const { container } = render(Drills, { lang: getLanguage('la'), loadData, navigate: vi.fn() });
+    expect(container.querySelector('select.drill-language')).toBe(null);
+  });
+  it('the drill types sit under one button that shows the current drill (Allan, 2026-10-22: saves space on a phone)', async () => {
+    const { container } = render(Drills, { lang: getLanguage('la'), loadData, navigate: vi.fn() });
+    await tick2();
+    const picker = container.querySelector('details.picker.drill-picker');
+    expect(picker).not.toBe(null);
+    expect(picker.open).toBe(false);
+    expect(picker.querySelectorAll('.drill-tab').length).toBe(container.querySelectorAll('.drill-tab').length);
+    expect(picker.querySelector('summary').textContent).toMatch(/noun/i);
+    picker.open = true;
+    await fireEvent.click(picker.querySelector('.drill-tab[data-drill="words"]'));
+    await tick2();
+    expect(picker.open).toBe(false);
+    expect(picker.querySelector('summary').textContent).toMatch(/word/i);
   });
   it('Latin has noun and verb drills but no letters; Greek has letters too', async () => {
     const la = render(Drills, { lang: getLanguage('la'), loadData, navigate: () => {} });

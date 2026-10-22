@@ -5,6 +5,7 @@
    * hundred (gap, translation both ways, word order) from the lesson and from Tatoeba. A practice section mixes a range
    * of levels. Progress is kept in this browser. */
   import { onMount } from 'svelte';
+  import Picker from './Picker.svelte';
   import { t, ui } from '../lib/i18n.svelte.js';
   import { questionsFromFile } from '../../lib/learn/questions.js';
   import ChoiceDrill from './ChoiceDrill.svelte';
@@ -117,13 +118,21 @@
   }
   const pct = (id) => { const p = progress[id]; return p?.total ? Math.round((100 * p.right) / p.total) : null; };
   const doneOf = (id) => completion(progress[id]);
+  // each lesson is fetched once and kept; the next and previous ones are fetched ahead while you read (Allan, 2026-10-22:
+  // a lesson opened like a page reload, Conversation instantly — it loads its whole course at once)
+  const lessons = new Map();
+  const getLesson = (id) => {
+    if (!lessons.has(id)) lessons.set(id, Promise.resolve(loadLesson(id)).catch((e) => { lessons.delete(id); throw e; }));
+    return lessons.get(id);
+  };
   async function open(ref) {
     showOrig = false; entry = null;
     loading = true; quizItems = [];
     lessonRef = ref;
-    lesson = await loadLesson(ref.entry.id);
+    lesson = await getLesson(ref.entry.id);
     loading = false;
     try { window.scrollTo({ top: 0 }); } catch { /* jsdom */ }
+    for (const d of [1, -1]) { const n = neighbour(d); if (n) getLesson(n.entry.id).catch(() => {}); }
   }
   const neighbour = (d) => { const k = flat.findIndex((x) => x.entry.id === lessonRef?.entry.id); return k >= 0 ? flat[k + d] ?? null : null; };
   function vocabQuestions(l) {
@@ -265,8 +274,11 @@
     </article>
   {:else}
     <!-- the level's topics, each with its lessons listed under it -->
-    <div class="levels" role="tablist">
-      {#each learn.levels as l}<button class="level-tab" data-level={l.id} class:active={l.id === levelId} aria-selected={l.id === levelId} onclick={() => { levelId = l.id; }}>{l.title ? loc(l.title) : l.id}<span class="count">{l.topics.filter((tp) => tp.kind === 'grammar').reduce((n, tp) => n + tp.lessons.length, 0)}</span></button>{/each}
+    <!-- the levels under one button (Allan, 2026-10-22) -->
+    <div class="levels">
+      <Picker cls="level-picker" label={level ? (level.title ? loc(level.title) : level.id) : ''} title={t('level.pick')}>
+        {#each learn.levels as l}<button class="level-tab" data-level={l.id} class:active={l.id === levelId} aria-current={l.id === levelId ? 'true' : undefined} onclick={() => { levelId = l.id; }}>{l.title ? loc(l.title) : l.id}<span class="count">{l.topics.filter((tp) => tp.kind === 'grammar').reduce((n, tp) => n + tp.lessons.length, 0)}</span></button>{/each}
+      </Picker>
     </div>
     <input class="search" type="search" bind:value={search} placeholder={t('learn.search')} />
     {@const parts = learnSections(level?.topics)}
@@ -307,8 +319,10 @@
   .learn-head h2 { margin: 0; }
   .system { color: var(--ink-2); font-size: 0.9em; }
   .modes { margin-left: auto; display: flex; gap: 4px; }
-  .mode-tab, .level-tab { font: inherit; padding: 5px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); color: var(--ink); cursor: pointer; }
-  .mode-tab.active, .level-tab.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .mode-tab { font: inherit; padding: 5px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); color: var(--ink); cursor: pointer; }
+  .mode-tab.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .level-tab { font: inherit; padding: 8px 12px; border: 0; background: transparent; color: var(--ink); cursor: pointer; display: flex; justify-content: space-between; gap: 12px; }
+  .level-tab.active { background: var(--accent); color: var(--accent-ink); }
   .levels { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 8px; }
   .count { font-size: 0.75em; opacity: 0.75; margin-left: 6px; }
   .search { width: 100%; box-sizing: border-box; font: inherit; padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); margin-bottom: 8px; }

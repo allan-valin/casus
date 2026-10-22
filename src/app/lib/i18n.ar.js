@@ -98,6 +98,7 @@ export default {
   'quiz.wrong': 'ليس تمامًا — الصحيح: {expected}', 'quiz.literal': 'كلمة كلمة', 'quiz.literally': 'حرفيًا', 'quiz.also': 'أيضًا', 'quiz.noteBy': 'ملاحظة كُتبت لـCasus', 'quiz.wikiSource': '(ويكيبيديا: {title})',
   'cheat.word': 'الكلمة', 'cheat.meaning': 'المعنى', 'cheat.phrase': 'العبارة', 'cheat.small': 'صغير', 'cheat.capital': 'كبير', 'cheat.name': 'الاسم', 'cheat.sound': 'الصوت',
   'drills.language': 'اللغة', 'drills.letters': 'الحروف', 'drills.nouns': 'لواحق الأسماء', 'drills.verbs': 'لواحق الأفعال',
+  'drills.pick': 'اختر تمرينًا', 'level.pick': 'اختر مستوى', 'settings.open': 'الإعدادات', 'nav.learnTarget': 'اللغة التي تتعلّمها', 'nav.learningIn': 'تتعلّم بـ',
   'drills.letters.hint': 'تعلّم الأبجدية: اكتب صوت كل حرف (أو اسمه).',
   'drills.nouns.hint': 'تصريف كلمة نموذجية كاملًا والخانات فارغة: املأها بأي ترتيب. Enter أو الخروج من الخانة يتحقق منها.',
   'drills.verbs.hint': 'تصريف فعل نموذجي، جدولًا جدولًا (اختر الزمن والصيغة)، والخانات فارغة: املأها بأي ترتيب.',

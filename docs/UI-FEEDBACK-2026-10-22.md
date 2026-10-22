@@ -1,0 +1,28 @@
+# Allan's UI/UX feedback, 2026-10-22 (phone)
+
+[ ] = open, [x] = done and verified.
+
+1. [x] Header: on a phone the whole first screen is flags. Line 1 = the site (folded: one button, the other two in its menu — "fold the 3 casus too"), XP chip, gear.
+2. [x] A gear icon top right; every current header button goes inside it (UI languages, export, theme, report, help…).
+       The level/XP chip stays visible outside.
+3. [x] Inside the gear: the language list labelled as the target language ("Language to learn"), the UI languages
+       labelled "Learning in", with an arrow between them besides the labels.
+4. [x] View tabs: borders visible on all sides, like toolbar menu items.
+5. [x] Drills: remove the language dropdown (choosing the language in the nav already selects it); all drill options
+       go under one button that shows the current drill type.
+6. [x] Learn: levels condensed the same way (one button showing the current level).
+7. [x] Conversation: levels condensed the same way.
+8. [x] Question: Learn felt like a full page reload when opening a lesson, Conversation instant. Answer + fix if real
+       (first load fetches learn.json + lesson file; Conversation loads one course file once).
+9. [ ] Proofreading: the row "spelling grammar punctuation style capitals" between the text box and the checkboxes —
+       explain it / make it clear.
+10. [ ] Proofreading (German): missing final full stop not flagged; a line break followed by lower case not flagged
+       (needs "." above and capital below).
+11. [ ] Japanese conversation: furigana over kanji and romaji below, as elsewhere on the site.
+12. [x] "fold the 3 casus too": the sites are one button, the other two in its menu.
+13. [x] On a phone the view tabs fold into one button; the language chip is gone — the gear shows "flag → UI language".
+14. [x] One control height (--control-h, 40 px) for buttons, pickers, gear, XP chip, tabs, selects.
+
+Answer to 8: Conversation downloads the whole course once (5.6 MB for German), so every unit is instant after that;
+Learn fetched each lesson (~90 KB) on click and jumped to the top — like a reload the first time, cached the second.
+Now lessons stay in memory and the next/previous ones are fetched ahead.

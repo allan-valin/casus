@@ -36,4 +36,11 @@ describe('LanguageBar', () => {
     expect(sites.every((x) => x.querySelector('.site-mark'))).toBe(true);
     expect(container.querySelector('nav.sites .site.here').dataset.site).toBe('casus');
   });
+  it('on a phone the views fold into one button too (Allan, 2026-10-22): the same links, the current one on the button', () => {
+    const { container } = render(LanguageBar, { current: 'grc', view: 'learn', parts: ['views'] });
+    const picker = container.querySelector('details.view-picker');
+    expect(picker).not.toBe(null);
+    expect(picker.querySelector('summary').textContent).toMatch(/Learn/);
+    expect([...picker.querySelectorAll('a')].map((a) => a.dataset.view)).toEqual(['reader', 'drills', 'learn', 'talk', 'speak', 'proof']);
+  });
 });

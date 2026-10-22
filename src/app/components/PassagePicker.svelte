@@ -101,7 +101,7 @@
   .samples-label, .paste-label { color: var(--ink-2); font-size: 0.95rem; }
   .paste-label { margin-top: 4px; }
   .paste-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
-  .upload { display: inline-flex; align-items: center; padding: 6px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); cursor: pointer; font-size: 0.92rem; min-height: 36px; box-sizing: border-box; }
+  .upload { display: inline-flex; align-items: center; padding: 6px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); cursor: pointer; font-size: 0.92rem; min-height: var(--control-h); box-sizing: border-box; }
   .upload:hover, .upload:focus-within { border-color: var(--accent); }
   .upload input { position: absolute; width: 1px; height: 1px; opacity: 0; }
   textarea { width: 100%; box-sizing: border-box; font-family: Georgia, serif; font-size: 1.05rem; line-height: 1.5; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); resize: vertical; }

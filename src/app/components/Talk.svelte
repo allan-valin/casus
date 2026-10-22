@@ -7,6 +7,7 @@
    * clicked stays highlighted; the unit ends with the four-in-five self-check. Units are written to the guide in
    * docs/conversation/ and built by tools/build_conversation.py. Progress is kept in this browser. */
   import { onMount } from 'svelte';
+  import Picker from './Picker.svelte';
   import { t, ui } from '../lib/i18n.svelte.js';
   import { voicePitches, pitchOf, speedOf } from '../lib/talkvoices.js';
   import { narrationParts, taughtLetters } from '../lib/narration.js';
@@ -272,12 +273,15 @@
     </details>
     {#if course.example}<p class="talk-example">{t('talk.example')}</p>{/if}
     {#if narratorLang !== ui.lang}<p class="narrator-fallback">{t('talk.narratorFallback', { lang: NAMES[narratorLang] ?? narratorLang })}</p>{/if}
-    <div class="level-tabs" role="tablist">
-      {#each levels as l}
-        <button class="level-tab" role="tab" data-level={l} aria-selected={l === level} class:active={l === level} onclick={() => pickLevel(l)}>
-          {l} <span class="level-count">{doneIn(l)}/{countIn(l)}</span>
-        </button>
-      {/each}
+    <!-- the levels under one button showing the current one and its progress (Allan, 2026-10-22) -->
+    <div class="level-tabs">
+      <Picker cls="level-picker" label={level ? `${level} · ${doneIn(level)}/${countIn(level)}` : ''} title={t('level.pick')}>
+        {#each levels as l}
+          <button class="level-tab" data-level={l} aria-selected={l === level} class:active={l === level} onclick={() => pickLevel(l)}>
+            {l} <span class="level-count">{doneIn(l)}/{countIn(l)}</span>
+          </button>
+        {/each}
+      </Picker>
     </div>
     {#if level}
       <ul class="units" role="tabpanel">
@@ -358,7 +362,7 @@
 
 <style>
   .level-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 8px; }
-  .level-tab { padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); color: var(--ink); cursor: pointer; font-weight: 600; }
+  .level-tab { padding: 8px 12px; border: 0; background: transparent; color: var(--ink); cursor: pointer; font-weight: 600; display: flex; justify-content: space-between; gap: 12px; }
   .level-tab.active { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 18%, var(--panel)); }
   .level-count { font-weight: 400; opacity: 0.75; font-size: 0.85em; }
   .step.sounding { outline: 2px solid var(--accent, #6a4c93); outline-offset: 2px; }   /* the step whose audio is playing */
@@ -373,7 +377,7 @@
     padding: 8px 16px calc(8px + env(safe-area-inset-bottom)); background: var(--panel); color: var(--ink); border-top: 2px solid var(--accent); box-shadow: 0 -2px 10px rgb(0 0 0 / 0.15); }
   .player-bar button { color: var(--ink); background: var(--panel-hi, var(--panel)); border: 1px solid var(--line); }
   .ic { width: 60%; height: 60%; display: block; }
-  .play { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; padding: 0; border-radius: 50%; }
+  .play { display: inline-flex; align-items: center; justify-content: center; width: var(--control-h); height: var(--control-h); padding: 0; border-radius: 50%; }
   .play .ic { width: 70%; height: 70%; }
   .transport { display: flex; gap: 14px; align-items: center; }
   .transport button { font-size: 1.6rem; width: 52px; height: 52px; border-radius: 50%; padding: 0; line-height: 1; display: inline-flex; align-items: center; justify-content: center; }

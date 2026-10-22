@@ -42,7 +42,10 @@
 }
 html { background: var(--bg); }
 body { margin: 0; color: var(--ink); font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: clamp(15px, 14px + 0.25vw, 17px); -webkit-text-size-adjust: 100%; }
-button { font: inherit; padding: 6px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); cursor: pointer; min-height: 36px; }
+/* one height for every control, so a row of buttons, menus and fields lines up (Allan, 2026-10-22) */
+:root { --control-h: 40px; }
+button { font: inherit; padding: 6px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); cursor: pointer; min-height: var(--control-h); box-sizing: border-box; }
+select, input[type=text], input[type=search] { min-height: var(--control-h); box-sizing: border-box; }
 button:hover { border-color: var(--accent); }
 button:disabled { opacity: 0.5; cursor: default; }
 button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; padding: 8px 18px; }

@@ -2,9 +2,7 @@
   /* The drills page (Allan, 2026-10-18; was the letters drill): pick a language here and its drills open —
    * the letters of a non-Latin alphabet, and the noun and verb endings of every language. */
   import { onMount } from 'svelte';
-  import { siteLanguages } from '../../sites.js';
   import { t, ui } from '../lib/i18n.svelte.js';
-  import { drillsPath } from '../lib/route.js';
   import Game from './Game.svelte';
   import EndingsDrill from './EndingsDrill.svelte';
   import ChoiceDrill from './ChoiceDrill.svelte';
@@ -17,6 +15,7 @@
   import { clozeItems, whoItems, spotItems, binItems, soundItems, pairItems, agreementItems, learnSample } from '../lib/moredrills.js';
   import { sentencePool } from '../lib/listen.js';
   import Overlay from './Overlay.svelte';
+  import Picker from './Picker.svelte';
   import CheatSheet from './CheatSheet.svelte';
   import { parseItems, transformItems } from '../lib/parse.js';
   import { createReview } from '../lib/review.js';
@@ -91,23 +90,19 @@
   $effect(() => { if (drill === 'review') dueItems = review.due(); });
   const genderNames = $derived(Object.fromEntries(['m', 'f', 'n', 'c'].map((g) => [g, paraWord(g)])));
   const agreeList = $derived(agreementItems(models, lang, caseName, paraWord));
-  const withDrills = siteLanguages();     // this site's languages; every one has at least the endings drills
+  const drillName = (d) => lang.drillNames?.[d]?.[ui.lang] ?? t(`drills.${d}`);
 </script>
 
 <section class="card drills">
   <h2>{t('drills.heading')}</h2>
   <div class="bar">
-    <label>{t('drills.language')}
-      <select class="drill-language" value={lang.code} onchange={(e) => navigate(drillsPath(withDrills.find((l) => l.code === e.currentTarget.value)))}>
-        {#each withDrills as l}<option value={l.code}>{l.name[ui.lang] ?? l.name.en}</option>{/each}
-      </select>
-    </label>
-    <button class="cheatsheet" onclick={() => { cheat = true; }}>{t('drills.cheatsheet')}</button>
-    <div class="tabs" role="tablist">
+    <!-- no language dropdown: the language nav already chooses it; the drill types under one button (Allan, 2026-10-22) -->
+    <Picker cls="drill-picker" label={drillName(drill)} title={t('drills.pick')}>
       {#each drills as d}
-        <button class="drill-tab" class:active={d === drill} data-drill={d} role="tab" aria-selected={d === drill} onclick={() => { chosen = d; }}>{lang.drillNames?.[d]?.[ui.lang] ?? t(`drills.${d}`)}</button>
+        <button class="drill-tab" class:active={d === drill} data-drill={d} aria-current={d === drill ? 'true' : undefined} onclick={() => { chosen = d; }}>{drillName(d)}</button>
       {/each}
-    </div>
+    </Picker>
+    <button class="cheatsheet" onclick={() => { cheat = true; }}>{t('drills.cheatsheet')}</button>
   </div>
   <p class="hint">{t(`drills.${drill}.hint`)}</p>
   {#if cheat}
@@ -184,10 +179,10 @@
   .bar { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 8px; }
   label { display: inline-flex; gap: 6px; align-items: center; font-weight: 600; }
   select { font: inherit; padding: 6px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); }
-  .cheatsheet { font: inherit; padding: 6px 14px; border: 1.5px solid var(--accent); border-radius: 8px; background: var(--panel); color: var(--ink); cursor: pointer; font-weight: 600; }
-  .tabs { display: flex; flex-wrap: wrap; gap: 4px; }
-  .drill-tab { font: inherit; padding: 6px 14px; border: 1.5px solid var(--line); border-radius: 999px; background: var(--panel); color: var(--ink); cursor: pointer; }
-  .drill-tab.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .cheatsheet { font: inherit; height: var(--control-h); box-sizing: border-box; padding: 0 14px; border: 1.5px solid var(--accent); border-radius: 8px; background: var(--panel); color: var(--ink); cursor: pointer; font-weight: 600; }
+  .drill-tab { font: inherit; padding: 8px 12px; border: 0; background: transparent; color: var(--ink); cursor: pointer; }
+  .drill-tab:hover { background: color-mix(in srgb, var(--accent) 10%, var(--panel)); }
+  .drill-tab.active { background: var(--accent); color: var(--accent-ink); }
   .hint, .muted { color: var(--ink-2); }
   .options { display: flex; flex-wrap: wrap; gap: 12px; margin: 6px 0; }
   .options select { max-width: 100%; }

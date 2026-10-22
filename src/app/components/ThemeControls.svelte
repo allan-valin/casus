@@ -31,7 +31,7 @@
 
 <style>
   .theme-controls { display: inline-flex; align-items: center; gap: 6px; }
-  .mode { width: 38px; height: 38px; border-radius: 50%; padding: 0; font-size: 1.1rem; }
+  .mode { width: var(--control-h); height: var(--control-h); border-radius: 50%; padding: 0; font-size: 1.1rem; }
   .palette-box { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); border-radius: 8px; padding: 0 0 0 8px; background: var(--panel); }
   .palette-box select { border: 0; background: transparent; }
   .palette-label { font-size: 0.8rem; color: var(--ink-2); white-space: nowrap; }

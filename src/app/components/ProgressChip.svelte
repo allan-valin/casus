@@ -44,7 +44,7 @@
 {/if}
 
 <style>
-  .xp-chip { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: .9em; padding: 4px 10px; border: 1.5px solid var(--accent); border-radius: 999px; background: var(--panel); color: var(--ink); cursor: pointer; }
+  .xp-chip { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: .9em; padding: 0 10px; height: var(--control-h); box-sizing: border-box; border: 1.5px solid var(--accent); border-radius: 999px; background: var(--panel); color: var(--ink); cursor: pointer; }
   .lv { font-weight: 700; }
   .bar { display: inline-block; width: 48px; height: 7px; border-radius: 4px; background: var(--line); overflow: hidden; }
   .bar.wide { display: block; width: 100%; max-width: 28em; height: 12px; border-radius: 6px; }

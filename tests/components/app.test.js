@@ -297,3 +297,35 @@ describe('App on the Greek page (languages plan Task 12)', () => {
     } finally { window.history.pushState({}, '', '/'); }
   });
 });
+
+describe('App header on a phone (Allan, 2026-10-22: the whole first screen was flags)', () => {
+  it('line one is the three sites; everything else that was a button sits behind a gear, the XP chip stays out', async () => {
+    const { container } = render(App, { fetchImpl, storage: storage(), ...immediate });
+    await tick(); await tick();
+    const gear = container.querySelector('details.settings');
+    expect(gear).not.toBe(null);
+    expect(gear.open).toBe(false);
+    expect(gear.querySelector('summary').getAttribute('aria-label')).toMatch(/settings/i);
+    for (const sel of ['nav.languages', 'button.ui-lang', 'button.help-button', 'a.report-button']) expect(gear.querySelector(sel)).not.toBe(null);
+    for (const sel of ['nav.sites', '.xp-chip', 'nav.views']) {
+      expect(container.querySelector(sel)).not.toBe(null);
+      expect(gear.querySelector(sel)).toBe(null);
+    }
+    // no separate language chip: the gear button says target → interface (Allan, 2026-10-22)
+    expect(container.querySelector('.current-lang')).toBe(null);
+    const pair = gear.querySelector('summary .lang-pair');
+    expect(pair.getAttribute('title')).toMatch(/Latin.*English/);
+    expect(pair.textContent).toMatch(/→\s*EN/);
+  });
+  it('inside the gear: the language to learn, an arrow, then the language you learn in', async () => {
+    const { container } = render(App, { fetchImpl, storage: storage(), ...immediate });
+    await tick(); await tick();
+    const gear = container.querySelector('details.settings');
+    const parts = [...gear.querySelectorAll('.learn-target, .lang-arrow, .learn-in')].map((e) => e.className.split(' ')[0]);
+    expect(parts).toEqual(['learn-target', 'lang-arrow', 'learn-in']);
+    expect(gear.querySelector('.learn-target').textContent).toMatch(/language to learn/i);
+    expect(gear.querySelector('.learn-in').textContent).toMatch(/learning in/i);
+    expect(gear.querySelector('.learn-target nav.languages')).not.toBe(null);
+    expect(gear.querySelector('.learn-in button.ui-lang')).not.toBe(null);
+  });
+});

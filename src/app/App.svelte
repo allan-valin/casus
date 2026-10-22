@@ -85,6 +85,13 @@
   let hovered = $state(null);
   let open = $state(null);          // the block whose dictionary is open
   let help = $state(false);
+  const UI_NAMES = { en: 'English', pt: 'Português', de: 'Deutsch', mk: 'Македонски', ar: 'العربية' };
+  let settingsBox;                  // the gear's panel (Allan, 2026-10-22)
+  $effect(() => {
+    const away = (e) => { if (settingsBox?.open && !settingsBox.contains(e.target)) settingsBox.open = false; };
+    document.addEventListener('click', away);
+    return () => document.removeEventListener('click', away);
+  });
   let legendOpen = $state(false);   // closed by default to save space (Allan, 2026-10-18)
   let generation = 0;               // choose() calls; a slower, older load must not win
   // Wiktionary on demand for words the dictionary lacks (Allan, 2026-10-19); on unless switched off, kept per browser
@@ -221,30 +228,52 @@
 
 <main style:--font-scale={lang.script?.fontScale ?? 1}>
   {#if activity.busy}<div class="busy" role="progressbar" aria-label="loading"></div>{/if}
+  <!-- the header on a phone (Allan, 2026-10-22: the whole first screen was flags): line one the three sites, the XP chip and a
+       gear holding everything else; line two the current language and the views -->
   <header class="top">
-    <div class="brand">
-      <h1>{SITE.title} <span class="lang-name">· {#if languageFlag(lang.code)}<img class="flag" src={languageFlag(lang.code)} alt="" />{/if}{lang.name?.[ui.lang] ?? lang.name?.en ?? ''}</span></h1>
-      <LanguageBar current={lang.code} view={route.view} />
-      <p class="tagline">{t('app.tagline', { language: lang.inText?.[ui.lang] ?? lang.name?.[ui.lang] ?? lang.inText?.en ?? lang.name?.en })}</p>
-    </div>
-    <div class="corner">
-      <div class="langs" role="group" aria-label="language" title={t('app.lang.title')}>
-        <button class="ui-lang" class:active={ui.lang === 'en'} data-lang="en" onclick={() => switchLang('en')}>English</button>
-        <button class="ui-lang" class:active={ui.lang === 'pt'} data-lang="pt" onclick={() => switchLang('pt')}>Português</button>
-        <button class="ui-lang" class:active={ui.lang === 'de'} data-lang="de" onclick={() => switchLang('de')}>Deutsch</button>
-        <button class="ui-lang" class:active={ui.lang === 'mk'} data-lang="mk" lang="mk" onclick={() => switchLang('mk')}>Македонски</button>
-        <button class="ui-lang" class:active={ui.lang === 'ar'} data-lang="ar" lang="ar" onclick={() => switchLang('ar')}>العربية</button>
+    <div class="titlebar">
+      <h1 class="visually-hidden">{SITE.title} · {lang.name?.[ui.lang] ?? lang.name?.en ?? ''}</h1>
+      <LanguageBar current={lang.code} view={route.view} parts={['sites']} />
+      <div class="corner">
+        <ProgressChip {progression} version={xpVersion} {toasts} />
+        <details class="settings" bind:this={settingsBox}>
+          <!-- the gear says what you learn and in which language: target → interface (Allan, 2026-10-22) -->
+          <summary class="gear" aria-label={t('settings.open')}>
+            <span class="lang-pair" title={`${lang.name?.[ui.lang] ?? lang.name?.en ?? ''} → ${UI_NAMES[ui.lang] ?? ui.lang}`}>{#if languageFlag(lang.code)}<img class="flag" src={languageFlag(lang.code)} alt="" />{:else}{lang.code.toUpperCase()}{/if} → {ui.lang.toUpperCase()}</span>
+            <span class="cog" aria-hidden="true">⚙</span>
+          </summary>
+          <div class="settings-panel">
+            <p class="tagline">{t('app.tagline', { language: lang.inText?.[ui.lang] ?? lang.name?.[ui.lang] ?? lang.inText?.en ?? lang.name?.en })}</p>
+            <div class="learn-target"><span class="lbl">{t('nav.learnTarget')}</span>
+              <LanguageBar current={lang.code} view={route.view} parts={['languages']} />
+            </div>
+            <div class="lang-arrow" aria-hidden="true">↓</div>
+            <div class="learn-in"><span class="lbl">{t('nav.learningIn')}</span>
+              <div class="langs" role="group" aria-label="language" title={t('app.lang.title')}>
+                <button class="ui-lang" class:active={ui.lang === 'en'} data-lang="en" onclick={() => switchLang('en')}>English</button>
+                <button class="ui-lang" class:active={ui.lang === 'pt'} data-lang="pt" onclick={() => switchLang('pt')}>Português</button>
+                <button class="ui-lang" class:active={ui.lang === 'de'} data-lang="de" onclick={() => switchLang('de')}>Deutsch</button>
+                <button class="ui-lang" class:active={ui.lang === 'mk'} data-lang="mk" lang="mk" onclick={() => switchLang('mk')}>Македонски</button>
+                <button class="ui-lang" class:active={ui.lang === 'ar'} data-lang="ar" lang="ar" onclick={() => switchLang('ar')}>العربية</button>
+              </div>
+            </div>
+            {#if route.view === 'reader'}<div class="exports" aria-label="export">
+              <span class="exports-label">{t('app.export')}</span>
+              <button class="export-json" disabled={!reader} title={t('app.export.json.title')} onclick={() => download('json')}>{t('app.export.json')}</button>
+              <button class="export-md" disabled={!reader} title={t('app.export.md.title')} onclick={() => download('md')}>{t('app.export.md')}</button>
+            </div>{/if}
+            <ThemeControls code={lang.code} {storage} />
+            <div class="settings-row">
+              <a class="report-button" target="_blank" rel="noopener" title={t('app.report.title')}
+                href={issueUrl({ href: typeof location !== 'undefined' ? location.href : '', site: SITE.title, language: lang.name?.en ?? lang.code, view: route.view, ui: ui.lang })}>⚑ {t('app.report')}</a>
+              <button class="help-button" title={t('app.help.title')} aria-label="help" onclick={() => { help = true; settingsBox.open = false; }}>?</button>
+            </div>
+          </div>
+        </details>
       </div>
-      {#if route.view === 'reader'}<div class="exports" aria-label="export">
-        <span class="exports-label">{t('app.export')}</span>
-        <button class="export-json" disabled={!reader} title={t('app.export.json.title')} onclick={() => download('json')}>{t('app.export.json')}</button>
-        <button class="export-md" disabled={!reader} title={t('app.export.md.title')} onclick={() => download('md')}>{t('app.export.md')}</button>
-      </div>{/if}
-      <ProgressChip {progression} version={xpVersion} {toasts} />
-      <ThemeControls code={lang.code} {storage} />
-      <a class="report-button" target="_blank" rel="noopener" title={t('app.report.title')}
-        href={issueUrl({ href: typeof location !== 'undefined' ? location.href : '', site: SITE.title, language: lang.name?.en ?? lang.code, view: route.view, ui: ui.lang })}>⚑ {t('app.report')}</a>
-      <button class="help-button" title={t('app.help.title')} aria-label="help" onclick={() => (help = true)}>?</button>
+    </div>
+    <div class="viewbar">
+      <LanguageBar current={lang.code} view={route.view} parts={['views']} />
     </div>
   </header>
 
@@ -334,25 +363,33 @@
 <style>
   .live-toggle { display: block; margin-top: 10px; }
   main { width: min(1500px, 100% - 2 * var(--gutter)); margin: 0 auto; padding: clamp(10px, 2vw, 24px) 0 40px; display: flex; flex-direction: column; gap: clamp(12px, 1.8vw, 22px); }
-  /* the brand shrinks and its language pills wrap inside it, so the controls stay top right however many languages
-     a site has (Casus has 13: Allan, 2026-10-20) */
-  .top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: nowrap; }
-  .brand { flex: 1 1 auto; min-width: 0; }
-  .corner { flex: 0 1 auto; justify-content: flex-end; max-width: 46%; }
-  h1 { margin: 0; font-family: Georgia, serif; font-size: clamp(1.7rem, 1.4rem + 1.2vw, 2.4rem); letter-spacing: 0.01em; }
-  .lang-name { font-size: 0.5em; color: var(--muted); font-family: system-ui, sans-serif; font-weight: 400; }
-  .lang-name .flag { width: 1.5em; height: 1.1em; border-radius: 2px; margin: 0 6px 0 2px; vertical-align: -0.15em; box-shadow: 0 0 0 1px rgba(0,0,0,.15); }
-  .brand :global(nav.languages) { margin: 8px 0 2px; }
-  .tagline { margin: 4px 0 0; color: var(--ink-2); max-width: 60ch; }
-  .corner { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .top { display: flex; flex-direction: column; gap: 8px; }
+  .titlebar { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+  .titlebar :global(nav.sites) { margin: 0; }
+  .corner { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; }
+  .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .viewbar { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+  .settings { position: relative; }
+  .gear { list-style: none; cursor: pointer; height: var(--control-h); box-sizing: border-box; padding: 0 10px; display: inline-flex; align-items: center; gap: 8px; border: 1.5px solid var(--line); border-radius: 21px; background: var(--panel); color: var(--ink); font-weight: 700; font-size: 0.85rem; }
+  .gear .cog { font-size: 1.35rem; }
+  .lang-pair { display: inline-flex; align-items: center; gap: 4px; }
+  .lang-pair .flag { width: 20px; height: 14px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,.15); }
+  .gear::-webkit-details-marker { display: none; }
+  .settings[open] .gear { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, var(--panel)); }
+  .settings-panel { position: absolute; z-index: 60; top: calc(100% + 6px); inset-inline-end: 0; width: min(92vw, 560px); max-height: 80vh; overflow: auto; display: flex; flex-direction: column; gap: 12px;
+    padding: 14px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,.22); }
+  .lbl { display: block; font-weight: 700; font-size: 0.85rem; color: var(--ink-2); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .04em; }
+  .lang-arrow { text-align: center; font-size: 1.4rem; color: var(--accent-text, var(--accent)); line-height: 1; margin: -4px 0; }
+  .settings-row { display: flex; gap: 10px; align-items: center; justify-content: space-between; }
+  .tagline { margin: 0; color: var(--ink-2); font-size: 0.9rem; }
   .exports { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
   .langs { display: inline-flex; flex-wrap: wrap; max-width: 100%; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
-  .langs .ui-lang { border: 0; border-radius: 0; min-height: 34px; padding: 4px 10px; }
+  .langs .ui-lang { border: 0; border-radius: 0; min-height: var(--control-h); padding: 0 10px; }
   .langs .ui-lang.active { background: var(--accent); color: var(--accent-ink); }
   .exports-label { color: var(--ink-2); font-size: 0.85rem; margin-right: 2px; }
-  .report-button { display: inline-flex; align-items: center; gap: 4px; padding: 6px 10px; border: 1.5px solid var(--line); border-radius: 8px; color: var(--ink); text-decoration: none; font-size: .9em; background: var(--panel); }
+  .report-button { display: inline-flex; align-items: center; gap: 4px; padding: 0 10px; height: var(--control-h); box-sizing: border-box; border: 1.5px solid var(--line); border-radius: 8px; color: var(--ink); text-decoration: none; font-size: .9em; background: var(--panel); }
   .report-button:hover { border-color: var(--accent); }
-  .help-button { width: 40px; height: 40px; border-radius: 50%; font-weight: 700; font-size: 1.1rem; padding: 0; background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .help-button { width: var(--control-h); height: var(--control-h); border-radius: 50%; font-weight: 700; font-size: 1.1rem; padding: 0; background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
   .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: clamp(12px, 1.6vw, 22px) clamp(12px, 2vw, 26px); box-shadow: 0 1px 2px rgba(0,0,0,.04); }
   h2 { margin: 0 0 12px; font-size: clamp(1.05rem, 1rem + 0.3vw, 1.3rem); display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
   .step { display: inline-flex; width: 1.6em; height: 1.6em; align-items: center; justify-content: center; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font-size: 0.8em; font-weight: 700; align-self: center; }
@@ -368,8 +405,8 @@
   .busy { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 70; background: linear-gradient(90deg, transparent, var(--accent), transparent); background-size: 40% 100%; animation: slide 1.1s linear infinite; }
   @keyframes slide { from { background-position: -40% 0; } to { background-position: 140% 0; } }
   footer { color: var(--muted); font-size: 0.8rem; text-align: center; padding-top: 8px; }
-  @media (max-width: 640px) {
-    .top { flex-direction: column; align-items: stretch; }
-    .corner { width: 100%; max-width: none; justify-content: space-between; }
+  @media (max-width: 560px) {
+    .settings-panel { position: fixed; top: 64px; inset-inline: 12px; width: auto; }
+    .corner :global(.xp-chip .bar) { display: none; }
   }
 </style>
