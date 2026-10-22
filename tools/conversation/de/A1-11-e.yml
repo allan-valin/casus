@@ -1,0 +1,448 @@
+# UNIT de A1-11-e — written by AI (Claude) for Casus; expanded from src/A1-11-e.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-11-e
+level: A1
+number: 11
+protagonist: f
+tracks:
+- en
+title:
+  en: The first lecture
+situation:
+  en: Your first lecture. You find the hall at ten to eight — and Jonas is in your course.
+learn_lessons:
+- a1-modal-muessen
+culture: Seated before the hour
+new_items:
+- id: der-hoersaal
+  text: der Hörsaal
+  meaning:
+    en: the lecture hall
+  rare: true
+- id: die-vorlesung
+  text: die Vorlesung
+  meaning:
+    en: the lecture
+- id: beginnt
+  text: beginnt
+  meaning:
+    en: begins
+- id: wir-muessen
+  text: wir müssen
+  meaning:
+    en: we have to
+- id: puenktlich
+  text: pünktlich
+  meaning:
+    en: on time
+- id: setz-dich
+  text: Setz dich!
+  meaning:
+    en: Sit down! (informal)
+- id: muss-ich
+  text: Muss ich …?
+  meaning:
+    en: Do I have to …?
+- id: online
+  text: online
+  meaning:
+    en: online
+- id: die-pruefung
+  text: die Prüfung
+  meaning:
+    en: the exam
+- id: die-folien
+  text: die Folien
+  meaning:
+    en: the slides
+  rare: true
+- id: viel-lernen
+  text: viel lernen
+  meaning:
+    en: study a lot
+reviews:
+- item: einen-termin
+  from: A1-04
+- item: ich-moechte
+  from: A1-04
+- item: mich-anmelden
+  from: A1-04
+- item: das-formular
+  from: A1-04
+- item: die-wgb
+  from: A1-04
+- item: wo-wohnen-sie
+  from: A1-04
+- item: welche
+  from: A1-04
+- item: die-religion
+  from: A1-04
+- item: warum
+  from: A1-04
+- item: keins-von-beiden
+  from: A1-04
+- item: die-kirchensteuer
+  from: A1-04
+- item: fertig
+  from: A1-04
+- item: das-wars
+  from: A1-04
+- item: schoenen-tag-noch
+  from: A1-04
+- item: faehrt
+  from: A1-08
+- item: zum-hauptbahnhof
+  from: A1-08
+- item: umsteigen
+  from: A1-08
+- item: die-strassenbahn
+  from: A1-08
+- item: die-haltestelle
+  from: A1-08
+- item: da-drueben
+  from: A1-08
+- item: die-fahrkarte
+  from: A1-08
+- item: mit-der-app
+  from: A1-08
+- item: einsteigen
+  from: A1-08
+- item: hinten
+  from: A1-08
+- item: der-kinderwagen
+  from: A1-08
+- item: aussteigen
+  from: A1-08
+- item: du-bist
+  from: A1-10
+- item: oben
+  from: A1-10
+- item: und-du
+  from: A1-10
+- item: im-zweiten-stock
+  from: A1-10
+- item: wie-gehts
+  from: A1-10
+- item: und-dir
+  from: A1-10
+- item: sprichst-du
+  from: A1-10
+- item: oder-lieber
+  from: A1-10
+- item: ich-lerne
+  from: A1-10
+- item: auf-deutsch
+  from: A1-10
+- item: langsam
+  from: A1-10
+- item: klar
+  from: A1-10
+- item: auch
+  from: A1-03
+steps:
+- type: narrator
+  text:
+    en: Your first lecture. You find the hall at ten to eight — and Jonas is in your course. Listen to the conversation; you don't need to understand it yet.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Entschuldigung, ist das der Hörsaal drei?
+    meaning:
+      en: Excuse me, is this lecture hall three?
+  - speaker: jonas
+    text: Ja! Du auch hier? Die Vorlesung beginnt um acht.
+    meaning:
+      en: Yes! You're here too? The lecture begins at eight.
+  - speaker: protagonist
+    text: Um acht? Es ist schon zehn vor acht!
+    meaning:
+      en: At eight? It's already ten to eight!
+  - speaker: jonas
+    text: Genau, wir müssen pünktlich sein. Komm, setz dich!
+    meaning:
+      en: Exactly, we have to be on time. Come on, sit down!
+  - speaker: protagonist
+    text: Muss ich mich für den Kurs anmelden?
+    meaning:
+      en: Do I have to register for the course?
+  - speaker: jonas
+    text: Ja, online. Und für die Prüfung auch.
+    meaning:
+      en: Yes, online. And for the exam too.
+  - speaker: protagonist
+    text: Und die Folien?
+    meaning:
+      en: And the slides?
+  - speaker: jonas
+    text: Die Folien sind online, im Portal.
+    meaning:
+      en: The slides are online, in the portal.
+  - speaker: protagonist
+    text: Okay. Ich muss viel lernen!
+    meaning:
+      en: OK. I have to study a lot!
+- type: prompt
+  ask:
+    en: 'Ask: is this lecture hall three?'
+  answer:
+    speaker: protagonist
+    text: Ist das der Hörsaal drei?
+  items:
+  - der-hoersaal
+- type: prompt
+  ask:
+    en: 'Say: the lecture begins at eight.'
+  answer:
+    speaker: protagonist
+    text: Die Vorlesung beginnt um acht.
+  items:
+  - die-vorlesung
+  - beginnt
+- type: narrator
+  text:
+    en: '«müssen» — have to: «ich muss», «du musst», «wir müssen». The second verb goes to the end: «Wir müssen pünktlich sein».'
+- type: prompt
+  ask:
+    en: 'Say: we have to be on time.'
+  answer:
+    speaker: protagonist
+    text: Wir müssen pünktlich sein.
+  items:
+  - wir-muessen
+  - puenktlich
+- type: prompt
+  ask:
+    en: 'Jonas says: sit down!'
+  answer:
+    speaker: protagonist
+    text: Setz dich!
+  items:
+  - setz-dich
+- type: prompt
+  ask:
+    en: 'Ask: do I have to register?'
+  answer:
+    speaker: protagonist
+    text: Muss ich mich anmelden?
+  items:
+  - muss-ich
+  - mich-anmelden
+- type: prompt
+  ask:
+    en: 'Say: online.'
+  answer:
+    speaker: protagonist
+    text: Online.
+  items:
+  - online
+- type: prompt
+  ask:
+    en: 'Say: and for the exam too.'
+  answer:
+    speaker: protagonist
+    text: Und für die Prüfung auch.
+  items:
+  - die-pruefung
+  - auch
+- type: prompt
+  ask:
+    en: 'Ask: and the slides?'
+  answer:
+    speaker: protagonist
+    text: Und die Folien?
+  items:
+  - die-folien
+- type: prompt
+  ask:
+    en: 'Say: I have to study a lot!'
+  answer:
+    speaker: protagonist
+    text: Ich muss viel lernen!
+  items:
+  - viel-lernen
+- type: narrator
+  text:
+    en: Students are seated before the hour; walking in late is noticed. You register yourself, online, for courses and for each exam — nobody does it for you, and deadlines are firm. Exam rules are in
+      your programme's regulations (Prüfungsordnung).
+- type: prompt
+  ask:
+    en: 'Once more: say “the lecture hall”.'
+  answer:
+    speaker: protagonist
+    text: der Hörsaal
+  items:
+  - der-hoersaal
+- type: prompt
+  ask:
+    en: 'Once more: say “the lecture”.'
+  answer:
+    speaker: protagonist
+    text: die Vorlesung
+  items:
+  - die-vorlesung
+- type: prompt
+  ask:
+    en: 'Once more: say “begins”.'
+  answer:
+    speaker: protagonist
+    text: beginnt
+  items:
+  - beginnt
+- type: prompt
+  ask:
+    en: 'Once more: say “we have to”.'
+  answer:
+    speaker: protagonist
+    text: wir müssen
+  items:
+  - wir-muessen
+- type: prompt
+  ask:
+    en: 'Once more: say “on time”.'
+  answer:
+    speaker: protagonist
+    text: pünktlich
+  items:
+  - puenktlich
+- type: prompt
+  ask:
+    en: 'Once more: say “Sit down! (informal)”.'
+  answer:
+    speaker: protagonist
+    text: Setz dich!
+  items:
+  - setz-dich
+- type: prompt
+  ask:
+    en: 'Once more: say “Do I have to …?”.'
+  answer:
+    speaker: protagonist
+    text: Muss ich …?
+  items:
+  - muss-ich
+- type: prompt
+  ask:
+    en: 'Once more: say “online”.'
+  answer:
+    speaker: protagonist
+    text: online
+  items:
+  - online
+- type: prompt
+  ask:
+    en: 'Once more: say “the exam”.'
+  answer:
+    speaker: protagonist
+    text: die Prüfung
+  items:
+  - die-pruefung
+- type: prompt
+  ask:
+    en: 'Once more: say “the slides”.'
+  answer:
+    speaker: protagonist
+    text: die Folien
+  items:
+  - die-folien
+- type: prompt
+  ask:
+    en: 'Once more: say “study a lot”.'
+  answer:
+    speaker: protagonist
+    text: viel lernen
+  items:
+  - viel-lernen
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “you are (informal) — and “upstairs — and “And you? (informal) — and “on the second floor — and “How are you? (informal) — and “And you? (after ''how are you'') — and “Do you speak …? (informal)”.'
+  answer:
+    speaker: protagonist
+    text: du bist … oben … Und du? … im zweiten Stock … Wie geht's? … Und dir? … Sprichst du …?
+  items:
+  - du-bist
+  - oben
+  - und-du
+  - im-zweiten-stock
+  - wie-gehts
+  - und-dir
+  - sprichst-du
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “or would you rather …? — and “I''m learning — and “in German — and “slowly — and “Sure! Of course! — and “does … go? — and “to the main station”.'
+  answer:
+    speaker: protagonist
+    text: oder lieber …? … ich lerne … auf Deutsch … langsam … Klar! … fährt …? … zum Hauptbahnhof
+  items:
+  - oder-lieber
+  - ich-lerne
+  - auf-deutsch
+  - langsam
+  - klar
+  - faehrt
+  - zum-hauptbahnhof
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “change (trains, buses) — and “the tram — and “the stop — and “over there — and “the ticket — and “with the app — and “get on”.'
+  answer:
+    speaker: protagonist
+    text: umsteigen … die Straßenbahn … die Haltestelle … da drüben … die Fahrkarte … mit der App … steigen … ein
+  items:
+  - umsteigen
+  - die-strassenbahn
+  - die-haltestelle
+  - da-drueben
+  - die-fahrkarte
+  - mit-der-app
+  - einsteigen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “at the back — and “the pram, the stroller — and “get off — and “an appointment — and “I''d like — and “the form — and “the landlord''s confirmation”.'
+  answer:
+    speaker: protagonist
+    text: hinten … der Kinderwagen … steige … aus … einen Termin … ich möchte … das Formular … die Wohnungsgeberbestätigung
+  items:
+  - hinten
+  - der-kinderwagen
+  - aussteigen
+  - einen-termin
+  - ich-moechte
+  - das-formular
+  - die-wgb
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Where do you live? (polite) — and “Which …? (feminine) — and “religion — and “Why? — and “neither — and “church tax — and “done, finished”.'
+  answer:
+    speaker: protagonist
+    text: Wo wohnen Sie? … Welche …? … die Religion … Warum? … keins von beiden … die Kirchensteuer … fertig
+  items:
+  - wo-wohnen-sie
+  - welche
+  - die-religion
+  - warum
+  - keins-von-beiden
+  - die-kirchensteuer
+  - fertig
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Is that it? — and “Have a nice day!”.'
+  answer:
+    speaker: protagonist
+    text: Das war's? … Schönen Tag noch!
+  items:
+  - das-wars
+  - schoenen-tag-noch
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+- type: dialogue
+  again: true
+- type: selfcheck

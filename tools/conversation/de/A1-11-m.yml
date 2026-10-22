@@ -1,0 +1,493 @@
+# UNIT de A1-11-m — written by AI (Claude) for Casus; expanded from src/A1-11-m.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-11-m
+level: A1
+number: 11
+protagonist: f
+tracks:
+- mk
+title:
+  mk: Пријателите
+situation:
+  mk: Родителите на Ања доаѓаат на кафе кај Петар. Прв пат ги запознавате пријателите — сватовите.
+learn_lessons:
+- a1-modal-muessen
+culture: Kaffee und Kuchen
+new_items:
+- id: schoen-kennenzulernen
+  text: Schön, Sie kennenzulernen
+  meaning:
+    mk: Мило ми е што ве запознав
+- id: ich-spreche
+  text: ich spreche
+  meaning:
+    mk: зборувам
+- id: nur
+  text: nur
+  meaning:
+    mk: само
+- id: moechten-sie
+  text: Möchten Sie …?
+  meaning:
+    mk: Сакате ли …? (учтиво)
+- id: ja-gern
+  text: Ja, gern
+  meaning:
+    mk: Да, со задоволство
+- id: ein-stueck
+  text: ein Stück
+  meaning:
+    mk: парче
+- id: der-kuchen
+  text: der Kuchen
+  meaning:
+    mk: колачот
+- id: selbst-gemacht
+  text: selbst gemacht
+  meaning:
+    mk: домашен, сам направен
+- id: lecker
+  text: lecker
+  meaning:
+    mk: вкусно
+- id: wie-lange
+  text: Wie lange …?
+  meaning:
+    mk: Колку долго …?
+- id: bleiben
+  text: bleiben
+  meaning:
+    mk: останувате
+- id: ich-muss
+  text: ich muss
+  meaning:
+    mk: морам
+- id: oft
+  text: oft
+  meaning:
+    mk: често
+reviews:
+- item: einen-termin
+  from: A1-04
+- item: ich-moechte
+  from: A1-04
+- item: mich-anmelden
+  from: A1-04
+- item: das-formular
+  from: A1-04
+- item: die-wgb
+  from: A1-04
+- item: wo-wohnen-sie
+  from: A1-04
+- item: welche
+  from: A1-04
+- item: die-religion
+  from: A1-04
+- item: warum
+  from: A1-04
+- item: keins-von-beiden
+  from: A1-04
+- item: die-kirchensteuer
+  from: A1-04
+- item: fertig
+  from: A1-04
+- item: das-wars
+  from: A1-04
+- item: schoenen-tag-noch
+  from: A1-04
+- item: faehrt
+  from: A1-08
+- item: zum-hauptbahnhof
+  from: A1-08
+- item: umsteigen
+  from: A1-08
+- item: die-strassenbahn
+  from: A1-08
+- item: die-haltestelle
+  from: A1-08
+- item: da-drueben
+  from: A1-08
+- item: die-fahrkarte
+  from: A1-08
+- item: mit-der-app
+  from: A1-08
+- item: einsteigen
+  from: A1-08
+- item: hinten
+  from: A1-08
+- item: der-kinderwagen
+  from: A1-08
+- item: aussteigen
+  from: A1-08
+- item: du-bist
+  from: A1-10
+- item: oben
+  from: A1-10
+- item: und-du
+  from: A1-10
+- item: im-zweiten-stock
+  from: A1-10
+- item: wie-gehts
+  from: A1-10
+- item: und-dir
+  from: A1-10
+- item: sprichst-du
+  from: A1-10
+- item: oder-lieber
+  from: A1-10
+- item: ich-lerne
+  from: A1-10
+- item: auf-deutsch
+  from: A1-10
+- item: langsam
+  from: A1-10
+- item: klar
+  from: A1-10
+- item: ein-bisschen
+  from: A1-01
+steps:
+- type: narrator
+  text:
+    mk: Родителите на Ања доаѓаат на кафе кај Петар. Прв пат ги запознавате пријателите — сватовите. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: anja
+    text: Mama, Papa — das ist Petars Mutter!
+    meaning:
+      mk: Мамо, тато — ова е мајката на Петар!
+  - speaker: frauwolf
+    text: Guten Tag! Schön, Sie kennenzulernen.
+    meaning:
+      mk: Добар ден! Мило ми е што ве запознав.
+  - speaker: protagonist
+    text: Guten Tag. Freut mich. Ich spreche nur ein bisschen Deutsch.
+    meaning:
+      mk: Добар ден. Мило ми е. Зборувам само малку германски.
+  - speaker: herrwolf
+    text: Kein Problem! Möchten Sie Kaffee?
+    meaning:
+      mk: Нема проблем! Сакате ли кафе?
+  - speaker: protagonist
+    text: Ja, gern.
+    meaning:
+      mk: Да, со задоволство.
+  - speaker: frauwolf
+    text: Und ein Stück Kuchen? Der Kuchen ist selbst gemacht.
+    meaning:
+      mk: И парче колач? Колачот е домашен.
+  - speaker: protagonist
+    text: Danke. Sehr lecker!
+    meaning:
+      mk: Благодарам. Многу вкусно!
+  - speaker: herrwolf
+    text: Wie lange bleiben Sie in Leipzig?
+    meaning:
+      mk: Колку долго останувате во Лајпциг?
+  - speaker: protagonist
+    text: Drei Monate. Im Mai muss ich zurück.
+    meaning:
+      mk: Три месеци. Во мај морам да се вратам.
+  - speaker: frauwolf
+    text: Dann müssen wir uns oft sehen!
+    meaning:
+      mk: Тогаш мора често да се гледаме!
+- type: prompt
+  ask:
+    mk: 'Таа вели: мило ми е што ве запознав.'
+  answer:
+    speaker: protagonist
+    text: Schön, Sie kennenzulernen.
+  items:
+  - schoen-kennenzulernen
+- type: prompt
+  ask:
+    mk: 'Кажете: зборувам само малку германски.'
+  answer:
+    speaker: protagonist
+    text: Ich spreche nur ein bisschen Deutsch.
+  items:
+  - ich-spreche
+  - nur
+  - ein-bisschen
+- type: prompt
+  ask:
+    mk: Тој ве прашува дали сакате кафе. Како?
+  answer:
+    speaker: protagonist
+    text: Möchten Sie Kaffee?
+  items:
+  - moechten-sie
+- type: prompt
+  ask:
+    mk: 'Одговорете: да, со задоволство.'
+  answer:
+    speaker: protagonist
+    text: Ja, gern.
+  items:
+  - ja-gern
+- type: narrator
+  text:
+    mk: Германскиот домаќин нуди еднаш. „Не, благодарам“ од учтивост значи — не. Ако сакате, кажете веднаш «Ja, gern».
+- type: prompt
+  ask:
+    mk: Таа нуди парче колач.
+  answer:
+    speaker: protagonist
+    text: Ein Stück Kuchen?
+  items:
+  - ein-stueck
+  - der-kuchen
+- type: prompt
+  ask:
+    mk: 'Кажете: колачот е домашен.'
+  answer:
+    speaker: protagonist
+    text: Der Kuchen ist selbst gemacht.
+  items:
+  - selbst-gemacht
+- type: prompt
+  ask:
+    mk: 'Пофалете: многу вкусно!'
+  answer:
+    speaker: protagonist
+    text: Sehr lecker!
+  items:
+  - lecker
+- type: prompt
+  ask:
+    mk: Тој прашува колку долго останувате.
+  answer:
+    speaker: protagonist
+    text: Wie lange bleiben Sie?
+  items:
+  - wie-lange
+  - bleiben
+- type: narrator
+  text:
+    mk: '«müssen» — мора: «ich muss», «wir müssen». Вториот глагол оди на крајот: «Wir müssen uns oft sehen».'
+- type: prompt
+  ask:
+    mk: 'Кажете: во мај морам да се вратам.'
+  answer:
+    speaker: protagonist
+    text: Im Mai muss ich zurück.
+  items:
+  - ich-muss
+- type: prompt
+  ask:
+    mk: 'Таа вели: тогаш мора често да се гледаме!'
+  answer:
+    speaker: protagonist
+    text: Dann müssen wir uns oft sehen!
+  items:
+  - oft
+- type: narrator
+  text:
+    mk: '«Kaffee und Kuchen» е попладневен ритуал, околу три-четири часот: кафе, колач, разговор — еден час, не цело попладне. Не носете храна неповикано; цвеќе или чоколадо е доволно.'
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „Мило ми е што ве запознав“.'
+  answer:
+    speaker: protagonist
+    text: Schön, Sie kennenzulernen
+  items:
+  - schoen-kennenzulernen
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „зборувам“.'
+  answer:
+    speaker: protagonist
+    text: ich spreche
+  items:
+  - ich-spreche
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „само“.'
+  answer:
+    speaker: protagonist
+    text: nur
+  items:
+  - nur
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „Сакате ли …? (учтиво)“.'
+  answer:
+    speaker: protagonist
+    text: Möchten Sie …?
+  items:
+  - moechten-sie
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „Да, со задоволство“.'
+  answer:
+    speaker: protagonist
+    text: Ja, gern
+  items:
+  - ja-gern
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „парче“.'
+  answer:
+    speaker: protagonist
+    text: ein Stück
+  items:
+  - ein-stueck
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „колачот“.'
+  answer:
+    speaker: protagonist
+    text: der Kuchen
+  items:
+  - der-kuchen
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „домашен, сам направен“.'
+  answer:
+    speaker: protagonist
+    text: selbst gemacht
+  items:
+  - selbst-gemacht
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „вкусно“.'
+  answer:
+    speaker: protagonist
+    text: lecker
+  items:
+  - lecker
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „Колку долго …?“.'
+  answer:
+    speaker: protagonist
+    text: Wie lange …?
+  items:
+  - wie-lange
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „останувате“.'
+  answer:
+    speaker: protagonist
+    text: bleiben
+  items:
+  - bleiben
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „морам“.'
+  answer:
+    speaker: protagonist
+    text: ich muss
+  items:
+  - ich-muss
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „често“.'
+  answer:
+    speaker: protagonist
+    text: oft
+  items:
+  - oft
+- type: narrator
+  text:
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „ти си“ — и „горе“ — и „А ти?“ — и „на вториот кат“ — и „Како си?“ — и „А ти?“.'
+  answer:
+    speaker: protagonist
+    text: du bist … oben … Und du? … im zweiten Stock … Wie geht's? … Und dir?
+  items:
+  - du-bist
+  - oben
+  - und-du
+  - im-zweiten-stock
+  - wie-gehts
+  - und-dir
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „Зборуваш ли …?“ — и „или повеќе сакаш …?“ — и „учам“ — и „на германски“ — и „полека“ — и „Секако!“.'
+  answer:
+    speaker: protagonist
+    text: Sprichst du …? … oder lieber …? … ich lerne … auf Deutsch … langsam … Klar!
+  items:
+  - sprichst-du
+  - oder-lieber
+  - ich-lerne
+  - auf-deutsch
+  - langsam
+  - klar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „оди ли …?“ — и „до главната станица“ — и „да се префрлите“ — и „трамвајот“ — и „станицата“ — и „таму преку“.'
+  answer:
+    speaker: protagonist
+    text: fährt …? … zum Hauptbahnhof … umsteigen … die Straßenbahn … die Haltestelle … da drüben
+  items:
+  - faehrt
+  - zum-hauptbahnhof
+  - umsteigen
+  - die-strassenbahn
+  - die-haltestelle
+  - da-drueben
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „билетот“ — и „со апликацијата“ — и „се качувате“ — и „назад, позади“ — и „количката“ — и „се симнувам“.'
+  answer:
+    speaker: protagonist
+    text: die Fahrkarte … mit der App … steigen … ein … hinten … der Kinderwagen … steige … aus
+  items:
+  - die-fahrkarte
+  - mit-der-app
+  - einsteigen
+  - hinten
+  - der-kinderwagen
+  - aussteigen
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „термин“ — и „би сакал“ — и „да се пријавам“ — и „формуларот“ — и „потврдата од сопственикот на станот“ — и „Каде живеете?“.'
+  answer:
+    speaker: protagonist
+    text: einen Termin … ich möchte … mich anmelden … das Formular … die Wohnungsgeberbestätigung … Wo wohnen Sie?
+  items:
+  - einen-termin
+  - ich-moechte
+  - mich-anmelden
+  - das-formular
+  - die-wgb
+  - wo-wohnen-sie
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „Која …?“ — и „вероисповеста“ — и „Зошто?“ — и „ниту едно ниту друго“ — и „црковниот данок“ — и „готово“.'
+  answer:
+    speaker: protagonist
+    text: Welche …? … die Religion … Warum? … keins von beiden … die Kirchensteuer … fertig
+  items:
+  - welche
+  - die-religion
+  - warum
+  - keins-von-beiden
+  - die-kirchensteuer
+  - fertig
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „Толку ли беше?“ — и „Убав ден!“.'
+  answer:
+    speaker: protagonist
+    text: Das war's? … Schönen Tag noch!
+  items:
+  - das-wars
+  - schoenen-tag-noch
+- type: narrator
+  text:
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck
