@@ -97,6 +97,7 @@ export default {
   'quiz.wrong': 'Не баш — тоа е: {expected}', 'quiz.literal': 'збор по збор', 'quiz.literally': 'буквално', 'quiz.also': 'исто така', 'quiz.noteBy': 'белешка напишана за Casus', 'quiz.wikiSource': '(Википедија: {title})',
   'cheat.word': 'збор', 'cheat.meaning': 'значење', 'cheat.phrase': 'израз', 'cheat.small': 'мала', 'cheat.capital': 'голема', 'cheat.name': 'име', 'cheat.sound': 'глас',
   'drills.language': 'Јазик', 'drills.letters': 'Букви', 'drills.nouns': 'Именски наставки', 'drills.verbs': 'Глаголски наставки',
+  'proof.legend.label': 'Боја на секое подвлекување:', 'proof.layout.period': 'Недостига точка на крајот од реченицата.', 'proof.layout.capital': 'Новата реченица почнува со голема буква.',
   'drills.pick': 'Изберете вежба', 'level.pick': 'Изберете ниво', 'settings.open': 'Поставки', 'nav.learnTarget': 'Јазик што го учите', 'nav.learningIn': 'Учите на',
   'drills.letters.hint': 'Научи ја азбуката: напиши го гласот (или името) на секоја буква.',
   'drills.nouns.hint': 'Целата деклинација на моделен збор со празни полиња: пополни ги по било кој ред. Enter или излегување од полето го проверува.',

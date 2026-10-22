@@ -37,7 +37,7 @@ describe('LanguageBar', () => {
     expect(container.querySelector('nav.sites .site.here').dataset.site).toBe('casus');
   });
   it('on a phone the views fold into one button too (Allan, 2026-10-22): the same links, the current one on the button', () => {
-    const { container } = render(LanguageBar, { current: 'grc', view: 'learn', parts: ['views'] });
+    const { container } = render(LanguageBar, { current: 'grc', view: 'learn', parts: ['viewfold'] });
     const picker = container.querySelector('details.view-picker');
     expect(picker).not.toBe(null);
     expect(picker.querySelector('summary').textContent).toMatch(/Learn/);

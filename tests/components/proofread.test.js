@@ -38,6 +38,33 @@ describe('Proofreading (Allan, 2026-10-19: one box, marks as you type, colours, 
     expect(storage.getItem('casus:input:pt')).toBe('Ontem eu vi as casa ali.');
     expect([...container.querySelectorAll('.backdrop mark')].map((m) => m.textContent)).toEqual(['as casa']);
   });
+  it('flags a missing full stop and a lower-case start after a line break, which the grammar engine misses (Allan, 2026-10-22)', async () => {
+    const storage = store();
+    storage.setItem('casus:input:pt', 'Eu moro em Leipzig\nminha casa é pequena');
+    const { container } = render(Proofread, props(storage));
+    await flush();
+    expect([...container.querySelectorAll('.backdrop mark')].map((m) => [m.textContent, m.dataset.type])).toEqual([['Leipzig', 'punctuation'], ['minha', 'casing'], ['pequena', 'punctuation']]);
+  });
+  it('an engine mark that runs across a line break we read as a sentence end is dropped, ours stay (LanguageTool suggested a comma there)', async () => {
+    const storage = store();
+    const text = 'Ich wohne in Leipzig\nmeine Wohnung ist klein.';
+    storage.setItem('casus:input:de', text);
+    const across = async () => ({ engine: 'public', issues: [{ kind: 'grammar', offset: 4, length: 34, message: 'Komma?', replacements: [], rule: 'KOMMA', categoryId: 'PUNCTUATION' }] });
+    const { container } = render(Proofread, props(storage, { lang: getLanguage('de'), checkGrammar: across }));
+    await flush();
+    expect([...container.querySelectorAll('.backdrop mark')].map((m) => [m.textContent, m.dataset.type])).toEqual([['Leipzig', 'punctuation'], ['meine', 'casing']]);
+  });
+  it('the colour key says it is one, with a count for each kind (Allan, 2026-10-22: "what is that row?")', async () => {
+    const storage = store();
+    storage.setItem('casus:input:pt', 'Eu vi as casa e nao sabia , ontem.');
+    const { container } = render(Proofread, props(storage));
+    await flush();
+    const key = container.querySelector('.legend');
+    expect(key.querySelector('.legend-label').textContent).toMatch(/colou?r/i);
+    expect(key.querySelector('.key[data-type=spelling] .n').textContent).toBe('1');
+    expect(key.querySelector('.key[data-type=grammar] .n').textContent).toBe('1');
+    expect(key.querySelector('.key[data-type=style] .n').textContent).toBe('0');
+  });
   it('a click on a marked word opens its corrections; one click swaps it', async () => {
     const storage = store();
     storage.setItem('casus:input:pt', 'Eu vi as casa e nao sabia.');

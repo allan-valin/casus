@@ -2,7 +2,7 @@
   /* One button that shows the current choice and opens the list of choices (Allan, 2026-10-22: drill types, Learn and
    * Conversation levels took several rows on a phone). A native <details>, so the choices stay in the page and work
    * without script; picking one, or clicking anywhere outside, closes it. */
-  let { label, cls = '', title = '', children } = $props();
+  let { label = '', head = null, cls = '', title = '', children } = $props();
   let box;
   function pick(e) { if (e.target.closest('button, a')) box.open = false; }
   $effect(() => {
@@ -13,7 +13,7 @@
 </script>
 
 <details class="picker {cls}" bind:this={box}>
-  <summary {title}><span class="picker-label">{label}</span> <span class="caret" aria-hidden="true">▾</span></summary>
+  <summary {title}><span class="picker-label">{#if head}{@render head()}{:else}{label}{/if}</span> <span class="caret" aria-hidden="true">▾</span></summary>
   <!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
   <div class="menu" onclick={pick}>{@render children()}</div>
 </details>

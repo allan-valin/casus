@@ -9,6 +9,7 @@
   import { checkGrammar as defaultCheckGrammar, LT_CODE } from '../../lib/proof/grammar.js';
   import { mergeIssues } from '../../lib/proof/merge.js';
   import { typeOf, corrected, shiftIssues } from '../../lib/proof/correct.js';
+  import { layoutIssues } from '../../lib/proof/layout.js';
   import { readTextFile, ACCEPT } from '../lib/upload.js';
   let { lang, storage = null, fetchImpl, say = () => {}, loadSpeller = defaultLoadSpeller, checkGrammar = defaultCheckGrammar, toReader = null,
     schedule = (fn, ms) => setTimeout(fn, ms), cancel = (id) => clearTimeout(id),
@@ -75,7 +76,7 @@
 
   async function check() {
     const snapshot = text;
-    if (!snapshot.trim() || (!hasSpell && !hasGrammar)) { issues = []; return; }
+    if (!snapshot.trim()) { issues = []; return; }
     const mine = ++seq;
     busy = true;
     try {
@@ -85,7 +86,14 @@
       ]);
       if (mine !== seq) return;                         // a newer check is on its way
       grammarEngine = gr.engine;
-      const found = mergeIssues(sp, gr.issues).map((i) => ({ ...i, type: typeOf(i) }));
+      // sentence ends the grammar engine does not see: a line break, a paragraph without its full stop (Allan, 2026-10-22)
+      // the engine read across those line breaks as one sentence (it suggested a comma there): its marks spanning a
+      // sentence end we found go; where it marks the same word on its own, its mark wins
+      const lines = layoutIssues(snapshot, { code: lang.code, messages: { period: t('proof.layout.period'), capital: t('proof.layout.capital') } });
+      const ends = lines.filter((l) => l.rule === 'CASUS_LINE_END').map((l) => l.offset + l.length);
+      const engine = gr.issues.filter((g) => !ends.some((e) => g.offset < e && g.offset + g.length > e));
+      const own = lines.filter((l) => !engine.some((g) => l.offset < g.offset + g.length && g.offset < l.offset + l.length));
+      const found = mergeIssues(sp, [...engine, ...own].sort((a, b) => a.offset - b.offset)).map((i) => ({ ...i, type: typeOf(i) }));
       // typed on meanwhile: place the marks in the new text
       issues = (text === snapshot ? found : shiftIssues(snapshot, text, found)).filter((i) => !ignored.has(`${i.rule ?? i.word ?? ''}:${text.slice(i.offset, i.offset + i.length)}`));
       say('act.proof.done', { n: issues.length });
@@ -161,7 +169,8 @@
     <label class="upload" title={t('picker.upload.title')}>{t('picker.upload')}<input type="file" accept={ACCEPT} onchange={upload}></label>
     {#if hasGrammar}<label title={t('proof.public.title')}><input type="checkbox" bind:checked={allowPublic} onchange={() => put('casus:proof:public', allowPublic ? 'on' : 'off')}> {t('proof.public')}</label>{/if}
   </div>
-  <div class="legend" aria-label={t('proof.legend')}>{#each TYPES as ty}<span class="key" data-type={ty}><i></i>{t(`proof.type.${ty}`)}</span>{/each}</div>
+  <!-- the colour key, said as one, with how many of each (Allan, 2026-10-22: "what is that row supposed to be?") -->
+  <div class="legend" aria-label={t('proof.legend')}><span class="legend-label">{t('proof.legend.label')}</span>{#each TYPES as ty}<span class="key" data-type={ty}><i></i>{t(`proof.type.${ty}`)} <span class="n">{issues.filter((i) => i.type === ty).length}</span></span>{/each}</div>
 
   <div class="grid">
     <div class="left">
@@ -213,7 +222,9 @@
   .proof { --c-spelling: #d62728; --c-grammar: #1f77b4; --c-punctuation: #ff7f0e; --c-style: #9467bd; --c-casing: #17a398; }
   .engines { color: var(--ink-2); font-size: 0.9em; margin: 0 0 6px; }
   .bar { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin: 6px 0; }
-  .legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 0.85em; color: var(--ink-2); margin-bottom: 6px; }
+  .legend { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; font-size: 0.85em; color: var(--ink-2); margin-bottom: 6px; }
+  .legend-label { font-weight: 700; }
+  .legend .n { display: inline-block; min-width: 1.4em; padding: 0 5px; border-radius: 999px; background: var(--line); color: var(--ink); text-align: center; font-variant-numeric: tabular-nums; }
   .key i { display: inline-block; width: 18px; height: 0; border-bottom: 3px wavy currentColor; margin-right: 5px; vertical-align: middle; }
   .key[data-type=spelling] i, .issue[data-type=spelling] .tag { color: var(--c-spelling); border-color: var(--c-spelling); }
   .key[data-type=grammar] i, .issue[data-type=grammar] .tag { color: var(--c-grammar); border-color: var(--c-grammar); }

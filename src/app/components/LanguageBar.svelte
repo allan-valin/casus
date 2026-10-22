@@ -25,7 +25,9 @@
 <!-- the other two sites (Allan, 2026-10-19: one codebase, three sites) -->
 {#if parts.includes('sites')}<nav class="sites" aria-label={t('nav.sites')} style:--site-here={SITE_LOOK[SITE.id]?.colour}>
   <!-- folded: the current site on the button, the other two in its menu (Allan, 2026-10-22) -->
-  <Picker cls="site-picker" label={`${SITE_LOOK[SITE.id]?.mark ?? ''} ${SITE.title}`} title={t('nav.sites')}>
+  <!-- on a phone only the site's mark and the arrow (Allan, 2026-10-22: one line for site, view, level and gear) -->
+  <Picker cls="site-picker" title={t('nav.sites')}>
+    {#snippet head()}<span aria-hidden="true">{SITE_LOOK[SITE.id]?.mark ?? ''}</span> <span class="site-name">{SITE.title}</span>{/snippet}
     {#each Object.values(SITES) as s (s.id)}{#if s.id === SITE.id}<span class="site here" data-site={s.id} style:--site={SITE_LOOK[s.id]?.colour}><span class="site-mark" aria-hidden="true">{SITE_LOOK[s.id]?.mark}</span>{s.title}</span>{:else}<a class="site" data-site={s.id} style:--site={SITE_LOOK[s.id]?.colour} href={siteUrl(s.languages[0])}><span class="site-mark" aria-hidden="true">{SITE_LOOK[s.id]?.mark}</span>{s.title}</a>{/if}{/each}
   </Picker>
 </nav>{/if}
@@ -38,7 +40,7 @@
   <a data-view="proof" href={withBase(proofPath(here))} aria-current={view === 'proof' ? 'page' : undefined}>{t('nav.proof')}</a>
 </nav>{/if}
 <!-- on a phone the views fold into one button showing the current one (Allan, 2026-10-22) -->
-{#if parts.includes('views')}<div class="view-fold">
+{#if parts.includes('viewfold')}<div class="view-fold">
   <Picker cls="view-picker" label={t(VIEW_KEY[view] ?? 'nav.reader')} title={t('nav.views')}>
   <a data-view="reader" href={withBase(here.path)} aria-current={view === 'reader' ? 'page' : undefined}>{t('nav.reader')}</a>
   <a data-view="drills" href={withBase(drillsPath(here))} aria-current={view === 'drills' ? 'page' : undefined}>{t('nav.game')}</a>
@@ -70,5 +72,7 @@
   .view-fold { display: none; }
   .view-fold :global(a) { display: block; padding: 8px 12px; color: var(--ink); text-decoration: none; font-weight: 600; }
   .view-fold :global(a[aria-current=page]) { background: var(--accent); color: var(--accent-ink); }
-  @media (max-width: 560px) { .views { display: none; } .view-fold { display: block; } }
+  .view-fold :global(summary) { max-width: 46vw; }
+  .view-fold :global(.picker-label) { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  @media (max-width: 560px) { .view-fold { display: block; } .sites :global(.site-name) { display: none; } }
 </style>

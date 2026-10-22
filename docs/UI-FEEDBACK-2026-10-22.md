@@ -14,9 +14,9 @@
 7. [x] Conversation: levels condensed the same way.
 8. [x] Question: Learn felt like a full page reload when opening a lesson, Conversation instant. Answer + fix if real
        (first load fetches learn.json + lesson file; Conversation loads one course file once).
-9. [ ] Proofreading: the row "spelling grammar punctuation style capitals" between the text box and the checkboxes —
+9. [x] Proofreading: the row "spelling grammar punctuation style capitals" between the text box and the checkboxes —
        explain it / make it clear.
-10. [ ] Proofreading (German): missing final full stop not flagged; a line break followed by lower case not flagged
+10. [x] Proofreading (German): missing final full stop not flagged; a line break followed by lower case not flagged
        (needs "." above and capital below).
 11. [ ] Japanese conversation: furigana over kanji and romaji below, as elsewhere on the site.
 12. [x] "fold the 3 casus too": the sites are one button, the other two in its menu.
@@ -26,3 +26,8 @@
 Answer to 8: Conversation downloads the whole course once (5.6 MB for German), so every unit is instant after that;
 Learn fetched each lesson (~90 KB) on click and jumped to the top — like a reload the first time, cached the second.
 Now lessons stay in memory and the next/previous ones are fetched ahead.
+15. [x] Phone: site (icon + arrow), view, level and gear on ONE line; the gear shows only ⚙, the "flag → language" line
+       sits at the top of its panel.
+Answer to 9: it is the colour key of the underlines — now labelled "Colour of each underline:" with a count per kind.
+Fix for 10: own check (src/lib/proof/layout.js): paragraph end without "." and line break + lower case → "." above,
+capital below; the engine's marks spanning such a break are dropped (LanguageTool suggested a comma there).

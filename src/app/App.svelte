@@ -234,6 +234,7 @@
     <div class="titlebar">
       <h1 class="visually-hidden">{SITE.title} · {lang.name?.[ui.lang] ?? lang.name?.en ?? ''}</h1>
       <LanguageBar current={lang.code} view={route.view} parts={['sites']} />
+      <LanguageBar current={lang.code} view={route.view} parts={['viewfold']} />
       <div class="corner">
         <ProgressChip {progression} version={xpVersion} {toasts} />
         <details class="settings" bind:this={settingsBox}>
@@ -243,6 +244,7 @@
             <span class="cog" aria-hidden="true">⚙</span>
           </summary>
           <div class="settings-panel">
+            <p class="pair-line">{#if languageFlag(lang.code)}<img class="flag" src={languageFlag(lang.code)} alt="" />{/if}<b>{lang.name?.[ui.lang] ?? lang.name?.en ?? ''}</b> → <b>{UI_NAMES[ui.lang] ?? ui.lang}</b></p>
             <p class="tagline">{t('app.tagline', { language: lang.inText?.[ui.lang] ?? lang.name?.[ui.lang] ?? lang.inText?.en ?? lang.name?.en })}</p>
             <div class="learn-target"><span class="lbl">{t('nav.learnTarget')}</span>
               <LanguageBar current={lang.code} view={route.view} parts={['languages']} />
@@ -366,7 +368,10 @@
   .top { display: flex; flex-direction: column; gap: 8px; }
   .titlebar { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
   .titlebar :global(nav.sites) { margin: 0; }
-  .corner { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; }
+  .corner { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; margin-inline-start: auto; }
+  .titlebar { flex-wrap: nowrap; }
+  .pair-line { margin: 0; display: flex; align-items: center; gap: 6px; font-size: 0.95rem; }
+  .pair-line .flag { width: 22px; height: 16px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,.15); }
   .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .viewbar { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
   .settings { position: relative; }
@@ -407,6 +412,10 @@
   footer { color: var(--muted); font-size: 0.8rem; text-align: center; padding-top: 8px; }
   @media (max-width: 560px) {
     .settings-panel { position: fixed; top: 64px; inset-inline: 12px; width: auto; }
-    .corner :global(.xp-chip .bar) { display: none; }
+    .corner :global(.xp-chip .bar), .corner :global(.xp-chip .streak) { display: none; }
+    .viewbar { display: none; }
+    .gear .lang-pair { display: none; }
+    .gear { padding: 0; width: var(--control-h); justify-content: center; border-radius: 50%; }
+    .titlebar { gap: 6px; }
   }
 </style>
