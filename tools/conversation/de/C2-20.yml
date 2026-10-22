@@ -1,0 +1,783 @@
+# UNIT de C2-20 — written by AI (Claude) for Casus; expanded from src/C2-20.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-20
+level: C2
+number: 20
+protagonist: m
+title:
+  en: A friend in crisis
+  ar: صديق في أزمة
+  mk: Пријател во криза
+situation:
+  en: Jonas has lost his job. He sits on your balcony, silent. You listen — and help without taking over.
+  ar: يوناس فقد عمله. يجلس على شرفتك صامتًا. تستمع — وتساعد دون أن تفرض نفسك.
+  mk: Јонас ја изгуби работата. Седи на вашиот балкон, молчи. Слушате — и помагате без да преземете сè.
+learn_lessons:
+- c2-particles
+culture: Being there
+new_items:
+- id: die-krise
+  text: die Krise
+  meaning:
+    en: the crisis
+    ar: الأزمة
+    mk: кризата
+- id: fuer-dich-da-sein
+  text: Ich bin für dich da
+  meaning:
+    en: I'm here for you
+    ar: أنا هنا من أجلك
+    mk: Тука сум за тебе
+- id: gekuendigt-werden
+  text: gekündigt werden
+  meaning:
+    en: be dismissed
+    ar: يُفصل من العمل
+    mk: да добие отказ
+- id: mal-eben
+  text: erzähl mal
+  meaning:
+    en: (particle) go on, tell me
+    ar: (أداة) هيا، احكِ
+    mk: (честичка) ајде, раскажи
+- id: ja-wohl-c2
+  text: Das ist ja auch hart
+  meaning:
+    en: That really is hard
+    ar: هذا صعب حقًا
+    mk: Тоа навистина е тешко
+- id: schon-c2
+  text: Das wird schon
+  meaning:
+    en: It'll work out
+    ar: ستتحسّن الأمور
+    mk: Ќе се среди
+- id: kopf-hoch
+  text: Kopf hoch!
+  meaning:
+    en: Chin up!
+    ar: ارفع رأسك!
+    mk: Глава горе!
+- id: die-abfindung
+  text: die Abfindung
+  meaning:
+    en: the severance pay
+    ar: تعويض نهاية الخدمة
+    mk: отпремнината
+  rare: true
+- id: ratschlaege
+  text: Ratschläge
+  meaning:
+    en: advice (pieces of)
+    ar: نصائح
+    mk: совети
+- id: einfach-zuhoeren
+  text: einfach zuhören
+  meaning:
+    en: just listen
+    ar: الإصغاء فقط
+    mk: само слушање
+reviews:
+- item: ich-mag
+  from: A2-13
+- item: magst-du
+  from: A2-13
+- item: lieber
+  from: A2-13
+- item: am-liebsten
+  from: A2-13
+- item: die-musik
+  from: A2-13
+- item: der-kuchen-a
+  from: A2-13
+- item: suess
+  from: A2-13
+- item: ich-mag-nicht
+  from: A2-13
+- item: beides-gern
+  from: A2-13
+- item: gern-hoeren
+  from: A2-13
+- item: die-lohnabrechnung-ea
+  from: B2-17-ea
+  for:
+  - en
+  - ar
+- item: brutto-ea
+  from: B2-17-ea
+  for:
+  - en
+  - ar
+- item: netto-ea
+  from: B2-17-ea
+  for:
+  - en
+  - ar
+- item: die-lohnsteuer-ea
+  from: B2-17-ea
+  for:
+  - en
+  - ar
+- item: die-krankenversicherung-ea
+  from: B2-17-ea
+  for:
+  - en
+  - ar
+- item: die-pflegeversicherung-ea
+  from: B2-17-ea
+  for:
+  - en
+  - ar
+- item: die-rentenversicherung-ea
+  from: B2-17-ea
+  for:
+  - en
+  - ar
+- item: die-alv-ea
+  from: B2-17-ea
+  for:
+  - en
+  - ar
+- item: der-arbeitgeberanteil-ea
+  from: B2-17-ea
+  for:
+  - en
+  - ar
+- item: abzueglich-ea
+  from: B2-17-ea
+  for:
+  - en
+  - ar
+- item: aufgrund-ea
+  from: B2-17-ea
+  for:
+  - en
+  - ar
+- item: innerhalb-ea
+  from: B2-17-ea
+  for:
+  - en
+  - ar
+- item: der-kleingarten
+  from: C1-19
+- item: die-hecke
+  from: C1-19
+- item: die-schlichtung
+  from: C1-19
+- item: die-schiedsperson
+  from: C1-19
+- item: das-grundstueck
+  from: C1-19
+- item: die-gartenordnung
+  from: C1-19
+- item: wenngleich
+  from: C1-19
+- item: selbst-wenn
+  from: C1-19
+- item: zurueckschneiden
+  from: C1-19
+- item: die-einigung
+  from: C1-19
+- item: die-bemme
+  from: C2-05
+- item: mir-wir
+  from: C2-05
+- item: ni
+  from: C2-05
+- item: heeme
+  from: C2-05
+- item: ei-verbibbsch
+  from: C2-05
+- item: der-dialektwort
+  from: C2-05
+- item: hochdeutsch-c2
+  from: C2-05
+- item: weich
+  from: C2-05
+- item: gemuetlich-c2
+  from: C2-05
+- item: der-heimatstolz
+  from: C2-05
+- item: die-grenzen
+  from: C2-13
+- item: die-medienzeit
+  from: C2-13
+- item: verwoehnen
+  from: C2-13
+- item: konsequent
+  from: C2-13
+- item: der-trotzanfall
+  from: C2-13
+- item: schon-mal
+  from: C2-13
+- item: halt-eben
+  from: C2-13
+- item: doch-wohl
+  from: C2-13
+- item: die-auszeit
+  from: C2-13
+- item: die-erziehung
+  from: C2-13
+- item: das-klischee-c2
+  from: C2-17
+- item: die-erfahrung-c2
+  from: C2-17
+- item: differenzieren
+  from: C2-17
+- item: pauschalisieren
+  from: C2-17
+- item: das-zitat
+  from: C2-17
+- item: die-schlagzeile
+  from: C2-17
+- item: die-vielfalt
+  from: C2-17
+- item: ich-moechte-betonen
+  from: C2-17
+- item: die-gegenfrage
+  from: C2-17
+- item: autorisieren
+  from: C2-17
+- item: das-ferienhaus
+  from: C2-19
+- item: die-kostenaufteilung
+  from: C2-19
+- item: pro-kopf
+  from: C2-19
+- item: die-gemeinsame-kasse
+  from: C2-19
+- item: waere-es-nicht-fairer
+  from: C2-19
+- item: haetten-wir
+  from: C2-19
+- item: die-app
+  from: C2-19
+- item: abrechnen
+  from: C2-19
+- item: die-ostsee
+  from: C2-19
+- item: grosszuegig
+  from: C2-19
+- item: die-lohnabrechnung-m
+  from: B2-17-m
+  for:
+  - mk
+- item: brutto-m
+  from: B2-17-m
+  for:
+  - mk
+- item: netto-m
+  from: B2-17-m
+  for:
+  - mk
+- item: die-lohnsteuer-m
+  from: B2-17-m
+  for:
+  - mk
+- item: die-krankenversicherung-m
+  from: B2-17-m
+  for:
+  - mk
+- item: die-rentenversicherung-m
+  from: B2-17-m
+  for:
+  - mk
+- item: der-arbeitgeberanteil-m
+  from: B2-17-m
+  for:
+  - mk
+- item: abzueglich-m
+  from: B2-17-m
+  for:
+  - mk
+- item: aufgrund-m
+  from: B2-17-m
+  for:
+  - mk
+- item: waehrend-gen-m
+  from: B2-17-m
+  for:
+  - mk
+- item: die-abgaben-m
+  from: B2-17-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: Jonas has lost his job. He sits on your balcony, silent. You listen — and help without taking over. Listen to the conversation; you don't need to understand it yet.
+    ar: يوناس فقد عمله. يجلس على شرفتك صامتًا. تستمع — وتساعد دون أن تفرض نفسك. استمع إلى المحادثة؛ لا داعي لأن تفهمها الآن.
+    mk: Јонас ја изгуби работата. Седи на вашиот балкон, молчи. Слушате — и помагате без да преземете сè. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Du bist so still. Erzähl mal — was ist los?
+    meaning:
+      en: You're so quiet. Go on, tell me — what's up?
+      ar: أنت صامت جدًا. هيا احكِ — ما الأمر؟
+      mk: Толку си тивок. Ајде, раскажи — што е?
+  - speaker: jonas
+    text: Mir wurde gekündigt. Nach acht Jahren. Die Firma macht dicht.
+    meaning:
+      en: I've been let go. After eight years. The company's shutting down.
+      ar: فُصلتُ من العمل. بعد ثماني سنوات. الشركة تُغلق.
+      mk: Добив отказ. По осум години. Фирмата се затвора.
+  - speaker: protagonist
+    text: Das ist ja auch hart. Und mit Emma und Svenja...
+    meaning:
+      en: That really is hard. And with Emma and Svenja...
+      ar: هذا صعب حقًا. ومع إيما وسفينيا...
+      mk: Тоа навистина е тешко. А со Ема и Свења...
+  - speaker: jonas
+    text: Alle geben mir Ratschläge. Ich will gerade keine Ratschläge.
+    meaning:
+      en: Everyone gives me advice. I don't want advice right now.
+      ar: الجميع يعطونني نصائح. لا أريد نصائح الآن.
+      mk: Сите ми даваат совети. Сега не сакам совети.
+  - speaker: protagonist
+    text: Verstehe. Dann höre ich einfach zu. Ich bin für dich da.
+    meaning:
+      en: I understand. Then I'll just listen. I'm here for you.
+      ar: أفهم. إذن سأصغي فقط. أنا هنا من أجلك.
+      mk: Разбирам. Тогаш само ќе слушам. Тука сум за тебе.
+  - speaker: jonas
+    text: '... Danke. Das tut gut. Ich habe Angst, wieder ganz unten anzufangen.'
+    meaning:
+      en: '... Thanks. That helps. I''m afraid of starting at the bottom again.'
+      ar: '... شكرًا. هذا يريحني. أخاف أن أبدأ من الصفر من جديد.'
+      mk: '... Благодарам. Ова ми прија. Се плашам пак да почнам од најдолу.'
+  - speaker: protagonist
+    text: Das kenne ich. Weißt du noch? Ich habe im Café angefangen. Das wird schon.
+    meaning:
+      en: I know that feeling. Remember? I started in a café. It'll work out.
+      ar: أعرف هذا الشعور. أتذكر؟ بدأتُ في مقهى. ستتحسّن الأمور.
+      mk: Тоа го знам. Се сеќаваш? Јас почнав во кафуле. Ќе се среди.
+  - speaker: jonas
+    text: Du hast recht. Kopf hoch. Morgen gehe ich zur Agentur für Arbeit — heute nur Bier.
+    meaning:
+      en: You're right. Chin up. Tomorrow I'll go to the job agency — today just beer.
+      ar: معك حق. ارفع رأسك. غدًا أذهب إلى وكالة العمل — واليوم البيرة فقط.
+      mk: Во право си. Глава горе. Утре одам во агенцијата за вработување — денес само пиво.
+- type: prompt
+  ask:
+    en: 'Say: go on, tell me.'
+    ar: 'قل: هيا احكِ.'
+    mk: 'Кажете: ајде, раскажи.'
+  answer:
+    speaker: protagonist
+    text: Erzähl mal.
+  items:
+  - mal-eben
+- type: prompt
+  ask:
+    en: 'He says: I''ve been let go.'
+    ar: 'يقول: فُصلتُ من العمل.'
+    mk: 'Тој вели: добив отказ.'
+  answer:
+    speaker: protagonist
+    text: Mir wurde gekündigt.
+  items:
+  - gekuendigt-werden
+- type: narrator
+  text:
+    en: 'Particles of sympathy: «Erzähl mal» (mal — gentle invitation), «Das ist ja auch hart» (ja auch — ''of course it''s hard''), «Das wird schon» (schon — reassurance). They show feeling without big
+      words.'
+    ar: 'أدوات التعاطف: «Erzähl mal» (mal — دعوة لطيفة)، «Das ist ja auch hart» (ja auch — «طبعًا هذا صعب»)، «Das wird schon» (schon — طمأنة). تُظهر الشعور دون كلمات كبيرة.'
+    mk: 'Честички на сочувство: «Erzähl mal» (mal — нежна покана), «Das ist ja auch hart» (ja auch — „се разбира дека е тешко“), «Das wird schon» (schon — уверување). Покажуваат чувство без големи зборови.'
+- type: prompt
+  ask:
+    en: 'Say: that really is hard.'
+    ar: 'قل: هذا صعب حقًا.'
+    mk: 'Кажете: тоа навистина е тешко.'
+  answer:
+    speaker: protagonist
+    text: Das ist ja auch hart.
+  items:
+  - ja-wohl-c2
+- type: prompt
+  ask:
+    en: He doesn't want advice.
+    ar: لا يريد نصائح.
+    mk: Тој не сака совети.
+  answer:
+    speaker: protagonist
+    text: Ich will keine Ratschläge.
+  items:
+  - ratschlaege
+- type: prompt
+  ask:
+    en: 'Say: I''ll just listen.'
+    ar: 'قل: سأصغي فقط.'
+    mk: 'Кажете: само ќе слушам.'
+  answer:
+    speaker: protagonist
+    text: Ich höre einfach zu.
+  items:
+  - einfach-zuhoeren
+- type: prompt
+  ask:
+    en: 'Say: I''m here for you.'
+    ar: 'قل: أنا هنا من أجلك.'
+    mk: 'Кажете: тука сум за тебе.'
+  answer:
+    speaker: protagonist
+    text: Ich bin für dich da.
+  items:
+  - fuer-dich-da-sein
+- type: prompt
+  ask:
+    en: 'Say: it''ll work out.'
+    ar: 'قل: ستتحسّن الأمور.'
+    mk: 'Кажете: ќе се среди.'
+  answer:
+    speaker: protagonist
+    text: Das wird schon.
+  items:
+  - schon-c2
+- type: prompt
+  ask:
+    en: 'Say: chin up!'
+    ar: 'قل: ارفع رأسك!'
+    mk: 'Кажете: глава горе!'
+  answer:
+    speaker: protagonist
+    text: Kopf hoch!
+  items:
+  - kopf-hoch
+- type: prompt
+  ask:
+    en: 'Say: the crisis.'
+    ar: 'قل: الأزمة.'
+    mk: 'Кажете: кризата.'
+  answer:
+    speaker: protagonist
+    text: Die Krise.
+  items:
+  - die-krise
+- type: prompt
+  ask:
+    en: 'Say: severance pay.'
+    ar: 'قل: تعويض نهاية الخدمة.'
+    mk: 'Кажете: отпремнина.'
+  answer:
+    speaker: protagonist
+    text: Die Abfindung.
+  items:
+  - die-abfindung
+- type: narrator
+  text:
+    en: 'When someone is in crisis, listening often helps more than advice. Practical points come later: register with the Agentur für Arbeit within three days of learning about the dismissal, check the
+      notice and any severance offer with a lawyer or union, and don''t sign a termination agreement in a hurry.'
+    ar: 'حين يمرّ أحد بأزمة، الإصغاء غالبًا يساعد أكثر من النصيحة. والأمور العملية تأتي لاحقًا: التسجيل في وكالة العمل خلال ثلاثة أيام من العلم بالفصل، ومراجعة الإنذار وأي عرض تعويض مع محامٍ أو نقابة، وعدم
+      التسرّع في توقيع اتفاق إنهاء.'
+    mk: 'Кога некој е во криза, слушањето често помага повеќе од совет. Практичните работи доаѓаат подоцна: пријава во агенцијата за вработување во рок од три дена откако ќе се дознае за отказот, проверка
+      на отказот и понудата за отпремнина со адвокат или синдикат, и без брзање со потпишување договор за раскинување.'
+- type: prompt
+  ask:
+    en: 'Once more: say “the crisis”.'
+    ar: 'مرة أخرى: قل “الأزمة”.'
+    mk: 'Уште еднаш: кажете „кризата“.'
+  answer:
+    speaker: protagonist
+    text: die Krise
+  items:
+  - die-krise
+- type: prompt
+  ask:
+    en: 'Once more: say “I''m here for you”.'
+    ar: 'مرة أخرى: قل “أنا هنا من أجلك”.'
+    mk: 'Уште еднаш: кажете „Тука сум за тебе“.'
+  answer:
+    speaker: protagonist
+    text: Ich bin für dich da
+  items:
+  - fuer-dich-da-sein
+- type: prompt
+  ask:
+    en: 'Once more: say “be dismissed”.'
+    ar: 'مرة أخرى: قل “يُفصل من العمل”.'
+    mk: 'Уште еднаш: кажете „да добие отказ“.'
+  answer:
+    speaker: protagonist
+    text: gekündigt werden
+  items:
+  - gekuendigt-werden
+- type: prompt
+  ask:
+    en: 'Once more: say “(particle) go on, tell me”.'
+    ar: 'مرة أخرى: قل “(أداة) هيا، احكِ”.'
+    mk: 'Уште еднаш: кажете „(честичка) ајде, раскажи“.'
+  answer:
+    speaker: protagonist
+    text: erzähl mal
+  items:
+  - mal-eben
+- type: prompt
+  ask:
+    en: 'Once more: say “That really is hard”.'
+    ar: 'مرة أخرى: قل “هذا صعب حقًا”.'
+    mk: 'Уште еднаш: кажете „Тоа навистина е тешко“.'
+  answer:
+    speaker: protagonist
+    text: Das ist ja auch hart
+  items:
+  - ja-wohl-c2
+- type: prompt
+  ask:
+    en: 'Once more: say “It''ll work out”.'
+    ar: 'مرة أخرى: قل “ستتحسّن الأمور”.'
+    mk: 'Уште еднаш: кажете „Ќе се среди“.'
+  answer:
+    speaker: protagonist
+    text: Das wird schon
+  items:
+  - schon-c2
+- type: prompt
+  ask:
+    en: 'Once more: say “Chin up!”.'
+    ar: 'مرة أخرى: قل “ارفع رأسك!”.'
+    mk: 'Уште еднаш: кажете „Глава горе!“.'
+  answer:
+    speaker: protagonist
+    text: Kopf hoch!
+  items:
+  - kopf-hoch
+- type: prompt
+  ask:
+    en: 'Once more: say “the severance pay”.'
+    ar: 'مرة أخرى: قل “تعويض نهاية الخدمة”.'
+    mk: 'Уште еднаш: кажете „отпремнината“.'
+  answer:
+    speaker: protagonist
+    text: die Abfindung
+  items:
+  - die-abfindung
+- type: prompt
+  ask:
+    en: 'Once more: say “advice (pieces of)”.'
+    ar: 'مرة أخرى: قل “نصائح”.'
+    mk: 'Уште еднаш: кажете „совети“.'
+  answer:
+    speaker: protagonist
+    text: Ratschläge
+  items:
+  - ratschlaege
+- type: prompt
+  ask:
+    en: 'Once more: say “just listen”.'
+    ar: 'مرة أخرى: قل “الإصغاء فقط”.'
+    mk: 'Уште еднаш: кажете „само слушање“.'
+  answer:
+    speaker: protagonist
+    text: einfach zuhören
+  items:
+  - einfach-zuhoeren
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتَه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the holiday house — and “the cost split — and “per head — and “the kitty — and “Wouldn''t it be fairer if …? — and “If we had …, it would be … — and “the expense app — and “settle up — and
+      “the Baltic Sea — and “generous — and “play to a cliché — and “from my own experience — and “make distinctions — and “generalise — and “may I quote you? — and “the headline — and “diversity — and
+      “I''d like to stress that … — and “the counter-question — and “approve the interview text”.'
+    ar: 'قل: “بيت العطلة — و“تقسيم التكاليف — و“للفرد — و“الصندوق المشترك — و“أليس من الأعدل أن …؟ — و“لو كان لدينا …، لكان … — و“تطبيق المصاريف — و“يصفّي الحساب — و“بحر البلطيق — و“كريم — و“يكرّس الصورة
+      النمطية — و“من تجربتي الخاصة — و“يميّز، يفصّل — و“يعمّم — و“هل يمكنني اقتباس كلامك؟ — و“العنوان الرئيسي — و“التنوّع — و“أودّ أن أؤكّد أنّ … — و“السؤال المضاد — و“يعتمد نصّ المقابلة”.'
+    mk: 'Кажете: „куќата за одмор“ — и „поделбата на трошоците“ — и „по глава“ — и „заедничката каса“ — и „Зарем не би било поправедно ако …?“ — и „Да имавме …, ќе беше …“ — и „апликацијата за трошоци“
+      — и „пресметува“ — и „Балтичкото Море“ — и „дарежливо“ — и „го потхранува клишето“ — и „од сопствено искуство“ — и „прави разлика“ — и „генерализира“ — и „смеам ли да ве цитирам?“ — и „насловот“ —
+      и „разновидноста“ — и „Би сакала да нагласам дека …“ — и „противпрашањето“ — и „го одобрува интервјуто“.'
+  answer:
+    speaker: protagonist
+    text: das Ferienhaus … die Kostenaufteilung … pro Kopf … die gemeinsame Kasse … Wäre es nicht fairer, wenn …? … Hätten wir …, wäre … … die Ausgaben-App … abrechnen … die Ostsee … großzügig … ein Klischee
+      bedienen … aus eigener Erfahrung … differenzieren … pauschalisieren … darf ich Sie zitieren? … die Schlagzeile … die Vielfalt … Ich möchte betonen, dass … … die Gegenfrage … das Interview autorisieren
+  items:
+  - das-ferienhaus
+  - die-kostenaufteilung
+  - pro-kopf
+  - die-gemeinsame-kasse
+  - waere-es-nicht-fairer
+  - haetten-wir
+  - die-app
+  - abrechnen
+  - die-ostsee
+  - grosszuegig
+  - das-klischee-c2
+  - die-erfahrung-c2
+  - differenzieren
+  - pauschalisieren
+  - das-zitat
+  - die-schlagzeile
+  - die-vielfalt
+  - ich-moechte-betonen
+  - die-gegenfrage
+  - autorisieren
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “set limits — and “screen time — and “spoil — and “consistent — and “the tantrum — and “(particle) ever, already — and “(particles) that''s just how it is — and “(particles) surely — and “the
+      time-out — and “upbringing — and “slice of bread (Saxon) — and “we (Saxon ''mir'') — and “not (Saxon ''ni'') — and “home (Saxon ''heeme'') — and “Good grief! (Saxon) — and “the dialect word — and
+      “in standard German — and “pronounced softly — and “really cosy — and “pride in one''s home region”.'
+    ar: 'قل: “يضع حدودًا — و“وقت الشاشة — و“يدلّل — و“ثابت على موقفه — و“نوبة العناد — و“(أداة) من قبل — و“(أداتان) هكذا الأمر — و“(أداتان) بالتأكيد — و“فترة التهدئة — و“التربية — و“شريحة خبز (سكسونية)
+      — و“نحن (mir بالسكسونية) — و“لا (ni بالسكسونية) — و“إلى البيت (heeme) — و“يا للعجب! (سكسونية) — و“كلمة لهجية — و“بالألمانية الفصحى — و“يُنطق بليونة — و“دافئ جدًا — و“الاعتزاز بالمنطقة”.'
+    mk: 'Кажете: „поставува граници“ — и „времето пред екран“ — и „разгалува“ — и „доследно“ — и „нападот на тврдоглавост“ — и „(честичка) некогаш“ — и „(честички) така е“ — и „(честички) сигурно“ — и „паузата
+      за смирување“ — и „воспитувањето“ — и „парче леб (саксонски)“ — и „ние (саксонски „mir“)“ — и „не (саксонски „ni“)“ — и „дома (саксонски „heeme“)“ — и „Леле! (саксонски)“ — и „дијалектниот збор“ —
+      и „на стандарден германски“ — и „меко изговорено“ — и „многу пријатно“ — и „гордоста со крајот“.'
+  answer:
+    speaker: protagonist
+    text: Grenzen setzen … die Medienzeit … verwöhnen … konsequent … der Trotzanfall … schon mal … halt eben … doch wohl … die Auszeit … die Erziehung … die Bemme … mir = wir … ni = nicht … heeme = heim
+      … Ei verbibbsch! … das Dialektwort … auf Hochdeutsch … weich ausgesprochen … urgemütlich … der Heimatstolz
+  items:
+  - die-grenzen
+  - die-medienzeit
+  - verwoehnen
+  - konsequent
+  - der-trotzanfall
+  - schon-mal
+  - halt-eben
+  - doch-wohl
+  - die-auszeit
+  - die-erziehung
+  - die-bemme
+  - mir-wir
+  - ni
+  - heeme
+  - ei-verbibbsch
+  - der-dialektwort
+  - hochdeutsch-c2
+  - weich
+  - gemuetlich-c2
+  - der-heimatstolz
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the allotment garden — and “the hedge — and “mediation, arbitration — and “the local mediator — and “the plot (of land) — and “the garden rules — and “even though (formal) — and “even if
+      — and “cut back — and “the agreement — and “I like — and “Do you like …? (informal) — and “rather, prefer — and “most of all — and “music — and “cake — and “sweet — and “I don''t like — and “like
+      both — and “like listening to”.'
+    ar: 'قل: “الحديقة الصغيرة المستأجرة — و“السياج النباتي — و“التسوية الودية — و“الوسيط المحلي — و“قطعة الأرض — و“نظام الحدائق — و“وإن كان — و“حتى لو — و“يقلّم — و“الاتفاق — و“أحبّ — و“هل تحبين …؟ — و“أفضّل
+      — و“أكثر شيء — و“الموسيقى — و“كعك — و“حلو — و“لا أحبّ — و“أحب الاثنين — و“أحب الاستماع إلى”.'
+    mk: 'Кажете: „малата градина“ — и „живата ограда“ — и „помирувањето“ — и „помирувачот“ — и „парцелата“ — и „правилникот на градините“ — и „иако (формално)“ — и „дури и ако“ — и „поткаструва“ — и „договорот,
+      спогодбата“ — и „сакам, ми се допаѓа“ — и „Ти се допаѓа ли …?“ — и „повеќе“ — и „најмногу“ — и „музиката“ — и „колач“ — и „слатко“ — и „не ми се допаѓа“ — и „и двете ги сакам“ — и „сакам да слушам“.'
+  answer:
+    speaker: protagonist
+    text: der Kleingarten … die Hecke … die Schlichtung … die Schiedsperson … das Grundstück … die Gartenordnung … wenngleich … selbst wenn … zurückschneiden … die Einigung … ich mag … Magst du …? … lieber
+      … am liebsten … die Musik … Kuchen … süß … ich mag … nicht … beides gern … höre gern
+  items:
+  - der-kleingarten
+  - die-hecke
+  - die-schlichtung
+  - die-schiedsperson
+  - das-grundstueck
+  - die-gartenordnung
+  - wenngleich
+  - selbst-wenn
+  - zurueckschneiden
+  - die-einigung
+  - ich-mag
+  - magst-du
+  - lieber
+  - am-liebsten
+  - die-musik
+  - der-kuchen-a
+  - suess
+  - ich-mag-nicht
+  - beides-gern
+  - gern-hoeren
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the payslip — and “gross — and “net — and “income tax (on wages)”.'
+    ar: 'قل: “كشف الراتب — و“إجمالي — و“صافٍ — و“ضريبة الأجور”.'
+  answer:
+    speaker: protagonist
+    text: die Lohnabrechnung … brutto … netto … die Lohnsteuer
+  items:
+  - die-lohnabrechnung-ea
+  - brutto-ea
+  - netto-ea
+  - die-lohnsteuer-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “health insurance — and “long-term care insurance — and “pension insurance — and “unemployment insurance”.'
+    ar: 'قل: “التأمين الصحي — و“تأمين الرعاية — و“تأمين التقاعد — و“تأمين البطالة”.'
+  answer:
+    speaker: protagonist
+    text: die Krankenversicherung … die Pflegeversicherung … die Rentenversicherung … die Arbeitslosenversicherung
+  items:
+  - die-krankenversicherung-ea
+  - die-pflegeversicherung-ea
+  - die-rentenversicherung-ea
+  - die-alv-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the employer''s share — and “minus, less (+ genitive) — and “because of, due to (+ genitive) — and “within (+ genitive)”.'
+    ar: 'قل: “حصة صاحب العمل — و“مطروحًا منه — و“بسبب — و“خلال”.'
+  answer:
+    speaker: protagonist
+    text: der Arbeitgeberanteil … abzüglich … aufgrund … innerhalb
+  items:
+  - der-arbeitgeberanteil-ea
+  - abzueglich-ea
+  - aufgrund-ea
+  - innerhalb-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „платниот лист“ — и „бруто“ — и „нето“ — и „данокот на плата“.'
+  answer:
+    speaker: protagonist
+    text: die Lohnabrechnung … brutto … netto … die Lohnsteuer
+  items:
+  - die-lohnabrechnung-m
+  - brutto-m
+  - netto-m
+  - die-lohnsteuer-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „здравственото осигурување“ — и „пензиското осигурување“ — и „делот на работодавачот“ — и „минус, одбиено (+ генитив)“.'
+  answer:
+    speaker: protagonist
+    text: die Krankenversicherung … die Rentenversicherung … der Arbeitgeberanteil … abzüglich
+  items:
+  - die-krankenversicherung-m
+  - die-rentenversicherung-m
+  - der-arbeitgeberanteil-m
+  - abzueglich-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „поради (+ генитив)“ — и „за време на (+ генитив)“ — и „давачките“.'
+  answer:
+    speaker: protagonist
+    text: aufgrund … während … die Abgaben
+  items:
+  - aufgrund-m
+  - waehrend-gen-m
+  - die-abgaben-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمع إلى المحادثة مرة أخرى. الآن تفهمها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

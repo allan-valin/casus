@@ -1,0 +1,42 @@
+id: C2-20
+protagonist: m
+title: ["A friend in crisis", "صديق في أزمة", "Пријател во криза"]
+situation:
+  - "Jonas has lost his job. He sits on your balcony, silent. You listen — and help without taking over."
+  - "يوناس فقد عمله. يجلس على شرفتك صامتًا. تستمع — وتساعد دون أن تفرض نفسك."
+  - "Јонас ја изгуби работата. Седи на вашиот балкон, молчи. Слушате — и помагате без да преземете сè."
+learn: [c2-particles]
+culture: Being there
+items:
+  - [die-krise, "die Krise", "the crisis", "الأزمة", "кризата"]
+  - [fuer-dich-da-sein, "Ich bin für dich da", "I'm here for you", "أنا هنا من أجلك", "Тука сум за тебе"]
+  - [gekuendigt-werden, "gekündigt werden", "be dismissed", "يُفصل من العمل", "да добие отказ"]
+  - [mal-eben, "erzähl mal", "(particle) go on, tell me", "(أداة) هيا، احكِ", "(честичка) ајде, раскажи"]
+  - [ja-wohl-c2, "Das ist ja auch hart", "That really is hard", "هذا صعب حقًا", "Тоа навистина е тешко"]
+  - [schon-c2, "Das wird schon", "It'll work out", "ستتحسّن الأمور", "Ќе се среди"]
+  - [kopf-hoch, "Kopf hoch!", "Chin up!", "ارفع رأسك!", "Глава горе!"]
+  - [die-abfindung, "die Abfindung", "the severance pay", "تعويض نهاية الخدمة", "отпремнината", {rare: true}]
+  - [ratschlaege, "Ratschläge", "advice (pieces of)", "نصائح", "совети"]
+  - [einfach-zuhoeren, "einfach zuhören", "just listen", "الإصغاء فقط", "само слушање"]
+dialogue:
+  - [protagonist, "Du bist so still. Erzähl mal — was ist los?", "You're so quiet. Go on, tell me — what's up?", "أنت صامت جدًا. هيا احكِ — ما الأمر؟", "Толку си тивок. Ајде, раскажи — што е?"]
+  - [jonas, "Mir wurde gekündigt. Nach acht Jahren. Die Firma macht dicht.", "I've been let go. After eight years. The company's shutting down.", "فُصلتُ من العمل. بعد ثماني سنوات. الشركة تُغلق.", "Добив отказ. По осум години. Фирмата се затвора."]
+  - [protagonist, "Das ist ja auch hart. Und mit Emma und Svenja...", "That really is hard. And with Emma and Svenja...", "هذا صعب حقًا. ومع إيما وسفينيا...", "Тоа навистина е тешко. А со Ема и Свења..."]
+  - [jonas, "Alle geben mir Ratschläge. Ich will gerade keine Ratschläge.", "Everyone gives me advice. I don't want advice right now.", "الجميع يعطونني نصائح. لا أريد نصائح الآن.", "Сите ми даваат совети. Сега не сакам совети."]
+  - [protagonist, "Verstehe. Dann höre ich einfach zu. Ich bin für dich da.", "I understand. Then I'll just listen. I'm here for you.", "أفهم. إذن سأصغي فقط. أنا هنا من أجلك.", "Разбирам. Тогаш само ќе слушам. Тука сум за тебе."]
+  - [jonas, "... Danke. Das tut gut. Ich habe Angst, wieder ganz unten anzufangen.", "... Thanks. That helps. I'm afraid of starting at the bottom again.", "... شكرًا. هذا يريحني. أخاف أن أبدأ من الصفر من جديد.", "... Благодарам. Ова ми прија. Се плашам пак да почнам од најдолу."]
+  - [protagonist, "Das kenne ich. Weißt du noch? Ich habe im Café angefangen. Das wird schon.", "I know that feeling. Remember? I started in a café. It'll work out.", "أعرف هذا الشعور. أتذكر؟ بدأتُ في مقهى. ستتحسّن الأمور.", "Тоа го знам. Се сеќаваш? Јас почнав во кафуле. Ќе се среди."]
+  - [jonas, "Du hast recht. Kopf hoch. Morgen gehe ich zur Agentur für Arbeit — heute nur Bier.", "You're right. Chin up. Tomorrow I'll go to the job agency — today just beer.", "معك حق. ارفع رأسك. غدًا أذهب إلى وكالة العمل — واليوم البيرة فقط.", "Во право си. Глава горе. Утре одам во агенцијата за вработување — денес само пиво."]
+teach:
+  - ask: ["Say: go on, tell me.", "قل: هيا احكِ.", "Кажете: ајде, раскажи.", "Erzähl mal.", mal-eben]
+  - ask: ["He says: I've been let go.", "يقول: فُصلتُ من العمل.", "Тој вели: добив отказ.", "Mir wurde gekündigt.", gekuendigt-werden]
+  - note: ["Particles of sympathy: «Erzähl mal» (mal — gentle invitation), «Das ist ja auch hart» (ja auch — 'of course it's hard'), «Das wird schon» (schon — reassurance). They show feeling without big words.", "أدوات التعاطف: «Erzähl mal» (mal — دعوة لطيفة)، «Das ist ja auch hart» (ja auch — «طبعًا هذا صعب»)، «Das wird schon» (schon — طمأنة). تُظهر الشعور دون كلمات كبيرة.", "Честички на сочувство: «Erzähl mal» (mal — нежна покана), «Das ist ja auch hart» (ja auch — „се разбира дека е тешко“), «Das wird schon» (schon — уверување). Покажуваат чувство без големи зборови."]
+  - ask: ["Say: that really is hard.", "قل: هذا صعب حقًا.", "Кажете: тоа навистина е тешко.", "Das ist ja auch hart.", ja-wohl-c2]
+  - ask: ["He doesn't want advice.", "لا يريد نصائح.", "Тој не сака совети.", "Ich will keine Ratschläge.", ratschlaege]
+  - ask: ["Say: I'll just listen.", "قل: سأصغي فقط.", "Кажете: само ќе слушам.", "Ich höre einfach zu.", einfach-zuhoeren]
+  - ask: ["Say: I'm here for you.", "قل: أنا هنا من أجلك.", "Кажете: тука сум за тебе.", "Ich bin für dich da.", fuer-dich-da-sein]
+  - ask: ["Say: it'll work out.", "قل: ستتحسّن الأمور.", "Кажете: ќе се среди.", "Das wird schon.", schon-c2]
+  - ask: ["Say: chin up!", "قل: ارفع رأسك!", "Кажете: глава горе!", "Kopf hoch!", kopf-hoch]
+  - ask: ["Say: the crisis.", "قل: الأزمة.", "Кажете: кризата.", "Die Krise.", die-krise]
+  - ask: ["Say: severance pay.", "قل: تعويض نهاية الخدمة.", "Кажете: отпремнина.", "Die Abfindung.", die-abfindung]
+  - note: ["When someone is in crisis, listening often helps more than advice. Practical points come later: register with the Agentur für Arbeit within three days of learning about the dismissal, check the notice and any severance offer with a lawyer or union, and don't sign a termination agreement in a hurry.", "حين يمرّ أحد بأزمة، الإصغاء غالبًا يساعد أكثر من النصيحة. والأمور العملية تأتي لاحقًا: التسجيل في وكالة العمل خلال ثلاثة أيام من العلم بالفصل، ومراجعة الإنذار وأي عرض تعويض مع محامٍ أو نقابة، وعدم التسرّع في توقيع اتفاق إنهاء.", "Кога некој е во криза, слушањето често помага повеќе од совет. Практичните работи доаѓаат подоцна: пријава во агенцијата за вработување во рок од три дена откако ќе се дознае за отказот, проверка на отказот и понудата за отпремнина со адвокат или синдикат, и без брзање со потпишување договор за раскинување."]

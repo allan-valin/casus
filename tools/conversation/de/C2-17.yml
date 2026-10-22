@@ -1,0 +1,644 @@
+# UNIT de C2-17 — written by AI (Claude) for Casus; expanded from src/C2-17.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-17
+level: C2
+number: 17
+protagonist: f
+title:
+  en: A journalist asks
+  ar: صحفية تسأل
+  mk: Новинарка прашува
+situation:
+  en: 'The local paper is doing a series: ''New Leipzigers''. The reporter interviews you — and tries a cliché or two.'
+  ar: 'الصحيفة المحلية تعدّ سلسلة: «سكان لايبزيغ الجدد». المراسلة تحاوركِ — وتجرّب قالبًا نمطيًا أو اثنين.'
+  mk: 'Локалниот весник прави серија: „Новите Лајпцижани“. Репортерката ве интервјуира — и пробува клише или две.'
+learn_lessons:
+- c2-register
+culture: Answering clichés
+new_items:
+- id: das-klischee-c2
+  text: ein Klischee bedienen
+  meaning:
+    en: play to a cliché
+    ar: يكرّس الصورة النمطية
+    mk: го потхранува клишето
+- id: die-erfahrung-c2
+  text: aus eigener Erfahrung
+  meaning:
+    en: from my own experience
+    ar: من تجربتي الخاصة
+    mk: од сопствено искуство
+- id: differenzieren
+  text: differenzieren
+  meaning:
+    en: make distinctions
+    ar: يميّز، يفصّل
+    mk: прави разлика
+- id: pauschalisieren
+  text: pauschalisieren
+  meaning:
+    en: generalise
+    ar: يعمّم
+    mk: генерализира
+- id: das-zitat
+  text: darf ich Sie zitieren?
+  meaning:
+    en: may I quote you?
+    ar: هل يمكنني اقتباس كلامك؟
+    mk: смеам ли да ве цитирам?
+- id: die-schlagzeile
+  text: die Schlagzeile
+  meaning:
+    en: the headline
+    ar: العنوان الرئيسي
+    mk: насловот
+- id: die-vielfalt
+  text: die Vielfalt
+  meaning:
+    en: diversity
+    ar: التنوّع
+    mk: разновидноста
+- id: ich-moechte-betonen
+  text: Ich möchte betonen, dass …
+  meaning:
+    en: I'd like to stress that …
+    ar: أودّ أن أؤكّد أنّ …
+    mk: Би сакала да нагласам дека …
+- id: die-gegenfrage
+  text: die Gegenfrage
+  meaning:
+    en: the counter-question
+    ar: السؤال المضاد
+    mk: противпрашањето
+- id: autorisieren
+  text: das Interview autorisieren
+  meaning:
+    en: approve the interview text
+    ar: يعتمد نصّ المقابلة
+    mk: го одобрува интервјуто
+reviews:
+- item: seit-wann-sind-sie
+  from: A2-10
+- item: seit-dreissig-jahren
+  from: A2-10
+- item: mein-vater
+  from: A2-10
+- item: als-gastarbeiter
+  from: A2-10
+- item: aufgewachsen
+  from: A2-10
+- item: der-laden
+  from: A2-10
+- item: seit-der-wende
+  from: A2-10
+- item: beides
+  from: A2-10
+- item: die-heimat
+  from: A2-10
+- item: ich-fuehle-mich
+  from: A2-10
+- item: die-elternzeit
+  from: B2-14
+- item: das-elterngeld
+  from: B2-14
+- item: der-kitaplatz
+  from: B2-14
+- item: die-teilzeit
+  from: B2-14
+- item: die-warteliste
+  from: B2-14
+- item: statt-zu
+  from: B2-14
+- item: ohne-zu
+  from: B2-14
+- item: sich-abwechseln
+  from: B2-14
+- item: die-eingewoehnung
+  from: B2-14
+- item: das-schlechte-gewissen
+  from: B2-14
+- item: die-psychotherapie
+  from: C1-16
+- item: der-therapieplatz
+  from: C1-16
+- item: das-burnout
+  from: C1-16
+- item: die-erschoepfung
+  from: C1-16
+- item: schlecht-schlafen
+  from: C1-16
+- item: die-sprechstunde-psych
+  from: C1-16
+- item: koennte-sein
+  from: C1-16
+- item: muss-nicht
+  from: C1-16
+- item: die-krankschreibung
+  from: C1-16
+- item: schaemen
+  from: C1-16
+- item: nicht-schlecht
+  from: C2-02
+- item: das-understatement
+  from: C2-02
+- item: kann-man-machen
+  from: C2-02
+- item: ganz-interessant
+  from: C2-02
+- item: da-hast-du-dir-muehe-gegeben
+  from: C2-02
+- item: das-hoechste-lob
+  from: C2-02
+- item: zwischen-den-zeilen
+  from: C2-02
+- item: gemeint-sein
+  from: C2-02
+- item: der-tonfall
+  from: C2-02
+- item: na-ja-gut
+  from: C2-02
+- item: die-klage
+  from: C2-10
+- item: der-klaeger
+  from: C2-10
+- item: der-beklagte
+  from: C2-10
+- item: der-vergleich
+  from: C2-10
+- item: das-amtsgericht
+  from: C2-10
+- item: die-verhandlung
+  from: C2-10
+- item: der-sachverhalt
+  from: C2-10
+- item: die-rueckzahlung
+  from: C2-10
+- item: die-kosten-tragen
+  from: C2-10
+- item: hohes-gericht
+  from: C2-10
+- item: der-stolperstein
+  from: C2-14
+- item: das-gedenken
+  from: C2-14
+- item: die-verantwortung-c2
+  from: C2-14
+- item: deportiert
+  from: C2-14
+- item: ermordet
+  from: C2-14
+- item: die-pogromnacht
+  from: C2-14
+- item: nie-wieder
+  from: C2-14
+- item: die-erinnerungskultur
+  from: C2-14
+- item: hier-wohnte
+  from: C2-14
+- item: wuerdevoll
+  from: C2-14
+- item: das-missverstaendnis
+  from: C2-16
+- item: das-kam-falsch-rueber
+  from: C2-16
+- item: nicht-boese-gemeint
+  from: C2-16
+- item: schwamm-drueber
+  from: C2-16
+- item: ein-tabu
+  from: C2-16
+- item: das-gewicht
+  from: C2-16
+- item: sich-entschuldigen-c2
+  from: C2-16
+- item: ein-kompliment
+  from: C2-16
+- item: beleidigt
+  from: C2-16
+- item: andere-laender-andere-sitten
+  from: C2-16
+steps:
+- type: narrator
+  text:
+    en: 'The local paper is doing a series: ''New Leipzigers''. The reporter interviews you — and tries a cliché or two. Listen to the conversation; you don''t need to understand it yet.'
+    ar: 'الصحيفة المحلية تعدّ سلسلة: «سكان لايبزيغ الجدد». المراسلة تحاوركِ — وتجرّب قالبًا نمطيًا أو اثنين. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.'
+    mk: 'Локалниот весник прави серија: „Новите Лајпцижани“. Репортерката ве интервјуира — и пробува клише или две. Слушнете го разговорот; уште не мора да го разберете.'
+- type: dialogue
+  lines:
+  - speaker: reporterin
+    text: 'Viele Leser fragen: Wollen Migranten sich überhaupt integrieren?'
+    meaning:
+      en: 'Many readers ask: do migrants even want to integrate?'
+      ar: 'كثير من القرّاء يسألون: هل يريد المهاجرون الاندماج أصلًا؟'
+      mk: 'Многу читатели прашуваат: дали мигрантите воопшто сакаат да се интегрираат?'
+  - speaker: protagonist
+    text: Darf ich eine Gegenfrage stellen? Wer sind „die Migranten“? Wir sind ein Ingenieur, eine Pflegerin, ein Student...
+    meaning:
+      en: May I ask a counter-question? Who are 'the migrants'? We're an engineer, a nurse, a student...
+      ar: هل يمكنني طرح سؤال مضاد؟ من هم «المهاجرون»؟ نحن مهندس، وممرّضة، وطالب...
+      mk: Смеам ли да поставам противпрашање? Кои се „мигрантите“? Ние сме инженер, медицинска сестра, студент...
+  - speaker: reporterin
+    text: Gutes Argument. Aber gibt es nicht auch Probleme?
+    meaning:
+      en: Good point. But aren't there problems too?
+      ar: حجة جيدة. لكن أليست هناك مشكلات أيضًا؟
+      mk: Добар аргумент. Но зарем нема и проблеми?
+  - speaker: protagonist
+    text: Natürlich. Ich möchte nur betonen, dass man differenzieren muss, statt zu pauschalisieren.
+    meaning:
+      en: Of course. I'd just like to stress that you have to make distinctions instead of generalising.
+      ar: طبعًا. أودّ فقط أن أؤكّد أنه يجب التمييز بدلًا من التعميم.
+      mk: Се разбира. Само би сакала да нагласам дека треба да се прави разлика наместо да се генерализира.
+  - speaker: reporterin
+    text: Und aus eigener Erfahrung?
+    meaning:
+      en: And from your own experience?
+      ar: ومن تجربتكِ الخاصة؟
+      mk: А од сопствено искуство?
+  - speaker: protagonist
+    text: Leipzig hat mir viel gegeben — Nachbarn, einen Verein, Freunde. Und ich gebe zurück.
+    meaning:
+      en: Leipzig has given me a lot — neighbours, a club, friends. And I give back.
+      ar: لايبزيغ أعطتني الكثير — جيرانًا ونادًيا وأصدقاء. وأنا أردّ الجميل.
+      mk: Лајпциг ми даде многу — соседи, клуб, пријатели. А јас враќам.
+  - speaker: reporterin
+    text: 'Darf ich Sie zitieren? Vielleicht als Schlagzeile: „Vielfalt ist kein Problem“.'
+    meaning:
+      en: 'May I quote you? Maybe as a headline: ''Diversity is no problem''.'
+      ar: 'هل يمكنني اقتباس كلامكِ؟ ربما كعنوان رئيسي: «التنوّع ليس مشكلة».'
+      mk: 'Смеам ли да ве цитирам? Можеби како наслов: „Разновидноста не е проблем“.'
+  - speaker: protagonist
+    text: Gern — aber ich möchte das Interview vorher autorisieren.
+    meaning:
+      en: Gladly — but I'd like to approve the interview text beforehand.
+      ar: بكل سرور — لكنني أودّ اعتماد نصّ المقابلة مسبقًا.
+      mk: Со задоволство — но би сакала претходно да го одобрам интервјуто.
+- type: prompt
+  ask:
+    en: Ask a counter-question.
+    ar: اطرحي سؤالًا مضادًا.
+    mk: Поставете противпрашање.
+  answer:
+    speaker: protagonist
+    text: Darf ich eine Gegenfrage stellen?
+  items:
+  - die-gegenfrage
+- type: narrator
+  text:
+    en: 'Answering clichés in a public register: question the category («Wer sind ‚die Migranten‘?»), concede («Natürlich»), then stress your point («Ich möchte betonen, dass…»). «differenzieren statt pauschalisieren»
+      is the key phrase.'
+    ar: 'الردّ على القوالب النمطية بأسلوب علني: شكّكي في الفئة («Wer sind ‚die Migranten‘?»)، وسلّمي («Natürlich»)، ثم أكّدي فكرتكِ («Ich möchte betonen, dass…»). و«differenzieren statt pauschalisieren»
+      هي العبارة المفتاح.'
+    mk: 'Одговарање на клишеа во јавен регистар: доведете ја во прашање категоријата («Wer sind ‚die Migranten‘?»), признајте («Natürlich»), па нагласете ја поентата («Ich möchte betonen, dass…»). «differenzieren
+      statt pauschalisieren» е клучната фраза.'
+- type: prompt
+  ask:
+    en: 'Say: I''d like to stress that…'
+    ar: 'قولي: أودّ أن أؤكّد أنّ…'
+    mk: 'Кажете: би сакала да нагласам дека…'
+  answer:
+    speaker: protagonist
+    text: Ich möchte betonen, dass…
+  items:
+  - ich-moechte-betonen
+- type: prompt
+  ask:
+    en: 'Say: make distinctions instead of generalising.'
+    ar: 'قولي: التمييز بدلًا من التعميم.'
+    mk: 'Кажете: да се прави разлика наместо генерализирање.'
+  answer:
+    speaker: protagonist
+    text: Differenzieren statt pauschalisieren.
+  items:
+  - differenzieren
+  - pauschalisieren
+- type: prompt
+  ask:
+    en: 'Say: from my own experience.'
+    ar: 'قولي: من تجربتي الخاصة.'
+    mk: 'Кажете: од сопствено искуство.'
+  answer:
+    speaker: protagonist
+    text: Aus eigener Erfahrung.
+  items:
+  - die-erfahrung-c2
+- type: prompt
+  ask:
+    en: 'She asks: may I quote you?'
+    ar: 'تسأل: هل يمكنني اقتباس كلامكِ؟'
+    mk: 'Таа прашува: смеам ли да ве цитирам?'
+  answer:
+    speaker: protagonist
+    text: Darf ich Sie zitieren?
+  items:
+  - das-zitat
+- type: prompt
+  ask:
+    en: 'Say: the headline.'
+    ar: 'قولي: العنوان الرئيسي.'
+    mk: 'Кажете: насловот.'
+  answer:
+    speaker: protagonist
+    text: Die Schlagzeile.
+  items:
+  - die-schlagzeile
+- type: prompt
+  ask:
+    en: 'Say: diversity is no problem.'
+    ar: 'قولي: التنوّع ليس مشكلة.'
+    mk: 'Кажете: разновидноста не е проблем.'
+  answer:
+    speaker: protagonist
+    text: Vielfalt ist kein Problem.
+  items:
+  - die-vielfalt
+- type: prompt
+  ask:
+    en: 'Say: I''d like to approve the interview.'
+    ar: 'قولي: أودّ اعتماد نصّ المقابلة.'
+    mk: 'Кажете: би сакала да го одобрам интервјуто.'
+  answer:
+    speaker: protagonist
+    text: Ich möchte das Interview autorisieren.
+  items:
+  - autorisieren
+- type: prompt
+  ask:
+    en: 'Say: don''t play to a cliché.'
+    ar: 'قولي: لا تكرّسي الصورة النمطية.'
+    mk: 'Кажете: не го потхранувајте клишето.'
+  answer:
+    speaker: protagonist
+    text: Kein Klischee bedienen.
+  items:
+  - das-klischee-c2
+- type: narrator
+  text:
+    en: In Germany interviewees may ask to approve ('autorisieren') their quotes before print — newspapers usually agree. Clichéd questions are often meant to provoke a clear answer; stay calm, concrete
+      and personal.
+    ar: في ألمانيا يحق لمن تُجرى معه مقابلة أن يطلب اعتماد اقتباساته قبل النشر — والصحف توافق عادةً. والأسئلة النمطية غالبًا ما تهدف إلى استفزاز جواب واضح؛ ابقي هادئة ومحدّدة وشخصية.
+    mk: Во Германија интервјуираните можат да побараат да ги одобрат цитатите пред печатење — весниците обично се согласуваат. Клишеизираните прашања често имаат цел да предизвикаат јасен одговор; останете
+      мирни, конкретни и лични.
+- type: prompt
+  ask:
+    en: 'Once more: say “play to a cliché”.'
+    ar: 'مرة أخرى: قولي “يكرّس الصورة النمطية”.'
+    mk: 'Уште еднаш: кажете „го потхранува клишето“.'
+  answer:
+    speaker: protagonist
+    text: ein Klischee bedienen
+  items:
+  - das-klischee-c2
+- type: prompt
+  ask:
+    en: 'Once more: say “from my own experience”.'
+    ar: 'مرة أخرى: قولي “من تجربتي الخاصة”.'
+    mk: 'Уште еднаш: кажете „од сопствено искуство“.'
+  answer:
+    speaker: protagonist
+    text: aus eigener Erfahrung
+  items:
+  - die-erfahrung-c2
+- type: prompt
+  ask:
+    en: 'Once more: say “make distinctions”.'
+    ar: 'مرة أخرى: قولي “يميّز، يفصّل”.'
+    mk: 'Уште еднаш: кажете „прави разлика“.'
+  answer:
+    speaker: protagonist
+    text: differenzieren
+  items:
+  - differenzieren
+- type: prompt
+  ask:
+    en: 'Once more: say “generalise”.'
+    ar: 'مرة أخرى: قولي “يعمّم”.'
+    mk: 'Уште еднаш: кажете „генерализира“.'
+  answer:
+    speaker: protagonist
+    text: pauschalisieren
+  items:
+  - pauschalisieren
+- type: prompt
+  ask:
+    en: 'Once more: say “may I quote you?”.'
+    ar: 'مرة أخرى: قولي “هل يمكنني اقتباس كلامك؟”.'
+    mk: 'Уште еднаш: кажете „смеам ли да ве цитирам?“.'
+  answer:
+    speaker: protagonist
+    text: darf ich Sie zitieren?
+  items:
+  - das-zitat
+- type: prompt
+  ask:
+    en: 'Once more: say “the headline”.'
+    ar: 'مرة أخرى: قولي “العنوان الرئيسي”.'
+    mk: 'Уште еднаш: кажете „насловот“.'
+  answer:
+    speaker: protagonist
+    text: die Schlagzeile
+  items:
+  - die-schlagzeile
+- type: prompt
+  ask:
+    en: 'Once more: say “diversity”.'
+    ar: 'مرة أخرى: قولي “التنوّع”.'
+    mk: 'Уште еднаш: кажете „разновидноста“.'
+  answer:
+    speaker: protagonist
+    text: die Vielfalt
+  items:
+  - die-vielfalt
+- type: prompt
+  ask:
+    en: 'Once more: say “I''d like to stress that …”.'
+    ar: 'مرة أخرى: قولي “أودّ أن أؤكّد أنّ …”.'
+    mk: 'Уште еднаш: кажете „Би сакала да нагласам дека …“.'
+  answer:
+    speaker: protagonist
+    text: Ich möchte betonen, dass …
+  items:
+  - ich-moechte-betonen
+- type: prompt
+  ask:
+    en: 'Once more: say “the counter-question”.'
+    ar: 'مرة أخرى: قولي “السؤال المضاد”.'
+    mk: 'Уште еднаш: кажете „противпрашањето“.'
+  answer:
+    speaker: protagonist
+    text: die Gegenfrage
+  items:
+  - die-gegenfrage
+- type: prompt
+  ask:
+    en: 'Once more: say “approve the interview text”.'
+    ar: 'مرة أخرى: قولي “يعتمد نصّ المقابلة”.'
+    mk: 'Уште еднаш: кажете „го одобрува интервјуто“.'
+  answer:
+    speaker: protagonist
+    text: das Interview autorisieren
+  items:
+  - autorisieren
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the misunderstanding — and “That came across wrong — and “It wasn''t meant badly — and “Let''s forget it! — and “a taboo — and “the weight — and “apologise sincerely — and “a compliment —
+      and “offended — and “Other countries, other customs — and “Stolperstein (''stumbling stone'' memorial) — and “remembrance”.'
+    ar: 'قولي: “سوء الفهم — و“فُهم ذلك خطأً — و“لم أقصد سوءًا — و“لننسَ الأمر! — و“محظور، تابو — و“الوزن — و“يعتذر بصدق — و“إطراء — و“مستاء، مُهان — و“لكل بلد عاداته — و“حجر العثرة (نصب تذكاري) — و“إحياء
+      الذكرى”.'
+    mk: 'Кажете: „недоразбирањето“ — и „Тоа излезе погрешно“ — и „Не беше мислено лошо“ — и „Да заборавиме!“ — и „табу“ — и „тежината“ — и „искрено се извинува“ — и „комплимент“ — и „навредено“ — и „Друга
+      земја, други обичаи“ — и „Stolperstein (камен-спомен)“ — и „одбележувањето, сеќавањето“.'
+  answer:
+    speaker: protagonist
+    text: das Missverständnis … Das kam falsch rüber … Das war nicht böse gemeint … Schwamm drüber! … ein Tabu … das Gewicht … sich aufrichtig entschuldigen … ein Kompliment … beleidigt … Andere Länder,
+      andere Sitten … der Stolperstein … das Gedenken
+  items:
+  - das-missverstaendnis
+  - das-kam-falsch-rueber
+  - nicht-boese-gemeint
+  - schwamm-drueber
+  - ein-tabu
+  - das-gewicht
+  - sich-entschuldigen-c2
+  - ein-kompliment
+  - beleidigt
+  - andere-laender-andere-sitten
+  - der-stolperstein
+  - das-gedenken
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “responsibility — and “deported — and “murdered — and “the November pogrom (1938) — and “Never again — and “the culture of remembrance — and “Here lived … — and “with dignity — and “the lawsuit
+      — and “the plaintiff — and “the defendant — and “the settlement”.'
+    ar: 'قولي: “المسؤولية — و“رُحِّل — و“قُتل — و“ليلة البوغروم — و“لن يتكرّر أبدًا — و“ثقافة الذاكرة — و“هنا عاش … — و“بوقار — و“الدعوى — و“المدّعي — و“المدّعى عليه — و“التسوية”.'
+    mk: 'Кажете: „одговорноста“ — и „депортиран“ — и „убиен“ — и „ноќта на погромот“ — и „Никогаш повеќе“ — и „културата на сеќавање“ — и „Тука живееше …“ — и „достоинствено“ — и „тужбата“ — и „тужителот“
+      — и „тужениот“ — и „порамнувањето“.'
+  answer:
+    speaker: protagonist
+    text: die Verantwortung … deportiert … ermordet … die Pogromnacht … Nie wieder … die Erinnerungskultur … Hier wohnte … … würdevoll … die Klage … der Kläger … der Beklagte … der Vergleich
+  items:
+  - die-verantwortung-c2
+  - deportiert
+  - ermordet
+  - die-pogromnacht
+  - nie-wieder
+  - die-erinnerungskultur
+  - hier-wohnte
+  - wuerdevoll
+  - die-klage
+  - der-klaeger
+  - der-beklagte
+  - der-vergleich
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the local court — and “the oral hearing — and “the facts of the case — and “repayment of the deposit — and “bear the costs — and “Madam Chair (to the judge) — and “Not bad (= very good) —
+      and “understatement — and “That''s one way (= doubtful) — and “quite interesting (= not convinced) — and “You really made an effort (ironic or sincere) — and “the highest praise”.'
+    ar: 'قولي: “المحكمة المحلية — و“الجلسة الشفهية — و“وقائع القضية — و“ردّ التأمين — و“يتحمّل التكاليف — و“سيدتي الرئيسة (للقاضية) — و“ليس سيئًا (= ممتاز) — و“التهوين — و“يمكن ذلك (= بتشكّك) — و“مثير للاهتمام
+      نوعًا ما (= غير مقتنع) — و“لقد بذلتَ جهدًا حقًا (ساخرًا أو صادقًا) — و“أعلى مديح”.'
+    mk: 'Кажете: „основниот суд“ — и „усната расправа“ — и „фактичката состојба“ — и „враќањето на депозитот“ — и „ги сноси трошоците“ — и „Госпоѓо претседателке (до судијката)“ — и „Не е лошо (= многу
+      добро)“ — и „потценувањето“ — и „Може и така (= со сомнеж)“ — и „прилично интересно (= не е убеден)“ — и „Баш си се потрудил (иронично или искрено)“ — и „најголемата пофалба“.'
+  answer:
+    speaker: protagonist
+    text: das Amtsgericht … die mündliche Verhandlung … der Sachverhalt … die Rückzahlung der Kaution … die Kosten tragen … Frau Vorsitzende … Nicht schlecht … das Understatement … Kann man machen … ganz
+      interessant … Da hast du dir ja Mühe gegeben … das höchste Lob
+  items:
+  - das-amtsgericht
+  - die-verhandlung
+  - der-sachverhalt
+  - die-rueckzahlung
+  - die-kosten-tragen
+  - hohes-gericht
+  - nicht-schlecht
+  - das-understatement
+  - kann-man-machen
+  - ganz-interessant
+  - da-hast-du-dir-muehe-gegeben
+  - das-hoechste-lob
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “between the lines — and “how it''s meant — and “the tone of voice — and “Well, all right (= reluctant) — and “psychotherapy — and “a place in therapy — and “burnout — and “exhaustion — and
+      “sleep badly — and “a first therapy consultation — and “it could be … — and “doesn''t have to (mean) …”.'
+    ar: 'قولي: “ما بين السطور — و“ما المقصود — و“نبرة الصوت — و“حسنًا، لا بأس (= على مضض) — و“العلاج النفسي — و“مكان للعلاج — و“الاحتراق النفسي — و“الإنهاك — و“ينام بشكل سيئ — و“استشارة نفسية أولى — و“قد
+      يكون … — و“ليس بالضرورة …”.'
+    mk: 'Кажете: „меѓу редовите“ — и „како е мислено“ — и „тонот на гласот“ — и „Па, добро (= неволно)“ — и „психотерапијата“ — и „место за терапија“ — и „согорувањето“ — и „исцрпеноста“ — и „лошо спие“
+      — и „прва психотерапевтска консултација“ — и „би можело да е …“ — и „не мора да …“.'
+  answer:
+    speaker: protagonist
+    text: zwischen den Zeilen … wie es gemeint ist … der Tonfall … Na ja, gut … die Psychotherapie … der Therapieplatz … das Burnout … die Erschöpfung … schlecht schlafen … die psychotherapeutische Sprechstunde
+      … es könnte … sein … muss nicht …
+  items:
+  - zwischen-den-zeilen
+  - gemeint-sein
+  - der-tonfall
+  - na-ja-gut
+  - die-psychotherapie
+  - der-therapieplatz
+  - das-burnout
+  - die-erschoepfung
+  - schlecht-schlafen
+  - die-sprechstunde-psych
+  - koennte-sein
+  - muss-nicht
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “a sick note — and “be ashamed — and “parental leave — and “parental allowance — and “a Kita place — and “part time — and “the waiting list — and “instead of …ing — and “without …ing — and
+      “take turns — and “the settling-in period — and “a guilty conscience”.'
+    ar: 'قولي: “الإجازة المرضية — و“يخجل — و“إجازة الوالدين — و“علاوة الوالدين — و“مكان في الروضة — و“الدوام الجزئي — و“قائمة الانتظار — و“بدلًا من أن … — و“دون أن … — و“يتناوبان — و“فترة التأقلم — و“تأنيب
+      الضمير”.'
+    mk: 'Кажете: „боледувањето“ — и „се срами“ — и „родителското отсуство“ — и „родителскиот додаток“ — и „место во градинка“ — и „скратено работно време“ — и „листата на чекање“ — и „наместо да …“ — и
+      „без да …“ — и „се сменуваат“ — и „периодот на навикнување“ — и „грижата на совеста“.'
+  answer:
+    speaker: protagonist
+    text: die Krankschreibung … sich schämen … die Elternzeit … das Elterngeld … der Kitaplatz … die Teilzeit … die Warteliste … statt … zu … ohne … zu … sich abwechseln … die Eingewöhnung … das schlechte
+      Gewissen
+  items:
+  - die-krankschreibung
+  - schaemen
+  - die-elternzeit
+  - das-elterngeld
+  - der-kitaplatz
+  - die-teilzeit
+  - die-warteliste
+  - statt-zu
+  - ohne-zu
+  - sich-abwechseln
+  - die-eingewoehnung
+  - das-schlechte-gewissen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “How long have you been …? (polite) — and “for thirty years — and “my father — and “as a guest worker — and “grew up — and “the shop — and “since reunification (1989) — and “both — and “home,
+      homeland — and “I feel”.'
+    ar: 'قولي: “منذ متى وأنت …؟ — و“منذ ثلاثين عامًا — و“أبي — و“عاملًا ضيفًا — و“نشأتُ — و“المحل — و“منذ إعادة التوحيد (1989) — و“كلاهما — و“الوطن — و“أشعر أنني”.'
+    mk: 'Кажете: „Од кога сте …?“ — и „веќе триесет години“ — и „татко ми“ — и „како гастарбајтер“ — и „пораснав“ — и „продавницата“ — и „од обединувањето (1989)“ — и „и двете“ — и „татковината“ — и „се
+      чувствувам“.'
+  answer:
+    speaker: protagonist
+    text: Seit wann sind Sie …? … seit dreißig Jahren … mein Vater … als Gastarbeiter … aufgewachsen … der Laden … seit der Wende … beides … die Heimat … ich fühle mich
+  items:
+  - seit-wann-sind-sie
+  - seit-dreissig-jahren
+  - mein-vater
+  - als-gastarbeiter
+  - aufgewachsen
+  - der-laden
+  - seit-der-wende
+  - beides
+  - die-heimat
+  - ich-fuehle-mich
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

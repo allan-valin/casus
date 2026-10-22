@@ -1,0 +1,638 @@
+# UNIT de C2-18 — written by AI (Claude) for Casus; expanded from src/C2-18.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-18
+level: C2
+number: 18
+protagonist: m
+title:
+  en: The diagnosis
+  ar: التشخيص
+  mk: Дијагнозата
+situation:
+  en: The MRI results are in. Dr Wagner explains the report in detail — and the orthopaedist wants to operate. You ask about a second opinion.
+  ar: وصلت نتائج الرنين المغناطيسي. الدكتورة فاغنر تشرح التقرير بالتفصيل — وطبيب العظام يريد إجراء عملية. تسأل عن رأي ثانٍ.
+  mk: Резултатите од магнетната резонанца стигнаа. Д-р Вагнер детално го објаснува наодот — а ортопедот сака да оперира. Прашувате за второ мислење.
+learn_lessons:
+- c2-medical-register
+culture: The right to a second opinion
+new_items:
+- id: der-befund
+  text: der Befund
+  meaning:
+    en: the findings, report
+    ar: التقرير الطبي
+    mk: наодот
+- id: die-diagnose
+  text: die Diagnose
+  meaning:
+    en: the diagnosis
+    ar: التشخيص
+    mk: дијагнозата
+- id: der-meniskusriss
+  text: der Meniskusriss
+  meaning:
+    en: the torn meniscus
+    ar: تمزّق الغضروف الهلالي
+    mk: кинењето на менискусот
+  rare: true
+- id: der-eingriff
+  text: der Eingriff
+  meaning:
+    en: the procedure, operation
+    ar: التدخّل الجراحي
+    mk: интервенцијата
+- id: konservativ
+  text: konservativ behandeln
+  meaning:
+    en: treat without surgery
+    ar: يعالج دون جراحة
+    mk: лекува конзервативно
+- id: die-zweitmeinung
+  text: die Zweitmeinung
+  meaning:
+    en: the second opinion
+    ar: الرأي الطبي الثاني
+    mk: второто мислење
+- id: die-erfolgsaussichten
+  text: die Erfolgsaussichten
+  meaning:
+    en: the chances of success
+    ar: فرص النجاح
+    mk: изгледите за успех
+  rare: true
+- id: die-risiken
+  text: die Risiken
+  meaning:
+    en: the risks
+    ar: المخاطر
+    mk: ризиците
+- id: die-physiotherapie
+  text: die Physiotherapie
+  meaning:
+    en: physiotherapy
+    ar: العلاج الطبيعي
+    mk: физиотерапијата
+- id: die-aufklaerung-arzt
+  text: das Aufklärungsgespräch
+  meaning:
+    en: the informed-consent talk
+    ar: حديث الإفصاح قبل العملية
+    mk: разговорот за информирана согласност
+  rare: true
+reviews:
+- item: das-fest
+  from: A2-11
+- item: feiern
+  from: A2-11
+- item: weihnachten
+  from: A2-11
+- item: ostern
+  from: A2-11
+- item: bei-uns
+  from: A2-11
+- item: zu-einer-anderen-zeit
+  from: A2-11
+- item: frei-nehmen
+  from: A2-11
+- item: die-familie-besuchen
+  from: A2-11
+- item: geschenke
+  from: A2-11
+- item: weil
+  from: A2-11
+- item: frohe-feiertage
+  from: A2-11
+- item: die-behauptung
+  from: B2-15
+- item: der-beweis
+  from: B2-15
+- item: die-falschmeldung
+  from: B2-15
+- item: ueberpruefen
+  from: B2-15
+- item: zwar-aber
+  from: B2-15
+- item: trotzdem
+  from: B2-15
+- item: auch-wenn
+  from: B2-15
+- item: teilen
+  from: B2-15
+- item: der-faktencheck
+  from: B2-15
+- item: die-hetze
+  from: B2-15
+- item: der-kredit
+  from: C1-17
+- item: die-zinsen
+  from: C1-17
+- item: das-eigenkapital
+  from: C1-17
+- item: die-grunderwerbsteuer
+  from: C1-17
+- item: der-notar
+  from: C1-17
+- item: der-makler
+  from: C1-17
+- item: die-kaufnebenkosten
+  from: C1-17
+- item: die-tilgung
+  from: C1-17
+- item: die-finanzierung
+  from: C1-17
+- item: auf-dem-land
+  from: C1-17
+- item: die-stellungnahme
+  from: C2-03
+- item: das-interview
+  from: C2-03
+- item: vor-der-kamera
+  from: C2-03
+- item: im-namen-des-vereins
+  from: C2-03
+- item: es-freut-uns-sehr
+  from: C2-03
+- item: die-foerderung-c2
+  from: C2-03
+- item: die-integration-durch-sport
+  from: C2-03
+- item: darauf-moechte-ich-hinweisen
+  from: C2-03
+- item: abschliessend
+  from: C2-03
+- item: nervoes
+  from: C2-03
+- item: die-nachfolge-c2
+  from: C2-11
+- item: die-uebergabe-laden
+  from: C2-11
+- item: der-ruhestand
+  from: C2-11
+- item: die-stammkundschaft
+  from: C2-11
+- item: die-weiterfuehrung
+  from: C2-11
+- item: die-neuausrichtung
+  from: C2-11
+- item: der-onlineshop
+  from: C2-11
+- item: die-tradition
+  from: C2-11
+- item: das-lebenswerk
+  from: C2-11
+- item: unter-neuer-leitung
+  from: C2-11
+- item: die-satzung
+  from: C2-15
+- item: der-antrag-c2
+  from: C2-15
+- item: ich-eroeffne-die-sitzung
+  from: C2-15
+- item: die-beschlussfaehigkeit
+  from: C2-15
+- item: abstimmen-ueber
+  from: C2-15
+- item: angenommen
+  from: C2-15
+- item: abgelehnt-c2
+  from: C2-15
+- item: das-wort-erteilen
+  from: C2-15
+- item: der-vorsitz
+  from: C2-15
+- item: die-sitzung-schliessen
+  from: C2-15
+- item: das-klischee-c2
+  from: C2-17
+- item: die-erfahrung-c2
+  from: C2-17
+- item: differenzieren
+  from: C2-17
+- item: pauschalisieren
+  from: C2-17
+- item: das-zitat
+  from: C2-17
+- item: die-schlagzeile
+  from: C2-17
+- item: die-vielfalt
+  from: C2-17
+- item: ich-moechte-betonen
+  from: C2-17
+- item: die-gegenfrage
+  from: C2-17
+- item: autorisieren
+  from: C2-17
+steps:
+- type: narrator
+  text:
+    en: The MRI results are in. Dr Wagner explains the report in detail — and the orthopaedist wants to operate. You ask about a second opinion. Listen to the conversation; you don't need to understand
+      it yet.
+    ar: وصلت نتائج الرنين المغناطيسي. الدكتورة فاغنر تشرح التقرير بالتفصيل — وطبيب العظام يريد إجراء عملية. تسأل عن رأي ثانٍ. استمع إلى المحادثة؛ لا داعي لأن تفهمها الآن.
+    mk: Резултатите од магнетната резонанца стигнаа. Д-р Вагнер детално го објаснува наодот — а ортопедот сака да оперира. Прашувате за второ мислење. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: wagner
+    text: Der Befund zeigt einen Meniskusriss im rechten Knie. Kein Grund zur Panik.
+    meaning:
+      en: The report shows a torn meniscus in your right knee. No reason to panic.
+      ar: التقرير يُظهر تمزّقًا في الغضروف الهلالي في الركبة اليمنى. لا داعي للذعر.
+      mk: Наодот покажува кинење на менискусот во десното колено. Нема причина за паника.
+  - speaker: protagonist
+    text: Der Orthopäde will sofort operieren. Ist der Eingriff wirklich nötig?
+    meaning:
+      en: The orthopaedist wants to operate at once. Is the procedure really necessary?
+      ar: طبيب العظام يريد إجراء العملية فورًا. هل التدخّل ضروري حقًا؟
+      mk: Ортопедот сака веднаш да оперира. Дали интервенцијата е навистина потребна?
+  - speaker: wagner
+    text: Nicht unbedingt. Bei Ihrem Alter kann man oft erst konservativ behandeln — mit Physiotherapie.
+    meaning:
+      en: Not necessarily. At your age it can often be treated without surgery first — with physiotherapy.
+      ar: ليس بالضرورة. في عمرك يمكن غالبًا العلاج أولًا دون جراحة — بالعلاج الطبيعي.
+      mk: Не мора. На ваша возраст често прво може да се лекува конзервативно — со физиотерапија.
+  - speaker: protagonist
+    text: Und die Erfolgsaussichten? Und die Risiken einer Operation?
+    meaning:
+      en: And the chances of success? And the risks of an operation?
+      ar: وفرص النجاح؟ ومخاطر العملية؟
+      mk: А изгледите за успех? И ризиците од операција?
+  - speaker: wagner
+    text: Das muss Ihnen der Operateur im Aufklärungsgespräch genau erklären. Fragen Sie alles.
+    meaning:
+      en: The surgeon must explain that precisely in the informed-consent talk. Ask everything.
+      ar: يجب أن يشرح لك الجرّاح ذلك بدقة في حديث الإفصاح قبل العملية. اسأل عن كل شيء.
+      mk: Тоа мора точно да ви го објасни хирургот во разговорот за информирана согласност. Прашајте сè.
+  - speaker: protagonist
+    text: Darf ich eine Zweitmeinung einholen?
+    meaning:
+      en: May I get a second opinion?
+      ar: هل يحق لي طلب رأي طبي ثانٍ؟
+      mk: Смеам ли да побарам второ мислење?
+  - speaker: wagner
+    text: Selbstverständlich. Bei manchen geplanten Operationen haben Sie sogar einen gesetzlichen Anspruch darauf.
+    meaning:
+      en: Of course. For some planned operations you even have a legal right to one.
+      ar: بالطبع. في بعض العمليات المخطّط لها لديك حتى حق قانوني في ذلك.
+      mk: Се разбира. За некои планирани операции имате дури законско право на тоа.
+  - speaker: protagonist
+    text: Dann warte ich mit der Diagnose ab und hole mir eine zweite Meinung.
+    meaning:
+      en: Then I'll hold on with the diagnosis and get a second opinion.
+      ar: إذن أتريّث بشأن التشخيص وأطلب رأيًا ثانيًا.
+      mk: Тогаш ќе почекам со дијагнозата и ќе побарам второ мислење.
+- type: prompt
+  ask:
+    en: 'Say: the report shows…'
+    ar: 'قل: التقرير يُظهر…'
+    mk: 'Кажете: наодот покажува…'
+  answer:
+    speaker: protagonist
+    text: Der Befund zeigt…
+  items:
+  - der-befund
+- type: prompt
+  ask:
+    en: 'Say: a torn meniscus.'
+    ar: 'قل: تمزّق الغضروف الهلالي.'
+    mk: 'Кажете: кинење на менискусот.'
+  answer:
+    speaker: protagonist
+    text: Ein Meniskusriss.
+  items:
+  - der-meniskusriss
+- type: narrator
+  text:
+    en: 'Medical register is precise and nominal: «der Befund», «die Diagnose», «der Eingriff», «konservativ behandeln», «die Erfolgsaussichten». Asking exactly in the same words gets exact answers.'
+    ar: 'الأسلوب الطبي دقيق واسمي: «der Befund»، «die Diagnose»، «der Eingriff»، «konservativ behandeln»، «die Erfolgsaussichten». والسؤال بالكلمات نفسها يجلب أجوبة دقيقة.'
+    mk: 'Медицинскиот регистар е прецизен и номинален: «der Befund», «die Diagnose», «der Eingriff», «konservativ behandeln», «die Erfolgsaussichten». Прашувањето со истите зборови носи точни одговори.'
+- type: prompt
+  ask:
+    en: 'Ask: is the procedure really necessary?'
+    ar: 'اسأل: هل التدخّل ضروري حقًا؟'
+    mk: 'Прашајте: дали интервенцијата е навистина потребна?'
+  answer:
+    speaker: protagonist
+    text: Ist der Eingriff wirklich nötig?
+  items:
+  - der-eingriff
+- type: prompt
+  ask:
+    en: 'Say: treat without surgery, with physiotherapy.'
+    ar: 'قل: العلاج دون جراحة، بالعلاج الطبيعي.'
+    mk: 'Кажете: конзервативно, со физиотерапија.'
+  answer:
+    speaker: protagonist
+    text: Konservativ behandeln, mit Physiotherapie.
+  items:
+  - konservativ
+  - die-physiotherapie
+- type: prompt
+  ask:
+    en: Ask about chances of success and risks.
+    ar: اسأل عن فرص النجاح والمخاطر.
+    mk: Прашајте за изгледите и ризиците.
+  answer:
+    speaker: protagonist
+    text: Die Erfolgsaussichten und die Risiken?
+  items:
+  - die-erfolgsaussichten
+  - die-risiken
+- type: prompt
+  ask:
+    en: 'Say: the informed-consent talk.'
+    ar: 'قل: حديث الإفصاح قبل العملية.'
+    mk: 'Кажете: разговорот за информирана согласност.'
+  answer:
+    speaker: protagonist
+    text: Das Aufklärungsgespräch.
+  items:
+  - die-aufklaerung-arzt
+- type: prompt
+  ask:
+    en: 'Ask: may I get a second opinion?'
+    ar: 'اسأل: هل يحق لي طلب رأي ثانٍ؟'
+    mk: 'Прашајте: смеам ли да побарам второ мислење?'
+  answer:
+    speaker: protagonist
+    text: Darf ich eine Zweitmeinung einholen?
+  items:
+  - die-zweitmeinung
+- type: prompt
+  ask:
+    en: 'Say: the diagnosis.'
+    ar: 'قل: التشخيص.'
+    mk: 'Кажете: дијагнозата.'
+  answer:
+    speaker: protagonist
+    text: Die Diagnose.
+  items:
+  - die-diagnose
+- type: narrator
+  text:
+    en: Before any operation the surgeon must explain it, its risks and alternatives in a consent talk, and you sign only afterwards. For certain planned operations public insurance gives a legal right
+      to a second opinion, and many insurers pay for one anyway. You may also ask for copies of all your findings.
+    ar: قبل أي عملية يجب أن يشرحها الجرّاح ومخاطرها وبدائلها في حديث إفصاح، ولا توقّع إلا بعد ذلك. وفي عمليات مخطّط لها معيّنة يمنح التأمين العام حقًا قانونيًا في رأي ثانٍ، وكثير من شركات التأمين تدفعه
+      على أي حال. ويحق لك أيضًا طلب نسخ من كل تقاريرك.
+    mk: Пред секоја операција хирургот мора да ја објасни, ризиците и алтернативите во разговор за согласност, а вие потпишувате дури потоа. За одредени планирани операции јавното осигурување дава законско
+      право на второ мислење, а многу каси го плаќаат и онака. Можете да побарате и копии од сите наоди.
+- type: prompt
+  ask:
+    en: 'Once more: say “the findings, report”.'
+    ar: 'مرة أخرى: قل “التقرير الطبي”.'
+    mk: 'Уште еднаш: кажете „наодот“.'
+  answer:
+    speaker: protagonist
+    text: der Befund
+  items:
+  - der-befund
+- type: prompt
+  ask:
+    en: 'Once more: say “the diagnosis”.'
+    ar: 'مرة أخرى: قل “التشخيص”.'
+    mk: 'Уште еднаш: кажете „дијагнозата“.'
+  answer:
+    speaker: protagonist
+    text: die Diagnose
+  items:
+  - die-diagnose
+- type: prompt
+  ask:
+    en: 'Once more: say “the torn meniscus”.'
+    ar: 'مرة أخرى: قل “تمزّق الغضروف الهلالي”.'
+    mk: 'Уште еднаш: кажете „кинењето на менискусот“.'
+  answer:
+    speaker: protagonist
+    text: der Meniskusriss
+  items:
+  - der-meniskusriss
+- type: prompt
+  ask:
+    en: 'Once more: say “the procedure, operation”.'
+    ar: 'مرة أخرى: قل “التدخّل الجراحي”.'
+    mk: 'Уште еднаш: кажете „интервенцијата“.'
+  answer:
+    speaker: protagonist
+    text: der Eingriff
+  items:
+  - der-eingriff
+- type: prompt
+  ask:
+    en: 'Once more: say “treat without surgery”.'
+    ar: 'مرة أخرى: قل “يعالج دون جراحة”.'
+    mk: 'Уште еднаш: кажете „лекува конзервативно“.'
+  answer:
+    speaker: protagonist
+    text: konservativ behandeln
+  items:
+  - konservativ
+- type: prompt
+  ask:
+    en: 'Once more: say “the second opinion”.'
+    ar: 'مرة أخرى: قل “الرأي الطبي الثاني”.'
+    mk: 'Уште еднаш: кажете „второто мислење“.'
+  answer:
+    speaker: protagonist
+    text: die Zweitmeinung
+  items:
+  - die-zweitmeinung
+- type: prompt
+  ask:
+    en: 'Once more: say “the chances of success”.'
+    ar: 'مرة أخرى: قل “فرص النجاح”.'
+    mk: 'Уште еднаш: кажете „изгледите за успех“.'
+  answer:
+    speaker: protagonist
+    text: die Erfolgsaussichten
+  items:
+  - die-erfolgsaussichten
+- type: prompt
+  ask:
+    en: 'Once more: say “the risks”.'
+    ar: 'مرة أخرى: قل “المخاطر”.'
+    mk: 'Уште еднаш: кажете „ризиците“.'
+  answer:
+    speaker: protagonist
+    text: die Risiken
+  items:
+  - die-risiken
+- type: prompt
+  ask:
+    en: 'Once more: say “physiotherapy”.'
+    ar: 'مرة أخرى: قل “العلاج الطبيعي”.'
+    mk: 'Уште еднаш: кажете „физиотерапијата“.'
+  answer:
+    speaker: protagonist
+    text: die Physiotherapie
+  items:
+  - die-physiotherapie
+- type: prompt
+  ask:
+    en: 'Once more: say “the informed-consent talk”.'
+    ar: 'مرة أخرى: قل “حديث الإفصاح قبل العملية”.'
+    mk: 'Уште еднаш: кажете „разговорот за информирана согласност“.'
+  answer:
+    speaker: protagonist
+    text: das Aufklärungsgespräch
+  items:
+  - die-aufklaerung-arzt
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتَه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “play to a cliché — and “from my own experience — and “make distinctions — and “generalise — and “may I quote you? — and “the headline — and “diversity — and “I''d like to stress that … —
+      and “the counter-question — and “approve the interview text — and “the statutes — and “the motion”.'
+    ar: 'قل: “يكرّس الصورة النمطية — و“من تجربتي الخاصة — و“يميّز، يفصّل — و“يعمّم — و“هل يمكنني اقتباس كلامك؟ — و“العنوان الرئيسي — و“التنوّع — و“أودّ أن أؤكّد أنّ … — و“السؤال المضاد — و“يعتمد نصّ المقابلة
+      — و“النظام الأساسي — و“الاقتراح، الطلب”.'
+    mk: 'Кажете: „го потхранува клишето“ — и „од сопствено искуство“ — и „прави разлика“ — и „генерализира“ — и „смеам ли да ве цитирам?“ — и „насловот“ — и „разновидноста“ — и „Би сакала да нагласам дека
+      …“ — и „противпрашањето“ — и „го одобрува интервјуто“ — и „статутот“ — и „предлогот“.'
+  answer:
+    speaker: protagonist
+    text: ein Klischee bedienen … aus eigener Erfahrung … differenzieren … pauschalisieren … darf ich Sie zitieren? … die Schlagzeile … die Vielfalt … Ich möchte betonen, dass … … die Gegenfrage … das Interview
+      autorisieren … die Satzung … der Antrag
+  items:
+  - das-klischee-c2
+  - die-erfahrung-c2
+  - differenzieren
+  - pauschalisieren
+  - das-zitat
+  - die-schlagzeile
+  - die-vielfalt
+  - ich-moechte-betonen
+  - die-gegenfrage
+  - autorisieren
+  - die-satzung
+  - der-antrag-c2
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I declare the meeting open — and “the quorum — and “vote on the motion — and “carried, accepted — and “rejected — and “I give the floor to … — and “the chair — and “I declare the meeting
+      closed — and “succession — and “the handover of the business — and “retirement — and “the regular customers”.'
+    ar: 'قل: “أفتتح الجلسة — و“النصاب — و“التصويت على الاقتراح — و“مقبول، أُقرّ — و“مرفوض — و“أعطي الكلمة لـ… — و“الرئاسة — و“أختتم الجلسة — و“الخلافة في العمل — و“تسليم المحل — و“التقاعد — و“الزبائن الدائمون”.'
+    mk: 'Кажете: „Ја отворам седницата“ — и „кворумот“ — и „гласање за предлогот“ — и „прифатен“ — и „одбиен“ — и „Му давам збор на …“ — и „претседавањето“ — и „Ја затворам седницата“ — и „наследувањето
+      (на фирмата)“ — и „предавањето на дуќанот“ — и „пензијата (состојба)“ — и „редовните муштерии“.'
+  answer:
+    speaker: protagonist
+    text: Ich eröffne die Sitzung … die Beschlussfähigkeit … über den Antrag abstimmen … angenommen … abgelehnt … Ich erteile … das Wort … der Vorsitz … Ich schließe die Sitzung … die Nachfolge … die Geschäftsübergabe
+      … der Ruhestand … die Stammkundschaft
+  items:
+  - ich-eroeffne-die-sitzung
+  - die-beschlussfaehigkeit
+  - abstimmen-ueber
+  - angenommen
+  - abgelehnt-c2
+  - das-wort-erteilen
+  - der-vorsitz
+  - die-sitzung-schliessen
+  - die-nachfolge-c2
+  - die-uebergabe-laden
+  - der-ruhestand
+  - die-stammkundschaft
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the continuation — and “the reorientation — and “the online shop — and “tradition — and “life''s work — and “under new management — and “the statement — and “the interview — and “on camera
+      — and “on behalf of the club — and “We''re very pleased that … — and “support, funding”.'
+    ar: 'قل: “الاستمرار — و“إعادة التوجيه — و“المتجر الإلكتروني — و“التقليد — و“عمل العمر — و“بإدارة جديدة — و“التصريح — و“المقابلة — و“أمام الكاميرا — و“باسم النادي — و“يسعدنا كثيرًا أنّ … — و“الدعم”.'
+    mk: 'Кажете: „продолжувањето“ — и „новата насока“ — и „онлајн продавницата“ — и „традицијата“ — и „животното дело“ — и „под ново раководство“ — и „изјавата“ — и „интервјуто“ — и „пред камерата“ — и
+      „во име на клубот“ — и „Многу нè радува што …“ — и „поддршката“.'
+  answer:
+    speaker: protagonist
+    text: die Weiterführung … die Neuausrichtung … der Onlineshop … die Tradition … das Lebenswerk … unter neuer Leitung … die Stellungnahme … das Interview … vor der Kamera … im Namen des Vereins … Es
+      freut uns sehr, dass … … die Förderung
+  items:
+  - die-weiterfuehrung
+  - die-neuausrichtung
+  - der-onlineshop
+  - die-tradition
+  - das-lebenswerk
+  - unter-neuer-leitung
+  - die-stellungnahme
+  - das-interview
+  - vor-der-kamera
+  - im-namen-des-vereins
+  - es-freut-uns-sehr
+  - die-foerderung-c2
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “integration through sport — and “I''d like to point out that … — and “in conclusion — and “nervous — and “the loan — and “the interest — and “own capital, deposit — and “land transfer tax
+      — and “the notary — and “the estate agent — and “the additional purchase costs — and “repayment (of the loan)”.'
+    ar: 'قل: “الاندماج عبر الرياضة — و“أودّ أن أشير إلى أنّ … — و“ختامًا — و“متوتّر — و“القرض — و“الفوائد — و“رأس المال الخاص — و“ضريبة نقل ملكية العقار — و“كاتب العدل — و“السمسار — و“تكاليف الشراء الإضافية
+      — و“سداد أصل القرض”.'
+    mk: 'Кажете: „интеграција преку спорт“ — и „Би сакала да укажам дека …“ — и „на крајот, заклучно“ — и „нервозна“ — и „кредитот“ — и „каматата“ — и „сопствениот капитал“ — и „данокот на промет на недвижности“
+      — и „нотарот“ — и „агентот за недвижности“ — и „дополнителните трошоци за купување“ — и „отплатата“.'
+  answer:
+    speaker: protagonist
+    text: Integration durch Sport … Ich möchte darauf hinweisen, dass … … abschließend … nervös … der Kredit … die Zinsen … das Eigenkapital … die Grunderwerbsteuer … der Notar … der Makler … die Kaufnebenkosten
+      … die Tilgung
+  items:
+  - die-integration-durch-sport
+  - darauf-moechte-ich-hinweisen
+  - abschliessend
+  - nervoes
+  - der-kredit
+  - die-zinsen
+  - das-eigenkapital
+  - die-grunderwerbsteuer
+  - der-notar
+  - der-makler
+  - die-kaufnebenkosten
+  - die-tilgung
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the financing — and “in the countryside — and “the claim — and “the proof — and “fake news — and “check, verify — and “admittedly … but — and “nevertheless — and “even if — and “share — and
+      “the fact check — and “incitement, hate campaign”.'
+    ar: 'قل: “التمويل — و“في الريف — و“الادّعاء — و“الدليل — و“الخبر الكاذب — و“يتحقّق — و“صحيح أنّ … لكن — و“مع ذلك — و“حتى لو — و“يشارك — و“التحقّق من الحقائق — و“التحريض”.'
+    mk: 'Кажете: „финансирањето“ — и „на село“ — и „тврдењето“ — и „доказот“ — и „лажната вест“ — и „проверува“ — и „иако … сепак“ — и „сепак“ — и „дури и ако“ — и „споделува“ — и „проверката на факти“
+      — и „поттикнувањето омраза“.'
+  answer:
+    speaker: protagonist
+    text: die Finanzierung … auf dem Land … die Behauptung … der Beweis … die Falschmeldung … überprüfen … zwar … aber … trotzdem … auch wenn … teilen … der Faktencheck … die Hetze
+  items:
+  - die-finanzierung
+  - auf-dem-land
+  - die-behauptung
+  - der-beweis
+  - die-falschmeldung
+  - ueberpruefen
+  - zwar-aber
+  - trotzdem
+  - auch-wenn
+  - teilen
+  - der-faktencheck
+  - die-hetze
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the festival — and “celebrate — and “Christmas — and “Easter — and “where we come from — and “at a different time — and “take a day off — and “visit the family — and “presents — and “because
+      (verb to the end) — and “Happy holidays!”.'
+    ar: 'قل: “العيد، الاحتفال — و“يحتفل — و“عيد الميلاد — و“عيد الفصح — و“عندنا — و“في وقت آخر — و“يأخذ إجازة — و“يزور العائلة — و“هدايا — و“لأنّ (الفعل في الآخر) — و“أعيادًا سعيدة!”.'
+    mk: 'Кажете: „празникот“ — и „слави“ — и „Божиќ“ — и „Велигден“ — и „кај нас“ — и „во друго време“ — и „зема слободен ден“ — и „го посетува семејството“ — и „подароци“ — и „затоа што (глаголот на крај)“
+      — и „Среќни празници!“.'
+  answer:
+    speaker: protagonist
+    text: das Fest … feiern … Weihnachten … Ostern … bei uns … zu einer anderen Zeit … frei nehmen … die Familie besuchen … Geschenke … weil … Frohe Feiertage!
+  items:
+  - das-fest
+  - feiern
+  - weihnachten
+  - ostern
+  - bei-uns
+  - zu-einer-anderen-zeit
+  - frei-nehmen
+  - die-familie-besuchen
+  - geschenke
+  - weil
+  - frohe-feiertage
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمع إلى المحادثة مرة أخرى. الآن تفهمها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

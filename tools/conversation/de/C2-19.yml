@@ -1,0 +1,822 @@
+# UNIT de C2-19 — written by AI (Claude) for Casus; expanded from src/C2-19.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-19
+level: C2
+number: 19
+protagonist: f
+title:
+  en: Sharing a holiday house
+  ar: تقاسم بيت العطلة
+  mk: Делење куќа за одмор
+situation:
+  en: Jonas, Svenja, Paul and you rent a house on the Baltic. Who pays what? Svenja suggests a fair split.
+  ar: يوناس وسفينيا وباول وأنتِ تستأجرون بيتًا على بحر البلطيق. من يدفع ماذا؟ سفينيا تقترح تقسيمًا عادلًا.
+  mk: Јонас, Свења, Паул и вие изнајмувате куќа на Балтикот. Кој што плаќа? Свења предлага праведна поделба.
+learn_lessons:
+- c2-konjunktiv-ii
+culture: Splitting costs exactly
+new_items:
+- id: das-ferienhaus
+  text: das Ferienhaus
+  meaning:
+    en: the holiday house
+    ar: بيت العطلة
+    mk: куќата за одмор
+- id: die-kostenaufteilung
+  text: die Kostenaufteilung
+  meaning:
+    en: the cost split
+    ar: تقسيم التكاليف
+    mk: поделбата на трошоците
+  rare: true
+- id: pro-kopf
+  text: pro Kopf
+  meaning:
+    en: per head
+    ar: للفرد
+    mk: по глава
+- id: die-gemeinsame-kasse
+  text: die gemeinsame Kasse
+  meaning:
+    en: the kitty
+    ar: الصندوق المشترك
+    mk: заедничката каса
+- id: waere-es-nicht-fairer
+  text: Wäre es nicht fairer, wenn …?
+  meaning:
+    en: Wouldn't it be fairer if …?
+    ar: أليس من الأعدل أن …؟
+    mk: Зарем не би било поправедно ако …?
+- id: haetten-wir
+  text: Hätten wir …, wäre …
+  meaning:
+    en: If we had …, it would be …
+    ar: لو كان لدينا …، لكان …
+    mk: Да имавме …, ќе беше …
+- id: die-app
+  text: die Ausgaben-App
+  meaning:
+    en: the expense app
+    ar: تطبيق المصاريف
+    mk: апликацијата за трошоци
+- id: abrechnen
+  text: abrechnen
+  meaning:
+    en: settle up
+    ar: يصفّي الحساب
+    mk: пресметува
+- id: die-ostsee
+  text: die Ostsee
+  meaning:
+    en: the Baltic Sea
+    ar: بحر البلطيق
+    mk: Балтичкото Море
+- id: grosszuegig
+  text: großzügig
+  meaning:
+    en: generous
+    ar: كريم
+    mk: дарежливо
+reviews:
+- item: die-hitze
+  from: A2-12
+- item: heisser-als
+  from: A2-12
+- item: schwitzen
+  from: A2-12
+- item: der-ventilator
+  from: A2-12
+- item: keine-klimaanlage
+  from: A2-12
+- item: ausverkauft
+  from: A2-12
+- item: die-vorhaenge
+  from: A2-12
+- item: noch-hell
+  from: A2-12
+- item: am-laengsten
+  from: A2-12
+- item: die-nacht-kurz
+  from: A2-12
+- item: der-konflikt
+  from: B2-16
+- item: die-loesung
+  from: B2-16
+- item: der-kompromiss
+  from: B2-16
+- item: vermitteln
+  from: B2-16
+- item: dennoch
+  from: B2-16
+- item: obwohl-b2
+  from: B2-16
+- item: der-standpunkt
+  from: B2-16
+- item: die-probephase
+  from: B2-16
+- item: einverstanden
+  from: B2-16
+- item: blockieren
+  from: B2-16
+- item: die-aufklaerung
+  from: C1-18
+- item: die-pflicht
+  from: C1-18
+- item: der-verstand
+  from: C1-18
+- item: der-mut
+  from: C1-18
+- item: der-kategorische-imperativ
+  from: C1-18
+- item: die-vernunft
+  from: C1-18
+- item: der-zu-befolgende
+  from: C1-18
+- item: allgemein-gueltig
+  from: C1-18
+- item: die-muendigkeit
+  from: C1-18
+- item: handeln
+  from: C1-18
+- item: die-gehaltsverhandlung
+  from: C2-04
+- item: das-gegenangebot
+  from: C2-04
+- item: der-marktwert
+  from: C2-04
+- item: ich-haette-mir-vorgestellt
+  from: C2-04
+- item: waere-es-denkbar
+  from: C2-04
+- item: ich-wuerde-vorschlagen
+  from: C2-04
+- item: die-gehaltserhoehung
+  from: C2-04
+- item: das-budget-c2
+  from: C2-04
+- item: der-zusatzurlaub
+  from: C2-04
+- item: die-vereinbarung
+  from: C2-04
+- item: die-fachsprache-e
+  from: C2-12-e
+  for:
+  - en
+- item: das-kolloquium-e
+  from: C2-12-e
+  for:
+  - en
+- item: die-forschungsfrage-e
+  from: C2-12-e
+  for:
+  - en
+- item: die-methodik-e
+  from: C2-12-e
+  for:
+  - en
+- item: die-ergebnisse-e
+  from: C2-12-e
+  for:
+  - en
+- item: es-laesst-sich-zeigen-e
+  from: C2-12-e
+  for:
+  - en
+- item: im-rahmen-dieser-arbeit-e
+  from: C2-12-e
+  for:
+  - en
+- item: die-einschraenkung-e
+  from: C2-12-e
+  for:
+  - en
+- item: der-ausblick-e
+  from: C2-12-e
+  for:
+  - en
+- item: die-gutachterin-e
+  from: C2-12-e
+  for:
+  - en
+- item: das-missverstaendnis
+  from: C2-16
+- item: das-kam-falsch-rueber
+  from: C2-16
+- item: nicht-boese-gemeint
+  from: C2-16
+- item: schwamm-drueber
+  from: C2-16
+- item: ein-tabu
+  from: C2-16
+- item: das-gewicht
+  from: C2-16
+- item: sich-entschuldigen-c2
+  from: C2-16
+- item: ein-kompliment
+  from: C2-16
+- item: beleidigt
+  from: C2-16
+- item: andere-laender-andere-sitten
+  from: C2-16
+- item: der-befund
+  from: C2-18
+- item: die-diagnose
+  from: C2-18
+- item: der-meniskusriss
+  from: C2-18
+- item: der-eingriff
+  from: C2-18
+- item: konservativ
+  from: C2-18
+- item: die-zweitmeinung
+  from: C2-18
+- item: die-erfolgsaussichten
+  from: C2-18
+- item: die-risiken
+  from: C2-18
+- item: die-physiotherapie
+  from: C2-18
+- item: die-aufklaerung-arzt
+  from: C2-18
+- item: die-fachsprache-a
+  from: C2-12-a
+  for:
+  - ar
+- item: die-gastvorlesung-a
+  from: C2-12-a
+  for:
+  - ar
+- item: die-tragfaehigkeit-a
+  from: C2-12-a
+  for:
+  - ar
+- item: der-werkstoff-a
+  from: C2-12-a
+  for:
+  - ar
+- item: die-ergebnisse-a
+  from: C2-12-a
+  for:
+  - ar
+- item: es-laesst-sich-zeigen-a
+  from: C2-12-a
+  for:
+  - ar
+- item: die-nachhaltigkeit-a
+  from: C2-12-a
+  for:
+  - ar
+- item: die-einschraenkung-a
+  from: C2-12-a
+  for:
+  - ar
+- item: der-ausblick-a
+  from: C2-12-a
+  for:
+  - ar
+- item: der-zement-a
+  from: C2-12-a
+  for:
+  - ar
+- item: die-seniorenakademie-m
+  from: C2-12-m
+  for:
+  - mk
+- item: die-antike-m
+  from: C2-12-m
+  for:
+  - mk
+- item: die-ausgrabung-m
+  from: C2-12-m
+  for:
+  - mk
+- item: das-mosaik-m
+  from: C2-12-m
+  for:
+  - mk
+- item: es-laesst-sich-zeigen-m
+  from: C2-12-m
+  for:
+  - mk
+- item: die-quelle-c2-m
+  from: C2-12-m
+  for:
+  - mk
+- item: im-folgenden-m
+  from: C2-12-m
+  for:
+  - mk
+- item: die-epoche-m
+  from: C2-12-m
+  for:
+  - mk
+- item: das-osmanische-reich-m
+  from: C2-12-m
+  for:
+  - mk
+- item: die-konsulatsstadt-m
+  from: C2-12-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: Jonas, Svenja, Paul and you rent a house on the Baltic. Who pays what? Svenja suggests a fair split. Listen to the conversation; you don't need to understand it yet.
+    ar: يوناس وسفينيا وباول وأنتِ تستأجرون بيتًا على بحر البلطيق. من يدفع ماذا؟ سفينيا تقترح تقسيمًا عادلًا. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.
+    mk: Јонас, Свења, Паул и вие изнајмувате куќа на Балтикот. Кој што плаќа? Свења предлага праведна поделба. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: svenja
+    text: Das Ferienhaus kostet achthundert Euro. Pro Kopf zweihundert.
+    meaning:
+      en: The holiday house costs eight hundred euros. Two hundred per head.
+      ar: بيت العطلة يكلّف ثمانمئة يورو. مئتان للفرد.
+      mk: Куќата за одмор чини осумстотини евра. По глава двесте.
+  - speaker: paul
+    text: Aber Jonas und Svenja haben das große Zimmer mit Meerblick.
+    meaning:
+      en: But Jonas and Svenja have the big room with a sea view.
+      ar: لكن يوناس وسفينيا لديهما الغرفة الكبيرة المطلّة على البحر.
+      mk: Но Јонас и Свења ја имаат големата соба со поглед на морето.
+  - speaker: protagonist
+    text: Wäre es nicht fairer, wenn das große Zimmer etwas mehr zahlt?
+    meaning:
+      en: Wouldn't it be fairer if the big room paid a bit more?
+      ar: أليس من الأعدل أن تدفع الغرفة الكبيرة أكثر قليلًا؟
+      mk: Зарем не би било поправедно големата соба да плати малку повеќе?
+  - speaker: svenja
+    text: Einverstanden. Und für Essen machen wir eine gemeinsame Kasse.
+    meaning:
+      en: Agreed. And for food we'll have a kitty.
+      ar: موافقة. وللطعام نعمل صندوقًا مشتركًا.
+      mk: Се согласувам. А за храна правиме заедничка каса.
+  - speaker: protagonist
+    text: Bei uns würde einer einfach alles bezahlen — beim nächsten Mal der andere.
+    meaning:
+      en: With us one person would simply pay for everything — next time the other.
+      ar: عندنا يدفع واحد كل شيء ببساطة — وفي المرة القادمة الآخر.
+      mk: Кај нас еден едноставно би платил сè — следниот пат другиот.
+  - speaker: jonas
+    text: Das ist großzügig! Aber hätten wir das so gemacht, wäre Paul pleite.
+    meaning:
+      en: That's generous! But if we'd done it that way, Paul would be broke.
+      ar: هذا كرم! لكن لو فعلنا ذلك لأفلس باول.
+      mk: Тоа е дарежливо! Но да го направевме така, Паул ќе беше без пара.
+  - speaker: paul
+    text: Danke! Ich trage alles in die Ausgaben-App ein. Am Ende rechnen wir ab.
+    meaning:
+      en: Thanks! I'll put everything into the expense app. At the end we settle up.
+      ar: شكرًا! سأسجّل كل شيء في تطبيق المصاريف. في النهاية نصفّي الحساب.
+      mk: Благодарам! Сè ќе внесам во апликацијата за трошоци. На крајот ќе пресметаме.
+  - speaker: protagonist
+    text: 'Typisch deutsch — auf den Cent genau. Aber ehrlich gesagt: sehr entspannend.'
+    meaning:
+      en: 'Typically German — to the cent. But honestly: very relaxing.'
+      ar: 'ألماني نموذجي — بدقة السنت. لكن بصراحة: مريح جدًا.'
+      mk: 'Типично германски — до цент. Но искрено: многу опуштачки.'
+- type: prompt
+  ask:
+    en: 'Say: the holiday house on the Baltic.'
+    ar: 'قولي: بيت العطلة على بحر البلطيق.'
+    mk: 'Кажете: куќата за одмор на Балтикот.'
+  answer:
+    speaker: protagonist
+    text: Das Ferienhaus an der Ostsee.
+  items:
+  - das-ferienhaus
+  - die-ostsee
+- type: prompt
+  ask:
+    en: 'Say: two hundred per head.'
+    ar: 'قولي: مئتان للفرد.'
+    mk: 'Кажете: двесте по глава.'
+  answer:
+    speaker: protagonist
+    text: Zweihundert pro Kopf.
+  items:
+  - pro-kopf
+- type: narrator
+  text:
+    en: 'Konjunktiv II for diplomatic proposals and hypotheses: «Wäre es nicht fairer, wenn…?» (suggestion as a question), «Bei uns würde einer alles bezahlen», «Hätten wir das so gemacht, wäre Paul pleite»
+      (past unreal).'
+    ar: 'صيغة التمني للاقتراحات الدبلوماسية والفرضيات: «Wäre es nicht fairer, wenn…?» (اقتراح بصيغة سؤال)، «Bei uns würde einer alles bezahlen»، «Hätten wir das so gemacht, wäre Paul pleite» (فرضية ماضية).'
+    mk: 'Konjunktiv II за дипломатски предлози и хипотези: «Wäre es nicht fairer, wenn…?» (предлог како прашање), «Bei uns würde einer alles bezahlen», «Hätten wir das so gemacht, wäre Paul pleite» (минато
+      нереално).'
+- type: prompt
+  ask:
+    en: 'Suggest: wouldn''t it be fairer if…?'
+    ar: 'اقترحي: أليس من الأعدل أن…؟'
+    mk: 'Предложете: зарем не би било поправедно ако…?'
+  answer:
+    speaker: protagonist
+    text: Wäre es nicht fairer, wenn…?
+  items:
+  - waere-es-nicht-fairer
+- type: prompt
+  ask:
+    en: 'Say: the cost split.'
+    ar: 'قولي: تقسيم التكاليف.'
+    mk: 'Кажете: поделбата на трошоците.'
+  answer:
+    speaker: protagonist
+    text: Die Kostenaufteilung.
+  items:
+  - die-kostenaufteilung
+- type: prompt
+  ask:
+    en: 'Say: a kitty for food.'
+    ar: 'قولي: صندوق مشترك للطعام.'
+    mk: 'Кажете: заедничка каса за храна.'
+  answer:
+    speaker: protagonist
+    text: Eine gemeinsame Kasse fürs Essen.
+  items:
+  - die-gemeinsame-kasse
+- type: prompt
+  ask:
+    en: 'Say: if we''d done that, Paul would be broke.'
+    ar: 'قولي: لو فعلنا ذلك لأفلس باول.'
+    mk: 'Кажете: да го направевме тоа, Паул ќе беше без пара.'
+  answer:
+    speaker: protagonist
+    text: Hätten wir das gemacht, wäre Paul pleite.
+  items:
+  - haetten-wir
+- type: prompt
+  ask:
+    en: 'Say: that''s generous.'
+    ar: 'قولي: هذا كرم.'
+    mk: 'Кажете: тоа е дарежливо.'
+  answer:
+    speaker: protagonist
+    text: Das ist großzügig.
+  items:
+  - grosszuegig
+- type: prompt
+  ask:
+    en: 'Say: the expense app.'
+    ar: 'قولي: تطبيق المصاريف.'
+    mk: 'Кажете: апликацијата за трошоци.'
+  answer:
+    speaker: protagonist
+    text: Die Ausgaben-App.
+  items:
+  - die-app
+- type: prompt
+  ask:
+    en: 'Say: at the end we settle up.'
+    ar: 'قولي: في النهاية نصفّي الحساب.'
+    mk: 'Кажете: на крајот пресметуваме.'
+  answer:
+    speaker: protagonist
+    text: Am Ende rechnen wir ab.
+  items:
+  - abrechnen
+- type: narrator
+  text:
+    en: 'Among German friends, splitting exactly — to the cent, often with an app — is normal and not stingy: it keeps friendships free of unspoken debts. Inviting someone (''Ich lade dich ein'') is also
+      common, but said clearly.'
+    ar: 'بين الأصدقاء الألمان التقسيم الدقيق — حتى السنت، غالبًا بتطبيق — أمر عادي وليس بخلًا: يحفظ الصداقة من الديون غير المعلنة. ودعوة أحد («Ich lade dich ein») شائعة أيضًا، لكنها تُقال بوضوح.'
+    mk: 'Меѓу германски пријатели, точната поделба — до цент, често со апликација — е нормална и не е скржавост: ги чува пријателствата од неизговорени долгови. Покана („Ich lade dich ein“) е исто честа,
+      но се кажува јасно.'
+- type: prompt
+  ask:
+    en: 'Once more: say “the holiday house”.'
+    ar: 'مرة أخرى: قولي “بيت العطلة”.'
+    mk: 'Уште еднаш: кажете „куќата за одмор“.'
+  answer:
+    speaker: protagonist
+    text: das Ferienhaus
+  items:
+  - das-ferienhaus
+- type: prompt
+  ask:
+    en: 'Once more: say “the cost split”.'
+    ar: 'مرة أخرى: قولي “تقسيم التكاليف”.'
+    mk: 'Уште еднаш: кажете „поделбата на трошоците“.'
+  answer:
+    speaker: protagonist
+    text: die Kostenaufteilung
+  items:
+  - die-kostenaufteilung
+- type: prompt
+  ask:
+    en: 'Once more: say “per head”.'
+    ar: 'مرة أخرى: قولي “للفرد”.'
+    mk: 'Уште еднаш: кажете „по глава“.'
+  answer:
+    speaker: protagonist
+    text: pro Kopf
+  items:
+  - pro-kopf
+- type: prompt
+  ask:
+    en: 'Once more: say “the kitty”.'
+    ar: 'مرة أخرى: قولي “الصندوق المشترك”.'
+    mk: 'Уште еднаш: кажете „заедничката каса“.'
+  answer:
+    speaker: protagonist
+    text: die gemeinsame Kasse
+  items:
+  - die-gemeinsame-kasse
+- type: prompt
+  ask:
+    en: 'Once more: say “Wouldn''t it be fairer if …?”.'
+    ar: 'مرة أخرى: قولي “أليس من الأعدل أن …؟”.'
+    mk: 'Уште еднаш: кажете „Зарем не би било поправедно ако …?“.'
+  answer:
+    speaker: protagonist
+    text: Wäre es nicht fairer, wenn …?
+  items:
+  - waere-es-nicht-fairer
+- type: prompt
+  ask:
+    en: 'Once more: say “If we had …, it would be …”.'
+    ar: 'مرة أخرى: قولي “لو كان لدينا …، لكان …”.'
+    mk: 'Уште еднаш: кажете „Да имавме …, ќе беше …“.'
+  answer:
+    speaker: protagonist
+    text: Hätten wir …, wäre …
+  items:
+  - haetten-wir
+- type: prompt
+  ask:
+    en: 'Once more: say “the expense app”.'
+    ar: 'مرة أخرى: قولي “تطبيق المصاريف”.'
+    mk: 'Уште еднаш: кажете „апликацијата за трошоци“.'
+  answer:
+    speaker: protagonist
+    text: die Ausgaben-App
+  items:
+  - die-app
+- type: prompt
+  ask:
+    en: 'Once more: say “settle up”.'
+    ar: 'مرة أخرى: قولي “يصفّي الحساب”.'
+    mk: 'Уште еднаш: кажете „пресметува“.'
+  answer:
+    speaker: protagonist
+    text: abrechnen
+  items:
+  - abrechnen
+- type: prompt
+  ask:
+    en: 'Once more: say “the Baltic Sea”.'
+    ar: 'مرة أخرى: قولي “بحر البلطيق”.'
+    mk: 'Уште еднаш: кажете „Балтичкото Море“.'
+  answer:
+    speaker: protagonist
+    text: die Ostsee
+  items:
+  - die-ostsee
+- type: prompt
+  ask:
+    en: 'Once more: say “generous”.'
+    ar: 'مرة أخرى: قولي “كريم”.'
+    mk: 'Уште еднаш: кажете „дарежливо“.'
+  answer:
+    speaker: protagonist
+    text: großzügig
+  items:
+  - grosszuegig
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the findings, report — and “the diagnosis — and “the torn meniscus — and “the procedure, operation — and “treat without surgery — and “the second opinion — and “the chances of success — and
+      “the risks — and “physiotherapy — and “the informed-consent talk — and “the misunderstanding — and “That came across wrong — and “It wasn''t meant badly — and “Let''s forget it! — and “a taboo — and
+      “the weight — and “apologise sincerely — and “a compliment — and “offended — and “Other countries, other customs”.'
+    ar: 'قولي: “التقرير الطبي — و“التشخيص — و“تمزّق الغضروف الهلالي — و“التدخّل الجراحي — و“يعالج دون جراحة — و“الرأي الطبي الثاني — و“فرص النجاح — و“المخاطر — و“العلاج الطبيعي — و“حديث الإفصاح قبل العملية
+      — و“سوء الفهم — و“فُهم ذلك خطأً — و“لم أقصد سوءًا — و“لننسَ الأمر! — و“محظور، تابو — و“الوزن — و“يعتذر بصدق — و“إطراء — و“مستاء، مُهان — و“لكل بلد عاداته”.'
+    mk: 'Кажете: „наодот“ — и „дијагнозата“ — и „кинењето на менискусот“ — и „интервенцијата“ — и „лекува конзервативно“ — и „второто мислење“ — и „изгледите за успех“ — и „ризиците“ — и „физиотерапијата“
+      — и „разговорот за информирана согласност“ — и „недоразбирањето“ — и „Тоа излезе погрешно“ — и „Не беше мислено лошо“ — и „Да заборавиме!“ — и „табу“ — и „тежината“ — и „искрено се извинува“ — и „комплимент“
+      — и „навредено“ — и „Друга земја, други обичаи“.'
+  answer:
+    speaker: protagonist
+    text: der Befund … die Diagnose … der Meniskusriss … der Eingriff … konservativ behandeln … die Zweitmeinung … die Erfolgsaussichten … die Risiken … die Physiotherapie … das Aufklärungsgespräch … das
+      Missverständnis … Das kam falsch rüber … Das war nicht böse gemeint … Schwamm drüber! … ein Tabu … das Gewicht … sich aufrichtig entschuldigen … ein Kompliment … beleidigt … Andere Länder, andere
+      Sitten
+  items:
+  - der-befund
+  - die-diagnose
+  - der-meniskusriss
+  - der-eingriff
+  - konservativ
+  - die-zweitmeinung
+  - die-erfolgsaussichten
+  - die-risiken
+  - die-physiotherapie
+  - die-aufklaerung-arzt
+  - das-missverstaendnis
+  - das-kam-falsch-rueber
+  - nicht-boese-gemeint
+  - schwamm-drueber
+  - ein-tabu
+  - das-gewicht
+  - sich-entschuldigen-c2
+  - ein-kompliment
+  - beleidigt
+  - andere-laender-andere-sitten
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the salary negotiation — and “the counter-offer — and “the market value — and “I had in mind … — and “Would it be conceivable that …? — and “I would suggest … — and “the pay rise — and “the
+      budget is limited — and “extra holiday days — and “the agreement — and “the Enlightenment — and “duty — and “reason, understanding — and “courage — and “the categorical imperative — and “reason —
+      and “the rule to be followed — and “universally valid — and “intellectual maturity, autonomy — and “act”.'
+    ar: 'قولي: “التفاوض على الراتب — و“العرض المضاد — و“القيمة السوقية — و“كنتُ أتصوّر … — و“هل من الممكن أن …؟ — و“أقترح … — و“زيادة الراتب — و“الميزانية محدودة — و“أيام إجازة إضافية — و“الاتفاق — و“عصر
+      التنوير — و“الواجب — و“العقل — و“الشجاعة — و“الأمر المطلق — و“العقل، المنطق — و“القاعدة الواجب اتّباعها — و“صالح للجميع — و“الرشد — و“يتصرّف”.'
+    mk: 'Кажете: „преговорите за плата“ — и „контрапонудата“ — и „пазарната вредност“ — и „Замислував …“ — и „Дали би било замисливо …?“ — и „Би предложил …“ — и „покачувањето на платата“ — и „буџетот е
+      ограничен“ — и „дополнителни денови одмор“ — и „договорот“ — и „просветителството“ — и „должноста“ — и „разумот“ — и „храброста“ — и „категоричкиот императив“ — и „умот“ — и „правилото што треба да
+      се следи“ — и „општо важечко“ — и „полнолетството (на умот)“ — и „постапува“.'
+  answer:
+    speaker: protagonist
+    text: die Gehaltsverhandlung … das Gegenangebot … der Marktwert … Ich hätte mir … vorgestellt … Wäre es denkbar, dass …? … Ich würde vorschlagen, … … die Gehaltserhöhung … das Budget ist begrenzt …
+      zusätzliche Urlaubstage … die Vereinbarung … die Aufklärung … die Pflicht … der Verstand … der Mut … der kategorische Imperativ … die Vernunft … die zu befolgende Regel … allgemein gültig … die Mündigkeit
+      … handeln
+  items:
+  - die-gehaltsverhandlung
+  - das-gegenangebot
+  - der-marktwert
+  - ich-haette-mir-vorgestellt
+  - waere-es-denkbar
+  - ich-wuerde-vorschlagen
+  - die-gehaltserhoehung
+  - das-budget-c2
+  - der-zusatzurlaub
+  - die-vereinbarung
+  - die-aufklaerung
+  - die-pflicht
+  - der-verstand
+  - der-mut
+  - der-kategorische-imperativ
+  - die-vernunft
+  - der-zu-befolgende
+  - allgemein-gueltig
+  - die-muendigkeit
+  - handeln
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the conflict — and “the solution — and “the compromise — and “mediate — and “nonetheless — and “although both are right — and “the point of view — and “a trial phase — and “agreed — and “block
+      — and “the heat — and “hotter than — and “sweat — and “the fan — and “no air conditioning — and “sold out — and “the curtains — and “still light — and “the longest — and “the night is short”.'
+    ar: 'قولي: “الخلاف — و“الحل — و“الحل الوسط — و“يتوسّط — و“ومع ذلك — و“مع أنّ الاثنين على حق — و“وجهة النظر — و“مرحلة تجريبية — و“موافق — و“يعرقل — و“الحرّ — و“أحرّ من — و“يعرق — و“المروحة — و“لا مكيّف
+      — و“نفد — و“الستائر — و“ما زال مضيئًا — و“الأطول — و“الليل قصير”.'
+    mk: 'Кажете: „конфликтот“ — и „решението“ — и „компромисот“ — и „посредува“ — и „сепак“ — и „иако и двајцата се во право“ — и „гледиштето“ — и „пробна фаза“ — и „се согласувам“ — и „блокира“ — и „жештината“
+      — и „пожешко од“ — и „се потам“ — и „вентилаторот“ — и „нема клима“ — и „распродадено“ — и „завесите“ — и „уште светло“ — и „најдолго“ — и „ноќта е кратка“.'
+  answer:
+    speaker: protagonist
+    text: der Konflikt … die Lösung … der Kompromiss … vermitteln … dennoch … obwohl beide recht haben … der Standpunkt … eine Testphase … einverstanden … blockieren … die Hitze … heißer als … schwitzen
+      … der Ventilator … keine Klimaanlage … ausverkauft … die Vorhänge … noch hell … am längsten … die Nacht ist kurz
+  items:
+  - der-konflikt
+  - die-loesung
+  - der-kompromiss
+  - vermitteln
+  - dennoch
+  - obwohl-b2
+  - der-standpunkt
+  - die-probephase
+  - einverstanden
+  - blockieren
+  - die-hitze
+  - heisser-als
+  - schwitzen
+  - der-ventilator
+  - keine-klimaanlage
+  - ausverkauft
+  - die-vorhaenge
+  - noch-hell
+  - am-laengsten
+  - die-nacht-kurz
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “technical language — and “the thesis defence — and “the research question — and “the methodology”.'
+  answer:
+    speaker: protagonist
+    text: die Fachsprache … das Kolloquium … die Forschungsfrage … die Methodik
+  items:
+  - die-fachsprache-e
+  - das-kolloquium-e
+  - die-forschungsfrage-e
+  - die-methodik-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the results — and “it can be shown that … — and “within the scope of this thesis — and “the limitation”.'
+  answer:
+    speaker: protagonist
+    text: die Ergebnisse … es lässt sich zeigen, dass … … im Rahmen dieser Arbeit … die Einschränkung
+  items:
+  - die-ergebnisse-e
+  - es-laesst-sich-zeigen-e
+  - im-rahmen-dieser-arbeit-e
+  - die-einschraenkung-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the outlook — and “the examiner (f)”.'
+  answer:
+    speaker: protagonist
+    text: der Ausblick … die Gutachterin
+  items:
+  - der-ausblick-e
+  - die-gutachterin-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “اللغة التخصّصية — و“محاضرة الضيف — و“قدرة التحمّل — و“المادة (الهندسية)”.'
+  answer:
+    speaker: protagonist
+    text: die Fachsprache … die Gastvorlesung … die Tragfähigkeit … der Werkstoff
+  items:
+  - die-fachsprache-a
+  - die-gastvorlesung-a
+  - die-tragfaehigkeit-a
+  - der-werkstoff-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “النتائج — و“يمكن إثبات أنّ … — و“الاستدامة — و“القيد، الحدّ”.'
+  answer:
+    speaker: protagonist
+    text: die Ergebnisse … es lässt sich zeigen, dass … … die Nachhaltigkeit … die Einschränkung
+  items:
+  - die-ergebnisse-a
+  - es-laesst-sich-zeigen-a
+  - die-nachhaltigkeit-a
+  - die-einschraenkung-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “الآفاق — و“الإسمنت”.'
+  answer:
+    speaker: protagonist
+    text: der Ausblick … der Zement
+  items:
+  - der-ausblick-a
+  - der-zement-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „сениорската академија“ — и „антиката“ — и „ископината“ — и „мозаикот“.'
+  answer:
+    speaker: protagonist
+    text: die Seniorenakademie … die Antike … die Ausgrabung … das Mosaik
+  items:
+  - die-seniorenakademie-m
+  - die-antike-m
+  - die-ausgrabung-m
+  - das-mosaik-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „може да се покаже дека …“ — и „историскиот извор“ — и „во продолжение“ — и „епохата“.'
+  answer:
+    speaker: protagonist
+    text: es lässt sich zeigen, dass … … die historische Quelle … im Folgenden … die Epoche
+  items:
+  - es-laesst-sich-zeigen-m
+  - die-quelle-c2-m
+  - im-folgenden-m
+  - die-epoche-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „Отоманската империја“ — и „градот на конзулите“.'
+  answer:
+    speaker: protagonist
+    text: das Osmanische Reich … die Stadt der Konsuln
+  items:
+  - das-osmanische-reich-m
+  - die-konsulatsstadt-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck
