@@ -1,0 +1,38 @@
+id: C1-25-m
+tracks: [mk]
+protagonist: f
+title: ["Самоопределување"]
+situation: ["Гордана ви раскажува за својата тетка, која со години трпела — и што научила тука."]
+learn: [c1-nominal-style]
+culture: Women's rights — where to get help
+items:
+  - [die-gleichberechtigung, "die Gleichberechtigung", "еднаквите права"]
+  - [die-selbstbestimmung, "die Selbstbestimmung", "самоопределувањето"]
+  - [das-opfer, "das Opfer", "жртвата"]
+  - [die-schuld, "die Schuld", "вината"]
+  - [die-haeusliche-gewalt, "die häusliche Gewalt", "семејното насилство", {rare: true}]
+  - [das-hilfetelefon, "das Hilfetelefon", "телефонската линија за помош", {rare: true}]
+  - [das-frauenhaus, "das Frauenhaus", "засолништето за жени", {rare: true}]
+  - [anonym, "anonym", "анонимно"]
+  - [die-entscheidung-ueber, "die Entscheidung über das eigene Leben", "одлуката за сопствениот живот"]
+  - [schweigen, "schweigen", "молчи"]
+dialogue:
+  - [gordana, "Meine Tante hat jahrelang geschwiegen. Ihr Mann hat sie geschlagen.", "Мојата тетка молчеше со години. Мажот ја тепаше."]
+  - [protagonist, "Und niemand hat geholfen?", "И никој не помогна?"]
+  - [gordana, "Man sagte: Das ist Familiensache. Und manche gaben ihr sogar die Schuld.", "Велеа: тоа е семејна работа. А некои дури неа ја обвинуваа."]
+  - [protagonist, "Sie war das Opfer. Nie die Schuldige.", "Таа беше жртвата. Никогаш виновникот."]
+  - [gordana, "Hier ist häusliche Gewalt keine Familiensache, sondern eine Straftat.", "Тука семејното насилство не е семејна работа, туку кривично дело."]
+  - [protagonist, "Und Gleichberechtigung gilt für alle — auch für ältere Frauen.", "А еднаквите права важат за сите — и за постарите жени."]
+  - [gordana, "Es gibt ein Hilfetelefon, anonym und in vielen Sprachen.", "Има телефонска линија за помош, анонимна и на многу јазици."]
+  - [protagonist, "Und Frauenhäuser. Die Entscheidung über das eigene Leben hat jede Frau selbst.", "И засолништа за жени. Одлуката за сопствениот живот секоја жена ја носи сама."]
+teach:
+  - ask: ["Кажете: еднаквите права.", "Die Gleichberechtigung.", die-gleichberechtigung]
+  - ask: ["Кажете: самоопределувањето.", "Die Selbstbestimmung.", die-selbstbestimmung]
+  - note: ["Правата се именуваат со именки: «die Entscheidung über das eigene Leben» (= да одлучуваш за својот живот), «die Selbstbestimmung», «die Gleichberechtigung». Тоа се зборовите на советувалиштата и законот."]
+  - ask: ["Кажете: одлуката за сопствениот живот.", "Die Entscheidung über das eigene Leben.", die-entscheidung-ueber]
+  - ask: ["Кажете: таа беше жртвата, не виновникот.", "Sie war das Opfer, nicht die Schuldige.", das-opfer, die-schuld]
+  - ask: ["Кажете: молчеше со години.", "Sie hat jahrelang geschwiegen.", schweigen]
+  - ask: ["Кажете: семејното насилство е кривично дело.", "Häusliche Gewalt ist eine Straftat.", die-haeusliche-gewalt]
+  - ask: ["Кажете: телефонска линија, анонимна.", "Ein Hilfetelefon, anonym.", das-hilfetelefon, anonym]
+  - ask: ["Кажете: засолниште за жени.", "Ein Frauenhaus.", das-frauenhaus]
+  - note: ["Во Германија семејното насилство е кривично дело, а полицијата може насилникот да го истера од станот. Линијата „Hilfetelefon Gewalt gegen Frauen“ (116 016) е бесплатна, анонимна, дење и ноќе, на многу јазици; засолништата за жени ги примаат жените и децата брзо. Во итен случај: 110."]

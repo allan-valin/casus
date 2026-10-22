@@ -1,0 +1,888 @@
+# UNIT de C1-26 — written by AI (Claude) for Casus; expanded from src/C1-26.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-26
+level: C1
+number: 26
+protagonist: m
+title:
+  en: Appealing a decision
+  ar: الاعتراض على قرار
+  mk: Жалба на решение
+situation:
+  en: The city refused your resident parking permit — wrongly, you think. Jonas helps you write an appeal, in time.
+  ar: رفضت المدينة تصريح موقف السكان الخاص بك — خطأً كما تظن. يوناس يساعدك في كتابة اعتراض، في الموعد.
+  mk: Градот ви ја одби дозволата за паркирање на жители — погрешно, мислите. Јонас ви помага да напишете жалба, навреме.
+learn_lessons:
+- c1-formal-letters
+culture: The one-month deadline
+new_items:
+- id: der-widerspruch-amt
+  text: der Widerspruch
+  meaning:
+    en: the (formal) appeal
+    ar: الاعتراض الرسمي
+    mk: жалбата
+- id: fristgerecht
+  text: fristgerecht
+  meaning:
+    en: within the deadline
+    ar: في المهلة المحدّدة
+    mk: во рок
+- id: der-bescheid-c1
+  text: der Bescheid vom …
+  meaning:
+    en: the decision dated …
+    ar: القرار المؤرَّخ في …
+    mk: решението од …
+- id: die-rechtsbehelfsbelehrung
+  text: die Rechtsbehelfsbelehrung
+  meaning:
+    en: the notice of appeal rights
+    ar: إشعار سبل الطعن
+    mk: поуката за правен лек
+  rare: true
+- id: die-begruendung
+  text: die Begründung
+  meaning:
+    en: the grounds, reasoning
+    ar: التعليل
+    mk: образложението
+- id: hiermit-lege-ich
+  text: Hiermit lege ich … ein
+  meaning:
+    en: I hereby lodge …
+    ar: أتقدّم بموجب هذا بـ…
+    mk: Со ова поднесувам …
+- id: das-aktenzeichen-c1
+  text: unter dem Aktenzeichen
+  meaning:
+    en: under the reference number
+    ar: تحت رقم الملف
+    mk: под бројот на предметот
+- id: der-bewohnerparkausweis
+  text: der Bewohnerparkausweis
+  meaning:
+    en: the resident parking permit
+    ar: تصريح موقف السكان
+    mk: дозволата за паркирање на жители
+  rare: true
+- id: die-anlage
+  text: die Anlage
+  meaning:
+    en: the enclosure
+    ar: المرفَق
+    mk: прилогот
+- id: ich-bitte-um-pruefung
+  text: Ich bitte um erneute Prüfung
+  meaning:
+    en: I request a re-examination
+    ar: أرجو إعادة النظر
+    mk: Барам повторна проверка
+reviews:
+- item: frisch
+  from: A1-19
+- item: ein-kilo
+  from: A1-19
+- item: tomaten
+  from: A1-19
+- item: ein-stueck
+  from: A1-19
+- item: aepfel
+  from: A1-19
+- item: noch-etwas
+  from: A1-19
+- item: das-wars-alles
+  from: A1-19
+- item: zusammen
+  from: A1-19
+- item: stimmt-so
+  from: A1-19
+- item: geschenkt
+  from: A1-19
+- item: ein-halbes-kilo
+  from: A1-19
+- item: waehlen
+  from: B1-23
+- item: die-partei
+  from: B1-23
+- item: die-wahl
+  from: B1-23
+- item: das-wahlrecht
+  from: B1-23
+- item: die-kommunalwahl
+  from: B1-23
+- item: rechtsextrem
+  from: B1-23
+- item: wuerde-ich-waehlen
+  from: B1-23
+- item: die-opferberatung
+  from: B1-23
+- item: vorsichtig
+  from: B1-23
+- item: die-gegend
+  from: B1-23
+- item: die-mitgliederversammlung-ea
+  from: B2-25-ea
+  for:
+  - en
+  - ar
+- item: der-vorstand-ea
+  from: B2-25-ea
+  for:
+  - en
+  - ar
+- item: die-kassenwartin-ea
+  from: B2-25-ea
+  for:
+  - en
+  - ar
+- item: vorschlagen-ea
+  from: B2-25-ea
+  for:
+  - en
+  - ar
+- item: die-abstimmung-ea
+  from: B2-25-ea
+  for:
+  - en
+  - ar
+- item: die-enthaltung-ea
+  from: B2-25-ea
+  for:
+  - en
+  - ar
+- item: ich-nehme-die-wahl-an-ea
+  from: B2-25-ea
+  for:
+  - en
+  - ar
+- item: das-vertrauen-ea
+  from: B2-25-ea
+  for:
+  - en
+  - ar
+- item: einstimmig-ea
+  from: B2-25-ea
+  for:
+  - en
+  - ar
+- item: liebe-mitglieder-ea
+  from: B2-25-ea
+  for:
+  - en
+  - ar
+- item: der-datenschutz
+  from: C1-11
+- item: die-dsgvo
+  from: C1-11
+- item: die-auskunft
+  from: C1-11
+- item: die-einwilligung
+  from: C1-11
+- item: muss-geloescht-werden
+  from: C1-11
+- item: darf-nicht-weitergegeben-werden
+  from: C1-11
+- item: die-loeschung
+  from: C1-11
+- item: die-datenschutzbehoerde
+  from: C1-11
+- item: widerrufen
+  from: C1-11
+- item: die-ausrede
+  from: C1-11
+- item: der-kleingarten
+  from: C1-19
+- item: die-hecke
+  from: C1-19
+- item: die-schlichtung
+  from: C1-19
+- item: die-schiedsperson
+  from: C1-19
+- item: das-grundstueck
+  from: C1-19
+- item: die-gartenordnung
+  from: C1-19
+- item: wenngleich
+  from: C1-19
+- item: selbst-wenn
+  from: C1-19
+- item: zurueckschneiden
+  from: C1-19
+- item: die-einigung
+  from: C1-19
+- item: die-diskriminierung
+  from: C1-23
+- item: die-antidiskriminierungsstelle
+  from: C1-23
+- item: das-agg
+  from: C1-23
+- item: der-test-bewerbung
+  from: C1-23
+- item: der-beweis-c1
+  from: C1-23
+- item: verstoesst-gegen
+  from: C1-23
+- item: will-gewusst-haben
+  from: C1-23
+- item: die-entschaedigung
+  from: C1-23
+- item: die-frist-zwei-monate
+  from: C1-23
+- item: schriftlich-geltend-machen
+  from: C1-23
+- item: die-gleichberechtigung-e
+  from: C1-25-e
+  for:
+  - en
+- item: die-selbstbestimmung-e
+  from: C1-25-e
+  for:
+  - en
+- item: das-opfer-e
+  from: C1-25-e
+  for:
+  - en
+- item: die-schuld-e
+  from: C1-25-e
+  for:
+  - en
+- item: die-zwangsheirat-e
+  from: C1-25-e
+  for:
+  - en
+- item: das-hilfetelefon-e
+  from: C1-25-e
+  for:
+  - en
+- item: das-frauenhaus-e
+  from: C1-25-e
+  for:
+  - en
+- item: anonym-e
+  from: C1-25-e
+  for:
+  - en
+- item: die-entscheidung-ueber-e
+  from: C1-25-e
+  for:
+  - en
+- item: niemand-darf-e
+  from: C1-25-e
+  for:
+  - en
+- item: die-gleichberechtigung-a
+  from: C1-25-a
+  for:
+  - ar
+- item: die-selbstbestimmung-a
+  from: C1-25-a
+  for:
+  - ar
+- item: das-opfer-a
+  from: C1-25-a
+  for:
+  - ar
+- item: die-schuld-a
+  from: C1-25-a
+  for:
+  - ar
+- item: die-zwangsheirat-a
+  from: C1-25-a
+  for:
+  - ar
+- item: das-hilfetelefon-a
+  from: C1-25-a
+  for:
+  - ar
+- item: das-frauenhaus-a
+  from: C1-25-a
+  for:
+  - ar
+- item: anonym-a
+  from: C1-25-a
+  for:
+  - ar
+- item: die-entscheidung-ueber-a
+  from: C1-25-a
+  for:
+  - ar
+- item: niemand-darf-a
+  from: C1-25-a
+  for:
+  - ar
+- item: der-seniorentreff-m
+  from: B2-25-m
+  for:
+  - mk
+- item: der-vorstand-m
+  from: B2-25-m
+  for:
+  - mk
+- item: vorschlagen-m
+  from: B2-25-m
+  for:
+  - mk
+- item: die-abstimmung-m
+  from: B2-25-m
+  for:
+  - mk
+- item: ich-nehme-die-wahl-an-m
+  from: B2-25-m
+  for:
+  - mk
+- item: das-vertrauen-m
+  from: B2-25-m
+  for:
+  - mk
+- item: einstimmig-m
+  from: B2-25-m
+  for:
+  - mk
+- item: liebe-mitglieder-m
+  from: B2-25-m
+  for:
+  - mk
+- item: die-veranstaltung-m
+  from: B2-25-m
+  for:
+  - mk
+- item: organisieren-m
+  from: B2-25-m
+  for:
+  - mk
+- item: die-gleichberechtigung-m
+  from: C1-25-m
+  for:
+  - mk
+- item: die-selbstbestimmung-m
+  from: C1-25-m
+  for:
+  - mk
+- item: das-opfer-m
+  from: C1-25-m
+  for:
+  - mk
+- item: die-schuld-m
+  from: C1-25-m
+  for:
+  - mk
+- item: die-haeusliche-gewalt-m
+  from: C1-25-m
+  for:
+  - mk
+- item: das-hilfetelefon-m
+  from: C1-25-m
+  for:
+  - mk
+- item: das-frauenhaus-m
+  from: C1-25-m
+  for:
+  - mk
+- item: anonym-m
+  from: C1-25-m
+  for:
+  - mk
+- item: die-entscheidung-ueber-m
+  from: C1-25-m
+  for:
+  - mk
+- item: schweigen-m
+  from: C1-25-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: The city refused your resident parking permit — wrongly, you think. Jonas helps you write an appeal, in time. Listen to the conversation; you don't need to understand it yet.
+    ar: رفضت المدينة تصريح موقف السكان الخاص بك — خطأً كما تظن. يوناس يساعدك في كتابة اعتراض، في الموعد. استمع إلى المحادثة؛ لا داعي لأن تفهمها الآن.
+    mk: Градот ви ја одби дозволата за паркирање на жители — погрешно, мислите. Јонас ви помага да напишете жалба, навреме. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Die Stadt sagt, mein Auto sei nicht auf mich zugelassen. Aber das stimmt nicht!
+    meaning:
+      en: The city says my car isn't registered to me. But that's not true!
+      ar: المدينة تقول إنّ سيارتي ليست مسجّلة باسمي. لكن هذا غير صحيح!
+      mk: Градот вели дека колата не е регистрирана на мене. Но тоа не е точно!
+  - speaker: jonas
+    text: 'Steht unten eine Rechtsbehelfsbelehrung? ... Ja: ein Monat für den Widerspruch.'
+    meaning:
+      en: 'Is there a notice of appeal rights at the bottom? ... Yes: one month for an appeal.'
+      ar: 'هل في الأسفل إشعار سبل الطعن؟ ... نعم: شهر واحد للاعتراض.'
+      mk: 'Има ли долу поука за правен лек? ... Да: еден месец за жалба.'
+  - speaker: protagonist
+    text: Und wie fange ich an?
+    meaning:
+      en: And how do I start?
+      ar: وكيف أبدأ؟
+      mk: А како да почнам?
+  - speaker: jonas
+    text: 'So: „Hiermit lege ich fristgerecht Widerspruch gegen den Bescheid vom 3. Mai ein, Aktenzeichen ...“'
+    meaning:
+      en: 'Like this: ''I hereby lodge an appeal within the deadline against the decision of 3 May, reference …'''
+      ar: 'هكذا: «أتقدّم بموجب هذا في المهلة المحدّدة باعتراض على القرار المؤرَّخ في 3 مايو، رقم الملف …»'
+      mk: 'Вака: „Со ова во рок поднесувам жалба против решението од 3 мај, број на предмет …“'
+  - speaker: protagonist
+    text: Und dann die Begründung?
+    meaning:
+      en: And then the grounds?
+      ar: ثم التعليل؟
+      mk: А потоа образложението?
+  - speaker: jonas
+    text: 'Genau. Kurz und sachlich: der Fahrzeugschein als Anlage. Dann: „Ich bitte um erneute Prüfung.“'
+    meaning:
+      en: 'Exactly. Short and factual: the vehicle registration document as an enclosure. Then: ''I request a re-examination.'''
+      ar: 'بالضبط. قصير وموضوعي: وثيقة تسجيل المركبة مرفقة. ثم: «أرجو إعادة النظر.»'
+      mk: 'Точно. Кратко и деловно: сообраќајната дозвола во прилог. Потоа: „Барам повторна проверка.“'
+  - speaker: protagonist
+    text: Mit Unterschrift, per Post?
+    meaning:
+      en: With a signature, by post?
+      ar: بتوقيع، بالبريد؟
+      mk: Со потпис, по пошта?
+  - speaker: jonas
+    text: Ja, oder persönlich mit Eingangsstempel. Dann hast du den Beweis.
+    meaning:
+      en: Yes, or in person with a receipt stamp. Then you have proof.
+      ar: نعم، أو شخصيًا مع ختم الاستلام. عندها يكون لديك الدليل.
+      mk: Да, или лично со печат за прием. Тогаш имаш доказ.
+- type: prompt
+  ask:
+    en: 'Say: the resident parking permit.'
+    ar: 'قل: تصريح موقف السكان.'
+    mk: 'Кажете: дозволата за паркирање.'
+  answer:
+    speaker: protagonist
+    text: Der Bewohnerparkausweis.
+  items:
+  - der-bewohnerparkausweis
+- type: prompt
+  ask:
+    en: 'Say: the notice of appeal rights.'
+    ar: 'قل: إشعار سبل الطعن.'
+    mk: 'Кажете: поуката за правен лек.'
+  answer:
+    speaker: protagonist
+    text: Die Rechtsbehelfsbelehrung.
+  items:
+  - die-rechtsbehelfsbelehrung
+- type: narrator
+  text:
+    en: 'An appeal letter has fixed parts: «Hiermit lege ich fristgerecht Widerspruch gegen den Bescheid vom … ein», «Aktenzeichen», «Begründung», «Anlage», «Ich bitte um erneute Prüfung», signature.'
+    ar: 'لرسالة الاعتراض أجزاء ثابتة: «Hiermit lege ich fristgerecht Widerspruch gegen den Bescheid vom … ein»، «Aktenzeichen»، «Begründung»، «Anlage»، «Ich bitte um erneute Prüfung»، والتوقيع.'
+    mk: 'Писмото за жалба има фиксни делови: «Hiermit lege ich fristgerecht Widerspruch gegen den Bescheid vom … ein», «Aktenzeichen», «Begründung», «Anlage», «Ich bitte um erneute Prüfung», потпис.'
+- type: prompt
+  ask:
+    en: 'Write: I hereby lodge an appeal within the deadline.'
+    ar: 'اكتب: أتقدّم بموجب هذا في المهلة باعتراض.'
+    mk: 'Напишете: со ова во рок поднесувам жалба.'
+  answer:
+    speaker: protagonist
+    text: Hiermit lege ich fristgerecht Widerspruch ein.
+  items:
+  - hiermit-lege-ich
+  - fristgerecht
+  - der-widerspruch-amt
+- type: prompt
+  ask:
+    en: 'Write: against the decision of 3 May.'
+    ar: 'اكتب: على القرار المؤرَّخ في 3 مايو.'
+    mk: 'Напишете: против решението од 3 мај.'
+  answer:
+    speaker: protagonist
+    text: Gegen den Bescheid vom 3. Mai.
+  items:
+  - der-bescheid-c1
+- type: prompt
+  ask:
+    en: 'Write: under the reference number.'
+    ar: 'اكتب: تحت رقم الملف.'
+    mk: 'Напишете: под бројот на предметот.'
+  answer:
+    speaker: protagonist
+    text: Unter dem Aktenzeichen.
+  items:
+  - das-aktenzeichen-c1
+- type: prompt
+  ask:
+    en: 'Say: the grounds.'
+    ar: 'قل: التعليل.'
+    mk: 'Кажете: образложението.'
+  answer:
+    speaker: protagonist
+    text: Die Begründung.
+  items:
+  - die-begruendung
+- type: prompt
+  ask:
+    en: 'Say: as an enclosure.'
+    ar: 'قل: مرفقًا.'
+    mk: 'Кажете: во прилог.'
+  answer:
+    speaker: protagonist
+    text: Als Anlage.
+  items:
+  - die-anlage
+- type: prompt
+  ask:
+    en: 'Write: I request a re-examination.'
+    ar: 'اكتب: أرجو إعادة النظر.'
+    mk: 'Напишете: барам повторна проверка.'
+  answer:
+    speaker: protagonist
+    text: Ich bitte um erneute Prüfung.
+  items:
+  - ich-bitte-um-pruefung
+- type: narrator
+  text:
+    en: Every official decision (Bescheid) ends with a notice of how and by when you can appeal — usually one month. Appeal in writing and signed, keep proof of delivery, and give reasons (you may add them
+      later). An appeal is free; if it's rejected, the next step is court. Tax decisions use 'Einspruch' instead.
+    ar: كل قرار رسمي (Bescheid) ينتهي بإشعار بكيفية الاعتراض وموعده — عادةً شهر واحد. اعترض كتابيًا وموقَّعًا، واحتفظ بإثبات التسليم، واذكر الأسباب (يمكنك إضافتها لاحقًا). الاعتراض مجاني؛ وإن رُفض فالخطوة
+      التالية المحكمة. وفي القرارات الضريبية يُسمّى «Einspruch».
+    mk: Секое официјално решение (Bescheid) завршува со поука како и до кога можете да се жалите — обично еден месец. Жалете се писмено и потпишано, чувајте доказ за доставување и дајте причини (може и
+      подоцна). Жалбата е бесплатна; ако се одбие, следен чекор е суд. Кај даночните решенија се вика „Einspruch“.
+- type: prompt
+  ask:
+    en: 'Once more: say “the (formal) appeal”.'
+    ar: 'مرة أخرى: قل “الاعتراض الرسمي”.'
+    mk: 'Уште еднаш: кажете „жалбата“.'
+  answer:
+    speaker: protagonist
+    text: der Widerspruch
+  items:
+  - der-widerspruch-amt
+- type: prompt
+  ask:
+    en: 'Once more: say “within the deadline”.'
+    ar: 'مرة أخرى: قل “في المهلة المحدّدة”.'
+    mk: 'Уште еднаш: кажете „во рок“.'
+  answer:
+    speaker: protagonist
+    text: fristgerecht
+  items:
+  - fristgerecht
+- type: prompt
+  ask:
+    en: 'Once more: say “the decision dated …”.'
+    ar: 'مرة أخرى: قل “القرار المؤرَّخ في …”.'
+    mk: 'Уште еднаш: кажете „решението од …“.'
+  answer:
+    speaker: protagonist
+    text: der Bescheid vom …
+  items:
+  - der-bescheid-c1
+- type: prompt
+  ask:
+    en: 'Once more: say “the notice of appeal rights”.'
+    ar: 'مرة أخرى: قل “إشعار سبل الطعن”.'
+    mk: 'Уште еднаш: кажете „поуката за правен лек“.'
+  answer:
+    speaker: protagonist
+    text: die Rechtsbehelfsbelehrung
+  items:
+  - die-rechtsbehelfsbelehrung
+- type: prompt
+  ask:
+    en: 'Once more: say “the grounds, reasoning”.'
+    ar: 'مرة أخرى: قل “التعليل”.'
+    mk: 'Уште еднаш: кажете „образложението“.'
+  answer:
+    speaker: protagonist
+    text: die Begründung
+  items:
+  - die-begruendung
+- type: prompt
+  ask:
+    en: 'Once more: say “I hereby lodge …”.'
+    ar: 'مرة أخرى: قل “أتقدّم بموجب هذا بـ…”.'
+    mk: 'Уште еднаш: кажете „Со ова поднесувам …“.'
+  answer:
+    speaker: protagonist
+    text: Hiermit lege ich … ein
+  items:
+  - hiermit-lege-ich
+- type: prompt
+  ask:
+    en: 'Once more: say “under the reference number”.'
+    ar: 'مرة أخرى: قل “تحت رقم الملف”.'
+    mk: 'Уште еднаш: кажете „под бројот на предметот“.'
+  answer:
+    speaker: protagonist
+    text: unter dem Aktenzeichen
+  items:
+  - das-aktenzeichen-c1
+- type: prompt
+  ask:
+    en: 'Once more: say “the resident parking permit”.'
+    ar: 'مرة أخرى: قل “تصريح موقف السكان”.'
+    mk: 'Уште еднаш: кажете „дозволата за паркирање на жители“.'
+  answer:
+    speaker: protagonist
+    text: der Bewohnerparkausweis
+  items:
+  - der-bewohnerparkausweis
+- type: prompt
+  ask:
+    en: 'Once more: say “the enclosure”.'
+    ar: 'مرة أخرى: قل “المرفَق”.'
+    mk: 'Уште еднаш: кажете „прилогот“.'
+  answer:
+    speaker: protagonist
+    text: die Anlage
+  items:
+  - die-anlage
+- type: prompt
+  ask:
+    en: 'Once more: say “I request a re-examination”.'
+    ar: 'مرة أخرى: قل “أرجو إعادة النظر”.'
+    mk: 'Уште еднаш: кажете „Барам повторна проверка“.'
+  answer:
+    speaker: protagonist
+    text: Ich bitte um erneute Prüfung
+  items:
+  - ich-bitte-um-pruefung
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتَه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “discrimination — and “anti-discrimination advice — and “the equal treatment act (AGG) — and “a matched test application — and “the circumstantial evidence — and “violates — and “claims to
+      have known nothing — and “compensation — and “within two months — and “assert in writing — and “the allotment garden — and “the hedge — and “mediation, arbitration — and “the local mediator — and
+      “the plot (of land) — and “the garden rules — and “even though (formal) — and “even if — and “cut back — and “the agreement — and “data protection — and “the GDPR — and “the (data) access request,
+      information — and “consent — and “must be deleted — and “may not be passed on”.'
+    ar: 'قل: “التمييز — و“استشارات مكافحة التمييز — و“قانون المساواة في المعاملة — و“طلب اختباري مقارن — و“القرينة — و“يخالف — و“يزعم أنه لم يعلم شيئًا — و“التعويض — و“خلال شهرين — و“يطالب كتابيًا — و“الحديقة
+      الصغيرة المستأجرة — و“السياج النباتي — و“التسوية الودية — و“الوسيط المحلي — و“قطعة الأرض — و“نظام الحدائق — و“وإن كان — و“حتى لو — و“يقلّم — و“الاتفاق — و“حماية البيانات — و“اللائحة العامة لحماية
+      البيانات — و“طلب الاطلاع، المعلومات — و“الموافقة — و“يجب أن يُحذف — و“لا يجوز أن يُمرَّر”.'
+    mk: 'Кажете: „дискриминацијата“ — и „советувалиштето против дискриминација“ — и „законот за еднаков третман“ — и „тест-пријава“ — и „индицијата“ — и „ги прекршува“ — и „тврди дека ништо не знаел“ —
+      и „обештетувањето“ — и „во рок од два месеци“ — и „писмено бара“ — и „малата градина“ — и „живата ограда“ — и „помирувањето“ — и „помирувачот“ — и „парцелата“ — и „правилникот на градините“ — и „иако
+      (формално)“ — и „дури и ако“ — и „поткаструва“ — и „договорот, спогодбата“ — и „заштитата на податоци“ — и „GDPR (регулативата за податоци)“ — и „барањето за пристап, информацијата“ — и „согласноста“
+      — и „мора да се избрише“ — и „не смее да се пренесе“.'
+  answer:
+    speaker: protagonist
+    text: die Diskriminierung … die Antidiskriminierungsberatung … das Gleichbehandlungsgesetz … die Testing-Anfrage … das Indiz … verstößt gegen … will nichts gewusst haben … die Entschädigung … innerhalb
+      von zwei Monaten … schriftlich geltend machen … der Kleingarten … die Hecke … die Schlichtung … die Schiedsperson … das Grundstück … die Gartenordnung … wenngleich … selbst wenn … zurückschneiden
+      … die Einigung … der Datenschutz … die DSGVO … die Auskunft … die Einwilligung … muss gelöscht werden … darf nicht weitergegeben werden
+  items:
+  - die-diskriminierung
+  - die-antidiskriminierungsstelle
+  - das-agg
+  - der-test-bewerbung
+  - der-beweis-c1
+  - verstoesst-gegen
+  - will-gewusst-haben
+  - die-entschaedigung
+  - die-frist-zwei-monate
+  - schriftlich-geltend-machen
+  - der-kleingarten
+  - die-hecke
+  - die-schlichtung
+  - die-schiedsperson
+  - das-grundstueck
+  - die-gartenordnung
+  - wenngleich
+  - selbst-wenn
+  - zurueckschneiden
+  - die-einigung
+  - der-datenschutz
+  - die-dsgvo
+  - die-auskunft
+  - die-einwilligung
+  - muss-geloescht-werden
+  - darf-nicht-weitergegeben-werden
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the deletion — and “the data protection authority — and “withdraw (consent) — and “the excuse — and “vote, elect — and “the party — and “the election — and “the right to vote — and “the local
+      election — and “far-right — and “I would vote … — and “victim counselling — and “careful — and “the area — and “fresh — and “a kilo — and “tomatoes — and “a piece — and “apples — and “Anything else?
+      — and “That''s all — and “altogether — and “Keep the change — and “free, a gift — and “half a kilo”.'
+    ar: 'قل: “الحذف — و“هيئة حماية البيانات — و“يسحب (الموافقة) — و“الذريعة — و“يصوّت، ينتخب — و“الحزب — و“الانتخابات — و“حق التصويت — و“الانتخابات المحلية — و“يميني متطرف — و“كنتُ سأصوّت لـ… — و“استشارة
+      الضحايا — و“حذِر — و“المنطقة — و“طازج — و“كيلو — و“طماطم — و“قطعة — و“تفاح — و“شيء آخر؟ — و“هذا كل شيء — و“المجموع — و“احتفظ بالباقي — و“هدية، مجانًا — و“نصف كيلو”.'
+    mk: 'Кажете: „бришењето“ — и „агенцијата за заштита на податоци“ — и „повлекува“ — и „изговорот“ — и „гласа, избира“ — и „партијата“ — и „изборите“ — и „правото на глас“ — и „локалните избори“ — и „екстремно
+      десно“ — и „би гласала за …“ — и „советувалиштето за жртви“ — и „внимателно“ — и „крајот“ — и „свежо“ — и „едно кило“ — и „домати“ — и „парче“ — и „јаболка“ — и „Уште нешто?“ — и „Тоа е сè“ — и „вкупно“
+      — и „Нема потреба од кусур“ — и „подарок, бесплатно“ — и „половина кило“.'
+  answer:
+    speaker: protagonist
+    text: die Löschung … die Datenschutzbehörde … widerrufen … die Ausrede … wählen … die Partei … die Wahl … das Wahlrecht … die Kommunalwahl … rechtsextrem … ich würde … wählen … die Opferberatung … vorsichtig
+      … die Gegend … frisch … ein Kilo … Tomaten … ein Stück … Äpfel … Noch etwas? … Das ist alles … zusammen … Stimmt so … geschenkt … ein halbes Kilo
+  items:
+  - die-loeschung
+  - die-datenschutzbehoerde
+  - widerrufen
+  - die-ausrede
+  - waehlen
+  - die-partei
+  - die-wahl
+  - das-wahlrecht
+  - die-kommunalwahl
+  - rechtsextrem
+  - wuerde-ich-waehlen
+  - die-opferberatung
+  - vorsichtig
+  - die-gegend
+  - frisch
+  - ein-kilo
+  - tomaten
+  - ein-stueck
+  - aepfel
+  - noch-etwas
+  - das-wars-alles
+  - zusammen
+  - stimmt-so
+  - geschenkt
+  - ein-halbes-kilo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the general meeting — and “the board — and “the treasurer (f) — and “propose, nominate — and “the vote”.'
+    ar: 'قل: “الجمعية العمومية — و“مجلس الإدارة — و“أمينة الصندوق — و“يقترح — و“التصويت”.'
+  answer:
+    speaker: protagonist
+    text: die Mitgliederversammlung … der Vorstand … die Kassenwartin … vorschlagen … die Abstimmung
+  items:
+  - die-mitgliederversammlung-ea
+  - der-vorstand-ea
+  - die-kassenwartin-ea
+  - vorschlagen-ea
+  - die-abstimmung-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the abstention — and “I accept the election — and “the trust — and “unanimously — and “Dear members”.'
+    ar: 'قل: “الامتناع عن التصويت — و“أقبل الانتخاب — و“الثقة — و“بالإجماع — و“أعزائي الأعضاء”.'
+  answer:
+    speaker: protagonist
+    text: die Enthaltung … Ich nehme die Wahl an … das Vertrauen … einstimmig … Liebe Mitglieder
+  items:
+  - die-enthaltung-ea
+  - ich-nehme-die-wahl-an-ea
+  - das-vertrauen-ea
+  - einstimmig-ea
+  - liebe-mitglieder-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “equal rights — and “self-determination — and “the victim — and “the blame, guilt — and “forced marriage”.'
+  answer:
+    speaker: protagonist
+    text: die Gleichberechtigung … die Selbstbestimmung … das Opfer … die Schuld … die Zwangsheirat
+  items:
+  - die-gleichberechtigung-e
+  - die-selbstbestimmung-e
+  - das-opfer-e
+  - die-schuld-e
+  - die-zwangsheirat-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the helpline — and “the women''s shelter — and “anonymous — and “the decision about one''s own life — and “no one may …”.'
+  answer:
+    speaker: protagonist
+    text: das Hilfetelefon … das Frauenhaus … anonym … die Entscheidung über das eigene Leben … niemand darf …
+  items:
+  - das-hilfetelefon-e
+  - das-frauenhaus-e
+  - anonym-e
+  - die-entscheidung-ueber-e
+  - niemand-darf-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “المساواة في الحقوق — و“تقرير المصير — و“الضحية — و“اللوم، الذنب — و“الزواج القسري”.'
+  answer:
+    speaker: protagonist
+    text: die Gleichberechtigung … die Selbstbestimmung … das Opfer … die Schuld … die Zwangsheirat
+  items:
+  - die-gleichberechtigung-a
+  - die-selbstbestimmung-a
+  - das-opfer-a
+  - die-schuld-a
+  - die-zwangsheirat-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “خط المساعدة الهاتفي — و“دار حماية النساء — و“دون كشف الهوية — و“القرار في الحياة الخاصة — و“لا يحق لأحد …”.'
+  answer:
+    speaker: protagonist
+    text: das Hilfetelefon … das Frauenhaus … anonym … die Entscheidung über das eigene Leben … niemand darf …
+  items:
+  - das-hilfetelefon-a
+  - das-frauenhaus-a
+  - anonym-a
+  - die-entscheidung-ueber-a
+  - niemand-darf-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „еднаквите права“ — и „самоопределувањето“ — и „жртвата“ — и „вината“ — и „семејното насилство“ — и „телефонската линија за помош“ — и „засолништето за жени“.'
+  answer:
+    speaker: protagonist
+    text: die Gleichberechtigung … die Selbstbestimmung … das Opfer … die Schuld … die häusliche Gewalt … das Hilfetelefon … das Frauenhaus
+  items:
+  - die-gleichberechtigung-m
+  - die-selbstbestimmung-m
+  - das-opfer-m
+  - die-schuld-m
+  - die-haeusliche-gewalt-m
+  - das-hilfetelefon-m
+  - das-frauenhaus-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „анонимно“ — и „одлуката за сопствениот живот“ — и „молчи“ — и „клубот за пензионери“ — и „одборот“ — и „предлага“ — и „гласањето“.'
+  answer:
+    speaker: protagonist
+    text: anonym … die Entscheidung über das eigene Leben … schweigen … der Seniorentreff … der Vorstand … vorschlagen … die Abstimmung
+  items:
+  - anonym-m
+  - die-entscheidung-ueber-m
+  - schweigen-m
+  - der-seniorentreff-m
+  - der-vorstand-m
+  - vorschlagen-m
+  - die-abstimmung-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „Го прифаќам изборот“ — и „довербата“ — и „едногласно“ — и „Драги членови“ — и „настанот“ — и „организира“.'
+  answer:
+    speaker: protagonist
+    text: Ich nehme die Wahl an … das Vertrauen … einstimmig … Liebe Mitglieder … die Veranstaltung … organisieren
+  items:
+  - ich-nehme-die-wahl-an-m
+  - das-vertrauen-m
+  - einstimmig-m
+  - liebe-mitglieder-m
+  - die-veranstaltung-m
+  - organisieren-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمع إلى المحادثة مرة أخرى. الآن تفهمها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck
