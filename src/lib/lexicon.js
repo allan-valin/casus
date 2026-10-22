@@ -180,6 +180,8 @@ export function createLexicon({ fetchShard, fetchFile = null, manifest = null, c
     lookup,
     lookupAll,
     file,
+    // the shard a form lives in: files that mirror the form shards (ipa-forms/<name>.json) are fetched by it
+    shardName: (key) => shardKey(prefixOf(key), names),
     loadedShards: () => [...cache.keys()],
   };
 }

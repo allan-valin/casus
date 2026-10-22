@@ -47,7 +47,7 @@ export function words(text) {
 
 /** each word with its expected IPA: exact (the word is a headword), lemma (an inflected form: the lemma's IPA,
  * approximate) or none */
-export async function expectedFor(text, { index, lookup, lemmas, ipa, preferred = [], noSpaces = false }) {
+export async function expectedFor(text, { index, lookup, lemmas, ipa, preferred = [], noSpaces = false, formIpa = null }) {
   const out = [];
   for (const word of noSpaces ? greedyWords(text, index) : words(text)) {
     const k = key(word);
@@ -58,6 +58,10 @@ export async function expectedFor(text, { index, lookup, lemmas, ipa, preferred 
       const v = ipa?.[a.lemma];
       if (v?.length) { found = { word, ipa: pick(v, preferred).ipa, source: 'lemma', lemma: lemmas?.[a.lemma]?.headword ?? '' }; break; }
     }
+    // the form's own transcription, generated (espeak-ng calibrated on Wiktionary: tools/form_ipa.py) — an inflected
+    // form is closer to its own IPA than to its lemma's (Allan, 2026-10-22: "it does not conjugate verbs")
+    const own = await formIpa?.(k).catch?.(() => null) ?? null;
+    if (own) found = { word, ipa: own, source: 'form', lemma: found?.lemma ?? '' };
     out.push(found ?? { word, ipa: null, source: 'none' });
   }
   return out;

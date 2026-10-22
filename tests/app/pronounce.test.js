@@ -26,6 +26,15 @@ describe('expected IPA of a sentence', () => {
     const [w] = await expectedFor('Häuser', { index, lookup, lemmas, ipa });
     expect(w).toMatchObject({ source: 'lemma', lemma: 'Haus', ipa: '/haʊ̯s/' });
   });
+  it('an inflected form takes its own generated IPA before its lemma (Allan, 2026-10-22: verbs were not conjugated)', async () => {
+    const formIpa = async (w) => ({ häuser: 'hɔʏ̯zɐ' })[w] ?? null;
+    const [w] = await expectedFor('Häuser', { index, lookup, lemmas, ipa, formIpa });
+    expect(w).toMatchObject({ source: 'form', ipa: 'hɔʏ̯zɐ', lemma: 'Haus' });
+  });
+  it('a word with no lemma either still gets its generated IPA', async () => {
+    const [w] = await expectedFor('Xyz', { index, lookup, lemmas, ipa, formIpa: async () => 'ɪks' });
+    expect(w).toMatchObject({ source: 'form', ipa: 'ɪks' });
+  });
   it('says when a word has no transcription', async () => {
     const [w] = await expectedFor('Xyz', { index, lookup, lemmas, ipa });
     expect(w).toMatchObject({ source: 'none', ipa: null });

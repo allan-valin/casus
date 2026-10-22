@@ -133,3 +133,12 @@ describe('a script can narrow the bare-letter matches (Arabic: a written hamza m
     expect((await lx.lookup('الي')).map((a) => a.lemma).sort()).toEqual(['1', '2']);
   });
 });
+
+describe('shardName (Allan, 2026-10-22: per-form IPA files mirror the form shards)', () => {
+  it('names the shard a word lives in, by the manifest names', () => {
+    const lex = createLexicon({ fetchShard: async () => ({}), manifest: { format: 2, shards: { ha: {}, h: {}, hä: {} } } });
+    expect(lex.shardName('häuser')).toBe('hä');
+    expect(lex.shardName('haus')).toBe('ha');
+    expect(lex.shardName('xyz')).toBe(null);
+  });
+});

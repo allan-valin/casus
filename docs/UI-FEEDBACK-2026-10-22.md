@@ -31,3 +31,12 @@ Now lessons stay in memory and the next/previous ones are fetched ahead.
 Answer to 9: it is the colour key of the underlines — now labelled "Colour of each underline:" with a count per kind.
 Fix for 10: own check (src/lib/proof/layout.js): paragraph end without "." and line break + lower case → "." above,
 capital below; the engine's marks spanning such a break are dropped (LanguageTool suggested a comma there).
+16. [ ] Pronunciation tool inside Conversation does not handle inflected forms (verbs, cases): no reference IPA, so no
+       comparison. Wiktionary only has IPA for the base form. Allan's idea: TTS the endings → pronunciation tool → IPA,
+       then hand-correct against Wiktionary.
+17. [ ] Pronunciation in several accents (Allan, 2026-10-22). Findings: the learned espeak→Wiktionary rules are mostly
+       notation (r/ʁ, ɑ/a), not real variants — do NOT show them as alternates (exception: vocalised r ɐ). Real variants:
+       Wiktionary already has tagged variants for 14,363 German lemmas (Austria 1483, Southern Germany 954, Switzerland
+       816, Bavaria 62 …) — show all with their region and score against the closest. espeak accent voices exist for
+       English (us, gb, rp, scotland, nyc, 029, two English regions), Portuguese (pt, pt-br), Spanish (es, es-419),
+       French (fr, be, ch), Russian (ru, ru-lv): generate inflected forms per accent there. German has one espeak voice.
