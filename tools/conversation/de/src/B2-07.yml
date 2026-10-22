@@ -1,0 +1,40 @@
+id: B2-07
+protagonist: m
+title: ["The meeting", "الاجتماع", "Состанокот"]
+situation:
+  - "The monthly team meeting. Frau Schröder asks you to take the minutes."
+  - "اجتماع الفريق الشهري. السيدة شرودر تطلب منك كتابة المحضر."
+  - "Месечниот тимски состанок. Госпоѓа Шредер ве моли да водите записник."
+learn: [b2-passive-modal]
+culture: Meetings by the agenda
+items:
+  - [die-tagesordnung, "die Tagesordnung", "the agenda", "جدول الأعمال", "дневниот ред"]
+  - [das-protokoll, "das Protokoll", "the minutes", "المحضر", "записникот"]
+  - [protokoll-fuehren, "Protokoll führen", "take the minutes", "يكتب المحضر", "води записник"]
+  - [der-punkt, "der Tagesordnungspunkt", "the agenda item", "بند جدول الأعمال", "точката од дневниот ред", {rare: true}]
+  - [muss-entschieden-werden, "muss entschieden werden", "must be decided", "يجب أن يُقرَّر", "мора да се одлучи"]
+  - [kann-verschoben-werden, "kann verschoben werden", "can be postponed", "يمكن أن يُؤجَّل", "може да се одложи"]
+  - [die-frist-einhalten, "die Frist einhalten", "meet the deadline", "يلتزم بالمهلة", "го почитува рокот"]
+  - [wer-uebernimmt, "Wer übernimmt das?", "Who'll take that on?", "من يتولّى ذلك؟", "Кој го презема тоа?"]
+  - [zum-schluss, "zum Schluss", "finally, at the end", "في الختام", "на крајот"]
+  - [verschiedenes, "Verschiedenes", "any other business", "متفرقات", "разно"]
+dialogue:
+  - [schroeder, "Wer führt heute Protokoll? ... Danke. Punkt eins der Tagesordnung: der neue Dienstplan.", "Who's taking the minutes today? ... Thank you. Item one on the agenda: the new rota.", "من يكتب المحضر اليوم؟ ... شكرًا. البند الأول من جدول الأعمال: جدول المناوبات الجديد.", "Кој води записник денес? ... Благодарам. Точка еден од дневниот ред: новиот распоред."]
+  - [tim, "Der Dienstplan muss bis Freitag entschieden werden.", "The rota has to be decided by Friday.", "يجب أن يُقرَّر جدول المناوبات حتى الجمعة.", "Распоредот мора да се одлучи до петок."]
+  - [protagonist, "Kann die Entscheidung verschoben werden? Ich habe noch Fragen.", "Can the decision be postponed? I still have questions.", "هل يمكن تأجيل القرار؟ ما زالت لديّ أسئلة.", "Може ли одлуката да се одложи? Имам уште прашања."]
+  - [schroeder, "Nein, wir müssen die Frist einhalten. Stellen Sie Ihre Fragen jetzt.", "No, we have to meet the deadline. Ask your questions now.", "لا، يجب أن نلتزم بالمهلة. اطرح أسئلتك الآن.", "Не, мора да го почитуваме рокот. Поставете ги прашањата сега."]
+  - [protagonist, "Gut. Kann der Samstag fair verteilt werden?", "All right. Can Saturdays be shared out fairly?", "حسنًا. هل يمكن توزيع أيام السبت بعدل؟", "Добро. Може ли саботите праведно да се поделат?"]
+  - [schroeder, "Gute Frage. Wer übernimmt das? ... Tim. Punkt zwei, und zum Schluss: Verschiedenes.", "Good question. Who'll take that on? ... Tim. Item two, and finally: any other business.", "سؤال جيد. من يتولّى ذلك؟ ... تيم. البند الثاني، وفي الختام: متفرقات.", "Добро прашање. Кој го презема тоа? ... Тим. Точка два, и на крајот: разно."]
+  - [tim, "Unter Verschiedenes: Wer bringt nächstes Mal Kuchen?", "Under any other business: who brings cake next time?", "تحت المتفرقات: من يحضر الكعك في المرة القادمة؟", "Под разно: кој носи колач следниот пат?"]
+  - [protagonist, "Das schreibe ich ins Protokoll!", "I'll put that in the minutes!", "سأكتب ذلك في المحضر!", "Тоа ќе го запишам во записникот!"]
+teach:
+  - ask: ["Ask: who's taking the minutes?", "اسأل: من يكتب المحضر؟", "Прашајте: кој води записник?", "Wer führt Protokoll?", protokoll-fuehren, das-protokoll]
+  - ask: ["Say: item one on the agenda.", "قل: البند الأول من جدول الأعمال.", "Кажете: точка еден од дневниот ред.", "Punkt eins der Tagesordnung.", die-tagesordnung]
+  - ask: ["Say: the agenda item.", "قل: بند جدول الأعمال.", "Кажете: точката од дневниот ред.", "Der Tagesordnungspunkt.", der-punkt]
+  - note: ["Passive with a modal, again: «muss entschieden werden» (must be decided), «kann verschoben werden» (can be postponed), «kann verteilt werden» (can be shared out).", "المبني للمجهول مع فعل مساعد مرة أخرى: «muss entschieden werden» (يجب أن يُقرَّر)، «kann verschoben werden» (يمكن أن يُؤجَّل)، «kann verteilt werden» (يمكن أن يُوزَّع).", "Пасив со модален глагол, пак: «muss entschieden werden» (мора да се одлучи), «kann verschoben werden» (може да се одложи), «kann verteilt werden» (може да се подели)."]
+  - ask: ["Say: it must be decided by Friday.", "قل: يجب أن يُقرَّر حتى الجمعة.", "Кажете: мора да се одлучи до петок.", "Es muss bis Freitag entschieden werden.", muss-entschieden-werden]
+  - ask: ["Ask: can the decision be postponed?", "اسأل: هل يمكن تأجيل القرار؟", "Прашајте: може ли одлуката да се одложи?", "Kann die Entscheidung verschoben werden?", kann-verschoben-werden]
+  - ask: ["She says: we have to meet the deadline.", "تقول: يجب أن نلتزم بالمهلة.", "Таа вели: мора да го почитуваме рокот.", "Wir müssen die Frist einhalten.", die-frist-einhalten]
+  - ask: ["She asks: who'll take that on?", "تسأل: من يتولّى ذلك؟", "Таа прашува: кој го презема тоа?", "Wer übernimmt das?", wer-uebernimmt]
+  - ask: ["Say: and finally: any other business.", "قل: وفي الختام: متفرقات.", "Кажете: и на крајот: разно.", "Und zum Schluss: Verschiedenes.", zum-schluss, verschiedenes]
+  - note: ["German meetings follow the agenda, start and end on time, and someone writes minutes that everyone receives. Questions belong in the meeting, not afterwards in the corridor; 'Verschiedenes' at the end is for anything else.", "الاجتماعات الألمانية تتبع جدول الأعمال، وتبدأ وتنتهي في موعدها، ويكتب أحدهم محضرًا يصل إلى الجميع. الأسئلة مكانها في الاجتماع لا بعده في الممر؛ و«Verschiedenes» في النهاية لأي شيء آخر.", "Германските состаноци го следат дневниот ред, почнуваат и завршуваат на време, а некој води записник што го добиваат сите. Прашањата се поставуваат на состанокот, не потоа во ходникот; „Verschiedenes“ на крајот е за сè друго."]

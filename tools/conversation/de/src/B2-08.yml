@@ -1,0 +1,40 @@
+id: B2-08
+protagonist: f
+title: ["Email German", "ألمانية الرسائل", "Германски за е-пошта"]
+situation:
+  - "The heating is broken again. Jonas helps you write a formal email to the property management."
+  - "التدفئة معطّلة مرة أخرى. يوناس يساعدكِ في كتابة رسالة رسمية إلى إدارة العقار."
+  - "Греењето пак не работи. Јонас ви помага да напишете формална е-пошта до управата на зградата."
+learn: [b2-formal-letters]
+culture: Writing to offices
+items:
+  - [sehr-geehrte, "Sehr geehrte Damen und Herren", "Dear Sir or Madam", "السادة المحترمون", "Почитувани"]
+  - [mfg, "Mit freundlichen Grüßen", "Yours sincerely", "مع أطيب التحيات", "Со почит"]
+  - [der-betreff, "der Betreff", "the subject line", "الموضوع", "предметот"]
+  - [hiermit-teile-ich, "hiermit teile ich Ihnen mit", "I hereby inform you", "أبلغكم بموجب هذا", "со ова ве известувам"]
+  - [ich-bitte-um, "ich bitte um …", "I request …", "أرجو …", "ве молам за …"]
+  - [die-rueckmeldung, "die Rückmeldung", "a reply", "الرد", "одговорот"]
+  - [umgehend, "umgehend", "promptly", "فورًا، على وجه السرعة", "веднаш"]
+  - [der-anhang, "im Anhang", "attached", "في المرفق", "во прилог"]
+  - [die-mietminderung, "die Mietminderung", "a rent reduction", "تخفيض الإيجار", "намалување на киријата", {rare: true}]
+  - [schriftlich, "schriftlich", "in writing", "كتابيًا", "писмено"]
+dialogue:
+  - [jonas, "Nicht „Hallo“! Bei der Hausverwaltung schreibst du: „Sehr geehrte Damen und Herren“.", "Not 'Hello'! To the property management you write: 'Dear Sir or Madam'.", "ليس «مرحبًا»! لإدارة العقار تكتبين: «السادة المحترمون».", "Не „Здраво“! До управата пишуваш: „Почитувани“."]
+  - [protagonist, "Und der Betreff?", "And the subject line?", "والموضوع؟", "А предметот?"]
+  - [jonas, "Kurz und klar: „Heizungsausfall, Wohnung 3, seit dem 2. Februar“.", "Short and clear: 'Heating failure, flat 3, since 2 February'.", "قصير وواضح: «تعطّل التدفئة، شقة 3، منذ 2 فبراير».", "Кратко и јасно: „Дефект на греењето, стан 3, од 2 февруари“."]
+  - [protagonist, "„Hiermit teile ich Ihnen mit, dass die Heizung nicht funktioniert. Ich bitte um umgehende Reparatur.“", "'I hereby inform you that the heating isn't working. I request prompt repair.'", "«أبلغكم بموجب هذا أنّ التدفئة لا تعمل. أرجو الإصلاح على وجه السرعة.»", "„Со ова ве известувам дека греењето не работи. Ве молам за итна поправка.“"]
+  - [jonas, "Perfekt. Fotos im Anhang. Und schreib: „Ich bitte um Rückmeldung bis Freitag.“", "Perfect. Photos attached. And write: 'Please reply by Friday.'", "ممتاز. الصور في المرفق. واكتبي: «أرجو الرد حتى الجمعة.»", "Совршено. Фотографиите во прилог. И напиши: „Ве молам за одговор до петок.“"]
+  - [protagonist, "Und wenn sie nichts machen?", "And if they do nothing?", "وإذا لم يفعلوا شيئًا؟", "А ако не направат ништо?"]
+  - [jonas, "Dann ist eine Mietminderung möglich. Darum: alles schriftlich!", "Then a rent reduction is possible. That's why: everything in writing!", "عندها يمكن تخفيض الإيجار. لذلك: كل شيء كتابيًا!", "Тогаш е можно намалување на киријата. Затоа: сè писмено!"]
+  - [protagonist, "„Mit freundlichen Grüßen.“ Fertig!", "'Yours sincerely.' Done!", "«مع أطيب التحيات.» انتهيت!", "„Со почит.“ Готово!"]
+teach:
+  - ask: ["Start a formal email.", "ابدئي رسالة رسمية.", "Почнете формална е-пошта.", "Sehr geehrte Damen und Herren,", sehr-geehrte]
+  - ask: ["Say: the subject line.", "قولي: الموضوع.", "Кажете: предметот.", "Der Betreff.", der-betreff]
+  - ask: ["Write: I hereby inform you that…", "اكتبي: أبلغكم بموجب هذا أنّ…", "Напишете: со ова ве известувам дека…", "Hiermit teile ich Ihnen mit, dass…", hiermit-teile-ich]
+  - ask: ["Write: I request prompt repair.", "اكتبي: أرجو الإصلاح على وجه السرعة.", "Напишете: ве молам за итна поправка.", "Ich bitte um umgehende Reparatur.", ich-bitte-um, umgehend]
+  - ask: ["Say: photos attached.", "قولي: الصور في المرفق.", "Кажете: фотографиите во прилог.", "Fotos im Anhang.", der-anhang]
+  - ask: ["Write: please reply by Friday.", "اكتبي: أرجو الرد حتى الجمعة.", "Напишете: ве молам за одговор до петок.", "Ich bitte um Rückmeldung bis Freitag.", die-rueckmeldung]
+  - ask: ["Say: a rent reduction.", "قولي: تخفيض الإيجار.", "Кажете: намалување на киријата.", "Eine Mietminderung.", die-mietminderung]
+  - ask: ["Say: everything in writing!", "قولي: كل شيء كتابيًا!", "Кажете: сè писмено!", "Alles schriftlich!", schriftlich]
+  - ask: ["End a formal email.", "اختمي رسالة رسمية.", "Завршете формална е-пошта.", "Mit freundlichen Grüßen", mfg]
+  - note: ["Formal emails: 'Sehr geehrte Frau X' / 'Sehr geehrter Herr Y' or 'Sehr geehrte Damen und Herren', a comma, the text starting lowercase, and 'Mit freundlichen Grüßen' (MfG only in informal mail). With landlords and offices, put everything important in writing, with a date and a deadline: it counts as proof.", "الرسائل الرسمية: «Sehr geehrte Frau X» / «Sehr geehrter Herr Y» أو «Sehr geehrte Damen und Herren»، ثم فاصلة، ويبدأ النص بحرف صغير، والختام «Mit freundlichen Grüßen» (والاختصار MfG في الرسائل غير الرسمية فقط). مع المؤجّرين والدوائر اكتبي كل ما هو مهم كتابيًا مع تاريخ ومهلة: إنه يُعتدّ به دليلًا.", "Формални пораки: „Sehr geehrte Frau X“ / „Sehr geehrter Herr Y“ или „Sehr geehrte Damen und Herren“, запирка, текстот почнува со мала буква, и „Mit freundlichen Grüßen“ (MfG само во неформални пораки). Со станодавци и канцеларии сè важно пишувајте писмено, со датум и рок: тоа важи како доказ."]
