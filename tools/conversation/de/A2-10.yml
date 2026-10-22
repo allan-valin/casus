@@ -1,0 +1,587 @@
+# UNIT de A2-10 — written by AI (Claude) for Casus; expanded from src/A2-10.yml by tools/expand_unit.py. Edit the source.
+
+id: A2-10
+level: A2
+number: 10
+protagonist: m
+title:
+  en: Herr Yilmaz
+  ar: السيد يلماز
+  mk: Господин Јилмаз
+situation:
+  en: A quiet morning at the market. Herr Yilmaz tells you how he came to Leipzig.
+  ar: صباح هادئ في السوق. السيد يلماز يحكي لك كيف جاء إلى لايبزيغ.
+  mk: Мирно утро на пазарот. Господин Јилмаз ви раскажува како дошол во Лајпциг.
+learn_lessons:
+- a2-seit-dative
+culture: A bridge figure
+new_items:
+- id: seit-wann-sind-sie
+  text: Seit wann sind Sie …?
+  meaning:
+    en: How long have you been …? (polite)
+    ar: منذ متى وأنت …؟
+    mk: Од кога сте …?
+- id: seit-dreissig-jahren
+  text: seit dreißig Jahren
+  meaning:
+    en: for thirty years
+    ar: منذ ثلاثين عامًا
+    mk: веќе триесет години
+- id: mein-vater
+  text: mein Vater
+  meaning:
+    en: my father
+    ar: أبي
+    mk: татко ми
+- id: als-gastarbeiter
+  text: als Gastarbeiter
+  meaning:
+    en: as a guest worker
+    ar: عاملًا ضيفًا
+    mk: како гастарбајтер
+  rare: true
+- id: aufgewachsen
+  text: aufgewachsen
+  meaning:
+    en: grew up
+    ar: نشأتُ
+    mk: пораснав
+- id: der-laden
+  text: der Laden
+  meaning:
+    en: the shop
+    ar: المحل
+    mk: продавницата
+- id: seit-der-wende
+  text: seit der Wende
+  meaning:
+    en: since reunification (1989)
+    ar: منذ إعادة التوحيد (1989)
+    mk: од обединувањето (1989)
+- id: beides
+  text: beides
+  meaning:
+    en: both
+    ar: كلاهما
+    mk: и двете
+- id: die-heimat
+  text: die Heimat
+  meaning:
+    en: home, homeland
+    ar: الوطن
+    mk: татковината
+- id: ich-fuehle-mich
+  text: ich fühle mich
+  meaning:
+    en: I feel
+    ar: أشعر أنني
+    mk: се чувствувам
+reviews:
+- item: ich-suche
+  from: A1-09
+- item: die-lampe
+  from: A1-09
+- item: so
+  from: A1-09
+- item: viele
+  from: A1-09
+- item: welche-farbe
+  from: A1-09
+- item: weiss
+  from: A1-09
+- item: diese
+  from: A1-09
+- item: zu
+  from: A1-09
+- item: warmes-licht
+  from: A1-09
+- item: gelb
+  from: A1-09
+- item: klein
+  from: A1-09
+- item: was-kostet
+  from: A1-09
+- item: die-kleine
+  from: A1-09
+- item: lassen-sie-mich
+  from: A1-25
+- item: hoeren-sie-auf
+  from: A1-25
+- item: hilfe
+  from: A1-25
+- item: die-polizei
+  from: A1-25
+- item: hundertzehn
+  from: A1-25
+- item: alles-okay
+  from: A1-25
+- item: ich-bin-bei-ihnen
+  from: A1-25
+- item: der-fahrer
+  from: A1-25
+- item: aussteigen-jetzt
+  from: A1-25
+- item: danke-fuer-die-hilfe
+  from: A1-25
+- item: der-blutdruck
+  from: A2-03
+- item: das-herz
+  from: A2-03
+- item: gesund
+  from: A2-03
+- item: wie-geht-es-ihnen
+  from: A2-03
+- item: mir-geht-es-gut
+  from: A2-03
+- item: ich-zeige-ihnen
+  from: A2-03
+- item: ein-bisschen-hoch
+  from: A2-03
+- item: weniger-salz
+  from: A2-03
+- item: mehr-bewegung
+  from: A2-03
+- item: hilft-mir
+  from: A2-03
+- item: in-einem-monat
+  from: A2-03
+- item: das-klischee
+  from: A2-07
+- item: die-lederhose
+  from: A2-07
+- item: in-bayern
+  from: A2-07
+- item: in-sachsen
+  from: A2-07
+- item: anders
+  from: A2-07
+- item: groesser-als
+  from: A2-07
+- item: kaelter-als
+  from: A2-07
+- item: das-vorurteil
+  from: A2-07
+- item: stimmt-nicht
+  from: A2-07
+- item: am-meisten
+  from: A2-07
+- item: bei-euch
+  from: A2-07
+- item: der-strom
+  from: A2-09
+- item: der-anbieter
+  from: A2-09
+- item: der-vertrag
+  from: A2-09
+- item: der-zaehler
+  from: A2-09
+- item: ablesen
+  from: A2-09
+- item: dass
+  from: A2-09
+- item: ich-glaube
+  from: A2-09
+- item: wechseln
+  from: A2-09
+- item: vergleichen
+  from: A2-09
+- item: guenstiger
+  from: A2-09
+- item: die-nummer-zaehler
+  from: A2-09
+steps:
+- type: narrator
+  text:
+    en: A quiet morning at the market. Herr Yilmaz tells you how he came to Leipzig. Listen to the conversation; you don't need to understand it yet.
+    ar: صباح هادئ في السوق. السيد يلماز يحكي لك كيف جاء إلى لايبزيغ. استمع إلى المحادثة؛ لا داعي لأن تفهمها الآن.
+    mk: Мирно утро на пазарот. Господин Јилмаз ви раскажува како дошол во Лајпциг. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Seit wann sind Sie in Leipzig, Herr Yilmaz?
+    meaning:
+      en: How long have you been in Leipzig, Mr Yilmaz?
+      ar: منذ متى وأنت في لايبزيغ يا سيد يلماز؟
+      mk: Од кога сте во Лајпциг, господине Јилмаз?
+  - speaker: yilmaz
+    text: Seit dreißig Jahren. Seit der Wende.
+    meaning:
+      en: For thirty years. Since reunification.
+      ar: منذ ثلاثين عامًا. منذ إعادة التوحيد.
+      mk: Веќе триесет години. Од обединувањето.
+  - speaker: protagonist
+    text: Und vorher?
+    meaning:
+      en: And before?
+      ar: وقبل ذلك؟
+      mk: А пред тоа?
+  - speaker: yilmaz
+    text: Ich bin in Berlin aufgewachsen. Mein Vater ist als Gastarbeiter aus der Türkei gekommen.
+    meaning:
+      en: I grew up in Berlin. My father came from Turkey as a guest worker.
+      ar: نشأتُ في برلين. أبي جاء من تركيا عاملًا ضيفًا.
+      mk: Пораснав во Берлин. Татко ми дошол од Турција како гастарбајтер.
+  - speaker: protagonist
+    text: Und seit wann haben Sie den Laden?
+    meaning:
+      en: And since when have you had the shop?
+      ar: ومنذ متى عندك المحل؟
+      mk: А од кога ја имате продавницата?
+  - speaker: yilmaz
+    text: Seit zwanzig Jahren. Meine Kinder helfen am Samstag.
+    meaning:
+      en: For twenty years. My children help on Saturdays.
+      ar: منذ عشرين عامًا. أولادي يساعدون يوم السبت.
+      mk: Веќе дваесет години. Децата помагаат во сабота.
+  - speaker: protagonist
+    text: Ist Deutschland Ihre Heimat oder die Türkei?
+    meaning:
+      en: Is Germany your home, or Turkey?
+      ar: هل ألمانيا وطنك أم تركيا؟
+      mk: Дали Германија ви е татковина или Турција?
+  - speaker: yilmaz
+    text: Beides. Ich fühle mich als Leipziger — mit türkischem Tee!
+    meaning:
+      en: Both. I feel like a Leipziger — with Turkish tea!
+      ar: كلاهما. أشعر أنني من لايبزيغ — مع الشاي التركي!
+      mk: И двете. Се чувствувам Лајпцигер — со турски чај!
+- type: narrator
+  text:
+    en: '«seit» (since, for) takes the dative and the present tense: «seit dreißig Jahren» — for thirty years; «seit der Wende». German says ''I am here since…'', not ''I have been''.'
+    ar: '«seit» (منذ) تأخذ حالة الجر والزمن الحاضر: «seit dreißig Jahren» — منذ ثلاثين عامًا؛ «seit der Wende». والألمانية تقول «أنا هنا منذ…» بالحاضر.'
+    mk: '«seit» (од, веќе) бара датив и сегашно време: «seit dreißig Jahren» — веќе триесет години; «seit der Wende». Германскиот вели „тука сум од…“, во сегашно.'
+- type: prompt
+  ask:
+    en: Ask how long he's been in Leipzig.
+    ar: اسأل منذ متى وهو في لايبزيغ.
+    mk: Прашајте од кога е во Лајпциг.
+  answer:
+    speaker: protagonist
+    text: Seit wann sind Sie in Leipzig?
+  items:
+  - seit-wann-sind-sie
+- type: prompt
+  ask:
+    en: 'Say for him: for thirty years.'
+    ar: 'قلها بلسانه: منذ ثلاثين عامًا.'
+    mk: 'Кажете наместо него: веќе триесет години.'
+  answer:
+    speaker: protagonist
+    text: Seit dreißig Jahren.
+  items:
+  - seit-dreissig-jahren
+- type: prompt
+  ask:
+    en: 'Say: since reunification.'
+    ar: 'قل: منذ إعادة التوحيد.'
+    mk: 'Кажете: од обединувањето.'
+  answer:
+    speaker: protagonist
+    text: Seit der Wende.
+  items:
+  - seit-der-wende
+- type: prompt
+  ask:
+    en: 'Say: I grew up in Berlin.'
+    ar: 'قل: نشأتُ في برلين.'
+    mk: 'Кажете: пораснав во Берлин.'
+  answer:
+    speaker: protagonist
+    text: Ich bin in Berlin aufgewachsen.
+  items:
+  - aufgewachsen
+- type: prompt
+  ask:
+    en: 'Say: my father came as a guest worker.'
+    ar: 'قل: أبي جاء عاملًا ضيفًا.'
+    mk: 'Кажете: татко ми дошол како гастарбајтер.'
+  answer:
+    speaker: protagonist
+    text: Mein Vater ist als Gastarbeiter gekommen.
+  items:
+  - mein-vater
+  - als-gastarbeiter
+- type: prompt
+  ask:
+    en: 'Say: the shop.'
+    ar: 'قل: المحل.'
+    mk: 'Кажете: продавницата.'
+  answer:
+    speaker: protagonist
+    text: Der Laden.
+  items:
+  - der-laden
+- type: prompt
+  ask:
+    en: 'Ask: is Germany your home?'
+    ar: 'اسأل: هل ألمانيا وطنك؟'
+    mk: 'Прашајте: дали Германија ви е татковина?'
+  answer:
+    speaker: protagonist
+    text: Ist Deutschland Ihre Heimat?
+  items:
+  - die-heimat
+- type: prompt
+  ask:
+    en: 'He says: both.'
+    ar: 'يقول: كلاهما.'
+    mk: 'Тој вели: и двете.'
+  answer:
+    speaker: protagonist
+    text: Beides.
+  items:
+  - beides
+- type: prompt
+  ask:
+    en: 'Say: I feel like a Leipziger.'
+    ar: 'قل: أشعر أنني من لايبزيغ.'
+    mk: 'Кажете: се чувствувам Лајпцигер.'
+  answer:
+    speaker: protagonist
+    text: Ich fühle mich als Leipziger.
+  items:
+  - ich-fuehle-mich
+- type: narrator
+  text:
+    en: From 1961 West Germany recruited 'guest workers' from Turkey, Italy, Greece and Yugoslavia; many stayed. Their children and grandchildren are Germans — often with two homes, like Herr Yilmaz.
+    ar: منذ 1961 استقدمت ألمانيا الغربية «عمالًا ضيوفًا» من تركيا وإيطاليا واليونان ويوغوسلافيا؛ وبقي كثير منهم. أولادهم وأحفادهم ألمان — غالبًا بوطنين، مثل السيد يلماز.
+    mk: Од 1961 Западна Германија регрутирала „гастарбајтери“ од Турција, Италија, Грција и Југославија; многумина останале. Нивните деца и внуци се Германци — често со два дома, како господин Јилмаз.
+- type: narrator
+  for:
+  - mk
+  text:
+    mk: Меѓу гастарбајтерите од Југославија имало и многу Македонци — можеби некој од вашето семејство.
+- type: prompt
+  ask:
+    en: 'Once more: say “How long have you been …? (polite)”.'
+    ar: 'مرة أخرى: قل “منذ متى وأنت …؟”.'
+    mk: 'Уште еднаш: кажете „Од кога сте …?“.'
+  answer:
+    speaker: protagonist
+    text: Seit wann sind Sie …?
+  items:
+  - seit-wann-sind-sie
+- type: prompt
+  ask:
+    en: 'Once more: say “for thirty years”.'
+    ar: 'مرة أخرى: قل “منذ ثلاثين عامًا”.'
+    mk: 'Уште еднаш: кажете „веќе триесет години“.'
+  answer:
+    speaker: protagonist
+    text: seit dreißig Jahren
+  items:
+  - seit-dreissig-jahren
+- type: prompt
+  ask:
+    en: 'Once more: say “my father”.'
+    ar: 'مرة أخرى: قل “أبي”.'
+    mk: 'Уште еднаш: кажете „татко ми“.'
+  answer:
+    speaker: protagonist
+    text: mein Vater
+  items:
+  - mein-vater
+- type: prompt
+  ask:
+    en: 'Once more: say “as a guest worker”.'
+    ar: 'مرة أخرى: قل “عاملًا ضيفًا”.'
+    mk: 'Уште еднаш: кажете „како гастарбајтер“.'
+  answer:
+    speaker: protagonist
+    text: als Gastarbeiter
+  items:
+  - als-gastarbeiter
+- type: prompt
+  ask:
+    en: 'Once more: say “grew up”.'
+    ar: 'مرة أخرى: قل “نشأتُ”.'
+    mk: 'Уште еднаш: кажете „пораснав“.'
+  answer:
+    speaker: protagonist
+    text: aufgewachsen
+  items:
+  - aufgewachsen
+- type: prompt
+  ask:
+    en: 'Once more: say “the shop”.'
+    ar: 'مرة أخرى: قل “المحل”.'
+    mk: 'Уште еднаш: кажете „продавницата“.'
+  answer:
+    speaker: protagonist
+    text: der Laden
+  items:
+  - der-laden
+- type: prompt
+  ask:
+    en: 'Once more: say “since reunification (1989)”.'
+    ar: 'مرة أخرى: قل “منذ إعادة التوحيد (1989)”.'
+    mk: 'Уште еднаш: кажете „од обединувањето (1989)“.'
+  answer:
+    speaker: protagonist
+    text: seit der Wende
+  items:
+  - seit-der-wende
+- type: prompt
+  ask:
+    en: 'Once more: say “both”.'
+    ar: 'مرة أخرى: قل “كلاهما”.'
+    mk: 'Уште еднаш: кажете „и двете“.'
+  answer:
+    speaker: protagonist
+    text: beides
+  items:
+  - beides
+- type: prompt
+  ask:
+    en: 'Once more: say “home, homeland”.'
+    ar: 'مرة أخرى: قل “الوطن”.'
+    mk: 'Уште еднаш: кажете „татковината“.'
+  answer:
+    speaker: protagonist
+    text: die Heimat
+  items:
+  - die-heimat
+- type: prompt
+  ask:
+    en: 'Once more: say “I feel”.'
+    ar: 'مرة أخرى: قل “أشعر أنني”.'
+    mk: 'Уште еднаш: кажете „се чувствувам“.'
+  answer:
+    speaker: protagonist
+    text: ich fühle mich
+  items:
+  - ich-fuehle-mich
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتَه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “electricity — and “the provider — and “the contract — and “the meter — and “read (a meter) — and “that (verb to the end) — and “I think — and “switch, change — and “compare — and “cheaper”.'
+    ar: 'قل: “الكهرباء — و“المزوّد — و“العقد — و“العدّاد — و“يقرأ (العدّاد) — و“أنّ (الفعل في الآخر) — و“أظن — و“يغيّر — و“يقارن — و“أرخص”.'
+    mk: 'Кажете: „струјата“ — и „давателот“ — и „договорот“ — и „броилото“ — и „отчита“ — и „дека (глаголот на крај)“ — и „мислам“ — и „менува“ — и „споредува“ — и „поевтино“.'
+  answer:
+    speaker: protagonist
+    text: der Strom … der Anbieter … der Vertrag … der Zähler … ablesen … dass … ich glaube … wechseln … vergleichen … günstiger
+  items:
+  - der-strom
+  - der-anbieter
+  - der-vertrag
+  - der-zaehler
+  - ablesen
+  - dass
+  - ich-glaube
+  - wechseln
+  - vergleichen
+  - guenstiger
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the meter number — and “the cliché — and “leather trousers — and “in Bavaria — and “in Saxony — and “different — and “bigger than — and “colder than — and “the prejudice — and “That''s not
+      true”.'
+    ar: 'قل: “رقم العدّاد — و“الصورة النمطية — و“السروال الجلدي — و“في بافاريا — و“في ساكسونيا — و“مختلف — و“أكبر من — و“أبرد من — و“التحيّز، الحكم المسبق — و“هذا غير صحيح”.'
+    mk: 'Кажете: „бројот на броилото“ — и „клишето“ — и „кожените панталони“ — и „во Баварија“ — и „во Саксонија“ — и „поинаку“ — и „поголем од“ — и „постудено од“ — и „предрасудата“ — и „Тоа не е точно“.'
+  answer:
+    speaker: protagonist
+    text: die Zählernummer … das Klischee … die Lederhose … in Bayern … in Sachsen … anders … größer als … kälter als … das Vorurteil … Das stimmt nicht
+  items:
+  - die-nummer-zaehler
+  - das-klischee
+  - die-lederhose
+  - in-bayern
+  - in-sachsen
+  - anders
+  - groesser-als
+  - kaelter-als
+  - das-vorurteil
+  - stimmt-nicht
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the most — and “where you''re from, at your place — and “blood pressure — and “the heart — and “healthy — and “How are you? (polite) — and “I''m well — and “I''ll show you … — and “a bit
+      high — and “less salt”.'
+    ar: 'قل: “أكثر شيء — و“عندكم — و“ضغط الدم — و“القلب — و“صحّي، سليم — و“كيف حالكِ؟ — و“أنا بخير — و“سأريكِ … — و“مرتفع قليلًا — و“ملح أقل”.'
+    mk: 'Кажете: „најмногу“ — и „кај вас“ — и „крвниот притисок“ — и „срцето“ — и „здраво“ — и „Како сте?“ — и „Добро сум“ — и „Ќе ви покажам …“ — и „малку висок“ — и „помалку сол“.'
+  answer:
+    speaker: protagonist
+    text: am meisten … bei euch … der Blutdruck … das Herz … gesund … Wie geht es Ihnen? … Mir geht es gut … Ich zeige Ihnen … … ein bisschen hoch … weniger Salz
+  items:
+  - am-meisten
+  - bei-euch
+  - der-blutdruck
+  - das-herz
+  - gesund
+  - wie-geht-es-ihnen
+  - mir-geht-es-gut
+  - ich-zeige-ihnen
+  - ein-bisschen-hoch
+  - weniger-salz
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “more exercise — and “that helps me — and “in a month — and “Leave me alone! (polite) — and “Stop it! (polite) — and “Help! — and “the police — and “110 (police number) — and “Are you all
+      right? — and “I''m with you”.'
+    ar: 'قل: “حركة أكثر — و“هذا يساعدني — و“بعد شهر — و“اتركني وشأني! — و“توقّف! — و“النجدة! — و“الشرطة — و“110 (رقم الشرطة) — و“هل أنتِ بخير؟ — و“أنا معكِ”.'
+    mk: 'Кажете: „повеќе движење“ — и „тоа ми помага“ — и „за еден месец“ — и „Оставете ме на мира!“ — и „Престанете!“ — и „Помош!“ — и „полицијата“ — и „110 (број на полиција)“ — и „Дали сте во ред?“ —
+      и „Јас сум со вас“.'
+  answer:
+    speaker: protagonist
+    text: mehr Bewegung … das hilft mir … in einem Monat … Lassen Sie mich in Ruhe! … Hören Sie auf! … Hilfe! … die Polizei … hundertzehn … Alles okay? … Ich bin bei Ihnen
+  items:
+  - mehr-bewegung
+  - hilft-mir
+  - in-einem-monat
+  - lassen-sie-mich
+  - hoeren-sie-auf
+  - hilfe
+  - die-polizei
+  - hundertzehn
+  - alles-okay
+  - ich-bin-bei-ihnen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the driver — and “Get off! (polite) — and “Thanks for your help — and “I''m looking for … — and “the lamp — and “so — and “many — and “What colour? — and “white — and “this (feminine)”.'
+    ar: 'قل: “السائق — و“انزل! — و“شكرًا على المساعدة — و“أبحث عن … — و“المصباح — و“جدًا، هكذا — و“كثير من — و“أيّ لون؟ — و“أبيض — و“هذه”.'
+    mk: 'Кажете: „возачот“ — и „Симнете се!“ — и „Благодарам за помошта“ — и „Барам …“ — и „ламбата“ — и „толку“ — и „многу“ — и „Која боја?“ — и „бело“ — и „оваа“.'
+  answer:
+    speaker: protagonist
+    text: der Fahrer … Steigen Sie aus! … Danke für die Hilfe … Ich suche … … die Lampe … so … viele … Welche Farbe? … weiß … diese
+  items:
+  - der-fahrer
+  - aussteigen-jetzt
+  - danke-fuer-die-hilfe
+  - ich-suche
+  - die-lampe
+  - so
+  - viele
+  - welche-farbe
+  - weiss
+  - diese
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “too — and “warm light — and “yellow — and “small — and “How much is …? — and “the small one”.'
+    ar: 'قل: “أكثر من اللازم — و“ضوء دافئ — و“أصفر — و“صغير — و“كم سعر …؟ — و“الصغيرة”.'
+    mk: 'Кажете: „премногу“ — и „топла светлина“ — и „жолто“ — и „мало“ — и „Колку чини …?“ — и „малата“.'
+  answer:
+    speaker: protagonist
+    text: zu … warmes Licht … gelb … klein … Was kostet …? … die kleine
+  items:
+  - zu
+  - warmes-licht
+  - gelb
+  - klein
+  - was-kostet
+  - die-kleine
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمع إلى المحادثة مرة أخرى. الآن تفهمها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck
