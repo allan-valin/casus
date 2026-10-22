@@ -1,0 +1,824 @@
+# UNIT de C2-11 — written by AI (Claude) for Casus; expanded from src/C2-11.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-11
+level: C2
+number: 11
+protagonist: f
+title:
+  en: The family business
+  ar: المشروع العائلي
+  mk: Семејниот бизнис
+situation:
+  en: Herr Yilmaz is retiring after thirty years. His daughter Elif takes over the shop — and changes a few things.
+  ar: السيد يلماز يتقاعد بعد ثلاثين عامًا. ابنته إليف تتولّى المتجر — وتغيّر بعض الأشياء.
+  mk: Господин Јилмаз се пензионира по триесет години. Ќерка му Елиф го презема дуќанот — и менува некои работи.
+learn_lessons:
+- c2-nominal-style
+culture: Handing over a business
+new_items:
+- id: die-nachfolge-c2
+  text: die Nachfolge
+  meaning:
+    en: succession
+    ar: الخلافة في العمل
+    mk: наследувањето (на фирмата)
+- id: die-uebergabe-laden
+  text: die Geschäftsübergabe
+  meaning:
+    en: the handover of the business
+    ar: تسليم المحل
+    mk: предавањето на дуќанот
+  rare: true
+- id: der-ruhestand
+  text: der Ruhestand
+  meaning:
+    en: retirement
+    ar: التقاعد
+    mk: пензијата (состојба)
+- id: die-stammkundschaft
+  text: die Stammkundschaft
+  meaning:
+    en: the regular customers
+    ar: الزبائن الدائمون
+    mk: редовните муштерии
+- id: die-weiterfuehrung
+  text: die Weiterführung
+  meaning:
+    en: the continuation
+    ar: الاستمرار
+    mk: продолжувањето
+- id: die-neuausrichtung
+  text: die Neuausrichtung
+  meaning:
+    en: the reorientation
+    ar: إعادة التوجيه
+    mk: новата насока
+  rare: true
+- id: der-onlineshop
+  text: der Onlineshop
+  meaning:
+    en: the online shop
+    ar: المتجر الإلكتروني
+    mk: онлајн продавницата
+- id: die-tradition
+  text: die Tradition
+  meaning:
+    en: tradition
+    ar: التقليد
+    mk: традицијата
+- id: das-lebenswerk
+  text: das Lebenswerk
+  meaning:
+    en: life's work
+    ar: عمل العمر
+    mk: животното дело
+- id: unter-neuer-leitung
+  text: unter neuer Leitung
+  meaning:
+    en: under new management
+    ar: بإدارة جديدة
+    mk: под ново раководство
+reviews:
+- item: das-sperrkonto-e
+  from: A2-04-e
+  for:
+  - en
+- item: weil-e
+  from: A2-04-e
+  for:
+  - en
+- item: nachweisen-e
+  from: A2-04-e
+  for:
+  - en
+- item: jeden-monat-e
+  from: A2-04-e
+  for:
+  - en
+- item: die-verpflichtungserklaerung-e
+  from: A2-04-e
+  for:
+  - en
+- item: das-einkommen-e
+  from: A2-04-e
+  for:
+  - en
+- item: das-stipendium-e
+  from: A2-04-e
+  for:
+  - en
+- item: genug-geld-e
+  from: A2-04-e
+  for:
+  - en
+- item: die-website-e
+  from: A2-04-e
+  for:
+  - en
+- item: jedes-jahr-e
+  from: A2-04-e
+  for:
+  - en
+- item: sehr-geehrte
+  from: B2-08
+- item: mfg
+  from: B2-08
+- item: der-betreff
+  from: B2-08
+- item: hiermit-teile-ich
+  from: B2-08
+- item: ich-bitte-um
+  from: B2-08
+- item: die-rueckmeldung
+  from: B2-08
+- item: umgehend
+  from: B2-08
+- item: der-anhang
+  from: B2-08
+- item: die-mietminderung
+  from: B2-08
+- item: schriftlich
+  from: B2-08
+- item: das-beileid
+  from: C1-10
+- item: die-trauerfeier
+  from: C1-10
+- item: die-beerdigung
+  from: C1-10
+- item: verstorben
+  from: C1-10
+- item: die-trauerkarte
+  from: C1-10
+- item: in-gedanken
+  from: C1-10
+- item: er-wird-fehlen
+  from: C1-10
+- item: die-erinnerung
+  from: C1-10
+- item: im-engsten-kreis
+  from: C1-10
+- item: der-kranz
+  from: C1-10
+- item: der-widerspruch-amt
+  from: C1-26
+- item: fristgerecht
+  from: C1-26
+- item: der-bescheid-c1
+  from: C1-26
+- item: die-rechtsbehelfsbelehrung
+  from: C1-26
+- item: die-begruendung
+  from: C1-26
+- item: hiermit-lege-ich
+  from: C1-26
+- item: das-aktenzeichen-c1
+  from: C1-26
+- item: der-bewohnerparkausweis
+  from: C1-26
+- item: die-anlage
+  from: C1-26
+- item: ich-bitte-um-pruefung
+  from: C1-26
+- item: die-gehaltsverhandlung
+  from: C2-04
+- item: das-gegenangebot
+  from: C2-04
+- item: der-marktwert
+  from: C2-04
+- item: ich-haette-mir-vorgestellt
+  from: C2-04
+- item: waere-es-denkbar
+  from: C2-04
+- item: ich-wuerde-vorschlagen
+  from: C2-04
+- item: die-gehaltserhoehung
+  from: C2-04
+- item: das-budget-c2
+  from: C2-04
+- item: der-zusatzurlaub
+  from: C2-04
+- item: die-vereinbarung
+  from: C2-04
+- item: der-roman
+  from: C2-08
+- item: die-figur
+  from: C2-08
+- item: der-erzaehler
+  from: C2-08
+- item: die-gesellschaft
+  from: C2-08
+- item: die-ehre-c2
+  from: C2-08
+- item: zwischen-den-zeilen-c2
+  from: C2-08
+- item: das-motiv
+  from: C2-08
+- item: der-schauplatz
+  from: C2-08
+- item: das-ist-ein-weites-feld
+  from: C2-08
+- item: tragisch
+  from: C2-08
+- item: die-klage
+  from: C2-10
+- item: der-klaeger
+  from: C2-10
+- item: der-beklagte
+  from: C2-10
+- item: der-vergleich
+  from: C2-10
+- item: das-amtsgericht
+  from: C2-10
+- item: die-verhandlung
+  from: C2-10
+- item: der-sachverhalt
+  from: C2-10
+- item: die-rueckzahlung
+  from: C2-10
+- item: die-kosten-tragen
+  from: C2-10
+- item: hohes-gericht
+  from: C2-10
+- item: das-gehalt-a
+  from: A2-04-a
+  for:
+  - ar
+- item: weil-a
+  from: A2-04-a
+  for:
+  - ar
+- item: reicht-a
+  from: A2-04-a
+  for:
+  - ar
+- item: die-miete-a
+  from: A2-04-a
+  for:
+  - ar
+- item: das-kindergeld-a
+  from: A2-04-a
+  for:
+  - ar
+- item: meine-frau-lernt-a
+  from: A2-04-a
+  for:
+  - ar
+- item: spaeter-arbeiten-a
+  from: A2-04-a
+  for:
+  - ar
+- item: sparen-a
+  from: A2-04-a
+  for:
+  - ar
+- item: teuer-a
+  from: A2-04-a
+  for:
+  - ar
+- item: kollege-a
+  from: A2-04-a
+  for:
+  - ar
+- item: die-rente-m
+  from: A2-04-m
+  for:
+  - mk
+- item: weil-m
+  from: A2-04-m
+  for:
+  - mk
+- item: die-reisekrankenversicherung-m
+  from: A2-04-m
+  for:
+  - mk
+- item: wir-wohnen-bei-m
+  from: A2-04-m
+  for:
+  - mk
+- item: keine-miete-m
+  from: A2-04-m
+  for:
+  - mk
+- item: teuer-m
+  from: A2-04-m
+  for:
+  - mk
+- item: die-preise-m
+  from: A2-04-m
+  for:
+  - mk
+- item: die-europaeische-karte-m
+  from: A2-04-m
+  for:
+  - mk
+- item: zur-sicherheit-m
+  from: A2-04-m
+  for:
+  - mk
+- item: wir-sparen-m
+  from: A2-04-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: Herr Yilmaz is retiring after thirty years. His daughter Elif takes over the shop — and changes a few things. Listen to the conversation; you don't need to understand it yet.
+    ar: السيد يلماز يتقاعد بعد ثلاثين عامًا. ابنته إليف تتولّى المتجر — وتغيّر بعض الأشياء. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.
+    mk: Господин Јилмаз се пензионира по триесет години. Ќерка му Елиф го презема дуќанот — и менува некои работи. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: yilmaz
+    text: Nach dreißig Jahren gehe ich in den Ruhestand. Elif übernimmt.
+    meaning:
+      en: After thirty years I'm retiring. Elif is taking over.
+      ar: بعد ثلاثين عامًا أتقاعد. إليف تتولّى الأمر.
+      mk: По триесет години одам во пензија. Елиф презема.
+  - speaker: protagonist
+    text: Ihr Lebenswerk! Fällt Ihnen die Übergabe schwer?
+    meaning:
+      en: Your life's work! Is the handover hard for you?
+      ar: عمل عمرك! هل يصعب عليك التسليم؟
+      mk: Вашето животно дело! Дали ви е тешко предавањето?
+  - speaker: yilmaz
+    text: Ein bisschen. Aber die Nachfolge in der Familie ist ein Glück. Viele Läden schließen.
+    meaning:
+      en: A little. But succession within the family is lucky. Many shops close.
+      ar: قليلًا. لكن الخلافة داخل العائلة نعمة. كثير من المحلات تُغلق.
+      mk: Малку. Но наследувањето во семејството е среќа. Многу дуќани се затвораат.
+  - speaker: elif
+    text: 'Die Weiterführung ist klar — aber mit einer Neuausrichtung: Bio-Gemüse und ein Onlineshop.'
+    meaning:
+      en: 'Continuing is clear — but with a new direction: organic vegetables and an online shop.'
+      ar: 'الاستمرار واضح — لكن بتوجّه جديد: خضروات عضوية ومتجر إلكتروني.'
+      mk: 'Продолжувањето е јасно — но со нова насока: органски зеленчук и онлајн продавница.'
+  - speaker: protagonist
+    text: Und die Stammkundschaft? Frau Becker kauft hier seit zwanzig Jahren.
+    meaning:
+      en: And the regular customers? Frau Becker has shopped here for twenty years.
+      ar: والزبائن الدائمون؟ السيدة بيكر تشتري من هنا منذ عشرين عامًا.
+      mk: А редовните муштерии? Госпоѓа Бекер купува тука дваесет години.
+  - speaker: elif
+    text: 'Die Tradition bleibt: Papa steht samstags weiter auf dem Markt — und erzählt seine Witze.'
+    meaning:
+      en: 'Tradition stays: Dad will still be at the market on Saturdays — telling his jokes.'
+      ar: 'التقليد باقٍ: أبي سيبقى في السوق أيام السبت — ويحكي نكاته.'
+      mk: 'Традицијата останува: тато и понатаму сабота е на пазарот — и раскажува шеги.'
+  - speaker: yilmaz
+    text: Unter neuer Leitung, aber mit altem Humor!
+    meaning:
+      en: Under new management, but with the old humour!
+      ar: بإدارة جديدة، لكن بالفكاهة القديمة!
+      mk: Под ново раководство, но со стариот хумор!
+  - speaker: protagonist
+    text: Dann viel Erfolg — Ihnen beiden!
+    meaning:
+      en: Then every success — to both of you!
+      ar: إذن كل النجاح — لكما أنتما الاثنين!
+      mk: Тогаш многу успех — на двајцата!
+- type: prompt
+  ask:
+    en: 'He says: I''m retiring.'
+    ar: 'يقول: أتقاعد.'
+    mk: 'Тој вели: одам во пензија.'
+  answer:
+    speaker: protagonist
+    text: Ich gehe in den Ruhestand.
+  items:
+  - der-ruhestand
+- type: prompt
+  ask:
+    en: 'Say: your life''s work.'
+    ar: 'قولي: عمل عمرك.'
+    mk: 'Кажете: вашето животно дело.'
+  answer:
+    speaker: protagonist
+    text: Ihr Lebenswerk.
+  items:
+  - das-lebenswerk
+- type: narrator
+  text:
+    en: 'Business German packs plans into nouns: «die Übergabe» (handing over), «die Nachfolge» (succeeding), «die Weiterführung» (carrying on), «die Neuausrichtung» (re-orienting). Elif''s sentence is
+      a plan in four nouns.'
+    ar: 'ألمانية الأعمال تحشر الخطط في أسماء: «die Übergabe» (التسليم)، «die Nachfolge» (الخلافة)، «die Weiterführung» (الاستمرار)، «die Neuausrichtung» (إعادة التوجيه). جملة إليف خطة في أربعة أسماء.'
+    mk: 'Деловниот германски ги пакува плановите во именки: «die Übergabe» (предавање), «die Nachfolge» (наследување), «die Weiterführung» (продолжување), «die Neuausrichtung» (нова насока). Реченицата
+      на Елиф е план во четири именки.'
+- type: prompt
+  ask:
+    en: 'Ask: is the handover hard for you?'
+    ar: 'اسألي: هل يصعب عليك التسليم؟'
+    mk: 'Прашајте: дали ви е тешко предавањето?'
+  answer:
+    speaker: protagonist
+    text: Fällt Ihnen die Übergabe schwer?
+  items:
+  - die-uebergabe-laden
+- type: prompt
+  ask:
+    en: 'Say: succession within the family.'
+    ar: 'قولي: الخلافة داخل العائلة.'
+    mk: 'Кажете: наследување во семејството.'
+  answer:
+    speaker: protagonist
+    text: Die Nachfolge in der Familie.
+  items:
+  - die-nachfolge-c2
+- type: prompt
+  ask:
+    en: 'Say: continuing, with a new direction.'
+    ar: 'قولي: الاستمرار، بتوجّه جديد.'
+    mk: 'Кажете: продолжување, со нова насока.'
+  answer:
+    speaker: protagonist
+    text: Die Weiterführung mit einer Neuausrichtung.
+  items:
+  - die-weiterfuehrung
+  - die-neuausrichtung
+- type: prompt
+  ask:
+    en: 'Say: an online shop.'
+    ar: 'قولي: متجر إلكتروني.'
+    mk: 'Кажете: онлајн продавница.'
+  answer:
+    speaker: protagonist
+    text: Ein Onlineshop.
+  items:
+  - der-onlineshop
+- type: prompt
+  ask:
+    en: 'Say: the regular customers.'
+    ar: 'قولي: الزبائن الدائمون.'
+    mk: 'Кажете: редовните муштерии.'
+  answer:
+    speaker: protagonist
+    text: Die Stammkundschaft.
+  items:
+  - die-stammkundschaft
+- type: prompt
+  ask:
+    en: 'Say: tradition stays.'
+    ar: 'قولي: التقليد باقٍ.'
+    mk: 'Кажете: традицијата останува.'
+  answer:
+    speaker: protagonist
+    text: Die Tradition bleibt.
+  items:
+  - die-tradition
+- type: prompt
+  ask:
+    en: 'Say: under new management.'
+    ar: 'قولي: بإدارة جديدة.'
+    mk: 'Кажете: под ново раководство.'
+  answer:
+    speaker: protagonist
+    text: Unter neuer Leitung.
+  items:
+  - unter-neuer-leitung
+- type: narrator
+  text:
+    en: Many small family firms in Germany close for lack of a successor. When children take over, they often modernise while keeping the regulars — and the old owner usually stays around for a while to
+      hand over relationships, not just keys.
+    ar: كثير من المشاريع العائلية الصغيرة في ألمانيا تُغلق لعدم وجود خليفة. وحين يتولّى الأبناء، غالبًا ما يحدّثون المحل مع الحفاظ على الزبائن الدائمين — ويبقى المالك القديم عادةً لفترة ليسلّم العلاقات
+      لا المفاتيح فقط.
+    mk: Многу мали семејни фирми во Германија се затвораат поради недостиг на наследник. Кога децата преземаат, често модернизираат, а ги задржуваат редовните — а стариот сопственик обично останува некое
+      време за да ги предаде врските, не само клучевите.
+- type: prompt
+  ask:
+    en: 'Once more: say “succession”.'
+    ar: 'مرة أخرى: قولي “الخلافة في العمل”.'
+    mk: 'Уште еднаш: кажете „наследувањето (на фирмата)“.'
+  answer:
+    speaker: protagonist
+    text: die Nachfolge
+  items:
+  - die-nachfolge-c2
+- type: prompt
+  ask:
+    en: 'Once more: say “the handover of the business”.'
+    ar: 'مرة أخرى: قولي “تسليم المحل”.'
+    mk: 'Уште еднаш: кажете „предавањето на дуќанот“.'
+  answer:
+    speaker: protagonist
+    text: die Geschäftsübergabe
+  items:
+  - die-uebergabe-laden
+- type: prompt
+  ask:
+    en: 'Once more: say “retirement”.'
+    ar: 'مرة أخرى: قولي “التقاعد”.'
+    mk: 'Уште еднаш: кажете „пензијата (состојба)“.'
+  answer:
+    speaker: protagonist
+    text: der Ruhestand
+  items:
+  - der-ruhestand
+- type: prompt
+  ask:
+    en: 'Once more: say “the regular customers”.'
+    ar: 'مرة أخرى: قولي “الزبائن الدائمون”.'
+    mk: 'Уште еднаш: кажете „редовните муштерии“.'
+  answer:
+    speaker: protagonist
+    text: die Stammkundschaft
+  items:
+  - die-stammkundschaft
+- type: prompt
+  ask:
+    en: 'Once more: say “the continuation”.'
+    ar: 'مرة أخرى: قولي “الاستمرار”.'
+    mk: 'Уште еднаш: кажете „продолжувањето“.'
+  answer:
+    speaker: protagonist
+    text: die Weiterführung
+  items:
+  - die-weiterfuehrung
+- type: prompt
+  ask:
+    en: 'Once more: say “the reorientation”.'
+    ar: 'مرة أخرى: قولي “إعادة التوجيه”.'
+    mk: 'Уште еднаш: кажете „новата насока“.'
+  answer:
+    speaker: protagonist
+    text: die Neuausrichtung
+  items:
+  - die-neuausrichtung
+- type: prompt
+  ask:
+    en: 'Once more: say “the online shop”.'
+    ar: 'مرة أخرى: قولي “المتجر الإلكتروني”.'
+    mk: 'Уште еднаш: кажете „онлајн продавницата“.'
+  answer:
+    speaker: protagonist
+    text: der Onlineshop
+  items:
+  - der-onlineshop
+- type: prompt
+  ask:
+    en: 'Once more: say “tradition”.'
+    ar: 'مرة أخرى: قولي “التقليد”.'
+    mk: 'Уште еднаш: кажете „традицијата“.'
+  answer:
+    speaker: protagonist
+    text: die Tradition
+  items:
+  - die-tradition
+- type: prompt
+  ask:
+    en: 'Once more: say “life''s work”.'
+    ar: 'مرة أخرى: قولي “عمل العمر”.'
+    mk: 'Уште еднаш: кажете „животното дело“.'
+  answer:
+    speaker: protagonist
+    text: das Lebenswerk
+  items:
+  - das-lebenswerk
+- type: prompt
+  ask:
+    en: 'Once more: say “under new management”.'
+    ar: 'مرة أخرى: قولي “بإدارة جديدة”.'
+    mk: 'Уште еднаш: кажете „под ново раководство“.'
+  answer:
+    speaker: protagonist
+    text: unter neuer Leitung
+  items:
+  - unter-neuer-leitung
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the blocked account — and “because (verb to the end) — and “prove, show — and “every month”.'
+  answer:
+    speaker: protagonist
+    text: das Sperrkonto … weil … nachweisen … jeden Monat
+  items:
+  - das-sperrkonto-e
+  - weil-e
+  - nachweisen-e
+  - jeden-monat-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “a sponsor''s guarantee — and “income — and “the scholarship — and “enough money”.'
+  answer:
+    speaker: protagonist
+    text: die Verpflichtungserklärung … das Einkommen … das Stipendium … genug Geld
+  items:
+  - die-verpflichtungserklaerung-e
+  - das-einkommen-e
+  - das-stipendium-e
+  - genug-geld-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “on the website — and “every year”.'
+  answer:
+    speaker: protagonist
+    text: auf der Website … jedes Jahr
+  items:
+  - die-website-e
+  - jedes-jahr-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the lawsuit — and “the plaintiff — and “the defendant — and “the settlement — and “the local court — and “the oral hearing — and “the facts of the case — and “repayment of the deposit — and
+      “bear the costs — and “Madam Chair (to the judge) — and “the novel — and “the character — and “the narrator — and “society — and “the code of honour — and “hint at, imply — and “the motif — and “the
+      setting — and “That''s a big subject (Fontane) — and “tragic”.'
+    ar: 'قولي: “الدعوى — و“المدّعي — و“المدّعى عليه — و“التسوية — و“المحكمة المحلية — و“الجلسة الشفهية — و“وقائع القضية — و“ردّ التأمين — و“يتحمّل التكاليف — و“سيدتي الرئيسة (للقاضية) — و“الرواية — و“الشخصية
+      — و“الراوي — و“المجتمع — و“قانون الشرف — و“يلمّح — و“الموضوع المتكرّر — و“مسرح الأحداث — و“هذا موضوع واسع (فونتانه) — و“مأساوي”.'
+    mk: 'Кажете: „тужбата“ — и „тужителот“ — и „тужениот“ — и „порамнувањето“ — и „основниот суд“ — и „усната расправа“ — и „фактичката состојба“ — и „враќањето на депозитот“ — и „ги сноси трошоците“ —
+      и „Госпоѓо претседателке (до судијката)“ — и „романот“ — и „ликот“ — и „раскажувачот“ — и „општеството“ — и „кодексот на честа“ — и „навестува“ — и „мотивот“ — и „местото на дејството“ — и „Тоа е
+      широко поле (Фонтане)“ — и „трагично“.'
+  answer:
+    speaker: protagonist
+    text: die Klage … der Kläger … der Beklagte … der Vergleich … das Amtsgericht … die mündliche Verhandlung … der Sachverhalt … die Rückzahlung der Kaution … die Kosten tragen … Frau Vorsitzende … der
+      Roman … die Figur … der Erzähler … die Gesellschaft … der Ehrenkodex … andeuten … das Motiv … der Schauplatz … Das ist ein weites Feld … tragisch
+  items:
+  - die-klage
+  - der-klaeger
+  - der-beklagte
+  - der-vergleich
+  - das-amtsgericht
+  - die-verhandlung
+  - der-sachverhalt
+  - die-rueckzahlung
+  - die-kosten-tragen
+  - hohes-gericht
+  - der-roman
+  - die-figur
+  - der-erzaehler
+  - die-gesellschaft
+  - die-ehre-c2
+  - zwischen-den-zeilen-c2
+  - das-motiv
+  - der-schauplatz
+  - das-ist-ein-weites-feld
+  - tragisch
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the salary negotiation — and “the counter-offer — and “the market value — and “I had in mind … — and “Would it be conceivable that …? — and “I would suggest … — and “the pay rise — and “the
+      budget is limited — and “extra holiday days — and “the agreement — and “the (formal) appeal — and “within the deadline — and “the decision dated … — and “the notice of appeal rights — and “the grounds,
+      reasoning — and “I hereby lodge … — and “under the reference number — and “the resident parking permit — and “the enclosure — and “I request a re-examination”.'
+    ar: 'قولي: “التفاوض على الراتب — و“العرض المضاد — و“القيمة السوقية — و“كنتُ أتصوّر … — و“هل من الممكن أن …؟ — و“أقترح … — و“زيادة الراتب — و“الميزانية محدودة — و“أيام إجازة إضافية — و“الاتفاق — و“الاعتراض
+      الرسمي — و“في المهلة المحدّدة — و“القرار المؤرَّخ في … — و“إشعار سبل الطعن — و“التعليل — و“أتقدّم بموجب هذا بـ… — و“تحت رقم الملف — و“تصريح موقف السكان — و“المرفَق — و“أرجو إعادة النظر”.'
+    mk: 'Кажете: „преговорите за плата“ — и „контрапонудата“ — и „пазарната вредност“ — и „Замислував …“ — и „Дали би било замисливо …?“ — и „Би предложил …“ — и „покачувањето на платата“ — и „буџетот е
+      ограничен“ — и „дополнителни денови одмор“ — и „договорот“ — и „жалбата“ — и „во рок“ — и „решението од …“ — и „поуката за правен лек“ — и „образложението“ — и „Со ова поднесувам …“ — и „под бројот
+      на предметот“ — и „дозволата за паркирање на жители“ — и „прилогот“ — и „Барам повторна проверка“.'
+  answer:
+    speaker: protagonist
+    text: die Gehaltsverhandlung … das Gegenangebot … der Marktwert … Ich hätte mir … vorgestellt … Wäre es denkbar, dass …? … Ich würde vorschlagen, … … die Gehaltserhöhung … das Budget ist begrenzt …
+      zusätzliche Urlaubstage … die Vereinbarung … der Widerspruch … fristgerecht … der Bescheid vom … … die Rechtsbehelfsbelehrung … die Begründung … Hiermit lege ich … ein … unter dem Aktenzeichen … der
+      Bewohnerparkausweis … die Anlage … Ich bitte um erneute Prüfung
+  items:
+  - die-gehaltsverhandlung
+  - das-gegenangebot
+  - der-marktwert
+  - ich-haette-mir-vorgestellt
+  - waere-es-denkbar
+  - ich-wuerde-vorschlagen
+  - die-gehaltserhoehung
+  - das-budget-c2
+  - der-zusatzurlaub
+  - die-vereinbarung
+  - der-widerspruch-amt
+  - fristgerecht
+  - der-bescheid-c1
+  - die-rechtsbehelfsbelehrung
+  - die-begruendung
+  - hiermit-lege-ich
+  - das-aktenzeichen-c1
+  - der-bewohnerparkausweis
+  - die-anlage
+  - ich-bitte-um-pruefung
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “My sincere condolences — and “the memorial service — and “the burial, funeral — and “deceased — and “the condolence card — and “my thoughts are with you — and “We will miss him very much
+      — and “the memory — and “close family only — and “the wreath — and “Dear Sir or Madam — and “Yours sincerely — and “the subject line — and “I hereby inform you — and “I request … — and “a reply —
+      and “promptly — and “attached — and “a rent reduction — and “in writing”.'
+    ar: 'قولي: “أصدق التعازي — و“مراسم التأبين — و“الدفن، الجنازة — و“متوفّى — و“بطاقة التعزية — و“أفكاري معكم — و“سنفتقده كثيرًا — و“الذكرى — و“في أضيق نطاق عائلي — و“إكليل الزهور — و“السادة المحترمون
+      — و“مع أطيب التحيات — و“الموضوع — و“أبلغكم بموجب هذا — و“أرجو … — و“الرد — و“فورًا، على وجه السرعة — و“في المرفق — و“تخفيض الإيجار — و“كتابيًا”.'
+    mk: 'Кажете: „Искрено сочувство“ — и „комеморацијата“ — и „погребот“ — и „починат“ — и „картичката за сочувство“ — и „во мислите сум со вас“ — и „Многу ќе ни недостига“ — и „споменот“ — и „во најтесен
+      круг“ — и „венецот“ — и „Почитувани“ — и „Со почит“ — и „предметот“ — и „со ова ве известувам“ — и „ве молам за …“ — и „одговорот“ — и „веднаш“ — и „во прилог“ — и „намалување на киријата“ — и „писмено“.'
+  answer:
+    speaker: protagonist
+    text: Mein herzliches Beileid … die Trauerfeier … die Beerdigung … verstorben … die Trauerkarte … in Gedanken bei Ihnen … Er wird uns sehr fehlen … die Erinnerung … im engsten Kreis … der Kranz … Sehr
+      geehrte Damen und Herren … Mit freundlichen Grüßen … der Betreff … hiermit teile ich Ihnen mit … ich bitte um … … die Rückmeldung … umgehend … im Anhang … die Mietminderung … schriftlich
+  items:
+  - das-beileid
+  - die-trauerfeier
+  - die-beerdigung
+  - verstorben
+  - die-trauerkarte
+  - in-gedanken
+  - er-wird-fehlen
+  - die-erinnerung
+  - im-engsten-kreis
+  - der-kranz
+  - sehr-geehrte
+  - mfg
+  - der-betreff
+  - hiermit-teile-ich
+  - ich-bitte-um
+  - die-rueckmeldung
+  - umgehend
+  - der-anhang
+  - die-mietminderung
+  - schriftlich
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “الراتب — و“لأنّ (الفعل في الآخر) — و“يكفي — و“الإيجار”.'
+  answer:
+    speaker: protagonist
+    text: das Gehalt … weil … reicht … die Miete
+  items:
+  - das-gehalt-a
+  - weil-a
+  - reicht-a
+  - die-miete-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “إعانة الأطفال — و“زوجتي تتعلّم — و“تعمل لاحقًا — و“يوفّر”.'
+  answer:
+    speaker: protagonist
+    text: das Kindergeld … meine Frau lernt … später arbeiten … sparen
+  items:
+  - das-kindergeld-a
+  - meine-frau-lernt-a
+  - spaeter-arbeiten-a
+  - sparen-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “غالٍ — و“الزميل”.'
+  answer:
+    speaker: protagonist
+    text: teuer … der Kollege
+  items:
+  - teuer-a
+  - kollege-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „пензијата“ — и „затоа што (глаголот на крај)“ — и „патното здравствено осигурување“ — и „живееме кај …“.'
+  answer:
+    speaker: protagonist
+    text: die Rente … weil … die Reisekrankenversicherung … wir wohnen bei …
+  items:
+  - die-rente-m
+  - weil-m
+  - die-reisekrankenversicherung-m
+  - wir-wohnen-bei-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „без кирија“ — и „скапо“ — и „цените“ — и „европската здравствена картичка“.'
+  answer:
+    speaker: protagonist
+    text: keine Miete … teuer … die Preise … die Europäische Krankenversicherungskarte
+  items:
+  - keine-miete-m
+  - teuer-m
+  - die-preise-m
+  - die-europaeische-karte-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „за секој случај“ — и „штедиме“.'
+  answer:
+    speaker: protagonist
+    text: zur Sicherheit … wir sparen
+  items:
+  - zur-sicherheit-m
+  - wir-sparen-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck
