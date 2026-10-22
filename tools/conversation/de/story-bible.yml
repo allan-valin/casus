@@ -43,6 +43,10 @@ voices:
   - {id: de-fi-m, role: character, lang: de, gender: m, tts: "piper:de_DE-thorsten-medium", pitch: 0.84, speed: 0.8}
   - {id: de-st-m, role: character, lang: de, gender: m, tts: "piper:de_DE-thorsten-medium", pitch: 1.2, speed: 1.1}
   - {id: de-af-f, role: character, lang: de, gender: f, tts: "piper:de_DE-thorsten-medium", pitch: 0.92, speed: 0.84}
+  - {id: de-sr-f, role: character, lang: de, gender: f, tts: "piper:de_DE-thorsten-medium", pitch: 1.04, speed: 1.16}
+  - {id: de-ti-m, role: character, lang: de, gender: m, tts: "piper:de_DE-thorsten-medium", pitch: 1.0, speed: 1.24}
+  - {id: de-pr-f, role: character, lang: de, gender: f, tts: "piper:de_DE-thorsten-medium", pitch: 1.48, speed: 0.96}
+  - {id: de-sa-m, role: character, lang: de, gender: m, tts: "piper:de_DE-thorsten-medium", pitch: 1.16, speed: 0.9}
   - {id: de-kind, role: character, lang: de, gender: m, tts: "piper:de_DE-thorsten-medium", pitch: 1.5, speed: 1.12}
   # Narrators: no open Macedonian voice (see tools/conversation/mk/story-bible.yml: Bulgarian Piper + mk phonemes,
   # pending Allan's ear); the Arabic Piper voice (ar_JO-kareem) has no stated licence, so the reader's own browser
@@ -106,6 +110,13 @@ cast:
   - {id: stefan, name: Stefan, role: "Petar's friend who runs a café (M units, B1-25)", voice: de-st-m, register: informal, arc: "B1-25 on"}
 
   - {id: baeckerin, name: Eine alte Frau, role: "an elderly Leipzig woman at the bakery who speaks Saxon (B1-27)", voice: de-af-f, register: informal, arc: "one scene"}
+
+  - {id: schroeder, name: Frau Schröder, role: "the protagonist's boss at work from B2 (wherever the protagonist works: café, bakery, office)", voice: de-sr-f, register: formal, arc: "direct, fair; B2 work thread"}
+
+  - {id: tim, name: Tim, role: "the protagonist's colleague at work from B2", voice: de-ti-m, register: informal, arc: "B2 work thread"}
+
+  - {id: priya, name: Priya, role: "a nurse from India waiting for her licence, works in a club cloakroom (E units, B2-04)", voice: de-pr-f, register: informal, arc: "B2-04 on"}
+  - {id: samer, name: Samer, role: "a Syrian doctor, friend of the couple, waiting for his Approbation (A units, B2-04)", voice: de-sa-m, register: informal, arc: "B2-04 on"}
 
 formality:
   summary: >-

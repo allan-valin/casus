@@ -1,0 +1,604 @@
+# UNIT de B2-03 — written by AI (Claude) for Casus; expanded from src/B2-03.yml by tools/expand_unit.py. Edit the source.
+
+id: B2-03
+level: B2
+number: 3
+protagonist: f
+title:
+  en: Genes
+  ar: الجينات
+  mk: Гени
+situation:
+  en: A VHS evening on heredity. Why do you have your grandmother's eyes? Professor Hartmann explains.
+  ar: أمسية في الجامعة الشعبية عن الوراثة. لماذا لديكِ عينا جدتكِ؟ البروفيسور هارتمان يشرح.
+  mk: Вечер на народниот универзитет за наследноста. Зошто ги имате очите на баба ви? Професорот Хартман објаснува.
+learn_lessons:
+- b2-passive-modal
+culture: —
+new_items:
+- id: das-gen
+  text: das Gen
+  meaning:
+    en: the gene
+    ar: الجين
+    mk: генот
+- id: das-merkmal
+  text: das Merkmal
+  meaning:
+    en: the trait
+    ar: الصفة
+    mk: особината
+- id: vererben
+  text: vererben
+  meaning:
+    en: pass on (by inheritance)
+    ar: يورّث
+    mk: наследува, пренесува
+- id: kann-vererbt-werden
+  text: kann vererbt werden
+  meaning:
+    en: can be inherited
+    ar: يمكن أن يُورَث
+    mk: може да се наследи
+- id: muss-untersucht-werden
+  text: muss untersucht werden
+  meaning:
+    en: must be examined
+    ar: يجب أن يُفحص
+    mk: мора да се испита
+- id: die-augenfarbe
+  text: die Augenfarbe
+  meaning:
+    en: eye colour
+    ar: لون العينين
+    mk: бојата на очите
+- id: von-der-mutter
+  text: von der Mutter
+  meaning:
+    en: from the mother
+    ar: من الأم
+    mk: од мајката
+- id: die-umwelt
+  text: die Umwelt
+  meaning:
+    en: the environment
+    ar: البيئة
+    mk: околината
+- id: die-krankheit-erblich
+  text: erblich
+  meaning:
+    en: hereditary
+    ar: وراثي
+    mk: наследно
+- id: die-mischung
+  text: die Mischung
+  meaning:
+    en: the mix
+    ar: المزيج
+    mk: мешавината
+reviews:
+- item: der-verein
+  from: A1-30
+- item: das-training
+  from: A1-30
+- item: mitglied
+  from: A1-30
+- item: probetraining
+  from: A1-30
+- item: mitmachen
+  from: A1-30
+- item: schnell
+  from: A1-30
+- item: anstrengend
+  from: A1-30
+- item: die-umkleide
+  from: A1-30
+- item: die-sporthalle
+  from: A1-30
+- item: das-naechste-training
+  from: A1-30
+- item: ich-finde-dass
+  from: B1-02
+- item: meiner-meinung-nach
+  from: B1-02
+- item: das-klima
+  from: B1-02
+- item: verbieten
+  from: B1-02
+- item: ich-bin-dagegen
+  from: B1-02
+- item: ich-bin-dafuer
+  from: B1-02
+- item: das-stimmt-zwar
+  from: B1-02
+- item: der-nahverkehr
+  from: B1-02
+- item: streiten
+  from: B1-02
+- item: wir-sind-uns-einig
+  from: B1-02
+- item: das-grundgesetz
+  from: B1-18
+- item: die-wuerde
+  from: B1-18
+- item: unantastbar
+  from: B1-18
+- item: das-recht-auf
+  from: B1-18
+- item: die-meinungsfreiheit
+  from: B1-18
+- item: haette-gedacht
+  from: B1-18
+- item: waere-gewesen
+  from: B1-18
+- item: wenn-ich-gewusst-haette
+  from: B1-18
+- item: kritisieren
+  from: B1-18
+- item: die-regierung
+  from: B1-18
+- item: nach-dem-krieg
+  from: B1-18
+- item: das-feuerwerk
+  from: B1-26
+- item: die-vorsaetze
+  from: B1-26
+- item: silvester
+  from: B1-26
+- item: um-mitternacht
+  from: B1-26
+- item: ich-werde-aufhoeren
+  from: B1-26
+- item: ich-werde-anfangen
+  from: B1-26
+- item: rauchen
+  from: B1-26
+- item: der-knall
+  from: B1-26
+- item: pass-auf
+  from: B1-26
+- item: gesundes-neues
+  from: B1-26
+- item: das-bleigiessen
+  from: B1-26
+- item: na-toll
+  from: B1-30
+- item: sehr-witzig
+  from: B1-30
+- item: die-ironie
+  from: B1-30
+- item: meinst-du-das-ernst
+  from: B1-30
+- item: das-picknick
+  from: B1-30
+- item: es-regnet-in-stroemen
+  from: B1-30
+- item: genau-das-gegenteil
+  from: B1-30
+- item: der-ton
+  from: B1-30
+- item: erkennen
+  from: B1-30
+- item: na-ja
+  from: B1-30
+- item: das-geht-so-nicht
+  from: B2-02
+- item: sachlich
+  from: B2-02
+- item: nicht-persoenlich
+  from: B2-02
+- item: doch-mal
+  from: B2-02
+- item: halt
+  from: B2-02
+- item: eben
+  from: B2-02
+- item: ja-particle
+  from: B2-02
+- item: der-fehler
+  from: B2-02
+- item: kommt-vor
+  from: B2-02
+- item: die-bestellung
+  from: B2-02
+- item: beim-naechsten-mal
+  from: B2-02
+steps:
+- type: narrator
+  text:
+    en: A VHS evening on heredity. Why do you have your grandmother's eyes? Professor Hartmann explains. Listen to the conversation; you don't need to understand it yet.
+    ar: أمسية في الجامعة الشعبية عن الوراثة. لماذا لديكِ عينا جدتكِ؟ البروفيسور هارتمان يشرح. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.
+    mk: Вечер на народниот универзитет за наследноста. Зошто ги имате очите на баба ви? Професорот Хартман објаснува. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: hartmann
+    text: 'Jeder Mensch hat zwei Kopien von jedem Gen: eine von der Mutter, eine vom Vater.'
+    meaning:
+      en: 'Every person has two copies of each gene: one from the mother, one from the father.'
+      ar: 'كل إنسان لديه نسختان من كل جين: واحدة من الأم وواحدة من الأب.'
+      mk: 'Секој човек има две копии од секој ген: една од мајката, една од таткото.'
+  - speaker: protagonist
+    text: Und warum habe ich die Augenfarbe meiner Oma?
+    meaning:
+      en: And why do I have my grandma's eye colour?
+      ar: ولماذا لديّ لون عينَي جدتي؟
+      mk: А зошто ја имам бојата на очите на баба ми?
+  - speaker: hartmann
+    text: Manche Merkmale können über Generationen vererbt werden. Sie springen manchmal.
+    meaning:
+      en: Some traits can be inherited over generations. They sometimes skip.
+      ar: بعض الصفات يمكن أن تُورَث عبر الأجيال. أحيانًا تقفز جيلًا.
+      mk: Некои особини можат да се наследат низ генерации. Понекогаш прескокнуваат.
+  - speaker: protagonist
+    text: Sind auch Krankheiten erblich?
+    meaning:
+      en: Are diseases hereditary too?
+      ar: هل الأمراض وراثية أيضًا؟
+      mk: Дали и болестите се наследни?
+  - speaker: hartmann
+    text: Manche. Dann muss das beim Arzt untersucht werden.
+    meaning:
+      en: Some. Then it has to be examined at the doctor's.
+      ar: بعضها. عندها يجب أن يُفحص ذلك عند الطبيب.
+      mk: Некои. Тогаш тоа мора да се испита кај лекар.
+  - speaker: protagonist
+    text: Ist also alles in den Genen?
+    meaning:
+      en: So is everything in the genes?
+      ar: إذن هل كل شيء في الجينات؟
+      mk: Значи, сè е во гените?
+  - speaker: hartmann
+    text: 'Nein. Die Umwelt ist auch wichtig: Essen, Sport, Stress. Wir sind eine Mischung.'
+    meaning:
+      en: 'No. The environment matters too: food, sport, stress. We''re a mix.'
+      ar: 'لا. البيئة مهمة أيضًا: الطعام والرياضة والضغط. نحن مزيج.'
+      mk: 'Не. И околината е важна: храна, спорт, стрес. Ние сме мешавина.'
+  - speaker: protagonist
+    text: Dann gebe ich meinen Genen nicht die Schuld!
+    meaning:
+      en: Then I won't blame my genes!
+      ar: إذن لن ألوم جيناتي!
+      mk: Тогаш нема да ги обвинувам гените!
+- type: prompt
+  ask:
+    en: 'Say: two copies of each gene.'
+    ar: 'قولي: نسختان من كل جين.'
+    mk: 'Кажете: две копии од секој ген.'
+  answer:
+    speaker: protagonist
+    text: Zwei Kopien von jedem Gen.
+  items:
+  - das-gen
+- type: prompt
+  ask:
+    en: 'Say: one from the mother.'
+    ar: 'قولي: واحدة من الأم.'
+    mk: 'Кажете: една од мајката.'
+  answer:
+    speaker: protagonist
+    text: Eine von der Mutter.
+  items:
+  - von-der-mutter
+- type: prompt
+  ask:
+    en: 'Ask: why do I have my grandma''s eye colour?'
+    ar: 'اسألي: لماذا لديّ لون عينَي جدتي؟'
+    mk: 'Прашајте: зошто ја имам бојата на очите на баба ми?'
+  answer:
+    speaker: protagonist
+    text: Warum habe ich die Augenfarbe meiner Oma?
+  items:
+  - die-augenfarbe
+- type: narrator
+  text:
+    en: 'Passive with a modal: modal + participle + «werden» at the end. «Merkmale können vererbt werden» (can be inherited), «Das muss untersucht werden» (must be examined).'
+    ar: 'المبني للمجهول مع فعل مساعد: الفعل المساعد + اسم المفعول + «werden» في الآخر. «Merkmale können vererbt werden» (يمكن أن تُورَث)، «Das muss untersucht werden» (يجب أن يُفحص).'
+    mk: 'Пасив со модален глагол: модален + партицип + «werden» на крајот. «Merkmale können vererbt werden» (можат да се наследат), «Das muss untersucht werden» (мора да се испита).'
+- type: prompt
+  ask:
+    en: 'Say: some traits can be inherited.'
+    ar: 'قولي: بعض الصفات يمكن أن تُورَث.'
+    mk: 'Кажете: некои особини можат да се наследат.'
+  answer:
+    speaker: protagonist
+    text: Manche Merkmale können vererbt werden.
+  items:
+  - das-merkmal
+  - kann-vererbt-werden
+- type: prompt
+  ask:
+    en: 'Ask: are diseases hereditary?'
+    ar: 'اسألي: هل الأمراض وراثية؟'
+    mk: 'Прашајте: дали болестите се наследни?'
+  answer:
+    speaker: protagonist
+    text: Sind Krankheiten erblich?
+  items:
+  - die-krankheit-erblich
+- type: prompt
+  ask:
+    en: 'Say: it must be examined at the doctor''s.'
+    ar: 'قولي: يجب أن يُفحص ذلك عند الطبيب.'
+    mk: 'Кажете: тоа мора да се испита кај лекар.'
+  answer:
+    speaker: protagonist
+    text: Das muss beim Arzt untersucht werden.
+  items:
+  - muss-untersucht-werden
+- type: prompt
+  ask:
+    en: 'Say: parents pass on genes.'
+    ar: 'قولي: الوالدان يورّثان الجينات.'
+    mk: 'Кажете: родителите пренесуваат гени.'
+  answer:
+    speaker: protagonist
+    text: Eltern vererben Gene.
+  items:
+  - vererben
+- type: prompt
+  ask:
+    en: 'Say: the environment matters too.'
+    ar: 'قولي: البيئة مهمة أيضًا.'
+    mk: 'Кажете: и околината е важна.'
+  answer:
+    speaker: protagonist
+    text: Die Umwelt ist auch wichtig.
+  items:
+  - die-umwelt
+- type: prompt
+  ask:
+    en: 'Say: we''re a mix.'
+    ar: 'قولي: نحن مزيج.'
+    mk: 'Кажете: ние сме мешавина.'
+  answer:
+    speaker: protagonist
+    text: Wir sind eine Mischung.
+  items:
+  - die-mischung
+- type: prompt
+  ask:
+    en: 'Once more: say “the gene”.'
+    ar: 'مرة أخرى: قولي “الجين”.'
+    mk: 'Уште еднаш: кажете „генот“.'
+  answer:
+    speaker: protagonist
+    text: das Gen
+  items:
+  - das-gen
+- type: prompt
+  ask:
+    en: 'Once more: say “the trait”.'
+    ar: 'مرة أخرى: قولي “الصفة”.'
+    mk: 'Уште еднаш: кажете „особината“.'
+  answer:
+    speaker: protagonist
+    text: das Merkmal
+  items:
+  - das-merkmal
+- type: prompt
+  ask:
+    en: 'Once more: say “pass on (by inheritance)”.'
+    ar: 'مرة أخرى: قولي “يورّث”.'
+    mk: 'Уште еднаш: кажете „наследува, пренесува“.'
+  answer:
+    speaker: protagonist
+    text: vererben
+  items:
+  - vererben
+- type: prompt
+  ask:
+    en: 'Once more: say “can be inherited”.'
+    ar: 'مرة أخرى: قولي “يمكن أن يُورَث”.'
+    mk: 'Уште еднаш: кажете „може да се наследи“.'
+  answer:
+    speaker: protagonist
+    text: kann vererbt werden
+  items:
+  - kann-vererbt-werden
+- type: prompt
+  ask:
+    en: 'Once more: say “must be examined”.'
+    ar: 'مرة أخرى: قولي “يجب أن يُفحص”.'
+    mk: 'Уште еднаш: кажете „мора да се испита“.'
+  answer:
+    speaker: protagonist
+    text: muss untersucht werden
+  items:
+  - muss-untersucht-werden
+- type: prompt
+  ask:
+    en: 'Once more: say “eye colour”.'
+    ar: 'مرة أخرى: قولي “لون العينين”.'
+    mk: 'Уште еднаш: кажете „бојата на очите“.'
+  answer:
+    speaker: protagonist
+    text: die Augenfarbe
+  items:
+  - die-augenfarbe
+- type: prompt
+  ask:
+    en: 'Once more: say “from the mother”.'
+    ar: 'مرة أخرى: قولي “من الأم”.'
+    mk: 'Уште еднаш: кажете „од мајката“.'
+  answer:
+    speaker: protagonist
+    text: von der Mutter
+  items:
+  - von-der-mutter
+- type: prompt
+  ask:
+    en: 'Once more: say “the environment”.'
+    ar: 'مرة أخرى: قولي “البيئة”.'
+    mk: 'Уште еднаш: кажете „околината“.'
+  answer:
+    speaker: protagonist
+    text: die Umwelt
+  items:
+  - die-umwelt
+- type: prompt
+  ask:
+    en: 'Once more: say “hereditary”.'
+    ar: 'مرة أخرى: قولي “وراثي”.'
+    mk: 'Уште еднаш: кажете „наследно“.'
+  answer:
+    speaker: protagonist
+    text: erblich
+  items:
+  - die-krankheit-erblich
+- type: prompt
+  ask:
+    en: 'Once more: say “the mix”.'
+    ar: 'مرة أخرى: قولي “المزيج”.'
+    mk: 'Уште еднаш: кажете „мешавината“.'
+  answer:
+    speaker: protagonist
+    text: die Mischung
+  items:
+  - die-mischung
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “That won''t do — and “matter-of-fact — and “not personal — and “(softening) just, do — and “(particle) just, that''s how it is — and “(particle) exactly, simply — and “(particle) as you know
+      — and “the mistake — and “happens — and “the order — and “next time”.'
+    ar: 'قولي: “هذا لا يصلح هكذا — و“موضوعي — و“ليس شخصيًا — و“(للتلطيف) هيا، فقط — و“(أداة) هكذا هو الأمر — و“(أداة) بالضبط، ببساطة — و“(أداة) كما تعلم — و“الخطأ — و“يحدث — و“الطلبية — و“في المرة القادمة”.'
+    mk: 'Кажете: „Така не оди“ — и „деловно, објективно“ — и „не лично“ — и „(омекнување) ајде, само“ — и „(честичка) едноставно“ — и „(честичка) токму, едноставно“ — и „(честичка) како што знаете“ — и
+      „грешката“ — и „се случува“ — и „нарачката“ — и „следниот пат“.'
+  answer:
+    speaker: protagonist
+    text: Das geht so nicht … sachlich … nicht persönlich … doch mal … halt … eben … ja … der Fehler … kommt vor … die Bestellung … beim nächsten Mal
+  items:
+  - das-geht-so-nicht
+  - sachlich
+  - nicht-persoenlich
+  - doch-mal
+  - halt
+  - eben
+  - ja-particle
+  - der-fehler
+  - kommt-vor
+  - die-bestellung
+  - beim-naechsten-mal
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Oh great! (ironic) — and “Very funny! (ironic) — and “irony — and “Are you serious? — and “the picnic — and “it''s pouring — and “exactly the opposite — and “the tone — and “recognise — and
+      “well… (hesitant) — and “the fireworks”.'
+    ar: 'قولي: “رائع جدًا! (ساخرًا) — و“مضحك جدًا! (ساخرًا) — و“السخرية — و“هل تقصد ذلك جديًا؟ — و“النزهة — و“إنها تمطر بغزارة — و“العكس تمامًا — و“النبرة — و“يعرف، يميّز — و“حسنًا… (بتردّد) — و“الألعاب
+      النارية”.'
+    mk: 'Кажете: „Баш убаво! (иронично)“ — и „Многу смешно! (иронично)“ — и „иронијата“ — и „Сериозно ли мислиш?“ — и „пикникот“ — и „врне како од кабел“ — и „токму спротивното“ — и „тонот“ — и „препознава“
+      — и „па…“ — и „огнометот“.'
+  answer:
+    speaker: protagonist
+    text: Na toll! … Sehr witzig! … die Ironie … Meinst du das ernst? … das Picknick … es regnet in Strömen … genau das Gegenteil … der Ton … erkennen … na ja … das Feuerwerk
+  items:
+  - na-toll
+  - sehr-witzig
+  - die-ironie
+  - meinst-du-das-ernst
+  - das-picknick
+  - es-regnet-in-stroemen
+  - genau-das-gegenteil
+  - der-ton
+  - erkennen
+  - na-ja
+  - das-feuerwerk
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “New Year''s resolutions — and “New Year''s Eve — and “at midnight — and “I will stop — and “I will start — and “smoke — and “the bang — and “Careful! (informal) — and “Happy New Year! — and
+      “wax pouring (fortune game) — and “the Basic Law (constitution)”.'
+    ar: 'قولي: “قرارات السنة الجديدة — و“ليلة رأس السنة — و“عند منتصف الليل — و“سأتوقّف — و“سأبدأ — و“يدخّن — و“الدويّ — و“انتبه! — و“سنة جديدة سعيدة! — و“صبّ الشمع (لعبة التنبّؤ) — و“القانون الأساسي”.'
+    mk: 'Кажете: „новогодишните одлуки“ — и „Новогодишна ноќ“ — и „на полноќ“ — и „ќе престанам“ — и „ќе почнам“ — и „пуши“ — и „треснувањето“ — и „Внимавај!“ — и „Среќна Нова година!“ — и „леење восок“
+      — и „Основниот закон“.'
+  answer:
+    speaker: protagonist
+    text: die guten Vorsätze … Silvester … um Mitternacht … ich werde aufhören … ich werde anfangen … rauchen … der Knall … Pass auf! … Frohes neues Jahr! … das Wachsgießen … das Grundgesetz
+  items:
+  - die-vorsaetze
+  - silvester
+  - um-mitternacht
+  - ich-werde-aufhoeren
+  - ich-werde-anfangen
+  - rauchen
+  - der-knall
+  - pass-auf
+  - gesundes-neues
+  - das-bleigiessen
+  - das-grundgesetz
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “dignity — and “inviolable — and “the right to … — and “freedom of expression — and “would have thought — and “would have been — and “if I had known — and “criticise — and “the government
+      — and “after the war — and “I think that …”.'
+    ar: 'قولي: “الكرامة — و“لا تُمسّ — و“الحق في … — و“حرية الرأي — و“كنتُ سأظن — و“كان سيكون — و“لو كنتُ أعرف — و“ينتقد — و“الحكومة — و“بعد الحرب — و“أرى أنّ …”.'
+    mk: 'Кажете: „достоинството“ — и „неприкосновено“ — и „правото на …“ — и „слободата на мислење“ — и „би помислил“ — и „ќе беше“ — и „да знаев“ — и „критикува“ — и „владата“ — и „по војната“ — и „Мислам
+      дека …“.'
+  answer:
+    speaker: protagonist
+    text: die Würde … unantastbar … das Recht auf … … die Meinungsfreiheit … hätte gedacht … wäre gewesen … wenn ich gewusst hätte … kritisieren … die Regierung … nach dem Krieg … Ich finde, dass …
+  items:
+  - die-wuerde
+  - unantastbar
+  - das-recht-auf
+  - die-meinungsfreiheit
+  - haette-gedacht
+  - waere-gewesen
+  - wenn-ich-gewusst-haette
+  - kritisieren
+  - die-regierung
+  - nach-dem-krieg
+  - ich-finde-dass
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “in my opinion — and “the climate — and “ban, forbid — and “I''m against it — and “I''m for it — and “that''s true, but … — and “local public transport — and “argue — and “we agree — and “the
+      club — and “training”.'
+    ar: 'قولي: “في رأيي — و“المناخ — و“يمنع — و“أنا ضد ذلك — و“أنا مع ذلك — و“صحيح، لكن … — و“النقل المحلي — و“يتجادل — و“نحن متفقون — و“النادي — و“التمرين”.'
+    mk: 'Кажете: „според мене“ — и „климата“ — и „забранува“ — и „јас сум против“ — и „јас сум за“ — и „тоа е точно, но …“ — и „градскиот превоз“ — и „се расправа“ — и „се согласуваме“ — и „клубот“ — и
+      „тренингот“.'
+  answer:
+    speaker: protagonist
+    text: meiner Meinung nach … das Klima … verbieten … ich bin dagegen … ich bin dafür … das stimmt zwar, aber … … der Nahverkehr … streiten … wir sind uns einig … der Verein … das Training
+  items:
+  - meiner-meinung-nach
+  - das-klima
+  - verbieten
+  - ich-bin-dagegen
+  - ich-bin-dafuer
+  - das-stimmt-zwar
+  - der-nahverkehr
+  - streiten
+  - wir-sind-uns-einig
+  - der-verein
+  - das-training
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “member — and “a trial session — and “join in — and “fast — and “tiring, hard — and “the changing room — and “the sports hall — and “the next training”.'
+    ar: 'قولي: “عضو — و“تمرين تجريبي — و“يشارك — و“سريع — و“متعب — و“غرفة تغيير الملابس — و“الصالة الرياضية — و“التمرين القادم”.'
+    mk: 'Кажете: „член“ — и „пробен тренинг“ — и „учествува“ — и „брзо“ — и „напорно“ — и „соблекувалната“ — и „спортската сала“ — и „следниот тренинг“.'
+  answer:
+    speaker: protagonist
+    text: Mitglied … ein Probetraining … mitmachen … schnell … anstrengend … die Umkleide … die Sporthalle … das nächste Training
+  items:
+  - mitglied
+  - probetraining
+  - mitmachen
+  - schnell
+  - anstrengend
+  - die-umkleide
+  - die-sporthalle
+  - das-naechste-training
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck
