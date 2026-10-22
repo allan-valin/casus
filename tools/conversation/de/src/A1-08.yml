@@ -1,0 +1,45 @@
+id: A1-08
+protagonist: m
+title: ["The tram", "الترام", "Трамвајот"]
+situation:
+  - "To the main station. The bus driver sends you to the tram."
+  - "إلى المحطة الرئيسية. سائق الحافلة يرسلك إلى الترام."
+  - "До главната станица. Возачот на автобусот ве праќа на трамвај."
+learn: [a1-separable]
+culture: Tickets and checks
+items:
+  - [faehrt, "fährt …?", "does … go?", "هل يذهب …؟", "оди ли …?"]
+  - [zum-hauptbahnhof, "zum Hauptbahnhof", "to the main station", "إلى المحطة الرئيسية", "до главната станица"]
+  - [umsteigen, "umsteigen", "change (trains, buses)", "يغيّر وسيلة النقل", "да се префрлите"]
+  - [die-strassenbahn, "die Straßenbahn", "the tram", "الترام", "трамвајот"]
+  - [die-haltestelle, "die Haltestelle", "the stop", "المحطة / الموقف", "станицата"]
+  - [da-drueben, "da drüben", "over there", "هناك", "таму преку"]
+  - [die-fahrkarte, "die Fahrkarte", "the ticket", "التذكرة", "билетот"]
+  - [mit-der-app, "mit der App", "with the app", "بالتطبيق", "со апликацијата"]
+  - [einsteigen, "steigen … ein", "get on", "اصعد", "се качувате"]
+  - [hinten, "hinten", "at the back", "في الخلف", "назад, позади"]
+  - [der-kinderwagen, "der Kinderwagen", "the pram, the stroller", "عربة الأطفال", "количката", {rare: true}]
+  - [aussteigen, "steige … aus", "get off", "أنزل", "се симнувам"]
+dialogue:
+  - [protagonist, "Entschuldigung, fährt der Bus zum Hauptbahnhof?", "Excuse me, does the bus go to the main station?", "عفوًا، هل تذهب الحافلة إلى المحطة الرئيسية؟", "Извинете, оди ли автобусот до главната станица?"]
+  - [fahrer, "Nein. Sie müssen umsteigen. Nehmen Sie die Straßenbahn Nummer vier.", "No. You have to change. Take tram number four.", "لا. عليك أن تغيّر. خذ الترام رقم أربعة.", "Не. Мора да се префрлите. Земете го трамвајот број четири."]
+  - [protagonist, "Wo ist die Haltestelle?", "Where is the stop?", "أين المحطة؟", "Каде е станицата?"]
+  - [fahrer, "Da drüben. Haben Sie eine Fahrkarte?", "Over there. Do you have a ticket?", "هناك. هل معك تذكرة؟", "Таму преку. Имате ли билет?"]
+  - [protagonist, "Nein. Kann ich hier eine Fahrkarte kaufen?", "No. Can I buy a ticket here?", "لا. هل يمكنني شراء تذكرة هنا؟", "Не. Можам ли тука да купам билет?"]
+  - [fahrer, "Am Automaten oder mit der App.", "At the machine or with the app.", "من الآلة أو بالتطبيق.", "На автоматот или со апликацијата."]
+  - [protagonist, "Danke. Und wo steige ich ein?", "Thanks. And where do I get on?", "شكرًا. ومن أين أصعد؟", "Благодарам. А каде се качувам?"]
+  - [fahrer, "Steigen Sie hinten ein. Da ist Platz für Kinderwagen.", "Get on at the back. There's room for prams there.", "اصعد من الخلف. هناك مكان لعربات الأطفال.", "Качете се одзади. Таму има место за колички."]
+  - [protagonist, "Und am Hauptbahnhof steige ich aus.", "And at the main station I get off.", "وأنزل في المحطة الرئيسية.", "А на главната станица се симнувам."]
+teach:
+  - ask: ["Ask: does the bus go to the main station?", "اسأل: هل تذهب الحافلة إلى المحطة الرئيسية؟", "Прашајте: оди ли автобусот до главната станица?", "Fährt der Bus zum Hauptbahnhof?", faehrt, zum-hauptbahnhof]
+  - ask: ["He says: you have to change.", "يقول: عليك أن تغيّر.", "Тој вели: мора да се префрлите.", "Sie müssen umsteigen.", umsteigen]
+  - ask: ["Say: tram number four.", "قل: الترام رقم أربعة.", "Кажете: трамвај број четири.", "Die Straßenbahn Nummer vier.", die-strassenbahn]
+  - ask: ["Ask where the stop is.", "اسأل أين المحطة.", "Прашајте каде е станицата.", "Wo ist die Haltestelle?", die-haltestelle]
+  - ask: ["He says: over there.", "يقول: هناك.", "Тој вели: таму преку.", "Da drüben.", da-drueben]
+  - ask: ["Ask: can I buy a ticket here?", "اسأل: هل يمكنني شراء تذكرة هنا؟", "Прашајте: можам ли тука да купам билет?", "Kann ich hier eine Fahrkarte kaufen?", kann-ich, die-fahrkarte]
+  - ask: ["Say: with the app.", "قل: بالتطبيق.", "Кажете: со апликацијата.", "Mit der App.", mit-der-app]
+  - note: ["«einsteigen» and «aussteigen» split: «Ich steige hinten ein», «Ich steige am Hauptbahnhof aus».", "«einsteigen» (يصعد) و«aussteigen» (ينزل) تنقسمان: «Ich steige hinten ein»، «Ich steige am Hauptbahnhof aus».", "«einsteigen» (се качува) и «aussteigen» (се симнува) се делат: «Ich steige hinten ein», «Ich steige am Hauptbahnhof aus»."]
+  - ask: ["He says: get on at the back.", "يقول: اصعد من الخلف.", "Тој вели: качете се одзади.", "Steigen Sie hinten ein.", einsteigen, hinten]
+  - ask: ["Say: room for prams.", "قل: مكان لعربات الأطفال.", "Кажете: место за колички.", "Platz für Kinderwagen.", der-kinderwagen]
+  - ask: ["Say: at the main station I get off.", "قل: أنزل في المحطة الرئيسية.", "Кажете: на главната станица се симнувам.", "Am Hauptbahnhof steige ich aus.", aussteigen]
+  - note: ["There are no barriers: you buy the ticket before you ride, at a machine or in the app, and inspectors check at random. Riding without a valid ticket costs a fixed fine — check the current amount on the transport company's site.", "لا توجد بوابات: تشتري التذكرة قبل الركوب، من الآلة أو بالتطبيق، والمفتشون يفحصون بشكل عشوائي. الركوب بلا تذكرة صالحة يكلّف غرامة ثابتة — راجع قيمتها الحالية في موقع شركة النقل.", "Нема бариери: билетот го купувате пред возењето, на автомат или во апликацијата, а контролорите проверуваат случајно. Возење без важечки билет чини фиксна казна — проверете ја сегашната сума на страницата на превозникот."]

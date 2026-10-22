@@ -79,6 +79,7 @@
   const firstDialogue = $derived(unit?.steps.find((s) => s.type === 'dialogue' && !s.again) ?? null);
   const linesOf = (s) => (s.again ? firstDialogue?.lines ?? [] : s.lines ?? []);
 
+  const slot = (id) => String(id).replace(/^([ABC][12]-\d+)-[a-z]+$/, '$1');   // audience versions: A1-02-e → A1-02
   function open(u) { unit = { ...u, steps: u.steps.filter((x) => forMe(x.for)) }; shown = {}; current = null; practising = null; say(t('talk.opened', { unit: nar(u.title) })); }
   function back() { unit = null; }
   function toggle(key) { shown = { ...shown, [key]: !shown[key] }; }
@@ -282,7 +283,7 @@
       <ul class="units" role="tabpanel">
         {#each shownUnits.filter((u) => u.level === level) as u (u.id)}
           <li><button class="unit-row" class:done={done.includes(u.id)} data-unit={u.id} onclick={() => open(u)}>
-            <span class="u-id">{u.id}</span> <span class="u-title">{nar(u.title)}</span>{#if done.includes(u.id)} <span class="tick">✓</span>{/if}
+            <span class="u-id">{slot(u.id)}</span> <span class="u-title">{nar(u.title)}</span>{#if done.includes(u.id)} <span class="tick">✓</span>{/if}
           </button></li>
         {/each}
       </ul>
@@ -291,7 +292,7 @@
   {:else}
     <div class="unit-page">
       <button class="back" onclick={back}>← {t('talk.back')}</button>
-      <h3>{unit.id} · {nar(unit.title)}</h3>
+      <h3>{slot(unit.id)} · {nar(unit.title)}</h3>
       <p class="situation">{nar(unit.situation)}</p>
       {#if needVoices}
         <div class="voice-gate">

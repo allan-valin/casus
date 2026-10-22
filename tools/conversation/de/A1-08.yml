@@ -1,0 +1,801 @@
+# UNIT de A1-08 — written by AI (Claude) for Casus; expanded from src/A1-08.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-08
+level: A1
+number: 8
+protagonist: m
+title:
+  en: The tram
+  ar: الترام
+  mk: Трамвајот
+situation:
+  en: To the main station. The bus driver sends you to the tram.
+  ar: إلى المحطة الرئيسية. سائق الحافلة يرسلك إلى الترام.
+  mk: До главната станица. Возачот на автобусот ве праќа на трамвај.
+learn_lessons:
+- a1-separable
+culture: Tickets and checks
+new_items:
+- id: faehrt
+  text: fährt …?
+  meaning:
+    en: does … go?
+    ar: هل يذهب …؟
+    mk: оди ли …?
+- id: zum-hauptbahnhof
+  text: zum Hauptbahnhof
+  meaning:
+    en: to the main station
+    ar: إلى المحطة الرئيسية
+    mk: до главната станица
+- id: umsteigen
+  text: umsteigen
+  meaning:
+    en: change (trains, buses)
+    ar: يغيّر وسيلة النقل
+    mk: да се префрлите
+- id: die-strassenbahn
+  text: die Straßenbahn
+  meaning:
+    en: the tram
+    ar: الترام
+    mk: трамвајот
+- id: die-haltestelle
+  text: die Haltestelle
+  meaning:
+    en: the stop
+    ar: المحطة / الموقف
+    mk: станицата
+- id: da-drueben
+  text: da drüben
+  meaning:
+    en: over there
+    ar: هناك
+    mk: таму преку
+- id: die-fahrkarte
+  text: die Fahrkarte
+  meaning:
+    en: the ticket
+    ar: التذكرة
+    mk: билетот
+- id: mit-der-app
+  text: mit der App
+  meaning:
+    en: with the app
+    ar: بالتطبيق
+    mk: со апликацијата
+- id: einsteigen
+  text: steigen … ein
+  meaning:
+    en: get on
+    ar: اصعد
+    mk: се качувате
+- id: hinten
+  text: hinten
+  meaning:
+    en: at the back
+    ar: في الخلف
+    mk: назад, позади
+- id: der-kinderwagen
+  text: der Kinderwagen
+  meaning:
+    en: the pram, the stroller
+    ar: عربة الأطفال
+    mk: количката
+  rare: true
+- id: aussteigen
+  text: steige … aus
+  meaning:
+    en: get off
+    ar: أنزل
+    mk: се симнувам
+reviews:
+- item: guten-tag
+  from: A1-01
+- item: entschuldigung
+  from: A1-01
+- item: ich-verstehe-nicht
+  from: A1-01
+- item: sie-sind
+  from: A1-01
+- item: neu-hier
+  from: A1-01
+- item: ja
+  from: A1-01
+- item: ich-bin
+  from: A1-01
+- item: sprechen-sie-englisch
+  from: A1-01
+- item: ein-bisschen
+  from: A1-01
+- item: ich-wohne
+  from: A1-01
+- item: unten
+  from: A1-01
+- item: freut-mich
+  from: A1-01
+- item: willkommen
+  from: A1-01
+- item: der-schluessel
+  from: A1-01
+- item: danke-schoen
+  from: A1-01
+- item: bitte-schoen
+  from: A1-01
+- item: auf-wiedersehen
+  from: A1-01
+- item: ich-nehme
+  from: A1-05-e
+  for:
+  - en
+- item: den-saft
+  from: A1-05-e
+  for:
+  - en
+- item: eine-tuete
+  from: A1-05-e
+  for:
+  - en
+- item: brauchen-sie
+  from: A1-05-e
+  for:
+  - en
+- item: das-pfand
+  from: A1-05-e
+  for:
+  - en
+- item: die-flaschen
+  from: A1-05-e
+  for:
+  - en
+- item: zurueck
+  from: A1-05-e
+  for:
+  - en
+- item: der-automat
+  from: A1-05-e
+  for:
+  - en
+- item: mit-karte
+  from: A1-05-e
+  for:
+  - en
+- item: bar
+  from: A1-05-e
+  for:
+  - en
+- item: der-bon
+  from: A1-05-e
+  for:
+  - en
+- item: das-macht
+  from: A1-05-e
+  for:
+  - en
+- item: geschlossen
+  from: A1-07
+- item: heute-ist-sonntag
+  from: A1-07
+- item: alles
+  from: A1-07
+- item: kann-ich
+  from: A1-07
+- item: irgendwo
+  from: A1-07
+- item: brot
+  from: A1-07
+- item: die-baeckerei
+  from: A1-07
+- item: an-der-ecke
+  from: A1-07
+- item: offen
+  from: A1-07
+- item: der-feiertag
+  from: A1-07
+- item: lieber-nicht
+  from: A1-07
+- item: die-ruhe
+  from: A1-07
+- item: spazieren
+  from: A1-07
+- item: die-mama
+  from: A1-05-a
+  for:
+  - ar
+- item: hat-fieber
+  from: A1-05-a
+  for:
+  - ar
+  - mk
+- item: seit-heute-nacht
+  from: A1-05-a
+  for:
+  - ar
+- item: das-u-heft
+  from: A1-05-a
+  for:
+  - ar
+  - mk
+- item: die-karte
+  from: A1-05-a
+  for:
+  - ar
+  - mk
+- item: die-versichertenkarte
+  from: A1-05-a
+  for:
+  - ar
+- item: hustet
+  from: A1-05-a
+  for:
+  - ar
+  - mk
+- item: ich-gebe-ihnen
+  from: A1-05-a
+  for:
+  - ar
+  - mk
+- item: den-saft-medizin
+  from: A1-05-a
+  for:
+  - ar
+- item: dreimal-am-tag
+  from: A1-05-a
+  for:
+  - ar
+  - mk
+- item: gute-besserung
+  from: A1-05-a
+  for:
+  - ar
+  - mk
+- item: vielen-dank
+  from: A1-05-a
+  for:
+  - ar
+  - mk
+- item: die-oma
+  from: A1-05-m
+  for:
+  - mk
+- item: seit-heute-morgen
+  from: A1-05-m
+  for:
+  - mk
+- item: die-eltern
+  from: A1-05-m
+  for:
+  - mk
+- item: arbeiten
+  from: A1-05-m
+  for:
+  - mk
+- item: einen-saft
+  from: A1-05-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: To the main station. The bus driver sends you to the tram. Listen to the conversation; you don't need to understand it yet.
+    ar: إلى المحطة الرئيسية. سائق الحافلة يرسلك إلى الترام. استمع إلى المحادثة؛ لا داعي لأن تفهمها الآن.
+    mk: До главната станица. Возачот на автобусот ве праќа на трамвај. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Entschuldigung, fährt der Bus zum Hauptbahnhof?
+    meaning:
+      en: Excuse me, does the bus go to the main station?
+      ar: عفوًا، هل تذهب الحافلة إلى المحطة الرئيسية؟
+      mk: Извинете, оди ли автобусот до главната станица?
+  - speaker: fahrer
+    text: Nein. Sie müssen umsteigen. Nehmen Sie die Straßenbahn Nummer vier.
+    meaning:
+      en: No. You have to change. Take tram number four.
+      ar: لا. عليك أن تغيّر. خذ الترام رقم أربعة.
+      mk: Не. Мора да се префрлите. Земете го трамвајот број четири.
+  - speaker: protagonist
+    text: Wo ist die Haltestelle?
+    meaning:
+      en: Where is the stop?
+      ar: أين المحطة؟
+      mk: Каде е станицата?
+  - speaker: fahrer
+    text: Da drüben. Haben Sie eine Fahrkarte?
+    meaning:
+      en: Over there. Do you have a ticket?
+      ar: هناك. هل معك تذكرة؟
+      mk: Таму преку. Имате ли билет?
+  - speaker: protagonist
+    text: Nein. Kann ich hier eine Fahrkarte kaufen?
+    meaning:
+      en: No. Can I buy a ticket here?
+      ar: لا. هل يمكنني شراء تذكرة هنا؟
+      mk: Не. Можам ли тука да купам билет?
+  - speaker: fahrer
+    text: Am Automaten oder mit der App.
+    meaning:
+      en: At the machine or with the app.
+      ar: من الآلة أو بالتطبيق.
+      mk: На автоматот или со апликацијата.
+  - speaker: protagonist
+    text: Danke. Und wo steige ich ein?
+    meaning:
+      en: Thanks. And where do I get on?
+      ar: شكرًا. ومن أين أصعد؟
+      mk: Благодарам. А каде се качувам?
+  - speaker: fahrer
+    text: Steigen Sie hinten ein. Da ist Platz für Kinderwagen.
+    meaning:
+      en: Get on at the back. There's room for prams there.
+      ar: اصعد من الخلف. هناك مكان لعربات الأطفال.
+      mk: Качете се одзади. Таму има место за колички.
+  - speaker: protagonist
+    text: Und am Hauptbahnhof steige ich aus.
+    meaning:
+      en: And at the main station I get off.
+      ar: وأنزل في المحطة الرئيسية.
+      mk: А на главната станица се симнувам.
+- type: prompt
+  ask:
+    en: 'Ask: does the bus go to the main station?'
+    ar: 'اسأل: هل تذهب الحافلة إلى المحطة الرئيسية؟'
+    mk: 'Прашајте: оди ли автобусот до главната станица?'
+  answer:
+    speaker: protagonist
+    text: Fährt der Bus zum Hauptbahnhof?
+  items:
+  - faehrt
+  - zum-hauptbahnhof
+- type: prompt
+  ask:
+    en: 'He says: you have to change.'
+    ar: 'يقول: عليك أن تغيّر.'
+    mk: 'Тој вели: мора да се префрлите.'
+  answer:
+    speaker: protagonist
+    text: Sie müssen umsteigen.
+  items:
+  - umsteigen
+- type: prompt
+  ask:
+    en: 'Say: tram number four.'
+    ar: 'قل: الترام رقم أربعة.'
+    mk: 'Кажете: трамвај број четири.'
+  answer:
+    speaker: protagonist
+    text: Die Straßenbahn Nummer vier.
+  items:
+  - die-strassenbahn
+- type: prompt
+  ask:
+    en: Ask where the stop is.
+    ar: اسأل أين المحطة.
+    mk: Прашајте каде е станицата.
+  answer:
+    speaker: protagonist
+    text: Wo ist die Haltestelle?
+  items:
+  - die-haltestelle
+- type: prompt
+  ask:
+    en: 'He says: over there.'
+    ar: 'يقول: هناك.'
+    mk: 'Тој вели: таму преку.'
+  answer:
+    speaker: protagonist
+    text: Da drüben.
+  items:
+  - da-drueben
+- type: prompt
+  ask:
+    en: 'Ask: can I buy a ticket here?'
+    ar: 'اسأل: هل يمكنني شراء تذكرة هنا؟'
+    mk: 'Прашајте: можам ли тука да купам билет?'
+  answer:
+    speaker: protagonist
+    text: Kann ich hier eine Fahrkarte kaufen?
+  items:
+  - kann-ich
+  - die-fahrkarte
+- type: prompt
+  ask:
+    en: 'Say: with the app.'
+    ar: 'قل: بالتطبيق.'
+    mk: 'Кажете: со апликацијата.'
+  answer:
+    speaker: protagonist
+    text: Mit der App.
+  items:
+  - mit-der-app
+- type: narrator
+  text:
+    en: '«einsteigen» and «aussteigen» split: «Ich steige hinten ein», «Ich steige am Hauptbahnhof aus».'
+    ar: '«einsteigen» (يصعد) و«aussteigen» (ينزل) تنقسمان: «Ich steige hinten ein»، «Ich steige am Hauptbahnhof aus».'
+    mk: '«einsteigen» (се качува) и «aussteigen» (се симнува) се делат: «Ich steige hinten ein», «Ich steige am Hauptbahnhof aus».'
+- type: prompt
+  ask:
+    en: 'He says: get on at the back.'
+    ar: 'يقول: اصعد من الخلف.'
+    mk: 'Тој вели: качете се одзади.'
+  answer:
+    speaker: protagonist
+    text: Steigen Sie hinten ein.
+  items:
+  - einsteigen
+  - hinten
+- type: prompt
+  ask:
+    en: 'Say: room for prams.'
+    ar: 'قل: مكان لعربات الأطفال.'
+    mk: 'Кажете: место за колички.'
+  answer:
+    speaker: protagonist
+    text: Platz für Kinderwagen.
+  items:
+  - der-kinderwagen
+- type: prompt
+  ask:
+    en: 'Say: at the main station I get off.'
+    ar: 'قل: أنزل في المحطة الرئيسية.'
+    mk: 'Кажете: на главната станица се симнувам.'
+  answer:
+    speaker: protagonist
+    text: Am Hauptbahnhof steige ich aus.
+  items:
+  - aussteigen
+- type: narrator
+  text:
+    en: 'There are no barriers: you buy the ticket before you ride, at a machine or in the app, and inspectors check at random. Riding without a valid ticket costs a fixed fine — check the current amount
+      on the transport company''s site.'
+    ar: 'لا توجد بوابات: تشتري التذكرة قبل الركوب، من الآلة أو بالتطبيق، والمفتشون يفحصون بشكل عشوائي. الركوب بلا تذكرة صالحة يكلّف غرامة ثابتة — راجع قيمتها الحالية في موقع شركة النقل.'
+    mk: 'Нема бариери: билетот го купувате пред возењето, на автомат или во апликацијата, а контролорите проверуваат случајно. Возење без важечки билет чини фиксна казна — проверете ја сегашната сума на
+      страницата на превозникот.'
+- type: prompt
+  ask:
+    en: 'Once more: say “does … go?”.'
+    ar: 'مرة أخرى: قل “هل يذهب …؟”.'
+    mk: 'Уште еднаш: кажете „оди ли …?“.'
+  answer:
+    speaker: protagonist
+    text: fährt …?
+  items:
+  - faehrt
+- type: prompt
+  ask:
+    en: 'Once more: say “to the main station”.'
+    ar: 'مرة أخرى: قل “إلى المحطة الرئيسية”.'
+    mk: 'Уште еднаш: кажете „до главната станица“.'
+  answer:
+    speaker: protagonist
+    text: zum Hauptbahnhof
+  items:
+  - zum-hauptbahnhof
+- type: prompt
+  ask:
+    en: 'Once more: say “change (trains, buses)”.'
+    ar: 'مرة أخرى: قل “يغيّر وسيلة النقل”.'
+    mk: 'Уште еднаш: кажете „да се префрлите“.'
+  answer:
+    speaker: protagonist
+    text: umsteigen
+  items:
+  - umsteigen
+- type: prompt
+  ask:
+    en: 'Once more: say “the tram”.'
+    ar: 'مرة أخرى: قل “الترام”.'
+    mk: 'Уште еднаш: кажете „трамвајот“.'
+  answer:
+    speaker: protagonist
+    text: die Straßenbahn
+  items:
+  - die-strassenbahn
+- type: prompt
+  ask:
+    en: 'Once more: say “the stop”.'
+    ar: 'مرة أخرى: قل “المحطة / الموقف”.'
+    mk: 'Уште еднаш: кажете „станицата“.'
+  answer:
+    speaker: protagonist
+    text: die Haltestelle
+  items:
+  - die-haltestelle
+- type: prompt
+  ask:
+    en: 'Once more: say “over there”.'
+    ar: 'مرة أخرى: قل “هناك”.'
+    mk: 'Уште еднаш: кажете „таму преку“.'
+  answer:
+    speaker: protagonist
+    text: da drüben
+  items:
+  - da-drueben
+- type: prompt
+  ask:
+    en: 'Once more: say “the ticket”.'
+    ar: 'مرة أخرى: قل “التذكرة”.'
+    mk: 'Уште еднаш: кажете „билетот“.'
+  answer:
+    speaker: protagonist
+    text: die Fahrkarte
+  items:
+  - die-fahrkarte
+- type: prompt
+  ask:
+    en: 'Once more: say “with the app”.'
+    ar: 'مرة أخرى: قل “بالتطبيق”.'
+    mk: 'Уште еднаш: кажете „со апликацијата“.'
+  answer:
+    speaker: protagonist
+    text: mit der App
+  items:
+  - mit-der-app
+- type: prompt
+  ask:
+    en: 'Once more: say “get on”.'
+    ar: 'مرة أخرى: قل “اصعد”.'
+    mk: 'Уште еднаш: кажете „се качувате“.'
+  answer:
+    speaker: protagonist
+    text: steigen … ein
+  items:
+  - einsteigen
+- type: prompt
+  ask:
+    en: 'Once more: say “at the back”.'
+    ar: 'مرة أخرى: قل “في الخلف”.'
+    mk: 'Уште еднаш: кажете „назад, позади“.'
+  answer:
+    speaker: protagonist
+    text: hinten
+  items:
+  - hinten
+- type: prompt
+  ask:
+    en: 'Once more: say “the pram, the stroller”.'
+    ar: 'مرة أخرى: قل “عربة الأطفال”.'
+    mk: 'Уште еднаш: кажете „количката“.'
+  answer:
+    speaker: protagonist
+    text: der Kinderwagen
+  items:
+  - der-kinderwagen
+- type: prompt
+  ask:
+    en: 'Once more: say “get off”.'
+    ar: 'مرة أخرى: قل “أنزل”.'
+    mk: 'Уште еднаш: кажете „се симнувам“.'
+  answer:
+    speaker: protagonist
+    text: steige … aus
+  items:
+  - aussteigen
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتَه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “closed — and “today is Sunday — and “everything — and “somewhere — and “bread — and “the bakery — and “on the corner — and “open — and “the public holiday — and “better not”.'
+    ar: 'قل: “مغلق — و“اليوم الأحد — و“كل شيء — و“في مكان ما — و“خبز — و“المخبز — و“عند الزاوية — و“مفتوح — و“العطلة الرسمية — و“الأفضل لا”.'
+    mk: 'Кажете: „затворено“ — и „денес е недела“ — и „сè“ — и „некаде“ — и „леб“ — и „пекарницата“ — и „на аголот“ — и „отворено“ — и „празникот“ — и „подобро не“.'
+  answer:
+    speaker: protagonist
+    text: geschlossen … heute ist Sonntag … alles … irgendwo … Brot … die Bäckerei … an der Ecke … offen … der Feiertag … lieber nicht
+  items:
+  - geschlossen
+  - heute-ist-sonntag
+  - alles
+  - irgendwo
+  - brot
+  - die-baeckerei
+  - an-der-ecke
+  - offen
+  - der-feiertag
+  - lieber-nicht
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “quiet, peace — and “go for a walk — and “Good day / hello — and “Excuse me / sorry — and “I don''t understand — and “you are (polite) — and “new here — and “Yes — and “I am — and “Do you
+      speak English? (polite)”.'
+    ar: 'قل: “الهدوء — و“أتمشّى — و“نهارك سعيد / مرحبًا — و“عفوًا / المعذرة — و“لا أفهم — و“أنتِ / أنتَ (بصيغة الاحترام) — و“جديد هنا — و“نعم — و“أنا (أكون) — و“هل تتكلمين الإنجليزية؟ (بصيغة الاحترام)”.'
+    mk: 'Кажете: „мирот, тишината“ — и „одам на прошетка“ — и „Добар ден“ — и „Извинете“ — и „Не разбирам“ — и „Вие сте“ — и „нов тука“ — и „Да“ — и „јас сум“ — и „Зборувате ли англиски?“.'
+  answer:
+    speaker: protagonist
+    text: die Ruhe … gehe … spazieren … Guten Tag … Entschuldigung … Ich verstehe nicht … Sie sind … neu hier … Ja … ich bin … Sprechen Sie Englisch?
+  items:
+  - die-ruhe
+  - spazieren
+  - guten-tag
+  - entschuldigung
+  - ich-verstehe-nicht
+  - sie-sind
+  - neu-hier
+  - ja
+  - ich-bin
+  - sprechen-sie-englisch
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “a little — and “I live — and “downstairs — and “Nice to meet you — and “Welcome — and “the key — and “Thank you very much — and “You''re welcome / here you are — and “Goodbye”.'
+    ar: 'قل: “قليلًا — و“أسكن — و“في الأسفل — و“تشرفنا — و“أهلًا وسهلًا — و“المفتاح — و“شكرًا جزيلًا — و“عفوًا / تفضّلي — و“مع السلامة”.'
+    mk: 'Кажете: „малку“ — и „живеам“ — и „долу“ — и „Мило ми е“ — и „Добредојдовте“ — и „клучот“ — и „Благодарам многу“ — и „Нема зошто / повелете“ — и „Довидување“.'
+  answer:
+    speaker: protagonist
+    text: ein bisschen … ich wohne … unten … Freut mich … Willkommen … der Schlüssel … Danke schön … Bitte schön … Auf Wiedersehen
+  items:
+  - ein-bisschen
+  - ich-wohne
+  - unten
+  - freut-mich
+  - willkommen
+  - der-schluessel
+  - danke-schoen
+  - bitte-schoen
+  - auf-wiedersehen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I''ll take … — and “the juice (as an object) — and “a bag”.'
+  answer:
+    speaker: protagonist
+    text: Ich nehme … … den Saft … eine Tüte
+  items:
+  - ich-nehme
+  - den-saft
+  - eine-tuete
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Do you need …? (polite) — and “the deposit (on bottles) — and “the bottles”.'
+  answer:
+    speaker: protagonist
+    text: Brauchen Sie …? … das Pfand … die Flaschen
+  items:
+  - brauchen-sie
+  - das-pfand
+  - die-flaschen
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “back — and “the machine — and “by card”.'
+  answer:
+    speaker: protagonist
+    text: zurück … der Automat … mit Karte
+  items:
+  - zurueck
+  - der-automat
+  - mit-karte
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “in cash — and “the receipt — and “That comes to …”.'
+  answer:
+    speaker: protagonist
+    text: bar … der Bon … Das macht …
+  items:
+  - bar
+  - der-bon
+  - das-macht
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “الأم، ماما — و“منذ الليلة الماضية”.'
+  answer:
+    speaker: protagonist
+    text: die Mama … seit heute Nacht
+  items:
+  - die-mama
+  - seit-heute-nacht
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “بطاقة التأمين الصحي — و“شرابًا (دواء سائل)”.'
+  answer:
+    speaker: protagonist
+    text: die Versichertenkarte … einen Saft
+  items:
+  - die-versichertenkarte
+  - den-saft-medizin
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “عندها حرارة — و“دفتر الفحوص الأصفر — و“البطاقة (بطاقة التأمين)”.'
+    mk: 'Кажете: „има температура“ — и „жолтата книшка за прегледи“ — и „картичката“.'
+  answer:
+    speaker: protagonist
+    text: hat Fieber … das U-Heft … die Karte
+  items:
+  - hat-fieber
+  - das-u-heft
+  - die-karte
+  for:
+  - ar
+  - mk
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “تسعل — و“أعطيكِ … — و“ثلاث مرات في اليوم”.'
+    mk: 'Кажете: „кашла“ — и „Ви давам …“ — и „три пати на ден“.'
+  answer:
+    speaker: protagonist
+    text: hustet … Ich gebe Ihnen … … dreimal am Tag
+  items:
+  - hustet
+  - ich-gebe-ihnen
+  - dreimal-am-tag
+  for:
+  - ar
+  - mk
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “شفاءً عاجلًا! — و“شكرًا جزيلًا”.'
+    mk: 'Кажете: „Брзо оздравување!“ — и „Многу благодарам“.'
+  answer:
+    speaker: protagonist
+    text: Gute Besserung! … Vielen Dank
+  items:
+  - gute-besserung
+  - vielen-dank
+  for:
+  - ar
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „бабата“ — и „од утрово“.'
+  answer:
+    speaker: protagonist
+    text: die Oma … seit heute Morgen
+  items:
+  - die-oma
+  - seit-heute-morgen
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „родителите“ — и „работат“.'
+  answer:
+    speaker: protagonist
+    text: die Eltern … arbeiten
+  items:
+  - die-eltern
+  - arbeiten
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „сируп“.'
+  answer:
+    speaker: protagonist
+    text: einen Saft
+  items:
+  - einen-saft
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمع إلى المحادثة مرة أخرى. الآن تفهمها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

@@ -73,6 +73,19 @@ describe('Conversation practice tab (Allan, 2026-10-20/21: narrator in the inter
     expect(container.querySelectorAll('.step').length).toBe(7);
   });
 
+  it('an audience version shows its slot number, not the internal suffix (A1-02-e → A1-02)', async () => {
+    setLang('en');
+    const course = { ...COURSE, narrator_languages: ['en', 'ar'], units: [{ ...COURSE.units[1], id: 'A1-02-e', tracks: ['en'] }] };
+    const { p } = props({ loadTalk: async () => course });
+    const { container } = render(Talk, p);
+    await flush();
+    expect(container.querySelector('.unit-row .u-id').textContent).toBe('A1-02');
+    expect(container.querySelector('.unit-row').dataset.unit).toBe('A1-02-e');
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    expect(container.querySelector('.unit-page h3').textContent).toMatch(/^A1-02 ·/);
+  });
+
   it('levels are tabs: opens on the first unfinished level, switches without reloading, remembers the choice (Allan, 2026-10-22)', async () => {
     setLang('pt');
     const lvl = (id, level, number) => ({ id, level, number, title: { pt: id, en: id }, situation: { pt: '', en: '' }, new_items: [], steps: [] });
