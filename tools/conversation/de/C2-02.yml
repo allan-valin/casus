@@ -1,0 +1,836 @@
+# UNIT de C2-02 — written by AI (Claude) for Casus; expanded from src/C2-02.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-02
+level: C2
+number: 2
+protagonist: m
+title:
+  en: Irony at the office
+  ar: السخرية في المكتب
+  mk: Иронија во канцеларијата
+situation:
+  en: 'You''ve finished a big project. Frau Schröder says: ''Not bad.'' Are you in trouble? Sabine decodes German understatement.'
+  ar: 'أنهيتَ مشروعًا كبيرًا. السيدة شرودر تقول: «ليس سيئًا.» هل أنت في ورطة؟ زابينه تفكّ شيفرة التهوين الألماني.'
+  mk: 'Завршивте голем проект. Госпоѓа Шредер вели: „Не е лошо.“ Дали сте во неволја? Сабине го дешифрира германското потценување.'
+learn_lessons:
+- c2-irony-particles
+culture: Understatement
+new_items:
+- id: nicht-schlecht
+  text: Nicht schlecht
+  meaning:
+    en: Not bad (= very good)
+    ar: ليس سيئًا (= ممتاز)
+    mk: Не е лошо (= многу добро)
+- id: das-understatement
+  text: das Understatement
+  meaning:
+    en: understatement
+    ar: التهوين
+    mk: потценувањето
+- id: kann-man-machen
+  text: Kann man machen
+  meaning:
+    en: That's one way (= doubtful)
+    ar: يمكن ذلك (= بتشكّك)
+    mk: Може и така (= со сомнеж)
+- id: ganz-interessant
+  text: ganz interessant
+  meaning:
+    en: quite interesting (= not convinced)
+    ar: مثير للاهتمام نوعًا ما (= غير مقتنع)
+    mk: прилично интересно (= не е убеден)
+- id: da-hast-du-dir-muehe-gegeben
+  text: Da hast du dir ja Mühe gegeben
+  meaning:
+    en: You really made an effort (ironic or sincere)
+    ar: لقد بذلتَ جهدًا حقًا (ساخرًا أو صادقًا)
+    mk: Баш си се потрудил (иронично или искрено)
+- id: das-hoechste-lob
+  text: das höchste Lob
+  meaning:
+    en: the highest praise
+    ar: أعلى مديح
+    mk: најголемата пофалба
+- id: zwischen-den-zeilen
+  text: zwischen den Zeilen
+  meaning:
+    en: between the lines
+    ar: ما بين السطور
+    mk: меѓу редовите
+- id: gemeint-sein
+  text: wie es gemeint ist
+  meaning:
+    en: how it's meant
+    ar: ما المقصود
+    mk: како е мислено
+- id: der-tonfall
+  text: der Tonfall
+  meaning:
+    en: the tone of voice
+    ar: نبرة الصوت
+    mk: тонот на гласот
+- id: na-ja-gut
+  text: Na ja, gut
+  meaning:
+    en: Well, all right (= reluctant)
+    ar: حسنًا، لا بأس (= على مضض)
+    mk: Па, добро (= неволно)
+reviews:
+- item: lassen-sie-mich
+  from: A1-25
+- item: hoeren-sie-auf
+  from: A1-25
+- item: hilfe
+  from: A1-25
+- item: die-polizei
+  from: A1-25
+- item: hundertzehn
+  from: A1-25
+- item: alles-okay
+  from: A1-25
+- item: ich-bin-bei-ihnen
+  from: A1-25
+- item: der-fahrer
+  from: A1-25
+- item: aussteigen-jetzt
+  from: A1-25
+- item: danke-fuer-die-hilfe
+  from: A1-25
+- item: ossi-wessi
+  from: B1-29
+- item: unsinn
+  from: B1-29
+- item: der-soli
+  from: B1-29
+- item: genauso
+  from: B1-29
+- item: wurde-geoeffnet
+  from: B1-29
+- item: wurde-eingefuehrt
+  from: B1-29
+- item: die-ddr
+  from: B1-29
+- item: die-gehaelter
+  from: B1-29
+- item: niedriger
+  from: B1-29
+- item: grillen
+  from: B1-29
+- item: beide-seiten
+  from: B1-29
+- item: die-debatte
+  from: C1-01
+- item: das-argument
+  from: C1-01
+- item: das-gegenargument
+  from: C1-01
+- item: die-these
+  from: C1-01
+- item: die-vier-tage-woche
+  from: C1-01
+- item: die-produktivitaet
+  from: C1-01
+- item: der-fachkraeftemangel
+  from: C1-01
+- item: die-oft-genannte
+  from: C1-01
+- item: die-in-studien-belegte
+  from: C1-01
+- item: ueberzeugend
+  from: C1-01
+- item: ich-widerspreche
+  from: C1-01
+- item: der-kredit
+  from: C1-17
+- item: die-zinsen
+  from: C1-17
+- item: das-eigenkapital
+  from: C1-17
+- item: die-grunderwerbsteuer
+  from: C1-17
+- item: der-notar
+  from: C1-17
+- item: der-makler
+  from: C1-17
+- item: die-kaufnebenkosten
+  from: C1-17
+- item: die-tilgung
+  from: C1-17
+- item: die-finanzierung
+  from: C1-17
+- item: auf-dem-land
+  from: C1-17
+- item: die-gleichberechtigung-e
+  from: C1-25-e
+  for:
+  - en
+- item: die-selbstbestimmung-e
+  from: C1-25-e
+  for:
+  - en
+- item: das-opfer-e
+  from: C1-25-e
+  for:
+  - en
+- item: die-schuld-e
+  from: C1-25-e
+  for:
+  - en
+- item: die-zwangsheirat-e
+  from: C1-25-e
+  for:
+  - en
+- item: das-hilfetelefon-e
+  from: C1-25-e
+  for:
+  - en
+- item: das-frauenhaus-e
+  from: C1-25-e
+  for:
+  - en
+- item: anonym-e
+  from: C1-25-e
+  for:
+  - en
+- item: die-entscheidung-ueber-e
+  from: C1-25-e
+  for:
+  - en
+- item: niemand-darf-e
+  from: C1-25-e
+  for:
+  - en
+- item: die-pruefung-c1
+  from: C1-29
+- item: bestehen
+  from: C1-29
+- item: die-muendliche-pruefung
+  from: C1-29
+- item: die-schriftliche-pruefung
+  from: C1-29
+- item: die-beherrschung
+  from: C1-29
+- item: das-zertifikat
+  from: C1-29
+- item: die-bewertung
+  from: C1-29
+- item: die-vorbereitung
+  from: C1-29
+- item: durchfallen
+  from: C1-29
+- item: mit-auszeichnung
+  from: C1-29
+- item: die-anerkennung-zertifikat
+  from: C1-29
+- item: der-trinkspruch
+  from: C2-01
+- item: liebe-gaeste
+  from: C2-01
+- item: das-brautpaar-c2
+  from: C2-01
+- item: wer-haette-gedacht
+  from: C2-01
+- item: die-anekdote
+  from: C2-01
+- item: nicht-nur-sondern-auch
+  from: C2-01
+- item: ich-darf
+  from: C2-01
+- item: das-glas-erheben
+  from: C2-01
+- item: rhetorisch
+  from: C2-01
+- item: die-liebe
+  from: C2-01
+- item: die-treue
+  from: C2-01
+- item: die-gleichberechtigung-a
+  from: C1-25-a
+  for:
+  - ar
+- item: die-selbstbestimmung-a
+  from: C1-25-a
+  for:
+  - ar
+- item: das-opfer-a
+  from: C1-25-a
+  for:
+  - ar
+- item: die-schuld-a
+  from: C1-25-a
+  for:
+  - ar
+- item: die-zwangsheirat-a
+  from: C1-25-a
+  for:
+  - ar
+- item: das-hilfetelefon-a
+  from: C1-25-a
+  for:
+  - ar
+- item: das-frauenhaus-a
+  from: C1-25-a
+  for:
+  - ar
+- item: anonym-a
+  from: C1-25-a
+  for:
+  - ar
+- item: die-entscheidung-ueber-a
+  from: C1-25-a
+  for:
+  - ar
+- item: niemand-darf-a
+  from: C1-25-a
+  for:
+  - ar
+- item: die-gleichberechtigung-m
+  from: C1-25-m
+  for:
+  - mk
+- item: die-selbstbestimmung-m
+  from: C1-25-m
+  for:
+  - mk
+- item: das-opfer-m
+  from: C1-25-m
+  for:
+  - mk
+- item: die-schuld-m
+  from: C1-25-m
+  for:
+  - mk
+- item: die-haeusliche-gewalt-m
+  from: C1-25-m
+  for:
+  - mk
+- item: das-hilfetelefon-m
+  from: C1-25-m
+  for:
+  - mk
+- item: das-frauenhaus-m
+  from: C1-25-m
+  for:
+  - mk
+- item: anonym-m
+  from: C1-25-m
+  for:
+  - mk
+- item: die-entscheidung-ueber-m
+  from: C1-25-m
+  for:
+  - mk
+- item: schweigen-m
+  from: C1-25-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: 'You''ve finished a big project. Frau Schröder says: ''Not bad.'' Are you in trouble? Sabine decodes German understatement. Listen to the conversation; you don''t need to understand it yet.'
+    ar: 'أنهيتَ مشروعًا كبيرًا. السيدة شرودر تقول: «ليس سيئًا.» هل أنت في ورطة؟ زابينه تفكّ شيفرة التهوين الألماني. استمع إلى المحادثة؛ لا داعي لأن تفهمها الآن.'
+    mk: 'Завршивте голем проект. Госпоѓа Шредер вели: „Не е лошо.“ Дали сте во неволја? Сабине го дешифрира германското потценување. Слушнете го разговорот; уште не мора да го разберете.'
+- type: dialogue
+  lines:
+  - speaker: schroeder
+    text: Die Präsentation? Nicht schlecht.
+    meaning:
+      en: The presentation? Not bad.
+      ar: العرض؟ ليس سيئًا.
+      mk: Презентацијата? Не е лошо.
+  - speaker: protagonist
+    text: Sabine, sie fand es nur „nicht schlecht“. Muss ich mir Sorgen machen?
+    meaning:
+      en: Sabine, she only found it 'not bad'. Should I worry?
+      ar: زابينه، لقد وجدته «ليس سيئًا» فقط. هل يجب أن أقلق؟
+      mk: Сабине, таа рече само „не е лошо“. Треба ли да се грижам?
+  - speaker: sabine
+    text: Im Gegenteil! Von ihr ist „nicht schlecht“ das höchste Lob.
+    meaning:
+      en: On the contrary! From her, 'not bad' is the highest praise.
+      ar: بالعكس! «ليس سيئًا» منها هو أعلى مديح.
+      mk: Напротив! Од неа „не е лошо“ е најголемата пофалба.
+  - speaker: protagonist
+    text: Und was bedeutet „ganz interessant“?
+    meaning:
+      en: And what does 'quite interesting' mean?
+      ar: وماذا تعني «مثير للاهتمام نوعًا ما»؟
+      mk: А што значи „прилично интересно“?
+  - speaker: sabine
+    text: 'Das heißt: Sie ist nicht überzeugt. Und „kann man machen“ heißt eigentlich: lieber nicht.'
+    meaning:
+      en: 'That means: she isn''t convinced. And ''that''s one way'' actually means: better not.'
+      ar: 'يعني: إنها غير مقتنعة. و«يمكن ذلك» تعني في الحقيقة: الأفضل لا.'
+      mk: 'Тоа значи: не е убедена. А „може и така“ всушност значи: подобро не.'
+  - speaker: protagonist
+    text: Man muss also zwischen den Zeilen lesen.
+    meaning:
+      en: So you have to read between the lines.
+      ar: إذن يجب القراءة ما بين السطور.
+      mk: Значи треба да се чита меѓу редовите.
+  - speaker: sabine
+    text: Und auf den Tonfall hören. „Da hast du dir ja Mühe gegeben“ kann Lob oder Spott sein.
+    meaning:
+      en: And listen to the tone. 'You really made an effort' can be praise or mockery.
+      ar: والإصغاء إلى النبرة. «لقد بذلتَ جهدًا حقًا» قد تكون مديحًا أو سخرية.
+      mk: И да се слуша тонот. „Баш си се потрудил“ може да е пофалба или потсмев.
+  - speaker: protagonist
+    text: Na ja, gut — dann sage ich jetzt auch öfter „nicht schlecht“.
+    meaning:
+      en: Well, all right — then I'll say 'not bad' more often too.
+      ar: حسنًا، لا بأس — إذن سأقول أنا أيضًا «ليس سيئًا» أكثر.
+      mk: Па, добро — тогаш и јас почесто ќе велам „не е лошо“.
+- type: prompt
+  ask:
+    en: 'She says: not bad (= very good).'
+    ar: 'تقول: ليس سيئًا (= ممتاز).'
+    mk: 'Таа вели: не е лошо (= многу добро).'
+  answer:
+    speaker: protagonist
+    text: Nicht schlecht.
+  items:
+  - nicht-schlecht
+- type: prompt
+  ask:
+    en: 'Sabine: the highest praise.'
+    ar: 'زابينه: أعلى مديح.'
+    mk: 'Сабине: најголемата пофалба.'
+  answer:
+    speaker: protagonist
+    text: Das höchste Lob.
+  items:
+  - das-hoechste-lob
+- type: narrator
+  text:
+    en: 'German understatement and irony live in small words and tone: «nicht schlecht» (= very good), «ganz interessant» (= not convinced), «kann man machen» (= rather not), «Na ja, gut» (= reluctantly).
+      The particle «ja» can make praise sound ironic.'
+    ar: 'التهوين والسخرية في الألمانية يعيشان في الكلمات الصغيرة والنبرة: «nicht schlecht» (= ممتاز)، «ganz interessant» (= غير مقتنع)، «kann man machen» (= الأفضل لا)، «Na ja, gut» (= على مضض). والأداة
+      «ja» قد تجعل المديح يبدو ساخرًا.'
+    mk: 'Германското потценување и иронија живеат во мали зборови и тон: «nicht schlecht» (= многу добро), «ganz interessant» (= не е убеден), «kann man machen» (= подобро не), «Na ja, gut» (= неволно).
+      Честичката «ja» може пофалбата да ја направи иронична.'
+- type: prompt
+  ask:
+    en: 'Decode: quite interesting.'
+    ar: 'فكّ الشيفرة: مثير للاهتمام نوعًا ما.'
+    mk: 'Дешифрирајте: прилично интересно.'
+  answer:
+    speaker: protagonist
+    text: Ganz interessant.
+  items:
+  - ganz-interessant
+- type: prompt
+  ask:
+    en: 'Decode: that''s one way.'
+    ar: 'فكّ الشيفرة: يمكن ذلك.'
+    mk: 'Дешифрирајте: може и така.'
+  answer:
+    speaker: protagonist
+    text: Kann man machen.
+  items:
+  - kann-man-machen
+- type: prompt
+  ask:
+    en: 'Say: read between the lines.'
+    ar: 'قل: القراءة ما بين السطور.'
+    mk: 'Кажете: читање меѓу редовите.'
+  answer:
+    speaker: protagonist
+    text: Zwischen den Zeilen lesen.
+  items:
+  - zwischen-den-zeilen
+- type: prompt
+  ask:
+    en: 'Say: listen to the tone.'
+    ar: 'قل: الإصغاء إلى النبرة.'
+    mk: 'Кажете: слушање на тонот.'
+  answer:
+    speaker: protagonist
+    text: Auf den Tonfall hören.
+  items:
+  - der-tonfall
+- type: prompt
+  ask:
+    en: 'Say: you really made an effort.'
+    ar: 'قل: لقد بذلتَ جهدًا حقًا.'
+    mk: 'Кажете: баш си се потрудил.'
+  answer:
+    speaker: protagonist
+    text: Da hast du dir ja Mühe gegeben.
+  items:
+  - da-hast-du-dir-muehe-gegeben
+- type: prompt
+  ask:
+    en: 'Say reluctantly: well, all right.'
+    ar: 'قل على مضض: حسنًا، لا بأس.'
+    mk: 'Кажете неволно: па, добро.'
+  answer:
+    speaker: protagonist
+    text: Na ja, gut.
+  items:
+  - na-ja-gut
+- type: prompt
+  ask:
+    en: 'Say: understatement.'
+    ar: 'قل: التهوين.'
+    mk: 'Кажете: потценување.'
+  answer:
+    speaker: protagonist
+    text: Das Understatement.
+  items:
+  - das-understatement
+- type: prompt
+  ask:
+    en: 'Ask: how is it meant?'
+    ar: 'اسأل: ما المقصود؟'
+    mk: 'Прашајте: како е мислено?'
+  answer:
+    speaker: protagonist
+    text: Wie ist das gemeint?
+  items:
+  - gemeint-sein
+- type: prompt
+  ask:
+    en: 'Once more: say “Not bad (= very good)”.'
+    ar: 'مرة أخرى: قل “ليس سيئًا (= ممتاز)”.'
+    mk: 'Уште еднаш: кажете „Не е лошо (= многу добро)“.'
+  answer:
+    speaker: protagonist
+    text: Nicht schlecht
+  items:
+  - nicht-schlecht
+- type: prompt
+  ask:
+    en: 'Once more: say “understatement”.'
+    ar: 'مرة أخرى: قل “التهوين”.'
+    mk: 'Уште еднаш: кажете „потценувањето“.'
+  answer:
+    speaker: protagonist
+    text: das Understatement
+  items:
+  - das-understatement
+- type: prompt
+  ask:
+    en: 'Once more: say “That''s one way (= doubtful)”.'
+    ar: 'مرة أخرى: قل “يمكن ذلك (= بتشكّك)”.'
+    mk: 'Уште еднаш: кажете „Може и така (= со сомнеж)“.'
+  answer:
+    speaker: protagonist
+    text: Kann man machen
+  items:
+  - kann-man-machen
+- type: prompt
+  ask:
+    en: 'Once more: say “quite interesting (= not convinced)”.'
+    ar: 'مرة أخرى: قل “مثير للاهتمام نوعًا ما (= غير مقتنع)”.'
+    mk: 'Уште еднаш: кажете „прилично интересно (= не е убеден)“.'
+  answer:
+    speaker: protagonist
+    text: ganz interessant
+  items:
+  - ganz-interessant
+- type: prompt
+  ask:
+    en: 'Once more: say “You really made an effort (ironic or sincere)”.'
+    ar: 'مرة أخرى: قل “لقد بذلتَ جهدًا حقًا (ساخرًا أو صادقًا)”.'
+    mk: 'Уште еднаш: кажете „Баш си се потрудил (иронично или искрено)“.'
+  answer:
+    speaker: protagonist
+    text: Da hast du dir ja Mühe gegeben
+  items:
+  - da-hast-du-dir-muehe-gegeben
+- type: prompt
+  ask:
+    en: 'Once more: say “the highest praise”.'
+    ar: 'مرة أخرى: قل “أعلى مديح”.'
+    mk: 'Уште еднаш: кажете „најголемата пофалба“.'
+  answer:
+    speaker: protagonist
+    text: das höchste Lob
+  items:
+  - das-hoechste-lob
+- type: prompt
+  ask:
+    en: 'Once more: say “between the lines”.'
+    ar: 'مرة أخرى: قل “ما بين السطور”.'
+    mk: 'Уште еднаш: кажете „меѓу редовите“.'
+  answer:
+    speaker: protagonist
+    text: zwischen den Zeilen
+  items:
+  - zwischen-den-zeilen
+- type: prompt
+  ask:
+    en: 'Once more: say “how it''s meant”.'
+    ar: 'مرة أخرى: قل “ما المقصود”.'
+    mk: 'Уште еднаш: кажете „како е мислено“.'
+  answer:
+    speaker: protagonist
+    text: wie es gemeint ist
+  items:
+  - gemeint-sein
+- type: prompt
+  ask:
+    en: 'Once more: say “the tone of voice”.'
+    ar: 'مرة أخرى: قل “نبرة الصوت”.'
+    mk: 'Уште еднаш: кажете „тонот на гласот“.'
+  answer:
+    speaker: protagonist
+    text: der Tonfall
+  items:
+  - der-tonfall
+- type: prompt
+  ask:
+    en: 'Once more: say “Well, all right (= reluctant)”.'
+    ar: 'مرة أخرى: قل “حسنًا، لا بأس (= على مضض)”.'
+    mk: 'Уште еднаш: кажете „Па, добро (= неволно)“.'
+  answer:
+    speaker: protagonist
+    text: Na ja, gut
+  items:
+  - na-ja-gut
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتَه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the toast — and “Dear guests — and “the happy couple — and “Who would have thought that …? — and “the anecdote — and “not only … but also … — and “May I … (formal) — and “Raise your glasses
+      with me — and “rhetorical — and “love — and “faithfulness — and “the exam — and “pass (an exam) — and “the oral exam — and “the written part — and “command of the language — and “the certificate —
+      and “the assessment, mark — and “the preparation — and “fail (an exam) — and “with distinction — and “the recognition of the certificate”.'
+    ar: 'قل: “النخب — و“الضيوف الأعزاء — و“الزوجان السعيدان — و“من كان يظن أنّ …؟ — و“الطرفة — و“ليس فقط … بل أيضًا … — و“اسمحوا لي أن … — و“ارفعوا الكؤوس معي — و“بلاغي — و“الحب — و“الوفاء — و“الامتحان
+      — و“ينجح في — و“الامتحان الشفهي — و“الجزء الكتابي — و“إتقان اللغة — و“الشهادة — و“التقييم — و“التحضير — و“يرسب — و“بامتياز — و“الاعتراف بالشهادة”.'
+    mk: 'Кажете: „здравицата“ — и „Драги гости“ — и „среќната двојка“ — и „Кој би помислил дека …?“ — и „анегдотата“ — и „не само … туку и …“ — и „Дозволете ми да …“ — и „Кренете ги чашите со мене“ — и
+      „реторички“ — и „љубовта“ — и „верноста“ — и „испитот“ — и „положува“ — и „усниот испит“ — и „писмениот дел“ — и „владеењето на јазикот“ — и „сертификатот“ — и „оценувањето“ — и „подготовката“ — и
+      „паѓа (на испит)“ — и „со одлика“ — и „признавањето на сертификатот“.'
+  answer:
+    speaker: protagonist
+    text: der Trinkspruch … Liebe Gäste … das glückliche Paar … Wer hätte gedacht, dass …? … die Anekdote … nicht nur …, sondern auch … … Ich darf … … Erheben Sie mit mir das Glas … rhetorisch … die Liebe
+      … die Treue … die Prüfung … bestehen … die mündliche Prüfung … der schriftliche Teil … die Beherrschung der Sprache … das Zertifikat … die Bewertung … die Vorbereitung … durchfallen … mit Auszeichnung
+      … die Anerkennung des Zertifikats
+  items:
+  - der-trinkspruch
+  - liebe-gaeste
+  - das-brautpaar-c2
+  - wer-haette-gedacht
+  - die-anekdote
+  - nicht-nur-sondern-auch
+  - ich-darf
+  - das-glas-erheben
+  - rhetorisch
+  - die-liebe
+  - die-treue
+  - die-pruefung-c1
+  - bestehen
+  - die-muendliche-pruefung
+  - die-schriftliche-pruefung
+  - die-beherrschung
+  - das-zertifikat
+  - die-bewertung
+  - die-vorbereitung
+  - durchfallen
+  - mit-auszeichnung
+  - die-anerkennung-zertifikat
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the loan — and “the interest — and “own capital, deposit — and “land transfer tax — and “the notary — and “the estate agent — and “the additional purchase costs — and “repayment (of the loan)
+      — and “the financing — and “in the countryside — and “the debate — and “the argument — and “the counter-argument — and “the thesis, claim — and “the four-day week — and “productivity — and “the skills
+      shortage — and “the often-cited … — and “the … shown in studies — and “convincing — and “I disagree there — and “East and West Germans (colloquial)”.'
+    ar: 'قل: “القرض — و“الفوائد — و“رأس المال الخاص — و“ضريبة نقل ملكية العقار — و“كاتب العدل — و“السمسار — و“تكاليف الشراء الإضافية — و“سداد أصل القرض — و“التمويل — و“في الريف — و“المناظرة — و“الحجة —
+      و“الحجة المضادة — و“الأطروحة — و“أسبوع العمل من أربعة أيام — و“الإنتاجية — و“نقص العمالة الماهرة — و“… التي يُستشهد بها كثيرًا — و“… المثبتة في الدراسات — و“مقنع — و“هنا أعترض — و“شرقي وغربي (عاميًا)”.'
+    mk: 'Кажете: „кредитот“ — и „каматата“ — и „сопствениот капитал“ — и „данокот на промет на недвижности“ — и „нотарот“ — и „агентот за недвижности“ — и „дополнителните трошоци за купување“ — и „отплатата“
+      — и „финансирањето“ — и „на село“ — и „дебатата“ — и „аргументот“ — и „контрааргументот“ — и „тезата“ — и „четиридневната недела“ — и „продуктивноста“ — и „недостигот на стручен кадар“ — и „често
+      спомнуваната …“ — и „… докажана во студии“ — и „убедливо“ — и „Тука не се согласувам“ — и „Оси и Веси (разговорно)“.'
+  answer:
+    speaker: protagonist
+    text: der Kredit … die Zinsen … das Eigenkapital … die Grunderwerbsteuer … der Notar … der Makler … die Kaufnebenkosten … die Tilgung … die Finanzierung … auf dem Land … die Debatte … das Argument …
+      das Gegenargument … die These … die Vier-Tage-Woche … die Produktivität … der Fachkräftemangel … die oft genannte … … die in Studien belegte … … überzeugend … Da widerspreche ich … Ossi und Wessi
+  items:
+  - der-kredit
+  - die-zinsen
+  - das-eigenkapital
+  - die-grunderwerbsteuer
+  - der-notar
+  - der-makler
+  - die-kaufnebenkosten
+  - die-tilgung
+  - die-finanzierung
+  - auf-dem-land
+  - die-debatte
+  - das-argument
+  - das-gegenargument
+  - die-these
+  - die-vier-tage-woche
+  - die-produktivitaet
+  - der-fachkraeftemangel
+  - die-oft-genannte
+  - die-in-studien-belegte
+  - ueberzeugend
+  - ich-widerspreche
+  - ossi-wessi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Nonsense! — and “the solidarity surcharge — and “just the same — and “was opened — and “was introduced — and “the GDR (East Germany) — and “the salaries — and “lower — and “barbecue — and
+      “both sides — and “Leave me alone! (polite) — and “Stop it! (polite) — and “Help! — and “the police — and “110 (police number) — and “Are you all right? — and “I''m with you — and “the driver — and
+      “Get off! (polite) — and “Thanks for your help”.'
+    ar: 'قل: “هراء! — و“ضريبة التضامن — و“بالقدر نفسه — و“فُتح — و“فُرض، أُدخل — و“ألمانيا الشرقية — و“الرواتب — و“أقل — و“يشوي — و“الطرفان — و“اتركني وشأني! — و“توقّف! — و“النجدة! — و“الشرطة — و“110 (رقم
+      الشرطة) — و“هل أنتِ بخير؟ — و“أنا معكِ — و“السائق — و“انزل! — و“شكرًا على المساعدة”.'
+    mk: 'Кажете: „Глупости!“ — и „солидарниот додаток“ — и „исто така“ — и „беше отворен“ — и „беше воведен“ — и „ГДР“ — и „платите“ — и „пониски“ — и „пече на скара“ — и „двете страни“ — и „Оставете ме
+      на мира!“ — и „Престанете!“ — и „Помош!“ — и „полицијата“ — и „110 (број на полиција)“ — и „Дали сте во ред?“ — и „Јас сум со вас“ — и „возачот“ — и „Симнете се!“ — и „Благодарам за помошта“.'
+  answer:
+    speaker: protagonist
+    text: Unsinn! … der Solidaritätszuschlag … genauso … wurde geöffnet … wurde eingeführt … die DDR … die Gehälter … niedriger … grillen … beide Seiten … Lassen Sie mich in Ruhe! … Hören Sie auf! … Hilfe!
+      … die Polizei … hundertzehn … Alles okay? … Ich bin bei Ihnen … der Fahrer … Steigen Sie aus! … Danke für die Hilfe
+  items:
+  - unsinn
+  - der-soli
+  - genauso
+  - wurde-geoeffnet
+  - wurde-eingefuehrt
+  - die-ddr
+  - die-gehaelter
+  - niedriger
+  - grillen
+  - beide-seiten
+  - lassen-sie-mich
+  - hoeren-sie-auf
+  - hilfe
+  - die-polizei
+  - hundertzehn
+  - alles-okay
+  - ich-bin-bei-ihnen
+  - der-fahrer
+  - aussteigen-jetzt
+  - danke-fuer-die-hilfe
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “equal rights — and “self-determination — and “the victim — and “the blame, guilt”.'
+  answer:
+    speaker: protagonist
+    text: die Gleichberechtigung … die Selbstbestimmung … das Opfer … die Schuld
+  items:
+  - die-gleichberechtigung-e
+  - die-selbstbestimmung-e
+  - das-opfer-e
+  - die-schuld-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “forced marriage — and “the helpline — and “the women''s shelter — and “anonymous”.'
+  answer:
+    speaker: protagonist
+    text: die Zwangsheirat … das Hilfetelefon … das Frauenhaus … anonym
+  items:
+  - die-zwangsheirat-e
+  - das-hilfetelefon-e
+  - das-frauenhaus-e
+  - anonym-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the decision about one''s own life — and “no one may …”.'
+  answer:
+    speaker: protagonist
+    text: die Entscheidung über das eigene Leben … niemand darf …
+  items:
+  - die-entscheidung-ueber-e
+  - niemand-darf-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “المساواة في الحقوق — و“تقرير المصير — و“الضحية — و“اللوم، الذنب”.'
+  answer:
+    speaker: protagonist
+    text: die Gleichberechtigung … die Selbstbestimmung … das Opfer … die Schuld
+  items:
+  - die-gleichberechtigung-a
+  - die-selbstbestimmung-a
+  - das-opfer-a
+  - die-schuld-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “الزواج القسري — و“خط المساعدة الهاتفي — و“دار حماية النساء — و“دون كشف الهوية”.'
+  answer:
+    speaker: protagonist
+    text: die Zwangsheirat … das Hilfetelefon … das Frauenhaus … anonym
+  items:
+  - die-zwangsheirat-a
+  - das-hilfetelefon-a
+  - das-frauenhaus-a
+  - anonym-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “القرار في الحياة الخاصة — و“لا يحق لأحد …”.'
+  answer:
+    speaker: protagonist
+    text: die Entscheidung über das eigene Leben … niemand darf …
+  items:
+  - die-entscheidung-ueber-a
+  - niemand-darf-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „еднаквите права“ — и „самоопределувањето“ — и „жртвата“ — и „вината“.'
+  answer:
+    speaker: protagonist
+    text: die Gleichberechtigung … die Selbstbestimmung … das Opfer … die Schuld
+  items:
+  - die-gleichberechtigung-m
+  - die-selbstbestimmung-m
+  - das-opfer-m
+  - die-schuld-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „семејното насилство“ — и „телефонската линија за помош“ — и „засолништето за жени“ — и „анонимно“.'
+  answer:
+    speaker: protagonist
+    text: die häusliche Gewalt … das Hilfetelefon … das Frauenhaus … anonym
+  items:
+  - die-haeusliche-gewalt-m
+  - das-hilfetelefon-m
+  - das-frauenhaus-m
+  - anonym-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „одлуката за сопствениот живот“ — и „молчи“.'
+  answer:
+    speaker: protagonist
+    text: die Entscheidung über das eigene Leben … schweigen
+  items:
+  - die-entscheidung-ueber-m
+  - schweigen-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمع إلى المحادثة مرة أخرى. الآن تفهمها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck
