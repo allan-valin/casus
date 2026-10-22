@@ -1,0 +1,41 @@
+id: A2-14
+protagonist: m
+title: ["The Christmas market", "سوق عيد الميلاد", "Божиќниот пазар"]
+situation:
+  - "The Christmas market in the centre: crowds, lights, the smell of mulled wine."
+  - "سوق عيد الميلاد في وسط المدينة: زحام وأضواء ورائحة النبيذ الساخن."
+  - "Божиќниот пазар во центарот: гужва, светла, мирис на варено вино."
+learn: [a2-wenn]
+culture: Alcohol-free options
+items:
+  - [der-weihnachtsmarkt, "der Weihnachtsmarkt", "the Christmas market", "سوق عيد الميلاد", "божиќниот пазар", {rare: true}]
+  - [der-gluehwein, "der Glühwein", "mulled wine", "النبيذ الساخن", "вареното вино", {rare: true}]
+  - [ohne-alkohol, "ohne Alkohol", "alcohol-free", "بلا كحول", "без алкохол"]
+  - [der-kinderpunsch, "der Kinderpunsch", "children's punch (no alcohol)", "بنش الأطفال (بلا كحول)", "детски пунч", {rare: true}]
+  - [die-bratwurst, "die Bratwurst", "the grilled sausage", "النقانق المشوية", "колбасот на скара"]
+  - [wenn, "wenn", "if, when (verb to the end)", "إذا (الفعل في الآخر)", "ако, кога (глаголот на крај)"]
+  - [die-tasse, "die Tasse", "the mug", "الكوب", "шолјата"]
+  - [das-pfand-tasse, "Pfand für die Tasse", "a deposit on the mug", "تأمين على الكوب", "кауција за шолјата"]
+  - [voll, "voll", "full, crowded", "مزدحم", "полно"]
+  - [die-lichter, "die Lichter", "the lights", "الأضواء", "светлата"]
+dialogue:
+  - [jonas, "Willkommen auf dem Weihnachtsmarkt! Einen Glühwein?", "Welcome to the Christmas market! A mulled wine?", "أهلًا بك في سوق عيد الميلاد! نبيذ ساخن؟", "Добредојде на божиќниот пазар! Едно варено вино?"]
+  - [protagonist, "Gibt es auch etwas ohne Alkohol?", "Is there anything alcohol-free too?", "هل هناك شيء بلا كحول أيضًا؟", "Има ли нешто и без алкохол?"]
+  - [jonas, "Klar, Kinderpunsch. Den trinken auch Erwachsene.", "Sure, children's punch. Adults drink it too.", "طبعًا، بنش الأطفال. الكبار يشربونه أيضًا.", "Секако, детски пунч. И возрасните го пијат."]
+  - [protagonist, "Dann einen Kinderpunsch. Warum ist die Tasse so teuer?", "Then a children's punch. Why is the mug so expensive?", "إذن بنش الأطفال. لماذا الكوب غالٍ هكذا؟", "Тогаш детски пунч. Зошто шолјата е толку скапа?"]
+  - [jonas, "Das ist Pfand für die Tasse. Wenn du sie zurückbringst, bekommst du das Geld.", "That's a deposit on the mug. If you bring it back, you get the money.", "هذا تأمين على الكوب. إذا أعدته تستعيد المال.", "Тоа е кауција за шолјата. Ако ја вратиш, ги добиваш парите."]
+  - [protagonist, "Und eine Bratwurst?", "And a sausage?", "ونقانق؟", "А колбас?"]
+  - [jonas, "Die ist aus Schwein. Wenn du willst, gibt es dort Langos — ohne Fleisch.", "That's pork. If you like, there's lángos over there — no meat.", "إنها من لحم الخنزير. إذا أردت، هناك لانغوش — بلا لحم.", "Тој е од свинско. Ако сакаш, таму има лангош — без месо."]
+  - [protagonist, "So voll hier! Und die Lichter sind schön.", "So crowded here! And the lights are lovely.", "المكان مزدحم جدًا! والأضواء جميلة.", "Толку полно тука! А светлата се убави."]
+teach:
+  - ask: ["Say: the Christmas market.", "قل: سوق عيد الميلاد.", "Кажете: божиќниот пазар.", "Der Weihnachtsmarkt.", der-weihnachtsmarkt]
+  - ask: ["He offers: a mulled wine?", "يعرض: نبيذ ساخن؟", "Тој нуди: варено вино?", "Einen Glühwein?", der-gluehwein]
+  - ask: ["Ask: anything alcohol-free?", "اسأل: شيء بلا كحول؟", "Прашајте: нешто без алкохол?", "Etwas ohne Alkohol?", ohne-alkohol]
+  - ask: ["Say: a children's punch.", "قل: بنش الأطفال.", "Кажете: детски пунч.", "Einen Kinderpunsch.", der-kinderpunsch]
+  - note: ["«wenn» (if, when) sends the verb to the end: «Wenn du die Tasse zurückbringst, bekommst du das Geld». The next clause starts with the verb.", "«wenn» (إذا) ترسل الفعل إلى آخر الجملة: «Wenn du die Tasse zurückbringst, bekommst du das Geld». والجملة التالية تبدأ بالفعل.", "«wenn» (ако, кога) го праќа глаголот на крајот: «Wenn du die Tasse zurückbringst, bekommst du das Geld». Следната реченица почнува со глаголот."]
+  - ask: ["Say: a deposit on the mug.", "قل: تأمين على الكوب.", "Кажете: кауција за шолјата.", "Pfand für die Tasse.", das-pfand-tasse, die-tasse]
+  - ask: ["Say: if you bring it back, you get the money.", "قل: إذا أعدته تستعيد المال.", "Кажете: ако ја вратиш, ги добиваш парите.", "Wenn du sie zurückbringst, bekommst du das Geld.", wenn]
+  - ask: ["Ask: and a sausage?", "اسأل: ونقانق؟", "Прашајте: а колбас?", "Und eine Bratwurst?", die-bratwurst]
+  - ask: ["Say: so crowded!", "قل: مزدحم جدًا!", "Кажете: толку полно!", "So voll!", voll]
+  - ask: ["Say: the lights are lovely.", "قل: الأضواء جميلة.", "Кажете: светлата се убави.", "Die Lichter sind schön.", die-lichter]
+  - note: ["Christmas markets run from late November: mulled wine, sausages, roasted almonds, crafts. Every stand serves an alcohol-free punch, and meat-free food is easy to find. Keep the mug as a souvenir or return it for the deposit.", "أسواق عيد الميلاد تبدأ أواخر نوفمبر: نبيذ ساخن ونقانق ولوز محمّص وأشغال يدوية. كل كشك يقدّم بنشًا بلا كحول، والطعام بلا لحم سهل الإيجاد. احتفظ بالكوب تذكارًا أو أعده لتستعيد التأمين.", "Божиќните пазари почнуваат кон крајот на ноември: варено вино, колбаси, печени бадеми, рачни изработки. Секоја тезга има пунч без алкохол, а храна без месо лесно се наоѓа. Шолјата задржете ја за спомен или вратете ја за кауцијата."]

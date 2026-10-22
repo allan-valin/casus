@@ -1,0 +1,751 @@
+# UNIT de A2-15 — written by AI (Claude) for Casus; expanded from src/A2-15.yml by tools/expand_unit.py. Edit the source.
+
+id: A2-15
+level: A2
+number: 15
+protagonist: f
+title:
+  en: Money and per cent
+  ar: المال والنسبة المئوية
+  mk: Пари и проценти
+situation:
+  en: The January sales. A winter jacket, thirty per cent off — or is it?
+  ar: تخفيضات يناير. سترة شتوية بخصم ثلاثين بالمئة — أو هكذا يبدو؟
+  mk: Јануарски попусти. Зимска јакна, триесет проценти попуст — или не?
+learn_lessons:
+- a2-numbers
+culture: —
+new_items:
+- id: der-rabatt
+  text: der Rabatt
+  meaning:
+    en: the discount
+    ar: الخصم
+    mk: попустот
+- id: prozent
+  text: Prozent
+  meaning:
+    en: per cent
+    ar: بالمئة
+    mk: проценти
+- id: reduziert
+  text: reduziert
+  meaning:
+    en: reduced
+    ar: مخفّض
+    mk: намалено
+- id: die-haelfte
+  text: die Hälfte
+  meaning:
+    en: half
+    ar: النصف
+    mk: половина
+- id: der-alte-preis
+  text: der alte Preis
+  meaning:
+    en: the old price
+    ar: السعر القديم
+    mk: старата цена
+- id: der-neue-preis
+  text: der neue Preis
+  meaning:
+    en: the new price
+    ar: السعر الجديد
+    mk: новата цена
+- id: an-der-kasse
+  text: an der Kasse
+  meaning:
+    en: at the till
+    ar: عند الصندوق
+    mk: на касата
+- id: stimmt-das
+  text: Stimmt das?
+  meaning:
+    en: Is that right?
+    ar: هل هذا صحيح؟
+    mk: Дали е точно?
+- id: umtauschen
+  text: umtauschen
+  meaning:
+    en: exchange (an item)
+    ar: يستبدل
+    mk: заменува
+- id: der-kassenbon
+  text: den Kassenbon
+  meaning:
+    en: the receipt
+    ar: الإيصال
+    mk: сметката
+  rare: true
+reviews:
+- item: moment-mal
+  from: A1-14
+- item: der-muell
+  from: A1-14
+- item: trennen
+  from: A1-14
+- item: die-gelbe-tonne
+  from: A1-14
+- item: das-plastik
+  from: A1-14
+- item: das-papier
+  from: A1-14
+- item: die-blaue
+  from: A1-14
+- item: der-biomuell
+  from: A1-14
+- item: der-restmuell
+  from: A1-14
+- item: das-glas
+  from: A1-14
+- item: bringen-sie
+  from: A1-14
+- item: zum-container
+  from: A1-14
+- item: der-verein
+  from: A1-30
+- item: das-training
+  from: A1-30
+- item: mitglied
+  from: A1-30
+- item: probetraining
+  from: A1-30
+- item: mitmachen
+  from: A1-30
+- item: schnell
+  from: A1-30
+- item: anstrengend
+  from: A1-30
+- item: die-umkleide
+  from: A1-30
+- item: die-sporthalle
+  from: A1-30
+- item: das-naechste-training
+  from: A1-30
+- item: das-buddy-programm-e
+  from: A2-08-e
+  for:
+  - en
+- item: die-anmeldung-e
+  from: A2-08-e
+  for:
+  - en
+- item: die-wohnung-suche-e
+  from: A2-08-e
+  for:
+  - en
+- item: das-tutorium-e
+  from: A2-08-e
+  for:
+  - en
+- item: die-beratung-e
+  from: A2-08-e
+  for:
+  - en
+- item: die-einladung-e
+  from: A2-08-e
+  for:
+  - en
+- item: kennenlernen-e
+  from: A2-08-e
+  for:
+  - en
+- item: fragen-stellen-e
+  from: A2-08-e
+  for:
+  - en
+- item: hilfe-brauchen-e
+  from: A2-08-e
+  for:
+  - en
+- item: die-erfahrung-e
+  from: A2-08-e
+  for:
+  - en
+- item: die-hitze
+  from: A2-12
+- item: heisser-als
+  from: A2-12
+- item: schwitzen
+  from: A2-12
+- item: der-ventilator
+  from: A2-12
+- item: keine-klimaanlage
+  from: A2-12
+- item: ausverkauft
+  from: A2-12
+- item: die-vorhaenge
+  from: A2-12
+- item: noch-hell
+  from: A2-12
+- item: am-laengsten
+  from: A2-12
+- item: die-nacht-kurz
+  from: A2-12
+- item: der-weihnachtsmarkt
+  from: A2-14
+- item: der-gluehwein
+  from: A2-14
+- item: ohne-alkohol
+  from: A2-14
+- item: der-kinderpunsch
+  from: A2-14
+- item: die-bratwurst
+  from: A2-14
+- item: wenn
+  from: A2-14
+- item: die-tasse
+  from: A2-14
+- item: das-pfand-tasse
+  from: A2-14
+- item: voll
+  from: A2-14
+- item: die-lichter
+  from: A2-14
+- item: der-elternabend-a
+  from: A2-08-a
+  for:
+  - ar
+- item: das-laternenfest-a
+  from: A2-08-a
+  for:
+  - ar
+- item: die-laterne-a
+  from: A2-08-a
+  for:
+  - ar
+- item: basteln-a
+  from: A2-08-a
+  for:
+  - ar
+- item: mitbringen-a
+  from: A2-08-a
+  for:
+  - ar
+- item: die-einladung-a
+  from: A2-08-a
+  for:
+  - ar
+- item: die-liste-a
+  from: A2-08-a
+  for:
+  - ar
+- item: ohne-schwein-a
+  from: A2-08-a
+  for:
+  - ar
+- item: die-ueberraschung-a
+  from: A2-08-a
+  for:
+  - ar
+- item: die-erzieherin-a-a
+  from: A2-08-a
+  for:
+  - ar
+- item: das-laternenfest-m
+  from: A2-08-m
+  for:
+  - mk
+- item: die-laterne-m
+  from: A2-08-m
+  for:
+  - mk
+- item: basteln-m
+  from: A2-08-m
+  for:
+  - mk
+- item: singen-m
+  from: A2-08-m
+  for:
+  - mk
+- item: mitbringen-m
+  from: A2-08-m
+  for:
+  - mk
+- item: die-einladung-m
+  from: A2-08-m
+  for:
+  - mk
+- item: die-ueberraschung-m
+  from: A2-08-m
+  for:
+  - mk
+- item: der-umzug-m
+  from: A2-08-m
+  for:
+  - mk
+- item: kerze-m
+  from: A2-08-m
+  for:
+  - mk
+- item: die-vorbereitung-m
+  from: A2-08-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: The January sales. A winter jacket, thirty per cent off — or is it? Listen to the conversation; you don't need to understand it yet.
+    ar: تخفيضات يناير. سترة شتوية بخصم ثلاثين بالمئة — أو هكذا يبدو؟ استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.
+    mk: Јануарски попусти. Зимска јакна, триесет проценти попуст — или не? Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Die Jacke ist reduziert? Dreißig Prozent Rabatt?
+    meaning:
+      en: The jacket is reduced? Thirty per cent off?
+      ar: السترة مخفّضة؟ خصم ثلاثين بالمئة؟
+      mk: Јакната е намалена? Триесет проценти попуст?
+  - speaker: kasse
+    text: Ja, der alte Preis war hundert Euro.
+    meaning:
+      en: Yes, the old price was a hundred euros.
+      ar: نعم، السعر القديم كان مئة يورو.
+      mk: Да, старата цена беше сто евра.
+  - speaker: protagonist
+    text: Dann ist der neue Preis siebzig Euro.
+    meaning:
+      en: Then the new price is seventy euros.
+      ar: إذن السعر الجديد سبعون يورو.
+      mk: Тогаш новата цена е седумдесет евра.
+  - speaker: kasse
+    text: Genau. An der Kasse bekommen Sie noch zehn Prozent.
+    meaning:
+      en: Exactly. At the till you get another ten per cent.
+      ar: بالضبط. وعند الصندوق تحصلين على عشرة بالمئة إضافية.
+      mk: Точно. На касата добивате уште десет проценти.
+  - speaker: protagonist
+    text: Zehn Prozent von siebzig — dreiundsechzig Euro. Stimmt das?
+    meaning:
+      en: Ten per cent of seventy — sixty-three euros. Is that right?
+      ar: عشرة بالمئة من سبعين — ثلاثة وستون يورو. هل هذا صحيح؟
+      mk: Десет проценти од седумдесет — шеесет и три евра. Точно ли е?
+  - speaker: kasse
+    text: Stimmt! Fast die Hälfte.
+    meaning:
+      en: Right! Almost half price.
+      ar: صحيح! تقريبًا النصف.
+      mk: Точно! Речиси половина.
+  - speaker: protagonist
+    text: Kann ich die Jacke umtauschen?
+    meaning:
+      en: Can I exchange the jacket?
+      ar: هل يمكنني استبدال السترة؟
+      mk: Може ли да ја заменам јакната?
+  - speaker: kasse
+    text: Innerhalb von zwei Wochen, mit dem Kassenbon.
+    meaning:
+      en: Within two weeks, with the receipt.
+      ar: خلال أسبوعين، مع الإيصال.
+      mk: Во рок од две недели, со сметката.
+- type: prompt
+  ask:
+    en: 'Ask: is the jacket reduced?'
+    ar: 'اسألي: هل السترة مخفّضة؟'
+    mk: 'Прашајте: дали јакната е намалена?'
+  answer:
+    speaker: protagonist
+    text: Ist die Jacke reduziert?
+  items:
+  - reduziert
+- type: prompt
+  ask:
+    en: 'Say: thirty per cent off.'
+    ar: 'قولي: خصم ثلاثين بالمئة.'
+    mk: 'Кажете: триесет проценти попуст.'
+  answer:
+    speaker: protagonist
+    text: Dreißig Prozent Rabatt.
+  items:
+  - prozent
+  - der-rabatt
+- type: prompt
+  ask:
+    en: 'Say: the old price was a hundred euros.'
+    ar: 'قولي: السعر القديم كان مئة يورو.'
+    mk: 'Кажете: старата цена беше сто евра.'
+  answer:
+    speaker: protagonist
+    text: Der alte Preis war hundert Euro.
+  items:
+  - der-alte-preis
+- type: prompt
+  ask:
+    en: 'Say: the new price is seventy euros.'
+    ar: 'قولي: السعر الجديد سبعون يورو.'
+    mk: 'Кажете: новата цена е седумдесет евра.'
+  answer:
+    speaker: protagonist
+    text: Der neue Preis ist siebzig Euro.
+  items:
+  - der-neue-preis
+- type: prompt
+  ask:
+    en: 'Say: at the till.'
+    ar: 'قولي: عند الصندوق.'
+    mk: 'Кажете: на касата.'
+  answer:
+    speaker: protagonist
+    text: An der Kasse.
+  items:
+  - an-der-kasse
+- type: prompt
+  ask:
+    en: 'Ask: is that right?'
+    ar: 'اسألي: هل هذا صحيح؟'
+    mk: 'Прашајте: дали е точно?'
+  answer:
+    speaker: protagonist
+    text: Stimmt das?
+  items:
+  - stimmt-das
+- type: prompt
+  ask:
+    en: 'Say: almost half.'
+    ar: 'قولي: تقريبًا النصف.'
+    mk: 'Кажете: речиси половина.'
+  answer:
+    speaker: protagonist
+    text: Fast die Hälfte.
+  items:
+  - die-haelfte
+- type: prompt
+  ask:
+    en: 'Ask: can I exchange it?'
+    ar: 'اسألي: هل يمكنني استبداله؟'
+    mk: 'Прашајте: може ли да ја заменам?'
+  answer:
+    speaker: protagonist
+    text: Kann ich sie umtauschen?
+  items:
+  - umtauschen
+- type: prompt
+  ask:
+    en: 'She says: with the receipt.'
+    ar: 'تقول: مع الإيصال.'
+    mk: 'Таа вели: со сметката.'
+  answer:
+    speaker: protagonist
+    text: Mit dem Kassenbon.
+  items:
+  - der-kassenbon
+- type: narrator
+  text:
+    en: 'Two discounts multiply, they don''t add: 30 % and then 10 % is 37 % off, not 40 %. Shops aren''t obliged to exchange goods bought in person, but most do with the receipt — ask before you pay.'
+    ar: 'الخصمان يُضربان ولا يُجمعان: 30 % ثم 10 % تساوي 37 %، لا 40 %. والمحلات غير ملزمة باستبدال ما يُشترى حضوريًا، لكن أغلبها يستبدل مع الإيصال — اسألي قبل الدفع.'
+    mk: 'Два попусти се множат, не се собираат: 30 % па 10 % е 37 %, не 40 %. Продавниците не мора да заменуваат стока купена лично, но повеќето заменуваат со сметка — прашајте пред да платите.'
+- type: prompt
+  ask:
+    en: 'Once more: say “the discount”.'
+    ar: 'مرة أخرى: قولي “الخصم”.'
+    mk: 'Уште еднаш: кажете „попустот“.'
+  answer:
+    speaker: protagonist
+    text: der Rabatt
+  items:
+  - der-rabatt
+- type: prompt
+  ask:
+    en: 'Once more: say “per cent”.'
+    ar: 'مرة أخرى: قولي “بالمئة”.'
+    mk: 'Уште еднаш: кажете „проценти“.'
+  answer:
+    speaker: protagonist
+    text: Prozent
+  items:
+  - prozent
+- type: prompt
+  ask:
+    en: 'Once more: say “reduced”.'
+    ar: 'مرة أخرى: قولي “مخفّض”.'
+    mk: 'Уште еднаш: кажете „намалено“.'
+  answer:
+    speaker: protagonist
+    text: reduziert
+  items:
+  - reduziert
+- type: prompt
+  ask:
+    en: 'Once more: say “half”.'
+    ar: 'مرة أخرى: قولي “النصف”.'
+    mk: 'Уште еднаш: кажете „половина“.'
+  answer:
+    speaker: protagonist
+    text: die Hälfte
+  items:
+  - die-haelfte
+- type: prompt
+  ask:
+    en: 'Once more: say “the old price”.'
+    ar: 'مرة أخرى: قولي “السعر القديم”.'
+    mk: 'Уште еднаш: кажете „старата цена“.'
+  answer:
+    speaker: protagonist
+    text: der alte Preis
+  items:
+  - der-alte-preis
+- type: prompt
+  ask:
+    en: 'Once more: say “the new price”.'
+    ar: 'مرة أخرى: قولي “السعر الجديد”.'
+    mk: 'Уште еднаш: кажете „новата цена“.'
+  answer:
+    speaker: protagonist
+    text: der neue Preis
+  items:
+  - der-neue-preis
+- type: prompt
+  ask:
+    en: 'Once more: say “at the till”.'
+    ar: 'مرة أخرى: قولي “عند الصندوق”.'
+    mk: 'Уште еднаш: кажете „на касата“.'
+  answer:
+    speaker: protagonist
+    text: an der Kasse
+  items:
+  - an-der-kasse
+- type: prompt
+  ask:
+    en: 'Once more: say “Is that right?”.'
+    ar: 'مرة أخرى: قولي “هل هذا صحيح؟”.'
+    mk: 'Уште еднаш: кажете „Дали е точно?“.'
+  answer:
+    speaker: protagonist
+    text: Stimmt das?
+  items:
+  - stimmt-das
+- type: prompt
+  ask:
+    en: 'Once more: say “exchange (an item)”.'
+    ar: 'مرة أخرى: قولي “يستبدل”.'
+    mk: 'Уште еднаш: кажете „заменува“.'
+  answer:
+    speaker: protagonist
+    text: umtauschen
+  items:
+  - umtauschen
+- type: prompt
+  ask:
+    en: 'Once more: say “the receipt”.'
+    ar: 'مرة أخرى: قولي “الإيصال”.'
+    mk: 'Уште еднаш: кажете „сметката“.'
+  answer:
+    speaker: protagonist
+    text: den Kassenbon
+  items:
+  - der-kassenbon
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the Christmas market — and “mulled wine — and “alcohol-free — and “children''s punch (no alcohol) — and “the grilled sausage — and “if, when (verb to the end) — and “the mug — and “a deposit
+      on the mug — and “full, crowded — and “the lights — and “the heat — and “hotter than — and “sweat — and “the fan”.'
+    ar: 'قولي: “سوق عيد الميلاد — و“النبيذ الساخن — و“بلا كحول — و“بنش الأطفال (بلا كحول) — و“النقانق المشوية — و“إذا (الفعل في الآخر) — و“الكوب — و“تأمين على الكوب — و“مزدحم — و“الأضواء — و“الحرّ — و“أحرّ
+      من — و“يعرق — و“المروحة”.'
+    mk: 'Кажете: „божиќниот пазар“ — и „вареното вино“ — и „без алкохол“ — и „детски пунч“ — и „колбасот на скара“ — и „ако, кога (глаголот на крај)“ — и „шолјата“ — и „кауција за шолјата“ — и „полно“ —
+      и „светлата“ — и „жештината“ — и „пожешко од“ — и „се потам“ — и „вентилаторот“.'
+  answer:
+    speaker: protagonist
+    text: der Weihnachtsmarkt … der Glühwein … ohne Alkohol … der Kinderpunsch … die Bratwurst … wenn … die Tasse … Pfand für die Tasse … voll … die Lichter … die Hitze … heißer als … schwitzen … der Ventilator
+  items:
+  - der-weihnachtsmarkt
+  - der-gluehwein
+  - ohne-alkohol
+  - der-kinderpunsch
+  - die-bratwurst
+  - wenn
+  - die-tasse
+  - das-pfand-tasse
+  - voll
+  - die-lichter
+  - die-hitze
+  - heisser-als
+  - schwitzen
+  - der-ventilator
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “no air conditioning — and “sold out — and “the curtains — and “still light — and “the longest — and “the night is short — and “the club — and “training — and “member — and “a trial session
+      — and “join in — and “fast — and “tiring, hard — and “the changing room”.'
+    ar: 'قولي: “لا مكيّف — و“نفد — و“الستائر — و“ما زال مضيئًا — و“الأطول — و“الليل قصير — و“النادي — و“التمرين — و“عضو — و“تمرين تجريبي — و“يشارك — و“سريع — و“متعب — و“غرفة تغيير الملابس”.'
+    mk: 'Кажете: „нема клима“ — и „распродадено“ — и „завесите“ — и „уште светло“ — и „најдолго“ — и „ноќта е кратка“ — и „клубот“ — и „тренингот“ — и „член“ — и „пробен тренинг“ — и „учествува“ — и „брзо“
+      — и „напорно“ — и „соблекувалната“.'
+  answer:
+    speaker: protagonist
+    text: keine Klimaanlage … ausverkauft … die Vorhänge … noch hell … am längsten … die Nacht ist kurz … der Verein … das Training … Mitglied … ein Probetraining … mitmachen … schnell … anstrengend … die
+      Umkleide
+  items:
+  - keine-klimaanlage
+  - ausverkauft
+  - die-vorhaenge
+  - noch-hell
+  - am-laengsten
+  - die-nacht-kurz
+  - der-verein
+  - das-training
+  - mitglied
+  - probetraining
+  - mitmachen
+  - schnell
+  - anstrengend
+  - die-umkleide
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the sports hall — and “the next training — and “Hang on a moment! — and “the rubbish — and “separate, sort — and “the yellow bin (packaging) — and “plastic — and “paper — and “the blue one
+      — and “food waste — and “general waste — and “glass — and “Take … (polite command) — and “to the container”.'
+    ar: 'قولي: “الصالة الرياضية — و“التمرين القادم — و“لحظة من فضلك! — و“النفايات — و“يفرز — و“الحاوية الصفراء (التغليف) — و“البلاستيك — و“الورق — و“الزرقاء — و“النفايات العضوية — و“بقية النفايات — و“الزجاج
+      — و“خذ … (أمر مؤدب) — و“إلى الحاوية”.'
+    mk: 'Кажете: „спортската сала“ — и „следниот тренинг“ — и „Чекајте малку!“ — и „ѓубрето“ — и „одвојува“ — и „жолтиот контејнер (амбалажа)“ — и „пластиката“ — и „хартијата“ — и „синиот“ — и „органскиот
+      отпад“ — и „останатиот отпад“ — и „стаклото“ — и „Однесете …“ — и „до контејнерот“.'
+  answer:
+    speaker: protagonist
+    text: die Sporthalle … das nächste Training … Moment mal! … der Müll … trennen … die gelbe Tonne … das Plastik … das Papier … die blaue … der Biomüll … der Restmüll … das Glas … Bringen Sie … … zum
+      Container
+  items:
+  - die-sporthalle
+  - das-naechste-training
+  - moment-mal
+  - der-muell
+  - trennen
+  - die-gelbe-tonne
+  - das-plastik
+  - das-papier
+  - die-blaue
+  - der-biomuell
+  - der-restmuell
+  - das-glas
+  - bringen-sie
+  - zum-container
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the buddy programme — and “the registration — and “the flat hunt — and “the tutorial”.'
+  answer:
+    speaker: protagonist
+    text: das Buddy-Programm … die Anmeldung … die Wohnungssuche … das Tutorium
+  items:
+  - das-buddy-programm-e
+  - die-anmeldung-e
+  - die-wohnung-suche-e
+  - das-tutorium-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “advice, counselling — and “the invitation — and “get to know — and “ask questions”.'
+  answer:
+    speaker: protagonist
+    text: die Beratung … die Einladung … kennenlernen … Fragen stellen
+  items:
+  - die-beratung-e
+  - die-einladung-e
+  - kennenlernen-e
+  - fragen-stellen-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “need help — and “the experience”.'
+  answer:
+    speaker: protagonist
+    text: Hilfe brauchen … die Erfahrung
+  items:
+  - hilfe-brauchen-e
+  - die-erfahrung-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “أمسية أولياء الأمور — و“احتفال الفوانيس — و“الفانوس — و“يصنع يدويًا”.'
+  answer:
+    speaker: protagonist
+    text: der Elternabend … das Laternenfest … die Laterne … basteln
+  items:
+  - der-elternabend-a
+  - das-laternenfest-a
+  - die-laterne-a
+  - basteln-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “يُحضر معه — و“الدعوة — و“القائمة — و“بلا لحم خنزير”.'
+  answer:
+    speaker: protagonist
+    text: mitbringen … die Einladung … die Liste … ohne Schweinefleisch
+  items:
+  - mitbringen-a
+  - die-einladung-a
+  - die-liste-a
+  - ohne-schwein-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “المفاجأة — و“المربيات”.'
+  answer:
+    speaker: protagonist
+    text: die Überraschung … die Erzieherinnen
+  items:
+  - die-ueberraschung-a
+  - die-erzieherin-a-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „празникот на фенерите“ — и „фенерот“ — и „изработува рачно“ — и „пеат“.'
+  answer:
+    speaker: protagonist
+    text: das Laternenfest … die Laterne … basteln … singen
+  items:
+  - das-laternenfest-m
+  - die-laterne-m
+  - basteln-m
+  - singen-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „носи со себе“ — и „поканата“ — и „изненадувањето“ — и „поворката“.'
+  answer:
+    speaker: protagonist
+    text: mitbringen … die Einladung … die Überraschung … der Umzug
+  items:
+  - mitbringen-m
+  - die-einladung-m
+  - die-ueberraschung-m
+  - der-umzug-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „свеќата“ — и „подготовката“.'
+  answer:
+    speaker: protagonist
+    text: die Kerze … die Vorbereitung
+  items:
+  - kerze-m
+  - die-vorbereitung-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck
