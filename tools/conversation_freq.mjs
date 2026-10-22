@@ -15,13 +15,29 @@ import { fileURLToPath } from 'node:url';
 
 const WORD = /[\p{L}\p{M}]+/gu;
 const EARLY = new Set(['A1', 'A2']);
-const CLOSED = new Set(['pron', 'det', 'conj', 'prep', 'particle', 'num']);
+const CLOSED = new Set(['pron', 'det', 'conj', 'prep', 'particle', 'num', 'aux', 'interj']);   // greetings are core too
+// the Japanese list is JLPT vocabulary: it leaves out the copula and polite endings, which every A1 sentence uses
+const GRAMMAR = new Set(['だ', 'です', 'でした', 'ます', 'ござる', 'ございます']);
+
+/** a headword listed twice (明日 as あした N5 and あす N4) keeps its best rank */
+export function rankMap(freq, bare) {
+  const m = new Map();
+  const put = (k, r) => { if (!m.has(k) || r < m.get(k)) m.set(k, r); };
+  for (const f of freq) { put(bare(f.w), f.rank); if (f.reading) put(bare(f.reading), f.rank); }   // Japanese: 御飯 = ごはん
+  return m;
+}
+
+/** the words of an item; Japanese text has no spaces after the build, its word boundaries are in readings[text].rt */
+export function itemWords(text, readings = {}) {
+  const rt = readings[text]?.rt;
+  return rt ? rt.map(([w]) => w).filter((w) => WORD.test(w) && (WORD.lastIndex = 0, true)) : text.match(WORD) ?? [];
+}
 
 /** words of `text` whose best lemma is not among the top `top` (names aside) */
-export async function rareWords(text, rankOf, { names = [], top = 1000 } = {}) {
-  const skip = new Set(names.flatMap((n) => n.match(WORD) ?? []));
+export async function rareWords(text, rankOf, { names = [], top = 1000, readings = {} } = {}) {
+  const skip = new Set(names.flatMap((n) => n.match(WORD) ?? []).flatMap((w) => [w, w.replace(/さん$/, '')]));
   const out = [];
-  for (const w of text.match(WORD) ?? []) {
+  for (const w of itemWords(text, readings)) {
     if (skip.has(w)) continue;
     const r = await rankOf(w);
     if (r == null || r > top) out.push(w);
@@ -51,15 +67,17 @@ async function main(code) {
   const freq = JSON.parse(await readFile(path.join(dataDir, 'frequency.json'), 'utf8'));
   const lemmas = JSON.parse(await readFile(path.join(dataDir, 'lemmas.json'), 'utf8'));
   const bare = (w) => String(w).replace(/\s*\(.*\)$/, '').replace(/^(der|die|das) /, '').toLowerCase();   // 'ден (m.)', 'der Tag'
-  const rankByHead = new Map(freq.map((f) => [bare(f.w), f.rank]));
+  const rankByHead = rankMap(freq, bare);
   const lexicon = createLexicon({ manifest: JSON.parse(await readFile(path.join(dataDir, 'manifest.json'), 'utf8')), codes: lang.inventory.codes, script: lang.script,
     fetchFile: async (n) => JSON.parse(await readFile(path.join(dataDir, n), 'utf8')),
     fetchShard: async (n) => JSON.parse(await readFile(path.join(dataDir, 'forms', `${n}.json`), 'utf8')) });
   const head = (id) => bare(lemmas[id]?.headword ?? lemmas[id]?.dict_form ?? '');
   const rankOf = async (w) => {
+    if (GRAMMAR.has(w)) return 1;
     const ranks = [rankByHead.get(w.toLowerCase())];
     for (const a of [...await lexicon.lookup(w), ...(w !== w.toLowerCase() ? await lexicon.lookup(w.toLowerCase()) : [])]) {
       if (CLOSED.has(a.pos)) return 1;                       // function words are frequent whatever list files them
+      if (GRAMMAR.has(head(a.lemma))) return 1;
       ranks.push(rankByHead.get(head(a.lemma)));
     }
     const known = ranks.filter((r) => r != null);
@@ -68,7 +86,7 @@ async function main(code) {
   const names = Object.values(course.cast ?? {}).map((c) => c.name ?? '');
   let warnings = 0;
   for (const u of course.units) {
-    const r = await unitReport(u, rankOf, { names });
+    const r = await unitReport(u, rankOf, { names, readings: course.readings ?? {}, top: freq.every((f) => f.level) ? freq.length : 1000 });
     if (r.warning) { console.log('warning:', r.warning); warnings += 1; }
     else if (r.rare.length) console.log(`${u.id}: rare (three or fewer, fine): ${r.rare.map((x) => x.words.join(' ')).join('; ')}`);
   }
