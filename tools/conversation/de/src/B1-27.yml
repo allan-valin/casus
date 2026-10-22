@@ -1,0 +1,41 @@
+id: B1-27
+protagonist: f
+title: ["Dialects", "اللهجات", "Дијалекти"]
+situation:
+  - "At the bakery an old woman speaks Saxon. You understand nothing. Frau Becker translates — and reports what she said."
+  - "في المخبز امرأة عجوز تتكلّم اللهجة السكسونية. لا تفهمين شيئًا. السيدة بيكر تترجم — وتنقل ما قالته."
+  - "Во пекарницата една старица зборува саксонски. Ништо не разбирате. Госпоѓа Бекер преведува — и пренесува што рекла."
+learn: [b1-indirect-speech]
+culture: Saxon and other dialects
+items:
+  - [der-dialekt, "der Dialekt", "the dialect", "اللهجة", "дијалектот"]
+  - [saechsisch, "Sächsisch", "Saxon (dialect)", "السكسونية", "саксонски"]
+  - [nu, "nu", "yes (Saxon)", "نعم (بالسكسونية)", "да (саксонски)"]
+  - [gaffee, "Gaffee", "coffee (Saxon)", "قهوة (بالسكسونية)", "кафе (саксонски)"]
+  - [sie-sagt-sie-sei, "sie sagt, sie sei …", "she says she is …", "تقول إنها …", "вели дека е …"]
+  - [sie-habe, "sie habe …", "she has (reported)", "إن لديها …", "дека има …"]
+  - [hochdeutsch, "Hochdeutsch", "standard German", "الألمانية الفصحى", "стандарден германски"]
+  - [kein-wort, "kein Wort", "not a word", "ولا كلمة", "ниту збор"]
+  - [gemuetlich, "gemütlich", "cosy, relaxed", "مريح، دافئ", "пријатно"]
+  - [der-akzent, "der Akzent", "the accent", "اللكنة", "акцентот"]
+dialogue:
+  - [baeckerin, "Nu, gännse mir ma ä Gäffchen machen?", "(Saxon) Right, could you make me a little coffee?", "(بالسكسونية) طيب، ممكن تعمليلي قهوة صغيرة؟", "(саксонски) Ајде, можете ли да ми направите едно кафенце?"]
+  - [protagonist, "Entschuldigung... ich verstehe kein Wort.", "Sorry... I don't understand a word.", "عذرًا... لا أفهم ولا كلمة.", "Извинете... не разбирам ниту збор."]
+  - [becker, "Das ist Sächsisch. Sie sagt, sie möchte einen Kaffee. „Nu“ heißt ja.", "That's Saxon. She says she'd like a coffee. 'Nu' means yes.", "هذه السكسونية. تقول إنها تريد قهوة. «Nu» تعني نعم.", "Тоа е саксонски. Вели дека сака кафе. „Nu“ значи да."]
+  - [protagonist, "Und was hat sie jetzt gesagt?", "And what did she just say?", "وماذا قالت الآن؟", "А што рече сега?"]
+  - [becker, "Sie sagt, sie sei aus Leipzig und habe nie Hochdeutsch gelernt.", "She says she's from Leipzig and never learned standard German.", "تقول إنها من لايبزيغ ولم تتعلّم الألمانية الفصحى قط.", "Вели дека е од Лајпциг и никогаш не научила стандарден германски."]
+  - [protagonist, "Sprechen alle hier so?", "Does everyone here speak like that?", "هل يتكلّم الجميع هنا هكذا؟", "Дали сите тука зборуваат така?"]
+  - [becker, "Die Älteren mehr. Die Jungen haben nur einen Akzent. Es klingt gemütlich, oder?", "Older people more. The young only have an accent. It sounds cosy, doesn't it?", "الكبار أكثر. والشباب لديهم لكنة فقط. يبدو الأمر دافئًا، أليس كذلك؟", "Постарите повеќе. Младите имаат само акцент. Звучи пријатно, нели?"]
+  - [protagonist, "Nu! Ich möchte auch einen Gaffee.", "Nu! I'd like a coffee too.", "Nu! أريد قهوة أنا أيضًا.", "Nu! И јас сакам едно кафе."]
+teach:
+  - ask: ["Say: I don't understand a word.", "قولي: لا أفهم ولا كلمة.", "Кажете: не разбирам ниту збор.", "Ich verstehe kein Wort.", kein-wort]
+  - ask: ["Say: that's Saxon.", "قولي: هذه السكسونية.", "Кажете: тоа е саксонски.", "Das ist Sächsisch.", saechsisch]
+  - ask: ["Say: a dialect.", "قولي: لهجة.", "Кажете: дијалект.", "Ein Dialekt.", der-dialekt]
+  - ask: ["Say 'yes' in Saxon.", "قولي «نعم» بالسكسونية.", "Кажете „да“ на саксонски.", "Nu.", nu]
+  - note: ["Reported speech uses Konjunktiv I, mostly in news and writing: «Sie sagt, sie sei aus Leipzig und habe nie Hochdeutsch gelernt». In everyday talk people often use the normal form: «Sie sagt, sie ist aus Leipzig».", "الكلام المنقول يستعمل صيغة Konjunktiv I، غالبًا في الأخبار والكتابة: «Sie sagt, sie sei aus Leipzig und habe nie Hochdeutsch gelernt». وفي الكلام اليومي يستعمل الناس غالبًا الصيغة العادية: «Sie sagt, sie ist aus Leipzig».", "Пренесениот говор користи Konjunktiv I, главно во вестите и пишувањето: «Sie sagt, sie sei aus Leipzig und habe nie Hochdeutsch gelernt». Во секојдневниот говор луѓето често користат обична форма: «Sie sagt, sie ist aus Leipzig»."]
+  - ask: ["Report: she says she's from Leipzig.", "انقلي: تقول إنها من لايبزيغ.", "Пренесете: вели дека е од Лајпциг.", "Sie sagt, sie sei aus Leipzig.", sie-sagt-sie-sei]
+  - ask: ["Report: she never learned standard German.", "انقلي: لم تتعلّم الألمانية الفصحى قط.", "Пренесете: никогаш не научила стандарден германски.", "Sie habe nie Hochdeutsch gelernt.", sie-habe, hochdeutsch]
+  - ask: ["Say: the young only have an accent.", "قولي: الشباب لديهم لكنة فقط.", "Кажете: младите имаат само акцент.", "Die Jungen haben nur einen Akzent.", der-akzent]
+  - ask: ["Say: it sounds cosy.", "قولي: يبدو الأمر دافئًا.", "Кажете: звучи пријатно.", "Es klingt gemütlich.", gemuetlich]
+  - ask: ["Order a coffee in Saxon.", "اطلبي قهوة بالسكسونية.", "Нарачајте кафе на саксонски.", "Einen Gaffee, bitte.", gaffee]
+  - note: ["Germany has many dialects: Saxon around Leipzig and Dresden softens k, p, t to g, b, d (Gaffee). Bavarian, Swabian and Low German sound different again. Everyone understands standard German; dialect is a sign of home, not of poor education — never mock it.", "في ألمانيا لهجات كثيرة: السكسونية حول لايبزيغ ودرسدن تليّن k وp وt إلى g وb وd (Gaffee). والبافارية والشوابية والألمانية السفلى تبدو مختلفة أيضًا. الجميع يفهم الفصحى؛ واللهجة علامة على الانتماء لا على قلة التعليم — لا تسخري منها أبدًا.", "Германија има многу дијалекти: саксонскиот околу Лајпциг и Дрезден ги омекнува k, p, t во g, b, d (Gaffee). Баварскиот, швапскиот и долногерманскиот звучат пак поинаку. Сите го разбираат стандардниот германски; дијалектот е знак на родно место, не на слабо образование — никогаш не се потсмевајте."]
