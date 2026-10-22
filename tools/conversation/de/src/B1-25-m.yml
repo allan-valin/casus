@@ -1,0 +1,38 @@
+id: B1-25-m
+tracks: [mk]
+protagonist: f
+title: ["Во кафулето на Стефан"]
+situation: ["Стефан, пријателот на Петар, има кафуле и му треба помош за колачите. Ве прашува дали би помогнале."]
+learn: [b1-imperative-du]
+culture: Helping out, officially
+items:
+  - [das-cafe, "das Café", "кафулето"]
+  - [aushelfen, "aushelfen", "помага привремено"]
+  - [die-packung, "aus der Packung", "од кутија"]
+  - [backen, "backen", "пече"]
+  - [der-minijob, "der Minijob", "мала работа (со ограничена заработка)"]
+  - [anmelden-job, "anmelden", "пријавува"]
+  - [schwarz-arbeiten, "schwarzarbeiten", "работи на црно"]
+  - [probier-mal, "probier mal", "проба (неформално)"]
+  - [bring-mit, "bring mit", "донеси (неформално)"]
+  - [das-rezept, "das Rezept", "рецептот"]
+dialogue:
+  - [stefan, "Petar sagt, Sie backen den besten Kuchen. Können Sie bei mir aushelfen?", "Петар вели дека го печете најдобриот колач. Можете ли да ми помогнете?"]
+  - [protagonist, "Gerne! Aber nenn mich einfach Baba. Hier, probier mal meine Baklava.", "Со задоволство! Но викај ме само баба. Еве, проба ја мојата баклава."]
+  - [stefan, "Unglaublich! Bring morgen das Rezept mit!", "Неверојатно! Донеси го рецептот утре!"]
+  - [protagonist, "Und das Geld? Ich will nicht schwarzarbeiten.", "А парите? Не сакам да работам на црно."]
+  - [stefan, "Natürlich nicht. Ich melde Sie als Minijob an.", "Се разбира не. Ќе ве пријавам како мала работа."]
+  - [protagonist, "Ist das ein Problem mit meiner Rente?", "Дали е тоа проблем со мојата пензија?"]
+  - [stefan, "Fragen Sie in Mazedonien nach. Petar hilft Ihnen.", "Прашајте во Македонија. Петар ќе ви помогне."]
+  - [protagonist, "Gut. Und du: back nie wieder Kuchen aus der Packung!", "Добро. А ти: никогаш повеќе не печи колач од кутија!"]
+teach:
+  - ask: ["Кажете: кафулето.", "Das Café.", das-cafe]
+  - ask: ["Тој прашува: можете ли да ми помогнете?", "Können Sie bei mir aushelfen?", aushelfen]
+  - ask: ["Кажете: го печам најдобриот колач.", "Ich backe den besten Kuchen.", backen, der-kuchen-m]
+  - note: ["Заповедниот начин за «du» ги испушта «-st» и «du»: «du probierst» → «Probier mal!»; «du bringst mit» → «Bring mit!». Одвоивиот дел оди на крајот."]
+  - ask: ["Кажете му: проба!", "Probier mal!", probier-mal]
+  - ask: ["Тој вели: донеси го рецептот!", "Bring das Rezept mit!", bring-mit, das-rezept]
+  - ask: ["Кажете: не сакам да работам на црно.", "Ich will nicht schwarzarbeiten.", schwarz-arbeiten]
+  - ask: ["Тој вели: ќе ве пријавам како мала работа.", "Ich melde Sie als Minijob an.", anmelden-job, der-minijob]
+  - ask: ["Кажете: колач од кутија.", "Kuchen aus der Packung.", die-packung]
+  - note: ["И малата помош во кафуле е работа: таа треба да се пријави (на пример како Minijob), инаку е работа на црно, што е казнива за двајцата. Како граѓанка на ЕУ смеете да работите. Дали заработката влијае на пензијата од Македонија, прашајте таму. Правилата се менуваат — проверете."]
