@@ -1,0 +1,476 @@
+# UNIT de A2-23-a — written by AI (Claude) for Casus; expanded from src/A2-23-a.yml by tools/expand_unit.py. Edit the source.
+
+id: A2-23-a
+level: A2
+number: 23
+protagonist: f
+tracks:
+- ar
+title:
+  ar: تسجيل المدرسة
+situation:
+  ar: ابن أختكِ عمر، سبع سنوات، وصل مع عائلته. تذهبين مع أختكِ لتسجيله في المدرسة.
+learn_lessons:
+- a2-perfekt-irregular
+culture: Compulsory schooling
+new_items:
+- id: die-schule-a
+  text: die Schule
+  meaning:
+    ar: المدرسة
+- id: anmelden-schule-a
+  text: anmelden
+  meaning:
+    ar: يسجّل
+- id: die-schulpflicht-a
+  text: die Schulpflicht
+  meaning:
+    ar: التعليم الإلزامي
+  rare: true
+- id: die-klasse-a
+  text: die Klasse
+  meaning:
+    ar: الصف
+- id: die-willkommensklasse-a
+  text: die Willkommensklasse
+  meaning:
+    ar: صف الترحيب (للقادمين الجدد)
+  rare: true
+- id: ist-angekommen-a
+  text: ist … angekommen
+  meaning:
+    ar: وصل
+- id: hat-gelernt-a
+  text: hat … gelernt
+  meaning:
+    ar: تعلّم
+- id: der-lehrer-a
+  text: der Lehrer
+  meaning:
+    ar: المعلم
+- id: der-schulweg-a
+  text: der Schulweg
+  meaning:
+    ar: الطريق إلى المدرسة
+  rare: true
+- id: ab-montag-a
+  text: ab Montag
+  meaning:
+    ar: ابتداءً من الاثنين
+reviews:
+- item: wie-spaet-ist-es-a
+  from: A1-22-a
+- item: halb-fuenf-a
+  from: A1-22-a
+- item: viertel-vor-a
+  from: A1-22-a
+- item: viertel-nach-a
+  from: A1-22-a
+- item: puenktlich-a-a
+  from: A1-22-a
+- item: zu-spaet-a
+  from: A1-22-a
+- item: die-verspaetung-a
+  from: A1-22-a
+- item: rufen-sie-an-a
+  from: A1-22-a
+- item: das-naechste-mal-a
+  from: A1-22-a
+- item: es-tut-mir-leid-a
+  from: A1-22-a
+- item: der-elternabend-a
+  from: A2-08-a
+- item: das-laternenfest-a
+  from: A2-08-a
+- item: die-laterne-a
+  from: A2-08-a
+- item: basteln-a
+  from: A2-08-a
+- item: mitbringen-a
+  from: A2-08-a
+- item: die-einladung-a
+  from: A2-08-a
+- item: die-liste-a
+  from: A2-08-a
+- item: ohne-schwein-a
+  from: A2-08-a
+- item: die-ueberraschung-a
+  from: A2-08-a
+- item: die-erzieherin-a-a
+  from: A2-08-a
+- item: der-antrag-a
+  from: A2-16-a
+- item: die-familienkasse-a
+  from: A2-16-a
+- item: die-geburtsurkunde-a
+  from: A2-16-a
+- item: uebersetzt-a
+  from: A2-16-a
+- item: war-a
+  from: A2-16-a
+- item: hatte-a
+  from: A2-16-a
+- item: die-steuer-id-kind-a
+  from: A2-16-a
+- item: rueckwirkend-a
+  from: A2-16-a
+- item: die-bearbeitung-a
+  from: A2-16-a
+- item: der-bescheid-a
+  from: A2-16-a
+- item: sich-treffen-a
+  from: A2-20-a
+- item: ich-freue-mich-a
+  from: A2-20-a
+- item: nach-der-arbeit-a
+  from: A2-20-a
+- item: ich-trinke-keinen-a
+  from: A2-20-a
+- item: eine-limo-a
+  from: A2-20-a
+- item: die-kollegen-a
+  from: A2-20-a
+- item: sich-unterhalten-a
+  from: A2-20-a
+- item: entspannt-a
+  from: A2-20-a
+- item: nicht-so-spaet-a
+  from: A2-20-a
+- item: ich-muss-los-a
+  from: A2-20-a
+- item: die-einladung-a-a
+  from: A2-22-a
+- item: am-sonntag-um-a
+  from: A2-22-a
+- item: sollen-wir-a
+  from: A2-22-a
+- item: etwas-mitbringen-a
+  from: A2-22-a
+- item: nur-sie-selbst-a
+  from: A2-22-a
+- item: blumen-a
+  from: A2-22-a
+- item: pralinen-a
+  from: A2-22-a
+- item: puenktlich-um-drei-a
+  from: A2-22-a
+- item: wir-kommen-gern-a
+  from: A2-22-a
+- item: wir-freuen-uns-a-a
+  from: A2-22-a
+steps:
+- type: narrator
+  text:
+    ar: ابن أختكِ عمر، سبع سنوات، وصل مع عائلته. تذهبين مع أختكِ لتسجيله في المدرسة. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.
+- type: dialogue
+  lines:
+  - speaker: lehrerin
+    text: Guten Morgen. Sie möchten ein Kind anmelden?
+    meaning:
+      ar: صباح الخير. تريدين تسجيل طفل؟
+  - speaker: protagonist
+    text: Ja, meinen Neffen Omar. Er ist letzte Woche angekommen.
+    meaning:
+      ar: نعم، ابن أختي عمر. وصل الأسبوع الماضي.
+  - speaker: lehrerin
+    text: Wie alt ist er?
+    meaning:
+      ar: كم عمره؟
+  - speaker: protagonist
+    text: Sieben. Er hat in Syrien zwei Jahre Schule gehabt.
+    meaning:
+      ar: سبع سنوات. درس سنتين في سوريا.
+  - speaker: lehrerin
+    text: Hat er schon Deutsch gelernt?
+    meaning:
+      ar: هل تعلّم الألمانية؟
+  - speaker: protagonist
+    text: Nein, noch nicht.
+    meaning:
+      ar: لا، ليس بعد.
+  - speaker: lehrerin
+    text: Dann kommt er zuerst in die Willkommensklasse. Dort lernt er Deutsch.
+    meaning:
+      ar: إذن يدخل أولًا صف الترحيب. هناك يتعلّم الألمانية.
+  - speaker: protagonist
+    text: Muss er sofort in die Schule?
+    meaning:
+      ar: هل يجب أن يذهب إلى المدرسة فورًا؟
+  - speaker: lehrerin
+    text: Ja, in Deutschland gibt es Schulpflicht. Ab Montag!
+    meaning:
+      ar: نعم، في ألمانيا التعليم إلزامي. ابتداءً من الاثنين!
+- type: prompt
+  ask:
+    ar: 'قولي: أريد تسجيل ابن أختي.'
+  answer:
+    speaker: protagonist
+    text: Ich möchte meinen Neffen anmelden.
+  items:
+  - anmelden-schule-a
+- type: prompt
+  ask:
+    ar: 'قولي: المدرسة.'
+  answer:
+    speaker: protagonist
+    text: Die Schule.
+  items:
+  - die-schule-a
+- type: narrator
+  text:
+    ar: 'كثير من أسماء المفعول شاذة: «angekommen» (وصل)، «gelernt» (تعلّم)، «gehabt» (كان عنده). احفظيها مع الفعل.'
+- type: prompt
+  ask:
+    ar: 'قولي: وصل الأسبوع الماضي.'
+  answer:
+    speaker: protagonist
+    text: Er ist letzte Woche angekommen.
+  items:
+  - ist-angekommen-a
+- type: prompt
+  ask:
+    ar: 'تسأل: هل تعلّم الألمانية؟'
+  answer:
+    speaker: protagonist
+    text: Hat er schon Deutsch gelernt?
+  items:
+  - hat-gelernt-a
+- type: prompt
+  ask:
+    ar: 'قولي: صف الترحيب.'
+  answer:
+    speaker: protagonist
+    text: Die Willkommensklasse.
+  items:
+  - die-willkommensklasse-a
+- type: prompt
+  ask:
+    ar: 'قولي: الصف.'
+  answer:
+    speaker: protagonist
+    text: Die Klasse.
+  items:
+  - die-klasse-a
+- type: prompt
+  ask:
+    ar: 'قولي: التعليم الإلزامي.'
+  answer:
+    speaker: protagonist
+    text: Die Schulpflicht.
+  items:
+  - die-schulpflicht-a
+- type: prompt
+  ask:
+    ar: 'قولي: ابتداءً من الاثنين.'
+  answer:
+    speaker: protagonist
+    text: Ab Montag.
+  items:
+  - ab-montag-a
+- type: prompt
+  ask:
+    ar: 'قولي: المعلم.'
+  answer:
+    speaker: protagonist
+    text: Der Lehrer.
+  items:
+  - der-lehrer-a
+- type: prompt
+  ask:
+    ar: 'قولي: الطريق إلى المدرسة.'
+  answer:
+    speaker: protagonist
+    text: Der Schulweg.
+  items:
+  - der-schulweg-a
+- type: narrator
+  text:
+    ar: التعليم إلزامي في ألمانيا لكل الأطفال المقيمين، والتعليم المنزلي غير مسموح. القادمون الجدد يدخلون غالبًا «صف الترحيب» لتعلّم الألمانية أولًا. القواعد تختلف من ولاية لأخرى — اسألي في المدرسة أو في
+      البلدية.
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “المدرسة”.'
+  answer:
+    speaker: protagonist
+    text: die Schule
+  items:
+  - die-schule-a
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “يسجّل”.'
+  answer:
+    speaker: protagonist
+    text: anmelden
+  items:
+  - anmelden-schule-a
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “التعليم الإلزامي”.'
+  answer:
+    speaker: protagonist
+    text: die Schulpflicht
+  items:
+  - die-schulpflicht-a
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “الصف”.'
+  answer:
+    speaker: protagonist
+    text: die Klasse
+  items:
+  - die-klasse-a
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “صف الترحيب (للقادمين الجدد)”.'
+  answer:
+    speaker: protagonist
+    text: die Willkommensklasse
+  items:
+  - die-willkommensklasse-a
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “وصل”.'
+  answer:
+    speaker: protagonist
+    text: ist … angekommen
+  items:
+  - ist-angekommen-a
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “تعلّم”.'
+  answer:
+    speaker: protagonist
+    text: hat … gelernt
+  items:
+  - hat-gelernt-a
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “المعلم”.'
+  answer:
+    speaker: protagonist
+    text: der Lehrer
+  items:
+  - der-lehrer-a
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “الطريق إلى المدرسة”.'
+  answer:
+    speaker: protagonist
+    text: der Schulweg
+  items:
+  - der-schulweg-a
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “ابتداءً من الاثنين”.'
+  answer:
+    speaker: protagonist
+    text: ab Montag
+  items:
+  - ab-montag-a
+- type: narrator
+  text:
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “الدعوة — و“يوم الأحد في الثالثة — و“هل نـ…؟ (ماذا تريدين أن نفعل) — و“نحضر شيئًا معنا — و“فقط أنتم — و“أزهار — و“شوكولاتة — و“في الثالثة تمامًا — و“نأتي بكل سرور”.'
+  answer:
+    speaker: protagonist
+    text: die Einladung … am Sonntag um drei … Sollen wir …? … etwas mitbringen … nur Sie selbst … Blumen … Pralinen … pünktlich um drei … Wir kommen gern
+  items:
+  - die-einladung-a-a
+  - am-sonntag-um-a
+  - sollen-wir-a
+  - etwas-mitbringen-a
+  - nur-sie-selbst-a
+  - blumen-a
+  - pralinen-a
+  - puenktlich-um-drei-a
+  - wir-kommen-gern-a
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “يسعدنا ذلك — و“نلتقي — و“يسعدني، أتطلّع — و“بعد العمل — و“لا أشرب الكحول — و“مشروب غازي (ليموناضة) — و“الزملاء — و“نتحدث، ندردش — و“مسترخٍ، هادئ”.'
+  answer:
+    speaker: protagonist
+    text: Wir freuen uns … wir treffen uns … ich freue mich … nach der Arbeit … ich trinke keinen Alkohol … eine Limo … die Kollegen … wir unterhalten uns … entspannt
+  items:
+  - wir-freuen-uns-a-a
+  - sich-treffen-a
+  - ich-freue-mich-a
+  - nach-der-arbeit-a
+  - ich-trinke-keinen-a
+  - eine-limo-a
+  - die-kollegen-a
+  - sich-unterhalten-a
+  - entspannt-a
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “ليس متأخرًا جدًا — و“يجب أن أذهب — و“الطلب — و“مكتب إعانات العائلة — و“شهادة الميلاد — و“مترجَم — و“كان — و“كان عندي — و“الرقم الضريبي للطفل”.'
+  answer:
+    speaker: protagonist
+    text: nicht so spät … Ich muss los … der Antrag … die Familienkasse … die Geburtsurkunde … übersetzt … war … hatte … die Steuer-ID des Kindes
+  items:
+  - nicht-so-spaet-a
+  - ich-muss-los-a
+  - der-antrag-a
+  - die-familienkasse-a
+  - die-geburtsurkunde-a
+  - uebersetzt-a
+  - war-a
+  - hatte-a
+  - die-steuer-id-kind-a
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “بأثر رجعي — و“معالجة الطلب — و“القرار الرسمي (الإشعار) — و“أمسية أولياء الأمور — و“احتفال الفوانيس — و“الفانوس — و“يصنع يدويًا — و“يُحضر معه — و“الدعوة”.'
+  answer:
+    speaker: protagonist
+    text: rückwirkend … die Bearbeitung … der Bescheid … der Elternabend … das Laternenfest … die Laterne … basteln … mitbringen … die Einladung
+  items:
+  - rueckwirkend-a
+  - die-bearbeitung-a
+  - der-bescheid-a
+  - der-elternabend-a
+  - das-laternenfest-a
+  - die-laterne-a
+  - basteln-a
+  - mitbringen-a
+  - die-einladung-a
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “القائمة — و“بلا لحم خنزير — و“المفاجأة — و“المربيات — و“كم الساعة؟ — و“الرابعة والنصف — و“إلا ربعًا — و“وربع — و“في الموعد”.'
+  answer:
+    speaker: protagonist
+    text: die Liste … ohne Schweinefleisch … die Überraschung … die Erzieherinnen … Wie spät ist es? … halb fünf … Viertel vor … Viertel nach … pünktlich
+  items:
+  - die-liste-a
+  - ohne-schwein-a
+  - die-ueberraschung-a
+  - die-erzieherin-a-a
+  - wie-spaet-ist-es-a
+  - halb-fuenf-a
+  - viertel-vor-a
+  - viertel-nach-a
+  - puenktlich-a-a
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “متأخر — و“التأخير — و“اتصل (أمر مؤدب) — و“في المرة القادمة — و“آسف”.'
+  answer:
+    speaker: protagonist
+    text: zu spät … die Verspätung … Rufen Sie an … das nächste Mal … Es tut mir leid
+  items:
+  - zu-spaet-a
+  - die-verspaetung-a
+  - rufen-sie-an-a
+  - das-naechste-mal-a
+  - es-tut-mir-leid-a
+- type: narrator
+  text:
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+- type: dialogue
+  again: true
+- type: selfcheck
