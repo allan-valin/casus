@@ -3,7 +3,7 @@
 # The story is set in Hamamatsu, home of one of Japan's largest Brazilian communities, so Brazil is in the story too.
 
 language: ja
-narrator_languages: [pt]
+narrator_languages: [en, pt]          # en: neutral (Allan 2026-10-21, for international offices); pt: with Brazil comparisons
 country: Japan
 standard: >-
   Standard Japanese (標準語) in the polite です・ます form; plain form among friends once agreed; 敬語 (respectful and
@@ -11,10 +11,13 @@ standard: >-
   B-level unit as colour.
 
 voices:
+  # Until the kana → Piper-phoneme step exists (logged 2026-10-22), Japanese lines are spoken from their kana by the
+  # browser's Japanese voice or espeak-ng; the units carry their readings (tools/ja_text.py).
   # Piper ja_JP-hi_fi_captain-medium (CC BY-NC-SA — allowed, Casus is not sold; Allan 2026-10-21): TWO real
   # speakers, female (0) and male (1) — no pitch trick needed. Its phonemes are a Japanese set (phoneme_type
   # "japanese"), not espeak: the browser needs a kana → sound step (the units carry their kana; Casus already reads
   # kana for Japanese). Technical step before the first unit.
+  - {id: nar-en, role: narrator, lang: en, tts: "piper:en_US-lessac-medium"}         # neutral narrator (international offices)
   - {id: nar-pt, role: narrator, lang: pt, tts: "piper:pt_BR-cadu-medium"}            # CC0
   - {id: ja-f, role: character, lang: ja, gender: f, tts: "piper:ja_JP-hi_fi_captain-medium#female"}
   - {id: ja-f2, role: character, lang: ja, gender: f, tts: "piper:ja_JP-hi_fi_captain-medium#female", pitch: 0.94}
@@ -32,25 +35,25 @@ protagonist:
 
 cast:
   - id: suzuki
-    name: 鈴木 和子 (鈴木さん, 大家さん)
+    name: 鈴木さん (Suzuki-san)
     role: landlady, about 70, lives next door, grows vegetables
     voice: ja-f2
     register: formal
     arc: polite form throughout; teaches the rubbish days and brings vegetables; explains why the grandmother's words sound old-fashioned
   - id: kenta
-    name: 田中 健太
+    name: 健太 (Kenta)
     role: neighbour, 27, works at the same factory on the line, plays futsal with Brazilians
     voice: ja-m
     register: formal
     arc: です・ます at first; proposes plain form (タメ口でいいよ) in A1-14; knows some Portuguese swear words
   - id: sato
-    name: 佐藤 美穂
+    name: 佐藤課長 (Satō-kachō)
     role: colleague, 31, section chief (課長) in the office
     voice: ja-f
     register: formal
     arc: 佐藤課長 / 佐藤さん, never 美穂; business cards in A1-08; indirect refusals (ちょっと…)
   - id: tencho
-    name: コンビニの店長
+    name: 店長 (tenchō)
     role: convenience-store manager, about 50
     voice: ja-m2
     register: formal
@@ -84,6 +87,10 @@ culture:
     - {topic: bath, note: "Onsen and sentō: wash before entering, no swimsuits, tattoos often not allowed."}
     - {topic: Brazilians, note: "Hamamatsu has Brazilian shops, schools and churches; Portuguese signs at the station and city hall."}
   narrator:
+    - {lang: en, topic: contact, note: "Many cultures greet with a handshake, a hug or a kiss; in Japan a bow, almost no touching."}
+    - {lang: en, topic: refusals, note: "A Japanese ちょっと… ('a little…') is a clear no, said softly."}
+    - {lang: en, topic: time, note: "8時 means ready at 7:55."}
+    - {lang: en, topic: nikkei, note: "Descendants of Japanese emigrants (日系) are often seen as foreigners in Japan and as Japanese abroad."}
     - {lang: pt, topic: contact, note: "Brazilians kiss and hug; in Japan a bow, almost no touching."}
     - {lang: pt, topic: refusals, note: "A Brazilian 'vou ver' is also a soft no; a Japanese ちょっと… is a clear no."}
     - {lang: pt, topic: noise, note: "Brazilian social life is loud and in the street; Japanese public space is quiet."}

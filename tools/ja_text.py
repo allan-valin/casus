@@ -16,9 +16,13 @@ RUBY = re.compile(rf'([{KANJI}]+)\[([{KANA}]+)\]')
 PUNCT = re.compile(r'([。、！？!?「」『』（）…・,.\s]+)$')
 
 
+# kana written one way and said another: the greetings keep the old particle は, said わ
+SAID = {'こんにちは': 'こんにちわ', 'こんばんは': 'こんばんわ'}
+
+
 def _word(tok):
     surface = RUBY.sub(lambda m: m.group(1), tok)
-    reading = RUBY.sub(lambda m: m.group(2), tok)
+    reading = SAID.get(surface, RUBY.sub(lambda m: m.group(2), tok))
     if re.search(f'[{KANJI}]', reading):
         raise ValueError(f'kanji without a reading in «{tok}»: write it as 漢字[かんじ]')
     return surface, reading

@@ -48,3 +48,8 @@ def test_a_whole_course_gets_plain_text_and_a_readings_table():
     assert u['steps'][3]['parts'] == ['せい', '学生']
     assert out['readings']['私は学生です。']['say'] == 'わたしはがくせいです。'
     assert out['readings']['学生']['rt'] == [['学生', 'がくせい']]
+
+
+def test_greetings_are_said_with_wa():
+    assert parse('こんにちは。')['say'] == 'こんにちわ。'
+    assert parse('こんにちは。')['text'] == 'こんにちは。'

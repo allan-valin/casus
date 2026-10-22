@@ -1,0 +1,346 @@
+# UNIT ja A1-01 — written by AI (Claude) for Casus; expanded from src/A1-01.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-01
+level: A1
+number: 1
+protagonist: f
+title:
+  en: The landlady
+  pt: A dona do apartamento
+situation:
+  en: You arrive at your new flat in Hamamatsu. The landlady, Mrs Suzuki, opens the door next door.
+  pt: Você chega ao apartamento novo em Hamamatsu. A dona, a senhora Suzuki, abre a porta ao lado.
+learn_lessons: []
+culture: A bow, not a hug
+new_items:
+- id: konnichiwa
+  text: こんにちは
+  meaning:
+    en: Hello / good afternoon
+    pt: Olá / boa tarde
+- id: hajimemashite
+  text: はじめまして
+  meaning:
+    en: Nice to meet you (first meeting)
+    pt: Muito prazer (no primeiro encontro)
+- id: desu
+  text: です
+  meaning:
+    en: am / is / are (polite)
+    pt: sou / é (educado)
+- id: yoroshiku
+  text: よろしく お願[ねが]いします
+  meaning:
+    en: Please treat me kindly (said when meeting)
+    pt: Conto com a senhora (dito ao se conhecer)
+- id: burajiru
+  text: ブラジル
+  meaning:
+    en: Brazil
+    pt: Brasil
+- id: kara
+  text: から
+  meaning:
+    en: from
+    pt: de (origem)
+- id: kimashita
+  text: 来[き]ました
+  meaning:
+    en: came
+    pt: vim
+- id: watashi
+  text: 私[わたし]
+  meaning:
+    en: I
+    pt: eu
+- id: suzuki-san
+  text: 鈴木[すずき] さん
+  meaning:
+    en: Mrs Suzuki
+    pt: senhora Suzuki
+- id: hai
+  text: はい
+  meaning:
+    en: 'yes'
+    pt: sim
+- id: sumimasen
+  text: すみません
+  meaning:
+    en: excuse me / sorry
+    pt: com licença / desculpe
+- id: wakarimasen
+  text: わかりません
+  meaning:
+    en: I don't understand
+    pt: não entendo
+reviews: []
+steps:
+- type: narrator
+  text:
+    en: You arrive at your new flat in Hamamatsu. The landlady, Mrs Suzuki, opens the door next door. Listen to the conversation; you don't need to understand it yet.
+    pt: Você chega ao apartamento novo em Hamamatsu. A dona, a senhora Suzuki, abre a porta ao lado. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: suzuki
+    text: はい？ どちら 様[さま] です か。
+    meaning:
+      en: Yes? Who is it?
+      pt: Sim? Quem é?
+  - speaker: protagonist
+    text: こんにちは。 はじめまして。
+    meaning:
+      en: Hello. Nice to meet you.
+      pt: Olá. Muito prazer.
+  - speaker: suzuki
+    text: ああ、 新[あたら]しい 人[ひと] です ね。
+    meaning:
+      en: Ah, you're the new person.
+      pt: Ah, você é a pessoa nova.
+  - speaker: protagonist
+    text: すみません、 わかりません。
+    meaning:
+      en: Sorry, I don't understand.
+      pt: Desculpe, não entendo.
+  - speaker: suzuki
+    text: 鈴木[すずき] です。 よろしく お願[ねが]いします。
+    meaning:
+      en: I'm Suzuki. Pleased to meet you.
+      pt: Sou Suzuki. Muito prazer.
+  - speaker: protagonist
+    text: 鈴木[すずき] さん。 私[わたし] は ブラジル から 来[き]ました。
+    meaning:
+      en: Mrs Suzuki. I came from Brazil.
+      pt: Senhora Suzuki. Eu vim do Brasil.
+  - speaker: suzuki
+    text: ブラジル！ 遠[とお]い です ね。
+    meaning:
+      en: Brazil! That's far.
+      pt: Brasil! É longe.
+  - speaker: protagonist
+    text: はい。 よろしく お願[ねが]いします。
+    meaning:
+      en: Yes. Pleased to meet you.
+      pt: Sim. Muito prazer.
+- type: narrator
+  text:
+    en: 'The first word of almost every meeting: «こんにちは» — hello, good afternoon.'
+    pt: 'A primeira palavra de quase todo encontro: «こんにちは» — olá, boa tarde.'
+- type: prompt
+  ask:
+    en: Greet the landlady.
+    pt: Cumprimente a dona do apartamento.
+  answer:
+    speaker: protagonist
+    text: こんにちは。
+  items:
+  - konnichiwa
+- type: narrator
+  text:
+    en: The very first time you meet someone, add «はじめまして» — nice to meet you.
+    pt: Na primeira vez que você conhece alguém, acrescente «はじめまして» — muito prazer.
+- type: prompt
+  ask:
+    en: Greet her for the first time.
+    pt: Cumprimente-a pela primeira vez.
+  answer:
+    speaker: protagonist
+    text: こんにちは。 はじめまして。
+  items:
+  - konnichiwa
+  - hajimemashite
+- type: narrator
+  text:
+    en: 'She didn''t understand you? Say so politely: «すみません、 わかりません».'
+    pt: 'Não entendeu? Diga com educação: «すみません、 わかりません».'
+- type: prompt
+  ask:
+    en: Say you don't understand, politely.
+    pt: Diga que não entende, com educação.
+  answer:
+    speaker: protagonist
+    text: すみません、 わかりません。
+  items:
+  - sumimasen
+  - wakarimasen
+- type: narrator
+  text:
+    en: 'In Japan you use the family name plus «さん»: «鈴木[すずき] さん». Never the first name of an older person.'
+    pt: 'No Japão se usa o sobrenome mais «さん»: «鈴木[すずき] さん». Nunca o primeiro nome de uma pessoa mais velha.'
+- type: line
+  speaker: suzuki
+  item: suzuki-san
+- type: prompt
+  ask:
+    en: Call her by her name.
+    pt: Chame-a pelo nome.
+  answer:
+    speaker: protagonist
+    text: 鈴木[すずき] さん。
+  items:
+  - suzuki-san
+- type: narrator
+  text:
+    en: «私[わたし] は ブラジル から 来[き]ました» — I came from Brazil. «は» marks what you talk about, «から» means from.
+    pt: «私[わたし] は ブラジル から 来[き]ました» — eu vim do Brasil. «は» marca o assunto, «から» quer dizer 'de' (origem).
+- type: prompt
+  ask:
+    en: 'Say: I.'
+    pt: 'Diga: eu.'
+  answer:
+    speaker: protagonist
+    text: 私[わたし]
+  items:
+  - watashi
+- type: prompt
+  ask:
+    en: 'Say: Brazil.'
+    pt: 'Diga: Brasil.'
+  answer:
+    speaker: protagonist
+    text: ブラジル
+  items:
+  - burajiru
+- type: prompt
+  ask:
+    en: 'Say: from Brazil.'
+    pt: 'Diga: do Brasil.'
+  answer:
+    speaker: protagonist
+    text: ブラジル から
+  items:
+  - burajiru
+  - kara
+- type: prompt
+  ask:
+    en: 'Say: I came from Brazil.'
+    pt: 'Diga: eu vim do Brasil.'
+  answer:
+    speaker: protagonist
+    text: 私[わたし] は ブラジル から 来[き]ました。
+  items:
+  - watashi
+  - burajiru
+  - kara
+  - kimashita
+- type: narrator
+  text:
+    en: '«よろしく お願[ねが]いします» has no translation: it asks the other person to treat you kindly from now on. You say it when you meet, with a small bow.'
+    pt: '«よろしく お願[ねが]いします» não tem tradução: pede que a pessoa seja gentil com você daqui em diante. Diz-se ao conhecer alguém, com uma pequena reverência.'
+- type: buildup
+  item: yoroshiku
+  parts:
+  - お願[ねが]いします
+  - よろしく お願[ねが]いします
+- type: prompt
+  ask:
+    en: Say it to her, with a bow.
+    pt: Diga isso a ela, com uma reverência.
+  answer:
+    speaker: protagonist
+    text: よろしく お願[ねが]いします。
+  items:
+  - yoroshiku
+- type: prompt
+  ask:
+    en: She asks if you're the new tenant. Answer yes.
+    pt: Ela pergunta se você é a nova inquilina. Responda que sim.
+  answer:
+    speaker: protagonist
+    text: はい。
+  items:
+  - hai
+- type: prompt
+  ask:
+    en: 'Say: I''m Brazilian — word for word, ''I am Brazil person''.'
+    pt: 'Diga: sou brasileira — palavra por palavra, ''eu sou pessoa do Brasil''.'
+  answer:
+    speaker: protagonist
+    text: 私[わたし] は ブラジル 人[じん] です。
+  items:
+  - watashi
+  - burajiru
+  - desu
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil a gente abraça e dá beijo; no Japão, uma reverência e nada de toque. E os sapatos ficam na porta — isso é a próxima unidade.
+- type: prompt
+  ask:
+    en: 'Once more: say “Nice to meet you (first meeting)”.'
+    pt: 'Mais uma vez: diga “Muito prazer (no primeiro encontro)”.'
+  answer:
+    speaker: protagonist
+    text: はじめまして
+  items:
+  - hajimemashite
+- type: prompt
+  ask:
+    en: 'Once more: say “am / is / are (polite)”.'
+    pt: 'Mais uma vez: diga “sou / é (educado)”.'
+  answer:
+    speaker: protagonist
+    text: です
+  items:
+  - desu
+- type: prompt
+  ask:
+    en: 'Once more: say “Please treat me kindly (said when meeting)”.'
+    pt: 'Mais uma vez: diga “Conto com a senhora (dito ao se conhecer)”.'
+  answer:
+    speaker: protagonist
+    text: よろしく お願[ねが]いします
+  items:
+  - yoroshiku
+- type: prompt
+  ask:
+    en: 'Once more: say “came”.'
+    pt: 'Mais uma vez: diga “vim”.'
+  answer:
+    speaker: protagonist
+    text: 来[き]ました
+  items:
+  - kimashita
+- type: prompt
+  ask:
+    en: 'Once more: say “Mrs Suzuki”.'
+    pt: 'Mais uma vez: diga “senhora Suzuki”.'
+  answer:
+    speaker: protagonist
+    text: 鈴木[すずき] さん
+  items:
+  - suzuki-san
+- type: prompt
+  ask:
+    en: 'Once more: say “yes”.'
+    pt: 'Mais uma vez: diga “sim”.'
+  answer:
+    speaker: protagonist
+    text: はい
+  items:
+  - hai
+- type: prompt
+  ask:
+    en: 'Once more: say “excuse me / sorry”.'
+    pt: 'Mais uma vez: diga “com licença / desculpe”.'
+  answer:
+    speaker: protagonist
+    text: すみません
+  items:
+  - sumimasen
+- type: prompt
+  ask:
+    en: 'Once more: say “I don''t understand”.'
+    pt: 'Mais uma vez: diga “não entendo”.'
+  answer:
+    speaker: protagonist
+    text: わかりません
+  items:
+  - wakarimasen
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
