@@ -1,0 +1,589 @@
+# UNIT ja A1-22 — written by AI (Claude) for Casus; expanded from src/A1-22.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-22
+level: A1
+number: 22
+protagonist: m
+title:
+  en: Times
+  pt: Horários
+situation:
+  en: Chief Sato tells you about tomorrow's meeting in the office. You ask what time it starts.
+  pt: A chefe Sato avisa sobre a reunião de amanhã no escritório. Você pergunta a que horas começa.
+learn_lessons: []
+culture: Five minutes early is on time
+new_items:
+- id: kaigi
+  text: 会議[かいぎ]
+  meaning:
+    en: meeting
+    pt: reunião
+- id: kuji
+  text: 九時[くじ]
+  meaning:
+    en: nine o'clock
+    pt: nove horas
+- id: nanji-kara
+  text: 何時[なんじ] から です か
+  meaning:
+    en: from what time is it?
+    pt: começa a que horas?
+- id: jikan
+  text: 時間[じかん]
+  meaning:
+    en: time; hour
+    pt: tempo; hora
+- id: gofun-mae
+  text: 五分[ごふん] 前[まえ]
+  meaning:
+    en: five minutes before
+    pt: cinco minutos antes
+- id: okuremasu
+  text: 遅[おく]れます
+  meaning:
+    en: be late
+    pt: atraso, chego atrasado
+- id: okurenaide
+  text: 遅[おく]れないで ください
+  meaning:
+    en: please don't be late
+    pt: não se atrase, por favor
+- id: hayaku
+  text: 早[はや]く
+  meaning:
+    en: early
+    pt: cedo
+- id: kimasu
+  text: 来[き]ます
+  meaning:
+    en: come
+    pt: venho
+- id: jippun
+  text: 十分[じゅっぷん]
+  meaning:
+    en: ten minutes
+    pt: dez minutos
+- id: ima
+  text: 今[いま]
+  meaning:
+    en: now
+    pt: agora
+- id: nanji-desu-ka
+  text: 今[いま] 何時[なんじ] です か
+  meaning:
+    en: what time is it now?
+    pt: que horas são agora?
+reviews:
+- item: gomi
+  from: A1-07
+- item: moeru-gomi
+  from: A1-07
+- item: purasuchikku
+  from: A1-07
+- item: nanyoubi
+  from: A1-07
+- item: getsuyoubi
+  from: A1-07
+- item: mokuyoubi
+  from: A1-07
+- item: dashimasu
+  from: A1-07
+- item: asa
+  from: A1-07
+- item: hachiji
+  from: A1-07
+- item: made-ni
+  from: A1-07
+- item: ki-o-tsukemasu
+  from: A1-07
+- item: tatami
+  from: A1-15
+- item: hiroi
+  from: A1-15
+- item: semai
+  from: A1-15
+- item: rokujou
+  from: A1-15
+- item: heya
+  from: A1-15
+- item: nagai
+  from: A1-15
+- item: shikaku
+  from: A1-15
+- item: meetoru
+  from: A1-15
+- item: han
+  from: A1-15
+- item: chodo
+  from: A1-15
+- item: ookii
+  from: A1-15
+- item: chiisai
+  from: A1-15
+- item: chotto
+  from: A1-19
+- item: muzukashii-desu
+  from: A1-19
+- item: yasumi
+  from: A1-19
+- item: kinyoubi
+  from: A1-19
+- item: ryoujikan
+  from: A1-19
+- item: kangaete-okimasu
+  from: A1-19
+- item: isogashii
+  from: A1-19
+- item: dou-shite-mo
+  from: A1-19
+- item: gozen
+  from: A1-19
+- item: daijoubu-desu
+  from: A1-19
+- item: sakura
+  from: A1-21
+- item: hanami
+  from: A1-21
+- item: hana
+  from: A1-21
+- item: ki-tree
+  from: A1-21
+- item: oshiro
+  from: A1-21
+- item: kouen
+  from: A1-21
+- item: haru
+  from: A1-21
+- item: sakimashita
+  from: A1-21
+- item: mankai
+  from: A1-21
+- item: bashotori
+  from: A1-21
+- item: obentou
+  from: A1-21
+- item: ikimashou
+  from: A1-21
+- item: tabemashou
+  from: A1-21
+- item: shashin-torimashou
+  from: A1-21
+steps:
+- type: narrator
+  text:
+    en: Chief Sato tells you about tomorrow's meeting in the office. You ask what time it starts. Listen to the conversation; you don't need to understand it yet.
+    pt: A chefe Sato avisa sobre a reunião de amanhã no escritório. Você pergunta a que horas começa. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: sato
+    text: 明日[あした] は 会議[かいぎ] が あります。
+    meaning:
+      en: There's a meeting tomorrow.
+      pt: Amanhã tem reunião.
+  - speaker: protagonist
+    text: 何時[なんじ] から です か。
+    meaning:
+      en: What time does it start?
+      pt: Começa a que horas?
+  - speaker: sato
+    text: 九時[くじ] から です。 一時間[いちじかん] ぐらい です。
+    meaning:
+      en: At nine. About an hour.
+      pt: Às nove. Mais ou menos uma hora.
+  - speaker: protagonist
+    text: わかりました。 九時[くじ] に 来[き]ます。
+    meaning:
+      en: Understood. I'll come at nine.
+      pt: Entendido. Venho às nove.
+  - speaker: sato
+    text: 九時[くじ] は ちょっと… 五分[ごふん] 前[まえ] に 来[き]て ください。
+    meaning:
+      en: Nine is a bit… Please come five minutes before.
+      pt: Nove é meio… Venha cinco minutos antes.
+  - speaker: protagonist
+    text: 五分[ごふん] 前[まえ] です ね。 遅[おく]れません。
+    meaning:
+      en: Five minutes before. I won't be late.
+      pt: Cinco minutos antes. Não vou me atrasar.
+  - speaker: sato
+    text: 電車[でんしゃ] が 遅[おく]れます から、 早[はや]く 出[で]て ください ね。
+    meaning:
+      en: Trains can be late, so leave early.
+      pt: O trem pode atrasar, então saia cedo.
+  - speaker: protagonist
+    text: はい。 あの、 今[いま] 何時[なんじ] です か。
+    meaning:
+      en: Yes. Um, what time is it now?
+      pt: Certo. Hum, que horas são agora?
+  - speaker: sato
+    text: 五時[ごじ] 十分[じゅっぷん] です。 お疲[つか]れさま でした。
+    meaning:
+      en: Ten past five. Thanks for your work today.
+      pt: Cinco e dez. Bom trabalho hoje.
+- type: prompt
+  ask:
+    en: 'Say: a meeting.'
+    pt: 'Diga: uma reunião.'
+  answer:
+    speaker: protagonist
+    text: 会議[かいぎ]
+  items:
+  - kaigi
+- type: narrator
+  text:
+    en: 'Hours are the number plus «時[じ]»: «一時[いちじ]», «二時[にじ]», «五時[ごじ]». Watch nine: «九時[くじ]», not «きゅうじ». Minutes are «分[ふん]» or «分[ぷん]»: «五分[ごふん]», «十分[じゅっぷん]».'
+    pt: 'As horas são o número mais «時[じ]»: «一時[いちじ]», «二時[にじ]», «五時[ごじ]». Atenção ao nove: «九時[くじ]», não «きゅうじ». Os minutos são «分[ふん]» ou «分[ぷん]»: «五分[ごふん]», «十分[じゅっぷん]».'
+- type: prompt
+  ask:
+    en: 'Say: nine o''clock.'
+    pt: 'Diga: nove horas.'
+  answer:
+    speaker: protagonist
+    text: 九時[くじ]
+  items:
+  - kuji
+- type: prompt
+  ask:
+    en: Ask what time the meeting starts.
+    pt: Pergunte a que horas começa a reunião.
+  answer:
+    speaker: protagonist
+    text: 何時[なんじ] から です か。
+  items:
+  - nanji-kara
+- type: prompt
+  ask:
+    en: 'Say: time.'
+    pt: 'Diga: tempo, hora.'
+  answer:
+    speaker: protagonist
+    text: 時間[じかん]
+  items:
+  - jikan
+- type: prompt
+  ask:
+    en: 'Say: now.'
+    pt: 'Diga: agora.'
+  answer:
+    speaker: protagonist
+    text: 今[いま]
+  items:
+  - ima
+- type: buildup
+  item: nanji-desu-ka
+  parts:
+  - です か
+  - 何時[なんじ] です か
+  - 今[いま] 何時[なんじ] です か
+- type: prompt
+  ask:
+    en: Ask what time it is now.
+    pt: Pergunte que horas são agora.
+  answer:
+    speaker: protagonist
+    text: 今[いま] 何時[なんじ] です か。
+  items:
+  - nanji-desu-ka
+- type: prompt
+  ask:
+    en: 'Say: ten minutes.'
+    pt: 'Diga: dez minutos.'
+  answer:
+    speaker: protagonist
+    text: 十分[じゅっぷん]
+  items:
+  - jippun
+- type: prompt
+  ask:
+    en: 'Say: five minutes before.'
+    pt: 'Diga: cinco minutos antes.'
+  answer:
+    speaker: protagonist
+    text: 五分[ごふん] 前[まえ]
+  items:
+  - gofun-mae
+- type: prompt
+  ask:
+    en: Promise to come at nine.
+    pt: Prometa vir às nove.
+  answer:
+    speaker: protagonist
+    text: 九時[くじ] に 来[き]ます。
+  items:
+  - kimasu
+- type: prompt
+  ask:
+    en: 'Say: the train is late.'
+    pt: 'Diga: o trem está atrasado.'
+  answer:
+    speaker: protagonist
+    text: 電車[でんしゃ] が 遅[おく]れます。
+  items:
+  - okuremasu
+- type: prompt
+  ask:
+    en: 'Say: I''ll come early.'
+    pt: 'Diga: venho cedo.'
+  answer:
+    speaker: protagonist
+    text: 早[はや]く 来[き]ます。
+  items:
+  - hayaku
+- type: prompt
+  ask:
+    en: Ask a colleague not to be late.
+    pt: Peça a um colega que não se atrase.
+  answer:
+    speaker: protagonist
+    text: 遅[おく]れないで ください。
+  items:
+  - okurenaide
+- type: narrator
+  text:
+    en: 'When the chief says nine «は ちょっと…», she means: nine is too late. In a Japanese office, five minutes early is on time and on time is already late. Trains do run on the minute, but when one is late
+      the station gives you a delay certificate, «遅延証明書[ちえんしょうめいしょ]», to show at work.'
+    pt: 'Quando a chefe diz que nove «は ちょっと…», quer dizer: nove já é tarde. No escritório japonês, cinco minutos antes é a hora certa, e na hora já é atraso. Os trens são pontuais, mas quando um atrasa
+      a estação dá um comprovante de atraso, «遅延証明書[ちえんしょうめいしょ]», para mostrar no trabalho.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil uma reunião às nove muitas vezes começa nove e quinze, e ninguém estranha. No Japão, chegar às nove em ponto já parece descuido.
+- type: prompt
+  ask:
+    en: 'Once more: say “meeting”.'
+    pt: 'Mais uma vez: diga “reunião”.'
+  answer:
+    speaker: protagonist
+    text: 会議[かいぎ]
+  items:
+  - kaigi
+- type: prompt
+  ask:
+    en: 'Once more: say “nine o''clock”.'
+    pt: 'Mais uma vez: diga “nove horas”.'
+  answer:
+    speaker: protagonist
+    text: 九時[くじ]
+  items:
+  - kuji
+- type: prompt
+  ask:
+    en: 'Once more: say “from what time is it?”.'
+    pt: 'Mais uma vez: diga “começa a que horas?”.'
+  answer:
+    speaker: protagonist
+    text: 何時[なんじ] から です か
+  items:
+  - nanji-kara
+- type: prompt
+  ask:
+    en: 'Once more: say “time; hour”.'
+    pt: 'Mais uma vez: diga “tempo; hora”.'
+  answer:
+    speaker: protagonist
+    text: 時間[じかん]
+  items:
+  - jikan
+- type: prompt
+  ask:
+    en: 'Once more: say “five minutes before”.'
+    pt: 'Mais uma vez: diga “cinco minutos antes”.'
+  answer:
+    speaker: protagonist
+    text: 五分[ごふん] 前[まえ]
+  items:
+  - gofun-mae
+- type: prompt
+  ask:
+    en: 'Once more: say “be late”.'
+    pt: 'Mais uma vez: diga “atraso, chego atrasado”.'
+  answer:
+    speaker: protagonist
+    text: 遅[おく]れます
+  items:
+  - okuremasu
+- type: prompt
+  ask:
+    en: 'Once more: say “please don''t be late”.'
+    pt: 'Mais uma vez: diga “não se atrase, por favor”.'
+  answer:
+    speaker: protagonist
+    text: 遅[おく]れないで ください
+  items:
+  - okurenaide
+- type: prompt
+  ask:
+    en: 'Once more: say “early”.'
+    pt: 'Mais uma vez: diga “cedo”.'
+  answer:
+    speaker: protagonist
+    text: 早[はや]く
+  items:
+  - hayaku
+- type: prompt
+  ask:
+    en: 'Once more: say “come”.'
+    pt: 'Mais uma vez: diga “venho”.'
+  answer:
+    speaker: protagonist
+    text: 来[き]ます
+  items:
+  - kimasu
+- type: prompt
+  ask:
+    en: 'Once more: say “ten minutes”.'
+    pt: 'Mais uma vez: diga “dez minutos”.'
+  answer:
+    speaker: protagonist
+    text: 十分[じゅっぷん]
+  items:
+  - jippun
+- type: prompt
+  ask:
+    en: 'Once more: say “now”.'
+    pt: 'Mais uma vez: diga “agora”.'
+  answer:
+    speaker: protagonist
+    text: 今[いま]
+  items:
+  - ima
+- type: prompt
+  ask:
+    en: 'Once more: say “what time is it now?”.'
+    pt: 'Mais uma vez: diga “que horas são agora?”.'
+  answer:
+    speaker: protagonist
+    text: 今[いま] 何時[なんじ] です か
+  items:
+  - nanji-desu-ka
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “cherry blossom, cherry tree — and “cherry-blossom viewing — and “flower — and “tree — and “castle — and “park”.'
+    pt: 'Diga: “flor de cerejeira, cerejeira — e “piquenique para ver as cerejeiras — e “flor — e “árvore — e “castelo — e “parque”.'
+  answer:
+    speaker: protagonist
+    text: 桜[さくら] … 花見[はなみ] … 花[はな] … 木[き] … お城[しろ] … 公園[こうえん]
+  items:
+  - sakura
+  - hanami
+  - hana
+  - ki-tree
+  - oshiro
+  - kouen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “spring — and “(it) bloomed, is in bloom — and “in full bloom — and “keeping a spot (for a picnic) — and “packed lunch, bentō — and “let''s go”.'
+    pt: 'Diga: “primavera — e “floresceu, está florido — e “totalmente florido — e “guardar lugar (para o piquenique) — e “marmita, bentô — e “vamos”.'
+  answer:
+    speaker: protagonist
+    text: 春[はる] … 咲[さ]きました … 満開[まんかい] … 場所[ばしょ]取[と]り … お弁当[べんとう] … 行[い]きましょう
+  items:
+  - haru
+  - sakimashita
+  - mankai
+  - bashotori
+  - obentou
+  - ikimashou
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “let''s eat — and “let''s take a photo — and “a little… (a soft no) — and “that''s difficult (often: no) — and “day off, holiday — and “Friday”.'
+    pt: 'Diga: “vamos comer — e “vamos tirar uma foto — e “um pouco… (um não suave) — e “é difícil (muitas vezes: não) — e “folga, feriado — e “sexta-feira”.'
+  answer:
+    speaker: protagonist
+    text: 食[た]べましょう … 写真[しゃしん] を 撮[と]りましょう … ちょっと… … 難[むずか]しい です ね … 休[やす]み … 金曜日[きんようび]
+  items:
+  - tabemashou
+  - shashin-torimashou
+  - chotto
+  - muzukashii-desu
+  - yasumi
+  - kinyoubi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “consulate — and “I''ll think about it — and “busy — and “no matter what, really need to — and “morning, a.m. — and “that''s fine”.'
+    pt: 'Diga: “consulado — e “vou pensar — e “ocupado — e “de qualquer jeito, preciso mesmo — e “manhã, de manhã — e “tudo bem”.'
+  answer:
+    speaker: protagonist
+    text: 領事館[りょうじかん] … 考[かんが]えて おきます … 忙[いそが]しい … どうしても … 午前[ごぜん] … 大丈夫[だいじょうぶ] です
+  items:
+  - ryoujikan
+  - kangaete-okimasu
+  - isogashii
+  - dou-shite-mo
+  - gozen
+  - daijoubu-desu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “tatami mat — and “spacious, wide — and “narrow, small (room) — and “six tatami (a room size) — and “room — and “long”.'
+    pt: 'Diga: “tatame — e “espaçoso, largo — e “apertado, pequeno (cômodo) — e “seis tatames (tamanho de cômodo) — e “quarto, cômodo — e “comprido”.'
+  answer:
+    speaker: protagonist
+    text: 畳[たたみ] … 広[ひろ]い … 狭[せま]い … 六畳[ろくじょう] … 部屋[へや] … 長[なが]い
+  items:
+  - tatami
+  - hiroi
+  - semai
+  - rokujou
+  - heya
+  - nagai
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “square, rectangle — and “metre — and “half — and “exactly — and “big — and “small”.'
+    pt: 'Diga: “quadrado, retângulo — e “metro — e “meio — e “exatamente — e “grande — e “pequeno”.'
+  answer:
+    speaker: protagonist
+    text: 四角[しかく] … メートル … 半[はん] … ちょうど … 大[おお]きい … 小[ちい]さい
+  items:
+  - shikaku
+  - meetoru
+  - han
+  - chodo
+  - ookii
+  - chiisai
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “rubbish — and “burnable rubbish — and “plastic — and “what day of the week — and “Monday — and “Thursday”.'
+    pt: 'Diga: “lixo — e “lixo queimável — e “plástico — e “que dia da semana — e “segunda-feira — e “quinta-feira”.'
+  answer:
+    speaker: protagonist
+    text: ごみ … 燃[も]える ごみ … プラスチック … 何曜日[なんようび] … 月曜日[げつようび] … 木曜日[もくようび]
+  items:
+  - gomi
+  - moeru-gomi
+  - purasuchikku
+  - nanyoubi
+  - getsuyoubi
+  - mokuyoubi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “put out (rubbish) — and “morning — and “eight o''clock — and “by (a time) — and “I''ll be careful”.'
+    pt: 'Diga: “pôr para fora (o lixo) — e “manhã — e “oito horas — e “até (um horário) — e “vou tomar cuidado”.'
+  answer:
+    speaker: protagonist
+    text: 出[だ]します … 朝[あさ] … 八時[はちじ] … まで に … 気[き] を つけます
+  items:
+  - dashimasu
+  - asa
+  - hachiji
+  - made-ni
+  - ki-o-tsukemasu
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
