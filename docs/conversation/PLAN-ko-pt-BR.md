@@ -33,7 +33,7 @@ hangul → sound converter for our browser engine.
 | 14 | L | O almoço do trabalho | lunch with the team | 같이 먹어요, 맛있어요, 매워요 | -아요/어요 | 13 all; 12 animals; 10 원 | the eldest starts |
 | 15 | T | Números e formas | measuring the room | 미터, 넓어요, 작아요 | counters 개, 명 | 14 all; 13 metro; 11 two hands | — |
 | 16 | L | Delivery | chicken at night | 배달, 주문해요, 몇 분? | 안 negation | 15 all; 14 맛있어요; 12 고양이 | 빨리빨리 |
-| 17 | L | Não sou idol | 할머니's niece thinks all Brazilians samba; you think all Koreans are idols | 아이돌, 진짜?, 아니에요 | 아니에요 | 16 all; 15 counters; 13 갈아타요 | stereotypes both ways |
+| 17 | L | Não sou idol | 할머니's niece thinks all Brazilians samba; you think all Koreans are idols | 아이돌, 진짜?, 아니에요 | 아니에요 | 16 all; 15 counters; 13 갈아타요 | stereotypes both ways; also the other stereotype (Allan 2026-10-22): "Korean boys play video games all day in the PC bang" — PC bangs are a real, cheap social space (teams, friends), and game addiction is a public debate, but most young men don't live there |
 | 18 | T | Comida e cozinha | making 라면 properly | 물, 끓여요, 소금, 맵다 | -고 (and) | 17 all; 16 배달; 14 같이 | — |
 | 19 | L | O lixo | 분리수거 with 할머니 | 쓰레기, 음식물, 종량제 봉투 | -아야 해요 (fixed) | 18 all; 17 아이돌; 15 넓어요 | strict sorting |
 | 20 | L | Eu quero… | café with 민준 | 아메리카노, -고 싶어요, 따뜻한/차가운 | -고 싶어요 | 19 all; 18 끓여요; 16 안 | — |
@@ -96,7 +96,7 @@ hangul → sound converter for our browser engine.
 | 07 | L | 반말 errado | 반말 to the wrong person | 반말, 실례, 기분 나빠요, 나이 | -(으)면 안 돼요 | 06 all; 05 부모님; 03 세포 | the age hierarchy |
 | 08 | L | O casamento | a wedding hall and the money envelope | 결혼식, 축의금, 봉투, 웨딩홀 | -아/어도 돼요 | 07 all; 06 원자력; 04 여자친구 | thirty-minute weddings |
 | 09 | T | Estatística | a survey about young people | 조사, 평균, 통계, 응답 | -다고 해요 (reported) | 08 all; 07 반말; 05 부모님 | — |
-| 10 | L | O serviço militar | 민준's friend enlists | 군대, 입대, 휴가, 제대 | -게 되다 | 09 all; 08 결혼식; 06 원자력 | conscription for men (length: check the current rule) |
+| 10 | L | O serviço militar | 민준's friend enlists | 군대, 입대, 휴가, 제대 | -게 되다 | 09 all; 08 결혼식; 06 원자력 | conscription for men (length: check the current rule); the story behind it (Allan 2026-10-22): the Korean War (1950–53) ended only in an armistice, never a peace treaty — the two Koreas are technically still at war; North Korea keeps one of the world's largest armies, so every able-bodied man serves (army about 18 months today; check the current rule); service started at 36 months during the war and has been shortened step by step |
 | 11 | L | Fofoca | the office group chat | 소문, 카톡, 단톡방, 비밀 | -대요 | 10 all; 09 조사; 07 반말 | group-chat culture |
 | 12 | T | Felicidade | pressure, competition, happiness | 행복, 경쟁, 스트레스, 여유 | -(으)ㄹ수록 | 11 all; 10 군대; 08 결혼식 | competition — a social problem |
 | 13 | L | A ressaca | the morning after the 회식 | 숙취, 해장국, 술, 필름이 끊겼어요 | -았/었으면 좋겠어요 | 12 all; 11 소문; 09 조사 | hangover soup |
@@ -227,3 +227,5 @@ hangul → sound converter for our browser engine.
 **Social topics (Allan, 2026-10-21):** the job market, why young Koreans leave or don't marry, competition, lookism, elderly poverty, power abuse at work (갑질), emotional labour, private education — each as one unit, handled with care, never as a lecture.
 
 **Before units:** the hangul → sound converter for the browser voice, as for Macedonian.
+
+**Allan's feedback 2026-10-22 (applied):** A1-17 adds the "gamer in the PC bang" stereotype; B1-10 tells the North Korea story (armistice, no peace treaty). Checklist: docs/conversation/FEEDBACK-2026-10-22-ja-ko.md.

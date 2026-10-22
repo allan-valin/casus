@@ -10,6 +10,12 @@ Brazilian comparisons are narrator steps marked `for: [pt]`, so the English vers
 the curious note. The protagonist stays the story's Brazilian character (changing nationality would fork every dialogue).
 
 
+
+**Allan's feedback 2026-10-22 (applied):**
+- Every unit links its new kanji to the kanji memorisation drills (Learn → drills), in the unit card and the review.
+- Nightlife culture: A1-26 karaoke, A2-07 飲み会, B1-30 居酒屋 — add **はしご酒** (bar-hopping: 一次会, 二次会) to B1-30, and the **net café** (ネットカフェ / 漫画喫茶: booths, comics, showers, also the last train missed) to A2-13 or the B1 nightlife units; karaoke boxes (private rooms, 一人カラオケ) in A1-26.
+- Checklist and sources: docs/conversation/FEEDBACK-2026-10-22-ja-ko.md.
+
 **Before units:** the Japanese voice (Piper hi_fi_captain, a real female and male speaker) and a kana → sound
 converter for our browser engine.
 
@@ -61,21 +67,21 @@ converter for our browser engine.
 | 07 | L | O 飲み会 | after-work drinks | 飲み会, 乾杯, ビール, お酌 | 〜ましょう | 06 all; 05 風邪; 03 水道水 | pour for others, never yourself |
 | 08 | L | O festival de verão | a yukata and fireworks | 夏祭り, 浴衣, 花火, 屋台 | 〜たいです review | 07 all; 06 電気; 04 口座 | summer festivals |
 | 09 | T | Dinheiro e porcentagem | sales, tax included or not | 割引, 税込, 税抜, 半額 | big numbers: 万 | 08 all; 07 飲み会; 05 風邪 | prices with and without tax |
-| 10 | L | Um encontro | a first date via an app | デート, 連絡先, 楽しかった, カフェ | 〜て、〜て (sequence) | 09 all; 08 夏祭り; 06 電気 | — |
+| 10 | L | Um encontro | a first date via an app | デート, 連絡先, 楽しかった, カフェ | 〜て、〜て (sequence) | 09 all; 08 夏祭り; 06 電気 | informed, not a stereotype (Allan 2026-10-22): surveys of Japanese women mostly answer "nationality doesn't matter, character does"; curiosity about foreigners is real and some treat it as an adventure, so make clear early what you each want — no reliable data that "most" refuse relationships; international marriages are about 1 in 25, and Japanese women marrying foreign men are about a quarter of them |
 | 11 | L | A confissão | 健太 explains 告白 | 告白, 好きです, 付き合ってください, 返事 | 〜てくれる | 10 all; 09 割引; 07 飲み会 | confessing before dating |
 | 12 | T | Geografia | Fuji, the coast, Lake Hamana | 山, 海, 湖, 浜名湖 | より / 一番 | 11 all; 10 デート; 08 夏祭り | — |
 | 13 | L | Uma noite fora | a club in Shizuoka, the last train | クラブ, 終電, 踊る, 身分証 | 〜たら (when) | 12 all; 11 告白; 09 割引 | the last-train rule |
 | 14 | L | Japão = anime? | colleagues' questions both ways | アニメ, サンバ, ステレオタイプ, 本当? | 〜と思います | 13 all; 12 山; 10 デート | stereotypes both ways |
 | 15 | T | Música | enka with the landlady, not only J-pop | 演歌, 歌詞, カラオケ, 昭和 | 〜ね/〜よ | 14 all; 13 クラブ; 11 告白 | — |
-| 16 | L | Gorjeta? Não | paying; no tip; splitting | お会計, 割り勘, チップ, ごちそうさま | 〜なければなりません | 15 all; 14 アニメ; 12 山 | no tipping |
-| 17 | L | O onsen | bath rules, tattoos | 温泉, 入れ墨, タオル, 体を洗う | 〜てはいけません | 16 all; 15 演歌; 13 クラブ | tattoos often refused |
+| 16 | L | Gorjeta? Não | paying; no tip; splitting | お会計, 割り勘, チップ, ごちそうさま | 〜なければなりません | 15 all; 14 アニメ; 12 山 | no tipping; 遠慮: offering a second time is normal — many people decline once out of politeness and accept on the second offer (Japanese-language sources confirm the pattern, not a rule; some mean a real no) — so offer twice, and if you want something, accept on the second offer; Brazil: no tipping culture, the bill adds a "taxa de serviço" (usually 10 %, sometimes 12–15 %) that is optional by law (Lei 13.419/2017) — Allan said 20 %: that is too high, 10 % is standard |
+| 17 | L | O onsen | bath rules, tattoos | 温泉, 入れ墨, タオル, 体を洗う | 〜てはいけません | 16 all; 15 演歌; 13 クラブ | tattoos often refused; also: tattoo-friendly onsen exist and are growing (since 2016 the Tourism Agency says a tattoo alone should not be a reason to refuse); many allow small tattoos covered with a sticker; private baths (貸切風呂) and rooms with their own open-air bath (客室露天風呂) avoid the issue — always ask the place |
 | 18 | T | Provérbios | the landlady's sayings | ことわざ, 猿も木から落ちる, 石の上にも三年 | 〜という | 17 all; 16 お会計; 14 アニメ | — |
 | 19 | L | A aldeia da avó | visiting the village the grandmother left | 祖母, 村, 移民, 親戚 | 〜たことがあります | 18 all; 17 温泉; 15 演歌 | the emigrant villages |
 | 20 | L | Futsal | joining 健太's team | フットサル, 試合, 勝った, ゴール | plain past 〜た | 19 all; 18 ことわざ; 16 お会計 | — |
 | 21 | T | Terremoto | the drill and the emergency bag | 地震, 避難, 防災, 非常持ち出し袋 | 〜ておく | 20 all; 19 祖母; 17 温泉 | drills and alerts |
 | 22 | L | O lixo de novo | the bulky-waste sticker | 粗大ごみ, シール, 申し込み, 回収 | 〜ないでください | 21 all; 20 フットサル; 18 ことわざ | paid bulky-waste pickup |
 | 23 | L | Comida de rua | takoyaki at the festival | たこ焼き, 熱い, おいしそう, 屋台 | 〜そう (looks) | 22 all; 21 地震; 19 祖母 | — |
-| 24 | T | Trabalhar demais | the fixed overtime, 残業 | 残業, 疲れた, 過労, 定時 | 〜から (because) | 23 all; 22 粗大ごみ; 20 フットサル | overwork — a social problem |
+| 24 | T | Trabalhar demais | the fixed overtime, 残業 | 残業, 疲れた, 過労, 定時 | 〜から (because) | 23 all; 22 粗大ごみ; 20 フットサル | overwork — a social problem; 付き合い残業: the unwritten rule "don't leave before your boss" — named the most out-dated work value by 82.8 % in a 2023 survey, still felt by many, and studies show long-working bosses keep their staff late; tell it as a fading norm, not a law (leaving on time is your right). Offering to help is fine with your own team, but you don't have to stay with nothing to do. Compare: paid leave in Japan 10–20 days by law, only about 67 % taken (12.1 of 18.1 days in 2024; 5 days must be taken by law since 2019) vs Brazil's CLT: 30 days of férias plus one-third bonus, overtime paid at +50 % |
 | 25 | L | O cabeleireiro | a haircut | 美容院, 短く, 前髪, 予約 | adverbs 〜く | 24 all; 23 たこ焼き; 21 地震 | — |
 | 26 | L | Um encontro de novo | a second date and silence | 沈黙, 恥ずかしい, また会いたい, 照れる | 〜たい review | 25 all; 24 残業; 22 粗大ごみ | silence is not rejection |
 | 27 | T | Aparência | dressing for work, no perfume | スーツ, 身だしなみ, 香水, 清潔 | 〜ほうがいい | 26 all; 25 美容院; 23 たこ焼き | — |
@@ -125,7 +131,7 @@ converter for our browser engine.
 | 01 | L | A entrevista | a job interview at a Japanese firm | 面接, 自己紹介, 長所, 志望動機 | 丁寧語 + 謙譲語 basics | B1-30 all; B1-29; B1-27 | the interview script |
 | 02 | L | O contrato | monthly pay, bonuses, probation | 給料, ボーナス, 試用期間, 契約書 | 〜ことになる | 01 all; B1-30; B1-28 | bonuses twice a year |
 | 03 | T | DNA | genes and family resemblance | 遺伝子, 似ている, 遺伝, 家族 | 〜に対して | 02 all; 01 面接; B1-29 | — |
-| 04 | L | O primeiro dia | titles and the 名刺 exchange | 名刺, 課長, 部長, 先輩 | 尊敬語 いらっしゃる/おっしゃる | 03 all; 02 給料; B1-30 | business cards with two hands |
+| 04 | L | O primeiro dia | titles and the 名刺 exchange | 名刺, 課長, 部長, 先輩 | 尊敬語 いらっしゃる/おっしゃる | 03 all; 02 給料; B1-30 | business cards with two hands; table and status customs (Allan 2026-10-22): chopsticks never stuck upright in rice (funeral rite) or passed chopstick to chopstick; at a toast hold your glass a little lower than a senior's (先輩, boss) — widely taught business manners, and in Korea too; pour for others, not yourself; no phone calls and quiet voices on trains; escalators: stand left in Tokyo, right in Osaka (custom, not law — some cities now ask everyone to stand still); keep to the side others keep in corridors |
 | 05 | L | A reunião | the meeting before the meeting (根回し) | 会議, 根回し, 決定, 議題 | 〜によって | 04 all; 03 遺伝子; 01 面接 | nemawashi |
 | 06 | T | Química | mixing cleaning products | 化学, 混ぜる, 危険, 塩素 | 〜ばかり | 05 all; 04 名刺; 02 給料 | — |
 | 07 | L | E-mails | お世話になっております | メール, 添付, 返信, お世話になっております | business writing | 06 all; 05 会議; 03 遺伝子 | fixed openings |
