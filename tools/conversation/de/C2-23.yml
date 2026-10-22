@@ -1,0 +1,814 @@
+# UNIT de C2-23 — written by AI (Claude) for Casus; expanded from src/C2-23.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-23
+level: C2
+number: 23
+protagonist: f
+title:
+  en: At the city council
+  ar: في مجلس المدينة
+  mk: Во градскиот совет
+situation:
+  en: The mayor's office never solved the hall problem. At the council's public question time you have three minutes.
+  ar: مكتب رئيس البلدية لم يحلّ مشكلة القاعة قط. في وقت أسئلة المواطنين بمجلس المدينة لديكِ ثلاث دقائق.
+  mk: Канцеларијата на градоначалникот никогаш не го реши проблемот со салата. На часот за прашања на граѓаните во советот имате три минути.
+learn_lessons:
+- c2-rhetoric
+culture: Public question time
+new_items:
+- id: die-buergerfragestunde
+  text: die Bürgerfragestunde
+  meaning:
+    en: public question time
+    ar: وقت أسئلة المواطنين
+    mk: часот за прашања на граѓаните
+  rare: true
+- id: der-stadtrat-c2
+  text: die Stadträtinnen und Stadträte
+  meaning:
+    en: the city councillors
+    ar: أعضاء مجلس المدينة
+    mk: советниците
+- id: sehr-geehrter-herr-vorsitzender
+  text: Sehr geehrter Herr Vorsitzender
+  meaning:
+    en: Mr Chairman
+    ar: السيد الرئيس المحترم
+    mk: Почитуван господине претседавач
+- id: die-redezeit
+  text: die Redezeit
+  meaning:
+    en: the speaking time
+    ar: وقت الكلام
+    mk: времето за говор
+- id: ich-frage-sie
+  text: 'Ich frage Sie:'
+  meaning:
+    en: 'I ask you:'
+    ar: 'أسألكم:'
+    mk: 'Ве прашувам:'
+- id: konkret
+  text: ganz konkret
+  meaning:
+    en: very concretely
+    ar: بشكل محدّد تمامًا
+    mk: сосема конкретно
+- id: die-zusage
+  text: die Zusage
+  meaning:
+    en: the promise, commitment
+    ar: الوعد
+    mk: ветувањето
+- id: die-tatsache
+  text: die Tatsache
+  meaning:
+    en: the fact
+    ar: الحقيقة الواقعة
+    mk: фактот
+- id: die-schriftliche-antwort
+  text: eine schriftliche Antwort
+  meaning:
+    en: a written answer
+    ar: ردّ مكتوب
+    mk: писмен одговор
+- id: die-vertagung
+  text: vertagen
+  meaning:
+    en: adjourn, postpone
+    ar: يؤجّل
+    mk: одложува
+reviews:
+- item: das-baby-e
+  from: A2-16-e
+  for:
+  - en
+- item: war-e
+  from: A2-16-e
+  for:
+  - en
+- item: hatte-e
+  from: A2-16-e
+  for:
+  - en
+- item: schwer-e
+  from: A2-16-e
+  for:
+  - en
+- item: das-kindergeld-e
+  from: A2-16-e
+  for:
+  - en
+- item: der-antrag-e
+  from: A2-16-e
+  for:
+  - en
+- item: die-familienkasse-e
+  from: A2-16-e
+  for:
+  - en
+- item: das-urlaubssemester-e
+  from: A2-16-e
+  for:
+  - en
+- item: die-kita-uni-e
+  from: A2-16-e
+  for:
+  - en
+- item: unterstuetzung-e
+  from: A2-16-e
+  for:
+  - en
+- item: der-betriebsrat
+  from: B2-20
+- item: die-ueberstunden
+  from: B2-20
+- item: die-urlaubstage
+  from: B2-20
+- item: der-urlaubsantrag
+  from: B2-20
+- item: ist-geregelt
+  from: B2-20
+- item: ist-festgelegt
+  from: B2-20
+- item: ist-abgelehnt
+  from: B2-20
+- item: der-brueckentag
+  from: B2-20
+- item: ausgleichen
+  from: B2-20
+- item: das-arbeitszeitgesetz
+  from: B2-20
+- item: das-testament
+  from: C1-22
+- item: die-erbschaft
+  from: C1-22
+- item: erben
+  from: C1-22
+- item: der-erbe
+  from: C1-22
+- item: der-pflichtteil
+  from: C1-22
+- item: die-gesetzliche-erbfolge
+  from: C1-22
+- item: handschriftlich
+  from: C1-22
+- item: der-nachlass
+  from: C1-22
+- item: er-sagte-es-gebe
+  from: C1-22
+- item: vererben-c1
+  from: C1-22
+- item: der-roman
+  from: C2-08
+- item: die-figur
+  from: C2-08
+- item: der-erzaehler
+  from: C2-08
+- item: die-gesellschaft
+  from: C2-08
+- item: die-ehre-c2
+  from: C2-08
+- item: zwischen-den-zeilen-c2
+  from: C2-08
+- item: das-motiv
+  from: C2-08
+- item: der-schauplatz
+  from: C2-08
+- item: das-ist-ein-weites-feld
+  from: C2-08
+- item: tragisch
+  from: C2-08
+- item: das-missverstaendnis
+  from: C2-16
+- item: das-kam-falsch-rueber
+  from: C2-16
+- item: nicht-boese-gemeint
+  from: C2-16
+- item: schwamm-drueber
+  from: C2-16
+- item: ein-tabu
+  from: C2-16
+- item: das-gewicht
+  from: C2-16
+- item: sich-entschuldigen-c2
+  from: C2-16
+- item: ein-kompliment
+  from: C2-16
+- item: beleidigt
+  from: C2-16
+- item: andere-laender-andere-sitten
+  from: C2-16
+- item: die-krise
+  from: C2-20
+- item: fuer-dich-da-sein
+  from: C2-20
+- item: gekuendigt-werden
+  from: C2-20
+- item: mal-eben
+  from: C2-20
+- item: ja-wohl-c2
+  from: C2-20
+- item: schon-c2
+  from: C2-20
+- item: kopf-hoch
+  from: C2-20
+- item: die-abfindung
+  from: C2-20
+- item: ratschlaege
+  from: C2-20
+- item: einfach-zuhoeren
+  from: C2-20
+- item: die-zugehoerigkeit
+  from: C2-22
+- item: die-identitaet
+  from: C2-22
+- item: die-geborgenheit
+  from: C2-22
+- item: die-verwurzelung
+  from: C2-22
+- item: unuebersetzbar
+  from: C2-22
+- item: die-herkunft
+  from: C2-22
+- item: frage-der-wahl
+  from: C2-22
+- item: das-gefuehl
+  from: C2-22
+- item: die-sprache-als-heimat
+  from: C2-22
+- item: die-mehrfachzugehoerigkeit
+  from: C2-22
+- item: der-antrag-a
+  from: A2-16-a
+  for:
+  - ar
+- item: die-familienkasse-a
+  from: A2-16-a
+  for:
+  - ar
+- item: die-geburtsurkunde-a
+  from: A2-16-a
+  for:
+  - ar
+- item: uebersetzt-a
+  from: A2-16-a
+  for:
+  - ar
+- item: war-a
+  from: A2-16-a
+  for:
+  - ar
+- item: hatte-a
+  from: A2-16-a
+  for:
+  - ar
+- item: die-steuer-id-kind-a
+  from: A2-16-a
+  for:
+  - ar
+- item: rueckwirkend-a
+  from: A2-16-a
+  for:
+  - ar
+- item: die-bearbeitung-a
+  from: A2-16-a
+  for:
+  - ar
+- item: der-bescheid-a
+  from: A2-16-a
+  for:
+  - ar
+- item: das-kindergeld-m
+  from: A2-16-m
+  for:
+  - mk
+- item: jeden-monat-k-m
+  from: A2-16-m
+  for:
+  - mk
+- item: war-m
+  from: A2-16-m
+  for:
+  - mk
+- item: hatte-m
+  from: A2-16-m
+  for:
+  - mk
+- item: das-elterngeld-m
+  from: A2-16-m
+  for:
+  - mk
+- item: nach-der-geburt-m
+  from: A2-16-m
+  for:
+  - mk
+- item: zu-hause-bleiben-m
+  from: A2-16-m
+  for:
+  - mk
+- item: als-ich-klein-war-m
+  from: A2-16-m
+  for:
+  - mk
+- item: anders-m
+  from: A2-16-m
+  for:
+  - mk
+- item: der-staat-m
+  from: A2-16-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: The mayor's office never solved the hall problem. At the council's public question time you have three minutes. Listen to the conversation; you don't need to understand it yet.
+    ar: مكتب رئيس البلدية لم يحلّ مشكلة القاعة قط. في وقت أسئلة المواطنين بمجلس المدينة لديكِ ثلاث دقائق. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.
+    mk: Канцеларијата на градоначалникот никогаш не го реши проблемот со салата. На часот за прашања на граѓаните во советот имате три минути. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: ratsvorsitz
+    text: Bürgerfragestunde. Sie haben drei Minuten Redezeit.
+    meaning:
+      en: Public question time. You have three minutes' speaking time.
+      ar: وقت أسئلة المواطنين. لديكِ ثلاث دقائق للكلام.
+      mk: Час за прашања на граѓаните. Имате три минути време за говор.
+  - speaker: protagonist
+    text: Sehr geehrter Herr Vorsitzender, sehr geehrte Stadträtinnen und Stadträte!
+    meaning:
+      en: Mr Chairman, ladies and gentlemen of the council!
+      ar: السيد الرئيس المحترم، أعضاء المجلس المحترمون!
+      mk: Почитуван господине претседавач, почитувани советнички и советници!
+  - speaker: protagonist
+    text: 'Drei Tatsachen. Erstens: Vierzig Kinder haben keine Halle. Zweitens: Es gab eine Zusage. Drittens: Seit sechs Monaten passiert nichts.'
+    meaning:
+      en: 'Three facts. First: forty children have no hall. Second: there was a promise. Third: for six months nothing has happened.'
+      ar: 'ثلاث حقائق. أولًا: أربعون طفلًا بلا قاعة. ثانيًا: كان هناك وعد. ثالثًا: منذ ستة أشهر لا شيء يحدث.'
+      mk: 'Три факти. Прво: четириесет деца немаат сала. Второ: имаше ветување. Трето: шест месеци ништо не се случува.'
+  - speaker: protagonist
+    text: 'Ich frage Sie ganz konkret: Wann bekommen diese Kinder ihre Hallenzeit?'
+    meaning:
+      en: 'I ask you very concretely: when will these children get their hall time?'
+      ar: 'أسألكم بشكل محدّد تمامًا: متى يحصل هؤلاء الأطفال على وقتهم في القاعة؟'
+      mk: 'Ве прашувам сосема конкретно: кога овие деца ќе го добијат својот термин?'
+  - speaker: ratsvorsitz
+    text: Danke. Das Sportamt antwortet Ihnen schriftlich innerhalb von vier Wochen.
+    meaning:
+      en: Thank you. The sports office will answer you in writing within four weeks.
+      ar: شكرًا. مكتب الرياضة سيردّ عليكِ كتابيًا خلال أربعة أسابيع.
+      mk: Благодарам. Спортската служба ќе ви одговори писмено во рок од четири недели.
+  - speaker: protagonist
+    text: Eine schriftliche Antwort ist gut. Eine Halle wäre besser.
+    meaning:
+      en: A written answer is good. A hall would be better.
+      ar: الردّ المكتوب جيد. لكن القاعة أفضل.
+      mk: Писмениот одговор е добар. Сала би била подобра.
+  - speaker: ratsvorsitz
+    text: (Applaus) Bitte keine Beifallsbekundungen. Wir vertagen den Punkt nicht — er kommt auf die nächste Tagesordnung.
+    meaning:
+      en: (Applause) No applause, please. We won't postpone the item — it goes on the next agenda.
+      ar: (تصفيق) من فضلكم لا تصفيق. لن نؤجّل البند — سيُدرج في جدول الأعمال القادم.
+      mk: (Аплауз) Ве молам без аплаузи. Нема да ја одложиме точката — оди на следниот дневен ред.
+  - speaker: protagonist
+    text: Dann komme ich wieder. Mit vierzig Kindern.
+    meaning:
+      en: Then I'll come again. With forty children.
+      ar: إذن سأعود. مع أربعين طفلًا.
+      mk: Тогаш пак ќе дојдам. Со четириесет деца.
+- type: prompt
+  ask:
+    en: 'Say: public question time.'
+    ar: 'قولي: وقت أسئلة المواطنين.'
+    mk: 'Кажете: час за прашања на граѓаните.'
+  answer:
+    speaker: protagonist
+    text: Die Bürgerfragestunde.
+  items:
+  - die-buergerfragestunde
+- type: prompt
+  ask:
+    en: Address the chair and the council.
+    ar: خاطبي الرئيس والمجلس.
+    mk: Обратете се на претседавачот и советот.
+  answer:
+    speaker: protagonist
+    text: Sehr geehrter Herr Vorsitzender, sehr geehrte Stadträtinnen und Stadträte!
+  items:
+  - sehr-geehrter-herr-vorsitzender
+  - der-stadtrat-c2
+- type: narrator
+  text:
+    en: 'Rhetoric under time pressure: a list of three («Erstens… Zweitens… Drittens…»), one concrete question («Ich frage Sie ganz konkret: …»), and a short, memorable contrast at the end («Eine schriftliche
+      Antwort ist gut. Eine Halle wäre besser.»).'
+    ar: 'البلاغة تحت ضغط الوقت: قائمة من ثلاثة («Erstens… Zweitens… Drittens…»)، وسؤال محدّد واحد («Ich frage Sie ganz konkret: …»)، ومقابلة قصيرة لا تُنسى في النهاية («Eine schriftliche Antwort ist gut.
+      Eine Halle wäre besser.»).'
+    mk: 'Реторика под временски притисок: листа од три («Erstens… Zweitens… Drittens…»), едно конкретно прашање («Ich frage Sie ganz konkret: …») и краток контраст што се памети на крајот («Eine schriftliche
+      Antwort ist gut. Eine Halle wäre besser.»).'
+- type: prompt
+  ask:
+    en: 'Say: three facts.'
+    ar: 'قولي: ثلاث حقائق.'
+    mk: 'Кажете: три факти.'
+  answer:
+    speaker: protagonist
+    text: Drei Tatsachen.
+  items:
+  - die-tatsache
+- type: prompt
+  ask:
+    en: 'Say: there was a promise.'
+    ar: 'قولي: كان هناك وعد.'
+    mk: 'Кажете: имаше ветување.'
+  answer:
+    speaker: protagonist
+    text: Es gab eine Zusage.
+  items:
+  - die-zusage
+- type: prompt
+  ask:
+    en: Ask very concretely.
+    ar: اسألي بشكل محدّد تمامًا.
+    mk: Прашајте сосема конкретно.
+  answer:
+    speaker: protagonist
+    text: 'Ich frage Sie ganz konkret:'
+  items:
+  - ich-frage-sie
+  - konkret
+- type: prompt
+  ask:
+    en: 'Say: a written answer.'
+    ar: 'قولي: ردّ مكتوب.'
+    mk: 'Кажете: писмен одговор.'
+  answer:
+    speaker: protagonist
+    text: Eine schriftliche Antwort.
+  items:
+  - die-schriftliche-antwort
+- type: prompt
+  ask:
+    en: 'Say: the speaking time.'
+    ar: 'قولي: وقت الكلام.'
+    mk: 'Кажете: времето за говор.'
+  answer:
+    speaker: protagonist
+    text: Die Redezeit.
+  items:
+  - die-redezeit
+- type: prompt
+  ask:
+    en: 'Say: we won''t postpone it.'
+    ar: 'قولي: لن نؤجّله.'
+    mk: 'Кажете: нема да го одложиме.'
+  answer:
+    speaker: protagonist
+    text: Wir vertagen es nicht.
+  items:
+  - die-vertagung
+- type: narrator
+  text:
+    en: 'Most city councils hold a public question time where any resident — with or without a German passport — may ask a question, often registered in advance. Three minutes, one question, facts first:
+      that''s what gets an answer on the record.'
+    ar: 'معظم مجالس المدن تعقد وقتًا لأسئلة المواطنين يحق فيه لأي مقيم — بجواز ألماني أو بدونه — طرح سؤال، غالبًا بتسجيل مسبق. ثلاث دقائق، سؤال واحد، والوقائع أولًا: هذا ما يجلب جوابًا مسجّلًا.'
+    mk: 'Повеќето градски совети имаат час за прашања каде секој жител — со или без германски пасош — може да постави прашање, често со пријава однапред. Три минути, едно прашање, прво фактите: тоа носи
+      одговор што се запишува.'
+- type: prompt
+  ask:
+    en: 'Once more: say “public question time”.'
+    ar: 'مرة أخرى: قولي “وقت أسئلة المواطنين”.'
+    mk: 'Уште еднаш: кажете „часот за прашања на граѓаните“.'
+  answer:
+    speaker: protagonist
+    text: die Bürgerfragestunde
+  items:
+  - die-buergerfragestunde
+- type: prompt
+  ask:
+    en: 'Once more: say “the city councillors”.'
+    ar: 'مرة أخرى: قولي “أعضاء مجلس المدينة”.'
+    mk: 'Уште еднаш: кажете „советниците“.'
+  answer:
+    speaker: protagonist
+    text: die Stadträtinnen und Stadträte
+  items:
+  - der-stadtrat-c2
+- type: prompt
+  ask:
+    en: 'Once more: say “Mr Chairman”.'
+    ar: 'مرة أخرى: قولي “السيد الرئيس المحترم”.'
+    mk: 'Уште еднаш: кажете „Почитуван господине претседавач“.'
+  answer:
+    speaker: protagonist
+    text: Sehr geehrter Herr Vorsitzender
+  items:
+  - sehr-geehrter-herr-vorsitzender
+- type: prompt
+  ask:
+    en: 'Once more: say “the speaking time”.'
+    ar: 'مرة أخرى: قولي “وقت الكلام”.'
+    mk: 'Уште еднаш: кажете „времето за говор“.'
+  answer:
+    speaker: protagonist
+    text: die Redezeit
+  items:
+  - die-redezeit
+- type: prompt
+  ask:
+    en: 'Once more: say “I ask you:”.'
+    ar: 'مرة أخرى: قولي “أسألكم:”.'
+    mk: 'Уште еднаш: кажете „Ве прашувам:“.'
+  answer:
+    speaker: protagonist
+    text: 'Ich frage Sie:'
+  items:
+  - ich-frage-sie
+- type: prompt
+  ask:
+    en: 'Once more: say “very concretely”.'
+    ar: 'مرة أخرى: قولي “بشكل محدّد تمامًا”.'
+    mk: 'Уште еднаш: кажете „сосема конкретно“.'
+  answer:
+    speaker: protagonist
+    text: ganz konkret
+  items:
+  - konkret
+- type: prompt
+  ask:
+    en: 'Once more: say “the promise, commitment”.'
+    ar: 'مرة أخرى: قولي “الوعد”.'
+    mk: 'Уште еднаш: кажете „ветувањето“.'
+  answer:
+    speaker: protagonist
+    text: die Zusage
+  items:
+  - die-zusage
+- type: prompt
+  ask:
+    en: 'Once more: say “the fact”.'
+    ar: 'مرة أخرى: قولي “الحقيقة الواقعة”.'
+    mk: 'Уште еднаш: кажете „фактот“.'
+  answer:
+    speaker: protagonist
+    text: die Tatsache
+  items:
+  - die-tatsache
+- type: prompt
+  ask:
+    en: 'Once more: say “a written answer”.'
+    ar: 'مرة أخرى: قولي “ردّ مكتوب”.'
+    mk: 'Уште еднаш: кажете „писмен одговор“.'
+  answer:
+    speaker: protagonist
+    text: eine schriftliche Antwort
+  items:
+  - die-schriftliche-antwort
+- type: prompt
+  ask:
+    en: 'Once more: say “adjourn, postpone”.'
+    ar: 'مرة أخرى: قولي “يؤجّل”.'
+    mk: 'Уште еднаш: кажете „одложува“.'
+  answer:
+    speaker: protagonist
+    text: vertagen
+  items:
+  - die-vertagung
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the baby — and “was — and “had — and “hard, difficult”.'
+  answer:
+    speaker: protagonist
+    text: das Baby … war … hatte … schwer
+  items:
+  - das-baby-e
+  - war-e
+  - hatte-e
+  - schwer-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “child benefit — and “the application — and “the family benefits office — and “a semester off”.'
+  answer:
+    speaker: protagonist
+    text: das Kindergeld … der Antrag … die Familienkasse … das Urlaubssemester
+  items:
+  - das-kindergeld-e
+  - der-antrag-e
+  - die-familienkasse-e
+  - das-urlaubssemester-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the university nursery — and “support”.'
+  answer:
+    speaker: protagonist
+    text: die Uni-Kita … die Unterstützung
+  items:
+  - die-kita-uni-e
+  - unterstuetzung-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “belonging — and “identity — and “a sense of safety and warmth — and “rootedness — and “untranslatable — and “origin — and “a matter of choice — and “a feeling, not a place — and “language
+      as home — and “several homelands — and “the crisis — and “I''m here for you — and “be dismissed — and “(particle) go on, tell me — and “That really is hard — and “It''ll work out — and “Chin up! —
+      and “the severance pay — and “advice (pieces of) — and “just listen”.'
+    ar: 'قولي: “الانتماء — و“الهوية — و“الشعور بالأمان والدفء — و“التجذّر — و“غير قابل للترجمة — و“الأصل — و“مسألة اختيار — و“شعور لا مكان — و“اللغة وطنًا — و“أوطان متعدّدة — و“الأزمة — و“أنا هنا من أجلك
+      — و“يُفصل من العمل — و“(أداة) هيا، احكِ — و“هذا صعب حقًا — و“ستتحسّن الأمور — و“ارفع رأسك! — و“تعويض نهاية الخدمة — و“نصائح — و“الإصغاء فقط”.'
+    mk: 'Кажете: „припадноста“ — и „идентитетот“ — и „чувството на сигурност и топлина“ — и „вкоренетоста“ — и „непреводливо“ — и „потеклото“ — и „прашање на избор“ — и „чувство, не место“ — и „јазикот
+      како дом“ — и „повеќе татковини“ — и „кризата“ — и „Тука сум за тебе“ — и „да добие отказ“ — и „(честичка) ајде, раскажи“ — и „Тоа навистина е тешко“ — и „Ќе се среди“ — и „Глава горе!“ — и „отпремнината“
+      — и „совети“ — и „само слушање“.'
+  answer:
+    speaker: protagonist
+    text: die Zugehörigkeit … die Identität … die Geborgenheit … die Verwurzelung … unübersetzbar … die Herkunft … eine Frage der Wahl … ein Gefühl, kein Ort … die Sprache als Heimat … mehrere Heimaten
+      … die Krise … Ich bin für dich da … gekündigt werden … erzähl mal … Das ist ja auch hart … Das wird schon … Kopf hoch! … die Abfindung … Ratschläge … einfach zuhören
+  items:
+  - die-zugehoerigkeit
+  - die-identitaet
+  - die-geborgenheit
+  - die-verwurzelung
+  - unuebersetzbar
+  - die-herkunft
+  - frage-der-wahl
+  - das-gefuehl
+  - die-sprache-als-heimat
+  - die-mehrfachzugehoerigkeit
+  - die-krise
+  - fuer-dich-da-sein
+  - gekuendigt-werden
+  - mal-eben
+  - ja-wohl-c2
+  - schon-c2
+  - kopf-hoch
+  - die-abfindung
+  - ratschlaege
+  - einfach-zuhoeren
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the misunderstanding — and “That came across wrong — and “It wasn''t meant badly — and “Let''s forget it! — and “a taboo — and “the weight — and “apologise sincerely — and “a compliment —
+      and “offended — and “Other countries, other customs — and “the novel — and “the character — and “the narrator — and “society — and “the code of honour — and “hint at, imply — and “the motif — and
+      “the setting — and “That''s a big subject (Fontane) — and “tragic”.'
+    ar: 'قولي: “سوء الفهم — و“فُهم ذلك خطأً — و“لم أقصد سوءًا — و“لننسَ الأمر! — و“محظور، تابو — و“الوزن — و“يعتذر بصدق — و“إطراء — و“مستاء، مُهان — و“لكل بلد عاداته — و“الرواية — و“الشخصية — و“الراوي —
+      و“المجتمع — و“قانون الشرف — و“يلمّح — و“الموضوع المتكرّر — و“مسرح الأحداث — و“هذا موضوع واسع (فونتانه) — و“مأساوي”.'
+    mk: 'Кажете: „недоразбирањето“ — и „Тоа излезе погрешно“ — и „Не беше мислено лошо“ — и „Да заборавиме!“ — и „табу“ — и „тежината“ — и „искрено се извинува“ — и „комплимент“ — и „навредено“ — и „Друга
+      земја, други обичаи“ — и „романот“ — и „ликот“ — и „раскажувачот“ — и „општеството“ — и „кодексот на честа“ — и „навестува“ — и „мотивот“ — и „местото на дејството“ — и „Тоа е широко поле (Фонтане)“
+      — и „трагично“.'
+  answer:
+    speaker: protagonist
+    text: das Missverständnis … Das kam falsch rüber … Das war nicht böse gemeint … Schwamm drüber! … ein Tabu … das Gewicht … sich aufrichtig entschuldigen … ein Kompliment … beleidigt … Andere Länder,
+      andere Sitten … der Roman … die Figur … der Erzähler … die Gesellschaft … der Ehrenkodex … andeuten … das Motiv … der Schauplatz … Das ist ein weites Feld … tragisch
+  items:
+  - das-missverstaendnis
+  - das-kam-falsch-rueber
+  - nicht-boese-gemeint
+  - schwamm-drueber
+  - ein-tabu
+  - das-gewicht
+  - sich-entschuldigen-c2
+  - ein-kompliment
+  - beleidigt
+  - andere-laender-andere-sitten
+  - der-roman
+  - die-figur
+  - der-erzaehler
+  - die-gesellschaft
+  - die-ehre-c2
+  - zwischen-den-zeilen-c2
+  - das-motiv
+  - der-schauplatz
+  - das-ist-ein-weites-feld
+  - tragisch
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the will — and “the inheritance — and “inherit — and “the heir — and “the compulsory share — and “statutory succession — and “handwritten — and “the estate — and “he said there was … — and
+      “bequeath — and “the works council — and “overtime — and “holiday days — and “the holiday request — and “is regulated, is set out — and “is fixed — and “is refused — and “a bridge day (between holiday
+      and weekend) — and “compensate (with time off) — and “the working hours law”.'
+    ar: 'قولي: “الوصية — و“الإرث — و“يرث — و“الوريث — و“الحصة الإلزامية — و“الإرث القانوني — و“بخط اليد — و“التركة — و“قال إنه يوجد … — و“يوصي بـ — و“مجلس العاملين — و“الساعات الإضافية — و“أيام الإجازة
+      — و“طلب الإجازة — و“منظَّم — و“محدَّد — و“مرفوض — و“يوم الجسر — و“يعوّض — و“قانون ساعات العمل”.'
+    mk: 'Кажете: „тестаментот“ — и „наследството“ — и „наследува“ — и „наследникот“ — и „задолжителниот дел“ — и „законскиот наследен ред“ — и „рачно напишан“ — и „оставината“ — и „рече дека има …“ — и
+      „остава во аманет“ — и „работничкиот совет“ — и „прекувремената работа“ — и „деновите одмор“ — и „барањето за одмор“ — и „е регулирано“ — и „е утврдено“ — и „е одбиено“ — и „мостен ден“ — и „надоместува“
+      — и „законот за работно време“.'
+  answer:
+    speaker: protagonist
+    text: das Testament … die Erbschaft … erben … der Erbe / die Erbin … der Pflichtteil … die gesetzliche Erbfolge … handschriftlich … der Nachlass … er sagte, es gebe … … vermachen … der Betriebsrat …
+      die Überstunden … die Urlaubstage … der Urlaubsantrag … ist geregelt … ist festgelegt … ist abgelehnt … der Brückentag … ausgleichen … das Arbeitszeitgesetz
+  items:
+  - das-testament
+  - die-erbschaft
+  - erben
+  - der-erbe
+  - der-pflichtteil
+  - die-gesetzliche-erbfolge
+  - handschriftlich
+  - der-nachlass
+  - er-sagte-es-gebe
+  - vererben-c1
+  - der-betriebsrat
+  - die-ueberstunden
+  - die-urlaubstage
+  - der-urlaubsantrag
+  - ist-geregelt
+  - ist-festgelegt
+  - ist-abgelehnt
+  - der-brueckentag
+  - ausgleichen
+  - das-arbeitszeitgesetz
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “الطلب — و“مكتب إعانات العائلة — و“شهادة الميلاد — و“مترجَم”.'
+  answer:
+    speaker: protagonist
+    text: der Antrag … die Familienkasse … die Geburtsurkunde … übersetzt
+  items:
+  - der-antrag-a
+  - die-familienkasse-a
+  - die-geburtsurkunde-a
+  - uebersetzt-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “كان — و“كان عندي — و“الرقم الضريبي للطفل — و“بأثر رجعي”.'
+  answer:
+    speaker: protagonist
+    text: war … hatte … die Steuer-ID des Kindes … rückwirkend
+  items:
+  - war-a
+  - hatte-a
+  - die-steuer-id-kind-a
+  - rueckwirkend-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “معالجة الطلب — و“القرار الرسمي (الإشعار)”.'
+  answer:
+    speaker: protagonist
+    text: die Bearbeitung … der Bescheid
+  items:
+  - die-bearbeitung-a
+  - der-bescheid-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „детскиот додаток“ — и „секој месец“ — и „беше“ — и „имаше“.'
+  answer:
+    speaker: protagonist
+    text: das Kindergeld … jeden Monat … war … hatte
+  items:
+  - das-kindergeld-m
+  - jeden-monat-k-m
+  - war-m
+  - hatte-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „родителскиот надомест“ — и „по раѓањето“ — и „да остане дома“ — и „кога бев мал“.'
+  answer:
+    speaker: protagonist
+    text: das Elterngeld … nach der Geburt … zu Hause bleiben … als ich klein war
+  items:
+  - das-elterngeld-m
+  - nach-der-geburt-m
+  - zu-hause-bleiben-m
+  - als-ich-klein-war-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „поинаку“ — и „државата“.'
+  answer:
+    speaker: protagonist
+    text: anders … der Staat
+  items:
+  - anders-m
+  - der-staat-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

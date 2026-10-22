@@ -1,0 +1,838 @@
+# UNIT de C2-24 — written by AI (Claude) for Casus; expanded from src/C2-24.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-24
+level: C2
+number: 24
+protagonist: m
+title:
+  en: Language at work
+  ar: اللغة في العمل
+  mk: Јазикот на работа
+situation:
+  en: Leon, the new intern, greets the boss with 'Hey, na, alles fit?' and writes emails in chat style. You take him aside — kindly.
+  ar: ليون، المتدرّب الجديد، يحيّي المديرة بـ«هاي، كيف الحال؟» ويكتب الرسائل بأسلوب الدردشة. تأخذه جانبًا — بلطف.
+  mk: Леон, новиот практикант, ја поздравува шефицата со „Еј, што има?“ и пишува мејлови во стил на чет. Го повлекувате настрана — љубезно.
+learn_lessons:
+- c2-register
+culture: Du and Sie in the team
+new_items:
+- id: der-praktikant
+  text: der Praktikant
+  meaning:
+    en: the intern
+    ar: المتدرّب
+    mk: практикантот
+- id: darf-ich-dir-einen-tipp-geben
+  text: Darf ich dir einen Tipp geben?
+  meaning:
+    en: May I give you a tip?
+    ar: هل تسمح لي بنصيحة؟
+    mk: Смеам ли да ти дадам совет?
+- id: im-team-duzen
+  text: im Team duzen wir uns
+  meaning:
+    en: in the team we say du
+    ar: في الفريق نتخاطب بـdu
+    mk: во тимот си велиме du
+- id: die-chefin-siezen
+  text: die Chefin siezen
+  meaning:
+    en: address the boss as Sie
+    ar: يخاطب المديرة بـSie
+    mk: на шефицата ѝ се персира
+- id: die-anrede
+  text: die Anrede
+  meaning:
+    en: the form of address
+    ar: صيغة المخاطبة
+    mk: обраќањето
+- id: umgangssprachlich
+  text: umgangssprachlich
+  meaning:
+    en: colloquial
+    ar: عامي
+    mk: разговорно
+- id: unangemessen
+  text: unangemessen
+  meaning:
+    en: inappropriate
+    ar: غير لائق
+    mk: несоодветно
+- id: das-fingerspitzengefuehl
+  text: das Fingerspitzengefühl
+  meaning:
+    en: tact, a feel for the situation
+    ar: الحسّ المرهف
+    mk: чувството за мерка
+  rare: true
+- id: nimm-es-nicht-persoenlich
+  text: Nimm es nicht persönlich
+  meaning:
+    en: Don't take it personally
+    ar: لا تأخذ الأمر على محمل شخصي
+    mk: Не земај го лично
+- id: peinlich
+  text: peinlich
+  meaning:
+    en: embarrassing
+    ar: محرج
+    mk: непријатно
+reviews:
+- item: das-gleis
+  from: A2-17
+- item: nach-dresden
+  from: A2-17
+- item: in-den-zug
+  from: A2-17
+- item: auf-gleis
+  from: A2-17
+- item: faellt-aus
+  from: A2-17
+- item: die-durchsage
+  from: A2-17
+- item: zum-bahnsteig
+  from: A2-17
+- item: mit-verspaetung
+  from: A2-17
+- item: der-anschluss
+  from: A2-17
+- item: entschaedigung
+  from: A2-17
+- item: der-glaube
+  from: B2-21
+- item: glaeubig
+  from: B2-21
+- item: konfessionslos
+  from: B2-21
+- item: die-moschee
+  from: B2-21
+- item: der-kirchenaustritt
+  from: B2-21
+- item: das-mitglied-kirche
+  from: B2-21
+- item: die-gemeinde
+  from: B2-21
+- item: sie-seien
+  from: B2-21
+- item: es-gebe
+  from: B2-21
+- item: die-religionsfreiheit
+  from: B2-21
+- item: respektieren
+  from: B2-21
+- item: die-diskriminierung
+  from: C1-23
+- item: die-antidiskriminierungsstelle
+  from: C1-23
+- item: das-agg
+  from: C1-23
+- item: der-test-bewerbung
+  from: C1-23
+- item: der-beweis-c1
+  from: C1-23
+- item: verstoesst-gegen
+  from: C1-23
+- item: will-gewusst-haben
+  from: C1-23
+- item: die-entschaedigung
+  from: C1-23
+- item: die-frist-zwei-monate
+  from: C1-23
+- item: schriftlich-geltend-machen
+  from: C1-23
+- item: da-steppt-der-baer
+  from: C2-09
+- item: nur-bahnhof
+  from: C2-09
+- item: nicht-mein-bier
+  from: C2-09
+- item: daumen-druecken
+  from: C2-09
+- item: tomaten-auf-den-augen
+  from: C2-09
+- item: den-nagel-auf-den-kopf
+  from: C2-09
+- item: ins-fettnaepfchen
+  from: C2-09
+- item: hals-und-beinbruch
+  from: C2-09
+- item: die-redewendung
+  from: C2-09
+- item: im-richtigen-moment
+  from: C2-09
+- item: das-klischee-c2
+  from: C2-17
+- item: die-erfahrung-c2
+  from: C2-17
+- item: differenzieren
+  from: C2-17
+- item: pauschalisieren
+  from: C2-17
+- item: das-zitat
+  from: C2-17
+- item: die-schlagzeile
+  from: C2-17
+- item: die-vielfalt
+  from: C2-17
+- item: ich-moechte-betonen
+  from: C2-17
+- item: die-gegenfrage
+  from: C2-17
+- item: autorisieren
+  from: C2-17
+- item: fremd-geworden-e
+  from: C2-21-e
+  for:
+  - en
+- item: der-umgekehrte-kulturschock-e
+  from: C2-21-e
+  for:
+  - en
+- item: zwischen-den-stuehlen-e
+  from: C2-21-e
+  for:
+  - en
+- item: die-heimat-c2-e
+  from: C2-21-e
+  for:
+  - en
+- item: sich-veraendert-e
+  from: C2-21-e
+  for:
+  - en
+- item: die-sehnsucht-e
+  from: C2-21-e
+  for:
+  - en
+- item: unpuenktlich-e
+  from: C2-21-e
+  for:
+  - en
+- item: ertappen-e
+  from: C2-21-e
+  for:
+  - en
+- item: vermissen-c2-e
+  from: C2-21-e
+  for:
+  - en
+- item: doppelt-zuhause-e
+  from: C2-21-e
+  for:
+  - en
+- item: die-buergerfragestunde
+  from: C2-23
+- item: der-stadtrat-c2
+  from: C2-23
+- item: sehr-geehrter-herr-vorsitzender
+  from: C2-23
+- item: die-redezeit
+  from: C2-23
+- item: ich-frage-sie
+  from: C2-23
+- item: konkret
+  from: C2-23
+- item: die-zusage
+  from: C2-23
+- item: die-tatsache
+  from: C2-23
+- item: die-schriftliche-antwort
+  from: C2-23
+- item: die-vertagung
+  from: C2-23
+- item: fremd-geworden-a
+  from: C2-21-a
+  for:
+  - ar
+- item: der-umgekehrte-kulturschock-a
+  from: C2-21-a
+  for:
+  - ar
+- item: zwischen-den-stuehlen-a
+  from: C2-21-a
+  for:
+  - ar
+- item: die-diaspora-a
+  from: C2-21-a
+  for:
+  - ar
+- item: sich-veraendert-a
+  from: C2-21-a
+  for:
+  - ar
+- item: die-sehnsucht-a
+  from: C2-21-a
+  for:
+  - ar
+- item: die-erinnerung-c2-a
+  from: C2-21-a
+  for:
+  - ar
+- item: die-cousins-a
+  from: C2-21-a
+  for:
+  - ar
+- item: verstehen-nicht-alles-a
+  from: C2-21-a
+  for:
+  - ar
+- item: doppelt-zuhause-a
+  from: C2-21-a
+  for:
+  - ar
+- item: fremd-geworden-m
+  from: C2-21-m
+  for:
+  - mk
+- item: der-umgekehrte-kulturschock-m
+  from: C2-21-m
+  for:
+  - mk
+- item: zwischen-den-stuehlen-m
+  from: C2-21-m
+  for:
+  - mk
+- item: die-heimat-c2-m
+  from: C2-21-m
+  for:
+  - mk
+- item: sich-veraendert-m
+  from: C2-21-m
+  for:
+  - mk
+- item: die-sehnsucht-m
+  from: C2-21-m
+  for:
+  - mk
+- item: der-hof-m
+  from: C2-21-m
+  for:
+  - mk
+- item: die-nachbarn-c2-m
+  from: C2-21-m
+  for:
+  - mk
+- item: ohne-termin-m
+  from: C2-21-m
+  for:
+  - mk
+- item: doppelt-zuhause-m
+  from: C2-21-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: Leon, the new intern, greets the boss with 'Hey, na, alles fit?' and writes emails in chat style. You take him aside — kindly. Listen to the conversation; you don't need to understand it yet.
+    ar: ليون، المتدرّب الجديد، يحيّي المديرة بـ«هاي، كيف الحال؟» ويكتب الرسائل بأسلوب الدردشة. تأخذه جانبًا — بلطف. استمع إلى المحادثة؛ لا داعي لأن تفهمها الآن.
+    mk: Леон, новиот практикант, ја поздравува шефицата со „Еј, што има?“ и пишува мејлови во стил на чет. Го повлекувате настрана — љубезно. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Leon, darf ich dir einen Tipp geben? Nimm es nicht persönlich.
+    meaning:
+      en: Leon, may I give you a tip? Don't take it personally.
+      ar: ليون، هل تسمح لي بنصيحة؟ لا تأخذ الأمر على محمل شخصي.
+      mk: Леон, смеам ли да ти дадам совет? Не земај го лично.
+  - speaker: leon
+    text: Klar. Hab ich was verbockt?
+    meaning:
+      en: Sure. Did I mess something up?
+      ar: طبعًا. هل أفسدتُ شيئًا؟
+      mk: Секако. Дали нешто зезнав?
+  - speaker: protagonist
+    text: Im Team duzen wir uns. Aber Frau Schröder siezen wir — bis sie das Du anbietet.
+    meaning:
+      en: In the team we say du. But Frau Schröder we address as Sie — until she offers du.
+      ar: في الفريق نتخاطب بـdu. لكن السيدة شرودر نخاطبها بـSie — حتى تعرض هي الـdu.
+      mk: Во тимот си велиме du. Но на госпоѓа Шредер ѝ персираме — додека таа не понуди du.
+  - speaker: leon
+    text: Oh. Ich hab „Hey, na, alles fit?“ gesagt. Wie peinlich!
+    meaning:
+      en: Oh. I said 'Hey, all good?'. How embarrassing!
+      ar: آه. قلتُ «هاي، كيف الحال؟». يا للإحراج!
+      mk: О. Реков „Еј, што има?“. Колку непријатно!
+  - speaker: protagonist
+    text: 'Halb so schlimm. Und in E-Mails an Kunden: keine Smileys, nicht umgangssprachlich.'
+    meaning:
+      en: 'Not that bad. And in emails to clients: no smileys, nothing colloquial.'
+      ar: 'ليس بهذا السوء. وفي الرسائل للزبائن: لا وجوه ضاحكة، ولا أسلوب عامّي.'
+      mk: 'Не е толку страшно. А во мејлови до клиенти: без смајлиња, не разговорно.'
+  - speaker: leon
+    text: Ist „LG“ auch unangemessen?
+    meaning:
+      en: Is 'LG' (best wishes) inappropriate too?
+      ar: وهل «LG» (أطيب التحيات اختصارًا) غير لائقة أيضًا؟
+      mk: Дали и „LG“ (поздрав, кратенка) е несоодветно?
+  - speaker: protagonist
+    text: Für Kollegen okay, für Kunden „Mit freundlichen Grüßen“. Das ist Fingerspitzengefühl.
+    meaning:
+      en: Fine for colleagues; for clients 'Kind regards'. That's tact.
+      ar: مقبولة للزملاء؛ وللزبائن «مع أطيب التحيات». هذا هو الحسّ المرهف.
+      mk: За колегите во ред; за клиентите „Со почит“. Тоа е чувство за мерка.
+  - speaker: leon
+    text: Danke. Das hätte mir an der Uni keiner gesagt.
+    meaning:
+      en: Thanks. Nobody at uni would have told me that.
+      ar: شكرًا. لم يكن أحد في الجامعة ليقول لي هذا.
+      mk: Благодарам. Тоа никој на факултет немаше да ми го каже.
+- type: prompt
+  ask:
+    en: 'Ask: may I give you a tip?'
+    ar: 'اسأل: هل تسمح لي بنصيحة؟'
+    mk: 'Прашајте: смеам ли да ти дадам совет?'
+  answer:
+    speaker: protagonist
+    text: Darf ich dir einen Tipp geben?
+  items:
+  - darf-ich-dir-einen-tipp-geben
+- type: prompt
+  ask:
+    en: 'Say: don''t take it personally.'
+    ar: 'قل: لا تأخذ الأمر على محمل شخصي.'
+    mk: 'Кажете: не земај го лично.'
+  answer:
+    speaker: protagonist
+    text: Nimm es nicht persönlich.
+  items:
+  - nimm-es-nicht-persoenlich
+- type: narrator
+  text:
+    en: 'Correcting someone''s register politely: ask permission («Darf ich dir einen Tipp geben?»), soften («Halb so schlimm»), give the rule plus an example. «du» in the team, «Sie» upwards until offered
+      — and the written register stricter than the spoken.'
+    ar: 'تصحيح أسلوب أحدهم بلطف: اطلب الإذن («Darf ich dir einen Tipp geben?»)، ولطّف («Halb so schlimm»)، وأعطِ القاعدة مع مثال. «du» داخل الفريق، و«Sie» لمن هو أعلى حتى يعرض الـdu — والأسلوب المكتوب أصرم
+      من المنطوق.'
+    mk: 'Учтиво поправање на нечиј регистар: побарајте дозвола («Darf ich dir einen Tipp geben?»), омекнете («Halb so schlimm»), дајте правило и пример. «du» во тимот, «Sie» нагоре додека не се понуди —
+      а пишаниот регистар е построг од говорниот.'
+- type: prompt
+  ask:
+    en: 'Say: in the team we say du.'
+    ar: 'قل: في الفريق نتخاطب بـdu.'
+    mk: 'Кажете: во тимот си велиме du.'
+  answer:
+    speaker: protagonist
+    text: Im Team duzen wir uns.
+  items:
+  - im-team-duzen
+- type: prompt
+  ask:
+    en: 'Say: we address the boss as Sie.'
+    ar: 'قل: نخاطب المديرة بـSie.'
+    mk: 'Кажете: на шефицата ѝ персираме.'
+  answer:
+    speaker: protagonist
+    text: Die Chefin siezen wir.
+  items:
+  - die-chefin-siezen
+- type: prompt
+  ask:
+    en: 'He says: how embarrassing!'
+    ar: 'يقول: يا للإحراج!'
+    mk: 'Тој вели: колку непријатно!'
+  answer:
+    speaker: protagonist
+    text: Wie peinlich!
+  items:
+  - peinlich
+- type: prompt
+  ask:
+    en: 'Say: nothing colloquial.'
+    ar: 'قل: لا أسلوب عامّي.'
+    mk: 'Кажете: ништо разговорно.'
+  answer:
+    speaker: protagonist
+    text: Nicht umgangssprachlich.
+  items:
+  - umgangssprachlich
+- type: prompt
+  ask:
+    en: 'Ask: is that inappropriate?'
+    ar: 'اسأل: هل هذا غير لائق؟'
+    mk: 'Прашајте: дали е тоа несоодветно?'
+  answer:
+    speaker: protagonist
+    text: Ist das unangemessen?
+  items:
+  - unangemessen
+- type: prompt
+  ask:
+    en: 'Say: that''s tact.'
+    ar: 'قل: هذا هو الحسّ المرهف.'
+    mk: 'Кажете: тоа е чувство за мерка.'
+  answer:
+    speaker: protagonist
+    text: Das ist Fingerspitzengefühl.
+  items:
+  - das-fingerspitzengefuehl
+- type: prompt
+  ask:
+    en: 'Say: the form of address.'
+    ar: 'قل: صيغة المخاطبة.'
+    mk: 'Кажете: обраќањето.'
+  answer:
+    speaker: protagonist
+    text: Die Anrede.
+  items:
+  - die-anrede
+- type: prompt
+  ask:
+    en: 'Say: the intern.'
+    ar: 'قل: المتدرّب.'
+    mk: 'Кажете: практикантот.'
+  answer:
+    speaker: protagonist
+    text: Der Praktikant.
+  items:
+  - der-praktikant
+- type: narrator
+  text:
+    en: 'Many teams — especially in start-ups — use du with everyone, but in more traditional firms and with clients Sie stays standard. When unsure, listen first and mirror. At C2 you can do what natives
+      find hard: tell someone kindly that their register is off.'
+    ar: 'كثير من الفرق — خاصة في الشركات الناشئة — تستعمل du مع الجميع، لكن في الشركات التقليدية ومع الزبائن تبقى Sie هي المعتادة. وحين تشكّ، استمع أولًا وقلّد. وفي مستوى C2 تستطيع ما يصعب على أهل اللغة:
+      أن تخبر أحدًا بلطف أنّ أسلوبه غير مناسب.'
+    mk: 'Многу тимови — особено во стартапи — користат du со сите, но во потрадиционални фирми и со клиенти Sie останува стандард. Кога не сте сигурни, прво слушајте и огледувајте. На C2 го можете она што
+      и на родените им е тешко: љубезно да му кажете некому дека регистарот не му е соодветен.'
+- type: prompt
+  ask:
+    en: 'Once more: say “the intern”.'
+    ar: 'مرة أخرى: قل “المتدرّب”.'
+    mk: 'Уште еднаш: кажете „практикантот“.'
+  answer:
+    speaker: protagonist
+    text: der Praktikant
+  items:
+  - der-praktikant
+- type: prompt
+  ask:
+    en: 'Once more: say “May I give you a tip?”.'
+    ar: 'مرة أخرى: قل “هل تسمح لي بنصيحة؟”.'
+    mk: 'Уште еднаш: кажете „Смеам ли да ти дадам совет?“.'
+  answer:
+    speaker: protagonist
+    text: Darf ich dir einen Tipp geben?
+  items:
+  - darf-ich-dir-einen-tipp-geben
+- type: prompt
+  ask:
+    en: 'Once more: say “in the team we say du”.'
+    ar: 'مرة أخرى: قل “في الفريق نتخاطب بـdu”.'
+    mk: 'Уште еднаш: кажете „во тимот си велиме du“.'
+  answer:
+    speaker: protagonist
+    text: im Team duzen wir uns
+  items:
+  - im-team-duzen
+- type: prompt
+  ask:
+    en: 'Once more: say “address the boss as Sie”.'
+    ar: 'مرة أخرى: قل “يخاطب المديرة بـSie”.'
+    mk: 'Уште еднаш: кажете „на шефицата ѝ се персира“.'
+  answer:
+    speaker: protagonist
+    text: die Chefin siezen
+  items:
+  - die-chefin-siezen
+- type: prompt
+  ask:
+    en: 'Once more: say “the form of address”.'
+    ar: 'مرة أخرى: قل “صيغة المخاطبة”.'
+    mk: 'Уште еднаш: кажете „обраќањето“.'
+  answer:
+    speaker: protagonist
+    text: die Anrede
+  items:
+  - die-anrede
+- type: prompt
+  ask:
+    en: 'Once more: say “colloquial”.'
+    ar: 'مرة أخرى: قل “عامي”.'
+    mk: 'Уште еднаш: кажете „разговорно“.'
+  answer:
+    speaker: protagonist
+    text: umgangssprachlich
+  items:
+  - umgangssprachlich
+- type: prompt
+  ask:
+    en: 'Once more: say “inappropriate”.'
+    ar: 'مرة أخرى: قل “غير لائق”.'
+    mk: 'Уште еднаш: кажете „несоодветно“.'
+  answer:
+    speaker: protagonist
+    text: unangemessen
+  items:
+  - unangemessen
+- type: prompt
+  ask:
+    en: 'Once more: say “tact, a feel for the situation”.'
+    ar: 'مرة أخرى: قل “الحسّ المرهف”.'
+    mk: 'Уште еднаш: кажете „чувството за мерка“.'
+  answer:
+    speaker: protagonist
+    text: das Fingerspitzengefühl
+  items:
+  - das-fingerspitzengefuehl
+- type: prompt
+  ask:
+    en: 'Once more: say “Don''t take it personally”.'
+    ar: 'مرة أخرى: قل “لا تأخذ الأمر على محمل شخصي”.'
+    mk: 'Уште еднаш: кажете „Не земај го лично“.'
+  answer:
+    speaker: protagonist
+    text: Nimm es nicht persönlich
+  items:
+  - nimm-es-nicht-persoenlich
+- type: prompt
+  ask:
+    en: 'Once more: say “embarrassing”.'
+    ar: 'مرة أخرى: قل “محرج”.'
+    mk: 'Уште еднаш: кажете „непријатно“.'
+  answer:
+    speaker: protagonist
+    text: peinlich
+  items:
+  - peinlich
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتَه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “public question time — and “the city councillors — and “Mr Chairman — and “the speaking time — and “I ask you: — and “very concretely — and “the promise, commitment — and “the fact — and
+      “a written answer — and “adjourn, postpone — and “play to a cliché — and “from my own experience — and “make distinctions — and “generalise — and “may I quote you? — and “the headline — and “diversity
+      — and “I''d like to stress that … — and “the counter-question — and “approve the interview text — and “It''s buzzing there (a great party)”.'
+    ar: 'قل: “وقت أسئلة المواطنين — و“أعضاء مجلس المدينة — و“السيد الرئيس المحترم — و“وقت الكلام — و“أسألكم: — و“بشكل محدّد تمامًا — و“الوعد — و“الحقيقة الواقعة — و“ردّ مكتوب — و“يؤجّل — و“يكرّس الصورة
+      النمطية — و“من تجربتي الخاصة — و“يميّز، يفصّل — و“يعمّم — و“هل يمكنني اقتباس كلامك؟ — و“العنوان الرئيسي — و“التنوّع — و“أودّ أن أؤكّد أنّ … — و“السؤال المضاد — و“يعتمد نصّ المقابلة — و“هناك حفلة صاخبة”.'
+    mk: 'Кажете: „часот за прашања на граѓаните“ — и „советниците“ — и „Почитуван господине претседавач“ — и „времето за говор“ — и „Ве прашувам:“ — и „сосема конкретно“ — и „ветувањето“ — и „фактот“ —
+      и „писмен одговор“ — и „одложува“ — и „го потхранува клишето“ — и „од сопствено искуство“ — и „прави разлика“ — и „генерализира“ — и „смеам ли да ве цитирам?“ — и „насловот“ — и „разновидноста“ —
+      и „Би сакала да нагласам дека …“ — и „противпрашањето“ — и „го одобрува интервјуто“ — и „Таму е луда журка“.'
+  answer:
+    speaker: protagonist
+    text: 'die Bürgerfragestunde … die Stadträtinnen und Stadträte … Sehr geehrter Herr Vorsitzender … die Redezeit … Ich frage Sie: … ganz konkret … die Zusage … die Tatsache … eine schriftliche Antwort
+      … vertagen … ein Klischee bedienen … aus eigener Erfahrung … differenzieren … pauschalisieren … darf ich Sie zitieren? … die Schlagzeile … die Vielfalt … Ich möchte betonen, dass … … die Gegenfrage
+      … das Interview autorisieren … Da steppt der Bär'
+  items:
+  - die-buergerfragestunde
+  - der-stadtrat-c2
+  - sehr-geehrter-herr-vorsitzender
+  - die-redezeit
+  - ich-frage-sie
+  - konkret
+  - die-zusage
+  - die-tatsache
+  - die-schriftliche-antwort
+  - die-vertagung
+  - das-klischee-c2
+  - die-erfahrung-c2
+  - differenzieren
+  - pauschalisieren
+  - das-zitat
+  - die-schlagzeile
+  - die-vielfalt
+  - ich-moechte-betonen
+  - die-gegenfrage
+  - autorisieren
+  - da-steppt-der-baer
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “It''s all Greek to me — and “That''s not my business — and “I''ll keep my fingers crossed for you — and “be blind to something obvious — and “hit the nail on the head — and “put your foot
+      in it — and “Break a leg! — and “the idiom — and “at the right moment — and “discrimination — and “anti-discrimination advice — and “the equal treatment act (AGG) — and “a matched test application
+      — and “the circumstantial evidence — and “violates — and “claims to have known nothing — and “compensation — and “within two months — and “assert in writing — and “faith — and “religious, believing”.'
+    ar: 'قل: “لا أفهم شيئًا — و“ليس هذا من شأني — و“أتمنّى لكِ التوفيق — و“لا يرى الواضح — و“يصيب كبد الحقيقة — و“يرتكب زلّة محرجة — و“بالتوفيق! (حرفيًا: كسر العنق والساق) — و“التعبير الاصطلاحي — و“في اللحظة
+      المناسبة — و“التمييز — و“استشارات مكافحة التمييز — و“قانون المساواة في المعاملة — و“طلب اختباري مقارن — و“القرينة — و“يخالف — و“يزعم أنه لم يعلم شيئًا — و“التعويض — و“خلال شهرين — و“يطالب كتابيًا
+      — و“الإيمان — و“مؤمن، متديّن”.'
+    mk: 'Кажете: „Ништо не разбирам“ — и „Тоа не е моја работа“ — и „Ќе ти стискам палци“ — и „да не гледаш очигледно“ — и „погодува во десетка“ — и „згазува во лајно (прави гаф)“ — и „Среќно! (буквално:
+      скршен врат и нога)“ — и „идиомот“ — и „во вистинскиот момент“ — и „дискриминацијата“ — и „советувалиштето против дискриминација“ — и „законот за еднаков третман“ — и „тест-пријава“ — и „индицијата“
+      — и „ги прекршува“ — и „тврди дека ништо не знаел“ — и „обештетувањето“ — и „во рок од два месеци“ — и „писмено бара“ — и „верата“ — и „верник“.'
+  answer:
+    speaker: protagonist
+    text: Ich verstehe nur Bahnhof … Das ist nicht mein Bier … Ich drücke dir die Daumen … Tomaten auf den Augen haben … den Nagel auf den Kopf treffen … ins Fettnäpfchen treten … Hals- und Beinbruch! …
+      die Redewendung … im richtigen Moment … die Diskriminierung … die Antidiskriminierungsberatung … das Gleichbehandlungsgesetz … die Testing-Anfrage … das Indiz … verstößt gegen … will nichts gewusst
+      haben … die Entschädigung … innerhalb von zwei Monaten … schriftlich geltend machen … der Glaube … gläubig
+  items:
+  - nur-bahnhof
+  - nicht-mein-bier
+  - daumen-druecken
+  - tomaten-auf-den-augen
+  - den-nagel-auf-den-kopf
+  - ins-fettnaepfchen
+  - hals-und-beinbruch
+  - die-redewendung
+  - im-richtigen-moment
+  - die-diskriminierung
+  - die-antidiskriminierungsstelle
+  - das-agg
+  - der-test-bewerbung
+  - der-beweis-c1
+  - verstoesst-gegen
+  - will-gewusst-haben
+  - die-entschaedigung
+  - die-frist-zwei-monate
+  - schriftlich-geltend-machen
+  - der-glaube
+  - glaeubig
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “without religious affiliation — and “the mosque — and “leaving the church (officially) — and “church member — and “the congregation, community — and “(reported) they are … — and “(reported)
+      there is … — and “freedom of religion — and “respect — and “the platform (track) — and “to Dresden — and “into the train — and “on platform five — and “is cancelled — and “the announcement — and “to
+      the platform — and “with a delay — and “the connection — and “compensation”.'
+    ar: 'قل: “بلا انتماء ديني — و“المسجد — و“الخروج الرسمي من الكنيسة — و“عضو في الكنيسة — و“الجماعة، الرعية — و“(منقولًا) إنهم … — و“(منقولًا) إنه يوجد … — و“حرية الدين — و“يحترم — و“الرصيف (السكة) — و“إلى
+      دريسدن — و“إلى داخل القطار — و“على الرصيف خمسة — و“أُلغي — و“الإعلان — و“إلى الرصيف — و“متأخرًا — و“القطار الموصل — و“تعويض”.'
+    mk: 'Кажете: „без вероисповед“ — и „џамијата“ — и „излегувањето од црквата“ — и „член на црквата“ — и „заедницата“ — и „(пренесено) дека се …“ — и „(пренесено) дека има …“ — и „слободата на вероисповед“
+      — и „почитува“ — и „перонот“ — и „за Дрезден“ — и „во возот“ — и „на перон пет“ — и „е откажан“ — и „најавата“ — и „до перонот“ — и „со доцнење“ — и „врската“ — и „надомест“.'
+  answer:
+    speaker: protagonist
+    text: konfessionslos … die Moschee … der Kirchenaustritt … Mitglied der Kirche … die Gemeinde … sie seien … … es gebe … … die Religionsfreiheit … respektieren … das Gleis … nach Dresden … in den Zug
+      … auf Gleis fünf … fällt aus … die Durchsage … zum Bahnsteig … mit Verspätung … der Anschluss … eine Entschädigung
+  items:
+  - konfessionslos
+  - die-moschee
+  - der-kirchenaustritt
+  - das-mitglied-kirche
+  - die-gemeinde
+  - sie-seien
+  - es-gebe
+  - die-religionsfreiheit
+  - respektieren
+  - das-gleis
+  - nach-dresden
+  - in-den-zug
+  - auf-gleis
+  - faellt-aus
+  - die-durchsage
+  - zum-bahnsteig
+  - mit-verspaetung
+  - der-anschluss
+  - entschaedigung
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “become strange, unfamiliar — and “reverse culture shock — and “be caught between two worlds — and “the old homeland”.'
+  answer:
+    speaker: protagonist
+    text: fremd geworden … der umgekehrte Kulturschock … zwischen den Stühlen sitzen … die alte Heimat
+  items:
+  - fremd-geworden-e
+  - der-umgekehrte-kulturschock-e
+  - zwischen-den-stuehlen-e
+  - die-heimat-c2-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “have changed — and “longing — and “unpunctual — and “catch oneself doing”.'
+  answer:
+    speaker: protagonist
+    text: sich verändert haben … die Sehnsucht … unpünktlich … sich ertappen bei
+  items:
+  - sich-veraendert-e
+  - die-sehnsucht-e
+  - unpuenktlich-e
+  - ertappen-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I even miss … — and “at home twice over”.'
+  answer:
+    speaker: protagonist
+    text: Ich vermisse sogar … … doppelt zu Hause
+  items:
+  - vermissen-c2-e
+  - doppelt-zuhause-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “صار غريبًا — و“الصدمة الثقافية المعاكسة — و“الوقوف بين عالمين — و“الشتات”.'
+  answer:
+    speaker: protagonist
+    text: fremd geworden … der umgekehrte Kulturschock … zwischen den Stühlen sitzen … die Diaspora
+  items:
+  - fremd-geworden-a
+  - der-umgekehrte-kulturschock-a
+  - zwischen-den-stuehlen-a
+  - die-diaspora-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “تغيّر — و“الحنين — و“الذكريات — و“أبناء وبنات العم والخال”.'
+  answer:
+    speaker: protagonist
+    text: sich verändert haben … die Sehnsucht … die Erinnerungen … die Cousins und Cousinen
+  items:
+  - sich-veraendert-a
+  - die-sehnsucht-a
+  - die-erinnerung-c2-a
+  - die-cousins-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “لا يفهم كل شيء — و“في البيت مرتين”.'
+  answer:
+    speaker: protagonist
+    text: nicht alles verstehen … doppelt zu Hause
+  items:
+  - verstehen-nicht-alles-a
+  - doppelt-zuhause-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „станало туѓо“ — и „обратниот културен шок“ — и „да си меѓу два света“ — и „старата татковина“.'
+  answer:
+    speaker: protagonist
+    text: fremd geworden … der umgekehrte Kulturschock … zwischen den Stühlen sitzen … die alte Heimat
+  items:
+  - fremd-geworden-m
+  - der-umgekehrte-kulturschock-m
+  - zwischen-den-stuehlen-m
+  - die-heimat-c2-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „да се променило“ — и „копнежот“ — и „дворот“ — и „Соседите едноставно наминуваат“.'
+  answer:
+    speaker: protagonist
+    text: sich verändert haben … die Sehnsucht … der Hof … Die Nachbarn kommen einfach vorbei
+  items:
+  - sich-veraendert-m
+  - die-sehnsucht-m
+  - der-hof-m
+  - die-nachbarn-c2-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „без договор“ — и „двојно дома“.'
+  answer:
+    speaker: protagonist
+    text: ohne Termin … doppelt zu Hause
+  items:
+  - ohne-termin-m
+  - doppelt-zuhause-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمع إلى المحادثة مرة أخرى. الآن تفهمها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck
