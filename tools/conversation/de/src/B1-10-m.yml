@@ -1,0 +1,38 @@
+id: B1-10-m
+tracks: [mk]
+protagonist: m
+title: ["Пензијата"]
+situation: ["Петар ви објаснува дали како пензионер од ЕУ имате право на нешто во Германија."]
+learn: [b1-weil-obwohl]
+culture: What EU pensioners may claim
+items:
+  - [die-rente-m, "die Rente", "пензијата"]
+  - [obwohl, "obwohl", "иако (глаголот на крај)"]
+  - [das-recht, "das Recht", "правото"]
+  - [ansprueche, "Ansprüche", "права, барања"]
+  - [hier-gearbeitet, "hier gearbeitet", "работел тука"]
+  - [nicht-automatisch, "nicht automatisch", "не автоматски"]
+  - [die-krankenkasse-rente, "die Krankenversicherung", "здравственото осигурување"]
+  - [aus-bulgarien, "aus Bulgarien", "од Бугарија"]
+  - [genug-zum-leben, "genug zum Leben", "доволно за живот"]
+  - [beraten-lassen, "sich beraten lassen", "да се посоветувате"]
+dialogue:
+  - [protagonist, "Petar, habe ich hier ein Recht auf Rente?", "Петре, имам ли тука право на пензија?"]
+  - [petar, "Nein, Papa. Deine Rente kommt aus Mazedonien, weil du dort gearbeitet hast.", "Не, тато. Твојата пензија доаѓа од Македонија, затоа што таму работеше."]
+  - [protagonist, "Obwohl ich einen bulgarischen Pass habe?", "Иако имам бугарски пасош?"]
+  - [petar, "Ja. Der Pass gibt dir das Recht, hier zu wohnen — nicht automatisch Geld.", "Да. Пасошот ти дава право да живееш тука — не автоматски пари."]
+  - [protagonist, "Und wenn ich krank werde?", "А ако се разболам?"]
+  - [petar, "Die Krankenversicherung ist wichtig. Du musst zeigen, dass du versichert bist und genug zum Leben hast.", "Здравственото осигурување е важно. Мора да покажеш дека си осигурен и дека имаш доволно за живот."]
+  - [protagonist, "Das ist kompliziert.", "Тоа е комплицирано."]
+  - [petar, "Ja. Lass dich beraten — die Regeln für EU-Rentner ändern sich.", "Да. Посоветувај се — правилата за пензионери од ЕУ се менуваат."]
+teach:
+  - ask: ["Прашајте: имам ли тука право на пензија?", "Habe ich hier ein Recht auf Rente?", das-recht, die-rente-m]
+  - ask: ["Кажете: таму работев.", "Ich habe dort gearbeitet.", hier-gearbeitet]
+  - note: ["«obwohl» (иако) го праќа глаголот на крајот, како «weil»: «obwohl ich einen bulgarischen Pass habe»."]
+  - ask: ["Кажете: иако имам бугарски пасош.", "Obwohl ich einen bulgarischen Pass habe.", obwohl, aus-bulgarien]
+  - ask: ["Кажете: не автоматски пари.", "Nicht automatisch Geld.", nicht-automatisch]
+  - ask: ["Кажете: здравственото осигурување.", "Die Krankenversicherung.", die-krankenkasse-rente]
+  - ask: ["Кажете: доволно за живот.", "Genug zum Leben.", genug-zum-leben]
+  - ask: ["Кажете: права.", "Ansprüche.", ansprueche]
+  - ask: ["Петар вели: посоветувај се.", "Lass dich beraten.", beraten-lassen]
+  - note: ["Пензијата ја плаќа земјата каде што сте работеле. Како граѓанин на ЕУ имате право да живеете во Германија, но за престој подолг од три месеци обично мора да покажете здравствено осигурување и доволно средства. Правилата се менуваат — прашајте во советувалиште."]

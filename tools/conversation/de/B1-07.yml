@@ -1,0 +1,802 @@
+# UNIT de B1-07 — written by AI (Claude) for Casus; expanded from src/B1-07.yml by tools/expand_unit.py. Edit the source.
+
+id: B1-07
+level: B1
+number: 7
+protagonist: f
+title:
+  en: The lawyer's letter
+  ar: رسالة المحامي
+  mk: Писмото од адвокатот
+situation:
+  en: 'A letter from a law firm: you shared a film online, they say. They want hundreds of euros. You show it to Jonas.'
+  ar: 'رسالة من مكتب محاماة: يقولون إنكِ شاركتِ فيلمًا على الإنترنت. يريدون مئات اليوروهات. تُرين الرسالة ليوناس.'
+  mk: 'Писмо од адвокатска канцеларија: велат дека сте споделиле филм на интернет. Бараат стотици евра. Му го покажувате на Јонас.'
+learn_lessons:
+- b1-passive
+culture: Copyright warning letters
+new_items:
+- id: die-abmahnung
+  text: die Abmahnung
+  meaning:
+    en: the formal warning letter
+    ar: إنذار قانوني
+    mk: опомената
+  rare: true
+- id: das-urheberrecht
+  text: das Urheberrecht
+  meaning:
+    en: copyright
+    ar: حقوق المؤلف
+    mk: авторското право
+  rare: true
+- id: wurde-geteilt
+  text: wurde geteilt
+  meaning:
+    en: was shared
+    ar: تمت مشاركته
+    mk: беше споделен
+- id: die-unterlassungserklaerung
+  text: die Unterlassungserklärung
+  meaning:
+    en: a cease-and-desist declaration
+    ar: تعهّد بالامتناع
+    mk: изјава за прекин
+  rare: true
+- id: nicht-sofort
+  text: nicht sofort
+  meaning:
+    en: not straight away
+    ar: ليس فورًا
+    mk: не веднаш
+- id: unterschreiben-nicht
+  text: nichts unterschreiben
+  meaning:
+    en: sign nothing
+    ar: لا توقّعي شيئًا
+    mk: не потпишувајте ништо
+- id: ein-eigener-anwalt
+  text: ein eigener Anwalt
+  meaning:
+    en: a lawyer of your own
+    ar: محامٍ خاص بكِ
+    mk: свој адвокат
+- id: verhandeln
+  text: verhandeln
+  meaning:
+    en: negotiate
+    ar: يفاوض
+    mk: преговара
+- id: die-frist
+  text: die Frist
+  meaning:
+    en: the deadline
+    ar: المهلة
+    mk: рокот
+- id: mein-cousin
+  text: mein Cousin
+  meaning:
+    en: my cousin
+    ar: ابن عمي / خالي
+    mk: братучед ми
+reviews:
+- item: einen-termin
+  from: A1-04
+- item: ich-moechte
+  from: A1-04
+- item: mich-anmelden
+  from: A1-04
+- item: das-formular
+  from: A1-04
+- item: die-wgb
+  from: A1-04
+- item: wo-wohnen-sie
+  from: A1-04
+- item: welche
+  from: A1-04
+- item: die-religion
+  from: A1-04
+- item: warum
+  from: A1-04
+- item: keins-von-beiden
+  from: A1-04
+- item: die-kirchensteuer
+  from: A1-04
+- item: fertig
+  from: A1-04
+- item: das-wars
+  from: A1-04
+- item: schoenen-tag-noch
+  from: A1-04
+- item: der-see
+  from: A2-06
+- item: das-eis
+  from: A2-06
+- item: gefroren
+  from: A2-06
+- item: ist-geschmolzen
+  from: A2-06
+- item: frueher
+  from: A2-06
+- item: ein-bergwerk
+  from: A2-06
+- item: sind-gelaufen
+  from: A2-06
+- item: gefaehrlich
+  from: A2-06
+- item: der-dampf
+  from: A2-06
+- item: warm-geworden
+  from: A2-06
+- item: im-sommer-baden
+  from: A2-06
+- item: zusammen-oder-getrennt-e
+  from: A2-22-e
+  for:
+  - en
+- item: getrennt-bitte-e
+  from: A2-22-e
+  for:
+  - en
+- item: ich-lade-dich-ein-e
+  from: A2-22-e
+  for:
+  - en
+- item: soll-ich-e
+  from: A2-22-e
+  for:
+  - en
+- item: das-naechste-mal-du-e
+  from: A2-22-e
+  for:
+  - en
+- item: der-abend-e
+  from: A2-22-e
+  for:
+  - en
+- item: schoen-war-es-e
+  from: A2-22-e
+  for:
+  - en
+- item: wiedersehen-e
+  from: A2-22-e
+  for:
+  - en
+- item: schreib-mir-e
+  from: A2-22-e
+  for:
+  - en
+- item: gerne-wieder-e
+  from: A2-22-e
+  for:
+  - en
+- item: der-witz
+  from: A2-30
+- item: die-pointe
+  from: A2-30
+- item: lustig
+  from: A2-30
+- item: ich-verstehe-den-witz-nicht
+  from: A2-30
+- item: das-wortspiel
+  from: A2-30
+- item: trocken
+  from: A2-30
+- item: lachen
+  from: A2-30
+- item: der-humor
+  from: A2-30
+- item: das-sommerfest
+  from: A2-30
+- item: prost
+  from: A2-30
+- item: das-spiel
+  from: B1-04
+- item: das-tor
+  from: B1-04
+- item: der-fan
+  from: B1-04
+- item: das-stadion
+  from: B1-04
+- item: gewann
+  from: B1-04
+- item: verlor
+  from: B1-04
+- item: schoss
+  from: B1-04
+- item: die-stimmung
+  from: B1-04
+- item: unentschieden
+  from: B1-04
+- item: die-saison
+  from: B1-04
+- item: die-abrechnung
+  from: B1-06
+- item: nachzahlen
+  from: B1-06
+- item: der-abschlag
+  from: B1-06
+- item: wird-berechnet
+  from: B1-06
+- item: der-verbrauch
+  from: B1-06
+- item: energie-sparen
+  from: B1-06
+- item: die-solaranlage
+  from: B1-06
+- item: auf-dem-dach
+  from: B1-06
+- item: wird-erzeugt
+  from: B1-06
+- item: hoeher
+  from: B1-06
+- item: die-einladung-a-a
+  from: A2-22-a
+  for:
+  - ar
+- item: am-sonntag-um-a
+  from: A2-22-a
+  for:
+  - ar
+- item: sollen-wir-a
+  from: A2-22-a
+  for:
+  - ar
+- item: etwas-mitbringen-a
+  from: A2-22-a
+  for:
+  - ar
+- item: nur-sie-selbst-a
+  from: A2-22-a
+  for:
+  - ar
+- item: blumen-a
+  from: A2-22-a
+  for:
+  - ar
+- item: pralinen-a
+  from: A2-22-a
+  for:
+  - ar
+- item: puenktlich-um-drei-a
+  from: A2-22-a
+  for:
+  - ar
+- item: wir-kommen-gern-a
+  from: A2-22-a
+  for:
+  - ar
+- item: wir-freuen-uns-a-a
+  from: A2-22-a
+  for:
+  - ar
+- item: die-einladung-m-m
+  from: A2-22-m
+  for:
+  - mk
+- item: zum-mittagessen-m
+  from: A2-22-m
+  for:
+  - mk
+- item: sollen-wir-m
+  from: A2-22-m
+  for:
+  - mk
+- item: etwas-mitbringen-m
+  from: A2-22-m
+  for:
+  - mk
+- item: einen-wein-m
+  from: A2-22-m
+  for:
+  - mk
+- item: ajvar-glas-m
+  from: A2-22-m
+  for:
+  - mk
+- item: selbst-gemacht-m-m
+  from: A2-22-m
+  for:
+  - mk
+- item: das-ist-zu-viel-m
+  from: A2-22-m
+  for:
+  - mk
+- item: wir-kommen-gern-m
+  from: A2-22-m
+  for:
+  - mk
+- item: um-zwoelf-m
+  from: A2-22-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: 'A letter from a law firm: you shared a film online, they say. They want hundreds of euros. You show it to Jonas. Listen to the conversation; you don''t need to understand it yet.'
+    ar: 'رسالة من مكتب محاماة: يقولون إنكِ شاركتِ فيلمًا على الإنترنت. يريدون مئات اليوروهات. تُرين الرسالة ليوناس. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.'
+    mk: 'Писмо од адвокатска канцеларија: велат дека сте споделиле филм на интернет. Бараат стотици евра. Му го покажувате на Јонас. Слушнете го разговорот; уште не мора да го разберете.'
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Jonas, was ist eine Abmahnung? Hier steht, ein Film wurde von mir geteilt.
+    meaning:
+      en: Jonas, what's an Abmahnung? It says a film was shared by me.
+      ar: يوناس، ما هي «Abmahnung»؟ مكتوب هنا أن فيلمًا شوركَ مني.
+      mk: Јонас, што е опомена? Тука пишува дека сум споделила филм.
+  - speaker: jonas
+    text: Oh nein. Hast du Filme über Tauschbörsen geladen?
+    meaning:
+      en: Oh no. Did you download films through file-sharing?
+      ar: يا للأسف. هل حمّلتِ أفلامًا عبر مواقع المشاركة؟
+      mk: О, не. Дали симнуваше филмови преку споделување датотеки?
+  - speaker: protagonist
+    text: Einmal... Sie wollen achthundert Euro. Und ich soll das hier unterschreiben.
+    meaning:
+      en: Once... They want eight hundred euros. And I'm supposed to sign this.
+      ar: مرة واحدة... يريدون ثمانمئة يورو. ويجب أن أوقّع هذا.
+      mk: Еднаш... Бараат осумстотини евра. И треба да го потпишам ова.
+  - speaker: jonas
+    text: Unterschreib nichts und zahl nicht sofort! Das ist eine Unterlassungserklärung.
+    meaning:
+      en: Sign nothing and don't pay straight away! That's a cease-and-desist declaration.
+      ar: لا توقّعي شيئًا ولا تدفعي فورًا! هذا تعهّد بالامتناع.
+      mk: Не потпишувај ништо и не плаќај веднаш! Тоа е изјава за прекин.
+  - speaker: protagonist
+    text: Und jetzt? Was mache ich jetzt?
+    meaning:
+      en: And now? What do I do now?
+      ar: والآن؟ ماذا أفعل الآن؟
+      mk: А сега? Што правам сега?
+  - speaker: jonas
+    text: Mein Cousin hatte das auch. Er ging zu einem eigenen Anwalt.
+    meaning:
+      en: My cousin had this too. He went to a lawyer of his own.
+      ar: ابن عمي حدث له ذلك أيضًا. ذهب إلى محامٍ خاص به.
+      mk: И братучед ми го имаше ова. Отиде кај свој адвокат.
+  - speaker: protagonist
+    text: Und?
+    meaning:
+      en: And?
+      ar: وماذا حدث؟
+      mk: И?
+  - speaker: jonas
+    text: Der Anwalt hat verhandelt. Am Ende war es viel weniger. Aber achte auf die Frist!
+    meaning:
+      en: The lawyer negotiated. In the end it was much less. But watch the deadline!
+      ar: المحامي فاوض. في النهاية كان المبلغ أقل بكثير. لكن انتبهي للمهلة!
+      mk: Адвокатот преговараше. На крајот беше многу помалку. Но внимавај на рокот!
+- type: prompt
+  ask:
+    en: 'Say: a formal warning letter.'
+    ar: 'قولي: إنذار قانوني.'
+    mk: 'Кажете: опомена.'
+  answer:
+    speaker: protagonist
+    text: Eine Abmahnung.
+  items:
+  - die-abmahnung
+- type: narrator
+  text:
+    en: 'Past passive: «wurde» + participle: «Ein Film wurde geteilt» — a film was shared.'
+    ar: 'المبني للمجهول في الماضي: «wurde» مع اسم المفعول: «Ein Film wurde geteilt» — تمت مشاركة فيلم.'
+    mk: 'Пасив во минато: «wurde» + партицип: «Ein Film wurde geteilt» — беше споделен филм.'
+- type: prompt
+  ask:
+    en: 'Say: a film was shared.'
+    ar: 'قولي: تمت مشاركة فيلم.'
+    mk: 'Кажете: беше споделен филм.'
+  answer:
+    speaker: protagonist
+    text: Ein Film wurde geteilt.
+  items:
+  - wurde-geteilt
+- type: prompt
+  ask:
+    en: 'Say: copyright.'
+    ar: 'قولي: حقوق المؤلف.'
+    mk: 'Кажете: авторско право.'
+  answer:
+    speaker: protagonist
+    text: Das Urheberrecht.
+  items:
+  - das-urheberrecht
+- type: prompt
+  ask:
+    en: 'Jonas: sign nothing!'
+    ar: 'يوناس: لا توقّعي شيئًا!'
+    mk: 'Јонас: не потпишувај ништо!'
+  answer:
+    speaker: protagonist
+    text: Unterschreib nichts!
+  items:
+  - unterschreiben-nicht
+- type: prompt
+  ask:
+    en: 'Say: don''t pay straight away.'
+    ar: 'قولي: لا تدفعي فورًا.'
+    mk: 'Кажете: не плаќај веднаш.'
+  answer:
+    speaker: protagonist
+    text: Zahl nicht sofort.
+  items:
+  - nicht-sofort
+- type: prompt
+  ask:
+    en: 'Say: a cease-and-desist declaration.'
+    ar: 'قولي: تعهّد بالامتناع.'
+    mk: 'Кажете: изјава за прекин.'
+  answer:
+    speaker: protagonist
+    text: Eine Unterlassungserklärung.
+  items:
+  - die-unterlassungserklaerung
+- type: prompt
+  ask:
+    en: 'Say: my cousin went to a lawyer of his own.'
+    ar: 'قولي: ابن عمي ذهب إلى محامٍ خاص به.'
+    mk: 'Кажете: братучед ми отиде кај свој адвокат.'
+  answer:
+    speaker: protagonist
+    text: Mein Cousin ging zu einem eigenen Anwalt.
+  items:
+  - mein-cousin
+  - ein-eigener-anwalt
+- type: prompt
+  ask:
+    en: 'Say: the lawyer negotiated.'
+    ar: 'قولي: المحامي فاوض.'
+    mk: 'Кажете: адвокатот преговараше.'
+  answer:
+    speaker: protagonist
+    text: Der Anwalt hat verhandelt.
+  items:
+  - verhandeln
+- type: prompt
+  ask:
+    en: 'Say: watch the deadline!'
+    ar: 'قولي: انتبهي للمهلة!'
+    mk: 'Кажете: внимавај на рокот!'
+  answer:
+    speaker: protagonist
+    text: Achte auf die Frist!
+  items:
+  - die-frist
+- type: narrator
+  text:
+    en: 'Sharing films or music through file-sharing networks is tracked and brings warning letters from law firms. Don''t ignore the deadline — but don''t sign their declaration or pay at once either.
+      A lawyer of your own, or a consumer advice centre, often costs less than the demand and negotiates it down. (The course gives no amounts: they vary by case.)'
+    ar: 'مشاركة الأفلام أو الموسيقى عبر شبكات تبادل الملفات تُرصد، وتجلب إنذارات من مكاتب المحاماة. لا تتجاهلي المهلة — لكن لا توقّعي تعهّدهم ولا تدفعي فورًا. محامٍ خاص بكِ أو مركز استشارات المستهلك يكلّف
+      غالبًا أقل من المطلوب ويخفّض المبلغ بالتفاوض. (لا نذكر مبالغ: تختلف من حالة لأخرى.)'
+    mk: 'Споделувањето филмови или музика преку мрежи за размена се следи и носи опомени од адвокатски канцеларии. Не го игнорирајте рокот — но ниту потпишувајте ја нивната изјава, ниту плаќајте веднаш.
+      Свој адвокат или потрошувачко советувалиште често чини помалку од бараното и го намалува со преговори. (Курсот не дава износи: зависат од случајот.)'
+- type: prompt
+  ask:
+    en: 'Once more: say “the formal warning letter”.'
+    ar: 'مرة أخرى: قولي “إنذار قانوني”.'
+    mk: 'Уште еднаш: кажете „опомената“.'
+  answer:
+    speaker: protagonist
+    text: die Abmahnung
+  items:
+  - die-abmahnung
+- type: prompt
+  ask:
+    en: 'Once more: say “copyright”.'
+    ar: 'مرة أخرى: قولي “حقوق المؤلف”.'
+    mk: 'Уште еднаш: кажете „авторското право“.'
+  answer:
+    speaker: protagonist
+    text: das Urheberrecht
+  items:
+  - das-urheberrecht
+- type: prompt
+  ask:
+    en: 'Once more: say “was shared”.'
+    ar: 'مرة أخرى: قولي “تمت مشاركته”.'
+    mk: 'Уште еднаш: кажете „беше споделен“.'
+  answer:
+    speaker: protagonist
+    text: wurde geteilt
+  items:
+  - wurde-geteilt
+- type: prompt
+  ask:
+    en: 'Once more: say “a cease-and-desist declaration”.'
+    ar: 'مرة أخرى: قولي “تعهّد بالامتناع”.'
+    mk: 'Уште еднаш: кажете „изјава за прекин“.'
+  answer:
+    speaker: protagonist
+    text: die Unterlassungserklärung
+  items:
+  - die-unterlassungserklaerung
+- type: prompt
+  ask:
+    en: 'Once more: say “not straight away”.'
+    ar: 'مرة أخرى: قولي “ليس فورًا”.'
+    mk: 'Уште еднаш: кажете „не веднаш“.'
+  answer:
+    speaker: protagonist
+    text: nicht sofort
+  items:
+  - nicht-sofort
+- type: prompt
+  ask:
+    en: 'Once more: say “sign nothing”.'
+    ar: 'مرة أخرى: قولي “لا توقّعي شيئًا”.'
+    mk: 'Уште еднаш: кажете „не потпишувајте ништо“.'
+  answer:
+    speaker: protagonist
+    text: nichts unterschreiben
+  items:
+  - unterschreiben-nicht
+- type: prompt
+  ask:
+    en: 'Once more: say “a lawyer of your own”.'
+    ar: 'مرة أخرى: قولي “محامٍ خاص بكِ”.'
+    mk: 'Уште еднаш: кажете „свој адвокат“.'
+  answer:
+    speaker: protagonist
+    text: ein eigener Anwalt
+  items:
+  - ein-eigener-anwalt
+- type: prompt
+  ask:
+    en: 'Once more: say “negotiate”.'
+    ar: 'مرة أخرى: قولي “يفاوض”.'
+    mk: 'Уште еднаш: кажете „преговара“.'
+  answer:
+    speaker: protagonist
+    text: verhandeln
+  items:
+  - verhandeln
+- type: prompt
+  ask:
+    en: 'Once more: say “the deadline”.'
+    ar: 'مرة أخرى: قولي “المهلة”.'
+    mk: 'Уште еднаш: кажете „рокот“.'
+  answer:
+    speaker: protagonist
+    text: die Frist
+  items:
+  - die-frist
+- type: prompt
+  ask:
+    en: 'Once more: say “my cousin”.'
+    ar: 'مرة أخرى: قولي “ابن عمي / خالي”.'
+    mk: 'Уште еднаш: кажете „братучед ми“.'
+  answer:
+    speaker: protagonist
+    text: mein Cousin
+  items:
+  - mein-cousin
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the yearly utilities statement — and “pay extra (afterwards) — and “the monthly advance payment — and “is calculated — and “the consumption — and “save energy — and “the solar panels — and
+      “on the roof — and “is produced — and “higher — and “the match — and “the goal — and “the fan — and “the stadium — and “won — and “lost — and “shot, scored — and “the atmosphere — and “a draw”.'
+    ar: 'قولي: “كشف التكاليف الإضافية السنوي — و“يدفع فرقًا — و“الدفعة الشهرية المسبقة — و“يُحسَب — و“الاستهلاك — و“يوفّر الطاقة — و“الألواح الشمسية — و“على السطح — و“يُنتَج — و“أعلى — و“المباراة — و“الهدف
+      — و“المشجّع — و“الملعب — و“فاز — و“خسر — و“سدّد، سجّل — و“الأجواء — و“تعادل”.'
+    mk: 'Кажете: „годишната пресметка за режиски трошоци“ — и „доплаќа“ — и „месечната аконтација“ — и „се пресметува“ — и „потрошувачката“ — и „штеди енергија“ — и „сончевите панели“ — и „на покривот“
+      — и „се произведува“ — и „повисок“ — и „натпреварот“ — и „голот“ — и „навивачот“ — и „стадионот“ — и „победи“ — и „загуби“ — и „постигна, шутна“ — и „атмосферата“ — и „нерешено“.'
+  answer:
+    speaker: protagonist
+    text: die Nebenkostenabrechnung … nachzahlen … der Abschlag … wird berechnet … der Verbrauch … Energie sparen … die Solaranlage … auf dem Dach … wird erzeugt … höher … das Spiel … das Tor … der Fan
+      … das Stadion … gewann … verlor … schoss … die Stimmung … unentschieden
+  items:
+  - die-abrechnung
+  - nachzahlen
+  - der-abschlag
+  - wird-berechnet
+  - der-verbrauch
+  - energie-sparen
+  - die-solaranlage
+  - auf-dem-dach
+  - wird-erzeugt
+  - hoeher
+  - das-spiel
+  - das-tor
+  - der-fan
+  - das-stadion
+  - gewann
+  - verlor
+  - schoss
+  - die-stimmung
+  - unentschieden
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the season — and “the joke — and “the punchline — and “funny — and “I don''t get the joke — and “the pun — and “dry, deadpan — and “laugh — and “humour — and “the summer party — and “Cheers!
+      — and “the lake — and “the ice — and “frozen — and “has melted — and “in the past, earlier — and “a mine — and “walked — and “dangerous”.'
+    ar: 'قولي: “الموسم — و“النكتة — و“ذروة النكتة — و“مضحك — و“لم أفهم النكتة — و“التلاعب بالألفاظ — و“جاف (فكاهة جافة) — و“يضحك — و“الفكاهة — و“حفلة الصيف — و“في صحتك! — و“البحيرة — و“الجليد — و“متجمّد
+      — و“ذاب — و“في الماضي — و“منجم — و“مشينا — و“خطير”.'
+    mk: 'Кажете: „сезоната“ — и „шегата“ — и „поентата“ — и „смешно“ — и „Не ја разбирам шегата“ — и „игра на зборови“ — и „суво“ — и „се смее“ — и „хуморот“ — и „летната забава“ — и „Наздравје!“ — и „езерото“
+      — и „мразот“ — и „замрзнато“ — и „се стопи“ — и „порано“ — и „рудник“ — и „одевме пеш“ — и „опасно“.'
+  answer:
+    speaker: protagonist
+    text: die Saison … der Witz … die Pointe … lustig … Ich verstehe den Witz nicht … das Wortspiel … trocken … lachen … der Humor … das Sommerfest … Prost! … der See … das Eis … gefroren … ist geschmolzen
+      … früher … ein Bergwerk … sind … gelaufen … gefährlich
+  items:
+  - die-saison
+  - der-witz
+  - die-pointe
+  - lustig
+  - ich-verstehe-den-witz-nicht
+  - das-wortspiel
+  - trocken
+  - lachen
+  - der-humor
+  - das-sommerfest
+  - prost
+  - der-see
+  - das-eis
+  - gefroren
+  - ist-geschmolzen
+  - frueher
+  - ein-bergwerk
+  - sind-gelaufen
+  - gefaehrlich
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the steam — and “has become — and “swim in summer — and “an appointment — and “I''d like — and “to register (myself) — and “the form — and “the landlord''s confirmation — and “Where do you
+      live? (polite) — and “Which …? (feminine) — and “religion — and “Why? — and “neither — and “church tax — and “done, finished — and “Is that it? — and “Have a nice day!”.'
+    ar: 'قولي: “البخار — و“أصبح — و“نسبح في الصيف — و“موعدًا — و“أودّ — و“أن أسجّل نفسي — و“الاستمارة — و“تأكيد المؤجِّر — و“أين تسكن؟ (بصيغة الاحترام) — و“أيّ …؟ — و“الديانة — و“لماذا؟ — و“ولا واحد منهما
+      — و“ضريبة الكنيسة — و“انتهينا، جاهز — و“هل هذا كل شيء؟ — و“يومًا سعيدًا!”.'
+    mk: 'Кажете: „пареата“ — и „стана“ — и „се капеме во лето“ — и „термин“ — и „би сакал“ — и „да се пријавам“ — и „формуларот“ — и „потврдата од сопственикот на станот“ — и „Каде живеете?“ — и „Која …?“
+      — и „вероисповеста“ — и „Зошто?“ — и „ниту едно ниту друго“ — и „црковниот данок“ — и „готово“ — и „Толку ли беше?“ — и „Убав ден!“.'
+  answer:
+    speaker: protagonist
+    text: der Dampf … ist … geworden … im Sommer baden … einen Termin … ich möchte … mich anmelden … das Formular … die Wohnungsgeberbestätigung … Wo wohnen Sie? … Welche …? … die Religion … Warum? … keins
+      von beiden … die Kirchensteuer … fertig … Das war's? … Schönen Tag noch!
+  items:
+  - der-dampf
+  - warm-geworden
+  - im-sommer-baden
+  - einen-termin
+  - ich-moechte
+  - mich-anmelden
+  - das-formular
+  - die-wgb
+  - wo-wohnen-sie
+  - welche
+  - die-religion
+  - warum
+  - keins-von-beiden
+  - die-kirchensteuer
+  - fertig
+  - das-wars
+  - schoenen-tag-noch
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Together or separately? — and “Separately, please — and “It''s on me (I invite you) — and “Shall I …?”.'
+  answer:
+    speaker: protagonist
+    text: Zusammen oder getrennt? … Getrennt, bitte … Ich lade dich ein … Soll ich …?
+  items:
+  - zusammen-oder-getrennt-e
+  - getrennt-bitte-e
+  - ich-lade-dich-ein-e
+  - soll-ich-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Next time it''s you — and “the evening — and “It was lovely — and “see again”.'
+  answer:
+    speaker: protagonist
+    text: Das nächste Mal du … der Abend … Es war schön … wiedersehen
+  items:
+  - das-naechste-mal-du-e
+  - der-abend-e
+  - schoen-war-es-e
+  - wiedersehen-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Text me! — and “happy to do it again”.'
+  answer:
+    speaker: protagonist
+    text: Schreib mir! … gerne wieder
+  items:
+  - schreib-mir-e
+  - gerne-wieder-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “الدعوة — و“يوم الأحد في الثالثة — و“هل نـ…؟ (ماذا تريدين أن نفعل) — و“نحضر شيئًا معنا”.'
+  answer:
+    speaker: protagonist
+    text: die Einladung … am Sonntag um drei … Sollen wir …? … etwas mitbringen
+  items:
+  - die-einladung-a-a
+  - am-sonntag-um-a
+  - sollen-wir-a
+  - etwas-mitbringen-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “فقط أنتم — و“أزهار — و“شوكولاتة — و“في الثالثة تمامًا”.'
+  answer:
+    speaker: protagonist
+    text: nur Sie selbst … Blumen … Pralinen … pünktlich um drei
+  items:
+  - nur-sie-selbst-a
+  - blumen-a
+  - pralinen-a
+  - puenktlich-um-drei-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “نأتي بكل سرور — و“يسعدنا ذلك”.'
+  answer:
+    speaker: protagonist
+    text: Wir kommen gern … Wir freuen uns
+  items:
+  - wir-kommen-gern-a
+  - wir-freuen-uns-a-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „поканата“ — и „на ручек“ — и „Дали да …?“ — и „да донесеме нешто“.'
+  answer:
+    speaker: protagonist
+    text: die Einladung … zum Mittagessen … Sollen wir …? … etwas mitbringen
+  items:
+  - die-einladung-m-m
+  - zum-mittagessen-m
+  - sollen-wir-m
+  - etwas-mitbringen-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „едно вино“ — и „тегла ајвар“ — и „домашен“ — и „Тоа е премногу“.'
+  answer:
+    speaker: protagonist
+    text: einen Wein … ein Glas Ajvar … selbst gemacht … Das ist zu viel
+  items:
+  - einen-wein-m
+  - ajvar-glas-m
+  - selbst-gemacht-m-m
+  - das-ist-zu-viel-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „Доаѓаме со задоволство“ — и „во дванаесет“.'
+  answer:
+    speaker: protagonist
+    text: Wir kommen gern … um zwölf
+  items:
+  - wir-kommen-gern-m
+  - um-zwoelf-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

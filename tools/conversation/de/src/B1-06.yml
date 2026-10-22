@@ -1,0 +1,39 @@
+id: B1-06
+protagonist: m
+title: ["Energy", "الطاقة", "Енергија"]
+situation:
+  - "The yearly heating statement arrives: you owe money. Frau Becker explains — and talks about her solar panels."
+  - "تصل كشوف التدفئة السنوية: عليك مبلغ. السيدة بيكر تشرح — وتتحدث عن ألواحها الشمسية."
+  - "Стигнува годишната пресметка за греење: должите пари. Госпоѓа Бекер објаснува — и зборува за своите сончеви панели."
+learn: [b1-passive]
+culture: Advance payments and the yearly statement
+items:
+  - [die-abrechnung, "die Nebenkostenabrechnung", "the yearly utilities statement", "كشف التكاليف الإضافية السنوي", "годишната пресметка за режиски трошоци", {rare: true}]
+  - [nachzahlen, "nachzahlen", "pay extra (afterwards)", "يدفع فرقًا", "доплаќа"]
+  - [der-abschlag, "der Abschlag", "the monthly advance payment", "الدفعة الشهرية المسبقة", "месечната аконтација", {rare: true}]
+  - [wird-berechnet, "wird berechnet", "is calculated", "يُحسَب", "се пресметува"]
+  - [der-verbrauch, "der Verbrauch", "the consumption", "الاستهلاك", "потрошувачката"]
+  - [energie-sparen, "Energie sparen", "save energy", "يوفّر الطاقة", "штеди енергија"]
+  - [die-solaranlage, "die Solaranlage", "the solar panels", "الألواح الشمسية", "сончевите панели", {rare: true}]
+  - [auf-dem-dach, "auf dem Dach", "on the roof", "على السطح", "на покривот"]
+  - [wird-erzeugt, "wird erzeugt", "is produced", "يُنتَج", "се произведува"]
+  - [hoeher, "höher", "higher", "أعلى", "повисок"]
+dialogue:
+  - [protagonist, "Frau Becker, ich muss nachzahlen! Dreihundert Euro.", "Mrs Becker, I have to pay extra! Three hundred euros.", "سيدة بيكر، يجب أن أدفع فرقًا! ثلاثمئة يورو.", "Госпоѓо Бекер, морам да доплатам! Триста евра."]
+  - [becker, "Das ist die Nebenkostenabrechnung. Einmal im Jahr wird alles berechnet.", "That's the yearly utilities statement. Once a year everything is calculated.", "هذا كشف التكاليف الإضافية. مرة في السنة يُحسَب كل شيء.", "Тоа е годишната пресметка. Еднаш годишно сè се пресметува."]
+  - [protagonist, "Aber ich zahle doch jeden Monat einen Abschlag.", "But I pay an advance every month.", "لكنني أدفع دفعة مسبقة كل شهر.", "Но јас плаќам аконтација секој месец."]
+  - [becker, "Ja, aber Ihr Verbrauch war höher. Der Winter war kalt.", "Yes, but your consumption was higher. The winter was cold.", "نعم، لكن استهلاكك كان أعلى. الشتاء كان باردًا.", "Да, но потрошувачката ви беше повисока. Зимата беше студена."]
+  - [protagonist, "Wie kann ich Energie sparen?", "How can I save energy?", "كيف يمكنني توفير الطاقة؟", "Како можам да штедам енергија?"]
+  - [becker, "Stoßlüften, nicht kippen! Und die Heizung nachts runter.", "Air briefly, don't tilt! And the heating down at night.", "هوِّ بقوة لا بالإمالة! واخفض التدفئة ليلًا.", "Проветрувајте накратко, не накосувајте! И греењето ноќе намалено."]
+  - [protagonist, "Sie haben eine Solaranlage auf dem Dach, oder?", "You have solar panels on the roof, don't you?", "عندك ألواح شمسية على السطح، أليس كذلك؟", "Имате сончеви панели на покривот, нели?"]
+  - [becker, "Ja! Dort wird mein Strom erzeugt — im Sommer fast alles.", "Yes! That's where my electricity is produced — almost all of it in summer.", "نعم! هناك تُنتَج كهربائي — تقريبًا كلها في الصيف.", "Да! Таму се произведува мојата струја — во лето речиси сета."]
+teach:
+  - ask: ["Say: I have to pay extra.", "قل: يجب أن أدفع فرقًا.", "Кажете: морам да доплатам.", "Ich muss nachzahlen.", nachzahlen]
+  - ask: ["Say: the yearly utilities statement.", "قل: كشف التكاليف الإضافية السنوي.", "Кажете: годишната пресметка.", "Die Nebenkostenabrechnung.", die-abrechnung]
+  - ask: ["Say: once a year everything is calculated.", "قل: مرة في السنة يُحسَب كل شيء.", "Кажете: еднаш годишно сè се пресметува.", "Einmal im Jahr wird alles berechnet.", wird-berechnet]
+  - ask: ["Say: I pay an advance every month.", "قل: أدفع دفعة مسبقة كل شهر.", "Кажете: плаќам аконтација секој месец.", "Ich zahle jeden Monat einen Abschlag.", der-abschlag]
+  - ask: ["Say: the consumption was higher.", "قل: الاستهلاك كان أعلى.", "Кажете: потрошувачката беше повисока.", "Der Verbrauch war höher.", der-verbrauch, hoeher]
+  - ask: ["Ask: how can I save energy?", "اسأل: كيف يمكنني توفير الطاقة؟", "Прашајте: како да штедам енергија?", "Wie kann ich Energie sparen?", energie-sparen]
+  - ask: ["Say: solar panels on the roof.", "قل: ألواح شمسية على السطح.", "Кажете: сончеви панели на покривот.", "Eine Solaranlage auf dem Dach.", die-solaranlage, auf-dem-dach]
+  - ask: ["Say: my electricity is produced there.", "قل: هناك تُنتَج كهربائي.", "Кажете: таму се произведува мојата струја.", "Dort wird mein Strom erzeugt.", wird-erzeugt]
+  - note: ["You pay monthly advances for heating and water; once a year the landlord sends the real bill. If you used more, you pay the difference — if less, you get money back. Check the statement: you may ask to see the receipts.", "تدفع دفعات شهرية مسبقة للتدفئة والماء؛ ومرة في السنة يرسل المؤجِّر الفاتورة الحقيقية. إن استهلكت أكثر تدفع الفرق — وإن استهلكت أقل تستعيد مالًا. راجع الكشف: يحق لك طلب الاطلاع على الإيصالات.", "Плаќате месечни аконтации за греење и вода; еднаш годишно сопственикот ја праќа вистинската сметка. Ако потрошивте повеќе, ја доплаќате разликата — ако помалку, добивате пари назад. Проверете ја пресметката: имате право да ги видите сметките."]
