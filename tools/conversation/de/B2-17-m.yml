@@ -1,0 +1,525 @@
+# UNIT de B2-17-m — written by AI (Claude) for Casus; expanded from src/B2-17-m.yml by tools/expand_unit.py. Edit the source.
+
+id: B2-17-m
+level: B2
+number: 17
+protagonist: m
+tracks:
+- mk
+title:
+  mk: Платниот лист на синот
+situation:
+  mk: Петар ви го покажува својот платен лист. Зошто нето е толку помалку од бруто?
+learn_lessons:
+- b2-genitive-prepositions
+culture: Before you see your money
+new_items:
+- id: die-lohnabrechnung-m
+  text: die Lohnabrechnung
+  meaning:
+    mk: платниот лист
+  rare: true
+- id: brutto-m
+  text: brutto
+  meaning:
+    mk: бруто
+- id: netto-m
+  text: netto
+  meaning:
+    mk: нето
+- id: die-lohnsteuer-m
+  text: die Lohnsteuer
+  meaning:
+    mk: данокот на плата
+  rare: true
+- id: die-krankenversicherung-m
+  text: die Krankenversicherung
+  meaning:
+    mk: здравственото осигурување
+- id: die-rentenversicherung-m
+  text: die Rentenversicherung
+  meaning:
+    mk: пензиското осигурување
+  rare: true
+- id: der-arbeitgeberanteil-m
+  text: der Arbeitgeberanteil
+  meaning:
+    mk: делот на работодавачот
+  rare: true
+- id: abzueglich-m
+  text: abzüglich
+  meaning:
+    mk: минус, одбиено (+ генитив)
+- id: aufgrund-m
+  text: aufgrund
+  meaning:
+    mk: поради (+ генитив)
+- id: waehrend-gen-m
+  text: während
+  meaning:
+    mk: за време на (+ генитив)
+- id: die-abgaben-m
+  text: die Abgaben
+  meaning:
+    mk: давачките
+reviews:
+- item: der-weihnachtsmarkt
+  from: A2-14
+- item: der-gluehwein
+  from: A2-14
+- item: ohne-alkohol
+  from: A2-14
+- item: der-kinderpunsch
+  from: A2-14
+- item: die-bratwurst
+  from: A2-14
+- item: wenn
+  from: A2-14
+- item: die-tasse
+  from: A2-14
+- item: das-pfand-tasse
+  from: A2-14
+- item: voll
+  from: A2-14
+- item: die-lichter
+  from: A2-14
+- item: die-garantie
+  from: B1-16
+- item: reklamieren
+  from: B1-16
+- item: die-quittung
+  from: B1-16
+- item: kaputt-gegangen
+  from: B1-16
+- item: geht-von-selbst-aus
+  from: B1-16
+- item: wird-repariert
+  from: B1-16
+- item: wird-eingeschickt
+  from: B1-16
+- item: das-geld-zurueck
+  from: B1-16
+- item: die-beschwerde
+  from: B1-16
+- item: ich-moechte-mich-beschweren
+  from: B1-16
+- item: wie-lange-dauert
+  from: B1-16
+- item: das-geht-so-nicht
+  from: B2-02
+- item: sachlich
+  from: B2-02
+- item: nicht-persoenlich
+  from: B2-02
+- item: doch-mal
+  from: B2-02
+- item: halt
+  from: B2-02
+- item: eben
+  from: B2-02
+- item: ja-particle
+  from: B2-02
+- item: der-fehler
+  from: B2-02
+- item: kommt-vor
+  from: B2-02
+- item: die-bestellung
+  from: B2-02
+- item: beim-naechsten-mal
+  from: B2-02
+- item: die-tischlerei-m
+  from: B2-10-m
+- item: der-familienbetrieb-m
+  from: B2-10-m
+- item: der-azubi-m
+  from: B2-10-m
+- item: die-ausbildung-m
+  from: B2-10-m
+- item: die-bewerbung-m-m
+  from: B2-10-m
+- item: die-zuverlaessigkeit-m-m
+  from: B2-10-m
+- item: das-handwerk-m
+  from: B2-10-m
+- item: die-auswahl-m
+  from: B2-10-m
+- item: geschickt-m
+  from: B2-10-m
+- item: die-nachfolge-m
+  from: B2-10-m
+- item: die-elternzeit
+  from: B2-14
+- item: das-elterngeld
+  from: B2-14
+- item: der-kitaplatz
+  from: B2-14
+- item: die-teilzeit
+  from: B2-14
+- item: die-warteliste
+  from: B2-14
+- item: statt-zu
+  from: B2-14
+- item: ohne-zu
+  from: B2-14
+- item: sich-abwechseln
+  from: B2-14
+- item: die-eingewoehnung
+  from: B2-14
+- item: das-schlechte-gewissen
+  from: B2-14
+- item: der-konflikt
+  from: B2-16
+- item: die-loesung
+  from: B2-16
+- item: der-kompromiss
+  from: B2-16
+- item: vermitteln
+  from: B2-16
+- item: dennoch
+  from: B2-16
+- item: obwohl-b2
+  from: B2-16
+- item: der-standpunkt
+  from: B2-16
+- item: die-probephase
+  from: B2-16
+- item: einverstanden
+  from: B2-16
+- item: blockieren
+  from: B2-16
+steps:
+- type: narrator
+  text:
+    mk: Петар ви го покажува својот платен лист. Зошто нето е толку помалку од бруто? Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Petar, das ist dein Gehalt? Brutto viel — netto viel weniger!
+    meaning:
+      mk: Петре, ова ти е платата? Бруто многу — нето многу помалку!
+  - speaker: petar
+    text: Ja, Papa. Abzüglich der Steuern und Abgaben bleibt etwa die Hälfte.
+    meaning:
+      mk: Да, тато. Одбиено даноците и давачките, останува околу половина.
+  - speaker: protagonist
+    text: Die Hälfte! Warum?
+    meaning:
+      mk: Половина! Зошто?
+  - speaker: petar
+    text: Aufgrund der Steuerklasse zahle ich Lohnsteuer. Dann Kranken-, Pflege-, Renten- und Arbeitslosenversicherung.
+    meaning:
+      mk: Поради даночната класа плаќам данок на плата. Потоа здравствено, за нега, пензиско и осигурување за невработеност.
+  - speaker: anja
+    text: Und Kirchensteuer zahlt er nicht, weil er orthodox ist.
+    meaning:
+      mk: А црковен данок не плаќа, затоа што е православен.
+  - speaker: protagonist
+    text: Bei uns war das anders.
+    meaning:
+      mk: Кај нас беше поинаку.
+  - speaker: petar
+    text: Dafür zahlt der Arbeitgeber noch einmal fast so viel dazu — den Arbeitgeberanteil. Und während der Krankheit bin ich versichert.
+    meaning:
+      mk: Затоа работодавачот доплаќа речиси исто толку — делот на работодавачот. А за време на болест сум осигурен.
+  - speaker: protagonist
+    text: Und die Rentenversicherung — die bekommst du später zurück?
+    meaning:
+      mk: А пензиското осигурување — ќе го добиеш назад подоцна?
+  - speaker: petar
+    text: Als Rente, ja. Hoffentlich.
+    meaning:
+      mk: Како пензија, да. Се надевам.
+- type: prompt
+  ask:
+    mk: 'Кажете: платниот лист.'
+  answer:
+    speaker: protagonist
+    text: Die Lohnabrechnung.
+  items:
+  - die-lohnabrechnung-m
+- type: prompt
+  ask:
+    mk: 'Кажете: бруто и нето.'
+  answer:
+    speaker: protagonist
+    text: Brutto und netto.
+  items:
+  - brutto-m
+  - netto-m
+- type: narrator
+  text:
+    mk: 'Некои предлози бараат генитив, главно во пишан германски: «abzüglich der Steuern» (одбиено даноците), «aufgrund der Steuerklasse» (поради), «während der Krankheit» (за време на).'
+- type: prompt
+  ask:
+    mk: 'Кажете: одбиено даноците и давачките.'
+  answer:
+    speaker: protagonist
+    text: Abzüglich der Steuern und Abgaben.
+  items:
+  - abzueglich-m
+  - die-abgaben-m
+- type: prompt
+  ask:
+    mk: 'Кажете: поради даночната класа.'
+  answer:
+    speaker: protagonist
+    text: Aufgrund der Steuerklasse.
+  items:
+  - aufgrund-m
+- type: prompt
+  ask:
+    mk: 'Кажете: данок на плата.'
+  answer:
+    speaker: protagonist
+    text: Die Lohnsteuer.
+  items:
+  - die-lohnsteuer-m
+- type: prompt
+  ask:
+    mk: 'Кажете: здравственото осигурување.'
+  answer:
+    speaker: protagonist
+    text: Die Krankenversicherung.
+  items:
+  - die-krankenversicherung-m
+- type: prompt
+  ask:
+    mk: 'Кажете: пензиското осигурување.'
+  answer:
+    speaker: protagonist
+    text: Die Rentenversicherung.
+  items:
+  - die-rentenversicherung-m
+- type: prompt
+  ask:
+    mk: 'Кажете: делот на работодавачот.'
+  answer:
+    speaker: protagonist
+    text: Der Arbeitgeberanteil.
+  items:
+  - der-arbeitgeberanteil-m
+- type: prompt
+  ask:
+    mk: 'Кажете: за време на болест.'
+  answer:
+    speaker: protagonist
+    text: Während der Krankheit.
+  items:
+  - waehrend-gen-m
+- type: narrator
+  text:
+    mk: 'Од третина до речиси половина од бруто платата заминува пред да ја видите: данок на плата (според даночната класа), понекогаш Soli и црковен данок, и четирите социјални осигурувања; работодавачот
+      доплаќа речиси ист дел од осигурувањата. Црковен данок плаќаат само членовите на цркви што го наплаќаат — православните цркви речиси никогаш. (Без износи: стапките се менуваат секоја година.)'
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „платниот лист“.'
+  answer:
+    speaker: protagonist
+    text: die Lohnabrechnung
+  items:
+  - die-lohnabrechnung-m
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „бруто“.'
+  answer:
+    speaker: protagonist
+    text: brutto
+  items:
+  - brutto-m
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „нето“.'
+  answer:
+    speaker: protagonist
+    text: netto
+  items:
+  - netto-m
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „данокот на плата“.'
+  answer:
+    speaker: protagonist
+    text: die Lohnsteuer
+  items:
+  - die-lohnsteuer-m
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „здравственото осигурување“.'
+  answer:
+    speaker: protagonist
+    text: die Krankenversicherung
+  items:
+  - die-krankenversicherung-m
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „пензиското осигурување“.'
+  answer:
+    speaker: protagonist
+    text: die Rentenversicherung
+  items:
+  - die-rentenversicherung-m
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „делот на работодавачот“.'
+  answer:
+    speaker: protagonist
+    text: der Arbeitgeberanteil
+  items:
+  - der-arbeitgeberanteil-m
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „минус, одбиено (+ генитив)“.'
+  answer:
+    speaker: protagonist
+    text: abzüglich
+  items:
+  - abzueglich-m
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „поради (+ генитив)“.'
+  answer:
+    speaker: protagonist
+    text: aufgrund
+  items:
+  - aufgrund-m
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „за време на (+ генитив)“.'
+  answer:
+    speaker: protagonist
+    text: während
+  items:
+  - waehrend-gen-m
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „давачките“.'
+  answer:
+    speaker: protagonist
+    text: die Abgaben
+  items:
+  - die-abgaben-m
+- type: narrator
+  text:
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „конфликтот“ — и „решението“ — и „компромисот“ — и „посредува“ — и „сепак“ — и „иако и двајцата се во право“ — и „гледиштето“ — и „пробна фаза“ — и „се согласувам“ — и „блокира“ — и „родителското
+      отсуство“.'
+  answer:
+    speaker: protagonist
+    text: der Konflikt … die Lösung … der Kompromiss … vermitteln … dennoch … obwohl beide recht haben … der Standpunkt … eine Testphase … einverstanden … blockieren … die Elternzeit
+  items:
+  - der-konflikt
+  - die-loesung
+  - der-kompromiss
+  - vermitteln
+  - dennoch
+  - obwohl-b2
+  - der-standpunkt
+  - die-probephase
+  - einverstanden
+  - blockieren
+  - die-elternzeit
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „родителскиот додаток“ — и „место во градинка“ — и „скратено работно време“ — и „листата на чекање“ — и „наместо да …“ — и „без да …“ — и „се сменуваат“ — и „периодот на навикнување“ —
+      и „грижата на совеста“ — и „столарницата“ — и „семејната фирма“.'
+  answer:
+    speaker: protagonist
+    text: das Elterngeld … der Kitaplatz … die Teilzeit … die Warteliste … statt … zu … ohne … zu … sich abwechseln … die Eingewöhnung … das schlechte Gewissen … die Tischlerei … der Familienbetrieb
+  items:
+  - das-elterngeld
+  - der-kitaplatz
+  - die-teilzeit
+  - die-warteliste
+  - statt-zu
+  - ohne-zu
+  - sich-abwechseln
+  - die-eingewoehnung
+  - das-schlechte-gewissen
+  - die-tischlerei-m
+  - der-familienbetrieb-m
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „чиракот“ — и „стручното образование“ — и „пријавата“ — и „доверливост“ — и „занаетот“ — и „изборот“ — и „вешт“ — и „наследникот (во фирмата)“ — и „Така не оди“ — и „деловно, објективно“
+      — и „не лично“.'
+  answer:
+    speaker: protagonist
+    text: der Azubi … die Ausbildung … die Bewerbung … Zuverlässigkeit … das Handwerk … die Auswahl … geschickt … die Nachfolge … Das geht so nicht … sachlich … nicht persönlich
+  items:
+  - der-azubi-m
+  - die-ausbildung-m
+  - die-bewerbung-m-m
+  - die-zuverlaessigkeit-m-m
+  - das-handwerk-m
+  - die-auswahl-m
+  - geschickt-m
+  - die-nachfolge-m
+  - das-geht-so-nicht
+  - sachlich
+  - nicht-persoenlich
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „(омекнување) ајде, само“ — и „(честичка) едноставно“ — и „(честичка) токму, едноставно“ — и „(честичка) како што знаете“ — и „грешката“ — и „се случува“ — и „нарачката“ — и „следниот пат“
+      — и „гаранцијата“ — и „рекламира“ — и „сметката“.'
+  answer:
+    speaker: protagonist
+    text: doch mal … halt … eben … ja … der Fehler … kommt vor … die Bestellung … beim nächsten Mal … die Garantie … reklamieren … die Quittung
+  items:
+  - doch-mal
+  - halt
+  - eben
+  - ja-particle
+  - der-fehler
+  - kommt-vor
+  - die-bestellung
+  - beim-naechsten-mal
+  - die-garantie
+  - reklamieren
+  - die-quittung
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „се расипа“ — и „сам се исклучува“ — и „се поправа“ — и „се испраќа“ — и „парите назад“ — и „поплаката“ — и „Сакам да се пожалам“ — и „Колку трае тоа?“ — и „божиќниот пазар“ — и „вареното
+      вино“ — и „без алкохол“.'
+  answer:
+    speaker: protagonist
+    text: ist kaputtgegangen … geht von selbst aus … wird repariert … wird eingeschickt … das Geld zurück … die Beschwerde … Ich möchte mich beschweren … Wie lange dauert das? … der Weihnachtsmarkt … der
+      Glühwein … ohne Alkohol
+  items:
+  - kaputt-gegangen
+  - geht-von-selbst-aus
+  - wird-repariert
+  - wird-eingeschickt
+  - das-geld-zurueck
+  - die-beschwerde
+  - ich-moechte-mich-beschweren
+  - wie-lange-dauert
+  - der-weihnachtsmarkt
+  - der-gluehwein
+  - ohne-alkohol
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „детски пунч“ — и „колбасот на скара“ — и „ако, кога (глаголот на крај)“ — и „шолјата“ — и „кауција за шолјата“ — и „полно“ — и „светлата“.'
+  answer:
+    speaker: protagonist
+    text: der Kinderpunsch … die Bratwurst … wenn … die Tasse … Pfand für die Tasse … voll … die Lichter
+  items:
+  - der-kinderpunsch
+  - die-bratwurst
+  - wenn
+  - die-tasse
+  - das-pfand-tasse
+  - voll
+  - die-lichter
+- type: narrator
+  text:
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

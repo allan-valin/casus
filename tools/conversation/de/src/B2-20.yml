@@ -1,0 +1,41 @@
+id: B2-20
+protagonist: f
+title: ["The works council", "مجلس العاملين", "Работничкиот совет"]
+situation:
+  - "Too much overtime, and your holiday request was refused. Sabine from the works council explains your rights."
+  - "ساعات إضافية كثيرة، وطلب إجازتكِ رُفض. زابينه من مجلس العاملين تشرح لكِ حقوقكِ."
+  - "Премногу прекувремена работа, а барањето за одмор ви е одбиено. Сабине од работничкиот совет ви ги објаснува правата."
+learn: [b2-passive-of-state]
+culture: Rights at work, holidays
+items:
+  - [der-betriebsrat, "der Betriebsrat", "the works council", "مجلس العاملين", "работничкиот совет", {rare: true}]
+  - [die-ueberstunden, "die Überstunden", "overtime", "الساعات الإضافية", "прекувремената работа"]
+  - [die-urlaubstage, "die Urlaubstage", "holiday days", "أيام الإجازة", "деновите одмор"]
+  - [der-urlaubsantrag, "der Urlaubsantrag", "the holiday request", "طلب الإجازة", "барањето за одмор", {rare: true}]
+  - [ist-geregelt, "ist geregelt", "is regulated, is set out", "منظَّم", "е регулирано"]
+  - [ist-festgelegt, "ist festgelegt", "is fixed", "محدَّد", "е утврдено"]
+  - [ist-abgelehnt, "ist abgelehnt", "is refused", "مرفوض", "е одбиено"]
+  - [der-brueckentag, "der Brückentag", "a bridge day (between holiday and weekend)", "يوم الجسر", "мостен ден", {rare: true}]
+  - [ausgleichen, "ausgleichen", "compensate (with time off)", "يعوّض", "надоместува"]
+  - [das-arbeitszeitgesetz, "das Arbeitszeitgesetz", "the working hours law", "قانون ساعات العمل", "законот за работно време", {rare: true}]
+dialogue:
+  - [protagonist, "Mein Urlaubsantrag ist abgelehnt. Und ich mache jede Woche Überstunden.", "My holiday request has been refused. And I do overtime every week.", "طلب إجازتي مرفوض. وأعمل ساعات إضافية كل أسبوع.", "Барањето за одмор ми е одбиено. А секоја недела работам прекувремено."]
+  - [sabine, "Gut, dass du zum Betriebsrat kommst. Die Überstunden müssen ausgeglichen werden — mit Geld oder Freizeit.", "Good that you've come to the works council. The overtime must be compensated — with money or time off.", "جيد أنكِ جئتِ إلى مجلس العاملين. يجب تعويض الساعات الإضافية — بالمال أو بوقت حر.", "Добро е што дојде во работничкиот совет. Прекувремената мора да се надомести — со пари или слободно време."]
+  - [protagonist, "Ist das irgendwo geregelt?", "Is that set out anywhere?", "هل هذا منظَّم في مكان ما؟", "Дали тоа е некаде регулирано?"]
+  - [sabine, "Ja, im Arbeitsvertrag und im Arbeitszeitgesetz. Die Höchstarbeitszeit ist festgelegt.", "Yes, in your contract and in the working hours law. The maximum working time is fixed.", "نعم، في عقد العمل وفي قانون ساعات العمل. الحد الأقصى لساعات العمل محدَّد.", "Да, во договорот за работа и во законот за работно време. Максималното работно време е утврдено."]
+  - [protagonist, "Und wie viele Urlaubstage habe ich? Ich arbeite vier Tage pro Woche.", "And how many holiday days do I have? I work four days a week.", "وكم يوم إجازة لديّ؟ أعمل أربعة أيام في الأسبوع.", "А колку денови одмор имам? Работам четири дена неделно."]
+  - [sabine, "Der Urlaub hängt von den Arbeitstagen ab: bei fünf Tagen mindestens zwanzig, bei vier mindestens sechzehn.", "Holiday depends on working days: with five days at least twenty, with four at least sixteen.", "الإجازة تتوقّف على أيام العمل: مع خمسة أيام عشرون على الأقل، ومع أربعة ستة عشر على الأقل.", "Одморот зависи од работните денови: со пет дена најмалку дваесет, со четири најмалку шеснаесет."]
+  - [protagonist, "Und einzelne Tage? Zum Beispiel ein Brückentag?", "And single days? For example a bridge day?", "وأيام منفردة؟ مثلًا يوم جسر؟", "А поединечни денови? На пример мостен ден?"]
+  - [sabine, "Kein Problem — der kostet nur einen Urlaubstag. Ich spreche mit der Chefin über deinen Antrag.", "No problem — it only costs one holiday day. I'll talk to the boss about your request.", "لا مشكلة — يكلّف يوم إجازة واحدًا فقط. سأتحدّث مع المديرة بشأن طلبكِ.", "Нема проблем — чини само еден ден одмор. Ќе зборувам со шефицата за твоето барање."]
+teach:
+  - ask: ["Say: my holiday request has been refused.", "قولي: طلب إجازتي مرفوض.", "Кажете: барањето за одмор ми е одбиено.", "Mein Urlaubsantrag ist abgelehnt.", der-urlaubsantrag, ist-abgelehnt]
+  - ask: ["Say: overtime every week.", "قولي: ساعات إضافية كل أسبوع.", "Кажете: прекувремено секоја недела.", "Jede Woche Überstunden.", die-ueberstunden]
+  - ask: ["Say: the works council.", "قولي: مجلس العاملين.", "Кажете: работничкиот совет.", "Der Betriebsrat.", der-betriebsrat]
+  - ask: ["She says: overtime must be compensated.", "تقول: يجب تعويض الساعات الإضافية.", "Таа вели: прекувремената мора да се надомести.", "Überstunden müssen ausgeglichen werden.", ausgleichen]
+  - note: ["The passive of state uses «sein» + participle for a result: «Der Antrag ist abgelehnt» (is refused — it's done), «Das ist geregelt» (is set out), «Die Arbeitszeit ist festgelegt» (is fixed). Compare «wird abgelehnt» — is being refused.", "المبني للمجهول الدالّ على الحالة يستعمل «sein» مع اسم المفعول لنتيجة: «Der Antrag ist abgelehnt» (مرفوض — انتهى الأمر)، «Das ist geregelt» (منظَّم)، «Die Arbeitszeit ist festgelegt» (محدَّد). قارني مع «wird abgelehnt» — يجري رفضه.", "Пасивот на состојба користи «sein» + партицип за резултат: «Der Antrag ist abgelehnt» (е одбиено — готово е), «Das ist geregelt» (е регулирано), «Die Arbeitszeit ist festgelegt» (е утврдено). Споредете «wird abgelehnt» — се одбива."]
+  - ask: ["Ask: is that set out anywhere?", "اسألي: هل هذا منظَّم في مكان ما؟", "Прашајте: дали тоа е некаде регулирано?", "Ist das irgendwo geregelt?", ist-geregelt]
+  - ask: ["Say: the maximum working time is fixed.", "قولي: الحد الأقصى لساعات العمل محدَّد.", "Кажете: максималното работно време е утврдено.", "Die Höchstarbeitszeit ist festgelegt.", ist-festgelegt]
+  - ask: ["Say: the working hours law.", "قولي: قانون ساعات العمل.", "Кажете: законот за работно време.", "Das Arbeitszeitgesetz.", das-arbeitszeitgesetz]
+  - ask: ["Ask: how many holiday days do I have?", "اسألي: كم يوم إجازة لديّ؟", "Прашајте: колку денови одмор имам?", "Wie viele Urlaubstage habe ich?", die-urlaubstage]
+  - ask: ["Say: a bridge day.", "قولي: يوم جسر.", "Кажете: мостен ден.", "Ein Brückentag.", der-brueckentag]
+  - note: ["Legal minimum holiday is four weeks: twenty days with a five-day week, sixteen with four, twelve with three — minijobs included. You may take single days; a Brückentag between a public holiday and the weekend costs one day and gives four free. Public holidays are quiet like Sundays: shops closed, no noisy work. A works council, where one exists, must be heard on overtime and holiday rules.", "الحد الأدنى القانوني للإجازة أربعة أسابيع: عشرون يومًا مع أسبوع من خمسة أيام، وستة عشر مع أربعة، واثنا عشر مع ثلاثة — بما في ذلك الأعمال الصغيرة. يمكنكِ أخذ أيام منفردة؛ ويوم الجسر بين عطلة رسمية ونهاية الأسبوع يكلّف يومًا واحدًا ويمنح أربعة أيام حرة. العطل الرسمية هادئة مثل الأحد: المتاجر مغلقة، ولا أعمال مزعجة. ومجلس العاملين، حيث وُجد، يجب استشارته في قواعد الساعات الإضافية والإجازات.", "Законскиот минимум одмор е четири недели: дваесет дена при работна недела од пет дена, шеснаесет при четири, дванаесет при три — вклучително и Minijob. Смеете да земате поединечни денови; мостен ден меѓу празник и викенд чини еден ден и дава четири слободни. Празниците се тивки како недела: продавниците затворени, без бучна работа. Работничкиот совет, каде што постои, мора да се консултира за правилата за прекувремена работа и одмор."]
