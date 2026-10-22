@@ -1,0 +1,725 @@
+# UNIT de C1-04 — written by AI (Claude) for Casus; expanded from src/C1-04.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-04
+level: C1
+number: 4
+protagonist: m
+title:
+  en: The tenancy agreement
+  ar: عقد الإيجار
+  mk: Договорот за наем
+situation:
+  en: You're moving out. The property management demands you repaint the whole flat — 'it's in the contract'. Jonas reads the clause.
+  ar: ستغادر الشقة. إدارة العقار تطالبك بإعادة طلاء الشقة كلها — «إنه في العقد». يوناس يقرأ البند.
+  mk: Се иселувате. Управата бара да го пребоите целиот стан — „така пишува во договорот“. Јонас ја чита клаузулата.
+learn_lessons:
+- c1-modal-subjective
+culture: Clauses that don't count
+new_items:
+- id: die-klausel
+  text: die Klausel
+  meaning:
+    en: the clause
+    ar: البند
+    mk: клаузулата
+- id: die-schoenheitsreparaturen
+  text: die Schönheitsreparaturen
+  meaning:
+    en: cosmetic repairs (painting etc.)
+    ar: الإصلاحات التجميلية
+    mk: естетските поправки
+  rare: true
+- id: unwirksam
+  text: unwirksam
+  meaning:
+    en: invalid, void
+    ar: باطل
+    mk: неважечко
+- id: der-auszug
+  text: der Auszug
+  meaning:
+    en: moving out
+    ar: مغادرة المسكن
+    mk: иселувањето
+- id: die-uebergabe-wohnung
+  text: die Wohnungsübergabe
+  meaning:
+    en: the handover of the flat
+    ar: تسليم الشقة
+    mk: предавањето на станот
+  rare: true
+- id: duerfte
+  text: dürfte
+  meaning:
+    en: is probably (assumption)
+    ar: يُرجَّح أنّ
+    mk: веројатно е
+- id: soll-angeblich
+  text: soll
+  meaning:
+    en: is said to, supposedly
+    ar: يُقال إنّ
+    mk: наводно
+- id: muss-wohl
+  text: muss wohl
+  meaning:
+    en: must (surely)
+    ar: لا بد أنّ
+    mk: сигурно мора
+- id: die-abnutzung
+  text: die normale Abnutzung
+  meaning:
+    en: normal wear and tear
+    ar: الاستهلاك العادي
+    mk: нормалното абење
+  rare: true
+- id: das-uebergabeprotokoll
+  text: das Übergabeprotokoll
+  meaning:
+    en: the handover report
+    ar: محضر التسليم
+    mk: записникот за предавање
+  rare: true
+reviews:
+- item: die-wg
+  from: B1-01
+- item: der-mitbewohner
+  from: B1-01
+- item: der-putzplan
+  from: B1-01
+- item: die-person-die
+  from: B1-01
+- item: das-zimmer-das
+  from: B1-01
+- item: die-gemeinschaftskueche
+  from: B1-01
+- item: diese-woche
+  from: B1-01
+- item: ist-dran
+  from: B1-01
+- item: das-bad-putzen
+  from: B1-01
+- item: streng
+  from: B1-01
+- item: die-regel
+  from: B1-01
+- item: das-gen
+  from: B2-03
+- item: das-merkmal
+  from: B2-03
+- item: vererben
+  from: B2-03
+- item: kann-vererbt-werden
+  from: B2-03
+- item: muss-untersucht-werden
+  from: B2-03
+- item: die-augenfarbe
+  from: B2-03
+- item: von-der-mutter
+  from: B2-03
+- item: die-umwelt
+  from: B2-03
+- item: die-krankheit-erblich
+  from: B2-03
+- item: die-mischung
+  from: B2-03
+- item: die-praesentation
+  from: B2-19
+- item: zunaechst
+  from: B2-19
+- item: anschliessend
+  from: B2-19
+- item: zusammenfassend
+  from: B2-19
+- item: die-gliederung
+  from: B2-19
+- item: die-folie
+  from: B2-19
+- item: die-heimatstadt
+  from: B2-19
+- item: der-blickkontakt
+  from: B2-19
+- item: vielen-dank-fuer-ihre
+  from: B2-19
+- item: gibt-es-fragen
+  from: B2-19
+- item: der-rundfunkbeitrag
+  from: B2-27
+- item: pro-wohnung
+  from: B2-27
+- item: der-oeffentlich-rechtliche
+  from: B2-27
+- item: die-nachrichten
+  from: B2-27
+- item: die-befreiung
+  from: B2-27
+- item: die-anmeldung-beitrag
+  from: B2-27
+- item: unabhaengig
+  from: B2-27
+- item: die-zahlungsaufforderung
+  from: B2-27
+- item: ignorieren
+  from: B2-27
+- item: der-mitbewohner-zahlt
+  from: B2-27
+- item: die-debatte
+  from: C1-01
+- item: das-argument
+  from: C1-01
+- item: das-gegenargument
+  from: C1-01
+- item: die-these
+  from: C1-01
+- item: die-vier-tage-woche
+  from: C1-01
+- item: die-produktivitaet
+  from: C1-01
+- item: der-fachkraeftemangel
+  from: C1-01
+- item: die-oft-genannte
+  from: C1-01
+- item: die-in-studien-belegte
+  from: C1-01
+- item: ueberzeugend
+  from: C1-01
+- item: ich-widerspreche
+  from: C1-01
+- item: die-staatsangehoerigkeit-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: die-doppelte-staatsangehoerigkeit-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: die-einbuergerungsbehoerde-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: der-fragenkatalog-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: das-bekenntnis-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: sie-sagte-man-muesse-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: es-sei-moeglich-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: man-habe-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: das-studienvisum-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: anrechnen-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: die-staatsangehoerigkeit-m
+  from: C1-03-m
+  for:
+  - mk
+- item: die-doppelte-staatsangehoerigkeit-m
+  from: C1-03-m
+  for:
+  - mk
+- item: abgeben-m
+  from: C1-03-m
+  for:
+  - mk
+- item: behalten-m
+  from: C1-03-m
+  for:
+  - mk
+- item: es-sei-moeglich-m
+  from: C1-03-m
+  for:
+  - mk
+- item: er-muesse-m
+  from: C1-03-m
+  for:
+  - mk
+- item: von-geburt-an-m
+  from: C1-03-m
+  for:
+  - mk
+- item: das-wahlrecht-m-m
+  from: C1-03-m
+  for:
+  - mk
+- item: der-einbuergerungstest-m-m
+  from: C1-03-m
+  for:
+  - mk
+- item: die-urkunde-m
+  from: C1-03-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: You're moving out. The property management demands you repaint the whole flat — 'it's in the contract'. Jonas reads the clause. Listen to the conversation; you don't need to understand it yet.
+    ar: ستغادر الشقة. إدارة العقار تطالبك بإعادة طلاء الشقة كلها — «إنه في العقد». يوناس يقرأ البند. استمع إلى المحادثة؛ لا داعي لأن تفهمها الآن.
+    mk: Се иселувате. Управата бара да го пребоите целиот стан — „така пишува во договорот“. Јонас ја чита клаузулата. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: verwaltung
+    text: Laut Paragraf zwölf müssen Sie beim Auszug alle Räume streichen.
+    meaning:
+      en: According to clause twelve you have to paint all the rooms when you move out.
+      ar: بحسب البند الثاني عشر يجب أن تطلي كل الغرف عند المغادرة.
+      mk: Според член дванаесет мора да ги пребоите сите простории при иселување.
+  - speaker: protagonist
+    text: Alle? Ich habe nur drei Jahre hier gewohnt.
+    meaning:
+      en: All of them? I only lived here three years.
+      ar: كلها؟ سكنتُ هنا ثلاث سنوات فقط.
+      mk: Сите? Живеев тука само три години.
+  - speaker: jonas
+    text: Zeig mal den Vertrag. ... Diese Klausel dürfte unwirksam sein. Starre Fristen sind nicht erlaubt.
+    meaning:
+      en: Show me the contract. ... This clause is probably invalid. Rigid deadlines aren't allowed.
+      ar: أرني العقد. ... يُرجَّح أنّ هذا البند باطل. المدد الجامدة غير مسموحة.
+      mk: Покажи го договорот. ... Оваа клаузула веројатно е неважечка. Строги рокови не се дозволени.
+  - speaker: protagonist
+    text: Woher weißt du das?
+    meaning:
+      en: How do you know?
+      ar: كيف تعرف ذلك؟
+      mk: Од каде знаеш?
+  - speaker: jonas
+    text: Der Mieterverein soll da sehr klar sein. Und die Wohnung war beim Einzug unrenoviert, oder?
+    meaning:
+      en: The tenants' association is said to be very clear on it. And the flat was unrenovated when you moved in, right?
+      ar: يُقال إنّ جمعية المستأجرين واضحة جدًا في ذلك. والشقة لم تكن مجدّدة عند انتقالك، أليس كذلك؟
+      mk: Здружението на станари наводно е многу јасно за тоа. А станот беше нереновиран кога се всели, нели?
+  - speaker: protagonist
+    text: Ja, die Wände waren grau. Das muss wohl im Übergabeprotokoll stehen.
+    meaning:
+      en: Yes, the walls were grey. That must surely be in the handover report.
+      ar: نعم، كانت الجدران رمادية. لا بد أنّ ذلك مكتوب في محضر التسليم.
+      mk: Да, ѕидовите беа сиви. Тоа сигурно мора да пишува во записникот за предавање.
+  - speaker: jonas
+    text: Dann zahlst du nur für Schäden, nicht für normale Abnutzung.
+    meaning:
+      en: Then you only pay for damage, not for normal wear and tear.
+      ar: إذن تدفع فقط عن الأضرار، لا عن الاستهلاك العادي.
+      mk: Тогаш плаќаш само за штети, не за нормално абење.
+  - speaker: protagonist
+    text: Ich schreibe der Verwaltung — schriftlich, mit Frist.
+    meaning:
+      en: I'll write to the management — in writing, with a deadline.
+      ar: سأكتب إلى الإدارة — كتابيًا، مع مهلة.
+      mk: Ќе ѝ пишам на управата — писмено, со рок.
+- type: prompt
+  ask:
+    en: 'Say: the clause.'
+    ar: 'قل: البند.'
+    mk: 'Кажете: клаузулата.'
+  answer:
+    speaker: protagonist
+    text: Die Klausel.
+  items:
+  - die-klausel
+- type: prompt
+  ask:
+    en: 'Say: when moving out.'
+    ar: 'قل: عند المغادرة.'
+    mk: 'Кажете: при иселување.'
+  answer:
+    speaker: protagonist
+    text: Beim Auszug.
+  items:
+  - der-auszug
+- type: prompt
+  ask:
+    en: 'Say: cosmetic repairs.'
+    ar: 'قل: الإصلاحات التجميلية.'
+    mk: 'Кажете: естетските поправки.'
+  answer:
+    speaker: protagonist
+    text: Die Schönheitsreparaturen.
+  items:
+  - die-schoenheitsreparaturen
+- type: narrator
+  text:
+    en: 'Modal verbs can show how sure you are, not what you must do: «dürfte» (probably), «soll» (is said to — hearsay), «muss wohl» (surely — strong conclusion). «Die Klausel dürfte unwirksam sein» =
+      it''s probably void.'
+    ar: 'الأفعال المساعدة قد تُظهر درجة يقينك لا ما يجب فعله: «dürfte» (يُرجَّح)، «soll» (يُقال — نقلًا)، «muss wohl» (لا بد — استنتاج قوي). «Die Klausel dürfte unwirksam sein» = يُرجَّح أنها باطلة.'
+    mk: 'Модалните глаголи може да покажат колку сте сигурни, не што мора: «dürfte» (веројатно), «soll» (наводно — од слушање), «muss wohl» (сигурно — силен заклучок). «Die Klausel dürfte unwirksam sein»
+      = веројатно е неважечка.'
+- type: prompt
+  ask:
+    en: 'Say: this clause is probably invalid.'
+    ar: 'قل: يُرجَّح أنّ هذا البند باطل.'
+    mk: 'Кажете: оваа клаузула веројатно е неважечка.'
+  answer:
+    speaker: protagonist
+    text: Diese Klausel dürfte unwirksam sein.
+  items:
+  - duerfte
+  - unwirksam
+- type: prompt
+  ask:
+    en: 'Say: the association is said to be clear.'
+    ar: 'قل: يُقال إنّ الجمعية واضحة.'
+    mk: 'Кажете: здружението наводно е јасно.'
+  answer:
+    speaker: protagonist
+    text: Der Mieterverein soll klar sein.
+  items:
+  - soll-angeblich
+- type: prompt
+  ask:
+    en: 'Say: that must surely be in the report.'
+    ar: 'قل: لا بد أنّ ذلك مكتوب في المحضر.'
+    mk: 'Кажете: тоа сигурно мора да пишува во записникот.'
+  answer:
+    speaker: protagonist
+    text: Das muss wohl im Protokoll stehen.
+  items:
+  - muss-wohl
+  - das-uebergabeprotokoll
+- type: prompt
+  ask:
+    en: 'Say: normal wear and tear.'
+    ar: 'قل: الاستهلاك العادي.'
+    mk: 'Кажете: нормално абење.'
+  answer:
+    speaker: protagonist
+    text: Normale Abnutzung.
+  items:
+  - die-abnutzung
+- type: prompt
+  ask:
+    en: 'Say: the handover of the flat.'
+    ar: 'قل: تسليم الشقة.'
+    mk: 'Кажете: предавањето на станот.'
+  answer:
+    speaker: protagonist
+    text: Die Wohnungsübergabe.
+  items:
+  - die-uebergabe-wohnung
+- type: narrator
+  text:
+    en: 'Many standard clauses in tenancy agreements are void: rigid repainting deadlines, painting a flat that was unrenovated at move-in, fixed colours. Normal wear is your landlord''s cost. Keep the
+      handover report and photos, and ask a tenants'' association before you pay. Student halls sometimes read ''no subletting'' as ''no guest may sleep over'' — ask what the rule really allows.'
+    ar: 'كثير من البنود المعتادة في عقود الإيجار باطلة: مدد الطلاء الجامدة، وطلاء شقة لم تكن مجدّدة عند الانتقال، والألوان المفروضة. والاستهلاك العادي على المؤجِّر. احتفظ بمحضر التسليم والصور، واسأل جمعية
+      مستأجرين قبل أن تدفع. والمساكن الطلابية أحيانًا تفسّر «ممنوع التأجير من الباطن» على أنها «ممنوع مبيت أي ضيف» — اسأل عمّا تسمح به القاعدة فعلًا.'
+    mk: 'Многу стандардни клаузули во договорите за наем се неважечки: строги рокови за боење, боење на стан што бил нереновиран при вселување, наметнати бои. Нормалното абење е трошок на станодавецот.
+      Чувајте го записникот и фотографиите и прашајте здружение на станари пред да платите.'
+- type: prompt
+  ask:
+    en: 'Once more: say “the clause”.'
+    ar: 'مرة أخرى: قل “البند”.'
+    mk: 'Уште еднаш: кажете „клаузулата“.'
+  answer:
+    speaker: protagonist
+    text: die Klausel
+  items:
+  - die-klausel
+- type: prompt
+  ask:
+    en: 'Once more: say “cosmetic repairs (painting etc.)”.'
+    ar: 'مرة أخرى: قل “الإصلاحات التجميلية”.'
+    mk: 'Уште еднаш: кажете „естетските поправки“.'
+  answer:
+    speaker: protagonist
+    text: die Schönheitsreparaturen
+  items:
+  - die-schoenheitsreparaturen
+- type: prompt
+  ask:
+    en: 'Once more: say “invalid, void”.'
+    ar: 'مرة أخرى: قل “باطل”.'
+    mk: 'Уште еднаш: кажете „неважечко“.'
+  answer:
+    speaker: protagonist
+    text: unwirksam
+  items:
+  - unwirksam
+- type: prompt
+  ask:
+    en: 'Once more: say “moving out”.'
+    ar: 'مرة أخرى: قل “مغادرة المسكن”.'
+    mk: 'Уште еднаш: кажете „иселувањето“.'
+  answer:
+    speaker: protagonist
+    text: der Auszug
+  items:
+  - der-auszug
+- type: prompt
+  ask:
+    en: 'Once more: say “the handover of the flat”.'
+    ar: 'مرة أخرى: قل “تسليم الشقة”.'
+    mk: 'Уште еднаш: кажете „предавањето на станот“.'
+  answer:
+    speaker: protagonist
+    text: die Wohnungsübergabe
+  items:
+  - die-uebergabe-wohnung
+- type: prompt
+  ask:
+    en: 'Once more: say “is probably (assumption)”.'
+    ar: 'مرة أخرى: قل “يُرجَّح أنّ”.'
+    mk: 'Уште еднаш: кажете „веројатно е“.'
+  answer:
+    speaker: protagonist
+    text: dürfte
+  items:
+  - duerfte
+- type: prompt
+  ask:
+    en: 'Once more: say “is said to, supposedly”.'
+    ar: 'مرة أخرى: قل “يُقال إنّ”.'
+    mk: 'Уште еднаш: кажете „наводно“.'
+  answer:
+    speaker: protagonist
+    text: soll
+  items:
+  - soll-angeblich
+- type: prompt
+  ask:
+    en: 'Once more: say “must (surely)”.'
+    ar: 'مرة أخرى: قل “لا بد أنّ”.'
+    mk: 'Уште еднаш: кажете „сигурно мора“.'
+  answer:
+    speaker: protagonist
+    text: muss wohl
+  items:
+  - muss-wohl
+- type: prompt
+  ask:
+    en: 'Once more: say “normal wear and tear”.'
+    ar: 'مرة أخرى: قل “الاستهلاك العادي”.'
+    mk: 'Уште еднаш: кажете „нормалното абење“.'
+  answer:
+    speaker: protagonist
+    text: die normale Abnutzung
+  items:
+  - die-abnutzung
+- type: prompt
+  ask:
+    en: 'Once more: say “the handover report”.'
+    ar: 'مرة أخرى: قل “محضر التسليم”.'
+    mk: 'Уште еднаш: кажете „записникот за предавање“.'
+  answer:
+    speaker: protagonist
+    text: das Übergabeprotokoll
+  items:
+  - das-uebergabeprotokoll
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتَه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the debate — and “the argument — and “the counter-argument — and “the thesis, claim — and “the four-day week — and “productivity — and “the skills shortage — and “the often-cited … — and
+      “the … shown in studies — and “convincing — and “I disagree there — and “the broadcasting fee — and “per household, per flat — and “public broadcasting — and “the news — and “the exemption — and “the
+      registration — and “independent”.'
+    ar: 'قل: “المناظرة — و“الحجة — و“الحجة المضادة — و“الأطروحة — و“أسبوع العمل من أربعة أيام — و“الإنتاجية — و“نقص العمالة الماهرة — و“… التي يُستشهد بها كثيرًا — و“… المثبتة في الدراسات — و“مقنع — و“هنا
+      أعترض — و“رسوم البث — و“لكل مسكن — و“البث العام — و“الأخبار — و“الإعفاء — و“التسجيل — و“مستقل”.'
+    mk: 'Кажете: „дебатата“ — и „аргументот“ — и „контрааргументот“ — и „тезата“ — и „четиридневната недела“ — и „продуктивноста“ — и „недостигот на стручен кадар“ — и „често спомнуваната …“ — и „… докажана
+      во студии“ — и „убедливо“ — и „Тука не се согласувам“ — и „радиодифузната такса“ — и „по стан“ — и „јавниот радиодифузен сервис“ — и „вестите“ — и „ослободувањето“ — и „пријавувањето“ — и „независно“.'
+  answer:
+    speaker: protagonist
+    text: die Debatte … das Argument … das Gegenargument … die These … die Vier-Tage-Woche … die Produktivität … der Fachkräftemangel … die oft genannte … … die in Studien belegte … … überzeugend … Da widerspreche
+      ich … der Rundfunkbeitrag … pro Wohnung … der öffentlich-rechtliche Rundfunk … die Nachrichten … die Befreiung … die Anmeldung … unabhängig
+  items:
+  - die-debatte
+  - das-argument
+  - das-gegenargument
+  - die-these
+  - die-vier-tage-woche
+  - die-produktivitaet
+  - der-fachkraeftemangel
+  - die-oft-genannte
+  - die-in-studien-belegte
+  - ueberzeugend
+  - ich-widerspreche
+  - der-rundfunkbeitrag
+  - pro-wohnung
+  - der-oeffentlich-rechtliche
+  - die-nachrichten
+  - die-befreiung
+  - die-anmeldung-beitrag
+  - unabhaengig
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the payment demand — and “ignore — and “one pays for everyone — and “the presentation — and “first of all — and “afterwards, then — and “in summary — and “the outline, structure — and “the
+      slide — and “the home town — and “eye contact — and “Thank you for your attention — and “Are there any questions? — and “the gene — and “the trait — and “pass on (by inheritance) — and “can be inherited
+      — and “must be examined”.'
+    ar: 'قل: “مطالبة بالدفع — و“يتجاهل — و“واحد يدفع عن الجميع — و“العرض التقديمي — و“أولًا — و“بعد ذلك — و“باختصار، إجمالًا — و“الهيكل — و“الشريحة — و“المدينة الأم — و“التواصل البصري — و“شكرًا على حسن
+      استماعكم — و“هل هناك أسئلة؟ — و“الجين — و“الصفة — و“يورّث — و“يمكن أن يُورَث — و“يجب أن يُفحص”.'
+    mk: 'Кажете: „барањето за плаќање“ — и „игнорира“ — и „еден плаќа за сите“ — и „презентацијата“ — и „најпрвин“ — и „потоа“ — и „накратко, сумирано“ — и „структурата“ — и „слајдот“ — и „родниот град“
+      — и „контактот со очите“ — и „Благодарам за вниманието“ — и „Има ли прашања?“ — и „генот“ — и „особината“ — и „наследува, пренесува“ — и „може да се наследи“ — и „мора да се испита“.'
+  answer:
+    speaker: protagonist
+    text: die Zahlungsaufforderung … ignorieren … einer zahlt für alle … die Präsentation … zunächst … anschließend … zusammenfassend … die Gliederung … die Folie … die Heimatstadt … der Blickkontakt …
+      Vielen Dank für Ihre Aufmerksamkeit … Gibt es Fragen? … das Gen … das Merkmal … vererben … kann vererbt werden … muss untersucht werden
+  items:
+  - die-zahlungsaufforderung
+  - ignorieren
+  - der-mitbewohner-zahlt
+  - die-praesentation
+  - zunaechst
+  - anschliessend
+  - zusammenfassend
+  - die-gliederung
+  - die-folie
+  - die-heimatstadt
+  - der-blickkontakt
+  - vielen-dank-fuer-ihre
+  - gibt-es-fragen
+  - das-gen
+  - das-merkmal
+  - vererben
+  - kann-vererbt-werden
+  - muss-untersucht-werden
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “eye colour — and “from the mother — and “the environment — and “hereditary — and “the mix — and “the flat-share — and “the flatmate — and “the cleaning rota — and “the person who … — and
+      “the room that … — and “the shared kitchen — and “this week — and “it''s (someone''s) turn — and “clean the bathroom — and “strict — and “the rule”.'
+    ar: 'قل: “لون العينين — و“من الأم — و“البيئة — و“وراثي — و“المزيج — و“السكن المشترك — و“شريك السكن — و“جدول التنظيف — و“الشخص الذي … — و“الغرفة التي … — و“المطبخ المشترك — و“هذا الأسبوع — و“دور (فلان)
+      — و“ينظف الحمام — و“صارم — و“القاعدة”.'
+    mk: 'Кажете: „бојата на очите“ — и „од мајката“ — и „околината“ — и „наследно“ — и „мешавината“ — и „заедничкиот стан“ — и „цимерот“ — и „распоредот за чистење“ — и „лицето што …“ — и „собата што …“
+      — и „заедничката кујна“ — и „оваа недела“ — и „е на ред“ — и „чисти бањата“ — и „строго“ — и „правилото“.'
+  answer:
+    speaker: protagonist
+    text: die Augenfarbe … von der Mutter … die Umwelt … erblich … die Mischung … die WG … der Mitbewohner … der Putzplan … die Person, die … … das Zimmer, das … … die Gemeinschaftsküche … diese Woche …
+      ist dran … das Bad putzen … streng … die Regel
+  items:
+  - die-augenfarbe
+  - von-der-mutter
+  - die-umwelt
+  - die-krankheit-erblich
+  - die-mischung
+  - die-wg
+  - der-mitbewohner
+  - der-putzplan
+  - die-person-die
+  - das-zimmer-das
+  - die-gemeinschaftskueche
+  - diese-woche
+  - ist-dran
+  - das-bad-putzen
+  - streng
+  - die-regel
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “citizenship — and “dual citizenship — and “the naturalisation office — and “the question pool”.'
+    ar: 'قل: “الجنسية — و“الجنسية المزدوجة — و“مكتب التجنيس — و“مجموعة الأسئلة”.'
+  answer:
+    speaker: protagonist
+    text: die Staatsangehörigkeit … die doppelte Staatsangehörigkeit … die Einbürgerungsbehörde … der Fragenkatalog
+  items:
+  - die-staatsangehoerigkeit-ea
+  - die-doppelte-staatsangehoerigkeit-ea
+  - die-einbuergerungsbehoerde-ea
+  - der-fragenkatalog-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “commitment to the constitutional order — and “she said one must … — and “(reported) it is possible — and “(reported) one has …”.'
+    ar: 'قل: “الالتزام بالنظام الأساسي — و“قالت إنه يجب … — و“(منقولًا) إنه ممكن — و“(منقولًا) إنه لدى المرء …”.'
+  answer:
+    speaker: protagonist
+    text: das Bekenntnis zur Grundordnung … sie sagte, man müsse … … es sei möglich … man habe …
+  items:
+  - das-bekenntnis-ea
+  - sie-sagte-man-muesse-ea
+  - es-sei-moeglich-ea
+  - man-habe-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “a residence permit for study — and “count (towards)”.'
+    ar: 'قل: “إقامة الدراسة — و“يُحتسب”.'
+  answer:
+    speaker: protagonist
+    text: der Aufenthalt zum Studium … anrechnen
+  items:
+  - das-studienvisum-ea
+  - anrechnen-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „државјанството“ — и „двојното државјанство“ — и „предава, се откажува“ — и „задржува“.'
+  answer:
+    speaker: protagonist
+    text: die Staatsangehörigkeit … die doppelte Staatsangehörigkeit … abgeben … behalten
+  items:
+  - die-staatsangehoerigkeit-m
+  - die-doppelte-staatsangehoerigkeit-m
+  - abgeben-m
+  - behalten-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „(пренесено) дека е можно“ — и „(пренесено) дека мора …“ — и „од раѓање“ — и „целосното право на глас“.'
+  answer:
+    speaker: protagonist
+    text: es sei möglich … er müsse … … von Geburt an … das volle Wahlrecht
+  items:
+  - es-sei-moeglich-m
+  - er-muesse-m
+  - von-geburt-an-m
+  - das-wahlrecht-m-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „тестот“ — и „исправата“.'
+  answer:
+    speaker: protagonist
+    text: der Test … die Urkunde
+  items:
+  - der-einbuergerungstest-m-m
+  - die-urkunde-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمع إلى المحادثة مرة أخرى. الآن تفهمها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

@@ -1,0 +1,948 @@
+# UNIT de C1-05 — written by AI (Claude) for Casus; expanded from src/C1-05.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-05
+level: C1
+number: 5
+protagonist: f
+title:
+  en: The car
+  ar: السيارة
+  mk: Автомобилот
+situation:
+  en: 'You want a used car. Paul comes along to the seller: the TÜV, the registration, the insurance.'
+  ar: 'تريدين سيارة مستعملة. باول يرافقكِ إلى البائع: الفحص الفني، والتسجيل، والتأمين.'
+  mk: 'Сакате половен автомобил. Паул доаѓа со вас кај продавачот: технички преглед, регистрација, осигурување.'
+learn_lessons:
+- c1-passive-forms
+culture: TÜV and registration
+new_items:
+- id: der-gebrauchtwagen
+  text: der Gebrauchtwagen
+  meaning:
+    en: the used car
+    ar: السيارة المستعملة
+    mk: половниот автомобил
+- id: der-tuev
+  text: der TÜV
+  meaning:
+    en: the vehicle inspection
+    ar: الفحص الفني
+    mk: техничкиот преглед
+- id: die-zulassung
+  text: die Zulassung
+  meaning:
+    en: the registration
+    ar: تسجيل السيارة
+    mk: регистрацијата
+- id: die-kfz-versicherung
+  text: die Kfz-Versicherung
+  meaning:
+    en: car insurance
+    ar: تأمين السيارة
+    mk: автоосигурувањето
+  rare: true
+- id: der-kilometerstand
+  text: der Kilometerstand
+  meaning:
+    en: the mileage
+    ar: عدد الكيلومترات
+    mk: километражата
+- id: unfallfrei
+  text: unfallfrei
+  meaning:
+    en: accident-free
+    ar: خالية من الحوادث
+    mk: без незгоди
+- id: muss-gemacht-werden
+  text: muss gemacht werden
+  meaning:
+    en: has to be done
+    ar: يجب أن يُجرى
+    mk: мора да се направи
+- id: ist-abgelaufen
+  text: ist abgelaufen
+  meaning:
+    en: has expired
+    ar: انتهت صلاحيته
+    mk: е истечен
+- id: die-probefahrt
+  text: die Probefahrt
+  meaning:
+    en: the test drive
+    ar: تجربة القيادة
+    mk: пробното возење
+- id: der-kaufvertrag
+  text: der Kaufvertrag
+  meaning:
+    en: the purchase contract
+    ar: عقد البيع
+    mk: договорот за купопродажба
+reviews:
+- item: ich-finde-dass
+  from: B1-02
+- item: meiner-meinung-nach
+  from: B1-02
+- item: das-klima
+  from: B1-02
+- item: verbieten
+  from: B1-02
+- item: ich-bin-dagegen
+  from: B1-02
+- item: ich-bin-dafuer
+  from: B1-02
+- item: das-stimmt-zwar
+  from: B1-02
+- item: der-nahverkehr
+  from: B1-02
+- item: streiten
+  from: B1-02
+- item: wir-sind-uns-einig
+  from: B1-02
+- item: der-club-e
+  from: B2-04-e
+  for:
+  - en
+- item: bis-dahin-e
+  from: B2-04-e
+  for:
+  - en
+- item: das-anerkennungsverfahren-e
+  from: B2-04-e
+  for:
+  - en
+- item: die-berufserlaubnis-e
+  from: B2-04-e
+  for:
+  - en
+- item: ueberqualifiziert-e
+  from: B2-04-e
+  for:
+  - en
+- item: wurde-anerkannt-e
+  from: B2-04-e
+  for:
+  - en
+- item: wurden-verlangt-e
+  from: B2-04-e
+  for:
+  - en
+- item: die-pflegekraft-e
+  from: B2-04-e
+  for:
+  - en
+- item: die-kenntnispruefung-e
+  from: B2-04-e
+  for:
+  - en
+- item: die-unterlagen-e
+  from: B2-04-e
+  for:
+  - en
+- item: beglaubigt-e
+  from: B2-04-e
+  for:
+  - en
+- item: der-betriebsrat
+  from: B2-20
+- item: die-ueberstunden
+  from: B2-20
+- item: die-urlaubstage
+  from: B2-20
+- item: der-urlaubsantrag
+  from: B2-20
+- item: ist-geregelt
+  from: B2-20
+- item: ist-festgelegt
+  from: B2-20
+- item: ist-abgelehnt
+  from: B2-20
+- item: der-brueckentag
+  from: B2-20
+- item: ausgleichen
+  from: B2-20
+- item: das-arbeitszeitgesetz
+  from: B2-20
+- item: der-ausstand-ea
+  from: B2-28-ea
+  for:
+  - en
+  - ar
+- item: der-letzte-arbeitstag-ea
+  from: B2-28-ea
+  for:
+  - en
+  - ar
+- item: liebe-kollegen-ea
+  from: B2-28-ea
+  for:
+  - en
+  - ar
+- item: der-dank-ea
+  from: B2-28-ea
+  for:
+  - en
+  - ar
+- item: ich-moechte-mich-bedanken-ea
+  from: B2-28-ea
+  for:
+  - en
+  - ar
+- item: die-zusammenarbeit-ea
+  from: B2-28-ea
+  for:
+  - en
+  - ar
+- item: vermissen-team-ea
+  from: B2-28-ea
+  for:
+  - en
+  - ar
+- item: in-kontakt-bleiben-ea
+  from: B2-28-ea
+  for:
+  - en
+  - ar
+- item: die-karte-ea
+  from: B2-28-ea
+  for:
+  - en
+  - ar
+- item: selbst-mitbringen-ea
+  from: B2-28-ea
+  for:
+  - en
+  - ar
+- item: alles-gute-ea
+  from: B2-28-ea
+  for:
+  - en
+  - ar
+- item: der-daueraufenthalt-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: die-rentenbeitraege-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: die-beitragsmonate-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: der-sprachnachweis-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: leben-in-deutschland-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: die-sicherung-des-lebensunterhalts-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: ausreichender-wohnraum-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: die-erfuellung-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: unbefristet-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: die-bearbeitungszeit-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: die-klausel
+  from: C1-04
+- item: die-schoenheitsreparaturen
+  from: C1-04
+- item: unwirksam
+  from: C1-04
+- item: der-auszug
+  from: C1-04
+- item: die-uebergabe-wohnung
+  from: C1-04
+- item: duerfte
+  from: C1-04
+- item: soll-angeblich
+  from: C1-04
+- item: muss-wohl
+  from: C1-04
+- item: die-abnutzung
+  from: C1-04
+- item: das-uebergabeprotokoll
+  from: C1-04
+- item: die-garderobe-a
+  from: B2-04-a
+  for:
+  - ar
+- item: die-approbation-a
+  from: B2-04-a
+  for:
+  - ar
+- item: die-zeugnisbewertung-a
+  from: B2-04-a
+  for:
+  - ar
+- item: wurde-anerkannt-a
+  from: B2-04-a
+  for:
+  - ar
+- item: wurde-gepruft-a
+  from: B2-04-a
+  for:
+  - ar
+- item: ueberqualifiziert-a
+  from: B2-04-a
+  for:
+  - ar
+- item: die-kenntnispruefung-a
+  from: B2-04-a
+  for:
+  - ar
+- item: die-fachsprachpruefung-a
+  from: B2-04-a
+  for:
+  - ar
+- item: das-dauert-a
+  from: B2-04-a
+  for:
+  - ar
+- item: nachts-a
+  from: B2-04-a
+  for:
+  - ar
+- item: die-anerkennung-m-m
+  from: B2-04-m
+  for:
+  - mk
+- item: wurde-anerkannt-m
+  from: B2-04-m
+  for:
+  - mk
+- item: wurde-uebersetzt-m
+  from: B2-04-m
+  for:
+  - mk
+- item: das-diplom-m
+  from: B2-04-m
+  for:
+  - mk
+- item: ueberqualifiziert-m
+  from: B2-04-m
+  for:
+  - mk
+- item: im-lager-m
+  from: B2-04-m
+  for:
+  - mk
+- item: die-erste-stelle-m
+  from: B2-04-m
+  for:
+  - mk
+- item: stolz-auf-dich-m
+  from: B2-04-m
+  for:
+  - mk
+- item: die-geduld-m
+  from: B2-04-m
+  for:
+  - mk
+- item: zwei-jahre-lang-m
+  from: B2-04-m
+  for:
+  - mk
+- item: der-erste-schultag-m
+  from: B2-28-m
+  for:
+  - mk
+- item: das-mittagessen-feier-m
+  from: B2-28-m
+  for:
+  - mk
+- item: die-klassenlehrerin-m
+  from: B2-28-m
+  for:
+  - mk
+- item: die-aula-m
+  from: B2-28-m
+  for:
+  - mk
+- item: aufgeregt-m
+  from: B2-28-m
+  for:
+  - mk
+- item: stolz-m-m
+  from: B2-28-m
+  for:
+  - mk
+- item: die-feier-m-m
+  from: B2-28-m
+  for:
+  - mk
+- item: liebe-eltern-m
+  from: B2-28-m
+  for:
+  - mk
+- item: herzlich-willkommen-m
+  from: B2-28-m
+  for:
+  - mk
+- item: das-foto-m
+  from: B2-28-m
+  for:
+  - mk
+- item: das-daueraufenthaltsrecht-m
+  from: C1-02-m
+  for:
+  - mk
+- item: der-wohnsitz-m
+  from: C1-02-m
+  for:
+  - mk
+- item: die-ummeldung-m
+  from: C1-02-m
+  for:
+  - mk
+- item: ununterbrochen-m
+  from: C1-02-m
+  for:
+  - mk
+- item: fuenf-jahre-m
+  from: C1-02-m
+  for:
+  - mk
+- item: die-krankenversicherung-m-m
+  from: C1-02-m
+  for:
+  - mk
+- item: die-auswanderung-m
+  from: C1-02-m
+  for:
+  - mk
+- item: der-lebensmittelpunkt-m
+  from: C1-02-m
+  for:
+  - mk
+- item: die-entscheidung-m
+  from: C1-02-m
+  for:
+  - mk
+- item: die-rente-ins-ausland-m
+  from: C1-02-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: 'You want a used car. Paul comes along to the seller: the TÜV, the registration, the insurance. Listen to the conversation; you don''t need to understand it yet.'
+    ar: 'تريدين سيارة مستعملة. باول يرافقكِ إلى البائع: الفحص الفني، والتسجيل، والتأمين. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.'
+    mk: 'Сакате половен автомобил. Паул доаѓа со вас кај продавачот: технички преглед, регистрација, осигурување. Слушнете го разговорот; уште не мора да го разберете.'
+- type: dialogue
+  lines:
+  - speaker: fahrer
+    text: 'Gebrauchtwagen, zehn Jahre alt, unfallfrei. Kilometerstand: neunzigtausend.'
+    meaning:
+      en: 'Used car, ten years old, accident-free. Mileage: ninety thousand.'
+      ar: 'سيارة مستعملة، عمرها عشر سنوات، خالية من الحوادث. عدد الكيلومترات: تسعون ألفًا.'
+      mk: 'Половен автомобил, десет години стар, без незгоди. Километража: деведесет илјади.'
+  - speaker: paul
+    text: Und der TÜV? ... Der ist abgelaufen!
+    meaning:
+      en: And the TÜV? ... It's expired!
+      ar: والفحص الفني؟ ... انتهت صلاحيته!
+      mk: А техничкиот? ... Истечен е!
+  - speaker: fahrer
+    text: Der muss noch gemacht werden. Das wird diese Woche erledigt.
+    meaning:
+      en: That still has to be done. It'll be done this week.
+      ar: يجب أن يُجرى بعد. سيُنجز هذا الأسبوع.
+      mk: Тој уште мора да се направи. Ќе се заврши оваа недела.
+  - speaker: protagonist
+    text: Dann kaufe ich erst danach. Darf ich eine Probefahrt machen?
+    meaning:
+      en: Then I'll buy only afterwards. May I take a test drive?
+      ar: إذن لن أشتري إلا بعد ذلك. هل يمكنني تجربة القيادة؟
+      mk: Тогаш ќе купам дури потоа. Смеам ли пробно возење?
+  - speaker: fahrer
+    text: Natürlich. Der Wagen wurde regelmäßig gewartet. Alles steht im Serviceheft.
+    meaning:
+      en: Of course. The car was serviced regularly. It's all in the service book.
+      ar: طبعًا. السيارة صِينت بانتظام. كل شيء مكتوب في دفتر الصيانة.
+      mk: Се разбира. Колата редовно се сервисирала. Сè пишува во сервисната книшка.
+  - speaker: paul
+    text: 'Und dann: Kaufvertrag, Versicherung, Zulassung. Ohne Versicherung wird kein Auto zugelassen.'
+    meaning:
+      en: 'And then: purchase contract, insurance, registration. Without insurance no car gets registered.'
+      ar: 'ثم: عقد البيع، التأمين، التسجيل. بلا تأمين لا تُسجَّل أي سيارة.'
+      mk: 'А потоа: договор за купопродажба, осигурување, регистрација. Без осигурување ниту една кола не се регистрира.'
+  - speaker: protagonist
+    text: Und mein Führerschein? Er wurde in meiner Heimat ausgestellt.
+    meaning:
+      en: And my driving licence? It was issued in my home country.
+      ar: ورخصة قيادتي؟ صدرت في بلدي.
+      mk: А мојата возачка? Издадена е во мојата земја.
+  - speaker: paul
+    text: Der muss vielleicht umgeschrieben werden. Frag bei der Führerscheinstelle.
+    meaning:
+      en: It may have to be converted. Ask at the licence office.
+      ar: ربما يجب تحويلها. اسألي في مكتب رخص القيادة.
+      mk: Можеби мора да се замени. Прашај во канцеларијата за возачки.
+- type: prompt
+  ask:
+    en: 'Say: a used car, accident-free.'
+    ar: 'قولي: سيارة مستعملة، خالية من الحوادث.'
+    mk: 'Кажете: половен автомобил, без незгоди.'
+  answer:
+    speaker: protagonist
+    text: Ein Gebrauchtwagen, unfallfrei.
+  items:
+  - der-gebrauchtwagen
+  - unfallfrei
+- type: prompt
+  ask:
+    en: 'Say: the mileage.'
+    ar: 'قولي: عدد الكيلومترات.'
+    mk: 'Кажете: километражата.'
+  answer:
+    speaker: protagonist
+    text: Der Kilometerstand.
+  items:
+  - der-kilometerstand
+- type: prompt
+  ask:
+    en: 'Say: the TÜV has expired!'
+    ar: 'قولي: الفحص الفني انتهت صلاحيته!'
+    mk: 'Кажете: техничкиот е истечен!'
+  answer:
+    speaker: protagonist
+    text: Der TÜV ist abgelaufen!
+  items:
+  - der-tuev
+  - ist-abgelaufen
+- type: narrator
+  text:
+    en: 'Passive forms at C1: «muss gemacht werden» (must be done), «wird erledigt» (is being done), «wurde gewartet» (was serviced), «ist abgelaufen» (state). Modal + participle + «werden» is common in
+      rules: «Ohne Versicherung wird kein Auto zugelassen».'
+    ar: 'صيغ المبني للمجهول في C1: «muss gemacht werden» (يجب أن يُجرى)، «wird erledigt» (يُنجز)، «wurde gewartet» (صِين)، «ist abgelaufen» (حالة). والفعل المساعد مع اسم المفعول و«werden» شائع في القواعد:
+      «Ohne Versicherung wird kein Auto zugelassen».'
+    mk: 'Пасивни форми на C1: «muss gemacht werden» (мора да се направи), «wird erledigt» (се завршува), «wurde gewartet» (се сервисирала), «ist abgelaufen» (состојба). Модален + партицип + «werden» е често
+      во правилата: «Ohne Versicherung wird kein Auto zugelassen».'
+- type: prompt
+  ask:
+    en: 'He says: it still has to be done.'
+    ar: 'يقول: يجب أن يُجرى بعد.'
+    mk: 'Тој вели: уште мора да се направи.'
+  answer:
+    speaker: protagonist
+    text: Der muss noch gemacht werden.
+  items:
+  - muss-gemacht-werden
+- type: prompt
+  ask:
+    en: 'Ask: may I take a test drive?'
+    ar: 'اسألي: هل يمكنني تجربة القيادة؟'
+    mk: 'Прашајте: смеам ли пробно возење?'
+  answer:
+    speaker: protagonist
+    text: Darf ich eine Probefahrt machen?
+  items:
+  - die-probefahrt
+- type: prompt
+  ask:
+    en: 'Say: the purchase contract.'
+    ar: 'قولي: عقد البيع.'
+    mk: 'Кажете: договорот за купопродажба.'
+  answer:
+    speaker: protagonist
+    text: Der Kaufvertrag.
+  items:
+  - der-kaufvertrag
+- type: prompt
+  ask:
+    en: 'Say: car insurance.'
+    ar: 'قولي: تأمين السيارة.'
+    mk: 'Кажете: автоосигурување.'
+  answer:
+    speaker: protagonist
+    text: Die Kfz-Versicherung.
+  items:
+  - die-kfz-versicherung
+- type: prompt
+  ask:
+    en: 'Say: without insurance no car gets registered.'
+    ar: 'قولي: بلا تأمين لا تُسجَّل أي سيارة.'
+    mk: 'Кажете: без осигурување ниту една кола не се регистрира.'
+  answer:
+    speaker: protagonist
+    text: Ohne Versicherung wird kein Auto zugelassen.
+  items:
+  - die-zulassung
+- type: narrator
+  text:
+    en: 'The TÜV inspection is due every two years; buy only with a valid one. Registration (Zulassung) needs proof of insurance first. Licences from outside the EU usually have to be converted within six
+      months of moving here — some need a test. Rules depend on the country: ask the Führerscheinstelle.'
+    ar: 'الفحص الفني (TÜV) مستحق كل سنتين؛ لا تشتري إلا بفحص ساري. والتسجيل يحتاج أولًا إثبات تأمين. ورخص القيادة من خارج الاتحاد الأوروبي يجب غالبًا تحويلها خلال ستة أشهر من الانتقال — وبعضها يحتاج اختبارًا.
+      القواعد تتوقّف على البلد: اسألي مكتب رخص القيادة.'
+    mk: 'Техничкиот преглед (TÜV) е на секои две години; купувајте само со важечки. За регистрација прво треба доказ за осигурување. Возачките дозволи од надвор од ЕУ обично мора да се заменат во рок од
+      шест месеци по преселувањето — за некои треба испит. Правилата зависат од земјата: прашајте во Führerscheinstelle.'
+- type: prompt
+  ask:
+    en: 'Once more: say “the used car”.'
+    ar: 'مرة أخرى: قولي “السيارة المستعملة”.'
+    mk: 'Уште еднаш: кажете „половниот автомобил“.'
+  answer:
+    speaker: protagonist
+    text: der Gebrauchtwagen
+  items:
+  - der-gebrauchtwagen
+- type: prompt
+  ask:
+    en: 'Once more: say “the vehicle inspection”.'
+    ar: 'مرة أخرى: قولي “الفحص الفني”.'
+    mk: 'Уште еднаш: кажете „техничкиот преглед“.'
+  answer:
+    speaker: protagonist
+    text: der TÜV
+  items:
+  - der-tuev
+- type: prompt
+  ask:
+    en: 'Once more: say “the registration”.'
+    ar: 'مرة أخرى: قولي “تسجيل السيارة”.'
+    mk: 'Уште еднаш: кажете „регистрацијата“.'
+  answer:
+    speaker: protagonist
+    text: die Zulassung
+  items:
+  - die-zulassung
+- type: prompt
+  ask:
+    en: 'Once more: say “car insurance”.'
+    ar: 'مرة أخرى: قولي “تأمين السيارة”.'
+    mk: 'Уште еднаш: кажете „автоосигурувањето“.'
+  answer:
+    speaker: protagonist
+    text: die Kfz-Versicherung
+  items:
+  - die-kfz-versicherung
+- type: prompt
+  ask:
+    en: 'Once more: say “the mileage”.'
+    ar: 'مرة أخرى: قولي “عدد الكيلومترات”.'
+    mk: 'Уште еднаш: кажете „километражата“.'
+  answer:
+    speaker: protagonist
+    text: der Kilometerstand
+  items:
+  - der-kilometerstand
+- type: prompt
+  ask:
+    en: 'Once more: say “accident-free”.'
+    ar: 'مرة أخرى: قولي “خالية من الحوادث”.'
+    mk: 'Уште еднаш: кажете „без незгоди“.'
+  answer:
+    speaker: protagonist
+    text: unfallfrei
+  items:
+  - unfallfrei
+- type: prompt
+  ask:
+    en: 'Once more: say “has to be done”.'
+    ar: 'مرة أخرى: قولي “يجب أن يُجرى”.'
+    mk: 'Уште еднаш: кажете „мора да се направи“.'
+  answer:
+    speaker: protagonist
+    text: muss gemacht werden
+  items:
+  - muss-gemacht-werden
+- type: prompt
+  ask:
+    en: 'Once more: say “has expired”.'
+    ar: 'مرة أخرى: قولي “انتهت صلاحيته”.'
+    mk: 'Уште еднаш: кажете „е истечен“.'
+  answer:
+    speaker: protagonist
+    text: ist abgelaufen
+  items:
+  - ist-abgelaufen
+- type: prompt
+  ask:
+    en: 'Once more: say “the test drive”.'
+    ar: 'مرة أخرى: قولي “تجربة القيادة”.'
+    mk: 'Уште еднаш: кажете „пробното возење“.'
+  answer:
+    speaker: protagonist
+    text: die Probefahrt
+  items:
+  - die-probefahrt
+- type: prompt
+  ask:
+    en: 'Once more: say “the purchase contract”.'
+    ar: 'مرة أخرى: قولي “عقد البيع”.'
+    mk: 'Уште еднаш: кажете „договорот за купопродажба“.'
+  answer:
+    speaker: protagonist
+    text: der Kaufvertrag
+  items:
+  - der-kaufvertrag
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the clause — and “cosmetic repairs (painting etc.) — and “invalid, void — and “moving out — and “the handover of the flat — and “is probably (assumption) — and “is said to, supposedly — and
+      “must (surely) — and “normal wear and tear — and “the handover report — and “the works council — and “overtime — and “holiday days — and “the holiday request — and “is regulated, is set out”.'
+    ar: 'قولي: “البند — و“الإصلاحات التجميلية — و“باطل — و“مغادرة المسكن — و“تسليم الشقة — و“يُرجَّح أنّ — و“يُقال إنّ — و“لا بد أنّ — و“الاستهلاك العادي — و“محضر التسليم — و“مجلس العاملين — و“الساعات الإضافية
+      — و“أيام الإجازة — و“طلب الإجازة — و“منظَّم”.'
+    mk: 'Кажете: „клаузулата“ — и „естетските поправки“ — и „неважечко“ — и „иселувањето“ — и „предавањето на станот“ — и „веројатно е“ — и „наводно“ — и „сигурно мора“ — и „нормалното абење“ — и „записникот
+      за предавање“ — и „работничкиот совет“ — и „прекувремената работа“ — и „деновите одмор“ — и „барањето за одмор“ — и „е регулирано“.'
+  answer:
+    speaker: protagonist
+    text: die Klausel … die Schönheitsreparaturen … unwirksam … der Auszug … die Wohnungsübergabe … dürfte … soll … muss wohl … die normale Abnutzung … das Übergabeprotokoll … der Betriebsrat … die Überstunden
+      … die Urlaubstage … der Urlaubsantrag … ist geregelt
+  items:
+  - die-klausel
+  - die-schoenheitsreparaturen
+  - unwirksam
+  - der-auszug
+  - die-uebergabe-wohnung
+  - duerfte
+  - soll-angeblich
+  - muss-wohl
+  - die-abnutzung
+  - das-uebergabeprotokoll
+  - der-betriebsrat
+  - die-ueberstunden
+  - die-urlaubstage
+  - der-urlaubsantrag
+  - ist-geregelt
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “is fixed — and “is refused — and “a bridge day (between holiday and weekend) — and “compensate (with time off) — and “the working hours law — and “I think that … — and “in my opinion — and
+      “the climate — and “ban, forbid — and “I''m against it — and “I''m for it — and “that''s true, but … — and “local public transport — and “argue — and “we agree”.'
+    ar: 'قولي: “محدَّد — و“مرفوض — و“يوم الجسر — و“يعوّض — و“قانون ساعات العمل — و“أرى أنّ … — و“في رأيي — و“المناخ — و“يمنع — و“أنا ضد ذلك — و“أنا مع ذلك — و“صحيح، لكن … — و“النقل المحلي — و“يتجادل — و“نحن
+      متفقون”.'
+    mk: 'Кажете: „е утврдено“ — и „е одбиено“ — и „мостен ден“ — и „надоместува“ — и „законот за работно време“ — и „Мислам дека …“ — и „според мене“ — и „климата“ — и „забранува“ — и „јас сум против“ —
+      и „јас сум за“ — и „тоа е точно, но …“ — и „градскиот превоз“ — и „се расправа“ — и „се согласуваме“.'
+  answer:
+    speaker: protagonist
+    text: ist festgelegt … ist abgelehnt … der Brückentag … ausgleichen … das Arbeitszeitgesetz … Ich finde, dass … … meiner Meinung nach … das Klima … verbieten … ich bin dagegen … ich bin dafür … das
+      stimmt zwar, aber … … der Nahverkehr … streiten … wir sind uns einig
+  items:
+  - ist-festgelegt
+  - ist-abgelehnt
+  - der-brueckentag
+  - ausgleichen
+  - das-arbeitszeitgesetz
+  - ich-finde-dass
+  - meiner-meinung-nach
+  - das-klima
+  - verbieten
+  - ich-bin-dagegen
+  - ich-bin-dafuer
+  - das-stimmt-zwar
+  - der-nahverkehr
+  - streiten
+  - wir-sind-uns-einig
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the club — and “until then — and “the recognition procedure — and “the licence to practise — and “overqualified — and “was recognised”.'
+  answer:
+    speaker: protagonist
+    text: der Club … bis dahin … das Anerkennungsverfahren … die Berufserlaubnis … überqualifiziert … wurde anerkannt
+  items:
+  - der-club-e
+  - bis-dahin-e
+  - das-anerkennungsverfahren-e
+  - die-berufserlaubnis-e
+  - ueberqualifiziert-e
+  - wurde-anerkannt-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “were required — and “the qualified nurse — and “the knowledge exam — and “the documents — and “certified”.'
+  answer:
+    speaker: protagonist
+    text: wurden verlangt … die Pflegefachkraft … die Kenntnisprüfung … die Unterlagen … beglaubigt
+  items:
+  - wurden-verlangt-e
+  - die-pflegekraft-e
+  - die-kenntnispruefung-e
+  - die-unterlagen-e
+  - beglaubigt-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “permanent residence — and “pension contributions — and “months of contributions — and “proof of language level — and “the ''Life in Germany'' test — and “securing one''s livelihood — and
+      “sufficient living space — and “the fulfilment (of conditions) — and “permanent, unlimited — and “the processing time — and “the leaving do”.'
+    ar: 'قولي: “الإقامة الدائمة — و“اشتراكات التقاعد — و“أشهر الاشتراك — و“إثبات المستوى اللغوي — و“اختبار «الحياة في ألمانيا» — و“تأمين المعيشة — و“مسكن كافٍ — و“استيفاء (الشروط) — و“غير محدد المدة — و“مدة
+      المعالجة — و“حفلة الوداع”.'
+  answer:
+    speaker: protagonist
+    text: der Daueraufenthalt … die Rentenbeiträge … die Beitragsmonate … der Sprachnachweis … der Test „Leben in Deutschland“ … die Sicherung des Lebensunterhalts … ausreichender Wohnraum … die Erfüllung
+      … unbefristet … die Bearbeitungszeit … der Ausstand
+  items:
+  - der-daueraufenthalt-ea
+  - die-rentenbeitraege-ea
+  - die-beitragsmonate-ea
+  - der-sprachnachweis-ea
+  - leben-in-deutschland-ea
+  - die-sicherung-des-lebensunterhalts-ea
+  - ausreichender-wohnraum-ea
+  - die-erfuellung-ea
+  - unbefristet-ea
+  - die-bearbeitungszeit-ea
+  - der-ausstand-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the last working day — and “Dear colleagues — and “thanks, gratitude — and “I''d like to say thank you — and “the cooperation — and “I''ll miss you — and “stay in touch — and “the farewell
+      card — and “bring yourself — and “All the best!”.'
+    ar: 'قولي: “آخر يوم عمل — و“زميلاتي وزملائي الأعزاء — و“الشكر — و“أودّ أن أشكركم — و“التعاون — و“سأفتقدكم — و“يبقى على تواصل — و“بطاقة الوداع — و“يُحضر بنفسه — و“كل التوفيق!”.'
+  answer:
+    speaker: protagonist
+    text: der letzte Arbeitstag … Liebe Kolleginnen und Kollegen … der Dank … Ich möchte mich bedanken … die Zusammenarbeit … Ihr werdet mir fehlen … in Kontakt bleiben … die Abschiedskarte … selbst mitbringen
+      … Alles Gute!
+  items:
+  - der-letzte-arbeitstag-ea
+  - liebe-kollegen-ea
+  - der-dank-ea
+  - ich-moechte-mich-bedanken-ea
+  - die-zusammenarbeit-ea
+  - vermissen-team-ea
+  - in-kontakt-bleiben-ea
+  - die-karte-ea
+  - selbst-mitbringen-ea
+  - alles-gute-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “غرفة المعاطف — و“ترخيص مزاولة الطب — و“تقييم الشهادة — و“اعتُرف به — و“فُحص، دُقّق”.'
+  answer:
+    speaker: protagonist
+    text: die Garderobe … die Approbation … die Zeugnisbewertung … wurde anerkannt … wurde geprüft
+  items:
+  - die-garderobe-a
+  - die-approbation-a
+  - die-zeugnisbewertung-a
+  - wurde-anerkannt-a
+  - wurde-gepruft-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “مؤهَّل أكثر من اللازم — و“امتحان المعرفة — و“امتحان اللغة المهنية — و“هذا يستغرق وقتًا — و“ليلًا”.'
+  answer:
+    speaker: protagonist
+    text: überqualifiziert … die Kenntnisprüfung … die Fachsprachprüfung … das dauert … nachts
+  items:
+  - ueberqualifiziert-a
+  - die-kenntnispruefung-a
+  - die-fachsprachpruefung-a
+  - das-dauert-a
+  - nachts-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „правото на постојан престој“ — и „живеалиштето“ — и „пријавувањето на нова адреса“ — и „без прекин“ — и „пет години“ — и „здравственото осигурување“ — и „иселувањето“ — и „центарот на
+      животот“ — и „одлуката“ — и „исплатата на пензија во странство“.'
+  answer:
+    speaker: protagonist
+    text: das Daueraufenthaltsrecht … der Wohnsitz … die Ummeldung … ununterbrochen … fünf Jahre … die Krankenversicherung … die Auswanderung … der Lebensmittelpunkt … die Entscheidung … die Rentenzahlung
+      ins Ausland
+  items:
+  - das-daueraufenthaltsrecht-m
+  - der-wohnsitz-m
+  - die-ummeldung-m
+  - ununterbrochen-m
+  - fuenf-jahre-m
+  - die-krankenversicherung-m-m
+  - die-auswanderung-m
+  - der-lebensmittelpunkt-m
+  - die-entscheidung-m
+  - die-rente-ins-ausland-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „првиот училиштен ден“ — и „сите заедно јадат“ — и „класната наставничка“ — и „салата“ — и „возбуден“ — и „горд“ — и „прославата“ — и „Драги родители, драги баби и дедовци“ — и „срдечно
+      добредојдовте“ — и „фотографијата“.'
+  answer:
+    speaker: protagonist
+    text: der erste Schultag … alle zusammen essen … die Klassenlehrerin … die Aula … aufgeregt … stolz … die Feier … Liebe Eltern, liebe Großeltern … herzlich willkommen … das Foto
+  items:
+  - der-erste-schultag-m
+  - das-mittagessen-feier-m
+  - die-klassenlehrerin-m
+  - die-aula-m
+  - aufgeregt-m
+  - stolz-m-m
+  - die-feier-m-m
+  - liebe-eltern-m
+  - herzlich-willkommen-m
+  - das-foto-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „признавањето“ — и „беше признаена“ — и „беше преведена“ — и „дипломата“ — и „преквалификуван“ — и „во магацин“ — и „првата работа“ — и „горд на тебе“ — и „трпението“ — и „две години“.'
+  answer:
+    speaker: protagonist
+    text: die Anerkennung … wurde anerkannt … wurde übersetzt … das Diplom … überqualifiziert … im Lager … die erste Stelle … stolz auf dich … die Geduld … zwei Jahre lang
+  items:
+  - die-anerkennung-m-m
+  - wurde-anerkannt-m
+  - wurde-uebersetzt-m
+  - das-diplom-m
+  - ueberqualifiziert-m
+  - im-lager-m
+  - die-erste-stelle-m
+  - stolz-auf-dich-m
+  - die-geduld-m
+  - zwei-jahre-lang-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

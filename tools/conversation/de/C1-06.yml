@@ -1,0 +1,977 @@
+# UNIT de C1-06 — written by AI (Claude) for Casus; expanded from src/C1-06.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-06
+level: C1
+number: 6
+protagonist: m
+title:
+  en: The accident
+  ar: الحادث
+  mk: Несреќата
+situation:
+  en: On your bike at a crossing, a car turning right hits you. Only bruises. The police take statements.
+  ar: على درّاجتك عند تقاطع، سيارة تنعطف يمينًا تصدمك. كدمات فقط. الشرطة تأخذ الإفادات.
+  mk: Со велосипед на раскрсница, кола што свртува десно ве удира. Само модринки. Полицијата зема изјави.
+learn_lessons:
+- c1-konjunktiv-i
+culture: Reporting an accident
+new_items:
+- id: der-unfall
+  text: der Unfall
+  meaning:
+    en: the accident
+    ar: الحادث
+    mk: несреќата
+- id: der-unfallbericht
+  text: der Unfallbericht
+  meaning:
+    en: the accident report
+    ar: تقرير الحادث
+    mk: записникот за несреќата
+  rare: true
+- id: der-zeuge
+  text: der Zeuge
+  meaning:
+    en: the witness
+    ar: الشاهد
+    mk: сведокот
+- id: die-aussage
+  text: die Aussage
+  meaning:
+    en: the statement
+    ar: الإفادة
+    mk: изјавата
+- id: die-kreuzung
+  text: die Kreuzung
+  meaning:
+    en: the crossing, junction
+    ar: التقاطع
+    mk: раскрсницата
+- id: abbiegen
+  text: abbiegen
+  meaning:
+    en: turn (off)
+    ar: ينعطف
+    mk: свртува
+- id: er-behauptet-ich-sei
+  text: er behauptet, ich sei …
+  meaning:
+    en: he claims I was …
+    ar: يدّعي أنني …
+    mk: тврди дека сум …
+- id: er-habe-gesehen
+  text: er habe … gesehen
+  meaning:
+    en: (reported) he saw …
+    ar: (منقولًا) إنه رأى …
+    mk: (пренесено) дека видел …
+- id: die-vorfahrt
+  text: die Vorfahrt
+  meaning:
+    en: right of way
+    ar: أولوية المرور
+    mk: првенството
+- id: die-prellung
+  text: die Prellung
+  meaning:
+    en: the bruise
+    ar: الكدمة
+    mk: модринката
+- id: das-aktenzeichen
+  text: das Aktenzeichen
+  meaning:
+    en: the case number
+    ar: رقم الملف
+    mk: бројот на предметот
+  rare: true
+reviews:
+- item: die-zelle
+  from: B1-03
+- item: der-kern
+  from: B1-03
+- item: das-mikroskop
+  from: B1-03
+- item: wird-geteilt
+  from: B1-03
+- item: wird-gespeichert
+  from: B1-03
+- item: die-information
+  from: B1-03
+- item: der-koerper
+  from: B1-03
+- item: besteht-aus
+  from: B1-03
+- item: millionen
+  from: B1-03
+- item: erklaeren
+  from: B1-03
+- item: unglaublich
+  from: B1-03
+- item: die-aufenthaltserlaubnis-e
+  from: B2-05-e
+  for:
+  - en
+- item: zur-arbeitssuche-e
+  from: B2-05-e
+  for:
+  - en
+- item: die-blaue-karte-e
+  from: B2-05-e
+  for:
+  - en
+- item: die-fachkraft-e
+  from: B2-05-e
+  for:
+  - en
+- item: der-abschluss-uni-e
+  from: B2-05-e
+  for:
+  - en
+- item: er-sagt-es-sei-e
+  from: B2-05-e
+  for:
+  - en
+- item: ich-muesse-e
+  from: B2-05-e
+  for:
+  - en
+- item: rechtzeitig-e
+  from: B2-05-e
+  for:
+  - en
+- item: die-gehaltsgrenze-e
+  from: B2-05-e
+  for:
+  - en
+- item: der-antrag-stellen-e
+  from: B2-05-e
+  for:
+  - en
+- item: der-glaube
+  from: B2-21
+- item: glaeubig
+  from: B2-21
+- item: konfessionslos
+  from: B2-21
+- item: die-moschee
+  from: B2-21
+- item: der-kirchenaustritt
+  from: B2-21
+- item: das-mitglied-kirche
+  from: B2-21
+- item: die-gemeinde
+  from: B2-21
+- item: sie-seien
+  from: B2-21
+- item: es-gebe
+  from: B2-21
+- item: die-religionsfreiheit
+  from: B2-21
+- item: respektieren
+  from: B2-21
+- item: die-einarbeitung-ea
+  from: B2-29-ea
+  for:
+  - en
+  - ar
+- item: der-einarbeitungsplan-ea
+  from: B2-29-ea
+  for:
+  - en
+  - ar
+- item: der-pate-ea
+  from: B2-29-ea
+  for:
+  - en
+  - ar
+- item: bei-der-ea
+  from: B2-29-ea
+  for:
+  - en
+  - ar
+- item: an-dem-ea
+  from: B2-29-ea
+  for:
+  - en
+  - ar
+- item: mit-denen-ea
+  from: B2-29-ea
+  for:
+  - en
+  - ar
+- item: der-zugang-ea
+  from: B2-29-ea
+  for:
+  - en
+  - ar
+- item: die-kantine-ea
+  from: B2-29-ea
+  for:
+  - en
+  - ar
+- item: die-gleitzeit-ea
+  from: B2-29-ea
+  for:
+  - en
+  - ar
+- item: die-kernzeit-ea
+  from: B2-29-ea
+  for:
+  - en
+  - ar
+- item: die-staatsangehoerigkeit-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: die-doppelte-staatsangehoerigkeit-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: die-einbuergerungsbehoerde-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: der-fragenkatalog-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: das-bekenntnis-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: sie-sagte-man-muesse-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: es-sei-moeglich-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: man-habe-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: das-studienvisum-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: anrechnen-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: der-gebrauchtwagen
+  from: C1-05
+- item: der-tuev
+  from: C1-05
+- item: die-zulassung
+  from: C1-05
+- item: die-kfz-versicherung
+  from: C1-05
+- item: der-kilometerstand
+  from: C1-05
+- item: unfallfrei
+  from: C1-05
+- item: muss-gemacht-werden
+  from: C1-05
+- item: ist-abgelaufen
+  from: C1-05
+- item: die-probefahrt
+  from: C1-05
+- item: der-kaufvertrag
+  from: C1-05
+- item: jahre-ehe-a
+  from: B2-05-a
+  for:
+  - ar
+- item: eigenstaendig-a
+  from: B2-05-a
+  for:
+  - ar
+- item: die-niederlassungserlaubnis-a
+  from: B2-05-a
+  for:
+  - ar
+- item: die-einbuergerung-a
+  from: B2-05-a
+  for:
+  - ar
+- item: die-voraussetzung-a
+  from: B2-05-a
+  for:
+  - ar
+- item: er-sagt-es-sei-a
+  from: B2-05-a
+  for:
+  - ar
+- item: ich-muesse-a
+  from: B2-05-a
+  for:
+  - ar
+- item: der-einbuergerungstest-a
+  from: B2-05-a
+  for:
+  - ar
+- item: ab-wann-a
+  from: B2-05-a
+  for:
+  - ar
+- item: nach-einigen-jahren-a
+  from: B2-05-a
+  for:
+  - ar
+- item: laenger-als-m
+  from: B2-05-m
+  for:
+  - mk
+- item: klaeren-m
+  from: B2-05-m
+  for:
+  - mk
+- item: der-versicherungsschutz-m
+  from: B2-05-m
+  for:
+  - mk
+- item: ausreichend-m
+  from: B2-05-m
+  for:
+  - mk
+- item: die-mittel-m
+  from: B2-05-m
+  for:
+  - mk
+- item: er-sagt-es-sei-m
+  from: B2-05-m
+  for:
+  - mk
+- item: ich-muesse-m
+  from: B2-05-m
+  for:
+  - mk
+- item: die-auslandskrankenversicherung-m
+  from: B2-05-m
+  for:
+  - mk
+- item: das-sozialabkommen-m
+  from: B2-05-m
+  for:
+  - mk
+- item: nachweisen-m
+  from: B2-05-m
+  for:
+  - mk
+- item: der-elternabend-m
+  from: B2-29-m
+  for:
+  - mk
+- item: die-hausaufgaben-m
+  from: B2-29-m
+  for:
+  - mk
+- item: bei-der-m
+  from: B2-29-m
+  for:
+  - mk
+- item: mit-denen-m
+  from: B2-29-m
+  for:
+  - mk
+- item: an-dem-m
+  from: B2-29-m
+  for:
+  - mk
+- item: der-elternvertreter-m
+  from: B2-29-m
+  for:
+  - mk
+- item: der-ausflug-m
+  from: B2-29-m
+  for:
+  - mk
+- item: die-sitznachbarn-m
+  from: B2-29-m
+  for:
+  - mk
+- item: lesen-lernen-m
+  from: B2-29-m
+  for:
+  - mk
+- item: die-liste-eintragen-m
+  from: B2-29-m
+  for:
+  - mk
+- item: die-staatsangehoerigkeit-m
+  from: C1-03-m
+  for:
+  - mk
+- item: die-doppelte-staatsangehoerigkeit-m
+  from: C1-03-m
+  for:
+  - mk
+- item: abgeben-m
+  from: C1-03-m
+  for:
+  - mk
+- item: behalten-m
+  from: C1-03-m
+  for:
+  - mk
+- item: es-sei-moeglich-m
+  from: C1-03-m
+  for:
+  - mk
+- item: er-muesse-m
+  from: C1-03-m
+  for:
+  - mk
+- item: von-geburt-an-m
+  from: C1-03-m
+  for:
+  - mk
+- item: das-wahlrecht-m-m
+  from: C1-03-m
+  for:
+  - mk
+- item: der-einbuergerungstest-m-m
+  from: C1-03-m
+  for:
+  - mk
+- item: die-urkunde-m
+  from: C1-03-m
+  for:
+  - mk
+- item: der-radweg
+  from: A2-19
+steps:
+- type: narrator
+  text:
+    en: On your bike at a crossing, a car turning right hits you. Only bruises. The police take statements. Listen to the conversation; you don't need to understand it yet.
+    ar: على درّاجتك عند تقاطع، سيارة تنعطف يمينًا تصدمك. كدمات فقط. الشرطة تأخذ الإفادات. استمع إلى المحادثة؛ لا داعي لأن تفهمها الآن.
+    mk: Со велосипед на раскрсница, кола што свртува десно ве удира. Само модринки. Полицијата зема изјави. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: polizist
+    text: Sind Sie verletzt?
+    meaning:
+      en: Are you injured?
+      ar: هل أنت مصاب؟
+      mk: Повредени ли сте?
+  - speaker: protagonist
+    text: Nur eine Prellung am Knie. Ich war auf dem Radweg, er ist rechts abgebogen.
+    meaning:
+      en: Just a bruise on my knee. I was in the cycle lane, he turned right.
+      ar: كدمة في الركبة فقط. كنتُ على مسار الدرّاجات، وهو انعطف يمينًا.
+      mk: Само модринка на коленото. Бев на велосипедската патека, тој сврте десно.
+  - speaker: polizist
+    text: Der Fahrer behauptet, Sie seien bei Rot gefahren.
+    meaning:
+      en: The driver claims you rode through a red light.
+      ar: السائق يدّعي أنك عبرتَ والإشارة حمراء.
+      mk: Возачот тврди дека сте возеле на црвено.
+  - speaker: protagonist
+    text: Das stimmt nicht! Ich hatte Grün und Vorfahrt.
+    meaning:
+      en: That's not true! I had green and right of way.
+      ar: هذا غير صحيح! كانت الإشارة خضراء ولي أولوية المرور.
+      mk: Тоа не е точно! Имав зелено и првенство.
+  - speaker: polizist
+    text: Es gibt einen Zeugen. Er sagt, er habe alles gesehen.
+    meaning:
+      en: There's a witness. He says he saw everything.
+      ar: هناك شاهد. يقول إنه رأى كل شيء.
+      mk: Има сведок. Вели дека видел сè.
+  - speaker: protagonist
+    text: Und was sagt er?
+    meaning:
+      en: And what does he say?
+      ar: وماذا يقول؟
+      mk: А што вели?
+  - speaker: polizist
+    text: Laut seiner Aussage sei die Ampel für Sie grün gewesen. Das kommt in den Unfallbericht.
+    meaning:
+      en: According to his statement, the light was green for you. That goes in the accident report.
+      ar: بحسب إفادته كانت الإشارة خضراء لك. هذا سيُدرج في تقرير الحادث.
+      mk: Според неговата изјава семафорот бил зелен за вас. Тоа влегува во записникот.
+  - speaker: protagonist
+    text: Bekomme ich eine Kopie?
+    meaning:
+      en: Do I get a copy?
+      ar: هل أحصل على نسخة؟
+      mk: Ќе добијам ли копија?
+  - speaker: polizist
+    text: Sie bekommen ein Aktenzeichen. Damit fordert Ihre Versicherung den Bericht an.
+    meaning:
+      en: You get a case number. Your insurance requests the report with it.
+      ar: تحصل على رقم ملف. به يطلب تأمينك التقرير.
+      mk: Добивате број на предмет. Со него вашето осигурување го бара записникот.
+- type: prompt
+  ask:
+    en: 'Say: just a bruise on my knee.'
+    ar: 'قل: كدمة في الركبة فقط.'
+    mk: 'Кажете: само модринка на коленото.'
+  answer:
+    speaker: protagonist
+    text: Nur eine Prellung am Knie.
+  items:
+  - die-prellung
+- type: prompt
+  ask:
+    en: 'Say: I was in the cycle lane, he turned right.'
+    ar: 'قل: كنتُ على مسار الدرّاجات، وهو انعطف يمينًا.'
+    mk: 'Кажете: бев на патеката, тој сврте десно.'
+  answer:
+    speaker: protagonist
+    text: Ich war auf dem Radweg, er ist rechts abgebogen.
+  items:
+  - der-radweg
+  - abbiegen
+- type: narrator
+  text:
+    en: 'Police and reports use Konjunktiv I to keep claims apart: «Der Fahrer behauptet, Sie seien bei Rot gefahren», «Er sagt, er habe alles gesehen», «die Ampel sei grün gewesen». Nobody''s word is taken
+      as fact yet.'
+    ar: 'الشرطة والتقارير تستعمل Konjunktiv I للفصل بين الادّعاءات: «Der Fahrer behauptet, Sie seien bei Rot gefahren»، «Er sagt, er habe alles gesehen»، «die Ampel sei grün gewesen». لا يُعتبر كلام أحد
+      حقيقة بعد.'
+    mk: 'Полицијата и записниците користат Konjunktiv I за да ги одвојат тврдењата: «Der Fahrer behauptet, Sie seien bei Rot gefahren», «Er sagt, er habe alles gesehen», «die Ampel sei grün gewesen». Ничиј
+      збор уште не се зема како факт.'
+- type: prompt
+  ask:
+    en: 'Report: the driver claims I rode through red.'
+    ar: 'انقل: السائق يدّعي أنني عبرتُ والإشارة حمراء.'
+    mk: 'Пренесете: возачот тврди дека сум возел на црвено.'
+  answer:
+    speaker: protagonist
+    text: Er behauptet, ich sei bei Rot gefahren.
+  items:
+  - er-behauptet-ich-sei
+- type: prompt
+  ask:
+    en: 'Say: I had right of way.'
+    ar: 'قل: كانت لي أولوية المرور.'
+    mk: 'Кажете: имав првенство.'
+  answer:
+    speaker: protagonist
+    text: Ich hatte Vorfahrt.
+  items:
+  - die-vorfahrt
+- type: prompt
+  ask:
+    en: 'Say: at the crossing.'
+    ar: 'قل: عند التقاطع.'
+    mk: 'Кажете: на раскрсницата.'
+  answer:
+    speaker: protagonist
+    text: An der Kreuzung.
+  items:
+  - die-kreuzung
+- type: prompt
+  ask:
+    en: 'Report: the witness says he saw everything.'
+    ar: 'انقل: الشاهد يقول إنه رأى كل شيء.'
+    mk: 'Пренесете: сведокот вели дека видел сè.'
+  answer:
+    speaker: protagonist
+    text: Der Zeuge sagt, er habe alles gesehen.
+  items:
+  - der-zeuge
+  - er-habe-gesehen
+- type: prompt
+  ask:
+    en: 'Say: according to his statement.'
+    ar: 'قل: بحسب إفادته.'
+    mk: 'Кажете: според неговата изјава.'
+  answer:
+    speaker: protagonist
+    text: Laut seiner Aussage.
+  items:
+  - die-aussage
+- type: prompt
+  ask:
+    en: 'Say: the accident report.'
+    ar: 'قل: تقرير الحادث.'
+    mk: 'Кажете: записникот за несреќата.'
+  answer:
+    speaker: protagonist
+    text: Der Unfallbericht.
+  items:
+  - der-unfallbericht
+  - der-unfall
+- type: prompt
+  ask:
+    en: 'Say: the case number.'
+    ar: 'قل: رقم الملف.'
+    mk: 'Кажете: бројот на предметот.'
+  answer:
+    speaker: protagonist
+    text: Das Aktenzeichen.
+  items:
+  - das-aktenzeichen
+- type: narrator
+  text:
+    en: 'After an accident: secure the place, call 110 if anyone is hurt, take names and phone numbers of witnesses and photos. Don''t admit fault on the spot. Note the case number (Aktenzeichen) — insurers
+      ask for it. Cars turning right must let cyclists going straight pass.'
+    ar: 'بعد الحادث: أمّن المكان، واتصل بـ110 إن أُصيب أحد، وخذ أسماء الشهود وأرقامهم والتقط صورًا. لا تعترف بالخطأ في المكان. سجّل رقم الملف (Aktenzeichen) — شركات التأمين تطلبه. والسيارات المنعطفة يمينًا
+      يجب أن تترك راكبي الدرّاجات المتقدّمين مباشرة يمرّون.'
+    mk: 'По несреќа: обезбедете го местото, јавете се на 110 ако некој е повреден, земете имиња и телефони на сведоци и фотографии. Не признавајте вина на лице место. Запишете го бројот на предметот (Aktenzeichen)
+      — осигурителите го бараат. Колите што свртуваат десно мора да ги пуштат велосипедистите што возат право.'
+- type: prompt
+  ask:
+    en: 'Once more: say “the accident”.'
+    ar: 'مرة أخرى: قل “الحادث”.'
+    mk: 'Уште еднаш: кажете „несреќата“.'
+  answer:
+    speaker: protagonist
+    text: der Unfall
+  items:
+  - der-unfall
+- type: prompt
+  ask:
+    en: 'Once more: say “the accident report”.'
+    ar: 'مرة أخرى: قل “تقرير الحادث”.'
+    mk: 'Уште еднаш: кажете „записникот за несреќата“.'
+  answer:
+    speaker: protagonist
+    text: der Unfallbericht
+  items:
+  - der-unfallbericht
+- type: prompt
+  ask:
+    en: 'Once more: say “the witness”.'
+    ar: 'مرة أخرى: قل “الشاهد”.'
+    mk: 'Уште еднаш: кажете „сведокот“.'
+  answer:
+    speaker: protagonist
+    text: der Zeuge
+  items:
+  - der-zeuge
+- type: prompt
+  ask:
+    en: 'Once more: say “the statement”.'
+    ar: 'مرة أخرى: قل “الإفادة”.'
+    mk: 'Уште еднаш: кажете „изјавата“.'
+  answer:
+    speaker: protagonist
+    text: die Aussage
+  items:
+  - die-aussage
+- type: prompt
+  ask:
+    en: 'Once more: say “the crossing, junction”.'
+    ar: 'مرة أخرى: قل “التقاطع”.'
+    mk: 'Уште еднаш: кажете „раскрсницата“.'
+  answer:
+    speaker: protagonist
+    text: die Kreuzung
+  items:
+  - die-kreuzung
+- type: prompt
+  ask:
+    en: 'Once more: say “turn (off)”.'
+    ar: 'مرة أخرى: قل “ينعطف”.'
+    mk: 'Уште еднаш: кажете „свртува“.'
+  answer:
+    speaker: protagonist
+    text: abbiegen
+  items:
+  - abbiegen
+- type: prompt
+  ask:
+    en: 'Once more: say “he claims I was …”.'
+    ar: 'مرة أخرى: قل “يدّعي أنني …”.'
+    mk: 'Уште еднаш: кажете „тврди дека сум …“.'
+  answer:
+    speaker: protagonist
+    text: er behauptet, ich sei …
+  items:
+  - er-behauptet-ich-sei
+- type: prompt
+  ask:
+    en: 'Once more: say “(reported) he saw …”.'
+    ar: 'مرة أخرى: قل “(منقولًا) إنه رأى …”.'
+    mk: 'Уште еднаш: кажете „(пренесено) дека видел …“.'
+  answer:
+    speaker: protagonist
+    text: er habe … gesehen
+  items:
+  - er-habe-gesehen
+- type: prompt
+  ask:
+    en: 'Once more: say “right of way”.'
+    ar: 'مرة أخرى: قل “أولوية المرور”.'
+    mk: 'Уште еднаш: кажете „првенството“.'
+  answer:
+    speaker: protagonist
+    text: die Vorfahrt
+  items:
+  - die-vorfahrt
+- type: prompt
+  ask:
+    en: 'Once more: say “the bruise”.'
+    ar: 'مرة أخرى: قل “الكدمة”.'
+    mk: 'Уште еднаш: кажете „модринката“.'
+  answer:
+    speaker: protagonist
+    text: die Prellung
+  items:
+  - die-prellung
+- type: prompt
+  ask:
+    en: 'Once more: say “the case number”.'
+    ar: 'مرة أخرى: قل “رقم الملف”.'
+    mk: 'Уште еднаш: кажете „бројот на предметот“.'
+  answer:
+    speaker: protagonist
+    text: das Aktenzeichen
+  items:
+  - das-aktenzeichen
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتَه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the used car — and “the vehicle inspection — and “the registration — and “car insurance — and “the mileage — and “accident-free — and “has to be done — and “has expired — and “the test drive
+      — and “the purchase contract — and “faith — and “religious, believing — and “without religious affiliation — and “the mosque — and “leaving the church (officially) — and “church member”.'
+    ar: 'قل: “السيارة المستعملة — و“الفحص الفني — و“تسجيل السيارة — و“تأمين السيارة — و“عدد الكيلومترات — و“خالية من الحوادث — و“يجب أن يُجرى — و“انتهت صلاحيته — و“تجربة القيادة — و“عقد البيع — و“الإيمان
+      — و“مؤمن، متديّن — و“بلا انتماء ديني — و“المسجد — و“الخروج الرسمي من الكنيسة — و“عضو في الكنيسة”.'
+    mk: 'Кажете: „половниот автомобил“ — и „техничкиот преглед“ — и „регистрацијата“ — и „автоосигурувањето“ — и „километражата“ — и „без незгоди“ — и „мора да се направи“ — и „е истечен“ — и „пробното
+      возење“ — и „договорот за купопродажба“ — и „верата“ — и „верник“ — и „без вероисповед“ — и „џамијата“ — и „излегувањето од црквата“ — и „член на црквата“.'
+  answer:
+    speaker: protagonist
+    text: der Gebrauchtwagen … der TÜV … die Zulassung … die Kfz-Versicherung … der Kilometerstand … unfallfrei … muss gemacht werden … ist abgelaufen … die Probefahrt … der Kaufvertrag … der Glaube … gläubig
+      … konfessionslos … die Moschee … der Kirchenaustritt … Mitglied der Kirche
+  items:
+  - der-gebrauchtwagen
+  - der-tuev
+  - die-zulassung
+  - die-kfz-versicherung
+  - der-kilometerstand
+  - unfallfrei
+  - muss-gemacht-werden
+  - ist-abgelaufen
+  - die-probefahrt
+  - der-kaufvertrag
+  - der-glaube
+  - glaeubig
+  - konfessionslos
+  - die-moschee
+  - der-kirchenaustritt
+  - das-mitglied-kirche
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the congregation, community — and “(reported) they are … — and “(reported) there is … — and “freedom of religion — and “respect — and “the cell — and “the nucleus — and “the microscope —
+      and “is divided — and “is stored — and “the information — and “the body — and “consists of — and “millions — and “explain — and “unbelievable”.'
+    ar: 'قل: “الجماعة، الرعية — و“(منقولًا) إنهم … — و“(منقولًا) إنه يوجد … — و“حرية الدين — و“يحترم — و“الخلية — و“نواة الخلية — و“المجهر — و“تنقسم — و“تُخزَّن — و“المعلومة — و“الجسم — و“يتكوّن من — و“ملايين
+      — و“يشرح — و“لا يُصدَّق”.'
+    mk: 'Кажете: „заедницата“ — и „(пренесено) дека се …“ — и „(пренесено) дека има …“ — и „слободата на вероисповед“ — и „почитува“ — и „клетката“ — и „јадрото“ — и „микроскопот“ — и „се дели“ — и „се
+      чува“ — и „информацијата“ — и „телото“ — и „се состои од“ — и „милиони“ — и „објаснува“ — и „неверојатно“.'
+  answer:
+    speaker: protagonist
+    text: die Gemeinde … sie seien … … es gebe … … die Religionsfreiheit … respektieren … die Zelle … der Zellkern … das Mikroskop … wird geteilt … wird gespeichert … die Information … der Körper … besteht
+      aus … Millionen … erklären … unglaublich
+  items:
+  - die-gemeinde
+  - sie-seien
+  - es-gebe
+  - die-religionsfreiheit
+  - respektieren
+  - die-zelle
+  - der-kern
+  - das-mikroskop
+  - wird-geteilt
+  - wird-gespeichert
+  - die-information
+  - der-koerper
+  - besteht-aus
+  - millionen
+  - erklaeren
+  - unglaublich
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the residence permit — and “for job-seeking — and “the EU Blue Card — and “the skilled worker — and “the degree”.'
+  answer:
+    speaker: protagonist
+    text: die Aufenthaltserlaubnis … zur Arbeitssuche … die Blaue Karte … die Fachkraft … der Studienabschluss
+  items:
+  - die-aufenthaltserlaubnis-e
+  - zur-arbeitssuche-e
+  - die-blaue-karte-e
+  - die-fachkraft-e
+  - der-abschluss-uni-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “he says it is … — and “(reported) I must … — and “in good time — and “the salary threshold — and “submit an application”.'
+  answer:
+    speaker: protagonist
+    text: er sagt, es sei … … ich müsse … … rechtzeitig … die Gehaltsgrenze … einen Antrag stellen
+  items:
+  - er-sagt-es-sei-e
+  - ich-muesse-e
+  - rechtzeitig-e
+  - die-gehaltsgrenze-e
+  - der-antrag-stellen-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “citizenship — and “dual citizenship — and “the naturalisation office — and “the question pool — and “commitment to the constitutional order — and “she said one must … — and “(reported) it
+      is possible — and “(reported) one has … — and “a residence permit for study — and “count (towards)”.'
+    ar: 'قل: “الجنسية — و“الجنسية المزدوجة — و“مكتب التجنيس — و“مجموعة الأسئلة — و“الالتزام بالنظام الأساسي — و“قالت إنه يجب … — و“(منقولًا) إنه ممكن — و“(منقولًا) إنه لدى المرء … — و“إقامة الدراسة — و“يُحتسب”.'
+  answer:
+    speaker: protagonist
+    text: die Staatsangehörigkeit … die doppelte Staatsangehörigkeit … die Einbürgerungsbehörde … der Fragenkatalog … das Bekenntnis zur Grundordnung … sie sagte, man müsse … … es sei möglich … man habe
+      … … der Aufenthalt zum Studium … anrechnen
+  items:
+  - die-staatsangehoerigkeit-ea
+  - die-doppelte-staatsangehoerigkeit-ea
+  - die-einbuergerungsbehoerde-ea
+  - der-fragenkatalog-ea
+  - das-bekenntnis-ea
+  - sie-sagte-man-muesse-ea
+  - es-sei-moeglich-ea
+  - man-habe-ea
+  - das-studienvisum-ea
+  - anrechnen-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the induction, training-in — and “the induction plan — and “the buddy, mentor (f) — and “with whom, at which … — and “on which … — and “with whom (plural) — and “the access, login — and “the
+      canteen — and “flexitime — and “core hours”.'
+    ar: 'قل: “التأهيل للعمل — و“خطة التأهيل — و“المرشدة — و“التي … عندها — و“الذي … عليه — و“الذين … معهم — و“صلاحية الدخول — و“المقصف — و“الدوام المرن — و“ساعات الحضور الإلزامي”.'
+  answer:
+    speaker: protagonist
+    text: die Einarbeitung … der Einarbeitungsplan … die Patin … bei der … … an dem … … mit denen … … der Zugang … die Kantine … die Gleitzeit … die Kernzeit
+  items:
+  - die-einarbeitung-ea
+  - der-einarbeitungsplan-ea
+  - der-pate-ea
+  - bei-der-ea
+  - an-dem-ea
+  - mit-denen-ea
+  - der-zugang-ea
+  - die-kantine-ea
+  - die-gleitzeit-ea
+  - die-kernzeit-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “سنوات من الزواج — و“مستقل، خاص بي — و“الإقامة الدائمة — و“التجنّس — و“الشرط”.'
+  answer:
+    speaker: protagonist
+    text: Jahre Ehe … eigenständig … die Niederlassungserlaubnis … die Einbürgerung … die Voraussetzung
+  items:
+  - jahre-ehe-a
+  - eigenstaendig-a
+  - die-niederlassungserlaubnis-a
+  - die-einbuergerung-a
+  - die-voraussetzung-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “يقول إنه … — و“(منقولًا) يجب عليّ … — و“اختبار التجنّس — و“منذ متى …؟ / متى يمكن …؟ — و“بعد بضع سنوات”.'
+  answer:
+    speaker: protagonist
+    text: er sagt, es sei … … ich müsse … … der Einbürgerungstest … Ab wann …? … nach einigen Jahren
+  items:
+  - er-sagt-es-sei-a
+  - ich-muesse-a
+  - der-einbuergerungstest-a
+  - ab-wann-a
+  - nach-einigen-jahren-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „државјанството“ — и „двојното државјанство“ — и „предава, се откажува“ — и „задржува“ — и „(пренесено) дека е можно“ — и „(пренесено) дека мора …“ — и „од раѓање“ — и „целосното право
+      на глас“ — и „тестот“ — и „исправата“.'
+  answer:
+    speaker: protagonist
+    text: die Staatsangehörigkeit … die doppelte Staatsangehörigkeit … abgeben … behalten … es sei möglich … er müsse … … von Geburt an … das volle Wahlrecht … der Test … die Urkunde
+  items:
+  - die-staatsangehoerigkeit-m
+  - die-doppelte-staatsangehoerigkeit-m
+  - abgeben-m
+  - behalten-m
+  - es-sei-moeglich-m
+  - er-muesse-m
+  - von-geburt-an-m
+  - das-wahlrecht-m-m
+  - der-einbuergerungstest-m-m
+  - die-urkunde-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „родителската средба“ — и „домашните задачи“ — и „кај која …“ — и „со кои …“ — и „на кој …“ — и „претставничката на родителите“ — и „излетот“ — и „соученикот до него“ — и „учи да чита“
+      — и „се запишува на листата“.'
+  answer:
+    speaker: protagonist
+    text: der Elternabend … die Hausaufgaben … bei der … … mit denen … … an dem … … die Elternvertreterin … der Ausflug … der Sitznachbar … lesen lernen … sich in die Liste eintragen
+  items:
+  - der-elternabend-m
+  - die-hausaufgaben-m
+  - bei-der-m
+  - mit-denen-m
+  - an-dem-m
+  - der-elternvertreter-m
+  - der-ausflug-m
+  - die-sitznachbarn-m
+  - lesen-lernen-m
+  - die-liste-eintragen-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „подолго од три месеци“ — и „разјаснува“ — и „осигурителната заштита“ — и „доволно“ — и „средствата“ — и „вели дека е …“ — и „(пренесено) морам да …“ — и „патното здравствено осигурување“
+      — и „договорот за социјално осигурување“ — и „докажува“.'
+  answer:
+    speaker: protagonist
+    text: länger als drei Monate … klären … der Versicherungsschutz … ausreichend … die Mittel … er sagt, es sei … … ich müsse … … die Auslandskrankenversicherung … das Sozialversicherungsabkommen … nachweisen
+  items:
+  - laenger-als-m
+  - klaeren-m
+  - der-versicherungsschutz-m
+  - ausreichend-m
+  - die-mittel-m
+  - er-sagt-es-sei-m
+  - ich-muesse-m
+  - die-auslandskrankenversicherung-m
+  - das-sozialabkommen-m
+  - nachweisen-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمع إلى المحادثة مرة أخرى. الآن تفهمها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

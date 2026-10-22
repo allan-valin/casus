@@ -1,0 +1,782 @@
+# UNIT de C1-07 — written by AI (Claude) for Casus; expanded from src/C1-07.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-07
+level: C1
+number: 7
+protagonist: f
+title:
+  en: The in-laws
+  ar: الأصهار
+  mk: Свршените роднини
+situation:
+  en: Svenja invites you along to her parents' for Sunday coffee. Three o'clock sharp, cake on the table.
+  ar: سفينيا تدعوكِ معها إلى والديها لقهوة الأحد. الساعة الثالثة تمامًا، والكعكة على الطاولة.
+  mk: Свења ве кани со неа кај нејзините родители на неделно кафе. Точно во три, колачот на масата.
+learn_lessons:
+- c1-particles
+culture: German family visits
+new_items:
+- id: kaffee-und-kuchen
+  text: Kaffee und Kuchen
+  meaning:
+    en: afternoon coffee and cake
+    ar: القهوة والكعك (عصرًا)
+    mk: кафе и колач
+- id: die-schwiegereltern
+  text: die Schwiegereltern
+  meaning:
+    en: the parents-in-law
+    ar: الأصهار
+    mk: свекор и свекрва / тест и тешта
+- id: ja-mal
+  text: ja mal
+  meaning:
+    en: (particle) just, for once
+    ar: (أداة) مرة، هيا
+    mk: (честичка) ајде, еднаш
+- id: doch-mal-c1
+  text: doch
+  meaning:
+    en: (particle) after all, do
+    ar: (أداة) ولكن، هيا
+    mk: (честичка) сепак, ајде
+- id: wohl
+  text: wohl
+  meaning:
+    en: (particle) probably
+    ar: (أداة) على الأرجح
+    mk: (честичка) веројатно
+- id: selbst-gebacken
+  text: selbst gebacken
+  meaning:
+    en: home-made (baked)
+    ar: من صنع البيت
+    mk: домашно печен
+- id: der-sonntagskuchen
+  text: der Pflaumenkuchen
+  meaning:
+    en: plum cake
+    ar: كعكة البرقوق
+    mk: колачот со сливи
+- id: puenktlich-um
+  text: pünktlich um drei
+  meaning:
+    en: at three sharp
+    ar: في الثالثة تمامًا
+    mk: точно во три
+- id: nehmen-sie-doch
+  text: Nehmen Sie doch noch ein Stück!
+  meaning:
+    en: Do have another piece!
+    ar: خذي قطعة أخرى!
+    mk: Земете уште едно парче!
+- id: sich-verabschieden
+  text: sich verabschieden
+  meaning:
+    en: say goodbye, take one's leave
+    ar: يستأذن، يودّع
+    mk: се поздравува, си заминува
+reviews:
+- item: das-spiel
+  from: B1-04
+- item: das-tor
+  from: B1-04
+- item: der-fan
+  from: B1-04
+- item: das-stadion
+  from: B1-04
+- item: gewann
+  from: B1-04
+- item: verlor
+  from: B1-04
+- item: schoss
+  from: B1-04
+- item: die-stimmung
+  from: B1-04
+- item: unentschieden
+  from: B1-04
+- item: die-saison
+  from: B1-04
+- item: die-saeure
+  from: B2-06
+- item: die-base
+  from: B2-06
+- item: sauer
+  from: B2-06
+- item: der-rotkohl
+  from: B2-06
+- item: die-farbe-aendert-sich
+  from: B2-06
+- item: das-kochende-wasser
+  from: B2-06
+- item: die-geschnittene-zitrone
+  from: B2-06
+- item: das-natron
+  from: B2-06
+- item: der-essig
+  from: B2-06
+- item: neutral
+  from: B2-06
+- item: der-versuch
+  from: B2-06
+- item: der-betriebsuebergang-ea
+  from: B2-22-ea
+  for:
+  - en
+  - ar
+- item: die-kenntnisnahme-ea
+  from: B2-22-ea
+  for:
+  - en
+  - ar
+- item: unterschreiben-ohne-ea
+  from: B2-22-ea
+  for:
+  - en
+  - ar
+- item: die-vertragsaenderung-ea
+  from: B2-22-ea
+  for:
+  - en
+  - ar
+- item: die-nachzahlung-ea
+  from: B2-22-ea
+  for:
+  - en
+  - ar
+- item: die-ratenzahlung-ea
+  from: B2-22-ea
+  for:
+  - en
+  - ar
+- item: das-arbeitsgericht-ea
+  from: B2-22-ea
+  for:
+  - en
+  - ar
+- item: der-lohnrueckstand-ea
+  from: B2-22-ea
+  for:
+  - en
+  - ar
+- item: die-pruefung-durch-ea
+  from: B2-22-ea
+  for:
+  - en
+  - ar
+- item: der-versicherungsstatus-ea
+  from: B2-22-ea
+  for:
+  - en
+  - ar
+- item: die-zukunft
+  from: B2-30
+- item: zurueckgehen
+  from: B2-30
+- item: hier-bleiben
+  from: B2-30
+- item: zwischen-zwei-welten
+  from: B2-30
+- item: der-widerspruch
+  from: B2-30
+- item: fuer-immer
+  from: B2-30
+- item: wo-auch-immer
+  from: B2-30
+- item: das-zuhause
+  from: B2-30
+- item: ich-bin-angekommen
+  from: B2-30
+- item: wer-weiss
+  from: B2-30
+- item: die-klausel
+  from: C1-04
+- item: die-schoenheitsreparaturen
+  from: C1-04
+- item: unwirksam
+  from: C1-04
+- item: der-auszug
+  from: C1-04
+- item: die-uebergabe-wohnung
+  from: C1-04
+- item: duerfte
+  from: C1-04
+- item: soll-angeblich
+  from: C1-04
+- item: muss-wohl
+  from: C1-04
+- item: die-abnutzung
+  from: C1-04
+- item: das-uebergabeprotokoll
+  from: C1-04
+- item: der-unfall
+  from: C1-06
+- item: der-unfallbericht
+  from: C1-06
+- item: der-zeuge
+  from: C1-06
+- item: die-aussage
+  from: C1-06
+- item: die-kreuzung
+  from: C1-06
+- item: abbiegen
+  from: C1-06
+- item: er-behauptet-ich-sei
+  from: C1-06
+- item: er-habe-gesehen
+  from: C1-06
+- item: die-vorfahrt
+  from: C1-06
+- item: die-prellung
+  from: C1-06
+- item: das-aktenzeichen
+  from: C1-06
+- item: die-kenntnisnahme-m
+  from: B2-22-m
+  for:
+  - mk
+- item: der-neue-besitzer-m
+  from: B2-22-m
+  for:
+  - mk
+- item: unterschreiben-ohne-m
+  from: B2-22-m
+  for:
+  - mk
+- item: die-vertragsaenderung-m
+  from: B2-22-m
+  for:
+  - mk
+- item: die-nachzahlung-m
+  from: B2-22-m
+  for:
+  - mk
+- item: die-ratenzahlung-m
+  from: B2-22-m
+  for:
+  - mk
+- item: die-beratung-m-m
+  from: B2-22-m
+  for:
+  - mk
+- item: die-formalitaet-m
+  from: B2-22-m
+  for:
+  - mk
+- item: verspaetet-m
+  from: B2-22-m
+  for:
+  - mk
+- item: der-dolmetscher-m
+  from: B2-22-m
+  for:
+  - mk
+- item: schon
+  from: A1-06
+steps:
+- type: narrator
+  text:
+    en: Svenja invites you along to her parents' for Sunday coffee. Three o'clock sharp, cake on the table. Listen to the conversation; you don't need to understand it yet.
+    ar: سفينيا تدعوكِ معها إلى والديها لقهوة الأحد. الساعة الثالثة تمامًا، والكعكة على الطاولة. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.
+    mk: Свења ве кани со неа кај нејзините родители на неделно кафе. Точно во три, колачот на масата. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: svenjamutter
+    text: Kommen Sie doch rein! Sie sind ja pünktlich um drei.
+    meaning:
+      en: Do come in! You're right on time at three.
+      ar: تفضّلي بالدخول! أنتِ في الثالثة تمامًا.
+      mk: Повелете, влезете! Точно сте во три.
+  - speaker: protagonist
+    text: Vielen Dank für die Einladung. Hier sind Blumen.
+    meaning:
+      en: Thank you very much for the invitation. Here are some flowers.
+      ar: شكرًا جزيلًا على الدعوة. هذه زهور.
+      mk: Ви благодарам за поканата. Еве цвеќе.
+  - speaker: svenjavater
+    text: Setzen Sie sich. Es gibt Kaffee und Kuchen — Pflaumenkuchen, selbst gebacken.
+    meaning:
+      en: Sit down. There's coffee and cake — plum cake, home-made.
+      ar: اجلسي. هناك قهوة وكعك — كعكة برقوق، من صنع البيت.
+      mk: Седнете. Има кафе и колач — со сливи, домашен.
+  - speaker: protagonist
+    text: Der ist ja köstlich!
+    meaning:
+      en: That's delicious!
+      ar: إنها لذيذة جدًا!
+      mk: Овој е баш вкусен!
+  - speaker: svenjamutter
+    text: Nehmen Sie doch noch ein Stück!
+    meaning:
+      en: Do have another piece!
+      ar: خذي قطعة أخرى!
+      mk: Земете уште едно парче!
+  - speaker: protagonist
+    text: Gern. Bei uns müsste man mich dreimal bitten, aber hier sage ich lieber gleich ja.
+    meaning:
+      en: Gladly. With us you'd have to ask me three times, but here I'd rather say yes straight away.
+      ar: بكل سرور. عندنا يجب أن يُلحّ عليّ ثلاث مرات، لكن هنا أفضّل أن أقول نعم فورًا.
+      mk: Со задоволство. Кај нас би морале три пати да ме молат, но тука подобро веднаш велам да.
+  - speaker: svenjavater
+    text: Sie haben Deutschland wohl schon gut verstanden!
+    meaning:
+      en: You've probably understood Germany well already!
+      ar: على الأرجح فهمتِ ألمانيا جيدًا بالفعل!
+      mk: Веројатно веќе добро ја разбравте Германија!
+  - speaker: svenja
+    text: Um sechs verabschieden wir uns. Meine Eltern essen um halb sieben.
+    meaning:
+      en: We'll take our leave at six. My parents have dinner at half past six.
+      ar: في السادسة نستأذن. والداي يتعشّيان في السادسة والنصف.
+      mk: Во шест се поздравуваме. Моите родители вечераат во шест и пол.
+- type: prompt
+  ask:
+    en: 'Say: coffee and cake.'
+    ar: 'قولي: القهوة والكعك.'
+    mk: 'Кажете: кафе и колач.'
+  answer:
+    speaker: protagonist
+    text: Kaffee und Kuchen.
+  items:
+  - kaffee-und-kuchen
+- type: prompt
+  ask:
+    en: 'She says: you''re right on time at three.'
+    ar: 'تقول: أنتِ في الثالثة تمامًا.'
+    mk: 'Таа вели: точно сте во три.'
+  answer:
+    speaker: protagonist
+    text: Sie sind ja pünktlich um drei.
+  items:
+  - puenktlich-um
+- type: narrator
+  text:
+    en: 'Particles carry the tone: «Kommen Sie doch rein!» (do come in — warm), «Der ist ja köstlich!» (that''s really delicious — surprise), «wohl» (probably), «schon» (already, surely). They''re unstressed
+      and almost untranslatable.'
+    ar: 'الأدوات تحمل النبرة: «Kommen Sie doch rein!» (تفضّلي بالدخول — دفء)، «Der ist ja köstlich!» (إنها لذيذة حقًا — مفاجأة)، «wohl» (على الأرجح)، «schon» (بالفعل، بالتأكيد). لا تُشدَّد ويكاد يستحيل
+      ترجمتها.'
+    mk: 'Честичките го носат тонот: «Kommen Sie doch rein!» (повелете — топло), «Der ist ja köstlich!» (баш е вкусен — изненадување), «wohl» (веројатно), «schon» (веќе, сигурно). Ненагласени се и речиси
+      непреводливи.'
+- type: prompt
+  ask:
+    en: 'She says: do come in!'
+    ar: 'تقول: تفضّلي بالدخول!'
+    mk: 'Таа вели: повелете, влезете!'
+  answer:
+    speaker: protagonist
+    text: Kommen Sie doch rein!
+  items:
+  - doch-mal-c1
+- type: prompt
+  ask:
+    en: 'Say: that''s really delicious!'
+    ar: 'قولي: إنها لذيذة حقًا!'
+    mk: 'Кажете: баш е вкусен!'
+  answer:
+    speaker: protagonist
+    text: Der ist ja köstlich!
+  items:
+  - ja-mal
+- type: prompt
+  ask:
+    en: 'She says: do have another piece!'
+    ar: 'تقول: خذي قطعة أخرى!'
+    mk: 'Таа вели: земете уште едно парче!'
+  answer:
+    speaker: protagonist
+    text: Nehmen Sie doch noch ein Stück!
+  items:
+  - nehmen-sie-doch
+- type: prompt
+  ask:
+    en: 'Say: plum cake.'
+    ar: 'قولي: كعكة البرقوق.'
+    mk: 'Кажете: колач со сливи.'
+  answer:
+    speaker: protagonist
+    text: Pflaumenkuchen.
+  items:
+  - der-sonntagskuchen
+- type: prompt
+  ask:
+    en: 'He says: you''ve probably understood Germany.'
+    ar: 'يقول: على الأرجح فهمتِ ألمانيا.'
+    mk: 'Тој вели: веројатно ја разбравте Германија.'
+  answer:
+    speaker: protagonist
+    text: Sie haben Deutschland wohl verstanden.
+  items:
+  - wohl
+- type: prompt
+  ask:
+    en: 'He says: already well.'
+    ar: 'يقول: جيدًا بالفعل.'
+    mk: 'Тој вели: веќе добро.'
+  answer:
+    speaker: protagonist
+    text: Schon gut.
+  items:
+  - schon
+- type: prompt
+  ask:
+    en: 'Say: home-made.'
+    ar: 'قولي: من صنع البيت.'
+    mk: 'Кажете: домашно печен.'
+  answer:
+    speaker: protagonist
+    text: Selbst gebacken.
+  items:
+  - selbst-gebacken
+- type: prompt
+  ask:
+    en: 'Svenja: we''ll take our leave at six.'
+    ar: 'سفينيا: في السادسة نستأذن.'
+    mk: 'Свења: во шест се поздравуваме.'
+  answer:
+    speaker: protagonist
+    text: Um sechs verabschieden wir uns.
+  items:
+  - sich-verabschieden
+- type: prompt
+  ask:
+    en: 'Say: the parents-in-law.'
+    ar: 'قولي: الأصهار.'
+    mk: 'Кажете: свекор и свекрва.'
+  answer:
+    speaker: protagonist
+    text: Die Schwiegereltern.
+  items:
+  - die-schwiegereltern
+- type: narrator
+  text:
+    en: A Sunday visit to a German family is often 'Kaffee und Kuchen' at three — punctual, with flowers or chocolates, and over before dinner. Second helpings are offered once; say yes if you want them.
+      Leaving at the agreed time is polite, not cold.
+    ar: زيارة الأحد لعائلة ألمانية غالبًا «قهوة وكعك» في الثالثة — في الموعد، مع زهور أو شوكولاتة، وتنتهي قبل العشاء. القطعة الثانية تُعرض مرة واحدة؛ قولي نعم إن أردتِها. والمغادرة في الموعد المتّفق عليه
+      أدب لا برود.
+    mk: Неделна посета на германско семејство често е „кафе и колач“ во три — точно, со цвеќе или чоколади, и завршува пред вечера. Второ парче се нуди еднаш; кажете да ако сакате. Заминувањето во договореното
+      време е учтивост, не студенило.
+- type: prompt
+  ask:
+    en: 'Once more: say “afternoon coffee and cake”.'
+    ar: 'مرة أخرى: قولي “القهوة والكعك (عصرًا)”.'
+    mk: 'Уште еднаш: кажете „кафе и колач“.'
+  answer:
+    speaker: protagonist
+    text: Kaffee und Kuchen
+  items:
+  - kaffee-und-kuchen
+- type: prompt
+  ask:
+    en: 'Once more: say “the parents-in-law”.'
+    ar: 'مرة أخرى: قولي “الأصهار”.'
+    mk: 'Уште еднаш: кажете „свекор и свекрва / тест и тешта“.'
+  answer:
+    speaker: protagonist
+    text: die Schwiegereltern
+  items:
+  - die-schwiegereltern
+- type: prompt
+  ask:
+    en: 'Once more: say “(particle) just, for once”.'
+    ar: 'مرة أخرى: قولي “(أداة) مرة، هيا”.'
+    mk: 'Уште еднаш: кажете „(честичка) ајде, еднаш“.'
+  answer:
+    speaker: protagonist
+    text: ja mal
+  items:
+  - ja-mal
+- type: prompt
+  ask:
+    en: 'Once more: say “(particle) after all, do”.'
+    ar: 'مرة أخرى: قولي “(أداة) ولكن، هيا”.'
+    mk: 'Уште еднаш: кажете „(честичка) сепак, ајде“.'
+  answer:
+    speaker: protagonist
+    text: doch
+  items:
+  - doch-mal-c1
+- type: prompt
+  ask:
+    en: 'Once more: say “(particle) probably”.'
+    ar: 'مرة أخرى: قولي “(أداة) على الأرجح”.'
+    mk: 'Уште еднаш: кажете „(честичка) веројатно“.'
+  answer:
+    speaker: protagonist
+    text: wohl
+  items:
+  - wohl
+- type: prompt
+  ask:
+    en: 'Once more: say “home-made (baked)”.'
+    ar: 'مرة أخرى: قولي “من صنع البيت”.'
+    mk: 'Уште еднаш: кажете „домашно печен“.'
+  answer:
+    speaker: protagonist
+    text: selbst gebacken
+  items:
+  - selbst-gebacken
+- type: prompt
+  ask:
+    en: 'Once more: say “plum cake”.'
+    ar: 'مرة أخرى: قولي “كعكة البرقوق”.'
+    mk: 'Уште еднаш: кажете „колачот со сливи“.'
+  answer:
+    speaker: protagonist
+    text: der Pflaumenkuchen
+  items:
+  - der-sonntagskuchen
+- type: prompt
+  ask:
+    en: 'Once more: say “at three sharp”.'
+    ar: 'مرة أخرى: قولي “في الثالثة تمامًا”.'
+    mk: 'Уште еднаш: кажете „точно во три“.'
+  answer:
+    speaker: protagonist
+    text: pünktlich um drei
+  items:
+  - puenktlich-um
+- type: prompt
+  ask:
+    en: 'Once more: say “Do have another piece!”.'
+    ar: 'مرة أخرى: قولي “خذي قطعة أخرى!”.'
+    mk: 'Уште еднаш: кажете „Земете уште едно парче!“.'
+  answer:
+    speaker: protagonist
+    text: Nehmen Sie doch noch ein Stück!
+  items:
+  - nehmen-sie-doch
+- type: prompt
+  ask:
+    en: 'Once more: say “say goodbye, take one''s leave”.'
+    ar: 'مرة أخرى: قولي “يستأذن، يودّع”.'
+    mk: 'Уште еднаш: кажете „се поздравува, си заминува“.'
+  answer:
+    speaker: protagonist
+    text: sich verabschieden
+  items:
+  - sich-verabschieden
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the accident — and “the accident report — and “the witness — and “the statement — and “the crossing, junction — and “turn (off) — and “he claims I was … — and “(reported) he saw … — and “right
+      of way — and “the bruise — and “the case number — and “the clause — and “cosmetic repairs (painting etc.)”.'
+    ar: 'قولي: “الحادث — و“تقرير الحادث — و“الشاهد — و“الإفادة — و“التقاطع — و“ينعطف — و“يدّعي أنني … — و“(منقولًا) إنه رأى … — و“أولوية المرور — و“الكدمة — و“رقم الملف — و“البند — و“الإصلاحات التجميلية”.'
+    mk: 'Кажете: „несреќата“ — и „записникот за несреќата“ — и „сведокот“ — и „изјавата“ — и „раскрсницата“ — и „свртува“ — и „тврди дека сум …“ — и „(пренесено) дека видел …“ — и „првенството“ — и „модринката“
+      — и „бројот на предметот“ — и „клаузулата“ — и „естетските поправки“.'
+  answer:
+    speaker: protagonist
+    text: der Unfall … der Unfallbericht … der Zeuge … die Aussage … die Kreuzung … abbiegen … er behauptet, ich sei … … er habe … gesehen … die Vorfahrt … die Prellung … das Aktenzeichen … die Klausel
+      … die Schönheitsreparaturen
+  items:
+  - der-unfall
+  - der-unfallbericht
+  - der-zeuge
+  - die-aussage
+  - die-kreuzung
+  - abbiegen
+  - er-behauptet-ich-sei
+  - er-habe-gesehen
+  - die-vorfahrt
+  - die-prellung
+  - das-aktenzeichen
+  - die-klausel
+  - die-schoenheitsreparaturen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “invalid, void — and “moving out — and “the handover of the flat — and “is probably (assumption) — and “is said to, supposedly — and “must (surely) — and “normal wear and tear — and “the handover
+      report — and “the future — and “go back — and “stay here — and “between two worlds — and “the contradiction”.'
+    ar: 'قولي: “باطل — و“مغادرة المسكن — و“تسليم الشقة — و“يُرجَّح أنّ — و“يُقال إنّ — و“لا بد أنّ — و“الاستهلاك العادي — و“محضر التسليم — و“المستقبل — و“يعود — و“يبقى هنا — و“بين عالمين — و“التناقض”.'
+    mk: 'Кажете: „неважечко“ — и „иселувањето“ — и „предавањето на станот“ — и „веројатно е“ — и „наводно“ — и „сигурно мора“ — и „нормалното абење“ — и „записникот за предавање“ — и „иднината“ — и „се
+      враќа“ — и „останува тука“ — и „меѓу два света“ — и „противречноста“.'
+  answer:
+    speaker: protagonist
+    text: unwirksam … der Auszug … die Wohnungsübergabe … dürfte … soll … muss wohl … die normale Abnutzung … das Übergabeprotokoll … die Zukunft … zurückgehen … hierbleiben … zwischen zwei Welten … der
+      Widerspruch
+  items:
+  - unwirksam
+  - der-auszug
+  - die-uebergabe-wohnung
+  - duerfte
+  - soll-angeblich
+  - muss-wohl
+  - die-abnutzung
+  - das-uebergabeprotokoll
+  - die-zukunft
+  - zurueckgehen
+  - hier-bleiben
+  - zwischen-zwei-welten
+  - der-widerspruch
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “for ever — and “wherever — and “home (where you live) — and “I''ve arrived (settled in) — and “Who knows? — and “the acid — and “the base (alkali) — and “sour, acidic — and “red cabbage —
+      and “the colour changes — and “the boiling water — and “the cut lemon — and “baking soda”.'
+    ar: 'قولي: “إلى الأبد — و“أينما كان — و“البيت، المسكن — و“لقد استقررتُ — و“من يدري؟ — و“الحمض — و“القاعدة (القلوي) — و“حامض — و“الملفوف الأحمر — و“اللون يتغيّر — و“الماء المغلي — و“الليمونة المقطّعة
+      — و“بيكربونات الصوديوم”.'
+    mk: 'Кажете: „засекогаш“ — и „каде и да е“ — и „домот“ — и „пристигнав, се сместив“ — и „Кој знае?“ — и „киселината“ — и „базата“ — и „кисело“ — и „црвената зелка“ — и „бојата се менува“ — и „врелата
+      вода“ — и „исечениот лимон“ — и „содата бикарбона“.'
+  answer:
+    speaker: protagonist
+    text: für immer … wo auch immer … das Zuhause … ich bin angekommen … Wer weiß? … die Säure … die Base … sauer … der Rotkohl … die Farbe ändert sich … das kochende Wasser … die geschnittene Zitrone …
+      das Natron
+  items:
+  - fuer-immer
+  - wo-auch-immer
+  - das-zuhause
+  - ich-bin-angekommen
+  - wer-weiss
+  - die-saeure
+  - die-base
+  - sauer
+  - der-rotkohl
+  - die-farbe-aendert-sich
+  - das-kochende-wasser
+  - die-geschnittene-zitrone
+  - das-natron
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “vinegar — and “neutral — and “the experiment — and “the match — and “the goal — and “the fan — and “the stadium — and “won — and “lost — and “shot, scored — and “the atmosphere — and “a draw
+      — and “the season”.'
+    ar: 'قولي: “الخل — و“متعادل — و“التجربة — و“المباراة — و“الهدف — و“المشجّع — و“الملعب — و“فاز — و“خسر — و“سدّد، سجّل — و“الأجواء — و“تعادل — و“الموسم”.'
+    mk: 'Кажете: „оцетот“ — и „неутрално“ — и „експериментот“ — и „натпреварот“ — и „голот“ — и „навивачот“ — и „стадионот“ — и „победи“ — и „загуби“ — и „постигна, шутна“ — и „атмосферата“ — и „нерешено“
+      — и „сезоната“.'
+  answer:
+    speaker: protagonist
+    text: der Essig … neutral … der Versuch … das Spiel … das Tor … der Fan … das Stadion … gewann … verlor … schoss … die Stimmung … unentschieden … die Saison
+  items:
+  - der-essig
+  - neutral
+  - der-versuch
+  - das-spiel
+  - das-tor
+  - der-fan
+  - das-stadion
+  - gewann
+  - verlor
+  - schoss
+  - die-stimmung
+  - unentschieden
+  - die-saison
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “transfer of the business — and “for acknowledgement — and “sign without reading”.'
+    ar: 'قولي: “انتقال ملكية المنشأة — و“للعلم — و“يوقّع دون قراءة”.'
+  answer:
+    speaker: protagonist
+    text: der Betriebsübergang … zur Kenntnisnahme … ohne zu lesen unterschreiben
+  items:
+  - der-betriebsuebergang-ea
+  - die-kenntnisnahme-ea
+  - unterschreiben-ohne-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the change of contract — and “the back payment — and “payment in instalments”.'
+    ar: 'قولي: “تعديل العقد — و“المبلغ المستحق المتأخر — و“الدفع بالتقسيط”.'
+  answer:
+    speaker: protagonist
+    text: die Vertragsänderung … die Nachzahlung … die Ratenzahlung
+  items:
+  - die-vertragsaenderung-ea
+  - die-nachzahlung-ea
+  - die-ratenzahlung-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the labour court — and “wages in arrears — and “a check by a lawyer”.'
+    ar: 'قولي: “محكمة العمل — و“الأجور المتأخرة — و“مراجعة من محامٍ”.'
+  answer:
+    speaker: protagonist
+    text: das Arbeitsgericht … der Lohnrückstand … die Prüfung durch einen Anwalt
+  items:
+  - das-arbeitsgericht-ea
+  - der-lohnrueckstand-ea
+  - die-pruefung-durch-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “insurance status”.'
+    ar: 'قولي: “وضع التأمين”.'
+  answer:
+    speaker: protagonist
+    text: der Versicherungsstatus
+  items:
+  - der-versicherungsstatus-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „за знаење“ — и „новиот сопственик“ — и „потпишува без да прочита“.'
+  answer:
+    speaker: protagonist
+    text: zur Kenntnisnahme … der neue Besitzer … ohne zu lesen unterschreiben
+  items:
+  - die-kenntnisnahme-m
+  - der-neue-besitzer-m
+  - unterschreiben-ohne-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „измената на договорот“ — и „доплатата“ — и „плаќањето на рати“.'
+  answer:
+    speaker: protagonist
+    text: die Vertragsänderung … die Nachzahlung … die Ratenzahlung
+  items:
+  - die-vertragsaenderung-m
+  - die-nachzahlung-m
+  - die-ratenzahlung-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „советувалиштето“ — и „само формалност“ — и „со задоцнување“.'
+  answer:
+    speaker: protagonist
+    text: die Beratungsstelle … nur eine Formalität … verspätet
+  items:
+  - die-beratung-m-m
+  - die-formalitaet-m
+  - verspaetet-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „преведувачот“.'
+  answer:
+    speaker: protagonist
+    text: der Dolmetscher
+  items:
+  - der-dolmetscher-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck
