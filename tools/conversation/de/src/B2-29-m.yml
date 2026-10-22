@@ -1,0 +1,38 @@
+id: B2-29-m
+tracks: [mk]
+protagonist: f
+title: ["Првата родителска средба"]
+situation: ["Петар и Ања работат до доцна. Вие одите на првата родителска средба на Лука."]
+learn: [b2-relative-prepositions]
+culture: Parents' evening
+items:
+  - [der-elternabend, "der Elternabend", "родителската средба", {rare: true}]
+  - [die-hausaufgaben, "die Hausaufgaben", "домашните задачи"]
+  - [bei-der, "bei der …", "кај која …"]
+  - [mit-denen, "mit denen …", "со кои …"]
+  - [an-dem, "an dem …", "на кој …"]
+  - [der-elternvertreter, "die Elternvertreterin", "претставничката на родителите", {rare: true}]
+  - [der-ausflug, "der Ausflug", "излетот"]
+  - [die-sitznachbarn, "der Sitznachbar", "соученикот до него"]
+  - [lesen-lernen, "lesen lernen", "учи да чита"]
+  - [die-liste-eintragen, "sich in die Liste eintragen", "се запишува на листата"]
+dialogue:
+  - [klassenlehrerin, "Willkommen zum ersten Elternabend. Sind Sie Lukas Oma?", "Добредојдовте на првата родителска средба. Вие сте бабата на Лука?"]
+  - [protagonist, "Ja. Die Eltern arbeiten heute lange.", "Да. Родителите денес работат до доцна."]
+  - [klassenlehrerin, "Kein Problem. Luka lernt gut lesen. Er hat einen Sitznachbarn, mit dem er sich gut versteht.", "Нема проблем. Лука добро учи да чита. Има соученик до него со кој добро се разбира."]
+  - [protagonist, "Und die Hausaufgaben? Ich helfe ihm am Nachmittag.", "А домашните задачи? Јас му помагам попладне."]
+  - [klassenlehrerin, "Höchstens zwanzig Minuten am Tag. Lassen Sie ihn selbst probieren.", "Најмногу дваесет минути дневно. Оставете го сам да проба."]
+  - [protagonist, "Gibt es den Ausflug, an dem alle Kinder teilnehmen?", "Дали има излет на кој учествуваат сите деца?"]
+  - [klassenlehrerin, "Im Mai, in den Zoo. Frau Weber ist die Elternvertreterin, bei der Sie sich in die Liste eintragen.", "Во мај, во зоолошката. Госпоѓа Вебер е претставничката на родителите кај која се запишувате на листата."]
+  - [protagonist, "Gut. Ich trage mich ein — als Begleitung!", "Добро. Ќе се запишам — како придружба!"]
+teach:
+  - ask: ["Кажете: родителската средба.", "Der Elternabend.", der-elternabend]
+  - ask: ["Кажете: Лука учи да чита.", "Luka lernt lesen.", lesen-lernen]
+  - note: ["Релативни реченици со предлози: предлогот оди прв, а заменката го зема неговиот падеж. «der Sitznachbar, mit dem…», «der Ausflug, an dem…», «die Elternvertreterin, bei der…»."]
+  - ask: ["Кажете: соученик со кој добро се разбира.", "Ein Sitznachbar, mit dem er sich gut versteht.", die-sitznachbarn, mit-denen]
+  - ask: ["Прашајте: а домашните задачи?", "Und die Hausaufgaben?", die-hausaufgaben]
+  - ask: ["Прашајте за излетот на кој учествуваат сите.", "Der Ausflug, an dem alle teilnehmen?", der-ausflug, an-dem]
+  - ask: ["Кажете: претставничката на родителите.", "Die Elternvertreterin.", der-elternvertreter]
+  - ask: ["Кажете: кај која се запишувате.", "Bei der Sie sich eintragen.", bei-der]
+  - ask: ["Кажете: ќе се запишам на листата.", "Ich trage mich in die Liste ein.", die-liste-eintragen]
+  - note: ["На родителските средби се избираат претставници на родителите и се договараат излети и правила. Бабите и дедовците се добредојдени ако родителите не можат. Домашните задачи во прво одделение се кратки — детето треба да ги работи само."]
