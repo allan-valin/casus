@@ -1,0 +1,620 @@
+# UNIT de A1-25 — written by AI (Claude) for Casus; expanded from src/A1-25.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-25
+level: A1
+number: 25
+protagonist: f
+title:
+  en: On the tram
+  ar: في الترام
+  mk: Во трамвајот
+situation:
+  en: Evening tram. A man starts shouting at you because you are a foreigner. A woman stands up next to you.
+  ar: ترام المساء. رجل يبدأ بالصراخ عليكِ لأنكِ أجنبية. امرأة تقف بجانبك.
+  mk: Вечерен трамвај. Еден човек почнува да вика на вас затоа што сте странец. Една жена станува до вас.
+learn_lessons:
+- a1-imperative
+culture: What to say and do
+new_items:
+- id: lassen-sie-mich
+  text: Lassen Sie mich in Ruhe!
+  meaning:
+    en: Leave me alone! (polite)
+    ar: اتركني وشأني!
+    mk: Оставете ме на мира!
+- id: hoeren-sie-auf
+  text: Hören Sie auf!
+  meaning:
+    en: Stop it! (polite)
+    ar: توقّف!
+    mk: Престанете!
+- id: hilfe
+  text: Hilfe!
+  meaning:
+    en: Help!
+    ar: النجدة!
+    mk: Помош!
+- id: die-polizei
+  text: die Polizei
+  meaning:
+    en: the police
+    ar: الشرطة
+    mk: полицијата
+- id: hundertzehn
+  text: hundertzehn
+  meaning:
+    en: 110 (police number)
+    ar: 110 (رقم الشرطة)
+    mk: 110 (број на полиција)
+- id: alles-okay
+  text: Alles okay?
+  meaning:
+    en: Are you all right?
+    ar: هل أنتِ بخير؟
+    mk: Дали сте во ред?
+- id: ich-bin-bei-ihnen
+  text: Ich bin bei Ihnen
+  meaning:
+    en: I'm with you
+    ar: أنا معكِ
+    mk: Јас сум со вас
+- id: der-fahrer
+  text: der Fahrer
+  meaning:
+    en: the driver
+    ar: السائق
+    mk: возачот
+- id: aussteigen-jetzt
+  text: Steigen Sie aus!
+  meaning:
+    en: Get off! (polite)
+    ar: انزل!
+    mk: Симнете се!
+- id: danke-fuer-die-hilfe
+  text: Danke für die Hilfe
+  meaning:
+    en: Thanks for your help
+    ar: شكرًا على المساعدة
+    mk: Благодарам за помошта
+reviews:
+- item: du-bist
+  from: A1-10
+- item: oben
+  from: A1-10
+- item: und-du
+  from: A1-10
+- item: im-zweiten-stock
+  from: A1-10
+- item: wie-gehts
+  from: A1-10
+- item: und-dir
+  from: A1-10
+- item: sprichst-du
+  from: A1-10
+- item: oder-lieber
+  from: A1-10
+- item: ich-lerne
+  from: A1-10
+- item: auf-deutsch
+  from: A1-10
+- item: langsam
+  from: A1-10
+- item: klar
+  from: A1-10
+- item: ich-koche
+  from: A1-18
+- item: den-reis
+  from: A1-18
+- item: das-gemuese
+  from: A1-18
+- item: der-herd
+  from: A1-18
+- item: heiss
+  from: A1-18
+- item: salzig
+  from: A1-18
+- item: scharf
+  from: A1-18
+- item: probier-mal
+  from: A1-18
+- item: schmeckt
+  from: A1-18
+- item: das-rezept
+  from: A1-18
+- item: mitgebracht
+  from: A1-18
+- item: guten-appetit
+  from: A1-18
+- item: wie-spaet-ist-es
+  from: A1-22-e
+- item: halb-acht
+  from: A1-22-e
+  for:
+  - en
+- item: viertel-nach
+  from: A1-22-e
+- item: viertel-vor
+  from: A1-22-e
+- item: genau-acht
+  from: A1-22-e
+  for:
+  - en
+- item: zu-spaet
+  from: A1-22-e
+- item: die-verspaetung
+  from: A1-22-e
+- item: frueh
+  from: A1-22-e
+  for:
+  - en
+- item: schon-da
+  from: A1-22-e
+  for:
+  - en
+- item: das-naechste-mal
+  from: A1-22-e
+- item: der-himmel
+  from: A1-24
+- item: die-sterne
+  from: A1-24
+- item: der-mond
+  from: A1-24
+- item: am-himmel
+  from: A1-24
+- item: auf-dem-turm
+  from: A1-24
+- item: in-der-stadt
+  from: A1-24
+- item: der-planet
+  from: A1-24
+- item: hell-wie
+  from: A1-24
+- item: schau-mal
+  from: A1-24
+- item: klar-himmel
+  from: A1-24
+- item: wunderschoen
+  from: A1-24
+- item: halb-fuenf
+  from: A1-22-a
+  for:
+  - ar
+  - mk
+- item: puenktlich-a
+  from: A1-22-a
+  for:
+  - ar
+- item: rufen-sie-an
+  from: A1-22-a
+  for:
+  - ar
+  - mk
+- item: es-tut-mir-leid
+  from: A1-22-a
+  for:
+  - ar
+  - mk
+- item: puenktlich-m
+  from: A1-22-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: Evening tram. A man starts shouting at you because you are a foreigner. A woman stands up next to you. Listen to the conversation; you don't need to understand it yet.
+    ar: ترام المساء. رجل يبدأ بالصراخ عليكِ لأنكِ أجنبية. امرأة تقف بجانبك. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.
+    mk: Вечерен трамвај. Еден човек почнува да вика на вас затоа што сте странец. Една жена станува до вас. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: poebler
+    text: Ausländer raus! Was machen Sie hier?
+    meaning:
+      en: Foreigners out! What are you doing here?
+      ar: اخرجوا أيها الأجانب! ماذا تفعلين هنا؟
+      mk: Странци надвор! Што барате тука?
+  - speaker: protagonist
+    text: Lassen Sie mich in Ruhe!
+    meaning:
+      en: Leave me alone!
+      ar: اتركني وشأني!
+      mk: Оставете ме на мира!
+  - speaker: lena
+    text: Hören Sie auf! Sofort!
+    meaning:
+      en: Stop it! Right now!
+      ar: توقّف! فورًا!
+      mk: Престанете! Веднаш!
+  - speaker: lena
+    text: Alles okay? Ich bin bei Ihnen.
+    meaning:
+      en: Are you all right? I'm with you.
+      ar: هل أنتِ بخير؟ أنا معكِ.
+      mk: Дали сте во ред? Јас сум со вас.
+  - speaker: protagonist
+    text: Danke. Ich habe Angst.
+    meaning:
+      en: Thank you. I'm frightened.
+      ar: شكرًا. أنا خائفة.
+      mk: Благодарам. Се плашам.
+  - speaker: lena
+    text: Wir sagen es dem Fahrer. Oder wir rufen die Polizei, hundertzehn.
+    meaning:
+      en: We'll tell the driver. Or we call the police, one-one-zero.
+      ar: نخبر السائق. أو نتصل بالشرطة، 110.
+      mk: Ќе му кажеме на возачот. Или ќе ја повикаме полицијата, 110.
+  - speaker: lena
+    text: Steigen Sie aus! Sie sind hier nicht willkommen!
+    meaning:
+      en: Get off! You're not welcome here!
+      ar: انزل! أنت غير مرحَّب بك هنا!
+      mk: Симнете се! Не сте добредојдени тука!
+  - speaker: protagonist
+    text: Er steigt aus... Danke für die Hilfe.
+    meaning:
+      en: He's getting off... Thanks for your help.
+      ar: إنه ينزل... شكرًا على المساعدة.
+      mk: Се симнува... Благодарам за помошта.
+  - speaker: lena
+    text: Gern. Das ist nicht normal. Das ist nicht Leipzig.
+    meaning:
+      en: You're welcome. That isn't normal. That isn't Leipzig.
+      ar: عفوًا. هذا ليس عاديًا. هذه ليست لايبزيغ.
+      mk: Нема зошто. Тоа не е нормално. Тоа не е Лајпциг.
+- type: narrator
+  text:
+    en: 'Hard to hear, but better said on the first day: it can happen. Speak loudly and clearly, so that others hear — most people will help.'
+    ar: 'صعب سماعه، لكن من الأفضل قوله من اليوم الأول: قد يحدث هذا. تكلّمي بصوت عالٍ وواضح، كي يسمع الآخرون — أغلب الناس سيساعدون.'
+    mk: 'Тешко е да се чуе, но подобро е да се каже од првиот ден: може да се случи. Зборувајте гласно и јасно, за да слушнат другите — повеќето ќе помогнат.'
+- type: prompt
+  ask:
+    en: 'Say firmly: leave me alone!'
+    ar: 'قولي بحزم: اتركني وشأني!'
+    mk: 'Кажете цврсто: оставете ме на мира!'
+  answer:
+    speaker: protagonist
+    text: Lassen Sie mich in Ruhe!
+  items:
+  - lassen-sie-mich
+- type: prompt
+  ask:
+    en: 'Say: stop it!'
+    ar: 'قولي: توقّف!'
+    mk: 'Кажете: престанете!'
+  answer:
+    speaker: protagonist
+    text: Hören Sie auf!
+  items:
+  - hoeren-sie-auf
+- type: prompt
+  ask:
+    en: Call for help.
+    ar: اطلبي النجدة.
+    mk: Повикајте помош.
+  answer:
+    speaker: protagonist
+    text: Hilfe!
+  items:
+  - hilfe
+- type: prompt
+  ask:
+    en: The woman asks if you're all right.
+    ar: المرأة تسألك إن كنتِ بخير.
+    mk: Жената ве прашува дали сте во ред.
+  answer:
+    speaker: protagonist
+    text: Alles okay?
+  items:
+  - alles-okay
+- type: prompt
+  ask:
+    en: 'She says: I''m with you.'
+    ar: 'تقول: أنا معكِ.'
+    mk: 'Таа вели: јас сум со вас.'
+  answer:
+    speaker: protagonist
+    text: Ich bin bei Ihnen.
+  items:
+  - ich-bin-bei-ihnen
+- type: prompt
+  ask:
+    en: 'Say: we''ll tell the driver.'
+    ar: 'قولي: نخبر السائق.'
+    mk: 'Кажете: ќе му кажеме на возачот.'
+  answer:
+    speaker: protagonist
+    text: Wir sagen es dem Fahrer.
+  items:
+  - der-fahrer
+- type: prompt
+  ask:
+    en: 'Say: the police, one-one-zero.'
+    ar: 'قولي: الشرطة، 110.'
+    mk: 'Кажете: полицијата, 110.'
+  answer:
+    speaker: protagonist
+    text: Die Polizei, hundertzehn.
+  items:
+  - die-polizei
+  - hundertzehn
+- type: prompt
+  ask:
+    en: 'She tells him: get off!'
+    ar: 'تقول له: انزل!'
+    mk: 'Таа му вели: симнете се!'
+  answer:
+    speaker: protagonist
+    text: Steigen Sie aus!
+  items:
+  - aussteigen-jetzt
+- type: prompt
+  ask:
+    en: Thank her for her help.
+    ar: اشكريها على المساعدة.
+    mk: Заблагодарете ѝ за помошта.
+  answer:
+    speaker: protagonist
+    text: Danke für die Hilfe.
+  items:
+  - danke-fuer-die-hilfe
+- type: narrator
+  text:
+    en: 'Police: 110. Ambulance and fire: 112. Trams have an emergency button and an intercom to the driver. Afterwards you can report it — local counselling services for victims of racism exist in every
+      big city.'
+    ar: 'الشرطة: 110. الإسعاف والإطفاء: 112. في الترام زر طوارئ وجهاز اتصال بالسائق. وبعد ذلك يمكنكِ الإبلاغ — في كل مدينة كبيرة مراكز استشارية لضحايا العنصرية.'
+    mk: 'Полиција: 110. Брза помош и пожарна: 112. Трамваите имаат копче за итни случаи и интерфон до возачот. Потоа може да пријавите — во секој голем град има советувалишта за жртви на расизам.'
+- type: prompt
+  ask:
+    en: 'Once more: say “Leave me alone! (polite)”.'
+    ar: 'مرة أخرى: قولي “اتركني وشأني!”.'
+    mk: 'Уште еднаш: кажете „Оставете ме на мира!“.'
+  answer:
+    speaker: protagonist
+    text: Lassen Sie mich in Ruhe!
+  items:
+  - lassen-sie-mich
+- type: prompt
+  ask:
+    en: 'Once more: say “Stop it! (polite)”.'
+    ar: 'مرة أخرى: قولي “توقّف!”.'
+    mk: 'Уште еднаш: кажете „Престанете!“.'
+  answer:
+    speaker: protagonist
+    text: Hören Sie auf!
+  items:
+  - hoeren-sie-auf
+- type: prompt
+  ask:
+    en: 'Once more: say “Help!”.'
+    ar: 'مرة أخرى: قولي “النجدة!”.'
+    mk: 'Уште еднаш: кажете „Помош!“.'
+  answer:
+    speaker: protagonist
+    text: Hilfe!
+  items:
+  - hilfe
+- type: prompt
+  ask:
+    en: 'Once more: say “the police”.'
+    ar: 'مرة أخرى: قولي “الشرطة”.'
+    mk: 'Уште еднаш: кажете „полицијата“.'
+  answer:
+    speaker: protagonist
+    text: die Polizei
+  items:
+  - die-polizei
+- type: prompt
+  ask:
+    en: 'Once more: say “110 (police number)”.'
+    ar: 'مرة أخرى: قولي “110 (رقم الشرطة)”.'
+    mk: 'Уште еднаш: кажете „110 (број на полиција)“.'
+  answer:
+    speaker: protagonist
+    text: hundertzehn
+  items:
+  - hundertzehn
+- type: prompt
+  ask:
+    en: 'Once more: say “Are you all right?”.'
+    ar: 'مرة أخرى: قولي “هل أنتِ بخير؟”.'
+    mk: 'Уште еднаш: кажете „Дали сте во ред?“.'
+  answer:
+    speaker: protagonist
+    text: Alles okay?
+  items:
+  - alles-okay
+- type: prompt
+  ask:
+    en: 'Once more: say “I''m with you”.'
+    ar: 'مرة أخرى: قولي “أنا معكِ”.'
+    mk: 'Уште еднаш: кажете „Јас сум со вас“.'
+  answer:
+    speaker: protagonist
+    text: Ich bin bei Ihnen
+  items:
+  - ich-bin-bei-ihnen
+- type: prompt
+  ask:
+    en: 'Once more: say “the driver”.'
+    ar: 'مرة أخرى: قولي “السائق”.'
+    mk: 'Уште еднаш: кажете „возачот“.'
+  answer:
+    speaker: protagonist
+    text: der Fahrer
+  items:
+  - der-fahrer
+- type: prompt
+  ask:
+    en: 'Once more: say “Get off! (polite)”.'
+    ar: 'مرة أخرى: قولي “انزل!”.'
+    mk: 'Уште еднаш: кажете „Симнете се!“.'
+  answer:
+    speaker: protagonist
+    text: Steigen Sie aus!
+  items:
+  - aussteigen-jetzt
+- type: prompt
+  ask:
+    en: 'Once more: say “Thanks for your help”.'
+    ar: 'مرة أخرى: قولي “شكرًا على المساعدة”.'
+    mk: 'Уште еднаш: кажете „Благодарам за помошта“.'
+  answer:
+    speaker: protagonist
+    text: Danke für die Hilfe
+  items:
+  - danke-fuer-die-hilfe
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the sky — and “the stars — and “the moon — and “in the sky — and “on the tower — and “in the city — and “the planet — and “so bright — and “Look! (informal) — and “clear — and “beautiful
+      — and “What time is it? — and “quarter past — and “quarter to — and “too late — and “the delay — and “next time — and “I cook — and “the rice (object) — and “the vegetables — and “the stove”.'
+    ar: 'قولي: “السماء — و“النجوم — و“القمر — و“في السماء — و“على البرج — و“في المدينة — و“الكوكب — و“مضيء جدًا — و“انظر! — و“صافٍ — و“رائع الجمال — و“كم الساعة؟ — و“وربع — و“إلا ربعًا — و“متأخر — و“التأخير
+      — و“في المرة القادمة — و“أطبخ — و“الأرز — و“الخضار — و“الموقد”.'
+    mk: 'Кажете: „небото“ — и „ѕвездите“ — и „месечината“ — и „на небото“ — и „на кулата“ — и „во градот“ — и „планетата“ — и „толку светло“ — и „Погледни!“ — и „ведро“ — и „прекрасно“ — и „Колку е часот?“
+      — и „и петнаесет“ — и „помалку петнаесет“ — и „доцна“ — и „доцнењето“ — и „следниот пат“ — и „готвам“ — и „оризот“ — и „зеленчукот“ — и „шпоретот“.'
+  answer:
+    speaker: protagonist
+    text: der Himmel … die Sterne … der Mond … am Himmel … auf dem Turm … in der Stadt … der Planet … so hell … Schau mal! … klar … wunderschön … Wie spät ist es? … Viertel nach … Viertel vor … zu spät
+      … die Verspätung … das nächste Mal … ich koche … den Reis … das Gemüse … der Herd
+  items:
+  - der-himmel
+  - die-sterne
+  - der-mond
+  - am-himmel
+  - auf-dem-turm
+  - in-der-stadt
+  - der-planet
+  - hell-wie
+  - schau-mal
+  - klar-himmel
+  - wunderschoen
+  - wie-spaet-ist-es
+  - viertel-nach
+  - viertel-vor
+  - zu-spaet
+  - die-verspaetung
+  - das-naechste-mal
+  - ich-koche
+  - den-reis
+  - das-gemuese
+  - der-herd
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “hot — and “salty — and “spicy — and “Have a taste! (informal) — and “tastes (good) — and “the recipe — and “brought along — and “Enjoy your meal! — and “you are (informal) — and “upstairs
+      — and “And you? (informal) — and “on the second floor — and “How are you? (informal) — and “And you? (after ''how are you'') — and “Do you speak …? (informal) — and “or would you rather …? — and “I''m
+      learning — and “in German — and “slowly — and “Sure! Of course!”.'
+    ar: 'قولي: “ساخن — و“مالح — و“حار (حرّيف) — و“ذُق! — و“طعمه (طيب) — و“الوصفة — و“أحضرنا معنا — و“بالهناء والشفاء! — و“أنتَ (غير رسمي) — و“في الأعلى — و“وأنت؟ — و“في الطابق الثاني — و“كيف الحال؟ — و“وأنت؟
+      (بعد كيف الحال) — و“هل تتكلم …؟ — و“أم تفضّل …؟ — و“أتعلّم — و“بالألمانية — و“ببطء — و“طبعًا!”.'
+    mk: 'Кажете: „жешко“ — и „солено“ — и „луто“ — и „Проба!“ — и „има вкус, е вкусно“ — и „рецептот“ — и „донесовме“ — и „Пријатно!“ — и „ти си“ — и „горе“ — и „А ти?“ — и „на вториот кат“ — и „Како си?“
+      — и „А ти?“ — и „Зборуваш ли …?“ — и „или повеќе сакаш …?“ — и „учам“ — и „на германски“ — и „полека“ — и „Секако!“.'
+  answer:
+    speaker: protagonist
+    text: heiß … salzig … scharf … Probier mal! … schmeckt … das Rezept … mitgebracht … Guten Appetit! … du bist … oben … Und du? … im zweiten Stock … Wie geht's? … Und dir? … Sprichst du …? … oder lieber
+      …? … ich lerne … auf Deutsch … langsam … Klar!
+  items:
+  - heiss
+  - salzig
+  - scharf
+  - probier-mal
+  - schmeckt
+  - das-rezept
+  - mitgebracht
+  - guten-appetit
+  - du-bist
+  - oben
+  - und-du
+  - im-zweiten-stock
+  - wie-gehts
+  - und-dir
+  - sprichst-du
+  - oder-lieber
+  - ich-lerne
+  - auf-deutsch
+  - langsam
+  - klar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “half past seven (half to eight) — and “exactly eight”.'
+  answer:
+    speaker: protagonist
+    text: halb acht … genau acht
+  items:
+  - halb-acht
+  - genau-acht
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “early — and “already there”.'
+  answer:
+    speaker: protagonist
+    text: früh … schon da
+  items:
+  - frueh
+  - schon-da
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “الرابعة والنصف — و“اتصل (أمر مؤدب)”.'
+    mk: 'Кажете: „четири и пол“ — и „Јавете се“.'
+  answer:
+    speaker: protagonist
+    text: halb fünf … Rufen Sie an
+  items:
+  - halb-fuenf
+  - rufen-sie-an
+  for:
+  - ar
+  - mk
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “آسف”.'
+    mk: 'Кажете: „Жал ми е“.'
+  answer:
+    speaker: protagonist
+    text: Es tut mir leid
+  items:
+  - es-tut-mir-leid
+  for:
+  - ar
+  - mk
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “في الموعد”.'
+  answer:
+    speaker: protagonist
+    text: pünktlich
+  items:
+  - puenktlich-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „точно, навреме“.'
+  answer:
+    speaker: protagonist
+    text: pünktlich
+  items:
+  - puenktlich-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

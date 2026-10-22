@@ -1,0 +1,462 @@
+# UNIT de A1-22-e — written by AI (Claude) for Casus; expanded from src/A1-22-e.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-22-e
+level: A1
+number: 22
+protagonist: m
+tracks:
+- en
+title:
+  en: What time is it?
+situation:
+  en: The lecture is at eight. You arrive at eight sharp — and everyone is already seated.
+learn_lessons:
+- a1-time
+culture: Five minutes late needs a sorry
+new_items:
+- id: wie-spaet-ist-es
+  text: Wie spät ist es?
+  meaning:
+    en: What time is it?
+- id: halb-acht
+  text: halb acht
+  meaning:
+    en: half past seven (half to eight)
+- id: viertel-nach
+  text: Viertel nach
+  meaning:
+    en: quarter past
+- id: viertel-vor
+  text: Viertel vor
+  meaning:
+    en: quarter to
+- id: genau-acht
+  text: genau acht
+  meaning:
+    en: exactly eight
+- id: zu-spaet
+  text: zu spät
+  meaning:
+    en: too late
+- id: die-verspaetung
+  text: die Verspätung
+  meaning:
+    en: the delay
+- id: frueh
+  text: früh
+  meaning:
+    en: early
+- id: schon-da
+  text: schon da
+  meaning:
+    en: already there
+- id: das-naechste-mal
+  text: das nächste Mal
+  meaning:
+    en: next time
+reviews:
+- item: geschlossen
+  from: A1-07
+- item: heute-ist-sonntag
+  from: A1-07
+- item: alles
+  from: A1-07
+- item: kann-ich
+  from: A1-07
+- item: irgendwo
+  from: A1-07
+- item: brot
+  from: A1-07
+- item: die-baeckerei
+  from: A1-07
+- item: an-der-ecke
+  from: A1-07
+- item: offen
+  from: A1-07
+- item: der-feiertag
+  from: A1-07
+- item: lieber-nicht
+  from: A1-07
+- item: die-ruhe
+  from: A1-07
+- item: spazieren
+  from: A1-07
+- item: das-sofa
+  from: A1-15
+- item: passt
+  from: A1-15
+- item: messen
+  from: A1-15
+- item: wie-breit
+  from: A1-15
+- item: meter
+  from: A1-15
+- item: zentimeter
+  from: A1-15
+- item: lang
+  from: A1-15
+- item: die-ecke
+  from: A1-15
+- item: rund
+  from: A1-15
+- item: eckig
+  from: A1-15
+- item: genau
+  from: A1-15
+- item: zu-gross
+  from: A1-15
+- item: frisch
+  from: A1-19
+- item: ein-kilo
+  from: A1-19
+- item: tomaten
+  from: A1-19
+- item: ein-stueck
+  from: A1-19
+- item: aepfel
+  from: A1-19
+- item: noch-etwas
+  from: A1-19
+- item: das-wars-alles
+  from: A1-19
+- item: zusammen
+  from: A1-19
+- item: stimmt-so
+  from: A1-19
+- item: geschenkt
+  from: A1-19
+- item: ein-halbes-kilo
+  from: A1-19
+- item: der-garten
+  from: A1-21
+- item: die-blumen
+  from: A1-21
+- item: giessen
+  from: A1-21
+- item: der-baum
+  from: A1-21
+- item: im-sommer
+  from: A1-21
+- item: die-pflanze
+  from: A1-21
+- item: fuer-sie
+  from: A1-21
+- item: braucht
+  from: A1-21
+- item: die-sonne
+  from: A1-21
+- item: dem-fenster
+  from: A1-21
+- item: jeden-zweiten-tag
+  from: A1-21
+- item: das-wasser
+  from: A1-21
+steps:
+- type: narrator
+  text:
+    en: The lecture is at eight. You arrive at eight sharp — and everyone is already seated. Listen to the conversation; you don't need to understand it yet.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Entschuldigung, bin ich zu spät? Es ist genau acht.
+    meaning:
+      en: Sorry, am I late? It's exactly eight.
+  - speaker: jonas
+    text: Fast! Alle sind schon da. Wir kommen um Viertel vor acht.
+    meaning:
+      en: Almost! Everyone's already here. We come at quarter to eight.
+  - speaker: protagonist
+    text: Viertel vor acht? So früh?
+    meaning:
+      en: Quarter to eight? That early?
+  - speaker: jonas
+    text: Ja. Und um halb acht ist der Professor da.
+    meaning:
+      en: Yes. And at half past seven the professor is here.
+  - speaker: protagonist
+    text: Wie spät ist es jetzt?
+    meaning:
+      en: What time is it now?
+  - speaker: jonas
+    text: Fünf nach acht. Er beginnt.
+    meaning:
+      en: Five past eight. He's starting.
+  - speaker: protagonist
+    text: Und die Bahn hatte Verspätung...
+    meaning:
+      en: And the train was delayed...
+  - speaker: jonas
+    text: Das sagen alle! Das nächste Mal früher.
+    meaning:
+      en: Everyone says that! Earlier next time.
+- type: prompt
+  ask:
+    en: 'Ask: am I too late?'
+  answer:
+    speaker: protagonist
+    text: Bin ich zu spät?
+  items:
+  - zu-spaet
+- type: prompt
+  ask:
+    en: 'Say: it''s exactly eight.'
+  answer:
+    speaker: protagonist
+    text: Es ist genau acht.
+  items:
+  - genau-acht
+- type: prompt
+  ask:
+    en: 'Say: everyone''s already here.'
+  answer:
+    speaker: protagonist
+    text: Alle sind schon da.
+  items:
+  - schon-da
+- type: narrator
+  text:
+    en: 'Half hours count towards the next hour: «halb acht» is half past seven — ''half to eight''. «Viertel nach acht» is 8:15, «Viertel vor acht» 7:45.'
+- type: prompt
+  ask:
+    en: 'Say: quarter to eight.'
+  answer:
+    speaker: protagonist
+    text: Viertel vor acht.
+  items:
+  - viertel-vor
+- type: prompt
+  ask:
+    en: 'Say: half past seven.'
+  answer:
+    speaker: protagonist
+    text: Halb acht.
+  items:
+  - halb-acht
+- type: prompt
+  ask:
+    en: 'Say: quarter past eight.'
+  answer:
+    speaker: protagonist
+    text: Viertel nach acht.
+  items:
+  - viertel-nach
+- type: prompt
+  ask:
+    en: 'Say: so early?'
+  answer:
+    speaker: protagonist
+    text: So früh?
+  items:
+  - frueh
+- type: prompt
+  ask:
+    en: Ask what time it is.
+  answer:
+    speaker: protagonist
+    text: Wie spät ist es?
+  items:
+  - wie-spaet-ist-es
+- type: prompt
+  ask:
+    en: 'Say: the train was delayed. (the delay)'
+  answer:
+    speaker: protagonist
+    text: Die Verspätung.
+  items:
+  - die-verspaetung
+- type: prompt
+  ask:
+    en: 'Say: next time, earlier.'
+  answer:
+    speaker: protagonist
+    text: Das nächste Mal früher.
+  items:
+  - das-naechste-mal
+- type: narrator
+  text:
+    en: Being on time means a few minutes early. Five minutes late needs a short apology; more needs a message beforehand. Trains are late surprisingly often — and nobody accepts it as an excuse.
+- type: prompt
+  ask:
+    en: 'Once more: say “What time is it?”.'
+  answer:
+    speaker: protagonist
+    text: Wie spät ist es?
+  items:
+  - wie-spaet-ist-es
+- type: prompt
+  ask:
+    en: 'Once more: say “half past seven (half to eight)”.'
+  answer:
+    speaker: protagonist
+    text: halb acht
+  items:
+  - halb-acht
+- type: prompt
+  ask:
+    en: 'Once more: say “quarter past”.'
+  answer:
+    speaker: protagonist
+    text: Viertel nach
+  items:
+  - viertel-nach
+- type: prompt
+  ask:
+    en: 'Once more: say “quarter to”.'
+  answer:
+    speaker: protagonist
+    text: Viertel vor
+  items:
+  - viertel-vor
+- type: prompt
+  ask:
+    en: 'Once more: say “exactly eight”.'
+  answer:
+    speaker: protagonist
+    text: genau acht
+  items:
+  - genau-acht
+- type: prompt
+  ask:
+    en: 'Once more: say “too late”.'
+  answer:
+    speaker: protagonist
+    text: zu spät
+  items:
+  - zu-spaet
+- type: prompt
+  ask:
+    en: 'Once more: say “the delay”.'
+  answer:
+    speaker: protagonist
+    text: die Verspätung
+  items:
+  - die-verspaetung
+- type: prompt
+  ask:
+    en: 'Once more: say “early”.'
+  answer:
+    speaker: protagonist
+    text: früh
+  items:
+  - frueh
+- type: prompt
+  ask:
+    en: 'Once more: say “already there”.'
+  answer:
+    speaker: protagonist
+    text: schon da
+  items:
+  - schon-da
+- type: prompt
+  ask:
+    en: 'Once more: say “next time”.'
+  answer:
+    speaker: protagonist
+    text: das nächste Mal
+  items:
+  - das-naechste-mal
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the garden — and “the flowers — and “water (plants) — and “the tree — and “in summer — and “the plant — and “for you (polite) — and “needs”.'
+  answer:
+    speaker: protagonist
+    text: der Garten … die Blumen … gießen … der Baum … im Sommer … die Pflanze … für Sie … braucht
+  items:
+  - der-garten
+  - die-blumen
+  - giessen
+  - der-baum
+  - im-sommer
+  - die-pflanze
+  - fuer-sie
+  - braucht
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the sun — and “at the window — and “every other day — and “the water — and “fresh — and “a kilo — and “tomatoes — and “a piece”.'
+  answer:
+    speaker: protagonist
+    text: die Sonne … am Fenster … jeden zweiten Tag … das Wasser … frisch … ein Kilo … Tomaten … ein Stück
+  items:
+  - die-sonne
+  - dem-fenster
+  - jeden-zweiten-tag
+  - das-wasser
+  - frisch
+  - ein-kilo
+  - tomaten
+  - ein-stueck
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “apples — and “Anything else? — and “That''s all — and “altogether — and “Keep the change — and “free, a gift — and “half a kilo — and “the sofa”.'
+  answer:
+    speaker: protagonist
+    text: Äpfel … Noch etwas? … Das ist alles … zusammen … Stimmt so … geschenkt … ein halbes Kilo … das Sofa
+  items:
+  - aepfel
+  - noch-etwas
+  - das-wars-alles
+  - zusammen
+  - stimmt-so
+  - geschenkt
+  - ein-halbes-kilo
+  - das-sofa
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “fits — and “measure — and “How wide …? — and “metres — and “centimetres — and “long — and “the corner — and “round”.'
+  answer:
+    speaker: protagonist
+    text: passt … messen … Wie breit …? … Meter … Zentimeter … lang … die Ecke … rund
+  items:
+  - passt
+  - messen
+  - wie-breit
+  - meter
+  - zentimeter
+  - lang
+  - die-ecke
+  - rund
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “square, angular — and “exactly — and “too big — and “closed — and “today is Sunday — and “everything — and “Can I …? — and “somewhere”.'
+  answer:
+    speaker: protagonist
+    text: eckig … genau … zu groß … geschlossen … heute ist Sonntag … alles … Kann ich …? … irgendwo
+  items:
+  - eckig
+  - genau
+  - zu-gross
+  - geschlossen
+  - heute-ist-sonntag
+  - alles
+  - kann-ich
+  - irgendwo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “bread — and “the bakery — and “on the corner — and “open — and “the public holiday — and “better not — and “quiet, peace — and “go for a walk”.'
+  answer:
+    speaker: protagonist
+    text: Brot … die Bäckerei … an der Ecke … offen … der Feiertag … lieber nicht … die Ruhe … gehe … spazieren
+  items:
+  - brot
+  - die-baeckerei
+  - an-der-ecke
+  - offen
+  - der-feiertag
+  - lieber-nicht
+  - die-ruhe
+  - spazieren
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+- type: dialogue
+  again: true
+- type: selfcheck

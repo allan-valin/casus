@@ -1,0 +1,455 @@
+# UNIT de A1-22-m — written by AI (Claude) for Casus; expanded from src/A1-22-m.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-22-m
+level: A1
+number: 22
+protagonist: m
+tracks:
+- mk
+title:
+  mk: Колку е часот?
+situation:
+  mk: Градинката се затвора во четири и пол. Пристигнувате во пет помалку петнаесет. Госпоѓа Кригер чека со Лука.
+learn_lessons:
+- a1-time
+culture: Five minutes late needs a sorry
+new_items:
+- id: wie-spaet-ist-es
+  text: Wie spät ist es?
+  meaning:
+    mk: Колку е часот?
+- id: halb-fuenf
+  text: halb fünf
+  meaning:
+    mk: четири и пол
+- id: viertel-vor
+  text: Viertel vor
+  meaning:
+    mk: помалку петнаесет
+- id: viertel-nach
+  text: Viertel nach
+  meaning:
+    mk: и петнаесет
+- id: puenktlich-m
+  text: pünktlich
+  meaning:
+    mk: точно, навреме
+- id: zu-spaet
+  text: zu spät
+  meaning:
+    mk: доцна
+- id: die-verspaetung
+  text: die Verspätung
+  meaning:
+    mk: доцнењето
+- id: rufen-sie-an
+  text: Rufen Sie an
+  meaning:
+    mk: Јавете се
+- id: das-naechste-mal
+  text: das nächste Mal
+  meaning:
+    mk: следниот пат
+- id: es-tut-mir-leid
+  text: Es tut mir leid
+  meaning:
+    mk: Жал ми е
+reviews:
+- item: geschlossen
+  from: A1-07
+- item: heute-ist-sonntag
+  from: A1-07
+- item: alles
+  from: A1-07
+- item: kann-ich
+  from: A1-07
+- item: irgendwo
+  from: A1-07
+- item: brot
+  from: A1-07
+- item: die-baeckerei
+  from: A1-07
+- item: an-der-ecke
+  from: A1-07
+- item: offen
+  from: A1-07
+- item: der-feiertag
+  from: A1-07
+- item: lieber-nicht
+  from: A1-07
+- item: die-ruhe
+  from: A1-07
+- item: spazieren
+  from: A1-07
+- item: das-sofa
+  from: A1-15
+- item: passt
+  from: A1-15
+- item: messen
+  from: A1-15
+- item: wie-breit
+  from: A1-15
+- item: meter
+  from: A1-15
+- item: zentimeter
+  from: A1-15
+- item: lang
+  from: A1-15
+- item: die-ecke
+  from: A1-15
+- item: rund
+  from: A1-15
+- item: eckig
+  from: A1-15
+- item: genau
+  from: A1-15
+- item: zu-gross
+  from: A1-15
+- item: frisch
+  from: A1-19
+- item: ein-kilo
+  from: A1-19
+- item: tomaten
+  from: A1-19
+- item: ein-stueck
+  from: A1-19
+- item: aepfel
+  from: A1-19
+- item: noch-etwas
+  from: A1-19
+- item: das-wars-alles
+  from: A1-19
+- item: zusammen
+  from: A1-19
+- item: stimmt-so
+  from: A1-19
+- item: geschenkt
+  from: A1-19
+- item: ein-halbes-kilo
+  from: A1-19
+- item: der-garten
+  from: A1-21
+- item: die-blumen
+  from: A1-21
+- item: giessen
+  from: A1-21
+- item: der-baum
+  from: A1-21
+- item: im-sommer
+  from: A1-21
+- item: die-pflanze
+  from: A1-21
+- item: fuer-sie
+  from: A1-21
+- item: braucht
+  from: A1-21
+- item: die-sonne
+  from: A1-21
+- item: dem-fenster
+  from: A1-21
+- item: jeden-zweiten-tag
+  from: A1-21
+- item: das-wasser
+  from: A1-21
+steps:
+- type: narrator
+  text:
+    mk: Градинката се затвора во четири и пол. Пристигнувате во пет помалку петнаесет. Госпоѓа Кригер чека со Лука. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Entschuldigung! Bin ich zu spät?
+    meaning:
+      mk: Извинете! Дали доцнам?
+  - speaker: kruger
+    text: Ja. Wir schließen um halb fünf. Jetzt ist es Viertel vor fünf.
+    meaning:
+      mk: Да. Затвораме во четири и пол. Сега е пет помалку петнаесет.
+  - speaker: protagonist
+    text: Es tut mir leid. Die Straßenbahn hatte Verspätung.
+    meaning:
+      mk: Жал ми е. Трамвајот доцнеше.
+  - speaker: kruger
+    text: Das kann passieren. Aber bitte rufen Sie an.
+    meaning:
+      mk: Може да се случи. Но ве молам јавете се.
+  - speaker: protagonist
+    text: Wie spät kann ich kommen?
+    meaning:
+      mk: До колку часот можам да дојдам?
+  - speaker: kruger
+    text: Bis halb fünf. Pünktlich, bitte.
+    meaning:
+      mk: До четири и пол. Точно, ве молам.
+  - speaker: protagonist
+    text: Verstanden. Das nächste Mal bin ich pünktlich.
+    meaning:
+      mk: Разбрав. Следниот пат ќе бидам точен.
+  - speaker: luka
+    text: Opa! Ich habe gewartet!
+    meaning:
+      mk: Дедо! Чекав!
+- type: prompt
+  ask:
+    mk: 'Прашајте: дали доцнам?'
+  answer:
+    speaker: protagonist
+    text: Bin ich zu spät?
+  items:
+  - zu-spaet
+- type: narrator
+  text:
+    mk: 'Половините се бројат кон следниот час: «halb fünf» е четири и пол — збор по збор „половина до пет“. «Viertel vor fünf» е пет помалку петнаесет, «Viertel nach vier» четири и петнаесет.'
+- type: prompt
+  ask:
+    mk: 'Таа вели: затвораме во четири и пол.'
+  answer:
+    speaker: protagonist
+    text: Wir schließen um halb fünf.
+  items:
+  - halb-fuenf
+- type: prompt
+  ask:
+    mk: 'Кажете: пет помалку петнаесет.'
+  answer:
+    speaker: protagonist
+    text: Viertel vor fünf.
+  items:
+  - viertel-vor
+- type: prompt
+  ask:
+    mk: 'Кажете: четири и петнаесет.'
+  answer:
+    speaker: protagonist
+    text: Viertel nach vier.
+  items:
+  - viertel-nach
+- type: prompt
+  ask:
+    mk: 'Извинете се: жал ми е.'
+  answer:
+    speaker: protagonist
+    text: Es tut mir leid.
+  items:
+  - es-tut-mir-leid
+- type: prompt
+  ask:
+    mk: 'Кажете: доцнењето.'
+  answer:
+    speaker: protagonist
+    text: Die Verspätung.
+  items:
+  - die-verspaetung
+- type: prompt
+  ask:
+    mk: 'Таа вели: ве молам јавете се.'
+  answer:
+    speaker: protagonist
+    text: Bitte rufen Sie an.
+  items:
+  - rufen-sie-an
+- type: prompt
+  ask:
+    mk: Прашајте колку е часот.
+  answer:
+    speaker: protagonist
+    text: Wie spät ist es?
+  items:
+  - wie-spaet-ist-es
+- type: prompt
+  ask:
+    mk: 'Кажете: следниот пат ќе бидам точен.'
+  answer:
+    speaker: protagonist
+    text: Das nächste Mal bin ich pünktlich.
+  items:
+  - das-naechste-mal
+  - puenktlich-m
+- type: narrator
+  text:
+    mk: Кај нас половина час доцнење меѓу пријатели е нормално; во Германија, особено во градинката, времето е точно. Ако ќе доцните пет минути, јавете се однапред.
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „Колку е часот?“.'
+  answer:
+    speaker: protagonist
+    text: Wie spät ist es?
+  items:
+  - wie-spaet-ist-es
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „четири и пол“.'
+  answer:
+    speaker: protagonist
+    text: halb fünf
+  items:
+  - halb-fuenf
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „помалку петнаесет“.'
+  answer:
+    speaker: protagonist
+    text: Viertel vor
+  items:
+  - viertel-vor
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „и петнаесет“.'
+  answer:
+    speaker: protagonist
+    text: Viertel nach
+  items:
+  - viertel-nach
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „точно, навреме“.'
+  answer:
+    speaker: protagonist
+    text: pünktlich
+  items:
+  - puenktlich-m
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „доцна“.'
+  answer:
+    speaker: protagonist
+    text: zu spät
+  items:
+  - zu-spaet
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „доцнењето“.'
+  answer:
+    speaker: protagonist
+    text: die Verspätung
+  items:
+  - die-verspaetung
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „Јавете се“.'
+  answer:
+    speaker: protagonist
+    text: Rufen Sie an
+  items:
+  - rufen-sie-an
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „следниот пат“.'
+  answer:
+    speaker: protagonist
+    text: das nächste Mal
+  items:
+  - das-naechste-mal
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „Жал ми е“.'
+  answer:
+    speaker: protagonist
+    text: Es tut mir leid
+  items:
+  - es-tut-mir-leid
+- type: narrator
+  text:
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „градината“ — и „цвеќињата“ — и „полева“ — и „дрвото“ — и „во лето“ — и „растението“ — и „за вас“ — и „има потреба од“.'
+  answer:
+    speaker: protagonist
+    text: der Garten … die Blumen … gießen … der Baum … im Sommer … die Pflanze … für Sie … braucht
+  items:
+  - der-garten
+  - die-blumen
+  - giessen
+  - der-baum
+  - im-sommer
+  - die-pflanze
+  - fuer-sie
+  - braucht
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „сонцето“ — и „до прозорецот“ — и „секој втор ден“ — и „водата“ — и „свежо“ — и „едно кило“ — и „домати“ — и „парче“.'
+  answer:
+    speaker: protagonist
+    text: die Sonne … am Fenster … jeden zweiten Tag … das Wasser … frisch … ein Kilo … Tomaten … ein Stück
+  items:
+  - die-sonne
+  - dem-fenster
+  - jeden-zweiten-tag
+  - das-wasser
+  - frisch
+  - ein-kilo
+  - tomaten
+  - ein-stueck
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „јаболка“ — и „Уште нешто?“ — и „Тоа е сè“ — и „вкупно“ — и „Нема потреба од кусур“ — и „подарок, бесплатно“ — и „половина кило“ — и „каучот“.'
+  answer:
+    speaker: protagonist
+    text: Äpfel … Noch etwas? … Das ist alles … zusammen … Stimmt so … geschenkt … ein halbes Kilo … das Sofa
+  items:
+  - aepfel
+  - noch-etwas
+  - das-wars-alles
+  - zusammen
+  - stimmt-so
+  - geschenkt
+  - ein-halbes-kilo
+  - das-sofa
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „собира, одговара“ — и „мериме“ — и „Колку е широк …?“ — и „метри“ — и „сантиметри“ — и „долг“ — и „аголот“ — и „тркалезно“.'
+  answer:
+    speaker: protagonist
+    text: passt … messen … Wie breit …? … Meter … Zentimeter … lang … die Ecke … rund
+  items:
+  - passt
+  - messen
+  - wie-breit
+  - meter
+  - zentimeter
+  - lang
+  - die-ecke
+  - rund
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „аглесто“ — и „точно“ — и „преголемо“ — и „затворено“ — и „денес е недела“ — и „сè“ — и „Можам ли …?“ — и „некаде“.'
+  answer:
+    speaker: protagonist
+    text: eckig … genau … zu groß … geschlossen … heute ist Sonntag … alles … Kann ich …? … irgendwo
+  items:
+  - eckig
+  - genau
+  - zu-gross
+  - geschlossen
+  - heute-ist-sonntag
+  - alles
+  - kann-ich
+  - irgendwo
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „леб“ — и „пекарницата“ — и „на аголот“ — и „отворено“ — и „празникот“ — и „подобро не“ — и „мирот, тишината“ — и „одам на прошетка“.'
+  answer:
+    speaker: protagonist
+    text: Brot … die Bäckerei … an der Ecke … offen … der Feiertag … lieber nicht … die Ruhe … gehe … spazieren
+  items:
+  - brot
+  - die-baeckerei
+  - an-der-ecke
+  - offen
+  - der-feiertag
+  - lieber-nicht
+  - die-ruhe
+  - spazieren
+- type: narrator
+  text:
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

@@ -1,0 +1,619 @@
+# UNIT de A1-21 — written by AI (Claude) for Casus; expanded from src/A1-21.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-21
+level: A1
+number: 21
+protagonist: f
+title:
+  en: Plants
+  ar: النباتات
+  mk: Растенија
+situation:
+  en: The courtyard garden. Frau Becker waters her flowers and gives you a small plant.
+  ar: حديقة الفناء. السيدة بيكر تسقي أزهارها وتعطيكِ نبتة صغيرة.
+  mk: Градината во дворот. Госпоѓа Бекер ги полева цвеќињата и ви дава мало растение.
+learn_lessons:
+- a1-dative
+culture: —
+new_items:
+- id: der-garten
+  text: der Garten
+  meaning:
+    en: the garden
+    ar: الحديقة
+    mk: градината
+- id: die-blumen
+  text: die Blumen
+  meaning:
+    en: the flowers
+    ar: الأزهار
+    mk: цвеќињата
+- id: giessen
+  text: gießen
+  meaning:
+    en: water (plants)
+    ar: يسقي
+    mk: полева
+- id: der-baum
+  text: der Baum
+  meaning:
+    en: the tree
+    ar: الشجرة
+    mk: дрвото
+- id: im-sommer
+  text: im Sommer
+  meaning:
+    en: in summer
+    ar: في الصيف
+    mk: во лето
+- id: die-pflanze
+  text: die Pflanze
+  meaning:
+    en: the plant
+    ar: النبتة
+    mk: растението
+- id: fuer-sie
+  text: für Sie
+  meaning:
+    en: for you (polite)
+    ar: لكِ (بصيغة الاحترام)
+    mk: за вас
+- id: braucht
+  text: braucht
+  meaning:
+    en: needs
+    ar: تحتاج
+    mk: има потреба од
+- id: die-sonne
+  text: die Sonne
+  meaning:
+    en: the sun
+    ar: الشمس
+    mk: сонцето
+- id: dem-fenster
+  text: am Fenster
+  meaning:
+    en: at the window
+    ar: عند النافذة
+    mk: до прозорецот
+- id: jeden-zweiten-tag
+  text: jeden zweiten Tag
+  meaning:
+    en: every other day
+    ar: كل يومين
+    mk: секој втор ден
+- id: das-wasser
+  text: das Wasser
+  meaning:
+    en: the water
+    ar: الماء
+    mk: водата
+reviews:
+- item: guten-abend
+  from: A1-06
+- item: kalt
+  from: A1-06
+- item: draussen
+  from: A1-06
+- item: schon
+  from: A1-06
+- item: dunkel
+  from: A1-06
+- item: im-winter
+  from: A1-06
+- item: hell
+  from: A1-06
+- item: grau
+  from: A1-06
+- item: abtreten
+  from: A1-06
+- item: nass
+  from: A1-06
+- item: drinnen
+  from: A1-06
+- item: warm
+  from: A1-06
+- item: ziehe-aus
+  from: A1-06
+- item: die-jacke
+  from: A1-06
+- item: windig
+  from: A1-06
+- item: moment-mal
+  from: A1-14
+- item: der-muell
+  from: A1-14
+- item: trennen
+  from: A1-14
+- item: die-gelbe-tonne
+  from: A1-14
+- item: das-plastik
+  from: A1-14
+- item: das-papier
+  from: A1-14
+- item: die-blaue
+  from: A1-14
+- item: der-biomuell
+  from: A1-14
+- item: der-restmuell
+  from: A1-14
+- item: das-glas
+  from: A1-14
+- item: bringen-sie
+  from: A1-14
+- item: zum-container
+  from: A1-14
+- item: ich-koche
+  from: A1-18
+- item: den-reis
+  from: A1-18
+- item: das-gemuese
+  from: A1-18
+- item: der-herd
+  from: A1-18
+- item: heiss
+  from: A1-18
+- item: salzig
+  from: A1-18
+- item: scharf
+  from: A1-18
+- item: probier-mal
+  from: A1-18
+- item: schmeckt
+  from: A1-18
+- item: das-rezept
+  from: A1-18
+- item: mitgebracht
+  from: A1-18
+- item: guten-appetit
+  from: A1-18
+- item: hast-du-zeit
+  from: A1-20
+- item: am-montag
+  from: A1-20
+- item: keine-zeit
+  from: A1-20
+- item: am-dienstag
+  from: A1-20
+- item: am-mittwoch
+  from: A1-20
+- item: am-donnerstag
+  from: A1-20
+- item: am-freitag
+  from: A1-20
+- item: am-wochenende
+  from: A1-20
+- item: heute
+  from: A1-20
+- item: morgen
+  from: A1-20
+- item: passt-dir
+  from: A1-20
+- item: abgemacht
+  from: A1-20
+- item: zu
+  from: A1-09
+steps:
+- type: narrator
+  text:
+    en: The courtyard garden. Frau Becker waters her flowers and gives you a small plant. Listen to the conversation; you don't need to understand it yet.
+    ar: حديقة الفناء. السيدة بيكر تسقي أزهارها وتعطيكِ نبتة صغيرة. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.
+    mk: Градината во дворот. Госпоѓа Бекер ги полева цвеќињата и ви дава мало растение. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: becker
+    text: Guten Tag! Gefällt Ihnen der Garten?
+    meaning:
+      en: Hello! Do you like the garden?
+      ar: نهارك سعيد! هل تعجبكِ الحديقة؟
+      mk: Добар ден! Ви се допаѓа градината?
+  - speaker: protagonist
+    text: Ja, sehr! Die Blumen sind schön.
+    meaning:
+      en: Yes, very much! The flowers are lovely.
+      ar: نعم، كثيرًا! الأزهار جميلة.
+      mk: Да, многу! Цвеќињата се убави.
+  - speaker: becker
+    text: Ich gieße sie jeden Abend. Und der Baum ist alt — achtzig Jahre!
+    meaning:
+      en: I water them every evening. And the tree is old — eighty years!
+      ar: أسقيها كل مساء. والشجرة قديمة — ثمانون عامًا!
+      mk: Ги полевам секоја вечер. А дрвото е старо — осумдесет години!
+  - speaker: protagonist
+    text: Im Sommer ist es hier bestimmt schön.
+    meaning:
+      en: In summer it must be lovely here.
+      ar: في الصيف لا بد أن المكان جميل هنا.
+      mk: Во лето сигурно е убаво тука.
+  - speaker: becker
+    text: Hier, eine Pflanze für Sie. Ein Basilikum.
+    meaning:
+      en: Here, a plant for you. Basil.
+      ar: تفضّلي، نبتة لكِ. ريحان.
+      mk: Еве, едно растение за вас. Босилек.
+  - speaker: protagonist
+    text: Danke! Was braucht die Pflanze?
+    meaning:
+      en: Thank you! What does the plant need?
+      ar: شكرًا! ماذا تحتاج النبتة؟
+      mk: Благодарам! Што му треба на растението?
+  - speaker: becker
+    text: Viel Sonne. Stellen Sie sie ans Fenster.
+    meaning:
+      en: Lots of sun. Put it at the window.
+      ar: شمسًا كثيرة. ضعيها عند النافذة.
+      mk: Многу сонце. Ставете го до прозорецот.
+  - speaker: protagonist
+    text: Und Wasser? Jeden Tag?
+    meaning:
+      en: And water? Every day?
+      ar: والماء؟ كل يوم؟
+      mk: А вода? Секој ден?
+  - speaker: becker
+    text: Jeden zweiten Tag. Nicht zu viel Wasser!
+    meaning:
+      en: Every other day. Not too much water!
+      ar: كل يومين. لا تكثري الماء!
+      mk: Секој втор ден. Не премногу вода!
+- type: prompt
+  ask:
+    en: 'She asks if you like the garden. Say: yes, very much!'
+    ar: 'تسألك إن كانت الحديقة تعجبكِ. قولي: نعم، كثيرًا!'
+    mk: 'Ве прашува дали ви се допаѓа градината. Кажете: да, многу!'
+  answer:
+    speaker: protagonist
+    text: Ja, sehr!
+  items:
+  - der-garten
+- type: prompt
+  ask:
+    en: 'Say: the flowers are lovely.'
+    ar: 'قولي: الأزهار جميلة.'
+    mk: 'Кажете: цвеќињата се убави.'
+  answer:
+    speaker: protagonist
+    text: Die Blumen sind schön.
+  items:
+  - die-blumen
+- type: prompt
+  ask:
+    en: 'She says: I water them every evening.'
+    ar: 'تقول: أسقيها كل مساء.'
+    mk: 'Таа вели: ги полевам секоја вечер.'
+  answer:
+    speaker: protagonist
+    text: Ich gieße sie jeden Abend.
+  items:
+  - giessen
+- type: prompt
+  ask:
+    en: 'Say: the tree is old.'
+    ar: 'قولي: الشجرة قديمة.'
+    mk: 'Кажете: дрвото е старо.'
+  answer:
+    speaker: protagonist
+    text: Der Baum ist alt.
+  items:
+  - der-baum
+- type: prompt
+  ask:
+    en: 'Say: in summer it''s lovely here.'
+    ar: 'قولي: في الصيف المكان جميل هنا.'
+    mk: 'Кажете: во лето е убаво тука.'
+  answer:
+    speaker: protagonist
+    text: Im Sommer ist es hier schön.
+  items:
+  - im-sommer
+- type: prompt
+  ask:
+    en: 'She says: a plant for you.'
+    ar: 'تقول: نبتة لكِ.'
+    mk: 'Таа вели: растение за вас.'
+  answer:
+    speaker: protagonist
+    text: Eine Pflanze für Sie.
+  items:
+  - die-pflanze
+  - fuer-sie
+- type: prompt
+  ask:
+    en: 'Ask: what does the plant need?'
+    ar: 'اسألي: ماذا تحتاج النبتة؟'
+    mk: 'Прашајте: што му треба на растението?'
+  answer:
+    speaker: protagonist
+    text: Was braucht die Pflanze?
+  items:
+  - braucht
+- type: narrator
+  text:
+    en: 'After «an», «in», «mit» and some other words, articles change again — the dative: «das Fenster» → «am Fenster», «der Garten» → «im Garten». For now, learn these as fixed phrases.'
+    ar: 'بعد «an» و«in» و«mit» وكلمات أخرى تتغير الأدوات مرة أخرى — حالة الجر: «das Fenster» → «am Fenster»، «der Garten» → «im Garten». احفظيها الآن كعبارات ثابتة.'
+    mk: 'По «an», «in», «mit» и некои други зборови членовите пак се менуваат — датив: «das Fenster» → «am Fenster», «der Garten» → «im Garten». Засега учете ги како готови изрази.'
+- type: prompt
+  ask:
+    en: 'She says: lots of sun, at the window.'
+    ar: 'تقول: شمس كثيرة، عند النافذة.'
+    mk: 'Таа вели: многу сонце, до прозорецот.'
+  answer:
+    speaker: protagonist
+    text: Viel Sonne. Am Fenster.
+  items:
+  - die-sonne
+  - dem-fenster
+- type: prompt
+  ask:
+    en: 'She says: every other day.'
+    ar: 'تقول: كل يومين.'
+    mk: 'Таа вели: секој втор ден.'
+  answer:
+    speaker: protagonist
+    text: Jeden zweiten Tag.
+  items:
+  - jeden-zweiten-tag
+- type: prompt
+  ask:
+    en: 'She says: not too much water!'
+    ar: 'تقول: لا تكثري الماء!'
+    mk: 'Таа вели: не премногу вода!'
+  answer:
+    speaker: protagonist
+    text: Nicht zu viel Wasser!
+  items:
+  - das-wasser
+  - zu
+- type: prompt
+  ask:
+    en: 'Once more: say “the garden”.'
+    ar: 'مرة أخرى: قولي “الحديقة”.'
+    mk: 'Уште еднаш: кажете „градината“.'
+  answer:
+    speaker: protagonist
+    text: der Garten
+  items:
+  - der-garten
+- type: prompt
+  ask:
+    en: 'Once more: say “the flowers”.'
+    ar: 'مرة أخرى: قولي “الأزهار”.'
+    mk: 'Уште еднаш: кажете „цвеќињата“.'
+  answer:
+    speaker: protagonist
+    text: die Blumen
+  items:
+  - die-blumen
+- type: prompt
+  ask:
+    en: 'Once more: say “water (plants)”.'
+    ar: 'مرة أخرى: قولي “يسقي”.'
+    mk: 'Уште еднаш: кажете „полева“.'
+  answer:
+    speaker: protagonist
+    text: gießen
+  items:
+  - giessen
+- type: prompt
+  ask:
+    en: 'Once more: say “the tree”.'
+    ar: 'مرة أخرى: قولي “الشجرة”.'
+    mk: 'Уште еднаш: кажете „дрвото“.'
+  answer:
+    speaker: protagonist
+    text: der Baum
+  items:
+  - der-baum
+- type: prompt
+  ask:
+    en: 'Once more: say “in summer”.'
+    ar: 'مرة أخرى: قولي “في الصيف”.'
+    mk: 'Уште еднаш: кажете „во лето“.'
+  answer:
+    speaker: protagonist
+    text: im Sommer
+  items:
+  - im-sommer
+- type: prompt
+  ask:
+    en: 'Once more: say “the plant”.'
+    ar: 'مرة أخرى: قولي “النبتة”.'
+    mk: 'Уште еднаш: кажете „растението“.'
+  answer:
+    speaker: protagonist
+    text: die Pflanze
+  items:
+  - die-pflanze
+- type: prompt
+  ask:
+    en: 'Once more: say “for you (polite)”.'
+    ar: 'مرة أخرى: قولي “لكِ (بصيغة الاحترام)”.'
+    mk: 'Уште еднаш: кажете „за вас“.'
+  answer:
+    speaker: protagonist
+    text: für Sie
+  items:
+  - fuer-sie
+- type: prompt
+  ask:
+    en: 'Once more: say “needs”.'
+    ar: 'مرة أخرى: قولي “تحتاج”.'
+    mk: 'Уште еднаш: кажете „има потреба од“.'
+  answer:
+    speaker: protagonist
+    text: braucht
+  items:
+  - braucht
+- type: prompt
+  ask:
+    en: 'Once more: say “the sun”.'
+    ar: 'مرة أخرى: قولي “الشمس”.'
+    mk: 'Уште еднаш: кажете „сонцето“.'
+  answer:
+    speaker: protagonist
+    text: die Sonne
+  items:
+  - die-sonne
+- type: prompt
+  ask:
+    en: 'Once more: say “at the window”.'
+    ar: 'مرة أخرى: قولي “عند النافذة”.'
+    mk: 'Уште еднаш: кажете „до прозорецот“.'
+  answer:
+    speaker: protagonist
+    text: am Fenster
+  items:
+  - dem-fenster
+- type: prompt
+  ask:
+    en: 'Once more: say “every other day”.'
+    ar: 'مرة أخرى: قولي “كل يومين”.'
+    mk: 'Уште еднаш: кажете „секој втор ден“.'
+  answer:
+    speaker: protagonist
+    text: jeden zweiten Tag
+  items:
+  - jeden-zweiten-tag
+- type: prompt
+  ask:
+    en: 'Once more: say “the water”.'
+    ar: 'مرة أخرى: قولي “الماء”.'
+    mk: 'Уште еднаш: кажете „водата“.'
+  answer:
+    speaker: protagonist
+    text: das Wasser
+  items:
+  - das-wasser
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Do you have time? (informal) — and “on Monday — and “no time — and “on Tuesday — and “on Wednesday — and “on Thursday — and “on Friday — and “at the weekend”.'
+    ar: 'قولي: “هل عندك وقت؟ — و“يوم الاثنين — و“لا وقت — و“يوم الثلاثاء — و“يوم الأربعاء — و“يوم الخميس — و“يوم الجمعة — و“في عطلة نهاية الأسبوع”.'
+    mk: 'Кажете: „Имаш ли време?“ — и „во понеделник“ — и „немам време“ — и „во вторник“ — и „во среда“ — и „во четврток“ — и „во петок“ — и „за викендот“.'
+  answer:
+    speaker: protagonist
+    text: Hast du Zeit? … am Montag … keine Zeit … am Dienstag … am Mittwoch … am Donnerstag … am Freitag … am Wochenende
+  items:
+  - hast-du-zeit
+  - am-montag
+  - keine-zeit
+  - am-dienstag
+  - am-mittwoch
+  - am-donnerstag
+  - am-freitag
+  - am-wochenende
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “today — and “tomorrow — and “Does … suit you? (informal) — and “Deal! — and “I cook — and “the rice (object) — and “the vegetables — and “the stove”.'
+    ar: 'قولي: “اليوم — و“غدًا — و“هل يناسبك …؟ — و“اتفقنا! — و“أطبخ — و“الأرز — و“الخضار — و“الموقد”.'
+    mk: 'Кажете: „денес“ — и „утре“ — и „Ти одговара ли …?“ — и „Договорено!“ — и „готвам“ — и „оризот“ — и „зеленчукот“ — и „шпоретот“.'
+  answer:
+    speaker: protagonist
+    text: heute … morgen … Passt dir …? … Abgemacht! … ich koche … den Reis … das Gemüse … der Herd
+  items:
+  - heute
+  - morgen
+  - passt-dir
+  - abgemacht
+  - ich-koche
+  - den-reis
+  - das-gemuese
+  - der-herd
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “hot — and “salty — and “spicy — and “Have a taste! (informal) — and “tastes (good) — and “the recipe — and “brought along — and “Enjoy your meal!”.'
+    ar: 'قولي: “ساخن — و“مالح — و“حار (حرّيف) — و“ذُق! — و“طعمه (طيب) — و“الوصفة — و“أحضرنا معنا — و“بالهناء والشفاء!”.'
+    mk: 'Кажете: „жешко“ — и „солено“ — и „луто“ — и „Проба!“ — и „има вкус, е вкусно“ — и „рецептот“ — и „донесовме“ — и „Пријатно!“.'
+  answer:
+    speaker: protagonist
+    text: heiß … salzig … scharf … Probier mal! … schmeckt … das Rezept … mitgebracht … Guten Appetit!
+  items:
+  - heiss
+  - salzig
+  - scharf
+  - probier-mal
+  - schmeckt
+  - das-rezept
+  - mitgebracht
+  - guten-appetit
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Hang on a moment! — and “the rubbish — and “separate, sort — and “the yellow bin (packaging) — and “plastic — and “paper — and “the blue one — and “food waste”.'
+    ar: 'قولي: “لحظة من فضلك! — و“النفايات — و“يفرز — و“الحاوية الصفراء (التغليف) — و“البلاستيك — و“الورق — و“الزرقاء — و“النفايات العضوية”.'
+    mk: 'Кажете: „Чекајте малку!“ — и „ѓубрето“ — и „одвојува“ — и „жолтиот контејнер (амбалажа)“ — и „пластиката“ — и „хартијата“ — и „синиот“ — и „органскиот отпад“.'
+  answer:
+    speaker: protagonist
+    text: Moment mal! … der Müll … trennen … die gelbe Tonne … das Plastik … das Papier … die blaue … der Biomüll
+  items:
+  - moment-mal
+  - der-muell
+  - trennen
+  - die-gelbe-tonne
+  - das-plastik
+  - das-papier
+  - die-blaue
+  - der-biomuell
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “general waste — and “glass — and “Take … (polite command) — and “to the container — and “Good evening — and “cold — and “outside — and “already”.'
+    ar: 'قولي: “بقية النفايات — و“الزجاج — و“خذ … (أمر مؤدب) — و“إلى الحاوية — و“مساء الخير — و“بارد — و“في الخارج — و“بالفعل، أصلًا”.'
+    mk: 'Кажете: „останатиот отпад“ — и „стаклото“ — и „Однесете …“ — и „до контејнерот“ — и „Добровечер“ — и „ладно“ — и „надвор“ — и „веќе“.'
+  answer:
+    speaker: protagonist
+    text: der Restmüll … das Glas … Bringen Sie … … zum Container … Guten Abend … kalt … draußen … schon
+  items:
+  - der-restmuell
+  - das-glas
+  - bringen-sie
+  - zum-container
+  - guten-abend
+  - kalt
+  - draussen
+  - schon
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “dark — and “in winter — and “light, bright — and “grey — and “wipe (your shoes) — and “wet — and “inside — and “warm”.'
+    ar: 'قولي: “مظلم — و“في الشتاء — و“مضيء، فاتح — و“رمادي — و“امسح (حذاءك) — و“مبلّل — و“في الداخل — و“دافئ”.'
+    mk: 'Кажете: „темно“ — и „во зима“ — и „светло“ — и „сиво“ — и „избришете (чевлите)“ — и „мокро“ — и „внатре“ — и „топло“.'
+  answer:
+    speaker: protagonist
+    text: dunkel … im Winter … hell … grau … treten … ab … nass … drinnen … warm
+  items:
+  - dunkel
+  - im-winter
+  - hell
+  - grau
+  - abtreten
+  - nass
+  - drinnen
+  - warm
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “take off (clothes) — and “the jacket — and “windy”.'
+    ar: 'قولي: “أخلع — و“السترة / الجاكيت — و“عاصف، فيه رياح”.'
+    mk: 'Кажете: „соблекувам“ — и „јакната“ — и „ветровито“.'
+  answer:
+    speaker: protagonist
+    text: ziehe … aus … die Jacke … windig
+  items:
+  - ziehe-aus
+  - die-jacke
+  - windig
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

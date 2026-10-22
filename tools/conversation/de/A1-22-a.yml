@@ -1,0 +1,455 @@
+# UNIT de A1-22-a — written by AI (Claude) for Casus; expanded from src/A1-22-a.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-22-a
+level: A1
+number: 22
+protagonist: m
+tracks:
+- ar
+title:
+  ar: كم الساعة؟
+situation:
+  ar: الحضانة تغلق في الرابعة والنصف. تصل في الخامسة إلا ربعًا. السيدة كروغر تنتظر مع يارا.
+learn_lessons:
+- a1-time
+culture: Five minutes late needs a sorry
+new_items:
+- id: wie-spaet-ist-es
+  text: Wie spät ist es?
+  meaning:
+    ar: كم الساعة؟
+- id: halb-fuenf
+  text: halb fünf
+  meaning:
+    ar: الرابعة والنصف
+- id: viertel-vor
+  text: Viertel vor
+  meaning:
+    ar: إلا ربعًا
+- id: viertel-nach
+  text: Viertel nach
+  meaning:
+    ar: وربع
+- id: puenktlich-a
+  text: pünktlich
+  meaning:
+    ar: في الموعد
+- id: zu-spaet
+  text: zu spät
+  meaning:
+    ar: متأخر
+- id: die-verspaetung
+  text: die Verspätung
+  meaning:
+    ar: التأخير
+- id: rufen-sie-an
+  text: Rufen Sie an
+  meaning:
+    ar: اتصل (أمر مؤدب)
+- id: das-naechste-mal
+  text: das nächste Mal
+  meaning:
+    ar: في المرة القادمة
+- id: es-tut-mir-leid
+  text: Es tut mir leid
+  meaning:
+    ar: آسف
+reviews:
+- item: geschlossen
+  from: A1-07
+- item: heute-ist-sonntag
+  from: A1-07
+- item: alles
+  from: A1-07
+- item: kann-ich
+  from: A1-07
+- item: irgendwo
+  from: A1-07
+- item: brot
+  from: A1-07
+- item: die-baeckerei
+  from: A1-07
+- item: an-der-ecke
+  from: A1-07
+- item: offen
+  from: A1-07
+- item: der-feiertag
+  from: A1-07
+- item: lieber-nicht
+  from: A1-07
+- item: die-ruhe
+  from: A1-07
+- item: spazieren
+  from: A1-07
+- item: das-sofa
+  from: A1-15
+- item: passt
+  from: A1-15
+- item: messen
+  from: A1-15
+- item: wie-breit
+  from: A1-15
+- item: meter
+  from: A1-15
+- item: zentimeter
+  from: A1-15
+- item: lang
+  from: A1-15
+- item: die-ecke
+  from: A1-15
+- item: rund
+  from: A1-15
+- item: eckig
+  from: A1-15
+- item: genau
+  from: A1-15
+- item: zu-gross
+  from: A1-15
+- item: frisch
+  from: A1-19
+- item: ein-kilo
+  from: A1-19
+- item: tomaten
+  from: A1-19
+- item: ein-stueck
+  from: A1-19
+- item: aepfel
+  from: A1-19
+- item: noch-etwas
+  from: A1-19
+- item: das-wars-alles
+  from: A1-19
+- item: zusammen
+  from: A1-19
+- item: stimmt-so
+  from: A1-19
+- item: geschenkt
+  from: A1-19
+- item: ein-halbes-kilo
+  from: A1-19
+- item: der-garten
+  from: A1-21
+- item: die-blumen
+  from: A1-21
+- item: giessen
+  from: A1-21
+- item: der-baum
+  from: A1-21
+- item: im-sommer
+  from: A1-21
+- item: die-pflanze
+  from: A1-21
+- item: fuer-sie
+  from: A1-21
+- item: braucht
+  from: A1-21
+- item: die-sonne
+  from: A1-21
+- item: dem-fenster
+  from: A1-21
+- item: jeden-zweiten-tag
+  from: A1-21
+- item: das-wasser
+  from: A1-21
+steps:
+- type: narrator
+  text:
+    ar: الحضانة تغلق في الرابعة والنصف. تصل في الخامسة إلا ربعًا. السيدة كروغر تنتظر مع يارا. استمع إلى المحادثة؛ لا داعي لأن تفهمها الآن.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Entschuldigung! Bin ich zu spät?
+    meaning:
+      ar: عفوًا! هل تأخرت؟
+  - speaker: kruger
+    text: Ja. Wir schließen um halb fünf. Jetzt ist es Viertel vor fünf.
+    meaning:
+      ar: نعم. نغلق في الرابعة والنصف. الآن الخامسة إلا ربعًا.
+  - speaker: protagonist
+    text: Es tut mir leid. Die Straßenbahn hatte Verspätung.
+    meaning:
+      ar: آسف. الترام تأخر.
+  - speaker: kruger
+    text: Das kann passieren. Aber bitte rufen Sie an.
+    meaning:
+      ar: قد يحدث هذا. لكن من فضلك اتصل.
+  - speaker: protagonist
+    text: Wie spät kann ich kommen?
+    meaning:
+      ar: إلى أيّ ساعة يمكنني أن آتي؟
+  - speaker: kruger
+    text: Bis halb fünf. Pünktlich, bitte.
+    meaning:
+      ar: حتى الرابعة والنصف. في الموعد من فضلك.
+  - speaker: protagonist
+    text: Verstanden. Das nächste Mal bin ich pünktlich.
+    meaning:
+      ar: فهمت. في المرة القادمة سآتي في الموعد.
+  - speaker: yara
+    text: Papa! Ich habe gewartet!
+    meaning:
+      ar: بابا! انتظرتُ!
+- type: prompt
+  ask:
+    ar: 'اسأل: هل تأخرت؟'
+  answer:
+    speaker: protagonist
+    text: Bin ich zu spät?
+  items:
+  - zu-spaet
+- type: narrator
+  text:
+    ar: 'الأنصاف تُحسب نحو الساعة التالية: «halb fünf» تعني الرابعة والنصف — حرفيًا «نصف إلى الخامسة». و«Viertel vor fünf» الخامسة إلا ربعًا، و«Viertel nach vier» الرابعة وربع.'
+- type: prompt
+  ask:
+    ar: 'تقول: نغلق في الرابعة والنصف.'
+  answer:
+    speaker: protagonist
+    text: Wir schließen um halb fünf.
+  items:
+  - halb-fuenf
+- type: prompt
+  ask:
+    ar: 'قل: الخامسة إلا ربعًا.'
+  answer:
+    speaker: protagonist
+    text: Viertel vor fünf.
+  items:
+  - viertel-vor
+- type: prompt
+  ask:
+    ar: 'قل: الرابعة وربع.'
+  answer:
+    speaker: protagonist
+    text: Viertel nach vier.
+  items:
+  - viertel-nach
+- type: prompt
+  ask:
+    ar: 'اعتذر: آسف.'
+  answer:
+    speaker: protagonist
+    text: Es tut mir leid.
+  items:
+  - es-tut-mir-leid
+- type: prompt
+  ask:
+    ar: 'قل: الترام تأخر. (التأخير)'
+  answer:
+    speaker: protagonist
+    text: Die Verspätung.
+  items:
+  - die-verspaetung
+- type: prompt
+  ask:
+    ar: 'تقول: من فضلك اتصل.'
+  answer:
+    speaker: protagonist
+    text: Bitte rufen Sie an.
+  items:
+  - rufen-sie-an
+- type: prompt
+  ask:
+    ar: 'اسأل: كم الساعة؟'
+  answer:
+    speaker: protagonist
+    text: Wie spät ist es?
+  items:
+  - wie-spaet-ist-es
+- type: prompt
+  ask:
+    ar: 'قل: في المرة القادمة سآتي في الموعد.'
+  answer:
+    speaker: protagonist
+    text: Das nächste Mal bin ich pünktlich.
+  items:
+  - das-naechste-mal
+  - puenktlich-a
+- type: narrator
+  text:
+    ar: 'مواعيد الحضانة صارمة: المربيات ينهين عملهن في وقت محدد. إن كنت ستتأخر خمس دقائق فاتصل قبل ذلك؛ والتأخير المتكرر يُكتب ويُناقش.'
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قل “كم الساعة؟”.'
+  answer:
+    speaker: protagonist
+    text: Wie spät ist es?
+  items:
+  - wie-spaet-ist-es
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قل “الرابعة والنصف”.'
+  answer:
+    speaker: protagonist
+    text: halb fünf
+  items:
+  - halb-fuenf
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قل “إلا ربعًا”.'
+  answer:
+    speaker: protagonist
+    text: Viertel vor
+  items:
+  - viertel-vor
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قل “وربع”.'
+  answer:
+    speaker: protagonist
+    text: Viertel nach
+  items:
+  - viertel-nach
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قل “في الموعد”.'
+  answer:
+    speaker: protagonist
+    text: pünktlich
+  items:
+  - puenktlich-a
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قل “متأخر”.'
+  answer:
+    speaker: protagonist
+    text: zu spät
+  items:
+  - zu-spaet
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قل “التأخير”.'
+  answer:
+    speaker: protagonist
+    text: die Verspätung
+  items:
+  - die-verspaetung
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قل “اتصل (أمر مؤدب)”.'
+  answer:
+    speaker: protagonist
+    text: Rufen Sie an
+  items:
+  - rufen-sie-an
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قل “في المرة القادمة”.'
+  answer:
+    speaker: protagonist
+    text: das nächste Mal
+  items:
+  - das-naechste-mal
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قل “آسف”.'
+  answer:
+    speaker: protagonist
+    text: Es tut mir leid
+  items:
+  - es-tut-mir-leid
+- type: narrator
+  text:
+    ar: والآن بعض ما تعلمتَه في الوحدات السابقة، في هذا الموقف الجديد.
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “الحديقة — و“الأزهار — و“يسقي — و“الشجرة — و“في الصيف — و“النبتة — و“لكِ (بصيغة الاحترام) — و“تحتاج”.'
+  answer:
+    speaker: protagonist
+    text: der Garten … die Blumen … gießen … der Baum … im Sommer … die Pflanze … für Sie … braucht
+  items:
+  - der-garten
+  - die-blumen
+  - giessen
+  - der-baum
+  - im-sommer
+  - die-pflanze
+  - fuer-sie
+  - braucht
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “الشمس — و“عند النافذة — و“كل يومين — و“الماء — و“طازج — و“كيلو — و“طماطم — و“قطعة”.'
+  answer:
+    speaker: protagonist
+    text: die Sonne … am Fenster … jeden zweiten Tag … das Wasser … frisch … ein Kilo … Tomaten … ein Stück
+  items:
+  - die-sonne
+  - dem-fenster
+  - jeden-zweiten-tag
+  - das-wasser
+  - frisch
+  - ein-kilo
+  - tomaten
+  - ein-stueck
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “تفاح — و“شيء آخر؟ — و“هذا كل شيء — و“المجموع — و“احتفظ بالباقي — و“هدية، مجانًا — و“نصف كيلو — و“الأريكة”.'
+  answer:
+    speaker: protagonist
+    text: Äpfel … Noch etwas? … Das ist alles … zusammen … Stimmt so … geschenkt … ein halbes Kilo … das Sofa
+  items:
+  - aepfel
+  - noch-etwas
+  - das-wars-alles
+  - zusammen
+  - stimmt-so
+  - geschenkt
+  - ein-halbes-kilo
+  - das-sofa
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “يتسع، يناسب — و“يقيس — و“كم عرض …؟ — و“متر — و“سنتيمتر — و“طويل — و“الزاوية — و“مستدير”.'
+  answer:
+    speaker: protagonist
+    text: passt … messen … Wie breit …? … Meter … Zentimeter … lang … die Ecke … rund
+  items:
+  - passt
+  - messen
+  - wie-breit
+  - meter
+  - zentimeter
+  - lang
+  - die-ecke
+  - rund
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “مربّع الشكل — و“بالضبط — و“كبير جدًا — و“مغلق — و“اليوم الأحد — و“كل شيء — و“هل يمكنني …؟ — و“في مكان ما”.'
+  answer:
+    speaker: protagonist
+    text: eckig … genau … zu groß … geschlossen … heute ist Sonntag … alles … Kann ich …? … irgendwo
+  items:
+  - eckig
+  - genau
+  - zu-gross
+  - geschlossen
+  - heute-ist-sonntag
+  - alles
+  - kann-ich
+  - irgendwo
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “خبز — و“المخبز — و“عند الزاوية — و“مفتوح — و“العطلة الرسمية — و“الأفضل لا — و“الهدوء — و“أتمشّى”.'
+  answer:
+    speaker: protagonist
+    text: Brot … die Bäckerei … an der Ecke … offen … der Feiertag … lieber nicht … die Ruhe … gehe … spazieren
+  items:
+  - brot
+  - die-baeckerei
+  - an-der-ecke
+  - offen
+  - der-feiertag
+  - lieber-nicht
+  - die-ruhe
+  - spazieren
+- type: narrator
+  text:
+    ar: استمع إلى المحادثة مرة أخرى. الآن تفهمها.
+- type: dialogue
+  again: true
+- type: selfcheck

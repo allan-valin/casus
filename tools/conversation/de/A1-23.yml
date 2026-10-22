@@ -1,0 +1,642 @@
+# UNIT de A1-23 — written by AI (Claude) for Casus; expanded from src/A1-23.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-23
+level: A1
+number: 23
+protagonist: f
+title:
+  en: Quiet hours
+  ar: ساعات الهدوء
+  mk: Време за мир
+situation:
+  en: 'Ten past ten at night. Friends are visiting. Someone knocks: Frau Becker in her dressing gown.'
+  ar: 'العاشرة وعشر دقائق ليلًا. عندكِ ضيوف. أحدهم يطرق الباب: السيدة بيكر بثوب النوم.'
+  mk: 'Десет и десет навечер. Имате гости. Некој чука: госпоѓа Бекер во бањарка.'
+learn_lessons:
+- a1-modal-duerfen
+culture: Late visits
+new_items:
+- id: zu-laut
+  text: zu laut
+  meaning:
+    en: too loud
+    ar: عالٍ جدًا
+    mk: премногу бучно
+- id: nach-zehn-uhr
+  text: nach zehn Uhr
+  meaning:
+    en: after ten o'clock
+    ar: بعد الساعة العاشرة
+    mk: по десет часот
+- id: die-ruhezeit
+  text: die Ruhezeit
+  meaning:
+    en: the quiet hours
+    ar: ساعات الهدوء
+    mk: времето за мир
+  rare: true
+- id: man-darf
+  text: man darf …
+  meaning:
+    en: you're allowed to … (one may)
+    ar: يُسمح لـ … (يجوز)
+    mk: смее да се …
+- id: nicht-mehr
+  text: nicht mehr
+  meaning:
+    en: no longer, not any more
+    ar: لم يعد
+    mk: веќе не
+- id: leise
+  text: leise
+  meaning:
+    en: quiet
+    ar: بهدوء
+    mk: тивко
+- id: ich-schlafe
+  text: ich schlafe
+  meaning:
+    en: I sleep
+    ar: أنام
+    mk: спијам
+- id: die-gaeste
+  text: die Gäste
+  meaning:
+    en: the guests
+    ar: الضيوف
+    mk: гостите
+- id: darf-ich
+  text: Darf ich …?
+  meaning:
+    en: May I …?
+    ar: هل يُسمح لي …؟
+    mk: Смеам ли …?
+- id: natuerlich
+  text: natürlich
+  meaning:
+    en: of course
+    ar: طبعًا
+    mk: секако
+- id: gute-nacht
+  text: Gute Nacht!
+  meaning:
+    en: Good night!
+    ar: تصبحين على خير!
+    mk: Добра ноќ!
+reviews:
+- item: faehrt
+  from: A1-08
+- item: zum-hauptbahnhof
+  from: A1-08
+- item: umsteigen
+  from: A1-08
+- item: die-strassenbahn
+  from: A1-08
+- item: die-haltestelle
+  from: A1-08
+- item: da-drueben
+  from: A1-08
+- item: die-fahrkarte
+  from: A1-08
+- item: mit-der-app
+  from: A1-08
+- item: einsteigen
+  from: A1-08
+- item: hinten
+  from: A1-08
+- item: der-kinderwagen
+  from: A1-08
+- item: aussteigen
+  from: A1-08
+- item: ich-will
+  from: A1-16
+- item: ein-konto
+  from: A1-16
+- item: eroeffnen
+  from: A1-16
+- item: welche-unterlagen
+  from: A1-16
+- item: den-pass
+  from: A1-16
+- item: die-meldebescheinigung
+  from: A1-16
+- item: die-steuer-id
+  from: A1-16
+- item: habe-ich-nicht
+  from: A1-16
+- item: kommt-per-post
+  from: A1-16
+- item: unterschreiben
+  from: A1-16
+- item: die-karte-kommt
+  from: A1-16
+- item: wollen-sie
+  from: A1-16
+- item: hast-du-zeit
+  from: A1-20
+- item: am-montag
+  from: A1-20
+- item: keine-zeit
+  from: A1-20
+- item: am-dienstag
+  from: A1-20
+- item: am-mittwoch
+  from: A1-20
+- item: am-donnerstag
+  from: A1-20
+- item: am-freitag
+  from: A1-20
+- item: am-wochenende
+  from: A1-20
+- item: heute
+  from: A1-20
+- item: morgen
+  from: A1-20
+- item: passt-dir
+  from: A1-20
+- item: abgemacht
+  from: A1-20
+- item: wie-spaet-ist-es
+  from: A1-22-e
+- item: halb-acht
+  from: A1-22-e
+  for:
+  - en
+- item: viertel-nach
+  from: A1-22-e
+- item: viertel-vor
+  from: A1-22-e
+- item: genau-acht
+  from: A1-22-e
+  for:
+  - en
+- item: zu-spaet
+  from: A1-22-e
+- item: die-verspaetung
+  from: A1-22-e
+- item: frueh
+  from: A1-22-e
+  for:
+  - en
+- item: schon-da
+  from: A1-22-e
+  for:
+  - en
+- item: das-naechste-mal
+  from: A1-22-e
+- item: halb-fuenf
+  from: A1-22-a
+  for:
+  - ar
+  - mk
+- item: puenktlich-a
+  from: A1-22-a
+  for:
+  - ar
+- item: rufen-sie-an
+  from: A1-22-a
+  for:
+  - ar
+  - mk
+- item: es-tut-mir-leid
+  from: A1-22-a
+  for:
+  - ar
+  - mk
+- item: puenktlich-m
+  from: A1-22-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: 'Ten past ten at night. Friends are visiting. Someone knocks: Frau Becker in her dressing gown. Listen to the conversation; you don''t need to understand it yet.'
+    ar: 'العاشرة وعشر دقائق ليلًا. عندكِ ضيوف. أحدهم يطرق الباب: السيدة بيكر بثوب النوم. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.'
+    mk: 'Десет и десет навечер. Имате гости. Некој чука: госпоѓа Бекер во бањарка. Слушнете го разговорот; уште не мора да го разберете.'
+- type: dialogue
+  lines:
+  - speaker: becker
+    text: Entschuldigung, es ist zu laut. Es ist nach zehn Uhr.
+    meaning:
+      en: Excuse me, it's too loud. It's after ten o'clock.
+      ar: عفوًا، الصوت عالٍ جدًا. الساعة بعد العاشرة.
+      mk: Извинете, премногу бучно е. Поминато е десет часот.
+  - speaker: protagonist
+    text: Oh! Entschuldigung. Ist das ein Problem?
+    meaning:
+      en: Oh! Sorry. Is that a problem?
+      ar: آه! عفوًا. هل هذه مشكلة؟
+      mk: О! Извинете. Дали е проблем?
+  - speaker: becker
+    text: Ab zehn ist Ruhezeit. Dann darf man nicht mehr laut sein.
+    meaning:
+      en: From ten it's quiet hours. Then you mustn't be loud any more.
+      ar: من العاشرة ساعات الهدوء. حينها لا يجوز رفع الصوت.
+      mk: Од десет е време за мир. Тогаш не смее да се биде гласно.
+  - speaker: protagonist
+    text: Die Gäste gehen bald.
+    meaning:
+      en: The guests are leaving soon.
+      ar: الضيوف سيغادرون قريبًا.
+      mk: Гостите наскоро си одат.
+  - speaker: becker
+    text: Gut. Ich schlafe unten, und ich arbeite um sechs.
+    meaning:
+      en: Good. I sleep downstairs, and I work at six.
+      ar: حسنًا. أنا أنام في الأسفل، وأعمل في السادسة.
+      mk: Добро. Јас спијам долу, а работам во шест.
+  - speaker: protagonist
+    text: Natürlich. Wir sind jetzt leise.
+    meaning:
+      en: Of course. We'll be quiet now.
+      ar: طبعًا. سنكون هادئين الآن.
+      mk: Секако. Сега ќе бидеме тивко.
+  - speaker: protagonist
+    text: Darf ich am Samstag Gäste haben? Bis elf?
+    meaning:
+      en: May I have guests on Saturday? Until eleven?
+      ar: هل يُسمح لي باستقبال ضيوف يوم السبت؟ حتى الحادية عشرة؟
+      mk: Смеам ли во сабота да имам гости? До единаесет?
+  - speaker: becker
+    text: Sagen Sie es vorher. Dann ist es kein Problem. Gute Nacht!
+    meaning:
+      en: Tell me beforehand. Then it's no problem. Good night!
+      ar: أخبريني مسبقًا. عندها لا مشكلة. تصبحين على خير!
+      mk: Кажете ми однапред. Тогаш не е проблем. Добра ноќ!
+- type: prompt
+  ask:
+    en: 'She says: it''s too loud.'
+    ar: 'تقول: الصوت عالٍ جدًا.'
+    mk: 'Таа вели: премногу бучно е.'
+  answer:
+    speaker: protagonist
+    text: Es ist zu laut.
+  items:
+  - zu-laut
+- type: prompt
+  ask:
+    en: 'She says: it''s after ten o''clock.'
+    ar: 'تقول: الساعة بعد العاشرة.'
+    mk: 'Таа вели: поминато е десет часот.'
+  answer:
+    speaker: protagonist
+    text: Es ist nach zehn Uhr.
+  items:
+  - nach-zehn-uhr
+- type: prompt
+  ask:
+    en: 'Say: the quiet hours.'
+    ar: 'قولي: ساعات الهدوء.'
+    mk: 'Кажете: времето за мир.'
+  answer:
+    speaker: protagonist
+    text: Die Ruhezeit.
+  items:
+  - die-ruhezeit
+- type: narrator
+  text:
+    en: '«dürfen» — be allowed: «man darf» (one may), «Darf ich …?» (may I?). With «nicht» it means ''must not'': «man darf nicht laut sein».'
+    ar: '«dürfen» تعني: يُسمح. «man darf» (يجوز)، «Darf ich …?» (هل يُسمح لي؟). ومع «nicht» تعني: لا يجوز: «man darf nicht laut sein».'
+    mk: '«dürfen» — смее: «man darf» (се смее), «Darf ich …?» (смеам ли?). Со «nicht» значи не смее: «man darf nicht laut sein».'
+- type: prompt
+  ask:
+    en: 'Say for her: you mustn''t be loud any more.'
+    ar: 'قوليها بلسانها: لا يجوز رفع الصوت بعد الآن.'
+    mk: 'Кажете наместо неа: веќе не смее да се биде гласно.'
+  answer:
+    speaker: protagonist
+    text: Man darf nicht mehr laut sein.
+  items:
+  - man-darf
+  - nicht-mehr
+- type: prompt
+  ask:
+    en: 'Say: the guests are leaving soon.'
+    ar: 'قولي: الضيوف سيغادرون قريبًا.'
+    mk: 'Кажете: гостите наскоро си одат.'
+  answer:
+    speaker: protagonist
+    text: Die Gäste gehen bald.
+  items:
+  - die-gaeste
+- type: prompt
+  ask:
+    en: 'She says: I sleep downstairs.'
+    ar: 'تقول: أنام في الأسفل.'
+    mk: 'Таа вели: спијам долу.'
+  answer:
+    speaker: protagonist
+    text: Ich schlafe unten.
+  items:
+  - ich-schlafe
+- type: prompt
+  ask:
+    en: 'Say: of course. We''ll be quiet now.'
+    ar: 'قولي: طبعًا. سنكون هادئين الآن.'
+    mk: 'Кажете: секако. Сега ќе бидеме тивко.'
+  answer:
+    speaker: protagonist
+    text: Natürlich. Wir sind jetzt leise.
+  items:
+  - natuerlich
+  - leise
+- type: prompt
+  ask:
+    en: 'Ask: may I have guests on Saturday?'
+    ar: 'اسألي: هل يُسمح لي باستقبال ضيوف يوم السبت؟'
+    mk: 'Прашајте: смеам ли во сабота да имам гости?'
+  answer:
+    speaker: protagonist
+    text: Darf ich am Samstag Gäste haben?
+  items:
+  - darf-ich
+- type: prompt
+  ask:
+    en: 'She says: good night!'
+    ar: 'تقول: تصبحين على خير!'
+    mk: 'Таа вели: добра ноќ!'
+  answer:
+    speaker: protagonist
+    text: Gute Nacht!
+  items:
+  - gute-nacht
+- type: narrator
+  text:
+    en: House rules usually set quiet hours from 10 p.m. to 6 a.m., and all of Sunday. Tell your neighbours before a party — a note on the door is enough — and most will say yes.
+    ar: قواعد العمارة تحدد عادةً ساعات الهدوء من العاشرة ليلًا حتى السادسة صباحًا، ويوم الأحد كله. أخبري الجيران قبل أي حفلة — ورقة على الباب تكفي — وأغلبهم سيوافق.
+    mk: Куќниот ред обично одредува време за мир од десет навечер до шест наутро, и цела недела. Кажете им на соседите пред забава — доволна е белешка на вратата — и повеќето ќе се согласат.
+- type: narrator
+  for:
+  - ar
+  - mk
+  text:
+    ar: في سوريا الزيارات المتأخرة عادية والسهر مع الضيوف جزء من الكرم. هنا، بعد العاشرة، يُنتظر الهدوء — حتى مع الضيوف.
+    mk: Кај нас гостите седат до полноќ и никој не се лути. Тука по десет се очекува тишина — и со гости.
+- type: prompt
+  ask:
+    en: 'Once more: say “too loud”.'
+    ar: 'مرة أخرى: قولي “عالٍ جدًا”.'
+    mk: 'Уште еднаш: кажете „премногу бучно“.'
+  answer:
+    speaker: protagonist
+    text: zu laut
+  items:
+  - zu-laut
+- type: prompt
+  ask:
+    en: 'Once more: say “after ten o''clock”.'
+    ar: 'مرة أخرى: قولي “بعد الساعة العاشرة”.'
+    mk: 'Уште еднаш: кажете „по десет часот“.'
+  answer:
+    speaker: protagonist
+    text: nach zehn Uhr
+  items:
+  - nach-zehn-uhr
+- type: prompt
+  ask:
+    en: 'Once more: say “the quiet hours”.'
+    ar: 'مرة أخرى: قولي “ساعات الهدوء”.'
+    mk: 'Уште еднаш: кажете „времето за мир“.'
+  answer:
+    speaker: protagonist
+    text: die Ruhezeit
+  items:
+  - die-ruhezeit
+- type: prompt
+  ask:
+    en: 'Once more: say “you''re allowed to … (one may)”.'
+    ar: 'مرة أخرى: قولي “يُسمح لـ … (يجوز)”.'
+    mk: 'Уште еднаш: кажете „смее да се …“.'
+  answer:
+    speaker: protagonist
+    text: man darf …
+  items:
+  - man-darf
+- type: prompt
+  ask:
+    en: 'Once more: say “no longer, not any more”.'
+    ar: 'مرة أخرى: قولي “لم يعد”.'
+    mk: 'Уште еднаш: кажете „веќе не“.'
+  answer:
+    speaker: protagonist
+    text: nicht mehr
+  items:
+  - nicht-mehr
+- type: prompt
+  ask:
+    en: 'Once more: say “quiet”.'
+    ar: 'مرة أخرى: قولي “بهدوء”.'
+    mk: 'Уште еднаш: кажете „тивко“.'
+  answer:
+    speaker: protagonist
+    text: leise
+  items:
+  - leise
+- type: prompt
+  ask:
+    en: 'Once more: say “I sleep”.'
+    ar: 'مرة أخرى: قولي “أنام”.'
+    mk: 'Уште еднаш: кажете „спијам“.'
+  answer:
+    speaker: protagonist
+    text: ich schlafe
+  items:
+  - ich-schlafe
+- type: prompt
+  ask:
+    en: 'Once more: say “the guests”.'
+    ar: 'مرة أخرى: قولي “الضيوف”.'
+    mk: 'Уште еднаш: кажете „гостите“.'
+  answer:
+    speaker: protagonist
+    text: die Gäste
+  items:
+  - die-gaeste
+- type: prompt
+  ask:
+    en: 'Once more: say “May I …?”.'
+    ar: 'مرة أخرى: قولي “هل يُسمح لي …؟”.'
+    mk: 'Уште еднаш: кажете „Смеам ли …?“.'
+  answer:
+    speaker: protagonist
+    text: Darf ich …?
+  items:
+  - darf-ich
+- type: prompt
+  ask:
+    en: 'Once more: say “of course”.'
+    ar: 'مرة أخرى: قولي “طبعًا”.'
+    mk: 'Уште еднаш: кажете „секако“.'
+  answer:
+    speaker: protagonist
+    text: natürlich
+  items:
+  - natuerlich
+- type: prompt
+  ask:
+    en: 'Once more: say “Good night!”.'
+    ar: 'مرة أخرى: قولي “تصبحين على خير!”.'
+    mk: 'Уште еднаш: кажете „Добра ноќ!“.'
+  answer:
+    speaker: protagonist
+    text: Gute Nacht!
+  items:
+  - gute-nacht
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “What time is it? — and “quarter past — and “quarter to — and “too late — and “the delay — and “next time — and “Do you have time? (informal) — and “on Monday — and “no time — and “on Tuesday
+      — and “on Wednesday — and “on Thursday — and “on Friday — and “at the weekend — and “today — and “tomorrow — and “Does … suit you? (informal) — and “Deal! — and “I want — and “an account — and “open
+      (an account)”.'
+    ar: 'قولي: “كم الساعة؟ — و“وربع — و“إلا ربعًا — و“متأخر — و“التأخير — و“في المرة القادمة — و“هل عندك وقت؟ — و“يوم الاثنين — و“لا وقت — و“يوم الثلاثاء — و“يوم الأربعاء — و“يوم الخميس — و“يوم الجمعة —
+      و“في عطلة نهاية الأسبوع — و“اليوم — و“غدًا — و“هل يناسبك …؟ — و“اتفقنا! — و“أريد — و“حسابًا — و“يفتح (حسابًا)”.'
+    mk: 'Кажете: „Колку е часот?“ — и „и петнаесет“ — и „помалку петнаесет“ — и „доцна“ — и „доцнењето“ — и „следниот пат“ — и „Имаш ли време?“ — и „во понеделник“ — и „немам време“ — и „во вторник“ — и
+      „во среда“ — и „во четврток“ — и „во петок“ — и „за викендот“ — и „денес“ — и „утре“ — и „Ти одговара ли …?“ — и „Договорено!“ — и „сакам“ — и „сметка“ — и „отвора“.'
+  answer:
+    speaker: protagonist
+    text: Wie spät ist es? … Viertel nach … Viertel vor … zu spät … die Verspätung … das nächste Mal … Hast du Zeit? … am Montag … keine Zeit … am Dienstag … am Mittwoch … am Donnerstag … am Freitag … am
+      Wochenende … heute … morgen … Passt dir …? … Abgemacht! … ich will … ein Konto … eröffnen
+  items:
+  - wie-spaet-ist-es
+  - viertel-nach
+  - viertel-vor
+  - zu-spaet
+  - die-verspaetung
+  - das-naechste-mal
+  - hast-du-zeit
+  - am-montag
+  - keine-zeit
+  - am-dienstag
+  - am-mittwoch
+  - am-donnerstag
+  - am-freitag
+  - am-wochenende
+  - heute
+  - morgen
+  - passt-dir
+  - abgemacht
+  - ich-will
+  - ein-konto
+  - eroeffnen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Which documents? — and “the passport (object) — and “the registration certificate — and “the tax ID — and “I don''t have (it) — and “comes by post — and “sign — and “the card comes — and
+      “Do you want …? (polite) — and “does … go? — and “to the main station — and “change (trains, buses) — and “the tram — and “the stop — and “over there — and “the ticket — and “with the app — and “get
+      on — and “at the back — and “the pram, the stroller — and “get off”.'
+    ar: 'قولي: “أيّ أوراق؟ — و“جواز السفر — و“شهادة تسجيل السكن — و“الرقم الضريبي — و“ليس معي — و“يأتي بالبريد — و“يوقّع — و“البطاقة تصل — و“هل تريد …؟ — و“هل يذهب …؟ — و“إلى المحطة الرئيسية — و“يغيّر وسيلة
+      النقل — و“الترام — و“المحطة / الموقف — و“هناك — و“التذكرة — و“بالتطبيق — و“اصعد — و“في الخلف — و“عربة الأطفال — و“أنزل”.'
+    mk: 'Кажете: „Кои документи?“ — и „пасошот“ — и „потврдата за пријава“ — и „даночниот број“ — и „немам“ — и „доаѓа по пошта“ — и „потпишува“ — и „картичката доаѓа“ — и „Сакате ли …?“ — и „оди ли …?“
+      — и „до главната станица“ — и „да се префрлите“ — и „трамвајот“ — и „станицата“ — и „таму преку“ — и „билетот“ — и „со апликацијата“ — и „се качувате“ — и „назад, позади“ — и „количката“ — и „се симнувам“.'
+  answer:
+    speaker: protagonist
+    text: Welche Unterlagen? … den Pass … die Meldebescheinigung … die Steuer-ID … habe ich nicht … kommt per Post … unterschreiben … die Karte kommt … Wollen Sie …? … fährt …? … zum Hauptbahnhof … umsteigen
+      … die Straßenbahn … die Haltestelle … da drüben … die Fahrkarte … mit der App … steigen … ein … hinten … der Kinderwagen … steige … aus
+  items:
+  - welche-unterlagen
+  - den-pass
+  - die-meldebescheinigung
+  - die-steuer-id
+  - habe-ich-nicht
+  - kommt-per-post
+  - unterschreiben
+  - die-karte-kommt
+  - wollen-sie
+  - faehrt
+  - zum-hauptbahnhof
+  - umsteigen
+  - die-strassenbahn
+  - die-haltestelle
+  - da-drueben
+  - die-fahrkarte
+  - mit-der-app
+  - einsteigen
+  - hinten
+  - der-kinderwagen
+  - aussteigen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “half past seven (half to eight) — and “exactly eight”.'
+  answer:
+    speaker: protagonist
+    text: halb acht … genau acht
+  items:
+  - halb-acht
+  - genau-acht
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “early — and “already there”.'
+  answer:
+    speaker: protagonist
+    text: früh … schon da
+  items:
+  - frueh
+  - schon-da
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “الرابعة والنصف — و“اتصل (أمر مؤدب)”.'
+    mk: 'Кажете: „четири и пол“ — и „Јавете се“.'
+  answer:
+    speaker: protagonist
+    text: halb fünf … Rufen Sie an
+  items:
+  - halb-fuenf
+  - rufen-sie-an
+  for:
+  - ar
+  - mk
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “آسف”.'
+    mk: 'Кажете: „Жал ми е“.'
+  answer:
+    speaker: protagonist
+    text: Es tut mir leid
+  items:
+  - es-tut-mir-leid
+  for:
+  - ar
+  - mk
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “في الموعد”.'
+  answer:
+    speaker: protagonist
+    text: pünktlich
+  items:
+  - puenktlich-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „точно, навреме“.'
+  answer:
+    speaker: protagonist
+    text: pünktlich
+  items:
+  - puenktlich-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck
