@@ -1,0 +1,43 @@
+id: B1-16
+protagonist: m
+title: ["Complaining", "تقديم شكوى", "Поплака"]
+situation:
+  - "Your new phone switches itself off. Back to the shop, receipt in hand."
+  - "هاتفك الجديد ينطفئ وحده. تعود إلى المتجر والإيصال في يدك."
+  - "Новиот телефон сам се исклучува. Назад во продавницата, со сметката в рака."
+learn: [b1-passive]
+culture: Warranty and returns
+items:
+  - [die-garantie, "die Garantie", "the warranty", "الضمان", "гаранцијата"]
+  - [reklamieren, "reklamieren", "return as faulty", "يعيد سلعة معيبة", "рекламира", {rare: true}]
+  - [die-quittung, "die Quittung", "the receipt", "الإيصال", "сметката"]
+  - [kaputt-gegangen, "ist kaputtgegangen", "has broken", "تعطّل", "се расипа"]
+  - [geht-von-selbst-aus, "geht von selbst aus", "switches itself off", "ينطفئ وحده", "сам се исклучува"]
+  - [wird-repariert, "wird repariert", "is (being) repaired", "يُصلَح", "се поправа"]
+  - [wird-eingeschickt, "wird eingeschickt", "is sent in", "يُرسَل", "се испраќа"]
+  - [das-geld-zurueck, "das Geld zurück", "the money back", "استرداد المال", "парите назад"]
+  - [die-beschwerde, "die Beschwerde", "the complaint", "الشكوى", "поплаката"]
+  - [ich-moechte-mich-beschweren, "Ich möchte mich beschweren", "I'd like to make a complaint", "أريد أن أقدّم شكوى", "Сакам да се пожалам"]
+  - [wie-lange-dauert, "Wie lange dauert das?", "How long does that take?", "كم يستغرق ذلك؟", "Колку трае тоа?"]
+dialogue:
+  - [protagonist, "Guten Tag. Ich möchte mich beschweren. Das Handy geht von selbst aus.", "Hello. I'd like to make a complaint. The phone switches itself off.", "مرحبًا. أريد أن أقدّم شكوى. الهاتف ينطفئ وحده.", "Добар ден. Сакам да се пожалам. Телефонот сам се исклучува."]
+  - [kasse, "Haben Sie die Quittung?", "Do you have the receipt?", "هل معك الإيصال؟", "Ја имате ли сметката?"]
+  - [protagonist, "Ja, hier. Ich habe es vor zwei Wochen gekauft.", "Yes, here. I bought it two weeks ago.", "نعم، تفضلي. اشتريته قبل أسبوعين.", "Да, еве. Го купив пред две недели."]
+  - [kasse, "Dann haben Sie Garantie. Das Gerät wird eingeschickt und repariert.", "Then you have a warranty. The device is sent in and repaired.", "إذن لديك ضمان. الجهاز يُرسَل ويُصلَح.", "Тогаш имате гаранција. Апаратот се испраќа и се поправа."]
+  - [protagonist, "Wie lange dauert das?", "How long does that take?", "كم يستغرق ذلك؟", "Колку трае тоа?"]
+  - [kasse, "Zwei bis drei Wochen.", "Two to three weeks.", "من أسبوعين إلى ثلاثة.", "Две до три недели."]
+  - [protagonist, "So lange? Kann ich es nicht umtauschen? Oder das Geld zurück?", "That long? Can't I exchange it? Or get the money back?", "كل هذه المدة؟ ألا يمكنني استبداله؟ أو استرداد المال؟", "Толку долго? Не можам ли да го заменам? Или парите назад?"]
+  - [kasse, "Moment, ich frage meinen Chef... Gut, Sie bekommen ein neues.", "One moment, I'll ask my boss... OK, you get a new one.", "لحظة، سأسأل مديري... حسنًا، ستحصل على جهاز جديد.", "Момент, ќе го прашам шефот... Добро, добивате нов."]
+teach:
+  - ask: ["Say: I'd like to make a complaint.", "قل: أريد أن أقدّم شكوى.", "Кажете: сакам да се пожалам.", "Ich möchte mich beschweren.", ich-moechte-mich-beschweren]
+  - ask: ["Say: the phone switches itself off.", "قل: الهاتف ينطفئ وحده.", "Кажете: телефонот сам се исклучува.", "Das Handy geht von selbst aus.", geht-von-selbst-aus]
+  - ask: ["She asks for the receipt.", "تطلب الإيصال.", "Таа ја бара сметката.", "Haben Sie die Quittung?", die-quittung]
+  - ask: ["Say: it broke after two weeks.", "قل: تعطّل بعد أسبوعين.", "Кажете: се расипа по две недели.", "Es ist nach zwei Wochen kaputtgegangen.", kaputt-gegangen]
+  - ask: ["Say: then I have a warranty.", "قل: إذن لديّ ضمان.", "Кажете: тогаш имам гаранција.", "Dann habe ich Garantie.", die-garantie]
+  - ask: ["Say: the device is sent in and repaired.", "قل: الجهاز يُرسَل ويُصلَح.", "Кажете: апаратот се испраќа и се поправа.", "Das Gerät wird eingeschickt und repariert.", wird-eingeschickt, wird-repariert]
+  - ask: ["Ask: how long does that take?", "اسأل: كم يستغرق ذلك؟", "Прашајте: колку трае тоа?", "Wie lange dauert das?", wie-lange-dauert]
+  - ask: ["Ask: can't I exchange it?", "اسأل: ألا يمكنني استبداله؟", "Прашајте: не можам ли да го заменам?", "Kann ich es nicht umtauschen?", umtauschen]
+  - ask: ["Say: I'd like to return this as faulty.", "قل: أريد إعادة هذا لأنه معيب.", "Кажете: сакам ова да го рекламирам.", "Ich möchte das reklamieren.", reklamieren]
+  - ask: ["Ask: or the money back?", "اسأل: أو استرداد المال؟", "Прашајте: или парите назад?", "Oder das Geld zurück?", das-geld-zurueck]
+  - ask: ["Say: a complaint.", "قل: شكوى.", "Кажете: поплака.", "Eine Beschwerde.", die-beschwerde]
+  - note: ["In the EU the seller is responsible for faults for two years (Gewährleistung), on top of any maker's warranty. Keep the receipt. Shops don't have to take back working goods you simply don't like — online purchases are different: there you can usually return within 14 days.", "في الاتحاد الأوروبي البائع مسؤول عن العيوب لمدة سنتين (Gewährleistung)، إضافة إلى ضمان المصنّع. احتفظ بالإيصال. المتاجر غير ملزمة باسترجاع بضاعة سليمة لم تعجبك — أما المشتريات عبر الإنترنت فمختلفة: يمكن عادةً إرجاعها خلال 14 يومًا.", "Во ЕУ продавачот одговара за дефекти две години (Gewährleistung), покрај гаранцијата на производителот. Чувајте ја сметката. Продавниците не мора да вратат исправна стока што едноставно не ви се допаѓа — купувањето преку интернет е различно: таму обично може да вратите во рок од 14 дена."]

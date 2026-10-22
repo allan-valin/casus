@@ -36,6 +36,10 @@ voices:
   - {id: de-h-m, role: character, lang: de, gender: m, tts: "piper:de_DE-thorsten-medium", pitch: 0.92, speed: 0.86}
   - {id: de-pa-m, role: character, lang: de, gender: m, tts: "piper:de_DE-thorsten-medium", pitch: 0.96, speed: 1.12}
   - {id: de-sw-f, role: character, lang: de, gender: f, tts: "piper:de_DE-thorsten-medium", pitch: 1.16, speed: 1.1}
+  - {id: de-ra-f, role: character, lang: de, gender: f, tts: "piper:de_DE-thorsten-medium", pitch: 1.34, speed: 0.86}
+  - {id: de-om-m, role: character, lang: de, gender: m, tts: "piper:de_DE-thorsten-medium", pitch: 1.04, speed: 0.94}
+  - {id: de-go-f, role: character, lang: de, gender: f, tts: "piper:de_DE-thorsten-medium", pitch: 0.96, speed: 1.04}
+  - {id: de-br-m, role: character, lang: de, gender: m, tts: "piper:de_DE-thorsten-medium", pitch: 0.74, speed: 1.12}
   - {id: de-kind, role: character, lang: de, gender: m, tts: "piper:de_DE-thorsten-medium", pitch: 1.5, speed: 1.12}
   # Narrators: no open Macedonian voice (see tools/conversation/mk/story-bible.yml: Bulgarian Piper + mk phonemes,
   # pending Allan's ear); the Arabic Piper voice (ar_JO-kareem) has no stated licence, so the reader's own browser
@@ -89,6 +93,11 @@ cast:
 
   - {id: schwester, name: Die Schwester, role: "the protagonist's sister, visiting (B1-11); speaks German for the course's sake", voice: de-sw-f, register: informal, arc: "one visit"}
   - {id: schwager, name: Der Schwager, role: "the sister's husband (B1-11)", voice: de-wm-m, register: informal, arc: "one visit"}
+
+  - {id: braun, name: Herr Braun, role: "landlord showing a flat (B1-17)", voice: de-br-m, register: formal, arc: "one viewing"}
+  - {id: rana, name: Rana, role: "a Syrian friend who came as a refugee (A units, from B1-19)", voice: de-ra-f, register: informal, arc: "B1-19 on"}
+  - {id: omid, name: Omid, role: "a classmate who came from Afghanistan as a refugee (E units, from B1-19)", voice: de-om-m, register: informal, arc: "B1-19 on"}
+  - {id: gordana, name: Gordana, role: "a neighbour from Gostivar in western North Macedonia (M units, from B1-19)", voice: de-go-f, register: informal, arc: "B1-19 on"}
 
 formality:
   summary: >-
