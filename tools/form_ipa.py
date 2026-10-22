@@ -18,7 +18,8 @@ from pathlib import Path
 
 ESPEAK = {'de': 'de', 'la': 'la', 'grc': 'grc', 'el': 'el', 'ru': 'ru', 'uk': 'uk', 'pl': 'pl', 'cs': 'cs', 'fi': 'fi',
           'hu': 'hu', 'tr': 'tr', 'is': 'is', 'lt': 'lt', 'ro': 'ro', 'sh': 'sr', 'mk': 'mk', 'pt': 'pt-br', 'sv': 'sv',
-          'ar': 'ar', 'sa': 'hi', 'fr': 'fr', 'it': 'it', 'es': 'es', 'en': 'en-us'}
+          'ar': 'ar', 'fr': 'fr-fr', 'it': 'it', 'es': 'es', 'en': 'en-us', 'nl': 'nl', 'hi': 'hi', 'bn': 'bn',
+          'fa': 'fa', 'id': 'id', 'sw': 'sw', 'vi': 'vi', 'tl': 'tl'}
 MARKS = set('ˈˌ.‿/[]()-|‖') | {'̯', '͡', '͜'}
 JOIN = re.compile(r'[̀-ͯʰ-˿᷀-᷿]')   # diacritics and modifier letters stay with their letter
 

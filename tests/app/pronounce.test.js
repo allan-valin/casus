@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { segments, buildIpaIndex, expectedFor, align, score, aiPrompt, speakHref } from '../../src/app/lib/pronounce.js';
+import { segments, buildIpaIndex, expectedFor, expectedSounds, bestVariants, align, score, aiPrompt, speakHref } from '../../src/app/lib/pronounce.js';
 import { langFromPath, speakPath } from '../../src/app/lib/route.js';
 
 describe('segments', () => {
@@ -224,5 +224,27 @@ describe('connected-speech reductions count as near (Allan, 2026-10-20: Wiktiona
 describe('score with a slipped-in weak sound', () => {
   it('a glottal stop said before a vowel does not change the score', () => {
     expect(score(align(['a', 'n'], ['ʔ', 'a', 'n']))).toBe(100);
+  });
+});
+
+describe('generated form IPA is compared, and regional variants are offered (Allan, 2026-10-22)', () => {
+  it("a form's generated IPA counts in the comparison (it used to be a wildcard)", () => {
+    expect(expectedSounds([{ word: 'machst', ipa: 'maxst', source: 'form' }])).toEqual(['m', 'a', 'x', 's', 't']);
+    expect(expectedSounds([{ word: 'Häuser', ipa: '/haʊ̯s/', source: 'lemma' }])).toEqual(['*']);   // a lemma's IPA stays a wildcard
+  });
+  it('every Wiktionary variant is kept with its tags', async () => {
+    const lemmas = { 1: { headword: 'König' } };
+    const ipa = { 1: [{ ipa: '/ˈkøːnɪç/', tags: ['standard'] }, { ipa: '/ˈkøːnɪk/', tags: ['Southern-Germany', 'Austria'] }] };
+    const index = buildIpaIndex(lemmas, ipa);
+    const [w] = await expectedFor('König', { index, lookup: async () => [], lemmas, ipa });
+    expect(w.variants.map((v) => v.tags[0])).toEqual(['standard', 'Southern-Germany']);
+  });
+  it('the comparison uses the variant closest to what was heard', () => {
+    const expected = [{ word: 'König', ipa: '/ˈkøːnɪç/', source: 'exact', variants: [{ ipa: '/ˈkøːnɪç/', tags: ['standard'] }, { ipa: '/ˈkøːnɪk/', tags: ['Austria'] }] }];
+    const heard = ['k', 'øː', 'n', 'ɪ', 'k'];
+    const [w] = bestVariants(expected, heard);
+    expect(w.ipa).toBe('/ˈkøːnɪk/');
+    expect(w.chosen).toEqual(['Austria']);
+    expect(score(align(expectedSounds([w]), heard))).toBe(100);
   });
 });

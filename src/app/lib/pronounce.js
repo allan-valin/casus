@@ -24,11 +24,15 @@ const bare = (w) => w.normalize('NFD').replace(/[\p{Mn}\u0640]/gu, '').normalize
 /** headword (lower case) → its first IPA, from the language's lemmas.json and ipa.json */
 export function buildIpaIndex(lemmas, ipa, preferred = []) {
   const index = new Map();
+  // every Wiktionary variant of a headword, with its tags (Austria, Switzerland …): offered, and scored against the
+  // closest (Allan, 2026-10-22)
+  index.variantsOf = new Map();
   for (const [id, variants] of Object.entries(ipa ?? {})) {
     const hw = lemmas?.[id]?.headword;
     if (!hw || !variants?.length) continue;
     const k = key(hw), ipaOf = pick(variants, preferred).ipa;
     if (!index.has(k)) index.set(k, ipaOf);
+    if (variants.length > 1 && !index.variantsOf.has(k)) index.variantsOf.set(k, variants);
     const b = `~${bare(hw)}`;
     if (!index.has(b)) index.set(b, ipaOf);
   }
@@ -52,7 +56,7 @@ export async function expectedFor(text, { index, lookup, lemmas, ipa, preferred 
   for (const word of noSpaces ? greedyWords(text, index) : words(text)) {
     const k = key(word);
     const hit = index.get(k) ?? index.get(`~${bare(word)}`);
-    if (hit) { out.push({ word, ipa: hit, source: 'exact' }); continue; }
+    if (hit) { const variants = index.variantsOf?.get(k); out.push({ word, ipa: hit, source: 'exact', ...(variants ? { variants } : {}) }); continue; }
     let found = null;
     for (const a of (await lookup?.(k)) ?? []) {
       const v = ipa?.[a.lemma];
@@ -94,7 +98,26 @@ export function sampleFor(sym, index) {
 
 /** the sounds to compare against: exact words give their sounds, the others a wildcard '*' */
 export function expectedSounds(expected) {
-  return expected.flatMap((w) => (w.source === 'exact' || w.source === 'wikt' ? segments(w.ipa) : ['*']));
+  // a form's generated IPA is compared too (it is that form's own); a lemma's IPA for an inflected form is not
+  return expected.flatMap((w) => (w.source === 'exact' || w.source === 'wikt' || w.source === 'form' ? segments(w.ipa) : ['*']));
+}
+
+/** each word with variants set to the one that makes the whole sentence closest to what was heard (one word at a time,
+ * the others held) — `chosen` names the variant's tags */
+export function bestVariants(expected, heard) {
+  let cur = expected.map((w) => ({ ...w }));
+  const total = (list) => score(align(expectedSounds(list), heard)) ?? -1;
+  cur.forEach((w, i) => {
+    if (!w.variants?.length) return;
+    let best = total(cur), keep = w.ipa, tags = w.chosen ?? w.variants.find((v) => v.ipa === w.ipa)?.tags ?? [];
+    for (const v of w.variants) {
+      const trial = cur.map((x, j) => (j === i ? { ...x, ipa: v.ipa } : x));
+      const s = total(trial);
+      if (s > best) { best = s; keep = v.ipa; tags = v.tags ?? []; }
+    }
+    cur = cur.map((x, j) => (j === i ? { ...x, ipa: keep, chosen: tags } : x));
+  });
+  return cur;
 }
 
 const base = (s) => s.normalize('NFD').replace(/[\p{Mn}ːˑʰʲʷˠˤⁿˡʼ˞]/gu, '').replace('g', 'ɡ');

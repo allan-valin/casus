@@ -7,7 +7,7 @@
   import { t, ui } from '../lib/i18n.svelte.js';
   import Speaker from './Speaker.svelte';
   import IpaChart from './IpaChart.svelte';
-  import { widenSlices, buildIpaIndex, expectedFor, expectedSounds, segments, align, score, aiPrompt, sampleFor, ipaFromWikitext } from '../lib/pronounce.js';
+  import { widenSlices, buildIpaIndex, expectedFor, expectedSounds, bestVariants, segments, align, score, aiPrompt, sampleFor, ipaFromWikitext } from '../lib/pronounce.js';
   import { loadLemmas, loadIpa } from '../lib/fetchers.js';
   import { MODELS, load, transcribe, to16kMono, playSamples, wavBytes, isCached, forget } from '../speech/engine.js';
   import WordEntry from './WordEntry.svelte';
@@ -164,6 +164,7 @@
   }
 
   function compare() {
+    expected = bestVariants(expected, heard.map((h) => h.sym));     // each word scored against its closest regional variant
     const exp = expectedSounds(expected);
     if (!exp.some((s) => s !== '*')) { pairs = []; result = null; say(t('speak.act.noCompare')); return; }
     pairs = align(exp, heard.map((h) => h.sym));
@@ -286,6 +287,7 @@
           <div class="w" lang={lang.bcp47}>{w.word}{#if voice}<Speaker text={w.word} {voice} />{/if}<button class="dict-btn" class:on={openWord === w.word} title={t('speak.entry')} onclick={() => toggleEntry(w)}>📖</button></div>
           {#if w.ipa}
             <div class="ipa" title={w.source === 'lemma' ? t('speak.word.lemma', { lemma: w.lemma }) : w.source === 'form' ? t('speak.word.form') : ''}>{w.source === 'lemma' || w.source === 'form' ? '≈ ' : ''}{w.ipa}</div>
+            {#if w.variants?.length}<div class="variants">{#each w.variants as v}<span class="variant" class:chosen={v.ipa === w.ipa}>{(v.tags ?? []).map((x) => x.replace(/-/g, ' ')).join(', ') || '—'} {v.ipa}</span>{/each}</div>{/if}
             <div class="sounds">{#each segments(w.ipa) as s}<button class="snd" class:has={!!sampleFor(s, samples)} title={sampleFor(s, samples) ? t('speak.sound.title', { sym: s }) : t('speak.sound.missing', { sym: s })} onclick={() => playSample(s)}>{s}</button>{/each}</div>
             {#if w.source === 'lemma'}<div class="note">{t('speak.word.lemma', { lemma: w.lemma })}</div>{:else if w.source === 'wikt'}<div class="note">{t('speak.word.wikt')}</div>{/if}
           {:else}<div class="note">{t('speak.word.none')}</div>{/if}
@@ -337,6 +339,8 @@
   .w { font-weight: 600; }
   .ipa, .snd, .cmp td { font-family: 'Charis SIL', 'Doulos SIL', 'Gentium Plus', 'Noto Sans', serif; }
   .ipa { font-size: 1.05rem; }
+  .variants { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 0.8rem; color: var(--muted); }
+  .variant.chosen { color: var(--ink); font-weight: 700; }
   .sounds { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 4px; }
   .snd { min-width: 30px; min-height: 30px; padding: 0 5px; font-size: 1.05rem; position: relative; }
   .snd.has::after { content: ''; position: absolute; right: 2px; bottom: 2px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent, #3a7); }
