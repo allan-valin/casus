@@ -1,0 +1,735 @@
+# UNIT de C1-01 — written by AI (Claude) for Casus; expanded from src/C1-01.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-01
+level: C1
+number: 1
+protagonist: f
+title:
+  en: Debating class
+  ar: دورة المناظرة
+  mk: Курс по дебата
+situation:
+  en: 'A new VHS course: debating. Motion of the evening: ''A four-day week for everyone''. You argue against Lena.'
+  ar: 'دورة جديدة في الجامعة الشعبية: المناظرة. موضوع المساء: «أسبوع عمل من أربعة أيام للجميع». تجادلين ضد لينا.'
+  mk: 'Нов курс на народниот универзитет: дебата. Темата на вечерта: „Четиридневна работна недела за сите“. Дебатирате против Лена.'
+learn_lessons:
+- c1-extended-attributes
+culture: Arguing to the point
+new_items:
+- id: die-debatte
+  text: die Debatte
+  meaning:
+    en: the debate
+    ar: المناظرة
+    mk: дебатата
+- id: das-argument
+  text: das Argument
+  meaning:
+    en: the argument
+    ar: الحجة
+    mk: аргументот
+- id: das-gegenargument
+  text: das Gegenargument
+  meaning:
+    en: the counter-argument
+    ar: الحجة المضادة
+    mk: контрааргументот
+- id: die-these
+  text: die These
+  meaning:
+    en: the thesis, claim
+    ar: الأطروحة
+    mk: тезата
+- id: die-vier-tage-woche
+  text: die Vier-Tage-Woche
+  meaning:
+    en: the four-day week
+    ar: أسبوع العمل من أربعة أيام
+    mk: четиридневната недела
+- id: die-produktivitaet
+  text: die Produktivität
+  meaning:
+    en: productivity
+    ar: الإنتاجية
+    mk: продуктивноста
+- id: der-fachkraeftemangel
+  text: der Fachkräftemangel
+  meaning:
+    en: the skills shortage
+    ar: نقص العمالة الماهرة
+    mk: недостигот на стручен кадар
+  rare: true
+- id: die-oft-genannte
+  text: die oft genannte …
+  meaning:
+    en: the often-cited …
+    ar: … التي يُستشهد بها كثيرًا
+    mk: често спомнуваната …
+- id: die-in-studien-belegte
+  text: die in Studien belegte …
+  meaning:
+    en: the … shown in studies
+    ar: … المثبتة في الدراسات
+    mk: … докажана во студии
+- id: ueberzeugend
+  text: überzeugend
+  meaning:
+    en: convincing
+    ar: مقنع
+    mk: убедливо
+- id: ich-widerspreche
+  text: Da widerspreche ich
+  meaning:
+    en: I disagree there
+    ar: هنا أعترض
+    mk: Тука не се согласувам
+reviews:
+- item: das-heimweh
+  from: A2-28
+- item: einsam
+  from: A2-28
+- item: ich-vermisse
+  from: A2-28
+- item: ich-mache-mir-sorgen
+  from: A2-28
+- item: ich-wuensche-mir
+  from: A2-28
+- item: das-ist-normal
+  from: A2-28
+- item: am-anfang
+  from: A2-28
+- item: es-wird-besser
+  from: A2-28
+- item: komm-rein
+  from: A2-28
+- item: ich-koche-uns
+  from: A2-28
+- item: na-toll
+  from: B1-30
+- item: sehr-witzig
+  from: B1-30
+- item: die-ironie
+  from: B1-30
+- item: meinst-du-das-ernst
+  from: B1-30
+- item: das-picknick
+  from: B1-30
+- item: es-regnet-in-stroemen
+  from: B1-30
+- item: genau-das-gegenteil
+  from: B1-30
+- item: der-ton
+  from: B1-30
+- item: erkennen
+  from: B1-30
+- item: na-ja
+  from: B1-30
+- item: der-konflikt
+  from: B2-16
+- item: die-loesung
+  from: B2-16
+- item: der-kompromiss
+  from: B2-16
+- item: vermitteln
+  from: B2-16
+- item: dennoch
+  from: B2-16
+- item: obwohl-b2
+  from: B2-16
+- item: der-standpunkt
+  from: B2-16
+- item: die-probephase
+  from: B2-16
+- item: einverstanden
+  from: B2-16
+- item: blockieren
+  from: B2-16
+- item: die-mietpreisbremse
+  from: B2-24
+- item: die-sozialwohnung
+  from: B2-24
+- item: der-wohnberechtigungsschein
+  from: B2-24
+- item: wird-gebaut
+  from: B2-24
+- item: wurde-erhoeht
+  from: B2-24
+- item: ist-begrenzt
+  from: B2-24
+- item: die-vergleichsmiete
+  from: B2-24
+- item: die-nachfrage
+  from: B2-24
+- item: das-angebot
+  from: B2-24
+- item: der-mieterverein
+  from: B2-24
+- item: der-ausstand-ea
+  from: B2-28-ea
+  for:
+  - en
+  - ar
+- item: der-letzte-arbeitstag-ea
+  from: B2-28-ea
+  for:
+  - en
+  - ar
+- item: liebe-kollegen-ea
+  from: B2-28-ea
+  for:
+  - en
+  - ar
+- item: der-dank-ea
+  from: B2-28-ea
+  for:
+  - en
+  - ar
+- item: ich-moechte-mich-bedanken-ea
+  from: B2-28-ea
+  for:
+  - en
+  - ar
+- item: die-zusammenarbeit-ea
+  from: B2-28-ea
+  for:
+  - en
+  - ar
+- item: vermissen-team-ea
+  from: B2-28-ea
+  for:
+  - en
+  - ar
+- item: in-kontakt-bleiben-ea
+  from: B2-28-ea
+  for:
+  - en
+  - ar
+- item: die-karte-ea
+  from: B2-28-ea
+  for:
+  - en
+  - ar
+- item: selbst-mitbringen-ea
+  from: B2-28-ea
+  for:
+  - en
+  - ar
+- item: alles-gute-ea
+  from: B2-28-ea
+  for:
+  - en
+  - ar
+- item: die-zukunft
+  from: B2-30
+- item: zurueckgehen
+  from: B2-30
+- item: hier-bleiben
+  from: B2-30
+- item: zwischen-zwei-welten
+  from: B2-30
+- item: der-widerspruch
+  from: B2-30
+- item: fuer-immer
+  from: B2-30
+- item: wo-auch-immer
+  from: B2-30
+- item: das-zuhause
+  from: B2-30
+- item: ich-bin-angekommen
+  from: B2-30
+- item: wer-weiss
+  from: B2-30
+- item: der-erste-schultag-m
+  from: B2-28-m
+  for:
+  - mk
+- item: das-mittagessen-feier-m
+  from: B2-28-m
+  for:
+  - mk
+- item: die-klassenlehrerin-m
+  from: B2-28-m
+  for:
+  - mk
+- item: die-aula-m
+  from: B2-28-m
+  for:
+  - mk
+- item: aufgeregt-m
+  from: B2-28-m
+  for:
+  - mk
+- item: stolz-m-m
+  from: B2-28-m
+  for:
+  - mk
+- item: die-feier-m-m
+  from: B2-28-m
+  for:
+  - mk
+- item: liebe-eltern-m
+  from: B2-28-m
+  for:
+  - mk
+- item: herzlich-willkommen-m
+  from: B2-28-m
+  for:
+  - mk
+- item: das-foto-m
+  from: B2-28-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: 'A new VHS course: debating. Motion of the evening: ''A four-day week for everyone''. You argue against Lena. Listen to the conversation; you don''t need to understand it yet.'
+    ar: 'دورة جديدة في الجامعة الشعبية: المناظرة. موضوع المساء: «أسبوع عمل من أربعة أيام للجميع». تجادلين ضد لينا. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.'
+    mk: 'Нов курс на народниот универзитет: дебата. Темата на вечерта: „Четиридневна работна недела за сите“. Дебатирате против Лена. Слушнете го разговорот; уште не мора да го разберете.'
+- type: dialogue
+  lines:
+  - speaker: hartmann
+    text: 'Die These: Die Vier-Tage-Woche für alle. Lena, Ihr Argument.'
+    meaning:
+      en: 'The motion: the four-day week for all. Lena, your argument.'
+      ar: 'الأطروحة: أسبوع عمل من أربعة أيام للجميع. لينا، حجتكِ.'
+      mk: 'Тезата: четиридневна недела за сите. Лена, вашиот аргумент.'
+  - speaker: lena
+    text: Die in Studien belegte höhere Produktivität spricht dafür. Ausgeruhte Menschen arbeiten besser.
+    meaning:
+      en: The higher productivity shown in studies speaks for it. Rested people work better.
+      ar: الإنتاجية الأعلى المثبتة في الدراسات تؤيّد ذلك. الناس المرتاحون يعملون أفضل.
+      mk: Повисоката продуктивност докажана во студии зборува за тоа. Одморените луѓе работат подобро.
+  - speaker: protagonist
+    text: Da widerspreche ich. Die oft genannte Produktivität gilt nicht für alle Berufe.
+    meaning:
+      en: I disagree there. The often-cited productivity doesn't apply to all jobs.
+      ar: هنا أعترض. الإنتاجية التي يُستشهد بها كثيرًا لا تنطبق على كل المهن.
+      mk: Тука не се согласувам. Често спомнуваната продуктивност не важи за сите професии.
+  - speaker: protagonist
+    text: Eine Pflegekraft kann nicht in vier Tagen fünf Tage Patienten versorgen.
+    meaning:
+      en: A nurse can't care for patients for five days in four.
+      ar: الممرّضة لا تستطيع رعاية المرضى خمسة أيام في أربعة.
+      mk: Медицинска сестра не може за четири дена да ги згрижи пациентите за пет.
+  - speaker: lena
+    text: Dann stellt man mehr Leute ein.
+    meaning:
+      en: Then you hire more people.
+      ar: إذن يوظّفون أشخاصًا أكثر.
+      mk: Тогаш се вработуваат повеќе луѓе.
+  - speaker: protagonist
+    text: Bei dem seit Jahren bekannten Fachkräftemangel? Woher?
+    meaning:
+      en: With the skills shortage known for years? From where?
+      ar: مع نقص العمالة الماهرة المعروف منذ سنوات؟ من أين؟
+      mk: Со недостигот на стручен кадар познат со години? Од каде?
+  - speaker: hartmann
+    text: Ein starkes Gegenargument! Wer war überzeugender?
+    meaning:
+      en: A strong counter-argument! Who was more convincing?
+      ar: حجة مضادة قوية! من كان أكثر إقناعًا؟
+      mk: Силен контрааргумент! Кој беше поубедлив?
+  - speaker: lena
+    text: Leider sie. Nächstes Mal tauschen wir die Seiten!
+    meaning:
+      en: Sadly, her. Next time we swap sides!
+      ar: للأسف هي. في المرة القادمة نتبادل الجانبين!
+      mk: За жал, таа. Следниот пат ги менуваме страните!
+- type: prompt
+  ask:
+    en: 'Say: the debate.'
+    ar: 'قولي: المناظرة.'
+    mk: 'Кажете: дебатата.'
+  answer:
+    speaker: protagonist
+    text: Die Debatte.
+  items:
+  - die-debatte
+- type: prompt
+  ask:
+    en: 'Say: the motion is the four-day week.'
+    ar: 'قولي: الأطروحة هي أسبوع الأيام الأربعة.'
+    mk: 'Кажете: тезата е четиридневната недела.'
+  answer:
+    speaker: protagonist
+    text: Die These ist die Vier-Tage-Woche.
+  items:
+  - die-these
+  - die-vier-tage-woche
+- type: narrator
+  text:
+    en: 'Extended attributes pack a whole clause before the noun: «die in Studien belegte Produktivität» (= the productivity that is shown in studies), «der seit Jahren bekannte Fachkräftemangel». Typical
+      of written and formal German — read from the article to the noun, then back.'
+    ar: 'الصفات الممتدة تحشر جملة كاملة قبل الاسم: «die in Studien belegte Produktivität» (= الإنتاجية التي أُثبتت في الدراسات)، «der seit Jahren bekannte Fachkräftemangel». نموذجية في الألمانية المكتوبة
+      والرسمية — اقرئي من أداة التعريف إلى الاسم ثم ارجعي.'
+    mk: 'Проширените атрибути пакуваат цела реченица пред именката: «die in Studien belegte Produktivität» (= продуктивноста што е докажана во студии), «der seit Jahren bekannte Fachkräftemangel». Типично
+      за пишан и формален германски — читајте од членот до именката, па назад.'
+- type: prompt
+  ask:
+    en: 'Say: the productivity shown in studies.'
+    ar: 'قولي: الإنتاجية المثبتة في الدراسات.'
+    mk: 'Кажете: продуктивноста докажана во студии.'
+  answer:
+    speaker: protagonist
+    text: Die in Studien belegte Produktivität.
+  items:
+  - die-in-studien-belegte
+  - die-produktivitaet
+- type: prompt
+  ask:
+    en: Disagree.
+    ar: اعترضي.
+    mk: Не се согласувајте.
+  answer:
+    speaker: protagonist
+    text: Da widerspreche ich.
+  items:
+  - ich-widerspreche
+- type: prompt
+  ask:
+    en: 'Say: the often-cited productivity.'
+    ar: 'قولي: الإنتاجية التي يُستشهد بها كثيرًا.'
+    mk: 'Кажете: често спомнуваната продуктивност.'
+  answer:
+    speaker: protagonist
+    text: Die oft genannte Produktivität.
+  items:
+  - die-oft-genannte
+- type: prompt
+  ask:
+    en: 'Say: the skills shortage known for years.'
+    ar: 'قولي: نقص العمالة الماهرة المعروف منذ سنوات.'
+    mk: 'Кажете: недостигот на кадар познат со години.'
+  answer:
+    speaker: protagonist
+    text: Der seit Jahren bekannte Fachkräftemangel.
+  items:
+  - der-fachkraeftemangel
+- type: prompt
+  ask:
+    en: 'Say: a strong counter-argument.'
+    ar: 'قولي: حجة مضادة قوية.'
+    mk: 'Кажете: силен контрааргумент.'
+  answer:
+    speaker: protagonist
+    text: Ein starkes Gegenargument.
+  items:
+  - das-gegenargument
+  - das-argument
+- type: prompt
+  ask:
+    en: 'Ask: who was more convincing?'
+    ar: 'اسألي: من كان أكثر إقناعًا؟'
+    mk: 'Прашајте: кој беше поубедлив?'
+  answer:
+    speaker: protagonist
+    text: Wer war überzeugender?
+  items:
+  - ueberzeugend
+- type: narrator
+  text:
+    en: German debating values a clear thesis, evidence and a direct reply to the other side's best point — not volume or personal attack. «Da widerspreche ich» is polite and normal.
+    ar: المناظرة الألمانية تُقدّر الأطروحة الواضحة والدليل والردّ المباشر على أقوى نقطة لدى الطرف الآخر — لا علوّ الصوت ولا الهجوم الشخصي. وعبارة «Da widerspreche ich» مؤدبة وعادية.
+    mk: Германската дебата цени јасна теза, докази и директен одговор на најдобрата поента на другата страна — не гласност или личен напад. «Da widerspreche ich» е учтиво и нормално.
+- type: prompt
+  ask:
+    en: 'Once more: say “the debate”.'
+    ar: 'مرة أخرى: قولي “المناظرة”.'
+    mk: 'Уште еднаш: кажете „дебатата“.'
+  answer:
+    speaker: protagonist
+    text: die Debatte
+  items:
+  - die-debatte
+- type: prompt
+  ask:
+    en: 'Once more: say “the argument”.'
+    ar: 'مرة أخرى: قولي “الحجة”.'
+    mk: 'Уште еднаш: кажете „аргументот“.'
+  answer:
+    speaker: protagonist
+    text: das Argument
+  items:
+  - das-argument
+- type: prompt
+  ask:
+    en: 'Once more: say “the counter-argument”.'
+    ar: 'مرة أخرى: قولي “الحجة المضادة”.'
+    mk: 'Уште еднаш: кажете „контрааргументот“.'
+  answer:
+    speaker: protagonist
+    text: das Gegenargument
+  items:
+  - das-gegenargument
+- type: prompt
+  ask:
+    en: 'Once more: say “the thesis, claim”.'
+    ar: 'مرة أخرى: قولي “الأطروحة”.'
+    mk: 'Уште еднаш: кажете „тезата“.'
+  answer:
+    speaker: protagonist
+    text: die These
+  items:
+  - die-these
+- type: prompt
+  ask:
+    en: 'Once more: say “the four-day week”.'
+    ar: 'مرة أخرى: قولي “أسبوع العمل من أربعة أيام”.'
+    mk: 'Уште еднаш: кажете „четиридневната недела“.'
+  answer:
+    speaker: protagonist
+    text: die Vier-Tage-Woche
+  items:
+  - die-vier-tage-woche
+- type: prompt
+  ask:
+    en: 'Once more: say “productivity”.'
+    ar: 'مرة أخرى: قولي “الإنتاجية”.'
+    mk: 'Уште еднаш: кажете „продуктивноста“.'
+  answer:
+    speaker: protagonist
+    text: die Produktivität
+  items:
+  - die-produktivitaet
+- type: prompt
+  ask:
+    en: 'Once more: say “the skills shortage”.'
+    ar: 'مرة أخرى: قولي “نقص العمالة الماهرة”.'
+    mk: 'Уште еднаш: кажете „недостигот на стручен кадар“.'
+  answer:
+    speaker: protagonist
+    text: der Fachkräftemangel
+  items:
+  - der-fachkraeftemangel
+- type: prompt
+  ask:
+    en: 'Once more: say “the often-cited …”.'
+    ar: 'مرة أخرى: قولي “… التي يُستشهد بها كثيرًا”.'
+    mk: 'Уште еднаш: кажете „често спомнуваната …“.'
+  answer:
+    speaker: protagonist
+    text: die oft genannte …
+  items:
+  - die-oft-genannte
+- type: prompt
+  ask:
+    en: 'Once more: say “the … shown in studies”.'
+    ar: 'مرة أخرى: قولي “… المثبتة في الدراسات”.'
+    mk: 'Уште еднаш: кажете „… докажана во студии“.'
+  answer:
+    speaker: protagonist
+    text: die in Studien belegte …
+  items:
+  - die-in-studien-belegte
+- type: prompt
+  ask:
+    en: 'Once more: say “convincing”.'
+    ar: 'مرة أخرى: قولي “مقنع”.'
+    mk: 'Уште еднаш: кажете „убедливо“.'
+  answer:
+    speaker: protagonist
+    text: überzeugend
+  items:
+  - ueberzeugend
+- type: prompt
+  ask:
+    en: 'Once more: say “I disagree there”.'
+    ar: 'مرة أخرى: قولي “هنا أعترض”.'
+    mk: 'Уште еднаш: кажете „Тука не се согласувам“.'
+  answer:
+    speaker: protagonist
+    text: Da widerspreche ich
+  items:
+  - ich-widerspreche
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the future — and “go back — and “stay here — and “between two worlds — and “the contradiction — and “for ever — and “wherever — and “home (where you live) — and “I''ve arrived (settled in)
+      — and “Who knows? — and “the rent brake — and “social housing — and “housing entitlement certificate — and “is being built — and “was raised — and “is limited — and “the local reference rent”.'
+    ar: 'قولي: “المستقبل — و“يعود — و“يبقى هنا — و“بين عالمين — و“التناقض — و“إلى الأبد — و“أينما كان — و“البيت، المسكن — و“لقد استقررتُ — و“من يدري؟ — و“فرملة الإيجار — و“السكن الاجتماعي — و“شهادة استحقاق
+      السكن — و“يُبنى — و“رُفع — و“محدود — و“الإيجار المرجعي المحلي”.'
+    mk: 'Кажете: „иднината“ — и „се враќа“ — и „останува тука“ — и „меѓу два света“ — и „противречноста“ — и „засекогаш“ — и „каде и да е“ — и „домот“ — и „пристигнав, се сместив“ — и „Кој знае?“ — и „сопирачката
+      на кириите“ — и „социјалниот стан“ — и „потврдата за право на социјален стан“ — и „се гради“ — и „беше зголемена“ — и „е ограничено“ — и „вообичаената локална кирија“.'
+  answer:
+    speaker: protagonist
+    text: die Zukunft … zurückgehen … hierbleiben … zwischen zwei Welten … der Widerspruch … für immer … wo auch immer … das Zuhause … ich bin angekommen … Wer weiß? … die Mietpreisbremse … die Sozialwohnung
+      … der Wohnberechtigungsschein … wird gebaut … wurde erhöht … ist begrenzt … die ortsübliche Vergleichsmiete
+  items:
+  - die-zukunft
+  - zurueckgehen
+  - hier-bleiben
+  - zwischen-zwei-welten
+  - der-widerspruch
+  - fuer-immer
+  - wo-auch-immer
+  - das-zuhause
+  - ich-bin-angekommen
+  - wer-weiss
+  - die-mietpreisbremse
+  - die-sozialwohnung
+  - der-wohnberechtigungsschein
+  - wird-gebaut
+  - wurde-erhoeht
+  - ist-begrenzt
+  - die-vergleichsmiete
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the demand — and “the supply, offer — and “the tenants'' association — and “the conflict — and “the solution — and “the compromise — and “mediate — and “nonetheless — and “although both are
+      right — and “the point of view — and “a trial phase — and “agreed — and “block — and “Oh great! (ironic) — and “Very funny! (ironic) — and “irony — and “Are you serious?”.'
+    ar: 'قولي: “الطلب — و“العرض — و“جمعية المستأجرين — و“الخلاف — و“الحل — و“الحل الوسط — و“يتوسّط — و“ومع ذلك — و“مع أنّ الاثنين على حق — و“وجهة النظر — و“مرحلة تجريبية — و“موافق — و“يعرقل — و“رائع جدًا!
+      (ساخرًا) — و“مضحك جدًا! (ساخرًا) — و“السخرية — و“هل تقصد ذلك جديًا؟”.'
+    mk: 'Кажете: „побарувачката“ — и „понудата“ — и „здружението на станари“ — и „конфликтот“ — и „решението“ — и „компромисот“ — и „посредува“ — и „сепак“ — и „иако и двајцата се во право“ — и „гледиштето“
+      — и „пробна фаза“ — и „се согласувам“ — и „блокира“ — и „Баш убаво! (иронично)“ — и „Многу смешно! (иронично)“ — и „иронијата“ — и „Сериозно ли мислиш?“.'
+  answer:
+    speaker: protagonist
+    text: die Nachfrage … das Angebot … der Mieterverein … der Konflikt … die Lösung … der Kompromiss … vermitteln … dennoch … obwohl beide recht haben … der Standpunkt … eine Testphase … einverstanden
+      … blockieren … Na toll! … Sehr witzig! … die Ironie … Meinst du das ernst?
+  items:
+  - die-nachfrage
+  - das-angebot
+  - der-mieterverein
+  - der-konflikt
+  - die-loesung
+  - der-kompromiss
+  - vermitteln
+  - dennoch
+  - obwohl-b2
+  - der-standpunkt
+  - die-probephase
+  - einverstanden
+  - blockieren
+  - na-toll
+  - sehr-witzig
+  - die-ironie
+  - meinst-du-das-ernst
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the picnic — and “it''s pouring — and “exactly the opposite — and “the tone — and “recognise — and “well… (hesitant) — and “homesickness — and “lonely — and “I miss — and “I''m worried —
+      and “I wish for — and “that''s normal — and “at the beginning — and “it gets better — and “Come in! (informal) — and “I''ll cook us …”.'
+    ar: 'قولي: “النزهة — و“إنها تمطر بغزارة — و“العكس تمامًا — و“النبرة — و“يعرف، يميّز — و“حسنًا… (بتردّد) — و“الحنين إلى الوطن — و“وحيد — و“أشتاق إلى — و“أنا قلق — و“أتمنى — و“هذا طبيعي — و“في البداية
+      — و“سيتحسّن الوضع — و“ادخل! — و“أطبخ لنا …”.'
+    mk: 'Кажете: „пикникот“ — и „врне како од кабел“ — и „токму спротивното“ — и „тонот“ — и „препознава“ — и „па…“ — и „носталгијата“ — и „осамено“ — и „ми недостига“ — и „се грижам“ — и „посакувам“ —
+      и „тоа е нормално“ — и „на почетокот“ — и „ќе биде подобро“ — и „Влези!“ — и „ќе ни зготвам …“.'
+  answer:
+    speaker: protagonist
+    text: das Picknick … es regnet in Strömen … genau das Gegenteil … der Ton … erkennen … na ja … das Heimweh … einsam … ich vermisse … ich mache mir Sorgen … ich wünsche mir … das ist normal … am Anfang
+      … es wird besser … Komm rein! … ich koche uns …
+  items:
+  - das-picknick
+  - es-regnet-in-stroemen
+  - genau-das-gegenteil
+  - der-ton
+  - erkennen
+  - na-ja
+  - das-heimweh
+  - einsam
+  - ich-vermisse
+  - ich-mache-mir-sorgen
+  - ich-wuensche-mir
+  - das-ist-normal
+  - am-anfang
+  - es-wird-besser
+  - komm-rein
+  - ich-koche-uns
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the leaving do — and “the last working day — and “Dear colleagues — and “thanks, gratitude”.'
+    ar: 'قولي: “حفلة الوداع — و“آخر يوم عمل — و“زميلاتي وزملائي الأعزاء — و“الشكر”.'
+  answer:
+    speaker: protagonist
+    text: der Ausstand … der letzte Arbeitstag … Liebe Kolleginnen und Kollegen … der Dank
+  items:
+  - der-ausstand-ea
+  - der-letzte-arbeitstag-ea
+  - liebe-kollegen-ea
+  - der-dank-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I''d like to say thank you — and “the cooperation — and “I''ll miss you — and “stay in touch”.'
+    ar: 'قولي: “أودّ أن أشكركم — و“التعاون — و“سأفتقدكم — و“يبقى على تواصل”.'
+  answer:
+    speaker: protagonist
+    text: Ich möchte mich bedanken … die Zusammenarbeit … Ihr werdet mir fehlen … in Kontakt bleiben
+  items:
+  - ich-moechte-mich-bedanken-ea
+  - die-zusammenarbeit-ea
+  - vermissen-team-ea
+  - in-kontakt-bleiben-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the farewell card — and “bring yourself — and “All the best!”.'
+    ar: 'قولي: “بطاقة الوداع — و“يُحضر بنفسه — و“كل التوفيق!”.'
+  answer:
+    speaker: protagonist
+    text: die Abschiedskarte … selbst mitbringen … Alles Gute!
+  items:
+  - die-karte-ea
+  - selbst-mitbringen-ea
+  - alles-gute-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „првиот училиштен ден“ — и „сите заедно јадат“ — и „класната наставничка“ — и „салата“.'
+  answer:
+    speaker: protagonist
+    text: der erste Schultag … alle zusammen essen … die Klassenlehrerin … die Aula
+  items:
+  - der-erste-schultag-m
+  - das-mittagessen-feier-m
+  - die-klassenlehrerin-m
+  - die-aula-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „возбуден“ — и „горд“ — и „прославата“ — и „Драги родители, драги баби и дедовци“.'
+  answer:
+    speaker: protagonist
+    text: aufgeregt … stolz … die Feier … Liebe Eltern, liebe Großeltern
+  items:
+  - aufgeregt-m
+  - stolz-m-m
+  - die-feier-m-m
+  - liebe-eltern-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „срдечно добредојдовте“ — и „фотографијата“.'
+  answer:
+    speaker: protagonist
+    text: herzlich willkommen … das Foto
+  items:
+  - herzlich-willkommen-m
+  - das-foto-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

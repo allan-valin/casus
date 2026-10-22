@@ -1,0 +1,38 @@
+id: C1-03-m
+tracks: [mk]
+protagonist: m
+title: ["Германско државјанство за Петар?"]
+situation: ["Петар размислува да стане Германец. Ви раскажува што му рекле во канцеларијата."]
+learn: [c1-konjunktiv-i]
+culture: Dual citizenship
+items:
+  - [die-staatsangehoerigkeit, "die Staatsangehörigkeit", "државјанството"]
+  - [die-doppelte-staatsangehoerigkeit, "die doppelte Staatsangehörigkeit", "двојното државјанство", {rare: true}]
+  - [abgeben, "abgeben", "предава, се откажува"]
+  - [behalten, "behalten", "задржува"]
+  - [es-sei-moeglich, "es sei möglich", "(пренесено) дека е можно"]
+  - [er-muesse, "er müsse …", "(пренесено) дека мора …"]
+  - [von-geburt-an, "von Geburt an", "од раѓање"]
+  - [das-wahlrecht-m, "das volle Wahlrecht", "целосното право на глас"]
+  - [der-einbuergerungstest-m, "der Test", "тестот"]
+  - [die-urkunde, "die Urkunde", "исправата"]
+dialogue:
+  - [petar, "Papa, ich will Deutscher werden. Dann habe ich das volle Wahlrecht.", "Тато, сакам да станам Германец. Тогаш имам целосно право на глас."]
+  - [protagonist, "Musst du dann den mazedonischen Pass abgeben?", "Тогаш мора ли да се откажеш од македонскиот пасош?"]
+  - [petar, "Nein. Die Beamtin sagte, die doppelte Staatsangehörigkeit sei heute möglich. Ich könne alle behalten.", "Не. Службеничката рече дека двојното државјанство денес е можно. Можам да ги задржам сите."]
+  - [protagonist, "Und was musst du machen?", "А што треба да направиш?"]
+  - [petar, "Sie sagte, ich müsse den Test machen — für mich kein Problem.", "Рече дека морам да го положам тестот — за мене не е проблем."]
+  - [protagonist, "Und Luka?", "А Лука?"]
+  - [petar, "Luka ist von Geburt an Deutscher, weil Anja Deutsche ist. Und Mazedonier kann er auch sein.", "Лука е Германец од раѓање, затоа што Ања е Германка. А може да биде и Македонец."]
+  - [protagonist, "Dann hängen wir die Urkunde neben das Familienfoto.", "Тогаш исправата ќе ја закачиме до семејната фотографија."]
+teach:
+  - ask: ["Кажете: државјанството.", "Die Staatsangehörigkeit.", die-staatsangehoerigkeit]
+  - ask: ["Петар вели: целосно право на глас.", "Das volle Wahlrecht.", das-wahlrecht-m]
+  - ask: ["Прашајте: мора ли да се откажеш од пасошот?", "Musst du den Pass abgeben?", abgeben]
+  - note: ["Konjunktiv I пренесува што рекол службеник: «Sie sagte, die doppelte Staatsangehörigkeit sei möglich», «ich müsse den Test machen»."]
+  - ask: ["Пренесете: двојното државјанство е можно.", "Die doppelte Staatsangehörigkeit sei möglich.", es-sei-moeglich, die-doppelte-staatsangehoerigkeit]
+  - ask: ["Пренесете: тој мора да го положи тестот.", "Er müsse den Test machen.", er-muesse, der-einbuergerungstest-m]
+  - ask: ["Кажете: може да ги задржи сите.", "Er kann alle behalten.", behalten]
+  - ask: ["Кажете: Германец од раѓање.", "Deutscher von Geburt an.", von-geburt-an]
+  - ask: ["Кажете: исправата.", "Die Urkunde.", die-urkunde]
+  - note: ["Од 2024 Германија дозволува двојно државјанство. Дете со родител Германец е Германец од раѓање, а може да го има и државјанството на другиот родител. За натурализација важат години престој, приход, германски B1 и тестот. Проверете ги тековните правила."]
