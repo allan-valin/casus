@@ -4,9 +4,10 @@
 import { chromium } from 'playwright';
 import { mkdirSync, writeFileSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const [url, folder] = process.argv.slice(2);
-const out = join(new URL('..', import.meta.url).pathname, 'vendor', folder);
+const out = join(fileURLToPath(new URL('..', import.meta.url)), 'vendor', folder);
 mkdirSync(out, { recursive: true });
 const b = await chromium.launch();
 const ctx = await b.newContext({ userAgent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36 Casus' });

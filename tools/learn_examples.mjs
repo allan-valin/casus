@@ -13,6 +13,8 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import { unsuitable } from './learn_match.mjs';
 import path from 'node:path';
+import { realpathSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 
 /** a lesson's gap pool: its own words, then its level's lesson words (a lesson outside the JLPT levels, such as the
  * Reference tab's, has only its own) */
@@ -94,7 +96,7 @@ export const gapRoman = (blocks, [a, b]) => blocks.flatMap((bl, i) => (i === a ?
 const furiOf = (blocks) => blocks.flatMap((bl) => (bl.furi ?? [[bl.token.surface, null]]).map(([t, r]) => [t, r ?? null]));
 
 async function main(code = 'ja', limit = Infinity) {
-  const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+  const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
   const { createLexicon } = await import('../src/lib/lexicon.js');
   const { createState } = await import('../src/lib/state.js');
   const { getLanguage } = await import('../src/lang/registry.js');
@@ -211,4 +213,4 @@ async function main(code = 'ja', limit = Infinity) {
   console.log(`${code}: ${done} sentences read; ${total} matches; per lesson median ${counts[counts.length >> 1]}, ${counts.filter((c) => c >= 50).length}/${counts.length} lessons with 50+ sentences; ${Math.round((Date.now() - t0) / 1000)} s`);
 }
 
-if (process.argv[1] && new URL(import.meta.url).pathname === path.resolve(process.argv[1])) main(process.argv[2], Number(process.argv[3] ?? Infinity));
+if (process.argv[1] && fileURLToPath(import.meta.url) === realpathSync(process.argv[1])) main(process.argv[2], Number(process.argv[3] ?? Infinity));

@@ -12,6 +12,8 @@
 import { readFile, writeFile, readdir } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import path from 'node:path';
+import { realpathSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import { matchRule, formPool, preferAttested, looksLikeName, dropMarked, dropPartners, shareStem, spellingVariants, prefixVariants, suffixVariants, unsuitable, markOf, rewrite, rowFor, consonantV, followSpelling, rolesOf } from './learn_match.mjs';
 import { gapRoman } from './learn_examples.mjs';
 
@@ -25,7 +27,7 @@ export function simplicity(words, rankOf) {
 }
 
 async function main(code) {
-  const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+  const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
   const { createLexicon, decodeAnalysis } = await import('../src/lib/lexicon.js');
   const { createState } = await import('../src/lib/state.js');
   const { getLanguage } = await import('../src/lang/registry.js');
@@ -330,4 +332,4 @@ async function main(code) {
   console.log(`${code}: ${read} sentences read, ${total} matches; per lesson min ${counts[0]}, median ${counts[counts.length >> 1]}, max ${counts.at(-1)}; ${counts.filter((c) => c < 20).length} lessons under 20; ${Math.round((Date.now() - t0) / 1000)} s`);
 }
 
-if (process.argv[1] && new URL(import.meta.url).pathname === path.resolve(process.argv[1])) main(process.argv[2]);
+if (process.argv[1] && fileURLToPath(import.meta.url) === realpathSync(process.argv[1])) main(process.argv[2]);

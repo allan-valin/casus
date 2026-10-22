@@ -3,11 +3,12 @@
  * src/app/lib/i18n.reasons.js): node tools/collect_reasons.mjs [chars per sample] > reasons.json */
 import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { createLexicon } from '../src/lib/lexicon.js';
 import { createState } from '../src/lib/state.js';
 import { LANGUAGES, getLanguage } from '../src/lang/registry.js';
 
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const limit = Number(process.argv[2] ?? 4000);
 const out = {};
 for (const { code } of LANGUAGES) {

@@ -8,8 +8,9 @@
  */
 import { readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const code = process.argv[2];
 const { createLexicon } = await import('../src/lib/lexicon.js');
 const { createState } = await import('../src/lib/state.js');

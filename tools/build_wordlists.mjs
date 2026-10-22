@@ -9,7 +9,8 @@
  */
 import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { realpathSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 
 // senses that describe grammar rather than meaning (forms the perfect…, gerund of…): skipped when a real one follows
 const NOTE = /^(forms |used |gerund of|present participle of|past participle of|plural of|alternative |superseded |obsolete |clipping of|inflection of|as an? |refers to |describes )|:$|\b(singular|plural)\b.*\b(article|of)\b/i;
@@ -148,7 +149,7 @@ async function main(code) {
   const { getLanguage } = await import('../src/lang/registry.js');
   const { createLexicon } = await import('../src/lib/lexicon.js');
   const lang = getLanguage(code);
-  const dir = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', 'data', code);
+  const dir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'data', code);
   const json = async (f) => JSON.parse(await readFile(path.join(dir, f), 'utf8'));
   const lexicon = createLexicon({ manifest: await json('manifest.json'), codes: lang.inventory.codes, script: lang.script, fetchShard: (n) => json(`forms/${n}.json`) });
   const glosses = await json('glosses.en.json');
@@ -178,4 +179,4 @@ async function main(code) {
   console.log(`${code}: ${out.length} phrases (${out.filter((p) => p.lit.every(([, g]) => g)).length} with every word glossed), ${freq.length} frequent words`);
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) await main(process.argv[2]);
+if (process.argv[1] && fileURLToPath(import.meta.url) === realpathSync(process.argv[1])) await main(process.argv[2]);

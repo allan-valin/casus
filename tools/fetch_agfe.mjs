@@ -3,8 +3,9 @@
 // table of contents and each chapter page, one every few seconds, into vendor/agfe/html/. Usage: node tools/fetch_agfe.mjs
 import { chromium } from 'playwright';
 import { mkdirSync, writeFileSync, existsSync } from 'fs';
+import { fileURLToPath } from 'node:url';
 const BASE = 'https://pressbooks.pub/ancientgreek/';
-const OUT = new URL('../vendor/agfe/html/', import.meta.url).pathname;
+const OUT = fileURLToPath(new URL('../vendor/agfe/html/', import.meta.url));
 mkdirSync(OUT, { recursive: true });
 const b = await chromium.launch();
 const get = async (url) => {

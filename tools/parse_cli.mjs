@@ -7,7 +7,8 @@
  * output the UI plan renders as blocks.
  */
 import { readFile } from 'node:fs/promises';
-import { pathToFileURL } from 'node:url';
+import { realpathSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { createLexicon } from '../src/lib/lexicon.js';
 import { createState } from '../src/lib/state.js';
@@ -68,7 +69,7 @@ async function main(argv) {
     console.error('usage: node tools/parse_cli.mjs [--lang la|grc] "<text>"');
     return 2;
   }
-  const dataDir = process.env.CASUS_DATA ?? path.resolve(path.dirname(new URL(import.meta.url).pathname), '..', 'data', code);
+  const dataDir = process.env.CASUS_DATA ?? path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'data', code);
   const manifest = JSON.parse(await readFile(path.join(dataDir, 'manifest.json'), 'utf8'));
   const lemmas = JSON.parse(await readFile(path.join(dataDir, 'lemmas.json'), 'utf8'));
   const lexicon = createLexicon({
@@ -89,6 +90,6 @@ async function main(argv) {
   return 0;
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+if (process.argv[1] && fileURLToPath(import.meta.url) === realpathSync(process.argv[1])) {
   process.exitCode = await main(process.argv);
 }

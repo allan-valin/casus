@@ -10,7 +10,8 @@
  */
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
-import { pathToFileURL } from 'node:url';
+import { realpathSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 
 const WORD = /[\p{L}\p{M}]+/gu;
 const EARLY = new Set(['A1', 'A2']);
@@ -41,7 +42,7 @@ export async function unitReport(unit, rankOf, opts = {}) {
 }
 
 async function main(code) {
-  const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+  const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
   const { getLanguage } = await import('../src/lang/registry.js');
   const { createLexicon } = await import('../src/lib/lexicon.js');
   const lang = getLanguage(code);
@@ -74,4 +75,4 @@ async function main(code) {
   console.log(`${course.units.length} units, ${warnings} frequency warnings`);
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) await main(process.argv[2]);
+if (process.argv[1] && fileURLToPath(import.meta.url) === realpathSync(process.argv[1])) await main(process.argv[2]);
