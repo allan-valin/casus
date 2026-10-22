@@ -1,0 +1,771 @@
+# UNIT de C1-11 — written by AI (Claude) for Casus; expanded from src/C1-11.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-11
+level: C1
+number: 11
+protagonist: f
+title:
+  en: Data protection
+  ar: حماية البيانات
+  mk: Заштита на податоци
+situation:
+  en: A company you've never dealt with keeps calling you. Where did they get your number? Jonas helps you use your GDPR rights.
+  ar: شركة لم تتعاملي معها قط تتصل بكِ باستمرار. من أين حصلت على رقمكِ؟ يوناس يساعدكِ على استعمال حقوقكِ في حماية البيانات.
+  mk: Фирма со која никогаш не сте имале работа постојано ви се јавува. Од каде го има бројот? Јонас ви помага да ги искористите правата од GDPR.
+learn_lessons:
+- c1-passive-modal
+culture: GDPR — rights and excuses
+new_items:
+- id: der-datenschutz
+  text: der Datenschutz
+  meaning:
+    en: data protection
+    ar: حماية البيانات
+    mk: заштитата на податоци
+- id: die-dsgvo
+  text: die DSGVO
+  meaning:
+    en: the GDPR
+    ar: اللائحة العامة لحماية البيانات
+    mk: GDPR (регулативата за податоци)
+  rare: true
+- id: die-auskunft
+  text: die Auskunft
+  meaning:
+    en: the (data) access request, information
+    ar: طلب الاطلاع، المعلومات
+    mk: барањето за пристап, информацијата
+- id: die-einwilligung
+  text: die Einwilligung
+  meaning:
+    en: consent
+    ar: الموافقة
+    mk: согласноста
+- id: muss-geloescht-werden
+  text: muss gelöscht werden
+  meaning:
+    en: must be deleted
+    ar: يجب أن يُحذف
+    mk: мора да се избрише
+- id: darf-nicht-weitergegeben-werden
+  text: darf nicht weitergegeben werden
+  meaning:
+    en: may not be passed on
+    ar: لا يجوز أن يُمرَّر
+    mk: не смее да се пренесе
+- id: die-loeschung
+  text: die Löschung
+  meaning:
+    en: the deletion
+    ar: الحذف
+    mk: бришењето
+- id: die-datenschutzbehoerde
+  text: die Datenschutzbehörde
+  meaning:
+    en: the data protection authority
+    ar: هيئة حماية البيانات
+    mk: агенцијата за заштита на податоци
+  rare: true
+- id: widerrufen
+  text: widerrufen
+  meaning:
+    en: withdraw (consent)
+    ar: يسحب (الموافقة)
+    mk: повлекува
+- id: die-ausrede
+  text: die Ausrede
+  meaning:
+    en: the excuse
+    ar: الذريعة
+    mk: изговорот
+reviews:
+- item: einen-termin
+  from: A1-04
+- item: ich-moechte
+  from: A1-04
+- item: mich-anmelden
+  from: A1-04
+- item: das-formular
+  from: A1-04
+- item: die-wgb
+  from: A1-04
+- item: wo-wohnen-sie
+  from: A1-04
+- item: welche
+  from: A1-04
+- item: die-religion
+  from: A1-04
+- item: warum
+  from: A1-04
+- item: keins-von-beiden
+  from: A1-04
+- item: die-kirchensteuer
+  from: A1-04
+- item: fertig
+  from: A1-04
+- item: das-wars
+  from: A1-04
+- item: schoenen-tag-noch
+  from: A1-04
+- item: moechtest-du
+  from: B1-08
+- item: nein-danke
+  from: B1-08
+- item: heisst-nein
+  from: B1-08
+- item: ich-wusste-nicht
+  from: B1-08
+- item: hoeflich
+  from: B1-08
+- item: ehrlich
+  from: B1-08
+- item: ich-hatte-durst
+  from: B1-08
+- item: beim-zweiten-mal
+  from: B1-08
+- item: sag-einfach
+  from: B1-08
+- item: gerne
+  from: B1-08
+- item: das-anschreiben-ea
+  from: B2-10-ea
+  for:
+  - en
+  - ar
+- item: hiermit-bewerbe-ich-mich-ea
+  from: B2-10-ea
+  for:
+  - en
+  - ar
+- item: der-lebenslauf-ea
+  from: B2-10-ea
+  for:
+  - en
+  - ar
+- item: die-stelle-als-ea
+  from: B2-10-ea
+  for:
+  - en
+  - ar
+- item: die-erfahrung-ea
+  from: B2-10-ea
+  for:
+  - en
+  - ar
+- item: die-teamfaehigkeit-ea
+  from: B2-10-ea
+  for:
+  - en
+  - ar
+- item: zu-bescheiden-ea
+  from: B2-10-ea
+  for:
+  - en
+  - ar
+- item: die-uebernahme-ea
+  from: B2-10-ea
+  for:
+  - en
+  - ar
+- item: ueber-eine-einladung-ea
+  from: B2-10-ea
+  for:
+  - en
+  - ar
+- item: das-zeugnis-ea
+  from: B2-10-ea
+  for:
+  - en
+  - ar
+- item: das-standesamt
+  from: B2-26
+- item: der-trauzeuge
+  from: B2-26
+- item: die-hochzeit
+  from: B2-26
+- item: der-ring
+  from: B2-26
+- item: das-brautpaar
+  from: B2-26
+- item: die-feier
+  from: B2-26
+- item: anstelle
+  from: B2-26
+- item: trotz
+  from: B2-26
+- item: das-budget
+  from: B2-26
+- item: das-ja-wort
+  from: B2-26
+- item: die-klausel
+  from: C1-04
+- item: die-schoenheitsreparaturen
+  from: C1-04
+- item: unwirksam
+  from: C1-04
+- item: der-auszug
+  from: C1-04
+- item: die-uebergabe-wohnung
+  from: C1-04
+- item: duerfte
+  from: C1-04
+- item: soll-angeblich
+  from: C1-04
+- item: muss-wohl
+  from: C1-04
+- item: die-abnutzung
+  from: C1-04
+- item: das-uebergabeprotokoll
+  from: C1-04
+- item: der-aufstieg
+  from: C1-08
+- item: der-abstieg
+  from: C1-08
+- item: die-tabelle
+  from: C1-08
+- item: der-tabellenplatz
+  from: C1-08
+- item: koennte-reichen
+  from: C1-08
+- item: muesste-gewinnen
+  from: C1-08
+- item: das-torverhaeltnis
+  from: C1-08
+- item: der-gegner
+  from: C1-08
+- item: die-saison-c1
+  from: C1-08
+- item: der-jubel
+  from: C1-08
+- item: das-beileid
+  from: C1-10
+- item: die-trauerfeier
+  from: C1-10
+- item: die-beerdigung
+  from: C1-10
+- item: verstorben
+  from: C1-10
+- item: die-trauerkarte
+  from: C1-10
+- item: in-gedanken
+  from: C1-10
+- item: er-wird-fehlen
+  from: C1-10
+- item: die-erinnerung
+  from: C1-10
+- item: im-engsten-kreis
+  from: C1-10
+- item: der-kranz
+  from: C1-10
+- item: die-tischlerei-m
+  from: B2-10-m
+  for:
+  - mk
+- item: der-familienbetrieb-m
+  from: B2-10-m
+  for:
+  - mk
+- item: der-azubi-m
+  from: B2-10-m
+  for:
+  - mk
+- item: die-ausbildung-m
+  from: B2-10-m
+  for:
+  - mk
+- item: die-bewerbung-m-m
+  from: B2-10-m
+  for:
+  - mk
+- item: die-zuverlaessigkeit-m-m
+  from: B2-10-m
+  for:
+  - mk
+- item: das-handwerk-m
+  from: B2-10-m
+  for:
+  - mk
+- item: die-auswahl-m
+  from: B2-10-m
+  for:
+  - mk
+- item: geschickt-m
+  from: B2-10-m
+  for:
+  - mk
+- item: die-nachfolge-m
+  from: B2-10-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: A company you've never dealt with keeps calling you. Where did they get your number? Jonas helps you use your GDPR rights. Listen to the conversation; you don't need to understand it yet.
+    ar: شركة لم تتعاملي معها قط تتصل بكِ باستمرار. من أين حصلت على رقمكِ؟ يوناس يساعدكِ على استعمال حقوقكِ في حماية البيانات. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.
+    mk: Фирма со која никогаш не сте имале работа постојано ви се јавува. Од каде го има бројот? Јонас ви помага да ги искористите правата од GDPR. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Schon wieder diese Firma! Ich habe nie eine Einwilligung gegeben.
+    meaning:
+      en: That company again! I never gave consent.
+      ar: هذه الشركة مجددًا! لم أعطِ موافقتي قط.
+      mk: Пак таа фирма! Никогаш не сум дала согласност.
+  - speaker: jonas
+    text: Dann schick ihnen eine Auskunft nach DSGVO. Sie müssen sagen, woher sie deine Daten haben.
+    meaning:
+      en: Then send them a GDPR access request. They have to say where they got your data.
+      ar: إذن أرسلي لهم طلب اطلاع وفق اللائحة. يجب أن يقولوا من أين حصلوا على بياناتكِ.
+      mk: Тогаш прати им барање за пристап според GDPR. Мора да кажат од каде ги имаат податоците.
+  - speaker: protagonist
+    text: Und dann?
+    meaning:
+      en: And then?
+      ar: ثم ماذا؟
+      mk: А потоа?
+  - speaker: jonas
+    text: Dann verlangst du die Löschung. Ohne Einwilligung müssen die Daten gelöscht werden.
+    meaning:
+      en: Then you demand deletion. Without consent the data must be deleted.
+      ar: ثم تطلبين الحذف. بلا موافقة يجب أن تُحذف البيانات.
+      mk: Потоа бараш бришење. Без согласност податоците мора да се избришат.
+  - speaker: protagonist
+    text: Und sie dürfen sie nicht weitergeben?
+    meaning:
+      en: And they're not allowed to pass them on?
+      ar: ولا يجوز لهم تمريرها؟
+      mk: И не смеат да ги пренесат?
+  - speaker: jonas
+    text: 'Nein. Deine Nummer darf nicht ohne Erlaubnis weitergegeben werden. Wenn sie nicht antworten: Datenschutzbehörde.'
+    meaning:
+      en: 'No. Your number may not be passed on without permission. If they don''t answer: the data protection authority.'
+      ar: 'لا. لا يجوز تمرير رقمكِ دون إذن. وإن لم يردّوا: هيئة حماية البيانات.'
+      mk: 'Не. Твојот број не смее да се пренесе без дозвола. Ако не одговорат: агенцијата за заштита на податоци.'
+  - speaker: protagonist
+    text: 'Komisch: Im Verein durfte Petra kein Mannschaftsfoto aufhängen — „wegen Datenschutz“.'
+    meaning:
+      en: 'Funny: at the club Petra wasn''t allowed to put up a team photo — ''because of data protection''.'
+      ar: 'غريب: في النادي لم يُسمح لبيترا بتعليق صورة الفريق — «بسبب حماية البيانات».'
+      mk: 'Чудно: во клубот Петра не смееше да закачи слика од екипата — „поради заштита на податоци“.'
+  - speaker: jonas
+    text: Ha! Die DSGVO ist die Lieblingsausrede der Deutschen. Mit Einwilligung wäre das Foto kein Problem.
+    meaning:
+      en: Ha! The GDPR is the Germans' favourite excuse. With consent the photo would be no problem.
+      ar: ها! اللائحة هي الذريعة المفضّلة لدى الألمان. مع الموافقة لن تكون الصورة مشكلة.
+      mk: Ха! GDPR е омилениот изговор на Германците. Со согласност сликата не би била проблем.
+- type: prompt
+  ask:
+    en: 'Say: I never gave consent.'
+    ar: 'قولي: لم أعطِ موافقتي قط.'
+    mk: 'Кажете: никогаш не сум дала согласност.'
+  answer:
+    speaker: protagonist
+    text: Ich habe nie eine Einwilligung gegeben.
+  items:
+  - die-einwilligung
+- type: prompt
+  ask:
+    en: 'Say: a GDPR access request.'
+    ar: 'قولي: طلب اطلاع وفق اللائحة.'
+    mk: 'Кажете: барање за пристап според GDPR.'
+  answer:
+    speaker: protagonist
+    text: Eine Auskunft nach DSGVO.
+  items:
+  - die-auskunft
+  - die-dsgvo
+- type: prompt
+  ask:
+    en: 'Say: I demand deletion.'
+    ar: 'قولي: أطلب الحذف.'
+    mk: 'Кажете: барам бришење.'
+  answer:
+    speaker: protagonist
+    text: Ich verlange die Löschung.
+  items:
+  - die-loeschung
+- type: narrator
+  text:
+    en: 'Passive with modals states rules: «Die Daten müssen gelöscht werden» (must be deleted), «Die Nummer darf nicht weitergegeben werden» (may not be passed on). The modal is conjugated, «werden» goes
+      last.'
+    ar: 'المبني للمجهول مع الأفعال المساعدة يصوغ القواعد: «Die Daten müssen gelöscht werden» (يجب أن تُحذف)، «Die Nummer darf nicht weitergegeben werden» (لا يجوز تمريره). الفعل المساعد مُصرَّف و«werden»
+      في الآخر.'
+    mk: 'Пасивот со модални глаголи изразува правила: «Die Daten müssen gelöscht werden» (мора да се избришат), «Die Nummer darf nicht weitergegeben werden» (не смее да се пренесе). Модалниот се менува,
+      «werden» оди последно.'
+- type: prompt
+  ask:
+    en: 'Say: the data must be deleted.'
+    ar: 'قولي: يجب أن تُحذف البيانات.'
+    mk: 'Кажете: податоците мора да се избришат.'
+  answer:
+    speaker: protagonist
+    text: Die Daten müssen gelöscht werden.
+  items:
+  - muss-geloescht-werden
+- type: prompt
+  ask:
+    en: 'Say: the number may not be passed on.'
+    ar: 'قولي: لا يجوز تمرير الرقم.'
+    mk: 'Кажете: бројот не смее да се пренесе.'
+  answer:
+    speaker: protagonist
+    text: Die Nummer darf nicht weitergegeben werden.
+  items:
+  - darf-nicht-weitergegeben-werden
+- type: prompt
+  ask:
+    en: 'Say: the data protection authority.'
+    ar: 'قولي: هيئة حماية البيانات.'
+    mk: 'Кажете: агенцијата за заштита на податоци.'
+  answer:
+    speaker: protagonist
+    text: Die Datenschutzbehörde.
+  items:
+  - die-datenschutzbehoerde
+- type: prompt
+  ask:
+    en: 'Say: data protection.'
+    ar: 'قولي: حماية البيانات.'
+    mk: 'Кажете: заштита на податоци.'
+  answer:
+    speaker: protagonist
+    text: Der Datenschutz.
+  items:
+  - der-datenschutz
+- type: prompt
+  ask:
+    en: 'Say: I withdraw my consent.'
+    ar: 'قولي: أسحب موافقتي.'
+    mk: 'Кажете: ја повлекувам согласноста.'
+  answer:
+    speaker: protagonist
+    text: Ich widerrufe meine Einwilligung.
+  items:
+  - widerrufen
+- type: prompt
+  ask:
+    en: 'Say: the favourite excuse.'
+    ar: 'قولي: الذريعة المفضّلة.'
+    mk: 'Кажете: омилениот изговор.'
+  answer:
+    speaker: protagonist
+    text: Die Lieblingsausrede.
+  items:
+  - die-ausrede
+- type: narrator
+  text:
+    en: Under the GDPR you can ask any company what data it holds on you and where it came from (they must answer within a month), demand deletion and withdraw consent at any time; complaints go to the
+      state data protection authority. At the same time 'Datenschutz' is a famous excuse for saying no to anything — often a simple consent form would solve it.
+    ar: بموجب اللائحة يمكنكِ أن تسألي أي شركة عن البيانات التي تحتفظ بها عنكِ ومصدرها (يجب أن تجيب خلال شهر)، وأن تطلبي الحذف وتسحبي الموافقة في أي وقت؛ والشكاوى إلى هيئة حماية البيانات في الولاية. وفي
+      الوقت نفسه «حماية البيانات» ذريعة شهيرة لرفض أي شيء — وغالبًا تحلّ استمارة موافقة بسيطة المسألة.
+    mk: Според GDPR можете да прашате секоја фирма кои ваши податоци ги чува и од каде (мора да одговори за еден месец), да барате бришење и да ја повлечете согласноста во секое време; жалбите одат до покраинската
+      агенција. Во исто време „Datenschutz“ е познат изговор за одбивање на сè — често едноставен формулар за согласност би го решил тоа.
+- type: prompt
+  ask:
+    en: 'Once more: say “data protection”.'
+    ar: 'مرة أخرى: قولي “حماية البيانات”.'
+    mk: 'Уште еднаш: кажете „заштитата на податоци“.'
+  answer:
+    speaker: protagonist
+    text: der Datenschutz
+  items:
+  - der-datenschutz
+- type: prompt
+  ask:
+    en: 'Once more: say “the GDPR”.'
+    ar: 'مرة أخرى: قولي “اللائحة العامة لحماية البيانات”.'
+    mk: 'Уште еднаш: кажете „GDPR (регулативата за податоци)“.'
+  answer:
+    speaker: protagonist
+    text: die DSGVO
+  items:
+  - die-dsgvo
+- type: prompt
+  ask:
+    en: 'Once more: say “the (data) access request, information”.'
+    ar: 'مرة أخرى: قولي “طلب الاطلاع، المعلومات”.'
+    mk: 'Уште еднаш: кажете „барањето за пристап, информацијата“.'
+  answer:
+    speaker: protagonist
+    text: die Auskunft
+  items:
+  - die-auskunft
+- type: prompt
+  ask:
+    en: 'Once more: say “consent”.'
+    ar: 'مرة أخرى: قولي “الموافقة”.'
+    mk: 'Уште еднаш: кажете „согласноста“.'
+  answer:
+    speaker: protagonist
+    text: die Einwilligung
+  items:
+  - die-einwilligung
+- type: prompt
+  ask:
+    en: 'Once more: say “must be deleted”.'
+    ar: 'مرة أخرى: قولي “يجب أن يُحذف”.'
+    mk: 'Уште еднаш: кажете „мора да се избрише“.'
+  answer:
+    speaker: protagonist
+    text: muss gelöscht werden
+  items:
+  - muss-geloescht-werden
+- type: prompt
+  ask:
+    en: 'Once more: say “may not be passed on”.'
+    ar: 'مرة أخرى: قولي “لا يجوز أن يُمرَّر”.'
+    mk: 'Уште еднаш: кажете „не смее да се пренесе“.'
+  answer:
+    speaker: protagonist
+    text: darf nicht weitergegeben werden
+  items:
+  - darf-nicht-weitergegeben-werden
+- type: prompt
+  ask:
+    en: 'Once more: say “the deletion”.'
+    ar: 'مرة أخرى: قولي “الحذف”.'
+    mk: 'Уште еднаш: кажете „бришењето“.'
+  answer:
+    speaker: protagonist
+    text: die Löschung
+  items:
+  - die-loeschung
+- type: prompt
+  ask:
+    en: 'Once more: say “the data protection authority”.'
+    ar: 'مرة أخرى: قولي “هيئة حماية البيانات”.'
+    mk: 'Уште еднаш: кажете „агенцијата за заштита на податоци“.'
+  answer:
+    speaker: protagonist
+    text: die Datenschutzbehörde
+  items:
+  - die-datenschutzbehoerde
+- type: prompt
+  ask:
+    en: 'Once more: say “withdraw (consent)”.'
+    ar: 'مرة أخرى: قولي “يسحب (الموافقة)”.'
+    mk: 'Уште еднаш: кажете „повлекува“.'
+  answer:
+    speaker: protagonist
+    text: widerrufen
+  items:
+  - widerrufen
+- type: prompt
+  ask:
+    en: 'Once more: say “the excuse”.'
+    ar: 'مرة أخرى: قولي “الذريعة”.'
+    mk: 'Уште еднаш: кажете „изговорот“.'
+  answer:
+    speaker: protagonist
+    text: die Ausrede
+  items:
+  - die-ausrede
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “My sincere condolences — and “the memorial service — and “the burial, funeral — and “deceased — and “the condolence card — and “my thoughts are with you — and “We will miss him very much
+      — and “the memory — and “close family only — and “the wreath — and “promotion (to a higher league) — and “relegation — and “the league table — and “second place — and “could be enough — and “would
+      have to win — and “goal difference — and “the opponent — and “at the end of the season — and “the cheering — and “the clause — and “cosmetic repairs (painting etc.)”.'
+    ar: 'قولي: “أصدق التعازي — و“مراسم التأبين — و“الدفن، الجنازة — و“متوفّى — و“بطاقة التعزية — و“أفكاري معكم — و“سنفتقده كثيرًا — و“الذكرى — و“في أضيق نطاق عائلي — و“إكليل الزهور — و“الصعود — و“الهبوط
+      — و“جدول الترتيب — و“المركز الثاني — و“قد يكفي — و“يجب أن يفوز (افتراضًا) — و“فارق الأهداف — و“الخصم — و“في نهاية الموسم — و“الهتاف — و“البند — و“الإصلاحات التجميلية”.'
+    mk: 'Кажете: „Искрено сочувство“ — и „комеморацијата“ — и „погребот“ — и „починат“ — и „картичката за сочувство“ — и „во мислите сум со вас“ — и „Многу ќе ни недостига“ — и „споменот“ — и „во најтесен
+      круг“ — и „венецот“ — и „искачувањето“ — и „испаѓањето“ — и „табелата“ — и „второто место“ — и „би можело да биде доволно“ — и „би морал да победи“ — и „гол-разликата“ — и „противникот“ — и „на крајот
+      на сезоната“ — и „веселбата“ — и „клаузулата“ — и „естетските поправки“.'
+  answer:
+    speaker: protagonist
+    text: Mein herzliches Beileid … die Trauerfeier … die Beerdigung … verstorben … die Trauerkarte … in Gedanken bei Ihnen … Er wird uns sehr fehlen … die Erinnerung … im engsten Kreis … der Kranz … der
+      Aufstieg … der Abstieg … die Tabelle … der zweite Platz … könnte reichen … müsste gewinnen … das Torverhältnis … der Gegner … am Ende der Saison … der Jubel … die Klausel … die Schönheitsreparaturen
+  items:
+  - das-beileid
+  - die-trauerfeier
+  - die-beerdigung
+  - verstorben
+  - die-trauerkarte
+  - in-gedanken
+  - er-wird-fehlen
+  - die-erinnerung
+  - im-engsten-kreis
+  - der-kranz
+  - der-aufstieg
+  - der-abstieg
+  - die-tabelle
+  - der-tabellenplatz
+  - koennte-reichen
+  - muesste-gewinnen
+  - das-torverhaeltnis
+  - der-gegner
+  - die-saison-c1
+  - der-jubel
+  - die-klausel
+  - die-schoenheitsreparaturen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “invalid, void — and “moving out — and “the handover of the flat — and “is probably (assumption) — and “is said to, supposedly — and “must (surely) — and “normal wear and tear — and “the handover
+      report — and “the registry office — and “the wedding witness — and “the wedding — and “the ring — and “the bride and groom — and “the celebration — and “instead of (+ genitive) — and “despite (+ genitive)
+      — and “the budget — and “the ''I do'' — and “Would you like …? (informal) — and “No, thanks — and “means no — and “I didn''t know whether …”.'
+    ar: 'قولي: “باطل — و“مغادرة المسكن — و“تسليم الشقة — و“يُرجَّح أنّ — و“يُقال إنّ — و“لا بد أنّ — و“الاستهلاك العادي — و“محضر التسليم — و“مكتب السجل المدني — و“شاهد الزواج — و“الزفاف — و“الخاتم — و“العروسان
+      — و“الاحتفال — و“بدلًا من — و“رغم — و“الميزانية — و“كلمة «نعم» في الزفاف — و“هل تريد …؟ — و“لا، شكرًا — و“تعني لا — و“لم أكن أعرف إن كان …”.'
+    mk: 'Кажете: „неважечко“ — и „иселувањето“ — и „предавањето на станот“ — и „веројатно е“ — и „наводно“ — и „сигурно мора“ — и „нормалното абење“ — и „записникот за предавање“ — и „матичното“ — и „кумот“
+      — и „свадбата“ — и „прстенот“ — и „младенците“ — и „прославата“ — и „наместо“ — и „и покрај“ — и „буџетот“ — и „„да“-то“ — и „Сакаш ли …?“ — и „Не, благодарам“ — и „значи не“ — и „Не знаев дали …“.'
+  answer:
+    speaker: protagonist
+    text: unwirksam … der Auszug … die Wohnungsübergabe … dürfte … soll … muss wohl … die normale Abnutzung … das Übergabeprotokoll … das Standesamt … der Trauzeuge … die Hochzeit … der Ring … das Brautpaar
+      … die Feier … anstelle … trotz … das Budget … das Jawort … Möchtest du …? … Nein, danke … heißt nein … Ich wusste nicht, ob …
+  items:
+  - unwirksam
+  - der-auszug
+  - die-uebergabe-wohnung
+  - duerfte
+  - soll-angeblich
+  - muss-wohl
+  - die-abnutzung
+  - das-uebergabeprotokoll
+  - das-standesamt
+  - der-trauzeuge
+  - die-hochzeit
+  - der-ring
+  - das-brautpaar
+  - die-feier
+  - anstelle
+  - trotz
+  - das-budget
+  - das-ja-wort
+  - moechtest-du
+  - nein-danke
+  - heisst-nein
+  - ich-wusste-nicht
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “polite — and “honest(ly) — and “I was thirsty — and “the second time — and “Just say … — and “gladly, yes please — and “an appointment — and “I''d like — and “to register (myself) — and “the
+      form — and “the landlord''s confirmation — and “Where do you live? (polite) — and “Which …? (feminine) — and “religion — and “Why? — and “neither — and “church tax — and “done, finished — and “Is
+      that it? — and “Have a nice day!”.'
+    ar: 'قولي: “مؤدب — و“بصراحة — و“كنت عطشانًا — و“في المرة الثانية — و“قل ببساطة … — و“بكل سرور — و“موعدًا — و“أودّ — و“أن أسجّل نفسي — و“الاستمارة — و“تأكيد المؤجِّر — و“أين تسكن؟ (بصيغة الاحترام) —
+      و“أيّ …؟ — و“الديانة — و“لماذا؟ — و“ولا واحد منهما — و“ضريبة الكنيسة — و“انتهينا، جاهز — و“هل هذا كل شيء؟ — و“يومًا سعيدًا!”.'
+    mk: 'Кажете: „учтив“ — и „искрено“ — и „бев жеден“ — и „вториот пат“ — и „Само кажи …“ — и „со задоволство“ — и „термин“ — и „би сакал“ — и „да се пријавам“ — и „формуларот“ — и „потврдата од сопственикот
+      на станот“ — и „Каде живеете?“ — и „Која …?“ — и „вероисповеста“ — и „Зошто?“ — и „ниту едно ниту друго“ — и „црковниот данок“ — и „готово“ — и „Толку ли беше?“ — и „Убав ден!“.'
+  answer:
+    speaker: protagonist
+    text: höflich … ehrlich … ich hatte Durst … beim zweiten Mal … Sag einfach … … gerne … einen Termin … ich möchte … mich anmelden … das Formular … die Wohnungsgeberbestätigung … Wo wohnen Sie? … Welche
+      …? … die Religion … Warum? … keins von beiden … die Kirchensteuer … fertig … Das war's? … Schönen Tag noch!
+  items:
+  - hoeflich
+  - ehrlich
+  - ich-hatte-durst
+  - beim-zweiten-mal
+  - sag-einfach
+  - gerne
+  - einen-termin
+  - ich-moechte
+  - mich-anmelden
+  - das-formular
+  - die-wgb
+  - wo-wohnen-sie
+  - welche
+  - die-religion
+  - warum
+  - keins-von-beiden
+  - die-kirchensteuer
+  - fertig
+  - das-wars
+  - schoenen-tag-noch
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the cover letter — and “I hereby apply — and “the CV — and “the position as …”.'
+    ar: 'قولي: “رسالة التقديم — و“أتقدّم بموجب هذا — و“السيرة الذاتية — و“وظيفة …”.'
+  answer:
+    speaker: protagonist
+    text: das Anschreiben … hiermit bewerbe ich mich … der Lebenslauf … die Stelle als …
+  items:
+  - das-anschreiben-ea
+  - hiermit-bewerbe-ich-mich-ea
+  - der-lebenslauf-ea
+  - die-stelle-als-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the experience — and “being a team player — and “too modest — and “taking on responsibility”.'
+    ar: 'قولي: “الخبرة — و“القدرة على العمل الجماعي — و“متواضع أكثر من اللازم — و“تحمّل المسؤولية”.'
+  answer:
+    speaker: protagonist
+    text: die Erfahrung … die Teamfähigkeit … zu bescheiden … die Übernahme von Verantwortung
+  items:
+  - die-erfahrung-ea
+  - die-teamfaehigkeit-ea
+  - zu-bescheiden-ea
+  - die-uebernahme-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I''d be glad to be invited — and “the references, certificates”.'
+    ar: 'قولي: “يسعدني أن تُوجَّه إليّ دعوة — و“الشهادات”.'
+  answer:
+    speaker: protagonist
+    text: über eine Einladung freue ich mich … die Zeugnisse
+  items:
+  - ueber-eine-einladung-ea
+  - das-zeugnis-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „столарницата“ — и „семејната фирма“ — и „чиракот“ — и „стручното образование“.'
+  answer:
+    speaker: protagonist
+    text: die Tischlerei … der Familienbetrieb … der Azubi … die Ausbildung
+  items:
+  - die-tischlerei-m
+  - der-familienbetrieb-m
+  - der-azubi-m
+  - die-ausbildung-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „пријавата“ — и „доверливост“ — и „занаетот“ — и „изборот“.'
+  answer:
+    speaker: protagonist
+    text: die Bewerbung … Zuverlässigkeit … das Handwerk … die Auswahl
+  items:
+  - die-bewerbung-m-m
+  - die-zuverlaessigkeit-m-m
+  - das-handwerk-m
+  - die-auswahl-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „вешт“ — и „наследникот (во фирмата)“.'
+  answer:
+    speaker: protagonist
+    text: geschickt … die Nachfolge
+  items:
+  - geschickt-m
+  - die-nachfolge-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

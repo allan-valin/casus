@@ -1,0 +1,960 @@
+# UNIT de C1-09 — written by AI (Claude) for Casus; expanded from src/C1-09.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-09
+level: C1
+number: 9
+protagonist: f
+title:
+  en: At the specialist's
+  ar: عند الطبيب الأخصائي
+  mk: Кај специјалист
+situation:
+  en: 'Knee pain for weeks. Dr Wagner gives you a referral to an orthopaedist. On the phone: the first free appointment is in four months.'
+  ar: 'ألم في الركبة منذ أسابيع. الدكتورة فاغنر تعطيكِ تحويلًا إلى طبيب عظام. على الهاتف: أول موعد متاح بعد أربعة أشهر.'
+  mk: 'Болка во коленото со недели. Д-р Вагнер ви дава упат за ортопед. На телефон: првиот слободен термин е за четири месеци.'
+learn_lessons:
+- c1-nominal-style
+culture: Public and private insurance
+new_items:
+- id: die-ueberweisung
+  text: die Überweisung
+  meaning:
+    en: the referral
+    ar: التحويل الطبي
+    mk: упатот
+- id: der-facharzt
+  text: der Facharzt
+  meaning:
+    en: the specialist
+    ar: الطبيب الأخصائي
+    mk: специјалистот
+- id: der-orthopaede
+  text: der Orthopäde
+  meaning:
+    en: the orthopaedist
+    ar: طبيب العظام
+    mk: ортопедот
+  rare: true
+- id: die-wartezeit-arzt
+  text: die Wartezeit auf einen Termin
+  meaning:
+    en: the wait for an appointment
+    ar: مدة انتظار الموعد
+    mk: чекањето за термин
+- id: gesetzlich-versichert
+  text: gesetzlich versichert
+  meaning:
+    en: publicly insured
+    ar: مؤمَّن في التأمين العام
+    mk: јавно осигурен
+- id: privat-versichert
+  text: privat versichert
+  meaning:
+    en: privately insured
+    ar: مؤمَّن تأمينًا خاصًا
+    mk: приватно осигурен
+- id: die-terminservicestelle
+  text: die Terminservicestelle
+  meaning:
+    en: the appointment service (116117)
+    ar: خدمة المواعيد (116117)
+    mk: службата за термини (116117)
+  rare: true
+- id: die-dringlichkeit
+  text: die Dringlichkeit
+  meaning:
+    en: urgency
+    ar: الاستعجال
+    mk: итноста
+- id: die-vermittlung
+  text: die Vermittlung
+  meaning:
+    en: arranging, placement
+    ar: الترتيب، الوساطة
+    mk: посредувањето
+- id: die-absage
+  text: die Absage
+  meaning:
+    en: a cancellation
+    ar: إلغاء موعد
+    mk: откажувањето
+reviews:
+- item: die-wohnung-e
+  from: A1-02-e
+  for:
+  - en
+- item: das-zimmer-e
+  from: A1-02-e
+  for:
+  - en
+- item: und-die-e
+  from: A1-02-e
+  for:
+  - en
+- item: die-kueche-e
+  from: A1-02-e
+  for:
+  - en
+- item: es-gibt-keine-e
+  from: A1-02-e
+  for:
+  - en
+- item: nur-e
+  from: A1-02-e
+  for:
+  - en
+- item: die-anschluesse-e
+  from: A1-02-e
+  for:
+  - en
+- item: die-spuele-e
+  from: A1-02-e
+  for:
+  - en
+- item: selbst-e
+  from: A1-02-e
+  for:
+  - en
+- item: wo-e
+  from: A1-02-e
+  for:
+  - en
+- item: kaufe-ich-e
+  from: A1-02-e
+  for:
+  - en
+- item: gebraucht-e
+  from: A1-02-e
+  for:
+  - en
+- item: der-kuehlschrank-e
+  from: A1-02-e
+  for:
+  - en
+- item: auch-nicht-e
+  from: A1-02-e
+  for:
+  - en
+- item: viel-glueck-e
+  from: A1-02-e
+  for:
+  - en
+- item: die-abrechnung
+  from: B1-06
+- item: nachzahlen
+  from: B1-06
+- item: der-abschlag
+  from: B1-06
+- item: wird-berechnet
+  from: B1-06
+- item: der-verbrauch
+  from: B1-06
+- item: energie-sparen
+  from: B1-06
+- item: die-solaranlage
+  from: B1-06
+- item: auf-dem-dach
+  from: B1-06
+- item: wird-erzeugt
+  from: B1-06
+- item: hoeher
+  from: B1-06
+- item: sehr-geehrte
+  from: B2-08
+- item: mfg
+  from: B2-08
+- item: der-betreff
+  from: B2-08
+- item: hiermit-teile-ich
+  from: B2-08
+- item: ich-bitte-um
+  from: B2-08
+- item: die-rueckmeldung
+  from: B2-08
+- item: umgehend
+  from: B2-08
+- item: der-anhang
+  from: B2-08
+- item: die-mietminderung
+  from: B2-08
+- item: schriftlich
+  from: B2-08
+- item: die-mietpreisbremse
+  from: B2-24
+- item: die-sozialwohnung
+  from: B2-24
+- item: der-wohnberechtigungsschein
+  from: B2-24
+- item: wird-gebaut
+  from: B2-24
+- item: wurde-erhoeht
+  from: B2-24
+- item: ist-begrenzt
+  from: B2-24
+- item: die-vergleichsmiete
+  from: B2-24
+- item: die-nachfrage
+  from: B2-24
+- item: das-angebot
+  from: B2-24
+- item: der-mieterverein
+  from: B2-24
+- item: der-daueraufenthalt-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: die-rentenbeitraege-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: die-beitragsmonate-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: der-sprachnachweis-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: leben-in-deutschland-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: die-sicherung-des-lebensunterhalts-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: ausreichender-wohnraum-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: die-erfuellung-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: unbefristet-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: die-bearbeitungszeit-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: der-unfall
+  from: C1-06
+- item: der-unfallbericht
+  from: C1-06
+- item: der-zeuge
+  from: C1-06
+- item: die-aussage
+  from: C1-06
+- item: die-kreuzung
+  from: C1-06
+- item: abbiegen
+  from: C1-06
+- item: er-behauptet-ich-sei
+  from: C1-06
+- item: er-habe-gesehen
+  from: C1-06
+- item: die-vorfahrt
+  from: C1-06
+- item: die-prellung
+  from: C1-06
+- item: das-aktenzeichen
+  from: C1-06
+- item: der-aufstieg
+  from: C1-08
+- item: der-abstieg
+  from: C1-08
+- item: die-tabelle
+  from: C1-08
+- item: der-tabellenplatz
+  from: C1-08
+- item: koennte-reichen
+  from: C1-08
+- item: muesste-gewinnen
+  from: C1-08
+- item: das-torverhaeltnis
+  from: C1-08
+- item: der-gegner
+  from: C1-08
+- item: die-saison-c1
+  from: C1-08
+- item: der-jubel
+  from: C1-08
+- item: guten-morgen-a
+  from: A1-02-a
+  for:
+  - ar
+- item: der-papa-a
+  from: A1-02-a
+  for:
+  - ar
+- item: das-ist-a
+  from: A1-02-a
+  for:
+  - ar
+- item: die-kita-a
+  from: A1-02-a
+  for:
+  - ar
+- item: die-erzieherin-a
+  from: A1-02-a
+  for:
+  - ar
+- item: hallo-a
+  from: A1-02-a
+  for:
+  - ar
+- item: ich-will-k-a
+  from: A1-02-a
+  for:
+  - ar
+- item: nach-hause-a
+  from: A1-02-a
+  for:
+  - ar
+- item: keine-angst-a
+  from: A1-02-a
+  for:
+  - ar
+- item: wann-a
+  from: A1-02-a
+  for:
+  - ar
+- item: holen-ab-a
+  from: A1-02-a
+  for:
+  - ar
+- item: um-drei-uhr-a
+  from: A1-02-a
+  for:
+  - ar
+- item: tschuess-a
+  from: A1-02-a
+  for:
+  - ar
+- item: bis-spaeter-a
+  from: A1-02-a
+  for:
+  - ar
+- item: der-opa-m
+  from: A1-02-m
+  for:
+  - mk
+- item: ich-hole-ab-m
+  from: A1-02-m
+  for:
+  - mk
+- item: die-kita-m
+  from: A1-02-m
+  for:
+  - mk
+- item: die-erzieherin-m
+  from: A1-02-m
+  for:
+  - mk
+- item: ist-da-m
+  from: A1-02-m
+  for:
+  - mk
+- item: hallo-m
+  from: A1-02-m
+  for:
+  - mk
+- item: mein-schatz-m
+  from: A1-02-m
+  for:
+  - mk
+- item: der-ausweis-m
+  from: A1-02-m
+  for:
+  - mk
+- item: hier-m
+  from: A1-02-m
+  for:
+  - mk
+- item: die-mama-hat-gesagt-m
+  from: A1-02-m
+  for:
+  - mk
+- item: tschuess-m
+  from: A1-02-m
+  for:
+  - mk
+- item: bis-morgen-m
+  from: A1-02-m
+  for:
+  - mk
+- item: das-ist-m
+  from: A1-02-m
+  for:
+  - mk
+- item: das-daueraufenthaltsrecht-m
+  from: C1-02-m
+  for:
+  - mk
+- item: der-wohnsitz-m
+  from: C1-02-m
+  for:
+  - mk
+- item: die-ummeldung-m
+  from: C1-02-m
+  for:
+  - mk
+- item: ununterbrochen-m
+  from: C1-02-m
+  for:
+  - mk
+- item: fuenf-jahre-m
+  from: C1-02-m
+  for:
+  - mk
+- item: die-krankenversicherung-m-m
+  from: C1-02-m
+  for:
+  - mk
+- item: die-auswanderung-m
+  from: C1-02-m
+  for:
+  - mk
+- item: der-lebensmittelpunkt-m
+  from: C1-02-m
+  for:
+  - mk
+- item: die-entscheidung-m
+  from: C1-02-m
+  for:
+  - mk
+- item: die-rente-ins-ausland-m
+  from: C1-02-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: 'Knee pain for weeks. Dr Wagner gives you a referral to an orthopaedist. On the phone: the first free appointment is in four months. Listen to the conversation; you don''t need to understand it
+      yet.'
+    ar: 'ألم في الركبة منذ أسابيع. الدكتورة فاغنر تعطيكِ تحويلًا إلى طبيب عظام. على الهاتف: أول موعد متاح بعد أربعة أشهر. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.'
+    mk: 'Болка во коленото со недели. Д-р Вагнер ви дава упат за ортопед. На телефон: првиот слободен термин е за четири месеци. Слушнете го разговорот; уште не мора да го разберете.'
+- type: dialogue
+  lines:
+  - speaker: praxis
+    text: Praxis Dr. Krämer. Der nächste freie Termin ist im März.
+    meaning:
+      en: Dr Krämer's practice. The next free appointment is in March.
+      ar: عيادة الدكتور كريمر. أول موعد متاح في مارس.
+      mk: Ординација д-р Кремер. Следниот слободен термин е во март.
+  - speaker: protagonist
+    text: In vier Monaten? Ich habe eine Überweisung mit Dringlichkeit.
+    meaning:
+      en: In four months? I have a referral marked urgent.
+      ar: بعد أربعة أشهر؟ معي تحويل مستعجل.
+      mk: За четири месеци? Имам упат со итност.
+  - speaker: praxis
+    text: Sind Sie gesetzlich oder privat versichert?
+    meaning:
+      en: Are you publicly or privately insured?
+      ar: هل أنتِ مؤمَّنة في التأمين العام أم الخاص؟
+      mk: Јавно или приватно сте осигурени?
+  - speaker: protagonist
+    text: Gesetzlich. Spielt das eine Rolle?
+    meaning:
+      en: Publicly. Does that matter?
+      ar: في التأمين العام. هل لذلك أهمية؟
+      mk: Јавно. Дали тоа е важно?
+  - speaker: praxis
+    text: Für Privatpatienten hätte ich nächste Woche etwas. Für Sie leider nicht.
+    meaning:
+      en: For private patients I'd have something next week. For you, sadly not.
+      ar: للمرضى المؤمَّنين تأمينًا خاصًا لديّ موعد الأسبوع القادم. لكِ للأسف لا.
+      mk: За приватни пациенти би имала нешто следната недела. За вас, за жал, не.
+  - speaker: protagonist
+    text: Das ist unfair. Gibt es eine andere Möglichkeit?
+    meaning:
+      en: That's unfair. Is there another option?
+      ar: هذا غير عادل. هل هناك إمكانية أخرى؟
+      mk: Тоа е неправедно. Има ли друга можност?
+  - speaker: praxis
+    text: Mit der Überweisung hilft Ihnen die Terminservicestelle unter 116117. Die Vermittlung dauert meist wenige Wochen.
+    meaning:
+      en: With the referral, the appointment service on 116117 helps you. Arranging it usually takes a few weeks.
+      ar: مع التحويل تساعدكِ خدمة المواعيد على الرقم 116117. الترتيب يستغرق عادةً أسابيع قليلة.
+      mk: Со упатот ви помага службата за термини на 116117. Посредувањето обично трае неколку недели.
+  - speaker: protagonist
+    text: Und setzen Sie mich bitte auf die Liste für Absagen.
+    meaning:
+      en: And please put me on the cancellation list.
+      ar: وضعيني من فضلكِ على قائمة الإلغاءات.
+      mk: И ве молам ставете ме на листата за откажувања.
+- type: prompt
+  ask:
+    en: 'Say: a referral to a specialist.'
+    ar: 'قولي: تحويل إلى طبيب أخصائي.'
+    mk: 'Кажете: упат за специјалист.'
+  answer:
+    speaker: protagonist
+    text: Eine Überweisung zum Facharzt.
+  items:
+  - die-ueberweisung
+  - der-facharzt
+- type: prompt
+  ask:
+    en: 'Say: the orthopaedist.'
+    ar: 'قولي: طبيب العظام.'
+    mk: 'Кажете: ортопедот.'
+  answer:
+    speaker: protagonist
+    text: Der Orthopäde.
+  items:
+  - der-orthopaede
+- type: narrator
+  text:
+    en: 'Medical German compresses: «eine Überweisung mit Dringlichkeit» (= a referral that says it''s urgent), «die Vermittlung eines Termins» (= someone arranges an appointment for you), «die Wartezeit
+      auf einen Termin».'
+    ar: 'الألمانية الطبية تختصر: «eine Überweisung mit Dringlichkeit» (= تحويل مكتوب عليه أنه مستعجل)، «die Vermittlung eines Termins» (= أحدهم يرتّب لكِ موعدًا)، «die Wartezeit auf einen Termin».'
+    mk: 'Медицинскиот германски збива: «eine Überweisung mit Dringlichkeit» (= упат на кој пишува дека е итно), «die Vermittlung eines Termins» (= некој ви закажува термин), «die Wartezeit auf einen Termin».'
+- type: prompt
+  ask:
+    en: 'Say: a referral marked urgent.'
+    ar: 'قولي: تحويل مستعجل.'
+    mk: 'Кажете: упат со итност.'
+  answer:
+    speaker: protagonist
+    text: Eine Überweisung mit Dringlichkeit.
+  items:
+  - die-dringlichkeit
+- type: prompt
+  ask:
+    en: 'Say: the wait for an appointment.'
+    ar: 'قولي: مدة انتظار الموعد.'
+    mk: 'Кажете: чекањето за термин.'
+  answer:
+    speaker: protagonist
+    text: Die Wartezeit auf einen Termin.
+  items:
+  - die-wartezeit-arzt
+- type: prompt
+  ask:
+    en: 'Say: publicly insured.'
+    ar: 'قولي: مؤمَّنة في التأمين العام.'
+    mk: 'Кажете: јавно осигурена.'
+  answer:
+    speaker: protagonist
+    text: Gesetzlich versichert.
+  items:
+  - gesetzlich-versichert
+- type: prompt
+  ask:
+    en: 'Say: privately insured.'
+    ar: 'قولي: مؤمَّنة تأمينًا خاصًا.'
+    mk: 'Кажете: приватно осигурена.'
+  answer:
+    speaker: protagonist
+    text: Privat versichert.
+  items:
+  - privat-versichert
+- type: prompt
+  ask:
+    en: 'Say: the appointment service.'
+    ar: 'قولي: خدمة المواعيد.'
+    mk: 'Кажете: службата за термини.'
+  answer:
+    speaker: protagonist
+    text: Die Terminservicestelle.
+  items:
+  - die-terminservicestelle
+- type: prompt
+  ask:
+    en: 'Say: it arranges appointments.'
+    ar: 'قولي: ترتّب المواعيد.'
+    mk: 'Кажете: посредува за термини.'
+  answer:
+    speaker: protagonist
+    text: Die Vermittlung von Terminen.
+  items:
+  - die-vermittlung
+- type: prompt
+  ask:
+    en: Ask for the cancellation list.
+    ar: اطلبي قائمة الإلغاءات.
+    mk: Побарајте листа за откажувања.
+  answer:
+    speaker: protagonist
+    text: Die Liste für Absagen.
+  items:
+  - die-absage
+- type: narrator
+  text:
+    en: Most people are in public insurance; private patients often get faster appointments, because doctors earn more from them — a known unfairness. With a referral marked urgent, the 116117 appointment
+      service must find you a specialist within a few weeks. Ask to go on the cancellation list, and call early in the morning.
+    ar: معظم الناس في التأمين العام؛ والمرضى ذوو التأمين الخاص يحصلون غالبًا على مواعيد أسرع، لأن الأطباء يكسبون منهم أكثر — ظلم معروف. ومع تحويل مستعجل يجب على خدمة المواعيد 116117 أن تجد لكِ أخصائيًا
+      خلال أسابيع قليلة. اطلبي وضعكِ على قائمة الإلغاءات، واتصلي صباحًا باكرًا.
+    mk: Повеќето луѓе се во јавното осигурување; приватните пациенти често добиваат побрзи термини, бидејќи лекарите повеќе заработуваат од нив — позната неправда. Со упат со итност, службата 116117 мора
+      да ви најде специјалист за неколку недели. Побарајте листа за откажувања и јавувајте се рано наутро.
+- type: prompt
+  ask:
+    en: 'Once more: say “the referral”.'
+    ar: 'مرة أخرى: قولي “التحويل الطبي”.'
+    mk: 'Уште еднаш: кажете „упатот“.'
+  answer:
+    speaker: protagonist
+    text: die Überweisung
+  items:
+  - die-ueberweisung
+- type: prompt
+  ask:
+    en: 'Once more: say “the specialist”.'
+    ar: 'مرة أخرى: قولي “الطبيب الأخصائي”.'
+    mk: 'Уште еднаш: кажете „специјалистот“.'
+  answer:
+    speaker: protagonist
+    text: der Facharzt
+  items:
+  - der-facharzt
+- type: prompt
+  ask:
+    en: 'Once more: say “the orthopaedist”.'
+    ar: 'مرة أخرى: قولي “طبيب العظام”.'
+    mk: 'Уште еднаш: кажете „ортопедот“.'
+  answer:
+    speaker: protagonist
+    text: der Orthopäde
+  items:
+  - der-orthopaede
+- type: prompt
+  ask:
+    en: 'Once more: say “the wait for an appointment”.'
+    ar: 'مرة أخرى: قولي “مدة انتظار الموعد”.'
+    mk: 'Уште еднаш: кажете „чекањето за термин“.'
+  answer:
+    speaker: protagonist
+    text: die Wartezeit auf einen Termin
+  items:
+  - die-wartezeit-arzt
+- type: prompt
+  ask:
+    en: 'Once more: say “publicly insured”.'
+    ar: 'مرة أخرى: قولي “مؤمَّن في التأمين العام”.'
+    mk: 'Уште еднаш: кажете „јавно осигурен“.'
+  answer:
+    speaker: protagonist
+    text: gesetzlich versichert
+  items:
+  - gesetzlich-versichert
+- type: prompt
+  ask:
+    en: 'Once more: say “privately insured”.'
+    ar: 'مرة أخرى: قولي “مؤمَّن تأمينًا خاصًا”.'
+    mk: 'Уште еднаш: кажете „приватно осигурен“.'
+  answer:
+    speaker: protagonist
+    text: privat versichert
+  items:
+  - privat-versichert
+- type: prompt
+  ask:
+    en: 'Once more: say “the appointment service (116117)”.'
+    ar: 'مرة أخرى: قولي “خدمة المواعيد (116117)”.'
+    mk: 'Уште еднаш: кажете „службата за термини (116117)“.'
+  answer:
+    speaker: protagonist
+    text: die Terminservicestelle
+  items:
+  - die-terminservicestelle
+- type: prompt
+  ask:
+    en: 'Once more: say “urgency”.'
+    ar: 'مرة أخرى: قولي “الاستعجال”.'
+    mk: 'Уште еднаш: кажете „итноста“.'
+  answer:
+    speaker: protagonist
+    text: die Dringlichkeit
+  items:
+  - die-dringlichkeit
+- type: prompt
+  ask:
+    en: 'Once more: say “arranging, placement”.'
+    ar: 'مرة أخرى: قولي “الترتيب، الوساطة”.'
+    mk: 'Уште еднаш: кажете „посредувањето“.'
+  answer:
+    speaker: protagonist
+    text: die Vermittlung
+  items:
+  - die-vermittlung
+- type: prompt
+  ask:
+    en: 'Once more: say “a cancellation”.'
+    ar: 'مرة أخرى: قولي “إلغاء موعد”.'
+    mk: 'Уште еднаш: кажете „откажувањето“.'
+  answer:
+    speaker: protagonist
+    text: die Absage
+  items:
+  - die-absage
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the flat — and “the room — and “And the …? — and “the kitchen — and “There is no … (feminine) — and “only — and “the connections (water, power) — and “the sink”.'
+  answer:
+    speaker: protagonist
+    text: die Wohnung … das Zimmer … Und die …? … die Küche … Es gibt keine … … nur … die Anschlüsse … die Spüle
+  items:
+  - die-wohnung-e
+  - das-zimmer-e
+  - und-die-e
+  - die-kueche-e
+  - es-gibt-keine-e
+  - nur-e
+  - die-anschluesse-e
+  - die-spuele-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “yourself, myself — and “Where …? — and “do I buy — and “second-hand, used — and “the fridge — and “not … either — and “Good luck!”.'
+  answer:
+    speaker: protagonist
+    text: selbst … Wo …? … kaufe ich … gebraucht … der Kühlschrank … auch nicht … Viel Glück!
+  items:
+  - selbst-e
+  - wo-e
+  - kaufe-ich-e
+  - gebraucht-e
+  - der-kuehlschrank-e
+  - auch-nicht-e
+  - viel-glueck-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “promotion (to a higher league) — and “relegation — and “the league table — and “second place — and “could be enough — and “would have to win — and “goal difference — and “the opponent — and
+      “at the end of the season — and “the cheering — and “the accident — and “the accident report — and “the witness — and “the statement — and “the crossing, junction — and “turn (off) — and “he claims
+      I was … — and “(reported) he saw … — and “right of way — and “the bruise — and “the case number — and “the rent brake — and “social housing — and “housing entitlement certificate — and “is being built
+      — and “was raised”.'
+    ar: 'قولي: “الصعود — و“الهبوط — و“جدول الترتيب — و“المركز الثاني — و“قد يكفي — و“يجب أن يفوز (افتراضًا) — و“فارق الأهداف — و“الخصم — و“في نهاية الموسم — و“الهتاف — و“الحادث — و“تقرير الحادث — و“الشاهد
+      — و“الإفادة — و“التقاطع — و“ينعطف — و“يدّعي أنني … — و“(منقولًا) إنه رأى … — و“أولوية المرور — و“الكدمة — و“رقم الملف — و“فرملة الإيجار — و“السكن الاجتماعي — و“شهادة استحقاق السكن — و“يُبنى — و“رُفع”.'
+    mk: 'Кажете: „искачувањето“ — и „испаѓањето“ — и „табелата“ — и „второто место“ — и „би можело да биде доволно“ — и „би морал да победи“ — и „гол-разликата“ — и „противникот“ — и „на крајот на сезоната“
+      — и „веселбата“ — и „несреќата“ — и „записникот за несреќата“ — и „сведокот“ — и „изјавата“ — и „раскрсницата“ — и „свртува“ — и „тврди дека сум …“ — и „(пренесено) дека видел …“ — и „првенството“
+      — и „модринката“ — и „бројот на предметот“ — и „сопирачката на кириите“ — и „социјалниот стан“ — и „потврдата за право на социјален стан“ — и „се гради“ — и „беше зголемена“.'
+  answer:
+    speaker: protagonist
+    text: der Aufstieg … der Abstieg … die Tabelle … der zweite Platz … könnte reichen … müsste gewinnen … das Torverhältnis … der Gegner … am Ende der Saison … der Jubel … der Unfall … der Unfallbericht
+      … der Zeuge … die Aussage … die Kreuzung … abbiegen … er behauptet, ich sei … … er habe … gesehen … die Vorfahrt … die Prellung … das Aktenzeichen … die Mietpreisbremse … die Sozialwohnung … der Wohnberechtigungsschein
+      … wird gebaut … wurde erhöht
+  items:
+  - der-aufstieg
+  - der-abstieg
+  - die-tabelle
+  - der-tabellenplatz
+  - koennte-reichen
+  - muesste-gewinnen
+  - das-torverhaeltnis
+  - der-gegner
+  - die-saison-c1
+  - der-jubel
+  - der-unfall
+  - der-unfallbericht
+  - der-zeuge
+  - die-aussage
+  - die-kreuzung
+  - abbiegen
+  - er-behauptet-ich-sei
+  - er-habe-gesehen
+  - die-vorfahrt
+  - die-prellung
+  - das-aktenzeichen
+  - die-mietpreisbremse
+  - die-sozialwohnung
+  - der-wohnberechtigungsschein
+  - wird-gebaut
+  - wurde-erhoeht
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “is limited — and “the local reference rent — and “the demand — and “the supply, offer — and “the tenants'' association — and “Dear Sir or Madam — and “Yours sincerely — and “the subject line
+      — and “I hereby inform you — and “I request … — and “a reply — and “promptly — and “attached — and “a rent reduction — and “in writing — and “the yearly utilities statement — and “pay extra (afterwards)
+      — and “the monthly advance payment — and “is calculated — and “the consumption — and “save energy — and “the solar panels — and “on the roof — and “is produced — and “higher”.'
+    ar: 'قولي: “محدود — و“الإيجار المرجعي المحلي — و“الطلب — و“العرض — و“جمعية المستأجرين — و“السادة المحترمون — و“مع أطيب التحيات — و“الموضوع — و“أبلغكم بموجب هذا — و“أرجو … — و“الرد — و“فورًا، على وجه
+      السرعة — و“في المرفق — و“تخفيض الإيجار — و“كتابيًا — و“كشف التكاليف الإضافية السنوي — و“يدفع فرقًا — و“الدفعة الشهرية المسبقة — و“يُحسَب — و“الاستهلاك — و“يوفّر الطاقة — و“الألواح الشمسية — و“على
+      السطح — و“يُنتَج — و“أعلى”.'
+    mk: 'Кажете: „е ограничено“ — и „вообичаената локална кирија“ — и „побарувачката“ — и „понудата“ — и „здружението на станари“ — и „Почитувани“ — и „Со почит“ — и „предметот“ — и „со ова ве известувам“
+      — и „ве молам за …“ — и „одговорот“ — и „веднаш“ — и „во прилог“ — и „намалување на киријата“ — и „писмено“ — и „годишната пресметка за режиски трошоци“ — и „доплаќа“ — и „месечната аконтација“ —
+      и „се пресметува“ — и „потрошувачката“ — и „штеди енергија“ — и „сончевите панели“ — и „на покривот“ — и „се произведува“ — и „повисок“.'
+  answer:
+    speaker: protagonist
+    text: ist begrenzt … die ortsübliche Vergleichsmiete … die Nachfrage … das Angebot … der Mieterverein … Sehr geehrte Damen und Herren … Mit freundlichen Grüßen … der Betreff … hiermit teile ich Ihnen
+      mit … ich bitte um … … die Rückmeldung … umgehend … im Anhang … die Mietminderung … schriftlich … die Nebenkostenabrechnung … nachzahlen … der Abschlag … wird berechnet … der Verbrauch … Energie sparen
+      … die Solaranlage … auf dem Dach … wird erzeugt … höher
+  items:
+  - ist-begrenzt
+  - die-vergleichsmiete
+  - die-nachfrage
+  - das-angebot
+  - der-mieterverein
+  - sehr-geehrte
+  - mfg
+  - der-betreff
+  - hiermit-teile-ich
+  - ich-bitte-um
+  - die-rueckmeldung
+  - umgehend
+  - der-anhang
+  - die-mietminderung
+  - schriftlich
+  - die-abrechnung
+  - nachzahlen
+  - der-abschlag
+  - wird-berechnet
+  - der-verbrauch
+  - energie-sparen
+  - die-solaranlage
+  - auf-dem-dach
+  - wird-erzeugt
+  - hoeher
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “permanent residence — and “pension contributions — and “months of contributions — and “proof of language level — and “the ''Life in Germany'' test”.'
+    ar: 'قولي: “الإقامة الدائمة — و“اشتراكات التقاعد — و“أشهر الاشتراك — و“إثبات المستوى اللغوي — و“اختبار «الحياة في ألمانيا»”.'
+  answer:
+    speaker: protagonist
+    text: der Daueraufenthalt … die Rentenbeiträge … die Beitragsmonate … der Sprachnachweis … der Test „Leben in Deutschland“
+  items:
+  - der-daueraufenthalt-ea
+  - die-rentenbeitraege-ea
+  - die-beitragsmonate-ea
+  - der-sprachnachweis-ea
+  - leben-in-deutschland-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “securing one''s livelihood — and “sufficient living space — and “the fulfilment (of conditions) — and “permanent, unlimited — and “the processing time”.'
+    ar: 'قولي: “تأمين المعيشة — و“مسكن كافٍ — و“استيفاء (الشروط) — و“غير محدد المدة — و“مدة المعالجة”.'
+  answer:
+    speaker: protagonist
+    text: die Sicherung des Lebensunterhalts … ausreichender Wohnraum … die Erfüllung … unbefristet … die Bearbeitungszeit
+  items:
+  - die-sicherung-des-lebensunterhalts-ea
+  - ausreichender-wohnraum-ea
+  - die-erfuellung-ea
+  - unbefristet-ea
+  - die-bearbeitungszeit-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “صباح الخير — و“الأب، بابا — و“هذا / هذه … — و“الحضانة (الكيتا) — و“المربية — و“مرحبًا (غير رسمي) — و“أريد”.'
+  answer:
+    speaker: protagonist
+    text: Guten Morgen … der Papa … Das ist … … die Kita … die Erzieherin … Hallo … ich will
+  items:
+  - guten-morgen-a
+  - der-papa-a
+  - das-ist-a
+  - die-kita-a
+  - die-erzieherin-a
+  - hallo-a
+  - ich-will-k-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “إلى البيت — و“لا تخف! / لا تخافي! — و“متى …؟ — و“تأخذون (أحدًا) من مكان، تأتون لأخذه — و“في الساعة الثالثة — و“إلى اللقاء! (غير رسمي) — و“أراك لاحقًا!”.'
+  answer:
+    speaker: protagonist
+    text: nach Hause … Keine Angst! … Wann …? … holen … ab … um drei Uhr … Tschüss! … Bis später!
+  items:
+  - nach-hause-a
+  - keine-angst-a
+  - wann-a
+  - holen-ab-a
+  - um-drei-uhr-a
+  - tschuess-a
+  - bis-spaeter-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „правото на постојан престој“ — и „живеалиштето“ — и „пријавувањето на нова адреса“ — и „без прекин“ — и „пет години“ — и „здравственото осигурување“ — и „иселувањето“ — и „центарот на
+      животот“.'
+  answer:
+    speaker: protagonist
+    text: das Daueraufenthaltsrecht … der Wohnsitz … die Ummeldung … ununterbrochen … fünf Jahre … die Krankenversicherung … die Auswanderung … der Lebensmittelpunkt
+  items:
+  - das-daueraufenthaltsrecht-m
+  - der-wohnsitz-m
+  - die-ummeldung-m
+  - ununterbrochen-m
+  - fuenf-jahre-m
+  - die-krankenversicherung-m-m
+  - die-auswanderung-m
+  - der-lebensmittelpunkt-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „одлуката“ — и „исплатата на пензија во странство“ — и „дедото“ — и „доаѓам да го земам (некого)“ — и „градинката (Kita)“ — и „воспитувачката“ — и „… е тука, дојде“ — и „Здраво“.'
+  answer:
+    speaker: protagonist
+    text: die Entscheidung … die Rentenzahlung ins Ausland … der Opa … ich hole … ab … die Kita … die Erzieherin … … ist da … Hallo
+  items:
+  - die-entscheidung-m
+  - die-rente-ins-ausland-m
+  - der-opa-m
+  - ich-hole-ab-m
+  - die-kita-m
+  - die-erzieherin-m
+  - ist-da-m
+  - hallo-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „душо моја, срце мое“ — и „личната карта / документот“ — и „тука, еве“ — и „мама кажа“ — и „Чао!“ — и „До утре!“ — и „Ова е …“.'
+  answer:
+    speaker: protagonist
+    text: mein Schatz … der Ausweis … hier … die Mama hat es gesagt … Tschüss! … Bis morgen! … Das ist …
+  items:
+  - mein-schatz-m
+  - der-ausweis-m
+  - hier-m
+  - die-mama-hat-gesagt-m
+  - tschuess-m
+  - bis-morgen-m
+  - das-ist-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

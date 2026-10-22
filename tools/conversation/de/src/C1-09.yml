@@ -1,0 +1,41 @@
+id: C1-09
+protagonist: f
+title: ["At the specialist's", "عند الطبيب الأخصائي", "Кај специјалист"]
+situation:
+  - "Knee pain for weeks. Dr Wagner gives you a referral to an orthopaedist. On the phone: the first free appointment is in four months."
+  - "ألم في الركبة منذ أسابيع. الدكتورة فاغنر تعطيكِ تحويلًا إلى طبيب عظام. على الهاتف: أول موعد متاح بعد أربعة أشهر."
+  - "Болка во коленото со недели. Д-р Вагнер ви дава упат за ортопед. На телефон: првиот слободен термин е за четири месеци."
+learn: [c1-nominal-style]
+culture: Public and private insurance
+items:
+  - [die-ueberweisung, "die Überweisung", "the referral", "التحويل الطبي", "упатот"]
+  - [der-facharzt, "der Facharzt", "the specialist", "الطبيب الأخصائي", "специјалистот"]
+  - [der-orthopaede, "der Orthopäde", "the orthopaedist", "طبيب العظام", "ортопедот", {rare: true}]
+  - [die-wartezeit-arzt, "die Wartezeit auf einen Termin", "the wait for an appointment", "مدة انتظار الموعد", "чекањето за термин"]
+  - [gesetzlich-versichert, "gesetzlich versichert", "publicly insured", "مؤمَّن في التأمين العام", "јавно осигурен"]
+  - [privat-versichert, "privat versichert", "privately insured", "مؤمَّن تأمينًا خاصًا", "приватно осигурен"]
+  - [die-terminservicestelle, "die Terminservicestelle", "the appointment service (116117)", "خدمة المواعيد (116117)", "службата за термини (116117)", {rare: true}]
+  - [die-dringlichkeit, "die Dringlichkeit", "urgency", "الاستعجال", "итноста"]
+  - [die-vermittlung, "die Vermittlung", "arranging, placement", "الترتيب، الوساطة", "посредувањето"]
+  - [die-absage, "die Absage", "a cancellation", "إلغاء موعد", "откажувањето"]
+dialogue:
+  - [praxis, "Praxis Dr. Krämer. Der nächste freie Termin ist im März.", "Dr Krämer's practice. The next free appointment is in March.", "عيادة الدكتور كريمر. أول موعد متاح في مارس.", "Ординација д-р Кремер. Следниот слободен термин е во март."]
+  - [protagonist, "In vier Monaten? Ich habe eine Überweisung mit Dringlichkeit.", "In four months? I have a referral marked urgent.", "بعد أربعة أشهر؟ معي تحويل مستعجل.", "За четири месеци? Имам упат со итност."]
+  - [praxis, "Sind Sie gesetzlich oder privat versichert?", "Are you publicly or privately insured?", "هل أنتِ مؤمَّنة في التأمين العام أم الخاص؟", "Јавно или приватно сте осигурени?"]
+  - [protagonist, "Gesetzlich. Spielt das eine Rolle?", "Publicly. Does that matter?", "في التأمين العام. هل لذلك أهمية؟", "Јавно. Дали тоа е важно?"]
+  - [praxis, "Für Privatpatienten hätte ich nächste Woche etwas. Für Sie leider nicht.", "For private patients I'd have something next week. For you, sadly not.", "للمرضى المؤمَّنين تأمينًا خاصًا لديّ موعد الأسبوع القادم. لكِ للأسف لا.", "За приватни пациенти би имала нешто следната недела. За вас, за жал, не."]
+  - [protagonist, "Das ist unfair. Gibt es eine andere Möglichkeit?", "That's unfair. Is there another option?", "هذا غير عادل. هل هناك إمكانية أخرى؟", "Тоа е неправедно. Има ли друга можност?"]
+  - [praxis, "Mit der Überweisung hilft Ihnen die Terminservicestelle unter 116117. Die Vermittlung dauert meist wenige Wochen.", "With the referral, the appointment service on 116117 helps you. Arranging it usually takes a few weeks.", "مع التحويل تساعدكِ خدمة المواعيد على الرقم 116117. الترتيب يستغرق عادةً أسابيع قليلة.", "Со упатот ви помага службата за термини на 116117. Посредувањето обично трае неколку недели."]
+  - [protagonist, "Und setzen Sie mich bitte auf die Liste für Absagen.", "And please put me on the cancellation list.", "وضعيني من فضلكِ على قائمة الإلغاءات.", "И ве молам ставете ме на листата за откажувања."]
+teach:
+  - ask: ["Say: a referral to a specialist.", "قولي: تحويل إلى طبيب أخصائي.", "Кажете: упат за специјалист.", "Eine Überweisung zum Facharzt.", die-ueberweisung, der-facharzt]
+  - ask: ["Say: the orthopaedist.", "قولي: طبيب العظام.", "Кажете: ортопедот.", "Der Orthopäde.", der-orthopaede]
+  - note: ["Medical German compresses: «eine Überweisung mit Dringlichkeit» (= a referral that says it's urgent), «die Vermittlung eines Termins» (= someone arranges an appointment for you), «die Wartezeit auf einen Termin».", "الألمانية الطبية تختصر: «eine Überweisung mit Dringlichkeit» (= تحويل مكتوب عليه أنه مستعجل)، «die Vermittlung eines Termins» (= أحدهم يرتّب لكِ موعدًا)، «die Wartezeit auf einen Termin».", "Медицинскиот германски збива: «eine Überweisung mit Dringlichkeit» (= упат на кој пишува дека е итно), «die Vermittlung eines Termins» (= некој ви закажува термин), «die Wartezeit auf einen Termin»."]
+  - ask: ["Say: a referral marked urgent.", "قولي: تحويل مستعجل.", "Кажете: упат со итност.", "Eine Überweisung mit Dringlichkeit.", die-dringlichkeit]
+  - ask: ["Say: the wait for an appointment.", "قولي: مدة انتظار الموعد.", "Кажете: чекањето за термин.", "Die Wartezeit auf einen Termin.", die-wartezeit-arzt]
+  - ask: ["Say: publicly insured.", "قولي: مؤمَّنة في التأمين العام.", "Кажете: јавно осигурена.", "Gesetzlich versichert.", gesetzlich-versichert]
+  - ask: ["Say: privately insured.", "قولي: مؤمَّنة تأمينًا خاصًا.", "Кажете: приватно осигурена.", "Privat versichert.", privat-versichert]
+  - ask: ["Say: the appointment service.", "قولي: خدمة المواعيد.", "Кажете: службата за термини.", "Die Terminservicestelle.", die-terminservicestelle]
+  - ask: ["Say: it arranges appointments.", "قولي: ترتّب المواعيد.", "Кажете: посредува за термини.", "Die Vermittlung von Terminen.", die-vermittlung]
+  - ask: ["Ask for the cancellation list.", "اطلبي قائمة الإلغاءات.", "Побарајте листа за откажувања.", "Die Liste für Absagen.", die-absage]
+  - note: ["Most people are in public insurance; private patients often get faster appointments, because doctors earn more from them — a known unfairness. With a referral marked urgent, the 116117 appointment service must find you a specialist within a few weeks. Ask to go on the cancellation list, and call early in the morning.", "معظم الناس في التأمين العام؛ والمرضى ذوو التأمين الخاص يحصلون غالبًا على مواعيد أسرع، لأن الأطباء يكسبون منهم أكثر — ظلم معروف. ومع تحويل مستعجل يجب على خدمة المواعيد 116117 أن تجد لكِ أخصائيًا خلال أسابيع قليلة. اطلبي وضعكِ على قائمة الإلغاءات، واتصلي صباحًا باكرًا.", "Повеќето луѓе се во јавното осигурување; приватните пациенти често добиваат побрзи термини, бидејќи лекарите повеќе заработуваат од нив — позната неправда. Со упат со итност, службата 116117 мора да ви најде специјалист за неколку недели. Побарајте листа за откажувања и јавувајте се рано наутро."]

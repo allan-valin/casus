@@ -1,0 +1,903 @@
+# UNIT de C1-10 — written by AI (Claude) for Casus; expanded from src/C1-10.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-10
+level: C1
+number: 10
+protagonist: m
+title:
+  en: A death
+  ar: وفاة
+  mk: Смрт
+situation:
+  en: Herr Fischer, the volunteer from the Tafel, has died. At the memorial service you speak to his daughter.
+  ar: السيد فيشر، المتطوّع من بنك الطعام، توفّي. في مراسم التأبين تتحدّث إلى ابنته.
+  mk: Господин Фишер, волонтерот од Tafel, почина. На комеморацијата зборувате со неговата ќерка.
+learn_lessons:
+- c1-formal-phrases
+culture: Mourning customs
+new_items:
+- id: das-beileid
+  text: Mein herzliches Beileid
+  meaning:
+    en: My sincere condolences
+    ar: أصدق التعازي
+    mk: Искрено сочувство
+- id: die-trauerfeier
+  text: die Trauerfeier
+  meaning:
+    en: the memorial service
+    ar: مراسم التأبين
+    mk: комеморацијата
+  rare: true
+- id: die-beerdigung
+  text: die Beerdigung
+  meaning:
+    en: the burial, funeral
+    ar: الدفن، الجنازة
+    mk: погребот
+- id: verstorben
+  text: verstorben
+  meaning:
+    en: deceased
+    ar: متوفّى
+    mk: починат
+- id: die-trauerkarte
+  text: die Trauerkarte
+  meaning:
+    en: the condolence card
+    ar: بطاقة التعزية
+    mk: картичката за сочувство
+  rare: true
+- id: in-gedanken
+  text: in Gedanken bei Ihnen
+  meaning:
+    en: my thoughts are with you
+    ar: أفكاري معكم
+    mk: во мислите сум со вас
+- id: er-wird-fehlen
+  text: Er wird uns sehr fehlen
+  meaning:
+    en: We will miss him very much
+    ar: سنفتقده كثيرًا
+    mk: Многу ќе ни недостига
+- id: die-erinnerung
+  text: die Erinnerung
+  meaning:
+    en: the memory
+    ar: الذكرى
+    mk: споменот
+- id: im-engsten-kreis
+  text: im engsten Kreis
+  meaning:
+    en: close family only
+    ar: في أضيق نطاق عائلي
+    mk: во најтесен круг
+- id: der-kranz
+  text: der Kranz
+  meaning:
+    en: the wreath
+    ar: إكليل الزهور
+    mk: венецот
+reviews:
+- item: was-fehlt-ihnen
+  from: A1-03
+- item: mein
+  from: A1-03
+- item: der-kopf
+  from: A1-03
+- item: tut-weh
+  from: A1-03
+- item: der-bauch
+  from: A1-03
+- item: seit-wann
+  from: A1-03
+- item: seit-gestern
+  from: A1-03
+- item: haben-sie
+  from: A1-03
+- item: fieber
+  from: A1-03
+- item: kein
+  from: A1-03
+- item: der-arm
+  from: A1-03
+- item: auch
+  from: A1-03
+- item: nicht-schlimm
+  from: A1-03
+- item: viel-wasser
+  from: A1-03
+- item: frau-doktor
+  from: A1-03
+- item: die-abmahnung
+  from: B1-07
+- item: das-urheberrecht
+  from: B1-07
+- item: wurde-geteilt
+  from: B1-07
+- item: die-unterlassungserklaerung
+  from: B1-07
+- item: nicht-sofort
+  from: B1-07
+- item: unterschreiben-nicht
+  from: B1-07
+- item: ein-eigener-anwalt
+  from: B1-07
+- item: verhandeln
+  from: B1-07
+- item: die-frist
+  from: B1-07
+- item: mein-cousin
+  from: B1-07
+- item: das-weltall
+  from: B2-09
+- item: das-lichtjahr
+  from: B2-09
+- item: die-umlaufbahn
+  from: B2-09
+- item: die-vergangenheit
+  from: B2-09
+- item: die-milchstrasse
+  from: B2-09
+- item: die-entfernung
+  from: B2-09
+- item: die-entstehung
+  from: B2-09
+- item: die-beobachtung
+  from: B2-09
+- item: das-fernrohr
+  from: B2-09
+- item: winzig
+  from: B2-09
+- item: die-mitgliederversammlung-ea
+  from: B2-25-ea
+  for:
+  - en
+  - ar
+- item: der-vorstand-ea
+  from: B2-25-ea
+  for:
+  - en
+  - ar
+- item: die-kassenwartin-ea
+  from: B2-25-ea
+  for:
+  - en
+  - ar
+- item: vorschlagen-ea
+  from: B2-25-ea
+  for:
+  - en
+  - ar
+- item: die-abstimmung-ea
+  from: B2-25-ea
+  for:
+  - en
+  - ar
+- item: die-enthaltung-ea
+  from: B2-25-ea
+  for:
+  - en
+  - ar
+- item: ich-nehme-die-wahl-an-ea
+  from: B2-25-ea
+  for:
+  - en
+  - ar
+- item: das-vertrauen-ea
+  from: B2-25-ea
+  for:
+  - en
+  - ar
+- item: einstimmig-ea
+  from: B2-25-ea
+  for:
+  - en
+  - ar
+- item: liebe-mitglieder-ea
+  from: B2-25-ea
+  for:
+  - en
+  - ar
+- item: die-staatsangehoerigkeit-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: die-doppelte-staatsangehoerigkeit-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: die-einbuergerungsbehoerde-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: der-fragenkatalog-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: das-bekenntnis-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: sie-sagte-man-muesse-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: es-sei-moeglich-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: man-habe-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: das-studienvisum-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: anrechnen-ea
+  from: C1-03-ea
+  for:
+  - en
+  - ar
+- item: kaffee-und-kuchen
+  from: C1-07
+- item: die-schwiegereltern
+  from: C1-07
+- item: ja-mal
+  from: C1-07
+- item: doch-mal-c1
+  from: C1-07
+- item: wohl
+  from: C1-07
+- item: selbst-gebacken
+  from: C1-07
+- item: der-sonntagskuchen
+  from: C1-07
+- item: puenktlich-um
+  from: C1-07
+- item: nehmen-sie-doch
+  from: C1-07
+- item: sich-verabschieden
+  from: C1-07
+- item: die-ueberweisung
+  from: C1-09
+- item: der-facharzt
+  from: C1-09
+- item: der-orthopaede
+  from: C1-09
+- item: die-wartezeit-arzt
+  from: C1-09
+- item: gesetzlich-versichert
+  from: C1-09
+- item: privat-versichert
+  from: C1-09
+- item: die-terminservicestelle
+  from: C1-09
+- item: die-dringlichkeit
+  from: C1-09
+- item: die-vermittlung
+  from: C1-09
+- item: die-absage
+  from: C1-09
+- item: der-seniorentreff-m
+  from: B2-25-m
+  for:
+  - mk
+- item: der-vorstand-m
+  from: B2-25-m
+  for:
+  - mk
+- item: vorschlagen-m
+  from: B2-25-m
+  for:
+  - mk
+- item: die-abstimmung-m
+  from: B2-25-m
+  for:
+  - mk
+- item: ich-nehme-die-wahl-an-m
+  from: B2-25-m
+  for:
+  - mk
+- item: das-vertrauen-m
+  from: B2-25-m
+  for:
+  - mk
+- item: einstimmig-m
+  from: B2-25-m
+  for:
+  - mk
+- item: liebe-mitglieder-m
+  from: B2-25-m
+  for:
+  - mk
+- item: die-veranstaltung-m
+  from: B2-25-m
+  for:
+  - mk
+- item: organisieren-m
+  from: B2-25-m
+  for:
+  - mk
+- item: die-staatsangehoerigkeit-m
+  from: C1-03-m
+  for:
+  - mk
+- item: die-doppelte-staatsangehoerigkeit-m
+  from: C1-03-m
+  for:
+  - mk
+- item: abgeben-m
+  from: C1-03-m
+  for:
+  - mk
+- item: behalten-m
+  from: C1-03-m
+  for:
+  - mk
+- item: es-sei-moeglich-m
+  from: C1-03-m
+  for:
+  - mk
+- item: er-muesse-m
+  from: C1-03-m
+  for:
+  - mk
+- item: von-geburt-an-m
+  from: C1-03-m
+  for:
+  - mk
+- item: das-wahlrecht-m-m
+  from: C1-03-m
+  for:
+  - mk
+- item: der-einbuergerungstest-m-m
+  from: C1-03-m
+  for:
+  - mk
+- item: die-urkunde-m
+  from: C1-03-m
+  for:
+  - mk
+- item: das-grab
+  from: A2-24
+steps:
+- type: narrator
+  text:
+    en: Herr Fischer, the volunteer from the Tafel, has died. At the memorial service you speak to his daughter. Listen to the conversation; you don't need to understand it yet.
+    ar: السيد فيشر، المتطوّع من بنك الطعام، توفّي. في مراسم التأبين تتحدّث إلى ابنته. استمع إلى المحادثة؛ لا داعي لأن تفهمها الآن.
+    mk: Господин Фишер, волонтерот од Tafel, почина. На комеморацијата зборувате со неговата ќерка. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Frau Fischer, mein herzliches Beileid.
+    meaning:
+      en: Mrs Fischer, my sincere condolences.
+      ar: سيدة فيشر، أصدق التعازي.
+      mk: Госпоѓо Фишер, искрено сочувство.
+  - speaker: tochter
+    text: Danke. Kannten Sie meinen Vater?
+    meaning:
+      en: Thank you. Did you know my father?
+      ar: شكرًا. هل كنتَ تعرف والدي؟
+      mk: Благодарам. Дали го познававте татко ми?
+  - speaker: protagonist
+    text: Von der Tafel. Er hat mich am Anfang zu jedem Termin begleitet.
+    meaning:
+      en: From the Tafel. At the beginning he went with me to every appointment.
+      ar: من بنك الطعام. في البداية رافقني إلى كل موعد.
+      mk: Од Tafel. На почетокот ме придружуваше на секој термин.
+  - speaker: tochter
+    text: Das sieht ihm ähnlich. Er hat viel von Ihnen erzählt.
+    meaning:
+      en: That's just like him. He talked about you a lot.
+      ar: هذا يشبهه. لقد حدّثنا عنك كثيرًا.
+      mk: Тоа е баш тој. Многу раскажуваше за вас.
+  - speaker: protagonist
+    text: Er wird uns sehr fehlen. Ich bin in Gedanken bei Ihnen und Ihrer Familie.
+    meaning:
+      en: We will miss him very much. My thoughts are with you and your family.
+      ar: سنفتقده كثيرًا. أفكاري معكِ ومع عائلتكِ.
+      mk: Многу ќе ни недостига. Во мислите сум со вас и вашето семејство.
+  - speaker: tochter
+    text: Die Beerdigung ist im engsten Kreis. Aber Sie dürfen gern später ans Grab kommen.
+    meaning:
+      en: The burial is for close family only. But you're welcome to visit the grave later.
+      ar: الدفن يقتصر على العائلة المقرّبة. لكن مرحَّب بك أن تزور القبر لاحقًا.
+      mk: Погребот е во најтесен круг. Но слободно дојдете подоцна на гробот.
+  - speaker: protagonist
+    text: Bei uns kommen alle zur Beerdigung, und man bleibt tagelang bei der Familie.
+    meaning:
+      en: With us everyone comes to the burial, and you stay with the family for days.
+      ar: عندنا يأتي الجميع إلى الدفن، ويبقى الناس أيامًا مع العائلة.
+      mk: Кај нас сите доаѓаат на погребот, и се седи со денови кај семејството.
+  - speaker: tochter
+    text: Hier ist es stiller. Aber eine Karte von Ihnen würde mich freuen.
+    meaning:
+      en: Here it's quieter. But a card from you would mean a lot to me.
+      ar: هنا الأمر أهدأ. لكن بطاقة منك ستسعدني.
+      mk: Тука е потивко. Но картичка од вас би ме израдувала.
+- type: prompt
+  ask:
+    en: Offer condolences.
+    ar: قدّم التعازي.
+    mk: Изразете сочувство.
+  answer:
+    speaker: protagonist
+    text: Mein herzliches Beileid.
+  items:
+  - das-beileid
+- type: prompt
+  ask:
+    en: 'Say: the memorial service.'
+    ar: 'قل: مراسم التأبين.'
+    mk: 'Кажете: комеморацијата.'
+  answer:
+    speaker: protagonist
+    text: Die Trauerfeier.
+  items:
+  - die-trauerfeier
+- type: prompt
+  ask:
+    en: 'Say: we will miss him very much.'
+    ar: 'قل: سنفتقده كثيرًا.'
+    mk: 'Кажете: многу ќе ни недостига.'
+  answer:
+    speaker: protagonist
+    text: Er wird uns sehr fehlen.
+  items:
+  - er-wird-fehlen
+- type: prompt
+  ask:
+    en: 'Say: my thoughts are with you.'
+    ar: 'قل: أفكاري معكِ.'
+    mk: 'Кажете: во мислите сум со вас.'
+  answer:
+    speaker: protagonist
+    text: Ich bin in Gedanken bei Ihnen.
+  items:
+  - in-gedanken
+- type: narrator
+  text:
+    en: 'Mourning has fixed formal phrases — use them as they are: «Mein herzliches Beileid», «Ich bin in Gedanken bei Ihnen», «Er wird uns fehlen». Speak quietly and briefly; nobody expects more.'
+    ar: 'للحداد عبارات رسمية ثابتة — استعملها كما هي: «Mein herzliches Beileid»، «Ich bin in Gedanken bei Ihnen»، «Er wird uns fehlen». تكلّم بهدوء وباختصار؛ لا أحد يتوقّع أكثر.'
+    mk: 'Жалоста има фиксни формални фрази — користете ги такви какви што се: «Mein herzliches Beileid», «Ich bin in Gedanken bei Ihnen», «Er wird uns fehlen». Зборувајте тивко и кратко; никој не очекува
+      повеќе.'
+- type: prompt
+  ask:
+    en: 'Say: the burial.'
+    ar: 'قل: الدفن.'
+    mk: 'Кажете: погребот.'
+  answer:
+    speaker: protagonist
+    text: Die Beerdigung.
+  items:
+  - die-beerdigung
+- type: prompt
+  ask:
+    en: 'Say: the grave.'
+    ar: 'قل: القبر.'
+    mk: 'Кажете: гробот.'
+  answer:
+    speaker: protagonist
+    text: Das Grab.
+  items:
+  - das-grab
+- type: prompt
+  ask:
+    en: 'She says: close family only.'
+    ar: 'تقول: في أضيق نطاق عائلي.'
+    mk: 'Таа вели: во најтесен круг.'
+  answer:
+    speaker: protagonist
+    text: Im engsten Kreis.
+  items:
+  - im-engsten-kreis
+- type: prompt
+  ask:
+    en: 'Say: a condolence card.'
+    ar: 'قل: بطاقة تعزية.'
+    mk: 'Кажете: картичка за сочувство.'
+  answer:
+    speaker: protagonist
+    text: Eine Trauerkarte.
+  items:
+  - die-trauerkarte
+- type: prompt
+  ask:
+    en: 'Say: a wreath.'
+    ar: 'قل: إكليل زهور.'
+    mk: 'Кажете: венец.'
+  answer:
+    speaker: protagonist
+    text: Ein Kranz.
+  items:
+  - der-kranz
+- type: prompt
+  ask:
+    en: 'Say: a good memory.'
+    ar: 'قل: ذكرى طيبة.'
+    mk: 'Кажете: убав спомен.'
+  answer:
+    speaker: protagonist
+    text: Eine schöne Erinnerung.
+  items:
+  - die-erinnerung
+- type: prompt
+  ask:
+    en: 'Say: the deceased.'
+    ar: 'قل: المتوفّى.'
+    mk: 'Кажете: починатиот.'
+  answer:
+    speaker: protagonist
+    text: Der Verstorbene.
+  items:
+  - verstorben
+- type: narrator
+  text:
+    en: 'German mourning is quiet and private: the burial is often for close family (''im engsten Kreis''), others attend the memorial service, send a card or flowers, or donate as the family asks. Dark,
+      plain clothes; no long visits to the house. Muslim and Orthodox communities in Germany keep their own customs — ask the family what they wish.'
+    ar: 'الحداد الألماني هادئ وخاص: الدفن غالبًا للعائلة المقرّبة («im engsten Kreis»)، والآخرون يحضرون مراسم التأبين، أو يرسلون بطاقة أو زهورًا، أو يتبرّعون كما تطلب العائلة. ملابس داكنة بسيطة؛ ولا زيارات
+      طويلة للبيت. والجماعات المسلمة والأرثوذكسية في ألمانيا تحافظ على عاداتها — اسأل العائلة عمّا تريد.'
+    mk: 'Германската жалост е тивка и приватна: погребот често е во најтесен круг („im engsten Kreis“), другите доаѓаат на комеморацијата, праќаат картичка или цвеќе, или донираат како што бара семејството.
+      Темна, едноставна облека; без долги посети дома. Муслиманските и православните заедници во Германија ги чуваат своите обичаи — прашајте го семејството што сака.'
+- type: prompt
+  ask:
+    en: 'Once more: say “My sincere condolences”.'
+    ar: 'مرة أخرى: قل “أصدق التعازي”.'
+    mk: 'Уште еднаш: кажете „Искрено сочувство“.'
+  answer:
+    speaker: protagonist
+    text: Mein herzliches Beileid
+  items:
+  - das-beileid
+- type: prompt
+  ask:
+    en: 'Once more: say “the memorial service”.'
+    ar: 'مرة أخرى: قل “مراسم التأبين”.'
+    mk: 'Уште еднаш: кажете „комеморацијата“.'
+  answer:
+    speaker: protagonist
+    text: die Trauerfeier
+  items:
+  - die-trauerfeier
+- type: prompt
+  ask:
+    en: 'Once more: say “the burial, funeral”.'
+    ar: 'مرة أخرى: قل “الدفن، الجنازة”.'
+    mk: 'Уште еднаш: кажете „погребот“.'
+  answer:
+    speaker: protagonist
+    text: die Beerdigung
+  items:
+  - die-beerdigung
+- type: prompt
+  ask:
+    en: 'Once more: say “deceased”.'
+    ar: 'مرة أخرى: قل “متوفّى”.'
+    mk: 'Уште еднаш: кажете „починат“.'
+  answer:
+    speaker: protagonist
+    text: verstorben
+  items:
+  - verstorben
+- type: prompt
+  ask:
+    en: 'Once more: say “the condolence card”.'
+    ar: 'مرة أخرى: قل “بطاقة التعزية”.'
+    mk: 'Уште еднаш: кажете „картичката за сочувство“.'
+  answer:
+    speaker: protagonist
+    text: die Trauerkarte
+  items:
+  - die-trauerkarte
+- type: prompt
+  ask:
+    en: 'Once more: say “my thoughts are with you”.'
+    ar: 'مرة أخرى: قل “أفكاري معكم”.'
+    mk: 'Уште еднаш: кажете „во мислите сум со вас“.'
+  answer:
+    speaker: protagonist
+    text: in Gedanken bei Ihnen
+  items:
+  - in-gedanken
+- type: prompt
+  ask:
+    en: 'Once more: say “We will miss him very much”.'
+    ar: 'مرة أخرى: قل “سنفتقده كثيرًا”.'
+    mk: 'Уште еднаш: кажете „Многу ќе ни недостига“.'
+  answer:
+    speaker: protagonist
+    text: Er wird uns sehr fehlen
+  items:
+  - er-wird-fehlen
+- type: prompt
+  ask:
+    en: 'Once more: say “the memory”.'
+    ar: 'مرة أخرى: قل “الذكرى”.'
+    mk: 'Уште еднаш: кажете „споменот“.'
+  answer:
+    speaker: protagonist
+    text: die Erinnerung
+  items:
+  - die-erinnerung
+- type: prompt
+  ask:
+    en: 'Once more: say “close family only”.'
+    ar: 'مرة أخرى: قل “في أضيق نطاق عائلي”.'
+    mk: 'Уште еднаш: кажете „во најтесен круг“.'
+  answer:
+    speaker: protagonist
+    text: im engsten Kreis
+  items:
+  - im-engsten-kreis
+- type: prompt
+  ask:
+    en: 'Once more: say “the wreath”.'
+    ar: 'مرة أخرى: قل “إكليل الزهور”.'
+    mk: 'Уште еднаш: кажете „венецот“.'
+  answer:
+    speaker: protagonist
+    text: der Kranz
+  items:
+  - der-kranz
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتَه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the referral — and “the specialist — and “the orthopaedist — and “the wait for an appointment — and “publicly insured — and “privately insured — and “the appointment service (116117) — and
+      “urgency — and “arranging, placement — and “a cancellation — and “afternoon coffee and cake — and “the parents-in-law — and “(particle) just, for once — and “(particle) after all, do”.'
+    ar: 'قل: “التحويل الطبي — و“الطبيب الأخصائي — و“طبيب العظام — و“مدة انتظار الموعد — و“مؤمَّن في التأمين العام — و“مؤمَّن تأمينًا خاصًا — و“خدمة المواعيد (116117) — و“الاستعجال — و“الترتيب، الوساطة —
+      و“إلغاء موعد — و“القهوة والكعك (عصرًا) — و“الأصهار — و“(أداة) مرة، هيا — و“(أداة) ولكن، هيا”.'
+    mk: 'Кажете: „упатот“ — и „специјалистот“ — и „ортопедот“ — и „чекањето за термин“ — и „јавно осигурен“ — и „приватно осигурен“ — и „службата за термини (116117)“ — и „итноста“ — и „посредувањето“ —
+      и „откажувањето“ — и „кафе и колач“ — и „свекор и свекрва / тест и тешта“ — и „(честичка) ајде, еднаш“ — и „(честичка) сепак, ајде“.'
+  answer:
+    speaker: protagonist
+    text: die Überweisung … der Facharzt … der Orthopäde … die Wartezeit auf einen Termin … gesetzlich versichert … privat versichert … die Terminservicestelle … die Dringlichkeit … die Vermittlung … die
+      Absage … Kaffee und Kuchen … die Schwiegereltern … ja mal … doch
+  items:
+  - die-ueberweisung
+  - der-facharzt
+  - der-orthopaede
+  - die-wartezeit-arzt
+  - gesetzlich-versichert
+  - privat-versichert
+  - die-terminservicestelle
+  - die-dringlichkeit
+  - die-vermittlung
+  - die-absage
+  - kaffee-und-kuchen
+  - die-schwiegereltern
+  - ja-mal
+  - doch-mal-c1
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “(particle) probably — and “home-made (baked) — and “plum cake — and “at three sharp — and “Do have another piece! — and “say goodbye, take one''s leave — and “the universe, space — and “the
+      light year — and “the orbit — and “the past — and “the Milky Way — and “the distance — and “the origin, formation — and “the observation”.'
+    ar: 'قل: “(أداة) على الأرجح — و“من صنع البيت — و“كعكة البرقوق — و“في الثالثة تمامًا — و“خذي قطعة أخرى! — و“يستأذن، يودّع — و“الكون — و“السنة الضوئية — و“المدار — و“الماضي — و“درب التبانة — و“المسافة
+      — و“النشأة — و“الرصد”.'
+    mk: 'Кажете: „(честичка) веројатно“ — и „домашно печен“ — и „колачот со сливи“ — и „точно во три“ — и „Земете уште едно парче!“ — и „се поздравува, си заминува“ — и „вселената“ — и „светлосната година“
+      — и „орбитата“ — и „минатото“ — и „Млечниот Пат“ — и „оддалеченоста“ — и „настанувањето“ — и „набљудувањето“.'
+  answer:
+    speaker: protagonist
+    text: wohl … selbst gebacken … der Pflaumenkuchen … pünktlich um drei … Nehmen Sie doch noch ein Stück! … sich verabschieden … das Weltall … das Lichtjahr … die Umlaufbahn … die Vergangenheit … die
+      Milchstraße … die Entfernung … die Entstehung … die Beobachtung
+  items:
+  - wohl
+  - selbst-gebacken
+  - der-sonntagskuchen
+  - puenktlich-um
+  - nehmen-sie-doch
+  - sich-verabschieden
+  - das-weltall
+  - das-lichtjahr
+  - die-umlaufbahn
+  - die-vergangenheit
+  - die-milchstrasse
+  - die-entfernung
+  - die-entstehung
+  - die-beobachtung
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the telescope — and “tiny — and “the formal warning letter — and “copyright — and “was shared — and “a cease-and-desist declaration — and “not straight away — and “sign nothing — and “a lawyer
+      of your own — and “negotiate — and “the deadline — and “my cousin — and “What''s wrong? (polite) — and “my”.'
+    ar: 'قل: “التلسكوب — و“ضئيل — و“إنذار قانوني — و“حقوق المؤلف — و“تمت مشاركته — و“تعهّد بالامتناع — و“ليس فورًا — و“لا توقّعي شيئًا — و“محامٍ خاص بكِ — و“يفاوض — و“المهلة — و“ابن عمي / خالي — و“ما بكِ؟
+      (بصيغة الاحترام) — و“ـي (ضمير الملكية)”.'
+    mk: 'Кажете: „телескопот“ — и „мајушно“ — и „опомената“ — и „авторското право“ — и „беше споделен“ — и „изјава за прекин“ — и „не веднаш“ — и „не потпишувајте ништо“ — и „свој адвокат“ — и „преговара“
+      — и „рокот“ — и „братучед ми“ — и „Што ви е?“ — и „мој“.'
+  answer:
+    speaker: protagonist
+    text: das Teleskop … winzig … die Abmahnung … das Urheberrecht … wurde geteilt … die Unterlassungserklärung … nicht sofort … nichts unterschreiben … ein eigener Anwalt … verhandeln … die Frist … mein
+      Cousin … Was fehlt Ihnen? … mein
+  items:
+  - das-fernrohr
+  - winzig
+  - die-abmahnung
+  - das-urheberrecht
+  - wurde-geteilt
+  - die-unterlassungserklaerung
+  - nicht-sofort
+  - unterschreiben-nicht
+  - ein-eigener-anwalt
+  - verhandeln
+  - die-frist
+  - mein-cousin
+  - was-fehlt-ihnen
+  - mein
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the head — and “hurts — and “the belly — and “Since when? — and “since yesterday — and “Do you have …? (polite) — and “fever, temperature — and “no, not a — and “the arm — and “too, also
+      — and “not serious — and “plenty of water — and “Doctor (addressing a woman)”.'
+    ar: 'قل: “الرأس — و“يؤلم — و“البطن — و“منذ متى؟ — و“منذ أمس — و“هل عندكِ …؟ (بصيغة الاحترام) — و“حمّى، حرارة — و“لا … (نفي الاسم) — و“الذراع — و“أيضًا — و“ليس خطيرًا — و“ماء كثير — و“حضرة الطبيبة”.'
+    mk: 'Кажете: „главата“ — и „боли“ — и „стомакот“ — и „Од кога?“ — и „од вчера“ — и „Имате ли …?“ — и „температура“ — и „нема, ниту еден“ — и „раката“ — и „исто така“ — и „не е страшно“ — и „многу вода“
+      — и „госпоѓо докторке“.'
+  answer:
+    speaker: protagonist
+    text: der Kopf … tut weh … der Bauch … Seit wann? … seit gestern … Haben Sie …? … Fieber … kein … der Arm … auch … nicht schlimm … viel Wasser … Frau Doktor
+  items:
+  - der-kopf
+  - tut-weh
+  - der-bauch
+  - seit-wann
+  - seit-gestern
+  - haben-sie
+  - fieber
+  - kein
+  - der-arm
+  - auch
+  - nicht-schlimm
+  - viel-wasser
+  - frau-doktor
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “citizenship — and “dual citizenship — and “the naturalisation office — and “the question pool — and “commitment to the constitutional order”.'
+    ar: 'قل: “الجنسية — و“الجنسية المزدوجة — و“مكتب التجنيس — و“مجموعة الأسئلة — و“الالتزام بالنظام الأساسي”.'
+  answer:
+    speaker: protagonist
+    text: die Staatsangehörigkeit … die doppelte Staatsangehörigkeit … die Einbürgerungsbehörde … der Fragenkatalog … das Bekenntnis zur Grundordnung
+  items:
+  - die-staatsangehoerigkeit-ea
+  - die-doppelte-staatsangehoerigkeit-ea
+  - die-einbuergerungsbehoerde-ea
+  - der-fragenkatalog-ea
+  - das-bekenntnis-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “she said one must … — and “(reported) it is possible — and “(reported) one has … — and “a residence permit for study — and “count (towards)”.'
+    ar: 'قل: “قالت إنه يجب … — و“(منقولًا) إنه ممكن — و“(منقولًا) إنه لدى المرء … — و“إقامة الدراسة — و“يُحتسب”.'
+  answer:
+    speaker: protagonist
+    text: sie sagte, man müsse … … es sei möglich … man habe … … der Aufenthalt zum Studium … anrechnen
+  items:
+  - sie-sagte-man-muesse-ea
+  - es-sei-moeglich-ea
+  - man-habe-ea
+  - das-studienvisum-ea
+  - anrechnen-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the general meeting — and “the board — and “the treasurer (f) — and “propose, nominate — and “the vote”.'
+    ar: 'قل: “الجمعية العمومية — و“مجلس الإدارة — و“أمينة الصندوق — و“يقترح — و“التصويت”.'
+  answer:
+    speaker: protagonist
+    text: die Mitgliederversammlung … der Vorstand … die Kassenwartin … vorschlagen … die Abstimmung
+  items:
+  - die-mitgliederversammlung-ea
+  - der-vorstand-ea
+  - die-kassenwartin-ea
+  - vorschlagen-ea
+  - die-abstimmung-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the abstention — and “I accept the election — and “the trust — and “unanimously — and “Dear members”.'
+    ar: 'قل: “الامتناع عن التصويت — و“أقبل الانتخاب — و“الثقة — و“بالإجماع — و“أعزائي الأعضاء”.'
+  answer:
+    speaker: protagonist
+    text: die Enthaltung … Ich nehme die Wahl an … das Vertrauen … einstimmig … Liebe Mitglieder
+  items:
+  - die-enthaltung-ea
+  - ich-nehme-die-wahl-an-ea
+  - das-vertrauen-ea
+  - einstimmig-ea
+  - liebe-mitglieder-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „државјанството“ — и „двојното државјанство“ — и „предава, се откажува“ — и „задржува“ — и „(пренесено) дека е можно“.'
+  answer:
+    speaker: protagonist
+    text: die Staatsangehörigkeit … die doppelte Staatsangehörigkeit … abgeben … behalten … es sei möglich
+  items:
+  - die-staatsangehoerigkeit-m
+  - die-doppelte-staatsangehoerigkeit-m
+  - abgeben-m
+  - behalten-m
+  - es-sei-moeglich-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „(пренесено) дека мора …“ — и „од раѓање“ — и „целосното право на глас“ — и „тестот“ — и „исправата“.'
+  answer:
+    speaker: protagonist
+    text: er müsse … … von Geburt an … das volle Wahlrecht … der Test … die Urkunde
+  items:
+  - er-muesse-m
+  - von-geburt-an-m
+  - das-wahlrecht-m-m
+  - der-einbuergerungstest-m-m
+  - die-urkunde-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „клубот за пензионери“ — и „одборот“ — и „предлага“ — и „гласањето“ — и „Го прифаќам изборот“.'
+  answer:
+    speaker: protagonist
+    text: der Seniorentreff … der Vorstand … vorschlagen … die Abstimmung … Ich nehme die Wahl an
+  items:
+  - der-seniorentreff-m
+  - der-vorstand-m
+  - vorschlagen-m
+  - die-abstimmung-m
+  - ich-nehme-die-wahl-an-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „довербата“ — и „едногласно“ — и „Драги членови“ — и „настанот“ — и „организира“.'
+  answer:
+    speaker: protagonist
+    text: das Vertrauen … einstimmig … Liebe Mitglieder … die Veranstaltung … organisieren
+  items:
+  - das-vertrauen-m
+  - einstimmig-m
+  - liebe-mitglieder-m
+  - die-veranstaltung-m
+  - organisieren-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمع إلى المحادثة مرة أخرى. الآن تفهمها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

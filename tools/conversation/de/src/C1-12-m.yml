@@ -1,0 +1,38 @@
+id: C1-12-m
+tracks: [mk]
+protagonist: m
+title: ["Изборот на училиште"]
+situation: ["Лука е во четврто одделение. Петар е загрижен: гимназија или основно средно? Ви објаснува."]
+learn: [c1-extended-attributes]
+culture: Early school sorting
+items:
+  - [die-bildungsempfehlung, "die Bildungsempfehlung", "препораката од училиштето", {rare: true}]
+  - [das-gymnasium, "das Gymnasium", "гимназијата"]
+  - [die-oberschule, "die Oberschule", "средното училиште (Саксонија)", {rare: true}]
+  - [der-notendurchschnitt, "der Notendurchschnitt", "просекот на оценки"]
+  - [die-vierte-klasse, "die vierte Klasse", "четвртото одделение"]
+  - [die-durchlaessigkeit, "die Durchlässigkeit", "можноста за премин", {rare: true}]
+  - [mit-zehn-jahren, "mit zehn Jahren", "на десет години"]
+  - [die-ausgestellte, "die von der Lehrerin ausgestellte …", "… издадена од наставничката"]
+  - [die-lehre, "die Lehre", "занаетчиското учење"]
+  - [entscheidend, "entscheidend", "одлучувачко"]
+dialogue:
+  - [petar, "Luka ist in der vierten Klasse. Jetzt kommt die Bildungsempfehlung.", "Лука е во четврто одделение. Сега доаѓа препораката од училиштето."]
+  - [protagonist, "Was für eine Empfehlung?", "Каква препорака?"]
+  - [petar, "Die von der Lehrerin ausgestellte Empfehlung: Gymnasium oder Oberschule.", "Препораката издадена од наставничката: гимназија или средно училиште."]
+  - [protagonist, "Mit zehn Jahren? Bei uns entscheidet man das mit vierzehn!", "На десет години? Кај нас тоа се одлучува на четиринаесет!"]
+  - [petar, "Hier früher. Der Notendurchschnitt ist entscheidend.", "Тука порано. Просекот на оценки е одлучувачки."]
+  - [protagonist, "Und wenn er auf die Oberschule kommt — ist das schlecht?", "А ако оди во средно училиште — дали е тоа лошо?"]
+  - [petar, "Nein. Danach kann er eine Lehre machen oder wechseln. Es gibt Durchlässigkeit.", "Не. Потоа може да учи занает или да премине. Има можност за премин."]
+  - [protagonist, "Dann sag Luka: Opa ist stolz, egal welche Schule.", "Тогаш кажи му на Лука: дедо е горд, без разлика кое училиште."]
+teach:
+  - ask: ["Кажете: четврто одделение.", "Die vierte Klasse.", die-vierte-klasse]
+  - ask: ["Кажете: препораката од училиштето.", "Die Bildungsempfehlung.", die-bildungsempfehlung]
+  - note: ["Проширени атрибути: «die von der Lehrerin ausgestellte Empfehlung» (= препораката што ја издава наставничката). Читајте од членот до именката, па назад."]
+  - ask: ["Кажете: препораката издадена од наставничката.", "Die von der Lehrerin ausgestellte Empfehlung.", die-ausgestellte]
+  - ask: ["Кажете: гимназија или средно училиште.", "Gymnasium oder Oberschule.", das-gymnasium, die-oberschule]
+  - ask: ["Кажете: на десет години?", "Mit zehn Jahren?", mit-zehn-jahren]
+  - ask: ["Кажете: просекот е одлучувачки.", "Der Notendurchschnitt ist entscheidend.", der-notendurchschnitt, entscheidend]
+  - ask: ["Кажете: може да учи занает.", "Er kann eine Lehre machen.", die-lehre]
+  - ask: ["Кажете: има можност за премин.", "Es gibt Durchlässigkeit.", die-durchlaessigkeit]
+  - note: ["Во повеќето покраини децата се распоредуваат по четврто одделение (на десет години): гимназијата води до матура, другите училишта кон стручни патеки. Препораката се темели на оценките; колку е обврзувачка зависи од покраината. Подоцнежен премин е можен. Раното распоредување ги изненадува повеќето новодојденци."]
