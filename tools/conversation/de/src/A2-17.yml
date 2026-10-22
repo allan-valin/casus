@@ -1,0 +1,40 @@
+id: A2-17
+protagonist: f
+title: ["A trip to Dresden", "رحلة إلى دريسدن", "Излет во Дрезден"]
+situation:
+  - "Saturday, the train to Dresden. Platform changed, delay announced."
+  - "يوم السبت، القطار إلى دريسدن. تغيّر الرصيف، وأُعلن عن تأخير."
+  - "Сабота, возот за Дрезден. Перонот сменет, најавено доцнење."
+learn: [a2-directional]
+culture: The Bahn is late too
+items:
+  - [das-gleis, "das Gleis", "the platform (track)", "الرصيف (السكة)", "перонот"]
+  - [nach-dresden, "nach Dresden", "to Dresden", "إلى دريسدن", "за Дрезден"]
+  - [in-den-zug, "in den Zug", "into the train", "إلى داخل القطار", "во возот"]
+  - [auf-gleis, "auf Gleis fünf", "on platform five", "على الرصيف خمسة", "на перон пет"]
+  - [faellt-aus, "fällt aus", "is cancelled", "أُلغي", "е откажан"]
+  - [die-durchsage, "die Durchsage", "the announcement", "الإعلان", "најавата"]
+  - [zum-bahnsteig, "zum Bahnsteig", "to the platform", "إلى الرصيف", "до перонот", {rare: true}]
+  - [mit-verspaetung, "mit Verspätung", "with a delay", "متأخرًا", "со доцнење"]
+  - [der-anschluss, "der Anschluss", "the connection", "القطار الموصل", "врската"]
+  - [entschaedigung, "eine Entschädigung", "compensation", "تعويض", "надомест", {rare: true}]
+dialogue:
+  - [protagonist, "Entschuldigung, fährt der Zug nach Dresden auf Gleis fünf?", "Excuse me, does the train to Dresden leave from platform five?", "عفوًا، هل يغادر القطار إلى دريسدن من الرصيف خمسة؟", "Извинете, дали возот за Дрезден тргнува од перон пет?"]
+  - [fahrer, "Hören Sie die Durchsage? Jetzt Gleis acht!", "Hear the announcement? Platform eight now!", "هل تسمعين الإعلان؟ الآن الرصيف ثمانية!", "Ја слушате ли најавата? Сега перон осум!"]
+  - [protagonist, "Oh! Wo ist der Weg zum Bahnsteig?", "Oh! Which way to the platform?", "أوه! من أين الطريق إلى الرصيف؟", "О! Каде е патот до перонот?"]
+  - [fahrer, "Die Treppe hoch. Aber der Zug kommt mit Verspätung — zwanzig Minuten.", "Up the stairs. But the train is running late — twenty minutes.", "اصعدي الدرج. لكن القطار متأخر — عشرين دقيقة.", "По скалите горе. Но возот доцни — дваесет минути."]
+  - [protagonist, "Zwanzig Minuten! Und mein Anschluss?", "Twenty minutes! And my connection?", "عشرين دقيقة! وقطاري الموصل؟", "Дваесет минути! А мојата врска?"]
+  - [fahrer, "Ihr Anschluss fällt vielleicht aus. Fragen Sie im Zug.", "Your connection may be cancelled. Ask on the train.", "ربما يُلغى قطارك الموصل. اسألي في القطار.", "Вашата врска можеби е откажана. Прашајте во возот."]
+  - [protagonist, "Ich dachte, in Deutschland sind die Züge pünktlich!", "I thought trains in Germany were punctual!", "ظننتُ أن القطارات في ألمانيا دقيقة!", "Мислев дека во Германија возовите се точни!"]
+  - [fahrer, "Ha! Bei viel Verspätung gibt es eine Entschädigung. Steigen Sie schnell in den Zug!", "Ha! With a long delay there's compensation. Quick, get on the train!", "ها! عند التأخير الطويل هناك تعويض. اصعدي القطار بسرعة!", "Ха! При долго доцнење има надомест. Брзо качете се во возот!"]
+teach:
+  - ask: ["Ask: does the train to Dresden leave from platform five?", "اسألي: هل يغادر القطار إلى دريسدن من الرصيف خمسة؟", "Прашајте: дали возот за Дрезден тргнува од перон пет?", "Fährt der Zug nach Dresden auf Gleis fünf?", nach-dresden, auf-gleis, das-gleis]
+  - ask: ["Say: the announcement.", "قولي: الإعلان.", "Кажете: најавата.", "Die Durchsage.", die-durchsage]
+  - note: ["Direction words: «nach» for cities and countries («nach Dresden»), «zu» for people and places («zum Bahnsteig»), «in» + accusative for going into («in den Zug»).", "كلمات الاتجاه: «nach» للمدن والبلدان («nach Dresden»)، و«zu» للأشخاص والأماكن («zum Bahnsteig»)، و«in» مع حالة النصب للدخول («in den Zug»).", "Зборови за насока: «nach» за градови и земји («nach Dresden»), «zu» за луѓе и места («zum Bahnsteig»), «in» + акузатив за влегување («in den Zug»)."]
+  - ask: ["Ask: which way to the platform?", "اسألي: من أين الطريق إلى الرصيف؟", "Прашајте: каде е патот до перонот?", "Wo ist der Weg zum Bahnsteig?", zum-bahnsteig]
+  - ask: ["Say: the train is running late.", "قولي: القطار متأخر.", "Кажете: возот доцни.", "Der Zug kommt mit Verspätung.", mit-verspaetung]
+  - ask: ["Ask: and my connection?", "اسألي: وقطاري الموصل؟", "Прашајте: а мојата врска?", "Und mein Anschluss?", der-anschluss]
+  - ask: ["Say: it's cancelled.", "قولي: أُلغي.", "Кажете: откажан е.", "Er fällt aus.", faellt-aus]
+  - ask: ["Say: compensation.", "قولي: تعويض.", "Кажете: надомест.", "Eine Entschädigung.", entschaedigung]
+  - ask: ["Say: get on the train!", "قولي: اصعدي القطار!", "Кажете: качете се во возот!", "In den Zug!", in-den-zug]
+  - note: ["Long-distance trains are often late. With a long delay you can claim part of the fare back — the rules are on the Bahn's website and in its app. Check the platform on the board until the last minute.", "قطارات المسافات الطويلة تتأخر كثيرًا. وعند التأخير الطويل يمكنكِ استرداد جزء من ثمن التذكرة — القواعد في موقع «Bahn» وتطبيقها. تابعي لوحة الأرصفة حتى آخر دقيقة.", "Возовите на долги релации често доцнат. При долго доцнење може да вратите дел од билетот — правилата се на страницата и во апликацијата на Бан. Следете ја таблата за перонот до последната минута."]

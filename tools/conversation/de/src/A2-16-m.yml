@@ -1,0 +1,38 @@
+id: A2-16-m
+tracks: [mk]
+protagonist: m
+title: ["Детски додаток"]
+situation: ["Петар ви објаснува што добива семејството за Лука — и како беше кога тој беше мал."]
+learn: [a2-praeteritum-war]
+culture: Child benefit, explained by the son
+items:
+  - [das-kindergeld, "das Kindergeld", "детскиот додаток"]
+  - [jeden-monat-k, "jeden Monat", "секој месец"]
+  - [war, "war", "беше"]
+  - [hatte, "hatte", "имаше"]
+  - [das-elterngeld, "das Elterngeld", "родителскиот надомест", {rare: true}]
+  - [nach-der-geburt, "nach der Geburt", "по раѓањето"]
+  - [zu-hause-bleiben, "zu Hause bleiben", "да остане дома"]
+  - [als-ich-klein-war, "als ich klein war", "кога бев мал"]
+  - [anders, "anders", "поинаку"]
+  - [der-staat, "der Staat", "државата"]
+dialogue:
+  - [protagonist, "Petar, was bekommt ihr für Luka?", "Петре, што добивате за Лука?"]
+  - [petar, "Kindergeld, jeden Monat. Vom Staat.", "Детски додаток, секој месец. Од државата."]
+  - [protagonist, "Und nach der Geburt? Anja war zu Hause.", "А по раѓањето? Ања беше дома."]
+  - [petar, "Ja, sie hatte Elterngeld. Ein Jahr. Und ich war zwei Monate zu Hause.", "Да, имаше родителски надомест. Една година. А јас бев два месеци дома."]
+  - [protagonist, "Du? Zu Hause bleiben, als Mann?", "Ти? Да останеш дома, како маж?"]
+  - [petar, "Das ist hier normal, Tata.", "Тоа тука е нормално, тато."]
+  - [protagonist, "Als du klein warst, war alles anders.", "Кога ти беше мал, сè беше поинаку."]
+  - [petar, "Ich weiß. Du hattest keine Zeit für mich.", "Знам. Ти немаше време за мене."]
+teach:
+  - ask: ["Прашајте: што добивате за Лука?", "Was bekommt ihr für Luka?", das-kindergeld]
+  - ask: ["Кажете: секој месец, од државата.", "Jeden Monat, vom Staat.", jeden-monat-k, der-staat]
+  - note: ["За „беше“ и „имаше“ германскиот обично користи простото минато и во говор: «war», «hatte». «Anja war zu Hause.» «Sie hatte Elterngeld.»"]
+  - ask: ["Кажете: Ања беше дома.", "Anja war zu Hause.", war]
+  - ask: ["Кажете: имаше родителски надомест.", "Sie hatte Elterngeld.", hatte, das-elterngeld]
+  - ask: ["Кажете: по раѓањето.", "Nach der Geburt.", nach-der-geburt]
+  - ask: ["Кажете: да остане дома.", "Zu Hause bleiben.", zu-hause-bleiben]
+  - ask: ["Кажете: кога бев мал.", "Als ich klein war.", als-ich-klein-war]
+  - ask: ["Кажете: сè беше поинаку.", "Alles war anders.", anders]
+  - note: ["Родителскиот надомест (Elterngeld) го добиваат и мајката и таткото; многу татковци остануваат дома неколку месеци. Износите и правилата се менуваат — Петар и Ања знаат што важи сега."]

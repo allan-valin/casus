@@ -1,0 +1,479 @@
+# UNIT de A2-16-e — written by AI (Claude) for Casus; expanded from src/A2-16-e.yml by tools/expand_unit.py. Edit the source.
+
+id: A2-16-e
+level: A2
+number: 16
+protagonist: m
+tracks:
+- en
+title:
+  en: A classmate's baby
+situation:
+  en: Your classmate Mia had a baby last year — and still studies. You ask how it works.
+learn_lessons:
+- a2-praeteritum-war
+culture: Support for student parents
+new_items:
+- id: das-baby-e
+  text: das Baby
+  meaning:
+    en: the baby
+- id: war-e
+  text: war
+  meaning:
+    en: was
+- id: hatte-e
+  text: hatte
+  meaning:
+    en: had
+- id: schwer-e
+  text: schwer
+  meaning:
+    en: hard, difficult
+- id: das-kindergeld-e
+  text: das Kindergeld
+  meaning:
+    en: child benefit
+- id: der-antrag-e
+  text: der Antrag
+  meaning:
+    en: the application
+- id: die-familienkasse-e
+  text: die Familienkasse
+  meaning:
+    en: the family benefits office
+  rare: true
+- id: das-urlaubssemester-e
+  text: das Urlaubssemester
+  meaning:
+    en: a semester off
+  rare: true
+- id: die-kita-uni-e
+  text: die Uni-Kita
+  meaning:
+    en: the university nursery
+- id: unterstuetzung-e
+  text: die Unterstützung
+  meaning:
+    en: support
+reviews:
+- item: das-sofa
+  from: A1-15
+- item: passt
+  from: A1-15
+- item: messen
+  from: A1-15
+- item: wie-breit
+  from: A1-15
+- item: meter
+  from: A1-15
+- item: zentimeter
+  from: A1-15
+- item: lang
+  from: A1-15
+- item: die-ecke
+  from: A1-15
+- item: rund
+  from: A1-15
+- item: eckig
+  from: A1-15
+- item: genau
+  from: A1-15
+- item: zu-gross
+  from: A1-15
+- item: was-hast-du-gemacht
+  from: A2-01
+- item: ich-habe-gemacht
+  from: A2-01
+- item: ich-bin-gegangen
+  from: A2-01
+- item: am-samstag
+  from: A2-01
+- item: am-sonntag
+  from: A2-01
+- item: gesehen
+  from: A2-01
+- item: gegessen
+  from: A2-01
+- item: geschlafen
+  from: A2-01
+- item: lange
+  from: A2-01
+- item: toll
+  from: A2-01
+- item: und-du-was
+  from: A2-01
+- item: nichts
+  from: A2-01
+- item: der-strom
+  from: A2-09
+- item: der-anbieter
+  from: A2-09
+- item: der-vertrag
+  from: A2-09
+- item: der-zaehler
+  from: A2-09
+- item: ablesen
+  from: A2-09
+- item: dass
+  from: A2-09
+- item: ich-glaube
+  from: A2-09
+- item: wechseln
+  from: A2-09
+- item: vergleichen
+  from: A2-09
+- item: guenstiger
+  from: A2-09
+- item: die-nummer-zaehler
+  from: A2-09
+- item: ich-mag
+  from: A2-13
+- item: magst-du
+  from: A2-13
+- item: lieber
+  from: A2-13
+- item: am-liebsten
+  from: A2-13
+- item: die-musik
+  from: A2-13
+- item: der-kuchen-a
+  from: A2-13
+- item: suess
+  from: A2-13
+- item: ich-mag-nicht
+  from: A2-13
+- item: beides-gern
+  from: A2-13
+- item: gern-hoeren
+  from: A2-13
+- item: der-rabatt
+  from: A2-15
+- item: prozent
+  from: A2-15
+- item: reduziert
+  from: A2-15
+- item: die-haelfte
+  from: A2-15
+- item: der-alte-preis
+  from: A2-15
+- item: der-neue-preis
+  from: A2-15
+- item: an-der-kasse
+  from: A2-15
+- item: stimmt-das
+  from: A2-15
+- item: umtauschen
+  from: A2-15
+- item: der-kassenbon
+  from: A2-15
+steps:
+- type: narrator
+  text:
+    en: Your classmate Mia had a baby last year — and still studies. You ask how it works. Listen to the conversation; you don't need to understand it yet.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Mia, wie war das letzte Jahr mit dem Baby?
+    meaning:
+      en: Mia, how was last year with the baby?
+  - speaker: mia
+    text: Schwer! Ich hatte wenig Schlaf.
+    meaning:
+      en: Hard! I had little sleep.
+  - speaker: protagonist
+    text: Und das Studium?
+    meaning:
+      en: And your studies?
+  - speaker: mia
+    text: Ich hatte ein Urlaubssemester. Jetzt ist die Kleine in der Uni-Kita.
+    meaning:
+      en: I took a semester off. Now the little one is in the university nursery.
+  - speaker: protagonist
+    text: Bekommst du Unterstützung?
+    meaning:
+      en: Do you get support?
+  - speaker: mia
+    text: Ja, Kindergeld. Der Antrag war einfach — bei der Familienkasse.
+    meaning:
+      en: Yes, child benefit. The application was easy — at the family benefits office.
+  - speaker: protagonist
+    text: Bekommen das auch internationale Studenten?
+    meaning:
+      en: Do international students get it too?
+  - speaker: mia
+    text: Das hängt vom Aufenthaltstitel ab. Frag bei der Familienkasse.
+    meaning:
+      en: That depends on the residence permit. Ask at the family benefits office.
+- type: narrator
+  text:
+    en: 'For ''was'' and ''had'', German usually uses the simple past even in speech: «war», «hatte». «Wie war das Jahr?» «Ich hatte wenig Schlaf.»'
+- type: prompt
+  ask:
+    en: 'Ask: how was last year with the baby?'
+  answer:
+    speaker: protagonist
+    text: Wie war das letzte Jahr mit dem Baby?
+  items:
+  - war-e
+  - das-baby-e
+- type: prompt
+  ask:
+    en: 'Say for her: hard!'
+  answer:
+    speaker: protagonist
+    text: Schwer!
+  items:
+  - schwer-e
+- type: prompt
+  ask:
+    en: 'Say: I had little sleep.'
+  answer:
+    speaker: protagonist
+    text: Ich hatte wenig Schlaf.
+  items:
+  - hatte-e
+- type: prompt
+  ask:
+    en: 'Say: a semester off.'
+  answer:
+    speaker: protagonist
+    text: Ein Urlaubssemester.
+  items:
+  - das-urlaubssemester-e
+- type: prompt
+  ask:
+    en: 'Say: the university nursery.'
+  answer:
+    speaker: protagonist
+    text: Die Uni-Kita.
+  items:
+  - die-kita-uni-e
+- type: prompt
+  ask:
+    en: 'Ask: do you get support?'
+  answer:
+    speaker: protagonist
+    text: Bekommst du Unterstützung?
+  items:
+  - unterstuetzung-e
+- type: prompt
+  ask:
+    en: 'Say: child benefit.'
+  answer:
+    speaker: protagonist
+    text: Kindergeld.
+  items:
+  - das-kindergeld-e
+- type: prompt
+  ask:
+    en: 'Say: the application was easy.'
+  answer:
+    speaker: protagonist
+    text: Der Antrag war einfach.
+  items:
+  - der-antrag-e
+- type: prompt
+  ask:
+    en: 'Say: at the family benefits office.'
+  answer:
+    speaker: protagonist
+    text: Bei der Familienkasse.
+  items:
+  - die-familienkasse-e
+- type: narrator
+  text:
+    en: Child benefit is paid for children living in Germany; for non-EU parents it depends on the residence permit. Universities offer nurseries, semesters off and counselling for student parents. Rules
+      and amounts change — the Familienkasse decides.
+- type: prompt
+  ask:
+    en: 'Once more: say “the baby”.'
+  answer:
+    speaker: protagonist
+    text: das Baby
+  items:
+  - das-baby-e
+- type: prompt
+  ask:
+    en: 'Once more: say “was”.'
+  answer:
+    speaker: protagonist
+    text: war
+  items:
+  - war-e
+- type: prompt
+  ask:
+    en: 'Once more: say “had”.'
+  answer:
+    speaker: protagonist
+    text: hatte
+  items:
+  - hatte-e
+- type: prompt
+  ask:
+    en: 'Once more: say “hard, difficult”.'
+  answer:
+    speaker: protagonist
+    text: schwer
+  items:
+  - schwer-e
+- type: prompt
+  ask:
+    en: 'Once more: say “child benefit”.'
+  answer:
+    speaker: protagonist
+    text: das Kindergeld
+  items:
+  - das-kindergeld-e
+- type: prompt
+  ask:
+    en: 'Once more: say “the application”.'
+  answer:
+    speaker: protagonist
+    text: der Antrag
+  items:
+  - der-antrag-e
+- type: prompt
+  ask:
+    en: 'Once more: say “the family benefits office”.'
+  answer:
+    speaker: protagonist
+    text: die Familienkasse
+  items:
+  - die-familienkasse-e
+- type: prompt
+  ask:
+    en: 'Once more: say “a semester off”.'
+  answer:
+    speaker: protagonist
+    text: das Urlaubssemester
+  items:
+  - das-urlaubssemester-e
+- type: prompt
+  ask:
+    en: 'Once more: say “the university nursery”.'
+  answer:
+    speaker: protagonist
+    text: die Uni-Kita
+  items:
+  - die-kita-uni-e
+- type: prompt
+  ask:
+    en: 'Once more: say “support”.'
+  answer:
+    speaker: protagonist
+    text: die Unterstützung
+  items:
+  - unterstuetzung-e
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the discount — and “per cent — and “reduced — and “half — and “the old price — and “the new price — and “at the till — and “Is that right? — and “exchange (an item) — and “the receipt”.'
+  answer:
+    speaker: protagonist
+    text: der Rabatt … Prozent … reduziert … die Hälfte … der alte Preis … der neue Preis … an der Kasse … Stimmt das? … umtauschen … den Kassenbon
+  items:
+  - der-rabatt
+  - prozent
+  - reduziert
+  - die-haelfte
+  - der-alte-preis
+  - der-neue-preis
+  - an-der-kasse
+  - stimmt-das
+  - umtauschen
+  - der-kassenbon
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I like — and “Do you like …? (informal) — and “rather, prefer — and “most of all — and “music — and “cake — and “sweet — and “I don''t like — and “like both — and “like listening to”.'
+  answer:
+    speaker: protagonist
+    text: ich mag … Magst du …? … lieber … am liebsten … die Musik … Kuchen … süß … ich mag … nicht … beides gern … höre gern
+  items:
+  - ich-mag
+  - magst-du
+  - lieber
+  - am-liebsten
+  - die-musik
+  - der-kuchen-a
+  - suess
+  - ich-mag-nicht
+  - beides-gern
+  - gern-hoeren
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “electricity — and “the provider — and “the contract — and “the meter — and “read (a meter) — and “that (verb to the end) — and “I think — and “switch, change — and “compare — and “cheaper”.'
+  answer:
+    speaker: protagonist
+    text: der Strom … der Anbieter … der Vertrag … der Zähler … ablesen … dass … ich glaube … wechseln … vergleichen … günstiger
+  items:
+  - der-strom
+  - der-anbieter
+  - der-vertrag
+  - der-zaehler
+  - ablesen
+  - dass
+  - ich-glaube
+  - wechseln
+  - vergleichen
+  - guenstiger
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the meter number — and “What did you do? (informal) — and “I did … — and “I went … — and “on Saturday — and “on Sunday — and “seen — and “eaten — and “slept — and “for a long time”.'
+  answer:
+    speaker: protagonist
+    text: die Zählernummer … Was hast du gemacht? … ich habe … gemacht … ich bin … gegangen … am Samstag … am Sonntag … gesehen … gegessen … geschlafen … lange
+  items:
+  - die-nummer-zaehler
+  - was-hast-du-gemacht
+  - ich-habe-gemacht
+  - ich-bin-gegangen
+  - am-samstag
+  - am-sonntag
+  - gesehen
+  - gegessen
+  - geschlafen
+  - lange
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “great — and “And you? What did you do? — and “nothing — and “the sofa — and “fits — and “measure — and “How wide …? — and “metres — and “centimetres — and “long”.'
+  answer:
+    speaker: protagonist
+    text: toll … Und du? Was hast du gemacht? … nichts … das Sofa … passt … messen … Wie breit …? … Meter … Zentimeter … lang
+  items:
+  - toll
+  - und-du-was
+  - nichts
+  - das-sofa
+  - passt
+  - messen
+  - wie-breit
+  - meter
+  - zentimeter
+  - lang
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the corner — and “round — and “square, angular — and “exactly — and “too big”.'
+  answer:
+    speaker: protagonist
+    text: die Ecke … rund … eckig … genau … zu groß
+  items:
+  - die-ecke
+  - rund
+  - eckig
+  - genau
+  - zu-gross
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+- type: dialogue
+  again: true
+- type: selfcheck
