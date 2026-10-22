@@ -1,0 +1,824 @@
+# UNIT de C1-17 — written by AI (Claude) for Casus; expanded from src/C1-17.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-17
+level: C1
+number: 17
+protagonist: f
+title:
+  en: Buy or rent?
+  ar: الشراء أم الإيجار؟
+  mk: Да се купи или да се изнајмува?
+situation:
+  en: Rents keep rising. Could you buy a flat? Herr Vogel at the bank explains what a purchase really costs.
+  ar: الإيجارات ترتفع باستمرار. هل يمكنكِ شراء شقة؟ السيد فوغل في البنك يشرح كم يكلّف الشراء فعلًا.
+  mk: Кириите постојано растат. Дали би можеле да купите стан? Господин Фогел во банката објаснува колку навистина чини купувањето.
+learn_lessons:
+- c1-nominal-style
+culture: The hidden costs of buying
+new_items:
+- id: der-kredit
+  text: der Kredit
+  meaning:
+    en: the loan
+    ar: القرض
+    mk: кредитот
+- id: die-zinsen
+  text: die Zinsen
+  meaning:
+    en: the interest
+    ar: الفوائد
+    mk: каматата
+- id: das-eigenkapital
+  text: das Eigenkapital
+  meaning:
+    en: own capital, deposit
+    ar: رأس المال الخاص
+    mk: сопствениот капитал
+  rare: true
+- id: die-grunderwerbsteuer
+  text: die Grunderwerbsteuer
+  meaning:
+    en: land transfer tax
+    ar: ضريبة نقل ملكية العقار
+    mk: данокот на промет на недвижности
+  rare: true
+- id: der-notar
+  text: der Notar
+  meaning:
+    en: the notary
+    ar: كاتب العدل
+    mk: нотарот
+- id: der-makler
+  text: der Makler
+  meaning:
+    en: the estate agent
+    ar: السمسار
+    mk: агентот за недвижности
+- id: die-kaufnebenkosten
+  text: die Kaufnebenkosten
+  meaning:
+    en: the additional purchase costs
+    ar: تكاليف الشراء الإضافية
+    mk: дополнителните трошоци за купување
+  rare: true
+- id: die-tilgung
+  text: die Tilgung
+  meaning:
+    en: repayment (of the loan)
+    ar: سداد أصل القرض
+    mk: отплатата
+  rare: true
+- id: die-finanzierung
+  text: die Finanzierung
+  meaning:
+    en: the financing
+    ar: التمويل
+    mk: финансирањето
+- id: auf-dem-land
+  text: auf dem Land
+  meaning:
+    en: in the countryside
+    ar: في الريف
+    mk: на село
+reviews:
+- item: du-bist
+  from: A1-10
+- item: oben
+  from: A1-10
+- item: und-du
+  from: A1-10
+- item: im-zweiten-stock
+  from: A1-10
+- item: wie-gehts
+  from: A1-10
+- item: und-dir
+  from: A1-10
+- item: sprichst-du
+  from: A1-10
+- item: oder-lieber
+  from: A1-10
+- item: ich-lerne
+  from: A1-10
+- item: auf-deutsch
+  from: A1-10
+- item: langsam
+  from: A1-10
+- item: klar
+  from: A1-10
+- item: wollen-wir-uns-duzen
+  from: B1-14
+- item: duzen
+  from: B1-14
+- item: siezen
+  from: B1-14
+- item: ein-jahr-schon
+  from: B1-14
+- item: ich-heisse
+  from: B1-14
+- item: gern-sehr
+  from: B1-14
+- item: anstossen
+  from: B1-14
+- item: die-ehre
+  from: B1-14
+- item: ungewohnt
+  from: B1-14
+- item: ab-jetzt
+  from: B1-14
+- item: der-konflikt
+  from: B2-16
+- item: die-loesung
+  from: B2-16
+- item: der-kompromiss
+  from: B2-16
+- item: vermitteln
+  from: B2-16
+- item: dennoch
+  from: B2-16
+- item: obwohl-b2
+  from: B2-16
+- item: der-standpunkt
+  from: B2-16
+- item: die-probephase
+  from: B2-16
+- item: einverstanden
+  from: B2-16
+- item: blockieren
+  from: B2-16
+- item: der-daueraufenthalt-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: die-rentenbeitraege-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: die-beitragsmonate-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: der-sprachnachweis-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: leben-in-deutschland-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: die-sicherung-des-lebensunterhalts-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: ausreichender-wohnraum-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: die-erfuellung-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: unbefristet-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: die-bearbeitungszeit-ea
+  from: C1-02-ea
+  for:
+  - en
+  - ar
+- item: das-beileid
+  from: C1-10
+- item: die-trauerfeier
+  from: C1-10
+- item: die-beerdigung
+  from: C1-10
+- item: verstorben
+  from: C1-10
+- item: die-trauerkarte
+  from: C1-10
+- item: in-gedanken
+  from: C1-10
+- item: er-wird-fehlen
+  from: C1-10
+- item: die-erinnerung
+  from: C1-10
+- item: im-engsten-kreis
+  from: C1-10
+- item: der-kranz
+  from: C1-10
+- item: das-kommunale-wahlrecht-ea
+  from: C1-14-ea
+  for:
+  - en
+  - ar
+- item: der-migrationsbeirat-ea
+  from: C1-14-ea
+  for:
+  - en
+  - ar
+- item: die-wahlbenachrichtigung-ea
+  from: C1-14-ea
+  for:
+  - en
+  - ar
+- item: das-wahllokal-ea
+  from: C1-14-ea
+  for:
+  - en
+  - ar
+- item: der-stadtrat-ea
+  from: C1-14-ea
+  for:
+  - en
+  - ar
+- item: kandidieren-ea
+  from: C1-14-ea
+  for:
+  - en
+  - ar
+- item: es-heisse-ea
+  from: C1-14-ea
+  for:
+  - en
+  - ar
+- item: er-werde-ea
+  from: C1-14-ea
+  for:
+  - en
+  - ar
+- item: mitbestimmen-ea
+  from: C1-14-ea
+  for:
+  - en
+  - ar
+- item: die-stimme-abgeben-ea
+  from: C1-14-ea
+  for:
+  - en
+  - ar
+- item: die-psychotherapie
+  from: C1-16
+- item: der-therapieplatz
+  from: C1-16
+- item: das-burnout
+  from: C1-16
+- item: die-erschoepfung
+  from: C1-16
+- item: schlecht-schlafen
+  from: C1-16
+- item: die-sprechstunde-psych
+  from: C1-16
+- item: koennte-sein
+  from: C1-16
+- item: muss-nicht
+  from: C1-16
+- item: die-krankschreibung
+  from: C1-16
+- item: schaemen
+  from: C1-16
+- item: das-daueraufenthaltsrecht-m
+  from: C1-02-m
+  for:
+  - mk
+- item: der-wohnsitz-m
+  from: C1-02-m
+  for:
+  - mk
+- item: die-ummeldung-m
+  from: C1-02-m
+  for:
+  - mk
+- item: ununterbrochen-m
+  from: C1-02-m
+  for:
+  - mk
+- item: fuenf-jahre-m
+  from: C1-02-m
+  for:
+  - mk
+- item: die-krankenversicherung-m-m
+  from: C1-02-m
+  for:
+  - mk
+- item: die-auswanderung-m
+  from: C1-02-m
+  for:
+  - mk
+- item: der-lebensmittelpunkt-m
+  from: C1-02-m
+  for:
+  - mk
+- item: die-entscheidung-m
+  from: C1-02-m
+  for:
+  - mk
+- item: die-rente-ins-ausland-m
+  from: C1-02-m
+  for:
+  - mk
+- item: die-wahlbenachrichtigung-m
+  from: C1-14-m
+  for:
+  - mk
+- item: das-kommunale-wahlrecht-m
+  from: C1-14-m
+  for:
+  - mk
+- item: das-wahllokal-m
+  from: C1-14-m
+  for:
+  - mk
+- item: der-stadtrat-m
+  from: C1-14-m
+  for:
+  - mk
+- item: der-stimmzettel-m
+  from: C1-14-m
+  for:
+  - mk
+- item: es-heisse-m
+  from: C1-14-m
+  for:
+  - mk
+- item: man-duerfe-m
+  from: C1-14-m
+  for:
+  - mk
+- item: ankreuzen-m
+  from: C1-14-m
+  for:
+  - mk
+- item: die-briefwahl-m
+  from: C1-14-m
+  for:
+  - mk
+- item: die-europawahl-m
+  from: C1-14-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: Rents keep rising. Could you buy a flat? Herr Vogel at the bank explains what a purchase really costs. Listen to the conversation; you don't need to understand it yet.
+    ar: الإيجارات ترتفع باستمرار. هل يمكنكِ شراء شقة؟ السيد فوغل في البنك يشرح كم يكلّف الشراء فعلًا. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.
+    mk: Кириите постојано растат. Дали би можеле да купите стан? Господин Фогел во банката објаснува колку навистина чини купувањето. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: bankberater
+    text: Für die Finanzierung einer Wohnung brauchen Sie zuerst Eigenkapital.
+    meaning:
+      en: To finance a flat you first need your own capital.
+      ar: لتمويل شقة تحتاجين أولًا إلى رأس مال خاص.
+      mk: За финансирање на стан прво ви треба сопствен капитал.
+  - speaker: protagonist
+    text: Wie viel?
+    meaning:
+      en: How much?
+      ar: كم؟
+      mk: Колку?
+  - speaker: bankberater
+    text: 'Mindestens die Kaufnebenkosten: Grunderwerbsteuer, Notar, Grundbuch und eventuell der Makler. Besser mehr.'
+    meaning:
+      en: 'At least the additional purchase costs: land transfer tax, notary, land registry and possibly the agent. More is better.'
+      ar: 'على الأقل تكاليف الشراء الإضافية: ضريبة نقل الملكية، كاتب العدل، السجل العقاري، وربما السمسار. والأفضل أكثر.'
+      mk: 'Најмалку дополнителните трошоци: данок на промет, нотар, катастар и евентуално агент. Подобро повеќе.'
+  - speaker: protagonist
+    text: Und der Rest ist ein Kredit?
+    meaning:
+      en: And the rest is a loan?
+      ar: والباقي قرض؟
+      mk: А остатокот е кредит?
+  - speaker: bankberater
+    text: Genau. Die monatliche Rate besteht aus Zinsen und Tilgung. Die Höhe der Zinsen ändert sich mit dem Markt.
+    meaning:
+      en: Exactly. The monthly instalment is interest plus repayment. The interest level changes with the market.
+      ar: بالضبط. القسط الشهري يتكوّن من الفوائد وسداد أصل القرض. مستوى الفوائد يتغيّر مع السوق.
+      mk: Точно. Месечната рата се состои од камата и отплата. Висината на каматата се менува со пазарот.
+  - speaker: protagonist
+    text: In Leipzig ist alles teurer geworden.
+    meaning:
+      en: Everything has got more expensive in Leipzig.
+      ar: كل شيء صار أغلى في لايبزيغ.
+      mk: Во Лајпциг сè поскапе.
+  - speaker: bankberater
+    text: Auf dem Land und im Osten ist Eigentum noch deutlich günstiger. Aber prüfen Sie die Verkehrsanbindung.
+    meaning:
+      en: In the countryside and in the east, property is still considerably cheaper. But check the transport links.
+      ar: في الريف وفي الشرق لا تزال الملكية أرخص بكثير. لكن تحقّقي من المواصلات.
+      mk: На село и на исток имотот е сè уште значително поевтин. Но проверете го превозот.
+  - speaker: protagonist
+    text: Danke. Ich rechne erst einmal — und spare weiter.
+    meaning:
+      en: Thank you. I'll do the maths first — and keep saving.
+      ar: شكرًا. سأحسب أولًا — وأواصل الادّخار.
+      mk: Благодарам. Прво ќе пресметам — и ќе продолжам да штедам.
+- type: prompt
+  ask:
+    en: 'Say: the financing of a flat.'
+    ar: 'قولي: تمويل شقة.'
+    mk: 'Кажете: финансирањето на стан.'
+  answer:
+    speaker: protagonist
+    text: Die Finanzierung einer Wohnung.
+  items:
+  - die-finanzierung
+- type: prompt
+  ask:
+    en: 'Say: you first need own capital.'
+    ar: 'قولي: تحتاجين أولًا إلى رأس مال خاص.'
+    mk: 'Кажете: прво треба сопствен капитал.'
+  answer:
+    speaker: protagonist
+    text: Zuerst braucht man Eigenkapital.
+  items:
+  - das-eigenkapital
+- type: narrator
+  text:
+    en: 'Money German is nominal: «die Finanzierung einer Wohnung» (= financing a flat), «die Höhe der Zinsen» (= how high the interest is), «die Kaufnebenkosten» (= what you pay on top of the price).'
+    ar: 'ألمانية المال اسمية: «die Finanzierung einer Wohnung» (= تمويل شقة)، «die Höhe der Zinsen» (= مقدار الفوائد)، «die Kaufnebenkosten» (= ما تدفعينه فوق السعر).'
+    mk: 'Финансискиот германски е номинален: «die Finanzierung einer Wohnung» (= финансирање стан), «die Höhe der Zinsen» (= колку е висока каматата), «die Kaufnebenkosten» (= што плаќате над цената).'
+- type: prompt
+  ask:
+    en: 'Say: the additional purchase costs.'
+    ar: 'قولي: تكاليف الشراء الإضافية.'
+    mk: 'Кажете: дополнителните трошоци.'
+  answer:
+    speaker: protagonist
+    text: Die Kaufnebenkosten.
+  items:
+  - die-kaufnebenkosten
+- type: prompt
+  ask:
+    en: 'Say: land transfer tax, notary, agent.'
+    ar: 'قولي: ضريبة نقل الملكية، كاتب العدل، السمسار.'
+    mk: 'Кажете: данок на промет, нотар, агент.'
+  answer:
+    speaker: protagonist
+    text: Grunderwerbsteuer, Notar, Makler.
+  items:
+  - die-grunderwerbsteuer
+  - der-notar
+  - der-makler
+- type: prompt
+  ask:
+    en: 'Ask: and the rest is a loan?'
+    ar: 'اسألي: والباقي قرض؟'
+    mk: 'Прашајте: а остатокот е кредит?'
+  answer:
+    speaker: protagonist
+    text: Und der Rest ist ein Kredit?
+  items:
+  - der-kredit
+- type: prompt
+  ask:
+    en: 'Say: interest and repayment.'
+    ar: 'قولي: الفوائد وسداد أصل القرض.'
+    mk: 'Кажете: камата и отплата.'
+  answer:
+    speaker: protagonist
+    text: Zinsen und Tilgung.
+  items:
+  - die-zinsen
+  - die-tilgung
+- type: prompt
+  ask:
+    en: 'Say: in the countryside it''s cheaper.'
+    ar: 'قولي: في الريف أرخص.'
+    mk: 'Кажете: на село е поевтино.'
+  answer:
+    speaker: protagonist
+    text: Auf dem Land ist es günstiger.
+  items:
+  - auf-dem-land
+- type: narrator
+  text:
+    en: 'Buying costs more than the price: land transfer tax (rate set by each state), notary and land registry, and often an estate agent. Banks expect you to pay at least these extra costs from your own
+      money, better more. Property is far cheaper in the east and the countryside than in big western cities. Rates change constantly — compare offers from several banks.'
+    ar: 'الشراء يكلّف أكثر من السعر: ضريبة نقل الملكية (تحدّد كل ولاية نسبتها)، وكاتب العدل والسجل العقاري، وغالبًا سمسار. والبنوك تتوقّع أن تدفعي على الأقل هذه التكاليف الإضافية من مالكِ، والأفضل أكثر.
+      والعقارات أرخص بكثير في الشرق والريف منها في المدن الغربية الكبيرة. النسب تتغيّر باستمرار — قارني عروض عدة بنوك.'
+    mk: 'Купувањето чини повеќе од цената: данок на промет на недвижности (стапката ја одредува секоја покраина), нотар и катастар, и често агент. Банките очекуваат барем овие дополнителни трошоци да ги
+      платите од свои пари, подобро повеќе. Имотот е многу поевтин на исток и на село отколку во големите западни градови. Стапките постојано се менуваат — споредете понуди од повеќе банки.'
+- type: prompt
+  ask:
+    en: 'Once more: say “the loan”.'
+    ar: 'مرة أخرى: قولي “القرض”.'
+    mk: 'Уште еднаш: кажете „кредитот“.'
+  answer:
+    speaker: protagonist
+    text: der Kredit
+  items:
+  - der-kredit
+- type: prompt
+  ask:
+    en: 'Once more: say “the interest”.'
+    ar: 'مرة أخرى: قولي “الفوائد”.'
+    mk: 'Уште еднаш: кажете „каматата“.'
+  answer:
+    speaker: protagonist
+    text: die Zinsen
+  items:
+  - die-zinsen
+- type: prompt
+  ask:
+    en: 'Once more: say “own capital, deposit”.'
+    ar: 'مرة أخرى: قولي “رأس المال الخاص”.'
+    mk: 'Уште еднаш: кажете „сопствениот капитал“.'
+  answer:
+    speaker: protagonist
+    text: das Eigenkapital
+  items:
+  - das-eigenkapital
+- type: prompt
+  ask:
+    en: 'Once more: say “land transfer tax”.'
+    ar: 'مرة أخرى: قولي “ضريبة نقل ملكية العقار”.'
+    mk: 'Уште еднаш: кажете „данокот на промет на недвижности“.'
+  answer:
+    speaker: protagonist
+    text: die Grunderwerbsteuer
+  items:
+  - die-grunderwerbsteuer
+- type: prompt
+  ask:
+    en: 'Once more: say “the notary”.'
+    ar: 'مرة أخرى: قولي “كاتب العدل”.'
+    mk: 'Уште еднаш: кажете „нотарот“.'
+  answer:
+    speaker: protagonist
+    text: der Notar
+  items:
+  - der-notar
+- type: prompt
+  ask:
+    en: 'Once more: say “the estate agent”.'
+    ar: 'مرة أخرى: قولي “السمسار”.'
+    mk: 'Уште еднаш: кажете „агентот за недвижности“.'
+  answer:
+    speaker: protagonist
+    text: der Makler
+  items:
+  - der-makler
+- type: prompt
+  ask:
+    en: 'Once more: say “the additional purchase costs”.'
+    ar: 'مرة أخرى: قولي “تكاليف الشراء الإضافية”.'
+    mk: 'Уште еднаш: кажете „дополнителните трошоци за купување“.'
+  answer:
+    speaker: protagonist
+    text: die Kaufnebenkosten
+  items:
+  - die-kaufnebenkosten
+- type: prompt
+  ask:
+    en: 'Once more: say “repayment (of the loan)”.'
+    ar: 'مرة أخرى: قولي “سداد أصل القرض”.'
+    mk: 'Уште еднаш: кажете „отплатата“.'
+  answer:
+    speaker: protagonist
+    text: die Tilgung
+  items:
+  - die-tilgung
+- type: prompt
+  ask:
+    en: 'Once more: say “the financing”.'
+    ar: 'مرة أخرى: قولي “التمويل”.'
+    mk: 'Уште еднаш: кажете „финансирањето“.'
+  answer:
+    speaker: protagonist
+    text: die Finanzierung
+  items:
+  - die-finanzierung
+- type: prompt
+  ask:
+    en: 'Once more: say “in the countryside”.'
+    ar: 'مرة أخرى: قولي “في الريف”.'
+    mk: 'Уште еднаш: кажете „на село“.'
+  answer:
+    speaker: protagonist
+    text: auf dem Land
+  items:
+  - auf-dem-land
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “psychotherapy — and “a place in therapy — and “burnout — and “exhaustion — and “sleep badly — and “a first therapy consultation — and “it could be … — and “doesn''t have to (mean) … — and
+      “a sick note — and “be ashamed — and “My sincere condolences — and “the memorial service — and “the burial, funeral — and “deceased — and “the condolence card — and “my thoughts are with you — and
+      “We will miss him very much — and “the memory”.'
+    ar: 'قولي: “العلاج النفسي — و“مكان للعلاج — و“الاحتراق النفسي — و“الإنهاك — و“ينام بشكل سيئ — و“استشارة نفسية أولى — و“قد يكون … — و“ليس بالضرورة … — و“الإجازة المرضية — و“يخجل — و“أصدق التعازي — و“مراسم
+      التأبين — و“الدفن، الجنازة — و“متوفّى — و“بطاقة التعزية — و“أفكاري معكم — و“سنفتقده كثيرًا — و“الذكرى”.'
+    mk: 'Кажете: „психотерапијата“ — и „место за терапија“ — и „согорувањето“ — и „исцрпеноста“ — и „лошо спие“ — и „прва психотерапевтска консултација“ — и „би можело да е …“ — и „не мора да …“ — и „боледувањето“
+      — и „се срами“ — и „Искрено сочувство“ — и „комеморацијата“ — и „погребот“ — и „починат“ — и „картичката за сочувство“ — и „во мислите сум со вас“ — и „Многу ќе ни недостига“ — и „споменот“.'
+  answer:
+    speaker: protagonist
+    text: die Psychotherapie … der Therapieplatz … das Burnout … die Erschöpfung … schlecht schlafen … die psychotherapeutische Sprechstunde … es könnte … sein … muss nicht … … die Krankschreibung … sich
+      schämen … Mein herzliches Beileid … die Trauerfeier … die Beerdigung … verstorben … die Trauerkarte … in Gedanken bei Ihnen … Er wird uns sehr fehlen … die Erinnerung
+  items:
+  - die-psychotherapie
+  - der-therapieplatz
+  - das-burnout
+  - die-erschoepfung
+  - schlecht-schlafen
+  - die-sprechstunde-psych
+  - koennte-sein
+  - muss-nicht
+  - die-krankschreibung
+  - schaemen
+  - das-beileid
+  - die-trauerfeier
+  - die-beerdigung
+  - verstorben
+  - die-trauerkarte
+  - in-gedanken
+  - er-wird-fehlen
+  - die-erinnerung
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “close family only — and “the wreath — and “the conflict — and “the solution — and “the compromise — and “mediate — and “nonetheless — and “although both are right — and “the point of view
+      — and “a trial phase — and “agreed — and “block — and “Shall we say du to each other? — and “say du — and “say Sie — and “already a year — and “My name is … — and “with great pleasure”.'
+    ar: 'قولي: “في أضيق نطاق عائلي — و“إكليل الزهور — و“الخلاف — و“الحل — و“الحل الوسط — و“يتوسّط — و“ومع ذلك — و“مع أنّ الاثنين على حق — و“وجهة النظر — و“مرحلة تجريبية — و“موافق — و“يعرقل — و“هل نتخاطب
+      بـ«du»؟ — و“يخاطب بـ«du» — و“يخاطب بـ«Sie» — و“عام كامل — و“اسمي … — و“بكل سرور”.'
+    mk: 'Кажете: „во најтесен круг“ — и „венецот“ — и „конфликтот“ — и „решението“ — и „компромисот“ — и „посредува“ — и „сепак“ — и „иако и двајцата се во право“ — и „гледиштето“ — и „пробна фаза“ — и
+      „се согласувам“ — и „блокира“ — и „Ќе си велиме ли «du»?“ — и „персира со «du»“ — и „персира со «Sie»“ — и „веќе една година“ — и „Се викам …“ — и „со големо задоволство“.'
+  answer:
+    speaker: protagonist
+    text: im engsten Kreis … der Kranz … der Konflikt … die Lösung … der Kompromiss … vermitteln … dennoch … obwohl beide recht haben … der Standpunkt … eine Testphase … einverstanden … blockieren … Wollen
+      wir uns duzen? … duzen … siezen … schon ein Jahr … Ich heiße … … sehr gern
+  items:
+  - im-engsten-kreis
+  - der-kranz
+  - der-konflikt
+  - die-loesung
+  - der-kompromiss
+  - vermitteln
+  - dennoch
+  - obwohl-b2
+  - der-standpunkt
+  - die-probephase
+  - einverstanden
+  - blockieren
+  - wollen-wir-uns-duzen
+  - duzen
+  - siezen
+  - ein-jahr-schon
+  - ich-heisse
+  - gern-sehr
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “clink glasses — and “the honour — and “unfamiliar, strange — and “from now on — and “you are (informal) — and “upstairs — and “And you? (informal) — and “on the second floor — and “How are
+      you? (informal) — and “And you? (after ''how are you'') — and “Do you speak …? (informal) — and “or would you rather …? — and “I''m learning — and “in German — and “slowly — and “Sure! Of course!”.'
+    ar: 'قولي: “يقرع الكؤوس — و“الشرف — و“غير معتاد — و“من الآن — و“أنتَ (غير رسمي) — و“في الأعلى — و“وأنت؟ — و“في الطابق الثاني — و“كيف الحال؟ — و“وأنت؟ (بعد كيف الحال) — و“هل تتكلم …؟ — و“أم تفضّل …؟
+      — و“أتعلّم — و“بالألمانية — و“ببطء — و“طبعًا!”.'
+    mk: 'Кажете: „наздравува“ — и „честа“ — и „невообичаено“ — и „од сега“ — и „ти си“ — и „горе“ — и „А ти?“ — и „на вториот кат“ — и „Како си?“ — и „А ти?“ — и „Зборуваш ли …?“ — и „или повеќе сакаш …?“
+      — и „учам“ — и „на германски“ — и „полека“ — и „Секако!“.'
+  answer:
+    speaker: protagonist
+    text: anstoßen … die Ehre … ungewohnt … ab jetzt … du bist … oben … Und du? … im zweiten Stock … Wie geht's? … Und dir? … Sprichst du …? … oder lieber …? … ich lerne … auf Deutsch … langsam … Klar!
+  items:
+  - anstossen
+  - die-ehre
+  - ungewohnt
+  - ab-jetzt
+  - du-bist
+  - oben
+  - und-du
+  - im-zweiten-stock
+  - wie-gehts
+  - und-dir
+  - sprichst-du
+  - oder-lieber
+  - ich-lerne
+  - auf-deutsch
+  - langsam
+  - klar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the right to vote locally — and “the migrants'' advisory council — and “the polling card — and “the polling station — and “the city council — and “stand (as a candidate) — and “(reported)
+      it says …”.'
+    ar: 'قولي: “حق التصويت المحلي — و“مجلس الهجرة الاستشاري — و“بطاقة إشعار الانتخاب — و“مركز الاقتراع — و“مجلس المدينة — و“يترشّح — و“(منقولًا) يُقال إنّ …”.'
+  answer:
+    speaker: protagonist
+    text: das kommunale Wahlrecht … der Migrationsbeirat … die Wahlbenachrichtigung … das Wahllokal … der Stadtrat … kandidieren … es heiße …
+  items:
+  - das-kommunale-wahlrecht-ea
+  - der-migrationsbeirat-ea
+  - die-wahlbenachrichtigung-ea
+  - das-wahllokal-ea
+  - der-stadtrat-ea
+  - kandidieren-ea
+  - es-heisse-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “(reported) it will be … — and “have a say — and “cast one''s vote — and “permanent residence — and “pension contributions — and “months of contributions — and “proof of language level”.'
+    ar: 'قولي: “(منقولًا) سيكون … — و“يشارك في القرار — و“يُدلي بصوته — و“الإقامة الدائمة — و“اشتراكات التقاعد — و“أشهر الاشتراك — و“إثبات المستوى اللغوي”.'
+  answer:
+    speaker: protagonist
+    text: er werde … … mitbestimmen … seine Stimme abgeben … der Daueraufenthalt … die Rentenbeiträge … die Beitragsmonate … der Sprachnachweis
+  items:
+  - er-werde-ea
+  - mitbestimmen-ea
+  - die-stimme-abgeben-ea
+  - der-daueraufenthalt-ea
+  - die-rentenbeitraege-ea
+  - die-beitragsmonate-ea
+  - der-sprachnachweis-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the ''Life in Germany'' test — and “securing one''s livelihood — and “sufficient living space — and “the fulfilment (of conditions) — and “permanent, unlimited — and “the processing time”.'
+    ar: 'قولي: “اختبار «الحياة في ألمانيا» — و“تأمين المعيشة — و“مسكن كافٍ — و“استيفاء (الشروط) — و“غير محدد المدة — و“مدة المعالجة”.'
+  answer:
+    speaker: protagonist
+    text: der Test „Leben in Deutschland“ … die Sicherung des Lebensunterhalts … ausreichender Wohnraum … die Erfüllung … unbefristet … die Bearbeitungszeit
+  items:
+  - leben-in-deutschland-ea
+  - die-sicherung-des-lebensunterhalts-ea
+  - ausreichender-wohnraum-ea
+  - die-erfuellung-ea
+  - unbefristet-ea
+  - die-bearbeitungszeit-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „известувањето за гласање“ — и „правото на глас на локални избори“ — и „избирачкото место“ — и „градскиот совет“ — и „гласачкото ливче“ — и „(пренесено) се вели дека …“ — и „(пренесено)
+      дека смее …“.'
+  answer:
+    speaker: protagonist
+    text: die Wahlbenachrichtigung … das kommunale Wahlrecht … das Wahllokal … der Stadtrat … der Stimmzettel … es heiße … … man dürfe …
+  items:
+  - die-wahlbenachrichtigung-m
+  - das-kommunale-wahlrecht-m
+  - das-wahllokal-m
+  - der-stadtrat-m
+  - der-stimmzettel-m
+  - es-heisse-m
+  - man-duerfe-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „заокружува со крст“ — и „гласањето по пошта“ — и „европските избори“ — и „правото на постојан престој“ — и „живеалиштето“ — и „пријавувањето на нова адреса“ — и „без прекин“.'
+  answer:
+    speaker: protagonist
+    text: ankreuzen … die Briefwahl … die Europawahl … das Daueraufenthaltsrecht … der Wohnsitz … die Ummeldung … ununterbrochen
+  items:
+  - ankreuzen-m
+  - die-briefwahl-m
+  - die-europawahl-m
+  - das-daueraufenthaltsrecht-m
+  - der-wohnsitz-m
+  - die-ummeldung-m
+  - ununterbrochen-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „пет години“ — и „здравственото осигурување“ — и „иселувањето“ — и „центарот на животот“ — и „одлуката“ — и „исплатата на пензија во странство“.'
+  answer:
+    speaker: protagonist
+    text: fünf Jahre … die Krankenversicherung … die Auswanderung … der Lebensmittelpunkt … die Entscheidung … die Rentenzahlung ins Ausland
+  items:
+  - fuenf-jahre-m
+  - die-krankenversicherung-m-m
+  - die-auswanderung-m
+  - der-lebensmittelpunkt-m
+  - die-entscheidung-m
+  - die-rente-ins-ausland-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck
