@@ -18,7 +18,7 @@
        explain it / make it clear.
 10. [x] Proofreading (German): missing final full stop not flagged; a line break followed by lower case not flagged
        (needs "." above and capital below).
-11. [ ] Japanese conversation: furigana over kanji and romaji below, as elsewhere on the site.
+11. [x] Japanese conversation: furigana over kanji and romaji below, as elsewhere on the site.
 12. [x] "fold the 3 casus too": the sites are one button, the other two in its menu.
 13. [x] On a phone the view tabs fold into one button; the language chip is gone — the gear shows "flag → UI language".
 14. [x] One control height (--control-h, 40 px) for buttons, pickers, gear, XP chip, tabs, selects.

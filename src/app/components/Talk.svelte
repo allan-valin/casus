@@ -8,6 +8,7 @@
    * docs/conversation/ and built by tools/build_conversation.py. Progress is kept in this browser. */
   import { onMount } from 'svelte';
   import Picker from './Picker.svelte';
+  import { alignFurigana } from '../../lang/ja/furigana.js';
   import { t, ui } from '../lib/i18n.svelte.js';
   import { voicePitches, pitchOf, speedOf } from '../lib/talkvoices.js';
   import { narrationParts, taughtLetters } from '../lib/narration.js';
@@ -91,7 +92,7 @@
     if (r?.fellBack && !warnedFallback) { warnedFallback = true; say(t('talk.voice.fellBack', { error: r.error ?? '' }), 'err'); }
   }
   async function sayTaught(text, who = null) {
-    try { noteFallback(await speakTaught(text, { pitch: who ? pitchOf(course, unit, who, pitches) : 1, speed: who ? speedOf(course, unit, who) : 1 })); } catch (e) { say(t('talk.speakFailed', { text, error: e?.message ?? '' }), 'err'); throw e; }
+    try { noteFallback(await speakTaught(readings[text]?.say ?? text, { pitch: who ? pitchOf(course, unit, who, pitches) : 1, speed: who ? speedOf(course, unit, who) : 1 })); } catch (e) { say(t('talk.speakFailed', { text, error: e?.message ?? '' }), 'err'); throw e; }
   }
   // ▶ starts the step; while it plays the same button pauses (⏸) and resumes (▶) it
   // every playback has a run number; starting another stops the sound and ends the old run (Allan, 2026-10-21: two at once)
@@ -214,6 +215,21 @@
   const romanize = $derived(lang.script?.romanize ?? null);
   const pieces = (text) => (String(text).match(/[\p{L}\p{M}]+|[^\p{L}\p{M}]+/gu) ?? []).map((x) => ({ x, word: /\p{L}/u.test(x) }));
   const romanOf = (text) => pieces(text).map((p) => (p.word ? romanize(p.x) : p.x)).join('');
+  // Japanese lines carry their words with readings (tools/ja_text.py): furigana over kanji, romaji with the particles
+  // read as particles, the voice given kana (Allan, 2026-10-22)
+  const readings = $derived(course?.readings ?? {});
+  const HAS_KANJI = /[\u3005\u4e00-\u9fff\u3400-\u4dbf]/u;
+  const PARTICLE = { は: 'wa', へ: 'e', を: 'o' };
+  const JPUNCT = { '。': '.', '、': ',', '！': '!', '？': '?', '「': '“', '」': '”', '・': ' ' };
+  const isPunct = (w) => !/[\p{L}\p{N}]/u.test(w);
+  function romanRich(rt) {
+    let out = '';
+    for (const [w, r] of rt) {
+      if (isPunct(w)) { out += [...w].map((c) => JPUNCT[c] ?? c).join(''); continue; }
+      out += (out && !out.endsWith(' ') && !out.endsWith('“') ? ' ' : '') + (PARTICLE[w] ?? (romanize ? romanize(r ?? w) : r ?? w));
+    }
+    return out;
+  }
   function openWord(key, word) { entry = entry?.key === key && entry.word === word ? null : { key, word }; }
   function practise(n) { current = n; practising = practising === n ? null : n; }
   function markDone(ok) {
@@ -244,8 +260,14 @@
   {/if}
 {/snippet}
 
+{#snippet ruby(w, r)}{#if HAS_KANJI.test(w)}{#each alignFurigana(w, r) as [c, cr]}{#if cr}<ruby>{c}<rt>{cr}</rt></ruby>{:else}{c}{/if}{/each}{:else}{w}{/if}{/snippet}
+
 {#snippet words(key, text)}
+  {#if readings[text]}
+    <span class="taught" lang={lang.bcp47}>{#each readings[text].rt as [w, r]}{#if !isPunct(w) && Entry}<button class="w" onclick={() => openWord(key, w)}>{@render ruby(w, r)}</button>{:else}{@render ruby(w, r)}{/if}{/each}</span><span class="roman">{romanRich(readings[text].rt)}</span>
+  {:else}
   <span class="taught" lang={lang.bcp47}>{#each pieces(text) as p}{#if p.word && Entry}<button class="w" onclick={() => openWord(key, p.x)}>{p.x}</button>{:else}{p.x}{/if}{/each}</span>{#if romanize}<span class="roman">{romanOf(text)}</span>{/if}
+  {/if}
   {#if Entry && entry?.key === key}<div class="entry"><Entry word={entry.word} {lang} {...entryProps} onclose={() => (entry = null)} /></div>{/if}
 {/snippet}
 
@@ -402,6 +424,8 @@
   .play { border-radius: 999px; width: 2.2em; height: 2.2em; border: 1px solid var(--accent); background: transparent; color: var(--accent-text); cursor: pointer; }
   .reveal, .answer, .check, .back, .done-yes, .done-no { border: 1px solid var(--line); border-radius: 999px; padding: 2px 12px; background: transparent; color: var(--ink); cursor: pointer; }
   .taught { font-weight: 600; font-size: 1.08rem; }
+  .taught rt { font-size: 0.6em; font-weight: 400; color: var(--ink-2); }
+  .taught ruby { ruby-align: center; }
   .meaning { color: var(--ink-2); font-style: italic; }
   .kind, .pause-hint { color: var(--ink-2); font-size: 0.9rem; }
   .review-tag { font-size: 0.78rem; border: 1px solid var(--line); border-radius: 999px; padding: 0 8px; color: var(--ink-2); }

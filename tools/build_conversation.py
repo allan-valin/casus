@@ -13,6 +13,7 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from conversation_check import check_bible, check_course, check_unit  # noqa: E402
+from ja_text import rich_course  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -53,6 +54,12 @@ def build(src=ROOT / "tools" / "conversation", out=ROOT / "public" / "talk"):
             "items": [i for u in c["units"] for i in u["new_items"]],
             "units": c["units"],
         }
+        if code == "ja":                         # furigana, romaji and the kana the voice reads (Allan, 2026-10-22)
+            try:
+                rich_course(data)
+            except ValueError as e:
+                report[code]["errors"].append(str(e))
+                continue
         Path(out).mkdir(parents=True, exist_ok=True)
         (Path(out) / f"{code}.json").write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     return report

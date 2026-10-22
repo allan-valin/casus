@@ -722,3 +722,37 @@ describe('narration in a non-Latin narrator language', () => {
       { text: 'За поздрав кажете', taught: false }, { text: 'Guten Tag', taught: true }, { text: 'Слушајте.', taught: false }]);
   });
 });
+
+describe('Japanese: furigana over kanji, romaji below, the voice reads kana (Allan, 2026-10-22)', () => {
+  const JA = {
+    language: 'ja', example: false, narrator_languages: ['pt', 'en'],
+    cast: { kenta: { name: 'Kenta' }, protagonist: { name: null } },
+    readings: {
+      '私は学生です。': { rt: [['私', 'わたし'], ['は', 'は'], ['学生', 'がくせい'], ['です', 'です'], ['。', '。']], say: 'わたしはがくせいです。' },
+      '学生': { rt: [['学生', 'がくせい']], say: 'がくせい' },
+    },
+    units: [{ id: 'A1-01', level: 'A1', number: 1, title: { pt: 'Oi', en: 'Hi' }, situation: { pt: '.', en: '.' },
+      new_items: [{ id: 'gakusei', text: '学生', meaning: { pt: 'estudante', en: 'student' } }],
+      steps: [
+        { type: 'narrator', text: { pt: 'Diga «学生».', en: 'Say «学生».' } },
+        { type: 'dialogue', lines: [{ speaker: 'kenta', text: '私は学生です。', meaning: { pt: 'Eu sou estudante.', en: 'I am a student.' } }] },
+      ] }],
+  };
+  it('shows ruby and romaji with the particle read as wa, and speaks the kana', async () => {
+    setLang('pt');
+    const { p, spoken } = props({ lang: getLanguage('ja'), loadTalk: async () => JA });
+    const { container } = render(Talk, p);
+    await flush();
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    const step = container.querySelector('.step[data-type="dialogue"]');
+    await fireEvent.click(step.querySelector('.reveal'));
+    await flush();
+    expect([...step.querySelectorAll('.taught rt')].map((r) => r.textContent)).toEqual(['わたし', 'がくせい']);
+    expect(step.querySelector('.roman').textContent).toBe('watashi wa gakusei desu.');
+    await fireEvent.click(container.querySelector('.step[data-type="narrator"] .play')); await flush();
+    await fireEvent.click(step.querySelector('.play')); await flush();
+    expect(spoken).toContainEqual(['de', 'がくせい']);            // the taught word inside the narration
+    expect(spoken).toContainEqual(['de', 'わたしはがくせいです。']);
+  });
+});
