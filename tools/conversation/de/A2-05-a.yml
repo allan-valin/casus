@@ -1,0 +1,483 @@
+# UNIT de A2-05-a — written by AI (Claude) for Casus; expanded from src/A2-05-a.yml by tools/expand_unit.py. Edit the source.
+
+id: A2-05-a
+level: A2
+number: 5
+protagonist: f
+tracks:
+- ar
+title:
+  ar: التأمين الصحي
+situation:
+  ar: عند شركة التأمين الصحي. تسألين إن كنتِ مؤمَّنة مع زوجكِ.
+learn_lessons:
+- a2-dative
+culture: Family insurance
+new_items:
+- id: die-krankenkasse-a
+  text: die Krankenkasse
+  meaning:
+    ar: شركة التأمين الصحي
+- id: mitversichert-a
+  text: mitversichert
+  meaning:
+    ar: مؤمَّنة ضمن العائلة
+- id: bei-meinem-mann-a
+  text: bei meinem Mann
+  meaning:
+    ar: مع زوجي
+- id: kostenlos-a
+  text: kostenlos
+  meaning:
+    ar: مجانًا
+- id: die-versichertenkarte-a-a
+  text: die Versichertenkarte
+  meaning:
+    ar: بطاقة التأمين
+- id: mit-foto-a
+  text: mit Foto
+  meaning:
+    ar: مع صورة
+- id: schicken-sie-mir-a
+  text: Schicken Sie mir …
+  meaning:
+    ar: أرسلي لي …
+- id: die-zaehne-a
+  text: die Zähne
+  meaning:
+    ar: الأسنان
+- id: teilweise-a
+  text: teilweise
+  meaning:
+    ar: جزئيًا
+- id: zuzahlen-a
+  text: zuzahlen
+  meaning:
+    ar: يدفع مبلغًا إضافيًا
+  rare: true
+reviews:
+- item: einen-termin
+  from: A1-04
+- item: ich-moechte
+  from: A1-04
+- item: mich-anmelden
+  from: A1-04
+- item: das-formular
+  from: A1-04
+- item: die-wgb
+  from: A1-04
+- item: wo-wohnen-sie
+  from: A1-04
+- item: welche
+  from: A1-04
+- item: die-religion
+  from: A1-04
+- item: warum
+  from: A1-04
+- item: keins-von-beiden
+  from: A1-04
+- item: die-kirchensteuer
+  from: A1-04
+- item: fertig
+  from: A1-04
+- item: das-wars
+  from: A1-04
+- item: schoenen-tag-noch
+  from: A1-04
+- item: hast-du-zeit
+  from: A1-20
+- item: am-montag
+  from: A1-20
+- item: keine-zeit
+  from: A1-20
+- item: am-dienstag
+  from: A1-20
+- item: am-mittwoch
+  from: A1-20
+- item: am-donnerstag
+  from: A1-20
+- item: am-freitag
+  from: A1-20
+- item: am-wochenende
+  from: A1-20
+- item: heute
+  from: A1-20
+- item: morgen
+  from: A1-20
+- item: passt-dir
+  from: A1-20
+- item: abgemacht
+  from: A1-20
+- item: die-familie
+  from: A1-28
+- item: meine-schwester
+  from: A1-28
+- item: ihre-kinder
+  from: A1-28
+- item: mein-bruder
+  from: A1-28
+- item: sein-sohn
+  from: A1-28
+- item: ist-das-ihre
+  from: A1-28
+- item: die-eltern-meine
+  from: A1-28
+- item: vermisse
+  from: A1-28
+- item: wie-viele
+  from: A1-28
+- item: geschwister
+  from: A1-28
+- item: gruessen-sie
+  from: A1-28
+- item: die-blaue-karte-a
+  from: A2-02-a
+- item: der-aufenthaltstitel-a
+  from: A2-02-a
+- item: der-familiennachzug-a
+  from: A2-02-a
+- item: meine-frau-a
+  from: A2-02-a
+- item: meine-tochter-a
+  from: A2-02-a
+- item: sind-gekommen-a
+  from: A2-02-a
+- item: der-arbeitsvertrag-a
+  from: A2-02-a
+- item: ich-habe-mitgebracht-a
+  from: A2-02-a
+- item: verlaengern-a
+  from: A2-02-a
+- item: pruefen-a
+  from: A2-02-a
+- item: das-gehalt-a
+  from: A2-04-a
+- item: weil-a
+  from: A2-04-a
+- item: reicht-a
+  from: A2-04-a
+- item: die-miete-a
+  from: A2-04-a
+- item: das-kindergeld-a
+  from: A2-04-a
+- item: meine-frau-lernt-a
+  from: A2-04-a
+- item: spaeter-arbeiten-a
+  from: A2-04-a
+- item: sparen-a
+  from: A2-04-a
+- item: teuer-a
+  from: A2-04-a
+- item: kollege-a
+  from: A2-04-a
+steps:
+- type: narrator
+  text:
+    ar: عند شركة التأمين الصحي. تسألين إن كنتِ مؤمَّنة مع زوجكِ. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Guten Tag. Bin ich bei meinem Mann mitversichert?
+    meaning:
+      ar: نهارك سعيد. هل أنا مؤمَّنة مع زوجي؟
+  - speaker: kasse
+    text: Wenn Sie kein eigenes Einkommen haben, ja. Familienversicherung.
+    meaning:
+      ar: إن لم يكن لديكِ دخل خاص، نعم. التأمين العائلي.
+  - speaker: protagonist
+    text: Und meine Tochter?
+    meaning:
+      ar: وابنتي؟
+  - speaker: kasse
+    text: Auch. Kinder sind kostenlos mitversichert.
+    meaning:
+      ar: أيضًا. الأطفال مؤمَّنون مجانًا.
+  - speaker: protagonist
+    text: Bekomme ich eine eigene Karte?
+    meaning:
+      ar: هل أحصل على بطاقة خاصة بي؟
+  - speaker: kasse
+    text: Ja, eine Versichertenkarte mit Foto. Schicken Sie mir das Foto per App.
+    meaning:
+      ar: نعم، بطاقة تأمين مع صورة. أرسلي لي الصورة عبر التطبيق.
+  - speaker: protagonist
+    text: Und der Zahnarzt? Sind die Zähne auch versichert?
+    meaning:
+      ar: وطبيب الأسنان؟ هل الأسنان مؤمَّنة أيضًا؟
+  - speaker: kasse
+    text: Teilweise. Für manches müssen Sie zuzahlen.
+    meaning:
+      ar: جزئيًا. لبعض الأشياء يجب أن تدفعي مبلغًا إضافيًا.
+- type: prompt
+  ask:
+    ar: 'اسألي: هل أنا مؤمَّنة مع زوجي؟'
+  answer:
+    speaker: protagonist
+    text: Bin ich bei meinem Mann mitversichert?
+  items:
+  - mitversichert-a
+  - bei-meinem-mann-a
+- type: narrator
+  text:
+    ar: 'بعد «mit» و«bei» و«von» و«zu» تأتي حالة الجر: «bei meinem Mann»، «mit Foto»، «mir» (لي).'
+- type: prompt
+  ask:
+    ar: 'قولي: شركة التأمين الصحي.'
+  answer:
+    speaker: protagonist
+    text: Die Krankenkasse.
+  items:
+  - die-krankenkasse-a
+- type: prompt
+  ask:
+    ar: 'تقول: الأطفال مؤمَّنون مجانًا.'
+  answer:
+    speaker: protagonist
+    text: Kinder sind kostenlos mitversichert.
+  items:
+  - kostenlos-a
+- type: prompt
+  ask:
+    ar: 'قولي: بطاقة التأمين.'
+  answer:
+    speaker: protagonist
+    text: Die Versichertenkarte.
+  items:
+  - die-versichertenkarte-a-a
+- type: prompt
+  ask:
+    ar: 'قولي: مع صورة.'
+  answer:
+    speaker: protagonist
+    text: Mit Foto.
+  items:
+  - mit-foto-a
+- type: prompt
+  ask:
+    ar: 'تقول: أرسلي لي الصورة.'
+  answer:
+    speaker: protagonist
+    text: Schicken Sie mir das Foto.
+  items:
+  - schicken-sie-mir-a
+- type: prompt
+  ask:
+    ar: 'اسألي: هل الأسنان مؤمَّنة؟'
+  answer:
+    speaker: protagonist
+    text: Sind die Zähne versichert?
+  items:
+  - die-zaehne-a
+- type: prompt
+  ask:
+    ar: 'تقول: جزئيًا.'
+  answer:
+    speaker: protagonist
+    text: Teilweise.
+  items:
+  - teilweise-a
+- type: prompt
+  ask:
+    ar: 'قولي: يجب أن أدفع مبلغًا إضافيًا.'
+  answer:
+    speaker: protagonist
+    text: Ich muss zuzahlen.
+  items:
+  - zuzahlen-a
+- type: narrator
+  text:
+    ar: في التأمين الحكومي يمكن تأمين الزوجة والأطفال دون دخل خاص مع الزوج مجانًا (التأمين العائلي). وإن بدأتِ العمل تغيّر الوضع — أخبري شركة التأمين.
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “شركة التأمين الصحي”.'
+  answer:
+    speaker: protagonist
+    text: die Krankenkasse
+  items:
+  - die-krankenkasse-a
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “مؤمَّنة ضمن العائلة”.'
+  answer:
+    speaker: protagonist
+    text: mitversichert
+  items:
+  - mitversichert-a
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “مع زوجي”.'
+  answer:
+    speaker: protagonist
+    text: bei meinem Mann
+  items:
+  - bei-meinem-mann-a
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “مجانًا”.'
+  answer:
+    speaker: protagonist
+    text: kostenlos
+  items:
+  - kostenlos-a
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “بطاقة التأمين”.'
+  answer:
+    speaker: protagonist
+    text: die Versichertenkarte
+  items:
+  - die-versichertenkarte-a-a
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “مع صورة”.'
+  answer:
+    speaker: protagonist
+    text: mit Foto
+  items:
+  - mit-foto-a
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “أرسلي لي …”.'
+  answer:
+    speaker: protagonist
+    text: Schicken Sie mir …
+  items:
+  - schicken-sie-mir-a
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “الأسنان”.'
+  answer:
+    speaker: protagonist
+    text: die Zähne
+  items:
+  - die-zaehne-a
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “جزئيًا”.'
+  answer:
+    speaker: protagonist
+    text: teilweise
+  items:
+  - teilweise-a
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “يدفع مبلغًا إضافيًا”.'
+  answer:
+    speaker: protagonist
+    text: zuzahlen
+  items:
+  - zuzahlen-a
+- type: narrator
+  text:
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “الراتب — و“لأنّ (الفعل في الآخر) — و“يكفي — و“الإيجار — و“إعانة الأطفال — و“زوجتي تتعلّم — و“تعمل لاحقًا — و“يوفّر — و“غالٍ — و“الزميل”.'
+  answer:
+    speaker: protagonist
+    text: das Gehalt … weil … reicht … die Miete … das Kindergeld … meine Frau lernt … später arbeiten … sparen … teuer … der Kollege
+  items:
+  - das-gehalt-a
+  - weil-a
+  - reicht-a
+  - die-miete-a
+  - das-kindergeld-a
+  - meine-frau-lernt-a
+  - spaeter-arbeiten-a
+  - sparen-a
+  - teuer-a
+  - kollege-a
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “البطاقة الزرقاء — و“تصريح الإقامة — و“لمّ الشمل — و“زوجتي — و“ابنتي — و“جاؤوا، أتوا — و“عقد العمل — و“أحضرتُ … — و“يمدّد — و“يتحقق، يراجع”.'
+  answer:
+    speaker: protagonist
+    text: die Blaue Karte … der Aufenthaltstitel … der Familiennachzug … meine Frau … meine Tochter … sind … gekommen … der Arbeitsvertrag … ich habe … mitgebracht … verlängern … prüfen
+  items:
+  - die-blaue-karte-a
+  - der-aufenthaltstitel-a
+  - der-familiennachzug-a
+  - meine-frau-a
+  - meine-tochter-a
+  - sind-gekommen-a
+  - der-arbeitsvertrag-a
+  - ich-habe-mitgebracht-a
+  - verlaengern-a
+  - pruefen-a
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “العائلة — و“أختي — و“أولادها — و“أخي — و“ابنه — و“هل هذه …؟ (بصيغة الاحترام) — و“والداي — و“أشتاق إلى — و“كم …؟ — و“إخوة وأخوات”.'
+  answer:
+    speaker: protagonist
+    text: die Familie … meine Schwester … ihre Kinder … mein Bruder … sein Sohn … Ist das Ihre …? … meine Eltern … ich vermisse … Wie viele …? … Geschwister
+  items:
+  - die-familie
+  - meine-schwester
+  - ihre-kinder
+  - mein-bruder
+  - sein-sohn
+  - ist-das-ihre
+  - die-eltern-meine
+  - vermisse
+  - wie-viele
+  - geschwister
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “سلّم على … — و“هل عندك وقت؟ — و“يوم الاثنين — و“لا وقت — و“يوم الثلاثاء — و“يوم الأربعاء — و“يوم الخميس — و“يوم الجمعة — و“في عطلة نهاية الأسبوع — و“اليوم”.'
+  answer:
+    speaker: protagonist
+    text: Grüßen Sie … … Hast du Zeit? … am Montag … keine Zeit … am Dienstag … am Mittwoch … am Donnerstag … am Freitag … am Wochenende … heute
+  items:
+  - gruessen-sie
+  - hast-du-zeit
+  - am-montag
+  - keine-zeit
+  - am-dienstag
+  - am-mittwoch
+  - am-donnerstag
+  - am-freitag
+  - am-wochenende
+  - heute
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “غدًا — و“هل يناسبك …؟ — و“اتفقنا! — و“موعدًا — و“أودّ — و“أن أسجّل نفسي — و“الاستمارة — و“تأكيد المؤجِّر — و“أين تسكن؟ (بصيغة الاحترام) — و“أيّ …؟”.'
+  answer:
+    speaker: protagonist
+    text: morgen … Passt dir …? … Abgemacht! … einen Termin … ich möchte … mich anmelden … das Formular … die Wohnungsgeberbestätigung … Wo wohnen Sie? … Welche …?
+  items:
+  - morgen
+  - passt-dir
+  - abgemacht
+  - einen-termin
+  - ich-moechte
+  - mich-anmelden
+  - das-formular
+  - die-wgb
+  - wo-wohnen-sie
+  - welche
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “الديانة — و“لماذا؟ — و“ولا واحد منهما — و“ضريبة الكنيسة — و“انتهينا، جاهز — و“هل هذا كل شيء؟ — و“يومًا سعيدًا!”.'
+  answer:
+    speaker: protagonist
+    text: die Religion … Warum? … keins von beiden … die Kirchensteuer … fertig … Das war's? … Schönen Tag noch!
+  items:
+  - die-religion
+  - warum
+  - keins-von-beiden
+  - die-kirchensteuer
+  - fertig
+  - das-wars
+  - schoenen-tag-noch
+- type: narrator
+  text:
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+- type: dialogue
+  again: true
+- type: selfcheck

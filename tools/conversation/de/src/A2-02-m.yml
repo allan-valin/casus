@@ -1,0 +1,37 @@
+id: A2-02-m
+tracks: [mk]
+protagonist: m
+title: ["Престојот"]
+situation: ["Канцеларијата за странци. Сакате да останете кај Петар подолго — ви треба ли виза?"]
+learn: [a2-perfekt]
+culture: EU freedom of movement
+items:
+  - [brauche-ich, "Brauche ich …?", "Ми треба ли …?"]
+  - [das-visum, "das Visum", "визата"]
+  - [der-pass, "der bulgarische Pass", "бугарскиот пасош"]
+  - [die-freizuegigkeit, "die Freizügigkeit", "слободата на движење", {rare: true}]
+  - [eu-buerger, "EU-Bürger", "граѓанин на ЕУ"]
+  - [laenger-bleiben, "länger bleiben", "да останам подолго"]
+  - [anmelden-muessen, "anmelden müssen", "мора да се пријавите"]
+  - [ich-habe-gelesen, "ich habe gelesen", "прочитав"]
+  - [gilt, "gilt", "важи"]
+  - [pruefen, "prüfen", "проверувате"]
+dialogue:
+  - [protagonist, "Guten Tag. Ich bleibe bei meinem Sohn. Brauche ich ein Visum?", "Добар ден. Престојувам кај синот. Ми треба ли виза?"]
+  - [schulz, "Welchen Pass haben Sie?", "Каков пасош имате?"]
+  - [protagonist, "Einen bulgarischen Pass.", "Бугарски пасош."]
+  - [schulz, "Dann sind Sie EU-Bürger. Sie brauchen kein Visum. Das ist die Freizügigkeit.", "Тогаш сте граѓанин на ЕУ. Не ви треба виза. Тоа е слободата на движење."]
+  - [protagonist, "Ich habe gelesen, man muss sich anmelden?", "Прочитав дека мора да се пријави?"]
+  - [schulz, "Wenn Sie länger bleiben und hier wohnen, ja — beim Bürgeramt.", "Ако останете подолго и живеете тука, да — во општинската служба."]
+  - [protagonist, "Und mit dem mazedonischen Pass?", "А со македонскиот пасош?"]
+  - [schulz, "Dafür gelten andere Regeln. Prüfen Sie bitte die aktuellen Regeln.", "За него важат други правила. Ве молам, проверете ги сегашните правила."]
+teach:
+  - ask: ["Прашајте: ми треба ли виза?", "Brauche ich ein Visum?", brauche-ich, das-visum]
+  - ask: ["Кажете: бугарски пасош.", "Einen bulgarischen Pass.", der-pass]
+  - ask: ["Тој вели: тогаш сте граѓанин на ЕУ.", "Dann sind Sie EU-Bürger.", eu-buerger]
+  - ask: ["Кажете: слободата на движење.", "Die Freizügigkeit.", die-freizuegigkeit]
+  - ask: ["Кажете: прочитав дека мора да се пријави.", "Ich habe gelesen, man muss sich anmelden.", ich-habe-gelesen, anmelden-muessen]
+  - ask: ["Кажете: ако останам подолго.", "Wenn ich länger bleibe.", laenger-bleiben]
+  - ask: ["Тој вели: важат други правила.", "Andere Regeln gelten.", gilt]
+  - ask: ["Кажете: ќе проверам.", "Ich prüfe es.", pruefen]
+  - note: ["Со бугарски пасош сте граѓанин на ЕУ: без виза, со право да живеете и работите. Ако живеете тука подолго, се пријавувате на адресата. Со македонски пасош важат други правила (краток престој, западнобалканско правило) — тие се менуваат, проверете ги сегашните."]

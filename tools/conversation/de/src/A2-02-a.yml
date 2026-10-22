@@ -1,0 +1,38 @@
+id: A2-02-a
+tracks: [ar]
+protagonist: m
+title: ["الإقامة"]
+situation: ["دائرة الأجانب. السيد شولتس يراجع بطاقتك الزرقاء وإقامة زوجتك وابنتك."]
+learn: [a2-perfekt]
+culture: Blue Card and family reunification
+items:
+  - [die-blaue-karte, "die Blaue Karte", "البطاقة الزرقاء"]
+  - [der-aufenthaltstitel, "der Aufenthaltstitel", "تصريح الإقامة", {rare: true}]
+  - [der-familiennachzug, "der Familiennachzug", "لمّ الشمل", {rare: true}]
+  - [meine-frau, "meine Frau", "زوجتي"]
+  - [meine-tochter, "meine Tochter", "ابنتي"]
+  - [sind-gekommen, "sind … gekommen", "جاؤوا، أتوا"]
+  - [der-arbeitsvertrag, "der Arbeitsvertrag", "عقد العمل"]
+  - [ich-habe-mitgebracht, "ich habe … mitgebracht", "أحضرتُ …"]
+  - [verlaengern, "verlängern", "يمدّد"]
+  - [pruefen, "prüfen", "يتحقق، يراجع"]
+dialogue:
+  - [schulz, "Sie haben eine Blaue Karte. Und Ihre Familie?", "عندك البطاقة الزرقاء. وعائلتك؟"]
+  - [protagonist, "Meine Frau und meine Tochter sind im Herbst gekommen. Familiennachzug.", "زوجتي وابنتي جاءتا في الخريف. لمّ الشمل."]
+  - [schulz, "Gut. Haben Sie den Arbeitsvertrag?", "جيد. هل معك عقد العمل؟"]
+  - [protagonist, "Ja, ich habe alles mitgebracht.", "نعم، أحضرتُ كل شيء."]
+  - [schulz, "Ihre Frau bekommt auch einen Aufenthaltstitel.", "زوجتك تحصل أيضًا على تصريح إقامة."]
+  - [protagonist, "Darf meine Frau arbeiten?", "هل يُسمح لزوجتي أن تعمل؟"]
+  - [schulz, "Ja. Die Regeln ändern sich aber — prüfen Sie es bitte jedes Mal.", "نعم. لكن القواعد تتغير — تحقّق منها في كل مرة من فضلك."]
+  - [protagonist, "Und wann muss ich verlängern?", "ومتى يجب أن أمدّد؟"]
+  - [schulz, "Kommen Sie drei Monate vorher. Termine sind knapp.", "تعال قبل ثلاثة أشهر. المواعيد قليلة."]
+teach:
+  - ask: ["قل: عندي البطاقة الزرقاء.", "Ich habe eine Blaue Karte.", die-blaue-karte]
+  - ask: ["قل: زوجتي وابنتي جاءتا في الخريف.", "Meine Frau und meine Tochter sind im Herbst gekommen.", meine-frau, meine-tochter, sind-gekommen]
+  - ask: ["قل: لمّ الشمل.", "Familiennachzug.", der-familiennachzug]
+  - ask: ["يطلب عقد العمل.", "Den Arbeitsvertrag, bitte.", der-arbeitsvertrag]
+  - ask: ["قل: أحضرتُ كل شيء.", "Ich habe alles mitgebracht.", ich-habe-mitgebracht]
+  - ask: ["قل: تصريح الإقامة.", "Der Aufenthaltstitel.", der-aufenthaltstitel]
+  - ask: ["اسأل: متى يجب أن أمدّد؟", "Wann muss ich verlängern?", verlaengern]
+  - ask: ["قل: سأتحقق من ذلك.", "Ich prüfe es.", pruefen]
+  - note: ["أزواج حاملي البطاقة الزرقاء لا يحتاجون عادةً إلى شهادة A1 قبل التأشيرة، ويُسمح لهم بالعمل. لكن القواعد تتغير مع القوانين — تحقّق من الوضع الحالي، واحجز موعد التمديد قبل انتهاء التصريح بأشهر."]
