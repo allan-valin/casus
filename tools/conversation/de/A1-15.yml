@@ -1,0 +1,564 @@
+# UNIT de A1-15 — written by AI (Claude) for Casus; expanded from src/A1-15.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-15
+level: A1
+number: 15
+protagonist: f
+title:
+  en: Numbers and shapes
+  ar: الأرقام والأشكال
+  mk: Броеви и форми
+situation:
+  en: A sofa from the internet. Will it fit? Jonas helps you measure.
+  ar: أريكة من الإنترنت. هل ستتسع؟ يوناس يساعدك في القياس.
+  mk: Кауч од интернет. Дали ќе собере? Јонас ви помага да мерите.
+learn_lessons:
+- a1-numbers
+culture: —
+new_items:
+- id: das-sofa
+  text: das Sofa
+  meaning:
+    en: the sofa
+    ar: الأريكة
+    mk: каучот
+- id: passt
+  text: passt
+  meaning:
+    en: fits
+    ar: يتسع، يناسب
+    mk: собира, одговара
+- id: messen
+  text: messen
+  meaning:
+    en: measure
+    ar: يقيس
+    mk: мериме
+- id: wie-breit
+  text: Wie breit …?
+  meaning:
+    en: How wide …?
+    ar: كم عرض …؟
+    mk: Колку е широк …?
+- id: meter
+  text: Meter
+  meaning:
+    en: metres
+    ar: متر
+    mk: метри
+- id: zentimeter
+  text: Zentimeter
+  meaning:
+    en: centimetres
+    ar: سنتيمتر
+    mk: сантиметри
+- id: lang
+  text: lang
+  meaning:
+    en: long
+    ar: طويل
+    mk: долг
+- id: die-ecke
+  text: die Ecke
+  meaning:
+    en: the corner
+    ar: الزاوية
+    mk: аголот
+- id: rund
+  text: rund
+  meaning:
+    en: round
+    ar: مستدير
+    mk: тркалезно
+- id: eckig
+  text: eckig
+  meaning:
+    en: square, angular
+    ar: مربّع الشكل
+    mk: аглесто
+- id: genau
+  text: genau
+  meaning:
+    en: exactly
+    ar: بالضبط
+    mk: точно
+- id: zu-gross
+  text: zu groß
+  meaning:
+    en: too big
+    ar: كبير جدًا
+    mk: преголемо
+reviews:
+- item: faehrt
+  from: A1-08
+- item: zum-hauptbahnhof
+  from: A1-08
+- item: umsteigen
+  from: A1-08
+- item: die-strassenbahn
+  from: A1-08
+- item: die-haltestelle
+  from: A1-08
+- item: da-drueben
+  from: A1-08
+- item: die-fahrkarte
+  from: A1-08
+- item: mit-der-app
+  from: A1-08
+- item: einsteigen
+  from: A1-08
+- item: hinten
+  from: A1-08
+- item: der-kinderwagen
+  from: A1-08
+- item: aussteigen
+  from: A1-08
+- item: der-hund
+  from: A1-12
+- item: lieb
+  from: A1-12
+- item: duerfen-mit
+  from: A1-12
+- item: die-leine
+  from: A1-12
+- item: wie-heisst-er
+  from: A1-12
+- item: tiere
+  from: A1-12
+- item: zwei-katzen
+  from: A1-12
+- item: voegel
+  from: A1-12
+- item: tauben
+  from: A1-12
+- item: fuettern
+  from: A1-12
+- item: verboten
+  from: A1-12
+- item: zurueckrufen
+  from: A1-12
+- item: moment-mal
+  from: A1-14
+- item: der-muell
+  from: A1-14
+- item: trennen
+  from: A1-14
+- item: die-gelbe-tonne
+  from: A1-14
+- item: das-plastik
+  from: A1-14
+- item: das-papier
+  from: A1-14
+- item: die-blaue
+  from: A1-14
+- item: der-biomuell
+  from: A1-14
+- item: der-restmuell
+  from: A1-14
+- item: das-glas
+  from: A1-14
+- item: bringen-sie
+  from: A1-14
+- item: zum-container
+  from: A1-14
+- item: klein
+  from: A1-09
+steps:
+- type: narrator
+  text:
+    en: A sofa from the internet. Will it fit? Jonas helps you measure. Listen to the conversation; you don't need to understand it yet.
+    ar: أريكة من الإنترنت. هل ستتسع؟ يوناس يساعدك في القياس. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.
+    mk: Кауч од интернет. Дали ќе собере? Јонас ви помага да мерите. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Passt das Sofa hier?
+    meaning:
+      en: Will the sofa fit here?
+      ar: هل تتسع الأريكة هنا؟
+      mk: Ќе собере ли каучот тука?
+  - speaker: jonas
+    text: Wir messen. Wie breit ist das Sofa?
+    meaning:
+      en: Let's measure. How wide is the sofa?
+      ar: لنقِس. كم عرض الأريكة؟
+      mk: Да мериме. Колку е широк каучот?
+  - speaker: protagonist
+    text: Zwei Meter zwanzig.
+    meaning:
+      en: Two metres twenty.
+      ar: متران وعشرون.
+      mk: Два метри и дваесет.
+  - speaker: jonas
+    text: Und die Wand? Zwei Meter zehn.
+    meaning:
+      en: And the wall? Two metres ten.
+      ar: والحائط؟ متران وعشرة.
+      mk: А ѕидот? Два метри и десет.
+  - speaker: protagonist
+    text: Zehn Zentimeter zu lang!
+    meaning:
+      en: Ten centimetres too long!
+      ar: أطول بعشرة سنتيمترات!
+      mk: Десет сантиметри подолг!
+  - speaker: jonas
+    text: Und in der Ecke?
+    meaning:
+      en: And in the corner?
+      ar: وفي الزاوية؟
+      mk: А во аголот?
+  - speaker: protagonist
+    text: Nein, das Sofa ist eckig, die Ecke ist rund.
+    meaning:
+      en: No, the sofa is square, the corner is round.
+      ar: لا، الأريكة مربّعة، والزاوية مستديرة.
+      mk: Не, каучот е аглест, аголот е заоблен.
+  - speaker: jonas
+    text: Genau. Das Sofa ist zu groß.
+    meaning:
+      en: Exactly. The sofa is too big.
+      ar: بالضبط. الأريكة كبيرة جدًا.
+      mk: Точно. Каучот е преголем.
+  - speaker: protagonist
+    text: Dann kaufe ich ein kleines Sofa.
+    meaning:
+      en: Then I'll buy a small sofa.
+      ar: إذن سأشتري أريكة صغيرة.
+      mk: Тогаш ќе купам мал кауч.
+- type: prompt
+  ask:
+    en: 'Ask: will the sofa fit here?'
+    ar: 'اسألي: هل تتسع الأريكة هنا؟'
+    mk: 'Прашајте: ќе собере ли каучот тука?'
+  answer:
+    speaker: protagonist
+    text: Passt das Sofa hier?
+  items:
+  - das-sofa
+  - passt
+- type: prompt
+  ask:
+    en: 'He says: let''s measure.'
+    ar: 'يقول: لنقِس.'
+    mk: 'Тој вели: да мериме.'
+  answer:
+    speaker: protagonist
+    text: Wir messen.
+  items:
+  - messen
+- type: prompt
+  ask:
+    en: 'Ask: how wide is the sofa?'
+    ar: 'اسألي: كم عرض الأريكة؟'
+    mk: 'Прашајте: колку е широк каучот?'
+  answer:
+    speaker: protagonist
+    text: Wie breit ist das Sofa?
+  items:
+  - wie-breit
+- type: narrator
+  text:
+    en: 'Numbers 21 to 99 are said backwards: «zweiundzwanzig» — two-and-twenty. Measurements: «zwei Meter zwanzig», two metres twenty.'
+    ar: 'الأعداد من 21 إلى 99 تُقال بالعكس: «zweiundzwanzig» — اثنان وعشرون. والقياسات: «zwei Meter zwanzig»، متران وعشرون.'
+    mk: 'Броевите од 21 до 99 се кажуваат обратно: «zweiundzwanzig» — два и дваесет. Мерки: «zwei Meter zwanzig», два метри и дваесет.'
+- type: prompt
+  ask:
+    en: 'Say: two metres twenty.'
+    ar: 'قولي: متران وعشرون.'
+    mk: 'Кажете: два метри и дваесет.'
+  answer:
+    speaker: protagonist
+    text: Zwei Meter zwanzig.
+  items:
+  - meter
+- type: prompt
+  ask:
+    en: 'Say: ten centimetres too long!'
+    ar: 'قولي: أطول بعشرة سنتيمترات!'
+    mk: 'Кажете: десет сантиметри подолг!'
+  answer:
+    speaker: protagonist
+    text: Zehn Zentimeter zu lang!
+  items:
+  - zentimeter
+  - lang
+- type: prompt
+  ask:
+    en: 'Ask: and in the corner?'
+    ar: 'اسألي: وفي الزاوية؟'
+    mk: 'Прашајте: а во аголот?'
+  answer:
+    speaker: protagonist
+    text: Und in der Ecke?
+  items:
+  - die-ecke
+- type: prompt
+  ask:
+    en: 'Say: the sofa is square, the corner is round.'
+    ar: 'قولي: الأريكة مربّعة، والزاوية مستديرة.'
+    mk: 'Кажете: каучот е аглест, аголот е заоблен.'
+  answer:
+    speaker: protagonist
+    text: Das Sofa ist eckig, die Ecke ist rund.
+  items:
+  - eckig
+  - rund
+- type: prompt
+  ask:
+    en: 'He says: exactly.'
+    ar: 'يقول: بالضبط.'
+    mk: 'Тој вели: точно.'
+  answer:
+    speaker: protagonist
+    text: Genau.
+  items:
+  - genau
+- type: prompt
+  ask:
+    en: 'Say: the sofa is too big.'
+    ar: 'قولي: الأريكة كبيرة جدًا.'
+    mk: 'Кажете: каучот е преголем.'
+  answer:
+    speaker: protagonist
+    text: Das Sofa ist zu groß.
+  items:
+  - zu-gross
+- type: prompt
+  ask:
+    en: 'Say: then I''ll buy a small sofa.'
+    ar: 'قولي: إذن سأشتري أريكة صغيرة.'
+    mk: 'Кажете: тогаш ќе купам мал кауч.'
+  answer:
+    speaker: protagonist
+    text: Dann kaufe ich ein kleines Sofa.
+  items:
+  - klein
+- type: prompt
+  ask:
+    en: 'Once more: say “the sofa”.'
+    ar: 'مرة أخرى: قولي “الأريكة”.'
+    mk: 'Уште еднаш: кажете „каучот“.'
+  answer:
+    speaker: protagonist
+    text: das Sofa
+  items:
+  - das-sofa
+- type: prompt
+  ask:
+    en: 'Once more: say “fits”.'
+    ar: 'مرة أخرى: قولي “يتسع، يناسب”.'
+    mk: 'Уште еднаш: кажете „собира, одговара“.'
+  answer:
+    speaker: protagonist
+    text: passt
+  items:
+  - passt
+- type: prompt
+  ask:
+    en: 'Once more: say “measure”.'
+    ar: 'مرة أخرى: قولي “يقيس”.'
+    mk: 'Уште еднаш: кажете „мериме“.'
+  answer:
+    speaker: protagonist
+    text: messen
+  items:
+  - messen
+- type: prompt
+  ask:
+    en: 'Once more: say “How wide …?”.'
+    ar: 'مرة أخرى: قولي “كم عرض …؟”.'
+    mk: 'Уште еднаш: кажете „Колку е широк …?“.'
+  answer:
+    speaker: protagonist
+    text: Wie breit …?
+  items:
+  - wie-breit
+- type: prompt
+  ask:
+    en: 'Once more: say “metres”.'
+    ar: 'مرة أخرى: قولي “متر”.'
+    mk: 'Уште еднаш: кажете „метри“.'
+  answer:
+    speaker: protagonist
+    text: Meter
+  items:
+  - meter
+- type: prompt
+  ask:
+    en: 'Once more: say “centimetres”.'
+    ar: 'مرة أخرى: قولي “سنتيمتر”.'
+    mk: 'Уште еднаш: кажете „сантиметри“.'
+  answer:
+    speaker: protagonist
+    text: Zentimeter
+  items:
+  - zentimeter
+- type: prompt
+  ask:
+    en: 'Once more: say “long”.'
+    ar: 'مرة أخرى: قولي “طويل”.'
+    mk: 'Уште еднаш: кажете „долг“.'
+  answer:
+    speaker: protagonist
+    text: lang
+  items:
+  - lang
+- type: prompt
+  ask:
+    en: 'Once more: say “the corner”.'
+    ar: 'مرة أخرى: قولي “الزاوية”.'
+    mk: 'Уште еднаш: кажете „аголот“.'
+  answer:
+    speaker: protagonist
+    text: die Ecke
+  items:
+  - die-ecke
+- type: prompt
+  ask:
+    en: 'Once more: say “round”.'
+    ar: 'مرة أخرى: قولي “مستدير”.'
+    mk: 'Уште еднаш: кажете „тркалезно“.'
+  answer:
+    speaker: protagonist
+    text: rund
+  items:
+  - rund
+- type: prompt
+  ask:
+    en: 'Once more: say “square, angular”.'
+    ar: 'مرة أخرى: قولي “مربّع الشكل”.'
+    mk: 'Уште еднаш: кажете „аглесто“.'
+  answer:
+    speaker: protagonist
+    text: eckig
+  items:
+  - eckig
+- type: prompt
+  ask:
+    en: 'Once more: say “exactly”.'
+    ar: 'مرة أخرى: قولي “بالضبط”.'
+    mk: 'Уште еднаш: кажете „точно“.'
+  answer:
+    speaker: protagonist
+    text: genau
+  items:
+  - genau
+- type: prompt
+  ask:
+    en: 'Once more: say “too big”.'
+    ar: 'مرة أخرى: قولي “كبير جدًا”.'
+    mk: 'Уште еднаш: кажете „преголемо“.'
+  answer:
+    speaker: protagonist
+    text: zu groß
+  items:
+  - zu-gross
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Hang on a moment! — and “the rubbish — and “separate, sort — and “the yellow bin (packaging) — and “plastic — and “paper”.'
+    ar: 'قولي: “لحظة من فضلك! — و“النفايات — و“يفرز — و“الحاوية الصفراء (التغليف) — و“البلاستيك — و“الورق”.'
+    mk: 'Кажете: „Чекајте малку!“ — и „ѓубрето“ — и „одвојува“ — и „жолтиот контејнер (амбалажа)“ — и „пластиката“ — и „хартијата“.'
+  answer:
+    speaker: protagonist
+    text: Moment mal! … der Müll … trennen … die gelbe Tonne … das Plastik … das Papier
+  items:
+  - moment-mal
+  - der-muell
+  - trennen
+  - die-gelbe-tonne
+  - das-plastik
+  - das-papier
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the blue one — and “food waste — and “general waste — and “glass — and “Take … (polite command) — and “to the container”.'
+    ar: 'قولي: “الزرقاء — و“النفايات العضوية — و“بقية النفايات — و“الزجاج — و“خذ … (أمر مؤدب) — و“إلى الحاوية”.'
+    mk: 'Кажете: „синиот“ — и „органскиот отпад“ — и „останатиот отпад“ — и „стаклото“ — и „Однесете …“ — и „до контејнерот“.'
+  answer:
+    speaker: protagonist
+    text: die blaue … der Biomüll … der Restmüll … das Glas … Bringen Sie … … zum Container
+  items:
+  - die-blaue
+  - der-biomuell
+  - der-restmuell
+  - das-glas
+  - bringen-sie
+  - zum-container
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the dog — and “sweet, good-natured — and “are allowed to ride along — and “the lead, the leash — and “What''s his name? — and “animals, pets”.'
+    ar: 'قولي: “الكلب — و“لطيف، وديع — و“يُسمح لها بالركوب — و“المقود — و“ما اسمه؟ — و“حيوانات”.'
+    mk: 'Кажете: „кучето“ — и „мило, добро“ — и „смеат да се возат“ — и „поводникот“ — и „Како се вика?“ — и „животни“.'
+  answer:
+    speaker: protagonist
+    text: der Hund … lieb … dürfen mitfahren … die Leine … Wie heißt er? … Tiere
+  items:
+  - der-hund
+  - lieb
+  - duerfen-mit
+  - die-leine
+  - wie-heisst-er
+  - tiere
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “two cats — and “birds — and “pigeons — and “feed — and “forbidden — and “call back (a dog)”.'
+    ar: 'قولي: “قطتان — و“طيور — و“حمام — و“يُطعم — و“ممنوع — و“يستدعي (الكلب)”.'
+    mk: 'Кажете: „две мачки“ — и „птици“ — и „гулаби“ — и „хранат“ — и „забрането“ — и „да го повикате назад“.'
+  answer:
+    speaker: protagonist
+    text: zwei Katzen … Vögel … Tauben … füttern … verboten … zurückrufen
+  items:
+  - zwei-katzen
+  - voegel
+  - tauben
+  - fuettern
+  - verboten
+  - zurueckrufen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “does … go? — and “to the main station — and “change (trains, buses) — and “the tram — and “the stop — and “over there”.'
+    ar: 'قولي: “هل يذهب …؟ — و“إلى المحطة الرئيسية — و“يغيّر وسيلة النقل — و“الترام — و“المحطة / الموقف — و“هناك”.'
+    mk: 'Кажете: „оди ли …?“ — и „до главната станица“ — и „да се префрлите“ — и „трамвајот“ — и „станицата“ — и „таму преку“.'
+  answer:
+    speaker: protagonist
+    text: fährt …? … zum Hauptbahnhof … umsteigen … die Straßenbahn … die Haltestelle … da drüben
+  items:
+  - faehrt
+  - zum-hauptbahnhof
+  - umsteigen
+  - die-strassenbahn
+  - die-haltestelle
+  - da-drueben
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the ticket — and “with the app — and “get on — and “at the back — and “the pram, the stroller — and “get off”.'
+    ar: 'قولي: “التذكرة — و“بالتطبيق — و“اصعد — و“في الخلف — و“عربة الأطفال — و“أنزل”.'
+    mk: 'Кажете: „билетот“ — и „со апликацијата“ — и „се качувате“ — и „назад, позади“ — и „количката“ — и „се симнувам“.'
+  answer:
+    speaker: protagonist
+    text: die Fahrkarte … mit der App … steigen … ein … hinten … der Kinderwagen … steige … aus
+  items:
+  - die-fahrkarte
+  - mit-der-app
+  - einsteigen
+  - hinten
+  - der-kinderwagen
+  - aussteigen
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

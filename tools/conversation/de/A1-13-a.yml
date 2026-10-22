@@ -1,0 +1,439 @@
+# UNIT de A1-13-a — written by AI (Claude) for Casus; expanded from src/A1-13-a.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-13-a
+level: A1
+number: 13
+protagonist: f
+tracks:
+- ar
+title:
+  ar: الملعب
+situation:
+  ar: بعد الحضانة، يارا على الأرجوحة. أمٌّ أخرى تبدأ الحديث معكِ.
+learn_lessons:
+- a1-negation
+culture: Halal food at the Kita
+new_items:
+- id: der-spielplatz
+  text: der Spielplatz
+  meaning:
+    ar: ملعب الأطفال
+- id: die-schaukel
+  text: die Schaukel
+  meaning:
+    ar: الأرجوحة
+  rare: true
+- id: wie-alt-ist-sie
+  text: Wie alt ist sie?
+  meaning:
+    ar: كم عمرها؟
+- id: vier-jahre-alt
+  text: vier Jahre alt
+  meaning:
+    ar: أربع سنوات
+- id: in-welche-kita
+  text: In welche Kita …?
+  meaning:
+    ar: إلى أيّ حضانة …؟
+- id: geht
+  text: geht
+  meaning:
+    ar: تذهب
+- id: das-mittagessen
+  text: das Mittagessen
+  meaning:
+    ar: الغداء
+- id: kein-schweinefleisch
+  text: kein Schweinefleisch
+  meaning:
+    ar: بلا لحم خنزير
+- id: isst
+  text: isst
+  meaning:
+    ar: تأكل
+- id: nicht
+  text: nicht
+  meaning:
+    ar: لا (نفي)
+- id: bis-bald
+  text: Bis bald!
+  meaning:
+    ar: إلى اللقاء قريبًا!
+reviews:
+- item: guten-abend
+  from: A1-06
+- item: kalt
+  from: A1-06
+- item: draussen
+  from: A1-06
+- item: schon
+  from: A1-06
+- item: dunkel
+  from: A1-06
+- item: im-winter
+  from: A1-06
+- item: hell
+  from: A1-06
+- item: grau
+  from: A1-06
+- item: abtreten
+  from: A1-06
+- item: nass
+  from: A1-06
+- item: drinnen
+  from: A1-06
+- item: warm
+  from: A1-06
+- item: ziehe-aus
+  from: A1-06
+- item: die-jacke
+  from: A1-06
+- item: windig
+  from: A1-06
+- item: du-bist
+  from: A1-10
+- item: oben
+  from: A1-10
+- item: und-du
+  from: A1-10
+- item: im-zweiten-stock
+  from: A1-10
+- item: wie-gehts
+  from: A1-10
+- item: und-dir
+  from: A1-10
+- item: sprichst-du
+  from: A1-10
+- item: oder-lieber
+  from: A1-10
+- item: ich-lerne
+  from: A1-10
+- item: auf-deutsch
+  from: A1-10
+- item: langsam
+  from: A1-10
+- item: klar
+  from: A1-10
+- item: der-hund
+  from: A1-12
+- item: lieb
+  from: A1-12
+- item: duerfen-mit
+  from: A1-12
+- item: die-leine
+  from: A1-12
+- item: wie-heisst-er
+  from: A1-12
+- item: tiere
+  from: A1-12
+- item: zwei-katzen
+  from: A1-12
+- item: voegel
+  from: A1-12
+- item: tauben
+  from: A1-12
+- item: fuettern
+  from: A1-12
+- item: verboten
+  from: A1-12
+- item: zurueckrufen
+  from: A1-12
+steps:
+- type: narrator
+  text:
+    ar: بعد الحضانة، يارا على الأرجوحة. أمٌّ أخرى تبدأ الحديث معكِ. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.
+- type: dialogue
+  lines:
+  - speaker: lena
+    text: Hallo! Wie alt ist sie?
+    meaning:
+      ar: مرحبًا! كم عمرها؟
+  - speaker: protagonist
+    text: Hallo. Yara ist vier Jahre alt.
+    meaning:
+      ar: مرحبًا. يارا عمرها أربع سنوات.
+  - speaker: lena
+    text: Mein Sohn auch! In welche Kita geht sie?
+    meaning:
+      ar: ابني أيضًا! إلى أيّ حضانة تذهب؟
+  - speaker: protagonist
+    text: In die Kita Sonnenschein.
+    meaning:
+      ar: إلى حضانة زونِنشاين.
+  - speaker: lena
+    text: Ah, die ist gut! Isst Yara dort zu Mittag?
+    meaning:
+      ar: آه، إنها جيدة! هل تتغدّى يارا هناك؟
+  - speaker: protagonist
+    text: Ja, aber sie isst kein Schweinefleisch.
+    meaning:
+      ar: نعم، لكنها لا تأكل لحم الخنزير.
+  - speaker: lena
+    text: Kein Problem, die Kita kocht auch ohne Fleisch.
+    meaning:
+      ar: لا مشكلة، الحضانة تطبخ أيضًا بلا لحم.
+  - speaker: protagonist
+    text: Gut. Yara, nicht so hoch auf der Schaukel!
+    meaning:
+      ar: جيد. يارا، ليس بهذا العلو على الأرجوحة!
+  - speaker: lena
+    text: Ich bin Lena. Bis bald!
+    meaning:
+      ar: أنا لينا. إلى اللقاء قريبًا!
+- type: prompt
+  ask:
+    ar: تسألك عن عمر ابنتك. كيف؟
+  answer:
+    speaker: protagonist
+    text: Wie alt ist sie?
+  items:
+  - wie-alt-ist-sie
+- type: prompt
+  ask:
+    ar: 'أجيبي: عمرها أربع سنوات.'
+  answer:
+    speaker: protagonist
+    text: Sie ist vier Jahre alt.
+  items:
+  - vier-jahre-alt
+- type: prompt
+  ask:
+    ar: 'تسأل: إلى أيّ حضانة تذهب؟'
+  answer:
+    speaker: protagonist
+    text: In welche Kita geht sie?
+  items:
+  - in-welche-kita
+  - geht
+- type: prompt
+  ask:
+    ar: 'قولي: ملعب الأطفال.'
+  answer:
+    speaker: protagonist
+    text: Der Spielplatz.
+  items:
+  - der-spielplatz
+- type: prompt
+  ask:
+    ar: 'تسأل عن الغداء. قولي: الغداء.'
+  answer:
+    speaker: protagonist
+    text: Das Mittagessen.
+  items:
+  - das-mittagessen
+- type: narrator
+  text:
+    ar: '«kein» تنفي الاسم: «kein Schweinefleisch». و«nicht» تنفي غيره: «nicht so hoch».'
+- type: prompt
+  ask:
+    ar: 'قولي: لا تأكل لحم الخنزير.'
+  answer:
+    speaker: protagonist
+    text: Sie isst kein Schweinefleisch.
+  items:
+  - isst
+  - kein-schweinefleisch
+- type: prompt
+  ask:
+    ar: 'قولي لابنتك: ليس بهذا العلو على الأرجوحة!'
+  answer:
+    speaker: protagonist
+    text: Nicht so hoch auf der Schaukel!
+  items:
+  - nicht
+  - die-schaukel
+- type: prompt
+  ask:
+    ar: 'ودّعيها: إلى اللقاء قريبًا!'
+  answer:
+    speaker: protagonist
+    text: Bis bald!
+  items:
+  - bis-bald
+- type: narrator
+  text:
+    ar: 'معظم الحضانات تقدّم وجبة بلا لحم خنزير أو وجبة نباتية عند الطلب — قوليه للمربية من اليوم الأول. والملعب مكان تعارف: الأمهات والآباء يتكلمون بـ«du» بسرعة.'
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “ملعب الأطفال”.'
+  answer:
+    speaker: protagonist
+    text: der Spielplatz
+  items:
+  - der-spielplatz
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “الأرجوحة”.'
+  answer:
+    speaker: protagonist
+    text: die Schaukel
+  items:
+  - die-schaukel
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “كم عمرها؟”.'
+  answer:
+    speaker: protagonist
+    text: Wie alt ist sie?
+  items:
+  - wie-alt-ist-sie
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “أربع سنوات”.'
+  answer:
+    speaker: protagonist
+    text: vier Jahre alt
+  items:
+  - vier-jahre-alt
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “إلى أيّ حضانة …؟”.'
+  answer:
+    speaker: protagonist
+    text: In welche Kita …?
+  items:
+  - in-welche-kita
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “تذهب”.'
+  answer:
+    speaker: protagonist
+    text: geht
+  items:
+  - geht
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “الغداء”.'
+  answer:
+    speaker: protagonist
+    text: das Mittagessen
+  items:
+  - das-mittagessen
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “بلا لحم خنزير”.'
+  answer:
+    speaker: protagonist
+    text: kein Schweinefleisch
+  items:
+  - kein-schweinefleisch
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “تأكل”.'
+  answer:
+    speaker: protagonist
+    text: isst
+  items:
+  - isst
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “لا (نفي)”.'
+  answer:
+    speaker: protagonist
+    text: nicht
+  items:
+  - nicht
+- type: prompt
+  ask:
+    ar: 'مرة أخرى: قولي “إلى اللقاء قريبًا!”.'
+  answer:
+    speaker: protagonist
+    text: Bis bald!
+  items:
+  - bis-bald
+- type: narrator
+  text:
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “الكلب — و“لطيف، وديع — و“يُسمح لها بالركوب — و“المقود — و“ما اسمه؟ — و“حيوانات — و“قطتان”.'
+  answer:
+    speaker: protagonist
+    text: der Hund … lieb … dürfen mitfahren … die Leine … Wie heißt er? … Tiere … zwei Katzen
+  items:
+  - der-hund
+  - lieb
+  - duerfen-mit
+  - die-leine
+  - wie-heisst-er
+  - tiere
+  - zwei-katzen
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “طيور — و“حمام — و“يُطعم — و“ممنوع — و“يستدعي (الكلب) — و“أنتَ (غير رسمي) — و“في الأعلى”.'
+  answer:
+    speaker: protagonist
+    text: Vögel … Tauben … füttern … verboten … zurückrufen … du bist … oben
+  items:
+  - voegel
+  - tauben
+  - fuettern
+  - verboten
+  - zurueckrufen
+  - du-bist
+  - oben
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “وأنت؟ — و“في الطابق الثاني — و“كيف الحال؟ — و“وأنت؟ (بعد كيف الحال) — و“هل تتكلم …؟ — و“أم تفضّل …؟ — و“أتعلّم”.'
+  answer:
+    speaker: protagonist
+    text: Und du? … im zweiten Stock … Wie geht's? … Und dir? … Sprichst du …? … oder lieber …? … ich lerne
+  items:
+  - und-du
+  - im-zweiten-stock
+  - wie-gehts
+  - und-dir
+  - sprichst-du
+  - oder-lieber
+  - ich-lerne
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “بالألمانية — و“ببطء — و“طبعًا! — و“مساء الخير — و“بارد — و“في الخارج — و“بالفعل، أصلًا”.'
+  answer:
+    speaker: protagonist
+    text: auf Deutsch … langsam … Klar! … Guten Abend … kalt … draußen … schon
+  items:
+  - auf-deutsch
+  - langsam
+  - klar
+  - guten-abend
+  - kalt
+  - draussen
+  - schon
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “مظلم — و“في الشتاء — و“مضيء، فاتح — و“رمادي — و“امسح (حذاءك) — و“مبلّل — و“في الداخل”.'
+  answer:
+    speaker: protagonist
+    text: dunkel … im Winter … hell … grau … treten … ab … nass … drinnen
+  items:
+  - dunkel
+  - im-winter
+  - hell
+  - grau
+  - abtreten
+  - nass
+  - drinnen
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “دافئ — و“أخلع — و“السترة / الجاكيت — و“عاصف، فيه رياح”.'
+  answer:
+    speaker: protagonist
+    text: warm … ziehe … aus … die Jacke … windig
+  items:
+  - warm
+  - ziehe-aus
+  - die-jacke
+  - windig
+- type: narrator
+  text:
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+- type: dialogue
+  again: true
+- type: selfcheck

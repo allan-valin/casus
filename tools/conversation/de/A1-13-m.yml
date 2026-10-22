@@ -1,0 +1,468 @@
+# UNIT de A1-13-m — written by AI (Claude) for Casus; expanded from src/A1-13-m.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-13-m
+level: A1
+number: 13
+protagonist: f
+tracks:
+- mk
+title:
+  mk: Игралиштето
+situation:
+  mk: Лука е на лулашката. Една млада мајка почнува разговор со вас.
+learn_lessons:
+- a1-negation
+culture: Grandparents at the playground
+new_items:
+- id: der-spielplatz
+  text: der Spielplatz
+  meaning:
+    mk: игралиштето
+- id: die-schaukel
+  text: die Schaukel
+  meaning:
+    mk: лулашката
+  rare: true
+- id: wie-alt-ist-er
+  text: Wie alt ist er?
+  meaning:
+    mk: Колку години има?
+- id: vier-jahre-alt
+  text: vier Jahre alt
+  meaning:
+    mk: четири години
+- id: ihr-enkel
+  text: Ihr Enkel
+  meaning:
+    mk: вашиот внук
+- id: ich-bin-oma
+  text: ich bin die Oma
+  meaning:
+    mk: јас сум бабата
+- id: nicht-von-hier
+  text: nicht von hier
+  meaning:
+    mk: не сум одовде
+- id: kein-deutsch
+  text: kein Deutsch
+  meaning:
+    mk: не (зборувам) германски
+- id: nur-ein-bisschen
+  text: nur ein bisschen
+  meaning:
+    mk: само малку
+- id: nicht
+  text: nicht
+  meaning:
+    mk: не
+- id: bis-bald
+  text: Bis bald!
+  meaning:
+    mk: Се гледаме наскоро!
+reviews:
+- item: guten-abend
+  from: A1-06
+- item: kalt
+  from: A1-06
+- item: draussen
+  from: A1-06
+- item: schon
+  from: A1-06
+- item: dunkel
+  from: A1-06
+- item: im-winter
+  from: A1-06
+- item: hell
+  from: A1-06
+- item: grau
+  from: A1-06
+- item: abtreten
+  from: A1-06
+- item: nass
+  from: A1-06
+- item: drinnen
+  from: A1-06
+- item: warm
+  from: A1-06
+- item: ziehe-aus
+  from: A1-06
+- item: die-jacke
+  from: A1-06
+- item: windig
+  from: A1-06
+- item: du-bist
+  from: A1-10
+- item: oben
+  from: A1-10
+- item: und-du
+  from: A1-10
+- item: im-zweiten-stock
+  from: A1-10
+- item: wie-gehts
+  from: A1-10
+- item: und-dir
+  from: A1-10
+- item: sprichst-du
+  from: A1-10
+- item: oder-lieber
+  from: A1-10
+- item: ich-lerne
+  from: A1-10
+- item: auf-deutsch
+  from: A1-10
+- item: langsam
+  from: A1-10
+- item: klar
+  from: A1-10
+- item: der-hund
+  from: A1-12
+- item: lieb
+  from: A1-12
+- item: duerfen-mit
+  from: A1-12
+- item: die-leine
+  from: A1-12
+- item: wie-heisst-er
+  from: A1-12
+- item: tiere
+  from: A1-12
+- item: zwei-katzen
+  from: A1-12
+- item: voegel
+  from: A1-12
+- item: tauben
+  from: A1-12
+- item: fuettern
+  from: A1-12
+- item: verboten
+  from: A1-12
+- item: zurueckrufen
+  from: A1-12
+steps:
+- type: narrator
+  text:
+    mk: Лука е на лулашката. Една млада мајка почнува разговор со вас. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: lena
+    text: Hallo! Wie alt ist er?
+    meaning:
+      mk: Здраво! Колку години има?
+  - speaker: protagonist
+    text: Hallo. Luka ist vier Jahre alt.
+    meaning:
+      mk: Здраво. Лука има четири години.
+  - speaker: lena
+    text: Ist das Ihr Enkel?
+    meaning:
+      mk: Ова ли е вашиот внук?
+  - speaker: protagonist
+    text: Ja, ich bin die Oma. Ich bin nicht von hier, aus Mazedonien.
+    meaning:
+      mk: Да, јас сум бабата. Не сум одовде, од Македонија.
+  - speaker: lena
+    text: Toll! Sprechen Sie mit Luka Deutsch?
+    meaning:
+      mk: Супер! Зборувате ли германски со Лука?
+  - speaker: protagonist
+    text: Nein, Mazedonisch. Mein Deutsch ist nur ein bisschen.
+    meaning:
+      mk: Не, македонски. Мојот германски е само малку.
+  - speaker: lena
+    text: Das ist gut! Dann lernt er zwei Sprachen.
+    meaning:
+      mk: Тоа е добро! Така учи два јазика.
+  - speaker: protagonist
+    text: Luka, nicht so hoch auf der Schaukel!
+    meaning:
+      mk: Лука, не толку високо на лулашката!
+  - speaker: lena
+    text: Ich bin Lena. Bis bald!
+    meaning:
+      mk: Јас сум Лена. Се гледаме наскоро!
+- type: prompt
+  ask:
+    mk: Таа прашува колку години има детето.
+  answer:
+    speaker: protagonist
+    text: Wie alt ist er?
+  items:
+  - wie-alt-ist-er
+- type: prompt
+  ask:
+    mk: 'Кажете: има четири години.'
+  answer:
+    speaker: protagonist
+    text: Er ist vier Jahre alt.
+  items:
+  - vier-jahre-alt
+- type: prompt
+  ask:
+    mk: 'Таа прашува: ова ли е вашиот внук?'
+  answer:
+    speaker: protagonist
+    text: Ist das Ihr Enkel?
+  items:
+  - ihr-enkel
+- type: prompt
+  ask:
+    mk: 'Кажете: да, јас сум бабата.'
+  answer:
+    speaker: protagonist
+    text: Ja, ich bin die Oma.
+  items:
+  - ich-bin-oma
+- type: narrator
+  text:
+    mk: '«kein» негира именка: «kein Deutsch». «nicht» негира сè друго: «nicht von hier», «nicht so hoch».'
+- type: prompt
+  ask:
+    mk: 'Кажете: не сум одовде.'
+  answer:
+    speaker: protagonist
+    text: Ich bin nicht von hier.
+  items:
+  - nicht-von-hier
+- type: prompt
+  ask:
+    mk: 'Кажете: зборувам само малку германски.'
+  answer:
+    speaker: protagonist
+    text: Nur ein bisschen Deutsch.
+  items:
+  - nur-ein-bisschen
+- type: prompt
+  ask:
+    mk: 'Кажете: не зборувам германски.'
+  answer:
+    speaker: protagonist
+    text: Ich spreche kein Deutsch.
+  items:
+  - kein-deutsch
+- type: prompt
+  ask:
+    mk: 'Викнете му на Лука: не толку високо!'
+  answer:
+    speaker: protagonist
+    text: Nicht so hoch!
+  items:
+  - nicht
+- type: prompt
+  ask:
+    mk: 'Кажете: лулашката.'
+  answer:
+    speaker: protagonist
+    text: Die Schaukel.
+  items:
+  - die-schaukel
+- type: prompt
+  ask:
+    mk: 'Поздравете се: се гледаме наскоро!'
+  answer:
+    speaker: protagonist
+    text: Bis bald!
+  items:
+  - bis-bald
+- type: narrator
+  text:
+    mk: Германците сметаат дека детето што слуша два јазика е среќно, не збунето. Зборувајте со Лука македонски — германски ќе научи во градинката.
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „игралиштето“.'
+  answer:
+    speaker: protagonist
+    text: der Spielplatz
+  items:
+  - der-spielplatz
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „игралиштето“.'
+  answer:
+    speaker: protagonist
+    text: der Spielplatz
+  items:
+  - der-spielplatz
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „лулашката“.'
+  answer:
+    speaker: protagonist
+    text: die Schaukel
+  items:
+  - die-schaukel
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „Колку години има?“.'
+  answer:
+    speaker: protagonist
+    text: Wie alt ist er?
+  items:
+  - wie-alt-ist-er
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „четири години“.'
+  answer:
+    speaker: protagonist
+    text: vier Jahre alt
+  items:
+  - vier-jahre-alt
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „вашиот внук“.'
+  answer:
+    speaker: protagonist
+    text: Ihr Enkel
+  items:
+  - ihr-enkel
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „јас сум бабата“.'
+  answer:
+    speaker: protagonist
+    text: ich bin die Oma
+  items:
+  - ich-bin-oma
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „не сум одовде“.'
+  answer:
+    speaker: protagonist
+    text: nicht von hier
+  items:
+  - nicht-von-hier
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „не (зборувам) германски“.'
+  answer:
+    speaker: protagonist
+    text: kein Deutsch
+  items:
+  - kein-deutsch
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „само малку“.'
+  answer:
+    speaker: protagonist
+    text: nur ein bisschen
+  items:
+  - nur-ein-bisschen
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „не“.'
+  answer:
+    speaker: protagonist
+    text: nicht
+  items:
+  - nicht
+- type: prompt
+  ask:
+    mk: 'Уште еднаш: кажете „Се гледаме наскоро!“.'
+  answer:
+    speaker: protagonist
+    text: Bis bald!
+  items:
+  - bis-bald
+- type: narrator
+  text:
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „кучето“ — и „мило, добро“ — и „смеат да се возат“ — и „поводникот“ — и „Како се вика?“ — и „животни“.'
+  answer:
+    speaker: protagonist
+    text: der Hund … lieb … dürfen mitfahren … die Leine … Wie heißt er? … Tiere
+  items:
+  - der-hund
+  - lieb
+  - duerfen-mit
+  - die-leine
+  - wie-heisst-er
+  - tiere
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „две мачки“ — и „птици“ — и „гулаби“ — и „хранат“ — и „забрането“ — и „да го повикате назад“.'
+  answer:
+    speaker: protagonist
+    text: zwei Katzen … Vögel … Tauben … füttern … verboten … zurückrufen
+  items:
+  - zwei-katzen
+  - voegel
+  - tauben
+  - fuettern
+  - verboten
+  - zurueckrufen
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „ти си“ — и „горе“ — и „А ти?“ — и „на вториот кат“ — и „Како си?“ — и „А ти?“.'
+  answer:
+    speaker: protagonist
+    text: du bist … oben … Und du? … im zweiten Stock … Wie geht's? … Und dir?
+  items:
+  - du-bist
+  - oben
+  - und-du
+  - im-zweiten-stock
+  - wie-gehts
+  - und-dir
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „Зборуваш ли …?“ — и „или повеќе сакаш …?“ — и „учам“ — и „на германски“ — и „полека“ — и „Секако!“.'
+  answer:
+    speaker: protagonist
+    text: Sprichst du …? … oder lieber …? … ich lerne … auf Deutsch … langsam … Klar!
+  items:
+  - sprichst-du
+  - oder-lieber
+  - ich-lerne
+  - auf-deutsch
+  - langsam
+  - klar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „Добровечер“ — и „ладно“ — и „надвор“ — и „веќе“ — и „темно“ — и „во зима“.'
+  answer:
+    speaker: protagonist
+    text: Guten Abend … kalt … draußen … schon … dunkel … im Winter
+  items:
+  - guten-abend
+  - kalt
+  - draussen
+  - schon
+  - dunkel
+  - im-winter
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „светло“ — и „сиво“ — и „избришете (чевлите)“ — и „мокро“ — и „внатре“ — и „топло“.'
+  answer:
+    speaker: protagonist
+    text: hell … grau … treten … ab … nass … drinnen … warm
+  items:
+  - hell
+  - grau
+  - abtreten
+  - nass
+  - drinnen
+  - warm
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „соблекувам“ — и „јакната“ — и „ветровито“.'
+  answer:
+    speaker: protagonist
+    text: ziehe … aus … die Jacke … windig
+  items:
+  - ziehe-aus
+  - die-jacke
+  - windig
+- type: narrator
+  text:
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

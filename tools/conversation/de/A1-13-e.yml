@@ -1,0 +1,471 @@
+# UNIT de A1-13-e — written by AI (Claude) for Casus; expanded from src/A1-13-e.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-13-e
+level: A1
+number: 13
+protagonist: f
+tracks:
+- en
+title:
+  en: The Mensa
+situation:
+  en: 'Lunch at the Mensa: six queues, six coffee machines — and someone steps in front of you.'
+learn_lessons:
+- a1-negation
+culture: One queue per machine
+new_items:
+- id: die-mensa
+  text: die Mensa
+  meaning:
+    en: the university canteen
+  rare: true
+- id: die-schlange
+  text: die Schlange
+  meaning:
+    en: 'the queue (also: snake)'
+- id: ich-war-zuerst-da
+  text: Ich war zuerst da
+  meaning:
+    en: I was here first
+- id: stimmt
+  text: Stimmt
+  meaning:
+    en: That's right
+- id: kein-problem
+  text: kein Problem
+  meaning:
+    en: no problem
+- id: das-essen
+  text: das Essen
+  meaning:
+    en: the food, the meal
+- id: vegetarisch
+  text: vegetarisch
+  meaning:
+    en: vegetarian
+- id: kein-fleisch
+  text: kein Fleisch
+  meaning:
+    en: no meat
+- id: nicht-so-gut
+  text: nicht so gut
+  meaning:
+    en: not so good
+- id: der-kaffee
+  text: der Kaffee
+  meaning:
+    en: the coffee
+- id: heute-nicht
+  text: heute nicht
+  meaning:
+    en: not today
+reviews:
+- item: guten-abend
+  from: A1-06
+- item: kalt
+  from: A1-06
+- item: draussen
+  from: A1-06
+- item: schon
+  from: A1-06
+- item: dunkel
+  from: A1-06
+- item: im-winter
+  from: A1-06
+- item: hell
+  from: A1-06
+- item: grau
+  from: A1-06
+- item: abtreten
+  from: A1-06
+- item: nass
+  from: A1-06
+- item: drinnen
+  from: A1-06
+- item: warm
+  from: A1-06
+- item: ziehe-aus
+  from: A1-06
+- item: die-jacke
+  from: A1-06
+- item: windig
+  from: A1-06
+- item: du-bist
+  from: A1-10
+- item: oben
+  from: A1-10
+- item: und-du
+  from: A1-10
+- item: im-zweiten-stock
+  from: A1-10
+- item: wie-gehts
+  from: A1-10
+- item: und-dir
+  from: A1-10
+- item: sprichst-du
+  from: A1-10
+- item: oder-lieber
+  from: A1-10
+- item: ich-lerne
+  from: A1-10
+- item: auf-deutsch
+  from: A1-10
+- item: langsam
+  from: A1-10
+- item: klar
+  from: A1-10
+- item: der-hund
+  from: A1-12
+- item: lieb
+  from: A1-12
+- item: duerfen-mit
+  from: A1-12
+- item: die-leine
+  from: A1-12
+- item: wie-heisst-er
+  from: A1-12
+- item: tiere
+  from: A1-12
+- item: zwei-katzen
+  from: A1-12
+- item: voegel
+  from: A1-12
+- item: tauben
+  from: A1-12
+- item: fuettern
+  from: A1-12
+- item: verboten
+  from: A1-12
+- item: zurueckrufen
+  from: A1-12
+- item: entschuldigung
+  from: A1-01
+- item: warum
+  from: A1-04
+steps:
+- type: narrator
+  text:
+    en: 'Lunch at the Mensa: six queues, six coffee machines — and someone steps in front of you. Listen to the conversation; you don''t need to understand it yet.'
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Entschuldigung, ich war zuerst da.
+    meaning:
+      en: Excuse me, I was here first.
+  - speaker: jonas
+    text: Oh, stimmt. Sorry!
+    meaning:
+      en: Oh, that's right. Sorry!
+  - speaker: protagonist
+    text: Kein Problem. Warum gibt es so viele Schlangen?
+    meaning:
+      en: No problem. Why are there so many queues?
+  - speaker: jonas
+    text: Eine Schlange für jedes Essen. Und eine für jeden Kaffeeautomaten.
+    meaning:
+      en: One queue for each meal. And one for each coffee machine.
+  - speaker: protagonist
+    text: Ist das Essen vegetarisch?
+    meaning:
+      en: Is the meal vegetarian?
+  - speaker: jonas
+    text: Das hier ja. Kein Fleisch.
+    meaning:
+      en: This one, yes. No meat.
+  - speaker: protagonist
+    text: Und schmeckt es?
+    meaning:
+      en: And is it good?
+  - speaker: jonas
+    text: Nicht so gut. Aber billig!
+    meaning:
+      en: Not so good. But cheap!
+  - speaker: protagonist
+    text: Und einen Kaffee?
+    meaning:
+      en: And a coffee?
+  - speaker: jonas
+    text: Heute nicht. Die Schlange ist zu lang.
+    meaning:
+      en: Not today. The queue's too long.
+- type: prompt
+  ask:
+    en: 'Someone steps in front of you. Say: excuse me, I was here first.'
+  answer:
+    speaker: protagonist
+    text: Entschuldigung, ich war zuerst da.
+  items:
+  - entschuldigung
+  - ich-war-zuerst-da
+- type: prompt
+  ask:
+    en: 'He agrees: that''s right.'
+  answer:
+    speaker: protagonist
+    text: Stimmt.
+  items:
+  - stimmt
+- type: prompt
+  ask:
+    en: 'Say: no problem.'
+  answer:
+    speaker: protagonist
+    text: Kein Problem.
+  items:
+  - kein-problem
+- type: prompt
+  ask:
+    en: 'Ask: why are there so many queues?'
+  answer:
+    speaker: protagonist
+    text: Warum gibt es so viele Schlangen?
+  items:
+  - warum
+  - die-schlange
+- type: prompt
+  ask:
+    en: 'Ask: is the food vegetarian?'
+  answer:
+    speaker: protagonist
+    text: Ist das Essen vegetarisch?
+  items:
+  - das-essen
+  - vegetarisch
+- type: narrator
+  text:
+    en: '«kein» before a noun, «nicht» everywhere else: «kein Fleisch», but «nicht so gut», «heute nicht».'
+- type: prompt
+  ask:
+    en: 'Say: no meat.'
+  answer:
+    speaker: protagonist
+    text: Kein Fleisch.
+  items:
+  - kein-fleisch
+- type: prompt
+  ask:
+    en: 'Say: not so good.'
+  answer:
+    speaker: protagonist
+    text: Nicht so gut.
+  items:
+  - nicht-so-gut
+- type: prompt
+  ask:
+    en: Ask for a coffee.
+  answer:
+    speaker: protagonist
+    text: Einen Kaffee, bitte.
+  items:
+  - der-kaffee
+- type: prompt
+  ask:
+    en: 'Say: not today.'
+  answer:
+    speaker: protagonist
+    text: Heute nicht.
+  items:
+  - heute-nicht
+- type: prompt
+  ask:
+    en: 'Say: the Mensa.'
+  answer:
+    speaker: protagonist
+    text: Die Mensa.
+  items:
+  - die-mensa
+- type: narrator
+  text:
+    en: Queues are often one per till or machine, and people step into any gap. 'Entschuldigung, ich war zuerst da' is polite, normal and usually answered with an apology.
+- type: prompt
+  ask:
+    en: 'Once more: say “the university canteen”.'
+  answer:
+    speaker: protagonist
+    text: die Mensa
+  items:
+  - die-mensa
+- type: prompt
+  ask:
+    en: 'Once more: say “the queue (also: snake)”.'
+  answer:
+    speaker: protagonist
+    text: die Schlange
+  items:
+  - die-schlange
+- type: prompt
+  ask:
+    en: 'Once more: say “I was here first”.'
+  answer:
+    speaker: protagonist
+    text: Ich war zuerst da
+  items:
+  - ich-war-zuerst-da
+- type: prompt
+  ask:
+    en: 'Once more: say “That''s right”.'
+  answer:
+    speaker: protagonist
+    text: Stimmt
+  items:
+  - stimmt
+- type: prompt
+  ask:
+    en: 'Once more: say “no problem”.'
+  answer:
+    speaker: protagonist
+    text: kein Problem
+  items:
+  - kein-problem
+- type: prompt
+  ask:
+    en: 'Once more: say “the food, the meal”.'
+  answer:
+    speaker: protagonist
+    text: das Essen
+  items:
+  - das-essen
+- type: prompt
+  ask:
+    en: 'Once more: say “vegetarian”.'
+  answer:
+    speaker: protagonist
+    text: vegetarisch
+  items:
+  - vegetarisch
+- type: prompt
+  ask:
+    en: 'Once more: say “no meat”.'
+  answer:
+    speaker: protagonist
+    text: kein Fleisch
+  items:
+  - kein-fleisch
+- type: prompt
+  ask:
+    en: 'Once more: say “not so good”.'
+  answer:
+    speaker: protagonist
+    text: nicht so gut
+  items:
+  - nicht-so-gut
+- type: prompt
+  ask:
+    en: 'Once more: say “the coffee”.'
+  answer:
+    speaker: protagonist
+    text: der Kaffee
+  items:
+  - der-kaffee
+- type: prompt
+  ask:
+    en: 'Once more: say “not today”.'
+  answer:
+    speaker: protagonist
+    text: heute nicht
+  items:
+  - heute-nicht
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the dog — and “sweet, good-natured — and “are allowed to ride along — and “the lead, the leash — and “What''s his name? — and “animals, pets”.'
+  answer:
+    speaker: protagonist
+    text: der Hund … lieb … dürfen mitfahren … die Leine … Wie heißt er? … Tiere
+  items:
+  - der-hund
+  - lieb
+  - duerfen-mit
+  - die-leine
+  - wie-heisst-er
+  - tiere
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “two cats — and “birds — and “pigeons — and “feed — and “forbidden — and “call back (a dog)”.'
+  answer:
+    speaker: protagonist
+    text: zwei Katzen … Vögel … Tauben … füttern … verboten … zurückrufen
+  items:
+  - zwei-katzen
+  - voegel
+  - tauben
+  - fuettern
+  - verboten
+  - zurueckrufen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “you are (informal) — and “upstairs — and “And you? (informal) — and “on the second floor — and “How are you? (informal) — and “And you? (after ''how are you'')”.'
+  answer:
+    speaker: protagonist
+    text: du bist … oben … Und du? … im zweiten Stock … Wie geht's? … Und dir?
+  items:
+  - du-bist
+  - oben
+  - und-du
+  - im-zweiten-stock
+  - wie-gehts
+  - und-dir
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Do you speak …? (informal) — and “or would you rather …? — and “I''m learning — and “in German — and “slowly — and “Sure! Of course!”.'
+  answer:
+    speaker: protagonist
+    text: Sprichst du …? … oder lieber …? … ich lerne … auf Deutsch … langsam … Klar!
+  items:
+  - sprichst-du
+  - oder-lieber
+  - ich-lerne
+  - auf-deutsch
+  - langsam
+  - klar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Good evening — and “cold — and “outside — and “already — and “dark — and “in winter”.'
+  answer:
+    speaker: protagonist
+    text: Guten Abend … kalt … draußen … schon … dunkel … im Winter
+  items:
+  - guten-abend
+  - kalt
+  - draussen
+  - schon
+  - dunkel
+  - im-winter
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “light, bright — and “grey — and “wipe (your shoes) — and “wet — and “inside — and “warm”.'
+  answer:
+    speaker: protagonist
+    text: hell … grau … treten … ab … nass … drinnen … warm
+  items:
+  - hell
+  - grau
+  - abtreten
+  - nass
+  - drinnen
+  - warm
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “take off (clothes) — and “the jacket — and “windy”.'
+  answer:
+    speaker: protagonist
+    text: ziehe … aus … die Jacke … windig
+  items:
+  - ziehe-aus
+  - die-jacke
+  - windig
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+- type: dialogue
+  again: true
+- type: selfcheck

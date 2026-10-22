@@ -1,0 +1,44 @@
+id: A1-14
+protagonist: m
+title: ["The rubbish", "النفايات", "Ѓубрето"]
+situation:
+  - "You carry one big bag down to the bins. Frau Becker stops you."
+  - "تنزل كيسًا كبيرًا واحدًا إلى الحاويات. السيدة بيكر توقفك."
+  - "Носите една голема кеса до контејнерите. Госпоѓа Бекер ве запира."
+learn: [a1-imperative-sie]
+culture: Strict sorting
+items:
+  - [moment-mal, "Moment mal!", "Hang on a moment!", "لحظة من فضلك!", "Чекајте малку!"]
+  - [der-muell, "der Müll", "the rubbish", "النفايات", "ѓубрето"]
+  - [trennen, "trennen", "separate, sort", "يفرز", "одвојува"]
+  - [die-gelbe-tonne, "die gelbe Tonne", "the yellow bin (packaging)", "الحاوية الصفراء (التغليف)", "жолтиот контејнер (амбалажа)"]
+  - [das-plastik, "das Plastik", "plastic", "البلاستيك", "пластиката"]
+  - [das-papier, "das Papier", "paper", "الورق", "хартијата"]
+  - [die-blaue, "die blaue", "the blue one", "الزرقاء", "синиот"]
+  - [der-biomuell, "der Biomüll", "food waste", "النفايات العضوية", "органскиот отпад", {rare: true}]
+  - [der-restmuell, "der Restmüll", "general waste", "بقية النفايات", "останатиот отпад", {rare: true}]
+  - [das-glas, "das Glas", "glass", "الزجاج", "стаклото"]
+  - [bringen-sie, "Bringen Sie …", "Take … (polite command)", "خذ … (أمر مؤدب)", "Однесете …"]
+  - [zum-container, "zum Container", "to the container", "إلى الحاوية", "до контејнерот"]
+dialogue:
+  - [becker, "Moment mal! Ist das alles zusammen?", "Hang on! Is that all together?", "لحظة! هل هذا كله معًا؟", "Чекајте малку! Сето ова е заедно?"]
+  - [protagonist, "Ja, das ist der Müll.", "Yes, that's the rubbish.", "نعم، هذه النفايات.", "Да, ова е ѓубрето."]
+  - [becker, "Hier trennen wir den Müll. Plastik kommt in die gelbe Tonne.", "Here we sort the rubbish. Plastic goes in the yellow bin.", "هنا نفرز النفايات. البلاستيك في الحاوية الصفراء.", "Тука го одвојуваме ѓубрето. Пластиката оди во жолтиот контејнер."]
+  - [protagonist, "Und das Papier?", "And the paper?", "والورق؟", "А хартијата?"]
+  - [becker, "Papier in die blaue. Biomüll in die braune.", "Paper in the blue one. Food waste in the brown one.", "الورق في الزرقاء. والنفايات العضوية في البنية.", "Хартијата во синиот. Органскиот отпад во кафеавиот."]
+  - [protagonist, "Und der Rest?", "And the rest?", "والباقي؟", "А остатокот?"]
+  - [becker, "Restmüll in die graue. Und das Glas — bringen Sie es zum Container an der Ecke.", "General waste in the grey one. And the glass — take it to the container on the corner.", "بقية النفايات في الرمادية. والزجاج — خذه إلى الحاوية عند الزاوية.", "Останатото во сивиот. А стаклото — однесете го до контејнерот на аголот."]
+  - [protagonist, "So viele Farben!", "So many colours!", "ألوان كثيرة جدًا!", "Толку многу бои!"]
+  - [becker, "Sie lernen das schnell. Trennen Sie bitte immer.", "You'll learn it fast. Please always sort.", "ستتعلّم ذلك بسرعة. افرز دائمًا من فضلك.", "Брзо ќе научите. Секогаш одвојувајте, ве молам."]
+teach:
+  - ask: ["She stops you: hang on!", "توقفك: لحظة!", "Ве запира: чекајте малку!", "Moment mal!", moment-mal]
+  - ask: ["Say: that's the rubbish.", "قل: هذه النفايات.", "Кажете: ова е ѓубрето.", "Das ist der Müll.", der-muell]
+  - ask: ["She says: here we sort the rubbish.", "تقول: هنا نفرز النفايات.", "Таа вели: тука го одвојуваме ѓубрето.", "Hier trennen wir den Müll.", trennen]
+  - ask: ["Say: plastic goes in the yellow bin.", "قل: البلاستيك في الحاوية الصفراء.", "Кажете: пластиката оди во жолтиот.", "Plastik kommt in die gelbe Tonne.", das-plastik, die-gelbe-tonne]
+  - ask: ["Say: paper in the blue one.", "قل: الورق في الزرقاء.", "Кажете: хартијата во синиот.", "Papier in die blaue.", das-papier, die-blaue]
+  - ask: ["Say: food waste.", "قل: النفايات العضوية.", "Кажете: органски отпад.", "Biomüll.", der-biomuell]
+  - ask: ["Say: general waste in the grey one.", "قل: بقية النفايات في الرمادية.", "Кажете: останатото во сивиот.", "Restmüll in die graue.", der-restmuell, grau]
+  - note: ["A polite command starts with the verb and keeps «Sie»: «Bringen Sie das Glas zum Container», «Trennen Sie bitte immer».", "الأمر المؤدب يبدأ بالفعل ويحتفظ بـ«Sie»: «Bringen Sie das Glas zum Container»، «Trennen Sie bitte immer».", "Учтивата заповед почнува со глаголот и го задржува «Sie»: «Bringen Sie das Glas zum Container», «Trennen Sie bitte immer»."]
+  - ask: ["She says: take the glass to the container.", "تقول: خذ الزجاج إلى الحاوية.", "Таа вели: однесете го стаклото до контејнерот.", "Bringen Sie das Glas zum Container.", bringen-sie, das-glas, zum-container]
+  - ask: ["Say: so many colours!", "قل: ألوان كثيرة جدًا!", "Кажете: толку многу бои!", "So viele Farben!", viele]
+  - note: ["Sorting is taken seriously: neighbours notice the wrong bin. Glass goes by colour to street containers, and not on Sundays or late in the evening — the noise.", "الفرز أمر جدي: الجيران يلاحظون الحاوية الخطأ. والزجاج يُرمى حسب لونه في حاويات الشارع، لا يوم الأحد ولا في وقت متأخر من المساء — بسبب الضجيج.", "Одвојувањето е сериозна работа: соседите забележуваат погрешен контејнер. Стаклото се фрла по боја во уличните контејнери, не во недела и не доцна навечер — поради бучавата."]

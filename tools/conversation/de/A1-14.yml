@@ -1,0 +1,901 @@
+# UNIT de A1-14 — written by AI (Claude) for Casus; expanded from src/A1-14.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-14
+level: A1
+number: 14
+protagonist: m
+title:
+  en: The rubbish
+  ar: النفايات
+  mk: Ѓубрето
+situation:
+  en: You carry one big bag down to the bins. Frau Becker stops you.
+  ar: تنزل كيسًا كبيرًا واحدًا إلى الحاويات. السيدة بيكر توقفك.
+  mk: Носите една голема кеса до контејнерите. Госпоѓа Бекер ве запира.
+learn_lessons:
+- a1-imperative-sie
+culture: Strict sorting
+new_items:
+- id: moment-mal
+  text: Moment mal!
+  meaning:
+    en: Hang on a moment!
+    ar: لحظة من فضلك!
+    mk: Чекајте малку!
+- id: der-muell
+  text: der Müll
+  meaning:
+    en: the rubbish
+    ar: النفايات
+    mk: ѓубрето
+- id: trennen
+  text: trennen
+  meaning:
+    en: separate, sort
+    ar: يفرز
+    mk: одвојува
+- id: die-gelbe-tonne
+  text: die gelbe Tonne
+  meaning:
+    en: the yellow bin (packaging)
+    ar: الحاوية الصفراء (التغليف)
+    mk: жолтиот контејнер (амбалажа)
+- id: das-plastik
+  text: das Plastik
+  meaning:
+    en: plastic
+    ar: البلاستيك
+    mk: пластиката
+- id: das-papier
+  text: das Papier
+  meaning:
+    en: paper
+    ar: الورق
+    mk: хартијата
+- id: die-blaue
+  text: die blaue
+  meaning:
+    en: the blue one
+    ar: الزرقاء
+    mk: синиот
+- id: der-biomuell
+  text: der Biomüll
+  meaning:
+    en: food waste
+    ar: النفايات العضوية
+    mk: органскиот отпад
+  rare: true
+- id: der-restmuell
+  text: der Restmüll
+  meaning:
+    en: general waste
+    ar: بقية النفايات
+    mk: останатиот отпад
+  rare: true
+- id: das-glas
+  text: das Glas
+  meaning:
+    en: glass
+    ar: الزجاج
+    mk: стаклото
+- id: bringen-sie
+  text: Bringen Sie …
+  meaning:
+    en: Take … (polite command)
+    ar: خذ … (أمر مؤدب)
+    mk: Однесете …
+- id: zum-container
+  text: zum Container
+  meaning:
+    en: to the container
+    ar: إلى الحاوية
+    mk: до контејнерот
+reviews:
+- item: geschlossen
+  from: A1-07
+- item: heute-ist-sonntag
+  from: A1-07
+- item: alles
+  from: A1-07
+- item: kann-ich
+  from: A1-07
+- item: irgendwo
+  from: A1-07
+- item: brot
+  from: A1-07
+- item: die-baeckerei
+  from: A1-07
+- item: an-der-ecke
+  from: A1-07
+- item: offen
+  from: A1-07
+- item: der-feiertag
+  from: A1-07
+- item: lieber-nicht
+  from: A1-07
+- item: die-ruhe
+  from: A1-07
+- item: spazieren
+  from: A1-07
+- item: der-hoersaal
+  from: A1-11-e
+  for:
+  - en
+- item: die-vorlesung
+  from: A1-11-e
+  for:
+  - en
+- item: beginnt
+  from: A1-11-e
+  for:
+  - en
+- item: wir-muessen
+  from: A1-11-e
+  for:
+  - en
+- item: puenktlich
+  from: A1-11-e
+  for:
+  - en
+- item: setz-dich
+  from: A1-11-e
+  for:
+  - en
+- item: muss-ich
+  from: A1-11-e
+  for:
+  - en
+  - ar
+- item: online
+  from: A1-11-e
+  for:
+  - en
+- item: die-pruefung
+  from: A1-11-e
+  for:
+  - en
+- item: die-folien
+  from: A1-11-e
+  for:
+  - en
+- item: viel-lernen
+  from: A1-11-e
+  for:
+  - en
+  - ar
+- item: die-mensa
+  from: A1-13-e
+  for:
+  - en
+- item: die-schlange
+  from: A1-13-e
+  for:
+  - en
+- item: ich-war-zuerst-da
+  from: A1-13-e
+  for:
+  - en
+- item: stimmt
+  from: A1-13-e
+  for:
+  - en
+- item: kein-problem
+  from: A1-13-e
+  for:
+  - en
+- item: das-essen
+  from: A1-13-e
+  for:
+  - en
+- item: vegetarisch
+  from: A1-13-e
+  for:
+  - en
+- item: kein-fleisch
+  from: A1-13-e
+  for:
+  - en
+- item: nicht-so-gut
+  from: A1-13-e
+  for:
+  - en
+- item: der-kaffee
+  from: A1-13-e
+  for:
+  - en
+- item: heute-nicht
+  from: A1-13-e
+  for:
+  - en
+- item: der-kurs
+  from: A1-11-a
+  for:
+  - ar
+- item: bin-ich-richtig
+  from: A1-11-a
+  for:
+  - ar
+- item: schreiben-sie
+  from: A1-11-a
+  for:
+  - ar
+- item: ihren-namen
+  from: A1-11-a
+  for:
+  - ar
+- item: jeden-tag
+  from: A1-11-a
+  for:
+  - ar
+- item: von-bis
+  from: A1-11-a
+  for:
+  - ar
+- item: vier-stunden
+  from: A1-11-a
+  for:
+  - ar
+- item: sie-muessen
+  from: A1-11-a
+  for:
+  - ar
+- item: bezahlen
+  from: A1-11-a
+  for:
+  - ar
+- item: das-amt
+  from: A1-11-a
+  for:
+  - ar
+- item: der-spielplatz
+  from: A1-13-a
+  for:
+  - ar
+  - mk
+- item: die-schaukel
+  from: A1-13-a
+  for:
+  - ar
+  - mk
+- item: wie-alt-ist-sie
+  from: A1-13-a
+  for:
+  - ar
+- item: vier-jahre-alt
+  from: A1-13-a
+  for:
+  - ar
+  - mk
+- item: in-welche-kita
+  from: A1-13-a
+  for:
+  - ar
+- item: geht
+  from: A1-13-a
+  for:
+  - ar
+- item: das-mittagessen
+  from: A1-13-a
+  for:
+  - ar
+- item: kein-schweinefleisch
+  from: A1-13-a
+  for:
+  - ar
+- item: isst
+  from: A1-13-a
+  for:
+  - ar
+- item: nicht
+  from: A1-13-a
+  for:
+  - ar
+  - mk
+- item: bis-bald
+  from: A1-13-a
+  for:
+  - ar
+  - mk
+- item: schoen-kennenzulernen
+  from: A1-11-m
+  for:
+  - mk
+- item: ich-spreche
+  from: A1-11-m
+  for:
+  - mk
+- item: nur
+  from: A1-02-e
+  for:
+  - mk
+- item: moechten-sie
+  from: A1-11-m
+  for:
+  - mk
+- item: ja-gern
+  from: A1-11-m
+  for:
+  - mk
+- item: ein-stueck
+  from: A1-11-m
+  for:
+  - mk
+- item: der-kuchen
+  from: A1-11-m
+  for:
+  - mk
+- item: selbst-gemacht
+  from: A1-11-m
+  for:
+  - mk
+- item: lecker
+  from: A1-11-m
+  for:
+  - mk
+- item: wie-lange
+  from: A1-11-m
+  for:
+  - mk
+- item: bleiben
+  from: A1-11-m
+  for:
+  - mk
+- item: ich-muss
+  from: A1-11-m
+  for:
+  - mk
+- item: oft
+  from: A1-11-m
+  for:
+  - mk
+- item: wie-alt-ist-er
+  from: A1-13-m
+  for:
+  - mk
+- item: ihr-enkel
+  from: A1-13-m
+  for:
+  - mk
+- item: ich-bin-oma
+  from: A1-13-m
+  for:
+  - mk
+- item: nicht-von-hier
+  from: A1-13-m
+  for:
+  - mk
+- item: kein-deutsch
+  from: A1-13-m
+  for:
+  - mk
+- item: nur-ein-bisschen
+  from: A1-13-m
+  for:
+  - mk
+- item: grau
+  from: A1-06
+- item: viele
+  from: A1-09
+steps:
+- type: narrator
+  text:
+    en: You carry one big bag down to the bins. Frau Becker stops you. Listen to the conversation; you don't need to understand it yet.
+    ar: تنزل كيسًا كبيرًا واحدًا إلى الحاويات. السيدة بيكر توقفك. استمع إلى المحادثة؛ لا داعي لأن تفهمها الآن.
+    mk: Носите една голема кеса до контејнерите. Госпоѓа Бекер ве запира. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: becker
+    text: Moment mal! Ist das alles zusammen?
+    meaning:
+      en: Hang on! Is that all together?
+      ar: لحظة! هل هذا كله معًا؟
+      mk: Чекајте малку! Сето ова е заедно?
+  - speaker: protagonist
+    text: Ja, das ist der Müll.
+    meaning:
+      en: Yes, that's the rubbish.
+      ar: نعم، هذه النفايات.
+      mk: Да, ова е ѓубрето.
+  - speaker: becker
+    text: Hier trennen wir den Müll. Plastik kommt in die gelbe Tonne.
+    meaning:
+      en: Here we sort the rubbish. Plastic goes in the yellow bin.
+      ar: هنا نفرز النفايات. البلاستيك في الحاوية الصفراء.
+      mk: Тука го одвојуваме ѓубрето. Пластиката оди во жолтиот контејнер.
+  - speaker: protagonist
+    text: Und das Papier?
+    meaning:
+      en: And the paper?
+      ar: والورق؟
+      mk: А хартијата?
+  - speaker: becker
+    text: Papier in die blaue. Biomüll in die braune.
+    meaning:
+      en: Paper in the blue one. Food waste in the brown one.
+      ar: الورق في الزرقاء. والنفايات العضوية في البنية.
+      mk: Хартијата во синиот. Органскиот отпад во кафеавиот.
+  - speaker: protagonist
+    text: Und der Rest?
+    meaning:
+      en: And the rest?
+      ar: والباقي؟
+      mk: А остатокот?
+  - speaker: becker
+    text: Restmüll in die graue. Und das Glas — bringen Sie es zum Container an der Ecke.
+    meaning:
+      en: General waste in the grey one. And the glass — take it to the container on the corner.
+      ar: بقية النفايات في الرمادية. والزجاج — خذه إلى الحاوية عند الزاوية.
+      mk: Останатото во сивиот. А стаклото — однесете го до контејнерот на аголот.
+  - speaker: protagonist
+    text: So viele Farben!
+    meaning:
+      en: So many colours!
+      ar: ألوان كثيرة جدًا!
+      mk: Толку многу бои!
+  - speaker: becker
+    text: Sie lernen das schnell. Trennen Sie bitte immer.
+    meaning:
+      en: You'll learn it fast. Please always sort.
+      ar: ستتعلّم ذلك بسرعة. افرز دائمًا من فضلك.
+      mk: Брзо ќе научите. Секогаш одвојувајте, ве молам.
+- type: prompt
+  ask:
+    en: 'She stops you: hang on!'
+    ar: 'توقفك: لحظة!'
+    mk: 'Ве запира: чекајте малку!'
+  answer:
+    speaker: protagonist
+    text: Moment mal!
+  items:
+  - moment-mal
+- type: prompt
+  ask:
+    en: 'Say: that''s the rubbish.'
+    ar: 'قل: هذه النفايات.'
+    mk: 'Кажете: ова е ѓубрето.'
+  answer:
+    speaker: protagonist
+    text: Das ist der Müll.
+  items:
+  - der-muell
+- type: prompt
+  ask:
+    en: 'She says: here we sort the rubbish.'
+    ar: 'تقول: هنا نفرز النفايات.'
+    mk: 'Таа вели: тука го одвојуваме ѓубрето.'
+  answer:
+    speaker: protagonist
+    text: Hier trennen wir den Müll.
+  items:
+  - trennen
+- type: prompt
+  ask:
+    en: 'Say: plastic goes in the yellow bin.'
+    ar: 'قل: البلاستيك في الحاوية الصفراء.'
+    mk: 'Кажете: пластиката оди во жолтиот.'
+  answer:
+    speaker: protagonist
+    text: Plastik kommt in die gelbe Tonne.
+  items:
+  - das-plastik
+  - die-gelbe-tonne
+- type: prompt
+  ask:
+    en: 'Say: paper in the blue one.'
+    ar: 'قل: الورق في الزرقاء.'
+    mk: 'Кажете: хартијата во синиот.'
+  answer:
+    speaker: protagonist
+    text: Papier in die blaue.
+  items:
+  - das-papier
+  - die-blaue
+- type: prompt
+  ask:
+    en: 'Say: food waste.'
+    ar: 'قل: النفايات العضوية.'
+    mk: 'Кажете: органски отпад.'
+  answer:
+    speaker: protagonist
+    text: Biomüll.
+  items:
+  - der-biomuell
+- type: prompt
+  ask:
+    en: 'Say: general waste in the grey one.'
+    ar: 'قل: بقية النفايات في الرمادية.'
+    mk: 'Кажете: останатото во сивиот.'
+  answer:
+    speaker: protagonist
+    text: Restmüll in die graue.
+  items:
+  - der-restmuell
+  - grau
+- type: narrator
+  text:
+    en: 'A polite command starts with the verb and keeps «Sie»: «Bringen Sie das Glas zum Container», «Trennen Sie bitte immer».'
+    ar: 'الأمر المؤدب يبدأ بالفعل ويحتفظ بـ«Sie»: «Bringen Sie das Glas zum Container»، «Trennen Sie bitte immer».'
+    mk: 'Учтивата заповед почнува со глаголот и го задржува «Sie»: «Bringen Sie das Glas zum Container», «Trennen Sie bitte immer».'
+- type: prompt
+  ask:
+    en: 'She says: take the glass to the container.'
+    ar: 'تقول: خذ الزجاج إلى الحاوية.'
+    mk: 'Таа вели: однесете го стаклото до контејнерот.'
+  answer:
+    speaker: protagonist
+    text: Bringen Sie das Glas zum Container.
+  items:
+  - bringen-sie
+  - das-glas
+  - zum-container
+- type: prompt
+  ask:
+    en: 'Say: so many colours!'
+    ar: 'قل: ألوان كثيرة جدًا!'
+    mk: 'Кажете: толку многу бои!'
+  answer:
+    speaker: protagonist
+    text: So viele Farben!
+  items:
+  - viele
+- type: narrator
+  text:
+    en: 'Sorting is taken seriously: neighbours notice the wrong bin. Glass goes by colour to street containers, and not on Sundays or late in the evening — the noise.'
+    ar: 'الفرز أمر جدي: الجيران يلاحظون الحاوية الخطأ. والزجاج يُرمى حسب لونه في حاويات الشارع، لا يوم الأحد ولا في وقت متأخر من المساء — بسبب الضجيج.'
+    mk: 'Одвојувањето е сериозна работа: соседите забележуваат погрешен контејнер. Стаклото се фрла по боја во уличните контејнери, не во недела и не доцна навечер — поради бучавата.'
+- type: prompt
+  ask:
+    en: 'Once more: say “Hang on a moment!”.'
+    ar: 'مرة أخرى: قل “لحظة من فضلك!”.'
+    mk: 'Уште еднаш: кажете „Чекајте малку!“.'
+  answer:
+    speaker: protagonist
+    text: Moment mal!
+  items:
+  - moment-mal
+- type: prompt
+  ask:
+    en: 'Once more: say “the rubbish”.'
+    ar: 'مرة أخرى: قل “النفايات”.'
+    mk: 'Уште еднаш: кажете „ѓубрето“.'
+  answer:
+    speaker: protagonist
+    text: der Müll
+  items:
+  - der-muell
+- type: prompt
+  ask:
+    en: 'Once more: say “separate, sort”.'
+    ar: 'مرة أخرى: قل “يفرز”.'
+    mk: 'Уште еднаш: кажете „одвојува“.'
+  answer:
+    speaker: protagonist
+    text: trennen
+  items:
+  - trennen
+- type: prompt
+  ask:
+    en: 'Once more: say “the yellow bin (packaging)”.'
+    ar: 'مرة أخرى: قل “الحاوية الصفراء (التغليف)”.'
+    mk: 'Уште еднаш: кажете „жолтиот контејнер (амбалажа)“.'
+  answer:
+    speaker: protagonist
+    text: die gelbe Tonne
+  items:
+  - die-gelbe-tonne
+- type: prompt
+  ask:
+    en: 'Once more: say “plastic”.'
+    ar: 'مرة أخرى: قل “البلاستيك”.'
+    mk: 'Уште еднаш: кажете „пластиката“.'
+  answer:
+    speaker: protagonist
+    text: das Plastik
+  items:
+  - das-plastik
+- type: prompt
+  ask:
+    en: 'Once more: say “paper”.'
+    ar: 'مرة أخرى: قل “الورق”.'
+    mk: 'Уште еднаш: кажете „хартијата“.'
+  answer:
+    speaker: protagonist
+    text: das Papier
+  items:
+  - das-papier
+- type: prompt
+  ask:
+    en: 'Once more: say “the blue one”.'
+    ar: 'مرة أخرى: قل “الزرقاء”.'
+    mk: 'Уште еднаш: кажете „синиот“.'
+  answer:
+    speaker: protagonist
+    text: die blaue
+  items:
+  - die-blaue
+- type: prompt
+  ask:
+    en: 'Once more: say “food waste”.'
+    ar: 'مرة أخرى: قل “النفايات العضوية”.'
+    mk: 'Уште еднаш: кажете „органскиот отпад“.'
+  answer:
+    speaker: protagonist
+    text: der Biomüll
+  items:
+  - der-biomuell
+- type: prompt
+  ask:
+    en: 'Once more: say “general waste”.'
+    ar: 'مرة أخرى: قل “بقية النفايات”.'
+    mk: 'Уште еднаш: кажете „останатиот отпад“.'
+  answer:
+    speaker: protagonist
+    text: der Restmüll
+  items:
+  - der-restmuell
+- type: prompt
+  ask:
+    en: 'Once more: say “glass”.'
+    ar: 'مرة أخرى: قل “الزجاج”.'
+    mk: 'Уште еднаш: кажете „стаклото“.'
+  answer:
+    speaker: protagonist
+    text: das Glas
+  items:
+  - das-glas
+- type: prompt
+  ask:
+    en: 'Once more: say “Take … (polite command)”.'
+    ar: 'مرة أخرى: قل “خذ … (أمر مؤدب)”.'
+    mk: 'Уште еднаш: кажете „Однесете …“.'
+  answer:
+    speaker: protagonist
+    text: Bringen Sie …
+  items:
+  - bringen-sie
+- type: prompt
+  ask:
+    en: 'Once more: say “to the container”.'
+    ar: 'مرة أخرى: قل “إلى الحاوية”.'
+    mk: 'Уште еднаш: кажете „до контејнерот“.'
+  answer:
+    speaker: protagonist
+    text: zum Container
+  items:
+  - zum-container
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتَه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “closed — and “today is Sunday — and “everything — and “Can I …? — and “somewhere — and “bread — and “the bakery”.'
+    ar: 'قل: “مغلق — و“اليوم الأحد — و“كل شيء — و“هل يمكنني …؟ — و“في مكان ما — و“خبز — و“المخبز”.'
+    mk: 'Кажете: „затворено“ — и „денес е недела“ — и „сè“ — и „Можам ли …?“ — и „некаде“ — и „леб“ — и „пекарницата“.'
+  answer:
+    speaker: protagonist
+    text: geschlossen … heute ist Sonntag … alles … Kann ich …? … irgendwo … Brot … die Bäckerei
+  items:
+  - geschlossen
+  - heute-ist-sonntag
+  - alles
+  - kann-ich
+  - irgendwo
+  - brot
+  - die-baeckerei
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “on the corner — and “open — and “the public holiday — and “better not — and “quiet, peace — and “go for a walk”.'
+    ar: 'قل: “عند الزاوية — و“مفتوح — و“العطلة الرسمية — و“الأفضل لا — و“الهدوء — و“أتمشّى”.'
+    mk: 'Кажете: „на аголот“ — и „отворено“ — и „празникот“ — и „подобро не“ — и „мирот, тишината“ — и „одам на прошетка“.'
+  answer:
+    speaker: protagonist
+    text: an der Ecke … offen … der Feiertag … lieber nicht … die Ruhe … gehe … spazieren
+  items:
+  - an-der-ecke
+  - offen
+  - der-feiertag
+  - lieber-nicht
+  - die-ruhe
+  - spazieren
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the university canteen — and “the queue (also: snake) — and “I was here first — and “That''s right — and “no problem — and “the food, the meal — and “vegetarian”.'
+  answer:
+    speaker: protagonist
+    text: die Mensa … die Schlange … Ich war zuerst da … Stimmt … kein Problem … das Essen … vegetarisch
+  items:
+  - die-mensa
+  - die-schlange
+  - ich-war-zuerst-da
+  - stimmt
+  - kein-problem
+  - das-essen
+  - vegetarisch
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “no meat — and “not so good — and “the coffee — and “not today — and “the lecture hall — and “the lecture — and “begins”.'
+  answer:
+    speaker: protagonist
+    text: kein Fleisch … nicht so gut … der Kaffee … heute nicht … der Hörsaal … die Vorlesung … beginnt
+  items:
+  - kein-fleisch
+  - nicht-so-gut
+  - der-kaffee
+  - heute-nicht
+  - der-hoersaal
+  - die-vorlesung
+  - beginnt
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “we have to — and “on time — and “Sit down! (informal) — and “online — and “the exam — and “the slides”.'
+  answer:
+    speaker: protagonist
+    text: wir müssen … pünktlich … Setz dich! … online … die Prüfung … die Folien
+  items:
+  - wir-muessen
+  - puenktlich
+  - setz-dich
+  - online
+  - die-pruefung
+  - die-folien
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Do I have to …?”.'
+    ar: 'قل: “هل يجب عليّ …؟”.'
+  answer:
+    speaker: protagonist
+    text: Muss ich …?
+  items:
+  - muss-ich
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “study a lot”.'
+    ar: 'قل: “أتعلّم كثيرًا”.'
+  answer:
+    speaker: protagonist
+    text: viel lernen
+  items:
+  - viel-lernen
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “كم عمرها؟ — و“إلى أيّ حضانة …؟ — و“تذهب — و“الغداء — و“بلا لحم خنزير — و“تأكل — و“الدورة، الصف — و“هل أنا في المكان الصحيح؟”.'
+  answer:
+    speaker: protagonist
+    text: Wie alt ist sie? … In welche Kita …? … geht … das Mittagessen … kein Schweinefleisch … isst … der Kurs … Bin ich hier richtig?
+  items:
+  - wie-alt-ist-sie
+  - in-welche-kita
+  - geht
+  - das-mittagessen
+  - kein-schweinefleisch
+  - isst
+  - der-kurs
+  - bin-ich-richtig
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “اكتبي … (بصيغة الاحترام) — و“اسمكِ — و“كل يوم — و“من … إلى … — و“أربع ساعات — و“يجب عليكِ — و“يدفع — و“الدائرة الرسمية”.'
+  answer:
+    speaker: protagonist
+    text: Schreiben Sie … … Ihren Namen … jeden Tag … von … bis … … vier Stunden … Sie müssen … bezahlen … das Amt
+  items:
+  - schreiben-sie
+  - ihren-namen
+  - jeden-tag
+  - von-bis
+  - vier-stunden
+  - sie-muessen
+  - bezahlen
+  - das-amt
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “ملعب الأطفال — و“الأرجوحة — و“أربع سنوات”.'
+    mk: 'Кажете: „игралиштето“ — и „лулашката“ — и „четири години“.'
+  answer:
+    speaker: protagonist
+    text: der Spielplatz … die Schaukel … vier Jahre alt
+  items:
+  - der-spielplatz
+  - die-schaukel
+  - vier-jahre-alt
+  for:
+  - ar
+  - mk
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “لا (نفي) — و“إلى اللقاء قريبًا!”.'
+    mk: 'Кажете: „не“ — и „Се гледаме наскоро!“.'
+  answer:
+    speaker: protagonist
+    text: nicht … Bis bald!
+  items:
+  - nicht
+  - bis-bald
+  for:
+  - ar
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „Колку години има?“ — и „вашиот внук“ — и „јас сум бабата“ — и „не сум одовде“ — и „не (зборувам) германски“ — и „само малку“ — и „Мило ми е што ве запознав“.'
+  answer:
+    speaker: protagonist
+    text: Wie alt ist er? … Ihr Enkel … ich bin die Oma … nicht von hier … kein Deutsch … nur ein bisschen … Schön, Sie kennenzulernen
+  items:
+  - wie-alt-ist-er
+  - ihr-enkel
+  - ich-bin-oma
+  - nicht-von-hier
+  - kein-deutsch
+  - nur-ein-bisschen
+  - schoen-kennenzulernen
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „зборувам“ — и „само“ — и „Сакате ли …? (учтиво)“ — и „Да, со задоволство“ — и „парче“ — и „колачот“ — и „домашен, сам направен“.'
+  answer:
+    speaker: protagonist
+    text: ich spreche … nur … Möchten Sie …? … Ja, gern … ein Stück … der Kuchen … selbst gemacht
+  items:
+  - ich-spreche
+  - nur
+  - moechten-sie
+  - ja-gern
+  - ein-stueck
+  - der-kuchen
+  - selbst-gemacht
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „вкусно“ — и „Колку долго …?“ — и „останувате“ — и „морам“ — и „често“.'
+  answer:
+    speaker: protagonist
+    text: lecker … Wie lange …? … bleiben … ich muss … oft
+  items:
+  - lecker
+  - wie-lange
+  - bleiben
+  - ich-muss
+  - oft
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمع إلى المحادثة مرة أخرى. الآن تفهمها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

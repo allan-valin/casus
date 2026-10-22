@@ -1,0 +1,46 @@
+id: A1-12
+protagonist: m
+title: ["Animals", "الحيوانات", "Животни"]
+situation:
+  - "A big dog gets on the tram and sits next to you."
+  - "كلب كبير يصعد إلى الترام ويجلس بجانبك."
+  - "Едно големо куче се качува во трамвајот и седнува до вас."
+learn: [a1-plural]
+culture: Dogs on trams
+items:
+  - [der-hund, "der Hund", "the dog", "الكلب", "кучето"]
+  - [lieb, "lieb", "sweet, good-natured", "لطيف، وديع", "мило, добро"]
+  - [duerfen-mit, "dürfen mitfahren", "are allowed to ride along", "يُسمح لها بالركوب", "смеат да се возат"]
+  - [die-leine, "die Leine", "the lead, the leash", "المقود", "поводникот"]
+  - [wie-heisst-er, "Wie heißt er?", "What's his name?", "ما اسمه؟", "Како се вика?"]
+  - [tiere, "Tiere", "animals, pets", "حيوانات", "животни"]
+  - [zwei-katzen, "zwei Katzen", "two cats", "قطتان", "две мачки"]
+  - [voegel, "Vögel", "birds", "طيور", "птици"]
+  - [tauben, "Tauben", "pigeons", "حمام", "гулаби", {rare: true}]
+  - [fuettern, "füttern", "feed", "يُطعم", "хранат", {rare: true}]
+  - [verboten, "verboten", "forbidden", "ممنوع", "забрането"]
+  - [zurueckrufen, "zurückrufen", "call back (a dog)", "يستدعي (الكلب)", "да го повикате назад"]
+dialogue:
+  - [fahrer, "Keine Angst, der Hund ist lieb.", "Don't worry, the dog is friendly.", "لا تخف، الكلب لطيف.", "Не плашете се, кучето е мило."]
+  - [protagonist, "Ein Hund in der Straßenbahn?", "A dog on the tram?", "كلب في الترام؟", "Куче во трамвај?"]
+  - [fahrer, "Ja, Hunde dürfen mitfahren. Mit Leine.", "Yes, dogs are allowed to ride. On a lead.", "نعم، يُسمح للكلاب بالركوب. بالمقود.", "Да, кучињата смеат да се возат. Со поводник."]
+  - [protagonist, "Wie heißt er?", "What's his name?", "ما اسمه؟", "Како се вика?"]
+  - [fahrer, "Bruno. Haben Sie auch Tiere?", "Bruno. Do you have pets too?", "برونو. هل عندك حيوانات أيضًا؟", "Бруно. Имате ли и вие животни?"]
+  - [protagonist, "Zu Hause habe ich zwei Katzen.", "At home I have two cats.", "في البيت عندي قطتان.", "Дома имам две мачки."]
+  - [fahrer, "Katzen! Schön. Und im Park, so viele Vögel.", "Cats! Nice. And in the park, so many birds.", "قطط! جميل. وفي الحديقة، طيور كثيرة جدًا.", "Мачки! Убаво. А во паркот, толку многу птици."]
+  - [protagonist, "Die Tauben! Ich habe Brot für die Tauben.", "The pigeons! I've got bread for the pigeons.", "الحمام! معي خبز للحمام.", "Гулабите! Имам леб за гулабите."]
+  - [fahrer, "Bitte nicht füttern. Das ist verboten.", "Please don't feed them. It's forbidden.", "من فضلك لا تطعمها. هذا ممنوع.", "Ве молам, не ги хранете. Тоа е забрането."]
+teach:
+  - ask: ["She says: the dog is friendly.", "تقول: الكلب لطيف.", "Таа вели: кучето е мило.", "Der Hund ist lieb.", der-hund, lieb]
+  - ask: ["Say: dogs are allowed to ride along.", "قل: يُسمح للكلاب بالركوب.", "Кажете: кучињата смеат да се возат.", "Hunde dürfen mitfahren.", duerfen-mit]
+  - ask: ["Say: on a lead.", "قل: بالمقود.", "Кажете: со поводник.", "Mit Leine.", die-leine]
+  - ask: ["Ask the dog's name.", "اسأل عن اسم الكلب.", "Прашајте како се вика кучето.", "Wie heißt er?", wie-heisst-er]
+  - note: ["Plurals have several patterns — learn them with the word: «der Hund, die Hunde», «die Katze, die Katzen», «der Vogel, die Vögel», «die Taube, die Tauben». In the plural the article is always «die».", "للجمع أشكال عدّة — احفظها مع الكلمة: «der Hund, die Hunde»، «die Katze, die Katzen»، «der Vogel, die Vögel»، «die Taube, die Tauben». وأداة الجمع دائمًا «die».", "Множината има повеќе облици — учете ја со зборот: «der Hund, die Hunde», «die Katze, die Katzen», «der Vogel, die Vögel», «die Taube, die Tauben». Во множина членот е секогаш «die»."]
+  - ask: ["She asks if you have pets.", "تسألك إن كانت عندك حيوانات.", "Ве прашува дали имате животни.", "Haben Sie Tiere?", tiere]
+  - ask: ["Say: at home I have two cats.", "قل: في البيت عندي قطتان.", "Кажете: дома имам две мачки.", "Zu Hause habe ich zwei Katzen.", zwei-katzen]
+  - ask: ["Say: so many birds.", "قل: طيور كثيرة جدًا.", "Кажете: толку многу птици.", "So viele Vögel.", voegel]
+  - ask: ["Say: the pigeons.", "قل: الحمام.", "Кажете: гулабите.", "Die Tauben.", tauben]
+  - ask: ["She says: please don't feed them, it's forbidden.", "تقول: من فضلك لا تطعمها، هذا ممنوع.", "Таа вели: не ги хранете, забрането е.", "Bitte nicht füttern. Das ist verboten.", fuettern, verboten]
+  - note: ["Dogs ride trams and buses and come into many shops and offices, usually on a lead and very calm. Feeding pigeons is banned in many city centres.", "تركب الكلاب الترام والحافلات وتدخل كثيرًا من المحلات والمكاتب، عادةً بالمقود وبهدوء تام. وإطعام الحمام ممنوع في وسط كثير من المدن.", "Кучињата се возат во трамваи и автобуси и влегуваат во многу продавници и канцеларии, обично на поводник и многу мирни. Хранењето гулаби е забрането во центарот на многу градови."]
+  - only: {ar: "إن كان قرب الكلب يزعجك، يمكنك أن تبتعد بهدوء، أو تقول لصاحبه: «Können Sie den Hund bitte zurückrufen?» — يفهم الناس ذلك."}
+  - ask: ["Say: call back (a dog).", "قل: يستدعي الكلب.", "Кажете: да го повикате назад.", "zurückrufen", zurueckrufen]
