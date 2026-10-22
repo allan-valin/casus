@@ -1,0 +1,600 @@
+# UNIT de B2-15 — written by AI (Claude) for Casus; expanded from src/B2-15.yml by tools/expand_unit.py. Edit the source.
+
+id: B2-15
+level: B2
+number: 15
+protagonist: m
+title:
+  en: Truth
+  ar: الحقيقة
+  mk: Вистина
+situation:
+  en: 'Paul shows you a post: ''Migrants get free flats!'' Shared ten thousand times. You check it together.'
+  ar: 'باول يريك منشورًا: «المهاجرون يحصلون على شقق مجانية!» شُورك عشرة آلاف مرة. تتحقّقان منه معًا.'
+  mk: 'Паул ви покажува објава: „Мигрантите добиваат бесплатни станови!“ Споделена десет илјади пати. Заедно ја проверувате.'
+learn_lessons:
+- b2-concessive
+culture: Checking a claim
+new_items:
+- id: die-behauptung
+  text: die Behauptung
+  meaning:
+    en: the claim
+    ar: الادّعاء
+    mk: тврдењето
+- id: der-beweis
+  text: der Beweis
+  meaning:
+    en: the proof
+    ar: الدليل
+    mk: доказот
+- id: die-falschmeldung
+  text: die Falschmeldung
+  meaning:
+    en: fake news
+    ar: الخبر الكاذب
+    mk: лажната вест
+  rare: true
+- id: ueberpruefen
+  text: überprüfen
+  meaning:
+    en: check, verify
+    ar: يتحقّق
+    mk: проверува
+- id: zwar-aber
+  text: zwar … aber
+  meaning:
+    en: admittedly … but
+    ar: صحيح أنّ … لكن
+    mk: иако … сепак
+- id: trotzdem
+  text: trotzdem
+  meaning:
+    en: nevertheless
+    ar: مع ذلك
+    mk: сепак
+- id: auch-wenn
+  text: auch wenn
+  meaning:
+    en: even if
+    ar: حتى لو
+    mk: дури и ако
+- id: teilen
+  text: teilen
+  meaning:
+    en: share
+    ar: يشارك
+    mk: споделува
+- id: der-faktencheck
+  text: der Faktencheck
+  meaning:
+    en: the fact check
+    ar: التحقّق من الحقائق
+    mk: проверката на факти
+  rare: true
+- id: die-hetze
+  text: die Hetze
+  meaning:
+    en: incitement, hate campaign
+    ar: التحريض
+    mk: поттикнувањето омраза
+reviews:
+- item: die-hitze
+  from: A2-12
+- item: heisser-als
+  from: A2-12
+- item: schwitzen
+  from: A2-12
+- item: der-ventilator
+  from: A2-12
+- item: keine-klimaanlage
+  from: A2-12
+- item: ausverkauft
+  from: A2-12
+- item: die-vorhaenge
+  from: A2-12
+- item: noch-hell
+  from: A2-12
+- item: am-laengsten
+  from: A2-12
+- item: die-nacht-kurz
+  from: A2-12
+- item: wollen-wir-uns-duzen
+  from: B1-14
+- item: duzen
+  from: B1-14
+- item: siezen
+  from: B1-14
+- item: ein-jahr-schon
+  from: B1-14
+- item: ich-heisse
+  from: B1-14
+- item: gern-sehr
+  from: B1-14
+- item: anstossen
+  from: B1-14
+- item: die-ehre
+  from: B1-14
+- item: ungewohnt
+  from: B1-14
+- item: ab-jetzt
+  from: B1-14
+- item: na-toll
+  from: B1-30
+- item: sehr-witzig
+  from: B1-30
+- item: die-ironie
+  from: B1-30
+- item: meinst-du-das-ernst
+  from: B1-30
+- item: das-picknick
+  from: B1-30
+- item: es-regnet-in-stroemen
+  from: B1-30
+- item: genau-das-gegenteil
+  from: B1-30
+- item: der-ton
+  from: B1-30
+- item: erkennen
+  from: B1-30
+- item: na-ja
+  from: B1-30
+- item: sehr-geehrte
+  from: B2-08
+- item: mfg
+  from: B2-08
+- item: der-betreff
+  from: B2-08
+- item: hiermit-teile-ich
+  from: B2-08
+- item: ich-bitte-um
+  from: B2-08
+- item: die-rueckmeldung
+  from: B2-08
+- item: umgehend
+  from: B2-08
+- item: der-anhang
+  from: B2-08
+- item: die-mietminderung
+  from: B2-08
+- item: schriftlich
+  from: B2-08
+- item: die-wahrscheinlichkeit
+  from: B2-12
+- item: der-zufall
+  from: B2-12
+- item: das-lotto
+  from: B2-12
+- item: die-chance
+  from: B2-12
+- item: eins-zu
+  from: B2-12
+- item: haette-gewonnen
+  from: B2-12
+- item: waere-gekommen
+  from: B2-12
+- item: die-regenwahrscheinlichkeit
+  from: B2-12
+- item: der-blitz
+  from: B2-12
+- item: verschwendet
+  from: B2-12
+- item: die-elternzeit
+  from: B2-14
+- item: das-elterngeld
+  from: B2-14
+- item: der-kitaplatz
+  from: B2-14
+- item: die-teilzeit
+  from: B2-14
+- item: die-warteliste
+  from: B2-14
+- item: statt-zu
+  from: B2-14
+- item: ohne-zu
+  from: B2-14
+- item: sich-abwechseln
+  from: B2-14
+- item: die-eingewoehnung
+  from: B2-14
+- item: das-schlechte-gewissen
+  from: B2-14
+steps:
+- type: narrator
+  text:
+    en: 'Paul shows you a post: ''Migrants get free flats!'' Shared ten thousand times. You check it together. Listen to the conversation; you don''t need to understand it yet.'
+    ar: 'باول يريك منشورًا: «المهاجرون يحصلون على شقق مجانية!» شُورك عشرة آلاف مرة. تتحقّقان منه معًا. استمع إلى المحادثة؛ لا داعي لأن تفهمها الآن.'
+    mk: 'Паул ви покажува објава: „Мигрантите добиваат бесплатни станови!“ Споделена десет илјади пати. Заедно ја проверувате. Слушнете го разговорот; уште не мора да го разберете.'
+- type: dialogue
+  lines:
+  - speaker: paul
+    text: 'Schau mal: „Migranten bekommen kostenlose Wohnungen!“ Zehntausend Mal geteilt.'
+    meaning:
+      en: 'Look: ''Migrants get free flats!'' Shared ten thousand times.'
+      ar: 'انظر: «المهاجرون يحصلون على شقق مجانية!» شُورك عشرة آلاف مرة.'
+      mk: 'Види: „Мигрантите добиваат бесплатни станови!“ Споделено десет илјади пати.'
+  - speaker: protagonist
+    text: Das ist eine Behauptung. Wo ist der Beweis?
+    meaning:
+      en: That's a claim. Where's the proof?
+      ar: هذا ادّعاء. أين الدليل؟
+      mk: Тоа е тврдење. Каде е доказот?
+  - speaker: paul
+    text: Es gibt zwar keine Quelle, aber so viele Leute teilen es!
+    meaning:
+      en: Admittedly there's no source, but so many people are sharing it!
+      ar: صحيح أنه لا يوجد مصدر، لكن كثيرين يشاركونه!
+      mk: Иако нема извор, сепак толку многу луѓе го споделуваат!
+  - speaker: protagonist
+    text: Auch wenn es eine Million teilen — es bleibt falsch, wenn es falsch ist.
+    meaning:
+      en: Even if a million share it — it stays false if it's false.
+      ar: حتى لو شاركه مليون — يبقى كاذبًا إن كان كاذبًا.
+      mk: Дури и ако го споделат милион — останува лажно ако е лажно.
+  - speaker: paul
+    text: Okay. Wie überprüfen wir das?
+    meaning:
+      en: OK. How do we check it?
+      ar: حسنًا. كيف نتحقّق منه؟
+      mk: Добро. Како да го провериме?
+  - speaker: protagonist
+    text: 'Mit einem Faktencheck. ... Hier: Falschmeldung. Ich kenne niemanden mit einer kostenlosen Wohnung.'
+    meaning:
+      en: 'With a fact check. ... Here: fake news. I don''t know anyone with a free flat.'
+      ar: 'بالتحقّق من الحقائق. ... هنا: خبر كاذب. لا أعرف أحدًا لديه شقة مجانية.'
+      mk: 'Со проверка на факти. ... Еве: лажна вест. Не познавам никого со бесплатен стан.'
+  - speaker: paul
+    text: Trotzdem glauben es viele.
+    meaning:
+      en: Nevertheless many believe it.
+      ar: مع ذلك يصدّقه كثيرون.
+      mk: Сепак многумина веруваат.
+  - speaker: protagonist
+    text: Weil es Hetze ist. Sie macht Angst und Wut — und das teilt man schnell.
+    meaning:
+      en: Because it's a hate campaign. It creates fear and anger — and people share that fast.
+      ar: لأنه تحريض. يثير الخوف والغضب — وهذا ما يشاركه الناس بسرعة.
+      mk: Затоа што е поттикнување омраза. Создава страв и бес — а тоа брзо се споделува.
+- type: prompt
+  ask:
+    en: 'Say: that''s a claim.'
+    ar: 'قل: هذا ادّعاء.'
+    mk: 'Кажете: тоа е тврдење.'
+  answer:
+    speaker: protagonist
+    text: Das ist eine Behauptung.
+  items:
+  - die-behauptung
+- type: prompt
+  ask:
+    en: 'Ask: where''s the proof?'
+    ar: 'اسأل: أين الدليل؟'
+    mk: 'Прашајте: каде е доказот?'
+  answer:
+    speaker: protagonist
+    text: Wo ist der Beweis?
+  items:
+  - der-beweis
+- type: narrator
+  text:
+    en: 'Conceding a point and still disagreeing: «zwar …, aber …» (admittedly…, but), «trotzdem» (nevertheless, verb right after), «auch wenn» (even if, verb at the end).'
+    ar: 'التسليم بنقطة مع الاختلاف: «zwar …, aber …» (صحيح أنّ…، لكن)، «trotzdem» (مع ذلك، والفعل بعدها مباشرة)، «auch wenn» (حتى لو، والفعل في الآخر).'
+    mk: 'Признавање на поента и сепак несогласување: «zwar …, aber …» (иако…, сепак), «trotzdem» (сепак, глаголот веднаш потоа), «auch wenn» (дури и ако, глаголот на крајот).'
+- type: prompt
+  ask:
+    en: 'Say: admittedly there''s no source, but…'
+    ar: 'قل: صحيح أنه لا يوجد مصدر، لكن…'
+    mk: 'Кажете: иако нема извор, сепак…'
+  answer:
+    speaker: protagonist
+    text: Es gibt zwar keine Quelle, aber…
+  items:
+  - zwar-aber
+- type: prompt
+  ask:
+    en: 'Say: even if a million share it.'
+    ar: 'قل: حتى لو شاركه مليون.'
+    mk: 'Кажете: дури и ако го споделат милион.'
+  answer:
+    speaker: protagonist
+    text: Auch wenn es eine Million teilen.
+  items:
+  - auch-wenn
+  - teilen
+- type: prompt
+  ask:
+    en: 'Ask: how do we check it?'
+    ar: 'اسأل: كيف نتحقّق منه؟'
+    mk: 'Прашајте: како да го провериме?'
+  answer:
+    speaker: protagonist
+    text: Wie überprüfen wir das?
+  items:
+  - ueberpruefen
+- type: prompt
+  ask:
+    en: 'Say: with a fact check.'
+    ar: 'قل: بالتحقّق من الحقائق.'
+    mk: 'Кажете: со проверка на факти.'
+  answer:
+    speaker: protagonist
+    text: Mit einem Faktencheck.
+  items:
+  - der-faktencheck
+- type: prompt
+  ask:
+    en: 'Say: fake news.'
+    ar: 'قل: خبر كاذب.'
+    mk: 'Кажете: лажна вест.'
+  answer:
+    speaker: protagonist
+    text: Eine Falschmeldung.
+  items:
+  - die-falschmeldung
+- type: prompt
+  ask:
+    en: 'He says: nevertheless many believe it.'
+    ar: 'يقول: مع ذلك يصدّقه كثيرون.'
+    mk: 'Тој вели: сепак многумина веруваат.'
+  answer:
+    speaker: protagonist
+    text: Trotzdem glauben es viele.
+  items:
+  - trotzdem
+- type: prompt
+  ask:
+    en: 'Say: it''s a hate campaign.'
+    ar: 'قل: إنه تحريض.'
+    mk: 'Кажете: тоа е поттикнување омраза.'
+  answer:
+    speaker: protagonist
+    text: Es ist Hetze.
+  items:
+  - die-hetze
+- type: narrator
+  text:
+    en: 'Before sharing, ask: who says it, what''s the source, do serious media report it? Public broadcasters and independent fact-check sites test viral claims. Posts that make you angry are built to
+      be shared — that''s a reason to slow down.'
+    ar: 'قبل المشاركة اسأل: من يقول ذلك، وما المصدر، وهل تنقله وسائل إعلام جادة؟ القنوات العامة ومواقع التحقّق المستقلة تفحص الادّعاءات المنتشرة. والمنشورات التي تُغضبك مصمَّمة لتُشارَك — وهذا سبب للتمهّل.'
+    mk: 'Пред да споделите, прашајте: кој го кажува, кој е изворот, дали сериозните медиуми известуваат? Јавните радиодифузери и независни страници за проверка на факти ги тестираат виралните тврдења. Објавите
+      што ве лутат се направени за да се споделуваат — тоа е причина да забавите.'
+- type: prompt
+  ask:
+    en: 'Once more: say “the claim”.'
+    ar: 'مرة أخرى: قل “الادّعاء”.'
+    mk: 'Уште еднаш: кажете „тврдењето“.'
+  answer:
+    speaker: protagonist
+    text: die Behauptung
+  items:
+  - die-behauptung
+- type: prompt
+  ask:
+    en: 'Once more: say “the proof”.'
+    ar: 'مرة أخرى: قل “الدليل”.'
+    mk: 'Уште еднаш: кажете „доказот“.'
+  answer:
+    speaker: protagonist
+    text: der Beweis
+  items:
+  - der-beweis
+- type: prompt
+  ask:
+    en: 'Once more: say “fake news”.'
+    ar: 'مرة أخرى: قل “الخبر الكاذب”.'
+    mk: 'Уште еднаш: кажете „лажната вест“.'
+  answer:
+    speaker: protagonist
+    text: die Falschmeldung
+  items:
+  - die-falschmeldung
+- type: prompt
+  ask:
+    en: 'Once more: say “check, verify”.'
+    ar: 'مرة أخرى: قل “يتحقّق”.'
+    mk: 'Уште еднаш: кажете „проверува“.'
+  answer:
+    speaker: protagonist
+    text: überprüfen
+  items:
+  - ueberpruefen
+- type: prompt
+  ask:
+    en: 'Once more: say “admittedly … but”.'
+    ar: 'مرة أخرى: قل “صحيح أنّ … لكن”.'
+    mk: 'Уште еднаш: кажете „иако … сепак“.'
+  answer:
+    speaker: protagonist
+    text: zwar … aber
+  items:
+  - zwar-aber
+- type: prompt
+  ask:
+    en: 'Once more: say “nevertheless”.'
+    ar: 'مرة أخرى: قل “مع ذلك”.'
+    mk: 'Уште еднаш: кажете „сепак“.'
+  answer:
+    speaker: protagonist
+    text: trotzdem
+  items:
+  - trotzdem
+- type: prompt
+  ask:
+    en: 'Once more: say “even if”.'
+    ar: 'مرة أخرى: قل “حتى لو”.'
+    mk: 'Уште еднаш: кажете „дури и ако“.'
+  answer:
+    speaker: protagonist
+    text: auch wenn
+  items:
+  - auch-wenn
+- type: prompt
+  ask:
+    en: 'Once more: say “share”.'
+    ar: 'مرة أخرى: قل “يشارك”.'
+    mk: 'Уште еднаш: кажете „споделува“.'
+  answer:
+    speaker: protagonist
+    text: teilen
+  items:
+  - teilen
+- type: prompt
+  ask:
+    en: 'Once more: say “the fact check”.'
+    ar: 'مرة أخرى: قل “التحقّق من الحقائق”.'
+    mk: 'Уште еднаш: кажете „проверката на факти“.'
+  answer:
+    speaker: protagonist
+    text: der Faktencheck
+  items:
+  - der-faktencheck
+- type: prompt
+  ask:
+    en: 'Once more: say “incitement, hate campaign”.'
+    ar: 'مرة أخرى: قل “التحريض”.'
+    mk: 'Уште еднаш: кажете „поттикнувањето омраза“.'
+  answer:
+    speaker: protagonist
+    text: die Hetze
+  items:
+  - die-hetze
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتَه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “parental leave — and “parental allowance — and “a Kita place — and “part time — and “the waiting list — and “instead of …ing — and “without …ing — and “take turns — and “the settling-in period
+      — and “a guilty conscience”.'
+    ar: 'قل: “إجازة الوالدين — و“علاوة الوالدين — و“مكان في الروضة — و“الدوام الجزئي — و“قائمة الانتظار — و“بدلًا من أن … — و“دون أن … — و“يتناوبان — و“فترة التأقلم — و“تأنيب الضمير”.'
+    mk: 'Кажете: „родителското отсуство“ — и „родителскиот додаток“ — и „место во градинка“ — и „скратено работно време“ — и „листата на чекање“ — и „наместо да …“ — и „без да …“ — и „се сменуваат“ — и
+      „периодот на навикнување“ — и „грижата на совеста“.'
+  answer:
+    speaker: protagonist
+    text: die Elternzeit … das Elterngeld … der Kitaplatz … die Teilzeit … die Warteliste … statt … zu … ohne … zu … sich abwechseln … die Eingewöhnung … das schlechte Gewissen
+  items:
+  - die-elternzeit
+  - das-elterngeld
+  - der-kitaplatz
+  - die-teilzeit
+  - die-warteliste
+  - statt-zu
+  - ohne-zu
+  - sich-abwechseln
+  - die-eingewoehnung
+  - das-schlechte-gewissen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the probability — and “chance, coincidence — and “the lottery — and “the chance — and “one in … — and “would have won — and “would have come — and “chance of rain — and “lightning — and “wasted”.'
+    ar: 'قل: “الاحتمال — و“المصادفة — و“اليانصيب — و“الفرصة — و“واحد من … — و“كان سيفوز — و“كان سيأتي — و“احتمال المطر — و“البرق — و“مُهدَر”.'
+    mk: 'Кажете: „веројатноста“ — и „случајноста“ — и „лотото“ — и „шансата“ — и „еден спрема …“ — и „ќе добиеше“ — и „ќе дојдеше“ — и „веројатноста за дожд“ — и „молњата“ — и „потрошено залудно“.'
+  answer:
+    speaker: protagonist
+    text: die Wahrscheinlichkeit … der Zufall … das Lotto … die Chance … eins zu … … hätte gewonnen … wäre gekommen … die Regenwahrscheinlichkeit … der Blitz … verschwendet
+  items:
+  - die-wahrscheinlichkeit
+  - der-zufall
+  - das-lotto
+  - die-chance
+  - eins-zu
+  - haette-gewonnen
+  - waere-gekommen
+  - die-regenwahrscheinlichkeit
+  - der-blitz
+  - verschwendet
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Dear Sir or Madam — and “Yours sincerely — and “the subject line — and “I hereby inform you — and “I request … — and “a reply — and “promptly — and “attached — and “a rent reduction — and
+      “in writing”.'
+    ar: 'قل: “السادة المحترمون — و“مع أطيب التحيات — و“الموضوع — و“أبلغكم بموجب هذا — و“أرجو … — و“الرد — و“فورًا، على وجه السرعة — و“في المرفق — و“تخفيض الإيجار — و“كتابيًا”.'
+    mk: 'Кажете: „Почитувани“ — и „Со почит“ — и „предметот“ — и „со ова ве известувам“ — и „ве молам за …“ — и „одговорот“ — и „веднаш“ — и „во прилог“ — и „намалување на киријата“ — и „писмено“.'
+  answer:
+    speaker: protagonist
+    text: Sehr geehrte Damen und Herren … Mit freundlichen Grüßen … der Betreff … hiermit teile ich Ihnen mit … ich bitte um … … die Rückmeldung … umgehend … im Anhang … die Mietminderung … schriftlich
+  items:
+  - sehr-geehrte
+  - mfg
+  - der-betreff
+  - hiermit-teile-ich
+  - ich-bitte-um
+  - die-rueckmeldung
+  - umgehend
+  - der-anhang
+  - die-mietminderung
+  - schriftlich
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Oh great! (ironic) — and “Very funny! (ironic) — and “irony — and “Are you serious? — and “the picnic — and “it''s pouring — and “exactly the opposite — and “the tone — and “recognise — and
+      “well… (hesitant)”.'
+    ar: 'قل: “رائع جدًا! (ساخرًا) — و“مضحك جدًا! (ساخرًا) — و“السخرية — و“هل تقصد ذلك جديًا؟ — و“النزهة — و“إنها تمطر بغزارة — و“العكس تمامًا — و“النبرة — و“يعرف، يميّز — و“حسنًا… (بتردّد)”.'
+    mk: 'Кажете: „Баш убаво! (иронично)“ — и „Многу смешно! (иронично)“ — и „иронијата“ — и „Сериозно ли мислиш?“ — и „пикникот“ — и „врне како од кабел“ — и „токму спротивното“ — и „тонот“ — и „препознава“
+      — и „па…“.'
+  answer:
+    speaker: protagonist
+    text: Na toll! … Sehr witzig! … die Ironie … Meinst du das ernst? … das Picknick … es regnet in Strömen … genau das Gegenteil … der Ton … erkennen … na ja
+  items:
+  - na-toll
+  - sehr-witzig
+  - die-ironie
+  - meinst-du-das-ernst
+  - das-picknick
+  - es-regnet-in-stroemen
+  - genau-das-gegenteil
+  - der-ton
+  - erkennen
+  - na-ja
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Shall we say du to each other? — and “say du — and “say Sie — and “already a year — and “My name is … — and “with great pleasure — and “clink glasses — and “the honour — and “unfamiliar,
+      strange — and “from now on”.'
+    ar: 'قل: “هل نتخاطب بـ«du»؟ — و“يخاطب بـ«du» — و“يخاطب بـ«Sie» — و“عام كامل — و“اسمي … — و“بكل سرور — و“يقرع الكؤوس — و“الشرف — و“غير معتاد — و“من الآن”.'
+    mk: 'Кажете: „Ќе си велиме ли «du»?“ — и „персира со «du»“ — и „персира со «Sie»“ — и „веќе една година“ — и „Се викам …“ — и „со големо задоволство“ — и „наздравува“ — и „честа“ — и „невообичаено“
+      — и „од сега“.'
+  answer:
+    speaker: protagonist
+    text: Wollen wir uns duzen? … duzen … siezen … schon ein Jahr … Ich heiße … … sehr gern … anstoßen … die Ehre … ungewohnt … ab jetzt
+  items:
+  - wollen-wir-uns-duzen
+  - duzen
+  - siezen
+  - ein-jahr-schon
+  - ich-heisse
+  - gern-sehr
+  - anstossen
+  - die-ehre
+  - ungewohnt
+  - ab-jetzt
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the heat — and “hotter than — and “sweat — and “the fan — and “no air conditioning — and “sold out — and “the curtains — and “still light — and “the longest — and “the night is short”.'
+    ar: 'قل: “الحرّ — و“أحرّ من — و“يعرق — و“المروحة — و“لا مكيّف — و“نفد — و“الستائر — و“ما زال مضيئًا — و“الأطول — و“الليل قصير”.'
+    mk: 'Кажете: „жештината“ — и „пожешко од“ — и „се потам“ — и „вентилаторот“ — и „нема клима“ — и „распродадено“ — и „завесите“ — и „уште светло“ — и „најдолго“ — и „ноќта е кратка“.'
+  answer:
+    speaker: protagonist
+    text: die Hitze … heißer als … schwitzen … der Ventilator … keine Klimaanlage … ausverkauft … die Vorhänge … noch hell … am längsten … die Nacht ist kurz
+  items:
+  - die-hitze
+  - heisser-als
+  - schwitzen
+  - der-ventilator
+  - keine-klimaanlage
+  - ausverkauft
+  - die-vorhaenge
+  - noch-hell
+  - am-laengsten
+  - die-nacht-kurz
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمع إلى المحادثة مرة أخرى. الآن تفهمها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

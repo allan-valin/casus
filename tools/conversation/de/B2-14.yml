@@ -1,0 +1,824 @@
+# UNIT de B2-14 — written by AI (Claude) for Casus; expanded from src/B2-14.yml by tools/expand_unit.py. Edit the source.
+
+id: B2-14
+level: B2
+number: 14
+protagonist: f
+title:
+  en: Part time and the Kita
+  ar: الدوام الجزئي والروضة
+  mk: Скратено работно време и градинка
+situation:
+  en: Lena goes back to work after a year at home with the baby. Over coffee she tells you how she organises it.
+  ar: لينا تعود إلى العمل بعد سنة في البيت مع الرضيع. على القهوة تحكي لكِ كيف تنظّم الأمر.
+  mk: Лена се враќа на работа по една година дома со бебето. На кафе ви раскажува како го организира тоа.
+learn_lessons:
+- b2-infinitive-groups
+culture: Family and work
+new_items:
+- id: die-elternzeit
+  text: die Elternzeit
+  meaning:
+    en: parental leave
+    ar: إجازة الوالدين
+    mk: родителското отсуство
+  rare: true
+- id: das-elterngeld
+  text: das Elterngeld
+  meaning:
+    en: parental allowance
+    ar: علاوة الوالدين
+    mk: родителскиот додаток
+  rare: true
+- id: der-kitaplatz
+  text: der Kitaplatz
+  meaning:
+    en: a Kita place
+    ar: مكان في الروضة
+    mk: место во градинка
+- id: die-teilzeit
+  text: die Teilzeit
+  meaning:
+    en: part time
+    ar: الدوام الجزئي
+    mk: скратено работно време
+- id: die-warteliste
+  text: die Warteliste
+  meaning:
+    en: the waiting list
+    ar: قائمة الانتظار
+    mk: листата на чекање
+- id: statt-zu
+  text: statt … zu
+  meaning:
+    en: instead of …ing
+    ar: بدلًا من أن …
+    mk: наместо да …
+- id: ohne-zu
+  text: ohne … zu
+  meaning:
+    en: without …ing
+    ar: دون أن …
+    mk: без да …
+- id: sich-abwechseln
+  text: sich abwechseln
+  meaning:
+    en: take turns
+    ar: يتناوبان
+    mk: се сменуваат
+- id: die-eingewoehnung
+  text: die Eingewöhnung
+  meaning:
+    en: the settling-in period
+    ar: فترة التأقلم
+    mk: периодот на навикнување
+  rare: true
+- id: das-schlechte-gewissen
+  text: das schlechte Gewissen
+  meaning:
+    en: a guilty conscience
+    ar: تأنيب الضمير
+    mk: грижата на совеста
+reviews:
+- item: das-fest
+  from: A2-11
+- item: feiern
+  from: A2-11
+- item: weihnachten
+  from: A2-11
+- item: ostern
+  from: A2-11
+- item: bei-uns
+  from: A2-11
+- item: zu-einer-anderen-zeit
+  from: A2-11
+- item: frei-nehmen
+  from: A2-11
+- item: die-familie-besuchen
+  from: A2-11
+- item: geschenke
+  from: A2-11
+- item: weil
+  from: A2-11
+- item: frohe-feiertage
+  from: A2-11
+- item: die-weihnachtsfeier
+  from: B1-13
+- item: wichteln
+  from: B1-13
+- item: das-geschenk
+  from: B1-13
+- item: die-rede
+  from: B1-13
+- item: des-kurses
+  from: B1-13
+- item: das-ende-des-jahres
+  from: B1-13
+- item: der-teilnehmer
+  from: B1-13
+- item: wegen
+  from: B1-13
+- item: hoechstens
+  from: B1-13
+- item: verraten
+  from: B1-13
+- item: ossi-wessi
+  from: B1-29
+- item: unsinn
+  from: B1-29
+- item: der-soli
+  from: B1-29
+- item: genauso
+  from: B1-29
+- item: wurde-geoeffnet
+  from: B1-29
+- item: wurde-eingefuehrt
+  from: B1-29
+- item: die-ddr
+  from: B1-29
+- item: die-gehaelter
+  from: B1-29
+- item: niedriger
+  from: B1-29
+- item: grillen
+  from: B1-29
+- item: beide-seiten
+  from: B1-29
+- item: die-tagesordnung
+  from: B2-07
+- item: das-protokoll
+  from: B2-07
+- item: protokoll-fuehren
+  from: B2-07
+- item: der-punkt
+  from: B2-07
+- item: muss-entschieden-werden
+  from: B2-07
+- item: kann-verschoben-werden
+  from: B2-07
+- item: die-frist-einhalten
+  from: B2-07
+- item: wer-uebernimmt
+  from: B2-07
+- item: zum-schluss
+  from: B2-07
+- item: verschiedenes
+  from: B2-07
+- item: das-vorstellungsgespraech-ea
+  from: B2-11-ea
+  for:
+  - en
+  - ar
+- item: die-luecke-ea
+  from: B2-11-ea
+  for:
+  - en
+  - ar
+- item: die-motivation-ea
+  from: B2-11-ea
+  for:
+  - en
+  - ar
+- item: er-fragte-warum-ea
+  from: B2-11-ea
+  for:
+  - en
+  - ar
+- item: er-wollte-wissen-ea
+  from: B2-11-ea
+  for:
+  - en
+  - ar
+- item: die-gehaltsvorstellung-ea
+  from: B2-11-ea
+  for:
+  - en
+  - ar
+- item: die-staerken-schwaechen-ea
+  from: B2-11-ea
+  for:
+  - en
+  - ar
+- item: ich-habe-mich-informiert-ea
+  from: B2-11-ea
+  for:
+  - en
+  - ar
+- item: haben-sie-fragen-ea
+  from: B2-11-ea
+  for:
+  - en
+  - ar
+- item: die-probezeit-ea
+  from: B2-11-ea
+  for:
+  - en
+  - ar
+- item: kuendigen-ea
+  from: B2-13-ea
+  for:
+  - en
+  - ar
+- item: die-kuendigungsfrist-ea
+  from: B2-13-ea
+  for:
+  - en
+  - ar
+- item: das-arbeitszeugnis-ea
+  from: B2-13-ea
+  for:
+  - en
+  - ar
+- item: zum-monatsende-ea
+  from: B2-13-ea
+  for:
+  - en
+  - ar
+- item: ich-moechte-sie-bitten-ea
+  from: B2-13-ea
+  for:
+  - en
+  - ar
+- item: waeren-sie-so-freundlich-ea
+  from: B2-13-ea
+  for:
+  - en
+  - ar
+- item: der-resturlaub-ea
+  from: B2-13-ea
+  for:
+  - en
+  - ar
+- item: schade-dass-ea
+  from: B2-13-ea
+  for:
+  - en
+  - ar
+- item: die-uebergabe-ea
+  from: B2-13-ea
+  for:
+  - en
+  - ar
+- item: unterschrieben-ea
+  from: B2-13-ea
+  for:
+  - en
+  - ar
+- item: der-probetag-m
+  from: B2-11-m
+  for:
+  - mk
+- item: die-werkstatt-m
+  from: B2-11-m
+  for:
+  - mk
+- item: das-holz-m
+  from: B2-11-m
+  for:
+  - mk
+- item: er-fragte-warum-m
+  from: B2-11-m
+  for:
+  - mk
+- item: er-wollte-wissen-m
+  from: B2-11-m
+  for:
+  - mk
+- item: die-saege-m
+  from: B2-11-m
+  for:
+  - mk
+- item: vorsichtig-m-m
+  from: B2-11-m
+  for:
+  - mk
+- item: die-haende-m
+  from: B2-11-m
+  for:
+  - mk
+- item: der-meister-m
+  from: B2-11-m
+  for:
+  - mk
+- item: er-hat-talent-m
+  from: B2-11-m
+  for:
+  - mk
+- item: abholen-m
+  from: B2-13-m
+  for:
+  - mk
+- item: die-abholberechtigung-m
+  from: B2-13-m
+  for:
+  - mk
+- item: aufpassen-auf-m
+  from: B2-13-m
+  for:
+  - mk
+- item: der-mittagsschlaf-m
+  from: B2-13-m
+  for:
+  - mk
+- item: das-abendessen-m
+  from: B2-13-m
+  for:
+  - mk
+- item: koennten-sie-bitte-m
+  from: B2-13-m
+  for:
+  - mk
+- item: ich-moechte-sie-bitten-m
+  from: B2-13-m
+  for:
+  - mk
+- item: muede-m
+  from: B2-13-m
+  for:
+  - mk
+- item: das-bilderbuch-m
+  from: B2-13-m
+  for:
+  - mk
+- item: bis-sechs-m
+  from: B2-13-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: Lena goes back to work after a year at home with the baby. Over coffee she tells you how she organises it. Listen to the conversation; you don't need to understand it yet.
+    ar: لينا تعود إلى العمل بعد سنة في البيت مع الرضيع. على القهوة تحكي لكِ كيف تنظّم الأمر. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.
+    mk: Лена се враќа на работа по една година дома со бебето. На кафе ви раскажува како го организира тоа. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: lena
+    text: Nach einem Jahr Elternzeit gehe ich zurück — in Teilzeit, dreißig Stunden.
+    meaning:
+      en: After a year of parental leave I'm going back — part time, thirty hours.
+      ar: بعد سنة من إجازة الوالدين أعود — بدوام جزئي، ثلاثين ساعة.
+      mk: По една година родителско отсуство се враќам — скратено, триесет часа.
+  - speaker: protagonist
+    text: Und wer passt auf die Kleine auf?
+    meaning:
+      en: And who looks after the little one?
+      ar: ومن يعتني بالصغيرة؟
+      mk: А кој ја чува малата?
+  - speaker: lena
+    text: Wir haben endlich einen Kitaplatz! Wir standen ein Jahr auf der Warteliste.
+    meaning:
+      en: We finally have a Kita place! We were on the waiting list for a year.
+      ar: أخيرًا حصلنا على مكان في الروضة! بقينا سنة على قائمة الانتظار.
+      mk: Конечно имаме место во градинка! Една година бевме на листата на чекање.
+  - speaker: protagonist
+    text: Und dein Mann?
+    meaning:
+      en: And your husband?
+      ar: وزوجكِ؟
+      mk: А мажот ти?
+  - speaker: lena
+    text: Er hat auch zwei Monate Elternzeit genommen. Jetzt wechseln wir uns ab, statt alles mir zu überlassen.
+    meaning:
+      en: He took two months of parental leave too. Now we take turns, instead of leaving everything to me.
+      ar: أخذ هو أيضًا شهرين من إجازة الوالدين. الآن نتناوب، بدلًا من أن يُترك كل شيء لي.
+      mk: И тој зеде два месеци родителско отсуство. Сега се сменуваме, наместо сè да ми го остави мене.
+  - speaker: protagonist
+    text: Bei uns hilft die Oma. Hier sind die Großeltern oft weit weg.
+    meaning:
+      en: With us, grandma helps. Here the grandparents are often far away.
+      ar: عندنا تساعد الجدة. هنا الأجداد غالبًا بعيدون.
+      mk: Кај нас помага бабата. Тука бабите и дедовците често се далеку.
+  - speaker: lena
+    text: Genau. Und die Eingewöhnung in der Kita dauert Wochen. Ohne Geduld zu haben, geht es nicht.
+    meaning:
+      en: Exactly. And settling in at the Kita takes weeks. It doesn't work without having patience.
+      ar: بالضبط. وفترة التأقلم في الروضة تستغرق أسابيع. لا يمكن ذلك دون أن يكون لديكِ صبر.
+      mk: Точно. А навикнувањето во градинката трае со недели. Без да имаш трпение, не оди.
+  - speaker: protagonist
+    text: Hast du ein schlechtes Gewissen?
+    meaning:
+      en: Do you feel guilty?
+      ar: هل تشعرين بتأنيب الضمير؟
+      mk: Те гризе ли совеста?
+  - speaker: lena
+    text: Manchmal. Aber sie spielt mit anderen Kindern, statt allein zu Hause zu sein.
+    meaning:
+      en: Sometimes. But she plays with other children instead of being alone at home.
+      ar: أحيانًا. لكنها تلعب مع أطفال آخرين بدلًا من أن تكون وحدها في البيت.
+      mk: Понекогаш. Но таа си игра со други деца наместо да биде сама дома.
+- type: prompt
+  ask:
+    en: 'She says: after a year of parental leave.'
+    ar: 'تقول: بعد سنة من إجازة الوالدين.'
+    mk: 'Таа вели: по една година родителско отсуство.'
+  answer:
+    speaker: protagonist
+    text: Nach einem Jahr Elternzeit.
+  items:
+  - die-elternzeit
+- type: prompt
+  ask:
+    en: 'Say: part time.'
+    ar: 'قولي: دوام جزئي.'
+    mk: 'Кажете: скратено работно време.'
+  answer:
+    speaker: protagonist
+    text: In Teilzeit.
+  items:
+  - die-teilzeit
+- type: prompt
+  ask:
+    en: 'Say: a Kita place.'
+    ar: 'قولي: مكان في الروضة.'
+    mk: 'Кажете: место во градинка.'
+  answer:
+    speaker: protagonist
+    text: Ein Kitaplatz.
+  items:
+  - der-kitaplatz
+- type: prompt
+  ask:
+    en: 'Say: on the waiting list.'
+    ar: 'قولي: على قائمة الانتظار.'
+    mk: 'Кажете: на листата на чекање.'
+  answer:
+    speaker: protagonist
+    text: Auf der Warteliste.
+  items:
+  - die-warteliste
+- type: narrator
+  text:
+    en: 'Infinitive groups with «statt … zu» (instead of), «ohne … zu» (without) and «um … zu» (in order to): «statt allein zu Hause zu sein», «ohne Geduld zu haben». The verb with «zu» stands at the end.'
+    ar: 'مجموعات المصدر مع «statt … zu» (بدلًا من)، و«ohne … zu» (دون أن)، و«um … zu» (لكي): «statt allein zu Hause zu sein»، «ohne Geduld zu haben». والفعل مع «zu» في الآخر.'
+    mk: 'Инфинитивни групи со «statt … zu» (наместо), «ohne … zu» (без да) и «um … zu» (за да): «statt allein zu Hause zu sein», «ohne Geduld zu haben». Глаголот со «zu» стои на крајот.'
+- type: prompt
+  ask:
+    en: 'Say: we take turns.'
+    ar: 'قولي: نتناوب.'
+    mk: 'Кажете: се сменуваме.'
+  answer:
+    speaker: protagonist
+    text: Wir wechseln uns ab.
+  items:
+  - sich-abwechseln
+- type: prompt
+  ask:
+    en: 'Say: instead of being alone at home.'
+    ar: 'قولي: بدلًا من أن تكون وحدها في البيت.'
+    mk: 'Кажете: наместо да биде сама дома.'
+  answer:
+    speaker: protagonist
+    text: Statt allein zu Hause zu sein.
+  items:
+  - statt-zu
+- type: prompt
+  ask:
+    en: 'Say: without having patience.'
+    ar: 'قولي: دون أن يكون لديكِ صبر.'
+    mk: 'Кажете: без да имаш трпение.'
+  answer:
+    speaker: protagonist
+    text: Ohne Geduld zu haben.
+  items:
+  - ohne-zu
+- type: prompt
+  ask:
+    en: 'Say: the settling-in period.'
+    ar: 'قولي: فترة التأقلم.'
+    mk: 'Кажете: периодот на навикнување.'
+  answer:
+    speaker: protagonist
+    text: Die Eingewöhnung.
+  items:
+  - die-eingewoehnung
+- type: prompt
+  ask:
+    en: 'Ask: do you feel guilty?'
+    ar: 'اسألي: هل تشعرين بتأنيب الضمير؟'
+    mk: 'Прашајте: те гризе ли совеста?'
+  answer:
+    speaker: protagonist
+    text: Hast du ein schlechtes Gewissen?
+  items:
+  - das-schlechte-gewissen
+- type: prompt
+  ask:
+    en: 'Say: parental allowance.'
+    ar: 'قولي: علاوة الوالدين.'
+    mk: 'Кажете: родителски додаток.'
+  answer:
+    speaker: protagonist
+    text: Das Elterngeld.
+  items:
+  - das-elterngeld
+- type: narrator
+  text:
+    en: Parents may take up to three years of Elternzeit with a guaranteed return to their job; Elterngeld pays part of the lost income for about a year, longer if both parents take months. From age one
+      every child has a legal right to a Kita place — in practice there are waiting lists, so register early. The Eingewöhnung lasts weeks with a parent present.
+    ar: يحق للوالدين أخذ إجازة والدين حتى ثلاث سنوات مع ضمان العودة إلى العمل؛ وعلاوة الوالدين تعوّض جزءًا من الدخل المفقود لنحو سنة، ومدة أطول إذا أخذ الوالدان كلاهما أشهرًا. ومن عمر سنة لكل طفل حق قانوني
+      في مكان بالروضة — لكن عمليًا هناك قوائم انتظار، فسجّلي مبكرًا. فترة التأقلم تستمر أسابيع بحضور أحد الوالدين.
+    mk: Родителите можат да земат до три години Elternzeit со загарантирано враќање на работа; Elterngeld плаќа дел од изгубениот приход околу една година, подолго ако двајцата родители земат месеци. Од
+      една година секое дете има законско право на место во градинка — во пракса има листи на чекање, па пријавете се рано. Навикнувањето трае со недели со присуство на родител.
+- type: prompt
+  ask:
+    en: 'Once more: say “parental leave”.'
+    ar: 'مرة أخرى: قولي “إجازة الوالدين”.'
+    mk: 'Уште еднаш: кажете „родителското отсуство“.'
+  answer:
+    speaker: protagonist
+    text: die Elternzeit
+  items:
+  - die-elternzeit
+- type: prompt
+  ask:
+    en: 'Once more: say “parental allowance”.'
+    ar: 'مرة أخرى: قولي “علاوة الوالدين”.'
+    mk: 'Уште еднаш: кажете „родителскиот додаток“.'
+  answer:
+    speaker: protagonist
+    text: das Elterngeld
+  items:
+  - das-elterngeld
+- type: prompt
+  ask:
+    en: 'Once more: say “a Kita place”.'
+    ar: 'مرة أخرى: قولي “مكان في الروضة”.'
+    mk: 'Уште еднаш: кажете „место во градинка“.'
+  answer:
+    speaker: protagonist
+    text: der Kitaplatz
+  items:
+  - der-kitaplatz
+- type: prompt
+  ask:
+    en: 'Once more: say “part time”.'
+    ar: 'مرة أخرى: قولي “الدوام الجزئي”.'
+    mk: 'Уште еднаш: кажете „скратено работно време“.'
+  answer:
+    speaker: protagonist
+    text: die Teilzeit
+  items:
+  - die-teilzeit
+- type: prompt
+  ask:
+    en: 'Once more: say “the waiting list”.'
+    ar: 'مرة أخرى: قولي “قائمة الانتظار”.'
+    mk: 'Уште еднаш: кажете „листата на чекање“.'
+  answer:
+    speaker: protagonist
+    text: die Warteliste
+  items:
+  - die-warteliste
+- type: prompt
+  ask:
+    en: 'Once more: say “instead of …ing”.'
+    ar: 'مرة أخرى: قولي “بدلًا من أن …”.'
+    mk: 'Уште еднаш: кажете „наместо да …“.'
+  answer:
+    speaker: protagonist
+    text: statt … zu
+  items:
+  - statt-zu
+- type: prompt
+  ask:
+    en: 'Once more: say “without …ing”.'
+    ar: 'مرة أخرى: قولي “دون أن …”.'
+    mk: 'Уште еднаш: кажете „без да …“.'
+  answer:
+    speaker: protagonist
+    text: ohne … zu
+  items:
+  - ohne-zu
+- type: prompt
+  ask:
+    en: 'Once more: say “take turns”.'
+    ar: 'مرة أخرى: قولي “يتناوبان”.'
+    mk: 'Уште еднаш: кажете „се сменуваат“.'
+  answer:
+    speaker: protagonist
+    text: sich abwechseln
+  items:
+  - sich-abwechseln
+- type: prompt
+  ask:
+    en: 'Once more: say “the settling-in period”.'
+    ar: 'مرة أخرى: قولي “فترة التأقلم”.'
+    mk: 'Уште еднаш: кажете „периодот на навикнување“.'
+  answer:
+    speaker: protagonist
+    text: die Eingewöhnung
+  items:
+  - die-eingewoehnung
+- type: prompt
+  ask:
+    en: 'Once more: say “a guilty conscience”.'
+    ar: 'مرة أخرى: قولي “تأنيب الضمير”.'
+    mk: 'Уште еднаш: кажете „грижата на совеста“.'
+  answer:
+    speaker: protagonist
+    text: das schlechte Gewissen
+  items:
+  - das-schlechte-gewissen
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the agenda — and “the minutes — and “take the minutes — and “the agenda item — and “must be decided — and “can be postponed — and “meet the deadline — and “Who''ll take that on? — and “finally,
+      at the end — and “any other business — and “East and West Germans (colloquial) — and “Nonsense! — and “the solidarity surcharge — and “just the same”.'
+    ar: 'قولي: “جدول الأعمال — و“المحضر — و“يكتب المحضر — و“بند جدول الأعمال — و“يجب أن يُقرَّر — و“يمكن أن يُؤجَّل — و“يلتزم بالمهلة — و“من يتولّى ذلك؟ — و“في الختام — و“متفرقات — و“شرقي وغربي (عاميًا)
+      — و“هراء! — و“ضريبة التضامن — و“بالقدر نفسه”.'
+    mk: 'Кажете: „дневниот ред“ — и „записникот“ — и „води записник“ — и „точката од дневниот ред“ — и „мора да се одлучи“ — и „може да се одложи“ — и „го почитува рокот“ — и „Кој го презема тоа?“ — и „на
+      крајот“ — и „разно“ — и „Оси и Веси (разговорно)“ — и „Глупости!“ — и „солидарниот додаток“ — и „исто така“.'
+  answer:
+    speaker: protagonist
+    text: die Tagesordnung … das Protokoll … Protokoll führen … der Tagesordnungspunkt … muss entschieden werden … kann verschoben werden … die Frist einhalten … Wer übernimmt das? … zum Schluss … Verschiedenes
+      … Ossi und Wessi … Unsinn! … der Solidaritätszuschlag … genauso
+  items:
+  - die-tagesordnung
+  - das-protokoll
+  - protokoll-fuehren
+  - der-punkt
+  - muss-entschieden-werden
+  - kann-verschoben-werden
+  - die-frist-einhalten
+  - wer-uebernimmt
+  - zum-schluss
+  - verschiedenes
+  - ossi-wessi
+  - unsinn
+  - der-soli
+  - genauso
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “was opened — and “was introduced — and “the GDR (East Germany) — and “the salaries — and “lower — and “barbecue — and “both sides — and “the Christmas party — and “do Secret Santa — and “the
+      present — and “the speech — and “of the course — and “the end of the year — and “the participants”.'
+    ar: 'قولي: “فُتح — و“فُرض، أُدخل — و“ألمانيا الشرقية — و“الرواتب — و“أقل — و“يشوي — و“الطرفان — و“حفلة عيد الميلاد — و“تبادل الهدايا السري — و“الهدية — و“الكلمة، الخطاب — و“للدورة — و“نهاية العام —
+      و“المشاركون”.'
+    mk: 'Кажете: „беше отворен“ — и „беше воведен“ — и „ГДР“ — и „платите“ — и „пониски“ — и „пече на скара“ — и „двете страни“ — и „божиќната забава“ — и „таен Дедо Мраз“ — и „подарокот“ — и „говорот“
+      — и „на курсот“ — и „крајот на годината“ — и „учесниците“.'
+  answer:
+    speaker: protagonist
+    text: wurde geöffnet … wurde eingeführt … die DDR … die Gehälter … niedriger … grillen … beide Seiten … die Weihnachtsfeier … wichteln … das Geschenk … die Rede … des Kurses … das Ende des Jahres …
+      die Teilnehmer
+  items:
+  - wurde-geoeffnet
+  - wurde-eingefuehrt
+  - die-ddr
+  - die-gehaelter
+  - niedriger
+  - grillen
+  - beide-seiten
+  - die-weihnachtsfeier
+  - wichteln
+  - das-geschenk
+  - die-rede
+  - des-kurses
+  - das-ende-des-jahres
+  - der-teilnehmer
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “because of — and “at most — and “give away, reveal — and “the festival — and “celebrate — and “Christmas — and “Easter — and “where we come from — and “at a different time — and “take a day
+      off — and “visit the family — and “presents — and “because (verb to the end) — and “Happy holidays!”.'
+    ar: 'قولي: “بسبب — و“على الأكثر — و“يكشف — و“العيد، الاحتفال — و“يحتفل — و“عيد الميلاد — و“عيد الفصح — و“عندنا — و“في وقت آخر — و“يأخذ إجازة — و“يزور العائلة — و“هدايا — و“لأنّ (الفعل في الآخر) — و“أعيادًا
+      سعيدة!”.'
+    mk: 'Кажете: „поради“ — и „најмногу“ — и „открива“ — и „празникот“ — и „слави“ — и „Божиќ“ — и „Велигден“ — и „кај нас“ — и „во друго време“ — и „зема слободен ден“ — и „го посетува семејството“ — и
+      „подароци“ — и „затоа што (глаголот на крај)“ — и „Среќни празници!“.'
+  answer:
+    speaker: protagonist
+    text: wegen … höchstens … verraten … das Fest … feiern … Weihnachten … Ostern … bei uns … zu einer anderen Zeit … frei nehmen … die Familie besuchen … Geschenke … weil … Frohe Feiertage!
+  items:
+  - wegen
+  - hoechstens
+  - verraten
+  - das-fest
+  - feiern
+  - weihnachten
+  - ostern
+  - bei-uns
+  - zu-einer-anderen-zeit
+  - frei-nehmen
+  - die-familie-besuchen
+  - geschenke
+  - weil
+  - frohe-feiertage
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “give notice, resign — and “the notice period — and “the job reference — and “at the end of the month — and “I''d like to ask you to … — and “Would you be so kind as to … — and “remaining
+      holiday”.'
+    ar: 'قولي: “يستقيل، يُنهي العقد — و“مهلة الإنهاء — و“شهادة العمل — و“في نهاية الشهر — و“أودّ أن أطلب منكِ … — و“هل تتكرّمين بـ… — و“الإجازة المتبقية”.'
+  answer:
+    speaker: protagonist
+    text: kündigen … die Kündigungsfrist … das Arbeitszeugnis … zum Monatsende … Ich möchte Sie bitten, … … Wären Sie so freundlich, … … der Resturlaub
+  items:
+  - kuendigen-ea
+  - die-kuendigungsfrist-ea
+  - das-arbeitszeugnis-ea
+  - zum-monatsende-ea
+  - ich-moechte-sie-bitten-ea
+  - waeren-sie-so-freundlich-ea
+  - der-resturlaub-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “a pity that … — and “the handover — and “signed — and “the job interview — and “the gap in the CV — and “the motivation — and “he asked why …”.'
+    ar: 'قولي: “مؤسف أنّ … — و“التسليم — و“موقَّع — و“مقابلة العمل — و“الفجوة في السيرة الذاتية — و“الدافع — و“سألني لماذا …”.'
+  answer:
+    speaker: protagonist
+    text: schade, dass … … die Übergabe … unterschrieben … das Vorstellungsgespräch … die Lücke im Lebenslauf … die Motivation … er fragte, warum …
+  items:
+  - schade-dass-ea
+  - die-uebergabe-ea
+  - unterschrieben-ea
+  - das-vorstellungsgespraech-ea
+  - die-luecke-ea
+  - die-motivation-ea
+  - er-fragte-warum-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “he wanted to know whether … — and “salary expectation — and “strengths and weaknesses — and “I did my research — and “Do you have any questions? — and “the probation period”.'
+    ar: 'قولي: “أراد أن يعرف إن كان … — و“الراتب المتوقَّع — و“نقاط القوة والضعف — و“اطّلعتُ على المعلومات — و“هل لديك أسئلة؟ — و“فترة التجربة”.'
+  answer:
+    speaker: protagonist
+    text: er wollte wissen, ob … … die Gehaltsvorstellung … Stärken und Schwächen … ich habe mich informiert … Haben Sie noch Fragen? … die Probezeit
+  items:
+  - er-wollte-wissen-ea
+  - die-gehaltsvorstellung-ea
+  - die-staerken-schwaechen-ea
+  - ich-habe-mich-informiert-ea
+  - haben-sie-fragen-ea
+  - die-probezeit-ea
+  for:
+  - en
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „зема (некого од некаде)“ — и „овластувањето за земање“ — и „чува, внимава на“ — и „попладневниот сон“ — и „вечерата“ — и „Дали би можеле, ве молам …?“ — и „Би сакал да ве замолам …“.'
+  answer:
+    speaker: protagonist
+    text: abholen … die Abholberechtigung … aufpassen auf … der Mittagsschlaf … das Abendessen … Könnten Sie bitte …? … Ich möchte Sie bitten, …
+  items:
+  - abholen-m
+  - die-abholberechtigung-m
+  - aufpassen-auf-m
+  - der-mittagsschlaf-m
+  - das-abendessen-m
+  - koennten-sie-bitte-m
+  - ich-moechte-sie-bitten-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „уморен“ — и „сликовницата“ — и „до шест часот“ — и „пробниот ден“ — и „работилницата“ — и „дрвото“ — и „праша зошто …“.'
+  answer:
+    speaker: protagonist
+    text: müde … das Bilderbuch … bis sechs Uhr … der Probetag … die Werkstatt … das Holz … er fragte, warum …
+  items:
+  - muede-m
+  - das-bilderbuch-m
+  - bis-sechs-m
+  - der-probetag-m
+  - die-werkstatt-m
+  - das-holz-m
+  - er-fragte-warum-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „сакаше да знае дали …“ — и „пилата“ — и „Внимание!“ — и „со рацете“ — и „мајсторот“ — и „има талент“.'
+  answer:
+    speaker: protagonist
+    text: er wollte wissen, ob … … die Säge … Vorsicht! … mit den Händen … der Meister … er hat Talent
+  items:
+  - er-wollte-wissen-m
+  - die-saege-m
+  - vorsichtig-m-m
+  - die-haende-m
+  - der-meister-m
+  - er-hat-talent-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck
