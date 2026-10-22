@@ -1,0 +1,596 @@
+# UNIT de B1-15 — written by AI (Claude) for Casus; expanded from src/B1-15.yml by tools/expand_unit.py. Edit the source.
+
+id: B1-15
+level: B1
+number: 15
+protagonist: f
+title:
+  en: Happiness
+  ar: السعادة
+  mk: Среќата
+situation:
+  en: A survey says Germans are fairly happy but complain a lot. You discuss it with Lena.
+  ar: استطلاع يقول إن الألمان سعداء إلى حدّ ما لكنهم يتذمرون كثيرًا. تناقشين ذلك مع لينا.
+  mk: Анкета вели дека Германците се прилично среќни, но многу се жалат. Разговарате со Лена.
+learn_lessons:
+- b1-relative-cases
+culture: Complaining as a hobby
+new_items:
+- id: das-glueck
+  text: das Glück
+  meaning:
+    en: happiness, luck
+    ar: السعادة، الحظ
+    mk: среќата
+- id: zufrieden
+  text: zufrieden
+  meaning:
+    en: content, satisfied
+    ar: راضٍ
+    mk: задоволен
+- id: meckern
+  text: meckern
+  meaning:
+    en: grumble, complain
+    ar: يتذمّر
+    mk: мрмори, се жали
+  rare: true
+- id: der-mensch-dem
+  text: der Mensch, dem …
+  meaning:
+    en: the person to whom …
+    ar: الإنسان الذي … له
+    mk: човекот на кого …
+- id: die-freunde-mit-denen
+  text: die Freunde, mit denen …
+  meaning:
+    en: the friends with whom …
+    ar: الأصدقاء الذين … معهم
+    mk: пријателите со кои …
+- id: das-wichtigste
+  text: das Wichtigste
+  meaning:
+    en: the most important thing
+    ar: أهم شيء
+    mk: најважното
+- id: gesundheit
+  text: die Gesundheit
+  meaning:
+    en: health
+    ar: الصحة
+    mk: здравјето
+- id: die-sicherheit
+  text: die Sicherheit
+  meaning:
+    en: security, safety
+    ar: الأمان
+    mk: сигурноста
+- id: eigentlich
+  text: eigentlich
+  meaning:
+    en: actually
+    ar: في الواقع
+    mk: всушност
+- id: das-wetter-meckern
+  text: über das Wetter
+  meaning:
+    en: about the weather
+    ar: عن الطقس
+    mk: за времето
+reviews:
+- item: der-hund
+  from: A1-12
+- item: lieb
+  from: A1-12
+- item: duerfen-mit
+  from: A1-12
+- item: die-leine
+  from: A1-12
+- item: wie-heisst-er
+  from: A1-12
+- item: tiere
+  from: A1-12
+- item: zwei-katzen
+  from: A1-12
+- item: voegel
+  from: A1-12
+- item: tauben
+  from: A1-12
+- item: fuettern
+  from: A1-12
+- item: verboten
+  from: A1-12
+- item: zurueckrufen
+  from: A1-12
+- item: der-weihnachtsmarkt
+  from: A2-14
+- item: der-gluehwein
+  from: A2-14
+- item: ohne-alkohol
+  from: A2-14
+- item: der-kinderpunsch
+  from: A2-14
+- item: die-bratwurst
+  from: A2-14
+- item: wenn
+  from: A2-14
+- item: die-tasse
+  from: A2-14
+- item: das-pfand-tasse
+  from: A2-14
+- item: voll
+  from: A2-14
+- item: die-lichter
+  from: A2-14
+- item: der-witz
+  from: A2-30
+- item: die-pointe
+  from: A2-30
+- item: lustig
+  from: A2-30
+- item: ich-verstehe-den-witz-nicht
+  from: A2-30
+- item: das-wortspiel
+  from: A2-30
+- item: trocken
+  from: A2-30
+- item: lachen
+  from: A2-30
+- item: der-humor
+  from: A2-30
+- item: das-sommerfest
+  from: A2-30
+- item: prost
+  from: A2-30
+- item: moechtest-du
+  from: B1-08
+- item: nein-danke
+  from: B1-08
+- item: heisst-nein
+  from: B1-08
+- item: ich-wusste-nicht
+  from: B1-08
+- item: hoeflich
+  from: B1-08
+- item: ehrlich
+  from: B1-08
+- item: ich-hatte-durst
+  from: B1-08
+- item: beim-zweiten-mal
+  from: B1-08
+- item: sag-einfach
+  from: B1-08
+- item: gerne
+  from: B1-08
+- item: die-umfrage
+  from: B1-12
+- item: der-durchschnitt
+  from: B1-12
+- item: die-mehrheit
+  from: B1-12
+- item: befragt
+  from: B1-12
+- item: die-grafik
+  from: B1-12
+- item: koennten-sie
+  from: B1-12
+- item: haetten-sie
+  from: B1-12
+- item: waere-es
+  from: B1-12
+- item: reprasentativ
+  from: B1-12
+- item: die-quelle-info
+  from: B1-12
+- item: wollen-wir-uns-duzen
+  from: B1-14
+- item: duzen
+  from: B1-14
+- item: siezen
+  from: B1-14
+- item: ein-jahr-schon
+  from: B1-14
+- item: ich-heisse
+  from: B1-14
+- item: gern-sehr
+  from: B1-14
+- item: anstossen
+  from: B1-14
+- item: die-ehre
+  from: B1-14
+- item: ungewohnt
+  from: B1-14
+- item: ab-jetzt
+  from: B1-14
+steps:
+- type: narrator
+  text:
+    en: A survey says Germans are fairly happy but complain a lot. You discuss it with Lena. Listen to the conversation; you don't need to understand it yet.
+    ar: استطلاع يقول إن الألمان سعداء إلى حدّ ما لكنهم يتذمرون كثيرًا. تناقشين ذلك مع لينا. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.
+    mk: Анкета вели дека Германците се прилично среќни, но многу се жалат. Разговарате со Лена. Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: lena
+    text: Wir Deutschen sind eigentlich zufrieden. Aber wir meckern gern!
+    meaning:
+      en: We Germans are actually content. But we love to grumble!
+      ar: نحن الألمان راضون في الواقع. لكننا نحب التذمّر!
+      mk: Ние Германците сме всушност задоволни. Но сакаме да мрмориме!
+  - speaker: protagonist
+    text: Worüber?
+    meaning:
+      en: About what?
+      ar: عن ماذا؟
+      mk: За што?
+  - speaker: lena
+    text: Über das Wetter, die Bahn, die Politik...
+    meaning:
+      en: About the weather, the trains, politics...
+      ar: عن الطقس، والقطارات، والسياسة...
+      mk: За времето, возовите, политиката...
+  - speaker: protagonist
+    text: Was ist für dich das Wichtigste zum Glück?
+    meaning:
+      en: What's the most important thing for happiness, for you?
+      ar: ما أهم شيء للسعادة بالنسبة لكِ؟
+      mk: Што е за тебе најважно за среќата?
+  - speaker: lena
+    text: Die Freunde, mit denen ich lachen kann. Und Gesundheit.
+    meaning:
+      en: Friends I can laugh with. And health.
+      ar: الأصدقاء الذين أستطيع أن أضحك معهم. والصحة.
+      mk: Пријателите со кои можам да се смеам. И здравјето.
+  - speaker: protagonist
+    text: Für mich auch die Sicherheit. Ein Mensch, dem nichts fehlt, ist glücklich.
+    meaning:
+      en: For me safety too. A person who lacks nothing is happy.
+      ar: بالنسبة لي الأمان أيضًا. الإنسان الذي لا ينقصه شيء سعيد.
+      mk: За мене и сигурноста. Човекот на кој ништо не му недостига е среќен.
+  - speaker: lena
+    text: Schön gesagt. Und trotzdem meckern wir!
+    meaning:
+      en: Nicely put. And still we grumble!
+      ar: قلتِها جميلة. ومع ذلك نتذمّر!
+      mk: Убаво кажано. А сепак мрмориме!
+  - speaker: protagonist
+    text: Das ist dann euer Hobby!
+    meaning:
+      en: Then that's your hobby!
+      ar: إذن هذه هوايتكم!
+      mk: Тогаш тоа е вашето хоби!
+- type: prompt
+  ask:
+    en: 'Say: we''re actually content.'
+    ar: 'قولي: نحن راضون في الواقع.'
+    mk: 'Кажете: всушност сме задоволни.'
+  answer:
+    speaker: protagonist
+    text: Wir sind eigentlich zufrieden.
+  items:
+  - eigentlich
+  - zufrieden
+- type: prompt
+  ask:
+    en: 'Say: we love to grumble!'
+    ar: 'قولي: نحب التذمّر!'
+    mk: 'Кажете: сакаме да мрмориме!'
+  answer:
+    speaker: protagonist
+    text: Wir meckern gern!
+  items:
+  - meckern
+- type: prompt
+  ask:
+    en: 'Say: about the weather.'
+    ar: 'قولي: عن الطقس.'
+    mk: 'Кажете: за времето.'
+  answer:
+    speaker: protagonist
+    text: Über das Wetter.
+  items:
+  - das-wetter-meckern
+- type: prompt
+  ask:
+    en: 'Ask: what''s the most important thing for happiness?'
+    ar: 'اسألي: ما أهم شيء للسعادة؟'
+    mk: 'Прашајте: што е најважно за среќата?'
+  answer:
+    speaker: protagonist
+    text: Was ist das Wichtigste zum Glück?
+  items:
+  - das-wichtigste
+  - das-glueck
+- type: narrator
+  text:
+    en: 'Relative pronouns change with their role: «die Freunde, mit denen ich lache» (with whom), «ein Mensch, dem nichts fehlt» (to whom nothing is lacking).'
+    ar: 'ضمائر الصلة تتغيّر حسب دورها: «die Freunde, mit denen ich lache» (الذين أضحك معهم)، «ein Mensch, dem nichts fehlt» (الذي لا ينقصه شيء).'
+    mk: 'Релативните заменки се менуваат според улогата: «die Freunde, mit denen ich lache» (со кои), «ein Mensch, dem nichts fehlt» (на кого ништо не му недостига).'
+- type: prompt
+  ask:
+    en: 'Say: friends I can laugh with.'
+    ar: 'قولي: الأصدقاء الذين أستطيع أن أضحك معهم.'
+    mk: 'Кажете: пријателите со кои можам да се смеам.'
+  answer:
+    speaker: protagonist
+    text: Die Freunde, mit denen ich lachen kann.
+  items:
+  - die-freunde-mit-denen
+- type: prompt
+  ask:
+    en: 'Say: and health.'
+    ar: 'قولي: والصحة.'
+    mk: 'Кажете: и здравјето.'
+  answer:
+    speaker: protagonist
+    text: Und Gesundheit.
+  items:
+  - gesundheit
+- type: prompt
+  ask:
+    en: 'Say: for me safety too.'
+    ar: 'قولي: بالنسبة لي الأمان أيضًا.'
+    mk: 'Кажете: за мене и сигурноста.'
+  answer:
+    speaker: protagonist
+    text: Für mich auch die Sicherheit.
+  items:
+  - die-sicherheit
+- type: prompt
+  ask:
+    en: 'Say: a person who lacks nothing is happy.'
+    ar: 'قولي: الإنسان الذي لا ينقصه شيء سعيد.'
+    mk: 'Кажете: човекот на кој ништо не му недостига е среќен.'
+  answer:
+    speaker: protagonist
+    text: Ein Mensch, dem nichts fehlt, ist glücklich.
+  items:
+  - der-mensch-dem
+- type: narrator
+  text:
+    en: Grumbling ('meckern') about weather, trains and bureaucracy is a social ritual, not real unhappiness — join in lightly and you belong.
+    ar: التذمّر («meckern») من الطقس والقطارات والبيروقراطية طقس اجتماعي، لا تعاسة حقيقية — شاركي فيه بخفة وستصبحين واحدة منهم.
+    mk: Мрморењето („meckern“) за времето, возовите и бирократијата е општествен ритуал, не вистинска несреќа — придружете се лесно и ќе бидете дел од нив.
+- type: prompt
+  ask:
+    en: 'Once more: say “happiness, luck”.'
+    ar: 'مرة أخرى: قولي “السعادة، الحظ”.'
+    mk: 'Уште еднаш: кажете „среќата“.'
+  answer:
+    speaker: protagonist
+    text: das Glück
+  items:
+  - das-glueck
+- type: prompt
+  ask:
+    en: 'Once more: say “content, satisfied”.'
+    ar: 'مرة أخرى: قولي “راضٍ”.'
+    mk: 'Уште еднаш: кажете „задоволен“.'
+  answer:
+    speaker: protagonist
+    text: zufrieden
+  items:
+  - zufrieden
+- type: prompt
+  ask:
+    en: 'Once more: say “grumble, complain”.'
+    ar: 'مرة أخرى: قولي “يتذمّر”.'
+    mk: 'Уште еднаш: кажете „мрмори, се жали“.'
+  answer:
+    speaker: protagonist
+    text: meckern
+  items:
+  - meckern
+- type: prompt
+  ask:
+    en: 'Once more: say “the person to whom …”.'
+    ar: 'مرة أخرى: قولي “الإنسان الذي … له”.'
+    mk: 'Уште еднаш: кажете „човекот на кого …“.'
+  answer:
+    speaker: protagonist
+    text: der Mensch, dem …
+  items:
+  - der-mensch-dem
+- type: prompt
+  ask:
+    en: 'Once more: say “the friends with whom …”.'
+    ar: 'مرة أخرى: قولي “الأصدقاء الذين … معهم”.'
+    mk: 'Уште еднаш: кажете „пријателите со кои …“.'
+  answer:
+    speaker: protagonist
+    text: die Freunde, mit denen …
+  items:
+  - die-freunde-mit-denen
+- type: prompt
+  ask:
+    en: 'Once more: say “the most important thing”.'
+    ar: 'مرة أخرى: قولي “أهم شيء”.'
+    mk: 'Уште еднаш: кажете „најважното“.'
+  answer:
+    speaker: protagonist
+    text: das Wichtigste
+  items:
+  - das-wichtigste
+- type: prompt
+  ask:
+    en: 'Once more: say “health”.'
+    ar: 'مرة أخرى: قولي “الصحة”.'
+    mk: 'Уште еднаш: кажете „здравјето“.'
+  answer:
+    speaker: protagonist
+    text: die Gesundheit
+  items:
+  - gesundheit
+- type: prompt
+  ask:
+    en: 'Once more: say “security, safety”.'
+    ar: 'مرة أخرى: قولي “الأمان”.'
+    mk: 'Уште еднаш: кажете „сигурноста“.'
+  answer:
+    speaker: protagonist
+    text: die Sicherheit
+  items:
+  - die-sicherheit
+- type: prompt
+  ask:
+    en: 'Once more: say “actually”.'
+    ar: 'مرة أخرى: قولي “في الواقع”.'
+    mk: 'Уште еднаш: кажете „всушност“.'
+  answer:
+    speaker: protagonist
+    text: eigentlich
+  items:
+  - eigentlich
+- type: prompt
+  ask:
+    en: 'Once more: say “about the weather”.'
+    ar: 'مرة أخرى: قولي “عن الطقس”.'
+    mk: 'Уште еднаш: кажете „за времето“.'
+  answer:
+    speaker: protagonist
+    text: über das Wetter
+  items:
+  - das-wetter-meckern
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Shall we say du to each other? — and “say du — and “say Sie — and “already a year — and “My name is … — and “with great pleasure — and “clink glasses — and “the honour — and “unfamiliar,
+      strange — and “from now on — and “the poll, the survey”.'
+    ar: 'قولي: “هل نتخاطب بـ«du»؟ — و“يخاطب بـ«du» — و“يخاطب بـ«Sie» — و“عام كامل — و“اسمي … — و“بكل سرور — و“يقرع الكؤوس — و“الشرف — و“غير معتاد — و“من الآن — و“الاستطلاع”.'
+    mk: 'Кажете: „Ќе си велиме ли «du»?“ — и „персира со «du»“ — и „персира со «Sie»“ — и „веќе една година“ — и „Се викам …“ — и „со големо задоволство“ — и „наздравува“ — и „честа“ — и „невообичаено“
+      — и „од сега“ — и „анкетата“.'
+  answer:
+    speaker: protagonist
+    text: Wollen wir uns duzen? … duzen … siezen … schon ein Jahr … Ich heiße … … sehr gern … anstoßen … die Ehre … ungewohnt … ab jetzt … die Umfrage
+  items:
+  - wollen-wir-uns-duzen
+  - duzen
+  - siezen
+  - ein-jahr-schon
+  - ich-heisse
+  - gern-sehr
+  - anstossen
+  - die-ehre
+  - ungewohnt
+  - ab-jetzt
+  - die-umfrage
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the average — and “the majority — and “asked, surveyed — and “the chart — and “Could you …? (polite) — and “Would you have …? (polite) — and “Would it be possible …? — and “representative
+      — and “the source — and “Would you like …? (informal) — and “No, thanks”.'
+    ar: 'قولي: “المتوسط — و“الأغلبية — و“سُئلوا — و“الرسم البياني — و“هل يمكنكِ …؟ — و“هل لديكِ …؟ — و“هل يمكن …؟ — و“تمثيلي — و“المصدر — و“هل تريد …؟ — و“لا، شكرًا”.'
+    mk: 'Кажете: „просекот“ — и „мнозинството“ — и „анкетирани“ — и „графиконот“ — и „Дали би можеле …?“ — и „Дали би имале …?“ — и „Дали би било можно …?“ — и „репрезентативно“ — и „изворот“ — и „Сакаш
+      ли …?“ — и „Не, благодарам“.'
+  answer:
+    speaker: protagonist
+    text: der Durchschnitt … die Mehrheit … befragt … die Grafik … Könnten Sie …? … Hätten Sie …? … Wäre es möglich …? … repräsentativ … die Quelle … Möchtest du …? … Nein, danke
+  items:
+  - der-durchschnitt
+  - die-mehrheit
+  - befragt
+  - die-grafik
+  - koennten-sie
+  - haetten-sie
+  - waere-es
+  - reprasentativ
+  - die-quelle-info
+  - moechtest-du
+  - nein-danke
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “means no — and “I didn''t know whether … — and “polite — and “honest(ly) — and “I was thirsty — and “the second time — and “Just say … — and “gladly, yes please — and “the joke — and “the
+      punchline — and “funny”.'
+    ar: 'قولي: “تعني لا — و“لم أكن أعرف إن كان … — و“مؤدب — و“بصراحة — و“كنت عطشانًا — و“في المرة الثانية — و“قل ببساطة … — و“بكل سرور — و“النكتة — و“ذروة النكتة — و“مضحك”.'
+    mk: 'Кажете: „значи не“ — и „Не знаев дали …“ — и „учтив“ — и „искрено“ — и „бев жеден“ — и „вториот пат“ — и „Само кажи …“ — и „со задоволство“ — и „шегата“ — и „поентата“ — и „смешно“.'
+  answer:
+    speaker: protagonist
+    text: heißt nein … Ich wusste nicht, ob … … höflich … ehrlich … ich hatte Durst … beim zweiten Mal … Sag einfach … … gerne … der Witz … die Pointe … lustig
+  items:
+  - heisst-nein
+  - ich-wusste-nicht
+  - hoeflich
+  - ehrlich
+  - ich-hatte-durst
+  - beim-zweiten-mal
+  - sag-einfach
+  - gerne
+  - der-witz
+  - die-pointe
+  - lustig
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I don''t get the joke — and “the pun — and “dry, deadpan — and “laugh — and “humour — and “the summer party — and “Cheers! — and “the Christmas market — and “mulled wine — and “alcohol-free
+      — and “children''s punch (no alcohol)”.'
+    ar: 'قولي: “لم أفهم النكتة — و“التلاعب بالألفاظ — و“جاف (فكاهة جافة) — و“يضحك — و“الفكاهة — و“حفلة الصيف — و“في صحتك! — و“سوق عيد الميلاد — و“النبيذ الساخن — و“بلا كحول — و“بنش الأطفال (بلا كحول)”.'
+    mk: 'Кажете: „Не ја разбирам шегата“ — и „игра на зборови“ — и „суво“ — и „се смее“ — и „хуморот“ — и „летната забава“ — и „Наздравје!“ — и „божиќниот пазар“ — и „вареното вино“ — и „без алкохол“ —
+      и „детски пунч“.'
+  answer:
+    speaker: protagonist
+    text: Ich verstehe den Witz nicht … das Wortspiel … trocken … lachen … der Humor … das Sommerfest … Prost! … der Weihnachtsmarkt … der Glühwein … ohne Alkohol … der Kinderpunsch
+  items:
+  - ich-verstehe-den-witz-nicht
+  - das-wortspiel
+  - trocken
+  - lachen
+  - der-humor
+  - das-sommerfest
+  - prost
+  - der-weihnachtsmarkt
+  - der-gluehwein
+  - ohne-alkohol
+  - der-kinderpunsch
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the grilled sausage — and “if, when (verb to the end) — and “the mug — and “a deposit on the mug — and “full, crowded — and “the lights — and “the dog — and “sweet, good-natured — and “are
+      allowed to ride along — and “the lead, the leash — and “What''s his name?”.'
+    ar: 'قولي: “النقانق المشوية — و“إذا (الفعل في الآخر) — و“الكوب — و“تأمين على الكوب — و“مزدحم — و“الأضواء — و“الكلب — و“لطيف، وديع — و“يُسمح لها بالركوب — و“المقود — و“ما اسمه؟”.'
+    mk: 'Кажете: „колбасот на скара“ — и „ако, кога (глаголот на крај)“ — и „шолјата“ — и „кауција за шолјата“ — и „полно“ — и „светлата“ — и „кучето“ — и „мило, добро“ — и „смеат да се возат“ — и „поводникот“
+      — и „Како се вика?“.'
+  answer:
+    speaker: protagonist
+    text: die Bratwurst … wenn … die Tasse … Pfand für die Tasse … voll … die Lichter … der Hund … lieb … dürfen mitfahren … die Leine … Wie heißt er?
+  items:
+  - die-bratwurst
+  - wenn
+  - die-tasse
+  - das-pfand-tasse
+  - voll
+  - die-lichter
+  - der-hund
+  - lieb
+  - duerfen-mit
+  - die-leine
+  - wie-heisst-er
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “animals, pets — and “two cats — and “birds — and “pigeons — and “feed — and “forbidden — and “call back (a dog)”.'
+    ar: 'قولي: “حيوانات — و“قطتان — و“طيور — و“حمام — و“يُطعم — و“ممنوع — و“يستدعي (الكلب)”.'
+    mk: 'Кажете: „животни“ — и „две мачки“ — и „птици“ — и „гулаби“ — и „хранат“ — и „забрането“ — и „да го повикате назад“.'
+  answer:
+    speaker: protagonist
+    text: Tiere … zwei Katzen … Vögel … Tauben … füttern … verboten … zurückrufen
+  items:
+  - tiere
+  - zwei-katzen
+  - voegel
+  - tauben
+  - fuettern
+  - verboten
+  - zurueckrufen
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck
