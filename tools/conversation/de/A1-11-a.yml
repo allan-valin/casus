@@ -14,51 +14,51 @@ learn_lessons:
 - a1-modal-muessen
 culture: The Integrationskurs
 new_items:
-- id: der-kurs
+- id: der-kurs-a
   text: der Kurs
   meaning:
     ar: الدورة، الصف
-- id: bin-ich-richtig
+- id: bin-ich-richtig-a
   text: Bin ich hier richtig?
   meaning:
     ar: هل أنا في المكان الصحيح؟
-- id: schreiben-sie
+- id: schreiben-sie-a
   text: Schreiben Sie …
   meaning:
     ar: اكتبي … (بصيغة الاحترام)
-- id: ihren-namen
+- id: ihren-namen-a
   text: Ihren Namen
   meaning:
     ar: اسمكِ
-- id: muss-ich
+- id: muss-ich-a
   text: Muss ich …?
   meaning:
     ar: هل يجب عليّ …؟
-- id: jeden-tag
+- id: jeden-tag-a
   text: jeden Tag
   meaning:
     ar: كل يوم
-- id: von-bis
+- id: von-bis-a
   text: von … bis …
   meaning:
     ar: من … إلى …
-- id: vier-stunden
+- id: vier-stunden-a
   text: vier Stunden
   meaning:
     ar: أربع ساعات
-- id: sie-muessen
+- id: sie-muessen-a
   text: Sie müssen
   meaning:
     ar: يجب عليكِ
-- id: bezahlen
+- id: bezahlen-a
   text: bezahlen
   meaning:
     ar: يدفع
-- id: das-amt
+- id: das-amt-a
   text: das Amt
   meaning:
     ar: الدائرة الرسمية
-- id: viel-lernen
+- id: viel-lernen-a
   text: viel lernen
   meaning:
     ar: أتعلّم كثيرًا
@@ -192,7 +192,7 @@ steps:
     speaker: protagonist
     text: Bin ich hier richtig?
   items:
-  - bin-ich-richtig
+  - bin-ich-richtig-a
 - type: prompt
   ask:
     ar: 'قولي: الدورة.'
@@ -200,7 +200,7 @@ steps:
     speaker: protagonist
     text: Der Kurs.
   items:
-  - der-kurs
+  - der-kurs-a
 - type: prompt
   ask:
     ar: تطلب منكِ أن تكتبي اسمكِ. كيف؟
@@ -208,8 +208,8 @@ steps:
     speaker: protagonist
     text: Schreiben Sie Ihren Namen.
   items:
-  - schreiben-sie
-  - ihren-namen
+  - schreiben-sie-a
+  - ihren-namen-a
 - type: narrator
   text:
     ar: '«müssen» يعني: يجب. «ich muss»، «Sie müssen». والفعل الثاني يذهب إلى آخر الجملة: «Ich muss jeden Tag kommen».'
@@ -220,8 +220,8 @@ steps:
     speaker: protagonist
     text: Muss ich jeden Tag kommen?
   items:
-  - muss-ich
-  - jeden-tag
+  - muss-ich-a
+  - jeden-tag-a
 - type: prompt
   ask:
     ar: 'تقول: يجب أن تأتي كل يوم.'
@@ -229,8 +229,8 @@ steps:
     speaker: protagonist
     text: Sie müssen jeden Tag kommen.
   items:
-  - sie-muessen
-  - jeden-tag
+  - sie-muessen-a
+  - jeden-tag-a
 - type: prompt
   ask:
     ar: 'قولي: من الاثنين إلى الجمعة.'
@@ -238,7 +238,7 @@ steps:
     speaker: protagonist
     text: Von Montag bis Freitag.
   items:
-  - von-bis
+  - von-bis-a
 - type: prompt
   ask:
     ar: 'قولي: أربع ساعات!'
@@ -246,7 +246,7 @@ steps:
     speaker: protagonist
     text: Vier Stunden!
   items:
-  - vier-stunden
+  - vier-stunden-a
 - type: prompt
   ask:
     ar: 'اسألي: هل يجب أن أدفع شيئًا؟'
@@ -254,7 +254,7 @@ steps:
     speaker: protagonist
     text: Muss ich etwas bezahlen?
   items:
-  - bezahlen
+  - bezahlen-a
 - type: prompt
   ask:
     ar: 'تقول: نوضّح ذلك مع الدائرة الرسمية.'
@@ -262,7 +262,7 @@ steps:
     speaker: protagonist
     text: Das klären wir mit dem Amt.
   items:
-  - das-amt
+  - das-amt-a
 - type: prompt
   ask:
     ar: 'قولي: يجب أن أتعلّم كثيرًا!'
@@ -270,7 +270,7 @@ steps:
     speaker: protagonist
     text: Ich muss viel lernen!
   items:
-  - viel-lernen
+  - viel-lernen-a
 - type: narrator
   text:
     ar: دورة الاندماج فيها حصص لغة ثم دورة توجيه عن الحياة في ألمانيا، وتنتهي بامتحان. من يدفع وكم، ومن يجب عليه الحضور، يحدده المكتب الاتحادي للهجرة (BAMF) أو مكتب العمل حسب الحالة — اسألي قبل البدء، فالقواعد
@@ -287,7 +287,7 @@ steps:
     speaker: protagonist
     text: der Kurs
   items:
-  - der-kurs
+  - der-kurs-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قولي “هل أنا في المكان الصحيح؟”.'
@@ -295,7 +295,7 @@ steps:
     speaker: protagonist
     text: Bin ich hier richtig?
   items:
-  - bin-ich-richtig
+  - bin-ich-richtig-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قولي “اكتبي … (بصيغة الاحترام)”.'
@@ -303,7 +303,7 @@ steps:
     speaker: protagonist
     text: Schreiben Sie …
   items:
-  - schreiben-sie
+  - schreiben-sie-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قولي “اسمكِ”.'
@@ -311,7 +311,7 @@ steps:
     speaker: protagonist
     text: Ihren Namen
   items:
-  - ihren-namen
+  - ihren-namen-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قولي “هل يجب عليّ …؟”.'
@@ -319,7 +319,7 @@ steps:
     speaker: protagonist
     text: Muss ich …?
   items:
-  - muss-ich
+  - muss-ich-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قولي “من … إلى …”.'
@@ -327,7 +327,7 @@ steps:
     speaker: protagonist
     text: von … bis …
   items:
-  - von-bis
+  - von-bis-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قولي “أربع ساعات”.'
@@ -335,7 +335,7 @@ steps:
     speaker: protagonist
     text: vier Stunden
   items:
-  - vier-stunden
+  - vier-stunden-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قولي “يجب عليكِ”.'
@@ -343,7 +343,7 @@ steps:
     speaker: protagonist
     text: Sie müssen
   items:
-  - sie-muessen
+  - sie-muessen-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قولي “يدفع”.'
@@ -351,7 +351,7 @@ steps:
     speaker: protagonist
     text: bezahlen
   items:
-  - bezahlen
+  - bezahlen-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قولي “الدائرة الرسمية”.'
@@ -359,7 +359,7 @@ steps:
     speaker: protagonist
     text: das Amt
   items:
-  - das-amt
+  - das-amt-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قولي “أتعلّم كثيرًا”.'
@@ -367,7 +367,7 @@ steps:
     speaker: protagonist
     text: viel lernen
   items:
-  - viel-lernen
+  - viel-lernen-a
 - type: narrator
   text:
     ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.

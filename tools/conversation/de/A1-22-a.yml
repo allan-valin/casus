@@ -14,43 +14,43 @@ learn_lessons:
 - a1-time
 culture: Five minutes late needs a sorry
 new_items:
-- id: wie-spaet-ist-es
+- id: wie-spaet-ist-es-a
   text: Wie spät ist es?
   meaning:
     ar: كم الساعة؟
-- id: halb-fuenf
+- id: halb-fuenf-a
   text: halb fünf
   meaning:
     ar: الرابعة والنصف
-- id: viertel-vor
+- id: viertel-vor-a
   text: Viertel vor
   meaning:
     ar: إلا ربعًا
-- id: viertel-nach
+- id: viertel-nach-a
   text: Viertel nach
   meaning:
     ar: وربع
-- id: puenktlich-a
+- id: puenktlich-a-a
   text: pünktlich
   meaning:
     ar: في الموعد
-- id: zu-spaet
+- id: zu-spaet-a
   text: zu spät
   meaning:
     ar: متأخر
-- id: die-verspaetung
+- id: die-verspaetung-a
   text: die Verspätung
   meaning:
     ar: التأخير
-- id: rufen-sie-an
+- id: rufen-sie-an-a
   text: Rufen Sie an
   meaning:
     ar: اتصل (أمر مؤدب)
-- id: das-naechste-mal
+- id: das-naechste-mal-a
   text: das nächste Mal
   meaning:
     ar: في المرة القادمة
-- id: es-tut-mir-leid
+- id: es-tut-mir-leid-a
   text: Es tut mir leid
   meaning:
     ar: آسف
@@ -196,7 +196,7 @@ steps:
     speaker: protagonist
     text: Bin ich zu spät?
   items:
-  - zu-spaet
+  - zu-spaet-a
 - type: narrator
   text:
     ar: 'الأنصاف تُحسب نحو الساعة التالية: «halb fünf» تعني الرابعة والنصف — حرفيًا «نصف إلى الخامسة». و«Viertel vor fünf» الخامسة إلا ربعًا، و«Viertel nach vier» الرابعة وربع.'
@@ -207,7 +207,7 @@ steps:
     speaker: protagonist
     text: Wir schließen um halb fünf.
   items:
-  - halb-fuenf
+  - halb-fuenf-a
 - type: prompt
   ask:
     ar: 'قل: الخامسة إلا ربعًا.'
@@ -215,7 +215,7 @@ steps:
     speaker: protagonist
     text: Viertel vor fünf.
   items:
-  - viertel-vor
+  - viertel-vor-a
 - type: prompt
   ask:
     ar: 'قل: الرابعة وربع.'
@@ -223,7 +223,7 @@ steps:
     speaker: protagonist
     text: Viertel nach vier.
   items:
-  - viertel-nach
+  - viertel-nach-a
 - type: prompt
   ask:
     ar: 'اعتذر: آسف.'
@@ -231,7 +231,7 @@ steps:
     speaker: protagonist
     text: Es tut mir leid.
   items:
-  - es-tut-mir-leid
+  - es-tut-mir-leid-a
 - type: prompt
   ask:
     ar: 'قل: الترام تأخر. (التأخير)'
@@ -239,7 +239,7 @@ steps:
     speaker: protagonist
     text: Die Verspätung.
   items:
-  - die-verspaetung
+  - die-verspaetung-a
 - type: prompt
   ask:
     ar: 'تقول: من فضلك اتصل.'
@@ -247,7 +247,7 @@ steps:
     speaker: protagonist
     text: Bitte rufen Sie an.
   items:
-  - rufen-sie-an
+  - rufen-sie-an-a
 - type: prompt
   ask:
     ar: 'اسأل: كم الساعة؟'
@@ -255,7 +255,7 @@ steps:
     speaker: protagonist
     text: Wie spät ist es?
   items:
-  - wie-spaet-ist-es
+  - wie-spaet-ist-es-a
 - type: prompt
   ask:
     ar: 'قل: في المرة القادمة سآتي في الموعد.'
@@ -263,8 +263,8 @@ steps:
     speaker: protagonist
     text: Das nächste Mal bin ich pünktlich.
   items:
-  - das-naechste-mal
-  - puenktlich-a
+  - das-naechste-mal-a
+  - puenktlich-a-a
 - type: narrator
   text:
     ar: 'مواعيد الحضانة صارمة: المربيات ينهين عملهن في وقت محدد. إن كنت ستتأخر خمس دقائق فاتصل قبل ذلك؛ والتأخير المتكرر يُكتب ويُناقش.'
@@ -275,7 +275,7 @@ steps:
     speaker: protagonist
     text: Wie spät ist es?
   items:
-  - wie-spaet-ist-es
+  - wie-spaet-ist-es-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قل “الرابعة والنصف”.'
@@ -283,7 +283,7 @@ steps:
     speaker: protagonist
     text: halb fünf
   items:
-  - halb-fuenf
+  - halb-fuenf-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قل “إلا ربعًا”.'
@@ -291,7 +291,7 @@ steps:
     speaker: protagonist
     text: Viertel vor
   items:
-  - viertel-vor
+  - viertel-vor-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قل “وربع”.'
@@ -299,7 +299,7 @@ steps:
     speaker: protagonist
     text: Viertel nach
   items:
-  - viertel-nach
+  - viertel-nach-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قل “في الموعد”.'
@@ -307,7 +307,7 @@ steps:
     speaker: protagonist
     text: pünktlich
   items:
-  - puenktlich-a
+  - puenktlich-a-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قل “متأخر”.'
@@ -315,7 +315,7 @@ steps:
     speaker: protagonist
     text: zu spät
   items:
-  - zu-spaet
+  - zu-spaet-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قل “التأخير”.'
@@ -323,7 +323,7 @@ steps:
     speaker: protagonist
     text: die Verspätung
   items:
-  - die-verspaetung
+  - die-verspaetung-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قل “اتصل (أمر مؤدب)”.'
@@ -331,7 +331,7 @@ steps:
     speaker: protagonist
     text: Rufen Sie an
   items:
-  - rufen-sie-an
+  - rufen-sie-an-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قل “في المرة القادمة”.'
@@ -339,7 +339,7 @@ steps:
     speaker: protagonist
     text: das nächste Mal
   items:
-  - das-naechste-mal
+  - das-naechste-mal-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قل “آسف”.'
@@ -347,7 +347,7 @@ steps:
     speaker: protagonist
     text: Es tut mir leid
   items:
-  - es-tut-mir-leid
+  - es-tut-mir-leid-a
 - type: narrator
   text:
     ar: والآن بعض ما تعلمتَه في الوحدات السابقة، في هذا الموقف الجديد.

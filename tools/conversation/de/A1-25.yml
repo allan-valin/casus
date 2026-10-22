@@ -125,34 +125,46 @@ reviews:
   from: A1-18
 - item: guten-appetit
   from: A1-18
-- item: wie-spaet-ist-es
-  from: A1-22-e
-- item: halb-acht
+- item: wie-spaet-ist-es-e
   from: A1-22-e
   for:
   - en
-- item: viertel-nach
-  from: A1-22-e
-- item: viertel-vor
-  from: A1-22-e
-- item: genau-acht
+- item: halb-acht-e
   from: A1-22-e
   for:
   - en
-- item: zu-spaet
-  from: A1-22-e
-- item: die-verspaetung
-  from: A1-22-e
-- item: frueh
+- item: viertel-nach-e
   from: A1-22-e
   for:
   - en
-- item: schon-da
+- item: viertel-vor-e
   from: A1-22-e
   for:
   - en
-- item: das-naechste-mal
+- item: genau-acht-e
   from: A1-22-e
+  for:
+  - en
+- item: zu-spaet-e
+  from: A1-22-e
+  for:
+  - en
+- item: die-verspaetung-e
+  from: A1-22-e
+  for:
+  - en
+- item: frueh-e
+  from: A1-22-e
+  for:
+  - en
+- item: schon-da-e
+  from: A1-22-e
+  for:
+  - en
+- item: das-naechste-mal-e
+  from: A1-22-e
+  for:
+  - en
 - item: der-himmel
   from: A1-24
 - item: die-sterne
@@ -175,26 +187,83 @@ reviews:
   from: A1-24
 - item: wunderschoen
   from: A1-24
-- item: halb-fuenf
+- item: wie-spaet-ist-es-a
   from: A1-22-a
   for:
   - ar
+- item: halb-fuenf-a
+  from: A1-22-a
+  for:
+  - ar
+- item: viertel-vor-a
+  from: A1-22-a
+  for:
+  - ar
+- item: viertel-nach-a
+  from: A1-22-a
+  for:
+  - ar
+- item: puenktlich-a-a
+  from: A1-22-a
+  for:
+  - ar
+- item: zu-spaet-a
+  from: A1-22-a
+  for:
+  - ar
+- item: die-verspaetung-a
+  from: A1-22-a
+  for:
+  - ar
+- item: rufen-sie-an-a
+  from: A1-22-a
+  for:
+  - ar
+- item: das-naechste-mal-a
+  from: A1-22-a
+  for:
+  - ar
+- item: es-tut-mir-leid-a
+  from: A1-22-a
+  for:
+  - ar
+- item: wie-spaet-ist-es-m
+  from: A1-22-m
+  for:
   - mk
-- item: puenktlich-a
-  from: A1-22-a
+- item: halb-fuenf-m
+  from: A1-22-m
   for:
-  - ar
-- item: rufen-sie-an
-  from: A1-22-a
-  for:
-  - ar
   - mk
-- item: es-tut-mir-leid
-  from: A1-22-a
+- item: viertel-vor-m
+  from: A1-22-m
   for:
-  - ar
   - mk
-- item: puenktlich-m
+- item: viertel-nach-m
+  from: A1-22-m
+  for:
+  - mk
+- item: puenktlich-m-m
+  from: A1-22-m
+  for:
+  - mk
+- item: zu-spaet-m
+  from: A1-22-m
+  for:
+  - mk
+- item: die-verspaetung-m
+  from: A1-22-m
+  for:
+  - mk
+- item: rufen-sie-an-m
+  from: A1-22-m
+  for:
+  - mk
+- item: das-naechste-mal-m
+  from: A1-22-m
+  for:
+  - mk
+- item: es-tut-mir-leid-m
   from: A1-22-m
   for:
   - mk
@@ -471,15 +540,12 @@ steps:
   review: true
   ask:
     en: 'Say: “the sky — and “the stars — and “the moon — and “in the sky — and “on the tower — and “in the city — and “the planet — and “so bright — and “Look! (informal) — and “clear — and “beautiful
-      — and “What time is it? — and “quarter past — and “quarter to — and “too late — and “the delay — and “next time — and “I cook — and “the rice (object) — and “the vegetables — and “the stove”.'
-    ar: 'قولي: “السماء — و“النجوم — و“القمر — و“في السماء — و“على البرج — و“في المدينة — و“الكوكب — و“مضيء جدًا — و“انظر! — و“صافٍ — و“رائع الجمال — و“كم الساعة؟ — و“وربع — و“إلا ربعًا — و“متأخر — و“التأخير
-      — و“في المرة القادمة — و“أطبخ — و“الأرز — و“الخضار — و“الموقد”.'
-    mk: 'Кажете: „небото“ — и „ѕвездите“ — и „месечината“ — и „на небото“ — и „на кулата“ — и „во градот“ — и „планетата“ — и „толку светло“ — и „Погледни!“ — и „ведро“ — и „прекрасно“ — и „Колку е часот?“
-      — и „и петнаесет“ — и „помалку петнаесет“ — и „доцна“ — и „доцнењето“ — и „следниот пат“ — и „готвам“ — и „оризот“ — и „зеленчукот“ — и „шпоретот“.'
+      — and “I cook”.'
+    ar: 'قولي: “السماء — و“النجوم — و“القمر — و“في السماء — و“على البرج — و“في المدينة — و“الكوكب — و“مضيء جدًا — و“انظر! — و“صافٍ — و“رائع الجمال — و“أطبخ”.'
+    mk: 'Кажете: „небото“ — и „ѕвездите“ — и „месечината“ — и „на небото“ — и „на кулата“ — и „во градот“ — и „планетата“ — и „толку светло“ — и „Погледни!“ — и „ведро“ — и „прекрасно“ — и „готвам“.'
   answer:
     speaker: protagonist
-    text: der Himmel … die Sterne … der Mond … am Himmel … auf dem Turm … in der Stadt … der Planet … so hell … Schau mal! … klar … wunderschön … Wie spät ist es? … Viertel nach … Viertel vor … zu spät
-      … die Verspätung … das nächste Mal … ich koche … den Reis … das Gemüse … der Herd
+    text: der Himmel … die Sterne … der Mond … am Himmel … auf dem Turm … in der Stadt … der Planet … so hell … Schau mal! … klar … wunderschön … ich koche
   items:
   - der-himmel
   - die-sterne
@@ -492,31 +558,21 @@ steps:
   - schau-mal
   - klar-himmel
   - wunderschoen
-  - wie-spaet-ist-es
-  - viertel-nach
-  - viertel-vor
-  - zu-spaet
-  - die-verspaetung
-  - das-naechste-mal
   - ich-koche
-  - den-reis
-  - das-gemuese
-  - der-herd
 - type: prompt
   review: true
   ask:
-    en: 'Say: “hot — and “salty — and “spicy — and “Have a taste! (informal) — and “tastes (good) — and “the recipe — and “brought along — and “Enjoy your meal! — and “you are (informal) — and “upstairs
-      — and “And you? (informal) — and “on the second floor — and “How are you? (informal) — and “And you? (after ''how are you'') — and “Do you speak …? (informal) — and “or would you rather …? — and “I''m
-      learning — and “in German — and “slowly — and “Sure! Of course!”.'
-    ar: 'قولي: “ساخن — و“مالح — و“حار (حرّيف) — و“ذُق! — و“طعمه (طيب) — و“الوصفة — و“أحضرنا معنا — و“بالهناء والشفاء! — و“أنتَ (غير رسمي) — و“في الأعلى — و“وأنت؟ — و“في الطابق الثاني — و“كيف الحال؟ — و“وأنت؟
-      (بعد كيف الحال) — و“هل تتكلم …؟ — و“أم تفضّل …؟ — و“أتعلّم — و“بالألمانية — و“ببطء — و“طبعًا!”.'
-    mk: 'Кажете: „жешко“ — и „солено“ — и „луто“ — и „Проба!“ — и „има вкус, е вкусно“ — и „рецептот“ — и „донесовме“ — и „Пријатно!“ — и „ти си“ — и „горе“ — и „А ти?“ — и „на вториот кат“ — и „Како си?“
-      — и „А ти?“ — и „Зборуваш ли …?“ — и „или повеќе сакаш …?“ — и „учам“ — и „на германски“ — и „полека“ — и „Секако!“.'
+    en: 'Say: “the rice (object) — and “the vegetables — and “the stove — and “hot — and “salty — and “spicy — and “Have a taste! (informal) — and “tastes (good) — and “the recipe — and “brought along —
+      and “Enjoy your meal! — and “you are (informal)”.'
+    ar: 'قولي: “الأرز — و“الخضار — و“الموقد — و“ساخن — و“مالح — و“حار (حرّيف) — و“ذُق! — و“طعمه (طيب) — و“الوصفة — و“أحضرنا معنا — و“بالهناء والشفاء! — و“أنتَ (غير رسمي)”.'
+    mk: 'Кажете: „оризот“ — и „зеленчукот“ — и „шпоретот“ — и „жешко“ — и „солено“ — и „луто“ — и „Проба!“ — и „има вкус, е вкусно“ — и „рецептот“ — и „донесовме“ — и „Пријатно!“ — и „ти си“.'
   answer:
     speaker: protagonist
-    text: heiß … salzig … scharf … Probier mal! … schmeckt … das Rezept … mitgebracht … Guten Appetit! … du bist … oben … Und du? … im zweiten Stock … Wie geht's? … Und dir? … Sprichst du …? … oder lieber
-      …? … ich lerne … auf Deutsch … langsam … Klar!
+    text: den Reis … das Gemüse … der Herd … heiß … salzig … scharf … Probier mal! … schmeckt … das Rezept … mitgebracht … Guten Appetit! … du bist
   items:
+  - den-reis
+  - das-gemuese
+  - der-herd
   - heiss
   - salzig
   - scharf
@@ -526,6 +582,17 @@ steps:
   - mitgebracht
   - guten-appetit
   - du-bist
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “upstairs — and “And you? (informal) — and “on the second floor — and “How are you? (informal) — and “And you? (after ''how are you'') — and “Do you speak …? (informal) — and “or would you
+      rather …? — and “I''m learning — and “in German — and “slowly — and “Sure! Of course!”.'
+    ar: 'قولي: “في الأعلى — و“وأنت؟ — و“في الطابق الثاني — و“كيف الحال؟ — و“وأنت؟ (بعد كيف الحال) — و“هل تتكلم …؟ — و“أم تفضّل …؟ — و“أتعلّم — و“بالألمانية — و“ببطء — و“طبعًا!”.'
+    mk: 'Кажете: „горе“ — и „А ти?“ — и „на вториот кат“ — и „Како си?“ — и „А ти?“ — и „Зборуваш ли …?“ — и „или повеќе сакаш …?“ — и „учам“ — и „на германски“ — и „полека“ — и „Секако!“.'
+  answer:
+    speaker: protagonist
+    text: oben … Und du? … im zweiten Stock … Wie geht's? … Und dir? … Sprichst du …? … oder lieber …? … ich lerne … auf Deutsch … langsam … Klar!
+  items:
   - oben
   - und-du
   - im-zweiten-stock
@@ -540,74 +607,121 @@ steps:
 - type: prompt
   review: true
   ask:
-    en: 'Say: “half past seven (half to eight) — and “exactly eight”.'
+    en: 'Say: “What time is it? — and “half past seven (half to eight) — and “quarter past — and “quarter to”.'
   answer:
     speaker: protagonist
-    text: halb acht … genau acht
+    text: Wie spät ist es? … halb acht … Viertel nach … Viertel vor
   items:
-  - halb-acht
-  - genau-acht
+  - wie-spaet-ist-es-e
+  - halb-acht-e
+  - viertel-nach-e
+  - viertel-vor-e
   for:
   - en
 - type: prompt
   review: true
   ask:
-    en: 'Say: “early — and “already there”.'
+    en: 'Say: “exactly eight — and “too late — and “the delay — and “early”.'
   answer:
     speaker: protagonist
-    text: früh … schon da
+    text: genau acht … zu spät … die Verspätung … früh
   items:
-  - frueh
-  - schon-da
+  - genau-acht-e
+  - zu-spaet-e
+  - die-verspaetung-e
+  - frueh-e
   for:
   - en
 - type: prompt
   review: true
   ask:
-    ar: 'قولي: “الرابعة والنصف — و“اتصل (أمر مؤدب)”.'
-    mk: 'Кажете: „четири и пол“ — и „Јавете се“.'
+    en: 'Say: “already there — and “next time”.'
   answer:
     speaker: protagonist
-    text: halb fünf … Rufen Sie an
+    text: schon da … das nächste Mal
   items:
-  - halb-fuenf
-  - rufen-sie-an
+  - schon-da-e
+  - das-naechste-mal-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “كم الساعة؟ — و“الرابعة والنصف — و“إلا ربعًا — و“وربع”.'
+  answer:
+    speaker: protagonist
+    text: Wie spät ist es? … halb fünf … Viertel vor … Viertel nach
+  items:
+  - wie-spaet-ist-es-a
+  - halb-fuenf-a
+  - viertel-vor-a
+  - viertel-nach-a
   for:
   - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “في الموعد — و“متأخر — و“التأخير — و“اتصل (أمر مؤدب)”.'
+  answer:
+    speaker: protagonist
+    text: pünktlich … zu spät … die Verspätung … Rufen Sie an
+  items:
+  - puenktlich-a-a
+  - zu-spaet-a
+  - die-verspaetung-a
+  - rufen-sie-an-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “في المرة القادمة — و“آسف”.'
+  answer:
+    speaker: protagonist
+    text: das nächste Mal … Es tut mir leid
+  items:
+  - das-naechste-mal-a
+  - es-tut-mir-leid-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „Колку е часот?“ — и „четири и пол“ — и „помалку петнаесет“ — и „и петнаесет“.'
+  answer:
+    speaker: protagonist
+    text: Wie spät ist es? … halb fünf … Viertel vor … Viertel nach
+  items:
+  - wie-spaet-ist-es-m
+  - halb-fuenf-m
+  - viertel-vor-m
+  - viertel-nach-m
+  for:
   - mk
 - type: prompt
   review: true
   ask:
-    ar: 'قولي: “آسف”.'
-    mk: 'Кажете: „Жал ми е“.'
+    mk: 'Кажете: „точно, навреме“ — и „доцна“ — и „доцнењето“ — и „Јавете се“.'
   answer:
     speaker: protagonist
-    text: Es tut mir leid
+    text: pünktlich … zu spät … die Verspätung … Rufen Sie an
   items:
-  - es-tut-mir-leid
+  - puenktlich-m-m
+  - zu-spaet-m
+  - die-verspaetung-m
+  - rufen-sie-an-m
   for:
-  - ar
   - mk
 - type: prompt
   review: true
   ask:
-    ar: 'قولي: “في الموعد”.'
+    mk: 'Кажете: „следниот пат“ — и „Жал ми е“.'
   answer:
     speaker: protagonist
-    text: pünktlich
+    text: das nächste Mal … Es tut mir leid
   items:
-  - puenktlich-a
-  for:
-  - ar
-- type: prompt
-  review: true
-  ask:
-    mk: 'Кажете: „точно, навреме“.'
-  answer:
-    speaker: protagonist
-    text: pünktlich
-  items:
-  - puenktlich-m
+  - das-naechste-mal-m
+  - es-tut-mir-leid-m
   for:
   - mk
 - type: narrator

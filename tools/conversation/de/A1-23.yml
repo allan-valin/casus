@@ -156,54 +156,123 @@ reviews:
   from: A1-20
 - item: abgemacht
   from: A1-20
-- item: wie-spaet-ist-es
-  from: A1-22-e
-- item: halb-acht
+- item: wie-spaet-ist-es-e
   from: A1-22-e
   for:
   - en
-- item: viertel-nach
-  from: A1-22-e
-- item: viertel-vor
-  from: A1-22-e
-- item: genau-acht
+- item: halb-acht-e
   from: A1-22-e
   for:
   - en
-- item: zu-spaet
-  from: A1-22-e
-- item: die-verspaetung
-  from: A1-22-e
-- item: frueh
+- item: viertel-nach-e
   from: A1-22-e
   for:
   - en
-- item: schon-da
+- item: viertel-vor-e
   from: A1-22-e
   for:
   - en
-- item: das-naechste-mal
+- item: genau-acht-e
   from: A1-22-e
-- item: halb-fuenf
+  for:
+  - en
+- item: zu-spaet-e
+  from: A1-22-e
+  for:
+  - en
+- item: die-verspaetung-e
+  from: A1-22-e
+  for:
+  - en
+- item: frueh-e
+  from: A1-22-e
+  for:
+  - en
+- item: schon-da-e
+  from: A1-22-e
+  for:
+  - en
+- item: das-naechste-mal-e
+  from: A1-22-e
+  for:
+  - en
+- item: wie-spaet-ist-es-a
   from: A1-22-a
   for:
   - ar
+- item: halb-fuenf-a
+  from: A1-22-a
+  for:
+  - ar
+- item: viertel-vor-a
+  from: A1-22-a
+  for:
+  - ar
+- item: viertel-nach-a
+  from: A1-22-a
+  for:
+  - ar
+- item: puenktlich-a-a
+  from: A1-22-a
+  for:
+  - ar
+- item: zu-spaet-a
+  from: A1-22-a
+  for:
+  - ar
+- item: die-verspaetung-a
+  from: A1-22-a
+  for:
+  - ar
+- item: rufen-sie-an-a
+  from: A1-22-a
+  for:
+  - ar
+- item: das-naechste-mal-a
+  from: A1-22-a
+  for:
+  - ar
+- item: es-tut-mir-leid-a
+  from: A1-22-a
+  for:
+  - ar
+- item: wie-spaet-ist-es-m
+  from: A1-22-m
+  for:
   - mk
-- item: puenktlich-a
-  from: A1-22-a
+- item: halb-fuenf-m
+  from: A1-22-m
   for:
-  - ar
-- item: rufen-sie-an
-  from: A1-22-a
-  for:
-  - ar
   - mk
-- item: es-tut-mir-leid
-  from: A1-22-a
+- item: viertel-vor-m
+  from: A1-22-m
   for:
-  - ar
   - mk
-- item: puenktlich-m
+- item: viertel-nach-m
+  from: A1-22-m
+  for:
+  - mk
+- item: puenktlich-m-m
+  from: A1-22-m
+  for:
+  - mk
+- item: zu-spaet-m
+  from: A1-22-m
+  for:
+  - mk
+- item: die-verspaetung-m
+  from: A1-22-m
+  for:
+  - mk
+- item: rufen-sie-an-m
+  from: A1-22-m
+  for:
+  - mk
+- item: das-naechste-mal-m
+  from: A1-22-m
+  for:
+  - mk
+- item: es-tut-mir-leid-m
   from: A1-22-m
   for:
   - mk
@@ -490,24 +559,15 @@ steps:
 - type: prompt
   review: true
   ask:
-    en: 'Say: “What time is it? — and “quarter past — and “quarter to — and “too late — and “the delay — and “next time — and “Do you have time? (informal) — and “on Monday — and “no time — and “on Tuesday
-      — and “on Wednesday — and “on Thursday — and “on Friday — and “at the weekend — and “today — and “tomorrow — and “Does … suit you? (informal) — and “Deal! — and “I want — and “an account — and “open
-      (an account)”.'
-    ar: 'قولي: “كم الساعة؟ — و“وربع — و“إلا ربعًا — و“متأخر — و“التأخير — و“في المرة القادمة — و“هل عندك وقت؟ — و“يوم الاثنين — و“لا وقت — و“يوم الثلاثاء — و“يوم الأربعاء — و“يوم الخميس — و“يوم الجمعة —
-      و“في عطلة نهاية الأسبوع — و“اليوم — و“غدًا — و“هل يناسبك …؟ — و“اتفقنا! — و“أريد — و“حسابًا — و“يفتح (حسابًا)”.'
-    mk: 'Кажете: „Колку е часот?“ — и „и петнаесет“ — и „помалку петнаесет“ — и „доцна“ — и „доцнењето“ — и „следниот пат“ — и „Имаш ли време?“ — и „во понеделник“ — и „немам време“ — и „во вторник“ — и
-      „во среда“ — и „во четврток“ — и „во петок“ — и „за викендот“ — и „денес“ — и „утре“ — и „Ти одговара ли …?“ — и „Договорено!“ — и „сакам“ — и „сметка“ — и „отвора“.'
+    en: 'Say: “Do you have time? (informal) — and “on Monday — and “no time — and “on Tuesday — and “on Wednesday — and “on Thursday — and “on Friday — and “at the weekend — and “today — and “tomorrow —
+      and “Does … suit you? (informal) — and “Deal!”.'
+    ar: 'قولي: “هل عندك وقت؟ — و“يوم الاثنين — و“لا وقت — و“يوم الثلاثاء — و“يوم الأربعاء — و“يوم الخميس — و“يوم الجمعة — و“في عطلة نهاية الأسبوع — و“اليوم — و“غدًا — و“هل يناسبك …؟ — و“اتفقنا!”.'
+    mk: 'Кажете: „Имаш ли време?“ — и „во понеделник“ — и „немам време“ — и „во вторник“ — и „во среда“ — и „во четврток“ — и „во петок“ — и „за викендот“ — и „денес“ — и „утре“ — и „Ти одговара ли …?“
+      — и „Договорено!“.'
   answer:
     speaker: protagonist
-    text: Wie spät ist es? … Viertel nach … Viertel vor … zu spät … die Verspätung … das nächste Mal … Hast du Zeit? … am Montag … keine Zeit … am Dienstag … am Mittwoch … am Donnerstag … am Freitag … am
-      Wochenende … heute … morgen … Passt dir …? … Abgemacht! … ich will … ein Konto … eröffnen
+    text: Hast du Zeit? … am Montag … keine Zeit … am Dienstag … am Mittwoch … am Donnerstag … am Freitag … am Wochenende … heute … morgen … Passt dir …? … Abgemacht!
   items:
-  - wie-spaet-ist-es
-  - viertel-nach
-  - viertel-vor
-  - zu-spaet
-  - die-verspaetung
-  - das-naechste-mal
   - hast-du-zeit
   - am-montag
   - keine-zeit
@@ -520,24 +580,21 @@ steps:
   - morgen
   - passt-dir
   - abgemacht
-  - ich-will
-  - ein-konto
-  - eroeffnen
 - type: prompt
   review: true
   ask:
-    en: 'Say: “Which documents? — and “the passport (object) — and “the registration certificate — and “the tax ID — and “I don''t have (it) — and “comes by post — and “sign — and “the card comes — and
-      “Do you want …? (polite) — and “does … go? — and “to the main station — and “change (trains, buses) — and “the tram — and “the stop — and “over there — and “the ticket — and “with the app — and “get
-      on — and “at the back — and “the pram, the stroller — and “get off”.'
-    ar: 'قولي: “أيّ أوراق؟ — و“جواز السفر — و“شهادة تسجيل السكن — و“الرقم الضريبي — و“ليس معي — و“يأتي بالبريد — و“يوقّع — و“البطاقة تصل — و“هل تريد …؟ — و“هل يذهب …؟ — و“إلى المحطة الرئيسية — و“يغيّر وسيلة
-      النقل — و“الترام — و“المحطة / الموقف — و“هناك — و“التذكرة — و“بالتطبيق — و“اصعد — و“في الخلف — و“عربة الأطفال — و“أنزل”.'
-    mk: 'Кажете: „Кои документи?“ — и „пасошот“ — и „потврдата за пријава“ — и „даночниот број“ — и „немам“ — и „доаѓа по пошта“ — и „потпишува“ — и „картичката доаѓа“ — и „Сакате ли …?“ — и „оди ли …?“
-      — и „до главната станица“ — и „да се префрлите“ — и „трамвајот“ — и „станицата“ — и „таму преку“ — и „билетот“ — и „со апликацијата“ — и „се качувате“ — и „назад, позади“ — и „количката“ — и „се симнувам“.'
+    en: 'Say: “I want — and “an account — and “open (an account) — and “Which documents? — and “the passport (object) — and “the registration certificate — and “the tax ID — and “I don''t have (it) — and
+      “comes by post — and “sign — and “the card comes — and “Do you want …? (polite)”.'
+    ar: 'قولي: “أريد — و“حسابًا — و“يفتح (حسابًا) — و“أيّ أوراق؟ — و“جواز السفر — و“شهادة تسجيل السكن — و“الرقم الضريبي — و“ليس معي — و“يأتي بالبريد — و“يوقّع — و“البطاقة تصل — و“هل تريد …؟”.'
+    mk: 'Кажете: „сакам“ — и „сметка“ — и „отвора“ — и „Кои документи?“ — и „пасошот“ — и „потврдата за пријава“ — и „даночниот број“ — и „немам“ — и „доаѓа по пошта“ — и „потпишува“ — и „картичката доаѓа“
+      — и „Сакате ли …?“.'
   answer:
     speaker: protagonist
-    text: Welche Unterlagen? … den Pass … die Meldebescheinigung … die Steuer-ID … habe ich nicht … kommt per Post … unterschreiben … die Karte kommt … Wollen Sie …? … fährt …? … zum Hauptbahnhof … umsteigen
-      … die Straßenbahn … die Haltestelle … da drüben … die Fahrkarte … mit der App … steigen … ein … hinten … der Kinderwagen … steige … aus
+    text: ich will … ein Konto … eröffnen … Welche Unterlagen? … den Pass … die Meldebescheinigung … die Steuer-ID … habe ich nicht … kommt per Post … unterschreiben … die Karte kommt … Wollen Sie …?
   items:
+  - ich-will
+  - ein-konto
+  - eroeffnen
   - welche-unterlagen
   - den-pass
   - die-meldebescheinigung
@@ -547,6 +604,18 @@ steps:
   - unterschreiben
   - die-karte-kommt
   - wollen-sie
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “does … go? — and “to the main station — and “change (trains, buses) — and “the tram — and “the stop — and “over there — and “the ticket — and “with the app — and “get on — and “at the back
+      — and “the pram, the stroller — and “get off”.'
+    ar: 'قولي: “هل يذهب …؟ — و“إلى المحطة الرئيسية — و“يغيّر وسيلة النقل — و“الترام — و“المحطة / الموقف — و“هناك — و“التذكرة — و“بالتطبيق — و“اصعد — و“في الخلف — و“عربة الأطفال — و“أنزل”.'
+    mk: 'Кажете: „оди ли …?“ — и „до главната станица“ — и „да се префрлите“ — и „трамвајот“ — и „станицата“ — и „таму преку“ — и „билетот“ — и „со апликацијата“ — и „се качувате“ — и „назад, позади“ —
+      и „количката“ — и „се симнувам“.'
+  answer:
+    speaker: protagonist
+    text: fährt …? … zum Hauptbahnhof … umsteigen … die Straßenbahn … die Haltestelle … da drüben … die Fahrkarte … mit der App … steigen … ein … hinten … der Kinderwagen … steige … aus
+  items:
   - faehrt
   - zum-hauptbahnhof
   - umsteigen
@@ -562,74 +631,121 @@ steps:
 - type: prompt
   review: true
   ask:
-    en: 'Say: “half past seven (half to eight) — and “exactly eight”.'
+    en: 'Say: “What time is it? — and “half past seven (half to eight) — and “quarter past — and “quarter to”.'
   answer:
     speaker: protagonist
-    text: halb acht … genau acht
+    text: Wie spät ist es? … halb acht … Viertel nach … Viertel vor
   items:
-  - halb-acht
-  - genau-acht
+  - wie-spaet-ist-es-e
+  - halb-acht-e
+  - viertel-nach-e
+  - viertel-vor-e
   for:
   - en
 - type: prompt
   review: true
   ask:
-    en: 'Say: “early — and “already there”.'
+    en: 'Say: “exactly eight — and “too late — and “the delay — and “early”.'
   answer:
     speaker: protagonist
-    text: früh … schon da
+    text: genau acht … zu spät … die Verspätung … früh
   items:
-  - frueh
-  - schon-da
+  - genau-acht-e
+  - zu-spaet-e
+  - die-verspaetung-e
+  - frueh-e
   for:
   - en
 - type: prompt
   review: true
   ask:
-    ar: 'قولي: “الرابعة والنصف — و“اتصل (أمر مؤدب)”.'
-    mk: 'Кажете: „четири и пол“ — и „Јавете се“.'
+    en: 'Say: “already there — and “next time”.'
   answer:
     speaker: protagonist
-    text: halb fünf … Rufen Sie an
+    text: schon da … das nächste Mal
   items:
-  - halb-fuenf
-  - rufen-sie-an
+  - schon-da-e
+  - das-naechste-mal-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “كم الساعة؟ — و“الرابعة والنصف — و“إلا ربعًا — و“وربع”.'
+  answer:
+    speaker: protagonist
+    text: Wie spät ist es? … halb fünf … Viertel vor … Viertel nach
+  items:
+  - wie-spaet-ist-es-a
+  - halb-fuenf-a
+  - viertel-vor-a
+  - viertel-nach-a
   for:
   - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “في الموعد — و“متأخر — و“التأخير — و“اتصل (أمر مؤدب)”.'
+  answer:
+    speaker: protagonist
+    text: pünktlich … zu spät … die Verspätung … Rufen Sie an
+  items:
+  - puenktlich-a-a
+  - zu-spaet-a
+  - die-verspaetung-a
+  - rufen-sie-an-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “في المرة القادمة — و“آسف”.'
+  answer:
+    speaker: protagonist
+    text: das nächste Mal … Es tut mir leid
+  items:
+  - das-naechste-mal-a
+  - es-tut-mir-leid-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „Колку е часот?“ — и „четири и пол“ — и „помалку петнаесет“ — и „и петнаесет“.'
+  answer:
+    speaker: protagonist
+    text: Wie spät ist es? … halb fünf … Viertel vor … Viertel nach
+  items:
+  - wie-spaet-ist-es-m
+  - halb-fuenf-m
+  - viertel-vor-m
+  - viertel-nach-m
+  for:
   - mk
 - type: prompt
   review: true
   ask:
-    ar: 'قولي: “آسف”.'
-    mk: 'Кажете: „Жал ми е“.'
+    mk: 'Кажете: „точно, навреме“ — и „доцна“ — и „доцнењето“ — и „Јавете се“.'
   answer:
     speaker: protagonist
-    text: Es tut mir leid
+    text: pünktlich … zu spät … die Verspätung … Rufen Sie an
   items:
-  - es-tut-mir-leid
+  - puenktlich-m-m
+  - zu-spaet-m
+  - die-verspaetung-m
+  - rufen-sie-an-m
   for:
-  - ar
   - mk
 - type: prompt
   review: true
   ask:
-    ar: 'قولي: “في الموعد”.'
+    mk: 'Кажете: „следниот пат“ — и „Жал ми е“.'
   answer:
     speaker: protagonist
-    text: pünktlich
+    text: das nächste Mal … Es tut mir leid
   items:
-  - puenktlich-a
-  for:
-  - ar
-- type: prompt
-  review: true
-  ask:
-    mk: 'Кажете: „точно, навреме“.'
-  answer:
-    speaker: protagonist
-    text: pünktlich
-  items:
-  - puenktlich-m
+  - das-naechste-mal-m
+  - es-tut-mir-leid-m
   for:
   - mk
 - type: narrator

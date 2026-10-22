@@ -14,48 +14,48 @@ learn_lessons:
 - a1-negation
 culture: Grandparents at the playground
 new_items:
-- id: der-spielplatz
+- id: der-spielplatz-m
   text: der Spielplatz
   meaning:
     mk: игралиштето
-- id: die-schaukel
+- id: die-schaukel-m
   text: die Schaukel
   meaning:
     mk: лулашката
   rare: true
-- id: wie-alt-ist-er
+- id: wie-alt-ist-er-m
   text: Wie alt ist er?
   meaning:
     mk: Колку години има?
-- id: vier-jahre-alt
+- id: vier-jahre-alt-m
   text: vier Jahre alt
   meaning:
     mk: четири години
-- id: ihr-enkel
+- id: ihr-enkel-m
   text: Ihr Enkel
   meaning:
     mk: вашиот внук
-- id: ich-bin-oma
+- id: ich-bin-oma-m
   text: ich bin die Oma
   meaning:
     mk: јас сум бабата
-- id: nicht-von-hier
+- id: nicht-von-hier-m
   text: nicht von hier
   meaning:
     mk: не сум одовде
-- id: kein-deutsch
+- id: kein-deutsch-m
   text: kein Deutsch
   meaning:
     mk: не (зборувам) германски
-- id: nur-ein-bisschen
+- id: nur-ein-bisschen-m
   text: nur ein bisschen
   meaning:
     mk: само малку
-- id: nicht
+- id: nicht-m
   text: nicht
   meaning:
     mk: не
-- id: bis-bald
+- id: bis-bald-m
   text: Bis bald!
   meaning:
     mk: Се гледаме наскоро!
@@ -187,7 +187,7 @@ steps:
     speaker: protagonist
     text: Wie alt ist er?
   items:
-  - wie-alt-ist-er
+  - wie-alt-ist-er-m
 - type: prompt
   ask:
     mk: 'Кажете: има четири години.'
@@ -195,7 +195,7 @@ steps:
     speaker: protagonist
     text: Er ist vier Jahre alt.
   items:
-  - vier-jahre-alt
+  - vier-jahre-alt-m
 - type: prompt
   ask:
     mk: 'Таа прашува: ова ли е вашиот внук?'
@@ -203,7 +203,7 @@ steps:
     speaker: protagonist
     text: Ist das Ihr Enkel?
   items:
-  - ihr-enkel
+  - ihr-enkel-m
 - type: prompt
   ask:
     mk: 'Кажете: да, јас сум бабата.'
@@ -211,7 +211,7 @@ steps:
     speaker: protagonist
     text: Ja, ich bin die Oma.
   items:
-  - ich-bin-oma
+  - ich-bin-oma-m
 - type: narrator
   text:
     mk: '«kein» негира именка: «kein Deutsch». «nicht» негира сè друго: «nicht von hier», «nicht so hoch».'
@@ -222,7 +222,7 @@ steps:
     speaker: protagonist
     text: Ich bin nicht von hier.
   items:
-  - nicht-von-hier
+  - nicht-von-hier-m
 - type: prompt
   ask:
     mk: 'Кажете: зборувам само малку германски.'
@@ -230,7 +230,7 @@ steps:
     speaker: protagonist
     text: Nur ein bisschen Deutsch.
   items:
-  - nur-ein-bisschen
+  - nur-ein-bisschen-m
 - type: prompt
   ask:
     mk: 'Кажете: не зборувам германски.'
@@ -238,7 +238,7 @@ steps:
     speaker: protagonist
     text: Ich spreche kein Deutsch.
   items:
-  - kein-deutsch
+  - kein-deutsch-m
 - type: prompt
   ask:
     mk: 'Викнете му на Лука: не толку високо!'
@@ -246,7 +246,7 @@ steps:
     speaker: protagonist
     text: Nicht so hoch!
   items:
-  - nicht
+  - nicht-m
 - type: prompt
   ask:
     mk: 'Кажете: лулашката.'
@@ -254,7 +254,7 @@ steps:
     speaker: protagonist
     text: Die Schaukel.
   items:
-  - die-schaukel
+  - die-schaukel-m
 - type: prompt
   ask:
     mk: 'Поздравете се: се гледаме наскоро!'
@@ -262,7 +262,7 @@ steps:
     speaker: protagonist
     text: Bis bald!
   items:
-  - bis-bald
+  - bis-bald-m
 - type: narrator
   text:
     mk: Германците сметаат дека детето што слуша два јазика е среќно, не збунето. Зборувајте со Лука македонски — германски ќе научи во градинката.
@@ -273,7 +273,7 @@ steps:
     speaker: protagonist
     text: der Spielplatz
   items:
-  - der-spielplatz
+  - der-spielplatz-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „игралиштето“.'
@@ -281,7 +281,7 @@ steps:
     speaker: protagonist
     text: der Spielplatz
   items:
-  - der-spielplatz
+  - der-spielplatz-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „лулашката“.'
@@ -289,7 +289,7 @@ steps:
     speaker: protagonist
     text: die Schaukel
   items:
-  - die-schaukel
+  - die-schaukel-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „Колку години има?“.'
@@ -297,7 +297,7 @@ steps:
     speaker: protagonist
     text: Wie alt ist er?
   items:
-  - wie-alt-ist-er
+  - wie-alt-ist-er-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „четири години“.'
@@ -305,7 +305,7 @@ steps:
     speaker: protagonist
     text: vier Jahre alt
   items:
-  - vier-jahre-alt
+  - vier-jahre-alt-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „вашиот внук“.'
@@ -313,7 +313,7 @@ steps:
     speaker: protagonist
     text: Ihr Enkel
   items:
-  - ihr-enkel
+  - ihr-enkel-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „јас сум бабата“.'
@@ -321,7 +321,7 @@ steps:
     speaker: protagonist
     text: ich bin die Oma
   items:
-  - ich-bin-oma
+  - ich-bin-oma-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „не сум одовде“.'
@@ -329,7 +329,7 @@ steps:
     speaker: protagonist
     text: nicht von hier
   items:
-  - nicht-von-hier
+  - nicht-von-hier-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „не (зборувам) германски“.'
@@ -337,7 +337,7 @@ steps:
     speaker: protagonist
     text: kein Deutsch
   items:
-  - kein-deutsch
+  - kein-deutsch-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „само малку“.'
@@ -345,7 +345,7 @@ steps:
     speaker: protagonist
     text: nur ein bisschen
   items:
-  - nur-ein-bisschen
+  - nur-ein-bisschen-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „не“.'
@@ -353,7 +353,7 @@ steps:
     speaker: protagonist
     text: nicht
   items:
-  - nicht
+  - nicht-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „Се гледаме наскоро!“.'
@@ -361,7 +361,7 @@ steps:
     speaker: protagonist
     text: Bis bald!
   items:
-  - bis-bald
+  - bis-bald-m
 - type: narrator
   text:
     mk: Сега нешто од претходните лекции, во оваа нова ситуација.

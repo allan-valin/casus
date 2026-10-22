@@ -87,11 +87,16 @@ def expand(src: dict, earlier: list, langs=("en", "pt")) -> dict:
     langs = [l for l in langs if not src.get("tracks") or l in src["tracks"]]
     n = len(langs)
     form = src["protagonist"]
+    # an audience version's own items carry its audience letters (-e, -a, -m), so a later core unit teaching the same
+    # word to everyone never collides with it (Allan's German course, 2026-10-22)
+    suffix = "-" + "".join(l[0] for l in langs) if src.get("tracks") else ""
+    own = {it[0]: f"{it[0]}{suffix}" for it in src["items"] if isinstance(it[0], str)}
+    rename = lambda i: own.get(i, i)
     items = []
     for it in src["items"]:
         if not isinstance(it[0], str) or not re.fullmatch(r"[a-z0-9-]+", it[0]):   # YAML reads a bare no/yes/on as a boolean
             raise ValueError(f"{src['id']}: item id {it[0]!r} must be plain ascii (a Cyrillic letter slipped in?)")
-        d = {"id": it[0], "text": it[1], "meaning": _texts(it[2], langs) if isinstance(it[2], dict) else dict(zip(langs, it[2:2 + n]))}
+        d = {"id": rename(it[0]), "text": it[1], "meaning": _texts(it[2], langs) if isinstance(it[2], dict) else dict(zip(langs, it[2:2 + n]))}
         extra = it[3] if isinstance(it[2], dict) else (it[2 + n] if len(it) > 2 + n else None)
         if isinstance(extra, dict):
             d.update(extra)
@@ -119,15 +124,16 @@ def expand(src: dict, earlier: list, langs=("en", "pt")) -> dict:
         elif "only" in b:   # {ar: "…", mk: "…"}: one note for some audiences
             steps.append({"type": "narrator", "for": [l for l in langs if l in b["only"]], "text": {l: b["only"][l] for l in langs if l in b["only"]}})
         elif "line" in b:
-            steps.append({"type": "line", "speaker": b["line"][0], "item": b["line"][1]})
+            steps.append({"type": "line", "speaker": b["line"][0], "item": rename(b["line"][1])})
         elif "build" in b:
-            steps.append({"type": "buildup", "item": b["build"][0], "parts": b["build"][1]})
+            steps.append({"type": "buildup", "item": rename(b["build"][0]), "parts": b["build"][1]})
         elif "ask" in b:
             a = b["ask"]
             if isinstance(a[0], dict):
                 ask, answer, ids = _texts(a[0], langs), a[1], a[2:]
             else:
                 ask, answer, ids = dict(zip(langs, a[:n])), a[n], a[n + 1:]
+            ids = [rename(i) for i in ids]
             steps.append({"type": "prompt", "ask": ask, "answer": {"speaker": "protagonist", "text": answer}, "items": ids})
             for i in ids:
                 asked[i] = asked.get(i, 0) + 1

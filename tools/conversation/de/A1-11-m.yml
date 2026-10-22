@@ -14,55 +14,55 @@ learn_lessons:
 - a1-modal-muessen
 culture: Kaffee und Kuchen
 new_items:
-- id: schoen-kennenzulernen
+- id: schoen-kennenzulernen-m
   text: Schön, Sie kennenzulernen
   meaning:
     mk: Мило ми е што ве запознав
-- id: ich-spreche
+- id: ich-spreche-m
   text: ich spreche
   meaning:
     mk: зборувам
-- id: nur
+- id: nur-m
   text: nur
   meaning:
     mk: само
-- id: moechten-sie
+- id: moechten-sie-m
   text: Möchten Sie …?
   meaning:
     mk: Сакате ли …? (учтиво)
-- id: ja-gern
+- id: ja-gern-m
   text: Ja, gern
   meaning:
     mk: Да, со задоволство
-- id: ein-stueck-k
+- id: ein-stueck-k-m
   text: ein Stück
   meaning:
     mk: парче
-- id: der-kuchen
+- id: der-kuchen-m
   text: der Kuchen
   meaning:
     mk: колачот
-- id: selbst-gemacht
+- id: selbst-gemacht-m
   text: selbst gemacht
   meaning:
     mk: домашен, сам направен
-- id: lecker
+- id: lecker-m
   text: lecker
   meaning:
     mk: вкусно
-- id: wie-lange
+- id: wie-lange-m
   text: Wie lange …?
   meaning:
     mk: Колку долго …?
-- id: bleiben
+- id: bleiben-m
   text: bleiben
   meaning:
     mk: останувате
-- id: ich-muss
+- id: ich-muss-m
   text: ich muss
   meaning:
     mk: морам
-- id: oft
+- id: oft-m
   text: oft
   meaning:
     mk: често
@@ -198,7 +198,7 @@ steps:
     speaker: protagonist
     text: Schön, Sie kennenzulernen.
   items:
-  - schoen-kennenzulernen
+  - schoen-kennenzulernen-m
 - type: prompt
   ask:
     mk: 'Кажете: зборувам само малку германски.'
@@ -206,8 +206,8 @@ steps:
     speaker: protagonist
     text: Ich spreche nur ein bisschen Deutsch.
   items:
-  - ich-spreche
-  - nur
+  - ich-spreche-m
+  - nur-m
   - ein-bisschen
 - type: prompt
   ask:
@@ -216,7 +216,7 @@ steps:
     speaker: protagonist
     text: Möchten Sie Kaffee?
   items:
-  - moechten-sie
+  - moechten-sie-m
 - type: prompt
   ask:
     mk: 'Одговорете: да, со задоволство.'
@@ -224,7 +224,7 @@ steps:
     speaker: protagonist
     text: Ja, gern.
   items:
-  - ja-gern
+  - ja-gern-m
 - type: narrator
   text:
     mk: Германскиот домаќин нуди еднаш. „Не, благодарам“ од учтивост значи — не. Ако сакате, кажете веднаш «Ja, gern».
@@ -235,8 +235,8 @@ steps:
     speaker: protagonist
     text: Ein Stück Kuchen?
   items:
-  - ein-stueck-k
-  - der-kuchen
+  - ein-stueck-k-m
+  - der-kuchen-m
 - type: prompt
   ask:
     mk: 'Кажете: колачот е домашен.'
@@ -244,7 +244,7 @@ steps:
     speaker: protagonist
     text: Der Kuchen ist selbst gemacht.
   items:
-  - selbst-gemacht
+  - selbst-gemacht-m
 - type: prompt
   ask:
     mk: 'Пофалете: многу вкусно!'
@@ -252,7 +252,7 @@ steps:
     speaker: protagonist
     text: Sehr lecker!
   items:
-  - lecker
+  - lecker-m
 - type: prompt
   ask:
     mk: Тој прашува колку долго останувате.
@@ -260,8 +260,8 @@ steps:
     speaker: protagonist
     text: Wie lange bleiben Sie?
   items:
-  - wie-lange
-  - bleiben
+  - wie-lange-m
+  - bleiben-m
 - type: narrator
   text:
     mk: '«müssen» — мора: «ich muss», «wir müssen». Вториот глагол оди на крајот: «Wir müssen uns oft sehen».'
@@ -272,7 +272,7 @@ steps:
     speaker: protagonist
     text: Im Mai muss ich zurück.
   items:
-  - ich-muss
+  - ich-muss-m
 - type: prompt
   ask:
     mk: 'Таа вели: тогаш мора често да се гледаме!'
@@ -280,7 +280,7 @@ steps:
     speaker: protagonist
     text: Dann müssen wir uns oft sehen!
   items:
-  - oft
+  - oft-m
 - type: narrator
   text:
     mk: '«Kaffee und Kuchen» е попладневен ритуал, околу три-четири часот: кафе, колач, разговор — еден час, не цело попладне. Не носете храна неповикано; цвеќе или чоколадо е доволно.'
@@ -291,7 +291,7 @@ steps:
     speaker: protagonist
     text: Schön, Sie kennenzulernen
   items:
-  - schoen-kennenzulernen
+  - schoen-kennenzulernen-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „зборувам“.'
@@ -299,7 +299,7 @@ steps:
     speaker: protagonist
     text: ich spreche
   items:
-  - ich-spreche
+  - ich-spreche-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „само“.'
@@ -307,7 +307,7 @@ steps:
     speaker: protagonist
     text: nur
   items:
-  - nur
+  - nur-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „Сакате ли …? (учтиво)“.'
@@ -315,7 +315,7 @@ steps:
     speaker: protagonist
     text: Möchten Sie …?
   items:
-  - moechten-sie
+  - moechten-sie-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „Да, со задоволство“.'
@@ -323,7 +323,7 @@ steps:
     speaker: protagonist
     text: Ja, gern
   items:
-  - ja-gern
+  - ja-gern-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „парче“.'
@@ -331,7 +331,7 @@ steps:
     speaker: protagonist
     text: ein Stück
   items:
-  - ein-stueck-k
+  - ein-stueck-k-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „колачот“.'
@@ -339,7 +339,7 @@ steps:
     speaker: protagonist
     text: der Kuchen
   items:
-  - der-kuchen
+  - der-kuchen-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „домашен, сам направен“.'
@@ -347,7 +347,7 @@ steps:
     speaker: protagonist
     text: selbst gemacht
   items:
-  - selbst-gemacht
+  - selbst-gemacht-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „вкусно“.'
@@ -355,7 +355,7 @@ steps:
     speaker: protagonist
     text: lecker
   items:
-  - lecker
+  - lecker-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „Колку долго …?“.'
@@ -363,7 +363,7 @@ steps:
     speaker: protagonist
     text: Wie lange …?
   items:
-  - wie-lange
+  - wie-lange-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „останувате“.'
@@ -371,7 +371,7 @@ steps:
     speaker: protagonist
     text: bleiben
   items:
-  - bleiben
+  - bleiben-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „морам“.'
@@ -379,7 +379,7 @@ steps:
     speaker: protagonist
     text: ich muss
   items:
-  - ich-muss
+  - ich-muss-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „често“.'
@@ -387,7 +387,7 @@ steps:
     speaker: protagonist
     text: oft
   items:
-  - oft
+  - oft-m
 - type: narrator
   text:
     mk: Сега нешто од претходните лекции, во оваа нова ситуација.

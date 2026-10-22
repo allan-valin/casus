@@ -14,85 +14,85 @@ learn_lessons:
 - a1-accusative
 culture: Pfand
 new_items:
-- id: ich-nehme
+- id: ich-nehme-e
   text: Ich nehme …
   meaning:
     en: I'll take …
-- id: den-saft
+- id: den-saft-e
   text: den Saft
   meaning:
     en: the juice (as an object)
-- id: eine-tuete
+- id: eine-tuete-e
   text: eine Tüte
   meaning:
     en: a bag
-- id: brauchen-sie
+- id: brauchen-sie-e
   text: Brauchen Sie …?
   meaning:
     en: Do you need …? (polite)
-- id: das-pfand
+- id: das-pfand-e
   text: das Pfand
   meaning:
     en: the deposit (on bottles)
-- id: die-flaschen
+- id: die-flaschen-e
   text: die Flaschen
   meaning:
     en: the bottles
-- id: zurueck
+- id: zurueck-e
   text: zurück
   meaning:
     en: back
-- id: der-automat
+- id: der-automat-e
   text: der Automat
   meaning:
     en: the machine
-- id: mit-karte
+- id: mit-karte-e
   text: mit Karte
   meaning:
     en: by card
-- id: bar
+- id: bar-e
   text: bar
   meaning:
     en: in cash
-- id: der-bon
+- id: der-bon-e
   text: der Bon
   meaning:
     en: the receipt
   rare: true
-- id: das-macht
+- id: das-macht-e
   text: Das macht …
   meaning:
     en: That comes to …
 reviews:
-- item: die-wohnung
+- item: die-wohnung-e
   from: A1-02-e
-- item: das-zimmer
+- item: das-zimmer-e
   from: A1-02-e
-- item: und-die
+- item: und-die-e
   from: A1-02-e
-- item: die-kueche
+- item: die-kueche-e
   from: A1-02-e
-- item: es-gibt-keine
+- item: es-gibt-keine-e
   from: A1-02-e
-- item: nur
+- item: nur-e
   from: A1-02-e
-- item: die-anschluesse
+- item: die-anschluesse-e
   from: A1-02-e
-- item: die-spuele
+- item: die-spuele-e
   from: A1-02-e
-- item: selbst
+- item: selbst-e
   from: A1-02-e
-- item: wo
+- item: wo-e
   from: A1-02-e
-- item: kaufe-ich
+- item: kaufe-ich-e
   from: A1-02-e
-- item: gebraucht
+- item: gebraucht-e
   from: A1-02-e
-- item: der-kuehlschrank
+- item: der-kuehlschrank-e
   from: A1-02-e
-- item: auch-nicht
+- item: auch-nicht-e
   from: A1-02-e
-- item: viel-glueck
+- item: viel-glueck-e
   from: A1-02-e
 - item: einen-termin
   from: A1-04
@@ -171,8 +171,8 @@ steps:
     speaker: protagonist
     text: Brauchen Sie eine Tüte?
   items:
-  - brauchen-sie
-  - eine-tuete
+  - brauchen-sie-e
+  - eine-tuete-e
 - type: prompt
   ask:
     en: 'Say: yes, I''ll take a bag.'
@@ -180,8 +180,8 @@ steps:
     speaker: protagonist
     text: Ja, ich nehme eine Tüte.
   items:
-  - ich-nehme
-  - eine-tuete
+  - ich-nehme-e
+  - eine-tuete-e
 - type: narrator
   text:
     en: 'After «nehmen», «haben», «brauchen» the object changes only in the masculine: «der Saft» becomes «den Saft» — «Ich nehme den Saft». «die» and «das» stay the same.'
@@ -192,8 +192,8 @@ steps:
     speaker: protagonist
     text: Ich nehme den Saft.
   items:
-  - ich-nehme
-  - den-saft
+  - ich-nehme-e
+  - den-saft-e
 - type: prompt
   ask:
     en: 'She says: that comes to twelve euros.'
@@ -201,7 +201,7 @@ steps:
     speaker: protagonist
     text: Das macht zwölf Euro.
   items:
-  - das-macht
+  - das-macht-e
 - type: prompt
   ask:
     en: 'Say: by card.'
@@ -209,7 +209,7 @@ steps:
     speaker: protagonist
     text: Mit Karte.
   items:
-  - mit-karte
+  - mit-karte-e
 - type: prompt
   ask:
     en: 'Or: in cash.'
@@ -217,7 +217,7 @@ steps:
     speaker: protagonist
     text: Bar.
   items:
-  - bar
+  - bar-e
 - type: prompt
   ask:
     en: 'She explains: the deposit.'
@@ -225,7 +225,7 @@ steps:
     speaker: protagonist
     text: Das ist das Pfand.
   items:
-  - das-pfand
+  - das-pfand-e
 - type: prompt
   ask:
     en: 'Say: I bring the bottles back.'
@@ -233,8 +233,8 @@ steps:
     speaker: protagonist
     text: Ich bringe die Flaschen zurück.
   items:
-  - die-flaschen
-  - zurueck
+  - die-flaschen-e
+  - zurueck-e
 - type: prompt
   ask:
     en: Ask where the machine is.
@@ -242,7 +242,7 @@ steps:
     speaker: protagonist
     text: Wo ist der Automat?
   items:
-  - der-automat
+  - der-automat-e
 - type: prompt
   ask:
     en: 'She hands you the receipt. Say it: the receipt.'
@@ -250,7 +250,7 @@ steps:
     speaker: protagonist
     text: Der Bon.
   items:
-  - der-bon
+  - der-bon-e
 - type: narrator
   text:
     en: Most bottles and cans carry a deposit, paid at the till and refunded at a machine in the shop, which prints a voucher. Cash is still common, though cards work almost everywhere.
@@ -261,7 +261,7 @@ steps:
     speaker: protagonist
     text: den Saft
   items:
-  - den-saft
+  - den-saft-e
 - type: prompt
   ask:
     en: 'Once more: say “Do you need …? (polite)”.'
@@ -269,7 +269,7 @@ steps:
     speaker: protagonist
     text: Brauchen Sie …?
   items:
-  - brauchen-sie
+  - brauchen-sie-e
 - type: prompt
   ask:
     en: 'Once more: say “the deposit (on bottles)”.'
@@ -277,7 +277,7 @@ steps:
     speaker: protagonist
     text: das Pfand
   items:
-  - das-pfand
+  - das-pfand-e
 - type: prompt
   ask:
     en: 'Once more: say “the bottles”.'
@@ -285,7 +285,7 @@ steps:
     speaker: protagonist
     text: die Flaschen
   items:
-  - die-flaschen
+  - die-flaschen-e
 - type: prompt
   ask:
     en: 'Once more: say “back”.'
@@ -293,7 +293,7 @@ steps:
     speaker: protagonist
     text: zurück
   items:
-  - zurueck
+  - zurueck-e
 - type: prompt
   ask:
     en: 'Once more: say “the machine”.'
@@ -301,7 +301,7 @@ steps:
     speaker: protagonist
     text: der Automat
   items:
-  - der-automat
+  - der-automat-e
 - type: prompt
   ask:
     en: 'Once more: say “by card”.'
@@ -309,7 +309,7 @@ steps:
     speaker: protagonist
     text: mit Karte
   items:
-  - mit-karte
+  - mit-karte-e
 - type: prompt
   ask:
     en: 'Once more: say “in cash”.'
@@ -317,7 +317,7 @@ steps:
     speaker: protagonist
     text: bar
   items:
-  - bar
+  - bar-e
 - type: prompt
   ask:
     en: 'Once more: say “the receipt”.'
@@ -325,7 +325,7 @@ steps:
     speaker: protagonist
     text: der Bon
   items:
-  - der-bon
+  - der-bon-e
 - type: prompt
   ask:
     en: 'Once more: say “That comes to …”.'
@@ -333,7 +333,7 @@ steps:
     speaker: protagonist
     text: Das macht …
   items:
-  - das-macht
+  - das-macht-e
 - type: narrator
   text:
     en: Now some things from earlier units, in this new situation.
@@ -375,7 +375,7 @@ steps:
   - fertig
   - das-wars
   - schoenen-tag-noch
-  - die-wohnung
+  - die-wohnung-e
 - type: prompt
   review: true
   ask:
@@ -384,11 +384,11 @@ steps:
     speaker: protagonist
     text: das Zimmer … Und die …? … die Küche … Es gibt keine … … nur
   items:
-  - das-zimmer
-  - und-die
-  - die-kueche
-  - es-gibt-keine
-  - nur
+  - das-zimmer-e
+  - und-die-e
+  - die-kueche-e
+  - es-gibt-keine-e
+  - nur-e
 - type: prompt
   review: true
   ask:
@@ -397,11 +397,11 @@ steps:
     speaker: protagonist
     text: die Anschlüsse … die Spüle … selbst … Wo …? … kaufe ich
   items:
-  - die-anschluesse
-  - die-spuele
-  - selbst
-  - wo
-  - kaufe-ich
+  - die-anschluesse-e
+  - die-spuele-e
+  - selbst-e
+  - wo-e
+  - kaufe-ich-e
 - type: prompt
   review: true
   ask:
@@ -410,10 +410,10 @@ steps:
     speaker: protagonist
     text: gebraucht … der Kühlschrank … auch nicht … Viel Glück!
   items:
-  - gebraucht
-  - der-kuehlschrank
-  - auch-nicht
-  - viel-glueck
+  - gebraucht-e
+  - der-kuehlschrank-e
+  - auch-nicht-e
+  - viel-glueck-e
 - type: narrator
   text:
     en: Listen to the conversation again. Now you understand it.

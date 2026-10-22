@@ -103,34 +103,46 @@ reviews:
   from: A1-14
 - item: zum-container
   from: A1-14
-- item: wie-spaet-ist-es
-  from: A1-22-e
-- item: halb-acht
+- item: wie-spaet-ist-es-e
   from: A1-22-e
   for:
   - en
-- item: viertel-nach
-  from: A1-22-e
-- item: viertel-vor
-  from: A1-22-e
-- item: genau-acht
+- item: halb-acht-e
   from: A1-22-e
   for:
   - en
-- item: zu-spaet
-  from: A1-22-e
-- item: die-verspaetung
-  from: A1-22-e
-- item: frueh
+- item: viertel-nach-e
   from: A1-22-e
   for:
   - en
-- item: schon-da
+- item: viertel-vor-e
   from: A1-22-e
   for:
   - en
-- item: das-naechste-mal
+- item: genau-acht-e
   from: A1-22-e
+  for:
+  - en
+- item: zu-spaet-e
+  from: A1-22-e
+  for:
+  - en
+- item: die-verspaetung-e
+  from: A1-22-e
+  for:
+  - en
+- item: frueh-e
+  from: A1-22-e
+  for:
+  - en
+- item: schon-da-e
+  from: A1-22-e
+  for:
+  - en
+- item: das-naechste-mal-e
+  from: A1-22-e
+  for:
+  - en
 - item: darf-ich-mich-vorstellen
   from: A1-26
 - item: mein-name-ist
@@ -175,26 +187,83 @@ reviews:
   from: A1-28
 - item: gruessen-sie
   from: A1-28
-- item: halb-fuenf
+- item: wie-spaet-ist-es-a
   from: A1-22-a
   for:
   - ar
+- item: halb-fuenf-a
+  from: A1-22-a
+  for:
+  - ar
+- item: viertel-vor-a
+  from: A1-22-a
+  for:
+  - ar
+- item: viertel-nach-a
+  from: A1-22-a
+  for:
+  - ar
+- item: puenktlich-a-a
+  from: A1-22-a
+  for:
+  - ar
+- item: zu-spaet-a
+  from: A1-22-a
+  for:
+  - ar
+- item: die-verspaetung-a
+  from: A1-22-a
+  for:
+  - ar
+- item: rufen-sie-an-a
+  from: A1-22-a
+  for:
+  - ar
+- item: das-naechste-mal-a
+  from: A1-22-a
+  for:
+  - ar
+- item: es-tut-mir-leid-a
+  from: A1-22-a
+  for:
+  - ar
+- item: wie-spaet-ist-es-m
+  from: A1-22-m
+  for:
   - mk
-- item: puenktlich-a
-  from: A1-22-a
+- item: halb-fuenf-m
+  from: A1-22-m
   for:
-  - ar
-- item: rufen-sie-an
-  from: A1-22-a
-  for:
-  - ar
   - mk
-- item: es-tut-mir-leid
-  from: A1-22-a
+- item: viertel-vor-m
+  from: A1-22-m
   for:
-  - ar
   - mk
-- item: puenktlich-m
+- item: viertel-nach-m
+  from: A1-22-m
+  for:
+  - mk
+- item: puenktlich-m-m
+  from: A1-22-m
+  for:
+  - mk
+- item: zu-spaet-m
+  from: A1-22-m
+  for:
+  - mk
+- item: die-verspaetung-m
+  from: A1-22-m
+  for:
+  - mk
+- item: rufen-sie-an-m
+  from: A1-22-m
+  for:
+  - mk
+- item: das-naechste-mal-m
+  from: A1-22-m
+  for:
+  - mk
+- item: es-tut-mir-leid-m
   from: A1-22-m
   for:
   - mk
@@ -477,17 +546,13 @@ steps:
   review: true
   ask:
     en: 'Say: “the family — and “my sister — and “her children — and “my brother — and “his son — and “Is that your …? (polite) — and “my parents — and “I miss — and “How many …? — and “brothers and sisters
-      — and “Say hello to … (polite) — and “May I introduce myself? — and “My name is … — and “on the first floor — and “Nice to meet you too — and “for a long time already — and “for three months — and
-      “How do you like it? (polite) — and “spring — and “Just ring the bell (polite)”.'
-    ar: 'قولي: “العائلة — و“أختي — و“أولادها — و“أخي — و“ابنه — و“هل هذه …؟ (بصيغة الاحترام) — و“والداي — و“أشتاق إلى — و“كم …؟ — و“إخوة وأخوات — و“سلّم على … — و“هل تسمح لي بأن أعرّفك بنفسي؟ — و“اسمي …
-      — و“في الطابق الأول — و“تشرفنا أيضًا — و“منذ وقت طويل — و“منذ ثلاثة أشهر — و“كيف تجد المكان؟ — و“الربيع — و“فقط اقرع الجرس”.'
+      — and “Say hello to … (polite) — and “May I introduce myself?”.'
+    ar: 'قولي: “العائلة — و“أختي — و“أولادها — و“أخي — و“ابنه — و“هل هذه …؟ (بصيغة الاحترام) — و“والداي — و“أشتاق إلى — و“كم …؟ — و“إخوة وأخوات — و“سلّم على … — و“هل تسمح لي بأن أعرّفك بنفسي؟”.'
     mk: 'Кажете: „семејството“ — и „сестра ми“ — и „нејзините деца“ — и „брат ми“ — и „неговиот син“ — и „Дали е ова вашата …?“ — и „моите родители“ — и „ми недостига“ — и „Колку …?“ — и „браќа и сестри“
-      — и „Поздравете …“ — и „Може ли да се претставам?“ — и „Моето име е …“ — и „на првиот кат“ — и „И мене ми е мило“ — и „веќе долго“ — и „веќе три месеци“ — и „Како ви се допаѓа?“ — и „пролетта“ — и
-      „Само ѕвонете“.'
+      — и „Поздравете …“ — и „Може ли да се претставам?“.'
   answer:
     speaker: protagonist
-    text: die Familie … meine Schwester … ihre Kinder … mein Bruder … sein Sohn … Ist das Ihre …? … meine Eltern … ich vermisse … Wie viele …? … Geschwister … Grüßen Sie … … Darf ich mich vorstellen? …
-      Mein Name ist … … im ersten Stock … Freut mich auch … schon lange … seit drei Monaten … Wie gefällt es Ihnen? … der Frühling … Klingeln Sie einfach
+    text: die Familie … meine Schwester … ihre Kinder … mein Bruder … sein Sohn … Ist das Ihre …? … meine Eltern … ich vermisse … Wie viele …? … Geschwister … Grüßen Sie … … Darf ich mich vorstellen?
   items:
   - die-familie
   - meine-schwester
@@ -501,6 +566,19 @@ steps:
   - geschwister
   - gruessen-sie
   - darf-ich-mich-vorstellen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “My name is … — and “on the first floor — and “Nice to meet you too — and “for a long time already — and “for three months — and “How do you like it? (polite) — and “spring — and “Just ring
+      the bell (polite) — and “Likewise! — and “the hand — and “Hang on a moment! — and “the rubbish”.'
+    ar: 'قولي: “اسمي … — و“في الطابق الأول — و“تشرفنا أيضًا — و“منذ وقت طويل — و“منذ ثلاثة أشهر — و“كيف تجد المكان؟ — و“الربيع — و“فقط اقرع الجرس — و“وأنت أيضًا! — و“اليد — و“لحظة من فضلك! — و“النفايات”.'
+    mk: 'Кажете: „Моето име е …“ — и „на првиот кат“ — и „И мене ми е мило“ — и „веќе долго“ — и „веќе три месеци“ — и „Како ви се допаѓа?“ — и „пролетта“ — и „Само ѕвонете“ — и „Исто така!“ — и „раката“
+      — и „Чекајте малку!“ — и „ѓубрето“.'
+  answer:
+    speaker: protagonist
+    text: Mein Name ist … … im ersten Stock … Freut mich auch … schon lange … seit drei Monaten … Wie gefällt es Ihnen? … der Frühling … Klingeln Sie einfach … Gleichfalls! … die Hand … Moment mal! … der
+      Müll
+  items:
   - mein-name-ist
   - im-ersten-stock
   - freut-mich-auch
@@ -509,30 +587,21 @@ steps:
   - wie-gefaellt-es-ihnen
   - der-fruehling
   - klingeln-sie
+  - gleichfalls
+  - die-hand
+  - moment-mal
+  - der-muell
 - type: prompt
   review: true
   ask:
-    en: 'Say: “Likewise! — and “the hand — and “What time is it? — and “quarter past — and “quarter to — and “too late — and “the delay — and “next time — and “Hang on a moment! — and “the rubbish — and
-      “separate, sort — and “the yellow bin (packaging) — and “plastic — and “paper — and “the blue one — and “food waste — and “general waste — and “glass — and “Take … (polite command) — and “to the container”.'
-    ar: 'قولي: “وأنت أيضًا! — و“اليد — و“كم الساعة؟ — و“وربع — و“إلا ربعًا — و“متأخر — و“التأخير — و“في المرة القادمة — و“لحظة من فضلك! — و“النفايات — و“يفرز — و“الحاوية الصفراء (التغليف) — و“البلاستيك
-      — و“الورق — و“الزرقاء — و“النفايات العضوية — و“بقية النفايات — و“الزجاج — و“خذ … (أمر مؤدب) — و“إلى الحاوية”.'
-    mk: 'Кажете: „Исто така!“ — и „раката“ — и „Колку е часот?“ — и „и петнаесет“ — и „помалку петнаесет“ — и „доцна“ — и „доцнењето“ — и „следниот пат“ — и „Чекајте малку!“ — и „ѓубрето“ — и „одвојува“
-      — и „жолтиот контејнер (амбалажа)“ — и „пластиката“ — и „хартијата“ — и „синиот“ — и „органскиот отпад“ — и „останатиот отпад“ — и „стаклото“ — и „Однесете …“ — и „до контејнерот“.'
+    en: 'Say: “separate, sort — and “the yellow bin (packaging) — and “plastic — and “paper — and “the blue one — and “food waste — and “general waste — and “glass — and “Take … (polite command) — and “to
+      the container”.'
+    ar: 'قولي: “يفرز — و“الحاوية الصفراء (التغليف) — و“البلاستيك — و“الورق — و“الزرقاء — و“النفايات العضوية — و“بقية النفايات — و“الزجاج — و“خذ … (أمر مؤدب) — و“إلى الحاوية”.'
+    mk: 'Кажете: „одвојува“ — и „жолтиот контејнер (амбалажа)“ — и „пластиката“ — и „хартијата“ — и „синиот“ — и „органскиот отпад“ — и „останатиот отпад“ — и „стаклото“ — и „Однесете …“ — и „до контејнерот“.'
   answer:
     speaker: protagonist
-    text: Gleichfalls! … die Hand … Wie spät ist es? … Viertel nach … Viertel vor … zu spät … die Verspätung … das nächste Mal … Moment mal! … der Müll … trennen … die gelbe Tonne … das Plastik … das Papier
-      … die blaue … der Biomüll … der Restmüll … das Glas … Bringen Sie … … zum Container
+    text: trennen … die gelbe Tonne … das Plastik … das Papier … die blaue … der Biomüll … der Restmüll … das Glas … Bringen Sie … … zum Container
   items:
-  - gleichfalls
-  - die-hand
-  - wie-spaet-ist-es
-  - viertel-nach
-  - viertel-vor
-  - zu-spaet
-  - die-verspaetung
-  - das-naechste-mal
-  - moment-mal
-  - der-muell
   - trennen
   - die-gelbe-tonne
   - das-plastik
@@ -546,74 +615,121 @@ steps:
 - type: prompt
   review: true
   ask:
-    en: 'Say: “half past seven (half to eight) — and “exactly eight”.'
+    en: 'Say: “What time is it? — and “half past seven (half to eight) — and “quarter past — and “quarter to”.'
   answer:
     speaker: protagonist
-    text: halb acht … genau acht
+    text: Wie spät ist es? … halb acht … Viertel nach … Viertel vor
   items:
-  - halb-acht
-  - genau-acht
+  - wie-spaet-ist-es-e
+  - halb-acht-e
+  - viertel-nach-e
+  - viertel-vor-e
   for:
   - en
 - type: prompt
   review: true
   ask:
-    en: 'Say: “early — and “already there”.'
+    en: 'Say: “exactly eight — and “too late — and “the delay — and “early”.'
   answer:
     speaker: protagonist
-    text: früh … schon da
+    text: genau acht … zu spät … die Verspätung … früh
   items:
-  - frueh
-  - schon-da
+  - genau-acht-e
+  - zu-spaet-e
+  - die-verspaetung-e
+  - frueh-e
   for:
   - en
 - type: prompt
   review: true
   ask:
-    ar: 'قولي: “الرابعة والنصف — و“اتصل (أمر مؤدب)”.'
-    mk: 'Кажете: „четири и пол“ — и „Јавете се“.'
+    en: 'Say: “already there — and “next time”.'
   answer:
     speaker: protagonist
-    text: halb fünf … Rufen Sie an
+    text: schon da … das nächste Mal
   items:
-  - halb-fuenf
-  - rufen-sie-an
+  - schon-da-e
+  - das-naechste-mal-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “كم الساعة؟ — و“الرابعة والنصف — و“إلا ربعًا — و“وربع”.'
+  answer:
+    speaker: protagonist
+    text: Wie spät ist es? … halb fünf … Viertel vor … Viertel nach
+  items:
+  - wie-spaet-ist-es-a
+  - halb-fuenf-a
+  - viertel-vor-a
+  - viertel-nach-a
   for:
   - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “في الموعد — و“متأخر — و“التأخير — و“اتصل (أمر مؤدب)”.'
+  answer:
+    speaker: protagonist
+    text: pünktlich … zu spät … die Verspätung … Rufen Sie an
+  items:
+  - puenktlich-a-a
+  - zu-spaet-a
+  - die-verspaetung-a
+  - rufen-sie-an-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “في المرة القادمة — و“آسف”.'
+  answer:
+    speaker: protagonist
+    text: das nächste Mal … Es tut mir leid
+  items:
+  - das-naechste-mal-a
+  - es-tut-mir-leid-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „Колку е часот?“ — и „четири и пол“ — и „помалку петнаесет“ — и „и петнаесет“.'
+  answer:
+    speaker: protagonist
+    text: Wie spät ist es? … halb fünf … Viertel vor … Viertel nach
+  items:
+  - wie-spaet-ist-es-m
+  - halb-fuenf-m
+  - viertel-vor-m
+  - viertel-nach-m
+  for:
   - mk
 - type: prompt
   review: true
   ask:
-    ar: 'قولي: “آسف”.'
-    mk: 'Кажете: „Жал ми е“.'
+    mk: 'Кажете: „точно, навреме“ — и „доцна“ — и „доцнењето“ — и „Јавете се“.'
   answer:
     speaker: protagonist
-    text: Es tut mir leid
+    text: pünktlich … zu spät … die Verspätung … Rufen Sie an
   items:
-  - es-tut-mir-leid
+  - puenktlich-m-m
+  - zu-spaet-m
+  - die-verspaetung-m
+  - rufen-sie-an-m
   for:
-  - ar
   - mk
 - type: prompt
   review: true
   ask:
-    ar: 'قولي: “في الموعد”.'
+    mk: 'Кажете: „следниот пат“ — и „Жал ми е“.'
   answer:
     speaker: protagonist
-    text: pünktlich
+    text: das nächste Mal … Es tut mir leid
   items:
-  - puenktlich-a
-  for:
-  - ar
-- type: prompt
-  review: true
-  ask:
-    mk: 'Кажете: „точно, навреме“.'
-  answer:
-    speaker: protagonist
-    text: pünktlich
-  items:
-  - puenktlich-m
+  - das-naechste-mal-m
+  - es-tut-mir-leid-m
   for:
   - mk
 - type: narrator

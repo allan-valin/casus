@@ -137,127 +137,151 @@ reviews:
   from: A1-03
 - item: frau-doktor
   from: A1-03
-- item: ich-nehme
+- item: ich-nehme-e
   from: A1-05-e
   for:
   - en
-- item: den-saft
+- item: den-saft-e
   from: A1-05-e
   for:
   - en
-- item: eine-tuete
+- item: eine-tuete-e
   from: A1-05-e
   for:
   - en
-- item: brauchen-sie
+- item: brauchen-sie-e
   from: A1-05-e
   for:
   - en
-- item: das-pfand
+- item: das-pfand-e
   from: A1-05-e
   for:
   - en
-- item: die-flaschen
+- item: die-flaschen-e
   from: A1-05-e
   for:
   - en
-- item: zurueck
+- item: zurueck-e
   from: A1-05-e
   for:
   - en
-- item: der-automat
+- item: der-automat-e
   from: A1-05-e
   for:
   - en
-- item: mit-karte
+- item: mit-karte-e
   from: A1-05-e
   for:
   - en
-- item: bar
+- item: bar-e
   from: A1-05-e
   for:
   - en
-- item: der-bon
+- item: der-bon-e
   from: A1-05-e
   for:
   - en
-- item: das-macht
+- item: das-macht-e
   from: A1-05-e
   for:
   - en
-- item: die-mama
+- item: die-mama-a
   from: A1-05-a
   for:
   - ar
-- item: hat-fieber
+- item: hat-fieber-a
   from: A1-05-a
   for:
   - ar
-  - mk
-- item: seit-heute-nacht
+- item: seit-heute-nacht-a
   from: A1-05-a
   for:
   - ar
-- item: das-u-heft
+- item: das-u-heft-a
   from: A1-05-a
   for:
   - ar
-  - mk
-- item: die-karte
+- item: die-karte-a
   from: A1-05-a
   for:
   - ar
-  - mk
-- item: die-versichertenkarte
+- item: die-versichertenkarte-a
   from: A1-05-a
   for:
   - ar
-- item: hustet
+- item: hustet-a
   from: A1-05-a
   for:
   - ar
-  - mk
-- item: ich-gebe-ihnen
+- item: ich-gebe-ihnen-a
   from: A1-05-a
   for:
   - ar
-  - mk
-- item: den-saft-medizin
+- item: den-saft-medizin-a
   from: A1-05-a
   for:
   - ar
-- item: dreimal-am-tag
+- item: dreimal-am-tag-a
   from: A1-05-a
   for:
   - ar
-  - mk
-- item: gute-besserung
+- item: gute-besserung-a
   from: A1-05-a
   for:
   - ar
-  - mk
-- item: vielen-dank
+- item: vielen-dank-a
   from: A1-05-a
   for:
   - ar
-  - mk
-- item: die-oma
+- item: die-oma-m
   from: A1-05-m
   for:
   - mk
-- item: seit-heute-morgen-k
+- item: hat-fieber-m
   from: A1-05-m
   for:
   - mk
-- item: die-eltern
+- item: seit-heute-morgen-k-m
   from: A1-05-m
   for:
   - mk
-- item: arbeiten
+- item: die-eltern-m
   from: A1-05-m
   for:
   - mk
-- item: einen-saft
+- item: arbeiten-m
+  from: A1-05-m
+  for:
+  - mk
+- item: die-karte-m
+  from: A1-05-m
+  for:
+  - mk
+- item: das-u-heft-m
+  from: A1-05-m
+  for:
+  - mk
+- item: hustet-m
+  from: A1-05-m
+  for:
+  - mk
+- item: ich-gebe-ihnen-m
+  from: A1-05-m
+  for:
+  - mk
+- item: einen-saft-m
+  from: A1-05-m
+  for:
+  - mk
+- item: dreimal-am-tag-m
+  from: A1-05-m
+  for:
+  - mk
+- item: gute-besserung-m
+  from: A1-05-m
+  for:
+  - mk
+- item: vielen-dank-m
   from: A1-05-m
   for:
   - mk
@@ -599,45 +623,55 @@ steps:
 - type: prompt
   review: true
   ask:
-    en: 'Say: “What''s wrong? (polite) — and “my — and “the head — and “hurts — and “the belly”.'
-    ar: 'قل: “ما بكِ؟ (بصيغة الاحترام) — و“ـي (ضمير الملكية) — و“الرأس — و“يؤلم — و“البطن”.'
-    mk: 'Кажете: „Што ви е?“ — и „мој“ — и „главата“ — и „боли“ — и „стомакот“.'
+    en: 'Say: “What''s wrong? (polite) — and “my — and “the head — and “hurts”.'
+    ar: 'قل: “ما بكِ؟ (بصيغة الاحترام) — و“ـي (ضمير الملكية) — و“الرأس — و“يؤلم”.'
+    mk: 'Кажете: „Што ви е?“ — и „мој“ — и „главата“ — и „боли“.'
   answer:
     speaker: protagonist
-    text: Was fehlt Ihnen? … mein … der Kopf … tut weh … der Bauch
+    text: Was fehlt Ihnen? … mein … der Kopf … tut weh
   items:
   - was-fehlt-ihnen
   - mein
   - der-kopf
   - tut-weh
-  - der-bauch
 - type: prompt
   review: true
   ask:
-    en: 'Say: “Since when? — and “since yesterday — and “Do you have …? (polite) — and “fever, temperature — and “no, not a”.'
-    ar: 'قل: “منذ متى؟ — و“منذ أمس — و“هل عندكِ …؟ (بصيغة الاحترام) — و“حمّى، حرارة — و“لا … (نفي الاسم)”.'
-    mk: 'Кажете: „Од кога?“ — и „од вчера“ — и „Имате ли …?“ — и „температура“ — и „нема, ниту еден“.'
+    en: 'Say: “the belly — and “Since when? — and “since yesterday — and “Do you have …? (polite)”.'
+    ar: 'قل: “البطن — و“منذ متى؟ — و“منذ أمس — و“هل عندكِ …؟ (بصيغة الاحترام)”.'
+    mk: 'Кажете: „стомакот“ — и „Од кога?“ — и „од вчера“ — и „Имате ли …?“.'
   answer:
     speaker: protagonist
-    text: Seit wann? … seit gestern … Haben Sie …? … Fieber … kein
+    text: der Bauch … Seit wann? … seit gestern … Haben Sie …?
   items:
+  - der-bauch
   - seit-wann
   - seit-gestern
   - haben-sie
-  - fieber
-  - kein
 - type: prompt
   review: true
   ask:
-    en: 'Say: “the arm — and “too, also — and “not serious — and “plenty of water — and “Doctor (addressing a woman)”.'
-    ar: 'قل: “الذراع — و“أيضًا — و“ليس خطيرًا — و“ماء كثير — و“حضرة الطبيبة”.'
-    mk: 'Кажете: „раката“ — и „исто така“ — и „не е страшно“ — и „многу вода“ — и „госпоѓо докторке“.'
+    en: 'Say: “fever, temperature — and “no, not a — and “the arm — and “too, also”.'
+    ar: 'قل: “حمّى، حرارة — و“لا … (نفي الاسم) — و“الذراع — و“أيضًا”.'
+    mk: 'Кажете: „температура“ — и „нема, ниту еден“ — и „раката“ — и „исто така“.'
   answer:
     speaker: protagonist
-    text: der Arm … auch … nicht schlimm … viel Wasser … Frau Doktor
+    text: Fieber … kein … der Arm … auch
   items:
+  - fieber
+  - kein
   - der-arm
   - auch
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “not serious — and “plenty of water — and “Doctor (addressing a woman)”.'
+    ar: 'قل: “ليس خطيرًا — و“ماء كثير — و“حضرة الطبيبة”.'
+    mk: 'Кажете: „не е страшно“ — и „многу вода“ — и „госпоѓо докторке“.'
+  answer:
+    speaker: protagonist
+    text: nicht schlimm … viel Wasser … Frau Doktor
+  items:
   - nicht-schlimm
   - viel-wasser
   - frau-doktor
@@ -649,9 +683,9 @@ steps:
     speaker: protagonist
     text: Ich nehme … … den Saft … eine Tüte
   items:
-  - ich-nehme
-  - den-saft
-  - eine-tuete
+  - ich-nehme-e
+  - den-saft-e
+  - eine-tuete-e
   for:
   - en
 - type: prompt
@@ -662,9 +696,9 @@ steps:
     speaker: protagonist
     text: Brauchen Sie …? … das Pfand … die Flaschen
   items:
-  - brauchen-sie
-  - das-pfand
-  - die-flaschen
+  - brauchen-sie-e
+  - das-pfand-e
+  - die-flaschen-e
   for:
   - en
 - type: prompt
@@ -675,9 +709,9 @@ steps:
     speaker: protagonist
     text: zurück … der Automat … mit Karte
   items:
-  - zurueck
-  - der-automat
-  - mit-karte
+  - zurueck-e
+  - der-automat-e
+  - mit-karte-e
   for:
   - en
 - type: prompt
@@ -688,112 +722,114 @@ steps:
     speaker: protagonist
     text: bar … der Bon … Das macht …
   items:
-  - bar
-  - der-bon
-  - das-macht
+  - bar-e
+  - der-bon-e
+  - das-macht-e
   for:
   - en
 - type: prompt
   review: true
   ask:
-    ar: 'قل: “الأم، ماما — و“منذ الليلة الماضية”.'
+    ar: 'قل: “الأم، ماما — و“عندها حرارة — و“منذ الليلة الماضية”.'
   answer:
     speaker: protagonist
-    text: die Mama … seit heute Nacht
+    text: die Mama … hat Fieber … seit heute Nacht
   items:
-  - die-mama
-  - seit-heute-nacht
+  - die-mama-a
+  - hat-fieber-a
+  - seit-heute-nacht-a
   for:
   - ar
 - type: prompt
   review: true
   ask:
-    ar: 'قل: “بطاقة التأمين الصحي — و“شرابًا (دواء سائل)”.'
+    ar: 'قل: “دفتر الفحوص الأصفر — و“البطاقة (بطاقة التأمين) — و“بطاقة التأمين الصحي”.'
   answer:
     speaker: protagonist
-    text: die Versichertenkarte … einen Saft
+    text: das U-Heft … die Karte … die Versichertenkarte
   items:
-  - die-versichertenkarte
-  - den-saft-medizin
+  - das-u-heft-a
+  - die-karte-a
+  - die-versichertenkarte-a
   for:
   - ar
 - type: prompt
   review: true
   ask:
-    ar: 'قل: “عندها حرارة — و“دفتر الفحوص الأصفر — و“البطاقة (بطاقة التأمين)”.'
-    mk: 'Кажете: „има температура“ — и „жолтата книшка за прегледи“ — и „картичката“.'
+    ar: 'قل: “تسعل — و“أعطيكِ … — و“شرابًا (دواء سائل)”.'
   answer:
     speaker: protagonist
-    text: hat Fieber … das U-Heft … die Karte
+    text: hustet … Ich gebe Ihnen … … einen Saft
   items:
-  - hat-fieber
-  - das-u-heft
-  - die-karte
+  - hustet-a
+  - ich-gebe-ihnen-a
+  - den-saft-medizin-a
   for:
   - ar
-  - mk
 - type: prompt
   review: true
   ask:
-    ar: 'قل: “تسعل — و“أعطيكِ … — و“ثلاث مرات في اليوم”.'
-    mk: 'Кажете: „кашла“ — и „Ви давам …“ — и „три пати на ден“.'
+    ar: 'قل: “ثلاث مرات في اليوم — و“شفاءً عاجلًا! — و“شكرًا جزيلًا”.'
   answer:
     speaker: protagonist
-    text: hustet … Ich gebe Ihnen … … dreimal am Tag
+    text: dreimal am Tag … Gute Besserung! … Vielen Dank
   items:
-  - hustet
-  - ich-gebe-ihnen
-  - dreimal-am-tag
+  - dreimal-am-tag-a
+  - gute-besserung-a
+  - vielen-dank-a
   for:
   - ar
-  - mk
 - type: prompt
   review: true
   ask:
-    ar: 'قل: “شفاءً عاجلًا! — و“شكرًا جزيلًا”.'
-    mk: 'Кажете: „Брзо оздравување!“ — и „Многу благодарам“.'
+    mk: 'Кажете: „бабата“ — и „има температура“ — и „од утрово“ — и „родителите“.'
   answer:
     speaker: protagonist
-    text: Gute Besserung! … Vielen Dank
+    text: die Oma … hat Fieber … seit heute Morgen … die Eltern
   items:
-  - gute-besserung
-  - vielen-dank
-  for:
-  - ar
-  - mk
-- type: prompt
-  review: true
-  ask:
-    mk: 'Кажете: „бабата“ — и „од утрово“.'
-  answer:
-    speaker: protagonist
-    text: die Oma … seit heute Morgen
-  items:
-  - die-oma
-  - seit-heute-morgen-k
+  - die-oma-m
+  - hat-fieber-m
+  - seit-heute-morgen-k-m
+  - die-eltern-m
   for:
   - mk
 - type: prompt
   review: true
   ask:
-    mk: 'Кажете: „родителите“ — и „работат“.'
+    mk: 'Кажете: „работат“ — и „картичката“ — и „жолтата книшка за прегледи“ — и „кашла“.'
   answer:
     speaker: protagonist
-    text: die Eltern … arbeiten
+    text: arbeiten … die Karte … das U-Heft … hustet
   items:
-  - die-eltern
-  - arbeiten
+  - arbeiten-m
+  - die-karte-m
+  - das-u-heft-m
+  - hustet-m
   for:
   - mk
 - type: prompt
   review: true
   ask:
-    mk: 'Кажете: „сируп“.'
+    mk: 'Кажете: „Ви давам …“ — и „сируп“ — и „три пати на ден“ — и „Брзо оздравување!“.'
   answer:
     speaker: protagonist
-    text: einen Saft
+    text: Ich gebe Ihnen … … einen Saft … dreimal am Tag … Gute Besserung!
   items:
-  - einen-saft
+  - ich-gebe-ihnen-m
+  - einen-saft-m
+  - dreimal-am-tag-m
+  - gute-besserung-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „Многу благодарам“.'
+  answer:
+    speaker: protagonist
+    text: Vielen Dank
+  items:
+  - vielen-dank-m
   for:
   - mk
 - type: narrator

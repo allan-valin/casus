@@ -14,55 +14,55 @@ learn_lessons:
 - a1-article
 culture: The Kita
 new_items:
-- id: der-opa
+- id: der-opa-m
   text: der Opa
   meaning:
     mk: дедото
-- id: ich-hole-ab
+- id: ich-hole-ab-m
   text: ich hole … ab
   meaning:
     mk: доаѓам да го земам (некого)
-- id: die-kita
+- id: die-kita-m
   text: die Kita
   meaning:
     mk: градинката (Kita)
-- id: die-erzieherin
+- id: die-erzieherin-m
   text: die Erzieherin
   meaning:
     mk: воспитувачката
-- id: ist-da
+- id: ist-da-m
   text: … ist da
   meaning:
     mk: … е тука, дојде
-- id: hallo
+- id: hallo-m
   text: Hallo
   meaning:
     mk: Здраво
-- id: mein-schatz
+- id: mein-schatz-m
   text: mein Schatz
   meaning:
     mk: душо моја, срце мое
-- id: der-ausweis
+- id: der-ausweis-m
   text: der Ausweis
   meaning:
     mk: личната карта / документот
-- id: hier
+- id: hier-m
   text: hier
   meaning:
     mk: тука, еве
-- id: die-mama-hat-gesagt
+- id: die-mama-hat-gesagt-m
   text: die Mama hat es gesagt
   meaning:
     mk: мама кажа
-- id: tschuess
+- id: tschuess-m
   text: Tschüss!
   meaning:
     mk: Чао!
-- id: bis-morgen
+- id: bis-morgen-m
   text: Bis morgen!
   meaning:
     mk: До утре!
-- id: das-ist
+- id: das-ist-m
   text: Das ist …
   meaning:
     mk: Ова е …
@@ -158,7 +158,7 @@ steps:
     text: Ich bin der Opa von Luka.
   items:
   - ich-bin
-  - der-opa
+  - der-opa-m
 - type: narrator
   text:
     mk: '«abholen» е одделив глагол: «Ich hole Luka ab» — доаѓам да го земам Лука. Делот «ab» оди на крајот од реченицата.'
@@ -169,7 +169,7 @@ steps:
     speaker: protagonist
     text: Ich hole Luka ab.
   items:
-  - ich-hole-ab
+  - ich-hole-ab-m
 - type: prompt
   ask:
     mk: 'Кажете: воспитувачката.'
@@ -177,7 +177,7 @@ steps:
     speaker: protagonist
     text: Die Erzieherin.
   items:
-  - die-erzieherin
+  - die-erzieherin-m
 - type: prompt
   ask:
     mk: 'Таа го вика Лука: дедо ти дојде! Како?'
@@ -185,7 +185,7 @@ steps:
     speaker: protagonist
     text: Dein Opa ist da!
   items:
-  - ist-da
+  - ist-da-m
 - type: prompt
   ask:
     mk: 'Поздравете го внукот: здраво, душо моја!'
@@ -193,8 +193,8 @@ steps:
     speaker: protagonist
     text: Hallo, mein Schatz!
   items:
-  - hallo
-  - mein-schatz
+  - hallo-m
+  - mein-schatz-m
 - type: narrator
   text:
     mk: Детето смее да го земе само тој што родителите однапред го пријавиле во градинката — затоа бараат документ. Носете го пасошот или личната карта секој пат.
@@ -205,9 +205,9 @@ steps:
     speaker: protagonist
     text: Hier. Das ist der Ausweis.
   items:
-  - hier
-  - das-ist
-  - der-ausweis
+  - hier-m
+  - das-ist-m
+  - der-ausweis-m
 - type: prompt
   ask:
     mk: 'Таа вели: мама кажа.'
@@ -215,7 +215,7 @@ steps:
     speaker: protagonist
     text: Die Mama hat es gesagt.
   items:
-  - die-mama-hat-gesagt
+  - die-mama-hat-gesagt-m
 - type: prompt
   ask:
     mk: 'Кажете: ова е градинката.'
@@ -223,8 +223,8 @@ steps:
     speaker: protagonist
     text: Das ist die Kita.
   items:
-  - das-ist
-  - die-kita
+  - das-ist-m
+  - die-kita-m
 - type: prompt
   ask:
     mk: Поздравете се неформално.
@@ -232,7 +232,7 @@ steps:
     speaker: protagonist
     text: Tschüss!
   items:
-  - tschuess
+  - tschuess-m
 - type: prompt
   ask:
     mk: 'И додадете: до утре!'
@@ -240,7 +240,7 @@ steps:
     speaker: protagonist
     text: Bis morgen!
   items:
-  - bis-morgen
+  - bis-morgen-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „дедото“.'
@@ -248,7 +248,7 @@ steps:
     speaker: protagonist
     text: der Opa
   items:
-  - der-opa
+  - der-opa-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „доаѓам да го земам (некого)“.'
@@ -256,7 +256,7 @@ steps:
     speaker: protagonist
     text: ich hole … ab
   items:
-  - ich-hole-ab
+  - ich-hole-ab-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „градинката (Kita)“.'
@@ -264,7 +264,7 @@ steps:
     speaker: protagonist
     text: die Kita
   items:
-  - die-kita
+  - die-kita-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „воспитувачката“.'
@@ -272,7 +272,7 @@ steps:
     speaker: protagonist
     text: die Erzieherin
   items:
-  - die-erzieherin
+  - die-erzieherin-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „… е тука, дојде“.'
@@ -280,7 +280,7 @@ steps:
     speaker: protagonist
     text: … ist da
   items:
-  - ist-da
+  - ist-da-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „Здраво“.'
@@ -288,7 +288,7 @@ steps:
     speaker: protagonist
     text: Hallo
   items:
-  - hallo
+  - hallo-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „душо моја, срце мое“.'
@@ -296,7 +296,7 @@ steps:
     speaker: protagonist
     text: mein Schatz
   items:
-  - mein-schatz
+  - mein-schatz-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „личната карта / документот“.'
@@ -304,7 +304,7 @@ steps:
     speaker: protagonist
     text: der Ausweis
   items:
-  - der-ausweis
+  - der-ausweis-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „тука, еве“.'
@@ -312,7 +312,7 @@ steps:
     speaker: protagonist
     text: hier
   items:
-  - hier
+  - hier-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „мама кажа“.'
@@ -320,7 +320,7 @@ steps:
     speaker: protagonist
     text: die Mama hat es gesagt
   items:
-  - die-mama-hat-gesagt
+  - die-mama-hat-gesagt-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „Чао!“.'
@@ -328,7 +328,7 @@ steps:
     speaker: protagonist
     text: Tschüss!
   items:
-  - tschuess
+  - tschuess-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „До утре!“.'
@@ -336,7 +336,7 @@ steps:
     speaker: protagonist
     text: Bis morgen!
   items:
-  - bis-morgen
+  - bis-morgen-m
 - type: narrator
   text:
     mk: Сега нешто од претходните лекции, во оваа нова ситуација.

@@ -14,66 +14,66 @@ learn_lessons:
 - a1-article
 culture: No kitchen, not even a sink
 new_items:
-- id: die-wohnung
+- id: die-wohnung-e
   text: die Wohnung
   meaning:
     en: the flat
-- id: das-zimmer
+- id: das-zimmer-e
   text: das Zimmer
   meaning:
     en: the room
-- id: und-die
+- id: und-die-e
   text: Und die …?
   meaning:
     en: And the …?
-- id: die-kueche
+- id: die-kueche-e
   text: die Küche
   meaning:
     en: the kitchen
-- id: es-gibt-keine
+- id: es-gibt-keine-e
   text: Es gibt keine …
   meaning:
     en: There is no … (feminine)
-- id: nur
+- id: nur-e
   text: nur
   meaning:
     en: only
-- id: die-anschluesse
+- id: die-anschluesse-e
   text: die Anschlüsse
   meaning:
     en: the connections (water, power)
   rare: true
-- id: die-spuele
+- id: die-spuele-e
   text: die Spüle
   meaning:
     en: the sink
   rare: true
-- id: selbst
+- id: selbst-e
   text: selbst
   meaning:
     en: yourself, myself
-- id: wo
+- id: wo-e
   text: Wo …?
   meaning:
     en: Where …?
-- id: kaufe-ich
+- id: kaufe-ich-e
   text: kaufe ich
   meaning:
     en: do I buy
-- id: gebraucht
+- id: gebraucht-e
   text: gebraucht
   meaning:
     en: second-hand, used
-- id: der-kuehlschrank
+- id: der-kuehlschrank-e
   text: der Kühlschrank
   meaning:
     en: the fridge
   rare: true
-- id: auch-nicht
+- id: auch-nicht-e
   text: auch nicht
   meaning:
     en: not … either
-- id: viel-glueck
+- id: viel-glueck-e
   text: Viel Glück!
   meaning:
     en: Good luck!
@@ -164,7 +164,7 @@ steps:
     speaker: protagonist
     text: Hier ist die Wohnung.
   items:
-  - die-wohnung
+  - die-wohnung-e
 - type: prompt
   ask:
     en: 'Say: this is the room.'
@@ -172,7 +172,7 @@ steps:
     speaker: protagonist
     text: Das ist das Zimmer.
   items:
-  - das-zimmer
+  - das-zimmer-e
 - type: prompt
   ask:
     en: 'Ask: and the kitchen?'
@@ -180,8 +180,8 @@ steps:
     speaker: protagonist
     text: Und die Küche?
   items:
-  - und-die
-  - die-kueche
+  - und-die-e
+  - die-kueche-e
 - type: prompt
   ask:
     en: 'She says: there''s no kitchen.'
@@ -189,8 +189,8 @@ steps:
     speaker: protagonist
     text: Es gibt keine Küche.
   items:
-  - es-gibt-keine
-  - die-kueche
+  - es-gibt-keine-e
+  - die-kueche-e
 - type: prompt
   ask:
     en: 'Say: only the connections.'
@@ -198,8 +198,8 @@ steps:
     speaker: protagonist
     text: Nur die Anschlüsse.
   items:
-  - nur
-  - die-anschluesse
+  - nur-e
+  - die-anschluesse-e
 - type: prompt
   ask:
     en: 'Ask: no sink either?'
@@ -207,8 +207,8 @@ steps:
     speaker: protagonist
     text: Auch keine Spüle?
   items:
-  - auch-nicht
-  - die-spuele
+  - auch-nicht-e
+  - die-spuele-e
 - type: narrator
   text:
     en: Unfurnished flats often come without a kitchen — not even a sink, only the water and power connections. A kitchen the landlord supplies is the landlord's to repair, so many supply none. Tenants
@@ -220,7 +220,7 @@ steps:
     speaker: protagonist
     text: Die Küche kaufen Sie selbst.
   items:
-  - selbst
+  - selbst-e
 - type: prompt
   ask:
     en: Ask where you buy a kitchen.
@@ -228,8 +228,8 @@ steps:
     speaker: protagonist
     text: Wo kaufe ich eine Küche?
   items:
-  - wo
-  - kaufe-ich
+  - wo-e
+  - kaufe-ich-e
 - type: prompt
   ask:
     en: 'Say: second-hand, online.'
@@ -237,7 +237,7 @@ steps:
     speaker: protagonist
     text: Gebraucht, im Internet.
   items:
-  - gebraucht
+  - gebraucht-e
 - type: prompt
   ask:
     en: 'Ask: and the fridge?'
@@ -245,7 +245,7 @@ steps:
     speaker: protagonist
     text: Und der Kühlschrank?
   items:
-  - der-kuehlschrank
+  - der-kuehlschrank-e
 - type: prompt
   ask:
     en: 'She says: good luck!'
@@ -253,7 +253,7 @@ steps:
     speaker: protagonist
     text: Viel Glück!
   items:
-  - viel-glueck
+  - viel-glueck-e
 - type: prompt
   ask:
     en: 'Once more: say “the flat”.'
@@ -261,7 +261,7 @@ steps:
     speaker: protagonist
     text: die Wohnung
   items:
-  - die-wohnung
+  - die-wohnung-e
 - type: prompt
   ask:
     en: 'Once more: say “the room”.'
@@ -269,7 +269,7 @@ steps:
     speaker: protagonist
     text: das Zimmer
   items:
-  - das-zimmer
+  - das-zimmer-e
 - type: prompt
   ask:
     en: 'Once more: say “And the …?”.'
@@ -277,7 +277,7 @@ steps:
     speaker: protagonist
     text: Und die …?
   items:
-  - und-die
+  - und-die-e
 - type: prompt
   ask:
     en: 'Once more: say “There is no … (feminine)”.'
@@ -285,7 +285,7 @@ steps:
     speaker: protagonist
     text: Es gibt keine …
   items:
-  - es-gibt-keine
+  - es-gibt-keine-e
 - type: prompt
   ask:
     en: 'Once more: say “only”.'
@@ -293,7 +293,7 @@ steps:
     speaker: protagonist
     text: nur
   items:
-  - nur
+  - nur-e
 - type: prompt
   ask:
     en: 'Once more: say “the connections (water, power)”.'
@@ -301,7 +301,7 @@ steps:
     speaker: protagonist
     text: die Anschlüsse
   items:
-  - die-anschluesse
+  - die-anschluesse-e
 - type: prompt
   ask:
     en: 'Once more: say “the sink”.'
@@ -309,7 +309,7 @@ steps:
     speaker: protagonist
     text: die Spüle
   items:
-  - die-spuele
+  - die-spuele-e
 - type: prompt
   ask:
     en: 'Once more: say “yourself, myself”.'
@@ -317,7 +317,7 @@ steps:
     speaker: protagonist
     text: selbst
   items:
-  - selbst
+  - selbst-e
 - type: prompt
   ask:
     en: 'Once more: say “Where …?”.'
@@ -325,7 +325,7 @@ steps:
     speaker: protagonist
     text: Wo …?
   items:
-  - wo
+  - wo-e
 - type: prompt
   ask:
     en: 'Once more: say “do I buy”.'
@@ -333,7 +333,7 @@ steps:
     speaker: protagonist
     text: kaufe ich
   items:
-  - kaufe-ich
+  - kaufe-ich-e
 - type: prompt
   ask:
     en: 'Once more: say “second-hand, used”.'
@@ -341,7 +341,7 @@ steps:
     speaker: protagonist
     text: gebraucht
   items:
-  - gebraucht
+  - gebraucht-e
 - type: prompt
   ask:
     en: 'Once more: say “the fridge”.'
@@ -349,7 +349,7 @@ steps:
     speaker: protagonist
     text: der Kühlschrank
   items:
-  - der-kuehlschrank
+  - der-kuehlschrank-e
 - type: prompt
   ask:
     en: 'Once more: say “not … either”.'
@@ -357,7 +357,7 @@ steps:
     speaker: protagonist
     text: auch nicht
   items:
-  - auch-nicht
+  - auch-nicht-e
 - type: prompt
   ask:
     en: 'Once more: say “Good luck!”.'
@@ -365,7 +365,7 @@ steps:
     speaker: protagonist
     text: Viel Glück!
   items:
-  - viel-glueck
+  - viel-glueck-e
 - type: narrator
   text:
     en: Now some things from earlier units, in this new situation.

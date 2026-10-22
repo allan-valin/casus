@@ -14,43 +14,43 @@ learn_lessons:
 - a1-time
 culture: Five minutes late needs a sorry
 new_items:
-- id: wie-spaet-ist-es
+- id: wie-spaet-ist-es-m
   text: Wie spät ist es?
   meaning:
     mk: Колку е часот?
-- id: halb-fuenf
+- id: halb-fuenf-m
   text: halb fünf
   meaning:
     mk: четири и пол
-- id: viertel-vor
+- id: viertel-vor-m
   text: Viertel vor
   meaning:
     mk: помалку петнаесет
-- id: viertel-nach
+- id: viertel-nach-m
   text: Viertel nach
   meaning:
     mk: и петнаесет
-- id: puenktlich-m
+- id: puenktlich-m-m
   text: pünktlich
   meaning:
     mk: точно, навреме
-- id: zu-spaet
+- id: zu-spaet-m
   text: zu spät
   meaning:
     mk: доцна
-- id: die-verspaetung
+- id: die-verspaetung-m
   text: die Verspätung
   meaning:
     mk: доцнењето
-- id: rufen-sie-an
+- id: rufen-sie-an-m
   text: Rufen Sie an
   meaning:
     mk: Јавете се
-- id: das-naechste-mal
+- id: das-naechste-mal-m
   text: das nächste Mal
   meaning:
     mk: следниот пат
-- id: es-tut-mir-leid
+- id: es-tut-mir-leid-m
   text: Es tut mir leid
   meaning:
     mk: Жал ми е
@@ -196,7 +196,7 @@ steps:
     speaker: protagonist
     text: Bin ich zu spät?
   items:
-  - zu-spaet
+  - zu-spaet-m
 - type: narrator
   text:
     mk: 'Половините се бројат кон следниот час: «halb fünf» е четири и пол — збор по збор „половина до пет“. «Viertel vor fünf» е пет помалку петнаесет, «Viertel nach vier» четири и петнаесет.'
@@ -207,7 +207,7 @@ steps:
     speaker: protagonist
     text: Wir schließen um halb fünf.
   items:
-  - halb-fuenf
+  - halb-fuenf-m
 - type: prompt
   ask:
     mk: 'Кажете: пет помалку петнаесет.'
@@ -215,7 +215,7 @@ steps:
     speaker: protagonist
     text: Viertel vor fünf.
   items:
-  - viertel-vor
+  - viertel-vor-m
 - type: prompt
   ask:
     mk: 'Кажете: четири и петнаесет.'
@@ -223,7 +223,7 @@ steps:
     speaker: protagonist
     text: Viertel nach vier.
   items:
-  - viertel-nach
+  - viertel-nach-m
 - type: prompt
   ask:
     mk: 'Извинете се: жал ми е.'
@@ -231,7 +231,7 @@ steps:
     speaker: protagonist
     text: Es tut mir leid.
   items:
-  - es-tut-mir-leid
+  - es-tut-mir-leid-m
 - type: prompt
   ask:
     mk: 'Кажете: доцнењето.'
@@ -239,7 +239,7 @@ steps:
     speaker: protagonist
     text: Die Verspätung.
   items:
-  - die-verspaetung
+  - die-verspaetung-m
 - type: prompt
   ask:
     mk: 'Таа вели: ве молам јавете се.'
@@ -247,7 +247,7 @@ steps:
     speaker: protagonist
     text: Bitte rufen Sie an.
   items:
-  - rufen-sie-an
+  - rufen-sie-an-m
 - type: prompt
   ask:
     mk: Прашајте колку е часот.
@@ -255,7 +255,7 @@ steps:
     speaker: protagonist
     text: Wie spät ist es?
   items:
-  - wie-spaet-ist-es
+  - wie-spaet-ist-es-m
 - type: prompt
   ask:
     mk: 'Кажете: следниот пат ќе бидам точен.'
@@ -263,8 +263,8 @@ steps:
     speaker: protagonist
     text: Das nächste Mal bin ich pünktlich.
   items:
-  - das-naechste-mal
-  - puenktlich-m
+  - das-naechste-mal-m
+  - puenktlich-m-m
 - type: narrator
   text:
     mk: Кај нас половина час доцнење меѓу пријатели е нормално; во Германија, особено во градинката, времето е точно. Ако ќе доцните пет минути, јавете се однапред.
@@ -275,7 +275,7 @@ steps:
     speaker: protagonist
     text: Wie spät ist es?
   items:
-  - wie-spaet-ist-es
+  - wie-spaet-ist-es-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „четири и пол“.'
@@ -283,7 +283,7 @@ steps:
     speaker: protagonist
     text: halb fünf
   items:
-  - halb-fuenf
+  - halb-fuenf-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „помалку петнаесет“.'
@@ -291,7 +291,7 @@ steps:
     speaker: protagonist
     text: Viertel vor
   items:
-  - viertel-vor
+  - viertel-vor-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „и петнаесет“.'
@@ -299,7 +299,7 @@ steps:
     speaker: protagonist
     text: Viertel nach
   items:
-  - viertel-nach
+  - viertel-nach-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „точно, навреме“.'
@@ -307,7 +307,7 @@ steps:
     speaker: protagonist
     text: pünktlich
   items:
-  - puenktlich-m
+  - puenktlich-m-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „доцна“.'
@@ -315,7 +315,7 @@ steps:
     speaker: protagonist
     text: zu spät
   items:
-  - zu-spaet
+  - zu-spaet-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „доцнењето“.'
@@ -323,7 +323,7 @@ steps:
     speaker: protagonist
     text: die Verspätung
   items:
-  - die-verspaetung
+  - die-verspaetung-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „Јавете се“.'
@@ -331,7 +331,7 @@ steps:
     speaker: protagonist
     text: Rufen Sie an
   items:
-  - rufen-sie-an
+  - rufen-sie-an-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „следниот пат“.'
@@ -339,7 +339,7 @@ steps:
     speaker: protagonist
     text: das nächste Mal
   items:
-  - das-naechste-mal
+  - das-naechste-mal-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „Жал ми е“.'
@@ -347,7 +347,7 @@ steps:
     speaker: protagonist
     text: Es tut mir leid
   items:
-  - es-tut-mir-leid
+  - es-tut-mir-leid-m
 - type: narrator
   text:
     mk: Сега нешто од претходните лекции, во оваа нова ситуација.

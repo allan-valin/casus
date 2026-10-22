@@ -119,52 +119,50 @@ reviews:
   from: A1-03
 - item: frau-doktor
   from: A1-03
-- item: der-hoersaal
+- item: der-hoersaal-e
   from: A1-11-e
   for:
   - en
-- item: die-vorlesung
+- item: die-vorlesung-e
   from: A1-11-e
   for:
   - en
-- item: beginnt
+- item: beginnt-e
   from: A1-11-e
   for:
   - en
-- item: wir-muessen
+- item: wir-muessen-e
   from: A1-11-e
   for:
   - en
-- item: puenktlich
+- item: puenktlich-e
   from: A1-11-e
   for:
   - en
-- item: setz-dich
+- item: setz-dich-e
   from: A1-11-e
   for:
   - en
-- item: muss-ich
+- item: muss-ich-e
   from: A1-11-e
   for:
   - en
-  - ar
-- item: online
+- item: online-e
   from: A1-11-e
   for:
   - en
-- item: die-pruefung
+- item: die-pruefung-e
   from: A1-11-e
   for:
   - en
-- item: die-folien
+- item: die-folien-e
   from: A1-11-e
   for:
   - en
-- item: viel-lernen
+- item: viel-lernen-e
   from: A1-11-e
   for:
   - en
-  - ar
 - item: das-sofa
   from: A1-15
 - item: passt
@@ -211,95 +209,103 @@ reviews:
   from: A1-17
 - item: zweimal-am-tag
   from: A1-17
-- item: der-kurs
+- item: der-kurs-a
   from: A1-11-a
   for:
   - ar
-- item: bin-ich-richtig
+- item: bin-ich-richtig-a
   from: A1-11-a
   for:
   - ar
-- item: schreiben-sie
+- item: schreiben-sie-a
   from: A1-11-a
   for:
   - ar
-- item: ihren-namen
+- item: ihren-namen-a
   from: A1-11-a
   for:
   - ar
-- item: jeden-tag
+- item: muss-ich-a
   from: A1-11-a
   for:
   - ar
-- item: von-bis
+- item: jeden-tag-a
   from: A1-11-a
   for:
   - ar
-- item: vier-stunden
+- item: von-bis-a
   from: A1-11-a
   for:
   - ar
-- item: sie-muessen
+- item: vier-stunden-a
   from: A1-11-a
   for:
   - ar
-- item: bezahlen
+- item: sie-muessen-a
   from: A1-11-a
   for:
   - ar
-- item: das-amt
+- item: bezahlen-a
   from: A1-11-a
   for:
   - ar
-- item: schoen-kennenzulernen
+- item: das-amt-a
+  from: A1-11-a
+  for:
+  - ar
+- item: viel-lernen-a
+  from: A1-11-a
+  for:
+  - ar
+- item: schoen-kennenzulernen-m
   from: A1-11-m
   for:
   - mk
-- item: ich-spreche
+- item: ich-spreche-m
   from: A1-11-m
   for:
   - mk
-- item: nur
-  from: A1-02-e
-  for:
-  - mk
-- item: moechten-sie
+- item: nur-m
   from: A1-11-m
   for:
   - mk
-- item: ja-gern
+- item: moechten-sie-m
   from: A1-11-m
   for:
   - mk
-- item: ein-stueck-k
+- item: ja-gern-m
   from: A1-11-m
   for:
   - mk
-- item: der-kuchen
+- item: ein-stueck-k-m
   from: A1-11-m
   for:
   - mk
-- item: selbst-gemacht
+- item: der-kuchen-m
   from: A1-11-m
   for:
   - mk
-- item: lecker
+- item: selbst-gemacht-m
   from: A1-11-m
   for:
   - mk
-- item: wie-lange
+- item: lecker-m
   from: A1-11-m
   for:
   - mk
-- item: bleiben
+- item: wie-lange-m
   from: A1-11-m
   for:
   - mk
-- item: ich-muss
+- item: bleiben-m
   from: A1-11-m
   for:
   - mk
-- item: oft
+- item: ich-muss-m
+  from: A1-11-m
+  for:
+  - mk
+- item: oft-m
   from: A1-11-m
   for:
   - mk
@@ -595,15 +601,13 @@ steps:
   review: true
   ask:
     en: 'Say: “air (a room) — and “the window — and “wide open — and “five minutes — and “the heating — and “off — and “Make / do … (polite command) — and “the mould — and “damp — and “tilt (a window) —
-      and “twice a day — and “the sofa — and “fits — and “measure — and “How wide …? — and “metres — and “centimetres — and “long — and “the corner”.'
-    ar: 'قل: “يهوّي — و“النافذة — و“مفتوح تمامًا — و“خمس دقائق — و“التدفئة — و“مطفأ — و“اجعلي / افعلي … (أمر مؤدب) — و“العفن — و“رطب — و“يميل (النافذة) — و“مرتين في اليوم — و“الأريكة — و“يتسع، يناسب — و“يقيس
-      — و“كم عرض …؟ — و“متر — و“سنتيمتر — و“طويل — و“الزاوية”.'
+      and “twice a day — and “the sofa — and “fits”.'
+    ar: 'قل: “يهوّي — و“النافذة — و“مفتوح تمامًا — و“خمس دقائق — و“التدفئة — و“مطفأ — و“اجعلي / افعلي … (أمر مؤدب) — و“العفن — و“رطب — و“يميل (النافذة) — و“مرتين في اليوم — و“الأريكة — و“يتسع، يناسب”.'
     mk: 'Кажете: „проветрува“ — и „прозорецот“ — и „целосно отворен“ — и „пет минути“ — и „греењето“ — и „исклучено“ — и „Направете …“ — и „мувлата“ — и „влажно“ — и „накосува“ — и „двапати на ден“ — и
-      „каучот“ — и „собира, одговара“ — и „мериме“ — и „Колку е широк …?“ — и „метри“ — и „сантиметри“ — и „долг“ — и „аголот“.'
+      „каучот“ — и „собира, одговара“.'
   answer:
     speaker: protagonist
-    text: lüften … das Fenster … ganz auf … fünf Minuten … die Heizung … aus … Machen Sie … … der Schimmel … feucht … kippen … zweimal am Tag … das Sofa … passt … messen … Wie breit …? … Meter … Zentimeter
-      … lang … die Ecke
+    text: lüften … das Fenster … ganz auf … fünf Minuten … die Heizung … aus … Machen Sie … … der Schimmel … feucht … kippen … zweimal am Tag … das Sofa … passt
   items:
   - lueften
   - das-fenster
@@ -618,26 +622,23 @@ steps:
   - zweimal-am-tag
   - das-sofa
   - passt
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “measure — and “How wide …? — and “metres — and “centimetres — and “long — and “the corner — and “round — and “square, angular — and “exactly — and “too big — and “What''s wrong? (polite)
+      — and “my — and “the head”.'
+    ar: 'قل: “يقيس — و“كم عرض …؟ — و“متر — و“سنتيمتر — و“طويل — و“الزاوية — و“مستدير — و“مربّع الشكل — و“بالضبط — و“كبير جدًا — و“ما بكِ؟ (بصيغة الاحترام) — و“ـي (ضمير الملكية) — و“الرأس”.'
+    mk: 'Кажете: „мериме“ — и „Колку е широк …?“ — и „метри“ — и „сантиметри“ — и „долг“ — и „аголот“ — и „тркалезно“ — и „аглесто“ — и „точно“ — и „преголемо“ — и „Што ви е?“ — и „мој“ — и „главата“.'
+  answer:
+    speaker: protagonist
+    text: messen … Wie breit …? … Meter … Zentimeter … lang … die Ecke … rund … eckig … genau … zu groß … Was fehlt Ihnen? … mein … der Kopf
+  items:
   - messen
   - wie-breit
   - meter
   - zentimeter
   - lang
   - die-ecke
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “round — and “square, angular — and “exactly — and “too big — and “What''s wrong? (polite) — and “my — and “the head — and “hurts — and “the belly — and “Since when? — and “since yesterday
-      — and “Do you have …? (polite) — and “fever, temperature — and “no, not a — and “the arm — and “too, also — and “not serious — and “plenty of water — and “Doctor (addressing a woman)”.'
-    ar: 'قل: “مستدير — و“مربّع الشكل — و“بالضبط — و“كبير جدًا — و“ما بكِ؟ (بصيغة الاحترام) — و“ـي (ضمير الملكية) — و“الرأس — و“يؤلم — و“البطن — و“منذ متى؟ — و“منذ أمس — و“هل عندكِ …؟ (بصيغة الاحترام) —
-      و“حمّى، حرارة — و“لا … (نفي الاسم) — و“الذراع — و“أيضًا — و“ليس خطيرًا — و“ماء كثير — و“حضرة الطبيبة”.'
-    mk: 'Кажете: „тркалезно“ — и „аглесто“ — и „точно“ — и „преголемо“ — и „Што ви е?“ — и „мој“ — и „главата“ — и „боли“ — и „стомакот“ — и „Од кога?“ — и „од вчера“ — и „Имате ли …?“ — и „температура“
-      — и „нема, ниту еден“ — и „раката“ — и „исто така“ — и „не е страшно“ — и „многу вода“ — и „госпоѓо докторке“.'
-  answer:
-    speaker: protagonist
-    text: rund … eckig … genau … zu groß … Was fehlt Ihnen? … mein … der Kopf … tut weh … der Bauch … Seit wann? … seit gestern … Haben Sie …? … Fieber … kein … der Arm … auch … nicht schlimm … viel Wasser
-      … Frau Doktor
-  items:
   - rund
   - eckig
   - genau
@@ -645,6 +646,18 @@ steps:
   - was-fehlt-ihnen
   - mein
   - der-kopf
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “hurts — and “the belly — and “Since when? — and “since yesterday — and “Do you have …? (polite) — and “fever, temperature — and “no, not a — and “the arm — and “too, also — and “not serious
+      — and “plenty of water — and “Doctor (addressing a woman)”.'
+    ar: 'قل: “يؤلم — و“البطن — و“منذ متى؟ — و“منذ أمس — و“هل عندكِ …؟ (بصيغة الاحترام) — و“حمّى، حرارة — و“لا … (نفي الاسم) — و“الذراع — و“أيضًا — و“ليس خطيرًا — و“ماء كثير — و“حضرة الطبيبة”.'
+    mk: 'Кажете: „боли“ — и „стомакот“ — и „Од кога?“ — и „од вчера“ — и „Имате ли …?“ — и „температура“ — и „нема, ниту еден“ — и „раката“ — и „исто така“ — и „не е страшно“ — и „многу вода“ — и „госпоѓо
+      докторке“.'
+  answer:
+    speaker: protagonist
+    text: tut weh … der Bauch … Seit wann? … seit gestern … Haben Sie …? … Fieber … kein … der Arm … auch … nicht schlimm … viel Wasser … Frau Doktor
+  items:
   - tut-weh
   - der-bauch
   - seit-wann
@@ -660,86 +673,84 @@ steps:
 - type: prompt
   review: true
   ask:
-    en: 'Say: “the lecture hall — and “the lecture — and “begins — and “we have to — and “on time”.'
+    en: 'Say: “the lecture hall — and “the lecture — and “begins — and “we have to”.'
   answer:
     speaker: protagonist
-    text: der Hörsaal … die Vorlesung … beginnt … wir müssen … pünktlich
+    text: der Hörsaal … die Vorlesung … beginnt … wir müssen
   items:
-  - der-hoersaal
-  - die-vorlesung
-  - beginnt
-  - wir-muessen
-  - puenktlich
+  - der-hoersaal-e
+  - die-vorlesung-e
+  - beginnt-e
+  - wir-muessen-e
   for:
   - en
 - type: prompt
   review: true
   ask:
-    en: 'Say: “Sit down! (informal) — and “online — and “the exam — and “the slides”.'
+    en: 'Say: “on time — and “Sit down! (informal) — and “Do I have to …? — and “online”.'
   answer:
     speaker: protagonist
-    text: Setz dich! … online … die Prüfung … die Folien
+    text: pünktlich … Setz dich! … Muss ich …? … online
   items:
-  - setz-dich
-  - online
-  - die-pruefung
-  - die-folien
+  - puenktlich-e
+  - setz-dich-e
+  - muss-ich-e
+  - online-e
   for:
   - en
 - type: prompt
   review: true
   ask:
-    en: 'Say: “Do I have to …?”.'
-    ar: 'قل: “هل يجب عليّ …؟”.'
+    en: 'Say: “the exam — and “the slides — and “study a lot”.'
   answer:
     speaker: protagonist
-    text: Muss ich …?
+    text: die Prüfung … die Folien … viel lernen
   items:
-  - muss-ich
+  - die-pruefung-e
+  - die-folien-e
+  - viel-lernen-e
   for:
   - en
-  - ar
 - type: prompt
   review: true
   ask:
-    en: 'Say: “study a lot”.'
-    ar: 'قل: “أتعلّم كثيرًا”.'
+    ar: 'قل: “الدورة، الصف — و“هل أنا في المكان الصحيح؟ — و“اكتبي … (بصيغة الاحترام) — و“اسمكِ”.'
   answer:
     speaker: protagonist
-    text: viel lernen
+    text: der Kurs … Bin ich hier richtig? … Schreiben Sie … … Ihren Namen
   items:
-  - viel-lernen
-  for:
-  - en
-  - ar
-- type: prompt
-  review: true
-  ask:
-    ar: 'قل: “الدورة، الصف — و“هل أنا في المكان الصحيح؟ — و“اكتبي … (بصيغة الاحترام) — و“اسمكِ — و“كل يوم”.'
-  answer:
-    speaker: protagonist
-    text: der Kurs … Bin ich hier richtig? … Schreiben Sie … … Ihren Namen … jeden Tag
-  items:
-  - der-kurs
-  - bin-ich-richtig
-  - schreiben-sie
-  - ihren-namen
-  - jeden-tag
+  - der-kurs-a
+  - bin-ich-richtig-a
+  - schreiben-sie-a
+  - ihren-namen-a
   for:
   - ar
 - type: prompt
   review: true
   ask:
-    ar: 'قل: “من … إلى … — و“أربع ساعات — و“يجب عليكِ — و“يدفع — و“الدائرة الرسمية”.'
+    ar: 'قل: “هل يجب عليّ …؟ — و“كل يوم — و“من … إلى … — و“أربع ساعات”.'
   answer:
     speaker: protagonist
-    text: von … bis … … vier Stunden … Sie müssen … bezahlen … das Amt
+    text: Muss ich …? … jeden Tag … von … bis … … vier Stunden
   items:
-  - von-bis
-  - vier-stunden
-  - sie-muessen
-  - bezahlen
-  - das-amt
+  - muss-ich-a
+  - jeden-tag-a
+  - von-bis-a
+  - vier-stunden-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “يجب عليكِ — و“يدفع — و“الدائرة الرسمية — و“أتعلّم كثيرًا”.'
+  answer:
+    speaker: protagonist
+    text: Sie müssen … bezahlen … das Amt … viel lernen
+  items:
+  - sie-muessen-a
+  - bezahlen-a
+  - das-amt-a
+  - viel-lernen-a
   for:
   - ar
 - type: prompt
@@ -750,11 +761,11 @@ steps:
     speaker: protagonist
     text: Schön, Sie kennenzulernen … ich spreche … nur … Möchten Sie …? … Ja, gern
   items:
-  - schoen-kennenzulernen
-  - ich-spreche
-  - nur
-  - moechten-sie
-  - ja-gern
+  - schoen-kennenzulernen-m
+  - ich-spreche-m
+  - nur-m
+  - moechten-sie-m
+  - ja-gern-m
   for:
   - mk
 - type: prompt
@@ -765,11 +776,11 @@ steps:
     speaker: protagonist
     text: ein Stück … der Kuchen … selbst gemacht … lecker … Wie lange …?
   items:
-  - ein-stueck-k
-  - der-kuchen
-  - selbst-gemacht
-  - lecker
-  - wie-lange
+  - ein-stueck-k-m
+  - der-kuchen-m
+  - selbst-gemacht-m
+  - lecker-m
+  - wie-lange-m
   for:
   - mk
 - type: prompt
@@ -780,9 +791,9 @@ steps:
     speaker: protagonist
     text: bleiben … ich muss … oft
   items:
-  - bleiben
-  - ich-muss
-  - oft
+  - bleiben-m
+  - ich-muss-m
+  - oft-m
   for:
   - mk
 - type: narrator

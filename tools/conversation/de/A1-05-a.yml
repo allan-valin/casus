@@ -14,84 +14,84 @@ learn_lessons:
 - a1-accusative
 culture: The yellow check-up booklet
 new_items:
-- id: die-mama
+- id: die-mama-a
   text: die Mama
   meaning:
     ar: الأم، ماما
-- id: hat-fieber
+- id: hat-fieber-a
   text: hat Fieber
   meaning:
     ar: عندها حرارة
-- id: seit-heute-nacht
+- id: seit-heute-nacht-a
   text: seit heute Nacht
   meaning:
     ar: منذ الليلة الماضية
-- id: das-u-heft
+- id: das-u-heft-a
   text: das U-Heft
   meaning:
     ar: دفتر الفحوص الأصفر
   rare: true
-- id: die-karte
+- id: die-karte-a
   text: die Karte
   meaning:
     ar: البطاقة (بطاقة التأمين)
-- id: die-versichertenkarte
+- id: die-versichertenkarte-a
   text: die Versichertenkarte
   meaning:
     ar: بطاقة التأمين الصحي
   rare: true
-- id: hustet
+- id: hustet-a
   text: hustet
   meaning:
     ar: تسعل
-- id: ich-gebe-ihnen
+- id: ich-gebe-ihnen-a
   text: Ich gebe Ihnen …
   meaning:
     ar: أعطيكِ …
-- id: den-saft-medizin
+- id: den-saft-medizin-a
   text: einen Saft
   meaning:
     ar: شرابًا (دواء سائل)
-- id: dreimal-am-tag
+- id: dreimal-am-tag-a
   text: dreimal am Tag
   meaning:
     ar: ثلاث مرات في اليوم
-- id: gute-besserung
+- id: gute-besserung-a
   text: Gute Besserung!
   meaning:
     ar: شفاءً عاجلًا!
-- id: vielen-dank
+- id: vielen-dank-a
   text: Vielen Dank
   meaning:
     ar: شكرًا جزيلًا
 reviews:
-- item: guten-morgen
+- item: guten-morgen-a
   from: A1-02-a
-- item: der-papa
+- item: der-papa-a
   from: A1-02-a
-- item: das-ist
+- item: das-ist-a
   from: A1-02-a
-- item: die-kita
+- item: die-kita-a
   from: A1-02-a
-- item: die-erzieherin
+- item: die-erzieherin-a
   from: A1-02-a
-- item: hallo
+- item: hallo-a
   from: A1-02-a
-- item: ich-will-k
+- item: ich-will-k-a
   from: A1-02-a
-- item: nach-hause
+- item: nach-hause-a
   from: A1-02-a
-- item: keine-angst
+- item: keine-angst-a
   from: A1-02-a
-- item: wann
+- item: wann-a
   from: A1-02-a
-- item: holen-ab
+- item: holen-ab-a
   from: A1-02-a
-- item: um-drei-uhr
+- item: um-drei-uhr-a
   from: A1-02-a
-- item: tschuess
+- item: tschuess-a
   from: A1-02-a
-- item: bis-spaeter
+- item: bis-spaeter-a
   from: A1-02-a
 - item: einen-termin
   from: A1-04
@@ -174,7 +174,7 @@ steps:
     speaker: protagonist
     text: Yara hat Fieber.
   items:
-  - hat-fieber
+  - hat-fieber-a
 - type: prompt
   ask:
     ar: 'قولي: منذ الليلة الماضية.'
@@ -182,7 +182,7 @@ steps:
     speaker: protagonist
     text: Seit heute Nacht.
   items:
-  - seit-heute-nacht
+  - seit-heute-nacht-a
 - type: prompt
   ask:
     ar: تطلب الطبيبة بطاقة التأمين. قوليها.
@@ -190,7 +190,7 @@ steps:
     speaker: protagonist
     text: Die Versichertenkarte.
   items:
-  - die-versichertenkarte
+  - die-versichertenkarte-a
 - type: narrator
   text:
     ar: '«das U-Heft» دفتر أصفر يُعطى عند الولادة، فيه كل فحوص الطفل الدورية (U1 إلى U9). احمليه في كل زيارة لطبيب الأطفال. وإن لم يكن معكِ، اسألي الطبيبة: سيبدأون دفترًا جديدًا.'
@@ -201,8 +201,8 @@ steps:
     speaker: protagonist
     text: Hier ist die Karte. Und das U-Heft.
   items:
-  - die-karte
-  - das-u-heft
+  - die-karte-a
+  - das-u-heft-a
 - type: prompt
   ask:
     ar: 'تسأل: هل تسعل يارا؟'
@@ -210,7 +210,7 @@ steps:
     speaker: protagonist
     text: Hustet Yara?
   items:
-  - hustet
+  - hustet-a
 - type: prompt
   ask:
     ar: 'أجيبي: قليلًا.'
@@ -229,8 +229,8 @@ steps:
     speaker: protagonist
     text: Ich gebe Ihnen einen Saft.
   items:
-  - ich-gebe-ihnen
-  - den-saft-medizin
+  - ich-gebe-ihnen-a
+  - den-saft-medizin-a
 - type: prompt
   ask:
     ar: 'قولي: ثلاث مرات في اليوم.'
@@ -238,7 +238,7 @@ steps:
     speaker: protagonist
     text: Dreimal am Tag.
   items:
-  - dreimal-am-tag
+  - dreimal-am-tag-a
 - type: prompt
   ask:
     ar: اشكريها شكرًا جزيلًا.
@@ -246,7 +246,7 @@ steps:
     speaker: protagonist
     text: Vielen Dank, Frau Doktor.
   items:
-  - vielen-dank
+  - vielen-dank-a
   - frau-doktor
 - type: prompt
   ask:
@@ -255,7 +255,7 @@ steps:
     speaker: protagonist
     text: Gute Besserung!
   items:
-  - gute-besserung
+  - gute-besserung-a
 - type: prompt
   ask:
     ar: 'قولي: الأم.'
@@ -263,7 +263,7 @@ steps:
     speaker: protagonist
     text: Die Mama.
   items:
-  - die-mama
+  - die-mama-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قولي “الأم، ماما”.'
@@ -271,7 +271,7 @@ steps:
     speaker: protagonist
     text: die Mama
   items:
-  - die-mama
+  - die-mama-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قولي “عندها حرارة”.'
@@ -279,7 +279,7 @@ steps:
     speaker: protagonist
     text: hat Fieber
   items:
-  - hat-fieber
+  - hat-fieber-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قولي “منذ الليلة الماضية”.'
@@ -287,7 +287,7 @@ steps:
     speaker: protagonist
     text: seit heute Nacht
   items:
-  - seit-heute-nacht
+  - seit-heute-nacht-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قولي “دفتر الفحوص الأصفر”.'
@@ -295,7 +295,7 @@ steps:
     speaker: protagonist
     text: das U-Heft
   items:
-  - das-u-heft
+  - das-u-heft-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قولي “البطاقة (بطاقة التأمين)”.'
@@ -303,7 +303,7 @@ steps:
     speaker: protagonist
     text: die Karte
   items:
-  - die-karte
+  - die-karte-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قولي “بطاقة التأمين الصحي”.'
@@ -311,7 +311,7 @@ steps:
     speaker: protagonist
     text: die Versichertenkarte
   items:
-  - die-versichertenkarte
+  - die-versichertenkarte-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قولي “تسعل”.'
@@ -319,7 +319,7 @@ steps:
     speaker: protagonist
     text: hustet
   items:
-  - hustet
+  - hustet-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قولي “أعطيكِ …”.'
@@ -327,7 +327,7 @@ steps:
     speaker: protagonist
     text: Ich gebe Ihnen …
   items:
-  - ich-gebe-ihnen
+  - ich-gebe-ihnen-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قولي “شرابًا (دواء سائل)”.'
@@ -335,7 +335,7 @@ steps:
     speaker: protagonist
     text: einen Saft
   items:
-  - den-saft-medizin
+  - den-saft-medizin-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قولي “ثلاث مرات في اليوم”.'
@@ -343,7 +343,7 @@ steps:
     speaker: protagonist
     text: dreimal am Tag
   items:
-  - dreimal-am-tag
+  - dreimal-am-tag-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قولي “شفاءً عاجلًا!”.'
@@ -351,7 +351,7 @@ steps:
     speaker: protagonist
     text: Gute Besserung!
   items:
-  - gute-besserung
+  - gute-besserung-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قولي “شكرًا جزيلًا”.'
@@ -359,7 +359,7 @@ steps:
     speaker: protagonist
     text: Vielen Dank
   items:
-  - vielen-dank
+  - vielen-dank-a
 - type: narrator
   text:
     ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
@@ -409,8 +409,8 @@ steps:
   items:
   - das-wars
   - schoenen-tag-noch
-  - guten-morgen
-  - der-papa
+  - guten-morgen-a
+  - der-papa-a
 - type: prompt
   review: true
   ask:
@@ -419,10 +419,10 @@ steps:
     speaker: protagonist
     text: Das ist … … die Kita … die Erzieherin … Hallo
   items:
-  - das-ist
-  - die-kita
-  - die-erzieherin
-  - hallo
+  - das-ist-a
+  - die-kita-a
+  - die-erzieherin-a
+  - hallo-a
 - type: prompt
   review: true
   ask:
@@ -431,10 +431,10 @@ steps:
     speaker: protagonist
     text: ich will … nach Hause … Keine Angst! … Wann …?
   items:
-  - ich-will-k
-  - nach-hause
-  - keine-angst
-  - wann
+  - ich-will-k-a
+  - nach-hause-a
+  - keine-angst-a
+  - wann-a
 - type: prompt
   review: true
   ask:
@@ -443,10 +443,10 @@ steps:
     speaker: protagonist
     text: holen … ab … um drei Uhr … Tschüss! … Bis später!
   items:
-  - holen-ab
-  - um-drei-uhr
-  - tschuess
-  - bis-spaeter
+  - holen-ab-a
+  - um-drei-uhr-a
+  - tschuess-a
+  - bis-spaeter-a
 - type: narrator
   text:
     ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.

@@ -14,59 +14,59 @@ learn_lessons:
 - a1-article
 culture: The Kita
 new_items:
-- id: guten-morgen
+- id: guten-morgen-a
   text: Guten Morgen
   meaning:
     ar: صباح الخير
-- id: der-papa
+- id: der-papa-a
   text: der Papa
   meaning:
     ar: الأب، بابا
-- id: das-ist
+- id: das-ist-a
   text: Das ist …
   meaning:
     ar: هذا / هذه …
-- id: die-kita
+- id: die-kita-a
   text: die Kita
   meaning:
     ar: الحضانة (الكيتا)
-- id: die-erzieherin
+- id: die-erzieherin-a
   text: die Erzieherin
   meaning:
     ar: المربية
-- id: hallo
+- id: hallo-a
   text: Hallo
   meaning:
     ar: مرحبًا (غير رسمي)
-- id: ich-will-k
+- id: ich-will-k-a
   text: ich will
   meaning:
     ar: أريد
-- id: nach-hause
+- id: nach-hause-a
   text: nach Hause
   meaning:
     ar: إلى البيت
-- id: keine-angst
+- id: keine-angst-a
   text: Keine Angst!
   meaning:
     ar: لا تخف! / لا تخافي!
-- id: wann
+- id: wann-a
   text: Wann …?
   meaning:
     ar: متى …؟
-- id: holen-ab
+- id: holen-ab-a
   text: holen … ab
   meaning:
     ar: تأخذون (أحدًا) من مكان، تأتون لأخذه
-- id: um-drei-uhr
+- id: um-drei-uhr-a
   text: um drei Uhr
   meaning:
     ar: في الساعة الثالثة
-- id: tschuess
+- id: tschuess-a
   text: Tschüss!
   meaning:
     ar: إلى اللقاء! (غير رسمي)
-- id: bis-spaeter
+- id: bis-spaeter-a
   text: Bis später!
   meaning:
     ar: أراك لاحقًا!
@@ -157,7 +157,7 @@ steps:
     speaker: protagonist
     text: Guten Morgen.
   items:
-  - guten-morgen
+  - guten-morgen-a
 - type: prompt
   ask:
     ar: 'تسألك إن كنت والد يارا. قل: نعم، أنا الأب.'
@@ -167,7 +167,7 @@ steps:
   items:
   - ja
   - ich-bin
-  - der-papa
+  - der-papa-a
 - type: narrator
   text:
     ar: 'لكل اسم في الألمانية جنس، وأداة التعريف تُظهره: «der» للمذكر، و«die» للمؤنث، و«das» للمحايد. «der Papa»، «die Kita»، «das Kind». احفظ كل اسم مع أداته.'
@@ -178,7 +178,7 @@ steps:
     speaker: protagonist
     text: Das ist Yara.
   items:
-  - das-ist
+  - das-ist-a
 - type: prompt
   ask:
     ar: 'قل: هذه هي الحضانة.'
@@ -186,8 +186,8 @@ steps:
     speaker: protagonist
     text: Das ist die Kita.
   items:
-  - das-ist
-  - die-kita
+  - das-ist-a
+  - die-kita-a
 - type: prompt
   ask:
     ar: 'قل بلسانها: أنا المربية.'
@@ -195,7 +195,7 @@ steps:
     speaker: protagonist
     text: Ich bin die Erzieherin.
   items:
-  - die-erzieherin
+  - die-erzieherin-a
 - type: prompt
   ask:
     ar: حيِّ يارا كما تحييها المربية.
@@ -203,7 +203,7 @@ steps:
     speaker: protagonist
     text: Hallo, Yara!
   items:
-  - hallo
+  - hallo-a
 - type: prompt
   ask:
     ar: 'يارا تبكي: أريد أن أذهب إلى البيت! قلها.'
@@ -211,8 +211,8 @@ steps:
     speaker: protagonist
     text: Ich will nach Hause!
   items:
-  - ich-will-k
-  - nach-hause
+  - ich-will-k-a
+  - nach-hause-a
 - type: prompt
   ask:
     ar: 'طمئنها: لا تخافي!'
@@ -220,7 +220,7 @@ steps:
     speaker: protagonist
     text: Keine Angst!
   items:
-  - keine-angst
+  - keine-angst-a
 - type: narrator
   text:
     ar: '«abholen» فعل منفصل: «Ich hole Yara ab» — آتي لأخذ يارا. الجزء «ab» يذهب إلى آخر الجملة.'
@@ -231,8 +231,8 @@ steps:
     speaker: protagonist
     text: Wann holen Sie Yara ab?
   items:
-  - wann
-  - holen-ab
+  - wann-a
+  - holen-ab-a
 - type: prompt
   ask:
     ar: 'أجب: في الساعة الثالثة.'
@@ -240,7 +240,7 @@ steps:
     speaker: protagonist
     text: Um drei Uhr.
   items:
-  - um-drei-uhr
+  - um-drei-uhr-a
 - type: prompt
   ask:
     ar: ودّع يارا بطريقة غير رسمية.
@@ -248,7 +248,7 @@ steps:
     speaker: protagonist
     text: Tschüss, Yara!
   items:
-  - tschuess
+  - tschuess-a
 - type: prompt
   ask:
     ar: 'وأضف: أراكِ لاحقًا!'
@@ -256,7 +256,7 @@ steps:
     speaker: protagonist
     text: Bis später!
   items:
-  - bis-spaeter
+  - bis-spaeter-a
 - type: narrator
   text:
     ar: 'الأسابيع الأولى في الحضانة «Eingewöhnung»، أي فترة التعوّد: يبقى أحد الوالدين مع الطفل في البداية ساعة أو ساعتين، ثم وقتًا أقل كل يوم. وتبدأ المواعيد بدقة: من يتأخر في أخذ الطفل يتلقى اتصالًا.'
@@ -267,7 +267,7 @@ steps:
     speaker: protagonist
     text: Guten Morgen
   items:
-  - guten-morgen
+  - guten-morgen-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قل “الأب، بابا”.'
@@ -275,7 +275,7 @@ steps:
     speaker: protagonist
     text: der Papa
   items:
-  - der-papa
+  - der-papa-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قل “الحضانة (الكيتا)”.'
@@ -283,7 +283,7 @@ steps:
     speaker: protagonist
     text: die Kita
   items:
-  - die-kita
+  - die-kita-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قل “المربية”.'
@@ -291,7 +291,7 @@ steps:
     speaker: protagonist
     text: die Erzieherin
   items:
-  - die-erzieherin
+  - die-erzieherin-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قل “مرحبًا (غير رسمي)”.'
@@ -299,7 +299,7 @@ steps:
     speaker: protagonist
     text: Hallo
   items:
-  - hallo
+  - hallo-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قل “أريد”.'
@@ -307,7 +307,7 @@ steps:
     speaker: protagonist
     text: ich will
   items:
-  - ich-will-k
+  - ich-will-k-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قل “إلى البيت”.'
@@ -315,7 +315,7 @@ steps:
     speaker: protagonist
     text: nach Hause
   items:
-  - nach-hause
+  - nach-hause-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قل “لا تخف! / لا تخافي!”.'
@@ -323,7 +323,7 @@ steps:
     speaker: protagonist
     text: Keine Angst!
   items:
-  - keine-angst
+  - keine-angst-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قل “متى …؟”.'
@@ -331,7 +331,7 @@ steps:
     speaker: protagonist
     text: Wann …?
   items:
-  - wann
+  - wann-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قل “تأخذون (أحدًا) من مكان، تأتون لأخذه”.'
@@ -339,7 +339,7 @@ steps:
     speaker: protagonist
     text: holen … ab
   items:
-  - holen-ab
+  - holen-ab-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قل “في الساعة الثالثة”.'
@@ -347,7 +347,7 @@ steps:
     speaker: protagonist
     text: um drei Uhr
   items:
-  - um-drei-uhr
+  - um-drei-uhr-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قل “إلى اللقاء! (غير رسمي)”.'
@@ -355,7 +355,7 @@ steps:
     speaker: protagonist
     text: Tschüss!
   items:
-  - tschuess
+  - tschuess-a
 - type: prompt
   ask:
     ar: 'مرة أخرى: قل “أراك لاحقًا!”.'
@@ -363,7 +363,7 @@ steps:
     speaker: protagonist
     text: Bis später!
   items:
-  - bis-spaeter
+  - bis-spaeter-a
 - type: narrator
   text:
     ar: والآن بعض ما تعلمتَه في الوحدات السابقة، في هذا الموقف الجديد.

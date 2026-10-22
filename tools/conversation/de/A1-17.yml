@@ -84,63 +84,63 @@ new_items:
     ar: مرتين في اليوم
     mk: двапати на ден
 reviews:
-- item: die-wohnung
+- item: die-wohnung-e
   from: A1-02-e
   for:
   - en
-- item: das-zimmer
+- item: das-zimmer-e
   from: A1-02-e
   for:
   - en
-- item: und-die
+- item: und-die-e
   from: A1-02-e
   for:
   - en
-- item: die-kueche
+- item: die-kueche-e
   from: A1-02-e
   for:
   - en
-- item: es-gibt-keine
+- item: es-gibt-keine-e
   from: A1-02-e
   for:
   - en
-- item: nur
+- item: nur-e
   from: A1-02-e
   for:
   - en
-- item: die-anschluesse
+- item: die-anschluesse-e
   from: A1-02-e
   for:
   - en
-- item: die-spuele
+- item: die-spuele-e
   from: A1-02-e
   for:
   - en
-- item: selbst
+- item: selbst-e
   from: A1-02-e
   for:
   - en
-- item: wo
+- item: wo-e
   from: A1-02-e
   for:
   - en
-- item: kaufe-ich
+- item: kaufe-ich-e
   from: A1-02-e
   for:
   - en
-- item: gebraucht
+- item: gebraucht-e
   from: A1-02-e
   for:
   - en
-- item: der-kuehlschrank
+- item: der-kuehlschrank-e
   from: A1-02-e
   for:
   - en
-- item: auch-nicht
+- item: auch-nicht-e
   from: A1-02-e
   for:
   - en
-- item: viel-glueck
+- item: viel-glueck-e
   from: A1-02-e
   for:
   - en
@@ -216,96 +216,111 @@ reviews:
   from: A1-16
 - item: wollen-sie
   from: A1-16
-- item: guten-morgen
+- item: guten-morgen-a
   from: A1-02-a
   for:
   - ar
-- item: der-papa
+- item: der-papa-a
   from: A1-02-a
   for:
   - ar
-- item: das-ist
+- item: das-ist-a
   from: A1-02-a
   for:
   - ar
-  - mk
-- item: die-kita
+- item: die-kita-a
   from: A1-02-a
   for:
   - ar
-  - mk
-- item: die-erzieherin
+- item: die-erzieherin-a
   from: A1-02-a
   for:
   - ar
-  - mk
-- item: hallo
+- item: hallo-a
   from: A1-02-a
   for:
   - ar
-  - mk
-- item: ich-will-k
+- item: ich-will-k-a
   from: A1-02-a
   for:
   - ar
-- item: nach-hause
+- item: nach-hause-a
   from: A1-02-a
   for:
   - ar
-- item: keine-angst
+- item: keine-angst-a
   from: A1-02-a
   for:
   - ar
-- item: wann
+- item: wann-a
   from: A1-02-a
   for:
   - ar
-- item: holen-ab
+- item: holen-ab-a
   from: A1-02-a
   for:
   - ar
-- item: um-drei-uhr
+- item: um-drei-uhr-a
   from: A1-02-a
   for:
   - ar
-- item: tschuess
+- item: tschuess-a
   from: A1-02-a
   for:
   - ar
-  - mk
-- item: bis-spaeter
+- item: bis-spaeter-a
   from: A1-02-a
   for:
   - ar
-- item: der-opa
+- item: der-opa-m
   from: A1-02-m
   for:
   - mk
-- item: ich-hole-ab
+- item: ich-hole-ab-m
   from: A1-02-m
   for:
   - mk
-- item: ist-da
+- item: die-kita-m
   from: A1-02-m
   for:
   - mk
-- item: mein-schatz
+- item: die-erzieherin-m
   from: A1-02-m
   for:
   - mk
-- item: der-ausweis
+- item: ist-da-m
   from: A1-02-m
   for:
   - mk
-- item: hier
+- item: hallo-m
   from: A1-02-m
   for:
   - mk
-- item: die-mama-hat-gesagt
+- item: mein-schatz-m
   from: A1-02-m
   for:
   - mk
-- item: bis-morgen
+- item: der-ausweis-m
+  from: A1-02-m
+  for:
+  - mk
+- item: hier-m
+  from: A1-02-m
+  for:
+  - mk
+- item: die-mama-hat-gesagt-m
+  from: A1-02-m
+  for:
+  - mk
+- item: tschuess-m
+  from: A1-02-m
+  for:
+  - mk
+- item: bis-morgen-m
+  from: A1-02-m
+  for:
+  - mk
+- item: das-ist-m
   from: A1-02-m
   for:
   - mk
@@ -602,11 +617,11 @@ steps:
     speaker: protagonist
     text: die Wohnung … das Zimmer … Und die …? … die Küche … Es gibt keine …
   items:
-  - die-wohnung
-  - das-zimmer
-  - und-die
-  - die-kueche
-  - es-gibt-keine
+  - die-wohnung-e
+  - das-zimmer-e
+  - und-die-e
+  - die-kueche-e
+  - es-gibt-keine-e
   for:
   - en
 - type: prompt
@@ -617,11 +632,11 @@ steps:
     speaker: protagonist
     text: nur … die Anschlüsse … die Spüle … selbst … Wo …?
   items:
-  - nur
-  - die-anschluesse
-  - die-spuele
-  - selbst
-  - wo
+  - nur-e
+  - die-anschluesse-e
+  - die-spuele-e
+  - selbst-e
+  - wo-e
   for:
   - en
 - type: prompt
@@ -632,27 +647,24 @@ steps:
     speaker: protagonist
     text: kaufe ich … gebraucht … der Kühlschrank … auch nicht … Viel Glück!
   items:
-  - kaufe-ich
-  - gebraucht
-  - der-kuehlschrank
-  - auch-nicht
-  - viel-glueck
+  - kaufe-ich-e
+  - gebraucht-e
+  - der-kuehlschrank-e
+  - auch-nicht-e
+  - viel-glueck-e
   for:
   - en
 - type: prompt
   review: true
   ask:
     en: 'Say: “I want — and “an account — and “open (an account) — and “Which documents? — and “the passport (object) — and “the registration certificate — and “the tax ID — and “I don''t have (it) — and
-      “comes by post — and “sign — and “the card comes — and “Do you want …? (polite) — and “Hang on a moment! — and “the rubbish — and “separate, sort — and “the yellow bin (packaging) — and “plastic —
-      and “paper”.'
-    ar: 'قولي: “أريد — و“حسابًا — و“يفتح (حسابًا) — و“أيّ أوراق؟ — و“جواز السفر — و“شهادة تسجيل السكن — و“الرقم الضريبي — و“ليس معي — و“يأتي بالبريد — و“يوقّع — و“البطاقة تصل — و“هل تريد …؟ — و“لحظة من
-      فضلك! — و“النفايات — و“يفرز — و“الحاوية الصفراء (التغليف) — و“البلاستيك — و“الورق”.'
+      “comes by post — and “sign — and “the card comes — and “Do you want …? (polite)”.'
+    ar: 'قولي: “أريد — و“حسابًا — و“يفتح (حسابًا) — و“أيّ أوراق؟ — و“جواز السفر — و“شهادة تسجيل السكن — و“الرقم الضريبي — و“ليس معي — و“يأتي بالبريد — و“يوقّع — و“البطاقة تصل — و“هل تريد …؟”.'
     mk: 'Кажете: „сакам“ — и „сметка“ — и „отвора“ — и „Кои документи?“ — и „пасошот“ — и „потврдата за пријава“ — и „даночниот број“ — и „немам“ — и „доаѓа по пошта“ — и „потпишува“ — и „картичката доаѓа“
-      — и „Сакате ли …?“ — и „Чекајте малку!“ — и „ѓубрето“ — и „одвојува“ — и „жолтиот контејнер (амбалажа)“ — и „пластиката“ — и „хартијата“.'
+      — и „Сакате ли …?“.'
   answer:
     speaker: protagonist
-    text: ich will … ein Konto … eröffnen … Welche Unterlagen? … den Pass … die Meldebescheinigung … die Steuer-ID … habe ich nicht … kommt per Post … unterschreiben … die Karte kommt … Wollen Sie …? …
-      Moment mal! … der Müll … trennen … die gelbe Tonne … das Plastik … das Papier
+    text: ich will … ein Konto … eröffnen … Welche Unterlagen? … den Pass … die Meldebescheinigung … die Steuer-ID … habe ich nicht … kommt per Post … unterschreiben … die Karte kommt … Wollen Sie …?
   items:
   - ich-will
   - ein-konto
@@ -666,33 +678,41 @@ steps:
   - unterschreiben
   - die-karte-kommt
   - wollen-sie
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Hang on a moment! — and “the rubbish — and “separate, sort — and “the yellow bin (packaging) — and “plastic — and “paper — and “the blue one — and “food waste — and “general waste — and “glass
+      — and “Take … (polite command) — and “to the container”.'
+    ar: 'قولي: “لحظة من فضلك! — و“النفايات — و“يفرز — و“الحاوية الصفراء (التغليف) — و“البلاستيك — و“الورق — و“الزرقاء — و“النفايات العضوية — و“بقية النفايات — و“الزجاج — و“خذ … (أمر مؤدب) — و“إلى الحاوية”.'
+    mk: 'Кажете: „Чекајте малку!“ — и „ѓубрето“ — и „одвојува“ — и „жолтиот контејнер (амбалажа)“ — и „пластиката“ — и „хартијата“ — и „синиот“ — и „органскиот отпад“ — и „останатиот отпад“ — и „стаклото“
+      — и „Однесете …“ — и „до контејнерот“.'
+  answer:
+    speaker: protagonist
+    text: Moment mal! … der Müll … trennen … die gelbe Tonne … das Plastik … das Papier … die blaue … der Biomüll … der Restmüll … das Glas … Bringen Sie … … zum Container
+  items:
   - moment-mal
   - der-muell
   - trennen
   - die-gelbe-tonne
   - das-plastik
   - das-papier
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “the blue one — and “food waste — and “general waste — and “glass — and “Take … (polite command) — and “to the container — and “you are (informal) — and “upstairs — and “And you? (informal)
-      — and “on the second floor — and “How are you? (informal) — and “And you? (after ''how are you'') — and “Do you speak …? (informal) — and “or would you rather …? — and “I''m learning — and “in German
-      — and “slowly — and “Sure! Of course!”.'
-    ar: 'قولي: “الزرقاء — و“النفايات العضوية — و“بقية النفايات — و“الزجاج — و“خذ … (أمر مؤدب) — و“إلى الحاوية — و“أنتَ (غير رسمي) — و“في الأعلى — و“وأنت؟ — و“في الطابق الثاني — و“كيف الحال؟ — و“وأنت؟ (بعد
-      كيف الحال) — و“هل تتكلم …؟ — و“أم تفضّل …؟ — و“أتعلّم — و“بالألمانية — و“ببطء — و“طبعًا!”.'
-    mk: 'Кажете: „синиот“ — и „органскиот отпад“ — и „останатиот отпад“ — и „стаклото“ — и „Однесете …“ — и „до контејнерот“ — и „ти си“ — и „горе“ — и „А ти?“ — и „на вториот кат“ — и „Како си?“ — и „А
-      ти?“ — и „Зборуваш ли …?“ — и „или повеќе сакаш …?“ — и „учам“ — и „на германски“ — и „полека“ — и „Секако!“.'
-  answer:
-    speaker: protagonist
-    text: die blaue … der Biomüll … der Restmüll … das Glas … Bringen Sie … … zum Container … du bist … oben … Und du? … im zweiten Stock … Wie geht's? … Und dir? … Sprichst du …? … oder lieber …? … ich
-      lerne … auf Deutsch … langsam … Klar!
-  items:
   - die-blaue
   - der-biomuell
   - der-restmuell
   - das-glas
   - bringen-sie
   - zum-container
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “you are (informal) — and “upstairs — and “And you? (informal) — and “on the second floor — and “How are you? (informal) — and “And you? (after ''how are you'') — and “Do you speak …? (informal)
+      — and “or would you rather …? — and “I''m learning — and “in German — and “slowly — and “Sure! Of course!”.'
+    ar: 'قولي: “أنتَ (غير رسمي) — و“في الأعلى — و“وأنت؟ — و“في الطابق الثاني — و“كيف الحال؟ — و“وأنت؟ (بعد كيف الحال) — و“هل تتكلم …؟ — و“أم تفضّل …؟ — و“أتعلّم — و“بالألمانية — و“ببطء — و“طبعًا!”.'
+    mk: 'Кажете: „ти си“ — и „горе“ — и „А ти?“ — и „на вториот кат“ — и „Како си?“ — и „А ти?“ — и „Зборуваш ли …?“ — и „или повеќе сакаш …?“ — и „учам“ — и „на германски“ — и „полека“ — и „Секако!“.'
+  answer:
+    speaker: protagonist
+    text: du bist … oben … Und du? … im zweiten Stock … Wie geht's? … Und dir? … Sprichst du …? … oder lieber …? … ich lerne … auf Deutsch … langsam … Klar!
+  items:
   - du-bist
   - oben
   - und-du
@@ -708,87 +728,88 @@ steps:
 - type: prompt
   review: true
   ask:
-    ar: 'قولي: “صباح الخير — و“الأب، بابا — و“أريد — و“إلى البيت — و“لا تخف! / لا تخافي!”.'
+    ar: 'قولي: “صباح الخير — و“الأب، بابا — و“هذا / هذه … — و“الحضانة (الكيتا) — و“المربية”.'
   answer:
     speaker: protagonist
-    text: Guten Morgen … der Papa … ich will … nach Hause … Keine Angst!
+    text: Guten Morgen … der Papa … Das ist … … die Kita … die Erzieherin
   items:
-  - guten-morgen
-  - der-papa
-  - ich-will-k
-  - nach-hause
-  - keine-angst
+  - guten-morgen-a
+  - der-papa-a
+  - das-ist-a
+  - die-kita-a
+  - die-erzieherin-a
   for:
   - ar
 - type: prompt
   review: true
   ask:
-    ar: 'قولي: “متى …؟ — و“تأخذون (أحدًا) من مكان، تأتون لأخذه — و“في الساعة الثالثة — و“أراك لاحقًا!”.'
+    ar: 'قولي: “مرحبًا (غير رسمي) — و“أريد — و“إلى البيت — و“لا تخف! / لا تخافي! — و“متى …؟”.'
   answer:
     speaker: protagonist
-    text: Wann …? … holen … ab … um drei Uhr … Bis später!
+    text: Hallo … ich will … nach Hause … Keine Angst! … Wann …?
   items:
-  - wann
-  - holen-ab
-  - um-drei-uhr
-  - bis-spaeter
+  - hallo-a
+  - ich-will-k-a
+  - nach-hause-a
+  - keine-angst-a
+  - wann-a
   for:
   - ar
 - type: prompt
   review: true
   ask:
-    ar: 'قولي: “هذا / هذه … — و“الحضانة (الكيتا) — و“المربية”.'
-    mk: 'Кажете: „Ова е …“ — и „градинката (Kita)“ — и „воспитувачката“.'
+    ar: 'قولي: “تأخذون (أحدًا) من مكان، تأتون لأخذه — و“في الساعة الثالثة — و“إلى اللقاء! (غير رسمي) — و“أراك لاحقًا!”.'
   answer:
     speaker: protagonist
-    text: Das ist … … die Kita … die Erzieherin
+    text: holen … ab … um drei Uhr … Tschüss! … Bis später!
   items:
-  - das-ist
-  - die-kita
-  - die-erzieherin
+  - holen-ab-a
+  - um-drei-uhr-a
+  - tschuess-a
+  - bis-spaeter-a
   for:
   - ar
-  - mk
 - type: prompt
   review: true
   ask:
-    ar: 'قولي: “مرحبًا (غير رسمي) — و“إلى اللقاء! (غير رسمي)”.'
-    mk: 'Кажете: „Здраво“ — и „Чао!“.'
+    mk: 'Кажете: „дедото“ — и „доаѓам да го земам (некого)“ — и „градинката (Kita)“ — и „воспитувачката“ — и „… е тука, дојде“.'
   answer:
     speaker: protagonist
-    text: Hallo … Tschüss!
+    text: der Opa … ich hole … ab … die Kita … die Erzieherin … … ist da
   items:
-  - hallo
-  - tschuess
-  for:
-  - ar
-  - mk
-- type: prompt
-  review: true
-  ask:
-    mk: 'Кажете: „дедото“ — и „доаѓам да го земам (некого)“ — и „… е тука, дојде“ — и „душо моја, срце мое“.'
-  answer:
-    speaker: protagonist
-    text: der Opa … ich hole … ab … … ist da … mein Schatz
-  items:
-  - der-opa
-  - ich-hole-ab
-  - ist-da
-  - mein-schatz
+  - der-opa-m
+  - ich-hole-ab-m
+  - die-kita-m
+  - die-erzieherin-m
+  - ist-da-m
   for:
   - mk
 - type: prompt
   review: true
   ask:
-    mk: 'Кажете: „личната карта / документот“ — и „тука, еве“ — и „мама кажа“ — и „До утре!“.'
+    mk: 'Кажете: „Здраво“ — и „душо моја, срце мое“ — и „личната карта / документот“ — и „тука, еве“ — и „мама кажа“.'
   answer:
     speaker: protagonist
-    text: der Ausweis … hier … die Mama hat es gesagt … Bis morgen!
+    text: Hallo … mein Schatz … der Ausweis … hier … die Mama hat es gesagt
   items:
-  - der-ausweis
-  - hier
-  - die-mama-hat-gesagt
-  - bis-morgen
+  - hallo-m
+  - mein-schatz-m
+  - der-ausweis-m
+  - hier-m
+  - die-mama-hat-gesagt-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „Чао!“ — и „До утре!“ — и „Ова е …“.'
+  answer:
+    speaker: protagonist
+    text: Tschüss! … Bis morgen! … Das ist …
+  items:
+  - tschuess-m
+  - bis-morgen-m
+  - das-ist-m
   for:
   - mk
 - type: narrator

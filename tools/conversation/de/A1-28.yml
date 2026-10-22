@@ -83,47 +83,47 @@ new_items:
     ar: سلّم على …
     mk: Поздравете …
 reviews:
-- item: die-mensa
+- item: die-mensa-e
   from: A1-13-e
   for:
   - en
-- item: die-schlange
+- item: die-schlange-e
   from: A1-13-e
   for:
   - en
-- item: ich-war-zuerst-da
+- item: ich-war-zuerst-da-e
   from: A1-13-e
   for:
   - en
-- item: stimmt
+- item: stimmt-e
   from: A1-13-e
   for:
   - en
-- item: kein-problem
+- item: kein-problem-e
   from: A1-13-e
   for:
   - en
-- item: das-essen
+- item: das-essen-e
   from: A1-13-e
   for:
   - en
-- item: vegetarisch
+- item: vegetarisch-e
   from: A1-13-e
   for:
   - en
-- item: kein-fleisch
+- item: kein-fleisch-e
   from: A1-13-e
   for:
   - en
-- item: nicht-so-gut
+- item: nicht-so-gut-e
   from: A1-13-e
   for:
   - en
-- item: der-kaffee
+- item: der-kaffee-e
   from: A1-13-e
   for:
   - en
-- item: heute-nicht
+- item: heute-nicht-e
   from: A1-13-e
   for:
   - en
@@ -193,76 +193,91 @@ reviews:
   from: A1-27
 - item: modern
   from: A1-27
-- item: der-spielplatz
+- item: der-spielplatz-a
   from: A1-13-a
   for:
   - ar
-  - mk
-- item: die-schaukel
+- item: die-schaukel-a
   from: A1-13-a
   for:
   - ar
-  - mk
-- item: wie-alt-ist-sie
+- item: wie-alt-ist-sie-a
   from: A1-13-a
   for:
   - ar
-- item: vier-jahre-alt
+- item: vier-jahre-alt-a
   from: A1-13-a
   for:
   - ar
-  - mk
-- item: in-welche-kita
+- item: in-welche-kita-a
   from: A1-13-a
   for:
   - ar
-- item: geht
+- item: geht-a
   from: A1-13-a
   for:
   - ar
-- item: das-mittagessen
+- item: das-mittagessen-a
   from: A1-13-a
   for:
   - ar
-- item: kein-schweinefleisch
+- item: kein-schweinefleisch-a
   from: A1-13-a
   for:
   - ar
-- item: isst
+- item: isst-a
   from: A1-13-a
   for:
   - ar
-- item: nicht
+- item: nicht-a
   from: A1-13-a
   for:
   - ar
-  - mk
-- item: bis-bald
+- item: bis-bald-a
   from: A1-13-a
   for:
   - ar
-  - mk
-- item: wie-alt-ist-er
+- item: der-spielplatz-m
   from: A1-13-m
   for:
   - mk
-- item: ihr-enkel
+- item: die-schaukel-m
   from: A1-13-m
   for:
   - mk
-- item: ich-bin-oma
+- item: wie-alt-ist-er-m
   from: A1-13-m
   for:
   - mk
-- item: nicht-von-hier
+- item: vier-jahre-alt-m
   from: A1-13-m
   for:
   - mk
-- item: kein-deutsch
+- item: ihr-enkel-m
   from: A1-13-m
   for:
   - mk
-- item: nur-ein-bisschen
+- item: ich-bin-oma-m
+  from: A1-13-m
+  for:
+  - mk
+- item: nicht-von-hier-m
+  from: A1-13-m
+  for:
+  - mk
+- item: kein-deutsch-m
+  from: A1-13-m
+  for:
+  - mk
+- item: nur-ein-bisschen-m
+  from: A1-13-m
+  for:
+  - mk
+- item: nicht-m
+  from: A1-13-m
+  for:
+  - mk
+- item: bis-bald-m
   from: A1-13-m
   for:
   - mk
@@ -557,9 +572,9 @@ steps:
     speaker: protagonist
     text: die Mensa … die Schlange … Ich war zuerst da
   items:
-  - die-mensa
-  - die-schlange
-  - ich-war-zuerst-da
+  - die-mensa-e
+  - die-schlange-e
+  - ich-war-zuerst-da-e
   for:
   - en
 - type: prompt
@@ -570,9 +585,9 @@ steps:
     speaker: protagonist
     text: Stimmt … kein Problem … das Essen
   items:
-  - stimmt
-  - kein-problem
-  - das-essen
+  - stimmt-e
+  - kein-problem-e
+  - das-essen-e
   for:
   - en
 - type: prompt
@@ -583,9 +598,9 @@ steps:
     speaker: protagonist
     text: vegetarisch … kein Fleisch … nicht so gut
   items:
-  - vegetarisch
-  - kein-fleisch
-  - nicht-so-gut
+  - vegetarisch-e
+  - kein-fleisch-e
+  - nicht-so-gut-e
   for:
   - en
 - type: prompt
@@ -596,20 +611,19 @@ steps:
     speaker: protagonist
     text: der Kaffee … heute nicht
   items:
-  - der-kaffee
-  - heute-nicht
+  - der-kaffee-e
+  - heute-nicht-e
   for:
   - en
 - type: prompt
   review: true
   ask:
-    en: 'Say: “the old building — and “the new building — and “made of stone — and “made of wood — and “thick — and “the walls — and “high — and “the ceiling — and “the insulation — and “double-glazed windows
-      — and “modern”.'
-    ar: 'قل: “المبنى القديم — و“المبنى الجديد — و“من الحجر — و“من الخشب — و“سميك — و“الجدران — و“عالٍ — و“السقف — و“العزل — و“نوافذ مزدوجة — و“حديث”.'
-    mk: 'Кажете: „старата зграда“ — и „новоградбата“ — и „од камен“ — и „од дрво“ — и „дебел“ — и „ѕидовите“ — и „висок“ — и „таванот“ — и „изолацијата“ — и „двојни прозорци“ — и „модерен“.'
+    en: 'Say: “the old building — and “the new building — and “made of stone — and “made of wood — and “thick — and “the walls — and “high — and “the ceiling — and “the insulation”.'
+    ar: 'قل: “المبنى القديم — و“المبنى الجديد — و“من الحجر — و“من الخشب — و“سميك — و“الجدران — و“عالٍ — و“السقف — و“العزل”.'
+    mk: 'Кажете: „старата зграда“ — и „новоградбата“ — и „од камен“ — и „од дрво“ — и „дебел“ — и „ѕидовите“ — и „висок“ — и „таванот“ — и „изолацијата“.'
   answer:
     speaker: protagonist
-    text: der Altbau … der Neubau … aus Stein … aus Holz … dick … die Wände … hoch … die Decke … die Dämmung … doppelte Fenster … modern
+    text: der Altbau … der Neubau … aus Stein … aus Holz … dick … die Wände … hoch … die Decke … die Dämmung
   items:
   - der-altbau
   - der-neubau
@@ -620,20 +634,19 @@ steps:
   - hoch
   - die-decke
   - die-daemmung
-  - doppelte-fenster
-  - modern
 - type: prompt
   review: true
   ask:
-    en: 'Say: “Leave me alone! (polite) — and “Stop it! (polite) — and “Help! — and “the police — and “110 (police number) — and “Are you all right? — and “I''m with you — and “the driver — and “Get off!
-      (polite) — and “Thanks for your help — and “the garden”.'
-    ar: 'قل: “اتركني وشأني! — و“توقّف! — و“النجدة! — و“الشرطة — و“110 (رقم الشرطة) — و“هل أنتِ بخير؟ — و“أنا معكِ — و“السائق — و“انزل! — و“شكرًا على المساعدة — و“الحديقة”.'
-    mk: 'Кажете: „Оставете ме на мира!“ — и „Престанете!“ — и „Помош!“ — и „полицијата“ — и „110 (број на полиција)“ — и „Дали сте во ред?“ — и „Јас сум со вас“ — и „возачот“ — и „Симнете се!“ — и „Благодарам
-      за помошта“ — и „градината“.'
+    en: 'Say: “double-glazed windows — and “modern — and “Leave me alone! (polite) — and “Stop it! (polite) — and “Help! — and “the police — and “110 (police number) — and “Are you all right? — and “I''m
+      with you”.'
+    ar: 'قل: “نوافذ مزدوجة — و“حديث — و“اتركني وشأني! — و“توقّف! — و“النجدة! — و“الشرطة — و“110 (رقم الشرطة) — و“هل أنتِ بخير؟ — و“أنا معكِ”.'
+    mk: 'Кажете: „двојни прозорци“ — и „модерен“ — и „Оставете ме на мира!“ — и „Престанете!“ — и „Помош!“ — и „полицијата“ — и „110 (број на полиција)“ — и „Дали сте во ред?“ — и „Јас сум со вас“.'
   answer:
     speaker: protagonist
-    text: Lassen Sie mich in Ruhe! … Hören Sie auf! … Hilfe! … die Polizei … hundertzehn … Alles okay? … Ich bin bei Ihnen … der Fahrer … Steigen Sie aus! … Danke für die Hilfe … der Garten
+    text: doppelte Fenster … modern … Lassen Sie mich in Ruhe! … Hören Sie auf! … Hilfe! … die Polizei … hundertzehn … Alles okay? … Ich bin bei Ihnen
   items:
+  - doppelte-fenster
+  - modern
   - lassen-sie-mich
   - hoeren-sie-auf
   - hilfe
@@ -641,26 +654,35 @@ steps:
   - hundertzehn
   - alles-okay
   - ich-bin-bei-ihnen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the driver — and “Get off! (polite) — and “Thanks for your help — and “the garden — and “the flowers — and “water (plants) — and “the tree — and “in summer — and “the plant”.'
+    ar: 'قل: “السائق — و“انزل! — و“شكرًا على المساعدة — و“الحديقة — و“الأزهار — و“يسقي — و“الشجرة — و“في الصيف — و“النبتة”.'
+    mk: 'Кажете: „возачот“ — и „Симнете се!“ — и „Благодарам за помошта“ — и „градината“ — и „цвеќињата“ — и „полева“ — и „дрвото“ — и „во лето“ — и „растението“.'
+  answer:
+    speaker: protagonist
+    text: der Fahrer … Steigen Sie aus! … Danke für die Hilfe … der Garten … die Blumen … gießen … der Baum … im Sommer … die Pflanze
+  items:
   - der-fahrer
   - aussteigen-jetzt
   - danke-fuer-die-hilfe
   - der-garten
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “the flowers — and “water (plants) — and “the tree — and “in summer — and “the plant — and “for you (polite) — and “needs — and “the sun — and “at the window — and “every other day — and “the
-      water”.'
-    ar: 'قل: “الأزهار — و“يسقي — و“الشجرة — و“في الصيف — و“النبتة — و“لكِ (بصيغة الاحترام) — و“تحتاج — و“الشمس — و“عند النافذة — و“كل يومين — و“الماء”.'
-    mk: 'Кажете: „цвеќињата“ — и „полева“ — и „дрвото“ — и „во лето“ — и „растението“ — и „за вас“ — и „има потреба од“ — и „сонцето“ — и „до прозорецот“ — и „секој втор ден“ — и „водата“.'
-  answer:
-    speaker: protagonist
-    text: die Blumen … gießen … der Baum … im Sommer … die Pflanze … für Sie … braucht … die Sonne … am Fenster … jeden zweiten Tag … das Wasser
-  items:
   - die-blumen
   - giessen
   - der-baum
   - im-sommer
   - die-pflanze
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “for you (polite) — and “needs — and “the sun — and “at the window — and “every other day — and “the water”.'
+    ar: 'قل: “لكِ (بصيغة الاحترام) — و“تحتاج — و“الشمس — و“عند النافذة — و“كل يومين — و“الماء”.'
+    mk: 'Кажете: „за вас“ — и „има потреба од“ — и „сонцето“ — и „до прозорецот“ — и „секој втор ден“ — и „водата“.'
+  answer:
+    speaker: protagonist
+    text: für Sie … braucht … die Sonne … am Fenster … jeden zweiten Tag … das Wasser
+  items:
   - fuer-sie
   - braucht
   - die-sonne
@@ -670,114 +692,103 @@ steps:
 - type: prompt
   review: true
   ask:
-    ar: 'قل: “ملعب الأطفال — و“الأرجوحة”.'
-    mk: 'Кажете: „игралиштето“ — и „лулашката“.'
+    ar: 'قل: “ملعب الأطفال — و“الأرجوحة — و“كم عمرها؟”.'
   answer:
     speaker: protagonist
-    text: der Spielplatz … die Schaukel
+    text: der Spielplatz … die Schaukel … Wie alt ist sie?
   items:
-  - der-spielplatz
-  - die-schaukel
-  for:
-  - ar
-  - mk
-- type: prompt
-  review: true
-  ask:
-    ar: 'قل: “أربع سنوات — و“لا (نفي)”.'
-    mk: 'Кажете: „четири години“ — и „не“.'
-  answer:
-    speaker: protagonist
-    text: vier Jahre alt … nicht
-  items:
-  - vier-jahre-alt
-  - nicht
-  for:
-  - ar
-  - mk
-- type: prompt
-  review: true
-  ask:
-    ar: 'قل: “إلى اللقاء قريبًا!”.'
-    mk: 'Кажете: „Се гледаме наскоро!“.'
-  answer:
-    speaker: protagonist
-    text: Bis bald!
-  items:
-  - bis-bald
-  for:
-  - ar
-  - mk
-- type: prompt
-  review: true
-  ask:
-    ar: 'قل: “كم عمرها؟ — و“إلى أيّ حضانة …؟”.'
-  answer:
-    speaker: protagonist
-    text: Wie alt ist sie? … In welche Kita …?
-  items:
-  - wie-alt-ist-sie
-  - in-welche-kita
+  - der-spielplatz-a
+  - die-schaukel-a
+  - wie-alt-ist-sie-a
   for:
   - ar
 - type: prompt
   review: true
   ask:
-    ar: 'قل: “تذهب — و“الغداء”.'
+    ar: 'قل: “أربع سنوات — و“إلى أيّ حضانة …؟ — و“تذهب”.'
   answer:
     speaker: protagonist
-    text: geht … das Mittagessen
+    text: vier Jahre alt … In welche Kita …? … geht
   items:
-  - geht
-  - das-mittagessen
+  - vier-jahre-alt-a
+  - in-welche-kita-a
+  - geht-a
   for:
   - ar
 - type: prompt
   review: true
   ask:
-    ar: 'قل: “بلا لحم خنزير — و“تأكل”.'
+    ar: 'قل: “الغداء — و“بلا لحم خنزير — و“تأكل”.'
   answer:
     speaker: protagonist
-    text: kein Schweinefleisch … isst
+    text: das Mittagessen … kein Schweinefleisch … isst
   items:
-  - kein-schweinefleisch
-  - isst
+  - das-mittagessen-a
+  - kein-schweinefleisch-a
+  - isst-a
   for:
   - ar
 - type: prompt
   review: true
   ask:
-    mk: 'Кажете: „Колку години има?“ — и „вашиот внук“.'
+    ar: 'قل: “لا (نفي) — و“إلى اللقاء قريبًا!”.'
   answer:
     speaker: protagonist
-    text: Wie alt ist er? … Ihr Enkel
+    text: nicht … Bis bald!
   items:
-  - wie-alt-ist-er
-  - ihr-enkel
+  - nicht-a
+  - bis-bald-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „игралиштето“ — и „лулашката“ — и „Колку години има?“.'
+  answer:
+    speaker: protagonist
+    text: der Spielplatz … die Schaukel … Wie alt ist er?
+  items:
+  - der-spielplatz-m
+  - die-schaukel-m
+  - wie-alt-ist-er-m
   for:
   - mk
 - type: prompt
   review: true
   ask:
-    mk: 'Кажете: „јас сум бабата“ — и „не сум одовде“.'
+    mk: 'Кажете: „четири години“ — и „вашиот внук“ — и „јас сум бабата“.'
   answer:
     speaker: protagonist
-    text: ich bin die Oma … nicht von hier
+    text: vier Jahre alt … Ihr Enkel … ich bin die Oma
   items:
-  - ich-bin-oma
-  - nicht-von-hier
+  - vier-jahre-alt-m
+  - ihr-enkel-m
+  - ich-bin-oma-m
   for:
   - mk
 - type: prompt
   review: true
   ask:
-    mk: 'Кажете: „не (зборувам) германски“ — и „само малку“.'
+    mk: 'Кажете: „не сум одовде“ — и „не (зборувам) германски“ — и „само малку“.'
   answer:
     speaker: protagonist
-    text: kein Deutsch … nur ein bisschen
+    text: nicht von hier … kein Deutsch … nur ein bisschen
   items:
-  - kein-deutsch
-  - nur-ein-bisschen
+  - nicht-von-hier-m
+  - kein-deutsch-m
+  - nur-ein-bisschen-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „не“ — и „Се гледаме наскоро!“.'
+  answer:
+    speaker: protagonist
+    text: nicht … Bis bald!
+  items:
+  - nicht-m
+  - bis-bald-m
   for:
   - mk
 - type: narrator

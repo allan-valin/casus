@@ -14,48 +14,48 @@ learn_lessons:
 - a1-negation
 culture: One queue per machine
 new_items:
-- id: die-mensa
+- id: die-mensa-e
   text: die Mensa
   meaning:
     en: the university canteen
   rare: true
-- id: die-schlange
+- id: die-schlange-e
   text: die Schlange
   meaning:
     en: 'the queue (also: snake)'
-- id: ich-war-zuerst-da
+- id: ich-war-zuerst-da-e
   text: Ich war zuerst da
   meaning:
     en: I was here first
-- id: stimmt
+- id: stimmt-e
   text: Stimmt
   meaning:
     en: That's right
-- id: kein-problem
+- id: kein-problem-e
   text: kein Problem
   meaning:
     en: no problem
-- id: das-essen
+- id: das-essen-e
   text: das Essen
   meaning:
     en: the food, the meal
-- id: vegetarisch
+- id: vegetarisch-e
   text: vegetarisch
   meaning:
     en: vegetarian
-- id: kein-fleisch
+- id: kein-fleisch-e
   text: kein Fleisch
   meaning:
     en: no meat
-- id: nicht-so-gut
+- id: nicht-so-gut-e
   text: nicht so gut
   meaning:
     en: not so good
-- id: der-kaffee
+- id: der-kaffee-e
   text: der Kaffee
   meaning:
     en: the coffee
-- id: heute-nicht
+- id: heute-nicht-e
   text: heute nicht
   meaning:
     en: not today
@@ -196,7 +196,7 @@ steps:
     text: Entschuldigung, ich war zuerst da.
   items:
   - entschuldigung
-  - ich-war-zuerst-da
+  - ich-war-zuerst-da-e
 - type: prompt
   ask:
     en: 'He agrees: that''s right.'
@@ -204,7 +204,7 @@ steps:
     speaker: protagonist
     text: Stimmt.
   items:
-  - stimmt
+  - stimmt-e
 - type: prompt
   ask:
     en: 'Say: no problem.'
@@ -212,7 +212,7 @@ steps:
     speaker: protagonist
     text: Kein Problem.
   items:
-  - kein-problem
+  - kein-problem-e
 - type: prompt
   ask:
     en: 'Ask: why are there so many queues?'
@@ -221,7 +221,7 @@ steps:
     text: Warum gibt es so viele Schlangen?
   items:
   - warum
-  - die-schlange
+  - die-schlange-e
 - type: prompt
   ask:
     en: 'Ask: is the food vegetarian?'
@@ -229,8 +229,8 @@ steps:
     speaker: protagonist
     text: Ist das Essen vegetarisch?
   items:
-  - das-essen
-  - vegetarisch
+  - das-essen-e
+  - vegetarisch-e
 - type: narrator
   text:
     en: '«kein» before a noun, «nicht» everywhere else: «kein Fleisch», but «nicht so gut», «heute nicht».'
@@ -241,7 +241,7 @@ steps:
     speaker: protagonist
     text: Kein Fleisch.
   items:
-  - kein-fleisch
+  - kein-fleisch-e
 - type: prompt
   ask:
     en: 'Say: not so good.'
@@ -249,7 +249,7 @@ steps:
     speaker: protagonist
     text: Nicht so gut.
   items:
-  - nicht-so-gut
+  - nicht-so-gut-e
 - type: prompt
   ask:
     en: Ask for a coffee.
@@ -257,7 +257,7 @@ steps:
     speaker: protagonist
     text: Einen Kaffee, bitte.
   items:
-  - der-kaffee
+  - der-kaffee-e
 - type: prompt
   ask:
     en: 'Say: not today.'
@@ -265,7 +265,7 @@ steps:
     speaker: protagonist
     text: Heute nicht.
   items:
-  - heute-nicht
+  - heute-nicht-e
 - type: prompt
   ask:
     en: 'Say: the Mensa.'
@@ -273,7 +273,7 @@ steps:
     speaker: protagonist
     text: Die Mensa.
   items:
-  - die-mensa
+  - die-mensa-e
 - type: narrator
   text:
     en: Queues are often one per till or machine, and people step into any gap. 'Entschuldigung, ich war zuerst da' is polite, normal and usually answered with an apology.
@@ -284,7 +284,7 @@ steps:
     speaker: protagonist
     text: die Mensa
   items:
-  - die-mensa
+  - die-mensa-e
 - type: prompt
   ask:
     en: 'Once more: say “the queue (also: snake)”.'
@@ -292,7 +292,7 @@ steps:
     speaker: protagonist
     text: die Schlange
   items:
-  - die-schlange
+  - die-schlange-e
 - type: prompt
   ask:
     en: 'Once more: say “I was here first”.'
@@ -300,7 +300,7 @@ steps:
     speaker: protagonist
     text: Ich war zuerst da
   items:
-  - ich-war-zuerst-da
+  - ich-war-zuerst-da-e
 - type: prompt
   ask:
     en: 'Once more: say “That''s right”.'
@@ -308,7 +308,7 @@ steps:
     speaker: protagonist
     text: Stimmt
   items:
-  - stimmt
+  - stimmt-e
 - type: prompt
   ask:
     en: 'Once more: say “no problem”.'
@@ -316,7 +316,7 @@ steps:
     speaker: protagonist
     text: kein Problem
   items:
-  - kein-problem
+  - kein-problem-e
 - type: prompt
   ask:
     en: 'Once more: say “the food, the meal”.'
@@ -324,7 +324,7 @@ steps:
     speaker: protagonist
     text: das Essen
   items:
-  - das-essen
+  - das-essen-e
 - type: prompt
   ask:
     en: 'Once more: say “vegetarian”.'
@@ -332,7 +332,7 @@ steps:
     speaker: protagonist
     text: vegetarisch
   items:
-  - vegetarisch
+  - vegetarisch-e
 - type: prompt
   ask:
     en: 'Once more: say “no meat”.'
@@ -340,7 +340,7 @@ steps:
     speaker: protagonist
     text: kein Fleisch
   items:
-  - kein-fleisch
+  - kein-fleisch-e
 - type: prompt
   ask:
     en: 'Once more: say “not so good”.'
@@ -348,7 +348,7 @@ steps:
     speaker: protagonist
     text: nicht so gut
   items:
-  - nicht-so-gut
+  - nicht-so-gut-e
 - type: prompt
   ask:
     en: 'Once more: say “the coffee”.'
@@ -356,7 +356,7 @@ steps:
     speaker: protagonist
     text: der Kaffee
   items:
-  - der-kaffee
+  - der-kaffee-e
 - type: prompt
   ask:
     en: 'Once more: say “not today”.'
@@ -364,7 +364,7 @@ steps:
     speaker: protagonist
     text: heute nicht
   items:
-  - heute-nicht
+  - heute-nicht-e
 - type: narrator
   text:
     en: Now some things from earlier units, in this new situation.

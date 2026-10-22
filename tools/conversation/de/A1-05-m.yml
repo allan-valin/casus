@@ -14,85 +14,85 @@ learn_lessons:
 - a1-accusative
 culture: The yellow check-up booklet
 new_items:
-- id: die-oma
+- id: die-oma-m
   text: die Oma
   meaning:
     mk: бабата
-- id: hat-fieber
+- id: hat-fieber-m
   text: hat Fieber
   meaning:
     mk: има температура
-- id: seit-heute-morgen-k
+- id: seit-heute-morgen-k-m
   text: seit heute Morgen
   meaning:
     mk: од утрово
-- id: die-eltern
+- id: die-eltern-m
   text: die Eltern
   meaning:
     mk: родителите
-- id: arbeiten
+- id: arbeiten-m
   text: arbeiten
   meaning:
     mk: работат
-- id: die-karte
+- id: die-karte-m
   text: die Karte
   meaning:
     mk: картичката
-- id: das-u-heft
+- id: das-u-heft-m
   text: das U-Heft
   meaning:
     mk: жолтата книшка за прегледи
   rare: true
-- id: hustet
+- id: hustet-m
   text: hustet
   meaning:
     mk: кашла
-- id: ich-gebe-ihnen
+- id: ich-gebe-ihnen-m
   text: Ich gebe Ihnen …
   meaning:
     mk: Ви давам …
-- id: einen-saft
+- id: einen-saft-m
   text: einen Saft
   meaning:
     mk: сируп
-- id: dreimal-am-tag
+- id: dreimal-am-tag-m
   text: dreimal am Tag
   meaning:
     mk: три пати на ден
-- id: gute-besserung
+- id: gute-besserung-m
   text: Gute Besserung!
   meaning:
     mk: Брзо оздравување!
-- id: vielen-dank
+- id: vielen-dank-m
   text: Vielen Dank
   meaning:
     mk: Многу благодарам
 reviews:
-- item: der-opa
+- item: der-opa-m
   from: A1-02-m
-- item: ich-hole-ab
+- item: ich-hole-ab-m
   from: A1-02-m
-- item: die-kita
+- item: die-kita-m
   from: A1-02-m
-- item: die-erzieherin
+- item: die-erzieherin-m
   from: A1-02-m
-- item: ist-da
+- item: ist-da-m
   from: A1-02-m
-- item: hallo
+- item: hallo-m
   from: A1-02-m
-- item: mein-schatz
+- item: mein-schatz-m
   from: A1-02-m
-- item: der-ausweis
+- item: der-ausweis-m
   from: A1-02-m
-- item: hier
+- item: hier-m
   from: A1-02-m
-- item: die-mama-hat-gesagt
+- item: die-mama-hat-gesagt-m
   from: A1-02-m
-- item: tschuess
+- item: tschuess-m
   from: A1-02-m
-- item: bis-morgen
+- item: bis-morgen-m
   from: A1-02-m
-- item: das-ist
+- item: das-ist-m
   from: A1-02-m
 - item: einen-termin
   from: A1-04
@@ -178,7 +178,7 @@ steps:
     text: Ich bin die Oma von Luka.
   items:
   - ich-bin
-  - die-oma
+  - die-oma-m
 - type: prompt
   ask:
     mk: 'Кажете: родителите работат.'
@@ -186,8 +186,8 @@ steps:
     speaker: protagonist
     text: Die Eltern arbeiten.
   items:
-  - die-eltern
-  - arbeiten
+  - die-eltern-m
+  - arbeiten-m
 - type: prompt
   ask:
     mk: 'Кажете: Лука има температура.'
@@ -195,7 +195,7 @@ steps:
     speaker: protagonist
     text: Luka hat Fieber.
   items:
-  - hat-fieber
+  - hat-fieber-m
 - type: prompt
   ask:
     mk: 'Кажете: од утрово.'
@@ -203,7 +203,7 @@ steps:
     speaker: protagonist
     text: Seit heute Morgen.
   items:
-  - seit-heute-morgen-k
+  - seit-heute-morgen-k-m
 - type: narrator
   text:
     mk: «das U-Heft» е жолта книшка што се добива при раѓање, со сите редовни прегледи на детето (U1 до U9). Замолете ги Петар и Ања да ви ја дадат заедно со картичката, кога вие го носите Лука.
@@ -214,7 +214,7 @@ steps:
     speaker: protagonist
     text: Die Karte, ja.
   items:
-  - die-karte
+  - die-karte-m
 - type: prompt
   ask:
     mk: 'Кажете: жолтата книшка — не.'
@@ -222,7 +222,7 @@ steps:
     speaker: protagonist
     text: Das U-Heft ... nein.
   items:
-  - das-u-heft
+  - das-u-heft-m
 - type: prompt
   ask:
     mk: Таа прашува дали кашла.
@@ -230,7 +230,7 @@ steps:
     speaker: protagonist
     text: Hustet er?
   items:
-  - hustet
+  - hustet-m
 - type: narrator
   text:
     mk: 'По глаголи како «geben» и «haben» се менува само машкиот предмет: «ein Saft» станува «einen Saft» — «Ich gebe Ihnen einen Saft». Женскиот и средниот род остануваат исти.'
@@ -241,8 +241,8 @@ steps:
     speaker: protagonist
     text: Ich gebe Ihnen einen Saft.
   items:
-  - ich-gebe-ihnen
-  - einen-saft
+  - ich-gebe-ihnen-m
+  - einen-saft-m
 - type: prompt
   ask:
     mk: 'Кажете: три пати на ден.'
@@ -250,7 +250,7 @@ steps:
     speaker: protagonist
     text: Dreimal am Tag.
   items:
-  - dreimal-am-tag
+  - dreimal-am-tag-m
 - type: prompt
   ask:
     mk: Таа му посакува на Лука брзо оздравување.
@@ -258,7 +258,7 @@ steps:
     speaker: protagonist
     text: Gute Besserung!
   items:
-  - gute-besserung
+  - gute-besserung-m
 - type: prompt
   ask:
     mk: Заблагодарете се.
@@ -266,7 +266,7 @@ steps:
     speaker: protagonist
     text: Vielen Dank!
   items:
-  - vielen-dank
+  - vielen-dank-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „бабата“.'
@@ -274,7 +274,7 @@ steps:
     speaker: protagonist
     text: die Oma
   items:
-  - die-oma
+  - die-oma-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „има температура“.'
@@ -282,7 +282,7 @@ steps:
     speaker: protagonist
     text: hat Fieber
   items:
-  - hat-fieber
+  - hat-fieber-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „од утрово“.'
@@ -290,7 +290,7 @@ steps:
     speaker: protagonist
     text: seit heute Morgen
   items:
-  - seit-heute-morgen-k
+  - seit-heute-morgen-k-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „родителите“.'
@@ -298,7 +298,7 @@ steps:
     speaker: protagonist
     text: die Eltern
   items:
-  - die-eltern
+  - die-eltern-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „работат“.'
@@ -306,7 +306,7 @@ steps:
     speaker: protagonist
     text: arbeiten
   items:
-  - arbeiten
+  - arbeiten-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „картичката“.'
@@ -314,7 +314,7 @@ steps:
     speaker: protagonist
     text: die Karte
   items:
-  - die-karte
+  - die-karte-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „жолтата книшка за прегледи“.'
@@ -322,7 +322,7 @@ steps:
     speaker: protagonist
     text: das U-Heft
   items:
-  - das-u-heft
+  - das-u-heft-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „кашла“.'
@@ -330,7 +330,7 @@ steps:
     speaker: protagonist
     text: hustet
   items:
-  - hustet
+  - hustet-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „Ви давам …“.'
@@ -338,7 +338,7 @@ steps:
     speaker: protagonist
     text: Ich gebe Ihnen …
   items:
-  - ich-gebe-ihnen
+  - ich-gebe-ihnen-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „сируп“.'
@@ -346,7 +346,7 @@ steps:
     speaker: protagonist
     text: einen Saft
   items:
-  - einen-saft
+  - einen-saft-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „три пати на ден“.'
@@ -354,7 +354,7 @@ steps:
     speaker: protagonist
     text: dreimal am Tag
   items:
-  - dreimal-am-tag
+  - dreimal-am-tag-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „Брзо оздравување!“.'
@@ -362,7 +362,7 @@ steps:
     speaker: protagonist
     text: Gute Besserung!
   items:
-  - gute-besserung
+  - gute-besserung-m
 - type: prompt
   ask:
     mk: 'Уште еднаш: кажете „Многу благодарам“.'
@@ -370,7 +370,7 @@ steps:
     speaker: protagonist
     text: Vielen Dank
   items:
-  - vielen-dank
+  - vielen-dank-m
 - type: narrator
   text:
     mk: Сега нешто од претходните лекции, во оваа нова ситуација.
@@ -420,8 +420,8 @@ steps:
   items:
   - das-wars
   - schoenen-tag-noch
-  - der-opa
-  - ich-hole-ab
+  - der-opa-m
+  - ich-hole-ab-m
 - type: prompt
   review: true
   ask:
@@ -430,10 +430,10 @@ steps:
     speaker: protagonist
     text: die Kita … die Erzieherin … … ist da … Hallo
   items:
-  - die-kita
-  - die-erzieherin
-  - ist-da
-  - hallo
+  - die-kita-m
+  - die-erzieherin-m
+  - ist-da-m
+  - hallo-m
 - type: prompt
   review: true
   ask:
@@ -442,10 +442,10 @@ steps:
     speaker: protagonist
     text: mein Schatz … der Ausweis … hier … die Mama hat es gesagt
   items:
-  - mein-schatz
-  - der-ausweis
-  - hier
-  - die-mama-hat-gesagt
+  - mein-schatz-m
+  - der-ausweis-m
+  - hier-m
+  - die-mama-hat-gesagt-m
 - type: prompt
   review: true
   ask:
@@ -454,9 +454,9 @@ steps:
     speaker: protagonist
     text: Tschüss! … Bis morgen! … Das ist …
   items:
-  - tschuess
-  - bis-morgen
-  - das-ist
+  - tschuess-m
+  - bis-morgen-m
+  - das-ist-m
 - type: narrator
   text:
     mk: Слушнете го разговорот уште еднаш. Сега го разбирате.

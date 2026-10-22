@@ -95,63 +95,63 @@ new_items:
     ar: الصغيرة
     mk: малата
 reviews:
-- item: die-wohnung
+- item: die-wohnung-e
   from: A1-02-e
   for:
   - en
-- item: das-zimmer
+- item: das-zimmer-e
   from: A1-02-e
   for:
   - en
-- item: und-die
+- item: und-die-e
   from: A1-02-e
   for:
   - en
-- item: die-kueche
+- item: die-kueche-e
   from: A1-02-e
   for:
   - en
-- item: es-gibt-keine
+- item: es-gibt-keine-e
   from: A1-02-e
   for:
   - en
-- item: nur
+- item: nur-e
   from: A1-02-e
   for:
   - en
-- item: die-anschluesse
+- item: die-anschluesse-e
   from: A1-02-e
   for:
   - en
-- item: die-spuele
+- item: die-spuele-e
   from: A1-02-e
   for:
   - en
-- item: selbst
+- item: selbst-e
   from: A1-02-e
   for:
   - en
-- item: wo
+- item: wo-e
   from: A1-02-e
   for:
   - en
-- item: kaufe-ich
+- item: kaufe-ich-e
   from: A1-02-e
   for:
   - en
-- item: gebraucht
+- item: gebraucht-e
   from: A1-02-e
   for:
   - en
-- item: der-kuehlschrank
+- item: der-kuehlschrank-e
   from: A1-02-e
   for:
   - en
-- item: auch-nicht
+- item: auch-nicht-e
   from: A1-02-e
   for:
   - en
-- item: viel-glueck
+- item: viel-glueck-e
   from: A1-02-e
   for:
   - en
@@ -209,96 +209,111 @@ reviews:
   from: A1-08
 - item: aussteigen
   from: A1-08
-- item: guten-morgen
+- item: guten-morgen-a
   from: A1-02-a
   for:
   - ar
-- item: der-papa
+- item: der-papa-a
   from: A1-02-a
   for:
   - ar
-- item: das-ist
+- item: das-ist-a
   from: A1-02-a
   for:
   - ar
-  - mk
-- item: die-kita
+- item: die-kita-a
   from: A1-02-a
   for:
   - ar
-  - mk
-- item: die-erzieherin
+- item: die-erzieherin-a
   from: A1-02-a
   for:
   - ar
-  - mk
-- item: hallo
+- item: hallo-a
   from: A1-02-a
   for:
   - ar
-  - mk
-- item: ich-will-k
+- item: ich-will-k-a
   from: A1-02-a
   for:
   - ar
-- item: nach-hause
+- item: nach-hause-a
   from: A1-02-a
   for:
   - ar
-- item: keine-angst
+- item: keine-angst-a
   from: A1-02-a
   for:
   - ar
-- item: wann
+- item: wann-a
   from: A1-02-a
   for:
   - ar
-- item: holen-ab
+- item: holen-ab-a
   from: A1-02-a
   for:
   - ar
-- item: um-drei-uhr
+- item: um-drei-uhr-a
   from: A1-02-a
   for:
   - ar
-- item: tschuess
+- item: tschuess-a
   from: A1-02-a
   for:
   - ar
-  - mk
-- item: bis-spaeter
+- item: bis-spaeter-a
   from: A1-02-a
   for:
   - ar
-- item: der-opa
+- item: der-opa-m
   from: A1-02-m
   for:
   - mk
-- item: ich-hole-ab
+- item: ich-hole-ab-m
   from: A1-02-m
   for:
   - mk
-- item: ist-da
+- item: die-kita-m
   from: A1-02-m
   for:
   - mk
-- item: mein-schatz
+- item: die-erzieherin-m
   from: A1-02-m
   for:
   - mk
-- item: der-ausweis
+- item: ist-da-m
   from: A1-02-m
   for:
   - mk
-- item: hier
+- item: hallo-m
   from: A1-02-m
   for:
   - mk
-- item: die-mama-hat-gesagt
+- item: mein-schatz-m
   from: A1-02-m
   for:
   - mk
-- item: bis-morgen
+- item: der-ausweis-m
+  from: A1-02-m
+  for:
+  - mk
+- item: hier-m
+  from: A1-02-m
+  for:
+  - mk
+- item: die-mama-hat-gesagt-m
+  from: A1-02-m
+  for:
+  - mk
+- item: tschuess-m
+  from: A1-02-m
+  for:
+  - mk
+- item: bis-morgen-m
+  from: A1-02-m
+  for:
+  - mk
+- item: das-ist-m
   from: A1-02-m
   for:
   - mk
@@ -633,10 +648,10 @@ steps:
     speaker: protagonist
     text: die Wohnung … das Zimmer … Und die …? … die Küche
   items:
-  - die-wohnung
-  - das-zimmer
-  - und-die
-  - die-kueche
+  - die-wohnung-e
+  - das-zimmer-e
+  - und-die-e
+  - die-kueche-e
   for:
   - en
 - type: prompt
@@ -647,10 +662,10 @@ steps:
     speaker: protagonist
     text: Es gibt keine … … nur … die Anschlüsse … die Spüle
   items:
-  - es-gibt-keine
-  - nur
-  - die-anschluesse
-  - die-spuele
+  - es-gibt-keine-e
+  - nur-e
+  - die-anschluesse-e
+  - die-spuele-e
   for:
   - en
 - type: prompt
@@ -661,10 +676,10 @@ steps:
     speaker: protagonist
     text: selbst … Wo …? … kaufe ich … gebraucht
   items:
-  - selbst
-  - wo
-  - kaufe-ich
-  - gebraucht
+  - selbst-e
+  - wo-e
+  - kaufe-ich-e
+  - gebraucht-e
   for:
   - en
 - type: prompt
@@ -675,20 +690,20 @@ steps:
     speaker: protagonist
     text: der Kühlschrank … auch nicht … Viel Glück!
   items:
-  - der-kuehlschrank
-  - auch-nicht
-  - viel-glueck
+  - der-kuehlschrank-e
+  - auch-nicht-e
+  - viel-glueck-e
   for:
   - en
 - type: prompt
   review: true
   ask:
-    en: 'Say: “does … go? — and “to the main station — and “change (trains, buses) — and “the tram — and “the stop — and “over there — and “the ticket — and “with the app”.'
-    ar: 'قولي: “هل يذهب …؟ — و“إلى المحطة الرئيسية — و“يغيّر وسيلة النقل — و“الترام — و“المحطة / الموقف — و“هناك — و“التذكرة — و“بالتطبيق”.'
-    mk: 'Кажете: „оди ли …?“ — и „до главната станица“ — и „да се префрлите“ — и „трамвајот“ — и „станицата“ — и „таму преку“ — и „билетот“ — и „со апликацијата“.'
+    en: 'Say: “does … go? — and “to the main station — and “change (trains, buses) — and “the tram — and “the stop — and “over there”.'
+    ar: 'قولي: “هل يذهب …؟ — و“إلى المحطة الرئيسية — و“يغيّر وسيلة النقل — و“الترام — و“المحطة / الموقف — و“هناك”.'
+    mk: 'Кажете: „оди ли …?“ — и „до главната станица“ — и „да се префрлите“ — и „трамвајот“ — и „станицата“ — и „таму преку“.'
   answer:
     speaker: protagonist
-    text: fährt …? … zum Hauptbahnhof … umsteigen … die Straßenbahn … die Haltestelle … da drüben … die Fahrkarte … mit der App
+    text: fährt …? … zum Hauptbahnhof … umsteigen … die Straßenbahn … die Haltestelle … da drüben
   items:
   - faehrt
   - zum-hauptbahnhof
@@ -696,38 +711,48 @@ steps:
   - die-strassenbahn
   - die-haltestelle
   - da-drueben
-  - die-fahrkarte
-  - mit-der-app
 - type: prompt
   review: true
   ask:
-    en: 'Say: “get on — and “at the back — and “the pram, the stroller — and “get off — and “Good evening — and “cold — and “outside — and “already”.'
-    ar: 'قولي: “اصعد — و“في الخلف — و“عربة الأطفال — و“أنزل — و“مساء الخير — و“بارد — و“في الخارج — و“بالفعل، أصلًا”.'
-    mk: 'Кажете: „се качувате“ — и „назад, позади“ — и „количката“ — и „се симнувам“ — и „Добровечер“ — и „ладно“ — и „надвор“ — и „веќе“.'
+    en: 'Say: “the ticket — and “with the app — and “get on — and “at the back — and “the pram, the stroller — and “get off”.'
+    ar: 'قولي: “التذكرة — و“بالتطبيق — و“اصعد — و“في الخلف — و“عربة الأطفال — و“أنزل”.'
+    mk: 'Кажете: „билетот“ — и „со апликацијата“ — и „се качувате“ — и „назад, позади“ — и „количката“ — и „се симнувам“.'
   answer:
     speaker: protagonist
-    text: steigen … ein … hinten … der Kinderwagen … steige … aus … Guten Abend … kalt … draußen … schon
+    text: die Fahrkarte … mit der App … steigen … ein … hinten … der Kinderwagen … steige … aus
   items:
+  - die-fahrkarte
+  - mit-der-app
   - einsteigen
   - hinten
   - der-kinderwagen
   - aussteigen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Good evening — and “cold — and “outside — and “already — and “in winter — and “wipe (your shoes)”.'
+    ar: 'قولي: “مساء الخير — و“بارد — و“في الخارج — و“بالفعل، أصلًا — و“في الشتاء — و“امسح (حذاءك)”.'
+    mk: 'Кажете: „Добровечер“ — и „ладно“ — и „надвор“ — и „веќе“ — и „во зима“ — и „избришете (чевлите)“.'
+  answer:
+    speaker: protagonist
+    text: Guten Abend … kalt … draußen … schon … im Winter … treten … ab
+  items:
   - guten-abend
   - kalt
   - draussen
   - schon
+  - im-winter
+  - abtreten
 - type: prompt
   review: true
   ask:
-    en: 'Say: “in winter — and “wipe (your shoes) — and “wet — and “inside — and “warm — and “take off (clothes) — and “the jacket — and “windy”.'
-    ar: 'قولي: “في الشتاء — و“امسح (حذاءك) — و“مبلّل — و“في الداخل — و“دافئ — و“أخلع — و“السترة / الجاكيت — و“عاصف، فيه رياح”.'
-    mk: 'Кажете: „во зима“ — и „избришете (чевлите)“ — и „мокро“ — и „внатре“ — и „топло“ — и „соблекувам“ — и „јакната“ — и „ветровито“.'
+    en: 'Say: “wet — and “inside — and “warm — and “take off (clothes) — and “the jacket — and “windy”.'
+    ar: 'قولي: “مبلّل — و“في الداخل — و“دافئ — و“أخلع — و“السترة / الجاكيت — و“عاصف، فيه رياح”.'
+    mk: 'Кажете: „мокро“ — и „внатре“ — и „топло“ — и „соблекувам“ — и „јакната“ — и „ветровито“.'
   answer:
     speaker: protagonist
-    text: im Winter … treten … ab … nass … drinnen … warm … ziehe … aus … die Jacke … windig
+    text: nass … drinnen … warm … ziehe … aus … die Jacke … windig
   items:
-  - im-winter
-  - abtreten
   - nass
   - drinnen
   - warm
@@ -737,119 +762,108 @@ steps:
 - type: prompt
   review: true
   ask:
-    ar: 'قولي: “صباح الخير — و“الأب، بابا — و“أريد”.'
+    ar: 'قولي: “صباح الخير — و“الأب، بابا — و“هذا / هذه … — و“الحضانة (الكيتا)”.'
   answer:
     speaker: protagonist
-    text: Guten Morgen … der Papa … ich will
+    text: Guten Morgen … der Papa … Das ist … … die Kita
   items:
-  - guten-morgen
-  - der-papa
-  - ich-will-k
+  - guten-morgen-a
+  - der-papa-a
+  - das-ist-a
+  - die-kita-a
   for:
   - ar
 - type: prompt
   review: true
   ask:
-    ar: 'قولي: “إلى البيت — و“لا تخف! / لا تخافي! — و“متى …؟”.'
+    ar: 'قولي: “المربية — و“مرحبًا (غير رسمي) — و“أريد — و“إلى البيت”.'
   answer:
     speaker: protagonist
-    text: nach Hause … Keine Angst! … Wann …?
+    text: die Erzieherin … Hallo … ich will … nach Hause
   items:
-  - nach-hause
-  - keine-angst
-  - wann
+  - die-erzieherin-a
+  - hallo-a
+  - ich-will-k-a
+  - nach-hause-a
   for:
   - ar
 - type: prompt
   review: true
   ask:
-    ar: 'قولي: “تأخذون (أحدًا) من مكان، تأتون لأخذه — و“في الساعة الثالثة — و“أراك لاحقًا!”.'
+    ar: 'قولي: “لا تخف! / لا تخافي! — و“متى …؟ — و“تأخذون (أحدًا) من مكان، تأتون لأخذه — و“في الساعة الثالثة”.'
   answer:
     speaker: protagonist
-    text: holen … ab … um drei Uhr … Bis später!
+    text: Keine Angst! … Wann …? … holen … ab … um drei Uhr
   items:
-  - holen-ab
-  - um-drei-uhr
-  - bis-spaeter
+  - keine-angst-a
+  - wann-a
+  - holen-ab-a
+  - um-drei-uhr-a
   for:
   - ar
 - type: prompt
   review: true
   ask:
-    ar: 'قولي: “هذا / هذه … — و“الحضانة (الكيتا)”.'
-    mk: 'Кажете: „Ова е …“ — и „градинката (Kita)“.'
+    ar: 'قولي: “إلى اللقاء! (غير رسمي) — و“أراك لاحقًا!”.'
   answer:
     speaker: protagonist
-    text: Das ist … … die Kita
+    text: Tschüss! … Bis später!
   items:
-  - das-ist
-  - die-kita
+  - tschuess-a
+  - bis-spaeter-a
   for:
   - ar
-  - mk
 - type: prompt
   review: true
   ask:
-    ar: 'قولي: “المربية — و“مرحبًا (غير رسمي)”.'
-    mk: 'Кажете: „воспитувачката“ — и „Здраво“.'
+    mk: 'Кажете: „дедото“ — и „доаѓам да го земам (некого)“ — и „градинката (Kita)“ — и „воспитувачката“.'
   answer:
     speaker: protagonist
-    text: die Erzieherin … Hallo
+    text: der Opa … ich hole … ab … die Kita … die Erzieherin
   items:
-  - die-erzieherin
-  - hallo
-  for:
-  - ar
-  - mk
-- type: prompt
-  review: true
-  ask:
-    ar: 'قولي: “إلى اللقاء! (غير رسمي)”.'
-    mk: 'Кажете: „Чао!“.'
-  answer:
-    speaker: protagonist
-    text: Tschüss!
-  items:
-  - tschuess
-  for:
-  - ar
-  - mk
-- type: prompt
-  review: true
-  ask:
-    mk: 'Кажете: „дедото“ — и „доаѓам да го земам (некого)“ — и „… е тука, дојде“.'
-  answer:
-    speaker: protagonist
-    text: der Opa … ich hole … ab … … ist da
-  items:
-  - der-opa
-  - ich-hole-ab
-  - ist-da
+  - der-opa-m
+  - ich-hole-ab-m
+  - die-kita-m
+  - die-erzieherin-m
   for:
   - mk
 - type: prompt
   review: true
   ask:
-    mk: 'Кажете: „душо моја, срце мое“ — и „личната карта / документот“ — и „тука, еве“.'
+    mk: 'Кажете: „… е тука, дојде“ — и „Здраво“ — и „душо моја, срце мое“ — и „личната карта / документот“.'
   answer:
     speaker: protagonist
-    text: mein Schatz … der Ausweis … hier
+    text: … ist da … Hallo … mein Schatz … der Ausweis
   items:
-  - mein-schatz
-  - der-ausweis
-  - hier
+  - ist-da-m
+  - hallo-m
+  - mein-schatz-m
+  - der-ausweis-m
   for:
   - mk
 - type: prompt
   review: true
   ask:
-    mk: 'Кажете: „мама кажа“ — и „До утре!“.'
+    mk: 'Кажете: „тука, еве“ — и „мама кажа“ — и „Чао!“ — и „До утре!“.'
   answer:
     speaker: protagonist
-    text: die Mama hat es gesagt … Bis morgen!
+    text: hier … die Mama hat es gesagt … Tschüss! … Bis morgen!
   items:
-  - die-mama-hat-gesagt
-  - bis-morgen
+  - hier-m
+  - die-mama-hat-gesagt-m
+  - tschuess-m
+  - bis-morgen-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „Ова е …“.'
+  answer:
+    speaker: protagonist
+    text: Das ist …
+  items:
+  - das-ist-m
   for:
   - mk
 - type: narrator

@@ -14,49 +14,49 @@ learn_lessons:
 - a1-modal-muessen
 culture: Seated before the hour
 new_items:
-- id: der-hoersaal
+- id: der-hoersaal-e
   text: der Hörsaal
   meaning:
     en: the lecture hall
   rare: true
-- id: die-vorlesung
+- id: die-vorlesung-e
   text: die Vorlesung
   meaning:
     en: the lecture
-- id: beginnt
+- id: beginnt-e
   text: beginnt
   meaning:
     en: begins
-- id: wir-muessen
+- id: wir-muessen-e
   text: wir müssen
   meaning:
     en: we have to
-- id: puenktlich
+- id: puenktlich-e
   text: pünktlich
   meaning:
     en: on time
-- id: setz-dich
+- id: setz-dich-e
   text: Setz dich!
   meaning:
     en: Sit down! (informal)
-- id: muss-ich
+- id: muss-ich-e
   text: Muss ich …?
   meaning:
     en: Do I have to …?
-- id: online
+- id: online-e
   text: online
   meaning:
     en: online
-- id: die-pruefung
+- id: die-pruefung-e
   text: die Prüfung
   meaning:
     en: the exam
-- id: die-folien
+- id: die-folien-e
   text: die Folien
   meaning:
     en: the slides
   rare: true
-- id: viel-lernen
+- id: viel-lernen-e
   text: viel lernen
   meaning:
     en: study a lot
@@ -188,7 +188,7 @@ steps:
     speaker: protagonist
     text: Ist das der Hörsaal drei?
   items:
-  - der-hoersaal
+  - der-hoersaal-e
 - type: prompt
   ask:
     en: 'Say: the lecture begins at eight.'
@@ -196,8 +196,8 @@ steps:
     speaker: protagonist
     text: Die Vorlesung beginnt um acht.
   items:
-  - die-vorlesung
-  - beginnt
+  - die-vorlesung-e
+  - beginnt-e
 - type: narrator
   text:
     en: '«müssen» — have to: «ich muss», «du musst», «wir müssen». The second verb goes to the end: «Wir müssen pünktlich sein».'
@@ -208,8 +208,8 @@ steps:
     speaker: protagonist
     text: Wir müssen pünktlich sein.
   items:
-  - wir-muessen
-  - puenktlich
+  - wir-muessen-e
+  - puenktlich-e
 - type: prompt
   ask:
     en: 'Jonas says: sit down!'
@@ -217,7 +217,7 @@ steps:
     speaker: protagonist
     text: Setz dich!
   items:
-  - setz-dich
+  - setz-dich-e
 - type: prompt
   ask:
     en: 'Ask: do I have to register?'
@@ -225,7 +225,7 @@ steps:
     speaker: protagonist
     text: Muss ich mich anmelden?
   items:
-  - muss-ich
+  - muss-ich-e
   - mich-anmelden
 - type: prompt
   ask:
@@ -234,7 +234,7 @@ steps:
     speaker: protagonist
     text: Online.
   items:
-  - online
+  - online-e
 - type: prompt
   ask:
     en: 'Say: and for the exam too.'
@@ -242,7 +242,7 @@ steps:
     speaker: protagonist
     text: Und für die Prüfung auch.
   items:
-  - die-pruefung
+  - die-pruefung-e
   - auch
 - type: prompt
   ask:
@@ -251,7 +251,7 @@ steps:
     speaker: protagonist
     text: Und die Folien?
   items:
-  - die-folien
+  - die-folien-e
 - type: prompt
   ask:
     en: 'Say: I have to study a lot!'
@@ -259,7 +259,7 @@ steps:
     speaker: protagonist
     text: Ich muss viel lernen!
   items:
-  - viel-lernen
+  - viel-lernen-e
 - type: narrator
   text:
     en: Students are seated before the hour; walking in late is noticed. You register yourself, online, for courses and for each exam — nobody does it for you, and deadlines are firm. Exam rules are in
@@ -271,7 +271,7 @@ steps:
     speaker: protagonist
     text: der Hörsaal
   items:
-  - der-hoersaal
+  - der-hoersaal-e
 - type: prompt
   ask:
     en: 'Once more: say “the lecture”.'
@@ -279,7 +279,7 @@ steps:
     speaker: protagonist
     text: die Vorlesung
   items:
-  - die-vorlesung
+  - die-vorlesung-e
 - type: prompt
   ask:
     en: 'Once more: say “begins”.'
@@ -287,7 +287,7 @@ steps:
     speaker: protagonist
     text: beginnt
   items:
-  - beginnt
+  - beginnt-e
 - type: prompt
   ask:
     en: 'Once more: say “we have to”.'
@@ -295,7 +295,7 @@ steps:
     speaker: protagonist
     text: wir müssen
   items:
-  - wir-muessen
+  - wir-muessen-e
 - type: prompt
   ask:
     en: 'Once more: say “on time”.'
@@ -303,7 +303,7 @@ steps:
     speaker: protagonist
     text: pünktlich
   items:
-  - puenktlich
+  - puenktlich-e
 - type: prompt
   ask:
     en: 'Once more: say “Sit down! (informal)”.'
@@ -311,7 +311,7 @@ steps:
     speaker: protagonist
     text: Setz dich!
   items:
-  - setz-dich
+  - setz-dich-e
 - type: prompt
   ask:
     en: 'Once more: say “Do I have to …?”.'
@@ -319,7 +319,7 @@ steps:
     speaker: protagonist
     text: Muss ich …?
   items:
-  - muss-ich
+  - muss-ich-e
 - type: prompt
   ask:
     en: 'Once more: say “online”.'
@@ -327,7 +327,7 @@ steps:
     speaker: protagonist
     text: online
   items:
-  - online
+  - online-e
 - type: prompt
   ask:
     en: 'Once more: say “the exam”.'
@@ -335,7 +335,7 @@ steps:
     speaker: protagonist
     text: die Prüfung
   items:
-  - die-pruefung
+  - die-pruefung-e
 - type: prompt
   ask:
     en: 'Once more: say “the slides”.'
@@ -343,7 +343,7 @@ steps:
     speaker: protagonist
     text: die Folien
   items:
-  - die-folien
+  - die-folien-e
 - type: prompt
   ask:
     en: 'Once more: say “study a lot”.'
@@ -351,7 +351,7 @@ steps:
     speaker: protagonist
     text: viel lernen
   items:
-  - viel-lernen
+  - viel-lernen-e
 - type: narrator
   text:
     en: Now some things from earlier units, in this new situation.

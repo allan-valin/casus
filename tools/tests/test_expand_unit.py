@@ -72,10 +72,19 @@ def test_audience_versions_get_reviews_for_their_own_audience_only():
     third = expand(src("A1-03", [f"d{k}" for k in range(10)]), units, langs)
     units.append(third)
     rev = [s for s in third["steps"] if s.get("review")]
-    assert any(s.get("for") == ["en"] and "e0" in s["items"] for s in rev)
-    assert any(s.get("for") == ["ar", "mk"] and "a0" in s["items"] for s in rev)
+    assert any(s.get("for") == ["en"] and "e0-e" in s["items"] for s in rev)
+    assert any(s.get("for") == ["ar", "mk"] and "a0-am" in s["items"] for s in rev)
     assert not any("c0" in s["items"] for s in rev)            # core items: due at positions 1 and 3, not 2
     assert "قولي" in rev[0]["ask"].get("ar", "قولي")
     assert check_course(units, bible) == []
     for u in units:
         assert check_unit(u, bible)[0] == []
+
+
+def test_items_of_audience_versions_get_a_suffix_so_core_units_never_clash():
+    """Allan's German course: a version teaches 'ich will' to one audience, a later core unit teaches it to all —
+    the version's item ids carry the audience letters (-e, -a, -m), so the two never collide"""
+    src = {**_src(2, ["will"], []), "tracks": ["ar"], "teach": [{"ask": ["x", "Ich will.", "will"]}]}
+    u = expand(src, [], ["en", "ar", "mk"])
+    assert [i["id"] for i in u["new_items"]] == ["will-a"]
+    assert all(i.endswith("-a") for s in u["steps"] for i in (s.get("items") or []))

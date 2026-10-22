@@ -151,47 +151,47 @@ reviews:
   from: A1-09
 - item: die-kleine
   from: A1-09
-- item: die-mensa
+- item: die-mensa-e
   from: A1-13-e
   for:
   - en
-- item: die-schlange
+- item: die-schlange-e
   from: A1-13-e
   for:
   - en
-- item: ich-war-zuerst-da
+- item: ich-war-zuerst-da-e
   from: A1-13-e
   for:
   - en
-- item: stimmt
+- item: stimmt-e
   from: A1-13-e
   for:
   - en
-- item: kein-problem
+- item: kein-problem-e
   from: A1-13-e
   for:
   - en
-- item: das-essen
+- item: das-essen-e
   from: A1-13-e
   for:
   - en
-- item: vegetarisch
+- item: vegetarisch-e
   from: A1-13-e
   for:
   - en
-- item: kein-fleisch
+- item: kein-fleisch-e
   from: A1-13-e
   for:
   - en
-- item: nicht-so-gut
+- item: nicht-so-gut-e
   from: A1-13-e
   for:
   - en
-- item: der-kaffee
+- item: der-kaffee-e
   from: A1-13-e
   for:
   - en
-- item: heute-nicht
+- item: heute-nicht-e
   from: A1-13-e
   for:
   - en
@@ -219,76 +219,91 @@ reviews:
   from: A1-15
 - item: zu-gross
   from: A1-15
-- item: der-spielplatz
+- item: der-spielplatz-a
   from: A1-13-a
   for:
   - ar
-  - mk
-- item: die-schaukel
+- item: die-schaukel-a
   from: A1-13-a
   for:
   - ar
-  - mk
-- item: wie-alt-ist-sie
+- item: wie-alt-ist-sie-a
   from: A1-13-a
   for:
   - ar
-- item: vier-jahre-alt
+- item: vier-jahre-alt-a
   from: A1-13-a
   for:
   - ar
-  - mk
-- item: in-welche-kita
+- item: in-welche-kita-a
   from: A1-13-a
   for:
   - ar
-- item: geht
+- item: geht-a
   from: A1-13-a
   for:
   - ar
-- item: das-mittagessen
+- item: das-mittagessen-a
   from: A1-13-a
   for:
   - ar
-- item: kein-schweinefleisch
+- item: kein-schweinefleisch-a
   from: A1-13-a
   for:
   - ar
-- item: isst
+- item: isst-a
   from: A1-13-a
   for:
   - ar
-- item: nicht
+- item: nicht-a
   from: A1-13-a
   for:
   - ar
-  - mk
-- item: bis-bald
+- item: bis-bald-a
   from: A1-13-a
   for:
   - ar
-  - mk
-- item: wie-alt-ist-er
+- item: der-spielplatz-m
   from: A1-13-m
   for:
   - mk
-- item: ihr-enkel
+- item: die-schaukel-m
   from: A1-13-m
   for:
   - mk
-- item: ich-bin-oma
+- item: wie-alt-ist-er-m
   from: A1-13-m
   for:
   - mk
-- item: nicht-von-hier
+- item: vier-jahre-alt-m
   from: A1-13-m
   for:
   - mk
-- item: kein-deutsch
+- item: ihr-enkel-m
   from: A1-13-m
   for:
   - mk
-- item: nur-ein-bisschen
+- item: ich-bin-oma-m
+  from: A1-13-m
+  for:
+  - mk
+- item: nicht-von-hier-m
+  from: A1-13-m
+  for:
+  - mk
+- item: kein-deutsch-m
+  from: A1-13-m
+  for:
+  - mk
+- item: nur-ein-bisschen-m
+  from: A1-13-m
+  for:
+  - mk
+- item: nicht-m
+  from: A1-13-m
+  for:
+  - mk
+- item: bis-bald-m
   from: A1-13-m
   for:
   - mk
@@ -573,15 +588,13 @@ steps:
   review: true
   ask:
     en: 'Say: “the sofa — and “fits — and “measure — and “How wide …? — and “metres — and “centimetres — and “long — and “the corner — and “round — and “square, angular — and “exactly — and “too big — and
-      “I''m looking for … — and “the lamp — and “so — and “many — and “What colour? — and “white — and “this (feminine) — and “too — and “warm light”.'
-    ar: 'قل: “الأريكة — و“يتسع، يناسب — و“يقيس — و“كم عرض …؟ — و“متر — و“سنتيمتر — و“طويل — و“الزاوية — و“مستدير — و“مربّع الشكل — و“بالضبط — و“كبير جدًا — و“أبحث عن … — و“المصباح — و“جدًا، هكذا — و“كثير
-      من — و“أيّ لون؟ — و“أبيض — و“هذه — و“أكثر من اللازم — و“ضوء دافئ”.'
+      “I''m looking for … — and “the lamp”.'
+    ar: 'قل: “الأريكة — و“يتسع، يناسب — و“يقيس — و“كم عرض …؟ — و“متر — و“سنتيمتر — و“طويل — و“الزاوية — و“مستدير — و“مربّع الشكل — و“بالضبط — و“كبير جدًا — و“أبحث عن … — و“المصباح”.'
     mk: 'Кажете: „каучот“ — и „собира, одговара“ — и „мериме“ — и „Колку е широк …?“ — и „метри“ — и „сантиметри“ — и „долг“ — и „аголот“ — и „тркалезно“ — и „аглесто“ — и „точно“ — и „преголемо“ — и „Барам
-      …“ — и „ламбата“ — и „толку“ — и „многу“ — и „Која боја?“ — и „бело“ — и „оваа“ — и „премногу“ — и „топла светлина“.'
+      …“ — и „ламбата“.'
   answer:
     speaker: protagonist
-    text: das Sofa … passt … messen … Wie breit …? … Meter … Zentimeter … lang … die Ecke … rund … eckig … genau … zu groß … Ich suche … … die Lampe … so … viele … Welche Farbe? … weiß … diese … zu … warmes
-      Licht
+    text: das Sofa … passt … messen … Wie breit …? … Meter … Zentimeter … lang … die Ecke … rund … eckig … genau … zu groß … Ich suche … … die Lampe
   items:
   - das-sofa
   - passt
@@ -597,6 +610,18 @@ steps:
   - zu-gross
   - ich-suche
   - die-lampe
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “so — and “many — and “What colour? — and “white — and “this (feminine) — and “too — and “warm light — and “yellow — and “small — and “How much is …? — and “the small one — and “Good day /
+      hello — and “Excuse me / sorry — and “I don''t understand”.'
+    ar: 'قل: “جدًا، هكذا — و“كثير من — و“أيّ لون؟ — و“أبيض — و“هذه — و“أكثر من اللازم — و“ضوء دافئ — و“أصفر — و“صغير — و“كم سعر …؟ — و“الصغيرة — و“نهارك سعيد / مرحبًا — و“عفوًا / المعذرة — و“لا أفهم”.'
+    mk: 'Кажете: „толку“ — и „многу“ — и „Која боја?“ — и „бело“ — и „оваа“ — и „премногу“ — и „топла светлина“ — и „жолто“ — и „мало“ — и „Колку чини …?“ — и „малата“ — и „Добар ден“ — и „Извинете“ — и
+      „Не разбирам“.'
+  answer:
+    speaker: protagonist
+    text: so … viele … Welche Farbe? … weiß … diese … zu … warmes Licht … gelb … klein … Was kostet …? … die kleine … Guten Tag … Entschuldigung … Ich verstehe nicht
+  items:
   - so
   - viele
   - welche-farbe
@@ -604,21 +629,6 @@ steps:
   - diese
   - zu
   - warmes-licht
-- type: prompt
-  review: true
-  ask:
-    en: 'Say: “yellow — and “small — and “How much is …? — and “the small one — and “Good day / hello — and “Excuse me / sorry — and “I don''t understand — and “you are (polite) — and “new here — and “Yes
-      — and “I am — and “Do you speak English? (polite) — and “a little — and “I live — and “downstairs — and “Nice to meet you — and “Welcome — and “the key — and “Thank you very much — and “You''re welcome
-      / here you are — and “Goodbye”.'
-    ar: 'قل: “أصفر — و“صغير — و“كم سعر …؟ — و“الصغيرة — و“نهارك سعيد / مرحبًا — و“عفوًا / المعذرة — و“لا أفهم — و“أنتِ / أنتَ (بصيغة الاحترام) — و“جديد هنا — و“نعم — و“أنا (أكون) — و“هل تتكلمين الإنجليزية؟
-      (بصيغة الاحترام) — و“قليلًا — و“أسكن — و“في الأسفل — و“تشرفنا — و“أهلًا وسهلًا — و“المفتاح — و“شكرًا جزيلًا — و“عفوًا / تفضّلي — و“مع السلامة”.'
-    mk: 'Кажете: „жолто“ — и „мало“ — и „Колку чини …?“ — и „малата“ — и „Добар ден“ — и „Извинете“ — и „Не разбирам“ — и „Вие сте“ — и „нов тука“ — и „Да“ — и „јас сум“ — и „Зборувате ли англиски?“ — и
-      „малку“ — и „живеам“ — и „долу“ — и „Мило ми е“ — и „Добредојдовте“ — и „клучот“ — и „Благодарам многу“ — и „Нема зошто / повелете“ — и „Довидување“.'
-  answer:
-    speaker: protagonist
-    text: gelb … klein … Was kostet …? … die kleine … Guten Tag … Entschuldigung … Ich verstehe nicht … Sie sind … neu hier … Ja … ich bin … Sprechen Sie Englisch? … ein bisschen … ich wohne … unten … Freut
-      mich … Willkommen … der Schlüssel … Danke schön … Bitte schön … Auf Wiedersehen
-  items:
   - gelb
   - klein
   - was-kostet
@@ -626,6 +636,19 @@ steps:
   - guten-tag
   - entschuldigung
   - ich-verstehe-nicht
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “you are (polite) — and “new here — and “Yes — and “I am — and “Do you speak English? (polite) — and “a little — and “I live — and “downstairs — and “Nice to meet you — and “Welcome — and
+      “the key — and “Thank you very much — and “You''re welcome / here you are — and “Goodbye”.'
+    ar: 'قل: “أنتِ / أنتَ (بصيغة الاحترام) — و“جديد هنا — و“نعم — و“أنا (أكون) — و“هل تتكلمين الإنجليزية؟ (بصيغة الاحترام) — و“قليلًا — و“أسكن — و“في الأسفل — و“تشرفنا — و“أهلًا وسهلًا — و“المفتاح — و“شكرًا
+      جزيلًا — و“عفوًا / تفضّلي — و“مع السلامة”.'
+    mk: 'Кажете: „Вие сте“ — и „нов тука“ — и „Да“ — и „јас сум“ — и „Зборувате ли англиски?“ — и „малку“ — и „живеам“ — и „долу“ — и „Мило ми е“ — и „Добредојдовте“ — и „клучот“ — и „Благодарам многу“
+      — и „Нема зошто / повелете“ — и „Довидување“.'
+  answer:
+    speaker: protagonist
+    text: Sie sind … neu hier … Ja … ich bin … Sprechen Sie Englisch? … ein bisschen … ich wohne … unten … Freut mich … Willkommen … der Schlüssel … Danke schön … Bitte schön … Auf Wiedersehen
+  items:
   - sie-sind
   - neu-hier
   - ja
@@ -648,10 +671,10 @@ steps:
     speaker: protagonist
     text: die Mensa … die Schlange … Ich war zuerst da … Stimmt
   items:
-  - die-mensa
-  - die-schlange
-  - ich-war-zuerst-da
-  - stimmt
+  - die-mensa-e
+  - die-schlange-e
+  - ich-war-zuerst-da-e
+  - stimmt-e
   for:
   - en
 - type: prompt
@@ -662,10 +685,10 @@ steps:
     speaker: protagonist
     text: kein Problem … das Essen … vegetarisch … kein Fleisch
   items:
-  - kein-problem
-  - das-essen
-  - vegetarisch
-  - kein-fleisch
+  - kein-problem-e
+  - das-essen-e
+  - vegetarisch-e
+  - kein-fleisch-e
   for:
   - en
 - type: prompt
@@ -676,90 +699,91 @@ steps:
     speaker: protagonist
     text: nicht so gut … der Kaffee … heute nicht
   items:
-  - nicht-so-gut
-  - der-kaffee
-  - heute-nicht
+  - nicht-so-gut-e
+  - der-kaffee-e
+  - heute-nicht-e
   for:
   - en
 - type: prompt
   review: true
   ask:
-    ar: 'قل: “ملعب الأطفال — و“الأرجوحة — و“أربع سنوات”.'
-    mk: 'Кажете: „игралиштето“ — и „лулашката“ — и „четири години“.'
+    ar: 'قل: “ملعب الأطفال — و“الأرجوحة — و“كم عمرها؟ — و“أربع سنوات”.'
   answer:
     speaker: protagonist
-    text: der Spielplatz … die Schaukel … vier Jahre alt
+    text: der Spielplatz … die Schaukel … Wie alt ist sie? … vier Jahre alt
   items:
-  - der-spielplatz
-  - die-schaukel
-  - vier-jahre-alt
-  for:
-  - ar
-  - mk
-- type: prompt
-  review: true
-  ask:
-    ar: 'قل: “لا (نفي) — و“إلى اللقاء قريبًا!”.'
-    mk: 'Кажете: „не“ — и „Се гледаме наскоро!“.'
-  answer:
-    speaker: protagonist
-    text: nicht … Bis bald!
-  items:
-  - nicht
-  - bis-bald
-  for:
-  - ar
-  - mk
-- type: prompt
-  review: true
-  ask:
-    ar: 'قل: “كم عمرها؟ — و“إلى أيّ حضانة …؟ — و“تذهب”.'
-  answer:
-    speaker: protagonist
-    text: Wie alt ist sie? … In welche Kita …? … geht
-  items:
-  - wie-alt-ist-sie
-  - in-welche-kita
-  - geht
+  - der-spielplatz-a
+  - die-schaukel-a
+  - wie-alt-ist-sie-a
+  - vier-jahre-alt-a
   for:
   - ar
 - type: prompt
   review: true
   ask:
-    ar: 'قل: “الغداء — و“بلا لحم خنزير — و“تأكل”.'
+    ar: 'قل: “إلى أيّ حضانة …؟ — و“تذهب — و“الغداء — و“بلا لحم خنزير”.'
   answer:
     speaker: protagonist
-    text: das Mittagessen … kein Schweinefleisch … isst
+    text: In welche Kita …? … geht … das Mittagessen … kein Schweinefleisch
   items:
-  - das-mittagessen
-  - kein-schweinefleisch
-  - isst
+  - in-welche-kita-a
+  - geht-a
+  - das-mittagessen-a
+  - kein-schweinefleisch-a
   for:
   - ar
 - type: prompt
   review: true
   ask:
-    mk: 'Кажете: „Колку години има?“ — и „вашиот внук“ — и „јас сум бабата“.'
+    ar: 'قل: “تأكل — و“لا (نفي) — و“إلى اللقاء قريبًا!”.'
   answer:
     speaker: protagonist
-    text: Wie alt ist er? … Ihr Enkel … ich bin die Oma
+    text: isst … nicht … Bis bald!
   items:
-  - wie-alt-ist-er
-  - ihr-enkel
-  - ich-bin-oma
+  - isst-a
+  - nicht-a
+  - bis-bald-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „игралиштето“ — и „лулашката“ — и „Колку години има?“ — и „четири години“.'
+  answer:
+    speaker: protagonist
+    text: der Spielplatz … die Schaukel … Wie alt ist er? … vier Jahre alt
+  items:
+  - der-spielplatz-m
+  - die-schaukel-m
+  - wie-alt-ist-er-m
+  - vier-jahre-alt-m
   for:
   - mk
 - type: prompt
   review: true
   ask:
-    mk: 'Кажете: „не сум одовде“ — и „не (зборувам) германски“ — и „само малку“.'
+    mk: 'Кажете: „вашиот внук“ — и „јас сум бабата“ — и „не сум одовде“ — и „не (зборувам) германски“.'
   answer:
     speaker: protagonist
-    text: nicht von hier … kein Deutsch … nur ein bisschen
+    text: Ihr Enkel … ich bin die Oma … nicht von hier … kein Deutsch
   items:
-  - nicht-von-hier
-  - kein-deutsch
-  - nur-ein-bisschen
+  - ihr-enkel-m
+  - ich-bin-oma-m
+  - nicht-von-hier-m
+  - kein-deutsch-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „само малку“ — и „не“ — и „Се гледаме наскоро!“.'
+  answer:
+    speaker: protagonist
+    text: nur ein bisschen … nicht … Bis bald!
+  items:
+  - nur-ein-bisschen-m
+  - nicht-m
+  - bis-bald-m
   for:
   - mk
 - type: narrator
