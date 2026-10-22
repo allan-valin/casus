@@ -1,0 +1,942 @@
+# UNIT de C2-27 — written by AI (Claude) for Casus; expanded from src/C2-27.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-27
+level: C2
+number: 27
+protagonist: f
+title:
+  en: Stay or go
+  ar: البقاء أم الرحيل
+  mk: Да останам или да заминам
+situation:
+  en: 'An offer: a good job in Munich. Or stay in Leipzig. Or go back home one day. Over a long evening, Lena helps you weigh it up.'
+  ar: 'عرض: وظيفة جيدة في ميونخ. أو البقاء في لايبزيغ. أو العودة يومًا إلى الوطن. في سهرة طويلة تساعدكِ لينا على الموازنة.'
+  mk: 'Понуда: добра работа во Минхен. Или да останете во Лајпциг. Или еден ден да се вратите дома. Во долга вечер Лена ви помага да одмерите.'
+learn_lessons:
+- c2-konjunktiv
+culture: The big decision
+new_items:
+- id: die-abwaegung
+  text: die Abwägung
+  meaning:
+    en: the weighing up
+    ar: الموازنة
+    mk: одмерувањето
+- id: das-jobangebot
+  text: das Jobangebot
+  meaning:
+    en: the job offer
+    ar: عرض العمل
+    mk: понудата за работа
+- id: das-fuer-und-wider
+  text: das Für und Wider
+  meaning:
+    en: the pros and cons
+    ar: الإيجابيات والسلبيات
+    mk: за и против
+- id: wuerde-ich-gehen
+  text: Würde ich gehen, verlöre ich …
+  meaning:
+    en: If I went, I'd lose …
+    ar: لو ذهبتُ لخسرتُ …
+    mk: Да заминам, би изгубила …
+- id: haette-ich-gewusst
+  text: Hätte mir jemand vor zehn Jahren gesagt, …
+  meaning:
+    en: If someone had told me ten years ago …
+    ar: لو قال لي أحد قبل عشر سنوات …
+    mk: Да ми кажеше некој пред десет години …
+- id: die-wurzeln
+  text: Wurzeln schlagen
+  meaning:
+    en: put down roots
+    ar: يضرب جذورًا
+    mk: пушта корени
+- id: das-bauchgefuehl
+  text: das Bauchgefühl
+  meaning:
+    en: gut feeling
+    ar: الحدس
+    mk: чувството во стомакот
+- id: der-preis
+  text: einen Preis haben
+  meaning:
+    en: come at a price
+    ar: له ثمن
+    mk: има цена
+- id: die-entscheidung-c2
+  text: eine Entscheidung treffen
+  meaning:
+    en: make a decision
+    ar: يتّخذ قرارًا
+    mk: донесува одлука
+- id: nichts-ist-endgueltig
+  text: Nichts ist endgültig
+  meaning:
+    en: Nothing is final
+    ar: لا شيء نهائي
+    mk: Ништо не е конечно
+reviews:
+- item: der-tuersteher-e
+  from: A2-20-e
+  for:
+  - en
+- item: wie-viele-seid-ihr-e
+  from: A2-20-e
+  for:
+  - en
+- item: wir-freuen-uns-e
+  from: A2-20-e
+  for:
+  - en
+- item: ich-ziehe-mich-um-e
+  from: A2-20-e
+  for:
+  - en
+- item: sich-treffen-e
+  from: A2-20-e
+  for:
+  - en
+- item: heute-nicht-rein-e
+  from: A2-20-e
+  for:
+  - en
+- item: keine-fotos-e
+  from: A2-20-e
+  for:
+  - en
+- item: die-garderobe-e
+  from: A2-20-e
+  for:
+  - en
+- item: tanzen-e
+  from: A2-20-e
+  for:
+  - en
+- item: bis-morgens-e
+  from: A2-20-e
+  for:
+  - en
+- item: die-mietpreisbremse
+  from: B2-24
+- item: die-sozialwohnung
+  from: B2-24
+- item: der-wohnberechtigungsschein
+  from: B2-24
+- item: wird-gebaut
+  from: B2-24
+- item: wurde-erhoeht
+  from: B2-24
+- item: ist-begrenzt
+  from: B2-24
+- item: die-vergleichsmiete
+  from: B2-24
+- item: die-nachfrage
+  from: B2-24
+- item: das-angebot
+  from: B2-24
+- item: der-mieterverein
+  from: B2-24
+- item: der-widerspruch-amt
+  from: C1-26
+- item: fristgerecht
+  from: C1-26
+- item: der-bescheid-c1
+  from: C1-26
+- item: die-rechtsbehelfsbelehrung
+  from: C1-26
+- item: die-begruendung
+  from: C1-26
+- item: hiermit-lege-ich
+  from: C1-26
+- item: das-aktenzeichen-c1
+  from: C1-26
+- item: der-bewohnerparkausweis
+  from: C1-26
+- item: die-anlage
+  from: C1-26
+- item: ich-bitte-um-pruefung
+  from: C1-26
+- item: die-fachsprache-e
+  from: C2-12-e
+  for:
+  - en
+- item: das-kolloquium-e
+  from: C2-12-e
+  for:
+  - en
+- item: die-forschungsfrage-e
+  from: C2-12-e
+  for:
+  - en
+- item: die-methodik-e
+  from: C2-12-e
+  for:
+  - en
+- item: die-ergebnisse-e
+  from: C2-12-e
+  for:
+  - en
+- item: es-laesst-sich-zeigen-e
+  from: C2-12-e
+  for:
+  - en
+- item: im-rahmen-dieser-arbeit-e
+  from: C2-12-e
+  for:
+  - en
+- item: die-einschraenkung-e
+  from: C2-12-e
+  for:
+  - en
+- item: der-ausblick-e
+  from: C2-12-e
+  for:
+  - en
+- item: die-gutachterin-e
+  from: C2-12-e
+  for:
+  - en
+- item: die-krise
+  from: C2-20
+- item: fuer-dich-da-sein
+  from: C2-20
+- item: gekuendigt-werden
+  from: C2-20
+- item: mal-eben
+  from: C2-20
+- item: ja-wohl-c2
+  from: C2-20
+- item: schon-c2
+  from: C2-20
+- item: kopf-hoch
+  from: C2-20
+- item: die-abfindung
+  from: C2-20
+- item: ratschlaege
+  from: C2-20
+- item: einfach-zuhoeren
+  from: C2-20
+- item: der-praktikant
+  from: C2-24
+- item: darf-ich-dir-einen-tipp-geben
+  from: C2-24
+- item: im-team-duzen
+  from: C2-24
+- item: die-chefin-siezen
+  from: C2-24
+- item: die-anrede
+  from: C2-24
+- item: umgangssprachlich
+  from: C2-24
+- item: unangemessen
+  from: C2-24
+- item: das-fingerspitzengefuehl
+  from: C2-24
+- item: nimm-es-nicht-persoenlich
+  from: C2-24
+- item: peinlich
+  from: C2-24
+- item: die-schenkung
+  from: C2-26
+- item: der-neffe
+  from: C2-26
+- item: das-betreute-wohnen
+  from: C2-26
+- item: der-eigentuemerwechsel
+  from: C2-26
+- item: kauf-bricht-nicht-miete
+  from: C2-26
+- item: der-mietvertrag-besteht-fort
+  from: C2-26
+- item: die-eigenbedarfskuendigung
+  from: C2-26
+- item: der-vermieter-c2
+  from: C2-26
+- item: die-grundbucheintragung
+  from: C2-26
+- item: unveraendert
+  from: C2-26
+- item: sich-treffen-a
+  from: A2-20-a
+  for:
+  - ar
+- item: ich-freue-mich-a
+  from: A2-20-a
+  for:
+  - ar
+- item: nach-der-arbeit-a
+  from: A2-20-a
+  for:
+  - ar
+- item: ich-trinke-keinen-a
+  from: A2-20-a
+  for:
+  - ar
+- item: eine-limo-a
+  from: A2-20-a
+  for:
+  - ar
+- item: die-kollegen-a
+  from: A2-20-a
+  for:
+  - ar
+- item: sich-unterhalten-a
+  from: A2-20-a
+  for:
+  - ar
+- item: entspannt-a
+  from: A2-20-a
+  for:
+  - ar
+- item: nicht-so-spaet-a
+  from: A2-20-a
+  for:
+  - ar
+- item: ich-muss-los-a
+  from: A2-20-a
+  for:
+  - ar
+- item: die-fachsprache-a
+  from: C2-12-a
+  for:
+  - ar
+- item: die-gastvorlesung-a
+  from: C2-12-a
+  for:
+  - ar
+- item: die-tragfaehigkeit-a
+  from: C2-12-a
+  for:
+  - ar
+- item: der-werkstoff-a
+  from: C2-12-a
+  for:
+  - ar
+- item: die-ergebnisse-a
+  from: C2-12-a
+  for:
+  - ar
+- item: es-laesst-sich-zeigen-a
+  from: C2-12-a
+  for:
+  - ar
+- item: die-nachhaltigkeit-a
+  from: C2-12-a
+  for:
+  - ar
+- item: die-einschraenkung-a
+  from: C2-12-a
+  for:
+  - ar
+- item: der-ausblick-a
+  from: C2-12-a
+  for:
+  - ar
+- item: der-zement-a
+  from: C2-12-a
+  for:
+  - ar
+- item: sich-treffen-m
+  from: A2-20-m
+  for:
+  - mk
+- item: ich-freue-mich-m
+  from: A2-20-m
+  for:
+  - mk
+- item: die-livemusik-m
+  from: A2-20-m
+  for:
+  - mk
+- item: wie-zu-hause-m
+  from: A2-20-m
+  for:
+  - mk
+- item: sich-setzen-m
+  from: A2-20-m
+  for:
+  - mk
+- item: tanzen-m
+  from: A2-20-m
+  for:
+  - mk
+- item: mitmachen-m
+  from: A2-20-m
+  for:
+  - mk
+- item: ich-erinnere-mich-m
+  from: A2-20-m
+  for:
+  - mk
+- item: laut-m
+  from: A2-20-m
+  for:
+  - mk
+- item: ich-fuehle-mich-wohl-m
+  from: A2-20-m
+  for:
+  - mk
+- item: die-seniorenakademie-m
+  from: C2-12-m
+  for:
+  - mk
+- item: die-antike-m
+  from: C2-12-m
+  for:
+  - mk
+- item: die-ausgrabung-m
+  from: C2-12-m
+  for:
+  - mk
+- item: das-mosaik-m
+  from: C2-12-m
+  for:
+  - mk
+- item: es-laesst-sich-zeigen-m
+  from: C2-12-m
+  for:
+  - mk
+- item: die-quelle-c2-m
+  from: C2-12-m
+  for:
+  - mk
+- item: im-folgenden-m
+  from: C2-12-m
+  for:
+  - mk
+- item: die-epoche-m
+  from: C2-12-m
+  for:
+  - mk
+- item: das-osmanische-reich-m
+  from: C2-12-m
+  for:
+  - mk
+- item: die-konsulatsstadt-m
+  from: C2-12-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: 'An offer: a good job in Munich. Or stay in Leipzig. Or go back home one day. Over a long evening, Lena helps you weigh it up. Listen to the conversation; you don''t need to understand it yet.'
+    ar: 'عرض: وظيفة جيدة في ميونخ. أو البقاء في لايبزيغ. أو العودة يومًا إلى الوطن. في سهرة طويلة تساعدكِ لينا على الموازنة. استمعي إلى المحادثة؛ لا داعي لأن تفهميها الآن.'
+    mk: 'Понуда: добра работа во Минхен. Или да останете во Лајпциг. Или еден ден да се вратите дома. Во долга вечер Лена ви помага да одмерите. Слушнете го разговорот; уште не мора да го разберете.'
+- type: dialogue
+  lines:
+  - speaker: lena
+    text: 'Also: das Jobangebot in München. Was spricht dafür?'
+    meaning:
+      en: 'So: the job offer in Munich. What speaks for it?'
+      ar: 'إذن: عرض العمل في ميونخ. ما الذي يؤيّده؟'
+      mk: 'Значи: понудата за работа во Минхен. Што зборува за тоа?'
+  - speaker: protagonist
+    text: Mehr Geld, mehr Verantwortung. Aber würde ich gehen, verlöre ich alles, was ich hier aufgebaut habe.
+    meaning:
+      en: More money, more responsibility. But if I went, I'd lose everything I've built here.
+      ar: مال أكثر ومسؤولية أكبر. لكن لو ذهبتُ لخسرتُ كل ما بنيته هنا.
+      mk: Повеќе пари, повеќе одговорност. Но да заминам, би изгубила сè што изградив тука.
+  - speaker: lena
+    text: Und zurück in die Heimat?
+    meaning:
+      en: And back home?
+      ar: والعودة إلى الوطن؟
+      mk: А назад дома?
+  - speaker: protagonist
+    text: Manchmal denke ich daran. Hätte mir jemand vor zehn Jahren gesagt, dass ich hier Wurzeln schlage — ich hätte gelacht.
+    meaning:
+      en: Sometimes I think about it. If someone had told me ten years ago that I'd put down roots here — I'd have laughed.
+      ar: أحيانًا أفكّر في ذلك. لو قال لي أحد قبل عشر سنوات إنني سأضرب جذورًا هنا — لضحكتُ.
+      mk: Понекогаш размислувам. Да ми кажеше некој пред десет години дека тука ќе пуштам корени — ќе се смеев.
+  - speaker: lena
+    text: Jede Entscheidung hat ihren Preis. Was sagt dein Bauchgefühl?
+    meaning:
+      en: Every decision comes at a price. What does your gut say?
+      ar: لكل قرار ثمنه. ماذا يقول حدسكِ؟
+      mk: Секоја одлука има своја цена. Што ти вели стомакот?
+  - speaker: protagonist
+    text: 'Mein Bauch sagt: bleiben. Mein Kopf sagt: das Für und Wider aufschreiben.'
+    meaning:
+      en: 'My gut says: stay. My head says: write down the pros and cons.'
+      ar: 'حدسي يقول: ابقي. وعقلي يقول: اكتبي الإيجابيات والسلبيات.'
+      mk: 'Стомакот ми вели: остани. Главата ми вели: запиши за и против.'
+  - speaker: lena
+    text: 'Typisch deutsch geworden! Aber vergiss nicht: Nichts ist endgültig.'
+    meaning:
+      en: 'You''ve become typically German! But don''t forget: nothing is final.'
+      ar: 'صرتِ ألمانية نموذجية! لكن لا تنسي: لا شيء نهائي.'
+      mk: 'Стана типично германски! Но не заборавај: ништо не е конечно.'
+  - speaker: protagonist
+    text: Dann treffe ich heute keine Entscheidung. Heute trinken wir Tee.
+    meaning:
+      en: Then I won't make a decision today. Today we drink tea.
+      ar: إذن لن أتّخذ قرارًا اليوم. اليوم نشرب الشاي.
+      mk: Тогаш денес нема да донесам одлука. Денес пиеме чај.
+- type: prompt
+  ask:
+    en: 'Say: the job offer.'
+    ar: 'قولي: عرض العمل.'
+    mk: 'Кажете: понудата за работа.'
+  answer:
+    speaker: protagonist
+    text: Das Jobangebot.
+  items:
+  - das-jobangebot
+- type: narrator
+  text:
+    en: 'Konjunktiv for weighing a life choice: «Würde ich gehen, verlöre ich…» (if I went, I''d lose — with the old Konjunktiv II «verlöre»), «Hätte mir jemand gesagt…, hätte ich gelacht» (past unreal).
+      The «wenn» can be dropped: the verb moves to the front.'
+    ar: 'صيغة التمني لموازنة قرار مصيري: «Würde ich gehen, verlöre ich…» (لو ذهبتُ لخسرتُ — بالصيغة القديمة «verlöre»)، «Hätte mir jemand gesagt…, hätte ich gelacht» (فرضية ماضية). ويمكن حذف «wenn»: فيتقدّم
+      الفعل إلى البداية.'
+    mk: 'Konjunktiv за одмерување животен избор: «Würde ich gehen, verlöre ich…» (да заминам, би изгубила — со стариот Konjunktiv II «verlöre»), «Hätte mir jemand gesagt…, hätte ich gelacht» (минато нереално).
+      «wenn» може да се испушти: глаголот оди напред.'
+- type: prompt
+  ask:
+    en: 'Say: if I went, I''d lose everything.'
+    ar: 'قولي: لو ذهبتُ لخسرتُ كل شيء.'
+    mk: 'Кажете: да заминам, би изгубила сè.'
+  answer:
+    speaker: protagonist
+    text: Würde ich gehen, verlöre ich alles.
+  items:
+  - wuerde-ich-gehen
+- type: prompt
+  ask:
+    en: 'Say: if someone had told me ten years ago…'
+    ar: 'قولي: لو قال لي أحد قبل عشر سنوات…'
+    mk: 'Кажете: да ми кажеше некој пред десет години…'
+  answer:
+    speaker: protagonist
+    text: Hätte mir jemand vor zehn Jahren gesagt, …
+  items:
+  - haette-ich-gewusst
+- type: prompt
+  ask:
+    en: 'Say: put down roots.'
+    ar: 'قولي: أضرب جذورًا.'
+    mk: 'Кажете: пуштам корени.'
+  answer:
+    speaker: protagonist
+    text: Wurzeln schlagen.
+  items:
+  - die-wurzeln
+- type: prompt
+  ask:
+    en: 'Say: every decision comes at a price.'
+    ar: 'قولي: لكل قرار ثمنه.'
+    mk: 'Кажете: секоја одлука има цена.'
+  answer:
+    speaker: protagonist
+    text: Jede Entscheidung hat ihren Preis.
+  items:
+  - der-preis
+- type: prompt
+  ask:
+    en: 'Ask: what does your gut say?'
+    ar: 'اسألي: ماذا يقول حدسكِ؟'
+    mk: 'Прашајте: што ти вели стомакот?'
+  answer:
+    speaker: protagonist
+    text: Was sagt dein Bauchgefühl?
+  items:
+  - das-bauchgefuehl
+- type: prompt
+  ask:
+    en: 'Say: write down the pros and cons.'
+    ar: 'قولي: اكتبي الإيجابيات والسلبيات.'
+    mk: 'Кажете: запиши за и против.'
+  answer:
+    speaker: protagonist
+    text: Das Für und Wider aufschreiben.
+  items:
+  - das-fuer-und-wider
+  - die-abwaegung
+- type: prompt
+  ask:
+    en: 'Say: nothing is final.'
+    ar: 'قولي: لا شيء نهائي.'
+    mk: 'Кажете: ништо не е конечно.'
+  answer:
+    speaker: protagonist
+    text: Nichts ist endgültig.
+  items:
+  - nichts-ist-endgueltig
+- type: prompt
+  ask:
+    en: 'Say: I won''t make a decision today.'
+    ar: 'قولي: لن أتّخذ قرارًا اليوم.'
+    mk: 'Кажете: денес нема да донесам одлука.'
+  answer:
+    speaker: protagonist
+    text: Heute treffe ich keine Entscheidung.
+  items:
+  - die-entscheidung-c2
+- type: narrator
+  text:
+    en: 'Staying, moving within Germany, or going back are all legitimate — and none is final: residence rights, pensions and qualifications can often be kept or transferred. Before deciding, check what
+      a longer absence means for your residence status.'
+    ar: 'البقاء أو الانتقال داخل ألمانيا أو العودة كلها خيارات مشروعة — ولا شيء منها نهائي: حقوق الإقامة والتقاعد والمؤهّلات يمكن غالبًا الاحتفاظ بها أو نقلها. وقبل القرار، تحقّقي مما يعنيه الغياب الطويل
+      لوضع إقامتكِ.'
+    mk: 'Останувањето, селењето во рамки на Германија или враќањето се сите легитимни — и ниту едно не е конечно: правата на престој, пензиите и квалификациите често може да се задржат или пренесат. Пред
+      да одлучите, проверете што значи подолго отсуство за вашиот статус на престој.'
+- type: prompt
+  ask:
+    en: 'Once more: say “the weighing up”.'
+    ar: 'مرة أخرى: قولي “الموازنة”.'
+    mk: 'Уште еднаш: кажете „одмерувањето“.'
+  answer:
+    speaker: protagonist
+    text: die Abwägung
+  items:
+  - die-abwaegung
+- type: prompt
+  ask:
+    en: 'Once more: say “the job offer”.'
+    ar: 'مرة أخرى: قولي “عرض العمل”.'
+    mk: 'Уште еднаш: кажете „понудата за работа“.'
+  answer:
+    speaker: protagonist
+    text: das Jobangebot
+  items:
+  - das-jobangebot
+- type: prompt
+  ask:
+    en: 'Once more: say “the pros and cons”.'
+    ar: 'مرة أخرى: قولي “الإيجابيات والسلبيات”.'
+    mk: 'Уште еднаш: кажете „за и против“.'
+  answer:
+    speaker: protagonist
+    text: das Für und Wider
+  items:
+  - das-fuer-und-wider
+- type: prompt
+  ask:
+    en: 'Once more: say “If I went, I''d lose …”.'
+    ar: 'مرة أخرى: قولي “لو ذهبتُ لخسرتُ …”.'
+    mk: 'Уште еднаш: кажете „Да заминам, би изгубила …“.'
+  answer:
+    speaker: protagonist
+    text: Würde ich gehen, verlöre ich …
+  items:
+  - wuerde-ich-gehen
+- type: prompt
+  ask:
+    en: 'Once more: say “If someone had told me ten years ago …”.'
+    ar: 'مرة أخرى: قولي “لو قال لي أحد قبل عشر سنوات …”.'
+    mk: 'Уште еднаш: кажете „Да ми кажеше некој пред десет години …“.'
+  answer:
+    speaker: protagonist
+    text: Hätte mir jemand vor zehn Jahren gesagt, …
+  items:
+  - haette-ich-gewusst
+- type: prompt
+  ask:
+    en: 'Once more: say “put down roots”.'
+    ar: 'مرة أخرى: قولي “يضرب جذورًا”.'
+    mk: 'Уште еднаш: кажете „пушта корени“.'
+  answer:
+    speaker: protagonist
+    text: Wurzeln schlagen
+  items:
+  - die-wurzeln
+- type: prompt
+  ask:
+    en: 'Once more: say “gut feeling”.'
+    ar: 'مرة أخرى: قولي “الحدس”.'
+    mk: 'Уште еднаш: кажете „чувството во стомакот“.'
+  answer:
+    speaker: protagonist
+    text: das Bauchgefühl
+  items:
+  - das-bauchgefuehl
+- type: prompt
+  ask:
+    en: 'Once more: say “come at a price”.'
+    ar: 'مرة أخرى: قولي “له ثمن”.'
+    mk: 'Уште еднаш: кажете „има цена“.'
+  answer:
+    speaker: protagonist
+    text: einen Preis haben
+  items:
+  - der-preis
+- type: prompt
+  ask:
+    en: 'Once more: say “make a decision”.'
+    ar: 'مرة أخرى: قولي “يتّخذ قرارًا”.'
+    mk: 'Уште еднаш: кажете „донесува одлука“.'
+  answer:
+    speaker: protagonist
+    text: eine Entscheidung treffen
+  items:
+  - die-entscheidung-c2
+- type: prompt
+  ask:
+    en: 'Once more: say “Nothing is final”.'
+    ar: 'مرة أخرى: قولي “لا شيء نهائي”.'
+    mk: 'Уште еднаш: кажете „Ништо не е конечно“.'
+  answer:
+    speaker: protagonist
+    text: Nichts ist endgültig
+  items:
+  - nichts-ist-endgueltig
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتِه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “technical language — and “the thesis defence — and “the research question — and “the methodology — and “the results — and “it can be shown that … — and “within the scope of this thesis”.'
+  answer:
+    speaker: protagonist
+    text: die Fachsprache … das Kolloquium … die Forschungsfrage … die Methodik … die Ergebnisse … es lässt sich zeigen, dass … … im Rahmen dieser Arbeit
+  items:
+  - die-fachsprache-e
+  - das-kolloquium-e
+  - die-forschungsfrage-e
+  - die-methodik-e
+  - die-ergebnisse-e
+  - es-laesst-sich-zeigen-e
+  - im-rahmen-dieser-arbeit-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the limitation — and “the outlook — and “the examiner (f) — and “the bouncer — and “How many of you are there? — and “we''re looking forward — and “I change (clothes)”.'
+  answer:
+    speaker: protagonist
+    text: die Einschränkung … der Ausblick … die Gutachterin … der Türsteher … Wie viele seid ihr? … wir freuen uns … ich ziehe mich um
+  items:
+  - die-einschraenkung-e
+  - der-ausblick-e
+  - die-gutachterin-e
+  - der-tuersteher-e
+  - wie-viele-seid-ihr-e
+  - wir-freuen-uns-e
+  - ich-ziehe-mich-um-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “we meet — and “not tonight — and “no photos — and “the cloakroom — and “dance — and “until the morning”.'
+  answer:
+    speaker: protagonist
+    text: wir treffen uns … heute nicht … keine Fotos … die Garderobe … tanzen … bis morgens
+  items:
+  - sich-treffen-e
+  - heute-nicht-rein-e
+  - keine-fotos-e
+  - die-garderobe-e
+  - tanzen-e
+  - bis-morgens-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the gift (legal transfer) — and “the nephew — and “assisted living — and “the change of owner — and “a sale doesn''t break a tenancy — and “the tenancy continues — and “notice for the owner''s
+      own use — and “take over the contract — and “entry in the land register — and “unchanged — and “the intern — and “May I give you a tip? — and “in the team we say du — and “address the boss as Sie
+      — and “the form of address — and “colloquial — and “inappropriate”.'
+    ar: 'قولي: “الهبة — و“ابن الأخ — و“السكن مع الرعاية — و“تغيّر المالك — و“البيع لا ينهي الإيجار — و“عقد الإيجار يستمرّ — و“الإنهاء لحاجة المالك الشخصية — و“يحلّ محلّ الطرف في العقد — و“القيد في السجل
+      العقاري — و“دون تغيير — و“المتدرّب — و“هل تسمح لي بنصيحة؟ — و“في الفريق نتخاطب بـdu — و“يخاطب المديرة بـSie — و“صيغة المخاطبة — و“عامي — و“غير لائق”.'
+    mk: 'Кажете: „подарувањето“ — и „внукот (син на брат/сестра)“ — и „домувањето со нега“ — и „промената на сопственикот“ — и „продажбата не го раскинува наемот“ — и „договорот за наем продолжува“ — и
+      „отказ поради сопствена потреба“ — и „влегува во договорот“ — и „упис во катастарот“ — и „непроменето“ — и „практикантот“ — и „Смеам ли да ти дадам совет?“ — и „во тимот си велиме du“ — и „на шефицата
+      ѝ се персира“ — и „обраќањето“ — и „разговорно“ — и „несоодветно“.'
+  answer:
+    speaker: protagonist
+    text: die Schenkung … der Neffe … das betreute Wohnen … der Eigentümerwechsel … Kauf bricht nicht Miete … der Mietvertrag besteht fort … die Eigenbedarfskündigung … in den Vertrag eintreten … die Eintragung
+      ins Grundbuch … unverändert … der Praktikant … Darf ich dir einen Tipp geben? … im Team duzen wir uns … die Chefin siezen … die Anrede … umgangssprachlich … unangemessen
+  items:
+  - die-schenkung
+  - der-neffe
+  - das-betreute-wohnen
+  - der-eigentuemerwechsel
+  - kauf-bricht-nicht-miete
+  - der-mietvertrag-besteht-fort
+  - die-eigenbedarfskuendigung
+  - der-vermieter-c2
+  - die-grundbucheintragung
+  - unveraendert
+  - der-praktikant
+  - darf-ich-dir-einen-tipp-geben
+  - im-team-duzen
+  - die-chefin-siezen
+  - die-anrede
+  - umgangssprachlich
+  - unangemessen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “tact, a feel for the situation — and “Don''t take it personally — and “embarrassing — and “the crisis — and “I''m here for you — and “be dismissed — and “(particle) go on, tell me — and “That
+      really is hard — and “It''ll work out — and “Chin up! — and “the severance pay — and “advice (pieces of) — and “just listen — and “the (formal) appeal — and “within the deadline — and “the decision
+      dated … — and “the notice of appeal rights”.'
+    ar: 'قولي: “الحسّ المرهف — و“لا تأخذ الأمر على محمل شخصي — و“محرج — و“الأزمة — و“أنا هنا من أجلك — و“يُفصل من العمل — و“(أداة) هيا، احكِ — و“هذا صعب حقًا — و“ستتحسّن الأمور — و“ارفع رأسك! — و“تعويض
+      نهاية الخدمة — و“نصائح — و“الإصغاء فقط — و“الاعتراض الرسمي — و“في المهلة المحدّدة — و“القرار المؤرَّخ في … — و“إشعار سبل الطعن”.'
+    mk: 'Кажете: „чувството за мерка“ — и „Не земај го лично“ — и „непријатно“ — и „кризата“ — и „Тука сум за тебе“ — и „да добие отказ“ — и „(честичка) ајде, раскажи“ — и „Тоа навистина е тешко“ — и „Ќе
+      се среди“ — и „Глава горе!“ — и „отпремнината“ — и „совети“ — и „само слушање“ — и „жалбата“ — и „во рок“ — и „решението од …“ — и „поуката за правен лек“.'
+  answer:
+    speaker: protagonist
+    text: das Fingerspitzengefühl … Nimm es nicht persönlich … peinlich … die Krise … Ich bin für dich da … gekündigt werden … erzähl mal … Das ist ja auch hart … Das wird schon … Kopf hoch! … die Abfindung
+      … Ratschläge … einfach zuhören … der Widerspruch … fristgerecht … der Bescheid vom … … die Rechtsbehelfsbelehrung
+  items:
+  - das-fingerspitzengefuehl
+  - nimm-es-nicht-persoenlich
+  - peinlich
+  - die-krise
+  - fuer-dich-da-sein
+  - gekuendigt-werden
+  - mal-eben
+  - ja-wohl-c2
+  - schon-c2
+  - kopf-hoch
+  - die-abfindung
+  - ratschlaege
+  - einfach-zuhoeren
+  - der-widerspruch-amt
+  - fristgerecht
+  - der-bescheid-c1
+  - die-rechtsbehelfsbelehrung
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the grounds, reasoning — and “I hereby lodge … — and “under the reference number — and “the resident parking permit — and “the enclosure — and “I request a re-examination — and “the rent
+      brake — and “social housing — and “housing entitlement certificate — and “is being built — and “was raised — and “is limited — and “the local reference rent — and “the demand — and “the supply, offer
+      — and “the tenants'' association”.'
+    ar: 'قولي: “التعليل — و“أتقدّم بموجب هذا بـ… — و“تحت رقم الملف — و“تصريح موقف السكان — و“المرفَق — و“أرجو إعادة النظر — و“فرملة الإيجار — و“السكن الاجتماعي — و“شهادة استحقاق السكن — و“يُبنى — و“رُفع
+      — و“محدود — و“الإيجار المرجعي المحلي — و“الطلب — و“العرض — و“جمعية المستأجرين”.'
+    mk: 'Кажете: „образложението“ — и „Со ова поднесувам …“ — и „под бројот на предметот“ — и „дозволата за паркирање на жители“ — и „прилогот“ — и „Барам повторна проверка“ — и „сопирачката на кириите“
+      — и „социјалниот стан“ — и „потврдата за право на социјален стан“ — и „се гради“ — и „беше зголемена“ — и „е ограничено“ — и „вообичаената локална кирија“ — и „побарувачката“ — и „понудата“ — и „здружението
+      на станари“.'
+  answer:
+    speaker: protagonist
+    text: die Begründung … Hiermit lege ich … ein … unter dem Aktenzeichen … der Bewohnerparkausweis … die Anlage … Ich bitte um erneute Prüfung … die Mietpreisbremse … die Sozialwohnung … der Wohnberechtigungsschein
+      … wird gebaut … wurde erhöht … ist begrenzt … die ortsübliche Vergleichsmiete … die Nachfrage … das Angebot … der Mieterverein
+  items:
+  - die-begruendung
+  - hiermit-lege-ich
+  - das-aktenzeichen-c1
+  - der-bewohnerparkausweis
+  - die-anlage
+  - ich-bitte-um-pruefung
+  - die-mietpreisbremse
+  - die-sozialwohnung
+  - der-wohnberechtigungsschein
+  - wird-gebaut
+  - wurde-erhoeht
+  - ist-begrenzt
+  - die-vergleichsmiete
+  - die-nachfrage
+  - das-angebot
+  - der-mieterverein
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “اللغة التخصّصية — و“محاضرة الضيف — و“قدرة التحمّل — و“المادة (الهندسية) — و“النتائج — و“يمكن إثبات أنّ … — و“الاستدامة”.'
+  answer:
+    speaker: protagonist
+    text: die Fachsprache … die Gastvorlesung … die Tragfähigkeit … der Werkstoff … die Ergebnisse … es lässt sich zeigen, dass … … die Nachhaltigkeit
+  items:
+  - die-fachsprache-a
+  - die-gastvorlesung-a
+  - die-tragfaehigkeit-a
+  - der-werkstoff-a
+  - die-ergebnisse-a
+  - es-laesst-sich-zeigen-a
+  - die-nachhaltigkeit-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “القيد، الحدّ — و“الآفاق — و“الإسمنت — و“نلتقي — و“يسعدني، أتطلّع — و“بعد العمل — و“لا أشرب الكحول”.'
+  answer:
+    speaker: protagonist
+    text: die Einschränkung … der Ausblick … der Zement … wir treffen uns … ich freue mich … nach der Arbeit … ich trinke keinen Alkohol
+  items:
+  - die-einschraenkung-a
+  - der-ausblick-a
+  - der-zement-a
+  - sich-treffen-a
+  - ich-freue-mich-a
+  - nach-der-arbeit-a
+  - ich-trinke-keinen-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قولي: “مشروب غازي (ليموناضة) — و“الزملاء — و“نتحدث، ندردش — و“مسترخٍ، هادئ — و“ليس متأخرًا جدًا — و“يجب أن أذهب”.'
+  answer:
+    speaker: protagonist
+    text: eine Limo … die Kollegen … wir unterhalten uns … entspannt … nicht so spät … Ich muss los
+  items:
+  - eine-limo-a
+  - die-kollegen-a
+  - sich-unterhalten-a
+  - entspannt-a
+  - nicht-so-spaet-a
+  - ich-muss-los-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „сениорската академија“ — и „антиката“ — и „ископината“ — и „мозаикот“ — и „може да се покаже дека …“ — и „историскиот извор“ — и „во продолжение“.'
+  answer:
+    speaker: protagonist
+    text: die Seniorenakademie … die Antike … die Ausgrabung … das Mosaik … es lässt sich zeigen, dass … … die historische Quelle … im Folgenden
+  items:
+  - die-seniorenakademie-m
+  - die-antike-m
+  - die-ausgrabung-m
+  - das-mosaik-m
+  - es-laesst-sich-zeigen-m
+  - die-quelle-c2-m
+  - im-folgenden-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „епохата“ — и „Отоманската империја“ — и „градот на конзулите“ — и „се среќаваме“ — и „ми е драго, се радувам“ — и „живата музика“ — и „како дома“.'
+  answer:
+    speaker: protagonist
+    text: die Epoche … das Osmanische Reich … die Stadt der Konsuln … wir treffen uns … ich freue mich … die Livemusik … wie zu Hause
+  items:
+  - die-epoche-m
+  - das-osmanische-reich-m
+  - die-konsulatsstadt-m
+  - sich-treffen-m
+  - ich-freue-mich-m
+  - die-livemusik-m
+  - wie-zu-hause-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „да седнеме“ — и „играат, танцуваат“ — и „да се приклучи“ — и „се сеќавам“ — и „гласно“ — и „се чувствувам убаво“.'
+  answer:
+    speaker: protagonist
+    text: setzen wir uns … tanzen … mitmachen … ich erinnere mich … laut … ich fühle mich wohl
+  items:
+  - sich-setzen-m
+  - tanzen-m
+  - mitmachen-m
+  - ich-erinnere-mich-m
+  - laut-m
+  - ich-fuehle-mich-wohl-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمعي إلى المحادثة مرة أخرى. الآن تفهمينها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck

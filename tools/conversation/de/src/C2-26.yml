@@ -1,0 +1,41 @@
+id: C2-26
+protagonist: m
+title: ["Frau Becker's house", "بيت السيدة بيكر", "Куќата на госпоѓа Бекер"]
+situation:
+  - "Frau Becker is moving into assisted living and gives the house to her nephew Thomas. What does that mean for your tenancy?"
+  - "السيدة بيكر تنتقل إلى سكن مع رعاية وتهب البيت لابن أخيها توماس. ماذا يعني ذلك لعقد إيجارك؟"
+  - "Госпоѓа Бекер се сели во дом со нега и му ја подарува куќата на внукот Томас. Што значи тоа за вашиот наем?"
+learn: [c2-legal-register]
+culture: Your tenancy survives a change of owner
+items:
+  - [die-schenkung, "die Schenkung", "the gift (legal transfer)", "الهبة", "подарувањето"]
+  - [der-neffe, "der Neffe", "the nephew", "ابن الأخ", "внукот (син на брат/сестра)"]
+  - [das-betreute-wohnen, "das betreute Wohnen", "assisted living", "السكن مع الرعاية", "домувањето со нега"]
+  - [der-eigentuemerwechsel, "der Eigentümerwechsel", "the change of owner", "تغيّر المالك", "промената на сопственикот", {rare: true}]
+  - [kauf-bricht-nicht-miete, "Kauf bricht nicht Miete", "a sale doesn't break a tenancy", "البيع لا ينهي الإيجار", "продажбата не го раскинува наемот"]
+  - [der-mietvertrag-besteht-fort, "der Mietvertrag besteht fort", "the tenancy continues", "عقد الإيجار يستمرّ", "договорот за наем продолжува"]
+  - [die-eigenbedarfskuendigung, "die Eigenbedarfskündigung", "notice for the owner's own use", "الإنهاء لحاجة المالك الشخصية", "отказ поради сопствена потреба", {rare: true}]
+  - [der-vermieter-c2, "in den Vertrag eintreten", "take over the contract", "يحلّ محلّ الطرف في العقد", "влегува во договорот"]
+  - [die-grundbucheintragung, "die Eintragung ins Grundbuch", "entry in the land register", "القيد في السجل العقاري", "упис во катастарот", {rare: true}]
+  - [unveraendert, "unverändert", "unchanged", "دون تغيير", "непроменето"]
+dialogue:
+  - [becker, "Ich ziehe ins betreute Wohnen. Das Haus geht als Schenkung an meinen Neffen Thomas.", "I'm moving into assisted living. The house goes to my nephew Thomas as a gift.", "أنتقل إلى السكن مع الرعاية. البيت يذهب هبةً لابن أخي توماس.", "Се селам во дом со нега. Куќата оди како подарок на внукот Томас."]
+  - [protagonist, "Und mein Mietvertrag?", "And my tenancy?", "وعقد إيجاري؟", "А мојот договор за наем?"]
+  - [neffe, "Bleibt unverändert. Mit der Eintragung ins Grundbuch trete ich in den Vertrag ein.", "Stays unchanged. With the entry in the land register I take over the contract.", "يبقى دون تغيير. بالقيد في السجل العقاري أحلّ محلّ المؤجِّرة في العقد.", "Останува непроменет. Со уписот во катастарот влегувам во договорот."]
+  - [protagonist, "Also gilt: Kauf bricht nicht Miete — auch bei einer Schenkung?", "So it applies: a sale doesn't break a tenancy — even with a gift?", "إذن ينطبق: البيع لا ينهي الإيجار — حتى في الهبة؟", "Значи важи: продажбата не го раскинува наемот — и при подарување?"]
+  - [neffe, "Genau. Der Mietvertrag besteht fort, zu denselben Bedingungen.", "Exactly. The tenancy continues on the same terms.", "بالضبط. عقد الإيجار يستمرّ بالشروط نفسها.", "Точно. Договорот продолжува под истите услови."]
+  - [protagonist, "Und eine Eigenbedarfskündigung? Ich frage lieber direkt.", "And notice for your own use? I'd rather ask directly.", "وماذا عن الإنهاء لحاجة المالك؟ أفضّل أن أسأل مباشرة.", "А отказ поради сопствена потреба? Подобро прашувам директно."]
+  - [neffe, "Kein Gedanke. Ich wohne in Hamburg. Und meine Tante würde mich enterben!", "Not a thought. I live in Hamburg. And my aunt would disinherit me!", "لا تفكير في ذلك. أنا أسكن في هامبورغ. وعمّتي ستحرمني من الإرث!", "Ниту помислувам. Живеам во Хамбург. А тетка ми ќе ме лиши од наследство!"]
+  - [becker, "Darauf kannst du dich verlassen. Er ist ein guter Mieter.", "You can count on that. He's a good tenant.", "يمكنك الاعتماد على ذلك. إنه مستأجر جيد.", "На тоа можеш да се потпреш. Тој е добар станар."]
+teach:
+  - ask: ["Say: assisted living.", "قل: السكن مع الرعاية.", "Кажете: дом со нега.", "Das betreute Wohnen.", das-betreute-wohnen]
+  - ask: ["Say: as a gift to her nephew.", "قل: هبةً لابن أخيها.", "Кажете: како подарок на внукот.", "Als Schenkung an den Neffen.", die-schenkung, der-neffe]
+  - note: ["Legal register in everyday use: «Der Mietvertrag besteht fort» (continues), «in den Vertrag eintreten» (take over the contract), and the old legal saying «Kauf bricht nicht Miete». Asking directly about «Eigenbedarf» is fine and wise.", "الأسلوب القانوني في الحياة اليومية: «Der Mietvertrag besteht fort» (يستمرّ)، «in den Vertrag eintreten» (يحلّ محلّ الطرف في العقد)، والقول القانوني القديم «Kauf bricht nicht Miete». والسؤال المباشر عن «Eigenbedarf» مقبول وحكيم.", "Правен регистар во секојдневието: «Der Mietvertrag besteht fort» (продолжува), «in den Vertrag eintreten» (влегува во договорот), и старата правна изрека «Kauf bricht nicht Miete». Директното прашање за «Eigenbedarf» е во ред и мудро."]
+  - ask: ["Say: the tenancy stays unchanged.", "قل: عقد الإيجار يبقى دون تغيير.", "Кажете: договорот останува непроменет.", "Der Mietvertrag bleibt unverändert.", unveraendert]
+  - ask: ["Say: entry in the land register.", "قل: القيد في السجل العقاري.", "Кажете: упис во катастарот.", "Die Eintragung ins Grundbuch.", die-grundbucheintragung]
+  - ask: ["He says: I take over the contract.", "يقول: أحلّ محلّها في العقد.", "Тој вели: влегувам во договорот.", "Ich trete in den Vertrag ein.", der-vermieter-c2]
+  - ask: ["Quote the rule: a sale doesn't break a tenancy.", "اقتبس القاعدة: البيع لا ينهي الإيجار.", "Цитирајте го правилото: продажбата не го раскинува наемот.", "Kauf bricht nicht Miete.", kauf-bricht-nicht-miete]
+  - ask: ["Say: the tenancy continues.", "قل: عقد الإيجار يستمرّ.", "Кажете: договорот продолжува.", "Der Mietvertrag besteht fort.", der-mietvertrag-besteht-fort]
+  - ask: ["Ask about notice for own use.", "اسأل عن الإنهاء لحاجة المالك.", "Прашајте за отказ поради сопствена потреба.", "Und eine Eigenbedarfskündigung?", die-eigenbedarfskuendigung]
+  - ask: ["Say: the change of owner.", "قل: تغيّر المالك.", "Кажете: промената на сопственикот.", "Der Eigentümerwechsel.", der-eigentuemerwechsel]
+  - note: ["When a house is sold, given away or inherited, the new owner takes over existing tenancies unchanged — 'Kauf bricht nicht Miete'. A notice for the owner's own use (Eigenbedarf) must be justified, follows the legal notice periods, and can be challenged; a tenants' association helps.", "حين يُباع البيت أو يُوهب أو يُورث، يتسلّم المالك الجديد عقود الإيجار القائمة دون تغيير — «البيع لا ينهي الإيجار». والإنهاء لحاجة المالك الشخصية (Eigenbedarf) يجب تعليله، ويتبع مهل الإنهاء القانونية، ويمكن الطعن فيه؛ وجمعية المستأجرين تساعد.", "Кога куќата се продава, подарува или наследува, новиот сопственик ги презема постојните наеми непроменети — „Kauf bricht nicht Miete“. Отказ поради сопствена потреба (Eigenbedarf) мора да се образложи, ги следи законските рокови и може да се оспори; здружението на станари помага."]

@@ -1,0 +1,828 @@
+# UNIT de C2-26 — written by AI (Claude) for Casus; expanded from src/C2-26.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-26
+level: C2
+number: 26
+protagonist: m
+title:
+  en: Frau Becker's house
+  ar: بيت السيدة بيكر
+  mk: Куќата на госпоѓа Бекер
+situation:
+  en: Frau Becker is moving into assisted living and gives the house to her nephew Thomas. What does that mean for your tenancy?
+  ar: السيدة بيكر تنتقل إلى سكن مع رعاية وتهب البيت لابن أخيها توماس. ماذا يعني ذلك لعقد إيجارك؟
+  mk: Госпоѓа Бекер се сели во дом со нега и му ја подарува куќата на внукот Томас. Што значи тоа за вашиот наем?
+learn_lessons:
+- c2-legal-register
+culture: Your tenancy survives a change of owner
+new_items:
+- id: die-schenkung
+  text: die Schenkung
+  meaning:
+    en: the gift (legal transfer)
+    ar: الهبة
+    mk: подарувањето
+- id: der-neffe
+  text: der Neffe
+  meaning:
+    en: the nephew
+    ar: ابن الأخ
+    mk: внукот (син на брат/сестра)
+- id: das-betreute-wohnen
+  text: das betreute Wohnen
+  meaning:
+    en: assisted living
+    ar: السكن مع الرعاية
+    mk: домувањето со нега
+- id: der-eigentuemerwechsel
+  text: der Eigentümerwechsel
+  meaning:
+    en: the change of owner
+    ar: تغيّر المالك
+    mk: промената на сопственикот
+  rare: true
+- id: kauf-bricht-nicht-miete
+  text: Kauf bricht nicht Miete
+  meaning:
+    en: a sale doesn't break a tenancy
+    ar: البيع لا ينهي الإيجار
+    mk: продажбата не го раскинува наемот
+- id: der-mietvertrag-besteht-fort
+  text: der Mietvertrag besteht fort
+  meaning:
+    en: the tenancy continues
+    ar: عقد الإيجار يستمرّ
+    mk: договорот за наем продолжува
+- id: die-eigenbedarfskuendigung
+  text: die Eigenbedarfskündigung
+  meaning:
+    en: notice for the owner's own use
+    ar: الإنهاء لحاجة المالك الشخصية
+    mk: отказ поради сопствена потреба
+  rare: true
+- id: der-vermieter-c2
+  text: in den Vertrag eintreten
+  meaning:
+    en: take over the contract
+    ar: يحلّ محلّ الطرف في العقد
+    mk: влегува во договорот
+- id: die-grundbucheintragung
+  text: die Eintragung ins Grundbuch
+  meaning:
+    en: entry in the land register
+    ar: القيد في السجل العقاري
+    mk: упис во катастарот
+  rare: true
+- id: unveraendert
+  text: unverändert
+  meaning:
+    en: unchanged
+    ar: دون تغيير
+    mk: непроменето
+reviews:
+- item: das-fahrrad
+  from: A2-19
+- item: ein-gebrauchtes
+  from: A2-19
+- item: die-bremse
+  from: A2-19
+- item: funktioniert
+  from: A2-19
+- item: das-licht-rad
+  from: A2-19
+- item: ein-gutes-schloss
+  from: A2-19
+- item: der-korb
+  from: A2-19
+- item: eine-probefahrt
+  from: A2-19
+- item: der-reifen
+  from: A2-19
+- item: neue-reifen
+  from: A2-19
+- item: der-radweg
+  from: A2-19
+- item: die-buchmesse
+  from: B2-23
+- item: oder-tag
+  from: B2-23
+- item: ne-tag
+  from: B2-23
+- item: gell
+  from: B2-23
+- item: voll-heute
+  from: B2-23
+- item: die-schlange
+  from: B2-23
+- item: erwischt
+  from: B2-23
+- item: beruflich-oder-privat
+  from: B2-23
+- item: die-lesung
+  from: B2-23
+- item: viel-spass-auf
+  from: B2-23
+- item: die-gleichberechtigung-e
+  from: C1-25-e
+  for:
+  - en
+- item: die-selbstbestimmung-e
+  from: C1-25-e
+  for:
+  - en
+- item: das-opfer-e
+  from: C1-25-e
+  for:
+  - en
+- item: die-schuld-e
+  from: C1-25-e
+  for:
+  - en
+- item: die-zwangsheirat-e
+  from: C1-25-e
+  for:
+  - en
+- item: das-hilfetelefon-e
+  from: C1-25-e
+  for:
+  - en
+- item: das-frauenhaus-e
+  from: C1-25-e
+  for:
+  - en
+- item: anonym-e
+  from: C1-25-e
+  for:
+  - en
+- item: die-entscheidung-ueber-e
+  from: C1-25-e
+  for:
+  - en
+- item: niemand-darf-e
+  from: C1-25-e
+  for:
+  - en
+- item: die-nachfolge-c2
+  from: C2-11
+- item: die-uebergabe-laden
+  from: C2-11
+- item: der-ruhestand
+  from: C2-11
+- item: die-stammkundschaft
+  from: C2-11
+- item: die-weiterfuehrung
+  from: C2-11
+- item: die-neuausrichtung
+  from: C2-11
+- item: der-onlineshop
+  from: C2-11
+- item: die-tradition
+  from: C2-11
+- item: das-lebenswerk
+  from: C2-11
+- item: unter-neuer-leitung
+  from: C2-11
+- item: das-ferienhaus
+  from: C2-19
+- item: die-kostenaufteilung
+  from: C2-19
+- item: pro-kopf
+  from: C2-19
+- item: die-gemeinsame-kasse
+  from: C2-19
+- item: waere-es-nicht-fairer
+  from: C2-19
+- item: haetten-wir
+  from: C2-19
+- item: die-app
+  from: C2-19
+- item: abrechnen
+  from: C2-19
+- item: die-ostsee
+  from: C2-19
+- item: grosszuegig
+  from: C2-19
+- item: die-buergerfragestunde
+  from: C2-23
+- item: der-stadtrat-c2
+  from: C2-23
+- item: sehr-geehrter-herr-vorsitzender
+  from: C2-23
+- item: die-redezeit
+  from: C2-23
+- item: ich-frage-sie
+  from: C2-23
+- item: konkret
+  from: C2-23
+- item: die-zusage
+  from: C2-23
+- item: die-tatsache
+  from: C2-23
+- item: die-schriftliche-antwort
+  from: C2-23
+- item: die-vertagung
+  from: C2-23
+- item: der-reim
+  from: C2-25
+- item: der-rhythmus
+  from: C2-25
+- item: die-strophe
+  from: C2-25
+- item: der-dichter-c2
+  from: C2-25
+- item: die-sonnenuhr
+  from: C2-25
+- item: die-vollendung
+  from: C2-25
+- item: die-suesse
+  from: C2-25
+- item: vortragen
+  from: C2-25
+- item: die-betonung
+  from: C2-25
+- item: die-melancholie
+  from: C2-25
+- item: die-gleichberechtigung-a
+  from: C1-25-a
+  for:
+  - ar
+- item: die-selbstbestimmung-a
+  from: C1-25-a
+  for:
+  - ar
+- item: das-opfer-a
+  from: C1-25-a
+  for:
+  - ar
+- item: die-schuld-a
+  from: C1-25-a
+  for:
+  - ar
+- item: die-zwangsheirat-a
+  from: C1-25-a
+  for:
+  - ar
+- item: das-hilfetelefon-a
+  from: C1-25-a
+  for:
+  - ar
+- item: das-frauenhaus-a
+  from: C1-25-a
+  for:
+  - ar
+- item: anonym-a
+  from: C1-25-a
+  for:
+  - ar
+- item: die-entscheidung-ueber-a
+  from: C1-25-a
+  for:
+  - ar
+- item: niemand-darf-a
+  from: C1-25-a
+  for:
+  - ar
+- item: die-gleichberechtigung-m
+  from: C1-25-m
+  for:
+  - mk
+- item: die-selbstbestimmung-m
+  from: C1-25-m
+  for:
+  - mk
+- item: das-opfer-m
+  from: C1-25-m
+  for:
+  - mk
+- item: die-schuld-m
+  from: C1-25-m
+  for:
+  - mk
+- item: die-haeusliche-gewalt-m
+  from: C1-25-m
+  for:
+  - mk
+- item: das-hilfetelefon-m
+  from: C1-25-m
+  for:
+  - mk
+- item: das-frauenhaus-m
+  from: C1-25-m
+  for:
+  - mk
+- item: anonym-m
+  from: C1-25-m
+  for:
+  - mk
+- item: die-entscheidung-ueber-m
+  from: C1-25-m
+  for:
+  - mk
+- item: schweigen-m
+  from: C1-25-m
+  for:
+  - mk
+steps:
+- type: narrator
+  text:
+    en: Frau Becker is moving into assisted living and gives the house to her nephew Thomas. What does that mean for your tenancy? Listen to the conversation; you don't need to understand it yet.
+    ar: السيدة بيكر تنتقل إلى سكن مع رعاية وتهب البيت لابن أخيها توماس. ماذا يعني ذلك لعقد إيجارك؟ استمع إلى المحادثة؛ لا داعي لأن تفهمها الآن.
+    mk: Госпоѓа Бекер се сели во дом со нега и му ја подарува куќата на внукот Томас. Што значи тоа за вашиот наем? Слушнете го разговорот; уште не мора да го разберете.
+- type: dialogue
+  lines:
+  - speaker: becker
+    text: Ich ziehe ins betreute Wohnen. Das Haus geht als Schenkung an meinen Neffen Thomas.
+    meaning:
+      en: I'm moving into assisted living. The house goes to my nephew Thomas as a gift.
+      ar: أنتقل إلى السكن مع الرعاية. البيت يذهب هبةً لابن أخي توماس.
+      mk: Се селам во дом со нега. Куќата оди како подарок на внукот Томас.
+  - speaker: protagonist
+    text: Und mein Mietvertrag?
+    meaning:
+      en: And my tenancy?
+      ar: وعقد إيجاري؟
+      mk: А мојот договор за наем?
+  - speaker: neffe
+    text: Bleibt unverändert. Mit der Eintragung ins Grundbuch trete ich in den Vertrag ein.
+    meaning:
+      en: Stays unchanged. With the entry in the land register I take over the contract.
+      ar: يبقى دون تغيير. بالقيد في السجل العقاري أحلّ محلّ المؤجِّرة في العقد.
+      mk: Останува непроменет. Со уписот во катастарот влегувам во договорот.
+  - speaker: protagonist
+    text: 'Also gilt: Kauf bricht nicht Miete — auch bei einer Schenkung?'
+    meaning:
+      en: 'So it applies: a sale doesn''t break a tenancy — even with a gift?'
+      ar: 'إذن ينطبق: البيع لا ينهي الإيجار — حتى في الهبة؟'
+      mk: 'Значи важи: продажбата не го раскинува наемот — и при подарување?'
+  - speaker: neffe
+    text: Genau. Der Mietvertrag besteht fort, zu denselben Bedingungen.
+    meaning:
+      en: Exactly. The tenancy continues on the same terms.
+      ar: بالضبط. عقد الإيجار يستمرّ بالشروط نفسها.
+      mk: Точно. Договорот продолжува под истите услови.
+  - speaker: protagonist
+    text: Und eine Eigenbedarfskündigung? Ich frage lieber direkt.
+    meaning:
+      en: And notice for your own use? I'd rather ask directly.
+      ar: وماذا عن الإنهاء لحاجة المالك؟ أفضّل أن أسأل مباشرة.
+      mk: А отказ поради сопствена потреба? Подобро прашувам директно.
+  - speaker: neffe
+    text: Kein Gedanke. Ich wohne in Hamburg. Und meine Tante würde mich enterben!
+    meaning:
+      en: Not a thought. I live in Hamburg. And my aunt would disinherit me!
+      ar: لا تفكير في ذلك. أنا أسكن في هامبورغ. وعمّتي ستحرمني من الإرث!
+      mk: Ниту помислувам. Живеам во Хамбург. А тетка ми ќе ме лиши од наследство!
+  - speaker: becker
+    text: Darauf kannst du dich verlassen. Er ist ein guter Mieter.
+    meaning:
+      en: You can count on that. He's a good tenant.
+      ar: يمكنك الاعتماد على ذلك. إنه مستأجر جيد.
+      mk: На тоа можеш да се потпреш. Тој е добар станар.
+- type: prompt
+  ask:
+    en: 'Say: assisted living.'
+    ar: 'قل: السكن مع الرعاية.'
+    mk: 'Кажете: дом со нега.'
+  answer:
+    speaker: protagonist
+    text: Das betreute Wohnen.
+  items:
+  - das-betreute-wohnen
+- type: prompt
+  ask:
+    en: 'Say: as a gift to her nephew.'
+    ar: 'قل: هبةً لابن أخيها.'
+    mk: 'Кажете: како подарок на внукот.'
+  answer:
+    speaker: protagonist
+    text: Als Schenkung an den Neffen.
+  items:
+  - die-schenkung
+  - der-neffe
+- type: narrator
+  text:
+    en: 'Legal register in everyday use: «Der Mietvertrag besteht fort» (continues), «in den Vertrag eintreten» (take over the contract), and the old legal saying «Kauf bricht nicht Miete». Asking directly
+      about «Eigenbedarf» is fine and wise.'
+    ar: 'الأسلوب القانوني في الحياة اليومية: «Der Mietvertrag besteht fort» (يستمرّ)، «in den Vertrag eintreten» (يحلّ محلّ الطرف في العقد)، والقول القانوني القديم «Kauf bricht nicht Miete». والسؤال المباشر
+      عن «Eigenbedarf» مقبول وحكيم.'
+    mk: 'Правен регистар во секојдневието: «Der Mietvertrag besteht fort» (продолжува), «in den Vertrag eintreten» (влегува во договорот), и старата правна изрека «Kauf bricht nicht Miete». Директното прашање
+      за «Eigenbedarf» е во ред и мудро.'
+- type: prompt
+  ask:
+    en: 'Say: the tenancy stays unchanged.'
+    ar: 'قل: عقد الإيجار يبقى دون تغيير.'
+    mk: 'Кажете: договорот останува непроменет.'
+  answer:
+    speaker: protagonist
+    text: Der Mietvertrag bleibt unverändert.
+  items:
+  - unveraendert
+- type: prompt
+  ask:
+    en: 'Say: entry in the land register.'
+    ar: 'قل: القيد في السجل العقاري.'
+    mk: 'Кажете: упис во катастарот.'
+  answer:
+    speaker: protagonist
+    text: Die Eintragung ins Grundbuch.
+  items:
+  - die-grundbucheintragung
+- type: prompt
+  ask:
+    en: 'He says: I take over the contract.'
+    ar: 'يقول: أحلّ محلّها في العقد.'
+    mk: 'Тој вели: влегувам во договорот.'
+  answer:
+    speaker: protagonist
+    text: Ich trete in den Vertrag ein.
+  items:
+  - der-vermieter-c2
+- type: prompt
+  ask:
+    en: 'Quote the rule: a sale doesn''t break a tenancy.'
+    ar: 'اقتبس القاعدة: البيع لا ينهي الإيجار.'
+    mk: 'Цитирајте го правилото: продажбата не го раскинува наемот.'
+  answer:
+    speaker: protagonist
+    text: Kauf bricht nicht Miete.
+  items:
+  - kauf-bricht-nicht-miete
+- type: prompt
+  ask:
+    en: 'Say: the tenancy continues.'
+    ar: 'قل: عقد الإيجار يستمرّ.'
+    mk: 'Кажете: договорот продолжува.'
+  answer:
+    speaker: protagonist
+    text: Der Mietvertrag besteht fort.
+  items:
+  - der-mietvertrag-besteht-fort
+- type: prompt
+  ask:
+    en: Ask about notice for own use.
+    ar: اسأل عن الإنهاء لحاجة المالك.
+    mk: Прашајте за отказ поради сопствена потреба.
+  answer:
+    speaker: protagonist
+    text: Und eine Eigenbedarfskündigung?
+  items:
+  - die-eigenbedarfskuendigung
+- type: prompt
+  ask:
+    en: 'Say: the change of owner.'
+    ar: 'قل: تغيّر المالك.'
+    mk: 'Кажете: промената на сопственикот.'
+  answer:
+    speaker: protagonist
+    text: Der Eigentümerwechsel.
+  items:
+  - der-eigentuemerwechsel
+- type: narrator
+  text:
+    en: When a house is sold, given away or inherited, the new owner takes over existing tenancies unchanged — 'Kauf bricht nicht Miete'. A notice for the owner's own use (Eigenbedarf) must be justified,
+      follows the legal notice periods, and can be challenged; a tenants' association helps.
+    ar: حين يُباع البيت أو يُوهب أو يُورث، يتسلّم المالك الجديد عقود الإيجار القائمة دون تغيير — «البيع لا ينهي الإيجار». والإنهاء لحاجة المالك الشخصية (Eigenbedarf) يجب تعليله، ويتبع مهل الإنهاء القانونية،
+      ويمكن الطعن فيه؛ وجمعية المستأجرين تساعد.
+    mk: Кога куќата се продава, подарува или наследува, новиот сопственик ги презема постојните наеми непроменети — „Kauf bricht nicht Miete“. Отказ поради сопствена потреба (Eigenbedarf) мора да се образложи,
+      ги следи законските рокови и може да се оспори; здружението на станари помага.
+- type: prompt
+  ask:
+    en: 'Once more: say “the gift (legal transfer)”.'
+    ar: 'مرة أخرى: قل “الهبة”.'
+    mk: 'Уште еднаш: кажете „подарувањето“.'
+  answer:
+    speaker: protagonist
+    text: die Schenkung
+  items:
+  - die-schenkung
+- type: prompt
+  ask:
+    en: 'Once more: say “the nephew”.'
+    ar: 'مرة أخرى: قل “ابن الأخ”.'
+    mk: 'Уште еднаш: кажете „внукот (син на брат/сестра)“.'
+  answer:
+    speaker: protagonist
+    text: der Neffe
+  items:
+  - der-neffe
+- type: prompt
+  ask:
+    en: 'Once more: say “assisted living”.'
+    ar: 'مرة أخرى: قل “السكن مع الرعاية”.'
+    mk: 'Уште еднаш: кажете „домувањето со нега“.'
+  answer:
+    speaker: protagonist
+    text: das betreute Wohnen
+  items:
+  - das-betreute-wohnen
+- type: prompt
+  ask:
+    en: 'Once more: say “the change of owner”.'
+    ar: 'مرة أخرى: قل “تغيّر المالك”.'
+    mk: 'Уште еднаш: кажете „промената на сопственикот“.'
+  answer:
+    speaker: protagonist
+    text: der Eigentümerwechsel
+  items:
+  - der-eigentuemerwechsel
+- type: prompt
+  ask:
+    en: 'Once more: say “a sale doesn''t break a tenancy”.'
+    ar: 'مرة أخرى: قل “البيع لا ينهي الإيجار”.'
+    mk: 'Уште еднаш: кажете „продажбата не го раскинува наемот“.'
+  answer:
+    speaker: protagonist
+    text: Kauf bricht nicht Miete
+  items:
+  - kauf-bricht-nicht-miete
+- type: prompt
+  ask:
+    en: 'Once more: say “the tenancy continues”.'
+    ar: 'مرة أخرى: قل “عقد الإيجار يستمرّ”.'
+    mk: 'Уште еднаш: кажете „договорот за наем продолжува“.'
+  answer:
+    speaker: protagonist
+    text: der Mietvertrag besteht fort
+  items:
+  - der-mietvertrag-besteht-fort
+- type: prompt
+  ask:
+    en: 'Once more: say “notice for the owner''s own use”.'
+    ar: 'مرة أخرى: قل “الإنهاء لحاجة المالك الشخصية”.'
+    mk: 'Уште еднаш: кажете „отказ поради сопствена потреба“.'
+  answer:
+    speaker: protagonist
+    text: die Eigenbedarfskündigung
+  items:
+  - die-eigenbedarfskuendigung
+- type: prompt
+  ask:
+    en: 'Once more: say “take over the contract”.'
+    ar: 'مرة أخرى: قل “يحلّ محلّ الطرف في العقد”.'
+    mk: 'Уште еднаш: кажете „влегува во договорот“.'
+  answer:
+    speaker: protagonist
+    text: in den Vertrag eintreten
+  items:
+  - der-vermieter-c2
+- type: prompt
+  ask:
+    en: 'Once more: say “entry in the land register”.'
+    ar: 'مرة أخرى: قل “القيد في السجل العقاري”.'
+    mk: 'Уште еднаш: кажете „упис во катастарот“.'
+  answer:
+    speaker: protagonist
+    text: die Eintragung ins Grundbuch
+  items:
+  - die-grundbucheintragung
+- type: prompt
+  ask:
+    en: 'Once more: say “unchanged”.'
+    ar: 'مرة أخرى: قل “دون تغيير”.'
+    mk: 'Уште еднаш: кажете „непроменето“.'
+  answer:
+    speaker: protagonist
+    text: unverändert
+  items:
+  - unveraendert
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    ar: والآن بعض ما تعلمتَه في الوحدات السابقة، في هذا الموقف الجديد.
+    mk: Сега нешто од претходните лекции, во оваа нова ситуација.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the rhyme — and “the rhythm — and “the stanza — and “Rainer Maria Rilke (poet, 1875–1926) — and “the sundial — and “completion, perfection — and “sweetness — and “recite, perform — and “the
+      stress, emphasis — and “melancholy — and “public question time — and “the city councillors — and “Mr Chairman — and “the speaking time — and “I ask you: — and “very concretely — and “the promise,
+      commitment — and “the fact — and “a written answer — and “adjourn, postpone — and “the holiday house”.'
+    ar: 'قل: “القافية — و“الإيقاع — و“المقطع الشعري — و“راينر ماريا ريلكه (شاعر) — و“المزولة — و“الاكتمال — و“الحلاوة — و“يُلقي — و“النبر — و“الكآبة الشجيّة — و“وقت أسئلة المواطنين — و“أعضاء مجلس المدينة
+      — و“السيد الرئيس المحترم — و“وقت الكلام — و“أسألكم: — و“بشكل محدّد تمامًا — و“الوعد — و“الحقيقة الواقعة — و“ردّ مكتوب — و“يؤجّل — و“بيت العطلة”.'
+    mk: 'Кажете: „римата“ — и „ритамот“ — и „строфата“ — и „Рајнер Марија Рилке (поет)“ — и „сончевиот часовник“ — и „довршувањето“ — и „сладоста“ — и „рецитира“ — и „нагласокот“ — и „меланхолијата“ — и
+      „часот за прашања на граѓаните“ — и „советниците“ — и „Почитуван господине претседавач“ — и „времето за говор“ — и „Ве прашувам:“ — и „сосема конкретно“ — и „ветувањето“ — и „фактот“ — и „писмен одговор“
+      — и „одложува“ — и „куќата за одмор“.'
+  answer:
+    speaker: protagonist
+    text: 'der Reim … der Rhythmus … die Strophe … Rainer Maria Rilke … die Sonnenuhr … die Vollendung … die Süße … vortragen … die Betonung … die Melancholie … die Bürgerfragestunde … die Stadträtinnen
+      und Stadträte … Sehr geehrter Herr Vorsitzender … die Redezeit … Ich frage Sie: … ganz konkret … die Zusage … die Tatsache … eine schriftliche Antwort … vertagen … das Ferienhaus'
+  items:
+  - der-reim
+  - der-rhythmus
+  - die-strophe
+  - der-dichter-c2
+  - die-sonnenuhr
+  - die-vollendung
+  - die-suesse
+  - vortragen
+  - die-betonung
+  - die-melancholie
+  - die-buergerfragestunde
+  - der-stadtrat-c2
+  - sehr-geehrter-herr-vorsitzender
+  - die-redezeit
+  - ich-frage-sie
+  - konkret
+  - die-zusage
+  - die-tatsache
+  - die-schriftliche-antwort
+  - die-vertagung
+  - das-ferienhaus
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the cost split — and “per head — and “the kitty — and “Wouldn''t it be fairer if …? — and “If we had …, it would be … — and “the expense app — and “settle up — and “the Baltic Sea — and “generous
+      — and “succession — and “the handover of the business — and “retirement — and “the regular customers — and “the continuation — and “the reorientation — and “the online shop — and “tradition — and
+      “life''s work — and “under new management — and “the book fair — and “…, isn''t it? / right?”.'
+    ar: 'قل: “تقسيم التكاليف — و“للفرد — و“الصندوق المشترك — و“أليس من الأعدل أن …؟ — و“لو كان لدينا …، لكان … — و“تطبيق المصاريف — و“يصفّي الحساب — و“بحر البلطيق — و“كريم — و“الخلافة في العمل — و“تسليم
+      المحل — و“التقاعد — و“الزبائن الدائمون — و“الاستمرار — و“إعادة التوجيه — و“المتجر الإلكتروني — و“التقليد — و“عمل العمر — و“بإدارة جديدة — و“معرض الكتاب — و“…، أليس كذلك؟”.'
+    mk: 'Кажете: „поделбата на трошоците“ — и „по глава“ — и „заедничката каса“ — и „Зарем не би било поправедно ако …?“ — и „Да имавме …, ќе беше …“ — и „апликацијата за трошоци“ — и „пресметува“ — и „Балтичкото
+      Море“ — и „дарежливо“ — и „наследувањето (на фирмата)“ — и „предавањето на дуќанот“ — и „пензијата (состојба)“ — и „редовните муштерии“ — и „продолжувањето“ — и „новата насока“ — и „онлајн продавницата“
+      — и „традицијата“ — и „животното дело“ — и „под ново раководство“ — и „саемот на книгата“ — и „…, нели?“.'
+  answer:
+    speaker: protagonist
+    text: die Kostenaufteilung … pro Kopf … die gemeinsame Kasse … Wäre es nicht fairer, wenn …? … Hätten wir …, wäre … … die Ausgaben-App … abrechnen … die Ostsee … großzügig … die Nachfolge … die Geschäftsübergabe
+      … der Ruhestand … die Stammkundschaft … die Weiterführung … die Neuausrichtung … der Onlineshop … die Tradition … das Lebenswerk … unter neuer Leitung … die Buchmesse … …, oder?
+  items:
+  - die-kostenaufteilung
+  - pro-kopf
+  - die-gemeinsame-kasse
+  - waere-es-nicht-fairer
+  - haetten-wir
+  - die-app
+  - abrechnen
+  - die-ostsee
+  - grosszuegig
+  - die-nachfolge-c2
+  - die-uebergabe-laden
+  - der-ruhestand
+  - die-stammkundschaft
+  - die-weiterfuehrung
+  - die-neuausrichtung
+  - der-onlineshop
+  - die-tradition
+  - das-lebenswerk
+  - unter-neuer-leitung
+  - die-buchmesse
+  - oder-tag
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “…, right? (colloquial) — and “…, right? (southern) — and “pretty crowded — and “the queue — and “Caught out! — and “for work or for pleasure — and “the reading (by an author) — and “Enjoy
+      the fair! — and “the bike — and “a used bike — and “the brake — and “works — and “the light — and “a good lock — and “the basket — and “a test ride — and “the tyre — and “new tyres — and “the bike
+      lane”.'
+    ar: 'قل: “…، صح؟ (عاميًا) — و“…، صح؟ (جنوبيًا) — و“مزدحم جدًا — و“الطابور — و“كشفتِني! — و“للعمل أم للمتعة — و“القراءة (من الكاتب) — و“استمتع بالمعرض! — و“الدراجة — و“دراجة مستعملة — و“المكبح — و“يعمل
+      — و“الضوء — و“قفل جيد — و“السلة — و“تجربة قيادة — و“الإطار — و“إطارات جديدة — و“مسار الدراجات”.'
+    mk: 'Кажете: „…, а? (разговорно)“ — и „…, нели? (јужно)“ — и „прилично полно“ — и „редицата“ — и „Ме фативте!“ — и „службено или приватно“ — и „читањето“ — и „Уживајте на саемот!“ — и „велосипедот“
+      — и „половен велосипед“ — и „сопирачката“ — и „работи“ — и „светлото“ — и „добра брава“ — и „кошничката“ — и „пробно возење“ — и „гумата“ — и „нови гуми“ — и „велосипедската патека“.'
+  answer:
+    speaker: protagonist
+    text: …, ne? … …, gell? … ganz schön voll … die Schlange … Erwischt! … beruflich oder privat … die Lesung … Viel Spaß auf der Messe! … das Fahrrad … ein gebrauchtes Fahrrad … die Bremse … funktioniert
+      … das Licht … ein gutes Schloss … der Korb … eine Probefahrt … der Reifen … neue Reifen … der Radweg
+  items:
+  - ne-tag
+  - gell
+  - voll-heute
+  - die-schlange
+  - erwischt
+  - beruflich-oder-privat
+  - die-lesung
+  - viel-spass-auf
+  - das-fahrrad
+  - ein-gebrauchtes
+  - die-bremse
+  - funktioniert
+  - das-licht-rad
+  - ein-gutes-schloss
+  - der-korb
+  - eine-probefahrt
+  - der-reifen
+  - neue-reifen
+  - der-radweg
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “equal rights — and “self-determination — and “the victim — and “the blame, guilt”.'
+  answer:
+    speaker: protagonist
+    text: die Gleichberechtigung … die Selbstbestimmung … das Opfer … die Schuld
+  items:
+  - die-gleichberechtigung-e
+  - die-selbstbestimmung-e
+  - das-opfer-e
+  - die-schuld-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “forced marriage — and “the helpline — and “the women''s shelter — and “anonymous”.'
+  answer:
+    speaker: protagonist
+    text: die Zwangsheirat … das Hilfetelefon … das Frauenhaus … anonym
+  items:
+  - die-zwangsheirat-e
+  - das-hilfetelefon-e
+  - das-frauenhaus-e
+  - anonym-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the decision about one''s own life — and “no one may …”.'
+  answer:
+    speaker: protagonist
+    text: die Entscheidung über das eigene Leben … niemand darf …
+  items:
+  - die-entscheidung-ueber-e
+  - niemand-darf-e
+  for:
+  - en
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “المساواة في الحقوق — و“تقرير المصير — و“الضحية — و“اللوم، الذنب”.'
+  answer:
+    speaker: protagonist
+    text: die Gleichberechtigung … die Selbstbestimmung … das Opfer … die Schuld
+  items:
+  - die-gleichberechtigung-a
+  - die-selbstbestimmung-a
+  - das-opfer-a
+  - die-schuld-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “الزواج القسري — و“خط المساعدة الهاتفي — و“دار حماية النساء — و“دون كشف الهوية”.'
+  answer:
+    speaker: protagonist
+    text: die Zwangsheirat … das Hilfetelefon … das Frauenhaus … anonym
+  items:
+  - die-zwangsheirat-a
+  - das-hilfetelefon-a
+  - das-frauenhaus-a
+  - anonym-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    ar: 'قل: “القرار في الحياة الخاصة — و“لا يحق لأحد …”.'
+  answer:
+    speaker: protagonist
+    text: die Entscheidung über das eigene Leben … niemand darf …
+  items:
+  - die-entscheidung-ueber-a
+  - niemand-darf-a
+  for:
+  - ar
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „еднаквите права“ — и „самоопределувањето“ — и „жртвата“ — и „вината“.'
+  answer:
+    speaker: protagonist
+    text: die Gleichberechtigung … die Selbstbestimmung … das Opfer … die Schuld
+  items:
+  - die-gleichberechtigung-m
+  - die-selbstbestimmung-m
+  - das-opfer-m
+  - die-schuld-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „семејното насилство“ — и „телефонската линија за помош“ — и „засолништето за жени“ — и „анонимно“.'
+  answer:
+    speaker: protagonist
+    text: die häusliche Gewalt … das Hilfetelefon … das Frauenhaus … anonym
+  items:
+  - die-haeusliche-gewalt-m
+  - das-hilfetelefon-m
+  - das-frauenhaus-m
+  - anonym-m
+  for:
+  - mk
+- type: prompt
+  review: true
+  ask:
+    mk: 'Кажете: „одлуката за сопствениот живот“ — и „молчи“.'
+  answer:
+    speaker: protagonist
+    text: die Entscheidung über das eigene Leben … schweigen
+  items:
+  - die-entscheidung-ueber-m
+  - schweigen-m
+  for:
+  - mk
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    ar: استمع إلى المحادثة مرة أخرى. الآن تفهمها.
+    mk: Слушнете го разговорот уште еднаш. Сега го разбирате.
+- type: dialogue
+  again: true
+- type: selfcheck
