@@ -1,0 +1,612 @@
+# UNIT ja B2-02 — written by AI (Claude) for Casus; expanded from src/B2-02.yml by tools/expand_unit.py. Edit the source.
+
+id: B2-02
+level: B2
+number: 2
+protagonist: m
+title:
+  en: The contract
+  pt: O contrato
+situation:
+  en: 'You got the permanent post. Chief Sato goes through the contract with you: monthly pay, bonuses, the probation period.'
+  pt: 'Você conseguiu a vaga efetiva. A chefe Sato repassa o contrato com você: salário mensal, bônus, período de experiência.'
+learn_lessons: []
+culture: Bonuses twice a year
+new_items:
+- id: keiyakusho
+  text: 契約書[けいやくしょ]
+  meaning:
+    en: contract (document)
+    pt: contrato (documento)
+- id: bonasu
+  text: ボーナス
+  meaning:
+    en: bonus
+    pt: bônus
+- id: shiyou-kikan
+  text: 試用[しよう] 期間[きかん]
+  meaning:
+    en: probation period
+    pt: período de experiência
+  rare: true
+- id: koto-ni-naru
+  text: 〜こと に なる
+  meaning:
+    en: it's been decided that…
+    pt: ficou decidido que…
+- id: hairu-koto-ni-natta
+  text: 入[はい]る こと に なりました
+  meaning:
+    en: it's been decided I'll join
+    pt: ficou decidido que vou entrar
+- id: gekkyuu
+  text: 月給[げっきゅう]
+  meaning:
+    en: monthly salary
+    pt: salário mensal
+- id: shakai-hoken
+  text: 社会[しゃかい] 保険[ほけん]
+  meaning:
+    en: social insurance
+    pt: previdência e plano de saúde
+  rare: true
+- id: nenkin
+  text: 年金[ねんきん]
+  meaning:
+    en: pension
+    pt: aposentadoria, pensão
+- id: hanko-wo-osu
+  text: 判子[はんこ] を 押[お]す
+  meaning:
+    en: stamp your seal
+    pt: carimbar
+- id: joukou
+  text: 条件[じょうけん]
+  meaning:
+    en: conditions, terms
+    pt: condições
+- id: yoroshii-desu-ka
+  text: よろしい です か
+  meaning:
+    en: is that all right? (polite)
+    pt: está bem? (educado)
+reviews:
+- item: moushiwake
+  from: A1-29
+- item: machigaemashita
+  from: A1-29
+- item: machigai
+  from: A1-29
+- item: kayoubi
+  from: A1-29
+- item: gomen
+  from: A1-29
+- item: gomennasai
+  from: A1-29
+- item: tsugi-kara
+  from: A1-29
+- item: kakunin
+  from: A1-29
+- item: mou-ichido
+  from: A1-29
+- item: kinishinai-de-kudasai
+  from: A1-29
+- item: sentou
+  from: B1-01
+- item: yubune
+  from: B1-01
+- item: gyuunyuu
+  from: B1-01
+- item: onna-yu
+  from: B1-01
+- item: atsui-casual
+  from: B1-01
+- item: nanka
+  from: B1-01
+- item: dekai
+  from: B1-01
+- item: desho
+  from: B1-01
+- item: hairou
+  from: B1-01
+- item: yatta
+  from: B1-01
+- item: furo-agari
+  from: B1-01
+- item: kitaguchi
+  from: B1-17
+- item: minamiguchi
+  from: B1-17
+- item: mayotta
+  from: B1-17
+- item: to-itta
+  from: B1-17
+- item: minami-to-itta
+  from: B1-17
+- item: kaisatsu
+  from: B1-17
+- item: machiawase
+  from: B1-17
+- item: mejirushi
+  from: B1-17
+- item: ima-doko
+  from: B1-17
+- item: mukau
+  from: B1-17
+- item: dousei
+  from: B1-25
+- item: kekkon-mae
+  from: B1-25
+- item: ryoushin
+  from: B1-25
+- item: kamoshirenai
+  from: B1-25
+- item: hantai-suru-kamo
+  from: B1-25
+- item: yachin
+  from: B1-25
+- item: setsuyaku
+  from: B1-25
+- item: isshoni-sumu
+  from: B1-25
+- item: shinpai
+  from: B1-25
+- item: setsumei-suru
+  from: B1-25
+- item: shoujiki-ni-hanasu
+  from: B1-25
+- item: hitorigurashi
+  from: B1-29
+- item: koureisha
+  from: B1-29
+- item: kodoku
+  from: B1-29
+- item: mimamori
+  from: B1-29
+- item: you-ni
+  from: B1-29
+- item: shinpai-shinai-you-ni
+  from: B1-29
+- item: koe-wo-kakeru
+  from: B1-29
+- item: shinbun
+  from: B1-29
+- item: daijoubu-desu-ka-polite
+  from: B1-29
+- item: mata-kimasu
+  from: B1-29
+- item: kodokushi
+  from: B1-29
+- item: mensetsu
+  from: B2-01
+- item: jiko-shoukai
+  from: B2-01
+- item: chousho
+  from: B2-01
+- item: tansho
+  from: B2-01
+- item: shibou-douki
+  from: B2-01
+- item: moushimasu
+  from: B2-01
+- item: orimasu
+  from: B2-01
+- item: mairimashita
+  from: B2-01
+- item: shitsurei-itashimasu
+  from: B2-01
+- item: seishain
+  from: B2-01
+- item: kouken
+  from: B2-01
+steps:
+- type: narrator
+  text:
+    en: 'You got the permanent post. Chief Sato goes through the contract with you: monthly pay, bonuses, the probation period. Listen to the conversation; you don''t need to understand it yet.'
+    pt: 'Você conseguiu a vaga efetiva. A chefe Sato repassa o contrato com você: salário mensal, bônus, período de experiência. Escute a conversa; ainda não precisa entender.'
+- type: dialogue
+  lines:
+  - speaker: sato
+    text: 来月[らいげつ] から 正社員[せいしゃいん] と して 働[はたら]く こと に なりました。 おめでとう。
+    meaning:
+      en: It's been decided you'll work as a permanent employee from next month. Congratulations.
+      pt: Ficou decidido que você vai trabalhar como efetivo a partir do mês que vem. Parabéns.
+  - speaker: protagonist
+    text: ありがとう ございます。 条件[じょうけん] を 確認[かくにん] しても よろしい です か。
+    meaning:
+      en: Thank you. May I check the terms?
+      pt: Obrigado. Posso conferir as condições?
+  - speaker: sato
+    text: はい。 最初[さいしょ] の 三[さん] か月[げつ] は 試用[しよう] 期間[きかん] です。
+    meaning:
+      en: Yes. The first three months are a probation period.
+      pt: Sim. Os três primeiros meses são de experiência.
+  - speaker: protagonist
+    text: 月給[げっきゅう] と ボーナス は？
+    meaning:
+      en: And the monthly salary and bonuses?
+      pt: E o salário mensal e o bônus?
+  - speaker: sato
+    text: ボーナス は 年[ねん] に 二回[にかい]、 夏[なつ] と 冬[ふゆ] です。 社会[しゃかい] 保険[ほけん] と 年金[ねんきん] も あります。
+    meaning:
+      en: Bonuses twice a year, summer and winter. There's social insurance and a pension too.
+      pt: Bônus duas vezes por ano, no verão e no inverno. Tem previdência e plano de saúde também.
+  - speaker: protagonist
+    text: 年金[ねんきん] は 帰国[きこく] したら どう なります か。
+    meaning:
+      en: What happens to the pension if I go back home?
+      pt: E a aposentadoria, se eu voltar para o Brasil?
+  - speaker: sato
+    text: ブラジル と 日本[にほん] は 協定[きょうてい] が ある ので、 期間[きかん] を 合[あ]わせられます。
+    meaning:
+      en: Brazil and Japan have an agreement, so the periods can be combined.
+      pt: O Brasil e o Japão têm um acordo, então dá para somar os períodos.
+  - speaker: sato
+    text: では、 ここ に 判子[はんこ] を 押[お]して ください。
+    meaning:
+      en: Then please stamp your seal here.
+      pt: Então carimbe aqui, por favor.
+- type: prompt
+  ask:
+    en: 'Say: the contract.'
+    pt: 'Diga: o contrato.'
+  answer:
+    speaker: protagonist
+    text: 契約書[けいやくしょ]
+  items:
+  - keiyakusho
+- type: prompt
+  ask:
+    en: 'Say: terms, conditions.'
+    pt: 'Diga: as condições.'
+  answer:
+    speaker: protagonist
+    text: 条件[じょうけん]
+  items:
+  - joukou
+- type: prompt
+  ask:
+    en: 'Ask politely: is that all right?'
+    pt: 'Pergunte com educação: está bem?'
+  answer:
+    speaker: protagonist
+    text: よろしい です か。
+  items:
+  - yoroshii-desu-ka
+- type: narrator
+  text:
+    en: '«〜こと に なる» is it''s been decided — by others or by circumstances: «働[はたら]く こと に なりました», it''s been arranged that I''ll work. Compare «〜こと に する», I decided. Japanese often uses «なる» to sound modest
+      about good news.'
+    pt: '«〜こと に なる» é ficou decidido — pelos outros ou pelas circunstâncias: «働[はたら]く こと に なりました», ficou acertado que vou trabalhar. Compare «〜こと に する», eu decidi. O japonês usa muito «なる» para soar modesto
+      com uma boa notícia.'
+- type: prompt
+  ask:
+    en: 'Say the pattern: it''s been decided that…'
+    pt: 'Diga o padrão: ficou decidido que…'
+  answer:
+    speaker: protagonist
+    text: 〜こと に なる
+  items:
+  - koto-ni-naru
+- type: prompt
+  ask:
+    en: 'Say: it''s been decided I''ll join.'
+    pt: 'Diga: ficou decidido que vou entrar.'
+  answer:
+    speaker: protagonist
+    text: 入[はい]る こと に なりました。
+  items:
+  - hairu-koto-ni-natta
+- type: prompt
+  ask:
+    en: 'Say: the probation period.'
+    pt: 'Diga: o período de experiência.'
+  answer:
+    speaker: protagonist
+    text: 試用[しよう] 期間[きかん]
+  items:
+  - shiyou-kikan
+- type: prompt
+  ask:
+    en: 'Say: monthly salary.'
+    pt: 'Diga: salário mensal.'
+  answer:
+    speaker: protagonist
+    text: 月給[げっきゅう]
+  items:
+  - gekkyuu
+- type: prompt
+  ask:
+    en: 'Say: bonus.'
+    pt: 'Diga: bônus.'
+  answer:
+    speaker: protagonist
+    text: ボーナス
+  items:
+  - bonasu
+- type: prompt
+  ask:
+    en: 'Say: social insurance.'
+    pt: 'Diga: previdência e plano de saúde.'
+  answer:
+    speaker: protagonist
+    text: 社会[しゃかい] 保険[ほけん]
+  items:
+  - shakai-hoken
+- type: prompt
+  ask:
+    en: 'Say: pension.'
+    pt: 'Diga: aposentadoria.'
+  answer:
+    speaker: protagonist
+    text: 年金[ねんきん]
+  items:
+  - nenkin
+- type: prompt
+  ask:
+    en: 'Say: stamp your seal.'
+    pt: 'Diga: carimbar.'
+  answer:
+    speaker: protagonist
+    text: 判子[はんこ] を 押[お]す
+  items:
+  - hanko-wo-osu
+- type: narrator
+  text:
+    en: Many Japanese companies pay a bonus twice a year, in summer and winter, often worth one or more months' salary each — though it depends on the company and on results. Brazil and Japan have a social-security
+      agreement, so years paid into either pension can count toward the other.
+    pt: Muitas empresas japonesas pagam bônus duas vezes por ano, no verão e no inverno, muitas vezes de um ou mais salários cada — mas depende da empresa e dos resultados. O Brasil e o Japão têm um acordo
+      de previdência, então os anos de contribuição num país podem contar no outro.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil há o 13º salário e as férias com um terço; no Japão, o bônus de verão e de inverno faz esse papel — só que não é garantido por lei como o nosso 13º.
+- type: prompt
+  ask:
+    en: 'Once more: say “contract (document)”.'
+    pt: 'Mais uma vez: diga “contrato (documento)”.'
+  answer:
+    speaker: protagonist
+    text: 契約書[けいやくしょ]
+  items:
+  - keiyakusho
+- type: prompt
+  ask:
+    en: 'Once more: say “bonus”.'
+    pt: 'Mais uma vez: diga “bônus”.'
+  answer:
+    speaker: protagonist
+    text: ボーナス
+  items:
+  - bonasu
+- type: prompt
+  ask:
+    en: 'Once more: say “probation period”.'
+    pt: 'Mais uma vez: diga “período de experiência”.'
+  answer:
+    speaker: protagonist
+    text: 試用[しよう] 期間[きかん]
+  items:
+  - shiyou-kikan
+- type: prompt
+  ask:
+    en: 'Once more: say “it''s been decided that…”.'
+    pt: 'Mais uma vez: diga “ficou decidido que…”.'
+  answer:
+    speaker: protagonist
+    text: 〜こと に なる
+  items:
+  - koto-ni-naru
+- type: prompt
+  ask:
+    en: 'Once more: say “it''s been decided I''ll join”.'
+    pt: 'Mais uma vez: diga “ficou decidido que vou entrar”.'
+  answer:
+    speaker: protagonist
+    text: 入[はい]る こと に なりました
+  items:
+  - hairu-koto-ni-natta
+- type: prompt
+  ask:
+    en: 'Once more: say “monthly salary”.'
+    pt: 'Mais uma vez: diga “salário mensal”.'
+  answer:
+    speaker: protagonist
+    text: 月給[げっきゅう]
+  items:
+  - gekkyuu
+- type: prompt
+  ask:
+    en: 'Once more: say “social insurance”.'
+    pt: 'Mais uma vez: diga “previdência e plano de saúde”.'
+  answer:
+    speaker: protagonist
+    text: 社会[しゃかい] 保険[ほけん]
+  items:
+  - shakai-hoken
+- type: prompt
+  ask:
+    en: 'Once more: say “pension”.'
+    pt: 'Mais uma vez: diga “aposentadoria, pensão”.'
+  answer:
+    speaker: protagonist
+    text: 年金[ねんきん]
+  items:
+  - nenkin
+- type: prompt
+  ask:
+    en: 'Once more: say “stamp your seal”.'
+    pt: 'Mais uma vez: diga “carimbar”.'
+  answer:
+    speaker: protagonist
+    text: 判子[はんこ] を 押[お]す
+  items:
+  - hanko-wo-osu
+- type: prompt
+  ask:
+    en: 'Once more: say “conditions, terms”.'
+    pt: 'Mais uma vez: diga “condições”.'
+  answer:
+    speaker: protagonist
+    text: 条件[じょうけん]
+  items:
+  - joukou
+- type: prompt
+  ask:
+    en: 'Once more: say “is that all right? (polite)”.'
+    pt: 'Mais uma vez: diga “está bem? (educado)”.'
+  answer:
+    speaker: protagonist
+    text: よろしい です か
+  items:
+  - yoroshii-desu-ka
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “interview — and “self-introduction — and “strong point — and “weak point — and “reason for applying — and “my name is… (humble) — and “am, is (humble いる) — and “came (humble) — and “excuse
+      me (very polite) — and “permanent employee”.'
+    pt: 'Diga: “entrevista — e “apresentação pessoal — e “ponto forte — e “ponto fraco — e “motivo da candidatura — e “me chamo… (humilde) — e “estou (humilde de いる) — e “vim (humilde) — e “com licença
+      (muito educado) — e “funcionário efetivo”.'
+  answer:
+    speaker: protagonist
+    text: 面接[めんせつ] … 自己[じこ] 紹介[しょうかい] … 長所[ちょうしょ] … 短所[たんしょ] … 志望[しぼう] 動機[どうき] … 〜と 申[もう]します … おります … 参[まい]りました … 失礼[しつれい] いたします … 正社員[せいしゃいん]
+  items:
+  - mensetsu
+  - jiko-shoukai
+  - chousho
+  - tansho
+  - shibou-douki
+  - moushimasu
+  - orimasu
+  - mairimashita
+  - shitsurei-itashimasu
+  - seishain
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “contribution — and “living alone — and “elderly people — and “loneliness — and “watching over (someone) — and “so that… — and “so that (they) don''t worry — and “speak to, check on — and
+      “newspaper — and “are you well?”.'
+    pt: 'Diga: “contribuição — e “morar sozinho — e “idosos — e “solidão — e “olhar por alguém, acompanhar — e “para que… — e “para que não se preocupem — e “puxar conversa, dar uma palavra — e “jornal
+      — e “a senhora está bem?”.'
+  answer:
+    speaker: protagonist
+    text: 貢献[こうけん] … 一人[ひとり] 暮[ぐ]らし … 高齢者[こうれいしゃ] … 孤独[こどく] … 見守[みまも]り … 〜ように … 心配[しんぱい] しない ように … 声[こえ] を かける … 新聞[しんぶん] … お元気[げんき] です か
+  items:
+  - kouken
+  - hitorigurashi
+  - koureisha
+  - kodoku
+  - mimamori
+  - you-ni
+  - shinpai-shinai-you-ni
+  - koe-wo-kakeru
+  - shinbun
+  - daijoubu-desu-ka-polite
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I''ll come again — and “dying alone (unnoticed) — and “living together (unmarried) — and “before marriage — and “(my) parents — and “might, maybe — and “they might be against it — and “rent
+      — and “saving money — and “live together”.'
+    pt: 'Diga: “eu volto, viu — e “morrer sozinho (sem ninguém saber) — e “morar junto (sem casar) — e “antes do casamento — e “(meus) pais — e “pode ser que, talvez — e “pode ser que sejam contra — e “aluguel
+      — e “economia — e “morar junto”.'
+  answer:
+    speaker: protagonist
+    text: また 来[き]ます ね … 孤独死[こどくし] … 同棲[どうせい] … 結婚[けっこん] 前[まえ] … 両親[りょうしん] … 〜かも しれない … 反対[はんたい] する かも しれない … 家賃[やちん] … 節約[せつやく] … 一緒[いっしょ] に 住[す]む
+  items:
+  - mata-kimasu
+  - kodokushi
+  - dousei
+  - kekkon-mae
+  - ryoushin
+  - kamoshirenai
+  - hantai-suru-kamo
+  - yachin
+  - setsuyaku
+  - isshoni-sumu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “worry — and “explain — and “talk honestly — and “north exit — and “south exit — and “got lost — and “said that… — and “(I) said the south exit — and “ticket gate — and “meeting up (at a set
+      place)”.'
+    pt: 'Diga: “preocupação — e “explicar — e “falar com sinceridade — e “saída norte — e “saída sul — e “me perdi — e “disse que… — e “eu disse saída sul — e “catraca, bloqueio — e “encontro marcado (num
+      lugar)”.'
+  answer:
+    speaker: protagonist
+    text: 心配[しんぱい] … 説明[せつめい] する … 正直[しょうじき] に 話[はな]す … 北口[きたぐち] … 南口[みなみぐち] … 迷[まよ]った … 〜と 言[い]った … 南口[みなみぐち] と 言[い]った … 改札[かいさつ] … 待[ま]ち合[あ]わせ
+  items:
+  - shinpai
+  - setsumei-suru
+  - shoujiki-ni-hanasu
+  - kitaguchi
+  - minamiguchi
+  - mayotta
+  - to-itta
+  - minami-to-itta
+  - kaisatsu
+  - machiawase
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “landmark — and “where are you now? — and “head towards — and “public bath — and “the bathtub (the hot pool) — and “milk — and “women''s bath — and “it''s hot, huh (casual) — and “kind of,
+      like — and “huge (casual)”.'
+    pt: 'Diga: “ponto de referência — e “onde você está agora? — e “ir em direção a — e “banho público — e “a banheira (a piscina quente) — e “leite — e “banho feminino — e “que quente, hein (informal)
+      — e “tipo, meio — e “enorme (informal)”.'
+  answer:
+    speaker: protagonist
+    text: 目印[めじるし] … 今[いま]、 どこ？ … 向[む]かう … 銭湯[せんとう] … 湯船[ゆぶね] … 牛乳[ぎゅうにゅう] … 女湯[おんなゆ] … 熱[あつ]い ね … なんか … でかい
+  items:
+  - mejirushi
+  - ima-doko
+  - mukau
+  - sentou
+  - yubune
+  - gyuunyuu
+  - onna-yu
+  - atsui-casual
+  - nanka
+  - dekai
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “right?, see? — and “let''s get in (casual) — and “yay! — and “after the bath — and “I''m terribly sorry (formal) — and “I made a mistake — and “mistake — and “Tuesday — and “sorry (casual)
+      — and “I''m sorry”.'
+    pt: 'Diga: “né?, viu? — e “vamos entrar (informal) — e “eba! — e “depois do banho — e “peço mil desculpas (formal) — e “eu errei — e “erro — e “terça-feira — e “foi mal (informal) — e “desculpa”.'
+  answer:
+    speaker: protagonist
+    text: でしょ … 入[はい]ろう … やった … 風呂[ふろ] 上[あ]がり … 申[もう]し訳[わけ] ありません … 間違[まちが]えました … 間違[まちが]い … 火曜日[かようび] … ごめん … ごめんなさい
+  items:
+  - desho
+  - hairou
+  - yatta
+  - furo-agari
+  - moushiwake
+  - machigaemashita
+  - machigai
+  - kayoubi
+  - gomen
+  - gomennasai
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “from next time — and “I''ll check, confirm — and “once more — and “don''t worry about it”.'
+    pt: 'Diga: “da próxima vez — e “vou conferir — e “mais uma vez — e “não se preocupe”.'
+  answer:
+    speaker: protagonist
+    text: 次[つぎ] から … 確認[かくにん] します … もう 一度[いちど] … 気[き] に しないで ください
+  items:
+  - tsugi-kara
+  - kakunin
+  - mou-ichido
+  - kinishinai-de-kudasai
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

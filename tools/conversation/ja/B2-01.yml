@@ -1,0 +1,612 @@
+# UNIT ja B2-01 — written by AI (Claude) for Casus; expanded from src/B2-01.yml by tools/expand_unit.py. Edit the source.
+
+id: B2-01
+level: B2
+number: 1
+protagonist: f
+title:
+  en: The interview
+  pt: A entrevista
+situation:
+  en: Your one-year contract is ending. The company offers an interview for a permanent post with Mr Takahashi, head of the overseas department.
+  pt: Seu contrato de um ano está acabando. A empresa oferece uma entrevista para uma vaga efetiva com o senhor Takahashi, chefe do departamento internacional.
+learn_lessons: []
+culture: The interview script
+new_items:
+- id: mensetsu
+  text: 面接[めんせつ]
+  meaning:
+    en: interview
+    pt: entrevista
+- id: jiko-shoukai
+  text: 自己[じこ] 紹介[しょうかい]
+  meaning:
+    en: self-introduction
+    pt: apresentação pessoal
+- id: chousho
+  text: 長所[ちょうしょ]
+  meaning:
+    en: strong point
+    pt: ponto forte
+- id: tansho
+  text: 短所[たんしょ]
+  meaning:
+    en: weak point
+    pt: ponto fraco
+- id: shibou-douki
+  text: 志望[しぼう] 動機[どうき]
+  meaning:
+    en: reason for applying
+    pt: motivo da candidatura
+  rare: true
+- id: moushimasu
+  text: 〜と 申[もう]します
+  meaning:
+    en: my name is… (humble)
+    pt: me chamo… (humilde)
+- id: orimasu
+  text: おります
+  meaning:
+    en: am, is (humble いる)
+    pt: estou (humilde de いる)
+- id: mairimashita
+  text: 参[まい]りました
+  meaning:
+    en: came (humble)
+    pt: vim (humilde)
+- id: shitsurei-itashimasu
+  text: 失礼[しつれい] いたします
+  meaning:
+    en: excuse me (very polite)
+    pt: com licença (muito educado)
+- id: seishain
+  text: 正社員[せいしゃいん]
+  meaning:
+    en: permanent employee
+    pt: funcionário efetivo
+- id: kouken
+  text: 貢献[こうけん]
+  meaning:
+    en: contribution
+    pt: contribuição
+reviews:
+- item: kazoku
+  from: A1-28
+- item: sobo
+  from: A1-28
+- item: sofu
+  from: A1-28
+- item: haha
+  from: A1-28
+- item: chichi
+  from: A1-28
+- item: nikkei
+  from: A1-28
+- item: shashin
+  from: A1-28
+- item: umaremashita
+  from: A1-28
+- item: kodomo
+  from: A1-28
+- item: sansei
+  from: A1-28
+- item: okaasan
+  from: A1-28
+- item: oyaji-gyagu
+  from: A2-30
+- item: omoshiroi
+  from: A2-30
+- item: dajare
+  from: A2-30
+- item: warau
+  from: A2-30
+- item: joudan
+  from: A2-30
+- item: bounenkai
+  from: A2-30
+- item: kotoshi
+  from: A2-30
+- item: rainen
+  from: A2-30
+- item: osewa
+  from: A2-30
+- item: yoroshiku-rainen
+  from: A2-30
+- item: ayamaru
+  from: B1-16
+- item: yurushite
+  from: B1-16
+- item: mou-nidoto
+  from: B1-16
+- item: you-volitional
+  from: B1-16
+- item: ayamarou
+  from: B1-16
+- item: hanasou
+  from: B1-16
+- item: ikou
+  from: B1-16
+- item: kimochi-wo-tsutaeru
+  from: B1-16
+- item: hana-wo-kaou
+  from: B1-16
+- item: chokusetsu
+  from: B1-16
+- item: hansei
+  from: B1-16
+- item: gairaigo
+  from: B1-24
+- item: porutogaru
+  from: B1-24
+- item: tabako
+  from: B1-24
+- item: karuta
+  from: B1-24
+- item: botan
+  from: B1-24
+- item: koto-ni-suru
+  from: B1-24
+- item: yomu-koto-ni-shita
+  from: B1-24
+- item: moji
+  from: B1-24
+- item: gogen
+  from: B1-24
+- item: shiranakatta
+  from: B1-24
+- item: rekishi
+  from: B1-24
+- item: shikke
+  from: B1-28
+- item: kabi
+  from: B1-28
+- item: aida-ni
+  from: B1-28
+- item: hareteiru-aida-ni
+  from: B1-28
+- item: joshitsuki
+  from: B1-28
+- item: mado-wo-akeru
+  from: B1-28
+- item: kawakasu
+  from: B1-28
+- item: jimejime
+  from: B1-28
+- item: heya-boshi
+  from: B1-28
+- item: sentakumono
+  from: B1-28
+- item: tsuyu-ake
+  from: B1-28
+- item: izakaya
+  from: B1-30
+- item: hashigozake
+  from: B1-30
+- item: nijikai
+  from: B1-30
+- item: ichijikai
+  from: B1-30
+- item: toriaezu
+  from: B1-30
+- item: otooshi
+  from: B1-30
+- item: yakitori
+  from: B1-30
+- item: shime
+  from: B1-30
+- item: mou-ikken
+  from: B1-30
+- item: kaerou-ka
+  from: B1-30
+steps:
+- type: narrator
+  text:
+    en: Your one-year contract is ending. The company offers an interview for a permanent post with Mr Takahashi, head of the overseas department. Listen to the conversation; you don't need to understand
+      it yet.
+    pt: Seu contrato de um ano está acabando. A empresa oferece uma entrevista para uma vaga efetiva com o senhor Takahashi, chefe do departamento internacional. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: 失礼[しつれい] いたします。
+    meaning:
+      en: Excuse me.
+      pt: Com licença.
+  - speaker: buchou
+    text: どうぞ、 おかけ ください。 では、 自己[じこ] 紹介[しょうかい] を お願[ねが]いします。
+    meaning:
+      en: Please have a seat. Then, introduce yourself, please.
+      pt: Sente-se, por favor. Então, apresente-se, por favor.
+  - speaker: protagonist
+    text: ブラジル の サンパウロ から 参[まい]りました、 ソウザ と 申[もう]します。 一年[いちねん]、 浜松[はままつ] 工場[こうじょう] で 通訳[つうやく] を して おります。
+    meaning:
+      en: My name is Souza, I came from São Paulo, Brazil. For a year I've been working as an interpreter at the Hamamatsu plant.
+      pt: Me chamo Souza, vim de São Paulo, no Brasil. Há um ano trabalho como intérprete na fábrica de Hamamatsu.
+  - speaker: buchou
+    text: 志望[しぼう] 動機[どうき] は 何[なん] です か。
+    meaning:
+      en: What is your reason for applying?
+      pt: Qual é o motivo da sua candidatura?
+  - speaker: protagonist
+    text: 正社員[せいしゃいん] と して、 日本[にほん] と ブラジル の 架[か]け橋[はし] に なりたい と 思[おも]って おります。
+    meaning:
+      en: As a permanent employee, I'd like to be a bridge between Japan and Brazil.
+      pt: Como funcionária efetiva, quero ser uma ponte entre o Japão e o Brasil.
+  - speaker: buchou
+    text: 長所[ちょうしょ] と 短所[たんしょ] を 教[おし]えて ください。
+    meaning:
+      en: Tell me your strong and weak points.
+      pt: Diga seus pontos fortes e fracos.
+  - speaker: protagonist
+    text: 長所[ちょうしょ] は 明[あか]るい ところ です。 短所[たんしょ] は 漢字[かんじ] が まだ 苦手[にがて] な ところ です が、 毎日[まいにち] 勉強[べんきょう] して おります。
+    meaning:
+      en: My strong point is that I'm cheerful. My weak point is that I'm still weak at kanji, but I study every day.
+      pt: Meu ponto forte é ser alegre. Meu ponto fraco é que ainda tenho dificuldade com kanji, mas estudo todo dia.
+  - speaker: buchou
+    text: わかりました。 会社[かいしゃ] に どう 貢献[こうけん] できます か。
+    meaning:
+      en: I see. How can you contribute to the company?
+      pt: Entendi. Como você pode contribuir com a empresa?
+- type: prompt
+  ask:
+    en: 'Say: a job interview.'
+    pt: 'Diga: uma entrevista de emprego.'
+  answer:
+    speaker: protagonist
+    text: 面接[めんせつ]
+  items:
+  - mensetsu
+- type: prompt
+  ask:
+    en: Enter the room very politely.
+    pt: Entre na sala com muita educação.
+  answer:
+    speaker: protagonist
+    text: 失礼[しつれい] いたします。
+  items:
+  - shitsurei-itashimasu
+- type: prompt
+  ask:
+    en: 'Say: a self-introduction.'
+    pt: 'Diga: apresentação pessoal.'
+  answer:
+    speaker: protagonist
+    text: 自己[じこ] 紹介[しょうかい]
+  items:
+  - jiko-shoukai
+- type: narrator
+  text:
+    en: 'At work you lower yourself with humble verbs, «謙譲語[けんじょうご]»: «言[い]う» → «申[もう]す» («ソウザ と 申[もう]します», my name is Souza); «いる» → «おる» («して おります», I am doing); «来[く]る» / «行[い]く» → «参[まい]る» («参[まい]りました»,
+      I came). You never use them about the other person.'
+    pt: 'No trabalho você se rebaixa com verbos humildes, «謙譲語[けんじょうご]»: «言[い]う» → «申[もう]す» («ソウザ と 申[もう]します», me chamo Souza); «いる» → «おる» («して おります», estou fazendo); «来[く]る» / «行[い]く» → «参[まい]る» («参[まい]りました»,
+      vim). Nunca se usam para falar do outro.'
+- type: prompt
+  ask:
+    en: 'Introduce yourself humbly: my name is Souza.'
+    pt: 'Apresente-se com humildade: me chamo Souza.'
+  answer:
+    speaker: protagonist
+    text: ソウザ と 申[もう]します。
+  items:
+  - moushimasu
+- type: prompt
+  ask:
+    en: 'Say humbly: I came from São Paulo.'
+    pt: 'Diga com humildade: vim de São Paulo.'
+  answer:
+    speaker: protagonist
+    text: サンパウロ から 参[まい]りました。
+  items:
+  - mairimashita
+- type: prompt
+  ask:
+    en: 'Say humbly: I am, I''m doing — the humble いる.'
+    pt: 'Diga com humildade: estou — o いる humilde.'
+  answer:
+    speaker: protagonist
+    text: おります
+  items:
+  - orimasu
+- type: prompt
+  ask:
+    en: 'Say: reason for applying.'
+    pt: 'Diga: motivo da candidatura.'
+  answer:
+    speaker: protagonist
+    text: 志望[しぼう] 動機[どうき]
+  items:
+  - shibou-douki
+- type: prompt
+  ask:
+    en: 'Say: permanent employee.'
+    pt: 'Diga: funcionário efetivo.'
+  answer:
+    speaker: protagonist
+    text: 正社員[せいしゃいん]
+  items:
+  - seishain
+- type: prompt
+  ask:
+    en: 'Say: strong point.'
+    pt: 'Diga: ponto forte.'
+  answer:
+    speaker: protagonist
+    text: 長所[ちょうしょ]
+  items:
+  - chousho
+- type: prompt
+  ask:
+    en: 'Say: weak point.'
+    pt: 'Diga: ponto fraco.'
+  answer:
+    speaker: protagonist
+    text: 短所[たんしょ]
+  items:
+  - tansho
+- type: prompt
+  ask:
+    en: 'Say: contribution.'
+    pt: 'Diga: contribuição.'
+  answer:
+    speaker: protagonist
+    text: 貢献[こうけん]
+  items:
+  - kouken
+- type: narrator
+  text:
+    en: 'Japanese interviews follow a script: knock three times, «失礼[しつれい] いたします», wait to be told to sit, a short self-introduction, the reason for applying, strong and weak points — a weakness always
+      comes with what you''re doing about it. Answers are short and humble.'
+    pt: 'Entrevistas japonesas seguem um roteiro: bater três vezes, «失礼[しつれい] いたします», esperar mandarem sentar, uma apresentação curta, o motivo da candidatura, pontos fortes e fracos — o ponto fraco sempre
+      vem com o que você está fazendo para melhorar. Respostas curtas e humildes.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'No Brasil a entrevista é mais conversa, e se vende o próprio peixe. No Japão, humildade e roteiro: fale pouco de si, muito do que pode fazer pela empresa.'
+- type: prompt
+  ask:
+    en: 'Once more: say “interview”.'
+    pt: 'Mais uma vez: diga “entrevista”.'
+  answer:
+    speaker: protagonist
+    text: 面接[めんせつ]
+  items:
+  - mensetsu
+- type: prompt
+  ask:
+    en: 'Once more: say “self-introduction”.'
+    pt: 'Mais uma vez: diga “apresentação pessoal”.'
+  answer:
+    speaker: protagonist
+    text: 自己[じこ] 紹介[しょうかい]
+  items:
+  - jiko-shoukai
+- type: prompt
+  ask:
+    en: 'Once more: say “strong point”.'
+    pt: 'Mais uma vez: diga “ponto forte”.'
+  answer:
+    speaker: protagonist
+    text: 長所[ちょうしょ]
+  items:
+  - chousho
+- type: prompt
+  ask:
+    en: 'Once more: say “weak point”.'
+    pt: 'Mais uma vez: diga “ponto fraco”.'
+  answer:
+    speaker: protagonist
+    text: 短所[たんしょ]
+  items:
+  - tansho
+- type: prompt
+  ask:
+    en: 'Once more: say “reason for applying”.'
+    pt: 'Mais uma vez: diga “motivo da candidatura”.'
+  answer:
+    speaker: protagonist
+    text: 志望[しぼう] 動機[どうき]
+  items:
+  - shibou-douki
+- type: prompt
+  ask:
+    en: 'Once more: say “my name is… (humble)”.'
+    pt: 'Mais uma vez: diga “me chamo… (humilde)”.'
+  answer:
+    speaker: protagonist
+    text: 〜と 申[もう]します
+  items:
+  - moushimasu
+- type: prompt
+  ask:
+    en: 'Once more: say “am, is (humble いる)”.'
+    pt: 'Mais uma vez: diga “estou (humilde de いる)”.'
+  answer:
+    speaker: protagonist
+    text: おります
+  items:
+  - orimasu
+- type: prompt
+  ask:
+    en: 'Once more: say “came (humble)”.'
+    pt: 'Mais uma vez: diga “vim (humilde)”.'
+  answer:
+    speaker: protagonist
+    text: 参[まい]りました
+  items:
+  - mairimashita
+- type: prompt
+  ask:
+    en: 'Once more: say “excuse me (very polite)”.'
+    pt: 'Mais uma vez: diga “com licença (muito educado)”.'
+  answer:
+    speaker: protagonist
+    text: 失礼[しつれい] いたします
+  items:
+  - shitsurei-itashimasu
+- type: prompt
+  ask:
+    en: 'Once more: say “permanent employee”.'
+    pt: 'Mais uma vez: diga “funcionário efetivo”.'
+  answer:
+    speaker: protagonist
+    text: 正社員[せいしゃいん]
+  items:
+  - seishain
+- type: prompt
+  ask:
+    en: 'Once more: say “contribution”.'
+    pt: 'Mais uma vez: diga “contribuição”.'
+  answer:
+    speaker: protagonist
+    text: 貢献[こうけん]
+  items:
+  - kouken
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “izakaya (Japanese pub) — and “bar-hopping — and “the second round (next place) — and “the first round — and “a beer to start with — and “the small starter you''re charged for — and “grilled
+      chicken skewers — and “the dish that ends the night — and “one more place — and “shall we head home soon?”.'
+    pt: 'Diga: “izakaya (bar japonês) — e “ir de bar em bar — e “a segunda rodada (outro lugar) — e “a primeira rodada — e “pra começar, uma cerveja — e “petisco de entrada cobrado — e “espetinho de frango
+      — e “o prato que fecha a noite — e “mais um lugar — e “vamos indo?”.'
+  answer:
+    speaker: protagonist
+    text: 居酒屋[いざかや] … はしご 酒[ざけ] … 二次会[にじかい] … 一次会[いちじかい] … とりあえず ビール … お通[とお]し … 焼[や]き鳥[とり] … 締[し]め … もう 一軒[いっけん] … そろそろ 帰[かえ]ろう か
+  items:
+  - izakaya
+  - hashigozake
+  - nijikai
+  - ichijikai
+  - toriaezu
+  - otooshi
+  - yakitori
+  - shime
+  - mou-ikken
+  - kaerou-ka
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “humidity, damp — and “mould — and “while, during (before it ends) — and “while it''s sunny — and “dehumidifier — and “open the window — and “dry (something) — and “damp and muggy — and “drying
+      laundry indoors — and “laundry”.'
+    pt: 'Diga: “umidade — e “mofo, bolor — e “enquanto, durante (antes de acabar) — e “enquanto está sol — e “desumidificador — e “abrir a janela — e “secar — e “úmido e abafado — e “secar roupa dentro
+      de casa — e “roupa lavada”.'
+  answer:
+    speaker: protagonist
+    text: 湿気[しっけ] … カビ … 〜間[あいだ] に … 晴[は]れて いる 間[あいだ] に … 除湿機[じょしつき] … 窓[まど] を 開[あ]ける … 乾[かわ]かす … じめじめ … 部屋[へや] 干[ぼ]し … 洗濯物[せんたくもの]
+  items:
+  - shikke
+  - kabi
+  - aida-ni
+  - hareteiru-aida-ni
+  - joshitsuki
+  - mado-wo-akeru
+  - kawakasu
+  - jimejime
+  - heya-boshi
+  - sentakumono
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “end of the rainy season — and “loanword — and “Portugal — and “tobacco, cigarette — and “playing cards (karuta) — and “button — and “decide to… — and “I decided to read every day — and “script,
+      letters — and “origin of a word”.'
+    pt: 'Diga: “fim da estação das chuvas — e “palavra estrangeira, empréstimo — e “Portugal — e “tabaco, cigarro — e “cartas (karuta) — e “botão — e “decidir… — e “decidi ler todo dia — e “escrita, letras
+      — e “origem da palavra”.'
+  answer:
+    speaker: protagonist
+    text: 梅雨[つゆ] 明[あ]け … 外来語[がいらいご] … ポルトガル … タバコ … カルタ … ボタン … 〜こと に する … 毎日[まいにち] 読[よ]む こと に した … 文字[もじ] … 語源[ごげん]
+  items:
+  - tsuyu-ake
+  - gairaigo
+  - porutogaru
+  - tabako
+  - karuta
+  - botan
+  - koto-ni-suru
+  - yomu-koto-ni-shita
+  - moji
+  - gogen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I didn''t know — and “history — and “apologise — and “forgive me — and “never again — and “let''s (plain volitional) — and “let''s apologise; I''ll apologise — and “let''s talk — and “let''s
+      go (plain) — and “convey your feelings”.'
+    pt: 'Diga: “eu não sabia — e “história — e “pedir desculpas — e “me perdoa — e “nunca mais — e “vamos (volitivo simples) — e “vamos pedir desculpas; vou pedir desculpas — e “vamos conversar — e “vamos
+      (simples) — e “dizer o que sente”.'
+  answer:
+    speaker: protagonist
+    text: 知[し]らなかった … 歴史[れきし] … 謝[あやま]る … 許[ゆる]して … もう 二度[にど] と … 〜よう … 謝[あやま]ろう … 話[はな]そう … 行[い]こう … 気持[きも]ち を 伝[つた]える
+  items:
+  - shiranakatta
+  - rekishi
+  - ayamaru
+  - yurushite
+  - mou-nidoto
+  - you-volitional
+  - ayamarou
+  - hanasou
+  - ikou
+  - kimochi-wo-tsutaeru
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “let''s buy flowers — and “directly, in person — and “reflecting on a mistake — and “dad joke, pun — and “funny, interesting — and “pun — and “laugh — and “joke — and “year-end party — and
+      “this year”.'
+    pt: 'Diga: “vamos comprar flores — e “pessoalmente — e “reconhecer o erro, refletir — e “piada de tiozão, trocadilho — e “engraçado, interessante — e “trocadilho — e “rio — e “piada, brincadeira — e
+      “festa de fim de ano — e “este ano”.'
+  answer:
+    speaker: protagonist
+    text: 花[はな] を 買[か]おう … 直接[ちょくせつ] … 反省[はんせい] … おやじ ギャグ … 面白[おもしろ]い … 駄洒落[だじゃれ] … 笑[わら]います … 冗談[じょうだん] … 忘年会[ぼうねんかい] … 今年[ことし]
+  items:
+  - hana-wo-kaou
+  - chokusetsu
+  - hansei
+  - oyaji-gyagu
+  - omoshiroi
+  - dajare
+  - warau
+  - joudan
+  - bounenkai
+  - kotoshi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “next year — and “thank you for all your help — and “I look forward to next year too — and “family — and “my grandmother — and “my grandfather — and “my mother — and “my father — and “of Japanese
+      descent (nikkei) — and “photo”.'
+    pt: 'Diga: “ano que vem — e “obrigado por tudo — e “conto com vocês no ano que vem — e “família — e “minha avó — e “meu avô — e “minha mãe — e “meu pai — e “descendente de japoneses (nikkei) — e “foto”.'
+  answer:
+    speaker: protagonist
+    text: 来年[らいねん] … お世話[せわ] に なりました … 来年[らいねん] も よろしく お願[ねが]いします … 家族[かぞく] … 祖母[そぼ] … 祖父[そふ] … 母[はは] … 父[ちち] … 日系[にっけい] … 写真[しゃしん]
+  items:
+  - rainen
+  - osewa
+  - yoroshiku-rainen
+  - kazoku
+  - sobo
+  - sofu
+  - haha
+  - chichi
+  - nikkei
+  - shashin
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “was born — and “child — and “third generation — and “(someone''s) mother”.'
+    pt: 'Diga: “nasci, nasceu — e “criança — e “terceira geração — e “a mãe (de alguém)”.'
+  answer:
+    speaker: protagonist
+    text: 生[う]まれました … 子供[こども] … 三世[さんせい] … お母[かあ]さん
+  items:
+  - umaremashita
+  - kodomo
+  - sansei
+  - okaasan
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
