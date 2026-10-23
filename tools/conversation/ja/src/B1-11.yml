@@ -1,0 +1,43 @@
+id: B1-11
+protagonist: f
+title: [Gossip, Fofoca]
+situation: ["The futsal team's LINE group is buzzing: a rumour says Kenta and Misaki are engaged. Aya messages you privately.", "O grupo de LINE do time de futsal está agitado: um boato diz que o Kenta e a Misaki estão noivos. A Aya manda mensagem no privado."]
+learn: []
+culture: —
+items:
+  - [uwasa, "噂[うわさ]", "rumour", "boato"]
+  - [rain, "LINE", "LINE (the messaging app)", "LINE (o aplicativo de mensagens)"]
+  - [guruupu, "グループ", "group", "grupo"]
+  - [himitsu, "秘密[ひみつ]", "secret", "segredo"]
+  - [rashii, "〜らしい", "apparently, I hear", "parece que, pelo jeito"]
+  - [kekkon-suru-rashii, "結婚[けっこん] する らしい", "apparently they're getting married", "parece que vão casar"]
+  - [kidoku, "既読[きどく]", "read (message status)", "visualizado", {rare: true}]
+  - [kidoku-suruu, "既読[きどく] スルー", "leaving someone on read", "deixar no visto", {rare: true}]
+  - [honnin, "本人[ほんにん]", "the person themself", "a própria pessoa"]
+  - [dare-ni-mo-iwanai, "誰[だれ] に も 言[い]わない", "I won't tell anyone", "não conto para ninguém"]
+  - [maji, "マジ", "seriously? (slang)", "sério? (gíria)"]
+dialogue:
+  - [aya, "ねえ、 グループ 見[み]た？ お兄[にい]ちゃん、 美咲[みさき] さん と 結婚[けっこん] する らしい よ。", "Hey, did you see the group? Apparently my brother's marrying Misaki.", "Ei, viu o grupo? Parece que meu irmão vai casar com a Misaki."]
+  - [protagonist, "マジ？ 誰[だれ] が 言[い]った の？", "Seriously? Who said so?", "Sério? Quem disse?"]
+  - [aya, "わからない。 ただ の 噂[うわさ] かも。 でも みんな その 話[はなし] ばかり。", "No idea. Maybe just a rumour. But everyone's talking about it.", "Não sei. Pode ser só boato. Mas todo mundo só fala disso."]
+  - [protagonist, "本人[ほんにん] に 聞[き]いて みたら？", "Why not ask him directly?", "Por que não pergunta para ele?"]
+  - [aya, "聞[き]いた けど、 既読[きどく] スルー。 怪[あや]しい でしょ。", "I did, but he left me on read. Suspicious, right?", "Perguntei, mas ele deixou no visto. Suspeito, né?"]
+  - [protagonist, "秘密[ひみつ] に したい の か な。", "Maybe he wants to keep it secret.", "Vai ver ele quer manter segredo."]
+  - [aya, "そう らしい。 じゃあ、 これ は 二人[ふたり] の 秘密[ひみつ] ね。", "Seems so. Then this is our secret.", "Parece. Então isso fica entre nós duas."]
+  - [protagonist, "うん、 誰[だれ] に も 言[い]わない。", "Yeah, I won't tell anyone.", "Tá, não conto para ninguém."]
+teach:
+  - ask: ["Say: a rumour.", "Diga: um boato.", "噂[うわさ]", uwasa]
+  - ask: ["Say: a group.", "Diga: um grupo.", "グループ", guruupu]
+  - ask: ["Say: LINE, the app.", "Diga: LINE, o aplicativo.", "LINE", rain]
+  - note: ["«らしい» is apparently, from what I've heard — less sure than «そう だ», and it leaves room for doubt: «結婚[けっこん] する らしい», apparently they're getting married. With a noun or «な» word, it comes straight after: «噂[うわさ] らしい».", "«らしい» é parece que, pelo que ouvi — menos certeza que «そう だ», e deixa espaço para dúvida: «結婚[けっこん] する らしい», parece que vão casar. Com substantivo ou palavra com «な», vem direto: «噂[うわさ] らしい»."]
+  - ask: ["Say the ending: apparently.", "Diga a terminação: parece que.", "〜らしい", rashii]
+  - build: [kekkon-suru-rashii, ["らしい", "する らしい", "結婚[けっこん] する らしい"]]
+  - ask: ["Say: apparently they're getting married.", "Diga: parece que vão casar.", "結婚[けっこん] する らしい。", kekkon-suru-rashii]
+  - ask: ["React in slang: seriously?", "Reaja com gíria: sério?", "マジ？", maji]
+  - ask: ["Say: the person themself.", "Diga: a própria pessoa.", "本人[ほんにん]", honnin]
+  - ask: ["Say: read — the message status.", "Diga: visualizado.", "既読[きどく]", kidoku]
+  - ask: ["Say: leaving someone on read.", "Diga: deixar no visto.", "既読[きどく] スルー", kidoku-suruu]
+  - ask: ["Say: a secret.", "Diga: um segredo.", "秘密[ひみつ]", himitsu]
+  - ask: ["Promise: I won't tell anyone.", "Prometa: não conto para ninguém.", "誰[だれ] に も 言[い]わない。", dare-ni-mo-iwanai]
+  - note: ["LINE is Japan's main messaging app: family, friends, work and even shops use it. «既読[きどく]» shows the message was read; a «既読[きどく] スルー», read and no reply, can sting.", "O LINE é o principal aplicativo de mensagens do Japão: família, amigos, trabalho e até lojas usam. «既読[きどく]» mostra que a mensagem foi lida; um «既読[きどく] スルー», lido e sem resposta, pode doer."]
+  - pt_only: "É o WhatsApp do Japão, com os mesmos dramas: grupo da família, grupo do trabalho e o famoso «deixou no visto»."

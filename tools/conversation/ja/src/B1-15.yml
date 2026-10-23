@@ -1,0 +1,43 @@
+id: B1-15
+protagonist: f
+title: [Freedom, Liberdade]
+situation: ["Aya shows you photos from her high school: identical uniforms, black hair. She tells you about the rules — and what changed.", "A Aya mostra fotos do colégio: uniformes iguais, cabelo preto. Ela conta das regras — e do que mudou."]
+learn: []
+culture: Strict school rules
+items:
+  - [jiyuu, "自由[じゆう]", "freedom, free", "liberdade, livre"]
+  - [kousoku, "校則[こうそく]", "school rules", "regulamento da escola", {rare: true}]
+  - [kami-no-iro, "髪[かみ] の 色[いろ]", "hair colour", "cor do cabelo"]
+  - [nakute-mo-ii, "〜なくて も いい", "don't have to", "não precisa"]
+  - [somenakute-mo-ii, "染[そ]めなくて も いい", "don't have to dye", "não precisa tingir"]
+  - [kibishii, "厳[きび]しい", "strict", "rígido"]
+  - [kinshi, "禁止[きんし]", "forbidden", "proibido"]
+  - [jige, "地毛[じげ]", "natural hair (colour)", "cabelo natural", {rare: true}]
+  - [kawatta, "変[か]わった", "changed", "mudou"]
+  - [koukou, "高校[こうこう]", "high school", "ensino médio, colégio"]
+  - [sukaato, "スカート", "skirt", "saia"]
+dialogue:
+  - [aya, "これ、 高校[こうこう] の 写真[しゃしん]。 みんな 同[おな]じ 制服[せいふく] でしょ。", "This is my high-school photo. Everyone in the same uniform, see?", "Esta é a foto do colégio. Todo mundo de uniforme igual, viu?"]
+  - [protagonist, "髪[かみ] も みんな 黒[くろ] だ ね。", "And everyone's hair is black.", "E o cabelo de todo mundo é preto."]
+  - [aya, "校則[こうそく] が 厳[きび]しかった の。 髪[かみ] を 染[そ]める の は 禁止[きんし]。", "The rules were strict. Dyeing your hair was forbidden.", "O regulamento era rígido. Tingir o cabelo era proibido."]
+  - [protagonist, "髪[かみ] が 茶色[ちゃいろ] の 人[ひと] は？", "What about people with brown hair?", "E quem tem cabelo castanho?"]
+  - [aya, "地毛[じげ] でも、 黒[くろ] に 染[そ]めろ って 言[い]われた 人[ひと] も いた。 ひどい でしょ。", "Some were told to dye it black even if it was natural. Awful, right?", "Teve gente que mandaram tingir de preto, mesmo sendo cabelo natural. Absurdo, né?"]
+  - [protagonist, "今[いま] も そう？", "Is it still like that?", "Ainda é assim?"]
+  - [aya, "今[いま] は 変[か]わった。 地毛[じげ] は 染[そ]めなくて も いい し、 スカート か ズボン か 選[えら]べる 学校[がっこう] も 増[ふ]えた。", "Now it's changed. You don't have to dye natural hair, and more schools let you choose skirt or trousers.", "Agora mudou. Não precisa tingir o cabelo natural, e aumentaram as escolas onde dá para escolher saia ou calça."]
+  - [protagonist, "自由[じゆう] が 少[すこ]し 増[ふ]えた ん だ ね。", "So there's a little more freedom.", "Então a liberdade aumentou um pouco."]
+teach:
+  - ask: ["Say: freedom.", "Diga: liberdade.", "自由[じゆう]", jiyuu]
+  - ask: ["Say: high school.", "Diga: o colégio.", "高校[こうこう]", koukou]
+  - ask: ["Say: school rules.", "Diga: regulamento da escola.", "校則[こうそく]", kousoku]
+  - ask: ["Say: strict.", "Diga: rígido.", "厳[きび]しい", kibishii]
+  - ask: ["Say: forbidden.", "Diga: proibido.", "禁止[きんし]", kinshi]
+  - ask: ["Say: hair colour.", "Diga: cor do cabelo.", "髪[かみ] の 色[いろ]", kami-no-iro]
+  - ask: ["Say: natural hair colour.", "Diga: cabelo natural.", "地毛[じげ]", jige]
+  - note: ["Don't have to: the negative «ない» becomes «なくて» plus «も いい»: «染[そ]めない» → «染[そ]めなくて も いい», you don't have to dye it. Compare «〜なければ なりません», must.", "Não precisa: o negativo «ない» vira «なくて» mais «も いい»: «染[そ]めない» → «染[そ]めなくて も いい», não precisa tingir. Compare com «〜なければ なりません», tem que."]
+  - ask: ["Say the pattern: don't have to.", "Diga o padrão: não precisa.", "〜なくて も いい", nakute-mo-ii]
+  - build: [somenakute-mo-ii, ["いい", "も いい", "染[そ]めなくて も いい"]]
+  - ask: ["Say: you don't have to dye it.", "Diga: não precisa tingir.", "染[そ]めなくて も いい。", somenakute-mo-ii]
+  - ask: ["Say: a skirt.", "Diga: uma saia.", "スカート", sukaato]
+  - ask: ["Say: it changed.", "Diga: mudou.", "変[か]わった。", kawatta]
+  - note: ["Japanese schools are known for strict «校則[こうそく]»: uniforms, hair colour, even underwear colour in some. Rules forcing students with naturally brown hair to dye it black became a national debate, and many schools have relaxed them; more now let students choose trousers or skirts.", "As escolas japonesas são conhecidas pelo «校則[こうそく]» rígido: uniforme, cor do cabelo, em algumas até a cor da roupa íntima. Regras que obrigavam alunos com cabelo naturalmente castanho a tingir de preto viraram debate nacional, e muitas escolas afrouxaram; mais escolas hoje deixam escolher entre calça e saia."]
+  - pt_only: "No Brasil uniforme é comum, mas cabelo e unha são problema de cada um. Para uma brasileira nikkei de cabelo castanho, ouvir isso pode ser um susto — e mostra quanto o Japão está mudando."

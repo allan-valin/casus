@@ -1,0 +1,605 @@
+# UNIT ja B1-11 — written by AI (Claude) for Casus; expanded from src/B1-11.yml by tools/expand_unit.py. Edit the source.
+
+id: B1-11
+level: B1
+number: 11
+protagonist: f
+title:
+  en: Gossip
+  pt: Fofoca
+situation:
+  en: 'The futsal team''s LINE group is buzzing: a rumour says Kenta and Misaki are engaged. Aya messages you privately.'
+  pt: 'O grupo de LINE do time de futsal está agitado: um boato diz que o Kenta e a Misaki estão noivos. A Aya manda mensagem no privado.'
+learn_lessons: []
+culture: —
+new_items:
+- id: uwasa
+  text: 噂[うわさ]
+  meaning:
+    en: rumour
+    pt: boato
+- id: rain
+  text: LINE
+  meaning:
+    en: LINE (the messaging app)
+    pt: LINE (o aplicativo de mensagens)
+- id: guruupu
+  text: グループ
+  meaning:
+    en: group
+    pt: grupo
+- id: himitsu
+  text: 秘密[ひみつ]
+  meaning:
+    en: secret
+    pt: segredo
+- id: rashii
+  text: 〜らしい
+  meaning:
+    en: apparently, I hear
+    pt: parece que, pelo jeito
+- id: kekkon-suru-rashii
+  text: 結婚[けっこん] する らしい
+  meaning:
+    en: apparently they're getting married
+    pt: parece que vão casar
+- id: kidoku
+  text: 既読[きどく]
+  meaning:
+    en: read (message status)
+    pt: visualizado
+  rare: true
+- id: kidoku-suruu
+  text: 既読[きどく] スルー
+  meaning:
+    en: leaving someone on read
+    pt: deixar no visto
+  rare: true
+- id: honnin
+  text: 本人[ほんにん]
+  meaning:
+    en: the person themself
+    pt: a própria pessoa
+- id: dare-ni-mo-iwanai
+  text: 誰[だれ] に も 言[い]わない
+  meaning:
+    en: I won't tell anyone
+    pt: não conto para ninguém
+- id: maji
+  text: マジ
+  meaning:
+    en: seriously? (slang)
+    pt: sério? (gíria)
+reviews:
+- item: kaisha
+  from: A1-08
+- item: kachou
+  from: A1-08
+- item: tsuuyaku
+  from: A1-08
+- item: kyou-kara
+  from: A1-08
+- item: hairimasu
+  from: A1-08
+- item: shigoto
+  from: A1-08
+- item: portugarugo
+  from: A1-08
+- item: eigo
+  from: A1-08
+- item: ganbatte
+  from: A1-08
+- item: onegaishimasu-yoroshiku
+  from: A1-08
+- item: deeto
+  from: A2-10
+- item: kafe
+  from: A2-10
+- item: apuri
+  from: A2-10
+- item: renrakusaki
+  from: A2-10
+- item: shumi
+  from: A2-10
+- item: shigoto-wa
+  from: A2-10
+- item: itte-mite
+  from: A2-10
+- item: tabete-hanashite
+  from: A2-10
+- item: majime
+  from: A2-10
+- item: mata-aemasu-ka
+  from: A2-10
+- item: hontou-ni
+  from: A2-10
+- item: chinmoku
+  from: A2-26
+- item: hazukashii
+  from: A2-26
+- item: mata-aitai
+  from: A2-26
+- item: tereru
+  from: A2-26
+- item: yuuhi
+  from: A2-26
+- item: shizuka
+  from: A2-26
+- item: daijoubu-desu-ka-nani-ka
+  from: A2-26
+- item: ureshii
+  from: A2-26
+- item: kanjimasu
+  from: A2-26
+- item: issho-ni-iru
+  from: A2-26
+- item: tsukiau
+  from: B1-04
+- item: te-shimau
+  from: B1-04
+- item: itte-shimatta
+  from: B1-04
+- item: chatta
+  from: B1-04
+- item: okkee
+  from: B1-04
+- item: kinchou-shita
+  from: B1-04
+- item: omedetou
+  from: B1-04
+- item: kanojo-ga-dekita
+  from: B1-04
+- item: tsugi-no
+  from: B1-04
+- item: yappari
+  from: B1-04
+- item: kekkonshiki
+  from: B1-08
+- item: hirouen
+  from: B1-08
+- item: goshuugi
+  from: B1-08
+- item: fuutou
+  from: B1-08
+- item: shinsatsu
+  from: B1-08
+- item: ireru
+  from: B1-08
+- item: sanman-en
+  from: B1-08
+- item: guusuu
+  from: B1-08
+- item: wakareru-imi
+  from: B1-08
+- item: hikidemono
+  from: B1-08
+- item: omedetou-gozaimasu
+  from: B1-08
+- item: kentou-shimasu
+  from: B1-10
+- item: honne
+  from: B1-10
+- item: tatemae
+  from: B1-10
+- item: you-da
+  from: B1-10
+- item: dame-na-you-desu
+  from: B1-10
+- item: kotowaru
+  from: B1-10
+- item: hakkiri
+  from: B1-10
+- item: kuuki-wo-yomu
+  from: B1-10
+- item: hyoujou
+  from: B1-10
+- item: mata-kondo
+  from: B1-10
+steps:
+- type: narrator
+  text:
+    en: 'The futsal team''s LINE group is buzzing: a rumour says Kenta and Misaki are engaged. Aya messages you privately. Listen to the conversation; you don''t need to understand it yet.'
+    pt: 'O grupo de LINE do time de futsal está agitado: um boato diz que o Kenta e a Misaki estão noivos. A Aya manda mensagem no privado. Escute a conversa; ainda não precisa entender.'
+- type: dialogue
+  lines:
+  - speaker: aya
+    text: ねえ、 グループ 見[み]た？ お兄[にい]ちゃん、 美咲[みさき] さん と 結婚[けっこん] する らしい よ。
+    meaning:
+      en: Hey, did you see the group? Apparently my brother's marrying Misaki.
+      pt: Ei, viu o grupo? Parece que meu irmão vai casar com a Misaki.
+  - speaker: protagonist
+    text: マジ？ 誰[だれ] が 言[い]った の？
+    meaning:
+      en: Seriously? Who said so?
+      pt: Sério? Quem disse?
+  - speaker: aya
+    text: わからない。 ただ の 噂[うわさ] かも。 でも みんな その 話[はなし] ばかり。
+    meaning:
+      en: No idea. Maybe just a rumour. But everyone's talking about it.
+      pt: Não sei. Pode ser só boato. Mas todo mundo só fala disso.
+  - speaker: protagonist
+    text: 本人[ほんにん] に 聞[き]いて みたら？
+    meaning:
+      en: Why not ask him directly?
+      pt: Por que não pergunta para ele?
+  - speaker: aya
+    text: 聞[き]いた けど、 既読[きどく] スルー。 怪[あや]しい でしょ。
+    meaning:
+      en: I did, but he left me on read. Suspicious, right?
+      pt: Perguntei, mas ele deixou no visto. Suspeito, né?
+  - speaker: protagonist
+    text: 秘密[ひみつ] に したい の か な。
+    meaning:
+      en: Maybe he wants to keep it secret.
+      pt: Vai ver ele quer manter segredo.
+  - speaker: aya
+    text: そう らしい。 じゃあ、 これ は 二人[ふたり] の 秘密[ひみつ] ね。
+    meaning:
+      en: Seems so. Then this is our secret.
+      pt: Parece. Então isso fica entre nós duas.
+  - speaker: protagonist
+    text: うん、 誰[だれ] に も 言[い]わない。
+    meaning:
+      en: Yeah, I won't tell anyone.
+      pt: Tá, não conto para ninguém.
+- type: prompt
+  ask:
+    en: 'Say: a rumour.'
+    pt: 'Diga: um boato.'
+  answer:
+    speaker: protagonist
+    text: 噂[うわさ]
+  items:
+  - uwasa
+- type: prompt
+  ask:
+    en: 'Say: a group.'
+    pt: 'Diga: um grupo.'
+  answer:
+    speaker: protagonist
+    text: グループ
+  items:
+  - guruupu
+- type: prompt
+  ask:
+    en: 'Say: LINE, the app.'
+    pt: 'Diga: LINE, o aplicativo.'
+  answer:
+    speaker: protagonist
+    text: LINE
+  items:
+  - rain
+- type: narrator
+  text:
+    en: '«らしい» is apparently, from what I''ve heard — less sure than «そう だ», and it leaves room for doubt: «結婚[けっこん] する らしい», apparently they''re getting married. With a noun or «な» word, it comes straight
+      after: «噂[うわさ] らしい».'
+    pt: '«らしい» é parece que, pelo que ouvi — menos certeza que «そう だ», e deixa espaço para dúvida: «結婚[けっこん] する らしい», parece que vão casar. Com substantivo ou palavra com «な», vem direto: «噂[うわさ] らしい».'
+- type: prompt
+  ask:
+    en: 'Say the ending: apparently.'
+    pt: 'Diga a terminação: parece que.'
+  answer:
+    speaker: protagonist
+    text: 〜らしい
+  items:
+  - rashii
+- type: buildup
+  item: kekkon-suru-rashii
+  parts:
+  - らしい
+  - する らしい
+  - 結婚[けっこん] する らしい
+- type: prompt
+  ask:
+    en: 'Say: apparently they''re getting married.'
+    pt: 'Diga: parece que vão casar.'
+  answer:
+    speaker: protagonist
+    text: 結婚[けっこん] する らしい。
+  items:
+  - kekkon-suru-rashii
+- type: prompt
+  ask:
+    en: 'React in slang: seriously?'
+    pt: 'Reaja com gíria: sério?'
+  answer:
+    speaker: protagonist
+    text: マジ？
+  items:
+  - maji
+- type: prompt
+  ask:
+    en: 'Say: the person themself.'
+    pt: 'Diga: a própria pessoa.'
+  answer:
+    speaker: protagonist
+    text: 本人[ほんにん]
+  items:
+  - honnin
+- type: prompt
+  ask:
+    en: 'Say: read — the message status.'
+    pt: 'Diga: visualizado.'
+  answer:
+    speaker: protagonist
+    text: 既読[きどく]
+  items:
+  - kidoku
+- type: prompt
+  ask:
+    en: 'Say: leaving someone on read.'
+    pt: 'Diga: deixar no visto.'
+  answer:
+    speaker: protagonist
+    text: 既読[きどく] スルー
+  items:
+  - kidoku-suruu
+- type: prompt
+  ask:
+    en: 'Say: a secret.'
+    pt: 'Diga: um segredo.'
+  answer:
+    speaker: protagonist
+    text: 秘密[ひみつ]
+  items:
+  - himitsu
+- type: prompt
+  ask:
+    en: 'Promise: I won''t tell anyone.'
+    pt: 'Prometa: não conto para ninguém.'
+  answer:
+    speaker: protagonist
+    text: 誰[だれ] に も 言[い]わない。
+  items:
+  - dare-ni-mo-iwanai
+- type: narrator
+  text:
+    en: 'LINE is Japan''s main messaging app: family, friends, work and even shops use it. «既読[きどく]» shows the message was read; a «既読[きどく] スルー», read and no reply, can sting.'
+    pt: 'O LINE é o principal aplicativo de mensagens do Japão: família, amigos, trabalho e até lojas usam. «既読[きどく]» mostra que a mensagem foi lida; um «既読[きどく] スルー», lido e sem resposta, pode doer.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'É o WhatsApp do Japão, com os mesmos dramas: grupo da família, grupo do trabalho e o famoso «deixou no visto».'
+- type: prompt
+  ask:
+    en: 'Once more: say “rumour”.'
+    pt: 'Mais uma vez: diga “boato”.'
+  answer:
+    speaker: protagonist
+    text: 噂[うわさ]
+  items:
+  - uwasa
+- type: prompt
+  ask:
+    en: 'Once more: say “LINE (the messaging app)”.'
+    pt: 'Mais uma vez: diga “LINE (o aplicativo de mensagens)”.'
+  answer:
+    speaker: protagonist
+    text: LINE
+  items:
+  - rain
+- type: prompt
+  ask:
+    en: 'Once more: say “group”.'
+    pt: 'Mais uma vez: diga “grupo”.'
+  answer:
+    speaker: protagonist
+    text: グループ
+  items:
+  - guruupu
+- type: prompt
+  ask:
+    en: 'Once more: say “secret”.'
+    pt: 'Mais uma vez: diga “segredo”.'
+  answer:
+    speaker: protagonist
+    text: 秘密[ひみつ]
+  items:
+  - himitsu
+- type: prompt
+  ask:
+    en: 'Once more: say “apparently, I hear”.'
+    pt: 'Mais uma vez: diga “parece que, pelo jeito”.'
+  answer:
+    speaker: protagonist
+    text: 〜らしい
+  items:
+  - rashii
+- type: prompt
+  ask:
+    en: 'Once more: say “apparently they''re getting married”.'
+    pt: 'Mais uma vez: diga “parece que vão casar”.'
+  answer:
+    speaker: protagonist
+    text: 結婚[けっこん] する らしい
+  items:
+  - kekkon-suru-rashii
+- type: prompt
+  ask:
+    en: 'Once more: say “read (message status)”.'
+    pt: 'Mais uma vez: diga “visualizado”.'
+  answer:
+    speaker: protagonist
+    text: 既読[きどく]
+  items:
+  - kidoku
+- type: prompt
+  ask:
+    en: 'Once more: say “leaving someone on read”.'
+    pt: 'Mais uma vez: diga “deixar no visto”.'
+  answer:
+    speaker: protagonist
+    text: 既読[きどく] スルー
+  items:
+  - kidoku-suruu
+- type: prompt
+  ask:
+    en: 'Once more: say “the person themself”.'
+    pt: 'Mais uma vez: diga “a própria pessoa”.'
+  answer:
+    speaker: protagonist
+    text: 本人[ほんにん]
+  items:
+  - honnin
+- type: prompt
+  ask:
+    en: 'Once more: say “I won''t tell anyone”.'
+    pt: 'Mais uma vez: diga “não conto para ninguém”.'
+  answer:
+    speaker: protagonist
+    text: 誰[だれ] に も 言[い]わない
+  items:
+  - dare-ni-mo-iwanai
+- type: prompt
+  ask:
+    en: 'Once more: say “seriously? (slang)”.'
+    pt: 'Mais uma vez: diga “sério? (gíria)”.'
+  answer:
+    speaker: protagonist
+    text: マジ
+  items:
+  - maji
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “we''ll consider it — and “true feelings — and “the public face — and “it seems, apparently (from what I see) — and “it seems it''s a no — and “refuse, turn down — and “clearly, directly —
+      and “read the atmosphere — and “facial expression”.'
+    pt: 'Diga: “vamos estudar — e “o que se pensa de verdade — e “o que se diz por educação — e “parece que (pelo que vejo) — e “parece que não vai dar — e “recusar — e “com clareza, diretamente — e “ler
+      o clima — e “expressão do rosto”.'
+  answer:
+    speaker: protagonist
+    text: 検討[けんとう] します … 本音[ほんね] … 建前[たてまえ] … 〜よう だ … だめ な よう です … 断[ことわ]る … はっきり … 空気[くうき] を 読[よ]む … 表情[ひょうじょう]
+  items:
+  - kentou-shimasu
+  - honne
+  - tatemae
+  - you-da
+  - dame-na-you-desu
+  - kotowaru
+  - hakkiri
+  - kuuki-wo-yomu
+  - hyoujou
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “another time — and “wedding (ceremony) — and “wedding reception — and “wedding gift money — and “envelope — and “new (crisp) banknotes — and “may put in — and “30,000 yen — and “even number”.'
+    pt: 'Diga: “fica para outra vez — e “casamento (cerimônia) — e “festa de casamento — e “dinheiro de presente de casamento — e “envelope — e “notas novas — e “pode colocar — e “30 mil ienes — e “número
+      par”.'
+  answer:
+    speaker: protagonist
+    text: また 今度[こんど] … 結婚式[けっこんしき] … 披露宴[ひろうえん] … ご祝儀[しゅうぎ] … 封筒[ふうとう] … 新札[しんさつ] … 入[い]れて も いい … 三万円[さんまんえん] … 偶数[ぐうすう]
+  items:
+  - mata-kondo
+  - kekkonshiki
+  - hirouen
+  - goshuugi
+  - fuutou
+  - shinsatsu
+  - ireru
+  - sanman-en
+  - guusuu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the meaning of splitting up — and “return gift for guests — and “congratulations (polite) — and “go out, date (as a couple) — and “end up …-ing; (regret / completion) — and “I blurted it
+      out — and “ended up (casual of てしまった) — and “okay — and “I was nervous”.'
+    pt: 'Diga: “o sentido de se separar — e “lembrança para os convidados — e “parabéns (educado) — e “namorar — e “acabar …-ndo; (lamento / conclusão) — e “acabei falando — e “acabei (informal de てしまった)
+      — e “OK — e “fiquei nervoso”.'
+  answer:
+    speaker: protagonist
+    text: 別[わか]れる 意味[いみ] … 引[ひ]き出[で]物[もの] … おめでとう ございます … 付[つ]き合[あ]う … 〜て しまう … 言[い]って しまった … 〜ちゃった … オッケー … 緊張[きんちょう] した
+  items:
+  - wakareru-imi
+  - hikidemono
+  - omedetou-gozaimasu
+  - tsukiau
+  - te-shimau
+  - itte-shimatta
+  - chatta
+  - okkee
+  - kinchou-shita
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “congratulations — and “I got a girlfriend — and “the next — and “as expected, after all — and “silence — and “embarrassed, shy — and “I want to see you again — and “get bashful — and “sunset,
+      evening sun”.'
+    pt: 'Diga: “parabéns — e “arrumei namorada — e “o próximo — e “no fim, como eu imaginava — e “silêncio — e “com vergonha, tímido — e “quero te ver de novo — e “fico sem graça — e “pôr do sol”.'
+  answer:
+    speaker: protagonist
+    text: おめでとう … 彼女[かのじょ] が できた … 次[つぎ] の … やっぱり … 沈黙[ちんもく] … 恥[は]ずかしい … また 会[あ]いたい … 照[て]れます … 夕日[ゆうひ]
+  items:
+  - omedetou
+  - kanojo-ga-dekita
+  - tsugi-no
+  - yappari
+  - chinmoku
+  - hazukashii
+  - mata-aitai
+  - tereru
+  - yuuhi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “quiet — and “did something happen? — and “happy, glad — and “feel — and “being together — and “date — and “café — and “app — and “contact details”.'
+    pt: 'Diga: “quieto, silencioso — e “aconteceu alguma coisa? — e “feliz, contente — e “sinto — e “estar junto — e “encontro — e “café (o lugar) — e “aplicativo — e “contato”.'
+  answer:
+    speaker: protagonist
+    text: 静[しず]か … 何[なに] か あった？ … 嬉[うれ]しい … 感[かん]じます … 一緒[いっしょ] に いる … デート … カフェ … アプリ … 連絡先[れんらくさき]
+  items:
+  - shizuka
+  - daijoubu-desu-ka-nani-ka
+  - ureshii
+  - kanjimasu
+  - issho-ni-iru
+  - deeto
+  - kafe
+  - apuri
+  - renrakusaki
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “hobby — and “and your work? — and “went and saw (て sequence) — and “ate and talked — and “serious, sincere — and “can we meet again? — and “really, truly — and “company — and “section chief”.'
+    pt: 'Diga: “hobby, passatempo — e “e o seu trabalho? — e “fui e vi (sequência com て) — e “comemos e conversamos — e “sério, sincero — e “podemos nos ver de novo? — e “de verdade — e “empresa — e “chefe
+      de seção”.'
+  answer:
+    speaker: protagonist
+    text: 趣味[しゅみ] … お仕事[しごと] は … 行[い]って、 見[み]て … 食[た]べて、 話[はな]して … 真面目[まじめ] … また 会[あ]えます か … 本当[ほんとう] に … 会社[かいしゃ] … 課長[かちょう]
+  items:
+  - shumi
+  - shigoto-wa
+  - itte-mite
+  - tabete-hanashite
+  - majime
+  - mata-aemasu-ka
+  - hontou-ni
+  - kaisha
+  - kachou
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “interpreter — and “from today — and “join, enter — and “work, job — and “Portuguese (language) — and “English — and “do your best (encouragement) — and “pleased to meet you (very polite)”.'
+    pt: 'Diga: “intérprete — e “a partir de hoje — e “entro, começo — e “trabalho — e “português (língua) — e “inglês — e “força! (incentivo) — e “muito prazer (bem formal)”.'
+  answer:
+    speaker: protagonist
+    text: 通訳[つうやく] … 今日[きょう] から … 入[はい]ります … 仕事[しごと] … ポルトガル語[ご] … 英語[えいご] … 頑張[がんば]って ください … どうぞ よろしく お願[ねが]いします
+  items:
+  - tsuuyaku
+  - kyou-kara
+  - hairimasu
+  - shigoto
+  - portugarugo
+  - eigo
+  - ganbatte
+  - onegaishimasu-yoroshiku
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

@@ -1,0 +1,608 @@
+# UNIT ja B1-15 — written by AI (Claude) for Casus; expanded from src/B1-15.yml by tools/expand_unit.py. Edit the source.
+
+id: B1-15
+level: B1
+number: 15
+protagonist: f
+title:
+  en: Freedom
+  pt: Liberdade
+situation:
+  en: 'Aya shows you photos from her high school: identical uniforms, black hair. She tells you about the rules — and what changed.'
+  pt: 'A Aya mostra fotos do colégio: uniformes iguais, cabelo preto. Ela conta das regras — e do que mudou.'
+learn_lessons: []
+culture: Strict school rules
+new_items:
+- id: jiyuu
+  text: 自由[じゆう]
+  meaning:
+    en: freedom, free
+    pt: liberdade, livre
+- id: kousoku
+  text: 校則[こうそく]
+  meaning:
+    en: school rules
+    pt: regulamento da escola
+  rare: true
+- id: kami-no-iro
+  text: 髪[かみ] の 色[いろ]
+  meaning:
+    en: hair colour
+    pt: cor do cabelo
+- id: nakute-mo-ii
+  text: 〜なくて も いい
+  meaning:
+    en: don't have to
+    pt: não precisa
+- id: somenakute-mo-ii
+  text: 染[そ]めなくて も いい
+  meaning:
+    en: don't have to dye
+    pt: não precisa tingir
+- id: kibishii
+  text: 厳[きび]しい
+  meaning:
+    en: strict
+    pt: rígido
+- id: kinshi
+  text: 禁止[きんし]
+  meaning:
+    en: forbidden
+    pt: proibido
+- id: jige
+  text: 地毛[じげ]
+  meaning:
+    en: natural hair (colour)
+    pt: cabelo natural
+  rare: true
+- id: kawatta
+  text: 変[か]わった
+  meaning:
+    en: changed
+    pt: mudou
+- id: koukou
+  text: 高校[こうこう]
+  meaning:
+    en: high school
+    pt: ensino médio, colégio
+- id: sukaato
+  text: スカート
+  meaning:
+    en: skirt
+    pt: saia
+reviews:
+- item: neko
+  from: A1-12
+- item: inu
+  from: A1-12
+- item: tori
+  from: A1-12
+- item: kawaii
+  from: A1-12
+- item: imasu
+  from: A1-12
+- item: arimasu
+  from: A1-12
+- item: jinja
+  from: A1-12
+- item: nanbiki
+  from: A1-12
+- item: ooi
+  from: A1-12
+- item: sawaru
+  from: A1-12
+- item: dame
+  from: A1-12
+- item: to-omoimasu
+  from: A2-14
+- item: dou-omoimasu-ka
+  from: A2-14
+- item: sanba
+  from: A2-14
+- item: sutereotaipu
+  from: A2-14
+- item: imeeji
+  from: A2-14
+- item: chigau-to-omou
+  from: A2-14
+- item: amari
+  from: A2-14
+- item: zenzen
+  from: A2-14
+- item: tokidoki
+  from: A2-14
+- item: kikimasu
+  from: A2-14
+- item: oyaji-gyagu
+  from: A2-30
+- item: omoshiroi
+  from: A2-30
+- item: dajare
+  from: A2-30
+- item: warau
+  from: A2-30
+- item: joudan
+  from: A2-30
+- item: bounenkai
+  from: A2-30
+- item: kotoshi
+  from: A2-30
+- item: rainen
+  from: A2-30
+- item: osewa
+  from: A2-30
+- item: yoroshiku-rainen
+  from: A2-30
+- item: kekkonshiki
+  from: B1-08
+- item: hirouen
+  from: B1-08
+- item: goshuugi
+  from: B1-08
+- item: fuutou
+  from: B1-08
+- item: shinsatsu
+  from: B1-08
+- item: ireru
+  from: B1-08
+- item: sanman-en
+  from: B1-08
+- item: guusuu
+  from: B1-08
+- item: wakareru-imi
+  from: B1-08
+- item: hikidemono
+  from: B1-08
+- item: omedetou-gozaimasu
+  from: B1-08
+- item: shiawase
+  from: B1-12
+- item: ikigai
+  from: B1-12
+- item: sutoresu
+  from: B1-12
+- item: yutori
+  from: B1-12
+- item: ba
+  from: B1-12
+- item: hatarakeba
+  from: B1-12
+- item: yasumeba
+  from: B1-12
+- item: hatake
+  from: B1-12
+- item: sodateru
+  from: B1-12
+- item: mainichi-tanoshii
+  from: B1-12
+- item: chiisana
+  from: B1-12
+- item: kenka
+  from: B1-14
+- item: okotteru
+  from: B1-14
+- item: okoranaide
+  from: B1-14
+- item: wasureta
+  from: B1-14
+- item: yakusoku
+  from: B1-14
+- item: matte-ita-noni
+  from: B1-14
+- item: hidoi
+  from: B1-14
+- item: hontou-ni-gomen
+  from: B1-14
+- item: daiji-ni-shite
+  from: B1-14
+- item: nakanaori
+  from: B1-14
+steps:
+- type: narrator
+  text:
+    en: 'Aya shows you photos from her high school: identical uniforms, black hair. She tells you about the rules — and what changed. Listen to the conversation; you don''t need to understand it yet.'
+    pt: 'A Aya mostra fotos do colégio: uniformes iguais, cabelo preto. Ela conta das regras — e do que mudou. Escute a conversa; ainda não precisa entender.'
+- type: dialogue
+  lines:
+  - speaker: aya
+    text: これ、 高校[こうこう] の 写真[しゃしん]。 みんな 同[おな]じ 制服[せいふく] でしょ。
+    meaning:
+      en: This is my high-school photo. Everyone in the same uniform, see?
+      pt: Esta é a foto do colégio. Todo mundo de uniforme igual, viu?
+  - speaker: protagonist
+    text: 髪[かみ] も みんな 黒[くろ] だ ね。
+    meaning:
+      en: And everyone's hair is black.
+      pt: E o cabelo de todo mundo é preto.
+  - speaker: aya
+    text: 校則[こうそく] が 厳[きび]しかった の。 髪[かみ] を 染[そ]める の は 禁止[きんし]。
+    meaning:
+      en: The rules were strict. Dyeing your hair was forbidden.
+      pt: O regulamento era rígido. Tingir o cabelo era proibido.
+  - speaker: protagonist
+    text: 髪[かみ] が 茶色[ちゃいろ] の 人[ひと] は？
+    meaning:
+      en: What about people with brown hair?
+      pt: E quem tem cabelo castanho?
+  - speaker: aya
+    text: 地毛[じげ] でも、 黒[くろ] に 染[そ]めろ って 言[い]われた 人[ひと] も いた。 ひどい でしょ。
+    meaning:
+      en: Some were told to dye it black even if it was natural. Awful, right?
+      pt: Teve gente que mandaram tingir de preto, mesmo sendo cabelo natural. Absurdo, né?
+  - speaker: protagonist
+    text: 今[いま] も そう？
+    meaning:
+      en: Is it still like that?
+      pt: Ainda é assim?
+  - speaker: aya
+    text: 今[いま] は 変[か]わった。 地毛[じげ] は 染[そ]めなくて も いい し、 スカート か ズボン か 選[えら]べる 学校[がっこう] も 増[ふ]えた。
+    meaning:
+      en: Now it's changed. You don't have to dye natural hair, and more schools let you choose skirt or trousers.
+      pt: Agora mudou. Não precisa tingir o cabelo natural, e aumentaram as escolas onde dá para escolher saia ou calça.
+  - speaker: protagonist
+    text: 自由[じゆう] が 少[すこ]し 増[ふ]えた ん だ ね。
+    meaning:
+      en: So there's a little more freedom.
+      pt: Então a liberdade aumentou um pouco.
+- type: prompt
+  ask:
+    en: 'Say: freedom.'
+    pt: 'Diga: liberdade.'
+  answer:
+    speaker: protagonist
+    text: 自由[じゆう]
+  items:
+  - jiyuu
+- type: prompt
+  ask:
+    en: 'Say: high school.'
+    pt: 'Diga: o colégio.'
+  answer:
+    speaker: protagonist
+    text: 高校[こうこう]
+  items:
+  - koukou
+- type: prompt
+  ask:
+    en: 'Say: school rules.'
+    pt: 'Diga: regulamento da escola.'
+  answer:
+    speaker: protagonist
+    text: 校則[こうそく]
+  items:
+  - kousoku
+- type: prompt
+  ask:
+    en: 'Say: strict.'
+    pt: 'Diga: rígido.'
+  answer:
+    speaker: protagonist
+    text: 厳[きび]しい
+  items:
+  - kibishii
+- type: prompt
+  ask:
+    en: 'Say: forbidden.'
+    pt: 'Diga: proibido.'
+  answer:
+    speaker: protagonist
+    text: 禁止[きんし]
+  items:
+  - kinshi
+- type: prompt
+  ask:
+    en: 'Say: hair colour.'
+    pt: 'Diga: cor do cabelo.'
+  answer:
+    speaker: protagonist
+    text: 髪[かみ] の 色[いろ]
+  items:
+  - kami-no-iro
+- type: prompt
+  ask:
+    en: 'Say: natural hair colour.'
+    pt: 'Diga: cabelo natural.'
+  answer:
+    speaker: protagonist
+    text: 地毛[じげ]
+  items:
+  - jige
+- type: narrator
+  text:
+    en: 'Don''t have to: the negative «ない» becomes «なくて» plus «も いい»: «染[そ]めない» → «染[そ]めなくて も いい», you don''t have to dye it. Compare «〜なければ なりません», must.'
+    pt: 'Não precisa: o negativo «ない» vira «なくて» mais «も いい»: «染[そ]めない» → «染[そ]めなくて も いい», não precisa tingir. Compare com «〜なければ なりません», tem que.'
+- type: prompt
+  ask:
+    en: 'Say the pattern: don''t have to.'
+    pt: 'Diga o padrão: não precisa.'
+  answer:
+    speaker: protagonist
+    text: 〜なくて も いい
+  items:
+  - nakute-mo-ii
+- type: buildup
+  item: somenakute-mo-ii
+  parts:
+  - いい
+  - も いい
+  - 染[そ]めなくて も いい
+- type: prompt
+  ask:
+    en: 'Say: you don''t have to dye it.'
+    pt: 'Diga: não precisa tingir.'
+  answer:
+    speaker: protagonist
+    text: 染[そ]めなくて も いい。
+  items:
+  - somenakute-mo-ii
+- type: prompt
+  ask:
+    en: 'Say: a skirt.'
+    pt: 'Diga: uma saia.'
+  answer:
+    speaker: protagonist
+    text: スカート
+  items:
+  - sukaato
+- type: prompt
+  ask:
+    en: 'Say: it changed.'
+    pt: 'Diga: mudou.'
+  answer:
+    speaker: protagonist
+    text: 変[か]わった。
+  items:
+  - kawatta
+- type: narrator
+  text:
+    en: 'Japanese schools are known for strict «校則[こうそく]»: uniforms, hair colour, even underwear colour in some. Rules forcing students with naturally brown hair to dye it black became a national debate,
+      and many schools have relaxed them; more now let students choose trousers or skirts.'
+    pt: 'As escolas japonesas são conhecidas pelo «校則[こうそく]» rígido: uniforme, cor do cabelo, em algumas até a cor da roupa íntima. Regras que obrigavam alunos com cabelo naturalmente castanho a tingir
+      de preto viraram debate nacional, e muitas escolas afrouxaram; mais escolas hoje deixam escolher entre calça e saia.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil uniforme é comum, mas cabelo e unha são problema de cada um. Para uma brasileira nikkei de cabelo castanho, ouvir isso pode ser um susto — e mostra quanto o Japão está mudando.
+- type: prompt
+  ask:
+    en: 'Once more: say “freedom, free”.'
+    pt: 'Mais uma vez: diga “liberdade, livre”.'
+  answer:
+    speaker: protagonist
+    text: 自由[じゆう]
+  items:
+  - jiyuu
+- type: prompt
+  ask:
+    en: 'Once more: say “school rules”.'
+    pt: 'Mais uma vez: diga “regulamento da escola”.'
+  answer:
+    speaker: protagonist
+    text: 校則[こうそく]
+  items:
+  - kousoku
+- type: prompt
+  ask:
+    en: 'Once more: say “hair colour”.'
+    pt: 'Mais uma vez: diga “cor do cabelo”.'
+  answer:
+    speaker: protagonist
+    text: 髪[かみ] の 色[いろ]
+  items:
+  - kami-no-iro
+- type: prompt
+  ask:
+    en: 'Once more: say “don''t have to”.'
+    pt: 'Mais uma vez: diga “não precisa”.'
+  answer:
+    speaker: protagonist
+    text: 〜なくて も いい
+  items:
+  - nakute-mo-ii
+- type: prompt
+  ask:
+    en: 'Once more: say “don''t have to dye”.'
+    pt: 'Mais uma vez: diga “não precisa tingir”.'
+  answer:
+    speaker: protagonist
+    text: 染[そ]めなくて も いい
+  items:
+  - somenakute-mo-ii
+- type: prompt
+  ask:
+    en: 'Once more: say “strict”.'
+    pt: 'Mais uma vez: diga “rígido”.'
+  answer:
+    speaker: protagonist
+    text: 厳[きび]しい
+  items:
+  - kibishii
+- type: prompt
+  ask:
+    en: 'Once more: say “forbidden”.'
+    pt: 'Mais uma vez: diga “proibido”.'
+  answer:
+    speaker: protagonist
+    text: 禁止[きんし]
+  items:
+  - kinshi
+- type: prompt
+  ask:
+    en: 'Once more: say “natural hair (colour)”.'
+    pt: 'Mais uma vez: diga “cabelo natural”.'
+  answer:
+    speaker: protagonist
+    text: 地毛[じげ]
+  items:
+  - jige
+- type: prompt
+  ask:
+    en: 'Once more: say “changed”.'
+    pt: 'Mais uma vez: diga “mudou”.'
+  answer:
+    speaker: protagonist
+    text: 変[か]わった
+  items:
+  - kawatta
+- type: prompt
+  ask:
+    en: 'Once more: say “high school”.'
+    pt: 'Mais uma vez: diga “ensino médio, colégio”.'
+  answer:
+    speaker: protagonist
+    text: 高校[こうこう]
+  items:
+  - koukou
+- type: prompt
+  ask:
+    en: 'Once more: say “skirt”.'
+    pt: 'Mais uma vez: diga “saia”.'
+  answer:
+    speaker: protagonist
+    text: スカート
+  items:
+  - sukaato
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “quarrel, fight — and “is angry — and “don''t be angry — and “forgot — and “promise; appointment — and “even though I was waiting — and “that''s awful, cruel — and “I''m really sorry — and
+      “treat (me) as important”.'
+    pt: 'Diga: “briga — e “está brava — e “não fica brava — e “esqueci — e “promessa; compromisso — e “e eu esperando — e “que horrível, que maldade — e “desculpa mesmo — e “me dá valor”.'
+  answer:
+    speaker: protagonist
+    text: 喧嘩[けんか] … 怒[おこ]って る … 怒[おこ]らないで … 忘[わす]れた … 約束[やくそく] … 待[ま]って いた のに … ひどい … 本当[ほんとう] に ごめん … 大事[だいじ] に して
+  items:
+  - kenka
+  - okotteru
+  - okoranaide
+  - wasureta
+  - yakusoku
+  - matte-ita-noni
+  - hidoi
+  - hontou-ni-gomen
+  - daiji-ni-shite
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “making up — and “happy, happiness — and “a reason for living — and “stress — and “room to breathe, ease — and “if (conditional) — and “if you work — and “if you rest — and “vegetable field,
+      garden”.'
+    pt: 'Diga: “fazer as pazes — e “feliz, felicidade — e “razão de viver — e “estresse — e “folga, tranquilidade — e “se (condicional) — e “se trabalhar — e “se descansar — e “horta”.'
+  answer:
+    speaker: protagonist
+    text: 仲直[なかなお]り … 幸[しあわ]せ … 生[い]きがい … ストレス … ゆとり … 〜ば … 働[はたら]けば … 休[やす]めば … 畑[はたけ]
+  items:
+  - nakanaori
+  - shiawase
+  - ikigai
+  - sutoresu
+  - yutori
+  - ba
+  - hatarakeba
+  - yasumeba
+  - hatake
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “grow, raise — and “every day is fun — and “small, little — and “wedding (ceremony) — and “wedding reception — and “wedding gift money — and “envelope — and “new (crisp) banknotes — and “may
+      put in”.'
+    pt: 'Diga: “cultivar, criar — e “todo dia é bom — e “pequeno — e “casamento (cerimônia) — e “festa de casamento — e “dinheiro de presente de casamento — e “envelope — e “notas novas — e “pode colocar”.'
+  answer:
+    speaker: protagonist
+    text: 育[そだ]てる … 毎日[まいにち] が 楽[たの]しい … 小[ちい]さな … 結婚式[けっこんしき] … 披露宴[ひろうえん] … ご祝儀[しゅうぎ] … 封筒[ふうとう] … 新札[しんさつ] … 入[い]れて も いい
+  items:
+  - sodateru
+  - mainichi-tanoshii
+  - chiisana
+  - kekkonshiki
+  - hirouen
+  - goshuugi
+  - fuutou
+  - shinsatsu
+  - ireru
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “30,000 yen — and “even number — and “the meaning of splitting up — and “return gift for guests — and “congratulations (polite) — and “dad joke, pun — and “funny, interesting — and “pun —
+      and “laugh”.'
+    pt: 'Diga: “30 mil ienes — e “número par — e “o sentido de se separar — e “lembrança para os convidados — e “parabéns (educado) — e “piada de tiozão, trocadilho — e “engraçado, interessante — e “trocadilho
+      — e “rio”.'
+  answer:
+    speaker: protagonist
+    text: 三万円[さんまんえん] … 偶数[ぐうすう] … 別[わか]れる 意味[いみ] … 引[ひ]き出[で]物[もの] … おめでとう ございます … おやじ ギャグ … 面白[おもしろ]い … 駄洒落[だじゃれ] … 笑[わら]います
+  items:
+  - sanman-en
+  - guusuu
+  - wakareru-imi
+  - hikidemono
+  - omedetou-gozaimasu
+  - oyaji-gyagu
+  - omoshiroi
+  - dajare
+  - warau
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “joke — and “year-end party — and “this year — and “next year — and “thank you for all your help — and “I look forward to next year too — and “I think that… — and “what do you think? — and
+      “samba”.'
+    pt: 'Diga: “piada, brincadeira — e “festa de fim de ano — e “este ano — e “ano que vem — e “obrigado por tudo — e “conto com vocês no ano que vem — e “acho que… — e “o que você acha? — e “samba”.'
+  answer:
+    speaker: protagonist
+    text: 冗談[じょうだん] … 忘年会[ぼうねんかい] … 今年[ことし] … 来年[らいねん] … お世話[せわ] に なりました … 来年[らいねん] も よろしく お願[ねが]いします … 〜と 思[おも]います … どう 思[おも]います か … サンバ
+  items:
+  - joudan
+  - bounenkai
+  - kotoshi
+  - rainen
+  - osewa
+  - yoroshiku-rainen
+  - to-omoimasu
+  - dou-omoimasu-ka
+  - sanba
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “stereotype — and “image (of a place) — and “I don''t think so (I think it''s different) — and “not much, not really — and “not at all — and “sometimes — and “hear; ask — and “cat — and “dog”.'
+    pt: 'Diga: “estereótipo — e “imagem (de um lugar) — e “acho que não (acho que é diferente) — e “não muito — e “nada, de jeito nenhum — e “às vezes — e “ouço; pergunto — e “gato — e “cachorro”.'
+  answer:
+    speaker: protagonist
+    text: ステレオタイプ … イメージ … 違[ちが]う と 思[おも]う … あまり 〜ません … 全然[ぜんぜん] 〜ません … 時々[ときどき] … 聞[き]きます … 猫[ねこ] … 犬[いぬ]
+  items:
+  - sutereotaipu
+  - imeeji
+  - chigau-to-omou
+  - amari
+  - zenzen
+  - tokidoki
+  - kikimasu
+  - neko
+  - inu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “bird — and “cute — and “there is (living things) — and “there is (things) — and “shrine — and “how many (animals) — and “many — and “may I touch? — and “no good, not allowed”.'
+    pt: 'Diga: “pássaro — e “fofo — e “há, tem (seres vivos) — e “há, tem (coisas) — e “santuário — e “quantos (animais) — e “muitos — e “posso tocar? — e “não pode”.'
+  answer:
+    speaker: protagonist
+    text: 鳥[とり] … かわいい … います … あります … 神社[じんじゃ] … 何匹[なんびき] … 多[おお]い … 触[さわ]っても いい です か … だめ
+  items:
+  - tori
+  - kawaii
+  - imasu
+  - arimasu
+  - jinja
+  - nanbiki
+  - ooi
+  - sawaru
+  - dame
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
