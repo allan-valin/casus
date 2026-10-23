@@ -1,0 +1,43 @@
+id: A2-27
+protagonist: f
+title: [Appearance, Aparência]
+situation: ["Tomorrow you interpret for an important client. Chief Sato gives advice on how to dress.", "Amanhã você vai interpretar para um cliente importante. A chefe Sato dá conselhos sobre como se vestir."]
+learn: []
+culture: Neat, plain, no strong perfume
+items:
+  - [suutsu, "スーツ", "suit", "terno, tailleur"]
+  - [midashinami, "身[み]だしなみ", "personal grooming, neat appearance", "boa aparência, cuidado pessoal", {rare: true}]
+  - [kousui, "香水[こうすい]", "perfume", "perfume"]
+  - [seiketsu, "清潔[せいけつ]", "clean, neat", "limpo, asseado"]
+  - [hou-ga-ii, "〜ほう が いい", "you'd better…", "é melhor…"]
+  - [kita-hou-ga-ii, "着[き]た ほう が いい です", "you'd better wear it", "é melhor vestir"]
+  - [shinai-hou-ga-ii, "つけない ほう が いい です", "better not put on", "é melhor não passar"]
+  - [jimi, "地味[じみ]", "plain, sober", "discreto, sóbrio"]
+  - [hade, "派手[はで]", "flashy", "chamativo", {rare: true}]
+  - [kutsu-migaku, "靴[くつ] を 磨[みが]きます", "polish (my) shoes", "engraxo os sapatos"]
+  - [daiji, "大事[だいじ]", "important", "importante"]
+dialogue:
+  - [sato, "明日[あした] は 大事[だいじ] な お客様[きゃくさま] です。 スーツ を 着[き]た ほう が いい です よ。", "Tomorrow's client is important. You'd better wear a suit.", "O cliente de amanhã é importante. É melhor vir de tailleur."]
+  - [protagonist, "はい。 色[いろ] は 何[なに] が いい です か。", "Yes. What colour is best?", "Certo. Que cor é melhor?"]
+  - [sato, "紺[こん] か 黒[くろ]。 地味[じみ] な 色[いろ] が いい です。 派手[はで] な の は ちょっと…", "Navy or black. A plain colour. Something flashy is a bit…", "Azul-marinho ou preto. Uma cor discreta. Chamativo é meio…"]
+  - [protagonist, "香水[こうすい] は？ ブラジル で は 毎日[まいにち] つけます。", "And perfume? In Brazil I wear it every day.", "E perfume? No Brasil eu passo todo dia."]
+  - [sato, "強[つよ]い 香水[こうすい] は つけない ほう が いい です ね。 清潔[せいけつ] が 一番[いちばん] です。", "Better not wear strong perfume. Clean is best.", "É melhor não passar perfume forte. Limpo é o melhor."]
+  - [protagonist, "身[み]だしなみ は 大事[だいじ] です ね。", "Appearance matters, then.", "A aparência importa, então."]
+  - [sato, "ええ。 靴[くつ] も 磨[みが]いた ほう が いい です よ。", "Yes. You'd better polish your shoes too.", "Sim. É melhor engraxar os sapatos também."]
+  - [protagonist, "わかりました。 今晩[こんばん] 準備[じゅんび] して おきます。", "Understood. I'll get everything ready tonight.", "Entendido. Vou deixar tudo pronto hoje à noite."]
+teach:
+  - ask: ["Say: a suit.", "Diga: um tailleur, terno.", "スーツ", suutsu]
+  - ask: ["Say: important.", "Diga: importante.", "大事[だいじ]", daiji]
+  - note: ["Advice: the plain past plus «ほう が いい» — «着[き]た ほう が いい», you'd better wear it. Better not: the plain negative — «つけない ほう が いい», better not put it on.", "Conselho: o passado simples mais «ほう が いい» — «着[き]た ほう が いい», é melhor vestir. É melhor não: o negativo simples — «つけない ほう が いい», é melhor não passar."]
+  - ask: ["Say the pattern: you'd better…", "Diga o padrão: é melhor…", "〜ほう が いい", hou-ga-ii]
+  - build: [kita-hou-ga-ii, ["いい です", "ほう が いい です", "着[き]た ほう が いい です"]]
+  - ask: ["Say: you'd better wear it.", "Diga: é melhor vestir.", "着[き]た ほう が いい です。", kita-hou-ga-ii]
+  - ask: ["Say: better not put it on.", "Diga: é melhor não passar.", "つけない ほう が いい です。", shinai-hou-ga-ii]
+  - ask: ["Say: perfume.", "Diga: perfume.", "香水[こうすい]", kousui]
+  - ask: ["Say: plain, sober.", "Diga: discreto.", "地味[じみ]", jimi]
+  - ask: ["Say: flashy.", "Diga: chamativo.", "派手[はで]", hade]
+  - ask: ["Say: clean, neat.", "Diga: limpo, asseado.", "清潔[せいけつ]", seiketsu]
+  - ask: ["Say: neat appearance.", "Diga: boa aparência.", "身[み]だしなみ", midashinami]
+  - ask: ["Say: I polish my shoes.", "Diga: engraxo os sapatos.", "靴[くつ] を 磨[みが]きます。", kutsu-migaku]
+  - note: ["At work, «身[み]だしなみ» means plain and clean rather than stylish: dark suits, little jewellery, neat hair, polished shoes. Strong perfume is avoided — in crowded trains and meetings, a scent is easy to impose on others.", "No trabalho, «身[み]だしなみ» quer dizer discreto e limpo, mais que elegante: terno escuro, poucas joias, cabelo arrumado, sapato engraxado. Perfume forte se evita — em trem lotado e reunião, o cheiro facilmente incomoda os outros."]
+  - pt_only: "Brasileiro adora perfume e capricha; no escritório japonês, quanto menos se notar o perfume, melhor. Um desodorante sem cheiro já resolve."

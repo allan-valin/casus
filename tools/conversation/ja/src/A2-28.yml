@@ -1,0 +1,43 @@
+id: A2-28
+protagonist: m
+title: [Trip to Tokyo, Viagem a Tóquio]
+situation: ["Hamamatsu station, the ticket office. You plan a weekend in Tokyo by shinkansen.", "Estação de Hamamatsu, a bilheteria. Você planeja um fim de semana em Tóquio de trem-bala."]
+learn: []
+culture: —
+items:
+  - [shinkansen, "新幹線[しんかんせん]", "shinkansen, bullet train", "shinkansen, trem-bala", {rare: true}]
+  - [shiteiseki, "指定席[していせき]", "reserved seat", "assento reservado", {rare: true}]
+  - [jiyuuseki, "自由席[じゆうせき]", "unreserved seat", "assento livre", {rare: true}]
+  - [toukyou, "東京[とうきょう]", "Tokyo", "Tóquio"]
+  - [katamichi, "片道[かたみち]", "one way", "só ida", {rare: true}]
+  - [oufuku, "往復[おうふく]", "return (round trip)", "ida e volta", {rare: true}]
+  - [tsumori, "〜つもり です", "I plan to…", "pretendo…"]
+  - [iku-tsumori, "行[い]く つもり です", "I plan to go", "pretendo ir"]
+  - [mado-gawa, "窓側[まどがわ]", "window side", "janela"]
+  - [nan-jikan, "何時間[なんじかん]", "how many hours", "quantas horas"]
+  - [hayai, "速[はや]い", "fast", "rápido"]
+dialogue:
+  - [protagonist, "東京[とうきょう] まで、 新幹線[しんかんせん] の 切符[きっぷ] を お願[ねが]いします。", "A shinkansen ticket to Tokyo, please.", "Uma passagem de trem-bala para Tóquio, por favor."]
+  - [madoguchi, "片道[かたみち] です か、 往復[おうふく] です か。", "One way or return?", "Só ida ou ida e volta?"]
+  - [protagonist, "往復[おうふく] です。 土曜日[どようび] に 行[い]って、 日曜日[にちようび] に 帰[かえ]る つもり です。", "Return. I plan to go on Saturday and come back on Sunday.", "Ida e volta. Pretendo ir no sábado e voltar no domingo."]
+  - [madoguchi, "指定席[していせき] と 自由席[じゆうせき]、 どちら に します か。", "Reserved or unreserved seat?", "Assento reservado ou livre?"]
+  - [protagonist, "指定席[していせき] で。 窓側[まどがわ] が いい です。 富士山[ふじさん] が 見[み]たい ので。", "Reserved. A window seat, please. I want to see Mount Fuji.", "Reservado. Na janela, por favor. Quero ver o monte Fuji."]
+  - [madoguchi, "では、 E 席[せき]、 左側[ひだりがわ] の 窓[まど] です ね。", "Then seat E, the left-hand window.", "Então o assento E, janela do lado esquerdo."]
+  - [protagonist, "東京[とうきょう] まで 何時間[なんじかん] です か。", "How many hours to Tokyo?", "Quantas horas até Tóquio?"]
+  - [madoguchi, "ひかり で 一時間[いちじかん] 半[はん] ぐらい です。", "About an hour and a half on the Hikari.", "Uma hora e meia, mais ou menos, no Hikari."]
+teach:
+  - ask: ["Say: the shinkansen.", "Diga: o trem-bala.", "新幹線[しんかんせん]", shinkansen]
+  - ask: ["Say: Tokyo.", "Diga: Tóquio.", "東京[とうきょう]", toukyou]
+  - ask: ["Say: one way.", "Diga: só ida.", "片道[かたみち]", katamichi]
+  - ask: ["Say: return, round trip.", "Diga: ida e volta.", "往復[おうふく]", oufuku]
+  - ask: ["Say: a reserved seat.", "Diga: assento reservado.", "指定席[していせき]", shiteiseki]
+  - ask: ["Say: an unreserved seat.", "Diga: assento livre.", "自由席[じゆうせき]", jiyuuseki]
+  - ask: ["Say: the window side.", "Diga: na janela.", "窓側[まどがわ]", mado-gawa]
+  - note: ["A plan: a plain verb plus «つもり です» — «行[い]く つもり です», I plan to go. It's a firm intention, stronger than «〜たい».", "Um plano: verbo simples mais «つもり です» — «行[い]く つもり です», pretendo ir. É intenção firme, mais forte que «〜たい»."]
+  - ask: ["Say the pattern: I plan to…", "Diga o padrão: pretendo…", "〜つもり です", tsumori]
+  - build: [iku-tsumori, ["です", "つもり です", "行[い]く つもり です"]]
+  - ask: ["Say: I plan to go.", "Diga: pretendo ir.", "行[い]く つもり です。", iku-tsumori]
+  - ask: ["Ask: how many hours?", "Pergunte: quantas horas?", "何時間[なんじかん] です か。", nan-jikan]
+  - ask: ["Say: it's fast.", "Diga: é rápido.", "速[はや]い です。", hayai]
+  - note: ["From Hamamatsu to Tokyo is about 250 km: roughly an hour and a half on the Hikari. Going to Tokyo, Mount Fuji appears on the left — the E seats — between Shizuoka and Shin-Fuji, on a clear day.", "De Hamamatsu a Tóquio são uns 250 km: cerca de uma hora e meia no Hikari. Indo para Tóquio, o monte Fuji aparece à esquerda — nos assentos E — entre Shizuoka e Shin-Fuji, num dia claro."]
+  - pt_only: "É como ir de São Paulo ao Rio em uma hora e meia, sem aeroporto. O trem-bala sai no minuto marcado — chegue antes."
