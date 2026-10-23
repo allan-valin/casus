@@ -1,0 +1,614 @@
+# UNIT ja C1-22 — written by AI (Claude) for Casus; expanded from src/C1-22.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-22
+level: C1
+number: 22
+protagonist: m
+title:
+  en: The daycare
+  pt: A creche
+situation:
+  en: 'Your son was born in October. Yui wants to go back to work in April, so you start 保活: hunting for a daycare place.'
+  pt: 'Seu filho nasceu em outubro. A Yui quer voltar a trabalhar em abril, então vocês começam o 保活: a caça por uma vaga na creche.'
+learn_lessons: []
+culture: —
+new_items:
+- id: hoikuen
+  text: 保育園[ほいくえん]
+  meaning:
+    en: daycare (nursery)
+    pt: creche
+- id: taiki-jidou
+  text: 待機[たいき] 児童[じどう]
+  meaning:
+    en: children on waiting lists
+    pt: crianças na fila de espera
+  rare: true
+- id: hokatsu
+  text: 保活[ほかつ]
+  meaning:
+    en: daycare hunting
+    pt: caça à vaga na creche
+  rare: true
+- id: ippou-de
+  text: 〜一方[いっぽう] で
+  meaning:
+    en: while, on the other hand
+    pt: por outro lado, enquanto
+- id: tensuu
+  text: 点数[てんすう]
+  meaning:
+    en: points (for priority)
+    pt: pontuação (de prioridade)
+- id: kengaku
+  text: 見学[けんがく]
+  meaning:
+    en: tour, visit (to see)
+    pt: visita (para conhecer)
+- id: fukushoku
+  text: 復職[ふくしょく]
+  meaning:
+    en: returning to work
+    pt: volta ao trabalho
+  rare: true
+- id: hoikushi
+  text: 保育士[ほいくし]
+  meaning:
+    en: nursery teacher
+    pt: educador de creche
+- id: kekka-ga-kuru
+  text: 結果[けっか] が 来[く]る
+  meaning:
+    en: the result arrives
+    pt: o resultado chega
+- id: ochiru
+  text: 落[お]ちる
+  meaning:
+    en: fail, not get in
+    pt: não passar, ficar de fora
+reviews:
+- item: tatami
+  from: A1-15
+- item: hiroi
+  from: A1-15
+- item: semai
+  from: A1-15
+- item: rokujou
+  from: A1-15
+- item: heya
+  from: A1-15
+- item: nagai
+  from: A1-15
+- item: shikaku
+  from: A1-15
+- item: meetoru
+  from: A1-15
+- item: han
+  from: A1-15
+- item: chodo
+  from: A1-15
+- item: ookii
+  from: A1-15
+- item: chiisai
+  from: A1-15
+- item: taifuu
+  from: B1-19
+- item: chuushi
+  from: B1-19
+- item: yotei
+  from: B1-19
+- item: enki
+  from: B1-19
+- item: you-to-omotte-ita
+  from: B1-19
+- item: ikou-to-omotte-ita
+  from: B1-19
+- item: unkyuu
+  from: B1-19
+- item: kyouto
+  from: B1-19
+- item: zannen
+  from: B1-19
+- item: anzen-daiichi
+  from: B1-19
+- item: kyanseru
+  from: B1-19
+- item: otera
+  from: B2-21
+- item: shintou
+  from: B2-21
+- item: bukkyou
+  from: B2-21
+- item: toka
+  from: B2-21
+- item: hatsumoude
+  from: B2-21
+- item: shuukyou
+  from: B2-21
+- item: torii
+  from: B2-21
+- item: omamori
+  from: B2-21
+- item: omikuji
+  from: B2-21
+- item: kami-sama
+  from: B2-21
+- item: osoushiki
+  from: B2-21
+- item: giri-no-ryoushin
+  from: C1-07
+- item: jikka
+  from: C1-07
+- item: kisei
+  from: C1-07
+- item: yome
+  from: C1-07
+- item: kara-koso
+  from: C1-07
+- item: kazoku-dakara-koso
+  from: C1-07
+- item: tetsudaimasu
+  from: C1-07
+- item: enryo-naku
+  from: C1-07
+- item: yakuwari
+  from: C1-07
+- item: kawatte-kita
+  from: C1-07
+- item: shoukaijou
+  from: C1-15
+- item: daigaku-byouin
+  from: C1-15
+- item: machijikan
+  from: C1-15
+- item: kensa
+  from: C1-15
+- item: shidai
+  from: C1-15
+- item: kekka-ga-de-shidai
+  from: C1-15
+- item: senmon-i
+  from: C1-15
+- item: shoshinryou
+  from: C1-15
+- item: yoyaku-review
+  from: C1-15
+- item: kakaritsukei
+  from: C1-15
+- item: konintodoke
+  from: C1-19
+- item: shounin
+  from: C1-19
+- item: koseki
+  from: C1-19
+- item: shorui
+  from: C1-19
+- item: kisai
+  from: C1-19
+- item: teishutsu-review
+  from: C1-19
+- item: ryouji-kan-shoumei
+  from: C1-19
+- item: juri
+  from: C1-19
+- item: kinenbi
+  from: C1-19
+- item: fuufu
+  from: C1-19
+- item: eijuuken
+  from: C1-21
+- item: zairyuu-shikaku
+  from: C1-21
+- item: shinsa
+  from: C1-21
+- item: ni-oujite
+  from: C1-21
+- item: jijou-ni-oujite
+  from: C1-21
+- item: nouzei-shoumei
+  from: C1-21
+- item: mimoto-hoshounin
+  from: C1-21
+- item: haiguusha
+  from: C1-21
+- item: youken
+  from: C1-21
+- item: shinsei-review
+  from: C1-21
+- item: kekka-tsuuchi
+  from: C1-21
+steps:
+- type: narrator
+  text:
+    en: 'Your son was born in October. Yui wants to go back to work in April, so you start 保活: hunting for a daycare place. Listen to the conversation; you don''t need to understand it yet.'
+    pt: 'Seu filho nasceu em outubro. A Yui quer voltar a trabalhar em abril, então vocês começam o 保活: a caça por uma vaga na creche. Escute a conversa; ainda não precisa entender.'
+- type: dialogue
+  lines:
+  - speaker: yui
+    text: 四月[しがつ] に 復職[ふくしょく] する ため に、 保育園[ほいくえん] を 探[さが]さなきゃ。
+    meaning:
+      en: To go back to work in April, we have to find a daycare.
+      pt: Para eu voltar a trabalhar em abril, precisamos achar uma creche.
+  - speaker: protagonist
+    text: 保活[ほかつ] って、 そんな に 大変[たいへん] な の？
+    meaning:
+      en: Is daycare hunting that hard?
+      pt: Caçar vaga em creche é tão difícil assim?
+  - speaker: yui
+    text: 子供[こども] が 減[へ]って いる 一方[いっぽう] で、 保育園[ほいくえん] に 入[はい]れない 待機[たいき] 児童[じどう] も まだ いる の。
+    meaning:
+      en: While the number of children is falling, there are still kids who can't get into daycare.
+      pt: Enquanto o número de crianças diminui, ainda tem criança na fila sem conseguir vaga.
+  - speaker: protagonist
+    text: どう やって 決[き]まる の？
+    meaning:
+      en: How is it decided?
+      pt: Como é decidido?
+  - speaker: yui
+    text: 点数[てんすう] で 決[き]まる。 両親[りょうしん] が フルタイム で 働[はたら]く と 点数[てんすう] が 高[たか]い。
+    meaning:
+      en: By points. If both parents work full-time, the points are higher.
+      pt: Por pontuação. Se os dois pais trabalham em tempo integral, a pontuação é maior.
+  - speaker: protagonist
+    text: じゃあ、 まず 近[ちか]く の 保育園[ほいくえん] を 見学[けんがく] しよう。
+    meaning:
+      en: Then let's first visit the daycares nearby.
+      pt: Então vamos primeiro visitar as creches perto de casa.
+  - speaker: yui
+    text: 保育士[ほいくし] さん の 雰囲気[ふんいき] も 見[み]たい ね。 申[もう]し込[こ]み は 十一月[じゅういちがつ] まで。
+    meaning:
+      en: I want to see what the teachers are like too. Applications close in November.
+      pt: Quero ver como são as educadoras também. As inscrições vão até novembro.
+  - speaker: protagonist
+    text: 落[お]ちたら どう する？
+    meaning:
+      en: And if we don't get in?
+      pt: E se a gente não conseguir?
+- type: prompt
+  ask:
+    en: 'Say: a daycare nursery.'
+    pt: 'Diga: uma creche.'
+  answer:
+    speaker: protagonist
+    text: 保育園[ほいくえん]
+  items:
+  - hoikuen
+- type: prompt
+  ask:
+    en: 'Say: daycare hunting.'
+    pt: 'Diga: a caça à vaga.'
+  answer:
+    speaker: protagonist
+    text: 保活[ほかつ]
+  items:
+  - hokatsu
+- type: prompt
+  ask:
+    en: 'Say: returning to work.'
+    pt: 'Diga: voltar ao trabalho.'
+  answer:
+    speaker: protagonist
+    text: 復職[ふくしょく]
+  items:
+  - fukushoku
+- type: prompt
+  ask:
+    en: 'Say: children on waiting lists.'
+    pt: 'Diga: crianças na fila de espera.'
+  answer:
+    speaker: protagonist
+    text: 待機[たいき] 児童[じどう]
+  items:
+  - taiki-jidou
+- type: narrator
+  text:
+    en: '«〜一方[いっぽう] で» sets two sides against each other — while, on the other hand: «子供[こども] が 減[へ]って いる 一方[いっぽう] で、 待機[たいき] 児童[じどう] も いる», while children are decreasing, there are still kids waiting.
+      Common in news and essays.'
+    pt: '«〜一方[いっぽう] で» coloca dois lados em contraste — por outro lado, enquanto: «子供[こども] が 減[へ]って いる 一方[いっぽう] で、 待機[たいき] 児童[じどう] も いる», enquanto as crianças diminuem, ainda há criança na fila. Comum em
+      notícias e redações.'
+- type: prompt
+  ask:
+    en: 'Say the pattern: while, on the other hand.'
+    pt: 'Diga o padrão: por outro lado.'
+  answer:
+    speaker: protagonist
+    text: 〜一方[いっぽう] で
+  items:
+  - ippou-de
+- type: prompt
+  ask:
+    en: 'Say: points for priority.'
+    pt: 'Diga: pontuação de prioridade.'
+  answer:
+    speaker: protagonist
+    text: 点数[てんすう]
+  items:
+  - tensuu
+- type: prompt
+  ask:
+    en: 'Say: a visit to see a place.'
+    pt: 'Diga: uma visita para conhecer.'
+  answer:
+    speaker: protagonist
+    text: 見学[けんがく]
+  items:
+  - kengaku
+- type: prompt
+  ask:
+    en: 'Say: a nursery teacher.'
+    pt: 'Diga: um educador de creche.'
+  answer:
+    speaker: protagonist
+    text: 保育士[ほいくし]
+  items:
+  - hoikushi
+- type: prompt
+  ask:
+    en: 'Say: the result arrives.'
+    pt: 'Diga: o resultado chega.'
+  answer:
+    speaker: protagonist
+    text: 結果[けっか] が 来[く]る
+  items:
+  - kekka-ga-kuru
+- type: prompt
+  ask:
+    en: 'Say: not get in.'
+    pt: 'Diga: ficar de fora.'
+  answer:
+    speaker: protagonist
+    text: 落[お]ちる
+  items:
+  - ochiru
+- type: narrator
+  text:
+    en: Public daycare places are allocated by city hall with a points system — full-time work, single parents and other needs add points. Applications for April close in autumn. Waiting lists have shrunk
+      in many cities, but popular areas still have them; families visit several nurseries and apply to many.
+    pt: As vagas nas creches públicas são distribuídas pela prefeitura por um sistema de pontos — trabalho em tempo integral, família monoparental e outras necessidades somam pontos. As inscrições para
+      abril fecham no outono. As filas diminuíram em muitas cidades, mas bairros procurados ainda as têm; as famílias visitam várias creches e se inscrevem em muitas.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil a fila da creche pública também existe, e muita gente recorre aos avós. No Japão, com os avós longe, o 保活 vira um projeto de família — com planilha e tudo.
+- type: prompt
+  ask:
+    en: 'Once more: say “daycare (nursery)”.'
+    pt: 'Mais uma vez: diga “creche”.'
+  answer:
+    speaker: protagonist
+    text: 保育園[ほいくえん]
+  items:
+  - hoikuen
+- type: prompt
+  ask:
+    en: 'Once more: say “children on waiting lists”.'
+    pt: 'Mais uma vez: diga “crianças na fila de espera”.'
+  answer:
+    speaker: protagonist
+    text: 待機[たいき] 児童[じどう]
+  items:
+  - taiki-jidou
+- type: prompt
+  ask:
+    en: 'Once more: say “daycare hunting”.'
+    pt: 'Mais uma vez: diga “caça à vaga na creche”.'
+  answer:
+    speaker: protagonist
+    text: 保活[ほかつ]
+  items:
+  - hokatsu
+- type: prompt
+  ask:
+    en: 'Once more: say “while, on the other hand”.'
+    pt: 'Mais uma vez: diga “por outro lado, enquanto”.'
+  answer:
+    speaker: protagonist
+    text: 〜一方[いっぽう] で
+  items:
+  - ippou-de
+- type: prompt
+  ask:
+    en: 'Once more: say “points (for priority)”.'
+    pt: 'Mais uma vez: diga “pontuação (de prioridade)”.'
+  answer:
+    speaker: protagonist
+    text: 点数[てんすう]
+  items:
+  - tensuu
+- type: prompt
+  ask:
+    en: 'Once more: say “tour, visit (to see)”.'
+    pt: 'Mais uma vez: diga “visita (para conhecer)”.'
+  answer:
+    speaker: protagonist
+    text: 見学[けんがく]
+  items:
+  - kengaku
+- type: prompt
+  ask:
+    en: 'Once more: say “returning to work”.'
+    pt: 'Mais uma vez: diga “volta ao trabalho”.'
+  answer:
+    speaker: protagonist
+    text: 復職[ふくしょく]
+  items:
+  - fukushoku
+- type: prompt
+  ask:
+    en: 'Once more: say “nursery teacher”.'
+    pt: 'Mais uma vez: diga “educador de creche”.'
+  answer:
+    speaker: protagonist
+    text: 保育士[ほいくし]
+  items:
+  - hoikushi
+- type: prompt
+  ask:
+    en: 'Once more: say “the result arrives”.'
+    pt: 'Mais uma vez: diga “o resultado chega”.'
+  answer:
+    speaker: protagonist
+    text: 結果[けっか] が 来[く]る
+  items:
+  - kekka-ga-kuru
+- type: prompt
+  ask:
+    en: 'Once more: say “fail, not get in”.'
+    pt: 'Mais uma vez: diga “não passar, ficar de fora”.'
+  answer:
+    speaker: protagonist
+    text: 落[お]ちる
+  items:
+  - ochiru
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “permanent residency — and “residence status — and “review, screening — and “according to, depending on — and “depending on the situation — and “tax payment certificate — and “personal guarantor
+      — and “spouse — and “requirement — and “application form — and “notice of the result — and “marriage registration form — and “witness”.'
+    pt: 'Diga: “residência permanente — e “status de residência — e “análise — e “de acordo com, conforme — e “conforme a situação — e “certidão de impostos pagos — e “fiador pessoal — e “cônjuge — e “requisito
+      — e “formulário de requerimento — e “aviso do resultado — e “formulário de registro de casamento — e “testemunha”.'
+  answer:
+    speaker: protagonist
+    text: 永住権[えいじゅうけん] … 在留[ざいりゅう] 資格[しかく] … 審査[しんさ] … 〜に 応[おう]じて … 状況[じょうきょう] に 応[おう]じて … 納税[のうぜい] 証明書[しょうめいしょ] … 身元[みもと] 保証人[ほしょうにん] … 配偶者[はいぐうしゃ] … 要件[ようけん] … 申請[しんせい] 書[しょ] … 結果[けっか] の 通知[つうち] … 婚姻届[こんいんとどけ]
+      … 証人[しょうにん]
+  items:
+  - eijuuken
+  - zairyuu-shikaku
+  - shinsa
+  - ni-oujite
+  - jijou-ni-oujite
+  - nouzei-shoumei
+  - mimoto-hoshounin
+  - haiguusha
+  - youken
+  - shinsei-review
+  - kekka-tsuuchi
+  - konintodoke
+  - shounin
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “family register — and “documents, paperwork — and “filling in (a form) — and “submit — and “consulate certificate — and “acceptance (of a filing) — and “anniversary, memorial day — and “married
+      couple — and “referral letter — and “university hospital — and “waiting time — and “test, examination — and “as soon as; depending on”.'
+    pt: 'Diga: “registro familiar — e “documentos — e “preenchimento — e “entregar — e “certidão do consulado — e “aceite (do documento) — e “data comemorativa — e “casal (casado) — e “carta de encaminhamento
+      — e “hospital universitário — e “tempo de espera — e “exame — e “assim que; dependendo de”.'
+  answer:
+    speaker: protagonist
+    text: 戸籍[こせき] … 書類[しょるい] … 記入[きにゅう] … 提出[ていしゅつ] する … 領事館[りょうじかん] の 証明書[しょうめいしょ] … 受理[じゅり] … 記念日[きねんび] … 夫婦[ふうふ] … 紹介状[しょうかいじょう] … 大学[だいがく] 病院[びょういん] … 待[ま]ち時間[じかん] … 検査[けんさ] … 〜次第[しだい]
+  items:
+  - koseki
+  - shorui
+  - kisai
+  - teishutsu-review
+  - ryouji-kan-shoumei
+  - juri
+  - kinenbi
+  - fuufu
+  - shoukaijou
+  - daigaku-byouin
+  - machijikan
+  - kensa
+  - shidai
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “as soon as the results are out — and “specialist (doctor) — and “first-visit fee — and “make an appointment — and “family doctor — and “parents-in-law — and “(one''s) family home — and “going
+      home for the holidays — and “bride; daughter-in-law (old-fashioned) — and “precisely because — and “precisely because we''re family — and “I''ll help — and “without hesitation, feel free”.'
+    pt: 'Diga: “assim que sair o resultado — e “médico especialista — e “taxa de primeira consulta — e “marcar consulta — e “médico de família — e “sogros — e “casa dos pais — e “visitar a terra natal nas
+      festas — e “nora, esposa (antiquado) — e “justamente porque — e “justamente porque somos família — e “eu ajudo — e “sem cerimônia”.'
+  answer:
+    speaker: protagonist
+    text: 結果[けっか] が 出[で] 次第[しだい] … 専門医[せんもんい] … 初診料[しょしんりょう] … 予約[よやく] を 取[と]る … かかりつけ 医[い] … 義理[ぎり] の 両親[りょうしん] … 実家[じっか] … 帰省[きせい] … 嫁[よめ] … 〜から こそ … 家族[かぞく] だ から こそ … 手伝[てつだ]います … 遠慮[えんりょ] なく
+  items:
+  - kekka-ga-de-shidai
+  - senmon-i
+  - shoshinryou
+  - yoyaku-review
+  - kakaritsukei
+  - giri-no-ryoushin
+  - jikka
+  - kisei
+  - yome
+  - kara-koso
+  - kazoku-dakara-koso
+  - tetsudaimasu
+  - enryo-naku
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “role — and “has been changing — and “Buddhist temple — and “Shinto — and “Buddhism — and “things like … and … — and “first shrine visit of the year — and “religion — and “shrine gate — and
+      “amulet, charm — and “fortune slip — and “the gods, a god — and “funeral”.'
+    pt: 'Diga: “papel, função — e “vem mudando — e “templo budista — e “xintoísmo — e “budismo — e “coisas como … e … — e “primeira visita ao santuário no ano — e “religião — e “portal do santuário — e
+      “amuleto — e “papel da sorte — e “os deuses, um deus — e “funeral”.'
+  answer:
+    speaker: protagonist
+    text: 役割[やくわり] … 変[か]わって きた … お寺[てら] … 神道[しんとう] … 仏教[ぶっきょう] … 〜とか 〜とか … 初詣[はつもうで] … 宗教[しゅうきょう] … 鳥居[とりい] … お守[まも]り … おみくじ … 神様[かみさま] … お葬式[そうしき]
+  items:
+  - yakuwari
+  - kawatte-kita
+  - otera
+  - shintou
+  - bukkyou
+  - toka
+  - hatsumoude
+  - shuukyou
+  - torii
+  - omamori
+  - omikuji
+  - kami-sama
+  - osoushiki
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “typhoon — and “cancellation, called off — and “plan, schedule — and “postponement — and “I was going to…, I''d planned to… — and “I was planning to go — and “(train) service suspended — and
+      “Kyoto — and “what a pity — and “safety first — and “cancel (a booking) — and “tatami mat — and “spacious, wide”.'
+    pt: 'Diga: “tufão — e “cancelamento — e “plano, programação — e “adiamento — e “eu pretendia…, ia… — e “eu ia, pretendia ir — e “serviço suspenso — e “Kyoto — e “que pena — e “segurança em primeiro
+      lugar — e “cancelar (reserva) — e “tatame — e “espaçoso, largo”.'
+  answer:
+    speaker: protagonist
+    text: 台風[たいふう] … 中止[ちゅうし] … 予定[よてい] … 延期[えんき] … 〜よう と 思[おも]って いた … 行[い]こう と 思[おも]って いた … 運休[うんきゅう] … 京都[きょうと] … 残念[ざんねん] … 安全[あんぜん] 第一[だいいち] … キャンセル … 畳[たたみ] … 広[ひろ]い
+  items:
+  - taifuu
+  - chuushi
+  - yotei
+  - enki
+  - you-to-omotte-ita
+  - ikou-to-omotte-ita
+  - unkyuu
+  - kyouto
+  - zannen
+  - anzen-daiichi
+  - kyanseru
+  - tatami
+  - hiroi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “narrow, small (room) — and “six tatami (a room size) — and “room — and “long — and “square, rectangle — and “metre — and “half — and “exactly — and “big — and “small”.'
+    pt: 'Diga: “apertado, pequeno (cômodo) — e “seis tatames (tamanho de cômodo) — e “quarto, cômodo — e “comprido — e “quadrado, retângulo — e “metro — e “meio — e “exatamente — e “grande — e “pequeno”.'
+  answer:
+    speaker: protagonist
+    text: 狭[せま]い … 六畳[ろくじょう] … 部屋[へや] … 長[なが]い … 四角[しかく] … メートル … 半[はん] … ちょうど … 大[おお]きい … 小[ちい]さい
+  items:
+  - semai
+  - rokujou
+  - heya
+  - nagai
+  - shikaku
+  - meetoru
+  - han
+  - chodo
+  - ookii
+  - chiisai
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

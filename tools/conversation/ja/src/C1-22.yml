@@ -1,0 +1,40 @@
+id: C1-22
+protagonist: m
+title: ["The daycare", "A creche"]
+situation: ["Your son was born in October. Yui wants to go back to work in April, so you start 保活: hunting for a daycare place.", "Seu filho nasceu em outubro. A Yui quer voltar a trabalhar em abril, então vocês começam o 保活: a caça por uma vaga na creche."]
+learn: []
+culture: —
+items:
+  - [hoikuen, "保育園[ほいくえん]", "daycare (nursery)", "creche"]
+  - [taiki-jidou, "待機[たいき] 児童[じどう]", "children on waiting lists", "crianças na fila de espera", {rare: true}]
+  - [hokatsu, "保活[ほかつ]", "daycare hunting", "caça à vaga na creche", {rare: true}]
+  - [ippou-de, "〜一方[いっぽう] で", "while, on the other hand", "por outro lado, enquanto"]
+  - [tensuu, "点数[てんすう]", "points (for priority)", "pontuação (de prioridade)"]
+  - [kengaku, "見学[けんがく]", "tour, visit (to see)", "visita (para conhecer)"]
+  - [fukushoku, "復職[ふくしょく]", "returning to work", "volta ao trabalho", {rare: true}]
+  - [hoikushi, "保育士[ほいくし]", "nursery teacher", "educador de creche"]
+  - [kekka-ga-kuru, "結果[けっか] が 来[く]る", "the result arrives", "o resultado chega"]
+  - [ochiru, "落[お]ちる", "fail, not get in", "não passar, ficar de fora"]
+dialogue:
+  - [yui, "四月[しがつ] に 復職[ふくしょく] する ため に、 保育園[ほいくえん] を 探[さが]さなきゃ。", "To go back to work in April, we have to find a daycare.", "Para eu voltar a trabalhar em abril, precisamos achar uma creche."]
+  - [protagonist, "保活[ほかつ] って、 そんな に 大変[たいへん] な の？", "Is daycare hunting that hard?", "Caçar vaga em creche é tão difícil assim?"]
+  - [yui, "子供[こども] が 減[へ]って いる 一方[いっぽう] で、 保育園[ほいくえん] に 入[はい]れない 待機[たいき] 児童[じどう] も まだ いる の。", "While the number of children is falling, there are still kids who can't get into daycare.", "Enquanto o número de crianças diminui, ainda tem criança na fila sem conseguir vaga."]
+  - [protagonist, "どう やって 決[き]まる の？", "How is it decided?", "Como é decidido?"]
+  - [yui, "点数[てんすう] で 決[き]まる。 両親[りょうしん] が フルタイム で 働[はたら]く と 点数[てんすう] が 高[たか]い。", "By points. If both parents work full-time, the points are higher.", "Por pontuação. Se os dois pais trabalham em tempo integral, a pontuação é maior."]
+  - [protagonist, "じゃあ、 まず 近[ちか]く の 保育園[ほいくえん] を 見学[けんがく] しよう。", "Then let's first visit the daycares nearby.", "Então vamos primeiro visitar as creches perto de casa."]
+  - [yui, "保育士[ほいくし] さん の 雰囲気[ふんいき] も 見[み]たい ね。 申[もう]し込[こ]み は 十一月[じゅういちがつ] まで。", "I want to see what the teachers are like too. Applications close in November.", "Quero ver como são as educadoras também. As inscrições vão até novembro."]
+  - [protagonist, "落[お]ちたら どう する？", "And if we don't get in?", "E se a gente não conseguir?"]
+teach:
+  - ask: ["Say: a daycare nursery.", "Diga: uma creche.", "保育園[ほいくえん]", hoikuen]
+  - ask: ["Say: daycare hunting.", "Diga: a caça à vaga.", "保活[ほかつ]", hokatsu]
+  - ask: ["Say: returning to work.", "Diga: voltar ao trabalho.", "復職[ふくしょく]", fukushoku]
+  - ask: ["Say: children on waiting lists.", "Diga: crianças na fila de espera.", "待機[たいき] 児童[じどう]", taiki-jidou]
+  - note: ["«〜一方[いっぽう] で» sets two sides against each other — while, on the other hand: «子供[こども] が 減[へ]って いる 一方[いっぽう] で、 待機[たいき] 児童[じどう] も いる», while children are decreasing, there are still kids waiting. Common in news and essays.", "«〜一方[いっぽう] で» coloca dois lados em contraste — por outro lado, enquanto: «子供[こども] が 減[へ]って いる 一方[いっぽう] で、 待機[たいき] 児童[じどう] も いる», enquanto as crianças diminuem, ainda há criança na fila. Comum em notícias e redações."]
+  - ask: ["Say the pattern: while, on the other hand.", "Diga o padrão: por outro lado.", "〜一方[いっぽう] で", ippou-de]
+  - ask: ["Say: points for priority.", "Diga: pontuação de prioridade.", "点数[てんすう]", tensuu]
+  - ask: ["Say: a visit to see a place.", "Diga: uma visita para conhecer.", "見学[けんがく]", kengaku]
+  - ask: ["Say: a nursery teacher.", "Diga: um educador de creche.", "保育士[ほいくし]", hoikushi]
+  - ask: ["Say: the result arrives.", "Diga: o resultado chega.", "結果[けっか] が 来[く]る", kekka-ga-kuru]
+  - ask: ["Say: not get in.", "Diga: ficar de fora.", "落[お]ちる", ochiru]
+  - note: ["Public daycare places are allocated by city hall with a points system — full-time work, single parents and other needs add points. Applications for April close in autumn. Waiting lists have shrunk in many cities, but popular areas still have them; families visit several nurseries and apply to many.", "As vagas nas creches públicas são distribuídas pela prefeitura por um sistema de pontos — trabalho em tempo integral, família monoparental e outras necessidades somam pontos. As inscrições para abril fecham no outono. As filas diminuíram em muitas cidades, mas bairros procurados ainda as têm; as famílias visitam várias creches e se inscrevem em muitas."]
+  - pt_only: "No Brasil a fila da creche pública também existe, e muita gente recorre aos avós. No Japão, com os avós longe, o 保活 vira um projeto de família — com planilha e tudo."

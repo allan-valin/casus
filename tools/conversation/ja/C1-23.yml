@@ -1,0 +1,605 @@
+# UNIT ja C1-23 — written by AI (Claude) for Casus; expanded from src/C1-23.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-23
+level: C1
+number: 23
+protagonist: f
+title:
+  en: Bilingualism
+  pt: Bilinguismo
+situation:
+  en: Maria's son Davi answers her Portuguese in Japanese. At the bakery she asks your advice — Portuguese at home, Japanese outside?
+  pt: O filho da Maria, o Davi, responde em japonês quando ela fala português. Na padaria ela pede o seu conselho — português em casa, japonês fora?
+learn_lessons: []
+culture: Nikkei children between languages
+new_items:
+- id: bairingaru
+  text: バイリンガル
+  meaning:
+    en: bilingual
+    pt: bilíngue
+- id: ie-dewa
+  text: 家[いえ] で は
+  meaning:
+    en: at home
+    pt: em casa
+- id: gakkou-dewa
+  text: 学校[がっこう] で は
+  meaning:
+    en: at school
+    pt: na escola
+- id: ni-totte
+  text: 〜に とって
+  meaning:
+    en: for (someone), from (their) point of view
+    pt: para (alguém)
+- id: kodomo-ni-totte
+  text: 子供[こども] に とって
+  meaning:
+    en: for a child
+    pt: para uma criança
+- id: bogo
+  text: 母語[ぼご]
+  meaning:
+    en: mother tongue
+    pt: língua materna
+- id: keishou-go
+  text: 継承[けいしょう] 語[ご]
+  meaning:
+    en: heritage language
+    pt: língua de herança
+  rare: true
+- id: hanbun-zutsu
+  text: 半分[はんぶん] ずつ
+  meaning:
+    en: half and half
+    pt: metade cada um
+- id: hazukashigaru
+  text: 恥[は]ずかしがる
+  meaning:
+    en: be embarrassed (about it)
+    pt: ter vergonha (disso)
+- id: aidentiti
+  text: アイデンティティ
+  meaning:
+    en: identity
+    pt: identidade
+reviews:
+- item: pan
+  from: A1-16
+- item: pao-de-queijo
+  from: A1-16
+- item: oishii
+  from: A1-16
+- item: oishikatta
+  from: A1-16
+- item: deshita
+  from: A1-16
+- item: hajimete
+  from: A1-16
+- item: mise
+  from: A1-16
+- item: ninki
+  from: A1-16
+- item: koohii
+  from: A1-16
+- item: futatsu-kudasai
+  from: A1-16
+- item: mochimochi
+  from: A1-16
+- item: saifu
+  from: B1-20
+- item: daremo
+  from: B1-20
+- item: dareka
+  from: B1-20
+- item: kouban
+  from: B1-20
+- item: otoshimono
+  from: B1-20
+- item: nakushita
+  from: B1-20
+- item: nanimo-nai
+  from: B1-20
+- item: dokoka
+  from: B1-20
+- item: todokemasu
+  from: B1-20
+- item: kakunin-shite
+  from: B1-20
+- item: shinjirarenai
+  from: B1-20
+- item: oshougatsu
+  from: B2-22
+- item: osechi
+  from: B2-22
+- item: otoshidama
+  from: B2-22
+- item: akemashite
+  from: B2-22
+- item: kotoshi-mo-yoroshiku
+  from: B2-22
+- item: uchi-ni
+  from: B2-22
+- item: atatakai-uchi-ni
+  from: B2-22
+- item: ozouni
+  from: B2-22
+- item: nengajou
+  from: B2-22
+- item: engi
+  from: B2-22
+- item: shaken
+  from: C1-08
+- item: chuukosha
+  from: C1-08
+- item: soukou-kyori
+  from: C1-08
+- item: tenken
+  from: C1-08
+- item: zaru-wo-enai
+  from: C1-08
+- item: kaezaru-wo-enai
+  from: C1-08
+- item: mitsumori-review
+  from: C1-08
+- item: buhin
+  from: C1-08
+- item: kyouseihoken
+  from: C1-08
+- item: kaikae
+  from: C1-08
+- item: borantia
+  from: C1-16
+- item: saigai
+  from: C1-16
+- item: dorokaki
+  from: C1-16
+- item: shien
+  from: C1-16
+- item: nagara-mo
+  from: C1-16
+- item: tsukarenagara-mo
+  from: C1-16
+- item: shinsui
+  from: C1-16
+- item: hisaisha
+  from: C1-16
+- item: nagagutsu
+  from: C1-16
+- item: netchuushou
+  from: C1-16
+- item: kokoro-no-kea
+  from: C1-16
+- item: ninshin
+  from: C1-20
+- item: boshitechou
+  from: C1-20
+- item: shussan
+  from: C1-20
+- item: kenshin
+  from: C1-20
+- item: yoteibi
+  from: C1-20
+- item: tsuwari
+  from: C1-20
+- item: uchi-ni-review
+  from: C1-20
+- item: junbi-review
+  from: C1-20
+- item: otto
+  from: C1-20
+- item: tsuma
+  from: C1-20
+- item: hoikuen
+  from: C1-22
+- item: taiki-jidou
+  from: C1-22
+- item: hokatsu
+  from: C1-22
+- item: ippou-de
+  from: C1-22
+- item: tensuu
+  from: C1-22
+- item: kengaku
+  from: C1-22
+- item: fukushoku
+  from: C1-22
+- item: hoikushi
+  from: C1-22
+- item: kekka-ga-kuru
+  from: C1-22
+- item: ochiru
+  from: C1-22
+steps:
+- type: narrator
+  text:
+    en: Maria's son Davi answers her Portuguese in Japanese. At the bakery she asks your advice — Portuguese at home, Japanese outside? Listen to the conversation; you don't need to understand it yet.
+    pt: O filho da Maria, o Davi, responde em japonês quando ela fala português. Na padaria ela pede o seu conselho — português em casa, japonês fora? Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: maria
+    text: ダビ は 家[いえ] で も 日本語[にほんご] で 返事[へんじ] する の。 ポルトガル語[ご] を 忘[わす]れ そう。
+    meaning:
+      en: Davi answers in Japanese even at home. He's going to forget Portuguese.
+      pt: O Davi responde em japonês até em casa. Ele vai acabar esquecendo o português.
+  - speaker: protagonist
+    text: 学校[がっこう] で は 一日中[いちにちじゅう] 日本語[にほんご] だ から ね。
+    meaning:
+      en: Well, at school it's Japanese all day.
+      pt: Na escola é japonês o dia inteiro, né?
+  - speaker: maria
+    text: 友達[ともだち] の 前[まえ] で ポルトガル語[ご] を 話[はな]す の を 恥[は]ずかしがる の よ。
+    meaning:
+      en: He's embarrassed to speak Portuguese in front of his friends.
+      pt: Ele tem vergonha de falar português na frente dos amigos.
+  - speaker: protagonist
+    text: 子供[こども] に とって、 みんな と 同[おな]じ で ある こと は 大事[だいじ] な ん だ と 思[おも]う。
+    meaning:
+      en: For a child, being the same as everyone matters a lot, I think.
+      pt: Para uma criança, ser igual a todo mundo é muito importante, eu acho.
+  - speaker: maria
+    text: でも 祖父母[そふぼ] と 話[はな]せなく なる の は 悲[かな]しい。
+    meaning:
+      en: But it's sad if he can't talk to his grandparents.
+      pt: Mas é triste ele não conseguir mais falar com os avós.
+  - speaker: protagonist
+    text: 家[いえ] で は ポルトガル語[ご]、 外[そと] で は 日本語[にほんご]。 ルール を 決[き]めたら？ ポルトガル語[ご] の 絵本[えほん] も いい よ。
+    meaning:
+      en: Portuguese at home, Japanese outside — why not set that rule? Portuguese picture books help too.
+      pt: Em casa português, fora japonês — que tal fazer essa regra? Livro infantil em português também ajuda.
+  - speaker: maria
+    text: そう ね。 二[ふた]つ の 言葉[ことば] は、 あの 子[こ] の アイデンティティ だ から。
+    meaning:
+      en: Yes. The two languages are part of who he is.
+      pt: É. As duas línguas são a identidade dele.
+  - speaker: protagonist
+    text: バイリンガル は 宝物[たからもの] だ よ。
+    meaning:
+      en: Being bilingual is a treasure.
+      pt: Ser bilíngue é um tesouro.
+- type: prompt
+  ask:
+    en: 'Say: bilingual.'
+    pt: 'Diga: bilíngue.'
+  answer:
+    speaker: protagonist
+    text: バイリンガル
+  items:
+  - bairingaru
+- type: prompt
+  ask:
+    en: 'Say: at home.'
+    pt: 'Diga: em casa.'
+  answer:
+    speaker: protagonist
+    text: 家[いえ] で は
+  items:
+  - ie-dewa
+- type: prompt
+  ask:
+    en: 'Say: at school.'
+    pt: 'Diga: na escola.'
+  answer:
+    speaker: protagonist
+    text: 学校[がっこう] で は
+  items:
+  - gakkou-dewa
+- type: prompt
+  ask:
+    en: 'Say: mother tongue.'
+    pt: 'Diga: língua materna.'
+  answer:
+    speaker: protagonist
+    text: 母語[ぼご]
+  items:
+  - bogo
+- type: prompt
+  ask:
+    en: 'Say: heritage language.'
+    pt: 'Diga: língua de herança.'
+  answer:
+    speaker: protagonist
+    text: 継承[けいしょう] 語[ご]
+  items:
+  - keishou-go
+- type: narrator
+  text:
+    en: '«〜に とって» is for — from someone''s point of view: «子供[こども] に とって、 同[おな]じ で ある こと は 大事[だいじ]», for a child, being the same matters. It frames how something is for a person, not an action done for
+      them (that''s «〜の ため に»).'
+    pt: '«〜に とって» é para — do ponto de vista de alguém: «子供[こども] に とって、 同[おな]じ で ある こと は 大事[だいじ]», para uma criança, ser igual importa. Mostra como algo é para a pessoa, não uma ação feita para ela (isso
+      é «〜の ため に»).'
+- type: prompt
+  ask:
+    en: 'Say the pattern: for, from their point of view.'
+    pt: 'Diga o padrão: para (do ponto de vista).'
+  answer:
+    speaker: protagonist
+    text: 〜に とって
+  items:
+  - ni-totte
+- type: prompt
+  ask:
+    en: 'Say: for a child.'
+    pt: 'Diga: para uma criança.'
+  answer:
+    speaker: protagonist
+    text: 子供[こども] に とって
+  items:
+  - kodomo-ni-totte
+- type: prompt
+  ask:
+    en: 'Say: be embarrassed about it.'
+    pt: 'Diga: ter vergonha disso.'
+  answer:
+    speaker: protagonist
+    text: 恥[は]ずかしがる
+  items:
+  - hazukashigaru
+- type: prompt
+  ask:
+    en: 'Say: half and half.'
+    pt: 'Diga: metade cada um.'
+  answer:
+    speaker: protagonist
+    text: 半分[はんぶん] ずつ
+  items:
+  - hanbun-zutsu
+- type: prompt
+  ask:
+    en: 'Say: identity.'
+    pt: 'Diga: identidade.'
+  answer:
+    speaker: protagonist
+    text: アイデンティティ
+  items:
+  - aidentiti
+- type: narrator
+  text:
+    en: Many Brazilian children in Japan lose Portuguese as Japanese school takes over, and some end up fluent in neither. Families who keep a «heritage language» usually set rules — one language at home
+      — and use books, songs, video calls with grandparents and weekend Portuguese classes.
+    pt: Muitas crianças brasileiras no Japão perdem o português quando a escola japonesa toma conta, e algumas acabam sem dominar bem nenhuma das duas. Famílias que mantêm a «língua de herança» geralmente
+      criam regras — uma língua em casa — e usam livros, músicas, videochamadas com os avós e aulas de português no fim de semana.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: Hamamatsu tem escolas brasileiras e aulas de português para crianças. Um dia, o filho da Maria vai agradecer pela regra de casa.
+- type: prompt
+  ask:
+    en: 'Once more: say “bilingual”.'
+    pt: 'Mais uma vez: diga “bilíngue”.'
+  answer:
+    speaker: protagonist
+    text: バイリンガル
+  items:
+  - bairingaru
+- type: prompt
+  ask:
+    en: 'Once more: say “at home”.'
+    pt: 'Mais uma vez: diga “em casa”.'
+  answer:
+    speaker: protagonist
+    text: 家[いえ] で は
+  items:
+  - ie-dewa
+- type: prompt
+  ask:
+    en: 'Once more: say “at school”.'
+    pt: 'Mais uma vez: diga “na escola”.'
+  answer:
+    speaker: protagonist
+    text: 学校[がっこう] で は
+  items:
+  - gakkou-dewa
+- type: prompt
+  ask:
+    en: 'Once more: say “for (someone), from (their) point of view”.'
+    pt: 'Mais uma vez: diga “para (alguém)”.'
+  answer:
+    speaker: protagonist
+    text: 〜に とって
+  items:
+  - ni-totte
+- type: prompt
+  ask:
+    en: 'Once more: say “for a child”.'
+    pt: 'Mais uma vez: diga “para uma criança”.'
+  answer:
+    speaker: protagonist
+    text: 子供[こども] に とって
+  items:
+  - kodomo-ni-totte
+- type: prompt
+  ask:
+    en: 'Once more: say “mother tongue”.'
+    pt: 'Mais uma vez: diga “língua materna”.'
+  answer:
+    speaker: protagonist
+    text: 母語[ぼご]
+  items:
+  - bogo
+- type: prompt
+  ask:
+    en: 'Once more: say “heritage language”.'
+    pt: 'Mais uma vez: diga “língua de herança”.'
+  answer:
+    speaker: protagonist
+    text: 継承[けいしょう] 語[ご]
+  items:
+  - keishou-go
+- type: prompt
+  ask:
+    en: 'Once more: say “half and half”.'
+    pt: 'Mais uma vez: diga “metade cada um”.'
+  answer:
+    speaker: protagonist
+    text: 半分[はんぶん] ずつ
+  items:
+  - hanbun-zutsu
+- type: prompt
+  ask:
+    en: 'Once more: say “be embarrassed (about it)”.'
+    pt: 'Mais uma vez: diga “ter vergonha (disso)”.'
+  answer:
+    speaker: protagonist
+    text: 恥[は]ずかしがる
+  items:
+  - hazukashigaru
+- type: prompt
+  ask:
+    en: 'Once more: say “identity”.'
+    pt: 'Mais uma vez: diga “identidade”.'
+  answer:
+    speaker: protagonist
+    text: アイデンティティ
+  items:
+  - aidentiti
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “daycare (nursery) — and “children on waiting lists — and “daycare hunting — and “while, on the other hand — and “points (for priority) — and “tour, visit (to see) — and “returning to work
+      — and “nursery teacher — and “the result arrives — and “fail, not get in — and “pregnancy — and “maternal and child health booklet — and “giving birth”.'
+    pt: 'Diga: “creche — e “crianças na fila de espera — e “caça à vaga na creche — e “por outro lado, enquanto — e “pontuação (de prioridade) — e “visita (para conhecer) — e “volta ao trabalho — e “educador
+      de creche — e “o resultado chega — e “não passar, ficar de fora — e “gravidez — e “caderneta da mãe e do bebê — e “parto”.'
+  answer:
+    speaker: protagonist
+    text: 保育園[ほいくえん] … 待機[たいき] 児童[じどう] … 保活[ほかつ] … 〜一方[いっぽう] で … 点数[てんすう] … 見学[けんがく] … 復職[ふくしょく] … 保育士[ほいくし] … 結果[けっか] が 来[く]る … 落[お]ちる … 妊娠[にんしん] … 母子[ぼし] 手帳[てちょう] … 出産[しゅっさん]
+  items:
+  - hoikuen
+  - taiki-jidou
+  - hokatsu
+  - ippou-de
+  - tensuu
+  - kengaku
+  - fukushoku
+  - hoikushi
+  - kekka-ga-kuru
+  - ochiru
+  - ninshin
+  - boshitechou
+  - shussan
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “check-up — and “due date — and “morning sickness — and “while (you''re) still feeling well — and “get ready in advance — and “husband — and “wife — and “volunteer — and “disaster — and “shovelling
+      mud — and “support, aid — and “although, while (contrast) — and “although tired”.'
+    pt: 'Diga: “consulta de rotina, pré-natal — e “data prevista do parto — e “enjoo da gravidez — e “enquanto ainda está bem — e “deixar preparado — e “marido — e “esposa — e “voluntário — e “desastre
+      — e “tirar lama — e “apoio, ajuda — e “embora, apesar de — e “embora cansado”.'
+  answer:
+    speaker: protagonist
+    text: 検診[けんしん] … 出産[しゅっさん] 予定日[よていび] … つわり … 元気[げんき] な うち に … 準備[じゅんび] して おく … 夫[おっと] … 妻[つま] … ボランティア … 災害[さいがい] … 泥[どろ] かき … 支援[しえん] … 〜ながら も … 疲[つか]れながら も
+  items:
+  - kenshin
+  - yoteibi
+  - tsuwari
+  - uchi-ni-review
+  - junbi-review
+  - otto
+  - tsuma
+  - borantia
+  - saigai
+  - dorokaki
+  - shien
+  - nagara-mo
+  - tsukarenagara-mo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “flooding (of a house) — and “disaster victim — and “rubber boots — and “heatstroke — and “emotional care — and “vehicle inspection — and “second-hand car — and “mileage — and “check, inspection
+      — and “have no choice but to — and “have no choice but to replace — and “estimate — and “part (machine)”.'
+    pt: 'Diga: “alagamento — e “vítima do desastre — e “galochas — e “insolação — e “apoio emocional — e “inspeção veicular — e “carro usado — e “quilometragem — e “revisão — e “não ter outra saída senão
+      — e “não ter outra saída senão trocar — e “orçamento — e “peça”.'
+  answer:
+    speaker: protagonist
+    text: 浸水[しんすい] … 被災者[ひさいしゃ] … 長靴[ながぐつ] … 熱中症[ねっちゅうしょう] … 心[こころ] の ケア … 車検[しゃけん] … 中古車[ちゅうこしゃ] … 走行[そうこう] 距離[きょり] … 点検[てんけん] … 〜ざる を 得[え]ない … 替[か]えざる を 得[え]ない … 見積[みつ]もり … 部品[ぶひん]
+  items:
+  - shinsui
+  - hisaisha
+  - nagagutsu
+  - netchuushou
+  - kokoro-no-kea
+  - shaken
+  - chuukosha
+  - soukou-kyori
+  - tenken
+  - zaru-wo-enai
+  - kaezaru-wo-enai
+  - mitsumori-review
+  - buhin
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “compulsory car insurance — and “replacing (by buying new) — and “New Year (holidays) — and “New Year food in boxes — and “New Year money for children — and “Happy New Year — and “I look forward
+      to this year with you too — and “while (before it changes) — and “while it''s warm — and “New Year mochi soup — and “New Year card — and “lucky, auspicious — and “wallet”.'
+    pt: 'Diga: “seguro obrigatório — e “trocar por outro — e “ano-novo (feriado) — e “comida de ano-novo em caixas — e “dinheiro de ano-novo para as crianças — e “feliz ano-novo — e “conto com você neste
+      ano também — e “enquanto (antes que mude) — e “enquanto está quente — e “sopa de mochi do ano-novo — e “cartão de ano-novo — e “dá sorte — e “carteira”.'
+  answer:
+    speaker: protagonist
+    text: 自賠責[じばいせき] 保険[ほけん] … 買[か]い替[か]え … お正月[しょうがつ] … おせち … お年玉[としだま] … 明[あ]けまして おめでとう ございます … 今年[ことし] も よろしく お願[ねが]い します … 〜うち に … 温[あたた]かい うち に … お雑煮[ぞうに] … 年賀状[ねんがじょう] … 縁起[えんぎ] が いい … 財布[さいふ]
+  items:
+  - kyouseihoken
+  - kaikae
+  - oshougatsu
+  - osechi
+  - otoshidama
+  - akemashite
+  - kotoshi-mo-yoroshiku
+  - uchi-ni
+  - atatakai-uchi-ni
+  - ozouni
+  - nengajou
+  - engi
+  - saifu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “nobody — and “someone — and “police box — and “lost item — and “I lost (it) — and “nothing — and “somewhere — and “(someone) handed it in — and “check the contents — and “I can''t believe
+      it — and “bread — and “pão de queijo — and “tasty, delicious”.'
+    pt: 'Diga: “ninguém — e “alguém — e “posto policial — e “objeto perdido — e “perdi — e “nada — e “em algum lugar — e “(alguém) entregou — e “confira o que tem dentro — e “não acredito — e “pão — e “pão
+      de queijo — e “gostoso”.'
+  answer:
+    speaker: protagonist
+    text: 誰[だれ] も 〜ない … 誰[だれ] か … 交番[こうばん] … 落[お]とし物[もの] … なくしました … 何[なに] も ない … どこ か … 届[とど]けて くれました … 中身[なかみ] を 確認[かくにん] して … 信[しん]じられない … パン … ポン・デ・ケージョ … おいしい
+  items:
+  - daremo
+  - dareka
+  - kouban
+  - otoshimono
+  - nakushita
+  - nanimo-nai
+  - dokoka
+  - todokemasu
+  - kakunin-shite
+  - shinjirarenai
+  - pan
+  - pao-de-queijo
+  - oishii
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “it was delicious — and “was (polite past of です) — and “for the first time — and “shop — and “popular — and “coffee — and “two, please — and “chewy, springy (texture)”.'
+    pt: 'Diga: “estava gostoso — e “era, foi (passado educado de です) — e “pela primeira vez — e “loja — e “popular — e “café — e “dois, por favor — e “elástico, macio (textura)”.'
+  answer:
+    speaker: protagonist
+    text: おいしかった です … でした … 初[はじ]めて … 店[みせ] … 人気[にんき] … コーヒー … ふたつ ください … もちもち
+  items:
+  - oishikatta
+  - deshita
+  - hajimete
+  - mise
+  - ninki
+  - koohii
+  - futatsu-kudasai
+  - mochimochi
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
