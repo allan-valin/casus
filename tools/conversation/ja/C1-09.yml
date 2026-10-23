@@ -1,0 +1,614 @@
+# UNIT ja C1-09 — written by AI (Claude) for Casus; expanded from src/C1-09.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-09
+level: C1
+number: 9
+protagonist: f
+title:
+  en: The accident
+  pt: O acidente
+situation:
+  en: A car backs into yours in a supermarket car park — a scratch, nobody hurt. The other driver wants to settle it privately. Shota says call the police.
+  pt: Um carro dá ré e bate no seu no estacionamento do supermercado — um arranhão, ninguém ferido. O outro motorista quer resolver entre vocês. O Shota diz para chamar a polícia.
+learn_lessons: []
+culture: Always call the police
+new_items:
+- id: sesshoku-jiko
+  text: 接触[せっしょく] 事故[じこ]
+  meaning:
+    en: minor collision
+    pt: batida leve
+- id: hoken
+  text: 保険[ほけん]
+  meaning:
+    en: insurance
+    pt: seguro
+- id: keisatsu
+  text: 警察[けいさつ]
+  meaning:
+    en: police
+    pt: polícia
+- id: kashitsu
+  text: 過失[かしつ]
+  meaning:
+    en: fault, negligence
+    pt: culpa
+- id: ni-motozuite
+  text: 〜に 基[もと]づいて
+  meaning:
+    en: based on
+    pt: com base em
+- id: jiko-shoumei
+  text: 事故[じこ] 証明[しょうめい]
+  meaning:
+    en: accident certificate
+    pt: certidão de acidente
+  rare: true
+- id: kega
+  text: 怪我[けが]
+  meaning:
+    en: injury
+    pt: ferimento
+- id: kizu
+  text: 傷[きず]
+  meaning:
+    en: scratch, damage
+    pt: arranhão
+- id: jidan
+  text: 示談[じだん]
+  meaning:
+    en: private settlement
+    pt: acordo particular
+  rare: true
+- id: renraku-saki-koukan
+  text: 連絡先[れんらくさき] を 交換[こうかん] する
+  meaning:
+    en: exchange contact details
+    pt: trocar contatos
+reviews:
+- item: genkan
+  from: A1-02
+- item: kutsu
+  from: A1-02
+- item: surippa
+  from: A1-02
+- item: douzo
+  from: A1-02
+- item: shitsurei
+  from: A1-02
+- item: koko
+  from: A1-02
+- item: kore
+  from: A1-02
+- item: sore
+  from: A1-02
+- item: nan-desu-ka
+  from: A1-02
+- item: toire
+  from: A1-02
+- item: no-particle
+  from: A1-02
+- item: arigatou
+  from: A1-02
+- item: wakarimashita
+  from: A1-02
+- item: genpatsu
+  from: B1-06
+- item: enerugii
+  from: B1-06
+- item: setsuden
+  from: B1-06
+- item: taiyoukou
+  from: B1-06
+- item: node
+  from: B1-06
+- item: atsui-node
+  from: B1-06
+- item: jiko
+  from: B1-06
+- item: anzen-mondai
+  from: B1-06
+- item: sansei-favour
+  from: B1-06
+- item: hantai
+  from: B1-06
+- item: denkidai
+  from: B1-06
+- item: nikui
+  from: B2-08
+- item: kaerinikui
+  from: B2-08
+- item: iinikui
+  from: B2-08
+- item: saabisu-zangyou
+  from: B2-08
+- item: zangyoudai
+  from: B2-08
+- item: yotei-ga-arimashite
+  from: B2-08
+- item: nanika-otetsudai
+  from: B2-08
+- item: kyou-wa-kore-de
+  from: B2-08
+- item: houkoku
+  from: B2-08
+- item: rakuni
+  from: B2-08
+- item: shoushi-koureika
+  from: B2-24
+- item: kaigo
+  from: B2-24
+- item: ni-tsurete
+  from: B2-24
+- item: toshi-wo-toru-ni-tsurete
+  from: B2-24
+- item: jinkou
+  from: B2-24
+- item: heru
+  from: B2-24
+- item: fueru
+  from: B2-24
+- item: haikou
+  from: B2-24
+- item: shussei-ritsu
+  from: B2-24
+- item: kaigo-shisetsu
+  from: B2-24
+- item: honban
+  from: C1-02
+- item: ishou
+  from: C1-02
+- item: hakushu
+  from: C1-02
+- item: nimo-kakawarazu
+  from: C1-02
+- item: ame-nimo-kakawarazu
+  from: C1-02
+- item: kankyaku
+  from: C1-02
+- item: machigaeta
+  from: C1-02
+- item: kimochi-ga-hitotsu
+  from: C1-02
+- item: seikou
+  from: C1-02
+- item: uchiage
+  from: C1-02
+- item: touron
+  from: C1-06
+- item: konkyo
+  from: C1-06
+- item: ni-kagirazu
+  from: C1-06
+- item: nihon-ni-kagirazu
+  from: C1-06
+- item: shuchou
+  from: C1-06
+- item: hanron
+  from: C1-06
+- item: tachiba
+  from: C1-06
+- item: tashika-ni
+  from: C1-06
+- item: shikashi
+  from: C1-06
+- item: ketsuron-to-shite
+  from: C1-06
+- item: ichiri-aru
+  from: C1-06
+- item: shaken
+  from: C1-08
+- item: chuukosha
+  from: C1-08
+- item: soukou-kyori
+  from: C1-08
+- item: tenken
+  from: C1-08
+- item: zaru-wo-enai
+  from: C1-08
+- item: kaezaru-wo-enai
+  from: C1-08
+- item: mitsumori-review
+  from: C1-08
+- item: buhin
+  from: C1-08
+- item: kyouseihoken
+  from: C1-08
+- item: kaikae
+  from: C1-08
+steps:
+- type: narrator
+  text:
+    en: A car backs into yours in a supermarket car park — a scratch, nobody hurt. The other driver wants to settle it privately. Shota says call the police. Listen to the conversation; you don't need to
+      understand it yet.
+    pt: Um carro dá ré e bate no seu no estacionamento do supermercado — um arranhão, ninguém ferido. O outro motorista quer resolver entre vocês. O Shota diz para chamar a polícia. Escute a conversa; ainda
+      não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: ちょっと 傷[きず] が ついた だけ です。 怪我[けが] は ありません。
+    meaning:
+      en: It's just a small scratch. Nobody's hurt.
+      pt: Foi só um arranhãozinho. Ninguém se feriu.
+  - speaker: shota
+    text: それでも 警察[けいさつ] を 呼[よ]ぼう。 相手[あいて] は 示談[じだん] に したい みたい だ けど。
+    meaning:
+      en: Even so, let's call the police. The other driver seems to want a private settlement, though.
+      pt: Mesmo assim, vamos chamar a polícia. O outro motorista parece querer um acordo particular.
+  - speaker: protagonist
+    text: どうして？ 小[ちい]さな 事故[じこ] な のに。
+    meaning:
+      en: Why? It's such a small accident.
+      pt: Por quê? É um acidente tão pequeno.
+  - speaker: shota
+    text: 警察[けいさつ] が 来[こ]ない と、 事故[じこ] 証明[しょうめい] が 出[で]ない。 保険[ほけん] が 使[つか]えない ん だ。
+    meaning:
+      en: If the police don't come, there's no accident certificate. Then you can't use the insurance.
+      pt: Sem a polícia, não sai a certidão de acidente. Aí não dá para usar o seguro.
+  - speaker: omawari
+    text: お怪我[けが] は ない です か。 状況[じょうきょう] を 教[おし]えて ください。
+    meaning:
+      en: Is anyone hurt? Please tell me what happened.
+      pt: Alguém se feriu? Conte o que aconteceu, por favor.
+  - speaker: protagonist
+    text: 止[と]まって いたら、 後[うし]ろ から ぶつけられました。
+    meaning:
+      en: I was stopped and got hit from behind.
+      pt: Eu estava parada e bateram atrás.
+  - speaker: omawari
+    text: わかりました。 過失[かしつ] の 割合[わりあい] は、 この 記録[きろく] に 基[もと]づいて 保険[ほけん] 会社[がいしゃ] が 決[き]めます。
+    meaning:
+      en: Understood. The insurance companies will decide the share of fault based on this record.
+      pt: Entendido. A proporção da culpa será decidida pelas seguradoras com base neste registro.
+  - speaker: shota
+    text: 相手[あいて] と 連絡先[れんらくさき] を 交換[こうかん] して おこう。
+    meaning:
+      en: Let's exchange contact details with the other driver.
+      pt: Vamos trocar contatos com o outro motorista.
+- type: prompt
+  ask:
+    en: 'Say: a minor collision.'
+    pt: 'Diga: uma batida leve.'
+  answer:
+    speaker: protagonist
+    text: 接触[せっしょく] 事故[じこ]
+  items:
+  - sesshoku-jiko
+- type: prompt
+  ask:
+    en: 'Say: a scratch.'
+    pt: 'Diga: um arranhão.'
+  answer:
+    speaker: protagonist
+    text: 傷[きず]
+  items:
+  - kizu
+- type: prompt
+  ask:
+    en: 'Say: an injury.'
+    pt: 'Diga: um ferimento.'
+  answer:
+    speaker: protagonist
+    text: 怪我[けが]
+  items:
+  - kega
+- type: prompt
+  ask:
+    en: 'Say: the police.'
+    pt: 'Diga: a polícia.'
+  answer:
+    speaker: protagonist
+    text: 警察[けいさつ]
+  items:
+  - keisatsu
+- type: prompt
+  ask:
+    en: 'Say: insurance.'
+    pt: 'Diga: seguro.'
+  answer:
+    speaker: protagonist
+    text: 保険[ほけん]
+  items:
+  - hoken
+- type: prompt
+  ask:
+    en: 'Say: a private settlement.'
+    pt: 'Diga: um acordo particular.'
+  answer:
+    speaker: protagonist
+    text: 示談[じだん]
+  items:
+  - jidan
+- type: prompt
+  ask:
+    en: 'Say: the accident certificate.'
+    pt: 'Diga: a certidão de acidente.'
+  answer:
+    speaker: protagonist
+    text: 事故[じこ] 証明[しょうめい]
+  items:
+  - jiko-shoumei
+- type: prompt
+  ask:
+    en: 'Say: fault.'
+    pt: 'Diga: culpa.'
+  answer:
+    speaker: protagonist
+    text: 過失[かしつ]
+  items:
+  - kashitsu
+- type: narrator
+  text:
+    en: '«〜に 基[もと]づいて» is based on — rules, data, records: «記録[きろく] に 基[もと]づいて 決[き]める», decide based on the record. Before a noun: «事実[じじつ] に 基[もと]づいた 話[はなし]», a story based on facts.'
+    pt: '«〜に 基[もと]づいて» é com base em — regras, dados, registros: «記録[きろく] に 基[もと]づいて 決[き]める», decidir com base no registro. Antes de substantivo: «事実[じじつ] に 基[もと]づいた 話[はなし]», história baseada em fatos.'
+- type: prompt
+  ask:
+    en: 'Say the pattern: based on.'
+    pt: 'Diga o padrão: com base em.'
+  answer:
+    speaker: protagonist
+    text: 〜に 基[もと]づいて
+  items:
+  - ni-motozuite
+- type: prompt
+  ask:
+    en: 'Say: exchange contact details.'
+    pt: 'Diga: trocar contatos.'
+  answer:
+    speaker: protagonist
+    text: 連絡先[れんらくさき] を 交換[こうかん] する
+  items:
+  - renraku-saki-koukan
+- type: narrator
+  text:
+    en: In Japan any traffic accident, however small, must be reported to the police — it's the law, and without the police report there's no «事故[じこ] 証明[しょうめい]» and your insurance may not pay. Fault is
+      split in percentages, «過失[かしつ] 割合[わりあい]», based on standard tables.
+    pt: No Japão todo acidente de trânsito, por menor que seja, tem que ser comunicado à polícia — é lei, e sem o registro policial não sai a «事故[じこ] 証明[しょうめい]» e o seguro pode não pagar. A culpa é dividida
+      em porcentagens, «過失[かしつ] 割合[わりあい]», com base em tabelas padrão.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'No Brasil muita batida leve se resolve com foto e WhatsApp. No Japão, acordo sem polícia é arriscado: o seguro pede o documento oficial.'
+- type: prompt
+  ask:
+    en: 'Once more: say “minor collision”.'
+    pt: 'Mais uma vez: diga “batida leve”.'
+  answer:
+    speaker: protagonist
+    text: 接触[せっしょく] 事故[じこ]
+  items:
+  - sesshoku-jiko
+- type: prompt
+  ask:
+    en: 'Once more: say “insurance”.'
+    pt: 'Mais uma vez: diga “seguro”.'
+  answer:
+    speaker: protagonist
+    text: 保険[ほけん]
+  items:
+  - hoken
+- type: prompt
+  ask:
+    en: 'Once more: say “police”.'
+    pt: 'Mais uma vez: diga “polícia”.'
+  answer:
+    speaker: protagonist
+    text: 警察[けいさつ]
+  items:
+  - keisatsu
+- type: prompt
+  ask:
+    en: 'Once more: say “fault, negligence”.'
+    pt: 'Mais uma vez: diga “culpa”.'
+  answer:
+    speaker: protagonist
+    text: 過失[かしつ]
+  items:
+  - kashitsu
+- type: prompt
+  ask:
+    en: 'Once more: say “based on”.'
+    pt: 'Mais uma vez: diga “com base em”.'
+  answer:
+    speaker: protagonist
+    text: 〜に 基[もと]づいて
+  items:
+  - ni-motozuite
+- type: prompt
+  ask:
+    en: 'Once more: say “accident certificate”.'
+    pt: 'Mais uma vez: diga “certidão de acidente”.'
+  answer:
+    speaker: protagonist
+    text: 事故[じこ] 証明[しょうめい]
+  items:
+  - jiko-shoumei
+- type: prompt
+  ask:
+    en: 'Once more: say “injury”.'
+    pt: 'Mais uma vez: diga “ferimento”.'
+  answer:
+    speaker: protagonist
+    text: 怪我[けが]
+  items:
+  - kega
+- type: prompt
+  ask:
+    en: 'Once more: say “scratch, damage”.'
+    pt: 'Mais uma vez: diga “arranhão”.'
+  answer:
+    speaker: protagonist
+    text: 傷[きず]
+  items:
+  - kizu
+- type: prompt
+  ask:
+    en: 'Once more: say “private settlement”.'
+    pt: 'Mais uma vez: diga “acordo particular”.'
+  answer:
+    speaker: protagonist
+    text: 示談[じだん]
+  items:
+  - jidan
+- type: prompt
+  ask:
+    en: 'Once more: say “exchange contact details”.'
+    pt: 'Mais uma vez: diga “trocar contatos”.'
+  answer:
+    speaker: protagonist
+    text: 連絡先[れんらくさき] を 交換[こうかん] する
+  items:
+  - renraku-saki-koukan
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “vehicle inspection — and “second-hand car — and “mileage — and “check, inspection — and “have no choice but to — and “have no choice but to replace — and “estimate — and “part (machine) —
+      and “compulsory car insurance — and “replacing (by buying new) — and “debate — and “grounds, evidence — and “not only, not limited to”.'
+    pt: 'Diga: “inspeção veicular — e “carro usado — e “quilometragem — e “revisão — e “não ter outra saída senão — e “não ter outra saída senão trocar — e “orçamento — e “peça — e “seguro obrigatório —
+      e “trocar por outro — e “debate — e “fundamento, base — e “não só, não apenas”.'
+  answer:
+    speaker: protagonist
+    text: 車検[しゃけん] … 中古車[ちゅうこしゃ] … 走行[そうこう] 距離[きょり] … 点検[てんけん] … 〜ざる を 得[え]ない … 替[か]えざる を 得[え]ない … 見積[みつ]もり … 部品[ぶひん] … 自賠責[じばいせき] 保険[ほけん] … 買[か]い替[か]え … 討論[とうろん] … 根拠[こんきょ] … 〜に 限[かぎ]らず
+  items:
+  - shaken
+  - chuukosha
+  - soukou-kyori
+  - tenken
+  - zaru-wo-enai
+  - kaezaru-wo-enai
+  - mitsumori-review
+  - buhin
+  - kyouseihoken
+  - kaikae
+  - touron
+  - konkyo
+  - ni-kagirazu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “not only in Japan — and “argument, claim — and “counter-argument — and “position, standpoint — and “admittedly, certainly — and “however — and “in conclusion — and “there''s something in
+      that — and “the real performance — and “costume — and “applause — and “despite, in spite of — and “despite the rain”.'
+    pt: 'Diga: “não só no Japão — e “argumento, posição — e “contra-argumento — e “posição, ponto de vista — e “de fato, é verdade que — e “no entanto — e “em conclusão — e “tem razão em parte — e “a apresentação
+      de verdade — e “figurino — e “aplauso — e “apesar de — e “apesar da chuva”.'
+  answer:
+    speaker: protagonist
+    text: 日本[にほん] に 限[かぎ]らず … 主張[しゅちょう] … 反論[はんろん] … 立場[たちば] … 確[たし]か に … しかし … 結論[けつろん] と して … 一理[いちり] ある … 本番[ほんばん] … 衣装[いしょう] … 拍手[はくしゅ] … 〜にも かかわらず … 雨[あめ] にも かかわらず
+  items:
+  - nihon-ni-kagirazu
+  - shuchou
+  - hanron
+  - tachiba
+  - tashika-ni
+  - shikashi
+  - ketsuron-to-shite
+  - ichiri-aru
+  - honban
+  - ishou
+  - hakushu
+  - nimo-kakawarazu
+  - ame-nimo-kakawarazu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “audience — and “made a mistake (plain) — and “hearts beat as one — and “success — and “after-party — and “fewer children, more elderly — and “care (for the elderly) — and “as (one thing changes,
+      another does) — and “as (one) gets older — and “population — and “decrease — and “increase — and “school closure”.'
+    pt: 'Diga: “público, plateia — e “errei (simples) — e “ficar todos em sintonia — e “sucesso — e “comemoração depois do evento — e “menos crianças, mais idosos — e “cuidado (de idosos) — e “à medida
+      que — e “à medida que envelhece — e “população — e “diminuir — e “aumentar — e “fechamento de escola”.'
+  answer:
+    speaker: protagonist
+    text: 観客[かんきゃく] … 間違[まちが]えた … 気持[きも]ち が 一[ひと]つ に なる … 成功[せいこう] … 打[う]ち上[あ]げ … 少子[しょうし] 高齢化[こうれいか] … 介護[かいご] … 〜に つれて … 年[とし] を 取[と]る に つれて … 人口[じんこう] … 減[へ]る … 増[ふ]える … 廃校[はいこう]
+  items:
+  - kankyaku
+  - machigaeta
+  - kimochi-ga-hitotsu
+  - seikou
+  - uchiage
+  - shoushi-koureika
+  - kaigo
+  - ni-tsurete
+  - toshi-wo-toru-ni-tsurete
+  - jinkou
+  - heru
+  - fueru
+  - haikou
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “birth rate — and “care home — and “hard to… — and “hard to leave — and “hard to say — and “unpaid overtime — and “overtime pay — and “I have plans (polite excuse) — and “is there anything
+      I can help with? — and “that''s it for today — and “report — and “relaxed, at ease — and “nuclear power plant”.'
+    pt: 'Diga: “taxa de natalidade — e “casa de repouso — e “difícil de… — e “difícil ir embora — e “difícil de dizer — e “hora extra não paga — e “pagamento de hora extra — e “tenho um compromisso (desculpa
+      educada) — e “há algo em que eu possa ajudar? — e “por hoje é isso — e “relatório, comunicado — e “à vontade — e “usina nuclear”.'
+  answer:
+    speaker: protagonist
+    text: 出生率[しゅっしょうりつ] … 介護[かいご] 施設[しせつ] … 〜にくい … 帰[かえ]りにくい … 言[い]いにくい … サービス 残業[ざんぎょう] … 残業代[ざんぎょうだい] … 予定[よてい] が ありまして … 何[なに] か お手伝[てつだ]い する こと は … 今日[きょう] は これ で … 報告[ほうこく] … 気楽[きらく] に … 原発[げんぱつ]
+  items:
+  - shussei-ritsu
+  - kaigo-shisetsu
+  - nikui
+  - kaerinikui
+  - iinikui
+  - saabisu-zangyou
+  - zangyoudai
+  - yotei-ga-arimashite
+  - nanika-otetsudai
+  - kyou-wa-kore-de
+  - houkoku
+  - rakuni
+  - genpatsu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “energy — and “saving electricity — and “solar power — and “because, so (polite reason) — and “because it''s hot — and “accident — and “a safety issue — and “in favour — and “against — and
+      “electricity bill — and “entrance hall (where shoes come off) — and “shoes — and “slippers”.'
+    pt: 'Diga: “energia — e “economia de energia — e “energia solar — e “como, porque (motivo educado) — e “como está calor — e “acidente — e “uma questão de segurança — e “a favor — e “contra — e “conta
+      de luz — e “entrada (onde se tiram os sapatos) — e “sapatos — e “chinelos”.'
+  answer:
+    speaker: protagonist
+    text: エネルギー … 節電[せつでん] … 太陽光[たいようこう] … 〜ので … 暑[あつ]い ので … 事故[じこ] … 安全[あんぜん] の 問題[もんだい] … 賛成[さんせい] … 反対[はんたい] … 電気代[でんきだい] … 玄関[げんかん] … 靴[くつ] … スリッパ
+  items:
+  - enerugii
+  - setsuden
+  - taiyoukou
+  - node
+  - atsui-node
+  - jiko
+  - anzen-mondai
+  - sansei-favour
+  - hantai
+  - denkidai
+  - genkan
+  - kutsu
+  - surippa
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “please (go ahead / here you are) — and “excuse me (entering) — and “here — and “this (near me) — and “that (near you) — and “what is it? — and “toilet — and “''s / of — and “thank you (polite)
+      — and “understood / I see”.'
+    pt: 'Diga: “por favor (pode entrar / aqui está) — e “com licença (ao entrar) — e “aqui — e “isto (perto de mim) — e “isso (perto de você) — e “o que é? — e “banheiro — e “de (posse) — e “obrigado (educado)
+      — e “entendi”.'
+  answer:
+    speaker: protagonist
+    text: どうぞ … 失礼[しつれい] します … ここ … これ … それ … 何[なん] です か … トイレ … の … ありがとう ございます … わかりました
+  items:
+  - douzo
+  - shitsurei
+  - koko
+  - kore
+  - sore
+  - nan-desu-ka
+  - toire
+  - no-particle
+  - arigatou
+  - wakarimashita
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

@@ -1,0 +1,572 @@
+# UNIT ja C1-07 — written by AI (Claude) for Casus; expanded from src/C1-07.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-07
+level: C1
+number: 7
+protagonist: f
+title:
+  en: The in-laws
+  pt: Os sogros
+situation:
+  en: New Year at Shota's parents' farmhouse. His mother hands you an apron; the kitchen is full of women. Shota and his father watch TV.
+  pt: Ano-novo na casa de fazenda dos pais do Shota. A mãe dele te entrega um avental; a cozinha está cheia de mulheres. O Shota e o pai veem TV.
+learn_lessons: []
+culture: —
+new_items:
+- id: giri-no-ryoushin
+  text: 義理[ぎり] の 両親[りょうしん]
+  meaning:
+    en: parents-in-law
+    pt: sogros
+- id: jikka
+  text: 実家[じっか]
+  meaning:
+    en: (one's) family home
+    pt: casa dos pais
+- id: kisei
+  text: 帰省[きせい]
+  meaning:
+    en: going home for the holidays
+    pt: visitar a terra natal nas festas
+  rare: true
+- id: yome
+  text: 嫁[よめ]
+  meaning:
+    en: bride; daughter-in-law (old-fashioned)
+    pt: nora, esposa (antiquado)
+- id: kara-koso
+  text: 〜から こそ
+  meaning:
+    en: precisely because
+    pt: justamente porque
+- id: kazoku-dakara-koso
+  text: 家族[かぞく] だ から こそ
+  meaning:
+    en: precisely because we're family
+    pt: justamente porque somos família
+- id: tetsudaimasu
+  text: 手伝[てつだ]います
+  meaning:
+    en: I'll help
+    pt: eu ajudo
+- id: enryo-naku
+  text: 遠慮[えんりょ] なく
+  meaning:
+    en: without hesitation, feel free
+    pt: sem cerimônia
+- id: yakuwari
+  text: 役割[やくわり]
+  meaning:
+    en: role
+    pt: papel, função
+- id: kawatte-kita
+  text: 変[か]わって きた
+  meaning:
+    en: has been changing
+    pt: vem mudando
+reviews:
+- item: tsukiau
+  from: B1-04
+- item: te-shimau
+  from: B1-04
+- item: itte-shimatta
+  from: B1-04
+- item: chatta
+  from: B1-04
+- item: okkee
+  from: B1-04
+- item: kinchou-shita
+  from: B1-04
+- item: omedetou
+  from: B1-04
+- item: kanojo-ga-dekita
+  from: B1-04
+- item: tsugi-no
+  from: B1-04
+- item: yappari
+  from: B1-04
+- item: kagaku
+  from: B2-06
+- item: mazeru
+  from: B2-06
+- item: kiken
+  from: B2-06
+- item: enso
+  from: B2-06
+- item: mazeruna-kiken
+  from: B2-06
+- item: sansei-kei
+  from: B2-06
+- item: gasu
+  from: B2-06
+- item: bakari
+  from: B2-06
+- item: katta-bakari
+  from: B2-06
+- item: kanki
+  from: B2-06
+- item: setsumeisho
+  from: B2-06
+- item: oshougatsu
+  from: B2-22
+- item: osechi
+  from: B2-22
+- item: otoshidama
+  from: B2-22
+- item: akemashite
+  from: B2-22
+- item: kotoshi-mo-yoroshiku
+  from: B2-22
+- item: uchi-ni
+  from: B2-22
+- item: atatakai-uchi-ni
+  from: B2-22
+- item: ozouni
+  from: B2-22
+- item: nengajou
+  from: B2-22
+- item: engi
+  from: B2-22
+- item: shourai
+  from: B2-30
+- item: kikoku
+  from: B2-30
+- item: nokoru
+  from: B2-30
+- item: mayou
+  from: B2-30
+- item: kesshin
+  from: B2-30
+- item: eijuu
+  from: B2-30
+- item: ryouhou-no-kuni
+  from: B2-30
+- item: hashi-ni-naru
+  from: B2-30
+- item: isshoni-iru
+  from: B2-30
+- item: shinpai-shinaide
+  from: B2-30
+- item: souon
+  from: C1-04
+- item: kujou
+  from: C1-04
+- item: kanri-gaisha
+  from: C1-04
+- item: harigami
+  from: C1-04
+- item: kanenai
+  from: C1-04
+- item: toraburu-ni-nari-kanenai
+  from: C1-04
+- item: kinjo
+  from: C1-04
+- item: ki-wo-tsukemasu-review
+  from: C1-04
+- item: kanri-kiyaku
+  from: C1-04
+- item: yoru-juuji-ikou
+  from: C1-04
+- item: touron
+  from: C1-06
+- item: konkyo
+  from: C1-06
+- item: ni-kagirazu
+  from: C1-06
+- item: nihon-ni-kagirazu
+  from: C1-06
+- item: shuchou
+  from: C1-06
+- item: hanron
+  from: C1-06
+- item: tachiba
+  from: C1-06
+- item: tashika-ni
+  from: C1-06
+- item: shikashi
+  from: C1-06
+- item: ketsuron-to-shite
+  from: C1-06
+- item: ichiri-aru
+  from: C1-06
+steps:
+- type: narrator
+  text:
+    en: New Year at Shota's parents' farmhouse. His mother hands you an apron; the kitchen is full of women. Shota and his father watch TV. Listen to the conversation; you don't need to understand it yet.
+    pt: Ano-novo na casa de fazenda dos pais do Shota. A mãe dele te entrega um avental; a cozinha está cheia de mulheres. O Shota e o pai veem TV. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: shota-haha
+    text: 実家[じっか] の 帰省[きせい] で 疲[つか]れた でしょう。 でも、 これ、 お願[ねが]い できる？
+    meaning:
+      en: You must be tired from the trip home. But could you help with this?
+      pt: Você deve estar cansada da viagem. Mas pode me ajudar com isto?
+  - speaker: protagonist
+    text: はい、 手伝[てつだ]います。 …あの、 翔太[しょうた] さん は 手伝[てつだ]わない ん です か。
+    meaning:
+      en: Yes, I'll help. …Um, doesn't Shota help?
+      pt: Claro, eu ajudo. …Hum, o Shota não ajuda?
+  - speaker: shota-haha
+    text: うち は 昔[むかし] から、 台所[だいどころ] は 女[おんな] の 役割[やくわり] で ね。
+    meaning:
+      en: In our family the kitchen has always been the women's role.
+      pt: Na nossa família a cozinha sempre foi papel das mulheres.
+  - speaker: protagonist
+    text: ブラジル の 私[わたし] の 実家[じっか] で は、 男[おとこ] も 皿[さら] を 洗[あら]います よ。
+    meaning:
+      en: At my family's home in Brazil, the men wash dishes too.
+      pt: Na casa dos meus pais no Brasil, os homens também lavam a louça.
+  - speaker: shota
+    text: …聞[き]こえた。 俺[おれ] も やる よ。 お父[とう]さん も。
+    meaning:
+      en: …I heard that. I'll do it too. And Dad.
+      pt: …Escutei. Eu também faço. O pai também.
+  - speaker: shota-chichi
+    text: え、 わし も？ …まあ、 時代[じだい] は 変[か]わって きた から な。
+    meaning:
+      en: What, me too? …Well, times have been changing.
+      pt: Ué, eu também? …Bom, os tempos estão mudando.
+  - speaker: shota-haha
+    text: あなた の よう な お嫁[よめ] さん が 来[き]て、 よかった わ。
+    meaning:
+      en: I'm glad a bride like you is joining us.
+      pt: Que bom que uma nora como você chegou.
+  - speaker: protagonist
+    text: 家族[かぞく] だ から こそ、 みんな で やりたい ん です。 遠慮[えんりょ] なく 言[い]って ください ね。
+    meaning:
+      en: Precisely because we're family, I want us all to do it together. Please feel free to tell me things.
+      pt: Justamente porque somos família, quero que todo mundo faça junto. Pode falar comigo sem cerimônia.
+- type: prompt
+  ask:
+    en: 'Say: parents-in-law.'
+    pt: 'Diga: sogros.'
+  answer:
+    speaker: protagonist
+    text: 義理[ぎり] の 両親[りょうしん]
+  items:
+  - giri-no-ryoushin
+- type: prompt
+  ask:
+    en: 'Say: the family home.'
+    pt: 'Diga: a casa dos pais.'
+  answer:
+    speaker: protagonist
+    text: 実家[じっか]
+  items:
+  - jikka
+- type: prompt
+  ask:
+    en: 'Say: going home for the holidays.'
+    pt: 'Diga: visitar a terra natal nas festas.'
+  answer:
+    speaker: protagonist
+    text: 帰省[きせい]
+  items:
+  - kisei
+- type: prompt
+  ask:
+    en: 'Offer: I''ll help.'
+    pt: 'Ofereça: eu ajudo.'
+  answer:
+    speaker: protagonist
+    text: 手伝[てつだ]います。
+  items:
+  - tetsudaimasu
+- type: prompt
+  ask:
+    en: 'Say: role.'
+    pt: 'Diga: papel, função.'
+  answer:
+    speaker: protagonist
+    text: 役割[やくわり]
+  items:
+  - yakuwari
+- type: prompt
+  ask:
+    en: 'Say: has been changing.'
+    pt: 'Diga: vem mudando.'
+  answer:
+    speaker: protagonist
+    text: 変[か]わって きた
+  items:
+  - kawatte-kita
+- type: narrator
+  text:
+    en: '«〜から こそ» is precisely because — it puts weight on the reason: «家族[かぞく] だ から こそ、 みんな で やりたい», precisely because we''re family, I want us all to do it. Often turns a reason the other way from what''s
+      expected.'
+    pt: '«〜から こそ» é justamente porque — dá peso ao motivo: «家族[かぞく] だ から こそ、 みんな で やりたい», justamente porque somos família, quero que todos façam juntos. Muitas vezes vira o motivo para o lado contrário
+      do esperado.'
+- type: prompt
+  ask:
+    en: 'Say the pattern: precisely because.'
+    pt: 'Diga o padrão: «justamente porque».'
+  answer:
+    speaker: protagonist
+    text: 〜から こそ
+  items:
+  - kara-koso
+- type: prompt
+  ask:
+    en: 'Say: precisely because we''re family.'
+    pt: 'Diga: justamente porque somos família.'
+  answer:
+    speaker: protagonist
+    text: 家族[かぞく] だ から こそ
+  items:
+  - kazoku-dakara-koso
+- type: prompt
+  ask:
+    en: 'Say: feel free, without hesitation.'
+    pt: 'Diga: sem cerimônia.'
+  answer:
+    speaker: protagonist
+    text: 遠慮[えんりょ] なく
+  items:
+  - enryo-naku
+- type: prompt
+  ask:
+    en: Say the old word for daughter-in-law.
+    pt: Diga a palavra antiga para nora.
+  answer:
+    speaker: protagonist
+    text: 嫁[よめ]
+  items:
+  - yome
+- type: narrator
+  text:
+    en: «嫁[よめ]» — bride, daughter-in-law — once meant a woman who joined her husband's household and served it; many younger people now avoid it and say «妻[つま]» or the name. Gender roles at family gatherings
+      are shifting, but slowly, and varied by family and region.
+    pt: «嫁[よめ]» — nora, esposa — já quis dizer a mulher que entrava na casa do marido e a servia; muitos jovens hoje evitam a palavra e dizem «妻[つま]» ou o nome. Os papéis de gênero nas reuniões de família
+      estão mudando, mas devagar, e variam de família para família e de região para região.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'No Brasil também tem a cozinha cheia de mulheres no Natal. A diferença é como se puxa a mudança: aqui, sem confronto, com «家族[かぞく] だ から こそ» e um sorriso.'
+- type: prompt
+  ask:
+    en: 'Once more: say “parents-in-law”.'
+    pt: 'Mais uma vez: diga “sogros”.'
+  answer:
+    speaker: protagonist
+    text: 義理[ぎり] の 両親[りょうしん]
+  items:
+  - giri-no-ryoushin
+- type: prompt
+  ask:
+    en: 'Once more: say “(one''s) family home”.'
+    pt: 'Mais uma vez: diga “casa dos pais”.'
+  answer:
+    speaker: protagonist
+    text: 実家[じっか]
+  items:
+  - jikka
+- type: prompt
+  ask:
+    en: 'Once more: say “going home for the holidays”.'
+    pt: 'Mais uma vez: diga “visitar a terra natal nas festas”.'
+  answer:
+    speaker: protagonist
+    text: 帰省[きせい]
+  items:
+  - kisei
+- type: prompt
+  ask:
+    en: 'Once more: say “bride; daughter-in-law (old-fashioned)”.'
+    pt: 'Mais uma vez: diga “nora, esposa (antiquado)”.'
+  answer:
+    speaker: protagonist
+    text: 嫁[よめ]
+  items:
+  - yome
+- type: prompt
+  ask:
+    en: 'Once more: say “precisely because”.'
+    pt: 'Mais uma vez: diga “justamente porque”.'
+  answer:
+    speaker: protagonist
+    text: 〜から こそ
+  items:
+  - kara-koso
+- type: prompt
+  ask:
+    en: 'Once more: say “precisely because we''re family”.'
+    pt: 'Mais uma vez: diga “justamente porque somos família”.'
+  answer:
+    speaker: protagonist
+    text: 家族[かぞく] だ から こそ
+  items:
+  - kazoku-dakara-koso
+- type: prompt
+  ask:
+    en: 'Once more: say “I''ll help”.'
+    pt: 'Mais uma vez: diga “eu ajudo”.'
+  answer:
+    speaker: protagonist
+    text: 手伝[てつだ]います
+  items:
+  - tetsudaimasu
+- type: prompt
+  ask:
+    en: 'Once more: say “without hesitation, feel free”.'
+    pt: 'Mais uma vez: diga “sem cerimônia”.'
+  answer:
+    speaker: protagonist
+    text: 遠慮[えんりょ] なく
+  items:
+  - enryo-naku
+- type: prompt
+  ask:
+    en: 'Once more: say “role”.'
+    pt: 'Mais uma vez: diga “papel, função”.'
+  answer:
+    speaker: protagonist
+    text: 役割[やくわり]
+  items:
+  - yakuwari
+- type: prompt
+  ask:
+    en: 'Once more: say “has been changing”.'
+    pt: 'Mais uma vez: diga “vem mudando”.'
+  answer:
+    speaker: protagonist
+    text: 変[か]わって きた
+  items:
+  - kawatte-kita
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “debate — and “grounds, evidence — and “not only, not limited to — and “not only in Japan — and “argument, claim — and “counter-argument — and “position, standpoint — and “admittedly, certainly
+      — and “however — and “in conclusion — and “there''s something in that”.'
+    pt: 'Diga: “debate — e “fundamento, base — e “não só, não apenas — e “não só no Japão — e “argumento, posição — e “contra-argumento — e “posição, ponto de vista — e “de fato, é verdade que — e “no entanto
+      — e “em conclusão — e “tem razão em parte”.'
+  answer:
+    speaker: protagonist
+    text: 討論[とうろん] … 根拠[こんきょ] … 〜に 限[かぎ]らず … 日本[にほん] に 限[かぎ]らず … 主張[しゅちょう] … 反論[はんろん] … 立場[たちば] … 確[たし]か に … しかし … 結論[けつろん] と して … 一理[いちり] ある
+  items:
+  - touron
+  - konkyo
+  - ni-kagirazu
+  - nihon-ni-kagirazu
+  - shuchou
+  - hanron
+  - tachiba
+  - tashika-ni
+  - shikashi
+  - ketsuron-to-shite
+  - ichiri-aru
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “noise — and “complaint — and “management company — and “notice (posted) — and “could well (bad result) — and “could turn into trouble — and “neighbourhood, neighbours — and “I''ll be careful
+      from now on — and “building rules — and “after 10 p.m. — and “the future”.'
+    pt: 'Diga: “barulho — e “queixa, reclamação — e “administradora — e “aviso (colado) — e “pode acabar (resultado ruim) — e “pode virar problema — e “vizinhança — e “daqui em diante vou tomar cuidado
+      — e “regulamento do prédio — e “depois das 22h — e “o futuro”.'
+  answer:
+    speaker: protagonist
+    text: 騒音[そうおん] … 苦情[くじょう] … 管理[かんり] 会社[がいしゃ] … 張[は]り紙[がみ] … 〜かねない … トラブル に なり かねない … 近所[きんじょ] … 以後[いご] 気[き] を つけます … 管理[かんり] 規約[きやく] … 夜[よる] 十時[じゅうじ] 以降[いこう] … 将来[しょうらい]
+  items:
+  - souon
+  - kujou
+  - kanri-gaisha
+  - harigami
+  - kanenai
+  - toraburu-ni-nari-kanenai
+  - kinjo
+  - ki-wo-tsukemasu-review
+  - kanri-kiyaku
+  - yoru-juuji-ikou
+  - shourai
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “returning to one''s country — and “stay, remain — and “be torn, hesitate — and “decision, resolve — and “permanent residence — and “both countries — and “become a bridge — and “I want to
+      be with (you) — and “don''t worry — and “New Year (holidays) — and “New Year food in boxes”.'
+    pt: 'Diga: “voltar ao país de origem — e “ficar — e “ficar em dúvida — e “decisão — e “residência permanente — e “os dois países — e “ser uma ponte — e “quero ficar com (você) — e “não se preocupe —
+      e “ano-novo (feriado) — e “comida de ano-novo em caixas”.'
+  answer:
+    speaker: protagonist
+    text: 帰国[きこく] … 残[のこ]る … 迷[まよ]う … 決心[けっしん] … 永住[えいじゅう] … 両方[りょうほう] の 国[くに] … 架[か]け橋[はし] に なる … 一緒[いっしょ] に いたい … 心配[しんぱい] しないで … お正月[しょうがつ] … おせち
+  items:
+  - kikoku
+  - nokoru
+  - mayou
+  - kesshin
+  - eijuu
+  - ryouhou-no-kuni
+  - hashi-ni-naru
+  - isshoni-iru
+  - shinpai-shinaide
+  - oshougatsu
+  - osechi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “New Year money for children — and “Happy New Year — and “I look forward to this year with you too — and “while (before it changes) — and “while it''s warm — and “New Year mochi soup — and
+      “New Year card — and “lucky, auspicious — and “chemistry — and “mix — and “danger, dangerous”.'
+    pt: 'Diga: “dinheiro de ano-novo para as crianças — e “feliz ano-novo — e “conto com você neste ano também — e “enquanto (antes que mude) — e “enquanto está quente — e “sopa de mochi do ano-novo — e
+      “cartão de ano-novo — e “dá sorte — e “química — e “misturar — e “perigo, perigoso”.'
+  answer:
+    speaker: protagonist
+    text: お年玉[としだま] … 明[あ]けまして おめでとう ございます … 今年[ことし] も よろしく お願[ねが]い します … 〜うち に … 温[あたた]かい うち に … お雑煮[ぞうに] … 年賀状[ねんがじょう] … 縁起[えんぎ] が いい … 化学[かがく] … 混[ま]ぜる … 危険[きけん]
+  items:
+  - otoshidama
+  - akemashite
+  - kotoshi-mo-yoroshiku
+  - uchi-ni
+  - atatakai-uchi-ni
+  - ozouni
+  - nengajou
+  - engi
+  - kagaku
+  - mazeru
+  - kiken
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “chlorine — and “danger: do not mix — and “acidic — and “gas — and “only, nothing but — and “just bought — and “ventilation — and “instructions — and “go out, date (as a couple) — and “end
+      up …-ing; (regret / completion) — and “I blurted it out”.'
+    pt: 'Diga: “cloro — e “perigo: não misture — e “ácido — e “gás — e “só, nada além de — e “acabei de comprar — e “ventilação — e “instruções — e “namorar — e “acabar …-ndo; (lamento / conclusão) — e
+      “acabei falando”.'
+  answer:
+    speaker: protagonist
+    text: 塩素[えんそ] … 混[ま]ぜる な 危険[きけん] … 酸性[さんせい] … ガス … 〜ばかり … 買[か]った ばかり … 換気[かんき] … 説明書[せつめいしょ] … 付[つ]き合[あ]う … 〜て しまう … 言[い]って しまった
+  items:
+  - enso
+  - mazeruna-kiken
+  - sansei-kei
+  - gasu
+  - bakari
+  - katta-bakari
+  - kanki
+  - setsumeisho
+  - tsukiau
+  - te-shimau
+  - itte-shimatta
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “ended up (casual of てしまった) — and “okay — and “I was nervous — and “congratulations — and “I got a girlfriend — and “the next — and “as expected, after all”.'
+    pt: 'Diga: “acabei (informal de てしまった) — e “OK — e “fiquei nervoso — e “parabéns — e “arrumei namorada — e “o próximo — e “no fim, como eu imaginava”.'
+  answer:
+    speaker: protagonist
+    text: 〜ちゃった … オッケー … 緊張[きんちょう] した … おめでとう … 彼女[かのじょ] が できた … 次[つぎ] の … やっぱり
+  items:
+  - chatta
+  - okkee
+  - kinchou-shita
+  - omedetou
+  - kanojo-ga-dekita
+  - tsugi-no
+  - yappari
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
