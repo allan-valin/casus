@@ -1,0 +1,607 @@
+# UNIT ja B2-21 — written by AI (Claude) for Casus; expanded from src/B2-21.yml by tools/expand_unit.py. Edit the source.
+
+id: B2-21
+level: B2
+number: 21
+protagonist: f
+title:
+  en: Religion
+  pt: Religião
+situation:
+  en: 'Shota shows you round Kyoto at last: a shrine in the morning, a Buddhist temple after lunch. You ask what his religion is. He has to think.'
+  pt: 'O Shota finalmente leva você para conhecer Kyoto: um santuário de manhã, um templo budista depois do almoço. Você pergunta qual é a religião dele. Ele precisa pensar.'
+learn_lessons: []
+culture: Shinto and Buddhism side by side
+new_items:
+- id: otera
+  text: お寺[てら]
+  meaning:
+    en: Buddhist temple
+    pt: templo budista
+- id: shintou
+  text: 神道[しんとう]
+  meaning:
+    en: Shinto
+    pt: xintoísmo
+  rare: true
+- id: bukkyou
+  text: 仏教[ぶっきょう]
+  meaning:
+    en: Buddhism
+    pt: budismo
+- id: toka
+  text: 〜とか 〜とか
+  meaning:
+    en: things like … and …
+    pt: coisas como … e …
+- id: hatsumoude
+  text: 初詣[はつもうで]
+  meaning:
+    en: first shrine visit of the year
+    pt: primeira visita ao santuário no ano
+  rare: true
+- id: shuukyou
+  text: 宗教[しゅうきょう]
+  meaning:
+    en: religion
+    pt: religião
+- id: torii
+  text: 鳥居[とりい]
+  meaning:
+    en: shrine gate
+    pt: portal do santuário
+  rare: true
+- id: omamori
+  text: お守[まも]り
+  meaning:
+    en: amulet, charm
+    pt: amuleto
+- id: omikuji
+  text: おみくじ
+  meaning:
+    en: fortune slip
+    pt: papel da sorte
+- id: kami-sama
+  text: 神様[かみさま]
+  meaning:
+    en: the gods, a god
+    pt: os deuses, um deus
+- id: osoushiki
+  text: お葬式[そうしき]
+  meaning:
+    en: funeral
+    pt: funeral
+reviews:
+- item: kotowaza
+  from: A2-18
+- item: saru-mo
+  from: A2-18
+- item: ishi-no-ue
+  from: A2-18
+- item: to-iu
+  from: A2-18
+- item: imi
+  from: A2-18
+- item: dou-iu-imi
+  from: A2-18
+- item: shippai
+  from: A2-18
+- item: osoi
+  from: A2-18
+- item: gaman
+  from: A2-18
+- item: jouzu-na-hito
+  from: A2-18
+- item: saifu
+  from: B1-20
+- item: daremo
+  from: B1-20
+- item: dareka
+  from: B1-20
+- item: kouban
+  from: B1-20
+- item: otoshimono
+  from: B1-20
+- item: nakushita
+  from: B1-20
+- item: nanimo-nai
+  from: B1-20
+- item: dokoka
+  from: B1-20
+- item: todokemasu
+  from: B1-20
+- item: kakunin-shite
+  from: B1-20
+- item: shinjirarenai
+  from: B1-20
+- item: kagaku
+  from: B2-06
+- item: mazeru
+  from: B2-06
+- item: kiken
+  from: B2-06
+- item: enso
+  from: B2-06
+- item: mazeruna-kiken
+  from: B2-06
+- item: sansei-kei
+  from: B2-06
+- item: gasu
+  from: B2-06
+- item: bakari
+  from: B2-06
+- item: katta-bakari
+  from: B2-06
+- item: kanki
+  from: B2-06
+- item: setsumeisho
+  from: B2-06
+- item: pawahara
+  from: B2-14
+- item: soudan
+  from: B2-14
+- item: saserareru
+  from: B2-14
+- item: yarinaosaserareta
+  from: B2-14
+- item: donarareru
+  from: B2-14
+- item: madoguchi-soudan
+  from: B2-14
+- item: kiroku
+  from: B2-14
+- item: hitori-de
+  from: B2-14
+- item: jinji
+  from: B2-14
+- item: hou-de
+  from: B2-14
+- item: yotou
+  from: B2-18
+- item: yatou
+  from: B2-18
+- item: to-shite-mo
+  from: B2-18
+- item: hantai-da-to-shite-mo
+  from: B2-18
+- item: iken-ga-chigau
+  from: B2-18
+- item: sonchou
+  from: B2-18
+- item: seisaku
+  from: B2-18
+- item: keizai
+  from: B2-18
+- item: gaikokujin-no-shiten
+  from: B2-18
+- item: benkyou-ni-narimasu
+  from: B2-18
+- item: kureemu
+  from: B2-20
+- item: taiou
+  from: B2-20
+- item: owabi
+  from: B2-20
+- item: okyakusama
+  from: B2-20
+- item: makoto-ni
+  from: B2-20
+- item: kakunin-itashimasu
+  from: B2-20
+- item: shikyuu
+  from: B2-20
+- item: okuri-naoshi
+  from: B2-20
+- item: ninotsuki
+  from: B2-20
+- item: saihatsu-boushi
+  from: B2-20
+- item: okyakusama-wa-kamisama
+  from: B2-20
+steps:
+- type: narrator
+  text:
+    en: 'Shota shows you round Kyoto at last: a shrine in the morning, a Buddhist temple after lunch. You ask what his religion is. He has to think. Listen to the conversation; you don''t need to understand
+      it yet.'
+    pt: 'O Shota finalmente leva você para conhecer Kyoto: um santuário de manhã, um templo budista depois do almoço. Você pergunta qual é a religião dele. Ele precisa pensar. Escute a conversa; ainda não
+      precisa entender.'
+- type: dialogue
+  lines:
+  - speaker: shota
+    text: ここ が 神社[じんじゃ]。 鳥居[とりい] を くぐる 前[まえ] に、 お辞儀[じぎ] する ん だ よ。
+    meaning:
+      en: This is the shrine. You bow before passing through the gate.
+      pt: Este é o santuário. Antes de passar pelo portal, a gente faz uma reverência.
+  - speaker: protagonist
+    text: 翔太[しょうた] の 宗教[しゅうきょう] は 何[なに]？ 神道[しんとう]？ 仏教[ぶっきょう]？
+    meaning:
+      en: What's your religion, Shota? Shinto? Buddhism?
+      pt: Qual é a sua religião, Shota? Xintoísmo? Budismo?
+  - speaker: shota
+    text: うーん… 両方[りょうほう] かな。 お正月[しょうがつ] は 神社[じんじゃ] に 初詣[はつもうで]、 お葬式[そうしき] は お寺[てら]。
+    meaning:
+      en: Hmm… both, I guess. New Year at the shrine, funerals at the temple.
+      pt: Hum… os dois, acho. Ano-novo no santuário, funeral no templo.
+  - speaker: protagonist
+    text: クリスマス も する でしょ？
+    meaning:
+      en: And you do Christmas too, right?
+      pt: E vocês também fazem Natal, né?
+  - speaker: shota
+    text: する する。 ケーキ とか チキン とか。 でも 宗教[しゅうきょう] と して じゃ ない。
+    meaning:
+      en: We do. Cake and chicken and so on. But not as religion.
+      pt: Fazemos, sim. Bolo, frango e tal. Mas não como religião.
+  - speaker: protagonist
+    text: お守[まも]り を 買[か]おう か な。 おみくじ も 引[ひ]きたい。
+    meaning:
+      en: Maybe I'll buy an amulet. And I want to draw a fortune too.
+      pt: Acho que vou comprar um amuleto. E quero tirar um papel da sorte.
+  - speaker: shota
+    text: …大吉[だいきち]！ 神様[かみさま] は 君[きみ] の 味方[みかた] だ ね。
+    meaning:
+      en: …Great luck! The gods are on your side.
+      pt: …Grande sorte! Os deuses estão do seu lado.
+  - speaker: protagonist
+    text: 午後[ごご] は お寺[てら] で、 仏様[ほとけさま] に も お願[ねが]い しなきゃ。
+    meaning:
+      en: This afternoon at the temple I'd better ask the Buddha too.
+      pt: À tarde, no templo, tenho que pedir ao Buda também.
+- type: prompt
+  ask:
+    en: 'Say: religion.'
+    pt: 'Diga: religião.'
+  answer:
+    speaker: protagonist
+    text: 宗教[しゅうきょう]
+  items:
+  - shuukyou
+- type: prompt
+  ask:
+    en: 'Say: Shinto.'
+    pt: 'Diga: xintoísmo.'
+  answer:
+    speaker: protagonist
+    text: 神道[しんとう]
+  items:
+  - shintou
+- type: prompt
+  ask:
+    en: 'Say: Buddhism.'
+    pt: 'Diga: budismo.'
+  answer:
+    speaker: protagonist
+    text: 仏教[ぶっきょう]
+  items:
+  - bukkyou
+- type: prompt
+  ask:
+    en: 'Say: a Buddhist temple.'
+    pt: 'Diga: um templo budista.'
+  answer:
+    speaker: protagonist
+    text: お寺[てら]
+  items:
+  - otera
+- type: prompt
+  ask:
+    en: 'Say: the shrine gate.'
+    pt: 'Diga: o portal do santuário.'
+  answer:
+    speaker: protagonist
+    text: 鳥居[とりい]
+  items:
+  - torii
+- type: prompt
+  ask:
+    en: 'Say: the gods.'
+    pt: 'Diga: os deuses.'
+  answer:
+    speaker: protagonist
+    text: 神様[かみさま]
+  items:
+  - kami-sama
+- type: narrator
+  text:
+    en: '«〜とか 〜とか» lists examples loosely — things like this and that: «ケーキ とか チキン とか», cake, chicken and so on. More casual than «〜や 〜など».'
+    pt: '«〜とか 〜とか» lista exemplos de forma solta — coisas como isso e aquilo: «ケーキ とか チキン とか», bolo, frango e tal. Mais informal que «〜や 〜など».'
+- type: prompt
+  ask:
+    en: 'Say the pattern: things like … and …'
+    pt: 'Diga o padrão: coisas como … e …'
+  answer:
+    speaker: protagonist
+    text: 〜とか 〜とか
+  items:
+  - toka
+- type: prompt
+  ask:
+    en: 'Say: the first shrine visit of the year.'
+    pt: 'Diga: a primeira visita ao santuário no ano.'
+  answer:
+    speaker: protagonist
+    text: 初詣[はつもうで]
+  items:
+  - hatsumoude
+- type: prompt
+  ask:
+    en: 'Say: a funeral.'
+    pt: 'Diga: um funeral.'
+  answer:
+    speaker: protagonist
+    text: お葬式[そうしき]
+  items:
+  - osoushiki
+- type: prompt
+  ask:
+    en: 'Say: an amulet.'
+    pt: 'Diga: um amuleto.'
+  answer:
+    speaker: protagonist
+    text: お守[まも]り
+  items:
+  - omamori
+- type: prompt
+  ask:
+    en: 'Say: a fortune slip.'
+    pt: 'Diga: um papel da sorte.'
+  answer:
+    speaker: protagonist
+    text: おみくじ
+  items:
+  - omikuji
+- type: narrator
+  text:
+    en: 'Most Japanese take part in both Shinto and Buddhism without feeling they belong to either: shrines for births, New Year and good luck; temples for funerals and ancestors. A «鳥居[とりい]» marks a shrine;
+      incense and a Buddha mark a temple.'
+    pt: 'A maioria dos japoneses participa do xintoísmo e do budismo sem sentir que pertence a nenhum: santuário para nascimento, ano-novo e boa sorte; templo para funeral e antepassados. O «鳥居[とりい]» marca
+      o santuário; incenso e uma imagem de Buda marcam o templo.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'Lembra o brasileiro que é católico, vai ao centro espírita e pula sete ondas no réveillon: misturar crenças é normal nos dois países.'
+- type: prompt
+  ask:
+    en: 'Once more: say “Buddhist temple”.'
+    pt: 'Mais uma vez: diga “templo budista”.'
+  answer:
+    speaker: protagonist
+    text: お寺[てら]
+  items:
+  - otera
+- type: prompt
+  ask:
+    en: 'Once more: say “Shinto”.'
+    pt: 'Mais uma vez: diga “xintoísmo”.'
+  answer:
+    speaker: protagonist
+    text: 神道[しんとう]
+  items:
+  - shintou
+- type: prompt
+  ask:
+    en: 'Once more: say “Buddhism”.'
+    pt: 'Mais uma vez: diga “budismo”.'
+  answer:
+    speaker: protagonist
+    text: 仏教[ぶっきょう]
+  items:
+  - bukkyou
+- type: prompt
+  ask:
+    en: 'Once more: say “things like … and …”.'
+    pt: 'Mais uma vez: diga “coisas como … e …”.'
+  answer:
+    speaker: protagonist
+    text: 〜とか 〜とか
+  items:
+  - toka
+- type: prompt
+  ask:
+    en: 'Once more: say “first shrine visit of the year”.'
+    pt: 'Mais uma vez: diga “primeira visita ao santuário no ano”.'
+  answer:
+    speaker: protagonist
+    text: 初詣[はつもうで]
+  items:
+  - hatsumoude
+- type: prompt
+  ask:
+    en: 'Once more: say “religion”.'
+    pt: 'Mais uma vez: diga “religião”.'
+  answer:
+    speaker: protagonist
+    text: 宗教[しゅうきょう]
+  items:
+  - shuukyou
+- type: prompt
+  ask:
+    en: 'Once more: say “shrine gate”.'
+    pt: 'Mais uma vez: diga “portal do santuário”.'
+  answer:
+    speaker: protagonist
+    text: 鳥居[とりい]
+  items:
+  - torii
+- type: prompt
+  ask:
+    en: 'Once more: say “amulet, charm”.'
+    pt: 'Mais uma vez: diga “amuleto”.'
+  answer:
+    speaker: protagonist
+    text: お守[まも]り
+  items:
+  - omamori
+- type: prompt
+  ask:
+    en: 'Once more: say “fortune slip”.'
+    pt: 'Mais uma vez: diga “papel da sorte”.'
+  answer:
+    speaker: protagonist
+    text: おみくじ
+  items:
+  - omikuji
+- type: prompt
+  ask:
+    en: 'Once more: say “the gods, a god”.'
+    pt: 'Mais uma vez: diga “os deuses, um deus”.'
+  answer:
+    speaker: protagonist
+    text: 神様[かみさま]
+  items:
+  - kami-sama
+- type: prompt
+  ask:
+    en: 'Once more: say “funeral”.'
+    pt: 'Mais uma vez: diga “funeral”.'
+  answer:
+    speaker: protagonist
+    text: お葬式[そうしき]
+  items:
+  - osoushiki
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “complaint — and “dealing with, response — and “apology (formal) — and “customer (honorific) — and “I am truly, deeply sorry — and “I will check (humble) — and “urgently — and “resending —
+      and “we caused you trouble”.'
+    pt: 'Diga: “reclamação — e “atendimento, providência — e “pedido de desculpas (formal) — e “cliente (honorífico) — e “peço sinceras desculpas — e “vou verificar (humilde) — e “com urgência — e “reenvio
+      — e “causamos transtorno”.'
+  answer:
+    speaker: protagonist
+    text: クレーム … 対応[たいおう] … お詫[わ]び … お客様[きゃくさま] … 誠[まこと] に 申[もう]し訳[わけ] ございません … 確認[かくにん] いたします … 至急[しきゅう] … お送[おく]り 直[なお]し … ご迷惑[めいわく] を おかけ しました
+  items:
+  - kureemu
+  - taiou
+  - owabi
+  - okyakusama
+  - makoto-ni
+  - kakunin-itashimasu
+  - shikyuu
+  - okuri-naoshi
+  - ninotsuki
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “preventing a recurrence — and “the customer is god — and “ruling party — and “opposition party — and “even if, even supposing — and “even if (you) disagree — and “have different opinions
+      — and “respect (for a view) — and “policy”.'
+    pt: 'Diga: “evitar que se repita — e “o cliente é deus — e “partido do governo — e “oposição — e “mesmo que, ainda que — e “mesmo que discorde — e “ter opiniões diferentes — e “respeito (a uma opinião)
+      — e “política (medida)”.'
+  answer:
+    speaker: protagonist
+    text: 再発[さいはつ] 防止[ぼうし] … お客様[きゃくさま] は 神様[かみさま] … 与党[よとう] … 野党[やとう] … 〜と して も … 反対[はんたい] だ と して も … 意見[いけん] が 違[ちが]う … 尊重[そんちょう] … 政策[せいさく]
+  items:
+  - saihatsu-boushi
+  - okyakusama-wa-kamisama
+  - yotou
+  - yatou
+  - to-shite-mo
+  - hantai-da-to-shite-mo
+  - iken-ga-chigau
+  - sonchou
+  - seisaku
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “economy — and “a foreigner''s point of view — and “that''s very instructive — and “power harassment — and “consultation, talking it over — and “be made to (against your will) — and “was made
+      to redo it — and “be shouted at — and “help desk (for complaints)”.'
+    pt: 'Diga: “economia — e “o ponto de vista de um estrangeiro — e “aprendo muito com isso — e “assédio moral — e “conversar, pedir conselho — e “ser obrigado a — e “fui obrigado a refazer — e “levar
+      bronca aos gritos — e “canal de denúncia”.'
+  answer:
+    speaker: protagonist
+    text: 経済[けいざい] … 外国人[がいこくじん] の 視点[してん] … 勉強[べんきょう] に なります … パワハラ … 相談[そうだん] … 〜させられる … やり直[なお]させられた … 怒鳴[どな]られる … 相談[そうだん] 窓口[まどぐち]
+  items:
+  - keizai
+  - gaikokujin-no-shiten
+  - benkyou-ni-narimasu
+  - pawahara
+  - soudan
+  - saserareru
+  - yarinaosaserareta
+  - donarareru
+  - madoguchi-soudan
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “record — and “don''t keep it all to yourself — and “personnel, HR — and “by law — and “chemistry — and “mix — and “danger, dangerous — and “chlorine — and “danger: do not mix”.'
+    pt: 'Diga: “registro — e “não guarde tudo sozinho — e “recursos humanos, RH — e “por lei — e “química — e “misturar — e “perigo, perigoso — e “cloro — e “perigo: não misture”.'
+  answer:
+    speaker: protagonist
+    text: 記録[きろく] … 一人[ひとり] で 抱[かか]え込[こ]まないで … 人事[じんじ] … 法律[ほうりつ] で … 化学[かがく] … 混[ま]ぜる … 危険[きけん] … 塩素[えんそ] … 混[ま]ぜる な 危険[きけん]
+  items:
+  - kiroku
+  - hitori-de
+  - jinji
+  - hou-de
+  - kagaku
+  - mazeru
+  - kiken
+  - enso
+  - mazeruna-kiken
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “acidic — and “gas — and “only, nothing but — and “just bought — and “ventilation — and “instructions — and “wallet — and “nobody — and “someone”.'
+    pt: 'Diga: “ácido — e “gás — e “só, nada além de — e “acabei de comprar — e “ventilação — e “instruções — e “carteira — e “ninguém — e “alguém”.'
+  answer:
+    speaker: protagonist
+    text: 酸性[さんせい] … ガス … 〜ばかり … 買[か]った ばかり … 換気[かんき] … 説明書[せつめいしょ] … 財布[さいふ] … 誰[だれ] も 〜ない … 誰[だれ] か
+  items:
+  - sansei-kei
+  - gasu
+  - bakari
+  - katta-bakari
+  - kanki
+  - setsumeisho
+  - saifu
+  - daremo
+  - dareka
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “police box — and “lost item — and “I lost (it) — and “nothing — and “somewhere — and “(someone) handed it in — and “check the contents — and “I can''t believe it — and “proverb, saying”.'
+    pt: 'Diga: “posto policial — e “objeto perdido — e “perdi — e “nada — e “em algum lugar — e “(alguém) entregou — e “confira o que tem dentro — e “não acredito — e “provérbio, ditado”.'
+  answer:
+    speaker: protagonist
+    text: 交番[こうばん] … 落[お]とし物[もの] … なくしました … 何[なに] も ない … どこ か … 届[とど]けて くれました … 中身[なかみ] を 確認[かくにん] して … 信[しん]じられない … ことわざ
+  items:
+  - kouban
+  - otoshimono
+  - nakushita
+  - nanimo-nai
+  - dokoka
+  - todokemasu
+  - kakunin-shite
+  - shinjirarenai
+  - kotowaza
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “even monkeys fall from trees — and “three years even on a stone — and “called…, that says… — and “meaning — and “what does it mean? — and “mistake, failure — and “slow; late — and “patience,
+      enduring — and “a skilled person”.'
+    pt: 'Diga: “até macaco cai da árvore — e “três anos até em cima de uma pedra — e “que se chama…, que diz… — e “significado — e “o que significa? — e “erro, fracasso — e “lento; tarde — e “paciência,
+      aguentar firme — e “uma pessoa habilidosa”.'
+  answer:
+    speaker: protagonist
+    text: 猿[さる] も 木[き] から 落[お]ちる … 石[いし] の 上[うえ] に も 三年[さんねん] … 〜と いう … 意味[いみ] … どう いう 意味[いみ] です か … 失敗[しっぱい] … 遅[おそ]い … 我慢[がまん] … 上手[じょうず] な 人[ひと]
+  items:
+  - saru-mo
+  - ishi-no-ue
+  - to-iu
+  - imi
+  - dou-iu-imi
+  - shippai
+  - osoi
+  - gaman
+  - jouzu-na-hito
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
