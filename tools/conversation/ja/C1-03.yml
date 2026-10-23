@@ -1,0 +1,602 @@
+# UNIT ja C1-03 — written by AI (Claude) for Casus; expanded from src/C1-03.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-03
+level: C1
+number: 3
+protagonist: f
+title:
+  en: The rental contract
+  pt: O contrato de aluguel
+situation:
+  en: You and Shota are looking for a flat together. At the estate agent's, the first-month costs add up fast.
+  pt: Você e o Shota estão procurando um apartamento juntos. Na imobiliária, os custos de entrada somam rápido.
+learn_lessons: []
+culture: Key money — check the contract
+new_items:
+- id: reikin
+  text: 礼金[れいきん]
+  meaning:
+    en: key money (non-refundable)
+    pt: luvas (não reembolsáveis)
+  rare: true
+- id: shikikin
+  text: 敷金[しききん]
+  meaning:
+    en: deposit
+    pt: caução, depósito
+- id: hoshounin
+  text: 保証人[ほしょうにん]
+  meaning:
+    en: guarantor
+    pt: fiador
+- id: koushinryou
+  text: 更新料[こうしんりょう]
+  meaning:
+    en: renewal fee
+    pt: taxa de renovação
+  rare: true
+- id: wo-hajime
+  text: 〜を はじめ
+  meaning:
+    en: starting with, including
+    pt: a começar por, incluindo
+- id: shikikin-wo-hajime
+  text: 敷金[しききん] を はじめ
+  meaning:
+    en: starting with the deposit
+    pt: a começar pela caução
+- id: hoshou-gaisha
+  text: 保証[ほしょう] 会社[がいしゃ]
+  meaning:
+    en: guarantor company
+    pt: empresa fiadora
+- id: madori
+  text: 間取[まど]り
+  meaning:
+    en: floor plan
+    pt: planta (do imóvel)
+- id: shoki-hiyou
+  text: 初期[しょき] 費用[ひよう]
+  meaning:
+    en: move-in costs
+    pt: custos de entrada
+- id: genjou-kaifuku
+  text: 原状[げんじょう] 回復[かいふく]
+  meaning:
+    en: restoring to original state
+    pt: devolver como estava
+  rare: true
+- id: keiyaku-kikan
+  text: 契約[けいやく] 期間[きかん]
+  meaning:
+    en: contract period
+    pt: prazo do contrato
+reviews:
+- item: oyaji-gyagu
+  from: A2-30
+- item: omoshiroi
+  from: A2-30
+- item: dajare
+  from: A2-30
+- item: warau
+  from: A2-30
+- item: joudan
+  from: A2-30
+- item: bounenkai
+  from: A2-30
+- item: kotoshi
+  from: A2-30
+- item: rainen
+  from: A2-30
+- item: osewa
+  from: A2-30
+- item: yoroshiku-rainen
+  from: A2-30
+- item: keiyakusho
+  from: B2-02
+- item: bonasu
+  from: B2-02
+- item: shiyou-kikan
+  from: B2-02
+- item: koto-ni-naru
+  from: B2-02
+- item: hairu-koto-ni-natta
+  from: B2-02
+- item: gekkyuu
+  from: B2-02
+- item: shakai-hoken
+  from: B2-02
+- item: nenkin
+  from: B2-02
+- item: hanko-wo-osu
+  from: B2-02
+- item: joukou
+  from: B2-02
+- item: yoroshii-desu-ka
+  from: B2-02
+- item: yotou
+  from: B2-18
+- item: yatou
+  from: B2-18
+- item: to-shite-mo
+  from: B2-18
+- item: hantai-da-to-shite-mo
+  from: B2-18
+- item: iken-ga-chigau
+  from: B2-18
+- item: sonchou
+  from: B2-18
+- item: seisaku
+  from: B2-18
+- item: keizai
+  from: B2-18
+- item: gaikokujin-no-shiten
+  from: B2-18
+- item: benkyou-ni-narimasu
+  from: B2-18
+- item: taiko
+  from: B2-26
+- item: renshuu
+  from: B2-26
+- item: rizumu
+  from: B2-26
+- item: tame-ni
+  from: B2-26
+- item: jouzu-ni-naru-tame-ni
+  from: B2-26
+- item: bachi
+  from: B2-26
+- item: kakegoe
+  from: B2-26
+- item: shisei
+  from: B2-26
+- item: kokyuu
+  from: B2-26
+- item: awaseru
+  from: B2-26
+- item: onegai-shimasu-start
+  from: B2-26
+- item: shourai
+  from: B2-30
+- item: kikoku
+  from: B2-30
+- item: nokoru
+  from: B2-30
+- item: mayou
+  from: B2-30
+- item: kesshin
+  from: B2-30
+- item: eijuu
+  from: B2-30
+- item: ryouhou-no-kuni
+  from: B2-30
+- item: hashi-ni-naru
+  from: B2-30
+- item: isshoni-iru
+  from: B2-30
+- item: shinpai-shinaide
+  from: B2-30
+- item: honban
+  from: C1-02
+- item: ishou
+  from: C1-02
+- item: hakushu
+  from: C1-02
+- item: nimo-kakawarazu
+  from: C1-02
+- item: ame-nimo-kakawarazu
+  from: C1-02
+- item: kankyaku
+  from: C1-02
+- item: machigaeta
+  from: C1-02
+- item: kimochi-ga-hitotsu
+  from: C1-02
+- item: seikou
+  from: C1-02
+- item: uchiage
+  from: C1-02
+steps:
+- type: narrator
+  text:
+    en: You and Shota are looking for a flat together. At the estate agent's, the first-month costs add up fast. Listen to the conversation; you don't need to understand it yet.
+    pt: Você e o Shota estão procurando um apartamento juntos. Na imobiliária, os custos de entrada somam rápido. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: fudousan
+    text: こちら の 物件[ぶっけん]、 間取[まど]り は 二[に] LDK です。 初期[しょき] 費用[ひよう] は 敷金[しききん] を はじめ、 礼金[れいきん]、 仲介[ちゅうかい] 手数料[てすうりょう] など です。
+    meaning:
+      en: This place is a 2LDK. Move-in costs include, starting with the deposit, key money, agency fee and so on.
+      pt: Este imóvel tem planta 2LDK. Os custos de entrada incluem, a começar pela caução, as luvas, a taxa da imobiliária etc.
+  - speaker: protagonist
+    text: 礼金[れいきん] は 戻[もど]って こない ん です よね。
+    meaning:
+      en: Key money doesn't come back, right?
+      pt: As luvas não voltam, né?
+  - speaker: fudousan
+    text: はい、 大家[おおや] さん へ の お礼[れい] です から。 敷金[しききん] は 退去[たいきょ] の 時[とき] に 原状[げんじょう] 回復[かいふく] の 費用[ひよう] を 引[ひ]いて 返[かえ]します。
+    meaning:
+      en: Right, it's a thank-you to the landlord. The deposit is returned when you move out, minus repair costs.
+      pt: Isso, é um agradecimento ao proprietário. A caução volta na saída, descontado o custo de devolver como estava.
+  - speaker: shota
+    text: 保証人[ほしょうにん] は 必要[ひつよう] です か。
+    meaning:
+      en: Do we need a guarantor?
+      pt: Precisa de fiador?
+  - speaker: fudousan
+    text: 保証[ほしょう] 会社[がいしゃ] を 使[つか]えば、 保証人[ほしょうにん] は 要[い]りません。
+    meaning:
+      en: If you use a guarantor company, you don't need a guarantor.
+      pt: Usando uma empresa fiadora, não precisa.
+  - speaker: protagonist
+    text: 契約[けいやく] 期間[きかん] は？
+    meaning:
+      en: And the contract period?
+      pt: E o prazo do contrato?
+  - speaker: fudousan
+    text: 二年[にねん] です。 更新[こうしん] の 時[とき] に 更新料[こうしんりょう] が かかります。
+    meaning:
+      en: Two years. There's a renewal fee when you renew.
+      pt: Dois anos. Na renovação, cobra-se uma taxa.
+  - speaker: protagonist
+    text: 契約書[けいやくしょ] を 家[いえ] で ゆっくり 読[よ]んで から、 決[き]めます。
+    meaning:
+      en: We'll read the contract at home carefully, then decide.
+      pt: Vamos ler o contrato com calma em casa e depois decidimos.
+- type: prompt
+  ask:
+    en: 'Say: the floor plan.'
+    pt: 'Diga: a planta.'
+  answer:
+    speaker: protagonist
+    text: 間取[まど]り
+  items:
+  - madori
+- type: prompt
+  ask:
+    en: 'Say: move-in costs.'
+    pt: 'Diga: custos de entrada.'
+  answer:
+    speaker: protagonist
+    text: 初期[しょき] 費用[ひよう]
+  items:
+  - shoki-hiyou
+- type: prompt
+  ask:
+    en: 'Say: the deposit.'
+    pt: 'Diga: a caução.'
+  answer:
+    speaker: protagonist
+    text: 敷金[しききん]
+  items:
+  - shikikin
+- type: prompt
+  ask:
+    en: 'Say: key money.'
+    pt: 'Diga: luvas.'
+  answer:
+    speaker: protagonist
+    text: 礼金[れいきん]
+  items:
+  - reikin
+- type: narrator
+  text:
+    en: '«〜を はじめ» is starting with — it names the chief example of a group: «敷金[しききん] を はじめ、 礼金[れいきん]、 手数料[てすうりょう]…», starting with the deposit, key money, fees… Formal, common in announcements.'
+    pt: '«〜を はじめ» é a começar por — cita o exemplo principal de um grupo: «敷金[しききん] を はじめ、 礼金[れいきん]、 手数料[てすうりょう]…», a começar pela caução, as luvas, as taxas… Formal, comum em comunicados.'
+- type: prompt
+  ask:
+    en: 'Say the pattern: starting with.'
+    pt: 'Diga o padrão: a começar por.'
+  answer:
+    speaker: protagonist
+    text: 〜を はじめ
+  items:
+  - wo-hajime
+- type: prompt
+  ask:
+    en: 'Say: starting with the deposit.'
+    pt: 'Diga: a começar pela caução.'
+  answer:
+    speaker: protagonist
+    text: 敷金[しききん] を はじめ
+  items:
+  - shikikin-wo-hajime
+- type: prompt
+  ask:
+    en: 'Say: a guarantor.'
+    pt: 'Diga: um fiador.'
+  answer:
+    speaker: protagonist
+    text: 保証人[ほしょうにん]
+  items:
+  - hoshounin
+- type: prompt
+  ask:
+    en: 'Say: a guarantor company.'
+    pt: 'Diga: uma empresa fiadora.'
+  answer:
+    speaker: protagonist
+    text: 保証[ほしょう] 会社[がいしゃ]
+  items:
+  - hoshou-gaisha
+- type: prompt
+  ask:
+    en: 'Say: the contract period.'
+    pt: 'Diga: o prazo do contrato.'
+  answer:
+    speaker: protagonist
+    text: 契約[けいやく] 期間[きかん]
+  items:
+  - keiyaku-kikan
+- type: prompt
+  ask:
+    en: 'Say: the renewal fee.'
+    pt: 'Diga: a taxa de renovação.'
+  answer:
+    speaker: protagonist
+    text: 更新料[こうしんりょう]
+  items:
+  - koushinryou
+- type: prompt
+  ask:
+    en: 'Say: restoring to the original state.'
+    pt: 'Diga: devolver como estava.'
+  answer:
+    speaker: protagonist
+    text: 原状[げんじょう] 回復[かいふく]
+  items:
+  - genjou-kaifuku
+- type: narrator
+  text:
+    en: 'Renting in Japan has costs Brazilians don''t expect: «礼金[れいきん]», key money, a gift to the landlord that never comes back; «敷金[しききん]», a deposit returned minus repairs; agency fees; and every two
+      years a «更新料[こうしんりょう]». Some flats have no key money — always check the contract and ask what the deposit covers.'
+    pt: 'Alugar no Japão tem custos que o brasileiro não espera: «礼金[れいきん]», as luvas, um presente ao proprietário que nunca volta; «敷金[しききん]», uma caução devolvida menos os reparos; a taxa da imobiliária;
+      e a cada dois anos uma «更新料[こうしんりょう]». Alguns imóveis não cobram luvas — sempre leia o contrato e pergunte o que a caução cobre.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil se fala de fiador, seguro-fiança e três aluguéis de caução. No Japão a empresa fiadora resolve o fiador — mas as luvas são um gasto a mais que não volta.
+- type: prompt
+  ask:
+    en: 'Once more: say “key money (non-refundable)”.'
+    pt: 'Mais uma vez: diga “luvas (não reembolsáveis)”.'
+  answer:
+    speaker: protagonist
+    text: 礼金[れいきん]
+  items:
+  - reikin
+- type: prompt
+  ask:
+    en: 'Once more: say “deposit”.'
+    pt: 'Mais uma vez: diga “caução, depósito”.'
+  answer:
+    speaker: protagonist
+    text: 敷金[しききん]
+  items:
+  - shikikin
+- type: prompt
+  ask:
+    en: 'Once more: say “guarantor”.'
+    pt: 'Mais uma vez: diga “fiador”.'
+  answer:
+    speaker: protagonist
+    text: 保証人[ほしょうにん]
+  items:
+  - hoshounin
+- type: prompt
+  ask:
+    en: 'Once more: say “renewal fee”.'
+    pt: 'Mais uma vez: diga “taxa de renovação”.'
+  answer:
+    speaker: protagonist
+    text: 更新料[こうしんりょう]
+  items:
+  - koushinryou
+- type: prompt
+  ask:
+    en: 'Once more: say “starting with, including”.'
+    pt: 'Mais uma vez: diga “a começar por, incluindo”.'
+  answer:
+    speaker: protagonist
+    text: 〜を はじめ
+  items:
+  - wo-hajime
+- type: prompt
+  ask:
+    en: 'Once more: say “starting with the deposit”.'
+    pt: 'Mais uma vez: diga “a começar pela caução”.'
+  answer:
+    speaker: protagonist
+    text: 敷金[しききん] を はじめ
+  items:
+  - shikikin-wo-hajime
+- type: prompt
+  ask:
+    en: 'Once more: say “guarantor company”.'
+    pt: 'Mais uma vez: diga “empresa fiadora”.'
+  answer:
+    speaker: protagonist
+    text: 保証[ほしょう] 会社[がいしゃ]
+  items:
+  - hoshou-gaisha
+- type: prompt
+  ask:
+    en: 'Once more: say “floor plan”.'
+    pt: 'Mais uma vez: diga “planta (do imóvel)”.'
+  answer:
+    speaker: protagonist
+    text: 間取[まど]り
+  items:
+  - madori
+- type: prompt
+  ask:
+    en: 'Once more: say “move-in costs”.'
+    pt: 'Mais uma vez: diga “custos de entrada”.'
+  answer:
+    speaker: protagonist
+    text: 初期[しょき] 費用[ひよう]
+  items:
+  - shoki-hiyou
+- type: prompt
+  ask:
+    en: 'Once more: say “restoring to original state”.'
+    pt: 'Mais uma vez: diga “devolver como estava”.'
+  answer:
+    speaker: protagonist
+    text: 原状[げんじょう] 回復[かいふく]
+  items:
+  - genjou-kaifuku
+- type: prompt
+  ask:
+    en: 'Once more: say “contract period”.'
+    pt: 'Mais uma vez: diga “prazo do contrato”.'
+  answer:
+    speaker: protagonist
+    text: 契約[けいやく] 期間[きかん]
+  items:
+  - keiyaku-kikan
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the real performance — and “costume — and “applause — and “despite, in spite of — and “despite the rain — and “audience — and “made a mistake (plain) — and “hearts beat as one — and “success”.'
+    pt: 'Diga: “a apresentação de verdade — e “figurino — e “aplauso — e “apesar de — e “apesar da chuva — e “público, plateia — e “errei (simples) — e “ficar todos em sintonia — e “sucesso”.'
+  answer:
+    speaker: protagonist
+    text: 本番[ほんばん] … 衣装[いしょう] … 拍手[はくしゅ] … 〜にも かかわらず … 雨[あめ] にも かかわらず … 観客[かんきゃく] … 間違[まちが]えた … 気持[きも]ち が 一[ひと]つ に なる … 成功[せいこう]
+  items:
+  - honban
+  - ishou
+  - hakushu
+  - nimo-kakawarazu
+  - ame-nimo-kakawarazu
+  - kankyaku
+  - machigaeta
+  - kimochi-ga-hitotsu
+  - seikou
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “after-party — and “the future — and “returning to one''s country — and “stay, remain — and “be torn, hesitate — and “decision, resolve — and “permanent residence — and “both countries — and
+      “become a bridge”.'
+    pt: 'Diga: “comemoração depois do evento — e “o futuro — e “voltar ao país de origem — e “ficar — e “ficar em dúvida — e “decisão — e “residência permanente — e “os dois países — e “ser uma ponte”.'
+  answer:
+    speaker: protagonist
+    text: 打[う]ち上[あ]げ … 将来[しょうらい] … 帰国[きこく] … 残[のこ]る … 迷[まよ]う … 決心[けっしん] … 永住[えいじゅう] … 両方[りょうほう] の 国[くに] … 架[か]け橋[はし] に なる
+  items:
+  - uchiage
+  - shourai
+  - kikoku
+  - nokoru
+  - mayou
+  - kesshin
+  - eijuu
+  - ryouhou-no-kuni
+  - hashi-ni-naru
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I want to be with (you) — and “don''t worry — and “taiko drum — and “practice — and “rhythm — and “in order to; for — and “in order to get good — and “drumsticks (taiko) — and “shout (in
+      rhythm)”.'
+    pt: 'Diga: “quero ficar com (você) — e “não se preocupe — e “taikô, tambor japonês — e “treino — e “ritmo — e “para, a fim de — e “para ficar bom — e “baquetas (do taikô) — e “grito (no ritmo)”.'
+  answer:
+    speaker: protagonist
+    text: 一緒[いっしょ] に いたい … 心配[しんぱい] しないで … 太鼓[たいこ] … 練習[れんしゅう] … リズム … 〜ために … 上手[じょうず] に なる ために … ばち … 掛[か]け声[ごえ]
+  items:
+  - isshoni-iru
+  - shinpai-shinaide
+  - taiko
+  - renshuu
+  - rizumu
+  - tame-ni
+  - jouzu-ni-naru-tame-ni
+  - bachi
+  - kakegoe
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “posture — and “breathing — and “match, play together — and “(said loudly at the start of practice) — and “ruling party — and “opposition party — and “even if, even supposing — and “even if
+      (you) disagree — and “have different opinions”.'
+    pt: 'Diga: “postura — e “respiração — e “acompanhar, tocar junto — e “(dito alto no começo do treino) — e “partido do governo — e “oposição — e “mesmo que, ainda que — e “mesmo que discorde — e “ter
+      opiniões diferentes”.'
+  answer:
+    speaker: protagonist
+    text: 姿勢[しせい] … 呼吸[こきゅう] … 合[あ]わせる … よろしく お願[ねが]い します！ … 与党[よとう] … 野党[やとう] … 〜と して も … 反対[はんたい] だ と して も … 意見[いけん] が 違[ちが]う
+  items:
+  - shisei
+  - kokyuu
+  - awaseru
+  - onegai-shimasu-start
+  - yotou
+  - yatou
+  - to-shite-mo
+  - hantai-da-to-shite-mo
+  - iken-ga-chigau
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “respect (for a view) — and “policy — and “economy — and “a foreigner''s point of view — and “that''s very instructive — and “contract (document) — and “bonus — and “probation period — and
+      “it''s been decided that…”.'
+    pt: 'Diga: “respeito (a uma opinião) — e “política (medida) — e “economia — e “o ponto de vista de um estrangeiro — e “aprendo muito com isso — e “contrato (documento) — e “bônus — e “período de experiência
+      — e “ficou decidido que…”.'
+  answer:
+    speaker: protagonist
+    text: 尊重[そんちょう] … 政策[せいさく] … 経済[けいざい] … 外国人[がいこくじん] の 視点[してん] … 勉強[べんきょう] に なります … 契約書[けいやくしょ] … ボーナス … 試用[しよう] 期間[きかん] … 〜こと に なる
+  items:
+  - sonchou
+  - seisaku
+  - keizai
+  - gaikokujin-no-shiten
+  - benkyou-ni-narimasu
+  - keiyakusho
+  - bonasu
+  - shiyou-kikan
+  - koto-ni-naru
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “it''s been decided I''ll join — and “monthly salary — and “social insurance — and “pension — and “stamp your seal — and “conditions, terms — and “is that all right? (polite) — and “dad joke,
+      pun — and “funny, interesting”.'
+    pt: 'Diga: “ficou decidido que vou entrar — e “salário mensal — e “previdência e plano de saúde — e “aposentadoria, pensão — e “carimbar — e “condições — e “está bem? (educado) — e “piada de tiozão,
+      trocadilho — e “engraçado, interessante”.'
+  answer:
+    speaker: protagonist
+    text: 入[はい]る こと に なりました … 月給[げっきゅう] … 社会[しゃかい] 保険[ほけん] … 年金[ねんきん] … 判子[はんこ] を 押[お]す … 条件[じょうけん] … よろしい です か … おやじ ギャグ … 面白[おもしろ]い
+  items:
+  - hairu-koto-ni-natta
+  - gekkyuu
+  - shakai-hoken
+  - nenkin
+  - hanko-wo-osu
+  - joukou
+  - yoroshii-desu-ka
+  - oyaji-gyagu
+  - omoshiroi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “pun — and “laugh — and “joke — and “year-end party — and “this year — and “next year — and “thank you for all your help — and “I look forward to next year too”.'
+    pt: 'Diga: “trocadilho — e “rio — e “piada, brincadeira — e “festa de fim de ano — e “este ano — e “ano que vem — e “obrigado por tudo — e “conto com vocês no ano que vem”.'
+  answer:
+    speaker: protagonist
+    text: 駄洒落[だじゃれ] … 笑[わら]います … 冗談[じょうだん] … 忘年会[ぼうねんかい] … 今年[ことし] … 来年[らいねん] … お世話[せわ] に なりました … 来年[らいねん] も よろしく お願[ねが]いします
+  items:
+  - dajare
+  - warau
+  - joudan
+  - bounenkai
+  - kotoshi
+  - rainen
+  - osewa
+  - yoroshiku-rainen
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

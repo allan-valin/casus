@@ -1,0 +1,580 @@
+# UNIT ja C1-05 — written by AI (Claude) for Casus; expanded from src/C1-05.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-05
+level: C1
+number: 5
+protagonist: f
+title:
+  en: Taxes
+  pt: Impostos
+situation:
+  en: 'A letter from the city: a residence-tax bill, based on last year''s income. Chief Sato explains why it arrives a year late — and about the tax return.'
+  pt: 'Uma carta da prefeitura: a cobrança do imposto de residência, com base na renda do ano passado. A chefe Sato explica por que ele chega um ano depois — e fala da declaração.'
+learn_lessons: []
+culture: The idea, no amounts
+new_items:
+- id: juuminzei
+  text: 住民税[じゅうみんぜい]
+  meaning:
+    en: residence tax
+    pt: imposto de residência
+  rare: true
+- id: kakutei-shinkoku
+  text: 確定[かくてい] 申告[しんこく]
+  meaning:
+    en: tax return
+    pt: declaração de imposto de renda
+  rare: true
+- id: koujo
+  text: 控除[こうじょ]
+  meaning:
+    en: deduction
+    pt: dedução
+- id: noufusho
+  text: 納付書[のうふしょ]
+  meaning:
+    en: payment slip
+    pt: boleto de pagamento
+  rare: true
+- id: wake-niwa-ikanai
+  text: 〜わけ には いかない
+  meaning:
+    en: can't very well…
+    pt: não dá para…, não posso simplesmente…
+- id: harawanai-wake-niwa
+  text: 払[はら]わない わけ には いかない
+  meaning:
+    en: can't very well not pay
+    pt: não dá para não pagar
+- id: shotoku
+  text: 所得[しょとく]
+  meaning:
+    en: income
+    pt: renda
+- id: zenen
+  text: 前年[ぜんねん]
+  meaning:
+    en: the previous year
+    pt: o ano anterior
+- id: gensen-choushuu
+  text: 源泉[げんせん] 徴収[ちょうしゅう]
+  meaning:
+    en: tax withheld at source
+    pt: imposto retido na fonte
+  rare: true
+- id: furusato-nouzei
+  text: ふるさと 納税[のうぜい]
+  meaning:
+    en: hometown tax donation
+    pt: doação de imposto à cidade natal
+  rare: true
+reviews:
+- item: to-omou
+  from: B1-02
+- item: benri
+  from: B1-02
+- item: fuben
+  from: B1-02
+- item: shoujiki
+  from: B1-02
+- item: shoujiki-ni-iu-to
+  from: B1-02
+- item: kuruma
+  from: B1-02
+- item: inaka
+  from: B1-02
+- item: tokai
+  from: B1-02
+- item: chotto-fuben-kana
+  from: B1-02
+- item: kana
+  from: B1-02
+- item: suki-ni-natta
+  from: B1-02
+- item: buchou-item
+  from: B2-04
+- item: senpai
+  from: B2-04
+- item: irassharu
+  from: B2-04
+- item: ossharu
+  from: B2-04
+- item: sonkeigo
+  from: B2-04
+- item: kanpai-hikuku
+  from: B2-04
+- item: tatete-wa-ikenai
+  from: B2-04
+- item: esukareetaa
+  from: B2-04
+- item: hidari-ni-tatsu
+  from: B2-04
+- item: onaji-you-ni
+  from: B2-04
+- item: goaisatsu
+  from: B2-04
+- item: kureemu
+  from: B2-20
+- item: taiou
+  from: B2-20
+- item: owabi
+  from: B2-20
+- item: okyakusama
+  from: B2-20
+- item: makoto-ni
+  from: B2-20
+- item: kakunin-itashimasu
+  from: B2-20
+- item: shikyuu
+  from: B2-20
+- item: okuri-naoshi
+  from: B2-20
+- item: ninotsuki
+  from: B2-20
+- item: saihatsu-boushi
+  from: B2-20
+- item: okyakusama-wa-kamisama
+  from: B2-20
+- item: aisatsu
+  from: B2-28
+- item: ippon-jime
+  from: B2-28
+- item: kotoshi-ichinen
+  from: B2-28
+- item: osewa-ni-narimashita-review
+  from: B2-28
+- item: hito-koto
+  from: B2-28
+- item: kansha
+  from: B2-28
+- item: ganbarimashou
+  from: B2-28
+- item: yoi-otoshi-wo
+  from: B2-28
+- item: go-shouchou
+  from: B2-28
+- item: otsukaresama-deshita
+  from: B2-28
+- item: honban
+  from: C1-02
+- item: ishou
+  from: C1-02
+- item: hakushu
+  from: C1-02
+- item: nimo-kakawarazu
+  from: C1-02
+- item: ame-nimo-kakawarazu
+  from: C1-02
+- item: kankyaku
+  from: C1-02
+- item: machigaeta
+  from: C1-02
+- item: kimochi-ga-hitotsu
+  from: C1-02
+- item: seikou
+  from: C1-02
+- item: uchiage
+  from: C1-02
+- item: souon
+  from: C1-04
+- item: kujou
+  from: C1-04
+- item: kanri-gaisha
+  from: C1-04
+- item: harigami
+  from: C1-04
+- item: kanenai
+  from: C1-04
+- item: toraburu-ni-nari-kanenai
+  from: C1-04
+- item: kinjo
+  from: C1-04
+- item: ki-wo-tsukemasu-review
+  from: C1-04
+- item: kanri-kiyaku
+  from: C1-04
+- item: yoru-juuji-ikou
+  from: C1-04
+steps:
+- type: narrator
+  text:
+    en: 'A letter from the city: a residence-tax bill, based on last year''s income. Chief Sato explains why it arrives a year late — and about the tax return. Listen to the conversation; you don''t need
+      to understand it yet.'
+    pt: 'Uma carta da prefeitura: a cobrança do imposto de residência, com base na renda do ano passado. A chefe Sato explica por que ele chega um ano depois — e fala da declaração. Escute a conversa; ainda
+      não precisa entender.'
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: 市役所[しやくしょ] から 住民税[じゅうみんぜい] の 納付書[のうふしょ] が 来[き]ました。 もう 給料[きゅうりょう] から 引[ひ]かれて いる のに。
+    meaning:
+      en: A residence-tax payment slip came from the city. Even though tax is already taken from my salary.
+      pt: Chegou um boleto do imposto de residência da prefeitura. Mesmo já sendo descontado do salário.
+  - speaker: sato
+    text: 給料[きゅうりょう] から 引[ひ]かれる の は 所得税[しょとくぜい] です。 住民税[じゅうみんぜい] は 前年[ぜんねん] の 所得[しょとく] で 決[き]まる から、 一年[いちねん] 遅[おく]れて 来[く]る ん です。
+    meaning:
+      en: What's withheld from your salary is income tax. Residence tax is based on the previous year's income, so it comes a year late.
+      pt: O que se desconta do salário é o imposto de renda. O imposto de residência é calculado pela renda do ano anterior, então chega um ano depois.
+  - speaker: protagonist
+    text: 日本[にほん] に 来[き]た 年[とし] の 分[ぶん] です か。
+    meaning:
+      en: So it's for the year I arrived?
+      pt: Então é do ano em que eu cheguei?
+  - speaker: sato
+    text: そう です。 払[はら]わない わけ には いきません よ。
+    meaning:
+      en: That's right. You can't very well not pay it.
+      pt: Isso. Não dá para não pagar.
+  - speaker: protagonist
+    text: もちろん 払[はら]います。 確定[かくてい] 申告[しんこく] は 必要[ひつよう] です か。
+    meaning:
+      en: Of course I'll pay. Do I need to file a tax return?
+      pt: Claro que pago. Preciso fazer declaração?
+  - speaker: sato
+    text: 会社員[かいしゃいん] は 普通[ふつう]、 会社[かいしゃ] が して くれます。 でも 医療費[いりょうひ] が 多[おお]かった 年[とし] は、 控除[こうじょ] の ため に 自分[じぶん] で 申告[しんこく] します。
+    meaning:
+      en: Employees usually have it done by the company. But in a year with big medical costs, you file yourself for the deduction.
+      pt: Funcionário normalmente tem a declaração feita pela empresa. Mas num ano com muito gasto médico, você mesmo declara para ter a dedução.
+  - speaker: protagonist
+    text: ふるさと 納税[のうぜい] も 控除[こうじょ] に なる と 聞[き]きました。
+    meaning:
+      en: I heard hometown tax donations count as deductions too.
+      pt: Ouvi dizer que a doação à cidade natal também vira dedução.
+  - speaker: sato
+    text: ええ。 家族[かぞく] の ため に も、 一度[いちど] 調[しら]べる べき です ね。
+    meaning:
+      en: Yes. For your family's sake too, you should look into it once.
+      pt: Sim. Pela família também, vale pesquisar uma vez.
+- type: prompt
+  ask:
+    en: 'Say: residence tax.'
+    pt: 'Diga: imposto de residência.'
+  answer:
+    speaker: protagonist
+    text: 住民税[じゅうみんぜい]
+  items:
+  - juuminzei
+- type: prompt
+  ask:
+    en: 'Say: a payment slip.'
+    pt: 'Diga: um boleto.'
+  answer:
+    speaker: protagonist
+    text: 納付書[のうふしょ]
+  items:
+  - noufusho
+- type: prompt
+  ask:
+    en: 'Say: income.'
+    pt: 'Diga: renda.'
+  answer:
+    speaker: protagonist
+    text: 所得[しょとく]
+  items:
+  - shotoku
+- type: prompt
+  ask:
+    en: 'Say: the previous year.'
+    pt: 'Diga: o ano anterior.'
+  answer:
+    speaker: protagonist
+    text: 前年[ぜんねん]
+  items:
+  - zenen
+- type: prompt
+  ask:
+    en: 'Say: tax withheld at source.'
+    pt: 'Diga: imposto retido na fonte.'
+  answer:
+    speaker: protagonist
+    text: 源泉[げんせん] 徴収[ちょうしゅう]
+  items:
+  - gensen-choushuu
+- type: narrator
+  text:
+    en: '«〜わけ には いかない» is can''t very well — something your sense of duty or the situation rules out: «払[はら]わない わけ には いかない», I can''t very well not pay; «休[やす]む わけ には いかない», I can''t just take the day off.'
+    pt: '«〜わけ には いかない» é não dá para — algo que o dever ou a situação não permite: «払[はら]わない わけ には いかない», não dá para não pagar; «休[やす]む わけ には いかない», não posso simplesmente faltar.'
+- type: prompt
+  ask:
+    en: 'Say the pattern: can''t very well…'
+    pt: 'Diga o padrão: não dá para…'
+  answer:
+    speaker: protagonist
+    text: 〜わけ には いかない
+  items:
+  - wake-niwa-ikanai
+- type: prompt
+  ask:
+    en: 'Say: I can''t very well not pay.'
+    pt: 'Diga: não dá para não pagar.'
+  answer:
+    speaker: protagonist
+    text: 払[はら]わない わけ には いかない
+  items:
+  - harawanai-wake-niwa
+- type: prompt
+  ask:
+    en: 'Say: the tax return.'
+    pt: 'Diga: a declaração.'
+  answer:
+    speaker: protagonist
+    text: 確定[かくてい] 申告[しんこく]
+  items:
+  - kakutei-shinkoku
+- type: prompt
+  ask:
+    en: 'Say: a deduction.'
+    pt: 'Diga: uma dedução.'
+  answer:
+    speaker: protagonist
+    text: 控除[こうじょ]
+  items:
+  - koujo
+- type: prompt
+  ask:
+    en: 'Say: hometown tax donation.'
+    pt: 'Diga: doação à cidade natal.'
+  answer:
+    speaker: protagonist
+    text: ふるさと 納税[のうぜい]
+  items:
+  - furusato-nouzei
+- type: narrator
+  text:
+    en: Income tax is withheld from pay and settled by the employer at year's end; «住民税[じゅうみんぜい]», the local tax, is calculated on the previous year's income and billed from June — so newcomers meet it
+      in their second year, and people leaving Japan still owe it. File a «確定[かくてい] 申告[しんこく]» yourself for big medical costs or donations.
+    pt: O imposto de renda é retido do salário e acertado pela empresa no fim do ano; o «住民税[じゅうみんぜい]», o imposto municipal, é calculado sobre a renda do ano anterior e cobrado a partir de junho — por isso
+      quem chega o encontra no segundo ano, e quem sai do Japão ainda o deve. Faça você mesmo o «確定[かくてい] 申告[しんこく]» em caso de gastos médicos altos ou doações.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil todo mundo conhece a declaração de abril. No Japão o funcionário quase nunca declara — mas o imposto de residência atrasado pega muita gente de surpresa, principalmente na hora de voltar
+      ao Brasil.
+- type: prompt
+  ask:
+    en: 'Once more: say “residence tax”.'
+    pt: 'Mais uma vez: diga “imposto de residência”.'
+  answer:
+    speaker: protagonist
+    text: 住民税[じゅうみんぜい]
+  items:
+  - juuminzei
+- type: prompt
+  ask:
+    en: 'Once more: say “tax return”.'
+    pt: 'Mais uma vez: diga “declaração de imposto de renda”.'
+  answer:
+    speaker: protagonist
+    text: 確定[かくてい] 申告[しんこく]
+  items:
+  - kakutei-shinkoku
+- type: prompt
+  ask:
+    en: 'Once more: say “deduction”.'
+    pt: 'Mais uma vez: diga “dedução”.'
+  answer:
+    speaker: protagonist
+    text: 控除[こうじょ]
+  items:
+  - koujo
+- type: prompt
+  ask:
+    en: 'Once more: say “payment slip”.'
+    pt: 'Mais uma vez: diga “boleto de pagamento”.'
+  answer:
+    speaker: protagonist
+    text: 納付書[のうふしょ]
+  items:
+  - noufusho
+- type: prompt
+  ask:
+    en: 'Once more: say “can''t very well…”.'
+    pt: 'Mais uma vez: diga “não dá para…, não posso simplesmente…”.'
+  answer:
+    speaker: protagonist
+    text: 〜わけ には いかない
+  items:
+  - wake-niwa-ikanai
+- type: prompt
+  ask:
+    en: 'Once more: say “can''t very well not pay”.'
+    pt: 'Mais uma vez: diga “não dá para não pagar”.'
+  answer:
+    speaker: protagonist
+    text: 払[はら]わない わけ には いかない
+  items:
+  - harawanai-wake-niwa
+- type: prompt
+  ask:
+    en: 'Once more: say “income”.'
+    pt: 'Mais uma vez: diga “renda”.'
+  answer:
+    speaker: protagonist
+    text: 所得[しょとく]
+  items:
+  - shotoku
+- type: prompt
+  ask:
+    en: 'Once more: say “the previous year”.'
+    pt: 'Mais uma vez: diga “o ano anterior”.'
+  answer:
+    speaker: protagonist
+    text: 前年[ぜんねん]
+  items:
+  - zenen
+- type: prompt
+  ask:
+    en: 'Once more: say “tax withheld at source”.'
+    pt: 'Mais uma vez: diga “imposto retido na fonte”.'
+  answer:
+    speaker: protagonist
+    text: 源泉[げんせん] 徴収[ちょうしゅう]
+  items:
+  - gensen-choushuu
+- type: prompt
+  ask:
+    en: 'Once more: say “hometown tax donation”.'
+    pt: 'Mais uma vez: diga “doação de imposto à cidade natal”.'
+  answer:
+    speaker: protagonist
+    text: ふるさと 納税[のうぜい]
+  items:
+  - furusato-nouzei
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “noise — and “complaint — and “management company — and “notice (posted) — and “could well (bad result) — and “could turn into trouble — and “neighbourhood, neighbours — and “I''ll be careful
+      from now on — and “building rules — and “after 10 p.m. — and “the real performance”.'
+    pt: 'Diga: “barulho — e “queixa, reclamação — e “administradora — e “aviso (colado) — e “pode acabar (resultado ruim) — e “pode virar problema — e “vizinhança — e “daqui em diante vou tomar cuidado
+      — e “regulamento do prédio — e “depois das 22h — e “a apresentação de verdade”.'
+  answer:
+    speaker: protagonist
+    text: 騒音[そうおん] … 苦情[くじょう] … 管理[かんり] 会社[がいしゃ] … 張[は]り紙[がみ] … 〜かねない … トラブル に なり かねない … 近所[きんじょ] … 以後[いご] 気[き] を つけます … 管理[かんり] 規約[きやく] … 夜[よる] 十時[じゅうじ] 以降[いこう] … 本番[ほんばん]
+  items:
+  - souon
+  - kujou
+  - kanri-gaisha
+  - harigami
+  - kanenai
+  - toraburu-ni-nari-kanenai
+  - kinjo
+  - ki-wo-tsukemasu-review
+  - kanri-kiyaku
+  - yoru-juuji-ikou
+  - honban
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “costume — and “applause — and “despite, in spite of — and “despite the rain — and “audience — and “made a mistake (plain) — and “hearts beat as one — and “success — and “after-party — and
+      “speech, greeting — and “one-clap ending”.'
+    pt: 'Diga: “figurino — e “aplauso — e “apesar de — e “apesar da chuva — e “público, plateia — e “errei (simples) — e “ficar todos em sintonia — e “sucesso — e “comemoração depois do evento — e “discurso,
+      cumprimento — e “palma única de encerramento”.'
+  answer:
+    speaker: protagonist
+    text: 衣装[いしょう] … 拍手[はくしゅ] … 〜にも かかわらず … 雨[あめ] にも かかわらず … 観客[かんきゃく] … 間違[まちが]えた … 気持[きも]ち が 一[ひと]つ に なる … 成功[せいこう] … 打[う]ち上[あ]げ … 挨拶[あいさつ] … 一本締[いっぽんじ]め
+  items:
+  - ishou
+  - hakushu
+  - nimo-kakawarazu
+  - ame-nimo-kakawarazu
+  - kankyaku
+  - machigaeta
+  - kimochi-ga-hitotsu
+  - seikou
+  - uchiage
+  - aisatsu
+  - ippon-jime
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “this whole year — and “thank you so much for everything — and “a few words — and “gratitude — and “let''s do our best — and “have a good New Year (said before) — and “please join in — and
+      “thank you for your hard work — and “complaint — and “dealing with, response — and “apology (formal)”.'
+    pt: 'Diga: “este ano inteiro — e “muito obrigado por tudo — e “umas palavras — e “gratidão — e “vamos dar o nosso melhor — e “bom ano-novo (dito antes) — e “acompanhem, por favor — e “obrigado pelo
+      trabalho — e “reclamação — e “atendimento, providência — e “pedido de desculpas (formal)”.'
+  answer:
+    speaker: protagonist
+    text: 今年[ことし] 一年[いちねん] … 大変[たいへん] お世話[せわ] に なりました … 一言[ひとこと] … 感謝[かんしゃ] … 頑張[がんば]りましょう … 良[よ]い お年[とし] を … ご唱和[しょうわ] ください … お疲[つか]れさま でした … クレーム … 対応[たいおう] … お詫[わ]び
+  items:
+  - kotoshi-ichinen
+  - osewa-ni-narimashita-review
+  - hito-koto
+  - kansha
+  - ganbarimashou
+  - yoi-otoshi-wo
+  - go-shouchou
+  - otsukaresama-deshita
+  - kureemu
+  - taiou
+  - owabi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “customer (honorific) — and “I am truly, deeply sorry — and “I will check (humble) — and “urgently — and “resending — and “we caused you trouble — and “preventing a recurrence — and “the customer
+      is god — and “department head — and “senior colleague — and “is, comes, goes (respectful)”.'
+    pt: 'Diga: “cliente (honorífico) — e “peço sinceras desculpas — e “vou verificar (humilde) — e “com urgência — e “reenvio — e “causamos transtorno — e “evitar que se repita — e “o cliente é deus — e
+      “chefe de departamento — e “colega mais antigo — e “está, vem, vai (respeitoso)”.'
+  answer:
+    speaker: protagonist
+    text: お客様[きゃくさま] … 誠[まこと] に 申[もう]し訳[わけ] ございません … 確認[かくにん] いたします … 至急[しきゅう] … お送[おく]り 直[なお]し … ご迷惑[めいわく] を おかけ しました … 再発[さいはつ] 防止[ぼうし] … お客様[きゃくさま] は 神様[かみさま] … 部長[ぶちょう] … 先輩[せんぱい] … いらっしゃる
+  items:
+  - okyakusama
+  - makoto-ni
+  - kakunin-itashimasu
+  - shikyuu
+  - okuri-naoshi
+  - ninotsuki
+  - saihatsu-boushi
+  - okyakusama-wa-kamisama
+  - buchou-item
+  - senpai
+  - irassharu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “says (respectful) — and “respectful language — and “(hold) the glass lower — and “must not stand (them) upright — and “escalator — and “stand on the left — and “like the people around you
+      — and “greeting (formal) — and “I think (casual) — and “convenient — and “inconvenient”.'
+    pt: 'Diga: “diz (respeitoso) — e “linguagem respeitosa — e “(segure) o copo mais baixo — e “não pode deixar em pé — e “escada rolante — e “ficar à esquerda — e “como as pessoas em volta — e “cumprimento
+      (formal) — e “acho que (informal) — e “prático, conveniente — e “inconveniente”.'
+  answer:
+    speaker: protagonist
+    text: おっしゃる … 尊敬語[そんけいご] … グラス を 低[ひく]く … 立[た]てて は いけない … エスカレーター … 左[ひだり] に 立[た]つ … 周[まわ]り と 同[おな]じ よう に … ご挨拶[あいさつ] … 〜と 思[おも]う … 便利[べんり] … 不便[ふべん]
+  items:
+  - ossharu
+  - sonkeigo
+  - kanpai-hikuku
+  - tatete-wa-ikenai
+  - esukareetaa
+  - hidari-ni-tatsu
+  - onaji-you-ni
+  - goaisatsu
+  - to-omou
+  - benri
+  - fuben
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “honestly — and “to be honest — and “car — and “the countryside — and “the city (big city) — and “maybe a bit inconvenient — and “I wonder; maybe — and “I''ve come to like it”.'
+    pt: 'Diga: “sinceramente — e “para ser sincero — e “carro — e “o interior, a roça — e “cidade grande — e “talvez um pouco inconveniente — e “será que; talvez — e “passei a gostar”.'
+  answer:
+    speaker: protagonist
+    text: 正直[しょうじき] … 正直[しょうじき] に 言[い]う と … 車[くるま] … 田舎[いなか] … 都会[とかい] … ちょっと 不便[ふべん] か な … 〜か な … 好[す]き に なった
+  items:
+  - shoujiki
+  - shoujiki-ni-iu-to
+  - kuruma
+  - inaka
+  - tokai
+  - chotto-fuben-kana
+  - kana
+  - suki-ni-natta
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

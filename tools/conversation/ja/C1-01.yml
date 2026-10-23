@@ -1,0 +1,603 @@
+# UNIT ja C1-01 — written by AI (Claude) for Casus; expanded from src/C1-01.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-01
+level: C1
+number: 1
+protagonist: f
+title:
+  en: The evening course
+  pt: O curso noturno
+situation:
+  en: 'You sign up for an evening course at the city''s lifelong-learning centre: “Reading Japanese society”, taught by Ishida-sensei, a retired newspaper editor. First homework: an essay in written style.'
+  pt: 'Você se inscreve num curso noturno no centro de educação continuada da prefeitura: «Lendo a sociedade japonesa», com o professor Ishida, editor de jornal aposentado. Primeira lição de casa: uma redação
+    em estilo escrito.'
+learn_lessons: []
+culture: Lifelong learning
+new_items:
+- id: kouza-course
+  text: 講座[こうざ]
+  meaning:
+    en: course (lecture series)
+    pt: curso (série de aulas)
+- id: jukou
+  text: 受講[じゅこう]
+  meaning:
+    en: taking a course
+    pt: fazer um curso, frequentar
+- id: kadai
+  text: 課題[かだい]
+  meaning:
+    en: assignment, task
+    pt: tarefa, trabalho
+- id: de-aru
+  text: 〜で ある
+  meaning:
+    en: is (written style)
+    pt: é (estilo escrito)
+- id: nihon-shakai-de-aru
+  text: 日本[にほん] 社会[しゃかい] で ある
+  meaning:
+    en: it is Japanese society (written)
+    pt: é a sociedade japonesa (escrito)
+- id: sakubun
+  text: 作文[さくぶん]
+  meaning:
+    en: essay, composition
+    pt: redação
+- id: bunshou
+  text: 文章[ぶんしょう]
+  meaning:
+    en: writing, text
+    pt: texto
+- id: shougai-gakushuu
+  text: 生涯[しょうがい] 学習[がくしゅう]
+  meaning:
+    en: lifelong learning
+    pt: educação continuada
+  rare: true
+- id: jukousei
+  text: 受講生[じゅこうせい]
+  meaning:
+    en: course participant
+    pt: aluno do curso
+- id: shimekiri-made-ni
+  text: 締[し]め切[き]り まで に
+  meaning:
+    en: by the deadline
+    pt: até o prazo
+- id: kakidashi
+  text: 書[か]き出[だ]し
+  meaning:
+    en: opening (of a text)
+    pt: abertura (de um texto)
+reviews:
+- item: shinkansen
+  from: A2-28
+- item: shiteiseki
+  from: A2-28
+- item: jiyuuseki
+  from: A2-28
+- item: toukyou
+  from: A2-28
+- item: katamichi
+  from: A2-28
+- item: oufuku
+  from: A2-28
+- item: tsumori
+  from: A2-28
+- item: iku-tsumori
+  from: A2-28
+- item: mado-gawa
+  from: A2-28
+- item: nan-jikan
+  from: A2-28
+- item: hayai
+  from: A2-28
+- item: izakaya
+  from: B1-30
+- item: hashigozake
+  from: B1-30
+- item: nijikai
+  from: B1-30
+- item: ichijikai
+  from: B1-30
+- item: toriaezu
+  from: B1-30
+- item: otooshi
+  from: B1-30
+- item: yakitori
+  from: B1-30
+- item: shime
+  from: B1-30
+- item: mou-ikken
+  from: B1-30
+- item: kaerou-ka
+  from: B1-30
+- item: kyuuka
+  from: B2-16
+- item: shinsei
+  from: B2-16
+- item: yoroshii-deshou-ka
+  from: B2-16
+- item: itadakemasu-deshou-ka
+  from: B2-16
+- item: kanreki
+  from: B2-16
+- item: isshuukan
+  from: B2-16
+- item: hikitsugi
+  from: B2-16
+- item: meiwaku
+  from: B2-16
+- item: eikyou
+  from: B2-16
+- item: kenri-desu-kara
+  from: B2-16
+- item: shoushi-koureika
+  from: B2-24
+- item: kaigo
+  from: B2-24
+- item: ni-tsurete
+  from: B2-24
+- item: toshi-wo-toru-ni-tsurete
+  from: B2-24
+- item: jinkou
+  from: B2-24
+- item: heru
+  from: B2-24
+- item: fueru
+  from: B2-24
+- item: haikou
+  from: B2-24
+- item: shussei-ritsu
+  from: B2-24
+- item: kaigo-shisetsu
+  from: B2-24
+- item: aisatsu
+  from: B2-28
+- item: ippon-jime
+  from: B2-28
+- item: kotoshi-ichinen
+  from: B2-28
+- item: osewa-ni-narimashita-review
+  from: B2-28
+- item: hito-koto
+  from: B2-28
+- item: kansha
+  from: B2-28
+- item: ganbarimashou
+  from: B2-28
+- item: yoi-otoshi-wo
+  from: B2-28
+- item: go-shouchou
+  from: B2-28
+- item: otsukaresama-deshita
+  from: B2-28
+- item: shourai
+  from: B2-30
+- item: kikoku
+  from: B2-30
+- item: nokoru
+  from: B2-30
+- item: mayou
+  from: B2-30
+- item: kesshin
+  from: B2-30
+- item: eijuu
+  from: B2-30
+- item: ryouhou-no-kuni
+  from: B2-30
+- item: hashi-ni-naru
+  from: B2-30
+- item: isshoni-iru
+  from: B2-30
+- item: shinpai-shinaide
+  from: B2-30
+steps:
+- type: narrator
+  text:
+    en: 'You sign up for an evening course at the city''s lifelong-learning centre: “Reading Japanese society”, taught by Ishida-sensei, a retired newspaper editor. First homework: an essay in written style.
+      Listen to the conversation; you don''t need to understand it yet.'
+    pt: 'Você se inscreve num curso noturno no centro de educação continuada da prefeitura: «Lendo a sociedade japonesa», com o professor Ishida, editor de jornal aposentado. Primeira lição de casa: uma
+      redação em estilo escrito. Escute a conversa; ainda não precisa entender.'
+- type: dialogue
+  lines:
+  - speaker: kouza-sensei
+    text: 皆[みな]さん、 この 講座[こうざ] を 受講[じゅこう] して くださって、 ありがとう ございます。
+    meaning:
+      en: Everyone, thank you for taking this course.
+      pt: Pessoal, obrigado por se inscreverem neste curso.
+  - speaker: kouza-sensei
+    text: 最初[さいしょ] の 課題[かだい] は 作文[さくぶん] です。 テーマ は「私[わたし] から 見[み]た 日本[にほん] 社会[しゃかい]」。
+    meaning:
+      en: 'The first assignment is an essay. The theme: “Japanese society as I see it”.'
+      pt: 'A primeira tarefa é uma redação. Tema: «A sociedade japonesa vista por mim».'
+  - speaker: protagonist
+    text: 先生[せんせい]、 作文[さくぶん] は です・ます で 書[か]いて も いい です か。
+    meaning:
+      en: Sensei, may I write the essay in desu/masu?
+      pt: Professor, posso escrever a redação com desu e masu?
+  - speaker: kouza-sensei
+    text: いいえ、 作文[さくぶん] は「で ある」 で 書[か]いて ください。「日本[にほん] は 島国[しまぐに] で ある」 の よう に。
+    meaning:
+      en: No, write the essay in “de aru”. Like “Japan is an island nation”.
+      pt: Não, escreva com «de aru». Como em «O Japão é um país insular».
+  - speaker: protagonist
+    text: 新聞[しんぶん] の 文章[ぶんしょう] と 同[おな]じ です ね。
+    meaning:
+      en: Like newspaper writing, then.
+      pt: Como o texto de jornal, então.
+  - speaker: kouza-sensei
+    text: その 通[とお]り。 書[か]き出[だ]し が 大事[だいじ] で ある。 …と、 書[か]きます。
+    meaning:
+      en: Exactly. “The opening is important.” …That's how you write it.
+      pt: Exatamente. «A abertura é importante.» …É assim que se escreve.
+  - speaker: protagonist
+    text: 締[し]め切[き]り は いつ です か。
+    meaning:
+      en: When's the deadline?
+      pt: Qual é o prazo?
+  - speaker: kouza-sensei
+    text: 来週[らいしゅう] の 講座[こうざ] まで に。 受講生[じゅこうせい] の 皆[みな]さん の 文章[ぶんしょう] を 楽[たの]しみ に して います。
+    meaning:
+      en: By next week's class. I look forward to all your writing.
+      pt: Até a aula da semana que vem. Estou ansioso para ler os textos de todos.
+- type: prompt
+  ask:
+    en: 'Say: a course.'
+    pt: 'Diga: um curso.'
+  answer:
+    speaker: protagonist
+    text: 講座[こうざ]
+  items:
+  - kouza-course
+- type: prompt
+  ask:
+    en: 'Say: taking a course.'
+    pt: 'Diga: frequentar um curso.'
+  answer:
+    speaker: protagonist
+    text: 受講[じゅこう]
+  items:
+  - jukou
+- type: prompt
+  ask:
+    en: 'Say: a course participant.'
+    pt: 'Diga: aluno do curso.'
+  answer:
+    speaker: protagonist
+    text: 受講生[じゅこうせい]
+  items:
+  - jukousei
+- type: prompt
+  ask:
+    en: 'Say: lifelong learning.'
+    pt: 'Diga: educação continuada.'
+  answer:
+    speaker: protagonist
+    text: 生涯[しょうがい] 学習[がくしゅう]
+  items:
+  - shougai-gakushuu
+- type: prompt
+  ask:
+    en: 'Say: an assignment.'
+    pt: 'Diga: uma tarefa.'
+  answer:
+    speaker: protagonist
+    text: 課題[かだい]
+  items:
+  - kadai
+- type: prompt
+  ask:
+    en: 'Say: an essay.'
+    pt: 'Diga: uma redação.'
+  answer:
+    speaker: protagonist
+    text: 作文[さくぶん]
+  items:
+  - sakubun
+- type: narrator
+  text:
+    en: 'Written Japanese has its own plain style, «で ある体[たい]»: «だ» and «です» become «で ある» — «日本[にほん] は 島国[しまぐに] で ある», Japan is an island nation. Newspapers, essays and reports use it; it sounds stiff
+      in speech.'
+    pt: 'O japonês escrito tem seu estilo próprio, o «で ある体[たい]»: «だ» e «です» viram «で ある» — «日本[にほん] は 島国[しまぐに] で ある», o Japão é um país insular. Jornais, redações e relatórios usam; na fala soa duro.'
+- type: prompt
+  ask:
+    en: Say the written copula.
+    pt: Diga o «é» do estilo escrito.
+  answer:
+    speaker: protagonist
+    text: 〜で ある
+  items:
+  - de-aru
+- type: prompt
+  ask:
+    en: 'Write it: it is Japanese society.'
+    pt: 'Escreva: é a sociedade japonesa.'
+  answer:
+    speaker: protagonist
+    text: 日本[にほん] 社会[しゃかい] で ある
+  items:
+  - nihon-shakai-de-aru
+- type: prompt
+  ask:
+    en: 'Say: writing, a text.'
+    pt: 'Diga: um texto.'
+  answer:
+    speaker: protagonist
+    text: 文章[ぶんしょう]
+  items:
+  - bunshou
+- type: prompt
+  ask:
+    en: 'Say: the opening of a text.'
+    pt: 'Diga: a abertura de um texto.'
+  answer:
+    speaker: protagonist
+    text: 書[か]き出[だ]し
+  items:
+  - kakidashi
+- type: prompt
+  ask:
+    en: 'Say: by the deadline.'
+    pt: 'Diga: até o prazo.'
+  answer:
+    speaker: protagonist
+    text: 締[し]め切[き]り まで に
+  items:
+  - shimekiri-made-ni
+- type: narrator
+  text:
+    en: Japanese cities run lifelong-learning centres, «生涯[しょうがい] 学習[がくしゅう] センター», with cheap evening and weekend courses — languages, history, crafts, writing — full of retirees, workers and foreign residents.
+    pt: As cidades japonesas mantêm centros de educação continuada, «生涯[しょうがい] 学習[がくしゅう] センター», com cursos baratos à noite e no fim de semana — línguas, história, artesanato, escrita — cheios de aposentados,
+      trabalhadores e moradores estrangeiros.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: É parecido com os cursos livres das universidades abertas e dos centros culturais no Brasil, só que espalhado por cada bairro e com preço de prefeitura.
+- type: prompt
+  ask:
+    en: 'Once more: say “course (lecture series)”.'
+    pt: 'Mais uma vez: diga “curso (série de aulas)”.'
+  answer:
+    speaker: protagonist
+    text: 講座[こうざ]
+  items:
+  - kouza-course
+- type: prompt
+  ask:
+    en: 'Once more: say “taking a course”.'
+    pt: 'Mais uma vez: diga “fazer um curso, frequentar”.'
+  answer:
+    speaker: protagonist
+    text: 受講[じゅこう]
+  items:
+  - jukou
+- type: prompt
+  ask:
+    en: 'Once more: say “assignment, task”.'
+    pt: 'Mais uma vez: diga “tarefa, trabalho”.'
+  answer:
+    speaker: protagonist
+    text: 課題[かだい]
+  items:
+  - kadai
+- type: prompt
+  ask:
+    en: 'Once more: say “is (written style)”.'
+    pt: 'Mais uma vez: diga “é (estilo escrito)”.'
+  answer:
+    speaker: protagonist
+    text: 〜で ある
+  items:
+  - de-aru
+- type: prompt
+  ask:
+    en: 'Once more: say “it is Japanese society (written)”.'
+    pt: 'Mais uma vez: diga “é a sociedade japonesa (escrito)”.'
+  answer:
+    speaker: protagonist
+    text: 日本[にほん] 社会[しゃかい] で ある
+  items:
+  - nihon-shakai-de-aru
+- type: prompt
+  ask:
+    en: 'Once more: say “essay, composition”.'
+    pt: 'Mais uma vez: diga “redação”.'
+  answer:
+    speaker: protagonist
+    text: 作文[さくぶん]
+  items:
+  - sakubun
+- type: prompt
+  ask:
+    en: 'Once more: say “writing, text”.'
+    pt: 'Mais uma vez: diga “texto”.'
+  answer:
+    speaker: protagonist
+    text: 文章[ぶんしょう]
+  items:
+  - bunshou
+- type: prompt
+  ask:
+    en: 'Once more: say “lifelong learning”.'
+    pt: 'Mais uma vez: diga “educação continuada”.'
+  answer:
+    speaker: protagonist
+    text: 生涯[しょうがい] 学習[がくしゅう]
+  items:
+  - shougai-gakushuu
+- type: prompt
+  ask:
+    en: 'Once more: say “course participant”.'
+    pt: 'Mais uma vez: diga “aluno do curso”.'
+  answer:
+    speaker: protagonist
+    text: 受講生[じゅこうせい]
+  items:
+  - jukousei
+- type: prompt
+  ask:
+    en: 'Once more: say “by the deadline”.'
+    pt: 'Mais uma vez: diga “até o prazo”.'
+  answer:
+    speaker: protagonist
+    text: 締[し]め切[き]り まで に
+  items:
+  - shimekiri-made-ni
+- type: prompt
+  ask:
+    en: 'Once more: say “opening (of a text)”.'
+    pt: 'Mais uma vez: diga “abertura (de um texto)”.'
+  answer:
+    speaker: protagonist
+    text: 書[か]き出[だ]し
+  items:
+  - kakidashi
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the future — and “returning to one''s country — and “stay, remain — and “be torn, hesitate — and “decision, resolve — and “permanent residence — and “both countries — and “become a bridge
+      — and “I want to be with (you)”.'
+    pt: 'Diga: “o futuro — e “voltar ao país de origem — e “ficar — e “ficar em dúvida — e “decisão — e “residência permanente — e “os dois países — e “ser uma ponte — e “quero ficar com (você)”.'
+  answer:
+    speaker: protagonist
+    text: 将来[しょうらい] … 帰国[きこく] … 残[のこ]る … 迷[まよ]う … 決心[けっしん] … 永住[えいじゅう] … 両方[りょうほう] の 国[くに] … 架[か]け橋[はし] に なる … 一緒[いっしょ] に いたい
+  items:
+  - shourai
+  - kikoku
+  - nokoru
+  - mayou
+  - kesshin
+  - eijuu
+  - ryouhou-no-kuni
+  - hashi-ni-naru
+  - isshoni-iru
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “don''t worry — and “speech, greeting — and “one-clap ending — and “this whole year — and “thank you so much for everything — and “a few words — and “gratitude — and “let''s do our best —
+      and “have a good New Year (said before)”.'
+    pt: 'Diga: “não se preocupe — e “discurso, cumprimento — e “palma única de encerramento — e “este ano inteiro — e “muito obrigado por tudo — e “umas palavras — e “gratidão — e “vamos dar o nosso melhor
+      — e “bom ano-novo (dito antes)”.'
+  answer:
+    speaker: protagonist
+    text: 心配[しんぱい] しないで … 挨拶[あいさつ] … 一本締[いっぽんじ]め … 今年[ことし] 一年[いちねん] … 大変[たいへん] お世話[せわ] に なりました … 一言[ひとこと] … 感謝[かんしゃ] … 頑張[がんば]りましょう … 良[よ]い お年[とし] を
+  items:
+  - shinpai-shinaide
+  - aisatsu
+  - ippon-jime
+  - kotoshi-ichinen
+  - osewa-ni-narimashita-review
+  - hito-koto
+  - kansha
+  - ganbarimashou
+  - yoi-otoshi-wo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “please join in — and “thank you for your hard work — and “fewer children, more elderly — and “care (for the elderly) — and “as (one thing changes, another does) — and “as (one) gets older
+      — and “population — and “decrease — and “increase”.'
+    pt: 'Diga: “acompanhem, por favor — e “obrigado pelo trabalho — e “menos crianças, mais idosos — e “cuidado (de idosos) — e “à medida que — e “à medida que envelhece — e “população — e “diminuir — e
+      “aumentar”.'
+  answer:
+    speaker: protagonist
+    text: ご唱和[しょうわ] ください … お疲[つか]れさま でした … 少子[しょうし] 高齢化[こうれいか] … 介護[かいご] … 〜に つれて … 年[とし] を 取[と]る に つれて … 人口[じんこう] … 減[へ]る … 増[ふ]える
+  items:
+  - go-shouchou
+  - otsukaresama-deshita
+  - shoushi-koureika
+  - kaigo
+  - ni-tsurete
+  - toshi-wo-toru-ni-tsurete
+  - jinkou
+  - heru
+  - fueru
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “school closure — and “birth rate — and “care home — and “leave, holiday — and “application (form) — and “may I…? (very polite) — and “could you possibly…? — and “60th birthday — and “one
+      week”.'
+    pt: 'Diga: “fechamento de escola — e “taxa de natalidade — e “casa de repouso — e “férias, folga — e “requerimento, pedido — e “eu poderia…? (muito educado) — e “o senhor poderia…? — e “60 anos (aniversário)
+      — e “uma semana”.'
+  answer:
+    speaker: protagonist
+    text: 廃校[はいこう] … 出生率[しゅっしょうりつ] … 介護[かいご] 施設[しせつ] … 休暇[きゅうか] … 申請[しんせい] … 〜て も よろしい でしょう か … いただけない でしょう か … 還暦[かんれき] … 一週間[いっしゅうかん]
+  items:
+  - haikou
+  - shussei-ritsu
+  - kaigo-shisetsu
+  - kyuuka
+  - shinsei
+  - yoroshii-deshou-ka
+  - itadakemasu-deshou-ka
+  - kanreki
+  - isshuukan
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “handover (of work) — and “trouble, inconvenience (to others) — and “effect, impact — and “since it''s your right — and “izakaya (Japanese pub) — and “bar-hopping — and “the second round (next
+      place) — and “the first round — and “a beer to start with”.'
+    pt: 'Diga: “passagem de trabalho — e “incômodo, transtorno (aos outros) — e “impacto — e “já que é seu direito — e “izakaya (bar japonês) — e “ir de bar em bar — e “a segunda rodada (outro lugar) —
+      e “a primeira rodada — e “pra começar, uma cerveja”.'
+  answer:
+    speaker: protagonist
+    text: 引[ひ]き継[つ]ぎ … 迷惑[めいわく] … 影響[えいきょう] … 権利[けんり] です から … 居酒屋[いざかや] … はしご 酒[ざけ] … 二次会[にじかい] … 一次会[いちじかい] … とりあえず ビール
+  items:
+  - hikitsugi
+  - meiwaku
+  - eikyou
+  - kenri-desu-kara
+  - izakaya
+  - hashigozake
+  - nijikai
+  - ichijikai
+  - toriaezu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the small starter you''re charged for — and “grilled chicken skewers — and “the dish that ends the night — and “one more place — and “shall we head home soon? — and “shinkansen, bullet train
+      — and “reserved seat — and “unreserved seat — and “Tokyo”.'
+    pt: 'Diga: “petisco de entrada cobrado — e “espetinho de frango — e “o prato que fecha a noite — e “mais um lugar — e “vamos indo? — e “shinkansen, trem-bala — e “assento reservado — e “assento livre
+      — e “Tóquio”.'
+  answer:
+    speaker: protagonist
+    text: お通[とお]し … 焼[や]き鳥[とり] … 締[し]め … もう 一軒[いっけん] … そろそろ 帰[かえ]ろう か … 新幹線[しんかんせん] … 指定席[していせき] … 自由席[じゆうせき] … 東京[とうきょう]
+  items:
+  - otooshi
+  - yakitori
+  - shime
+  - mou-ikken
+  - kaerou-ka
+  - shinkansen
+  - shiteiseki
+  - jiyuuseki
+  - toukyou
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “one way — and “return (round trip) — and “I plan to… — and “I plan to go — and “window side — and “how many hours — and “fast”.'
+    pt: 'Diga: “só ida — e “ida e volta — e “pretendo… — e “pretendo ir — e “janela — e “quantas horas — e “rápido”.'
+  answer:
+    speaker: protagonist
+    text: 片道[かたみち] … 往復[おうふく] … 〜つもり です … 行[い]く つもり です … 窓側[まどがわ] … 何時間[なんじかん] … 速[はや]い
+  items:
+  - katamichi
+  - oufuku
+  - tsumori
+  - iku-tsumori
+  - mado-gawa
+  - nan-jikan
+  - hayai
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

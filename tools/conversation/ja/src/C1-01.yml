@@ -1,0 +1,42 @@
+id: C1-01
+protagonist: f
+title: ["The evening course", "O curso noturno"]
+situation: ["You sign up for an evening course at the city's lifelong-learning centre: “Reading Japanese society”, taught by Ishida-sensei, a retired newspaper editor. First homework: an essay in written style.", "Você se inscreve num curso noturno no centro de educação continuada da prefeitura: «Lendo a sociedade japonesa», com o professor Ishida, editor de jornal aposentado. Primeira lição de casa: uma redação em estilo escrito."]
+learn: []
+culture: Lifelong learning
+items:
+  - [kouza-course, "講座[こうざ]", "course (lecture series)", "curso (série de aulas)"]
+  - [jukou, "受講[じゅこう]", "taking a course", "fazer um curso, frequentar"]
+  - [kadai, "課題[かだい]", "assignment, task", "tarefa, trabalho"]
+  - [de-aru, "〜で ある", "is (written style)", "é (estilo escrito)"]
+  - [nihon-shakai-de-aru, "日本[にほん] 社会[しゃかい] で ある", "it is Japanese society (written)", "é a sociedade japonesa (escrito)"]
+  - [sakubun, "作文[さくぶん]", "essay, composition", "redação"]
+  - [bunshou, "文章[ぶんしょう]", "writing, text", "texto"]
+  - [shougai-gakushuu, "生涯[しょうがい] 学習[がくしゅう]", "lifelong learning", "educação continuada", {rare: true}]
+  - [jukousei, "受講生[じゅこうせい]", "course participant", "aluno do curso"]
+  - [shimekiri-made-ni, "締[し]め切[き]り まで に", "by the deadline", "até o prazo"]
+  - [kakidashi, "書[か]き出[だ]し", "opening (of a text)", "abertura (de um texto)"]
+dialogue:
+  - [kouza-sensei, "皆[みな]さん、 この 講座[こうざ] を 受講[じゅこう] して くださって、 ありがとう ございます。", "Everyone, thank you for taking this course.", "Pessoal, obrigado por se inscreverem neste curso."]
+  - [kouza-sensei, "最初[さいしょ] の 課題[かだい] は 作文[さくぶん] です。 テーマ は「私[わたし] から 見[み]た 日本[にほん] 社会[しゃかい]」。", "The first assignment is an essay. The theme: “Japanese society as I see it”.", "A primeira tarefa é uma redação. Tema: «A sociedade japonesa vista por mim»."]
+  - [protagonist, "先生[せんせい]、 作文[さくぶん] は です・ます で 書[か]いて も いい です か。", "Sensei, may I write the essay in desu/masu?", "Professor, posso escrever a redação com desu e masu?"]
+  - [kouza-sensei, "いいえ、 作文[さくぶん] は「で ある」 で 書[か]いて ください。「日本[にほん] は 島国[しまぐに] で ある」 の よう に。", "No, write the essay in “de aru”. Like “Japan is an island nation”.", "Não, escreva com «de aru». Como em «O Japão é um país insular»."]
+  - [protagonist, "新聞[しんぶん] の 文章[ぶんしょう] と 同[おな]じ です ね。", "Like newspaper writing, then.", "Como o texto de jornal, então."]
+  - [kouza-sensei, "その 通[とお]り。 書[か]き出[だ]し が 大事[だいじ] で ある。 …と、 書[か]きます。", "Exactly. “The opening is important.” …That's how you write it.", "Exatamente. «A abertura é importante.» …É assim que se escreve."]
+  - [protagonist, "締[し]め切[き]り は いつ です か。", "When's the deadline?", "Qual é o prazo?"]
+  - [kouza-sensei, "来週[らいしゅう] の 講座[こうざ] まで に。 受講生[じゅこうせい] の 皆[みな]さん の 文章[ぶんしょう] を 楽[たの]しみ に して います。", "By next week's class. I look forward to all your writing.", "Até a aula da semana que vem. Estou ansioso para ler os textos de todos."]
+teach:
+  - ask: ["Say: a course.", "Diga: um curso.", "講座[こうざ]", kouza-course]
+  - ask: ["Say: taking a course.", "Diga: frequentar um curso.", "受講[じゅこう]", jukou]
+  - ask: ["Say: a course participant.", "Diga: aluno do curso.", "受講生[じゅこうせい]", jukousei]
+  - ask: ["Say: lifelong learning.", "Diga: educação continuada.", "生涯[しょうがい] 学習[がくしゅう]", shougai-gakushuu]
+  - ask: ["Say: an assignment.", "Diga: uma tarefa.", "課題[かだい]", kadai]
+  - ask: ["Say: an essay.", "Diga: uma redação.", "作文[さくぶん]", sakubun]
+  - note: ["Written Japanese has its own plain style, «で ある体[たい]»: «だ» and «です» become «で ある» — «日本[にほん] は 島国[しまぐに] で ある», Japan is an island nation. Newspapers, essays and reports use it; it sounds stiff in speech.", "O japonês escrito tem seu estilo próprio, o «で ある体[たい]»: «だ» e «です» viram «で ある» — «日本[にほん] は 島国[しまぐに] で ある», o Japão é um país insular. Jornais, redações e relatórios usam; na fala soa duro."]
+  - ask: ["Say the written copula.", "Diga o «é» do estilo escrito.", "〜で ある", de-aru]
+  - ask: ["Write it: it is Japanese society.", "Escreva: é a sociedade japonesa.", "日本[にほん] 社会[しゃかい] で ある", nihon-shakai-de-aru]
+  - ask: ["Say: writing, a text.", "Diga: um texto.", "文章[ぶんしょう]", bunshou]
+  - ask: ["Say: the opening of a text.", "Diga: a abertura de um texto.", "書[か]き出[だ]し", kakidashi]
+  - ask: ["Say: by the deadline.", "Diga: até o prazo.", "締[し]め切[き]り まで に", shimekiri-made-ni]
+  - note: ["Japanese cities run lifelong-learning centres, «生涯[しょうがい] 学習[がくしゅう] センター», with cheap evening and weekend courses — languages, history, crafts, writing — full of retirees, workers and foreign residents.", "As cidades japonesas mantêm centros de educação continuada, «生涯[しょうがい] 学習[がくしゅう] センター», com cursos baratos à noite e no fim de semana — línguas, história, artesanato, escrita — cheios de aposentados, trabalhadores e moradores estrangeiros."]
+  - pt_only: "É parecido com os cursos livres das universidades abertas e dos centros culturais no Brasil, só que espalhado por cada bairro e com preço de prefeitura."

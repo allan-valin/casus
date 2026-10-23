@@ -1,0 +1,586 @@
+# UNIT ja C1-04 — written by AI (Claude) for Casus; expanded from src/C1-04.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-04
+level: C1
+number: 4
+protagonist: m
+title:
+  en: The noisy neighbour
+  pt: O vizinho barulhento
+situation:
+  en: 'A note appears on your door: complaints about noise late at night. It''s your Brazilian friends'' Saturday visits. You call the management company.'
+  pt: 'Aparece um bilhete na sua porta: reclamação de barulho tarde da noite. São as visitas de sábado dos seus amigos brasileiros. Você liga para a administradora.'
+learn_lessons: []
+culture: Complaints by note
+new_items:
+- id: souon
+  text: 騒音[そうおん]
+  meaning:
+    en: noise
+    pt: barulho
+- id: kujou
+  text: 苦情[くじょう]
+  meaning:
+    en: complaint
+    pt: queixa, reclamação
+- id: kanri-gaisha
+  text: 管理[かんり] 会社[がいしゃ]
+  meaning:
+    en: management company
+    pt: administradora
+- id: harigami
+  text: 張[は]り紙[がみ]
+  meaning:
+    en: notice (posted)
+    pt: aviso (colado)
+- id: kanenai
+  text: 〜かねない
+  meaning:
+    en: could well (bad result)
+    pt: pode acabar (resultado ruim)
+- id: toraburu-ni-nari-kanenai
+  text: トラブル に なり かねない
+  meaning:
+    en: could turn into trouble
+    pt: pode virar problema
+- id: kinjo
+  text: 近所[きんじょ]
+  meaning:
+    en: neighbourhood, neighbours
+    pt: vizinhança
+- id: ki-wo-tsukemasu-review
+  text: 以後[いご] 気[き] を つけます
+  meaning:
+    en: I'll be careful from now on
+    pt: daqui em diante vou tomar cuidado
+- id: kanri-kiyaku
+  text: 管理[かんり] 規約[きやく]
+  meaning:
+    en: building rules
+    pt: regulamento do prédio
+  rare: true
+- id: yoru-juuji-ikou
+  text: 夜[よる] 十時[じゅうじ] 以降[いこう]
+  meaning:
+    en: after 10 p.m.
+    pt: depois das 22h
+reviews:
+- item: sentou
+  from: B1-01
+- item: yubune
+  from: B1-01
+- item: gyuunyuu
+  from: B1-01
+- item: onna-yu
+  from: B1-01
+- item: atsui-casual
+  from: B1-01
+- item: nanka
+  from: B1-01
+- item: dekai
+  from: B1-01
+- item: desho
+  from: B1-01
+- item: hairou
+  from: B1-01
+- item: yatta
+  from: B1-01
+- item: furo-agari
+  from: B1-01
+- item: idenshi
+  from: B2-03
+- item: iden
+  from: B2-03
+- item: ni-taishite
+  from: B2-03
+- item: hahakata
+  from: B2-03
+- item: chichikata
+  from: B2-03
+- item: hada-no-iro
+  from: B2-03
+- item: me-no-iro
+  from: B2-03
+- item: konketsu
+  from: B2-03
+- item: haafu
+  from: B2-03
+- item: kakeizu
+  from: B2-03
+- item: senzo
+  from: B2-03
+- item: happyou
+  from: B2-19
+- item: shiryou
+  from: B2-19
+- item: shitsugi-outou
+  from: B2-19
+- item: ketsuron
+  from: B2-19
+- item: te-kara
+  from: B2-19
+- item: setsumei-shite-kara
+  from: B2-19
+- item: mokuteki
+  from: B2-19
+- item: hiyou
+  from: B2-19
+- item: kouka
+  from: B2-19
+- item: goshitsumon
+  from: B2-19
+- item: ijou-desu
+  from: B2-19
+- item: kekkon
+  from: B2-27
+- item: shoushika
+  from: B2-27
+- item: konkatsu
+  from: B2-27
+- item: dokushin
+  from: B2-27
+- item: monono
+  from: B2-27
+- item: kekkon-shitai-monono
+  from: B2-27
+- item: keizaiteki
+  from: B2-27
+- item: fuan
+  from: B2-27
+- item: deai
+  from: B2-27
+- item: kachikan
+  from: B2-27
+- item: jiyuu-na-jikan
+  from: B2-27
+- item: kouza-course
+  from: C1-01
+- item: jukou
+  from: C1-01
+- item: kadai
+  from: C1-01
+- item: de-aru
+  from: C1-01
+- item: nihon-shakai-de-aru
+  from: C1-01
+- item: sakubun
+  from: C1-01
+- item: bunshou
+  from: C1-01
+- item: shougai-gakushuu
+  from: C1-01
+- item: jukousei
+  from: C1-01
+- item: shimekiri-made-ni
+  from: C1-01
+- item: kakidashi
+  from: C1-01
+- item: reikin
+  from: C1-03
+- item: shikikin
+  from: C1-03
+- item: hoshounin
+  from: C1-03
+- item: koushinryou
+  from: C1-03
+- item: wo-hajime
+  from: C1-03
+- item: shikikin-wo-hajime
+  from: C1-03
+- item: hoshou-gaisha
+  from: C1-03
+- item: madori
+  from: C1-03
+- item: shoki-hiyou
+  from: C1-03
+- item: genjou-kaifuku
+  from: C1-03
+- item: keiyaku-kikan
+  from: C1-03
+steps:
+- type: narrator
+  text:
+    en: 'A note appears on your door: complaints about noise late at night. It''s your Brazilian friends'' Saturday visits. You call the management company. Listen to the conversation; you don''t need to
+      understand it yet.'
+    pt: 'Aparece um bilhete na sua porta: reclamação de barulho tarde da noite. São as visitas de sábado dos seus amigos brasileiros. Você liga para a administradora. Escute a conversa; ainda não precisa
+      entender.'
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: もしもし、 ドア に 騒音[そうおん] の 張[は]り紙[がみ] が あって…
+    meaning:
+      en: Hello, there's a notice about noise on my door…
+      pt: Alô, colaram um aviso de barulho na minha porta…
+  - speaker: madoguchi
+    text: はい、 近所[きんじょ] の 方[かた] から 苦情[くじょう] が ありました。 土曜日[どようび] の 夜[よる] の 話[はな]し声[ごえ] です。
+    meaning:
+      en: Yes, we had a complaint from a neighbour. Voices on Saturday nights.
+      pt: Sim, um vizinho reclamou. Vozes no sábado à noite.
+  - speaker: protagonist
+    text: すみません。 友達[ともだち] が 来[き]て いました。 直接[ちょくせつ] 謝[あやま]りに 行[い]った ほう が いい です か。
+    meaning:
+      en: Sorry. Friends were over. Should I go and apologise in person?
+      pt: Desculpe. Uns amigos estavam aqui. É melhor eu ir pedir desculpas pessoalmente?
+  - speaker: madoguchi
+    text: お気持[きも]ち は わかります が、 直接[ちょくせつ] 行[い]く と トラブル に なり かねません。 こちら から お伝[つた]え します。
+    meaning:
+      en: I understand, but going directly could turn into trouble. We'll pass it on.
+      pt: Entendo, mas ir direto pode acabar em problema. Nós transmitimos.
+  - speaker: protagonist
+    text: わかりました。 管理[かんり] 規約[きやく] で は 何時[なんじ] まで です か。
+    meaning:
+      en: Understood. Until what time do the building rules allow?
+      pt: Entendi. Pelo regulamento do prédio, até que horas pode?
+  - speaker: madoguchi
+    text: 夜[よる] 十時[じゅうじ] 以降[いこう] は 静[しず]か に して ください。
+    meaning:
+      en: Please keep quiet after 10 p.m.
+      pt: Depois das 22h, silêncio, por favor.
+  - speaker: protagonist
+    text: 以後[いご] 気[き] を つけます。 ご迷惑[めいわく] を おかけ しました。
+    meaning:
+      en: I'll be careful from now on. Sorry for the trouble.
+      pt: Daqui em diante vou tomar cuidado. Desculpe o transtorno.
+  - speaker: madoguchi
+    text: ご理解[りかい] ありがとう ございます。
+    meaning:
+      en: Thank you for understanding.
+      pt: Obrigada pela compreensão.
+- type: prompt
+  ask:
+    en: 'Say: noise.'
+    pt: 'Diga: barulho.'
+  answer:
+    speaker: protagonist
+    text: 騒音[そうおん]
+  items:
+  - souon
+- type: prompt
+  ask:
+    en: 'Say: a complaint.'
+    pt: 'Diga: uma queixa.'
+  answer:
+    speaker: protagonist
+    text: 苦情[くじょう]
+  items:
+  - kujou
+- type: prompt
+  ask:
+    en: 'Say: a posted notice.'
+    pt: 'Diga: um aviso colado.'
+  answer:
+    speaker: protagonist
+    text: 張[は]り紙[がみ]
+  items:
+  - harigami
+- type: prompt
+  ask:
+    en: 'Say: the neighbourhood, the neighbours.'
+    pt: 'Diga: a vizinhança.'
+  answer:
+    speaker: protagonist
+    text: 近所[きんじょ]
+  items:
+  - kinjo
+- type: prompt
+  ask:
+    en: 'Say: the management company.'
+    pt: 'Diga: a administradora.'
+  answer:
+    speaker: protagonist
+    text: 管理[かんり] 会社[がいしゃ]
+  items:
+  - kanri-gaisha
+- type: prompt
+  ask:
+    en: 'Say: the building rules.'
+    pt: 'Diga: o regulamento do prédio.'
+  answer:
+    speaker: protagonist
+    text: 管理[かんり] 規約[きやく]
+  items:
+  - kanri-kiyaku
+- type: prompt
+  ask:
+    en: 'Say: after 10 p.m.'
+    pt: 'Diga: depois das 22h.'
+  answer:
+    speaker: protagonist
+    text: 夜[よる] 十時[じゅうじ] 以降[いこう]
+  items:
+  - yoru-juuji-ikou
+- type: narrator
+  text:
+    en: '«〜かねない» is could well — a bad outcome that might happen: the verb stem plus «かねない». «トラブル に なり かねない», it could turn into trouble. Politely: «〜かねません». Used in warnings, news and careful advice.'
+    pt: '«〜かねない» é pode acabar — um resultado ruim que pode acontecer: radical do verbo mais «かねない». «トラブル に なり かねない», pode virar problema. Educado: «〜かねません». Usado em avisos, notícias e conselhos cuidadosos.'
+- type: prompt
+  ask:
+    en: 'Say the pattern: could well (go wrong).'
+    pt: 'Diga o padrão: pode acabar (mal).'
+  answer:
+    speaker: protagonist
+    text: 〜かねない
+  items:
+  - kanenai
+- type: prompt
+  ask:
+    en: 'Say: it could turn into trouble.'
+    pt: 'Diga: pode virar problema.'
+  answer:
+    speaker: protagonist
+    text: トラブル に なり かねない
+  items:
+  - toraburu-ni-nari-kanenai
+- type: prompt
+  ask:
+    en: 'Promise: I''ll be careful from now on.'
+    pt: 'Prometa: daqui em diante vou tomar cuidado.'
+  answer:
+    speaker: protagonist
+    text: 以後[いご] 気[き] を つけます。
+  items:
+  - ki-wo-tsukemasu-review
+- type: narrator
+  text:
+    en: 'Neighbours in Japan rarely knock on your door to complain: a note appears, or the management company calls. Thin walls carry voices, and «夜[よる] 十時[じゅうじ] 以降[いこう]» quiet is a common rule. Going over
+      to argue can make things worse — let the company handle it, and apologise through them.'
+    pt: 'No Japão o vizinho raramente bate na porta para reclamar: aparece um bilhete, ou a administradora liga. As paredes finas deixam passar vozes, e silêncio «夜[よる] 十時[じゅうじ] 以降[いこう]» é regra comum.
+      Ir lá discutir pode piorar — deixe a administradora cuidar e peça desculpas por meio dela.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil a gente resolve com o vizinho no corredor. No Japão o caminho indireto é o educado — o bilhete não é covardia, é cortesia.
+- type: prompt
+  ask:
+    en: 'Once more: say “noise”.'
+    pt: 'Mais uma vez: diga “barulho”.'
+  answer:
+    speaker: protagonist
+    text: 騒音[そうおん]
+  items:
+  - souon
+- type: prompt
+  ask:
+    en: 'Once more: say “complaint”.'
+    pt: 'Mais uma vez: diga “queixa, reclamação”.'
+  answer:
+    speaker: protagonist
+    text: 苦情[くじょう]
+  items:
+  - kujou
+- type: prompt
+  ask:
+    en: 'Once more: say “management company”.'
+    pt: 'Mais uma vez: diga “administradora”.'
+  answer:
+    speaker: protagonist
+    text: 管理[かんり] 会社[がいしゃ]
+  items:
+  - kanri-gaisha
+- type: prompt
+  ask:
+    en: 'Once more: say “notice (posted)”.'
+    pt: 'Mais uma vez: diga “aviso (colado)”.'
+  answer:
+    speaker: protagonist
+    text: 張[は]り紙[がみ]
+  items:
+  - harigami
+- type: prompt
+  ask:
+    en: 'Once more: say “could well (bad result)”.'
+    pt: 'Mais uma vez: diga “pode acabar (resultado ruim)”.'
+  answer:
+    speaker: protagonist
+    text: 〜かねない
+  items:
+  - kanenai
+- type: prompt
+  ask:
+    en: 'Once more: say “could turn into trouble”.'
+    pt: 'Mais uma vez: diga “pode virar problema”.'
+  answer:
+    speaker: protagonist
+    text: トラブル に なり かねない
+  items:
+  - toraburu-ni-nari-kanenai
+- type: prompt
+  ask:
+    en: 'Once more: say “neighbourhood, neighbours”.'
+    pt: 'Mais uma vez: diga “vizinhança”.'
+  answer:
+    speaker: protagonist
+    text: 近所[きんじょ]
+  items:
+  - kinjo
+- type: prompt
+  ask:
+    en: 'Once more: say “I''ll be careful from now on”.'
+    pt: 'Mais uma vez: diga “daqui em diante vou tomar cuidado”.'
+  answer:
+    speaker: protagonist
+    text: 以後[いご] 気[き] を つけます
+  items:
+  - ki-wo-tsukemasu-review
+- type: prompt
+  ask:
+    en: 'Once more: say “building rules”.'
+    pt: 'Mais uma vez: diga “regulamento do prédio”.'
+  answer:
+    speaker: protagonist
+    text: 管理[かんり] 規約[きやく]
+  items:
+  - kanri-kiyaku
+- type: prompt
+  ask:
+    en: 'Once more: say “after 10 p.m.”.'
+    pt: 'Mais uma vez: diga “depois das 22h”.'
+  answer:
+    speaker: protagonist
+    text: 夜[よる] 十時[じゅうじ] 以降[いこう]
+  items:
+  - yoru-juuji-ikou
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “key money (non-refundable) — and “deposit — and “guarantor — and “renewal fee — and “starting with, including — and “starting with the deposit — and “guarantor company — and “floor plan —
+      and “move-in costs — and “restoring to original state — and “contract period”.'
+    pt: 'Diga: “luvas (não reembolsáveis) — e “caução, depósito — e “fiador — e “taxa de renovação — e “a começar por, incluindo — e “a começar pela caução — e “empresa fiadora — e “planta (do imóvel) —
+      e “custos de entrada — e “devolver como estava — e “prazo do contrato”.'
+  answer:
+    speaker: protagonist
+    text: 礼金[れいきん] … 敷金[しききん] … 保証人[ほしょうにん] … 更新料[こうしんりょう] … 〜を はじめ … 敷金[しききん] を はじめ … 保証[ほしょう] 会社[がいしゃ] … 間取[まど]り … 初期[しょき] 費用[ひよう] … 原状[げんじょう] 回復[かいふく] … 契約[けいやく] 期間[きかん]
+  items:
+  - reikin
+  - shikikin
+  - hoshounin
+  - koushinryou
+  - wo-hajime
+  - shikikin-wo-hajime
+  - hoshou-gaisha
+  - madori
+  - shoki-hiyou
+  - genjou-kaifuku
+  - keiyaku-kikan
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “course (lecture series) — and “taking a course — and “assignment, task — and “is (written style) — and “it is Japanese society (written) — and “essay, composition — and “writing, text — and
+      “lifelong learning — and “course participant — and “by the deadline — and “opening (of a text)”.'
+    pt: 'Diga: “curso (série de aulas) — e “fazer um curso, frequentar — e “tarefa, trabalho — e “é (estilo escrito) — e “é a sociedade japonesa (escrito) — e “redação — e “texto — e “educação continuada
+      — e “aluno do curso — e “até o prazo — e “abertura (de um texto)”.'
+  answer:
+    speaker: protagonist
+    text: 講座[こうざ] … 受講[じゅこう] … 課題[かだい] … 〜で ある … 日本[にほん] 社会[しゃかい] で ある … 作文[さくぶん] … 文章[ぶんしょう] … 生涯[しょうがい] 学習[がくしゅう] … 受講生[じゅこうせい] … 締[し]め切[き]り まで に … 書[か]き出[だ]し
+  items:
+  - kouza-course
+  - jukou
+  - kadai
+  - de-aru
+  - nihon-shakai-de-aru
+  - sakubun
+  - bunshou
+  - shougai-gakushuu
+  - jukousei
+  - shimekiri-made-ni
+  - kakidashi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “marriage — and “falling birth rate — and “marriage hunting — and “single, unmarried — and “although (it''s true that) — and “although I want to marry — and “financially — and “anxiety, insecurity
+      — and “meeting (someone) — and “values — and “free time”.'
+    pt: 'Diga: “casamento — e “queda da natalidade — e “busca ativa por casamento — e “solteiro — e “embora, apesar de — e “embora eu queira casar — e “financeiramente — e “insegurança, ansiedade — e “encontro,
+      conhecer alguém — e “valores — e “tempo livre”.'
+  answer:
+    speaker: protagonist
+    text: 結婚[けっこん] … 少子化[しょうしか] … 婚活[こんかつ] … 独身[どくしん] … 〜ものの … 結婚[けっこん] したい ものの … 経済的[けいざいてき] に … 不安[ふあん] … 出会[であ]い … 価値観[かちかん] … 自由[じゆう] な 時間[じかん]
+  items:
+  - kekkon
+  - shoushika
+  - konkatsu
+  - dokushin
+  - monono
+  - kekkon-shitai-monono
+  - keizaiteki
+  - fuan
+  - deai
+  - kachikan
+  - jiyuu-na-jikan
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “presentation — and “handout, materials — and “Q&A — and “conclusion — and “after (doing) — and “after explaining — and “purpose — and “cost — and “effect, result — and “your questions (polite)
+      — and “that''s all (end of presentation)”.'
+    pt: 'Diga: “apresentação — e “material, apostila — e “perguntas e respostas — e “conclusão — e “depois de (fazer) — e “depois de explicar — e “objetivo — e “custo — e “efeito, resultado — e “suas perguntas
+      (educado) — e “é isso (fim da apresentação)”.'
+  answer:
+    speaker: protagonist
+    text: 発表[はっぴょう] … 資料[しりょう] … 質疑[しつぎ] 応答[おうとう] … 結論[けつろん] … 〜て から … 説明[せつめい] して から … 目的[もくてき] … 費用[ひよう] … 効果[こうか] … ご質問[しつもん] … 以上[いじょう] です
+  items:
+  - happyou
+  - shiryou
+  - shitsugi-outou
+  - ketsuron
+  - te-kara
+  - setsumei-shite-kara
+  - mokuteki
+  - hiyou
+  - kouka
+  - goshitsumon
+  - ijou-desu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “gene — and “heredity — and “towards, in contrast to — and “mother''s side — and “father''s side — and “skin colour — and “eye colour — and “mixed heritage (dated word) — and “mixed-heritage
+      (everyday word) — and “family tree — and “ancestors”.'
+    pt: 'Diga: “gene — e “hereditariedade — e “em relação a, ao contrário de — e “lado da mãe — e “lado do pai — e “cor da pele — e “cor dos olhos — e “mestiço (palavra antiga) — e “filho de pais de origens
+      diferentes — e “árvore genealógica — e “antepassados”.'
+  answer:
+    speaker: protagonist
+    text: 遺伝子[いでんし] … 遺伝[いでん] … 〜に 対[たい]して … 母方[ははかた] … 父方[ちちかた] … 肌[はだ] の 色[いろ] … 目[め] の 色[いろ] … 混血[こんけつ] … ハーフ … 家系図[かけいず] … 先祖[せんぞ]
+  items:
+  - idenshi
+  - iden
+  - ni-taishite
+  - hahakata
+  - chichikata
+  - hada-no-iro
+  - me-no-iro
+  - konketsu
+  - haafu
+  - kakeizu
+  - senzo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “public bath — and “the bathtub (the hot pool) — and “milk — and “women''s bath — and “it''s hot, huh (casual) — and “kind of, like — and “huge (casual) — and “right?, see? — and “let''s get
+      in (casual) — and “yay! — and “after the bath”.'
+    pt: 'Diga: “banho público — e “a banheira (a piscina quente) — e “leite — e “banho feminino — e “que quente, hein (informal) — e “tipo, meio — e “enorme (informal) — e “né?, viu? — e “vamos entrar (informal)
+      — e “eba! — e “depois do banho”.'
+  answer:
+    speaker: protagonist
+    text: 銭湯[せんとう] … 湯船[ゆぶね] … 牛乳[ぎゅうにゅう] … 女湯[おんなゆ] … 熱[あつ]い ね … なんか … でかい … でしょ … 入[はい]ろう … やった … 風呂[ふろ] 上[あ]がり
+  items:
+  - sentou
+  - yubune
+  - gyuunyuu
+  - onna-yu
+  - atsui-casual
+  - nanka
+  - dekai
+  - desho
+  - hairou
+  - yatta
+  - furo-agari
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
