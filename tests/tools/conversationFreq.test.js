@@ -35,4 +35,8 @@ describe('word frequency in conversation units', () => {
   it('a Japanese cast name counts without its さん (鈴木さん → 鈴木)', async () => {
     expect(await rareWords('鈴木 さん', async () => null, { names: ['鈴木さん (Suzuki-san)'] })).toEqual(['さん']);
   });
+  it('a grammar pattern item (written with 〜) is grammar, not vocabulary: never counted as a rare word', async () => {
+    const unit = { id: 'A2-12', level: 'A2', new_items: [{ id: 'yori', text: '〜より' }, { id: 'amari', text: 'あまり 〜ません' }] };
+    expect((await unitReport(unit, async () => null, { names: [] })).rare).toEqual([]);
+  });
 });

@@ -1,0 +1,570 @@
+# UNIT ja A2-11 — written by AI (Claude) for Casus; expanded from src/A2-11.yml by tools/expand_unit.py. Edit the source.
+
+id: A2-11
+level: A2
+number: 11
+protagonist: f
+title:
+  en: The confession
+  pt: A confissão
+situation:
+  en: 'Lunch break. Kenta is nervous: he wants to tell a girl from his futsal team that he likes her. He explains 告白 to you.'
+  pt: 'Hora do almoço. O Kenta está nervoso: quer dizer a uma moça do time de futsal que gosta dela. Ele explica o 告白 para você.'
+learn_lessons: []
+culture: Confessing before dating
+new_items:
+- id: kokuhaku
+  text: 告白[こくはく]
+  meaning:
+    en: confession (of love)
+    pt: declaração (de amor)
+  rare: true
+- id: suki-desu
+  text: 好[す]き です
+  meaning:
+    en: I like you, I love you
+    pt: gosto de você
+- id: tsukiatte-kudasai
+  text: 付[つ]き合[あ]って ください
+  meaning:
+    en: please go out with me
+    pt: namora comigo?
+- id: henji
+  text: 返事[へんじ]
+  meaning:
+    en: answer, reply
+    pt: resposta
+- id: kanojo
+  text: 彼女[かのじょ]
+  meaning:
+    en: girlfriend; she
+    pt: namorada; ela
+- id: kareshi
+  text: 彼氏[かれし]
+  meaning:
+    en: boyfriend
+    pt: namorado
+- id: kinchou
+  text: 緊張[きんちょう] します
+  meaning:
+    en: I'm nervous
+    pt: estou nervoso
+- id: oshiete-kureta
+  text: 教[おし]えて くれました
+  meaning:
+    en: (someone) told me, taught me (for me)
+    pt: me contou, me ensinou
+- id: tetsudatte-kureru
+  text: 手伝[てつだ]って くれる？
+  meaning:
+    en: will you help me?
+    pt: você me ajuda?
+- id: kimochi
+  text: 気持[きも]ち
+  meaning:
+    en: feelings
+    pt: sentimentos
+reviews:
+- item: hitotsu
+  from: A1-10
+- item: futatsu
+  from: A1-10
+- item: mittsu
+  from: A1-10
+- item: ichi
+  from: A1-10
+- item: ni
+  from: A1-10
+- item: san
+  from: A1-10
+- item: juu
+  from: A1-10
+- item: nanko
+  from: A1-10
+- item: ko
+  from: A1-10
+- item: hako
+  from: A1-10
+- item: tarimasen
+  from: A1-10
+- item: zenbu
+  from: A1-10
+- item: karaoke
+  from: A1-26
+- item: utaimasu
+  from: A1-26
+- item: uta
+  from: A1-26
+- item: kanpai
+  from: A1-26
+- item: ikimasen-ka
+  from: A1-26
+- item: utaimasen-ka
+  from: A1-26
+- item: heya-kojin
+  from: A1-26
+- item: ichijikan
+  from: A1-26
+- item: encho
+  from: A1-26
+- item: hitori-karaoke
+  from: A1-26
+- item: heta
+  from: A1-26
+- item: tanoshii
+  from: A1-26
+- item: kouza
+  from: A2-04
+- item: inkan
+  from: A2-04
+- item: tsuuchou
+  from: A2-04
+- item: anshou-bangou
+  from: A2-04
+- item: ginkou
+  from: A2-04
+- item: kyuuryou
+  from: A2-04
+- item: tsukuritai
+  from: A2-04
+- item: katte
+  from: A2-04
+- item: itte
+  from: A2-04
+- item: shomei
+  from: A2-04
+- item: yonketa
+  from: A2-04
+- item: natsumatsuri
+  from: A2-08
+- item: yukata
+  from: A2-08
+- item: hanabi
+  from: A2-08
+- item: yatai
+  from: A2-08
+- item: natsu
+  from: A2-08
+- item: mitai
+  from: A2-08
+- item: kitai
+  from: A2-08
+- item: kimasu-wear
+  from: A2-08
+- item: nigiyaka
+  from: A2-08
+- item: kingyo-sukui
+  from: A2-08
+- item: niaimasu
+  from: A2-08
+- item: deeto
+  from: A2-10
+- item: kafe
+  from: A2-10
+- item: apuri
+  from: A2-10
+- item: renrakusaki
+  from: A2-10
+- item: shumi
+  from: A2-10
+- item: shigoto-wa
+  from: A2-10
+- item: itte-mite
+  from: A2-10
+- item: tabete-hanashite
+  from: A2-10
+- item: majime
+  from: A2-10
+- item: mata-aemasu-ka
+  from: A2-10
+- item: hontou-ni
+  from: A2-10
+- item: ganbatte
+  from: A1-08
+steps:
+- type: narrator
+  text:
+    en: 'Lunch break. Kenta is nervous: he wants to tell a girl from his futsal team that he likes her. He explains 告白 to you. Listen to the conversation; you don''t need to understand it yet.'
+    pt: 'Hora do almoço. O Kenta está nervoso: quer dizer a uma moça do time de futsal que gosta dela. Ele explica o 告白 para você. Escute a conversa; ainda não precisa entender.'
+- type: dialogue
+  lines:
+  - speaker: kenta
+    text: 実[じつ] は… 今日[きょう]、 告白[こくはく] する。
+    meaning:
+      en: Actually… I'm going to confess today.
+      pt: Na verdade… hoje vou me declarar.
+  - speaker: protagonist
+    text: 告白[こくはく]？ 誰[だれ] に？
+    meaning:
+      en: Confess? To whom?
+      pt: Se declarar? Para quem?
+  - speaker: kenta
+    text: フットサル の 美咲[みさき] さん。 緊張[きんちょう] する よ。
+    meaning:
+      en: Misaki from futsal. I'm nervous.
+      pt: A Misaki do futsal. Estou nervoso.
+  - speaker: protagonist
+    text: もう デート は した？
+    meaning:
+      en: Have you been on dates already?
+      pt: Vocês já saíram?
+  - speaker: kenta
+    text: 三回[さんかい]。 でも 日本[にほん] では、 告白[こくはく] して から 付[つ]き合[あ]う ん だ。
+    meaning:
+      en: Three times. But in Japan you start dating after a confession.
+      pt: Três vezes. Mas no Japão a gente só começa a namorar depois da declaração.
+  - speaker: protagonist
+    text: 何[なん] て 言[い]う の？
+    meaning:
+      en: What do you say?
+      pt: E o que você diz?
+  - speaker: kenta
+    text: 「好[す]き です。 付[つ]き合[あ]って ください」。 それから 返事[へんじ] を 待[ま]つ。
+    meaning:
+      en: “I like you. Please go out with me.” Then you wait for the answer.
+      pt: «Gosto de você. Namora comigo?» Depois espera a resposta.
+  - speaker: protagonist
+    text: 教[おし]えて くれて ありがとう。 頑張[がんば]って！
+    meaning:
+      en: Thanks for telling me. Go for it!
+      pt: Obrigada por me contar. Vai lá!
+- type: prompt
+  ask:
+    en: 'Say: a confession of love.'
+    pt: 'Diga: uma declaração de amor.'
+  answer:
+    speaker: protagonist
+    text: 告白[こくはく]
+  items:
+  - kokuhaku
+- type: prompt
+  ask:
+    en: 'Say: I like you.'
+    pt: 'Diga: gosto de você.'
+  answer:
+    speaker: protagonist
+    text: 好[す]き です。
+  items:
+  - suki-desu
+- type: buildup
+  item: tsukiatte-kudasai
+  parts:
+  - ください
+  - 付[つ]き合[あ]って ください
+- type: prompt
+  ask:
+    en: 'Ask: please go out with me.'
+    pt: 'Peça: namora comigo?'
+  answer:
+    speaker: protagonist
+    text: 付[つ]き合[あ]って ください。
+  items:
+  - tsukiatte-kudasai
+- type: prompt
+  ask:
+    en: 'Say: the answer.'
+    pt: 'Diga: a resposta.'
+  answer:
+    speaker: protagonist
+    text: 返事[へんじ]
+  items:
+  - henji
+- type: prompt
+  ask:
+    en: 'Say: girlfriend.'
+    pt: 'Diga: namorada.'
+  answer:
+    speaker: protagonist
+    text: 彼女[かのじょ]
+  items:
+  - kanojo
+- type: prompt
+  ask:
+    en: 'Say: boyfriend.'
+    pt: 'Diga: namorado.'
+  answer:
+    speaker: protagonist
+    text: 彼氏[かれし]
+  items:
+  - kareshi
+- type: prompt
+  ask:
+    en: 'Say: feelings.'
+    pt: 'Diga: sentimentos.'
+  answer:
+    speaker: protagonist
+    text: 気持[きも]ち
+  items:
+  - kimochi
+- type: prompt
+  ask:
+    en: 'Say: I''m nervous.'
+    pt: 'Diga: estou nervosa.'
+  answer:
+    speaker: protagonist
+    text: 緊張[きんちょう] します。
+  items:
+  - kinchou
+- type: narrator
+  text:
+    en: '«〜て くれる» is someone doing something for you: «教[おし]えて くれました» — he told me (as a favour to me). As a question it asks for help: «手伝[てつだ]って くれる？» — will you help me? Japanese marks who a kindness
+      goes to.'
+    pt: '«〜て くれる» é alguém fazendo algo por você: «教[おし]えて くれました» — ele me contou (como um favor para mim). Como pergunta, pede ajuda: «手伝[てつだ]って くれる？» — você me ajuda? O japonês marca para quem vai a gentileza.'
+- type: prompt
+  ask:
+    en: 'Say: he told me, for me.'
+    pt: 'Diga: ele me contou.'
+  answer:
+    speaker: protagonist
+    text: 教[おし]えて くれました。
+  items:
+  - oshiete-kureta
+- type: prompt
+  ask:
+    en: 'Ask Kenta: will you help me?'
+    pt: 'Pergunte ao Kenta: você me ajuda?'
+  answer:
+    speaker: protagonist
+    text: 手伝[てつだ]って くれる？
+  items:
+  - tetsudatte-kureru
+- type: prompt
+  ask:
+    en: Wish him luck.
+    pt: Deseje boa sorte a ele.
+  answer:
+    speaker: protagonist
+    text: 頑張[がんば]って！
+  items:
+  - ganbatte
+- type: narrator
+  text:
+    en: 'In Japan a couple usually becomes a couple at a clear moment: one says «好[す]き です。 付[つ]き合[あ]って ください», the other answers. Dates before that are just dates. After it, both say «彼女[かのじょ]», «彼氏[かれし]».'
+    pt: 'No Japão o casal costuma virar casal num momento claro: um diz «好[す]き です。 付[つ]き合[あ]って ください», o outro responde. Os encontros antes disso são só encontros. Depois, os dois dizem «彼女[かのじょ]», «彼氏[かれし]».'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil o namoro muitas vezes começa sem pedido nenhum — de repente vocês já estão namorando. No Japão quase sempre há o pedido, e só depois dele vale.
+- type: prompt
+  ask:
+    en: 'Once more: say “confession (of love)”.'
+    pt: 'Mais uma vez: diga “declaração (de amor)”.'
+  answer:
+    speaker: protagonist
+    text: 告白[こくはく]
+  items:
+  - kokuhaku
+- type: prompt
+  ask:
+    en: 'Once more: say “I like you, I love you”.'
+    pt: 'Mais uma vez: diga “gosto de você”.'
+  answer:
+    speaker: protagonist
+    text: 好[す]き です
+  items:
+  - suki-desu
+- type: prompt
+  ask:
+    en: 'Once more: say “please go out with me”.'
+    pt: 'Mais uma vez: diga “namora comigo?”.'
+  answer:
+    speaker: protagonist
+    text: 付[つ]き合[あ]って ください
+  items:
+  - tsukiatte-kudasai
+- type: prompt
+  ask:
+    en: 'Once more: say “answer, reply”.'
+    pt: 'Mais uma vez: diga “resposta”.'
+  answer:
+    speaker: protagonist
+    text: 返事[へんじ]
+  items:
+  - henji
+- type: prompt
+  ask:
+    en: 'Once more: say “girlfriend; she”.'
+    pt: 'Mais uma vez: diga “namorada; ela”.'
+  answer:
+    speaker: protagonist
+    text: 彼女[かのじょ]
+  items:
+  - kanojo
+- type: prompt
+  ask:
+    en: 'Once more: say “boyfriend”.'
+    pt: 'Mais uma vez: diga “namorado”.'
+  answer:
+    speaker: protagonist
+    text: 彼氏[かれし]
+  items:
+  - kareshi
+- type: prompt
+  ask:
+    en: 'Once more: say “I''m nervous”.'
+    pt: 'Mais uma vez: diga “estou nervoso”.'
+  answer:
+    speaker: protagonist
+    text: 緊張[きんちょう] します
+  items:
+  - kinchou
+- type: prompt
+  ask:
+    en: 'Once more: say “(someone) told me, taught me (for me)”.'
+    pt: 'Mais uma vez: diga “me contou, me ensinou”.'
+  answer:
+    speaker: protagonist
+    text: 教[おし]えて くれました
+  items:
+  - oshiete-kureta
+- type: prompt
+  ask:
+    en: 'Once more: say “will you help me?”.'
+    pt: 'Mais uma vez: diga “você me ajuda?”.'
+  answer:
+    speaker: protagonist
+    text: 手伝[てつだ]って くれる？
+  items:
+  - tetsudatte-kureru
+- type: prompt
+  ask:
+    en: 'Once more: say “feelings”.'
+    pt: 'Mais uma vez: diga “sentimentos”.'
+  answer:
+    speaker: protagonist
+    text: 気持[きも]ち
+  items:
+  - kimochi
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “date — and “café — and “app — and “contact details — and “hobby — and “and your work? — and “went and saw (て sequence) — and “ate and talked — and “serious, sincere”.'
+    pt: 'Diga: “encontro — e “café (o lugar) — e “aplicativo — e “contato — e “hobby, passatempo — e “e o seu trabalho? — e “fui e vi (sequência com て) — e “comemos e conversamos — e “sério, sincero”.'
+  answer:
+    speaker: protagonist
+    text: デート … カフェ … アプリ … 連絡先[れんらくさき] … 趣味[しゅみ] … お仕事[しごと] は … 行[い]って、 見[み]て … 食[た]べて、 話[はな]して … 真面目[まじめ]
+  items:
+  - deeto
+  - kafe
+  - apuri
+  - renrakusaki
+  - shumi
+  - shigoto-wa
+  - itte-mite
+  - tabete-hanashite
+  - majime
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “can we meet again? — and “really, truly — and “summer festival — and “yukata, summer kimono — and “fireworks — and “food stall — and “summer — and “I want to see — and “I want to wear”.'
+    pt: 'Diga: “podemos nos ver de novo? — e “de verdade — e “festival de verão — e “yukata, quimono de verão — e “fogos de artifício — e “barraca de comida — e “verão — e “quero ver — e “quero vestir”.'
+  answer:
+    speaker: protagonist
+    text: また 会[あ]えます か … 本当[ほんとう] に … 夏祭[なつまつ]り … 浴衣[ゆかた] … 花火[はなび] … 屋台[やたい] … 夏[なつ] … 見[み]たい です … 着[き]たい です
+  items:
+  - mata-aemasu-ka
+  - hontou-ni
+  - natsumatsuri
+  - yukata
+  - hanabi
+  - yatai
+  - natsu
+  - mitai
+  - kitai
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “wear, put on — and “lively — and “goldfish scooping — and “it suits you — and “bank account — and “personal seal, hanko — and “bankbook — and “PIN — and “bank”.'
+    pt: 'Diga: “visto — e “animado, movimentado — e “pescaria de peixinho dourado — e “fica bem em você — e “conta bancária — e “carimbo pessoal, hanko — e “caderneta do banco — e “senha (do cartão) — e
+      “banco”.'
+  answer:
+    speaker: protagonist
+    text: 着[き]ます … 賑[にぎ]やか … 金魚[きんぎょ] すくい … 似合[にあ]います ね … 口座[こうざ] … 印鑑[いんかん] … 通帳[つうちょう] … 暗証番号[あんしょうばんごう] … 銀行[ぎんこう]
+  items:
+  - kimasu-wear
+  - nigiyaka
+  - kingyo-sukui
+  - niaimasu
+  - kouza
+  - inkan
+  - tsuuchou
+  - anshou-bangou
+  - ginkou
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “salary — and “I want to open (make) — and “buy and… (て form) — and “go and… (て form) — and “signature — and “four digits — and “karaoke — and “sing — and “song”.'
+    pt: 'Diga: “salário — e “quero abrir (fazer) — e “compro e… (forma て) — e “vou e… (forma て) — e “assinatura — e “quatro dígitos — e “karaokê — e “canto — e “música, canção”.'
+  answer:
+    speaker: protagonist
+    text: 給料[きゅうりょう] … 作[つく]りたい です … 買[か]って … 行[い]って … サイン … 四桁[よんけた] … カラオケ … 歌[うた]います … 歌[うた]
+  items:
+  - kyuuryou
+  - tsukuritai
+  - katte
+  - itte
+  - shomei
+  - yonketa
+  - karaoke
+  - utaimasu
+  - uta
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “cheers! — and “won''t you come? shall we go? — and “won''t you sing? — and “private room — and “one hour — and “extension (more time) — and “karaoke alone — and “bad at (it) — and “fun”.'
+    pt: 'Diga: “saúde! (no brinde) — e “não quer ir? vamos? — e “não quer cantar? — e “sala privativa — e “uma hora — e “prorrogação (mais tempo) — e “karaokê sozinho — e “ruim nisso — e “divertido”.'
+  answer:
+    speaker: protagonist
+    text: 乾杯[かんぱい] … 行[い]きません か … 歌[うた]いません か … 個室[こしつ] … 一時間[いちじかん] … 延長[えんちょう] … 一人[ひとり] カラオケ … 下手[へた] … 楽[たの]しい
+  items:
+  - kanpai
+  - ikimasen-ka
+  - utaimasen-ka
+  - heya-kojin
+  - ichijikan
+  - encho
+  - hitori-karaoke
+  - heta
+  - tanoshii
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “one (thing) — and “two (things) — and “three (things) — and “one — and “two — and “three — and “ten — and “how many (small things) — and “(counter for small things)”.'
+    pt: 'Diga: “um (objeto) — e “dois (objetos) — e “três (objetos) — e “um — e “dois — e “três — e “dez — e “quantos (objetos pequenos) — e “(contador para objetos pequenos)”.'
+  answer:
+    speaker: protagonist
+    text: ひとつ … ふたつ … みっつ … 一[いち] … 二[に] … 三[さん] … 十[じゅう] … 何個[なんこ] … 個[こ]
+  items:
+  - hitotsu
+  - futatsu
+  - mittsu
+  - ichi
+  - ni
+  - san
+  - juu
+  - nanko
+  - ko
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “box — and “it''s not enough, one is missing — and “all”.'
+    pt: 'Diga: “caixa — e “falta, não é suficiente — e “tudo”.'
+  answer:
+    speaker: protagonist
+    text: 箱[はこ] … 足[た]りません … 全部[ぜんぶ]
+  items:
+  - hako
+  - tarimasen
+  - zenbu
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

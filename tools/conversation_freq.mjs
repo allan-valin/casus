@@ -48,7 +48,7 @@ export async function rareWords(text, rankOf, { names = [], top = 1000, readings
 export async function unitReport(unit, rankOf, opts = {}) {
   const rare = [];
   for (const it of unit.new_items ?? []) {
-    if (it.rare) continue;
+    if (it.rare || it.text.includes('〜')) continue;          // 〜 marks a grammar pattern, not a word to look up
     const words = await rareWords(it.text, rankOf, opts);
     if (words.length) rare.push({ item: it.id, words });
   }

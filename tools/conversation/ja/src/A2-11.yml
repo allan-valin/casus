@@ -1,0 +1,42 @@
+id: A2-11
+protagonist: f
+title: [The confession, A confissão]
+situation: ["Lunch break. Kenta is nervous: he wants to tell a girl from his futsal team that he likes her. He explains 告白 to you.", "Hora do almoço. O Kenta está nervoso: quer dizer a uma moça do time de futsal que gosta dela. Ele explica o 告白 para você."]
+learn: []
+culture: Confessing before dating
+items:
+  - [kokuhaku, "告白[こくはく]", "confession (of love)", "declaração (de amor)", {rare: true}]
+  - [suki-desu, "好[す]き です", "I like you, I love you", "gosto de você"]
+  - [tsukiatte-kudasai, "付[つ]き合[あ]って ください", "please go out with me", "namora comigo?"]
+  - [henji, "返事[へんじ]", "answer, reply", "resposta"]
+  - [kanojo, "彼女[かのじょ]", "girlfriend; she", "namorada; ela"]
+  - [kareshi, "彼氏[かれし]", "boyfriend", "namorado"]
+  - [kinchou, "緊張[きんちょう] します", "I'm nervous", "estou nervoso"]
+  - [oshiete-kureta, "教[おし]えて くれました", "(someone) told me, taught me (for me)", "me contou, me ensinou"]
+  - [tetsudatte-kureru, "手伝[てつだ]って くれる？", "will you help me?", "você me ajuda?"]
+  - [kimochi, "気持[きも]ち", "feelings", "sentimentos"]
+dialogue:
+  - [kenta, "実[じつ] は… 今日[きょう]、 告白[こくはく] する。", "Actually… I'm going to confess today.", "Na verdade… hoje vou me declarar."]
+  - [protagonist, "告白[こくはく]？ 誰[だれ] に？", "Confess? To whom?", "Se declarar? Para quem?"]
+  - [kenta, "フットサル の 美咲[みさき] さん。 緊張[きんちょう] する よ。", "Misaki from futsal. I'm nervous.", "A Misaki do futsal. Estou nervoso."]
+  - [protagonist, "もう デート は した？", "Have you been on dates already?", "Vocês já saíram?"]
+  - [kenta, "三回[さんかい]。 でも 日本[にほん] では、 告白[こくはく] して から 付[つ]き合[あ]う ん だ。", "Three times. But in Japan you start dating after a confession.", "Três vezes. Mas no Japão a gente só começa a namorar depois da declaração."]
+  - [protagonist, "何[なん] て 言[い]う の？", "What do you say?", "E o que você diz?"]
+  - [kenta, "「好[す]き です。 付[つ]き合[あ]って ください」。 それから 返事[へんじ] を 待[ま]つ。", "“I like you. Please go out with me.” Then you wait for the answer.", "«Gosto de você. Namora comigo?» Depois espera a resposta."]
+  - [protagonist, "教[おし]えて くれて ありがとう。 頑張[がんば]って！", "Thanks for telling me. Go for it!", "Obrigada por me contar. Vai lá!"]
+teach:
+  - ask: ["Say: a confession of love.", "Diga: uma declaração de amor.", "告白[こくはく]", kokuhaku]
+  - ask: ["Say: I like you.", "Diga: gosto de você.", "好[す]き です。", suki-desu]
+  - build: [tsukiatte-kudasai, ["ください", "付[つ]き合[あ]って ください"]]
+  - ask: ["Ask: please go out with me.", "Peça: namora comigo?", "付[つ]き合[あ]って ください。", tsukiatte-kudasai]
+  - ask: ["Say: the answer.", "Diga: a resposta.", "返事[へんじ]", henji]
+  - ask: ["Say: girlfriend.", "Diga: namorada.", "彼女[かのじょ]", kanojo]
+  - ask: ["Say: boyfriend.", "Diga: namorado.", "彼氏[かれし]", kareshi]
+  - ask: ["Say: feelings.", "Diga: sentimentos.", "気持[きも]ち", kimochi]
+  - ask: ["Say: I'm nervous.", "Diga: estou nervosa.", "緊張[きんちょう] します。", kinchou]
+  - note: ["«〜て くれる» is someone doing something for you: «教[おし]えて くれました» — he told me (as a favour to me). As a question it asks for help: «手伝[てつだ]って くれる？» — will you help me? Japanese marks who a kindness goes to.", "«〜て くれる» é alguém fazendo algo por você: «教[おし]えて くれました» — ele me contou (como um favor para mim). Como pergunta, pede ajuda: «手伝[てつだ]って くれる？» — você me ajuda? O japonês marca para quem vai a gentileza."]
+  - ask: ["Say: he told me, for me.", "Diga: ele me contou.", "教[おし]えて くれました。", oshiete-kureta]
+  - ask: ["Ask Kenta: will you help me?", "Pergunte ao Kenta: você me ajuda?", "手伝[てつだ]って くれる？", tetsudatte-kureru]
+  - ask: ["Wish him luck.", "Deseje boa sorte a ele.", "頑張[がんば]って！", ganbatte]
+  - note: ["In Japan a couple usually becomes a couple at a clear moment: one says «好[す]き です。 付[つ]き合[あ]って ください», the other answers. Dates before that are just dates. After it, both say «彼女[かのじょ]», «彼氏[かれし]».", "No Japão o casal costuma virar casal num momento claro: um diz «好[す]き です。 付[つ]き合[あ]って ください», o outro responde. Os encontros antes disso são só encontros. Depois, os dois dizem «彼女[かのじょ]», «彼氏[かれし]»."]
+  - pt_only: "No Brasil o namoro muitas vezes começa sem pedido nenhum — de repente vocês já estão namorando. No Japão quase sempre há o pedido, e só depois dele vale."
