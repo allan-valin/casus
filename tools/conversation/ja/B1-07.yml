@@ -1,0 +1,578 @@
+# UNIT ja B1-07 — written by AI (Claude) for Casus; expanded from src/B1-07.yml by tools/expand_unit.py. Edit the source.
+
+id: B1-07
+level: B1
+number: 7
+protagonist: f
+title:
+  en: Japanese in Brazil, Brazilian in Japan
+  pt: Japonês no Brasil, brasileiro no Japão
+situation:
+  en: A shop assistant spoke to you in English, though you look Japanese. At the bakery you tell Maria — she has lived this for twenty years.
+  pt: Um vendedor falou com você em inglês, mesmo você tendo cara de japonesa. Na padaria você conta para a Maria — ela vive isso há vinte anos.
+learn_lessons: []
+culture: Nikkei identity
+new_items:
+- id: gaikokujin
+  text: 外国人[がいこくじん]
+  meaning:
+    en: foreigner
+    pt: estrangeiro
+- id: mitame
+  text: 見[み]た目[め]
+  meaning:
+    en: appearance, looks
+    pt: aparência
+- id: ibasho
+  text: 居場所[いばしょ]
+  meaning:
+    en: a place where you belong
+    pt: um lugar onde se pertence
+  rare: true
+- id: noni
+  text: 〜のに
+  meaning:
+    en: even though (with frustration)
+    pt: mesmo que, apesar de (com frustração)
+- id: nihonjin-na-noni
+  text: 日系[にっけい] な のに
+  meaning:
+    en: even though I'm nikkei
+    pt: mesmo sendo nikkei
+- id: chuuto-hanpa
+  text: 中途半端[ちゅうとはんぱ]
+  meaning:
+    en: halfway, neither one nor the other
+    pt: nem uma coisa nem outra
+  rare: true
+- id: doushite-mo
+  text: どうしても
+  meaning:
+    en: no matter what, somehow
+    pt: de qualquer jeito
+- id: ryouhou
+  text: 両方[りょうほう]
+  meaning:
+    en: both
+    pt: os dois, ambos
+- id: jibun
+  text: 自分[じぶん]
+  meaning:
+    en: oneself
+    pt: si mesmo, a gente
+- id: kimochi-wakaru
+  text: 気持[きも]ち、 わかる
+  meaning:
+    en: I know how you feel
+    pt: entendo o que você sente
+reviews:
+- item: irasshaimase
+  from: A1-04
+- item: kore-kudasai
+  from: A1-04
+- item: kudasai
+  from: A1-04
+- item: atatamemasu-ka
+  from: A1-04
+- item: onegaishimasu
+  from: A1-04
+- item: fukuro
+  from: A1-04
+- item: irimasen
+  from: A1-04
+- item: ikura
+  from: A1-04
+- item: en
+  from: A1-04
+- item: hyaku
+  from: A1-04
+- item: kaado
+  from: A1-04
+- item: arigatou-gozaimashita
+  from: A1-04
+- item: denki
+  from: A2-06
+- item: bureekaa
+  from: A2-06
+- item: eakon
+  from: A2-06
+- item: tsukemasu
+  from: A2-06
+- item: keshimasu
+  from: A2-06
+- item: kiete-imasu
+  from: A2-06
+- item: tsuite-imasu
+  from: A2-06
+- item: ochimashita
+  from: A2-06
+- item: kurai
+  from: A2-06
+- item: hyaku-boruto
+  from: A2-06
+- item: doushite
+  from: A2-06
+- item: sodai-gomi
+  from: A2-22
+- item: moushikomi
+  from: A2-22
+- item: kaishuu
+  from: A2-22
+- item: ken
+  from: A2-22
+- item: isu
+  from: A2-22
+- item: dasanaide-kudasai
+  from: A2-22
+- item: naide-kudasai
+  from: A2-22
+- item: sutenaide
+  from: A2-22
+- item: denwa-de
+  from: A2-22
+- item: konbini-de-kaemasu
+  from: A2-22
+- item: oyaji-gyagu
+  from: A2-30
+- item: omoshiroi
+  from: A2-30
+- item: dajare
+  from: A2-30
+- item: warau
+  from: A2-30
+- item: joudan
+  from: A2-30
+- item: bounenkai
+  from: A2-30
+- item: kotoshi
+  from: A2-30
+- item: rainen
+  from: A2-30
+- item: osewa
+  from: A2-30
+- item: yoroshiku-rainen
+  from: A2-30
+- item: tsukiau
+  from: B1-04
+- item: te-shimau
+  from: B1-04
+- item: itte-shimatta
+  from: B1-04
+- item: chatta
+  from: B1-04
+- item: okkee
+  from: B1-04
+- item: kinchou-shita
+  from: B1-04
+- item: omedetou
+  from: B1-04
+- item: kanojo-ga-dekita
+  from: B1-04
+- item: tsugi-no
+  from: B1-04
+- item: yappari
+  from: B1-04
+- item: genpatsu
+  from: B1-06
+- item: enerugii
+  from: B1-06
+- item: setsuden
+  from: B1-06
+- item: taiyoukou
+  from: B1-06
+- item: node
+  from: B1-06
+- item: atsui-node
+  from: B1-06
+- item: jiko
+  from: B1-06
+- item: anzen-mondai
+  from: B1-06
+- item: sansei-favour
+  from: B1-06
+- item: hantai
+  from: B1-06
+- item: denkidai
+  from: B1-06
+steps:
+- type: narrator
+  text:
+    en: A shop assistant spoke to you in English, though you look Japanese. At the bakery you tell Maria — she has lived this for twenty years. Listen to the conversation; you don't need to understand it
+      yet.
+    pt: Um vendedor falou com você em inglês, mesmo você tendo cara de japonesa. Na padaria você conta para a Maria — ela vive isso há vinte anos. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: 今日[きょう]、 店員[てんいん] に 英語[えいご] で 話[はな]されました。 見[み]た目[め] は 日本人[にほんじん] な のに。
+    meaning:
+      en: Today a shop assistant talked to me in English. Even though I look Japanese.
+      pt: Hoje um vendedor falou comigo em inglês. Mesmo eu tendo cara de japonesa.
+  - speaker: maria
+    text: 気持[きも]ち、 わかる よ。 私[わたし] も ブラジル で は「ジャポネーザ」 だった。
+    meaning:
+      en: I know how you feel. In Brazil I was “the Japanese girl”.
+      pt: Entendo o que você sente. No Brasil eu era «a japonesa».
+  - speaker: protagonist
+    text: 日本[にほん] で は 外国人[がいこくじん]、 ブラジル で は 日本人[にほんじん]。 中途半端[ちゅうとはんぱ] です ね。
+    meaning:
+      en: In Japan a foreigner, in Brazil Japanese. Neither one nor the other.
+      pt: No Japão estrangeira, no Brasil japonesa. Nem uma coisa nem outra.
+  - speaker: maria
+    text: 私[わたし] も そう 思[おも]った。 日本語[にほんご] を 勉強[べんきょう] した のに、 まだ 外国人[がいこくじん]。
+    meaning:
+      en: I thought so too. I studied Japanese, and still a foreigner.
+      pt: Eu também achava. Estudei japonês, e ainda assim estrangeira.
+  - speaker: protagonist
+    text: 自分[じぶん] の 居場所[いばしょ] は どこ だろう。
+    meaning:
+      en: Where do I belong, I wonder.
+      pt: Onde será que é o meu lugar?
+  - speaker: maria
+    text: 今[いま] は 両方[りょうほう] だ と 思[おも]う。 ブラジル も 日本[にほん] も、 私[わたし] の 国[くに]。
+    meaning:
+      en: Now I think it's both. Brazil and Japan are both my countries.
+      pt: Hoje acho que são os dois. O Brasil e o Japão, os dois são meu país.
+  - speaker: protagonist
+    text: 両方[りょうほう] か。 いい です ね。
+    meaning:
+      en: Both, huh. That's nice.
+      pt: Os dois, é? Que bom.
+  - speaker: maria
+    text: この パン屋[や] が 私[わたし] の 居場所[いばしょ]。 あなた も いつでも 来[き]て ね。
+    meaning:
+      en: This bakery is where I belong. Come any time, you too.
+      pt: Esta padaria é o meu lugar. Venha quando quiser, você também.
+- type: prompt
+  ask:
+    en: 'Say: a foreigner.'
+    pt: 'Diga: um estrangeiro.'
+  answer:
+    speaker: protagonist
+    text: 外国人[がいこくじん]
+  items:
+  - gaikokujin
+- type: prompt
+  ask:
+    en: 'Say: looks, appearance.'
+    pt: 'Diga: aparência.'
+  answer:
+    speaker: protagonist
+    text: 見[み]た目[め]
+  items:
+  - mitame
+- type: narrator
+  text:
+    en: '«のに» is even though — with a note of frustration or surprise: «勉強[べんきょう] した のに、 まだ 外国人[がいこくじん]» — I studied, and still a foreigner. After nouns and «な» words: «な のに».'
+    pt: '«のに» é mesmo que, apesar de — com um tom de frustração ou surpresa: «勉強[べんきょう] した のに、 まだ 外国人[がいこくじん]» — estudei, e ainda assim estrangeira. Depois de substantivos e palavras com «な»: «な のに».'
+- type: prompt
+  ask:
+    en: 'Say the ending: even though…'
+    pt: 'Diga a terminação: mesmo que…'
+  answer:
+    speaker: protagonist
+    text: 〜のに
+  items:
+  - noni
+- type: prompt
+  ask:
+    en: 'Say: even though I''m nikkei.'
+    pt: 'Diga: mesmo sendo nikkei.'
+  answer:
+    speaker: protagonist
+    text: 日系[にっけい] な のに
+  items:
+  - nihonjin-na-noni
+- type: prompt
+  ask:
+    en: 'Say: neither one nor the other.'
+    pt: 'Diga: nem uma coisa nem outra.'
+  answer:
+    speaker: protagonist
+    text: 中途半端[ちゅうとはんぱ]
+  items:
+  - chuuto-hanpa
+- type: prompt
+  ask:
+    en: 'Say: a place where you belong.'
+    pt: 'Diga: um lugar onde se pertence.'
+  answer:
+    speaker: protagonist
+    text: 居場所[いばしょ]
+  items:
+  - ibasho
+- type: prompt
+  ask:
+    en: 'Say: oneself.'
+    pt: 'Diga: si mesmo.'
+  answer:
+    speaker: protagonist
+    text: 自分[じぶん]
+  items:
+  - jibun
+- type: prompt
+  ask:
+    en: 'Say: both.'
+    pt: 'Diga: os dois.'
+  answer:
+    speaker: protagonist
+    text: 両方[りょうほう]
+  items:
+  - ryouhou
+- type: prompt
+  ask:
+    en: 'Say: no matter what, somehow.'
+    pt: 'Diga: de qualquer jeito.'
+  answer:
+    speaker: protagonist
+    text: どうしても
+  items:
+  - doushite-mo
+- type: prompt
+  ask:
+    en: 'Tell a friend: I know how you feel.'
+    pt: 'Diga a um amigo: entendo o que você sente.'
+  answer:
+    speaker: protagonist
+    text: 気持[きも]ち、 わかる。
+  items:
+  - kimochi-wakaru
+- type: narrator
+  text:
+    en: 'Many nikkei know this: «ジャポネーザ» in Brazil, «外国人[がいこくじん]» in Japan. Japanese people may expect a Japanese face to speak perfect Japanese — or assume it can''t. Communities like Hamamatsu''s, with
+      Brazilian shops and schools, are where many find their «居場所[いばしょ]».'
+    pt: 'Muitos nikkeis conhecem isso: «ジャポネーザ» no Brasil, «外国人[がいこくじん]» no Japão. Os japoneses podem esperar que um rosto japonês fale japonês perfeito — ou achar que não fala. Comunidades como a de Hamamatsu,
+      com lojas e escolas brasileiras, são onde muitos encontram o seu «居場所[いばしょ]».'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: A segunda e a terceira geração costumam sentir isso nos dois países. Não há resposta certa — muita gente acaba, como a Maria, chamando os dois lugares de casa.
+- type: prompt
+  ask:
+    en: 'Once more: say “foreigner”.'
+    pt: 'Mais uma vez: diga “estrangeiro”.'
+  answer:
+    speaker: protagonist
+    text: 外国人[がいこくじん]
+  items:
+  - gaikokujin
+- type: prompt
+  ask:
+    en: 'Once more: say “appearance, looks”.'
+    pt: 'Mais uma vez: diga “aparência”.'
+  answer:
+    speaker: protagonist
+    text: 見[み]た目[め]
+  items:
+  - mitame
+- type: prompt
+  ask:
+    en: 'Once more: say “a place where you belong”.'
+    pt: 'Mais uma vez: diga “um lugar onde se pertence”.'
+  answer:
+    speaker: protagonist
+    text: 居場所[いばしょ]
+  items:
+  - ibasho
+- type: prompt
+  ask:
+    en: 'Once more: say “even though (with frustration)”.'
+    pt: 'Mais uma vez: diga “mesmo que, apesar de (com frustração)”.'
+  answer:
+    speaker: protagonist
+    text: 〜のに
+  items:
+  - noni
+- type: prompt
+  ask:
+    en: 'Once more: say “even though I''m nikkei”.'
+    pt: 'Mais uma vez: diga “mesmo sendo nikkei”.'
+  answer:
+    speaker: protagonist
+    text: 日系[にっけい] な のに
+  items:
+  - nihonjin-na-noni
+- type: prompt
+  ask:
+    en: 'Once more: say “halfway, neither one nor the other”.'
+    pt: 'Mais uma vez: diga “nem uma coisa nem outra”.'
+  answer:
+    speaker: protagonist
+    text: 中途半端[ちゅうとはんぱ]
+  items:
+  - chuuto-hanpa
+- type: prompt
+  ask:
+    en: 'Once more: say “no matter what, somehow”.'
+    pt: 'Mais uma vez: diga “de qualquer jeito”.'
+  answer:
+    speaker: protagonist
+    text: どうしても
+  items:
+  - doushite-mo
+- type: prompt
+  ask:
+    en: 'Once more: say “both”.'
+    pt: 'Mais uma vez: diga “os dois, ambos”.'
+  answer:
+    speaker: protagonist
+    text: 両方[りょうほう]
+  items:
+  - ryouhou
+- type: prompt
+  ask:
+    en: 'Once more: say “oneself”.'
+    pt: 'Mais uma vez: diga “si mesmo, a gente”.'
+  answer:
+    speaker: protagonist
+    text: 自分[じぶん]
+  items:
+  - jibun
+- type: prompt
+  ask:
+    en: 'Once more: say “I know how you feel”.'
+    pt: 'Mais uma vez: diga “entendo o que você sente”.'
+  answer:
+    speaker: protagonist
+    text: 気持[きも]ち、 わかる
+  items:
+  - kimochi-wakaru
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “nuclear power plant — and “energy — and “saving electricity — and “solar power — and “because, so (polite reason) — and “because it''s hot — and “accident — and “a safety issue — and “in
+      favour — and “against — and “electricity bill”.'
+    pt: 'Diga: “usina nuclear — e “energia — e “economia de energia — e “energia solar — e “como, porque (motivo educado) — e “como está calor — e “acidente — e “uma questão de segurança — e “a favor —
+      e “contra — e “conta de luz”.'
+  answer:
+    speaker: protagonist
+    text: 原発[げんぱつ] … エネルギー … 節電[せつでん] … 太陽光[たいようこう] … 〜ので … 暑[あつ]い ので … 事故[じこ] … 安全[あんぜん] の 問題[もんだい] … 賛成[さんせい] … 反対[はんたい] … 電気代[でんきだい]
+  items:
+  - genpatsu
+  - enerugii
+  - setsuden
+  - taiyoukou
+  - node
+  - atsui-node
+  - jiko
+  - anzen-mondai
+  - sansei-favour
+  - hantai
+  - denkidai
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “go out, date (as a couple) — and “end up …-ing; (regret / completion) — and “I blurted it out — and “ended up (casual of てしまった) — and “okay — and “I was nervous — and “congratulations — and
+      “I got a girlfriend — and “the next — and “as expected, after all — and “dad joke, pun”.'
+    pt: 'Diga: “namorar — e “acabar …-ndo; (lamento / conclusão) — e “acabei falando — e “acabei (informal de てしまった) — e “OK — e “fiquei nervoso — e “parabéns — e “arrumei namorada — e “o próximo — e “no
+      fim, como eu imaginava — e “piada de tiozão, trocadilho”.'
+  answer:
+    speaker: protagonist
+    text: 付[つ]き合[あ]う … 〜て しまう … 言[い]って しまった … 〜ちゃった … オッケー … 緊張[きんちょう] した … おめでとう … 彼女[かのじょ] が できた … 次[つぎ] の … やっぱり … おやじ ギャグ
+  items:
+  - tsukiau
+  - te-shimau
+  - itte-shimatta
+  - chatta
+  - okkee
+  - kinchou-shita
+  - omedetou
+  - kanojo-ga-dekita
+  - tsugi-no
+  - yappari
+  - oyaji-gyagu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “funny, interesting — and “pun — and “laugh — and “joke — and “year-end party — and “this year — and “next year — and “thank you for all your help — and “I look forward to next year too —
+      and “bulky waste — and “application, booking”.'
+    pt: 'Diga: “engraçado, interessante — e “trocadilho — e “rio — e “piada, brincadeira — e “festa de fim de ano — e “este ano — e “ano que vem — e “obrigado por tudo — e “conto com vocês no ano que vem
+      — e “lixo volumoso — e “pedido, agendamento”.'
+  answer:
+    speaker: protagonist
+    text: 面白[おもしろ]い … 駄洒落[だじゃれ] … 笑[わら]います … 冗談[じょうだん] … 忘年会[ぼうねんかい] … 今年[ことし] … 来年[らいねん] … お世話[せわ] に なりました … 来年[らいねん] も よろしく お願[ねが]いします … 粗大[そだい] ごみ … 申[もう]し込[こ]み
+  items:
+  - omoshiroi
+  - dajare
+  - warau
+  - joudan
+  - bounenkai
+  - kotoshi
+  - rainen
+  - osewa
+  - yoroshiku-rainen
+  - sodai-gomi
+  - moushikomi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “collection, pickup — and “sticker ticket (paid) — and “chair — and “please don''t put it out — and “please don''t… — and “please don''t throw away — and “by phone — and “you can buy it at
+      a convenience store — and “electricity; the light — and “breaker — and “air conditioner”.'
+    pt: 'Diga: “coleta — e “adesivo pago — e “cadeira — e “não ponha para fora, por favor — e “por favor, não… — e “não jogue fora, por favor — e “por telefone — e “dá para comprar na loja de conveniência
+      — e “eletricidade; a luz — e “disjuntor — e “ar-condicionado”.'
+  answer:
+    speaker: protagonist
+    text: 回収[かいしゅう] … シール 券[けん] … 椅子[いす] … 出[だ]さないで ください … 〜ないで ください … 捨[す]てないで ください … 電話[でんわ] で … コンビニ で 買[か]えます … 電気[でんき] … ブレーカー … エアコン
+  items:
+  - kaishuu
+  - ken
+  - isu
+  - dasanaide-kudasai
+  - naide-kudasai
+  - sutenaide
+  - denwa-de
+  - konbini-de-kaemasu
+  - denki
+  - bureekaa
+  - eakon
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “turn on — and “turn off — and “is off, has gone out — and “is on — and “(the breaker) tripped — and “dark — and “100 volts — and “why — and “welcome (shop staff) — and “this, please — and
+      “please (give me)”.'
+    pt: 'Diga: “ligo — e “desligo — e “está apagado — e “está ligado — e “caiu (o disjuntor) — e “escuro — e “100 volts — e “por quê — e “bem-vindo (dito pelos funcionários) — e “isto, por favor — e “por
+      favor (me dê)”.'
+  answer:
+    speaker: protagonist
+    text: つけます … 消[け]します … 消[き]えて います … ついて います … 落[お]ちました … 暗[くら]い … 百[ひゃく] ボルト … どうして … いらっしゃいませ … これ ください … ください
+  items:
+  - tsukemasu
+  - keshimasu
+  - kiete-imasu
+  - tsuite-imasu
+  - ochimashita
+  - kurai
+  - hyaku-boruto
+  - doushite
+  - irasshaimase
+  - kore-kudasai
+  - kudasai
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “shall I heat it? — and “please (yes, do) — and “bag — and “I don''t need it — and “how much is it? — and “yen — and “hundred — and “card — and “thank you (for what was done)”.'
+    pt: 'Diga: “quer que esquente? — e “por favor (sim, faça) — e “sacola — e “não preciso — e “quanto é? — e “iene — e “cem — e “cartão — e “obrigado (pelo que foi feito)”.'
+  answer:
+    speaker: protagonist
+    text: 温[あたた]めます か … お願[ねが]いします … 袋[ふくろ] … いりません … いくら です か … 円[えん] … 百[ひゃく] … カード … ありがとう ございました
+  items:
+  - atatamemasu-ka
+  - onegaishimasu
+  - fukuro
+  - irimasen
+  - ikura
+  - en
+  - hyaku
+  - kaado
+  - arigatou-gozaimashita
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

@@ -1,0 +1,583 @@
+# UNIT ja B1-10 — written by AI (Claude) for Casus; expanded from src/B1-10.yml by tools/expand_unit.py. Edit the source.
+
+id: B1-10
+level: B1
+number: 10
+protagonist: m
+title:
+  en: Too indirect
+  pt: Indireto demais
+situation:
+  en: You proposed a new delivery schedule to Mr Yamada, the supplier. He smiled and said he'd consider it. You're pleased — until Chief Sato explains.
+  pt: Você propôs um novo cronograma de entregas ao senhor Yamada, o fornecedor. Ele sorriu e disse que ia considerar. Você ficou contente — até a chefe Sato explicar.
+learn_lessons: []
+culture: Indirect refusals
+new_items:
+- id: kentou-shimasu
+  text: 検討[けんとう] します
+  meaning:
+    en: we'll consider it
+    pt: vamos estudar
+- id: honne
+  text: 本音[ほんね]
+  meaning:
+    en: true feelings
+    pt: o que se pensa de verdade
+  rare: true
+- id: tatemae
+  text: 建前[たてまえ]
+  meaning:
+    en: the public face
+    pt: o que se diz por educação
+  rare: true
+- id: you-da
+  text: 〜よう だ
+  meaning:
+    en: it seems, apparently (from what I see)
+    pt: parece que (pelo que vejo)
+- id: dame-na-you-desu
+  text: だめ な よう です
+  meaning:
+    en: it seems it's a no
+    pt: parece que não vai dar
+- id: kotowaru
+  text: 断[ことわ]る
+  meaning:
+    en: refuse, turn down
+    pt: recusar
+- id: hakkiri
+  text: はっきり
+  meaning:
+    en: clearly, directly
+    pt: com clareza, diretamente
+- id: kuuki-wo-yomu
+  text: 空気[くうき] を 読[よ]む
+  meaning:
+    en: read the atmosphere
+    pt: ler o clima
+- id: hyoujou
+  text: 表情[ひょうじょう]
+  meaning:
+    en: facial expression
+    pt: expressão do rosto
+- id: mata-kondo
+  text: また 今度[こんど]
+  meaning:
+    en: another time
+    pt: fica para outra vez
+reviews:
+- item: gomi
+  from: A1-07
+- item: moeru-gomi
+  from: A1-07
+- item: purasuchikku
+  from: A1-07
+- item: nanyoubi
+  from: A1-07
+- item: getsuyoubi
+  from: A1-07
+- item: mokuyoubi
+  from: A1-07
+- item: dashimasu
+  from: A1-07
+- item: asa
+  from: A1-07
+- item: hachiji
+  from: A1-07
+- item: made-ni
+  from: A1-07
+- item: ki-o-tsukemasu
+  from: A1-07
+- item: waribiki
+  from: A2-09
+- item: zeikomi
+  from: A2-09
+- item: zeinuki
+  from: A2-09
+- item: hangaku
+  from: A2-09
+- item: man
+  from: A2-09
+- item: ichiman-en
+  from: A2-09
+- item: sen
+  from: A2-09
+- item: paasento
+  from: A2-09
+- item: yasui
+  from: A2-09
+- item: takai
+  from: A2-09
+- item: zenbu-de
+  from: A2-09
+- item: biyouin
+  from: A2-25
+- item: yoyaku
+  from: A2-25
+- item: mijikaku
+  from: A2-25
+- item: maegami
+  from: A2-25
+- item: kami
+  from: A2-25
+- item: kitte-kudasai
+  from: A2-25
+- item: sukoshi-dake
+  from: A2-25
+- item: karuku
+  from: A2-25
+- item: kirei-ni
+  from: A2-25
+- item: shanpuu
+  from: A2-25
+- item: kono-kurai
+  from: A2-25
+- item: saibou
+  from: B1-03
+- item: kaku
+  from: B1-03
+- item: wakareru
+  from: B1-03
+- item: seibutsu
+  from: B1-03
+- item: kenbikyou
+  from: B1-03
+- item: rareru
+  from: B1-03
+- item: tsukurareru
+  from: B1-03
+- item: hakken-sareta
+  from: B1-03
+- item: mieru
+  from: B1-03
+- item: karada
+  from: B1-03
+- item: sugoi-kazu
+  from: B1-03
+- item: gaikokujin
+  from: B1-07
+- item: mitame
+  from: B1-07
+- item: ibasho
+  from: B1-07
+- item: noni
+  from: B1-07
+- item: nihonjin-na-noni
+  from: B1-07
+- item: chuuto-hanpa
+  from: B1-07
+- item: doushite-mo
+  from: B1-07
+- item: ryouhou
+  from: B1-07
+- item: jibun
+  from: B1-07
+- item: kimochi-wakaru
+  from: B1-07
+- item: chousa
+  from: B1-09
+- item: heikin
+  from: B1-09
+- item: toukei
+  from: B1-09
+- item: kaitou
+  from: B1-09
+- item: souda-hearsay
+  from: B1-09
+- item: ooi-sou-desu
+  from: B1-09
+- item: hansuu
+  from: B1-09
+- item: wariai
+  from: B1-09
+- item: nenrei
+  from: B1-09
+- item: kekka
+  from: B1-09
+- item: ijou
+  from: B1-09
+steps:
+- type: narrator
+  text:
+    en: You proposed a new delivery schedule to Mr Yamada, the supplier. He smiled and said he'd consider it. You're pleased — until Chief Sato explains. Listen to the conversation; you don't need to understand
+      it yet.
+    pt: Você propôs um novo cronograma de entregas ao senhor Yamada, o fornecedor. Ele sorriu e disse que ia considerar. Você ficou contente — até a chefe Sato explicar. Escute a conversa; ainda não precisa
+      entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: 山田[やまだ] さん は「検討[けんとう] します」 と 言[い]いました。 よかった！
+    meaning:
+      en: Mr Yamada said “we'll consider it”. Great!
+      pt: O senhor Yamada disse «vamos estudar». Que bom!
+  - speaker: sato
+    text: うーん… それ は 断[ことわ]り の よう です ね。
+    meaning:
+      en: Hmm… that sounds like a refusal.
+      pt: Hum… isso parece uma recusa.
+  - speaker: protagonist
+    text: え？ はっきり「いいえ」 と 言[い]いません でした よ。
+    meaning:
+      en: What? He didn't clearly say “no”.
+      pt: Como? Ele não disse «não» com clareza.
+  - speaker: sato
+    text: 日本[にほん] で は、 はっきり 断[ことわ]る の は 失礼[しつれい] な ので。 表情[ひょうじょう] は どう でした か。
+    meaning:
+      en: In Japan refusing directly is rude. What was his expression like?
+      pt: No Japão recusar diretamente é falta de educação. Qual era a expressão dele?
+  - speaker: protagonist
+    text: 笑[わら]って いました けど、 ちょっと 困[こま]った よう でした。
+    meaning:
+      en: He was smiling, but he looked a bit troubled.
+      pt: Estava sorrindo, mas parecia meio sem jeito.
+  - speaker: sato
+    text: それ が 本音[ほんね] です。 言葉[ことば] は 建前[たてまえ]。
+    meaning:
+      en: That's his real feeling. The words are the polite surface.
+      pt: Esse é o que ele pensa de verdade. As palavras são a fachada educada.
+  - speaker: protagonist
+    text: 空気[くうき] を 読[よ]む の は 難[むずか]しい です ね。
+    meaning:
+      en: Reading the atmosphere is hard.
+      pt: Ler o clima é difícil.
+  - speaker: sato
+    text: 慣[な]れます よ。 また 今度[こんど]、 別[べつ] の 案[あん] を 出[だ]しましょう。
+    meaning:
+      en: You'll get used to it. Let's offer another idea another time.
+      pt: Você se acostuma. Outra hora a gente apresenta outra proposta.
+- type: prompt
+  ask:
+    en: 'Say what Mr Yamada said: we''ll consider it.'
+    pt: 'Diga o que o senhor Yamada disse: vamos estudar.'
+  answer:
+    speaker: protagonist
+    text: 検討[けんとう] します。
+  items:
+  - kentou-shimasu
+- type: prompt
+  ask:
+    en: 'Say: to refuse.'
+    pt: 'Diga: recusar.'
+  answer:
+    speaker: protagonist
+    text: 断[ことわ]る
+  items:
+  - kotowaru
+- type: prompt
+  ask:
+    en: 'Say: clearly, directly.'
+    pt: 'Diga: com clareza.'
+  answer:
+    speaker: protagonist
+    text: はっきり
+  items:
+  - hakkiri
+- type: narrator
+  text:
+    en: '«よう だ» is it seems — your guess from what you see: «困[こま]った よう でした», he looked troubled. Nouns and «な» words take «の» or «な»: «断[ことわ]り の よう です», it seems to be a refusal; «だめ な よう です», it seems
+      it''s a no.'
+    pt: '«よう だ» é parece — seu palpite pelo que você vê: «困[こま]った よう でした», parecia sem jeito. Substantivos e palavras com «な» levam «の» ou «な»: «断[ことわ]り の よう です», parece uma recusa; «だめ な よう です», parece
+      que não vai dar.'
+- type: prompt
+  ask:
+    en: 'Say the pattern: it seems.'
+    pt: 'Diga o padrão: parece que.'
+  answer:
+    speaker: protagonist
+    text: 〜よう だ
+  items:
+  - you-da
+- type: prompt
+  ask:
+    en: 'Say: it seems it''s a no.'
+    pt: 'Diga: parece que não vai dar.'
+  answer:
+    speaker: protagonist
+    text: だめ な よう です。
+  items:
+  - dame-na-you-desu
+- type: prompt
+  ask:
+    en: 'Say: facial expression.'
+    pt: 'Diga: expressão do rosto.'
+  answer:
+    speaker: protagonist
+    text: 表情[ひょうじょう]
+  items:
+  - hyoujou
+- type: prompt
+  ask:
+    en: 'Say: true feelings.'
+    pt: 'Diga: o que se pensa de verdade.'
+  answer:
+    speaker: protagonist
+    text: 本音[ほんね]
+  items:
+  - honne
+- type: prompt
+  ask:
+    en: 'Say: the public face.'
+    pt: 'Diga: a fachada educada.'
+  answer:
+    speaker: protagonist
+    text: 建前[たてまえ]
+  items:
+  - tatemae
+- type: prompt
+  ask:
+    en: 'Say: read the atmosphere.'
+    pt: 'Diga: ler o clima.'
+  answer:
+    speaker: protagonist
+    text: 空気[くうき] を 読[よ]む
+  items:
+  - kuuki-wo-yomu
+- type: prompt
+  ask:
+    en: 'Say: another time.'
+    pt: 'Diga: fica para outra vez.'
+  answer:
+    speaker: protagonist
+    text: また 今度[こんど]
+  items:
+  - mata-kondo
+- type: narrator
+  text:
+    en: '«本音[ほんね]» and «建前[たてまえ]»: what you really think and what you say to keep harmony. In business «検討[けんとう] します», «前向[まえむ]き に 考[かんが]えます» or «また 今度[こんど]» often mean no. Watch the face, the pause, the
+      «ちょっと…» — and if you must know, ask a colleague, not the client.'
+    pt: '«本音[ほんね]» e «建前[たてまえ]»: o que se pensa de verdade e o que se diz para manter a harmonia. Nos negócios, «検討[けんとう] します», «前向[まえむ]き に 考[かんが]えます» ou «また 今度[こんど]» muitas vezes querem dizer não. Repare
+      no rosto, na pausa, no «ちょっと…» — e se precisar saber, pergunte a um colega, não ao cliente.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: O brasileiro também enrola — «vamos ver», «te ligo» —, mas costuma ser mais claro no trabalho. Com japoneses, trate «vamos estudar» como um não educado até prova em contrário.
+- type: prompt
+  ask:
+    en: 'Once more: say “we''ll consider it”.'
+    pt: 'Mais uma vez: diga “vamos estudar”.'
+  answer:
+    speaker: protagonist
+    text: 検討[けんとう] します
+  items:
+  - kentou-shimasu
+- type: prompt
+  ask:
+    en: 'Once more: say “true feelings”.'
+    pt: 'Mais uma vez: diga “o que se pensa de verdade”.'
+  answer:
+    speaker: protagonist
+    text: 本音[ほんね]
+  items:
+  - honne
+- type: prompt
+  ask:
+    en: 'Once more: say “the public face”.'
+    pt: 'Mais uma vez: diga “o que se diz por educação”.'
+  answer:
+    speaker: protagonist
+    text: 建前[たてまえ]
+  items:
+  - tatemae
+- type: prompt
+  ask:
+    en: 'Once more: say “it seems, apparently (from what I see)”.'
+    pt: 'Mais uma vez: diga “parece que (pelo que vejo)”.'
+  answer:
+    speaker: protagonist
+    text: 〜よう だ
+  items:
+  - you-da
+- type: prompt
+  ask:
+    en: 'Once more: say “it seems it''s a no”.'
+    pt: 'Mais uma vez: diga “parece que não vai dar”.'
+  answer:
+    speaker: protagonist
+    text: だめ な よう です
+  items:
+  - dame-na-you-desu
+- type: prompt
+  ask:
+    en: 'Once more: say “refuse, turn down”.'
+    pt: 'Mais uma vez: diga “recusar”.'
+  answer:
+    speaker: protagonist
+    text: 断[ことわ]る
+  items:
+  - kotowaru
+- type: prompt
+  ask:
+    en: 'Once more: say “clearly, directly”.'
+    pt: 'Mais uma vez: diga “com clareza, diretamente”.'
+  answer:
+    speaker: protagonist
+    text: はっきり
+  items:
+  - hakkiri
+- type: prompt
+  ask:
+    en: 'Once more: say “read the atmosphere”.'
+    pt: 'Mais uma vez: diga “ler o clima”.'
+  answer:
+    speaker: protagonist
+    text: 空気[くうき] を 読[よ]む
+  items:
+  - kuuki-wo-yomu
+- type: prompt
+  ask:
+    en: 'Once more: say “facial expression”.'
+    pt: 'Mais uma vez: diga “expressão do rosto”.'
+  answer:
+    speaker: protagonist
+    text: 表情[ひょうじょう]
+  items:
+  - hyoujou
+- type: prompt
+  ask:
+    en: 'Once more: say “another time”.'
+    pt: 'Mais uma vez: diga “fica para outra vez”.'
+  answer:
+    speaker: protagonist
+    text: また 今度[こんど]
+  items:
+  - mata-kondo
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “survey, investigation — and “average — and “statistics — and “answer, response — and “I hear that… — and “I hear there are many — and “half (of the number) — and “proportion, rate — and “age
+      — and “result — and “or more”.'
+    pt: 'Diga: “pesquisa, levantamento — e “média — e “estatística — e “resposta — e “dizem que…, parece que (ouvi) — e “dizem que são muitos — e “metade (do total) — e “proporção — e “idade — e “resultado
+      — e “ou mais”.'
+  answer:
+    speaker: protagonist
+    text: 調査[ちょうさ] … 平均[へいきん] … 統計[とうけい] … 回答[かいとう] … 〜そう だ … 多[おお]い そう です … 半数[はんすう] … 割合[わりあい] … 年齢[ねんれい] … 結果[けっか] … 〜以上[いじょう]
+  items:
+  - chousa
+  - heikin
+  - toukei
+  - kaitou
+  - souda-hearsay
+  - ooi-sou-desu
+  - hansuu
+  - wariai
+  - nenrei
+  - kekka
+  - ijou
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “foreigner — and “appearance, looks — and “a place where you belong — and “even though (with frustration) — and “even though I''m nikkei — and “halfway, neither one nor the other — and “no
+      matter what, somehow — and “both — and “oneself — and “I know how you feel — and “cell”.'
+    pt: 'Diga: “estrangeiro — e “aparência — e “um lugar onde se pertence — e “mesmo que, apesar de (com frustração) — e “mesmo sendo nikkei — e “nem uma coisa nem outra — e “de qualquer jeito — e “os dois,
+      ambos — e “si mesmo, a gente — e “entendo o que você sente — e “célula”.'
+  answer:
+    speaker: protagonist
+    text: 外国人[がいこくじん] … 見[み]た目[め] … 居場所[いばしょ] … 〜のに … 日系[にっけい] な のに … 中途半端[ちゅうとはんぱ] … どうしても … 両方[りょうほう] … 自分[じぶん] … 気持[きも]ち、 わかる … 細胞[さいぼう]
+  items:
+  - gaikokujin
+  - mitame
+  - ibasho
+  - noni
+  - nihonjin-na-noni
+  - chuuto-hanpa
+  - doushite-mo
+  - ryouhou
+  - jibun
+  - kimochi-wakaru
+  - saibou
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “nucleus — and “divide, split — and “living thing; biology — and “microscope — and “passive (is …-ed) — and “is made — and “was discovered — and “can be seen, is visible — and “body — and
+      “an enormous number — and “hair salon”.'
+    pt: 'Diga: “núcleo — e “se dividir — e “ser vivo; biologia — e “microscópio — e “voz passiva (é …-do) — e “é feito — e “foi descoberto — e “dá para ver — e “corpo — e “um número enorme — e “salão de
+      beleza”.'
+  answer:
+    speaker: protagonist
+    text: 核[かく] … 分[わ]かれる … 生物[せいぶつ] … 顕微鏡[けんびきょう] … 〜られる … 作[つく]られる … 発見[はっけん] された … 見[み]える … 体[からだ] … すごい 数[かず] … 美容院[びよういん]
+  items:
+  - kaku
+  - wakareru
+  - seibutsu
+  - kenbikyou
+  - rareru
+  - tsukurareru
+  - hakken-sareta
+  - mieru
+  - karada
+  - sugoi-kazu
+  - biyouin
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “booking, appointment — and “short (adverb) — and “fringe, bangs — and “hair — and “please cut — and “just a little — and “lightly, lighter — and “neatly, nicely — and “shampoo; hair wash
+      — and “about this much — and “discount”.'
+    pt: 'Diga: “reserva, horário marcado — e “curto (advérbio) — e “franja — e “cabelo — e “corte, por favor — e “só um pouco — e “mais leve — e “bonito, caprichado — e “xampu; lavagem — e “mais ou menos
+      assim — e “desconto”.'
+  answer:
+    speaker: protagonist
+    text: 予約[よやく] … 短[みじか]く … 前髪[まえがみ] … 髪[かみ] … 切[き]って ください … 少[すこ]し だけ … 軽[かる]く … きれい に … シャンプー … この くらい … 割引[わりびき]
+  items:
+  - yoyaku
+  - mijikaku
+  - maegami
+  - kami
+  - kitte-kudasai
+  - sukoshi-dake
+  - karuku
+  - kirei-ni
+  - shanpuu
+  - kono-kurai
+  - waribiki
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “tax included — and “before tax — and “half price — and “ten thousand — and “10,000 yen — and “thousand — and “percent — and “cheap — and “expensive — and “altogether — and “rubbish”.'
+    pt: 'Diga: “com imposto — e “sem imposto — e “metade do preço — e “dez mil — e “10 mil ienes — e “mil — e “por cento — e “barato — e “caro — e “ao todo — e “lixo”.'
+  answer:
+    speaker: protagonist
+    text: 税込[ぜいこ]み … 税抜[ぜいぬ]き … 半額[はんがく] … 万[まん] … 一万円[いちまんえん] … 千[せん] … パーセント … 安[やす]い … 高[たか]い … 全部[ぜんぶ] で … ごみ
+  items:
+  - zeikomi
+  - zeinuki
+  - hangaku
+  - man
+  - ichiman-en
+  - sen
+  - paasento
+  - yasui
+  - takai
+  - zenbu-de
+  - gomi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “burnable rubbish — and “plastic — and “what day of the week — and “Monday — and “Thursday — and “put out (rubbish) — and “morning — and “eight o''clock — and “by (a time) — and “I''ll be
+      careful”.'
+    pt: 'Diga: “lixo queimável — e “plástico — e “que dia da semana — e “segunda-feira — e “quinta-feira — e “pôr para fora (o lixo) — e “manhã — e “oito horas — e “até (um horário) — e “vou tomar cuidado”.'
+  answer:
+    speaker: protagonist
+    text: 燃[も]える ごみ … プラスチック … 何曜日[なんようび] … 月曜日[げつようび] … 木曜日[もくようび] … 出[だ]します … 朝[あさ] … 八時[はちじ] … まで に … 気[き] を つけます
+  items:
+  - moeru-gomi
+  - purasuchikku
+  - nanyoubi
+  - getsuyoubi
+  - mokuyoubi
+  - dashimasu
+  - asa
+  - hachiji
+  - made-ni
+  - ki-o-tsukemasu
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
