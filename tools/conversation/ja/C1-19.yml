@@ -1,0 +1,613 @@
+# UNIT ja C1-19 — written by AI (Claude) for Casus; expanded from src/C1-19.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-19
+level: C1
+number: 19
+protagonist: f
+title:
+  en: The marriage registration
+  pt: O registro de casamento
+situation:
+  en: You and Shota bring the marriage registration form to city hall. Two witnesses have signed. You also need a document from your consulate.
+  pt: Você e o Shota levam o formulário de registro de casamento à prefeitura. Duas testemunhas já assinaram. Você também precisa de um documento do seu consulado.
+learn_lessons: []
+culture: Registration is the marriage
+new_items:
+- id: konintodoke
+  text: 婚姻届[こんいんとどけ]
+  meaning:
+    en: marriage registration form
+    pt: formulário de registro de casamento
+  rare: true
+- id: shounin
+  text: 証人[しょうにん]
+  meaning:
+    en: witness
+    pt: testemunha
+- id: koseki
+  text: 戸籍[こせき]
+  meaning:
+    en: family register
+    pt: registro familiar
+  rare: true
+- id: shorui
+  text: 書類[しょるい]
+  meaning:
+    en: documents, paperwork
+    pt: documentos
+- id: kisai
+  text: 記入[きにゅう]
+  meaning:
+    en: filling in (a form)
+    pt: preenchimento
+- id: teishutsu-review
+  text: 提出[ていしゅつ] する
+  meaning:
+    en: submit
+    pt: entregar
+- id: ryouji-kan-shoumei
+  text: 領事館[りょうじかん] の 証明書[しょうめいしょ]
+  meaning:
+    en: consulate certificate
+    pt: certidão do consulado
+- id: juri
+  text: 受理[じゅり]
+  meaning:
+    en: acceptance (of a filing)
+    pt: aceite (do documento)
+  rare: true
+- id: kinenbi
+  text: 記念日[きねんび]
+  meaning:
+    en: anniversary, memorial day
+    pt: data comemorativa
+- id: fuufu
+  text: 夫婦[ふうふ]
+  meaning:
+    en: married couple
+    pt: casal (casado)
+reviews:
+- item: neko
+  from: A1-12
+- item: inu
+  from: A1-12
+- item: tori
+  from: A1-12
+- item: kawaii
+  from: A1-12
+- item: imasu
+  from: A1-12
+- item: arimasu
+  from: A1-12
+- item: jinja
+  from: A1-12
+- item: nanbiki
+  from: A1-12
+- item: ooi
+  from: A1-12
+- item: sawaru
+  from: A1-12
+- item: dame
+  from: A1-12
+- item: ayamaru
+  from: B1-16
+- item: yurushite
+  from: B1-16
+- item: mou-nidoto
+  from: B1-16
+- item: you-volitional
+  from: B1-16
+- item: ayamarou
+  from: B1-16
+- item: hanasou
+  from: B1-16
+- item: ikou
+  from: B1-16
+- item: kimochi-wo-tsutaeru
+  from: B1-16
+- item: hana-wo-kaou
+  from: B1-16
+- item: chokusetsu
+  from: B1-16
+- item: hansei
+  from: B1-16
+- item: yotou
+  from: B2-18
+- item: yatou
+  from: B2-18
+- item: to-shite-mo
+  from: B2-18
+- item: hantai-da-to-shite-mo
+  from: B2-18
+- item: iken-ga-chigau
+  from: B2-18
+- item: sonchou
+  from: B2-18
+- item: seisaku
+  from: B2-18
+- item: keizai
+  from: B2-18
+- item: gaikokujin-no-shiten
+  from: B2-18
+- item: benkyou-ni-narimasu
+  from: B2-18
+- item: souon
+  from: C1-04
+- item: kujou
+  from: C1-04
+- item: kanri-gaisha
+  from: C1-04
+- item: harigami
+  from: C1-04
+- item: kanenai
+  from: C1-04
+- item: toraburu-ni-nari-kanenai
+  from: C1-04
+- item: kinjo
+  from: C1-04
+- item: ki-wo-tsukemasu-review
+  from: C1-04
+- item: kanri-kiyaku
+  from: C1-04
+- item: yoru-juuji-ikou
+  from: C1-04
+- item: taue
+  from: C1-12
+- item: tanbo
+  from: C1-12
+- item: nouka
+  from: C1-12
+- item: tetsudai
+  from: C1-12
+- item: mono-da
+  from: C1-12
+- item: yatta-mono-da
+  from: C1-12
+- item: nae
+  from: C1-12
+- item: doro
+  from: C1-12
+- item: koshi-ga-itai
+  from: C1-12
+- item: kikai-de
+  from: C1-12
+- item: aki-ni-wa
+  from: C1-12
+- item: borantia
+  from: C1-16
+- item: saigai
+  from: C1-16
+- item: dorokaki
+  from: C1-16
+- item: shien
+  from: C1-16
+- item: nagara-mo
+  from: C1-16
+- item: tsukarenagara-mo
+  from: C1-16
+- item: shinsui
+  from: C1-16
+- item: hisaisha
+  from: C1-16
+- item: nagagutsu
+  from: C1-16
+- item: netchuushou
+  from: C1-16
+- item: kokoro-no-kea
+  from: C1-16
+- item: marason
+  from: C1-18
+- item: kansou
+  from: C1-18
+- item: kinnikutsuu
+  from: C1-18
+- item: ageku
+  from: C1-18
+- item: mayotta-ageku
+  from: C1-18
+- item: gooru-review
+  from: C1-18
+- item: kyuusui
+  from: C1-18
+- item: genkai
+  from: C1-18
+- item: ganbare
+  from: C1-18
+- item: ashi-ga-tsuru
+  from: C1-18
+steps:
+- type: narrator
+  text:
+    en: You and Shota bring the marriage registration form to city hall. Two witnesses have signed. You also need a document from your consulate. Listen to the conversation; you don't need to understand
+      it yet.
+    pt: Você e o Shota levam o formulário de registro de casamento à prefeitura. Duas testemunhas já assinaram. Você também precisa de um documento do seu consulado. Escute a conversa; ainda não precisa
+      entender.
+- type: dialogue
+  lines:
+  - speaker: madoguchi
+    text: 婚姻届[こんいんとどけ] です ね。 証人[しょうにん] 二人[ふたり] の 記入[きにゅう] も ある か、 確認[かくにん] します。
+    meaning:
+      en: A marriage registration. I'll check the two witnesses have filled it in.
+      pt: Registro de casamento, certo. Vou conferir se as duas testemunhas preencheram.
+  - speaker: shota
+    text: 証人[しょうにん] は 健太[けんた] と 鈴木[すずき] さん です。
+    meaning:
+      en: The witnesses are Kenta and Mrs Suzuki.
+      pt: As testemunhas são o Kenta e a senhora Suzuki.
+  - speaker: madoguchi
+    text: 外国籍[がいこくせき] の 方[かた] は、 領事館[りょうじかん] の 証明書[しょうめいしょ] と パスポート も お願[ねが]い します。
+    meaning:
+      en: For the foreign spouse, the consulate certificate and passport as well, please.
+      pt: Para quem é estrangeiro, a certidão do consulado e o passaporte também, por favor.
+  - speaker: protagonist
+    text: はい、 書類[しょるい] は 全部[ぜんぶ] あります。 日本語[にほんご] の 訳[やく] も 付[つ]けました。
+    meaning:
+      en: Yes, I have all the documents. I attached Japanese translations too.
+      pt: Sim, estão todos os documentos aqui. Anexei a tradução em japonês também.
+  - speaker: madoguchi
+    text: …はい、 受理[じゅり] しました。 本日[ほんじつ] から ご夫婦[ふうふ] です。 おめでとう ございます。
+    meaning:
+      en: …Done, it's accepted. You're married as of today. Congratulations.
+      pt: …Pronto, foi aceito. A partir de hoje vocês são casados. Parabéns.
+  - speaker: protagonist
+    text: え、 これ で 結婚[けっこん]？ 式[しき] は まだ な のに。
+    meaning:
+      en: What, that's it — we're married? We haven't even had the ceremony.
+      pt: Ué, só isso — já estamos casados? E a cerimônia nem aconteceu ainda.
+  - speaker: shota
+    text: 日本[にほん] で は 届[とど]け を 出[だ]した 日[ひ] が 結婚[けっこん] 記念日[きねんび] な ん だ よ。 戸籍[こせき] に 記録[きろく] される。
+    meaning:
+      en: In Japan the day you file is your wedding anniversary. It's recorded in the family register.
+      pt: No Japão o dia da entrega é o aniversário de casamento. Fica registrado no registro familiar.
+  - speaker: protagonist
+    text: じゃあ、 今日[きょう] は 特別[とくべつ] な 日[ひ] だ ね。
+    meaning:
+      en: Then today's a special day.
+      pt: Então hoje é um dia especial.
+- type: prompt
+  ask:
+    en: 'Say: the marriage registration form.'
+    pt: 'Diga: o formulário de registro de casamento.'
+  answer:
+    speaker: protagonist
+    text: 婚姻届[こんいんとどけ]
+  items:
+  - konintodoke
+- type: prompt
+  ask:
+    en: 'Say: a witness.'
+    pt: 'Diga: uma testemunha.'
+  answer:
+    speaker: protagonist
+    text: 証人[しょうにん]
+  items:
+  - shounin
+- type: prompt
+  ask:
+    en: 'Say: filling in a form.'
+    pt: 'Diga: preenchimento.'
+  answer:
+    speaker: protagonist
+    text: 記入[きにゅう]
+  items:
+  - kisai
+- type: prompt
+  ask:
+    en: 'Say: documents.'
+    pt: 'Diga: documentos.'
+  answer:
+    speaker: protagonist
+    text: 書類[しょるい]
+  items:
+  - shorui
+- type: prompt
+  ask:
+    en: 'Say: the consulate certificate.'
+    pt: 'Diga: a certidão do consulado.'
+  answer:
+    speaker: protagonist
+    text: 領事館[りょうじかん] の 証明書[しょうめいしょ]
+  items:
+  - ryouji-kan-shoumei
+- type: prompt
+  ask:
+    en: 'Say: submit.'
+    pt: 'Diga: entregar.'
+  answer:
+    speaker: protagonist
+    text: 提出[ていしゅつ] する
+  items:
+  - teishutsu-review
+- type: prompt
+  ask:
+    en: 'Say: acceptance of a filing.'
+    pt: 'Diga: o aceite do documento.'
+  answer:
+    speaker: protagonist
+    text: 受理[じゅり]
+  items:
+  - juri
+- type: prompt
+  ask:
+    en: 'Say: the family register.'
+    pt: 'Diga: o registro familiar.'
+  answer:
+    speaker: protagonist
+    text: 戸籍[こせき]
+  items:
+  - koseki
+- type: prompt
+  ask:
+    en: 'Say: a married couple.'
+    pt: 'Diga: um casal casado.'
+  answer:
+    speaker: protagonist
+    text: 夫婦[ふうふ]
+  items:
+  - fuufu
+- type: prompt
+  ask:
+    en: 'Say: an anniversary.'
+    pt: 'Diga: data comemorativa.'
+  answer:
+    speaker: protagonist
+    text: 記念日[きねんび]
+  items:
+  - kinenbi
+- type: narrator
+  text:
+    en: 'Official forms use fixed words: «記入[きにゅう]» fill in, «提出[ていしゅつ]» submit, «受理[じゅり]» accepted, «本日[ほんじつ]» today (formal). In Japan a marriage is legal the moment the «婚姻届[こんいんとどけ]» is accepted at
+      city hall — the ceremony is optional and has no legal weight.'
+    pt: 'Os formulários oficiais usam palavras fixas: «記入[きにゅう]» preencher, «提出[ていしゅつ]» entregar, «受理[じゅり]» aceito, «本日[ほんじつ]» hoje (formal). No Japão o casamento é legal no momento em que o «婚姻届[こんいんとどけ]»
+      é aceito na prefeitura — a cerimônia é opcional e não tem valor legal.'
+- type: narrator
+  text:
+    en: The form needs two adult witnesses. A foreign spouse also brings a passport and a certificate from their consulate showing they are free to marry, with a Japanese translation. Foreigners have no
+      «戸籍[こせき]»; the marriage is recorded in the Japanese spouse's register.
+    pt: O formulário precisa de duas testemunhas adultas. O cônjuge estrangeiro leva também o passaporte e uma certidão do consulado mostrando que está livre para casar, com tradução para o japonês. Estrangeiros
+      não têm «戸籍[こせき]»; o casamento fica registrado no do cônjuge japonês.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil o casamento civil tem juiz de paz, proclamas e cerimônia no cartório. No Japão é um papel entregue no balcão — e depois é preciso registrar o casamento também no consulado brasileiro.
+- type: prompt
+  ask:
+    en: 'Once more: say “marriage registration form”.'
+    pt: 'Mais uma vez: diga “formulário de registro de casamento”.'
+  answer:
+    speaker: protagonist
+    text: 婚姻届[こんいんとどけ]
+  items:
+  - konintodoke
+- type: prompt
+  ask:
+    en: 'Once more: say “witness”.'
+    pt: 'Mais uma vez: diga “testemunha”.'
+  answer:
+    speaker: protagonist
+    text: 証人[しょうにん]
+  items:
+  - shounin
+- type: prompt
+  ask:
+    en: 'Once more: say “family register”.'
+    pt: 'Mais uma vez: diga “registro familiar”.'
+  answer:
+    speaker: protagonist
+    text: 戸籍[こせき]
+  items:
+  - koseki
+- type: prompt
+  ask:
+    en: 'Once more: say “documents, paperwork”.'
+    pt: 'Mais uma vez: diga “documentos”.'
+  answer:
+    speaker: protagonist
+    text: 書類[しょるい]
+  items:
+  - shorui
+- type: prompt
+  ask:
+    en: 'Once more: say “filling in (a form)”.'
+    pt: 'Mais uma vez: diga “preenchimento”.'
+  answer:
+    speaker: protagonist
+    text: 記入[きにゅう]
+  items:
+  - kisai
+- type: prompt
+  ask:
+    en: 'Once more: say “submit”.'
+    pt: 'Mais uma vez: diga “entregar”.'
+  answer:
+    speaker: protagonist
+    text: 提出[ていしゅつ] する
+  items:
+  - teishutsu-review
+- type: prompt
+  ask:
+    en: 'Once more: say “consulate certificate”.'
+    pt: 'Mais uma vez: diga “certidão do consulado”.'
+  answer:
+    speaker: protagonist
+    text: 領事館[りょうじかん] の 証明書[しょうめいしょ]
+  items:
+  - ryouji-kan-shoumei
+- type: prompt
+  ask:
+    en: 'Once more: say “acceptance (of a filing)”.'
+    pt: 'Mais uma vez: diga “aceite (do documento)”.'
+  answer:
+    speaker: protagonist
+    text: 受理[じゅり]
+  items:
+  - juri
+- type: prompt
+  ask:
+    en: 'Once more: say “anniversary, memorial day”.'
+    pt: 'Mais uma vez: diga “data comemorativa”.'
+  answer:
+    speaker: protagonist
+    text: 記念日[きねんび]
+  items:
+  - kinenbi
+- type: prompt
+  ask:
+    en: 'Once more: say “married couple”.'
+    pt: 'Mais uma vez: diga “casal (casado)”.'
+  answer:
+    speaker: protagonist
+    text: 夫婦[ふうふ]
+  items:
+  - fuufu
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “marathon — and “finishing (a race) — and “muscle ache — and “after much…, in the end (bad) — and “after getting lost for ages — and “finish line — and “water station — and “limit — and “come
+      on! (cheering) — and “get a leg cramp — and “volunteer — and “disaster — and “shovelling mud”.'
+    pt: 'Diga: “maratona — e “completar (a prova) — e “dor muscular — e “depois de muito…, acabou que (mal) — e “depois de se perder muito — e “linha de chegada — e “posto de água — e “limite — e “vai!
+      força! (torcendo) — e “dar cãibra na perna — e “voluntário — e “desastre — e “tirar lama”.'
+  answer:
+    speaker: protagonist
+    text: マラソン … 完走[かんそう] … 筋肉痛[きんにくつう] … 〜あげく … 迷[まよ]った あげく … ゴール 地点[ちてん] … 給水[きゅうすい] … 限界[げんかい] … 頑張[がんば]れ！ … 足[あし] が つる … ボランティア … 災害[さいがい] … 泥[どろ] かき
+  items:
+  - marason
+  - kansou
+  - kinnikutsuu
+  - ageku
+  - mayotta-ageku
+  - gooru-review
+  - kyuusui
+  - genkai
+  - ganbare
+  - ashi-ga-tsuru
+  - borantia
+  - saigai
+  - dorokaki
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “support, aid — and “although, while (contrast) — and “although tired — and “flooding (of a house) — and “disaster victim — and “rubber boots — and “heatstroke — and “emotional care — and
+      “rice planting — and “rice paddy — and “farmer, farming family — and “help — and “used to (with nostalgia); that''s how it is”.'
+    pt: 'Diga: “apoio, ajuda — e “embora, apesar de — e “embora cansado — e “alagamento — e “vítima do desastre — e “galochas — e “insolação — e “apoio emocional — e “plantio de arroz — e “arrozal — e “agricultor,
+      família de agricultores — e “ajuda — e “costumava (com saudade); é assim mesmo”.'
+  answer:
+    speaker: protagonist
+    text: 支援[しえん] … 〜ながら も … 疲[つか]れながら も … 浸水[しんすい] … 被災者[ひさいしゃ] … 長靴[ながぐつ] … 熱中症[ねっちゅうしょう] … 心[こころ] の ケア … 田植[たう]え … 田[た]んぼ … 農家[のうか] … 手伝[てつだ]い … 〜もの だ
+  items:
+  - shien
+  - nagara-mo
+  - tsukarenagara-mo
+  - shinsui
+  - hisaisha
+  - nagagutsu
+  - netchuushou
+  - kokoro-no-kea
+  - taue
+  - tanbo
+  - nouka
+  - tetsudai
+  - mono-da
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “we used to do it a lot — and “seedling — and “mud — and “my back hurts — and “by machine — and “in autumn — and “noise — and “complaint — and “management company — and “notice (posted) —
+      and “could well (bad result) — and “could turn into trouble — and “neighbourhood, neighbours”.'
+    pt: 'Diga: “a gente fazia muito — e “muda — e “lama — e “minhas costas doem — e “com máquina — e “no outono — e “barulho — e “queixa, reclamação — e “administradora — e “aviso (colado) — e “pode acabar
+      (resultado ruim) — e “pode virar problema — e “vizinhança”.'
+  answer:
+    speaker: protagonist
+    text: よく やった もの だ … 苗[なえ] … 泥[どろ] … 腰[こし] が 痛[いた]い … 機械[きかい] で … 秋[あき] に は … 騒音[そうおん] … 苦情[くじょう] … 管理[かんり] 会社[がいしゃ] … 張[は]り紙[がみ] … 〜かねない … トラブル に なり かねない … 近所[きんじょ]
+  items:
+  - yatta-mono-da
+  - nae
+  - doro
+  - koshi-ga-itai
+  - kikai-de
+  - aki-ni-wa
+  - souon
+  - kujou
+  - kanri-gaisha
+  - harigami
+  - kanenai
+  - toraburu-ni-nari-kanenai
+  - kinjo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I''ll be careful from now on — and “building rules — and “after 10 p.m. — and “ruling party — and “opposition party — and “even if, even supposing — and “even if (you) disagree — and “have
+      different opinions — and “respect (for a view) — and “policy — and “economy — and “a foreigner''s point of view — and “that''s very instructive”.'
+    pt: 'Diga: “daqui em diante vou tomar cuidado — e “regulamento do prédio — e “depois das 22h — e “partido do governo — e “oposição — e “mesmo que, ainda que — e “mesmo que discorde — e “ter opiniões
+      diferentes — e “respeito (a uma opinião) — e “política (medida) — e “economia — e “o ponto de vista de um estrangeiro — e “aprendo muito com isso”.'
+  answer:
+    speaker: protagonist
+    text: 以後[いご] 気[き] を つけます … 管理[かんり] 規約[きやく] … 夜[よる] 十時[じゅうじ] 以降[いこう] … 与党[よとう] … 野党[やとう] … 〜と して も … 反対[はんたい] だ と して も … 意見[いけん] が 違[ちが]う … 尊重[そんちょう] … 政策[せいさく] … 経済[けいざい] … 外国人[がいこくじん] の 視点[してん] … 勉強[べんきょう]
+      に なります
+  items:
+  - ki-wo-tsukemasu-review
+  - kanri-kiyaku
+  - yoru-juuji-ikou
+  - yotou
+  - yatou
+  - to-shite-mo
+  - hantai-da-to-shite-mo
+  - iken-ga-chigau
+  - sonchou
+  - seisaku
+  - keizai
+  - gaikokujin-no-shiten
+  - benkyou-ni-narimasu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “apologise — and “forgive me — and “never again — and “let''s (plain volitional) — and “let''s apologise; I''ll apologise — and “let''s talk — and “let''s go (plain) — and “convey your feelings
+      — and “let''s buy flowers — and “directly, in person — and “reflecting on a mistake — and “cat — and “dog”.'
+    pt: 'Diga: “pedir desculpas — e “me perdoa — e “nunca mais — e “vamos (volitivo simples) — e “vamos pedir desculpas; vou pedir desculpas — e “vamos conversar — e “vamos (simples) — e “dizer o que sente
+      — e “vamos comprar flores — e “pessoalmente — e “reconhecer o erro, refletir — e “gato — e “cachorro”.'
+  answer:
+    speaker: protagonist
+    text: 謝[あやま]る … 許[ゆる]して … もう 二度[にど] と … 〜よう … 謝[あやま]ろう … 話[はな]そう … 行[い]こう … 気持[きも]ち を 伝[つた]える … 花[はな] を 買[か]おう … 直接[ちょくせつ] … 反省[はんせい] … 猫[ねこ] … 犬[いぬ]
+  items:
+  - ayamaru
+  - yurushite
+  - mou-nidoto
+  - you-volitional
+  - ayamarou
+  - hanasou
+  - ikou
+  - kimochi-wo-tsutaeru
+  - hana-wo-kaou
+  - chokusetsu
+  - hansei
+  - neko
+  - inu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “bird — and “cute — and “there is (living things) — and “there is (things) — and “shrine — and “how many (animals) — and “many — and “may I touch? — and “no good, not allowed”.'
+    pt: 'Diga: “pássaro — e “fofo — e “há, tem (seres vivos) — e “há, tem (coisas) — e “santuário — e “quantos (animais) — e “muitos — e “posso tocar? — e “não pode”.'
+  answer:
+    speaker: protagonist
+    text: 鳥[とり] … かわいい … います … あります … 神社[じんじゃ] … 何匹[なんびき] … 多[おお]い … 触[さわ]っても いい です か … だめ
+  items:
+  - tori
+  - kawaii
+  - imasu
+  - arimasu
+  - jinja
+  - nanbiki
+  - ooi
+  - sawaru
+  - dame
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
