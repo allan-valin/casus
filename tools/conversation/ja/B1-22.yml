@@ -1,0 +1,610 @@
+# UNIT ja B1-22 — written by AI (Claude) for Casus; expanded from src/B1-22.yml by tools/expand_unit.py. Edit the source.
+
+id: B1-22
+level: B1
+number: 22
+protagonist: m
+title:
+  en: The news
+  pt: As notícias
+situation:
+  en: Dinner at Mrs Suzuki's with the evening news on. An election is coming. You ask about it — carefully.
+  pt: Jantar na casa da senhora Suzuki com o noticiário ligado. Vem aí uma eleição. Você pergunta sobre isso — com cuidado.
+learn_lessons: []
+culture: Politics carefully
+new_items:
+- id: nyuusu
+  text: ニュース
+  meaning:
+    en: the news
+    pt: o noticiário, as notícias
+- id: senkyo
+  text: 選挙[せんきょ]
+  meaning:
+    en: election
+    pt: eleição
+- id: shushou
+  text: 首相[しゅしょう]
+  meaning:
+    en: prime minister
+    pt: primeiro-ministro
+- id: seitou
+  text: 政党[せいとう]
+  meaning:
+    en: political party
+    pt: partido político
+- id: ni-yoru-to
+  text: 〜に よる と
+  meaning:
+    en: according to…
+    pt: segundo…, de acordo com…
+- id: nyuusu-ni-yoru-to
+  text: ニュース に よる と
+  meaning:
+    en: according to the news
+    pt: segundo o noticiário
+- id: touhyou
+  text: 投票[とうひょう]
+  meaning:
+    en: voting, a vote
+    pt: votação, voto
+- id: touhyouritsu
+  text: 投票率[とうひょうりつ]
+  meaning:
+    en: turnout
+    pt: comparecimento às urnas
+  rare: true
+- id: seiji
+  text: 政治[せいじ]
+  meaning:
+    en: politics
+    pt: política
+- id: kokkai
+  text: 国会[こっかい]
+  meaning:
+    en: the Diet (parliament)
+    pt: o parlamento (Dieta)
+  rare: true
+- id: gimu
+  text: 義務[ぎむ]
+  meaning:
+    en: obligation, duty
+    pt: obrigação
+reviews:
+- item: chotto
+  from: A1-19
+- item: muzukashii-desu
+  from: A1-19
+- item: yasumi
+  from: A1-19
+- item: kinyoubi
+  from: A1-19
+- item: ryoujikan
+  from: A1-19
+- item: kangaete-okimasu
+  from: A1-19
+- item: isogashii
+  from: A1-19
+- item: dou-shite-mo
+  from: A1-19
+- item: gozen
+  from: A1-19
+- item: daijoubu-desu
+  from: A1-19
+- item: hinan
+  from: A2-21
+- item: hinanjo
+  from: A2-21
+- item: bousai
+  from: A2-21
+- item: hijou-bukuro
+  from: A2-21
+- item: te-oku
+  from: A2-21
+- item: junbi-shite-oku
+  from: A2-21
+- item: katte-oku
+  from: A2-21
+- item: kaichuu-dentou
+  from: A2-21
+- item: mizu-mikka
+  from: A2-21
+- item: tsunami
+  from: A2-21
+- item: takai-tokoro
+  from: A2-21
+- item: gaikokujin
+  from: B1-07
+- item: mitame
+  from: B1-07
+- item: ibasho
+  from: B1-07
+- item: noni
+  from: B1-07
+- item: nihonjin-na-noni
+  from: B1-07
+- item: chuuto-hanpa
+  from: B1-07
+- item: doushite-mo
+  from: B1-07
+- item: ryouhou
+  from: B1-07
+- item: jibun
+  from: B1-07
+- item: kimochi-wakaru
+  from: B1-07
+- item: jiyuu
+  from: B1-15
+- item: kousoku
+  from: B1-15
+- item: kami-no-iro
+  from: B1-15
+- item: nakute-mo-ii
+  from: B1-15
+- item: somenakute-mo-ii
+  from: B1-15
+- item: kibishii
+  from: B1-15
+- item: kinshi
+  from: B1-15
+- item: jige
+  from: B1-15
+- item: kawatta
+  from: B1-15
+- item: koukou
+  from: B1-15
+- item: sukaato
+  from: B1-15
+- item: taifuu
+  from: B1-19
+- item: chuushi
+  from: B1-19
+- item: yotei
+  from: B1-19
+- item: enki
+  from: B1-19
+- item: you-to-omotte-ita
+  from: B1-19
+- item: ikou-to-omotte-ita
+  from: B1-19
+- item: unkyuu
+  from: B1-19
+- item: kyouto
+  from: B1-19
+- item: zannen
+  from: B1-19
+- item: anzen-daiichi
+  from: B1-19
+- item: kyanseru
+  from: B1-19
+- item: shi
+  from: B1-21
+- item: shijin
+  from: B1-21
+- item: miyazawa-kenji
+  from: B1-21
+- item: ame-nimo-makezu
+  from: B1-21
+- item: kaze-nimo-makezu
+  from: B1-21
+- item: zu
+  from: B1-21
+- item: makenai
+  from: B1-21
+- item: joubu
+  from: B1-21
+- item: bungaku
+  from: B1-21
+- item: kotoba
+  from: B1-21
+- item: kandou
+  from: B1-21
+steps:
+- type: narrator
+  text:
+    en: Dinner at Mrs Suzuki's with the evening news on. An election is coming. You ask about it — carefully. Listen to the conversation; you don't need to understand it yet.
+    pt: Jantar na casa da senhora Suzuki com o noticiário ligado. Vem aí uma eleição. Você pergunta sobre isso — com cuidado. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: suzuki
+    text: 来月[らいげつ]、 選挙[せんきょ] が あります よ。
+    meaning:
+      en: There's an election next month.
+      pt: Mês que vem tem eleição.
+  - speaker: protagonist
+    text: ニュース に よる と、 新[あたら]しい 首相[しゅしょう] が 決[き]まる かも しれない ん です ね。
+    meaning:
+      en: According to the news, a new prime minister might be decided.
+      pt: Segundo o noticiário, pode ser que se defina um novo primeiro-ministro.
+  - speaker: suzuki
+    text: ええ。 でも 若[わか]い 人[ひと] は あまり 投票[とうひょう] に 行[い]きません。
+    meaning:
+      en: Yes. But young people don't vote much.
+      pt: Sim. Mas os jovens votam pouco.
+  - speaker: protagonist
+    text: ブラジル で は 投票[とうひょう] は 義務[ぎむ] です。
+    meaning:
+      en: In Brazil voting is compulsory.
+      pt: No Brasil votar é obrigatório.
+  - speaker: suzuki
+    text: まあ、 そう です か。 日本[にほん] は 自由[じゆう] です。 投票率[とうひょうりつ] は 低[ひく]い です けど。
+    meaning:
+      en: Oh, is it? In Japan it's voluntary. Turnout is low, though.
+      pt: É mesmo? No Japão é livre. Só que o comparecimento é baixo.
+  - speaker: protagonist
+    text: 鈴木[すずき] さん は どの 政党[せいとう] が…
+    meaning:
+      en: Which party do you…
+      pt: A senhora apoia qual partido…
+  - speaker: suzuki
+    text: ふふ、 それ は 秘密[ひみつ] です。 政治[せいじ] の 話[はなし] は 家族[かぞく] と だけ。
+    meaning:
+      en: Heh, that's a secret. Politics I only talk about with family.
+      pt: Rá, isso é segredo. Política, só com a família.
+  - speaker: protagonist
+    text: すみません。 外国人[がいこくじん] は 投票[とうひょう] できません けど、 ニュース は 見[み]ます。
+    meaning:
+      en: Sorry. Foreigners can't vote, but I do watch the news.
+      pt: Desculpe. Estrangeiro não vota, mas eu acompanho o noticiário.
+- type: prompt
+  ask:
+    en: 'Say: the news.'
+    pt: 'Diga: o noticiário.'
+  answer:
+    speaker: protagonist
+    text: ニュース
+  items:
+  - nyuusu
+- type: narrator
+  text:
+    en: '«に よる と» gives your source: «ニュース に よる と», according to the news. It goes well with hearsay endings: «〜 そう です», «〜 らしい», «〜 かも しれない» — might.'
+    pt: '«に よる と» dá a fonte: «ニュース に よる と», segundo o noticiário. Combina com as terminações de ouvir dizer: «〜 そう です», «〜 らしい», «〜 かも しれない» — pode ser que.'
+- type: prompt
+  ask:
+    en: 'Say the pattern: according to…'
+    pt: 'Diga o padrão: segundo…'
+  answer:
+    speaker: protagonist
+    text: 〜に よる と
+  items:
+  - ni-yoru-to
+- type: prompt
+  ask:
+    en: 'Say: according to the news.'
+    pt: 'Diga: segundo o noticiário.'
+  answer:
+    speaker: protagonist
+    text: ニュース に よる と
+  items:
+  - nyuusu-ni-yoru-to
+- type: prompt
+  ask:
+    en: 'Say: an election.'
+    pt: 'Diga: uma eleição.'
+  answer:
+    speaker: protagonist
+    text: 選挙[せんきょ]
+  items:
+  - senkyo
+- type: prompt
+  ask:
+    en: 'Say: the prime minister.'
+    pt: 'Diga: o primeiro-ministro.'
+  answer:
+    speaker: protagonist
+    text: 首相[しゅしょう]
+  items:
+  - shushou
+- type: prompt
+  ask:
+    en: 'Say: a political party.'
+    pt: 'Diga: um partido político.'
+  answer:
+    speaker: protagonist
+    text: 政党[せいとう]
+  items:
+  - seitou
+- type: prompt
+  ask:
+    en: 'Say: politics.'
+    pt: 'Diga: política.'
+  answer:
+    speaker: protagonist
+    text: 政治[せいじ]
+  items:
+  - seiji
+- type: prompt
+  ask:
+    en: 'Say: the parliament, the Diet.'
+    pt: 'Diga: o parlamento.'
+  answer:
+    speaker: protagonist
+    text: 国会[こっかい]
+  items:
+  - kokkai
+- type: prompt
+  ask:
+    en: 'Say: voting.'
+    pt: 'Diga: votação.'
+  answer:
+    speaker: protagonist
+    text: 投票[とうひょう]
+  items:
+  - touhyou
+- type: prompt
+  ask:
+    en: 'Say: turnout.'
+    pt: 'Diga: comparecimento às urnas.'
+  answer:
+    speaker: protagonist
+    text: 投票率[とうひょうりつ]
+  items:
+  - touhyouritsu
+- type: prompt
+  ask:
+    en: 'Say: an obligation.'
+    pt: 'Diga: uma obrigação.'
+  answer:
+    speaker: protagonist
+    text: 義務[ぎむ]
+  items:
+  - gimu
+- type: narrator
+  text:
+    en: Voting in Japan is voluntary, and turnout among young people is often low. Foreign residents cannot vote. Many Japanese avoid politics outside the family, so asking someone's party is personal —
+      let them offer it.
+    pt: No Japão votar é facultativo, e o comparecimento dos jovens costuma ser baixo. Estrangeiros residentes não votam. Muitos japoneses evitam política fora da família, então perguntar o partido de alguém
+      é pessoal — deixe que a pessoa conte se quiser.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil, voto obrigatório e discussão política no churrasco. No Japão, voto livre e o assunto guardado para casa — pergunte de leve, como o protagonista.
+- type: prompt
+  ask:
+    en: 'Once more: say “the news”.'
+    pt: 'Mais uma vez: diga “o noticiário, as notícias”.'
+  answer:
+    speaker: protagonist
+    text: ニュース
+  items:
+  - nyuusu
+- type: prompt
+  ask:
+    en: 'Once more: say “election”.'
+    pt: 'Mais uma vez: diga “eleição”.'
+  answer:
+    speaker: protagonist
+    text: 選挙[せんきょ]
+  items:
+  - senkyo
+- type: prompt
+  ask:
+    en: 'Once more: say “prime minister”.'
+    pt: 'Mais uma vez: diga “primeiro-ministro”.'
+  answer:
+    speaker: protagonist
+    text: 首相[しゅしょう]
+  items:
+  - shushou
+- type: prompt
+  ask:
+    en: 'Once more: say “political party”.'
+    pt: 'Mais uma vez: diga “partido político”.'
+  answer:
+    speaker: protagonist
+    text: 政党[せいとう]
+  items:
+  - seitou
+- type: prompt
+  ask:
+    en: 'Once more: say “according to…”.'
+    pt: 'Mais uma vez: diga “segundo…, de acordo com…”.'
+  answer:
+    speaker: protagonist
+    text: 〜に よる と
+  items:
+  - ni-yoru-to
+- type: prompt
+  ask:
+    en: 'Once more: say “according to the news”.'
+    pt: 'Mais uma vez: diga “segundo o noticiário”.'
+  answer:
+    speaker: protagonist
+    text: ニュース に よる と
+  items:
+  - nyuusu-ni-yoru-to
+- type: prompt
+  ask:
+    en: 'Once more: say “voting, a vote”.'
+    pt: 'Mais uma vez: diga “votação, voto”.'
+  answer:
+    speaker: protagonist
+    text: 投票[とうひょう]
+  items:
+  - touhyou
+- type: prompt
+  ask:
+    en: 'Once more: say “turnout”.'
+    pt: 'Mais uma vez: diga “comparecimento às urnas”.'
+  answer:
+    speaker: protagonist
+    text: 投票率[とうひょうりつ]
+  items:
+  - touhyouritsu
+- type: prompt
+  ask:
+    en: 'Once more: say “politics”.'
+    pt: 'Mais uma vez: diga “política”.'
+  answer:
+    speaker: protagonist
+    text: 政治[せいじ]
+  items:
+  - seiji
+- type: prompt
+  ask:
+    en: 'Once more: say “the Diet (parliament)”.'
+    pt: 'Mais uma vez: diga “o parlamento (Dieta)”.'
+  answer:
+    speaker: protagonist
+    text: 国会[こっかい]
+  items:
+  - kokkai
+- type: prompt
+  ask:
+    en: 'Once more: say “obligation, duty”.'
+    pt: 'Mais uma vez: diga “obrigação”.'
+  answer:
+    speaker: protagonist
+    text: 義務[ぎむ]
+  items:
+  - gimu
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “poem — and “poet — and “Miyazawa Kenji (poet, 1896–1933) — and “not losing to the rain — and “not losing to the wind — and “not (old written negative) — and “not lose, not give in — and “sturdy,
+      strong — and “literature — and “words, language”.'
+    pt: 'Diga: “poema — e “poeta — e “Miyazawa Kenji (poeta, 1896–1933) — e “sem se render à chuva — e “sem se render ao vento — e “não (negativo escrito antigo) — e “não perder, não se render — e “forte,
+      resistente — e “literatura — e “palavras, linguagem”.'
+  answer:
+    speaker: protagonist
+    text: 詩[し] … 詩人[しじん] … 宮沢[みやざわ] 賢治[けんじ] … 雨[あめ] ニモ マケズ … 風[かぜ] ニモ マケズ … 〜ず … 負[ま]けない … 丈夫[じょうぶ] … 文学[ぶんがく] … 言葉[ことば]
+  items:
+  - shi
+  - shijin
+  - miyazawa-kenji
+  - ame-nimo-makezu
+  - kaze-nimo-makezu
+  - zu
+  - makenai
+  - joubu
+  - bungaku
+  - kotoba
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “being moved — and “typhoon — and “cancellation, called off — and “plan, schedule — and “postponement — and “I was going to…, I''d planned to… — and “I was planning to go — and “(train) service
+      suspended — and “Kyoto — and “what a pity”.'
+    pt: 'Diga: “emoção, comoção — e “tufão — e “cancelamento — e “plano, programação — e “adiamento — e “eu pretendia…, ia… — e “eu ia, pretendia ir — e “serviço suspenso — e “Kyoto — e “que pena”.'
+  answer:
+    speaker: protagonist
+    text: 感動[かんどう] … 台風[たいふう] … 中止[ちゅうし] … 予定[よてい] … 延期[えんき] … 〜よう と 思[おも]って いた … 行[い]こう と 思[おも]って いた … 運休[うんきゅう] … 京都[きょうと] … 残念[ざんねん]
+  items:
+  - kandou
+  - taifuu
+  - chuushi
+  - yotei
+  - enki
+  - you-to-omotte-ita
+  - ikou-to-omotte-ita
+  - unkyuu
+  - kyouto
+  - zannen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “safety first — and “cancel (a booking) — and “freedom, free — and “school rules — and “hair colour — and “don''t have to — and “don''t have to dye — and “strict — and “forbidden — and “natural
+      hair (colour)”.'
+    pt: 'Diga: “segurança em primeiro lugar — e “cancelar (reserva) — e “liberdade, livre — e “regulamento da escola — e “cor do cabelo — e “não precisa — e “não precisa tingir — e “rígido — e “proibido
+      — e “cabelo natural”.'
+  answer:
+    speaker: protagonist
+    text: 安全[あんぜん] 第一[だいいち] … キャンセル … 自由[じゆう] … 校則[こうそく] … 髪[かみ] の 色[いろ] … 〜なくて も いい … 染[そ]めなくて も いい … 厳[きび]しい … 禁止[きんし] … 地毛[じげ]
+  items:
+  - anzen-daiichi
+  - kyanseru
+  - jiyuu
+  - kousoku
+  - kami-no-iro
+  - nakute-mo-ii
+  - somenakute-mo-ii
+  - kibishii
+  - kinshi
+  - jige
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “changed — and “high school — and “skirt — and “foreigner — and “appearance, looks — and “a place where you belong — and “even though (with frustration) — and “even though I''m nikkei — and
+      “halfway, neither one nor the other — and “no matter what, somehow”.'
+    pt: 'Diga: “mudou — e “ensino médio, colégio — e “saia — e “estrangeiro — e “aparência — e “um lugar onde se pertence — e “mesmo que, apesar de (com frustração) — e “mesmo sendo nikkei — e “nem uma
+      coisa nem outra — e “de qualquer jeito”.'
+  answer:
+    speaker: protagonist
+    text: 変[か]わった … 高校[こうこう] … スカート … 外国人[がいこくじん] … 見[み]た目[め] … 居場所[いばしょ] … 〜のに … 日系[にっけい] な のに … 中途半端[ちゅうとはんぱ] … どうしても
+  items:
+  - kawatta
+  - koukou
+  - sukaato
+  - gaikokujin
+  - mitame
+  - ibasho
+  - noni
+  - nihonjin-na-noni
+  - chuuto-hanpa
+  - doushite-mo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “both — and “oneself — and “I know how you feel — and “evacuation — and “evacuation shelter — and “disaster prevention — and “emergency grab bag — and “do in advance — and “I''ll get it ready
+      in advance — and “I''ll buy it in advance”.'
+    pt: 'Diga: “os dois, ambos — e “si mesmo, a gente — e “entendo o que você sente — e “evacuação — e “abrigo de evacuação — e “prevenção de desastres — e “mochila de emergência — e “deixar feito, preparar
+      antes — e “vou deixar preparado — e “vou comprar antes”.'
+  answer:
+    speaker: protagonist
+    text: 両方[りょうほう] … 自分[じぶん] … 気持[きも]ち、 わかる … 避難[ひなん] … 避難所[ひなんじょ] … 防災[ぼうさい] … 非常[ひじょう] 持[も]ち出[だ]し 袋[ぶくろ] … 〜て おく … 準備[じゅんび] して おきます … 買[か]って おきます
+  items:
+  - ryouhou
+  - jibun
+  - kimochi-wakaru
+  - hinan
+  - hinanjo
+  - bousai
+  - hijou-bukuro
+  - te-oku
+  - junbi-shite-oku
+  - katte-oku
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “torch, flashlight — and “three days'' water — and “tsunami — and “high ground — and “a little… (a soft no) — and “that''s difficult (often: no) — and “day off, holiday — and “Friday — and
+      “consulate — and “I''ll think about it”.'
+    pt: 'Diga: “lanterna — e “água para três dias — e “tsunami — e “lugar alto — e “um pouco… (um não suave) — e “é difícil (muitas vezes: não) — e “folga, feriado — e “sexta-feira — e “consulado — e “vou
+      pensar”.'
+  answer:
+    speaker: protagonist
+    text: 懐中[かいちゅう] 電灯[でんとう] … 三日分[みっかぶん] の 水[みず] … 津波[つなみ] … 高[たか]い 所[ところ] … ちょっと… … 難[むずか]しい です ね … 休[やす]み … 金曜日[きんようび] … 領事館[りょうじかん] … 考[かんが]えて おきます
+  items:
+  - kaichuu-dentou
+  - mizu-mikka
+  - tsunami
+  - takai-tokoro
+  - chotto
+  - muzukashii-desu
+  - yasumi
+  - kinyoubi
+  - ryoujikan
+  - kangaete-okimasu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “busy — and “no matter what, really need to — and “morning, a.m. — and “that''s fine”.'
+    pt: 'Diga: “ocupado — e “de qualquer jeito, preciso mesmo — e “manhã, de manhã — e “tudo bem”.'
+  answer:
+    speaker: protagonist
+    text: 忙[いそが]しい … どうしても … 午前[ごぜん] … 大丈夫[だいじょうぶ] です
+  items:
+  - isogashii
+  - dou-shite-mo
+  - gozen
+  - daijoubu-desu
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

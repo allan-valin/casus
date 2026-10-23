@@ -1,0 +1,43 @@
+id: B1-21
+protagonist: f
+title: ["Literature", "Literatura"]
+situation: ["Mrs Suzuki keeps a poem by Miyazawa Kenji framed in her kitchen. She reads it aloud and explains the old written style.", "A senhora Suzuki tem um poema de Miyazawa Kenji emoldurado na cozinha. Ela lê em voz alta e explica o estilo escrito antigo."]
+learn: []
+culture: —
+items:
+  - [shi, "詩[し]", "poem", "poema"]
+  - [shijin, "詩人[しじん]", "poet", "poeta"]
+  - [miyazawa-kenji, "宮沢[みやざわ] 賢治[けんじ]", "Miyazawa Kenji (poet, 1896–1933)", "Miyazawa Kenji (poeta, 1896–1933)", {rare: true}]
+  - [ame-nimo-makezu, "雨[あめ] ニモ マケズ", "not losing to the rain", "sem se render à chuva", {rare: true}]
+  - [kaze-nimo-makezu, "風[かぜ] ニモ マケズ", "not losing to the wind", "sem se render ao vento", {rare: true}]
+  - [zu, "〜ず", "not (old written negative)", "não (negativo escrito antigo)"]
+  - [makenai, "負[ま]けない", "not lose, not give in", "não perder, não se render"]
+  - [joubu, "丈夫[じょうぶ]", "sturdy, strong", "forte, resistente"]
+  - [bungaku, "文学[ぶんがく]", "literature", "literatura"]
+  - [kotoba, "言葉[ことば]", "words, language", "palavras, linguagem"]
+  - [kandou, "感動[かんどう]", "being moved", "emoção, comoção"]
+dialogue:
+  - [suzuki, "これ は 宮沢[みやざわ] 賢治[けんじ] の 詩[し] です。 読[よ]みます ね。", "This is a poem by Miyazawa Kenji. I'll read it.", "Este é um poema de Miyazawa Kenji. Vou ler."]
+  - [suzuki, "雨[あめ] ニモ マケズ、 風[かぜ] ニモ マケズ、 雪[ゆき] ニモ 夏[なつ] ノ 暑[あつ]サ ニモ マケヌ、 丈夫[じょうぶ] ナ カラダ ヲ モチ…", "Not losing to the rain, not losing to the wind, not losing to the snow nor the summer heat, with a sturdy body…", "Sem se render à chuva, sem se render ao vento, sem se render à neve nem ao calor do verão, com um corpo forte…"]
+  - [protagonist, "カタカナ が 多[おお]い です ね。 「マケズ」 は 何[なん] です か。", "There's a lot of katakana. What's “makezu”?", "Tem muito katakana. O que é «makezu»?"]
+  - [suzuki, "昔[むかし] の 言葉[ことば] で「負[ま]けない」 と いう 意味[いみ] です。", "It's old language for “not losing”.", "É linguagem antiga para «não se render»."]
+  - [protagonist, "どんな 詩人[しじん] でした か。", "What kind of poet was he?", "Que tipo de poeta ele era?"]
+  - [suzuki, "東北[とうほく] の 先生[せんせい] で、 農家[のうか] の ため に 働[はたら]きました。 この 詩[し] は 手帳[てちょう] に 書[か]かれて いた ん です よ。", "A teacher in Tōhoku who worked for farmers. This poem was found written in his notebook.", "Um professor de Tōhoku que trabalhou pelos agricultores. Este poema foi encontrado escrito num caderninho dele."]
+  - [protagonist, "感動[かんどう] しました。 日本[にほん] の 文学[ぶんがく] を もっと 読[よ]みたい です。", "I'm moved. I want to read more Japanese literature.", "Fiquei emocionada. Quero ler mais literatura japonesa."]
+  - [suzuki, "地震[じしん] の 後[あと]、 たくさん の 人[ひと] が この 詩[し] を 読[よ]みました よ。", "After the earthquake, many people read this poem.", "Depois do terremoto, muita gente leu este poema."]
+teach:
+  - ask: ["Say: a poem.", "Diga: um poema.", "詩[し]", shi]
+  - ask: ["Say: a poet.", "Diga: um poeta.", "詩人[しじん]", shijin]
+  - ask: ["Say: literature.", "Diga: literatura.", "文学[ぶんがく]", bungaku]
+  - ask: ["Say his name: Miyazawa Kenji.", "Diga o nome dele: Miyazawa Kenji.", "宮沢[みやざわ] 賢治[けんじ]", miyazawa-kenji]
+  - note: ["Old written Japanese makes the negative with «ず» (and «ぬ»): «負[ま]けず» is «負[ま]けない», not losing. You still hear it in set phrases: «思[おも]わず», without thinking; «知[し]らず に», without knowing. Kenji wrote the poem in katakana, as telegrams and notes often were then.", "O japonês escrito antigo faz o negativo com «ず» (e «ぬ»): «負[ま]けず» é «負[ま]けない», sem se render. Ainda se ouve em expressões: «思[おも]わず», sem pensar; «知[し]らず に», sem saber. Kenji escreveu o poema em katakana, como se escreviam telegramas e anotações na época."]
+  - ask: ["Say the old negative ending.", "Diga a terminação negativa antiga.", "〜ず", zu]
+  - ask: ["Say it in today's Japanese: not lose.", "Diga no japonês de hoje: não se render.", "負[ま]けない", makenai]
+  - build: [ame-nimo-makezu, ["マケズ", "ニモ マケズ", "雨[あめ] ニモ マケズ"]]
+  - ask: ["Recite the first line: not losing to the rain.", "Recite o primeiro verso: sem se render à chuva.", "雨[あめ] ニモ マケズ", ame-nimo-makezu]
+  - ask: ["And the second: not losing to the wind.", "E o segundo: sem se render ao vento.", "風[かぜ] ニモ マケズ", kaze-nimo-makezu]
+  - ask: ["Say: sturdy, strong.", "Diga: forte, resistente.", "丈夫[じょうぶ]", joubu]
+  - ask: ["Say: words, language.", "Diga: palavras, linguagem.", "言葉[ことば]", kotoba]
+  - ask: ["Say: I'm moved.", "Diga: fiquei emocionada.", "感動[かんどう] しました。", kandou]
+  - note: ["«雨[あめ] ニモ マケズ» was found in Miyazawa Kenji's notebook after his death in 1933; today it is in the public domain and known to almost every Japanese person. After the 2011 earthquake and tsunami in Tōhoku, his home region, it was read aloud across the country.", "«雨[あめ] ニモ マケズ» foi encontrado no caderninho de Miyazawa Kenji depois da morte dele, em 1933; hoje está em domínio público e quase todo japonês conhece. Depois do terremoto e do tsunami de 2011 em Tōhoku, a terra dele, foi lido em voz alta pelo país inteiro."]
+  - pt_only: "É um pouco como «E agora, José?» de Drummond para nós: um poema que todo mundo reconhece. O de Kenji fala de ser forte e simples, e de ajudar os outros sem querer elogio."

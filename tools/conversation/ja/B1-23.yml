@@ -1,0 +1,615 @@
+# UNIT ja B1-23 — written by AI (Claude) for Casus; expanded from src/B1-23.yml by tools/expand_unit.py. Edit the source.
+
+id: B1-23
+level: B1
+number: 23
+protagonist: f
+title:
+  en: The konbini at night
+  pt: O konbini à noite
+situation:
+  en: Midnight at the convenience store. The clerk is Lucas, a Brazilian from Londrina, studying a Japanese textbook between customers. The manager is restocking.
+  pt: Meia-noite na loja de conveniência. O atendente é o Lucas, um brasileiro de Londrina, estudando um livro de japonês entre um cliente e outro. O gerente está repondo as prateleiras.
+learn_lessons: []
+culture: Foreign workers — a social problem
+new_items:
+- id: yakin
+  text: 夜勤[やきん]
+  meaning:
+    en: night shift
+    pt: turno da noite
+- id: gaikokujin-roudousha
+  text: 外国人[がいこくじん] 労働者[ろうどうしゃ]
+  meaning:
+    en: foreign workers
+    pt: trabalhadores estrangeiros
+  rare: true
+- id: nagara
+  text: 〜ながら
+  meaning:
+    en: while (doing two things)
+    pt: enquanto (fazendo duas coisas)
+- id: benkyou-shinagara
+  text: 勉強[べんきょう] しながら
+  meaning:
+    en: while studying
+    pt: enquanto estuda
+- id: hatarakinagara
+  text: 働[はたら]きながら
+  meaning:
+    en: while working
+    pt: enquanto trabalha
+- id: jikyuu
+  text: 時給[じきゅう]
+  meaning:
+    en: hourly wage
+    pt: salário por hora
+- id: hitode-busoku
+  text: 人手[ひとで] 不足[ぶそく]
+  meaning:
+    en: labour shortage
+    pt: falta de mão de obra
+- id: ryuugakusei
+  text: 留学生[りゅうがくせい]
+  meaning:
+    en: international student
+    pt: estudante estrangeiro
+- id: taihen
+  text: 大変[たいへん]
+  meaning:
+    en: tough, hard
+    pt: puxado, difícil
+- id: nemui
+  text: 眠[ねむ]い
+  meaning:
+    en: sleepy
+    pt: com sono
+- id: tasukaru
+  text: 助[たす]かります
+  meaning:
+    en: it's a big help
+    pt: ajuda muito
+reviews:
+- item: raamen
+  from: A1-20
+- item: tabetai
+  from: A1-20
+- item: nomitai
+  from: A1-20
+- item: tai
+  from: A1-20
+- item: karai
+  from: A1-20
+- item: atsui-food
+  from: A1-20
+- item: kenbaiki
+  from: A1-20
+- item: oomori
+  from: A1-20
+- item: susuru
+  from: A1-20
+- item: onaka-suita
+  from: A1-20
+- item: nani-ga-ii
+  from: A1-20
+- item: sodai-gomi
+  from: A2-22
+- item: moushikomi
+  from: A2-22
+- item: kaishuu
+  from: A2-22
+- item: ken
+  from: A2-22
+- item: isu
+  from: A2-22
+- item: dasanaide-kudasai
+  from: A2-22
+- item: naide-kudasai
+  from: A2-22
+- item: sutenaide
+  from: A2-22
+- item: denwa-de
+  from: A2-22
+- item: konbini-de-kaemasu
+  from: A2-22
+- item: kekkonshiki
+  from: B1-08
+- item: hirouen
+  from: B1-08
+- item: goshuugi
+  from: B1-08
+- item: fuutou
+  from: B1-08
+- item: shinsatsu
+  from: B1-08
+- item: ireru
+  from: B1-08
+- item: sanman-en
+  from: B1-08
+- item: guusuu
+  from: B1-08
+- item: wakareru-imi
+  from: B1-08
+- item: hikidemono
+  from: B1-08
+- item: omedetou-gozaimasu
+  from: B1-08
+- item: ayamaru
+  from: B1-16
+- item: yurushite
+  from: B1-16
+- item: mou-nidoto
+  from: B1-16
+- item: you-volitional
+  from: B1-16
+- item: ayamarou
+  from: B1-16
+- item: hanasou
+  from: B1-16
+- item: ikou
+  from: B1-16
+- item: kimochi-wo-tsutaeru
+  from: B1-16
+- item: hana-wo-kaou
+  from: B1-16
+- item: chokusetsu
+  from: B1-16
+- item: hansei
+  from: B1-16
+- item: saifu
+  from: B1-20
+- item: daremo
+  from: B1-20
+- item: dareka
+  from: B1-20
+- item: kouban
+  from: B1-20
+- item: otoshimono
+  from: B1-20
+- item: nakushita
+  from: B1-20
+- item: nanimo-nai
+  from: B1-20
+- item: dokoka
+  from: B1-20
+- item: todokemasu
+  from: B1-20
+- item: kakunin-shite
+  from: B1-20
+- item: shinjirarenai
+  from: B1-20
+- item: nyuusu
+  from: B1-22
+- item: senkyo
+  from: B1-22
+- item: shushou
+  from: B1-22
+- item: seitou
+  from: B1-22
+- item: ni-yoru-to
+  from: B1-22
+- item: nyuusu-ni-yoru-to
+  from: B1-22
+- item: touhyou
+  from: B1-22
+- item: touhyouritsu
+  from: B1-22
+- item: seiji
+  from: B1-22
+- item: kokkai
+  from: B1-22
+- item: gimu
+  from: B1-22
+steps:
+- type: narrator
+  text:
+    en: Midnight at the convenience store. The clerk is Lucas, a Brazilian from Londrina, studying a Japanese textbook between customers. The manager is restocking. Listen to the conversation; you don't
+      need to understand it yet.
+    pt: Meia-noite na loja de conveniência. O atendente é o Lucas, um brasileiro de Londrina, estudando um livro de japonês entre um cliente e outro. O gerente está repondo as prateleiras. Escute a conversa;
+      ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: あれ、 ブラジル の 人[ひと]？ 夜勤[やきん]、 大変[たいへん] でしょう。
+    meaning:
+      en: Oh, are you Brazilian? The night shift must be tough.
+      pt: Opa, você é brasileiro? O turno da noite deve ser puxado.
+  - speaker: lucas
+    text: うん、 ちょっと 眠[ねむ]い。 でも 働[はたら]きながら 日本語[にほんご] を 勉強[べんきょう] して る。
+    meaning:
+      en: Yeah, a bit sleepy. But I study Japanese while I work.
+      pt: É, dá um soninho. Mas estudo japonês enquanto trabalho.
+  - speaker: protagonist
+    text: すごい！ 時給[じきゅう] は いい の？
+    meaning:
+      en: Great! Is the hourly pay good?
+      pt: Que legal! O salário por hora é bom?
+  - speaker: lucas
+    text: 夜[よる] は 少[すこ]し 高[たか]い。 昼[ひる] は 学校[がっこう]。
+    meaning:
+      en: A bit higher at night. School in the day.
+      pt: À noite é um pouco mais alto. De dia, escola.
+  - speaker: tencho
+    text: ルーカス くん、 よく 頑張[がんば]って くれる ん です よ。 人手[ひとで] 不足[ぶそく] だ から、 本当[ほんとう] に 助[たす]かります。
+    meaning:
+      en: Lucas works really hard for us. We're short of staff, so it's a big help.
+      pt: O Lucas se esforça muito. Está faltando gente, então ajuda demais.
+  - speaker: protagonist
+    text: 外国人[がいこくじん] 労働者[ろうどうしゃ] は 増[ふ]えて います か。
+    meaning:
+      en: Are foreign workers increasing?
+      pt: Os trabalhadores estrangeiros estão aumentando?
+  - speaker: tencho
+    text: ええ。 コンビニ も 工場[こうじょう] も、 留学生[りゅうがくせい] や 外国[がいこく] の 人[ひと] が いない と 回[まわ]りません。
+    meaning:
+      en: Yes. Konbini and factories can't run without international students and foreign workers.
+      pt: Sim. Loja de conveniência e fábrica não funcionam sem estudantes e trabalhadores estrangeiros.
+  - speaker: lucas
+    text: でも 言葉[ことば] や ビザ の 問題[もんだい] も ある。 簡単[かんたん] じゃ ない よ。
+    meaning:
+      en: But there are language and visa problems too. It's not easy.
+      pt: Mas tem o problema da língua e do visto também. Não é fácil.
+- type: prompt
+  ask:
+    en: 'Say: the night shift.'
+    pt: 'Diga: o turno da noite.'
+  answer:
+    speaker: protagonist
+    text: 夜勤[やきん]
+  items:
+  - yakin
+- type: prompt
+  ask:
+    en: 'Say: sleepy.'
+    pt: 'Diga: com sono.'
+  answer:
+    speaker: protagonist
+    text: 眠[ねむ]い
+  items:
+  - nemui
+- type: prompt
+  ask:
+    en: 'Say: tough, hard.'
+    pt: 'Diga: puxado.'
+  answer:
+    speaker: protagonist
+    text: 大変[たいへん]
+  items:
+  - taihen
+- type: narrator
+  text:
+    en: '«〜ながら» is doing two things at once: the verb stem plus «ながら» — «働[はたら]きながら», while working; «勉強[べんきょう] しながら», while studying. The main action comes last: «働[はたら]きながら 勉強[べんきょう] する», study while
+      working.'
+    pt: '«〜ながら» é fazer duas coisas ao mesmo tempo: radical do verbo mais «ながら» — «働[はたら]きながら», enquanto trabalha; «勉強[べんきょう] しながら», enquanto estuda. A ação principal vem por último: «働[はたら]きながら 勉強[べんきょう]
+      する», estudar enquanto trabalha.'
+- type: prompt
+  ask:
+    en: 'Say the ending: while.'
+    pt: 'Diga a terminação: enquanto.'
+  answer:
+    speaker: protagonist
+    text: 〜ながら
+  items:
+  - nagara
+- type: prompt
+  ask:
+    en: 'Say: while working.'
+    pt: 'Diga: enquanto trabalha.'
+  answer:
+    speaker: protagonist
+    text: 働[はたら]きながら
+  items:
+  - hatarakinagara
+- type: prompt
+  ask:
+    en: 'Say: while studying.'
+    pt: 'Diga: enquanto estuda.'
+  answer:
+    speaker: protagonist
+    text: 勉強[べんきょう] しながら
+  items:
+  - benkyou-shinagara
+- type: prompt
+  ask:
+    en: 'Say: the hourly wage.'
+    pt: 'Diga: o salário por hora.'
+  answer:
+    speaker: protagonist
+    text: 時給[じきゅう]
+  items:
+  - jikyuu
+- type: prompt
+  ask:
+    en: 'Say: labour shortage.'
+    pt: 'Diga: falta de mão de obra.'
+  answer:
+    speaker: protagonist
+    text: 人手[ひとで] 不足[ぶそく]
+  items:
+  - hitode-busoku
+- type: prompt
+  ask:
+    en: 'Say: foreign workers.'
+    pt: 'Diga: trabalhadores estrangeiros.'
+  answer:
+    speaker: protagonist
+    text: 外国人[がいこくじん] 労働者[ろうどうしゃ]
+  items:
+  - gaikokujin-roudousha
+- type: prompt
+  ask:
+    en: 'Say: an international student.'
+    pt: 'Diga: um estudante estrangeiro.'
+  answer:
+    speaker: protagonist
+    text: 留学生[りゅうがくせい]
+  items:
+  - ryuugakusei
+- type: prompt
+  ask:
+    en: 'Say: it''s a big help.'
+    pt: 'Diga: ajuda muito.'
+  answer:
+    speaker: protagonist
+    text: 助[たす]かります。
+  items:
+  - tasukaru
+- type: narrator
+  text:
+    en: With an ageing population, Japan depends more and more on foreign workers — in convenience stores, factories, farms and care homes. Many are students allowed to work limited hours. Long hours, language
+      barriers and visa rules make it hard; it is one of the country's big debates.
+    pt: Com a população envelhecendo, o Japão depende cada vez mais de trabalhadores estrangeiros — em lojas de conveniência, fábricas, lavouras e casas de repouso. Muitos são estudantes que podem trabalhar
+      um número limitado de horas. Jornada longa, barreira da língua e regras de visto tornam tudo difícil; é um dos grandes debates do país.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'Para os brasileiros de Hamamatsu, isso não é novidade: desde 1990 a comunidade trabalha nas fábricas. Hoje divide o espaço com vietnamitas, nepaleses, filipinos e muitos outros.'
+- type: prompt
+  ask:
+    en: 'Once more: say “night shift”.'
+    pt: 'Mais uma vez: diga “turno da noite”.'
+  answer:
+    speaker: protagonist
+    text: 夜勤[やきん]
+  items:
+  - yakin
+- type: prompt
+  ask:
+    en: 'Once more: say “foreign workers”.'
+    pt: 'Mais uma vez: diga “trabalhadores estrangeiros”.'
+  answer:
+    speaker: protagonist
+    text: 外国人[がいこくじん] 労働者[ろうどうしゃ]
+  items:
+  - gaikokujin-roudousha
+- type: prompt
+  ask:
+    en: 'Once more: say “while (doing two things)”.'
+    pt: 'Mais uma vez: diga “enquanto (fazendo duas coisas)”.'
+  answer:
+    speaker: protagonist
+    text: 〜ながら
+  items:
+  - nagara
+- type: prompt
+  ask:
+    en: 'Once more: say “while studying”.'
+    pt: 'Mais uma vez: diga “enquanto estuda”.'
+  answer:
+    speaker: protagonist
+    text: 勉強[べんきょう] しながら
+  items:
+  - benkyou-shinagara
+- type: prompt
+  ask:
+    en: 'Once more: say “while working”.'
+    pt: 'Mais uma vez: diga “enquanto trabalha”.'
+  answer:
+    speaker: protagonist
+    text: 働[はたら]きながら
+  items:
+  - hatarakinagara
+- type: prompt
+  ask:
+    en: 'Once more: say “hourly wage”.'
+    pt: 'Mais uma vez: diga “salário por hora”.'
+  answer:
+    speaker: protagonist
+    text: 時給[じきゅう]
+  items:
+  - jikyuu
+- type: prompt
+  ask:
+    en: 'Once more: say “labour shortage”.'
+    pt: 'Mais uma vez: diga “falta de mão de obra”.'
+  answer:
+    speaker: protagonist
+    text: 人手[ひとで] 不足[ぶそく]
+  items:
+  - hitode-busoku
+- type: prompt
+  ask:
+    en: 'Once more: say “international student”.'
+    pt: 'Mais uma vez: diga “estudante estrangeiro”.'
+  answer:
+    speaker: protagonist
+    text: 留学生[りゅうがくせい]
+  items:
+  - ryuugakusei
+- type: prompt
+  ask:
+    en: 'Once more: say “tough, hard”.'
+    pt: 'Mais uma vez: diga “puxado, difícil”.'
+  answer:
+    speaker: protagonist
+    text: 大変[たいへん]
+  items:
+  - taihen
+- type: prompt
+  ask:
+    en: 'Once more: say “sleepy”.'
+    pt: 'Mais uma vez: diga “com sono”.'
+  answer:
+    speaker: protagonist
+    text: 眠[ねむ]い
+  items:
+  - nemui
+- type: prompt
+  ask:
+    en: 'Once more: say “it''s a big help”.'
+    pt: 'Mais uma vez: diga “ajuda muito”.'
+  answer:
+    speaker: protagonist
+    text: 助[たす]かります
+  items:
+  - tasukaru
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the news — and “election — and “prime minister — and “political party — and “according to… — and “according to the news — and “voting, a vote — and “turnout — and “politics — and “the Diet
+      (parliament)”.'
+    pt: 'Diga: “o noticiário, as notícias — e “eleição — e “primeiro-ministro — e “partido político — e “segundo…, de acordo com… — e “segundo o noticiário — e “votação, voto — e “comparecimento às urnas
+      — e “política — e “o parlamento (Dieta)”.'
+  answer:
+    speaker: protagonist
+    text: ニュース … 選挙[せんきょ] … 首相[しゅしょう] … 政党[せいとう] … 〜に よる と … ニュース に よる と … 投票[とうひょう] … 投票率[とうひょうりつ] … 政治[せいじ] … 国会[こっかい]
+  items:
+  - nyuusu
+  - senkyo
+  - shushou
+  - seitou
+  - ni-yoru-to
+  - nyuusu-ni-yoru-to
+  - touhyou
+  - touhyouritsu
+  - seiji
+  - kokkai
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “obligation, duty — and “wallet — and “nobody — and “someone — and “police box — and “lost item — and “I lost (it) — and “nothing — and “somewhere — and “(someone) handed it in”.'
+    pt: 'Diga: “obrigação — e “carteira — e “ninguém — e “alguém — e “posto policial — e “objeto perdido — e “perdi — e “nada — e “em algum lugar — e “(alguém) entregou”.'
+  answer:
+    speaker: protagonist
+    text: 義務[ぎむ] … 財布[さいふ] … 誰[だれ] も 〜ない … 誰[だれ] か … 交番[こうばん] … 落[お]とし物[もの] … なくしました … 何[なに] も ない … どこ か … 届[とど]けて くれました
+  items:
+  - gimu
+  - saifu
+  - daremo
+  - dareka
+  - kouban
+  - otoshimono
+  - nakushita
+  - nanimo-nai
+  - dokoka
+  - todokemasu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “check the contents — and “I can''t believe it — and “apologise — and “forgive me — and “never again — and “let''s (plain volitional) — and “let''s apologise; I''ll apologise — and “let''s
+      talk — and “let''s go (plain) — and “convey your feelings”.'
+    pt: 'Diga: “confira o que tem dentro — e “não acredito — e “pedir desculpas — e “me perdoa — e “nunca mais — e “vamos (volitivo simples) — e “vamos pedir desculpas; vou pedir desculpas — e “vamos conversar
+      — e “vamos (simples) — e “dizer o que sente”.'
+  answer:
+    speaker: protagonist
+    text: 中身[なかみ] を 確認[かくにん] して … 信[しん]じられない … 謝[あやま]る … 許[ゆる]して … もう 二度[にど] と … 〜よう … 謝[あやま]ろう … 話[はな]そう … 行[い]こう … 気持[きも]ち を 伝[つた]える
+  items:
+  - kakunin-shite
+  - shinjirarenai
+  - ayamaru
+  - yurushite
+  - mou-nidoto
+  - you-volitional
+  - ayamarou
+  - hanasou
+  - ikou
+  - kimochi-wo-tsutaeru
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “let''s buy flowers — and “directly, in person — and “reflecting on a mistake — and “wedding (ceremony) — and “wedding reception — and “wedding gift money — and “envelope — and “new (crisp)
+      banknotes — and “may put in — and “30,000 yen”.'
+    pt: 'Diga: “vamos comprar flores — e “pessoalmente — e “reconhecer o erro, refletir — e “casamento (cerimônia) — e “festa de casamento — e “dinheiro de presente de casamento — e “envelope — e “notas
+      novas — e “pode colocar — e “30 mil ienes”.'
+  answer:
+    speaker: protagonist
+    text: 花[はな] を 買[か]おう … 直接[ちょくせつ] … 反省[はんせい] … 結婚式[けっこんしき] … 披露宴[ひろうえん] … ご祝儀[しゅうぎ] … 封筒[ふうとう] … 新札[しんさつ] … 入[い]れて も いい … 三万円[さんまんえん]
+  items:
+  - hana-wo-kaou
+  - chokusetsu
+  - hansei
+  - kekkonshiki
+  - hirouen
+  - goshuugi
+  - fuutou
+  - shinsatsu
+  - ireru
+  - sanman-en
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “even number — and “the meaning of splitting up — and “return gift for guests — and “congratulations (polite) — and “bulky waste — and “application, booking — and “collection, pickup — and
+      “sticker ticket (paid) — and “chair — and “please don''t put it out”.'
+    pt: 'Diga: “número par — e “o sentido de se separar — e “lembrança para os convidados — e “parabéns (educado) — e “lixo volumoso — e “pedido, agendamento — e “coleta — e “adesivo pago — e “cadeira —
+      e “não ponha para fora, por favor”.'
+  answer:
+    speaker: protagonist
+    text: 偶数[ぐうすう] … 別[わか]れる 意味[いみ] … 引[ひ]き出[で]物[もの] … おめでとう ございます … 粗大[そだい] ごみ … 申[もう]し込[こ]み … 回収[かいしゅう] … シール 券[けん] … 椅子[いす] … 出[だ]さないで ください
+  items:
+  - guusuu
+  - wakareru-imi
+  - hikidemono
+  - omedetou-gozaimasu
+  - sodai-gomi
+  - moushikomi
+  - kaishuu
+  - ken
+  - isu
+  - dasanaide-kudasai
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “please don''t… — and “please don''t throw away — and “by phone — and “you can buy it at a convenience store — and “ramen — and “I want to eat — and “I want to drink — and “want to (do) —
+      and “spicy hot — and “hot (to the touch, food)”.'
+    pt: 'Diga: “por favor, não… — e “não jogue fora, por favor — e “por telefone — e “dá para comprar na loja de conveniência — e “lámen — e “quero comer — e “quero beber — e “quero (fazer) — e “apimentado
+      — e “quente (ao toque, comida)”.'
+  answer:
+    speaker: protagonist
+    text: 〜ないで ください … 捨[す]てないで ください … 電話[でんわ] で … コンビニ で 買[か]えます … ラーメン … 食[た]べたい です … 飲[の]みたい です … 〜たい です … 辛[から]い … 熱[あつ]い
+  items:
+  - naide-kudasai
+  - sutenaide
+  - denwa-de
+  - konbini-de-kaemasu
+  - raamen
+  - tabetai
+  - nomitai
+  - tai
+  - karai
+  - atsui-food
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “ticket machine — and “large portion — and “slurp — and “I''m hungry — and “what''s good? what would you like?”.'
+    pt: 'Diga: “máquina de tíquetes — e “porção grande — e “sorver fazendo barulho — e “estou com fome — e “o que é bom? o que você quer?”.'
+  answer:
+    speaker: protagonist
+    text: 券売機[けんばいき] … 大盛[おおも]り … すすります … お腹[なか] が 空[す]きました … 何[なに] が いい です か
+  items:
+  - kenbaiki
+  - oomori
+  - susuru
+  - onaka-suita
+  - nani-ga-ii
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

@@ -1,0 +1,43 @@
+id: B1-24
+protagonist: m
+title: ["Languages", "Línguas"]
+situation: ["Aya is surprised that you learned three scripts in a year. Then you surprise her: some Japanese words came from Portuguese.", "A Aya fica surpresa porque você aprendeu três escritas em um ano. Aí você surpreende ela: algumas palavras japonesas vieram do português."]
+learn: []
+culture: パン came from Portuguese
+items:
+  - [gairaigo, "外来語[がいらいご]", "loanword", "palavra estrangeira, empréstimo"]
+  - [porutogaru, "ポルトガル", "Portugal", "Portugal"]
+  - [tabako, "タバコ", "tobacco, cigarette", "tabaco, cigarro"]
+  - [karuta, "カルタ", "playing cards (karuta)", "cartas (karuta)", {rare: true}]
+  - [botan, "ボタン", "button", "botão"]
+  - [koto-ni-suru, "〜こと に する", "decide to…", "decidir…"]
+  - [yomu-koto-ni-shita, "毎日[まいにち] 読[よ]む こと に した", "I decided to read every day", "decidi ler todo dia"]
+  - [moji, "文字[もじ]", "script, letters", "escrita, letras"]
+  - [gogen, "語源[ごげん]", "origin of a word", "origem da palavra", {rare: true}]
+  - [shiranakatta, "知[し]らなかった", "I didn't know", "eu não sabia"]
+  - [rekishi, "歴史[れきし]", "history", "história"]
+dialogue:
+  - [aya, "一年[いちねん] で ひらがな も カタカナ も 漢字[かんじ] も？ すごい！", "Hiragana, katakana and kanji in a year? Amazing!", "Hiragana, katakana e kanji em um ano? Demais!"]
+  - [protagonist, "漢字[かんじ] は まだ まだ。 だから 毎日[まいにち] 十[じゅう] 個[こ] 覚[おぼ]える こと に した。", "Kanji, not yet. So I decided to learn ten a day.", "Kanji, ainda falta. Por isso decidi aprender dez por dia."]
+  - [aya, "えらい！ 日本語[にほんご] の 文字[もじ] は 三[みっ]つ も ある から ね。", "Good for you! Japanese has three scripts, after all.", "Muito bem! O japonês tem três escritas, né?"]
+  - [protagonist, "でも 知[し]って た？ パン は ポルトガル語[ご] から 来[き]た 外来語[がいらいご] だ よ。", "But did you know? Pan is a loanword from Portuguese.", "Mas você sabia? Pan é uma palavra que veio do português."]
+  - [aya, "え、 パン が？ 知[し]らなかった！", "What, pan? I didn't know!", "Quê, pan? Eu não sabia!"]
+  - [protagonist, "タバコ も カルタ も ボタン も そう。 ポルトガル の 船[ふね] が 来[き]た 時代[じだい] の 言葉[ことば]。", "Tabako, karuta and botan too. Words from when the Portuguese ships came.", "Tabako, karuta e botan também. Palavras da época em que os navios portugueses chegaram."]
+  - [aya, "語源[ごげん] って 面白[おもしろ]い ね。 歴史[れきし] が 見[み]える。", "Word origins are fun. You can see history in them.", "Origem das palavras é interessante. Dá para ver a história."]
+  - [protagonist, "ありがとう は オブリガード から？ って よく 聞[き]かれる けど、 それ は 違[ちが]う らしい。", "People often ask if arigatō comes from obrigado, but apparently it doesn't.", "Sempre me perguntam se arigatō vem de obrigado, mas parece que não."]
+teach:
+  - ask: ["Say: script, letters.", "Diga: escrita, letras.", "文字[もじ]", moji]
+  - note: ["«〜こと に する» is deciding: a plain verb plus «こと に する». «覚[おぼ]える こと に した» — I decided to learn. Compare «〜こと に なる», it was decided (by circumstances).", "«〜こと に する» é decidir: verbo simples mais «こと に する». «覚[おぼ]える こと に した» — decidi aprender. Compare com «〜こと に なる», ficou decidido (pelas circunstâncias)."]
+  - ask: ["Say the pattern: decide to…", "Diga o padrão: decidir…", "〜こと に する", koto-ni-suru]
+  - build: [yomu-koto-ni-shita, ["した", "こと に した", "毎日[まいにち] 読[よ]む こと に した"]]
+  - ask: ["Say: I decided to read every day.", "Diga: decidi ler todo dia.", "毎日[まいにち] 読[よ]む こと に した。", yomu-koto-ni-shita]
+  - ask: ["Say: a loanword.", "Diga: palavra estrangeira.", "外来語[がいらいご]", gairaigo]
+  - ask: ["Say: Portugal.", "Diga: Portugal.", "ポルトガル", porutogaru]
+  - ask: ["Say: tobacco.", "Diga: tabaco.", "タバコ", tabako]
+  - ask: ["Say: playing cards.", "Diga: cartas.", "カルタ", karuta]
+  - ask: ["Say: a button.", "Diga: um botão.", "ボタン", botan]
+  - ask: ["Say: the origin of a word.", "Diga: origem da palavra.", "語源[ごげん]", gogen]
+  - ask: ["Say: history.", "Diga: história.", "歴史[れきし]", rekishi]
+  - ask: ["Say: I didn't know.", "Diga: eu não sabia.", "知[し]らなかった。", shiranakatta]
+  - note: ["Portuguese traders and missionaries reached Japan in 1543 and left words still used today: «パン» from pão, «タバコ» from tabaco, «カルタ» from carta, «ボタン» from botão. «ありがとう», though, is older Japanese, from «有[あ]り難[がた]い» — rare, precious — not from obrigado.", "Comerciantes e missionários portugueses chegaram ao Japão em 1543 e deixaram palavras usadas até hoje: «パン» de pão, «タバコ» de tabaco, «カルタ» de carta, «ボタン» de botão. Já «ありがとう» é japonês mais antigo, de «有[あ]り難[がた]い» — raro, precioso — e não vem de obrigado."]
+  - pt_only: "O português foi a primeira língua europeia a chegar ao Japão. Quando você pede «パン» na padaria da Maria, está falando a palavra que os navegantes levaram há quase 500 anos."
