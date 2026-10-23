@@ -1,0 +1,574 @@
+# UNIT ja B1-17 — written by AI (Claude) for Casus; expanded from src/B1-17.yml by tools/expand_unit.py. Edit the source.
+
+id: B1-17
+level: B1
+number: 17
+protagonist: m
+title:
+  en: The wrong exit
+  pt: A saída errada
+situation:
+  en: You're meeting Yui at Shizuoka station. You're at the north exit; she's not there. Your phone rings.
+  pt: Você vai encontrar a Yui na estação de Shizuoka. Você está na saída norte; ela não está lá. O celular toca.
+learn_lessons: []
+culture: Meeting at named exits
+new_items:
+- id: kitaguchi
+  text: 北口[きたぐち]
+  meaning:
+    en: north exit
+    pt: saída norte
+- id: minamiguchi
+  text: 南口[みなみぐち]
+  meaning:
+    en: south exit
+    pt: saída sul
+- id: mayotta
+  text: 迷[まよ]った
+  meaning:
+    en: got lost
+    pt: me perdi
+- id: to-itta
+  text: 〜と 言[い]った
+  meaning:
+    en: said that…
+    pt: disse que…
+- id: minami-to-itta
+  text: 南口[みなみぐち] と 言[い]った
+  meaning:
+    en: (I) said the south exit
+    pt: eu disse saída sul
+- id: kaisatsu
+  text: 改札[かいさつ]
+  meaning:
+    en: ticket gate
+    pt: catraca, bloqueio
+- id: machiawase
+  text: 待[ま]ち合[あ]わせ
+  meaning:
+    en: meeting up (at a set place)
+    pt: encontro marcado (num lugar)
+- id: mejirushi
+  text: 目印[めじるし]
+  meaning:
+    en: landmark
+    pt: ponto de referência
+  rare: true
+- id: ima-doko
+  text: 今[いま]、 どこ？
+  meaning:
+    en: where are you now?
+    pt: onde você está agora?
+- id: mukau
+  text: 向[む]かう
+  meaning:
+    en: head towards
+    pt: ir em direção a
+reviews:
+- item: denwa
+  from: A1-14
+- item: keitai
+  from: A1-14
+- item: shizuka-ni
+  from: A1-14
+- item: dekimasen
+  from: A1-14
+- item: mainaa-moodo
+  from: A1-14
+- item: shimasu
+  from: A1-14
+- item: hanasimasen
+  from: A1-14
+- item: shitsurei-shimashita
+  from: A1-14
+- item: ki-ni-shinaide
+  from: A1-14
+- item: mukashi
+  from: A1-14
+- item: okaikei
+  from: A2-16
+- item: warikan
+  from: A2-16
+- item: chippu
+  from: A2-16
+- item: harawanakereba
+  from: A2-16
+- item: nakereba
+  from: A2-16
+- item: haraimasu
+  from: A2-16
+- item: ogorimasu
+  from: A2-16
+- item: enryo
+  from: A2-16
+- item: enryo-shinaide
+  from: A2-16
+- item: jaa-sukoshi
+  from: A2-16
+- item: dezaato
+  from: A2-16
+- item: to-omou
+  from: B1-02
+- item: benri
+  from: B1-02
+- item: fuben
+  from: B1-02
+- item: shoujiki
+  from: B1-02
+- item: shoujiki-ni-iu-to
+  from: B1-02
+- item: kuruma
+  from: B1-02
+- item: inaka
+  from: B1-02
+- item: tokai
+  from: B1-02
+- item: chotto-fuben-kana
+  from: B1-02
+- item: kana
+  from: B1-02
+- item: suki-ni-natta
+  from: B1-02
+- item: kentou-shimasu
+  from: B1-10
+- item: honne
+  from: B1-10
+- item: tatemae
+  from: B1-10
+- item: you-da
+  from: B1-10
+- item: dame-na-you-desu
+  from: B1-10
+- item: kotowaru
+  from: B1-10
+- item: hakkiri
+  from: B1-10
+- item: kuuki-wo-yomu
+  from: B1-10
+- item: hyoujou
+  from: B1-10
+- item: mata-kondo
+  from: B1-10
+- item: kenka
+  from: B1-14
+- item: okotteru
+  from: B1-14
+- item: okoranaide
+  from: B1-14
+- item: wasureta
+  from: B1-14
+- item: yakusoku
+  from: B1-14
+- item: matte-ita-noni
+  from: B1-14
+- item: hidoi
+  from: B1-14
+- item: hontou-ni-gomen
+  from: B1-14
+- item: daiji-ni-shite
+  from: B1-14
+- item: nakanaori
+  from: B1-14
+- item: ayamaru
+  from: B1-16
+- item: yurushite
+  from: B1-16
+- item: mou-nidoto
+  from: B1-16
+- item: you-volitional
+  from: B1-16
+- item: ayamarou
+  from: B1-16
+- item: hanasou
+  from: B1-16
+- item: ikou
+  from: B1-16
+- item: kimochi-wo-tsutaeru
+  from: B1-16
+- item: hana-wo-kaou
+  from: B1-16
+- item: chokusetsu
+  from: B1-16
+- item: hansei
+  from: B1-16
+steps:
+- type: narrator
+  text:
+    en: You're meeting Yui at Shizuoka station. You're at the north exit; she's not there. Your phone rings. Listen to the conversation; you don't need to understand it yet.
+    pt: Você vai encontrar a Yui na estação de Shizuoka. Você está na saída norte; ela não está lá. O celular toca. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: yui
+    text: もしもし、 今[いま]、 どこ？
+    meaning:
+      en: Hello, where are you now?
+      pt: Alô, onde você está agora?
+  - speaker: protagonist
+    text: 北口[きたぐち] の 改札[かいさつ] の 前[まえ]。 由衣[ゆい] は？
+    meaning:
+      en: In front of the north exit ticket gate. And you?
+      pt: Na frente da catraca da saída norte. E você?
+  - speaker: yui
+    text: 私[わたし] は 南口[みなみぐち]。 南口[みなみぐち] で 待[ま]ち合[あ]わせ と 言[い]った よ。
+    meaning:
+      en: I'm at the south exit. I said we'd meet at the south exit.
+      pt: Eu estou na saída sul. Eu disse que era na saída sul.
+  - speaker: protagonist
+    text: え、 北口[きたぐち] と 聞[き]いた と 思[おも]った。 ごめん、 迷[まよ]った。
+    meaning:
+      en: What, I thought I heard north. Sorry, I got lost.
+      pt: Ué, achei que tinha ouvido norte. Desculpa, me perdi.
+  - speaker: yui
+    text: 大丈夫[だいじょうぶ]。 駅[えき] の 中[なか] を 通[とお]って、 南[みなみ] へ 向[む]かって。
+    meaning:
+      en: It's fine. Go through the station and head south.
+      pt: Tudo bem. Atravessa a estação e vem para o sul.
+  - speaker: protagonist
+    text: 目印[めじるし] は？
+    meaning:
+      en: Any landmark?
+      pt: Algum ponto de referência?
+  - speaker: yui
+    text: 大[おお]きい 時計[とけい] の 下[した]。 白[しろ]い コート を 着[き]て いる。
+    meaning:
+      en: Under the big clock. I'm wearing a white coat.
+      pt: Embaixo do relógio grande. Estou de casaco branco.
+  - speaker: protagonist
+    text: 見[み]えた！ 今[いま] 行[い]く。
+    meaning:
+      en: I see you! Coming now.
+      pt: Te vi! Já vou.
+- type: prompt
+  ask:
+    en: 'Say: the north exit.'
+    pt: 'Diga: a saída norte.'
+  answer:
+    speaker: protagonist
+    text: 北口[きたぐち]
+  items:
+  - kitaguchi
+- type: prompt
+  ask:
+    en: 'Say: the south exit.'
+    pt: 'Diga: a saída sul.'
+  answer:
+    speaker: protagonist
+    text: 南口[みなみぐち]
+  items:
+  - minamiguchi
+- type: prompt
+  ask:
+    en: 'Say: the ticket gate.'
+    pt: 'Diga: a catraca.'
+  answer:
+    speaker: protagonist
+    text: 改札[かいさつ]
+  items:
+  - kaisatsu
+- type: prompt
+  ask:
+    en: 'Say: a meet-up at a set place.'
+    pt: 'Diga: encontro marcado.'
+  answer:
+    speaker: protagonist
+    text: 待[ま]ち合[あ]わせ
+  items:
+  - machiawase
+- type: prompt
+  ask:
+    en: 'Ask: where are you now?'
+    pt: 'Pergunte: onde você está agora?'
+  answer:
+    speaker: protagonist
+    text: 今[いま]、 どこ？
+  items:
+  - ima-doko
+- type: narrator
+  text:
+    en: 'Reporting speech: the words plus «と 言[い]った» — «南口[みなみぐち] と 言[い]った», I said the south exit. With a whole sentence: «南口[みなみぐち] で 待[ま]ち合[あ]わせ と 言[い]った». The same «と» marks what you heard or thought:
+      «北口[きたぐち] と 聞[き]いた».'
+    pt: 'Discurso relatado: as palavras mais «と 言[い]った» — «南口[みなみぐち] と 言[い]った», eu disse saída sul. Com uma frase inteira: «南口[みなみぐち] で 待[ま]ち合[あ]わせ と 言[い]った». O mesmo «と» marca o que se ouviu ou pensou:
+      «北口[きたぐち] と 聞[き]いた».'
+- type: prompt
+  ask:
+    en: 'Say the pattern: said that…'
+    pt: 'Diga o padrão: disse que…'
+  answer:
+    speaker: protagonist
+    text: 〜と 言[い]った
+  items:
+  - to-itta
+- type: prompt
+  ask:
+    en: 'Say: I said the south exit.'
+    pt: 'Diga: eu disse saída sul.'
+  answer:
+    speaker: protagonist
+    text: 南口[みなみぐち] と 言[い]った。
+  items:
+  - minami-to-itta
+- type: prompt
+  ask:
+    en: 'Say: I got lost.'
+    pt: 'Diga: me perdi.'
+  answer:
+    speaker: protagonist
+    text: 迷[まよ]った。
+  items:
+  - mayotta
+- type: prompt
+  ask:
+    en: 'Ask: any landmark?'
+    pt: 'Pergunte: algum ponto de referência?'
+  answer:
+    speaker: protagonist
+    text: 目印[めじるし] は？
+  items:
+  - mejirushi
+- type: prompt
+  ask:
+    en: 'Say: head towards the south.'
+    pt: 'Diga: ir em direção ao sul.'
+  answer:
+    speaker: protagonist
+    text: 南[みなみ] へ 向[む]かう
+  items:
+  - mukau
+- type: narrator
+  text:
+    en: 'Big Japanese stations have several exits, each named — 北口, 南口, 東口, 西口, or after a landmark — and they can be far apart. Always arrange a meeting by exit and a landmark: a clock, a statue, a shop.'
+    pt: 'As estações grandes do Japão têm várias saídas, cada uma com nome — 北口, 南口, 東口, 西口, ou o de um marco — e elas podem ficar longe uma da outra. Marque sempre o encontro pela saída e por um ponto
+      de referência: um relógio, uma estátua, uma loja.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'É como marcar «na estação da Sé» sem dizer qual saída: você pode ficar meia hora no lado errado. No Japão, saída e ponto de referência, sempre.'
+- type: prompt
+  ask:
+    en: 'Once more: say “north exit”.'
+    pt: 'Mais uma vez: diga “saída norte”.'
+  answer:
+    speaker: protagonist
+    text: 北口[きたぐち]
+  items:
+  - kitaguchi
+- type: prompt
+  ask:
+    en: 'Once more: say “south exit”.'
+    pt: 'Mais uma vez: diga “saída sul”.'
+  answer:
+    speaker: protagonist
+    text: 南口[みなみぐち]
+  items:
+  - minamiguchi
+- type: prompt
+  ask:
+    en: 'Once more: say “got lost”.'
+    pt: 'Mais uma vez: diga “me perdi”.'
+  answer:
+    speaker: protagonist
+    text: 迷[まよ]った
+  items:
+  - mayotta
+- type: prompt
+  ask:
+    en: 'Once more: say “said that…”.'
+    pt: 'Mais uma vez: diga “disse que…”.'
+  answer:
+    speaker: protagonist
+    text: 〜と 言[い]った
+  items:
+  - to-itta
+- type: prompt
+  ask:
+    en: 'Once more: say “(I) said the south exit”.'
+    pt: 'Mais uma vez: diga “eu disse saída sul”.'
+  answer:
+    speaker: protagonist
+    text: 南口[みなみぐち] と 言[い]った
+  items:
+  - minami-to-itta
+- type: prompt
+  ask:
+    en: 'Once more: say “ticket gate”.'
+    pt: 'Mais uma vez: diga “catraca, bloqueio”.'
+  answer:
+    speaker: protagonist
+    text: 改札[かいさつ]
+  items:
+  - kaisatsu
+- type: prompt
+  ask:
+    en: 'Once more: say “meeting up (at a set place)”.'
+    pt: 'Mais uma vez: diga “encontro marcado (num lugar)”.'
+  answer:
+    speaker: protagonist
+    text: 待[ま]ち合[あ]わせ
+  items:
+  - machiawase
+- type: prompt
+  ask:
+    en: 'Once more: say “landmark”.'
+    pt: 'Mais uma vez: diga “ponto de referência”.'
+  answer:
+    speaker: protagonist
+    text: 目印[めじるし]
+  items:
+  - mejirushi
+- type: prompt
+  ask:
+    en: 'Once more: say “where are you now?”.'
+    pt: 'Mais uma vez: diga “onde você está agora?”.'
+  answer:
+    speaker: protagonist
+    text: 今[いま]、 どこ？
+  items:
+  - ima-doko
+- type: prompt
+  ask:
+    en: 'Once more: say “head towards”.'
+    pt: 'Mais uma vez: diga “ir em direção a”.'
+  answer:
+    speaker: protagonist
+    text: 向[む]かう
+  items:
+  - mukau
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “apologise — and “forgive me — and “never again — and “let''s (plain volitional) — and “let''s apologise; I''ll apologise — and “let''s talk — and “let''s go (plain) — and “convey your feelings
+      — and “let''s buy flowers — and “directly, in person — and “reflecting on a mistake”.'
+    pt: 'Diga: “pedir desculpas — e “me perdoa — e “nunca mais — e “vamos (volitivo simples) — e “vamos pedir desculpas; vou pedir desculpas — e “vamos conversar — e “vamos (simples) — e “dizer o que sente
+      — e “vamos comprar flores — e “pessoalmente — e “reconhecer o erro, refletir”.'
+  answer:
+    speaker: protagonist
+    text: 謝[あやま]る … 許[ゆる]して … もう 二度[にど] と … 〜よう … 謝[あやま]ろう … 話[はな]そう … 行[い]こう … 気持[きも]ち を 伝[つた]える … 花[はな] を 買[か]おう … 直接[ちょくせつ] … 反省[はんせい]
+  items:
+  - ayamaru
+  - yurushite
+  - mou-nidoto
+  - you-volitional
+  - ayamarou
+  - hanasou
+  - ikou
+  - kimochi-wo-tsutaeru
+  - hana-wo-kaou
+  - chokusetsu
+  - hansei
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “quarrel, fight — and “is angry — and “don''t be angry — and “forgot — and “promise; appointment — and “even though I was waiting — and “that''s awful, cruel — and “I''m really sorry — and
+      “treat (me) as important — and “making up — and “we''ll consider it”.'
+    pt: 'Diga: “briga — e “está brava — e “não fica brava — e “esqueci — e “promessa; compromisso — e “e eu esperando — e “que horrível, que maldade — e “desculpa mesmo — e “me dá valor — e “fazer as pazes
+      — e “vamos estudar”.'
+  answer:
+    speaker: protagonist
+    text: 喧嘩[けんか] … 怒[おこ]って る … 怒[おこ]らないで … 忘[わす]れた … 約束[やくそく] … 待[ま]って いた のに … ひどい … 本当[ほんとう] に ごめん … 大事[だいじ] に して … 仲直[なかなお]り … 検討[けんとう] します
+  items:
+  - kenka
+  - okotteru
+  - okoranaide
+  - wasureta
+  - yakusoku
+  - matte-ita-noni
+  - hidoi
+  - hontou-ni-gomen
+  - daiji-ni-shite
+  - nakanaori
+  - kentou-shimasu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “true feelings — and “the public face — and “it seems, apparently (from what I see) — and “it seems it''s a no — and “refuse, turn down — and “clearly, directly — and “read the atmosphere
+      — and “facial expression — and “another time — and “I think (casual) — and “convenient”.'
+    pt: 'Diga: “o que se pensa de verdade — e “o que se diz por educação — e “parece que (pelo que vejo) — e “parece que não vai dar — e “recusar — e “com clareza, diretamente — e “ler o clima — e “expressão
+      do rosto — e “fica para outra vez — e “acho que (informal) — e “prático, conveniente”.'
+  answer:
+    speaker: protagonist
+    text: 本音[ほんね] … 建前[たてまえ] … 〜よう だ … だめ な よう です … 断[ことわ]る … はっきり … 空気[くうき] を 読[よ]む … 表情[ひょうじょう] … また 今度[こんど] … 〜と 思[おも]う … 便利[べんり]
+  items:
+  - honne
+  - tatemae
+  - you-da
+  - dame-na-you-desu
+  - kotowaru
+  - hakkiri
+  - kuuki-wo-yomu
+  - hyoujou
+  - mata-kondo
+  - to-omou
+  - benri
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “inconvenient — and “honestly — and “to be honest — and “car — and “the countryside — and “the city (big city) — and “maybe a bit inconvenient — and “I wonder; maybe — and “I''ve come to like
+      it — and “the bill — and “splitting the bill”.'
+    pt: 'Diga: “inconveniente — e “sinceramente — e “para ser sincero — e “carro — e “o interior, a roça — e “cidade grande — e “talvez um pouco inconveniente — e “será que; talvez — e “passei a gostar
+      — e “a conta — e “rachar a conta”.'
+  answer:
+    speaker: protagonist
+    text: 不便[ふべん] … 正直[しょうじき] … 正直[しょうじき] に 言[い]う と … 車[くるま] … 田舎[いなか] … 都会[とかい] … ちょっと 不便[ふべん] か な … 〜か な … 好[す]き に なった … お会計[かいけい] … 割[わ]り勘[かん]
+  items:
+  - fuben
+  - shoujiki
+  - shoujiki-ni-iu-to
+  - kuruma
+  - inaka
+  - tokai
+  - chotto-fuben-kana
+  - kana
+  - suki-ni-natta
+  - okaikei
+  - warikan
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “tip — and “I must pay — and “must, have to — and “pay — and “it''s my treat — and “holding back out of politeness — and “don''t hold back — and “well then, just a little — and “dessert —
+      and “telephone, phone call — and “mobile phone”.'
+    pt: 'Diga: “gorjeta — e “preciso pagar — e “tenho que, preciso — e “pago — e “eu pago, é por minha conta — e “fazer cerimônia — e “não faça cerimônia — e “então, só um pouquinho — e “sobremesa — e “telefone,
+      ligação — e “celular”.'
+  answer:
+    speaker: protagonist
+    text: チップ … 払[はら]わなければ なりません … 〜なければ なりません … 払[はら]います … おごります … 遠慮[えんりょ] … 遠慮[えんりょ] しないで … じゃあ、 少[すこ]し だけ … デザート … 電話[でんわ] … 携帯[けいたい]
+  items:
+  - chippu
+  - harawanakereba
+  - nakereba
+  - haraimasu
+  - ogorimasu
+  - enryo
+  - enryo-shinaide
+  - jaa-sukoshi
+  - dezaato
+  - denwa
+  - keitai
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “quietly — and “can''t (do) — and “silent mode — and “do — and “don''t talk — and “excuse me (for what I did) — and “don''t worry about it — and “long ago, in the old days”.'
+    pt: 'Diga: “em silêncio — e “não pode, não dá — e “modo silencioso — e “faço — e “não falo — e “desculpe (pelo que fiz) — e “não se preocupe — e “antigamente”.'
+  answer:
+    speaker: protagonist
+    text: 静[しず]か に … できません … マナー モード … します … 話[はな]しません … 失礼[しつれい] しました … 気[き] に しないで … 昔[むかし]
+  items:
+  - shizuka-ni
+  - dekimasen
+  - mainaa-moodo
+  - shimasu
+  - hanasimasen
+  - shitsurei-shimashita
+  - ki-ni-shinaide
+  - mukashi
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

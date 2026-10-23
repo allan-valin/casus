@@ -74,6 +74,8 @@ def _texts(x, langs):
     """a list in the narrator languages' order, or a dict"""
     if isinstance(x, dict):
         return {l: x[l] for l in langs if l in x}
+    if len(x) != len(langs):                  # an unquoted comma splits a title in YAML; zip() would hide it
+        raise ValueError(f"{len(x)} texts for {len(langs)} narrator languages {langs}: {x}")
     return dict(zip(langs, x))
 
 

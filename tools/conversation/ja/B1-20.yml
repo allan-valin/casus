@@ -1,0 +1,611 @@
+# UNIT ja B1-20 — written by AI (Claude) for Casus; expanded from src/B1-20.yml by tools/expand_unit.py. Edit the source.
+
+id: B1-20
+level: B1
+number: 20
+protagonist: f
+title:
+  en: Someone, no one
+  pt: Alguém, ninguém
+situation:
+  en: Your wallet is gone — cash, residence card, everything. Panicked, you go to the police box by the station.
+  pt: Sua carteira sumiu — dinheiro, cartão de residência, tudo. Em pânico, você vai ao posto policial da estação.
+learn_lessons: []
+culture: The kōban returns lost items
+new_items:
+- id: saifu
+  text: 財布[さいふ]
+  meaning:
+    en: wallet
+    pt: carteira
+- id: daremo
+  text: 誰[だれ] も 〜ない
+  meaning:
+    en: nobody
+    pt: ninguém
+- id: dareka
+  text: 誰[だれ] か
+  meaning:
+    en: someone
+    pt: alguém
+- id: kouban
+  text: 交番[こうばん]
+  meaning:
+    en: police box
+    pt: posto policial
+  rare: true
+- id: otoshimono
+  text: 落[お]とし物[もの]
+  meaning:
+    en: lost item
+    pt: objeto perdido
+- id: nakushita
+  text: なくしました
+  meaning:
+    en: I lost (it)
+    pt: perdi
+- id: nanimo-nai
+  text: 何[なに] も ない
+  meaning:
+    en: nothing
+    pt: nada
+- id: dokoka
+  text: どこ か
+  meaning:
+    en: somewhere
+    pt: em algum lugar
+- id: todokemasu
+  text: 届[とど]けて くれました
+  meaning:
+    en: (someone) handed it in
+    pt: (alguém) entregou
+- id: kakunin-shite
+  text: 中身[なかみ] を 確認[かくにん] して
+  meaning:
+    en: check the contents
+    pt: confira o que tem dentro
+- id: shinjirarenai
+  text: 信[しん]じられない
+  meaning:
+    en: I can't believe it
+    pt: não acredito
+reviews:
+- item: anime
+  from: A1-17
+- item: hontou
+  from: A1-17
+- item: chigaimasu
+  from: A1-17
+- item: kaanibaru
+  from: A1-17
+- item: mainichi
+  from: A1-17
+- item: minna
+  from: A1-17
+- item: sakkaa
+  from: A1-17
+- item: jouzu
+  from: A1-17
+- item: nihon-jin
+  from: A1-17
+- item: burajiru-jin
+  from: A1-17
+- item: ninja
+  from: A1-17
+- item: mura
+  from: A2-19
+- item: imin
+  from: A2-19
+- item: shinseki
+  from: A2-19
+- item: ta-koto-ga-arimasu
+  from: A2-19
+- item: kita-koto
+  from: A2-19
+- item: itta-koto-ga-nai
+  from: A2-19
+- item: mukashi-no
+  from: A2-19
+- item: haka
+  from: A2-19
+- item: omairi
+  from: A2-19
+- item: nite-imasu
+  from: A2-19
+- item: okaeri
+  from: A2-19
+- item: goryoushin
+  from: B1-05
+- item: temiyage
+  from: B1-05
+- item: seiza
+  from: B1-05
+- item: ojama-shimasu
+  from: B1-05
+- item: tsumaranai-mono
+  from: B1-05
+- item: hajimete-ome
+  from: B1-05
+- item: ashi-wo-kuzushite
+  from: B1-05
+- item: ocha
+  from: B1-05
+- item: itadakimasu-receive
+  from: B1-05
+- item: shitsurei-shimasu
+  from: B1-05
+- item: futsukayoi
+  from: B1-13
+- item: shijimijiru
+  from: B1-13
+- item: oboete-nai
+  from: B1-13
+- item: nomisugita
+  from: B1-13
+- item: sugiru
+  from: B1-13
+- item: tabesugi
+  from: B1-13
+- item: atama-ga-itai
+  from: B1-13
+- item: kimochi-warui
+  from: B1-13
+- item: mizu-wo-nonde
+  from: B1-13
+- item: hazukashii-koto
+  from: B1-13
+- item: nani-shita
+  from: B1-13
+- item: kitaguchi
+  from: B1-17
+- item: minamiguchi
+  from: B1-17
+- item: mayotta
+  from: B1-17
+- item: to-itta
+  from: B1-17
+- item: minami-to-itta
+  from: B1-17
+- item: kaisatsu
+  from: B1-17
+- item: machiawase
+  from: B1-17
+- item: mejirushi
+  from: B1-17
+- item: ima-doko
+  from: B1-17
+- item: mukau
+  from: B1-17
+- item: taifuu
+  from: B1-19
+- item: chuushi
+  from: B1-19
+- item: yotei
+  from: B1-19
+- item: enki
+  from: B1-19
+- item: you-to-omotte-ita
+  from: B1-19
+- item: ikou-to-omotte-ita
+  from: B1-19
+- item: unkyuu
+  from: B1-19
+- item: kyouto
+  from: B1-19
+- item: zannen
+  from: B1-19
+- item: anzen-daiichi
+  from: B1-19
+- item: kyanseru
+  from: B1-19
+steps:
+- type: narrator
+  text:
+    en: Your wallet is gone — cash, residence card, everything. Panicked, you go to the police box by the station. Listen to the conversation; you don't need to understand it yet.
+    pt: Sua carteira sumiu — dinheiro, cartão de residência, tudo. Em pânico, você vai ao posto policial da estação. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: すみません、 財布[さいふ] を なくしました。
+    meaning:
+      en: Excuse me, I've lost my wallet.
+      pt: Com licença, perdi minha carteira.
+  - speaker: omawari
+    text: どこ で なくしました か。
+    meaning:
+      en: Where did you lose it?
+      pt: Onde perdeu?
+  - speaker: protagonist
+    text: わかりません。 駅[えき] の どこ か です。 誰[だれ] も 見[み]て いない と 思[おも]います。
+    meaning:
+      en: I don't know. Somewhere in the station. I don't think anyone saw.
+      pt: Não sei. Em algum lugar da estação. Acho que ninguém viu.
+  - speaker: omawari
+    text: ちょっと 待[ま]って ください。 …赤[あか]い 財布[さいふ] です か。
+    meaning:
+      en: Please wait a moment. …Is it a red wallet?
+      pt: Espere um pouco. …É uma carteira vermelha?
+  - speaker: protagonist
+    text: はい！ それ です！
+    meaning:
+      en: Yes! That's it!
+      pt: Sim! É essa!
+  - speaker: omawari
+    text: 三十分[さんじゅっぷん] 前[まえ] に、 誰[だれ] か が 届[とど]けて くれました。 中身[なかみ] を 確認[かくにん] して ください。
+    meaning:
+      en: Someone handed it in thirty minutes ago. Please check the contents.
+      pt: Alguém entregou há trinta minutos. Confira o que tem dentro, por favor.
+  - speaker: protagonist
+    text: お金[かね] も カード も 全部[ぜんぶ] あります。 何[なに] も なくなって いません。 信[しん]じられない！
+    meaning:
+      en: The money and the cards are all here. Nothing's missing. I can't believe it!
+      pt: O dinheiro e os cartões estão todos aqui. Não sumiu nada. Não acredito!
+  - speaker: omawari
+    text: 日本[にほん] で は よく ある こと です よ。 気[き] を つけて ください ね。
+    meaning:
+      en: It happens a lot in Japan. Do be careful.
+      pt: No Japão isso é comum. Tome cuidado, viu.
+- type: prompt
+  ask:
+    en: 'Say: a wallet.'
+    pt: 'Diga: uma carteira.'
+  answer:
+    speaker: protagonist
+    text: 財布[さいふ]
+  items:
+  - saifu
+- type: prompt
+  ask:
+    en: 'Say: I lost it.'
+    pt: 'Diga: perdi.'
+  answer:
+    speaker: protagonist
+    text: なくしました。
+  items:
+  - nakushita
+- type: prompt
+  ask:
+    en: 'Say: the police box.'
+    pt: 'Diga: o posto policial.'
+  answer:
+    speaker: protagonist
+    text: 交番[こうばん]
+  items:
+  - kouban
+- type: prompt
+  ask:
+    en: 'Say: a lost item.'
+    pt: 'Diga: um objeto perdido.'
+  answer:
+    speaker: protagonist
+    text: 落[お]とし物[もの]
+  items:
+  - otoshimono
+- type: narrator
+  text:
+    en: 'Question words plus «か» are some-: «誰[だれ] か», someone; «どこ か», somewhere; «何[なに] か», something. Plus «も» with a negative verb, they''re no-: «誰[だれ] も 見[み]て いない», nobody saw; «何[なに] も ない», nothing.'
+    pt: 'Palavras interrogativas mais «か» são algum: «誰[だれ] か», alguém; «どこ か», em algum lugar; «何[なに] か», alguma coisa. Mais «も» com verbo negativo, são nenhum: «誰[だれ] も 見[み]て いない», ninguém viu; «何[なに]
+      も ない», nada.'
+- type: prompt
+  ask:
+    en: 'Say: someone.'
+    pt: 'Diga: alguém.'
+  answer:
+    speaker: protagonist
+    text: 誰[だれ] か
+  items:
+  - dareka
+- type: prompt
+  ask:
+    en: 'Say the pattern: nobody.'
+    pt: 'Diga o padrão: ninguém.'
+  answer:
+    speaker: protagonist
+    text: 誰[だれ] も 〜ない
+  items:
+  - daremo
+- type: prompt
+  ask:
+    en: 'Say: nobody saw.'
+    pt: 'Diga: ninguém viu.'
+  answer:
+    speaker: protagonist
+    text: 誰[だれ] も 見[み]て いない。
+  items:
+  - daremo
+- type: prompt
+  ask:
+    en: 'Say: somewhere.'
+    pt: 'Diga: em algum lugar.'
+  answer:
+    speaker: protagonist
+    text: どこ か
+  items:
+  - dokoka
+- type: prompt
+  ask:
+    en: 'Say: nothing.'
+    pt: 'Diga: nada.'
+  answer:
+    speaker: protagonist
+    text: 何[なに] も ない。
+  items:
+  - nanimo-nai
+- type: prompt
+  ask:
+    en: 'Say: someone handed it in.'
+    pt: 'Diga: alguém entregou.'
+  answer:
+    speaker: protagonist
+    text: 誰[だれ] か が 届[とど]けて くれました。
+  items:
+  - todokemasu
+- type: prompt
+  ask:
+    en: 'Say: check the contents.'
+    pt: 'Diga: confira o que tem dentro.'
+  answer:
+    speaker: protagonist
+    text: 中身[なかみ] を 確認[かくにん] して。
+  items:
+  - kakunin-shite
+- type: prompt
+  ask:
+    en: 'Say: I can''t believe it!'
+    pt: 'Diga: não acredito!'
+  answer:
+    speaker: protagonist
+    text: 信[しん]じられない！
+  items:
+  - shinjirarenai
+- type: narrator
+  text:
+    en: Lost wallets in Japan are very often handed in, money and all, at a «交番[こうばん]» or the station office. The finder may claim a reward of 5 to 20 % by law, and many don't. Go to the nearest kōban or
+      file a report online.
+    pt: Carteiras perdidas no Japão muitas vezes são entregues, com dinheiro e tudo, num «交番[こうばん]» ou no escritório da estação. Por lei quem achou pode pedir uma recompensa de 5 a 20 %, e muitos nem pedem.
+      Vá ao posto policial mais próximo ou registre pela internet.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil, carteira perdida raramente volta. No Japão, voltar é o normal — mesmo assim, guarde o cartão de residência com cuidado.
+- type: prompt
+  ask:
+    en: 'Once more: say “wallet”.'
+    pt: 'Mais uma vez: diga “carteira”.'
+  answer:
+    speaker: protagonist
+    text: 財布[さいふ]
+  items:
+  - saifu
+- type: prompt
+  ask:
+    en: 'Once more: say “someone”.'
+    pt: 'Mais uma vez: diga “alguém”.'
+  answer:
+    speaker: protagonist
+    text: 誰[だれ] か
+  items:
+  - dareka
+- type: prompt
+  ask:
+    en: 'Once more: say “police box”.'
+    pt: 'Mais uma vez: diga “posto policial”.'
+  answer:
+    speaker: protagonist
+    text: 交番[こうばん]
+  items:
+  - kouban
+- type: prompt
+  ask:
+    en: 'Once more: say “lost item”.'
+    pt: 'Mais uma vez: diga “objeto perdido”.'
+  answer:
+    speaker: protagonist
+    text: 落[お]とし物[もの]
+  items:
+  - otoshimono
+- type: prompt
+  ask:
+    en: 'Once more: say “I lost (it)”.'
+    pt: 'Mais uma vez: diga “perdi”.'
+  answer:
+    speaker: protagonist
+    text: なくしました
+  items:
+  - nakushita
+- type: prompt
+  ask:
+    en: 'Once more: say “nothing”.'
+    pt: 'Mais uma vez: diga “nada”.'
+  answer:
+    speaker: protagonist
+    text: 何[なに] も ない
+  items:
+  - nanimo-nai
+- type: prompt
+  ask:
+    en: 'Once more: say “somewhere”.'
+    pt: 'Mais uma vez: diga “em algum lugar”.'
+  answer:
+    speaker: protagonist
+    text: どこ か
+  items:
+  - dokoka
+- type: prompt
+  ask:
+    en: 'Once more: say “(someone) handed it in”.'
+    pt: 'Mais uma vez: diga “(alguém) entregou”.'
+  answer:
+    speaker: protagonist
+    text: 届[とど]けて くれました
+  items:
+  - todokemasu
+- type: prompt
+  ask:
+    en: 'Once more: say “check the contents”.'
+    pt: 'Mais uma vez: diga “confira o que tem dentro”.'
+  answer:
+    speaker: protagonist
+    text: 中身[なかみ] を 確認[かくにん] して
+  items:
+  - kakunin-shite
+- type: prompt
+  ask:
+    en: 'Once more: say “I can''t believe it”.'
+    pt: 'Mais uma vez: diga “não acredito”.'
+  answer:
+    speaker: protagonist
+    text: 信[しん]じられない
+  items:
+  - shinjirarenai
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “typhoon — and “cancellation, called off — and “plan, schedule — and “postponement — and “I was going to…, I''d planned to… — and “I was planning to go — and “(train) service suspended — and
+      “Kyoto — and “what a pity — and “safety first”.'
+    pt: 'Diga: “tufão — e “cancelamento — e “plano, programação — e “adiamento — e “eu pretendia…, ia… — e “eu ia, pretendia ir — e “serviço suspenso — e “Kyoto — e “que pena — e “segurança em primeiro
+      lugar”.'
+  answer:
+    speaker: protagonist
+    text: 台風[たいふう] … 中止[ちゅうし] … 予定[よてい] … 延期[えんき] … 〜よう と 思[おも]って いた … 行[い]こう と 思[おも]って いた … 運休[うんきゅう] … 京都[きょうと] … 残念[ざんねん] … 安全[あんぜん] 第一[だいいち]
+  items:
+  - taifuu
+  - chuushi
+  - yotei
+  - enki
+  - you-to-omotte-ita
+  - ikou-to-omotte-ita
+  - unkyuu
+  - kyouto
+  - zannen
+  - anzen-daiichi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “cancel (a booking) — and “north exit — and “south exit — and “got lost — and “said that… — and “(I) said the south exit — and “ticket gate — and “meeting up (at a set place) — and “landmark
+      — and “where are you now?”.'
+    pt: 'Diga: “cancelar (reserva) — e “saída norte — e “saída sul — e “me perdi — e “disse que… — e “eu disse saída sul — e “catraca, bloqueio — e “encontro marcado (num lugar) — e “ponto de referência
+      — e “onde você está agora?”.'
+  answer:
+    speaker: protagonist
+    text: キャンセル … 北口[きたぐち] … 南口[みなみぐち] … 迷[まよ]った … 〜と 言[い]った … 南口[みなみぐち] と 言[い]った … 改札[かいさつ] … 待[ま]ち合[あ]わせ … 目印[めじるし] … 今[いま]、 どこ？
+  items:
+  - kyanseru
+  - kitaguchi
+  - minamiguchi
+  - mayotta
+  - to-itta
+  - minami-to-itta
+  - kaisatsu
+  - machiawase
+  - mejirushi
+  - ima-doko
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “head towards — and “hangover — and “freshwater clam soup — and “I don''t remember (casual) — and “I drank too much — and “too much — and “eating too much — and “my head hurts — and “I feel
+      sick — and “drink lots of water”.'
+    pt: 'Diga: “ir em direção a — e “ressaca — e “sopa de mariscos de água doce — e “não lembro (informal) — e “bebi demais — e “demais — e “comer demais — e “minha cabeça dói — e “estou enjoada — e “beba
+      bastante água”.'
+  answer:
+    speaker: protagonist
+    text: 向[む]かう … 二日酔[ふつかよ]い … しじみ 汁[じる] … 覚[おぼ]えて ない … 飲[の]みすぎた … 〜すぎる … 食[た]べすぎ … 頭[あたま] が 痛[いた]い … 気持[きも]ち 悪[わる]い … 水[みず] を たくさん 飲[の]んで
+  items:
+  - mukau
+  - futsukayoi
+  - shijimijiru
+  - oboete-nai
+  - nomisugita
+  - sugiru
+  - tabesugi
+  - atama-ga-itai
+  - kimochi-warui
+  - mizu-wo-nonde
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “something embarrassing — and “what did I do? — and “(someone''s) parents — and “a small gift you bring — and “kneeling formally — and “excuse me for intruding (entering a home) — and “it''s
+      just a little something — and “it''s an honour to meet you — and “please sit comfortably — and “(green) tea”.'
+    pt: 'Diga: “uma coisa vergonhosa — e “o que eu fiz? — e “os pais (de alguém) — e “lembrancinha que se leva — e “sentar de joelhos (formal) — e “com licença (ao entrar na casa) — e “é só uma lembrancinha
+      — e “é uma honra conhecê-los — e “sente-se à vontade — e “chá (verde)”.'
+  answer:
+    speaker: protagonist
+    text: 恥[は]ずかしい こと … 私[わたし]、 何[なに] した？ … ご両親[りょうしん] … 手土産[てみやげ] … 正座[せいざ] … お邪魔[じゃま] します … つまらない もの です が … 初[はじ]めて お目[め] に かかります … 足[あし] を 崩[くず]して ください … お茶[ちゃ]
+  items:
+  - hazukashii-koto
+  - nani-shita
+  - goryoushin
+  - temiyage
+  - seiza
+  - ojama-shimasu
+  - tsumaranai-mono
+  - hajimete-ome
+  - ashi-wo-kuzushite
+  - ocha
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I''ll gladly accept — and “excuse me (entering, leaving) — and “village — and “emigrant, emigration — and “relatives — and “have (ever) done — and “have been here before — and “have never
+      been — and “of the old days — and “grave”.'
+    pt: 'Diga: “aceito com prazer — e “com licença (ao entrar, ao sair) — e “aldeia, vilarejo — e “emigrante, emigração — e “parentes — e “já fiz (alguma vez) — e “já vim aqui — e “nunca fui — e “de antigamente
+      — e “túmulo”.'
+  answer:
+    speaker: protagonist
+    text: 頂戴[ちょうだい] します … 失礼[しつれい] します … 村[むら] … 移民[いみん] … 親戚[しんせき] … 〜た こと が あります … 来[き]た こと が あります … 行[い]った こと が ありません … 昔[むかし] の … お墓[はか]
+  items:
+  - itadakimasu-receive
+  - shitsurei-shimasu
+  - mura
+  - imin
+  - shinseki
+  - ta-koto-ga-arimasu
+  - kita-koto
+  - itta-koto-ga-nai
+  - mukashi-no
+  - haka
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “visit (to a grave or shrine) — and “look alike — and “welcome home — and “anime — and “really? is it true? — and “that''s not right; it''s different — and “carnival — and “every day — and
+      “everyone — and “football”.'
+    pt: 'Diga: “visita (ao túmulo ou santuário) — e “é parecido, puxou — e “bem-vinda de volta — e “anime — e “é verdade? — e “não é bem assim; é diferente — e “carnaval — e “todo dia — e “todo mundo —
+      e “futebol”.'
+  answer:
+    speaker: protagonist
+    text: お参[まい]り … 似[に]て います … おかえり … アニメ … 本当[ほんとう] です か … 違[ちが]います … カーニバル … 毎日[まいにち] … みんな … サッカー
+  items:
+  - omairi
+  - nite-imasu
+  - okaeri
+  - anime
+  - hontou
+  - chigaimasu
+  - kaanibaru
+  - mainichi
+  - minna
+  - sakkaa
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “good at, skilled — and “Japanese person — and “Brazilian person — and “ninja”.'
+    pt: 'Diga: “bom em, habilidoso — e “japonês (pessoa) — e “brasileiro (pessoa) — e “ninja”.'
+  answer:
+    speaker: protagonist
+    text: 上手[じょうず] … 日本人[にほんじん] … ブラジル人[じん] … 忍者[にんじゃ]
+  items:
+  - jouzu
+  - nihon-jin
+  - burajiru-jin
+  - ninja
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

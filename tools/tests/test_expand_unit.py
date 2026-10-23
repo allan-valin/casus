@@ -84,7 +84,17 @@ def test_audience_versions_get_reviews_for_their_own_audience_only():
 def test_items_of_audience_versions_get_a_suffix_so_core_units_never_clash():
     """Allan's German course: a version teaches 'ich will' to one audience, a later core unit teaches it to all —
     the version's item ids carry the audience letters (-e, -a, -m), so the two never collide"""
-    src = {**_src(2, ["will"], []), "tracks": ["ar"], "teach": [{"ask": ["x", "Ich will.", "will"]}]}
+    src = {**_src(2, ["will"], []), "tracks": ["ar"], "title": ["T"], "situation": ["S"], "teach": [{"ask": ["x", "Ich will.", "will"]}]}
     u = expand(src, [], ["en", "ar", "mk"])
     assert [i["id"] for i in u["new_items"]] == ["will-a"]
     assert all(i.endswith("-a") for s in u["steps"] for i in (s.get("items") or []))
+
+
+def test_a_text_list_must_have_one_entry_per_narrator_language():
+    # 2026-10-23: an unquoted title with a comma ("Someone, no one") became three entries and zip() cut the
+    # English title in half without a word; a wrong count must stop the build instead
+    import pytest
+    from expand_unit import _texts
+    assert _texts(["Plants", "Plantas"], ["en", "pt"]) == {"en": "Plants", "pt": "Plantas"}
+    with pytest.raises(ValueError):
+        _texts(["Someone", "no one", "Alguém, ninguém"], ["en", "pt"])

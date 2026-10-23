@@ -1,0 +1,43 @@
+id: B1-20
+protagonist: f
+title: ["Someone, no one", "Alguém, ninguém"]
+situation: ["Your wallet is gone — cash, residence card, everything. Panicked, you go to the police box by the station.", "Sua carteira sumiu — dinheiro, cartão de residência, tudo. Em pânico, você vai ao posto policial da estação."]
+learn: []
+culture: The kōban returns lost items
+items:
+  - [saifu, "財布[さいふ]", "wallet", "carteira"]
+  - [daremo, "誰[だれ] も 〜ない", "nobody", "ninguém"]
+  - [dareka, "誰[だれ] か", "someone", "alguém"]
+  - [kouban, "交番[こうばん]", "police box", "posto policial", {rare: true}]
+  - [otoshimono, "落[お]とし物[もの]", "lost item", "objeto perdido"]
+  - [nakushita, "なくしました", "I lost (it)", "perdi"]
+  - [nanimo-nai, "何[なに] も ない", "nothing", "nada"]
+  - [dokoka, "どこ か", "somewhere", "em algum lugar"]
+  - [todokemasu, "届[とど]けて くれました", "(someone) handed it in", "(alguém) entregou"]
+  - [kakunin-shite, "中身[なかみ] を 確認[かくにん] して", "check the contents", "confira o que tem dentro"]
+  - [shinjirarenai, "信[しん]じられない", "I can't believe it", "não acredito"]
+dialogue:
+  - [protagonist, "すみません、 財布[さいふ] を なくしました。", "Excuse me, I've lost my wallet.", "Com licença, perdi minha carteira."]
+  - [omawari, "どこ で なくしました か。", "Where did you lose it?", "Onde perdeu?"]
+  - [protagonist, "わかりません。 駅[えき] の どこ か です。 誰[だれ] も 見[み]て いない と 思[おも]います。", "I don't know. Somewhere in the station. I don't think anyone saw.", "Não sei. Em algum lugar da estação. Acho que ninguém viu."]
+  - [omawari, "ちょっと 待[ま]って ください。 …赤[あか]い 財布[さいふ] です か。", "Please wait a moment. …Is it a red wallet?", "Espere um pouco. …É uma carteira vermelha?"]
+  - [protagonist, "はい！ それ です！", "Yes! That's it!", "Sim! É essa!"]
+  - [omawari, "三十分[さんじゅっぷん] 前[まえ] に、 誰[だれ] か が 届[とど]けて くれました。 中身[なかみ] を 確認[かくにん] して ください。", "Someone handed it in thirty minutes ago. Please check the contents.", "Alguém entregou há trinta minutos. Confira o que tem dentro, por favor."]
+  - [protagonist, "お金[かね] も カード も 全部[ぜんぶ] あります。 何[なに] も なくなって いません。 信[しん]じられない！", "The money and the cards are all here. Nothing's missing. I can't believe it!", "O dinheiro e os cartões estão todos aqui. Não sumiu nada. Não acredito!"]
+  - [omawari, "日本[にほん] で は よく ある こと です よ。 気[き] を つけて ください ね。", "It happens a lot in Japan. Do be careful.", "No Japão isso é comum. Tome cuidado, viu."]
+teach:
+  - ask: ["Say: a wallet.", "Diga: uma carteira.", "財布[さいふ]", saifu]
+  - ask: ["Say: I lost it.", "Diga: perdi.", "なくしました。", nakushita]
+  - ask: ["Say: the police box.", "Diga: o posto policial.", "交番[こうばん]", kouban]
+  - ask: ["Say: a lost item.", "Diga: um objeto perdido.", "落[お]とし物[もの]", otoshimono]
+  - note: ["Question words plus «か» are some-: «誰[だれ] か», someone; «どこ か», somewhere; «何[なに] か», something. Plus «も» with a negative verb, they're no-: «誰[だれ] も 見[み]て いない», nobody saw; «何[なに] も ない», nothing.", "Palavras interrogativas mais «か» são algum: «誰[だれ] か», alguém; «どこ か», em algum lugar; «何[なに] か», alguma coisa. Mais «も» com verbo negativo, são nenhum: «誰[だれ] も 見[み]て いない», ninguém viu; «何[なに] も ない», nada."]
+  - ask: ["Say: someone.", "Diga: alguém.", "誰[だれ] か", dareka]
+  - ask: ["Say the pattern: nobody.", "Diga o padrão: ninguém.", "誰[だれ] も 〜ない", daremo]
+  - ask: ["Say: nobody saw.", "Diga: ninguém viu.", "誰[だれ] も 見[み]て いない。", daremo]
+  - ask: ["Say: somewhere.", "Diga: em algum lugar.", "どこ か", dokoka]
+  - ask: ["Say: nothing.", "Diga: nada.", "何[なに] も ない。", nanimo-nai]
+  - ask: ["Say: someone handed it in.", "Diga: alguém entregou.", "誰[だれ] か が 届[とど]けて くれました。", todokemasu]
+  - ask: ["Say: check the contents.", "Diga: confira o que tem dentro.", "中身[なかみ] を 確認[かくにん] して。", kakunin-shite]
+  - ask: ["Say: I can't believe it!", "Diga: não acredito!", "信[しん]じられない！", shinjirarenai]
+  - note: ["Lost wallets in Japan are very often handed in, money and all, at a «交番[こうばん]» or the station office. The finder may claim a reward of 5 to 20 % by law, and many don't. Go to the nearest kōban or file a report online.", "Carteiras perdidas no Japão muitas vezes são entregues, com dinheiro e tudo, num «交番[こうばん]» ou no escritório da estação. Por lei quem achou pode pedir uma recompensa de 5 a 20 %, e muitos nem pedem. Vá ao posto policial mais próximo ou registre pela internet."]
+  - pt_only: "No Brasil, carteira perdida raramente volta. No Japão, voltar é o normal — mesmo assim, guarde o cartão de residência com cuidado."
