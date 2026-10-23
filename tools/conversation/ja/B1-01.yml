@@ -1,0 +1,570 @@
+# UNIT ja B1-01 — written by AI (Claude) for Casus; expanded from src/B1-01.yml by tools/expand_unit.py. Edit the source.
+
+id: B1-01
+level: B1
+number: 1
+protagonist: f
+title:
+  en: The sentō
+  pt: O sentō
+situation:
+  en: 'Kenta''s family invites you to the neighbourhood public bath. On the women''s side: Kenta''s mother and his sister Aya.'
+  pt: 'A família do Kenta convida você para o banho público do bairro. Do lado das mulheres: a mãe do Kenta e a irmã dele, a Aya.'
+learn_lessons: []
+culture: The public bath
+new_items:
+- id: sentou
+  text: 銭湯[せんとう]
+  meaning:
+    en: public bath
+    pt: banho público
+  rare: true
+- id: yubune
+  text: 湯船[ゆぶね]
+  meaning:
+    en: the bathtub (the hot pool)
+    pt: a banheira (a piscina quente)
+  rare: true
+- id: gyuunyuu
+  text: 牛乳[ぎゅうにゅう]
+  meaning:
+    en: milk
+    pt: leite
+- id: onna-yu
+  text: 女湯[おんなゆ]
+  meaning:
+    en: women's bath
+    pt: banho feminino
+  rare: true
+- id: atsui-casual
+  text: 熱[あつ]い ね
+  meaning:
+    en: it's hot, huh (casual)
+    pt: que quente, hein (informal)
+- id: nanka
+  text: なんか
+  meaning:
+    en: kind of, like
+    pt: tipo, meio
+- id: dekai
+  text: でかい
+  meaning:
+    en: huge (casual)
+    pt: enorme (informal)
+- id: desho
+  text: でしょ
+  meaning:
+    en: right?, see?
+    pt: né?, viu?
+- id: hairou
+  text: 入[はい]ろう
+  meaning:
+    en: let's get in (casual)
+    pt: vamos entrar (informal)
+- id: yatta
+  text: やった
+  meaning:
+    en: yay!
+    pt: eba!
+- id: furo-agari
+  text: 風呂[ふろ] 上[あ]がり
+  meaning:
+    en: after the bath
+    pt: depois do banho
+reviews:
+- item: futtosaru
+  from: A1-30
+- item: shiai
+  from: A1-30
+- item: tanoshikatta
+  from: A1-30
+- item: kachimashita
+  from: A1-30
+- item: makemashita
+  from: A1-30
+- item: chiimu
+  from: A1-30
+- item: gooru
+  from: A1-30
+- item: mata-raishuu
+  from: A1-30
+- item: jouzu-ni-narimashita
+  from: A1-30
+- item: nihongo
+  from: A1-30
+- item: okaikei
+  from: A2-16
+- item: warikan
+  from: A2-16
+- item: chippu
+  from: A2-16
+- item: harawanakereba
+  from: A2-16
+- item: nakereba
+  from: A2-16
+- item: haraimasu
+  from: A2-16
+- item: ogorimasu
+  from: A2-16
+- item: enryo
+  from: A2-16
+- item: enryo-shinaide
+  from: A2-16
+- item: jaa-sukoshi
+  from: A2-16
+- item: dezaato
+  from: A2-16
+- item: zangyou
+  from: A2-24
+- item: teiji
+  from: A2-24
+- item: tsukareta
+  from: A2-24
+- item: karou
+  from: A2-24
+- item: kara-reason
+  from: A2-24
+- item: owatta-kara
+  from: A2-24
+- item: kaerimasu
+  from: A2-24
+- item: osaki-ni
+  from: A2-24
+- item: yuukyuu
+  from: A2-24
+- item: kenri
+  from: A2-24
+- item: joushi
+  from: A2-24
+- item: shinkansen
+  from: A2-28
+- item: shiteiseki
+  from: A2-28
+- item: jiyuuseki
+  from: A2-28
+- item: toukyou
+  from: A2-28
+- item: katamichi
+  from: A2-28
+- item: oufuku
+  from: A2-28
+- item: tsumori
+  from: A2-28
+- item: iku-tsumori
+  from: A2-28
+- item: mado-gawa
+  from: A2-28
+- item: nan-jikan
+  from: A2-28
+- item: hayai
+  from: A2-28
+- item: oyaji-gyagu
+  from: A2-30
+- item: omoshiroi
+  from: A2-30
+- item: dajare
+  from: A2-30
+- item: warau
+  from: A2-30
+- item: joudan
+  from: A2-30
+- item: bounenkai
+  from: A2-30
+- item: kotoshi
+  from: A2-30
+- item: rainen
+  from: A2-30
+- item: osewa
+  from: A2-30
+- item: yoroshiku-rainen
+  from: A2-30
+steps:
+- type: narrator
+  text:
+    en: 'Kenta''s family invites you to the neighbourhood public bath. On the women''s side: Kenta''s mother and his sister Aya. Listen to the conversation; you don''t need to understand it yet.'
+    pt: 'A família do Kenta convida você para o banho público do bairro. Do lado das mulheres: a mãe do Kenta e a irmã dele, a Aya. Escute a conversa; ainda não precisa entender.'
+- type: dialogue
+  lines:
+  - speaker: kenta-haha
+    text: ここ が 女湯[おんなゆ] です よ。 まず 体[からだ] を 洗[あら]って ね。
+    meaning:
+      en: This is the women's side. Wash first, okay?
+      pt: Aqui é o lado das mulheres. Primeiro se lave, viu?
+  - speaker: aya
+    text: 早[はや]く 入[はい]ろう！ この 湯船[ゆぶね]、 でかい でしょ。
+    meaning:
+      en: Let's get in quick! This tub's huge, right?
+      pt: Vamos entrar logo! Essa banheira é enorme, né?
+  - speaker: protagonist
+    text: うわ、 熱[あつ]い ね！ でも なんか 気持[きも]ち いい。
+    meaning:
+      en: Whoa, it's hot! But it kind of feels good.
+      pt: Nossa, que quente! Mas é meio gostoso.
+  - speaker: aya
+    text: でしょ？ 壁[かべ] の 富士山[ふじさん] も 見[み]て。
+    meaning:
+      en: Right? Look at the Fuji on the wall too.
+      pt: Né? Olha o Fuji na parede também.
+  - speaker: protagonist
+    text: 絵[え] だ！ どの 銭湯[せんとう] に も ある の？
+    meaning:
+      en: A painting! Do all public baths have one?
+      pt: Uma pintura! Todo banho público tem?
+  - speaker: kenta-haha
+    text: 古[ふる]い 銭湯[せんとう] は 多[おお]い です ね。 お風呂[ふろ] 上[あ]がり は 牛乳[ぎゅうにゅう] です よ。
+    meaning:
+      en: Many old ones do. After the bath, it's milk.
+      pt: Os antigos, muitos têm. Depois do banho, é leite.
+  - speaker: aya
+    text: フルーツ 牛乳[ぎゅうにゅう]、 飲[の]もう！
+    meaning:
+      en: Let's have fruit milk!
+      pt: Vamos tomar leite de fruta!
+  - speaker: protagonist
+    text: やった！ 腰[こし] に 手[て] を あてて 飲[の]む ん でしょ？
+    meaning:
+      en: Yay! You drink it with a hand on your hip, right?
+      pt: Eba! Bebe com a mão na cintura, né?
+- type: prompt
+  ask:
+    en: 'Say: the public bath.'
+    pt: 'Diga: o banho público.'
+  answer:
+    speaker: protagonist
+    text: 銭湯[せんとう]
+  items:
+  - sentou
+- type: prompt
+  ask:
+    en: 'Say: the women''s bath.'
+    pt: 'Diga: o banho feminino.'
+  answer:
+    speaker: protagonist
+    text: 女湯[おんなゆ]
+  items:
+  - onna-yu
+- type: prompt
+  ask:
+    en: 'Say: the bathtub.'
+    pt: 'Diga: a banheira.'
+  answer:
+    speaker: protagonist
+    text: 湯船[ゆぶね]
+  items:
+  - yubune
+- type: narrator
+  text:
+    en: 'Among friends Japanese drops です and ます and adds little words: «でしょ？» right?, «なんか» kind of, «ね» huh. «入[はい]ろう» is the plain «入[はい]りましょう», let''s get in. Aya is younger — with her you talk like
+      this.'
+    pt: 'Entre amigos o japonês larga o です e o ます e acrescenta palavrinhas: «でしょ？» né?, «なんか» tipo, meio, «ね» hein. «入[はい]ろう» é o «入[はい]りましょう» informal, vamos entrar. A Aya é mais nova — com ela se fala
+      assim.'
+- type: prompt
+  ask:
+    en: 'Say, casually: let''s get in.'
+    pt: 'Diga, informal: vamos entrar.'
+  answer:
+    speaker: protagonist
+    text: 入[はい]ろう！
+  items:
+  - hairou
+- type: prompt
+  ask:
+    en: 'Say, casually: it''s hot, huh.'
+    pt: 'Diga, informal: que quente, hein.'
+  answer:
+    speaker: protagonist
+    text: 熱[あつ]い ね！
+  items:
+  - atsui-casual
+- type: prompt
+  ask:
+    en: 'Say: kind of, like.'
+    pt: 'Diga: tipo, meio.'
+  answer:
+    speaker: protagonist
+    text: なんか
+  items:
+  - nanka
+- type: prompt
+  ask:
+    en: 'Say, casually: huge.'
+    pt: 'Diga, informal: enorme.'
+  answer:
+    speaker: protagonist
+    text: でかい
+  items:
+  - dekai
+- type: prompt
+  ask:
+    en: 'Ask for agreement: right?'
+    pt: 'Peça concordância: né?'
+  answer:
+    speaker: protagonist
+    text: でしょ？
+  items:
+  - desho
+- type: prompt
+  ask:
+    en: 'Say: after the bath.'
+    pt: 'Diga: depois do banho.'
+  answer:
+    speaker: protagonist
+    text: 風呂[ふろ] 上[あ]がり
+  items:
+  - furo-agari
+- type: prompt
+  ask:
+    en: 'Say: milk.'
+    pt: 'Diga: leite.'
+  answer:
+    speaker: protagonist
+    text: 牛乳[ぎゅうにゅう]
+  items:
+  - gyuunyuu
+- type: prompt
+  ask:
+    en: 'Cheer: yay!'
+    pt: 'Comemore: eba!'
+  answer:
+    speaker: protagonist
+    text: やった！
+  items:
+  - yatta
+- type: narrator
+  text:
+    en: 'A «銭湯[せんとう]» is a neighbourhood bath: you pay a few hundred yen, wash at the taps, then soak in big tubs, men and women apart. Old ones have a painting of Fuji on the wall, and a bottle of milk
+      after the bath — hand on hip — is the classic.'
+    pt: 'O «銭湯[せんとう]» é o banho do bairro: paga-se algumas centenas de ienes, lava-se nas torneiras e depois se relaxa nas banheiras grandes, homens e mulheres separados. Os antigos têm uma pintura do Fuji
+      na parede, e um leitinho depois do banho — mão na cintura — é o clássico.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'O sentō é um pouco o clube do bairro: os vizinhos se encontram, conversam, os mais velhos vão todo dia. Muitos fecharam, mas os que sobraram são um pedaço do Japão antigo.'
+- type: prompt
+  ask:
+    en: 'Once more: say “public bath”.'
+    pt: 'Mais uma vez: diga “banho público”.'
+  answer:
+    speaker: protagonist
+    text: 銭湯[せんとう]
+  items:
+  - sentou
+- type: prompt
+  ask:
+    en: 'Once more: say “the bathtub (the hot pool)”.'
+    pt: 'Mais uma vez: diga “a banheira (a piscina quente)”.'
+  answer:
+    speaker: protagonist
+    text: 湯船[ゆぶね]
+  items:
+  - yubune
+- type: prompt
+  ask:
+    en: 'Once more: say “milk”.'
+    pt: 'Mais uma vez: diga “leite”.'
+  answer:
+    speaker: protagonist
+    text: 牛乳[ぎゅうにゅう]
+  items:
+  - gyuunyuu
+- type: prompt
+  ask:
+    en: 'Once more: say “women''s bath”.'
+    pt: 'Mais uma vez: diga “banho feminino”.'
+  answer:
+    speaker: protagonist
+    text: 女湯[おんなゆ]
+  items:
+  - onna-yu
+- type: prompt
+  ask:
+    en: 'Once more: say “it''s hot, huh (casual)”.'
+    pt: 'Mais uma vez: diga “que quente, hein (informal)”.'
+  answer:
+    speaker: protagonist
+    text: 熱[あつ]い ね
+  items:
+  - atsui-casual
+- type: prompt
+  ask:
+    en: 'Once more: say “kind of, like”.'
+    pt: 'Mais uma vez: diga “tipo, meio”.'
+  answer:
+    speaker: protagonist
+    text: なんか
+  items:
+  - nanka
+- type: prompt
+  ask:
+    en: 'Once more: say “huge (casual)”.'
+    pt: 'Mais uma vez: diga “enorme (informal)”.'
+  answer:
+    speaker: protagonist
+    text: でかい
+  items:
+  - dekai
+- type: prompt
+  ask:
+    en: 'Once more: say “right?, see?”.'
+    pt: 'Mais uma vez: diga “né?, viu?”.'
+  answer:
+    speaker: protagonist
+    text: でしょ
+  items:
+  - desho
+- type: prompt
+  ask:
+    en: 'Once more: say “let''s get in (casual)”.'
+    pt: 'Mais uma vez: diga “vamos entrar (informal)”.'
+  answer:
+    speaker: protagonist
+    text: 入[はい]ろう
+  items:
+  - hairou
+- type: prompt
+  ask:
+    en: 'Once more: say “yay!”.'
+    pt: 'Mais uma vez: diga “eba!”.'
+  answer:
+    speaker: protagonist
+    text: やった
+  items:
+  - yatta
+- type: prompt
+  ask:
+    en: 'Once more: say “after the bath”.'
+    pt: 'Mais uma vez: diga “depois do banho”.'
+  answer:
+    speaker: protagonist
+    text: 風呂[ふろ] 上[あ]がり
+  items:
+  - furo-agari
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “dad joke, pun — and “funny, interesting — and “pun — and “laugh — and “joke — and “year-end party — and “this year — and “next year”.'
+    pt: 'Diga: “piada de tiozão, trocadilho — e “engraçado, interessante — e “trocadilho — e “rio — e “piada, brincadeira — e “festa de fim de ano — e “este ano — e “ano que vem”.'
+  answer:
+    speaker: protagonist
+    text: おやじ ギャグ … 面白[おもしろ]い … 駄洒落[だじゃれ] … 笑[わら]います … 冗談[じょうだん] … 忘年会[ぼうねんかい] … 今年[ことし] … 来年[らいねん]
+  items:
+  - oyaji-gyagu
+  - omoshiroi
+  - dajare
+  - warau
+  - joudan
+  - bounenkai
+  - kotoshi
+  - rainen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “thank you for all your help — and “I look forward to next year too — and “shinkansen, bullet train — and “reserved seat — and “unreserved seat — and “Tokyo — and “one way — and “return (round
+      trip)”.'
+    pt: 'Diga: “obrigado por tudo — e “conto com vocês no ano que vem — e “shinkansen, trem-bala — e “assento reservado — e “assento livre — e “Tóquio — e “só ida — e “ida e volta”.'
+  answer:
+    speaker: protagonist
+    text: お世話[せわ] に なりました … 来年[らいねん] も よろしく お願[ねが]いします … 新幹線[しんかんせん] … 指定席[していせき] … 自由席[じゆうせき] … 東京[とうきょう] … 片道[かたみち] … 往復[おうふく]
+  items:
+  - osewa
+  - yoroshiku-rainen
+  - shinkansen
+  - shiteiseki
+  - jiyuuseki
+  - toukyou
+  - katamichi
+  - oufuku
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I plan to… — and “I plan to go — and “window side — and “how many hours — and “fast — and “overtime — and “regular finishing time — and “I''m tired (plain)”.'
+    pt: 'Diga: “pretendo… — e “pretendo ir — e “janela — e “quantas horas — e “rápido — e “hora extra — e “horário de saída — e “estou cansado (simples)”.'
+  answer:
+    speaker: protagonist
+    text: 〜つもり です … 行[い]く つもり です … 窓側[まどがわ] … 何時間[なんじかん] … 速[はや]い … 残業[ざんぎょう] … 定時[ていじ] … 疲[つか]れた
+  items:
+  - tsumori
+  - iku-tsumori
+  - mado-gawa
+  - nan-jikan
+  - hayai
+  - zangyou
+  - teiji
+  - tsukareta
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “overwork — and “because (reason first) — and “because it''s finished — and “go home — and “excuse me for leaving first — and “paid leave — and “right (legal) — and “boss, superior”.'
+    pt: 'Diga: “excesso de trabalho — e “porque (o motivo antes) — e “porque acabou — e “vou para casa — e “com licença, já vou indo — e “férias remuneradas — e “direito — e “chefe, superior”.'
+  answer:
+    speaker: protagonist
+    text: 過労[かろう] … 〜から … 終[お]わった から … 帰[かえ]ります … お先[さき] に 失礼[しつれい] します … 有給[ゆうきゅう] … 権利[けんり] … 上司[じょうし]
+  items:
+  - karou
+  - kara-reason
+  - owatta-kara
+  - kaerimasu
+  - osaki-ni
+  - yuukyuu
+  - kenri
+  - joushi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the bill — and “splitting the bill — and “tip — and “I must pay — and “must, have to — and “pay — and “it''s my treat — and “holding back out of politeness”.'
+    pt: 'Diga: “a conta — e “rachar a conta — e “gorjeta — e “preciso pagar — e “tenho que, preciso — e “pago — e “eu pago, é por minha conta — e “fazer cerimônia”.'
+  answer:
+    speaker: protagonist
+    text: お会計[かいけい] … 割[わ]り勘[かん] … チップ … 払[はら]わなければ なりません … 〜なければ なりません … 払[はら]います … おごります … 遠慮[えんりょ]
+  items:
+  - okaikei
+  - warikan
+  - chippu
+  - harawanakereba
+  - nakereba
+  - haraimasu
+  - ogorimasu
+  - enryo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “don''t hold back — and “well then, just a little — and “dessert — and “futsal — and “match, game — and “it was fun — and “we won — and “we lost”.'
+    pt: 'Diga: “não faça cerimônia — e “então, só um pouquinho — e “sobremesa — e “futsal — e “jogo, partida — e “foi divertido — e “ganhamos — e “perdemos”.'
+  answer:
+    speaker: protagonist
+    text: 遠慮[えんりょ] しないで … じゃあ、 少[すこ]し だけ … デザート … フットサル … 試合[しあい] … 楽[たの]しかった … 勝[か]ちました … 負[ま]けました
+  items:
+  - enryo-shinaide
+  - jaa-sukoshi
+  - dezaato
+  - futtosaru
+  - shiai
+  - tanoshikatta
+  - kachimashita
+  - makemashita
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “team — and “goal — and “see you next week — and “has got good (at it) — and “Japanese (language)”.'
+    pt: 'Diga: “time, equipe — e “gol — e “até semana que vem — e “ficou bom (nisso) — e “japonês (a língua)”.'
+  answer:
+    speaker: protagonist
+    text: チーム … ゴール … また 来週[らいしゅう] … 上手[じょうず] に なりました … 日本語[にほんご]
+  items:
+  - chiimu
+  - gooru
+  - mata-raishuu
+  - jouzu-ni-narimashita
+  - nihongo
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

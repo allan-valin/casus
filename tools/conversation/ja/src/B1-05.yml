@@ -1,0 +1,42 @@
+id: B1-05
+protagonist: f
+title: [The parents, Os pais]
+situation: ["Shota, Kenta's teammate you've been seeing since the summer festival, takes you to meet his parents. Their tea farm is outside Shizuoka.", "O Shota, colega de time do Kenta com quem você sai desde o festival de verão, leva você para conhecer os pais dele. A plantação de chá deles fica perto de Shizuoka."]
+learn: []
+culture: Bringing a gift
+items:
+  - [goryoushin, "ご両親[りょうしん]", "(someone's) parents", "os pais (de alguém)"]
+  - [temiyage, "手土産[てみやげ]", "a small gift you bring", "lembrancinha que se leva", {rare: true}]
+  - [seiza, "正座[せいざ]", "kneeling formally", "sentar de joelhos (formal)", {rare: true}]
+  - [ojama-shimasu, "お邪魔[じゃま] します", "excuse me for intruding (entering a home)", "com licença (ao entrar na casa)"]
+  - [tsumaranai-mono, "つまらない もの です が", "it's just a little something", "é só uma lembrancinha"]
+  - [hajimete-ome, "初[はじ]めて お目[め] に かかります", "it's an honour to meet you", "é uma honra conhecê-los"]
+  - [ashi-wo-kuzushite, "足[あし] を 崩[くず]して ください", "please sit comfortably", "sente-se à vontade"]
+  - [ocha, "お茶[ちゃ]", "(green) tea", "chá (verde)"]
+  - [itadakimasu-receive, "頂戴[ちょうだい] します", "I'll gladly accept", "aceito com prazer"]
+  - [shitsurei-shimasu, "失礼[しつれい] します", "excuse me (entering, leaving)", "com licença (ao entrar, ao sair)"]
+dialogue:
+  - [protagonist, "お邪魔[じゃま] します。 初[はじ]めて お目[め] に かかります。", "Excuse me for intruding. It's an honour to meet you.", "Com licença. É uma honra conhecê-los."]
+  - [shota-haha, "いらっしゃい。 どうぞ、 上[あ]がって ください。", "Welcome. Please come in.", "Seja bem-vinda. Entre, por favor."]
+  - [protagonist, "これ、 つまらない もの です が…", "This is just a little something…", "Isto é só uma lembrancinha…"]
+  - [shota-haha, "まあ、 ご丁寧[ていねい] に。 ありがとう ございます。", "Oh, how kind of you. Thank you.", "Ah, que gentileza. Muito obrigada."]
+  - [shota-chichi, "足[あし] を 崩[くず]して ください。 正座[せいざ] は 大変[たいへん] でしょう。", "Please sit comfortably. Kneeling must be hard.", "Sente-se à vontade. Ficar de joelhos deve ser difícil."]
+  - [protagonist, "ありがとう ございます。 では、 失礼[しつれい] します。", "Thank you. Then, excuse me.", "Obrigada. Então, com licença."]
+  - [shota-haha, "うち の お茶[ちゃ] です。 どうぞ。", "Our own tea. Please.", "É o nosso chá. Sirva-se."]
+  - [protagonist, "頂戴[ちょうだい] します。 …おいしい！ 翔太[しょうた] さん の ご両親[りょうしん] の お茶[ちゃ] です ね。", "Thank you, I will. …Delicious! This is your own tea, then.", "Aceito com prazer. …Que delícia! É o chá da família do Shota."]
+  - [shota, "ほら、 大丈夫[だいじょうぶ] だった でしょ。", "See, it went fine, didn't it.", "Viu, deu tudo certo, não deu?"]
+teach:
+  - ask: ["Say: his parents — politely.", "Diga: os pais dele — com respeito.", "ご両親[りょうしん]", goryoushin]
+  - note: ["Visiting a home is full of set phrases: «お邪魔[じゃま] します» on entering — literally, I'm intruding; «初[はじ]めて お目[め] に かかります», a humble it's an honour to meet you; «つまらない もの です が…» with the gift — it's nothing much. They're said whole, like «よろしく お願[ねが]いします».", "Visitar uma casa é cheio de frases prontas: «お邪魔[じゃま] します» ao entrar — ao pé da letra, estou atrapalhando; «初[はじ]めて お目[め] に かかります», um humilde é uma honra conhecê-los; «つまらない もの です が…» com o presente — não é nada de mais. Elas se dizem inteiras, como «よろしく お願[ねが]いします»."]
+  - ask: ["Enter the house politely.", "Entre na casa com educação.", "お邪魔[じゃま] します。", ojama-shimasu]
+  - build: [hajimete-ome, ["かかります", "お目[め] に かかります", "初[はじ]めて お目[め] に かかります"]]
+  - ask: ["Greet his parents humbly.", "Cumprimente os pais dele com humildade.", "初[はじ]めて お目[め] に かかります。", hajimete-ome]
+  - ask: ["Say: a gift you bring.", "Diga: uma lembrancinha.", "手土産[てみやげ]", temiyage]
+  - ask: ["Hand it over: it's just a little something.", "Entregue: é só uma lembrancinha.", "つまらない もの です が…", tsumaranai-mono]
+  - ask: ["Say: kneeling formally.", "Diga: sentar de joelhos.", "正座[せいざ]", seiza]
+  - ask: ["Repeat what he said: please sit comfortably.", "Repita o que ele disse: sente-se à vontade.", "足[あし] を 崩[くず]して ください。", ashi-wo-kuzushite]
+  - ask: ["Say: excuse me — as you sit down.", "Diga: com licença — ao se sentar.", "失礼[しつれい] します。", shitsurei-shimasu]
+  - ask: ["Say: green tea.", "Diga: chá verde.", "お茶[ちゃ]", ocha]
+  - ask: ["Accept the tea humbly.", "Aceite o chá com humildade.", "頂戴[ちょうだい] します。", itadakimasu-receive]
+  - note: ["Bring a «手土産[てみやげ]»: wrapped sweets from your town or from Brazil, handed over with both hands after the greetings. Kneel in «正座[せいざ]» at first; when the host says «足[あし] を 崩[くず]して», you may sit more comfortably. Shizuoka is one of Japan's great green-tea regions.", "Leve um «手土産[てみやげ]»: doces embrulhados da sua cidade ou do Brasil, entregues com as duas mãos depois dos cumprimentos. Sente de joelhos em «正座[せいざ]» no começo; quando o anfitrião disser «足[あし] を 崩[くず]して», pode se acomodar. Shizuoka é uma das grandes regiões de chá verde do Japão."]
+  - pt_only: "Conhecer os sogros no Brasil é churrasco e abraço. No Japão é formal no começo — a lembrancinha e as frases certas abrem a porta, e o calor vem depois."
