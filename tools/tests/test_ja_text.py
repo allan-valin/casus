@@ -53,3 +53,17 @@ def test_a_whole_course_gets_plain_text_and_a_readings_table():
 def test_greetings_are_said_with_wa():
     assert parse('こんにちは。')['say'] == 'こんにちわ。'
     assert parse('こんにちは。')['text'] == 'こんにちは。'
+
+
+def test_each_unit_lists_its_new_kanji_with_the_learn_lesson_that_drills_them():
+    # Allan 2026-10-22: every unit links its new kanji to the kanji drills, in the unit card and in the review
+    from ja_text import unit_kanji
+    data = {'units': [
+        {'id': 'A1-01', 'new_items': [{'id': 'a', 'text': '日本人'}], 'reviews': []},
+        {'id': 'A1-02', 'new_items': [{'id': 'b', 'text': '本当'}, {'id': 'c', 'text': 'すし'}], 'reviews': [{'item': 'a'}]},
+    ]}
+    unit_kanji(data, {'日': 'n5-k1', '本': 'n5-k1', '人': 'n5-k1'})
+    first, second = data['units']
+    assert first['kanji'] == [{'k': '日', 'lesson': 'n5-k1'}, {'k': '本', 'lesson': 'n5-k1'}, {'k': '人', 'lesson': 'n5-k1'}]
+    assert second['kanji'] == [{'k': '当', 'lesson': None}]                    # 本 came in A1-01; 当 has no lesson
+    assert second['review_kanji'] == [{'k': '日', 'lesson': 'n5-k1'}, {'k': '本', 'lesson': 'n5-k1'}, {'k': '人', 'lesson': 'n5-k1'}]

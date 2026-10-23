@@ -73,6 +73,22 @@ describe('Conversation practice tab (Allan, 2026-10-20/21: narrator in the inter
     expect(container.querySelectorAll('.step').length).toBe(7);
   });
 
+  it('a Japanese unit links its new kanji, and the kanji of its reviews, to the kanji drills in Learn (Allan, 2026-10-22)', async () => {
+    setLang('pt');
+    const unit = { ...COURSE.units[0], kanji: [{ k: '桜', lesson: 'n3-k9' }, { k: '噌', lesson: null }], review_kanji: [{ k: '日', lesson: 'n5-k1' }],
+      steps: [...COURSE.units[0].steps.slice(0, 5), { type: 'prompt', review: true, ask: { pt: 'Diga.', en: 'Say.' }, answer: { speaker: 'protagonist', text: 'Danke!' }, items: ['danke'] }, ...COURSE.units[0].steps.slice(5)] };
+    const { p } = props({ loadTalk: async () => ({ ...COURSE, units: [unit] }), kanjiHref: (lesson) => `/ja/learn/#${lesson}` });
+    const { container } = render(Talk, p);
+    await flush();
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    const card = container.querySelector('.unit-kanji');
+    expect([...card.querySelectorAll('a.kanji')].map((a) => [a.textContent, a.getAttribute('href')])).toEqual([['桜', '/ja/learn/#n3-k9']]);
+    expect(card.querySelector('span.kanji').textContent).toBe('噌');        // no lesson drills it: shown, not linked
+    const review = container.querySelector('.step[data-type="prompt"] .review-kanji');
+    expect(review.querySelector('a.kanji').getAttribute('href')).toBe('/ja/learn/#n5-k1');
+    expect(container.querySelectorAll('.review-kanji')).toHaveLength(1);    // once, at the first review question
+  });
   it('an audience version shows its slot number, not the internal suffix (A1-02-e → A1-02)', async () => {
     setLang('en');
     const course = { ...COURSE, narrator_languages: ['en', 'ar'], units: [{ ...COURSE.units[1], id: 'A1-02-e', tracks: ['en'] }] };

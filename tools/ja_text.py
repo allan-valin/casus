@@ -81,3 +81,39 @@ def rich_course(data):
                 s['parts'] = [conv(p) for p in s['parts']]
     data['readings'] = readings
     return data
+
+
+_KANJI = re.compile(r'[々㐀-䶿一-鿿]')
+
+
+def _kanji_of(texts, lessons, skip=()):
+    out, seen = [], set(skip)
+    for t in texts:
+        for k in _KANJI.findall(t):
+            if k not in seen and k != '々':
+                seen.add(k)
+                out.append({'k': k, 'lesson': lessons.get(k)})
+    return out
+
+
+def unit_kanji(data, lessons):
+    """each unit's new kanji (first met in its new items) and the kanji of its review items, each with the Learn
+    kanji lesson that drills it (Allan, 2026-10-22: link them in the unit card and in the review)"""
+    text_of = {i['id']: i['text'] for u in data.get('units', []) for i in u.get('new_items', [])}
+    met = set()
+    for u in data.get('units', []):
+        u['kanji'] = _kanji_of([i['text'] for i in u.get('new_items', [])], lessons, met)
+        met.update(x['k'] for x in u['kanji'])
+        u['review_kanji'] = _kanji_of([text_of[r['item']] for r in u.get('reviews', []) if r['item'] in text_of], lessons)
+    return data
+
+
+def kanji_lessons(folder):
+    """{kanji: lesson id} from the Learn kanji lessons (data/ja/learn/n5-k1.json …)"""
+    import json
+    from pathlib import Path
+    out = {}
+    for p in sorted(Path(folder).glob('n[1-5]-k*.json')):
+        for k in json.loads(p.read_text(encoding='utf-8')).get('kanji', []):
+            out.setdefault(k['k'], p.stem)
+    return out

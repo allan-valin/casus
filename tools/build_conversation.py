@@ -13,7 +13,7 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from conversation_check import check_bible, check_course, check_unit  # noqa: E402
-from ja_text import rich_course  # noqa: E402
+from ja_text import kanji_lessons, rich_course, unit_kanji  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -57,6 +57,7 @@ def build(src=ROOT / "tools" / "conversation", out=ROOT / "public" / "talk"):
         if code == "ja":                         # furigana, romaji and the kana the voice reads (Allan, 2026-10-22)
             try:
                 rich_course(data)
+                unit_kanji(data, kanji_lessons(ROOT / 'data' / 'ja' / 'learn'))
             except ValueError as e:
                 report[code]["errors"].append(str(e))
                 continue

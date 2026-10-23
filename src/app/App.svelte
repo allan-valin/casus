@@ -29,7 +29,7 @@
   import Talk from './components/Talk.svelte';
   import VoiceSettings from './components/VoiceSettings.svelte';
   import WordEntry from './components/WordEntry.svelte';
-  import { speakPath } from './lib/route.js';
+  import { learnPath, speakPath } from './lib/route.js';
   import { speakHref } from './lib/pronounce.js';
   import ThemeControls from './components/ThemeControls.svelte';
   import ProgressChip from './components/ProgressChip.svelte';
@@ -291,9 +291,10 @@
       VoiceBox={VoiceSettings}
       Practice={Trainer} practiceProps={{ lang, voice, fetchImpl, data: DATA, base: withBase('/'), lexicon, storage, compact: true, say: (msg, kind) => activity.say(msg, kind) }}
       control={{ pause: pausePlayback, resume: resumePlayback, stop: stopPlayback }} voices={[voice]} narratorVoiceOf={narratorVoice}
+      kanjiHref={(lesson) => `${withBase(learnPath(LANGUAGES.find((l) => l.code === lang.code) ?? { path: '/' }))}#${lesson}`}
       say={(msg, kind) => activity.say(msg, kind)} />
   {:else if route.view === 'learn'}
-    <Learn {lang} {storage} {award} {progression} lookup={(w) => (lexicon ? lexicon.lookup(w) : Promise.resolve([]))} loadInfo={loadEntryInfo} loadParadigm={loadParadigmOf} speak={(text) => speakHref(withBase(speakPath(LANGUAGES.find((l) => l.code === lang.code) ?? { path: '/' })), text)} loadLearn={() => fetchImpl(`${DATA}/learn.json`).then((r) => (r.ok ? r.json() : null))}
+    <Learn {lang} {storage} {award} {progression} startLesson={decodeURIComponent(location.hash.slice(1)) || null} lookup={(w) => (lexicon ? lexicon.lookup(w) : Promise.resolve([]))} loadInfo={loadEntryInfo} loadParadigm={loadParadigmOf} speak={(text) => speakHref(withBase(speakPath(LANGUAGES.find((l) => l.code === lang.code) ?? { path: '/' })), text)} loadLearn={() => fetchImpl(`${DATA}/learn.json`).then((r) => (r.ok ? r.json() : null))}
       loadLesson={(id) => fetchImpl(`${DATA}/learn/${id}.json`).then((r) => r.json())}
       loadQuestions={(id) => fetchImpl(`${DATA}/learn/q-${id}.json`).then((r) => (r.ok ? r.json() : { qs: [] }))}
       openInReader={(text) => { try { storage?.setItem(`casus:input:${lang.code}`, text); } catch { /* not kept */ } location.href = withBase(LANGUAGES.find((l) => l.code === lang.code)?.path ?? '/'); }} />

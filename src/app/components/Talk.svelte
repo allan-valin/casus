@@ -14,7 +14,7 @@
   import { narrationParts, taughtLetters } from '../lib/narration.js';
   let { lang, loadTalk, storage = null, speakTaught = async () => {}, speakNarrator = async () => {}, trainerHref = null,
     say = () => {}, pause = (ms) => new Promise((r) => setTimeout(r, ms)), Practice = null, practiceProps = {}, control = null,
-    voices = [], narratorVoiceOf = null, Entry = null, entryProps = {}, VoiceBox = null } = $props();
+    voices = [], narratorVoiceOf = null, Entry = null, entryProps = {}, VoiceBox = null, kanjiHref = null } = $props();
 
   const GUIDE = 'https://github.com/allan-valin/casus/blob/main/docs/conversation';
   const GUIDES = [['en', 'English'], ['pt-BR', 'Português (Brasil)'], ['de', 'Deutsch'], ['mk', 'Македонски'], ['ar', 'العربية']];
@@ -73,6 +73,7 @@
   function pickLevel(l) { pickedLevel = l; try { storage?.setItem(LEVEL_KEY, l); } catch { /* not kept */ } }
   const doneIn = (l) => shownUnits.filter((u) => u.level === l && done.includes(u.id)).length;
   const countIn = (l) => shownUnits.filter((u) => u.level === l).length;
+  const firstReview = $derived(unit ? unit.steps.findIndex((st) => st.review) : -1);
   const items = $derived(unit ? Object.fromEntries((unit.new_items ?? []).concat(course.items ?? []).map((i) => [i.id, i])) : {});
   const speaker = (id) => (id === 'protagonist' ? t('talk.you') : course?.cast?.[id]?.name ?? id);
   const pitches = $derived(voicePitches(course));
@@ -260,6 +261,11 @@
   {/if}
 {/snippet}
 
+<!-- a unit's kanji, each linked to the Learn kanji lesson that drills it (Allan, 2026-10-22) -->
+{#snippet kanjiList(list, cls, label)}
+  <p class={cls}><span class="kanji-label">{t(label)}</span>
+    {#each list as x}{#if x.lesson && kanjiHref}<a class="kanji" lang="ja" href={kanjiHref(x.lesson)}>{x.k}</a>{:else}<span class="kanji" lang="ja">{x.k}</span>{/if} {/each}</p>
+{/snippet}
 {#snippet ruby(w, r)}{#if HAS_KANJI.test(w)}{#each alignFurigana(w, r) as [c, cr]}{#if cr}<ruby>{c}<rt>{cr}</rt></ruby>{:else}{c}{/if}{/each}{:else}{w}{/if}{/snippet}
 
 {#snippet words(key, text)}
@@ -320,6 +326,7 @@
       <button class="back" onclick={back}>← {t('talk.back')}</button>
       <h3>{slot(unit.id)} · {nar(unit.title)}</h3>
       <p class="situation">{nar(unit.situation)}</p>
+      {#if unit.kanji?.length}{@render kanjiList(unit.kanji, 'unit-kanji', 'talk.kanji.new')}{/if}
       {#if needVoices}
         <div class="voice-gate">
           <p>{t('talk.voices.need', { names: missing.map((v) => v.natural.name).join(', '), mb: missing.reduce((n, v) => n + (v.natural.sizeMB ?? 0), 0) })}</p>
@@ -356,6 +363,7 @@
               {#if Practice && practising === n}<div class="practice"><Practice text={s.parts.at(-1)} {...practiceProps} /></div>{/if}
             {:else if s.type === 'prompt'}
               <span class="ask">{shownNarration(nar(s.ask))}</span>{#if s.review} <span class="review-tag">{t('talk.review')}</span>{/if}
+              {#if s.review && n === firstReview && unit.review_kanji?.length}{@render kanjiList(unit.review_kanji, 'review-kanji', 'talk.kanji.review')}{/if}
               <span class="pause-hint">{t('talk.sayIt')}</span>
               <button class="answer" onclick={() => answer(s, n)}>{t('talk.answer')}</button>
               {#if Practice}<button class="practise" aria-expanded={practising === n} onclick={() => practise(n)}>🎤 {t('talk.practise')}</button>{/if}
@@ -428,6 +436,10 @@
   .taught ruby { ruby-align: center; }
   .meaning { color: var(--ink-2); font-style: italic; }
   .kind, .pause-hint { color: var(--ink-2); font-size: 0.9rem; }
+  .unit-kanji, .review-kanji { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .kanji-label { font-size: 0.85rem; color: var(--ink-2); flex-basis: 100%; }
+  .kanji { font-size: 1.3rem; border: 1px solid var(--line); border-radius: 8px; padding: 0 8px; text-decoration: none; color: inherit; }
+  a.kanji:hover { border-color: currentColor; }
   .review-tag { font-size: 0.78rem; border: 1px solid var(--line); border-radius: 999px; padding: 0 8px; color: var(--ink-2); }
   .lines { list-style: none; padding: 0; margin: 4px 0 0; width: 100%; display: grid; gap: 2px; }
   .typed { min-width: 12em; padding: 3px 8px; border: 1px solid var(--line); border-radius: 6px; background: transparent; color: var(--ink); }

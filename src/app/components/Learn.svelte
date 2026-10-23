@@ -17,7 +17,7 @@
   import { learnSections } from '../lib/learnorigin.js';
   import WordEntry from './WordEntry.svelte';
   import { wordAround, candidatesAt, firstKnown } from '../lib/wordat.js';
-  let { lang, loadLearn, loadLesson, loadQuestions, storage = null, random = Math.random, openInReader = null, speak = null, saveFile = downloadFile, award = null, progression = null, lookup = null, loadInfo = null, loadParadigm = null } = $props();
+  let { lang, loadLearn, loadLesson, loadQuestions, storage = null, random = Math.random, openInReader = null, speak = null, saveFile = downloadFile, award = null, progression = null, lookup = null, loadInfo = null, loadParadigm = null, startLesson = null } = $props();
 
   let learn = $state(null);
   let failed = $state(false);
@@ -66,6 +66,9 @@
       learn = await loadLearn();
       if (!learn?.levels?.length) { failed = true; return; }
       levelId = learn.levels[0].id; from = levelId; to = levelId;
+      // a link straight to one lesson (/<code>/learn/#n5-k1, from a Talk unit's kanji): open it in its own level
+      const start = startLesson && flat.find((x) => x.entry.id === startLesson);
+      if (start) { levelId = start.level.id; from = levelId; to = levelId; await open(start); }
     } catch { failed = true; }
   });
 

@@ -54,6 +54,13 @@ describe('Learn tab, second version (Allan, 2026-10-19: topics listed under each
     expect(picker.open).toBe(false);
     expect(picker.querySelector('summary').textContent).toContain('N4');
   });
+  it('a link can open a lesson directly, in its own level (Allan 2026-10-22: a Talk unit links its kanji to the kanji drills)', async () => {
+    const calls = [];
+    const { container } = render(Learn, props({ startLesson: 'n4-001', loadLesson: async (id) => { calls.push(id); return { ...LESSONS['n5-004'], id }; } }));
+    await flush();
+    expect(calls[0]).toBe('n4-001');
+    expect(container.querySelector('.prev-lesson')?.dataset.lesson).toBe('n5-v1');
+  });
   it('opening a lesson fetches its neighbours in the background and never fetches a lesson twice (Allan, 2026-10-22: Learn felt like a reload)', async () => {
     const calls = [];
     const { container } = render(Learn, props({ loadLesson: async (id) => { calls.push(id); return LESSONS[id] ?? { ...LESSONS['n5-004'], id }; } }));
