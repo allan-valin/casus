@@ -1,0 +1,615 @@
+# UNIT ja C1-27 — written by AI (Claude) for Casus; expanded from src/C1-27.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-27
+level: C1
+number: 27
+protagonist: f
+title:
+  en: Mental health
+  pt: Saúde mental
+situation:
+  en: Aya, now working in Tokyo, calls late at night. She can't sleep, can't eat, cries before work. You listen, and help her find someone to talk to.
+  pt: A Aya, agora trabalhando em Tóquio, liga tarde da noite. Não consegue dormir, nem comer, chora antes do trabalho. Você ouve e a ajuda a achar alguém com quem conversar.
+learn_lessons: []
+culture: Stigma lifting
+new_items:
+- id: moetsuki
+  text: 燃[も]え尽[つ]き
+  meaning:
+    en: burnout
+    pt: esgotamento, burnout
+  rare: true
+- id: utsu
+  text: うつ
+  meaning:
+    en: depression
+    pt: depressão
+- id: kaunseringu
+  text: カウンセリング
+  meaning:
+    en: counselling
+    pt: terapia, aconselhamento
+- id: osore-ga-aru
+  text: 〜おそれ が ある
+  meaning:
+    en: there is a risk that
+    pt: há o risco de
+- id: byouki-ni-naru-osore
+  text: 病気[びょうき] に なる おそれ が ある
+  meaning:
+    en: there's a risk of getting ill
+    pt: há o risco de adoecer
+- id: nemurenai
+  text: 眠[ねむ]れない
+  meaning:
+    en: can't sleep
+    pt: não consigo dormir
+- id: muri-shinaide
+  text: 無理[むり] しないで
+  meaning:
+    en: don't push yourself
+    pt: não se force
+- id: kyuushoku
+  text: 休職[きゅうしょく]
+  meaning:
+    en: leave of absence (sick)
+    pt: afastamento do trabalho
+  rare: true
+- id: shinryou-naika
+  text: 心療[しんりょう] 内科[ないか]
+  meaning:
+    en: psychosomatic clinic
+    pt: clínica de saúde mental
+  rare: true
+- id: hitori-ja-nai
+  text: 一人[ひとり] じゃ ない
+  meaning:
+    en: you're not alone
+    pt: você não está sozinha
+reviews:
+- item: raamen
+  from: A1-20
+- item: tabetai
+  from: A1-20
+- item: nomitai
+  from: A1-20
+- item: tai
+  from: A1-20
+- item: karai
+  from: A1-20
+- item: atsui-food
+  from: A1-20
+- item: kenbaiki
+  from: A1-20
+- item: oomori
+  from: A1-20
+- item: susuru
+  from: A1-20
+- item: onaka-suita
+  from: A1-20
+- item: nani-ga-ii
+  from: A1-20
+- item: gairaigo
+  from: B1-24
+- item: porutogaru
+  from: B1-24
+- item: tabako
+  from: B1-24
+- item: karuta
+  from: B1-24
+- item: botan
+  from: B1-24
+- item: koto-ni-suru
+  from: B1-24
+- item: yomu-koto-ni-shita
+  from: B1-24
+- item: moji
+  from: B1-24
+- item: gogen
+  from: B1-24
+- item: shiranakatta
+  from: B1-24
+- item: rekishi
+  from: B1-24
+- item: taiko
+  from: B2-26
+- item: renshuu
+  from: B2-26
+- item: rizumu
+  from: B2-26
+- item: tame-ni
+  from: B2-26
+- item: jouzu-ni-naru-tame-ni
+  from: B2-26
+- item: bachi
+  from: B2-26
+- item: kakegoe
+  from: B2-26
+- item: shisei
+  from: B2-26
+- item: kokyuu
+  from: B2-26
+- item: awaseru
+  from: B2-26
+- item: onegai-shimasu-start
+  from: B2-26
+- item: taue
+  from: C1-12
+- item: tanbo
+  from: C1-12
+- item: nouka
+  from: C1-12
+- item: tetsudai
+  from: C1-12
+- item: mono-da
+  from: C1-12
+- item: yatta-mono-da
+  from: C1-12
+- item: nae
+  from: C1-12
+- item: doro
+  from: C1-12
+- item: koshi-ga-itai
+  from: C1-12
+- item: kikai-de
+  from: C1-12
+- item: aki-ni-wa
+  from: C1-12
+- item: ninshin
+  from: C1-20
+- item: boshitechou
+  from: C1-20
+- item: shussan
+  from: C1-20
+- item: kenshin
+  from: C1-20
+- item: yoteibi
+  from: C1-20
+- item: tsuwari
+  from: C1-20
+- item: uchi-ni-review
+  from: C1-20
+- item: junbi-review
+  from: C1-20
+- item: otto
+  from: C1-20
+- item: tsuma
+  from: C1-20
+- item: rifoomu
+  from: C1-24
+- item: kouji
+  from: C1-24
+- item: tsuide-ni
+  from: C1-24
+- item: aisatsu-no-tsuide
+  from: C1-24
+- item: souon-review
+  from: C1-24
+- item: kouki
+  from: C1-24
+- item: taoru-review
+  from: C1-24
+- item: daiku
+  from: C1-24
+- item: chuushajou
+  from: C1-24
+- item: yoroshiku-onegai-itashimasu-review
+  from: C1-24
+- item: intai
+  from: C1-26
+- item: kanshajou
+  from: C1-26
+- item: omoide
+  from: C1-26
+- item: nagai-aida
+  from: C1-26
+- item: shidou
+  from: C1-26
+- item: kokoro-kara
+  from: C1-26
+- item: hyoushou
+  from: C1-26
+- item: hiki-tsugu
+  from: C1-26
+- item: wasuremasen
+  from: C1-26
+- item: otsukaresama-retire
+  from: C1-26
+steps:
+- type: narrator
+  text:
+    en: Aya, now working in Tokyo, calls late at night. She can't sleep, can't eat, cries before work. You listen, and help her find someone to talk to. Listen to the conversation; you don't need to understand
+      it yet.
+    pt: A Aya, agora trabalhando em Tóquio, liga tarde da noite. Não consegue dormir, nem comer, chora antes do trabalho. Você ouve e a ajuda a achar alguém com quem conversar. Escute a conversa; ainda
+      não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: aya
+    text: 最近[さいきん]、 眠[ねむ]れない の。 朝[あさ]、 会社[かいしゃ] に 行[い]く 前[まえ] に 涙[なみだ] が 出[で]る。
+    meaning:
+      en: Lately I can't sleep. In the morning I cry before going to work.
+      pt: Ultimamente não consigo dormir. De manhã, antes de ir trabalhar, as lágrimas saem.
+  - speaker: protagonist
+    text: 話[はな]して くれて ありがとう。 一人[ひとり] じゃ ない よ。
+    meaning:
+      en: Thank you for telling me. You're not alone.
+      pt: Obrigada por me contar. Você não está sozinha.
+  - speaker: aya
+    text: でも 休[やす]んだら、 みんな に 迷惑[めいわく] が かかる。
+    meaning:
+      en: But if I take time off, it'll be a burden on everyone.
+      pt: Mas se eu tirar folga, vou atrapalhar todo mundo.
+  - speaker: protagonist
+    text: 無理[むり] しないで。 この まま だ と、 本当[ほんとう] に 病気[びょうき] に なる おそれ が ある。
+    meaning:
+      en: Don't push yourself. If this goes on, there's a real risk you'll get ill.
+      pt: Não se force. Se continuar assim, há o risco de você adoecer de verdade.
+  - speaker: aya
+    text: 燃[も]え尽[つ]き かな。 うつ かも しれない。
+    meaning:
+      en: Maybe it's burnout. It might be depression.
+      pt: Talvez seja burnout. Pode ser depressão.
+  - speaker: protagonist
+    text: 心療[しんりょう] 内科[ないか] で 相談[そうだん] して みよう。 会社[かいしゃ] の カウンセリング も ある はず だ よ。
+    meaning:
+      en: Let's try talking to a psychosomatic clinic. Your company should have counselling too.
+      pt: Vamos tentar conversar com uma clínica de saúde mental. A empresa deve ter atendimento psicológico também.
+  - speaker: aya
+    text: 休職[きゅうしょく] って、 できる の か な。
+    meaning:
+      en: I wonder if I can take a leave of absence.
+      pt: Será que dá para me afastar do trabalho?
+  - speaker: protagonist
+    text: 医者[いしゃ] の 診断書[しんだんしょ] が あれば できる。 まず は 明日[あした]、 一緒[いっしょ] に 予約[よやく] しよう。
+    meaning:
+      en: With a doctor's certificate you can. First, let's book an appointment together tomorrow.
+      pt: Com atestado médico, dá. Primeiro, amanhã a gente marca uma consulta juntas.
+- type: prompt
+  ask:
+    en: 'Say: I can''t sleep.'
+    pt: 'Diga: não consigo dormir.'
+  answer:
+    speaker: protagonist
+    text: 眠[ねむ]れない。
+  items:
+  - nemurenai
+- type: prompt
+  ask:
+    en: 'Tell her: you''re not alone.'
+    pt: 'Diga a ela: você não está sozinha.'
+  answer:
+    speaker: protagonist
+    text: 一人[ひとり] じゃ ない よ。
+  items:
+  - hitori-ja-nai
+- type: prompt
+  ask:
+    en: 'Say: don''t push yourself.'
+    pt: 'Diga: não se force.'
+  answer:
+    speaker: protagonist
+    text: 無理[むり] しないで。
+  items:
+  - muri-shinaide
+- type: prompt
+  ask:
+    en: 'Say: burnout.'
+    pt: 'Diga: burnout.'
+  answer:
+    speaker: protagonist
+    text: 燃[も]え尽[つ]き
+  items:
+  - moetsuki
+- type: prompt
+  ask:
+    en: 'Say: depression.'
+    pt: 'Diga: depressão.'
+  answer:
+    speaker: protagonist
+    text: うつ
+  items:
+  - utsu
+- type: narrator
+  text:
+    en: '«〜おそれ が ある» is there is a risk that — a formal warning of something bad: «病気[びょうき] に なる おそれ が ある», there''s a risk of getting ill; weather news: «大雨[おおあめ] の おそれ», risk of heavy rain.'
+    pt: '«〜おそれ が ある» é há o risco de — um aviso formal de algo ruim: «病気[びょうき] に なる おそれ が ある», há o risco de adoecer; na previsão do tempo: «大雨[おおあめ] の おそれ», risco de chuva forte.'
+- type: prompt
+  ask:
+    en: 'Say the pattern: there is a risk that.'
+    pt: 'Diga o padrão: há o risco de.'
+  answer:
+    speaker: protagonist
+    text: 〜おそれ が ある
+  items:
+  - osore-ga-aru
+- type: prompt
+  ask:
+    en: 'Say: there''s a risk of getting ill.'
+    pt: 'Diga: há o risco de adoecer.'
+  answer:
+    speaker: protagonist
+    text: 病気[びょうき] に なる おそれ が ある
+  items:
+  - byouki-ni-naru-osore
+- type: prompt
+  ask:
+    en: 'Say: counselling.'
+    pt: 'Diga: terapia.'
+  answer:
+    speaker: protagonist
+    text: カウンセリング
+  items:
+  - kaunseringu
+- type: prompt
+  ask:
+    en: 'Say: a psychosomatic clinic.'
+    pt: 'Diga: clínica de saúde mental.'
+  answer:
+    speaker: protagonist
+    text: 心療[しんりょう] 内科[ないか]
+  items:
+  - shinryou-naika
+- type: prompt
+  ask:
+    en: 'Say: a sick leave of absence.'
+    pt: 'Diga: afastamento do trabalho.'
+  answer:
+    speaker: protagonist
+    text: 休職[きゅうしょく]
+  items:
+  - kyuushoku
+- type: narrator
+  text:
+    en: 'Mental illness carried a strong stigma in Japan, and many still hesitate to seek help, but it is lifting: «心療[しんりょう] 内科[ないか]» clinics are common, companies must offer stress checks, and sick leave
+      with a doctor''s certificate is a right. Japan''s government runs a national mental-health phone line, «こころ の 健康[けんこう] 相談[そうだん] 統一[とういつ] ダイヤル» — look up the current number on the Ministry of Health''s
+      site.'
+    pt: 'A doença mental carregava um estigma forte no Japão, e muitos ainda hesitam em pedir ajuda, mas isso está mudando: clínicas «心療[しんりょう] 内科[ないか]» são comuns, as empresas precisam oferecer avaliação
+      de estresse, e o afastamento com atestado médico é um direito. O governo japonês mantém uma linha nacional de saúde mental, «こころ の 健康[けんこう] 相談[そうだん] 統一[とういつ] ダイヤル» — confira o número atual no site
+      do Ministério da Saúde.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil há o CVV, 188, para quem precisa conversar. No Japão também há linhas de apoio, em japonês e às vezes em português — pedir ajuda é coragem, não fraqueza.
+- type: prompt
+  ask:
+    en: 'Once more: say “burnout”.'
+    pt: 'Mais uma vez: diga “esgotamento, burnout”.'
+  answer:
+    speaker: protagonist
+    text: 燃[も]え尽[つ]き
+  items:
+  - moetsuki
+- type: prompt
+  ask:
+    en: 'Once more: say “depression”.'
+    pt: 'Mais uma vez: diga “depressão”.'
+  answer:
+    speaker: protagonist
+    text: うつ
+  items:
+  - utsu
+- type: prompt
+  ask:
+    en: 'Once more: say “counselling”.'
+    pt: 'Mais uma vez: diga “terapia, aconselhamento”.'
+  answer:
+    speaker: protagonist
+    text: カウンセリング
+  items:
+  - kaunseringu
+- type: prompt
+  ask:
+    en: 'Once more: say “there is a risk that”.'
+    pt: 'Mais uma vez: diga “há o risco de”.'
+  answer:
+    speaker: protagonist
+    text: 〜おそれ が ある
+  items:
+  - osore-ga-aru
+- type: prompt
+  ask:
+    en: 'Once more: say “there''s a risk of getting ill”.'
+    pt: 'Mais uma vez: diga “há o risco de adoecer”.'
+  answer:
+    speaker: protagonist
+    text: 病気[びょうき] に なる おそれ が ある
+  items:
+  - byouki-ni-naru-osore
+- type: prompt
+  ask:
+    en: 'Once more: say “can''t sleep”.'
+    pt: 'Mais uma vez: diga “não consigo dormir”.'
+  answer:
+    speaker: protagonist
+    text: 眠[ねむ]れない
+  items:
+  - nemurenai
+- type: prompt
+  ask:
+    en: 'Once more: say “don''t push yourself”.'
+    pt: 'Mais uma vez: diga “não se force”.'
+  answer:
+    speaker: protagonist
+    text: 無理[むり] しないで
+  items:
+  - muri-shinaide
+- type: prompt
+  ask:
+    en: 'Once more: say “leave of absence (sick)”.'
+    pt: 'Mais uma vez: diga “afastamento do trabalho”.'
+  answer:
+    speaker: protagonist
+    text: 休職[きゅうしょく]
+  items:
+  - kyuushoku
+- type: prompt
+  ask:
+    en: 'Once more: say “psychosomatic clinic”.'
+    pt: 'Mais uma vez: diga “clínica de saúde mental”.'
+  answer:
+    speaker: protagonist
+    text: 心療[しんりょう] 内科[ないか]
+  items:
+  - shinryou-naika
+- type: prompt
+  ask:
+    en: 'Once more: say “you''re not alone”.'
+    pt: 'Mais uma vez: diga “você não está sozinha”.'
+  answer:
+    speaker: protagonist
+    text: 一人[ひとり] じゃ ない
+  items:
+  - hitori-ja-nai
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “retirement — and “certificate of thanks — and “memories — and “for a long time — and “guidance, teaching — and “from the heart — and “we hereby express our gratitude — and “carry on, take
+      over — and “we will never forget — and “thank you for all your years of work — and “renovation — and “construction work — and “while (you''re at it)”.'
+    pt: 'Diga: “aposentadoria (de uma atividade) — e “certificado de agradecimento — e “lembranças — e “por muito tempo — e “orientação, ensino — e “do fundo do coração — e “aqui expressamos nossa gratidão
+      — e “dar continuidade — e “nunca vamos esquecer — e “obrigado por todos esses anos — e “reforma — e “obra — e “aproveitando que, de passagem”.'
+  answer:
+    speaker: protagonist
+    text: 引退[いんたい] … 感謝状[かんしゃじょう] … 思[おも]い出[で] … 長[なが]い 間[あいだ] … ご指導[しどう] … 心[こころ] から … ここ に 感謝[かんしゃ] の 意[い] を 表[ひょう]します … 引[ひ]き継[つ]ぐ … 決[けっ]して 忘[わす]れません … 長[なが]い 間[あいだ] お疲[つか]れさま でした … リフォーム … 工事[こうじ]
+      … 〜ついで に
+  items:
+  - intai
+  - kanshajou
+  - omoide
+  - nagai-aida
+  - shidou
+  - kokoro-kara
+  - hyoushou
+  - hiki-tsugu
+  - wasuremasen
+  - otsukaresama-retire
+  - rifoomu
+  - kouji
+  - tsuide-ni
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “while greeting (them) — and “we''ll cause you some trouble — and “construction period — and “towel (as a greeting gift) — and “carpenter — and “parking — and “we humbly ask for your understanding
+      — and “pregnancy — and “maternal and child health booklet — and “giving birth — and “check-up — and “due date — and “morning sickness”.'
+    pt: 'Diga: “aproveitando o cumprimento — e “vamos causar algum transtorno — e “prazo da obra — e “toalha (de presente) — e “carpinteiro — e “estacionamento — e “contamos com a sua compreensão — e “gravidez
+      — e “caderneta da mãe e do bebê — e “parto — e “consulta de rotina, pré-natal — e “data prevista do parto — e “enjoo da gravidez”.'
+  answer:
+    speaker: protagonist
+    text: 挨拶[あいさつ] の ついで に … ご迷惑[めいわく] を おかけ します … 工期[こうき] … タオル … 大工[だいく] … 駐車場[ちゅうしゃじょう] … 何卒[なにとぞ] よろしく お願[ねが]い いたします … 妊娠[にんしん] … 母子[ぼし] 手帳[てちょう] … 出産[しゅっさん] … 検診[けんしん] … 出産[しゅっさん] 予定日[よていび] … つわり
+  items:
+  - aisatsu-no-tsuide
+  - souon-review
+  - kouki
+  - taoru-review
+  - daiku
+  - chuushajou
+  - yoroshiku-onegai-itashimasu-review
+  - ninshin
+  - boshitechou
+  - shussan
+  - kenshin
+  - yoteibi
+  - tsuwari
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “while (you''re) still feeling well — and “get ready in advance — and “husband — and “wife — and “rice planting — and “rice paddy — and “farmer, farming family — and “help — and “used to (with
+      nostalgia); that''s how it is — and “we used to do it a lot — and “seedling — and “mud — and “my back hurts”.'
+    pt: 'Diga: “enquanto ainda está bem — e “deixar preparado — e “marido — e “esposa — e “plantio de arroz — e “arrozal — e “agricultor, família de agricultores — e “ajuda — e “costumava (com saudade);
+      é assim mesmo — e “a gente fazia muito — e “muda — e “lama — e “minhas costas doem”.'
+  answer:
+    speaker: protagonist
+    text: 元気[げんき] な うち に … 準備[じゅんび] して おく … 夫[おっと] … 妻[つま] … 田植[たう]え … 田[た]んぼ … 農家[のうか] … 手伝[てつだ]い … 〜もの だ … よく やった もの だ … 苗[なえ] … 泥[どろ] … 腰[こし] が 痛[いた]い
+  items:
+  - uchi-ni-review
+  - junbi-review
+  - otto
+  - tsuma
+  - taue
+  - tanbo
+  - nouka
+  - tetsudai
+  - mono-da
+  - yatta-mono-da
+  - nae
+  - doro
+  - koshi-ga-itai
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “by machine — and “in autumn — and “taiko drum — and “practice — and “rhythm — and “in order to; for — and “in order to get good — and “drumsticks (taiko) — and “shout (in rhythm) — and “posture
+      — and “breathing — and “match, play together — and “(said loudly at the start of practice)”.'
+    pt: 'Diga: “com máquina — e “no outono — e “taikô, tambor japonês — e “treino — e “ritmo — e “para, a fim de — e “para ficar bom — e “baquetas (do taikô) — e “grito (no ritmo) — e “postura — e “respiração
+      — e “acompanhar, tocar junto — e “(dito alto no começo do treino)”.'
+  answer:
+    speaker: protagonist
+    text: 機械[きかい] で … 秋[あき] に は … 太鼓[たいこ] … 練習[れんしゅう] … リズム … 〜ために … 上手[じょうず] に なる ために … ばち … 掛[か]け声[ごえ] … 姿勢[しせい] … 呼吸[こきゅう] … 合[あ]わせる … よろしく お願[ねが]い します！
+  items:
+  - kikai-de
+  - aki-ni-wa
+  - taiko
+  - renshuu
+  - rizumu
+  - tame-ni
+  - jouzu-ni-naru-tame-ni
+  - bachi
+  - kakegoe
+  - shisei
+  - kokyuu
+  - awaseru
+  - onegai-shimasu-start
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “loanword — and “Portugal — and “tobacco, cigarette — and “playing cards (karuta) — and “button — and “decide to… — and “I decided to read every day — and “script, letters — and “origin of
+      a word — and “I didn''t know — and “history — and “ramen — and “I want to eat”.'
+    pt: 'Diga: “palavra estrangeira, empréstimo — e “Portugal — e “tabaco, cigarro — e “cartas (karuta) — e “botão — e “decidir… — e “decidi ler todo dia — e “escrita, letras — e “origem da palavra — e
+      “eu não sabia — e “história — e “lámen — e “quero comer”.'
+  answer:
+    speaker: protagonist
+    text: 外来語[がいらいご] … ポルトガル … タバコ … カルタ … ボタン … 〜こと に する … 毎日[まいにち] 読[よ]む こと に した … 文字[もじ] … 語源[ごげん] … 知[し]らなかった … 歴史[れきし] … ラーメン … 食[た]べたい です
+  items:
+  - gairaigo
+  - porutogaru
+  - tabako
+  - karuta
+  - botan
+  - koto-ni-suru
+  - yomu-koto-ni-shita
+  - moji
+  - gogen
+  - shiranakatta
+  - rekishi
+  - raamen
+  - tabetai
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I want to drink — and “want to (do) — and “spicy hot — and “hot (to the touch, food) — and “ticket machine — and “large portion — and “slurp — and “I''m hungry — and “what''s good? what would
+      you like?”.'
+    pt: 'Diga: “quero beber — e “quero (fazer) — e “apimentado — e “quente (ao toque, comida) — e “máquina de tíquetes — e “porção grande — e “sorver fazendo barulho — e “estou com fome — e “o que é bom?
+      o que você quer?”.'
+  answer:
+    speaker: protagonist
+    text: 飲[の]みたい です … 〜たい です … 辛[から]い … 熱[あつ]い … 券売機[けんばいき] … 大盛[おおも]り … すすります … お腹[なか] が 空[す]きました … 何[なに] が いい です か
+  items:
+  - nomitai
+  - tai
+  - karai
+  - atsui-food
+  - kenbaiki
+  - oomori
+  - susuru
+  - onaka-suita
+  - nani-ga-ii
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
