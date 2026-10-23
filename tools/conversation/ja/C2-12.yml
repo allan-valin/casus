@@ -1,0 +1,632 @@
+# UNIT ja C2-12 — written by AI (Claude) for Casus; expanded from src/C2-12.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-12
+level: C2
+number: 12
+protagonist: m
+title:
+  en: The family business
+  pt: O negócio da família
+situation:
+  en: Lucas, now fluent and N1, wants to open a Brazilian snack shop near the station. He asks you to look at his business plan with him.
+  pt: O Lucas, agora fluente e com N1, quer abrir uma lanchonete brasileira perto da estação. Ele pede para você olhar o plano de negócios com ele.
+learn_lessons: []
+culture: Brazilian shops in the city
+new_items:
+- id: kaigyou
+  text: 開業[かいぎょう]
+  meaning:
+    en: opening a business
+    pt: abrir um negócio
+- id: yuushi
+  text: 融資[ゆうし]
+  meaning:
+    en: loan, financing
+    pt: financiamento
+- id: risuku
+  text: リスク
+  meaning:
+    en: risk
+    pt: risco
+- id: jouren
+  text: 常連[じょうれん]
+  meaning:
+    en: regular customer
+    pt: cliente fiel
+- id: nai-koto-niwa
+  text: 〜ない こと に は
+  meaning:
+    en: unless (you) do…
+    pt: a não ser que…, sem…
+- id: yatte-minai-koto-niwa
+  text: やって みない こと に は
+  meaning:
+    en: unless you try
+    pt: sem tentar
+- id: jigyou-keikakusho
+  text: 事業[じぎょう] 計画[けいかく] 書[しょ]
+  meaning:
+    en: business plan
+    pt: plano de negócios
+  rare: true
+- id: shikin
+  text: 資金[しきん]
+  meaning:
+    en: funds, capital
+    pt: capital
+- id: kokyaku
+  text: 顧客[こきゃく]
+  meaning:
+    en: clientele
+    pt: clientela
+- id: shiire
+  text: 仕入[しい]れ
+  meaning:
+    en: stock purchasing
+    pt: compra de mercadoria
+- id: kyougou
+  text: 競合[きょうごう]
+  meaning:
+    en: competition (rival businesses)
+    pt: concorrência
+reviews:
+- item: kaze
+  from: A2-05
+- item: netsu
+  from: A2-05
+- item: nodo
+  from: A2-05
+- item: kusuri
+  from: A2-05
+- item: yakkyoku
+  from: A2-05
+- item: hokenshou
+  from: A2-05
+- item: byouki
+  from: A2-05
+- item: yasunde-mo-ii
+  from: A2-05
+- item: kaette-mo-ii
+  from: A2-05
+- item: nonde-kudasai
+  from: A2-05
+- item: mikka
+  from: A2-05
+- item: uchuu
+  from: B2-09
+- item: tansaki
+  from: B2-09
+- item: ginga
+  from: B2-09
+- item: amanogawa
+  from: B2-09
+- item: hazu
+  from: B2-09
+- item: mieru-hazu
+  from: B2-09
+- item: shouwakusei
+  from: B2-09
+- item: chikyuu
+  from: B2-09
+- item: kaette-kita
+  from: B2-09
+- item: nagareboshi
+  from: B2-09
+- item: negaigoto
+  from: B2-09
+- item: tsuya
+  from: C1-11
+- item: kouden
+  from: C1-11
+- item: goshuushousama
+  from: C1-11
+- item: kono-tabi-wa
+  from: C1-11
+- item: shoukou
+  from: C1-11
+- item: mofuku
+  from: C1-11
+- item: juzu
+  from: C1-11
+- item: izoku
+  from: C1-11
+- item: kokoro-yori
+  from: C1-11
+- item: uketsuke
+  from: C1-11
+- item: moetsuki
+  from: C1-27
+- item: utsu
+  from: C1-27
+- item: kaunseringu
+  from: C1-27
+- item: osore-ga-aru
+  from: C1-27
+- item: byouki-ni-naru-osore
+  from: C1-27
+- item: nemurenai
+  from: C1-27
+- item: muri-shinaide
+  from: C1-27
+- item: kyuushoku
+  from: C1-27
+- item: shinryou-naika
+  from: C1-27
+- item: hitori-ja-nai
+  from: C1-27
+- item: enshuu-ben
+  from: C2-05
+- item: hougen
+  from: C2-05
+- item: yaramaika
+  from: C2-05
+- item: mai
+  from: C2-05
+- item: dara
+  from: C2-05
+- item: dani
+  from: C2-05
+- item: hyojungo
+  from: C2-05
+- item: jimoto
+  from: C2-05
+- item: shitashimi
+  from: C2-05
+- item: nakama
+  from: C2-05
+- item: kyoushuku-desu-ga
+  from: C2-09
+- item: te-itadakemasu-ka
+  from: C2-09
+- item: te-moraeru
+  from: C2-09
+- item: onegai-dekimasu-ka
+  from: C2-09
+- item: moushiwake-nai-kedo
+  from: C2-09
+- item: tasukatta
+  from: C2-09
+- item: tanomu
+  from: C2-09
+- item: shiji
+  from: C2-09
+- item: teinei-sa
+  from: C2-09
+- item: kouhai
+  from: C2-09
+- item: shougaku-soshou
+  from: C2-11
+- item: bengoshi-item
+  from: C2-11
+- item: shouko
+  from: C2-11
+- item: hanketsu
+  from: C2-11
+- item: houterasu
+  from: C2-11
+- item: genkoku
+  from: C2-11
+- item: hikoku
+  from: C2-11
+- item: wakai
+  from: C2-11
+- item: tsuujou-shiyou
+  from: C2-11
+- item: ichinichi-de
+  from: C2-11
+steps:
+- type: narrator
+  text:
+    en: Lucas, now fluent and N1, wants to open a Brazilian snack shop near the station. He asks you to look at his business plan with him. Listen to the conversation; you don't need to understand it yet.
+    pt: O Lucas, agora fluente e com N1, quer abrir uma lanchonete brasileira perto da estação. Ele pede para você olhar o plano de negócios com ele. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: lucas
+    text: 駅前[えきまえ] で コシーニャ と パステル の 店[みせ] を 開業[かいぎょう] したい ん だ。
+    meaning:
+      en: I want to open a coxinha and pastel shop by the station.
+      pt: Quero abrir uma loja de coxinha e pastel perto da estação.
+  - speaker: protagonist
+    text: いい ね。 資金[しきん] は どう する の？
+    meaning:
+      en: Nice. What about funding?
+      pt: Que legal. E o capital?
+  - speaker: lucas
+    text: 銀行[ぎんこう] の 融資[ゆうし] を 申[もう]し込[こ]む。 事業[じぎょう] 計画[けいかく] 書[しょ] を 見[み]て くれる？
+    meaning:
+      en: I'll apply for a bank loan. Will you look at my business plan?
+      pt: Vou pedir financiamento no banco. Você olha o meu plano de negócios?
+  - speaker: protagonist
+    text: 顧客[こきゃく] は ブラジル 人[じん] だけ？ 日本人[にほんじん] も 狙[ねら]う なら、 メニュー は 日本語[にほんご] も 必要[ひつよう] だ よ。
+    meaning:
+      en: Is your clientele only Brazilians? If you're aiming at Japanese customers too, you need a Japanese menu.
+      pt: A clientela é só brasileira? Se quiser pegar japonês também, precisa de cardápio em japonês.
+  - speaker: lucas
+    text: 両方[りょうほう]。 でも 競合[きょうごう] の 店[みせ] も ある し、 リスク が 心配[しんぱい]。
+    meaning:
+      en: Both. But there are competing shops, and I'm worried about the risk.
+      pt: Os dois. Mas tem loja concorrente, e me preocupo com o risco.
+  - speaker: protagonist
+    text: やって みない こと に は、 わからない。 最初[さいしょ] の 常連[じょうれん] は 僕[ぼく] と 健太[けんた] だ。
+    meaning:
+      en: Unless you try, you won't know. Your first regulars are me and Kenta.
+      pt: Sem tentar, não dá para saber. Os primeiros clientes fiéis somos eu e o Kenta.
+  - speaker: lucas
+    text: ははは。 仕入[しい]れ は マリア さん の パン屋[や] と 協力[きょうりょく] する つもり。
+    meaning:
+      en: Ha ha. For supplies I plan to team up with Maria's bakery.
+      pt: Rá. Para a mercadoria, pretendo fazer parceria com a padaria da Maria.
+  - speaker: protagonist
+    text: やらまいか、 だ ね。
+    meaning:
+      en: Yaramaika, then.
+      pt: Yaramaika, então.
+- type: prompt
+  ask:
+    en: 'Say: opening a business.'
+    pt: 'Diga: abrir um negócio.'
+  answer:
+    speaker: protagonist
+    text: 開業[かいぎょう]
+  items:
+  - kaigyou
+- type: prompt
+  ask:
+    en: 'Say: a business plan.'
+    pt: 'Diga: plano de negócios.'
+  answer:
+    speaker: protagonist
+    text: 事業[じぎょう] 計画[けいかく] 書[しょ]
+  items:
+  - jigyou-keikakusho
+- type: prompt
+  ask:
+    en: 'Say: funds, capital.'
+    pt: 'Diga: capital.'
+  answer:
+    speaker: protagonist
+    text: 資金[しきん]
+  items:
+  - shikin
+- type: prompt
+  ask:
+    en: 'Say: a loan.'
+    pt: 'Diga: financiamento.'
+  answer:
+    speaker: protagonist
+    text: 融資[ゆうし]
+  items:
+  - yuushi
+- type: prompt
+  ask:
+    en: 'Say: the clientele.'
+    pt: 'Diga: a clientela.'
+  answer:
+    speaker: protagonist
+    text: 顧客[こきゃく]
+  items:
+  - kokyaku
+- type: prompt
+  ask:
+    en: 'Say: competition.'
+    pt: 'Diga: concorrência.'
+  answer:
+    speaker: protagonist
+    text: 競合[きょうごう]
+  items:
+  - kyougou
+- type: prompt
+  ask:
+    en: 'Say: risk.'
+    pt: 'Diga: risco.'
+  answer:
+    speaker: protagonist
+    text: リスク
+  items:
+  - risuku
+- type: narrator
+  text:
+    en: '«〜ない こと に は» is unless — without doing X, Y can''t happen: «やって みない こと に は、 わからない», unless you try, you won''t know. The second part is usually negative.'
+    pt: '«〜ない こと に は» é a não ser que — sem fazer X, Y não acontece: «やって みない こと に は、 わからない», sem tentar, não dá para saber. A segunda parte costuma ser negativa.'
+- type: prompt
+  ask:
+    en: 'Say the pattern: unless…'
+    pt: 'Diga o padrão: a não ser que…'
+  answer:
+    speaker: protagonist
+    text: 〜ない こと に は
+  items:
+  - nai-koto-niwa
+- type: prompt
+  ask:
+    en: 'Say: unless you try.'
+    pt: 'Diga: sem tentar.'
+  answer:
+    speaker: protagonist
+    text: やって みない こと に は
+  items:
+  - yatte-minai-koto-niwa
+- type: prompt
+  ask:
+    en: 'Say: buying in stock.'
+    pt: 'Diga: compra de mercadoria.'
+  answer:
+    speaker: protagonist
+    text: 仕入[しい]れ
+  items:
+  - shiire
+- type: prompt
+  ask:
+    en: 'Say: a regular customer.'
+    pt: 'Diga: cliente fiel.'
+  answer:
+    speaker: protagonist
+    text: 常連[じょうれん]
+  items:
+  - jouren
+- type: narrator
+  text:
+    en: 'Hamamatsu has Brazilian supermarkets, bakeries, restaurants, churches and schools, many opened by former factory workers. Foreigners can open a business in Japan, but the visa matters: permanent
+      residents and spouses of Japanese nationals can do so freely; others may need a business-manager status.'
+    pt: 'Hamamatsu tem supermercados, padarias, restaurantes, igrejas e escolas brasileiras, muitos abertos por ex-trabalhadores de fábrica. Estrangeiros podem abrir negócio no Japão, mas o visto importa:
+      residentes permanentes e cônjuges de japoneses podem livremente; os outros podem precisar de um status de gestor de empresa.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: Coxinha e pastel já conquistaram muito japonês em Hamamatsu. Quem sabe a lanchonete do Lucas vira ponto de encontro das duas comunidades.
+- type: prompt
+  ask:
+    en: 'Once more: say “opening a business”.'
+    pt: 'Mais uma vez: diga “abrir um negócio”.'
+  answer:
+    speaker: protagonist
+    text: 開業[かいぎょう]
+  items:
+  - kaigyou
+- type: prompt
+  ask:
+    en: 'Once more: say “loan, financing”.'
+    pt: 'Mais uma vez: diga “financiamento”.'
+  answer:
+    speaker: protagonist
+    text: 融資[ゆうし]
+  items:
+  - yuushi
+- type: prompt
+  ask:
+    en: 'Once more: say “risk”.'
+    pt: 'Mais uma vez: diga “risco”.'
+  answer:
+    speaker: protagonist
+    text: リスク
+  items:
+  - risuku
+- type: prompt
+  ask:
+    en: 'Once more: say “regular customer”.'
+    pt: 'Mais uma vez: diga “cliente fiel”.'
+  answer:
+    speaker: protagonist
+    text: 常連[じょうれん]
+  items:
+  - jouren
+- type: prompt
+  ask:
+    en: 'Once more: say “unless (you) do…”.'
+    pt: 'Mais uma vez: diga “a não ser que…, sem…”.'
+  answer:
+    speaker: protagonist
+    text: 〜ない こと に は
+  items:
+  - nai-koto-niwa
+- type: prompt
+  ask:
+    en: 'Once more: say “unless you try”.'
+    pt: 'Mais uma vez: diga “sem tentar”.'
+  answer:
+    speaker: protagonist
+    text: やって みない こと に は
+  items:
+  - yatte-minai-koto-niwa
+- type: prompt
+  ask:
+    en: 'Once more: say “business plan”.'
+    pt: 'Mais uma vez: diga “plano de negócios”.'
+  answer:
+    speaker: protagonist
+    text: 事業[じぎょう] 計画[けいかく] 書[しょ]
+  items:
+  - jigyou-keikakusho
+- type: prompt
+  ask:
+    en: 'Once more: say “funds, capital”.'
+    pt: 'Mais uma vez: diga “capital”.'
+  answer:
+    speaker: protagonist
+    text: 資金[しきん]
+  items:
+  - shikin
+- type: prompt
+  ask:
+    en: 'Once more: say “clientele”.'
+    pt: 'Mais uma vez: diga “clientela”.'
+  answer:
+    speaker: protagonist
+    text: 顧客[こきゃく]
+  items:
+  - kokyaku
+- type: prompt
+  ask:
+    en: 'Once more: say “stock purchasing”.'
+    pt: 'Mais uma vez: diga “compra de mercadoria”.'
+  answer:
+    speaker: protagonist
+    text: 仕入[しい]れ
+  items:
+  - shiire
+- type: prompt
+  ask:
+    en: 'Once more: say “competition (rival businesses)”.'
+    pt: 'Mais uma vez: diga “concorrência”.'
+  answer:
+    speaker: protagonist
+    text: 競合[きょうごう]
+  items:
+  - kyougou
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “small-claims lawsuit — and “lawyer — and “evidence — and “judgement, ruling — and “public legal-support centre — and “plaintiff — and “defendant — and “settlement — and “normal wear and tear
+      — and “be over in one day — and “I''m sorry to ask, but”.'
+    pt: 'Diga: “ação de pequenas causas — e “advogado — e “prova — e “sentença — e “centro público de apoio jurídico — e “autor (da ação) — e “réu — e “acordo (judicial) — e “uso normal — e “terminar num
+      dia — e “desculpe pedir, mas”.'
+  answer:
+    speaker: protagonist
+    text: 少額[しょうがく] 訴訟[そしょう] … 弁護士[べんごし] … 証拠[しょうこ] … 判決[はんけつ] … 法[ほう] テラス … 原告[げんこく] … 被告[ひこく] … 和解[わかい] … 通常[つうじょう] の 使用[しよう] … 一日[いちにち] で 終[お]わる … 恐縮[きょうしゅく] です が
+  items:
+  - shougaku-soshou
+  - bengoshi-item
+  - shouko
+  - hanketsu
+  - houterasu
+  - genkoku
+  - hikoku
+  - wakai
+  - tsuujou-shiyou
+  - ichinichi-de
+  - kyoushuku-desu-ga
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “could you…? (polite) — and “could you…? (casual) — and “could I ask you to… — and “sorry, but (soft) — and “that really helped — and “ask (a favour), rely on — and “instruction — and “degree
+      of politeness — and “junior (colleague) — and “Enshū dialect (Hamamatsu area) — and “dialect”.'
+    pt: 'Diga: “você poderia…? (educado) — e “dá para…? (informal) — e “posso te pedir… — e “desculpa, mas (suave) — e “ajudou muito — e “pedir, contar com — e “orientação, instrução — e “grau de cortesia
+      — e “colega mais novo — e “dialeto de Enshū (região de Hamamatsu) — e “dialeto”.'
+  answer:
+    speaker: protagonist
+    text: 〜て いただけます か … 〜て もらえる？ … お願[ねが]い できます か … 申[もう]し訳[わけ] ない けど … 助[たす]かった … 頼[たの]む … 指示[しじ] … 丁寧[ていねい] さ の 度合[どあ]い … 後輩[こうはい] … 遠州[えんしゅう] 弁[べん] … 方言[ほうげん]
+  items:
+  - te-itadakemasu-ka
+  - te-moraeru
+  - onegai-dekimasu-ka
+  - moushiwake-nai-kedo
+  - tasukatta
+  - tanomu
+  - shiji
+  - teinei-sa
+  - kouhai
+  - enshuu-ben
+  - hougen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “let''s do it! (Enshū spirit) — and “let''s (Enshū volitional) — and “isn''t it? right? (= だろう) — and “you know, because (= だよ, だから) — and “standard Japanese — and “one''s home area — and
+      “familiarity, closeness — and “one of us, companion — and “burnout — and “depression — and “counselling”.'
+    pt: 'Diga: “vamos fazer! (espírito de Enshū) — e “vamos (volitivo de Enshū) — e “né? não é? (= だろう) — e “sabe, porque (= だよ, だから) — e “japonês padrão — e “a terra da gente — e “intimidade, proximidade
+      — e “um dos nossos — e “esgotamento, burnout — e “depressão — e “terapia, aconselhamento”.'
+  answer:
+    speaker: protagonist
+    text: やらまいか … 〜まい … 〜だら … 〜だに … 標準語[ひょうじゅんご] … 地元[じもと] … 親[した]しみ … 仲間[なかま] … 燃[も]え尽[つ]き … うつ … カウンセリング
+  items:
+  - yaramaika
+  - mai
+  - dara
+  - dani
+  - hyojungo
+  - jimoto
+  - shitashimi
+  - nakama
+  - moetsuki
+  - utsu
+  - kaunseringu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “there is a risk that — and “there''s a risk of getting ill — and “can''t sleep — and “don''t push yourself — and “leave of absence (sick) — and “psychosomatic clinic — and “you''re not alone
+      — and “wake (night before the funeral) — and “condolence money — and “my condolences — and “on this occasion (opening condolences)”.'
+    pt: 'Diga: “há o risco de — e “há o risco de adoecer — e “não consigo dormir — e “não se force — e “afastamento do trabalho — e “clínica de saúde mental — e “você não está sozinha — e “velório (na véspera
+      do funeral) — e “dinheiro de condolências — e “meus pêsames — e “nesta ocasião (abrindo os pêsames)”.'
+  answer:
+    speaker: protagonist
+    text: 〜おそれ が ある … 病気[びょうき] に なる おそれ が ある … 眠[ねむ]れない … 無理[むり] しないで … 休職[きゅうしょく] … 心療[しんりょう] 内科[ないか] … 一人[ひとり] じゃ ない … 通夜[つや] … 香典[こうでん] … ご愁傷様[しゅうしょうさま] です … この 度[たび] は
+  items:
+  - osore-ga-aru
+  - byouki-ni-naru-osore
+  - nemurenai
+  - muri-shinaide
+  - kyuushoku
+  - shinryou-naika
+  - hitori-ja-nai
+  - tsuya
+  - kouden
+  - goshuushousama
+  - kono-tabi-wa
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “offering incense — and “mourning clothes — and “Buddhist prayer beads — and “the bereaved family — and “my heartfelt condolences — and “reception desk — and “space, the universe — and “space
+      probe — and “galaxy — and “the Milky Way — and “should be (expected)”.'
+    pt: 'Diga: “oferecer incenso — e “roupa de luto — e “rosário budista — e “a família enlutada — e “meus sinceros pêsames — e “recepção — e “espaço, universo — e “sonda espacial — e “galáxia — e “a Via
+      Láctea — e “deve ser (esperado)”.'
+  answer:
+    speaker: protagonist
+    text: 焼香[しょうこう] … 喪服[もふく] … 数珠[じゅず] … 遺族[いぞく] … 心[こころ] より お悔[く]やみ 申[もう]し上[あ]げます … 受付[うけつけ] … 宇宙[うちゅう] … 探査機[たんさき] … 銀河[ぎんが] … 天[あま]の川[がわ] … 〜はず
+  items:
+  - shoukou
+  - mofuku
+  - juzu
+  - izoku
+  - kokoro-yori
+  - uketsuke
+  - uchuu
+  - tansaki
+  - ginga
+  - amanogawa
+  - hazu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “should be visible — and “asteroid — and “the Earth — and “came back — and “shooting star — and “a wish — and “a cold — and “fever — and “throat — and “medicine — and “pharmacy”.'
+    pt: 'Diga: “deve dar para ver — e “asteroide — e “a Terra — e “voltou — e “estrela-cadente — e “um pedido — e “resfriado — e “febre — e “garganta — e “remédio — e “farmácia”.'
+  answer:
+    speaker: protagonist
+    text: 見[み]える はず … 小惑星[しょうわくせい] … 地球[ちきゅう] … 帰[かえ]って きた … 流[なが]れ 星[ぼし] … 願[ねが]い事[ごと] … 風邪[かぜ] … 熱[ねつ] … 喉[のど] … 薬[くすり] … 薬局[やっきょく]
+  items:
+  - mieru-hazu
+  - shouwakusei
+  - chikyuu
+  - kaette-kita
+  - nagareboshi
+  - negaigoto
+  - kaze
+  - netsu
+  - nodo
+  - kusuri
+  - yakkyoku
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “health insurance card — and “ill, illness — and “may I take time off? — and “may I go home? — and “please take (medicine) — and “three days”.'
+    pt: 'Diga: “cartão do seguro-saúde — e “doente, doença — e “posso tirar folga? — e “posso ir para casa? — e “tome, por favor — e “três dias”.'
+  answer:
+    speaker: protagonist
+    text: 保険証[ほけんしょう] … 病気[びょうき] … 休[やす]んで も いい です か … 帰[かえ]って も いい です か … 飲[の]んで ください … 三日[みっか]
+  items:
+  - hokenshou
+  - byouki
+  - yasunde-mo-ii
+  - kaette-mo-ii
+  - nonde-kudasai
+  - mikka
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

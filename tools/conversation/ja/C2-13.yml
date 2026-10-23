@@ -1,0 +1,603 @@
+# UNIT ja C2-13 — written by AI (Claude) for Casus; expanded from src/C2-13.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-13
+level: C2
+number: 13
+protagonist: f
+title:
+  en: A talk
+  pt: Uma palestra
+situation:
+  en: A tech meetup in Shizuoka invited you to speak about building translation tools for factory floors. Twenty minutes, then questions from the audience.
+  pt: Um encontro de tecnologia em Shizuoka convidou você para falar sobre ferramentas de tradução para chão de fábrica. Vinte minutos, depois perguntas da plateia.
+learn_lessons: []
+culture: —
+new_items:
+- id: kouen-talk
+  text: 講演[こうえん]
+  meaning:
+    en: lecture, talk
+    pt: palestra
+- id: suraido
+  text: スライド
+  meaning:
+    en: slide
+    pt: slide
+- id: choushuu
+  text: 聴衆[ちょうしゅう]
+  meaning:
+    en: audience
+    pt: plateia
+  rare: true
+- id: goshoukai-ni-azukarimashita
+  text: ご紹介[しょうかい] に 預[あず]かりました
+  meaning:
+    en: as just introduced (opening a talk)
+    pt: como acabaram de apresentar (abrindo a palestra)
+  rare: true
+- id: honjitsu
+  text: 本日[ほんじつ]
+  meaning:
+    en: today (formal)
+    pt: hoje (formal)
+- id: gaiyou
+  text: 概要[がいよう]
+  meaning:
+    en: overview
+    pt: visão geral
+- id: jirei
+  text: 事例[じれい]
+  meaning:
+    en: case, example
+    pt: caso, exemplo
+- id: kadai-review
+  text: 課題[かだい] と 展望[てんぼう]
+  meaning:
+    en: challenges and outlook
+    pt: desafios e perspectivas
+  rare: true
+- id: goseichou
+  text: ご清聴[せいちょう] ありがとう ございました
+  meaning:
+    en: thank you for listening
+    pt: obrigada pela atenção
+- id: ii-shitsumon
+  text: いい ご質問[しつもん] です ね
+  meaning:
+    en: that's a good question
+    pt: boa pergunta
+reviews:
+- item: denki
+  from: A2-06
+- item: bureekaa
+  from: A2-06
+- item: eakon
+  from: A2-06
+- item: tsukemasu
+  from: A2-06
+- item: keshimasu
+  from: A2-06
+- item: kiete-imasu
+  from: A2-06
+- item: tsuite-imasu
+  from: A2-06
+- item: ochimashita
+  from: A2-06
+- item: kurai
+  from: A2-06
+- item: hyaku-boruto
+  from: A2-06
+- item: doushite
+  from: A2-06
+- item: odenwa
+  from: B2-10
+- item: moushiwake-gozaimasen
+  from: B2-10
+- item: dengon
+  from: B2-10
+- item: seki-wo-hazushite
+  from: B2-10
+- item: ukagaimasu
+  from: B2-10
+- item: moushitsutaemasu
+  from: B2-10
+- item: orikaeshi
+  from: B2-10
+- item: osore-irimasu-ga
+  from: B2-10
+- item: renrakusaki-ukagau
+  from: B2-10
+- item: kashikomarimashita
+  from: B2-10
+- item: taue
+  from: C1-12
+- item: tanbo
+  from: C1-12
+- item: nouka
+  from: C1-12
+- item: tetsudai
+  from: C1-12
+- item: mono-da
+  from: C1-12
+- item: yatta-mono-da
+  from: C1-12
+- item: nae
+  from: C1-12
+- item: doro
+  from: C1-12
+- item: koshi-ga-itai
+  from: C1-12
+- item: kikai-de
+  from: C1-12
+- item: aki-ni-wa
+  from: C1-12
+- item: goshoukai
+  from: C1-28
+- item: kuraberu
+  from: C1-28
+- item: hajimete-review
+  from: C1-28
+- item: mairimashita-review
+  from: C1-28
+- item: irasshatta
+  from: C1-28
+- item: haha-ga-moushite
+  from: C1-28
+- item: ossharu-review
+  from: C1-28
+- item: omago
+  from: C1-28
+- item: mago
+  from: C1-28
+- item: shuukan-no-chigai
+  from: C1-28
+- item: manzai
+  from: C2-06
+- item: warai
+  from: C2-06
+- item: kuse-ni
+  from: C2-06
+- item: nihonjin-no-kuse-ni
+  from: C2-06
+- item: neta
+  from: C2-06
+- item: uketa
+  from: C2-06
+- item: suberu
+  from: C2-06
+- item: ai-kata
+  from: C2-06
+- item: ma
+  from: C2-06
+- item: nande-yanen-review
+  from: C2-06
+- item: isogaba-maware
+  from: C2-10
+- item: deru-kui
+  from: C2-10
+- item: ishibashi
+  from: C2-10
+- item: nana-korobi
+  from: C2-10
+- item: zenrei
+  from: C2-10
+- item: kaizen
+  from: C2-10
+- item: tekisetsu-na
+  from: C2-10
+- item: kokoro-ni-hibiku
+  from: C2-10
+- item: jikkan
+  from: C2-10
+- item: hanashi-wo-matomeru
+  from: C2-10
+- item: kaigyou
+  from: C2-12
+- item: yuushi
+  from: C2-12
+- item: risuku
+  from: C2-12
+- item: jouren
+  from: C2-12
+- item: nai-koto-niwa
+  from: C2-12
+- item: yatte-minai-koto-niwa
+  from: C2-12
+- item: jigyou-keikakusho
+  from: C2-12
+- item: shikin
+  from: C2-12
+- item: kokyaku
+  from: C2-12
+- item: shiire
+  from: C2-12
+- item: kyougou
+  from: C2-12
+steps:
+- type: narrator
+  text:
+    en: A tech meetup in Shizuoka invited you to speak about building translation tools for factory floors. Twenty minutes, then questions from the audience. Listen to the conversation; you don't need to
+      understand it yet.
+    pt: Um encontro de tecnologia em Shizuoka convidou você para falar sobre ferramentas de tradução para chão de fábrica. Vinte minutos, depois perguntas da plateia. Escute a conversa; ainda não precisa
+      entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: ただいま ご紹介[しょうかい] に 預[あず]かりました、 ソウザ です。 本日[ほんじつ] は 工場[こうじょう] の 翻訳[ほんやく] ツール に ついて お話[はな]し します。
+    meaning:
+      en: As just introduced, I'm Souza. Today I'll talk about translation tools for factories.
+      pt: Como acabaram de apresentar, sou a Souza. Hoje vou falar sobre ferramentas de tradução para fábricas.
+  - speaker: protagonist
+    text: まず 概要[がいよう]、 次[つぎ] に 浜松[はままつ] の 事例[じれい]、 最後[さいご] に 課題[かだい] と 展望[てんぼう] です。 スライド を ご覧[らん] ください。
+    meaning:
+      en: First an overview, then the Hamamatsu case, and finally challenges and outlook. Please look at the slide.
+      pt: Primeiro uma visão geral, depois o caso de Hamamatsu e, por fim, desafios e perspectivas. Vejam o slide.
+  - speaker: protagonist
+    text: …以上[いじょう] です。 ご清聴[せいちょう] ありがとう ございました。
+    meaning:
+      en: …That's all. Thank you for listening.
+      pt: …É isso. Obrigada pela atenção.
+  - speaker: kouza-sensei
+    text: 興味深[きょうみぶか]い お話[はなし] でした。 機械[きかい] 翻訳[ほんやく] の 間違[まちが]い は、 安全[あんぜん] に 影響[えいきょう] しません か。
+    meaning:
+      en: A fascinating talk. Don't machine-translation errors affect safety?
+      pt: Palestra muito interessante. Erros de tradução automática não afetam a segurança?
+  - speaker: protagonist
+    text: いい ご質問[しつもん] です ね。 安全[あんぜん] に 関[かん]わる 文[ぶん] は、 必[かなら]ず 人[ひと] が 確認[かくにん] する 仕組[しく]み に して います。
+    meaning:
+      en: That's a good question. Any sentence about safety is always checked by a person, by design.
+      pt: Boa pergunta. Toda frase ligada à segurança é sempre conferida por uma pessoa, faz parte do sistema.
+  - speaker: kouza-sensei
+    text: なるほど。 聴衆[ちょうしゅう] の 皆[みな]さん も 納得[なっとく] した よう です ね。
+    meaning:
+      en: I see. The audience seems convinced too.
+      pt: Entendi. A plateia também parece convencida.
+  - speaker: protagonist
+    text: ありがとう ございます。 ほか に ご質問[しつもん] は ございます でしょう か。
+    meaning:
+      en: Thank you. Are there any other questions?
+      pt: Obrigada. Há mais alguma pergunta?
+  - speaker: kouza-sensei
+    text: 最後[さいご] に 拍手[はくしゅ] を！
+    meaning:
+      en: One last round of applause!
+      pt: Uma última salva de palmas!
+- type: prompt
+  ask:
+    en: 'Say: a talk, a lecture.'
+    pt: 'Diga: uma palestra.'
+  answer:
+    speaker: protagonist
+    text: 講演[こうえん]
+  items:
+  - kouen-talk
+- type: prompt
+  ask:
+    en: 'Say: the audience.'
+    pt: 'Diga: a plateia.'
+  answer:
+    speaker: protagonist
+    text: 聴衆[ちょうしゅう]
+  items:
+  - choushuu
+- type: prompt
+  ask:
+    en: Open a talk after being introduced.
+    pt: Abra a palestra depois de ser apresentada.
+  answer:
+    speaker: protagonist
+    text: ご紹介[しょうかい] に 預[あず]かりました
+  items:
+  - goshoukai-ni-azukarimashita
+- type: prompt
+  ask:
+    en: 'Say: today — formally.'
+    pt: 'Diga: hoje — formal.'
+  answer:
+    speaker: protagonist
+    text: 本日[ほんじつ]
+  items:
+  - honjitsu
+- type: prompt
+  ask:
+    en: 'Say: an overview.'
+    pt: 'Diga: uma visão geral.'
+  answer:
+    speaker: protagonist
+    text: 概要[がいよう]
+  items:
+  - gaiyou
+- type: prompt
+  ask:
+    en: 'Say: a case, an example.'
+    pt: 'Diga: um caso.'
+  answer:
+    speaker: protagonist
+    text: 事例[じれい]
+  items:
+  - jirei
+- type: prompt
+  ask:
+    en: 'Say: challenges and outlook.'
+    pt: 'Diga: desafios e perspectivas.'
+  answer:
+    speaker: protagonist
+    text: 課題[かだい] と 展望[てんぼう]
+  items:
+  - kadai-review
+- type: prompt
+  ask:
+    en: 'Say: a slide.'
+    pt: 'Diga: um slide.'
+  answer:
+    speaker: protagonist
+    text: スライド
+  items:
+  - suraido
+- type: prompt
+  ask:
+    en: 'Close the talk: thank you for listening.'
+    pt: 'Feche a palestra: obrigada pela atenção.'
+  answer:
+    speaker: protagonist
+    text: ご清聴[せいちょう] ありがとう ございました。
+  items:
+  - goseichou
+- type: prompt
+  ask:
+    en: 'Buy time in the Q&A: that''s a good question.'
+    pt: 'Ganhe tempo nas perguntas: boa pergunta.'
+  answer:
+    speaker: protagonist
+    text: いい ご質問[しつもん] です ね。
+  items:
+  - ii-shitsumon
+- type: narrator
+  text:
+    en: 'A formal talk has a fixed frame: «ただいま ご紹介[しょうかい] に 預[あず]かりました○○ です» to open, the structure in one breath («まず… 次[つぎ] に… 最後[さいご] に…»), «以上[いじょう] です» and «ご清聴[せいちょう] ありがとう ございました» to close. In the
+      Q&A, «いい ご質問[しつもん] です ね» buys a second.'
+    pt: 'Uma palestra formal tem moldura fixa: «ただいま ご紹介[しょうかい] に 預[あず]かりました○○ です» para abrir, a estrutura de um fôlego só («まず… 次[つぎ] に… 最後[さいご] に…»), «以上[いじょう] です» e «ご清聴[せいちょう] ありがとう ございました» para fechar.
+      Nas perguntas, «いい ご質問[しつもん] です ね» dá um segundo para pensar.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil se abre a palestra com uma piada. No Japão, com a fórmula e uma reverência — a piada, se vier, é no meio.
+- type: prompt
+  ask:
+    en: 'Once more: say “lecture, talk”.'
+    pt: 'Mais uma vez: diga “palestra”.'
+  answer:
+    speaker: protagonist
+    text: 講演[こうえん]
+  items:
+  - kouen-talk
+- type: prompt
+  ask:
+    en: 'Once more: say “slide”.'
+    pt: 'Mais uma vez: diga “slide”.'
+  answer:
+    speaker: protagonist
+    text: スライド
+  items:
+  - suraido
+- type: prompt
+  ask:
+    en: 'Once more: say “audience”.'
+    pt: 'Mais uma vez: diga “plateia”.'
+  answer:
+    speaker: protagonist
+    text: 聴衆[ちょうしゅう]
+  items:
+  - choushuu
+- type: prompt
+  ask:
+    en: 'Once more: say “as just introduced (opening a talk)”.'
+    pt: 'Mais uma vez: diga “como acabaram de apresentar (abrindo a palestra)”.'
+  answer:
+    speaker: protagonist
+    text: ご紹介[しょうかい] に 預[あず]かりました
+  items:
+  - goshoukai-ni-azukarimashita
+- type: prompt
+  ask:
+    en: 'Once more: say “today (formal)”.'
+    pt: 'Mais uma vez: diga “hoje (formal)”.'
+  answer:
+    speaker: protagonist
+    text: 本日[ほんじつ]
+  items:
+  - honjitsu
+- type: prompt
+  ask:
+    en: 'Once more: say “overview”.'
+    pt: 'Mais uma vez: diga “visão geral”.'
+  answer:
+    speaker: protagonist
+    text: 概要[がいよう]
+  items:
+  - gaiyou
+- type: prompt
+  ask:
+    en: 'Once more: say “case, example”.'
+    pt: 'Mais uma vez: diga “caso, exemplo”.'
+  answer:
+    speaker: protagonist
+    text: 事例[じれい]
+  items:
+  - jirei
+- type: prompt
+  ask:
+    en: 'Once more: say “challenges and outlook”.'
+    pt: 'Mais uma vez: diga “desafios e perspectivas”.'
+  answer:
+    speaker: protagonist
+    text: 課題[かだい] と 展望[てんぼう]
+  items:
+  - kadai-review
+- type: prompt
+  ask:
+    en: 'Once more: say “thank you for listening”.'
+    pt: 'Mais uma vez: diga “obrigada pela atenção”.'
+  answer:
+    speaker: protagonist
+    text: ご清聴[せいちょう] ありがとう ございました
+  items:
+  - goseichou
+- type: prompt
+  ask:
+    en: 'Once more: say “that''s a good question”.'
+    pt: 'Mais uma vez: diga “boa pergunta”.'
+  answer:
+    speaker: protagonist
+    text: いい ご質問[しつもん] です ね
+  items:
+  - ii-shitsumon
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “opening a business — and “loan, financing — and “risk — and “regular customer — and “unless (you) do… — and “unless you try — and “business plan — and “funds, capital — and “clientele — and
+      “stock purchasing — and “competition (rival businesses) — and “more haste, less speed — and “the nail that sticks out gets hammered”.'
+    pt: 'Diga: “abrir um negócio — e “financiamento — e “risco — e “cliente fiel — e “a não ser que…, sem… — e “sem tentar — e “plano de negócios — e “capital — e “clientela — e “compra de mercadoria —
+      e “concorrência — e “devagar se vai ao longe — e “o prego que se destaca leva martelada”.'
+  answer:
+    speaker: protagonist
+    text: 開業[かいぎょう] … 融資[ゆうし] … リスク … 常連[じょうれん] … 〜ない こと に は … やって みない こと に は … 事業[じぎょう] 計画[けいかく] 書[しょ] … 資金[しきん] … 顧客[こきゃく] … 仕入[しい]れ … 競合[きょうごう] … 急[いそ]がば 回[まわ]れ … 出[で]る 杭[くい] は 打[う]たれる
+  items:
+  - kaigyou
+  - yuushi
+  - risuku
+  - jouren
+  - nai-koto-niwa
+  - yatte-minai-koto-niwa
+  - jigyou-keikakusho
+  - shikin
+  - kokyaku
+  - shiire
+  - kyougou
+  - isogaba-maware
+  - deru-kui
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “tap the stone bridge before crossing — and “fall seven times, rise eight — and “precedent — and “improvement — and “at the right moment — and “strike a chord — and “real feeling, experience
+      — and “sum up — and “manzai (double-act comedy) — and “laughter — and “even though (critical) — and “even though you''re Japanese — and “material (comedy)”.'
+    pt: 'Diga: “testar a ponte de pedra antes de atravessar — e “cair sete vezes, levantar oito — e “precedente — e “melhoria — e “no momento certo — e “tocar fundo — e “sensação na pele — e “resumir —
+      e “manzai (comédia em dupla) — e “risada — e “sendo que, mesmo (crítico) — e “sendo japonês — e “texto, material (do humor)”.'
+  answer:
+    speaker: protagonist
+    text: 石橋[いしばし] を 叩[たた]いて 渡[わた]る … 七転[ななころ]び 八起[やお]き … 前例[ぜんれい] … 改善[かいぜん] … 適切[てきせつ] な 時[とき] に … 心[こころ] に 響[ひび]く … 実感[じっかん] … 話[はなし] を まとめる … 漫才[まんざい] … 笑[わら]い … 〜くせ に … 日本人[にほんじん] の くせ に … ネタ
+  items:
+  - ishibashi
+  - nana-korobi
+  - zenrei
+  - kaizen
+  - tekisetsu-na
+  - kokoro-ni-hibiku
+  - jikkan
+  - hanashi-wo-matomeru
+  - manzai
+  - warai
+  - kuse-ni
+  - nihonjin-no-kuse-ni
+  - neta
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “went down well — and “fall flat (joke) — and “comedy partner — and “timing, pause — and “what the heck (Kansai comeback) — and “let me introduce (humble) — and “compare — and “first time
+      in Japan — and “came (humble, of my family) — and “came (respectful, of others) — and “my mother says (humble) — and “father-in-law says (respectful) — and “(your) grandchild”.'
+    pt: 'Diga: “fez sucesso, arrancou risada — e “não ter graça, cair no vazio — e “parceiro de dupla — e “timing, pausa — e “como assim? (resposta do Kansai) — e “permita-me apresentar (humilde) — e “comparar
+      — e “primeira vez no Japão — e “vieram (humilde, da minha família) — e “vieram (respeitoso, dos outros) — e “minha mãe diz (humilde) — e “o sogro diz (respeitoso) — e “o neto (dos outros)”.'
+  answer:
+    speaker: protagonist
+    text: ウケた … 滑[すべ]る … 相方[あいかた] … 間[ま] … なんで やねん … ご紹介[しょうかい] します … 比[くら]べる … 初[はじ]めて の 日本[にほん] … 参[まい]りました … いらっしゃった … 母[はは] が 申[もう]して おります … お義父[とう]さん が おっしゃる … お孫[まご] さん
+  items:
+  - uketa
+  - suberu
+  - ai-kata
+  - ma
+  - nande-yanen-review
+  - goshoukai
+  - kuraberu
+  - hajimete-review
+  - mairimashita-review
+  - irasshatta
+  - haha-ga-moushite
+  - ossharu-review
+  - omago
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “(my) grandchild — and “difference in customs — and “rice planting — and “rice paddy — and “farmer, farming family — and “help — and “used to (with nostalgia); that''s how it is — and “we
+      used to do it a lot — and “seedling — and “mud — and “my back hurts — and “by machine — and “in autumn”.'
+    pt: 'Diga: “neto (meu) — e “diferença de costumes — e “plantio de arroz — e “arrozal — e “agricultor, família de agricultores — e “ajuda — e “costumava (com saudade); é assim mesmo — e “a gente fazia
+      muito — e “muda — e “lama — e “minhas costas doem — e “com máquina — e “no outono”.'
+  answer:
+    speaker: protagonist
+    text: 孫[まご] … 習慣[しゅうかん] の 違[ちが]い … 田植[たう]え … 田[た]んぼ … 農家[のうか] … 手伝[てつだ]い … 〜もの だ … よく やった もの だ … 苗[なえ] … 泥[どろ] … 腰[こし] が 痛[いた]い … 機械[きかい] で … 秋[あき] に は
+  items:
+  - mago
+  - shuukan-no-chigai
+  - taue
+  - tanbo
+  - nouka
+  - tetsudai
+  - mono-da
+  - yatta-mono-da
+  - nae
+  - doro
+  - koshi-ga-itai
+  - kikai-de
+  - aki-ni-wa
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “telephone (polite) — and “I''m very sorry (most polite) — and “message — and “is away from (their) desk — and “ask, hear, visit (humble) — and “I''ll pass it on (humble) — and “calling back
+      — and “I''m sorry to trouble you, but — and “may I have your contact number? — and “certainly (very polite) — and “electricity; the light — and “breaker — and “air conditioner”.'
+    pt: 'Diga: “telefone (educado) — e “peço muitas desculpas (o mais educado) — e “recado — e “não está na mesa no momento — e “pergunto, ouço, visito (humilde) — e “vou transmitir (humilde) — e “retornar
+      a ligação — e “desculpe o incômodo, mas — e “pode me passar seu contato? — e “pois não, entendido (muito educado) — e “eletricidade; a luz — e “disjuntor — e “ar-condicionado”.'
+  answer:
+    speaker: protagonist
+    text: お電話[でんわ] … 申[もう]し訳[わけ] ございません … 伝言[でんごん] … 席[せき] を 外[はず]して おります … 伺[うかが]います … 申[もう]し伝[つた]えます … 折[お]り返[かえ]し … 恐[おそ]れ入[い]ります が … ご連絡先[れんらくさき] を 伺[うかが]えます か … かしこまりました … 電気[でんき] … ブレーカー … エアコン
+  items:
+  - odenwa
+  - moushiwake-gozaimasen
+  - dengon
+  - seki-wo-hazushite
+  - ukagaimasu
+  - moushitsutaemasu
+  - orikaeshi
+  - osore-irimasu-ga
+  - renrakusaki-ukagau
+  - kashikomarimashita
+  - denki
+  - bureekaa
+  - eakon
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “turn on — and “turn off — and “is off, has gone out — and “is on — and “(the breaker) tripped — and “dark — and “100 volts — and “why”.'
+    pt: 'Diga: “ligo — e “desligo — e “está apagado — e “está ligado — e “caiu (o disjuntor) — e “escuro — e “100 volts — e “por quê”.'
+  answer:
+    speaker: protagonist
+    text: つけます … 消[け]します … 消[き]えて います … ついて います … 落[お]ちました … 暗[くら]い … 百[ひゃく] ボルト … どうして
+  items:
+  - tsukemasu
+  - keshimasu
+  - kiete-imasu
+  - tsuite-imasu
+  - ochimashita
+  - kurai
+  - hyaku-boruto
+  - doushite
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

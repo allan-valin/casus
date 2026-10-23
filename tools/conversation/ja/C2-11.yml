@@ -1,0 +1,605 @@
+# UNIT ja C2-11 — written by AI (Claude) for Casus; expanded from src/C2-11.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-11
+level: C2
+number: 11
+protagonist: f
+title:
+  en: A lawsuit
+  pt: Um processo
+situation:
+  en: You and Shota moved out, but the landlord kept the whole deposit for “cleaning”. At the public legal-support centre, a lawyer explains small-claims court.
+  pt: Você e o Shota saíram do apartamento, mas o proprietário ficou com toda a caução para «limpeza». No centro público de apoio jurídico, um advogado explica o juizado de pequenas causas.
+learn_lessons: []
+culture: —
+new_items:
+- id: shougaku-soshou
+  text: 少額[しょうがく] 訴訟[そしょう]
+  meaning:
+    en: small-claims lawsuit
+    pt: ação de pequenas causas
+  rare: true
+- id: bengoshi-item
+  text: 弁護士[べんごし]
+  meaning:
+    en: lawyer
+    pt: advogado
+- id: shouko
+  text: 証拠[しょうこ]
+  meaning:
+    en: evidence
+    pt: prova
+- id: hanketsu
+  text: 判決[はんけつ]
+  meaning:
+    en: judgement, ruling
+    pt: sentença
+- id: houterasu
+  text: 法[ほう] テラス
+  meaning:
+    en: public legal-support centre
+    pt: centro público de apoio jurídico
+  rare: true
+- id: genkoku
+  text: 原告[げんこく]
+  meaning:
+    en: plaintiff
+    pt: autor (da ação)
+  rare: true
+- id: hikoku
+  text: 被告[ひこく]
+  meaning:
+    en: defendant
+    pt: réu
+- id: wakai
+  text: 和解[わかい]
+  meaning:
+    en: settlement
+    pt: acordo (judicial)
+- id: tsuujou-shiyou
+  text: 通常[つうじょう] の 使用[しよう]
+  meaning:
+    en: normal wear and tear
+    pt: uso normal
+- id: ichinichi-de
+  text: 一日[いちにち] で 終[お]わる
+  meaning:
+    en: be over in one day
+    pt: terminar num dia
+reviews:
+- item: kouza
+  from: A2-04
+- item: inkan
+  from: A2-04
+- item: tsuuchou
+  from: A2-04
+- item: anshou-bangou
+  from: A2-04
+- item: ginkou
+  from: A2-04
+- item: kyuuryou
+  from: A2-04
+- item: tsukuritai
+  from: A2-04
+- item: katte
+  from: A2-04
+- item: itte
+  from: A2-04
+- item: shomei
+  from: A2-04
+- item: yonketa
+  from: A2-04
+- item: nikui
+  from: B2-08
+- item: kaerinikui
+  from: B2-08
+- item: iinikui
+  from: B2-08
+- item: saabisu-zangyou
+  from: B2-08
+- item: zangyoudai
+  from: B2-08
+- item: yotei-ga-arimashite
+  from: B2-08
+- item: nanika-otetsudai
+  from: B2-08
+- item: kyou-wa-kore-de
+  from: B2-08
+- item: houkoku
+  from: B2-08
+- item: rakuni
+  from: B2-08
+- item: shussan-iwai
+  from: C1-10
+- item: omiyamairi
+  from: C1-10
+- item: akachan
+  from: C1-10
+- item: uchiiwai
+  from: C1-10
+- item: zu-ni
+  from: C1-10
+- item: nezu-ni
+  from: C1-10
+- item: dakko
+  from: C1-10
+- item: kawaii-review
+  from: C1-10
+- item: omedetou-gozaimasu-birth
+  from: C1-10
+- item: nazuke
+  from: C1-10
+- item: intai
+  from: C1-26
+- item: kanshajou
+  from: C1-26
+- item: omoide
+  from: C1-26
+- item: nagai-aida
+  from: C1-26
+- item: shidou
+  from: C1-26
+- item: kokoro-kara
+  from: C1-26
+- item: hyoushou
+  from: C1-26
+- item: hiki-tsugu
+  from: C1-26
+- item: wasuremasen
+  from: C1-26
+- item: otsukaresama-retire
+  from: C1-26
+- item: koushou
+  from: C2-04
+- item: jouho
+  from: C2-04
+- item: dakyou
+  from: C2-04
+- item: ten-shoku
+  from: C2-04
+- item: sasoi
+  from: C2-04
+- item: kentou-shite-itadakemasen-ka
+  from: C2-04
+- item: hyouka
+  from: C2-04
+- item: kyuuyo
+  from: C2-04
+- item: tsuzuketai
+  from: C2-04
+- item: chuukan
+  from: C2-04
+- item: shousetsu
+  from: C2-08
+- item: toujou-jinbutsu
+  from: C2-08
+- item: ketsumatsu
+  from: C2-08
+- item: yoin
+  from: C2-08
+- item: natsume-souseki
+  from: C2-08
+- item: shujinkou
+  from: C2-08
+- item: kodoku-review
+  from: C2-08
+- item: kakarete-inai
+  from: C2-08
+- item: kaishaku
+  from: C2-08
+- item: inshou-ni-nokoru
+  from: C2-08
+- item: isogaba-maware
+  from: C2-10
+- item: deru-kui
+  from: C2-10
+- item: ishibashi
+  from: C2-10
+- item: nana-korobi
+  from: C2-10
+- item: zenrei
+  from: C2-10
+- item: kaizen
+  from: C2-10
+- item: tekisetsu-na
+  from: C2-10
+- item: kokoro-ni-hibiku
+  from: C2-10
+- item: jikkan
+  from: C2-10
+- item: hanashi-wo-matomeru
+  from: C2-10
+steps:
+- type: narrator
+  text:
+    en: You and Shota moved out, but the landlord kept the whole deposit for “cleaning”. At the public legal-support centre, a lawyer explains small-claims court. Listen to the conversation; you don't need
+      to understand it yet.
+    pt: Você e o Shota saíram do apartamento, mas o proprietário ficou com toda a caução para «limpeza». No centro público de apoio jurídico, um advogado explica o juizado de pequenas causas. Escute a conversa;
+      ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: 敷金[しききん] が 全額[ぜんがく] 戻[もど]って きません でした。 クリーニング 代[だい] だ そう です。
+    meaning:
+      en: We didn't get any of the deposit back. They say it's for cleaning.
+      pt: Não devolveram nada da caução. Dizem que é para a limpeza.
+  - speaker: bengoshi
+    text: 通常[つうじょう] の 使用[しよう] で できた 汚[よご]れ は、 借主[かりぬし] が 払[はら]う 必要[ひつよう] は ありません。
+    meaning:
+      en: Dirt from normal wear and tear doesn't have to be paid by the tenant.
+      pt: A sujeira do uso normal não precisa ser paga pelo inquilino.
+  - speaker: protagonist
+    text: 証拠[しょうこ] は 入居[にゅうきょ] の 時[とき] の 写真[しゃしん] が あります。
+    meaning:
+      en: As evidence, we have photos from when we moved in.
+      pt: Como prova, temos fotos de quando entramos.
+  - speaker: bengoshi
+    text: それ は 強[つよ]い 証拠[しょうこ] です。 六十万円[ろくじゅうまんえん] 以下[いか] なら、 少額[しょうがく] 訴訟[そしょう] が 使[つか]えます。
+    meaning:
+      en: That's strong evidence. If it's 600,000 yen or less, you can use small-claims court.
+      pt: Essa é uma prova forte. Se o valor for até 600 mil ienes, dá para usar o juizado de pequenas causas.
+  - speaker: shota
+    text: 弁護士[べんごし] を 頼[たの]まない と だめ です か。
+    meaning:
+      en: Do we have to hire a lawyer?
+      pt: Precisamos contratar advogado?
+  - speaker: bengoshi
+    text: いいえ、 本人[ほんにん] だけ で できます。 原則[げんそく] と して 一日[いちにち] で 終[お]わり、 その 日[ひ] に 判決[はんけつ] が 出[で]ます。
+    meaning:
+      en: No, you can do it yourselves. In principle it's over in one day, with the ruling that same day.
+      pt: Não, vocês mesmos podem entrar. Em princípio termina num dia, com a sentença no mesmo dia.
+  - speaker: protagonist
+    text: 和解[わかい] に なる こと も あります か。
+    meaning:
+      en: Can it end in a settlement?
+      pt: Pode terminar em acordo?
+  - speaker: bengoshi
+    text: 多[おお]い です よ。 被告[ひこく] の 大家[おおや] さん も、 裁判[さいばん] より 和解[わかい] を 選[えら]ぶ こと が よく あります。
+    meaning:
+      en: Often. Landlords who are sued often choose to settle rather than go to trial.
+      pt: Muitas vezes. O proprietário processado muitas vezes prefere um acordo a ir a julgamento.
+- type: prompt
+  ask:
+    en: 'Say: a lawyer.'
+    pt: 'Diga: um advogado.'
+  answer:
+    speaker: protagonist
+    text: 弁護士[べんごし]
+  items:
+  - bengoshi-item
+- type: prompt
+  ask:
+    en: 'Say: the public legal-support centre.'
+    pt: 'Diga: o centro público de apoio jurídico.'
+  answer:
+    speaker: protagonist
+    text: 法[ほう] テラス
+  items:
+  - houterasu
+- type: prompt
+  ask:
+    en: 'Say: a small-claims lawsuit.'
+    pt: 'Diga: ação de pequenas causas.'
+  answer:
+    speaker: protagonist
+    text: 少額[しょうがく] 訴訟[そしょう]
+  items:
+  - shougaku-soshou
+- type: prompt
+  ask:
+    en: 'Say: evidence.'
+    pt: 'Diga: prova.'
+  answer:
+    speaker: protagonist
+    text: 証拠[しょうこ]
+  items:
+  - shouko
+- type: prompt
+  ask:
+    en: 'Say: normal wear and tear.'
+    pt: 'Diga: uso normal.'
+  answer:
+    speaker: protagonist
+    text: 通常[つうじょう] の 使用[しよう]
+  items:
+  - tsuujou-shiyou
+- type: prompt
+  ask:
+    en: 'Say: the plaintiff.'
+    pt: 'Diga: o autor da ação.'
+  answer:
+    speaker: protagonist
+    text: 原告[げんこく]
+  items:
+  - genkoku
+- type: prompt
+  ask:
+    en: 'Say: the defendant.'
+    pt: 'Diga: o réu.'
+  answer:
+    speaker: protagonist
+    text: 被告[ひこく]
+  items:
+  - hikoku
+- type: prompt
+  ask:
+    en: 'Say: the ruling.'
+    pt: 'Diga: a sentença.'
+  answer:
+    speaker: protagonist
+    text: 判決[はんけつ]
+  items:
+  - hanketsu
+- type: prompt
+  ask:
+    en: 'Say: a settlement.'
+    pt: 'Diga: um acordo.'
+  answer:
+    speaker: protagonist
+    text: 和解[わかい]
+  items:
+  - wakai
+- type: prompt
+  ask:
+    en: 'Say: be over in one day.'
+    pt: 'Diga: terminar num dia.'
+  answer:
+    speaker: protagonist
+    text: 一日[いちにち] で 終[お]わる
+  items:
+  - ichinichi-de
+- type: narrator
+  text:
+    en: 'Legal Japanese is dense with Sino-Japanese words: «原告[げんこく]», «被告[ひこく]», «証拠[しょうこ]», «判決[はんけつ]», «和解[わかい]». Phrases like «原則[げんそく] と して», in principle, hedge carefully. Ordinary wear and tear is
+      the landlord''s cost under government guidelines — a common reason deposits are disputed.'
+    pt: 'O japonês jurídico é cheio de palavras de origem chinesa: «原告[げんこく]», «被告[ひこく]», «証拠[しょうこ]», «判決[はんけつ]», «和解[わかい]». Expressões como «原則[げんそく] と して», em princípio, ressalvam com cuidado. O desgaste
+      do uso normal fica a cargo do proprietário segundo as diretrizes do governo — motivo comum de disputa pela caução.'
+- type: narrator
+  text:
+    en: Small-claims court handles money claims up to 600,000 yen, usually in a single hearing, without a lawyer. The «法[ほう] テラス» centres give free or cheap legal advice, with interpreters on request.
+    pt: O juizado de pequenas causas cuida de cobranças de até 600 mil ienes, geralmente numa audiência só, sem advogado. Os centros «法[ほう] テラス» dão orientação jurídica gratuita ou barata, com intérprete
+      se pedir.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'Lembra o Juizado Especial Cível no Brasil: causa pequena, rápido, sem advogado. E a regra de ouro vale nos dois países — fotografe tudo ao entrar no imóvel.'
+- type: prompt
+  ask:
+    en: 'Once more: say “small-claims lawsuit”.'
+    pt: 'Mais uma vez: diga “ação de pequenas causas”.'
+  answer:
+    speaker: protagonist
+    text: 少額[しょうがく] 訴訟[そしょう]
+  items:
+  - shougaku-soshou
+- type: prompt
+  ask:
+    en: 'Once more: say “lawyer”.'
+    pt: 'Mais uma vez: diga “advogado”.'
+  answer:
+    speaker: protagonist
+    text: 弁護士[べんごし]
+  items:
+  - bengoshi-item
+- type: prompt
+  ask:
+    en: 'Once more: say “evidence”.'
+    pt: 'Mais uma vez: diga “prova”.'
+  answer:
+    speaker: protagonist
+    text: 証拠[しょうこ]
+  items:
+  - shouko
+- type: prompt
+  ask:
+    en: 'Once more: say “judgement, ruling”.'
+    pt: 'Mais uma vez: diga “sentença”.'
+  answer:
+    speaker: protagonist
+    text: 判決[はんけつ]
+  items:
+  - hanketsu
+- type: prompt
+  ask:
+    en: 'Once more: say “public legal-support centre”.'
+    pt: 'Mais uma vez: diga “centro público de apoio jurídico”.'
+  answer:
+    speaker: protagonist
+    text: 法[ほう] テラス
+  items:
+  - houterasu
+- type: prompt
+  ask:
+    en: 'Once more: say “plaintiff”.'
+    pt: 'Mais uma vez: diga “autor (da ação)”.'
+  answer:
+    speaker: protagonist
+    text: 原告[げんこく]
+  items:
+  - genkoku
+- type: prompt
+  ask:
+    en: 'Once more: say “defendant”.'
+    pt: 'Mais uma vez: diga “réu”.'
+  answer:
+    speaker: protagonist
+    text: 被告[ひこく]
+  items:
+  - hikoku
+- type: prompt
+  ask:
+    en: 'Once more: say “settlement”.'
+    pt: 'Mais uma vez: diga “acordo (judicial)”.'
+  answer:
+    speaker: protagonist
+    text: 和解[わかい]
+  items:
+  - wakai
+- type: prompt
+  ask:
+    en: 'Once more: say “normal wear and tear”.'
+    pt: 'Mais uma vez: diga “uso normal”.'
+  answer:
+    speaker: protagonist
+    text: 通常[つうじょう] の 使用[しよう]
+  items:
+  - tsuujou-shiyou
+- type: prompt
+  ask:
+    en: 'Once more: say “be over in one day”.'
+    pt: 'Mais uma vez: diga “terminar num dia”.'
+  answer:
+    speaker: protagonist
+    text: 一日[いちにち] で 終[お]わる
+  items:
+  - ichinichi-de
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “more haste, less speed — and “the nail that sticks out gets hammered — and “tap the stone bridge before crossing — and “fall seven times, rise eight — and “precedent — and “improvement —
+      and “at the right moment — and “strike a chord — and “real feeling, experience — and “sum up — and “novel — and “characters (in a story)”.'
+    pt: 'Diga: “devagar se vai ao longe — e “o prego que se destaca leva martelada — e “testar a ponte de pedra antes de atravessar — e “cair sete vezes, levantar oito — e “precedente — e “melhoria — e
+      “no momento certo — e “tocar fundo — e “sensação na pele — e “resumir — e “romance (livro) — e “personagens”.'
+  answer:
+    speaker: protagonist
+    text: 急[いそ]がば 回[まわ]れ … 出[で]る 杭[くい] は 打[う]たれる … 石橋[いしばし] を 叩[たた]いて 渡[わた]る … 七転[ななころ]び 八起[やお]き … 前例[ぜんれい] … 改善[かいぜん] … 適切[てきせつ] な 時[とき] に … 心[こころ] に 響[ひび]く … 実感[じっかん] … 話[はなし] を まとめる … 小説[しょうせつ] … 登場[とうじょう]
+      人物[じんぶつ]
+  items:
+  - isogaba-maware
+  - deru-kui
+  - ishibashi
+  - nana-korobi
+  - zenrei
+  - kaizen
+  - tekisetsu-na
+  - kokoro-ni-hibiku
+  - jikkan
+  - hanashi-wo-matomeru
+  - shousetsu
+  - toujou-jinbutsu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “ending — and “lingering feeling, afterglow — and “Natsume Sōseki (novelist, 1867–1916) — and “protagonist — and “a lonely heart — and “what isn''t written — and “interpretation — and “stay
+      in one''s mind — and “negotiation — and “concession — and “compromise — and “changing jobs”.'
+    pt: 'Diga: “desfecho — e “ressonância, o que fica depois — e “Natsume Sōseki (romancista, 1867–1916) — e “protagonista — e “um coração solitário — e “o que não está escrito — e “interpretação — e “ficar
+      na memória — e “negociação — e “concessão — e “acordo, meio-termo — e “mudar de emprego”.'
+  answer:
+    speaker: protagonist
+    text: 結末[けつまつ] … 余韻[よいん] … 夏目[なつめ] 漱石[そうせき] … 主人公[しゅじんこう] … 孤独[こどく] な 心[こころ] … 書[か]かれて いない こと … 解釈[かいしゃく] … 印象[いんしょう] に 残[のこ]る … 交渉[こうしょう] … 譲歩[じょうほ] … 妥協[だきょう] … 転職[てんしょく]
+  items:
+  - ketsumatsu
+  - yoin
+  - natsume-souseki
+  - shujinkou
+  - kodoku-review
+  - kakarete-inai
+  - kaishaku
+  - inshou-ni-nokoru
+  - koushou
+  - jouho
+  - dakyou
+  - ten-shoku
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “invitation, offer — and “would you kindly consider — and “evaluation, appraisal — and “salary (formal) — and “I want to keep working here — and “meet in the middle — and “retirement — and
+      “certificate of thanks — and “memories — and “for a long time — and “guidance, teaching — and “from the heart”.'
+    pt: 'Diga: “convite, oferta — e “o senhor poderia considerar — e “avaliação — e “remuneração — e “quero continuar trabalhando aqui — e “chegar a um meio-termo — e “aposentadoria (de uma atividade) —
+      e “certificado de agradecimento — e “lembranças — e “por muito tempo — e “orientação, ensino — e “do fundo do coração”.'
+  answer:
+    speaker: protagonist
+    text: お誘[さそ]い … ご検討[けんとう] いただけません でしょう か … 評価[ひょうか] … 給与[きゅうよ] … この 会社[かいしゃ] で 働[はたら]き 続[つづ]けたい … 間[あいだ] を 取[と]る … 引退[いんたい] … 感謝状[かんしゃじょう] … 思[おも]い出[で] … 長[なが]い 間[あいだ] … ご指導[しどう] … 心[こころ] から
+  items:
+  - sasoi
+  - kentou-shite-itadakemasen-ka
+  - hyouka
+  - kyuuyo
+  - tsuzuketai
+  - chuukan
+  - intai
+  - kanshajou
+  - omoide
+  - nagai-aida
+  - shidou
+  - kokoro-kara
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “we hereby express our gratitude — and “carry on, take over — and “we will never forget — and “thank you for all your years of work — and “gift for a birth — and “baby''s first shrine visit
+      — and “baby — and “return gift (from the family) — and “without (doing) — and “without sleeping — and “holding (a baby) — and “cute”.'
+    pt: 'Diga: “aqui expressamos nossa gratidão — e “dar continuidade — e “nunca vamos esquecer — e “obrigado por todos esses anos — e “presente de nascimento — e “primeira visita do bebê ao santuário —
+      e “bebê — e “lembrança de retribuição (da família) — e “sem (fazer) — e “sem dormir — e “colo — e “fofo”.'
+  answer:
+    speaker: protagonist
+    text: ここ に 感謝[かんしゃ] の 意[い] を 表[ひょう]します … 引[ひ]き継[つ]ぐ … 決[けっ]して 忘[わす]れません … 長[なが]い 間[あいだ] お疲[つか]れさま でした … 出産[しゅっさん] 祝[いわ]い … お宮参[みやまい]り … 赤[あか]ちゃん … 内祝[うちいわ]い … 〜ず に … 寝[ね]ず に … 抱[だ]っこ … 可愛[かわい]い
+  items:
+  - hyoushou
+  - hiki-tsugu
+  - wasuremasen
+  - otsukaresama-retire
+  - shussan-iwai
+  - omiyamairi
+  - akachan
+  - uchiiwai
+  - zu-ni
+  - nezu-ni
+  - dakko
+  - kawaii-review
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “congratulations on the birth — and “naming (a baby) — and “hard to… — and “hard to leave — and “hard to say — and “unpaid overtime — and “overtime pay — and “I have plans (polite excuse)
+      — and “is there anything I can help with? — and “that''s it for today — and “report — and “relaxed, at ease”.'
+    pt: 'Diga: “parabéns pelo nascimento — e “dar nome (ao bebê) — e “difícil de… — e “difícil ir embora — e “difícil de dizer — e “hora extra não paga — e “pagamento de hora extra — e “tenho um compromisso
+      (desculpa educada) — e “há algo em que eu possa ajudar? — e “por hoje é isso — e “relatório, comunicado — e “à vontade”.'
+  answer:
+    speaker: protagonist
+    text: ご出産[しゅっさん] おめでとう ございます … 名付[なづ]け … 〜にくい … 帰[かえ]りにくい … 言[い]いにくい … サービス 残業[ざんぎょう] … 残業代[ざんぎょうだい] … 予定[よてい] が ありまして … 何[なに] か お手伝[てつだ]い する こと は … 今日[きょう] は これ で … 報告[ほうこく] … 気楽[きらく] に
+  items:
+  - omedetou-gozaimasu-birth
+  - nazuke
+  - nikui
+  - kaerinikui
+  - iinikui
+  - saabisu-zangyou
+  - zangyoudai
+  - yotei-ga-arimashite
+  - nanika-otetsudai
+  - kyou-wa-kore-de
+  - houkoku
+  - rakuni
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “bank account — and “personal seal, hanko — and “bankbook — and “PIN — and “bank — and “salary — and “I want to open (make) — and “buy and… (て form) — and “go and… (て form) — and “signature
+      — and “four digits”.'
+    pt: 'Diga: “conta bancária — e “carimbo pessoal, hanko — e “caderneta do banco — e “senha (do cartão) — e “banco — e “salário — e “quero abrir (fazer) — e “compro e… (forma て) — e “vou e… (forma て)
+      — e “assinatura — e “quatro dígitos”.'
+  answer:
+    speaker: protagonist
+    text: 口座[こうざ] … 印鑑[いんかん] … 通帳[つうちょう] … 暗証番号[あんしょうばんごう] … 銀行[ぎんこう] … 給料[きゅうりょう] … 作[つく]りたい です … 買[か]って … 行[い]って … サイン … 四桁[よんけた]
+  items:
+  - kouza
+  - inkan
+  - tsuuchou
+  - anshou-bangou
+  - ginkou
+  - kyuuryou
+  - tsukuritai
+  - katte
+  - itte
+  - shomei
+  - yonketa
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
