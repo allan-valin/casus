@@ -1,0 +1,595 @@
+# UNIT ja C2-19 — written by AI (Claude) for Casus; expanded from src/C2-19.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-19
+level: C2
+number: 19
+protagonist: f
+title:
+  en: The diagnosis
+  pt: O diagnóstico
+situation:
+  en: The university hospital recommends surgery for your knee. Before deciding, you ask your family doctor about a second opinion.
+  pt: O hospital universitário recomenda cirurgia no seu joelho. Antes de decidir, você pergunta ao médico de família sobre uma segunda opinião.
+learn_lessons: []
+culture: —
+new_items:
+- id: shindan
+  text: 診断[しんだん]
+  meaning:
+    en: diagnosis
+    pt: diagnóstico
+- id: chiryou
+  text: 治療[ちりょう]
+  meaning:
+    en: treatment
+    pt: tratamento
+- id: sekando-opinion
+  text: セカンド オピニオン
+  meaning:
+    en: second opinion
+    pt: segunda opinião
+- id: shoken
+  text: 所見[しょけん]
+  meaning:
+    en: medical findings
+    pt: parecer médico
+  rare: true
+- id: shujutsu
+  text: 手術[しゅじゅつ]
+  meaning:
+    en: surgery
+    pt: cirurgia
+- id: hokano-houhou
+  text: ほか の 方法[ほうほう]
+  meaning:
+    en: another option
+    pt: outra opção
+- id: rehabiri
+  text: リハビリ
+  meaning:
+    en: rehabilitation, physio
+    pt: fisioterapia
+- id: kangaete-mo-yoroshii
+  text: 考[かんが]えさせて いただけます か
+  meaning:
+    en: may I think about it
+    pt: posso pensar um pouco
+- id: shinryou-jouhou
+  text: 診療[しんりょう] 情報[じょうほう] 提供[ていきょう] 書[しょ]
+  meaning:
+    en: medical information letter
+    pt: relatório médico para outro serviço
+  rare: true
+- id: nattoku
+  text: 納得[なっとく]
+  meaning:
+    en: being convinced, agreeing
+    pt: estar convencido
+reviews:
+- item: yama
+  from: A2-12
+- item: umi
+  from: A2-12
+- item: mizuumi
+  from: A2-12
+- item: hamanako
+  from: A2-12
+- item: fujisan
+  from: A2-12
+- item: kawa
+  from: A2-12
+- item: yori
+  from: A2-12
+- item: ichiban-takai
+  from: A2-12
+- item: unagi
+  from: A2-12
+- item: meibutsu
+  from: A2-12
+- item: kyuuka
+  from: B2-16
+- item: shinsei
+  from: B2-16
+- item: yoroshii-deshou-ka
+  from: B2-16
+- item: itadakemasu-deshou-ka
+  from: B2-16
+- item: kanreki
+  from: B2-16
+- item: isshuukan
+  from: B2-16
+- item: hikitsugi
+  from: B2-16
+- item: meiwaku
+  from: B2-16
+- item: eikyou
+  from: B2-16
+- item: kenri-desu-kara
+  from: B2-16
+- item: marason
+  from: C1-18
+- item: kansou
+  from: C1-18
+- item: kinnikutsuu
+  from: C1-18
+- item: ageku
+  from: C1-18
+- item: mayotta-ageku
+  from: C1-18
+- item: gooru-review
+  from: C1-18
+- item: kyuusui
+  from: C1-18
+- item: genkai
+  from: C1-18
+- item: ganbare
+  from: C1-18
+- item: ashi-ga-tsuru
+  from: C1-18
+- item: koushou
+  from: C2-04
+- item: jouho
+  from: C2-04
+- item: dakyou
+  from: C2-04
+- item: ten-shoku
+  from: C2-04
+- item: sasoi
+  from: C2-04
+- item: kentou-shite-itadakemasen-ka
+  from: C2-04
+- item: hyouka
+  from: C2-04
+- item: kyuuyo
+  from: C2-04
+- item: tsuzuketai
+  from: C2-04
+- item: chuukan
+  from: C2-04
+- item: kaigyou
+  from: C2-12
+- item: yuushi
+  from: C2-12
+- item: risuku
+  from: C2-12
+- item: jouren
+  from: C2-12
+- item: nai-koto-niwa
+  from: C2-12
+- item: yatte-minai-koto-niwa
+  from: C2-12
+- item: jigyou-keikakusho
+  from: C2-12
+- item: shikin
+  from: C2-12
+- item: kokyaku
+  from: C2-12
+- item: shiire
+  from: C2-12
+- item: kyougou
+  from: C2-12
+- item: souritsu
+  from: C2-16
+- item: kinen
+  from: C2-16
+- item: kaiin
+  from: C2-16
+- item: souritsu-nijuu-shuunen
+  from: C2-16
+- item: hommoku-wa
+  from: C2-16
+- item: goraijou
+  from: C2-16
+- item: kokoro-yori-kansha
+  from: C2-16
+- item: rekidai
+  from: C2-16
+- item: saigo-made
+  from: C2-16
+- item: goyukkuri
+  from: C2-16
+- item: teijuu
+  from: C2-18
+- item: sabetsu
+  from: C2-18
+- item: kyousei
+  from: C2-18
+- item: inyou
+  from: C2-18
+- item: kotoba-wo-erabu
+  from: C2-18
+- item: tashika-ni-aru
+  from: C2-18
+- item: ippou-review
+  from: C2-18
+- item: kanyou
+  from: C2-18
+- item: chiiki-shakai
+  from: C2-18
+- item: hito-to-hito
+  from: C2-18
+steps:
+- type: narrator
+  text:
+    en: The university hospital recommends surgery for your knee. Before deciding, you ask your family doctor about a second opinion. Listen to the conversation; you don't need to understand it yet.
+    pt: O hospital universitário recomenda cirurgia no seu joelho. Antes de decidir, você pergunta ao médico de família sobre uma segunda opinião. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: 大学[だいがく] 病院[びょういん] で、 膝[ひざ] の 手術[しゅじゅつ] を 勧[すす]められました。
+    meaning:
+      en: At the university hospital they recommended knee surgery.
+      pt: No hospital universitário me recomendaram uma cirurgia no joelho.
+  - speaker: isha
+    text: 診断[しんだん] は 何[なん] と 言[い]われました か。
+    meaning:
+      en: What was the diagnosis they gave you?
+      pt: Qual foi o diagnóstico que deram?
+  - speaker: protagonist
+    text: 半月板[はんげつばん] の 損傷[そんしょう] だ そう です。 でも、 手術[しゅじゅつ] 以外[いがい] の 治療[ちりょう] は ない の か と 思[おも]って。
+    meaning:
+      en: Meniscus damage, they say. But I wondered whether there's no treatment other than surgery.
+      pt: Lesão no menisco, disseram. Mas fiquei pensando se não existe tratamento além da cirurgia.
+  - speaker: isha
+    text: セカンド オピニオン を 受[う]ける の は、 患者[かんじゃ] の 権利[けんり] です よ。
+    meaning:
+      en: Getting a second opinion is the patient's right.
+      pt: Pedir segunda opinião é direito do paciente.
+  - speaker: protagonist
+    text: 失礼[しつれい] に なりません か。 先生[せんせい] を 信[しん]じて いない よう で。
+    meaning:
+      en: Isn't it rude? As if I don't trust the doctor.
+      pt: Não é falta de educação? Parece que não confio no médico.
+  - speaker: isha
+    text: いいえ。 大学[だいがく] 病院[びょういん] に 所見[しょけん] と 資料[しりょう] を 出[だ]して もらいましょう。 ほか の 方法[ほうほう]、 例[たと]えば リハビリ の 可能性[かのうせい] も 聞[き]けます。
+    meaning:
+      en: Not at all. Let's ask the university hospital to send the findings and records. You can also ask about other options, like physio.
+      pt: De jeito nenhum. Vamos pedir ao hospital universitário que envie o parecer e os exames. Você pode perguntar também sobre outras opções, como fisioterapia.
+  - speaker: protagonist
+    text: では、 少[すこ]し 考[かんが]えさせて いただけます か と 大学[だいがく] 病院[びょういん] に 伝[つた]えます。
+    meaning:
+      en: Then I'll tell the university hospital, “May I take a little time to think?”
+      pt: 'Então vou dizer ao hospital universitário: «Posso pensar um pouco?»'
+  - speaker: isha
+    text: 納得[なっとく] して から 治療[ちりょう] を 選[えら]ぶ の が 一番[いちばん] です。
+    meaning:
+      en: It's best to choose a treatment once you're convinced.
+      pt: O melhor é escolher o tratamento depois de estar convencida.
+- type: prompt
+  ask:
+    en: 'Say: a diagnosis.'
+    pt: 'Diga: um diagnóstico.'
+  answer:
+    speaker: protagonist
+    text: 診断[しんだん]
+  items:
+  - shindan
+- type: prompt
+  ask:
+    en: 'Say: surgery.'
+    pt: 'Diga: cirurgia.'
+  answer:
+    speaker: protagonist
+    text: 手術[しゅじゅつ]
+  items:
+  - shujutsu
+- type: prompt
+  ask:
+    en: 'Say: treatment.'
+    pt: 'Diga: tratamento.'
+  answer:
+    speaker: protagonist
+    text: 治療[ちりょう]
+  items:
+  - chiryou
+- type: prompt
+  ask:
+    en: 'Say: a second opinion.'
+    pt: 'Diga: segunda opinião.'
+  answer:
+    speaker: protagonist
+    text: セカンド オピニオン
+  items:
+  - sekando-opinion
+- type: prompt
+  ask:
+    en: 'Say: medical findings.'
+    pt: 'Diga: parecer médico.'
+  answer:
+    speaker: protagonist
+    text: 所見[しょけん]
+  items:
+  - shoken
+- type: prompt
+  ask:
+    en: 'Say: another option.'
+    pt: 'Diga: outra opção.'
+  answer:
+    speaker: protagonist
+    text: ほか の 方法[ほうほう]
+  items:
+  - hokano-houhou
+- type: prompt
+  ask:
+    en: 'Say: physio.'
+    pt: 'Diga: fisioterapia.'
+  answer:
+    speaker: protagonist
+    text: リハビリ
+  items:
+  - rehabiri
+- type: narrator
+  text:
+    en: 'Asking a doctor for time without sounding distrustful uses the humble causative: «考[かんが]えさせて いただけます か» — may I be allowed to think about it? A second opinion is a recognised right; the first hospital
+      provides the records, «診療[しんりょう] 情報[じょうほう] 提供[ていきょう] 書[しょ]», and the patient usually pays for that consultation privately.'
+    pt: 'Pedir tempo ao médico sem parecer desconfiança usa o causativo humilde: «考[かんが]えさせて いただけます か» — posso ter um tempo para pensar? A segunda opinião é um direito reconhecido; o primeiro hospital fornece
+      os registros, «診療[しんりょう] 情報[じょうほう] 提供[ていきょう] 書[しょ]», e o paciente geralmente paga essa consulta à parte.'
+- type: prompt
+  ask:
+    en: 'Ask for time: may I think about it?'
+    pt: 'Peça tempo: posso pensar um pouco?'
+  answer:
+    speaker: protagonist
+    text: 考[かんが]えさせて いただけます か
+  items:
+  - kangaete-mo-yoroshii
+- type: prompt
+  ask:
+    en: 'Say: the medical information letter.'
+    pt: 'Diga: o relatório médico para outro serviço.'
+  answer:
+    speaker: protagonist
+    text: 診療[しんりょう] 情報[じょうほう] 提供[ていきょう] 書[しょ]
+  items:
+  - shinryou-jouhou
+- type: prompt
+  ask:
+    en: 'Say: being convinced.'
+    pt: 'Diga: estar convencido.'
+  answer:
+    speaker: protagonist
+    text: 納得[なっとく]
+  items:
+  - nattoku
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil é comum ouvir dois ou três médicos antes de operar. No Japão também é direito — só pede um pouco mais de jeito para pedir.
+- type: prompt
+  ask:
+    en: 'Once more: say “diagnosis”.'
+    pt: 'Mais uma vez: diga “diagnóstico”.'
+  answer:
+    speaker: protagonist
+    text: 診断[しんだん]
+  items:
+  - shindan
+- type: prompt
+  ask:
+    en: 'Once more: say “treatment”.'
+    pt: 'Mais uma vez: diga “tratamento”.'
+  answer:
+    speaker: protagonist
+    text: 治療[ちりょう]
+  items:
+  - chiryou
+- type: prompt
+  ask:
+    en: 'Once more: say “second opinion”.'
+    pt: 'Mais uma vez: diga “segunda opinião”.'
+  answer:
+    speaker: protagonist
+    text: セカンド オピニオン
+  items:
+  - sekando-opinion
+- type: prompt
+  ask:
+    en: 'Once more: say “medical findings”.'
+    pt: 'Mais uma vez: diga “parecer médico”.'
+  answer:
+    speaker: protagonist
+    text: 所見[しょけん]
+  items:
+  - shoken
+- type: prompt
+  ask:
+    en: 'Once more: say “surgery”.'
+    pt: 'Mais uma vez: diga “cirurgia”.'
+  answer:
+    speaker: protagonist
+    text: 手術[しゅじゅつ]
+  items:
+  - shujutsu
+- type: prompt
+  ask:
+    en: 'Once more: say “another option”.'
+    pt: 'Mais uma vez: diga “outra opção”.'
+  answer:
+    speaker: protagonist
+    text: ほか の 方法[ほうほう]
+  items:
+  - hokano-houhou
+- type: prompt
+  ask:
+    en: 'Once more: say “rehabilitation, physio”.'
+    pt: 'Mais uma vez: diga “fisioterapia”.'
+  answer:
+    speaker: protagonist
+    text: リハビリ
+  items:
+  - rehabiri
+- type: prompt
+  ask:
+    en: 'Once more: say “may I think about it”.'
+    pt: 'Mais uma vez: diga “posso pensar um pouco”.'
+  answer:
+    speaker: protagonist
+    text: 考[かんが]えさせて いただけます か
+  items:
+  - kangaete-mo-yoroshii
+- type: prompt
+  ask:
+    en: 'Once more: say “medical information letter”.'
+    pt: 'Mais uma vez: diga “relatório médico para outro serviço”.'
+  answer:
+    speaker: protagonist
+    text: 診療[しんりょう] 情報[じょうほう] 提供[ていきょう] 書[しょ]
+  items:
+  - shinryou-jouhou
+- type: prompt
+  ask:
+    en: 'Once more: say “being convinced, agreeing”.'
+    pt: 'Mais uma vez: diga “estar convencido”.'
+  answer:
+    speaker: protagonist
+    text: 納得[なっとく]
+  items:
+  - nattoku
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “settling permanently — and “discrimination — and “coexistence — and “quotation — and “choose one''s words — and “certainly exists — and “on the other hand — and “tolerance, open-mindedness
+      — and “local community — and “person to person — and “founding — and “commemoration”.'
+    pt: 'Diga: “fixar residência — e “discriminação — e “convivência — e “citação — e “escolher as palavras — e “certamente existe — e “por outro lado — e “tolerância — e “comunidade local — e “de pessoa
+      para pessoa — e “fundação — e “comemoração”.'
+  answer:
+    speaker: protagonist
+    text: 定住[ていじゅう] … 差別[さべつ] … 共生[きょうせい] … 引用[いんよう] … 言葉[ことば] を 選[えら]ぶ … 確[たし]か に ある … その 一方[いっぽう] で … 寛容[かんよう] … 地域[ちいき] 社会[しゃかい] … 人[ひと] と 人[ひと] … 創立[そうりつ] … 記念[きねん]
+  items:
+  - teijuu
+  - sabetsu
+  - kyousei
+  - inyou
+  - kotoba-wo-erabu
+  - tashika-ni-aru
+  - ippou-review
+  - kanyou
+  - chiiki-shakai
+  - hito-to-hito
+  - souritsu
+  - kinen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “member — and “20th anniversary of the founding — and “despite your busy schedules today — and “attending (honorific) — and “we thank you from our hearts — and “successive (leaders, members)
+      — and “to the end — and “please enjoy (it) at your leisure — and “opening a business — and “loan, financing — and “risk — and “regular customer”.'
+    pt: 'Diga: “membro, sócio — e “20º aniversário de fundação — e “apesar da agenda corrida de hoje — e “a presença (honorífico) — e “agradecemos de coração — e “sucessivos, de todas as gerações — e “até
+      o fim — e “aproveitem à vontade — e “abrir um negócio — e “financiamento — e “risco — e “cliente fiel”.'
+  answer:
+    speaker: protagonist
+    text: 会員[かいいん] … 創立[そうりつ] 二十[にじゅう] 周年[しゅうねん] … 本日[ほんじつ] は お忙[いそが]しい 中[なか] … ご来場[らいじょう] … 心[こころ] より 御礼[おんれい] 申[もう]し上[あ]げます … 歴代[れきだい] … 最後[さいご] まで … ごゆっくり お楽[たの]しみ ください … 開業[かいぎょう] … 融資[ゆうし] … リスク …
+      常連[じょうれん]
+  items:
+  - kaiin
+  - souritsu-nijuu-shuunen
+  - hommoku-wa
+  - goraijou
+  - kokoro-yori-kansha
+  - rekidai
+  - saigo-made
+  - goyukkuri
+  - kaigyou
+  - yuushi
+  - risuku
+  - jouren
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “unless (you) do… — and “unless you try — and “business plan — and “funds, capital — and “clientele — and “stock purchasing — and “competition (rival businesses) — and “negotiation — and “concession
+      — and “compromise — and “changing jobs — and “invitation, offer”.'
+    pt: 'Diga: “a não ser que…, sem… — e “sem tentar — e “plano de negócios — e “capital — e “clientela — e “compra de mercadoria — e “concorrência — e “negociação — e “concessão — e “acordo, meio-termo
+      — e “mudar de emprego — e “convite, oferta”.'
+  answer:
+    speaker: protagonist
+    text: 〜ない こと に は … やって みない こと に は … 事業[じぎょう] 計画[けいかく] 書[しょ] … 資金[しきん] … 顧客[こきゃく] … 仕入[しい]れ … 競合[きょうごう] … 交渉[こうしょう] … 譲歩[じょうほ] … 妥協[だきょう] … 転職[てんしょく] … お誘[さそ]い
+  items:
+  - nai-koto-niwa
+  - yatte-minai-koto-niwa
+  - jigyou-keikakusho
+  - shikin
+  - kokyaku
+  - shiire
+  - kyougou
+  - koushou
+  - jouho
+  - dakyou
+  - ten-shoku
+  - sasoi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “would you kindly consider — and “evaluation, appraisal — and “salary (formal) — and “I want to keep working here — and “meet in the middle — and “marathon — and “finishing (a race) — and
+      “muscle ache — and “after much…, in the end (bad) — and “after getting lost for ages — and “finish line — and “water station”.'
+    pt: 'Diga: “o senhor poderia considerar — e “avaliação — e “remuneração — e “quero continuar trabalhando aqui — e “chegar a um meio-termo — e “maratona — e “completar (a prova) — e “dor muscular — e
+      “depois de muito…, acabou que (mal) — e “depois de se perder muito — e “linha de chegada — e “posto de água”.'
+  answer:
+    speaker: protagonist
+    text: ご検討[けんとう] いただけません でしょう か … 評価[ひょうか] … 給与[きゅうよ] … この 会社[かいしゃ] で 働[はたら]き 続[つづ]けたい … 間[あいだ] を 取[と]る … マラソン … 完走[かんそう] … 筋肉痛[きんにくつう] … 〜あげく … 迷[まよ]った あげく … ゴール 地点[ちてん] … 給水[きゅうすい]
+  items:
+  - kentou-shite-itadakemasen-ka
+  - hyouka
+  - kyuuyo
+  - tsuzuketai
+  - chuukan
+  - marason
+  - kansou
+  - kinnikutsuu
+  - ageku
+  - mayotta-ageku
+  - gooru-review
+  - kyuusui
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “limit — and “come on! (cheering) — and “get a leg cramp — and “leave, holiday — and “application (form) — and “may I…? (very polite) — and “could you possibly…? — and “60th birthday — and
+      “one week — and “handover (of work) — and “trouble, inconvenience (to others) — and “effect, impact”.'
+    pt: 'Diga: “limite — e “vai! força! (torcendo) — e “dar cãibra na perna — e “férias, folga — e “requerimento, pedido — e “eu poderia…? (muito educado) — e “o senhor poderia…? — e “60 anos (aniversário)
+      — e “uma semana — e “passagem de trabalho — e “incômodo, transtorno (aos outros) — e “impacto”.'
+  answer:
+    speaker: protagonist
+    text: 限界[げんかい] … 頑張[がんば]れ！ … 足[あし] が つる … 休暇[きゅうか] … 申請[しんせい] … 〜て も よろしい でしょう か … いただけない でしょう か … 還暦[かんれき] … 一週間[いっしゅうかん] … 引[ひ]き継[つ]ぎ … 迷惑[めいわく] … 影響[えいきょう]
+  items:
+  - genkai
+  - ganbare
+  - ashi-ga-tsuru
+  - kyuuka
+  - shinsei
+  - yoroshii-deshou-ka
+  - itadakemasu-deshou-ka
+  - kanreki
+  - isshuukan
+  - hikitsugi
+  - meiwaku
+  - eikyou
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “since it''s your right — and “mountain — and “sea — and “lake — and “Lake Hamana — and “Mount Fuji — and “river — and “than — and “the highest — and “eel — and “local speciality”.'
+    pt: 'Diga: “já que é seu direito — e “montanha — e “mar — e “lago — e “lago Hamana — e “monte Fuji — e “rio — e “do que — e “o mais alto — e “enguia — e “especialidade local”.'
+  answer:
+    speaker: protagonist
+    text: 権利[けんり] です から … 山[やま] … 海[うみ] … 湖[みずうみ] … 浜名湖[はまなこ] … 富士山[ふじさん] … 川[かわ] … 〜より … 一番[いちばん] 高[たか]い … うなぎ … 名物[めいぶつ]
+  items:
+  - kenri-desu-kara
+  - yama
+  - umi
+  - mizuumi
+  - hamanako
+  - fujisan
+  - kawa
+  - yori
+  - ichiban-takai
+  - unagi
+  - meibutsu
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

@@ -1,0 +1,592 @@
+# UNIT ja C2-18 — written by AI (Claude) for Casus; expanded from src/C2-18.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-18
+level: C2
+number: 18
+protagonist: m
+title:
+  en: The journalist
+  pt: O jornalista
+situation:
+  en: A national newspaper is writing about foreign residents settling in regional Japan. The reporter interviews you; every sentence may be quoted.
+  pt: Um jornal nacional está escrevendo sobre estrangeiros que se fixam no interior do Japão. A repórter entrevista você; cada frase pode ser citada.
+learn_lessons: []
+culture: —
+new_items:
+- id: teijuu
+  text: 定住[ていじゅう]
+  meaning:
+    en: settling permanently
+    pt: fixar residência
+- id: sabetsu
+  text: 差別[さべつ]
+  meaning:
+    en: discrimination
+    pt: discriminação
+- id: kyousei
+  text: 共生[きょうせい]
+  meaning:
+    en: coexistence
+    pt: convivência
+- id: inyou
+  text: 引用[いんよう]
+  meaning:
+    en: quotation
+    pt: citação
+- id: kotoba-wo-erabu
+  text: 言葉[ことば] を 選[えら]ぶ
+  meaning:
+    en: choose one's words
+    pt: escolher as palavras
+- id: tashika-ni-aru
+  text: 確[たし]か に ある
+  meaning:
+    en: certainly exists
+    pt: certamente existe
+- id: ippou-review
+  text: その 一方[いっぽう] で
+  meaning:
+    en: on the other hand
+    pt: por outro lado
+- id: kanyou
+  text: 寛容[かんよう]
+  meaning:
+    en: tolerance, open-mindedness
+    pt: tolerância
+- id: chiiki-shakai
+  text: 地域[ちいき] 社会[しゃかい]
+  meaning:
+    en: local community
+    pt: comunidade local
+- id: hito-to-hito
+  text: 人[ひと] と 人[ひと]
+  meaning:
+    en: person to person
+    pt: de pessoa para pessoa
+reviews:
+- item: kokuhaku
+  from: A2-11
+- item: suki-desu
+  from: A2-11
+- item: tsukiatte-kudasai
+  from: A2-11
+- item: henji
+  from: A2-11
+- item: kanojo
+  from: A2-11
+- item: kareshi
+  from: A2-11
+- item: kinchou
+  from: A2-11
+- item: oshiete-kureta
+  from: A2-11
+- item: tetsudatte-kureru
+  from: A2-11
+- item: kimochi
+  from: A2-11
+- item: dema
+  from: B2-15
+- item: shutten
+  from: B2-15
+- item: kiji
+  from: B2-15
+- item: kakusan
+  from: B2-15
+- item: rashii-review
+  from: B2-15
+- item: koushiki
+  from: B2-15
+- item: shinjiru
+  from: B2-15
+- item: shirabete-kara
+  from: B2-15
+- item: nisemono
+  from: B2-15
+- item: shashin-no-kakou
+  from: B2-15
+- item: ikukyuu
+  from: C1-17
+- item: danjo-byoudou
+  from: C1-17
+- item: tomobataraki
+  from: C1-17
+- item: shokuba
+  from: C1-17
+- item: ni-kanshite
+  from: C1-17
+- item: ikukyuu-ni-kanshite
+  from: C1-17
+- item: dansei-no-ikukyuu
+  from: C1-17
+- item: shutoku
+  from: C1-17
+- item: ishiki
+  from: C1-17
+- item: kosodate
+  from: C1-17
+- item: shuzai
+  from: C2-03
+- item: intabyuu
+  from: C2-03
+- item: shichousha
+  from: C2-03
+- item: kansou-thoughts
+  from: C2-03
+- item: tsuzukete-ikitai
+  from: C2-03
+- item: miryoku
+  from: C2-03
+- item: hakuryoku
+  from: C2-03
+- item: chiiki
+  from: C2-03
+- item: tsunagari
+  from: C2-03
+- item: kinchou-shimashita
+  from: C2-03
+- item: shougaku-soshou
+  from: C2-11
+- item: bengoshi-item
+  from: C2-11
+- item: shouko
+  from: C2-11
+- item: hanketsu
+  from: C2-11
+- item: houterasu
+  from: C2-11
+- item: genkoku
+  from: C2-11
+- item: hikoku
+  from: C2-11
+- item: wakai
+  from: C2-11
+- item: tsuujou-shiyou
+  from: C2-11
+- item: ichinichi-de
+  from: C2-11
+- item: sedai
+  from: C2-15
+- item: sensou
+  from: C2-15
+- item: kioku
+  from: C2-15
+- item: heiwa
+  from: C2-15
+- item: genbaku
+  from: C2-15
+- item: hibakusha
+  from: C2-15
+- item: katari-tsugu
+  from: C2-15
+- item: kotoba-ga-denai
+  from: C2-15
+- item: inoru
+  from: C2-15
+- item: ikiru-chikara
+  from: C2-15
+- item: gokai
+  from: C2-17
+- item: sonna-tsumori
+  from: C2-17
+- item: kizutsuketa
+  from: C2-17
+- item: shitsurei-na-koto
+  from: C2-17
+- item: joudan-no-tsumori
+  from: C2-17
+- item: bunka-no-chigai
+  from: C2-17
+- item: ii-wake-review
+  from: C2-17
+- item: ki-ni-shite-inai
+  from: C2-17
+- item: shoujiki-ni-iu
+  from: C2-17
+- item: nakanaori-review
+  from: C2-17
+steps:
+- type: narrator
+  text:
+    en: A national newspaper is writing about foreign residents settling in regional Japan. The reporter interviews you; every sentence may be quoted. Listen to the conversation; you don't need to understand
+      it yet.
+    pt: Um jornal nacional está escrevendo sobre estrangeiros que se fixam no interior do Japão. A repórter entrevista você; cada frase pode ser citada. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: reporter
+    text: 浜松[はままつ] に 定住[ていじゅう] して 五年[ごねん]。 差別[さべつ] を 感[かん]じた こと は ありますか。
+    meaning:
+      en: Five years settled in Hamamatsu. Have you felt discrimination?
+      pt: Cinco anos morando em Hamamatsu. Já sentiu discriminação?
+  - speaker: protagonist
+    text: 言葉[ことば] を 選[えら]んで 答[こた]えます。 差別[さべつ] は 確[たし]か に あります。 部屋[へや] を 借[か]りる 時[とき] に 断[ことわ]られた こと も あります。
+    meaning:
+      en: I'll choose my words. Discrimination certainly exists. I was once refused when renting a flat.
+      pt: Vou escolher as palavras. A discriminação certamente existe. Já me recusaram ao alugar um apartamento.
+  - speaker: reporter
+    text: その 経験[けいけん] は、 記事[きじ] に 引用[いんよう] して も よろしい でしょう か。
+    meaning:
+      en: May I quote that experience in the article?
+      pt: Posso citar essa experiência na matéria?
+  - speaker: protagonist
+    text: はい。 ただ、 その 一方[いっぽう] で、 地域[ちいき] 社会[しゃかい] に 温[あたた]かく 迎[むか]えられた こと も 書[か]いて ください。
+    meaning:
+      en: Yes. But please also write that, on the other hand, the local community welcomed me warmly.
+      pt: Pode. Mas, por favor, escreva também que, por outro lado, a comunidade local me acolheu com carinho.
+  - speaker: reporter
+    text: 共生[きょうせい] の ため に、 何[なに] が 一番[いちばん] 必要[ひつよう] だ と 思[おも]います か。
+    meaning:
+      en: What do you think is most needed for coexistence?
+      pt: O que você acha que é mais necessário para a convivência?
+  - speaker: protagonist
+    text: 制度[せいど] も 大事[だいじ] です が、 結局[けっきょく] は 人[ひと] と 人[ひと] の 出会[であ]い だ と 思[おも]います。 太鼓[たいこ] や フットサル の よう な。
+    meaning:
+      en: Systems matter, but in the end I think it's people meeting people. Like through taiko or futsal.
+      pt: As políticas importam, mas no fim acho que é o encontro de pessoa para pessoa. Como no taikô ou no futsal.
+  - speaker: reporter
+    text: いい 言葉[ことば] です ね。 見出[みだ]し に なる かも しれません。
+    meaning:
+      en: Nice words. That might become the headline.
+      pt: Boa frase. Pode virar manchete.
+  - speaker: protagonist
+    text: 寛容[かんよう] は 両方[りょうほう] から 必要[ひつよう] です。 それ も 一緒[いっしょ] に お願[ねが]い します。
+    meaning:
+      en: Tolerance is needed from both sides. Please include that too.
+      pt: A tolerância precisa vir dos dois lados. Coloque isso também, por favor.
+- type: prompt
+  ask:
+    en: 'Say: settling permanently.'
+    pt: 'Diga: fixar residência.'
+  answer:
+    speaker: protagonist
+    text: 定住[ていじゅう]
+  items:
+  - teijuu
+- type: prompt
+  ask:
+    en: 'Say: discrimination.'
+    pt: 'Diga: discriminação.'
+  answer:
+    speaker: protagonist
+    text: 差別[さべつ]
+  items:
+  - sabetsu
+- type: prompt
+  ask:
+    en: 'Say: coexistence.'
+    pt: 'Diga: convivência.'
+  answer:
+    speaker: protagonist
+    text: 共生[きょうせい]
+  items:
+  - kyousei
+- type: prompt
+  ask:
+    en: 'Say: the local community.'
+    pt: 'Diga: a comunidade local.'
+  answer:
+    speaker: protagonist
+    text: 地域[ちいき] 社会[しゃかい]
+  items:
+  - chiiki-shakai
+- type: prompt
+  ask:
+    en: 'Buy a moment: I''ll choose my words.'
+    pt: 'Ganhe um momento: vou escolher as palavras.'
+  answer:
+    speaker: protagonist
+    text: 言葉[ことば] を 選[えら]ぶ
+  items:
+  - kotoba-wo-erabu
+- type: prompt
+  ask:
+    en: 'Say: it certainly exists.'
+    pt: 'Diga: certamente existe.'
+  answer:
+    speaker: protagonist
+    text: 確[たし]か に ある
+  items:
+  - tashika-ni-aru
+- type: prompt
+  ask:
+    en: 'Balance it: on the other hand.'
+    pt: 'Equilibre: por outro lado.'
+  answer:
+    speaker: protagonist
+    text: その 一方[いっぽう] で
+  items:
+  - ippou-review
+- type: prompt
+  ask:
+    en: 'Say: a quotation.'
+    pt: 'Diga: uma citação.'
+  answer:
+    speaker: protagonist
+    text: 引用[いんよう]
+  items:
+  - inyou
+- type: prompt
+  ask:
+    en: 'Say: person to person.'
+    pt: 'Diga: de pessoa para pessoa.'
+  answer:
+    speaker: protagonist
+    text: 人[ひと] と 人[ひと]
+  items:
+  - hito-to-hito
+- type: prompt
+  ask:
+    en: 'Say: tolerance.'
+    pt: 'Diga: tolerância.'
+  answer:
+    speaker: protagonist
+    text: 寛容[かんよう]
+  items:
+  - kanyou
+- type: narrator
+  text:
+    en: 'Speaking to a journalist calls for a quotable register: short, complete sentences that stand alone, a fact and its counterweight («確[たし]か に… その 一方[いっぽう] で…»), and asking for both to be printed.
+      A single line can become a headline.'
+    pt: 'Falar com jornalista pede um registro citável: frases curtas e completas que fiquem de pé sozinhas, um fato e o seu contrapeso («確[たし]か に… その 一方[いっぽう] で…»), e o pedido para que os dois sejam publicados.
+      Uma única frase pode virar manchete.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: Recusa de aluguel por ser estrangeiro ainda acontece no Japão. Falar disso em público, com equilíbrio, ajuda quem vem depois.
+- type: prompt
+  ask:
+    en: 'Once more: say “settling permanently”.'
+    pt: 'Mais uma vez: diga “fixar residência”.'
+  answer:
+    speaker: protagonist
+    text: 定住[ていじゅう]
+  items:
+  - teijuu
+- type: prompt
+  ask:
+    en: 'Once more: say “discrimination”.'
+    pt: 'Mais uma vez: diga “discriminação”.'
+  answer:
+    speaker: protagonist
+    text: 差別[さべつ]
+  items:
+  - sabetsu
+- type: prompt
+  ask:
+    en: 'Once more: say “coexistence”.'
+    pt: 'Mais uma vez: diga “convivência”.'
+  answer:
+    speaker: protagonist
+    text: 共生[きょうせい]
+  items:
+  - kyousei
+- type: prompt
+  ask:
+    en: 'Once more: say “quotation”.'
+    pt: 'Mais uma vez: diga “citação”.'
+  answer:
+    speaker: protagonist
+    text: 引用[いんよう]
+  items:
+  - inyou
+- type: prompt
+  ask:
+    en: 'Once more: say “choose one''s words”.'
+    pt: 'Mais uma vez: diga “escolher as palavras”.'
+  answer:
+    speaker: protagonist
+    text: 言葉[ことば] を 選[えら]ぶ
+  items:
+  - kotoba-wo-erabu
+- type: prompt
+  ask:
+    en: 'Once more: say “certainly exists”.'
+    pt: 'Mais uma vez: diga “certamente existe”.'
+  answer:
+    speaker: protagonist
+    text: 確[たし]か に ある
+  items:
+  - tashika-ni-aru
+- type: prompt
+  ask:
+    en: 'Once more: say “on the other hand”.'
+    pt: 'Mais uma vez: diga “por outro lado”.'
+  answer:
+    speaker: protagonist
+    text: その 一方[いっぽう] で
+  items:
+  - ippou-review
+- type: prompt
+  ask:
+    en: 'Once more: say “tolerance, open-mindedness”.'
+    pt: 'Mais uma vez: diga “tolerância”.'
+  answer:
+    speaker: protagonist
+    text: 寛容[かんよう]
+  items:
+  - kanyou
+- type: prompt
+  ask:
+    en: 'Once more: say “local community”.'
+    pt: 'Mais uma vez: diga “comunidade local”.'
+  answer:
+    speaker: protagonist
+    text: 地域[ちいき] 社会[しゃかい]
+  items:
+  - chiiki-shakai
+- type: prompt
+  ask:
+    en: 'Once more: say “person to person”.'
+    pt: 'Mais uma vez: diga “de pessoa para pessoa”.'
+  answer:
+    speaker: protagonist
+    text: 人[ひと] と 人[ひと]
+  items:
+  - hito-to-hito
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “misunderstanding — and “I didn''t mean it that way — and “I hurt (you) — and “I said something rude — and “meaning it as a joke — and “cultural difference — and “it may sound like an excuse,
+      but — and “I don''t mind — and “thank you for being honest — and “repair a relationship — and “generation — and “war”.'
+    pt: 'Diga: “mal-entendido — e “não foi essa a intenção — e “acabei magoando — e “disse uma coisa indelicada — e “com a intenção de brincar — e “diferença cultural — e “pode parecer desculpa, mas — e
+      “não me importo — e “obrigada por ser sincera — e “reparar uma relação — e “geração — e “guerra”.'
+  answer:
+    speaker: protagonist
+    text: 誤解[ごかい] … そんな つもり じゃ なかった … 傷[きず]つけて しまった … 失礼[しつれい] な こと を 言[い]いました … 冗談[じょうだん] の つもり で … 文化[ぶんか] の 違[ちが]い … 言[い]い訳[わけ] に なります が … 気[き] に して いない … 正直[しょうじき] に 言[い]って くれて … 関係[かんけい] を 修復[しゅうふく]
+      する … 世代[せだい] … 戦争[せんそう]
+  items:
+  - gokai
+  - sonna-tsumori
+  - kizutsuketa
+  - shitsurei-na-koto
+  - joudan-no-tsumori
+  - bunka-no-chigai
+  - ii-wake-review
+  - ki-ni-shite-inai
+  - shoujiki-ni-iu
+  - nakanaori-review
+  - sedai
+  - sensou
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “memory — and “peace — and “atomic bomb — and “atomic-bomb survivor — and “pass down (stories) — and “I''m lost for words — and “pray — and “the strength to live — and “small-claims lawsuit
+      — and “lawyer — and “evidence — and “judgement, ruling”.'
+    pt: 'Diga: “memória — e “paz — e “bomba atômica — e “sobrevivente da bomba atômica — e “transmitir (a história) às gerações — e “fico sem palavras — e “rezar, orar — e “a força de viver — e “ação de
+      pequenas causas — e “advogado — e “prova — e “sentença”.'
+  answer:
+    speaker: protagonist
+    text: 記憶[きおく] … 平和[へいわ] … 原爆[げんばく] … 被爆者[ひばくしゃ] … 語[かた]り継[つ]ぐ … 言葉[ことば] が 出[で]ません … 祈[いの]る … 生[い]きる 力[ちから] … 少額[しょうがく] 訴訟[そしょう] … 弁護士[べんごし] … 証拠[しょうこ] … 判決[はんけつ]
+  items:
+  - kioku
+  - heiwa
+  - genbaku
+  - hibakusha
+  - katari-tsugu
+  - kotoba-ga-denai
+  - inoru
+  - ikiru-chikara
+  - shougaku-soshou
+  - bengoshi-item
+  - shouko
+  - hanketsu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “public legal-support centre — and “plaintiff — and “defendant — and “settlement — and “normal wear and tear — and “be over in one day — and “news coverage, reporting — and “interview — and
+      “viewers — and “impressions, thoughts — and “I want to keep going — and “appeal, charm”.'
+    pt: 'Diga: “centro público de apoio jurídico — e “autor (da ação) — e “réu — e “acordo (judicial) — e “uso normal — e “terminar num dia — e “cobertura jornalística — e “entrevista — e “telespectadores
+      — e “impressões — e “quero continuar — e “encanto, atrativo”.'
+  answer:
+    speaker: protagonist
+    text: 法[ほう] テラス … 原告[げんこく] … 被告[ひこく] … 和解[わかい] … 通常[つうじょう] の 使用[しよう] … 一日[いちにち] で 終[お]わる … 取材[しゅざい] … インタビュー … 視聴者[しちょうしゃ] … 感想[かんそう] … これ から も 続[つづ]けて いきたい … 魅力[みりょく]
+  items:
+  - houterasu
+  - genkoku
+  - hikoku
+  - wakai
+  - tsuujou-shiyou
+  - ichinichi-de
+  - shuzai
+  - intabyuu
+  - shichousha
+  - kansou-thoughts
+  - tsuzukete-ikitai
+  - miryoku
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “power, impact — and “local community, region — and “connection — and “I''m nervous, but — and “childcare leave — and “gender equality — and “both partners working — and “workplace — and “regarding,
+      about — and “regarding childcare leave — and “paternity leave — and “taking (leave), acquiring”.'
+    pt: 'Diga: “impacto, força — e “comunidade local — e “ligação, conexão — e “estou nervosa, mas — e “licença para cuidar do filho — e “igualdade de gênero — e “casal em que os dois trabalham — e “local
+      de trabalho — e “a respeito de, sobre — e “a respeito da licença — e “licença-paternidade — e “tirar (licença), obter”.'
+  answer:
+    speaker: protagonist
+    text: 迫力[はくりょく] … 地域[ちいき] … つながり … 緊張[きんちょう] して います が … 育休[いくきゅう] … 男女[だんじょ] 平等[びょうどう] … 共働[ともばたら]き … 職場[しょくば] … 〜に 関[かん]して … 育休[いくきゅう] に 関[かん]して … 男性[だんせい] の 育休[いくきゅう] … 取得[しゅとく]
+  items:
+  - hakuryoku
+  - chiiki
+  - tsunagari
+  - kinchou-shimashita
+  - ikukyuu
+  - danjo-byoudou
+  - tomobataraki
+  - shokuba
+  - ni-kanshite
+  - ikukyuu-ni-kanshite
+  - dansei-no-ikukyuu
+  - shutoku
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “awareness, mindset — and “raising children — and “false rumour, fake news — and “source — and “article — and “spreading, sharing widely — and “apparently, but… — and “official — and “believe
+      — and “after checking — and “fake (thing) — and “edited photo”.'
+    pt: 'Diga: “consciência, mentalidade — e “criar filhos — e “boato falso, fake news — e “fonte — e “matéria, artigo — e “espalhar, compartilhar — e “parece que, mas… — e “oficial — e “acreditar — e “depois
+      de verificar — e “falso, falsificado — e “foto editada”.'
+  answer:
+    speaker: protagonist
+    text: 意識[いしき] … 子育[こそだ]て … デマ … 出典[しゅってん] … 記事[きじ] … 拡散[かくさん] … 〜らしい けど … 公式[こうしき] … 信[しん]じる … 調[しら]べて から … 偽物[にせもの] … 写真[しゃしん] の 加工[かこう]
+  items:
+  - ishiki
+  - kosodate
+  - dema
+  - shutten
+  - kiji
+  - kakusan
+  - rashii-review
+  - koushiki
+  - shinjiru
+  - shirabete-kara
+  - nisemono
+  - shashin-no-kakou
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “confession (of love) — and “I like you, I love you — and “please go out with me — and “answer, reply — and “girlfriend; she — and “boyfriend — and “I''m nervous — and “(someone) told me,
+      taught me (for me) — and “will you help me? — and “feelings”.'
+    pt: 'Diga: “declaração (de amor) — e “gosto de você — e “namora comigo? — e “resposta — e “namorada; ela — e “namorado — e “estou nervoso — e “me contou, me ensinou — e “você me ajuda? — e “sentimentos”.'
+  answer:
+    speaker: protagonist
+    text: 告白[こくはく] … 好[す]き です … 付[つ]き合[あ]って ください … 返事[へんじ] … 彼女[かのじょ] … 彼氏[かれし] … 緊張[きんちょう] します … 教[おし]えて くれました … 手伝[てつだ]って くれる？ … 気持[きも]ち
+  items:
+  - kokuhaku
+  - suki-desu
+  - tsukiatte-kudasai
+  - henji
+  - kanojo
+  - kareshi
+  - kinchou
+  - oshiete-kureta
+  - tetsudatte-kureru
+  - kimochi
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
