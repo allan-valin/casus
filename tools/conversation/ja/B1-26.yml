@@ -1,0 +1,618 @@
+# UNIT ja B1-26 — written by AI (Claude) for Casus; expanded from src/B1-26.yml by tools/expand_unit.py. Edit the source.
+
+id: B1-26
+level: B1
+number: 26
+protagonist: m
+title:
+  en: Birthday
+  pt: Aniversário
+situation:
+  en: Your birthday. Yui brings a small cake; Kenta gave you something at work. Then she reminds you about White Day.
+  pt: Seu aniversário. A Yui traz um bolinho; o Kenta te deu algo no trabalho. Depois ela lembra você do White Day.
+learn_lessons: []
+culture: Return gifts (お返し)
+new_items:
+- id: tanjoubi
+  text: 誕生日[たんじょうび]
+  meaning:
+    en: birthday
+    pt: aniversário
+- id: keeki
+  text: ケーキ
+  meaning:
+    en: cake
+    pt: bolo
+- id: purezento
+  text: プレゼント
+  meaning:
+    en: present
+    pt: presente
+- id: okaeshi
+  text: お返[かえ]し
+  meaning:
+    en: a return gift
+    pt: presente de retribuição
+  rare: true
+- id: ageru
+  text: あげる
+  meaning:
+    en: give (to others)
+    pt: dar (a outra pessoa)
+- id: morau
+  text: もらう
+  meaning:
+    en: receive
+    pt: receber, ganhar
+- id: kureru
+  text: くれる
+  meaning:
+    en: give (to me / us)
+    pt: dar (para mim / nós)
+- id: kenta-ga-kureta
+  text: 健太[けんた] くん が くれた
+  meaning:
+    en: Kenta gave (it to) me
+    pt: o Kenta me deu
+- id: yui-ni-ageru
+  text: 由衣[ゆい] に あげる
+  meaning:
+    en: give (it) to Yui
+    pt: dar para a Yui
+- id: omedetou-tanjoubi
+  text: 誕生日[たんじょうび] おめでとう
+  meaning:
+    en: happy birthday
+    pt: feliz aniversário
+- id: howaito-dee
+  text: ホワイト デー
+  meaning:
+    en: White Day (14 March)
+    pt: White Day (14 de março)
+  rare: true
+reviews:
+- item: tameguchi
+  from: A1-23
+- item: ii-yo
+  from: A1-23
+- item: un
+  from: A1-23
+- item: uun
+  from: A1-23
+- item: iku
+  from: A1-23
+- item: taberu
+  from: A1-23
+- item: miru
+  from: A1-23
+- item: nani-suru
+  from: A1-23
+- item: issho-ni
+  from: A1-23
+- item: hima
+  from: A1-23
+- item: kenta-kun
+  from: A1-23
+- item: biyouin
+  from: A2-25
+- item: yoyaku
+  from: A2-25
+- item: mijikaku
+  from: A2-25
+- item: maegami
+  from: A2-25
+- item: kami
+  from: A2-25
+- item: kitte-kudasai
+  from: A2-25
+- item: sukoshi-dake
+  from: A2-25
+- item: karuku
+  from: A2-25
+- item: kirei-ni
+  from: A2-25
+- item: shanpuu
+  from: A2-25
+- item: kono-kurai
+  from: A2-25
+- item: uwasa
+  from: B1-11
+- item: rain
+  from: B1-11
+- item: guruupu
+  from: B1-11
+- item: himitsu
+  from: B1-11
+- item: rashii
+  from: B1-11
+- item: kekkon-suru-rashii
+  from: B1-11
+- item: kidoku
+  from: B1-11
+- item: kidoku-suruu
+  from: B1-11
+- item: honnin
+  from: B1-11
+- item: dare-ni-mo-iwanai
+  from: B1-11
+- item: maji
+  from: B1-11
+- item: taifuu
+  from: B1-19
+- item: chuushi
+  from: B1-19
+- item: yotei
+  from: B1-19
+- item: enki
+  from: B1-19
+- item: you-to-omotte-ita
+  from: B1-19
+- item: ikou-to-omotte-ita
+  from: B1-19
+- item: unkyuu
+  from: B1-19
+- item: kyouto
+  from: B1-19
+- item: zannen
+  from: B1-19
+- item: anzen-daiichi
+  from: B1-19
+- item: kyanseru
+  from: B1-19
+- item: yakin
+  from: B1-23
+- item: gaikokujin-roudousha
+  from: B1-23
+- item: nagara
+  from: B1-23
+- item: benkyou-shinagara
+  from: B1-23
+- item: hatarakinagara
+  from: B1-23
+- item: jikyuu
+  from: B1-23
+- item: hitode-busoku
+  from: B1-23
+- item: ryuugakusei
+  from: B1-23
+- item: taihen
+  from: B1-23
+- item: nemui
+  from: B1-23
+- item: tasukaru
+  from: B1-23
+- item: dousei
+  from: B1-25
+- item: kekkon-mae
+  from: B1-25
+- item: ryoushin
+  from: B1-25
+- item: kamoshirenai
+  from: B1-25
+- item: hantai-suru-kamo
+  from: B1-25
+- item: yachin
+  from: B1-25
+- item: setsuyaku
+  from: B1-25
+- item: isshoni-sumu
+  from: B1-25
+- item: shinpai
+  from: B1-25
+- item: setsumei-suru
+  from: B1-25
+- item: shoujiki-ni-hanasu
+  from: B1-25
+steps:
+- type: narrator
+  text:
+    en: Your birthday. Yui brings a small cake; Kenta gave you something at work. Then she reminds you about White Day. Listen to the conversation; you don't need to understand it yet.
+    pt: Seu aniversário. A Yui traz um bolinho; o Kenta te deu algo no trabalho. Depois ela lembra você do White Day. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: yui
+    text: 誕生日[たんじょうび] おめでとう！ ケーキ を 作[つく]った よ。
+    meaning:
+      en: Happy birthday! I made a cake.
+      pt: Feliz aniversário! Fiz um bolo.
+  - speaker: protagonist
+    text: ありがとう！ すごく うれしい。
+    meaning:
+      en: Thank you! I'm so happy.
+      pt: Obrigado! Fiquei muito feliz.
+  - speaker: yui
+    text: プレゼント、 もう 誰[だれ] か に もらった？
+    meaning:
+      en: Have you got presents from anyone yet?
+      pt: Já ganhou presente de alguém?
+  - speaker: protagonist
+    text: 健太[けんた] くん が ネクタイ を くれた。 課長[かちょう] から は お菓子[かし] を もらった。
+    meaning:
+      en: Kenta gave me a tie. I got sweets from the chief.
+      pt: O Kenta me deu uma gravata. Da chefe ganhei doces.
+  - speaker: yui
+    text: これ は 私[わたし] から。 開[あ]けて みて。
+    meaning:
+      en: This is from me. Open it.
+      pt: Esta é minha. Abre.
+  - speaker: protagonist
+    text: 財布[さいふ] だ！ 前[まえ] の は 古[ふる]かった から、 助[たす]かる。
+    meaning:
+      en: A wallet! My old one was worn out, so this helps.
+      pt: Uma carteira! A antiga estava velha, então ajuda muito.
+  - speaker: yui
+    text: バレンタイン に チョコ を あげた でしょ。 ホワイト デー の お返[かえ]し、 待[ま]って る よ。
+    meaning:
+      en: I gave you chocolate on Valentine's, remember. I'm waiting for the White Day return gift.
+      pt: Eu te dei chocolate no Dia dos Namorados, lembra? Estou esperando a retribuição do White Day.
+  - speaker: protagonist
+    text: 三月[さんがつ] 十四日[じゅうよっか] だ ね。 由衣[ゆい] に 何[なに] を あげよう か な。
+    meaning:
+      en: The 14th of March, right. What shall I give you, I wonder.
+      pt: 14 de março, né? O que será que eu dou para você.
+- type: prompt
+  ask:
+    en: 'Say: a birthday.'
+    pt: 'Diga: aniversário.'
+  answer:
+    speaker: protagonist
+    text: 誕生日[たんじょうび]
+  items:
+  - tanjoubi
+- type: prompt
+  ask:
+    en: 'Wish her: happy birthday.'
+    pt: 'Deseje: feliz aniversário.'
+  answer:
+    speaker: protagonist
+    text: 誕生日[たんじょうび] おめでとう！
+  items:
+  - omedetou-tanjoubi
+- type: prompt
+  ask:
+    en: 'Say: a cake.'
+    pt: 'Diga: um bolo.'
+  answer:
+    speaker: protagonist
+    text: ケーキ
+  items:
+  - keeki
+- type: prompt
+  ask:
+    en: 'Say: a present.'
+    pt: 'Diga: um presente.'
+  answer:
+    speaker: protagonist
+    text: プレゼント
+  items:
+  - purezento
+- type: narrator
+  text:
+    en: 'Japanese has three giving verbs. «あげる» — I or someone gives to someone else: «由衣[ゆい] に あげる». «くれる» — someone gives to me or my side: «健太[けんた] くん が くれた». «もらう» — I receive: «課長[かちょう] から もらった». The
+      direction matters more than in Portuguese.'
+    pt: 'O japonês tem três verbos de dar. «あげる» — eu ou alguém dá para outra pessoa: «由衣[ゆい] に あげる». «くれる» — alguém dá para mim ou para o meu lado: «健太[けんた] くん が くれた». «もらう» — eu recebo: «課長[かちょう] から もらった».
+      A direção importa mais que em português.'
+- type: prompt
+  ask:
+    en: 'Say: give — to someone else.'
+    pt: 'Diga: dar — para outra pessoa.'
+  answer:
+    speaker: protagonist
+    text: あげる
+  items:
+  - ageru
+- type: prompt
+  ask:
+    en: 'Say: give — to me.'
+    pt: 'Diga: dar — para mim.'
+  answer:
+    speaker: protagonist
+    text: くれる
+  items:
+  - kureru
+- type: prompt
+  ask:
+    en: 'Say: receive.'
+    pt: 'Diga: receber.'
+  answer:
+    speaker: protagonist
+    text: もらう
+  items:
+  - morau
+- type: prompt
+  ask:
+    en: 'Say: Kenta gave it to me.'
+    pt: 'Diga: o Kenta me deu.'
+  answer:
+    speaker: protagonist
+    text: 健太[けんた] くん が くれた。
+  items:
+  - kenta-ga-kureta
+- type: prompt
+  ask:
+    en: 'Say: I''ll give it to Yui.'
+    pt: 'Diga: vou dar para a Yui.'
+  answer:
+    speaker: protagonist
+    text: 由衣[ゆい] に あげる。
+  items:
+  - yui-ni-ageru
+- type: prompt
+  ask:
+    en: 'Say: a return gift.'
+    pt: 'Diga: presente de retribuição.'
+  answer:
+    speaker: protagonist
+    text: お返[かえ]し
+  items:
+  - okaeshi
+- type: prompt
+  ask:
+    en: 'Say: White Day.'
+    pt: 'Diga: White Day.'
+  answer:
+    speaker: protagonist
+    text: ホワイト デー
+  items:
+  - howaito-dee
+- type: narrator
+  text:
+    en: 'Gifts in Japan come in pairs: what you receive, you return — «お返[かえ]し», often worth about half. On Valentine''s Day women traditionally give chocolate; on White Day, 14 March, men return it. Many
+      people now also give to friends or themselves.'
+    pt: 'Presentes no Japão vêm em pares: o que se recebe, se retribui — «お返[かえ]し», muitas vezes de cerca de metade do valor. No Valentine''s Day as mulheres tradicionalmente dão chocolate; no White Day,
+      14 de março, os homens retribuem. Hoje muita gente também dá para amigos ou para si mesma.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'No Brasil o Dia dos Namorados é em 12 de junho e os dois trocam presentes no mesmo dia. No Japão é dividido em dois: fevereiro elas dão, março eles devolvem.'
+- type: prompt
+  ask:
+    en: 'Once more: say “birthday”.'
+    pt: 'Mais uma vez: diga “aniversário”.'
+  answer:
+    speaker: protagonist
+    text: 誕生日[たんじょうび]
+  items:
+  - tanjoubi
+- type: prompt
+  ask:
+    en: 'Once more: say “cake”.'
+    pt: 'Mais uma vez: diga “bolo”.'
+  answer:
+    speaker: protagonist
+    text: ケーキ
+  items:
+  - keeki
+- type: prompt
+  ask:
+    en: 'Once more: say “present”.'
+    pt: 'Mais uma vez: diga “presente”.'
+  answer:
+    speaker: protagonist
+    text: プレゼント
+  items:
+  - purezento
+- type: prompt
+  ask:
+    en: 'Once more: say “a return gift”.'
+    pt: 'Mais uma vez: diga “presente de retribuição”.'
+  answer:
+    speaker: protagonist
+    text: お返[かえ]し
+  items:
+  - okaeshi
+- type: prompt
+  ask:
+    en: 'Once more: say “give (to others)”.'
+    pt: 'Mais uma vez: diga “dar (a outra pessoa)”.'
+  answer:
+    speaker: protagonist
+    text: あげる
+  items:
+  - ageru
+- type: prompt
+  ask:
+    en: 'Once more: say “receive”.'
+    pt: 'Mais uma vez: diga “receber, ganhar”.'
+  answer:
+    speaker: protagonist
+    text: もらう
+  items:
+  - morau
+- type: prompt
+  ask:
+    en: 'Once more: say “give (to me / us)”.'
+    pt: 'Mais uma vez: diga “dar (para mim / nós)”.'
+  answer:
+    speaker: protagonist
+    text: くれる
+  items:
+  - kureru
+- type: prompt
+  ask:
+    en: 'Once more: say “Kenta gave (it to) me”.'
+    pt: 'Mais uma vez: diga “o Kenta me deu”.'
+  answer:
+    speaker: protagonist
+    text: 健太[けんた] くん が くれた
+  items:
+  - kenta-ga-kureta
+- type: prompt
+  ask:
+    en: 'Once more: say “give (it) to Yui”.'
+    pt: 'Mais uma vez: diga “dar para a Yui”.'
+  answer:
+    speaker: protagonist
+    text: 由衣[ゆい] に あげる
+  items:
+  - yui-ni-ageru
+- type: prompt
+  ask:
+    en: 'Once more: say “happy birthday”.'
+    pt: 'Mais uma vez: diga “feliz aniversário”.'
+  answer:
+    speaker: protagonist
+    text: 誕生日[たんじょうび] おめでとう
+  items:
+  - omedetou-tanjoubi
+- type: prompt
+  ask:
+    en: 'Once more: say “White Day (14 March)”.'
+    pt: 'Mais uma vez: diga “White Day (14 de março)”.'
+  answer:
+    speaker: protagonist
+    text: ホワイト デー
+  items:
+  - howaito-dee
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “living together (unmarried) — and “before marriage — and “(my) parents — and “might, maybe — and “they might be against it — and “rent — and “saving money — and “live together — and “worry
+      — and “explain”.'
+    pt: 'Diga: “morar junto (sem casar) — e “antes do casamento — e “(meus) pais — e “pode ser que, talvez — e “pode ser que sejam contra — e “aluguel — e “economia — e “morar junto — e “preocupação — e
+      “explicar”.'
+  answer:
+    speaker: protagonist
+    text: 同棲[どうせい] … 結婚[けっこん] 前[まえ] … 両親[りょうしん] … 〜かも しれない … 反対[はんたい] する かも しれない … 家賃[やちん] … 節約[せつやく] … 一緒[いっしょ] に 住[す]む … 心配[しんぱい] … 説明[せつめい] する
+  items:
+  - dousei
+  - kekkon-mae
+  - ryoushin
+  - kamoshirenai
+  - hantai-suru-kamo
+  - yachin
+  - setsuyaku
+  - isshoni-sumu
+  - shinpai
+  - setsumei-suru
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “talk honestly — and “night shift — and “foreign workers — and “while (doing two things) — and “while studying — and “while working — and “hourly wage — and “labour shortage — and “international
+      student — and “tough, hard”.'
+    pt: 'Diga: “falar com sinceridade — e “turno da noite — e “trabalhadores estrangeiros — e “enquanto (fazendo duas coisas) — e “enquanto estuda — e “enquanto trabalha — e “salário por hora — e “falta
+      de mão de obra — e “estudante estrangeiro — e “puxado, difícil”.'
+  answer:
+    speaker: protagonist
+    text: 正直[しょうじき] に 話[はな]す … 夜勤[やきん] … 外国人[がいこくじん] 労働者[ろうどうしゃ] … 〜ながら … 勉強[べんきょう] しながら … 働[はたら]きながら … 時給[じきゅう] … 人手[ひとで] 不足[ぶそく] … 留学生[りゅうがくせい] … 大変[たいへん]
+  items:
+  - shoujiki-ni-hanasu
+  - yakin
+  - gaikokujin-roudousha
+  - nagara
+  - benkyou-shinagara
+  - hatarakinagara
+  - jikyuu
+  - hitode-busoku
+  - ryuugakusei
+  - taihen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “sleepy — and “it''s a big help — and “typhoon — and “cancellation, called off — and “plan, schedule — and “postponement — and “I was going to…, I''d planned to… — and “I was planning to go
+      — and “(train) service suspended — and “Kyoto”.'
+    pt: 'Diga: “com sono — e “ajuda muito — e “tufão — e “cancelamento — e “plano, programação — e “adiamento — e “eu pretendia…, ia… — e “eu ia, pretendia ir — e “serviço suspenso — e “Kyoto”.'
+  answer:
+    speaker: protagonist
+    text: 眠[ねむ]い … 助[たす]かります … 台風[たいふう] … 中止[ちゅうし] … 予定[よてい] … 延期[えんき] … 〜よう と 思[おも]って いた … 行[い]こう と 思[おも]って いた … 運休[うんきゅう] … 京都[きょうと]
+  items:
+  - nemui
+  - tasukaru
+  - taifuu
+  - chuushi
+  - yotei
+  - enki
+  - you-to-omotte-ita
+  - ikou-to-omotte-ita
+  - unkyuu
+  - kyouto
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “what a pity — and “safety first — and “cancel (a booking) — and “rumour — and “LINE (the messaging app) — and “group — and “secret — and “apparently, I hear — and “apparently they''re getting
+      married — and “read (message status)”.'
+    pt: 'Diga: “que pena — e “segurança em primeiro lugar — e “cancelar (reserva) — e “boato — e “LINE (o aplicativo de mensagens) — e “grupo — e “segredo — e “parece que, pelo jeito — e “parece que vão
+      casar — e “visualizado”.'
+  answer:
+    speaker: protagonist
+    text: 残念[ざんねん] … 安全[あんぜん] 第一[だいいち] … キャンセル … 噂[うわさ] … LINE … グループ … 秘密[ひみつ] … 〜らしい … 結婚[けっこん] する らしい … 既読[きどく]
+  items:
+  - zannen
+  - anzen-daiichi
+  - kyanseru
+  - uwasa
+  - rain
+  - guruupu
+  - himitsu
+  - rashii
+  - kekkon-suru-rashii
+  - kidoku
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “leaving someone on read — and “the person themself — and “I won''t tell anyone — and “seriously? (slang) — and “hair salon — and “booking, appointment — and “short (adverb) — and “fringe,
+      bangs — and “hair — and “please cut”.'
+    pt: 'Diga: “deixar no visto — e “a própria pessoa — e “não conto para ninguém — e “sério? (gíria) — e “salão de beleza — e “reserva, horário marcado — e “curto (advérbio) — e “franja — e “cabelo — e
+      “corte, por favor”.'
+  answer:
+    speaker: protagonist
+    text: 既読[きどく] スルー … 本人[ほんにん] … 誰[だれ] に も 言[い]わない … マジ … 美容院[びよういん] … 予約[よやく] … 短[みじか]く … 前髪[まえがみ] … 髪[かみ] … 切[き]って ください
+  items:
+  - kidoku-suruu
+  - honnin
+  - dare-ni-mo-iwanai
+  - maji
+  - biyouin
+  - yoyaku
+  - mijikaku
+  - maegami
+  - kami
+  - kitte-kudasai
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “just a little — and “lightly, lighter — and “neatly, nicely — and “shampoo; hair wash — and “about this much — and “plain, casual talk (between equals) — and “it''s fine, sure (casual) —
+      and “yeah (casual yes) — and “nah (casual no) — and “go (plain form)”.'
+    pt: 'Diga: “só um pouco — e “mais leve — e “bonito, caprichado — e “xampu; lavagem — e “mais ou menos assim — e “fala informal, de igual para igual — e “tudo bem, pode (informal) — e “é, aham (sim informal)
+      — e “não, nada (não informal) — e “ir, vou (forma simples)”.'
+  answer:
+    speaker: protagonist
+    text: 少[すこ]し だけ … 軽[かる]く … きれい に … シャンプー … この くらい … タメ口[ぐち] … いい よ … うん … ううん … 行[い]く
+  items:
+  - sukoshi-dake
+  - karuku
+  - kirei-ni
+  - shanpuu
+  - kono-kurai
+  - tameguchi
+  - ii-yo
+  - un
+  - uun
+  - iku
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “eat (plain form) — and “see, watch (plain form) — and “what are you doing? (plain) — and “together — and “free (not busy) — and “Kenta (friendly, for a young man)”.'
+    pt: 'Diga: “comer, como (forma simples) — e “ver, vejo (forma simples) — e “o que você vai fazer? (informal) — e “junto — e “livre, à toa — e “Kenta (tratamento amigável para rapaz)”.'
+  answer:
+    speaker: protagonist
+    text: 食[た]べる … 見[み]る … 何[なに] する … 一緒[いっしょ] に … 暇[ひま] … 健太[けんた] くん
+  items:
+  - taberu
+  - miru
+  - nani-suru
+  - issho-ni
+  - hima
+  - kenta-kun
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

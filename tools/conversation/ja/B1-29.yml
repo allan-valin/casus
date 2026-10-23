@@ -1,0 +1,615 @@
+# UNIT ja B1-29 — written by AI (Claude) for Casus; expanded from src/B1-29.yml by tools/expand_unit.py. Edit the source.
+
+id: B1-29
+level: B1
+number: 29
+protagonist: f
+title:
+  en: The neighbour alone
+  pt: O vizinho sozinho
+situation:
+  en: The old lady downstairs hasn't taken her newspaper in for two days. You knock; she's fine, but lonely. Mrs Suzuki explains the neighbourhood watch.
+  pt: A senhora idosa do andar de baixo não recolhe o jornal há dois dias. Você bate na porta; ela está bem, mas sozinha. A senhora Suzuki explica a vigilância do bairro.
+learn_lessons: []
+culture: The ageing society — a social problem
+new_items:
+- id: hitorigurashi
+  text: 一人[ひとり] 暮[ぐ]らし
+  meaning:
+    en: living alone
+    pt: morar sozinho
+- id: koureisha
+  text: 高齢者[こうれいしゃ]
+  meaning:
+    en: elderly people
+    pt: idosos
+- id: kodoku
+  text: 孤独[こどく]
+  meaning:
+    en: loneliness
+    pt: solidão
+- id: mimamori
+  text: 見守[みまも]り
+  meaning:
+    en: watching over (someone)
+    pt: olhar por alguém, acompanhar
+  rare: true
+- id: you-ni
+  text: 〜ように
+  meaning:
+    en: so that…
+    pt: para que…
+- id: shinpai-shinai-you-ni
+  text: 心配[しんぱい] しない ように
+  meaning:
+    en: so that (they) don't worry
+    pt: para que não se preocupem
+- id: koe-wo-kakeru
+  text: 声[こえ] を かける
+  meaning:
+    en: speak to, check on
+    pt: puxar conversa, dar uma palavra
+- id: shinbun
+  text: 新聞[しんぶん]
+  meaning:
+    en: newspaper
+    pt: jornal
+- id: daijoubu-desu-ka-polite
+  text: お元気[げんき] です か
+  meaning:
+    en: are you well?
+    pt: a senhora está bem?
+- id: mata-kimasu
+  text: また 来[き]ます ね
+  meaning:
+    en: I'll come again
+    pt: eu volto, viu
+- id: kodokushi
+  text: 孤独死[こどくし]
+  meaning:
+    en: dying alone (unnoticed)
+    pt: morrer sozinho (sem ninguém saber)
+  rare: true
+reviews:
+- item: karaoke
+  from: A1-26
+- item: utaimasu
+  from: A1-26
+- item: uta
+  from: A1-26
+- item: kanpai
+  from: A1-26
+- item: ikimasen-ka
+  from: A1-26
+- item: utaimasen-ka
+  from: A1-26
+- item: heya-kojin
+  from: A1-26
+- item: ichijikan
+  from: A1-26
+- item: encho
+  from: A1-26
+- item: hitori-karaoke
+  from: A1-26
+- item: heta
+  from: A1-26
+- item: tanoshii
+  from: A1-26
+- item: shinkansen
+  from: A2-28
+- item: shiteiseki
+  from: A2-28
+- item: jiyuuseki
+  from: A2-28
+- item: toukyou
+  from: A2-28
+- item: katamichi
+  from: A2-28
+- item: oufuku
+  from: A2-28
+- item: tsumori
+  from: A2-28
+- item: iku-tsumori
+  from: A2-28
+- item: mado-gawa
+  from: A2-28
+- item: nan-jikan
+  from: A2-28
+- item: hayai
+  from: A2-28
+- item: kenka
+  from: B1-14
+- item: okotteru
+  from: B1-14
+- item: okoranaide
+  from: B1-14
+- item: wasureta
+  from: B1-14
+- item: yakusoku
+  from: B1-14
+- item: matte-ita-noni
+  from: B1-14
+- item: hidoi
+  from: B1-14
+- item: hontou-ni-gomen
+  from: B1-14
+- item: daiji-ni-shite
+  from: B1-14
+- item: nakanaori
+  from: B1-14
+- item: nyuusu
+  from: B1-22
+- item: senkyo
+  from: B1-22
+- item: shushou
+  from: B1-22
+- item: seitou
+  from: B1-22
+- item: ni-yoru-to
+  from: B1-22
+- item: nyuusu-ni-yoru-to
+  from: B1-22
+- item: touhyou
+  from: B1-22
+- item: touhyouritsu
+  from: B1-22
+- item: seiji
+  from: B1-22
+- item: kokkai
+  from: B1-22
+- item: gimu
+  from: B1-22
+- item: tanjoubi
+  from: B1-26
+- item: keeki
+  from: B1-26
+- item: purezento
+  from: B1-26
+- item: okaeshi
+  from: B1-26
+- item: ageru
+  from: B1-26
+- item: morau
+  from: B1-26
+- item: kureru
+  from: B1-26
+- item: kenta-ga-kureta
+  from: B1-26
+- item: yui-ni-ageru
+  from: B1-26
+- item: omedetou-tanjoubi
+  from: B1-26
+- item: howaito-dee
+  from: B1-26
+- item: shikke
+  from: B1-28
+- item: kabi
+  from: B1-28
+- item: aida-ni
+  from: B1-28
+- item: hareteiru-aida-ni
+  from: B1-28
+- item: joshitsuki
+  from: B1-28
+- item: mado-wo-akeru
+  from: B1-28
+- item: kawakasu
+  from: B1-28
+- item: jimejime
+  from: B1-28
+- item: heya-boshi
+  from: B1-28
+- item: sentakumono
+  from: B1-28
+- item: tsuyu-ake
+  from: B1-28
+steps:
+- type: narrator
+  text:
+    en: The old lady downstairs hasn't taken her newspaper in for two days. You knock; she's fine, but lonely. Mrs Suzuki explains the neighbourhood watch. Listen to the conversation; you don't need to
+      understand it yet.
+    pt: A senhora idosa do andar de baixo não recolhe o jornal há dois dias. Você bate na porta; ela está bem, mas sozinha. A senhora Suzuki explica a vigilância do bairro. Escute a conversa; ainda não
+      precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: こんにちは。 新聞[しんぶん] が たまって いた ので… お元気[げんき] です か。
+    meaning:
+      en: Hello. Your newspapers were piling up, so… are you well?
+      pt: Boa tarde. Os jornais estavam acumulando, então… a senhora está bem?
+  - speaker: obaasan
+    text: まあ、 ありがとう。 足[あし] が 痛[いた]くて、 外[そと] に 出[で]られなかった の。
+    meaning:
+      en: Oh, thank you. My legs hurt, I couldn't go out.
+      pt: Ah, obrigada. As pernas estavam doendo, não consegui sair.
+  - speaker: protagonist
+    text: 一人[ひとり] 暮[ぐ]らし です か。
+    meaning:
+      en: Do you live alone?
+      pt: A senhora mora sozinha?
+  - speaker: obaasan
+    text: 主人[しゅじん] が 亡[な]くなって から、 十年[じゅうねん]。 話[はな]す 人[ひと] が いなくて ね。
+    meaning:
+      en: Ten years since my husband died. There's no one to talk to.
+      pt: Faz dez anos que meu marido morreu. Não tenho com quem conversar.
+  - speaker: protagonist
+    text: また 来[き]ます ね。 何[なに] か あったら 呼[よ]んで ください。
+    meaning:
+      en: I'll come again. Call me if anything happens.
+      pt: Eu volto, viu. Se precisar de algo, me chame.
+  - speaker: suzuki
+    text: えらい です ね。 町内会[ちょうないかい] でも、 高齢者[こうれいしゃ] の 見守[みまも]り を して います。
+    meaning:
+      en: Good of you. The neighbourhood association watches over the elderly too.
+      pt: Que bom que você foi. A associação do bairro também acompanha os idosos.
+  - speaker: protagonist
+    text: 孤独[こどく] な 人[ひと] が 多[おお]い ん です か。
+    meaning:
+      en: Are there many lonely people?
+      pt: Tem muita gente sozinha?
+  - speaker: suzuki
+    text: ええ。 家族[かぞく] が 心配[しんぱい] しない ように、 毎朝[まいあさ] 声[こえ] を かける ん です。
+    meaning:
+      en: Yes. So their families don't worry, we check on them every morning.
+      pt: Sim. Para que as famílias não se preocupem, a gente passa para falar com eles toda manhã.
+- type: prompt
+  ask:
+    en: 'Say: living alone.'
+    pt: 'Diga: morar sozinho.'
+  answer:
+    speaker: protagonist
+    text: 一人[ひとり] 暮[ぐ]らし
+  items:
+  - hitorigurashi
+- type: prompt
+  ask:
+    en: 'Say: elderly people.'
+    pt: 'Diga: idosos.'
+  answer:
+    speaker: protagonist
+    text: 高齢者[こうれいしゃ]
+  items:
+  - koureisha
+- type: prompt
+  ask:
+    en: 'Say: loneliness.'
+    pt: 'Diga: solidão.'
+  answer:
+    speaker: protagonist
+    text: 孤独[こどく]
+  items:
+  - kodoku
+- type: prompt
+  ask:
+    en: 'Say: a newspaper.'
+    pt: 'Diga: um jornal.'
+  answer:
+    speaker: protagonist
+    text: 新聞[しんぶん]
+  items:
+  - shinbun
+- type: prompt
+  ask:
+    en: 'Ask an older neighbour politely: are you well?'
+    pt: 'Pergunte com respeito a uma vizinha idosa: a senhora está bem?'
+  answer:
+    speaker: protagonist
+    text: お元気[げんき] です か。
+  items:
+  - daijoubu-desu-ka-polite
+- type: prompt
+  ask:
+    en: 'Promise: I''ll come again.'
+    pt: 'Prometa: eu volto, viu.'
+  answer:
+    speaker: protagonist
+    text: また 来[き]ます ね。
+  items:
+  - mata-kimasu
+- type: prompt
+  ask:
+    en: 'Say: watching over someone.'
+    pt: 'Diga: acompanhar alguém.'
+  answer:
+    speaker: protagonist
+    text: 見守[みまも]り
+  items:
+  - mimamori
+- type: prompt
+  ask:
+    en: 'Say: check on someone, speak to them.'
+    pt: 'Diga: dar uma palavra com alguém.'
+  answer:
+    speaker: protagonist
+    text: 声[こえ] を かける
+  items:
+  - koe-wo-kakeru
+- type: narrator
+  text:
+    en: '«〜ように» is so that — a purpose you can''t fully control: «心配[しんぱい] しない ように», so they don''t worry; «忘[わす]れない ように», so as not to forget. With a plain verb, positive or negative.'
+    pt: '«〜ように» é para que — um objetivo que você não controla totalmente: «心配[しんぱい] しない ように», para que não se preocupem; «忘[わす]れない ように», para não esquecer. Com verbo simples, afirmativo ou negativo.'
+- type: prompt
+  ask:
+    en: 'Say the pattern: so that…'
+    pt: 'Diga o padrão: para que…'
+  answer:
+    speaker: protagonist
+    text: 〜ように
+  items:
+  - you-ni
+- type: prompt
+  ask:
+    en: 'Say: so that they don''t worry.'
+    pt: 'Diga: para que não se preocupem.'
+  answer:
+    speaker: protagonist
+    text: 心配[しんぱい] しない ように
+  items:
+  - shinpai-shinai-you-ni
+- type: prompt
+  ask:
+    en: 'Say: dying alone, unnoticed.'
+    pt: 'Diga: morrer sozinho sem ninguém saber.'
+  answer:
+    speaker: protagonist
+    text: 孤独死[こどくし]
+  items:
+  - kodokushi
+- type: narrator
+  text:
+    en: 'Almost three in ten people in Japan are over 65, and many live alone. «孤独死[こどくし]» — dying alone, found days later — is a known social problem. Neighbourhood associations, mail carriers and delivery
+      services keep an eye out: piled-up newspapers are a warning sign.'
+    pt: 'Quase três em cada dez pessoas no Japão têm mais de 65 anos, e muitas moram sozinhas. O «孤独死[こどくし]» — morrer sozinho e ser encontrado dias depois — é um problema social conhecido. Associações de
+      bairro, carteiros e serviços de entrega ficam atentos: jornal acumulado é sinal de alerta.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil a avó costuma morar com a família ou perto dela. No Japão muitos idosos vivem sós — uma visita, um «お元気[げんき] です か», faz diferença.
+- type: prompt
+  ask:
+    en: 'Once more: say “living alone”.'
+    pt: 'Mais uma vez: diga “morar sozinho”.'
+  answer:
+    speaker: protagonist
+    text: 一人[ひとり] 暮[ぐ]らし
+  items:
+  - hitorigurashi
+- type: prompt
+  ask:
+    en: 'Once more: say “elderly people”.'
+    pt: 'Mais uma vez: diga “idosos”.'
+  answer:
+    speaker: protagonist
+    text: 高齢者[こうれいしゃ]
+  items:
+  - koureisha
+- type: prompt
+  ask:
+    en: 'Once more: say “loneliness”.'
+    pt: 'Mais uma vez: diga “solidão”.'
+  answer:
+    speaker: protagonist
+    text: 孤独[こどく]
+  items:
+  - kodoku
+- type: prompt
+  ask:
+    en: 'Once more: say “watching over (someone)”.'
+    pt: 'Mais uma vez: diga “olhar por alguém, acompanhar”.'
+  answer:
+    speaker: protagonist
+    text: 見守[みまも]り
+  items:
+  - mimamori
+- type: prompt
+  ask:
+    en: 'Once more: say “so that…”.'
+    pt: 'Mais uma vez: diga “para que…”.'
+  answer:
+    speaker: protagonist
+    text: 〜ように
+  items:
+  - you-ni
+- type: prompt
+  ask:
+    en: 'Once more: say “so that (they) don''t worry”.'
+    pt: 'Mais uma vez: diga “para que não se preocupem”.'
+  answer:
+    speaker: protagonist
+    text: 心配[しんぱい] しない ように
+  items:
+  - shinpai-shinai-you-ni
+- type: prompt
+  ask:
+    en: 'Once more: say “speak to, check on”.'
+    pt: 'Mais uma vez: diga “puxar conversa, dar uma palavra”.'
+  answer:
+    speaker: protagonist
+    text: 声[こえ] を かける
+  items:
+  - koe-wo-kakeru
+- type: prompt
+  ask:
+    en: 'Once more: say “newspaper”.'
+    pt: 'Mais uma vez: diga “jornal”.'
+  answer:
+    speaker: protagonist
+    text: 新聞[しんぶん]
+  items:
+  - shinbun
+- type: prompt
+  ask:
+    en: 'Once more: say “are you well?”.'
+    pt: 'Mais uma vez: diga “a senhora está bem?”.'
+  answer:
+    speaker: protagonist
+    text: お元気[げんき] です か
+  items:
+  - daijoubu-desu-ka-polite
+- type: prompt
+  ask:
+    en: 'Once more: say “I''ll come again”.'
+    pt: 'Mais uma vez: diga “eu volto, viu”.'
+  answer:
+    speaker: protagonist
+    text: また 来[き]ます ね
+  items:
+  - mata-kimasu
+- type: prompt
+  ask:
+    en: 'Once more: say “dying alone (unnoticed)”.'
+    pt: 'Mais uma vez: diga “morrer sozinho (sem ninguém saber)”.'
+  answer:
+    speaker: protagonist
+    text: 孤独死[こどくし]
+  items:
+  - kodokushi
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “humidity, damp — and “mould — and “while, during (before it ends) — and “while it''s sunny — and “dehumidifier — and “open the window — and “dry (something) — and “damp and muggy — and “drying
+      laundry indoors — and “laundry”.'
+    pt: 'Diga: “umidade — e “mofo, bolor — e “enquanto, durante (antes de acabar) — e “enquanto está sol — e “desumidificador — e “abrir a janela — e “secar — e “úmido e abafado — e “secar roupa dentro
+      de casa — e “roupa lavada”.'
+  answer:
+    speaker: protagonist
+    text: 湿気[しっけ] … カビ … 〜間[あいだ] に … 晴[は]れて いる 間[あいだ] に … 除湿機[じょしつき] … 窓[まど] を 開[あ]ける … 乾[かわ]かす … じめじめ … 部屋[へや] 干[ぼ]し … 洗濯物[せんたくもの]
+  items:
+  - shikke
+  - kabi
+  - aida-ni
+  - hareteiru-aida-ni
+  - joshitsuki
+  - mado-wo-akeru
+  - kawakasu
+  - jimejime
+  - heya-boshi
+  - sentakumono
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “end of the rainy season — and “birthday — and “cake — and “present — and “a return gift — and “give (to others) — and “receive — and “give (to me / us) — and “Kenta gave (it to) me — and
+      “give (it) to Yui”.'
+    pt: 'Diga: “fim da estação das chuvas — e “aniversário — e “bolo — e “presente — e “presente de retribuição — e “dar (a outra pessoa) — e “receber, ganhar — e “dar (para mim / nós) — e “o Kenta me deu
+      — e “dar para a Yui”.'
+  answer:
+    speaker: protagonist
+    text: 梅雨[つゆ] 明[あ]け … 誕生日[たんじょうび] … ケーキ … プレゼント … お返[かえ]し … あげる … もらう … くれる … 健太[けんた] くん が くれた … 由衣[ゆい] に あげる
+  items:
+  - tsuyu-ake
+  - tanjoubi
+  - keeki
+  - purezento
+  - okaeshi
+  - ageru
+  - morau
+  - kureru
+  - kenta-ga-kureta
+  - yui-ni-ageru
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “happy birthday — and “White Day (14 March) — and “the news — and “election — and “prime minister — and “political party — and “according to… — and “according to the news — and “voting, a
+      vote — and “turnout”.'
+    pt: 'Diga: “feliz aniversário — e “White Day (14 de março) — e “o noticiário, as notícias — e “eleição — e “primeiro-ministro — e “partido político — e “segundo…, de acordo com… — e “segundo o noticiário
+      — e “votação, voto — e “comparecimento às urnas”.'
+  answer:
+    speaker: protagonist
+    text: 誕生日[たんじょうび] おめでとう … ホワイト デー … ニュース … 選挙[せんきょ] … 首相[しゅしょう] … 政党[せいとう] … 〜に よる と … ニュース に よる と … 投票[とうひょう] … 投票率[とうひょうりつ]
+  items:
+  - omedetou-tanjoubi
+  - howaito-dee
+  - nyuusu
+  - senkyo
+  - shushou
+  - seitou
+  - ni-yoru-to
+  - nyuusu-ni-yoru-to
+  - touhyou
+  - touhyouritsu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “politics — and “the Diet (parliament) — and “obligation, duty — and “quarrel, fight — and “is angry — and “don''t be angry — and “forgot — and “promise; appointment — and “even though I was
+      waiting — and “that''s awful, cruel”.'
+    pt: 'Diga: “política — e “o parlamento (Dieta) — e “obrigação — e “briga — e “está brava — e “não fica brava — e “esqueci — e “promessa; compromisso — e “e eu esperando — e “que horrível, que maldade”.'
+  answer:
+    speaker: protagonist
+    text: 政治[せいじ] … 国会[こっかい] … 義務[ぎむ] … 喧嘩[けんか] … 怒[おこ]って る … 怒[おこ]らないで … 忘[わす]れた … 約束[やくそく] … 待[ま]って いた のに … ひどい
+  items:
+  - seiji
+  - kokkai
+  - gimu
+  - kenka
+  - okotteru
+  - okoranaide
+  - wasureta
+  - yakusoku
+  - matte-ita-noni
+  - hidoi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I''m really sorry — and “treat (me) as important — and “making up — and “shinkansen, bullet train — and “reserved seat — and “unreserved seat — and “Tokyo — and “one way — and “return (round
+      trip) — and “I plan to…”.'
+    pt: 'Diga: “desculpa mesmo — e “me dá valor — e “fazer as pazes — e “shinkansen, trem-bala — e “assento reservado — e “assento livre — e “Tóquio — e “só ida — e “ida e volta — e “pretendo…”.'
+  answer:
+    speaker: protagonist
+    text: 本当[ほんとう] に ごめん … 大事[だいじ] に して … 仲直[なかなお]り … 新幹線[しんかんせん] … 指定席[していせき] … 自由席[じゆうせき] … 東京[とうきょう] … 片道[かたみち] … 往復[おうふく] … 〜つもり です
+  items:
+  - hontou-ni-gomen
+  - daiji-ni-shite
+  - nakanaori
+  - shinkansen
+  - shiteiseki
+  - jiyuuseki
+  - toukyou
+  - katamichi
+  - oufuku
+  - tsumori
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I plan to go — and “window side — and “how many hours — and “fast — and “karaoke — and “sing — and “song — and “cheers! — and “won''t you come? shall we go? — and “won''t you sing?”.'
+    pt: 'Diga: “pretendo ir — e “janela — e “quantas horas — e “rápido — e “karaokê — e “canto — e “música, canção — e “saúde! (no brinde) — e “não quer ir? vamos? — e “não quer cantar?”.'
+  answer:
+    speaker: protagonist
+    text: 行[い]く つもり です … 窓側[まどがわ] … 何時間[なんじかん] … 速[はや]い … カラオケ … 歌[うた]います … 歌[うた] … 乾杯[かんぱい] … 行[い]きません か … 歌[うた]いません か
+  items:
+  - iku-tsumori
+  - mado-gawa
+  - nan-jikan
+  - hayai
+  - karaoke
+  - utaimasu
+  - uta
+  - kanpai
+  - ikimasen-ka
+  - utaimasen-ka
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “private room — and “one hour — and “extension (more time) — and “karaoke alone — and “bad at (it) — and “fun”.'
+    pt: 'Diga: “sala privativa — e “uma hora — e “prorrogação (mais tempo) — e “karaokê sozinho — e “ruim nisso — e “divertido”.'
+  answer:
+    speaker: protagonist
+    text: 個室[こしつ] … 一時間[いちじかん] … 延長[えんちょう] … 一人[ひとり] カラオケ … 下手[へた] … 楽[たの]しい
+  items:
+  - heya-kojin
+  - ichijikan
+  - encho
+  - hitori-karaoke
+  - heta
+  - tanoshii
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
