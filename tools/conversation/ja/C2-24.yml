@@ -1,0 +1,602 @@
+# UNIT ja C2-24 — written by AI (Claude) for Casus; expanded from src/C2-24.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-24
+level: C2
+number: 24
+protagonist: m
+title:
+  en: Local politics
+  pt: Política local
+situation:
+  en: The city holds a public briefing on a new budget for foreign residents. Council member Tanaka — the loudspeaker-car candidate, now elected — invites questions; you stand up and speak.
+  pt: A prefeitura faz uma reunião pública sobre um novo orçamento para moradores estrangeiros. O vereador Tanaka — aquele candidato do carro de som, agora eleito — abre para perguntas; você se levanta
+    e fala.
+learn_lessons: []
+culture: —
+new_items:
+- id: setsumeikai
+  text: 説明会[せつめいかい]
+  meaning:
+    en: public briefing
+    pt: reunião de esclarecimento
+- id: yosan
+  text: 予算[よさん]
+  meaning:
+    en: budget
+    pt: orçamento
+- id: giin
+  text: 議員[ぎいん]
+  meaning:
+    en: council member, legislator
+    pt: vereador, parlamentar
+- id: hatsugen
+  text: 発言[はつげん]
+  meaning:
+    en: speaking (in a meeting)
+    pt: fala, intervenção
+- id: teian-review
+  text: 提案[ていあん] させて いただきます
+  meaning:
+    en: allow me to propose
+    pt: permitam-me propor
+- id: touji-sha
+  text: 当事者[とうじしゃ]
+  meaning:
+    en: the people directly concerned
+    pt: os diretamente envolvidos
+  rare: true
+- id: koe
+  text: 声[こえ]
+  meaning:
+    en: voice (opinion)
+    pt: voz (opinião)
+- id: hanei
+  text: 反映[はんえい]
+  meaning:
+    en: reflecting (opinions in policy)
+    pt: refletir (opiniões em políticas)
+- id: nihongo-kyoushitsu
+  text: 日本語[にほんご] 教室[きょうしつ]
+  meaning:
+    en: Japanese class (for residents)
+    pt: aula de japonês (para moradores)
+- id: gutaiteki-ni
+  text: 具体的[ぐたいてき] に
+  meaning:
+    en: concretely
+    pt: concretamente
+reviews:
+- item: onsen
+  from: A2-17
+- item: irezumi
+  from: A2-17
+- item: taoru
+  from: A2-17
+- item: karada-wo-araimasu
+  from: A2-17
+- item: haitte-wa-ikemasen
+  from: A2-17
+- item: te-wa-ikemasen
+  from: A2-17
+- item: mizugi
+  from: A2-17
+- item: shiiru
+  from: A2-17
+- item: kakushimasu
+  from: A2-17
+- item: kashikiri
+  from: A2-17
+- item: kimochi-ii
+  from: A2-17
+- item: otera
+  from: B2-21
+- item: shintou
+  from: B2-21
+- item: bukkyou
+  from: B2-21
+- item: toka
+  from: B2-21
+- item: hatsumoude
+  from: B2-21
+- item: shuukyou
+  from: B2-21
+- item: torii
+  from: B2-21
+- item: omamori
+  from: B2-21
+- item: omikuji
+  from: B2-21
+- item: kami-sama
+  from: B2-21
+- item: osoushiki
+  from: B2-21
+- item: bairingaru
+  from: C1-23
+- item: ie-dewa
+  from: C1-23
+- item: gakkou-dewa
+  from: C1-23
+- item: ni-totte
+  from: C1-23
+- item: kodomo-ni-totte
+  from: C1-23
+- item: bogo
+  from: C1-23
+- item: keishou-go
+  from: C1-23
+- item: hanbun-zutsu
+  from: C1-23
+- item: hazukashigaru
+  from: C1-23
+- item: aidentiti
+  from: C1-23
+- item: kyoushuku-desu-ga
+  from: C2-09
+- item: te-itadakemasu-ka
+  from: C2-09
+- item: te-moraeru
+  from: C2-09
+- item: onegai-dekimasu-ka
+  from: C2-09
+- item: moushiwake-nai-kedo
+  from: C2-09
+- item: tasukatta
+  from: C2-09
+- item: tanomu
+  from: C2-09
+- item: shiji
+  from: C2-09
+- item: teinei-sa
+  from: C2-09
+- item: kouhai
+  from: C2-09
+- item: gokai
+  from: C2-17
+- item: sonna-tsumori
+  from: C2-17
+- item: kizutsuketa
+  from: C2-17
+- item: shitsurei-na-koto
+  from: C2-17
+- item: joudan-no-tsumori
+  from: C2-17
+- item: bunka-no-chigai
+  from: C2-17
+- item: ii-wake-review
+  from: C2-17
+- item: ki-ni-shite-inai
+  from: C2-17
+- item: shoujiki-ni-iu
+  from: C2-17
+- item: nakanaori-review
+  from: C2-17
+- item: sasae
+  from: C2-21
+- item: soba-ni-iru
+  from: C2-21
+- item: daijoubu-casual
+  from: C2-21
+- item: muri-ni
+  from: C2-21
+- item: tsurakatta-ne
+  from: C2-21
+- item: ganbatta
+  from: C2-21
+- item: akaji
+  from: C2-21
+- item: hitori-de-kakaenaide
+  from: C2-21
+- item: itsu-demo
+  from: C2-21
+- item: kimochi-wa-wakaru
+  from: C2-21
+- item: koishii
+  from: C2-23
+- item: setsunai
+  from: C2-23
+- item: mono-no-aware
+  from: C2-23
+- item: hon-yaku-dekinai
+  from: C2-23
+- item: hakanai
+  from: C2-23
+- item: kanjou
+  from: C2-23
+- item: chikai
+  from: C2-23
+- item: zenbu-awaseru
+  from: C2-23
+- item: nuance
+  from: C2-23
+- item: sakura-no-you-ni
+  from: C2-23
+steps:
+- type: narrator
+  text:
+    en: The city holds a public briefing on a new budget for foreign residents. Council member Tanaka — the loudspeaker-car candidate, now elected — invites questions; you stand up and speak. Listen to
+      the conversation; you don't need to understand it yet.
+    pt: A prefeitura faz uma reunião pública sobre um novo orçamento para moradores estrangeiros. O vereador Tanaka — aquele candidato do carro de som, agora eleito — abre para perguntas; você se levanta
+      e fala. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: kouhosha
+    text: では、 予算[よさん] に ついて、 ご質問[しつもん] や ご意見[いけん] を どうぞ。
+    meaning:
+      en: Now, questions or opinions about the budget, please.
+      pt: Agora, perguntas ou opiniões sobre o orçamento, por favor.
+  - speaker: protagonist
+    text: 発言[はつげん] の 機会[きかい] を いただき、 ありがとう ございます。 ブラジル 出身[しゅっしん] で、 浜松[はままつ] に 住[す]んで 五年[ごねん] に なります。
+    meaning:
+      en: Thank you for the chance to speak. I'm from Brazil and have lived in Hamamatsu for five years.
+      pt: Obrigado pela oportunidade de falar. Sou do Brasil e moro em Hamamatsu há cinco anos.
+  - speaker: protagonist
+    text: 具体的[ぐたいてき] に 二[ふた]つ 提案[ていあん] させて いただきます。 一[ひと]つ 目[め] は、 夜[よる] の 日本語[にほんご] 教室[きょうしつ] の 予算[よさん] です。
+    meaning:
+      en: Allow me to make two concrete proposals. The first is funding for evening Japanese classes.
+      pt: Permitam-me fazer duas propostas concretas. A primeira é o orçamento para aulas de japonês à noite.
+  - speaker: protagonist
+    text: 二[ふた]つ 目[め] は、 計画[けいかく] を 作[つく]る 段階[だんかい] から、 当事者[とうじしゃ] で ある 外国人[がいこくじん] の 声[こえ] を 反映[はんえい] して いただきたい と いう こと です。
+    meaning:
+      en: The second is that we'd like the voices of the foreigners concerned to be reflected from the planning stage.
+      pt: A segunda é que gostaríamos que a voz dos estrangeiros, que são os diretamente envolvidos, fosse ouvida desde o planejamento.
+  - speaker: kouhosha
+    text: 貴重[きちょう] な ご意見[いけん]、 ありがとう ございます。 議員[ぎいん] と して 持[も]ち帰[かえ]って 検討[けんとう] します。
+    meaning:
+      en: Thank you for this valuable opinion. As a council member, I'll take it back and consider it.
+      pt: Obrigado pela valiosa contribuição. Como vereador, vou levar e estudar.
+  - speaker: protagonist
+    text: 検討[けんとう] の 結果[けっか] を、 次回[じかい] の 説明会[せつめいかい] で 教[おし]えて いただけます か。
+    meaning:
+      en: Could you tell us the result of that consideration at the next briefing?
+      pt: O senhor poderia nos dizer o resultado desse estudo na próxima reunião?
+  - speaker: kouhosha
+    text: …はい。 必[かなら]ず ご報告[ほうこく] します。
+    meaning:
+      en: …Yes. I'll certainly report back.
+      pt: …Sim. Com certeza vou informar.
+  - speaker: protagonist
+    text: ありがとう ございます。 以上[いじょう] です。
+    meaning:
+      en: Thank you. That's all.
+      pt: Obrigado. É isso.
+- type: prompt
+  ask:
+    en: 'Say: a public briefing.'
+    pt: 'Diga: reunião de esclarecimento.'
+  answer:
+    speaker: protagonist
+    text: 説明会[せつめいかい]
+  items:
+  - setsumeikai
+- type: prompt
+  ask:
+    en: 'Say: the budget.'
+    pt: 'Diga: o orçamento.'
+  answer:
+    speaker: protagonist
+    text: 予算[よさん]
+  items:
+  - yosan
+- type: prompt
+  ask:
+    en: 'Say: a council member.'
+    pt: 'Diga: um vereador.'
+  answer:
+    speaker: protagonist
+    text: 議員[ぎいん]
+  items:
+  - giin
+- type: prompt
+  ask:
+    en: 'Say: speaking in a meeting.'
+    pt: 'Diga: uma intervenção.'
+  answer:
+    speaker: protagonist
+    text: 発言[はつげん]
+  items:
+  - hatsugen
+- type: prompt
+  ask:
+    en: 'Say: concretely.'
+    pt: 'Diga: concretamente.'
+  answer:
+    speaker: protagonist
+    text: 具体的[ぐたいてき] に
+  items:
+  - gutaiteki-ni
+- type: prompt
+  ask:
+    en: 'Say: allow me to propose.'
+    pt: 'Diga: permitam-me propor.'
+  answer:
+    speaker: protagonist
+    text: 提案[ていあん] させて いただきます
+  items:
+  - teian-review
+- type: prompt
+  ask:
+    en: 'Say: evening Japanese classes.'
+    pt: 'Diga: aulas de japonês.'
+  answer:
+    speaker: protagonist
+    text: 日本語[にほんご] 教室[きょうしつ]
+  items:
+  - nihongo-kyoushitsu
+- type: prompt
+  ask:
+    en: 'Say: the people directly concerned.'
+    pt: 'Diga: os diretamente envolvidos.'
+  answer:
+    speaker: protagonist
+    text: 当事者[とうじしゃ]
+  items:
+  - touji-sha
+- type: prompt
+  ask:
+    en: 'Say: voice, opinion.'
+    pt: 'Diga: voz, opinião.'
+  answer:
+    speaker: protagonist
+    text: 声[こえ]
+  items:
+  - koe
+- type: prompt
+  ask:
+    en: 'Say: reflecting opinions in policy.'
+    pt: 'Diga: refletir opiniões em políticas.'
+  answer:
+    speaker: protagonist
+    text: 反映[はんえい]
+  items:
+  - hanei
+- type: narrator
+  text:
+    en: 'Public speaking at a meeting: thank for the chance («発言[はつげん] の 機会[きかい] を いただき»), introduce yourself in one line, number your points («一[ひと]つ 目[め] は… 二[ふた]つ 目[め] は…»), close with «以上[いじょう] です».
+      And remember «検討[けんとう] します» — ask when you''ll hear the result.'
+    pt: 'Falar em reunião pública: agradecer a oportunidade («発言[はつげん] の 機会[きかい] を いただき»), se apresentar numa linha, numerar os pontos («一[ひと]つ 目[め] は… 二[ふた]つ 目[め] は…»), fechar com «以上[いじょう] です». E lembre
+      do «検討[けんとう] します» — pergunte quando vai sair o resultado.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'Foi aquele «検討[けんとう] します» que você aprendeu no B1 que quer dizer «não». Agora você sabe a resposta: pedir, educadamente, o resultado na próxima reunião.'
+- type: prompt
+  ask:
+    en: 'Once more: say “public briefing”.'
+    pt: 'Mais uma vez: diga “reunião de esclarecimento”.'
+  answer:
+    speaker: protagonist
+    text: 説明会[せつめいかい]
+  items:
+  - setsumeikai
+- type: prompt
+  ask:
+    en: 'Once more: say “budget”.'
+    pt: 'Mais uma vez: diga “orçamento”.'
+  answer:
+    speaker: protagonist
+    text: 予算[よさん]
+  items:
+  - yosan
+- type: prompt
+  ask:
+    en: 'Once more: say “council member, legislator”.'
+    pt: 'Mais uma vez: diga “vereador, parlamentar”.'
+  answer:
+    speaker: protagonist
+    text: 議員[ぎいん]
+  items:
+  - giin
+- type: prompt
+  ask:
+    en: 'Once more: say “speaking (in a meeting)”.'
+    pt: 'Mais uma vez: diga “fala, intervenção”.'
+  answer:
+    speaker: protagonist
+    text: 発言[はつげん]
+  items:
+  - hatsugen
+- type: prompt
+  ask:
+    en: 'Once more: say “allow me to propose”.'
+    pt: 'Mais uma vez: diga “permitam-me propor”.'
+  answer:
+    speaker: protagonist
+    text: 提案[ていあん] させて いただきます
+  items:
+  - teian-review
+- type: prompt
+  ask:
+    en: 'Once more: say “the people directly concerned”.'
+    pt: 'Mais uma vez: diga “os diretamente envolvidos”.'
+  answer:
+    speaker: protagonist
+    text: 当事者[とうじしゃ]
+  items:
+  - touji-sha
+- type: prompt
+  ask:
+    en: 'Once more: say “voice (opinion)”.'
+    pt: 'Mais uma vez: diga “voz (opinião)”.'
+  answer:
+    speaker: protagonist
+    text: 声[こえ]
+  items:
+  - koe
+- type: prompt
+  ask:
+    en: 'Once more: say “reflecting (opinions in policy)”.'
+    pt: 'Mais uma vez: diga “refletir (opiniões em políticas)”.'
+  answer:
+    speaker: protagonist
+    text: 反映[はんえい]
+  items:
+  - hanei
+- type: prompt
+  ask:
+    en: 'Once more: say “Japanese class (for residents)”.'
+    pt: 'Mais uma vez: diga “aula de japonês (para moradores)”.'
+  answer:
+    speaker: protagonist
+    text: 日本語[にほんご] 教室[きょうしつ]
+  items:
+  - nihongo-kyoushitsu
+- type: prompt
+  ask:
+    en: 'Once more: say “concretely”.'
+    pt: 'Mais uma vez: diga “concretamente”.'
+  answer:
+    speaker: protagonist
+    text: 具体的[ぐたいてき] に
+  items:
+  - gutaiteki-ni
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “longing for (someone, something) — and “bittersweet ache — and “the pathos of things (transience) — and “untranslatable word — and “fleeting — and “emotion — and “close (in meaning) — and
+      “all of them put together — and “nuance — and “like cherry blossoms — and “support (emotional) — and “I''m here for you”.'
+    pt: 'Diga: “sentir falta, ansiar — e “aperto no coração — e “a melancolia das coisas (o efêmero) — e “palavra intraduzível — e “efêmero — e “emoção — e “próximo (no sentido) — e “tudo junto — e “nuance
+      — e “como as cerejeiras — e “apoio — e “estou aqui com você”.'
+  answer:
+    speaker: protagonist
+    text: 恋[こい]しい … 切[せつ]ない … 物[もの] の 哀[あわ]れ … 翻訳[ほんやく] できない 言葉[ことば] … 儚[はかな]い … 感情[かんじょう] … 近[ちか]い … 全部[ぜんぶ] 合[あ]わせた … ニュアンス … 桜[さくら] の よう に … 支[ささ]え … そば に いる よ
+  items:
+  - koishii
+  - setsunai
+  - mono-no-aware
+  - hon-yaku-dekinai
+  - hakanai
+  - kanjou
+  - chikai
+  - zenbu-awaseru
+  - nuance
+  - sakura-no-you-ni
+  - sasae
+  - soba-ni-iru
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “are you okay? — and “you don''t have to talk — and “that must have been hard — and “you did really well — and “in the red, a loss — and “don''t carry it alone — and “any time — and “I understand
+      how you feel — and “misunderstanding — and “I didn''t mean it that way — and “I hurt (you) — and “I said something rude”.'
+    pt: 'Diga: “você está bem? — e “não precisa falar — e “deve ter sido difícil — e “você se esforçou muito — e “no vermelho, prejuízo — e “não carregue isso sozinho — e “quando precisar — e “entendo o
+      que você sente — e “mal-entendido — e “não foi essa a intenção — e “acabei magoando — e “disse uma coisa indelicada”.'
+  answer:
+    speaker: protagonist
+    text: 大丈夫[だいじょうぶ]？ … 無理[むり] に 話[はな]さなくて いい … つらかった ね … よく 頑張[がんば]った … 赤字[あかじ] … 一人[ひとり] で 抱[かか]えないで … いつ でも … 気持[きも]ち は わかる … 誤解[ごかい] … そんな つもり じゃ なかった … 傷[きず]つけて しまった … 失礼[しつれい] な こと を 言[い]いました
+  items:
+  - daijoubu-casual
+  - muri-ni
+  - tsurakatta-ne
+  - ganbatta
+  - akaji
+  - hitori-de-kakaenaide
+  - itsu-demo
+  - kimochi-wa-wakaru
+  - gokai
+  - sonna-tsumori
+  - kizutsuketa
+  - shitsurei-na-koto
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “meaning it as a joke — and “cultural difference — and “it may sound like an excuse, but — and “I don''t mind — and “thank you for being honest — and “repair a relationship — and “I''m sorry
+      to ask, but — and “could you…? (polite) — and “could you…? (casual) — and “could I ask you to… — and “sorry, but (soft) — and “that really helped”.'
+    pt: 'Diga: “com a intenção de brincar — e “diferença cultural — e “pode parecer desculpa, mas — e “não me importo — e “obrigada por ser sincera — e “reparar uma relação — e “desculpe pedir, mas — e
+      “você poderia…? (educado) — e “dá para…? (informal) — e “posso te pedir… — e “desculpa, mas (suave) — e “ajudou muito”.'
+  answer:
+    speaker: protagonist
+    text: 冗談[じょうだん] の つもり で … 文化[ぶんか] の 違[ちが]い … 言[い]い訳[わけ] に なります が … 気[き] に して いない … 正直[しょうじき] に 言[い]って くれて … 関係[かんけい] を 修復[しゅうふく] する … 恐縮[きょうしゅく] です が … 〜て いただけます か … 〜て もらえる？ … お願[ねが]い できます か … 申[もう]し訳[わけ]
+      ない けど … 助[たす]かった
+  items:
+  - joudan-no-tsumori
+  - bunka-no-chigai
+  - ii-wake-review
+  - ki-ni-shite-inai
+  - shoujiki-ni-iu
+  - nakanaori-review
+  - kyoushuku-desu-ga
+  - te-itadakemasu-ka
+  - te-moraeru
+  - onegai-dekimasu-ka
+  - moushiwake-nai-kedo
+  - tasukatta
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “ask (a favour), rely on — and “instruction — and “degree of politeness — and “junior (colleague) — and “bilingual — and “at home — and “at school — and “for (someone), from (their) point
+      of view — and “for a child — and “mother tongue — and “heritage language — and “half and half”.'
+    pt: 'Diga: “pedir, contar com — e “orientação, instrução — e “grau de cortesia — e “colega mais novo — e “bilíngue — e “em casa — e “na escola — e “para (alguém) — e “para uma criança — e “língua materna
+      — e “língua de herança — e “metade cada um”.'
+  answer:
+    speaker: protagonist
+    text: 頼[たの]む … 指示[しじ] … 丁寧[ていねい] さ の 度合[どあ]い … 後輩[こうはい] … バイリンガル … 家[いえ] で は … 学校[がっこう] で は … 〜に とって … 子供[こども] に とって … 母語[ぼご] … 継承[けいしょう] 語[ご] … 半分[はんぶん] ずつ
+  items:
+  - tanomu
+  - shiji
+  - teinei-sa
+  - kouhai
+  - bairingaru
+  - ie-dewa
+  - gakkou-dewa
+  - ni-totte
+  - kodomo-ni-totte
+  - bogo
+  - keishou-go
+  - hanbun-zutsu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “be embarrassed (about it) — and “identity — and “Buddhist temple — and “Shinto — and “Buddhism — and “things like … and … — and “first shrine visit of the year — and “religion — and “shrine
+      gate — and “amulet, charm — and “fortune slip — and “the gods, a god”.'
+    pt: 'Diga: “ter vergonha (disso) — e “identidade — e “templo budista — e “xintoísmo — e “budismo — e “coisas como … e … — e “primeira visita ao santuário no ano — e “religião — e “portal do santuário
+      — e “amuleto — e “papel da sorte — e “os deuses, um deus”.'
+  answer:
+    speaker: protagonist
+    text: 恥[は]ずかしがる … アイデンティティ … お寺[てら] … 神道[しんとう] … 仏教[ぶっきょう] … 〜とか 〜とか … 初詣[はつもうで] … 宗教[しゅうきょう] … 鳥居[とりい] … お守[まも]り … おみくじ … 神様[かみさま]
+  items:
+  - hazukashigaru
+  - aidentiti
+  - otera
+  - shintou
+  - bukkyou
+  - toka
+  - hatsumoude
+  - shuukyou
+  - torii
+  - omamori
+  - omikuji
+  - kami-sama
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “funeral — and “hot spring — and “tattoo — and “towel — and “wash (your) body — and “you must not go in — and “must not — and “swimsuit — and “sticker — and “cover, hide — and “private bath
+      — and “it feels good”.'
+    pt: 'Diga: “funeral — e “fonte termal — e “tatuagem — e “toalha — e “lavo o corpo — e “não pode entrar — e “não pode — e “maiô, roupa de banho — e “adesivo — e “cubro, escondo — e “ofurô privativo —
+      e “que delícia, que gostoso”.'
+  answer:
+    speaker: protagonist
+    text: お葬式[そうしき] … 温泉[おんせん] … 入[い]れ墨[ずみ] … タオル … 体[からだ] を 洗[あら]います … 入[はい]って は いけません … 〜ては いけません … 水着[みずぎ] … シール … 隠[かく]します … 貸切[かしきり] 風呂[ぶろ] … 気持[きも]ち いい
+  items:
+  - osoushiki
+  - onsen
+  - irezumi
+  - taoru
+  - karada-wo-araimasu
+  - haitte-wa-ikemasen
+  - te-wa-ikemasen
+  - mizugi
+  - shiiru
+  - kakushimasu
+  - kashikiri
+  - kimochi-ii
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

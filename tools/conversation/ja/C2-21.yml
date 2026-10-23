@@ -1,0 +1,591 @@
+# UNIT ja C2-21 — written by AI (Claude) for Casus; expanded from src/C2-21.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-21
+level: C2
+number: 21
+protagonist: f
+title:
+  en: A friend in crisis
+  pt: Um amigo em crise
+situation:
+  en: Lucas's snack shop is losing money, and he's talking about closing it and going back to Brazil. You sit with him after closing time.
+  pt: A lanchonete do Lucas está dando prejuízo, e ele fala em fechar e voltar para o Brasil. Você senta com ele depois que a loja fecha.
+learn_lessons: []
+culture: —
+new_items:
+- id: sasae
+  text: 支[ささ]え
+  meaning:
+    en: support (emotional)
+    pt: apoio
+- id: soba-ni-iru
+  text: そば に いる よ
+  meaning:
+    en: I'm here for you
+    pt: estou aqui com você
+- id: daijoubu-casual
+  text: 大丈夫[だいじょうぶ]？
+  meaning:
+    en: are you okay?
+    pt: você está bem?
+- id: muri-ni
+  text: 無理[むり] に 話[はな]さなくて いい
+  meaning:
+    en: you don't have to talk
+    pt: não precisa falar
+- id: tsurakatta-ne
+  text: つらかった ね
+  meaning:
+    en: that must have been hard
+    pt: deve ter sido difícil
+- id: ganbatta
+  text: よく 頑張[がんば]った
+  meaning:
+    en: you did really well
+    pt: você se esforçou muito
+- id: akaji
+  text: 赤字[あかじ]
+  meaning:
+    en: in the red, a loss
+    pt: no vermelho, prejuízo
+- id: hitori-de-kakaenaide
+  text: 一人[ひとり] で 抱[かか]えないで
+  meaning:
+    en: don't carry it alone
+    pt: não carregue isso sozinho
+- id: itsu-demo
+  text: いつ でも
+  meaning:
+    en: any time
+    pt: quando precisar
+- id: kimochi-wa-wakaru
+  text: 気持[きも]ち は わかる
+  meaning:
+    en: I understand how you feel
+    pt: entendo o que você sente
+reviews:
+- item: to-omoimasu
+  from: A2-14
+- item: dou-omoimasu-ka
+  from: A2-14
+- item: sanba
+  from: A2-14
+- item: sutereotaipu
+  from: A2-14
+- item: imeeji
+  from: A2-14
+- item: chigau-to-omou
+  from: A2-14
+- item: amari
+  from: A2-14
+- item: zenzen
+  from: A2-14
+- item: tokidoki
+  from: A2-14
+- item: kikimasu
+  from: A2-14
+- item: yotou
+  from: B2-18
+- item: yatou
+  from: B2-18
+- item: to-shite-mo
+  from: B2-18
+- item: hantai-da-to-shite-mo
+  from: B2-18
+- item: iken-ga-chigau
+  from: B2-18
+- item: sonchou
+  from: B2-18
+- item: seisaku
+  from: B2-18
+- item: keizai
+  from: B2-18
+- item: gaikokujin-no-shiten
+  from: B2-18
+- item: benkyou-ni-narimasu
+  from: B2-18
+- item: ninshin
+  from: C1-20
+- item: boshitechou
+  from: C1-20
+- item: shussan
+  from: C1-20
+- item: kenshin
+  from: C1-20
+- item: yoteibi
+  from: C1-20
+- item: tsuwari
+  from: C1-20
+- item: uchi-ni-review
+  from: C1-20
+- item: junbi-review
+  from: C1-20
+- item: otto
+  from: C1-20
+- item: tsuma
+  from: C1-20
+- item: manzai
+  from: C2-06
+- item: warai
+  from: C2-06
+- item: kuse-ni
+  from: C2-06
+- item: nihonjin-no-kuse-ni
+  from: C2-06
+- item: neta
+  from: C2-06
+- item: uketa
+  from: C2-06
+- item: suberu
+  from: C2-06
+- item: ai-kata
+  from: C2-06
+- item: ma
+  from: C2-06
+- item: nande-yanen-review
+  from: C2-06
+- item: juku
+  from: C2-14
+- item: ojuken
+  from: C2-14
+- item: kyouiku-mama
+  from: C2-14
+- item: kyousou
+  from: C2-14
+- item: mono-nara
+  from: C2-14
+- item: dekiru-mono-nara
+  from: C2-14
+- item: shigaku
+  from: C2-14
+- item: kouritsu
+  from: C2-14
+- item: nobi-nobi
+  from: C2-14
+- item: shourai-no-tame
+  from: C2-14
+- item: teijuu
+  from: C2-18
+- item: sabetsu
+  from: C2-18
+- item: kyousei
+  from: C2-18
+- item: inyou
+  from: C2-18
+- item: kotoba-wo-erabu
+  from: C2-18
+- item: tashika-ni-aru
+  from: C2-18
+- item: ippou-review
+  from: C2-18
+- item: kanyou
+  from: C2-18
+- item: chiiki-shakai
+  from: C2-18
+- item: hito-to-hito
+  from: C2-18
+- item: bessou
+  from: C2-20
+- item: seisan
+  from: C2-20
+- item: baabekyuu
+  from: C2-20
+- item: zutsu
+  from: C2-20
+- item: hitori-ichiman-zutsu
+  from: C2-20
+- item: ryoushuusho
+  from: C2-20
+- item: tatekae
+  from: C2-20
+- item: ichiban-ooku
+  from: C2-20
+- item: kodomo-wa-hangaku
+  from: C2-20
+- item: keisan
+  from: C2-20
+steps:
+- type: narrator
+  text:
+    en: Lucas's snack shop is losing money, and he's talking about closing it and going back to Brazil. You sit with him after closing time. Listen to the conversation; you don't need to understand it yet.
+    pt: A lanchonete do Lucas está dando prejuízo, e ele fala em fechar e voltar para o Brasil. Você senta com ele depois que a loja fecha. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: lucas
+    text: 三[さん] か月[げつ] 赤字[あかじ] な ん だ。 もう 店[みせ] を 閉[し]めて、 ブラジル に 帰[かえ]ろう か な。
+    meaning:
+      en: Three months in the red. Maybe I'll close the shop and go back to Brazil.
+      pt: Três meses no vermelho. Acho que vou fechar a loja e voltar para o Brasil.
+  - speaker: protagonist
+    text: そう だった ん だ… つらかった ね。
+    meaning:
+      en: So that's how it is… That must have been hard.
+      pt: Então era isso… Deve ter sido difícil.
+  - speaker: lucas
+    text: みんな に 応援[おうえん] して もらった のに、 情[なさ]けない。
+    meaning:
+      en: Everyone supported me, and I feel pathetic.
+      pt: Todo mundo me apoiou, e eu me sinto um fracasso.
+  - speaker: protagonist
+    text: 情[なさ]けなく ない よ。 よく 頑張[がんば]った。 無理[むり] に 話[はな]さなくて いい から、 そば に いる よ。
+    meaning:
+      en: You're not pathetic. You did really well. You don't have to talk; I'm here.
+      pt: Não é fracasso. Você se esforçou muito. Não precisa falar; estou aqui com você.
+  - speaker: lucas
+    text: …ありがとう。 誰[だれ] に も 言[い]えなかった。
+    meaning:
+      en: …Thank you. I couldn't tell anyone.
+      pt: …Obrigado. Não consegui contar para ninguém.
+  - speaker: protagonist
+    text: 一人[ひとり] で 抱[かか]えないで。 健太[けんた] くん も マリア さん も、 支[ささ]え に なりたい と 思[おも]って いる。
+    meaning:
+      en: Don't carry it alone. Kenta and Maria want to support you too.
+      pt: Não carregue isso sozinho. O Kenta e a Maria também querem te apoiar.
+  - speaker: lucas
+    text: 店[みせ] を 続[つづ]ける 方法[ほうほう]、 一緒[いっしょ] に 考[かんが]えて くれる？
+    meaning:
+      en: Will you help me think of a way to keep the shop going?
+      pt: Você me ajuda a pensar num jeito de manter a loja?
+  - speaker: protagonist
+    text: もちろん。 いつ でも 呼[よ]んで。
+    meaning:
+      en: Of course. Call me any time.
+      pt: Claro. Me chama quando precisar.
+- type: prompt
+  ask:
+    en: 'Ask gently: are you okay?'
+    pt: 'Pergunte com cuidado: você está bem?'
+  answer:
+    speaker: protagonist
+    text: 大丈夫[だいじょうぶ]？
+  items:
+  - daijoubu-casual
+- type: prompt
+  ask:
+    en: 'Say: in the red, a loss.'
+    pt: 'Diga: prejuízo.'
+  answer:
+    speaker: protagonist
+    text: 赤字[あかじ]
+  items:
+  - akaji
+- type: prompt
+  ask:
+    en: 'Say: that must have been hard.'
+    pt: 'Diga: deve ter sido difícil.'
+  answer:
+    speaker: protagonist
+    text: つらかった ね。
+  items:
+  - tsurakatta-ne
+- type: prompt
+  ask:
+    en: 'Say: you did really well.'
+    pt: 'Diga: você se esforçou muito.'
+  answer:
+    speaker: protagonist
+    text: よく 頑張[がんば]った。
+  items:
+  - ganbatta
+- type: prompt
+  ask:
+    en: 'Say: you don''t have to talk.'
+    pt: 'Diga: não precisa falar.'
+  answer:
+    speaker: protagonist
+    text: 無理[むり] に 話[はな]さなくて いい
+  items:
+  - muri-ni
+- type: prompt
+  ask:
+    en: 'Say: I''m here for you.'
+    pt: 'Diga: estou aqui com você.'
+  answer:
+    speaker: protagonist
+    text: そば に いる よ。
+  items:
+  - soba-ni-iru
+- type: prompt
+  ask:
+    en: 'Say: don''t carry it alone.'
+    pt: 'Diga: não carregue sozinho.'
+  answer:
+    speaker: protagonist
+    text: 一人[ひとり] で 抱[かか]えないで。
+  items:
+  - hitori-de-kakaenaide
+- type: prompt
+  ask:
+    en: 'Say: support.'
+    pt: 'Diga: apoio.'
+  answer:
+    speaker: protagonist
+    text: 支[ささ]え
+  items:
+  - sasae
+- type: prompt
+  ask:
+    en: 'Say: I understand how you feel.'
+    pt: 'Diga: entendo o que você sente.'
+  answer:
+    speaker: protagonist
+    text: 気持[きも]ち は わかる
+  items:
+  - kimochi-wa-wakaru
+- type: prompt
+  ask:
+    en: 'Say: any time.'
+    pt: 'Diga: quando precisar.'
+  answer:
+    speaker: protagonist
+    text: いつ でも
+  items:
+  - itsu-demo
+- type: narrator
+  text:
+    en: 'Comfort in Japanese leans on presence more than advice: «つらかった ね» acknowledges the pain, «よく 頑張[がんば]った» honours the effort — not «頑張[がんば]って», which can pressure someone who is already worn out
+      — and «そば に いる よ» offers company. Silence is allowed.'
+    pt: 'O consolo em japonês se apoia mais na presença que no conselho: «つらかった ね» reconhece a dor, «よく 頑張[がんば]った» honra o esforço — e não «頑張[がんば]って», que pode pressionar quem já está esgotado — e «そば
+      に いる よ» oferece companhia. O silêncio é permitido.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: O brasileiro tende a dar força com «vai dar tudo certo!». Em japonês, às vezes ajuda mais dizer «foi difícil, né» e só ficar junto.
+- type: prompt
+  ask:
+    en: 'Once more: say “support (emotional)”.'
+    pt: 'Mais uma vez: diga “apoio”.'
+  answer:
+    speaker: protagonist
+    text: 支[ささ]え
+  items:
+  - sasae
+- type: prompt
+  ask:
+    en: 'Once more: say “I''m here for you”.'
+    pt: 'Mais uma vez: diga “estou aqui com você”.'
+  answer:
+    speaker: protagonist
+    text: そば に いる よ
+  items:
+  - soba-ni-iru
+- type: prompt
+  ask:
+    en: 'Once more: say “are you okay?”.'
+    pt: 'Mais uma vez: diga “você está bem?”.'
+  answer:
+    speaker: protagonist
+    text: 大丈夫[だいじょうぶ]？
+  items:
+  - daijoubu-casual
+- type: prompt
+  ask:
+    en: 'Once more: say “you don''t have to talk”.'
+    pt: 'Mais uma vez: diga “não precisa falar”.'
+  answer:
+    speaker: protagonist
+    text: 無理[むり] に 話[はな]さなくて いい
+  items:
+  - muri-ni
+- type: prompt
+  ask:
+    en: 'Once more: say “that must have been hard”.'
+    pt: 'Mais uma vez: diga “deve ter sido difícil”.'
+  answer:
+    speaker: protagonist
+    text: つらかった ね
+  items:
+  - tsurakatta-ne
+- type: prompt
+  ask:
+    en: 'Once more: say “you did really well”.'
+    pt: 'Mais uma vez: diga “você se esforçou muito”.'
+  answer:
+    speaker: protagonist
+    text: よく 頑張[がんば]った
+  items:
+  - ganbatta
+- type: prompt
+  ask:
+    en: 'Once more: say “in the red, a loss”.'
+    pt: 'Mais uma vez: diga “no vermelho, prejuízo”.'
+  answer:
+    speaker: protagonist
+    text: 赤字[あかじ]
+  items:
+  - akaji
+- type: prompt
+  ask:
+    en: 'Once more: say “don''t carry it alone”.'
+    pt: 'Mais uma vez: diga “não carregue isso sozinho”.'
+  answer:
+    speaker: protagonist
+    text: 一人[ひとり] で 抱[かか]えないで
+  items:
+  - hitori-de-kakaenaide
+- type: prompt
+  ask:
+    en: 'Once more: say “any time”.'
+    pt: 'Mais uma vez: diga “quando precisar”.'
+  answer:
+    speaker: protagonist
+    text: いつ でも
+  items:
+  - itsu-demo
+- type: prompt
+  ask:
+    en: 'Once more: say “I understand how you feel”.'
+    pt: 'Mais uma vez: diga “entendo o que você sente”.'
+  answer:
+    speaker: protagonist
+    text: 気持[きも]ち は わかる
+  items:
+  - kimochi-wa-wakaru
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “holiday house — and “settling up (the bill) — and “barbecue — and “each, apiece — and “10,000 yen each — and “receipt — and “pay for someone (to be paid back) — and “the most — and “children
+      pay half — and “calculation — and “settling permanently — and “discrimination”.'
+    pt: 'Diga: “casa de veraneio — e “acerto de contas — e “churrasco — e “cada um, por pessoa — e “10 mil ienes cada um — e “recibo — e “pagar adiantado por alguém — e “o máximo, a maior parte — e “criança
+      paga metade — e “cálculo, conta — e “fixar residência — e “discriminação”.'
+  answer:
+    speaker: protagonist
+    text: 別荘[べっそう] … 精算[せいさん] … バーベキュー … 〜ずつ … 一人[ひとり] 一万円[いちまんえん] ずつ … 領収書[りょうしゅうしょ] … 立[た]て替[か]える … 一番[いちばん] 多[おお]く … 子供[こども] は 半額[はんがく] … 計算[けいさん] … 定住[ていじゅう] … 差別[さべつ]
+  items:
+  - bessou
+  - seisan
+  - baabekyuu
+  - zutsu
+  - hitori-ichiman-zutsu
+  - ryoushuusho
+  - tatekae
+  - ichiban-ooku
+  - kodomo-wa-hangaku
+  - keisan
+  - teijuu
+  - sabetsu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “coexistence — and “quotation — and “choose one''s words — and “certainly exists — and “on the other hand — and “tolerance, open-mindedness — and “local community — and “person to person —
+      and “cram school — and “entrance exam for young children — and “pushy education mum — and “competition”.'
+    pt: 'Diga: “convivência — e “citação — e “escolher as palavras — e “certamente existe — e “por outro lado — e “tolerância — e “comunidade local — e “de pessoa para pessoa — e “cursinho — e “prova de
+      admissão para crianças pequenas — e “mãe obcecada com estudos — e “competição”.'
+  answer:
+    speaker: protagonist
+    text: 共生[きょうせい] … 引用[いんよう] … 言葉[ことば] を 選[えら]ぶ … 確[たし]か に ある … その 一方[いっぽう] で … 寛容[かんよう] … 地域[ちいき] 社会[しゃかい] … 人[ひと] と 人[ひと] … 塾[じゅく] … お受験[じゅけん] … 教育[きょういく] ママ … 競争[きょうそう]
+  items:
+  - kyousei
+  - inyou
+  - kotoba-wo-erabu
+  - tashika-ni-aru
+  - ippou-review
+  - kanyou
+  - chiiki-shakai
+  - hito-to-hito
+  - juku
+  - ojuken
+  - kyouiku-mama
+  - kyousou
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “if (you) could / if you dare — and “if it were possible — and “private (school) — and “public (school) — and “freely, without pressure — and “for the future — and “manzai (double-act comedy)
+      — and “laughter — and “even though (critical) — and “even though you''re Japanese — and “material (comedy) — and “went down well”.'
+    pt: 'Diga: “se der para / se ousar — e “se fosse possível — e “particular — e “pública — e “à vontade, sem pressão — e “pelo futuro — e “manzai (comédia em dupla) — e “risada — e “sendo que, mesmo (crítico)
+      — e “sendo japonês — e “texto, material (do humor) — e “fez sucesso, arrancou risada”.'
+  answer:
+    speaker: protagonist
+    text: 〜もの なら … できる もの なら … 私立[しりつ] … 公立[こうりつ] … のびのび … 将来[しょうらい] の ため … 漫才[まんざい] … 笑[わら]い … 〜くせ に … 日本人[にほんじん] の くせ に … ネタ … ウケた
+  items:
+  - mono-nara
+  - dekiru-mono-nara
+  - shigaku
+  - kouritsu
+  - nobi-nobi
+  - shourai-no-tame
+  - manzai
+  - warai
+  - kuse-ni
+  - nihonjin-no-kuse-ni
+  - neta
+  - uketa
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “fall flat (joke) — and “comedy partner — and “timing, pause — and “what the heck (Kansai comeback) — and “pregnancy — and “maternal and child health booklet — and “giving birth — and “check-up
+      — and “due date — and “morning sickness — and “while (you''re) still feeling well — and “get ready in advance”.'
+    pt: 'Diga: “não ter graça, cair no vazio — e “parceiro de dupla — e “timing, pausa — e “como assim? (resposta do Kansai) — e “gravidez — e “caderneta da mãe e do bebê — e “parto — e “consulta de rotina,
+      pré-natal — e “data prevista do parto — e “enjoo da gravidez — e “enquanto ainda está bem — e “deixar preparado”.'
+  answer:
+    speaker: protagonist
+    text: 滑[すべ]る … 相方[あいかた] … 間[ま] … なんで やねん … 妊娠[にんしん] … 母子[ぼし] 手帳[てちょう] … 出産[しゅっさん] … 検診[けんしん] … 出産[しゅっさん] 予定日[よていび] … つわり … 元気[げんき] な うち に … 準備[じゅんび] して おく
+  items:
+  - suberu
+  - ai-kata
+  - ma
+  - nande-yanen-review
+  - ninshin
+  - boshitechou
+  - shussan
+  - kenshin
+  - yoteibi
+  - tsuwari
+  - uchi-ni-review
+  - junbi-review
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “husband — and “wife — and “ruling party — and “opposition party — and “even if, even supposing — and “even if (you) disagree — and “have different opinions — and “respect (for a view) — and
+      “policy — and “economy — and “a foreigner''s point of view — and “that''s very instructive”.'
+    pt: 'Diga: “marido — e “esposa — e “partido do governo — e “oposição — e “mesmo que, ainda que — e “mesmo que discorde — e “ter opiniões diferentes — e “respeito (a uma opinião) — e “política (medida)
+      — e “economia — e “o ponto de vista de um estrangeiro — e “aprendo muito com isso”.'
+  answer:
+    speaker: protagonist
+    text: 夫[おっと] … 妻[つま] … 与党[よとう] … 野党[やとう] … 〜と して も … 反対[はんたい] だ と して も … 意見[いけん] が 違[ちが]う … 尊重[そんちょう] … 政策[せいさく] … 経済[けいざい] … 外国人[がいこくじん] の 視点[してん] … 勉強[べんきょう] に なります
+  items:
+  - otto
+  - tsuma
+  - yotou
+  - yatou
+  - to-shite-mo
+  - hantai-da-to-shite-mo
+  - iken-ga-chigau
+  - sonchou
+  - seisaku
+  - keizai
+  - gaikokujin-no-shiten
+  - benkyou-ni-narimasu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I think that… — and “what do you think? — and “samba — and “stereotype — and “image (of a place) — and “I don''t think so (I think it''s different) — and “not much, not really — and “not
+      at all — and “sometimes — and “hear; ask”.'
+    pt: 'Diga: “acho que… — e “o que você acha? — e “samba — e “estereótipo — e “imagem (de um lugar) — e “acho que não (acho que é diferente) — e “não muito — e “nada, de jeito nenhum — e “às vezes — e
+      “ouço; pergunto”.'
+  answer:
+    speaker: protagonist
+    text: 〜と 思[おも]います … どう 思[おも]います か … サンバ … ステレオタイプ … イメージ … 違[ちが]う と 思[おも]う … あまり 〜ません … 全然[ぜんぜん] 〜ません … 時々[ときどき] … 聞[き]きます
+  items:
+  - to-omoimasu
+  - dou-omoimasu-ka
+  - sanba
+  - sutereotaipu
+  - imeeji
+  - chigau-to-omou
+  - amari
+  - zenzen
+  - tokidoki
+  - kikimasu
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
