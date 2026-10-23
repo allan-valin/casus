@@ -1,0 +1,610 @@
+# UNIT ja B2-27 — written by AI (Claude) for Casus; expanded from src/B2-27.yml by tools/expand_unit.py. Edit the source.
+
+id: B2-27
+level: B2
+number: 27
+protagonist: f
+title:
+  en: Why not marry?
+  pt: Por que não casar?
+situation:
+  en: Aya is writing a paper on why young Japanese marry less. She interviews you, then Kenta's older cousin, who is doing 婚活.
+  pt: A Aya está escrevendo um trabalho sobre por que os jovens japoneses casam menos. Ela entrevista você, e depois a prima mais velha do Kenta, que está fazendo 婚活.
+learn_lessons: []
+culture: 婚活 — a social problem
+new_items:
+- id: kekkon
+  text: 結婚[けっこん]
+  meaning:
+    en: marriage
+    pt: casamento
+- id: shoushika
+  text: 少子化[しょうしか]
+  meaning:
+    en: falling birth rate
+    pt: queda da natalidade
+  rare: true
+- id: konkatsu
+  text: 婚活[こんかつ]
+  meaning:
+    en: marriage hunting
+    pt: busca ativa por casamento
+  rare: true
+- id: dokushin
+  text: 独身[どくしん]
+  meaning:
+    en: single, unmarried
+    pt: solteiro
+- id: monono
+  text: 〜ものの
+  meaning:
+    en: although (it's true that)
+    pt: embora, apesar de
+- id: kekkon-shitai-monono
+  text: 結婚[けっこん] したい ものの
+  meaning:
+    en: although I want to marry
+    pt: embora eu queira casar
+- id: keizaiteki
+  text: 経済的[けいざいてき] に
+  meaning:
+    en: financially
+    pt: financeiramente
+- id: fuan
+  text: 不安[ふあん]
+  meaning:
+    en: anxiety, insecurity
+    pt: insegurança, ansiedade
+- id: deai
+  text: 出会[であ]い
+  meaning:
+    en: meeting (someone)
+    pt: encontro, conhecer alguém
+- id: kachikan
+  text: 価値観[かちかん]
+  meaning:
+    en: values
+    pt: valores
+- id: jiyuu-na-jikan
+  text: 自由[じゆう] な 時間[じかん]
+  meaning:
+    en: free time
+    pt: tempo livre
+reviews:
+- item: zangyou
+  from: A2-24
+- item: teiji
+  from: A2-24
+- item: tsukareta
+  from: A2-24
+- item: karou
+  from: A2-24
+- item: kara-reason
+  from: A2-24
+- item: owatta-kara
+  from: A2-24
+- item: kaerimasu
+  from: A2-24
+- item: osaki-ni
+  from: A2-24
+- item: yuukyuu
+  from: A2-24
+- item: kenri
+  from: A2-24
+- item: joushi
+  from: A2-24
+- item: tanjoubi
+  from: B1-26
+- item: keeki
+  from: B1-26
+- item: purezento
+  from: B1-26
+- item: okaeshi
+  from: B1-26
+- item: ageru
+  from: B1-26
+- item: morau
+  from: B1-26
+- item: kureru
+  from: B1-26
+- item: kenta-ga-kureta
+  from: B1-26
+- item: yui-ni-ageru
+  from: B1-26
+- item: omedetou-tanjoubi
+  from: B1-26
+- item: howaito-dee
+  from: B1-26
+- item: kakuritsu
+  from: B2-12
+- item: takarakuji
+  from: B2-12
+- item: ataru
+  from: B2-12
+- item: kousui-kakuritsu
+  from: B2-12
+- item: hodo
+  from: B2-12
+- item: shinu-hodo
+  from: B2-12
+- item: hodo-de-wa-nai
+  from: B2-12
+- item: nisen-man-bun-no-ichi
+  from: B2-12
+- item: yume
+  from: B2-12
+- item: kaimasu-ka
+  from: B2-12
+- item: kureemu
+  from: B2-20
+- item: taiou
+  from: B2-20
+- item: owabi
+  from: B2-20
+- item: okyakusama
+  from: B2-20
+- item: makoto-ni
+  from: B2-20
+- item: kakunin-itashimasu
+  from: B2-20
+- item: shikyuu
+  from: B2-20
+- item: okuri-naoshi
+  from: B2-20
+- item: ninotsuki
+  from: B2-20
+- item: saihatsu-boushi
+  from: B2-20
+- item: okyakusama-wa-kamisama
+  from: B2-20
+- item: shoushi-koureika
+  from: B2-24
+- item: kaigo
+  from: B2-24
+- item: ni-tsurete
+  from: B2-24
+- item: toshi-wo-toru-ni-tsurete
+  from: B2-24
+- item: jinkou
+  from: B2-24
+- item: heru
+  from: B2-24
+- item: fueru
+  from: B2-24
+- item: haikou
+  from: B2-24
+- item: shussei-ritsu
+  from: B2-24
+- item: kaigo-shisetsu
+  from: B2-24
+- item: taiko
+  from: B2-26
+- item: renshuu
+  from: B2-26
+- item: rizumu
+  from: B2-26
+- item: tame-ni
+  from: B2-26
+- item: jouzu-ni-naru-tame-ni
+  from: B2-26
+- item: bachi
+  from: B2-26
+- item: kakegoe
+  from: B2-26
+- item: shisei
+  from: B2-26
+- item: kokyuu
+  from: B2-26
+- item: awaseru
+  from: B2-26
+- item: onegai-shimasu-start
+  from: B2-26
+steps:
+- type: narrator
+  text:
+    en: Aya is writing a paper on why young Japanese marry less. She interviews you, then Kenta's older cousin, who is doing 婚活. Listen to the conversation; you don't need to understand it yet.
+    pt: A Aya está escrevendo um trabalho sobre por que os jovens japoneses casam menos. Ela entrevista você, e depois a prima mais velha do Kenta, que está fazendo 婚活. Escute a conversa; ainda não precisa
+      entender.
+- type: dialogue
+  lines:
+  - speaker: aya
+    text: 日本[にほん] では 独身[どくしん] の 人[ひと] が 増[ふ]えて いる ん だ。 どうして だ と 思[おも]う？
+    meaning:
+      en: In Japan the number of single people is rising. Why do you think?
+      pt: No Japão o número de solteiros está aumentando. Por que você acha?
+  - speaker: protagonist
+    text: 仕事[しごと] が 忙[いそが]しくて、 出会[であ]い が 少[すく]ない から かな。
+    meaning:
+      en: Maybe because people are busy at work and have few chances to meet someone.
+      pt: Talvez porque o trabalho é corrido e há poucas chances de conhecer alguém.
+  - speaker: aya
+    text: それ も ある。 アンケート で は、 経済的[けいざいてき] な 不安[ふあん] も 多[おお]い。
+    meaning:
+      en: That's one reason. In surveys, financial insecurity comes up a lot too.
+      pt: Também. Nas pesquisas, a insegurança financeira aparece muito.
+  - speaker: aya
+    text: いとこ の 真理[まり] さん は 婚活[こんかつ] 中[ちゅう]。 結婚[けっこん] したい ものの、 なかなか 合[あ]う 人[ひと] が いない って。
+    meaning:
+      en: My cousin Mari is marriage hunting. Although she wants to marry, she says she can't find the right person.
+      pt: Minha prima Mari está na busca ativa. Embora queira casar, diz que não acha a pessoa certa.
+  - speaker: protagonist
+    text: 価値観[かちかん] が 合[あ]う 人[ひと] を 探[さが]す の は 大変[たいへん] だ よね。
+    meaning:
+      en: Finding someone with the same values is hard.
+      pt: Achar alguém com os mesmos valores é difícil.
+  - speaker: aya
+    text: 自由[じゆう] な 時間[じかん] が 好[す]き で、 結婚[けっこん] しない 人[ひと] も いる。
+    meaning:
+      en: Some people don't marry because they like their freedom.
+      pt: Tem quem não case porque gosta do tempo livre.
+  - speaker: protagonist
+    text: 少子化[しょうしか] も その せい？
+    meaning:
+      en: Is the falling birth rate because of that too?
+      pt: A queda da natalidade também é por causa disso?
+  - speaker: aya
+    text: 日本[にほん] で は 結婚[けっこん] して から 子供[こども] を 持[も]つ 人[ひと] が ほとんど だ から、 関係[かんけい] は 深[ふか]い よ。
+    meaning:
+      en: In Japan almost everyone has children after marrying, so the connection is strong.
+      pt: No Japão quase todo mundo só tem filhos depois de casar, então a relação é forte.
+- type: prompt
+  ask:
+    en: 'Say: marriage.'
+    pt: 'Diga: casamento.'
+  answer:
+    speaker: protagonist
+    text: 結婚[けっこん]
+  items:
+  - kekkon
+- type: prompt
+  ask:
+    en: 'Say: single.'
+    pt: 'Diga: solteiro.'
+  answer:
+    speaker: protagonist
+    text: 独身[どくしん]
+  items:
+  - dokushin
+- type: prompt
+  ask:
+    en: 'Say: marriage hunting.'
+    pt: 'Diga: busca ativa por casamento.'
+  answer:
+    speaker: protagonist
+    text: 婚活[こんかつ]
+  items:
+  - konkatsu
+- type: prompt
+  ask:
+    en: 'Say: the falling birth rate.'
+    pt: 'Diga: a queda da natalidade.'
+  answer:
+    speaker: protagonist
+    text: 少子化[しょうしか]
+  items:
+  - shoushika
+- type: prompt
+  ask:
+    en: 'Say: meeting someone.'
+    pt: 'Diga: conhecer alguém.'
+  answer:
+    speaker: protagonist
+    text: 出会[であ]い
+  items:
+  - deai
+- type: prompt
+  ask:
+    en: 'Say: values.'
+    pt: 'Diga: valores.'
+  answer:
+    speaker: protagonist
+    text: 価値観[かちかん]
+  items:
+  - kachikan
+- type: prompt
+  ask:
+    en: 'Say: financially.'
+    pt: 'Diga: financeiramente.'
+  answer:
+    speaker: protagonist
+    text: 経済的[けいざいてき] に
+  items:
+  - keizaiteki
+- type: prompt
+  ask:
+    en: 'Say: insecurity, anxiety.'
+    pt: 'Diga: insegurança.'
+  answer:
+    speaker: protagonist
+    text: 不安[ふあん]
+  items:
+  - fuan
+- type: narrator
+  text:
+    en: '«〜ものの» is although — it grants a fact, then something unexpected follows: «結婚[けっこん] したい ものの、 合[あ]う 人[ひと] が いない», although she wants to marry, she can''t find the right person. More written than
+      «けど».'
+    pt: '«〜ものの» é embora — admite um fato e depois vem algo inesperado: «結婚[けっこん] したい ものの、 合[あ]う 人[ひと] が いない», embora queira casar, não acha a pessoa certa. Mais escrito que «けど».'
+- type: prompt
+  ask:
+    en: 'Say the pattern: although.'
+    pt: 'Diga o padrão: embora.'
+  answer:
+    speaker: protagonist
+    text: 〜ものの
+  items:
+  - monono
+- type: prompt
+  ask:
+    en: 'Say: although I want to marry.'
+    pt: 'Diga: embora eu queira casar.'
+  answer:
+    speaker: protagonist
+    text: 結婚[けっこん] したい ものの
+  items:
+  - kekkon-shitai-monono
+- type: prompt
+  ask:
+    en: 'Say: free time.'
+    pt: 'Diga: tempo livre.'
+  answer:
+    speaker: protagonist
+    text: 自由[じゆう] な 時間[じかん]
+  items:
+  - jiyuu-na-jikan
+- type: narrator
+  text:
+    en: Fewer Japanese marry, and later, and because almost all children are born within marriage, this drives the falling birth rate. Long hours, insecure jobs and costs weigh on it. «婚活[こんかつ]» — agencies,
+      matchmaking events, apps — grew in response; some cities even run their own.
+    pt: Menos japoneses casam, e mais tarde, e como quase todas as crianças nascem dentro do casamento, isso puxa a queda da natalidade. Jornadas longas, empregos instáveis e custos pesam. O «婚活[こんかつ]»
+      — agências, eventos de encontros, aplicativos — cresceu em resposta; algumas prefeituras até organizam os seus.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil muitos filhos nascem fora do casamento e morar junto é comum. No Japão casamento e filhos andam juntos — por isso menos casamentos são logo menos bebês.
+- type: prompt
+  ask:
+    en: 'Once more: say “marriage”.'
+    pt: 'Mais uma vez: diga “casamento”.'
+  answer:
+    speaker: protagonist
+    text: 結婚[けっこん]
+  items:
+  - kekkon
+- type: prompt
+  ask:
+    en: 'Once more: say “falling birth rate”.'
+    pt: 'Mais uma vez: diga “queda da natalidade”.'
+  answer:
+    speaker: protagonist
+    text: 少子化[しょうしか]
+  items:
+  - shoushika
+- type: prompt
+  ask:
+    en: 'Once more: say “marriage hunting”.'
+    pt: 'Mais uma vez: diga “busca ativa por casamento”.'
+  answer:
+    speaker: protagonist
+    text: 婚活[こんかつ]
+  items:
+  - konkatsu
+- type: prompt
+  ask:
+    en: 'Once more: say “single, unmarried”.'
+    pt: 'Mais uma vez: diga “solteiro”.'
+  answer:
+    speaker: protagonist
+    text: 独身[どくしん]
+  items:
+  - dokushin
+- type: prompt
+  ask:
+    en: 'Once more: say “although (it''s true that)”.'
+    pt: 'Mais uma vez: diga “embora, apesar de”.'
+  answer:
+    speaker: protagonist
+    text: 〜ものの
+  items:
+  - monono
+- type: prompt
+  ask:
+    en: 'Once more: say “although I want to marry”.'
+    pt: 'Mais uma vez: diga “embora eu queira casar”.'
+  answer:
+    speaker: protagonist
+    text: 結婚[けっこん] したい ものの
+  items:
+  - kekkon-shitai-monono
+- type: prompt
+  ask:
+    en: 'Once more: say “financially”.'
+    pt: 'Mais uma vez: diga “financeiramente”.'
+  answer:
+    speaker: protagonist
+    text: 経済的[けいざいてき] に
+  items:
+  - keizaiteki
+- type: prompt
+  ask:
+    en: 'Once more: say “anxiety, insecurity”.'
+    pt: 'Mais uma vez: diga “insegurança, ansiedade”.'
+  answer:
+    speaker: protagonist
+    text: 不安[ふあん]
+  items:
+  - fuan
+- type: prompt
+  ask:
+    en: 'Once more: say “meeting (someone)”.'
+    pt: 'Mais uma vez: diga “encontro, conhecer alguém”.'
+  answer:
+    speaker: protagonist
+    text: 出会[であ]い
+  items:
+  - deai
+- type: prompt
+  ask:
+    en: 'Once more: say “values”.'
+    pt: 'Mais uma vez: diga “valores”.'
+  answer:
+    speaker: protagonist
+    text: 価値観[かちかん]
+  items:
+  - kachikan
+- type: prompt
+  ask:
+    en: 'Once more: say “free time”.'
+    pt: 'Mais uma vez: diga “tempo livre”.'
+  answer:
+    speaker: protagonist
+    text: 自由[じゆう] な 時間[じかん]
+  items:
+  - jiyuu-na-jikan
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “taiko drum — and “practice — and “rhythm — and “in order to; for — and “in order to get good — and “drumsticks (taiko) — and “shout (in rhythm) — and “posture — and “breathing — and “match,
+      play together”.'
+    pt: 'Diga: “taikô, tambor japonês — e “treino — e “ritmo — e “para, a fim de — e “para ficar bom — e “baquetas (do taikô) — e “grito (no ritmo) — e “postura — e “respiração — e “acompanhar, tocar junto”.'
+  answer:
+    speaker: protagonist
+    text: 太鼓[たいこ] … 練習[れんしゅう] … リズム … 〜ために … 上手[じょうず] に なる ために … ばち … 掛[か]け声[ごえ] … 姿勢[しせい] … 呼吸[こきゅう] … 合[あ]わせる
+  items:
+  - taiko
+  - renshuu
+  - rizumu
+  - tame-ni
+  - jouzu-ni-naru-tame-ni
+  - bachi
+  - kakegoe
+  - shisei
+  - kokyuu
+  - awaseru
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “(said loudly at the start of practice) — and “fewer children, more elderly — and “care (for the elderly) — and “as (one thing changes, another does) — and “as (one) gets older — and “population
+      — and “decrease — and “increase — and “school closure — and “birth rate”.'
+    pt: 'Diga: “(dito alto no começo do treino) — e “menos crianças, mais idosos — e “cuidado (de idosos) — e “à medida que — e “à medida que envelhece — e “população — e “diminuir — e “aumentar — e “fechamento
+      de escola — e “taxa de natalidade”.'
+  answer:
+    speaker: protagonist
+    text: よろしく お願[ねが]い します！ … 少子[しょうし] 高齢化[こうれいか] … 介護[かいご] … 〜に つれて … 年[とし] を 取[と]る に つれて … 人口[じんこう] … 減[へ]る … 増[ふ]える … 廃校[はいこう] … 出生率[しゅっしょうりつ]
+  items:
+  - onegai-shimasu-start
+  - shoushi-koureika
+  - kaigo
+  - ni-tsurete
+  - toshi-wo-toru-ni-tsurete
+  - jinkou
+  - heru
+  - fueru
+  - haikou
+  - shussei-ritsu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “care home — and “complaint — and “dealing with, response — and “apology (formal) — and “customer (honorific) — and “I am truly, deeply sorry — and “I will check (humble) — and “urgently —
+      and “resending — and “we caused you trouble”.'
+    pt: 'Diga: “casa de repouso — e “reclamação — e “atendimento, providência — e “pedido de desculpas (formal) — e “cliente (honorífico) — e “peço sinceras desculpas — e “vou verificar (humilde) — e “com
+      urgência — e “reenvio — e “causamos transtorno”.'
+  answer:
+    speaker: protagonist
+    text: 介護[かいご] 施設[しせつ] … クレーム … 対応[たいおう] … お詫[わ]び … お客様[きゃくさま] … 誠[まこと] に 申[もう]し訳[わけ] ございません … 確認[かくにん] いたします … 至急[しきゅう] … お送[おく]り 直[なお]し … ご迷惑[めいわく] を おかけ しました
+  items:
+  - kaigo-shisetsu
+  - kureemu
+  - taiou
+  - owabi
+  - okyakusama
+  - makoto-ni
+  - kakunin-itashimasu
+  - shikyuu
+  - okuri-naoshi
+  - ninotsuki
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “preventing a recurrence — and “the customer is god — and “probability — and “lottery — and “win (a prize); hit — and “chance of rain — and “to the extent that; as … as — and “to death (extremely)
+      — and “not as much as — and “one in twenty million”.'
+    pt: 'Diga: “evitar que se repita — e “o cliente é deus — e “probabilidade — e “loteria — e “ganhar (prêmio); acertar — e “probabilidade de chuva — e “a ponto de; tanto quanto — e “de morrer (extremamente)
+      — e “não tanto quanto — e “um em vinte milhões”.'
+  answer:
+    speaker: protagonist
+    text: 再発[さいはつ] 防止[ぼうし] … お客様[きゃくさま] は 神様[かみさま] … 確率[かくりつ] … 宝[たから]くじ … 当[あ]たる … 降水[こうすい] 確率[かくりつ] … 〜ほど … 死[し]ぬ ほど … 〜ほど では ない … 二千万[にせんまん] 分[ぶん] の 一[いち]
+  items:
+  - saihatsu-boushi
+  - okyakusama-wa-kamisama
+  - kakuritsu
+  - takarakuji
+  - ataru
+  - kousui-kakuritsu
+  - hodo
+  - shinu-hodo
+  - hodo-de-wa-nai
+  - nisen-man-bun-no-ichi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “dream — and “will you buy? — and “birthday — and “cake — and “present — and “a return gift — and “give (to others) — and “receive — and “give (to me / us) — and “Kenta gave (it to) me”.'
+    pt: 'Diga: “sonho — e “vai comprar? — e “aniversário — e “bolo — e “presente — e “presente de retribuição — e “dar (a outra pessoa) — e “receber, ganhar — e “dar (para mim / nós) — e “o Kenta me deu”.'
+  answer:
+    speaker: protagonist
+    text: 夢[ゆめ] … 買[か]います か … 誕生日[たんじょうび] … ケーキ … プレゼント … お返[かえ]し … あげる … もらう … くれる … 健太[けんた] くん が くれた
+  items:
+  - yume
+  - kaimasu-ka
+  - tanjoubi
+  - keeki
+  - purezento
+  - okaeshi
+  - ageru
+  - morau
+  - kureru
+  - kenta-ga-kureta
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “give (it) to Yui — and “happy birthday — and “White Day (14 March) — and “overtime — and “regular finishing time — and “I''m tired (plain) — and “overwork — and “because (reason first) —
+      and “because it''s finished — and “go home”.'
+    pt: 'Diga: “dar para a Yui — e “feliz aniversário — e “White Day (14 de março) — e “hora extra — e “horário de saída — e “estou cansado (simples) — e “excesso de trabalho — e “porque (o motivo antes)
+      — e “porque acabou — e “vou para casa”.'
+  answer:
+    speaker: protagonist
+    text: 由衣[ゆい] に あげる … 誕生日[たんじょうび] おめでとう … ホワイト デー … 残業[ざんぎょう] … 定時[ていじ] … 疲[つか]れた … 過労[かろう] … 〜から … 終[お]わった から … 帰[かえ]ります
+  items:
+  - yui-ni-ageru
+  - omedetou-tanjoubi
+  - howaito-dee
+  - zangyou
+  - teiji
+  - tsukareta
+  - karou
+  - kara-reason
+  - owatta-kara
+  - kaerimasu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “excuse me for leaving first — and “paid leave — and “right (legal) — and “boss, superior”.'
+    pt: 'Diga: “com licença, já vou indo — e “férias remuneradas — e “direito — e “chefe, superior”.'
+  answer:
+    speaker: protagonist
+    text: お先[さき] に 失礼[しつれい] します … 有給[ゆうきゅう] … 権利[けんり] … 上司[じょうし]
+  items:
+  - osaki-ni
+  - yuukyuu
+  - kenri
+  - joushi
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

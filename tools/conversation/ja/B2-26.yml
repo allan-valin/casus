@@ -1,0 +1,611 @@
+# UNIT ja B2-26 — written by AI (Claude) for Casus; expanded from src/B2-26.yml by tools/expand_unit.py. Edit the source.
+
+id: B2-26
+level: B2
+number: 26
+protagonist: m
+title:
+  en: The taiko club
+  pt: O clube de taikô
+situation:
+  en: Kenta talks you into joining the neighbourhood taiko group, which drums at the summer festival. First practice with Ōno-sensei.
+  pt: O Kenta te convence a entrar no grupo de taikô do bairro, que toca no festival de verão. Primeiro treino com a professora Ōno.
+learn_lessons: []
+culture: —
+new_items:
+- id: taiko
+  text: 太鼓[たいこ]
+  meaning:
+    en: taiko drum
+    pt: taikô, tambor japonês
+- id: renshuu
+  text: 練習[れんしゅう]
+  meaning:
+    en: practice
+    pt: treino
+- id: rizumu
+  text: リズム
+  meaning:
+    en: rhythm
+    pt: ritmo
+- id: tame-ni
+  text: 〜ために
+  meaning:
+    en: in order to; for
+    pt: para, a fim de
+- id: jouzu-ni-naru-tame-ni
+  text: 上手[じょうず] に なる ために
+  meaning:
+    en: in order to get good
+    pt: para ficar bom
+- id: bachi
+  text: ばち
+  meaning:
+    en: drumsticks (taiko)
+    pt: baquetas (do taikô)
+  rare: true
+- id: kakegoe
+  text: 掛[か]け声[ごえ]
+  meaning:
+    en: shout (in rhythm)
+    pt: grito (no ritmo)
+  rare: true
+- id: shisei
+  text: 姿勢[しせい]
+  meaning:
+    en: posture
+    pt: postura
+- id: kokyuu
+  text: 呼吸[こきゅう]
+  meaning:
+    en: breathing
+    pt: respiração
+- id: awaseru
+  text: 合[あ]わせる
+  meaning:
+    en: match, play together
+    pt: acompanhar, tocar junto
+- id: onegai-shimasu-start
+  text: よろしく お願[ねが]い します！
+  meaning:
+    en: (said loudly at the start of practice)
+    pt: (dito alto no começo do treino)
+reviews:
+- item: takoyaki
+  from: A2-23
+- item: tako
+  from: A2-23
+- item: oishisou
+  from: A2-23
+- item: sou
+  from: A2-23
+- item: atsusou
+  from: A2-23
+- item: amasou
+  from: A2-23
+- item: ikko
+  from: A2-23
+- item: ikutsu
+  from: A2-23
+- item: yakisoba
+  from: A2-23
+- item: nioi
+  from: A2-23
+- item: ii-nioi
+  from: A2-23
+- item: dousei
+  from: B1-25
+- item: kekkon-mae
+  from: B1-25
+- item: ryoushin
+  from: B1-25
+- item: kamoshirenai
+  from: B1-25
+- item: hantai-suru-kamo
+  from: B1-25
+- item: yachin
+  from: B1-25
+- item: setsuyaku
+  from: B1-25
+- item: isshoni-sumu
+  from: B1-25
+- item: shinpai
+  from: B1-25
+- item: setsumei-suru
+  from: B1-25
+- item: shoujiki-ni-hanasu
+  from: B1-25
+- item: kesseki
+  from: B2-11
+- item: tsugou
+  from: B2-11
+- item: sanka
+  from: B2-11
+- item: tsukiai
+  from: B2-11
+- item: wake-dewa-nai
+  from: B2-11
+- item: kyousei-dewa-nai
+  from: B2-11
+- item: tsugou-ga-warui
+  from: B2-11
+- item: zannen-desu-ga
+  from: B2-11
+- item: tsugi-wa-zehi
+  from: B2-11
+- item: kanji-san
+  from: B2-11
+- item: happyou
+  from: B2-19
+- item: shiryou
+  from: B2-19
+- item: shitsugi-outou
+  from: B2-19
+- item: ketsuron
+  from: B2-19
+- item: te-kara
+  from: B2-19
+- item: setsumei-shite-kara
+  from: B2-19
+- item: mokuteki
+  from: B2-19
+- item: hiyou
+  from: B2-19
+- item: kouka
+  from: B2-19
+- item: goshitsumon
+  from: B2-19
+- item: ijou-desu
+  from: B2-19
+- item: shoushin
+  from: B2-23
+- item: sekinin
+  from: B2-23
+- item: buka
+  from: B2-23
+- item: beki
+  from: B2-23
+- item: kiku-beki
+  from: B2-23
+- item: shunin
+  from: B2-23
+- item: kitai-expect
+  from: B2-23
+- item: kyouryoku
+  from: B2-23
+- item: mihon
+  from: B2-23
+- item: shikaru
+  from: B2-23
+- item: homeru
+  from: B2-23
+- item: zaitaku-kinmu
+  from: B2-25
+- item: onrain-kaigi
+  from: B2-25
+- item: shussha
+  from: B2-25
+- item: shuuchuu
+  from: B2-25
+- item: tokoro
+  from: B2-25
+- item: iku-tokoro
+  from: B2-25
+- item: shite-iru-tokoro
+  from: B2-25
+- item: owatta-tokoro
+  from: B2-25
+- item: oto-ga-kikoenai
+  from: B2-25
+- item: myuuto
+  from: B2-25
+- item: denshi-in
+  from: B2-25
+steps:
+- type: narrator
+  text:
+    en: Kenta talks you into joining the neighbourhood taiko group, which drums at the summer festival. First practice with Ōno-sensei. Listen to the conversation; you don't need to understand it yet.
+    pt: O Kenta te convence a entrar no grupo de taikô do bairro, que toca no festival de verão. Primeiro treino com a professora Ōno. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: taiko-sensei
+    text: よろしく お願[ねが]い します！ では、 練習[れんしゅう] を 始[はじ]めます。
+    meaning:
+      en: Yoroshiku onegai shimasu! Let's begin practice.
+      pt: Yoroshiku onegai shimasu! Vamos começar o treino.
+  - speaker: protagonist
+    text: よろしく お願[ねが]い します！ ばち は こう 持[も]ちます か。
+    meaning:
+      en: Yoroshiku onegai shimasu! Do I hold the sticks like this?
+      pt: Yoroshiku onegai shimasu! Seguro as baquetas assim?
+  - speaker: taiko-sensei
+    text: まず 姿勢[しせい]。 足[あし] を 広[ひろ]げて、 腰[こし] を 落[お]として。 いい 音[おと] を 出[だ]す ため に は、 体[からだ] 全体[ぜんたい] で 打[う]ちます。
+    meaning:
+      en: First, posture. Feet apart, hips low. To make a good sound, you hit with your whole body.
+      pt: Primeiro, a postura. Pés afastados, quadril baixo. Para tirar um bom som, você bate com o corpo todo.
+  - speaker: kenta
+    text: 掛[か]け声[ごえ] も 大事[だいじ] だ よ。 「ソーレ！」 って。
+    meaning:
+      en: The shouts matter too. “Sōre!”
+      pt: O grito também é importante. «Sōre!»
+  - speaker: protagonist
+    text: ソーレ！ …リズム が 難[むずか]しい。 サンバ と 違[ちが]う。
+    meaning:
+      en: Sōre! …The rhythm's hard. It's not like samba.
+      pt: Sōre! …O ritmo é difícil. É diferente do samba.
+  - speaker: taiko-sensei
+    text: 呼吸[こきゅう] を みんな と 合[あ]わせて。 上手[じょうず] に なる ため に、 毎週[まいしゅう] 来[き]て ください。
+    meaning:
+      en: Match your breathing with everyone. To get good, come every week.
+      pt: Acompanhe a respiração de todos. Para ficar bom, venha toda semana.
+  - speaker: protagonist
+    text: はい。 夏祭[なつまつ]り で 叩[たた]く ため に、 頑張[がんば]ります。
+    meaning:
+      en: Yes. I'll work hard so I can drum at the summer festival.
+      pt: Sim. Vou me esforçar para tocar no festival de verão.
+  - speaker: taiko-sensei
+    text: ありがとう ございました！ 今日[きょう] は ここ まで。
+    meaning:
+      en: Thank you! That's it for today.
+      pt: Obrigada! Por hoje é só.
+- type: prompt
+  ask:
+    en: 'Say: the taiko drum.'
+    pt: 'Diga: o taikô.'
+  answer:
+    speaker: protagonist
+    text: 太鼓[たいこ]
+  items:
+  - taiko
+- type: prompt
+  ask:
+    en: 'Say: practice.'
+    pt: 'Diga: treino.'
+  answer:
+    speaker: protagonist
+    text: 練習[れんしゅう]
+  items:
+  - renshuu
+- type: prompt
+  ask:
+    en: Start practice the Japanese way.
+    pt: Comece o treino do jeito japonês.
+  answer:
+    speaker: protagonist
+    text: よろしく お願[ねが]い します！
+  items:
+  - onegai-shimasu-start
+- type: prompt
+  ask:
+    en: 'Say: the drumsticks.'
+    pt: 'Diga: as baquetas.'
+  answer:
+    speaker: protagonist
+    text: ばち
+  items:
+  - bachi
+- type: prompt
+  ask:
+    en: 'Say: posture.'
+    pt: 'Diga: postura.'
+  answer:
+    speaker: protagonist
+    text: 姿勢[しせい]
+  items:
+  - shisei
+- type: prompt
+  ask:
+    en: 'Say: rhythm.'
+    pt: 'Diga: ritmo.'
+  answer:
+    speaker: protagonist
+    text: リズム
+  items:
+  - rizumu
+- type: prompt
+  ask:
+    en: 'Say: the rhythmic shout.'
+    pt: 'Diga: o grito no ritmo.'
+  answer:
+    speaker: protagonist
+    text: 掛[か]け声[ごえ]
+  items:
+  - kakegoe
+- type: prompt
+  ask:
+    en: 'Say: breathing.'
+    pt: 'Diga: respiração.'
+  answer:
+    speaker: protagonist
+    text: 呼吸[こきゅう]
+  items:
+  - kokyuu
+- type: prompt
+  ask:
+    en: 'Say: match, play together.'
+    pt: 'Diga: acompanhar.'
+  answer:
+    speaker: protagonist
+    text: 合[あ]わせる
+  items:
+  - awaseru
+- type: narrator
+  text:
+    en: '«〜ために» is in order to — a goal you work towards with your own will: «上手[じょうず] に なる ために», in order to get good; «いい 音[おと] を 出[だ]す ため に», to make a good sound. Compare «〜ように», for goals you can''t
+      fully control.'
+    pt: '«〜ために» é para, a fim de — um objetivo que você busca por vontade própria: «上手[じょうず] に なる ために», para ficar bom; «いい 音[おと] を 出[だ]す ため に», para tirar um bom som. Compare com «〜ように», para objetivos
+      que você não controla totalmente.'
+- type: prompt
+  ask:
+    en: 'Say the pattern: in order to.'
+    pt: 'Diga o padrão: para, a fim de.'
+  answer:
+    speaker: protagonist
+    text: 〜ために
+  items:
+  - tame-ni
+- type: prompt
+  ask:
+    en: 'Say: in order to get good.'
+    pt: 'Diga: para ficar bom.'
+  answer:
+    speaker: protagonist
+    text: 上手[じょうず] に なる ために
+  items:
+  - jouzu-ni-naru-tame-ni
+- type: narrator
+  text:
+    en: 'Group taiko, «組[くみ]太鼓[だいこ]», is a full-body art: low stance, drumming with the hips, shouts like «ソーレ！» and «ハッ！». Practices start and end with a loud greeting and a bow; neighbourhood groups play
+      at festivals and welcome newcomers.'
+    pt: 'O taikô em grupo, «組[くみ]太鼓[だいこ]», é uma arte do corpo inteiro: postura baixa, toque com o quadril, gritos como «ソーレ！» e «ハッ！». Os treinos começam e terminam com um cumprimento alto e uma reverência;
+      os grupos de bairro tocam nos festivais e recebem bem quem chega.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'Quem já tocou numa bateria de escola de samba vai reconhecer: pulso coletivo, respiração junta, o mestre comandando. Só o balanço é outro.'
+- type: prompt
+  ask:
+    en: 'Once more: say “taiko drum”.'
+    pt: 'Mais uma vez: diga “taikô, tambor japonês”.'
+  answer:
+    speaker: protagonist
+    text: 太鼓[たいこ]
+  items:
+  - taiko
+- type: prompt
+  ask:
+    en: 'Once more: say “practice”.'
+    pt: 'Mais uma vez: diga “treino”.'
+  answer:
+    speaker: protagonist
+    text: 練習[れんしゅう]
+  items:
+  - renshuu
+- type: prompt
+  ask:
+    en: 'Once more: say “rhythm”.'
+    pt: 'Mais uma vez: diga “ritmo”.'
+  answer:
+    speaker: protagonist
+    text: リズム
+  items:
+  - rizumu
+- type: prompt
+  ask:
+    en: 'Once more: say “in order to; for”.'
+    pt: 'Mais uma vez: diga “para, a fim de”.'
+  answer:
+    speaker: protagonist
+    text: 〜ために
+  items:
+  - tame-ni
+- type: prompt
+  ask:
+    en: 'Once more: say “in order to get good”.'
+    pt: 'Mais uma vez: diga “para ficar bom”.'
+  answer:
+    speaker: protagonist
+    text: 上手[じょうず] に なる ために
+  items:
+  - jouzu-ni-naru-tame-ni
+- type: prompt
+  ask:
+    en: 'Once more: say “drumsticks (taiko)”.'
+    pt: 'Mais uma vez: diga “baquetas (do taikô)”.'
+  answer:
+    speaker: protagonist
+    text: ばち
+  items:
+  - bachi
+- type: prompt
+  ask:
+    en: 'Once more: say “shout (in rhythm)”.'
+    pt: 'Mais uma vez: diga “grito (no ritmo)”.'
+  answer:
+    speaker: protagonist
+    text: 掛[か]け声[ごえ]
+  items:
+  - kakegoe
+- type: prompt
+  ask:
+    en: 'Once more: say “posture”.'
+    pt: 'Mais uma vez: diga “postura”.'
+  answer:
+    speaker: protagonist
+    text: 姿勢[しせい]
+  items:
+  - shisei
+- type: prompt
+  ask:
+    en: 'Once more: say “breathing”.'
+    pt: 'Mais uma vez: diga “respiração”.'
+  answer:
+    speaker: protagonist
+    text: 呼吸[こきゅう]
+  items:
+  - kokyuu
+- type: prompt
+  ask:
+    en: 'Once more: say “match, play together”.'
+    pt: 'Mais uma vez: diga “acompanhar, tocar junto”.'
+  answer:
+    speaker: protagonist
+    text: 合[あ]わせる
+  items:
+  - awaseru
+- type: prompt
+  ask:
+    en: 'Once more: say “(said loudly at the start of practice)”.'
+    pt: 'Mais uma vez: diga “(dito alto no começo do treino)”.'
+  answer:
+    speaker: protagonist
+    text: よろしく お願[ねが]い します！
+  items:
+  - onegai-shimasu-start
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “working from home — and “online meeting — and “going in to the office — and “concentration — and “just about to / in the middle of / just did — and “about to go — and “in the middle of doing
+      — and “just finished — and “I can''t hear (you) — and “mute”.'
+    pt: 'Diga: “trabalho em casa — e “reunião online — e “ir ao escritório — e “concentração — e “prestes a / no meio de / acabou de — e “prestes a ir — e “no meio de fazer — e “acabou de terminar — e “não
+      estou ouvindo — e “mudo”.'
+  answer:
+    speaker: protagonist
+    text: 在宅[ざいたく] 勤務[きんむ] … オンライン 会議[かいぎ] … 出社[しゅっしゃ] … 集中[しゅうちゅう] … 〜ところ … 行[い]く ところ … して いる ところ … 終[お]わった ところ … 音[おと] が 聞[き]こえません … ミュート
+  items:
+  - zaitaku-kinmu
+  - onrain-kaigi
+  - shussha
+  - shuuchuu
+  - tokoro
+  - iku-tokoro
+  - shite-iru-tokoro
+  - owatta-tokoro
+  - oto-ga-kikoenai
+  - myuuto
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “electronic seal — and “promotion — and “responsibility — and “subordinate — and “should, ought to — and “should listen — and “team lead, chief (junior) — and “expectation, hopes — and “cooperation
+      — and “example, model”.'
+    pt: 'Diga: “carimbo eletrônico — e “promoção — e “responsabilidade — e “subordinado — e “deveria, tem que — e “deveria ouvir — e “líder de equipe — e “expectativa — e “cooperação — e “exemplo”.'
+  answer:
+    speaker: protagonist
+    text: 電子[でんし] 印鑑[いんかん] … 昇進[しょうしん] … 責任[せきにん] … 部下[ぶか] … 〜べき … 話[はなし] を 聞[き]く べき … 主任[しゅにん] … 期待[きたい] … 協力[きょうりょく] … 見本[みほん]
+  items:
+  - denshi-in
+  - shoushin
+  - sekinin
+  - buka
+  - beki
+  - kiku-beki
+  - shunin
+  - kitai-expect
+  - kyouryoku
+  - mihon
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “scold — and “praise — and “presentation — and “handout, materials — and “Q&A — and “conclusion — and “after (doing) — and “after explaining — and “purpose — and “cost”.'
+    pt: 'Diga: “repreender — e “elogiar — e “apresentação — e “material, apostila — e “perguntas e respostas — e “conclusão — e “depois de (fazer) — e “depois de explicar — e “objetivo — e “custo”.'
+  answer:
+    speaker: protagonist
+    text: 叱[しか]る … 褒[ほ]める … 発表[はっぴょう] … 資料[しりょう] … 質疑[しつぎ] 応答[おうとう] … 結論[けつろん] … 〜て から … 説明[せつめい] して から … 目的[もくてき] … 費用[ひよう]
+  items:
+  - shikaru
+  - homeru
+  - happyou
+  - shiryou
+  - shitsugi-outou
+  - ketsuron
+  - te-kara
+  - setsumei-shite-kara
+  - mokuteki
+  - hiyou
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “effect, result — and “your questions (polite) — and “that''s all (end of presentation) — and “absence, not attending — and “convenience, circumstances — and “participation — and “socialising
+      (for work) — and “it''s not that… — and “it''s not compulsory — and “it''s not convenient (I can''t)”.'
+    pt: 'Diga: “efeito, resultado — e “suas perguntas (educado) — e “é isso (fim da apresentação) — e “ausência, não comparecer — e “disponibilidade, compromissos — e “participação — e “convivência (de
+      trabalho) — e “não é que… — e “não é obrigatório — e “não posso, não dá”.'
+  answer:
+    speaker: protagonist
+    text: 効果[こうか] … ご質問[しつもん] … 以上[いじょう] です … 欠席[けっせき] … 都合[つごう] … 参加[さんか] … 付[つ]き合[あ]い … 〜わけ では ない … 強制[きょうせい] では ない … 都合[つごう] が 悪[わる]い
+  items:
+  - kouka
+  - goshitsumon
+  - ijou-desu
+  - kesseki
+  - tsugou
+  - sanka
+  - tsukiai
+  - wake-dewa-nai
+  - kyousei-dewa-nai
+  - tsugou-ga-warui
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “unfortunately — and “next time for sure — and “party organiser — and “living together (unmarried) — and “before marriage — and “(my) parents — and “might, maybe — and “they might be against
+      it — and “rent — and “saving money”.'
+    pt: 'Diga: “infelizmente — e “da próxima, com certeza — e “organizador (da festa) — e “morar junto (sem casar) — e “antes do casamento — e “(meus) pais — e “pode ser que, talvez — e “pode ser que sejam
+      contra — e “aluguel — e “economia”.'
+  answer:
+    speaker: protagonist
+    text: 残念[ざんねん] です が … 次[つぎ] は ぜひ … 幹事[かんじ] … 同棲[どうせい] … 結婚[けっこん] 前[まえ] … 両親[りょうしん] … 〜かも しれない … 反対[はんたい] する かも しれない … 家賃[やちん] … 節約[せつやく]
+  items:
+  - zannen-desu-ga
+  - tsugi-wa-zehi
+  - kanji-san
+  - dousei
+  - kekkon-mae
+  - ryoushin
+  - kamoshirenai
+  - hantai-suru-kamo
+  - yachin
+  - setsuyaku
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “live together — and “worry — and “explain — and “talk honestly — and “takoyaki (octopus balls) — and “octopus — and “looks delicious — and “looks…, seems… — and “looks hot — and “looks sweet”.'
+    pt: 'Diga: “morar junto — e “preocupação — e “explicar — e “falar com sinceridade — e “takoyaki (bolinhos de polvo) — e “polvo — e “parece gostoso — e “parece… — e “parece quente — e “parece doce”.'
+  answer:
+    speaker: protagonist
+    text: 一緒[いっしょ] に 住[す]む … 心配[しんぱい] … 説明[せつめい] する … 正直[しょうじき] に 話[はな]す … たこ焼[や]き … たこ … おいしそう … 〜そう … 熱[あつ]そう … 甘[あま]そう
+  items:
+  - isshoni-sumu
+  - shinpai
+  - setsumei-suru
+  - shoujiki-ni-hanasu
+  - takoyaki
+  - tako
+  - oishisou
+  - sou
+  - atsusou
+  - amasou
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “one, please — and “how many — and “fried noodles — and “smell — and “smells good”.'
+    pt: 'Diga: “um, por favor — e “quantos — e “yakissoba — e “cheiro — e “cheiro bom”.'
+  answer:
+    speaker: protagonist
+    text: 一[ひと]つ ください … いくつ … 焼[や]きそば … 匂[にお]い … いい 匂[にお]い
+  items:
+  - ikko
+  - ikutsu
+  - yakisoba
+  - nioi
+  - ii-nioi
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
