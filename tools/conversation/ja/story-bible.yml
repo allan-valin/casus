@@ -14,9 +14,9 @@ voices:
   # Until the kana → Piper-phoneme step exists (logged 2026-10-22), Japanese lines are spoken from their kana by the
   # browser's Japanese voice or espeak-ng; the units carry their readings (tools/ja_text.py).
   # Piper ja_JP-hi_fi_captain-medium (CC BY-NC-SA — allowed, Casus is not sold; Allan 2026-10-21): TWO real
-  # speakers, female (0) and male (1) — no pitch trick needed. Its phonemes are a Japanese set (phoneme_type
-  # "japanese"), not espeak: the browser needs a kana → sound step (the units carry their kana; Casus already reads
-  # kana for Japanese). Technical step before the first unit.
+  # speakers, female (0) and male (1). Its phonemes are OpenJTalk sounds with pitch accent (phoneme_type "japanese"):
+  # the build computes them for every string (tools/ja_phonemes.py, 2026-10-23) and Talk picks the speaker from #female
+  # / #male below.
   - {id: nar-en, role: narrator, lang: en, tts: "piper:en_US-lessac-medium"}         # neutral narrator (international offices)
   - {id: nar-pt, role: narrator, lang: pt, tts: "piper:pt_BR-cadu-medium"}            # CC0
   - {id: ja-f, role: character, lang: ja, gender: f, tts: "piper:ja_JP-hi_fi_captain-medium#female"}
@@ -29,6 +29,8 @@ voices:
   - {id: ja-f5, role: character, lang: ja, gender: f, tts: "piper:ja_JP-hi_fi_captain-medium#female", pitch: 1.02, speed: 1.24}
   - {id: ja-f3, role: character, lang: ja, gender: f, tts: "piper:ja_JP-hi_fi_captain-medium#female", pitch: 1.22, speed: 1.1}
   - {id: ja-m2, role: character, lang: ja, gender: m, tts: "piper:ja_JP-hi_fi_captain-medium#male", pitch: 0.84, speed: 1.12}
+  - {id: ja-f6, role: character, lang: ja, gender: f, tts: "piper:ja_JP-hi_fi_captain-medium#female", pitch: 0.92, speed: 1.0}
+  - {id: ja-m6, role: character, lang: ja, gender: m, tts: "piper:ja_JP-hi_fi_captain-medium#male", pitch: 0.9, speed: 0.96}
 
 protagonist:
   forms: {f: ja-f, m: ja-m}
@@ -89,6 +91,18 @@ cast:
     voice: ja-f5
     register: friendly
     arc: A1-16, then the Brazilian community scenes
+  - id: madoguchi
+    name: 窓口の人 (madoguchi no hito, the clerk)
+    role: counter clerks — city hall, the bank, the post office
+    voice: ja-f6
+    register: formal
+    arc: one scene at a time (A2-02 city hall, A2-04 bank)
+  - id: isha
+    name: 先生 (sensei, the doctor)
+    role: the doctor at the clinic near the station
+    voice: ja-m6
+    register: formal
+    arc: A2-05, later visits
 formality:
   summary: >-
     Polite です・ます with anyone not a close friend; plain form (だ, 食べる) with friends, family, younger people,

@@ -1,0 +1,571 @@
+# UNIT ja A2-04 — written by AI (Claude) for Casus; expanded from src/A2-04.yml by tools/expand_unit.py. Edit the source.
+
+id: A2-04
+level: A2
+number: 4
+protagonist: m
+title:
+  en: The bank and the hanko
+  pt: O banco e o hanko
+situation:
+  en: You open a bank account to receive your salary. The clerk asks for your seal.
+  pt: Você abre uma conta no banco para receber o salário. A atendente pede o seu carimbo pessoal.
+learn_lessons: []
+culture: The 印鑑 still matters
+new_items:
+- id: kouza
+  text: 口座[こうざ]
+  meaning:
+    en: bank account
+    pt: conta bancária
+  rare: true
+- id: inkan
+  text: 印鑑[いんかん]
+  meaning:
+    en: personal seal, hanko
+    pt: carimbo pessoal, hanko
+  rare: true
+- id: tsuuchou
+  text: 通帳[つうちょう]
+  meaning:
+    en: bankbook
+    pt: caderneta do banco
+  rare: true
+- id: anshou-bangou
+  text: 暗証番号[あんしょうばんごう]
+  meaning:
+    en: PIN
+    pt: senha (do cartão)
+  rare: true
+- id: ginkou
+  text: 銀行[ぎんこう]
+  meaning:
+    en: bank
+    pt: banco
+- id: kyuuryou
+  text: 給料[きゅうりょう]
+  meaning:
+    en: salary
+    pt: salário
+- id: tsukuritai
+  text: 作[つく]りたい です
+  meaning:
+    en: I want to open (make)
+    pt: quero abrir (fazer)
+- id: katte
+  text: 買[か]って
+  meaning:
+    en: buy and… (て form)
+    pt: compro e… (forma て)
+- id: itte
+  text: 行[い]って
+  meaning:
+    en: go and… (て form)
+    pt: vou e… (forma て)
+- id: shomei
+  text: サイン
+  meaning:
+    en: signature
+    pt: assinatura
+- id: yonketa
+  text: 四桁[よんけた]
+  meaning:
+    en: four digits
+    pt: quatro dígitos
+reviews:
+- item: daijoubu
+  from: A1-03
+- item: itai
+  from: A1-03
+- item: hiza
+  from: A1-03
+- item: atama
+  from: A1-03
+- item: te
+  from: A1-03
+- item: ashi
+  from: A1-03
+- item: ga
+  from: A1-03
+- item: sukoshi
+  from: A1-03
+- item: doko
+  from: A1-03
+- item: byouin
+  from: A1-03
+- item: iie
+  from: A1-03
+- item: tetsudaimashou-ka
+  from: A1-03
+- item: chotto
+  from: A1-19
+- item: muzukashii-desu
+  from: A1-19
+- item: yasumi
+  from: A1-19
+- item: kinyoubi
+  from: A1-19
+- item: ryoujikan
+  from: A1-19
+- item: kangaete-okimasu
+  from: A1-19
+- item: isogashii
+  from: A1-19
+- item: dou-shite-mo
+  from: A1-19
+- item: gozen
+  from: A1-19
+- item: daijoubu-desu
+  from: A1-19
+- item: jishin
+  from: A1-27
+- item: yuremashita
+  from: A1-27
+- item: kowai
+  from: A1-27
+- item: ie
+  from: A1-27
+- item: mokuzou
+  from: A1-27
+- item: tsukue-no-shita
+  from: A1-27
+- item: kara-because
+  from: A1-27
+- item: abunai
+  from: A1-27
+- item: nigemasu
+  from: A1-27
+- item: kunren
+  from: A1-27
+- item: daijoubu-datta
+  from: A1-27
+- item: shuumatsu
+  from: A2-01
+- item: kinou
+  from: A2-01
+- item: ototoi
+  from: A2-01
+- item: ikimashita
+  from: A2-01
+- item: mimashita
+  from: A2-01
+- item: kaimashita
+  from: A2-01
+- item: nani-shimashita
+  from: A2-01
+- item: nanimo
+  from: A2-01
+- item: yukkuri
+  from: A2-01
+- item: kaimono
+  from: A2-01
+- item: eiga
+  from: A2-01
+- item: dou-deshita
+  from: A2-01
+- item: suidousui
+  from: A2-03
+- item: nomemasu
+  from: A2-03
+- item: ofuro
+  from: A2-03
+- item: wakashimasu
+  from: A2-03
+- item: oyu
+  from: A2-03
+- item: kedo
+  from: A2-03
+- item: anzen
+  from: A2-03
+- item: mottainai
+  from: A2-03
+- item: hairu-mae
+  from: A2-03
+- item: araimasu
+  from: A2-03
+- item: kazoku-de
+  from: A2-03
+steps:
+- type: narrator
+  text:
+    en: You open a bank account to receive your salary. The clerk asks for your seal. Listen to the conversation; you don't need to understand it yet.
+    pt: Você abre uma conta no banco para receber o salário. A atendente pede o seu carimbo pessoal. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: 口座[こうざ] を 作[つく]りたい です。 給料[きゅうりょう] の ため です。
+    meaning:
+      en: I'd like to open an account. For my salary.
+      pt: Quero abrir uma conta. Para o salário.
+  - speaker: madoguchi
+    text: 在留[ざいりゅう] カード と 印鑑[いんかん] は あります か。
+    meaning:
+      en: Do you have your residence card and a seal?
+      pt: Tem o cartão de residência e um carimbo?
+  - speaker: protagonist
+    text: 印鑑[いんかん]？ サイン は だめ です か。
+    meaning:
+      en: A seal? Isn't a signature okay?
+      pt: Carimbo? Assinatura não serve?
+  - speaker: madoguchi
+    text: この 銀行[ぎんこう] は サイン でも 大丈夫[だいじょうぶ] です。 でも 印鑑[いんかん] が 便利[べんり] です よ。
+    meaning:
+      en: This bank accepts a signature. But a seal is handy.
+      pt: Este banco aceita assinatura. Mas o carimbo é prático.
+  - speaker: protagonist
+    text: じゃあ、 店[みせ] に 行[い]って、 印鑑[いんかん] を 買[か]って、 また 来[き]ます。
+    meaning:
+      en: Then I'll go to a shop, buy a seal, and come back.
+      pt: Então vou numa loja, compro um carimbo e volto.
+  - speaker: madoguchi
+    text: はい。 暗証番号[あんしょうばんごう] は 四桁[よんけた] です。
+    meaning:
+      en: Fine. The PIN is four digits.
+      pt: Certo. A senha tem quatro dígitos.
+  - speaker: protagonist
+    text: 通帳[つうちょう] も もらえます か。
+    meaning:
+      en: Do I get a bankbook too?
+      pt: Recebo a caderneta também?
+  - speaker: madoguchi
+    text: はい、 通帳[つうちょう] と カード です。
+    meaning:
+      en: Yes, a bankbook and a card.
+      pt: Sim, caderneta e cartão.
+- type: prompt
+  ask:
+    en: 'Say: a bank.'
+    pt: 'Diga: um banco.'
+  answer:
+    speaker: protagonist
+    text: 銀行[ぎんこう]
+  items:
+  - ginkou
+- type: prompt
+  ask:
+    en: 'Say: a bank account.'
+    pt: 'Diga: uma conta bancária.'
+  answer:
+    speaker: protagonist
+    text: 口座[こうざ]
+  items:
+  - kouza
+- type: prompt
+  ask:
+    en: 'Say: I want to open an account.'
+    pt: 'Diga: quero abrir uma conta.'
+  answer:
+    speaker: protagonist
+    text: 口座[こうざ] を 作[つく]りたい です。
+  items:
+  - tsukuritai
+- type: prompt
+  ask:
+    en: 'Say: salary.'
+    pt: 'Diga: salário.'
+  answer:
+    speaker: protagonist
+    text: 給料[きゅうりょう]
+  items:
+  - kyuuryou
+- type: prompt
+  ask:
+    en: 'Say: the personal seal.'
+    pt: 'Diga: o carimbo pessoal.'
+  answer:
+    speaker: protagonist
+    text: 印鑑[いんかん]
+  items:
+  - inkan
+- type: prompt
+  ask:
+    en: 'Say: a signature.'
+    pt: 'Diga: uma assinatura.'
+  answer:
+    speaker: protagonist
+    text: サイン
+  items:
+  - shomei
+- type: narrator
+  text:
+    en: 'The «て» form also joins actions in order: «行[い]って、 買[か]って、 来[き]ます» — I''ll go, buy, and come. Only the last verb carries the tense and politeness. It''s made from the «ます» stem: «行[い]きます» → «行[い]って»,
+      «買[か]います» → «買[か]って».'
+    pt: 'A forma «て» também junta ações em sequência: «行[い]って、 買[か]って、 来[き]ます» — vou, compro e volto. Só o último verbo leva o tempo e a educação. Ela vem do radical do «ます»: «行[い]きます» → «行[い]って», «買[か]います»
+      → «買[か]って».'
+- type: prompt
+  ask:
+    en: 'Say: go and… — the て form.'
+    pt: 'Diga: vou e… — forma て.'
+  answer:
+    speaker: protagonist
+    text: 行[い]って
+  items:
+  - itte
+- type: prompt
+  ask:
+    en: 'Say: buy and… — the て form.'
+    pt: 'Diga: compro e… — forma て.'
+  answer:
+    speaker: protagonist
+    text: 買[か]って
+  items:
+  - katte
+- type: prompt
+  ask:
+    en: 'Say: I''ll go to a shop, buy a seal, and come back.'
+    pt: 'Diga: vou numa loja, compro um carimbo e volto.'
+  answer:
+    speaker: protagonist
+    text: 店[みせ] に 行[い]って、 印鑑[いんかん] を 買[か]って、 また 来[き]ます。
+  items:
+  - itte
+  - katte
+- type: prompt
+  ask:
+    en: 'Say: the PIN.'
+    pt: 'Diga: a senha do cartão.'
+  answer:
+    speaker: protagonist
+    text: 暗証番号[あんしょうばんごう]
+  items:
+  - anshou-bangou
+- type: prompt
+  ask:
+    en: 'Say: four digits.'
+    pt: 'Diga: quatro dígitos.'
+  answer:
+    speaker: protagonist
+    text: 四桁[よんけた]
+  items:
+  - yonketa
+- type: prompt
+  ask:
+    en: 'Say: the bankbook.'
+    pt: 'Diga: a caderneta.'
+  answer:
+    speaker: protagonist
+    text: 通帳[つうちょう]
+  items:
+  - tsuuchou
+- type: narrator
+  text:
+    en: The «印鑑[いんかん]» is a small seal with your name, stamped in red ink instead of signing. Many banks and offices now accept a signature, but contracts, rentals and some offices still ask for it. Shops
+      make one with your name in katakana in a few minutes.
+    pt: O «印鑑[いんかん]» é um pequeno carimbo com o seu nome, batido em tinta vermelha no lugar da assinatura. Muitos bancos e órgãos hoje aceitam assinatura, mas contratos, aluguéis e algumas repartições ainda
+      pedem. Lojas fazem um com seu nome em katakana em poucos minutos.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil vale a assinatura e, no máximo, firma reconhecida em cartório. No Japão o carimbo faz esse papel — guarde-o bem, como guardaria um cartão.
+- type: prompt
+  ask:
+    en: 'Once more: say “bank account”.'
+    pt: 'Mais uma vez: diga “conta bancária”.'
+  answer:
+    speaker: protagonist
+    text: 口座[こうざ]
+  items:
+  - kouza
+- type: prompt
+  ask:
+    en: 'Once more: say “personal seal, hanko”.'
+    pt: 'Mais uma vez: diga “carimbo pessoal, hanko”.'
+  answer:
+    speaker: protagonist
+    text: 印鑑[いんかん]
+  items:
+  - inkan
+- type: prompt
+  ask:
+    en: 'Once more: say “bankbook”.'
+    pt: 'Mais uma vez: diga “caderneta do banco”.'
+  answer:
+    speaker: protagonist
+    text: 通帳[つうちょう]
+  items:
+  - tsuuchou
+- type: prompt
+  ask:
+    en: 'Once more: say “PIN”.'
+    pt: 'Mais uma vez: diga “senha (do cartão)”.'
+  answer:
+    speaker: protagonist
+    text: 暗証番号[あんしょうばんごう]
+  items:
+  - anshou-bangou
+- type: prompt
+  ask:
+    en: 'Once more: say “bank”.'
+    pt: 'Mais uma vez: diga “banco”.'
+  answer:
+    speaker: protagonist
+    text: 銀行[ぎんこう]
+  items:
+  - ginkou
+- type: prompt
+  ask:
+    en: 'Once more: say “salary”.'
+    pt: 'Mais uma vez: diga “salário”.'
+  answer:
+    speaker: protagonist
+    text: 給料[きゅうりょう]
+  items:
+  - kyuuryou
+- type: prompt
+  ask:
+    en: 'Once more: say “I want to open (make)”.'
+    pt: 'Mais uma vez: diga “quero abrir (fazer)”.'
+  answer:
+    speaker: protagonist
+    text: 作[つく]りたい です
+  items:
+  - tsukuritai
+- type: prompt
+  ask:
+    en: 'Once more: say “signature”.'
+    pt: 'Mais uma vez: diga “assinatura”.'
+  answer:
+    speaker: protagonist
+    text: サイン
+  items:
+  - shomei
+- type: prompt
+  ask:
+    en: 'Once more: say “four digits”.'
+    pt: 'Mais uma vez: diga “quatro dígitos”.'
+  answer:
+    speaker: protagonist
+    text: 四桁[よんけた]
+  items:
+  - yonketa
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “tap water — and “can drink, is drinkable — and “bath — and “heat (the bath), boil — and “hot water — and “but, though — and “safe — and “what a waste”.'
+    pt: 'Diga: “água da torneira — e “dá para beber — e “banho de ofurô, banheira — e “esquento, fervo — e “água quente — e “mas, só que — e “seguro — e “que desperdício”.'
+  answer:
+    speaker: protagonist
+    text: 水道水[すいどうすい] … 飲[の]めます … お風呂[ふろ] … 沸[わ]かします … お湯[ゆ] … 〜けど … 安全[あんぜん] … もったいない
+  items:
+  - suidousui
+  - nomemasu
+  - ofuro
+  - wakashimasu
+  - oyu
+  - kedo
+  - anzen
+  - mottainai
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “before getting in — and “wash — and “as a family — and “weekend — and “yesterday — and “the day before yesterday — and “went — and “saw, watched”.'
+    pt: 'Diga: “antes de entrar — e “lavo — e “em família — e “fim de semana — e “ontem — e “anteontem — e “fui — e “vi, assisti”.'
+  answer:
+    speaker: protagonist
+    text: 入[はい]る 前[まえ] に … 洗[あら]います … 家族[かぞく] で … 週末[しゅうまつ] … 昨日[きのう] … 一昨日[おととい] … 行[い]きました … 見[み]ました
+  items:
+  - hairu-mae
+  - araimasu
+  - kazoku-de
+  - shuumatsu
+  - kinou
+  - ototoi
+  - ikimashita
+  - mimashita
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “bought — and “what did you do? — and “I didn''t do anything — and “I took it easy — and “shopping — and “film — and “how was it? — and “earthquake”.'
+    pt: 'Diga: “comprei — e “o que você fez? — e “não fiz nada — e “descansei, fiquei de boa — e “compras — e “filme — e “como foi? — e “terremoto”.'
+  answer:
+    speaker: protagonist
+    text: 買[か]いました … 何[なに] を しました か … 何[なに] も しません でした … ゆっくり しました … 買[か]い物[もの] … 映画[えいが] … どう でした か … 地震[じしん]
+  items:
+  - kaimashita
+  - nani-shimashita
+  - nanimo
+  - yukkuri
+  - kaimono
+  - eiga
+  - dou-deshita
+  - jishin
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “(it) shook — and “scary, I''m scared — and “house, home — and “made of wood — and “under the desk/table — and “because, so — and “dangerous — and “escape, run away”.'
+    pt: 'Diga: “tremeu — e “dá medo, estou com medo — e “casa — e “de madeira — e “debaixo da mesa — e “porque, então — e “perigoso — e “fujo, saio correndo”.'
+  answer:
+    speaker: protagonist
+    text: 揺[ゆ]れました … 怖[こわ]い … 家[いえ] … 木造[もくぞう] … 机[つくえ] の 下[した] … 〜から … 危[あぶ]ない … 逃[に]げます
+  items:
+  - yuremashita
+  - kowai
+  - ie
+  - mokuzou
+  - tsukue-no-shita
+  - kara-because
+  - abunai
+  - nigemasu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “drill, training — and “were you okay? — and “a little… (a soft no) — and “that''s difficult (often: no) — and “day off, holiday — and “Friday — and “consulate — and “I''ll think about it”.'
+    pt: 'Diga: “simulado, treinamento — e “você estava bem? — e “um pouco… (um não suave) — e “é difícil (muitas vezes: não) — e “folga, feriado — e “sexta-feira — e “consulado — e “vou pensar”.'
+  answer:
+    speaker: protagonist
+    text: 訓練[くんれん] … 大丈夫[だいじょうぶ] でした か … ちょっと… … 難[むずか]しい です ね … 休[やす]み … 金曜日[きんようび] … 領事館[りょうじかん] … 考[かんが]えて おきます
+  items:
+  - kunren
+  - daijoubu-datta
+  - chotto
+  - muzukashii-desu
+  - yasumi
+  - kinyoubi
+  - ryoujikan
+  - kangaete-okimasu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “busy — and “no matter what, really need to — and “morning, a.m. — and “that''s fine — and “are you all right? — and “painful, it hurts — and “knee — and “head”.'
+    pt: 'Diga: “ocupado — e “de qualquer jeito, preciso mesmo — e “manhã, de manhã — e “tudo bem — e “a senhora está bem? — e “dói, dolorido — e “joelho — e “cabeça”.'
+  answer:
+    speaker: protagonist
+    text: 忙[いそが]しい … どうしても … 午前[ごぜん] … 大丈夫[だいじょうぶ] です … 大丈夫[だいじょうぶ] です か … 痛[いた]い … 膝[ひざ] … 頭[あたま]
+  items:
+  - isogashii
+  - dou-shite-mo
+  - gozen
+  - daijoubu-desu
+  - daijoubu
+  - itai
+  - hiza
+  - atama
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “hand — and “foot, leg — and “(marks who or what does something) — and “a little — and “where — and “hospital, clinic — and “no — and “shall I help?”.'
+    pt: 'Diga: “mão — e “pé, perna — e “(marca quem ou o que faz algo) — e “um pouco — e “onde — e “hospital, clínica — e “não — e “posso ajudar?”.'
+  answer:
+    speaker: protagonist
+    text: 手[て] … 足[あし] … が … 少[すこ]し … どこ … 病院[びょういん] … いいえ … 手伝[てつだ]いましょう か
+  items:
+  - te
+  - ashi
+  - ga
+  - sukoshi
+  - doko
+  - byouin
+  - iie
+  - tetsudaimashou-ka
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

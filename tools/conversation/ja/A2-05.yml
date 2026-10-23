@@ -1,0 +1,576 @@
+# UNIT ja A2-05 — written by AI (Claude) for Casus; expanded from src/A2-05.yml by tools/expand_unit.py. Edit the source.
+
+id: A2-05
+level: A2
+number: 5
+protagonist: f
+title:
+  en: At the clinic
+  pt: Na clínica
+situation:
+  en: You have a cold and a fever. The clinic near the station, then the pharmacy next door.
+  pt: Você está resfriada e com febre. A clínica perto da estação, depois a farmácia ao lado.
+learn_lessons: []
+culture: Show the insurance card
+new_items:
+- id: kaze
+  text: 風邪[かぜ]
+  meaning:
+    en: a cold
+    pt: resfriado
+- id: netsu
+  text: 熱[ねつ]
+  meaning:
+    en: fever
+    pt: febre
+- id: nodo
+  text: 喉[のど]
+  meaning:
+    en: throat
+    pt: garganta
+- id: kusuri
+  text: 薬[くすり]
+  meaning:
+    en: medicine
+    pt: remédio
+- id: yakkyoku
+  text: 薬局[やっきょく]
+  meaning:
+    en: pharmacy
+    pt: farmácia
+- id: hokenshou
+  text: 保険証[ほけんしょう]
+  meaning:
+    en: health insurance card
+    pt: cartão do seguro-saúde
+  rare: true
+- id: byouki
+  text: 病気[びょうき]
+  meaning:
+    en: ill, illness
+    pt: doente, doença
+- id: yasunde-mo-ii
+  text: 休[やす]んで も いい です か
+  meaning:
+    en: may I take time off?
+    pt: posso tirar folga?
+- id: kaette-mo-ii
+  text: 帰[かえ]って も いい です か
+  meaning:
+    en: may I go home?
+    pt: posso ir para casa?
+- id: nonde-kudasai
+  text: 飲[の]んで ください
+  meaning:
+    en: please take (medicine)
+    pt: tome, por favor
+- id: mikka
+  text: 三日[みっか]
+  meaning:
+    en: three days
+    pt: três dias
+reviews:
+- item: irasshaimase
+  from: A1-04
+- item: kore-kudasai
+  from: A1-04
+- item: kudasai
+  from: A1-04
+- item: atatamemasu-ka
+  from: A1-04
+- item: onegaishimasu
+  from: A1-04
+- item: fukuro
+  from: A1-04
+- item: irimasen
+  from: A1-04
+- item: ikura
+  from: A1-04
+- item: en
+  from: A1-04
+- item: hyaku
+  from: A1-04
+- item: kaado
+  from: A1-04
+- item: arigatou-gozaimashita
+  from: A1-04
+- item: raamen
+  from: A1-20
+- item: tabetai
+  from: A1-20
+- item: nomitai
+  from: A1-20
+- item: tai
+  from: A1-20
+- item: karai
+  from: A1-20
+- item: atsui-food
+  from: A1-20
+- item: kenbaiki
+  from: A1-20
+- item: oomori
+  from: A1-20
+- item: susuru
+  from: A1-20
+- item: onaka-suita
+  from: A1-20
+- item: nani-ga-ii
+  from: A1-20
+- item: kazoku
+  from: A1-28
+- item: sobo
+  from: A1-28
+- item: sofu
+  from: A1-28
+- item: haha
+  from: A1-28
+- item: chichi
+  from: A1-28
+- item: nikkei
+  from: A1-28
+- item: shashin
+  from: A1-28
+- item: umaremashita
+  from: A1-28
+- item: kodomo
+  from: A1-28
+- item: sansei
+  from: A1-28
+- item: okaasan
+  from: A1-28
+- item: zairyuu-kaado
+  from: A2-02
+- item: juuminhyou
+  from: A2-02
+- item: shiyakusho
+  from: A2-02
+- item: bangoufuda
+  from: A2-02
+- item: juusho
+  from: A2-02
+- item: hikkoshi
+  from: A2-02
+- item: kaite-kudasai
+  from: A2-02
+- item: misete-kudasai
+  from: A2-02
+- item: matte-kudasai
+  from: A2-02
+- item: koko-ni
+  from: A2-02
+- item: porutogarugo-de
+  from: A2-02
+- item: kouza
+  from: A2-04
+- item: inkan
+  from: A2-04
+- item: tsuuchou
+  from: A2-04
+- item: anshou-bangou
+  from: A2-04
+- item: ginkou
+  from: A2-04
+- item: kyuuryou
+  from: A2-04
+- item: tsukuritai
+  from: A2-04
+- item: katte
+  from: A2-04
+- item: itte
+  from: A2-04
+- item: shomei
+  from: A2-04
+- item: yonketa
+  from: A2-04
+steps:
+- type: narrator
+  text:
+    en: You have a cold and a fever. The clinic near the station, then the pharmacy next door. Listen to the conversation; you don't need to understand it yet.
+    pt: Você está resfriada e com febre. A clínica perto da estação, depois a farmácia ao lado. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: すみません、 風邪[かぜ] を ひきました。 熱[ねつ] が あります。
+    meaning:
+      en: Excuse me, I've caught a cold. I have a fever.
+      pt: Com licença, peguei um resfriado. Estou com febre.
+  - speaker: isha
+    text: 保険証[ほけんしょう] を 見[み]せて ください。 喉[のど] は 痛[いた]い です か。
+    meaning:
+      en: Please show your insurance card. Does your throat hurt?
+      pt: Mostre o cartão do seguro, por favor. A garganta dói?
+  - speaker: protagonist
+    text: はい、 少[すこ]し 痛[いた]い です。
+    meaning:
+      en: Yes, a little.
+      pt: Sim, um pouco.
+  - speaker: isha
+    text: この 薬[くすり] を 一日[いちにち] 三回[さんかい]、 食後[しょくご] に 飲[の]んで ください。
+    meaning:
+      en: Take this medicine three times a day, after meals.
+      pt: Tome este remédio três vezes ao dia, depois das refeições.
+  - speaker: protagonist
+    text: 薬[くすり] は ここ で もらえます か。
+    meaning:
+      en: Can I get the medicine here?
+      pt: Pego o remédio aqui?
+  - speaker: isha
+    text: いいえ、 隣[となり] の 薬局[やっきょく] です。
+    meaning:
+      en: No, at the pharmacy next door.
+      pt: Não, na farmácia ao lado.
+  - speaker: protagonist
+    text: 仕事[しごと] は 休[やす]んで も いい です か。
+    meaning:
+      en: May I take time off work?
+      pt: Posso faltar ao trabalho?
+  - speaker: isha
+    text: はい、 三日[みっか] ぐらい 休[やす]んで ください。
+    meaning:
+      en: Yes, rest about three days.
+      pt: Sim, descanse uns três dias.
+- type: prompt
+  ask:
+    en: 'Say: a cold.'
+    pt: 'Diga: um resfriado.'
+  answer:
+    speaker: protagonist
+    text: 風邪[かぜ]
+  items:
+  - kaze
+- type: prompt
+  ask:
+    en: 'Say: I have a fever.'
+    pt: 'Diga: estou com febre.'
+  answer:
+    speaker: protagonist
+    text: 熱[ねつ] が あります。
+  items:
+  - netsu
+- type: prompt
+  ask:
+    en: 'Say: my throat hurts.'
+    pt: 'Diga: a garganta dói.'
+  answer:
+    speaker: protagonist
+    text: 喉[のど] が 痛[いた]い です。
+  items:
+  - nodo
+- type: prompt
+  ask:
+    en: 'Say: I''m ill.'
+    pt: 'Diga: estou doente.'
+  answer:
+    speaker: protagonist
+    text: 病気[びょうき] です。
+  items:
+  - byouki
+- type: prompt
+  ask:
+    en: 'Say: the insurance card.'
+    pt: 'Diga: o cartão do seguro.'
+  answer:
+    speaker: protagonist
+    text: 保険証[ほけんしょう]
+  items:
+  - hokenshou
+- type: prompt
+  ask:
+    en: 'Say: medicine.'
+    pt: 'Diga: remédio.'
+  answer:
+    speaker: protagonist
+    text: 薬[くすり]
+  items:
+  - kusuri
+- type: prompt
+  ask:
+    en: 'Say: the pharmacy.'
+    pt: 'Diga: a farmácia.'
+  answer:
+    speaker: protagonist
+    text: 薬局[やっきょく]
+  items:
+  - yakkyoku
+- type: prompt
+  ask:
+    en: 'The doctor says to take it. Say what he said: please take it.'
+    pt: 'O médico manda tomar. Repita: tome, por favor.'
+  answer:
+    speaker: protagonist
+    text: 飲[の]んで ください。
+  items:
+  - nonde-kudasai
+- type: narrator
+  text:
+    en: 'Asking permission again: «て» form plus «も いい です か». «休[やす]みます» → «休[やす]んで も いい です か», may I take time off? «帰[かえ]ります» → «帰[かえ]って も いい です か», may I go home?'
+    pt: 'Pedindo licença de novo: forma «て» mais «も いい です か». «休[やす]みます» → «休[やす]んで も いい です か», posso tirar folga? «帰[かえ]ります» → «帰[かえ]って も いい です か», posso ir para casa?'
+- type: prompt
+  ask:
+    en: Ask if you may take time off.
+    pt: Pergunte se pode tirar folga.
+  answer:
+    speaker: protagonist
+    text: 休[やす]んで も いい です か。
+  items:
+  - yasunde-mo-ii
+- type: prompt
+  ask:
+    en: Ask your chief if you may go home.
+    pt: Pergunte à chefe se pode ir para casa.
+  answer:
+    speaker: protagonist
+    text: 帰[かえ]って も いい です か。
+  items:
+  - kaette-mo-ii
+- type: prompt
+  ask:
+    en: 'Say: three days.'
+    pt: 'Diga: três dias.'
+  answer:
+    speaker: protagonist
+    text: 三日[みっか]
+  items:
+  - mikka
+- type: narrator
+  text:
+    en: 'Show the «保険証[ほけんしょう]» — or the My Number card that is replacing it — at every visit: the insurance pays 70 %, you pay 30 %. The clinic writes the prescription; the pharmacy next door, «薬局[やっきょく]»,
+      hands out the medicine.'
+    pt: 'Mostre o «保険証[ほけんしょう]» — ou o cartão My Number, que está substituindo — em toda consulta: o seguro paga 70 %, você paga 30 %. A clínica faz a receita; a farmácia ao lado, «薬局[やっきょく]», entrega o
+      remédio.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil, com o SUS, a consulta é de graça, e na farmácia muita coisa se compra sem receita. No Japão você paga uma parte em toda consulta, e o remédio de receita vem da farmácia ao lado, já separado
+      em saquinhos por horário.
+- type: prompt
+  ask:
+    en: 'Once more: say “a cold”.'
+    pt: 'Mais uma vez: diga “resfriado”.'
+  answer:
+    speaker: protagonist
+    text: 風邪[かぜ]
+  items:
+  - kaze
+- type: prompt
+  ask:
+    en: 'Once more: say “fever”.'
+    pt: 'Mais uma vez: diga “febre”.'
+  answer:
+    speaker: protagonist
+    text: 熱[ねつ]
+  items:
+  - netsu
+- type: prompt
+  ask:
+    en: 'Once more: say “throat”.'
+    pt: 'Mais uma vez: diga “garganta”.'
+  answer:
+    speaker: protagonist
+    text: 喉[のど]
+  items:
+  - nodo
+- type: prompt
+  ask:
+    en: 'Once more: say “medicine”.'
+    pt: 'Mais uma vez: diga “remédio”.'
+  answer:
+    speaker: protagonist
+    text: 薬[くすり]
+  items:
+  - kusuri
+- type: prompt
+  ask:
+    en: 'Once more: say “pharmacy”.'
+    pt: 'Mais uma vez: diga “farmácia”.'
+  answer:
+    speaker: protagonist
+    text: 薬局[やっきょく]
+  items:
+  - yakkyoku
+- type: prompt
+  ask:
+    en: 'Once more: say “health insurance card”.'
+    pt: 'Mais uma vez: diga “cartão do seguro-saúde”.'
+  answer:
+    speaker: protagonist
+    text: 保険証[ほけんしょう]
+  items:
+  - hokenshou
+- type: prompt
+  ask:
+    en: 'Once more: say “ill, illness”.'
+    pt: 'Mais uma vez: diga “doente, doença”.'
+  answer:
+    speaker: protagonist
+    text: 病気[びょうき]
+  items:
+  - byouki
+- type: prompt
+  ask:
+    en: 'Once more: say “may I take time off?”.'
+    pt: 'Mais uma vez: diga “posso tirar folga?”.'
+  answer:
+    speaker: protagonist
+    text: 休[やす]んで も いい です か
+  items:
+  - yasunde-mo-ii
+- type: prompt
+  ask:
+    en: 'Once more: say “may I go home?”.'
+    pt: 'Mais uma vez: diga “posso ir para casa?”.'
+  answer:
+    speaker: protagonist
+    text: 帰[かえ]って も いい です か
+  items:
+  - kaette-mo-ii
+- type: prompt
+  ask:
+    en: 'Once more: say “please take (medicine)”.'
+    pt: 'Mais uma vez: diga “tome, por favor”.'
+  answer:
+    speaker: protagonist
+    text: 飲[の]んで ください
+  items:
+  - nonde-kudasai
+- type: prompt
+  ask:
+    en: 'Once more: say “three days”.'
+    pt: 'Mais uma vez: diga “três dias”.'
+  answer:
+    speaker: protagonist
+    text: 三日[みっか]
+  items:
+  - mikka
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “bank account — and “personal seal, hanko — and “bankbook — and “PIN — and “bank — and “salary — and “I want to open (make) — and “buy and… (て form)”.'
+    pt: 'Diga: “conta bancária — e “carimbo pessoal, hanko — e “caderneta do banco — e “senha (do cartão) — e “banco — e “salário — e “quero abrir (fazer) — e “compro e… (forma て)”.'
+  answer:
+    speaker: protagonist
+    text: 口座[こうざ] … 印鑑[いんかん] … 通帳[つうちょう] … 暗証番号[あんしょうばんごう] … 銀行[ぎんこう] … 給料[きゅうりょう] … 作[つく]りたい です … 買[か]って
+  items:
+  - kouza
+  - inkan
+  - tsuuchou
+  - anshou-bangou
+  - ginkou
+  - kyuuryou
+  - tsukuritai
+  - katte
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “go and… (て form) — and “signature — and “four digits — and “residence card — and “certificate of residence — and “city hall — and “numbered ticket — and “address”.'
+    pt: 'Diga: “vou e… (forma て) — e “assinatura — e “quatro dígitos — e “cartão de residência — e “atestado de residência — e “prefeitura — e “senha numerada — e “endereço”.'
+  answer:
+    speaker: protagonist
+    text: 行[い]って … サイン … 四桁[よんけた] … 在留[ざいりゅう] カード … 住民票[じゅうみんひょう] … 市役所[しやくしょ] … 番号札[ばんごうふだ] … 住所[じゅうしょ]
+  items:
+  - itte
+  - shomei
+  - yonketa
+  - zairyuu-kaado
+  - juuminhyou
+  - shiyakusho
+  - bangoufuda
+  - juusho
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “moving house — and “please write — and “please show — and “please wait — and “here (in this spot) — and “in Portuguese — and “family — and “my grandmother”.'
+    pt: 'Diga: “mudança — e “escreva, por favor — e “mostre, por favor — e “espere, por favor — e “aqui (neste lugar) — e “em português — e “família — e “minha avó”.'
+  answer:
+    speaker: protagonist
+    text: 引[ひ]っ越[こ]し … 書[か]いて ください … 見[み]せて ください … 待[ま]って ください … ここ に … ポルトガル語[ご] で … 家族[かぞく] … 祖母[そぼ]
+  items:
+  - hikkoshi
+  - kaite-kudasai
+  - misete-kudasai
+  - matte-kudasai
+  - koko-ni
+  - porutogarugo-de
+  - kazoku
+  - sobo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “my grandfather — and “my mother — and “my father — and “of Japanese descent (nikkei) — and “photo — and “was born — and “child — and “third generation”.'
+    pt: 'Diga: “meu avô — e “minha mãe — e “meu pai — e “descendente de japoneses (nikkei) — e “foto — e “nasci, nasceu — e “criança — e “terceira geração”.'
+  answer:
+    speaker: protagonist
+    text: 祖父[そふ] … 母[はは] … 父[ちち] … 日系[にっけい] … 写真[しゃしん] … 生[う]まれました … 子供[こども] … 三世[さんせい]
+  items:
+  - sofu
+  - haha
+  - chichi
+  - nikkei
+  - shashin
+  - umaremashita
+  - kodomo
+  - sansei
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “(someone''s) mother — and “ramen — and “I want to eat — and “I want to drink — and “want to (do) — and “spicy hot — and “hot (to the touch, food) — and “ticket machine”.'
+    pt: 'Diga: “a mãe (de alguém) — e “lámen — e “quero comer — e “quero beber — e “quero (fazer) — e “apimentado — e “quente (ao toque, comida) — e “máquina de tíquetes”.'
+  answer:
+    speaker: protagonist
+    text: お母[かあ]さん … ラーメン … 食[た]べたい です … 飲[の]みたい です … 〜たい です … 辛[から]い … 熱[あつ]い … 券売機[けんばいき]
+  items:
+  - okaasan
+  - raamen
+  - tabetai
+  - nomitai
+  - tai
+  - karai
+  - atsui-food
+  - kenbaiki
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “large portion — and “slurp — and “I''m hungry — and “what''s good? what would you like? — and “welcome (shop staff) — and “this, please — and “please (give me) — and “shall I heat it?”.'
+    pt: 'Diga: “porção grande — e “sorver fazendo barulho — e “estou com fome — e “o que é bom? o que você quer? — e “bem-vindo (dito pelos funcionários) — e “isto, por favor — e “por favor (me dê) — e
+      “quer que esquente?”.'
+  answer:
+    speaker: protagonist
+    text: 大盛[おおも]り … すすります … お腹[なか] が 空[す]きました … 何[なに] が いい です か … いらっしゃいませ … これ ください … ください … 温[あたた]めます か
+  items:
+  - oomori
+  - susuru
+  - onaka-suita
+  - nani-ga-ii
+  - irasshaimase
+  - kore-kudasai
+  - kudasai
+  - atatamemasu-ka
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “please (yes, do) — and “bag — and “I don''t need it — and “how much is it? — and “yen — and “hundred — and “card — and “thank you (for what was done)”.'
+    pt: 'Diga: “por favor (sim, faça) — e “sacola — e “não preciso — e “quanto é? — e “iene — e “cem — e “cartão — e “obrigado (pelo que foi feito)”.'
+  answer:
+    speaker: protagonist
+    text: お願[ねが]いします … 袋[ふくろ] … いりません … いくら です か … 円[えん] … 百[ひゃく] … カード … ありがとう ございました
+  items:
+  - onegaishimasu
+  - fukuro
+  - irimasen
+  - ikura
+  - en
+  - hyaku
+  - kaado
+  - arigatou-gozaimashita
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

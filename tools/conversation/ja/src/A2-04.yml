@@ -1,0 +1,43 @@
+id: A2-04
+protagonist: m
+title: [The bank and the hanko, O banco e o hanko]
+situation: ["You open a bank account to receive your salary. The clerk asks for your seal.", "Você abre uma conta no banco para receber o salário. A atendente pede o seu carimbo pessoal."]
+learn: []
+culture: The 印鑑 still matters
+items:
+  - [kouza, "口座[こうざ]", "bank account", "conta bancária", {rare: true}]
+  - [inkan, "印鑑[いんかん]", "personal seal, hanko", "carimbo pessoal, hanko", {rare: true}]
+  - [tsuuchou, "通帳[つうちょう]", "bankbook", "caderneta do banco", {rare: true}]
+  - [anshou-bangou, "暗証番号[あんしょうばんごう]", "PIN", "senha (do cartão)", {rare: true}]
+  - [ginkou, "銀行[ぎんこう]", "bank", "banco"]
+  - [kyuuryou, "給料[きゅうりょう]", "salary", "salário"]
+  - [tsukuritai, "作[つく]りたい です", "I want to open (make)", "quero abrir (fazer)"]
+  - [katte, "買[か]って", "buy and… (て form)", "compro e… (forma て)"]
+  - [itte, "行[い]って", "go and… (て form)", "vou e… (forma て)"]
+  - [shomei, "サイン", "signature", "assinatura"]
+  - [yonketa, "四桁[よんけた]", "four digits", "quatro dígitos"]
+dialogue:
+  - [protagonist, "口座[こうざ] を 作[つく]りたい です。 給料[きゅうりょう] の ため です。", "I'd like to open an account. For my salary.", "Quero abrir uma conta. Para o salário."]
+  - [madoguchi, "在留[ざいりゅう] カード と 印鑑[いんかん] は あります か。", "Do you have your residence card and a seal?", "Tem o cartão de residência e um carimbo?"]
+  - [protagonist, "印鑑[いんかん]？ サイン は だめ です か。", "A seal? Isn't a signature okay?", "Carimbo? Assinatura não serve?"]
+  - [madoguchi, "この 銀行[ぎんこう] は サイン でも 大丈夫[だいじょうぶ] です。 でも 印鑑[いんかん] が 便利[べんり] です よ。", "This bank accepts a signature. But a seal is handy.", "Este banco aceita assinatura. Mas o carimbo é prático."]
+  - [protagonist, "じゃあ、 店[みせ] に 行[い]って、 印鑑[いんかん] を 買[か]って、 また 来[き]ます。", "Then I'll go to a shop, buy a seal, and come back.", "Então vou numa loja, compro um carimbo e volto."]
+  - [madoguchi, "はい。 暗証番号[あんしょうばんごう] は 四桁[よんけた] です。", "Fine. The PIN is four digits.", "Certo. A senha tem quatro dígitos."]
+  - [protagonist, "通帳[つうちょう] も もらえます か。", "Do I get a bankbook too?", "Recebo a caderneta também?"]
+  - [madoguchi, "はい、 通帳[つうちょう] と カード です。", "Yes, a bankbook and a card.", "Sim, caderneta e cartão."]
+teach:
+  - ask: ["Say: a bank.", "Diga: um banco.", "銀行[ぎんこう]", ginkou]
+  - ask: ["Say: a bank account.", "Diga: uma conta bancária.", "口座[こうざ]", kouza]
+  - ask: ["Say: I want to open an account.", "Diga: quero abrir uma conta.", "口座[こうざ] を 作[つく]りたい です。", tsukuritai]
+  - ask: ["Say: salary.", "Diga: salário.", "給料[きゅうりょう]", kyuuryou]
+  - ask: ["Say: the personal seal.", "Diga: o carimbo pessoal.", "印鑑[いんかん]", inkan]
+  - ask: ["Say: a signature.", "Diga: uma assinatura.", "サイン", shomei]
+  - note: ["The «て» form also joins actions in order: «行[い]って、 買[か]って、 来[き]ます» — I'll go, buy, and come. Only the last verb carries the tense and politeness. It's made from the «ます» stem: «行[い]きます» → «行[い]って», «買[か]います» → «買[か]って».", "A forma «て» também junta ações em sequência: «行[い]って、 買[か]って、 来[き]ます» — vou, compro e volto. Só o último verbo leva o tempo e a educação. Ela vem do radical do «ます»: «行[い]きます» → «行[い]って», «買[か]います» → «買[か]って»."]
+  - ask: ["Say: go and… — the て form.", "Diga: vou e… — forma て.", "行[い]って", itte]
+  - ask: ["Say: buy and… — the て form.", "Diga: compro e… — forma て.", "買[か]って", katte]
+  - ask: ["Say: I'll go to a shop, buy a seal, and come back.", "Diga: vou numa loja, compro um carimbo e volto.", "店[みせ] に 行[い]って、 印鑑[いんかん] を 買[か]って、 また 来[き]ます。", itte, katte]
+  - ask: ["Say: the PIN.", "Diga: a senha do cartão.", "暗証番号[あんしょうばんごう]", anshou-bangou]
+  - ask: ["Say: four digits.", "Diga: quatro dígitos.", "四桁[よんけた]", yonketa]
+  - ask: ["Say: the bankbook.", "Diga: a caderneta.", "通帳[つうちょう]", tsuuchou]
+  - note: ["The «印鑑[いんかん]» is a small seal with your name, stamped in red ink instead of signing. Many banks and offices now accept a signature, but contracts, rentals and some offices still ask for it. Shops make one with your name in katakana in a few minutes.", "O «印鑑[いんかん]» é um pequeno carimbo com o seu nome, batido em tinta vermelha no lugar da assinatura. Muitos bancos e órgãos hoje aceitam assinatura, mas contratos, aluguéis e algumas repartições ainda pedem. Lojas fazem um com seu nome em katakana em poucos minutos."]
+  - pt_only: "No Brasil vale a assinatura e, no máximo, firma reconhecida em cartório. No Japão o carimbo faz esse papel — guarde-o bem, como guardaria um cartão."

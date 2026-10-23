@@ -1,0 +1,41 @@
+id: A2-02
+protagonist: m
+title: [The residence card, O cartão de residência]
+situation: ["You moved flats inside Hamamatsu and must report the new address at city hall. A machine gives you a numbered ticket.", "Você mudou de apartamento dentro de Hamamatsu e precisa informar o novo endereço na prefeitura. Uma máquina dá uma senha numerada."]
+learn: []
+culture: Numbered tickets, forms in Portuguese
+items:
+  - [zairyuu-kaado, "在留[ざいりゅう] カード", "residence card", "cartão de residência", {rare: true}]
+  - [juuminhyou, "住民票[じゅうみんひょう]", "certificate of residence", "atestado de residência", {rare: true}]
+  - [shiyakusho, "市役所[しやくしょ]", "city hall", "prefeitura"]
+  - [bangoufuda, "番号札[ばんごうふだ]", "numbered ticket", "senha numerada", {rare: true}]
+  - [juusho, "住所[じゅうしょ]", "address", "endereço"]
+  - [hikkoshi, "引[ひ]っ越[こ]し", "moving house", "mudança"]
+  - [kaite-kudasai, "書[か]いて ください", "please write", "escreva, por favor"]
+  - [misete-kudasai, "見[み]せて ください", "please show", "mostre, por favor"]
+  - [matte-kudasai, "待[ま]って ください", "please wait", "espere, por favor"]
+  - [koko-ni, "ここ に", "here (in this spot)", "aqui (neste lugar)"]
+  - [porutogarugo-de, "ポルトガル語[ご] で", "in Portuguese", "em português"]
+dialogue:
+  - [protagonist, "すみません、 引[ひ]っ越[こ]し を しました。", "Excuse me, I've moved.", "Com licença, eu me mudei."]
+  - [madoguchi, "番号札[ばんごうふだ] を 取[と]って、 待[ま]って ください。", "Please take a numbered ticket and wait.", "Pegue uma senha e espere, por favor."]
+  - [madoguchi, "三十五番[さんじゅうごばん] の 方[かた]。 在留[ざいりゅう] カード を 見[み]せて ください。", "Number thirty-five. Please show your residence card.", "Número trinta e cinco. Mostre o cartão de residência, por favor."]
+  - [protagonist, "はい、 どうぞ。", "Here you are.", "Aqui está."]
+  - [madoguchi, "新[あたら]しい 住所[じゅうしょ] を ここ に 書[か]いて ください。", "Please write the new address here.", "Escreva o novo endereço aqui, por favor."]
+  - [protagonist, "ポルトガル語[ご] の 紙[かみ] は ありますか。", "Do you have the form in Portuguese?", "Tem o formulário em português?"]
+  - [madoguchi, "あります よ。 住民票[じゅうみんひょう] も 要[い]ります か。", "We do. Do you need a certificate of residence too?", "Tem, sim. Precisa de um atestado de residência também?"]
+  - [protagonist, "はい、 一枚[いちまい] お願[ねが]いします。", "Yes, one copy please.", "Sim, uma via, por favor."]
+teach:
+  - ask: ["Say: city hall.", "Diga: prefeitura.", "市役所[しやくしょ]", shiyakusho]
+  - ask: ["Say: moving house.", "Diga: mudança.", "引[ひ]っ越[こ]し", hikkoshi]
+  - ask: ["Say: a numbered ticket.", "Diga: uma senha numerada.", "番号札[ばんごうふだ]", bangoufuda]
+  - note: ["Requests with «ください» use the «て» form of the verb: «書[か]きます» → «書[か]いて», «見[み]せます» → «見[み]せて», «待[ま]ちます» → «待[ま]って». You met «洗[あら]って ください» in Mrs Suzuki's kitchen.", "Os pedidos com «ください» usam a forma «て» do verbo: «書[か]きます» → «書[か]いて», «見[み]せます» → «見[み]せて», «待[ま]ちます» → «待[ま]って». Você viu «洗[あら]って ください» na cozinha da senhora Suzuki."]
+  - ask: ["Ask him to wait.", "Peça que ele espere.", "待[ま]って ください。", matte-kudasai]
+  - ask: ["Say: the residence card.", "Diga: o cartão de residência.", "在留[ざいりゅう] カード", zairyuu-kaado]
+  - ask: ["Ask her to show it — please show.", "Peça que ela mostre — mostre, por favor.", "見[み]せて ください。", misete-kudasai]
+  - ask: ["Say: the address.", "Diga: o endereço.", "住所[じゅうしょ]", juusho]
+  - ask: ["Say: please write it here.", "Diga: escreva aqui, por favor.", "ここ に 書[か]いて ください。", koko-ni, kaite-kudasai]
+  - ask: ["Say: in Portuguese.", "Diga: em português.", "ポルトガル語[ご] で", porutogarugo-de]
+  - ask: ["Say: certificate of residence.", "Diga: atestado de residência.", "住民票[じゅうみんひょう]", juuminhyou]
+  - note: ["Moving in or within the city, you report the new address at city hall within 14 days and bring your «在留[ざいりゅう] カード». A machine hands out numbered tickets and a screen calls the numbers. In Hamamatsu many forms come in Portuguese, and some days there are interpreters.", "Ao se mudar para a cidade ou dentro dela, você informa o novo endereço na prefeitura em até 14 dias e leva o «在留[ざいりゅう] カード». Uma máquina distribui senhas e um painel chama os números. Em Hamamatsu muitos formulários existem em português, e em alguns dias há intérpretes."]
+  - pt_only: "Senha e painel lembram o Poupatempo. A diferença é o prazo: 14 dias para avisar a mudança, e o cartão de residência precisa estar sempre com você."

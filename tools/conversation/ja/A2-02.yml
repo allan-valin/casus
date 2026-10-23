@@ -1,0 +1,575 @@
+# UNIT ja A2-02 — written by AI (Claude) for Casus; expanded from src/A2-02.yml by tools/expand_unit.py. Edit the source.
+
+id: A2-02
+level: A2
+number: 2
+protagonist: m
+title:
+  en: The residence card
+  pt: O cartão de residência
+situation:
+  en: You moved flats inside Hamamatsu and must report the new address at city hall. A machine gives you a numbered ticket.
+  pt: Você mudou de apartamento dentro de Hamamatsu e precisa informar o novo endereço na prefeitura. Uma máquina dá uma senha numerada.
+learn_lessons: []
+culture: Numbered tickets, forms in Portuguese
+new_items:
+- id: zairyuu-kaado
+  text: 在留[ざいりゅう] カード
+  meaning:
+    en: residence card
+    pt: cartão de residência
+  rare: true
+- id: juuminhyou
+  text: 住民票[じゅうみんひょう]
+  meaning:
+    en: certificate of residence
+    pt: atestado de residência
+  rare: true
+- id: shiyakusho
+  text: 市役所[しやくしょ]
+  meaning:
+    en: city hall
+    pt: prefeitura
+- id: bangoufuda
+  text: 番号札[ばんごうふだ]
+  meaning:
+    en: numbered ticket
+    pt: senha numerada
+  rare: true
+- id: juusho
+  text: 住所[じゅうしょ]
+  meaning:
+    en: address
+    pt: endereço
+- id: hikkoshi
+  text: 引[ひ]っ越[こ]し
+  meaning:
+    en: moving house
+    pt: mudança
+- id: kaite-kudasai
+  text: 書[か]いて ください
+  meaning:
+    en: please write
+    pt: escreva, por favor
+- id: misete-kudasai
+  text: 見[み]せて ください
+  meaning:
+    en: please show
+    pt: mostre, por favor
+- id: matte-kudasai
+  text: 待[ま]って ください
+  meaning:
+    en: please wait
+    pt: espere, por favor
+- id: koko-ni
+  text: ここ に
+  meaning:
+    en: here (in this spot)
+    pt: aqui (neste lugar)
+- id: porutogarugo-de
+  text: ポルトガル語[ご] で
+  meaning:
+    en: in Portuguese
+    pt: em português
+reviews:
+- item: konnichiwa
+  from: A1-01
+- item: hajimemashite
+  from: A1-01
+- item: desu
+  from: A1-01
+- item: yoroshiku
+  from: A1-01
+- item: burajiru
+  from: A1-01
+- item: kara
+  from: A1-01
+- item: kimashita
+  from: A1-01
+- item: watashi
+  from: A1-01
+- item: suzuki-san
+  from: A1-01
+- item: hai
+  from: A1-01
+- item: sumimasen
+  from: A1-01
+- item: wakarimasen
+  from: A1-01
+- item: anime
+  from: A1-17
+- item: hontou
+  from: A1-17
+- item: chigaimasu
+  from: A1-17
+- item: kaanibaru
+  from: A1-17
+- item: mainichi
+  from: A1-17
+- item: minna
+  from: A1-17
+- item: sakkaa
+  from: A1-17
+- item: jouzu
+  from: A1-17
+- item: nihon-jin
+  from: A1-17
+- item: burajiru-jin
+  from: A1-17
+- item: ninja
+  from: A1-17
+- item: itadakimasu
+  from: A1-25
+- item: gochisousama
+  from: A1-25
+- item: ohashi
+  from: A1-25
+- item: sakana
+  from: A1-25
+- item: yuuhan
+  from: A1-25
+- item: temo-ii
+  from: A1-25
+- item: tabete-mo-ii
+  from: A1-25
+- item: tsukatte-mo-ii
+  from: A1-25
+- item: fooku
+  from: A1-25
+- item: okawari
+  from: A1-25
+- item: onaka-ippai
+  from: A1-25
+- item: jouzu-desu-ne
+  from: A1-25
+- item: moushiwake
+  from: A1-29
+- item: machigaemashita
+  from: A1-29
+- item: machigai
+  from: A1-29
+- item: kayoubi
+  from: A1-29
+- item: gomen
+  from: A1-29
+- item: gomennasai
+  from: A1-29
+- item: tsugi-kara
+  from: A1-29
+- item: kakunin
+  from: A1-29
+- item: mou-ichido
+  from: A1-29
+- item: kinishinai-de-kudasai
+  from: A1-29
+- item: shuumatsu
+  from: A2-01
+- item: kinou
+  from: A2-01
+- item: ototoi
+  from: A2-01
+- item: ikimashita
+  from: A2-01
+- item: mimashita
+  from: A2-01
+- item: kaimashita
+  from: A2-01
+- item: nani-shimashita
+  from: A2-01
+- item: nanimo
+  from: A2-01
+- item: yukkuri
+  from: A2-01
+- item: kaimono
+  from: A2-01
+- item: eiga
+  from: A2-01
+- item: dou-deshita
+  from: A2-01
+steps:
+- type: narrator
+  text:
+    en: You moved flats inside Hamamatsu and must report the new address at city hall. A machine gives you a numbered ticket. Listen to the conversation; you don't need to understand it yet.
+    pt: Você mudou de apartamento dentro de Hamamatsu e precisa informar o novo endereço na prefeitura. Uma máquina dá uma senha numerada. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: すみません、 引[ひ]っ越[こ]し を しました。
+    meaning:
+      en: Excuse me, I've moved.
+      pt: Com licença, eu me mudei.
+  - speaker: madoguchi
+    text: 番号札[ばんごうふだ] を 取[と]って、 待[ま]って ください。
+    meaning:
+      en: Please take a numbered ticket and wait.
+      pt: Pegue uma senha e espere, por favor.
+  - speaker: madoguchi
+    text: 三十五番[さんじゅうごばん] の 方[かた]。 在留[ざいりゅう] カード を 見[み]せて ください。
+    meaning:
+      en: Number thirty-five. Please show your residence card.
+      pt: Número trinta e cinco. Mostre o cartão de residência, por favor.
+  - speaker: protagonist
+    text: はい、 どうぞ。
+    meaning:
+      en: Here you are.
+      pt: Aqui está.
+  - speaker: madoguchi
+    text: 新[あたら]しい 住所[じゅうしょ] を ここ に 書[か]いて ください。
+    meaning:
+      en: Please write the new address here.
+      pt: Escreva o novo endereço aqui, por favor.
+  - speaker: protagonist
+    text: ポルトガル語[ご] の 紙[かみ] は ありますか。
+    meaning:
+      en: Do you have the form in Portuguese?
+      pt: Tem o formulário em português?
+  - speaker: madoguchi
+    text: あります よ。 住民票[じゅうみんひょう] も 要[い]ります か。
+    meaning:
+      en: We do. Do you need a certificate of residence too?
+      pt: Tem, sim. Precisa de um atestado de residência também?
+  - speaker: protagonist
+    text: はい、 一枚[いちまい] お願[ねが]いします。
+    meaning:
+      en: Yes, one copy please.
+      pt: Sim, uma via, por favor.
+- type: prompt
+  ask:
+    en: 'Say: city hall.'
+    pt: 'Diga: prefeitura.'
+  answer:
+    speaker: protagonist
+    text: 市役所[しやくしょ]
+  items:
+  - shiyakusho
+- type: prompt
+  ask:
+    en: 'Say: moving house.'
+    pt: 'Diga: mudança.'
+  answer:
+    speaker: protagonist
+    text: 引[ひ]っ越[こ]し
+  items:
+  - hikkoshi
+- type: prompt
+  ask:
+    en: 'Say: a numbered ticket.'
+    pt: 'Diga: uma senha numerada.'
+  answer:
+    speaker: protagonist
+    text: 番号札[ばんごうふだ]
+  items:
+  - bangoufuda
+- type: narrator
+  text:
+    en: 'Requests with «ください» use the «て» form of the verb: «書[か]きます» → «書[か]いて», «見[み]せます» → «見[み]せて», «待[ま]ちます» → «待[ま]って». You met «洗[あら]って ください» in Mrs Suzuki''s kitchen.'
+    pt: 'Os pedidos com «ください» usam a forma «て» do verbo: «書[か]きます» → «書[か]いて», «見[み]せます» → «見[み]せて», «待[ま]ちます» → «待[ま]って». Você viu «洗[あら]って ください» na cozinha da senhora Suzuki.'
+- type: prompt
+  ask:
+    en: Ask him to wait.
+    pt: Peça que ele espere.
+  answer:
+    speaker: protagonist
+    text: 待[ま]って ください。
+  items:
+  - matte-kudasai
+- type: prompt
+  ask:
+    en: 'Say: the residence card.'
+    pt: 'Diga: o cartão de residência.'
+  answer:
+    speaker: protagonist
+    text: 在留[ざいりゅう] カード
+  items:
+  - zairyuu-kaado
+- type: prompt
+  ask:
+    en: Ask her to show it — please show.
+    pt: Peça que ela mostre — mostre, por favor.
+  answer:
+    speaker: protagonist
+    text: 見[み]せて ください。
+  items:
+  - misete-kudasai
+- type: prompt
+  ask:
+    en: 'Say: the address.'
+    pt: 'Diga: o endereço.'
+  answer:
+    speaker: protagonist
+    text: 住所[じゅうしょ]
+  items:
+  - juusho
+- type: prompt
+  ask:
+    en: 'Say: please write it here.'
+    pt: 'Diga: escreva aqui, por favor.'
+  answer:
+    speaker: protagonist
+    text: ここ に 書[か]いて ください。
+  items:
+  - koko-ni
+  - kaite-kudasai
+- type: prompt
+  ask:
+    en: 'Say: in Portuguese.'
+    pt: 'Diga: em português.'
+  answer:
+    speaker: protagonist
+    text: ポルトガル語[ご] で
+  items:
+  - porutogarugo-de
+- type: prompt
+  ask:
+    en: 'Say: certificate of residence.'
+    pt: 'Diga: atestado de residência.'
+  answer:
+    speaker: protagonist
+    text: 住民票[じゅうみんひょう]
+  items:
+  - juuminhyou
+- type: narrator
+  text:
+    en: Moving in or within the city, you report the new address at city hall within 14 days and bring your «在留[ざいりゅう] カード». A machine hands out numbered tickets and a screen calls the numbers. In Hamamatsu
+      many forms come in Portuguese, and some days there are interpreters.
+    pt: Ao se mudar para a cidade ou dentro dela, você informa o novo endereço na prefeitura em até 14 dias e leva o «在留[ざいりゅう] カード». Uma máquina distribui senhas e um painel chama os números. Em Hamamatsu
+      muitos formulários existem em português, e em alguns dias há intérpretes.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'Senha e painel lembram o Poupatempo. A diferença é o prazo: 14 dias para avisar a mudança, e o cartão de residência precisa estar sempre com você.'
+- type: prompt
+  ask:
+    en: 'Once more: say “residence card”.'
+    pt: 'Mais uma vez: diga “cartão de residência”.'
+  answer:
+    speaker: protagonist
+    text: 在留[ざいりゅう] カード
+  items:
+  - zairyuu-kaado
+- type: prompt
+  ask:
+    en: 'Once more: say “certificate of residence”.'
+    pt: 'Mais uma vez: diga “atestado de residência”.'
+  answer:
+    speaker: protagonist
+    text: 住民票[じゅうみんひょう]
+  items:
+  - juuminhyou
+- type: prompt
+  ask:
+    en: 'Once more: say “city hall”.'
+    pt: 'Mais uma vez: diga “prefeitura”.'
+  answer:
+    speaker: protagonist
+    text: 市役所[しやくしょ]
+  items:
+  - shiyakusho
+- type: prompt
+  ask:
+    en: 'Once more: say “numbered ticket”.'
+    pt: 'Mais uma vez: diga “senha numerada”.'
+  answer:
+    speaker: protagonist
+    text: 番号札[ばんごうふだ]
+  items:
+  - bangoufuda
+- type: prompt
+  ask:
+    en: 'Once more: say “address”.'
+    pt: 'Mais uma vez: diga “endereço”.'
+  answer:
+    speaker: protagonist
+    text: 住所[じゅうしょ]
+  items:
+  - juusho
+- type: prompt
+  ask:
+    en: 'Once more: say “moving house”.'
+    pt: 'Mais uma vez: diga “mudança”.'
+  answer:
+    speaker: protagonist
+    text: 引[ひ]っ越[こ]し
+  items:
+  - hikkoshi
+- type: prompt
+  ask:
+    en: 'Once more: say “please write”.'
+    pt: 'Mais uma vez: diga “escreva, por favor”.'
+  answer:
+    speaker: protagonist
+    text: 書[か]いて ください
+  items:
+  - kaite-kudasai
+- type: prompt
+  ask:
+    en: 'Once more: say “please show”.'
+    pt: 'Mais uma vez: diga “mostre, por favor”.'
+  answer:
+    speaker: protagonist
+    text: 見[み]せて ください
+  items:
+  - misete-kudasai
+- type: prompt
+  ask:
+    en: 'Once more: say “please wait”.'
+    pt: 'Mais uma vez: diga “espere, por favor”.'
+  answer:
+    speaker: protagonist
+    text: 待[ま]って ください
+  items:
+  - matte-kudasai
+- type: prompt
+  ask:
+    en: 'Once more: say “here (in this spot)”.'
+    pt: 'Mais uma vez: diga “aqui (neste lugar)”.'
+  answer:
+    speaker: protagonist
+    text: ここ に
+  items:
+  - koko-ni
+- type: prompt
+  ask:
+    en: 'Once more: say “in Portuguese”.'
+    pt: 'Mais uma vez: diga “em português”.'
+  answer:
+    speaker: protagonist
+    text: ポルトガル語[ご] で
+  items:
+  - porutogarugo-de
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “weekend — and “yesterday — and “the day before yesterday — and “went — and “saw, watched — and “bought — and “what did you do? — and “I didn''t do anything — and “I took it easy”.'
+    pt: 'Diga: “fim de semana — e “ontem — e “anteontem — e “fui — e “vi, assisti — e “comprei — e “o que você fez? — e “não fiz nada — e “descansei, fiquei de boa”.'
+  answer:
+    speaker: protagonist
+    text: 週末[しゅうまつ] … 昨日[きのう] … 一昨日[おととい] … 行[い]きました … 見[み]ました … 買[か]いました … 何[なに] を しました か … 何[なに] も しません でした … ゆっくり しました
+  items:
+  - shuumatsu
+  - kinou
+  - ototoi
+  - ikimashita
+  - mimashita
+  - kaimashita
+  - nani-shimashita
+  - nanimo
+  - yukkuri
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “shopping — and “film — and “how was it? — and “I''m terribly sorry (formal) — and “I made a mistake — and “mistake — and “Tuesday — and “sorry (casual) — and “I''m sorry”.'
+    pt: 'Diga: “compras — e “filme — e “como foi? — e “peço mil desculpas (formal) — e “eu errei — e “erro — e “terça-feira — e “foi mal (informal) — e “desculpa”.'
+  answer:
+    speaker: protagonist
+    text: 買[か]い物[もの] … 映画[えいが] … どう でした か … 申[もう]し訳[わけ] ありません … 間違[まちが]えました … 間違[まちが]い … 火曜日[かようび] … ごめん … ごめんなさい
+  items:
+  - kaimono
+  - eiga
+  - dou-deshita
+  - moushiwake
+  - machigaemashita
+  - machigai
+  - kayoubi
+  - gomen
+  - gomennasai
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “from next time — and “I''ll check, confirm — and “once more — and “don''t worry about it — and “(said before eating) — and “(said after eating: thank you for the meal) — and “chopsticks —
+      and “fish — and “dinner”.'
+    pt: 'Diga: “da próxima vez — e “vou conferir — e “mais uma vez — e “não se preocupe — e “(dito antes de comer) — e “(dito depois de comer: obrigado pela refeição) — e “hashi, pauzinhos — e “peixe —
+      e “jantar”.'
+  answer:
+    speaker: protagonist
+    text: 次[つぎ] から … 確認[かくにん] します … もう 一度[いちど] … 気[き] に しないで ください … いただきます … ごちそうさま でした … お箸[はし] … 魚[さかな] … 夕飯[ゆうはん]
+  items:
+  - tsugi-kara
+  - kakunin
+  - mou-ichido
+  - kinishinai-de-kudasai
+  - itadakimasu
+  - gochisousama
+  - ohashi
+  - sakana
+  - yuuhan
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “may I…? — and “may I eat? — and “may I use (it)? — and “fork — and “a second helping — and “I''m full — and “you''re good at it — and “anime — and “really? is it true?”.'
+    pt: 'Diga: “posso…? — e “posso comer? — e “posso usar? — e “garfo — e “repetir o prato — e “estou satisfeita, cheia — e “você é boa nisso — e “anime — e “é verdade?”.'
+  answer:
+    speaker: protagonist
+    text: 〜ても いい です か … 食[た]べて も いい です か … 使[つか]って も いい です か … フォーク … おかわり … お腹[なか] いっぱい です … 上手[じょうず] です ね … アニメ … 本当[ほんとう] です か
+  items:
+  - temo-ii
+  - tabete-mo-ii
+  - tsukatte-mo-ii
+  - fooku
+  - okawari
+  - onaka-ippai
+  - jouzu-desu-ne
+  - anime
+  - hontou
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “that''s not right; it''s different — and “carnival — and “every day — and “everyone — and “football — and “good at, skilled — and “Japanese person — and “Brazilian person — and “ninja”.'
+    pt: 'Diga: “não é bem assim; é diferente — e “carnaval — e “todo dia — e “todo mundo — e “futebol — e “bom em, habilidoso — e “japonês (pessoa) — e “brasileiro (pessoa) — e “ninja”.'
+  answer:
+    speaker: protagonist
+    text: 違[ちが]います … カーニバル … 毎日[まいにち] … みんな … サッカー … 上手[じょうず] … 日本人[にほんじん] … ブラジル人[じん] … 忍者[にんじゃ]
+  items:
+  - chigaimasu
+  - kaanibaru
+  - mainichi
+  - minna
+  - sakkaa
+  - jouzu
+  - nihon-jin
+  - burajiru-jin
+  - ninja
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Hello / good afternoon — and “Nice to meet you (first meeting) — and “am / is / are (polite) — and “Please treat me kindly (said when meeting) — and “Brazil — and “from — and “came — and
+      “I — and “Mrs Suzuki”.'
+    pt: 'Diga: “Olá / boa tarde — e “Muito prazer (no primeiro encontro) — e “sou / é (educado) — e “Conto com a senhora (dito ao se conhecer) — e “Brasil — e “de (origem) — e “vim — e “eu — e “senhora
+      Suzuki”.'
+  answer:
+    speaker: protagonist
+    text: こんにちは … はじめまして … です … よろしく お願[ねが]いします … ブラジル … から … 来[き]ました … 私[わたし] … 鈴木[すずき] さん
+  items:
+  - konnichiwa
+  - hajimemashite
+  - desu
+  - yoroshiku
+  - burajiru
+  - kara
+  - kimashita
+  - watashi
+  - suzuki-san
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “yes — and “excuse me / sorry — and “I don''t understand”.'
+    pt: 'Diga: “sim — e “com licença / desculpe — e “não entendo”.'
+  answer:
+    speaker: protagonist
+    text: はい … すみません … わかりません
+  items:
+  - hai
+  - sumimasen
+  - wakarimasen
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

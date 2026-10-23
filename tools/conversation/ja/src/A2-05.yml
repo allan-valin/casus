@@ -1,0 +1,42 @@
+id: A2-05
+protagonist: f
+title: [At the clinic, Na clínica]
+situation: ["You have a cold and a fever. The clinic near the station, then the pharmacy next door.", "Você está resfriada e com febre. A clínica perto da estação, depois a farmácia ao lado."]
+learn: []
+culture: Show the insurance card
+items:
+  - [kaze, "風邪[かぜ]", "a cold", "resfriado"]
+  - [netsu, "熱[ねつ]", "fever", "febre"]
+  - [nodo, "喉[のど]", "throat", "garganta"]
+  - [kusuri, "薬[くすり]", "medicine", "remédio"]
+  - [yakkyoku, "薬局[やっきょく]", "pharmacy", "farmácia"]
+  - [hokenshou, "保険証[ほけんしょう]", "health insurance card", "cartão do seguro-saúde", {rare: true}]
+  - [byouki, "病気[びょうき]", "ill, illness", "doente, doença"]
+  - [yasunde-mo-ii, "休[やす]んで も いい です か", "may I take time off?", "posso tirar folga?"]
+  - [kaette-mo-ii, "帰[かえ]って も いい です か", "may I go home?", "posso ir para casa?"]
+  - [nonde-kudasai, "飲[の]んで ください", "please take (medicine)", "tome, por favor"]
+  - [mikka, "三日[みっか]", "three days", "três dias"]
+dialogue:
+  - [protagonist, "すみません、 風邪[かぜ] を ひきました。 熱[ねつ] が あります。", "Excuse me, I've caught a cold. I have a fever.", "Com licença, peguei um resfriado. Estou com febre."]
+  - [isha, "保険証[ほけんしょう] を 見[み]せて ください。 喉[のど] は 痛[いた]い です か。", "Please show your insurance card. Does your throat hurt?", "Mostre o cartão do seguro, por favor. A garganta dói?"]
+  - [protagonist, "はい、 少[すこ]し 痛[いた]い です。", "Yes, a little.", "Sim, um pouco."]
+  - [isha, "この 薬[くすり] を 一日[いちにち] 三回[さんかい]、 食後[しょくご] に 飲[の]んで ください。", "Take this medicine three times a day, after meals.", "Tome este remédio três vezes ao dia, depois das refeições."]
+  - [protagonist, "薬[くすり] は ここ で もらえます か。", "Can I get the medicine here?", "Pego o remédio aqui?"]
+  - [isha, "いいえ、 隣[となり] の 薬局[やっきょく] です。", "No, at the pharmacy next door.", "Não, na farmácia ao lado."]
+  - [protagonist, "仕事[しごと] は 休[やす]んで も いい です か。", "May I take time off work?", "Posso faltar ao trabalho?"]
+  - [isha, "はい、 三日[みっか] ぐらい 休[やす]んで ください。", "Yes, rest about three days.", "Sim, descanse uns três dias."]
+teach:
+  - ask: ["Say: a cold.", "Diga: um resfriado.", "風邪[かぜ]", kaze]
+  - ask: ["Say: I have a fever.", "Diga: estou com febre.", "熱[ねつ] が あります。", netsu]
+  - ask: ["Say: my throat hurts.", "Diga: a garganta dói.", "喉[のど] が 痛[いた]い です。", nodo]
+  - ask: ["Say: I'm ill.", "Diga: estou doente.", "病気[びょうき] です。", byouki]
+  - ask: ["Say: the insurance card.", "Diga: o cartão do seguro.", "保険証[ほけんしょう]", hokenshou]
+  - ask: ["Say: medicine.", "Diga: remédio.", "薬[くすり]", kusuri]
+  - ask: ["Say: the pharmacy.", "Diga: a farmácia.", "薬局[やっきょく]", yakkyoku]
+  - ask: ["The doctor says to take it. Say what he said: please take it.", "O médico manda tomar. Repita: tome, por favor.", "飲[の]んで ください。", nonde-kudasai]
+  - note: ["Asking permission again: «て» form plus «も いい です か». «休[やす]みます» → «休[やす]んで も いい です か», may I take time off? «帰[かえ]ります» → «帰[かえ]って も いい です か», may I go home?", "Pedindo licença de novo: forma «て» mais «も いい です か». «休[やす]みます» → «休[やす]んで も いい です か», posso tirar folga? «帰[かえ]ります» → «帰[かえ]って も いい です か», posso ir para casa?"]
+  - ask: ["Ask if you may take time off.", "Pergunte se pode tirar folga.", "休[やす]んで も いい です か。", yasunde-mo-ii]
+  - ask: ["Ask your chief if you may go home.", "Pergunte à chefe se pode ir para casa.", "帰[かえ]って も いい です か。", kaette-mo-ii]
+  - ask: ["Say: three days.", "Diga: três dias.", "三日[みっか]", mikka]
+  - note: ["Show the «保険証[ほけんしょう]» — or the My Number card that is replacing it — at every visit: the insurance pays 70 %, you pay 30 %. The clinic writes the prescription; the pharmacy next door, «薬局[やっきょく]», hands out the medicine.", "Mostre o «保険証[ほけんしょう]» — ou o cartão My Number, que está substituindo — em toda consulta: o seguro paga 70 %, você paga 30 %. A clínica faz a receita; a farmácia ao lado, «薬局[やっきょく]», entrega o remédio."]
+  - pt_only: "No Brasil, com o SUS, a consulta é de graça, e na farmácia muita coisa se compra sem receita. No Japão você paga uma parte em toda consulta, e o remédio de receita vem da farmácia ao lado, já separado em saquinhos por horário."
