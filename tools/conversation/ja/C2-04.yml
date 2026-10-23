@@ -1,0 +1,604 @@
+# UNIT ja C2-04 — written by AI (Claude) for Casus; expanded from src/C2-04.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-04
+level: C2
+number: 4
+protagonist: m
+title:
+  en: Negotiating
+  pt: Negociar
+situation:
+  en: Another company has offered you a job. You talk to Takahashi-buchō about your salary — carefully, so it doesn't sound like a threat.
+  pt: Outra empresa ofereceu um emprego a você. Você conversa com o chefe Takahashi sobre o salário — com cuidado, para não soar como ameaça.
+learn_lessons: []
+culture: —
+new_items:
+- id: koushou
+  text: 交渉[こうしょう]
+  meaning:
+    en: negotiation
+    pt: negociação
+- id: jouho
+  text: 譲歩[じょうほ]
+  meaning:
+    en: concession
+    pt: concessão
+- id: dakyou
+  text: 妥協[だきょう]
+  meaning:
+    en: compromise
+    pt: acordo, meio-termo
+- id: ten-shoku
+  text: 転職[てんしょく]
+  meaning:
+    en: changing jobs
+    pt: mudar de emprego
+- id: sasoi
+  text: お誘[さそ]い
+  meaning:
+    en: invitation, offer
+    pt: convite, oferta
+- id: kentou-shite-itadakemasen-ka
+  text: ご検討[けんとう] いただけません でしょう か
+  meaning:
+    en: would you kindly consider
+    pt: o senhor poderia considerar
+- id: hyouka
+  text: 評価[ひょうか]
+  meaning:
+    en: evaluation, appraisal
+    pt: avaliação
+- id: kyuuyo
+  text: 給与[きゅうよ]
+  meaning:
+    en: salary (formal)
+    pt: remuneração
+- id: tsuzuketai
+  text: この 会社[かいしゃ] で 働[はたら]き 続[つづ]けたい
+  meaning:
+    en: I want to keep working here
+    pt: quero continuar trabalhando aqui
+- id: chuukan
+  text: 間[あいだ] を 取[と]る
+  meaning:
+    en: meet in the middle
+    pt: chegar a um meio-termo
+reviews:
+- item: jishin
+  from: A1-27
+- item: yuremashita
+  from: A1-27
+- item: kowai
+  from: A1-27
+- item: ie
+  from: A1-27
+- item: mokuzou
+  from: A1-27
+- item: tsukue-no-shita
+  from: A1-27
+- item: kara-because
+  from: A1-27
+- item: abunai
+  from: A1-27
+- item: nigemasu
+  from: A1-27
+- item: kunren
+  from: A1-27
+- item: daijoubu-datta
+  from: A1-27
+- item: mensetsu
+  from: B2-01
+- item: jiko-shoukai
+  from: B2-01
+- item: chousho
+  from: B2-01
+- item: tansho
+  from: B2-01
+- item: shibou-douki
+  from: B2-01
+- item: moushimasu
+  from: B2-01
+- item: orimasu
+  from: B2-01
+- item: mairimashita
+  from: B2-01
+- item: shitsurei-itashimasu
+  from: B2-01
+- item: seishain
+  from: B2-01
+- item: kouken
+  from: B2-01
+- item: reikin
+  from: C1-03
+- item: shikikin
+  from: C1-03
+- item: hoshounin
+  from: C1-03
+- item: koushinryou
+  from: C1-03
+- item: wo-hajime
+  from: C1-03
+- item: shikikin-wo-hajime
+  from: C1-03
+- item: hoshou-gaisha
+  from: C1-03
+- item: madori
+  from: C1-03
+- item: shoki-hiyou
+  from: C1-03
+- item: genjou-kaifuku
+  from: C1-03
+- item: keiyaku-kikan
+  from: C1-03
+- item: konintodoke
+  from: C1-19
+- item: shounin
+  from: C1-19
+- item: koseki
+  from: C1-19
+- item: shorui
+  from: C1-19
+- item: kisai
+  from: C1-19
+- item: teishutsu-review
+  from: C1-19
+- item: ryouji-kan-shoumei
+  from: C1-19
+- item: juri
+  from: C1-19
+- item: kinenbi
+  from: C1-19
+- item: fuufu
+  from: C1-19
+- item: moetsuki
+  from: C1-27
+- item: utsu
+  from: C1-27
+- item: kaunseringu
+  from: C1-27
+- item: osore-ga-aru
+  from: C1-27
+- item: byouki-ni-naru-osore
+  from: C1-27
+- item: nemurenai
+  from: C1-27
+- item: muri-shinaide
+  from: C1-27
+- item: kyuushoku
+  from: C1-27
+- item: shinryou-naika
+  from: C1-27
+- item: hitori-ja-nai
+  from: C1-27
+- item: shukuji
+  from: C2-01
+- item: suenagaku
+  from: C2-01
+- item: kadode
+  from: C2-01
+- item: imikotoba
+  from: C2-01
+- item: kireru
+  from: C2-01
+- item: wakareru-review
+  from: C2-01
+- item: kasanegasane
+  from: C2-01
+- item: musubi
+  from: C2-01
+- item: oshiawase-ni
+  from: C2-01
+- item: hare-no-hi
+  from: C2-01
+- item: shuzai
+  from: C2-03
+- item: intabyuu
+  from: C2-03
+- item: shichousha
+  from: C2-03
+- item: kansou-thoughts
+  from: C2-03
+- item: tsuzukete-ikitai
+  from: C2-03
+- item: miryoku
+  from: C2-03
+- item: hakuryoku
+  from: C2-03
+- item: chiiki
+  from: C2-03
+- item: tsunagari
+  from: C2-03
+- item: kinchou-shimashita
+  from: C2-03
+steps:
+- type: narrator
+  text:
+    en: Another company has offered you a job. You talk to Takahashi-buchō about your salary — carefully, so it doesn't sound like a threat. Listen to the conversation; you don't need to understand it yet.
+    pt: Outra empresa ofereceu um emprego a você. Você conversa com o chefe Takahashi sobre o salário — com cuidado, para não soar como ameaça. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: 部長[ぶちょう]、 少[すこ]し ご相談[そうだん] が ございます。 実[じつ] は、 他社[たしゃ] から お誘[さそ]い を いただきました。
+    meaning:
+      en: Sir, I have something to discuss. Actually, I've received an offer from another company.
+      pt: Chefe, preciso conversar com o senhor. Na verdade, recebi uma proposta de outra empresa.
+  - speaker: buchou
+    text: そう か。 転職[てんしょく] を 考[かんが]えて いる の か。
+    meaning:
+      en: I see. Are you thinking of changing jobs?
+      pt: Entendi. Você está pensando em mudar de emprego?
+  - speaker: protagonist
+    text: いいえ、 私[わたし] は この 会社[かいしゃ] で 働[はたら]き 続[つづ]けたい と 思[おも]って おります。 ただ、 今[いま] の 仕事[しごと] の 範囲[はんい] に 見合[みあ]う 給与[きゅうよ] を ご検討[けんとう] いただけません でしょう か。
+    meaning:
+      en: No, I'd like to keep working at this company. I only ask whether you might consider a salary that matches my current responsibilities.
+      pt: Não, quero continuar trabalhando nesta empresa. Só gostaria de pedir que o senhor considerasse uma remuneração à altura das minhas responsabilidades atuais.
+  - speaker: buchou
+    text: 君[きみ] の 評価[ひょうか] は 高[たか]い。 ただ、 すぐ に 全額[ぜんがく] は 難[むずか]しい。
+    meaning:
+      en: Your evaluations are high. But the full amount straight away is difficult.
+      pt: A sua avaliação é ótima. Mas o valor todo de uma vez é difícil.
+  - speaker: protagonist
+    text: では、 半分[はんぶん] を 今年[ことし]、 残[のこ]り を 来年[らいねん] の 評価[ひょうか] で、 と いう 形[かたち] は いかが でしょう か。
+    meaning:
+      en: Then how about half this year, and the rest based on next year's evaluation?
+      pt: Então, que tal metade este ano e o resto conforme a avaliação do ano que vem?
+  - speaker: buchou
+    text: 間[あいだ] を 取[と]る わけ だ な。 その 妥協[だきょう] 案[あん] なら、 人事[じんじ] と 交渉[こうしょう] して みよう。
+    meaning:
+      en: So we meet in the middle. With that compromise, I'll try negotiating with HR.
+      pt: Chegamos a um meio-termo, então. Com essa proposta de acordo, vou negociar com o RH.
+  - speaker: protagonist
+    text: ご配慮[はいりょ] いただき、 ありがとう ございます。 譲歩[じょうほ] して いただいた 分[ぶん]、 成果[せいか] で お返[かえ]し します。
+    meaning:
+      en: Thank you for your consideration. I'll repay your concession with results.
+      pt: Agradeço a consideração. Vou retribuir a concessão com resultados.
+  - speaker: buchou
+    text: 期待[きたい] して いる よ。
+    meaning:
+      en: I'm counting on it.
+      pt: Conto com isso.
+- type: prompt
+  ask:
+    en: 'Say: negotiation.'
+    pt: 'Diga: negociação.'
+  answer:
+    speaker: protagonist
+    text: 交渉[こうしょう]
+  items:
+  - koushou
+- type: prompt
+  ask:
+    en: 'Say: changing jobs.'
+    pt: 'Diga: mudar de emprego.'
+  answer:
+    speaker: protagonist
+    text: 転職[てんしょく]
+  items:
+  - ten-shoku
+- type: prompt
+  ask:
+    en: 'Say: an offer, an invitation.'
+    pt: 'Diga: uma proposta.'
+  answer:
+    speaker: protagonist
+    text: お誘[さそ]い
+  items:
+  - sasoi
+- type: prompt
+  ask:
+    en: 'Say: salary — formally.'
+    pt: 'Diga: remuneração — formal.'
+  answer:
+    speaker: protagonist
+    text: 給与[きゅうよ]
+  items:
+  - kyuuyo
+- type: prompt
+  ask:
+    en: 'Say: appraisal.'
+    pt: 'Diga: avaliação.'
+  answer:
+    speaker: protagonist
+    text: 評価[ひょうか]
+  items:
+  - hyouka
+- type: prompt
+  ask:
+    en: 'Make clear: I want to keep working here.'
+    pt: 'Deixe claro: quero continuar trabalhando aqui.'
+  answer:
+    speaker: protagonist
+    text: この 会社[かいしゃ] で 働[はたら]き 続[つづ]けたい
+  items:
+  - tsuzuketai
+- type: narrator
+  text:
+    en: 'A request to a superior climbs the politeness ladder: «〜て ください» → «〜て いただけますか» → «〜て いただけません でしょう か», the most cautious — a negative question that leaves room to refuse. Proposals get softened
+      too: «〜と いう 形[かたち] は いかが でしょう か», how about something like…?'
+    pt: 'Um pedido a um superior sobe a escada da cortesia: «〜て ください» → «〜て いただけますか» → «〜て いただけません でしょう か», o mais cauteloso — uma pergunta negativa que deixa espaço para recusar. As propostas também se
+      suavizam: «〜と いう 形[かたち] は いかが でしょう か», que tal algo como…?'
+- type: prompt
+  ask:
+    en: 'Ask: would you kindly consider…'
+    pt: 'Peça: o senhor poderia considerar…'
+  answer:
+    speaker: protagonist
+    text: ご検討[けんとう] いただけません でしょう か
+  items:
+  - kentou-shite-itadakemasen-ka
+- type: prompt
+  ask:
+    en: 'Say: meet in the middle.'
+    pt: 'Diga: chegar a um meio-termo.'
+  answer:
+    speaker: protagonist
+    text: 間[あいだ] を 取[と]る
+  items:
+  - chuukan
+- type: prompt
+  ask:
+    en: 'Say: a compromise.'
+    pt: 'Diga: um acordo, meio-termo.'
+  answer:
+    speaker: protagonist
+    text: 妥協[だきょう]
+  items:
+  - dakyou
+- type: prompt
+  ask:
+    en: 'Say: a concession.'
+    pt: 'Diga: uma concessão.'
+  answer:
+    speaker: protagonist
+    text: 譲歩[じょうほ]
+  items:
+  - jouho
+- type: narrator
+  text:
+    en: Salary talks are rare and delicate in Japanese companies. A job offer from elsewhere is mentioned as «ご相談[そうだん]», not as leverage; you state loyalty first, ask with «いただけません でしょう か», propose a middle
+      way, and promise results. Pushing hard can backfire.
+    pt: Conversas sobre salário são raras e delicadas nas empresas japonesas. Uma proposta de fora é mencionada como «ご相談[そうだん]», não como pressão; você declara lealdade primeiro, pede com «いただけません でしょう
+      か», propõe um meio-termo e promete resultados. Pressionar demais pode sair pela culatra.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil, mostrar a proposta de outra empresa é jogo aberto. No Japão, é preciso embrulhar em lealdade — a negociação existe, só que de luvas.
+- type: prompt
+  ask:
+    en: 'Once more: say “negotiation”.'
+    pt: 'Mais uma vez: diga “negociação”.'
+  answer:
+    speaker: protagonist
+    text: 交渉[こうしょう]
+  items:
+  - koushou
+- type: prompt
+  ask:
+    en: 'Once more: say “concession”.'
+    pt: 'Mais uma vez: diga “concessão”.'
+  answer:
+    speaker: protagonist
+    text: 譲歩[じょうほ]
+  items:
+  - jouho
+- type: prompt
+  ask:
+    en: 'Once more: say “compromise”.'
+    pt: 'Mais uma vez: diga “acordo, meio-termo”.'
+  answer:
+    speaker: protagonist
+    text: 妥協[だきょう]
+  items:
+  - dakyou
+- type: prompt
+  ask:
+    en: 'Once more: say “changing jobs”.'
+    pt: 'Mais uma vez: diga “mudar de emprego”.'
+  answer:
+    speaker: protagonist
+    text: 転職[てんしょく]
+  items:
+  - ten-shoku
+- type: prompt
+  ask:
+    en: 'Once more: say “invitation, offer”.'
+    pt: 'Mais uma vez: diga “convite, oferta”.'
+  answer:
+    speaker: protagonist
+    text: お誘[さそ]い
+  items:
+  - sasoi
+- type: prompt
+  ask:
+    en: 'Once more: say “would you kindly consider”.'
+    pt: 'Mais uma vez: diga “o senhor poderia considerar”.'
+  answer:
+    speaker: protagonist
+    text: ご検討[けんとう] いただけません でしょう か
+  items:
+  - kentou-shite-itadakemasen-ka
+- type: prompt
+  ask:
+    en: 'Once more: say “evaluation, appraisal”.'
+    pt: 'Mais uma vez: diga “avaliação”.'
+  answer:
+    speaker: protagonist
+    text: 評価[ひょうか]
+  items:
+  - hyouka
+- type: prompt
+  ask:
+    en: 'Once more: say “salary (formal)”.'
+    pt: 'Mais uma vez: diga “remuneração”.'
+  answer:
+    speaker: protagonist
+    text: 給与[きゅうよ]
+  items:
+  - kyuuyo
+- type: prompt
+  ask:
+    en: 'Once more: say “I want to keep working here”.'
+    pt: 'Mais uma vez: diga “quero continuar trabalhando aqui”.'
+  answer:
+    speaker: protagonist
+    text: この 会社[かいしゃ] で 働[はたら]き 続[つづ]けたい
+  items:
+  - tsuzuketai
+- type: prompt
+  ask:
+    en: 'Once more: say “meet in the middle”.'
+    pt: 'Mais uma vez: diga “chegar a um meio-termo”.'
+  answer:
+    speaker: protagonist
+    text: 間[あいだ] を 取[と]る
+  items:
+  - chuukan
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “news coverage, reporting — and “interview — and “viewers — and “impressions, thoughts — and “I want to keep going — and “appeal, charm — and “power, impact — and “local community, region
+      — and “connection — and “I''m nervous, but — and “congratulatory speech — and “for ever and ever — and “a new start (in life)”.'
+    pt: 'Diga: “cobertura jornalística — e “entrevista — e “telespectadores — e “impressões — e “quero continuar — e “encanto, atrativo — e “impacto, força — e “comunidade local — e “ligação, conexão —
+      e “estou nervosa, mas — e “discurso de felicitação — e “para todo o sempre — e “um novo começo (na vida)”.'
+  answer:
+    speaker: protagonist
+    text: 取材[しゅざい] … インタビュー … 視聴者[しちょうしゃ] … 感想[かんそう] … これ から も 続[つづ]けて いきたい … 魅力[みりょく] … 迫力[はくりょく] … 地域[ちいき] … つながり … 緊張[きんちょう] して います が … 祝辞[しゅくじ] … 末永[すえなが]く … 門出[かどで]
+  items:
+  - shuzai
+  - intabyuu
+  - shichousha
+  - kansou-thoughts
+  - tsuzukete-ikitai
+  - miryoku
+  - hakuryoku
+  - chiiki
+  - tsunagari
+  - kinchou-shimashita
+  - shukuji
+  - suenagaku
+  - kadode
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “taboo words (for an occasion) — and “be cut, break off — and “part, separate — and “repeatedly (taboo at weddings) — and “closing (of a speech) — and “be happy — and “a day of celebration
+      — and “burnout — and “depression — and “counselling — and “there is a risk that — and “there''s a risk of getting ill — and “can''t sleep”.'
+    pt: 'Diga: “palavras-tabu (numa ocasião) — e “cortar-se, romper-se — e “separar-se — e “repetidamente (tabu em casamentos) — e “encerramento (do discurso) — e “sejam felizes — e “um dia de festa — e
+      “esgotamento, burnout — e “depressão — e “terapia, aconselhamento — e “há o risco de — e “há o risco de adoecer — e “não consigo dormir”.'
+  answer:
+    speaker: protagonist
+    text: 忌[い]み言葉[ことば] … 切[き]れる … 別[わか]れる … 重[かさ]ね重[がさ]ね … 結[むす]び … お幸[しあわ]せ に … 晴[は]れ の 日[ひ] … 燃[も]え尽[つ]き … うつ … カウンセリング … 〜おそれ が ある … 病気[びょうき] に なる おそれ が ある … 眠[ねむ]れない
+  items:
+  - imikotoba
+  - kireru
+  - wakareru-review
+  - kasanegasane
+  - musubi
+  - oshiawase-ni
+  - hare-no-hi
+  - moetsuki
+  - utsu
+  - kaunseringu
+  - osore-ga-aru
+  - byouki-ni-naru-osore
+  - nemurenai
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “don''t push yourself — and “leave of absence (sick) — and “psychosomatic clinic — and “you''re not alone — and “marriage registration form — and “witness — and “family register — and “documents,
+      paperwork — and “filling in (a form) — and “submit — and “consulate certificate — and “acceptance (of a filing) — and “anniversary, memorial day”.'
+    pt: 'Diga: “não se force — e “afastamento do trabalho — e “clínica de saúde mental — e “você não está sozinha — e “formulário de registro de casamento — e “testemunha — e “registro familiar — e “documentos
+      — e “preenchimento — e “entregar — e “certidão do consulado — e “aceite (do documento) — e “data comemorativa”.'
+  answer:
+    speaker: protagonist
+    text: 無理[むり] しないで … 休職[きゅうしょく] … 心療[しんりょう] 内科[ないか] … 一人[ひとり] じゃ ない … 婚姻届[こんいんとどけ] … 証人[しょうにん] … 戸籍[こせき] … 書類[しょるい] … 記入[きにゅう] … 提出[ていしゅつ] する … 領事館[りょうじかん] の 証明書[しょうめいしょ] … 受理[じゅり] … 記念日[きねんび]
+  items:
+  - muri-shinaide
+  - kyuushoku
+  - shinryou-naika
+  - hitori-ja-nai
+  - konintodoke
+  - shounin
+  - koseki
+  - shorui
+  - kisai
+  - teishutsu-review
+  - ryouji-kan-shoumei
+  - juri
+  - kinenbi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “married couple — and “key money (non-refundable) — and “deposit — and “guarantor — and “renewal fee — and “starting with, including — and “starting with the deposit — and “guarantor company
+      — and “floor plan — and “move-in costs — and “restoring to original state — and “contract period — and “interview”.'
+    pt: 'Diga: “casal (casado) — e “luvas (não reembolsáveis) — e “caução, depósito — e “fiador — e “taxa de renovação — e “a começar por, incluindo — e “a começar pela caução — e “empresa fiadora — e “planta
+      (do imóvel) — e “custos de entrada — e “devolver como estava — e “prazo do contrato — e “entrevista”.'
+  answer:
+    speaker: protagonist
+    text: 夫婦[ふうふ] … 礼金[れいきん] … 敷金[しききん] … 保証人[ほしょうにん] … 更新料[こうしんりょう] … 〜を はじめ … 敷金[しききん] を はじめ … 保証[ほしょう] 会社[がいしゃ] … 間取[まど]り … 初期[しょき] 費用[ひよう] … 原状[げんじょう] 回復[かいふく] … 契約[けいやく] 期間[きかん] … 面接[めんせつ]
+  items:
+  - fuufu
+  - reikin
+  - shikikin
+  - hoshounin
+  - koushinryou
+  - wo-hajime
+  - shikikin-wo-hajime
+  - hoshou-gaisha
+  - madori
+  - shoki-hiyou
+  - genjou-kaifuku
+  - keiyaku-kikan
+  - mensetsu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “self-introduction — and “strong point — and “weak point — and “reason for applying — and “my name is… (humble) — and “am, is (humble いる) — and “came (humble) — and “excuse me (very polite)
+      — and “permanent employee — and “contribution — and “earthquake — and “(it) shook — and “scary, I''m scared”.'
+    pt: 'Diga: “apresentação pessoal — e “ponto forte — e “ponto fraco — e “motivo da candidatura — e “me chamo… (humilde) — e “estou (humilde de いる) — e “vim (humilde) — e “com licença (muito educado)
+      — e “funcionário efetivo — e “contribuição — e “terremoto — e “tremeu — e “dá medo, estou com medo”.'
+  answer:
+    speaker: protagonist
+    text: 自己[じこ] 紹介[しょうかい] … 長所[ちょうしょ] … 短所[たんしょ] … 志望[しぼう] 動機[どうき] … 〜と 申[もう]します … おります … 参[まい]りました … 失礼[しつれい] いたします … 正社員[せいしゃいん] … 貢献[こうけん] … 地震[じしん] … 揺[ゆ]れました … 怖[こわ]い
+  items:
+  - jiko-shoukai
+  - chousho
+  - tansho
+  - shibou-douki
+  - moushimasu
+  - orimasu
+  - mairimashita
+  - shitsurei-itashimasu
+  - seishain
+  - kouken
+  - jishin
+  - yuremashita
+  - kowai
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “house, home — and “made of wood — and “under the desk/table — and “because, so — and “dangerous — and “escape, run away — and “drill, training — and “were you okay?”.'
+    pt: 'Diga: “casa — e “de madeira — e “debaixo da mesa — e “porque, então — e “perigoso — e “fujo, saio correndo — e “simulado, treinamento — e “você estava bem?”.'
+  answer:
+    speaker: protagonist
+    text: 家[いえ] … 木造[もくぞう] … 机[つくえ] の 下[した] … 〜から … 危[あぶ]ない … 逃[に]げます … 訓練[くんれん] … 大丈夫[だいじょうぶ] でした か
+  items:
+  - ie
+  - mokuzou
+  - tsukue-no-shita
+  - kara-because
+  - abunai
+  - nigemasu
+  - kunren
+  - daijoubu-datta
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

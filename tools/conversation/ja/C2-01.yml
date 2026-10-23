@@ -1,0 +1,607 @@
+# UNIT ja C2-01 — written by AI (Claude) for Casus; expanded from src/C2-01.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-01
+level: C2
+number: 1
+protagonist: f
+title:
+  en: The speech
+  pt: O discurso
+situation:
+  en: Aya is getting married, and she has asked you to give a speech at the reception. Mrs Suzuki checks your draft for words you must not say.
+  pt: A Aya vai casar e pediu que você faça um discurso na festa. A senhora Suzuki revisa o seu rascunho procurando palavras que não se pode dizer.
+learn_lessons: []
+culture: 忌み言葉
+new_items:
+- id: shukuji
+  text: 祝辞[しゅくじ]
+  meaning:
+    en: congratulatory speech
+    pt: discurso de felicitação
+  rare: true
+- id: suenagaku
+  text: 末永[すえなが]く
+  meaning:
+    en: for ever and ever
+    pt: para todo o sempre
+  rare: true
+- id: kadode
+  text: 門出[かどで]
+  meaning:
+    en: a new start (in life)
+    pt: um novo começo (na vida)
+  rare: true
+- id: imikotoba
+  text: 忌[い]み言葉[ことば]
+  meaning:
+    en: taboo words (for an occasion)
+    pt: palavras-tabu (numa ocasião)
+  rare: true
+- id: kireru
+  text: 切[き]れる
+  meaning:
+    en: be cut, break off
+    pt: cortar-se, romper-se
+- id: wakareru-review
+  text: 別[わか]れる
+  meaning:
+    en: part, separate
+    pt: separar-se
+- id: kasanegasane
+  text: 重[かさ]ね重[がさ]ね
+  meaning:
+    en: repeatedly (taboo at weddings)
+    pt: repetidamente (tabu em casamentos)
+- id: musubi
+  text: 結[むす]び
+  meaning:
+    en: closing (of a speech)
+    pt: encerramento (do discurso)
+- id: oshiawase-ni
+  text: お幸[しあわ]せ に
+  meaning:
+    en: be happy
+    pt: sejam felizes
+- id: hare-no-hi
+  text: 晴[は]れ の 日[ひ]
+  meaning:
+    en: a day of celebration
+    pt: um dia de festa
+reviews:
+- item: hoshi
+  from: A1-24
+- item: tanabata
+  from: A1-24
+- item: negai
+  from: A1-24
+- item: sora
+  from: A1-24
+- item: tsuki
+  from: A1-24
+- item: yoru
+  from: A1-24
+- item: tanzaku
+  from: A1-24
+- item: sasa
+  from: A1-24
+- item: kakimasu
+  from: A1-24
+- item: naritai
+  from: A1-24
+- item: jouzu-ni
+  from: A1-24
+- item: kirei-desu-ne
+  from: A1-24
+- item: shikke
+  from: B1-28
+- item: kabi
+  from: B1-28
+- item: aida-ni
+  from: B1-28
+- item: hareteiru-aida-ni
+  from: B1-28
+- item: joshitsuki
+  from: B1-28
+- item: mado-wo-akeru
+  from: B1-28
+- item: kawakasu
+  from: B1-28
+- item: jimejime
+  from: B1-28
+- item: heya-boshi
+  from: B1-28
+- item: sentakumono
+  from: B1-28
+- item: tsuyu-ake
+  from: B1-28
+- item: shourai
+  from: B2-30
+- item: kikoku
+  from: B2-30
+- item: nokoru
+  from: B2-30
+- item: mayou
+  from: B2-30
+- item: kesshin
+  from: B2-30
+- item: eijuu
+  from: B2-30
+- item: ryouhou-no-kuni
+  from: B2-30
+- item: hashi-ni-naru
+  from: B2-30
+- item: isshoni-iru
+  from: B2-30
+- item: shinpai-shinaide
+  from: B2-30
+- item: borantia
+  from: C1-16
+- item: saigai
+  from: C1-16
+- item: dorokaki
+  from: C1-16
+- item: shien
+  from: C1-16
+- item: nagara-mo
+  from: C1-16
+- item: tsukarenagara-mo
+  from: C1-16
+- item: shinsui
+  from: C1-16
+- item: hisaisha
+  from: C1-16
+- item: nagagutsu
+  from: C1-16
+- item: netchuushou
+  from: C1-16
+- item: kokoro-no-kea
+  from: C1-16
+- item: rifoomu
+  from: C1-24
+- item: kouji
+  from: C1-24
+- item: tsuide-ni
+  from: C1-24
+- item: aisatsu-no-tsuide
+  from: C1-24
+- item: souon-review
+  from: C1-24
+- item: kouki
+  from: C1-24
+- item: taoru-review
+  from: C1-24
+- item: daiku
+  from: C1-24
+- item: chuushajou
+  from: C1-24
+- item: yoroshiku-onegai-itashimasu-review
+  from: C1-24
+- item: goshoukai
+  from: C1-28
+- item: kuraberu
+  from: C1-28
+- item: hajimete-review
+  from: C1-28
+- item: mairimashita-review
+  from: C1-28
+- item: irasshatta
+  from: C1-28
+- item: haha-ga-moushite
+  from: C1-28
+- item: ossharu-review
+  from: C1-28
+- item: omago
+  from: C1-28
+- item: mago
+  from: C1-28
+- item: shuukan-no-chigai
+  from: C1-28
+- item: sannen-me
+  from: C1-30
+- item: furikaeru
+  from: C1-30
+- item: seichou
+  from: C1-30
+- item: deai-ni-kansha
+  from: C1-30
+- item: kore-kara-mo
+  from: C1-30
+- item: dai-ni-no-kokyou
+  from: C1-30
+- item: kangeki
+  from: C1-30
+- item: mabushii
+  from: C1-30
+- item: takusan-no-hito
+  from: C1-30
+- item: kanpai-review
+  from: C1-30
+steps:
+- type: narrator
+  text:
+    en: Aya is getting married, and she has asked you to give a speech at the reception. Mrs Suzuki checks your draft for words you must not say. Listen to the conversation; you don't need to understand
+      it yet.
+    pt: A Aya vai casar e pediu que você faça um discurso na festa. A senhora Suzuki revisa o seu rascunho procurando palavras que não se pode dizer. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: suzuki
+    text: 「二人[ふたり] の 関係[かんけい] が 切[き]れない よう に」… これ は だめ です よ。
+    meaning:
+      en: “So that your bond never breaks”… that one's not allowed.
+      pt: «Para que o laço de vocês nunca se rompa»… esta não pode.
+  - speaker: protagonist
+    text: どうして です か。 いい 意味[いみ] です よ。
+    meaning:
+      en: Why? It means something good.
+      pt: Por quê? O sentido é bom.
+  - speaker: suzuki
+    text: 結婚式[けっこんしき] で は「切[き]れる」 や「別[わか]れる」 は 忌[い]み言葉[ことば] です。 否定[ひてい] でも 使[つか]いません。
+    meaning:
+      en: At weddings, “break” and “separate” are taboo words. Not even in the negative.
+      pt: No casamento, «romper» e «separar» são palavras-tabu. Nem na forma negativa.
+  - speaker: protagonist
+    text: 「重[かさ]ね重[がさ]ね お祝[いわ]い 申[もう]し上[あ]げます」 は？
+    meaning:
+      en: And “I congratulate you again and again”?
+      pt: E «felicito vocês de novo e de novo»?
+  - speaker: suzuki
+    text: それ も。 重[かさ]ね 言葉[ことば] は 再婚[さいこん] を 思[おも]わせる ので。
+    meaning:
+      en: That too. Repeated words suggest remarriage.
+      pt: Essa também. Palavra repetida lembra segundo casamento.
+  - speaker: protagonist
+    text: じゃあ、「お二人[ふたり] の 門出[かどで] を 心[こころ] から お祝[いわ]い 申[もう]し上[あ]げます」。
+    meaning:
+      en: 'Then: “From my heart I congratulate you both on your new start.”'
+      pt: 'Então: «Do fundo do coração, felicito vocês dois pelo novo começo».'
+  - speaker: suzuki
+    text: いい です ね。 結[むす]び は「末永[すえなが]く お幸[しあわ]せ に」。
+    meaning:
+      en: Good. And close with “Be happy for ever and ever.”
+      pt: Ótimo. E feche com «Sejam felizes para todo o sempre».
+  - speaker: protagonist
+    text: 晴[は]れ の 日[ひ] に 失礼[しつれい] が ない よう に、 練習[れんしゅう] します。
+    meaning:
+      en: I'll practise so I don't put a foot wrong on her big day.
+      pt: Vou treinar para não cometer nenhuma gafe no grande dia dela.
+- type: prompt
+  ask:
+    en: 'Say: a congratulatory speech.'
+    pt: 'Diga: discurso de felicitação.'
+  answer:
+    speaker: protagonist
+    text: 祝辞[しゅくじ]
+  items:
+  - shukuji
+- type: prompt
+  ask:
+    en: 'Say: taboo words.'
+    pt: 'Diga: palavras-tabu.'
+  answer:
+    speaker: protagonist
+    text: 忌[い]み言葉[ことば]
+  items:
+  - imikotoba
+- type: prompt
+  ask:
+    en: 'Say the taboo word: break off.'
+    pt: 'Diga a palavra-tabu: romper-se.'
+  answer:
+    speaker: protagonist
+    text: 切[き]れる
+  items:
+  - kireru
+- type: prompt
+  ask:
+    en: 'Say the taboo word: separate.'
+    pt: 'Diga a palavra-tabu: separar-se.'
+  answer:
+    speaker: protagonist
+    text: 別[わか]れる
+  items:
+  - wakareru-review
+- type: prompt
+  ask:
+    en: 'Say the taboo repetition: again and again.'
+    pt: 'Diga a repetição-tabu: de novo e de novo.'
+  answer:
+    speaker: protagonist
+    text: 重[かさ]ね重[がさ]ね
+  items:
+  - kasanegasane
+- type: prompt
+  ask:
+    en: 'Say: a new start in life.'
+    pt: 'Diga: um novo começo.'
+  answer:
+    speaker: protagonist
+    text: 門出[かどで]
+  items:
+  - kadode
+- type: prompt
+  ask:
+    en: 'Say: for ever and ever.'
+    pt: 'Diga: para todo o sempre.'
+  answer:
+    speaker: protagonist
+    text: 末永[すえなが]く
+  items:
+  - suenagaku
+- type: prompt
+  ask:
+    en: 'Close the speech: be happy for ever and ever.'
+    pt: 'Feche o discurso: sejam felizes para todo o sempre.'
+  answer:
+    speaker: protagonist
+    text: 末永[すえなが]く お幸[しあわ]せ に。
+  items:
+  - oshiawase-ni
+- type: prompt
+  ask:
+    en: 'Say: the closing of a speech.'
+    pt: 'Diga: o encerramento do discurso.'
+  answer:
+    speaker: protagonist
+    text: 結[むす]び
+  items:
+  - musubi
+- type: prompt
+  ask:
+    en: 'Say: a day of celebration.'
+    pt: 'Diga: um dia de festa.'
+  answer:
+    speaker: protagonist
+    text: 晴[は]れ の 日[ひ]
+  items:
+  - hare-no-hi
+- type: narrator
+  text:
+    en: 'At weddings, «忌[い]み言葉[ことば]» are avoided even in positive sentences: words of cutting and parting («切[き]れる», «別[わか]れる», «離[はな]れる», «終[お]わる»), and doubled words («重[かさ]ね重[がさ]ね», «たびたび») that suggest
+      a second marriage. Funerals have their own list — there, doubled words suggest more deaths.'
+    pt: 'Nos casamentos, as «忌[い]み言葉[ことば]» são evitadas até em frases positivas: palavras de corte e separação («切[き]れる», «別[わか]れる», «離[はな]れる», «終[お]わる») e palavras repetidas («重[かさ]ね重[がさ]ね», «たびたび»), que
+      lembram um segundo casamento. Funerais têm a sua própria lista — lá, a repetição lembra mais mortes.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil o discurso de padrinho pode ter piada e até lembrança da ex. No Japão cada palavra é checada — e um bom discurso é curto, cheio de fórmulas e sem nenhum «corte».
+- type: prompt
+  ask:
+    en: 'Once more: say “congratulatory speech”.'
+    pt: 'Mais uma vez: diga “discurso de felicitação”.'
+  answer:
+    speaker: protagonist
+    text: 祝辞[しゅくじ]
+  items:
+  - shukuji
+- type: prompt
+  ask:
+    en: 'Once more: say “for ever and ever”.'
+    pt: 'Mais uma vez: diga “para todo o sempre”.'
+  answer:
+    speaker: protagonist
+    text: 末永[すえなが]く
+  items:
+  - suenagaku
+- type: prompt
+  ask:
+    en: 'Once more: say “a new start (in life)”.'
+    pt: 'Mais uma vez: diga “um novo começo (na vida)”.'
+  answer:
+    speaker: protagonist
+    text: 門出[かどで]
+  items:
+  - kadode
+- type: prompt
+  ask:
+    en: 'Once more: say “taboo words (for an occasion)”.'
+    pt: 'Mais uma vez: diga “palavras-tabu (numa ocasião)”.'
+  answer:
+    speaker: protagonist
+    text: 忌[い]み言葉[ことば]
+  items:
+  - imikotoba
+- type: prompt
+  ask:
+    en: 'Once more: say “be cut, break off”.'
+    pt: 'Mais uma vez: diga “cortar-se, romper-se”.'
+  answer:
+    speaker: protagonist
+    text: 切[き]れる
+  items:
+  - kireru
+- type: prompt
+  ask:
+    en: 'Once more: say “part, separate”.'
+    pt: 'Mais uma vez: diga “separar-se”.'
+  answer:
+    speaker: protagonist
+    text: 別[わか]れる
+  items:
+  - wakareru-review
+- type: prompt
+  ask:
+    en: 'Once more: say “repeatedly (taboo at weddings)”.'
+    pt: 'Mais uma vez: diga “repetidamente (tabu em casamentos)”.'
+  answer:
+    speaker: protagonist
+    text: 重[かさ]ね重[がさ]ね
+  items:
+  - kasanegasane
+- type: prompt
+  ask:
+    en: 'Once more: say “closing (of a speech)”.'
+    pt: 'Mais uma vez: diga “encerramento (do discurso)”.'
+  answer:
+    speaker: protagonist
+    text: 結[むす]び
+  items:
+  - musubi
+- type: prompt
+  ask:
+    en: 'Once more: say “be happy”.'
+    pt: 'Mais uma vez: diga “sejam felizes”.'
+  answer:
+    speaker: protagonist
+    text: お幸[しあわ]せ に
+  items:
+  - oshiawase-ni
+- type: prompt
+  ask:
+    en: 'Once more: say “a day of celebration”.'
+    pt: 'Mais uma vez: diga “um dia de festa”.'
+  answer:
+    speaker: protagonist
+    text: 晴[は]れ の 日[ひ]
+  items:
+  - hare-no-hi
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the third year — and “look back — and “growth — and “grateful for the people met — and “from now on too — and “second home — and “deeply moved — and “dazzling, bright — and “supported by
+      many people — and “a toast to the next three years — and “let me introduce (humble) — and “compare — and “first time in Japan”.'
+    pt: 'Diga: “o terceiro ano — e “olhar para trás — e “crescimento — e “grato pelos encontros — e “daqui em diante também — e “segunda terra natal — e “emocionado — e “radiante — e “apoiado por muita
+      gente — e “um brinde aos próximos três anos — e “permita-me apresentar (humilde) — e “comparar — e “primeira vez no Japão”.'
+  answer:
+    speaker: protagonist
+    text: 三年[さんねん] 目[め] … 振[ふ]り返[かえ]る … 成長[せいちょう] … 出会[であ]い に 感謝[かんしゃ] … これ から も … 第二[だいに] の 故郷[こきょう] … 感激[かんげき] … 眩[まぶ]しい … たくさん の 人[ひと] に 支[ささ]えられて … これ から の 三年[さんねん] に 乾杯[かんぱい] … ご紹介[しょうかい] します … 比[くら]べる
+      … 初[はじ]めて の 日本[にほん]
+  items:
+  - sannen-me
+  - furikaeru
+  - seichou
+  - deai-ni-kansha
+  - kore-kara-mo
+  - dai-ni-no-kokyou
+  - kangeki
+  - mabushii
+  - takusan-no-hito
+  - kanpai-review
+  - goshoukai
+  - kuraberu
+  - hajimete-review
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “came (humble, of my family) — and “came (respectful, of others) — and “my mother says (humble) — and “father-in-law says (respectful) — and “(your) grandchild — and “(my) grandchild — and
+      “difference in customs — and “renovation — and “construction work — and “while (you''re at it) — and “while greeting (them) — and “we''ll cause you some trouble — and “construction period”.'
+    pt: 'Diga: “vieram (humilde, da minha família) — e “vieram (respeitoso, dos outros) — e “minha mãe diz (humilde) — e “o sogro diz (respeitoso) — e “o neto (dos outros) — e “neto (meu) — e “diferença
+      de costumes — e “reforma — e “obra — e “aproveitando que, de passagem — e “aproveitando o cumprimento — e “vamos causar algum transtorno — e “prazo da obra”.'
+  answer:
+    speaker: protagonist
+    text: 参[まい]りました … いらっしゃった … 母[はは] が 申[もう]して おります … お義父[とう]さん が おっしゃる … お孫[まご] さん … 孫[まご] … 習慣[しゅうかん] の 違[ちが]い … リフォーム … 工事[こうじ] … 〜ついで に … 挨拶[あいさつ] の ついで に … ご迷惑[めいわく] を おかけ します … 工期[こうき]
+  items:
+  - mairimashita-review
+  - irasshatta
+  - haha-ga-moushite
+  - ossharu-review
+  - omago
+  - mago
+  - shuukan-no-chigai
+  - rifoomu
+  - kouji
+  - tsuide-ni
+  - aisatsu-no-tsuide
+  - souon-review
+  - kouki
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “towel (as a greeting gift) — and “carpenter — and “parking — and “we humbly ask for your understanding — and “volunteer — and “disaster — and “shovelling mud — and “support, aid — and “although,
+      while (contrast) — and “although tired — and “flooding (of a house) — and “disaster victim — and “rubber boots”.'
+    pt: 'Diga: “toalha (de presente) — e “carpinteiro — e “estacionamento — e “contamos com a sua compreensão — e “voluntário — e “desastre — e “tirar lama — e “apoio, ajuda — e “embora, apesar de — e “embora
+      cansado — e “alagamento — e “vítima do desastre — e “galochas”.'
+  answer:
+    speaker: protagonist
+    text: タオル … 大工[だいく] … 駐車場[ちゅうしゃじょう] … 何卒[なにとぞ] よろしく お願[ねが]い いたします … ボランティア … 災害[さいがい] … 泥[どろ] かき … 支援[しえん] … 〜ながら も … 疲[つか]れながら も … 浸水[しんすい] … 被災者[ひさいしゃ] … 長靴[ながぐつ]
+  items:
+  - taoru-review
+  - daiku
+  - chuushajou
+  - yoroshiku-onegai-itashimasu-review
+  - borantia
+  - saigai
+  - dorokaki
+  - shien
+  - nagara-mo
+  - tsukarenagara-mo
+  - shinsui
+  - hisaisha
+  - nagagutsu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “heatstroke — and “emotional care — and “the future — and “returning to one''s country — and “stay, remain — and “be torn, hesitate — and “decision, resolve — and “permanent residence — and
+      “both countries — and “become a bridge — and “I want to be with (you) — and “don''t worry — and “humidity, damp”.'
+    pt: 'Diga: “insolação — e “apoio emocional — e “o futuro — e “voltar ao país de origem — e “ficar — e “ficar em dúvida — e “decisão — e “residência permanente — e “os dois países — e “ser uma ponte
+      — e “quero ficar com (você) — e “não se preocupe — e “umidade”.'
+  answer:
+    speaker: protagonist
+    text: 熱中症[ねっちゅうしょう] … 心[こころ] の ケア … 将来[しょうらい] … 帰国[きこく] … 残[のこ]る … 迷[まよ]う … 決心[けっしん] … 永住[えいじゅう] … 両方[りょうほう] の 国[くに] … 架[か]け橋[はし] に なる … 一緒[いっしょ] に いたい … 心配[しんぱい] しないで … 湿気[しっけ]
+  items:
+  - netchuushou
+  - kokoro-no-kea
+  - shourai
+  - kikoku
+  - nokoru
+  - mayou
+  - kesshin
+  - eijuu
+  - ryouhou-no-kuni
+  - hashi-ni-naru
+  - isshoni-iru
+  - shinpai-shinaide
+  - shikke
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “mould — and “while, during (before it ends) — and “while it''s sunny — and “dehumidifier — and “open the window — and “dry (something) — and “damp and muggy — and “drying laundry indoors
+      — and “laundry — and “end of the rainy season — and “star — and “Tanabata, the star festival (7 July) — and “wish”.'
+    pt: 'Diga: “mofo, bolor — e “enquanto, durante (antes de acabar) — e “enquanto está sol — e “desumidificador — e “abrir a janela — e “secar — e “úmido e abafado — e “secar roupa dentro de casa — e “roupa
+      lavada — e “fim da estação das chuvas — e “estrela — e “Tanabata, a festa das estrelas (7 de julho) — e “desejo”.'
+  answer:
+    speaker: protagonist
+    text: カビ … 〜間[あいだ] に … 晴[は]れて いる 間[あいだ] に … 除湿機[じょしつき] … 窓[まど] を 開[あ]ける … 乾[かわ]かす … じめじめ … 部屋[へや] 干[ぼ]し … 洗濯物[せんたくもの] … 梅雨[つゆ] 明[あ]け … 星[ほし] … 七夕[たなばた] … 願[ねが]い
+  items:
+  - kabi
+  - aida-ni
+  - hareteiru-aida-ni
+  - joshitsuki
+  - mado-wo-akeru
+  - kawakasu
+  - jimejime
+  - heya-boshi
+  - sentakumono
+  - tsuyu-ake
+  - hoshi
+  - tanabata
+  - negai
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “sky — and “moon — and “night — and “paper strip for a wish — and “bamboo branch — and “write — and “I want to become — and “well, skilfully — and “it''s beautiful, isn''t it”.'
+    pt: 'Diga: “céu — e “lua — e “noite — e “tira de papel para o desejo — e “galho de bambu — e “escrevo — e “quero ser, quero ficar — e “bem, com jeito — e “que lindo, não é”.'
+  answer:
+    speaker: protagonist
+    text: 空[そら] … 月[つき] … 夜[よる] … 短冊[たんざく] … 笹[ささ] … 書[か]きます … なりたい です … 上手[じょうず] に … きれい です ね
+  items:
+  - sora
+  - tsuki
+  - yoru
+  - tanzaku
+  - sasa
+  - kakimasu
+  - naritai
+  - jouzu-ni
+  - kirei-desu-ne
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
