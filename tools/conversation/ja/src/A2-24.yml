@@ -1,0 +1,43 @@
+id: A2-24
+protagonist: m
+title: [Working too much, Trabalhar demais]
+situation: ["Seven in the evening. Your work is done, but the office is full. Kenta whispers about 付き合い残業 — staying because the boss stays.", "Sete da noite. Seu trabalho acabou, mas o escritório está cheio. O Kenta cochicha sobre o 付き合い残業 — ficar porque o chefe fica."]
+learn: []
+culture: Overwork, and leaving on time is your right
+items:
+  - [zangyou, "残業[ざんぎょう]", "overtime", "hora extra", {rare: true}]
+  - [teiji, "定時[ていじ]", "regular finishing time", "horário de saída", {rare: true}]
+  - [tsukareta, "疲[つか]れた", "I'm tired (plain)", "estou cansado (simples)"]
+  - [karou, "過労[かろう]", "overwork", "excesso de trabalho", {rare: true}]
+  - [kara-reason, "〜から", "because (reason first)", "porque (o motivo antes)"]
+  - [owatta-kara, "終[お]わった から", "because it's finished", "porque acabou"]
+  - [kaerimasu, "帰[かえ]ります", "go home", "vou para casa"]
+  - [osaki-ni, "お先[さき] に 失礼[しつれい] します", "excuse me for leaving first", "com licença, já vou indo", {rare: true}]
+  - [yuukyuu, "有給[ゆうきゅう]", "paid leave", "férias remuneradas", {rare: true}]
+  - [kenri, "権利[けんり]", "right (legal)", "direito"]
+  - [joushi, "上司[じょうし]", "boss, superior", "chefe, superior"]
+dialogue:
+  - [kenta, "もう 定時[ていじ] だ けど、 みんな まだ いる ね。", "It's past finishing time, but everyone's still here.", "Já deu o horário, mas todo mundo ainda está aqui."]
+  - [protagonist, "仕事[しごと] は 終[お]わった から、 帰[かえ]りたい。 でも 帰[かえ]って も いい？", "My work's finished, so I want to go home. But can I?", "Meu trabalho acabou, então quero ir embora. Mas pode?"]
+  - [kenta, "上司[じょうし] が 帰[かえ]らない から、 帰[かえ]りにくい。 付[つ]き合[あ]い 残業[ざんぎょう] って いう ん だ。", "The boss isn't leaving, so it's hard to leave. It's called 'keeping company' overtime.", "O chefe não vai embora, então fica difícil sair. Chamam de hora extra de companhia."]
+  - [protagonist, "でも 疲[つか]れた よ。 過労[かろう] は 問題[もんだい] でしょ。", "But I'm tired. Overwork is a problem, right?", "Mas estou cansado. Excesso de trabalho é um problema, né?"]
+  - [kenta, "うん。 今[いま] は 古[ふる]い ルール だ と 思[おも]う 人[ひと] が 多[おお]い よ。 定時[ていじ] に 帰[かえ]る の は 権利[けんり] だ。", "Yeah. Most people think it's an outdated rule now. Leaving on time is your right.", "É. Hoje a maioria acha que é regra ultrapassada. Sair no horário é seu direito."]
+  - [protagonist, "じゃあ… お先[さき] に 失礼[しつれい] します。", "Then… excuse me for leaving first.", "Então… com licença, já vou indo."]
+  - [sato, "お疲[つか]れさま。 有給[ゆうきゅう] も ちゃんと 使[つか]って ね。", "Good work. Make sure you use your paid leave too.", "Bom trabalho. E tire suas férias direitinho, viu."]
+  - [protagonist, "はい、 ありがとう ございます。", "Yes, thank you.", "Sim, obrigado."]
+teach:
+  - ask: ["Say: overtime.", "Diga: hora extra.", "残業[ざんぎょう]", zangyou]
+  - ask: ["Say: the regular finishing time.", "Diga: o horário de saída.", "定時[ていじ]", teiji]
+  - ask: ["Say: the boss.", "Diga: o chefe.", "上司[じょうし]", joushi]
+  - ask: ["Say plainly: I'm tired.", "Diga, informal: estou cansado.", "疲[つか]れた。", tsukareta]
+  - ask: ["Say: overwork.", "Diga: excesso de trabalho.", "過労[かろう]", karou]
+  - note: ["«から» gives the reason first, then the result: «終[お]わった から、 帰[かえ]ります» — it's finished, so I'm going home. You met it with the wooden houses; here it joins plain sentences.", "«から» dá o motivo primeiro, depois o resultado: «終[お]わった から、 帰[かえ]ります» — acabou, então vou para casa. Você viu com as casas de madeira; aqui ela junta frases simples."]
+  - ask: ["Say the word: because.", "Diga a palavra: «porque».", "〜から", kara-reason]
+  - ask: ["Say: because it's finished.", "Diga: porque acabou.", "終[お]わった から", owatta-kara]
+  - ask: ["Say: I'm going home.", "Diga: vou para casa.", "帰[かえ]ります。", kaerimasu]
+  - build: [osaki-ni, ["失礼[しつれい] します", "お先[さき] に 失礼[しつれい] します"]]
+  - ask: ["Leave politely before the others.", "Saia com educação antes dos outros.", "お先[さき] に 失礼[しつれい] します。", osaki-ni]
+  - ask: ["Say: a right.", "Diga: um direito.", "権利[けんり]", kenri]
+  - ask: ["Say: paid leave.", "Diga: férias remuneradas.", "有給[ゆうきゅう]", yuukyuu]
+  - note: ["«付[つ]き合[あ]い 残業[ざんぎょう]», staying late because the boss stays, is the unwritten rule many still feel — but in a 2023 survey 82.8 % called it the most outdated work value. It's a custom, not a law: leaving on time is your right. Paid leave is 10 to 20 days a year by law, yet people take only about two thirds (12.1 of 18.1 days in 2024); since 2019 employers must make sure you take at least five.", "O «付[つ]き合[あ]い 残業[ざんぎょう]», ficar até tarde porque o chefe fica, é a regra não escrita que muitos ainda sentem — mas numa pesquisa de 2023, 82,8 % a apontaram como o valor de trabalho mais ultrapassado. É costume, não lei: sair no horário é seu direito. As férias remuneradas são de 10 a 20 dias por ano por lei, mas o pessoal tira só cerca de dois terços (12,1 de 18,1 dias em 2024); desde 2019 o empregador tem que garantir que você tire pelo menos cinco."]
+  - pt_only: "Pela CLT você tem 30 dias de férias com um terço a mais, e a hora extra vale pelo menos 50 % a mais. No Japão o problema não é a lei, é o costume — por isso tire as suas férias e saia no horário quando o trabalho acabar."

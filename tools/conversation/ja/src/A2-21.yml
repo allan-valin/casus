@@ -1,0 +1,43 @@
+id: A2-21
+protagonist: f
+title: [Earthquake, Terremoto]
+situation: ["September 1st, Disaster Prevention Day. The neighbourhood drill at the school; Mrs Suzuki shows you her emergency bag.", "1º de setembro, Dia da Prevenção de Desastres. O simulado do bairro na escola; a senhora Suzuki mostra a mochila de emergência dela."]
+learn: []
+culture: Drills and alerts
+items:
+  - [hinan, "避難[ひなん]", "evacuation", "evacuação"]
+  - [hinanjo, "避難所[ひなんじょ]", "evacuation shelter", "abrigo de evacuação", {rare: true}]
+  - [bousai, "防災[ぼうさい]", "disaster prevention", "prevenção de desastres", {rare: true}]
+  - [hijou-bukuro, "非常[ひじょう] 持[も]ち出[だ]し 袋[ぶくろ]", "emergency grab bag", "mochila de emergência", {rare: true}]
+  - [te-oku, "〜て おく", "do in advance", "deixar feito, preparar antes"]
+  - [junbi-shite-oku, "準備[じゅんび] して おきます", "I'll get it ready in advance", "vou deixar preparado"]
+  - [katte-oku, "買[か]って おきます", "I'll buy it in advance", "vou comprar antes"]
+  - [kaichuu-dentou, "懐中[かいちゅう] 電灯[でんとう]", "torch, flashlight", "lanterna", {rare: true}]
+  - [mizu-mikka, "三日分[みっかぶん] の 水[みず]", "three days' water", "água para três dias"]
+  - [tsunami, "津波[つなみ]", "tsunami", "tsunami"]
+  - [takai-tokoro, "高[たか]い 所[ところ]", "high ground", "lugar alto"]
+dialogue:
+  - [suzuki, "今日[きょう] は 防災[ぼうさい] の 日[ひ] です。 避難[ひなん] の 訓練[くんれん] が あります よ。", "Today is Disaster Prevention Day. There's an evacuation drill.", "Hoje é o Dia da Prevenção de Desastres. Tem simulado de evacuação."]
+  - [protagonist, "どこ に 避難[ひなん] します か。", "Where do we evacuate to?", "Para onde a gente evacua?"]
+  - [suzuki, "小学校[しょうがっこう] が 避難所[ひなんじょ] です。 これ は 私[わたし] の 非常[ひじょう] 持[も]ち出[だ]し 袋[ぶくろ]。", "The primary school is the shelter. This is my emergency bag.", "A escola primária é o abrigo. Esta é a minha mochila de emergência."]
+  - [protagonist, "何[なに] が 入[はい]って います か。", "What's in it?", "O que tem dentro?"]
+  - [suzuki, "三日分[みっかぶん] の 水[みず] と 食[た]べ物[もの]、 懐中[かいちゅう] 電灯[でんとう]、 薬[くすり]。", "Three days' water and food, a torch, medicine.", "Água e comida para três dias, lanterna, remédio."]
+  - [protagonist, "私[わたし] は 何[なに] も 準備[じゅんび] して いません…", "I haven't prepared anything…", "Eu não preparei nada…"]
+  - [suzuki, "今週[こんしゅう]、 準備[じゅんび] して おいて ください ね。 浜松[はままつ] は 海[うみ] が 近[ちか]い から、 津波[つなみ] の 時[とき] は 高[たか]い 所[ところ] へ。", "Please get one ready this week. Hamamatsu is near the sea, so in a tsunami, go to high ground.", "Prepare uma esta semana, por favor. Hamamatsu é perto do mar, então em tsunami, vá para um lugar alto."]
+  - [protagonist, "はい。 水[みず] と 電灯[でんとう] を 買[か]って おきます。", "Yes. I'll buy water and a torch in advance.", "Certo. Vou comprar água e lanterna antes."]
+teach:
+  - ask: ["Say: disaster prevention.", "Diga: prevenção de desastres.", "防災[ぼうさい]", bousai]
+  - ask: ["Say: evacuation.", "Diga: evacuação.", "避難[ひなん]", hinan]
+  - ask: ["Say: the evacuation shelter.", "Diga: o abrigo de evacuação.", "避難所[ひなんじょ]", hinanjo]
+  - ask: ["Say: the emergency bag.", "Diga: a mochila de emergência.", "非常[ひじょう] 持[も]ち出[だ]し 袋[ぶくろ]", hijou-bukuro]
+  - ask: ["Say: a torch.", "Diga: uma lanterna.", "懐中[かいちゅう] 電灯[でんとう]", kaichuu-dentou]
+  - ask: ["Say: three days' water.", "Diga: água para três dias.", "三日分[みっかぶん] の 水[みず]", mizu-mikka]
+  - note: ["«〜て おく» is doing something now so it's ready later: «買[か]って おきます», I'll buy it in advance; «準備[じゅんび] して おきます», I'll have it ready. A very Japanese verb ending — prepared before it's needed.", "«〜て おく» é fazer algo agora para estar pronto depois: «買[か]って おきます», vou comprar antes; «準備[じゅんび] して おきます», vou deixar preparado. Uma terminação bem japonesa — preparado antes de precisar."]
+  - ask: ["Say the pattern: do in advance.", "Diga o padrão: deixar feito.", "〜て おく", te-oku]
+  - ask: ["Say: I'll buy it in advance.", "Diga: vou comprar antes.", "買[か]って おきます。", katte-oku]
+  - build: [junbi-shite-oku, ["おきます", "して おきます", "準備[じゅんび] して おきます"]]
+  - ask: ["Say: I'll get it ready in advance.", "Diga: vou deixar preparado.", "準備[じゅんび] して おきます。", junbi-shite-oku]
+  - ask: ["Say: tsunami.", "Diga: tsunami.", "津波[つなみ]", tsunami]
+  - ask: ["Say: high ground.", "Diga: um lugar alto.", "高[たか]い 所[ところ]", takai-tokoro]
+  - note: ["Every town has shelters, usually schools, and coastal towns mark tsunami routes to high ground. Keep water and food for at least three days. Phones sound an emergency alert for strong quakes and tsunamis; Hamamatsu's city site has disaster information in Portuguese.", "Toda cidade tem abrigos, geralmente escolas, e cidades costeiras marcam rotas de fuga de tsunami para lugares altos. Tenha água e comida para pelo menos três dias. O celular toca um alerta de emergência para terremotos fortes e tsunamis; o site da prefeitura de Hamamatsu tem informações sobre desastres em português."]
+  - pt_only: "No Brasil a Defesa Civil manda alerta por SMS para enchente e deslizamento. No Japão a preparação é de rotina: simulado todo ano, mochila pronta atrás da porta."

@@ -1,0 +1,576 @@
+# UNIT ja A2-21 — written by AI (Claude) for Casus; expanded from src/A2-21.yml by tools/expand_unit.py. Edit the source.
+
+id: A2-21
+level: A2
+number: 21
+protagonist: f
+title:
+  en: Earthquake
+  pt: Terremoto
+situation:
+  en: September 1st, Disaster Prevention Day. The neighbourhood drill at the school; Mrs Suzuki shows you her emergency bag.
+  pt: 1º de setembro, Dia da Prevenção de Desastres. O simulado do bairro na escola; a senhora Suzuki mostra a mochila de emergência dela.
+learn_lessons: []
+culture: Drills and alerts
+new_items:
+- id: hinan
+  text: 避難[ひなん]
+  meaning:
+    en: evacuation
+    pt: evacuação
+- id: hinanjo
+  text: 避難所[ひなんじょ]
+  meaning:
+    en: evacuation shelter
+    pt: abrigo de evacuação
+  rare: true
+- id: bousai
+  text: 防災[ぼうさい]
+  meaning:
+    en: disaster prevention
+    pt: prevenção de desastres
+  rare: true
+- id: hijou-bukuro
+  text: 非常[ひじょう] 持[も]ち出[だ]し 袋[ぶくろ]
+  meaning:
+    en: emergency grab bag
+    pt: mochila de emergência
+  rare: true
+- id: te-oku
+  text: 〜て おく
+  meaning:
+    en: do in advance
+    pt: deixar feito, preparar antes
+- id: junbi-shite-oku
+  text: 準備[じゅんび] して おきます
+  meaning:
+    en: I'll get it ready in advance
+    pt: vou deixar preparado
+- id: katte-oku
+  text: 買[か]って おきます
+  meaning:
+    en: I'll buy it in advance
+    pt: vou comprar antes
+- id: kaichuu-dentou
+  text: 懐中[かいちゅう] 電灯[でんとう]
+  meaning:
+    en: torch, flashlight
+    pt: lanterna
+  rare: true
+- id: mizu-mikka
+  text: 三日分[みっかぶん] の 水[みず]
+  meaning:
+    en: three days' water
+    pt: água para três dias
+- id: tsunami
+  text: 津波[つなみ]
+  meaning:
+    en: tsunami
+    pt: tsunami
+- id: takai-tokoro
+  text: 高[たか]い 所[ところ]
+  meaning:
+    en: high ground
+    pt: lugar alto
+reviews:
+- item: raamen
+  from: A1-20
+- item: tabetai
+  from: A1-20
+- item: nomitai
+  from: A1-20
+- item: tai
+  from: A1-20
+- item: karai
+  from: A1-20
+- item: atsui-food
+  from: A1-20
+- item: kenbaiki
+  from: A1-20
+- item: oomori
+  from: A1-20
+- item: susuru
+  from: A1-20
+- item: onaka-suita
+  from: A1-20
+- item: nani-ga-ii
+  from: A1-20
+- item: denki
+  from: A2-06
+- item: bureekaa
+  from: A2-06
+- item: eakon
+  from: A2-06
+- item: tsukemasu
+  from: A2-06
+- item: keshimasu
+  from: A2-06
+- item: kiete-imasu
+  from: A2-06
+- item: tsuite-imasu
+  from: A2-06
+- item: ochimashita
+  from: A2-06
+- item: kurai
+  from: A2-06
+- item: hyaku-boruto
+  from: A2-06
+- item: doushite
+  from: A2-06
+- item: to-omoimasu
+  from: A2-14
+- item: dou-omoimasu-ka
+  from: A2-14
+- item: sanba
+  from: A2-14
+- item: sutereotaipu
+  from: A2-14
+- item: imeeji
+  from: A2-14
+- item: chigau-to-omou
+  from: A2-14
+- item: amari
+  from: A2-14
+- item: zenzen
+  from: A2-14
+- item: tokidoki
+  from: A2-14
+- item: kikimasu
+  from: A2-14
+- item: kotowaza
+  from: A2-18
+- item: saru-mo
+  from: A2-18
+- item: ishi-no-ue
+  from: A2-18
+- item: to-iu
+  from: A2-18
+- item: imi
+  from: A2-18
+- item: dou-iu-imi
+  from: A2-18
+- item: shippai
+  from: A2-18
+- item: osoi
+  from: A2-18
+- item: gaman
+  from: A2-18
+- item: jouzu-na-hito
+  from: A2-18
+- item: itta
+  from: A2-20
+- item: mita
+  from: A2-20
+- item: tabeta
+  from: A2-20
+- item: shita
+  from: A2-20
+- item: kita
+  from: A2-20
+- item: katta
+  from: A2-20
+- item: maketa
+  from: A2-20
+- item: riigu
+  from: A2-20
+- item: aite
+  from: A2-20
+- item: tsuyokatta
+  from: A2-20
+- item: ouen
+  from: A2-20
+steps:
+- type: narrator
+  text:
+    en: September 1st, Disaster Prevention Day. The neighbourhood drill at the school; Mrs Suzuki shows you her emergency bag. Listen to the conversation; you don't need to understand it yet.
+    pt: 1º de setembro, Dia da Prevenção de Desastres. O simulado do bairro na escola; a senhora Suzuki mostra a mochila de emergência dela. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: suzuki
+    text: 今日[きょう] は 防災[ぼうさい] の 日[ひ] です。 避難[ひなん] の 訓練[くんれん] が あります よ。
+    meaning:
+      en: Today is Disaster Prevention Day. There's an evacuation drill.
+      pt: Hoje é o Dia da Prevenção de Desastres. Tem simulado de evacuação.
+  - speaker: protagonist
+    text: どこ に 避難[ひなん] します か。
+    meaning:
+      en: Where do we evacuate to?
+      pt: Para onde a gente evacua?
+  - speaker: suzuki
+    text: 小学校[しょうがっこう] が 避難所[ひなんじょ] です。 これ は 私[わたし] の 非常[ひじょう] 持[も]ち出[だ]し 袋[ぶくろ]。
+    meaning:
+      en: The primary school is the shelter. This is my emergency bag.
+      pt: A escola primária é o abrigo. Esta é a minha mochila de emergência.
+  - speaker: protagonist
+    text: 何[なに] が 入[はい]って います か。
+    meaning:
+      en: What's in it?
+      pt: O que tem dentro?
+  - speaker: suzuki
+    text: 三日分[みっかぶん] の 水[みず] と 食[た]べ物[もの]、 懐中[かいちゅう] 電灯[でんとう]、 薬[くすり]。
+    meaning:
+      en: Three days' water and food, a torch, medicine.
+      pt: Água e comida para três dias, lanterna, remédio.
+  - speaker: protagonist
+    text: 私[わたし] は 何[なに] も 準備[じゅんび] して いません…
+    meaning:
+      en: I haven't prepared anything…
+      pt: Eu não preparei nada…
+  - speaker: suzuki
+    text: 今週[こんしゅう]、 準備[じゅんび] して おいて ください ね。 浜松[はままつ] は 海[うみ] が 近[ちか]い から、 津波[つなみ] の 時[とき] は 高[たか]い 所[ところ] へ。
+    meaning:
+      en: Please get one ready this week. Hamamatsu is near the sea, so in a tsunami, go to high ground.
+      pt: Prepare uma esta semana, por favor. Hamamatsu é perto do mar, então em tsunami, vá para um lugar alto.
+  - speaker: protagonist
+    text: はい。 水[みず] と 電灯[でんとう] を 買[か]って おきます。
+    meaning:
+      en: Yes. I'll buy water and a torch in advance.
+      pt: Certo. Vou comprar água e lanterna antes.
+- type: prompt
+  ask:
+    en: 'Say: disaster prevention.'
+    pt: 'Diga: prevenção de desastres.'
+  answer:
+    speaker: protagonist
+    text: 防災[ぼうさい]
+  items:
+  - bousai
+- type: prompt
+  ask:
+    en: 'Say: evacuation.'
+    pt: 'Diga: evacuação.'
+  answer:
+    speaker: protagonist
+    text: 避難[ひなん]
+  items:
+  - hinan
+- type: prompt
+  ask:
+    en: 'Say: the evacuation shelter.'
+    pt: 'Diga: o abrigo de evacuação.'
+  answer:
+    speaker: protagonist
+    text: 避難所[ひなんじょ]
+  items:
+  - hinanjo
+- type: prompt
+  ask:
+    en: 'Say: the emergency bag.'
+    pt: 'Diga: a mochila de emergência.'
+  answer:
+    speaker: protagonist
+    text: 非常[ひじょう] 持[も]ち出[だ]し 袋[ぶくろ]
+  items:
+  - hijou-bukuro
+- type: prompt
+  ask:
+    en: 'Say: a torch.'
+    pt: 'Diga: uma lanterna.'
+  answer:
+    speaker: protagonist
+    text: 懐中[かいちゅう] 電灯[でんとう]
+  items:
+  - kaichuu-dentou
+- type: prompt
+  ask:
+    en: 'Say: three days'' water.'
+    pt: 'Diga: água para três dias.'
+  answer:
+    speaker: protagonist
+    text: 三日分[みっかぶん] の 水[みず]
+  items:
+  - mizu-mikka
+- type: narrator
+  text:
+    en: '«〜て おく» is doing something now so it''s ready later: «買[か]って おきます», I''ll buy it in advance; «準備[じゅんび] して おきます», I''ll have it ready. A very Japanese verb ending — prepared before it''s needed.'
+    pt: '«〜て おく» é fazer algo agora para estar pronto depois: «買[か]って おきます», vou comprar antes; «準備[じゅんび] して おきます», vou deixar preparado. Uma terminação bem japonesa — preparado antes de precisar.'
+- type: prompt
+  ask:
+    en: 'Say the pattern: do in advance.'
+    pt: 'Diga o padrão: deixar feito.'
+  answer:
+    speaker: protagonist
+    text: 〜て おく
+  items:
+  - te-oku
+- type: prompt
+  ask:
+    en: 'Say: I''ll buy it in advance.'
+    pt: 'Diga: vou comprar antes.'
+  answer:
+    speaker: protagonist
+    text: 買[か]って おきます。
+  items:
+  - katte-oku
+- type: buildup
+  item: junbi-shite-oku
+  parts:
+  - おきます
+  - して おきます
+  - 準備[じゅんび] して おきます
+- type: prompt
+  ask:
+    en: 'Say: I''ll get it ready in advance.'
+    pt: 'Diga: vou deixar preparado.'
+  answer:
+    speaker: protagonist
+    text: 準備[じゅんび] して おきます。
+  items:
+  - junbi-shite-oku
+- type: prompt
+  ask:
+    en: 'Say: tsunami.'
+    pt: 'Diga: tsunami.'
+  answer:
+    speaker: protagonist
+    text: 津波[つなみ]
+  items:
+  - tsunami
+- type: prompt
+  ask:
+    en: 'Say: high ground.'
+    pt: 'Diga: um lugar alto.'
+  answer:
+    speaker: protagonist
+    text: 高[たか]い 所[ところ]
+  items:
+  - takai-tokoro
+- type: narrator
+  text:
+    en: Every town has shelters, usually schools, and coastal towns mark tsunami routes to high ground. Keep water and food for at least three days. Phones sound an emergency alert for strong quakes and
+      tsunamis; Hamamatsu's city site has disaster information in Portuguese.
+    pt: Toda cidade tem abrigos, geralmente escolas, e cidades costeiras marcam rotas de fuga de tsunami para lugares altos. Tenha água e comida para pelo menos três dias. O celular toca um alerta de emergência
+      para terremotos fortes e tsunamis; o site da prefeitura de Hamamatsu tem informações sobre desastres em português.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'No Brasil a Defesa Civil manda alerta por SMS para enchente e deslizamento. No Japão a preparação é de rotina: simulado todo ano, mochila pronta atrás da porta.'
+- type: prompt
+  ask:
+    en: 'Once more: say “evacuation”.'
+    pt: 'Mais uma vez: diga “evacuação”.'
+  answer:
+    speaker: protagonist
+    text: 避難[ひなん]
+  items:
+  - hinan
+- type: prompt
+  ask:
+    en: 'Once more: say “evacuation shelter”.'
+    pt: 'Mais uma vez: diga “abrigo de evacuação”.'
+  answer:
+    speaker: protagonist
+    text: 避難所[ひなんじょ]
+  items:
+  - hinanjo
+- type: prompt
+  ask:
+    en: 'Once more: say “disaster prevention”.'
+    pt: 'Mais uma vez: diga “prevenção de desastres”.'
+  answer:
+    speaker: protagonist
+    text: 防災[ぼうさい]
+  items:
+  - bousai
+- type: prompt
+  ask:
+    en: 'Once more: say “emergency grab bag”.'
+    pt: 'Mais uma vez: diga “mochila de emergência”.'
+  answer:
+    speaker: protagonist
+    text: 非常[ひじょう] 持[も]ち出[だ]し 袋[ぶくろ]
+  items:
+  - hijou-bukuro
+- type: prompt
+  ask:
+    en: 'Once more: say “do in advance”.'
+    pt: 'Mais uma vez: diga “deixar feito, preparar antes”.'
+  answer:
+    speaker: protagonist
+    text: 〜て おく
+  items:
+  - te-oku
+- type: prompt
+  ask:
+    en: 'Once more: say “I''ll get it ready in advance”.'
+    pt: 'Mais uma vez: diga “vou deixar preparado”.'
+  answer:
+    speaker: protagonist
+    text: 準備[じゅんび] して おきます
+  items:
+  - junbi-shite-oku
+- type: prompt
+  ask:
+    en: 'Once more: say “I''ll buy it in advance”.'
+    pt: 'Mais uma vez: diga “vou comprar antes”.'
+  answer:
+    speaker: protagonist
+    text: 買[か]って おきます
+  items:
+  - katte-oku
+- type: prompt
+  ask:
+    en: 'Once more: say “torch, flashlight”.'
+    pt: 'Mais uma vez: diga “lanterna”.'
+  answer:
+    speaker: protagonist
+    text: 懐中[かいちゅう] 電灯[でんとう]
+  items:
+  - kaichuu-dentou
+- type: prompt
+  ask:
+    en: 'Once more: say “three days'' water”.'
+    pt: 'Mais uma vez: diga “água para três dias”.'
+  answer:
+    speaker: protagonist
+    text: 三日分[みっかぶん] の 水[みず]
+  items:
+  - mizu-mikka
+- type: prompt
+  ask:
+    en: 'Once more: say “tsunami”.'
+    pt: 'Mais uma vez: diga “tsunami”.'
+  answer:
+    speaker: protagonist
+    text: 津波[つなみ]
+  items:
+  - tsunami
+- type: prompt
+  ask:
+    en: 'Once more: say “high ground”.'
+    pt: 'Mais uma vez: diga “lugar alto”.'
+  answer:
+    speaker: protagonist
+    text: 高[たか]い 所[ところ]
+  items:
+  - takai-tokoro
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “went (plain) — and “saw (plain) — and “ate (plain) — and “did (plain) — and “came (plain) — and “won (plain) — and “lost (plain) — and “league”.'
+    pt: 'Diga: “fui (simples) — e “vi (simples) — e “comi (simples) — e “fiz (simples) — e “vim (simples) — e “ganhamos (simples) — e “perdemos (simples) — e “liga”.'
+  answer:
+    speaker: protagonist
+    text: 行[い]った … 見[み]た … 食[た]べた … した … 来[き]た … 勝[か]った … 負[ま]けた … リーグ
+  items:
+  - itta
+  - mita
+  - tabeta
+  - shita
+  - kita
+  - katta
+  - maketa
+  - riigu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the opponent — and “(they) were strong — and “cheering, support — and “proverb, saying — and “even monkeys fall from trees — and “three years even on a stone — and “called…, that says… —
+      and “meaning”.'
+    pt: 'Diga: “o adversário — e “(eles) eram fortes — e “torcida, apoio — e “provérbio, ditado — e “até macaco cai da árvore — e “três anos até em cima de uma pedra — e “que se chama…, que diz… — e “significado”.'
+  answer:
+    speaker: protagonist
+    text: 相手[あいて] … 強[つよ]かった … 応援[おうえん] … ことわざ … 猿[さる] も 木[き] から 落[お]ちる … 石[いし] の 上[うえ] に も 三年[さんねん] … 〜と いう … 意味[いみ]
+  items:
+  - aite
+  - tsuyokatta
+  - ouen
+  - kotowaza
+  - saru-mo
+  - ishi-no-ue
+  - to-iu
+  - imi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “what does it mean? — and “mistake, failure — and “slow; late — and “patience, enduring — and “a skilled person — and “I think that… — and “what do you think? — and “samba”.'
+    pt: 'Diga: “o que significa? — e “erro, fracasso — e “lento; tarde — e “paciência, aguentar firme — e “uma pessoa habilidosa — e “acho que… — e “o que você acha? — e “samba”.'
+  answer:
+    speaker: protagonist
+    text: どう いう 意味[いみ] です か … 失敗[しっぱい] … 遅[おそ]い … 我慢[がまん] … 上手[じょうず] な 人[ひと] … 〜と 思[おも]います … どう 思[おも]います か … サンバ
+  items:
+  - dou-iu-imi
+  - shippai
+  - osoi
+  - gaman
+  - jouzu-na-hito
+  - to-omoimasu
+  - dou-omoimasu-ka
+  - sanba
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “stereotype — and “image (of a place) — and “I don''t think so (I think it''s different) — and “not much, not really — and “not at all — and “sometimes — and “hear; ask — and “electricity;
+      the light”.'
+    pt: 'Diga: “estereótipo — e “imagem (de um lugar) — e “acho que não (acho que é diferente) — e “não muito — e “nada, de jeito nenhum — e “às vezes — e “ouço; pergunto — e “eletricidade; a luz”.'
+  answer:
+    speaker: protagonist
+    text: ステレオタイプ … イメージ … 違[ちが]う と 思[おも]う … あまり 〜ません … 全然[ぜんぜん] 〜ません … 時々[ときどき] … 聞[き]きます … 電気[でんき]
+  items:
+  - sutereotaipu
+  - imeeji
+  - chigau-to-omou
+  - amari
+  - zenzen
+  - tokidoki
+  - kikimasu
+  - denki
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “breaker — and “air conditioner — and “turn on — and “turn off — and “is off, has gone out — and “is on — and “(the breaker) tripped — and “dark”.'
+    pt: 'Diga: “disjuntor — e “ar-condicionado — e “ligo — e “desligo — e “está apagado — e “está ligado — e “caiu (o disjuntor) — e “escuro”.'
+  answer:
+    speaker: protagonist
+    text: ブレーカー … エアコン … つけます … 消[け]します … 消[き]えて います … ついて います … 落[お]ちました … 暗[くら]い
+  items:
+  - bureekaa
+  - eakon
+  - tsukemasu
+  - keshimasu
+  - kiete-imasu
+  - tsuite-imasu
+  - ochimashita
+  - kurai
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “100 volts — and “why — and “ramen — and “I want to eat — and “I want to drink — and “want to (do) — and “spicy hot — and “hot (to the touch, food)”.'
+    pt: 'Diga: “100 volts — e “por quê — e “lámen — e “quero comer — e “quero beber — e “quero (fazer) — e “apimentado — e “quente (ao toque, comida)”.'
+  answer:
+    speaker: protagonist
+    text: 百[ひゃく] ボルト … どうして … ラーメン … 食[た]べたい です … 飲[の]みたい です … 〜たい です … 辛[から]い … 熱[あつ]い
+  items:
+  - hyaku-boruto
+  - doushite
+  - raamen
+  - tabetai
+  - nomitai
+  - tai
+  - karai
+  - atsui-food
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “ticket machine — and “large portion — and “slurp — and “I''m hungry — and “what''s good? what would you like?”.'
+    pt: 'Diga: “máquina de tíquetes — e “porção grande — e “sorver fazendo barulho — e “estou com fome — e “o que é bom? o que você quer?”.'
+  answer:
+    speaker: protagonist
+    text: 券売機[けんばいき] … 大盛[おおも]り … すすります … お腹[なか] が 空[す]きました … 何[なに] が いい です か
+  items:
+  - kenbaiki
+  - oomori
+  - susuru
+  - onaka-suita
+  - nani-ga-ii
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

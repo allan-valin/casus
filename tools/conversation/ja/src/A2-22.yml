@@ -1,0 +1,41 @@
+id: A2-22
+protagonist: m
+title: [Rubbish again, O lixo de novo]
+situation: ["You put an old chair out with the burnable rubbish. Next morning it's still there — with a sticker from the town. Mrs Suzuki explains.", "Você pôs uma cadeira velha junto com o lixo queimável. Na manhã seguinte ela continua lá — com um adesivo da prefeitura. A senhora Suzuki explica."]
+learn: []
+culture: Paid bulky-waste pickup
+items:
+  - [sodai-gomi, "粗大[そだい] ごみ", "bulky waste", "lixo volumoso", {rare: true}]
+  - [moushikomi, "申[もう]し込[こ]み", "application, booking", "pedido, agendamento"]
+  - [kaishuu, "回収[かいしゅう]", "collection, pickup", "coleta"]
+  - [ken, "シール 券[けん]", "sticker ticket (paid)", "adesivo pago", {rare: true}]
+  - [isu, "椅子[いす]", "chair", "cadeira"]
+  - [dasanaide-kudasai, "出[だ]さないで ください", "please don't put it out", "não ponha para fora, por favor"]
+  - [naide-kudasai, "〜ないで ください", "please don't…", "por favor, não…"]
+  - [sutenaide, "捨[す]てないで ください", "please don't throw away", "não jogue fora, por favor"]
+  - [denwa-de, "電話[でんわ] で", "by phone", "por telefone"]
+  - [konbini-de-kaemasu, "コンビニ で 買[か]えます", "you can buy it at a convenience store", "dá para comprar na loja de conveniência"]
+dialogue:
+  - [suzuki, "この 椅子[いす] は 粗大[そだい] ごみ です よ。 普通[ふつう] の 日[ひ] に 出[だ]さないで ください。", "This chair is bulky waste. Please don't put it out on normal days.", "Esta cadeira é lixo volumoso. Não ponha para fora em dia normal, por favor."]
+  - [protagonist, "すみません。 どう すれば いい です か。", "Sorry. What should I do?", "Desculpe. O que eu faço?"]
+  - [suzuki, "まず 電話[でんわ] で 申[もう]し込[こ]み を します。 回収[かいしゅう] の 日[ひ] を 決[き]めます。", "First you book by phone. You set a pickup day.", "Primeiro agenda por telefone. Marca o dia da coleta."]
+  - [protagonist, "お金[かね] は かかります か。", "Does it cost money?", "Custa dinheiro?"]
+  - [suzuki, "はい。 シール 券[けん] を 買[か]って、 椅子[いす] に 貼[は]ります。 コンビニ で 買[か]えます よ。", "Yes. You buy a sticker ticket and stick it on the chair. You can buy them at a convenience store.", "Sim. Você compra um adesivo e cola na cadeira. Dá para comprar na loja de conveniência."]
+  - [protagonist, "わかりました。 公園[こうえん] に 捨[す]てて も いい です か… 冗談[じょうだん] です。", "Got it. Can I dump it in the park… just kidding.", "Entendi. Posso largar no parque… brincadeira."]
+  - [suzuki, "絶対[ぜったい] に 捨[す]てないで ください！ 罰金[ばっきん] です よ。", "Don't ever dump it! There's a fine.", "Não largue de jeito nenhum! Dá multa."]
+  - [protagonist, "はい、 明日[あした] 電話[でんわ] します。", "Yes, I'll call tomorrow.", "Certo, ligo amanhã."]
+teach:
+  - ask: ["Say: bulky waste.", "Diga: lixo volumoso.", "粗大[そだい] ごみ", sodai-gomi]
+  - ask: ["Say: a chair.", "Diga: uma cadeira.", "椅子[いす]", isu]
+  - note: ["Please don't: the plain negative plus «で ください»: «出[だ]さない» → «出[だ]さないで ください», please don't put it out; «捨[す]てない» → «捨[す]てないで ください», please don't throw it away.", "Por favor, não: o negativo simples mais «で ください»: «出[だ]さない» → «出[だ]さないで ください», não ponha para fora; «捨[す]てない» → «捨[す]てないで ください», não jogue fora."]
+  - ask: ["Say the pattern: please don't…", "Diga o padrão: por favor, não…", "〜ないで ください", naide-kudasai]
+  - build: [dasanaide-kudasai, ["ください", "出[だ]さないで ください"]]
+  - ask: ["Say: please don't put it out.", "Diga: não ponha para fora, por favor.", "出[だ]さないで ください。", dasanaide-kudasai]
+  - ask: ["Say: please don't throw it away.", "Diga: não jogue fora, por favor.", "捨[す]てないで ください。", sutenaide]
+  - ask: ["Say: a booking.", "Diga: um agendamento.", "申[もう]し込[こ]み", moushikomi]
+  - ask: ["Say: by phone.", "Diga: por telefone.", "電話[でんわ] で", denwa-de]
+  - ask: ["Say: the pickup.", "Diga: a coleta.", "回収[かいしゅう]", kaishuu]
+  - ask: ["Say: the paid sticker.", "Diga: o adesivo pago.", "シール 券[けん]", ken]
+  - ask: ["Say: you can buy it at a convenience store.", "Diga: dá para comprar na loja de conveniência.", "コンビニ で 買[か]えます。", konbini-de-kaemasu]
+  - note: ["Furniture, bicycles and big appliances are «粗大[そだい] ごみ»: you book a pickup, buy a sticker for a few hundred yen, and put the item out on the day. Fridges, washing machines, TVs and air conditioners go through a separate recycling fee. Dumping is illegal and fined.", "Móveis, bicicletas e eletrodomésticos grandes são «粗大[そだい] ごみ»: você agenda a coleta, compra um adesivo de algumas centenas de ienes e põe o item para fora no dia. Geladeira, máquina de lavar, TV e ar-condicionado têm uma taxa de reciclagem à parte. Largar na rua é crime e dá multa."]
+  - pt_only: "No Brasil muita cidade tem cata-bagulho gratuito, ou o móvel fica na calçada até alguém levar. No Japão nada sai de casa sem adesivo pago e dia marcado."
