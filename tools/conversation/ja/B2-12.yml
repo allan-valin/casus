@@ -1,0 +1,581 @@
+# UNIT ja B2-12 — written by AI (Claude) for Casus; expanded from src/B2-12.yml by tools/expand_unit.py. Edit the source.
+
+id: B2-12
+level: B2
+number: 12
+protagonist: m
+title:
+  en: Probability
+  pt: Probabilidade
+situation:
+  en: 'December: the whole office is buying Year-End Jumbo lottery tickets. Kenta asks if you want in. You do the maths.'
+  pt: 'Dezembro: o escritório todo está comprando bilhetes da loteria de fim de ano. O Kenta pergunta se você quer entrar. Você faz as contas.'
+learn_lessons: []
+culture: —
+new_items:
+- id: kakuritsu
+  text: 確率[かくりつ]
+  meaning:
+    en: probability
+    pt: probabilidade
+- id: takarakuji
+  text: 宝[たから]くじ
+  meaning:
+    en: lottery
+    pt: loteria
+- id: ataru
+  text: 当[あ]たる
+  meaning:
+    en: win (a prize); hit
+    pt: ganhar (prêmio); acertar
+- id: kousui-kakuritsu
+  text: 降水[こうすい] 確率[かくりつ]
+  meaning:
+    en: chance of rain
+    pt: probabilidade de chuva
+  rare: true
+- id: hodo
+  text: 〜ほど
+  meaning:
+    en: to the extent that; as … as
+    pt: a ponto de; tanto quanto
+- id: shinu-hodo
+  text: 死[し]ぬ ほど
+  meaning:
+    en: to death (extremely)
+    pt: de morrer (extremamente)
+- id: hodo-de-wa-nai
+  text: 〜ほど では ない
+  meaning:
+    en: not as much as
+    pt: não tanto quanto
+- id: nisen-man-bun-no-ichi
+  text: 二千万[にせんまん] 分[ぶん] の 一[いち]
+  meaning:
+    en: one in twenty million
+    pt: um em vinte milhões
+- id: yume
+  text: 夢[ゆめ]
+  meaning:
+    en: dream
+    pt: sonho
+- id: kaimasu-ka
+  text: 買[か]います か
+  meaning:
+    en: will you buy?
+    pt: vai comprar?
+reviews:
+- item: waribiki
+  from: A2-09
+- item: zeikomi
+  from: A2-09
+- item: zeinuki
+  from: A2-09
+- item: hangaku
+  from: A2-09
+- item: man
+  from: A2-09
+- item: ichiman-en
+  from: A2-09
+- item: sen
+  from: A2-09
+- item: paasento
+  from: A2-09
+- item: yasui
+  from: A2-09
+- item: takai
+  from: A2-09
+- item: zenbu-de
+  from: A2-09
+- item: uwasa
+  from: B1-11
+- item: rain
+  from: B1-11
+- item: guruupu
+  from: B1-11
+- item: himitsu
+  from: B1-11
+- item: rashii
+  from: B1-11
+- item: kekkon-suru-rashii
+  from: B1-11
+- item: kidoku
+  from: B1-11
+- item: kidoku-suruu
+  from: B1-11
+- item: honnin
+  from: B1-11
+- item: dare-ni-mo-iwanai
+  from: B1-11
+- item: maji
+  from: B1-11
+- item: sasuga
+  from: B1-27
+- item: yokatta-ne
+  from: B1-27
+- item: hiniku
+  from: B1-27
+- item: joudan-da-yo
+  from: B1-27
+- item: majime-na-kao
+  from: B1-27
+- item: hayai-ne
+  from: B1-27
+- item: ikinari
+  from: B1-27
+- item: tsukkomi
+  from: B1-27
+- item: boke
+  from: B1-27
+- item: owarai
+  from: B1-27
+- item: nande-yanen
+  from: B1-27
+- item: nemawashi
+  from: B2-05
+- item: kettei
+  from: B2-05
+- item: gidai
+  from: B2-05
+- item: ni-yotte
+  from: B2-05
+- item: hito-ni-yotte
+  from: B2-05
+- item: teian
+  from: B2-05
+- item: sansei-wo-eru
+  from: B2-05
+- item: jizen-ni
+  from: B2-05
+- item: hyoshiki
+  from: B2-05
+- item: iken
+  from: B2-05
+- item: kakunin-shite-oku
+  from: B2-05
+- item: uchuu
+  from: B2-09
+- item: tansaki
+  from: B2-09
+- item: ginga
+  from: B2-09
+- item: amanogawa
+  from: B2-09
+- item: hazu
+  from: B2-09
+- item: mieru-hazu
+  from: B2-09
+- item: shouwakusei
+  from: B2-09
+- item: chikyuu
+  from: B2-09
+- item: kaette-kita
+  from: B2-09
+- item: nagareboshi
+  from: B2-09
+- item: negaigoto
+  from: B2-09
+- item: kesseki
+  from: B2-11
+- item: tsugou
+  from: B2-11
+- item: sanka
+  from: B2-11
+- item: tsukiai
+  from: B2-11
+- item: wake-dewa-nai
+  from: B2-11
+- item: kyousei-dewa-nai
+  from: B2-11
+- item: tsugou-ga-warui
+  from: B2-11
+- item: zannen-desu-ga
+  from: B2-11
+- item: tsugi-wa-zehi
+  from: B2-11
+- item: kanji-san
+  from: B2-11
+steps:
+- type: narrator
+  text:
+    en: 'December: the whole office is buying Year-End Jumbo lottery tickets. Kenta asks if you want in. You do the maths. Listen to the conversation; you don''t need to understand it yet.'
+    pt: 'Dezembro: o escritório todo está comprando bilhetes da loteria de fim de ano. O Kenta pergunta se você quer entrar. Você faz as contas. Escute a conversa; ainda não precisa entender.'
+- type: dialogue
+  lines:
+  - speaker: kenta
+    text: 年末[ねんまつ] ジャンボ 宝[たから]くじ、 一緒[いっしょ] に 買[か]う？ 一等[いっとう] は 七億円[ななおくえん] だ よ。
+    meaning:
+      en: Shall we buy Year-End Jumbo tickets together? First prize is 700 million yen.
+      pt: Vamos comprar a loteria de fim de ano juntos? O primeiro prêmio é 700 milhões de ienes.
+  - speaker: protagonist
+    text: 当[あ]たる 確率[かくりつ] は？
+    meaning:
+      en: What are the odds of winning?
+      pt: Qual a chance de ganhar?
+  - speaker: kenta
+    text: 一等[いっとう] は 二千万[にせんまん] 分[ぶん] の 一[いち] ぐらい。
+    meaning:
+      en: First prize is about one in twenty million.
+      pt: O primeiro prêmio é uns um em vinte milhões.
+  - speaker: protagonist
+    text: 雷[かみなり] に 当[あ]たる ほど 低[ひく]い ね。
+    meaning:
+      en: As low as being hit by lightning.
+      pt: Tão baixa quanto ser atingido por um raio.
+  - speaker: kenta
+    text: でも 夢[ゆめ] を 買[か]う ん だ よ。 宝[たから]くじ は 夢[ゆめ]。
+    meaning:
+      en: But you're buying a dream. The lottery is a dream.
+      pt: Mas você compra um sonho. Loteria é sonho.
+  - speaker: protagonist
+    text: 明日[あした] の 降水[こうすい] 確率[かくりつ] は 八十[はちじゅう] パーセント だ けど、 それ は 信[しん]じる よ。
+    meaning:
+      en: Tomorrow's chance of rain is 80 percent — that one I believe.
+      pt: A chance de chuva de amanhã é de 80 por cento — nessa eu acredito.
+  - speaker: kenta
+    text: ははは。 じゃあ 一枚[いちまい] だけ。 三百円[さんびゃくえん]。
+    meaning:
+      en: Ha ha. Then just one ticket. 300 yen.
+      pt: Ha ha. Então só um bilhete. 300 ienes.
+  - speaker: protagonist
+    text: 三百円[さんびゃくえん] なら、 死[し]ぬ ほど 後悔[こうかい] しない。 買[か]おう！
+    meaning:
+      en: For 300 yen I won't regret it to death. Let's buy!
+      pt: Por 300 ienes não vou me arrepender até a morte. Vamos comprar!
+- type: prompt
+  ask:
+    en: 'Say: the lottery.'
+    pt: 'Diga: a loteria.'
+  answer:
+    speaker: protagonist
+    text: 宝[たから]くじ
+  items:
+  - takarakuji
+- type: prompt
+  ask:
+    en: 'Say: to win, to hit.'
+    pt: 'Diga: ganhar, acertar.'
+  answer:
+    speaker: protagonist
+    text: 当[あ]たる
+  items:
+  - ataru
+- type: prompt
+  ask:
+    en: 'Say: probability.'
+    pt: 'Diga: probabilidade.'
+  answer:
+    speaker: protagonist
+    text: 確率[かくりつ]
+  items:
+  - kakuritsu
+- type: prompt
+  ask:
+    en: 'Say: one in twenty million.'
+    pt: 'Diga: um em vinte milhões.'
+  answer:
+    speaker: protagonist
+    text: 二千万[にせんまん] 分[ぶん] の 一[いち]
+  items:
+  - nisen-man-bun-no-ichi
+- type: narrator
+  text:
+    en: '«〜ほど» measures degree: «雷[かみなり] に 当[あ]たる ほど 低[ひく]い» — as low as being hit by lightning; «死[し]ぬ ほど» — to death, extremely. With a negative it compares: «A は B ほど 高[たか]く ない» — A isn''t as high as
+      B.'
+    pt: '«〜ほど» mede grau: «雷[かみなり] に 当[あ]たる ほど 低[ひく]い» — tão baixo quanto ser atingido por um raio; «死[し]ぬ ほど» — de morrer, extremamente. Com negativo, compara: «A は B ほど 高[たか]く ない» — A não é tão alto quanto
+      B.'
+- type: prompt
+  ask:
+    en: 'Say the pattern: to the extent that.'
+    pt: 'Diga o padrão: a ponto de.'
+  answer:
+    speaker: protagonist
+    text: 〜ほど
+  items:
+  - hodo
+- type: prompt
+  ask:
+    en: 'Say: extremely — to death.'
+    pt: 'Diga: de morrer.'
+  answer:
+    speaker: protagonist
+    text: 死[し]ぬ ほど
+  items:
+  - shinu-hodo
+- type: prompt
+  ask:
+    en: 'Say the pattern: not as much as.'
+    pt: 'Diga o padrão: não tanto quanto.'
+  answer:
+    speaker: protagonist
+    text: 〜ほど では ない
+  items:
+  - hodo-de-wa-nai
+- type: prompt
+  ask:
+    en: 'Say: a dream.'
+    pt: 'Diga: um sonho.'
+  answer:
+    speaker: protagonist
+    text: 夢[ゆめ]
+  items:
+  - yume
+- type: prompt
+  ask:
+    en: 'Say: the chance of rain.'
+    pt: 'Diga: a probabilidade de chuva.'
+  answer:
+    speaker: protagonist
+    text: 降水[こうすい] 確率[かくりつ]
+  items:
+  - kousui-kakuritsu
+- type: prompt
+  ask:
+    en: 'Ask: will you buy?'
+    pt: 'Pergunte: vai comprar?'
+  answer:
+    speaker: protagonist
+    text: 買[か]います か。
+  items:
+  - kaimasu-ka
+- type: narrator
+  text:
+    en: 'Japanese counts big numbers in «万[まん]» (10,000) and «億[おく]» (100 million): «七億円[ななおくえん]» is 700 million yen, «二千万[にせんまん]» is twenty million. The weather forecast always gives «降水[こうすい] 確率[かくりつ]»,
+      the chance of rain, in steps of ten percent.'
+    pt: 'O japonês conta números grandes em «万[まん]» (10 mil) e «億[おく]» (100 milhões): «七億円[ななおくえん]» são 700 milhões de ienes, «二千万[にせんまん]» são vinte milhões. A previsão do tempo sempre dá o «降水[こうすい] 確率[かくりつ]»,
+      a chance de chuva, de dez em dez por cento.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'A Mega da Virada é o nosso «年末[ねんまつ] ジャンボ»: o país inteiro compra o mesmo sonho em dezembro. As chances, nos dois casos, são de raio na cabeça.'
+- type: prompt
+  ask:
+    en: 'Once more: say “probability”.'
+    pt: 'Mais uma vez: diga “probabilidade”.'
+  answer:
+    speaker: protagonist
+    text: 確率[かくりつ]
+  items:
+  - kakuritsu
+- type: prompt
+  ask:
+    en: 'Once more: say “lottery”.'
+    pt: 'Mais uma vez: diga “loteria”.'
+  answer:
+    speaker: protagonist
+    text: 宝[たから]くじ
+  items:
+  - takarakuji
+- type: prompt
+  ask:
+    en: 'Once more: say “win (a prize); hit”.'
+    pt: 'Mais uma vez: diga “ganhar (prêmio); acertar”.'
+  answer:
+    speaker: protagonist
+    text: 当[あ]たる
+  items:
+  - ataru
+- type: prompt
+  ask:
+    en: 'Once more: say “chance of rain”.'
+    pt: 'Mais uma vez: diga “probabilidade de chuva”.'
+  answer:
+    speaker: protagonist
+    text: 降水[こうすい] 確率[かくりつ]
+  items:
+  - kousui-kakuritsu
+- type: prompt
+  ask:
+    en: 'Once more: say “to the extent that; as … as”.'
+    pt: 'Mais uma vez: diga “a ponto de; tanto quanto”.'
+  answer:
+    speaker: protagonist
+    text: 〜ほど
+  items:
+  - hodo
+- type: prompt
+  ask:
+    en: 'Once more: say “to death (extremely)”.'
+    pt: 'Mais uma vez: diga “de morrer (extremamente)”.'
+  answer:
+    speaker: protagonist
+    text: 死[し]ぬ ほど
+  items:
+  - shinu-hodo
+- type: prompt
+  ask:
+    en: 'Once more: say “not as much as”.'
+    pt: 'Mais uma vez: diga “não tanto quanto”.'
+  answer:
+    speaker: protagonist
+    text: 〜ほど では ない
+  items:
+  - hodo-de-wa-nai
+- type: prompt
+  ask:
+    en: 'Once more: say “one in twenty million”.'
+    pt: 'Mais uma vez: diga “um em vinte milhões”.'
+  answer:
+    speaker: protagonist
+    text: 二千万[にせんまん] 分[ぶん] の 一[いち]
+  items:
+  - nisen-man-bun-no-ichi
+- type: prompt
+  ask:
+    en: 'Once more: say “dream”.'
+    pt: 'Mais uma vez: diga “sonho”.'
+  answer:
+    speaker: protagonist
+    text: 夢[ゆめ]
+  items:
+  - yume
+- type: prompt
+  ask:
+    en: 'Once more: say “will you buy?”.'
+    pt: 'Mais uma vez: diga “vai comprar?”.'
+  answer:
+    speaker: protagonist
+    text: 買[か]います か
+  items:
+  - kaimasu-ka
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “absence, not attending — and “convenience, circumstances — and “participation — and “socialising (for work) — and “it''s not that… — and “it''s not compulsory — and “it''s not convenient
+      (I can''t) — and “unfortunately — and “next time for sure — and “party organiser — and “space, the universe”.'
+    pt: 'Diga: “ausência, não comparecer — e “disponibilidade, compromissos — e “participação — e “convivência (de trabalho) — e “não é que… — e “não é obrigatório — e “não posso, não dá — e “infelizmente
+      — e “da próxima, com certeza — e “organizador (da festa) — e “espaço, universo”.'
+  answer:
+    speaker: protagonist
+    text: 欠席[けっせき] … 都合[つごう] … 参加[さんか] … 付[つ]き合[あ]い … 〜わけ では ない … 強制[きょうせい] では ない … 都合[つごう] が 悪[わる]い … 残念[ざんねん] です が … 次[つぎ] は ぜひ … 幹事[かんじ] … 宇宙[うちゅう]
+  items:
+  - kesseki
+  - tsugou
+  - sanka
+  - tsukiai
+  - wake-dewa-nai
+  - kyousei-dewa-nai
+  - tsugou-ga-warui
+  - zannen-desu-ga
+  - tsugi-wa-zehi
+  - kanji-san
+  - uchuu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “space probe — and “galaxy — and “the Milky Way — and “should be (expected) — and “should be visible — and “asteroid — and “the Earth — and “came back — and “shooting star — and “a wish —
+      and “laying the groundwork (before a meeting)”.'
+    pt: 'Diga: “sonda espacial — e “galáxia — e “a Via Láctea — e “deve ser (esperado) — e “deve dar para ver — e “asteroide — e “a Terra — e “voltou — e “estrela-cadente — e “um pedido — e “costurar o
+      apoio antes (da reunião)”.'
+  answer:
+    speaker: protagonist
+    text: 探査機[たんさき] … 銀河[ぎんが] … 天[あま]の川[がわ] … 〜はず … 見[み]える はず … 小惑星[しょうわくせい] … 地球[ちきゅう] … 帰[かえ]って きた … 流[なが]れ 星[ぼし] … 願[ねが]い事[ごと] … 根回[ねまわ]し
+  items:
+  - tansaki
+  - ginga
+  - amanogawa
+  - hazu
+  - mieru-hazu
+  - shouwakusei
+  - chikyuu
+  - kaette-kita
+  - nagareboshi
+  - negaigoto
+  - nemawashi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “decision — and “agenda item — and “depending on; by — and “depending on the person — and “proposal — and “win support — and “beforehand — and “sign (notice) — and “opinion — and “check in
+      advance — and “as expected of you (praise or irony)”.'
+    pt: 'Diga: “decisão — e “pauta — e “dependendo de; por — e “dependendo da pessoa — e “proposta — e “conseguir apoio — e “com antecedência — e “placa (de aviso) — e “opinião — e “confirmar antes — e
+      “como era de se esperar (elogio ou ironia)”.'
+  answer:
+    speaker: protagonist
+    text: 決定[けってい] … 議題[ぎだい] … 〜に よって … 人[ひと] に よって … 提案[ていあん] … 賛成[さんせい] を 得[え]る … 事前[じぜん] に … 標識[ひょうしき] … 意見[いけん] … 確認[かくにん] して おく … さすが
+  items:
+  - kettei
+  - gidai
+  - ni-yotte
+  - hito-ni-yotte
+  - teian
+  - sansei-wo-eru
+  - jizen-ni
+  - hyoshiki
+  - iken
+  - kakunin-shite-oku
+  - sasuga
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “good for you… (said flatly) — and “irony, sarcasm — and “just kidding — and “a straight face — and “you''re early (ironically: late) — and “suddenly, out of nowhere — and “the comeback (comic
+      retort) — and “the fool''s line (comic) — and “comedy — and “what the heck! (Kansai comeback) — and “rumour”.'
+    pt: 'Diga: “que bom para você… (dito sem emoção) — e “ironia, sarcasmo — e “é brincadeira — e “cara séria — e “chegou cedo, hein (ironia: atrasada) — e “do nada, de repente — e “a resposta (no humor)
+      — e “a fala do bobo (no humor) — e “comédia, humor — e “como assim?! (resposta do Kansai) — e “boato”.'
+  answer:
+    speaker: protagonist
+    text: よかった ね… … 皮肉[ひにく] … 冗談[じょうだん] だ よ … 真面目[まじめ] な 顔[かお] … 早[はや]い ね … いきなり … ツッコミ … ボケ … お笑[わら]い … なんで やねん … 噂[うわさ]
+  items:
+  - yokatta-ne
+  - hiniku
+  - joudan-da-yo
+  - majime-na-kao
+  - hayai-ne
+  - ikinari
+  - tsukkomi
+  - boke
+  - owarai
+  - nande-yanen
+  - uwasa
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “LINE (the messaging app) — and “group — and “secret — and “apparently, I hear — and “apparently they''re getting married — and “read (message status) — and “leaving someone on read — and
+      “the person themself — and “I won''t tell anyone — and “seriously? (slang) — and “discount”.'
+    pt: 'Diga: “LINE (o aplicativo de mensagens) — e “grupo — e “segredo — e “parece que, pelo jeito — e “parece que vão casar — e “visualizado — e “deixar no visto — e “a própria pessoa — e “não conto
+      para ninguém — e “sério? (gíria) — e “desconto”.'
+  answer:
+    speaker: protagonist
+    text: LINE … グループ … 秘密[ひみつ] … 〜らしい … 結婚[けっこん] する らしい … 既読[きどく] … 既読[きどく] スルー … 本人[ほんにん] … 誰[だれ] に も 言[い]わない … マジ … 割引[わりびき]
+  items:
+  - rain
+  - guruupu
+  - himitsu
+  - rashii
+  - kekkon-suru-rashii
+  - kidoku
+  - kidoku-suruu
+  - honnin
+  - dare-ni-mo-iwanai
+  - maji
+  - waribiki
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “tax included — and “before tax — and “half price — and “ten thousand — and “10,000 yen — and “thousand — and “percent — and “cheap — and “expensive — and “altogether”.'
+    pt: 'Diga: “com imposto — e “sem imposto — e “metade do preço — e “dez mil — e “10 mil ienes — e “mil — e “por cento — e “barato — e “caro — e “ao todo”.'
+  answer:
+    speaker: protagonist
+    text: 税込[ぜいこ]み … 税抜[ぜいぬ]き … 半額[はんがく] … 万[まん] … 一万円[いちまんえん] … 千[せん] … パーセント … 安[やす]い … 高[たか]い … 全部[ぜんぶ] で
+  items:
+  - zeikomi
+  - zeinuki
+  - hangaku
+  - man
+  - ichiman-en
+  - sen
+  - paasento
+  - yasui
+  - takai
+  - zenbu-de
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

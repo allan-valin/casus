@@ -1,0 +1,566 @@
+# UNIT ja B2-15 — written by AI (Claude) for Casus; expanded from src/B2-15.yml by tools/expand_unit.py. Edit the source.
+
+id: B2-15
+level: B2
+number: 15
+protagonist: f
+title:
+  en: Truth and media
+  pt: Verdade e mídia
+situation:
+  en: 'After a strong quake, a post goes viral: a lion has escaped from the zoo. Aya is about to share it. You stop her.'
+  pt: 'Depois de um terremoto forte, um post viraliza: um leão fugiu do zoológico. A Aya está para compartilhar. Você impede.'
+learn_lessons: []
+culture: —
+new_items:
+- id: dema
+  text: デマ
+  meaning:
+    en: false rumour, fake news
+    pt: boato falso, fake news
+- id: shutten
+  text: 出典[しゅってん]
+  meaning:
+    en: source
+    pt: fonte
+- id: kiji
+  text: 記事[きじ]
+  meaning:
+    en: article
+    pt: matéria, artigo
+- id: kakusan
+  text: 拡散[かくさん]
+  meaning:
+    en: spreading, sharing widely
+    pt: espalhar, compartilhar
+  rare: true
+- id: rashii-review
+  text: 〜らしい けど
+  meaning:
+    en: apparently, but…
+    pt: parece que, mas…
+- id: koushiki
+  text: 公式[こうしき]
+  meaning:
+    en: official
+    pt: oficial
+- id: shinjiru
+  text: 信[しん]じる
+  meaning:
+    en: believe
+    pt: acreditar
+- id: shirabete-kara
+  text: 調[しら]べて から
+  meaning:
+    en: after checking
+    pt: depois de verificar
+- id: nisemono
+  text: 偽物[にせもの]
+  meaning:
+    en: fake (thing)
+    pt: falso, falsificado
+- id: shashin-no-kakou
+  text: 写真[しゃしん] の 加工[かこう]
+  meaning:
+    en: edited photo
+    pt: foto editada
+  rare: true
+reviews:
+- item: yama
+  from: A2-12
+- item: umi
+  from: A2-12
+- item: mizuumi
+  from: A2-12
+- item: hamanako
+  from: A2-12
+- item: fujisan
+  from: A2-12
+- item: kawa
+  from: A2-12
+- item: yori
+  from: A2-12
+- item: ichiban-takai
+  from: A2-12
+- item: unagi
+  from: A2-12
+- item: meibutsu
+  from: A2-12
+- item: kenka
+  from: B1-14
+- item: okotteru
+  from: B1-14
+- item: okoranaide
+  from: B1-14
+- item: wasureta
+  from: B1-14
+- item: yakusoku
+  from: B1-14
+- item: matte-ita-noni
+  from: B1-14
+- item: hidoi
+  from: B1-14
+- item: hontou-ni-gomen
+  from: B1-14
+- item: daiji-ni-shite
+  from: B1-14
+- item: nakanaori
+  from: B1-14
+- item: izakaya
+  from: B1-30
+- item: hashigozake
+  from: B1-30
+- item: nijikai
+  from: B1-30
+- item: ichijikai
+  from: B1-30
+- item: toriaezu
+  from: B1-30
+- item: otooshi
+  from: B1-30
+- item: yakitori
+  from: B1-30
+- item: shime
+  from: B1-30
+- item: mou-ikken
+  from: B1-30
+- item: kaerou-ka
+  from: B1-30
+- item: nikui
+  from: B2-08
+- item: kaerinikui
+  from: B2-08
+- item: iinikui
+  from: B2-08
+- item: saabisu-zangyou
+  from: B2-08
+- item: zangyoudai
+  from: B2-08
+- item: yotei-ga-arimashite
+  from: B2-08
+- item: nanika-otetsudai
+  from: B2-08
+- item: kyou-wa-kore-de
+  from: B2-08
+- item: houkoku
+  from: B2-08
+- item: rakuni
+  from: B2-08
+- item: kakuritsu
+  from: B2-12
+- item: takarakuji
+  from: B2-12
+- item: ataru
+  from: B2-12
+- item: kousui-kakuritsu
+  from: B2-12
+- item: hodo
+  from: B2-12
+- item: shinu-hodo
+  from: B2-12
+- item: hodo-de-wa-nai
+  from: B2-12
+- item: nisen-man-bun-no-ichi
+  from: B2-12
+- item: yume
+  from: B2-12
+- item: kaimasu-ka
+  from: B2-12
+- item: pawahara
+  from: B2-14
+- item: soudan
+  from: B2-14
+- item: saserareru
+  from: B2-14
+- item: yarinaosaserareta
+  from: B2-14
+- item: donarareru
+  from: B2-14
+- item: madoguchi-soudan
+  from: B2-14
+- item: kiroku
+  from: B2-14
+- item: hitori-de
+  from: B2-14
+- item: jinji
+  from: B2-14
+- item: hou-de
+  from: B2-14
+steps:
+- type: narrator
+  text:
+    en: 'After a strong quake, a post goes viral: a lion has escaped from the zoo. Aya is about to share it. You stop her. Listen to the conversation; you don''t need to understand it yet.'
+    pt: 'Depois de um terremoto forte, um post viraliza: um leão fugiu do zoológico. A Aya está para compartilhar. Você impede. Escute a conversa; ainda não precisa entender.'
+- type: dialogue
+  lines:
+  - speaker: aya
+    text: 見[み]て！ 動物園[どうぶつえん] から ライオン が 逃[に]げた らしい！ 拡散[かくさん] しよう。
+    meaning:
+      en: Look! Apparently a lion escaped from the zoo! Let's share it.
+      pt: Olha! Parece que um leão fugiu do zoológico! Vamos compartilhar.
+  - speaker: protagonist
+    text: 待[ま]って。 出典[しゅってん] は どこ？
+    meaning:
+      en: Wait. What's the source?
+      pt: Espera. Qual é a fonte?
+  - speaker: aya
+    text: 知[し]らない 人[ひと] の 投稿[とうこう]。 写真[しゃしん] も ある よ。
+    meaning:
+      en: A post from someone I don't know. There's a photo.
+      pt: Um post de alguém que eu não conheço. Tem foto.
+  - speaker: protagonist
+    text: 写真[しゃしん] は 加工[かこう] できる。 動物園[どうぶつえん] の 公式[こうしき] サイト は？
+    meaning:
+      en: Photos can be edited. What does the zoo's official site say?
+      pt: Foto dá para editar. E o site oficial do zoológico?
+  - speaker: aya
+    text: …何[なに] も 書[か]いて ない。 ニュース の 記事[きじ] も ない。
+    meaning:
+      en: …Nothing there. No news article either.
+      pt: …Não diz nada. Nem matéria no noticiário.
+  - speaker: protagonist
+    text: じゃあ、 デマ かも しれない。 地震[じしん] の 後[あと] は デマ が 多[おお]い って 聞[き]いた。
+    meaning:
+      en: Then it might be fake. I heard there's a lot of fake news after earthquakes.
+      pt: Então pode ser fake. Ouvi dizer que depois de terremoto tem muito boato.
+  - speaker: aya
+    text: 危[あぶ]なかった。 信[しん]じる 前[まえ] に、 調[しら]べて から 拡散[かくさん] する べき だ ね。
+    meaning:
+      en: That was close. You should check before you believe and share.
+      pt: Essa foi por pouco. Antes de acreditar, tem que verificar, e só depois compartilhar.
+  - speaker: protagonist
+    text: うん。 偽物[にせもの] の 写真[しゃしん] は 本当[ほんとう] に 多[おお]い から。
+    meaning:
+      en: Yeah. There are really a lot of fake photos.
+      pt: É. Tem muita foto falsa por aí.
+- type: prompt
+  ask:
+    en: 'Say: fake news, a false rumour.'
+    pt: 'Diga: fake news, boato falso.'
+  answer:
+    speaker: protagonist
+    text: デマ
+  items:
+  - dema
+- type: prompt
+  ask:
+    en: 'Say: spreading, sharing widely.'
+    pt: 'Diga: espalhar.'
+  answer:
+    speaker: protagonist
+    text: 拡散[かくさん]
+  items:
+  - kakusan
+- type: prompt
+  ask:
+    en: 'Ask: what''s the source?'
+    pt: 'Pergunte: qual é a fonte?'
+  answer:
+    speaker: protagonist
+    text: 出典[しゅってん] は？
+  items:
+  - shutten
+- type: prompt
+  ask:
+    en: 'Say: official.'
+    pt: 'Diga: oficial.'
+  answer:
+    speaker: protagonist
+    text: 公式[こうしき]
+  items:
+  - koushiki
+- type: prompt
+  ask:
+    en: 'Say: a news article.'
+    pt: 'Diga: uma matéria.'
+  answer:
+    speaker: protagonist
+    text: 記事[きじ]
+  items:
+  - kiji
+- type: prompt
+  ask:
+    en: 'Say: an edited photo.'
+    pt: 'Diga: uma foto editada.'
+  answer:
+    speaker: protagonist
+    text: 写真[しゃしん] の 加工[かこう]
+  items:
+  - shashin-no-kakou
+- type: prompt
+  ask:
+    en: 'Say: fake, a fake thing.'
+    pt: 'Diga: falso, falsificado.'
+  answer:
+    speaker: protagonist
+    text: 偽物[にせもの]
+  items:
+  - nisemono
+- type: narrator
+  text:
+    en: 'You met «らしい», apparently — what you''ve heard, not checked. In the news it''s a warning light: «逃[に]げた らしい» means nobody has confirmed it. Pair it with «〜て から», after: «調[しら]べて から 拡散[かくさん] する»,
+      share after checking.'
+    pt: 'Você conhece «らしい», parece que — o que você ouviu, não verificou. Nas notícias é uma luz de alerta: «逃[に]げた らしい» quer dizer que ninguém confirmou. Combine com «〜て から», depois de: «調[しら]べて から 拡散[かくさん]
+      する», compartilhar depois de verificar.'
+- type: prompt
+  ask:
+    en: 'Say: apparently, but…'
+    pt: 'Diga: parece que, mas…'
+  answer:
+    speaker: protagonist
+    text: 〜らしい けど
+  items:
+  - rashii-review
+- type: prompt
+  ask:
+    en: 'Say: after checking.'
+    pt: 'Diga: depois de verificar.'
+  answer:
+    speaker: protagonist
+    text: 調[しら]べて から
+  items:
+  - shirabete-kara
+- type: prompt
+  ask:
+    en: 'Say: believe.'
+    pt: 'Diga: acreditar.'
+  answer:
+    speaker: protagonist
+    text: 信[しん]じる
+  items:
+  - shinjiru
+- type: narrator
+  text:
+    en: After the 2016 Kumamoto earthquake, a fake post with a photo claimed a lion had escaped from a zoo; the man who posted it was arrested. Disasters bring a flood of «デマ». Check official sources —
+      the city, the zoo, the national broadcaster — before you share.
+    pt: Depois do terremoto de Kumamoto em 2016, um post falso com foto disse que um leão tinha fugido do zoológico; o homem que postou foi preso. Desastres trazem uma enxurrada de «デマ». Confira as fontes
+      oficiais — a prefeitura, o zoológico, a emissora pública — antes de compartilhar.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'Corrente de WhatsApp e fake news são velhas conhecidas no Brasil. A regra é a mesma nas duas línguas: fonte primeiro, compartilhar depois.'
+- type: prompt
+  ask:
+    en: 'Once more: say “false rumour, fake news”.'
+    pt: 'Mais uma vez: diga “boato falso, fake news”.'
+  answer:
+    speaker: protagonist
+    text: デマ
+  items:
+  - dema
+- type: prompt
+  ask:
+    en: 'Once more: say “source”.'
+    pt: 'Mais uma vez: diga “fonte”.'
+  answer:
+    speaker: protagonist
+    text: 出典[しゅってん]
+  items:
+  - shutten
+- type: prompt
+  ask:
+    en: 'Once more: say “article”.'
+    pt: 'Mais uma vez: diga “matéria, artigo”.'
+  answer:
+    speaker: protagonist
+    text: 記事[きじ]
+  items:
+  - kiji
+- type: prompt
+  ask:
+    en: 'Once more: say “spreading, sharing widely”.'
+    pt: 'Mais uma vez: diga “espalhar, compartilhar”.'
+  answer:
+    speaker: protagonist
+    text: 拡散[かくさん]
+  items:
+  - kakusan
+- type: prompt
+  ask:
+    en: 'Once more: say “apparently, but…”.'
+    pt: 'Mais uma vez: diga “parece que, mas…”.'
+  answer:
+    speaker: protagonist
+    text: 〜らしい けど
+  items:
+  - rashii-review
+- type: prompt
+  ask:
+    en: 'Once more: say “official”.'
+    pt: 'Mais uma vez: diga “oficial”.'
+  answer:
+    speaker: protagonist
+    text: 公式[こうしき]
+  items:
+  - koushiki
+- type: prompt
+  ask:
+    en: 'Once more: say “believe”.'
+    pt: 'Mais uma vez: diga “acreditar”.'
+  answer:
+    speaker: protagonist
+    text: 信[しん]じる
+  items:
+  - shinjiru
+- type: prompt
+  ask:
+    en: 'Once more: say “after checking”.'
+    pt: 'Mais uma vez: diga “depois de verificar”.'
+  answer:
+    speaker: protagonist
+    text: 調[しら]べて から
+  items:
+  - shirabete-kara
+- type: prompt
+  ask:
+    en: 'Once more: say “fake (thing)”.'
+    pt: 'Mais uma vez: diga “falso, falsificado”.'
+  answer:
+    speaker: protagonist
+    text: 偽物[にせもの]
+  items:
+  - nisemono
+- type: prompt
+  ask:
+    en: 'Once more: say “edited photo”.'
+    pt: 'Mais uma vez: diga “foto editada”.'
+  answer:
+    speaker: protagonist
+    text: 写真[しゃしん] の 加工[かこう]
+  items:
+  - shashin-no-kakou
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “power harassment — and “consultation, talking it over — and “be made to (against your will) — and “was made to redo it — and “be shouted at — and “help desk (for complaints) — and “record
+      — and “don''t keep it all to yourself — and “personnel, HR — and “by law”.'
+    pt: 'Diga: “assédio moral — e “conversar, pedir conselho — e “ser obrigado a — e “fui obrigado a refazer — e “levar bronca aos gritos — e “canal de denúncia — e “registro — e “não guarde tudo sozinho
+      — e “recursos humanos, RH — e “por lei”.'
+  answer:
+    speaker: protagonist
+    text: パワハラ … 相談[そうだん] … 〜させられる … やり直[なお]させられた … 怒鳴[どな]られる … 相談[そうだん] 窓口[まどぐち] … 記録[きろく] … 一人[ひとり] で 抱[かか]え込[こ]まないで … 人事[じんじ] … 法律[ほうりつ] で
+  items:
+  - pawahara
+  - soudan
+  - saserareru
+  - yarinaosaserareta
+  - donarareru
+  - madoguchi-soudan
+  - kiroku
+  - hitori-de
+  - jinji
+  - hou-de
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “probability — and “lottery — and “win (a prize); hit — and “chance of rain — and “to the extent that; as … as — and “to death (extremely) — and “not as much as — and “one in twenty million
+      — and “dream — and “will you buy?”.'
+    pt: 'Diga: “probabilidade — e “loteria — e “ganhar (prêmio); acertar — e “probabilidade de chuva — e “a ponto de; tanto quanto — e “de morrer (extremamente) — e “não tanto quanto — e “um em vinte milhões
+      — e “sonho — e “vai comprar?”.'
+  answer:
+    speaker: protagonist
+    text: 確率[かくりつ] … 宝[たから]くじ … 当[あ]たる … 降水[こうすい] 確率[かくりつ] … 〜ほど … 死[し]ぬ ほど … 〜ほど では ない … 二千万[にせんまん] 分[ぶん] の 一[いち] … 夢[ゆめ] … 買[か]います か
+  items:
+  - kakuritsu
+  - takarakuji
+  - ataru
+  - kousui-kakuritsu
+  - hodo
+  - shinu-hodo
+  - hodo-de-wa-nai
+  - nisen-man-bun-no-ichi
+  - yume
+  - kaimasu-ka
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “hard to… — and “hard to leave — and “hard to say — and “unpaid overtime — and “overtime pay — and “I have plans (polite excuse) — and “is there anything I can help with? — and “that''s it
+      for today — and “report — and “relaxed, at ease”.'
+    pt: 'Diga: “difícil de… — e “difícil ir embora — e “difícil de dizer — e “hora extra não paga — e “pagamento de hora extra — e “tenho um compromisso (desculpa educada) — e “há algo em que eu possa ajudar?
+      — e “por hoje é isso — e “relatório, comunicado — e “à vontade”.'
+  answer:
+    speaker: protagonist
+    text: 〜にくい … 帰[かえ]りにくい … 言[い]いにくい … サービス 残業[ざんぎょう] … 残業代[ざんぎょうだい] … 予定[よてい] が ありまして … 何[なに] か お手伝[てつだ]い する こと は … 今日[きょう] は これ で … 報告[ほうこく] … 気楽[きらく] に
+  items:
+  - nikui
+  - kaerinikui
+  - iinikui
+  - saabisu-zangyou
+  - zangyoudai
+  - yotei-ga-arimashite
+  - nanika-otetsudai
+  - kyou-wa-kore-de
+  - houkoku
+  - rakuni
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “izakaya (Japanese pub) — and “bar-hopping — and “the second round (next place) — and “the first round — and “a beer to start with — and “the small starter you''re charged for — and “grilled
+      chicken skewers — and “the dish that ends the night — and “one more place — and “shall we head home soon?”.'
+    pt: 'Diga: “izakaya (bar japonês) — e “ir de bar em bar — e “a segunda rodada (outro lugar) — e “a primeira rodada — e “pra começar, uma cerveja — e “petisco de entrada cobrado — e “espetinho de frango
+      — e “o prato que fecha a noite — e “mais um lugar — e “vamos indo?”.'
+  answer:
+    speaker: protagonist
+    text: 居酒屋[いざかや] … はしご 酒[ざけ] … 二次会[にじかい] … 一次会[いちじかい] … とりあえず ビール … お通[とお]し … 焼[や]き鳥[とり] … 締[し]め … もう 一軒[いっけん] … そろそろ 帰[かえ]ろう か
+  items:
+  - izakaya
+  - hashigozake
+  - nijikai
+  - ichijikai
+  - toriaezu
+  - otooshi
+  - yakitori
+  - shime
+  - mou-ikken
+  - kaerou-ka
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “quarrel, fight — and “is angry — and “don''t be angry — and “forgot — and “promise; appointment — and “even though I was waiting — and “that''s awful, cruel — and “I''m really sorry — and
+      “treat (me) as important — and “making up”.'
+    pt: 'Diga: “briga — e “está brava — e “não fica brava — e “esqueci — e “promessa; compromisso — e “e eu esperando — e “que horrível, que maldade — e “desculpa mesmo — e “me dá valor — e “fazer as pazes”.'
+  answer:
+    speaker: protagonist
+    text: 喧嘩[けんか] … 怒[おこ]って る … 怒[おこ]らないで … 忘[わす]れた … 約束[やくそく] … 待[ま]って いた のに … ひどい … 本当[ほんとう] に ごめん … 大事[だいじ] に して … 仲直[なかなお]り
+  items:
+  - kenka
+  - okotteru
+  - okoranaide
+  - wasureta
+  - yakusoku
+  - matte-ita-noni
+  - hidoi
+  - hontou-ni-gomen
+  - daiji-ni-shite
+  - nakanaori
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “mountain — and “sea — and “lake — and “Lake Hamana — and “Mount Fuji — and “river — and “than — and “the highest — and “eel — and “local speciality”.'
+    pt: 'Diga: “montanha — e “mar — e “lago — e “lago Hamana — e “monte Fuji — e “rio — e “do que — e “o mais alto — e “enguia — e “especialidade local”.'
+  answer:
+    speaker: protagonist
+    text: 山[やま] … 海[うみ] … 湖[みずうみ] … 浜名湖[はまなこ] … 富士山[ふじさん] … 川[かわ] … 〜より … 一番[いちばん] 高[たか]い … うなぎ … 名物[めいぶつ]
+  items:
+  - yama
+  - umi
+  - mizuumi
+  - hamanako
+  - fujisan
+  - kawa
+  - yori
+  - ichiban-takai
+  - unagi
+  - meibutsu
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

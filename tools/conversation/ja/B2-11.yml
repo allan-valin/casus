@@ -1,0 +1,574 @@
+# UNIT ja B2-11 — written by AI (Claude) for Casus; expanded from src/B2-11.yml by tools/expand_unit.py. Edit the source.
+
+id: B2-11
+level: B2
+number: 11
+protagonist: f
+title:
+  en: The obligatory nomikai?
+  pt: O nomikai obrigatório?
+situation:
+  en: The department's drinking party is on Friday — the same night as Shota's birthday dinner. You ask Chief Sato whether you can skip it.
+  pt: O nomikai do departamento é na sexta — na mesma noite do jantar de aniversário do Shota. Você pergunta à chefe Sato se pode faltar.
+learn_lessons: []
+culture: Norms are changing
+new_items:
+- id: kesseki
+  text: 欠席[けっせき]
+  meaning:
+    en: absence, not attending
+    pt: ausência, não comparecer
+- id: tsugou
+  text: 都合[つごう]
+  meaning:
+    en: convenience, circumstances
+    pt: disponibilidade, compromissos
+- id: sanka
+  text: 参加[さんか]
+  meaning:
+    en: participation
+    pt: participação
+- id: tsukiai
+  text: 付[つ]き合[あ]い
+  meaning:
+    en: socialising (for work)
+    pt: convivência (de trabalho)
+- id: wake-dewa-nai
+  text: 〜わけ では ない
+  meaning:
+    en: it's not that…
+    pt: não é que…
+- id: kyousei-dewa-nai
+  text: 強制[きょうせい] では ない
+  meaning:
+    en: it's not compulsory
+    pt: não é obrigatório
+- id: tsugou-ga-warui
+  text: 都合[つごう] が 悪[わる]い
+  meaning:
+    en: it's not convenient (I can't)
+    pt: não posso, não dá
+- id: zannen-desu-ga
+  text: 残念[ざんねん] です が
+  meaning:
+    en: unfortunately
+    pt: infelizmente
+- id: tsugi-wa-zehi
+  text: 次[つぎ] は ぜひ
+  meaning:
+    en: next time for sure
+    pt: da próxima, com certeza
+- id: kanji-san
+  text: 幹事[かんじ]
+  meaning:
+    en: party organiser
+    pt: organizador (da festa)
+  rare: true
+reviews:
+- item: natsumatsuri
+  from: A2-08
+- item: yukata
+  from: A2-08
+- item: hanabi
+  from: A2-08
+- item: yatai
+  from: A2-08
+- item: natsu
+  from: A2-08
+- item: mitai
+  from: A2-08
+- item: kitai
+  from: A2-08
+- item: kimasu-wear
+  from: A2-08
+- item: nigiyaka
+  from: A2-08
+- item: kingyo-sukui
+  from: A2-08
+- item: niaimasu
+  from: A2-08
+- item: kentou-shimasu
+  from: B1-10
+- item: honne
+  from: B1-10
+- item: tatemae
+  from: B1-10
+- item: you-da
+  from: B1-10
+- item: dame-na-you-desu
+  from: B1-10
+- item: kotowaru
+  from: B1-10
+- item: hakkiri
+  from: B1-10
+- item: kuuki-wo-yomu
+  from: B1-10
+- item: hyoujou
+  from: B1-10
+- item: mata-kondo
+  from: B1-10
+- item: tanjoubi
+  from: B1-26
+- item: keeki
+  from: B1-26
+- item: purezento
+  from: B1-26
+- item: okaeshi
+  from: B1-26
+- item: ageru
+  from: B1-26
+- item: morau
+  from: B1-26
+- item: kureru
+  from: B1-26
+- item: kenta-ga-kureta
+  from: B1-26
+- item: yui-ni-ageru
+  from: B1-26
+- item: omedetou-tanjoubi
+  from: B1-26
+- item: howaito-dee
+  from: B1-26
+- item: buchou-item
+  from: B2-04
+- item: senpai
+  from: B2-04
+- item: irassharu
+  from: B2-04
+- item: ossharu
+  from: B2-04
+- item: sonkeigo
+  from: B2-04
+- item: kanpai-hikuku
+  from: B2-04
+- item: tatete-wa-ikenai
+  from: B2-04
+- item: esukareetaa
+  from: B2-04
+- item: hidari-ni-tatsu
+  from: B2-04
+- item: onaji-you-ni
+  from: B2-04
+- item: goaisatsu
+  from: B2-04
+- item: nikui
+  from: B2-08
+- item: kaerinikui
+  from: B2-08
+- item: iinikui
+  from: B2-08
+- item: saabisu-zangyou
+  from: B2-08
+- item: zangyoudai
+  from: B2-08
+- item: yotei-ga-arimashite
+  from: B2-08
+- item: nanika-otetsudai
+  from: B2-08
+- item: kyou-wa-kore-de
+  from: B2-08
+- item: houkoku
+  from: B2-08
+- item: rakuni
+  from: B2-08
+- item: odenwa
+  from: B2-10
+- item: moushiwake-gozaimasen
+  from: B2-10
+- item: dengon
+  from: B2-10
+- item: seki-wo-hazushite
+  from: B2-10
+- item: ukagaimasu
+  from: B2-10
+- item: moushitsutaemasu
+  from: B2-10
+- item: orikaeshi
+  from: B2-10
+- item: osore-irimasu-ga
+  from: B2-10
+- item: renrakusaki-ukagau
+  from: B2-10
+- item: kashikomarimashita
+  from: B2-10
+steps:
+- type: narrator
+  text:
+    en: The department's drinking party is on Friday — the same night as Shota's birthday dinner. You ask Chief Sato whether you can skip it. Listen to the conversation; you don't need to understand it
+      yet.
+    pt: O nomikai do departamento é na sexta — na mesma noite do jantar de aniversário do Shota. Você pergunta à chefe Sato se pode faltar. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: 課長[かちょう]、 金曜日[きんようび] の 飲[の]み会[かい] です が、 その 日[ひ] は 都合[つごう] が 悪[わる]くて…
+    meaning:
+      en: Chief, about Friday's party, that day isn't convenient for me…
+      pt: Chefe, sobre o nomikai de sexta, nesse dia eu não posso…
+  - speaker: sato
+    text: そう です か。 欠席[けっせき] でも 大丈夫[だいじょうぶ] です よ。
+    meaning:
+      en: I see. It's fine not to come.
+      pt: Entendo. Pode faltar, tudo bem.
+  - speaker: protagonist
+    text: 本当[ほんとう] に いい ん です か。 飲[の]み会[かい] も 仕事[しごと] だ と 聞[き]きました。
+    meaning:
+      en: Is it really okay? I heard parties are part of the job.
+      pt: É mesmo? Ouvi dizer que o nomikai também faz parte do trabalho.
+  - speaker: sato
+    text: 付[つ]き合[あ]い は 大事[だいじ] です が、 強制[きょうせい] では ありません。 今[いま] は 来[こ]ない 人[ひと] も 多[おお]い です。
+    meaning:
+      en: Socialising matters, but it's not compulsory. Many people don't come nowadays.
+      pt: A convivência é importante, mas não é obrigatória. Hoje muita gente não vai.
+  - speaker: protagonist
+    text: 行[い]きたく ない わけ では ない ん です。 彼[かれ] の 誕生日[たんじょうび] で。
+    meaning:
+      en: It's not that I don't want to go. It's my boyfriend's birthday.
+      pt: Não é que eu não queira ir. É o aniversário do meu namorado.
+  - speaker: sato
+    text: それ は 大切[たいせつ] です ね。 幹事[かんじ] に は 私[わたし] から 言[い]って おきます。
+    meaning:
+      en: That's important. I'll let the organiser know.
+      pt: Isso é importante. Eu aviso o organizador.
+  - speaker: protagonist
+    text: ありがとう ございます。 残念[ざんねん] です が、 次[つぎ] は ぜひ 参加[さんか] します。
+    meaning:
+      en: Thank you. Unfortunately not this time, but next time I'll definitely come.
+      pt: Obrigada. Infelizmente não dá, mas da próxima vou com certeza.
+  - speaker: sato
+    text: 楽[たの]しんで ね。
+    meaning:
+      en: Enjoy.
+      pt: Aproveite.
+- type: prompt
+  ask:
+    en: 'Say: participation.'
+    pt: 'Diga: participação.'
+  answer:
+    speaker: protagonist
+    text: 参加[さんか]
+  items:
+  - sanka
+- type: prompt
+  ask:
+    en: 'Say: not attending.'
+    pt: 'Diga: ausência.'
+  answer:
+    speaker: protagonist
+    text: 欠席[けっせき]
+  items:
+  - kesseki
+- type: prompt
+  ask:
+    en: 'Say: convenience, circumstances.'
+    pt: 'Diga: disponibilidade.'
+  answer:
+    speaker: protagonist
+    text: 都合[つごう]
+  items:
+  - tsugou
+- type: prompt
+  ask:
+    en: 'Decline gently: it''s not convenient for me.'
+    pt: 'Recuse com jeito: eu não posso.'
+  answer:
+    speaker: protagonist
+    text: 都合[つごう] が 悪[わる]くて…
+  items:
+  - tsugou-ga-warui
+- type: prompt
+  ask:
+    en: 'Say: socialising for work.'
+    pt: 'Diga: convivência de trabalho.'
+  answer:
+    speaker: protagonist
+    text: 付[つ]き合[あ]い
+  items:
+  - tsukiai
+- type: prompt
+  ask:
+    en: 'Say: it''s not compulsory.'
+    pt: 'Diga: não é obrigatório.'
+  answer:
+    speaker: protagonist
+    text: 強制[きょうせい] では ない
+  items:
+  - kyousei-dewa-nai
+- type: narrator
+  text:
+    en: '«〜わけ では ない» is it''s not that…: it denies a conclusion the other might draw. «行[い]きたく ない わけ では ない» — it''s not that I don''t want to go. Useful to say no without offending.'
+    pt: '«〜わけ では ない» é não é que…: nega uma conclusão que o outro poderia tirar. «行[い]きたく ない わけ では ない» — não é que eu não queira ir. Útil para dizer não sem ofender.'
+- type: prompt
+  ask:
+    en: 'Say the pattern: it''s not that…'
+    pt: 'Diga o padrão: não é que…'
+  answer:
+    speaker: protagonist
+    text: 〜わけ では ない
+  items:
+  - wake-dewa-nai
+- type: prompt
+  ask:
+    en: 'Say: it''s not that I don''t want to go.'
+    pt: 'Diga: não é que eu não queira ir.'
+  answer:
+    speaker: protagonist
+    text: 行[い]きたく ない わけ では ない。
+  items:
+  - wake-dewa-nai
+- type: prompt
+  ask:
+    en: 'Say: unfortunately.'
+    pt: 'Diga: infelizmente.'
+  answer:
+    speaker: protagonist
+    text: 残念[ざんねん] です が
+  items:
+  - zannen-desu-ga
+- type: prompt
+  ask:
+    en: 'Promise: next time for sure.'
+    pt: 'Prometa: da próxima, com certeza.'
+  answer:
+    speaker: protagonist
+    text: 次[つぎ] は ぜひ
+  items:
+  - tsugi-wa-zehi
+- type: prompt
+  ask:
+    en: 'Say: the party organiser.'
+    pt: 'Diga: o organizador.'
+  answer:
+    speaker: protagonist
+    text: 幹事[かんじ]
+  items:
+  - kanji-san
+- type: narrator
+  text:
+    en: After-work parties used to feel compulsory; younger workers now skip them more freely, and many companies say so openly. Decline early, with «都合[つごう] が 悪[わる]くて» — no long excuse needed — and show
+      willingness for next time.
+    pt: Os nomikai já pareceram obrigatórios; os mais jovens hoje faltam com mais liberdade, e muitas empresas dizem isso abertamente. Recuse cedo, com «都合[つごう] が 悪[わる]くて» — sem desculpa comprida — e mostre
+      vontade de ir na próxima.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: '«都合[つごう] が 悪[わる]くて» é a desculpa universal japonesa: não precisa explicar o quê. Como o nosso «não vai dar», só que mais elegante.'
+- type: prompt
+  ask:
+    en: 'Once more: say “absence, not attending”.'
+    pt: 'Mais uma vez: diga “ausência, não comparecer”.'
+  answer:
+    speaker: protagonist
+    text: 欠席[けっせき]
+  items:
+  - kesseki
+- type: prompt
+  ask:
+    en: 'Once more: say “convenience, circumstances”.'
+    pt: 'Mais uma vez: diga “disponibilidade, compromissos”.'
+  answer:
+    speaker: protagonist
+    text: 都合[つごう]
+  items:
+  - tsugou
+- type: prompt
+  ask:
+    en: 'Once more: say “participation”.'
+    pt: 'Mais uma vez: diga “participação”.'
+  answer:
+    speaker: protagonist
+    text: 参加[さんか]
+  items:
+  - sanka
+- type: prompt
+  ask:
+    en: 'Once more: say “socialising (for work)”.'
+    pt: 'Mais uma vez: diga “convivência (de trabalho)”.'
+  answer:
+    speaker: protagonist
+    text: 付[つ]き合[あ]い
+  items:
+  - tsukiai
+- type: prompt
+  ask:
+    en: 'Once more: say “it''s not compulsory”.'
+    pt: 'Mais uma vez: diga “não é obrigatório”.'
+  answer:
+    speaker: protagonist
+    text: 強制[きょうせい] では ない
+  items:
+  - kyousei-dewa-nai
+- type: prompt
+  ask:
+    en: 'Once more: say “it''s not convenient (I can''t)”.'
+    pt: 'Mais uma vez: diga “não posso, não dá”.'
+  answer:
+    speaker: protagonist
+    text: 都合[つごう] が 悪[わる]い
+  items:
+  - tsugou-ga-warui
+- type: prompt
+  ask:
+    en: 'Once more: say “unfortunately”.'
+    pt: 'Mais uma vez: diga “infelizmente”.'
+  answer:
+    speaker: protagonist
+    text: 残念[ざんねん] です が
+  items:
+  - zannen-desu-ga
+- type: prompt
+  ask:
+    en: 'Once more: say “next time for sure”.'
+    pt: 'Mais uma vez: diga “da próxima, com certeza”.'
+  answer:
+    speaker: protagonist
+    text: 次[つぎ] は ぜひ
+  items:
+  - tsugi-wa-zehi
+- type: prompt
+  ask:
+    en: 'Once more: say “party organiser”.'
+    pt: 'Mais uma vez: diga “organizador (da festa)”.'
+  answer:
+    speaker: protagonist
+    text: 幹事[かんじ]
+  items:
+  - kanji-san
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “telephone (polite) — and “I''m very sorry (most polite) — and “message — and “is away from (their) desk — and “ask, hear, visit (humble) — and “I''ll pass it on (humble) — and “calling back
+      — and “I''m sorry to trouble you, but — and “may I have your contact number? — and “certainly (very polite) — and “hard to…”.'
+    pt: 'Diga: “telefone (educado) — e “peço muitas desculpas (o mais educado) — e “recado — e “não está na mesa no momento — e “pergunto, ouço, visito (humilde) — e “vou transmitir (humilde) — e “retornar
+      a ligação — e “desculpe o incômodo, mas — e “pode me passar seu contato? — e “pois não, entendido (muito educado) — e “difícil de…”.'
+  answer:
+    speaker: protagonist
+    text: お電話[でんわ] … 申[もう]し訳[わけ] ございません … 伝言[でんごん] … 席[せき] を 外[はず]して おります … 伺[うかが]います … 申[もう]し伝[つた]えます … 折[お]り返[かえ]し … 恐[おそ]れ入[い]ります が … ご連絡先[れんらくさき] を 伺[うかが]えます か … かしこまりました … 〜にくい
+  items:
+  - odenwa
+  - moushiwake-gozaimasen
+  - dengon
+  - seki-wo-hazushite
+  - ukagaimasu
+  - moushitsutaemasu
+  - orikaeshi
+  - osore-irimasu-ga
+  - renrakusaki-ukagau
+  - kashikomarimashita
+  - nikui
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “hard to leave — and “hard to say — and “unpaid overtime — and “overtime pay — and “I have plans (polite excuse) — and “is there anything I can help with? — and “that''s it for today — and
+      “report — and “relaxed, at ease — and “department head — and “senior colleague”.'
+    pt: 'Diga: “difícil ir embora — e “difícil de dizer — e “hora extra não paga — e “pagamento de hora extra — e “tenho um compromisso (desculpa educada) — e “há algo em que eu possa ajudar? — e “por hoje
+      é isso — e “relatório, comunicado — e “à vontade — e “chefe de departamento — e “colega mais antigo”.'
+  answer:
+    speaker: protagonist
+    text: 帰[かえ]りにくい … 言[い]いにくい … サービス 残業[ざんぎょう] … 残業代[ざんぎょうだい] … 予定[よてい] が ありまして … 何[なに] か お手伝[てつだ]い する こと は … 今日[きょう] は これ で … 報告[ほうこく] … 気楽[きらく] に … 部長[ぶちょう] … 先輩[せんぱい]
+  items:
+  - kaerinikui
+  - iinikui
+  - saabisu-zangyou
+  - zangyoudai
+  - yotei-ga-arimashite
+  - nanika-otetsudai
+  - kyou-wa-kore-de
+  - houkoku
+  - rakuni
+  - buchou-item
+  - senpai
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “is, comes, goes (respectful) — and “says (respectful) — and “respectful language — and “(hold) the glass lower — and “must not stand (them) upright — and “escalator — and “stand on the left
+      — and “like the people around you — and “greeting (formal) — and “birthday — and “cake”.'
+    pt: 'Diga: “está, vem, vai (respeitoso) — e “diz (respeitoso) — e “linguagem respeitosa — e “(segure) o copo mais baixo — e “não pode deixar em pé — e “escada rolante — e “ficar à esquerda — e “como
+      as pessoas em volta — e “cumprimento (formal) — e “aniversário — e “bolo”.'
+  answer:
+    speaker: protagonist
+    text: いらっしゃる … おっしゃる … 尊敬語[そんけいご] … グラス を 低[ひく]く … 立[た]てて は いけない … エスカレーター … 左[ひだり] に 立[た]つ … 周[まわ]り と 同[おな]じ よう に … ご挨拶[あいさつ] … 誕生日[たんじょうび] … ケーキ
+  items:
+  - irassharu
+  - ossharu
+  - sonkeigo
+  - kanpai-hikuku
+  - tatete-wa-ikenai
+  - esukareetaa
+  - hidari-ni-tatsu
+  - onaji-you-ni
+  - goaisatsu
+  - tanjoubi
+  - keeki
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “present — and “a return gift — and “give (to others) — and “receive — and “give (to me / us) — and “Kenta gave (it to) me — and “give (it) to Yui — and “happy birthday — and “White Day (14
+      March) — and “we''ll consider it — and “true feelings”.'
+    pt: 'Diga: “presente — e “presente de retribuição — e “dar (a outra pessoa) — e “receber, ganhar — e “dar (para mim / nós) — e “o Kenta me deu — e “dar para a Yui — e “feliz aniversário — e “White Day
+      (14 de março) — e “vamos estudar — e “o que se pensa de verdade”.'
+  answer:
+    speaker: protagonist
+    text: プレゼント … お返[かえ]し … あげる … もらう … くれる … 健太[けんた] くん が くれた … 由衣[ゆい] に あげる … 誕生日[たんじょうび] おめでとう … ホワイト デー … 検討[けんとう] します … 本音[ほんね]
+  items:
+  - purezento
+  - okaeshi
+  - ageru
+  - morau
+  - kureru
+  - kenta-ga-kureta
+  - yui-ni-ageru
+  - omedetou-tanjoubi
+  - howaito-dee
+  - kentou-shimasu
+  - honne
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the public face — and “it seems, apparently (from what I see) — and “it seems it''s a no — and “refuse, turn down — and “clearly, directly — and “read the atmosphere — and “facial expression
+      — and “another time — and “summer festival — and “yukata, summer kimono — and “fireworks”.'
+    pt: 'Diga: “o que se diz por educação — e “parece que (pelo que vejo) — e “parece que não vai dar — e “recusar — e “com clareza, diretamente — e “ler o clima — e “expressão do rosto — e “fica para outra
+      vez — e “festival de verão — e “yukata, quimono de verão — e “fogos de artifício”.'
+  answer:
+    speaker: protagonist
+    text: 建前[たてまえ] … 〜よう だ … だめ な よう です … 断[ことわ]る … はっきり … 空気[くうき] を 読[よ]む … 表情[ひょうじょう] … また 今度[こんど] … 夏祭[なつまつ]り … 浴衣[ゆかた] … 花火[はなび]
+  items:
+  - tatemae
+  - you-da
+  - dame-na-you-desu
+  - kotowaru
+  - hakkiri
+  - kuuki-wo-yomu
+  - hyoujou
+  - mata-kondo
+  - natsumatsuri
+  - yukata
+  - hanabi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “food stall — and “summer — and “I want to see — and “I want to wear — and “wear, put on — and “lively — and “goldfish scooping — and “it suits you”.'
+    pt: 'Diga: “barraca de comida — e “verão — e “quero ver — e “quero vestir — e “visto — e “animado, movimentado — e “pescaria de peixinho dourado — e “fica bem em você”.'
+  answer:
+    speaker: protagonist
+    text: 屋台[やたい] … 夏[なつ] … 見[み]たい です … 着[き]たい です … 着[き]ます … 賑[にぎ]やか … 金魚[きんぎょ] すくい … 似合[にあ]います ね
+  items:
+  - yatai
+  - natsu
+  - mitai
+  - kitai
+  - kimasu-wear
+  - nigiyaka
+  - kingyo-sukui
+  - niaimasu
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
