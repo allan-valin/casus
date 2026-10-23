@@ -27,7 +27,8 @@ export const japanese = {
   eras: [{ id: 'modern', label: 'Present-day standard Japanese', authors: '', ages: [], ipa: [] }],
   dataPath: '/data/ja',
   samplesPath: '/samples/ja',
-  voice: { espeak: 'ja', natural: null },
+  // natural voice: Piper hi_fi_captain, a female and a male speaker, reading the course's OpenJTalk sounds (Allan 2026-10-22)
+  voice: { espeak: 'ja', natural: { voiceId: 'ja_JP-hi_fi_captain-medium', name: 'Hi-Fi-CAPTAIN (Japanese, female and male)', sizeMB: 77, phonemes: 'ja' } },
   // the voice reads kana (espeak-ng cannot read kanji); the reading is in the dictionary form: 食べる (たべる)
   speakForm: (r) => r.dict_form?.match(/\(([^)]+)\)$/)?.[1] ?? r.headword,
   game: { ROWS, LETTERS, LABELS, createGame, createGrid },

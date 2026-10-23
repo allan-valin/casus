@@ -316,3 +316,14 @@ describe('a pause pressed while a sentence is computed holds it until resume', (
     stopPlayback();
   });
 });
+
+describe('the course can hand the natural voice its own sounds and a speaker (Japanese, Allan 2026-10-22)', () => {
+  it('phonemes and speaker reach the engine; the browser voice still gets the text', async () => {
+    const { createVoice } = await import('../../src/app/lib/voice.js');
+    const asked = [];
+    const v = createVoice({ bcp47: 'ja', espeakVoice: 'ja', natural: { voiceId: 'v', phonemes: 'ja' }, store: { getItem: () => 'stored', setItem() {}, removeItem() {} },
+      loadPiper: async () => ({ predict: async (o) => { asked.push(o); return new Blob(['x']); } }), playBlob: async () => {} });
+    await v.speak('かさ', { phonemes: 'ka↑sa.', speaker: 'female' });
+    expect(asked[0]).toMatchObject({ text: 'かさ', phonemes: 'ka↑sa.', speaker: 'female' });
+  });
+});

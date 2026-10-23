@@ -89,6 +89,20 @@ describe('Conversation practice tab (Allan, 2026-10-20/21: narrator in the inter
     expect(review.querySelector('a.kanji').getAttribute('href')).toBe('/ja/learn/#n5-k1');
     expect(container.querySelectorAll('.review-kanji')).toHaveLength(1);    // once, at the first review question
   });
+  it('Japanese: the line is spoken from its kana, with the course sounds (pitch accent) and the character speaker for the natural voice (Allan 2026-10-22)', async () => {
+    const spokenOpts = [];
+    const ja = { ...COURSE, language: 'ja', voices: [{ id: 'jf', tts: 'piper:ja_JP-hi_fi_captain-medium#female' }], cast: { becker: { name: 'X', voice: 'jf' }, protagonist: { name: null } },
+      readings: { 'Guten Tag.': { rt: [['Guten Tag.', 'ぐーてん']], say: 'ぐーてん', ph: 'ɡɯ↑ɯteɴ.' } } };
+    const { p } = props({ loadTalk: async () => ja, speakTaught: async (text, o) => { spokenOpts.push([text, o]); } });
+    const { container } = render(Talk, p);
+    await flush();
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    await fireEvent.click(container.querySelector('.step[data-type="dialogue"] .play'));
+    await flush();
+    expect(spokenOpts[0][0]).toBe('ぐーてん');
+    expect(spokenOpts[0][1]).toMatchObject({ phonemes: 'ɡɯ↑ɯteɴ.', speaker: 'female' });
+  });
   it('an audience version shows its slot number, not the internal suffix (A1-02-e → A1-02)', async () => {
     setLang('en');
     const course = { ...COURSE, narrator_languages: ['en', 'ar'], units: [{ ...COURSE.units[1], id: 'A1-02-e', tracks: ['en'] }] };
@@ -698,6 +712,14 @@ describe('character pitches', async () => {
     const c = { ...course, voices: [...course.voices, { id: 'old', role: 'character', gender: 'f', pitch: 1.12, speed: 1.12 }], cast: { ...course.cast, vera: { voice: 'old' } } };
     expect(speedOf(c, {}, 'vera')).toBe(1.12);
     expect(speedOf(c, { protagonist: 'f' }, 'protagonist')).toBe(1);
+  });
+  it('a two-speaker voice: speakerOf names the speaker from the voice (piper:…#female / #male); others get none', async () => {
+    const { speakerOf } = await import('../../src/app/lib/talkvoices.js');
+    const c = { ...course, voices: [...course.voices, { id: 'jf', tts: 'piper:ja_JP-hi_fi_captain-medium#female' }, { id: 'jm', tts: 'piper:ja_JP-hi_fi_captain-medium#male' }],
+      cast: { ...course.cast, suzuki: { voice: 'jf' } }, protagonist: { f: 'jf', m: 'jm' } };
+    expect(speakerOf(c, {}, 'suzuki')).toBe('female');
+    expect(speakerOf(c, { protagonist: 'm' }, 'protagonist')).toBe('male');
+    expect(speakerOf(course, { protagonist: 'f' }, 'protagonist')).toBeNull();
   });
   it('the protagonist speaks with the unit’s form; cast members with their voice', () => {
     expect(pitchOf(course, { protagonist: 'f' }, 'protagonist')).toBe(1.25);

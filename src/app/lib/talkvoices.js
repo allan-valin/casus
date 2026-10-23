@@ -34,3 +34,10 @@ export function speedOf(course, unit, speaker) {
   const id = speaker === 'protagonist' ? course?.protagonist?.[unit?.protagonist] : course?.cast?.[speaker]?.voice;
   return (course?.voices ?? []).find((v) => v.id === id)?.speed ?? 1;
 }
+
+/** the speaker of a two-speaker natural voice ('piper:…#female' → 'female'), or null */
+export function speakerOf(course, unit, speaker) {
+  const id = speaker === 'protagonist' ? course?.protagonist?.[unit?.protagonist] : course?.cast?.[speaker]?.voice;
+  const tts = (course?.voices ?? []).find((v) => v.id === id)?.tts ?? '';
+  return tts.includes('#') ? tts.split('#').pop() : null;
+}

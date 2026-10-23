@@ -41,4 +41,16 @@ describe('phoneme Piper', () => {
     await p.predict({ text: 'да', voiceId: 'bg_BG-dimitar-medium', lengthScale: 1.25 });
     expect([...f.runs[0].scales.data][1]).toBeCloseTo(1.25);
   });
+  it('Japanese: the course sounds go in as they are, and the speaker (female 0, male 1) is chosen by name (Allan 2026-10-22)', async () => {
+    const f = fakes();
+    const cfg = { ...CFG, num_speakers: 2, speaker_id_map: { female: 0, male: 1 }, phoneme_id_map: { ...CFG.phoneme_id_map, k: [23], '↑': [160], '.': [10] } };
+    const fetchImpl = async (u) => { f.fetched.push(u); return new Response(u.endsWith('.json') ? JSON.stringify(cfg) : new Uint8Array([1])); };
+    const p = createPhonemePiper({ phonemes: 'ja', fetchImpl, openCache: async () => f.cache, loadOrt: f.loadOrt });
+    await p.download('ja_JP-hi_fi_captain-medium');
+    await p.predict({ text: 'か', phonemes: 'ka↑.', voiceId: 'ja_JP-hi_fi_captain-medium', speaker: 'male' });
+    expect([...f.runs[0].input.data].map(Number)).toEqual([1, 0, 23, 0, 14, 0, 160, 0, 10, 0, 2]);
+    expect([...f.runs[0].sid.data].map(Number)).toEqual([1]);
+    await p.predict({ text: 'か', voiceId: 'ja_JP-hi_fi_captain-medium' });
+    expect([...f.runs[1].sid.data].map(Number)).toEqual([0]);              // no speaker named: the voice's default
+  });
 });

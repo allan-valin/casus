@@ -6,11 +6,14 @@
  * onnxruntime-web (MIT) runs it.
  */
 import { phonemeIds as mkIds } from '../../lang/mk/phonemes.js';
+import { phonemeIds as jaIds } from '../../lang/ja/phonemes.js';
 
 const HF = 'https://huggingface.co/rhasspy/piper-voices/resolve/main';
-const PATHS = { 'bg_BG-dimitar-medium': 'bg/bg_BG/dimitar/medium/bg_BG-dimitar-medium.onnx' };
+const PATHS = { 'bg_BG-dimitar-medium': 'bg/bg_BG/dimitar/medium/bg_BG-dimitar-medium.onnx',
+  // Japanese, a female and a male speaker (CC BY-NC-SA 4.0; Allan 2026-10-21: NC is fine, nothing is sold)
+  'ja_JP-hi_fi_captain-medium': 'ja/ja_JP/hi_fi_captain/medium/ja_JP-hi_fi_captain-medium.onnx' };
 import { ENGINE } from './voice.js';   // the same onnxruntime, on our own site, as the other natural voices
-const PHONEMES = { mk: mkIds };
+const PHONEMES = { mk: mkIds, ja: jaIds };
 
 export async function loadOrtEngine() {
   const ort = await import('onnxruntime-web/wasm');
@@ -76,13 +79,16 @@ export function createPhonemePiper({ phonemes, fetchImpl = (...a) => fetch(...a)
       for (const u of urls(voiceId)) await cache.delete(u);
       sessions.delete(voiceId);
     },
-    async predict({ text, voiceId, lengthScale = 1 }) {   // lengthScale > 1: slower (multiplies the model's own)
+    // lengthScale > 1: slower (multiplies the model's own); phonemes: the voice's own symbols, ready (the Japanese
+    // course carries them with pitch accent); speaker: a name in the voice's speaker map (female / male)
+    async predict({ text, voiceId, lengthScale = 1, phonemes = null, speaker = null }) {
       const { cfg, ort, s } = await session(voiceId);
-      const ids = toIds(text, cfg.phoneme_id_map);
+      const ids = phonemes ? toIds(phonemes, cfg.phoneme_id_map, { ipa: true }) : toIds(text, cfg.phoneme_id_map);
       const big = BigInt64Array.from(ids.map(BigInt));
       const { noise_scale: ns, length_scale: ls, noise_w: nw } = cfg.inference;
       const out = await s.run({ input: new ort.Tensor('int64', big, [1, big.length]), input_lengths: new ort.Tensor('int64', BigInt64Array.from([BigInt(big.length)]), [1]),
-        scales: new ort.Tensor('float32', Float32Array.from([ns, ls * lengthScale, nw]), [3]) });
+        scales: new ort.Tensor('float32', Float32Array.from([ns, ls * lengthScale, nw]), [3]),
+        ...(cfg.num_speakers > 1 ? { sid: new ort.Tensor('int64', BigInt64Array.from([BigInt(cfg.speaker_id_map?.[speaker] ?? cfg.default_speaker_id ?? 0)]), [1]) } : {}) });
       return wav(out[s.outputNames[0]].data, cfg.audio.sample_rate);
     },
   };

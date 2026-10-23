@@ -10,7 +10,7 @@
   import Picker from './Picker.svelte';
   import { alignFurigana } from '../../lang/ja/furigana.js';
   import { t, ui } from '../lib/i18n.svelte.js';
-  import { voicePitches, pitchOf, speedOf } from '../lib/talkvoices.js';
+  import { voicePitches, pitchOf, speedOf, speakerOf } from '../lib/talkvoices.js';
   import { narrationParts, taughtLetters } from '../lib/narration.js';
   let { lang, loadTalk, storage = null, speakTaught = async () => {}, speakNarrator = async () => {}, trainerHref = null,
     say = () => {}, pause = (ms) => new Promise((r) => setTimeout(r, ms)), Practice = null, practiceProps = {}, control = null,
@@ -93,7 +93,8 @@
     if (r?.fellBack && !warnedFallback) { warnedFallback = true; say(t('talk.voice.fellBack', { error: r.error ?? '' }), 'err'); }
   }
   async function sayTaught(text, who = null) {
-    try { noteFallback(await speakTaught(readings[text]?.say ?? text, { pitch: who ? pitchOf(course, unit, who, pitches) : 1, speed: who ? speedOf(course, unit, who) : 1 })); } catch (e) { say(t('talk.speakFailed', { text, error: e?.message ?? '' }), 'err'); throw e; }
+    try { noteFallback(await speakTaught(readings[text]?.say ?? text, { pitch: who ? pitchOf(course, unit, who, pitches) : 1, speed: who ? speedOf(course, unit, who) : 1,
+      ...(readings[text]?.ph ? { phonemes: readings[text].ph } : {}), ...(who && speakerOf(course, unit, who) ? { speaker: speakerOf(course, unit, who) } : {}) })); } catch (e) { say(t('talk.speakFailed', { text, error: e?.message ?? '' }), 'err'); throw e; }
   }
   // ▶ starts the step; while it plays the same button pauses (⏸) and resumes (▶) it
   // every playback has a run number; starting another stops the sound and ends the old run (Allan, 2026-10-21: two at once)

@@ -58,6 +58,14 @@ def build(src=ROOT / "tools" / "conversation", out=ROOT / "public" / "talk"):
             try:
                 rich_course(data)
                 unit_kanji(data, kanji_lessons(ROOT / 'data' / 'ja' / 'learn'))
+                # the natural voice's sounds with pitch accent, computed here once (tools/ja_phonemes.py)
+                try:
+                    from ja_phonemes import phonemes
+                except ImportError:
+                    report[code]["errors"].append("Japanese needs pyopenjtalk: uvx --with pyyaml --with pyopenjtalk python3 tools/build_conversation.py")
+                    continue
+                for text, r in data["readings"].items():
+                    r["ph"] = phonemes(text, r["say"])
             except ValueError as e:
                 report[code]["errors"].append(str(e))
                 continue

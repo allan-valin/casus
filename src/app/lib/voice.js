@@ -235,7 +235,7 @@ export function createVoice({ bcp47, espeakVoice, natural = null, synth = global
     try { return await engineLoad; } catch (e) { engineLoad = null; throw new Error(`no voice for ${bcp47}: espeak-ng could not be loaded (${e.message})`); }
   }
   let lastError = null;
-  async function speak(text, { pitch = 1, speed = 1 } = {}) {
+  async function speak(text, { pitch = 1, speed = 1, phonemes = null, speaker = null } = {}) {
     let fellBack = false;
     lastError = null;
     if (naturalReady()) {
@@ -247,7 +247,7 @@ export function createVoice({ bcp47, espeakVoice, natural = null, synth = global
         const lengthScale = natural.phonemes ? (natural.speed ?? 1) * speed * pitch : undefined;
         // a short silence first: audio output that has just woken cuts the first syllable (Allan, 2026-10-21)
         const mine = epoch;
-        const blob = await padWav(await p.predict({ text, voiceId: natural.voiceId, ...(lengthScale ? { lengthScale } : {}) }), 120);
+        const blob = await padWav(await p.predict({ text, voiceId: natural.voiceId, ...(lengthScale ? { lengthScale } : {}), ...(phonemes ? { phonemes } : {}), ...(speaker ? { speaker } : {}) }), 120);
         if (mine !== epoch) return { tier: 'natural', fellBack: false, dropped: true };   // stopped or skipped meanwhile
         await (pitch === 1 ? playBlob(blob) : playBlob(blob, { rate: pitch }));
         return { tier: 'natural', fellBack: false };
