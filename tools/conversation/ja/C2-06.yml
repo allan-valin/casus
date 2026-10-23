@@ -1,0 +1,605 @@
+# UNIT ja C2-06 — written by AI (Claude) for Casus; expanded from src/C2-06.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-06
+level: C2
+number: 6
+protagonist: m
+title:
+  en: Stand-up
+  pt: Stand-up
+situation:
+  en: 'The factory''s year-end party has an amateur manzai contest. You and Kenta enter as a double act: the Brazilian as the fool, Kenta as the straight man.'
+  pt: 'A festa de fim de ano da fábrica tem um concurso amador de manzai. Você e o Kenta entram como dupla: o brasileiro faz o bobo, o Kenta faz o escada.'
+learn_lessons: []
+culture: Manzai roles
+new_items:
+- id: manzai
+  text: 漫才[まんざい]
+  meaning:
+    en: manzai (double-act comedy)
+    pt: manzai (comédia em dupla)
+  rare: true
+- id: warai
+  text: 笑[わら]い
+  meaning:
+    en: laughter
+    pt: risada
+- id: kuse-ni
+  text: 〜くせ に
+  meaning:
+    en: even though (critical)
+    pt: sendo que, mesmo (crítico)
+- id: nihonjin-no-kuse-ni
+  text: 日本人[にほんじん] の くせ に
+  meaning:
+    en: even though you're Japanese
+    pt: sendo japonês
+- id: neta
+  text: ネタ
+  meaning:
+    en: material (comedy)
+    pt: texto, material (do humor)
+- id: uketa
+  text: ウケた
+  meaning:
+    en: went down well
+    pt: fez sucesso, arrancou risada
+- id: suberu
+  text: 滑[すべ]る
+  meaning:
+    en: fall flat (joke)
+    pt: não ter graça, cair no vazio
+- id: ai-kata
+  text: 相方[あいかた]
+  meaning:
+    en: comedy partner
+    pt: parceiro de dupla
+  rare: true
+- id: ma
+  text: 間[ま]
+  meaning:
+    en: timing, pause
+    pt: timing, pausa
+- id: nande-yanen-review
+  text: なんで やねん
+  meaning:
+    en: what the heck (Kansai comeback)
+    pt: como assim? (resposta do Kansai)
+reviews:
+- item: moushiwake
+  from: A1-29
+- item: machigaemashita
+  from: A1-29
+- item: machigai
+  from: A1-29
+- item: kayoubi
+  from: A1-29
+- item: gomen
+  from: A1-29
+- item: gomennasai
+  from: A1-29
+- item: tsugi-kara
+  from: A1-29
+- item: kakunin
+  from: A1-29
+- item: mou-ichido
+  from: A1-29
+- item: kinishinai-de-kudasai
+  from: A1-29
+- item: idenshi
+  from: B2-03
+- item: iden
+  from: B2-03
+- item: ni-taishite
+  from: B2-03
+- item: hahakata
+  from: B2-03
+- item: chichikata
+  from: B2-03
+- item: hada-no-iro
+  from: B2-03
+- item: me-no-iro
+  from: B2-03
+- item: konketsu
+  from: B2-03
+- item: haafu
+  from: B2-03
+- item: kakeizu
+  from: B2-03
+- item: senzo
+  from: B2-03
+- item: juuminzei
+  from: C1-05
+- item: kakutei-shinkoku
+  from: C1-05
+- item: koujo
+  from: C1-05
+- item: noufusho
+  from: C1-05
+- item: wake-niwa-ikanai
+  from: C1-05
+- item: harawanai-wake-niwa
+  from: C1-05
+- item: shotoku
+  from: C1-05
+- item: zenen
+  from: C1-05
+- item: gensen-choushuu
+  from: C1-05
+- item: furusato-nouzei
+  from: C1-05
+- item: eijuuken
+  from: C1-21
+- item: zairyuu-shikaku
+  from: C1-21
+- item: shinsa
+  from: C1-21
+- item: ni-oujite
+  from: C1-21
+- item: jijou-ni-oujite
+  from: C1-21
+- item: nouzei-shoumei
+  from: C1-21
+- item: mimoto-hoshounin
+  from: C1-21
+- item: haiguusha
+  from: C1-21
+- item: youken
+  from: C1-21
+- item: shinsei-review
+  from: C1-21
+- item: kekka-tsuuchi
+  from: C1-21
+- item: nouryoku-shiken
+  from: C1-29
+- item: goukaku
+  from: C1-29
+- item: juken
+  from: C1-29
+- item: okage-de
+  from: C1-29
+- item: sensei-no-okage
+  from: C1-29
+- item: fugoukaku
+  from: C1-29
+- item: tokuten
+  from: C1-29
+- item: dokkai
+  from: C1-29
+- item: choukai
+  from: C1-29
+- item: doryoku
+  from: C1-29
+- item: shuzai
+  from: C2-03
+- item: intabyuu
+  from: C2-03
+- item: shichousha
+  from: C2-03
+- item: kansou-thoughts
+  from: C2-03
+- item: tsuzukete-ikitai
+  from: C2-03
+- item: miryoku
+  from: C2-03
+- item: hakuryoku
+  from: C2-03
+- item: chiiki
+  from: C2-03
+- item: tsunagari
+  from: C2-03
+- item: kinchou-shimashita
+  from: C2-03
+- item: enshuu-ben
+  from: C2-05
+- item: hougen
+  from: C2-05
+- item: yaramaika
+  from: C2-05
+- item: mai
+  from: C2-05
+- item: dara
+  from: C2-05
+- item: dani
+  from: C2-05
+- item: hyojungo
+  from: C2-05
+- item: jimoto
+  from: C2-05
+- item: shitashimi
+  from: C2-05
+- item: nakama
+  from: C2-05
+steps:
+- type: narrator
+  text:
+    en: 'The factory''s year-end party has an amateur manzai contest. You and Kenta enter as a double act: the Brazilian as the fool, Kenta as the straight man. Listen to the conversation; you don''t need
+      to understand it yet.'
+    pt: 'A festa de fim de ano da fábrica tem um concurso amador de manzai. Você e o Kenta entram como dupla: o brasileiro faz o bobo, o Kenta faz o escada. Escute a conversa; ainda não precisa entender.'
+- type: dialogue
+  lines:
+  - speaker: kenta
+    text: どうも ー！ ブラジル と 浜松[はままつ] の コンビ です！
+    meaning:
+      en: Hellooo! We're the Brazil–Hamamatsu duo!
+      pt: Olááá! Somos a dupla Brasil–Hamamatsu!
+  - speaker: protagonist
+    text: 僕[ぼく] は 日本[にほん] に 来[き]て、 お箸[はし] の 使[つか]い方[かた] が 一番[いちばん] 上手[じょうず] に なりました。 納豆[なっとう] も 箸[はし] で 一粒[ひとつぶ] ずつ 食[た]べます。
+    meaning:
+      en: Since coming to Japan, the thing I got best at is chopsticks. I eat natto one bean at a time.
+      pt: Desde que vim ao Japão, o que eu mais aprendi foi usar hashi. Como natto um grão de cada vez.
+  - speaker: kenta
+    text: なんで やねん！ 一晩[ひとばん] かかる わ！
+    meaning:
+      en: What the heck! That'd take all night!
+      pt: Como assim?! Vai levar a noite toda!
+  - speaker: protagonist
+    text: 健太[けんた] さん は 日本人[にほんじん] の くせ に、 納豆[なっとう] が 食[た]べられない ん です よ。
+    meaning:
+      en: And Kenta here can't even eat natto, even though he's Japanese.
+      pt: E o Kenta, sendo japonês, nem consegue comer natto.
+  - speaker: kenta
+    text: それ は 秘密[ひみつ] やろ！ 西[にし] の 方[ほう] の 人[ひと] は 苦手[にがて] な 人[ひと] が 多[おお]い ねん！
+    meaning:
+      en: That was a secret! Lots of people in western Japan can't stand it!
+      pt: Isso era segredo! Muita gente do oeste do Japão não suporta!
+  - speaker: protagonist
+    text: …ウケた！ みんな 笑[わら]って る。
+    meaning:
+      en: …It went down well! Everyone's laughing.
+      pt: …Fez sucesso! Todo mundo está rindo.
+  - speaker: kenta
+    text: 間[ま] が よかった。 最初[さいしょ] の ネタ は 滑[すべ]る と 思[おも]った けど。
+    meaning:
+      en: The timing was good. I thought the first bit would fall flat.
+      pt: O timing foi bom. Achei que a primeira piada ia cair no vazio.
+  - speaker: protagonist
+    text: 最高[さいこう] の 相方[あいかた] だ ね。
+    meaning:
+      en: You're the best comedy partner.
+      pt: Você é o melhor parceiro de dupla.
+- type: prompt
+  ask:
+    en: 'Say: manzai.'
+    pt: 'Diga: manzai.'
+  answer:
+    speaker: protagonist
+    text: 漫才[まんざい]
+  items:
+  - manzai
+- type: prompt
+  ask:
+    en: 'Say: a comedy partner.'
+    pt: 'Diga: parceiro de dupla.'
+  answer:
+    speaker: protagonist
+    text: 相方[あいかた]
+  items:
+  - ai-kata
+- type: prompt
+  ask:
+    en: 'Say: comedy material.'
+    pt: 'Diga: o material do humor.'
+  answer:
+    speaker: protagonist
+    text: ネタ
+  items:
+  - neta
+- type: prompt
+  ask:
+    en: 'Say: timing.'
+    pt: 'Diga: timing.'
+  answer:
+    speaker: protagonist
+    text: 間[ま]
+  items:
+  - ma
+- type: prompt
+  ask:
+    en: 'Say: laughter.'
+    pt: 'Diga: risada.'
+  answer:
+    speaker: protagonist
+    text: 笑[わら]い
+  items:
+  - warai
+- type: prompt
+  ask:
+    en: 'Say: it went down well.'
+    pt: 'Diga: fez sucesso.'
+  answer:
+    speaker: protagonist
+    text: ウケた
+  items:
+  - uketa
+- type: prompt
+  ask:
+    en: 'Say: it fell flat.'
+    pt: 'Diga: não teve graça.'
+  answer:
+    speaker: protagonist
+    text: 滑[すべ]った
+  items:
+  - suberu
+- type: narrator
+  text:
+    en: '«〜くせ に» is even though — with criticism or teasing: «日本人[にほんじん] の くせ に、 納豆[なっとう] が 食[た]べられない», even though he''s Japanese, he can''t eat natto. Rude if said seriously; in comedy, a playful jab.'
+    pt: '«〜くせ に» é sendo que, mesmo — com crítica ou provocação: «日本人[にほんじん] の くせ に、 納豆[なっとう] が 食[た]べられない», sendo japonês, não consegue comer natto. Grosseiro se dito a sério; no humor, uma alfinetada de
+      brincadeira.'
+- type: prompt
+  ask:
+    en: 'Say the pattern: even though (critical).'
+    pt: 'Diga o padrão: sendo que (crítico).'
+  answer:
+    speaker: protagonist
+    text: 〜くせ に
+  items:
+  - kuse-ni
+- type: prompt
+  ask:
+    en: 'Tease him: even though you''re Japanese.'
+    pt: 'Provoque: sendo japonês.'
+  answer:
+    speaker: protagonist
+    text: 日本人[にほんじん] の くせ に
+  items:
+  - nihonjin-no-kuse-ni
+- type: prompt
+  ask:
+    en: Give the comeback.
+    pt: Dê a resposta.
+  answer:
+    speaker: protagonist
+    text: なんで やねん
+  items:
+  - nande-yanen-review
+- type: narrator
+  text:
+    en: 'Manzai is built on «ボケ» and «ツッコミ»: the fool says something absurd, the straight man corrects him sharply, often in Kansai dialect — «なんで やねん», «〜やろ», «〜ねん». Timing, «間[ま]», is everything. Natto,
+      the sticky fermented beans, really is disliked by many people from western Japan.'
+    pt: 'O manzai se baseia em «ボケ» e «ツッコミ»: o bobo diz um absurdo, o escada corrige seco, muitas vezes no dialeto do Kansai — «なんで やねん», «〜やろ», «〜ねん». O timing, «間[ま]», é tudo. O natto, o feijão fermentado
+      e grudento, é mesmo detestado por muita gente do oeste do Japão.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'A dupla bobo e escada é velha conhecida: Os Trapalhões, os palhaços de circo. O manzai é a mesma ideia, com ritmo de metralhadora e tapa na cabeça.'
+- type: prompt
+  ask:
+    en: 'Once more: say “manzai (double-act comedy)”.'
+    pt: 'Mais uma vez: diga “manzai (comédia em dupla)”.'
+  answer:
+    speaker: protagonist
+    text: 漫才[まんざい]
+  items:
+  - manzai
+- type: prompt
+  ask:
+    en: 'Once more: say “laughter”.'
+    pt: 'Mais uma vez: diga “risada”.'
+  answer:
+    speaker: protagonist
+    text: 笑[わら]い
+  items:
+  - warai
+- type: prompt
+  ask:
+    en: 'Once more: say “even though (critical)”.'
+    pt: 'Mais uma vez: diga “sendo que, mesmo (crítico)”.'
+  answer:
+    speaker: protagonist
+    text: 〜くせ に
+  items:
+  - kuse-ni
+- type: prompt
+  ask:
+    en: 'Once more: say “even though you''re Japanese”.'
+    pt: 'Mais uma vez: diga “sendo japonês”.'
+  answer:
+    speaker: protagonist
+    text: 日本人[にほんじん] の くせ に
+  items:
+  - nihonjin-no-kuse-ni
+- type: prompt
+  ask:
+    en: 'Once more: say “material (comedy)”.'
+    pt: 'Mais uma vez: diga “texto, material (do humor)”.'
+  answer:
+    speaker: protagonist
+    text: ネタ
+  items:
+  - neta
+- type: prompt
+  ask:
+    en: 'Once more: say “went down well”.'
+    pt: 'Mais uma vez: diga “fez sucesso, arrancou risada”.'
+  answer:
+    speaker: protagonist
+    text: ウケた
+  items:
+  - uketa
+- type: prompt
+  ask:
+    en: 'Once more: say “fall flat (joke)”.'
+    pt: 'Mais uma vez: diga “não ter graça, cair no vazio”.'
+  answer:
+    speaker: protagonist
+    text: 滑[すべ]る
+  items:
+  - suberu
+- type: prompt
+  ask:
+    en: 'Once more: say “comedy partner”.'
+    pt: 'Mais uma vez: diga “parceiro de dupla”.'
+  answer:
+    speaker: protagonist
+    text: 相方[あいかた]
+  items:
+  - ai-kata
+- type: prompt
+  ask:
+    en: 'Once more: say “timing, pause”.'
+    pt: 'Mais uma vez: diga “timing, pausa”.'
+  answer:
+    speaker: protagonist
+    text: 間[ま]
+  items:
+  - ma
+- type: prompt
+  ask:
+    en: 'Once more: say “what the heck (Kansai comeback)”.'
+    pt: 'Mais uma vez: diga “como assim? (resposta do Kansai)”.'
+  answer:
+    speaker: protagonist
+    text: なんで やねん
+  items:
+  - nande-yanen-review
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Enshū dialect (Hamamatsu area) — and “dialect — and “let''s do it! (Enshū spirit) — and “let''s (Enshū volitional) — and “isn''t it? right? (= だろう) — and “you know, because (= だよ, だから) —
+      and “standard Japanese — and “one''s home area — and “familiarity, closeness — and “one of us, companion — and “news coverage, reporting — and “interview”.'
+    pt: 'Diga: “dialeto de Enshū (região de Hamamatsu) — e “dialeto — e “vamos fazer! (espírito de Enshū) — e “vamos (volitivo de Enshū) — e “né? não é? (= だろう) — e “sabe, porque (= だよ, だから) — e “japonês
+      padrão — e “a terra da gente — e “intimidade, proximidade — e “um dos nossos — e “cobertura jornalística — e “entrevista”.'
+  answer:
+    speaker: protagonist
+    text: 遠州[えんしゅう] 弁[べん] … 方言[ほうげん] … やらまいか … 〜まい … 〜だら … 〜だに … 標準語[ひょうじゅんご] … 地元[じもと] … 親[した]しみ … 仲間[なかま] … 取材[しゅざい] … インタビュー
+  items:
+  - enshuu-ben
+  - hougen
+  - yaramaika
+  - mai
+  - dara
+  - dani
+  - hyojungo
+  - jimoto
+  - shitashimi
+  - nakama
+  - shuzai
+  - intabyuu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “viewers — and “impressions, thoughts — and “I want to keep going — and “appeal, charm — and “power, impact — and “local community, region — and “connection — and “I''m nervous, but — and
+      “Japanese-Language Proficiency Test (JLPT) — and “passing (an exam) — and “taking an exam — and “thanks to”.'
+    pt: 'Diga: “telespectadores — e “impressões — e “quero continuar — e “encanto, atrativo — e “impacto, força — e “comunidade local — e “ligação, conexão — e “estou nervosa, mas — e “Exame de Proficiência
+      em Língua Japonesa (JLPT) — e “aprovação — e “fazer a prova — e “graças a”.'
+  answer:
+    speaker: protagonist
+    text: 視聴者[しちょうしゃ] … 感想[かんそう] … これ から も 続[つづ]けて いきたい … 魅力[みりょく] … 迫力[はくりょく] … 地域[ちいき] … つながり … 緊張[きんちょう] して います が … 日本語[にほんご] 能力[のうりょく] 試験[しけん] … 合格[ごうかく] … 受験[じゅけん] … 〜おかげ で
+  items:
+  - shichousha
+  - kansou-thoughts
+  - tsuzukete-ikitai
+  - miryoku
+  - hakuryoku
+  - chiiki
+  - tsunagari
+  - kinchou-shimashita
+  - nouryoku-shiken
+  - goukaku
+  - juken
+  - okage-de
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “thanks to the teacher — and “failing — and “score — and “reading comprehension — and “listening comprehension — and “effort — and “permanent residency — and “residence status — and “review,
+      screening — and “according to, depending on — and “depending on the situation — and “tax payment certificate”.'
+    pt: 'Diga: “graças ao professor — e “reprovação — e “pontuação — e “compreensão de leitura — e “compreensão auditiva — e “esforço — e “residência permanente — e “status de residência — e “análise —
+      e “de acordo com, conforme — e “conforme a situação — e “certidão de impostos pagos”.'
+  answer:
+    speaker: protagonist
+    text: 先生[せんせい] の おかげ で … 不合格[ふごうかく] … 得点[とくてん] … 読解[どっかい] … 聴解[ちょうかい] … 努力[どりょく] … 永住権[えいじゅうけん] … 在留[ざいりゅう] 資格[しかく] … 審査[しんさ] … 〜に 応[おう]じて … 状況[じょうきょう] に 応[おう]じて … 納税[のうぜい] 証明書[しょうめいしょ]
+  items:
+  - sensei-no-okage
+  - fugoukaku
+  - tokuten
+  - dokkai
+  - choukai
+  - doryoku
+  - eijuuken
+  - zairyuu-shikaku
+  - shinsa
+  - ni-oujite
+  - jijou-ni-oujite
+  - nouzei-shoumei
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “personal guarantor — and “spouse — and “requirement — and “application form — and “notice of the result — and “residence tax — and “tax return — and “deduction — and “payment slip — and “can''t
+      very well… — and “can''t very well not pay — and “income”.'
+    pt: 'Diga: “fiador pessoal — e “cônjuge — e “requisito — e “formulário de requerimento — e “aviso do resultado — e “imposto de residência — e “declaração de imposto de renda — e “dedução — e “boleto
+      de pagamento — e “não dá para…, não posso simplesmente… — e “não dá para não pagar — e “renda”.'
+  answer:
+    speaker: protagonist
+    text: 身元[みもと] 保証人[ほしょうにん] … 配偶者[はいぐうしゃ] … 要件[ようけん] … 申請[しんせい] 書[しょ] … 結果[けっか] の 通知[つうち] … 住民税[じゅうみんぜい] … 確定[かくてい] 申告[しんこく] … 控除[こうじょ] … 納付書[のうふしょ] … 〜わけ には いかない … 払[はら]わない わけ には いかない … 所得[しょとく]
+  items:
+  - mimoto-hoshounin
+  - haiguusha
+  - youken
+  - shinsei-review
+  - kekka-tsuuchi
+  - juuminzei
+  - kakutei-shinkoku
+  - koujo
+  - noufusho
+  - wake-niwa-ikanai
+  - harawanai-wake-niwa
+  - shotoku
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the previous year — and “tax withheld at source — and “hometown tax donation — and “gene — and “heredity — and “towards, in contrast to — and “mother''s side — and “father''s side — and “skin
+      colour — and “eye colour — and “mixed heritage (dated word) — and “mixed-heritage (everyday word)”.'
+    pt: 'Diga: “o ano anterior — e “imposto retido na fonte — e “doação de imposto à cidade natal — e “gene — e “hereditariedade — e “em relação a, ao contrário de — e “lado da mãe — e “lado do pai — e
+      “cor da pele — e “cor dos olhos — e “mestiço (palavra antiga) — e “filho de pais de origens diferentes”.'
+  answer:
+    speaker: protagonist
+    text: 前年[ぜんねん] … 源泉[げんせん] 徴収[ちょうしゅう] … ふるさと 納税[のうぜい] … 遺伝子[いでんし] … 遺伝[いでん] … 〜に 対[たい]して … 母方[ははかた] … 父方[ちちかた] … 肌[はだ] の 色[いろ] … 目[め] の 色[いろ] … 混血[こんけつ] … ハーフ
+  items:
+  - zenen
+  - gensen-choushuu
+  - furusato-nouzei
+  - idenshi
+  - iden
+  - ni-taishite
+  - hahakata
+  - chichikata
+  - hada-no-iro
+  - me-no-iro
+  - konketsu
+  - haafu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “family tree — and “ancestors — and “I''m terribly sorry (formal) — and “I made a mistake — and “mistake — and “Tuesday — and “sorry (casual) — and “I''m sorry — and “from next time — and
+      “I''ll check, confirm — and “once more — and “don''t worry about it”.'
+    pt: 'Diga: “árvore genealógica — e “antepassados — e “peço mil desculpas (formal) — e “eu errei — e “erro — e “terça-feira — e “foi mal (informal) — e “desculpa — e “da próxima vez — e “vou conferir
+      — e “mais uma vez — e “não se preocupe”.'
+  answer:
+    speaker: protagonist
+    text: 家系図[かけいず] … 先祖[せんぞ] … 申[もう]し訳[わけ] ありません … 間違[まちが]えました … 間違[まちが]い … 火曜日[かようび] … ごめん … ごめんなさい … 次[つぎ] から … 確認[かくにん] します … もう 一度[いちど] … 気[き] に しないで ください
+  items:
+  - kakeizu
+  - senzo
+  - moushiwake
+  - machigaemashita
+  - machigai
+  - kayoubi
+  - gomen
+  - gomennasai
+  - tsugi-kara
+  - kakunin
+  - mou-ichido
+  - kinishinai-de-kudasai
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

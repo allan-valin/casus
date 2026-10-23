@@ -1,0 +1,604 @@
+# UNIT ja C2-07 — written by AI (Claude) for Casus; expanded from src/C2-07.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-07
+level: C2
+number: 7
+protagonist: f
+title:
+  en: A letter to city hall
+  pt: Carta à prefeitura
+situation:
+  en: The city wants to cut the bus line that Brazilian workers and elderly residents use. You draft a formal petition to the mayor; Ishida-sensei checks the letter style.
+  pt: A prefeitura quer cortar a linha de ônibus que os trabalhadores brasileiros e os idosos usam. Você escreve um requerimento formal ao prefeito; o professor Ishida revisa o estilo da carta.
+learn_lessons: []
+culture: —
+new_items:
+- id: youbousho
+  text: 要望書[ようぼうしょ]
+  meaning:
+    en: petition, written request
+    pt: requerimento, petição
+  rare: true
+- id: haikei
+  text: 拝啓[はいけい]
+  meaning:
+    en: Dear Sir/Madam (letter opening)
+    pt: Prezado(a) (abertura de carta)
+  rare: true
+- id: keigu
+  text: 敬具[けいぐ]
+  meaning:
+    en: Yours faithfully (letter closing)
+    pt: Atenciosamente (fecho de carta)
+  rare: true
+- id: shichou
+  text: 市長[しちょう]
+  meaning:
+    en: mayor
+    pt: prefeito
+- id: jikou-no-aisatsu
+  text: 時候[じこう] の 挨拶[あいさつ]
+  meaning:
+    en: seasonal greeting (letters)
+    pt: saudação da estação (em cartas)
+  rare: true
+- id: sonzoku
+  text: 存続[そんぞく]
+  meaning:
+    en: continuation, survival
+    pt: continuidade, permanência
+- id: onegai-moushiagemasu
+  text: お願[ねが]い 申[もう]し上[あ]げます
+  meaning:
+    en: we humbly request
+    pt: solicitamos respeitosamente
+- id: riyousha
+  text: 利用者[りようしゃ]
+  meaning:
+    en: users
+    pt: usuários
+- id: shomei-wo-soete
+  text: 署名[しょめい] を 添[そ]えて
+  meaning:
+    en: with signatures attached
+    pt: com assinaturas anexas
+- id: kokoro-yori-review
+  text: ご高配[こうはい] を 賜[たまわ]ります よう
+  meaning:
+    en: that you kindly give consideration
+    pt: que nos conceda a sua atenção
+  rare: true
+reviews:
+- item: futtosaru
+  from: A1-30
+- item: shiai
+  from: A1-30
+- item: tanoshikatta
+  from: A1-30
+- item: kachimashita
+  from: A1-30
+- item: makemashita
+  from: A1-30
+- item: chiimu
+  from: A1-30
+- item: gooru
+  from: A1-30
+- item: mata-raishuu
+  from: A1-30
+- item: jouzu-ni-narimashita
+  from: A1-30
+- item: nihongo
+  from: A1-30
+- item: buchou-item
+  from: B2-04
+- item: senpai
+  from: B2-04
+- item: irassharu
+  from: B2-04
+- item: ossharu
+  from: B2-04
+- item: sonkeigo
+  from: B2-04
+- item: kanpai-hikuku
+  from: B2-04
+- item: tatete-wa-ikenai
+  from: B2-04
+- item: esukareetaa
+  from: B2-04
+- item: hidari-ni-tatsu
+  from: B2-04
+- item: onaji-you-ni
+  from: B2-04
+- item: goaisatsu
+  from: B2-04
+- item: touron
+  from: C1-06
+- item: konkyo
+  from: C1-06
+- item: ni-kagirazu
+  from: C1-06
+- item: nihon-ni-kagirazu
+  from: C1-06
+- item: shuchou
+  from: C1-06
+- item: hanron
+  from: C1-06
+- item: tachiba
+  from: C1-06
+- item: tashika-ni
+  from: C1-06
+- item: shikashi
+  from: C1-06
+- item: ketsuron-to-shite
+  from: C1-06
+- item: ichiri-aru
+  from: C1-06
+- item: hoikuen
+  from: C1-22
+- item: taiki-jidou
+  from: C1-22
+- item: hokatsu
+  from: C1-22
+- item: ippou-de
+  from: C1-22
+- item: tensuu
+  from: C1-22
+- item: kengaku
+  from: C1-22
+- item: fukushoku
+  from: C1-22
+- item: hoikushi
+  from: C1-22
+- item: kekka-ga-kuru
+  from: C1-22
+- item: ochiru
+  from: C1-22
+- item: sannen-me
+  from: C1-30
+- item: furikaeru
+  from: C1-30
+- item: seichou
+  from: C1-30
+- item: deai-ni-kansha
+  from: C1-30
+- item: kore-kara-mo
+  from: C1-30
+- item: dai-ni-no-kokyou
+  from: C1-30
+- item: kangeki
+  from: C1-30
+- item: mabushii
+  from: C1-30
+- item: takusan-no-hito
+  from: C1-30
+- item: kanpai-review
+  from: C1-30
+- item: koushou
+  from: C2-04
+- item: jouho
+  from: C2-04
+- item: dakyou
+  from: C2-04
+- item: ten-shoku
+  from: C2-04
+- item: sasoi
+  from: C2-04
+- item: kentou-shite-itadakemasen-ka
+  from: C2-04
+- item: hyouka
+  from: C2-04
+- item: kyuuyo
+  from: C2-04
+- item: tsuzuketai
+  from: C2-04
+- item: chuukan
+  from: C2-04
+- item: manzai
+  from: C2-06
+- item: warai
+  from: C2-06
+- item: kuse-ni
+  from: C2-06
+- item: nihonjin-no-kuse-ni
+  from: C2-06
+- item: neta
+  from: C2-06
+- item: uketa
+  from: C2-06
+- item: suberu
+  from: C2-06
+- item: ai-kata
+  from: C2-06
+- item: ma
+  from: C2-06
+- item: nande-yanen-review
+  from: C2-06
+steps:
+- type: narrator
+  text:
+    en: The city wants to cut the bus line that Brazilian workers and elderly residents use. You draft a formal petition to the mayor; Ishida-sensei checks the letter style. Listen to the conversation;
+      you don't need to understand it yet.
+    pt: A prefeitura quer cortar a linha de ônibus que os trabalhadores brasileiros e os idosos usam. Você escreve um requerimento formal ao prefeito; o professor Ishida revisa o estilo da carta. Escute
+      a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: kouza-sensei
+    text: 正式[せいしき] な 手紙[てがみ] は「拝啓[はいけい]」 で 始[はじ]めて、「敬具[けいぐ]」 で 終[お]わります。
+    meaning:
+      en: A formal letter starts with “haikei” and ends with “keigu”.
+      pt: Uma carta formal começa com «haikei» e termina com «keigu».
+  - speaker: protagonist
+    text: その 間[あいだ] に 時候[じこう] の 挨拶[あいさつ] を 入[い]れる ん です よね。「秋[あき] 深[ふか]まる 候[こう]」 など。
+    meaning:
+      en: And between them, a seasonal greeting. Like “As autumn deepens”.
+      pt: E no meio, a saudação da estação. Como «Neste outono que se aprofunda».
+  - speaker: kouza-sensei
+    text: その 通[とお]り。 では、 本文[ほんぶん] を 読[よ]んで ください。
+    meaning:
+      en: Exactly. Now read me the body.
+      pt: Exatamente. Agora leia o corpo da carta.
+  - speaker: protagonist
+    text: 「バス 路線[ろせん] の 存続[そんぞく] を お願[ねが]い 申[もう]し上[あ]げます。 利用者[りようしゃ] 三百人[さんびゃくにん] の 署名[しょめい] を 添[そ]えて、 ご高配[こうはい] を 賜[たまわ]ります よう、 お願[ねが]い 申[もう]し上[あ]げます」。
+    meaning:
+      en: “We humbly request the continuation of the bus line. With the signatures of three hundred users attached, we ask that you kindly give this your consideration.”
+      pt: «Solicitamos respeitosamente a permanência da linha de ônibus. Com as assinaturas de trezentos usuários anexas, pedimos que nos conceda a sua atenção.»
+  - speaker: kouza-sensei
+    text: 見事[みごと] です。 市長[しちょう] の 宛名[あてな] は「浜松[はままつ] 市長[しちょう] 様[さま]」 で いい。
+    meaning:
+      en: Splendid. Address it to “The Mayor of Hamamatsu”.
+      pt: Excelente. O destinatário pode ser «Ilustríssimo Prefeito de Hamamatsu».
+  - speaker: protagonist
+    text: 要望書[ようぼうしょ] は 怒[おこ]った 調子[ちょうし] で 書[か]かない ほう が いい です よね。
+    meaning:
+      en: It's better not to write a petition in an angry tone, right?
+      pt: É melhor não escrever o requerimento num tom bravo, né?
+  - speaker: kouza-sensei
+    text: ええ。 丁寧[ていねい] な 言葉[ことば] ほど、 相手[あいて] は 無視[むし] しにくい もの です。
+    meaning:
+      en: Yes. The more polite the words, the harder they are to ignore.
+      pt: Sim. Quanto mais educadas as palavras, mais difícil é ignorá-las.
+  - speaker: protagonist
+    text: ありがとう ございます。 明日[あした]、 署名[しょめい] と 一緒[いっしょ] に 市役所[しやくしょ] へ 届[とど]けます。
+    meaning:
+      en: Thank you. Tomorrow I'll deliver it to city hall with the signatures.
+      pt: Obrigada. Amanhã entrego na prefeitura junto com as assinaturas.
+- type: prompt
+  ask:
+    en: 'Say: a petition.'
+    pt: 'Diga: um requerimento.'
+  answer:
+    speaker: protagonist
+    text: 要望書[ようぼうしょ]
+  items:
+  - youbousho
+- type: prompt
+  ask:
+    en: 'Say: the mayor.'
+    pt: 'Diga: o prefeito.'
+  answer:
+    speaker: protagonist
+    text: 市長[しちょう]
+  items:
+  - shichou
+- type: prompt
+  ask:
+    en: Open a formal letter.
+    pt: Abra uma carta formal.
+  answer:
+    speaker: protagonist
+    text: 拝啓[はいけい]
+  items:
+  - haikei
+- type: prompt
+  ask:
+    en: Close a formal letter.
+    pt: Feche uma carta formal.
+  answer:
+    speaker: protagonist
+    text: 敬具[けいぐ]
+  items:
+  - keigu
+- type: prompt
+  ask:
+    en: 'Say: the seasonal greeting.'
+    pt: 'Diga: a saudação da estação.'
+  answer:
+    speaker: protagonist
+    text: 時候[じこう] の 挨拶[あいさつ]
+  items:
+  - jikou-no-aisatsu
+- type: prompt
+  ask:
+    en: 'Say: continuation.'
+    pt: 'Diga: continuidade.'
+  answer:
+    speaker: protagonist
+    text: 存続[そんぞく]
+  items:
+  - sonzoku
+- type: prompt
+  ask:
+    en: 'Say: users.'
+    pt: 'Diga: usuários.'
+  answer:
+    speaker: protagonist
+    text: 利用者[りようしゃ]
+  items:
+  - riyousha
+- type: prompt
+  ask:
+    en: 'Say: with signatures attached.'
+    pt: 'Diga: com assinaturas anexas.'
+  answer:
+    speaker: protagonist
+    text: 署名[しょめい] を 添[そ]えて
+  items:
+  - shomei-wo-soete
+- type: narrator
+  text:
+    en: 'Formal letters have a frame: «拝啓[はいけい]», a seasonal greeting, the body, then «敬具[けいぐ]». Requests climb to the top of humble language: «お願[ねが]い 申[もう]し上[あ]げます», «ご高配[こうはい] を 賜[たまわ]ります よう» — that
+      you might bestow your kind consideration.'
+    pt: 'Cartas formais têm moldura: «拝啓[はいけい]», uma saudação da estação, o corpo, depois «敬具[けいぐ]». Os pedidos sobem ao topo da linguagem humilde: «お願[ねが]い 申[もう]し上[あ]げます», «ご高配[こうはい] を 賜[たまわ]ります よう» —
+      que nos conceda a sua generosa atenção.'
+- type: prompt
+  ask:
+    en: 'Request humbly: we humbly request.'
+    pt: 'Peça com humildade: solicitamos respeitosamente.'
+  answer:
+    speaker: protagonist
+    text: お願[ねが]い 申[もう]し上[あ]げます。
+  items:
+  - onegai-moushiagemasu
+- type: prompt
+  ask:
+    en: 'Say the top formula: that you kindly give consideration.'
+    pt: 'Diga a fórmula máxima: que nos conceda a sua atenção.'
+  answer:
+    speaker: protagonist
+    text: ご高配[こうはい] を 賜[たまわ]ります よう
+  items:
+  - kokoro-yori-review
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: O ofício brasileiro tem «Excelentíssimo Senhor» e «Respeitosamente». O japonês acrescenta o tempo lá fora — o outono, a chuva — antes de pedir qualquer coisa.
+- type: prompt
+  ask:
+    en: 'Once more: say “petition, written request”.'
+    pt: 'Mais uma vez: diga “requerimento, petição”.'
+  answer:
+    speaker: protagonist
+    text: 要望書[ようぼうしょ]
+  items:
+  - youbousho
+- type: prompt
+  ask:
+    en: 'Once more: say “Dear Sir/Madam (letter opening)”.'
+    pt: 'Mais uma vez: diga “Prezado(a) (abertura de carta)”.'
+  answer:
+    speaker: protagonist
+    text: 拝啓[はいけい]
+  items:
+  - haikei
+- type: prompt
+  ask:
+    en: 'Once more: say “Yours faithfully (letter closing)”.'
+    pt: 'Mais uma vez: diga “Atenciosamente (fecho de carta)”.'
+  answer:
+    speaker: protagonist
+    text: 敬具[けいぐ]
+  items:
+  - keigu
+- type: prompt
+  ask:
+    en: 'Once more: say “mayor”.'
+    pt: 'Mais uma vez: diga “prefeito”.'
+  answer:
+    speaker: protagonist
+    text: 市長[しちょう]
+  items:
+  - shichou
+- type: prompt
+  ask:
+    en: 'Once more: say “seasonal greeting (letters)”.'
+    pt: 'Mais uma vez: diga “saudação da estação (em cartas)”.'
+  answer:
+    speaker: protagonist
+    text: 時候[じこう] の 挨拶[あいさつ]
+  items:
+  - jikou-no-aisatsu
+- type: prompt
+  ask:
+    en: 'Once more: say “continuation, survival”.'
+    pt: 'Mais uma vez: diga “continuidade, permanência”.'
+  answer:
+    speaker: protagonist
+    text: 存続[そんぞく]
+  items:
+  - sonzoku
+- type: prompt
+  ask:
+    en: 'Once more: say “we humbly request”.'
+    pt: 'Mais uma vez: diga “solicitamos respeitosamente”.'
+  answer:
+    speaker: protagonist
+    text: お願[ねが]い 申[もう]し上[あ]げます
+  items:
+  - onegai-moushiagemasu
+- type: prompt
+  ask:
+    en: 'Once more: say “users”.'
+    pt: 'Mais uma vez: diga “usuários”.'
+  answer:
+    speaker: protagonist
+    text: 利用者[りようしゃ]
+  items:
+  - riyousha
+- type: prompt
+  ask:
+    en: 'Once more: say “with signatures attached”.'
+    pt: 'Mais uma vez: diga “com assinaturas anexas”.'
+  answer:
+    speaker: protagonist
+    text: 署名[しょめい] を 添[そ]えて
+  items:
+  - shomei-wo-soete
+- type: prompt
+  ask:
+    en: 'Once more: say “that you kindly give consideration”.'
+    pt: 'Mais uma vez: diga “que nos conceda a sua atenção”.'
+  answer:
+    speaker: protagonist
+    text: ご高配[こうはい] を 賜[たまわ]ります よう
+  items:
+  - kokoro-yori-review
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “manzai (double-act comedy) — and “laughter — and “even though (critical) — and “even though you''re Japanese — and “material (comedy) — and “went down well — and “fall flat (joke) — and “comedy
+      partner — and “timing, pause — and “what the heck (Kansai comeback) — and “negotiation — and “concession”.'
+    pt: 'Diga: “manzai (comédia em dupla) — e “risada — e “sendo que, mesmo (crítico) — e “sendo japonês — e “texto, material (do humor) — e “fez sucesso, arrancou risada — e “não ter graça, cair no vazio
+      — e “parceiro de dupla — e “timing, pausa — e “como assim? (resposta do Kansai) — e “negociação — e “concessão”.'
+  answer:
+    speaker: protagonist
+    text: 漫才[まんざい] … 笑[わら]い … 〜くせ に … 日本人[にほんじん] の くせ に … ネタ … ウケた … 滑[すべ]る … 相方[あいかた] … 間[ま] … なんで やねん … 交渉[こうしょう] … 譲歩[じょうほ]
+  items:
+  - manzai
+  - warai
+  - kuse-ni
+  - nihonjin-no-kuse-ni
+  - neta
+  - uketa
+  - suberu
+  - ai-kata
+  - ma
+  - nande-yanen-review
+  - koushou
+  - jouho
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “compromise — and “changing jobs — and “invitation, offer — and “would you kindly consider — and “evaluation, appraisal — and “salary (formal) — and “I want to keep working here — and “meet
+      in the middle — and “the third year — and “look back — and “growth — and “grateful for the people met”.'
+    pt: 'Diga: “acordo, meio-termo — e “mudar de emprego — e “convite, oferta — e “o senhor poderia considerar — e “avaliação — e “remuneração — e “quero continuar trabalhando aqui — e “chegar a um meio-termo
+      — e “o terceiro ano — e “olhar para trás — e “crescimento — e “grato pelos encontros”.'
+  answer:
+    speaker: protagonist
+    text: 妥協[だきょう] … 転職[てんしょく] … お誘[さそ]い … ご検討[けんとう] いただけません でしょう か … 評価[ひょうか] … 給与[きゅうよ] … この 会社[かいしゃ] で 働[はたら]き 続[つづ]けたい … 間[あいだ] を 取[と]る … 三年[さんねん] 目[め] … 振[ふ]り返[かえ]る … 成長[せいちょう] … 出会[であ]い に 感謝[かんしゃ]
+  items:
+  - dakyou
+  - ten-shoku
+  - sasoi
+  - kentou-shite-itadakemasen-ka
+  - hyouka
+  - kyuuyo
+  - tsuzuketai
+  - chuukan
+  - sannen-me
+  - furikaeru
+  - seichou
+  - deai-ni-kansha
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “from now on too — and “second home — and “deeply moved — and “dazzling, bright — and “supported by many people — and “a toast to the next three years — and “daycare (nursery) — and “children
+      on waiting lists — and “daycare hunting — and “while, on the other hand — and “points (for priority) — and “tour, visit (to see)”.'
+    pt: 'Diga: “daqui em diante também — e “segunda terra natal — e “emocionado — e “radiante — e “apoiado por muita gente — e “um brinde aos próximos três anos — e “creche — e “crianças na fila de espera
+      — e “caça à vaga na creche — e “por outro lado, enquanto — e “pontuação (de prioridade) — e “visita (para conhecer)”.'
+  answer:
+    speaker: protagonist
+    text: これ から も … 第二[だいに] の 故郷[こきょう] … 感激[かんげき] … 眩[まぶ]しい … たくさん の 人[ひと] に 支[ささ]えられて … これ から の 三年[さんねん] に 乾杯[かんぱい] … 保育園[ほいくえん] … 待機[たいき] 児童[じどう] … 保活[ほかつ] … 〜一方[いっぽう] で … 点数[てんすう] … 見学[けんがく]
+  items:
+  - kore-kara-mo
+  - dai-ni-no-kokyou
+  - kangeki
+  - mabushii
+  - takusan-no-hito
+  - kanpai-review
+  - hoikuen
+  - taiki-jidou
+  - hokatsu
+  - ippou-de
+  - tensuu
+  - kengaku
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “returning to work — and “nursery teacher — and “the result arrives — and “fail, not get in — and “debate — and “grounds, evidence — and “not only, not limited to — and “not only in Japan
+      — and “argument, claim — and “counter-argument — and “position, standpoint — and “admittedly, certainly”.'
+    pt: 'Diga: “volta ao trabalho — e “educador de creche — e “o resultado chega — e “não passar, ficar de fora — e “debate — e “fundamento, base — e “não só, não apenas — e “não só no Japão — e “argumento,
+      posição — e “contra-argumento — e “posição, ponto de vista — e “de fato, é verdade que”.'
+  answer:
+    speaker: protagonist
+    text: 復職[ふくしょく] … 保育士[ほいくし] … 結果[けっか] が 来[く]る … 落[お]ちる … 討論[とうろん] … 根拠[こんきょ] … 〜に 限[かぎ]らず … 日本[にほん] に 限[かぎ]らず … 主張[しゅちょう] … 反論[はんろん] … 立場[たちば] … 確[たし]か に
+  items:
+  - fukushoku
+  - hoikushi
+  - kekka-ga-kuru
+  - ochiru
+  - touron
+  - konkyo
+  - ni-kagirazu
+  - nihon-ni-kagirazu
+  - shuchou
+  - hanron
+  - tachiba
+  - tashika-ni
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “however — and “in conclusion — and “there''s something in that — and “department head — and “senior colleague — and “is, comes, goes (respectful) — and “says (respectful) — and “respectful
+      language — and “(hold) the glass lower — and “must not stand (them) upright — and “escalator — and “stand on the left”.'
+    pt: 'Diga: “no entanto — e “em conclusão — e “tem razão em parte — e “chefe de departamento — e “colega mais antigo — e “está, vem, vai (respeitoso) — e “diz (respeitoso) — e “linguagem respeitosa —
+      e “(segure) o copo mais baixo — e “não pode deixar em pé — e “escada rolante — e “ficar à esquerda”.'
+  answer:
+    speaker: protagonist
+    text: しかし … 結論[けつろん] と して … 一理[いちり] ある … 部長[ぶちょう] … 先輩[せんぱい] … いらっしゃる … おっしゃる … 尊敬語[そんけいご] … グラス を 低[ひく]く … 立[た]てて は いけない … エスカレーター … 左[ひだり] に 立[た]つ
+  items:
+  - shikashi
+  - ketsuron-to-shite
+  - ichiri-aru
+  - buchou-item
+  - senpai
+  - irassharu
+  - ossharu
+  - sonkeigo
+  - kanpai-hikuku
+  - tatete-wa-ikenai
+  - esukareetaa
+  - hidari-ni-tatsu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “like the people around you — and “greeting (formal) — and “futsal — and “match, game — and “it was fun — and “we won — and “we lost — and “team — and “goal — and “see you next week — and
+      “has got good (at it) — and “Japanese (language)”.'
+    pt: 'Diga: “como as pessoas em volta — e “cumprimento (formal) — e “futsal — e “jogo, partida — e “foi divertido — e “ganhamos — e “perdemos — e “time, equipe — e “gol — e “até semana que vem — e “ficou
+      bom (nisso) — e “japonês (a língua)”.'
+  answer:
+    speaker: protagonist
+    text: 周[まわ]り と 同[おな]じ よう に … ご挨拶[あいさつ] … フットサル … 試合[しあい] … 楽[たの]しかった … 勝[か]ちました … 負[ま]けました … チーム … ゴール … また 来週[らいしゅう] … 上手[じょうず] に なりました … 日本語[にほんご]
+  items:
+  - onaji-you-ni
+  - goaisatsu
+  - futtosaru
+  - shiai
+  - tanoshikatta
+  - kachimashita
+  - makemashita
+  - chiimu
+  - gooru
+  - mata-raishuu
+  - jouzu-ni-narimashita
+  - nihongo
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
