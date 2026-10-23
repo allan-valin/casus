@@ -1,0 +1,585 @@
+# UNIT ja B2-10 — written by AI (Claude) for Casus; expanded from src/B2-10.yml by tools/expand_unit.py. Edit the source.
+
+id: B2-10
+level: B2
+number: 10
+protagonist: m
+title:
+  en: The telephone
+  pt: O telefone
+situation:
+  en: The office phone rings. Mr Yamada, the supplier, asks for Chief Sato — who is in a meeting. You take the message.
+  pt: O telefone do escritório toca. O senhor Yamada, o fornecedor, pede para falar com a chefe Sato — que está em reunião. Você anota o recado.
+learn_lessons: []
+culture: —
+new_items:
+- id: odenwa
+  text: お電話[でんわ]
+  meaning:
+    en: telephone (polite)
+    pt: telefone (educado)
+- id: moushiwake-gozaimasen
+  text: 申[もう]し訳[わけ] ございません
+  meaning:
+    en: I'm very sorry (most polite)
+    pt: peço muitas desculpas (o mais educado)
+- id: dengon
+  text: 伝言[でんごん]
+  meaning:
+    en: message
+    pt: recado
+- id: seki-wo-hazushite
+  text: 席[せき] を 外[はず]して おります
+  meaning:
+    en: is away from (their) desk
+    pt: não está na mesa no momento
+- id: ukagaimasu
+  text: 伺[うかが]います
+  meaning:
+    en: ask, hear, visit (humble)
+    pt: pergunto, ouço, visito (humilde)
+- id: moushitsutaemasu
+  text: 申[もう]し伝[つた]えます
+  meaning:
+    en: I'll pass it on (humble)
+    pt: vou transmitir (humilde)
+- id: orikaeshi
+  text: 折[お]り返[かえ]し
+  meaning:
+    en: calling back
+    pt: retornar a ligação
+- id: osore-irimasu-ga
+  text: 恐[おそ]れ入[い]ります が
+  meaning:
+    en: I'm sorry to trouble you, but
+    pt: desculpe o incômodo, mas
+- id: renrakusaki-ukagau
+  text: ご連絡先[れんらくさき] を 伺[うかが]えます か
+  meaning:
+    en: may I have your contact number?
+    pt: pode me passar seu contato?
+- id: kashikomarimashita
+  text: かしこまりました
+  meaning:
+    en: certainly (very polite)
+    pt: pois não, entendido (muito educado)
+reviews:
+- item: nomikai
+  from: A2-07
+- item: biiru
+  from: A2-07
+- item: oshaku
+  from: A2-07
+- item: tsugimasu
+  from: A2-07
+- item: koppu
+  from: A2-07
+- item: nomimashou
+  from: A2-07
+- item: otsukaresama
+  from: A2-07
+- item: nomemasen
+  from: A2-07
+- item: uuroncha
+  from: A2-07
+- item: mou-ippai
+  from: A2-07
+- item: kekkou-desu
+  from: A2-07
+- item: chousa
+  from: B1-09
+- item: heikin
+  from: B1-09
+- item: toukei
+  from: B1-09
+- item: kaitou
+  from: B1-09
+- item: souda-hearsay
+  from: B1-09
+- item: ooi-sou-desu
+  from: B1-09
+- item: hansuu
+  from: B1-09
+- item: wariai
+  from: B1-09
+- item: nenrei
+  from: B1-09
+- item: kekka
+  from: B1-09
+- item: ijou
+  from: B1-09
+- item: dousei
+  from: B1-25
+- item: kekkon-mae
+  from: B1-25
+- item: ryoushin
+  from: B1-25
+- item: kamoshirenai
+  from: B1-25
+- item: hantai-suru-kamo
+  from: B1-25
+- item: yachin
+  from: B1-25
+- item: setsuyaku
+  from: B1-25
+- item: isshoni-sumu
+  from: B1-25
+- item: shinpai
+  from: B1-25
+- item: setsumei-suru
+  from: B1-25
+- item: shoujiki-ni-hanasu
+  from: B1-25
+- item: idenshi
+  from: B2-03
+- item: iden
+  from: B2-03
+- item: ni-taishite
+  from: B2-03
+- item: hahakata
+  from: B2-03
+- item: chichikata
+  from: B2-03
+- item: hada-no-iro
+  from: B2-03
+- item: me-no-iro
+  from: B2-03
+- item: konketsu
+  from: B2-03
+- item: haafu
+  from: B2-03
+- item: kakeizu
+  from: B2-03
+- item: senzo
+  from: B2-03
+- item: meeru
+  from: B2-07
+- item: tenpu
+  from: B2-07
+- item: henshin
+  from: B2-07
+- item: osewa-ni-natte-orimasu
+  from: B2-07
+- item: kenmei
+  from: B2-07
+- item: gokakunin-kudasai
+  from: B2-07
+- item: yoroshiku-onegai-itashimasu
+  from: B2-07
+- item: okurimasu
+  from: B2-07
+- item: sama
+  from: B2-07
+- item: shomei-email
+  from: B2-07
+- item: shitsurei-ga-nai-you-ni
+  from: B2-07
+- item: uchuu
+  from: B2-09
+- item: tansaki
+  from: B2-09
+- item: ginga
+  from: B2-09
+- item: amanogawa
+  from: B2-09
+- item: hazu
+  from: B2-09
+- item: mieru-hazu
+  from: B2-09
+- item: shouwakusei
+  from: B2-09
+- item: chikyuu
+  from: B2-09
+- item: kaette-kita
+  from: B2-09
+- item: nagareboshi
+  from: B2-09
+- item: negaigoto
+  from: B2-09
+steps:
+- type: narrator
+  text:
+    en: The office phone rings. Mr Yamada, the supplier, asks for Chief Sato — who is in a meeting. You take the message. Listen to the conversation; you don't need to understand it yet.
+    pt: O telefone do escritório toca. O senhor Yamada, o fornecedor, pede para falar com a chefe Sato — que está em reunião. Você anota o recado. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: お電話[でんわ] ありがとう ございます。 浜松[はままつ] 工業[こうぎょう] の ソウザ で ございます。
+    meaning:
+      en: Thank you for calling. Hamamatsu Industries, Souza speaking.
+      pt: Obrigado pela ligação. Hamamatsu Indústrias, Souza falando.
+  - speaker: yamada
+    text: 山田[やまだ] 商事[しょうじ] の 山田[やまだ] です。 佐藤[さとう] 課長[かちょう] は いらっしゃいます か。
+    meaning:
+      en: This is Yamada from Yamada Trading. Is Chief Sato there?
+      pt: Aqui é o Yamada, da Yamada Comércio. A chefe Sato está?
+  - speaker: protagonist
+    text: 申[もう]し訳[わけ] ございません。 佐藤[さとう] は ただいま 席[せき] を 外[はず]して おります。
+    meaning:
+      en: I'm very sorry. Sato is away from her desk right now.
+      pt: Peço desculpas. A Sato não está na mesa no momento.
+  - speaker: yamada
+    text: そう です か。 では、 伝言[でんごん] を お願[ねが]い できます か。
+    meaning:
+      en: I see. Then could you take a message?
+      pt: Entendo. Então, pode anotar um recado?
+  - speaker: protagonist
+    text: かしこまりました。 伺[うかが]います。
+    meaning:
+      en: Certainly. Go ahead.
+      pt: Pois não. Pode falar.
+  - speaker: yamada
+    text: 明日[あした] の 納品[のうひん] が 一日[いちにち] 遅[おく]れます、 と お伝[つた]え ください。
+    meaning:
+      en: Please tell her tomorrow's delivery will be a day late.
+      pt: Diga a ela que a entrega de amanhã vai atrasar um dia, por favor.
+  - speaker: protagonist
+    text: 恐[おそ]れ入[い]ります が、 ご連絡先[れんらくさき] を 伺[うかが]えます か。 佐藤[さとう] から 折[お]り返[かえ]し お電話[でんわ] いたします。
+    meaning:
+      en: Sorry to trouble you, may I have your number? Sato will call you back.
+      pt: Desculpe o incômodo, pode me passar seu contato? A Sato retorna a ligação.
+  - speaker: yamada
+    text: ありがとう ございます。 では、 よろしく お願[ねが]い します。
+    meaning:
+      en: Thank you. I'll leave it with you.
+      pt: Obrigado. Então, conto com você.
+- type: prompt
+  ask:
+    en: 'Answer the phone politely: thank you for calling.'
+    pt: 'Atenda com educação: obrigado pela ligação.'
+  answer:
+    speaker: protagonist
+    text: お電話[でんわ] ありがとう ございます。
+  items:
+  - odenwa
+- type: narrator
+  text:
+    en: 'On the phone to an outsider, your own boss is family: you drop «課長[かちょう]» and «さん» and say «佐藤[さとう] は 席[せき] を 外[はず]して おります», with humble verbs — even though inside the company you''d call her «佐藤[さとう]
+      課長[かちょう]». The outsider gets the respect.'
+    pt: 'No telefone com alguém de fora, sua própria chefe é como família: você tira o «課長[かちょう]» e o «さん» e diz «佐藤[さとう] は 席[せき] を 外[はず]して おります», com verbos humildes — mesmo que dentro da empresa você
+      a chame de «佐藤[さとう] 課長[かちょう]». O respeito vai para quem é de fora.'
+- type: prompt
+  ask:
+    en: Apologise in the most polite way.
+    pt: Peça desculpas do jeito mais educado.
+  answer:
+    speaker: protagonist
+    text: 申[もう]し訳[わけ] ございません。
+  items:
+  - moushiwake-gozaimasen
+- type: prompt
+  ask:
+    en: 'Say: she''s away from her desk — humble.'
+    pt: 'Diga: ela não está na mesa — humilde.'
+  answer:
+    speaker: protagonist
+    text: 席[せき] を 外[はず]して おります。
+  items:
+  - seki-wo-hazushite
+- type: prompt
+  ask:
+    en: 'Say: a message.'
+    pt: 'Diga: um recado.'
+  answer:
+    speaker: protagonist
+    text: 伝言[でんごん]
+  items:
+  - dengon
+- type: prompt
+  ask:
+    en: 'Say: certainly.'
+    pt: 'Diga: pois não.'
+  answer:
+    speaker: protagonist
+    text: かしこまりました。
+  items:
+  - kashikomarimashita
+- type: prompt
+  ask:
+    en: 'Say humbly: I''ll hear it, go ahead.'
+    pt: 'Diga com humildade: pode falar, eu ouço.'
+  answer:
+    speaker: protagonist
+    text: 伺[うかが]います。
+  items:
+  - ukagaimasu
+- type: prompt
+  ask:
+    en: 'Soften a request: sorry to trouble you, but…'
+    pt: 'Suavize um pedido: desculpe o incômodo, mas…'
+  answer:
+    speaker: protagonist
+    text: 恐[おそ]れ入[い]ります が
+  items:
+  - osore-irimasu-ga
+- type: prompt
+  ask:
+    en: Ask for their contact number.
+    pt: Peça o contato.
+  answer:
+    speaker: protagonist
+    text: ご連絡先[れんらくさき] を 伺[うかが]えます か。
+  items:
+  - renrakusaki-ukagau
+- type: prompt
+  ask:
+    en: 'Say: calling back.'
+    pt: 'Diga: retornar a ligação.'
+  answer:
+    speaker: protagonist
+    text: 折[お]り返[かえ]し
+  items:
+  - orikaeshi
+- type: prompt
+  ask:
+    en: 'Promise humbly: I''ll pass it on.'
+    pt: 'Prometa com humildade: vou transmitir.'
+  answer:
+    speaker: protagonist
+    text: 申[もう]し伝[つた]えます。
+  items:
+  - moushitsutaemasu
+- type: narrator
+  text:
+    en: 'Office phones run on set phrases: «お電話[でんわ] ありがとう ございます», your company and name, «申[もう]し訳[わけ] ございません», «席[せき] を 外[はず]して おります», «伺[うかが]います», «申[もう]し伝[つた]えます». Write down name, company, number and
+      message, and read them back.'
+    pt: 'O telefone do escritório funciona com frases prontas: «お電話[でんわ] ありがとう ございます», sua empresa e nome, «申[もう]し訳[わけ] ございません», «席[せき] を 外[はず]して おります», «伺[うかが]います», «申[もう]し伝[つた]えます». Anote nome, empresa,
+      número e recado, e confirme lendo de volta.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil se diria «ela não está, quer deixar recado?». No Japão a mesma coisa leva o triplo de palavras — e tirar o título da própria chefe é sinal de respeito ao cliente, não de desrespeito a
+      ela.
+- type: prompt
+  ask:
+    en: 'Once more: say “telephone (polite)”.'
+    pt: 'Mais uma vez: diga “telefone (educado)”.'
+  answer:
+    speaker: protagonist
+    text: お電話[でんわ]
+  items:
+  - odenwa
+- type: prompt
+  ask:
+    en: 'Once more: say “I''m very sorry (most polite)”.'
+    pt: 'Mais uma vez: diga “peço muitas desculpas (o mais educado)”.'
+  answer:
+    speaker: protagonist
+    text: 申[もう]し訳[わけ] ございません
+  items:
+  - moushiwake-gozaimasen
+- type: prompt
+  ask:
+    en: 'Once more: say “message”.'
+    pt: 'Mais uma vez: diga “recado”.'
+  answer:
+    speaker: protagonist
+    text: 伝言[でんごん]
+  items:
+  - dengon
+- type: prompt
+  ask:
+    en: 'Once more: say “is away from (their) desk”.'
+    pt: 'Mais uma vez: diga “não está na mesa no momento”.'
+  answer:
+    speaker: protagonist
+    text: 席[せき] を 外[はず]して おります
+  items:
+  - seki-wo-hazushite
+- type: prompt
+  ask:
+    en: 'Once more: say “ask, hear, visit (humble)”.'
+    pt: 'Mais uma vez: diga “pergunto, ouço, visito (humilde)”.'
+  answer:
+    speaker: protagonist
+    text: 伺[うかが]います
+  items:
+  - ukagaimasu
+- type: prompt
+  ask:
+    en: 'Once more: say “I''ll pass it on (humble)”.'
+    pt: 'Mais uma vez: diga “vou transmitir (humilde)”.'
+  answer:
+    speaker: protagonist
+    text: 申[もう]し伝[つた]えます
+  items:
+  - moushitsutaemasu
+- type: prompt
+  ask:
+    en: 'Once more: say “calling back”.'
+    pt: 'Mais uma vez: diga “retornar a ligação”.'
+  answer:
+    speaker: protagonist
+    text: 折[お]り返[かえ]し
+  items:
+  - orikaeshi
+- type: prompt
+  ask:
+    en: 'Once more: say “I''m sorry to trouble you, but”.'
+    pt: 'Mais uma vez: diga “desculpe o incômodo, mas”.'
+  answer:
+    speaker: protagonist
+    text: 恐[おそ]れ入[い]ります が
+  items:
+  - osore-irimasu-ga
+- type: prompt
+  ask:
+    en: 'Once more: say “may I have your contact number?”.'
+    pt: 'Mais uma vez: diga “pode me passar seu contato?”.'
+  answer:
+    speaker: protagonist
+    text: ご連絡先[れんらくさき] を 伺[うかが]えます か
+  items:
+  - renrakusaki-ukagau
+- type: prompt
+  ask:
+    en: 'Once more: say “certainly (very polite)”.'
+    pt: 'Mais uma vez: diga “pois não, entendido (muito educado)”.'
+  answer:
+    speaker: protagonist
+    text: かしこまりました
+  items:
+  - kashikomarimashita
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “space, the universe — and “space probe — and “galaxy — and “the Milky Way — and “should be (expected) — and “should be visible — and “asteroid — and “the Earth — and “came back — and “shooting
+      star — and “a wish”.'
+    pt: 'Diga: “espaço, universo — e “sonda espacial — e “galáxia — e “a Via Láctea — e “deve ser (esperado) — e “deve dar para ver — e “asteroide — e “a Terra — e “voltou — e “estrela-cadente — e “um pedido”.'
+  answer:
+    speaker: protagonist
+    text: 宇宙[うちゅう] … 探査機[たんさき] … 銀河[ぎんが] … 天[あま]の川[がわ] … 〜はず … 見[み]える はず … 小惑星[しょうわくせい] … 地球[ちきゅう] … 帰[かえ]って きた … 流[なが]れ 星[ぼし] … 願[ねが]い事[ごと]
+  items:
+  - uchuu
+  - tansaki
+  - ginga
+  - amanogawa
+  - hazu
+  - mieru-hazu
+  - shouwakusei
+  - chikyuu
+  - kaette-kita
+  - nagareboshi
+  - negaigoto
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “email — and “attachment — and “reply — and “(standard opening: thank you for your continued support) — and “subject line — and “please confirm, please check — and “(standard closing, very
+      polite) — and “I''ll send (humble) — and “Mr / Ms (formal) — and “signature (email) — and “so as not to be rude”.'
+    pt: 'Diga: “e-mail — e “anexo — e “resposta — e “(abertura padrão: agradecemos a parceria) — e “assunto — e “favor conferir — e “(fecho padrão, muito educado) — e “envio (humilde) — e “Sr. / Sra. (formal)
+      — e “assinatura (do e-mail) — e “para não ser indelicado”.'
+  answer:
+    speaker: protagonist
+    text: メール … 添付[てんぷ] … 返信[へんしん] … お世話[せわ] に なって おります … 件名[けんめい] … ご確認[かくにん] ください … よろしく お願[ねが]い いたします … お送[おく]り します … 〜様[さま] … 署名[しょめい] … 失礼[しつれい] が ない ように
+  items:
+  - meeru
+  - tenpu
+  - henshin
+  - osewa-ni-natte-orimasu
+  - kenmei
+  - gokakunin-kudasai
+  - yoroshiku-onegai-itashimasu
+  - okurimasu
+  - sama
+  - shomei-email
+  - shitsurei-ga-nai-you-ni
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “gene — and “heredity — and “towards, in contrast to — and “mother''s side — and “father''s side — and “skin colour — and “eye colour — and “mixed heritage (dated word) — and “mixed-heritage
+      (everyday word) — and “family tree — and “ancestors”.'
+    pt: 'Diga: “gene — e “hereditariedade — e “em relação a, ao contrário de — e “lado da mãe — e “lado do pai — e “cor da pele — e “cor dos olhos — e “mestiço (palavra antiga) — e “filho de pais de origens
+      diferentes — e “árvore genealógica — e “antepassados”.'
+  answer:
+    speaker: protagonist
+    text: 遺伝子[いでんし] … 遺伝[いでん] … 〜に 対[たい]して … 母方[ははかた] … 父方[ちちかた] … 肌[はだ] の 色[いろ] … 目[め] の 色[いろ] … 混血[こんけつ] … ハーフ … 家系図[かけいず] … 先祖[せんぞ]
+  items:
+  - idenshi
+  - iden
+  - ni-taishite
+  - hahakata
+  - chichikata
+  - hada-no-iro
+  - me-no-iro
+  - konketsu
+  - haafu
+  - kakeizu
+  - senzo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “living together (unmarried) — and “before marriage — and “(my) parents — and “might, maybe — and “they might be against it — and “rent — and “saving money — and “live together — and “worry
+      — and “explain — and “talk honestly”.'
+    pt: 'Diga: “morar junto (sem casar) — e “antes do casamento — e “(meus) pais — e “pode ser que, talvez — e “pode ser que sejam contra — e “aluguel — e “economia — e “morar junto — e “preocupação — e
+      “explicar — e “falar com sinceridade”.'
+  answer:
+    speaker: protagonist
+    text: 同棲[どうせい] … 結婚[けっこん] 前[まえ] … 両親[りょうしん] … 〜かも しれない … 反対[はんたい] する かも しれない … 家賃[やちん] … 節約[せつやく] … 一緒[いっしょ] に 住[す]む … 心配[しんぱい] … 説明[せつめい] する … 正直[しょうじき] に 話[はな]す
+  items:
+  - dousei
+  - kekkon-mae
+  - ryoushin
+  - kamoshirenai
+  - hantai-suru-kamo
+  - yachin
+  - setsuyaku
+  - isshoni-sumu
+  - shinpai
+  - setsumei-suru
+  - shoujiki-ni-hanasu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “survey, investigation — and “average — and “statistics — and “answer, response — and “I hear that… — and “I hear there are many — and “half (of the number) — and “proportion, rate — and “age
+      — and “result — and “or more”.'
+    pt: 'Diga: “pesquisa, levantamento — e “média — e “estatística — e “resposta — e “dizem que…, parece que (ouvi) — e “dizem que são muitos — e “metade (do total) — e “proporção — e “idade — e “resultado
+      — e “ou mais”.'
+  answer:
+    speaker: protagonist
+    text: 調査[ちょうさ] … 平均[へいきん] … 統計[とうけい] … 回答[かいとう] … 〜そう だ … 多[おお]い そう です … 半数[はんすう] … 割合[わりあい] … 年齢[ねんれい] … 結果[けっか] … 〜以上[いじょう]
+  items:
+  - chousa
+  - heikin
+  - toukei
+  - kaitou
+  - souda-hearsay
+  - ooi-sou-desu
+  - hansuu
+  - wariai
+  - nenrei
+  - kekka
+  - ijou
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “after-work drinks — and “beer — and “pouring for someone — and “let me pour for you — and “glass — and “let''s drink — and “good work (to colleagues) — and “I can''t drink alcohol — and “oolong
+      tea — and “one more (glass) — and “no, thank you (I''m fine)”.'
+    pt: 'Diga: “happy hour com os colegas — e “cerveja — e “servir a bebida de alguém — e “deixe eu servir você — e “copo — e “vamos beber — e “bom trabalho (aos colegas) — e “não posso beber álcool — e
+      “chá oolong — e “mais um (copo) — e “não, obrigada (estou bem)”.'
+  answer:
+    speaker: protagonist
+    text: 飲[の]み会[かい] … ビール … お酌[しゃく] … お注[つ]ぎ します … コップ … 飲[の]みましょう … お疲[つか]れさま です … お酒[さけ] は 飲[の]めません … ウーロン茶[ちゃ] … もう 一杯[いっぱい] … 結構[けっこう] です
+  items:
+  - nomikai
+  - biiru
+  - oshaku
+  - tsugimasu
+  - koppu
+  - nomimashou
+  - otsukaresama
+  - nomemasen
+  - uuroncha
+  - mou-ippai
+  - kekkou-desu
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

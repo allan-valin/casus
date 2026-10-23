@@ -1,0 +1,41 @@
+id: B2-07
+protagonist: f
+title: ["E-mails", "E-mails"]
+situation: ["Your first business email in Japanese: sending a supplier the translated manual. Chief Sato reads your draft — it starts with «こんにちは».", "Seu primeiro e-mail de trabalho em japonês: enviar a um fornecedor o manual traduzido. A chefe Sato lê o rascunho — começa com «こんにちは»."]
+learn: []
+culture: Fixed openings
+items:
+  - [meeru, "メール", "email", "e-mail"]
+  - [tenpu, "添付[てんぷ]", "attachment", "anexo"]
+  - [henshin, "返信[へんしん]", "reply", "resposta"]
+  - [osewa-ni-natte-orimasu, "お世話[せわ] に なって おります", "(standard opening: thank you for your continued support)", "(abertura padrão: agradecemos a parceria)"]
+  - [kenmei, "件名[けんめい]", "subject line", "assunto", {rare: true}]
+  - [gokakunin-kudasai, "ご確認[かくにん] ください", "please confirm, please check", "favor conferir"]
+  - [yoroshiku-onegai-itashimasu, "よろしく お願[ねが]い いたします", "(standard closing, very polite)", "(fecho padrão, muito educado)"]
+  - [okurimasu, "お送[おく]り します", "I'll send (humble)", "envio (humilde)"]
+  - [sama, "〜様[さま]", "Mr / Ms (formal)", "Sr. / Sra. (formal)"]
+  - [shomei-email, "署名[しょめい]", "signature (email)", "assinatura (do e-mail)"]
+  - [shitsurei-ga-nai-you-ni, "失礼[しつれい] が ない ように", "so as not to be rude", "para não ser indelicado"]
+dialogue:
+  - [sato, "メール の 最初[さいしょ] は「こんにちは」 じゃ なくて、「お世話[せわ] に なって おります」 です。", "An email doesn't start with “konnichiwa” but with “osewa ni natte orimasu”.", "O e-mail não começa com «konnichiwa», e sim com «osewa ni natte orimasu»."]
+  - [protagonist, "お世話[せわ] に なって おります… 毎回[まいかい] 書[か]く ん です か。", "Osewa ni natte orimasu… Do I write it every time?", "Osewa ni natte orimasu… Escrevo toda vez?"]
+  - [sato, "はい、 毎回[まいかい] です。 相手[あいて] の 名前[なまえ] に は「様[さま]」 を つけて。", "Yes, every time. Add “sama” to the other person's name.", "Sim, toda vez. Coloque «sama» depois do nome da pessoa."]
+  - [protagonist, "山田[やまだ] 様[さま]、 お世話[せわ] に なって おります。 マニュアル を 添付[てんぷ] で お送[おく]り します。", "Mr Yamada, thank you for your continued support. I'm sending the manual as an attachment.", "Sr. Yamada, agradecemos a parceria. Envio o manual em anexo."]
+  - [sato, "いい です ね。 件名[けんめい] も わかりやすく。「マニュアル 送付[そうふ] の 件[けん]」 とか。", "Good. Make the subject line clear too. Like “Re: sending the manual”.", "Bom. Deixe o assunto claro também. Tipo «Envio do manual»."]
+  - [protagonist, "最後[さいご] は？", "And the ending?", "E o final?"]
+  - [sato, "「ご確認[かくにん] ください。 よろしく お願[ねが]い いたします」。 それから 署名[しょめい]。", "“Please check it. Yoroshiku onegai itashimasu.” Then your signature.", "«Favor conferir. Yoroshiku onegai itashimasu.» Depois a assinatura."]
+  - [protagonist, "失礼[しつれい] が ない ように、 送[おく]る 前[まえ] に 見[み]て いただけます か。", "So I'm not rude, could you check it before I send?", "Para eu não ser indelicada, a senhora pode olhar antes de eu enviar?"]
+teach:
+  - ask: ["Say: an email.", "Diga: um e-mail.", "メール", meeru]
+  - ask: ["Say: the subject line.", "Diga: o assunto.", "件名[けんめい]", kenmei]
+  - ask: ["Write the standard opening.", "Escreva a abertura padrão.", "お世話[せわ] に なって おります。", osewa-ni-natte-orimasu]
+  - ask: ["Say: Mr or Ms, formally.", "Diga: Sr. ou Sra., formal.", "〜様[さま]", sama]
+  - ask: ["Say: an attachment.", "Diga: um anexo.", "添付[てんぷ]", tenpu]
+  - ask: ["Say humbly: I'll send it.", "Diga com humildade: envio.", "お送[おく]り します。", okurimasu]
+  - ask: ["Ask them to check: please confirm.", "Peça que confiram: favor conferir.", "ご確認[かくにん] ください。", gokakunin-kudasai]
+  - ask: ["Write the standard closing.", "Escreva o fecho padrão.", "よろしく お願[ねが]い いたします。", yoroshiku-onegai-itashimasu]
+  - ask: ["Say: a reply.", "Diga: uma resposta.", "返信[へんしん]", henshin]
+  - ask: ["Say: the email signature.", "Diga: a assinatura do e-mail.", "署名[しょめい]", shomei-email]
+  - ask: ["Say: so as not to be rude.", "Diga: para não ser indelicado.", "失礼[しつれい] が ない ように", shitsurei-ga-nai-you-ni]
+  - note: ["Japanese business emails are built from fixed parts: the name with «様[さま]», «お世話[せわ] に なって おります», your name and company, the business itself, then «よろしく お願[ねが]い いたします» and a signature block. «お + verb stem + する» is a humble way to do something for the other person: «お送[おく]り します».", "Os e-mails de trabalho japoneses são montados com peças fixas: o nome com «様[さま]», «お世話[せわ] に なって おります», seu nome e empresa, o assunto em si, depois «よろしく お願[ねが]い いたします» e um bloco de assinatura. «お + radical do verbo + する» é um jeito humilde de fazer algo para o outro: «お送[おく]り します»."]
+  - pt_only: "O e-mail brasileiro de trabalho já é formal com «Prezado» e «Atenciosamente». O japonês tem mais peças obrigatórias — mas, decoradas, servem para quase tudo."

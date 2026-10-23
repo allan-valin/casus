@@ -1,0 +1,614 @@
+# UNIT ja B2-06 — written by AI (Claude) for Casus; expanded from src/B2-06.yml by tools/expand_unit.py. Edit the source.
+
+id: B2-06
+level: B2
+number: 6
+protagonist: m
+title:
+  en: Chemistry
+  pt: Química
+situation:
+  en: 'Cleaning the bathroom mould, you reach for a second bottle. Mrs Suzuki stops you at the door: read the label.'
+  pt: 'Limpando o mofo do banheiro, você pega um segundo frasco. A senhora Suzuki te para na porta: leia o rótulo.'
+learn_lessons: []
+culture: —
+new_items:
+- id: kagaku
+  text: 化学[かがく]
+  meaning:
+    en: chemistry
+    pt: química
+- id: mazeru
+  text: 混[ま]ぜる
+  meaning:
+    en: mix
+    pt: misturar
+- id: kiken
+  text: 危険[きけん]
+  meaning:
+    en: danger, dangerous
+    pt: perigo, perigoso
+- id: enso
+  text: 塩素[えんそ]
+  meaning:
+    en: chlorine
+    pt: cloro
+  rare: true
+- id: mazeruna-kiken
+  text: 混[ま]ぜる な 危険[きけん]
+  meaning:
+    en: 'danger: do not mix'
+    pt: 'perigo: não misture'
+  rare: true
+- id: sansei-kei
+  text: 酸性[さんせい]
+  meaning:
+    en: acidic
+    pt: ácido
+- id: gasu
+  text: ガス
+  meaning:
+    en: gas
+    pt: gás
+- id: bakari
+  text: 〜ばかり
+  meaning:
+    en: only, nothing but
+    pt: só, nada além de
+- id: katta-bakari
+  text: 買[か]った ばかり
+  meaning:
+    en: just bought
+    pt: acabei de comprar
+- id: kanki
+  text: 換気[かんき]
+  meaning:
+    en: ventilation
+    pt: ventilação
+- id: setsumeisho
+  text: 説明書[せつめいしょ]
+  meaning:
+    en: instructions
+    pt: instruções
+reviews:
+- item: suidousui
+  from: A2-03
+- item: nomemasu
+  from: A2-03
+- item: ofuro
+  from: A2-03
+- item: wakashimasu
+  from: A2-03
+- item: oyu
+  from: A2-03
+- item: kedo
+  from: A2-03
+- item: anzen
+  from: A2-03
+- item: mottainai
+  from: A2-03
+- item: hairu-mae
+  from: A2-03
+- item: araimasu
+  from: A2-03
+- item: kazoku-de
+  from: A2-03
+- item: goryoushin
+  from: B1-05
+- item: temiyage
+  from: B1-05
+- item: seiza
+  from: B1-05
+- item: ojama-shimasu
+  from: B1-05
+- item: tsumaranai-mono
+  from: B1-05
+- item: hajimete-ome
+  from: B1-05
+- item: ashi-wo-kuzushite
+  from: B1-05
+- item: ocha
+  from: B1-05
+- item: itadakimasu-receive
+  from: B1-05
+- item: shitsurei-shimasu
+  from: B1-05
+- item: shi
+  from: B1-21
+- item: shijin
+  from: B1-21
+- item: miyazawa-kenji
+  from: B1-21
+- item: ame-nimo-makezu
+  from: B1-21
+- item: kaze-nimo-makezu
+  from: B1-21
+- item: zu
+  from: B1-21
+- item: makenai
+  from: B1-21
+- item: joubu
+  from: B1-21
+- item: bungaku
+  from: B1-21
+- item: kotoba
+  from: B1-21
+- item: kandou
+  from: B1-21
+- item: hitorigurashi
+  from: B1-29
+- item: koureisha
+  from: B1-29
+- item: kodoku
+  from: B1-29
+- item: mimamori
+  from: B1-29
+- item: you-ni
+  from: B1-29
+- item: shinpai-shinai-you-ni
+  from: B1-29
+- item: koe-wo-kakeru
+  from: B1-29
+- item: shinbun
+  from: B1-29
+- item: daijoubu-desu-ka-polite
+  from: B1-29
+- item: mata-kimasu
+  from: B1-29
+- item: kodokushi
+  from: B1-29
+- item: idenshi
+  from: B2-03
+- item: iden
+  from: B2-03
+- item: ni-taishite
+  from: B2-03
+- item: hahakata
+  from: B2-03
+- item: chichikata
+  from: B2-03
+- item: hada-no-iro
+  from: B2-03
+- item: me-no-iro
+  from: B2-03
+- item: konketsu
+  from: B2-03
+- item: haafu
+  from: B2-03
+- item: kakeizu
+  from: B2-03
+- item: senzo
+  from: B2-03
+- item: nemawashi
+  from: B2-05
+- item: kettei
+  from: B2-05
+- item: gidai
+  from: B2-05
+- item: ni-yotte
+  from: B2-05
+- item: hito-ni-yotte
+  from: B2-05
+- item: teian
+  from: B2-05
+- item: sansei-wo-eru
+  from: B2-05
+- item: jizen-ni
+  from: B2-05
+- item: hyoshiki
+  from: B2-05
+- item: iken
+  from: B2-05
+- item: kakunin-shite-oku
+  from: B2-05
+steps:
+- type: narrator
+  text:
+    en: 'Cleaning the bathroom mould, you reach for a second bottle. Mrs Suzuki stops you at the door: read the label. Listen to the conversation; you don''t need to understand it yet.'
+    pt: 'Limpando o mofo do banheiro, você pega um segundo frasco. A senhora Suzuki te para na porta: leia o rótulo. Escute a conversa; ainda não precisa entender.'
+- type: dialogue
+  lines:
+  - speaker: suzuki
+    text: あっ、 待[ま]って！ その 二[ふた]つ を 混[ま]ぜて は いけません！
+    meaning:
+      en: Ah, wait! You mustn't mix those two!
+      pt: Ah, espere! Não pode misturar esses dois!
+  - speaker: protagonist
+    text: え？ 両方[りょうほう] カビ 取[と]り です よ。 昨日[きのう] 買[か]った ばかり です。
+    meaning:
+      en: What? Both are mould removers. I only bought them yesterday.
+      pt: Como? Os dois são tira-mofo. Acabei de comprar ontem.
+  - speaker: suzuki
+    text: ラベル を 見[み]て。「混[ま]ぜる な 危険[きけん]」 と 書[か]いて あります。
+    meaning:
+      en: 'Look at the label. It says “Danger: do not mix”.'
+      pt: 'Olhe o rótulo. Está escrito «perigo: não misture».'
+  - speaker: protagonist
+    text: どうして 危険[きけん] な ん です か。
+    meaning:
+      en: Why is it dangerous?
+      pt: Por que é perigoso?
+  - speaker: suzuki
+    text: 塩素[えんそ] と 酸性[さんせい] の 洗剤[せんざい] を 混[ま]ぜる と、 毒[どく] の ガス が 出[で]ます。
+    meaning:
+      en: Mixing chlorine with an acidic cleaner gives off a poisonous gas.
+      pt: Misturar cloro com um produto ácido solta um gás venenoso.
+  - speaker: protagonist
+    text: 化学[かがく] の 授業[じゅぎょう] で 習[なら]った はず なのに、 忘[わす]れて いました。
+    meaning:
+      en: I should have learned that in chemistry class, but I'd forgotten.
+      pt: Eu devia ter aprendido isso na aula de química, mas tinha esquecido.
+  - speaker: suzuki
+    text: 掃除[そうじ] の 時[とき] は 窓[まど] を 開[あ]けて、 換気[かんき] を して ください。
+    meaning:
+      en: When you clean, open the window and ventilate.
+      pt: Na hora de limpar, abra a janela e ventile.
+  - speaker: protagonist
+    text: これから は 説明書[せつめいしょ] を ちゃんと 読[よ]みます。
+    meaning:
+      en: From now on I'll read the instructions properly.
+      pt: Daqui em diante vou ler as instruções direito.
+- type: prompt
+  ask:
+    en: 'Say: chemistry.'
+    pt: 'Diga: química.'
+  answer:
+    speaker: protagonist
+    text: 化学[かがく]
+  items:
+  - kagaku
+- type: prompt
+  ask:
+    en: 'Say: to mix.'
+    pt: 'Diga: misturar.'
+  answer:
+    speaker: protagonist
+    text: 混[ま]ぜる
+  items:
+  - mazeru
+- type: prompt
+  ask:
+    en: 'Say: danger.'
+    pt: 'Diga: perigo.'
+  answer:
+    speaker: protagonist
+    text: 危険[きけん]
+  items:
+  - kiken
+- type: prompt
+  ask:
+    en: 'Read the label: danger, do not mix.'
+    pt: 'Leia o rótulo: perigo, não misture.'
+  answer:
+    speaker: protagonist
+    text: 混[ま]ぜる な 危険[きけん]
+  items:
+  - mazeruna-kiken
+- type: prompt
+  ask:
+    en: 'Say: chlorine.'
+    pt: 'Diga: cloro.'
+  answer:
+    speaker: protagonist
+    text: 塩素[えんそ]
+  items:
+  - enso
+- type: prompt
+  ask:
+    en: 'Say: acidic.'
+    pt: 'Diga: ácido.'
+  answer:
+    speaker: protagonist
+    text: 酸性[さんせい]
+  items:
+  - sansei-kei
+- type: prompt
+  ask:
+    en: 'Say: gas.'
+    pt: 'Diga: gás.'
+  answer:
+    speaker: protagonist
+    text: ガス
+  items:
+  - gasu
+- type: narrator
+  text:
+    en: '«〜ばかり» after a past verb is just did: «買[か]った ばかり», I only just bought it. After a noun it''s nothing but: «仕事[しごと] ばかり», nothing but work; «文句[もんく] ばかり», nothing but complaints.'
+    pt: '«〜ばかり» depois de um verbo no passado é acabei de: «買[か]った ばかり», acabei de comprar. Depois de um substantivo é só, nada além de: «仕事[しごと] ばかり», só trabalho; «文句[もんく] ばかり», só reclamação.'
+- type: prompt
+  ask:
+    en: 'Say the ending: only, nothing but.'
+    pt: 'Diga a terminação: só, nada além de.'
+  answer:
+    speaker: protagonist
+    text: 〜ばかり
+  items:
+  - bakari
+- type: prompt
+  ask:
+    en: 'Say: I just bought it.'
+    pt: 'Diga: acabei de comprar.'
+  answer:
+    speaker: protagonist
+    text: 買[か]った ばかり
+  items:
+  - katta-bakari
+- type: prompt
+  ask:
+    en: 'Say: ventilation.'
+    pt: 'Diga: ventilação.'
+  answer:
+    speaker: protagonist
+    text: 換気[かんき]
+  items:
+  - kanki
+- type: prompt
+  ask:
+    en: 'Say: the instructions.'
+    pt: 'Diga: as instruções.'
+  answer:
+    speaker: protagonist
+    text: 説明書[せつめいしょ]
+  items:
+  - setsumeisho
+- type: narrator
+  text:
+    en: 'Japanese cleaning products carry a red warning, «混[ま]ぜる な 危険[きけん]»: chlorine bleach mixed with acidic cleaners releases chlorine gas, which can kill in a closed bathroom. Use one product, rinse,
+      ventilate.'
+    pt: 'Os produtos de limpeza japoneses trazem um aviso vermelho, «混[ま]ぜる な 危険[きけん]»: água sanitária com cloro misturada com produtos ácidos solta gás cloro, que pode matar num banheiro fechado. Use um
+      produto só, enxágue, ventile.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'Vale no Brasil também: nunca misture água sanitária com vinagre, amoníaco ou outros produtos. O aviso japonês é só mais direto.'
+- type: prompt
+  ask:
+    en: 'Once more: say “chemistry”.'
+    pt: 'Mais uma vez: diga “química”.'
+  answer:
+    speaker: protagonist
+    text: 化学[かがく]
+  items:
+  - kagaku
+- type: prompt
+  ask:
+    en: 'Once more: say “mix”.'
+    pt: 'Mais uma vez: diga “misturar”.'
+  answer:
+    speaker: protagonist
+    text: 混[ま]ぜる
+  items:
+  - mazeru
+- type: prompt
+  ask:
+    en: 'Once more: say “danger, dangerous”.'
+    pt: 'Mais uma vez: diga “perigo, perigoso”.'
+  answer:
+    speaker: protagonist
+    text: 危険[きけん]
+  items:
+  - kiken
+- type: prompt
+  ask:
+    en: 'Once more: say “chlorine”.'
+    pt: 'Mais uma vez: diga “cloro”.'
+  answer:
+    speaker: protagonist
+    text: 塩素[えんそ]
+  items:
+  - enso
+- type: prompt
+  ask:
+    en: 'Once more: say “danger: do not mix”.'
+    pt: 'Mais uma vez: diga “perigo: não misture”.'
+  answer:
+    speaker: protagonist
+    text: 混[ま]ぜる な 危険[きけん]
+  items:
+  - mazeruna-kiken
+- type: prompt
+  ask:
+    en: 'Once more: say “acidic”.'
+    pt: 'Mais uma vez: diga “ácido”.'
+  answer:
+    speaker: protagonist
+    text: 酸性[さんせい]
+  items:
+  - sansei-kei
+- type: prompt
+  ask:
+    en: 'Once more: say “gas”.'
+    pt: 'Mais uma vez: diga “gás”.'
+  answer:
+    speaker: protagonist
+    text: ガス
+  items:
+  - gasu
+- type: prompt
+  ask:
+    en: 'Once more: say “only, nothing but”.'
+    pt: 'Mais uma vez: diga “só, nada além de”.'
+  answer:
+    speaker: protagonist
+    text: 〜ばかり
+  items:
+  - bakari
+- type: prompt
+  ask:
+    en: 'Once more: say “just bought”.'
+    pt: 'Mais uma vez: diga “acabei de comprar”.'
+  answer:
+    speaker: protagonist
+    text: 買[か]った ばかり
+  items:
+  - katta-bakari
+- type: prompt
+  ask:
+    en: 'Once more: say “ventilation”.'
+    pt: 'Mais uma vez: diga “ventilação”.'
+  answer:
+    speaker: protagonist
+    text: 換気[かんき]
+  items:
+  - kanki
+- type: prompt
+  ask:
+    en: 'Once more: say “instructions”.'
+    pt: 'Mais uma vez: diga “instruções”.'
+  answer:
+    speaker: protagonist
+    text: 説明書[せつめいしょ]
+  items:
+  - setsumeisho
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “laying the groundwork (before a meeting) — and “decision — and “agenda item — and “depending on; by — and “depending on the person — and “proposal — and “win support — and “beforehand — and
+      “sign (notice) — and “opinion”.'
+    pt: 'Diga: “costurar o apoio antes (da reunião) — e “decisão — e “pauta — e “dependendo de; por — e “dependendo da pessoa — e “proposta — e “conseguir apoio — e “com antecedência — e “placa (de aviso)
+      — e “opinião”.'
+  answer:
+    speaker: protagonist
+    text: 根回[ねまわ]し … 決定[けってい] … 議題[ぎだい] … 〜に よって … 人[ひと] に よって … 提案[ていあん] … 賛成[さんせい] を 得[え]る … 事前[じぜん] に … 標識[ひょうしき] … 意見[いけん]
+  items:
+  - nemawashi
+  - kettei
+  - gidai
+  - ni-yotte
+  - hito-ni-yotte
+  - teian
+  - sansei-wo-eru
+  - jizen-ni
+  - hyoshiki
+  - iken
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “check in advance — and “gene — and “heredity — and “towards, in contrast to — and “mother''s side — and “father''s side — and “skin colour — and “eye colour — and “mixed heritage (dated word)
+      — and “mixed-heritage (everyday word)”.'
+    pt: 'Diga: “confirmar antes — e “gene — e “hereditariedade — e “em relação a, ao contrário de — e “lado da mãe — e “lado do pai — e “cor da pele — e “cor dos olhos — e “mestiço (palavra antiga) — e
+      “filho de pais de origens diferentes”.'
+  answer:
+    speaker: protagonist
+    text: 確認[かくにん] して おく … 遺伝子[いでんし] … 遺伝[いでん] … 〜に 対[たい]して … 母方[ははかた] … 父方[ちちかた] … 肌[はだ] の 色[いろ] … 目[め] の 色[いろ] … 混血[こんけつ] … ハーフ
+  items:
+  - kakunin-shite-oku
+  - idenshi
+  - iden
+  - ni-taishite
+  - hahakata
+  - chichikata
+  - hada-no-iro
+  - me-no-iro
+  - konketsu
+  - haafu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “family tree — and “ancestors — and “living alone — and “elderly people — and “loneliness — and “watching over (someone) — and “so that… — and “so that (they) don''t worry — and “speak to,
+      check on — and “newspaper”.'
+    pt: 'Diga: “árvore genealógica — e “antepassados — e “morar sozinho — e “idosos — e “solidão — e “olhar por alguém, acompanhar — e “para que… — e “para que não se preocupem — e “puxar conversa, dar
+      uma palavra — e “jornal”.'
+  answer:
+    speaker: protagonist
+    text: 家系図[かけいず] … 先祖[せんぞ] … 一人[ひとり] 暮[ぐ]らし … 高齢者[こうれいしゃ] … 孤独[こどく] … 見守[みまも]り … 〜ように … 心配[しんぱい] しない ように … 声[こえ] を かける … 新聞[しんぶん]
+  items:
+  - kakeizu
+  - senzo
+  - hitorigurashi
+  - koureisha
+  - kodoku
+  - mimamori
+  - you-ni
+  - shinpai-shinai-you-ni
+  - koe-wo-kakeru
+  - shinbun
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “are you well? — and “I''ll come again — and “dying alone (unnoticed) — and “poem — and “poet — and “Miyazawa Kenji (poet, 1896–1933) — and “not losing to the rain — and “not losing to the
+      wind — and “not (old written negative) — and “not lose, not give in”.'
+    pt: 'Diga: “a senhora está bem? — e “eu volto, viu — e “morrer sozinho (sem ninguém saber) — e “poema — e “poeta — e “Miyazawa Kenji (poeta, 1896–1933) — e “sem se render à chuva — e “sem se render
+      ao vento — e “não (negativo escrito antigo) — e “não perder, não se render”.'
+  answer:
+    speaker: protagonist
+    text: お元気[げんき] です か … また 来[き]ます ね … 孤独死[こどくし] … 詩[し] … 詩人[しじん] … 宮沢[みやざわ] 賢治[けんじ] … 雨[あめ] ニモ マケズ … 風[かぜ] ニモ マケズ … 〜ず … 負[ま]けない
+  items:
+  - daijoubu-desu-ka-polite
+  - mata-kimasu
+  - kodokushi
+  - shi
+  - shijin
+  - miyazawa-kenji
+  - ame-nimo-makezu
+  - kaze-nimo-makezu
+  - zu
+  - makenai
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “sturdy, strong — and “literature — and “words, language — and “being moved — and “(someone''s) parents — and “a small gift you bring — and “kneeling formally — and “excuse me for intruding
+      (entering a home) — and “it''s just a little something — and “it''s an honour to meet you”.'
+    pt: 'Diga: “forte, resistente — e “literatura — e “palavras, linguagem — e “emoção, comoção — e “os pais (de alguém) — e “lembrancinha que se leva — e “sentar de joelhos (formal) — e “com licença (ao
+      entrar na casa) — e “é só uma lembrancinha — e “é uma honra conhecê-los”.'
+  answer:
+    speaker: protagonist
+    text: 丈夫[じょうぶ] … 文学[ぶんがく] … 言葉[ことば] … 感動[かんどう] … ご両親[りょうしん] … 手土産[てみやげ] … 正座[せいざ] … お邪魔[じゃま] します … つまらない もの です が … 初[はじ]めて お目[め] に かかります
+  items:
+  - joubu
+  - bungaku
+  - kotoba
+  - kandou
+  - goryoushin
+  - temiyage
+  - seiza
+  - ojama-shimasu
+  - tsumaranai-mono
+  - hajimete-ome
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “please sit comfortably — and “(green) tea — and “I''ll gladly accept — and “excuse me (entering, leaving) — and “tap water — and “can drink, is drinkable — and “bath — and “heat (the bath),
+      boil — and “hot water — and “but, though”.'
+    pt: 'Diga: “sente-se à vontade — e “chá (verde) — e “aceito com prazer — e “com licença (ao entrar, ao sair) — e “água da torneira — e “dá para beber — e “banho de ofurô, banheira — e “esquento, fervo
+      — e “água quente — e “mas, só que”.'
+  answer:
+    speaker: protagonist
+    text: 足[あし] を 崩[くず]して ください … お茶[ちゃ] … 頂戴[ちょうだい] します … 失礼[しつれい] します … 水道水[すいどうすい] … 飲[の]めます … お風呂[ふろ] … 沸[わ]かします … お湯[ゆ] … 〜けど
+  items:
+  - ashi-wo-kuzushite
+  - ocha
+  - itadakimasu-receive
+  - shitsurei-shimasu
+  - suidousui
+  - nomemasu
+  - ofuro
+  - wakashimasu
+  - oyu
+  - kedo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “safe — and “what a waste — and “before getting in — and “wash — and “as a family”.'
+    pt: 'Diga: “seguro — e “que desperdício — e “antes de entrar — e “lavo — e “em família”.'
+  answer:
+    speaker: protagonist
+    text: 安全[あんぜん] … もったいない … 入[はい]る 前[まえ] に … 洗[あら]います … 家族[かぞく] で
+  items:
+  - anzen
+  - mottainai
+  - hairu-mae
+  - araimasu
+  - kazoku-de
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

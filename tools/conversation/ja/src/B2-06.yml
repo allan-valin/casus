@@ -1,0 +1,42 @@
+id: B2-06
+protagonist: m
+title: ["Chemistry", "Química"]
+situation: ["Cleaning the bathroom mould, you reach for a second bottle. Mrs Suzuki stops you at the door: read the label.", "Limpando o mofo do banheiro, você pega um segundo frasco. A senhora Suzuki te para na porta: leia o rótulo."]
+learn: []
+culture: —
+items:
+  - [kagaku, "化学[かがく]", "chemistry", "química"]
+  - [mazeru, "混[ま]ぜる", "mix", "misturar"]
+  - [kiken, "危険[きけん]", "danger, dangerous", "perigo, perigoso"]
+  - [enso, "塩素[えんそ]", "chlorine", "cloro", {rare: true}]
+  - [mazeruna-kiken, "混[ま]ぜる な 危険[きけん]", "danger: do not mix", "perigo: não misture", {rare: true}]
+  - [sansei-kei, "酸性[さんせい]", "acidic", "ácido"]
+  - [gasu, "ガス", "gas", "gás"]
+  - [bakari, "〜ばかり", "only, nothing but", "só, nada além de"]
+  - [katta-bakari, "買[か]った ばかり", "just bought", "acabei de comprar"]
+  - [kanki, "換気[かんき]", "ventilation", "ventilação"]
+  - [setsumeisho, "説明書[せつめいしょ]", "instructions", "instruções"]
+dialogue:
+  - [suzuki, "あっ、 待[ま]って！ その 二[ふた]つ を 混[ま]ぜて は いけません！", "Ah, wait! You mustn't mix those two!", "Ah, espere! Não pode misturar esses dois!"]
+  - [protagonist, "え？ 両方[りょうほう] カビ 取[と]り です よ。 昨日[きのう] 買[か]った ばかり です。", "What? Both are mould removers. I only bought them yesterday.", "Como? Os dois são tira-mofo. Acabei de comprar ontem."]
+  - [suzuki, "ラベル を 見[み]て。「混[ま]ぜる な 危険[きけん]」 と 書[か]いて あります。", "Look at the label. It says “Danger: do not mix”.", "Olhe o rótulo. Está escrito «perigo: não misture»."]
+  - [protagonist, "どうして 危険[きけん] な ん です か。", "Why is it dangerous?", "Por que é perigoso?"]
+  - [suzuki, "塩素[えんそ] と 酸性[さんせい] の 洗剤[せんざい] を 混[ま]ぜる と、 毒[どく] の ガス が 出[で]ます。", "Mixing chlorine with an acidic cleaner gives off a poisonous gas.", "Misturar cloro com um produto ácido solta um gás venenoso."]
+  - [protagonist, "化学[かがく] の 授業[じゅぎょう] で 習[なら]った はず なのに、 忘[わす]れて いました。", "I should have learned that in chemistry class, but I'd forgotten.", "Eu devia ter aprendido isso na aula de química, mas tinha esquecido."]
+  - [suzuki, "掃除[そうじ] の 時[とき] は 窓[まど] を 開[あ]けて、 換気[かんき] を して ください。", "When you clean, open the window and ventilate.", "Na hora de limpar, abra a janela e ventile."]
+  - [protagonist, "これから は 説明書[せつめいしょ] を ちゃんと 読[よ]みます。", "From now on I'll read the instructions properly.", "Daqui em diante vou ler as instruções direito."]
+teach:
+  - ask: ["Say: chemistry.", "Diga: química.", "化学[かがく]", kagaku]
+  - ask: ["Say: to mix.", "Diga: misturar.", "混[ま]ぜる", mazeru]
+  - ask: ["Say: danger.", "Diga: perigo.", "危険[きけん]", kiken]
+  - ask: ["Read the label: danger, do not mix.", "Leia o rótulo: perigo, não misture.", "混[ま]ぜる な 危険[きけん]", mazeruna-kiken]
+  - ask: ["Say: chlorine.", "Diga: cloro.", "塩素[えんそ]", enso]
+  - ask: ["Say: acidic.", "Diga: ácido.", "酸性[さんせい]", sansei-kei]
+  - ask: ["Say: gas.", "Diga: gás.", "ガス", gasu]
+  - note: ["«〜ばかり» after a past verb is just did: «買[か]った ばかり», I only just bought it. After a noun it's nothing but: «仕事[しごと] ばかり», nothing but work; «文句[もんく] ばかり», nothing but complaints.", "«〜ばかり» depois de um verbo no passado é acabei de: «買[か]った ばかり», acabei de comprar. Depois de um substantivo é só, nada além de: «仕事[しごと] ばかり», só trabalho; «文句[もんく] ばかり», só reclamação."]
+  - ask: ["Say the ending: only, nothing but.", "Diga a terminação: só, nada além de.", "〜ばかり", bakari]
+  - ask: ["Say: I just bought it.", "Diga: acabei de comprar.", "買[か]った ばかり", katta-bakari]
+  - ask: ["Say: ventilation.", "Diga: ventilação.", "換気[かんき]", kanki]
+  - ask: ["Say: the instructions.", "Diga: as instruções.", "説明書[せつめいしょ]", setsumeisho]
+  - note: ["Japanese cleaning products carry a red warning, «混[ま]ぜる な 危険[きけん]»: chlorine bleach mixed with acidic cleaners releases chlorine gas, which can kill in a closed bathroom. Use one product, rinse, ventilate.", "Os produtos de limpeza japoneses trazem um aviso vermelho, «混[ま]ぜる な 危険[きけん]»: água sanitária com cloro misturada com produtos ácidos solta gás cloro, que pode matar num banheiro fechado. Use um produto só, enxágue, ventile."]
+  - pt_only: "Vale no Brasil também: nunca misture água sanitária com vinagre, amoníaco ou outros produtos. O aviso japonês é só mais direto."

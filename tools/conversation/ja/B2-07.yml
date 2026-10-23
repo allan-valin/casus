@@ -1,0 +1,606 @@
+# UNIT ja B2-07 — written by AI (Claude) for Casus; expanded from src/B2-07.yml by tools/expand_unit.py. Edit the source.
+
+id: B2-07
+level: B2
+number: 7
+protagonist: f
+title:
+  en: E-mails
+  pt: E-mails
+situation:
+  en: 'Your first business email in Japanese: sending a supplier the translated manual. Chief Sato reads your draft — it starts with «こんにちは».'
+  pt: 'Seu primeiro e-mail de trabalho em japonês: enviar a um fornecedor o manual traduzido. A chefe Sato lê o rascunho — começa com «こんにちは».'
+learn_lessons: []
+culture: Fixed openings
+new_items:
+- id: meeru
+  text: メール
+  meaning:
+    en: email
+    pt: e-mail
+- id: tenpu
+  text: 添付[てんぷ]
+  meaning:
+    en: attachment
+    pt: anexo
+- id: henshin
+  text: 返信[へんしん]
+  meaning:
+    en: reply
+    pt: resposta
+- id: osewa-ni-natte-orimasu
+  text: お世話[せわ] に なって おります
+  meaning:
+    en: '(standard opening: thank you for your continued support)'
+    pt: '(abertura padrão: agradecemos a parceria)'
+- id: kenmei
+  text: 件名[けんめい]
+  meaning:
+    en: subject line
+    pt: assunto
+  rare: true
+- id: gokakunin-kudasai
+  text: ご確認[かくにん] ください
+  meaning:
+    en: please confirm, please check
+    pt: favor conferir
+- id: yoroshiku-onegai-itashimasu
+  text: よろしく お願[ねが]い いたします
+  meaning:
+    en: (standard closing, very polite)
+    pt: (fecho padrão, muito educado)
+- id: okurimasu
+  text: お送[おく]り します
+  meaning:
+    en: I'll send (humble)
+    pt: envio (humilde)
+- id: sama
+  text: 〜様[さま]
+  meaning:
+    en: Mr / Ms (formal)
+    pt: Sr. / Sra. (formal)
+- id: shomei-email
+  text: 署名[しょめい]
+  meaning:
+    en: signature (email)
+    pt: assinatura (do e-mail)
+- id: shitsurei-ga-nai-you-ni
+  text: 失礼[しつれい] が ない ように
+  meaning:
+    en: so as not to be rude
+    pt: para não ser indelicado
+reviews:
+- item: kouza
+  from: A2-04
+- item: inkan
+  from: A2-04
+- item: tsuuchou
+  from: A2-04
+- item: anshou-bangou
+  from: A2-04
+- item: ginkou
+  from: A2-04
+- item: kyuuryou
+  from: A2-04
+- item: tsukuritai
+  from: A2-04
+- item: katte
+  from: A2-04
+- item: itte
+  from: A2-04
+- item: shomei
+  from: A2-04
+- item: yonketa
+  from: A2-04
+- item: genpatsu
+  from: B1-06
+- item: enerugii
+  from: B1-06
+- item: setsuden
+  from: B1-06
+- item: taiyoukou
+  from: B1-06
+- item: node
+  from: B1-06
+- item: atsui-node
+  from: B1-06
+- item: jiko
+  from: B1-06
+- item: anzen-mondai
+  from: B1-06
+- item: sansei-favour
+  from: B1-06
+- item: hantai
+  from: B1-06
+- item: denkidai
+  from: B1-06
+- item: nyuusu
+  from: B1-22
+- item: senkyo
+  from: B1-22
+- item: shushou
+  from: B1-22
+- item: seitou
+  from: B1-22
+- item: ni-yoru-to
+  from: B1-22
+- item: nyuusu-ni-yoru-to
+  from: B1-22
+- item: touhyou
+  from: B1-22
+- item: touhyouritsu
+  from: B1-22
+- item: seiji
+  from: B1-22
+- item: kokkai
+  from: B1-22
+- item: gimu
+  from: B1-22
+- item: izakaya
+  from: B1-30
+- item: hashigozake
+  from: B1-30
+- item: nijikai
+  from: B1-30
+- item: ichijikai
+  from: B1-30
+- item: toriaezu
+  from: B1-30
+- item: otooshi
+  from: B1-30
+- item: yakitori
+  from: B1-30
+- item: shime
+  from: B1-30
+- item: mou-ikken
+  from: B1-30
+- item: kaerou-ka
+  from: B1-30
+- item: buchou-item
+  from: B2-04
+- item: senpai
+  from: B2-04
+- item: irassharu
+  from: B2-04
+- item: ossharu
+  from: B2-04
+- item: sonkeigo
+  from: B2-04
+- item: kanpai-hikuku
+  from: B2-04
+- item: tatete-wa-ikenai
+  from: B2-04
+- item: esukareetaa
+  from: B2-04
+- item: hidari-ni-tatsu
+  from: B2-04
+- item: onaji-you-ni
+  from: B2-04
+- item: goaisatsu
+  from: B2-04
+- item: kagaku
+  from: B2-06
+- item: mazeru
+  from: B2-06
+- item: kiken
+  from: B2-06
+- item: enso
+  from: B2-06
+- item: mazeruna-kiken
+  from: B2-06
+- item: sansei-kei
+  from: B2-06
+- item: gasu
+  from: B2-06
+- item: bakari
+  from: B2-06
+- item: katta-bakari
+  from: B2-06
+- item: kanki
+  from: B2-06
+- item: setsumeisho
+  from: B2-06
+steps:
+- type: narrator
+  text:
+    en: 'Your first business email in Japanese: sending a supplier the translated manual. Chief Sato reads your draft — it starts with «こんにちは». Listen to the conversation; you don''t need to understand
+      it yet.'
+    pt: 'Seu primeiro e-mail de trabalho em japonês: enviar a um fornecedor o manual traduzido. A chefe Sato lê o rascunho — começa com «こんにちは». Escute a conversa; ainda não precisa entender.'
+- type: dialogue
+  lines:
+  - speaker: sato
+    text: メール の 最初[さいしょ] は「こんにちは」 じゃ なくて、「お世話[せわ] に なって おります」 です。
+    meaning:
+      en: An email doesn't start with “konnichiwa” but with “osewa ni natte orimasu”.
+      pt: O e-mail não começa com «konnichiwa», e sim com «osewa ni natte orimasu».
+  - speaker: protagonist
+    text: お世話[せわ] に なって おります… 毎回[まいかい] 書[か]く ん です か。
+    meaning:
+      en: Osewa ni natte orimasu… Do I write it every time?
+      pt: Osewa ni natte orimasu… Escrevo toda vez?
+  - speaker: sato
+    text: はい、 毎回[まいかい] です。 相手[あいて] の 名前[なまえ] に は「様[さま]」 を つけて。
+    meaning:
+      en: Yes, every time. Add “sama” to the other person's name.
+      pt: Sim, toda vez. Coloque «sama» depois do nome da pessoa.
+  - speaker: protagonist
+    text: 山田[やまだ] 様[さま]、 お世話[せわ] に なって おります。 マニュアル を 添付[てんぷ] で お送[おく]り します。
+    meaning:
+      en: Mr Yamada, thank you for your continued support. I'm sending the manual as an attachment.
+      pt: Sr. Yamada, agradecemos a parceria. Envio o manual em anexo.
+  - speaker: sato
+    text: いい です ね。 件名[けんめい] も わかりやすく。「マニュアル 送付[そうふ] の 件[けん]」 とか。
+    meaning:
+      en: 'Good. Make the subject line clear too. Like “Re: sending the manual”.'
+      pt: Bom. Deixe o assunto claro também. Tipo «Envio do manual».
+  - speaker: protagonist
+    text: 最後[さいご] は？
+    meaning:
+      en: And the ending?
+      pt: E o final?
+  - speaker: sato
+    text: 「ご確認[かくにん] ください。 よろしく お願[ねが]い いたします」。 それから 署名[しょめい]。
+    meaning:
+      en: “Please check it. Yoroshiku onegai itashimasu.” Then your signature.
+      pt: «Favor conferir. Yoroshiku onegai itashimasu.» Depois a assinatura.
+  - speaker: protagonist
+    text: 失礼[しつれい] が ない ように、 送[おく]る 前[まえ] に 見[み]て いただけます か。
+    meaning:
+      en: So I'm not rude, could you check it before I send?
+      pt: Para eu não ser indelicada, a senhora pode olhar antes de eu enviar?
+- type: prompt
+  ask:
+    en: 'Say: an email.'
+    pt: 'Diga: um e-mail.'
+  answer:
+    speaker: protagonist
+    text: メール
+  items:
+  - meeru
+- type: prompt
+  ask:
+    en: 'Say: the subject line.'
+    pt: 'Diga: o assunto.'
+  answer:
+    speaker: protagonist
+    text: 件名[けんめい]
+  items:
+  - kenmei
+- type: prompt
+  ask:
+    en: Write the standard opening.
+    pt: Escreva a abertura padrão.
+  answer:
+    speaker: protagonist
+    text: お世話[せわ] に なって おります。
+  items:
+  - osewa-ni-natte-orimasu
+- type: prompt
+  ask:
+    en: 'Say: Mr or Ms, formally.'
+    pt: 'Diga: Sr. ou Sra., formal.'
+  answer:
+    speaker: protagonist
+    text: 〜様[さま]
+  items:
+  - sama
+- type: prompt
+  ask:
+    en: 'Say: an attachment.'
+    pt: 'Diga: um anexo.'
+  answer:
+    speaker: protagonist
+    text: 添付[てんぷ]
+  items:
+  - tenpu
+- type: prompt
+  ask:
+    en: 'Say humbly: I''ll send it.'
+    pt: 'Diga com humildade: envio.'
+  answer:
+    speaker: protagonist
+    text: お送[おく]り します。
+  items:
+  - okurimasu
+- type: prompt
+  ask:
+    en: 'Ask them to check: please confirm.'
+    pt: 'Peça que confiram: favor conferir.'
+  answer:
+    speaker: protagonist
+    text: ご確認[かくにん] ください。
+  items:
+  - gokakunin-kudasai
+- type: prompt
+  ask:
+    en: Write the standard closing.
+    pt: Escreva o fecho padrão.
+  answer:
+    speaker: protagonist
+    text: よろしく お願[ねが]い いたします。
+  items:
+  - yoroshiku-onegai-itashimasu
+- type: prompt
+  ask:
+    en: 'Say: a reply.'
+    pt: 'Diga: uma resposta.'
+  answer:
+    speaker: protagonist
+    text: 返信[へんしん]
+  items:
+  - henshin
+- type: prompt
+  ask:
+    en: 'Say: the email signature.'
+    pt: 'Diga: a assinatura do e-mail.'
+  answer:
+    speaker: protagonist
+    text: 署名[しょめい]
+  items:
+  - shomei-email
+- type: prompt
+  ask:
+    en: 'Say: so as not to be rude.'
+    pt: 'Diga: para não ser indelicado.'
+  answer:
+    speaker: protagonist
+    text: 失礼[しつれい] が ない ように
+  items:
+  - shitsurei-ga-nai-you-ni
+- type: narrator
+  text:
+    en: 'Japanese business emails are built from fixed parts: the name with «様[さま]», «お世話[せわ] に なって おります», your name and company, the business itself, then «よろしく お願[ねが]い いたします» and a signature block. «お
+      + verb stem + する» is a humble way to do something for the other person: «お送[おく]り します».'
+    pt: 'Os e-mails de trabalho japoneses são montados com peças fixas: o nome com «様[さま]», «お世話[せわ] に なって おります», seu nome e empresa, o assunto em si, depois «よろしく お願[ねが]い いたします» e um bloco de assinatura.
+      «お + radical do verbo + する» é um jeito humilde de fazer algo para o outro: «お送[おく]り します».'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: O e-mail brasileiro de trabalho já é formal com «Prezado» e «Atenciosamente». O japonês tem mais peças obrigatórias — mas, decoradas, servem para quase tudo.
+- type: prompt
+  ask:
+    en: 'Once more: say “email”.'
+    pt: 'Mais uma vez: diga “e-mail”.'
+  answer:
+    speaker: protagonist
+    text: メール
+  items:
+  - meeru
+- type: prompt
+  ask:
+    en: 'Once more: say “attachment”.'
+    pt: 'Mais uma vez: diga “anexo”.'
+  answer:
+    speaker: protagonist
+    text: 添付[てんぷ]
+  items:
+  - tenpu
+- type: prompt
+  ask:
+    en: 'Once more: say “reply”.'
+    pt: 'Mais uma vez: diga “resposta”.'
+  answer:
+    speaker: protagonist
+    text: 返信[へんしん]
+  items:
+  - henshin
+- type: prompt
+  ask:
+    en: 'Once more: say “(standard opening: thank you for your continued support)”.'
+    pt: 'Mais uma vez: diga “(abertura padrão: agradecemos a parceria)”.'
+  answer:
+    speaker: protagonist
+    text: お世話[せわ] に なって おります
+  items:
+  - osewa-ni-natte-orimasu
+- type: prompt
+  ask:
+    en: 'Once more: say “subject line”.'
+    pt: 'Mais uma vez: diga “assunto”.'
+  answer:
+    speaker: protagonist
+    text: 件名[けんめい]
+  items:
+  - kenmei
+- type: prompt
+  ask:
+    en: 'Once more: say “please confirm, please check”.'
+    pt: 'Mais uma vez: diga “favor conferir”.'
+  answer:
+    speaker: protagonist
+    text: ご確認[かくにん] ください
+  items:
+  - gokakunin-kudasai
+- type: prompt
+  ask:
+    en: 'Once more: say “(standard closing, very polite)”.'
+    pt: 'Mais uma vez: diga “(fecho padrão, muito educado)”.'
+  answer:
+    speaker: protagonist
+    text: よろしく お願[ねが]い いたします
+  items:
+  - yoroshiku-onegai-itashimasu
+- type: prompt
+  ask:
+    en: 'Once more: say “I''ll send (humble)”.'
+    pt: 'Mais uma vez: diga “envio (humilde)”.'
+  answer:
+    speaker: protagonist
+    text: お送[おく]り します
+  items:
+  - okurimasu
+- type: prompt
+  ask:
+    en: 'Once more: say “Mr / Ms (formal)”.'
+    pt: 'Mais uma vez: diga “Sr. / Sra. (formal)”.'
+  answer:
+    speaker: protagonist
+    text: 〜様[さま]
+  items:
+  - sama
+- type: prompt
+  ask:
+    en: 'Once more: say “signature (email)”.'
+    pt: 'Mais uma vez: diga “assinatura (do e-mail)”.'
+  answer:
+    speaker: protagonist
+    text: 署名[しょめい]
+  items:
+  - shomei-email
+- type: prompt
+  ask:
+    en: 'Once more: say “so as not to be rude”.'
+    pt: 'Mais uma vez: diga “para não ser indelicado”.'
+  answer:
+    speaker: protagonist
+    text: 失礼[しつれい] が ない ように
+  items:
+  - shitsurei-ga-nai-you-ni
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “chemistry — and “mix — and “danger, dangerous — and “chlorine — and “danger: do not mix — and “acidic — and “gas — and “only, nothing but — and “just bought — and “ventilation”.'
+    pt: 'Diga: “química — e “misturar — e “perigo, perigoso — e “cloro — e “perigo: não misture — e “ácido — e “gás — e “só, nada além de — e “acabei de comprar — e “ventilação”.'
+  answer:
+    speaker: protagonist
+    text: 化学[かがく] … 混[ま]ぜる … 危険[きけん] … 塩素[えんそ] … 混[ま]ぜる な 危険[きけん] … 酸性[さんせい] … ガス … 〜ばかり … 買[か]った ばかり … 換気[かんき]
+  items:
+  - kagaku
+  - mazeru
+  - kiken
+  - enso
+  - mazeruna-kiken
+  - sansei-kei
+  - gasu
+  - bakari
+  - katta-bakari
+  - kanki
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “instructions — and “department head — and “senior colleague — and “is, comes, goes (respectful) — and “says (respectful) — and “respectful language — and “(hold) the glass lower — and “must
+      not stand (them) upright — and “escalator — and “stand on the left”.'
+    pt: 'Diga: “instruções — e “chefe de departamento — e “colega mais antigo — e “está, vem, vai (respeitoso) — e “diz (respeitoso) — e “linguagem respeitosa — e “(segure) o copo mais baixo — e “não pode
+      deixar em pé — e “escada rolante — e “ficar à esquerda”.'
+  answer:
+    speaker: protagonist
+    text: 説明書[せつめいしょ] … 部長[ぶちょう] … 先輩[せんぱい] … いらっしゃる … おっしゃる … 尊敬語[そんけいご] … グラス を 低[ひく]く … 立[た]てて は いけない … エスカレーター … 左[ひだり] に 立[た]つ
+  items:
+  - setsumeisho
+  - buchou-item
+  - senpai
+  - irassharu
+  - ossharu
+  - sonkeigo
+  - kanpai-hikuku
+  - tatete-wa-ikenai
+  - esukareetaa
+  - hidari-ni-tatsu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “like the people around you — and “greeting (formal) — and “izakaya (Japanese pub) — and “bar-hopping — and “the second round (next place) — and “the first round — and “a beer to start with
+      — and “the small starter you''re charged for — and “grilled chicken skewers — and “the dish that ends the night”.'
+    pt: 'Diga: “como as pessoas em volta — e “cumprimento (formal) — e “izakaya (bar japonês) — e “ir de bar em bar — e “a segunda rodada (outro lugar) — e “a primeira rodada — e “pra começar, uma cerveja
+      — e “petisco de entrada cobrado — e “espetinho de frango — e “o prato que fecha a noite”.'
+  answer:
+    speaker: protagonist
+    text: 周[まわ]り と 同[おな]じ よう に … ご挨拶[あいさつ] … 居酒屋[いざかや] … はしご 酒[ざけ] … 二次会[にじかい] … 一次会[いちじかい] … とりあえず ビール … お通[とお]し … 焼[や]き鳥[とり] … 締[し]め
+  items:
+  - onaji-you-ni
+  - goaisatsu
+  - izakaya
+  - hashigozake
+  - nijikai
+  - ichijikai
+  - toriaezu
+  - otooshi
+  - yakitori
+  - shime
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “one more place — and “shall we head home soon? — and “the news — and “election — and “prime minister — and “political party — and “according to… — and “according to the news — and “voting,
+      a vote — and “turnout”.'
+    pt: 'Diga: “mais um lugar — e “vamos indo? — e “o noticiário, as notícias — e “eleição — e “primeiro-ministro — e “partido político — e “segundo…, de acordo com… — e “segundo o noticiário — e “votação,
+      voto — e “comparecimento às urnas”.'
+  answer:
+    speaker: protagonist
+    text: もう 一軒[いっけん] … そろそろ 帰[かえ]ろう か … ニュース … 選挙[せんきょ] … 首相[しゅしょう] … 政党[せいとう] … 〜に よる と … ニュース に よる と … 投票[とうひょう] … 投票率[とうひょうりつ]
+  items:
+  - mou-ikken
+  - kaerou-ka
+  - nyuusu
+  - senkyo
+  - shushou
+  - seitou
+  - ni-yoru-to
+  - nyuusu-ni-yoru-to
+  - touhyou
+  - touhyouritsu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “politics — and “the Diet (parliament) — and “obligation, duty — and “nuclear power plant — and “energy — and “saving electricity — and “solar power — and “because, so (polite reason) — and
+      “because it''s hot — and “accident”.'
+    pt: 'Diga: “política — e “o parlamento (Dieta) — e “obrigação — e “usina nuclear — e “energia — e “economia de energia — e “energia solar — e “como, porque (motivo educado) — e “como está calor — e
+      “acidente”.'
+  answer:
+    speaker: protagonist
+    text: 政治[せいじ] … 国会[こっかい] … 義務[ぎむ] … 原発[げんぱつ] … エネルギー … 節電[せつでん] … 太陽光[たいようこう] … 〜ので … 暑[あつ]い ので … 事故[じこ]
+  items:
+  - seiji
+  - kokkai
+  - gimu
+  - genpatsu
+  - enerugii
+  - setsuden
+  - taiyoukou
+  - node
+  - atsui-node
+  - jiko
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “a safety issue — and “in favour — and “against — and “electricity bill — and “bank account — and “personal seal, hanko — and “bankbook — and “PIN — and “bank — and “salary”.'
+    pt: 'Diga: “uma questão de segurança — e “a favor — e “contra — e “conta de luz — e “conta bancária — e “carimbo pessoal, hanko — e “caderneta do banco — e “senha (do cartão) — e “banco — e “salário”.'
+  answer:
+    speaker: protagonist
+    text: 安全[あんぜん] の 問題[もんだい] … 賛成[さんせい] … 反対[はんたい] … 電気代[でんきだい] … 口座[こうざ] … 印鑑[いんかん] … 通帳[つうちょう] … 暗証番号[あんしょうばんごう] … 銀行[ぎんこう] … 給料[きゅうりょう]
+  items:
+  - anzen-mondai
+  - sansei-favour
+  - hantai
+  - denkidai
+  - kouza
+  - inkan
+  - tsuuchou
+  - anshou-bangou
+  - ginkou
+  - kyuuryou
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I want to open (make) — and “buy and… (て form) — and “go and… (て form) — and “signature — and “four digits”.'
+    pt: 'Diga: “quero abrir (fazer) — e “compro e… (forma て) — e “vou e… (forma て) — e “assinatura — e “quatro dígitos”.'
+  answer:
+    speaker: protagonist
+    text: 作[つく]りたい です … 買[か]って … 行[い]って … サイン … 四桁[よんけた]
+  items:
+  - tsukuritai
+  - katte
+  - itte
+  - shomei
+  - yonketa
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
