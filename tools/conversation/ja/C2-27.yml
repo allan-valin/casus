@@ -1,0 +1,600 @@
+# UNIT ja C2-27 — written by AI (Claude) for Casus; expanded from src/C2-27.yml by tools/expand_unit.py. Edit the source.
+
+id: C2-27
+level: C2
+number: 27
+protagonist: f
+title:
+  en: The inheritance
+  pt: A herança
+situation:
+  en: Mrs Suzuki, now eighty, has decided to move in with her daughter in Tokyo. She asks you to help sort the house — and tells you what will happen to it.
+  pt: A senhora Suzuki, agora com oitenta anos, decidiu morar com a filha em Tóquio. Ela pede que você ajude a arrumar a casa — e conta o que vai acontecer com ela.
+learn_lessons: []
+culture: —
+new_items:
+- id: souzoku
+  text: 相続[そうぞく]
+  meaning:
+    en: inheritance (process)
+    pt: herança (processo), sucessão
+- id: isan
+  text: 遺産[いさん]
+  meaning:
+    en: estate, legacy
+    pt: patrimônio deixado, herança
+- id: katazuke
+  text: 片付[かたづ]け
+  meaning:
+    en: tidying, sorting out
+    pt: arrumação
+- id: shuukatsu
+  text: 終活[しゅうかつ]
+  meaning:
+    en: preparing for the end of life
+    pt: preparação para o fim da vida
+  rare: true
+- id: akiya
+  text: 空[あ]き家[や]
+  meaning:
+    en: empty house
+    pt: casa vazia
+- id: yuigonsho
+  text: 遺言[ゆいごん] 書[しょ]
+  meaning:
+    en: will (document)
+    pt: testamento
+- id: omoide-no-shina
+  text: 思[おも]い出[で] の 品[しな]
+  meaning:
+    en: keepsakes
+    pt: objetos de recordação
+- id: te-shimau-farewell
+  text: 手放[てばな]す
+  meaning:
+    en: let go of, part with
+    pt: desfazer-se de
+- id: uketsugu
+  text: 受[う]け継[つ]ぐ
+  meaning:
+    en: inherit, take on
+    pt: herdar, receber
+- id: sumi-tsuzukeru
+  text: 住[す]み続[つづ]ける
+  meaning:
+    en: keep living (there)
+    pt: continuar morando
+reviews:
+- item: itta
+  from: A2-20
+- item: mita
+  from: A2-20
+- item: tabeta
+  from: A2-20
+- item: shita
+  from: A2-20
+- item: kita
+  from: A2-20
+- item: katta
+  from: A2-20
+- item: maketa
+  from: A2-20
+- item: riigu
+  from: A2-20
+- item: aite
+  from: A2-20
+- item: tsuyokatta
+  from: A2-20
+- item: ouen
+  from: A2-20
+- item: shoushi-koureika
+  from: B2-24
+- item: kaigo
+  from: B2-24
+- item: ni-tsurete
+  from: B2-24
+- item: toshi-wo-toru-ni-tsurete
+  from: B2-24
+- item: jinkou
+  from: B2-24
+- item: heru
+  from: B2-24
+- item: fueru
+  from: B2-24
+- item: haikou
+  from: B2-24
+- item: shussei-ritsu
+  from: B2-24
+- item: kaigo-shisetsu
+  from: B2-24
+- item: intai
+  from: C1-26
+- item: kanshajou
+  from: C1-26
+- item: omoide
+  from: C1-26
+- item: nagai-aida
+  from: C1-26
+- item: shidou
+  from: C1-26
+- item: kokoro-kara
+  from: C1-26
+- item: hyoushou
+  from: C1-26
+- item: hiki-tsugu
+  from: C1-26
+- item: wasuremasen
+  from: C1-26
+- item: otsukaresama-retire
+  from: C1-26
+- item: kaigyou
+  from: C2-12
+- item: yuushi
+  from: C2-12
+- item: risuku
+  from: C2-12
+- item: jouren
+  from: C2-12
+- item: nai-koto-niwa
+  from: C2-12
+- item: yatte-minai-koto-niwa
+  from: C2-12
+- item: jigyou-keikakusho
+  from: C2-12
+- item: shikin
+  from: C2-12
+- item: kokyaku
+  from: C2-12
+- item: shiire
+  from: C2-12
+- item: kyougou
+  from: C2-12
+- item: bessou
+  from: C2-20
+- item: seisan
+  from: C2-20
+- item: baabekyuu
+  from: C2-20
+- item: zutsu
+  from: C2-20
+- item: hitori-ichiman-zutsu
+  from: C2-20
+- item: ryoushuusho
+  from: C2-20
+- item: tatekae
+  from: C2-20
+- item: ichiban-ooku
+  from: C2-20
+- item: kodomo-wa-hangaku
+  from: C2-20
+- item: keisan
+  from: C2-20
+- item: setsumeikai
+  from: C2-24
+- item: yosan
+  from: C2-24
+- item: giin
+  from: C2-24
+- item: hatsugen
+  from: C2-24
+- item: teian-review
+  from: C2-24
+- item: touji-sha
+  from: C2-24
+- item: koe
+  from: C2-24
+- item: hanei
+  from: C2-24
+- item: nihongo-kyoushitsu
+  from: C2-24
+- item: gutaiteki-ni
+  from: C2-24
+- item: bashou
+  from: C2-26
+- item: haiku
+  from: C2-26
+- item: kigo
+  from: C2-26
+- item: roudoku
+  from: C2-26
+- item: furuike
+  from: C2-26
+- item: kawazu
+  from: C2-26
+- item: mizu-no-oto
+  from: C2-26
+- item: go-shichi-go
+  from: C2-26
+- item: kireji
+  from: C2-26
+- item: shizukesa
+  from: C2-26
+steps:
+- type: narrator
+  text:
+    en: Mrs Suzuki, now eighty, has decided to move in with her daughter in Tokyo. She asks you to help sort the house — and tells you what will happen to it. Listen to the conversation; you don't need
+      to understand it yet.
+    pt: A senhora Suzuki, agora com oitenta anos, decidiu morar com a filha em Tóquio. Ela pede que você ajude a arrumar a casa — e conta o que vai acontecer com ela. Escute a conversa; ainda não precisa
+      entender.
+- type: dialogue
+  lines:
+  - speaker: suzuki
+    text: 娘[むすめ] の 所[ところ] へ 行[い]く こと に した ん です よ。 この 家[いえ] の 片付[かたづ]け、 手伝[てつだ]って くれる？
+    meaning:
+      en: I've decided to go to my daughter's. Will you help me sort out this house?
+      pt: Decidi ir para a casa da minha filha. Você me ajuda a arrumar esta casa?
+  - speaker: protagonist
+    text: もちろん です。 でも… 寂[さび]しく なります。
+    meaning:
+      en: Of course. But… I'll miss you.
+      pt: Claro. Mas… vou sentir falta.
+  - speaker: suzuki
+    text: これ も 終活[しゅうかつ] です。 遺言[ゆいごん] 書[しょ] も 書[か]きました。 子供[こども] たち が 相続[そうぞく] で もめない よう に ね。
+    meaning:
+      en: This is part of preparing for the end too. I've written a will, so the children don't quarrel over the inheritance.
+      pt: Isso também é preparar o fim da vida. Já escrevi o testamento, para os filhos não brigarem pela herança.
+  - speaker: protagonist
+    text: この 家[いえ] は 空[あ]き家[や] に なる ん です か。
+    meaning:
+      en: Will the house be left empty?
+      pt: A casa vai ficar vazia?
+  - speaker: suzuki
+    text: 空[あ]き家[や] は 町[まち] の 問題[もんだい] に なる から… あなた たち が 住[す]み続[つづ]けて くれたら、 嬉[うれ]しい わ。
+    meaning:
+      en: Empty houses become a problem for the town… I'd be happy if you two lived on here.
+      pt: Casa vazia vira problema para a cidade… Eu ficaria feliz se vocês continuassem morando aqui.
+  - speaker: protagonist
+    text: 私[わたし]たち が？ 家族[かぞく] と 相談[そうだん] します。
+    meaning:
+      en: Us? I'll talk it over with the family.
+      pt: Nós? Vou conversar com a família.
+  - speaker: suzuki
+    text: 思[おも]い出[で] の 品[しな] は ほとんど 手放[てばな]す けど、 この 畑[はたけ] は 誰[だれ] か に 受[う]け継[つ]いで ほしい の。
+    meaning:
+      en: I'm letting go of most of the keepsakes, but I'd like someone to take on this vegetable garden.
+      pt: Vou me desfazer da maioria das recordações, mas queria que alguém herdasse esta horta.
+  - speaker: protagonist
+    text: 畑[はたけ] は、 私[わたし] が 守[まも]ります。 トマト の 育[そだ]て方[かた]、 全部[ぜんぶ] 教[おし]えて ください。
+    meaning:
+      en: I'll look after the garden. Teach me everything about growing tomatoes.
+      pt: A horta, eu cuido. Me ensine tudo sobre plantar tomate.
+- type: prompt
+  ask:
+    en: 'Say: tidying, sorting out.'
+    pt: 'Diga: arrumação.'
+  answer:
+    speaker: protagonist
+    text: 片付[かたづ]け
+  items:
+  - katazuke
+- type: prompt
+  ask:
+    en: 'Say: preparing for the end of life.'
+    pt: 'Diga: preparação para o fim da vida.'
+  answer:
+    speaker: protagonist
+    text: 終活[しゅうかつ]
+  items:
+  - shuukatsu
+- type: prompt
+  ask:
+    en: 'Say: a will.'
+    pt: 'Diga: um testamento.'
+  answer:
+    speaker: protagonist
+    text: 遺言[ゆいごん] 書[しょ]
+  items:
+  - yuigonsho
+- type: prompt
+  ask:
+    en: 'Say: inheritance, succession.'
+    pt: 'Diga: herança, sucessão.'
+  answer:
+    speaker: protagonist
+    text: 相続[そうぞく]
+  items:
+  - souzoku
+- type: prompt
+  ask:
+    en: 'Say: estate, legacy.'
+    pt: 'Diga: patrimônio, herança.'
+  answer:
+    speaker: protagonist
+    text: 遺産[いさん]
+  items:
+  - isan
+- type: prompt
+  ask:
+    en: 'Say: an empty house.'
+    pt: 'Diga: uma casa vazia.'
+  answer:
+    speaker: protagonist
+    text: 空[あ]き家[や]
+  items:
+  - akiya
+- type: prompt
+  ask:
+    en: 'Say: keepsakes.'
+    pt: 'Diga: objetos de recordação.'
+  answer:
+    speaker: protagonist
+    text: 思[おも]い出[で] の 品[しな]
+  items:
+  - omoide-no-shina
+- type: prompt
+  ask:
+    en: 'Say: let go of, part with.'
+    pt: 'Diga: desfazer-se de.'
+  answer:
+    speaker: protagonist
+    text: 手放[てばな]す
+  items:
+  - te-shimau-farewell
+- type: prompt
+  ask:
+    en: 'Say: inherit, take on.'
+    pt: 'Diga: herdar, receber.'
+  answer:
+    speaker: protagonist
+    text: 受[う]け継[つ]ぐ
+  items:
+  - uketsugu
+- type: prompt
+  ask:
+    en: 'Say: keep living there.'
+    pt: 'Diga: continuar morando.'
+  answer:
+    speaker: protagonist
+    text: 住[す]み続[つづ]ける
+  items:
+  - sumi-tsuzukeru
+- type: narrator
+  text:
+    en: '«終活[しゅうかつ]» — preparing for the end of life — is openly discussed in Japan: writing a will, sorting belongings, deciding where to live. Japan has millions of «空[あ]き家[や]», empty houses, as owners
+      age and children live in cities; towns encourage new residents to take them over.'
+    pt: 'O «終活[しゅうかつ]» — preparar o fim da vida — é discutido abertamente no Japão: escrever testamento, organizar os pertences, decidir onde morar. O Japão tem milhões de «空[あ]き家[や]», casas vazias, porque
+      os donos envelhecem e os filhos moram nas cidades; as prefeituras incentivam novos moradores a assumi-las.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil se evita falar de testamento com a avó. A senhora Suzuki fala com calma — e entrega a horta como quem entrega uma história.
+- type: prompt
+  ask:
+    en: 'Once more: say “inheritance (process)”.'
+    pt: 'Mais uma vez: diga “herança (processo), sucessão”.'
+  answer:
+    speaker: protagonist
+    text: 相続[そうぞく]
+  items:
+  - souzoku
+- type: prompt
+  ask:
+    en: 'Once more: say “estate, legacy”.'
+    pt: 'Mais uma vez: diga “patrimônio deixado, herança”.'
+  answer:
+    speaker: protagonist
+    text: 遺産[いさん]
+  items:
+  - isan
+- type: prompt
+  ask:
+    en: 'Once more: say “tidying, sorting out”.'
+    pt: 'Mais uma vez: diga “arrumação”.'
+  answer:
+    speaker: protagonist
+    text: 片付[かたづ]け
+  items:
+  - katazuke
+- type: prompt
+  ask:
+    en: 'Once more: say “preparing for the end of life”.'
+    pt: 'Mais uma vez: diga “preparação para o fim da vida”.'
+  answer:
+    speaker: protagonist
+    text: 終活[しゅうかつ]
+  items:
+  - shuukatsu
+- type: prompt
+  ask:
+    en: 'Once more: say “empty house”.'
+    pt: 'Mais uma vez: diga “casa vazia”.'
+  answer:
+    speaker: protagonist
+    text: 空[あ]き家[や]
+  items:
+  - akiya
+- type: prompt
+  ask:
+    en: 'Once more: say “will (document)”.'
+    pt: 'Mais uma vez: diga “testamento”.'
+  answer:
+    speaker: protagonist
+    text: 遺言[ゆいごん] 書[しょ]
+  items:
+  - yuigonsho
+- type: prompt
+  ask:
+    en: 'Once more: say “keepsakes”.'
+    pt: 'Mais uma vez: diga “objetos de recordação”.'
+  answer:
+    speaker: protagonist
+    text: 思[おも]い出[で] の 品[しな]
+  items:
+  - omoide-no-shina
+- type: prompt
+  ask:
+    en: 'Once more: say “let go of, part with”.'
+    pt: 'Mais uma vez: diga “desfazer-se de”.'
+  answer:
+    speaker: protagonist
+    text: 手放[てばな]す
+  items:
+  - te-shimau-farewell
+- type: prompt
+  ask:
+    en: 'Once more: say “inherit, take on”.'
+    pt: 'Mais uma vez: diga “herdar, receber”.'
+  answer:
+    speaker: protagonist
+    text: 受[う]け継[つ]ぐ
+  items:
+  - uketsugu
+- type: prompt
+  ask:
+    en: 'Once more: say “keep living (there)”.'
+    pt: 'Mais uma vez: diga “continuar morando”.'
+  answer:
+    speaker: protagonist
+    text: 住[す]み続[つづ]ける
+  items:
+  - sumi-tsuzukeru
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Bashō (poet) — and “haiku — and “season word — and “reading aloud — and “an old pond — — and “a frog jumps in — and “the sound of water — and “five-seven-five — and “cutting word (や, かな)
+      — and “stillness — and “public briefing — and “budget”.'
+    pt: 'Diga: “Bashō (poeta) — e “haicai — e “palavra de estação — e “leitura em voz alta — e “um velho tanque — — e “um sapo pula — e “o som da água — e “cinco-sete-cinco — e “palavra de corte (や, かな)
+      — e “quietude — e “reunião de esclarecimento — e “orçamento”.'
+  answer:
+    speaker: protagonist
+    text: 芭蕉[ばしょう] … 俳句[はいく] … 季語[きご] … 朗読[ろうどく] … 古池[ふるいけ] や … 蛙[かわず] 飛[と]び込[こ]む … 水[みず] の 音[おと] … 五七五[ごしちご] … 切[き]れ字[じ] … 静[しず]けさ … 説明会[せつめいかい] … 予算[よさん]
+  items:
+  - bashou
+  - haiku
+  - kigo
+  - roudoku
+  - furuike
+  - kawazu
+  - mizu-no-oto
+  - go-shichi-go
+  - kireji
+  - shizukesa
+  - setsumeikai
+  - yosan
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “council member, legislator — and “speaking (in a meeting) — and “allow me to propose — and “the people directly concerned — and “voice (opinion) — and “reflecting (opinions in policy) — and
+      “Japanese class (for residents) — and “concretely — and “holiday house — and “settling up (the bill) — and “barbecue — and “each, apiece”.'
+    pt: 'Diga: “vereador, parlamentar — e “fala, intervenção — e “permitam-me propor — e “os diretamente envolvidos — e “voz (opinião) — e “refletir (opiniões em políticas) — e “aula de japonês (para moradores)
+      — e “concretamente — e “casa de veraneio — e “acerto de contas — e “churrasco — e “cada um, por pessoa”.'
+  answer:
+    speaker: protagonist
+    text: 議員[ぎいん] … 発言[はつげん] … 提案[ていあん] させて いただきます … 当事者[とうじしゃ] … 声[こえ] … 反映[はんえい] … 日本語[にほんご] 教室[きょうしつ] … 具体的[ぐたいてき] に … 別荘[べっそう] … 精算[せいさん] … バーベキュー … 〜ずつ
+  items:
+  - giin
+  - hatsugen
+  - teian-review
+  - touji-sha
+  - koe
+  - hanei
+  - nihongo-kyoushitsu
+  - gutaiteki-ni
+  - bessou
+  - seisan
+  - baabekyuu
+  - zutsu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “10,000 yen each — and “receipt — and “pay for someone (to be paid back) — and “the most — and “children pay half — and “calculation — and “opening a business — and “loan, financing — and
+      “risk — and “regular customer — and “unless (you) do… — and “unless you try”.'
+    pt: 'Diga: “10 mil ienes cada um — e “recibo — e “pagar adiantado por alguém — e “o máximo, a maior parte — e “criança paga metade — e “cálculo, conta — e “abrir um negócio — e “financiamento — e “risco
+      — e “cliente fiel — e “a não ser que…, sem… — e “sem tentar”.'
+  answer:
+    speaker: protagonist
+    text: 一人[ひとり] 一万円[いちまんえん] ずつ … 領収書[りょうしゅうしょ] … 立[た]て替[か]える … 一番[いちばん] 多[おお]く … 子供[こども] は 半額[はんがく] … 計算[けいさん] … 開業[かいぎょう] … 融資[ゆうし] … リスク … 常連[じょうれん] … 〜ない こと に は … やって みない こと に は
+  items:
+  - hitori-ichiman-zutsu
+  - ryoushuusho
+  - tatekae
+  - ichiban-ooku
+  - kodomo-wa-hangaku
+  - keisan
+  - kaigyou
+  - yuushi
+  - risuku
+  - jouren
+  - nai-koto-niwa
+  - yatte-minai-koto-niwa
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “business plan — and “funds, capital — and “clientele — and “stock purchasing — and “competition (rival businesses) — and “retirement — and “certificate of thanks — and “memories — and “for
+      a long time — and “guidance, teaching — and “from the heart — and “we hereby express our gratitude”.'
+    pt: 'Diga: “plano de negócios — e “capital — e “clientela — e “compra de mercadoria — e “concorrência — e “aposentadoria (de uma atividade) — e “certificado de agradecimento — e “lembranças — e “por
+      muito tempo — e “orientação, ensino — e “do fundo do coração — e “aqui expressamos nossa gratidão”.'
+  answer:
+    speaker: protagonist
+    text: 事業[じぎょう] 計画[けいかく] 書[しょ] … 資金[しきん] … 顧客[こきゃく] … 仕入[しい]れ … 競合[きょうごう] … 引退[いんたい] … 感謝状[かんしゃじょう] … 思[おも]い出[で] … 長[なが]い 間[あいだ] … ご指導[しどう] … 心[こころ] から … ここ に 感謝[かんしゃ] の 意[い] を 表[ひょう]します
+  items:
+  - jigyou-keikakusho
+  - shikin
+  - kokyaku
+  - shiire
+  - kyougou
+  - intai
+  - kanshajou
+  - omoide
+  - nagai-aida
+  - shidou
+  - kokoro-kara
+  - hyoushou
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “carry on, take over — and “we will never forget — and “thank you for all your years of work — and “fewer children, more elderly — and “care (for the elderly) — and “as (one thing changes,
+      another does) — and “as (one) gets older — and “population — and “decrease — and “increase — and “school closure — and “birth rate”.'
+    pt: 'Diga: “dar continuidade — e “nunca vamos esquecer — e “obrigado por todos esses anos — e “menos crianças, mais idosos — e “cuidado (de idosos) — e “à medida que — e “à medida que envelhece — e
+      “população — e “diminuir — e “aumentar — e “fechamento de escola — e “taxa de natalidade”.'
+  answer:
+    speaker: protagonist
+    text: 引[ひ]き継[つ]ぐ … 決[けっ]して 忘[わす]れません … 長[なが]い 間[あいだ] お疲[つか]れさま でした … 少子[しょうし] 高齢化[こうれいか] … 介護[かいご] … 〜に つれて … 年[とし] を 取[と]る に つれて … 人口[じんこう] … 減[へ]る … 増[ふ]える … 廃校[はいこう] … 出生率[しゅっしょうりつ]
+  items:
+  - hiki-tsugu
+  - wasuremasen
+  - otsukaresama-retire
+  - shoushi-koureika
+  - kaigo
+  - ni-tsurete
+  - toshi-wo-toru-ni-tsurete
+  - jinkou
+  - heru
+  - fueru
+  - haikou
+  - shussei-ritsu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “care home — and “went (plain) — and “saw (plain) — and “ate (plain) — and “did (plain) — and “came (plain) — and “won (plain) — and “lost (plain) — and “league — and “the opponent — and “(they)
+      were strong — and “cheering, support”.'
+    pt: 'Diga: “casa de repouso — e “fui (simples) — e “vi (simples) — e “comi (simples) — e “fiz (simples) — e “vim (simples) — e “ganhamos (simples) — e “perdemos (simples) — e “liga — e “o adversário
+      — e “(eles) eram fortes — e “torcida, apoio”.'
+  answer:
+    speaker: protagonist
+    text: 介護[かいご] 施設[しせつ] … 行[い]った … 見[み]た … 食[た]べた … した … 来[き]た … 勝[か]った … 負[ま]けた … リーグ … 相手[あいて] … 強[つよ]かった … 応援[おうえん]
+  items:
+  - kaigo-shisetsu
+  - itta
+  - mita
+  - tabeta
+  - shita
+  - kita
+  - katta
+  - maketa
+  - riigu
+  - aite
+  - tsuyokatta
+  - ouen
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
