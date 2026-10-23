@@ -1,0 +1,605 @@
+# UNIT ja C1-15 — written by AI (Claude) for Casus; expanded from src/C1-15.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-15
+level: C1
+number: 15
+protagonist: f
+title:
+  en: The specialist
+  pt: O especialista
+situation:
+  en: A pain that won't go away. The local doctor writes you a referral letter for the university hospital — the wait, the tests, the results.
+  pt: Uma dor que não passa. O médico do bairro escreve uma carta de encaminhamento para o hospital universitário — a espera, os exames, os resultados.
+learn_lessons: []
+culture: Referral fee without a letter
+new_items:
+- id: shoukaijou
+  text: 紹介状[しょうかいじょう]
+  meaning:
+    en: referral letter
+    pt: carta de encaminhamento
+- id: daigaku-byouin
+  text: 大学[だいがく] 病院[びょういん]
+  meaning:
+    en: university hospital
+    pt: hospital universitário
+- id: machijikan
+  text: 待[ま]ち時間[じかん]
+  meaning:
+    en: waiting time
+    pt: tempo de espera
+- id: kensa
+  text: 検査[けんさ]
+  meaning:
+    en: test, examination
+    pt: exame
+- id: shidai
+  text: 〜次第[しだい]
+  meaning:
+    en: as soon as; depending on
+    pt: assim que; dependendo de
+- id: kekka-ga-de-shidai
+  text: 結果[けっか] が 出[で] 次第[しだい]
+  meaning:
+    en: as soon as the results are out
+    pt: assim que sair o resultado
+- id: senmon-i
+  text: 専門医[せんもんい]
+  meaning:
+    en: specialist (doctor)
+    pt: médico especialista
+- id: shoshinryou
+  text: 初診料[しょしんりょう]
+  meaning:
+    en: first-visit fee
+    pt: taxa de primeira consulta
+  rare: true
+- id: yoyaku-review
+  text: 予約[よやく] を 取[と]る
+  meaning:
+    en: make an appointment
+    pt: marcar consulta
+- id: kakaritsukei
+  text: かかりつけ 医[い]
+  meaning:
+    en: family doctor
+    pt: médico de família
+reviews:
+- item: kaisha
+  from: A1-08
+- item: kachou
+  from: A1-08
+- item: tsuuyaku
+  from: A1-08
+- item: kyou-kara
+  from: A1-08
+- item: hairimasu
+  from: A1-08
+- item: shigoto
+  from: A1-08
+- item: portugarugo
+  from: A1-08
+- item: eigo
+  from: A1-08
+- item: ganbatte
+  from: A1-08
+- item: onegaishimasu-yoroshiku
+  from: A1-08
+- item: shiawase
+  from: B1-12
+- item: ikigai
+  from: B1-12
+- item: sutoresu
+  from: B1-12
+- item: yutori
+  from: B1-12
+- item: ba
+  from: B1-12
+- item: hatarakeba
+  from: B1-12
+- item: yasumeba
+  from: B1-12
+- item: hatake
+  from: B1-12
+- item: sodateru
+  from: B1-12
+- item: mainichi-tanoshii
+  from: B1-12
+- item: chiisana
+  from: B1-12
+- item: pawahara
+  from: B2-14
+- item: soudan
+  from: B2-14
+- item: saserareru
+  from: B2-14
+- item: yarinaosaserareta
+  from: B2-14
+- item: donarareru
+  from: B2-14
+- item: madoguchi-soudan
+  from: B2-14
+- item: kiroku
+  from: B2-14
+- item: hitori-de
+  from: B2-14
+- item: jinji
+  from: B2-14
+- item: hou-de
+  from: B2-14
+- item: shourai
+  from: B2-30
+- item: kikoku
+  from: B2-30
+- item: nokoru
+  from: B2-30
+- item: mayou
+  from: B2-30
+- item: kesshin
+  from: B2-30
+- item: eijuu
+  from: B2-30
+- item: ryouhou-no-kuni
+  from: B2-30
+- item: hashi-ni-naru
+  from: B2-30
+- item: isshoni-iru
+  from: B2-30
+- item: shinpai-shinaide
+  from: B2-30
+- item: shaken
+  from: C1-08
+- item: chuukosha
+  from: C1-08
+- item: soukou-kyori
+  from: C1-08
+- item: tenken
+  from: C1-08
+- item: zaru-wo-enai
+  from: C1-08
+- item: kaezaru-wo-enai
+  from: C1-08
+- item: mitsumori-review
+  from: C1-08
+- item: buhin
+  from: C1-08
+- item: kyouseihoken
+  from: C1-08
+- item: kaikae
+  from: C1-08
+- item: taue
+  from: C1-12
+- item: tanbo
+  from: C1-12
+- item: nouka
+  from: C1-12
+- item: tetsudai
+  from: C1-12
+- item: mono-da
+  from: C1-12
+- item: yatta-mono-da
+  from: C1-12
+- item: nae
+  from: C1-12
+- item: doro
+  from: C1-12
+- item: koshi-ga-itai
+  from: C1-12
+- item: kikai-de
+  from: C1-12
+- item: aki-ni-wa
+  from: C1-12
+- item: demo
+  from: C1-14
+- item: youkyuu
+  from: C1-14
+- item: shomei-petition
+  from: C1-14
+- item: wo-megutte
+  from: C1-14
+- item: saikadou
+  from: C1-14
+- item: juumin-touhyou
+  from: C1-14
+- item: heiwa-teki
+  from: C1-14
+- item: iken-ga-wakareru
+  from: C1-14
+- item: shuchou-suru
+  from: C1-14
+- item: sanka-shite-mo-ii
+  from: C1-14
+steps:
+- type: narrator
+  text:
+    en: A pain that won't go away. The local doctor writes you a referral letter for the university hospital — the wait, the tests, the results. Listen to the conversation; you don't need to understand
+      it yet.
+    pt: Uma dor que não passa. O médico do bairro escreve uma carta de encaminhamento para o hospital universitário — a espera, os exames, os resultados. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: isha
+    text: 念[ねん] の ため、 大学[だいがく] 病院[びょういん] で 詳[くわ]しい 検査[けんさ] を 受[う]けて ください。 紹介状[しょうかいじょう] を 書[か]きます。
+    meaning:
+      en: To be safe, please get detailed tests at the university hospital. I'll write you a referral.
+      pt: Por precaução, faça exames detalhados no hospital universitário. Vou escrever um encaminhamento.
+  - speaker: protagonist
+    text: 紹介状[しょうかいじょう] が ない と、 行[い]けない ん です か。
+    meaning:
+      en: Can't I go without a referral?
+      pt: Sem encaminhamento não dá para ir?
+  - speaker: isha
+    text: 行[い]けます が、 紹介状[しょうかいじょう] なし だ と 特別[とくべつ] な 料金[りょうきん] が かかります。 それに、 かかりつけ 医[い] から の 情報[じょうほう] が ある と、 早[はや]い です。
+    meaning:
+      en: You can, but without one there's a special extra fee. And with information from your family doctor, it's quicker.
+      pt: Dá, mas sem encaminhamento cobram uma taxa extra. E com as informações do médico de família, é mais rápido.
+  - speaker: protagonist
+    text: 待[ま]ち時間[じかん] は 長[なが]い です か。
+    meaning:
+      en: Is the wait long?
+      pt: A espera é longa?
+  - speaker: isha
+    text: 予約[よやく] を 取[と]って も、 二[に]、 三時間[さんじかん] 待[ま]つ こと も あります。 本[ほん] を 持[も]って 行[い]って ください。
+    meaning:
+      en: Even with an appointment you may wait two or three hours. Take a book.
+      pt: Mesmo com hora marcada, às vezes se espera duas, três horas. Leve um livro.
+  - speaker: protagonist
+    text: 結果[けっか] は いつ わかります か。
+    meaning:
+      en: When will I know the results?
+      pt: Quando saem os resultados?
+  - speaker: isha
+    text: 検査[けんさ] の 種類[しゅるい] 次第[しだい] です。 結果[けっか] が 出[で] 次第[しだい]、 専門医[せんもんい] から 説明[せつめい] が あります。
+    meaning:
+      en: It depends on the type of test. As soon as the results are out, the specialist will explain.
+      pt: Depende do tipo de exame. Assim que sair o resultado, o especialista explica.
+  - speaker: protagonist
+    text: わかりました。 少[すこ]し 安心[あんしん] しました。
+    meaning:
+      en: I see. I feel a little relieved.
+      pt: Entendi. Fiquei um pouco mais tranquila.
+- type: prompt
+  ask:
+    en: 'Say: a referral letter.'
+    pt: 'Diga: carta de encaminhamento.'
+  answer:
+    speaker: protagonist
+    text: 紹介状[しょうかいじょう]
+  items:
+  - shoukaijou
+- type: prompt
+  ask:
+    en: 'Say: the university hospital.'
+    pt: 'Diga: o hospital universitário.'
+  answer:
+    speaker: protagonist
+    text: 大学[だいがく] 病院[びょういん]
+  items:
+  - daigaku-byouin
+- type: prompt
+  ask:
+    en: 'Say: your family doctor.'
+    pt: 'Diga: o médico de família.'
+  answer:
+    speaker: protagonist
+    text: かかりつけ 医[い]
+  items:
+  - kakaritsukei
+- type: prompt
+  ask:
+    en: 'Say: a specialist.'
+    pt: 'Diga: um especialista.'
+  answer:
+    speaker: protagonist
+    text: 専門医[せんもんい]
+  items:
+  - senmon-i
+- type: prompt
+  ask:
+    en: 'Say: a test, an examination.'
+    pt: 'Diga: um exame.'
+  answer:
+    speaker: protagonist
+    text: 検査[けんさ]
+  items:
+  - kensa
+- type: prompt
+  ask:
+    en: 'Say: waiting time.'
+    pt: 'Diga: tempo de espera.'
+  answer:
+    speaker: protagonist
+    text: 待[ま]ち時間[じかん]
+  items:
+  - machijikan
+- type: prompt
+  ask:
+    en: 'Say: make an appointment.'
+    pt: 'Diga: marcar consulta.'
+  answer:
+    speaker: protagonist
+    text: 予約[よやく] を 取[と]る
+  items:
+  - yoyaku-review
+- type: narrator
+  text:
+    en: '«〜次第[しだい]» has two meanings. After a verb stem: as soon as — «結果[けっか] が 出[で] 次第[しだい]», as soon as the results are out. After a noun: depending on — «検査[けんさ] の 種類[しゅるい] 次第[しだい]», depending on the
+      type of test.'
+    pt: '«〜次第[しだい]» tem dois sentidos. Depois do radical do verbo: assim que — «結果[けっか] が 出[で] 次第[しだい]», assim que sair o resultado. Depois de substantivo: dependendo de — «検査[けんさ] の 種類[しゅるい] 次第[しだい]»,
+      depende do tipo de exame.'
+- type: prompt
+  ask:
+    en: 'Say the pattern: as soon as; depending on.'
+    pt: 'Diga o padrão: assim que; dependendo de.'
+  answer:
+    speaker: protagonist
+    text: 〜次第[しだい]
+  items:
+  - shidai
+- type: prompt
+  ask:
+    en: 'Say: as soon as the results are out.'
+    pt: 'Diga: assim que sair o resultado.'
+  answer:
+    speaker: protagonist
+    text: 結果[けっか] が 出[で] 次第[しだい]
+  items:
+  - kekka-ga-de-shidai
+- type: prompt
+  ask:
+    en: 'Say: the first-visit fee.'
+    pt: 'Diga: a taxa de primeira consulta.'
+  answer:
+    speaker: protagonist
+    text: 初診料[しょしんりょう]
+  items:
+  - shoshinryou
+- type: narrator
+  text:
+    en: 'Japan wants patients to see a local clinic first: big hospitals charge an extra fee — several thousand yen — to anyone who comes without a «紹介状[しょうかいじょう]». Waits at university hospitals can be
+      long even with an appointment; your «かかりつけ 医[い]» keeps your history and refers you.'
+    pt: 'O Japão quer que o paciente passe primeiro na clínica do bairro: hospitais grandes cobram uma taxa extra — alguns milhares de ienes — de quem chega sem «紹介状[しょうかいじょう]». A espera nos hospitais universitários
+      pode ser longa mesmo com hora marcada; o seu «かかりつけ 医[い]» guarda o histórico e faz o encaminhamento.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: Parecido com o SUS, que também pede encaminhamento para o especialista. A diferença é que no Japão dá para pular a fila — pagando a taxa extra.
+- type: prompt
+  ask:
+    en: 'Once more: say “referral letter”.'
+    pt: 'Mais uma vez: diga “carta de encaminhamento”.'
+  answer:
+    speaker: protagonist
+    text: 紹介状[しょうかいじょう]
+  items:
+  - shoukaijou
+- type: prompt
+  ask:
+    en: 'Once more: say “university hospital”.'
+    pt: 'Mais uma vez: diga “hospital universitário”.'
+  answer:
+    speaker: protagonist
+    text: 大学[だいがく] 病院[びょういん]
+  items:
+  - daigaku-byouin
+- type: prompt
+  ask:
+    en: 'Once more: say “waiting time”.'
+    pt: 'Mais uma vez: diga “tempo de espera”.'
+  answer:
+    speaker: protagonist
+    text: 待[ま]ち時間[じかん]
+  items:
+  - machijikan
+- type: prompt
+  ask:
+    en: 'Once more: say “test, examination”.'
+    pt: 'Mais uma vez: diga “exame”.'
+  answer:
+    speaker: protagonist
+    text: 検査[けんさ]
+  items:
+  - kensa
+- type: prompt
+  ask:
+    en: 'Once more: say “as soon as; depending on”.'
+    pt: 'Mais uma vez: diga “assim que; dependendo de”.'
+  answer:
+    speaker: protagonist
+    text: 〜次第[しだい]
+  items:
+  - shidai
+- type: prompt
+  ask:
+    en: 'Once more: say “as soon as the results are out”.'
+    pt: 'Mais uma vez: diga “assim que sair o resultado”.'
+  answer:
+    speaker: protagonist
+    text: 結果[けっか] が 出[で] 次第[しだい]
+  items:
+  - kekka-ga-de-shidai
+- type: prompt
+  ask:
+    en: 'Once more: say “specialist (doctor)”.'
+    pt: 'Mais uma vez: diga “médico especialista”.'
+  answer:
+    speaker: protagonist
+    text: 専門医[せんもんい]
+  items:
+  - senmon-i
+- type: prompt
+  ask:
+    en: 'Once more: say “first-visit fee”.'
+    pt: 'Mais uma vez: diga “taxa de primeira consulta”.'
+  answer:
+    speaker: protagonist
+    text: 初診料[しょしんりょう]
+  items:
+  - shoshinryou
+- type: prompt
+  ask:
+    en: 'Once more: say “make an appointment”.'
+    pt: 'Mais uma vez: diga “marcar consulta”.'
+  answer:
+    speaker: protagonist
+    text: 予約[よやく] を 取[と]る
+  items:
+  - yoyaku-review
+- type: prompt
+  ask:
+    en: 'Once more: say “family doctor”.'
+    pt: 'Mais uma vez: diga “médico de família”.'
+  answer:
+    speaker: protagonist
+    text: かかりつけ 医[い]
+  items:
+  - kakaritsukei
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “demonstration, march — and “demand — and “signature (on a petition) — and “over, concerning (a dispute) — and “restart (of a plant) — and “local referendum — and “peacefully — and “opinions
+      are divided — and “assert, speak up for — and “may take part — and “rice planting — and “rice paddy”.'
+    pt: 'Diga: “manifestação, passeata — e “reivindicação — e “assinatura (num abaixo-assinado) — e “em torno de, sobre (uma disputa) — e “religamento (de usina) — e “plebiscito local — e “pacificamente
+      — e “as opiniões se dividem — e “defender, reivindicar — e “pode participar — e “plantio de arroz — e “arrozal”.'
+  answer:
+    speaker: protagonist
+    text: デモ … 要求[ようきゅう] … 署名[しょめい] … 〜を めぐって … 再稼働[さいかどう] … 住民[じゅうみん] 投票[とうひょう] … 平和[へいわ] 的[てき] に … 意見[いけん] が 分[わ]かれる … 主張[しゅちょう] する … 参加[さんか] して も いい … 田植[たう]え … 田[た]んぼ
+  items:
+  - demo
+  - youkyuu
+  - shomei-petition
+  - wo-megutte
+  - saikadou
+  - juumin-touhyou
+  - heiwa-teki
+  - iken-ga-wakareru
+  - shuchou-suru
+  - sanka-shite-mo-ii
+  - taue
+  - tanbo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “farmer, farming family — and “help — and “used to (with nostalgia); that''s how it is — and “we used to do it a lot — and “seedling — and “mud — and “my back hurts — and “by machine — and
+      “in autumn — and “vehicle inspection — and “second-hand car — and “mileage”.'
+    pt: 'Diga: “agricultor, família de agricultores — e “ajuda — e “costumava (com saudade); é assim mesmo — e “a gente fazia muito — e “muda — e “lama — e “minhas costas doem — e “com máquina — e “no outono
+      — e “inspeção veicular — e “carro usado — e “quilometragem”.'
+  answer:
+    speaker: protagonist
+    text: 農家[のうか] … 手伝[てつだ]い … 〜もの だ … よく やった もの だ … 苗[なえ] … 泥[どろ] … 腰[こし] が 痛[いた]い … 機械[きかい] で … 秋[あき] に は … 車検[しゃけん] … 中古車[ちゅうこしゃ] … 走行[そうこう] 距離[きょり]
+  items:
+  - nouka
+  - tetsudai
+  - mono-da
+  - yatta-mono-da
+  - nae
+  - doro
+  - koshi-ga-itai
+  - kikai-de
+  - aki-ni-wa
+  - shaken
+  - chuukosha
+  - soukou-kyori
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “check, inspection — and “have no choice but to — and “have no choice but to replace — and “estimate — and “part (machine) — and “compulsory car insurance — and “replacing (by buying new)
+      — and “the future — and “returning to one''s country — and “stay, remain — and “be torn, hesitate — and “decision, resolve”.'
+    pt: 'Diga: “revisão — e “não ter outra saída senão — e “não ter outra saída senão trocar — e “orçamento — e “peça — e “seguro obrigatório — e “trocar por outro — e “o futuro — e “voltar ao país de origem
+      — e “ficar — e “ficar em dúvida — e “decisão”.'
+  answer:
+    speaker: protagonist
+    text: 点検[てんけん] … 〜ざる を 得[え]ない … 替[か]えざる を 得[え]ない … 見積[みつ]もり … 部品[ぶひん] … 自賠責[じばいせき] 保険[ほけん] … 買[か]い替[か]え … 将来[しょうらい] … 帰国[きこく] … 残[のこ]る … 迷[まよ]う … 決心[けっしん]
+  items:
+  - tenken
+  - zaru-wo-enai
+  - kaezaru-wo-enai
+  - mitsumori-review
+  - buhin
+  - kyouseihoken
+  - kaikae
+  - shourai
+  - kikoku
+  - nokoru
+  - mayou
+  - kesshin
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “permanent residence — and “both countries — and “become a bridge — and “I want to be with (you) — and “don''t worry — and “power harassment — and “consultation, talking it over — and “be
+      made to (against your will) — and “was made to redo it — and “be shouted at — and “help desk (for complaints) — and “record”.'
+    pt: 'Diga: “residência permanente — e “os dois países — e “ser uma ponte — e “quero ficar com (você) — e “não se preocupe — e “assédio moral — e “conversar, pedir conselho — e “ser obrigado a — e “fui
+      obrigado a refazer — e “levar bronca aos gritos — e “canal de denúncia — e “registro”.'
+  answer:
+    speaker: protagonist
+    text: 永住[えいじゅう] … 両方[りょうほう] の 国[くに] … 架[か]け橋[はし] に なる … 一緒[いっしょ] に いたい … 心配[しんぱい] しないで … パワハラ … 相談[そうだん] … 〜させられる … やり直[なお]させられた … 怒鳴[どな]られる … 相談[そうだん] 窓口[まどぐち] … 記録[きろく]
+  items:
+  - eijuu
+  - ryouhou-no-kuni
+  - hashi-ni-naru
+  - isshoni-iru
+  - shinpai-shinaide
+  - pawahara
+  - soudan
+  - saserareru
+  - yarinaosaserareta
+  - donarareru
+  - madoguchi-soudan
+  - kiroku
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “don''t keep it all to yourself — and “personnel, HR — and “by law — and “happy, happiness — and “a reason for living — and “stress — and “room to breathe, ease — and “if (conditional) — and
+      “if you work — and “if you rest — and “vegetable field, garden — and “grow, raise”.'
+    pt: 'Diga: “não guarde tudo sozinho — e “recursos humanos, RH — e “por lei — e “feliz, felicidade — e “razão de viver — e “estresse — e “folga, tranquilidade — e “se (condicional) — e “se trabalhar
+      — e “se descansar — e “horta — e “cultivar, criar”.'
+  answer:
+    speaker: protagonist
+    text: 一人[ひとり] で 抱[かか]え込[こ]まないで … 人事[じんじ] … 法律[ほうりつ] で … 幸[しあわ]せ … 生[い]きがい … ストレス … ゆとり … 〜ば … 働[はたら]けば … 休[やす]めば … 畑[はたけ] … 育[そだ]てる
+  items:
+  - hitori-de
+  - jinji
+  - hou-de
+  - shiawase
+  - ikigai
+  - sutoresu
+  - yutori
+  - ba
+  - hatarakeba
+  - yasumeba
+  - hatake
+  - sodateru
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “every day is fun — and “small, little — and “company — and “section chief — and “interpreter — and “from today — and “join, enter — and “work, job — and “Portuguese (language) — and “English
+      — and “do your best (encouragement) — and “pleased to meet you (very polite)”.'
+    pt: 'Diga: “todo dia é bom — e “pequeno — e “empresa — e “chefe de seção — e “intérprete — e “a partir de hoje — e “entro, começo — e “trabalho — e “português (língua) — e “inglês — e “força! (incentivo)
+      — e “muito prazer (bem formal)”.'
+  answer:
+    speaker: protagonist
+    text: 毎日[まいにち] が 楽[たの]しい … 小[ちい]さな … 会社[かいしゃ] … 課長[かちょう] … 通訳[つうやく] … 今日[きょう] から … 入[はい]ります … 仕事[しごと] … ポルトガル語[ご] … 英語[えいご] … 頑張[がんば]って ください … どうぞ よろしく お願[ねが]いします
+  items:
+  - mainichi-tanoshii
+  - chiisana
+  - kaisha
+  - kachou
+  - tsuuyaku
+  - kyou-kara
+  - hairimasu
+  - shigoto
+  - portugarugo
+  - eigo
+  - ganbatte
+  - onegaishimasu-yoroshiku
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

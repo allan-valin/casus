@@ -1,0 +1,42 @@
+id: C1-11
+protagonist: f
+title: ["A funeral", "Um funeral"]
+situation: ["The old lady from downstairs has died. Mrs Suzuki takes you to the wake: black clothes, an envelope of condolence money, incense.", "A senhora idosa do andar de baixo faleceu. A senhora Suzuki leva você ao velório: roupa preta, um envelope com dinheiro de condolências, incenso."]
+learn: []
+culture: Funeral etiquette
+items:
+  - [tsuya, "通夜[つや]", "wake (night before the funeral)", "velório (na véspera do funeral)"]
+  - [kouden, "香典[こうでん]", "condolence money", "dinheiro de condolências", {rare: true}]
+  - [goshuushousama, "ご愁傷様[しゅうしょうさま] です", "my condolences", "meus pêsames"]
+  - [kono-tabi-wa, "この 度[たび] は", "on this occasion (opening condolences)", "nesta ocasião (abrindo os pêsames)"]
+  - [shoukou, "焼香[しょうこう]", "offering incense", "oferecer incenso", {rare: true}]
+  - [mofuku, "喪服[もふく]", "mourning clothes", "roupa de luto", {rare: true}]
+  - [juzu, "数珠[じゅず]", "Buddhist prayer beads", "rosário budista", {rare: true}]
+  - [izoku, "遺族[いぞく]", "the bereaved family", "a família enlutada", {rare: true}]
+  - [kokoro-yori, "心[こころ] より お悔[く]やみ 申[もう]し上[あ]げます", "my heartfelt condolences", "meus sinceros pêsames"]
+  - [uketsuke, "受付[うけつけ]", "reception desk", "recepção"]
+dialogue:
+  - [suzuki, "通夜[つや] で は 喪服[もふく] を 着[き]て、 数珠[じゅず] を 持[も]って 行[い]きます。", "For the wake you wear mourning clothes and bring prayer beads.", "Para o velório se usa roupa de luto e se leva o rosário budista."]
+  - [protagonist, "香典[こうでん] は どう やって 渡[わた]します か。", "How do I hand over the condolence money?", "Como entrego o dinheiro de condolências?"]
+  - [suzuki, "受付[うけつけ] で 渡[わた]します。 新[あたら]しい お札[さつ] は 使[つか]わない で。 準備[じゅんび] して いた よう に 見[み]える から。", "At the reception desk. Don't use new notes — it looks as if you'd prepared for it.", "Na recepção. Não use nota nova — parece que você já estava preparada."]
+  - [protagonist, "結婚式[けっこんしき] と 反対[はんたい] です ね。", "The opposite of a wedding.", "O contrário do casamento."]
+  - [suzuki, "そう。 遺族[いぞく] の 方[かた] に は「この 度[たび] は ご愁傷様[しゅうしょうさま] です」 と 小[ちい]さい 声[こえ] で。", "Yes. To the family, in a low voice: “Kono tabi wa goshūshōsama desu.”", "Isso. Para a família, em voz baixa: «Kono tabi wa goshūshōsama desu»."]
+  - [protagonist, "この 度[たび] は ご愁傷様[しゅうしょうさま] です。 心[こころ] より お悔[く]やみ 申[もう]し上[あ]げます。", "My condolences on this occasion. My heartfelt sympathy.", "Meus pêsames. Meus sinceros sentimentos."]
+  - [suzuki, "焼香[しょうこう] は 私[わたし] の 後[あと] に、 同[おな]じ よう に して ください。", "For the incense, do it after me, the same way.", "No incenso, faça depois de mim, do mesmo jeito."]
+  - [protagonist, "はい。 …いつも 新聞[しんぶん] を 一緒[いっしょ] に 読[よ]んで くれた 方[かた] でした。", "Yes. …She always read the newspaper with me.", "Sim. …Ela sempre lia o jornal comigo."]
+teach:
+  - ask: ["Say: the wake.", "Diga: o velório.", "通夜[つや]", tsuya]
+  - ask: ["Say: mourning clothes.", "Diga: roupa de luto.", "喪服[もふく]", mofuku]
+  - ask: ["Say: Buddhist prayer beads.", "Diga: o rosário budista.", "数珠[じゅず]", juzu]
+  - ask: ["Say: condolence money.", "Diga: dinheiro de condolências.", "香典[こうでん]", kouden]
+  - ask: ["Say: the bereaved family.", "Diga: a família enlutada.", "遺族[いぞく]", izoku]
+  - note: ["Condolences are fixed formulas, said softly and briefly: «この 度[たび] は ご愁傷様[しゅうしょうさま] です» or, more formal, «心[こころ] より お悔[く]やみ 申[もう]し上[あ]げます». Avoid words that repeat («重[かさ]ね重[がさ]ね», «たびたび»), as they suggest more deaths.", "Os pêsames são fórmulas fixas, ditas baixo e curto: «この 度[たび] は ご愁傷様[しゅうしょうさま] です» ou, mais formal, «心[こころ] より お悔[く]やみ 申[もう]し上[あ]げます». Evite palavras repetidas («重[かさ]ね重[がさ]ね», «たびたび»), que sugerem mais mortes."]
+  - ask: ["Open your condolences: on this occasion…", "Abra os pêsames: nesta ocasião…", "この 度[たび] は", kono-tabi-wa]
+  - build: [goshuushousama, ["です", "ご愁傷様[しゅうしょうさま] です"]]
+  - ask: ["Say: my condolences.", "Diga: meus pêsames.", "ご愁傷様[しゅうしょうさま] です。", goshuushousama]
+  - ask: ["Say the formal version: my heartfelt condolences.", "Diga a versão formal: meus sinceros pêsames.", "心[こころ] より お悔[く]やみ 申[もう]し上[あ]げます。", kokoro-yori]
+  - ask: ["Say: the reception desk.", "Diga: a recepção.", "受付[うけつけ]", uketsuke]
+  - ask: ["Say: offering incense.", "Diga: oferecer incenso.", "焼香[しょうこう]", shoukou]
+  - ask: ["Say: quietly.", "Diga: em silêncio.", "静[しず]か に", shizuka-ni]
+  - note: ["Most Japanese funerals are Buddhist: a «通夜[つや]» wake the evening before, the «葬式[そうしき]» next day. «香典[こうでん]» goes in a black-and-white envelope, in used notes; at the altar you offer a pinch of incense, «焼香[しょうこう]», bow, and follow what others do.", "A maioria dos funerais japoneses é budista: o velório «通夜[つや]» na véspera, à noite, o «葬式[そうしき]» no dia seguinte. O «香典[こうでん]» vai num envelope preto e branco, em notas usadas; no altar você oferece uma pitada de incenso, «焼香[しょうこう]», faz uma reverência e segue o que os outros fazem."]
+  - pt_only: "No Brasil o velório é abraço e choro junto. No Japão é sóbrio e silencioso — a fórmula baixinha e a reverência dizem tudo."

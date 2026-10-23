@@ -1,0 +1,639 @@
+# UNIT ja C1-11 — written by AI (Claude) for Casus; expanded from src/C1-11.yml by tools/expand_unit.py. Edit the source.
+
+id: C1-11
+level: C1
+number: 11
+protagonist: f
+title:
+  en: A funeral
+  pt: Um funeral
+situation:
+  en: 'The old lady from downstairs has died. Mrs Suzuki takes you to the wake: black clothes, an envelope of condolence money, incense.'
+  pt: 'A senhora idosa do andar de baixo faleceu. A senhora Suzuki leva você ao velório: roupa preta, um envelope com dinheiro de condolências, incenso.'
+learn_lessons: []
+culture: Funeral etiquette
+new_items:
+- id: tsuya
+  text: 通夜[つや]
+  meaning:
+    en: wake (night before the funeral)
+    pt: velório (na véspera do funeral)
+- id: kouden
+  text: 香典[こうでん]
+  meaning:
+    en: condolence money
+    pt: dinheiro de condolências
+  rare: true
+- id: goshuushousama
+  text: ご愁傷様[しゅうしょうさま] です
+  meaning:
+    en: my condolences
+    pt: meus pêsames
+- id: kono-tabi-wa
+  text: この 度[たび] は
+  meaning:
+    en: on this occasion (opening condolences)
+    pt: nesta ocasião (abrindo os pêsames)
+- id: shoukou
+  text: 焼香[しょうこう]
+  meaning:
+    en: offering incense
+    pt: oferecer incenso
+  rare: true
+- id: mofuku
+  text: 喪服[もふく]
+  meaning:
+    en: mourning clothes
+    pt: roupa de luto
+  rare: true
+- id: juzu
+  text: 数珠[じゅず]
+  meaning:
+    en: Buddhist prayer beads
+    pt: rosário budista
+  rare: true
+- id: izoku
+  text: 遺族[いぞく]
+  meaning:
+    en: the bereaved family
+    pt: a família enlutada
+  rare: true
+- id: kokoro-yori
+  text: 心[こころ] より お悔[く]やみ 申[もう]し上[あ]げます
+  meaning:
+    en: my heartfelt condolences
+    pt: meus sinceros pêsames
+- id: uketsuke
+  text: 受付[うけつけ]
+  meaning:
+    en: reception desk
+    pt: recepção
+reviews:
+- item: irasshaimase
+  from: A1-04
+- item: kore-kudasai
+  from: A1-04
+- item: kudasai
+  from: A1-04
+- item: atatamemasu-ka
+  from: A1-04
+- item: onegaishimasu
+  from: A1-04
+- item: fukuro
+  from: A1-04
+- item: irimasen
+  from: A1-04
+- item: ikura
+  from: A1-04
+- item: en
+  from: A1-04
+- item: hyaku
+  from: A1-04
+- item: kaado
+  from: A1-04
+- item: arigatou-gozaimashita
+  from: A1-04
+- item: kekkonshiki
+  from: B1-08
+- item: hirouen
+  from: B1-08
+- item: goshuugi
+  from: B1-08
+- item: fuutou
+  from: B1-08
+- item: shinsatsu
+  from: B1-08
+- item: ireru
+  from: B1-08
+- item: sanman-en
+  from: B1-08
+- item: guusuu
+  from: B1-08
+- item: wakareru-imi
+  from: B1-08
+- item: hikidemono
+  from: B1-08
+- item: omedetou-gozaimasu
+  from: B1-08
+- item: odenwa
+  from: B2-10
+- item: moushiwake-gozaimasen
+  from: B2-10
+- item: dengon
+  from: B2-10
+- item: seki-wo-hazushite
+  from: B2-10
+- item: ukagaimasu
+  from: B2-10
+- item: moushitsutaemasu
+  from: B2-10
+- item: orikaeshi
+  from: B2-10
+- item: osore-irimasu-ga
+  from: B2-10
+- item: renrakusaki-ukagau
+  from: B2-10
+- item: kashikomarimashita
+  from: B2-10
+- item: taiko
+  from: B2-26
+- item: renshuu
+  from: B2-26
+- item: rizumu
+  from: B2-26
+- item: tame-ni
+  from: B2-26
+- item: jouzu-ni-naru-tame-ni
+  from: B2-26
+- item: bachi
+  from: B2-26
+- item: kakegoe
+  from: B2-26
+- item: shisei
+  from: B2-26
+- item: kokyuu
+  from: B2-26
+- item: awaseru
+  from: B2-26
+- item: onegai-shimasu-start
+  from: B2-26
+- item: souon
+  from: C1-04
+- item: kujou
+  from: C1-04
+- item: kanri-gaisha
+  from: C1-04
+- item: harigami
+  from: C1-04
+- item: kanenai
+  from: C1-04
+- item: toraburu-ni-nari-kanenai
+  from: C1-04
+- item: kinjo
+  from: C1-04
+- item: ki-wo-tsukemasu-review
+  from: C1-04
+- item: kanri-kiyaku
+  from: C1-04
+- item: yoru-juuji-ikou
+  from: C1-04
+- item: shaken
+  from: C1-08
+- item: chuukosha
+  from: C1-08
+- item: soukou-kyori
+  from: C1-08
+- item: tenken
+  from: C1-08
+- item: zaru-wo-enai
+  from: C1-08
+- item: kaezaru-wo-enai
+  from: C1-08
+- item: mitsumori-review
+  from: C1-08
+- item: buhin
+  from: C1-08
+- item: kyouseihoken
+  from: C1-08
+- item: kaikae
+  from: C1-08
+- item: shussan-iwai
+  from: C1-10
+- item: omiyamairi
+  from: C1-10
+- item: akachan
+  from: C1-10
+- item: uchiiwai
+  from: C1-10
+- item: zu-ni
+  from: C1-10
+- item: nezu-ni
+  from: C1-10
+- item: dakko
+  from: C1-10
+- item: kawaii-review
+  from: C1-10
+- item: omedetou-gozaimasu-birth
+  from: C1-10
+- item: nazuke
+  from: C1-10
+- item: shizuka-ni
+  from: A1-14
+steps:
+- type: narrator
+  text:
+    en: 'The old lady from downstairs has died. Mrs Suzuki takes you to the wake: black clothes, an envelope of condolence money, incense. Listen to the conversation; you don''t need to understand it yet.'
+    pt: 'A senhora idosa do andar de baixo faleceu. A senhora Suzuki leva você ao velório: roupa preta, um envelope com dinheiro de condolências, incenso. Escute a conversa; ainda não precisa entender.'
+- type: dialogue
+  lines:
+  - speaker: suzuki
+    text: 通夜[つや] で は 喪服[もふく] を 着[き]て、 数珠[じゅず] を 持[も]って 行[い]きます。
+    meaning:
+      en: For the wake you wear mourning clothes and bring prayer beads.
+      pt: Para o velório se usa roupa de luto e se leva o rosário budista.
+  - speaker: protagonist
+    text: 香典[こうでん] は どう やって 渡[わた]します か。
+    meaning:
+      en: How do I hand over the condolence money?
+      pt: Como entrego o dinheiro de condolências?
+  - speaker: suzuki
+    text: 受付[うけつけ] で 渡[わた]します。 新[あたら]しい お札[さつ] は 使[つか]わない で。 準備[じゅんび] して いた よう に 見[み]える から。
+    meaning:
+      en: At the reception desk. Don't use new notes — it looks as if you'd prepared for it.
+      pt: Na recepção. Não use nota nova — parece que você já estava preparada.
+  - speaker: protagonist
+    text: 結婚式[けっこんしき] と 反対[はんたい] です ね。
+    meaning:
+      en: The opposite of a wedding.
+      pt: O contrário do casamento.
+  - speaker: suzuki
+    text: そう。 遺族[いぞく] の 方[かた] に は「この 度[たび] は ご愁傷様[しゅうしょうさま] です」 と 小[ちい]さい 声[こえ] で。
+    meaning:
+      en: 'Yes. To the family, in a low voice: “Kono tabi wa goshūshōsama desu.”'
+      pt: 'Isso. Para a família, em voz baixa: «Kono tabi wa goshūshōsama desu».'
+  - speaker: protagonist
+    text: この 度[たび] は ご愁傷様[しゅうしょうさま] です。 心[こころ] より お悔[く]やみ 申[もう]し上[あ]げます。
+    meaning:
+      en: My condolences on this occasion. My heartfelt sympathy.
+      pt: Meus pêsames. Meus sinceros sentimentos.
+  - speaker: suzuki
+    text: 焼香[しょうこう] は 私[わたし] の 後[あと] に、 同[おな]じ よう に して ください。
+    meaning:
+      en: For the incense, do it after me, the same way.
+      pt: No incenso, faça depois de mim, do mesmo jeito.
+  - speaker: protagonist
+    text: はい。 …いつも 新聞[しんぶん] を 一緒[いっしょ] に 読[よ]んで くれた 方[かた] でした。
+    meaning:
+      en: Yes. …She always read the newspaper with me.
+      pt: Sim. …Ela sempre lia o jornal comigo.
+- type: prompt
+  ask:
+    en: 'Say: the wake.'
+    pt: 'Diga: o velório.'
+  answer:
+    speaker: protagonist
+    text: 通夜[つや]
+  items:
+  - tsuya
+- type: prompt
+  ask:
+    en: 'Say: mourning clothes.'
+    pt: 'Diga: roupa de luto.'
+  answer:
+    speaker: protagonist
+    text: 喪服[もふく]
+  items:
+  - mofuku
+- type: prompt
+  ask:
+    en: 'Say: Buddhist prayer beads.'
+    pt: 'Diga: o rosário budista.'
+  answer:
+    speaker: protagonist
+    text: 数珠[じゅず]
+  items:
+  - juzu
+- type: prompt
+  ask:
+    en: 'Say: condolence money.'
+    pt: 'Diga: dinheiro de condolências.'
+  answer:
+    speaker: protagonist
+    text: 香典[こうでん]
+  items:
+  - kouden
+- type: prompt
+  ask:
+    en: 'Say: the bereaved family.'
+    pt: 'Diga: a família enlutada.'
+  answer:
+    speaker: protagonist
+    text: 遺族[いぞく]
+  items:
+  - izoku
+- type: narrator
+  text:
+    en: 'Condolences are fixed formulas, said softly and briefly: «この 度[たび] は ご愁傷様[しゅうしょうさま] です» or, more formal, «心[こころ] より お悔[く]やみ 申[もう]し上[あ]げます». Avoid words that repeat («重[かさ]ね重[がさ]ね», «たびたび»), as
+      they suggest more deaths.'
+    pt: 'Os pêsames são fórmulas fixas, ditas baixo e curto: «この 度[たび] は ご愁傷様[しゅうしょうさま] です» ou, mais formal, «心[こころ] より お悔[く]やみ 申[もう]し上[あ]げます». Evite palavras repetidas («重[かさ]ね重[がさ]ね», «たびたび»), que sugerem
+      mais mortes.'
+- type: prompt
+  ask:
+    en: 'Open your condolences: on this occasion…'
+    pt: 'Abra os pêsames: nesta ocasião…'
+  answer:
+    speaker: protagonist
+    text: この 度[たび] は
+  items:
+  - kono-tabi-wa
+- type: buildup
+  item: goshuushousama
+  parts:
+  - です
+  - ご愁傷様[しゅうしょうさま] です
+- type: prompt
+  ask:
+    en: 'Say: my condolences.'
+    pt: 'Diga: meus pêsames.'
+  answer:
+    speaker: protagonist
+    text: ご愁傷様[しゅうしょうさま] です。
+  items:
+  - goshuushousama
+- type: prompt
+  ask:
+    en: 'Say the formal version: my heartfelt condolences.'
+    pt: 'Diga a versão formal: meus sinceros pêsames.'
+  answer:
+    speaker: protagonist
+    text: 心[こころ] より お悔[く]やみ 申[もう]し上[あ]げます。
+  items:
+  - kokoro-yori
+- type: prompt
+  ask:
+    en: 'Say: the reception desk.'
+    pt: 'Diga: a recepção.'
+  answer:
+    speaker: protagonist
+    text: 受付[うけつけ]
+  items:
+  - uketsuke
+- type: prompt
+  ask:
+    en: 'Say: offering incense.'
+    pt: 'Diga: oferecer incenso.'
+  answer:
+    speaker: protagonist
+    text: 焼香[しょうこう]
+  items:
+  - shoukou
+- type: prompt
+  ask:
+    en: 'Say: quietly.'
+    pt: 'Diga: em silêncio.'
+  answer:
+    speaker: protagonist
+    text: 静[しず]か に
+  items:
+  - shizuka-ni
+- type: narrator
+  text:
+    en: 'Most Japanese funerals are Buddhist: a «通夜[つや]» wake the evening before, the «葬式[そうしき]» next day. «香典[こうでん]» goes in a black-and-white envelope, in used notes; at the altar you offer a pinch of
+      incense, «焼香[しょうこう]», bow, and follow what others do.'
+    pt: 'A maioria dos funerais japoneses é budista: o velório «通夜[つや]» na véspera, à noite, o «葬式[そうしき]» no dia seguinte. O «香典[こうでん]» vai num envelope preto e branco, em notas usadas; no altar você oferece
+      uma pitada de incenso, «焼香[しょうこう]», faz uma reverência e segue o que os outros fazem.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil o velório é abraço e choro junto. No Japão é sóbrio e silencioso — a fórmula baixinha e a reverência dizem tudo.
+- type: prompt
+  ask:
+    en: 'Once more: say “wake (night before the funeral)”.'
+    pt: 'Mais uma vez: diga “velório (na véspera do funeral)”.'
+  answer:
+    speaker: protagonist
+    text: 通夜[つや]
+  items:
+  - tsuya
+- type: prompt
+  ask:
+    en: 'Once more: say “condolence money”.'
+    pt: 'Mais uma vez: diga “dinheiro de condolências”.'
+  answer:
+    speaker: protagonist
+    text: 香典[こうでん]
+  items:
+  - kouden
+- type: prompt
+  ask:
+    en: 'Once more: say “my condolences”.'
+    pt: 'Mais uma vez: diga “meus pêsames”.'
+  answer:
+    speaker: protagonist
+    text: ご愁傷様[しゅうしょうさま] です
+  items:
+  - goshuushousama
+- type: prompt
+  ask:
+    en: 'Once more: say “on this occasion (opening condolences)”.'
+    pt: 'Mais uma vez: diga “nesta ocasião (abrindo os pêsames)”.'
+  answer:
+    speaker: protagonist
+    text: この 度[たび] は
+  items:
+  - kono-tabi-wa
+- type: prompt
+  ask:
+    en: 'Once more: say “offering incense”.'
+    pt: 'Mais uma vez: diga “oferecer incenso”.'
+  answer:
+    speaker: protagonist
+    text: 焼香[しょうこう]
+  items:
+  - shoukou
+- type: prompt
+  ask:
+    en: 'Once more: say “mourning clothes”.'
+    pt: 'Mais uma vez: diga “roupa de luto”.'
+  answer:
+    speaker: protagonist
+    text: 喪服[もふく]
+  items:
+  - mofuku
+- type: prompt
+  ask:
+    en: 'Once more: say “Buddhist prayer beads”.'
+    pt: 'Mais uma vez: diga “rosário budista”.'
+  answer:
+    speaker: protagonist
+    text: 数珠[じゅず]
+  items:
+  - juzu
+- type: prompt
+  ask:
+    en: 'Once more: say “the bereaved family”.'
+    pt: 'Mais uma vez: diga “a família enlutada”.'
+  answer:
+    speaker: protagonist
+    text: 遺族[いぞく]
+  items:
+  - izoku
+- type: prompt
+  ask:
+    en: 'Once more: say “my heartfelt condolences”.'
+    pt: 'Mais uma vez: diga “meus sinceros pêsames”.'
+  answer:
+    speaker: protagonist
+    text: 心[こころ] より お悔[く]やみ 申[もう]し上[あ]げます
+  items:
+  - kokoro-yori
+- type: prompt
+  ask:
+    en: 'Once more: say “reception desk”.'
+    pt: 'Mais uma vez: diga “recepção”.'
+  answer:
+    speaker: protagonist
+    text: 受付[うけつけ]
+  items:
+  - uketsuke
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “gift for a birth — and “baby''s first shrine visit — and “baby — and “return gift (from the family) — and “without (doing) — and “without sleeping — and “holding (a baby) — and “cute — and
+      “congratulations on the birth — and “naming (a baby) — and “vehicle inspection”.'
+    pt: 'Diga: “presente de nascimento — e “primeira visita do bebê ao santuário — e “bebê — e “lembrança de retribuição (da família) — e “sem (fazer) — e “sem dormir — e “colo — e “fofo — e “parabéns pelo
+      nascimento — e “dar nome (ao bebê) — e “inspeção veicular”.'
+  answer:
+    speaker: protagonist
+    text: 出産[しゅっさん] 祝[いわ]い … お宮参[みやまい]り … 赤[あか]ちゃん … 内祝[うちいわ]い … 〜ず に … 寝[ね]ず に … 抱[だ]っこ … 可愛[かわい]い … ご出産[しゅっさん] おめでとう ございます … 名付[なづ]け … 車検[しゃけん]
+  items:
+  - shussan-iwai
+  - omiyamairi
+  - akachan
+  - uchiiwai
+  - zu-ni
+  - nezu-ni
+  - dakko
+  - kawaii-review
+  - omedetou-gozaimasu-birth
+  - nazuke
+  - shaken
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “second-hand car — and “mileage — and “check, inspection — and “have no choice but to — and “have no choice but to replace — and “estimate — and “part (machine) — and “compulsory car insurance
+      — and “replacing (by buying new) — and “noise — and “complaint”.'
+    pt: 'Diga: “carro usado — e “quilometragem — e “revisão — e “não ter outra saída senão — e “não ter outra saída senão trocar — e “orçamento — e “peça — e “seguro obrigatório — e “trocar por outro —
+      e “barulho — e “queixa, reclamação”.'
+  answer:
+    speaker: protagonist
+    text: 中古車[ちゅうこしゃ] … 走行[そうこう] 距離[きょり] … 点検[てんけん] … 〜ざる を 得[え]ない … 替[か]えざる を 得[え]ない … 見積[みつ]もり … 部品[ぶひん] … 自賠責[じばいせき] 保険[ほけん] … 買[か]い替[か]え … 騒音[そうおん] … 苦情[くじょう]
+  items:
+  - chuukosha
+  - soukou-kyori
+  - tenken
+  - zaru-wo-enai
+  - kaezaru-wo-enai
+  - mitsumori-review
+  - buhin
+  - kyouseihoken
+  - kaikae
+  - souon
+  - kujou
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “management company — and “notice (posted) — and “could well (bad result) — and “could turn into trouble — and “neighbourhood, neighbours — and “I''ll be careful from now on — and “building
+      rules — and “after 10 p.m. — and “taiko drum — and “practice — and “rhythm”.'
+    pt: 'Diga: “administradora — e “aviso (colado) — e “pode acabar (resultado ruim) — e “pode virar problema — e “vizinhança — e “daqui em diante vou tomar cuidado — e “regulamento do prédio — e “depois
+      das 22h — e “taikô, tambor japonês — e “treino — e “ritmo”.'
+  answer:
+    speaker: protagonist
+    text: 管理[かんり] 会社[がいしゃ] … 張[は]り紙[がみ] … 〜かねない … トラブル に なり かねない … 近所[きんじょ] … 以後[いご] 気[き] を つけます … 管理[かんり] 規約[きやく] … 夜[よる] 十時[じゅうじ] 以降[いこう] … 太鼓[たいこ] … 練習[れんしゅう] … リズム
+  items:
+  - kanri-gaisha
+  - harigami
+  - kanenai
+  - toraburu-ni-nari-kanenai
+  - kinjo
+  - ki-wo-tsukemasu-review
+  - kanri-kiyaku
+  - yoru-juuji-ikou
+  - taiko
+  - renshuu
+  - rizumu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “in order to; for — and “in order to get good — and “drumsticks (taiko) — and “shout (in rhythm) — and “posture — and “breathing — and “match, play together — and “(said loudly at the start
+      of practice) — and “telephone (polite) — and “I''m very sorry (most polite) — and “message”.'
+    pt: 'Diga: “para, a fim de — e “para ficar bom — e “baquetas (do taikô) — e “grito (no ritmo) — e “postura — e “respiração — e “acompanhar, tocar junto — e “(dito alto no começo do treino) — e “telefone
+      (educado) — e “peço muitas desculpas (o mais educado) — e “recado”.'
+  answer:
+    speaker: protagonist
+    text: 〜ために … 上手[じょうず] に なる ために … ばち … 掛[か]け声[ごえ] … 姿勢[しせい] … 呼吸[こきゅう] … 合[あ]わせる … よろしく お願[ねが]い します！ … お電話[でんわ] … 申[もう]し訳[わけ] ございません … 伝言[でんごん]
+  items:
+  - tame-ni
+  - jouzu-ni-naru-tame-ni
+  - bachi
+  - kakegoe
+  - shisei
+  - kokyuu
+  - awaseru
+  - onegai-shimasu-start
+  - odenwa
+  - moushiwake-gozaimasen
+  - dengon
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “is away from (their) desk — and “ask, hear, visit (humble) — and “I''ll pass it on (humble) — and “calling back — and “I''m sorry to trouble you, but — and “may I have your contact number?
+      — and “certainly (very polite) — and “wedding (ceremony) — and “wedding reception — and “wedding gift money — and “envelope”.'
+    pt: 'Diga: “não está na mesa no momento — e “pergunto, ouço, visito (humilde) — e “vou transmitir (humilde) — e “retornar a ligação — e “desculpe o incômodo, mas — e “pode me passar seu contato? — e
+      “pois não, entendido (muito educado) — e “casamento (cerimônia) — e “festa de casamento — e “dinheiro de presente de casamento — e “envelope”.'
+  answer:
+    speaker: protagonist
+    text: 席[せき] を 外[はず]して おります … 伺[うかが]います … 申[もう]し伝[つた]えます … 折[お]り返[かえ]し … 恐[おそ]れ入[い]ります が … ご連絡先[れんらくさき] を 伺[うかが]えます か … かしこまりました … 結婚式[けっこんしき] … 披露宴[ひろうえん] … ご祝儀[しゅうぎ] … 封筒[ふうとう]
+  items:
+  - seki-wo-hazushite
+  - ukagaimasu
+  - moushitsutaemasu
+  - orikaeshi
+  - osore-irimasu-ga
+  - renrakusaki-ukagau
+  - kashikomarimashita
+  - kekkonshiki
+  - hirouen
+  - goshuugi
+  - fuutou
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “new (crisp) banknotes — and “may put in — and “30,000 yen — and “even number — and “the meaning of splitting up — and “return gift for guests — and “congratulations (polite) — and “welcome
+      (shop staff) — and “this, please — and “please (give me) — and “shall I heat it?”.'
+    pt: 'Diga: “notas novas — e “pode colocar — e “30 mil ienes — e “número par — e “o sentido de se separar — e “lembrança para os convidados — e “parabéns (educado) — e “bem-vindo (dito pelos funcionários)
+      — e “isto, por favor — e “por favor (me dê) — e “quer que esquente?”.'
+  answer:
+    speaker: protagonist
+    text: 新札[しんさつ] … 入[い]れて も いい … 三万円[さんまんえん] … 偶数[ぐうすう] … 別[わか]れる 意味[いみ] … 引[ひ]き出[で]物[もの] … おめでとう ございます … いらっしゃいませ … これ ください … ください … 温[あたた]めます か
+  items:
+  - shinsatsu
+  - ireru
+  - sanman-en
+  - guusuu
+  - wakareru-imi
+  - hikidemono
+  - omedetou-gozaimasu
+  - irasshaimase
+  - kore-kudasai
+  - kudasai
+  - atatamemasu-ka
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “please (yes, do) — and “bag — and “I don''t need it — and “how much is it? — and “yen — and “hundred — and “card — and “thank you (for what was done)”.'
+    pt: 'Diga: “por favor (sim, faça) — e “sacola — e “não preciso — e “quanto é? — e “iene — e “cem — e “cartão — e “obrigado (pelo que foi feito)”.'
+  answer:
+    speaker: protagonist
+    text: お願[ねが]いします … 袋[ふくろ] … いりません … いくら です か … 円[えん] … 百[ひゃく] … カード … ありがとう ございました
+  items:
+  - onegaishimasu
+  - fukuro
+  - irimasen
+  - ikura
+  - en
+  - hyaku
+  - kaado
+  - arigatou-gozaimashita
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
