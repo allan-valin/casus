@@ -1,0 +1,43 @@
+id: A2-07
+protagonist: f
+title: [The nomikai, O nomikai]
+situation: ["The section's after-work drinks at an izakaya. Chief Sato raises her glass; Kenta sits next to you.", "O happy hour do setor num izakaya. A chefe Sato levanta o copo; o Kenta senta do seu lado."]
+learn: []
+culture: Pour for others, never yourself
+items:
+  - [nomikai, "飲[の]み会[かい]", "after-work drinks", "happy hour com os colegas", {rare: true}]
+  - [biiru, "ビール", "beer", "cerveja"]
+  - [oshaku, "お酌[しゃく]", "pouring for someone", "servir a bebida de alguém", {rare: true}]
+  - [tsugimasu, "お注[つ]ぎ します", "let me pour for you", "deixe eu servir você"]
+  - [koppu, "コップ", "glass", "copo"]
+  - [nomimashou, "飲[の]みましょう", "let's drink", "vamos beber"]
+  - [otsukaresama, "お疲[つか]れさま です", "good work (to colleagues)", "bom trabalho (aos colegas)"]
+  - [nomemasen, "お酒[さけ] は 飲[の]めません", "I can't drink alcohol", "não posso beber álcool"]
+  - [uuroncha, "ウーロン茶[ちゃ]", "oolong tea", "chá oolong", {rare: true}]
+  - [mou-ippai, "もう 一杯[いっぱい]", "one more (glass)", "mais um (copo)"]
+  - [kekkou-desu, "結構[けっこう] です", "no, thank you (I'm fine)", "não, obrigada (estou bem)"]
+dialogue:
+  - [sato, "皆[みな]さん、 お疲[つか]れさま でした。 乾杯[かんぱい]！", "Everyone, good work this week. Cheers!", "Pessoal, bom trabalho. Saúde!"]
+  - [protagonist, "乾杯[かんぱい]！", "Cheers!", "Saúde!"]
+  - [kenta, "課長[かちょう] の コップ、 空[から] だ よ。", "The chief's glass is empty.", "O copo da chefe está vazio."]
+  - [protagonist, "課長[かちょう]、 お注[つ]ぎ します。", "Chief, let me pour for you.", "Chefe, deixe eu servir."]
+  - [sato, "ありがとう。 じゃあ、 私[わたし] も。 ビール で いい？", "Thank you. Then let me pour yours. Beer okay?", "Obrigada. Então eu sirvo você também. Pode ser cerveja?"]
+  - [protagonist, "すみません、 お酒[さけ] は あまり 飲[の]めません。 ウーロン茶[ちゃ] で。", "Sorry, I can't drink much alcohol. Oolong tea, please.", "Desculpe, quase não bebo álcool. Chá oolong, por favor."]
+  - [sato, "大丈夫[だいじょうぶ] です よ。 さあ、 たくさん 食[た]べましょう。", "That's fine. Now, let's eat plenty.", "Tudo bem. Agora, vamos comer bastante."]
+  - [kenta, "もう 一杯[いっぱい] どう？", "Another one?", "Mais um?"]
+  - [protagonist, "いえ、 もう 結構[けっこう] です。", "No, I'm fine, thanks.", "Não, já estou bem, obrigada."]
+teach:
+  - ask: ["Say: after-work drinks.", "Diga: o happy hour com os colegas.", "飲[の]み会[かい]", nomikai]
+  - ask: ["Say: good work — to your colleagues at the end of the day.", "Diga: bom trabalho — aos colegas, no fim do dia.", "お疲[つか]れさま です。", otsukaresama]
+  - ask: ["Say: beer.", "Diga: cerveja.", "ビール", biiru]
+  - ask: ["Say: a glass.", "Diga: um copo.", "コップ", koppu]
+  - ask: ["Say: pouring for someone.", "Diga: servir a bebida de alguém.", "お酌[しゃく]", oshaku]
+  - build: [tsugimasu, ["します", "お注[つ]ぎ します"]]
+  - ask: ["Offer to pour for the chief.", "Ofereça-se para servir a chefe.", "お注[つ]ぎ します。", tsugimasu]
+  - ask: ["Say: let's drink.", "Diga: vamos beber.", "飲[の]みましょう。", nomimashou]
+  - ask: ["Say: I can't drink alcohol.", "Diga: não posso beber álcool.", "お酒[さけ] は 飲[の]めません。", nomemasen]
+  - ask: ["Say: oolong tea.", "Diga: chá oolong.", "ウーロン茶[ちゃ]", uuroncha]
+  - ask: ["Say: one more glass.", "Diga: mais um copo.", "もう 一杯[いっぱい]", mou-ippai]
+  - ask: ["Refuse politely: I'm fine, thank you.", "Recuse com educação: estou bem, obrigada.", "結構[けっこう] です。", kekkou-desu]
+  - note: ["At a «飲[の]み会[かい]» you never pour your own drink: you watch the glasses around you and fill them, starting with the chief, holding the bottle with both hands. When someone pours for you, lift your glass. Not drinking is fine — say so early and order tea; nobody should push.", "No «飲[の]み会[かい]» você nunca serve o próprio copo: fica de olho nos copos em volta e enche, começando pela chefe, segurando a garrafa com as duas mãos. Quando alguém servir você, levante o copo. Não beber é normal — diga logo e peça chá; ninguém deve insistir."]
+  - pt_only: "No happy hour brasileiro cada um pede e serve o seu, e a conta muitas vezes se divide no fim. No nomikai a ordem importa: primeiro os outros, e a chefe antes de todos."
