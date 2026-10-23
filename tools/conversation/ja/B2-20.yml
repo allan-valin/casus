@@ -1,0 +1,616 @@
+# UNIT ja B2-20 — written by AI (Claude) for Casus; expanded from src/B2-20.yml by tools/expand_unit.py. Edit the source.
+
+id: B2-20
+level: B2
+number: 20
+protagonist: m
+title:
+  en: The client
+  pt: O cliente
+situation:
+  en: 'A client, Ms Nakamura, calls: a shipment arrived with the wrong parts. She is angry. Chief Sato is out; you handle it.'
+  pt: 'Uma cliente, a senhora Nakamura, liga: uma remessa chegou com as peças erradas. Ela está brava. A chefe Sato saiu; você atende.'
+learn_lessons: []
+culture: The customer is god
+new_items:
+- id: kureemu
+  text: クレーム
+  meaning:
+    en: complaint
+    pt: reclamação
+- id: taiou
+  text: 対応[たいおう]
+  meaning:
+    en: dealing with, response
+    pt: atendimento, providência
+- id: owabi
+  text: お詫[わ]び
+  meaning:
+    en: apology (formal)
+    pt: pedido de desculpas (formal)
+- id: okyakusama
+  text: お客様[きゃくさま]
+  meaning:
+    en: customer (honorific)
+    pt: cliente (honorífico)
+- id: makoto-ni
+  text: 誠[まこと] に 申[もう]し訳[わけ] ございません
+  meaning:
+    en: I am truly, deeply sorry
+    pt: peço sinceras desculpas
+- id: kakunin-itashimasu
+  text: 確認[かくにん] いたします
+  meaning:
+    en: I will check (humble)
+    pt: vou verificar (humilde)
+- id: shikyuu
+  text: 至急[しきゅう]
+  meaning:
+    en: urgently
+    pt: com urgência
+- id: okuri-naoshi
+  text: お送[おく]り 直[なお]し
+  meaning:
+    en: resending
+    pt: reenvio
+- id: ninotsuki
+  text: ご迷惑[めいわく] を おかけ しました
+  meaning:
+    en: we caused you trouble
+    pt: causamos transtorno
+- id: saihatsu-boushi
+  text: 再発[さいはつ] 防止[ぼうし]
+  meaning:
+    en: preventing a recurrence
+    pt: evitar que se repita
+  rare: true
+- id: okyakusama-wa-kamisama
+  text: お客様[きゃくさま] は 神様[かみさま]
+  meaning:
+    en: the customer is god
+    pt: o cliente é deus
+reviews:
+- item: onsen
+  from: A2-17
+- item: irezumi
+  from: A2-17
+- item: taoru
+  from: A2-17
+- item: karada-wo-araimasu
+  from: A2-17
+- item: haitte-wa-ikemasen
+  from: A2-17
+- item: te-wa-ikemasen
+  from: A2-17
+- item: mizugi
+  from: A2-17
+- item: shiiru
+  from: A2-17
+- item: kakushimasu
+  from: A2-17
+- item: kashikiri
+  from: A2-17
+- item: kimochi-ii
+  from: A2-17
+- item: taifuu
+  from: B1-19
+- item: chuushi
+  from: B1-19
+- item: yotei
+  from: B1-19
+- item: enki
+  from: B1-19
+- item: you-to-omotte-ita
+  from: B1-19
+- item: ikou-to-omotte-ita
+  from: B1-19
+- item: unkyuu
+  from: B1-19
+- item: kyouto
+  from: B1-19
+- item: zannen
+  from: B1-19
+- item: anzen-daiichi
+  from: B1-19
+- item: kyanseru
+  from: B1-19
+- item: nemawashi
+  from: B2-05
+- item: kettei
+  from: B2-05
+- item: gidai
+  from: B2-05
+- item: ni-yotte
+  from: B2-05
+- item: hito-ni-yotte
+  from: B2-05
+- item: teian
+  from: B2-05
+- item: sansei-wo-eru
+  from: B2-05
+- item: jizen-ni
+  from: B2-05
+- item: hyoshiki
+  from: B2-05
+- item: iken
+  from: B2-05
+- item: kakunin-shite-oku
+  from: B2-05
+- item: shimekiri
+  from: B2-13
+- item: houkokusho
+  from: B2-13
+- item: enchou
+  from: B2-13
+- item: okurete-moushiwake
+  from: B2-13
+- item: sasete-itadaku
+  from: B2-13
+- item: teishutsu-sasete
+  from: B2-13
+- item: teishutsu
+  from: B2-13
+- item: genin
+  from: B2-13
+- item: taisaku
+  from: B2-13
+- item: hayame-ni
+  from: B2-13
+- item: houkoku-renraku-soudan
+  from: B2-13
+- item: koujou
+  from: B2-17
+- item: setsumei
+  from: B2-17
+- item: anzen-item
+  from: B2-17
+- item: you-ni-iu
+  from: B2-17
+- item: kaburu-you-ni
+  from: B2-17
+- item: kikai
+  from: B2-17
+- item: sawaranai-you-ni
+  from: B2-17
+- item: teishi
+  from: B2-17
+- item: kinkyuu-teishi
+  from: B2-17
+- item: hiyari-hatto
+  from: B2-17
+- item: tsutaemasu
+  from: B2-17
+- item: happyou
+  from: B2-19
+- item: shiryou
+  from: B2-19
+- item: shitsugi-outou
+  from: B2-19
+- item: ketsuron
+  from: B2-19
+- item: te-kara
+  from: B2-19
+- item: setsumei-shite-kara
+  from: B2-19
+- item: mokuteki
+  from: B2-19
+- item: hiyou
+  from: B2-19
+- item: kouka
+  from: B2-19
+- item: goshitsumon
+  from: B2-19
+- item: ijou-desu
+  from: B2-19
+steps:
+- type: narrator
+  text:
+    en: 'A client, Ms Nakamura, calls: a shipment arrived with the wrong parts. She is angry. Chief Sato is out; you handle it. Listen to the conversation; you don''t need to understand it yet.'
+    pt: 'Uma cliente, a senhora Nakamura, liga: uma remessa chegou com as peças erradas. Ela está brava. A chefe Sato saiu; você atende. Escute a conversa; ainda não precisa entender.'
+- type: dialogue
+  lines:
+  - speaker: kyaku
+    text: 注文[ちゅうもん] と 違[ちが]う 部品[ぶひん] が 届[とど]きました。 明日[あした] から 生産[せいさん] が 止[と]まります！
+    meaning:
+      en: Parts different from our order arrived. Our production stops tomorrow!
+      pt: Chegaram peças diferentes do pedido. Nossa produção para amanhã!
+  - speaker: protagonist
+    text: 大変[たいへん] ご迷惑[めいわく] を おかけ しました。 誠[まこと] に 申[もう]し訳[わけ] ございません。
+    meaning:
+      en: We've caused you great trouble. I am truly sorry.
+      pt: Causamos um grande transtorno. Peço sinceras desculpas.
+  - speaker: kyaku
+    text: どう して くれる ん です か。
+    meaning:
+      en: What are you going to do about it?
+      pt: E o que vocês vão fazer?
+  - speaker: protagonist
+    text: ただいま 至急[しきゅう] 確認[かくにん] いたします。 注文[ちゅうもん] 番号[ばんごう] を お教[おし]え いただけます か。
+    meaning:
+      en: I will check urgently right now. Could you give me the order number?
+      pt: Vou verificar com urgência agora. A senhora poderia me passar o número do pedido?
+  - speaker: kyaku
+    text: A の 三五二[さんごーに] です。
+    meaning:
+      en: A-352.
+      pt: A-352.
+  - speaker: protagonist
+    text: 確認[かくにん] いたしました。 こちら の 間違[まちが]い です。 正[ただ]しい 部品[ぶひん] を 今日[きょう] 中[じゅう] に お送[おく]り 直[なお]し いたします。
+    meaning:
+      en: I've checked. It was our mistake. We will resend the correct parts today.
+      pt: Verifiquei. O erro foi nosso. Reenviamos as peças corretas ainda hoje.
+  - speaker: kyaku
+    text: 今日[きょう] 中[じゅう] なら、 何[なん] とか なります。
+    meaning:
+      en: If it's today, we can manage.
+      pt: Se for hoje, a gente dá um jeito.
+  - speaker: protagonist
+    text: 再発[さいはつ] 防止[ぼうし] の 対策[たいさく] も、 改[あらた]めて ご報告[ほうこく] いたします。 本当[ほんとう] に 申[もう]し訳[わけ] ございません でした。
+    meaning:
+      en: We'll also report the measures to prevent it happening again. Once more, I am truly sorry.
+      pt: Também vamos informar as medidas para que não se repita. Mais uma vez, peço sinceras desculpas.
+- type: prompt
+  ask:
+    en: 'Say: a complaint.'
+    pt: 'Diga: uma reclamação.'
+  answer:
+    speaker: protagonist
+    text: クレーム
+  items:
+  - kureemu
+- type: prompt
+  ask:
+    en: 'Say: the customer — with honour.'
+    pt: 'Diga: o cliente — com respeito.'
+  answer:
+    speaker: protagonist
+    text: お客様[きゃくさま]
+  items:
+  - okyakusama
+- type: prompt
+  ask:
+    en: 'Say: we caused you trouble.'
+    pt: 'Diga: causamos transtorno.'
+  answer:
+    speaker: protagonist
+    text: ご迷惑[めいわく] を おかけ しました。
+  items:
+  - ninotsuki
+- type: prompt
+  ask:
+    en: Apologise at the deepest level.
+    pt: Peça desculpas no nível mais profundo.
+  answer:
+    speaker: protagonist
+    text: 誠[まこと] に 申[もう]し訳[わけ] ございません。
+  items:
+  - makoto-ni
+- type: prompt
+  ask:
+    en: 'Say: a formal apology.'
+    pt: 'Diga: um pedido de desculpas formal.'
+  answer:
+    speaker: protagonist
+    text: お詫[わ]び
+  items:
+  - owabi
+- type: prompt
+  ask:
+    en: 'Say humbly: I will check.'
+    pt: 'Diga com humildade: vou verificar.'
+  answer:
+    speaker: protagonist
+    text: 確認[かくにん] いたします。
+  items:
+  - kakunin-itashimasu
+- type: prompt
+  ask:
+    en: 'Say: urgently.'
+    pt: 'Diga: com urgência.'
+  answer:
+    speaker: protagonist
+    text: 至急[しきゅう]
+  items:
+  - shikyuu
+- type: prompt
+  ask:
+    en: 'Say: resending.'
+    pt: 'Diga: reenvio.'
+  answer:
+    speaker: protagonist
+    text: お送[おく]り 直[なお]し
+  items:
+  - okuri-naoshi
+- type: prompt
+  ask:
+    en: 'Say: dealing with it, the response.'
+    pt: 'Diga: o atendimento, a providência.'
+  answer:
+    speaker: protagonist
+    text: 対応[たいおう]
+  items:
+  - taiou
+- type: prompt
+  ask:
+    en: 'Say: preventing a recurrence.'
+    pt: 'Diga: evitar que se repita.'
+  answer:
+    speaker: protagonist
+    text: 再発[さいはつ] 防止[ぼうし]
+  items:
+  - saihatsu-boushi
+- type: narrator
+  text:
+    en: 'Complaint handling uses the highest politeness: «誠[まこと] に 申[もう]し訳[わけ] ございません», «ご迷惑[めいわく] を おかけ しました», humble «いたします» for everything you do. The order: apologise first, listen, check, admit, offer
+      a fix with a time, promise «再発[さいはつ] 防止[ぼうし]», apologise again.'
+    pt: 'O atendimento de reclamação usa a cortesia máxima: «誠[まこと] に 申[もう]し訳[わけ] ございません», «ご迷惑[めいわく] を おかけ しました», o humilde «いたします» para tudo o que você faz. A ordem: desculpar-se primeiro, ouvir, verificar,
+      admitir, oferecer solução com prazo, prometer «再発[さいはつ] 防止[ぼうし]» e desculpar-se de novo.'
+- type: prompt
+  ask:
+    en: 'Say the famous saying: the customer is god.'
+    pt: 'Diga o ditado famoso: o cliente é deus.'
+  answer:
+    speaker: protagonist
+    text: お客様[きゃくさま] は 神様[かみさま]
+  items:
+  - okyakusama-wa-kamisama
+- type: narrator
+  text:
+    en: '«お客様[きゃくさま] は 神様[かみさま]» comes from a 1960s singer''s stage line and became a slogan for service. Today there is pushback: abusive customers, «カスハラ», are recognised as a problem, and some places,
+      Tokyo first, now have rules protecting staff.'
+    pt: '«お客様[きゃくさま] は 神様[かみさま]» vem de uma frase de palco de um cantor dos anos 1960 e virou lema do atendimento. Hoje há reação: clientes abusivos, a «カスハラ», são reconhecidos como problema, e alguns lugares,
+      Tóquio primeiro, já têm regras protegendo os funcionários.'
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'No Brasil se diz «o cliente tem sempre razão». No Japão o cliente é deus — mas até deus, hoje, tem limite: a «カスハラ» virou tema de lei.'
+- type: prompt
+  ask:
+    en: 'Once more: say “complaint”.'
+    pt: 'Mais uma vez: diga “reclamação”.'
+  answer:
+    speaker: protagonist
+    text: クレーム
+  items:
+  - kureemu
+- type: prompt
+  ask:
+    en: 'Once more: say “dealing with, response”.'
+    pt: 'Mais uma vez: diga “atendimento, providência”.'
+  answer:
+    speaker: protagonist
+    text: 対応[たいおう]
+  items:
+  - taiou
+- type: prompt
+  ask:
+    en: 'Once more: say “apology (formal)”.'
+    pt: 'Mais uma vez: diga “pedido de desculpas (formal)”.'
+  answer:
+    speaker: protagonist
+    text: お詫[わ]び
+  items:
+  - owabi
+- type: prompt
+  ask:
+    en: 'Once more: say “customer (honorific)”.'
+    pt: 'Mais uma vez: diga “cliente (honorífico)”.'
+  answer:
+    speaker: protagonist
+    text: お客様[きゃくさま]
+  items:
+  - okyakusama
+- type: prompt
+  ask:
+    en: 'Once more: say “I am truly, deeply sorry”.'
+    pt: 'Mais uma vez: diga “peço sinceras desculpas”.'
+  answer:
+    speaker: protagonist
+    text: 誠[まこと] に 申[もう]し訳[わけ] ございません
+  items:
+  - makoto-ni
+- type: prompt
+  ask:
+    en: 'Once more: say “I will check (humble)”.'
+    pt: 'Mais uma vez: diga “vou verificar (humilde)”.'
+  answer:
+    speaker: protagonist
+    text: 確認[かくにん] いたします
+  items:
+  - kakunin-itashimasu
+- type: prompt
+  ask:
+    en: 'Once more: say “urgently”.'
+    pt: 'Mais uma vez: diga “com urgência”.'
+  answer:
+    speaker: protagonist
+    text: 至急[しきゅう]
+  items:
+  - shikyuu
+- type: prompt
+  ask:
+    en: 'Once more: say “resending”.'
+    pt: 'Mais uma vez: diga “reenvio”.'
+  answer:
+    speaker: protagonist
+    text: お送[おく]り 直[なお]し
+  items:
+  - okuri-naoshi
+- type: prompt
+  ask:
+    en: 'Once more: say “we caused you trouble”.'
+    pt: 'Mais uma vez: diga “causamos transtorno”.'
+  answer:
+    speaker: protagonist
+    text: ご迷惑[めいわく] を おかけ しました
+  items:
+  - ninotsuki
+- type: prompt
+  ask:
+    en: 'Once more: say “preventing a recurrence”.'
+    pt: 'Mais uma vez: diga “evitar que se repita”.'
+  answer:
+    speaker: protagonist
+    text: 再発[さいはつ] 防止[ぼうし]
+  items:
+  - saihatsu-boushi
+- type: prompt
+  ask:
+    en: 'Once more: say “the customer is god”.'
+    pt: 'Mais uma vez: diga “o cliente é deus”.'
+  answer:
+    speaker: protagonist
+    text: お客様[きゃくさま] は 神様[かみさま]
+  items:
+  - okyakusama-wa-kamisama
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “presentation — and “handout, materials — and “Q&A — and “conclusion — and “after (doing) — and “after explaining — and “purpose — and “cost — and “effect, result — and “your questions (polite)”.'
+    pt: 'Diga: “apresentação — e “material, apostila — e “perguntas e respostas — e “conclusão — e “depois de (fazer) — e “depois de explicar — e “objetivo — e “custo — e “efeito, resultado — e “suas perguntas
+      (educado)”.'
+  answer:
+    speaker: protagonist
+    text: 発表[はっぴょう] … 資料[しりょう] … 質疑[しつぎ] 応答[おうとう] … 結論[けつろん] … 〜て から … 説明[せつめい] して から … 目的[もくてき] … 費用[ひよう] … 効果[こうか] … ご質問[しつもん]
+  items:
+  - happyou
+  - shiryou
+  - shitsugi-outou
+  - ketsuron
+  - te-kara
+  - setsumei-shite-kara
+  - mokuteki
+  - hiyou
+  - kouka
+  - goshitsumon
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “that''s all (end of presentation) — and “factory — and “explanation — and “with safety first — and “tell (someone) to… — and “please tell them to wear helmets — and “machine — and “(so as)
+      not to touch — and “stop (machine) — and “emergency stop button”.'
+    pt: 'Diga: “é isso (fim da apresentação) — e “fábrica — e “explicação — e “com segurança em primeiro lugar — e “dizer para (alguém)… — e “diga para eles usarem capacete — e “máquina — e “para não tocar
+      — e “parada (da máquina) — e “botão de parada de emergência”.'
+  answer:
+    speaker: protagonist
+    text: 以上[いじょう] です … 工場[こうじょう] … 説明[せつめい] … 安全[あんぜん] 第一[だいいち] で … 〜ように 言[い]う … ヘルメット を かぶる ように 言[い]って ください … 機械[きかい] … 触[さわ]らない ように … 停止[ていし] … 緊急[きんきゅう] 停止[ていし] ボタン
+  items:
+  - ijou-desu
+  - koujou
+  - setsumei
+  - anzen-item
+  - you-ni-iu
+  - kaburu-you-ni
+  - kikai
+  - sawaranai-you-ni
+  - teishi
+  - kinkyuu-teishi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “near miss — and “I''ll pass it on — and “deadline — and “report (document) — and “extension — and “I''m sorry for the delay — and “humbly do (with your permission) — and “I''ll submit it
+      (with your permission) — and “submission — and “cause”.'
+    pt: 'Diga: “quase acidente — e “vou transmitir — e “prazo — e “relatório (documento) — e “prorrogação — e “peço desculpas pelo atraso — e “fazer (com sua permissão, humilde) — e “vou entregar (com sua
+      permissão) — e “entrega — e “causa”.'
+  answer:
+    speaker: protagonist
+    text: ヒヤリ ハット … 伝[つた]えます … 締[し]め切[き]り … 報告書[ほうこくしょ] … 延長[えんちょう] … 遅[おく]れて 申[もう]し訳[わけ] ありません … 〜させて いただく … 提出[ていしゅつ] させて いただきます … 提出[ていしゅつ] … 原因[げんいん]
+  items:
+  - hiyari-hatto
+  - tsutaemasu
+  - shimekiri
+  - houkokusho
+  - enchou
+  - okurete-moushiwake
+  - sasete-itadaku
+  - teishutsu-sasete
+  - teishutsu
+  - genin
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “countermeasure — and “early, in good time — and “report, inform, consult — and “laying the groundwork (before a meeting) — and “decision — and “agenda item — and “depending on; by — and “depending
+      on the person — and “proposal — and “win support”.'
+    pt: 'Diga: “medida (para evitar) — e “com antecedência — e “relatar, informar, consultar — e “costurar o apoio antes (da reunião) — e “decisão — e “pauta — e “dependendo de; por — e “dependendo da pessoa
+      — e “proposta — e “conseguir apoio”.'
+  answer:
+    speaker: protagonist
+    text: 対策[たいさく] … 早[はや]め に … 報連相[ほうれんそう] … 根回[ねまわ]し … 決定[けってい] … 議題[ぎだい] … 〜に よって … 人[ひと] に よって … 提案[ていあん] … 賛成[さんせい] を 得[え]る
+  items:
+  - taisaku
+  - hayame-ni
+  - houkoku-renraku-soudan
+  - nemawashi
+  - kettei
+  - gidai
+  - ni-yotte
+  - hito-ni-yotte
+  - teian
+  - sansei-wo-eru
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “beforehand — and “sign (notice) — and “opinion — and “check in advance — and “typhoon — and “cancellation, called off — and “plan, schedule — and “postponement — and “I was going to…, I''d
+      planned to… — and “I was planning to go”.'
+    pt: 'Diga: “com antecedência — e “placa (de aviso) — e “opinião — e “confirmar antes — e “tufão — e “cancelamento — e “plano, programação — e “adiamento — e “eu pretendia…, ia… — e “eu ia, pretendia
+      ir”.'
+  answer:
+    speaker: protagonist
+    text: 事前[じぜん] に … 標識[ひょうしき] … 意見[いけん] … 確認[かくにん] して おく … 台風[たいふう] … 中止[ちゅうし] … 予定[よてい] … 延期[えんき] … 〜よう と 思[おも]って いた … 行[い]こう と 思[おも]って いた
+  items:
+  - jizen-ni
+  - hyoshiki
+  - iken
+  - kakunin-shite-oku
+  - taifuu
+  - chuushi
+  - yotei
+  - enki
+  - you-to-omotte-ita
+  - ikou-to-omotte-ita
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “(train) service suspended — and “Kyoto — and “what a pity — and “safety first — and “cancel (a booking) — and “hot spring — and “tattoo — and “towel — and “wash (your) body — and “you must
+      not go in”.'
+    pt: 'Diga: “serviço suspenso — e “Kyoto — e “que pena — e “segurança em primeiro lugar — e “cancelar (reserva) — e “fonte termal — e “tatuagem — e “toalha — e “lavo o corpo — e “não pode entrar”.'
+  answer:
+    speaker: protagonist
+    text: 運休[うんきゅう] … 京都[きょうと] … 残念[ざんねん] … 安全[あんぜん] 第一[だいいち] … キャンセル … 温泉[おんせん] … 入[い]れ墨[ずみ] … タオル … 体[からだ] を 洗[あら]います … 入[はい]って は いけません
+  items:
+  - unkyuu
+  - kyouto
+  - zannen
+  - anzen-daiichi
+  - kyanseru
+  - onsen
+  - irezumi
+  - taoru
+  - karada-wo-araimasu
+  - haitte-wa-ikemasen
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “must not — and “swimsuit — and “sticker — and “cover, hide — and “private bath — and “it feels good”.'
+    pt: 'Diga: “não pode — e “maiô, roupa de banho — e “adesivo — e “cubro, escondo — e “ofurô privativo — e “que delícia, que gostoso”.'
+  answer:
+    speaker: protagonist
+    text: 〜ては いけません … 水着[みずぎ] … シール … 隠[かく]します … 貸切[かしきり] 風呂[ぶろ] … 気持[きも]ち いい
+  items:
+  - te-wa-ikemasen
+  - mizugi
+  - shiiru
+  - kakushimasu
+  - kashikiri
+  - kimochi-ii
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

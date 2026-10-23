@@ -1,0 +1,606 @@
+# UNIT ja B2-17 — written by AI (Claude) for Casus; expanded from src/B2-17.yml by tools/expand_unit.py. Edit the source.
+
+id: B2-17
+level: B2
+number: 17
+protagonist: f
+title:
+  en: Interpreting for the Brazilians
+  pt: Interpretar para os brasileiros
+situation:
+  en: On the assembly line. Line leader Mori has new safety rules for the Brazilian team; you interpret, turning his words into Portuguese.
+  pt: Na linha de montagem. O líder de linha Mori tem regras novas de segurança para a equipe brasileira; você interpreta, passando as palavras dele para o português.
+learn_lessons: []
+culture: Brazilian workers in Hamamatsu
+new_items:
+- id: koujou
+  text: 工場[こうじょう]
+  meaning:
+    en: factory
+    pt: fábrica
+- id: setsumei
+  text: 説明[せつめい]
+  meaning:
+    en: explanation
+    pt: explicação
+- id: anzen-item
+  text: 安全[あんぜん] 第一[だいいち] で
+  meaning:
+    en: with safety first
+    pt: com segurança em primeiro lugar
+- id: you-ni-iu
+  text: 〜ように 言[い]う
+  meaning:
+    en: tell (someone) to…
+    pt: dizer para (alguém)…
+- id: kaburu-you-ni
+  text: ヘルメット を かぶる ように 言[い]って ください
+  meaning:
+    en: please tell them to wear helmets
+    pt: diga para eles usarem capacete
+- id: kikai
+  text: 機械[きかい]
+  meaning:
+    en: machine
+    pt: máquina
+- id: sawaranai-you-ni
+  text: 触[さわ]らない ように
+  meaning:
+    en: (so as) not to touch
+    pt: para não tocar
+- id: teishi
+  text: 停止[ていし]
+  meaning:
+    en: stop (machine)
+    pt: parada (da máquina)
+- id: kinkyuu-teishi
+  text: 緊急[きんきゅう] 停止[ていし] ボタン
+  meaning:
+    en: emergency stop button
+    pt: botão de parada de emergência
+  rare: true
+- id: hiyari-hatto
+  text: ヒヤリ ハット
+  meaning:
+    en: near miss
+    pt: quase acidente
+  rare: true
+- id: tsutaemasu
+  text: 伝[つた]えます
+  meaning:
+    en: I'll pass it on
+    pt: vou transmitir
+reviews:
+- item: to-omoimasu
+  from: A2-14
+- item: dou-omoimasu-ka
+  from: A2-14
+- item: sanba
+  from: A2-14
+- item: sutereotaipu
+  from: A2-14
+- item: imeeji
+  from: A2-14
+- item: chigau-to-omou
+  from: A2-14
+- item: amari
+  from: A2-14
+- item: zenzen
+  from: A2-14
+- item: tokidoki
+  from: A2-14
+- item: kikimasu
+  from: A2-14
+- item: ayamaru
+  from: B1-16
+- item: yurushite
+  from: B1-16
+- item: mou-nidoto
+  from: B1-16
+- item: you-volitional
+  from: B1-16
+- item: ayamarou
+  from: B1-16
+- item: hanasou
+  from: B1-16
+- item: ikou
+  from: B1-16
+- item: kimochi-wo-tsutaeru
+  from: B1-16
+- item: hana-wo-kaou
+  from: B1-16
+- item: chokusetsu
+  from: B1-16
+- item: hansei
+  from: B1-16
+- item: keiyakusho
+  from: B2-02
+- item: bonasu
+  from: B2-02
+- item: shiyou-kikan
+  from: B2-02
+- item: koto-ni-naru
+  from: B2-02
+- item: hairu-koto-ni-natta
+  from: B2-02
+- item: gekkyuu
+  from: B2-02
+- item: shakai-hoken
+  from: B2-02
+- item: nenkin
+  from: B2-02
+- item: hanko-wo-osu
+  from: B2-02
+- item: joukou
+  from: B2-02
+- item: yoroshii-desu-ka
+  from: B2-02
+- item: odenwa
+  from: B2-10
+- item: moushiwake-gozaimasen
+  from: B2-10
+- item: dengon
+  from: B2-10
+- item: seki-wo-hazushite
+  from: B2-10
+- item: ukagaimasu
+  from: B2-10
+- item: moushitsutaemasu
+  from: B2-10
+- item: orikaeshi
+  from: B2-10
+- item: osore-irimasu-ga
+  from: B2-10
+- item: renrakusaki-ukagau
+  from: B2-10
+- item: kashikomarimashita
+  from: B2-10
+- item: pawahara
+  from: B2-14
+- item: soudan
+  from: B2-14
+- item: saserareru
+  from: B2-14
+- item: yarinaosaserareta
+  from: B2-14
+- item: donarareru
+  from: B2-14
+- item: madoguchi-soudan
+  from: B2-14
+- item: kiroku
+  from: B2-14
+- item: hitori-de
+  from: B2-14
+- item: jinji
+  from: B2-14
+- item: hou-de
+  from: B2-14
+- item: kyuuka
+  from: B2-16
+- item: shinsei
+  from: B2-16
+- item: yoroshii-deshou-ka
+  from: B2-16
+- item: itadakemasu-deshou-ka
+  from: B2-16
+- item: kanreki
+  from: B2-16
+- item: isshuukan
+  from: B2-16
+- item: hikitsugi
+  from: B2-16
+- item: meiwaku
+  from: B2-16
+- item: eikyou
+  from: B2-16
+- item: kenri-desu-kara
+  from: B2-16
+steps:
+- type: narrator
+  text:
+    en: On the assembly line. Line leader Mori has new safety rules for the Brazilian team; you interpret, turning his words into Portuguese. Listen to the conversation; you don't need to understand it
+      yet.
+    pt: Na linha de montagem. O líder de linha Mori tem regras novas de segurança para a equipe brasileira; você interpreta, passando as palavras dele para o português. Escute a conversa; ainda não precisa
+      entender.
+- type: dialogue
+  lines:
+  - speaker: hanchou
+    text: 今日[きょう] から 新[あたら]しい 安全[あんぜん] ルール です。 説明[せつめい] を 通訳[つうやく] して ください。
+    meaning:
+      en: New safety rules from today. Please interpret my explanation.
+      pt: A partir de hoje, regras novas de segurança. Interprete a minha explicação, por favor.
+  - speaker: protagonist
+    text: はい、 伝[つた]えます。
+    meaning:
+      en: Yes, I'll pass it on.
+      pt: Certo, vou transmitir.
+  - speaker: hanchou
+    text: 工場[こうじょう] に 入[はい]る 時[とき] は、 必[かなら]ず ヘルメット を かぶる ように 言[い]って ください。
+    meaning:
+      en: Please tell them to always wear helmets when they enter the factory.
+      pt: Diga para eles sempre usarem capacete ao entrar na fábrica.
+  - speaker: protagonist
+    text: わかりました。 機械[きかい] の こと は？
+    meaning:
+      en: Understood. What about the machines?
+      pt: Entendido. E as máquinas?
+  - speaker: hanchou
+    text: 動[うご]いて いる 機械[きかい] に は 絶対[ぜったい] 触[さわ]らない ように。 おかしい と 思[おも]ったら、 すぐ 緊急[きんきゅう] 停止[ていし] ボタン。
+    meaning:
+      en: Never touch a moving machine. If anything seems wrong, the emergency stop button at once.
+      pt: Nunca toquem numa máquina em movimento. Se algo parecer estranho, o botão de parada de emergência na hora.
+  - speaker: protagonist
+    text: 「ヒヤリ ハット」 は 何[なん] と 訳[やく]せば いい でしょう か。
+    meaning:
+      en: How should I translate “hiyari hatto”?
+      pt: Como devo traduzir «hiyari hatto»?
+  - speaker: hanchou
+    text: 事故[じこ] に なりそう だった こと。 小[ちい]さな こと でも 報告[ほうこく] する ように 言[い]って ください。
+    meaning:
+      en: Something that almost became an accident. Tell them to report even small ones.
+      pt: Uma coisa que quase virou acidente. Diga para eles relatarem até as pequenas.
+  - speaker: protagonist
+    text: 「quase acidente」 です ね。 全部[ぜんぶ] 伝[つた]えました。 みんな、 安全[あんぜん] 第一[だいいち] で！
+    meaning:
+      en: “Quase acidente”, then. I've passed it all on. Everyone — safety first!
+      pt: «Quase acidente», então. Transmiti tudo. Pessoal — segurança em primeiro lugar!
+- type: prompt
+  ask:
+    en: 'Say: the factory.'
+    pt: 'Diga: a fábrica.'
+  answer:
+    speaker: protagonist
+    text: 工場[こうじょう]
+  items:
+  - koujou
+- type: prompt
+  ask:
+    en: 'Say: an explanation.'
+    pt: 'Diga: uma explicação.'
+  answer:
+    speaker: protagonist
+    text: 説明[せつめい]
+  items:
+  - setsumei
+- type: prompt
+  ask:
+    en: 'Promise: I''ll pass it on.'
+    pt: 'Prometa: vou transmitir.'
+  answer:
+    speaker: protagonist
+    text: 伝[つた]えます。
+  items:
+  - tsutaemasu
+- type: narrator
+  text:
+    en: 'Passing on an instruction: a plain verb plus «ように 言[い]う» — «かぶる ように 言[い]って ください», please tell them to wear it; negative «触[さわ]らない ように», tell them not to touch. Interpreters use it all day.'
+    pt: 'Repassando uma ordem: verbo simples mais «ように 言[い]う» — «かぶる ように 言[い]って ください», diga para eles usarem; negativo «触[さわ]らない ように», diga para não tocarem. Intérpretes usam o dia inteiro.'
+- type: prompt
+  ask:
+    en: 'Say the pattern: tell them to…'
+    pt: 'Diga o padrão: dizer para…'
+  answer:
+    speaker: protagonist
+    text: 〜ように 言[い]う
+  items:
+  - you-ni-iu
+- type: prompt
+  ask:
+    en: 'Say what he asked: please tell them to wear helmets.'
+    pt: 'Repita o pedido: diga para usarem capacete.'
+  answer:
+    speaker: protagonist
+    text: ヘルメット を かぶる ように 言[い]って ください。
+  items:
+  - kaburu-you-ni
+- type: prompt
+  ask:
+    en: 'Say: a machine.'
+    pt: 'Diga: uma máquina.'
+  answer:
+    speaker: protagonist
+    text: 機械[きかい]
+  items:
+  - kikai
+- type: prompt
+  ask:
+    en: 'Say: so as not to touch.'
+    pt: 'Diga: para não tocar.'
+  answer:
+    speaker: protagonist
+    text: 触[さわ]らない ように
+  items:
+  - sawaranai-you-ni
+- type: prompt
+  ask:
+    en: 'Say: stop — a machine stop.'
+    pt: 'Diga: parada da máquina.'
+  answer:
+    speaker: protagonist
+    text: 停止[ていし]
+  items:
+  - teishi
+- type: prompt
+  ask:
+    en: 'Say: the emergency stop button.'
+    pt: 'Diga: o botão de parada de emergência.'
+  answer:
+    speaker: protagonist
+    text: 緊急[きんきゅう] 停止[ていし] ボタン
+  items:
+  - kinkyuu-teishi
+- type: prompt
+  ask:
+    en: 'Say: a near miss.'
+    pt: 'Diga: quase acidente.'
+  answer:
+    speaker: protagonist
+    text: ヒヤリ ハット
+  items:
+  - hiyari-hatto
+- type: prompt
+  ask:
+    en: 'Shout it to the team: safety first!'
+    pt: 'Grite para a equipe: segurança em primeiro lugar!'
+  answer:
+    speaker: protagonist
+    text: 安全[あんぜん] 第一[だいいち] で！
+  items:
+  - anzen-item
+- type: narrator
+  text:
+    en: Japanese factories collect «ヒヤリ ハット» — moments that made you go «ヒヤリ» (a chill) or «ハッ» (a gasp) — on the idea that every serious accident is preceded by many near misses. In Hamamatsu many lines
+      have Brazilian staff, and interpreters turn safety rules into Portuguese every day.
+    pt: As fábricas japonesas coletam «ヒヤリ ハット» — momentos que deram um «ヒヤリ» (calafrio) ou um «ハッ» (susto) — na ideia de que todo acidente grave é precedido por muitos quase acidentes. Em Hamamatsu muitas
+      linhas têm brasileiros, e intérpretes passam as regras de segurança para o português todo dia.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'Interpretar segurança é traduzir também o tom: o japonês diz «絶対[ぜったい] に» — nunca, de jeito nenhum —, e em português o recado tem que sair com a mesma força.'
+- type: prompt
+  ask:
+    en: 'Once more: say “factory”.'
+    pt: 'Mais uma vez: diga “fábrica”.'
+  answer:
+    speaker: protagonist
+    text: 工場[こうじょう]
+  items:
+  - koujou
+- type: prompt
+  ask:
+    en: 'Once more: say “explanation”.'
+    pt: 'Mais uma vez: diga “explicação”.'
+  answer:
+    speaker: protagonist
+    text: 説明[せつめい]
+  items:
+  - setsumei
+- type: prompt
+  ask:
+    en: 'Once more: say “with safety first”.'
+    pt: 'Mais uma vez: diga “com segurança em primeiro lugar”.'
+  answer:
+    speaker: protagonist
+    text: 安全[あんぜん] 第一[だいいち] で
+  items:
+  - anzen-item
+- type: prompt
+  ask:
+    en: 'Once more: say “tell (someone) to…”.'
+    pt: 'Mais uma vez: diga “dizer para (alguém)…”.'
+  answer:
+    speaker: protagonist
+    text: 〜ように 言[い]う
+  items:
+  - you-ni-iu
+- type: prompt
+  ask:
+    en: 'Once more: say “please tell them to wear helmets”.'
+    pt: 'Mais uma vez: diga “diga para eles usarem capacete”.'
+  answer:
+    speaker: protagonist
+    text: ヘルメット を かぶる ように 言[い]って ください
+  items:
+  - kaburu-you-ni
+- type: prompt
+  ask:
+    en: 'Once more: say “machine”.'
+    pt: 'Mais uma vez: diga “máquina”.'
+  answer:
+    speaker: protagonist
+    text: 機械[きかい]
+  items:
+  - kikai
+- type: prompt
+  ask:
+    en: 'Once more: say “(so as) not to touch”.'
+    pt: 'Mais uma vez: diga “para não tocar”.'
+  answer:
+    speaker: protagonist
+    text: 触[さわ]らない ように
+  items:
+  - sawaranai-you-ni
+- type: prompt
+  ask:
+    en: 'Once more: say “stop (machine)”.'
+    pt: 'Mais uma vez: diga “parada (da máquina)”.'
+  answer:
+    speaker: protagonist
+    text: 停止[ていし]
+  items:
+  - teishi
+- type: prompt
+  ask:
+    en: 'Once more: say “emergency stop button”.'
+    pt: 'Mais uma vez: diga “botão de parada de emergência”.'
+  answer:
+    speaker: protagonist
+    text: 緊急[きんきゅう] 停止[ていし] ボタン
+  items:
+  - kinkyuu-teishi
+- type: prompt
+  ask:
+    en: 'Once more: say “near miss”.'
+    pt: 'Mais uma vez: diga “quase acidente”.'
+  answer:
+    speaker: protagonist
+    text: ヒヤリ ハット
+  items:
+  - hiyari-hatto
+- type: prompt
+  ask:
+    en: 'Once more: say “I''ll pass it on”.'
+    pt: 'Mais uma vez: diga “vou transmitir”.'
+  answer:
+    speaker: protagonist
+    text: 伝[つた]えます
+  items:
+  - tsutaemasu
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “leave, holiday — and “application (form) — and “may I…? (very polite) — and “could you possibly…? — and “60th birthday — and “one week — and “handover (of work) — and “trouble, inconvenience
+      (to others) — and “effect, impact”.'
+    pt: 'Diga: “férias, folga — e “requerimento, pedido — e “eu poderia…? (muito educado) — e “o senhor poderia…? — e “60 anos (aniversário) — e “uma semana — e “passagem de trabalho — e “incômodo, transtorno
+      (aos outros) — e “impacto”.'
+  answer:
+    speaker: protagonist
+    text: 休暇[きゅうか] … 申請[しんせい] … 〜て も よろしい でしょう か … いただけない でしょう か … 還暦[かんれき] … 一週間[いっしゅうかん] … 引[ひ]き継[つ]ぎ … 迷惑[めいわく] … 影響[えいきょう]
+  items:
+  - kyuuka
+  - shinsei
+  - yoroshii-deshou-ka
+  - itadakemasu-deshou-ka
+  - kanreki
+  - isshuukan
+  - hikitsugi
+  - meiwaku
+  - eikyou
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “since it''s your right — and “power harassment — and “consultation, talking it over — and “be made to (against your will) — and “was made to redo it — and “be shouted at — and “help desk
+      (for complaints) — and “record — and “don''t keep it all to yourself”.'
+    pt: 'Diga: “já que é seu direito — e “assédio moral — e “conversar, pedir conselho — e “ser obrigado a — e “fui obrigado a refazer — e “levar bronca aos gritos — e “canal de denúncia — e “registro —
+      e “não guarde tudo sozinho”.'
+  answer:
+    speaker: protagonist
+    text: 権利[けんり] です から … パワハラ … 相談[そうだん] … 〜させられる … やり直[なお]させられた … 怒鳴[どな]られる … 相談[そうだん] 窓口[まどぐち] … 記録[きろく] … 一人[ひとり] で 抱[かか]え込[こ]まないで
+  items:
+  - kenri-desu-kara
+  - pawahara
+  - soudan
+  - saserareru
+  - yarinaosaserareta
+  - donarareru
+  - madoguchi-soudan
+  - kiroku
+  - hitori-de
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “personnel, HR — and “by law — and “telephone (polite) — and “I''m very sorry (most polite) — and “message — and “is away from (their) desk — and “ask, hear, visit (humble) — and “I''ll pass
+      it on (humble) — and “calling back”.'
+    pt: 'Diga: “recursos humanos, RH — e “por lei — e “telefone (educado) — e “peço muitas desculpas (o mais educado) — e “recado — e “não está na mesa no momento — e “pergunto, ouço, visito (humilde) —
+      e “vou transmitir (humilde) — e “retornar a ligação”.'
+  answer:
+    speaker: protagonist
+    text: 人事[じんじ] … 法律[ほうりつ] で … お電話[でんわ] … 申[もう]し訳[わけ] ございません … 伝言[でんごん] … 席[せき] を 外[はず]して おります … 伺[うかが]います … 申[もう]し伝[つた]えます … 折[お]り返[かえ]し
+  items:
+  - jinji
+  - hou-de
+  - odenwa
+  - moushiwake-gozaimasen
+  - dengon
+  - seki-wo-hazushite
+  - ukagaimasu
+  - moushitsutaemasu
+  - orikaeshi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I''m sorry to trouble you, but — and “may I have your contact number? — and “certainly (very polite) — and “contract (document) — and “bonus — and “probation period — and “it''s been decided
+      that… — and “it''s been decided I''ll join — and “monthly salary”.'
+    pt: 'Diga: “desculpe o incômodo, mas — e “pode me passar seu contato? — e “pois não, entendido (muito educado) — e “contrato (documento) — e “bônus — e “período de experiência — e “ficou decidido que…
+      — e “ficou decidido que vou entrar — e “salário mensal”.'
+  answer:
+    speaker: protagonist
+    text: 恐[おそ]れ入[い]ります が … ご連絡先[れんらくさき] を 伺[うかが]えます か … かしこまりました … 契約書[けいやくしょ] … ボーナス … 試用[しよう] 期間[きかん] … 〜こと に なる … 入[はい]る こと に なりました … 月給[げっきゅう]
+  items:
+  - osore-irimasu-ga
+  - renrakusaki-ukagau
+  - kashikomarimashita
+  - keiyakusho
+  - bonasu
+  - shiyou-kikan
+  - koto-ni-naru
+  - hairu-koto-ni-natta
+  - gekkyuu
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “social insurance — and “pension — and “stamp your seal — and “conditions, terms — and “is that all right? (polite) — and “apologise — and “forgive me — and “never again — and “let''s (plain
+      volitional)”.'
+    pt: 'Diga: “previdência e plano de saúde — e “aposentadoria, pensão — e “carimbar — e “condições — e “está bem? (educado) — e “pedir desculpas — e “me perdoa — e “nunca mais — e “vamos (volitivo simples)”.'
+  answer:
+    speaker: protagonist
+    text: 社会[しゃかい] 保険[ほけん] … 年金[ねんきん] … 判子[はんこ] を 押[お]す … 条件[じょうけん] … よろしい です か … 謝[あやま]る … 許[ゆる]して … もう 二度[にど] と … 〜よう
+  items:
+  - shakai-hoken
+  - nenkin
+  - hanko-wo-osu
+  - joukou
+  - yoroshii-desu-ka
+  - ayamaru
+  - yurushite
+  - mou-nidoto
+  - you-volitional
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “let''s apologise; I''ll apologise — and “let''s talk — and “let''s go (plain) — and “convey your feelings — and “let''s buy flowers — and “directly, in person — and “reflecting on a mistake
+      — and “I think that… — and “what do you think?”.'
+    pt: 'Diga: “vamos pedir desculpas; vou pedir desculpas — e “vamos conversar — e “vamos (simples) — e “dizer o que sente — e “vamos comprar flores — e “pessoalmente — e “reconhecer o erro, refletir —
+      e “acho que… — e “o que você acha?”.'
+  answer:
+    speaker: protagonist
+    text: 謝[あやま]ろう … 話[はな]そう … 行[い]こう … 気持[きも]ち を 伝[つた]える … 花[はな] を 買[か]おう … 直接[ちょくせつ] … 反省[はんせい] … 〜と 思[おも]います … どう 思[おも]います か
+  items:
+  - ayamarou
+  - hanasou
+  - ikou
+  - kimochi-wo-tsutaeru
+  - hana-wo-kaou
+  - chokusetsu
+  - hansei
+  - to-omoimasu
+  - dou-omoimasu-ka
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “samba — and “stereotype — and “image (of a place) — and “I don''t think so (I think it''s different) — and “not much, not really — and “not at all — and “sometimes — and “hear; ask”.'
+    pt: 'Diga: “samba — e “estereótipo — e “imagem (de um lugar) — e “acho que não (acho que é diferente) — e “não muito — e “nada, de jeito nenhum — e “às vezes — e “ouço; pergunto”.'
+  answer:
+    speaker: protagonist
+    text: サンバ … ステレオタイプ … イメージ … 違[ちが]う と 思[おも]う … あまり 〜ません … 全然[ぜんぜん] 〜ません … 時々[ときどき] … 聞[き]きます
+  items:
+  - sanba
+  - sutereotaipu
+  - imeeji
+  - chigau-to-omou
+  - amari
+  - zenzen
+  - tokidoki
+  - kikimasu
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
