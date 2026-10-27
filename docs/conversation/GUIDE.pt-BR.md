@@ -63,9 +63,9 @@ O texto fica escondido por padrão; o aluno ouve primeiro. A gramática nunca é
 máximo uma frase sobre por que uma forma é usada ali ("Com uma senhora desconhecida, use a forma educada"), e as
 formas são praticadas no uso.
 
-### A autoavaliação de quatro em cinco
+### A autoavaliação dos 80%
 
-No fim da unidade o aluno se pergunta se respondeu cerca de **quatro perguntas em cada cinco** sem ajuda. Se sim,
+No fim da unidade o aluno se pergunta se respondeu **a maioria das perguntas (cerca de 80%)** sem ajuda. Se sim,
 segue em frente; se não, repete a unidade. Avançar com menos deixa as próximas unidades mais difíceis, não mais
 rápidas.
 
@@ -139,7 +139,7 @@ Tipos de passo:
 | `line` | um personagem diz um item (`speaker`, `item`); o aluno ouve e repete |
 | `prompt` | antecipação: `ask` em cada língua do narrador, `answer` (`speaker`, `text`), os `items` que pratica, `review: true` se for revisão |
 | `buildup` | um `item` montado a partir do fim: `parts`, a última é o item inteiro |
-| `selfcheck` | a autoavaliação de quatro em cinco que fecha a unidade |
+| `selfcheck` | a autoavaliação dos 80% que fecha a unidade |
 
 ## Antes de enviar
 

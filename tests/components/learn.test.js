@@ -381,4 +381,12 @@ describe('words in a lesson open their dictionary entry, as in the Reader (Allan
     await flush();
     expect(r2.container.querySelector('.practised')).toBeNull();
   });
+  it('the search also looks inside the lessons, through the word index (Allan 2026-10-27: "hallo" found nothing)', async () => {
+    const loadSearch = async () => ({ ids: ['n5-004', 'n5-005', 'n4-001'], w: { 'わたし': [0], 'hallo': [2] } });
+    const { container } = render(Learn, props({ loadSearch }));
+    await flush();
+    await fireEvent.input(container.querySelector('input.search'), { target: { value: 'hallo' } });
+    await flush();
+    expect([...container.querySelectorAll('.lesson-row .l-title')].map((x) => x.textContent)).toEqual(['～ば']);
+  });
 });

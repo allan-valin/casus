@@ -299,6 +299,7 @@
   {:else if route.view === 'learn'}
     <Learn {lang} {storage} {award} {progression} startLesson={decodeURIComponent(location.hash.slice(1)) || null} lookup={(w) => (lexicon ? lexicon.lookup(w) : Promise.resolve([]))} loadInfo={loadEntryInfo} loadParadigm={loadParadigmOf} speak={(text) => speakHref(withBase(speakPath(LANGUAGES.find((l) => l.code === lang.code) ?? { path: '/' })), text)} loadLearn={() => fetchImpl(`${DATA}/learn.json`).then((r) => (r.ok ? r.json() : null))}
       loadLesson={(id) => fetchImpl(`${DATA}/learn/${id}.json`).then((r) => r.json())}
+      loadSearch={() => fetchImpl(`${DATA}/learn-search.json`).then((r) => (r.ok ? r.json() : null))}
       loadTalkLinks={() => fetchImpl(withBase(`/talk/lessons/${lang.code}.json`)).then((r) => (r.ok ? r.json() : {}))}
       talkHref={(unit) => `${withBase(talkPath(LANGUAGES.find((l) => l.code === lang.code) ?? { path: '/' }))}#${unit}`}
       loadQuestions={(id) => fetchImpl(`${DATA}/learn/q-${id}.json`).then((r) => (r.ok ? r.json() : { qs: [] }))}

@@ -39,4 +39,19 @@ describe('colour themes from flags (Allan, 2026-10-20)', () => {
     expect(themesFor('grc').map((x) => x.id)).toContain('sparta');
     for (const id of ['spqr', 'athens', 'sparta']) expect(flagUrl(id), id).toBeTruthy();
   });
+  it('the themes of one language look clearly different, not shades of one colour (Allan, 2026-10-27: German all red)', () => {
+    const hue = (hex) => {
+      const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255);
+      const max = Math.max(r, g, b), min = Math.min(r, g, b), d = max - min;
+      if (d < 0.15) return null;                                  // grey or black: no hue
+      const h = max === r ? ((g - b) / d) % 6 : max === g ? (b - r) / d + 2 : (r - g) / d + 4;
+      return (h * 60 + 360) % 360;
+    };
+    const gap = (a, b) => Math.min(Math.abs(a - b), 360 - Math.abs(a - b));
+    for (const l of LANGUAGES) {
+      const hs = themesFor(l.code).map((x) => hue(x.accent)).filter((h) => h !== null);
+      for (let i = 0; i < hs.length; i += 1) for (let j = i + 1; j < hs.length; j += 1) expect(gap(hs[i], hs[j]), `${l.code}: ${themesFor(l.code).map((x) => x.id + x.accent)}`).toBeGreaterThanOrEqual(40);
+    }
+    expect(themesFor('de')[0].accent).toBe('#c00000');            // the first flag keeps its own colour
+  });
 });

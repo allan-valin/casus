@@ -17,7 +17,8 @@
   import { learnSections } from '../lib/learnorigin.js';
   import WordEntry from './WordEntry.svelte';
   import { wordAround, candidatesAt, firstKnown } from '../lib/wordat.js';
-  let { lang, loadLearn, loadLesson, loadQuestions, storage = null, random = Math.random, openInReader = null, speak = null, saveFile = downloadFile, award = null, progression = null, lookup = null, loadInfo = null, loadParadigm = null, startLesson = null, loadTalkLinks = null, talkHref = null } = $props();
+  import { searchIndex } from '../../lib/learn/search.js';
+  let { lang, loadLearn, loadLesson, loadQuestions, storage = null, random = Math.random, openInReader = null, speak = null, saveFile = downloadFile, award = null, progression = null, lookup = null, loadInfo = null, loadParadigm = null, startLesson = null, loadTalkLinks = null, talkHref = null, loadSearch = null } = $props();
 
   let learn = $state(null);
   let failed = $state(false);
@@ -77,7 +78,14 @@
 
   const level = $derived(learn?.levels.find((l) => l.id === levelId) ?? null);
   const flat = $derived(learn ? learn.levels.flatMap((lv) => lv.topics.flatMap((tp) => tp.lessons.map((e) => ({ level: lv, topic: tp, entry: e })))) : []);
-  const visible = (tp) => (!search.trim() ? tp.lessons : tp.lessons.filter((e) => `${e.title} ${loc(e.meaning)}`.toLowerCase().includes(search.trim().toLowerCase())));
+  // the word index (data/<code>/learn-search.json) is fetched on the first search, so the words inside lessons count too
+  let wordIndex = $state(null);
+  let wordIndexAsked = false;
+  $effect(() => {
+    if (search.trim() && !wordIndexAsked && loadSearch) { wordIndexAsked = true; loadSearch().then((x) => { wordIndex = x; }).catch(() => {}); }
+  });
+  const inside = $derived(new Set(search.trim() && wordIndex ? searchIndex(wordIndex, search) : []));
+  const visible = (tp) => (!search.trim() ? tp.lessons : tp.lessons.filter((e) => inside.has(e.id) || `${e.title} ${loc(e.meaning)}`.toLowerCase().includes(search.trim().toLowerCase())));
   const review = createReview(lang.code, storage);   // every answer is scheduled for the Review drill
   function record(item, correct) {
     review.record(item, correct);

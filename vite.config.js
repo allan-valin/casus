@@ -3,8 +3,15 @@ import { SITE, siteUrl } from './src/sites.js';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import { existsSync, statSync, createReadStream, cpSync } from 'node:fs';
 import { join, resolve, sep } from 'node:path';
-import { mkdirSync, copyFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, copyFileSync, writeFileSync, readFileSync } from 'node:fs';
+import { buildSearchIndex } from './src/lib/learn/search.js';
 import { LANGUAGES } from './src/lang/registry.js';
+
+/** Learn's word index for one language folder (learn.json + learn/<id>.json) */
+function learnSearchOf(dir) {
+  const read = (p) => { try { return JSON.parse(readFileSync(p, 'utf8')); } catch { return null; } };
+  return buildSearchIndex(read(join(dir, 'learn.json')), (id) => read(join(dir, 'learn', `${id}.json`)));
+}
 
 const DATA = resolve('data');
 
@@ -46,6 +53,12 @@ function serveData() {
     configureServer(server) {
       server.middlewares.use('/data', (req, res, next) => {
         const file = join(DATA, decodeURIComponent(req.url.split('?')[0]));
+        // the dev server builds Learn's word index on request (the build writes it into dist/)
+        const m = /^[/]([a-z-]+)[/]learn-search\.json$/.exec(req.url.split('?')[0]);
+        if (m && existsSync(join(DATA, m[1], 'learn.json'))) {
+          res.setHeader('Content-Type', 'application/json');
+          return res.end(JSON.stringify(learnSearchOf(join(DATA, m[1]))));
+        }
         if (!file.startsWith(DATA + sep) || !existsSync(file) || !statSync(file).isFile()) return next();
         res.setHeader('Content-Type', 'application/json');
         createReadStream(file).on('error', () => next()).pipe(res);
@@ -54,6 +67,11 @@ function serveData() {
     closeBundle() {
       // only this site's dictionaries (each site has its own 1 GB on GitHub Pages)
       if (existsSync(DATA)) for (const code of SITE.languages) if (existsSync(join(DATA, code))) cpSync(join(DATA, code), resolve('dist/data', code), { recursive: true });
+      // Learn's word index, built from the lessons this build ships (src/lib/learn/search.js; Allan, 2026-10-27)
+      for (const code of SITE.languages) {
+        const out = resolve('dist/data', code, 'learn-search.json');
+        if (existsSync(resolve('dist/data', code, 'learn.json'))) writeFileSync(out, JSON.stringify(learnSearchOf(resolve('dist/data', code))));
+      }
       // one HTML per language route, so a deep link (/grc/, /grc/game/) loads on static hosting
       const html = resolve('dist/index.html');
       if (!existsSync(html)) return;

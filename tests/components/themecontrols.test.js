@@ -24,7 +24,8 @@ describe('dark/light and the colour identity menu (Allan, 2026-10-20)', () => {
     expect([...sel.options].map((o) => o.value)).toEqual(['br', 'pt', 'ao', 'mz', 'casus']);
     expect(document.documentElement.style.getPropertyValue('--accent')).toBe('#009c3b');
     await fireEvent.change(sel, { target: { value: 'pt' } });
-    expect(document.documentElement.style.getPropertyValue('--accent')).toBe('#046a38');
+    // Portugal takes its flag's red: Brazil already has the green (Allan, 2026-10-27: themes must look different)
+    expect(document.documentElement.style.getPropertyValue('--accent')).toBe('#da291c');
     expect(s.getItem('casus:theme:pt')).toBe('pt');
   });
 });

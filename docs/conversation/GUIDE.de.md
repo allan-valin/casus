@@ -66,9 +66,9 @@ Der Text ist standardmäßig verborgen; man hört zuerst. Grammatik wird nie doz
 Satz dazu, warum hier eine Form steht („Bei einer Dame, die Sie nicht kennen, nehmen Sie die höfliche Form“), und die
 Formen werden im Gebrauch geübt.
 
-### Die Selbstprüfung vier von fünf
+### Die 80-%-Selbstprüfung
 
-Am Ende einer Einheit fragen sich die Lernenden, ob sie etwa **vier von fünf Fragen** ohne Hilfe beantwortet haben.
+Am Ende einer Einheit fragen sich die Lernenden, ob sie **die meisten Fragen (etwa 80%)** ohne Hilfe beantwortet haben.
 Wenn ja, geht es weiter; wenn nicht, wiederholen sie die Einheit. Mit weniger weiterzugehen macht die nächsten
 Einheiten schwerer, nicht schneller.
 
@@ -146,7 +146,7 @@ Arten von Schritten:
 | `line` | eine Figur sagt ein Element (`speaker`, `item`); die Lernenden hören und sprechen nach |
 | `prompt` | Antizipation: `ask` in jeder Erzählersprache, `answer` (`speaker`, `text`), die geübten `items`, `review: true` bei Wiederholung |
 | `buildup` | ein `item`, vom Ende her aufgebaut: `parts`, das letzte ist das ganze Element |
-| `selfcheck` | die Selbstprüfung vier von fünf, die die Einheit abschließt |
+| `selfcheck` | die 80-%-Selbstprüfung, die die Einheit abschließt |
 
 ## Vor dem Einreichen
 

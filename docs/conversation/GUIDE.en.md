@@ -63,9 +63,9 @@ The text is hidden by default; the learner listens first. Grammar is never lectu
 sentence on why a form is used here ("With a lady you don't know, use the polite form"), and the forms are
 practised in use.
 
-### The four-in-five self-check
+### The 80% self-check
 
-At the end of a unit the learner asks themselves whether they answered about **four prompts in five** without
+At the end of a unit the learner asks themselves whether they answered **most of the prompts (about 80%)** without
 help. If so, they go on; if not, they repeat the unit. Moving on with less makes the next units harder, not faster.
 
 ## Writing rules
@@ -138,7 +138,7 @@ Kinds of step:
 | `line` | a character says one item (`speaker`, `item`); the learner listens and repeats |
 | `prompt` | anticipation: `ask` in every narrator language, `answer` (`speaker`, `text`), `items` it practises, `review: true` if it is review |
 | `buildup` | an `item` built from its end: `parts`, the last one the whole item |
-| `selfcheck` | the four-in-five check that closes the unit |
+| `selfcheck` | the 80% self-check that closes the unit |
 
 ## Before you submit
 

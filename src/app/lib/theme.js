@@ -80,9 +80,39 @@ export const LANGUAGE_FLAGS = {
 export const MODE_KEY = 'casus:mode';
 export const themeKey = (code) => `casus:theme:${code}`;
 
-/** the palettes a language offers: its flags, then the Casus purple */
+// the hue of a colour in degrees, or null for grey and black (no hue to tell apart)
+function hueOf(hex) {
+  const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255);
+  const max = Math.max(r, g, b), min = Math.min(r, g, b), d = max - min;
+  if (d < 0.15) return null;
+  const h = max === r ? ((g - b) / d) % 6 : max === g ? (b - r) / d + 2 : (r - g) / d + 4;
+  return (h * 60 + 360) % 360;
+}
+const hueGap = (a, b) => Math.min(Math.abs(a - b), 360 - Math.abs(a - b));
+// colours far apart, for a flag whose own colours all repeat an earlier theme's (Austria and Switzerland after Germany)
+const SPARE = ['#1f5fbf', '#2e8b57', '#c56a00', '#00897b', '#b0306a', '#8d5524'];
+const MIN_GAP = 40;
+
+/** the palettes a language offers: its flags, then the Casus purple. The themes of one language must look different
+ * (Allan, 2026-10-27: German's three flags were all red): a flag whose colour is
+ * within 40° of hue of an earlier theme (or of the purple) takes its flag's second colour, else a spare colour, and
+ * keeps its own red/blue/green as the second colour. */
 export function themesFor(code) {
-  return [...(LANGUAGE_FLAGS[code] ?? []), 'casus'].map((id) => ({ id, flag: id === 'casus' ? null : id, ...FLAG[id] }));
+  const ids = [...(LANGUAGE_FLAGS[code] ?? []), 'casus'];
+  const taken = [hueOf(FLAG.casus.accent)];
+  const clear = (hex) => { const h = hueOf(hex); return h === null || taken.every((t) => hueGap(h, t) >= MIN_GAP); };
+  return ids.map((id) => {
+    const base = { id, flag: id === 'casus' ? null : id, ...FLAG[id] };
+    if (id === 'casus') return base;
+    let accent = base.accent;
+    if (!clear(accent)) {
+      const second = hueOf(base.accent2) !== null && clear(base.accent2) ? base.accent2 : null;
+      accent = second ?? SPARE.find(clear) ?? accent;
+    }
+    const h = hueOf(accent);
+    if (h !== null) taken.push(h);
+    return accent === base.accent ? base : { ...base, accent, accent2: base.accent };
+  });
 }
 
 /** the language's chosen palette (kept per language in this browser), else its first flag */

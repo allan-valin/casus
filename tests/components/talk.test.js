@@ -196,17 +196,18 @@ describe('Conversation practice tab (Allan, 2026-10-20/21: narrator in the inter
     expect(said.length).toBeGreaterThanOrEqual(3);
   });
 
-  it('a narrator language the course lacks falls back to the first narrator language, and says so', async () => {
+  it('a course whose narrator lacks the interface language shows only the languages it has, as links that switch (Allan, 2026-10-27)', async () => {
     setLang('mk');
-    const { p, spoken } = props();
+    const { p } = props();
     const { container } = render(Talk, p);
     await flush();
-    expect(container.querySelector('.narrator-fallback')).not.toBeNull();
-    await fireEvent.click(container.querySelector('.unit-row'));
+    expect(container.querySelector('.unit-row')).toBeNull();                 // no course in another language
+    const links = [...container.querySelectorAll('.only-in a')];
+    expect(links.map((a) => a.getAttribute('href'))).toEqual(['?ui=pt', '?ui=en']);
+    await fireEvent.click(links[1]);
     await flush();
-    await fireEvent.click(container.querySelector('.step[data-type="narrator"] .play'));
-    await flush();
-    expect(spoken[0]).toEqual(['pt', 'Escute.']);
+    expect(container.querySelector('.unit-row')).not.toBeNull();
+    expect(container.querySelector('.only-in')).toBeNull();
   });
 
   it('a prompt asks first; the answer appears and plays only on request; no typing box (Allan 2026-10-21)', async () => {
@@ -811,10 +812,13 @@ describe('Unit list: lesson tags, search in every level, in-development banner',
     const { p } = props({ loadTalk: async () => TAGGED, loadLearn: async () => LEARN, lessonHref: (id) => `/de/learn/#${id}` });
     const { container } = render(Talk, p);
     await flush();
-    const tags = [...container.querySelectorAll('.unit-row[data-unit="A1-01"] .u-tag')];
+    // tags sit beside the unit button, as links to Learn (Allan, 2026-10-27: "I can't find where I can click")
+    const tags = [...container.querySelectorAll('.unit-item[data-unit="A1-01"] .u-tag')];
     expect(tags.map((x) => x.textContent.trim())).toEqual(['sein']);
     expect(tags[0].getAttribute('title')).toBe('o verbo ser');
-    expect(container.querySelectorAll('.unit-row[data-unit="A1-02"] .u-tag').length).toBe(0);
+    expect(container.querySelectorAll('.unit-item[data-unit="A1-02"] .u-tag').length).toBe(0);
+    expect(tags[0].tagName).toBe('A');
+    expect(tags[0].getAttribute('href')).toBe('/de/learn/#de-sein');
     await fireEvent.click(container.querySelector('.unit-row[data-unit="A1-01"]')); await flush();
     const link = container.querySelector('.unit-page a.learn-tag');
     expect(link.getAttribute('href')).toBe('/de/learn/#de-sein');
@@ -856,5 +860,32 @@ describe('Unit list: lesson tags, search in every level, in-development banner',
     const { p } = props({ startUnit: 'A1-02' });
     const { container } = render(Talk, p); await flush();
     expect(container.querySelector('.unit-head, h3')?.textContent).toContain('Sunday');
+  });
+  it('tags are coloured by the level of the lesson and show the lessons of reviewed items too (Allan, 2026-10-27)', async () => {
+    const learn = { levels: [{ id: 'A1', topics: [{ kind: 'grammar', lessons: [{ id: 'l-a', title: 'sein', meaning: 'be' }] }] },
+      { id: 'A2', topics: [{ kind: 'grammar', lessons: [{ id: 'l-b', title: 'Perfekt', meaning: 'past' }] }] }] };
+    const course = { ...COURSE, example: false, units: [
+      { ...COURSE.units[0], learn_lessons: ['l-a'] },
+      { ...COURSE.units[1], learn_lessons: ['l-b'], reviews: [{ item: 'danke' }] }] };
+    const { p } = props({ loadTalk: async () => course, loadLearn: async () => learn, lessonHref: (id) => `#${id}` });
+    const { container } = render(Talk, p); await flush();
+    const tags = [...container.querySelectorAll('.unit-item[data-unit="A1-02"] .u-tag')];
+    expect(tags.map((x) => [x.textContent.trim(), x.dataset.lv, x.classList.contains('reviewed')])).toEqual([['Perfekt', '1', false], ['sein', '0', true]]);
+  });
+  it('the search finds the words of the units too: items and dialogue lines (Allan, 2026-10-27: "guten morgen" found nothing)', async () => {
+    const { p } = props();
+    const { container } = render(Talk, p); await flush();
+    await fireEvent.input(container.querySelector('input.talk-search'), { target: { value: 'guten tag' } }); await flush();
+    expect([...container.querySelectorAll('.unit-row')].map((r) => r.dataset.unit)).toEqual(['A1-01']);
+    await fireEvent.input(container.querySelector('input.talk-search'), { target: { value: 'entschuldigung' } }); await flush();
+    expect([...container.querySelectorAll('.unit-row')].map((r) => r.dataset.unit)).toEqual(['A1-01']);
+  });
+  it('the self-check closes the unit as a heading, not a numbered step, and asks about most (80%) of the answers (Allan, 2026-10-27)', async () => {
+    const { p } = props();
+    const { container } = render(Talk, p); await flush();
+    await fireEvent.click(container.querySelector('.unit-row[data-unit="A1-01"]')); await flush();
+    const last = container.querySelector('.step[data-type="selfcheck"]');
+    expect(last.querySelector('.num')).toBeNull();
+    expect(last.querySelector('.selfcheck-q').textContent).toContain('80%');
   });
 });

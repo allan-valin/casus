@@ -9,7 +9,7 @@
   import { onMount } from 'svelte';
   import Picker from './Picker.svelte';
   import { alignFurigana } from '../../lang/ja/furigana.js';
-  import { t, ui } from '../lib/i18n.svelte.js';
+  import { t, ui, setLang } from '../lib/i18n.svelte.js';
   import { voicePitches, pitchOf, speedOf, speakerOf } from '../lib/talkvoices.js';
   import { narrationParts, taughtLetters } from '../lib/narration.js';
   let { lang, loadTalk, storage = null, speakTaught = async () => {}, speakNarrator = async () => {}, trainerHref = null,
@@ -20,6 +20,7 @@
   const GUIDE = 'https://github.com/allan-valin/casus/blob/main/docs/conversation';
   const GUIDES = [['en', 'English'], ['pt-BR', 'Português (Brasil)'], ['de', 'Deutsch'], ['mk', 'Македонски'], ['ar', 'العربية']];
   const KEY = `casus:talk:${lang.code}:done`;
+  const OWN_NAMES = { en: 'English', pt: 'Português (Brasil)', de: 'Deutsch', mk: 'Македонски', ar: 'العربية' };
   const NAMES = { en: 'English', pt: 'português', de: 'Deutsch', mk: 'македонски', ar: 'العربية' };
 
   let course = $state(null);
@@ -56,7 +57,8 @@
     try { return JSON.parse(storage?.getItem(KEY) ?? '[]'); } catch { return []; }
   }
   onMount(async () => {
-    loadLearn?.().then((L) => { learnIndex = Object.fromEntries((L?.levels ?? []).flatMap((l) => l.topics.flatMap((tp) => tp.lessons.map((e) => [e.id, e])))); }).catch(() => {});
+    // lv: the lesson's level, by position (A1 = 0 … / N5 = 0 …), for its tag colour
+    loadLearn?.().then((L) => { learnIndex = Object.fromEntries((L?.levels ?? []).flatMap((l, lv) => l.topics.flatMap((tp) => tp.lessons.map((e) => [e.id, { ...e, lv }])))); }).catch(() => {});
     try { course = await loadTalk(); } catch { course = null; }
     loaded = true;
     // a link names a unit's slot (A1-02) or id (A1-02-e): open this audience's version (Learn links here, 2026-10-27)
@@ -67,12 +69,25 @@
   let learnIndex = $state({});
   let search = $state('');
   const tagsOf = (u) => (u.learn_lessons ?? []).map((id) => learnIndex[id]).filter(Boolean);
+  // the lessons of the items a unit reviews, from the unit that taught each item: every topic it touches shows
+  const taughtIn = $derived(Object.fromEntries((course?.units ?? []).flatMap((u) => (u.new_items ?? []).map((i) => [i.id, u]))));
+  const allTags = (u) => {
+    const own = tagsOf(u);
+    const seen = new Set(own.map((e) => e.id));
+    const reviewed = (u.reviews ?? []).flatMap((r) => tagsOf(taughtIn[r.item] ?? {})).filter((e) => !seen.has(e.id) && seen.add(e.id));
+    return [...own.map((e) => ({ e, reviewed: false })), ...reviewed.map((e) => ({ e, reviewed: true }))];
+  };
+  // what a search reads in a unit: its words too (items, dialogue lines, answers), not only titles (Allan, 2026-10-27)
+  const unitText = (u) => [u.id, nar(u.title), nar(u.situation), ...tagsOf(u).flatMap((e) => [e.title, meaningOf(e)]),
+    ...(u.new_items ?? []).flatMap((i) => [i.text, nar(i.meaning)]),
+    ...(u.steps ?? []).flatMap((st) => [...(st.lines ?? []).flatMap((ln) => [ln.text, nar(ln.meaning)]), st.answer?.text])]
+    .map((x) => String(x ?? '')).join(' ').toLowerCase().replace(/[.,!?;:«»„“”"…¿¡()]/g, ' ');
   const meaningOf = (e) => (typeof e.meaning === 'string' ? e.meaning : (e.meaning?.[ui.lang] ?? e.meaning?.en ?? ''));
   const found = $derived.by(() => {
     const q = search.trim().toLowerCase();
     if (!q) return null;
-    return shownUnits.filter((u) => [u.id, nar(u.title), nar(u.situation), ...tagsOf(u).flatMap((e) => [e.title, meaningOf(e)])]
-      .some((x) => String(x ?? '').toLowerCase().includes(q)));
+    const words = q.replace(/[.,!?;:«»„“”"…¿¡()]/g, ' ').split(/\s+/).filter(Boolean);
+    return shownUnits.filter((u) => { const text = unitText(u); return words.every((w) => text.includes(w)); });
   });
 
   const narratorLang = $derived(course ? (course.narrator_languages.includes(ui.lang) ? ui.lang : course.narrator_languages[0]) : ui.lang);
@@ -273,12 +288,16 @@
 {#snippet unitList(list, role = undefined)}
   <ul class="units" {role}>
     {#each list as u (u.id)}
-      <li><button class="unit-row" class:done={done.includes(u.id)} data-unit={u.id} onclick={() => open(u)}>
+      <li class="unit-item" data-unit={u.id}><button class="unit-row" class:done={done.includes(u.id)} data-unit={u.id} onclick={() => open(u)}>
         <span class="u-id">{slot(u.id)}</span> <span class="u-title">{nar(u.title)}</span>{#if done.includes(u.id)} <span class="tick">✓</span>{/if}
-        {#if tagsOf(u).length}<span class="u-tags">{#each tagsOf(u) as e}<span class="u-tag" title={meaningOf(e)}>{e.title}</span>{/each}</span>{/if}
-      </button></li>
+      </button>
+        {#if allTags(u).length}<span class="u-tags">{@render tagList(allTags(u), 'u-tag')}</span>{/if}</li>
     {/each}
   </ul>
+{/snippet}
+
+{#snippet tagList(tags, cls)}
+  {#each tags as { e, reviewed }}{#if lessonHref}<a class={cls} class:reviewed data-lv={e.lv} href={lessonHref(e.id)} title={(reviewed ? `${t('talk.review')}: ` : '') + meaningOf(e)}>{e.title}</a>{:else}<span class={cls} class:reviewed data-lv={e.lv} title={meaningOf(e)}>{e.title}</span>{/if} {/each}
 {/snippet}
 
 {#snippet gearPanel()}
@@ -321,6 +340,12 @@
     <p class="talk-none">{t('talk.none', { language: lang.name?.[ui.lang] ?? lang.name?.en ?? '' })}</p>
     <p>{t('talk.guide.intro')}</p>
     <ul class="guides">{#each GUIDES as [code, name]}<li><a class="guide" href={`${GUIDE}/GUIDE.${code}.md`} target="_blank" rel="noopener">{name}</a></li>{/each}</ul>
+  {:else if !course.narrator_languages.includes(ui.lang)}
+    <!-- the course is narrated in other languages: say which, each a link that switches (Allan, 2026-10-27) -->
+    <div class="only-in">
+      <p>{t('talk.onlyIn')}</p>
+      <ul>{#each course.narrator_languages as code}<li><a href={`?ui=${code}`} lang={code === 'pt' ? 'pt-BR' : code} onclick={(ev) => { ev.preventDefault(); setLang(code); }}>{OWN_NAMES[code] ?? code}</a></li>{/each}</ul>
+    </div>
   {:else if !unit}
     {#if inDevelopment || course?.in_development}<p class="in-dev" role="note"><strong>{t('talk.dev.title')}</strong> {t('talk.dev.body', { report: t('app.report') })}</p>{/if}
     {@render gearPanel()}
@@ -329,7 +354,6 @@
       <div class="prose">{@html t('talk.howto.html')}</div>
     </details>
     {#if course.example}<p class="talk-example">{t('talk.example')}</p>{/if}
-    {#if narratorLang !== ui.lang}<p class="narrator-fallback">{t('talk.narratorFallback', { lang: NAMES[narratorLang] ?? narratorLang })}</p>{/if}
     <!-- the levels under one button showing the current one and its progress (Allan, 2026-10-22) -->
     <div class="level-tabs">
       <Picker cls="level-picker" label={level ? `${level} · ${doneIn(level)}/${countIn(level)}` : ''} title={t('level.pick')}>
@@ -358,8 +382,8 @@
       <button class="back" onclick={back}>← {t('talk.back')}</button>
       <h3>{slot(unit.id)} · {nar(unit.title)}</h3>
       <p class="situation">{nar(unit.situation)}</p>
-      {#if tagsOf(unit).length}<p class="learn-tags"><span class="kanji-label">{t('talk.lessons')}</span>
-        {#each tagsOf(unit) as e}{#if lessonHref}<a class="learn-tag" href={lessonHref(e.id)} title={meaningOf(e)}>{e.title}</a>{:else}<span class="learn-tag" title={meaningOf(e)}>{e.title}</span>{/if} {/each}</p>{/if}
+      {#if allTags(unit).length}<p class="learn-tags"><span class="kanji-label">{t('talk.lessons')}</span>
+        {@render tagList(allTags(unit), 'learn-tag')}</p>{/if}
       {#if unit.kanji?.length}{@render kanjiList(unit.kanji, 'unit-kanji', 'talk.kanji.new')}{/if}
       {#if needVoices}
         <div class="voice-gate">
@@ -374,7 +398,7 @@
       <ol class="steps">
         {#each unit.steps as s, n}
           <li class="step" class:current={current === n} class:sounding={playing === n} data-type={s.type}>
-            <span class="num">{n + 1}</span>
+            {#if s.type !== 'selfcheck'}<span class="num">{n + 1}</span>{/if}
             {#if s.type !== 'selfcheck'}<button class="play" class:playing={playing === n && !paused} class:paused={playing === n && paused}
               aria-label={playing === n && !paused ? t('talk.pause') : t('talk.play')} title={playing === n && !paused ? t('talk.pause') : t('talk.play')}
               onclick={() => play(s, n)}>{@render icon(playing === n && !paused ? 'pause' : 'play')}</button>{/if}
@@ -404,7 +428,7 @@
               {#if shown[n]}{@render words(n, s.answer.text)}{/if}
               {#if Practice && practising === n}<div class="practice"><Practice text={s.answer.text} {...practiceProps} /></div>{/if}
             {:else if s.type === 'selfcheck'}
-              <span class="kind">{t('talk.selfcheck')}</span>
+              <strong class="selfcheck-q">{t('talk.selfcheck')}</strong>
               <button class="done-yes" onclick={() => markDone(true)}>{t('talk.selfcheck.yes')}</button>
               <button class="done-no" onclick={() => markDone(false)}>{t('talk.selfcheck.no')}</button>
             {/if}
@@ -464,12 +488,31 @@
   .u-tag, .learn-tag { font-size: 0.78rem; border: 1px solid var(--line); border-radius: 999px; padding: 0 8px; color: var(--ink-2); text-decoration: none; }
   a.learn-tag:hover { border-color: var(--accent); color: var(--accent-text); }
   .learn-tags { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
-  .talk-search { width: 100%; box-sizing: border-box; padding: 6px 10px; margin: 0 0 8px; border: 1px solid var(--line); border-radius: 8px; background: transparent; color: var(--ink); }
+  .talk-search { width: 100%; box-sizing: border-box; padding: 6px 10px; margin: 0 0 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); font: inherit; }
   .level-head { margin: 12px 0 4px; font-size: 1rem; }
+  .only-in { padding: 24px 0; font-size: 1.1rem; }
+  .only-in ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+  .only-in a { display: inline-block; padding: 8px 14px; border: 1px solid var(--accent); border-radius: 8px; text-decoration: none; }
   .in-dev { border: 1px solid var(--accent); border-radius: 8px; padding: 8px 12px; background: color-mix(in srgb, var(--accent) 10%, transparent); }
   .talk-example, .narrator-fallback { color: var(--ink-2); font-size: 0.92rem; }
   .steps { padding-inline-start: 1.6em; display: grid; gap: 8px; }
   .step { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+  /* every step is a box (Allan, 2026-10-27); the playing one keeps its outline and the last clicked its tint */
+  .step:not([data-type="selfcheck"]) { border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; }
+  /* the text stays beside ▶ and wraps inside itself, also on review prompts with long asks */
+  .narration, .ask { flex: 1 1 14em; min-width: 0; }
+  .step[data-type="selfcheck"] { list-style: none; margin-top: 10px; }
+  .selfcheck-q { display: block; width: 100%; font-size: 1.2rem; }
+  /* the page ends above the fixed player bar, so the activity log under it can be read */
+  :global(body:has(.player-bar)) { padding-bottom: 80px; }
+  .u-tag, .learn-tag { background: color-mix(in srgb, var(--lvc, var(--ink-2)) 14%, var(--panel)); border-color: color-mix(in srgb, var(--lvc, var(--line)) 60%, transparent) !important; color: var(--ink) !important; }
+  a.u-tag, a.learn-tag { cursor: pointer; }
+  a.u-tag:hover, a.learn-tag:hover { background: color-mix(in srgb, var(--lvc, var(--ink-2)) 30%, var(--panel)); }
+  .reviewed { border-style: dashed !important; }
+  /* one hue per level, far apart on the colour wheel, readable in light and dark */
+  [data-lv="0"] { --lvc: #2e9e44; } [data-lv="1"] { --lvc: #1f6fd1; } [data-lv="2"] { --lvc: #8e44ad; }
+  [data-lv="3"] { --lvc: #e67e22; } [data-lv="4"] { --lvc: #d63031; } [data-lv="5"] { --lvc: #00a3a3; }
+  .unit-item .u-tags { margin: 2px 0 6px 8px; }
   .play { border-radius: 999px; width: 2.2em; height: 2.2em; border: 1px solid var(--accent); background: transparent; color: var(--accent-text); cursor: pointer; }
   .reveal, .answer, .check, .back, .done-yes, .done-no { border: 1px solid var(--line); border-radius: 999px; padding: 2px 12px; background: transparent; color: var(--ink); cursor: pointer; }
   .taught { font-weight: 600; font-size: 1.08rem; }
