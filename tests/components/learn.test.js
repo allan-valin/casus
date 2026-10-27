@@ -431,3 +431,35 @@ describe('words in a lesson open their entry where they are clicked', () => {
     expect(container.querySelector('.entry-float')).not.toBeNull();
   });
 });
+
+// Allan, 2026-10-28: the browser's Back left Learn; the page's back button lost the scroll and the opened topics
+describe('going back from a lesson', () => {
+  it('opening a lesson adds a history entry; Back returns to the list with the topics as they were', async () => {
+    history.replaceState(null, '', '/ja/learn/');
+    const { container } = render(Learn, props());
+    await flush();
+    const topic = container.querySelector('details.topic');
+    topic.open = true;
+    await fireEvent.click(container.querySelector('.lesson-row[data-lesson="n5-004"]'));
+    await flush();
+    expect(location.hash).toBe('#n5-004');
+    expect(history.state?.learn).toBe('n5-004');
+    history.back();
+    await new Promise((r) => setTimeout(r, 50)); await flush();
+    expect(container.querySelector('.lesson h3, .l-title-main')).toBeNull;
+    expect(container.querySelector('.list-view').hidden).toBe(false);
+    expect(container.querySelector('details.topic').open).toBe(true);
+  });
+  it('the page’s own back button closes the lesson too, keeping the list', async () => {
+    history.replaceState(null, '', '/ja/learn/');
+    const { container } = render(Learn, props());
+    await flush();
+    container.querySelector('details.topic').open = true;
+    await fireEvent.click(container.querySelector('.lesson-row[data-lesson="n5-004"]'));
+    await flush();
+    await fireEvent.click(container.querySelector('.crumbs .back'));
+    await new Promise((r) => setTimeout(r, 50)); await flush();
+    expect(container.querySelector('.crumbs')).toBeNull();
+    expect(container.querySelector('details.topic').open).toBe(true);
+  });
+});

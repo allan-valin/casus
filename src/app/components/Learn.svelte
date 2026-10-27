@@ -4,7 +4,7 @@
    * romaji, nuance, contrasts, common mistakes, the book's own practice with answers to reveal — and exercises by the
    * hundred (gap, translation both ways, word order) from the lesson and from Tatoeba. A practice section mixes a range
    * of levels. Progress is kept in this browser. */
-  import { onMount } from 'svelte';
+  import { onMount, tick } from 'svelte';
   import Picker from './Picker.svelte';
   import { t, ui } from '../lib/i18n.svelte.js';
   import { questionsFromFile } from '../../lib/learn/questions.js';
@@ -85,7 +85,12 @@
       levelId = learn.levels[0].id; from = levelId; to = levelId;
       // a link straight to one lesson (/<code>/learn/#n5-k1, from a Talk unit's kanji): open it in its own level
       const start = startLesson && flat.find((x) => x.entry.id === startLesson);
-      if (start) { levelId = start.level.id; from = levelId; to = levelId; await open(start); }
+      if (start) {
+        levelId = start.level.id; from = levelId; to = levelId;
+        // a direct link: put the list under it in the history, so Back shows the list (Allan, 2026-10-28)
+        try { history.replaceState(null, '', location.pathname + location.search); } catch { /* jsdom */ }
+        await open(start);
+      }
     } catch { failed = true; }
   });
 
@@ -152,7 +157,11 @@
     if (!lessons.has(id)) lessons.set(id, Promise.resolve(loadLesson(id)).catch((e) => { lessons.delete(id); throw e; }));
     return lessons.get(id);
   };
-  async function open(ref) {
+  // a lesson is a history entry (#id): the browser's Back closes it; the list's scroll is kept (Allan, 2026-10-28)
+  let listScroll = 0;
+  async function open(ref, { push = true } = {}) {
+    if (!lesson) { try { listScroll = window.scrollY; } catch { /* jsdom */ } }
+    if (push) { try { history.pushState({ ...(history.state ?? {}), learn: ref.entry.id }, '', `#${ref.entry.id}`); } catch { /* jsdom */ } }
     showOrig = false; entry = null;
     loading = true; quizItems = [];
     lessonRef = ref;
@@ -160,6 +169,20 @@
     loading = false;
     try { window.scrollTo({ top: 0 }); } catch { /* jsdom */ }
     for (const d of [1, -1]) { const n = neighbour(d); if (n) getLesson(n.entry.id).catch(() => {}); }
+  }
+  async function closeLesson() {
+    lesson = null; quizItems = []; entry = null;
+    await tick();
+    try { window.scrollTo({ top: listScroll }); } catch { /* jsdom */ }
+  }
+  function back() {
+    if (history.state?.learn) history.back();                 // popstate closes it
+    else closeLesson();
+  }
+  function onPop() {
+    const id = location.hash.slice(1);
+    if (!id || !flat.some((x) => x.entry.id === id)) { if (lesson) closeLesson(); return; }
+    if (id !== lessonRef?.entry.id || !lesson) { const r = flat.find((x) => x.entry.id === id); if (r) open(r, { push: false }); }
   }
   const neighbour = (d) => { const k = flat.findIndex((x) => x.entry.id === lessonRef?.entry.id); return k >= 0 ? flat[k + d] ?? null : null; };
   function vocabQuestions(l) {
@@ -204,6 +227,8 @@
   const exampleRoman = (ex) => ex.roman ?? (ex.kana && romanize ? romanize(ex.kana) : '');
 </script>
 
+<svelte:window onpopstate={onPop} />
+
 <section class="card learn">
   <details class="progress-help">
     <summary>{t('learn.progress.how')}</summary>
@@ -234,10 +259,10 @@
       <button class="start-practice primary" onclick={startPractice} disabled={loading}>{t('learn.start')}</button>
     </div>
     {#if quizItems.length}<p class="ex-count">{t('learn.exCount', { n: quizItems.length })}</p><ChoiceDrill items={quizItems} {random} {romanize} onresult={record} ordered />{/if}
-  {:else if lesson && lessonRef}
+  {:else}{#if lesson && lessonRef}
     <!-- one lesson, as a page -->
     <article class="lesson-page" style={`--script-scale: ${lang.script?.fontScale ?? 1}`}>
-      <nav class="crumbs"><button class="back" onclick={() => { lesson = null; quizItems = []; }}>← {lessonRef.level.title ? loc(lessonRef.level.title) : lessonRef.level.id}</button> <span class="crumb-topic">{loc(lessonRef.topic.title)}</span></nav>
+      <nav class="crumbs"><button class="back" onclick={back}>← {lessonRef.level.title ? loc(lessonRef.level.title) : lessonRef.level.id}</button> <span class="crumb-topic">{loc(lessonRef.topic.title)}</span></nav>
       <h3 class="lesson-title"><span class="badge-level">{lessonRef.level.title ? loc(lessonRef.level.title) : lessonRef.level.id}</span> <span class="l-head" lang={lang.bcp47}>{lesson.title ?? lessonRef.entry.title}</span></h3>
       {#if lesson.meaning}<p class="l-sub">{loc(lesson.meaning)}</p>{/if}
       {#if talkHref && talkLinks[lesson.id]?.length}<p class="practised">{t('learn.practised')} {#each talkLinks[lesson.id] as x, i}{#if i}, {/if}<a href={talkHref(x.unit)}>{x.unit} · {loc(x.title)}</a>{/each}</p>{/if}
@@ -299,7 +324,9 @@
         {#if neighbour(1)}<button class="next-lesson" data-lesson={neighbour(1).entry.id} onclick={() => open(neighbour(1))}><span lang={lang.bcp47}>{neighbour(1).entry.title}</span> →</button>{/if}
       </nav>
     </article>
-  {:else}
+  {/if}
+  <!-- the list stays in the page while a lesson is open: its opened topics and scroll survive (Allan, 2026-10-28) -->
+  <div class="list-view" hidden={!!(lesson && lessonRef)}>
     <!-- the level's topics, each with its lessons listed under it -->
     <!-- the levels under one button (Allan, 2026-10-22) -->
     <div class="levels">
@@ -327,6 +354,7 @@
         {/if}
       {/each}
     {/if}
+  </div>
   {/if}
   {#if learn}<p class="credit">{loc(learn.credit)}</p>{/if}
 </section>

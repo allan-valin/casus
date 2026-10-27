@@ -233,7 +233,7 @@ hangul → sound converter for our browser engine.
 
 ## Revision 2026-10-27 (T7) — every Learn grammar point used, and the lessons of today's corrections
 
-Approved in advance by Allan (2026-10-27: "assuming I approved the plan"); units A1-01…10 are written first.
+Presented to Allan 2026-10-27 and approved by him the same evening (after seeing it); units A1-01…10 written first.
 
 1. **All Korean Learn grammar is taught.** 369 points (31 core lessons + the NIKL basic grammar list, TOPIK 1–6 →
    A1–C2) are placed in units in the appendix below (`tools/plan_learn_map.py ko <plan>` regenerates it). Each unit's
