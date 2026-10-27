@@ -78,7 +78,7 @@ cast:
     role: neighbour, 27, works at the same factory on the line, plays futsal with Brazilians
     voice: ja-m3
     register: formal
-    arc: です・ます at first; proposes plain form (タメ口でいいよ) in A1-14; knows some Portuguese swear words
+    arc: です・ます at first; proposes plain form (タメ口でいいよ) in A1-23; knows some Portuguese swear words
   - id: sato
     name: 佐藤課長 (Satō-kachō)
     role: colleague, 31, section chief (課長) in the office
@@ -280,8 +280,28 @@ formality:
     avoided — use the name. First names only among friends.
   rules:
     - です・ます with everyone in A1; set 敬語 phrases are learnt as whole phrases (よろしくお願いします).
-    - Plain form only with Kenta after he proposes it (A1-14).
+    - Plain form only with Kenta after he proposes it (A1-23).
     - Never あなた to a person you know; family name + さん, or the title.
+  # who speaks to whom in which style from which unit (T4, 2026-10-27; tools/register_check.py); cast register is the default
+  relationships:
+    - {from: kenta, to: protagonist, style: informal, from_unit: A1-23, note: 'もうタメ口でいいよ'}
+    - {from: protagonist, to: kenta, style: any, from_unit: A1-23, note: "the plain past comes in A2; until then polite answers are never wrong (A2-01 says so)"}
+    - {from: protagonist, to: kenta, style: informal, from_unit: B1-01}
+    - {from: yui, to: protagonist, style: informal, from_unit: B1-14, note: 'a couple'}
+    - {from: protagonist, to: yui, style: informal, from_unit: B1-14}
+    - {from: protagonist, to: hiroto, style: any, from_unit: C2-09, note: 'the protagonist is now the senior'}
+    - {from: suzuki, to: protagonist, style: any, from_unit: A1-01, note: 'an elder or superior may speak plainly down'}
+    - {from: buchou, to: protagonist, style: any, from_unit: A1-01, note: 'an elder or superior may speak plainly down'}
+    - {from: ojisan, to: protagonist, style: any, from_unit: A1-01, note: 'an elder or superior may speak plainly down'}
+    - {from: sato, to: protagonist, style: any, from_unit: A1-01, note: 'an elder or superior may speak plainly down'}
+    - {from: kouza-sensei, to: protagonist, style: any, from_unit: A1-01, note: 'an elder or superior may speak plainly down'}
+    - {from: hanchou, to: protagonist, style: any, from_unit: A1-01, note: 'an elder or superior may speak plainly down'}
+    - {from: shota-haha, to: protagonist, style: any, from_unit: A1-01, note: 'an elder or superior may speak plainly down'}
+    - {from: shota-chichi, to: protagonist, style: any, from_unit: A1-01, note: 'an elder or superior may speak plainly down'}
+    - {from: kenta-haha, to: protagonist, style: any, from_unit: A1-01, note: 'an elder or superior may speak plainly down'}
+    - {from: yui-chichi, to: protagonist, style: any, from_unit: A1-01, note: 'an elder or superior may speak plainly down'}
+    - {from: taiko-sensei, to: protagonist, style: any, from_unit: A1-01, note: 'an elder or superior may speak plainly down'}
+    - {from: isha, to: protagonist, style: any, from_unit: A1-01, note: 'an elder or superior may speak plainly down'}
   sources:
     - {title: "Wikipedia: Honorific speech in Japanese", url: "https://en.wikipedia.org/wiki/Honorific_speech_in_Japanese", licence: CC BY-SA}
     - {title: "Wikipedia: Brazilians in Japan (Hamamatsu)", url: "https://en.wikipedia.org/wiki/Brazilians_in_Japan", licence: CC BY-SA}

@@ -65,7 +65,7 @@ cast:
     role: colleague, about 32, project manager; Macedonian, speaks English at work
     voice: mk-f
     register: formal
-    arc: Вие at the first meeting in the office, ти from the next day when she offers it (unit A1-08); a friend in B
+    arc: Вие at the first meeting in the office, ти from the day she offers it (unit A1-13); a friend in B
   - id: dragan
     name: Драган
     role: owner of the corner shop (маркет) and kiosk, about 50
@@ -300,6 +300,13 @@ formality:
     - Participles/adjectives with Вие addressing one person agree with the person's sex in the singular in everyday
       speech ("Вие сте уморна?") — NATIVE CHECK, grammars differ; the units avoid the construction in A1.
     - Offering ti is a scene (A1-08 with Ana; B1 with Vera).
+  # who speaks to whom in which style from which unit (T4, 2026-10-27; tools/register_check.py); cast register is the default
+  relationships:
+    - {from: ana, to: protagonist, style: informal, from_unit: A1-13, note: 'Ајде на ти!'}
+    - {from: protagonist, to: ana, style: informal, from_unit: A1-13}
+    - {from: vera, to: protagonist, style: informal, from_unit: B1-16, note: 'Ајде да си зборуваме на ти'}
+    - {from: protagonist, to: vera, style: informal, from_unit: B1-16}
+    - {from: profesorka, to: protagonist, style: any, from_unit: C1-01, note: 'a teacher may use ти with an adult student'}
   sources:
     - {title: "Wikipedia: Macedonian pronouns (Вие, capitalisation)", url: "https://en.wikipedia.org/wiki/Macedonian_pronouns", licence: CC BY-SA}
     - {title: "Cultural Atlas: Macedonian culture — greetings, etiquette", url: "https://theculturalatlas.org/macedonian-culture/macedonian-culture-etiquette", licence: "read only, facts cited"}

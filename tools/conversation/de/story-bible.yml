@@ -183,6 +183,16 @@ formality:
     - "Sie with Frau Becker, Herr Schulz and Dr. Meier; du with Jonas from the first line."
     - "Titles: Herr / Frau + surname; Dr. kept in formal settings (Frau Dr. Meier)."
     - "The du offer is a scene of its own (B1, Christmas party)."
+  # who speaks to whom in which style from which unit (T4, 2026-10-27; tools/register_check.py); cast register is the default
+  relationships:
+    - {from: becker, to: protagonist, style: informal, from_unit: B1-14, note: 'Auf das Du! at the Christmas party'}
+    - {from: protagonist, to: becker, style: informal, from_unit: B1-14}
+    - {from: lena, to: protagonist, style: formal, from_unit: A1-13, note: 'first meeting at the playground'}
+    - {from: protagonist, to: lena, style: formal, from_unit: A1-13}
+    - {from: lena, to: protagonist, style: informal, from_unit: A1-18}
+    - {from: protagonist, to: lena, style: informal, from_unit: A1-18}
+    - {from: stefan, to: protagonist, style: formal, from_unit: B1-25, note: 'first meeting, a job offer'}
+    - {from: protagonist, to: stefan, style: any, from_unit: B1-25, note: "the grandmother may say du to her son's younger friend"}
   sources:
     - {title: "Wikipedia: Siezen und Duzen", url: "https://de.wikipedia.org/wiki/Siezen", licence: CC BY-SA}
 
