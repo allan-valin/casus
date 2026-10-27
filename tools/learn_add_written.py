@@ -2,6 +2,7 @@
 """Add or update the lessons written for Casus in a language's built Learn, without rebuilding the rest.
 
     python3 tools/learn_add_written.py de A1 A2 B1      # then: node tools/learn_curriculum.mjs de <the new ids>
+    python3 tools/learn_add_written.py mk A1 A2 --only=a1-x,a2-y   # only new lessons of a level that is built already
 
 Why (2026-10-27): rebuilding German Learn from scratch (tools/build_learn.py de) no longer gives the data that is
 published — the Arabic translation cache was renamed, three Wikibooks pages are missing from vendor/ — so new lessons
@@ -45,10 +46,37 @@ def splice(index, levels, lessons, questions, out):
     index["files"] = files
 
 
+def keep_only(levels, lessons, only, index):
+    """only the topics holding these lesson ids; a topic gets the next free <level>-tN of the built index unless one
+    with the same English title is there already (a rerun)"""
+    keep = set(only)
+    out = []
+    for lv in levels:
+        topics = [t for t in lv["topics"] if any(e["id"] in keep for e in t["lessons"])]
+        have = next((x for x in index["levels"] if x["id"] == lv["id"]), {"topics": []})["topics"]
+        used = [int(m.group(1)) for t in have if (m := re.match(rf"(?:[a-z]+-)?{lv['id']}-t(\d+)$", t["id"]))]
+        nxt = max(used, default=0)
+        for t in topics:
+            en = t["title"].get("en") if isinstance(t["title"], dict) else t["title"]
+            same = next((h for h in have if (h.get("title") or {}).get("en") == en and h["id"] != t["id"]), None)
+            if same is None and any(h["id"] == t["id"] and (h.get("title") or {}).get("en") != en for h in have):
+                nxt += 1
+                t["id"] = f"{lv['id']}-t{nxt}"
+            elif same is not None:
+                t["id"] = same["id"]
+        out.append({**lv, "topics": topics})
+    return out, {k: v for k, v in lessons.items() if k in keep}
+
+
 def main(code, ids):
     out = ROOT / "data" / code
     index = json.loads((out / "learn.json").read_text(encoding="utf-8"))
+    only = [x[len("--only="):].split(",") for x in ids if x.startswith("--only=")]
+    ids = [x for x in ids if not x.startswith("--only=")]
     levels, lessons, questions = written_levels(ROOT / "tools" / "curricula" / code, ids, (out, attested_words(code), False))
+    if only:
+        levels, lessons = keep_only(levels, lessons, only[0], index)
+        questions = {lv: {k: v for k, v in qs.items() if k in lessons} for lv, qs in questions.items()}
     splice(index, levels, lessons, questions, out)
     (out / "learn.json").write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print(f"{code}: {len(lessons)} written lessons in {', '.join(ids)}: {' '.join(lessons)}")

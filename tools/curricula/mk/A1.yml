@@ -801,3 +801,79 @@ topics:
     - [Одам со брат ми., I'm going with my brother., Vou com meu irmão., со]
     match: {seq: [{word: [во, кај, од, до, со, за, без, под, над, пред, зад, меѓу]}, {pos: noun}], near: 1, gap: 0}
     pool: [во, на, кај, од, до, со, за, без, под, над, пред, зад, меѓу]
+
+# added 2026-10-27 after checking the course against a full Macedonian grammar inventory (AI-written, Claude)
+- title: {en: Linking and quantity, pt: Ligar e quantificar}
+  lessons:
+  - id: a1-conjunctions
+    title: и, а, но, или
+    meaning: {en: "and, but, or: и, а, но, или — and the difference between а and но", pt: "e, mas, ou: и, а, но, или — e a diferença entre а e но"}
+    intro:
+      en: |
+        **и** "and" adds: **Марко и Ана** "Marko and Ana". **или** "or": **чај или кафе?**
+
+        Macedonian has two words where English has *but* or *and* with contrast:
+
+        - **а** sets two things side by side, often in contrast, without one cancelling the other: **Јас сум од Скопје, а таа е од Битола.** "I'm from Skopje, and she's from Bitola." **Ова е мое, а тоа е твое.**
+        - **но** says that what follows goes against what you would expect: **Сакам да дојдам, но немам време.** "I'd like to come, but I have no time."
+
+        **туку** "but rather" corrects a negative: **Не е чај, туку кафе.** "It's not tea but coffee."
+      pt: |
+        **и** "e" acrescenta: **Марко и Ана**. **или** "ou": **чај или кафе?** "chá ou café?"
+
+        O macedônio tem duas palavras onde o português usa *e* ou *mas*:
+
+        - **а** põe duas coisas lado a lado, muitas vezes em contraste, sem que uma anule a outra: **Јас сум од Скопје, а таа е од Битола.** "Eu sou de Skopje, e ela é de Bitola." **Ова е мое, а тоа е твое.** "Isto é meu, e aquilo é seu."
+        - **но** diz que o que vem contraria o esperado: **Сакам да дојдам, но немам време.** "Quero ir, mas não tenho tempo."
+
+        **туку** "mas sim" corrige uma negação: **Не е чај, туку кафе.** "Não é chá, mas sim café."
+    mistakes:
+    - wrong: "Јас сум од Скопје, но таа е од Битола."
+      right: "Јас сум од Скопје, а таа е од Битола."
+      why: {en: "Two facts side by side take а; но is for what goes against expectation.", pt: "Dois fatos lado a lado levam а; но é para o que contraria o esperado."}
+    - wrong: "Не е чај, но кафе."
+      right: "Не е чај, туку кафе."
+      why: {en: "After a negative, the correction is туку.", pt: "Depois de uma negação, a correção é туку."}
+    examples:
+    - ["Сакам чај или кафе.", "I'd like tea or coffee.", "Quero chá ou café.", "или"]
+    - ["Тој работи", "а јас учам.", "He works and I study.", "Ele trabalha e eu estudo.", "а"]
+    - ["Уморен сум", "но ќе дојдам.", "I'm tired but I'll come.", "Estou cansado", "mas vou.", "но"]
+    - ["Не е тоа мој брат", "туку мој братучед.", "That's not my brother but my cousin.", "Esse não é meu irmão", "mas meu primo.", "туку"]
+    match: {seq: [{word: [а, но, или, туку]}], gap: 0}
+    pool: [а, но, или, туку, и]
+
+  - id: a1-quantity
+    title: колку, многу, малку
+    meaning: {en: "how much and how many: колку, многу, малку, доста, неколку, по", pt: "quanto e quantos: колку, многу, малку, доста, неколку, по"}
+    intro:
+      en: |
+        **колку** asks "how much / how many": **Колку чини?** "How much is it?" **Колку години имаш?** "How old are you?"
+
+        Quantity words come straight before the noun, with no "of": **многу луѓе** "many people", **малку вода** "a little water", **доста време** "enough time", **неколку денови** "a few days".
+
+        With countable masculine nouns after numbers and **неколку**, the count plural is used: **неколку стола**.
+
+        **по** shares out: **Земи по две јаболка.** "Take two apples each." **по еден** "one each".
+
+        **многу** also means "very": **многу убаво** "very nice".
+      pt: |
+        **колку** pergunta "quanto / quantos": **Колку чини?** "Quanto custa?" **Колку години имаш?** "Quantos anos você tem?"
+
+        As palavras de quantidade vêm direto antes do substantivo: **многу луѓе** "muitas pessoas", **малку вода** "um pouco de água", **доста време** "tempo suficiente", **неколку денови** "alguns dias".
+
+        Com masculinos contáveis depois de números e de **неколку** usa-se o plural de contagem: **неколку стола** "algumas cadeiras".
+
+        **по** distribui: **Земи по две јаболка.** "Pegue duas maçãs cada um." **по еден** "um para cada".
+
+        **многу** também é "muito" com adjetivos: **многу убаво** "muito bonito".
+    mistakes:
+    - wrong: "многу од луѓе"
+      right: "многу луѓе"
+      why: {en: "No word for 'of' after a quantity word.", pt: "Nada de 'de' depois da palavra de quantidade."}
+    examples:
+    - ["Колку чини оваа книга?", "How much does this book cost?", "Quanto custa este livro?", "Колку"]
+    - ["Имам многу работа.", "I have a lot of work.", "Tenho muito trabalho.", "многу"]
+    - ["Дај ми малку вода.", "Give me a little water.", "Me dá um pouco de água.", "малку"]
+    - ["Остануваме неколку дена.", "We're staying a few days.", "Ficamos alguns dias.", "неколку"]
+    match: {seq: [{word: [колку, многу, малку, доста, неколку, Колку]}], gap: 0}
+    pool: [колку, многу, малку, доста, неколку]

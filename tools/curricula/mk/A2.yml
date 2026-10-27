@@ -757,3 +757,77 @@ topics:
     - ["Кој е човекон?", "Who is that man over there?", "Quem é aquele homem lá?", "човекон"]
     - [Летово беше топло., This summer was hot., Este verão foi quente., Летово]
     match: {seq: [{pos: noun, case: [prox, dist]}], same: [number]}
+
+# added 2026-10-27 after checking the course against a full Macedonian grammar inventory (AI-written, Claude)
+- title: {en: Saying how, and whose, pt: Dizer como, e de quem}
+  lessons:
+  - id: a2-adverbs
+    title: брзо, добро, тука
+    meaning: {en: "adverbs: from adjectives in -о, and of place and time", pt: "advérbios: dos adjetivos em -о, e de lugar e tempo"}
+    intro:
+      en: |
+        Most adverbs of manner are the **neuter form of the adjective**, ending in **-о**: **брз → брзо** "fast → quickly", **добар → добро**, **убав → убаво**, **тивок → тивко**. **Зборува брзо.** "He speaks fast."
+
+        The same form answers "how is it?": **Убаво е.** "It's nice." **Студено ми е.** "I'm cold."
+
+        Adjectives in **-ски** give adverbs in **-ски**: **македонски** "in Macedonian": **Зборуваш ли македонски?**
+
+        Place: **тука / овде** "here", **таму** "there", **горе**, **долу**, **внатре**, **надвор**. Time: **сега**, **денес**, **утре**, **вчера**, **веќе** "already", **уште** "still, yet", **секогаш**, **никогаш**.
+
+        Comparison as for adjectives: **побрзо**, **најбрзо**.
+      pt: |
+        A maioria dos advérbios de modo é a **forma neutra do adjetivo**, em **-о**: **брз → брзо** "rápido → rapidamente", **добар → добро**, **убав → убаво**, **тивок → тивко**. **Зборува брзо.** "Ele fala rápido."
+
+        A mesma forma responde "como está?": **Убаво е.** "Está bom / bonito." **Студено ми е.** "Estou com frio."
+
+        Adjetivos em **-ски** dão advérbios em **-ски**: **македонски** "em macedônio": **Зборуваш ли македонски?**
+
+        Lugar: **тука / овде** "aqui", **таму** "lá", **горе**, **долу**, **внатре**, **надвор**. Tempo: **сега**, **денес**, **утре**, **вчера**, **веќе** "já", **уште** "ainda", **секогаш**, **никогаш**.
+
+        Comparação como nos adjetivos: **побрзо**, **најбрзо**.
+    mistakes:
+    - wrong: "Тој зборува брз."
+      right: "Тој зборува брзо."
+      why: {en: "Describing how someone does something takes the -о form.", pt: "Para dizer como alguém faz algo usa-se a forma em -о."}
+    examples:
+    - ["Возиш премногу брзо.", "You drive too fast.", "Você dirige rápido demais.", "брзо"]
+    - ["Таа пее многу убаво.", "She sings very beautifully.", "Ela canta muito bem.", "убаво"]
+    - ["Студено е надвор.", "It's cold outside.", "Está frio lá fora.", "Студено"]
+    - ["Веќе сум тука.", "I'm already here.", "Já estou aqui.", "тука"]
+    match: {seq: [{word: [брзо, добро, убаво, тивко, лошо, бавно, полека, тука, таму, овде, надвор, внатре]}], gap: 0}
+    pool: [брзо, добро, убаво, тивко, бавно, лошо]
+
+  - id: a2-svoj
+    title: свој
+    meaning: {en: "one's own: свој, своја, свое, свои — the reflexive possessive", pt: "o próprio: свој, своја, свое, свои — o possessivo reflexivo"}
+    intro:
+      en: |
+        **свој** means "one's own" and points back to the **subject** of the clause, whoever it is:
+
+        **Марко ја сака својата сестра.** "Marko loves his (own) sister."
+
+        **Марко ја сака неговата сестра** can mean someone else's sister — **свој** removes the doubt.
+
+        It agrees with the thing owned and takes the article like an adjective: **својот брат**, **својата куќа**, **своето дете**, **своите пријатели**. It works for every person: **Ги земав своите работи.** "I took my things." — though with **јас, ти, ние, вие** speakers often use **мој, твој…** instead.
+
+        It is not used for the subject itself: **Неговата сестра** (not *својата сестра*) **живее во Охрид.**
+      pt: |
+        **свој** quer dizer "o próprio" e remete ao **sujeito** da oração, seja ele quem for:
+
+        **Марко ја сака својата сестра.** "Marko ama a (própria) irmã."
+
+        **Марко ја сака неговата сестра** pode ser a irmã de outra pessoa — como o "a irmã dele" do português; **свој** tira a dúvida.
+
+        Concorda com a coisa possuída e leva o artigo como um adjetivo: **својот брат**, **својата куќа**, **своето дете**, **своите пријатели**. Serve para todas as pessoas: **Ги земав своите работи.** "Peguei minhas coisas." — embora com **јас, ти, ние, вие** se use muito **мој, твој…**
+
+        Não se usa no próprio sujeito: **Неговата сестра** (não *својата сестра*) **живее во Охрид.**
+    mistakes:
+    - wrong: "Својата мајка ме чека."
+      right: "Мајка ми ме чека."
+      why: {en: "свој refers back to a subject; it cannot be part of the subject.", pt: "свој remete ao sujeito; não pode fazer parte dele."}
+    examples:
+    - ["Секој ја сака својата земја.", "Everyone loves their own country.", "Cada um ama o próprio país.", "својата"]
+    - ["Таа живее со своите родители.", "She lives with her parents.", "Ela mora com os pais dela.", "своите"]
+    - ["Земи си го својот чадор.", "Take your umbrella.", "Pega o teu guarda-chuva.", "својот"]
+    match: {seq: [{word: [свој, своја, свое, свои, својот, својата, своето, своите]}], gap: 0}
+    pool: [својот, својата, своето, своите, неговиот, нејзината]
