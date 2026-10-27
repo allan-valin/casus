@@ -1,0 +1,534 @@
+# UNIT ko A1-07 — written by AI (Claude) for Casus; expanded from src/A1-07.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-07
+level: A1
+number: 7
+protagonist: f
+title:
+  en: The office
+  pt: O escritório
+situation:
+  en: First day at the game company. The team lead, Lee Jieun, welcomes you and explains the day.
+  pt: Primeiro dia na empresa de jogos. A líder da equipe, Lee Jieun, recebe você e explica o dia.
+learn_lessons:
+- ko-object
+- ko-nikl-10
+- ko-nikl-11
+- ko-nikl-9
+culture: Titles, not first names — 팀장님
+new_items:
+- id: timjangnim
+  text: 팀장님
+  meaning:
+    en: team lead (as a title)
+    pt: líder da equipe (como tratamento)
+- id: jal-butak
+  text: 잘 부탁드립니다
+  meaning:
+    en: I look forward to working with you (formal)
+    pt: Conto com você / prazer em trabalhar junto (formal)
+  register: formal
+- id: oneul-buteo
+  text: 오늘부터
+  meaning:
+    en: from today
+    pt: a partir de hoje
+- id: buteo
+  text: 부터
+  meaning:
+    en: from (a time or place)
+    pt: a partir de, desde
+- id: uri-tim
+  text: 우리 팀
+  meaning:
+    en: our team
+    pt: a nossa equipe
+- id: jari
+  text: 자리
+  meaning:
+    en: seat, desk
+    pt: lugar, mesa
+- id: hoeui
+  text: 회의
+  meaning:
+    en: meeting
+    pt: reunião
+- id: e-time
+  text: 에
+  meaning:
+    en: at (a time), to (a place)
+    pt: a / às (horário), para (lugar)
+- id: yeol-si
+  text: 열 시
+  meaning:
+    en: ten o'clock
+    pt: dez horas
+- id: samcheung
+  text: 삼 층
+  meaning:
+    en: third floor
+    pt: terceiro andar
+- id: euro
+  text: (으)로
+  meaning:
+    en: to, towards (a direction)
+    pt: para (direção)
+- id: oseyo
+  text: 오세요
+  meaning:
+    en: Come (polite)
+    pt: Venha (educado)
+- id: algesseumnida
+  text: 알겠습니다
+  meaning:
+    en: Understood (formal)
+    pt: Entendido (formal)
+  register: formal
+- id: keopireul
+  text: 커피를 마셔요
+  meaning:
+    en: I drink coffee
+    pt: Eu tomo café
+reviews:
+- item: eoseo-oseyo
+  from: A1-04
+- item: mul
+  from: A1-04
+- item: ramyeon
+  from: A1-04
+- item: igeo
+  from: A1-04
+- item: juseyo
+  from: A1-04
+- item: do
+  from: A1-04
+- item: bongtu
+  from: A1-04
+- item: piryohaseyo
+  from: A1-04
+- item: eolmayeyo
+  from: A1-04
+- item: won
+  from: A1-04
+- item: kkaji
+  from: A1-04
+- item: myeot-si
+  from: A1-04
+- item: haeyo
+  from: A1-04
+- item: oneul
+  from: A1-06
+- item: biga-wayo
+  from: A1-06
+- item: nuni-wayo
+  from: A1-06
+- item: usan
+  from: A1-06
+- item: eul-reul
+  from: A1-06
+- item: sayo
+  from: A1-06
+- item: deowoyo
+  from: A1-06
+- item: chuwoyo
+  from: A1-06
+- item: yeoreum
+  from: A1-06
+- item: gyeoul
+  from: A1-06
+- item: ttatteuthaeyo
+  from: A1-06
+- item: jeongmal
+  from: A1-06
+- item: nalssi
+  from: A1-06
+- item: cheoeum
+  from: A1-01
+steps:
+- type: narrator
+  text:
+    en: First day at the game company. The team lead, Lee Jieun, welcomes you and explains the day. Listen to the conversation; you don't need to understand it yet.
+    pt: Primeiro dia na empresa de jogos. A líder da equipe, Lee Jieun, recebe você e explica o dia. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: jieun
+    text: 안녕하세요. 저는 이지은 팀장이에요.
+    meaning:
+      en: Hello. I'm Lee Jieun, the team lead.
+      pt: Olá. Eu sou Lee Jieun, a líder da equipe.
+  - speaker: protagonist
+    text: 안녕하세요, 팀장님. 처음 뵙겠습니다. 잘 부탁드립니다.
+    meaning:
+      en: Hello, team lead. Nice to meet you. I look forward to working with you.
+      pt: Olá, líder. Muito prazer. Conto com a senhora.
+  - speaker: jieun
+    text: 오늘부터 우리 팀이에요. 자리는 여기예요.
+    meaning:
+      en: From today you're in our team. Your desk is here.
+      pt: A partir de hoje você é da nossa equipe. Sua mesa é aqui.
+  - speaker: protagonist
+    text: 감사합니다. 회의는 몇 시에 해요?
+    meaning:
+      en: Thank you. What time is the meeting?
+      pt: Obrigada. A reunião é a que horas?
+  - speaker: jieun
+    text: 열 시에 해요. 회의실은 삼 층이에요.
+    meaning:
+      en: At ten. The meeting room is on the third floor.
+      pt: Às dez. A sala de reunião fica no terceiro andar.
+  - speaker: jieun
+    text: 열 시에 삼 층으로 오세요.
+    meaning:
+      en: Come to the third floor at ten.
+      pt: Venha para o terceiro andar às dez.
+  - speaker: protagonist
+    text: 네, 알겠습니다.
+    meaning:
+      en: Yes, understood.
+      pt: Sim, entendido.
+  - speaker: jieun
+    text: 커피 마셔요?
+    meaning:
+      en: Do you drink coffee?
+      pt: Você toma café?
+  - speaker: protagonist
+    text: 네, 커피를 마셔요. 감사합니다, 팀장님!
+    meaning:
+      en: Yes, I drink coffee. Thank you, team lead!
+      pt: Sim, tomo café. Obrigada, líder!
+- type: narrator
+  text:
+    en: 'At work you call her by her title: 팀장님. Her name alone, 지은, would be rude; even 지은 씨 is too familiar for the boss.'
+    pt: 'No trabalho você a chama pelo cargo: 팀장님. Só o nome, 지은, seria grosseiro; mesmo 지은 씨 é íntimo demais para a chefe.'
+- type: prompt
+  ask:
+    en: Greet the team lead.
+    pt: Cumprimente a líder.
+  answer:
+    speaker: protagonist
+    text: 안녕하세요, 팀장님.
+  items:
+  - timjangnim
+- type: narrator
+  text:
+    en: '''잘 부탁드립니다'' is said on the first day, to the team, with a bow: ''please treat me well''.'
+    pt: '''잘 부탁드립니다'' se diz no primeiro dia, para a equipe, com uma reverência: ''conto com vocês''.'
+- type: buildup
+  item: jal-butak
+  parts:
+  - -드립니다
+  - 부탁드립니다
+  - 잘 부탁드립니다
+- type: prompt
+  ask:
+    en: Introduce yourself to the team on your first day, formally.
+    pt: Apresente-se à equipe no primeiro dia, de modo formal.
+  answer:
+    speaker: protagonist
+    text: 처음 뵙겠습니다. 잘 부탁드립니다.
+  items:
+  - cheoeum
+  - jal-butak
+- type: narrator
+  text:
+    en: '부터 is ''from'': 오늘부터, from today. With 까지: 아홉 시부터 여섯 시까지, from nine to six.'
+    pt: '부터 é ''a partir de'': 오늘부터, a partir de hoje. Com 까지: 아홉 시부터 여섯 시까지, das nove às seis.'
+- type: prompt
+  ask:
+    en: 'Say: from today it''s our team.'
+    pt: 'Diga: a partir de hoje é a nossa equipe.'
+  answer:
+    speaker: protagonist
+    text: 오늘부터 우리 팀이에요.
+  items:
+  - oneul-buteo
+  - buteo
+  - uri-tim
+- type: prompt
+  ask:
+    en: 'She shows your desk. Say: my desk is here.'
+    pt: 'Ela mostra a mesa. Diga: meu lugar é aqui.'
+  answer:
+    speaker: protagonist
+    text: 자리는 여기예요.
+  items:
+  - jari
+- type: narrator
+  text:
+    en: '에 after a time is ''at'': 열 시에, at ten. 몇 시에 해요? — at what time is it?'
+    pt: '에 depois de horário é ''às'': 열 시에, às dez. 몇 시에 해요? — é a que horas?'
+- type: prompt
+  ask:
+    en: Ask what time the meeting is.
+    pt: Pergunte a que horas é a reunião.
+  answer:
+    speaker: protagonist
+    text: 회의는 몇 시에 해요?
+  items:
+  - hoeui
+  - e-time
+- type: prompt
+  ask:
+    en: 'Say: at ten.'
+    pt: 'Diga: às dez.'
+  answer:
+    speaker: protagonist
+    text: 열 시에 해요.
+  items:
+  - yeol-si
+  - e-time
+- type: narrator
+  text:
+    en: '(으)로 points a direction: 삼 층으로 오세요, come to the third floor. 로 after a vowel or ㄹ: 회사로.'
+    pt: '(으)로 indica direção: 삼 층으로 오세요, venha para o terceiro andar. 로 depois de vogal ou ㄹ: 회사로.'
+- type: prompt
+  ask:
+    en: Tell someone to come to the third floor.
+    pt: Diga a alguém para vir ao terceiro andar.
+  answer:
+    speaker: protagonist
+    text: 삼 층으로 오세요.
+  items:
+  - samcheung
+  - euro
+  - oseyo
+- type: prompt
+  ask:
+    en: Your boss gives an instruction. Answer 'understood', formally.
+    pt: A chefe dá uma instrução. Responda 'entendido', formal.
+  answer:
+    speaker: protagonist
+    text: 알겠습니다.
+  items:
+  - algesseumnida
+- type: prompt
+  ask:
+    en: Say that you drink coffee.
+    pt: Diga que você toma café.
+  answer:
+    speaker: protagonist
+    text: 커피를 마셔요.
+  items:
+  - keopireul
+  - eul-reul
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'No Brasil a gente chama a chefe pelo nome, às vezes até pelo apelido. Na Coreia, o cargo é o nome: 팀장님, 부장님, 사장님.'
+- type: prompt
+  ask:
+    en: 'Once more: say “team lead (as a title)”.'
+    pt: 'Mais uma vez: diga “líder da equipe (como tratamento)”.'
+  answer:
+    speaker: protagonist
+    text: 팀장님
+  items:
+  - timjangnim
+- type: prompt
+  ask:
+    en: 'Once more: say “I look forward to working with you (formal)”.'
+    pt: 'Mais uma vez: diga “Conto com você / prazer em trabalhar junto (formal)”.'
+  answer:
+    speaker: protagonist
+    text: 잘 부탁드립니다
+  items:
+  - jal-butak
+- type: prompt
+  ask:
+    en: 'Once more: say “from today”.'
+    pt: 'Mais uma vez: diga “a partir de hoje”.'
+  answer:
+    speaker: protagonist
+    text: 오늘부터
+  items:
+  - oneul-buteo
+- type: prompt
+  ask:
+    en: 'Once more: say “from (a time or place)”.'
+    pt: 'Mais uma vez: diga “a partir de, desde”.'
+  answer:
+    speaker: protagonist
+    text: 부터
+  items:
+  - buteo
+- type: prompt
+  ask:
+    en: 'Once more: say “our team”.'
+    pt: 'Mais uma vez: diga “a nossa equipe”.'
+  answer:
+    speaker: protagonist
+    text: 우리 팀
+  items:
+  - uri-tim
+- type: prompt
+  ask:
+    en: 'Once more: say “seat, desk”.'
+    pt: 'Mais uma vez: diga “lugar, mesa”.'
+  answer:
+    speaker: protagonist
+    text: 자리
+  items:
+  - jari
+- type: prompt
+  ask:
+    en: 'Once more: say “meeting”.'
+    pt: 'Mais uma vez: diga “reunião”.'
+  answer:
+    speaker: protagonist
+    text: 회의
+  items:
+  - hoeui
+- type: prompt
+  ask:
+    en: 'Once more: say “ten o''clock”.'
+    pt: 'Mais uma vez: diga “dez horas”.'
+  answer:
+    speaker: protagonist
+    text: 열 시
+  items:
+  - yeol-si
+- type: prompt
+  ask:
+    en: 'Once more: say “third floor”.'
+    pt: 'Mais uma vez: diga “terceiro andar”.'
+  answer:
+    speaker: protagonist
+    text: 삼 층
+  items:
+  - samcheung
+- type: prompt
+  ask:
+    en: 'Once more: say “to, towards (a direction)”.'
+    pt: 'Mais uma vez: diga “para (direção)”.'
+  answer:
+    speaker: protagonist
+    text: (으)로
+  items:
+  - euro
+- type: prompt
+  ask:
+    en: 'Once more: say “Come (polite)”.'
+    pt: 'Mais uma vez: diga “Venha (educado)”.'
+  answer:
+    speaker: protagonist
+    text: 오세요
+  items:
+  - oseyo
+- type: prompt
+  ask:
+    en: 'Once more: say “Understood (formal)”.'
+    pt: 'Mais uma vez: diga “Entendido (formal)”.'
+  answer:
+    speaker: protagonist
+    text: 알겠습니다
+  items:
+  - algesseumnida
+- type: prompt
+  ask:
+    en: 'Once more: say “I drink coffee”.'
+    pt: 'Mais uma vez: diga “Eu tomo café”.'
+  answer:
+    speaker: protagonist
+    text: 커피를 마셔요
+  items:
+  - keopireul
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “today — and “It''s raining — and “It''s snowing — and “umbrella”.'
+    pt: 'Diga: “hoje — e “Está chovendo — e “Está nevando — e “guarda-chuva”.'
+  answer:
+    speaker: protagonist
+    text: 오늘 … 비가 와요 … 눈이 와요 … 우산
+  items:
+  - oneul
+  - biga-wayo
+  - nuni-wayo
+  - usan
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “buys / I buy — and “is hot (weather) — and “is cold (weather) — and “summer”.'
+    pt: 'Diga: “compra / eu compro — e “está quente (tempo) — e “está frio (tempo) — e “verão”.'
+  answer:
+    speaker: protagonist
+    text: 사요 … 더워요 … 추워요 … 여름
+  items:
+  - sayo
+  - deowoyo
+  - chuwoyo
+  - yeoreum
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “winter — and “is warm — and “really — and “weather”.'
+    pt: 'Diga: “inverno — e “está quente / é ameno — e “muito / de verdade — e “o tempo (clima)”.'
+  answer:
+    speaker: protagonist
+    text: 겨울 … 따뜻해요 … 정말 … 날씨
+  items:
+  - gyeoul
+  - ttatteuthaeyo
+  - jeongmal
+  - nalssi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Welcome (to a shop) — and “water — and “instant noodles — and “this (thing)”.'
+    pt: 'Diga: “Seja bem-vindo (na loja) — e “água — e “miojo / lámen — e “isto”.'
+  answer:
+    speaker: protagonist
+    text: 어서 오세요 … 물 … 라면 … 이거
+  items:
+  - eoseo-oseyo
+  - mul
+  - ramyeon
+  - igeo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Please give me… — and “too, also (replaces 이/가 or 을/를) — and “plastic bag — and “Do you need…? (polite)”.'
+    pt: 'Diga: “Me dá…, por favor — e “também (no lugar de 이/가 ou 을/를) — e “sacola — e “O senhor precisa de…? (educado)”.'
+  answer:
+    speaker: protagonist
+    text: 주세요 … 도 … 봉투 … 필요하세요?
+  items:
+  - juseyo
+  - do
+  - bongtu
+  - piryohaseyo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “How much is it? — and “won (the money) — and “until, up to — and “what time”.'
+    pt: 'Diga: “Quanto é? — e “won (a moeda) — e “até — e “que horas”.'
+  answer:
+    speaker: protagonist
+    text: 얼마예요? … 원 … 까지 … 몇 시
+  items:
+  - eolmayeyo
+  - won
+  - kkaji
+  - myeot-si
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “does; is open (a shop)”.'
+    pt: 'Diga: “faz; funciona (uma loja)”.'
+  answer:
+    speaker: protagonist
+    text: 해요
+  items:
+  - haeyo
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
