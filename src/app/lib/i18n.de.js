@@ -74,7 +74,7 @@ export default {
   'learn.back': 'alle Lektionen', 'learn.formation': 'Bildung', 'learn.read': 'lesen', 'learn.source': 'Quelle', 'learn.practiceLesson': 'Übungen starten',
   'learn.from': 'von', 'learn.to': 'bis', 'learn.start': 'Üben beginnen', 'learn.kind.grammar': 'Grammatik', 'learn.kind.vocab': 'Wörter', 'learn.kind.kanji': 'Kanji',
   'nav.sites': 'Casus-Seiten', 'nav.proof': 'Korrektur', 'proof.heading': 'Korrektur: Rechtschreibung und Grammatik',
-  'proof.spell': 'Rechtschreibung: Hunspell ({name}), in diesem Browser', 'proof.noSpell': 'noch kein Rechtschreibwörterbuch für diese Sprache',
+  'proof.notYet.title': 'Für {name} gibt es noch keine Korrektur.', 'proof.notYet.body': 'Für diese Sprache gibt es noch kein offenes Wörterbuch und keine Grammatikprüfung; was du hier schreibst, wird nicht geprüft.', 'proof.partial.noGrammar': 'Für {name} wird nur die Rechtschreibung geprüft: eine Grammatikprüfung gibt es noch nicht.', 'proof.partial.noSpell': 'Für {name} wird nur die Grammatik geprüft: ein Rechtschreibwörterbuch gibt es noch nicht.', 'proof.spell': 'Rechtschreibung: Hunspell ({name}), in diesem Browser', 'proof.noSpell': 'noch kein Rechtschreibwörterbuch für diese Sprache',
   'proof.noGrammar': 'noch keine Grammatikprüfung für diese Sprache', 'proof.grammar.ready': 'Grammatik: LanguageTool (zuerst dieser Computer, sonst der öffentliche Dienst)',
   'proof.grammar.local': 'Grammatik: LanguageTool auf diesem Computer', 'proof.grammar.public': 'Grammatik: das öffentliche LanguageTool (dein Text wurde an languagetool.org gesendet)',
   'proof.placeholder': 'Text zum Prüfen eintippen oder einfügen…', 'proof.check': 'Prüfen', 'proof.checking': 'Prüfe…',

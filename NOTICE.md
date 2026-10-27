@@ -279,7 +279,11 @@ Both load only when such a file is opened; the file never leaves the computer.
 - Spelling dictionaries, loaded from jsDelivr when the tab is used: dictionary-pt (VERO, pt-BR; LGPL-3.0 or MPL-2.0),
   dictionary-de (GPL), dictionary-el (GPL/LGPL/MPL), dictionary-ru (BSD-3-Clause), dictionary-pl (GPL/LGPL/MPL),
   dictionary-cs (GPL-2.0), dictionary-hu (GPL/LGPL/MPL), dictionary-is (CC BY-SA 3.0), dictionary-tr (MIT),
-  dictionary-la (GPL-2.0), dictionary-mk (GPL-3.0), dictionary-ko (GPL/LGPL/MPL) — the LibreOffice dictionaries,
+  dictionary-la (GPL-2.0), dictionary-mk (GPL-3.0), dictionary-ko (GPL/LGPL/MPL), dictionary-en (MIT and BSD),
+  dictionary-es (GPL-3.0/LGPL-3.0/MPL-1.1), dictionary-fr (MPL-2.0), dictionary-it (GPL-3.0), dictionary-nl (BSD-3-Clause
+  or CC BY 3.0), dictionary-uk (GPL-3.0), dictionary-ro (GPL-2.0/LGPL-2.1/MPL-1.1), dictionary-sv (LGPL-3.0),
+  dictionary-fa (Apache-2.0), dictionary-lt (BSD-3-Clause), dictionary-vi (GPL-2.0), dictionary-hr (LGPL-2.1/SISSL; used
+  for Serbo-Croatian) — the LibreOffice dictionaries,
   packaged by Titus Wormer (wooorm/dictionaries).
 - Grammar: LanguageTool (LGPL-2.1), run on the reader's computer by tools/languagetool.sh, or its free public API
   (api.languagetool.org) when the reader allows it.

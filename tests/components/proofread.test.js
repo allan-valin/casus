@@ -135,3 +135,25 @@ describe('a word the reader’s dictionary knows is not a misspelling (Allan, 20
     expect([...container.querySelectorAll('.backdrop mark')].map((m) => m.textContent)).toEqual(['gutt']);
   });
 });
+
+// Allan, 2026-10-27: "how was I supposed to know nothing happens" — a language without a checker says so plainly
+import { DICTIONARIES } from '../../src/lib/proof/spell.js';
+import { LT_CODE } from '../../src/lib/proof/grammar.js';
+describe('Proofreading coverage is visible', () => {
+  it('wires every language an open dictionary or LanguageTool exists for', () => {
+    for (const c of ['en', 'es', 'fr', 'it', 'nl', 'uk', 'ro', 'sv', 'fa', 'lt', 'vi', 'sh', 'ko', 'mk']) expect(DICTIONARIES[c], c).toBeTruthy();
+    for (const c of ['en', 'es', 'fr', 'it', 'nl', 'uk', 'ro', 'sv', 'fa', 'tl']) expect(LT_CODE[c], c).toBeTruthy();
+  });
+  it('a language with neither shows a banner and nothing to click', async () => {
+    const { container } = render(Proofread, props(store(), { lang: getLanguage('sw') }));
+    await flush();
+    expect(container.querySelector('.not-yet')?.textContent).toMatch(/not available yet/i);
+    expect(container.querySelector('button.check')).toBeNull();
+    expect(container.querySelector('input.auto')).toBeNull();
+  });
+  it('a language with only spelling says that grammar is missing, visibly', async () => {
+    const { container } = render(Proofread, props(store(), { lang: getLanguage('ko') }));
+    await flush();
+    expect(container.querySelector('.partial')?.textContent).toMatch(/grammar/i);
+  });
+});

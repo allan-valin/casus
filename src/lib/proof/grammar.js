@@ -1,7 +1,8 @@
 /* Grammar from LanguageTool (open source, LGPL): the server on this computer first (tools/languagetool.sh, port
  * 8081), the free public API otherwise (no account; about 20 requests a minute, 20 KB each, and the text goes to
  * their servers). Allan, 2026-10-19: "both, local first". */
-export const LT_CODE = { pt: 'pt-BR', de: 'de-DE', el: 'el-GR', ru: 'ru-RU', pl: 'pl-PL', ar: 'ar', ja: 'ja-JP', zh: 'zh-CN' };
+export const LT_CODE = { pt: 'pt-BR', de: 'de-DE', el: 'el-GR', ru: 'ru-RU', pl: 'pl-PL', ar: 'ar', ja: 'ja-JP', zh: 'zh-CN',
+  en: 'en-US', es: 'es', fr: 'fr', it: 'it', nl: 'nl', uk: 'uk-UA', ro: 'ro-RO', sv: 'sv-SE', fa: 'fa-IR', tl: 'tl-PH' };
 export const LOCAL = 'http://localhost:8081/v2/check';
 export const PUBLIC = 'https://api.languagetool.org/v2/check';
 

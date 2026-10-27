@@ -70,7 +70,7 @@ export default {
   'type.placeholder': 'напиши го зборот', 'type.check': 'Провери', 'type.marks': 'Точно — се пишува {form}', 'words.toTyped': 'значење → напиши го зборот',
   'drills.transform': 'Промени', 'drills.transform.hint': 'Форма и една промена — друг број, падеж или лице: напиши ја новата форма. Изоставените акценти се простуваат.',
   'theme.dark': 'Темен режим', 'theme.light': 'Светол режим', 'theme.palette': 'Бои на страницата', 'theme.scheme': 'Шема на бои',
-  'proof.heading': 'Лектура: правопис и граматика', 'proof.spell': 'правопис: Hunspell ({name}), во овој прелистувач', 'proof.noSpell': 'сè уште нема правописен речник за овој јазик',
+  'proof.heading': 'Лектура: правопис и граматика', 'proof.notYet.title': 'Лекторирањето за {name} сѐ уште не е достапно.', 'proof.notYet.body': 'За овој јазик сѐ уште нема отворен правописен речник ниту граматичка проверка, па ништо што ќе напишеш тука не се проверува.', 'proof.partial.noGrammar': 'За {name} се проверува само правописот: граматичка проверка сѐ уште нема.', 'proof.partial.noSpell': 'За {name} се проверува само граматиката: правописен речник сѐ уште нема.', 'proof.spell': 'правопис: Hunspell ({name}), во овој прелистувач', 'proof.noSpell': 'сè уште нема правописен речник за овој јазик',
   'proof.noGrammar': 'сè уште нема граматичка проверка за овој јазик', 'proof.grammar.ready': 'граматика: LanguageTool (прво на овој компјутер, инаку јавниот)',
   'proof.grammar.local': 'граматика: LanguageTool на овој компјутер', 'proof.grammar.public': 'граматика: јавниот LanguageTool (текстот е испратен на languagetool.org)',
   'proof.placeholder': 'Напиши или залепи текст за проверка…', 'proof.check': 'Провери', 'proof.checking': 'Се проверува…',

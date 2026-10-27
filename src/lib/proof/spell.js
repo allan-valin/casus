@@ -8,6 +8,10 @@ export const DICTIONARIES = {
   pt: ['dictionary-pt', '4.0.0'], de: ['dictionary-de', '3.0.0'], el: ['dictionary-el', '4.0.0'], ru: ['dictionary-ru', '3.0.0'],
   pl: ['dictionary-pl', '2.0.0'], cs: ['dictionary-cs', '4.0.0'], hu: ['dictionary-hu', '3.0.0'], is: ['dictionary-is', '2.0.0'],
   tr: ['dictionary-tr', '2.0.0'], la: ['dictionary-la', '2.0.0'], mk: ['dictionary-mk', '2.0.0'], ko: ['dictionary-ko', '2.0.0'],
+  // 2026-10-27 (Allan: every language that has an open dictionary gets one)
+  en: ['dictionary-en', '4.0.0'], es: ['dictionary-es', '4.0.0'], fr: ['dictionary-fr', '3.0.0'], it: ['dictionary-it', '2.0.0'],
+  nl: ['dictionary-nl', '2.0.0'], uk: ['dictionary-uk', '4.0.0'], ro: ['dictionary-ro', '3.0.0'], sv: ['dictionary-sv', '4.0.0'],
+  fa: ['dictionary-fa', '2.0.0'], lt: ['dictionary-lt', '2.0.0'], vi: ['dictionary-vi', '3.0.0'], sh: ['dictionary-hr', '2.0.0'],
 };
 
 let hunspell = null;

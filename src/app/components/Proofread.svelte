@@ -158,17 +158,23 @@
 
 <section class="card proof">
   <h2>{t('proof.heading')}</h2>
+  {#if !hasSpell && !hasGrammar}
+    <!-- Allan, 2026-10-27: a checker that silently does nothing is worse than none — say it plainly -->
+    <p class="not-yet" role="note"><strong>{t('proof.notYet.title', { name: lang.name })}</strong> {t('proof.notYet.body')}</p>
+  {:else if !hasSpell || !hasGrammar}
+    <p class="partial" role="note">{t(hasSpell ? 'proof.partial.noGrammar' : 'proof.partial.noSpell', { name: lang.name })}</p>
+  {/if}
   <p class="engines">
     {#if hasSpell}{t('proof.spell', { name: DICTIONARIES[lang.code][0] })}{:else}{t('proof.noSpell')}{/if} ·
     {#if !hasGrammar}{t('proof.noGrammar')}{:else if grammarEngine === 'local'}{t('proof.grammar.local')}{:else if grammarEngine === 'public'}{t('proof.grammar.public')}{:else}{t('proof.grammar.ready')}{/if}
   </p>
-  <div class="bar">
+  {#if hasSpell || hasGrammar}<div class="bar">
     <label title={t('proof.auto.title')}><input type="checkbox" class="auto" bind:checked={auto} onchange={() => { put('casus:proof:auto', auto ? 'on' : 'off'); if (auto) check(); }}> {t('proof.auto')}</label>
     {#if !auto}<button class="check primary" onclick={check} disabled={busy || !text.trim()}>{busy ? t('proof.checking') : t('proof.check')}</button>{/if}
     {#if busy && auto}<span class="busy">{t('proof.checking')}</span>{/if}
     <label class="upload" title={t('picker.upload.title')}>{t('picker.upload')}<input type="file" accept={ACCEPT} onchange={upload}></label>
     {#if hasGrammar}<label title={t('proof.public.title')}><input type="checkbox" bind:checked={allowPublic} onchange={() => put('casus:proof:public', allowPublic ? 'on' : 'off')}> {t('proof.public')}</label>{/if}
-  </div>
+  </div>{/if}
   <!-- the colour key, said as one, with how many of each (Allan, 2026-10-22: "what is that row supposed to be?") -->
   <div class="legend" aria-label={t('proof.legend')}><span class="legend-label">{t('proof.legend.label')}</span>{#each TYPES as ty}<span class="key" data-type={ty}><i></i>{t(`proof.type.${ty}`)} <span class="n">{issues.filter((i) => i.type === ty).length}</span></span>{/each}</div>
 
@@ -273,4 +279,5 @@
   .close { margin-left: auto; padding: 0 8px; }
   .local { margin-top: 10px; color: var(--ink-2); font-size: 0.92em; }
   pre { background: var(--panel-hi); padding: 6px 10px; border-radius: 6px; overflow-x: auto; }
+  .not-yet, .partial { border-left: 4px solid var(--warn, #c77700); background: var(--warn-bg, color-mix(in srgb, #c77700 12%, transparent)); padding: 0.6em 0.8em; border-radius: 6px; }
 </style>

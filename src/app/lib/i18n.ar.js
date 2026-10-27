@@ -71,7 +71,7 @@ export default {
   'type.placeholder': 'اكتب الكلمة', 'type.check': 'تحقّق', 'type.marks': 'صحيح — تُكتب {form}', 'words.toTyped': 'المعنى ← اكتب الكلمة',
   'drills.transform': 'حوّل', 'drills.transform.hint': 'صيغة وتغيير واحد — عدد أو حالة أو شخص آخر: اكتب الصيغة الجديدة. يُتسامح مع الحركات الناقصة.',
   'theme.dark': 'الوضع الداكن', 'theme.light': 'الوضع الفاتح', 'theme.palette': 'ألوان الصفحة', 'theme.scheme': 'نظام الألوان',
-  'proof.heading': 'التدقيق: الإملاء والنحو', 'proof.spell': 'الإملاء: Hunspell ({name})، في هذا المتصفح', 'proof.noSpell': 'لا قاموس إملائي لهذه اللغة بعد',
+  'proof.heading': 'التدقيق: الإملاء والنحو', 'proof.notYet.title': 'التدقيق للغة {name} غير متاح بعد.', 'proof.notYet.body': 'لا يوجد بعد قاموس إملائي مفتوح ولا مدقق نحوي لهذه اللغة، فلا يُدقَّق شيء مما تكتبه هنا.', 'proof.partial.noGrammar': 'يُدقَّق الإملاء فقط للغة {name}: لا مدقق نحوي لها بعد.', 'proof.partial.noSpell': 'يُدقَّق النحو فقط للغة {name}: لا قاموس إملائي لها بعد.', 'proof.spell': 'الإملاء: Hunspell ({name})، في هذا المتصفح', 'proof.noSpell': 'لا قاموس إملائي لهذه اللغة بعد',
   'proof.noGrammar': 'لا مدقق نحوي لهذه اللغة بعد', 'proof.grammar.ready': 'النحو: LanguageTool (على هذا الحاسوب أولًا، وإلا فالعام)',
   'proof.grammar.local': 'النحو: LanguageTool على هذا الحاسوب', 'proof.grammar.public': 'النحو: LanguageTool العام (أُرسل نصك إلى languagetool.org)',
   'proof.placeholder': 'اكتب النص أو الصقه للتدقيق…', 'proof.check': 'تحقّق', 'proof.checking': 'جارٍ التحقق…',
