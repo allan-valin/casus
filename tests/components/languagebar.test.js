@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 import { describe, it, expect } from 'vitest';
-import { render } from '@testing-library/svelte';
+import { render, fireEvent } from '@testing-library/svelte';
 import LanguageBar from '../../src/app/components/LanguageBar.svelte';
 
 /* Allan, 2026-10-19: the drills link sits on its own row under the languages, and on the drills page a language
@@ -58,5 +58,25 @@ describe('LanguageBar', () => {
     expect(de.getAttribute('href')).toMatch(/^\/de\/learn\/$/);         // this site: a local link
     const germanic = families.find((f) => f.querySelector('a') && [...f.querySelectorAll('a')].some((a) => a.textContent.includes('German')));
     expect([...germanic.querySelectorAll('a')].map((a) => a.textContent.replace('↗', '').trim())).toEqual(expect.arrayContaining(['German', 'English', 'Dutch', 'Swedish', 'Icelandic']));
+  });
+
+  it('the language list groups by family or by region, one group per language; Expand all / Collapse all (Allan, 2026-10-27)', async () => {
+    const { container } = render(LanguageBar, { current: 'grc', view: 'learn', parts: ['languages'] });
+    const groups = () => [...container.querySelectorAll('nav.languages details.family')];
+    const codesIn = () => groups().map((g) => [...g.querySelectorAll('a')].map((a) => a.dataset.code));
+    await fireEvent.click(container.querySelector('button.group-by[data-by="region"]'));
+    const ids = groups().map((g) => g.dataset.group);
+    expect(ids).toEqual(expect.arrayContaining(['europe', 'asia']));
+    const all = codesIn().flat();
+    expect(all).toHaveLength(35);
+    expect(new Set(all).size).toBe(35);                                // no language in two groups
+    const asia = codesIn()[ids.indexOf('asia')];
+    expect(asia).toEqual(expect.arrayContaining(['ja', 'ko', 'zh', 'hi', 'vi', 'id']));
+    await fireEvent.click(container.querySelector('button.expand-all'));
+    expect(groups().every((g) => g.open)).toBe(true);
+    await fireEvent.click(container.querySelector('button.collapse-all'));
+    expect(groups().some((g) => g.open)).toBe(false);
+    await fireEvent.click(container.querySelector('button.group-by[data-by="family"]'));
+    expect(groups().map((g) => g.dataset.group)).toContain('germanic');
   });
 });

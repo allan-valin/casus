@@ -35,3 +35,15 @@ export const FAMILIES = [
 ];
 
 export const familyOf = (code) => FAMILIES.find((f) => f.codes.includes(code)) ?? null;
+
+/* The same list by continent (Allan, 2026-10-27: a toggle between family and region; one group per language, so
+ * every Asian language goes under Asia). A language sits where it arose: Arabic and Turkish in Asia, Russian, Latin
+ * and Ancient Greek in Europe, Portuguese, Spanish and English in Europe. */
+export const REGIONS = [
+  { id: 'europe', codes: ['la', 'grc', 'el', 'pt', 'es', 'fr', 'it', 'ro', 'de', 'en', 'nl', 'sv', 'is', 'ru', 'uk', 'pl', 'cs', 'sh', 'mk', 'lt', 'fi', 'hu'],
+    name: { en: 'Europe', pt: 'Europa', de: 'Europa', mk: 'Европа', ar: 'أوروبا' } },
+  { id: 'asia', codes: ['ar', 'tr', 'fa', 'sa', 'hi', 'bn', 'ja', 'ko', 'zh', 'vi', 'id', 'tl'],
+    name: { en: 'Asia', pt: 'Ásia', de: 'Asien', mk: 'Азија', ar: 'آسيا' } },
+  { id: 'africa', codes: ['sw'],
+    name: { en: 'Africa', pt: 'África', de: 'Afrika', mk: 'Африка', ar: 'أفريقيا' } },
+];

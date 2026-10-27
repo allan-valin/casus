@@ -4,7 +4,7 @@
    * a language name opens that language's drills; 2026-10-19: proofreading). */
   import { SITE, SITES, siteLanguages, siteUrl, siteOf } from '../../sites.js';
   import { LANGUAGES as ALL } from '../../lang/registry.js';
-  import { FAMILIES } from '../lib/families.js';
+  import { FAMILIES, REGIONS } from '../lib/families.js';
   const LANGUAGES = siteLanguages();
   import { drillsPath, proofPath, learnPath, speakPath, talkPath } from '../lib/route.js';
   import { withBase } from '../lib/paths.js';
@@ -20,15 +20,31 @@
   const hrefOf = (l) => (siteOf(l.code).id === SITE.id ? withBase(pathOf(l)) : siteUrl(l.code, view));
   const VIEW_KEY = { reader: 'nav.reader', drills: 'nav.game', learn: 'nav.learn', talk: 'nav.talk', speak: 'nav.speak', proof: 'nav.proof' };
   const here = $derived(LANGUAGES.find((l) => l.code === current) ?? LANGUAGES[0]);
+  // the list by family or by region, remembered in this browser; Expand all / Collapse all (Allan, 2026-10-27)
+  const BY_KEY = 'casus:languages:group-by';
+  let by = $state((() => { try { return localStorage.getItem(BY_KEY) === 'region' ? 'region' : 'family'; } catch { return 'family'; } })());
+  const groups = $derived(by === 'region' ? REGIONS : FAMILIES);
+  let opened = $state({});
+  const isOpen = (g) => opened[g.id] ?? g.codes.includes(current);
+  function groupBy(b) { by = b; opened = {}; try { localStorage.setItem(BY_KEY, b); } catch { /* not kept */ } }
+  const setAll = (v) => { opened = Object.fromEntries(groups.map((g) => [g.id, v])); };
 </script>
 
 {#if parts.includes('languages')}<nav class="languages" aria-label={t('nav.label')}>
+  <div class="group-tools">
+    <span class="group-toggle" role="group" aria-label={t('nav.groupBy')}>
+      <button class="group-by" data-by="family" aria-pressed={by === 'family'} onclick={() => groupBy('family')}>{t('nav.byFamily')}</button>
+      <button class="group-by" data-by="region" aria-pressed={by === 'region'} onclick={() => groupBy('region')}>{t('nav.byRegion')}</button>
+    </span>
+    <button class="expand-all" onclick={() => setAll(true)}>{t('nav.expandAll')}</button>
+    <button class="collapse-all" onclick={() => setAll(false)}>{t('nav.collapseAll')}</button>
+  </div>
   <!-- every language of all three sites, by family; another site's language links there (Allan, 2026-10-22) -->
-  {#each FAMILIES as f (f.id)}{@const members = f.codes.map((c) => ALL.find((l) => l.code === c)).filter(Boolean)}{#if members.length}
-    <details class="family" open={f.codes.includes(current)}>
+  {#each groups as f (f.id)}{@const members = f.codes.map((c) => ALL.find((l) => l.code === c)).filter(Boolean)}{#if members.length}
+    <details class="family" data-group={f.id} open={isOpen(f)} ontoggle={(e) => { if (e.currentTarget.open !== isOpen(f)) opened = { ...opened, [f.id]: e.currentTarget.open }; }}>
       <summary>{f.name[ui.lang] ?? f.name.en} <span class="family-n">{members.length}</span></summary>
       <div class="family-langs">
-        {#each members as l (l.code)}<a href={hrefOf(l)} aria-current={l.code === current ? 'page' : undefined} data-site={siteOf(l.code).id}>{#if languageFlag(l.code)}<img class="flag" src={languageFlag(l.code)} alt="" />{/if}{l.name[ui.lang] ?? l.name.en}{#if siteOf(l.code).id !== SITE.id}<span class="other-site" title={siteOf(l.code).title}>↗</span>{/if}</a>{/each}
+        {#each members as l (l.code)}<a href={hrefOf(l)} data-code={l.code} aria-current={l.code === current ? 'page' : undefined} data-site={siteOf(l.code).id}>{#if languageFlag(l.code)}<img class="flag" src={languageFlag(l.code)} alt="" />{/if}{l.name[ui.lang] ?? l.name.en}{#if siteOf(l.code).id !== SITE.id}<span class="other-site" title={siteOf(l.code).title}>↗</span>{/if}</a>{/each}
       </div>
     </details>
   {/if}{/each}
@@ -64,6 +80,12 @@
 
 <style>
   .languages { display: flex; flex-direction: column; gap: 4px; }
+  .group-tools { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 4px; }
+  .group-tools button { border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; background: transparent; color: var(--ink); cursor: pointer; font-size: 0.85rem; }
+  .group-toggle { display: inline-flex; gap: 0; }
+  .group-toggle button:first-child { border-start-end-radius: 0; border-end-end-radius: 0; }
+  .group-toggle button:last-child { border-start-start-radius: 0; border-end-start-radius: 0; border-inline-start: 0; }
+  .group-tools button[aria-pressed=true] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
   .family summary { cursor: pointer; font-weight: 700; font-size: 0.9rem; padding: 6px 4px; list-style-position: inside; }
   .family-n { display: inline-block; min-width: 1.4em; padding: 0 6px; border-radius: 999px; background: var(--line); color: var(--ink-2); font-size: 0.8em; text-align: center; font-weight: 600; }
   .family-langs { display: flex; flex-wrap: wrap; gap: 4px; padding: 2px 0 8px 14px; }
