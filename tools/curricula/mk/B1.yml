@@ -35,7 +35,7 @@ topics:
     - [Го имам видено тој филм., I've seen that film., Já vi esse filme., видено]
     - [Немам јадено од утрото., I haven't eaten since this morning., Não como desde de manhã., јадено]
     - ["Имате ли бидено во Охрид?", "Have you ever been to Ohrid?", "Vocês já estiveram em Ohrid?", "бидено"]
-    - [Имаме платено сè., We've paid for everything., Já pagamos tudo., платено]
+    - [Имаме платено сѐ., We've paid for everything., Já pagamos tudo., платено]
     # the participle as the reader files it: a verb form in -но/-то (an adjective in -но, хартиено, is not one)
     match: {seq: [{word: [имам, имаш, има, имаме, имате, имаат, немам, немаш, нема, немаме, немате, немаат]}, {pos: verb, tense: lpart, re: "(но|то)$"}], near: 1, gap: 1}
 
@@ -427,7 +427,7 @@ topics:
         |---|---|---|---|---|
         | some- | некој | нешто | некаде | некогаш |
         | no- | никој | ништо | никаде | никогаш |
-        | every- | секој | сè | секаде | секогаш |
+        | every- | секој | сѐ | секаде | секогаш |
         | any- | кој било | што било | каде било | кога било |
 
         The **ни-** words come with **не** on the verb (double negative): **Никој не дојде.** "Nobody came." **Ништо не знам.** "I don't know anything."
@@ -438,7 +438,7 @@ topics:
         |---|---|---|---|---|
         | algum | некој | нешто | некаде | некогаш |
         | nenhum | никој | ништо | никаде | никогаш |
-        | todo | секој | сè | секаде | секогаш |
+        | todo | секој | сѐ | секаде | секогаш |
         | qualquer | кој било | што било | каде било | кога било |
 
         As palavras com **ни-** vêm com **не** no verbo (dupla negação, como em português): **Никој не дојде.** "Ninguém veio." **Ништо не знам.** "Não sei nada."
@@ -447,12 +447,12 @@ topics:
       right: Никој не дојде.
       why: {en: "ни-words need не on the verb.", pt: "Palavras com ни- pedem не no verbo."}
     - wrong: се (everything)
-      right: сè
-      why: {en: "*everything* is written сè, with the mark; се is *oneself*.", pt: "*tudo* se escreve сè, com acento; се é *se*."}
+      right: сѐ
+      why: {en: "*everything* is written сѐ, with the mark; се is *oneself*.", pt: "*tudo* se escreve сѐ, com acento; се é *se*."}
     examples:
     - [Некој чука на вратата., Someone is knocking at the door., Alguém está batendo na porta., Некој]
     - [Никој не знае., Nobody knows., Ninguém sabe., Никој]
     - [Секој има право на мислење., Everyone has a right to an opinion., Todos têm direito a uma opinião., Секој]
     - [Ништо не се случи., Nothing happened., Não aconteceu nada., Ништо]
-    match: {seq: [{word: [некој, никој, секој, нешто, ништо, сè, некаде, никаде, секаде, насекаде, некогаш, никогаш, секогаш, некого, никого, секого]}]}
-    pool: [некој, никој, секој, нешто, ништо, сè, некаде, никаде, секаде, некогаш, никогаш, секогаш]
+    match: {seq: [{word: [некој, никој, секој, нешто, ништо, сѐ, некаде, никаде, секаде, насекаде, некогаш, никогаш, секогаш, некого, никого, секого]}]}
+    pool: [некој, никој, секој, нешто, ништо, сѐ, некаде, никаде, секаде, некогаш, никогаш, секогаш]

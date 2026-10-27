@@ -40,3 +40,9 @@ def test_espeak_single_word_and_voices_that_read_punctuation():
     assert espeak(['ab'], 'pl')[0].endswith('p')
     for voice in ('pl', 'cs', 'hu', 'sv', 'pt-br', 'de'):
         assert len(espeak(['dom', 'kot', 'las'], voice)) == 3
+
+
+def test_shard_is_the_longest_known_prefix_like_the_browser():
+    from form_ipa import shard_key
+    assert shard_key('повелете', {'по', 'пов', 'а'}) == 'пов'
+    assert shard_key('ѕвезда', {'по'}) is None

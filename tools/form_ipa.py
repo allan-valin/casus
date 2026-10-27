@@ -197,6 +197,45 @@ def main(code):
     print(f'{code}: {total} forms transcribed into {outdir}')
 
 
+def shard_key(form, names):
+    """the form file a word is looked up in: the longest prefix (≤ 5) that names one (src/lib/lexicon.js shardKey)"""
+    for n in range(min(len(form), 5), 0, -1):
+        if form[:n] in names:
+            return form[:n]
+    return None
+
+
+def course(code):
+    """Conversation words that still have no IPA (forms Wiktionary's tables lack: повелете, кого): espeak + the saved
+    rules, added to their ipa-forms shard (Allan, 2026-10-27: every word of every step needs an expected IPA)"""
+    import yaml
+    from ipa_coverage import unit_words, covered
+    root = Path('data') / code
+    saved = json.loads((root / 'ipa-rules.json').read_text())
+    rules = [tuple(r) for r in saved['rules']]
+    ipa = json.loads((root / 'ipa.json').read_text())
+    lemmas = json.loads((root / 'lemmas.json').read_text())
+    headwords = {lemmas[k]['headword'].lower() for k, v in ipa.items() if k in lemmas and v}
+    outdir = root / 'ipa-forms'
+    shards = {f.stem: json.loads(f.read_text()) for f in outdir.glob('*.json')}
+    names = {f.stem for f in (root / 'forms').glob('*.json')}
+    forms = {w: v for m in shards.values() for w, v in m.items()}
+    todo = sorted({w for f in Path('tools/conversation', code).glob('*.yml')
+                   for w in unit_words(yaml.safe_load(f.read_text()) or {}) if not covered(w, headwords, forms)})
+    added = 0
+    for w, g in zip(todo, espeak(todo, saved['voice'])):
+        name = shard_key(w, names)
+        s = segments(g)
+        for r in rules: s = apply_rule(s, r)
+        if name and s:
+            shards.setdefault(name, {})[w] = ''.join(s); added += 1
+    for name, m in shards.items():
+        (outdir / f'{name}.json').write_text(json.dumps(m, ensure_ascii=False, separators=(',', ':')))
+    print(f'{code}: {added} of {len(todo)} course words without IPA transcribed')
+
+
 if __name__ == '__main__':
-    for c in sys.argv[1:]:
-        main(c)
+    if sys.argv[1] == '--course':
+        for c in sys.argv[2:]: course(c)
+    else:
+        for c in sys.argv[1:]: main(c)
