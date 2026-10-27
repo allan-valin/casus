@@ -369,4 +369,16 @@ describe('words in a lesson open their dictionary entry, as in the Reader (Allan
     await flush();
     expect(container.querySelectorAll('.entry-panel').length).toBe(1);
   });
+  it('a lesson names the Conversation units that practise it, linked (T1, Allan 2026-10-27)', async () => {
+    const links = { 'n5-004': [{ unit: 'A1-03', level: 'A1', title: { en: 'At the station', pt: 'Na estação' } }] };
+    const { container } = render(Learn, props({ startLesson: 'n5-004', loadTalkLinks: async () => links, talkHref: (u) => `/ja/talk/#${u}` }));
+    await flush();
+    const a = container.querySelector('.practised a');
+    expect(a.getAttribute('href')).toBe('/ja/talk/#A1-03');
+    expect(a.textContent).toContain('A1-03');
+    expect(a.textContent).toContain('At the station');
+    const r2 = render(Learn, props({ startLesson: 'n5-005', loadTalkLinks: async () => links, talkHref: (u) => u, loadLesson: async (id) => ({ ...LESSONS['n5-004'], id }) }));
+    await flush();
+    expect(r2.container.querySelector('.practised')).toBeNull();
+  });
 });

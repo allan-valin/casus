@@ -15,7 +15,7 @@
   let { lang, loadTalk, storage = null, speakTaught = async () => {}, speakNarrator = async () => {}, trainerHref = null,
     say = () => {}, pause = (ms) => new Promise((r) => setTimeout(r, ms)), Practice = null, practiceProps = {}, control = null,
     voices = [], narratorVoiceOf = null, Entry = null, entryProps = {}, VoiceBox = null, kanjiHref = null,
-    loadLearn = null, lessonHref = null, inDevelopment = false } = $props();
+    loadLearn = null, lessonHref = null, inDevelopment = false, startUnit = null } = $props();
 
   const GUIDE = 'https://github.com/allan-valin/casus/blob/main/docs/conversation';
   const GUIDES = [['en', 'English'], ['pt-BR', 'Português (Brasil)'], ['de', 'Deutsch'], ['mk', 'Македонски'], ['ar', 'العربية']];
@@ -59,6 +59,9 @@
     loadLearn?.().then((L) => { learnIndex = Object.fromEntries((L?.levels ?? []).flatMap((l) => l.topics.flatMap((tp) => tp.lessons.map((e) => [e.id, e])))); }).catch(() => {});
     try { course = await loadTalk(); } catch { course = null; }
     loaded = true;
+    // a link names a unit's slot (A1-02) or id (A1-02-e): open this audience's version (Learn links here, 2026-10-27)
+    const start = startUnit && shownUnits.find((u) => u.id === startUnit || slot(u.id) === startUnit);
+    if (start) open(start);
   });
   // each unit is tagged with the Learn lessons it practises; a search looks in every level (Allan, 2026-10-27)
   let learnIndex = $state({});
@@ -319,7 +322,7 @@
     <p>{t('talk.guide.intro')}</p>
     <ul class="guides">{#each GUIDES as [code, name]}<li><a class="guide" href={`${GUIDE}/GUIDE.${code}.md`} target="_blank" rel="noopener">{name}</a></li>{/each}</ul>
   {:else if !unit}
-    {#if inDevelopment}<p class="in-dev" role="note"><strong>{t('talk.dev.title')}</strong> {t('talk.dev.body', { report: t('app.report') })}</p>{/if}
+    {#if inDevelopment || course?.in_development}<p class="in-dev" role="note"><strong>{t('talk.dev.title')}</strong> {t('talk.dev.body', { report: t('app.report') })}</p>{/if}
     {@render gearPanel()}
     <details class="howto" open={helpOpen}>
       <summary>{t('talk.howto.title')}</summary>

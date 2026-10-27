@@ -29,7 +29,7 @@
   import Talk from './components/Talk.svelte';
   import VoiceSettings from './components/VoiceSettings.svelte';
   import WordEntry from './components/WordEntry.svelte';
-  import { learnPath, speakPath } from './lib/route.js';
+  import { learnPath, speakPath, talkPath } from './lib/route.js';
   import { speakHref } from './lib/pronounce.js';
   import ThemeControls from './components/ThemeControls.svelte';
   import ProgressChip from './components/ProgressChip.svelte';
@@ -44,8 +44,6 @@
   const route = langFromPath(typeof location !== 'undefined' ? location.pathname : '/', import.meta.env?.BASE_URL ?? '/');
   const lang = getLanguage(route.code);
   const DATA = withBase(lang.dataPath);
-  // Conversation courses still being revised show an in-development banner (Allan, 2026-10-27; docs/conversation/TASKS-2026-10-27.md)
-  const TALK_IN_DEVELOPMENT = ['de', 'ja', 'mk'];
   const voice = typeof window === 'undefined' ? null : createVoice({ bcp47: lang.bcp47, espeakVoice: lang.voice.espeak, natural: lang.voice.natural ?? null });
 
   // injected for tests; the browser gets the real ones
@@ -296,11 +294,13 @@
       kanjiHref={(lesson) => `${withBase(learnPath(LANGUAGES.find((l) => l.code === lang.code) ?? { path: '/' }))}#${lesson}`}
       lessonHref={(lesson) => `${withBase(learnPath(LANGUAGES.find((l) => l.code === lang.code) ?? { path: '/' }))}#${lesson}`}
       loadLearn={() => fetchImpl(`${DATA}/learn.json`).then((r) => (r.ok ? r.json() : null))}
-      inDevelopment={TALK_IN_DEVELOPMENT.includes(lang.code)}
+      startUnit={decodeURIComponent(location.hash.slice(1)) || null}
       say={(msg, kind) => activity.say(msg, kind)} />
   {:else if route.view === 'learn'}
     <Learn {lang} {storage} {award} {progression} startLesson={decodeURIComponent(location.hash.slice(1)) || null} lookup={(w) => (lexicon ? lexicon.lookup(w) : Promise.resolve([]))} loadInfo={loadEntryInfo} loadParadigm={loadParadigmOf} speak={(text) => speakHref(withBase(speakPath(LANGUAGES.find((l) => l.code === lang.code) ?? { path: '/' })), text)} loadLearn={() => fetchImpl(`${DATA}/learn.json`).then((r) => (r.ok ? r.json() : null))}
       loadLesson={(id) => fetchImpl(`${DATA}/learn/${id}.json`).then((r) => r.json())}
+      loadTalkLinks={() => fetchImpl(withBase(`/talk/lessons/${lang.code}.json`)).then((r) => (r.ok ? r.json() : {}))}
+      talkHref={(unit) => `${withBase(talkPath(LANGUAGES.find((l) => l.code === lang.code) ?? { path: '/' }))}#${unit}`}
       loadQuestions={(id) => fetchImpl(`${DATA}/learn/q-${id}.json`).then((r) => (r.ok ? r.json() : { qs: [] }))}
       openInReader={(text) => { try { storage?.setItem(`casus:input:${lang.code}`, text); } catch { /* not kept */ } location.href = withBase(LANGUAGES.find((l) => l.code === lang.code)?.path ?? '/'); }} />
   {:else if route.view === 'proof'}

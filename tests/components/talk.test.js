@@ -847,4 +847,14 @@ describe('Unit list: lesson tags, search in every level, in-development banner',
     const r2 = render(Talk, p2); await flush();
     expect(r2.container.querySelector('.in-dev')).toBeNull();
   });
+  it('the course file can say it is in development (story bible in_development), no list in the app (T1, 2026-10-27)', async () => {
+    const { p } = props({ loadTalk: async () => ({ ...TAGGED, in_development: true }) });
+    const { container } = render(Talk, p); await flush();
+    expect(container.querySelector('.in-dev')).not.toBeNull();
+  });
+  it('a link can open a unit directly by its slot (Learn: "practised in Conversation", T1 2026-10-27)', async () => {
+    const { p } = props({ startUnit: 'A1-02' });
+    const { container } = render(Talk, p); await flush();
+    expect(container.querySelector('.unit-head, h3')?.textContent).toContain('Sunday');
+  });
 });

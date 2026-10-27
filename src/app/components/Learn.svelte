@@ -17,7 +17,7 @@
   import { learnSections } from '../lib/learnorigin.js';
   import WordEntry from './WordEntry.svelte';
   import { wordAround, candidatesAt, firstKnown } from '../lib/wordat.js';
-  let { lang, loadLearn, loadLesson, loadQuestions, storage = null, random = Math.random, openInReader = null, speak = null, saveFile = downloadFile, award = null, progression = null, lookup = null, loadInfo = null, loadParadigm = null, startLesson = null } = $props();
+  let { lang, loadLearn, loadLesson, loadQuestions, storage = null, random = Math.random, openInReader = null, speak = null, saveFile = downloadFile, award = null, progression = null, lookup = null, loadInfo = null, loadParadigm = null, startLesson = null, loadTalkLinks = null, talkHref = null } = $props();
 
   let learn = $state(null);
   let failed = $state(false);
@@ -60,8 +60,11 @@
   const vowelledEnough = (t) => { const letters = (t.match(/\p{L}/gu) ?? []).length; return letters > 0 && (t.match(/\p{M}/gu) ?? []).length / letters >= 0.4; };
   const romanize = lang.script?.romanize ? (lang.script.hasMarks && lang.script.rtl ? (t) => (vowelledEnough(t) ? lang.script.romanize(t) : '') : lang.script.romanize) : null;
 
+  // the Conversation units that practise each lesson (Allan, 2026-10-27, T1): public/talk/lessons/<code>.json
+  let talkLinks = $state({});
   onMount(async () => {
     try { progress = JSON.parse(storage?.getItem(KEY) ?? '{}'); } catch { progress = {}; }
+    loadTalkLinks?.().then((x) => { talkLinks = x ?? {}; }).catch(() => {});
     try {
       learn = await loadLearn();
       if (!learn?.levels?.length) { failed = true; return; }
@@ -216,6 +219,7 @@
       <nav class="crumbs"><button class="back" onclick={() => { lesson = null; quizItems = []; }}>← {lessonRef.level.title ? loc(lessonRef.level.title) : lessonRef.level.id}</button> <span class="crumb-topic">{loc(lessonRef.topic.title)}</span></nav>
       <h3 class="lesson-title"><span class="badge-level">{lessonRef.level.title ? loc(lessonRef.level.title) : lessonRef.level.id}</span> <span class="l-head" lang={lang.bcp47}>{lesson.title ?? lessonRef.entry.title}</span></h3>
       {#if lesson.meaning}<p class="l-sub">{loc(lesson.meaning)}</p>{/if}
+      {#if talkHref && talkLinks[lesson.id]?.length}<p class="practised">{t('learn.practised')} {#each talkLinks[lesson.id] as x, i}{#if i}, {/if}<a href={talkHref(x.unit)}>{x.unit} · {loc(x.title)}</a>{/each}</p>{/if}
       {#if lesson.ai}<p class="ai-badge" title={t('learn.ai.title')}>✦ {t('learn.ai')}</p>{/if}
       {#if lesson.generated}<p class="ai-badge gen-badge" title={t('learn.gen.title')}>⚙ {t('learn.gen')}</p>{/if}
       {#if !lesson.ai && !lesson.generated}<p class="ai-badge human-badge" title={t('learn.human.title')}>👤 {t('learn.human')}</p>{/if}
@@ -364,6 +368,7 @@
   h3.lesson-title { font-size: 2.1rem; margin: 18px 0 4px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
   .badge-level { font-size: 0.45em; padding: 2px 8px; border-radius: 6px; background: var(--accent); color: var(--accent-ink); }
   .l-sub { font-size: 1.15em; color: var(--ink-2); margin: 0 0 8px; }
+  .practised { margin: 0 0 8px; font-size: .95em; }
   .human-mark { font-size: .8em; opacity: .75; }
   .orig-toggle { margin-inline-start: 8px; font: inherit; font-size: .9em; cursor: pointer; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); color: var(--ink); padding: 1px 8px; }
   .human-badge { background: var(--panel); border-color: var(--line); }
