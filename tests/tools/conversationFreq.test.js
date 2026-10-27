@@ -40,3 +40,20 @@ describe('word frequency in conversation units', () => {
     expect((await unitReport(unit, async () => null, { names: [] })).rare).toEqual([]);
   });
 });
+
+// T5 (Allan, 2026-10-27): each unit judged against its own level's vocabulary, at every level
+import { levelRank } from '../../tools/conversation_freq.mjs';
+describe('level yardstick', () => {
+  it('a word above the unit level is rare, at or below is fine, at every level', async () => {
+    const y = { haus: 'A1', miete: 'B1', klischee: 'C2' };
+    const rankOf = async (w) => levelRank(y[w.toLowerCase()]);
+    const unit = (level) => ({ id: `${level}-01`, level, new_items: [
+      { id: 'a', text: 'Haus' }, { id: 'b', text: 'Miete' }, { id: 'c', text: 'Klischee' }, { id: 'd', text: 'Quatschwort' }, { id: 'e', text: 'Miete Klischee' }] });
+    const b1 = await unitReport(unit('B1'), rankOf, { top: levelRank('B1'), everyLevel: true });
+    expect(b1.rare.map((r) => r.item)).toEqual(['c', 'd', 'e']);
+    const c2 = await unitReport(unit('C2'), rankOf, { top: levelRank('C2'), everyLevel: true });
+    expect(c2.rare.map((r) => r.item)).toEqual(['d']);
+    const c1 = await unitReport({ ...unit('C1'), new_items: [...unit('C1').new_items, { id: 'f', text: 'Zzz' }, { id: 'g', text: 'Yyy' }] }, rankOf, { top: levelRank('C1'), everyLevel: true });
+    expect(c1.warning).toMatch(/C1-01/);
+  });
+});

@@ -9,12 +9,17 @@
  *   node tools/conversation_freq.mjs mk        # reads public/talk/mk.json, built by tools/build_conversation.py
  */
 import { readFile } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { realpathSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
 const WORD = /[\p{L}\p{M}]+/gu;
 const EARLY = new Set(['A1', 'A2']);
+const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
+/** a CEFR level as a rank (A1 = 1 … C2 = 6), so the level yardstick (data/<code>/yardstick.json, T5) plugs into the
+ * same rank test as the top-1000 list; null for a word no source grades */
+export const levelRank = (level) => (LEVELS.includes(level) ? LEVELS.indexOf(level) + 1 : null);
 const CLOSED = new Set(['pron', 'det', 'conj', 'prep', 'particle', 'num', 'aux', 'interj']);   // greetings are core too
 // the Japanese list is JLPT vocabulary: it leaves out the copula and polite endings, which every A1 sentence uses
 const GRAMMAR = new Set(['だ', 'です', 'でした', 'ます', 'ござる', 'ございます']);
@@ -52,7 +57,7 @@ export async function unitReport(unit, rankOf, opts = {}) {
     const words = await rareWords(it.text, rankOf, opts);
     if (words.length) rare.push({ item: it.id, words });
   }
-  const warning = EARLY.has(unit.level) && rare.length > 3
+  const warning = (opts.everyLevel || EARLY.has(unit.level)) && rare.length > 3
     ? `${unit.id}: ${rare.length} new items with rare words (${rare.map((r) => r.words.join(' ')).join('; ')}) — use frequent words or mark rare: true` : null;
   return { rare, warning };
 }
@@ -83,10 +88,25 @@ async function main(code) {
     const known = ranks.filter((r) => r != null);
     return known.length ? Math.min(...known) : null;
   };
+  // T5 (Allan, 2026-10-27): with a level yardstick each unit is judged against its own level, at every level
+  const yardPath = path.join(dataDir, 'yardstick.json');
+  const yard = existsSync(yardPath) ? JSON.parse(await readFile(yardPath, 'utf8')) : null;
+  const levelOf = async (w) => {
+    if (GRAMMAR.has(w)) return 1;
+    const ranks = [levelRank(yard[w.toLowerCase()])];
+    for (const a of [...await lexicon.lookup(w), ...(w !== w.toLowerCase() ? await lexicon.lookup(w.toLowerCase()) : [])]) {
+      if (CLOSED.has(a.pos)) return 1;
+      ranks.push(levelRank(yard[head(a.lemma)]));
+    }
+    const known = ranks.filter((r) => r != null);
+    return known.length ? Math.min(...known) : null;
+  };
   const names = Object.values(course.cast ?? {}).map((c) => c.name ?? '');
   let warnings = 0;
   for (const u of course.units) {
-    const r = await unitReport(u, rankOf, { names, readings: course.readings ?? {}, top: freq.every((f) => f.level) ? freq.length : 1000 });
+    const r = yard
+      ? await unitReport(u, levelOf, { names, readings: course.readings ?? {}, top: levelRank(u.level) ?? 6, everyLevel: true })
+      : await unitReport(u, rankOf, { names, readings: course.readings ?? {}, top: freq.every((f) => f.level) ? freq.length : 1000 });
     if (r.warning) { console.log('warning:', r.warning); warnings += 1; }
     else if (r.rare.length) console.log(`${u.id}: rare (three or fewer, fine): ${r.rare.map((x) => x.words.join(' ')).join('; ')}`);
   }
