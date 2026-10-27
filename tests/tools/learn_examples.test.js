@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { findTarget, withinLevel, gapOf } from '../../tools/learn_examples.mjs';
+import { findTarget, withinLevel, gapOf, argsOf } from '../../tools/learn_examples.mjs';
 
 const toks = (...s) => s.map((surface) => ({ surface }));
 
@@ -62,5 +62,13 @@ describe('gap pool of a lesson', () => {
     const targets = new Map([['N5', ['は', 'が']]]);
     expect(gapPool(['を'], targets, 'N5')).toEqual(['を', 'は', 'が']);
     expect(gapPool(['を'], targets, 'Reference')).toEqual(['を']);
+  });
+  it('--only writes just the named lessons (a lesson spliced into a built Learn leaves the others as they are)', () => {
+    expect(argsOf(['ja'])).toEqual({ code: 'ja', limit: Infinity, only: null });
+    const a = argsOf(['ja', '--only=n5-901,n4-901']);
+    expect(a.code).toBe('ja');
+    expect(a.limit).toBe(Infinity);
+    expect([...a.only]).toEqual(['n5-901', 'n4-901']);
+    expect(argsOf(['ja', '500']).limit).toBe(500);
   });
 });

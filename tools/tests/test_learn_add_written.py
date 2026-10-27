@@ -32,3 +32,13 @@ def test_only_new_lessons_get_a_free_topic_number_and_leave_the_rest(tmp_path):
     splice(index, levels, lessons, {}, tmp_path)
     assert [t["id"] for t in index["levels"][0]["topics"]] == ["A1-t1", "A1-t2", "A1-w-prep"]
     assert not (tmp_path / "learn" / "old.json").exists()
+
+
+def test_a_topic_emptied_by_the_splice_is_dropped(tmp_path):
+    # Macedonian (2026-10-27): a corrected topic title made a new topic and left the old one empty in the menu
+    (tmp_path / "learn").mkdir()
+    index = {"levels": [{"id": "A2", "topics": [{"id": "A2-t9", "title": {"en": "Saying how"}, "lessons": [{"id": "x"}]},
+                                                 {"id": "A2-wb", "lessons": [{"id": "b"}]}]}], "files": []}
+    level = {"id": "A2", "topics": [{"id": "A2-t10", "title": {"en": "Saying how, and whose"}, "lessons": [{"id": "x"}]}]}
+    splice(index, [level], {"x": {"id": "x"}}, {}, tmp_path)
+    assert [t["id"] for t in index["levels"][0]["topics"]] == ["A2-t10", "A2-wb"]

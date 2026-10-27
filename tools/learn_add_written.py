@@ -33,6 +33,9 @@ def splice(index, levels, lessons, questions, out):
             mine = {e["id"] for t in lv["topics"] for e in t["lessons"]}
             # drop an earlier copy of these topics, and these lessons wherever they were
             kept = [t for t in same["topics"] if t["id"] not in new_ids]
+            # these lessons leave wherever they were; a topic they all leave (its title was corrected) goes with them
+            emptied = {t["id"] for t in kept if t["lessons"] and all(e["id"] in mine for e in t["lessons"])}
+            kept = [t for t in kept if t["id"] not in emptied]
             for t in kept:
                 t["lessons"] = [e for e in t["lessons"] if e["id"] not in mine]
             at = max((k + 1 for k, t in enumerate(kept) if CORE.match(t["id"])), default=0)

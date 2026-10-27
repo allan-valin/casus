@@ -7,8 +7,17 @@
  * gap question and a translation question, with furigana and romaji from the dictionary. At most 200 per lesson,
  * shortest first. Appends to data/ja/learn/q-<lesson>.json.
  *
- * Usage: node tools/learn_examples.mjs ja [limit]
+ * Usage: node tools/learn_examples.mjs ja [limit] [--only=n5-901,n4-901]
+ * --only writes only those lessons' files; every lesson's patterns still compete for the sentences, so the new lessons
+ * get what a full run would give them and the others stay as they are (2026-10-27: lessons spliced into a built Learn).
  */
+
+/** code, sentence limit and the lessons to write (null: all) from the command line */
+export function argsOf(argv) {
+  const only = argv.find((a) => a.startsWith('--only='));
+  const rest = argv.filter((a) => !a.startsWith('--only='));
+  return { code: rest[0] ?? 'ja', limit: Number(rest[1] ?? Infinity), only: only ? new Set(only.slice(7).split(',').filter(Boolean)) : null };
+}
 import { readFile, writeFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import { unsuitable } from './learn_match.mjs';
@@ -95,7 +104,8 @@ export function gapOf(blocks, [a, b]) {
 export const gapRoman = (blocks, [a, b]) => blocks.flatMap((bl, i) => (i === a ? ['___'] : i > a && i < b ? [] : [bl.roman ?? ''])).filter(Boolean).join(' ');
 const furiOf = (blocks) => blocks.flatMap((bl) => (bl.furi ?? [[bl.token.surface, null]]).map(([t, r]) => [t, r ?? null]));
 
-async function main(code = 'ja', limit = Infinity) {
+async function main({ code = 'ja', limit = Infinity, only = null } = {}) {
+  const writes = (id) => !only || only.has(id);
   const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
   const { createLexicon } = await import('../src/lib/lexicon.js');
   const { createState } = await import('../src/lib/state.js');
@@ -134,7 +144,8 @@ async function main(code = 'ja', limit = Infinity) {
   }
   const byTarget = new Map();
   const add = (t, l, how) => { if (!byTarget.has(t)) byTarget.set(t, []); byTarget.get(t).push({ l, how }); };
-  for (const l of lessons) { for (const t of l.targets) add(t, l, 'word'); for (const c of l.cores) add(c, l, 'start'); }
+  // a lesson's matches do not depend on the others' (the longer-pattern guard below still sees every pattern)
+  for (const l of lessons) { if (!writes(l.id)) continue; for (const t of l.targets) add(t, l, 'word'); for (const c of l.cores) add(c, l, 'start'); }
   const targets = [...byTarget.keys()].sort((a, b) => b.length - a.length);
   // every pattern known, for the longer-pattern guard: the bold parts, the title cores, and the titles' alternatives
   const allPatterns = [...new Set([...targets, ...lessons.flatMap((l) => coresOfTitle(l.title)), 'かも', 'でも', 'とも', 'ても', 'ども', 'しも'])];
@@ -174,6 +185,7 @@ async function main(code = 'ja', limit = Infinity) {
   const bookRead = new Map();
   const bookGap = new Map();
   for (const l of lessons) {
+    if (!writes(l.id)) continue;
     const f = path.join(dataDir, 'learn', `${l.id}.json`);
     const lesson = JSON.parse(await readFile(f, 'utf8'));
     for (const ex of lesson.examples) {
@@ -189,6 +201,7 @@ async function main(code = 'ja', limit = Infinity) {
   const levelTargets = new Map(LEVELS.map((n) => [n, [...new Set(lessons.filter((l) => l.level === n).flatMap((l) => [...l.targets, ...l.cores]))]]));
   let total = 0;
   for (const l of lessons) {
+    if (!writes(l.id)) continue;
     const f = path.join(dataDir, 'learn', `q-${l.id}.json`);
     const stored = JSON.parse(await readFile(f, 'utf8'));
     const file = Array.isArray(stored) ? { pools: {}, qs: stored } : stored;
@@ -209,8 +222,8 @@ async function main(code = 'ja', limit = Infinity) {
     found.set(l.id, mine);
     await writeFile(f, JSON.stringify({ pools: { ...file.pools, gap: gapPool(file.pools.gap, levelTargets, l.level) }, qs }));
   }
-  const counts = lessons.map((l) => Math.min(200, found.get(l.id).length)).sort((a, b) => a - b);
+  const counts = lessons.filter((l) => writes(l.id)).map((l) => Math.min(200, found.get(l.id).length)).sort((a, b) => a - b);
   console.log(`${code}: ${done} sentences read; ${total} matches; per lesson median ${counts[counts.length >> 1]}, ${counts.filter((c) => c >= 50).length}/${counts.length} lessons with 50+ sentences; ${Math.round((Date.now() - t0) / 1000)} s`);
 }
 
-if (process.argv[1] && fileURLToPath(import.meta.url) === realpathSync(process.argv[1])) main(process.argv[2], Number(process.argv[3] ?? Infinity));
+if (process.argv[1] && fileURLToPath(import.meta.url) === realpathSync(process.argv[1])) main(argsOf(process.argv.slice(2)));
