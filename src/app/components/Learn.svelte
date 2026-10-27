@@ -40,17 +40,30 @@
   // a word of the taught language in a lesson opens its dictionary entry below its section, as in the Reader
   // (Allan, 2026-10-20): examples (b, i, code, [lang], .ja) in any script, any word in a script other than Latin
   let entry = $state(null);
+  // the entry floats next to the click — at the end of a long section it was off-screen and a click "did nothing"
+  // (Allan, 2026-10-28)
+  const at$ = (e) => ({ x: e.clientX ?? 0, y: e.clientY ?? 0 });
+  const floatStyle = (en) => {
+    const w = typeof window === 'undefined' ? 1200 : window.innerWidth, h = typeof window === 'undefined' ? 900 : window.innerHeight;
+    const width = Math.min(440, w - 16), left = Math.max(8, Math.min(en.x - 40, w - width - 8));
+    const below = en.y + 16 < h * 0.55;
+    return `left:${left}px;width:${width}px;${below ? `top:${en.y + 16}px` : `bottom:${Math.max(8, h - en.y + 12)}px`};`;
+  };
   const noSpaces = () => !!lang.script?.noSpaces || ['ja', 'zh'].includes(lang.code);
   async function onProseClick(e, sec) {
     if (!lookup || e.target.closest('a, button')) return;
-    const el = e.target.closest('[lang], .ja, b, strong, i, em, code, ruby');
+    let el = e.target.closest('[lang], .ja, b, strong, i, em, code, ruby');
+    // in a Latin-script language an italic run is the translation (ihre Mutter — her mother), unless marked as the
+    // taught language (Allan, 2026-10-28)
+    if (el && /^(I|EM)$/.test(el.tagName) && lang.code !== 'la' && !/[^\p{Script=Latin}\p{P}\p{N}\s]/u.test(el.textContent)
+        && !el.closest(`[lang^="${(lang.bcp47 ?? lang.code).split('-')[0]}"]`)) return;
     const caret = document.caretPositionFromPoint?.(e.clientX, e.clientY) ?? document.caretRangeFromPoint?.(e.clientX, e.clientY);
     const node = caret?.offsetNode ?? caret?.startContainer, at = caret?.offset ?? caret?.startOffset ?? 0;
     const text = node?.nodeType === 3 ? node.data : (el ?? e.target).textContent, offset = node?.nodeType === 3 ? at : 0;
     const ch = text[offset] ?? '';
     if (!el && !/[^\p{Script=Latin}\p{P}\p{N}\s]/u.test(ch)) return;      // explanation text in a Latin script
     const hit = noSpaces() ? await firstKnown(candidatesAt(text, offset, 8), lookup) : wordAround(text, offset);
-    if (hit) entry = { word: hit.word, sec };
+    if (hit) entry = { word: hit.word, sec, ...at$(e) };
   }
   let showOrig = $state(false);
   const orig = (x) => (x == null ? '' : typeof x === 'string' ? x : (x.orig ?? x.en ?? ''));
@@ -236,21 +249,20 @@
       {#if lesson.kind === 'vocab' || lesson.kind === 'kanji'}
         <nav class="toc"><a href="#ex-start">{t('learn.exercises')}</a></nav>
         {#if lesson.kind === 'vocab'}
-          <table class="words"><tbody>{#each lesson.words as w}<tr><td class="w" lang={lang.bcp47}>{#if w.reading}<ruby>{w.w}<rt>{w.reading}</rt></ruby>{:else}{w.w}{/if}</td><td class="r">{romanize ? romanize(w.reading ?? w.w) : ''}</td><td>{w.en}</td><td class="d">{@render dict(w.w)}</td></tr>{/each}</tbody></table>
+          <table class="words"><tbody>{#each lesson.words as w}<tr><td class="w" lang={lang.bcp47}><button class="w-btn" onclick={(e) => (entry = { word: w.w, sec: 'words', ...at$(e) })}>{#if w.reading}<ruby>{w.w}<rt>{w.reading}</rt></ruby>{:else}{w.w}{/if}</button></td><td class="r">{romanize ? romanize(w.reading ?? w.w) : ''}</td><td>{w.en}</td><td class="d">{@render dict(w.w)}</td></tr>{/each}</tbody></table>
         {:else}
-          <table class="words"><tbody>{#each lesson.kanji as k}<tr><td class="w big" lang={lang.bcp47}>{k.k}</td><td>{k.en}</td><td class="r">{k.on}</td><td class="r">{k.kun}</td><td class="r" lang={lang.bcp47}>{k.words.join('、')}</td><td class="d">{@render dict(k.k)}</td></tr>{/each}</tbody></table>
+          <table class="words"><tbody>{#each lesson.kanji as k}<tr><td class="w big" lang={lang.bcp47}><button class="w-btn" onclick={(e) => (entry = { word: k.k, sec: 'kanji', ...at$(e) })}>{k.k}</button></td><td>{k.en}</td><td class="r">{k.on}</td><td class="r">{k.kun}</td><td class="r" lang={lang.bcp47}>{k.words.join('、')}</td><td class="d">{@render dict(k.k)}</td></tr>{/each}</tbody></table>
         {/if}
       {:else}
         <nav class="toc">{#each tocOf(lesson) as [href, label], i}{#if i}<span class="sep" aria-hidden="true">|</span>{/if}<a {href}>{label}</a>{/each}</nav>
         {#if loc(lesson.intro)}<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
           <div class="prose words-clickable" use:speakLinks={{ html: body(lesson.intro), speak, title: t('learn.speak.title') }} onclick={(e) => onProseClick(e, 'intro')}>{@html body(lesson.intro)}</div>
-          {#if entry?.sec === 'intro'}<WordEntry word={entry.word} {lang} {lookup} {loadInfo} {loadParadigm} onclose={() => (entry = null)} />{/if}{/if}
+{/if}
         {#each lesson.sections as s}
           <section class="l-sec" id={`sec-${s.id}`} data-sec={s.id}>
             <h4>{loc(s.title)}</h4>
             <!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
             <div class="prose words-clickable" use:speakLinks={{ html: body(s.html), speak, title: t('learn.speak.title') }} onclick={(e) => onProseClick(e, s.id)}>{@html body(s.html)}</div>
-            {#if entry?.sec === s.id}<WordEntry word={entry.word} {lang} {lookup} {loadInfo} {loadParadigm} onclose={() => (entry = null)} />{/if}
             {#if s.id === 'examples' && lesson.examples?.length}
               <details class="examples-romaji"><summary>{t('learn.romaji')}</summary>
                 <ol>{#each lesson.examples as ex}<li><span lang={lang.bcp47}>{ex.text}</span> — <i>{exampleRoman(ex)}</i>{#if openInReader} <button class="to-reader" onclick={() => openInReader(ex.text)}>{t('learn.read')}</button>{/if}{@render say(ex.text)}</li>{/each}</ol>
@@ -338,6 +350,8 @@
     {/each}
 {/snippet}
 {#snippet say(text)}{#if speak}<a class="to-speak" href={speak(text)} target="_blank" rel="noopener" title={t('learn.speak.title')}>🗣</a>{/if}{/snippet}
+{#if entry}<div class="entry-float" style={floatStyle(entry)} role="dialog" aria-label={entry.word}><WordEntry word={entry.word} {lang} {lookup} {loadInfo} {loadParadigm} speakHref={speak} onclose={() => (entry = null)} /></div>{/if}
+
 {#snippet dict(word)}<a class="dict" href={wiktionaryUrl(word, lang.wiktionary ?? 'Japanese', ui.lang === 'pt' ? 'pt' : 'en')} target="_blank" rel="noopener" title={t('dict.wiktionary')}>{ui.lang === 'pt' ? 'Wikcionário' : 'Wiktionary'} ↗</a>{/snippet}
 
 <style>
@@ -433,4 +447,6 @@
   .done-bar span { display: block; height: 100%; background: var(--accent); border-radius: 6px; transition: width .3s; }
   .done-line { color: var(--ink-2); margin: 4px 0; }
   .pct.done.full { background: none; }
+  .entry-float { position: fixed; z-index: 30; max-height: 60vh; overflow: auto; background: var(--bg, #fff); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 8px 28px rgba(0,0,0,.25); }
+  .w-btn { all: unset; cursor: pointer; text-decoration: underline dotted; text-decoration-color: var(--line); text-underline-offset: 3px; }
 </style>

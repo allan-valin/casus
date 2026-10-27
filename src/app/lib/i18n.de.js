@@ -163,7 +163,7 @@ export default {
   'block.title': 'Klick: Wörterbuch und Lesarten · Ziehen: verschieben', 'block.unknown': 'nicht im Wörterbuch', 'legend.looks': 'sieht so aus', 'legend.meaning': 'Bedeutung',
   'dict.section': 'Wörterbuch', 'dict.readings': 'Mögliche Lesarten',
   'dict.readings.sub': '– jede mit dem Grund, warum sie übrig blieb. Leg die fest, an die du glaubst; der Rest des Satzes wird neu gelesen.',
-  'dict.none': 'nicht im Wörterbuch – Whitakers Lexikon hat wenige Eigennamen', 'dict.loading': 'Lemmatabelle wird geladen…', 'dict.conjugation': '{n}. Konjugation',
+  'dict.none': 'nicht im Wörterbuch', 'dict.none.la': 'nicht im Wörterbuch – Whitakers Lexikon hat wenige Eigennamen', 'dict.loading': 'Lemmatabelle wird geladen…', 'dict.conjugation': '{n}. Konjugation',
   'dict.verb': 'Verb', 'dict.declension': '{n}. Deklination', 'dict.age': 'Epoche', 'dict.freq': 'Häuf.', 'dict.glosslang': 'Sprache dieser Bedeutungsangabe',
   'dict.wiktionary': 'dieses Wort in Wiktionary öffnen, in einem neuen Tab',
   'voice.loading': 'suche eine Stimme…', 'voice.tier.natural': 'anhören (natürliche Stimme, in diesem Browser gespeichert)', 'voice.natural.heading': 'Natürliche Stimme',

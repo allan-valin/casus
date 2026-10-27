@@ -21,7 +21,10 @@ voices:
   - {id: ko-f, role: character, lang: ko, gender: f, tts: "piper:ko_KR-kss-medium"}
   - {id: ko-f2, role: character, lang: ko, gender: f, tts: "piper:ko_KR-kss-medium", pitch: 0.94}
   - {id: ko-m, role: character, lang: ko, gender: m, tts: "piper:ko_KR-kss-medium", pitch: 0.82}
-  - {id: ko-m2, role: character, lang: ko, gender: m, tts: "piper:ko_KR-kss-medium", pitch: 0.76}
+  - {id: ko-m2, role: character, lang: ko, gender: m, tts: "piper:ko_KR-kss-medium", pitch: 0.72}
+  # told apart from the protagonist's voices in every dialogue (talk.test: pitch 0.06 or speed 0.08 apart), 2026-10-28
+  - {id: ko-f3, role: character, lang: ko, gender: f, tts: "piper:ko_KR-kss-medium", pitch: 1.08}
+  - {id: ko-m3, role: character, lang: ko, gender: m, tts: "piper:ko_KR-kss-medium", pitch: 0.88, speed: 1.1}
 
 protagonist:
   forms: {f: ko-f, m: ko-m}
@@ -43,13 +46,13 @@ cast:
   - id: minjun
     name: 김민준
     role: neighbour, 27, delivery-app developer, plays League and goes hiking with his father
-    voice: ko-m
+    voice: ko-m3
     register: formal
     arc: 해요체 at first; asks the protagonist's age in A1-08 (the age clash); he is younger → calls them 누나/형; in A1-23 he says 말 편하게 하세요 (the younger may only offer this), and the protagonist, the elder, proposes 우리 말 놓을까요? — the elder proposes mutual 반말
   - id: jieun
     name: 이지은
     role: colleague, 31, team lead (팀장)
-    voice: ko-f
+    voice: ko-f3
     register: formal
     arc: addressed as 팀장님, never by name alone; 회식 in A2; friendship but 해요체 to the end of B
   - id: sajang

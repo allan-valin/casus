@@ -10,7 +10,7 @@
   import { wiktionaryUrl } from '../lib/entry.js';
   import { entriesFor } from '../lib/pronounce.js';
 
-  let { word, lang, lookup, loadInfo, voice = null, loadParadigm = null, onclose = null } = $props();
+  let { word, lang, lookup, loadInfo, voice = null, loadParadigm = null, onclose = null, speakHref = null } = $props();
 
   let entries = $state(null), info = $state(null);
   $effect(() => {
@@ -18,7 +18,12 @@
     entries = null;
     (async () => {
       info ??= await loadInfo().catch(() => ({}));
-      const list = entriesFor(await lookup(w.toLowerCase()).catch(() => []), info?.lemmas);
+      // the word as written first, through the language's own key (German nouns keep their capital: Mutter, Reis),
+      // lowercase only as a fallback (a capitalised sentence start) — Allan, 2026-10-28
+      const key = lang.tokenize?.(w)?.find((tk) => tk.kind === 'word')?.key ?? w;
+      let found = await lookup(key).catch(() => []);
+      if (!found?.length && key !== key.toLowerCase()) found = await lookup(key.toLowerCase()).catch(() => []);
+      const list = entriesFor(found ?? [], info?.lemmas);
       if (w === word) entries = list;
     })();
   });
@@ -26,9 +31,9 @@
 </script>
 
 <div class="entry-panel">
-  <h4 lang={lang.bcp47}>{word}{#if onclose} <button class="close-entry" onclick={onclose} aria-label={t('speak.close')}>✕</button>{/if}</h4>
+  <h4 lang={lang.bcp47}>{word}{#if speakHref} <a class="to-speak" href={speakHref(word)} target="_blank" rel="noopener" title={t('learn.speak.title')}>🗣</a>{/if}{#if onclose} <button class="close-entry" onclick={onclose} aria-label={t('speak.close')}>✕</button>{/if}</h4>
   {#if !entries}<p class="note">{t('dict.loading')}</p>
-  {:else if !entries.length}<p class="note">{t('dict.none')} <a href={wikt(word, ui.lang === 'pt' ? 'pt' : 'en')} target="_blank" rel="noopener">Wiktionary ↗</a></p>
+  {:else if !entries.length}<p class="note">{t(lang.code === 'la' ? 'dict.none.la' : 'dict.none')} <a href={wikt(word, ui.lang === 'pt' ? 'pt' : 'en')} target="_blank" rel="noopener">Wiktionary ↗</a></p>
   {:else}{#each entries as e (e.id)}
     <div class="entry">
       <div class="form" lang={lang.bcp47}><b>{e.lemma.dict_form ?? e.lemma.headword}</b> <small>{e.lemma.pos ?? ''}</small>

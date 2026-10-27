@@ -47,7 +47,7 @@
       </div>
     {/if}
     {#if block.candidates.length === 0}
-      <p class="none">{t('dict.none')}</p>
+      <p class="none">{t(reader.lang?.code === 'la' ? 'dict.none.la' : 'dict.none')}</p>
     {:else if !extras.lemmas}
       <p class="loading">{t('dict.loading')}</p>
     {:else}

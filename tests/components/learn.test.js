@@ -353,7 +353,7 @@ describe('AI-translated pages: badge and a switch to the original (Allan, 2026-1
 });
 
 describe('words in a lesson open their dictionary entry, as in the Reader (Allan, 2026-10-20)', () => {
-  it('clicking an example word shows its entry below the section; explanation text is not a link', async () => {
+  it('clicking an example word shows its entry beside the click (2026-10-28: was below the section, off-screen); explanation text is not a link', async () => {
     const lesson = { ...LESSONS['n5-004'], sections: [{ id: 'book', title: 'The lesson', html: '<p>The word <b>寒い</b> means cold.</p>' }] };
     const index = { ...INDEX, levels: [{ id: 'N5', topics: [{ id: 't1', kind: 'grammar', title: 'T', lessons: [{ id: 'n5-004', title: 'は', meaning: 'topic' }] }] }] };
     const lookup = async (w) => (w === '寒い' ? [{ lemma: 3, pos: 'adj' }] : []);
@@ -364,7 +364,7 @@ describe('words in a lesson open their dictionary entry, as in the Reader (Allan
     await flush();
     await fireEvent.click(container.querySelector('#sec-book .prose b'));
     await flush(); await flush(); await flush();
-    expect(container.querySelector('#sec-book .entry-panel .gloss').textContent).toBe('cold');
+    expect(container.querySelector('.entry-float .entry-panel .gloss').textContent).toBe('cold');
     await fireEvent.click(container.querySelector('#sec-book .prose p'));
     await flush();
     expect(container.querySelectorAll('.entry-panel').length).toBe(1);
@@ -388,5 +388,46 @@ describe('words in a lesson open their dictionary entry, as in the Reader (Allan
     await fireEvent.input(container.querySelector('input.search'), { target: { value: 'hallo' } });
     await flush();
     expect([...container.querySelectorAll('.lesson-row .l-title')].map((x) => x.textContent)).toEqual(['～ば']);
+  });
+});
+
+// Allan, 2026-10-28: a click on a word "did nothing" (the entry opened at the end of a long section, off-screen); Korean
+// table words were not clickable; not every word reached the pronunciation trainer
+describe('words in a lesson open their entry where they are clicked', () => {
+  const info = async () => ({ lemmas: { 1: { headword: '会う', pos: 'verb' } }, ipa: {}, glosses: {} });
+  const lookup = async (w) => (w === '会う' || w === '私' ? [{ lemma: 1, pos: 'verb' }] : []);
+  it('an example word opens one floating entry, with a link to the pronunciation trainer', async () => {
+    const { container } = render(Learn, props({ lookup, loadInfo: info, speak: (t) => `/ja/speak/?t=${encodeURIComponent(t)}` }));
+    await flush();
+    await fireEvent.click(container.querySelector('.lesson-row[data-lesson="n5-004"]'));
+    await flush();
+    await fireEvent.click(container.querySelector('.words-clickable ruby'), { clientX: 100, clientY: 200 });
+    await flush();
+    const float = container.querySelectorAll('.entry-float');
+    expect(float.length).toBe(1);
+    expect(float[0].querySelector('a.to-speak')?.getAttribute('href')).toContain('/ja/speak/');
+  });
+  it('a vocabulary table word is clickable too', async () => {
+    const { container } = render(Learn, props({ lookup, loadInfo: info }));
+    await flush();
+    await fireEvent.click(container.querySelector('.lesson-row[data-lesson="n5-v1"]'));
+    await flush();
+    await fireEvent.click(container.querySelector('.words td.w button'), { clientX: 50, clientY: 100 });
+    await flush();
+    expect(container.querySelector('.entry-float h4')?.textContent).toContain('会う');
+  });
+  it('a translation in italics is not looked up in a Latin-script language', async () => {
+    const de = { system: 'CEFR', levels: [{ id: 'A1', topics: [{ id: 't', kind: 'grammar', title: 'Akkusativ', lessons: [{ id: 'x', title: 'Akk', meaning: 'acc' }] }] }] };
+    const lessons = { x: { id: 'x', title: 'Akk', meaning: 'acc', level: 'A1', intro: '', sections: [{ id: 's', title: 'S', html: '<p><b>ihre Mutter</b> — <i>her mother</i></p>' }] } };
+    const { container } = render(Learn, props({ lang: getLanguage('de'), loadLearn: async () => de, loadLesson: async (id) => lessons[id], lookup, loadInfo: info }));
+    await flush();
+    await fireEvent.click(container.querySelector('.lesson-row[data-lesson="x"]'));
+    await flush();
+    await fireEvent.click(container.querySelector('.words-clickable i'), { clientX: 10, clientY: 10 });
+    await flush();
+    expect(container.querySelector('.entry-float')).toBeNull();
+    await fireEvent.click(container.querySelector('.words-clickable b'), { clientX: 10, clientY: 10 });
+    await flush();
+    expect(container.querySelector('.entry-float')).not.toBeNull();
   });
 });

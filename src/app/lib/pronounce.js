@@ -232,13 +232,15 @@ export function speakLinks(node, opts) {
   function apply({ speak } = {}) {
     node.querySelectorAll('a.to-speak').forEach((a) => a.remove());
     if (!speak) return;
-    for (const b of node.querySelectorAll('strong, b, .say')) {
+    // .ja paragraphs are the taught language's examples (Korean lessons keep them there too — Allan, 2026-10-28)
+    for (const b of node.querySelectorAll('strong, b, .say, .ja')) {
       const text = b.textContent ?? '';
       if (!speakable(text) || b.closest('th')) continue;
+      if (b.parentElement?.closest('.say, .ja')) continue;                // its paragraph already has one
       const a = document.createElement('a');
       a.className = 'to-speak'; a.href = speak(text.trim()); a.target = '_blank'; a.rel = 'noopener'; a.textContent = '🗣';
       a.title = opts?.title ?? '';
-      if (b.classList?.contains('say')) b.append(' ', a); else b.after(a);
+      if (b.classList?.contains('say') || b.classList?.contains('ja')) b.append(' ', a); else b.after(a);
     }
   }
   queueMicrotask(() => apply(opts));
