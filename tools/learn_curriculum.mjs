@@ -7,7 +7,7 @@
  * word order come from it in the page). Up to 200 per lesson, simple sentences first (short, frequent words); the 8
  * simplest also go into the lesson as more examples. Run after tools/build_learn.py <code>.
  *
- * Usage: node tools/learn_curriculum.mjs <code>
+ * Usage: node tools/learn_curriculum.mjs <code> [lesson,ids]
  */
 import { readFile, writeFile, readdir } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
@@ -78,7 +78,10 @@ async function main(code) {
   const avoid = new Set(index.avoid ?? '');
   const avoided = (t) => avoid.size > 0 && [...t].some((c) => avoid.has(c));
   const lessons = [];
+  // optional third argument: only these lessons (comma-separated ids), for lessons spliced in by tools/learn_add_written.py
+  const pick = process.argv[3] ? new Set(process.argv[3].split(',')) : null;
   for (const level of index.levels) for (const topic of level.topics) for (const e of topic.lessons) {
+    if (pick && !pick.has(e.id)) continue;
     const l = await json(`learn/${e.id}.json`);
     if (l.match) lessons.push({ id: e.id, level: level.id, match: l.match, pool: l.pool ?? l.match.pool ?? null, swaps: l.swaps ?? null, prefixes: l.prefixes ?? null, suffixes: l.suffixes ?? null, own: new Set(l.examples.map((x) => x.text)) });
   }

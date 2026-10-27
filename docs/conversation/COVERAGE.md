@@ -2,27 +2,27 @@
 
 Built by tools/learn_coverage.py. Syllabus = each Learn level's core grammar topics.
 
-## de — 64/127 grammar lessons practised (in development)
+## de — 65/140 grammar lessons practised (in development)
 
-Dead lesson ids: 0. Unit themes Learn has no lesson for: 36.
+Dead lesson ids: 0. Unit themes Learn has no lesson for: 33.
 
-### A1 — 12 covered, 24 not covered
+### A1 — 13 covered, 27 not covered
 
-Covered: de-no_03 (Der Plural), de-det_01 (Bestimmte und Unbestimmte Artikel), de-pro_02 (Personalpronomen im Nominativ), de-vi_11 (Sein), de-cas_03 (Der Akkusativ), de-det_04 (Possessivpronomen Als Artikel - Nominativ), de-con_05 (Fragen), de-con_02 (Negation), de-cas_04 (Die Uhrzeiten), de-cas_05 (Die Tage der Woche), de-cas_06 (Monate und die Jahreszeiten), de-vimp_01 (Der Imperativ)
+Covered: de-no_03 (Der Plural), de-det_01 (Bestimmte und Unbestimmte Artikel), de-pro_02 (Personalpronomen im Nominativ), de-vi_11 (Sein), de-cas_03 (Der Akkusativ), de-det_04 (Possessivpronomen Als Artikel - Nominativ), de-con_05 (Fragen), de-con_02 (Negation), de-cas_04 (Die Uhrzeiten), de-cas_05 (Die Tage der Woche), de-cas_06 (Monate und die Jahreszeiten), de-vimp_01 (Der Imperativ), de-a1-numbers (Die Zahlen)
 
-Not covered: de-no_01 (Substantive), de-no_02 (Genus der Substantive), de-det_02 (Der-Wörter), de-det_03 (Ein-Wörter), de-pro_01 (Personalpronomen), de-v_01 (Verben - Überblick), de-v_02 (Das Präsens - Regelmäßige Verben), de-vi_05 (Haben), de-vi_01 (Essen), de-vi_02 (Fahren), de-vi_03 (Geben), de-vi_06 (Laufen), de-vi_07 (Lesen), de-vi_08 (Nehmen), de-vi_09 (Schlafen), de-vi_10 (Sehen), de-vi_12 (Sprechen), de-vi_13 (Tragen), de-vi_14 (Werden), de-cas_01 (Fälle), de-cas_02 (Der Nominativ), de-pro_03 (Personalpronomen im Akkusativ), de-det_05 (Possessivpronomen Als Artikel - Akkusativ), de-con_06 (Wortstellung)
+Not covered: de-no_01 (Substantive), de-no_02 (Genus der Substantive), de-det_02 (Der-Wörter), de-det_03 (Ein-Wörter), de-pro_01 (Personalpronomen), de-v_01 (Verben - Überblick), de-v_02 (Das Präsens - Regelmäßige Verben), de-vi_05 (Haben), de-vi_01 (Essen), de-vi_02 (Fahren), de-vi_03 (Geben), de-vi_06 (Laufen), de-vi_07 (Lesen), de-vi_08 (Nehmen), de-vi_09 (Schlafen), de-vi_10 (Sehen), de-vi_12 (Sprechen), de-vi_13 (Tragen), de-vi_14 (Werden), de-cas_01 (Fälle), de-cas_02 (Der Nominativ), de-pro_03 (Personalpronomen im Akkusativ), de-det_05 (Possessivpronomen Als Artikel - Akkusativ), de-con_06 (Wortstellung), de-a1-alphabet (Das Alphabet), de-a1-es-gibt (es gibt), de-a1-gern (gern, lieber, am liebsten)
 
-### A2 — 18 covered, 10 not covered
+### A2 — 18 covered, 15 not covered
 
 Covered: de-cas_07 (Der Dativ), de-pro_04 (Personalpronomen im Dativ), de-vi_04 (Gefallen), de-v_04 (Präsens - Trennbare Verben), de-vm_01 (Modalverben), de-vcp_01 (Das Perfekt - Einführung), de-vcp_02 (Das Perfekt - Regelmäßige Verben), de-vcp_03 (Das Perfekt - Unregelmäßige Verben mit Haben), de-vcp_04 (Das Perfekt - Unregelmäßige Verben mit Sein), de-vcp_07 (Das Perfekt - Trennbare Verben), de-con_04 (Subordinierende Konjunktionen), de-adj_01 (Adjektive), de-adj_02 (Adjektive nach Ein-Wörtern), de-adj_03 (Adjektive nach Der-Wörtern), de-adj_05 (Komparativ und Superlativ), de-cas_09 (Wechselpräpositionen), de-vrf_01 (Die Reflexiven Verben), de-adv_02 (Das Adverb - Wie? Wo? Wohin? Woher?)
 
-Not covered: de-det_06 (Possessivpronomen Als Artikel - Dativ), de-v_05 (Präsens - Untrennbare Verben), de-vi_15 (Wissen und Kennen), de-vcp_05 (Das Perfekt - Gemischte Verben), de-vcp_06 (Das Perfekt - -ieren Verben), de-vcp_08 (Das Perfekt - Untrennbare Verben), de-con_01 (Konjunktionen), de-con_03 (Koordinierende Konjunktionen), de-adj_04 (Adjektive ohne Artikel), de-adv_01 (Das Adverb: Wann? Wie oft? Wie viel? Wie sehr?)
+Not covered: de-det_06 (Possessivpronomen Als Artikel - Dativ), de-v_05 (Präsens - Untrennbare Verben), de-vi_15 (Wissen und Kennen), de-vcp_05 (Das Perfekt - Gemischte Verben), de-vcp_06 (Das Perfekt - -ieren Verben), de-vcp_08 (Das Perfekt - Untrennbare Verben), de-con_01 (Konjunktionen), de-con_03 (Koordinierende Konjunktionen), de-adj_04 (Adjektive ohne Artikel), de-adv_01 (Das Adverb: Wann? Wie oft? Wie viel? Wie sehr?), de-a2-dates (Ordinalzahlen und Datum), de-a2-welcher (welcher und was für ein), de-a2-position-verbs (stellen – stehen, legen – liegen), de-a2-indefinite-pronouns (jemand, niemand, etwas, nichts), de-a2-connector-adverbs (deshalb, trotzdem, dann)
 
-### B1 — 12 covered, 9 not covered
+### B1 — 12 covered, 13 not covered
 
 Covered: de-vsp_04 (Das Imperfekt - Haben), de-vsp_05 (Das Imperfekt - Sein), de-vsp_01 (Das Imperfekt - Regelmäßige Verben), de-vsp_02 (Das Imperfekt - Unregelmäßige Verben), de-cas_08 (Der Genitiv), de-pro_05 (Relativpronomen), de-vf_01 (Das Futur), de-vinf_01 (Der Infinitivsatz), de-vsub_02 (Konjunktiv II im Präsens), de-vsub_03 (Konjunktiv II in der Vergangenheit), de-vpass_01 (Das Passiv im Präsens), de-vpass_03 (Das Passiv in der Vergangenheit)
 
-Not covered: de-vsp_03 (Das Imperfekt - Gemischte Verben), de-vm_02 (Modalverben im Imperfekt), de-vpp_01 (Das Plusquamperfekt), de-det_07 (Possessivpronomen Als Artikel - Genitiv), de-no_04 (Schwache Substantive), de-pro_07 (Demonstrativpronomen), de-vsub_01 (Der Konjunktiv - Übersicht), de-vpass_04 (Das Passiv: Alternative zum Passiv), de-vphr_01 (Verben mit Präpositionen)
+Not covered: de-vsp_03 (Das Imperfekt - Gemischte Verben), de-vm_02 (Modalverben im Imperfekt), de-vpp_01 (Das Plusquamperfekt), de-det_07 (Possessivpronomen Als Artikel - Genitiv), de-no_04 (Schwache Substantive), de-pro_07 (Demonstrativpronomen), de-vsub_01 (Der Konjunktiv - Übersicht), de-vpass_04 (Das Passiv: Alternative zum Passiv), de-vphr_01 (Verben mit Präpositionen), de-b1-lassen (lassen), de-b1-brauchen-zu (nicht brauchen zu), de-b1-adjectival-nouns (der Bekannte, die Deutsche), de-b1-einander (sich und einander)
 
 ### B2 — 11 covered, 8 not covered
 
@@ -54,7 +54,6 @@ Not covered: de-c2-gerundive (die zu lösende Aufgabe), de-c2-participle-phrases
 - legal-register: C2-10, C2-26
 - literary-language: C2-08
 - medical-register: C2-18
-- numbers: A1-15, A1-19, A2-15
 - poetic-language: C2-25
 - question-tags: B2-23
 - register: C2-03, C2-14, C2-17, C2-24

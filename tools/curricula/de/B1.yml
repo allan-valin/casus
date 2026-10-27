@@ -1,0 +1,151 @@
+# German B1, topics Grimm Grammar has no page for (written by AI (Claude) for Casus, 2026-10-27; marked as such on
+# every lesson), found by checking Learn against the usual B1 inventories (Goethe-Zertifikat B1, Profile Deutsch).
+id: B1
+topics:
+
+- title: {en: Verbs with a twist, pt: Verbos com particularidades}
+  lessons:
+  - id: de-b1-lassen
+    title: lassen
+    meaning: {en: "lassen: let, leave, and have something done (Ich lasse das Auto reparieren)", pt: "lassen: deixar e mandar fazer (Ich lasse das Auto reparieren)"}
+    intro:
+      en: |
+        **lassen** (lässt, ließ, hat gelassen) has three uses:
+
+        1. **leave** something somewhere: **Ich lasse den Schirm im Auto.**
+        2. **let, allow**, + infinitive without zu: **Lass mich das machen!** "Let me do it." **Sie lassen die Kinder spielen.**
+        3. **have something done** by someone else, + infinitive: **Ich lasse das Auto reparieren.** "I'm having the car repaired." **Er lässt sich die Haare schneiden.** "He's having his hair cut."
+
+        With another verb, the perfect uses the infinitive **lassen**, not gelassen: **Ich habe das Auto reparieren lassen.** In a subordinate clause **haben** goes before the two infinitives: **…, weil ich das Auto habe reparieren lassen.**
+
+        **Lass uns gehen!** "Let's go!" — an invitation, like **Gehen wir!**
+      pt: |
+        **lassen** (lässt, ließ, hat gelassen) tem três usos:
+
+        1. **deixar** algo num lugar: **Ich lasse den Schirm im Auto.** "Deixo o guarda-chuva no carro."
+        2. **deixar, permitir**, + infinitivo sem zu: **Lass mich das machen!** "Deixa que eu faço!" **Sie lassen die Kinder spielen.**
+        3. **mandar fazer** algo por outra pessoa, + infinitivo: **Ich lasse das Auto reparieren.** "Vou mandar consertar o carro." **Er lässt sich die Haare schneiden.** "Ele vai cortar o cabelo (no cabeleireiro)."
+
+        Com outro verbo, o perfeito usa o infinitivo **lassen**, não gelassen: **Ich habe das Auto reparieren lassen.** Na oração subordinada o **haben** vem antes dos dois infinitivos: **…, weil ich das Auto habe reparieren lassen.**
+
+        **Lass uns gehen!** "Vamos!" — um convite, como **Gehen wir!**
+    mistakes:
+    - wrong: "Ich habe das Auto reparieren gelassen."
+      right: "Ich habe das Auto reparieren lassen."
+      why: {en: "With a second infinitive the perfect of lassen is the infinitive (double infinitive).", pt: "Com outro infinitivo, o perfeito de lassen é o próprio infinitivo (duplo infinitivo)."}
+    - wrong: "Ich schneide mir die Haare beim Friseur."
+      right: "Ich lasse mir die Haare beim Friseur schneiden."
+      why: {en: "Someone else does it: lassen + infinitive, where Portuguese just says 'cortei o cabelo'.", pt: "Outra pessoa faz: lassen + infinitivo, onde o português diz só 'cortei o cabelo'."}
+    examples:
+    - ["Lass mich in Ruhe!", "Leave me alone!", "Me deixa em paz!", "Lass"]
+    - ["Wir lassen das Fenster offen.", "We're leaving the window open.", "Deixamos a janela aberta.", "lassen"]
+    - ["Ich lasse meine Uhr reparieren.", "I'm having my watch repaired.", "Vou mandar consertar meu relógio.", "lasse"]
+    - ["Lass uns morgen ins Kino gehen.", "Let's go to the cinema tomorrow.", "Vamos ao cinema amanhã.", "Lass"]
+    match: {seq: [{lemma: "^lassen$"}]}
+    pool: [lasse, lässt, lassen, lass, ließ, gelassen]
+
+  - id: de-b1-brauchen-zu
+    title: nicht brauchen zu
+    meaning: {en: "no need to: nicht / nur brauchen + zu, and nicht müssen", pt: "não precisar: nicht / nur brauchen + zu, e nicht müssen"}
+    intro:
+      en: |
+        **Du musst nicht kommen** means "you don't have to come" — not "you mustn't" (that is **du darfst nicht**).
+
+        In speech and writing German often says the same with **nicht brauchen + zu**: **Du brauchst nicht zu kommen.** And with **nur**: **Du brauchst nur anzurufen.** "You only need to call."
+
+        Without nicht/nur, **brauchen** is an ordinary verb with an object: **Ich brauche Hilfe.**
+
+        In the perfect it can behave like a modal: **Er hat nicht zu kommen brauchen** (formal) — everyday speech prefers **Er musste nicht kommen.**
+      pt: |
+        **Du musst nicht kommen** quer dizer "você não precisa vir" — não "você não pode" (isso é **du darfst nicht**).
+
+        Na fala e na escrita o alemão diz o mesmo com **nicht brauchen + zu**: **Du brauchst nicht zu kommen.** E com **nur**: **Du brauchst nur anzurufen.** "É só ligar."
+
+        Sem nicht/nur, **brauchen** é um verbo comum com objeto: **Ich brauche Hilfe.** "Preciso de ajuda."
+
+        No perfeito pode agir como modal: **Er hat nicht zu kommen brauchen** (formal) — na fala se prefere **Er musste nicht kommen.**
+    mistakes:
+    - wrong: "Du musst nicht rauchen hier."
+      right: "Du darfst hier nicht rauchen."
+      why: {en: "Forbidden is nicht dürfen; nicht müssen only removes the obligation.", pt: "Proibido é nicht dürfen; nicht müssen só tira a obrigação."}
+    - wrong: "Du brauchst nicht kommen."
+      right: "Du brauchst nicht zu kommen."
+      why: {en: "Written German keeps zu with brauchen (speech often drops it).", pt: "O alemão escrito mantém o zu com brauchen (na fala ele cai muitas vezes)."}
+    examples:
+    - ["Du brauchst keine Angst zu haben.", "You don't need to be afraid.", "Você não precisa ter medo.", "brauchst"]
+    - ["Sie brauchen nur hier zu unterschreiben.", "You only need to sign here.", "O senhor só precisa assinar aqui.", "brauchen"]
+    - ["Morgen muss ich nicht arbeiten.", "I don't have to work tomorrow.", "Amanhã não preciso trabalhar.", "muss"]
+    match: {seq: [{lemma: "^brauchen$"}, {word: [zu]}], near: 6}
+    pool: [brauchst, braucht, brauche, brauchen, musst, darfst]
+
+- title: {en: Words built from other words, pt: Palavras feitas de outras}
+  lessons:
+  - id: de-b1-adjectival-nouns
+    title: der Bekannte, die Deutsche
+    meaning: {en: "adjectives used as nouns: der Bekannte, ein Bekannter, die Deutschen", pt: "adjetivos usados como substantivos: der Bekannte, ein Bekannter, die Deutschen"}
+    intro:
+      en: |
+        Many words for people are adjectives turned into nouns: they get a capital but **keep adjective endings**:
+
+        | | after der | after ein / none |
+        |---|---|---|
+        | man | **der Bekannte** | **ein Bekannter** |
+        | woman | **die Bekannte** | **eine Bekannte** |
+        | plural | **die Bekannten** | **Bekannte** |
+
+        Common ones: **der/die Deutsche**, **Erwachsene**, **Verwandte**, **Jugendliche**, **Angestellte**, **Kranke**, **Reisende**, **Vorsitzende**. Dative: **mit meinem Bekannten**, **mit meiner Bekannten**.
+
+        Neuter ones name ideas: **das Gute**, **das Neue**, **etwas Schönes**.
+
+        Not all nationalities work this way: **der Deutsche** is an adjective noun, but **der Franzose**, **der Brasilianer** are ordinary nouns.
+      pt: |
+        Muitas palavras para pessoas são adjetivos que viraram substantivos: levam maiúscula mas **mantêm as terminações de adjetivo**:
+
+        | | depois de der | depois de ein / sem artigo |
+        |---|---|---|
+        | homem | **der Bekannte** | **ein Bekannter** |
+        | mulher | **die Bekannte** | **eine Bekannte** |
+        | plural | **die Bekannten** | **Bekannte** |
+
+        Comuns: **der/die Deutsche**, **Erwachsene**, **Verwandte**, **Jugendliche**, **Angestellte**, **Kranke**, **Reisende**, **Vorsitzende**. Dativo: **mit meinem Bekannten**, **mit meiner Bekannten**.
+
+        Os neutros nomeiam ideias: **das Gute** "o bom", **das Neue**, **etwas Schönes**.
+
+        Nem toda nacionalidade funciona assim: **der Deutsche** é adjetivo substantivado, mas **der Franzose**, **der Brasilianer** são substantivos comuns.
+    mistakes:
+    - wrong: "Er ist ein Deutsche."
+      right: "Er ist ein Deutscher."
+      why: {en: "After ein the masculine adjective ending is -er.", pt: "Depois de ein a terminação masculina do adjetivo é -er."}
+    examples:
+    - ["Ein Bekannter hat mir geholfen.", "An acquaintance helped me.", "Um conhecido me ajudou.", "Bekannter"]
+    - ["Die Erwachsenen sitzen im Garten.", "The adults are sitting in the garden.", "Os adultos estão sentados no jardim.", "Erwachsenen"]
+    - ["Sie ist Deutsche.", "She is German.", "Ela é alemã.", "Deutsche"]
+    match: {seq: [{word: [Bekannte, Bekannter, Bekannten, Deutsche, Deutscher, Deutschen, Erwachsene, Erwachsener, Erwachsenen, Verwandte, Verwandten, Jugendliche, Jugendlichen, Angestellte, Angestellten, Kranke, Kranken]}]}
+    pool: [Bekannte, Bekannter, Bekannten, Deutsche, Deutscher, Deutschen]
+
+  - id: de-b1-einander
+    title: sich und einander
+    meaning: {en: "each other: sich, einander, miteinander, voneinander", pt: "um ao outro: sich, einander, miteinander, voneinander"}
+    intro:
+      en: |
+        "Each other" is **sich** in the plural: **Wir kennen uns.** "We know each other." **Sie treffen sich um acht.**
+
+        **einander** says the same unambiguously and a bit more formally: **Sie helfen einander.** **Sie lieben sich** could mean "each other" or "themselves"; **Sie lieben einander** can only mean "each other".
+
+        With a preposition, German always uses **einander**, written as one word: **miteinander** "with each other", **voneinander** "from each other", **aufeinander**, **nebeneinander**, **zueinander**: **Wir sprechen miteinander.** **Sie wohnen nebeneinander.**
+      pt: |
+        "Um ao outro" é **sich** no plural: **Wir kennen uns.** "Nós nos conhecemos." **Sie treffen sich um acht.** "Eles se encontram às oito."
+
+        **einander** diz o mesmo sem ambiguidade e um pouco mais formal: **Sie helfen einander.** "Eles se ajudam (um ao outro)." **Sie lieben sich** pode ser "se amam" (um ao outro) ou "amam a si mesmos"; **Sie lieben einander** só pode ser um ao outro.
+
+        Com preposição o alemão usa sempre **einander**, numa palavra só: **miteinander** "um com o outro", **voneinander**, **aufeinander**, **nebeneinander**, **zueinander**: **Wir sprechen miteinander.** "Conversamos um com o outro." **Sie wohnen nebeneinander.** "Moram lado a lado."
+    mistakes:
+    - wrong: "Wir sprechen mit uns."
+      right: "Wir sprechen miteinander."
+      why: {en: "After a preposition, each other is -einander joined to it.", pt: "Depois de preposição, 'um com o outro' é -einander junto a ela."}
+    examples:
+    - ["Wir sehen uns morgen.", "We'll see each other tomorrow.", "A gente se vê amanhã.", "uns"]
+    - ["Die beiden helfen einander.", "The two help each other.", "Os dois se ajudam.", "einander"]
+    - ["Sie wohnen nebeneinander.", "They live next to each other.", "Eles moram lado a lado.", "nebeneinander"]
+    match: {seq: [{word: [einander, miteinander, voneinander, aufeinander, nebeneinander, zueinander, untereinander, füreinander]}]}
+    pool: [einander, miteinander, voneinander, nebeneinander, zueinander, aufeinander]
