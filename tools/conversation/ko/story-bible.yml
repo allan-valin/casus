@@ -3,7 +3,7 @@
 
 language: ko
 in_development: true   # shown as a banner; false once every Learn grammar lesson is practised (build then fails on gaps)
-narrator_languages: [pt]
+narrator_languages: [en, pt]
 country: South Korea
 standard: >-
   Standard Korean (표준어) as spoken in Seoul; polite 해요체 is the default of the units, formal 합쇼체 for set phrases
@@ -16,6 +16,7 @@ voices:
   # pitched-up voice — to judge by ear. Its phonemes are espeak's Korean; the browser library does not list the
   # voice, so it runs on our own engine (src/app/lib/phonemePiper.js) with a hangul → sound step. Technical step
   # before the first unit.
+  - {id: nar-en, role: narrator, lang: en, tts: "piper:en_US-lessac-medium"}
   - {id: nar-pt, role: narrator, lang: pt, tts: "piper:pt_BR-cadu-medium"}            # CC0
   - {id: ko-f, role: character, lang: ko, gender: f, tts: "piper:ko_KR-kss-medium"}
   - {id: ko-f2, role: character, lang: ko, gender: f, tts: "piper:ko_KR-kss-medium", pitch: 0.94}
@@ -44,7 +45,7 @@ cast:
     role: neighbour, 27, delivery-app developer, plays League and goes hiking with his father
     voice: ko-m
     register: formal
-    arc: 해요체 at first; asks the protagonist's age in A1-06 (the age clash); he is younger → calls them 누나/형 and proposes 말 놓을까요? in A1-14
+    arc: 해요체 at first; asks the protagonist's age in A1-08 (the age clash); he is younger → calls them 누나/형; in A1-23 he says 말 편하게 하세요 (the younger may only offer this), and the protagonist, the elder, proposes 우리 말 놓을까요? — the elder proposes mutual 반말
   - id: jieun
     name: 이지은
     role: colleague, 31, team lead (팀장)
@@ -67,9 +68,25 @@ formality:
     or name + 씨 (지은 씨), never the bare name for an older person.
   rules:
     - 해요체 with everyone in A1; 합쇼체 in fixed phrases (감사합니다, 처음 뵙겠습니다).
-    - 반말 only with Minjun after he proposes it (A1-14) — he is younger, so he still uses 해요체 to the protagonist until asked.
+    - 반말 only with Minjun from A1-23 (말 놓을까요?), both ways; before that 해요체 both ways.
     - Titles, not names, for the boss (팀장님) and the shop owner (사장님); the landlady is 할머니 or 사장님.
+  # who speaks to whom in which style, and from which unit (T4, Allan 2026-10-27); the checker flags a line that
+  # breaks it. 합쇼체 set phrases (감사합니다, 처음 뵙겠습니다, 죄송합니다) are allowed in any 해요체 relationship.
+  relationships:
+    - {from: protagonist, to: park, style: 해요체, from_unit: A1-01}
+    - {from: park, to: protagonist, style: 해요체, from_unit: A1-01}
+    - {from: park, to: protagonist, style: 반말, from_unit: A2-01, note: "an elder (70) may; the protagonist never answers in 반말"}
+    - {from: protagonist, to: jieun, style: 해요체, from_unit: A1-07, note: "합쇼체 in meetings (B2)"}
+    - {from: jieun, to: protagonist, style: 해요체, from_unit: A1-07}
+    - {from: protagonist, to: sajang, style: 해요체, from_unit: A1-04}
+    - {from: sajang, to: protagonist, style: 해요체, from_unit: A1-04, note: "shop phrases in 합쇼체/-(으)세요"}
+    - {from: protagonist, to: minjun, style: 해요체, from_unit: A1-02}
+    - {from: minjun, to: protagonist, style: 해요체, from_unit: A1-02}
+    - {from: protagonist, to: minjun, style: 반말, from_unit: A1-23}
+    - {from: minjun, to: protagonist, style: 반말, from_unit: A1-23, note: "still calls the protagonist 누나/형"}
   sources:
+    - {title: "국립국어원, 『표준 언어 예절』 (2011) — 경어법, 호칭어", url: "https://www.korean.go.kr", licence: cited}
+    - {title: "언어 예절에 따른 높임법 교육 (성신여대)", url: "https://repository.sungshin.ac.kr/handle/2025.oak/4806", licence: cited}
     - {title: "Wikipedia: Korean speech levels", url: "https://en.wikipedia.org/wiki/Korean_speech_levels", licence: CC BY-SA}
     - {title: "Wikipedia: Korean honorifics", url: "https://en.wikipedia.org/wiki/Korean_honorifics", licence: CC BY-SA}
 
@@ -87,6 +104,9 @@ culture:
     - {topic: numbers, note: "Two number systems (하나, 둘 / 일, 이); 4 (사) is avoided like 13; floor 4 may be marked F."}
     - {topic: holidays, note: "설날 (lunar New Year) and 추석 (harvest) mean travel home, bows to parents (세배), envelopes of money."}
   narrator:
+    - {lang: en, topic: contact, note: "A bow, not a handshake or a hug, with older people and strangers."}
+    - {lang: en, topic: names, note: "Titles and 씨 come before first names; the boss is 팀장님, never her name alone."}
+    - {lang: en, topic: age, note: "Age is asked early: it decides speech level and titles."}
     - {lang: pt, topic: contact, note: "Brazilians kiss and hug acquaintances; in Korea a bow, no body contact with strangers or older people."}
     - {lang: pt, topic: names, note: "Brazilians use first names with almost everyone, even the boss; in Korea titles and 씨 come first."}
     - {lang: pt, topic: age, note: "Asking someone's age is impolite in Brazil; in Korea it is the first question."}
@@ -95,9 +115,9 @@ culture:
     - {lang: pt, topic: tipping, note: "Brazil adds 10 % service; Korea adds nothing."}
   clashes:
     - {situation: "Hugging the landlady at the first meeting", unit: A1-01}
-    - {situation: "Calling the team lead '지은' by her first name", unit: A1-04}
-    - {situation: "Minjun asks the protagonist's age on the stairs", unit: A1-06}
-    - {situation: "Taking the card with one hand at the shop", unit: A1-08}
+    - {situation: "Calling the team lead '지은' by her first name", unit: A1-07}
+    - {situation: "Minjun asks the protagonist's age on the stairs", unit: A1-08}
+    - {situation: "Taking the card with one hand at the shop", unit: A1-11}
     - {situation: "Pouring soju for oneself at the first 회식", unit: A2}
     - {situation: "Leaving a tip at the barbecue place", unit: A2}
 

@@ -1,0 +1,459 @@
+# UNIT ko A1-02 — written by AI (Claude) for Casus; expanded from src/A1-02.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-02
+level: A1
+number: 2
+protagonist: m
+title:
+  en: The room
+  pt: O quarto
+situation:
+  en: Mrs Park shows you your one-room flat. Shoes come off at the door. A young neighbour passes by.
+  pt: A senhora Park mostra o seu 원룸, o quarto-apartamento. Os sapatos ficam na porta. Um vizinho jovem passa.
+learn_lessons:
+- ko-nikl-1
+- ko-nikl-2
+culture: Shoes off at the entrance
+new_items:
+- id: bang
+  text: 방
+  meaning:
+    en: room
+    pt: quarto
+- id: hwajangsil
+  text: 화장실
+  meaning:
+    en: bathroom / toilet
+    pt: banheiro
+- id: yeogi
+  text: 여기
+  meaning:
+    en: here
+    pt: aqui
+- id: jeogi
+  text: 저기
+  meaning:
+    en: over there
+    pt: ali / lá
+- id: i-ga
+  text: 이/가
+  meaning:
+    en: subject particle (이 after a consonant, 가 after a vowel)
+    pt: partícula de sujeito (이 depois de consoante, 가 depois de vogal)
+- id: isseoyo
+  text: 있어요
+  meaning:
+    en: there is / is (located)
+    pt: tem / fica
+- id: eodiyeyo
+  text: 어디예요?
+  meaning:
+    en: Where is it?
+    pt: Onde é?
+- id: chimdae
+  text: 침대
+  meaning:
+    en: bed
+    pt: cama
+- id: chaeksang
+  text: 책상
+  meaning:
+    en: desk
+    pt: escrivaninha
+- id: gwa-wa
+  text: 과/와
+  meaning:
+    en: 'and (between nouns: 과 after a consonant, 와 after a vowel)'
+    pt: 'e (entre substantivos: 과 depois de consoante, 와 depois de vogal)'
+- id: bimilbeonho
+  text: 비밀번호
+  meaning:
+    en: password; the door code
+    pt: senha; o código da porta
+- id: sinbal
+  text: 신발
+  meaning:
+    en: shoes
+    pt: sapatos
+- id: joesonghamnida
+  text: 죄송합니다
+  meaning:
+    en: I'm sorry (formal)
+    pt: Desculpe (formal)
+  register: formal
+- id: yeopjip
+  text: 옆집
+  meaning:
+    en: the house / flat next door
+    pt: a casa / o apartamento ao lado
+reviews:
+- item: annyeong
+  from: A1-01
+- item: cheoeum
+  from: A1-01
+- item: ne
+  from: A1-01
+- item: aniyo
+  from: A1-01
+- item: beurajil-saram
+  from: A1-01
+- item: jeoneun
+  from: A1-01
+- item: ieyo
+  from: A1-01
+- item: yeyo
+  from: A1-01
+- item: bangawoyo
+  from: A1-01
+- item: deureooseyo
+  from: A1-01
+- item: gamsahamnida
+  from: A1-01
+- item: halmeoni
+  from: A1-01
+steps:
+- type: narrator
+  text:
+    en: Mrs Park shows you your one-room flat. Shoes come off at the door. A young neighbour passes by. Listen to the conversation; you don't need to understand it yet.
+    pt: A senhora Park mostra o seu 원룸, o quarto-apartamento. Os sapatos ficam na porta. Um vizinho jovem passa. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: park
+    text: 여기가 방이에요.
+    meaning:
+      en: This is the room.
+      pt: Aqui é o quarto.
+  - speaker: protagonist
+    text: 와, 좋아요! 화장실이 어디예요?
+    meaning:
+      en: Wow, nice! Where is the bathroom?
+      pt: Nossa, que bom! Onde é o banheiro?
+  - speaker: park
+    text: 화장실이 저기 있어요. 침대와 책상이 여기 있어요.
+    meaning:
+      en: The bathroom is over there. The bed and the desk are here.
+      pt: O banheiro fica ali. A cama e a escrivaninha ficam aqui.
+  - speaker: protagonist
+    text: 비밀번호가 뭐예요?
+    meaning:
+      en: What is the door code?
+      pt: Qual é a senha da porta?
+  - speaker: park
+    text: 비밀번호가 여기 있어요. 아, 신발!
+    meaning:
+      en: The code is here. Oh, your shoes!
+      pt: A senha está aqui. Ah, os sapatos!
+  - speaker: protagonist
+    text: 아, 죄송합니다.
+    meaning:
+      en: Oh, I'm sorry.
+      pt: Ah, desculpe.
+  - speaker: minjun
+    text: 안녕하세요. 옆집 사람이에요.
+    meaning:
+      en: Hello. I live next door.
+      pt: Olá. Sou o vizinho do lado.
+  - speaker: protagonist
+    text: 아, 안녕하세요. 반가워요.
+    meaning:
+      en: Oh, hello. Glad to meet you.
+      pt: Ah, olá. Prazer.
+- type: narrator
+  text:
+    en: '''여기가 방이에요'': here is the room. 이/가 marks who or what the sentence is about doing or being: 방이, 화장실이 after a consonant; 여기가 after a vowel.'
+    pt: '''여기가 방이에요'': aqui é o quarto. 이/가 marca o sujeito: 방이, 화장실이 depois de consoante; 여기가 depois de vogal.'
+- type: prompt
+  ask:
+    en: 'Say: this is the room.'
+    pt: 'Diga: aqui é o quarto.'
+  answer:
+    speaker: protagonist
+    text: 여기가 방이에요.
+  items:
+  - yeogi
+  - i-ga
+  - bang
+- type: buildup
+  item: eodiyeyo
+  parts:
+  - -디예요?
+  - 어디예요?
+- type: prompt
+  ask:
+    en: Ask where the bathroom is.
+    pt: Pergunte onde é o banheiro.
+  answer:
+    speaker: protagonist
+    text: 화장실이 어디예요?
+  items:
+  - hwajangsil
+  - eodiyeyo
+- type: narrator
+  text:
+    en: '''있어요'' says where something is: 화장실이 저기 있어요, the bathroom is over there.'
+    pt: '''있어요'' diz onde algo fica: 화장실이 저기 있어요, o banheiro fica ali.'
+- type: prompt
+  ask:
+    en: Say that the bathroom is over there.
+    pt: Diga que o banheiro fica ali.
+  answer:
+    speaker: protagonist
+    text: 화장실이 저기 있어요.
+  items:
+  - hwajangsil
+  - jeogi
+  - isseoyo
+- type: narrator
+  text:
+    en: 'Between two nouns, ''and'' is 과 after a consonant and 와 after a vowel: 침대와 책상, 책상과 침대. In talk people often say 하고.'
+    pt: 'Entre dois substantivos, ''e'' é 과 depois de consoante e 와 depois de vogal: 침대와 책상, 책상과 침대. Na fala se usa muito 하고.'
+- type: prompt
+  ask:
+    en: 'Say: the bed and the desk are here.'
+    pt: 'Diga: a cama e a escrivaninha ficam aqui.'
+  answer:
+    speaker: protagonist
+    text: 침대와 책상이 여기 있어요.
+  items:
+  - chimdae
+  - gwa-wa
+  - chaeksang
+- type: prompt
+  ask:
+    en: Ask what the door code is.
+    pt: Pergunte qual é a senha da porta.
+  answer:
+    speaker: protagonist
+    text: 비밀번호가 뭐예요?
+  items:
+  - bimilbeonho
+- type: narrator
+  text:
+    en: Korean flats open with a code, not a key. And shoes stay at the entrance, on the lower step.
+    pt: Os apartamentos coreanos abrem com senha, não com chave. E os sapatos ficam na entrada, no degrau mais baixo.
+- type: prompt
+  ask:
+    en: You stepped in with your shoes on. Apologise formally.
+    pt: Você entrou de sapato. Peça desculpas de modo formal.
+  answer:
+    speaker: protagonist
+    text: 죄송합니다.
+  items:
+  - joesonghamnida
+- type: prompt
+  ask:
+    en: 'Say: the shoes are here.'
+    pt: 'Diga: os sapatos estão aqui.'
+  answer:
+    speaker: protagonist
+    text: 신발이 여기 있어요.
+  items:
+  - sinbal
+- type: prompt
+  ask:
+    en: 'Introduce yourself to a new neighbour: you live next door.'
+    pt: 'Apresente-se a um vizinho novo: você mora ao lado.'
+  answer:
+    speaker: protagonist
+    text: 옆집 사람이에요.
+  items:
+  - yeopjip
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: Em muitas casas brasileiras também se tira o sapato, mas na Coreia é regra em toda casa — entrar calçado é uma falta séria.
+- type: prompt
+  ask:
+    en: 'Once more: say “room”.'
+    pt: 'Mais uma vez: diga “quarto”.'
+  answer:
+    speaker: protagonist
+    text: 방
+  items:
+  - bang
+- type: prompt
+  ask:
+    en: 'Once more: say “here”.'
+    pt: 'Mais uma vez: diga “aqui”.'
+  answer:
+    speaker: protagonist
+    text: 여기
+  items:
+  - yeogi
+- type: prompt
+  ask:
+    en: 'Once more: say “over there”.'
+    pt: 'Mais uma vez: diga “ali / lá”.'
+  answer:
+    speaker: protagonist
+    text: 저기
+  items:
+  - jeogi
+- type: prompt
+  ask:
+    en: 'Once more: say “subject particle (이 after a consonant, 가 after a vowel)”.'
+    pt: 'Mais uma vez: diga “partícula de sujeito (이 depois de consoante, 가 depois de vogal)”.'
+  answer:
+    speaker: protagonist
+    text: 이/가
+  items:
+  - i-ga
+- type: prompt
+  ask:
+    en: 'Once more: say “there is / is (located)”.'
+    pt: 'Mais uma vez: diga “tem / fica”.'
+  answer:
+    speaker: protagonist
+    text: 있어요
+  items:
+  - isseoyo
+- type: prompt
+  ask:
+    en: 'Once more: say “Where is it?”.'
+    pt: 'Mais uma vez: diga “Onde é?”.'
+  answer:
+    speaker: protagonist
+    text: 어디예요?
+  items:
+  - eodiyeyo
+- type: prompt
+  ask:
+    en: 'Once more: say “bed”.'
+    pt: 'Mais uma vez: diga “cama”.'
+  answer:
+    speaker: protagonist
+    text: 침대
+  items:
+  - chimdae
+- type: prompt
+  ask:
+    en: 'Once more: say “desk”.'
+    pt: 'Mais uma vez: diga “escrivaninha”.'
+  answer:
+    speaker: protagonist
+    text: 책상
+  items:
+  - chaeksang
+- type: prompt
+  ask:
+    en: 'Once more: say “and (between nouns: 과 after a consonant, 와 after a vowel)”.'
+    pt: 'Mais uma vez: diga “e (entre substantivos: 과 depois de consoante, 와 depois de vogal)”.'
+  answer:
+    speaker: protagonist
+    text: 과/와
+  items:
+  - gwa-wa
+- type: prompt
+  ask:
+    en: 'Once more: say “password; the door code”.'
+    pt: 'Mais uma vez: diga “senha; o código da porta”.'
+  answer:
+    speaker: protagonist
+    text: 비밀번호
+  items:
+  - bimilbeonho
+- type: prompt
+  ask:
+    en: 'Once more: say “shoes”.'
+    pt: 'Mais uma vez: diga “sapatos”.'
+  answer:
+    speaker: protagonist
+    text: 신발
+  items:
+  - sinbal
+- type: prompt
+  ask:
+    en: 'Once more: say “I''m sorry (formal)”.'
+    pt: 'Mais uma vez: diga “Desculpe (formal)”.'
+  answer:
+    speaker: protagonist
+    text: 죄송합니다
+  items:
+  - joesonghamnida
+- type: prompt
+  ask:
+    en: 'Once more: say “the house / flat next door”.'
+    pt: 'Mais uma vez: diga “a casa / o apartamento ao lado”.'
+  answer:
+    speaker: protagonist
+    text: 옆집
+  items:
+  - yeopjip
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Hello — and “Nice to meet you (formal, first meeting)”.'
+    pt: 'Diga: “Olá / bom dia — e “Muito prazer (formal, primeiro encontro)”.'
+  answer:
+    speaker: protagonist
+    text: 안녕하세요 … 처음 뵙겠습니다
+  items:
+  - annyeong
+  - cheoeum
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Yes — and “No”.'
+    pt: 'Diga: “Sim — e “Não”.'
+  answer:
+    speaker: protagonist
+    text: 네 … 아니요
+  items:
+  - ne
+  - aniyo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I''m Brazilian / (she) is Brazilian — and “I (polite, as the topic)”.'
+    pt: 'Diga: “Sou brasileira / é brasileiro — e “Eu (educado, como tópico)”.'
+  answer:
+    speaker: protagonist
+    text: 브라질 사람이에요 … 저는
+  items:
+  - beurajil-saram
+  - jeoneun
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “is / am / are (after a consonant) — and “is / am / are (after a vowel)”.'
+    pt: 'Diga: “é / sou (depois de consoante) — e “é / sou (depois de vogal)”.'
+  answer:
+    speaker: protagonist
+    text: 이에요 … 예요
+  items:
+  - ieyo
+  - yeyo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Glad to meet you — and “Come in (polite)”.'
+    pt: 'Diga: “Prazer em conhecer — e “Entre (educado)”.'
+  answer:
+    speaker: protagonist
+    text: 반가워요 … 들어오세요
+  items:
+  - bangawoyo
+  - deureooseyo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Thank you (formal) — and “grandmother; how one addresses an older woman”.'
+    pt: 'Diga: “Obrigada / obrigado (formal) — e “avó; como se chama uma senhora idosa”.'
+  answer:
+    speaker: protagonist
+    text: 감사합니다 … 할머니
+  items:
+  - gamsahamnida
+  - halmeoni
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

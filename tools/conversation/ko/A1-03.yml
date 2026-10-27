@@ -1,0 +1,434 @@
+# UNIT ko A1-03 — written by AI (Claude) for Casus; expanded from src/A1-03.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-03
+level: A1
+number: 3
+protagonist: f
+title:
+  en: The body
+  pt: O corpo
+situation:
+  en: On the stairs Mrs Park carries heavy boxes of side dishes. Her back hurts. Later Minjun asks about her.
+  pt: Na escada, a senhora Park carrega caixas pesadas de 반찬. As costas dela doem. Depois o Minjun pergunta por ela.
+learn_lessons:
+- ko-topic-subject
+- ko-nikl-5
+- ko-nikl-4
+culture: Helping an older neighbour, and speaking of her with respect
+new_items:
+- id: gwaenchaneuseyo
+  text: 괜찮으세요?
+  meaning:
+    en: Are you all right? (respectful)
+    pt: A senhora está bem? (respeitoso)
+- id: heori
+  text: 허리
+  meaning:
+    en: lower back, waist
+    pt: costas (lombar), cintura
+- id: meori
+  text: 머리
+  meaning:
+    en: head
+    pt: cabeça
+- id: son
+  text: 손
+  meaning:
+    en: hand
+    pt: mão
+- id: dari
+  text: 다리
+  meaning:
+    en: leg
+    pt: perna
+- id: apayo
+  text: 아파요
+  meaning:
+    en: hurts / is ill
+    pt: dói / está doente
+- id: eun-neun
+  text: 은/는
+  meaning:
+    en: topic particle; also contrast (은 after a consonant, 는 after a vowel)
+    pt: partícula de tópico; também contraste (은 depois de consoante, 는 depois de vogal)
+- id: mugeowoyo
+  text: 무거워요
+  meaning:
+    en: is heavy
+    pt: é pesado
+- id: jega-deulgeyo
+  text: 제가 들게요
+  meaning:
+    en: I'll carry it
+    pt: Eu carrego
+- id: gomawoyo
+  text: 고마워요
+  meaning:
+    en: Thanks (polite, warm)
+    pt: Obrigada (educado, caloroso)
+- id: gwaenchanayo
+  text: 괜찮아요
+  meaning:
+    en: It's fine / I'm fine
+    pt: Tudo bem / estou bem
+- id: kkeseo
+  text: 께서
+  meaning:
+    en: subject particle for an honoured person
+    pt: partícula de sujeito para pessoa respeitada
+- id: apeuseyo
+  text: 아프세요
+  meaning:
+    en: is ill / hurts (said of an honoured person)
+    pt: está doente / dói (dito de pessoa respeitada)
+reviews:
+- item: bang
+  from: A1-02
+- item: hwajangsil
+  from: A1-02
+- item: yeogi
+  from: A1-02
+- item: jeogi
+  from: A1-02
+- item: i-ga
+  from: A1-02
+- item: isseoyo
+  from: A1-02
+- item: eodiyeyo
+  from: A1-02
+- item: chimdae
+  from: A1-02
+- item: chaeksang
+  from: A1-02
+- item: gwa-wa
+  from: A1-02
+- item: bimilbeonho
+  from: A1-02
+- item: sinbal
+  from: A1-02
+- item: joesonghamnida
+  from: A1-02
+- item: yeopjip
+  from: A1-02
+- item: halmeoni
+  from: A1-01
+steps:
+- type: narrator
+  text:
+    en: On the stairs Mrs Park carries heavy boxes of side dishes. Her back hurts. Later Minjun asks about her. Listen to the conversation; you don't need to understand it yet.
+    pt: Na escada, a senhora Park carrega caixas pesadas de 반찬. As costas dela doem. Depois o Minjun pergunta por ela. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: 할머니, 괜찮으세요?
+    meaning:
+      en: Grandma, are you all right?
+      pt: Vovó, a senhora está bem?
+  - speaker: park
+    text: 아이고, 허리가 아파요.
+    meaning:
+      en: Oh dear, my back hurts.
+      pt: Ai, minhas costas doem.
+  - speaker: protagonist
+    text: 이거 무거워요. 제가 들게요.
+    meaning:
+      en: This is heavy. I'll carry it.
+      pt: Isto é pesado. Eu carrego.
+  - speaker: park
+    text: 고마워요. 손은 괜찮아요. 허리는 아파요.
+    meaning:
+      en: Thanks. My hands are fine. My back hurts.
+      pt: Obrigada. As mãos estão bem. As costas é que doem.
+  - speaker: protagonist
+    text: 괜찮아요. 천천히 가세요.
+    meaning:
+      en: No problem. Take it slowly.
+      pt: Imagina. Vá devagar.
+  - speaker: park
+    text: 고마워요. 머리는 괜찮아요!
+    meaning:
+      en: Thanks. At least my head is fine!
+      pt: Obrigada. Pelo menos a cabeça está boa!
+  - speaker: minjun
+    text: 할머니 괜찮으세요?
+    meaning:
+      en: Is grandma all right?
+      pt: A vovó está bem?
+  - speaker: protagonist
+    text: 할머니께서 허리가 아프세요.
+    meaning:
+      en: Grandma's back hurts.
+      pt: As costas da vovó estão doendo.
+- type: buildup
+  item: gwaenchaneuseyo
+  parts:
+  - -으세요?
+  - -찮으세요?
+  - 괜찮으세요?
+- type: prompt
+  ask:
+    en: Ask Mrs Park if she is all right.
+    pt: Pergunte à senhora Park se ela está bem.
+  answer:
+    speaker: protagonist
+    text: 할머니, 괜찮으세요?
+  items:
+  - halmeoni
+  - gwaenchaneuseyo
+- type: narrator
+  text:
+    en: '''허리가 아파요'': the back hurts. What hurts takes 이/가.'
+    pt: '''허리가 아파요'': as costas doem. O que dói leva 이/가.'
+- type: line
+  speaker: park
+  item: apayo
+- type: prompt
+  ask:
+    en: Say that your head hurts.
+    pt: Diga que a cabeça dói.
+  answer:
+    speaker: protagonist
+    text: 머리가 아파요.
+  items:
+  - meori
+  - apayo
+- type: prompt
+  ask:
+    en: Now your leg.
+    pt: Agora a perna.
+  answer:
+    speaker: protagonist
+    text: 다리가 아파요.
+  items:
+  - dari
+  - apayo
+- type: prompt
+  ask:
+    en: Now your back.
+    pt: Agora as costas.
+  answer:
+    speaker: protagonist
+    text: 허리가 아파요.
+  items:
+  - heori
+  - apayo
+- type: narrator
+  text:
+    en: '은/는 marks the topic, and sets two things against each other: 손은 괜찮아요, 허리는 아파요 — the hands are fine, the back (on the other hand) hurts.'
+    pt: '은/는 marca o tópico e contrapõe duas coisas: 손은 괜찮아요, 허리는 아파요 — as mãos estão bem, já as costas doem.'
+- type: prompt
+  ask:
+    en: 'Say: my hands are fine, my back hurts.'
+    pt: 'Diga: as mãos estão bem, as costas doem.'
+  answer:
+    speaker: protagonist
+    text: 손은 괜찮아요. 허리는 아파요.
+  items:
+  - son
+  - eun-neun
+  - gwaenchanayo
+- type: prompt
+  ask:
+    en: 'Say: this is heavy, I''ll carry it.'
+    pt: 'Diga: isto é pesado, eu carrego.'
+  answer:
+    speaker: protagonist
+    text: 이거 무거워요. 제가 들게요.
+  items:
+  - mugeowoyo
+  - jega-deulgeyo
+- type: prompt
+  ask:
+    en: Thank her warmly.
+    pt: Agradeça com carinho.
+  answer:
+    speaker: protagonist
+    text: 고마워요.
+  items:
+  - gomawoyo
+- type: narrator
+  text:
+    en: 'Speaking ABOUT an elder, honour her twice: 께서 instead of 이/가, and -세요 on the verb: 할머니께서 아프세요.'
+    pt: 'Falando SOBRE uma pessoa mais velha, honre duas vezes: 께서 no lugar de 이/가, e -세요 no verbo: 할머니께서 아프세요.'
+- type: buildup
+  item: apeuseyo
+  parts:
+  - -프세요
+  - 아프세요
+- type: prompt
+  ask:
+    en: Tell Minjun that grandma is unwell.
+    pt: Diga ao Minjun que a vovó não está bem.
+  answer:
+    speaker: protagonist
+    text: 할머니께서 아프세요.
+  items:
+  - kkeseo
+  - apeuseyo
+- type: prompt
+  ask:
+    en: Tell him that grandma's back hurts.
+    pt: Diga a ele que as costas da vovó doem.
+  answer:
+    speaker: protagonist
+    text: 할머니께서 허리가 아프세요.
+  items:
+  - kkeseo
+  - heori
+  - apeuseyo
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'Em português dizemos ''a senhora'' para mostrar respeito. Em coreano o respeito entra até na gramática: muda a partícula (께서) e muda o verbo (-세요).'
+- type: prompt
+  ask:
+    en: 'Once more: say “Are you all right? (respectful)”.'
+    pt: 'Mais uma vez: diga “A senhora está bem? (respeitoso)”.'
+  answer:
+    speaker: protagonist
+    text: 괜찮으세요?
+  items:
+  - gwaenchaneuseyo
+- type: prompt
+  ask:
+    en: 'Once more: say “head”.'
+    pt: 'Mais uma vez: diga “cabeça”.'
+  answer:
+    speaker: protagonist
+    text: 머리
+  items:
+  - meori
+- type: prompt
+  ask:
+    en: 'Once more: say “hand”.'
+    pt: 'Mais uma vez: diga “mão”.'
+  answer:
+    speaker: protagonist
+    text: 손
+  items:
+  - son
+- type: prompt
+  ask:
+    en: 'Once more: say “leg”.'
+    pt: 'Mais uma vez: diga “perna”.'
+  answer:
+    speaker: protagonist
+    text: 다리
+  items:
+  - dari
+- type: prompt
+  ask:
+    en: 'Once more: say “topic particle; also contrast (은 after a consonant, 는 after a vowel)”.'
+    pt: 'Mais uma vez: diga “partícula de tópico; também contraste (은 depois de consoante, 는 depois de vogal)”.'
+  answer:
+    speaker: protagonist
+    text: 은/는
+  items:
+  - eun-neun
+- type: prompt
+  ask:
+    en: 'Once more: say “is heavy”.'
+    pt: 'Mais uma vez: diga “é pesado”.'
+  answer:
+    speaker: protagonist
+    text: 무거워요
+  items:
+  - mugeowoyo
+- type: prompt
+  ask:
+    en: 'Once more: say “I''ll carry it”.'
+    pt: 'Mais uma vez: diga “Eu carrego”.'
+  answer:
+    speaker: protagonist
+    text: 제가 들게요
+  items:
+  - jega-deulgeyo
+- type: prompt
+  ask:
+    en: 'Once more: say “Thanks (polite, warm)”.'
+    pt: 'Mais uma vez: diga “Obrigada (educado, caloroso)”.'
+  answer:
+    speaker: protagonist
+    text: 고마워요
+  items:
+  - gomawoyo
+- type: prompt
+  ask:
+    en: 'Once more: say “It''s fine / I''m fine”.'
+    pt: 'Mais uma vez: diga “Tudo bem / estou bem”.'
+  answer:
+    speaker: protagonist
+    text: 괜찮아요
+  items:
+  - gwaenchanayo
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “room — and “bathroom / toilet — and “here”.'
+    pt: 'Diga: “quarto — e “banheiro — e “aqui”.'
+  answer:
+    speaker: protagonist
+    text: 방 … 화장실 … 여기
+  items:
+  - bang
+  - hwajangsil
+  - yeogi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “over there — and “subject particle (이 after a consonant, 가 after a vowel) — and “there is / is (located)”.'
+    pt: 'Diga: “ali / lá — e “partícula de sujeito (이 depois de consoante, 가 depois de vogal) — e “tem / fica”.'
+  answer:
+    speaker: protagonist
+    text: 저기 … 이/가 … 있어요
+  items:
+  - jeogi
+  - i-ga
+  - isseoyo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Where is it? — and “bed — and “desk”.'
+    pt: 'Diga: “Onde é? — e “cama — e “escrivaninha”.'
+  answer:
+    speaker: protagonist
+    text: 어디예요? … 침대 … 책상
+  items:
+  - eodiyeyo
+  - chimdae
+  - chaeksang
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “and (between nouns: 과 after a consonant, 와 after a vowel) — and “password; the door code — and “shoes”.'
+    pt: 'Diga: “e (entre substantivos: 과 depois de consoante, 와 depois de vogal) — e “senha; o código da porta — e “sapatos”.'
+  answer:
+    speaker: protagonist
+    text: 과/와 … 비밀번호 … 신발
+  items:
+  - gwa-wa
+  - bimilbeonho
+  - sinbal
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I''m sorry (formal) — and “the house / flat next door”.'
+    pt: 'Diga: “Desculpe (formal) — e “a casa / o apartamento ao lado”.'
+  answer:
+    speaker: protagonist
+    text: 죄송합니다 … 옆집
+  items:
+  - joesonghamnida
+  - yeopjip
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

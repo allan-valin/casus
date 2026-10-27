@@ -39,7 +39,7 @@ hangul → sound converter for our browser engine.
 | 20 | L | Eu quero… | café with 민준 | 아메리카노, -고 싶어요, 따뜻한/차가운 | -고 싶어요 | 19 all; 18 끓여요; 16 안 | — |
 | 21 | T | Plantas | Hangang park | 나무, 꽃, 공원 | -에 있어요 | 20 all; 19 쓰레기; 17 stereotypes | — |
 | 22 | L | Dias e horas | planning a meeting | 월요일, 몇 시예요?, 오후 세 시 | time | 21 all; 20 -고 싶어요; 18 cooking | punctuality |
-| 23 | L | 말 놓을까요? | 민준 proposes 반말 | 말 놓을까요?, 그래, 고마워 | 반말 basics | 22 all; 21 parks; 19 sorting | when to drop 존댓말 |
+| 23 | L | 말 놓을까요? | 민준 offers 말 편하게 하세요; you, the elder, propose 반말 | 말 놓을까요?, 그래, 고마워 | 반말 basics | 22 all; 21 parks; 19 sorting | when to drop 존댓말 |
 | 24 | T | O céu | stars from Namsan | 별, 달, 하늘 | -아/어 보세요 | 23 all; 22 시; 20 café | — |
 | 25 | L | Mercado | Mangwon market | 시장, 한 개, 깎아 주세요 | counters | 24 all; 23 반말; 21 꽃 | — |
 | 26 | L | Noraebang | karaoke with the team | 노래방, 노래해요, 박수 | -(으)ㄹ까요? | 25 all; 24 별; 22 오후 | everyone sings |
@@ -261,8 +261,9 @@ Approved in advance by Allan (2026-10-27: "assuming I approved the plan"); units
    "most (80%) of the sentences" (C8), narration in the learner's language, else English (C11).
 9. **Research rule (2026-10-22):** cultural claims checked in Korean sources (what Koreans say), cited in the unit header.
 
-**Before A1-01 is playable:** the Korean voice. MMS-TTS Korean (CC BY-NC 4.0, allowed: non-commercial) or a Piper
-Korean model if one exists — test both, samples for Allan's ear. Units can be written before it.
+**Before A1-01 is playable:** the Korean voice is chosen (story bible: Piper ko_KR-kss-medium, CC BY-NC-SA, men pitched
+down); it needs the line sounds of rule 6. Units can be written before it. Story bible aligned with this plan
+2026-10-27 (age question A1-08, 말 놓을까요 A1-23) and given the relationship table of rule 4.
 
 ## Appendix — Learn grammar per unit (generated 2026-10-27)
 

@@ -1,0 +1,457 @@
+# UNIT ko A1-04 — written by AI (Claude) for Casus; expanded from src/A1-04.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-04
+level: A1
+number: 4
+protagonist: m
+title:
+  en: The convenience store
+  pt: A loja de conveniência
+situation:
+  en: Downstairs is a convenience store open day and night. You buy water and instant noodles from the owner.
+  pt: No térreo há uma loja de conveniência aberta dia e noite. Você compra água e 라면 com o dono.
+learn_lessons:
+- ko-nikl-6
+- ko-nikl-3
+culture: Paying and receiving with both hands
+new_items:
+- id: eoseo-oseyo
+  text: 어서 오세요
+  meaning:
+    en: Welcome (to a shop)
+    pt: Seja bem-vindo (na loja)
+- id: mul
+  text: 물
+  meaning:
+    en: water
+    pt: água
+- id: ramyeon
+  text: 라면
+  meaning:
+    en: instant noodles
+    pt: miojo / lámen
+- id: igeo
+  text: 이거
+  meaning:
+    en: this (thing)
+    pt: isto
+- id: juseyo
+  text: 주세요
+  meaning:
+    en: Please give me…
+    pt: Me dá…, por favor
+- id: do
+  text: 도
+  meaning:
+    en: too, also (replaces 이/가 or 을/를)
+    pt: também (no lugar de 이/가 ou 을/를)
+- id: bongtu
+  text: 봉투
+  meaning:
+    en: plastic bag
+    pt: sacola
+- id: piryohaseyo
+  text: 필요하세요?
+  meaning:
+    en: Do you need…? (polite)
+    pt: O senhor precisa de…? (educado)
+- id: eolmayeyo
+  text: 얼마예요?
+  meaning:
+    en: How much is it?
+    pt: Quanto é?
+- id: won
+  text: 원
+  meaning:
+    en: won (the money)
+    pt: won (a moeda)
+- id: kkaji
+  text: 까지
+  meaning:
+    en: until, up to
+    pt: até
+- id: myeot-si
+  text: 몇 시
+  meaning:
+    en: what time
+    pt: que horas
+- id: haeyo
+  text: 해요
+  meaning:
+    en: does; is open (a shop)
+    pt: faz; funciona (uma loja)
+reviews:
+- item: annyeong
+  from: A1-01
+- item: cheoeum
+  from: A1-01
+- item: ne
+  from: A1-01
+- item: aniyo
+  from: A1-01
+- item: beurajil-saram
+  from: A1-01
+- item: jeoneun
+  from: A1-01
+- item: ieyo
+  from: A1-01
+- item: yeyo
+  from: A1-01
+- item: bangawoyo
+  from: A1-01
+- item: deureooseyo
+  from: A1-01
+- item: gamsahamnida
+  from: A1-01
+- item: halmeoni
+  from: A1-01
+- item: gwaenchaneuseyo
+  from: A1-03
+- item: heori
+  from: A1-03
+- item: meori
+  from: A1-03
+- item: son
+  from: A1-03
+- item: dari
+  from: A1-03
+- item: apayo
+  from: A1-03
+- item: eun-neun
+  from: A1-03
+- item: mugeowoyo
+  from: A1-03
+- item: jega-deulgeyo
+  from: A1-03
+- item: gomawoyo
+  from: A1-03
+- item: gwaenchanayo
+  from: A1-03
+- item: kkeseo
+  from: A1-03
+- item: apeuseyo
+  from: A1-03
+steps:
+- type: narrator
+  text:
+    en: Downstairs is a convenience store open day and night. You buy water and instant noodles from the owner. Listen to the conversation; you don't need to understand it yet.
+    pt: No térreo há uma loja de conveniência aberta dia e noite. Você compra água e 라면 com o dono. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: sajang
+    text: 어서 오세요.
+    meaning:
+      en: Welcome.
+      pt: Seja bem-vindo.
+  - speaker: protagonist
+    text: 안녕하세요. 물이 어디 있어요?
+    meaning:
+      en: Hello. Where is the water?
+      pt: Olá. Onde fica a água?
+  - speaker: sajang
+    text: 물은 저기 있어요.
+    meaning:
+      en: The water is over there.
+      pt: A água fica ali.
+  - speaker: protagonist
+    text: 이거 주세요. 라면도 주세요.
+    meaning:
+      en: This one, please. And noodles too.
+      pt: Me dá esta. E um lámen também.
+  - speaker: sajang
+    text: 봉투 필요하세요?
+    meaning:
+      en: Do you need a bag?
+      pt: Precisa de sacola?
+  - speaker: protagonist
+    text: 네, 봉투도 주세요. 얼마예요?
+    meaning:
+      en: Yes, a bag too. How much is it?
+      pt: Sim, uma sacola também. Quanto é?
+  - speaker: sajang
+    text: 삼천 원이에요.
+    meaning:
+      en: Three thousand won.
+      pt: Três mil won.
+  - speaker: protagonist
+    text: 몇 시까지 해요?
+    meaning:
+      en: Until what time are you open?
+      pt: Até que horas funciona?
+  - speaker: sajang
+    text: 우리 가게는 밤에도 해요. 스물네 시간 해요!
+    meaning:
+      en: Our shop is open at night too. Twenty-four hours!
+      pt: Nossa loja abre de noite também. Vinte e quatro horas!
+- type: line
+  speaker: sajang
+  item: eoseo-oseyo
+- type: buildup
+  item: eoseo-oseyo
+  parts:
+  - 오세요
+  - 어서 오세요
+- type: prompt
+  ask:
+    en: You enter a shop. What does the owner say?
+    pt: Você entra numa loja. O que o dono diz?
+  answer:
+    speaker: protagonist
+    text: 어서 오세요.
+  items:
+  - eoseo-oseyo
+- type: prompt
+  ask:
+    en: Ask where the water is.
+    pt: Pergunte onde fica a água.
+  answer:
+    speaker: protagonist
+    text: 물이 어디 있어요?
+  items:
+  - mul
+- type: narrator
+  text:
+    en: 'To buy, point and say 이거 주세요, ''give me this''. 주세요 goes after anything: 물 주세요, 라면 주세요.'
+    pt: 'Para comprar, aponte e diga 이거 주세요, ''me dá isto''. 주세요 vai depois de qualquer coisa: 물 주세요, 라면 주세요.'
+- type: prompt
+  ask:
+    en: Ask for this one.
+    pt: Peça este.
+  answer:
+    speaker: protagonist
+    text: 이거 주세요.
+  items:
+  - igeo
+  - juseyo
+- type: prompt
+  ask:
+    en: Ask for noodles.
+    pt: Peça um lámen.
+  answer:
+    speaker: protagonist
+    text: 라면 주세요.
+  items:
+  - ramyeon
+  - juseyo
+- type: narrator
+  text:
+    en: '도 means ''too'' and takes the place of the particle: 라면도 주세요, noodles too.'
+    pt: '도 quer dizer ''também'' e ocupa o lugar da partícula: 라면도 주세요, lámen também.'
+- type: prompt
+  ask:
+    en: 'Say: this one, please, and noodles too.'
+    pt: 'Diga: me dá este, e um lámen também.'
+  answer:
+    speaker: protagonist
+    text: 이거 주세요. 라면도 주세요.
+  items:
+  - igeo
+  - ramyeon
+  - do
+- type: prompt
+  ask:
+    en: How did he ask if you need a bag?
+    pt: Como ele perguntou se você precisa de sacola?
+  answer:
+    speaker: protagonist
+    text: 봉투 필요하세요?
+  items:
+  - bongtu
+  - piryohaseyo
+- type: prompt
+  ask:
+    en: Ask for a bag too, then the price.
+    pt: Peça uma sacola também, e depois o preço.
+  answer:
+    speaker: protagonist
+    text: 봉투도 주세요. 얼마예요?
+  items:
+  - bongtu
+  - do
+  - eolmayeyo
+- type: prompt
+  ask:
+    en: 'He says the price. Repeat it: three thousand won.'
+    pt: 'Ele diz o preço. Repita: três mil won.'
+  answer:
+    speaker: protagonist
+    text: 삼천 원이에요.
+  items:
+  - won
+- type: narrator
+  text:
+    en: '까지 is ''until'': 몇 시까지 해요? — until what time are you open? 해요 here is ''is open''.'
+    pt: '까지 é ''até'': 몇 시까지 해요? — até que horas funciona? 해요 aqui é ''funciona''.'
+- type: prompt
+  ask:
+    en: Ask until what time the shop is open.
+    pt: Pergunte até que horas a loja funciona.
+  answer:
+    speaker: protagonist
+    text: 몇 시까지 해요?
+  items:
+  - myeot-si
+  - kkaji
+  - haeyo
+- type: narrator
+  text:
+    en: Hand the card and take the change with both hands, or with the right hand while the left touches your right arm — above all with older people.
+    pt: Entregue o cartão e receba o troco com as duas mãos, ou com a direita enquanto a esquerda toca o braço direito — sobretudo com pessoas mais velhas.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil ninguém repara se você paga com uma mão só. Na Coreia, com alguém mais velho, as duas mãos mostram respeito.
+- type: prompt
+  ask:
+    en: 'Once more: say “Welcome (to a shop)”.'
+    pt: 'Mais uma vez: diga “Seja bem-vindo (na loja)”.'
+  answer:
+    speaker: protagonist
+    text: 어서 오세요
+  items:
+  - eoseo-oseyo
+- type: prompt
+  ask:
+    en: 'Once more: say “water”.'
+    pt: 'Mais uma vez: diga “água”.'
+  answer:
+    speaker: protagonist
+    text: 물
+  items:
+  - mul
+- type: prompt
+  ask:
+    en: 'Once more: say “Do you need…? (polite)”.'
+    pt: 'Mais uma vez: diga “O senhor precisa de…? (educado)”.'
+  answer:
+    speaker: protagonist
+    text: 필요하세요?
+  items:
+  - piryohaseyo
+- type: prompt
+  ask:
+    en: 'Once more: say “How much is it?”.'
+    pt: 'Mais uma vez: diga “Quanto é?”.'
+  answer:
+    speaker: protagonist
+    text: 얼마예요?
+  items:
+  - eolmayeyo
+- type: prompt
+  ask:
+    en: 'Once more: say “won (the money)”.'
+    pt: 'Mais uma vez: diga “won (a moeda)”.'
+  answer:
+    speaker: protagonist
+    text: 원
+  items:
+  - won
+- type: prompt
+  ask:
+    en: 'Once more: say “until, up to”.'
+    pt: 'Mais uma vez: diga “até”.'
+  answer:
+    speaker: protagonist
+    text: 까지
+  items:
+  - kkaji
+- type: prompt
+  ask:
+    en: 'Once more: say “what time”.'
+    pt: 'Mais uma vez: diga “que horas”.'
+  answer:
+    speaker: protagonist
+    text: 몇 시
+  items:
+  - myeot-si
+- type: prompt
+  ask:
+    en: 'Once more: say “does; is open (a shop)”.'
+    pt: 'Mais uma vez: diga “faz; funciona (uma loja)”.'
+  answer:
+    speaker: protagonist
+    text: 해요
+  items:
+  - haeyo
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Are you all right? (respectful) — and “lower back, waist — and “head — and “hand — and “leg”.'
+    pt: 'Diga: “A senhora está bem? (respeitoso) — e “costas (lombar), cintura — e “cabeça — e “mão — e “perna”.'
+  answer:
+    speaker: protagonist
+    text: 괜찮으세요? … 허리 … 머리 … 손 … 다리
+  items:
+  - gwaenchaneuseyo
+  - heori
+  - meori
+  - son
+  - dari
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “hurts / is ill — and “topic particle; also contrast (은 after a consonant, 는 after a vowel) — and “is heavy — and “I''ll carry it — and “Thanks (polite, warm)”.'
+    pt: 'Diga: “dói / está doente — e “partícula de tópico; também contraste (은 depois de consoante, 는 depois de vogal) — e “é pesado — e “Eu carrego — e “Obrigada (educado, caloroso)”.'
+  answer:
+    speaker: protagonist
+    text: 아파요 … 은/는 … 무거워요 … 제가 들게요 … 고마워요
+  items:
+  - apayo
+  - eun-neun
+  - mugeowoyo
+  - jega-deulgeyo
+  - gomawoyo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “It''s fine / I''m fine — and “subject particle for an honoured person — and “is ill / hurts (said of an honoured person) — and “Hello — and “Nice to meet you (formal, first meeting)”.'
+    pt: 'Diga: “Tudo bem / estou bem — e “partícula de sujeito para pessoa respeitada — e “está doente / dói (dito de pessoa respeitada) — e “Olá / bom dia — e “Muito prazer (formal, primeiro encontro)”.'
+  answer:
+    speaker: protagonist
+    text: 괜찮아요 … 께서 … 아프세요 … 안녕하세요 … 처음 뵙겠습니다
+  items:
+  - gwaenchanayo
+  - kkeseo
+  - apeuseyo
+  - annyeong
+  - cheoeum
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Yes — and “No — and “I''m Brazilian / (she) is Brazilian — and “I (polite, as the topic) — and “is / am / are (after a consonant)”.'
+    pt: 'Diga: “Sim — e “Não — e “Sou brasileira / é brasileiro — e “Eu (educado, como tópico) — e “é / sou (depois de consoante)”.'
+  answer:
+    speaker: protagonist
+    text: 네 … 아니요 … 브라질 사람이에요 … 저는 … 이에요
+  items:
+  - ne
+  - aniyo
+  - beurajil-saram
+  - jeoneun
+  - ieyo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “is / am / are (after a vowel) — and “Glad to meet you — and “Come in (polite) — and “Thank you (formal) — and “grandmother; how one addresses an older woman”.'
+    pt: 'Diga: “é / sou (depois de vogal) — e “Prazer em conhecer — e “Entre (educado) — e “Obrigada / obrigado (formal) — e “avó; como se chama uma senhora idosa”.'
+  answer:
+    speaker: protagonist
+    text: 예요 … 반가워요 … 들어오세요 … 감사합니다 … 할머니
+  items:
+  - yeyo
+  - bangawoyo
+  - deureooseyo
+  - gamsahamnida
+  - halmeoni
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

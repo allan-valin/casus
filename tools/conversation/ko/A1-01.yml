@@ -1,0 +1,338 @@
+# UNIT ko A1-01 — written by AI (Claude) for Casus; expanded from src/A1-01.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-01
+level: A1
+number: 1
+protagonist: f
+title:
+  en: The landlady
+  pt: A dona do apartamento
+situation:
+  en: You have just arrived at the building in Mapo, Seoul. The landlady, Mrs Park, about seventy, opens the door.
+  pt: Você acabou de chegar ao prédio em Mapo, Seul. A dona, a senhora Park, de uns setenta anos, abre a porta.
+learn_lessons:
+- ko-copula
+- ko-hangul
+culture: A bow, not a hug, for an older person you meet
+new_items:
+- id: annyeong
+  text: 안녕하세요
+  meaning:
+    en: Hello
+    pt: Olá / bom dia
+- id: cheoeum
+  text: 처음 뵙겠습니다
+  meaning:
+    en: Nice to meet you (formal, first meeting)
+    pt: Muito prazer (formal, primeiro encontro)
+  register: formal
+- id: ne
+  text: 네
+  meaning:
+    en: 'Yes'
+    pt: Sim
+- id: aniyo
+  text: 아니요
+  meaning:
+    en: 'No'
+    pt: Não
+- id: beurajil-saram
+  text: 브라질 사람이에요
+  meaning:
+    en: I'm Brazilian / (she) is Brazilian
+    pt: Sou brasileira / é brasileiro
+- id: jeoneun
+  text: 저는
+  meaning:
+    en: I (polite, as the topic)
+    pt: Eu (educado, como tópico)
+- id: ieyo
+  text: 이에요
+  meaning:
+    en: is / am / are (after a consonant)
+    pt: é / sou (depois de consoante)
+- id: yeyo
+  text: 예요
+  meaning:
+    en: is / am / are (after a vowel)
+    pt: é / sou (depois de vogal)
+- id: bangawoyo
+  text: 반가워요
+  meaning:
+    en: Glad to meet you
+    pt: Prazer em conhecer
+- id: deureooseyo
+  text: 들어오세요
+  meaning:
+    en: Come in (polite)
+    pt: Entre (educado)
+- id: gamsahamnida
+  text: 감사합니다
+  meaning:
+    en: Thank you (formal)
+    pt: Obrigada / obrigado (formal)
+  register: formal
+- id: halmeoni
+  text: 할머니
+  meaning:
+    en: grandmother; how one addresses an older woman
+    pt: avó; como se chama uma senhora idosa
+reviews: []
+steps:
+- type: narrator
+  text:
+    en: You have just arrived at the building in Mapo, Seoul. The landlady, Mrs Park, about seventy, opens the door. Listen to the conversation; you don't need to understand it yet.
+    pt: Você acabou de chegar ao prédio em Mapo, Seul. A dona, a senhora Park, de uns setenta anos, abre a porta. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: 안녕하세요!
+    meaning:
+      en: Hello!
+      pt: Olá!
+  - speaker: park
+    text: 네, 안녕하세요. 브라질 사람이에요?
+    meaning:
+      en: Yes, hello. Are you the Brazilian?
+      pt: Sim, olá. Você é a brasileira?
+  - speaker: protagonist
+    text: 네, 브라질 사람이에요. 처음 뵙겠습니다.
+    meaning:
+      en: Yes, I'm Brazilian. Nice to meet you.
+      pt: Sim, sou brasileira. Muito prazer.
+  - speaker: park
+    text: 반가워요. 저는 박순자예요.
+    meaning:
+      en: Glad to meet you. I'm Park Sunja.
+      pt: Prazer. Eu sou Park Sunja.
+  - speaker: protagonist
+    text: 반가워요, 할머니.
+    meaning:
+      en: Glad to meet you, grandma.
+      pt: Prazer, vovó.
+  - speaker: park
+    text: 들어오세요.
+    meaning:
+      en: Come in.
+      pt: Entre.
+  - speaker: protagonist
+    text: 감사합니다!
+    meaning:
+      en: Thank you!
+      pt: Obrigada!
+- type: narrator
+  text:
+    en: 'Korean is written in hangul: letters grouped into syllable blocks. 한 + 글 = 한글. The Learn lesson on hangul teaches the letters; here, listen first.'
+    pt: 'O coreano se escreve em hangul: letras agrupadas em blocos de sílaba. 한 + 글 = 한글. A lição de Learn sobre o hangul ensina as letras; aqui, primeiro escute.'
+- type: line
+  speaker: protagonist
+  item: annyeong
+- type: prompt
+  ask:
+    en: Greet the landlady.
+    pt: Cumprimente a dona do apartamento.
+  answer:
+    speaker: protagonist
+    text: 안녕하세요!
+  items:
+  - annyeong
+- type: narrator
+  text:
+    en: '''처음 뵙겠습니다'' is the formal ''nice to meet you'' for a first meeting with someone older. Say it with a small bow.'
+    pt: '''처음 뵙겠습니다'' é o ''muito prazer'' formal do primeiro encontro com alguém mais velho. Diga com uma leve reverência.'
+- type: buildup
+  item: cheoeum
+  parts:
+  - 뵙겠습니다
+  - 처음 뵙겠습니다
+- type: prompt
+  ask:
+    en: Say 'nice to meet you' formally.
+    pt: Diga 'muito prazer' de modo formal.
+  answer:
+    speaker: protagonist
+    text: 처음 뵙겠습니다.
+  items:
+  - cheoeum
+- type: narrator
+  text:
+    en: '''It is X'' is X + 이에요 after a consonant, X + 예요 after a vowel: 사람이에요, 박순자예요.'
+    pt: '''É X'' se diz X + 이에요 depois de consoante, X + 예요 depois de vogal: 사람이에요, 박순자예요.'
+- type: prompt
+  ask:
+    en: She asks if you are Brazilian. Say yes.
+    pt: Ela pergunta se você é brasileira. Diga que sim.
+  answer:
+    speaker: protagonist
+    text: 네, 브라질 사람이에요.
+  items:
+  - ne
+  - beurajil-saram
+  - ieyo
+- type: prompt
+  ask:
+    en: She says her name. How did she say 'I'm Park Sunja'?
+    pt: Ela diz o nome. Como ela disse 'eu sou Park Sunja'?
+  answer:
+    speaker: protagonist
+    text: 저는 박순자예요.
+  items:
+  - jeoneun
+  - yeyo
+- type: prompt
+  ask:
+    en: 'Someone asks: are you Japanese? Say no.'
+    pt: 'Alguém pergunta: você é japonesa? Diga que não.'
+  answer:
+    speaker: protagonist
+    text: 아니요, 브라질 사람이에요.
+  items:
+  - aniyo
+  - beurajil-saram
+- type: prompt
+  ask:
+    en: Say 'I'm Brazilian', starting with 'I'.
+    pt: Diga 'eu sou brasileira', começando por 'eu'.
+  answer:
+    speaker: protagonist
+    text: 저는 브라질 사람이에요.
+  items:
+  - jeoneun
+  - beurajil-saram
+- type: narrator
+  text:
+    en: An older woman is called 할머니, 'grandma' — it is respectful, not intimate.
+    pt: Uma senhora idosa é chamada de 할머니, 'vovó' — é respeitoso, não íntimo.
+- type: prompt
+  ask:
+    en: Say 'glad to meet you, grandma'.
+    pt: Diga 'prazer, vovó'.
+  answer:
+    speaker: protagonist
+    text: 반가워요, 할머니.
+  items:
+  - bangawoyo
+  - halmeoni
+- type: line
+  speaker: park
+  item: deureooseyo
+- type: prompt
+  ask:
+    en: Invite a guest in, politely.
+    pt: Convide uma visita a entrar, com educação.
+  answer:
+    speaker: protagonist
+    text: 들어오세요.
+  items:
+  - deureooseyo
+- type: prompt
+  ask:
+    en: Thank her formally.
+    pt: Agradeça de modo formal.
+  answer:
+    speaker: protagonist
+    text: 감사합니다!
+  items:
+  - gamsahamnida
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'No Brasil a gente abraça e beija quem acabou de conhecer. Na Coreia, com uma pessoa mais velha, nada de contato: uma reverência leve com 안녕하세요 basta.'
+- type: prompt
+  ask:
+    en: 'Once more: say “Hello”.'
+    pt: 'Mais uma vez: diga “Olá / bom dia”.'
+  answer:
+    speaker: protagonist
+    text: 안녕하세요
+  items:
+  - annyeong
+- type: prompt
+  ask:
+    en: 'Once more: say “Nice to meet you (formal, first meeting)”.'
+    pt: 'Mais uma vez: diga “Muito prazer (formal, primeiro encontro)”.'
+  answer:
+    speaker: protagonist
+    text: 처음 뵙겠습니다
+  items:
+  - cheoeum
+- type: prompt
+  ask:
+    en: 'Once more: say “Yes”.'
+    pt: 'Mais uma vez: diga “Sim”.'
+  answer:
+    speaker: protagonist
+    text: 네
+  items:
+  - ne
+- type: prompt
+  ask:
+    en: 'Once more: say “No”.'
+    pt: 'Mais uma vez: diga “Não”.'
+  answer:
+    speaker: protagonist
+    text: 아니요
+  items:
+  - aniyo
+- type: prompt
+  ask:
+    en: 'Once more: say “is / am / are (after a consonant)”.'
+    pt: 'Mais uma vez: diga “é / sou (depois de consoante)”.'
+  answer:
+    speaker: protagonist
+    text: 이에요
+  items:
+  - ieyo
+- type: prompt
+  ask:
+    en: 'Once more: say “is / am / are (after a vowel)”.'
+    pt: 'Mais uma vez: diga “é / sou (depois de vogal)”.'
+  answer:
+    speaker: protagonist
+    text: 예요
+  items:
+  - yeyo
+- type: prompt
+  ask:
+    en: 'Once more: say “Glad to meet you”.'
+    pt: 'Mais uma vez: diga “Prazer em conhecer”.'
+  answer:
+    speaker: protagonist
+    text: 반가워요
+  items:
+  - bangawoyo
+- type: prompt
+  ask:
+    en: 'Once more: say “Come in (polite)”.'
+    pt: 'Mais uma vez: diga “Entre (educado)”.'
+  answer:
+    speaker: protagonist
+    text: 들어오세요
+  items:
+  - deureooseyo
+- type: prompt
+  ask:
+    en: 'Once more: say “Thank you (formal)”.'
+    pt: 'Mais uma vez: diga “Obrigada / obrigado (formal)”.'
+  answer:
+    speaker: protagonist
+    text: 감사합니다
+  items:
+  - gamsahamnida
+- type: prompt
+  ask:
+    en: 'Once more: say “grandmother; how one addresses an older woman”.'
+    pt: 'Mais uma vez: diga “avó; como se chama uma senhora idosa”.'
+  answer:
+    speaker: protagonist
+    text: 할머니
+  items:
+  - halmeoni
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
