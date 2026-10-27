@@ -14,7 +14,8 @@
   import { narrationParts, taughtLetters } from '../lib/narration.js';
   let { lang, loadTalk, storage = null, speakTaught = async () => {}, speakNarrator = async () => {}, trainerHref = null,
     say = () => {}, pause = (ms) => new Promise((r) => setTimeout(r, ms)), Practice = null, practiceProps = {}, control = null,
-    voices = [], narratorVoiceOf = null, Entry = null, entryProps = {}, VoiceBox = null, kanjiHref = null } = $props();
+    voices = [], narratorVoiceOf = null, Entry = null, entryProps = {}, VoiceBox = null, kanjiHref = null,
+    loadLearn = null, lessonHref = null, inDevelopment = false } = $props();
 
   const GUIDE = 'https://github.com/allan-valin/casus/blob/main/docs/conversation';
   const GUIDES = [['en', 'English'], ['pt-BR', 'Português (Brasil)'], ['de', 'Deutsch'], ['mk', 'Македонски'], ['ar', 'العربية']];
@@ -55,8 +56,20 @@
     try { return JSON.parse(storage?.getItem(KEY) ?? '[]'); } catch { return []; }
   }
   onMount(async () => {
+    loadLearn?.().then((L) => { learnIndex = Object.fromEntries((L?.levels ?? []).flatMap((l) => l.topics.flatMap((tp) => tp.lessons.map((e) => [e.id, e])))); }).catch(() => {});
     try { course = await loadTalk(); } catch { course = null; }
     loaded = true;
+  });
+  // each unit is tagged with the Learn lessons it practises; a search looks in every level (Allan, 2026-10-27)
+  let learnIndex = $state({});
+  let search = $state('');
+  const tagsOf = (u) => (u.learn_lessons ?? []).map((id) => learnIndex[id]).filter(Boolean);
+  const meaningOf = (e) => (typeof e.meaning === 'string' ? e.meaning : (e.meaning?.[ui.lang] ?? e.meaning?.en ?? ''));
+  const found = $derived.by(() => {
+    const q = search.trim().toLowerCase();
+    if (!q) return null;
+    return shownUnits.filter((u) => [u.id, nar(u.title), nar(u.situation), ...tagsOf(u).flatMap((e) => [e.title, meaningOf(e)])]
+      .some((x) => String(x ?? '').toLowerCase().includes(q)));
   });
 
   const narratorLang = $derived(course ? (course.narrator_languages.includes(ui.lang) ? ui.lang : course.narrator_languages[0]) : ui.lang);
@@ -254,6 +267,17 @@
   </svg>
 {/snippet}
 
+{#snippet unitList(list, role = undefined)}
+  <ul class="units" {role}>
+    {#each list as u (u.id)}
+      <li><button class="unit-row" class:done={done.includes(u.id)} data-unit={u.id} onclick={() => open(u)}>
+        <span class="u-id">{slot(u.id)}</span> <span class="u-title">{nar(u.title)}</span>{#if done.includes(u.id)} <span class="tick">✓</span>{/if}
+        {#if tagsOf(u).length}<span class="u-tags">{#each tagsOf(u) as e}<span class="u-tag" title={meaningOf(e)}>{e.title}</span>{/each}</span>{/if}
+      </button></li>
+    {/each}
+  </ul>
+{/snippet}
+
 {#snippet gearPanel()}
   {#if VoiceBox && allVoices.length}
     <details class="voice-gear"><summary>⚙ {t('talk.voices.gear')}</summary>
@@ -295,6 +319,7 @@
     <p>{t('talk.guide.intro')}</p>
     <ul class="guides">{#each GUIDES as [code, name]}<li><a class="guide" href={`${GUIDE}/GUIDE.${code}.md`} target="_blank" rel="noopener">{name}</a></li>{/each}</ul>
   {:else if !unit}
+    {#if inDevelopment}<p class="in-dev" role="note"><strong>{t('talk.dev.title')}</strong> {t('talk.dev.body', { report: t('app.report') })}</p>{/if}
     {@render gearPanel()}
     <details class="howto" open={helpOpen}>
       <summary>{t('talk.howto.title')}</summary>
@@ -312,14 +337,17 @@
         {/each}
       </Picker>
     </div>
-    {#if level}
-      <ul class="units" role="tabpanel">
-        {#each shownUnits.filter((u) => u.level === level) as u (u.id)}
-          <li><button class="unit-row" class:done={done.includes(u.id)} data-unit={u.id} onclick={() => open(u)}>
-            <span class="u-id">{slot(u.id)}</span> <span class="u-title">{nar(u.title)}</span>{#if done.includes(u.id)} <span class="tick">✓</span>{/if}
-          </button></li>
-        {/each}
-      </ul>
+    <input class="talk-search" type="search" bind:value={search} placeholder={t('talk.search')} />
+    {#if found}
+      {#each levels as l (l)}
+        {#if found.some((u) => u.level === l)}
+          <h3 class="sec-head level-head" data-level={l}>{l}</h3>
+          {@render unitList(found.filter((u) => u.level === l))}
+        {/if}
+      {/each}
+      {#if !found.length}<p class="talk-nothing">{t('talk.nothing')}</p>{/if}
+    {:else if level}
+      {@render unitList(shownUnits.filter((u) => u.level === level), 'tabpanel')}
     {/if}
     <p class="guide-line">{t('talk.guide.write')} <a class="guide" href={`${GUIDE}/GUIDE.${ui.lang === 'pt' ? 'pt-BR' : ui.lang}.md`} target="_blank" rel="noopener">{t('talk.guide.link')}</a></p>
   {:else}
@@ -327,6 +355,8 @@
       <button class="back" onclick={back}>← {t('talk.back')}</button>
       <h3>{slot(unit.id)} · {nar(unit.title)}</h3>
       <p class="situation">{nar(unit.situation)}</p>
+      {#if tagsOf(unit).length}<p class="learn-tags"><span class="kanji-label">{t('talk.lessons')}</span>
+        {#each tagsOf(unit) as e}{#if lessonHref}<a class="learn-tag" href={lessonHref(e.id)} title={meaningOf(e)}>{e.title}</a>{:else}<span class="learn-tag" title={meaningOf(e)}>{e.title}</span>{/if} {/each}</p>{/if}
       {#if unit.kanji?.length}{@render kanjiList(unit.kanji, 'unit-kanji', 'talk.kanji.new')}{/if}
       {#if needVoices}
         <div class="voice-gate">
@@ -427,6 +457,13 @@
   .unit-row.done { border-color: var(--accent); }
   .u-id { font-variant-numeric: tabular-nums; color: var(--ink-2); }
   .tick { color: var(--accent-text); font-weight: 700; }
+  .u-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+  .u-tag, .learn-tag { font-size: 0.78rem; border: 1px solid var(--line); border-radius: 999px; padding: 0 8px; color: var(--ink-2); text-decoration: none; }
+  a.learn-tag:hover { border-color: var(--accent); color: var(--accent-text); }
+  .learn-tags { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .talk-search { width: 100%; box-sizing: border-box; padding: 6px 10px; margin: 0 0 8px; border: 1px solid var(--line); border-radius: 8px; background: transparent; color: var(--ink); }
+  .level-head { margin: 12px 0 4px; font-size: 1rem; }
+  .in-dev { border: 1px solid var(--accent); border-radius: 8px; padding: 8px 12px; background: color-mix(in srgb, var(--accent) 10%, transparent); }
   .talk-example, .narrator-fallback { color: var(--ink-2); font-size: 0.92rem; }
   .steps { padding-inline-start: 1.6em; display: grid; gap: 8px; }
   .step { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }

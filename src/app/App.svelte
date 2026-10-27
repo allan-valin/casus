@@ -44,6 +44,8 @@
   const route = langFromPath(typeof location !== 'undefined' ? location.pathname : '/', import.meta.env?.BASE_URL ?? '/');
   const lang = getLanguage(route.code);
   const DATA = withBase(lang.dataPath);
+  // Conversation courses still being revised show an in-development banner (Allan, 2026-10-27; docs/conversation/TASKS-2026-10-27.md)
+  const TALK_IN_DEVELOPMENT = ['de', 'ja', 'mk'];
   const voice = typeof window === 'undefined' ? null : createVoice({ bcp47: lang.bcp47, espeakVoice: lang.voice.espeak, natural: lang.voice.natural ?? null });
 
   // injected for tests; the browser gets the real ones
@@ -292,6 +294,9 @@
       Practice={Trainer} practiceProps={{ lang, voice, fetchImpl, data: DATA, base: withBase('/'), lexicon, storage, compact: true, say: (msg, kind) => activity.say(msg, kind) }}
       control={{ pause: pausePlayback, resume: resumePlayback, stop: stopPlayback }} voices={[voice]} narratorVoiceOf={narratorVoice}
       kanjiHref={(lesson) => `${withBase(learnPath(LANGUAGES.find((l) => l.code === lang.code) ?? { path: '/' }))}#${lesson}`}
+      lessonHref={(lesson) => `${withBase(learnPath(LANGUAGES.find((l) => l.code === lang.code) ?? { path: '/' }))}#${lesson}`}
+      loadLearn={() => fetchImpl(`${DATA}/learn.json`).then((r) => (r.ok ? r.json() : null))}
+      inDevelopment={TALK_IN_DEVELOPMENT.includes(lang.code)}
       say={(msg, kind) => activity.say(msg, kind)} />
   {:else if route.view === 'learn'}
     <Learn {lang} {storage} {award} {progression} startLesson={decodeURIComponent(location.hash.slice(1)) || null} lookup={(w) => (lexicon ? lexicon.lookup(w) : Promise.resolve([]))} loadInfo={loadEntryInfo} loadParadigm={loadParadigmOf} speak={(text) => speakHref(withBase(speakPath(LANGUAGES.find((l) => l.code === lang.code) ?? { path: '/' })), text)} loadLearn={() => fetchImpl(`${DATA}/learn.json`).then((r) => (r.ok ? r.json() : null))}

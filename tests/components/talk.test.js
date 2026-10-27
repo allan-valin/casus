@@ -793,4 +793,58 @@ describe('Japanese: furigana over kanji, romaji below, the voice reads kana (All
     expect(spoken).toContainEqual(['de', 'がくせい']);            // the taught word inside the narration
     expect(spoken).toContainEqual(['de', 'わたしはがくせいです。']);
   });
+
+});
+
+describe('Unit list: lesson tags, search in every level, in-development banner', () => {
+  // Allan, 2026-10-27: each unit shows what it covers, on the list itself; a search looks in every level; a course
+  // under revision says so and points to the Report-a-problem button
+  const LEARN = { levels: [{ id: 'A1', topics: [{ kind: 'grammar', lessons: [{ id: 'de-sein', title: 'sein', meaning: { en: 'the verb to be', pt: 'o verbo ser' } }] }] }] };
+  const TAGGED = { ...COURSE, example: false, units: [
+    { ...COURSE.units[0], learn_lessons: ['de-sein', 'de-nowhere'] },
+    { ...COURSE.units[1], learn_lessons: [] },
+    { ...COURSE.units[1], id: 'B1-01', level: 'B1', title: { pt: 'Domingo de chuva', en: 'Rainy Sunday' } },
+  ] };
+
+  it('the unit list tags each unit with the Learn lessons it practises; unknown ids are left out (Allan, 2026-10-27)', async () => {
+    setLang('pt');
+    const { p } = props({ loadTalk: async () => TAGGED, loadLearn: async () => LEARN, lessonHref: (id) => `/de/learn/#${id}` });
+    const { container } = render(Talk, p);
+    await flush();
+    const tags = [...container.querySelectorAll('.unit-row[data-unit="A1-01"] .u-tag')];
+    expect(tags.map((x) => x.textContent.trim())).toEqual(['sein']);
+    expect(tags[0].getAttribute('title')).toBe('o verbo ser');
+    expect(container.querySelectorAll('.unit-row[data-unit="A1-02"] .u-tag').length).toBe(0);
+    await fireEvent.click(container.querySelector('.unit-row[data-unit="A1-01"]')); await flush();
+    const link = container.querySelector('.unit-page a.learn-tag');
+    expect(link.getAttribute('href')).toBe('/de/learn/#de-sein');
+  });
+
+  it('a search looks in every level: title, situation and lesson tags, matches under their level (Allan, 2026-10-27)', async () => {
+    setLang('pt');
+    const { p } = props({ loadTalk: async () => TAGGED, loadLearn: async () => LEARN });
+    const { container } = render(Talk, p);
+    await flush();
+    const box = container.querySelector('input.talk-search');
+    await fireEvent.input(box, { target: { value: 'domingo' } }); await flush();
+    expect([...container.querySelectorAll('.unit-row')].map((r) => r.dataset.unit)).toEqual(['A1-02', 'B1-01']);
+    expect([...container.querySelectorAll('.level-head')].map((h) => h.dataset.level)).toEqual(['A1', 'B1']);
+    await fireEvent.input(box, { target: { value: 'verbo ser' } }); await flush();
+    expect([...container.querySelectorAll('.unit-row')].map((r) => r.dataset.unit)).toEqual(['A1-01']);
+    await fireEvent.input(box, { target: { value: '' } }); await flush();
+    expect(container.querySelectorAll('.level-head').length).toBe(0);
+  });
+
+  it('a course under revision shows an in-development banner pointing to Report a problem (Allan, 2026-10-27)', async () => {
+    setLang('pt');
+    const { p } = props({ loadTalk: async () => TAGGED, inDevelopment: true });
+    const { container } = render(Talk, p);
+    await flush();
+    const b = container.querySelector('.in-dev');
+    expect(b).not.toBeNull();
+    expect(b.textContent).toContain('Relatar um problema');
+    const { p: p2 } = props({ loadTalk: async () => TAGGED });
+    const r2 = render(Talk, p2); await flush();
+    expect(r2.container.querySelector('.in-dev')).toBeNull();
+  });
 });
