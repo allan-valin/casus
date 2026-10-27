@@ -337,7 +337,7 @@
   {#if !loaded}
     <p>{t('talk.loading')}</p>
   {:else if !course}
-    <p class="talk-none">{t('talk.none', { language: lang.name?.[ui.lang] ?? lang.name?.en ?? '' })}</p>
+    <p class="talk-none not-yet" role="note">{t('talk.none', { language: lang.name?.[ui.lang] ?? lang.name?.en ?? '' })}</p>
     <p>{t('talk.guide.intro')}</p>
     <ul class="guides">{#each GUIDES as [code, name]}<li><a class="guide" href={`${GUIDE}/GUIDE.${code}.md`} target="_blank" rel="noopener">{name}</a></li>{/each}</ul>
   {:else if !course.narrator_languages.includes(ui.lang)}
@@ -530,4 +530,5 @@
   .verdict[data-ok="true"] { color: var(--ok, green); font-weight: 700; }
   .verdict[data-ok="false"] { color: var(--err, #b00); font-weight: 700; }
   .trainer { text-decoration: none; }
+  .not-yet { border-left: 4px solid var(--warn, #c77700); background: var(--warn-bg, color-mix(in srgb, #c77700 12%, transparent)); padding: 0.6em 0.8em; border-radius: 6px; }
 </style>

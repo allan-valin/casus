@@ -281,6 +281,8 @@
 
   {#if expected.length}
     <h3>{t('speak.expected')} {#if voice}<Speaker text={text} {voice} />{/if}</h3>
+    <!-- Allan, 2026-10-27: what is missing must say so — words with no IPA of their own are not scored -->
+    {#if expected.some((w) => w.source === 'lemma' || w.source === 'none')}<p class="partial" role="note">{t('speak.unscored', { n: expected.filter((w) => w.source === 'lemma' || w.source === 'none').length, total: expected.length })}</p>{/if}
     <div class="words" dir="ltr">
       {#each expected as w}
         <div class="word {w.source}">
@@ -368,4 +370,5 @@
   .dict-btn.on { outline: 2px solid var(--accent, #3a7); }
   table.models { border-collapse: collapse; font-size: .9em; }
   .models td, .models th { padding: 3px 6px; border-bottom: 1px solid var(--line); text-align: start; }
+  .partial { border-left: 4px solid var(--warn, #c77700); background: var(--warn-bg, color-mix(in srgb, #c77700 12%, transparent)); padding: 0.5em 0.8em; border-radius: 6px; }
 </style>
