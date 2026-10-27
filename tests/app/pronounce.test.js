@@ -248,3 +248,13 @@ describe('generated form IPA is compared, and regional variants are offered (All
     expect(score(align(expectedSounds([w]), heard))).toBe(100);
   });
 });
+
+// Japanese Conversation lines carry the sounds the build computed from our own kana (tools/ja_phonemes.py); the
+// compare uses them, not a cut into headwords (日本 → "hi hon", Allan 2026-10-27; verbs had no IPA at all)
+describe('expected IPA from the course', () => {
+  it('takes the sentence sounds without accent marks and scores them', async () => {
+    const got = await expectedFor('日本です', { index: new Map(), course: 'ni↑hoɴ#de↓sɯ.' });
+    expect(got).toEqual([{ word: '日本です', ipa: 'nihoɴdesɯ', source: 'course' }]);
+    expect(expectedSounds(got)).toEqual(['n', 'i', 'h', 'o', 'ɴ', 'd', 'e', 's', 'ɯ']);
+  });
+});

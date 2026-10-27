@@ -418,7 +418,7 @@
               <button class="reveal" aria-expanded={!!shown[n]} onclick={() => toggle(n)}>{shown[n] ? t('talk.hide') : t('talk.show')}</button>
               {#if shown[n]}{@render words(n, s.parts.at(-1))}{/if}
               {#if Practice}<button class="practise" aria-expanded={practising === n} onclick={() => practise(n)}>🎤 {t('talk.practise')}</button>{/if}
-              {#if Practice && practising === n}<div class="practice"><Practice text={s.parts.at(-1)} {...practiceProps} /></div>{/if}
+              {#if Practice && practising === n}<div class="practice"><Practice text={s.parts.at(-1)} ph={readings[s.parts.at(-1)]?.ph} {...practiceProps} /></div>{/if}
             {:else if s.type === 'prompt'}
               <span class="ask">{shownNarration(nar(s.ask))}</span>{#if s.review} <span class="review-tag">{t('talk.review')}</span>{/if}
               {#if s.review && n === firstReview && unit.review_kanji?.length}{@render kanjiList(unit.review_kanji, 'review-kanji', 'talk.kanji.review')}{/if}
@@ -426,7 +426,7 @@
               <button class="answer" onclick={() => answer(s, n)}>{t('talk.answer')}</button>
               {#if Practice}<button class="practise" aria-expanded={practising === n} onclick={() => practise(n)}>🎤 {t('talk.practise')}</button>{/if}
               {#if shown[n]}{@render words(n, s.answer.text)}{/if}
-              {#if Practice && practising === n}<div class="practice"><Practice text={s.answer.text} {...practiceProps} /></div>{/if}
+              {#if Practice && practising === n}<div class="practice"><Practice text={s.answer.text} ph={readings[s.answer.text]?.ph} {...practiceProps} /></div>{/if}
             {:else if s.type === 'selfcheck'}
               <strong class="selfcheck-q">{t('talk.selfcheck')}</strong>
               <button class="done-yes" onclick={() => markDone(true)}>{t('talk.selfcheck.yes')}</button>

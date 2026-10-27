@@ -14,7 +14,7 @@
   import { loadGlosses } from '../lib/fetchers.js';
 
   let { lang, voice = null, fetchImpl, data, base = '/', lexicon = null, say = () => {}, storage = null, award = null, loadParadigm = null,
-    text: given = null, compact = false } = $props();   // compact: inside a conversation step, on the given sentence (Allan, 2026-10-21)
+    text: given = null, ph = null, compact = false } = $props();   // compact: inside a conversation step, on the given sentence (Allan, 2026-10-21)
 
   const params = typeof location !== 'undefined' ? new URLSearchParams(location.search) : new URLSearchParams();
   let text = $state(given ?? params.get('text') ?? '');
@@ -66,7 +66,7 @@
   function edited() { clearTimeout(debounce); debounce = setTimeout(transcribeText, 500); }
   async function transcribeText() {
     if (!ready) return;
-    expected = await expectedFor(text, { index, lookup, lemmas, ipa, preferred, formIpa, noSpaces: !!lang.script?.noSpaces || ['ja', 'zh'].includes(lang.code) });
+    expected = await expectedFor(text, { index, lookup, lemmas, ipa, preferred, formIpa, course: text === given ? ph : null, noSpaces: !!lang.script?.noSpaces || ['ja', 'zh'].includes(lang.code) });
     pairs = []; result = null;
     const mine = text;
     askWiktionary().then(() => { if (mine === text && heard.length) compare(); });

@@ -12,7 +12,7 @@ and measure the result on lemmas held out from learning.
 
 Output shards mirror data/<code>/forms/<shard>.json: { form: ipa } for forms Wiktionary has no IPA of its own for.
 """
-import json, random, re, subprocess, sys, unicodedata
+import json, os, random, re, subprocess, sys, unicodedata
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -20,6 +20,9 @@ ESPEAK = {'de': 'de', 'la': 'la', 'grc': 'grc', 'el': 'el', 'ru': 'ru', 'uk': 'u
           'hu': 'hu', 'tr': 'tr', 'is': 'is', 'lt': 'lt', 'ro': 'ro', 'sh': 'sr', 'mk': 'mk', 'pt': 'pt-br', 'sv': 'sv',
           'ar': 'ar', 'fr': 'fr-fr', 'it': 'it', 'es': 'es', 'en': 'en-us', 'nl': 'nl', 'hi': 'hi', 'bn': 'bn',
           'fa': 'fa', 'id': 'id', 'sw': 'sw', 'vi': 'vi', 'tl': 'tl'}
+# espeak-ng connects to the sound server even with -q; thousands of connections clipped the audio of whatever else
+# was playing (Allan, 2026-10-27). No server: it only writes IPA.
+QUIET = {**os.environ, 'PULSE_SERVER': '/nonexistent'}
 MARKS = set('ˈˌ.‿/[]()-|‖') | {'̯', '͡', '͜'}
 JOIN = re.compile(r'[̀-ͯʰ-˿᷀-᷿]')   # diacritics and modifier letters stay with their letter
 
@@ -43,14 +46,16 @@ def clean_espeak(s):
 
 
 def espeak(words, voice, chunk=2000):
-    """one IPA string per word; checked chunk by chunk, a chunk that does not line up goes word by word"""
+    """one IPA string per word; checked chunk by chunk, a chunk that does not line up goes word by word.
+    One word per line, and the input ends with a newline: espeak drops the last letter of input without one, and
+    several voices (mk, pl, cs, pt …) read a "." separator aloud."""
     out = []
     for i in range(0, len(words), chunk):
         part = words[i:i + chunk]
-        run = lambda args, text: subprocess.run(args, input=text.encode(), capture_output=True).stdout.decode('utf-8', 'replace')
-        got = run(['espeak-ng', '-q', '--ipa', '-v', voice, '--stdin'], ' . '.join(part)).split()
+        run = lambda args, text: subprocess.run(args, input=text.encode(), capture_output=True, env=QUIET).stdout.decode('utf-8', 'replace')
+        got = run(['espeak-ng', '-q', '--ipa', '-v', voice, '--stdin'], '\n'.join(part) + '\n').split()
         if len(got) != len(part):        # espeak merged or split something: this chunk word by word
-            got = [run(['espeak-ng', '-q', '--ipa', '-v', voice, '--stdin'], w).strip().replace(' ', '') for w in part]
+            got = [run(['espeak-ng', '-q', '--ipa', '-v', voice, '--stdin'], w + '\n').strip().replace(' ', '') for w in part]
         out += [clean_espeak(g) for g in got]
     return out
 

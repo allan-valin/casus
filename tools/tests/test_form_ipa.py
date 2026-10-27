@@ -24,3 +24,19 @@ def test_learning_finds_a_systematic_difference_and_measures_it():
 
 def test_espeak_language_tags_are_removed():
     assert clean_espeak('(en)wɜːd(de)') == 'wɜːd'
+
+
+# 2026-10-27: the 2026-10-23 run was corrupt. espeak drops the last letter of stdin without a newline
+# (разбрав → razbræ), and the mk/pl/cs/… voices read "." aloud ("точка"), so every chunk fell back to that path.
+from form_ipa import espeak
+
+
+def test_espeak_keeps_the_last_letter_of_every_word():
+    got = espeak(['добро', 'разбрав', 'книга', 'разбравме'], 'mk')
+    assert [g.replace('ˈ', '').replace('ˌ', '') for g in got] == ['dobro', 'razbræf', 'kniɡæ', 'razbrævme']
+
+
+def test_espeak_single_word_and_voices_that_read_punctuation():
+    assert espeak(['ab'], 'pl')[0].endswith('p')
+    for voice in ('pl', 'cs', 'hu', 'sv', 'pt-br', 'de'):
+        assert len(espeak(['dom', 'kot', 'las'], voice)) == 3

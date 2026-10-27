@@ -51,7 +51,10 @@ export function words(text) {
 
 /** each word with its expected IPA: exact (the word is a headword), lemma (an inflected form: the lemma's IPA,
  * approximate) or none */
-export async function expectedFor(text, { index, lookup, lemmas, ipa, preferred = [], noSpaces = false, formIpa = null }) {
+export async function expectedFor(text, { index, lookup, lemmas, ipa, preferred = [], noSpaces = false, formIpa = null, course = null }) {
+  // a course line's own sounds (Japanese: computed by the build from our kana, tools/ja_phonemes.py) beat any cut into
+  // headwords — 日本 is not 日 + 本, and conjugated verbs have no headword (Allan, 2026-10-27)
+  if (course) return [{ word: text, ipa: course.replace(/[↑↓#,.?!\s]/gu, ''), source: 'course' }];
   const out = [];
   for (const word of noSpaces ? greedyWords(text, index) : words(text)) {
     const k = key(word);
@@ -99,7 +102,7 @@ export function sampleFor(sym, index) {
 /** the sounds to compare against: exact words give their sounds, the others a wildcard '*' */
 export function expectedSounds(expected) {
   // a form's generated IPA is compared too (it is that form's own); a lemma's IPA for an inflected form is not
-  return expected.flatMap((w) => (w.source === 'exact' || w.source === 'wikt' || w.source === 'form' ? segments(w.ipa) : ['*']));
+  return expected.flatMap((w) => (w.source === 'exact' || w.source === 'wikt' || w.source === 'form' || w.source === 'course' ? segments(w.ipa) : ['*']));
 }
 
 /** each word with variants set to the one that makes the whole sentence closest to what was heard (one word at a time,
