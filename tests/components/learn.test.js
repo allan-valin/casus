@@ -203,6 +203,17 @@ describe('Learn, Allan 2026-10-20 night list', () => {
     expect(topics.every((d) => !d.open)).toBe(true);
     expect(container.querySelector('.topic summary .chev')).not.toBe(null);
   });
+  it('a search looks in every level, not only the selected one (Allan, 2026-10-27)', async () => {
+    const { container } = render(Learn, props({ loadLesson: async (id) => LESSONS[id] ?? { ...LESSONS['n5-004'], id } }));
+    await flush();
+    await fireEvent.input(container.querySelector('input.search'), { target: { value: 'if' } });
+    await flush();
+    expect(container.querySelector('.lesson-row[data-lesson="n4-001"]')).not.toBe(null);
+    expect(container.querySelector('.level-head[data-level="N4"]')).not.toBe(null);
+    await fireEvent.click(container.querySelector('.lesson-row[data-lesson="n4-001"]'));
+    await flush();
+    expect(container.querySelector('.lesson-page')).not.toBe(null);
+  });
   it('a lesson page: back button first, the title below it as its own heading', async () => {
     const { container } = render(Learn, props());
     await flush();

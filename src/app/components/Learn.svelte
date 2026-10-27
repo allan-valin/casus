@@ -284,26 +284,37 @@
       </Picker>
     </div>
     <input class="search" type="search" bind:value={search} placeholder={t('learn.search')} />
-    {@const parts = learnSections(level?.topics)}
-    {#each parts as sec, i (sec.id)}
-      {#if sec.topics.some((tp) => visible(tp).length)}
-        {#if parts.length > 1 || sec.id === 'made'}<h3 class="sec-head" class:made-head={sec.id === 'made'} data-section={sec.id}>{t(`learn.sec.${sec.id}`)}</h3>
-          {#if sec.id === 'made'}<p class="made-note">{t('learn.madeNote')}</p>{/if}{/if}
-        {@render topicList(sec.topics)}
-      {/if}
-    {/each}
+    {#if search.trim()}
+      <!-- a search looks in every level, each level's matches under its own heading (Allan, 2026-10-27) -->
+      {#each learn.levels as lv (lv.id)}
+        {@const list = learnSections(lv.topics).flatMap((sec) => sec.topics)}
+        {#if list.some((tp) => visible(tp).length)}
+          <h3 class="sec-head level-head" data-level={lv.id}>{lv.title ? loc(lv.title) : lv.id}</h3>
+          {@render topicList(list, lv)}
+        {/if}
+      {/each}
+    {:else}
+      {@const parts = learnSections(level?.topics)}
+      {#each parts as sec, i (sec.id)}
+        {#if sec.topics.some((tp) => visible(tp).length)}
+          {#if parts.length > 1 || sec.id === 'made'}<h3 class="sec-head" class:made-head={sec.id === 'made'} data-section={sec.id}>{t(`learn.sec.${sec.id}`)}</h3>
+            {#if sec.id === 'made'}<p class="made-note">{t('learn.madeNote')}</p>{/if}{/if}
+          {@render topicList(sec.topics, level)}
+        {/if}
+      {/each}
+    {/if}
   {/if}
   {#if learn}<p class="credit">{loc(learn.credit)}</p>{/if}
 </section>
 
-{#snippet topicList(list)}
+{#snippet topicList(list, lv)}
     {#each list as tp (tp.key)}
       {#if visible(tp).length}
         <details class="topic" data-kind={tp.kind} open={!!search.trim()}>
           <summary><span class="chev" aria-hidden="true">▸</span><span class="topic-title">{tp.kind === 'grammar' || tp.title ? loc(tp.title) : kindName(tp.kind)}</span> <span class="topic-n">{visible(tp).length}</span></summary>
           <ul class="lesson-list">
             {#each visible(tp) as e (e.id)}
-              <li><button class="lesson-row" data-lesson={e.id} onclick={() => open({ level, topic: tp, entry: e })}>
+              <li><button class="lesson-row" data-lesson={e.id} onclick={() => { levelId = lv.id; open({ level: lv, topic: tp, entry: e }); }}>
                 <span class="l-title" lang={lang.bcp47}>{e.title}</span><span class="l-meaning"><span class="l-meaning-text">{loc(e.meaning)}</span>{#if !e.ai && !e.generated} <span class="human-mark" title={t('learn.human.title')}>👤</span>{/if}{#if e.ai} <span class="ai-mark" title={t('learn.ai.title')}>✦ AI</span>{/if}{#if e.generated} <span class="ai-mark gen-mark" title={t('learn.gen.title')}>⚙</span>{/if}</span>
                 {#if doneOf(e.id) !== null}<span class="pct done" class:full={doneOf(e.id) === 100} title={t('learn.done', { pct: doneOf(e.id) })}>{doneOf(e.id) === 100 ? '👑' : `${doneOf(e.id)}%`}</span>
                 {:else if pct(e.id) !== null}<span class="pct" class:good={pct(e.id) >= 80} title={t('learn.score', { pct: pct(e.id), n: progress[e.id].total })}>{pct(e.id)}%</span>{/if}
