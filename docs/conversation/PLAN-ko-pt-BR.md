@@ -229,3 +229,249 @@ hangul → sound converter for our browser engine.
 **Before units:** the hangul → sound converter for the browser voice, as for Macedonian.
 
 **Allan's feedback 2026-10-22 (applied):** A1-17 adds the "gamer in the PC bang" stereotype; B1-10 tells the North Korea story (armistice, no peace treaty). Checklist: docs/conversation/FEEDBACK-2026-10-22-ja-ko.md.
+
+
+## Revision 2026-10-27 (T7) — every Learn grammar point used, and the lessons of today's corrections
+
+Approved in advance by Allan (2026-10-27: "assuming I approved the plan"); units A1-01…10 are written first.
+
+1. **All Korean Learn grammar is taught.** 369 points (31 core lessons + the NIKL basic grammar list, TOPIK 1–6 →
+   A1–C2) are placed in units in the appendix below (`tools/plan_learn_map.py ko <plan>` regenerates it). Each unit's
+   `learn_lessons` lists its ids; the T1 checker fails the build on a missing id or an unplaced point, and Learn shows
+   "practised in Conversation unit X". The appendix is the starting point — while writing a unit I may move a point
+   one or two units when the scene needs it, never out of its level.
+2. **A1 now has the past and the formal style.** TOPIK 1 contains -었-, -겠-, -(으)시-, -습니다/-습니까 and -(으)ㄹ 거예요,
+   so A1 teaches them (second half of A1); A2-01 becomes "past in longer stories" instead of the first past.
+3. **Register sort (T2).** Daily grammar lives in the story. Literary, archaic or written-only endings (하오체 -오/-소/-구려,
+   하게체 -네/-게, -노라면, -으리오, -건대, -은들, -을망정 …) become an **evening lesson** step inside a level-fitting
+   story unit (a letter, a poem, a 사극 drama on TV) — taught, recognised, not put in anyone's mouth.
+4. **Formality (T4).** The story bible records who speaks to whom in which style and when it may change, from Korean
+   sources (국립국어원 『표준 언어 예절』 first): 박 할머니 → you: 해요체, later 반말 with -아/어 (an elder may; you never);
+   you → 할머니, 팀장님, 사장님: 해요체/합쇼체 always; 민준 ↔ you: 해요체 until A1-23 "말 놓을까요?", 반말 after. The
+   checker flags a line that breaks the table.
+5. **Vocabulary yardstick (T5).** Level vocabulary = Learn's TOPIK vocabulary of that level + the 국립국어원 learner
+   vocabulary grades / frequency band for the level; no fixed cap.
+6. **Pronunciation (P1).** Korean spelling ≠ sound (같이 [가치], 먹는 [멍는], 학교 [학꾜], 좋아요 [조아요]). The build
+   computes each line's sounds once, like Japanese: hangul → IPA with the standard rules (연음, 비음화, 경음화, ㅎ 탈락,
+   구개음화, 유음화), tested on such pairs; the voice reads them and the pronunciation compare scores them. This replaces
+   the "hangul → sound converter" item above. Check: every practice line has its sounds (tools/ipa_coverage.py).
+7. **Script hygiene.** Hangul in NFC syllables, no compatibility jamo inside words, no Latin letter inside a Korean word
+   (2026-10-27: сè with a Latin è hid 297 Macedonian words from every lookup) — a checker rule for every course.
+8. **Unchanged from the corrections, automatic in the app:** content search (C1), level tags, the bold self-check heading
+   "most (80%) of the sentences" (C8), narration in the learner's language, else English (C11).
+9. **Research rule (2026-10-22):** cultural claims checked in Korean sources (what Koreans say), cited in the unit header.
+
+**Before A1-01 is playable:** the Korean voice. MMS-TTS Korean (CC BY-NC 4.0, allowed: non-commercial) or a Piper
+Korean model if one exists — test both, samples for Allan's ear. Units can be written before it.
+
+## Appendix — Learn grammar per unit (generated 2026-10-27)
+
+### A1 — 59 Learn points (TOPIK 1)
+
+| # | Unit | Learn points (ids) | Evening lesson (literary) |
+|---|---|---|---|
+| 01 | A dona do apartamento | 이에요 / 예요 `ko-copula`, 한글 `ko-hangul`, 이 `ko-nikl-1`, 과 `ko-nikl-2` | — |
+| 02 | O quarto | 까지 `ko-nikl-3` | — |
+| 03 | O corpo | 은/는, 이/가 `ko-topic-subject`, 께서 `ko-nikl-4`, 은1 `ko-nikl-5` | — |
+| 04 | A loja de conveniência | 도 `ko-nikl-6` | — |
+| 05 | Hangul | 을1 `ko-nikl-7`, 이랑 `ko-nikl-8` | — |
+| 06 | O tempo | 가요, 먹어요 `ko-haeyo`, 으로 `ko-nikl-9` | — |
+| 07 | O escritório | 을/를 `ko-object`, 부터 `ko-nikl-10`, 에 `ko-nikl-11` | — |
+| 08 | Quantos anos? | 에게 `ko-nikl-12` | — |
+| 09 | Cores | 갔어요, 먹었어요 `ko-past`, 의 `ko-nikl-14`, 하고 `ko-nikl-15` | — |
+| 10 | Números | 만 `ko-nikl-16` | — |
+| 11 | Duas mãos | 안, 못 `ko-negation`, 이다 `ko-nikl-17`, 한테 `ko-nikl-18` | — |
+| 12 | Animais | 보다 `ko-nikl-19` | — |
+| 13 | O metrô | 에, 에서 `ko-place`, 에서 `ko-nikl-13`, -겠- `ko-nikl-20`, -었- `ko-nikl-21` | — |
+| 14 | O almoço do trabalho | -고 싶다 `ko-want`, -으시- `ko-nikl-22` | — |
+| 15 | Números e formas | -고 `ko-nikl-23` | — |
+| 16 | Delivery | -으니까 `ko-nikl-24`, -으러 `ko-nikl-25` | — |
+| 17 | Não sou idol | -(으)ㄹ 거예요 `ko-future`, -어서 `ko-nikl-26` | — |
+| 18 | Comida e cozinha | -지만 `ko-nikl-27`, -으려고 `ko-nikl-28` | — |
+| 19 | O lixo | -습니까 `ko-nikl-29` | — |
+| 20 | Eu quero… | -고, -지만 `ko-and-but`, -습니다 `ko-nikl-30`, -읍시다 `ko-nikl-31` | — |
+| 21 | Plantas | -으세요 `ko-nikl-32` | — |
+| 22 | Dias e horas | -아서/-어서, -(으)니까 `ko-because`, -으십시오 `ko-nikl-33`, -고 `ko-nikl-34` | — |
+| 23 | 말 놓을까요? | -을까 `ko-nikl-35` | — |
+| 24 | O céu | -어 `ko-nikl-36`, 이 아니다 `ko-nikl-37` | — |
+| 25 | Mercado | -(으)면 `ko-if`, -고 싶다 `ko-nikl-38` | — |
+| 26 | Noraebang | -고 있다 `ko-nikl-39`, -어야 되다 `ko-nikl-40` | — |
+| 27 | A casa | -지 않다 `ko-nikl-41` | — |
+| 28 | A família | 하나, 둘 / 일, 이 `ko-numbers`, -을 수 있다 `ko-nikl-42`, -지 못하다 `ko-nikl-43` | — |
+| 29 | Sinto muito | -기 전에 `ko-nikl-44` | — |
+| 30 | Esporte | -은 후에 `ko-nikl-45` | — |
+
+### A2 — 55 Learn points (TOPIK 2)
+
+| # | Unit | Learn points (ids) | Evening lesson (literary) |
+|---|---|---|---|
+| 01 | O que você fez no sábado? | -는, -(으)ㄴ, -(으)ㄹ `ko-adnominal`, 께 `ko-nikl-46`, 마다 `ko-nikl-47` | — |
+| 02 | O cartão de estrangeiro | 밖에 `ko-nikl-48` | — |
+| 03 | A água | 처럼 `ko-nikl-49`, 에서부터(서부터) `ko-nikl-50` | — |
+| 04 | O banco | -고 있다 `ko-progressive`, 에다가 `ko-nikl-51` | — |
+| 05 | No médico | 에게로 `ko-nikl-52`, 에게서 `ko-nikl-53` | — |
+| 06 | Eletricidade | 한테서 `ko-nikl-54` | — |
+| 07 | O 회식 | -아/어 보다 `ko-try`, 이나 `ko-nikl-55`, -거나 `ko-nikl-56` | — |
+| 08 | Chuseok | -(으)시- `ko-honorific`, -는데 `ko-nikl-57` | — |
+| 09 | Dinheiro e porcentagem | -으면 `ko-nikl-58`, -으면서 `ko-nikl-59` | — |
+| 10 | Um encontro arranjado | -게 `ko-nikl-60` | — |
+| 11 | Casais | -아야/어야 하다 `ko-must`, -다가1(1) `ko-nikl-61`, -기 `ko-nikl-62` | — |
+| 12 | Geografia | -는 `ko-nikl-63` | — |
+| 13 | Hongdae à noite | -은 `ko-nikl-64`, -을 `ko-nikl-65` | — |
+| 14 | Brasil = futebol e perigo? | -(으)ㄹ 수 있다 `ko-can`, -은 `ko-nikl-66` | — |
+| 15 | Música | -음 `ko-nikl-67`, -는군 `ko-nikl-68` | — |
+| 16 | Gorjeta? Não | -을게 `ko-nikl-69` | — |
+| 17 | O celular quebrou | -(으)려고, -(으)러 `ko-intent`, -지 `ko-nikl-70`, -는데 `ko-nikl-71` | — |
+| 18 | Provérbios | -네 `ko-nikl-72` | — |
+| 19 | Mudança | -을래 `ko-nikl-73`, -게 되다 `ko-nikl-74` | — |
+| 20 | Futsal no domingo | -기 때문에 `ko-nikl-75` | — |
+| 21 | Alertas no celular | -는데 `ko-background`, -기로 하다 `ko-nikl-76`, -는 것 같다 `ko-nikl-77` | — |
+| 22 | Ar poluído | -은 지 `ko-nikl-78` | — |
+| 23 | Comida de rua | -는 것 `ko-nikl-79`, -는 동안에 `ko-nikl-80` | — |
+| 24 | Dormir pouco | -아도/어도 `ko-even`, -은 적이 있다 `ko-nikl-81` | — |
+| 25 | O cabeleireiro | -을 것 `ko-nikl-82`, -을 때 `ko-nikl-83` | — |
+| 26 | A confissão | -을까 보다 `ko-nikl-84` | — |
+| 27 | Aparência | -기, -게 `ko-nominal`, -어 보다 `ko-nikl-85`, -어 있다 `ko-nikl-86` | — |
+| 28 | Viagem a Busan | -어 주다 `ko-nikl-87` | — |
+| 29 | Saudade de casa | -어도 되다 `ko-nikl-88`, -지 말다 `ko-nikl-89` | — |
+| 30 | Piadas | -을 수밖에 없다 `ko-nikl-90` | — |
+
+### B1 — 71 Learn points (TOPIK 3)
+
+| # | Unit | Learn points (ids) | Evening lesson (literary) |
+|---|---|---|---|
+| 01 | O 찜질방 | 간다, 먹는다 `ko-plain`, 같이 `ko-nikl-91`, 이고 `ko-nikl-92`, 대로 `ko-nikl-93` | — |
+| 02 | O que você acha? | 으로부터 `ko-nikl-94`, 만큼 `ko-nikl-95` | — |
+| 03 | A célula | 보고 `ko-nikl-96`, 뿐 `ko-nikl-97` | — |
+| 04 | Namorando | 아1 `ko-nikl-98`, 요1 `ko-nikl-99` | — |
+| 05 | Os pais | 이라고1 `ko-nikl-100`, -었었- `ko-nikl-101` | — |
+| 06 | Energia | -기 때문에 `ko-because-2`, -거든 `ko-nikl-102`, -는다거나 `ko-nikl-103` | — |
+| 07 | 반말 errado | -는다고 `ko-nikl-104`, -으나 `ko-nikl-105` | — |
+| 08 | O casamento | -어다가 `ko-nikl-108`, -어도 `ko-nikl-109`, -어야 `ko-nikl-110` | — |
+| 09 | Estatística | -어야지 `ko-nikl-111`, -었더니 `ko-nikl-112` | — |
+| 10 | O serviço militar | -자마자 `ko-nikl-113`, -다가1(2) `ko-nikl-114` | — |
+| 11 | Fofoca | -으니 `ko-nikl-115`, -으려면 `ko-nikl-116` | — |
+| 12 | Felicidade | -던- `ko-nikl-117`, -거든 `ko-nikl-118` | — |
+| 13 | A ressaca | -는구나 `ko-nikl-119`, -는다 `ko-nikl-120` | — |
+| 14 | Briga de casal | -잖아 `ko-nikl-122`, -던데 `ko-nikl-121`, -자 `ko-nikl-123` | — |
+| 15 | Liberdade | -니 `ko-nikl-124`, -게 하다 `ko-nikl-125` | — |
+| 16 | Desculpas | 보이다, 먹이다 `ko-passive-causative`, -고 나다 `ko-nikl-126`, -고 말다 `ko-nikl-127`, -고 싶어 하다 `ko-nikl-128` | — |
+| 17 | Saída número 7 | -은 결과 `ko-nikl-129`, -은 다음에 `ko-nikl-130` | — |
+| 18 | Arte | -는 대신에 `ko-nikl-131`, -는 만큼 `ko-nikl-132` | — |
+| 19 | Planos que mudaram | -는 반면 `ko-nikl-133`, -나 보다 `ko-nikl-134` | — |
+| 20 | Alguém, ninguém | -을 텐데 `ko-nikl-135`, -기 위해 `ko-nikl-136` | — |
+| 21 | Literatura | 만 아니면 `ko-nikl-137`, -으면 안 되다 `ko-nikl-138` | — |
+| 22 | As notícias | -다고 하다 `ko-reported`, -으면 좋겠다 `ko-nikl-139`, -어 가다 `ko-nikl-140` | — |
+| 23 | PC bang | -느라고 `ko-nikl-106`, -어 가지고 `ko-nikl-141`, -어 놓다 `ko-nikl-142`, -어 두다 `ko-nikl-143` | — |
+| 24 | Línguas | -어 드리다 `ko-nikl-144`, -어야겠- `ko-nikl-145` | — |
+| 25 | Morar junto? | -어지다 `ko-nikl-146`, 에 대하여 `ko-nikl-147` | — |
+| 26 | Aniversário | -을 테니 `ko-nikl-148`, -어 오다 `ko-nikl-149` | — |
+| 27 | Ironia | -기는 `ko-nikl-150`, -는 모양이다 `ko-nikl-151` | — |
+| 28 | A estação das chuvas | -는 편이다 `ko-nikl-152`, -는가 보다 `ko-nikl-153` | — |
+| 29 | A vizinha sozinha | -도록 `ko-nikl-107`, -는 중이다 `ko-nikl-154`, -으려다가 `ko-nikl-155` | — |
+| 30 | Sexta à noite | -어 보이다 `ko-nikl-156`, -는다고 `ko-nikl-157` | — |
+
+### B2 — 69 Learn points (TOPIK 4)
+
+| # | Unit | Learn points (ids) | Evening lesson (literary) |
+|---|---|---|---|
+| 01 | A entrevista | -(으)ㄹ 때, -기 전에, -(으)ㄴ 후에 `ko-time-clauses`, 커녕 `ko-nikl-158`, 이나마 `ko-nikl-159`, 이며 `ko-nikl-160` | — |
+| 02 | O contrato | 이든 `ko-nikl-161`, 이란 `ko-nikl-162` | — |
+| 03 | DNA | 이면 `ko-nikl-163`, 이야 `ko-nikl-164` | — |
+| 04 | O primeiro dia | 치고 `ko-nikl-165`, 까지2 `ko-nikl-166` | — |
+| 05 | A reunião | -는 바람에 `ko-nikl-211`, 이라도 `ko-nikl-167`, 으로서 `ko-nikl-168` | — |
+| 06 | Química | 으로써 `ko-nikl-169`, 마저 `ko-nikl-170` | — |
+| 07 | E-mails formais | -거니와 `ko-nikl-171`, -고도 `ko-nikl-172` | — |
+| 08 | Hora extra | -고자 `ko-nikl-173`, -기에 `ko-nikl-174` | -더라 `ko-nikl-190` |
+| 09 | O universo | -는지 `ko-nikl-175`, -다시피 `ko-nikl-176` | — |
+| 10 | O telefone | -으므로 `ko-nikl-179`, -을래야 `ko-nikl-180` | — |
+| 11 | O 회식 é obrigatório? | -고서 `ko-nikl-181`, -는다면 `ko-nikl-182` | — |
+| 12 | Probabilidade | -더니 `ko-nikl-183`, -던데 `ko-nikl-184` | — |
+| 13 | O prazo | -듯이 `ko-nikl-185`, -을수록 `ko-nikl-186` | — |
+| 14 | O chefe difícil | -으며 `ko-nikl-187`, -는다니 `ko-nikl-188` | — |
+| 15 | Verdade e mídia | — | -더군 `ko-nikl-189`, -어라 `ko-nikl-191` |
+| 16 | Pedir folga | -(으)면 좋겠다, -거든 `ko-conditions-2`, -게 `ko-nikl-192`, -는다면서 `ko-nikl-193`, -나 `ko-nikl-194` | — |
+| 17 | Café no trabalho | -을걸 `ko-nikl-195`, -어야지 `ko-nikl-196` | — |
+| 18 | Política sem briga | -더라도 `ko-nikl-177`, -고 `ko-nikl-197`, -다니 `ko-nikl-198` | — |
+| 19 | A apresentação | -을 따름이다 `ko-nikl-199`, -고 들다 `ko-nikl-200` | — |
+| 20 | O cliente | -고 보다 `ko-nikl-201`, -고 해서 `ko-nikl-202` | — |
+| 21 | Religião | -든지 `ko-nikl-178`, -는 김에 `ko-nikl-203`, -는 사이에 `ko-nikl-205` | — |
+| 22 | Ano-novo lunar | -는 듯 `ko-nikl-206`, -는 줄 `ko-nikl-207` | — |
+| 23 | A promoção | -는 탓에 `ko-nikl-208`, -는다거나 `ko-nikl-209` | — |
+| 24 | O mercado de trabalho | -나 싶다 `ko-nikl-210`, -는 한 `ko-nikl-212` | — |
+| 25 | Home office | -는 대로 `ko-nikl-204`, 으로 인하여 `ko-nikl-213`, 만 같아도 `ko-nikl-214` | — |
+| 26 | Crew de corrida | -어 대다 `ko-nikl-215`, -어서인지 `ko-nikl-216` | — |
+| 27 | Por que não casar? | 에 따라 `ko-nikl-217`, 에 비하여 `ko-nikl-218` | — |
+| 28 | A festa de fim de ano | 에 의하여 `ko-nikl-219`, -어 버리다 `ko-nikl-220` | — |
+| 29 | O pedido | -을 모양이다 `ko-nikl-221`, -을 뻔하다 `ko-nikl-222` | — |
+| 30 | O futuro | -는대 `ko-nikl-223`, -는 통에 `ko-nikl-224` | — |
+
+### C1 — 58 Learn points (TOPIK 5)
+
+| # | Unit | Learn points (ids) | Evening lesson (literary) |
+|---|---|---|---|
+| 01 | enrolling in a lifelong-learning course | -습니다, -ㅂ니까 `ko-formal`, 이라든가 `ko-nikl-225`, 따라 `ko-nikl-226` | — |
+| 02 | the 산악회, the summit | 조차 `ko-nikl-227`, -지 `ko-nikl-228` | — |
+| 03 | a 전세 contract and the deposit | -을뿐더러 `ko-nikl-229`, -고는 `ko-nikl-230` | — |
+| 04 | noise between floors | -길래 `ko-nikl-231`, -다가는 `ko-nikl-232` | — |
+| 05 | the year-end tax settlement | -을지라도 `ko-nikl-233`, -느니 `ko-nikl-234` | — |
+| 06 | defending a view | -네 `ko-nikl-235` | — |
+| 07 | a holiday at the in-laws' | -다 `ko-nikl-236`, ­으려고 `ko-nikl-238` | — |
+| 08 | the used-car market | -고말고 `ko-nikl-240` | -거라 `ko-nikl-239` |
+| 09 | a fender-bender, insurance | -는가 `ko-nikl-241`, -는걸 `ko-nikl-242` | — |
+| 10 | a 돌잔치 and the 돌잡이 | -다니 `ko-nikl-237`, -데 `ko-nikl-243`, -더라고 `ko-nikl-244` | — |
+| 11 | a hospital funeral hall | -는다니 `ko-nikl-245`, -었던 `ko-nikl-246` | — |
+| 12 | farm work with 민준's grandfather | 에 관하여 `ko-nikl-247` | — |
+| 13 | a candidate's promises | -자기에 `ko-nikl-248`, -게 마련이다 `ko-nikl-249` | — |
+| 14 | a candlelight rally | -게 생겼다 `ko-nikl-250`, -기 나름이다 `ko-nikl-251` | — |
+| 15 | a university hospital and the wait | -기가 바쁘게 `ko-nikl-252`, -기가 쉽다 `ko-nikl-253` | — |
+| 16 | delivering coal briquettes | -(으)ㅁ `ko-nominalizer-eum`, -기만 하다 `ko-nikl-254`, -기에 따라 `ko-nikl-255` | — |
+| 17 | parental leave at work | -기에 앞서(서) `ko-nikl-256`, -은 나머지 `ko-nikl-257` | — |
+| 18 | the hiking club runs a race | -는 데다가 `ko-nikl-258` | — |
+| 19 | the 혼인신고 forms | -는 동시에 `ko-nikl-259`, -는 듯하다 `ko-nikl-260` | — |
+| 20 | pregnancy and the postpartum centre | -는 법이다 `ko-nikl-261`, -는 이상 `ko-nikl-262` | — |
+| 21 | a long-term visa | -은 채로 `ko-nikl-263`, -는 척하다 `ko-nikl-264` | — |
+| 22 | the daycare waiting list | -는 가운데 `ko-nikl-265`, 는 말할 것도 없고 `ko-nikl-266` | — |
+| 23 | Portuguese at home, Korean outside | -을 만하다 `ko-nikl-267`, -을 법하다 `ko-nikl-268` | — |
+| 24 | builders and delays | -을 테다 `ko-nikl-269` | — |
+| 25 | a formal complaint to an office | -을 테면 `ko-nikl-270`, -을 테지만 `ko-nikl-271` | — |
+| 26 | the hiking club leader retires | -으려나 보다 `ko-nikl-272`, 를 가지고 `ko-nikl-273` | — |
+| 27 | burnout and a counsellor | -으면 몰라도 `ko-nikl-274`, 에도 불구하고 `ko-nikl-275` | — |
+| 28 | parents visit; you translate | -는데도 `ko-nikl-276`, -어 내다 `ko-nikl-277` | — |
+| 29 | the TOPIK level exam | -는다기에 `ko-nikl-278`, -는다는 것이 `ko-nikl-279` | — |
+| 30 | a birthday at the old 포차; review | -는데도 불구하고 `ko-nikl-280` | — |
+
+### C2 — 57 Learn points (TOPIK 6)
+
+| # | Unit | Learn points (ids) | Evening lesson (literary) |
+|---|---|---|---|
+| 01 | a wedding speech (축사) | -기 마련이다, -(으)ㄹ수록, -는 셈이다 `ko-advanced-expressions` | 마는 `ko-nikl-281`, 깨나 `ko-nikl-282` |
+| 02 | pretending to agree | 이라고2 `ko-nikl-283`, 을랑 `ko-nikl-284` | — |
+| 03 | the hiking club on local TV | 이라면 `ko-nikl-285` | -거들랑 `ko-nikl-286` |
+| 04 | a salary negotiation | — | -노라면 `ko-nikl-287`, -건대 `ko-nikl-288` |
+| 05 | a friend's dialect | -건만 `ko-nikl-289` | -기로서니 `ko-nikl-290` |
+| 06 | a comedy night in Hongdae | — | -느니만큼 `ko-nikl-291` |
+| 07 | a petition about a bus line | — | -되 `ko-nikl-292`, -디 `ko-nikl-293` |
+| 08 | a novel by Han Kang | — | -이라야 `ko-nikl-294`, -으련마는 `ko-nikl-295` |
+| 09 | running your own team | -는다고 `ko-nikl-297` | -자니 `ko-nikl-296` |
+| 10 | sayings at the right moment | -자면 `ko-nikl-298` | -은들 `ko-nikl-299` |
+| 11 | a landlord dispute in court | — | -을망정, `ko-nikl-300`, -을라치면 `ko-nikl-301` |
+| 12 | everyone opens a chicken shop | — | -는구려 `ko-nikl-302` |
+| 13 | a talk at a tech meetup | -는구먼 `ko-nikl-303` | -그려 `ko-nikl-304` |
+| 14 | private academies and pressure | 는 마당에 `ko-nikl-324` | -으리라 `ko-nikl-305`, -으오 `ko-nikl-306` |
+| 15 | a museum and a painful century | -으니 `ko-nikl-307` | -거들랑2 `ko-nikl-308` |
+| 16 | twenty years of the hiking club | -게 `ko-nikl-309`, -게 `ko-nikl-310` | — |
+| 17 | a joke that went wrong | -네 `ko-nikl-312` | -구려 `ko-nikl-311` |
+| 18 | an interview about foreigners | -는구만 `ko-nikl-313` | — |
+| 19 | a second opinion | -는가 `ko-nikl-314`, -나 `ko-nikl-315` | — |
+| 20 | a 펜션 with friends, splitting costs | -던 `ko-nikl-316`, -던가 `ko-nikl-317` | — |
+| 21 | listening and helping | -던가 `ko-nikl-318`, -라 `ko-nikl-319` | — |
+| 22 | Korean friends in Bom Retiro | — | -으리오 `ko-nikl-320`, -소 `ko-nikl-321` |
+| 23 | explaining saudade with 정 and 한 | -기 일쑤이다 `ko-nikl-322`, -기 짝이 없다 `ko-nikl-323` | — |
+| 24 | a town-hall meeting | -는 한이 있어도 `ko-nikl-325` | — |
+| 25 | correcting a colleague's register | -을 바에 `ko-nikl-326`, -으려도 `ko-nikl-327` | — |
+| 26 | Kim Sowol aloud (public domain) | 를 막론하고 `ko-nikl-329` | -으리라는 `ko-nikl-328` |
+| 27 | 할머니 leaves the house | -어 치우다 `ko-nikl-330`, -는다는 `ko-nikl-331` | — |
+| 28 | the big decision | 이라고는 `ko-nikl-332`, -는다던가 `ko-nikl-333` | — |
+| 29 | a farewell lunch | -으래서야 `ko-nikl-334` | -으리라고 `ko-nikl-335` |
+| 30 | the whole story; review | -자면 `ko-nikl-336` | — |
