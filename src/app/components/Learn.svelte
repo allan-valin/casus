@@ -346,9 +346,9 @@
   .system { color: var(--ink-2); font-size: 0.9em; }
   .modes { margin-left: auto; display: flex; gap: 4px; }
   .mode-tab { font: inherit; padding: 5px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); color: var(--ink); cursor: pointer; }
-  .mode-tab.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .mode-tab.active { background: var(--fill); color: var(--fill-ink); border-color: var(--accent); }
   .level-tab { font: inherit; padding: 8px 12px; border: 0; background: transparent; color: var(--ink); cursor: pointer; display: flex; justify-content: space-between; gap: 12px; }
-  .level-tab.active { background: var(--accent); color: var(--accent-ink); }
+  .level-tab.active { background: var(--fill); color: var(--fill-ink); }
   .levels { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 8px; }
   .count { font-size: 0.75em; opacity: 0.75; margin-left: 6px; }
   .search { width: 100%; box-sizing: border-box; font: inherit; padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); margin-bottom: 8px; }
@@ -370,11 +370,11 @@
   .pct { font-size: 0.8em; color: #b06000; } .pct.good { color: #2e8b57; }
   .crumbs { color: var(--ink-2); font-size: 0.9em; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
   .crumbs .back { border: 2px solid var(--accent); color: var(--accent-text); font-weight: 600; background: var(--panel); }
-  .crumbs .back:hover { background: var(--accent); color: var(--accent-ink); }
+  .crumbs .back:hover { background: var(--fill); color: var(--fill-ink); }
   .back, .prev-lesson, .next-lesson, button.primary, .to-reader { font: inherit; padding: 5px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); cursor: pointer; }
   button.primary { border-color: var(--accent); font-weight: 600; }
   h3.lesson-title { font-size: 2.1rem; margin: 18px 0 4px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-  .badge-level { font-size: 0.45em; padding: 2px 8px; border-radius: 6px; background: var(--accent); color: var(--accent-ink); }
+  .badge-level { font-size: 0.45em; padding: 2px 8px; border-radius: 6px; background: var(--fill); color: var(--fill-ink); }
   .l-sub { font-size: 1.15em; color: var(--ink-2); margin: 0 0 8px; }
   .practised { margin: 0 0 8px; font-size: .95em; }
   .human-mark { font-size: .8em; opacity: .75; }
@@ -385,7 +385,7 @@
   .toc { display: flex; flex-wrap: wrap; gap: 4px 12px; position: sticky; top: 0; background: var(--panel); padding: 6px 0; border-bottom: 1px solid var(--line-soft); z-index: 2; font-size: 0.92em; }
   .toc { align-items: center; }
   .toc a { color: var(--accent-text); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; font-weight: 600; padding: 3px 8px; border-radius: 6px; }
-  .toc a:hover { background: var(--accent); color: var(--accent-ink); text-decoration: none; }
+  .toc a:hover { background: var(--fill); color: var(--fill-ink); text-decoration: none; }
   .toc .sep { color: var(--line); font-weight: 700; }
   .l-sec { margin-top: 18px; scroll-margin-top: 48px; }
   .l-sec h4 { font-size: 1.15em; margin: 0 0 6px; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 2px; }

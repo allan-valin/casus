@@ -1,8 +1,8 @@
 /* Design tokens: a warm paper palette, deliberately not Desembarque's colours (feedback D19).
  * Everything scales with the viewport (feedback A2 addendum): type via clamp(), widths fluid. */
 :root {
-  --bg: #f4f1ea;
-  --panel: #fffdf8;
+  --bg: #f9f8f5;
+  --panel: #fffefb;
   --panel-hi: #fff8e6;
   --ink: #1d1d1b;
   --ink-2: #4a4843;
@@ -15,11 +15,12 @@
   --pill-size: clamp(0.98rem, 0.86rem + 0.4vw, 1.2rem);
   --gutter: clamp(12px, 2.5vw, 40px);
 }
-/* Colour identity (Allan, 2026-10-20): --accent and --accent-2 come from the language's flag (src/app/lib/theme.js);
- * the page tints, table heads and stripes are mixed from them, so every palette works in light and dark */
+/* Colour identity (Allan, 2026-10-20; flag logic 2026-10-27): src/app/lib/theme.js gives --accent, --accent-2, the
+ * page ground (the flag's most prominent colour, --ground at --ground-amt; white flags give a white page) and the
+ * primary-button style (--fill / --fill-ink: filled, or white with coloured text for a white flag) */
 :root {
   --accent-2: #c9a227;
-  --bg: color-mix(in srgb, var(--accent) 5%, #f4f1ea);
+  --bg: color-mix(in srgb, var(--ground, var(--accent)) var(--ground-amt, 5%), #f9f8f5);
   --panel-hi: color-mix(in srgb, var(--accent-2) 14%, #fffdf8);
   --accent-text: color-mix(in srgb, var(--accent) 88%, black);
   --table-head: color-mix(in srgb, var(--accent) 24%, #fffdf8);
@@ -28,7 +29,7 @@
 }
 :root[data-mode=dark] {
   color-scheme: dark;
-  --bg: color-mix(in srgb, var(--accent) 8%, #141317);
+  --bg: color-mix(in srgb, var(--ground, var(--accent)) var(--ground-amt, 8%), #141317);
   --panel: #1f1d23;
   --panel-hi: color-mix(in srgb, var(--accent-2) 10%, #29262e);
   --ink: #ece9e2;
@@ -40,6 +41,11 @@
   --table-head: color-mix(in srgb, var(--accent) 45%, #1f1d23);
   --table-stripe: color-mix(in srgb, var(--accent) 12%, #1f1d23);
 }
+/* selected things (active tab, pressed button, primary action): filled with the accent, or — for a flag that is mostly
+   white (Austria, Japan…) — white with coloured text and a faint tint, as the flag reads (Allan, 2026-10-27) */
+:root { --fill: var(--accent); --fill-ink: var(--accent-ink); }
+:root[data-fill=outline] { --fill: color-mix(in srgb, var(--accent) 9%, #ffffff); --fill-ink: var(--accent-text); --panel-hi: color-mix(in srgb, var(--accent) 4%, #fffefb); }
+:root[data-mode=dark][data-fill=outline] { --fill: color-mix(in srgb, var(--accent) 22%, #1f1d23); --fill-ink: var(--accent-text); --panel-hi: color-mix(in srgb, var(--accent) 6%, #29262e); }
 html { background: var(--bg); }
 body { margin: 0; color: var(--ink); font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: clamp(15px, 14px + 0.25vw, 17px); -webkit-text-size-adjust: 100%; }
 /* one height for every control, so a row of buttons, menus and fields lines up (Allan, 2026-10-22) */
@@ -48,7 +54,7 @@ button { font: inherit; padding: 6px 12px; border: 1px solid var(--line); border
 select, input[type=text], input[type=search] { min-height: var(--control-h); box-sizing: border-box; }
 button:hover { border-color: var(--accent); }
 button:disabled { opacity: 0.5; cursor: default; }
-button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); font-weight: 600; padding: 8px 18px; }
+button.primary { background: var(--fill); color: var(--fill-ink); border-color: var(--accent); font-weight: 600; padding: 8px 18px; }
 button.primary:hover { filter: brightness(1.08); }
 select { font: inherit; padding: 5px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); min-height: 36px; }
 

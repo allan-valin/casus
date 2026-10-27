@@ -2,6 +2,7 @@
 import { describe, it, expect } from 'vitest';
 import { render, fireEvent } from '@testing-library/svelte';
 import { tick } from 'svelte';
+import { themesFor } from '../../src/app/lib/theme.js';
 import ThemeControls from '../../src/app/components/ThemeControls.svelte';
 
 const store = () => { const m = new Map(); return { getItem: (k) => m.get(k) ?? null, setItem: (k, v) => m.set(k, String(v)) }; };
@@ -22,10 +23,10 @@ describe('dark/light and the colour identity menu (Allan, 2026-10-20)', () => {
     await tick();
     const sel = container.querySelector('select.palette');
     expect([...sel.options].map((o) => o.value)).toEqual(['br', 'pt', 'ao', 'mz', 'casus']);
-    expect(document.documentElement.style.getPropertyValue('--accent')).toBe('#009c3b');
+    expect(document.documentElement.style.getPropertyValue('--accent')).toBe(themesFor('pt')[0].accent);
     await fireEvent.change(sel, { target: { value: 'pt' } });
-    // Portugal takes its flag's red: Brazil already has the green (Allan, 2026-10-27: themes must look different)
-    expect(document.documentElement.style.getPropertyValue('--accent')).toBe('#da291c');
+    // Portugal's own colours: its red field (Allan, 2026-10-27)
+    expect(document.documentElement.style.getPropertyValue('--accent')).toBe(themesFor('pt')[1].accent);
     expect(s.getItem('casus:theme:pt')).toBe('pt');
   });
 });

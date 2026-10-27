@@ -50,7 +50,7 @@
   .bar.wide { display: block; width: 100%; max-width: 28em; height: 12px; border-radius: 6px; }
   .bar span { display: block; height: 100%; background: var(--accent); }
   .streak.cold { filter: grayscale(1); opacity: .6; }
-  .xp-toast { position: fixed; right: 16px; bottom: 16px; z-index: 50; padding: 10px 16px; border-radius: 10px; background: var(--accent); color: var(--accent-ink); font-weight: 700; box-shadow: 0 4px 16px rgba(0,0,0,.25); animation: pop .3s ease-out; }
+  .xp-toast { position: fixed; right: 16px; bottom: 16px; z-index: 50; padding: 10px 16px; border-radius: 10px; background: var(--fill); color: var(--fill-ink); font-weight: 700; box-shadow: 0 4px 16px rgba(0,0,0,.25); animation: pop .3s ease-out; }
   @keyframes pop { from { transform: translateY(20px); opacity: 0; } to { transform: none; opacity: 1; } }
   .big { font-size: 1.3em; font-weight: 700; }
   .achs { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(13em, 1fr)); gap: 8px; }

@@ -2,72 +2,73 @@
  * flags when several countries speak it (Portuguese: Brazil and Portugal) — with the original Casus purple always on
  * offer. The page's other colours are mixed from these in app.css. Flags: flag-icons (MIT). */
 
-// flag-icons code → accent (the flag's strongest colour, dark enough for white text unless `ink` says otherwise),
-// second colour, and the name shown in the menu
+// flag-icons code → the flag's colours, most prominent first (Allan, 2026-10-27: "use flag logic" — Switzerland is
+// mostly red, Austria has more white, Germany shows red and gold), an optional accent where the first strong colour
+// would repeat a sibling flag of the same language, and the name shown in the menu
 const FLAG = {
-  casus: { accent: '#6b4e9b', accent2: '#c9a227', name: { en: 'Casus purple', pt: 'Roxo Casus' } },
-  spqr: { accent: '#8e1414', accent2: '#d4a72c', name: { en: 'Rome (SPQR)', pt: 'Roma (SPQR)' } },
-  athens: { accent: '#4f5d2a', accent2: '#b59a3b', name: { en: 'Athens (owl)', pt: 'Atenas (coruja)' } },
-  sparta: { accent: '#9b1b1b', accent2: '#d4a72c', name: { en: 'Sparta (Λ)', pt: 'Esparta (Λ)' } },
-  va: { accent: '#9c7a00', accent2: '#ffe000', name: { en: 'Vatican', pt: 'Vaticano' } },
-  it: { accent: '#008c45', accent2: '#cd212a', name: { en: 'Italy', pt: 'Itália' } },
-  gr: { accent: '#0d5eaf', accent2: '#7fb2e5', name: { en: 'Greece', pt: 'Grécia' } },
-  cy: { accent: '#b45f06', accent2: '#4e5b31', name: { en: 'Cyprus', pt: 'Chipre' } },
-  de: { accent: '#c00000', accent2: '#ffce00', name: { en: 'Germany', pt: 'Alemanha' } },
-  at: { accent: '#c8102e', accent2: '#8a8a8a', name: { en: 'Austria', pt: 'Áustria' } },
-  ch: { accent: '#d52b1e', accent2: '#8a8a8a', name: { en: 'Switzerland', pt: 'Suíça' } },
-  jp: { accent: '#bc002d', accent2: '#333333', name: { en: 'Japan', pt: 'Japão' } },
-  arab: { accent: '#006c35', accent2: '#c9a227', name: { en: 'Arab League', pt: 'Liga Árabe' } },
-  eg: { accent: '#ce1126', accent2: '#c09300', name: { en: 'Egypt', pt: 'Egito' } },
-  ma: { accent: '#c1272d', accent2: '#006233', name: { en: 'Morocco', pt: 'Marrocos' } },
-  ru: { accent: '#0039a6', accent2: '#d52b1e', name: { en: 'Russia', pt: 'Rússia' } },
-  kr: { accent: '#003478', accent2: '#c60c30', name: { en: 'South Korea', pt: 'Coreia do Sul' } },
-  cn: { accent: '#de2910', accent2: '#ffde00', name: { en: 'China', pt: 'China' } },
-  tw: { accent: '#000095', accent2: '#fe0000', name: { en: 'Taiwan', pt: 'Taiwan' } },
-  mk: { accent: '#d20000', accent2: '#ffe600', name: { en: 'North Macedonia', pt: 'Macedônia do Norte' } },
-  fi: { accent: '#003580', accent2: '#7aa6d6', name: { en: 'Finland', pt: 'Finlândia' } },
-  in: { accent: '#c56a00', accent2: '#138808', name: { en: 'India', pt: 'Índia' } },
-  np: { accent: '#dc143c', accent2: '#003893', name: { en: 'Nepal', pt: 'Nepal' } },
-  cz: { accent: '#11457e', accent2: '#d7141a', name: { en: 'Czechia', pt: 'Tchéquia' } },
-  pl: { accent: '#dc143c', accent2: '#8a8a8a', name: { en: 'Poland', pt: 'Polônia' } },
-  tr: { accent: '#e30a17', accent2: '#8a8a8a', name: { en: 'Turkey', pt: 'Turquia' } },
-  hu: { accent: '#ce2939', accent2: '#477050', name: { en: 'Hungary', pt: 'Hungria' } },
-  is: { accent: '#02529c', accent2: '#dc1e35', name: { en: 'Iceland', pt: 'Islândia' } },
-  br: { accent: '#009c3b', accent2: '#ffdf00', name: { en: 'Brazil', pt: 'Brasil' } },
-  pt: { accent: '#046a38', accent2: '#da291c', name: { en: 'Portugal', pt: 'Portugal' } },
-  ao: { accent: '#cc092f', accent2: '#ffcb00', name: { en: 'Angola', pt: 'Angola' } },
-  mz: { accent: '#007168', accent2: '#fce100', name: { en: 'Mozambique', pt: 'Moçambique' } },
-  gb: { accent: '#012169', accent2: '#c8102e', name: { en: 'United Kingdom', pt: 'Reino Unido' } },
-  us: { accent: '#0a3161', accent2: '#b31942', name: { en: 'United States', pt: 'Estados Unidos' } },
-  au: { accent: '#012169', accent2: '#e4002b', name: { en: 'Australia', pt: 'Austrália' } },
-  es: { accent: '#aa151b', accent2: '#f1bf00', name: { en: 'Spain', pt: 'Espanha' } },
-  mx: { accent: '#006847', accent2: '#ce1126', name: { en: 'Mexico', pt: 'México' } },
-  ar: { accent: '#2f6faa', accent2: '#f6b40e', name: { en: 'Argentina', pt: 'Argentina' } },
-  co: { accent: '#003893', accent2: '#fcd116', name: { en: 'Colombia', pt: 'Colômbia' } },
-  fr: { accent: '#0055a4', accent2: '#ef4135', name: { en: 'France', pt: 'França' } },
-  be: { accent: '#c8102e', accent2: '#fdda24', name: { en: 'Belgium', pt: 'Bélgica' } },
-  nl: { accent: '#ae1c28', accent2: '#21468b', name: { en: 'Netherlands', pt: 'Países Baixos' } },
-  sr: { accent: '#377e3f', accent2: '#b40a2d', name: { en: 'Suriname', pt: 'Suriname' } },
-  ua: { accent: '#0057b7', accent2: '#ffd700', name: { en: 'Ukraine', pt: 'Ucrânia' } },
-  lt: { accent: '#006a44', accent2: '#fdb913', name: { en: 'Lithuania', pt: 'Lituânia' } },
-  hr: { accent: '#171796', accent2: '#ff0000', name: { en: 'Croatia', pt: 'Croácia' } },
-  rs: { accent: '#c6363c', accent2: '#0c4076', name: { en: 'Serbia', pt: 'Sérvia' } },
-  ba: { accent: '#002395', accent2: '#fecb00', name: { en: 'Bosnia and Herzegovina', pt: 'Bósnia e Herzegovina' } },
-  me: { accent: '#c40308', accent2: '#d4af3a', name: { en: 'Montenegro', pt: 'Montenegro' } },
-  ro: { accent: '#002b7f', accent2: '#fcd116', name: { en: 'Romania', pt: 'Romênia' } },
-  md: { accent: '#0046ae', accent2: '#ffd200', name: { en: 'Moldova', pt: 'Moldávia' } },
-  se: { accent: '#006aa7', accent2: '#fecc00', name: { en: 'Sweden', pt: 'Suécia' } },
-  bd: { accent: '#006a4e', accent2: '#f42a41', name: { en: 'Bangladesh', pt: 'Bangladesh' } },
-  id: { accent: '#ce1126', accent2: '#8a8a8a', name: { en: 'Indonesia', pt: 'Indonésia' } },
-  vn: { accent: '#da251d', accent2: '#ffcd00', name: { en: 'Vietnam', pt: 'Vietnã' } },
-  ir: { accent: '#239f40', accent2: '#da0000', name: { en: 'Iran', pt: 'Irã' } },
-  af: { accent: '#000000', accent2: '#d32011', ink: true, name: { en: 'Afghanistan', pt: 'Afeganistão' } },
-  ph: { accent: '#0038a8', accent2: '#ce1126', name: { en: 'Philippines', pt: 'Filipinas' } },
-  tz: { accent: '#1eb53a', accent2: '#00a3dd', name: { en: 'Tanzania', pt: 'Tanzânia' } },
-  ke: { accent: '#bb0000', accent2: '#006600', name: { en: 'Kenya', pt: 'Quênia' } },
-  tj: { accent: '#cc0000', accent2: '#006600', name: { en: 'Tajikistan', pt: 'Tajiquistão' } },
-  sm: { accent: '#5eb6e4', accent2: '#8a8a8a', ink: true, name: { en: 'San Marino', pt: 'San Marino' } },
-  ca: { accent: '#d80621', accent2: '#8a8a8a', name: { en: 'Canada (Québec)', pt: 'Canadá (Quebec)' } },
+  casus: { colors: ['#6b4e9b', '#c9a227'], name: { en: 'Casus purple', pt: 'Roxo Casus' } },
+  spqr: { colors: ['#8e1414', '#d4a72c'], name: { en: 'Rome (SPQR)', pt: 'Roma (SPQR)' } },
+  athens: { colors: ['#4f5d2a', '#b59a3b'], name: { en: 'Athens (owl)', pt: 'Atenas (coruja)' } },
+  sparta: { colors: ['#9b1b1b', '#d4a72c'], name: { en: 'Sparta (Λ)', pt: 'Esparta (Λ)' } },
+  va: { colors: ['#ffe000', '#ffffff', '#b8860b'], name: { en: 'Vatican', pt: 'Vaticano' } },
+  it: { colors: ['#008c45', '#ffffff', '#cd212a'], name: { en: 'Italy', pt: 'Itália' } },
+  gr: { colors: ['#0d5eaf', '#ffffff'], name: { en: 'Greece', pt: 'Grécia' } },
+  cy: { colors: ['#ffffff', '#d57800', '#4e5b31'], name: { en: 'Cyprus', pt: 'Chipre' } },
+  de: { colors: ['#ffce00', '#dd0000', '#000000'], name: { en: 'Germany', pt: 'Alemanha' } },
+  at: { colors: ['#ffffff', '#c8102e'], name: { en: 'Austria', pt: 'Áustria' } },
+  ch: { colors: ['#d52b1e', '#ffffff'], name: { en: 'Switzerland', pt: 'Suíça' } },
+  jp: { colors: ['#ffffff', '#bc002d'], name: { en: 'Japan', pt: 'Japão' } },
+  arab: { colors: ['#006c35', '#ffffff'], name: { en: 'Arab League', pt: 'Liga Árabe' } },
+  eg: { colors: ['#ffffff', '#ce1126', '#000000', '#c09300'], name: { en: 'Egypt', pt: 'Egito' } },
+  ma: { colors: ['#c1272d', '#006233'], name: { en: 'Morocco', pt: 'Marrocos' } },
+  ru: { colors: ['#ffffff', '#0039a6', '#d52b1e'], name: { en: 'Russia', pt: 'Rússia' } },
+  kr: { colors: ['#ffffff', '#003478', '#c60c30'], name: { en: 'South Korea', pt: 'Coreia do Sul' } },
+  cn: { colors: ['#de2910', '#ffde00'], name: { en: 'China', pt: 'China' } },
+  tw: { colors: ['#fe0000', '#000095', '#ffffff'], accent: '#000095', name: { en: 'Taiwan', pt: 'Taiwan' } },
+  mk: { colors: ['#d20000', '#ffe600'], name: { en: 'North Macedonia', pt: 'Macedônia do Norte' } },
+  fi: { colors: ['#ffffff', '#003580'], name: { en: 'Finland', pt: 'Finlândia' } },
+  in: { colors: ['#ffffff', '#ff9933', '#138808', '#000080'], name: { en: 'India', pt: 'Índia' } },
+  np: { colors: ['#dc143c', '#003893'], name: { en: 'Nepal', pt: 'Nepal' } },
+  cz: { colors: ['#ffffff', '#d7141a', '#11457e'], name: { en: 'Czechia', pt: 'Tchéquia' } },
+  pl: { colors: ['#ffffff', '#dc143c'], name: { en: 'Poland', pt: 'Polônia' } },
+  tr: { colors: ['#e30a17', '#ffffff'], name: { en: 'Turkey', pt: 'Turquia' } },
+  hu: { colors: ['#ce2939', '#ffffff', '#477050'], name: { en: 'Hungary', pt: 'Hungria' } },
+  is: { colors: ['#02529c', '#ffffff', '#dc1e35'], name: { en: 'Iceland', pt: 'Islândia' } },
+  br: { colors: ['#009c3b', '#ffdf00', '#002776'], name: { en: 'Brazil', pt: 'Brasil' } },
+  pt: { colors: ['#da291c', '#046a38', '#ffcc00'], name: { en: 'Portugal', pt: 'Portugal' } },
+  ao: { colors: ['#000000', '#cc092f', '#ffcb00'], name: { en: 'Angola', pt: 'Angola' } },
+  mz: { colors: ['#fce100', '#007168', '#d21034', '#000000'], name: { en: 'Mozambique', pt: 'Moçambique' } },
+  gb: { colors: ['#012169', '#c8102e', '#ffffff'], accent: '#c8102e', name: { en: 'United Kingdom', pt: 'Reino Unido' } },
+  us: { colors: ['#ffffff', '#b31942', '#0a3161'], name: { en: 'United States', pt: 'Estados Unidos' } },
+  au: { colors: ['#012169', '#e4002b', '#ffffff'], name: { en: 'Australia', pt: 'Austrália' } },
+  es: { colors: ['#f1bf00', '#aa151b'], name: { en: 'Spain', pt: 'Espanha' } },
+  mx: { colors: ['#ffffff', '#006847', '#ce1126'], name: { en: 'Mexico', pt: 'México' } },
+  ar: { colors: ['#74acdf', '#ffffff', '#f6b40e'], name: { en: 'Argentina', pt: 'Argentina' } },
+  co: { colors: ['#fcd116', '#003893', '#ce1126'], name: { en: 'Colombia', pt: 'Colômbia' } },
+  fr: { colors: ['#ffffff', '#0055a4', '#ef4135'], name: { en: 'France', pt: 'França' } },
+  be: { colors: ['#fdda24', '#000000', '#ef3340'], name: { en: 'Belgium', pt: 'Bélgica' } },
+  nl: { colors: ['#ffffff', '#ae1c28', '#21468b'], name: { en: 'Netherlands', pt: 'Países Baixos' } },
+  sr: { colors: ['#377e3f', '#ffffff', '#b40a2d'], name: { en: 'Suriname', pt: 'Suriname' } },
+  ua: { colors: ['#0057b7', '#ffd700'], name: { en: 'Ukraine', pt: 'Ucrânia' } },
+  lt: { colors: ['#fdb913', '#006a44', '#c1272d'], name: { en: 'Lithuania', pt: 'Lituânia' } },
+  hr: { colors: ['#ffffff', '#ff0000', '#171796'], name: { en: 'Croatia', pt: 'Croácia' } },
+  rs: { colors: ['#0c4076', '#c6363c', '#ffffff'], name: { en: 'Serbia', pt: 'Sérvia' } },
+  ba: { colors: ['#002395', '#fecb00', '#ffffff'], accent: '#fecb00', name: { en: 'Bosnia and Herzegovina', pt: 'Bósnia e Herzegovina' } },
+  me: { colors: ['#c40308', '#d4af3a'], name: { en: 'Montenegro', pt: 'Montenegro' } },
+  ro: { colors: ['#fcd116', '#002b7f', '#ce1126'], name: { en: 'Romania', pt: 'Romênia' } },
+  md: { colors: ['#0046ae', '#ffd200', '#cc092f'], name: { en: 'Moldova', pt: 'Moldávia' } },
+  se: { colors: ['#006aa7', '#fecc00'], name: { en: 'Sweden', pt: 'Suécia' } },
+  bd: { colors: ['#006a4e', '#f42a41'], name: { en: 'Bangladesh', pt: 'Bangladesh' } },
+  id: { colors: ['#ce1126', '#ffffff'], name: { en: 'Indonesia', pt: 'Indonésia' } },
+  vn: { colors: ['#da251d', '#ffcd00'], name: { en: 'Vietnam', pt: 'Vietnã' } },
+  ir: { colors: ['#ffffff', '#239f40', '#da0000'], name: { en: 'Iran', pt: 'Irã' } },
+  af: { colors: ['#000000', '#d32011', '#007a36'], name: { en: 'Afghanistan', pt: 'Afeganistão' } },
+  ph: { colors: ['#0038a8', '#ce1126', '#ffffff', '#fcd116'], name: { en: 'Philippines', pt: 'Filipinas' } },
+  tz: { colors: ['#1eb53a', '#00a3dd', '#000000', '#fcd116'], name: { en: 'Tanzania', pt: 'Tanzânia' } },
+  ke: { colors: ['#000000', '#bb0000', '#006600', '#ffffff'], name: { en: 'Kenya', pt: 'Quênia' } },
+  tj: { colors: ['#ffffff', '#cc0000', '#006600'], name: { en: 'Tajikistan', pt: 'Tajiquistão' } },
+  sm: { colors: ['#ffffff', '#5eb6e4'], name: { en: 'San Marino', pt: 'San Marino' } },
+  ca: { colors: ['#ffffff', '#d80621'], name: { en: 'Canada (Québec)', pt: 'Canadá (Quebec)' } },
 };
 
 // language → its flags, most representative first
@@ -80,39 +81,40 @@ export const LANGUAGE_FLAGS = {
 export const MODE_KEY = 'casus:mode';
 export const themeKey = (code) => `casus:theme:${code}`;
 
-// the hue of a colour in degrees, or null for grey and black (no hue to tell apart)
-function hueOf(hex) {
-  const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255);
-  const max = Math.max(r, g, b), min = Math.min(r, g, b), d = max - min;
-  if (d < 0.15) return null;
-  const h = max === r ? ((g - b) / d) % 6 : max === g ? (b - r) / d + 2 : (r - g) / d + 4;
-  return (h * 60 + 360) % 360;
+// relative luminance (WCAG) and contrast
+function lum(hex) {
+  const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255).map((c) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4));
+  return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 }
-const hueGap = (a, b) => Math.min(Math.abs(a - b), 360 - Math.abs(a - b));
-// colours far apart, for a flag whose own colours all repeat an earlier theme's (Austria and Switzerland after Germany)
-const SPARE = ['#1f5fbf', '#2e8b57', '#c56a00', '#00897b', '#b0306a', '#8d5524'];
-const MIN_GAP = 40;
+const contrast = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((m, n) => n - m); return (x + 0.05) / (y + 0.05); };
+const chromatic = (hex) => { const v = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16)); return Math.max(...v) - Math.min(...v) > 40; };
+const hex2 = (n) => Math.round(n).toString(16).padStart(2, '0');
+// a flag colour made dark enough to read as text on white (contrast 4.5): flag shades are often too bright
+function readable(hex) {
+  let c = hex;
+  for (let k = 0; k < 40 && contrast(c, '#ffffff') < 4.5; k += 1) c = `#${[1, 3, 5].map((i) => hex2(parseInt(c.slice(i, i + 2), 16) * 0.93)).join('')}`;
+  return c;
+}
 
-/** the palettes a language offers: its flags, then the Casus purple. The themes of one language must look different
- * (Allan, 2026-10-27: German's three flags were all red): a flag whose colour is
- * within 40° of hue of an earlier theme (or of the purple) takes its flag's second colour, else a spare colour, and
- * keeps its own red/blue/green as the second colour. */
+/** a flag's dress: the most prominent colour tints the page (white: a white page, coloured text, outlined buttons);
+ * the accent is that colour when it is strong, else the next strong one; the second colour is the next after that */
+export function dress(f) {
+  const [ground] = f.colors;
+  const bright = lum(ground) > 0.4;
+  const strong = f.colors.filter((c) => chromatic(c) || lum(c) < 0.02);
+  const accent = f.accent ?? (!bright && chromatic(ground) ? ground : strong.find((c) => c !== ground && lum(c) <= 0.4) ?? strong[0] ?? ground);
+  const second = f.colors.find((c) => c !== accent && c !== '#ffffff') ?? accent;
+  const white = ground === '#ffffff';
+  return {
+    accent: readable(accent), accent2: second, groundOf: ground,
+    groundAmt: white ? '0%' : bright ? '16%' : '8%',
+    fill: white ? 'outline' : 'solid',
+  };
+}
+
+/** the palettes a language offers: its flags, then the Casus purple */
 export function themesFor(code) {
-  const ids = [...(LANGUAGE_FLAGS[code] ?? []), 'casus'];
-  const taken = [hueOf(FLAG.casus.accent)];
-  const clear = (hex) => { const h = hueOf(hex); return h === null || taken.every((t) => hueGap(h, t) >= MIN_GAP); };
-  return ids.map((id) => {
-    const base = { id, flag: id === 'casus' ? null : id, ...FLAG[id] };
-    if (id === 'casus') return base;
-    let accent = base.accent;
-    if (!clear(accent)) {
-      const second = hueOf(base.accent2) !== null && clear(base.accent2) ? base.accent2 : null;
-      accent = second ?? SPARE.find(clear) ?? accent;
-    }
-    const h = hueOf(accent);
-    if (h !== null) taken.push(h);
-    return accent === base.accent ? base : { ...base, accent, accent2: base.accent };
-  });
+  return [...(LANGUAGE_FLAGS[code] ?? []), 'casus'].map((id) => ({ id, flag: id === 'casus' ? null : id, name: FLAG[id].name, ...dress(FLAG[id]) }));
 }
 
 /** the language's chosen palette (kept per language in this browser), else its first flag */
@@ -130,8 +132,10 @@ function inkOn(hex) {
   return (1.05 / (lum + 0.05)) >= ((lum + 0.05) / 0.05) ? '#ffffff' : '#1d1d1b';
 }
 
+/** the theme's colours as CSS variables; the button style goes on <html data-fill> (app.css) */
 export function themeVars(theme) {
-  return { '--accent': theme.accent, '--accent-2': theme.accent2, '--accent-ink': inkOn(theme.accent) };
+  return { '--accent': theme.accent, '--accent-2': theme.accent2, '--accent-ink': inkOn(theme.accent),
+    '--ground': theme.groundOf, '--ground-amt': theme.groundAmt };
 }
 
 /** the mode kept in this browser, else the system's */
@@ -144,6 +148,7 @@ export function pickMode(storage) {
 export function applyTheme(mode, theme, root = typeof document !== 'undefined' ? document.documentElement : null) {
   if (!root) return;
   root.dataset.mode = mode;
+  root.dataset.fill = theme.fill ?? 'solid';
   for (const [k, v] of Object.entries(themeVars(theme))) root.style.setProperty(k, v);
 }
 

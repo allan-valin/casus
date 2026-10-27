@@ -136,7 +136,7 @@
   .lit-label { color: var(--ink-2); font-weight: 600; }
   .lit-word { display: inline-flex; flex-direction: column; border: 1px solid #b9a6d6; border-radius: 8px; padding: 3px 8px; background: var(--panel-hi); }
   .lit-word i { color: var(--ink-2); font-size: 0.85em; }
-  .next { font: inherit; padding: 6px 16px; border-radius: 8px; border: 1.5px solid var(--accent); background: var(--accent); color: var(--accent-ink); cursor: pointer; }
+  .next { font: inherit; padding: 6px 16px; border-radius: 8px; border: 1.5px solid var(--accent); background: var(--fill); color: var(--fill-ink); cursor: pointer; }
   .score { font-weight: 600; }
   .muted { color: var(--muted); }
 </style>

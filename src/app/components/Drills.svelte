@@ -182,7 +182,7 @@
   .cheatsheet { font: inherit; height: var(--control-h); box-sizing: border-box; padding: 0 14px; border: 1.5px solid var(--accent); border-radius: 8px; background: var(--panel); color: var(--ink); cursor: pointer; font-weight: 600; }
   .drill-tab { font: inherit; padding: 8px 12px; border: 0; background: transparent; color: var(--ink); cursor: pointer; }
   .drill-tab:hover { background: color-mix(in srgb, var(--accent) 10%, var(--panel)); }
-  .drill-tab.active { background: var(--accent); color: var(--accent-ink); }
+  .drill-tab.active { background: var(--fill); color: var(--fill-ink); }
   .hint, .muted { color: var(--ink-2); }
   .options { display: flex; flex-wrap: wrap; gap: 12px; margin: 6px 0; }
   .options select { max-width: 100%; }

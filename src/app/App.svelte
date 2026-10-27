@@ -397,14 +397,14 @@
   .exports { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
   .langs { display: inline-flex; flex-wrap: wrap; max-width: 100%; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
   .langs .ui-lang { border: 0; border-radius: 0; min-height: var(--control-h); padding: 0 10px; }
-  .langs .ui-lang.active { background: var(--accent); color: var(--accent-ink); }
+  .langs .ui-lang.active { background: var(--fill); color: var(--fill-ink); }
   .exports-label { color: var(--ink-2); font-size: 0.85rem; margin-right: 2px; }
   .report-button { display: inline-flex; align-items: center; gap: 4px; padding: 0 10px; height: var(--control-h); box-sizing: border-box; border: 1.5px solid var(--line); border-radius: 8px; color: var(--ink); text-decoration: none; font-size: .9em; background: var(--panel); }
   .report-button:hover { border-color: var(--accent); }
-  .help-button { width: var(--control-h); height: var(--control-h); border-radius: 50%; font-weight: 700; font-size: 1.1rem; padding: 0; background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .help-button { width: var(--control-h); height: var(--control-h); border-radius: 50%; font-weight: 700; font-size: 1.1rem; padding: 0; background: var(--fill); color: var(--fill-ink); border-color: var(--accent); }
   .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: clamp(12px, 1.6vw, 22px) clamp(12px, 2vw, 26px); box-shadow: 0 1px 2px rgba(0,0,0,.04); }
   h2 { margin: 0 0 12px; font-size: clamp(1.05rem, 1rem + 0.3vw, 1.3rem); display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
-  .step { display: inline-flex; width: 1.6em; height: 1.6em; align-items: center; justify-content: center; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font-size: 0.8em; font-weight: 700; align-self: center; }
+  .step { display: inline-flex; width: 1.6em; height: 1.6em; align-items: center; justify-content: center; border-radius: 50%; background: var(--fill); color: var(--fill-ink); font-size: 0.8em; font-weight: 700; align-self: center; }
   .hint-inline { font-size: 0.8em; font-weight: 400; color: var(--muted); }
   .hint { margin: -4px 0 12px; color: var(--ink-2); font-size: 0.92rem; line-height: 1.5; }
   .status { color: var(--muted); font-size: 0.82rem; margin: 10px 0 0; }

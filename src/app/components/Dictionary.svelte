@@ -100,7 +100,7 @@
   .ipa { font-family: 'Charis SIL', 'Doulos SIL', 'Gentium Plus', 'Noto Sans', serif; font-size: 1.05rem; color: var(--ink); }
   .dicts { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 0 0 6px; }
   .dict-tab { min-height: 30px; padding: 3px 10px; font-size: 0.85rem; border-radius: 999px; }
-  .dict-tab.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .dict-tab.active { background: var(--fill); color: var(--fill-ink); border-color: var(--accent); }
   .no-gloss, .missing { color: var(--muted); font-style: italic; font-size: 0.9em; }
   .warning { color: #a33; font-size: 0.85em; }
   .none, .loading { color: #666; font-style: italic; }

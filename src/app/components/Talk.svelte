@@ -471,7 +471,7 @@
   .transport button { font-size: 1.6rem; width: 52px; height: 52px; border-radius: 50%; padding: 0; line-height: 1; display: inline-flex; align-items: center; justify-content: center; }
   .transport .playpause { font-size: 2rem; width: 64px; height: 64px; }
   .hands-free { font-size: 1.05rem; font-weight: 700; padding: 10px 16px; border-radius: 24px; border: 2px solid var(--accent, #6a4c93); }
-  .player-bar .hands-free.on { background: var(--accent); color: var(--accent-ink); }
+  .player-bar .hands-free.on { background: var(--fill); color: var(--fill-ink); }
   .where { flex-basis: 100%; text-align: center; font-size: 0.9rem; color: var(--muted); }   /* own line: the controls stay centred */
   button.w { background: none; border: 0; padding: 0 1px; font: inherit; color: inherit; cursor: pointer; border-bottom: 1px dotted currentColor; }
   button.w:hover { background: color-mix(in srgb, var(--accent, #6a4c93) 15%, transparent); }

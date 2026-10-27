@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { themesFor, pickTheme, themeVars, MODE_KEY, themeKey, flagUrl } from '../../src/app/lib/theme.js';
+import { themesFor, pickTheme, themeVars, applyTheme, MODE_KEY, themeKey, flagUrl } from '../../src/app/lib/theme.js';
 import { LANGUAGES } from '../../src/lang/registry.js';
 
 const store = () => { const m = new Map(); return { getItem: (k) => m.get(k) ?? null, setItem: (k, v) => m.set(k, String(v)) }; };
@@ -39,19 +39,33 @@ describe('colour themes from flags (Allan, 2026-10-20)', () => {
     expect(themesFor('grc').map((x) => x.id)).toContain('sparta');
     for (const id of ['spqr', 'athens', 'sparta']) expect(flagUrl(id), id).toBeTruthy();
   });
-  it('the themes of one language look clearly different, not shades of one colour (Allan, 2026-10-27: German all red)', () => {
-    const hue = (hex) => {
-      const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255);
-      const max = Math.max(r, g, b), min = Math.min(r, g, b), d = max - min;
-      if (d < 0.15) return null;                                  // grey or black: no hue
-      const h = max === r ? ((g - b) / d) % 6 : max === g ? (b - r) / d + 2 : (r - g) / d + 4;
-      return (h * 60 + 360) % 360;
-    };
-    const gap = (a, b) => Math.min(Math.abs(a - b), 360 - Math.abs(a - b));
+  // Allan, 2026-10-27 (second pass): colours from the flag's own logic, never random — the most prominent colour tints
+  // the page, a white-dominant flag gives a white page with coloured text and outlined buttons
+  const lum = (hex) => { const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255).map((c) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4)); return 0.2126 * r + 0.7152 * g + 0.0722 * b; };
+  const contrast = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((m, n) => n - m); return (x + 0.05) / (y + 0.05); };
+  it('every accent reads on white (contrast 4.5 or more): bright flag colours are darkened', () => {
+    for (const l of LANGUAGES) for (const th of themesFor(l.code)) expect(contrast(th.accent, '#ffffff'), `${l.code} ${th.id} ${th.accent}`).toBeGreaterThanOrEqual(4.5);
+  });
+  it('German: Germany gold page with red accent; Austria white page, red text, outlined; Switzerland red page, filled', () => {
+    const [de, at, ch] = themesFor('de');
+    expect([de.groundOf, de.fill]).toEqual(['#ffce00', 'solid']);
+    expect(lum(de.accent) < 0.2 && parseInt(de.accent.slice(1, 3), 16) > parseInt(de.accent.slice(3, 5), 16) * 3).toBe(true);   // a red
+    expect([at.groundOf, at.fill]).toEqual(['#ffffff', 'outline']);
+    expect([ch.groundOf, ch.fill]).toEqual(['#d52b1e', 'solid']);
+  });
+  it('the themes of one language differ in page colour, accent or button style — never identical', () => {
+    const hue = (hex) => { const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255); const mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn; if (d < 0.15) return 'none'; const h = mx === r ? ((g - b) / d) % 6 : mx === g ? (b - r) / d + 2 : (r - g) / d + 4; return Math.round(((h * 60 + 360) % 360) / 30) % 12; };
     for (const l of LANGUAGES) {
-      const hs = themesFor(l.code).map((x) => hue(x.accent)).filter((h) => h !== null);
-      for (let i = 0; i < hs.length; i += 1) for (let j = i + 1; j < hs.length; j += 1) expect(gap(hs[i], hs[j]), `${l.code}: ${themesFor(l.code).map((x) => x.id + x.accent)}`).toBeGreaterThanOrEqual(40);
+      const sig = themesFor(l.code).map((x) => `${hue(x.groundOf)}|${hue(x.accent)}|${x.fill}`);
+      expect(new Set(sig).size, `${l.code}: ${sig}`).toBe(sig.length);
     }
-    expect(themesFor('de')[0].accent).toBe('#c00000');            // the first flag keeps its own colour
+  });
+  it('theme variables carry the page ground and the button style', () => {
+    const v = themeVars(themesFor('de')[1]);
+    expect(v['--ground']).toBe('#ffffff');
+    expect(v['--ground-amt']).toBe('0%');
+    const root = { dataset: {}, style: { setProperty: () => {} } };
+    applyTheme('light', themesFor('de')[1], root);
+    expect(root.dataset.fill).toBe('outline');
   });
 });

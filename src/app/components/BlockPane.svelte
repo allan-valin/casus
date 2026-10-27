@@ -152,7 +152,7 @@
   .sort-note { font-size: 0.8em; color: var(--muted); flex-basis: 100%; }
   .order-label { margin-left: 8px; }
   .word-order { padding: 4px 8px; min-height: 32px; font-variant: small-caps; letter-spacing: 0.04em; }
-  .word-order.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+  .word-order.active { background: var(--fill); color: var(--fill-ink); border-color: var(--accent); }
   .count { margin-left: auto; font-size: 0.85em; color: var(--muted); }
   .pool { position: relative; display: flex; flex-wrap: wrap; gap: 10px 12px; min-height: 90px; padding: 14px; border: 1.5px dashed var(--line); border-radius: 10px; background: var(--panel); width: 100%; box-sizing: border-box; }
   .pool.dragging { cursor: grabbing; }

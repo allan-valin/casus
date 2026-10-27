@@ -70,7 +70,7 @@
 
 <style>
   .modes { display: flex; gap: 6px; margin-bottom: 8px; }
-  .mode[aria-pressed='true'] { background: var(--accent); color: var(--accent-ink); }
+  .mode[aria-pressed='true'] { background: var(--fill); color: var(--fill-ink); }
   .options { display: grid; gap: 6px; max-width: 36em; }
   .listen-option { text-align: left; }
   .listen-option.right, .listen-word.right { color: #1e6b3a; font-weight: 600; }
