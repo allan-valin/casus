@@ -14,6 +14,7 @@ import yaml
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from conversation_check import check_bible, check_course, check_unit  # noqa: E402
 from ja_text import kanji_lessons, rich_course, unit_kanji  # noqa: E402
+from learn_coverage import coverage, coverage_errors, lessons_by_unit, load_learn  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -22,7 +23,7 @@ def _load(p):
     return yaml.safe_load(p.read_text(encoding="utf-8"))
 
 
-def build(src=ROOT / "tools" / "conversation", out=ROOT / "public" / "talk"):
+def build(src=ROOT / "tools" / "conversation", out=ROOT / "public" / "talk", learn=ROOT / "data"):
     courses = {}
     for folder in sorted(p for p in Path(src).iterdir() if (p / "story-bible.yml").exists()):
         bible = _load(folder / "story-bible.yml")
@@ -36,6 +37,12 @@ def build(src=ROOT / "tools" / "conversation", out=ROOT / "public" / "talk"):
                 errors += e
                 warnings += w
             errors += check_course(units, bible)
+            # every lesson a unit names exists in Learn; a finished course practises them all (Allan, 2026-10-27)
+            L = load_learn(learn, bible["language"])
+            if L is None:
+                warnings.append(f"Learn not checked: no {bible['language']}/learn.json under {learn}")
+            else:
+                errors += coverage_errors(coverage(units, L, bible["language"]), bible.get("in_development", False))
         example = folder.name == "_template"
         code = bible["language"]
         if code in courses and example:
@@ -48,7 +55,8 @@ def build(src=ROOT / "tools" / "conversation", out=ROOT / "public" / "talk"):
             continue
         b = c["bible"]
         data = {
-            "language": code, "example": c["example"], "narrator_languages": b["narrator_languages"],
+            "language": code, "example": c["example"], "in_development": bool(b.get("in_development")),
+            "narrator_languages": b["narrator_languages"],
             "cast": {m["id"]: {"name": m["name"], "voice": m["voice"], "register": m["register"]} for m in b["cast"]},
             "voices": b["voices"], "protagonist": b["protagonist"]["forms"],
             "items": [i for u in c["units"] for i in u["new_items"]],
@@ -70,6 +78,9 @@ def build(src=ROOT / "tools" / "conversation", out=ROOT / "public" / "talk"):
                 report[code]["errors"].append(str(e))
                 continue
         Path(out).mkdir(parents=True, exist_ok=True)
+        # Learn's "practised in Conversation" line reads this small file, not the whole course
+        (Path(out) / "lessons").mkdir(exist_ok=True)
+        (Path(out) / "lessons" / f"{code}.json").write_text(json.dumps(lessons_by_unit(c["units"]), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         (Path(out) / f"{code}.json").write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     return report
 

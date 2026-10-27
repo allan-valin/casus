@@ -10,7 +10,7 @@ self-check. tools/conversation_check.py then checks the result like any hand-wri
     python3 tools/expand_unit.py mk            # every src/*.yml → <code>/<id>.yml (hand-written units are kept)
 
 Source format (lists keep it short):
-    id, protagonist (f|m), title: [en, pt], situation: [en, pt], learn: [...], culture: "…"
+    id, protagonist (f|m), title: [en, pt], situation: [en, pt], learn: [...], learn_missing: [...] (themes Learn has no lesson for), culture: "…"
     items:    - [id, text, en, pt]            optional 5th: {rare: true, register: formal}
     dialogue: - [speaker, text, en, pt]
     teach:    - note: [en, pt]               narration for everyone
@@ -199,6 +199,7 @@ def expand(src: dict, earlier: list, langs=("en", "pt")) -> dict:
     if src.get("tracks"):
         out["tracks"] = langs
     return out | {"title": _texts(src["title"], langs), "situation": situation, "learn_lessons": src.get("learn", []),
+                  **({"learn_missing": src["learn_missing"]} if src.get("learn_missing") else {}),
                   "culture": src.get("culture", ""), "new_items": items, "reviews": reviews, "steps": steps}
 
 

@@ -4,6 +4,7 @@
 # Check with:  python3 tools/conversation_check.py tools/conversation/<code>
 
 language: de                    # code of the taught language, as in Casus
+in_development: true            # false once every Learn grammar lesson is practised: the build then fails on gaps
 narrator_languages: [pt, en]    # interface languages the narrator speaks (pt = Brazilian Portuguese)
 country: Germany                # the country that matches the language's name
 standard: >-                    # the standard taught in grammars; dialects only in an optional chapter

@@ -98,3 +98,11 @@ def test_a_text_list_must_have_one_entry_per_narrator_language():
     assert _texts(["Plants", "Plantas"], ["en", "pt"]) == {"en": "Plants", "pt": "Plantas"}
     with pytest.raises(ValueError):
         _texts(["Someone", "no one", "Alguém, ninguém"], ["en", "pt"])
+
+
+def test_unit_themes_learn_has_no_lesson_for_are_kept():
+    # Allan, 2026-10-27 (T1): a theme with no Learn lesson moves to learn_missing, never dropped
+    ids = [f"m{k}" for k in range(10)]
+    u = expand({**_src(1, ids, ids), "learn": ["a1-sum"], "learn_missing": ["numbers"]}, [])
+    assert u["learn_lessons"] == ["a1-sum"] and u["learn_missing"] == ["numbers"]
+    assert "learn_missing" not in expand(_src(2, [f"n{k}" for k in range(10)], []), [u])
