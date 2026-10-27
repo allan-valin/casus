@@ -22,4 +22,11 @@ describe('Learn search index', () => {
     expect(searchIndex(index, 'source')).toEqual([]);
     expect(searchIndex(index, '  ')).toEqual([]);
   });
+  it('words that are names of built-in properties (constructor, toString) are indexed like any word', () => {
+    // 2026-10-27: the English and French sites failed to build on "constructor"
+    const ix = buildSearchIndex(LEARN, (id) => (id === 'greet' ? { intro: 'the constructor and toString' } : null));
+    expect(searchIndex(ix, 'constructor')).toEqual(['greet']);
+    expect(searchIndex(ix, 'constructor tostring')).toEqual(['greet']);
+    expect(searchIndex(ix, 'hasownproperty valueof')).toEqual([]);
+  });
 });

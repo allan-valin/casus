@@ -15,7 +15,7 @@ const plain = (s) => s.replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(
 
 export function buildSearchIndex(learn, readLesson) {
   const ids = (learn?.levels ?? []).flatMap((l) => l.topics.flatMap((t) => t.lessons.map((e) => e.id)));
-  const w = {};
+  const w = Object.create(null);          // no inherited keys: "constructor" is a word like any other
   ids.forEach((id, k) => {
     const lesson = readLesson(id);
     if (!lesson) return;
@@ -34,7 +34,7 @@ export function searchIndex(index, query) {
   let hits = null;
   words.forEach((word, n) => {
     const keys = n === words.length - 1 ? Object.keys(index.w).filter((k) => k.startsWith(word)) : [word];
-    const here = new Set(keys.flatMap((k) => index.w[k] ?? []));
+    const here = new Set(keys.flatMap((k) => (Object.hasOwn(index.w, k) ? index.w[k] : [])));
     hits = hits ? new Set([...hits].filter((k) => here.has(k))) : here;
   });
   return [...hits].sort((a, b) => a - b).map((k) => index.ids[k]);
