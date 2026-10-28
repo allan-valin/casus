@@ -1,0 +1,592 @@
+# UNIT ko A2-25 — written by AI (Claude) for Casus; expanded from src/A2-25.yml by tools/expand_unit.py. Edit the source.
+
+id: A2-25
+level: A2
+number: 25
+protagonist: f
+title:
+  en: The hairdresser
+  pt: O cabeleireiro
+situation:
+  en: Your first haircut in Seoul. The hairdresser asks lots of questions; you explain with words and gestures.
+  pt: Seu primeiro corte de cabelo em Seul. O cabeleireiro pergunta muita coisa; você explica com palavras e gestos.
+learn_lessons:
+- ko-nikl-60
+- ko-nikl-87
+culture: Salons, perms and asking precisely
+new_items:
+- id: meori2
+  text: 머리
+  meaning:
+    en: hair, head
+    pt: cabelo, cabeça
+- id: jalla-juseyo
+  text: 잘라 주세요
+  meaning:
+    en: please cut (it)
+    pt: corte, por favor
+- id: jjalbge
+  text: 짧게
+  meaning:
+    en: short (cut short)
+    pt: curto
+- id: pama
+  text: 파마
+  meaning:
+    en: perm
+    pt: permanente
+- id: yeomsaek
+  text: 염색
+  meaning:
+    en: dyeing (hair)
+    pt: tintura
+- id: itmeori
+  text: 앞머리
+  meaning:
+    en: fringe, bangs
+    pt: franja
+- id: jogeumman
+  text: 조금만
+  meaning:
+    en: just a little
+    pt: só um pouco
+- id: ireoke
+  text: 이렇게
+  meaning:
+    en: like this
+    pt: assim
+- id: saramin
+  text: 어떻게 해 드릴까요?
+  meaning:
+    en: How would you like it?
+    pt: Como a senhora quer?
+- id: masseoyo
+  text: 마음에 들어요
+  meaning:
+    en: I like it
+    pt: gostei
+- id: dadeumeo
+  text: 다듬어 주세요
+  meaning:
+    en: just trim it, please
+    pt: só aparar, por favor
+- id: geoul
+  text: 거울
+  meaning:
+    en: mirror
+    pt: espelho
+reviews:
+- item: byeol
+  from: A1-24
+- item: dal
+  from: A1-24
+- item: haneul
+  from: A1-24
+- item: i-anieyo
+  from: A1-24
+- item: bihaenggi
+  from: A1-24
+- item: eureo
+  from: A1-24
+- item: bareo
+  from: A1-24
+- item: balgayo
+  from: A1-24
+- item: eoduwoyo
+  from: A1-24
+- item: bam
+  from: A1-24
+- item: tawo
+  from: A1-24
+- item: boyeoyo
+  from: A1-24
+- item: sogaeting
+  from: A2-10
+- item: yeollakcheo
+  from: A2-10
+- item: maeume
+  from: A2-10
+- item: neunde
+  from: A2-10
+- item: neun-geot-gatayo
+  from: A2-10
+- item: cheoeum-boepgesseoyo
+  from: A2-10
+- item: chwimi
+  from: A2-10
+- item: yeonghwa
+  from: A2-10
+- item: dasi-mannal
+  from: A2-10
+- item: baraeda-julgeyo
+  from: A2-10
+- item: jaemiisseonneyo
+  from: A2-10
+- item: dayaehan
+  from: A2-10
+- item: sokdam
+  from: A2-18
+- item: sijagi-banida
+  from: A2-18
+- item: ppallippalli2
+  from: A2-18
+- item: gi-noun
+  from: A2-18
+- item: eum-noun
+  from: A2-18
+- item: baeugi
+  from: A2-18
+- item: malhagi
+  from: A2-18
+- item: ttatda
+  from: A2-18
+- item: jinanbeon
+  from: A2-18
+- item: nunchi
+  from: A2-18
+- item: gongjja
+  from: A2-18
+- item: gonggo
+  from: A2-18
+- item: misemeonji
+  from: A2-22
+- item: maseukeu
+  from: A2-22
+- item: gonggi
+  from: A2-22
+- item: aep
+  from: A2-22
+- item: eulkka-boda
+  from: A2-22
+- item: ji-ana2
+  from: A2-22
+- item: nappa
+  from: A2-22
+- item: darigi
+  from: A2-22
+- item: jibeseo
+  from: A2-22
+- item: hwanggi
+  from: A2-22
+- item: ssayo2
+  from: A2-22
+- item: haneul-hoesaek
+  from: A2-22
+- item: jam
+  from: A2-24
+- item: pigonhaeyo
+  from: A2-24
+- item: seuteodikape
+  from: A2-24
+- item: bamsae
+  from: A2-24
+- item: neun-geot
+  from: A2-24
+- item: janeun-geot
+  from: A2-24
+- item: aseo3
+  from: A2-24
+- item: siheom
+  from: A2-24
+- item: jolyeo
+  from: A2-24
+- item: keopi-mani
+  from: A2-24
+- item: jojyong
+  from: A2-24
+- item: ilchik
+  from: A2-24
+steps:
+- type: narrator
+  text:
+    en: Your first haircut in Seoul. The hairdresser asks lots of questions; you explain with words and gestures. Listen to the conversation; you don't need to understand it yet.
+    pt: Seu primeiro corte de cabelo em Seul. O cabeleireiro pergunta muita coisa; você explica com palavras e gestos. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: hairdresser
+    text: 어서 오세요. 어떻게 해 드릴까요?
+    meaning:
+      en: Welcome. How would you like it?
+      pt: Bem-vinda. Como a senhora quer?
+  - speaker: protagonist
+    text: 짧게 잘라 주세요. 이렇게요.
+    meaning:
+      en: Cut it short, please. Like this.
+      pt: Corte curto, por favor. Assim.
+  - speaker: hairdresser
+    text: 앞머리도 자를까요?
+    meaning:
+      en: Shall I cut the fringe too?
+      pt: Corto a franja também?
+  - speaker: protagonist
+    text: 앞머리는 조금만 다듬어 주세요.
+    meaning:
+      en: Just trim the fringe a little, please.
+      pt: A franja, só apare um pouquinho.
+  - speaker: hairdresser
+    text: 파마나 염색도 하실래요?
+    meaning:
+      en: Would you like a perm or colour too?
+      pt: Quer fazer permanente ou tintura também?
+  - speaker: protagonist
+    text: 아니요, 오늘은 커트만 할게요.
+    meaning:
+      en: No, just a cut today.
+      pt: Não, hoje só o corte.
+  - speaker: hairdresser
+    text: 다 됐어요. 거울 보세요. 어때요?
+    meaning:
+      en: All done. Look in the mirror. How is it?
+      pt: Pronto. Olha no espelho. Que tal?
+  - speaker: protagonist
+    text: 와, 예쁘게 잘라 주셨네요. 마음에 들어요!
+    meaning:
+      en: Wow, you cut it beautifully. I like it!
+      pt: Nossa, ficou lindo. Gostei!
+- type: prompt
+  ask:
+    en: How does the hairdresser ask how you'd like it?
+    pt: Como o cabeleireiro pergunta como você quer?
+  answer:
+    speaker: protagonist
+    text: 어떻게 해 드릴까요?
+  items:
+  - saramin
+- type: narrator
+  text:
+    en: '-게 says how: 짧다 → 짧게, short; 예쁘다 → 예쁘게, nicely. With -아/어 주세요: 짧게 잘라 주세요, cut it short (for me).'
+    pt: '-게 diz o modo: 짧다 → 짧게, curto; 예쁘다 → 예쁘게, bonito. Com -아/어 주세요: 짧게 잘라 주세요, corte curto (para mim).'
+- type: buildup
+  item: jalla-juseyo
+  parts:
+  - 주세요
+  - 잘라 주세요
+- type: prompt
+  ask:
+    en: Ask for a short cut.
+    pt: Peça um corte curto.
+  answer:
+    speaker: protagonist
+    text: 짧게 잘라 주세요.
+  items:
+  - jjalbge
+  - jalla-juseyo
+- type: prompt
+  ask:
+    en: 'Show with your hands: like this.'
+    pt: 'Mostre com as mãos: assim.'
+  answer:
+    speaker: protagonist
+    text: 이렇게요.
+  items:
+  - ireoke
+- type: prompt
+  ask:
+    en: Ask to just trim the fringe a little.
+    pt: Peça para só aparar um pouco a franja.
+  answer:
+    speaker: protagonist
+    text: 앞머리는 조금만 다듬어 주세요.
+  items:
+  - itmeori
+  - jogeumman
+  - dadeumeo
+- type: prompt
+  ask:
+    en: 'Say: just a cut, no perm today.'
+    pt: 'Diga: só corte, sem permanente hoje.'
+  answer:
+    speaker: protagonist
+    text: 오늘은 파마 안 해요.
+  items:
+  - pama
+- type: prompt
+  ask:
+    en: 'Say: no colour.'
+    pt: 'Diga: sem tintura.'
+  answer:
+    speaker: protagonist
+    text: 염색은 안 할게요.
+  items:
+  - yeomsaek
+- type: prompt
+  ask:
+    en: 'Say: look in the mirror.'
+    pt: 'Diga: olhe no espelho.'
+  answer:
+    speaker: protagonist
+    text: 거울 보세요.
+  items:
+  - geoul
+- type: prompt
+  ask:
+    en: 'Say: my hair is long.'
+    pt: 'Diga: meu cabelo é comprido.'
+  answer:
+    speaker: protagonist
+    text: 머리가 길어요.
+  items:
+  - meori2
+- type: prompt
+  ask:
+    en: Say you like it.
+    pt: Diga que gostou.
+  answer:
+    speaker: protagonist
+    text: 마음에 들어요!
+  items:
+  - masseoyo
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: Os salões coreanos são rápidos e caprichosos; leve uma foto no celular — com o gesto e '이렇게요' ('assim'), ninguém se perde.
+- type: prompt
+  ask:
+    en: 'Once more: say “hair, head”.'
+    pt: 'Mais uma vez: diga “cabelo, cabeça”.'
+  answer:
+    speaker: protagonist
+    text: 머리
+  items:
+  - meori2
+- type: prompt
+  ask:
+    en: 'Once more: say “please cut (it)”.'
+    pt: 'Mais uma vez: diga “corte, por favor”.'
+  answer:
+    speaker: protagonist
+    text: 잘라 주세요
+  items:
+  - jalla-juseyo
+- type: prompt
+  ask:
+    en: 'Once more: say “short (cut short)”.'
+    pt: 'Mais uma vez: diga “curto”.'
+  answer:
+    speaker: protagonist
+    text: 짧게
+  items:
+  - jjalbge
+- type: prompt
+  ask:
+    en: 'Once more: say “perm”.'
+    pt: 'Mais uma vez: diga “permanente”.'
+  answer:
+    speaker: protagonist
+    text: 파마
+  items:
+  - pama
+- type: prompt
+  ask:
+    en: 'Once more: say “dyeing (hair)”.'
+    pt: 'Mais uma vez: diga “tintura”.'
+  answer:
+    speaker: protagonist
+    text: 염색
+  items:
+  - yeomsaek
+- type: prompt
+  ask:
+    en: 'Once more: say “fringe, bangs”.'
+    pt: 'Mais uma vez: diga “franja”.'
+  answer:
+    speaker: protagonist
+    text: 앞머리
+  items:
+  - itmeori
+- type: prompt
+  ask:
+    en: 'Once more: say “just a little”.'
+    pt: 'Mais uma vez: diga “só um pouco”.'
+  answer:
+    speaker: protagonist
+    text: 조금만
+  items:
+  - jogeumman
+- type: prompt
+  ask:
+    en: 'Once more: say “like this”.'
+    pt: 'Mais uma vez: diga “assim”.'
+  answer:
+    speaker: protagonist
+    text: 이렇게
+  items:
+  - ireoke
+- type: prompt
+  ask:
+    en: 'Once more: say “How would you like it?”.'
+    pt: 'Mais uma vez: diga “Como a senhora quer?”.'
+  answer:
+    speaker: protagonist
+    text: 어떻게 해 드릴까요?
+  items:
+  - saramin
+- type: prompt
+  ask:
+    en: 'Once more: say “I like it”.'
+    pt: 'Mais uma vez: diga “gostei”.'
+  answer:
+    speaker: protagonist
+    text: 마음에 들어요
+  items:
+  - masseoyo
+- type: prompt
+  ask:
+    en: 'Once more: say “just trim it, please”.'
+    pt: 'Mais uma vez: diga “só aparar, por favor”.'
+  answer:
+    speaker: protagonist
+    text: 다듬어 주세요
+  items:
+  - dadeumeo
+- type: prompt
+  ask:
+    en: 'Once more: say “mirror”.'
+    pt: 'Mais uma vez: diga “espelho”.'
+  answer:
+    speaker: protagonist
+    text: 거울
+  items:
+  - geoul
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “sleep — and “is tired — and “study café — and “all night — and “…-ing (as a thing) — and “sleeping is important too (casual) — and “because, so (cause) — and “exam — and “I''m sleepy (casual)”.'
+    pt: 'Diga: “sono — e “está cansado — e “café de estudos — e “a noite toda — e “o (fazer)… — e “dormir também é importante (informal) — e “porque (causa) — e “prova — e “estou com sono (informal)”.'
+  answer:
+    speaker: protagonist
+    text: 잠 … 피곤해요 … 스터디카페 … 밤새 … -는 것 … 자는 것도 중요해 … -아서/어서 … 시험 … 졸려
+  items:
+  - jam
+  - pigonhaeyo
+  - seuteodikape
+  - bamsae
+  - neun-geot
+  - janeun-geot
+  - aseo3
+  - siheom
+  - jolyeo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I drank too much coffee (casual) — and “be quiet (casual) — and “go to bed early (casual) — and “fine dust — and “mask — and “air — and “app — and “I think I might… / I''m thinking of… —
+      and “not (casual, long form)”.'
+    pt: 'Diga: “tomei café demais (informal) — e “fala baixo (informal) — e “dorme cedo (informal) — e “poeira fina — e “máscara — e “ar — e “aplicativo — e “acho que vou… — e “não (informal, forma longa)”.'
+  answer:
+    speaker: protagonist
+    text: 커피를 너무 많이 마셨어 … 조용히 해 … 일찍 자 … 미세먼지 … 마스크 … 공기 … 앱 … -(으)ㄹ까 봐요 … -지 않아
+  items:
+  - keopi-mani
+  - jojyong
+  - ilchik
+  - misemeonji
+  - maseukeu
+  - gonggi
+  - aep
+  - eulkka-boda
+  - ji-ana2
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “it''s bad (casual) — and “running — and “I think I''ll work out at home (casual) — and “airing (the room) — and “wear (casual; a mask) — and “the sky is grey — and “proverb — and “Starting
+      is half the job — and “quick, quick”.'
+    pt: 'Diga: “está ruim (informal) — e “corrida — e “acho que vou treinar em casa (informal) — e “ventilar (o cômodo) — e “usa (informal; máscara) — e “o céu está cinza — e “provérbio — e “Começar é metade
+      do trabalho — e “rápido, rápido”.'
+  answer:
+    speaker: protagonist
+    text: 나빠 … 달리기 … 집에서 운동할까 봐 … 환기 … 써 … 하늘이 회색이야 … 속담 … 시작이 반이다 … 빨리빨리
+  items:
+  - nappa
+  - darigi
+  - jibeseo
+  - hwanggi
+  - ssayo2
+  - haneul-hoesaek
+  - sokdam
+  - sijagi-banida
+  - ppallippalli2
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “…-ing (makes a verb a noun) — and “…-ing (written, notices) — and “it''s hard to learn — and “speaking — and “what does it mean? — and “last time — and “reading the room — and “free (of charge)
+      — and “no entry (sign)”.'
+    pt: 'Diga: “…-ar (faz do verbo um substantivo) — e “…-ar (escrito, avisos) — e “é difícil de aprender — e “falar (a fala) — e “o que quer dizer? — e “da última vez — e “saber ler o ambiente — e “de
+      graça — e “proibida a entrada (placa)”.'
+  answer:
+    speaker: protagonist
+    text: -기 … -(으)ㅁ … 배우기 어려워요 … 말하기 … 뜻이 뭐예요? … 지난번 … 눈치 … 공짜 … 출입 금지
+  items:
+  - gi-noun
+  - eum-noun
+  - baeugi
+  - malhagi
+  - ttatda
+  - jinanbeon
+  - nunchi
+  - gongjja
+  - gonggo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “blind date (arranged by friends) — and “contact (number) — and “I like (it / him / her) — and “and so, but (background) — and “it seems, I think — and “nice to meet you (formal) — and “What
+      are your hobbies? — and “I like watching films — and “Can we meet again?”.'
+    pt: 'Diga: “encontro arranjado (por amigos) — e “contato (telefone) — e “gostei — e “e, mas (contexto) — e “parece, acho que — e “muito prazer (formal) — e “Quais são seus hobbies? — e “gosto de ver
+      filmes — e “Podemos nos ver de novo?”.'
+  answer:
+    speaker: protagonist
+    text: 소개팅 … 연락처 … 마음에 들어요 … -는데 / -(으)ㄴ데 … -는 것 같아요 … 처음 뵙겠습니다 … 취미가 뭐예요? … 영화 보는 거 좋아해요 … 또 만날 수 있어요?
+  items:
+  - sogaeting
+  - yeollakcheo
+  - maeume
+  - neunde
+  - neun-geot-gatayo
+  - cheoeum-boepgesseoyo
+  - chwimi
+  - yeonghwa
+  - dasi-mannal
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I''ll walk you (home) — and “it was fun — and “(she) seems kind — and “star — and “moon — and “sky — and “is not (X) — and “aeroplane — and “go (in order) to”.'
+    pt: 'Diga: “vou te acompanhar — e “foi divertido — e “(ela) parece gentil — e “estrela — e “lua — e “céu — e “não é (X) — e “avião — e “vai (para) fazer”.'
+  answer:
+    speaker: protagonist
+    text: 바래다줄게요 … 재미있었어요 … 착한 것 같아요 … 별 … 달 … 하늘 … 이/가 아니에요 … 비행기 … -(으)러 가요
+  items:
+  - baraeda-julgeyo
+  - jaemiisseonneyo
+  - dayaehan
+  - byeol
+  - dal
+  - haneul
+  - i-anieyo
+  - bihaenggi
+  - eureo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “go to see — and “is bright — and “is dark — and “night — and “Namsan Tower — and “can be seen”.'
+    pt: 'Diga: “vai ver — e “é claro, brilhante — e “está escuro — e “noite — e “Torre Namsan — e “dá para ver”.'
+  answer:
+    speaker: protagonist
+    text: 보러 가요 … 밝아요 … 어두워요 … 밤 … 남산타워 … 보여요
+  items:
+  - bareo
+  - balgayo
+  - eoduwoyo
+  - bam
+  - tawo
+  - boyeoyo
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

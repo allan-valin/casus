@@ -1,0 +1,41 @@
+id: A2-25
+protagonist: f
+title: ["The hairdresser", "O cabeleireiro"]
+situation: ["Your first haircut in Seoul. The hairdresser asks lots of questions; you explain with words and gestures.", "Seu primeiro corte de cabelo em Seul. O cabeleireiro pergunta muita coisa; você explica com palavras e gestos."]
+learn: [ko-nikl-60, ko-nikl-87]
+culture: Salons, perms and asking precisely
+items:
+  - [meori2, "머리", "hair, head", "cabelo, cabeça"]
+  - [jalla-juseyo, "잘라 주세요", "please cut (it)", "corte, por favor"]
+  - [jjalbge, "짧게", "short (cut short)", "curto"]
+  - [pama, "파마", "perm", "permanente"]
+  - [yeomsaek, "염색", "dyeing (hair)", "tintura"]
+  - [itmeori, "앞머리", "fringe, bangs", "franja"]
+  - [jogeumman, "조금만", "just a little", "só um pouco"]
+  - [ireoke, "이렇게", "like this", "assim"]
+  - [saramin, "어떻게 해 드릴까요?", "How would you like it?", "Como a senhora quer?"]
+  - [masseoyo, "마음에 들어요", "I like it", "gostei"]
+  - [dadeumeo, "다듬어 주세요", "just trim it, please", "só aparar, por favor"]
+  - [geoul, "거울", "mirror", "espelho"]
+dialogue:
+  - [hairdresser, "어서 오세요. 어떻게 해 드릴까요?", "Welcome. How would you like it?", "Bem-vinda. Como a senhora quer?"]
+  - [protagonist, "짧게 잘라 주세요. 이렇게요.", "Cut it short, please. Like this.", "Corte curto, por favor. Assim."]
+  - [hairdresser, "앞머리도 자를까요?", "Shall I cut the fringe too?", "Corto a franja também?"]
+  - [protagonist, "앞머리는 조금만 다듬어 주세요.", "Just trim the fringe a little, please.", "A franja, só apare um pouquinho."]
+  - [hairdresser, "파마나 염색도 하실래요?", "Would you like a perm or colour too?", "Quer fazer permanente ou tintura também?"]
+  - [protagonist, "아니요, 오늘은 커트만 할게요.", "No, just a cut today.", "Não, hoje só o corte."]
+  - [hairdresser, "다 됐어요. 거울 보세요. 어때요?", "All done. Look in the mirror. How is it?", "Pronto. Olha no espelho. Que tal?"]
+  - [protagonist, "와, 예쁘게 잘라 주셨네요. 마음에 들어요!", "Wow, you cut it beautifully. I like it!", "Nossa, ficou lindo. Gostei!"]
+teach:
+  - ask: ["How does the hairdresser ask how you'd like it?", "Como o cabeleireiro pergunta como você quer?", "어떻게 해 드릴까요?", saramin]
+  - note: ["-게 says how: 짧다 → 짧게, short; 예쁘다 → 예쁘게, nicely. With -아/어 주세요: 짧게 잘라 주세요, cut it short (for me).", "-게 diz o modo: 짧다 → 짧게, curto; 예쁘다 → 예쁘게, bonito. Com -아/어 주세요: 짧게 잘라 주세요, corte curto (para mim)."]
+  - build: [jalla-juseyo, ["주세요", "잘라 주세요"]]
+  - ask: ["Ask for a short cut.", "Peça um corte curto.", "짧게 잘라 주세요.", jjalbge, jalla-juseyo]
+  - ask: ["Show with your hands: like this.", "Mostre com as mãos: assim.", "이렇게요.", ireoke]
+  - ask: ["Ask to just trim the fringe a little.", "Peça para só aparar um pouco a franja.", "앞머리는 조금만 다듬어 주세요.", itmeori, jogeumman, dadeumeo]
+  - ask: ["Say: just a cut, no perm today.", "Diga: só corte, sem permanente hoje.", "오늘은 파마 안 해요.", pama]
+  - ask: ["Say: no colour.", "Diga: sem tintura.", "염색은 안 할게요.", yeomsaek]
+  - ask: ["Say: look in the mirror.", "Diga: olhe no espelho.", "거울 보세요.", geoul]
+  - ask: ["Say: my hair is long.", "Diga: meu cabelo é comprido.", "머리가 길어요.", meori2]
+  - ask: ["Say you like it.", "Diga que gostou.", "마음에 들어요!", masseoyo]
+  - pt_only: "Os salões coreanos são rápidos e caprichosos; leve uma foto no celular — com o gesto e '이렇게요' ('assim'), ninguém se perde."
