@@ -26,6 +26,8 @@ const QS = { 'n5-004': { pools: { gap: ['が', 'を', 'に'] }, qs: [
   { type: 'gap', furi: [['私', 'わたし'], ['＿＿', null], ['学生', 'がくせい'], ['です。', null]], answer: 'は', en: 'I am a student.' },
   { type: 'translate', furi: [['猫', 'ねこ'], ['は好きです。', null]], roman: 'neko wa suki desu', tok: ['猫', 'は', '好き', 'です', '。'], answer: 'I like cats.' },
   { type: 'translate', furi: [['雨', 'あめ'], ['は嫌いです。', null]], roman: 'ame wa kirai desu', tok: ['雨', 'は', '嫌い', 'です', '。'], answer: 'I dislike rain.' }] } };
+// the by-source view (the learning order is the default since 2026-10-28)
+const bySource = () => { const st = store(); st.setItem('casus:learn:order', 'source'); return st; };
 const props = (extra = {}) => ({ lang: getLanguage('ja'), storage: store(), loadLearn: async () => INDEX, loadLesson: async (id) => LESSONS[id], loadQuestions: async (id) => QS[id] ?? { qs: [] }, random: () => 0, ...extra });
 
 describe('Learn tab, second version (Allan, 2026-10-19: topics listed under each unit, real lessons, furigana, many exercises)', () => {
@@ -34,7 +36,7 @@ describe('Learn tab, second version (Allan, 2026-10-19: topics listed under each
     expect(learnPath({ path: '/ja/' })).toBe('/ja/learn/');
   });
   it('a level shows its topics, each with its lessons listed below it', async () => {
-    const { container } = render(Learn, props());
+    const { container } = render(Learn, props({ storage: bySource() }));
     await flush();
     expect([...container.querySelectorAll('.level-tab')].map((b) => b.dataset.level)).toEqual(['N5', 'N4']);
     const topics = [...container.querySelectorAll('.topic')];
@@ -140,7 +142,7 @@ describe('lessons written for Casus: text in the interface language, more exampl
   it('shows the Portuguese text when the interface is Portuguese', async () => {
     const { setLang: setUiLang } = await import('../../src/app/lib/i18n.svelte.js');
     setUiLang('pt');
-    const { container } = render(Learn, props({ lang: getLanguage('mk'), loadLearn: async () => MK_INDEX, loadLesson: async () => MK_LESSON }));
+    const { container } = render(Learn, props({ storage: bySource(),  lang: getLanguage('mk'), loadLearn: async () => MK_INDEX, loadLesson: async () => MK_LESSON }));
     await flush();
     expect(container.querySelector('.topic-title').textContent).toBe('Ser e estar');
     expect(container.querySelector('.l-meaning-text').textContent).toBe('ser/estar');
@@ -265,7 +267,7 @@ describe('Learn, Allan 2026-10-20 night list', () => {
 describe('AI-written lessons are marked (Allan, 2026-10-20)', () => {
   it('a lesson written by AI shows a badge on its page and a mark in the list', async () => {
     const index = { ...INDEX, levels: [{ id: 'N5', topics: [{ id: 't1', kind: 'grammar', title: 'T', lessons: [{ id: 'n5-004', title: 'は', meaning: 'topic', ai: true }] }] }] };
-    const { container } = render(Learn, props({ loadLearn: async () => index, loadLesson: async () => ({ ...LESSONS['n5-004'], ai: true }) }));
+    const { container } = render(Learn, props({ storage: bySource(),  loadLearn: async () => index, loadLesson: async () => ({ ...LESSONS['n5-004'], ai: true }) }));
     await flush();
     expect(container.querySelector('.lesson-row .ai-mark')).not.toBe(null);
     await fireEvent.click(container.querySelector('.lesson-row'));
@@ -279,7 +281,7 @@ describe('generated lessons are marked (Allan, 2026-10-20)', () => {
     const index = { ...INDEX, levels: [{ id: 'N5', topics: [
       { id: 'g', kind: 'grammar', title: 'Prepositions', generated: true, lessons: [{ id: 'n5-004', title: 'na', meaning: 'on', generated: true }] },
       { id: 'p', kind: 'vocab', title: { en: 'Phrases', pt: 'Frases feitas' }, lessons: [{ id: 'n5-v1', title: 'x', meaning: '1' }] }] }] };
-    const { container } = render(Learn, props({ loadLearn: async () => index, loadLesson: async () => ({ ...LESSONS['n5-004'], generated: true }) }));
+    const { container } = render(Learn, props({ storage: bySource(),  loadLearn: async () => index, loadLesson: async () => ({ ...LESSONS['n5-004'], generated: true }) }));
     await flush();
     expect([...container.querySelectorAll('.topic-title')].map((x) => x.textContent)).toEqual(['Phrases', 'Prepositions']);   // human lessons first, generated under their own header (Allan, 2026-10-20)
     expect(container.querySelector('.made-head')).not.toBe(null);
@@ -461,5 +463,18 @@ describe('going back from a lesson', () => {
     await new Promise((r) => setTimeout(r, 50)); await flush();
     expect(container.querySelector('.crumbs')).toBeNull();
     expect(container.querySelector('details.topic').open).toBe(true);
+  });
+});
+
+describe('learning order view (Allan, 2026-10-28)', () => {
+  it('is the default, lists "Lesson 1…" and keeps the by-source view one click away; a note explains the sources', async () => {
+    const { container } = render(Learn, props());
+    await flush();
+    expect(container.querySelector('.learn-about')?.textContent.length).toBeGreaterThan(40);
+    expect(container.querySelector('.order-toggle [aria-pressed="true"]')?.dataset.order).toBe('order');
+    expect(container.querySelector('details.topic summary')?.textContent).toMatch(/Lesson 1/);
+    await fireEvent.click(container.querySelector('.order-toggle [data-order="source"]'));
+    await flush();
+    expect(container.querySelector('details.topic summary')?.textContent).toMatch(/Saying what something is/);
   });
 });

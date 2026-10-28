@@ -25,3 +25,25 @@ export function learnSections(topics) {
   out.push({ id: 'ai', topics: only((e) => !!e.ai, 'a') });
   return out.filter((s) => s.topics.length);
 }
+
+/** the level as a sequence of numbered lessons, ignoring the sources' own headers (Allan, 2026-10-28). Lessons a
+ * Conversation unit practises come in the order of the units, one group per unit (talkLinks: lesson id → units);
+ * the rest follow in groups of four, human-written before generated before AI-written, each source in its own
+ * order. [{ n, key, unit?, unitTitle?, lessons }] */
+export function learnOrder(level, talkLinks = {}, size = 4) {
+  const seen = new Set(), all = [];
+  for (const tp of level?.topics ?? []) for (const e of tp.lessons) if (!seen.has(e.id)) { seen.add(e.id); all.push(e); }
+  const unitOf = (e) => [...(talkLinks?.[e.id] ?? [])].sort((a, b) => String(a.unit).localeCompare(String(b.unit), 'en', { numeric: true }))[0];
+  const groups = new Map();
+  for (const e of all) {
+    const u = unitOf(e);
+    if (!u) continue;
+    if (!groups.has(u.unit)) groups.set(u.unit, { unit: u.unit, unitTitle: u.title, lessons: [] });
+    groups.get(u.unit).lessons.push(e);
+  }
+  const out = [...groups.values()].sort((a, b) => a.unit.localeCompare(b.unit, 'en', { numeric: true }));
+  const rank = (e) => (e.ai ? 2 : e.generated ? 1 : 0);
+  const rest = all.filter((e) => !unitOf(e)).map((e, i) => [e, i]).sort((a, b) => rank(a[0]) - rank(b[0]) || a[1] - b[1]).map(([e]) => e);
+  for (let i = 0; i < rest.length; i += size) out.push({ lessons: rest.slice(i, i + size) });
+  return out.map((g, i) => ({ ...g, n: i + 1, key: `order:${level?.id}:${i + 1}`, kind: 'order' }));
+}

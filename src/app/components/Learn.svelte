@@ -14,7 +14,7 @@
   import { createReview } from '../lib/review.js';
   import { lessonAnswer, completion } from '../lib/progression.js';
   import { speakLinks } from '../lib/pronounce.js';
-  import { learnSections } from '../lib/learnorigin.js';
+  import { learnSections, learnOrder } from '../lib/learnorigin.js';
   import WordEntry from './WordEntry.svelte';
   import { wordAround, candidatesAt, firstKnown } from '../lib/wordat.js';
   import { searchIndex } from '../../lib/learn/search.js';
@@ -40,6 +40,9 @@
   // a word of the taught language in a lesson opens its dictionary entry below its section, as in the Reader
   // (Allan, 2026-10-20): examples (b, i, code, [lang], .ja) in any script, any word in a script other than Latin
   let entry = $state(null);
+  let orderMode = $state('order');
+  try { orderMode = storage?.getItem('casus:learn:order') === 'source' ? 'source' : 'order'; } catch { /* no storage */ }
+  function setOrder(m) { orderMode = m; try { storage?.setItem('casus:learn:order', m); } catch { /* full */ } }
   // the entry floats next to the click — at the end of a long section it was off-screen and a click "did nothing"
   // (Allan, 2026-10-28)
   const at$ = (e) => ({ x: e.clientX ?? 0, y: e.clientY ?? 0 });
@@ -328,6 +331,7 @@
   <!-- the list stays in the page while a lesson is open: its opened topics and scroll survive (Allan, 2026-10-28) -->
   <div class="list-view" hidden={!!(lesson && lessonRef)}>
     <!-- the level's topics, each with its lessons listed under it -->
+    <p class="learn-about">{t('learn.about')}</p>
     <!-- the levels under one button (Allan, 2026-10-22) -->
     <div class="levels">
       <Picker cls="level-picker" label={level ? (level.title ? loc(level.title) : level.id) : ''} title={t('level.pick')}>
@@ -335,6 +339,11 @@
       </Picker>
     </div>
     <input class="search" type="search" bind:value={search} placeholder={t('learn.search')} />
+    <!-- the recommended order is the default; the sources' own headers are the other view (Allan, 2026-10-28) -->
+    <div class="order-toggle" role="group" aria-label={t('learn.order.label')}>
+      <button data-order="order" aria-pressed={orderMode === 'order'} class:active={orderMode === 'order'} onclick={() => setOrder('order')}>{t('learn.order.order')}</button>
+      <button data-order="source" aria-pressed={orderMode === 'source'} class:active={orderMode === 'source'} onclick={() => setOrder('source')}>{t('learn.order.source')}</button>
+    </div>
     {#if search.trim()}
       <!-- a search looks in every level, each level's matches under its own heading (Allan, 2026-10-27) -->
       {#each learn.levels as lv (lv.id)}
@@ -344,6 +353,8 @@
           {@render topicList(list, lv)}
         {/if}
       {/each}
+    {:else if orderMode === 'order'}
+      {@render topicList(learnOrder(level, talkLinks).map((g) => ({ ...g, title: `${t('learn.order.lesson', { n: g.n })}${g.unitTitle ? ` · ${loc(g.unitTitle)}` : ''}` })), level)}
     {:else}
       {@const parts = learnSections(level?.topics)}
       {#each parts as sec, i (sec.id)}
@@ -477,4 +488,8 @@
   .pct.done.full { background: none; }
   .entry-float { position: fixed; z-index: 30; max-height: 60vh; overflow: auto; background: var(--bg, #fff); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 8px 28px rgba(0,0,0,.25); }
   .w-btn { all: unset; cursor: pointer; text-decoration: underline dotted; text-decoration-color: var(--line); text-underline-offset: 3px; }
+  .learn-about { color: var(--muted, inherit); font-size: 0.92em; margin: 0.3em 0 0.8em; }
+  .order-toggle { display: inline-flex; gap: 0; margin: 0.5em 0; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+  .order-toggle button { font: inherit; background: none; border: 0; padding: 0.3em 0.9em; cursor: pointer; color: inherit; }
+  .order-toggle button.active { background: var(--accent, #555); color: var(--on-accent, #fff); }
 </style>

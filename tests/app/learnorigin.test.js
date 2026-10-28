@@ -39,3 +39,20 @@ describe('generated and AI-written apart (Allan, 2026-10-28): generated above, A
       ['course', [['x', [3]]]], ['generated', [['x', [2]], ['y', [4]]]], ['ai', [['x', [1]]]]]);
   });
 });
+
+import { learnOrder } from '../../src/app/lib/learnorigin.js';
+describe('recommended learning order (Allan, 2026-10-28)', () => {
+  const level = { id: 'A1', topics: [
+    { id: 'src1', lessons: [{ id: 'cases' }, { id: 'verbs' }, { id: 'wb-1' }, { id: 'wb-2' }, { id: 'wb-3' }, { id: 'wb-4' }, { id: 'wb-5' }] },
+    { id: 'src2', lessons: [{ id: 'gen-1', generated: true }, { id: 'ai-1', ai: true }, { id: 'verbs' }] }] };
+  const links = { verbs: [{ unit: 'A1-02', title: { en: 'The room' } }, { unit: 'A1-05', title: { en: 'x' } }], cases: [{ unit: 'A1-07', title: { en: 'The office' } }] };
+  it('lessons practised in Conversation follow the units; the rest come after, in fours, human before generated before AI', () => {
+    const got = learnOrder(level, links);
+    expect(got.map((g) => [g.n, g.unit ?? null, g.lessons.map((l) => l.id)])).toEqual([
+      [1, 'A1-02', ['verbs']], [2, 'A1-07', ['cases']], [3, null, ['wb-1', 'wb-2', 'wb-3', 'wb-4']], [4, null, ['wb-5', 'gen-1', 'ai-1']]]);
+    expect(got[0].unitTitle).toEqual({ en: 'The room' });
+  });
+  it('without a Conversation course the level is simply cut into lessons of four', () => {
+    expect(learnOrder(level, {}).map((g) => g.lessons.length)).toEqual([4, 4, 1]);
+  });
+});
