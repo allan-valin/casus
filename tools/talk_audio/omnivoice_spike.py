@@ -98,6 +98,9 @@ def main():
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--candidates", type=int, default=3)
     ap.add_argument("--pick", nargs="*", default=[], help="who=k: use candidate k of a voice")
+    ap.add_argument("--reuse", type=Path, help="a run whose ref-<who>-<k>.wav files are kept for the picked voices")
+    ap.add_argument("--first", type=int, default=1, help="number of the first new candidate (new seeds)")
+    ap.add_argument("--voice", nargs="*", default=[], help='who="attributes": override a designed voice')
     a = ap.parse_args()
     a.out.mkdir(parents=True, exist_ok=True)
     model = OmniVoice.from_pretrained("k2-fsa/OmniVoice", device_map="cuda:0", dtype=torch.float16)
@@ -106,10 +109,17 @@ def main():
     lang = LANG.get(a.code, a.code)
     refs, report = {}, {}
     picks = dict(x.split("=") for x in a.pick)
-    for who, attrs in spec["voices"].items():
+    voices = {**spec["voices"], **dict(x.split("=", 1) for x in a.voice)}
+    for who, attrs in voices.items():
+        if a.reuse and who in picks:          # Allan picked it by ear: the very same file, not a regenerated one
+            p = a.out / f"ref-{who}-{picks[who]}.wav"
+            p.write_bytes((a.reuse / p.name).read_bytes())
+            report[f"use-{who}"] = int(picks[who])
+            refs[who] = model.create_voice_clone_prompt(ref_audio=str(p), ref_text=spec["ref"])
+            continue
         # candidates for Allan's ear (Allan 17:55: pick the voice by number, no Arabic needed)
         cands = []
-        for k in range(1, a.candidates + 1):
+        for k in range(a.first, a.first + a.candidates):
             torch.manual_seed(100 * k)
             wav = trim(model.generate(text=spec["ref"], language=lang, instruct=attrs)[0])
             err, heard = error(model, wav, spec["ref"])
