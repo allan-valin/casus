@@ -31,6 +31,9 @@ class Vowel(unittest.TestCase):
     def test_case_ending_dropped_tanwin_an_kept(self):
         self.assertEqual(ar_vowel.vowel('بنفسي جدا', {}, lambda t: 'بِنَفْسِيٍّ جِدًّا'), unicodedata.normalize('NFC', 'بِنَفْسِيّ جِدًّا'))
 
+    def test_gap_mark_kept(self):
+        self.assertEqual(ar_vowel.vowel('بيت ＿＿.', self.lex, lambda t: 'بَيْت'), 'بَيْت ＿＿.')
+
     def test_already_vowelled_left_alone(self):
         self.assertEqual(ar_vowel.vowel('أَنَا', self.lex, self.diac), 'أَنَا')
 

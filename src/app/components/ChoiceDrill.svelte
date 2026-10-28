@@ -37,7 +37,8 @@
   // romaji/romanisation: stored, or from the kana reading, or — for a script read letter by letter (Cyrillic) — from
   // the sentence itself; never from kanji, which the romaniser cannot read
   const plainFuri = (f) => f && f.every(([, r]) => !r) ? f.map(([t]) => t).join('') : null;
-  const promptRoman = $derived(current ? (current.item.roman ?? (current.item.kana && romanize ? romanOf(current.item.kana, romanize)
+  // Arabic: from the build-time vowelled copy (tools/ar_vowel.py), the prompt itself is written without vowels
+  const promptRoman = $derived(current ? (current.item.roman || (current.item.vowelled ? romanOf(current.item.vowelled, romanize) : '') || (current.item.kana && romanize ? romanOf(current.item.kana, romanize)
     : (current.item.furi ? romanOf(plainFuri(current.item.furi) ?? '', romanize) : romanOf(current.item.prompt, romanize)))) : '');
   function onkey(e) {
     if (!current || e.ctrlKey || e.metaKey || e.altKey) return;

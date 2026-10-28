@@ -213,6 +213,21 @@ describe('Arabic examples get Latin letters from the build-time vowelling (Allan
   });
 });
 
+describe('Arabic exercises get Latin letters from the vowelled copy too', () => {
+  it('a gap prompt without vowels shows the romanised vowelled copy, gap included', async () => {
+    const AR_INDEX = { system: 'CEFR', credit: 'x', levels: [{ id: 'A1', topics: [{ id: 't', kind: 'grammar', title: 'T', lessons: [{ id: 'n', title: 'هي', meaning: 'm' }] }] }] };
+    const AR_LESSON = { id: 'n', title: 'هي', meaning: 'm', sections: [], examples: [], practice: [], source: 'written for Casus' };
+    const QS = { pools: { gap: ['جَائِعٌ'] }, qs: [{ type: 'gap', furi: [['أنا ', null], ['＿＿', null], [' جداً.', null]], roman: '', vowelled: 'أَنَا ＿＿ جِدًّا.', answer: 'عَطْشَانٌ', en: "I'm very thirsty." }] };
+    const { container } = render(Learn, props({ lang: getLanguage('ar'), loadLearn: async () => AR_INDEX, loadLesson: async () => AR_LESSON, loadQuestions: async () => QS }));
+    await flush();
+    await fireEvent.click(container.querySelector('.lesson-row'));
+    await flush();
+    await fireEvent.click(container.querySelector('button.start-exercises'));
+    await flush();
+    expect(container.querySelector('.prompt-roman').textContent).toContain('ʔanā ＿＿ jiddan');
+  });
+});
+
 describe('Learn, Allan 2026-10-20 night list', () => {
   it('topics start collapsed and open on a click; a search opens them', async () => {
     const { container } = render(Learn, props());

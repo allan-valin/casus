@@ -7,8 +7,8 @@ li-), the rest the open diacritiser Mishkal (GPL-3, build time only, nothing of 
 vowelled text with the vowels taken out (case endings not counted): Mishkal alone 74 % of words right on our lessons'
 Arabic, 68 % on Wiktionary's example sentences; with the dictionary first 77 % and 73 %.
 
-Writes `vowelled` beside `text` on every example of data/ar/learn/ar-*.json (examples and more); the text shown stays
-as Tatoeba wrote it. Run with the python that has mishkal (desembarque/.venv-ocr):
+Writes `vowelled` beside `text` on every example of data/ar/learn/ar-*.json (examples and more) and on every
+exercise prompt of q-ar-*.json; the text shown stays as Tatoeba wrote it. Run with the python that has mishkal (desembarque/.venv-ocr):
     python tools/ar_vowel.py            # builds the Wiktionary list from vendor/wiktextract on the first run
 """
 import gzip
@@ -68,7 +68,7 @@ def vowel(text, lex, diac):
     for w, g in zip(words, guessed):
         m = re.fullmatch(r'([^ء-ي]*)([ء-ْٰٱ]+)([^ء-ي]*)', w)
         if not m:
-            out.append(g)
+            out.append(g if re.search('[\u0621-\u064a]', w) else w)   # a gap (＿＿) or a number stays as it is
             continue
         lead, core, tail = m.groups()
         if len(MARKS.findall(core)) * 2 >= len(bare(core)):
@@ -98,6 +98,15 @@ def main():
             ex['vowelled'] = vowel(ex['text'], lex, diac)
             n += 1
         f.write_text(json.dumps(lesson, ensure_ascii=False))
+    # the exercises: the prompt's text (a gap question keeps its ＿＿)
+    for f in sorted((ROOT / 'data' / 'ar' / 'learn').glob('q-ar-*.json')):
+        qs = json.loads(f.read_text())
+        for q in qs.get('qs', []):
+            text = ''.join(t for t, _ in q.get('furi') or []) or q.get('prompt', '')
+            if re.search('[\u0621-\u064a]', text):
+                q['vowelled'] = vowel(text, lex, diac)
+                n += 1
+        f.write_text(json.dumps(qs, ensure_ascii=False))
     print(f'{n} examples vowelled', file=sys.stderr)
 
 
