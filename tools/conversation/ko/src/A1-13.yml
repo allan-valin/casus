@@ -1,0 +1,40 @@
+id: A1-13
+protagonist: f
+title: [The subway, O metrô]
+situation: ["Your first ride on line 2. At the station you top up a T-money card and ask a passer-by where to change.", "Sua primeira viagem na linha 2. Na estação você recarrega o cartão T-money e pergunta a alguém onde fazer baldeação."]
+learn: [ko-place, ko-nikl-13]
+culture: The subway card and changing lines
+items:
+  - [gyotongkadeu, "교통카드", "transport card", "cartão de transporte"]
+  - [chungjeon, "충전해 주세요", "Please top it up", "Recarregue, por favor"]
+  - [hoseon, "호선", "line (subway)", "linha (do metrô)"]
+  - [garatayo, "갈아타요", "change (trains)", "faz baldeação"]
+  - [e-place, "에", "to, at (a place)", "a, em (um lugar)"]
+  - [eseo, "에서", "at, in (where something happens); from", "em (onde algo acontece); de"]
+  - [eotteoke-gayo, "어떻게 가요?", "How do I get there?", "Como eu chego lá?"]
+  - [hongdae, "홍대입구", "Hongik Univ. station", "estação Hongik Univ."]
+  - [yeogiseo, "여기서", "from here, here (short for 여기에서)", "daqui, aqui (curto de 여기에서)"]
+  - [neryeoyo, "내려요", "get off", "desce"]
+  - [daeum, "다음", "next", "próximo"]
+  - [silyehamnida, "실례합니다", "Excuse me (formal)", "Com licença (formal)", {register: formal}]
+dialogue:
+  - [protagonist, "실례합니다. 교통카드 충전해 주세요.", "Excuse me. Please top up my transport card.", "Com licença. Recarregue meu cartão, por favor."]
+  - [passerby, "충전은 저기 기계에서 해요.", "You top it up at the machine over there.", "A recarga é na máquina ali."]
+  - [protagonist, "아, 감사합니다. 홍대입구에 어떻게 가요?", "Oh, thank you. How do I get to Hongik University?", "Ah, obrigada. Como eu chego a Hongik?"]
+  - [passerby, "여기서 이 호선을 타세요.", "Take line 2 from here.", "Pegue a linha 2 daqui."]
+  - [protagonist, "갈아타요?", "Do I change?", "Preciso fazer baldeação?"]
+  - [passerby, "아니요, 안 갈아타요. 홍대입구에서 내려요.", "No, you don't change. You get off at Hongik University.", "Não, não precisa. Você desce em Hongik."]
+  - [protagonist, "다음 역이에요?", "Is it the next station?", "É a próxima estação?"]
+  - [passerby, "아니요, 세 정거장 가요.", "No, three stops.", "Não, são três paradas."]
+teach:
+  - ask: ["Excuse yourself formally to a stranger.", "Peça licença formalmente a um desconhecido.", "실례합니다.", silyehamnida]
+  - ask: ["Ask to top up your card.", "Peça para recarregar o cartão.", "교통카드 충전해 주세요.", gyotongkadeu, chungjeon]
+  - note: ["에 is the place you go to or are at: 홍대입구에 가요. 에서 is where something happens: 기계에서 해요, 'you do it at the machine' — and 'from': 여기서, from here.", "에 é o lugar para onde você vai ou onde está: 홍대입구에 가요. 에서 é onde algo acontece: 기계에서 해요, 'faz na máquina' — e 'de': 여기서, daqui."]
+  - ask: ["Ask how to get to Hongik University.", "Pergunte como chegar a Hongik.", "홍대입구에 어떻게 가요?", e-place, eotteoke-gayo, hongdae]
+  - ask: ["Say: you top it up at the machine.", "Diga: a recarga é na máquina.", "기계에서 충전해요.", eseo]
+  - ask: ["She says: take line 2 from here. How?", "Ela diz: pegue a linha 2 daqui. Como?", "여기서 이 호선을 타세요.", yeogiseo, hoseon]
+  - build: [garatayo, ["-타요", "갈아타요"]]
+  - ask: ["Ask if you have to change.", "Pergunte se precisa fazer baldeação.", "갈아타요?", garatayo]
+  - ask: ["Say: you get off at Hongik University.", "Diga: você desce em Hongik.", "홍대입구에서 내려요.", eseo, neryeoyo]
+  - ask: ["Ask: is it the next station?", "Pergunte: é a próxima estação?", "다음 역이에요?", daeum]
+  - pt_only: "O metrô de Seul tem linhas numeradas (1호선, 2호선…) e anúncios em coreano, inglês, chinês e japonês. O T-money serve para metrô, ônibus, táxi e até loja de conveniência."

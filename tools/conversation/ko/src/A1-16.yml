@@ -1,0 +1,41 @@
+id: A1-16
+protagonist: m
+title: [Delivery, Delivery]
+situation: ["Ten at night, you are still working. Minjun shows you how to order fried chicken on a delivery app.", "Dez da noite, você ainda está trabalhando. O Minjun mostra como pedir frango frito pelo aplicativo de entrega."]
+learn: [ko-negation, ko-nikl-24]
+culture: Delivery at any hour (빨리빨리)
+items:
+  - [baedal, "배달", "delivery", "entrega"]
+  - [jumunhaeyo, "주문해요", "order", "pede, encomenda"]
+  - [chikin, "치킨", "fried chicken", "frango frito"]
+  - [an, "안", "not (before a verb)", "não (antes do verbo)"]
+  - [mot, "못", "cannot", "não consegue"]
+  - [eunikka, "-(으)니까", "because, so (giving a reason)", "como, porque (dando motivo)"]
+  - [neujeosseoyo, "늦었어요", "it's late", "ficou tarde"]
+  - [myeot-bun, "몇 분?", "how many minutes?", "quantos minutos?"]
+  - [sambun, "삼십 분", "thirty minutes", "trinta minutos"]
+  - [ppalli, "빨리", "quickly", "rápido"]
+  - [yori, "요리", "cooking", "cozinhar"]
+  - [baegopa, "배달 왔어요", "the delivery is here", "a entrega chegou"]
+dialogue:
+  - [minjun, "형, 아직 일해요? 밥 먹었어요?", "Hyung, still working? Did you eat?", "Hyung, ainda trabalhando? Já comeu?"]
+  - [protagonist, "아니요, 안 먹었어요. 요리는 못 해요.", "No, I didn't. I can't cook.", "Não, não comi. Não sei cozinhar."]
+  - [minjun, "늦었으니까 치킨 시켜요. 배달 앱으로 주문해요.", "It's late, so let's get chicken. We'll order on the delivery app.", "Está tarde, então vamos pedir frango. Pelo aplicativo."]
+  - [protagonist, "지금 밤 열 시예요. 배달 돼요?", "It's ten at night now. Do they deliver?", "Agora são dez da noite. Eles entregam?"]
+  - [minjun, "그럼요! 한국은 밤에도 배달해요.", "Of course! In Korea they deliver at night too.", "Claro! Na Coreia entregam de noite também."]
+  - [protagonist, "몇 분 걸려요?", "How many minutes does it take?", "Quanto tempo demora?"]
+  - [minjun, "삼십 분이요. 빨리 와요.", "Thirty minutes. It comes fast.", "Trinta minutos. Chega rápido."]
+  - [protagonist, "와, 벌써 배달 왔어요!", "Wow, the delivery is already here!", "Nossa, a entrega já chegou!"]
+teach:
+  - note: ["안 before a verb is 'not': 안 먹었어요, I didn't eat. 못 is 'cannot': 요리는 못 해요, I can't cook.", "안 antes do verbo é 'não': 안 먹었어요, não comi. 못 é 'não consegue': 요리는 못 해요, não sei cozinhar."]
+  - ask: ["Say that you didn't eat.", "Diga que não comeu.", "안 먹었어요.", an]
+  - ask: ["Say that you can't cook.", "Diga que não sabe cozinhar.", "요리는 못 해요.", mot, yori]
+  - note: ["-(으)니까 gives a reason before a suggestion: 늦었으니까 치킨 시켜요, it's late, so let's get chicken.", "-(으)니까 dá o motivo antes de uma sugestão: 늦었으니까 치킨 시켜요, está tarde, então vamos pedir frango."]
+  - build: [neujeosseoyo, ["-었어요", "늦었어요"]]
+  - ask: ["Say: it's late, so let's get chicken.", "Diga: está tarde, então vamos pedir frango.", "늦었으니까 치킨 시켜요.", eunikka, neujeosseoyo, chikin]
+  - ask: ["Say you'll order on the delivery app.", "Diga que vai pedir pelo aplicativo.", "배달 앱으로 주문해요.", baedal, jumunhaeyo]
+  - ask: ["Ask how many minutes it takes.", "Pergunte quantos minutos demora.", "몇 분 걸려요?", myeot-bun]
+  - ask: ["Answer: thirty minutes.", "Responda: trinta minutos.", "삼십 분이요.", sambun]
+  - ask: ["Say it comes quickly.", "Diga que chega rápido.", "빨리 와요.", ppalli]
+  - ask: ["The doorbell rings. Say the delivery is here.", "A campainha toca. Diga que a entrega chegou.", "배달 왔어요!", baegopa]
+  - pt_only: "빨리빨리, 'rápido, rápido', é quase um lema: comida entregue a qualquer hora, em meia hora. Ao contrário do Brasil, não se dá gorjeta ao entregador."

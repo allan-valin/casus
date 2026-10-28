@@ -1,0 +1,39 @@
+id: A1-14
+protagonist: m
+title: [The work lunch, O almoço do trabalho]
+situation: ["Lunch with the team at a stew restaurant near the office. The team lead orders; the eldest starts eating.", "Almoço com a equipe num restaurante de ensopados perto do escritório. A líder pede; o mais velho começa a comer."]
+learn: [ko-nikl-22, ko-nikl-23]
+culture: The eldest starts; spice levels
+items:
+  - [gachi-meogeoyo, "같이 먹어요", "Let's eat together", "Vamos comer juntos"]
+  - [masisseoyo, "맛있어요", "is tasty", "é gostoso"]
+  - [maewoyo, "매워요", "is spicy", "é apimentado"]
+  - [deuseyo, "드세요", "please eat (respectful)", "coma, por favor (respeitoso)"]
+  - [eusi, "-(으)시-", "honour for the person doing it (드시다, 가시다)", "respeito para quem faz a ação (드시다, 가시다)"]
+  - [go-and, "-고", "and (joining two clauses or words)", "e (liga duas frases ou palavras)"]
+  - [jjigae, "찌개", "stew", "ensopado"]
+  - [an-maewoyo, "안 매워요", "not spicy", "não é apimentado"]
+  - [mul-jom, "물 좀 주세요", "Some water, please", "Uma água, por favor"]
+  - [baegopayo, "배고파요", "I'm hungry", "estou com fome"]
+  - [jeomsim, "점심", "lunch", "almoço"]
+dialogue:
+  - [jieun, "점심 같이 먹어요. 김치찌개 어때요?", "Let's have lunch together. How about kimchi stew?", "Vamos almoçar juntos. Que tal 김치찌개?"]
+  - [protagonist, "좋아요. 배고파요! 그런데 매워요?", "Great. I'm hungry! But is it spicy?", "Ótimo. Estou com fome! Mas é apimentado?"]
+  - [jieun, "조금 매워요. 된장찌개는 안 매워요.", "A little. Soybean stew isn't spicy.", "Um pouco. O de soja não é."]
+  - [protagonist, "그럼 저는 김치찌개 먹어요. 매운 거 좋아해요.", "Then I'll have kimchi stew. I like spicy food.", "Então eu como o de kimchi. Gosto de comida apimentada."]
+  - [jieun, "음식 나왔어요. 부장님, 먼저 드세요.", "The food is here. Director, please start.", "A comida chegou. Diretor, pode começar."]
+  - [protagonist, "와, 맛있어요! 맵고 맛있어요.", "Wow, it's good! Spicy and tasty.", "Nossa, que gostoso! Apimentado e gostoso."]
+  - [jieun, "물 좀 드세요. 얼굴이 빨개요!", "Have some water. Your face is red!", "Beba uma água. Seu rosto está vermelho!"]
+  - [protagonist, "괜찮아요. 맵고… 정말 맛있어요!", "I'm fine. It's spicy and… really good!", "Estou bem. É apimentado e… muito gostoso!"]
+teach:
+  - ask: ["Invite the team to have lunch together.", "Convide a equipe para almoçar junto.", "점심 같이 먹어요.", jeomsim, gachi-meogeoyo]
+  - ask: ["Say that you are hungry.", "Diga que está com fome.", "배고파요.", baegopayo]
+  - ask: ["Ask if it is spicy.", "Pergunte se é apimentado.", "매워요?", maewoyo]
+  - ask: ["Say: the soybean stew isn't spicy.", "Diga: o ensopado de soja não é apimentado.", "된장찌개는 안 매워요.", jjigae, an-maewoyo]
+  - note: ["At the table the eldest or most senior starts. -(으)시- honours the one who acts: 먹다 has its own respectful verb, 드시다 → 드세요, 'please eat'.", "À mesa, começa o mais velho ou o de cargo mais alto. -(으)시- honra quem faz a ação: 먹다 tem um verbo respeitoso próprio, 드시다 → 드세요, 'coma, por favor'."]
+  - build: [deuseyo, ["-세요", "드세요"]]
+  - ask: ["Invite the director to start eating.", "Convide o diretor a começar a comer.", "부장님, 먼저 드세요.", deuseyo, eusi]
+  - note: ["-고 joins two descriptions: 맵다 + 맛있다 → 맵고 맛있어요, 'spicy and tasty'.", "-고 liga duas descrições: 맵다 + 맛있다 → 맵고 맛있어요, 'apimentado e gostoso'."]
+  - ask: ["Say: it's spicy and tasty.", "Diga: é apimentado e gostoso.", "맵고 맛있어요.", go-and, masisseoyo]
+  - ask: ["Ask for some water.", "Peça uma água.", "물 좀 주세요.", mul-jom]
+  - pt_only: "No Brasil cada um começa quando o prato chega. Na Coreia espera-se o mais velho (ou o chefe) pegar a colher primeiro."

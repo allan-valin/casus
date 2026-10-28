@@ -1,0 +1,532 @@
+# UNIT ko A1-19 — written by AI (Claude) for Casus; expanded from src/A1-19.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-19
+level: A1
+number: 19
+protagonist: f
+title:
+  en: The rubbish
+  pt: O lixo
+situation:
+  en: 'A note on your door from Mrs Park: your rubbish was in the wrong bag. She shows you the sorting area and its sign.'
+  pt: 'Um bilhete na sua porta da senhora Park: seu lixo estava no saco errado. Ela mostra a área de separação e a placa.'
+learn_lessons:
+- ko-nikl-30
+- ko-nikl-29
+culture: Strict sorting and paid bags
+new_items:
+- id: sseuregi
+  text: 쓰레기
+  meaning:
+    en: rubbish
+    pt: lixo
+- id: eumsingmul
+  text: 음식물 쓰레기
+  meaning:
+    en: food waste
+    pt: lixo orgânico
+- id: jongnyangje
+  text: 종량제 봉투
+  meaning:
+    en: paid rubbish bag
+    pt: saco de lixo pago
+- id: bullisugeo
+  text: 분리수거
+  meaning:
+    en: sorting for recycling
+    pt: separação para reciclagem
+- id: haeya-haeyo
+  text: 해야 해요
+  meaning:
+    en: must do
+    pt: tem que fazer
+- id: seumnida
+  text: -습니다 / -ㅂ니다
+  meaning:
+    en: formal statement (signs, announcements)
+    pt: afirmação formal (placas, avisos)
+- id: seumnikka
+  text: -습니까 / -ㅂ니까
+  meaning:
+    en: formal question
+    pt: pergunta formal
+- id: peullaseutik
+  text: 플라스틱
+  meaning:
+    en: plastic
+    pt: plástico
+- id: jongi
+  text: 종이
+  meaning:
+    en: paper
+    pt: papel
+- id: byeong
+  text: 병
+  meaning:
+    en: bottle
+    pt: garrafa
+- id: eonje
+  text: 언제
+  meaning:
+    en: when
+    pt: quando
+- id: joesonghaeyo
+  text: 죄송해요
+  meaning:
+    en: I'm sorry
+    pt: desculpe
+reviews:
+- item: eoseo-oseyo
+  from: A1-04
+- item: mul
+  from: A1-04
+- item: ramyeon
+  from: A1-04
+- item: igeo
+  from: A1-04
+- item: juseyo
+  from: A1-04
+- item: do
+  from: A1-04
+- item: bongtu
+  from: A1-04
+- item: piryohaseyo
+  from: A1-04
+- item: eolmayeyo
+  from: A1-04
+- item: won
+  from: A1-04
+- item: kkaji
+  from: A1-04
+- item: myeot-si
+  from: A1-04
+- item: haeyo
+  from: A1-04
+- item: gangaji
+  from: A1-12
+- item: goyangi
+  from: A1-12
+- item: gwiyeowoyo
+  from: A1-12
+- item: isseoyo2
+  from: A1-12
+- item: eopseoyo
+  from: A1-12
+- item: boda
+  from: A1-12
+- item: deo
+  from: A1-12
+- item: joahaeyo
+  from: A1-12
+- item: jinjja-yo
+  from: A1-12
+- item: keoyo
+  from: A1-12
+- item: jagayo
+  from: A1-12
+- item: mandjyeo-dwaeyo
+  from: A1-12
+- item: baedal
+  from: A1-16
+- item: jumunhaeyo
+  from: A1-16
+- item: chikin
+  from: A1-16
+- item: an
+  from: A1-16
+- item: mot
+  from: A1-16
+- item: eunikka
+  from: A1-16
+- item: neujeosseoyo
+  from: A1-16
+- item: myeot-bun
+  from: A1-16
+- item: sambun
+  from: A1-16
+- item: ppalli
+  from: A1-16
+- item: yori
+  from: A1-16
+- item: baegopa
+  from: A1-16
+- item: kkeuryeoyo
+  from: A1-18
+- item: mul2
+  from: A1-18
+- item: sogeum
+  from: A1-18
+- item: gyeran
+  from: A1-18
+- item: pa
+  from: A1-18
+- item: jiman
+  from: A1-18
+- item: go2
+  from: A1-18
+- item: meonjeo
+  from: A1-18
+- item: geu-daeum
+  from: A1-18
+- item: bul
+  from: A1-18
+- item: sseoyo
+  from: A1-18
+- item: an-dwaeyo
+  from: A1-18
+steps:
+- type: narrator
+  text:
+    en: 'A note on your door from Mrs Park: your rubbish was in the wrong bag. She shows you the sorting area and its sign. Listen to the conversation; you don''t need to understand it yet.'
+    pt: 'Um bilhete na sua porta da senhora Park: seu lixo estava no saco errado. Ela mostra a área de separação e a placa. Escute a conversa; ainda não precisa entender.'
+- type: dialogue
+  lines:
+  - speaker: park
+    text: 학생, 이 쓰레기 학생 거예요?
+    meaning:
+      en: Is this rubbish yours?
+      pt: Este lixo é seu?
+  - speaker: protagonist
+    text: 네… 죄송해요. 뭐가 잘못됐어요?
+    meaning:
+      en: Yes… sorry. What was wrong?
+      pt: É… desculpe. O que estava errado?
+  - speaker: park
+    text: 음식물 쓰레기는 여기 버려야 해요.
+    meaning:
+      en: Food waste has to go here.
+      pt: Lixo orgânico tem que ir aqui.
+  - speaker: protagonist
+    text: 플라스틱하고 종이는요?
+    meaning:
+      en: And plastic and paper?
+      pt: E plástico e papel?
+  - speaker: park
+    text: 분리수거해야 해요. 플라스틱, 종이, 병, 다 따로요.
+    meaning:
+      en: You have to sort them. Plastic, paper, bottles, all separately.
+      pt: Tem que separar. Plástico, papel, garrafa, tudo separado.
+  - speaker: protagonist
+    text: 다른 쓰레기는요?
+    meaning:
+      en: And the other rubbish?
+      pt: E o resto do lixo?
+  - speaker: park
+    text: 종량제 봉투에 넣어야 해요. 편의점에서 사요.
+    meaning:
+      en: It goes in a paid bag. You buy them at the convenience store.
+      pt: Vai no saco pago. Compra na loja de conveniência.
+  - speaker: protagonist
+    text: 표지판에 '분리수거는 화요일에 합니다'라고 써 있어요. 화요일만 버립니까?
+    meaning:
+      en: The sign says 'Sorting is done on Tuesdays'. Do we only throw it out on Tuesdays?
+      pt: A placa diz 'A separação é feita às terças'. Só se joga na terça?
+  - speaker: park
+    text: 네, 화요일하고 금요일이에요.
+    meaning:
+      en: Yes, Tuesdays and Fridays.
+      pt: Sim, terça e sexta.
+- type: prompt
+  ask:
+    en: Apologise.
+    pt: Peça desculpas.
+  answer:
+    speaker: protagonist
+    text: 죄송해요.
+  items:
+  - joesonghaeyo
+- type: narrator
+  text:
+    en: '해야 해요 is ''have to'': 버려야 해요, it has to be thrown out (there). It comes back in A2 with every verb.'
+    pt: '해야 해요 é ''ter que'': 버려야 해요, tem que jogar (ali). Volta no A2 com todos os verbos.'
+- type: prompt
+  ask:
+    en: 'Say: food waste has to go here.'
+    pt: 'Diga: o lixo orgânico tem que ir aqui.'
+  answer:
+    speaker: protagonist
+    text: 음식물 쓰레기는 여기 버려야 해요.
+  items:
+  - eumsingmul
+  - haeya-haeyo
+- type: prompt
+  ask:
+    en: Say you have to sort the rubbish.
+    pt: Diga que tem que separar o lixo.
+  answer:
+    speaker: protagonist
+    text: 분리수거해야 해요.
+  items:
+  - bullisugeo
+  - haeya-haeyo
+- type: prompt
+  ask:
+    en: 'Name them: plastic, paper, bottles.'
+    pt: 'Diga: plástico, papel, garrafa.'
+  answer:
+    speaker: protagonist
+    text: 플라스틱, 종이, 병
+  items:
+  - peullaseutik
+  - jongi
+  - byeong
+- type: prompt
+  ask:
+    en: 'Say: the rest goes in a paid bag.'
+    pt: 'Diga: o resto vai no saco pago.'
+  answer:
+    speaker: protagonist
+    text: 종량제 봉투에 넣어야 해요.
+  items:
+  - jongnyangje
+  - sseuregi
+- type: narrator
+  text:
+    en: 'Signs and announcements speak the formal style: 합니다 instead of 해요, and 합니까? for questions. You read it everywhere; you say it in set phrases (감사합니다).'
+    pt: 'Placas e avisos usam o estilo formal: 합니다 no lugar de 해요, e 합니까? nas perguntas. Você lê em toda parte; fala em frases feitas (감사합니다).'
+- type: prompt
+  ask:
+    en: 'Read the sign: sorting is done on Tuesdays.'
+    pt: 'Leia a placa: a separação é às terças.'
+  answer:
+    speaker: protagonist
+    text: 분리수거는 화요일에 합니다.
+  items:
+  - seumnida
+- type: prompt
+  ask:
+    en: 'Ask formally: do we only throw it out on Tuesdays?'
+    pt: 'Pergunte formalmente: só se joga na terça?'
+  answer:
+    speaker: protagonist
+    text: 화요일만 버립니까?
+  items:
+  - seumnikka
+- type: prompt
+  ask:
+    en: Ask when the rubbish goes out.
+    pt: Pergunte quando se põe o lixo para fora.
+  answer:
+    speaker: protagonist
+    text: 쓰레기는 언제 버려요?
+  items:
+  - eonje
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: Na Coreia o lixo comum só vai no saco pago (종량제 봉투), e o orgânico e os recicláveis são separados à risca — o vizinho repara, e às vezes devolve o saco.
+- type: prompt
+  ask:
+    en: 'Once more: say “rubbish”.'
+    pt: 'Mais uma vez: diga “lixo”.'
+  answer:
+    speaker: protagonist
+    text: 쓰레기
+  items:
+  - sseuregi
+- type: prompt
+  ask:
+    en: 'Once more: say “food waste”.'
+    pt: 'Mais uma vez: diga “lixo orgânico”.'
+  answer:
+    speaker: protagonist
+    text: 음식물 쓰레기
+  items:
+  - eumsingmul
+- type: prompt
+  ask:
+    en: 'Once more: say “paid rubbish bag”.'
+    pt: 'Mais uma vez: diga “saco de lixo pago”.'
+  answer:
+    speaker: protagonist
+    text: 종량제 봉투
+  items:
+  - jongnyangje
+- type: prompt
+  ask:
+    en: 'Once more: say “sorting for recycling”.'
+    pt: 'Mais uma vez: diga “separação para reciclagem”.'
+  answer:
+    speaker: protagonist
+    text: 분리수거
+  items:
+  - bullisugeo
+- type: prompt
+  ask:
+    en: 'Once more: say “formal statement (signs, announcements)”.'
+    pt: 'Mais uma vez: diga “afirmação formal (placas, avisos)”.'
+  answer:
+    speaker: protagonist
+    text: -습니다 / -ㅂ니다
+  items:
+  - seumnida
+- type: prompt
+  ask:
+    en: 'Once more: say “formal question”.'
+    pt: 'Mais uma vez: diga “pergunta formal”.'
+  answer:
+    speaker: protagonist
+    text: -습니까 / -ㅂ니까
+  items:
+  - seumnikka
+- type: prompt
+  ask:
+    en: 'Once more: say “plastic”.'
+    pt: 'Mais uma vez: diga “plástico”.'
+  answer:
+    speaker: protagonist
+    text: 플라스틱
+  items:
+  - peullaseutik
+- type: prompt
+  ask:
+    en: 'Once more: say “paper”.'
+    pt: 'Mais uma vez: diga “papel”.'
+  answer:
+    speaker: protagonist
+    text: 종이
+  items:
+  - jongi
+- type: prompt
+  ask:
+    en: 'Once more: say “bottle”.'
+    pt: 'Mais uma vez: diga “garrafa”.'
+  answer:
+    speaker: protagonist
+    text: 병
+  items:
+  - byeong
+- type: prompt
+  ask:
+    en: 'Once more: say “when”.'
+    pt: 'Mais uma vez: diga “quando”.'
+  answer:
+    speaker: protagonist
+    text: 언제
+  items:
+  - eonje
+- type: prompt
+  ask:
+    en: 'Once more: say “I''m sorry”.'
+    pt: 'Mais uma vez: diga “desculpe”.'
+  answer:
+    speaker: protagonist
+    text: 죄송해요
+  items:
+  - joesonghaeyo
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “boil (something) — and “put in the water — and “salt — and “egg — and “spring onion — and “but — and “and, then — and “first — and “after that”.'
+    pt: 'Diga: “ferve (algo) — e “põe a água — e “sal — e “ovo — e “cebolinha — e “mas — e “e, e depois — e “primeiro — e “depois disso”.'
+  answer:
+    speaker: protagonist
+    text: 끓여요 … 물을 넣어요 … 소금 … 계란 … 파 … -지만 … -고 … 먼저 … 그다음에
+  items:
+  - kkeuryeoyo
+  - mul2
+  - sogeum
+  - gyeran
+  - pa
+  - jiman
+  - go2
+  - meonjeo
+  - geu-daeum
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “heat, fire — and “is bitter / uses — and “you mustn''t, no way — and “delivery — and “order — and “fried chicken — and “not (before a verb) — and “cannot — and “because, so (giving a reason)”.'
+    pt: 'Diga: “fogo — e “é amargo / usa — e “não pode — e “entrega — e “pede, encomenda — e “frango frito — e “não (antes do verbo) — e “não consegue — e “como, porque (dando motivo)”.'
+  answer:
+    speaker: protagonist
+    text: 불 … 써요 … 안 돼요 … 배달 … 주문해요 … 치킨 … 안 … 못 … -(으)니까
+  items:
+  - bul
+  - sseoyo
+  - an-dwaeyo
+  - baedal
+  - jumunhaeyo
+  - chikin
+  - an
+  - mot
+  - eunikka
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “it''s late — and “how many minutes? — and “thirty minutes — and “quickly — and “cooking — and “the delivery is here — and “puppy, dog — and “cat — and “is cute”.'
+    pt: 'Diga: “ficou tarde — e “quantos minutos? — e “trinta minutos — e “rápido — e “cozinhar — e “a entrega chegou — e “cachorrinho, cachorro — e “gato — e “é fofo”.'
+  answer:
+    speaker: protagonist
+    text: 늦었어요 … 몇 분? … 삼십 분 … 빨리 … 요리 … 배달 왔어요 … 강아지 … 고양이 … 귀여워요
+  items:
+  - neujeosseoyo
+  - myeot-bun
+  - sambun
+  - ppalli
+  - yori
+  - baegopa
+  - gangaji
+  - goyangi
+  - gwiyeowoyo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “there is / I have — and “there isn''t / I don''t have — and “than (comparing) — and “more — and “likes / I like — and “Really? (polite) — and “is big — and “is small — and “May I touch (it)?”.'
+    pt: 'Diga: “tem / eu tenho — e “não tem / eu não tenho — e “do que (comparação) — e “mais — e “gosta / eu gosto — e “Sério? (educado) — e “é grande — e “é pequeno — e “Posso tocar?”.'
+  answer:
+    speaker: protagonist
+    text: 있어요 … 없어요 … 보다 … 더 … 좋아해요 … 진짜요? … 커요 … 작아요 … 만져도 돼요?
+  items:
+  - isseoyo2
+  - eopseoyo
+  - boda
+  - deo
+  - joahaeyo
+  - jinjja-yo
+  - keoyo
+  - jagayo
+  - mandjyeo-dwaeyo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Welcome (to a shop) — and “water — and “instant noodles — and “this (thing) — and “Please give me… — and “too, also (replaces 이/가 or 을/를) — and “plastic bag — and “Do you need…? (polite)
+      — and “How much is it?”.'
+    pt: 'Diga: “Seja bem-vindo (na loja) — e “água — e “miojo / lámen — e “isto — e “Me dá…, por favor — e “também (no lugar de 이/가 ou 을/를) — e “sacola — e “O senhor precisa de…? (educado) — e “Quanto é?”.'
+  answer:
+    speaker: protagonist
+    text: 어서 오세요 … 물 … 라면 … 이거 … 주세요 … 도 … 봉투 … 필요하세요? … 얼마예요?
+  items:
+  - eoseo-oseyo
+  - mul
+  - ramyeon
+  - igeo
+  - juseyo
+  - do
+  - bongtu
+  - piryohaseyo
+  - eolmayeyo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “won (the money) — and “until, up to — and “what time — and “does; is open (a shop)”.'
+    pt: 'Diga: “won (a moeda) — e “até — e “que horas — e “faz; funciona (uma loja)”.'
+  answer:
+    speaker: protagonist
+    text: 원 … 까지 … 몇 시 … 해요
+  items:
+  - won
+  - kkaji
+  - myeot-si
+  - haeyo
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

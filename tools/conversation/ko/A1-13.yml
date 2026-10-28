@@ -1,0 +1,495 @@
+# UNIT ko A1-13 — written by AI (Claude) for Casus; expanded from src/A1-13.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-13
+level: A1
+number: 13
+protagonist: f
+title:
+  en: The subway
+  pt: O metrô
+situation:
+  en: Your first ride on line 2. At the station you top up a T-money card and ask a passer-by where to change.
+  pt: Sua primeira viagem na linha 2. Na estação você recarrega o cartão T-money e pergunta a alguém onde fazer baldeação.
+learn_lessons:
+- ko-place
+- ko-nikl-13
+culture: The subway card and changing lines
+new_items:
+- id: gyotongkadeu
+  text: 교통카드
+  meaning:
+    en: transport card
+    pt: cartão de transporte
+- id: chungjeon
+  text: 충전해 주세요
+  meaning:
+    en: Please top it up
+    pt: Recarregue, por favor
+- id: hoseon
+  text: 호선
+  meaning:
+    en: line (subway)
+    pt: linha (do metrô)
+- id: garatayo
+  text: 갈아타요
+  meaning:
+    en: change (trains)
+    pt: faz baldeação
+- id: e-place
+  text: 에
+  meaning:
+    en: to, at (a place)
+    pt: a, em (um lugar)
+- id: eseo
+  text: 에서
+  meaning:
+    en: at, in (where something happens); from
+    pt: em (onde algo acontece); de
+- id: eotteoke-gayo
+  text: 어떻게 가요?
+  meaning:
+    en: How do I get there?
+    pt: Como eu chego lá?
+- id: hongdae
+  text: 홍대입구
+  meaning:
+    en: Hongik Univ. station
+    pt: estação Hongik Univ.
+- id: yeogiseo
+  text: 여기서
+  meaning:
+    en: from here, here (short for 여기에서)
+    pt: daqui, aqui (curto de 여기에서)
+- id: neryeoyo
+  text: 내려요
+  meaning:
+    en: get off
+    pt: desce
+- id: daeum
+  text: 다음
+  meaning:
+    en: next
+    pt: próximo
+- id: silyehamnida
+  text: 실례합니다
+  meaning:
+    en: Excuse me (formal)
+    pt: Com licença (formal)
+  register: formal
+reviews:
+- item: oneul
+  from: A1-06
+- item: biga-wayo
+  from: A1-06
+- item: nuni-wayo
+  from: A1-06
+- item: usan
+  from: A1-06
+- item: eul-reul
+  from: A1-06
+- item: sayo
+  from: A1-06
+- item: deowoyo
+  from: A1-06
+- item: chuwoyo
+  from: A1-06
+- item: yeoreum
+  from: A1-06
+- item: gyeoul
+  from: A1-06
+- item: ttatteuthaeyo
+  from: A1-06
+- item: jeongmal
+  from: A1-06
+- item: nalssi
+  from: A1-06
+- item: il-i-sam
+  from: A1-10
+- item: sa-o-yuk
+  from: A1-10
+- item: chil-pal-gu
+  from: A1-10
+- item: gong
+  from: A1-10
+- item: jeonhwabeonho
+  from: A1-10
+- item: mwoyeyo
+  from: A1-10
+- item: baek
+  from: A1-10
+- item: cheon
+  from: A1-10
+- item: man-won
+  from: A1-10
+- item: man
+  from: A1-10
+- item: kadeu
+  from: A1-10
+- item: hyeongeum
+  from: A1-10
+- item: dwaeyo
+  from: A1-10
+- item: gangaji
+  from: A1-12
+- item: goyangi
+  from: A1-12
+- item: gwiyeowoyo
+  from: A1-12
+- item: isseoyo2
+  from: A1-12
+- item: eopseoyo
+  from: A1-12
+- item: boda
+  from: A1-12
+- item: deo
+  from: A1-12
+- item: joahaeyo
+  from: A1-12
+- item: jinjja-yo
+  from: A1-12
+- item: keoyo
+  from: A1-12
+- item: jagayo
+  from: A1-12
+- item: mandjyeo-dwaeyo
+  from: A1-12
+steps:
+- type: narrator
+  text:
+    en: Your first ride on line 2. At the station you top up a T-money card and ask a passer-by where to change. Listen to the conversation; you don't need to understand it yet.
+    pt: Sua primeira viagem na linha 2. Na estação você recarrega o cartão T-money e pergunta a alguém onde fazer baldeação. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: 실례합니다. 교통카드 충전해 주세요.
+    meaning:
+      en: Excuse me. Please top up my transport card.
+      pt: Com licença. Recarregue meu cartão, por favor.
+  - speaker: passerby
+    text: 충전은 저기 기계에서 해요.
+    meaning:
+      en: You top it up at the machine over there.
+      pt: A recarga é na máquina ali.
+  - speaker: protagonist
+    text: 아, 감사합니다. 홍대입구에 어떻게 가요?
+    meaning:
+      en: Oh, thank you. How do I get to Hongik University?
+      pt: Ah, obrigada. Como eu chego a Hongik?
+  - speaker: passerby
+    text: 여기서 이 호선을 타세요.
+    meaning:
+      en: Take line 2 from here.
+      pt: Pegue a linha 2 daqui.
+  - speaker: protagonist
+    text: 갈아타요?
+    meaning:
+      en: Do I change?
+      pt: Preciso fazer baldeação?
+  - speaker: passerby
+    text: 아니요, 안 갈아타요. 홍대입구에서 내려요.
+    meaning:
+      en: No, you don't change. You get off at Hongik University.
+      pt: Não, não precisa. Você desce em Hongik.
+  - speaker: protagonist
+    text: 다음 역이에요?
+    meaning:
+      en: Is it the next station?
+      pt: É a próxima estação?
+  - speaker: passerby
+    text: 아니요, 세 정거장 가요.
+    meaning:
+      en: No, three stops.
+      pt: Não, são três paradas.
+- type: prompt
+  ask:
+    en: Excuse yourself formally to a stranger.
+    pt: Peça licença formalmente a um desconhecido.
+  answer:
+    speaker: protagonist
+    text: 실례합니다.
+  items:
+  - silyehamnida
+- type: prompt
+  ask:
+    en: Ask to top up your card.
+    pt: Peça para recarregar o cartão.
+  answer:
+    speaker: protagonist
+    text: 교통카드 충전해 주세요.
+  items:
+  - gyotongkadeu
+  - chungjeon
+- type: narrator
+  text:
+    en: '에 is the place you go to or are at: 홍대입구에 가요. 에서 is where something happens: 기계에서 해요, ''you do it at the machine'' — and ''from'': 여기서, from here.'
+    pt: '에 é o lugar para onde você vai ou onde está: 홍대입구에 가요. 에서 é onde algo acontece: 기계에서 해요, ''faz na máquina'' — e ''de'': 여기서, daqui.'
+- type: prompt
+  ask:
+    en: Ask how to get to Hongik University.
+    pt: Pergunte como chegar a Hongik.
+  answer:
+    speaker: protagonist
+    text: 홍대입구에 어떻게 가요?
+  items:
+  - e-place
+  - eotteoke-gayo
+  - hongdae
+- type: prompt
+  ask:
+    en: 'Say: you top it up at the machine.'
+    pt: 'Diga: a recarga é na máquina.'
+  answer:
+    speaker: protagonist
+    text: 기계에서 충전해요.
+  items:
+  - eseo
+- type: prompt
+  ask:
+    en: 'She says: take line 2 from here. How?'
+    pt: 'Ela diz: pegue a linha 2 daqui. Como?'
+  answer:
+    speaker: protagonist
+    text: 여기서 이 호선을 타세요.
+  items:
+  - yeogiseo
+  - hoseon
+- type: buildup
+  item: garatayo
+  parts:
+  - -타요
+  - 갈아타요
+- type: prompt
+  ask:
+    en: Ask if you have to change.
+    pt: Pergunte se precisa fazer baldeação.
+  answer:
+    speaker: protagonist
+    text: 갈아타요?
+  items:
+  - garatayo
+- type: prompt
+  ask:
+    en: 'Say: you get off at Hongik University.'
+    pt: 'Diga: você desce em Hongik.'
+  answer:
+    speaker: protagonist
+    text: 홍대입구에서 내려요.
+  items:
+  - eseo
+  - neryeoyo
+- type: prompt
+  ask:
+    en: 'Ask: is it the next station?'
+    pt: 'Pergunte: é a próxima estação?'
+  answer:
+    speaker: protagonist
+    text: 다음 역이에요?
+  items:
+  - daeum
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: O metrô de Seul tem linhas numeradas (1호선, 2호선…) e anúncios em coreano, inglês, chinês e japonês. O T-money serve para metrô, ônibus, táxi e até loja de conveniência.
+- type: prompt
+  ask:
+    en: 'Once more: say “transport card”.'
+    pt: 'Mais uma vez: diga “cartão de transporte”.'
+  answer:
+    speaker: protagonist
+    text: 교통카드
+  items:
+  - gyotongkadeu
+- type: prompt
+  ask:
+    en: 'Once more: say “Please top it up”.'
+    pt: 'Mais uma vez: diga “Recarregue, por favor”.'
+  answer:
+    speaker: protagonist
+    text: 충전해 주세요
+  items:
+  - chungjeon
+- type: prompt
+  ask:
+    en: 'Once more: say “line (subway)”.'
+    pt: 'Mais uma vez: diga “linha (do metrô)”.'
+  answer:
+    speaker: protagonist
+    text: 호선
+  items:
+  - hoseon
+- type: prompt
+  ask:
+    en: 'Once more: say “change (trains)”.'
+    pt: 'Mais uma vez: diga “faz baldeação”.'
+  answer:
+    speaker: protagonist
+    text: 갈아타요
+  items:
+  - garatayo
+- type: prompt
+  ask:
+    en: 'Once more: say “to, at (a place)”.'
+    pt: 'Mais uma vez: diga “a, em (um lugar)”.'
+  answer:
+    speaker: protagonist
+    text: 에
+  items:
+  - e-place
+- type: prompt
+  ask:
+    en: 'Once more: say “How do I get there?”.'
+    pt: 'Mais uma vez: diga “Como eu chego lá?”.'
+  answer:
+    speaker: protagonist
+    text: 어떻게 가요?
+  items:
+  - eotteoke-gayo
+- type: prompt
+  ask:
+    en: 'Once more: say “Hongik Univ. station”.'
+    pt: 'Mais uma vez: diga “estação Hongik Univ.”.'
+  answer:
+    speaker: protagonist
+    text: 홍대입구
+  items:
+  - hongdae
+- type: prompt
+  ask:
+    en: 'Once more: say “from here, here (short for 여기에서)”.'
+    pt: 'Mais uma vez: diga “daqui, aqui (curto de 여기에서)”.'
+  answer:
+    speaker: protagonist
+    text: 여기서
+  items:
+  - yeogiseo
+- type: prompt
+  ask:
+    en: 'Once more: say “get off”.'
+    pt: 'Mais uma vez: diga “desce”.'
+  answer:
+    speaker: protagonist
+    text: 내려요
+  items:
+  - neryeoyo
+- type: prompt
+  ask:
+    en: 'Once more: say “next”.'
+    pt: 'Mais uma vez: diga “próximo”.'
+  answer:
+    speaker: protagonist
+    text: 다음
+  items:
+  - daeum
+- type: prompt
+  ask:
+    en: 'Once more: say “Excuse me (formal)”.'
+    pt: 'Mais uma vez: diga “Com licença (formal)”.'
+  answer:
+    speaker: protagonist
+    text: 실례합니다
+  items:
+  - silyehamnida
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “puppy, dog — and “cat — and “is cute — and “there is / I have — and “there isn''t / I don''t have — and “than (comparing) — and “more”.'
+    pt: 'Diga: “cachorrinho, cachorro — e “gato — e “é fofo — e “tem / eu tenho — e “não tem / eu não tenho — e “do que (comparação) — e “mais”.'
+  answer:
+    speaker: protagonist
+    text: 강아지 … 고양이 … 귀여워요 … 있어요 … 없어요 … 보다 … 더
+  items:
+  - gangaji
+  - goyangi
+  - gwiyeowoyo
+  - isseoyo2
+  - eopseoyo
+  - boda
+  - deo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “likes / I like — and “Really? (polite) — and “is big — and “is small — and “May I touch (it)? — and “one, two, three (Sino-Korean numbers) — and “four, five, six”.'
+    pt: 'Diga: “gosta / eu gosto — e “Sério? (educado) — e “é grande — e “é pequeno — e “Posso tocar? — e “um, dois, três (números sino-coreanos) — e “quatro, cinco, seis”.'
+  answer:
+    speaker: protagonist
+    text: 좋아해요 … 진짜요? … 커요 … 작아요 … 만져도 돼요? … 일, 이, 삼 … 사, 오, 육
+  items:
+  - joahaeyo
+  - jinjja-yo
+  - keoyo
+  - jagayo
+  - mandjyeo-dwaeyo
+  - il-i-sam
+  - sa-o-yuk
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “seven, eight, nine, ten — and “zero (in phone numbers) — and “phone number — and “What is it? — and “hundred — and “thousand — and “ten thousand won”.'
+    pt: 'Diga: “sete, oito, nove, dez — e “zero (em telefones) — e “número de telefone — e “O que é? / Qual é? — e “cem — e “mil — e “dez mil wons”.'
+  answer:
+    speaker: protagonist
+    text: 칠, 팔, 구, 십 … 공 … 전화번호 … 뭐예요? … 백 … 천 … 만 원
+  items:
+  - chil-pal-gu
+  - gong
+  - jeonhwabeonho
+  - mwoyeyo
+  - baek
+  - cheon
+  - man-won
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “only (after a noun) — and “card — and “cash — and “is OK / works — and “today — and “It''s raining — and “It''s snowing”.'
+    pt: 'Diga: “só (depois de substantivo) — e “cartão — e “dinheiro vivo — e “pode / dá — e “hoje — e “Está chovendo — e “Está nevando”.'
+  answer:
+    speaker: protagonist
+    text: 만 … 카드 … 현금 … 돼요 … 오늘 … 비가 와요 … 눈이 와요
+  items:
+  - man
+  - kadeu
+  - hyeongeum
+  - dwaeyo
+  - oneul
+  - biga-wayo
+  - nuni-wayo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “umbrella — and “object particle (을 after a consonant, 를 after a vowel) — and “buys / I buy — and “is hot (weather) — and “is cold (weather) — and “summer — and “winter”.'
+    pt: 'Diga: “guarda-chuva — e “partícula de objeto (을 depois de consoante, 를 depois de vogal) — e “compra / eu compro — e “está quente (tempo) — e “está frio (tempo) — e “verão — e “inverno”.'
+  answer:
+    speaker: protagonist
+    text: 우산 … 을/를 … 사요 … 더워요 … 추워요 … 여름 … 겨울
+  items:
+  - usan
+  - eul-reul
+  - sayo
+  - deowoyo
+  - chuwoyo
+  - yeoreum
+  - gyeoul
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “is warm — and “really — and “weather”.'
+    pt: 'Diga: “está quente / é ameno — e “muito / de verdade — e “o tempo (clima)”.'
+  answer:
+    speaker: protagonist
+    text: 따뜻해요 … 정말 … 날씨
+  items:
+  - ttatteuthaeyo
+  - jeongmal
+  - nalssi
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
