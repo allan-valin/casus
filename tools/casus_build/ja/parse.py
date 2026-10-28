@@ -192,6 +192,9 @@ def jlpt_ranks(folder) -> dict:
         if not p.exists():
             continue
         with open(p, encoding="utf-8") as f:
-            for row in csv.DictReader(f):
-                ranks.setdefault(f"{row['expression']}\t{row['reading']}", len(ranks))
+            rows = list(csv.DictReader(f))
+        # within a list, a reading a textbook teaches (Genki tag) goes before its twin: 日本 にほん before にっぽん
+        rows.sort(key=lambda row: "Genki" not in (row.get("tags") or ""))
+        for row in rows:
+            ranks.setdefault(f"{row['expression']}\t{row['reading']}", len(ranks))
     return ranks

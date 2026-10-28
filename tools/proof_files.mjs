@@ -12,8 +12,13 @@ import { DICTIONARIES, makeSpeller, spellIssues } from '../src/lib/proof/spell.j
 import { checkGrammar, LT_CODE } from '../src/lib/proof/grammar.js';
 
 const [code, ...files] = process.argv.slice(2);
-const SCRIPT = { mk: /\p{Script=Cyrillic}/u, ar: /\p{Script=Arabic}/u, de: /[A-Za-zÄÖÜäöüß]/, pt: /[A-Za-zÀ-ú]/ }[code];
-if (!SCRIPT || !files.length) { console.error('usage: proof_files.mjs <mk|ar|de|pt> files…'); process.exit(2); }
+// every language the browser proofreader knows (a Hunspell dictionary or a LanguageTool code), each matched by its script
+const SCRIPTS = { Cyrillic: ['mk', 'ru', 'uk', 'bg'], Arabic: ['ar', 'fa'], Greek: ['el'], Hangul: ['ko'], Han: ['zh'],
+  Devanagari: ['hi', 'sa'], Bengali: ['bn'] };
+const name = Object.keys(SCRIPTS).find((k) => SCRIPTS[k].includes(code)) ?? 'Latin';
+const SCRIPT = code === 'ja' ? /[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}]/u : new RegExp(`\\p{Script=${name}}`, 'u');
+const known = [...new Set([...Object.keys(DICTIONARIES), ...Object.keys(LT_CODE)])].sort();
+if (!known.includes(code) || !files.length) { console.error(`usage: proof_files.mjs <${known.join('|')}> files…`); process.exit(2); }
 
 async function speller() {
   const d = DICTIONARIES[code];

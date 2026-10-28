@@ -99,3 +99,14 @@ def test_proper_nouns_are_words():
     ]
     entries = list(parse_entries(lines))
     assert [(e["headword"], e["pos"], e["reading"]) for e in entries] == [("日本", "noun", "にほん"), ("トム", "noun", "トム")]
+
+
+def test_a_textbook_reading_ranks_before_its_twin(tmp_path=None):
+    # the JLPT list has 日本 にっぽん before 日本 にほん; only にほん is tagged with a textbook (Genki) → にほん first
+    import tempfile
+    from casus_build.ja.parse import jlpt_ranks
+    d = Path(tempfile.mkdtemp())
+    (d / "jlpt_n3.csv").write_text("expression,reading,meaning,tags,guid\n日本,にっぽん,Japan,JLPT JLPT_3,a\n"
+                                   "日本,にほん,Japan,JLPT JLPT_3 Genki_Ln.1 Genki,b\n", encoding="utf-8")
+    r = jlpt_ranks(d)
+    assert r["日本\tにほん"] < r["日本\tにっぽん"]
