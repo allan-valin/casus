@@ -1,0 +1,41 @@
+id: A1-25
+protagonist: f
+title: [Market, Mercado]
+situation: ["Saturday at Mangwon market with Mrs Park. She bargains like a pro; you buy fruit.", "Sábado no mercado de Mangwon com a senhora Park. Ela pechincha como ninguém; você compra frutas."]
+learn: [ko-if, ko-nikl-31]
+culture: Markets, bargaining and the extra piece (덤)
+items:
+  - [sijang, "시장", "market", "mercado, feira"]
+  - [sagwa, "사과", "apple", "maçã"]
+  - [han-gae, "한 개에", "for one, each", "cada um"]
+  - [kkakka-juseyo, "깎아 주세요", "Give me a discount, please", "Faz um desconto, por favor"]
+  - [eumyeon, "-(으)면", "if, when", "se, quando"]
+  - [eupsida, "-(으)ㅂ시다", "let's (formal)", "vamos (formal)"]
+  - [bissayo, "비싸요", "is expensive", "é caro"]
+  - [ssayo, "싸요", "is cheap", "é barato"]
+  - [deom, "덤", "a little extra (free)", "um agrado (de graça)"]
+  - [sinseonhaeyo, "신선해요", "is fresh", "está fresco"]
+  - [gwail, "과일", "fruit", "fruta"]
+  - [ga-bwayo, "가 봐요", "let's go and see", "vamos ver"]
+dialogue:
+  - [park, "여기가 망원시장이에요. 과일이 싸고 신선해요.", "This is Mangwon market. The fruit is cheap and fresh.", "Este é o mercado de Mangwon. A fruta é barata e fresca."]
+  - [protagonist, "사과 한 개에 얼마예요?", "How much is one apple?", "Quanto é uma maçã?"]
+  - [seller, "한 개에 천오백 원이에요.", "1,500 won each.", "Mil e quinhentos wons cada."]
+  - [protagonist, "비싸요… 다섯 개 사면 깎아 주세요?", "Expensive… if I buy five, will you give me a discount?", "Caro… se eu levar cinco, faz desconto?"]
+  - [seller, "다섯 개 사면 칠천 원에 줄게요.", "If you buy five, I'll let you have them for 7,000.", "Se levar cinco, faço por sete mil."]
+  - [park, "사장님, 단골이에요. 하나 더 주세요!", "Boss, she's a regular. Give her one more!", "Seu dono, ela é freguesa. Põe mais uma!"]
+  - [seller, "하하, 덤이에요! 맛있게 드세요.", "Haha, it's on the house! Enjoy.", "Haha, essa é de brinde! Bom proveito."]
+  - [park, "자, 이제 떡집에 갑시다!", "Right, now let's go to the rice-cake shop!", "Pronto, agora vamos à loja de 떡!"]
+teach:
+  - ask: ["Ask how much one apple is.", "Pergunte quanto é uma maçã.", "사과 한 개에 얼마예요?", sagwa, han-gae]
+  - ask: ["Say it's expensive.", "Diga que é caro.", "비싸요.", bissayo]
+  - note: ["-(으)면 is 'if': 사다 → 사면, if I buy. 다섯 개 사면 깎아 주세요? — if I buy five, will you knock the price down?", "-(으)면 é 'se': 사다 → 사면, se eu comprar. 다섯 개 사면 깎아 주세요? — se eu levar cinco, faz desconto?"]
+  - build: [kkakka-juseyo, ["주세요", "깎아 주세요"]]
+  - ask: ["Ask for a discount if you buy five.", "Peça desconto se levar cinco.", "다섯 개 사면 깎아 주세요?", eumyeon, kkakka-juseyo]
+  - ask: ["Say: the fruit is cheap and fresh.", "Diga: a fruta é barata e fresca.", "과일이 싸고 신선해요.", gwail, ssayo, sinseonhaeyo]
+  - ask: ["Say this is the market.", "Diga: este é o mercado.", "여기가 시장이에요.", sijang]
+  - ask: ["The seller gives one free. How does she say 'it's a little extra'?", "A vendedora dá uma de graça. Como ela diz 'é um agrado'?", "덤이에요!", deom]
+  - note: ["-(으)ㅂ시다 is 'let's', in the formal style — older people use it to lead: 갑시다, let's go. To an elder, say 같이 가요 instead.", "-(으)ㅂ시다 é 'vamos', no estilo formal — os mais velhos usam para conduzir: 갑시다, vamos. Para alguém mais velho, diga 같이 가요."]
+  - ask: ["How did Mrs Park say 'let's go'?", "Como a senhora Park disse 'vamos'?", "갑시다!", eupsida]
+  - ask: ["Suggest to a friend: let's go and see.", "Sugira a um amigo: vamos ver.", "가 봐요.", ga-bwayo]
+  - pt_only: "Como na feira brasileira, no mercado coreano se pechincha com simpatia — e o 덤, a fruta a mais 'de brinde', é parecido com o nosso 'chorinho'."

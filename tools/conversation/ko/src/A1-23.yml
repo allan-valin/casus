@@ -1,0 +1,42 @@
+id: A1-23
+protagonist: f
+title: ["Shall we drop the formalities?", "말 놓을까요?"]
+situation: ["Minjun has called you 누나 for weeks, still in polite speech. On the stairs he says you can speak casually to him — and you, the elder, propose that you both do.", "Há semanas o Minjun chama você de 누나, ainda falando educado. Na escada ele diz que você pode falar informal com ele — e você, a mais velha, propõe que os dois falem assim."]
+learn: [ko-nikl-35, ko-nikl-36]
+culture: The elder proposes 반말
+items:
+  - [mal-pyeonhage, "말 편하게 하세요", "Speak casually (to me)", "Pode falar informal (comigo)"]
+  - [mal-nohulkkayo, "말 놓을까요?", "Shall we drop the formalities?", "Vamos parar com a formalidade?"]
+  - [eulkka, "-(으)ㄹ까요?", "shall we…? (suggesting)", "vamos…? (sugestão)"]
+  - [eo-banmal, "-어 / -아 (반말)", "casual ending: 고마워, 먹어", "terminação informal: 고마워, 먹어"]
+  - [geurae, "그래", "OK, sure (casual)", "tá, beleza (informal)"]
+  - [gomawo, "고마워", "thanks (casual)", "valeu (informal)"]
+  - [uri, "우리", "we, us, our", "nós, nosso"]
+  - [eungeu, "응", "yeah (casual)", "é, sim (informal)"]
+  - [baneun, "반말", "casual speech", "fala informal"]
+  - [jondaenmal, "존댓말", "polite speech", "fala educada"]
+  - [eoryeowo, "어색해", "it feels awkward (casual)", "fica estranho (informal)"]
+  - [bap, "밥 먹었어?", "Have you eaten? (casual greeting)", "Já comeu? (cumprimento informal)"]
+dialogue:
+  - [minjun, "누나, 저한테 말 편하게 하세요.", "Nuna, speak casually to me.", "Nuna, pode falar informal comigo."]
+  - [protagonist, "그럼 우리 말 놓을까요? 민준 씨도요.", "Then shall we both drop the formalities? You too.", "Então vamos os dois parar com a formalidade? Você também."]
+  - [minjun, "정말요? 그래도 돼요?", "Really? Is that OK?", "Sério? Pode mesmo?"]
+  - [protagonist, "응, 그래. 우리 친구잖아.", "Yeah, sure. We're friends.", "Claro. A gente é amigo."]
+  - [minjun, "와, 고마워, 누나! 조금 어색해.", "Wow, thanks, nuna! It feels a bit awkward.", "Nossa, valeu, nuna! Fica meio estranho."]
+  - [protagonist, "괜찮아. 밥 먹었어?", "It's fine. Have you eaten?", "Tudo bem. Já comeu?"]
+  - [minjun, "아니, 아직. 같이 먹을까?", "No, not yet. Shall we eat together?", "Não, ainda não. Vamos comer juntos?"]
+  - [protagonist, "그래! 치킨 시킬까?", "Sure! Shall we order chicken?", "Bora! Vamos pedir frango?"]
+teach:
+  - note: ["반말, casual speech, drops 요: 고마워요 → 고마워, 먹어요 → 먹어. Only after it is agreed. The younger one may offer 말 편하게 하세요; the elder proposes doing it both ways.", "반말, a fala informal, tira o 요: 고마워요 → 고마워, 먹어요 → 먹어. Só depois de combinado. O mais novo pode oferecer 말 편하게 하세요; o mais velho propõe que os dois falem assim."]
+  - line: [minjun, mal-pyeonhage]
+  - ask: ["How did he say 'speak casually to me'?", "Como ele disse 'pode falar informal comigo'?", "말 편하게 하세요.", mal-pyeonhage]
+  - build: [mal-nohulkkayo, ["-을까요?", "놓을까요?", "말 놓을까요?"]]
+  - ask: ["Propose that you both drop the formalities.", "Proponha que os dois parem com a formalidade.", "우리 말 놓을까요?", mal-nohulkkayo, uri]
+  - note: ["-(으)ㄹ까요? suggests doing something together: 먹을까요? shall we eat? In 반말: 먹을까?", "-(으)ㄹ까요? sugere fazer algo junto: 먹을까요? vamos comer? Em 반말: 먹을까?"]
+  - ask: ["Casually: shall we eat together?", "Informal: vamos comer juntos?", "같이 먹을까?", eulkka]
+  - ask: ["Casually: yeah, sure.", "Informal: é, claro.", "응, 그래.", eungeu, geurae]
+  - ask: ["Casually: thanks.", "Informal: valeu.", "고마워.", gomawo, eo-banmal]
+  - ask: ["He says it feels awkward. How?", "Ele diz que fica estranho. Como?", "어색해.", eoryeowo]
+  - ask: ["Greet a friend casually: have you eaten?", "Cumprimente um amigo informalmente: já comeu?", "밥 먹었어?", bap]
+  - ask: ["Name the two speech styles: polite and casual.", "Diga os dois estilos: educado e informal.", "존댓말, 반말", jondaenmal, baneun]
+  - pt_only: "No Brasil não existe esse momento: 'você' serve para todo mundo. Na Coreia, passar ao 반말 é um passo na amizade — e quem propõe é o mais velho."

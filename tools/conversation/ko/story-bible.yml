@@ -25,6 +25,7 @@ voices:
   # told apart from the protagonist's voices in every dialogue (talk.test: pitch 0.06 or speed 0.08 apart), 2026-10-28
   - {id: ko-f3, role: character, lang: ko, gender: f, tts: "piper:ko_KR-kss-medium", pitch: 1.08}
   - {id: ko-m3, role: character, lang: ko, gender: m, tts: "piper:ko_KR-kss-medium", pitch: 0.88, speed: 1.1}
+  - {id: ko-m4, role: character, lang: ko, gender: m, tts: "piper:ko_KR-kss-medium", pitch: 0.7, speed: 0.92}
 
 protagonist:
   forms: {f: ko-f, m: ko-m}
@@ -74,6 +75,18 @@ cast:
     voice: ko-f3
     register: formal
     arc: 해요체 with the protagonist (calls an older woman 언니, an older man 오빠); later friends
+  - id: seller
+    name: 시장 상인 (a market seller)
+    role: stall keepers at Mangwon market, one scene at a time
+    voice: ko-f3
+    register: formal
+    arc: 해요체 with customers; regulars get a 덤
+  - id: abeoji
+    name: 김민준의 아버지 (Minjun's father)
+    role: about 60, retired, hikes Bukhansan every Sunday
+    voice: ko-m4
+    register: formal
+    arc: 해요체 with the protagonist; proud of his son's foreign friend
 formality:
   summary: >-
     Korean grammar marks the listener: 합쇼체 (-습니다, formal), 해요체 (-아요/어요, polite, the everyday default with
