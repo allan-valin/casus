@@ -14,7 +14,7 @@
   import { createReview } from '../lib/review.js';
   import { lessonAnswer, completion } from '../lib/progression.js';
   import { speakLinks } from '../lib/pronounce.js';
-  import { learnSections, learnOrder } from '../lib/learnorigin.js';
+  import { learnSections, learnOrder, orderTitle } from '../lib/learnorigin.js';
   import { paraButtons, translateHtml } from '../lib/paraTranslate.js';
   import WordEntry from './WordEntry.svelte';
   import { wordAround, candidatesAt, firstKnown } from '../lib/wordat.js';
@@ -359,7 +359,7 @@
         {/if}
       {/each}
     {:else if orderMode === 'order'}
-      {@render topicList(learnOrder(level, talkLinks).map((g) => ({ ...g, title: `${t('learn.order.lesson', { n: g.n })}${g.unitTitle ? ` · ${loc(g.unitTitle)}` : ''}` })), level)}
+      {@render topicList(learnOrder(level, talkLinks).map((g) => ({ ...g, title: [t('learn.order.lesson', { n: g.n }), orderTitle(g, loc)].filter(Boolean).join(' · ') })), level)}
     {:else}
       {@const parts = learnSections(level?.topics)}
       {#each parts as sec, i (sec.id)}

@@ -47,3 +47,10 @@ export function learnOrder(level, talkLinks = {}, size = 4) {
   for (let i = 0; i < rest.length; i += size) out.push({ lessons: rest.slice(i, i + size) });
   return out.map((g, i) => ({ ...g, n: i + 1, key: `order:${level?.id}:${i + 1}`, kind: 'order' }));
 }
+
+/** the name shown after "Lesson N": the unit's title, else the first lesson titles (Allan, 2026-10-28) */
+export function orderTitle(g, loc, max = 3) {
+  if (g.unitTitle) return loc(g.unitTitle);
+  const ts = g.lessons.map((e) => (e.title ? loc(e.title) : '')).filter(Boolean);
+  return ts.slice(0, max).join(' · ') + (ts.length > max ? ' …' : '');
+}

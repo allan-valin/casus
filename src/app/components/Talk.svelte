@@ -103,6 +103,8 @@
     : (shownUnits.find((u) => !done.includes(u.id))?.level ?? levels[levels.length - 1] ?? null));
   function pickLevel(l) { pickedLevel = l; try { storage?.setItem(LEVEL_KEY, l); } catch { /* not kept */ } }
   const doneIn = (l) => shownUnits.filter((u) => u.level === l && done.includes(u.id)).length;
+  // a course may name its levels after its own exam (Korean: TOPIK 1 …)
+  const lvName = (l) => lang.levelNames?.[l] ?? l;
   const countIn = (l) => shownUnits.filter((u) => u.level === l).length;
   const firstReview = $derived(unit ? unit.steps.findIndex((st) => st.review) : -1);
   const items = $derived(unit ? Object.fromEntries((unit.new_items ?? []).concat(course.items ?? []).map((i) => [i.id, i])) : {});
@@ -360,10 +362,10 @@
     {#if course.example}<p class="talk-example">{t('talk.example')}</p>{/if}
     <!-- the levels under one button showing the current one and its progress (Allan, 2026-10-22) -->
     <div class="level-tabs">
-      <Picker cls="level-picker" label={level ? `${level} · ${doneIn(level)}/${countIn(level)}` : ''} title={t('level.pick')}>
+      <Picker cls="level-picker" label={level ? `${lvName(level)} · ${doneIn(level)}/${countIn(level)}` : ''} title={t('level.pick')}>
         {#each levels as l}
           <button class="level-tab" data-level={l} aria-selected={l === level} class:active={l === level} onclick={() => pickLevel(l)}>
-            {l} <span class="level-count">{doneIn(l)}/{countIn(l)}</span>
+            {lvName(l)} <span class="level-count">{doneIn(l)}/{countIn(l)}</span>
           </button>
         {/each}
       </Picker>
@@ -372,7 +374,7 @@
     {#if found}
       {#each levels as l (l)}
         {#if found.some((u) => u.level === l)}
-          <h3 class="sec-head level-head" data-level={l}>{l}</h3>
+          <h3 class="sec-head level-head" data-level={l}>{lvName(l)}</h3>
           {@render unitList(found.filter((u) => u.level === l))}
         {/if}
       {/each}

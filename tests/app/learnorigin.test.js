@@ -40,7 +40,7 @@ describe('generated and AI-written apart (Allan, 2026-10-28): generated above, A
   });
 });
 
-import { learnOrder } from '../../src/app/lib/learnorigin.js';
+import { learnOrder, orderTitle } from '../../src/app/lib/learnorigin.js';
 describe('recommended learning order (Allan, 2026-10-28)', () => {
   const level = { id: 'A1', topics: [
     { id: 'src1', lessons: [{ id: 'cases' }, { id: 'verbs' }, { id: 'wb-1' }, { id: 'wb-2' }, { id: 'wb-3' }, { id: 'wb-4' }, { id: 'wb-5' }] },
@@ -54,5 +54,16 @@ describe('recommended learning order (Allan, 2026-10-28)', () => {
   });
   it('without a Conversation course the level is simply cut into lessons of four', () => {
     expect(learnOrder(level, {}).map((g) => g.lessons.length)).toEqual([4, 4, 1]);
+  });
+});
+describe('learning-order lesson titles (Allan, 2026-10-28: "Lesson N" alone says nothing)', () => {
+  const loc = (x) => (typeof x === 'string' ? x : x?.en ?? '');
+  it('a unit lesson is named after the unit', () => {
+    expect(orderTitle({ unitTitle: { en: 'The room' }, lessons: [{ title: 'a' }] }, loc)).toBe('The room');
+  });
+  it('a lesson without a unit is named after its first lessons', () => {
+    expect(orderTitle({ lessons: [{ title: '은/는' }, { title: { en: 'Object' } }] }, loc)).toBe('은/는 · Object');
+    expect(orderTitle({ lessons: [{ title: 'a' }, { title: 'b' }, { title: 'c' }, { title: 'd' }] }, loc)).toBe('a · b · c …');
+    expect(orderTitle({ lessons: [{ id: 'x' }] }, loc)).toBe('');
   });
 });

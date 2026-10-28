@@ -67,5 +67,7 @@ export const korean = {
   // natural voice: Piper kss (one female speaker), reading the sounds the Conversation course carries (2026-10-28)
   voice: { espeak: 'ko', natural: { voiceId: 'ko_KR-kss-medium', name: 'KSS (Korean, female)', sizeMB: 63, phonemes: 'ko' } },
   game: { ROWS, LETTERS, LABELS, createGame, createGrid },
+  // Conversation levels are TOPIK levels, named so (Allan, 2026-10-28: "A1" is not the right name)
+  levelNames: { A1: 'TOPIK 1', A2: 'TOPIK 2', B1: 'TOPIK 3', B2: 'TOPIK 4', C1: 'TOPIK 5', C2: 'TOPIK 6' },
   drillNames: { letters: { en: 'Hangul', pt: 'Hangul' }, nouns: { en: 'Adjective forms', pt: 'Formas dos adjetivos' }, verbs: { en: 'Verb forms', pt: 'Formas verbais' } },
 };
