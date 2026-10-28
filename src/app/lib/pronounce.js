@@ -60,7 +60,7 @@ export function words(text) {
 
 /** each word with its expected IPA: exact (the word is a headword), lemma (an inflected form: the lemma's IPA,
  * approximate) or none */
-export async function expectedFor(text, { index, lookup, lemmas, ipa, preferred = [], noSpaces = false, formIpa = null, course = null }) {
+export async function expectedFor(text, { index, lookup, lemmas, ipa, preferred = [], noSpaces = false, formIpa = null, course = null, ruleIpa = null, strip = null }) {
   // a course line's own sounds (Japanese: computed by the build from our kana, tools/ja_phonemes.py) beat any cut into
   // headwords — 日本 is not 日 + 本, and conjugated verbs have no headword (Allan, 2026-10-27)
   if (course) return [{ word: text, ipa: course.replace(/[↑↓#,.?!\s]/gu, ''), source: 'course' }];
@@ -78,6 +78,15 @@ export async function expectedFor(text, { index, lookup, lemmas, ipa, preferred 
     // form is closer to its own IPA than to its lemma's (Allan, 2026-10-22: "it does not conjugate verbs")
     const own = await formIpa?.(k).catch?.(() => null) ?? null;
     if (own) found = { word, ipa: own, source: 'form', lemma: found?.lemma ?? '' };
+    // a script whose vowelled spelling tells the sounds (Arabic: src/lang/ar/ipa.js, 94 % equal to Wiktionary): the
+    // word as written when it carries vowels, else its own headword when that is the same word (Allan 2026-10-28:
+    // مُعَلِّمَة had no IPA, so only هِيَ was compared)
+    if (!own && ruleIpa && found?.source !== 'form') {
+      const said = ruleIpa(word, { pausal: false });
+      const head = said ? null : ((await lookup?.(k)) ?? []).map((a) => lemmas?.[a.lemma]?.headword).find((h) => h && strip?.(h) === strip?.(word));
+      const rule = said ?? (head ? ruleIpa(head) : null);
+      if (rule) found = { word, ipa: rule, source: 'form', lemma: found?.lemma ?? head ?? '' };
+    }
     out.push(found ?? { word, ipa: null, source: 'none' });
   }
   return out;

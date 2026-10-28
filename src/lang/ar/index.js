@@ -6,6 +6,7 @@ import { GOVERNMENT } from './prepositions.js';
 import { ARABIC_INVENTORY } from './inventory.js';
 import { stripAr, hasMarksAr, keepsAr } from './normalize.js';
 import { romanizeAr } from './romanize.js';
+import { ipaAr } from './ipa.js';
 import { ROWS, LETTERS, LABELS, createGame, createGrid } from './game.js';
 import { prepStage, vsoStage, adjectiveStage, vowelStage, idafaStage } from './clause.js';
 
@@ -18,7 +19,7 @@ export const arabic = {
   bcp47: 'ar',
   wiktionary: 'Arabic',
   sources: { en: 'Wiktionary', pt: 'Wikcionário', full: { en: 'the English Wiktionary', pt: 'o Wiktionary em inglês' } },
-  script: { normalize: (s) => s.normalize('NFC'), rtl: true, spaced: true, prefixOf: stripAr, strip: stripAr, hasMarks: hasMarksAr, keeps: keepsAr, romanize: romanizeAr, fontScale: 1.45, lemmaOnTop: true },
+  script: { normalize: (s) => s.normalize('NFC'), rtl: true, spaced: true, prefixOf: stripAr, strip: stripAr, hasMarks: hasMarksAr, keeps: keepsAr, romanize: romanizeAr, ruleIpa: ipaAr, fontScale: 1.45, lemmaOnTop: true },
   inventory: ARABIC_INVENTORY,
   segment,
   tokenize,

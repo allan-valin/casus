@@ -66,7 +66,7 @@
   function edited() { clearTimeout(debounce); debounce = setTimeout(transcribeText, 500); }
   async function transcribeText() {
     if (!ready) return;
-    expected = await expectedFor(text, { index, lookup, lemmas, ipa, preferred, formIpa, course: text === given ? ph : null, noSpaces: !!lang.script?.noSpaces || ['ja', 'zh'].includes(lang.code) });
+    expected = await expectedFor(text, { index, lookup, lemmas, ipa, preferred, formIpa, ruleIpa: lang.script?.ruleIpa ?? null, strip: lang.script?.strip ?? null, course: text === given ? ph : null, noSpaces: !!lang.script?.noSpaces || ['ja', 'zh'].includes(lang.code) });
     pairs = []; result = null;
     const mine = text;
     askWiktionary().then(() => { if (mine === text && heard.length) compare(); });
