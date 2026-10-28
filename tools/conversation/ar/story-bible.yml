@@ -18,12 +18,13 @@ voices:
   - {id: nar-pt, role: narrator, lang: pt, tts: "piper:pt_BR-cadu-medium"}            # CC0
   # pitches after the Macedonian ones (Allan 2026-10-28: "use the mk pitch changes as reference"); men near 1 — at 0.85
   # Kareem sounded "very deep"; speed > 1 = slower (older people), < 1 = quicker
-  - {id: ar-f, role: character, lang: ar, gender: f, tts: "piper:ar_JO-kareem-medium", pitch: 1.32}
+  # 18:10: women still "helium" at 1.32 → ~1.2; men told apart by pitch AND tempo (A1-02 driver vs protagonist alike)
+  - {id: ar-f, role: character, lang: ar, gender: f, tts: "piper:ar_JO-kareem-medium", pitch: 1.2}
   - {id: ar-m, role: character, lang: ar, gender: m, tts: "piper:ar_JO-kareem-medium", pitch: 1.0}
-  - {id: ar-f2, role: character, lang: ar, gender: f, tts: "piper:ar_JO-kareem-medium", pitch: 1.18, speed: 1.05}
-  - {id: ar-m2, role: character, lang: ar, gender: m, tts: "piper:ar_JO-kareem-medium", pitch: 0.94, speed: 1.05}
-  - {id: ar-m3, role: character, lang: ar, gender: m, tts: "piper:ar_JO-kareem-medium", pitch: 1.08, speed: 0.95}
-  - {id: ar-f3, role: character, lang: ar, gender: f, tts: "piper:ar_JO-kareem-medium", pitch: 1.26, speed: 0.95}
+  - {id: ar-f2, role: character, lang: ar, gender: f, tts: "piper:ar_JO-kareem-medium", pitch: 1.12, speed: 1.06}
+  - {id: ar-m2, role: character, lang: ar, gender: m, tts: "piper:ar_JO-kareem-medium", pitch: 0.88, speed: 1.12}
+  - {id: ar-m3, role: character, lang: ar, gender: m, tts: "piper:ar_JO-kareem-medium", pitch: 1.1, speed: 0.9}
+  - {id: ar-f3, role: character, lang: ar, gender: f, tts: "piper:ar_JO-kareem-medium", pitch: 1.24, speed: 0.92}
 
 protagonist:
   forms: {f: ar-f, m: ar-m}
