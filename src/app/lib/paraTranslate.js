@@ -73,6 +73,7 @@ export function protect(html, src) {
 
 let translator = null;
 let queue = Promise.resolve();
+let failed = null;       // rejects the running translation when the engine reports an error
 export const BERGAMOT_CACHE = 'casus-bergamot';
 const listeners = new Set();
 const flow = { done: 0, total: 0 };
@@ -127,12 +128,17 @@ export function translateHtml(html, from, to, { base = '/' } = {}) {
     if (!translator) {
       const { LatencyOptimisedTranslator } = await import('@browsermt/bergamot-translator/translator.js');
       const Backing = await cachedBacking();
-      const opts = { workerUrl: `${base}bergamot/translator-worker.js`, pivotLanguage: 'en', downloadTimeout: 0 };
+      // a worker that fails to start reports only to onerror, and the translation then waits forever: fail it instead
+      const opts = { workerUrl: `${base}bergamot/translator-worker.js`, pivotLanguage: 'en', downloadTimeout: 0,
+        onerror: (err) => { console.error('Bergamot:', err); failed?.(err); } };
       translator = new LatencyOptimisedTranslator(opts, new Backing(opts));
     }
     const kept = protect(html, from);
-    const res = await translator.translate({ from, to, text: kept.html, html: true });
-    return kept.restore(res.target.text);
+    const broke = new Promise((_, reject) => { failed = (err) => { translator = null; reject(err instanceof Error ? err : new Error(String(err))); }; });
+    try {
+      const res = await Promise.race([translator.translate({ from, to, text: kept.html, html: true }), broke]);
+      return kept.restore(res.target.text);
+    } finally { failed = null; }
   });
   queue = run.catch(() => {});
   return run;

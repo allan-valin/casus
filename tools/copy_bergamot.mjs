@@ -6,4 +6,9 @@ import { fileURLToPath } from 'node:url';
 const root = fileURLToPath(new URL('..', import.meta.url));
 mkdirSync(`${root}public/bergamot`, { recursive: true });
 cpSync(`${root}node_modules/@browsermt/bergamot-translator/worker`, `${root}public/bergamot`, { recursive: true });
-console.log('bergamot worker copied to public/bergamot');
+// the library builds its worker with new URL('./worker/translator-worker.js', import.meta.url), ignoring workerUrl; the
+// build puts that worker in assets/, and it loads its engine from its own folder → the engine must be there too
+// (live 2026-10-28: both 404, and the button waited forever)
+mkdirSync(`${root}public/assets`, { recursive: true });
+for (const f of ['bergamot-translator-worker.js', 'bergamot-translator-worker.wasm']) cpSync(`${root}node_modules/@browsermt/bergamot-translator/worker/${f}`, `${root}public/assets/${f}`);
+console.log('bergamot worker copied to public/bergamot and its engine to public/assets');
