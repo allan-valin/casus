@@ -84,7 +84,7 @@ const tell = () => listeners.forEach((fn) => fn(flow.done, flow.total));
 /* Allan 2026-10-28: minutes of "downloading" with no feedback; nothing kept between visits; not removable. The
  * library's own download had a 60 s timeout (a ~25 MB model on a slow line never finished) and kept nothing. Our
  * download: no timeout, bytes reported as they come, models kept in a named cache that Downloads lists and removes. */
-async function cachedBacking() {
+export async function cachedBacking() {
   const { TranslatorBacking } = await import('@browsermt/bergamot-translator/translator.js');
   return class CachedBacking extends TranslatorBacking {
     async fetch(url, checksum) {
@@ -93,7 +93,9 @@ async function cachedBacking() {
       if (hit) return hit.arrayBuffer();
       const res = await fetch(url, { credentials: 'omit', ...(checksum ? { integrity: `sha256-${this.hexToBase64(checksum)}` } : {}) });
       if (!res.ok) throw new Error(`${url}: ${res.status}`);
-      const size = Number(res.headers.get('content-length')) || 0;
+      // the model list's own size: content-length counts the compressed bytes (Firefox showed "49.2 / 33.8 MB")
+      const listed = (await this.registry).flatMap((m) => Object.values(m.files)).find((f) => f.name === url)?.size;
+      const size = listed ?? (res.headers.get('content-encoding') ? 0 : Number(res.headers.get('content-length')) || 0);
       flow.total += size; tell();
       const reader = res.body.getReader();
       const chunks = [];
@@ -103,7 +105,8 @@ async function cachedBacking() {
         chunks.push(value); flow.done += value.length; tell();
       }
       const body = await new Blob(chunks).arrayBuffer();
-      try { await navigator.storage?.persist?.(); await cache?.put(url, new Response(body)); } catch { /* not kept */ }
+      // never wait for persist(): Firefox asks the user, and the translation hung until they answered (2026-10-28)
+      try { navigator.storage?.persist?.().catch(() => {}); await cache?.put(url, new Response(body)); } catch { /* not kept */ }
       return body;
     }
   };
