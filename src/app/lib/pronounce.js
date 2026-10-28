@@ -31,6 +31,10 @@ export function buildIpaIndex(lemmas, ipa, preferred = []) {
     const hw = lemmas?.[id]?.headword;
     if (!hw || !variants?.length) continue;
     const k = key(hw), ipaOf = pick(variants, preferred).ipa;
+    // the headword as written too: der Weg [veːk] and weg [vɛk] share one lower-case key (Allan, 2026-10-28)
+    const exact = `=${hw.normalize('NFC')}`;
+    if (!index.has(exact)) index.set(exact, ipaOf);
+    if (variants.length > 1 && !index.variantsOf.has(exact)) index.variantsOf.set(exact, variants);
     if (!index.has(k)) index.set(k, ipaOf);
     if (variants.length > 1 && !index.variantsOf.has(k)) index.variantsOf.set(k, variants);
     const b = `~${bare(hw)}`;
@@ -39,9 +43,14 @@ export function buildIpaIndex(lemmas, ipa, preferred = []) {
   return index;
 }
 
+// tags that mark a variant as not the default to compare against (Allan, 2026-10-28: "er" defaulted to colloquial /ɐ/)
+const MARKED = /colloquial|casual|informal|dialect|regional|rare|obsolete|dated|archaic|nonstandard|fast speech|unstressed/i;
 function pick(variants, preferred) {
   for (const tag of preferred) { const hit = variants.find((v) => v.tags?.includes(tag)); if (hit) return hit; }
-  return variants[0];
+  const plain = variants.filter((v) => !(v.tags ?? []).some((t) => MARKED.test(t)));
+  const pool = plain.length ? plain : variants;
+  // a phonetic [ ] transcription is closer to what a recogniser hears than a phonemic / / one (/eːr/ vs [ʔeːɐ̯])
+  return pool.find((v) => (v.ipa ?? '').trim().startsWith('[')) ?? pool[0];
 }
 
 /** the words of a sentence (letters, marks, inner apostrophes and hyphens) */
@@ -57,9 +66,9 @@ export async function expectedFor(text, { index, lookup, lemmas, ipa, preferred 
   if (course) return [{ word: text, ipa: course.replace(/[↑↓#,.?!\s]/gu, ''), source: 'course' }];
   const out = [];
   for (const word of noSpaces ? greedyWords(text, index) : words(text)) {
-    const k = key(word);
-    const hit = index.get(k) ?? index.get(`~${bare(word)}`);
-    if (hit) { const variants = index.variantsOf?.get(k); out.push({ word, ipa: hit, source: 'exact', ...(variants ? { variants } : {}) }); continue; }
+    const k = key(word), exact = `=${word.normalize('NFC')}`;
+    const hit = index.get(exact) ?? index.get(k) ?? index.get(`~${bare(word)}`);
+    if (hit) { const variants = index.variantsOf?.get(index.has(exact) ? exact : k); out.push({ word, ipa: hit, source: 'exact', ...(variants ? { variants } : {}) }); continue; }
     let found = null;
     for (const a of (await lookup?.(k)) ?? []) {
       const v = ipa?.[a.lemma];
@@ -111,7 +120,7 @@ export function bestVariants(expected, heard) {
   let cur = expected.map((w) => ({ ...w }));
   const total = (list) => score(align(expectedSounds(list), heard)) ?? -1;
   cur.forEach((w, i) => {
-    if (!w.variants?.length) return;
+    if (!w.variants?.length || w.locked) return;        // the learner picked this one: keep it
     let best = total(cur), keep = w.ipa, tags = w.chosen ?? w.variants.find((v) => v.ipa === w.ipa)?.tags ?? [];
     for (const v of w.variants) {
       const trial = cur.map((x, j) => (j === i ? { ...x, ipa: v.ipa } : x));

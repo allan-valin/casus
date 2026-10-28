@@ -163,6 +163,12 @@
     compare();
   }
 
+  // a click on a variant makes it the one to compare and practise; recordings no longer switch it (Allan, 2026-10-28)
+  function pickVariant(w, v) {
+    expected = expected.map((x) => (x === w ? { ...x, ipa: v.ipa, chosen: v.tags ?? [], locked: true } : x));
+    say(t('speak.variant.picked', { word: w.word, ipa: v.ipa }), 'ok');
+    if (heard.length) compare();
+  }
   function compare() {
     expected = bestVariants(expected, heard.map((h) => h.sym));     // each word scored against its closest regional variant
     const exp = expectedSounds(expected);
@@ -289,7 +295,7 @@
           <div class="w" lang={lang.bcp47}>{w.word}{#if voice}<Speaker text={w.word} {voice} />{/if}<button class="dict-btn" class:on={openWord === w.word} title={t('speak.entry')} onclick={() => toggleEntry(w)}>📖</button></div>
           {#if w.ipa}
             <div class="ipa" title={w.source === 'lemma' ? t('speak.word.lemma', { lemma: w.lemma }) : w.source === 'form' ? t('speak.word.form') : ''}>{w.source === 'lemma' || w.source === 'form' ? '≈ ' : ''}{w.ipa}</div>
-            {#if w.variants?.length}<div class="variants">{#each w.variants as v}<span class="variant" class:chosen={v.ipa === w.ipa}>{(v.tags ?? []).map((x) => x.replace(/-/g, ' ')).join(', ') || '—'} {v.ipa}</span>{/each}</div>{/if}
+            {#if w.variants?.length}<div class="variants">{#each w.variants as v}<button class="variant" class:chosen={v.ipa === w.ipa} aria-pressed={v.ipa === w.ipa} title={t('speak.variant.pick')} onclick={() => pickVariant(w, v)}>{(v.tags ?? []).map((x) => x.replace(/-/g, ' ')).join(', ') || '—'} {v.ipa}</button>{/each}</div>{/if}
             <div class="sounds">{#each segments(w.ipa) as s}<button class="snd" class:has={!!sampleFor(s, samples)} title={sampleFor(s, samples) ? t('speak.sound.title', { sym: s }) : t('speak.sound.missing', { sym: s })} onclick={() => playSample(s)}>{s}</button>{/each}</div>
             {#if w.source === 'lemma'}<div class="note">{t('speak.word.lemma', { lemma: w.lemma })}</div>{:else if w.source === 'wikt'}<div class="note">{t('speak.word.wikt')}</div>{/if}
           {:else}<div class="note">{t('speak.word.none')}</div>{/if}
@@ -342,7 +348,8 @@
   .ipa, .snd, .cmp td { font-family: 'Charis SIL', 'Doulos SIL', 'Gentium Plus', 'Noto Sans', serif; }
   .ipa { font-size: 1.05rem; }
   .variants { display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 0.8rem; color: var(--muted); }
-  .variant.chosen { color: var(--ink); font-weight: 700; }
+  .variant { font: inherit; font-size: 0.85em; background: none; color: var(--muted, inherit); border: 1px solid var(--line); border-radius: 999px; padding: 0.1em 0.6em; margin: 0.1em 0.2em 0.1em 0; cursor: pointer; }
+  .variant.chosen { color: var(--ink); font-weight: 700; border-color: var(--accent, currentColor); }
   .sounds { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 4px; }
   .snd { min-width: 30px; min-height: 30px; padding: 0 5px; font-size: 1.05rem; position: relative; }
   .snd.has::after { content: ''; position: absolute; right: 2px; bottom: 2px; width: 5px; height: 5px; border-radius: 50%; background: var(--accent, #3a7); }

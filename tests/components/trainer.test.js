@@ -25,3 +25,17 @@ describe('Pronunciation trainer says what it cannot score (Allan, 2026-10-27)', 
     expect(container.querySelector('.partial')).toBeNull();
   });
 });
+
+describe('pronunciation variants can be chosen (Allan, 2026-10-28)', () => {
+  it('starts on the standard phonetic form; a click swaps the expected IPA and its sounds', async () => {
+    const files = { '/v/lemmas.json': { 3: { headword: 'er' } }, '/v/ipa.json': { 3: [{ ipa: '/eːr/', tags: ['standard'] }, { ipa: '[ʔeːɐ̯]', tags: ['standard'] }, { ipa: '[ʔɛɐ̯]', tags: ['standard'] }, { ipa: '/ɐ/', tags: ['colloquial'] }] } };
+    const f = async (url) => (files[url] ? { ok: true, json: async () => files[url] } : { ok: false, json: async () => ({}) });
+    const { container } = render(Trainer, { lang: getLanguage('de'), fetchImpl: f, data: '/v', text: 'er', compact: true });
+    await flush();
+    expect(container.querySelector('.word .ipa').textContent).toContain('[ʔeːɐ̯]');
+    const third = [...container.querySelectorAll('button.variant')].find((b) => b.textContent.includes('[ʔɛɐ̯]'));
+    third.click(); await flush();
+    expect(container.querySelector('.word .ipa').textContent).toContain('[ʔɛɐ̯]');
+    expect([...container.querySelectorAll('.sounds .snd')].map((b) => b.textContent)).toEqual(['ʔ', 'ɛ', 'ɐ̯']);
+  });
+});

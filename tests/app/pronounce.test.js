@@ -258,3 +258,30 @@ describe('expected IPA from the course', () => {
     expect(expectedSounds(got)).toEqual(['n', 'i', 'h', 'o', 'ɴ', 'd', 'e', 's', 'ɯ']);
   });
 });
+
+// Allan, 2026-10-28: der Weg got weg's IPA (one lower-case key for both); "er" defaulted to its colloquial variant
+describe('IPA index keeps case and picks a standard variant', () => {
+  const lemmas = { 1: { headword: 'weg' }, 2: { headword: 'Weg' }, 3: { headword: 'er' } };
+  const ipa = { 1: [{ ipa: '/vɛk/' }], 2: [{ ipa: '[veːk]' }],
+    3: [{ ipa: '/eːr/', tags: ['standard'] }, { ipa: '[ʔeːɐ̯]', tags: ['standard'] }, { ipa: '[ʔɛɐ̯]', tags: ['standard'] }, { ipa: '/ɐ/', tags: ['colloquial'] }] };
+  it('a word is found as written first, lower case only as a fallback', async () => {
+    const index = buildIpaIndex(lemmas, ipa);
+    const got = await expectedFor('Der Weg ist weg', { index });
+    expect(got.find((w) => w.word === 'Weg').ipa).toBe('[veːk]');
+    expect(got.find((w) => w.word === 'weg').ipa).toBe('/vɛk/');
+  });
+  it('the default variant is a standard phonetic one, never a colloquial one', async () => {
+    const index = buildIpaIndex(lemmas, ipa);
+    const [w] = await expectedFor('er', { index });
+    expect(w.ipa).toBe('[ʔeːɐ̯]');
+    expect(w.variants.length).toBe(4);
+  });
+});
+
+describe('a variant chosen by hand stays chosen (Allan, 2026-10-28)', () => {
+  it('bestVariants leaves a locked word alone', () => {
+    const w = { word: 'er', source: 'exact', ipa: '[ʔeːɐ̯]', locked: true, variants: [{ ipa: '[ʔeːɐ̯]' }, { ipa: '/ɐ/' }] };
+    expect(bestVariants([w], ['ɐ'])[0].ipa).toBe('[ʔeːɐ̯]');
+    expect(bestVariants([{ ...w, locked: false }], ['ɐ'])[0].ipa).toBe('/ɐ/');
+  });
+});
