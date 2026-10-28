@@ -27,9 +27,10 @@ DESIGN = {
         "voices": {
             "protagonist-f": "female, young adult, moderate pitch",
             # Allan 2026-10-28: "teenager" and "elderly" gave breathing, not speech; the male protagonist sounded too young
-            "protagonist-m": "male, young adult, low pitch",
+            # Allan 17:55: everyone middle-aged (over 30) unless the story has a child; "young adult" still sounded teen
+            "protagonist-m": "male, middle-aged, moderate pitch",
             "officer": "male, middle-aged, low pitch",
-            "sami": "male, young adult, high pitch",
+            "sami": "male, middle-aged, high pitch",
             "driver": "male, middle-aged, very low pitch",
             "huda": "female, middle-aged, moderate pitch",
             "khalid": "male, middle-aged, moderate pitch",
@@ -40,8 +41,9 @@ DESIGN = {
 
 # Allan 2026-10-28: a line with two sentences came out in one breath — the model runs punctuation together. Each piece
 # up to a full stop, comma, question or exclamation mark is spoken alone; pauses are put back by us.
-PIECE = re.compile(r"[^.،,؟?!]+[.،,؟?!]*")
-PAUSE = {"،": 0.22, ",": 0.22}            # after a comma; anything else (. ? !) 0.45 s
+# Allan 17:55: joins at commas gave an "i" sound and clicks → split only at sentence ends; commas stay with the model
+PIECE = re.compile(r"[^.؟?!]+[.؟?!]*")
+PAUSE = {}                                 # 0.45 s after a sentence
 MARKS = re.compile(r"[\u064B-\u0652\u0670\u0640.،,؟?!:\"“”«»\s]")
 
 
@@ -64,9 +66,16 @@ def trim(wav):
     rms = np.array([np.sqrt(np.mean(wav[i:i + frame] ** 2)) for i in range(0, len(wav) - frame, frame)])
     if not len(rms):
         return wav
-    loud = np.where(rms > 0.25 * rms.max())[0]
-    a, b = max(0, loud[0] - 3) * frame, min(len(wav), (loud[-1] + 6) * frame)
-    return wav[a:b]
+    # the start: from the first loud stretch (breath is quieter); the end: down to a much quieter level and a longer tail,
+    # so the last sound fades out instead of being cut (Allan 17:55: "ending kind of abruptly")
+    start = np.where(rms > 0.25 * rms.max())[0][0]
+    end = np.where(rms > 0.03 * rms.max())[0][-1]
+    a, b = max(0, start - 5) * frame, min(len(wav), (end + 15) * frame)
+    out = wav[a:b].copy()
+    fi, fo = min(len(out), int(SR * 0.012)), min(len(out), int(SR * 0.06))
+    out[:fi] *= np.linspace(0, 1, fi)          # no click at the joins
+    out[len(out) - fo:] *= np.linspace(1, 0, fo)
+    return out
 
 
 def best(model, text, tries, **kw):
@@ -87,6 +96,8 @@ def main():
     ap.add_argument("code")
     ap.add_argument("units", nargs="+")
     ap.add_argument("--out", type=Path, required=True)
+    ap.add_argument("--candidates", type=int, default=3)
+    ap.add_argument("--pick", nargs="*", default=[], help="who=k: use candidate k of a voice")
     a = ap.parse_args()
     a.out.mkdir(parents=True, exist_ok=True)
     model = OmniVoice.from_pretrained("k2-fsa/OmniVoice", device_map="cuda:0", dtype=torch.float16)
@@ -94,11 +105,21 @@ def main():
     spec = DESIGN[a.code]
     lang = LANG.get(a.code, a.code)
     refs, report = {}, {}
+    picks = dict(x.split("=") for x in a.pick)
     for who, attrs in spec["voices"].items():
-        err, seed, wav, heard = best(model, spec["ref"], 5, language=lang, instruct=attrs)
-        p = a.out / f"ref-{who}.wav"
-        sf.write(p, wav, SR)
-        report[f"ref-{who}"] = {"error": round(err, 2), "heard": heard}
+        # candidates for Allan's ear (Allan 17:55: pick the voice by number, no Arabic needed)
+        cands = []
+        for k in range(1, a.candidates + 1):
+            torch.manual_seed(100 * k)
+            wav = trim(model.generate(text=spec["ref"], language=lang, instruct=attrs)[0])
+            err, heard = error(model, wav, spec["ref"])
+            p = a.out / f"ref-{who}-{k}.wav"
+            sf.write(p, wav, SR)
+            report[f"ref-{who}-{k}"] = {"error": round(err, 2), "heard": heard}
+            cands.append((err, k, p))
+        k = int(picks[who]) if who in picks else min(cands)[1]
+        p = a.out / f"ref-{who}-{k}.wav"
+        report[f"use-{who}"] = k
         refs[who] = model.create_voice_clone_prompt(ref_audio=str(p), ref_text=spec["ref"])
     for uid in a.units:
         unit = yaml.safe_load((ROOT / "tools/conversation" / a.code / f"{uid}.yml").read_text(encoding="utf-8"))
@@ -107,7 +128,14 @@ def main():
         for n, ln in enumerate(lines):
             who = f"protagonist-{unit['protagonist']}" if ln["speaker"] == "protagonist" else ln["speaker"]
             line = []
+            pieces = []
             for piece in PIECE.findall(ln["text"]):
+                # a one-word sentence alone came out as noise (كَمْ؟ 2026-10-28): it stays with the one before
+                if pieces and len(piece.split()) < 2:
+                    pieces[-1] += piece
+                else:
+                    pieces.append(piece)
+            for piece in pieces:
                 if not bare(piece):
                     continue
                 err, seed, wav, heard = best(model, piece.strip(), 3, language=lang, voice_clone_prompt=refs[who])
