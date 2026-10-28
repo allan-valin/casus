@@ -15,6 +15,7 @@ describe('Arabic romanisation (as Wiktionary writes it)', () => {
   it.each([
     ['كِتَاب', 'kitāb'], ['الْكِتَابُ', 'al-kitābu'], ['الشَّمْس', 'aš-šams'], ['مُدَرِّسَة', 'mudarrisa'], ['كَتَبَ', 'kataba'],
     ['يَكْتُبُ', 'yaktubu'], ['بَيْت', 'bayt'], ['كِتَابًا', 'kitāban'], ['قُرْآن', 'qurʔān'], ['خُبْز', 'ḵubz'], ['عَرَبِيّ', 'ʕarabiyy'],
+    ['اِشْتَرَيْت', 'ištarayt'], ['اُكْتُبْ', 'uktub'],   // an initial alif with a vowel is that vowel (hamzat al-waṣl)
   ])('%s → %s', (a, r) => expect(romanizeAr(a)).toBe(r));
 });
 

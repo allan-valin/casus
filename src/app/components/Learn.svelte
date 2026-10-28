@@ -240,8 +240,9 @@
   // the contents bar: the lesson's sections, then more examples, your turn and the exercises
   const tocOf = (l) => [...l.sections.map((s) => [`#sec-${s.id}`, loc(s.title)]), ...(l.more?.length ? [['#sec-more', t('learn.more')]] : []),
     ...(l.practice?.length ? [['#sec-turn', t('learn.yourTurn')]] : []), ['#ex-start', t('learn.exercises')]];
-  // word-spaced romaji from the reader (tools/learn_examples.mjs); bare kana only as a fallback
-  const exampleRoman = (ex) => ex.roman ?? (ex.kana && romanize ? romanize(ex.kana) : '');
+  // word-spaced romaji from the reader (tools/learn_examples.mjs); Arabic from the build-time vowelled copy
+  // (tools/ar_vowel.py); bare kana only as a fallback
+  const exampleRoman = (ex) => ex.roman || (ex.vowelled && lang.script?.romanize ? lang.script.romanize(ex.vowelled) : '') || (ex.kana && romanize ? romanize(ex.kana) : '');
 </script>
 
 <svelte:window onpopstate={onPop} />
@@ -318,7 +319,7 @@
           <!-- more examples: Tatoeba sentences that show the lesson's point (tools/learn_curriculum.mjs) -->
           <section class="l-sec more-examples" id="sec-more">
             <h4>{t('learn.more')}</h4>
-            {#each lesson.more as ex}<div class="ex"><p class="ja" lang={lang.bcp47} dir="auto">{ex.text}{@render say(ex.text)}</p>{#if ex.roman}<p class="r">{ex.roman}</p>{/if}<p class="en">{ui.lang === 'pt' && ex.pt ? ex.pt : ex.en}</p></div>{/each}
+            {#each lesson.more as ex}<div class="ex"><p class="ja" lang={lang.bcp47} dir="auto">{ex.text}{@render say(ex.text)}</p>{#if exampleRoman(ex)}<p class="r">{exampleRoman(ex)}</p>{/if}<p class="en">{ui.lang === 'pt' && ex.pt ? ex.pt : ex.en}</p></div>{/each}
             <p class="more-source">Tatoeba (CC BY 2.0 FR)</p>
           </section>
         {/if}

@@ -198,6 +198,21 @@ describe('no romanisation of unvowelled Arabic (browser check 2026-10-19: "lm �
   });
 });
 
+describe('Arabic examples get Latin letters from the build-time vowelling (Allan 2026-10-28: "a false vowel is better than no vowel")', () => {
+  it('a Tatoeba example without vowels shows the romanised vowelled copy; the Arabic stays as written', async () => {
+    const AR_INDEX = { system: 'CEFR', credit: 'x', levels: [{ id: 'A1', topics: [{ id: 't', kind: 'grammar', title: 'T', lessons: [{ id: 'n', title: 'هي', meaning: 'm' }] }] }] };
+    const AR_LESSON = { id: 'n', title: 'هي', meaning: 'm', sections: [], examples: [], practice: [], source: 'written for Casus',
+      more: [{ text: 'هي سعيدة.', vowelled: 'هِيَ سَعِيدَة.', roman: '', en: 'She is happy.' }] };
+    const { container } = render(Learn, props({ lang: getLanguage('ar'), loadLearn: async () => AR_INDEX, loadLesson: async () => AR_LESSON, loadQuestions: async () => ({ qs: [] }) }));
+    await flush();
+    await fireEvent.click(container.querySelector('.lesson-row'));
+    await flush();
+    const ex = container.querySelector('#sec-more .ex');
+    expect(ex.querySelector('.ja').textContent).toContain('هي سعيدة.');
+    expect(ex.querySelector('.r').textContent).toMatch(/^hiya saʕīda/);
+  });
+});
+
 describe('Learn, Allan 2026-10-20 night list', () => {
   it('topics start collapsed and open on a click; a search opens them', async () => {
     const { container } = render(Learn, props());

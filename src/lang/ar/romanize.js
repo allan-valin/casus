@@ -36,6 +36,7 @@ function one(word) {
     const prev = s.slice(-1);
     if (ch === 'ا' || ch === 'ى' || ch === 'ٱ') {
       if (ls[i - 1]?.marks.includes('ً')) continue;                 // the alif that carries tanwin -an
+      if (i === 0 && vowel) { s += vowel; continue; }                 // an initial alif with a vowel is that vowel (hamzat al-waṣl)
       if (prev === 'a') s = `${s.slice(0, -1)}ā`; else if (i === 0 || ch === 'ٱ') s += 'a'; else s += 'ā';
       s += vowel;
       continue;
