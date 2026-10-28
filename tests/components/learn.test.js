@@ -3,6 +3,7 @@ import { describe, it, expect } from 'vitest';
 import { render, fireEvent } from '@testing-library/svelte';
 import { tick } from 'svelte';
 import Learn from '../../src/app/components/Learn.svelte';
+import PracticeStub from '../fixtures/PracticeStub.svelte';
 import { getLanguage } from '../../src/lang/registry.js';
 import { langFromPath, learnPath } from '../../src/app/lib/route.js';
 import { SITES, siteLanguages } from '../../src/sites.js';
@@ -494,5 +495,25 @@ describe('a paragraph left in the book’s language can be translated (Bergamot;
     await flush();
     expect(container.querySelector('.l-sec p').textContent).toContain('Korean verbs always come at the end');
     expect(calls).toEqual([['fr', 'en']]);
+  });
+});
+
+// Allan 2026-10-28: in Conversation the pronunciation trainer opens on the page; in Learn 🗣 opened a new tab
+describe('🗣 in a lesson opens the trainer on the page', () => {
+  it('shows the trainer for that text in a panel, and closes it again', async () => {
+    const { container } = render(Learn, props({ Practice: PracticeStub, speak: (t) => `/ja/speak/?t=${encodeURIComponent(t)}` }));
+    await flush();
+    await fireEvent.click(container.querySelector('.lesson-row[data-lesson="n5-004"]'));
+    await flush();
+    const a = container.querySelector('a.to-speak');
+    expect(a).toBeTruthy();
+    const opened = await fireEvent.click(a);
+    await flush();
+    expect(opened).toBe(false);                                // the new tab is not opened
+    const panel = container.querySelector('.practice-float');
+    expect(panel?.textContent).toContain(a.dataset.text);
+    await fireEvent.click(panel.querySelector('.practice-close'));
+    await flush();
+    expect(container.querySelector('.practice-float')).toBeNull();
   });
 });

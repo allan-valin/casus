@@ -129,9 +129,11 @@ export function translateHtml(html, from, to, { base = '/' } = {}) {
       const { LatencyOptimisedTranslator } = await import('@browsermt/bergamot-translator/translator.js');
       const Backing = await cachedBacking();
       // a worker that fails to start reports only to onerror, and the translation then waits forever: fail it instead
-      const opts = { workerUrl: `${base}bergamot/translator-worker.js`, pivotLanguage: 'en', downloadTimeout: 0,
-        onerror: (err) => { console.error('Bergamot:', err); failed?.(err); } };
-      translator = new LatencyOptimisedTranslator(opts, new Backing(opts));
+      // (not in the options: the library posts them to its worker, and a function cannot be sent there)
+      const opts = { workerUrl: `${base}bergamot/translator-worker.js`, pivotLanguage: 'en', downloadTimeout: 0 };
+      const backing = new Backing(opts);
+      backing.onerror = (err) => { console.error('Bergamot:', err); failed?.(err); };
+      translator = new LatencyOptimisedTranslator(opts, backing);
     }
     const kept = protect(html, from);
     const broke = new Promise((_, reject) => { failed = (err) => { translator = null; reject(err instanceof Error ? err : new Error(String(err))); }; });

@@ -303,7 +303,7 @@
       loadTalkLinks={() => fetchImpl(withBase(`/talk/lessons/${lang.code}.json`)).then((r) => (r.ok ? r.json() : {}))}
       talkHref={(unit) => `${withBase(talkPath(LANGUAGES.find((l) => l.code === lang.code) ?? { path: '/' }))}#${unit}`}
       loadQuestions={(id) => fetchImpl(`${DATA}/learn/q-${id}.json`).then((r) => (r.ok ? r.json() : { qs: [] }))}
-      openInReader={(text) => { try { storage?.setItem(`casus:input:${lang.code}`, text); } catch { /* not kept */ } location.href = withBase(LANGUAGES.find((l) => l.code === lang.code)?.path ?? '/'); }} />
+      openInReader={(text) => { try { storage?.setItem(`casus:input:${lang.code}`, text); } catch { /* not kept */ } location.href = withBase(LANGUAGES.find((l) => l.code === lang.code)?.path ?? '/'); }}  Practice={Trainer} practiceProps={{ lang, voice, fetchImpl, data: DATA, base: withBase('/'), lexicon, storage, compact: true, say: (msg, kind) => activity.say(msg, kind) }}/>
   {:else if route.view === 'proof'}
     <Proofread {lang} {storage} {fetchImpl} knownWords={async (words) => {
         if (!lexicon) return new Set();

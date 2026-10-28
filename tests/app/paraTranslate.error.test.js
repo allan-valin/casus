@@ -5,7 +5,8 @@ import { describe, it, expect, vi } from 'vitest';
 vi.mock('@browsermt/bergamot-translator/translator.js', () => ({
   TranslatorBacking: class { constructor(o) { this.o = o; } },
   LatencyOptimisedTranslator: class {
-    constructor(opts) { setTimeout(() => opts.onerror(new Error('importScripts failed')), 5); }
+    // the options go to a worker (structured clone): no functions allowed in them
+    constructor(opts, backing) { structuredClone(opts); setTimeout(() => backing.onerror(new Error('importScripts failed')), 5); }
     translate() { return new Promise(() => {}); }
   },
 }));

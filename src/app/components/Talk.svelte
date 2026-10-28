@@ -481,7 +481,7 @@
   .hands-free { font-size: 1.05rem; font-weight: 700; padding: 10px 16px; border-radius: 24px; border: 2px solid var(--accent, #6a4c93); }
   .player-bar .hands-free.on { background: var(--fill); color: var(--fill-ink); }
   .where { flex-basis: 100%; text-align: center; font-size: 0.9rem; color: var(--muted); }   /* own line: the controls stay centred */
-  button.w { background: none; border: 0; padding: 0 1px; font: inherit; color: inherit; cursor: pointer; border-bottom: 1px dotted currentColor; }
+  button.w { background: none; border: 0; padding: 0 1px; font: inherit; color: inherit; cursor: pointer; border-bottom: 1.5px dotted var(--accent-text); }   /* same cue as Learn (Allan 2026-10-28) */
   button.w:hover { background: color-mix(in srgb, var(--accent, #6a4c93) 15%, transparent); }
   .roman { display: block; font-size: 0.85em; opacity: 0.75; font-style: italic; }
   .entry { flex-basis: 100%; margin-top: 6px; max-width: 100%; overflow-x: auto; }

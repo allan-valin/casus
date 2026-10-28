@@ -20,7 +20,16 @@
   import { wordAround, candidatesAt, firstKnown } from '../lib/wordat.js';
   import { searchIndex } from '../../lib/learn/search.js';
   let { lang, loadLearn, loadLesson, loadQuestions, storage = null, random = Math.random, openInReader = null, speak = null, saveFile = downloadFile, award = null, progression = null, lookup = null, loadInfo = null, loadParadigm = null, startLesson = null, loadTalkLinks = null, talkHref = null, loadSearch = null,
-    translatePara = (html, from, to) => translateHtml(html, from, to, { base: import.meta.env?.BASE_URL ?? '/' }) } = $props();
+    translatePara = (html, from, to) => translateHtml(html, from, to, { base: import.meta.env?.BASE_URL ?? '/' }),
+    Practice = null, practiceProps = {} } = $props();
+  // 🗣 opens the pronunciation trainer on this page, as Conversation does (Allan 2026-10-28: Learn opened a new tab)
+  let practiceText = $state(null);
+  function onSpeakClick(e) {
+    const a = e.target.closest?.('a.to-speak');
+    if (!a || !Practice || !a.dataset.text) return;
+    e.preventDefault();
+    practiceText = practiceText === a.dataset.text ? null : a.dataset.text;
+  }
 
   let learn = $state(null);
   let failed = $state(false);
@@ -269,7 +278,8 @@
     {#if quizItems.length}<p class="ex-count">{t('learn.exCount', { n: quizItems.length })}</p><ChoiceDrill items={quizItems} {random} {romanize} onresult={record} ordered />{/if}
   {:else}{#if lesson && lessonRef}
     <!-- one lesson, as a page -->
-    <article class="lesson-page" class:rtl-taught={lang.script?.rtl} style={`--script-scale: ${lang.script?.fontScale ?? 1}`}>
+    <!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
+    <article class="lesson-page" onclick={onSpeakClick} class:rtl-taught={lang.script?.rtl} style={`--script-scale: ${lang.script?.fontScale ?? 1}`}>
       <nav class="crumbs"><button class="back" onclick={back}>← {lessonRef.level.title ? loc(lessonRef.level.title) : lessonRef.level.id}</button> <span class="crumb-topic">{loc(lessonRef.topic.title)}</span></nav>
       <h3 class="lesson-title"><span class="badge-level">{lessonRef.level.title ? loc(lessonRef.level.title) : lessonRef.level.id}</span> <span class="l-head" lang={lang.bcp47}>{lesson.title ?? lessonRef.entry.title}</span></h3>
       {#if lesson.meaning}<p class="l-sub">{loc(lesson.meaning)}</p>{/if}
@@ -393,7 +403,8 @@
       {/if}
     {/each}
 {/snippet}
-{#snippet say(text)}{#if speak}<a class="to-speak" href={speak(text)} target="_blank" rel="noopener" title={t('learn.speak.title')}>🗣</a>{/if}{/snippet}
+{#snippet say(text)}{#if speak}<a class="to-speak" href={speak(text)} data-text={text} target="_blank" rel="noopener" title={t('learn.speak.title')}>🗣</a>{/if}{/snippet}
+{#if practiceText && Practice}<div class="practice-float" role="dialog" aria-label={t('learn.speak.title')}><button class="practice-close" onclick={() => (practiceText = null)} aria-label="×">×</button><Practice text={practiceText} {...practiceProps} /></div>{/if}
 {#if entry}<div class="entry-float" style={floatStyle(entry)} role="dialog" aria-label={entry.word}><WordEntry word={entry.word} {lang} {lookup} {loadInfo} {loadParadigm} speakHref={speak} onclose={() => (entry = null)} /></div>{/if}
 
 {#snippet dict(word)}<a class="dict" href={wiktionaryUrl(word, lang.wiktionary ?? 'Japanese', ui.lang === 'pt' ? 'pt' : 'en')} target="_blank" rel="noopener" title={t('dict.wiktionary')}>{ui.lang === 'pt' ? 'Wikcionário' : 'Wiktionary'} ↗</a>{/snippet}
@@ -473,7 +484,8 @@
   .words { border-collapse: collapse; } .words td { border-bottom: 1px solid var(--line); padding: 4px 10px; }
   .words tr:nth-child(even) td { background: var(--table-stripe); }
   .to-speak, :global(.prose .to-speak) { text-decoration: none; margin-inline-start: 4px; font-size: .9em; }
-  :global(.words-clickable :is([lang], .ja, b, strong, i, em, code, ruby)) { cursor: pointer; text-decoration: underline dotted; text-decoration-color: var(--line); text-underline-offset: 3px; }
+  /* clickable words show it: dotted underline in the link colour (Allan 2026-10-28; the grey line read as decoration) */
+  :global(.words-clickable :is([lang], .ja, b, strong, i, em, code, ruby)) { cursor: pointer; text-decoration: underline dotted; text-decoration-color: var(--accent-text); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
   :global(.prose .ex) { margin: 6px 0; } :global(.prose .ex p) { margin: 0; } :global(.prose .gloss) { color: var(--ink-2); font-size: .92em; }
   .sec-head { margin: 16px 0 4px; font-size: .95rem; color: var(--ink-2); }
   .made-head { margin: 22px 0 2px; font-size: 1rem; border-top: 2px solid var(--line); padding-top: 12px; }
@@ -496,12 +508,14 @@
   .done-line { color: var(--ink-2); margin: 4px 0; }
   .pct.done.full { background: none; }
   .entry-float { position: fixed; z-index: 30; max-height: 60vh; overflow: auto; background: var(--bg, #fff); border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 8px 28px rgba(0,0,0,.25); }
-  .w-btn { all: unset; cursor: pointer; text-decoration: underline dotted; text-decoration-color: var(--line); text-underline-offset: 3px; }
+  .w-btn { all: unset; cursor: pointer; text-decoration: underline dotted; text-decoration-color: var(--accent-text); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
   .learn-about { color: var(--muted, inherit); font-size: 0.92em; margin: 0.3em 0 0.8em; }
   .order-toggle { display: inline-flex; gap: 0; margin: 0.5em 0; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
   .order-toggle button { font: inherit; background: none; border: 0; padding: 0.3em 0.9em; cursor: pointer; color: inherit; }
   .order-toggle button.active { background: var(--accent, #555); color: var(--on-accent, #fff); }
   /* same colours as the selected Lessons/Practice tab: it was nearly invisible on the page (Allan 2026-10-28) */
   :global(button.para-tr) { font: inherit; font-size: 0.8em; margin-inline-start: 0.3em; padding: 1px 0.6em; border: 1px solid var(--accent); border-radius: 999px; background: var(--fill); color: var(--fill-ink); cursor: pointer; }
+  .practice-float { position: fixed; inset-inline: 8px; bottom: 8px; max-width: 720px; margin-inline: auto; max-height: 60vh; overflow: auto; z-index: 40; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; box-shadow: 0 6px 24px rgb(0 0 0 / 0.25); }
+  .practice-close { float: inline-end; font: inherit; font-size: 1.2em; border: none; background: none; color: var(--ink); cursor: pointer; }
   :global(button.para-tr:disabled) { opacity: 0.8; cursor: progress; }
 </style>

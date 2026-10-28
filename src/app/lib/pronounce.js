@@ -248,6 +248,7 @@ export function speakLinks(node, opts) {
       if (b.parentElement?.closest('.say, .ja')) continue;                // its paragraph already has one
       const a = document.createElement('a');
       a.className = 'to-speak'; a.href = speak(text.trim()); a.target = '_blank'; a.rel = 'noopener'; a.textContent = '🗣';
+      a.dataset.text = text.trim();   // a page with the trainer built in opens it here instead (Learn, 2026-10-28)
       a.title = opts?.title ?? '';
       if (b.classList?.contains('say') || b.classList?.contains('ja')) b.append(' ', a); else b.after(a);
     }
