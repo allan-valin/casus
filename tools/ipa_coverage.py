@@ -2,7 +2,7 @@
 """Does every word of every Conversation step have an expected IPA for the pronunciation compare? (Allan, 2026-10-27:
 mk C2-05 "Не те разбрав добро" showed an empty expected row for разбрав.)
 
-A word counts when it is a headword with Wiktionary IPA (exact) or has a generated form IPA (data/<code>/ipa-forms,
+Korean and Japanese: per line, from the course's own table (course_lines). Others: a word counts when it is a headword with Wiktionary IPA (exact) or has a generated form IPA (data/<code>/ipa-forms,
 tools/form_ipa.py). The lemma's IPA is not counted: the compare does not score it, it is a different word.
 
   python3 tools/ipa_coverage.py mk de ja ko     # one line per language, then the words without IPA
@@ -55,7 +55,28 @@ def covered(word, headwords, forms):
     return None
 
 
+def course_lines(code):
+    """Korean and Japanese compare whole lines against the course's own table (built by tools/build_conversation.py):
+    Korean `ipa`, Japanese `readings` (`ph` phonemes). A line counts when the table has it."""
+    course = json.loads((Path('public/talk') / f'{code}.json').read_text())
+    table = course.get('ipa') or {k: v.get('ph') for k, v in (course.get('readings') or {}).items()}
+    texts = Counter()
+    def walk(x):
+        if isinstance(x, dict):
+            for k, v in x.items():
+                if k == 'text' and isinstance(v, str): texts[v] += 1
+                elif k not in ('meaning', 'ask', 'situation', 'title'): walk(v)
+        elif isinstance(x, list):
+            for v in x: walk(v)
+    walk(course['units'])
+    missing = Counter({t: n for t, n in texts.items() if not table.get(t)})
+    print(f'{code}: {len(texts)} distinct lines — with IPA {len(texts) - len(missing)}, none {len(missing)}')
+    print('  without IPA (units):', ' | '.join(f'{t}({n})' for t, n in missing.most_common(20)))
+
+
 def main(code):
+    if code in ('ja', 'ko'):
+        return course_lines(code)
     root = Path('data') / code
     ipa = json.loads((root / 'ipa.json').read_text()) if (root / 'ipa.json').exists() else {}
     lemmas = json.loads((root / 'lemmas.json').read_text()) if (root / 'lemmas.json').exists() else {}
