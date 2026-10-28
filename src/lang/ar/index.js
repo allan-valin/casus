@@ -30,6 +30,8 @@ export const arabic = {
   eras: [{ id: 'msa', label: 'Modern Standard Arabic', authors: '', ages: [], ipa: [] }],
   dataPath: '/data/ar',
   samplesPath: '/samples/ar',
-  voice: { espeak: 'ar', natural: null },
+  // Piper ar_JO-kareem: its dataset states no licence; Allan 2026-10-28: a natural voice is required — use it until
+  // someone objects. One male speaker; women's voices are pitched up in Conversation.
+  voice: { espeak: 'ar', natural: { voiceId: 'ar_JO-kareem-medium', name: 'Kareem', sizeMB: 63 } },
   game: { ROWS, LETTERS, LABELS, createGame, createGrid },
 };
