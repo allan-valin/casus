@@ -1,0 +1,40 @@
+id: A2-02
+protagonist: m
+title: [The foreigner card, O cartão de estrangeiro]
+situation: ["At the immigration office for your residence card. Take a number, fill in the form, wait.", "No escritório de imigração para tirar o cartão de residente. Pegue uma senha, preencha o formulário, espere."]
+learn: [ko-intent, ko-nikl-48]
+culture: Booking online and numbered tickets
+items:
+  - [oegugin, "외국인등록증", "residence card for foreigners", "cartão de residente estrangeiro"]
+  - [sincheongseo, "신청서", "application form", "formulário"]
+  - [beonhopyo, "번호표", "numbered ticket", "senha (número)"]
+  - [gidaryeoyo, "기다려요", "wait", "espera"]
+  - [eureo2, "-(으)러 왔어요", "came (in order) to", "vim (para)"]
+  - [euryeogo2, "-(으)려고 해요", "intend to", "pretendo"]
+  - [bakke, "밖에", "only (+ negative verb)", "só (+ verbo negativo)"]
+  - [yeogwon, "여권", "passport", "passaporte"]
+  - [sajin2, "증명사진", "ID photo", "foto 3x4"]
+  - [jakseong, "작성해 주세요", "please fill in", "preencha, por favor"]
+  - [yeyak, "예약했어요", "I booked", "agendei"]
+  - [eolmana, "얼마나 걸려요?", "How long does it take?", "Quanto tempo demora?"]
+dialogue:
+  - [clerk, "어서 오세요. 무슨 일로 오셨어요?", "Welcome. What brings you here?", "Bem-vindo. Em que posso ajudar?"]
+  - [protagonist, "외국인등록증을 만들러 왔어요. 인터넷으로 예약했어요.", "I came to get a residence card. I booked online.", "Vim tirar o cartão de residente. Agendei pela internet."]
+  - [clerk, "번호표 뽑고 기다려 주세요. 이 신청서도 작성해 주세요.", "Take a number and wait, please. And fill in this form.", "Pegue uma senha e aguarde. Preencha também este formulário."]
+  - [protagonist, "여권하고 사진도 내야 해요?", "Do I have to hand in my passport and a photo too?", "Preciso entregar passaporte e foto também?"]
+  - [clerk, "네. 증명사진 있어요?", "Yes. Do you have an ID photo?", "Sim. Tem foto 3x4?"]
+  - [protagonist, "사진이 한 장밖에 없어요. 괜찮아요?", "I only have one photo. Is that OK?", "Só tenho uma foto. Tudo bem?"]
+  - [clerk, "한 장이면 돼요. 카드는 3주쯤 걸려요.", "One is enough. The card takes about three weeks.", "Uma basta. O cartão demora umas três semanas."]
+  - [protagonist, "알겠어요. 그럼 다음 달에 은행 계좌를 만들려고 해요.", "I see. Then next month I intend to open a bank account.", "Entendi. Então no mês que vem pretendo abrir conta no banco."]
+teach:
+  - ask: ["Say what you came for: to get a residence card.", "Diga para que veio: tirar o cartão de residente.", "외국인등록증을 만들러 왔어요.", oegugin, eureo2]
+  - ask: ["Say you booked online.", "Diga que agendou pela internet.", "인터넷으로 예약했어요.", yeyak]
+  - ask: ["Say: take a number and wait.", "Diga: pegue uma senha e aguarde.", "번호표 뽑고 기다려요.", beonhopyo, gidaryeoyo]
+  - ask: ["The clerk hands you a form. How does she say 'please fill it in'?", "A atendente dá um formulário. Como ela diz 'preencha'?", "신청서 작성해 주세요.", sincheongseo, jakseong]
+  - ask: ["Ask if you must hand in your passport.", "Pergunte se precisa entregar o passaporte.", "여권도 내야 해요?", yeogwon]
+  - note: ["밖에 + a negative verb means 'only': 한 장밖에 없어요, I have only one (lit. nothing outside one).", "밖에 + verbo negativo quer dizer 'só': 한 장밖에 없어요, só tenho uma (lit. nada fora de uma)."]
+  - ask: ["Say you only have one ID photo.", "Diga que só tem uma foto 3x4.", "증명사진이 한 장밖에 없어요.", bakke, sajin2]
+  - ask: ["Ask how long it takes.", "Pergunte quanto tempo demora.", "얼마나 걸려요?", eolmana]
+  - note: ["-(으)려고 해요: intend to. 만들다 → 만들려고 해요, I intend to make (open).", "-(으)려고 해요: pretender. 만들다 → 만들려고 해요, pretendo fazer (abrir)."]
+  - ask: ["Say you intend to open a bank account next month.", "Diga que pretende abrir uma conta no mês que vem.", "다음 달에 계좌를 만들려고 해요.", euryeogo2]
+  - pt_only: "Como na Polícia Federal no Brasil, tudo começa pelo agendamento online e pela senha. O 외국인등록증 é o RNE coreano: sem ele, nada de banco nem celular."

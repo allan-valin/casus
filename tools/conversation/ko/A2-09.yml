@@ -1,0 +1,594 @@
+# UNIT ko A2-09 — written by AI (Claude) for Casus; expanded from src/A2-09.yml by tools/expand_unit.py. Edit the source.
+
+id: A2-09
+level: A2
+number: 9
+protagonist: f
+title:
+  en: Money and percentages
+  pt: Dinheiro e porcentagem
+situation:
+  en: 'A cosmetics shop in Myeongdong with Seoyeon: 1+1 offers, 30% off, and a tax refund for foreigners.'
+  pt: 'Uma loja de cosméticos em Myeongdong com a Seoyeon: promoções leve 2 pague 1, 30% de desconto e devolução de imposto para estrangeiros.'
+learn_lessons:
+- ko-nikl-55
+- ko-nikl-56
+culture: 1+1 offers and tax refunds
+new_items:
+- id: halin
+  text: 할인
+  meaning:
+    en: discount
+    pt: desconto
+- id: peosenteu
+  text: 퍼센트
+  meaning:
+    en: per cent
+    pt: por cento
+- id: ballgap
+  text: 반값
+  meaning:
+    en: half price
+    pt: metade do preço
+- id: manwon2
+  text: 만 오천 원
+  meaning:
+    en: 15,000 won
+    pt: 15 mil wons
+- id: ina
+  text: (이)나
+  meaning:
+    en: as many as (surprise) / or
+    pt: nada menos que / ou
+- id: geona
+  text: -거나
+  meaning:
+    en: or (between actions)
+    pt: ou (entre ações)
+- id: wonplusone
+  text: 원 플러스 원
+  meaning:
+    en: buy one get one free (1+1)
+    pt: leve dois, pague um (1+1)
+- id: hwangeup
+  text: 택스 리펀드
+  meaning:
+    en: tax refund
+    pt: devolução de imposto
+- id: yeonggeug
+  text: 영수증 주세요
+  meaning:
+    en: the receipt, please
+    pt: o recibo, por favor
+- id: deo-ssayo
+  text: 더 싸요
+  meaning:
+    en: is cheaper
+    pt: é mais barato
+- id: gyesan
+  text: 계산해 주세요
+  meaning:
+    en: the bill, please / I'll pay
+    pt: pode passar, por favor
+- id: segeum
+  text: 세금
+  meaning:
+    en: tax
+    pt: imposto
+reviews:
+- item: sillyejiman
+  from: A1-08
+- item: myeot-sal
+  from: A1-08
+- item: seoreun-sal
+  from: A1-08
+- item: seumul-ilgop
+  from: A1-08
+- item: hana-dul
+  from: A1-08
+- item: hyeong
+  from: A1-08
+- item: nuna
+  from: A1-08
+- item: dongsaeng
+  from: A1-08
+- item: geureom
+  from: A1-08
+- item: ege
+  from: A1-08
+- item: jwoyo
+  from: A1-08
+- item: gimchi
+  from: A1-08
+- item: jinjja
+  from: A1-08
+- item: byeol
+  from: A1-24
+- item: dal
+  from: A1-24
+- item: haneul
+  from: A1-24
+- item: i-anieyo
+  from: A1-24
+- item: bihaenggi
+  from: A1-24
+- item: eureo
+  from: A1-24
+- item: bareo
+  from: A1-24
+- item: balgayo
+  from: A1-24
+- item: eoduwoyo
+  from: A1-24
+- item: bam
+  from: A1-24
+- item: tawo
+  from: A1-24
+- item: boyeoyo
+  from: A1-24
+- item: oegugin
+  from: A2-02
+- item: sincheongseo
+  from: A2-02
+- item: beonhopyo
+  from: A2-02
+- item: gidaryeoyo
+  from: A2-02
+- item: eureo2
+  from: A2-02
+- item: euryeogo2
+  from: A2-02
+- item: bakke
+  from: A2-02
+- item: yeogwon
+  from: A2-02
+- item: sajin2
+  from: A2-02
+- item: jakseong
+  from: A2-02
+- item: yeyak
+  from: A2-02
+- item: eolmana
+  from: A2-02
+- item: jeongi
+  from: A2-06
+- item: eeokon
+  from: A2-06
+- item: go-itda
+  from: A2-06
+- item: neun-dongane
+  from: A2-06
+- item: eo-itda
+  from: A2-06
+- item: kyeojyeo
+  from: A2-06
+- item: jeongiyogeum
+  from: A2-06
+- item: aggyeoyo
+  from: A2-06
+- item: deowoseo
+  from: A2-06
+- item: seonpunggi
+  from: A2-06
+- item: changmun
+  from: A2-06
+- item: nagal-ttae
+  from: A2-06
+- item: chuseok
+  from: A2-08
+- item: songpyeon
+  from: A2-08
+- item: charye
+  from: A2-08
+- item: gohyang
+  from: A2-08
+- item: eusi2
+  from: A2-08
+- item: hanteseo
+  from: A2-08
+- item: cheoreom
+  from: A2-08
+- item: eomeonim
+  from: A2-08
+- item: abeonim
+  from: A2-08
+- item: baewosseoyo
+  from: A2-08
+- item: mandeuseyo
+  from: A2-08
+- item: gajokcheoreom
+  from: A2-08
+steps:
+- type: narrator
+  text:
+    en: 'A cosmetics shop in Myeongdong with Seoyeon: 1+1 offers, 30% off, and a tax refund for foreigners. Listen to the conversation; you don''t need to understand it yet.'
+    pt: 'Uma loja de cosméticos em Myeongdong com a Seoyeon: promoções leve 2 pague 1, 30% de desconto e devolução de imposto para estrangeiros. Escute a conversa; ainda não precisa entender.'
+- type: dialogue
+  lines:
+  - speaker: seoyeon
+    text: 언니, 이거 원 플러스 원이에요!
+    meaning:
+      en: Unni, this is buy one get one free!
+      pt: Unni, isto é leve dois pague um!
+  - speaker: protagonist
+    text: 와, 그럼 반값이에요? 이 크림은 얼마예요?
+    meaning:
+      en: Wow, so it's half price? How much is this cream?
+      pt: Nossa, então é metade do preço? Quanto é este creme?
+  - speaker: seoyeon
+    text: 만 오천 원인데 삼십 퍼센트 할인해요.
+    meaning:
+      en: 15,000 won, but it's 30% off.
+      pt: 15 mil wons, mas tem 30% de desconto.
+  - speaker: protagonist
+    text: 저 벌써 다섯 개나 샀어요!
+    meaning:
+      en: I've already bought as many as five!
+      pt: Já comprei nada menos que cinco!
+  - speaker: seoyeon
+    text: 하하. 외국인은 택스 리펀드도 받을 수 있어요. 여권 있어요?
+    meaning:
+      en: Haha. Foreigners can also get a tax refund. Do you have your passport?
+      pt: Haha. Estrangeiro também recebe devolução de imposto. Tem passaporte?
+  - speaker: protagonist
+    text: 외국인등록증이나 여권이 필요해요?
+    meaning:
+      en: Do I need the residence card or the passport?
+      pt: Preciso do cartão de residente ou do passaporte?
+  - speaker: seoyeon
+    text: 여권이요. 세금을 돌려받거나 더 싸게 사요.
+    meaning:
+      en: The passport. You get the tax back, or you pay less straight away.
+      pt: O passaporte. Você recebe o imposto de volta ou já paga menos.
+  - speaker: protagonist
+    text: 좋아요! 계산해 주세요. 영수증도 주세요.
+    meaning:
+      en: Great! I'll pay, please. And the receipt.
+      pt: Ótimo! Pode passar. E o recibo, por favor.
+- type: prompt
+  ask:
+    en: 'Say: buy one get one free.'
+    pt: 'Diga: leve dois, pague um.'
+  answer:
+    speaker: protagonist
+    text: 원 플러스 원
+  items:
+  - wonplusone
+- type: prompt
+  ask:
+    en: 'Ask: so it''s half price?'
+    pt: 'Pergunte: então é metade do preço?'
+  answer:
+    speaker: protagonist
+    text: 그럼 반값이에요?
+  items:
+  - ballgap
+- type: prompt
+  ask:
+    en: 'Say: 15,000 won, but 30% off.'
+    pt: 'Diga: 15 mil wons, mas com 30% de desconto.'
+  answer:
+    speaker: protagonist
+    text: 만 오천 원인데 삼십 퍼센트 할인해요.
+  items:
+  - manwon2
+  - peosenteu
+  - halin
+- type: narrator
+  text:
+    en: '(이)나 after a number shows surprise at how many: 다섯 개나, as many as five! Between nouns it is ''or'': 외국인등록증이나 여권.'
+    pt: '(이)나 depois de um número mostra surpresa com a quantidade: 다섯 개나, nada menos que cinco! Entre substantivos é ''ou'': 외국인등록증이나 여권.'
+- type: prompt
+  ask:
+    en: Say you've already bought as many as five.
+    pt: Diga que já comprou nada menos que cinco.
+  answer:
+    speaker: protagonist
+    text: 벌써 다섯 개나 샀어요!
+  items:
+  - ina
+- type: prompt
+  ask:
+    en: 'Ask: the residence card or the passport?'
+    pt: 'Pergunte: o cartão de residente ou o passaporte?'
+  answer:
+    speaker: protagonist
+    text: 외국인등록증이나 여권이 필요해요?
+  items:
+  - ina
+- type: narrator
+  text:
+    en: '-거나 is ''or'' between actions: 돌려받거나 더 싸게 사요, you get it back or you pay less.'
+    pt: '-거나 é ''ou'' entre ações: 돌려받거나 더 싸게 사요, recebe de volta ou paga menos.'
+- type: prompt
+  ask:
+    en: 'Say: you get the tax back or pay less.'
+    pt: 'Diga: recebe o imposto de volta ou paga menos.'
+  answer:
+    speaker: protagonist
+    text: 세금을 돌려받거나 더 싸게 사요.
+  items:
+  - geona
+  - segeum
+- type: prompt
+  ask:
+    en: Say it's cheaper.
+    pt: Diga que é mais barato.
+  answer:
+    speaker: protagonist
+    text: 더 싸요.
+  items:
+  - deo-ssayo
+- type: prompt
+  ask:
+    en: Say you'll pay.
+    pt: Diga que vai pagar.
+  answer:
+    speaker: protagonist
+    text: 계산해 주세요.
+  items:
+  - gyesan
+- type: prompt
+  ask:
+    en: Ask for the receipt.
+    pt: Peça o recibo.
+  answer:
+    speaker: protagonist
+    text: 영수증 주세요.
+  items:
+  - yeonggeug
+- type: prompt
+  ask:
+    en: Say foreigners get a tax refund.
+    pt: Diga que estrangeiros recebem devolução de imposto.
+  answer:
+    speaker: protagonist
+    text: 외국인은 택스 리펀드를 받아요.
+  items:
+  - hwangeup
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 1+1 (원 플러스 원) aparece em toda loja de conveniência e de cosméticos. Turistas recebem o imposto de volta com o passaporte — quem mora na Coreia, em geral, não.
+- type: prompt
+  ask:
+    en: 'Once more: say “discount”.'
+    pt: 'Mais uma vez: diga “desconto”.'
+  answer:
+    speaker: protagonist
+    text: 할인
+  items:
+  - halin
+- type: prompt
+  ask:
+    en: 'Once more: say “per cent”.'
+    pt: 'Mais uma vez: diga “por cento”.'
+  answer:
+    speaker: protagonist
+    text: 퍼센트
+  items:
+  - peosenteu
+- type: prompt
+  ask:
+    en: 'Once more: say “half price”.'
+    pt: 'Mais uma vez: diga “metade do preço”.'
+  answer:
+    speaker: protagonist
+    text: 반값
+  items:
+  - ballgap
+- type: prompt
+  ask:
+    en: 'Once more: say “15,000 won”.'
+    pt: 'Mais uma vez: diga “15 mil wons”.'
+  answer:
+    speaker: protagonist
+    text: 만 오천 원
+  items:
+  - manwon2
+- type: prompt
+  ask:
+    en: 'Once more: say “or (between actions)”.'
+    pt: 'Mais uma vez: diga “ou (entre ações)”.'
+  answer:
+    speaker: protagonist
+    text: -거나
+  items:
+  - geona
+- type: prompt
+  ask:
+    en: 'Once more: say “buy one get one free (1+1)”.'
+    pt: 'Mais uma vez: diga “leve dois, pague um (1+1)”.'
+  answer:
+    speaker: protagonist
+    text: 원 플러스 원
+  items:
+  - wonplusone
+- type: prompt
+  ask:
+    en: 'Once more: say “tax refund”.'
+    pt: 'Mais uma vez: diga “devolução de imposto”.'
+  answer:
+    speaker: protagonist
+    text: 택스 리펀드
+  items:
+  - hwangeup
+- type: prompt
+  ask:
+    en: 'Once more: say “the receipt, please”.'
+    pt: 'Mais uma vez: diga “o recibo, por favor”.'
+  answer:
+    speaker: protagonist
+    text: 영수증 주세요
+  items:
+  - yeonggeug
+- type: prompt
+  ask:
+    en: 'Once more: say “is cheaper”.'
+    pt: 'Mais uma vez: diga “é mais barato”.'
+  answer:
+    speaker: protagonist
+    text: 더 싸요
+  items:
+  - deo-ssayo
+- type: prompt
+  ask:
+    en: 'Once more: say “the bill, please / I''ll pay”.'
+    pt: 'Mais uma vez: diga “pode passar, por favor”.'
+  answer:
+    speaker: protagonist
+    text: 계산해 주세요
+  items:
+  - gyesan
+- type: prompt
+  ask:
+    en: 'Once more: say “tax”.'
+    pt: 'Mais uma vez: diga “imposto”.'
+  answer:
+    speaker: protagonist
+    text: 세금
+  items:
+  - segeum
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Chuseok (harvest festival) — and “songpyeon (half-moon rice cakes) — and “ancestral rite on holidays — and “home town — and “honour (for the person acting) — and “from (a person) — and “like,
+      as — and “mother (respectful) — and “father (respectful)”.'
+    pt: 'Diga: “Chuseok (festa da colheita) — e “송편 (bolinhos de arroz) — e “rito aos antepassados — e “cidade natal — e “honra (para quem age) — e “de (uma pessoa) — e “como — e “mãe (respeitoso) — e “pai
+      (respeitoso)”.'
+  answer:
+    speaker: protagonist
+    text: 추석 … 송편 … 차례 … 고향 … -(으)시- … 한테서 … 처럼 … 어머님 … 아버님
+  items:
+  - chuseok
+  - songpyeon
+  - charye
+  - gohyang
+  - eusi2
+  - hanteseo
+  - cheoreom
+  - eomeonim
+  - abeonim
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “learned — and “(she) is making (respectful) — and “like family — and “electricity — and “air conditioner — and “be …-ing — and “while — and “is (in a state): open, on, sitting — and “it''s
+      (been left) on (casual)”.'
+    pt: 'Diga: “aprendi — e “(ela) está fazendo (respeitoso) — e “como da família — e “eletricidade, luz — e “ar-condicionado — e “estar …-ndo — e “enquanto — e “está (num estado): aberto, ligado, sentado
+      — e “está ligado (informal)”.'
+  answer:
+    speaker: protagonist
+    text: 배웠어요 … 만드세요 … 가족처럼 … 전기 … 에어컨 … -고 있다 … -는 동안에 … -아/어 있다 … 켜져 있어
+  items:
+  - baewosseoyo
+  - mandeuseyo
+  - gajokcheoreom
+  - jeongi
+  - eeokon
+  - go-itda
+  - neun-dongane
+  - eo-itda
+  - kyeojyeo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “electricity bill — and “save, use sparingly — and “because it''s hot — and “electric fan — and “the window is open — and “when you go out — and “residence card for foreigners — and “application
+      form — and “numbered ticket”.'
+    pt: 'Diga: “conta de luz — e “economiza — e “porque está quente — e “ventilador — e “a janela está aberta — e “quando sair — e “cartão de residente estrangeiro — e “formulário — e “senha (número)”.'
+  answer:
+    speaker: protagonist
+    text: 전기 요금 … 아껴요 … 더워서 … 선풍기 … 창문이 열려 있어요 … 나갈 때 … 외국인등록증 … 신청서 … 번호표
+  items:
+  - jeongiyogeum
+  - aggyeoyo
+  - deowoseo
+  - seonpunggi
+  - changmun
+  - nagal-ttae
+  - oegugin
+  - sincheongseo
+  - beonhopyo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “wait — and “came (in order) to — and “intend to — and “only (+ negative verb) — and “passport — and “ID photo — and “please fill in — and “I booked — and “How long does it take?”.'
+    pt: 'Diga: “espera — e “vim (para) — e “pretendo — e “só (+ verbo negativo) — e “passaporte — e “foto 3x4 — e “preencha, por favor — e “agendei — e “Quanto tempo demora?”.'
+  answer:
+    speaker: protagonist
+    text: 기다려요 … -(으)러 왔어요 … -(으)려고 해요 … 밖에 … 여권 … 증명사진 … 작성해 주세요 … 예약했어요 … 얼마나 걸려요?
+  items:
+  - gidaryeoyo
+  - eureo2
+  - euryeogo2
+  - bakke
+  - yeogwon
+  - sajin2
+  - jakseong
+  - yeyak
+  - eolmana
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “star — and “moon — and “sky — and “is not (X) — and “aeroplane — and “go (in order) to — and “go to see — and “is bright — and “is dark”.'
+    pt: 'Diga: “estrela — e “lua — e “céu — e “não é (X) — e “avião — e “vai (para) fazer — e “vai ver — e “é claro, brilhante — e “está escuro”.'
+  answer:
+    speaker: protagonist
+    text: 별 … 달 … 하늘 … 이/가 아니에요 … 비행기 … -(으)러 가요 … 보러 가요 … 밝아요 … 어두워요
+  items:
+  - byeol
+  - dal
+  - haneul
+  - i-anieyo
+  - bihaenggi
+  - eureo
+  - bareo
+  - balgayo
+  - eoduwoyo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “night — and “Namsan Tower — and “can be seen — and “Excuse me, but… (polite opener) — and “How old are you? — and “thirty years old — and “twenty-seven years old — and “one, two, three (native
+      Korean numbers) — and “big brother (said by a man)”.'
+    pt: 'Diga: “noite — e “Torre Namsan — e “dá para ver — e “Com licença, mas… (abertura educada) — e “Quantos anos você tem? — e “trinta anos — e “vinte e sete anos — e “um, dois, três (números nativos)
+      — e “irmão mais velho (dito por homem)”.'
+  answer:
+    speaker: protagonist
+    text: 밤 … 남산타워 … 보여요 … 실례지만 … 몇 살이에요? … 서른 살 … 스물일곱 살 … 하나, 둘, 셋 … 형
+  items:
+  - bam
+  - tawo
+  - boyeoyo
+  - sillyejiman
+  - myeot-sal
+  - seoreun-sal
+  - seumul-ilgop
+  - hana-dul
+  - hyeong
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “big sister (said by a man) — and “younger sibling; someone younger — and “then, in that case — and “to (a person) — and “gives / I give — and “kimchi — and “Really?”.'
+    pt: 'Diga: “irmã mais velha (dito por homem) — e “irmão mais novo; alguém mais novo — e “então — e “para (uma pessoa) — e “dá / eu dou — e “kimchi — e “Sério?”.'
+  answer:
+    speaker: protagonist
+    text: 누나 … 동생 … 그럼 … 에게 … 줘요 … 김치 … 진짜?
+  items:
+  - nuna
+  - dongsaeng
+  - geureom
+  - ege
+  - jwoyo
+  - gimchi
+  - jinjja
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

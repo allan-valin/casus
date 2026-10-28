@@ -1,0 +1,577 @@
+# UNIT ko A2-02 — written by AI (Claude) for Casus; expanded from src/A2-02.yml by tools/expand_unit.py. Edit the source.
+
+id: A2-02
+level: A2
+number: 2
+protagonist: m
+title:
+  en: The foreigner card
+  pt: O cartão de estrangeiro
+situation:
+  en: At the immigration office for your residence card. Take a number, fill in the form, wait.
+  pt: No escritório de imigração para tirar o cartão de residente. Pegue uma senha, preencha o formulário, espere.
+learn_lessons:
+- ko-intent
+- ko-nikl-48
+culture: Booking online and numbered tickets
+new_items:
+- id: oegugin
+  text: 외국인등록증
+  meaning:
+    en: residence card for foreigners
+    pt: cartão de residente estrangeiro
+- id: sincheongseo
+  text: 신청서
+  meaning:
+    en: application form
+    pt: formulário
+- id: beonhopyo
+  text: 번호표
+  meaning:
+    en: numbered ticket
+    pt: senha (número)
+- id: gidaryeoyo
+  text: 기다려요
+  meaning:
+    en: wait
+    pt: espera
+- id: eureo2
+  text: -(으)러 왔어요
+  meaning:
+    en: came (in order) to
+    pt: vim (para)
+- id: euryeogo2
+  text: -(으)려고 해요
+  meaning:
+    en: intend to
+    pt: pretendo
+- id: bakke
+  text: 밖에
+  meaning:
+    en: only (+ negative verb)
+    pt: só (+ verbo negativo)
+- id: yeogwon
+  text: 여권
+  meaning:
+    en: passport
+    pt: passaporte
+- id: sajin2
+  text: 증명사진
+  meaning:
+    en: ID photo
+    pt: foto 3x4
+- id: jakseong
+  text: 작성해 주세요
+  meaning:
+    en: please fill in
+    pt: preencha, por favor
+- id: yeyak
+  text: 예약했어요
+  meaning:
+    en: I booked
+    pt: agendei
+- id: eolmana
+  text: 얼마나 걸려요?
+  meaning:
+    en: How long does it take?
+    pt: Quanto tempo demora?
+reviews:
+- item: annyeong
+  from: A1-01
+- item: cheoeum
+  from: A1-01
+- item: ne
+  from: A1-01
+- item: aniyo
+  from: A1-01
+- item: beurajil-saram
+  from: A1-01
+- item: jeoneun
+  from: A1-01
+- item: ieyo
+  from: A1-01
+- item: yeyo
+  from: A1-01
+- item: bangawoyo
+  from: A1-01
+- item: deureooseyo
+  from: A1-01
+- item: gamsahamnida
+  from: A1-01
+- item: halmeoni
+  from: A1-01
+- item: aidol
+  from: A1-17
+- item: anieyo2
+  from: A1-17
+- item: samba
+  from: A1-17
+- item: chwoyo
+  from: A1-17
+- item: da
+  from: A1-17
+- item: eul-geoyeyo
+  from: A1-17
+- item: aseo
+  from: A1-17
+- item: pisibang
+  from: A1-17
+- item: geim
+  from: A1-17
+- item: chingudeul
+  from: A1-17
+- item: sasil
+  from: A1-17
+- item: mollayo
+  from: A1-17
+- item: sijang
+  from: A1-25
+- item: sagwa
+  from: A1-25
+- item: han-gae
+  from: A1-25
+- item: kkakka-juseyo
+  from: A1-25
+- item: eumyeon
+  from: A1-25
+- item: eupsida
+  from: A1-25
+- item: bissayo
+  from: A1-25
+- item: ssayo
+  from: A1-25
+- item: deom
+  from: A1-25
+- item: sinseonhaeyo
+  from: A1-25
+- item: gwail
+  from: A1-25
+- item: ga-bwayo
+  from: A1-25
+- item: joesonghamnida2
+  from: A1-29
+- item: sillsu
+  from: A1-29
+- item: pail
+  from: A1-29
+- item: jalmot
+  from: A1-29
+- item: eoya-dwaeyo
+  from: A1-29
+- item: dasi
+  from: A1-29
+- item: eun-hue
+  from: A1-29
+- item: gogaek
+  from: A1-29
+- item: boggo
+  from: A1-29
+- item: jusuihagesseumnida
+  from: A1-29
+- item: gwaenchanayo2
+  from: A1-29
+- item: bonaeyo
+  from: A1-29
+- item: jumal
+  from: A2-01
+- item: mwo-haesseo
+  from: A2-01
+- item: eo-boda
+  from: A2-01
+- item: ta-bwasseo
+  from: A2-01
+- item: eun-jeok
+  from: A2-01
+- item: cheoeum2
+  from: A2-01
+- item: jaemiisseosseo
+  from: A2-01
+- item: pigonhae
+  from: A2-01
+- item: daeume
+  from: A2-01
+- item: ppallie
+  from: A2-01
+- item: ttarungi
+  from: A2-01
+- item: gachi-gaja
+  from: A2-01
+steps:
+- type: narrator
+  text:
+    en: At the immigration office for your residence card. Take a number, fill in the form, wait. Listen to the conversation; you don't need to understand it yet.
+    pt: No escritório de imigração para tirar o cartão de residente. Pegue uma senha, preencha o formulário, espere. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: clerk
+    text: 어서 오세요. 무슨 일로 오셨어요?
+    meaning:
+      en: Welcome. What brings you here?
+      pt: Bem-vindo. Em que posso ajudar?
+  - speaker: protagonist
+    text: 외국인등록증을 만들러 왔어요. 인터넷으로 예약했어요.
+    meaning:
+      en: I came to get a residence card. I booked online.
+      pt: Vim tirar o cartão de residente. Agendei pela internet.
+  - speaker: clerk
+    text: 번호표 뽑고 기다려 주세요. 이 신청서도 작성해 주세요.
+    meaning:
+      en: Take a number and wait, please. And fill in this form.
+      pt: Pegue uma senha e aguarde. Preencha também este formulário.
+  - speaker: protagonist
+    text: 여권하고 사진도 내야 해요?
+    meaning:
+      en: Do I have to hand in my passport and a photo too?
+      pt: Preciso entregar passaporte e foto também?
+  - speaker: clerk
+    text: 네. 증명사진 있어요?
+    meaning:
+      en: Yes. Do you have an ID photo?
+      pt: Sim. Tem foto 3x4?
+  - speaker: protagonist
+    text: 사진이 한 장밖에 없어요. 괜찮아요?
+    meaning:
+      en: I only have one photo. Is that OK?
+      pt: Só tenho uma foto. Tudo bem?
+  - speaker: clerk
+    text: 한 장이면 돼요. 카드는 3주쯤 걸려요.
+    meaning:
+      en: One is enough. The card takes about three weeks.
+      pt: Uma basta. O cartão demora umas três semanas.
+  - speaker: protagonist
+    text: 알겠어요. 그럼 다음 달에 은행 계좌를 만들려고 해요.
+    meaning:
+      en: I see. Then next month I intend to open a bank account.
+      pt: Entendi. Então no mês que vem pretendo abrir conta no banco.
+- type: prompt
+  ask:
+    en: 'Say what you came for: to get a residence card.'
+    pt: 'Diga para que veio: tirar o cartão de residente.'
+  answer:
+    speaker: protagonist
+    text: 외국인등록증을 만들러 왔어요.
+  items:
+  - oegugin
+  - eureo2
+- type: prompt
+  ask:
+    en: Say you booked online.
+    pt: Diga que agendou pela internet.
+  answer:
+    speaker: protagonist
+    text: 인터넷으로 예약했어요.
+  items:
+  - yeyak
+- type: prompt
+  ask:
+    en: 'Say: take a number and wait.'
+    pt: 'Diga: pegue uma senha e aguarde.'
+  answer:
+    speaker: protagonist
+    text: 번호표 뽑고 기다려요.
+  items:
+  - beonhopyo
+  - gidaryeoyo
+- type: prompt
+  ask:
+    en: The clerk hands you a form. How does she say 'please fill it in'?
+    pt: A atendente dá um formulário. Como ela diz 'preencha'?
+  answer:
+    speaker: protagonist
+    text: 신청서 작성해 주세요.
+  items:
+  - sincheongseo
+  - jakseong
+- type: prompt
+  ask:
+    en: Ask if you must hand in your passport.
+    pt: Pergunte se precisa entregar o passaporte.
+  answer:
+    speaker: protagonist
+    text: 여권도 내야 해요?
+  items:
+  - yeogwon
+- type: narrator
+  text:
+    en: '밖에 + a negative verb means ''only'': 한 장밖에 없어요, I have only one (lit. nothing outside one).'
+    pt: '밖에 + verbo negativo quer dizer ''só'': 한 장밖에 없어요, só tenho uma (lit. nada fora de uma).'
+- type: prompt
+  ask:
+    en: Say you only have one ID photo.
+    pt: Diga que só tem uma foto 3x4.
+  answer:
+    speaker: protagonist
+    text: 증명사진이 한 장밖에 없어요.
+  items:
+  - bakke
+  - sajin2
+- type: prompt
+  ask:
+    en: Ask how long it takes.
+    pt: Pergunte quanto tempo demora.
+  answer:
+    speaker: protagonist
+    text: 얼마나 걸려요?
+  items:
+  - eolmana
+- type: narrator
+  text:
+    en: '-(으)려고 해요: intend to. 만들다 → 만들려고 해요, I intend to make (open).'
+    pt: '-(으)려고 해요: pretender. 만들다 → 만들려고 해요, pretendo fazer (abrir).'
+- type: prompt
+  ask:
+    en: Say you intend to open a bank account next month.
+    pt: Diga que pretende abrir uma conta no mês que vem.
+  answer:
+    speaker: protagonist
+    text: 다음 달에 계좌를 만들려고 해요.
+  items:
+  - euryeogo2
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'Como na Polícia Federal no Brasil, tudo começa pelo agendamento online e pela senha. O 외국인등록증 é o RNE coreano: sem ele, nada de banco nem celular.'
+- type: prompt
+  ask:
+    en: 'Once more: say “residence card for foreigners”.'
+    pt: 'Mais uma vez: diga “cartão de residente estrangeiro”.'
+  answer:
+    speaker: protagonist
+    text: 외국인등록증
+  items:
+  - oegugin
+- type: prompt
+  ask:
+    en: 'Once more: say “application form”.'
+    pt: 'Mais uma vez: diga “formulário”.'
+  answer:
+    speaker: protagonist
+    text: 신청서
+  items:
+  - sincheongseo
+- type: prompt
+  ask:
+    en: 'Once more: say “numbered ticket”.'
+    pt: 'Mais uma vez: diga “senha (número)”.'
+  answer:
+    speaker: protagonist
+    text: 번호표
+  items:
+  - beonhopyo
+- type: prompt
+  ask:
+    en: 'Once more: say “wait”.'
+    pt: 'Mais uma vez: diga “espera”.'
+  answer:
+    speaker: protagonist
+    text: 기다려요
+  items:
+  - gidaryeoyo
+- type: prompt
+  ask:
+    en: 'Once more: say “came (in order) to”.'
+    pt: 'Mais uma vez: diga “vim (para)”.'
+  answer:
+    speaker: protagonist
+    text: -(으)러 왔어요
+  items:
+  - eureo2
+- type: prompt
+  ask:
+    en: 'Once more: say “intend to”.'
+    pt: 'Mais uma vez: diga “pretendo”.'
+  answer:
+    speaker: protagonist
+    text: -(으)려고 해요
+  items:
+  - euryeogo2
+- type: prompt
+  ask:
+    en: 'Once more: say “only (+ negative verb)”.'
+    pt: 'Mais uma vez: diga “só (+ verbo negativo)”.'
+  answer:
+    speaker: protagonist
+    text: 밖에
+  items:
+  - bakke
+- type: prompt
+  ask:
+    en: 'Once more: say “passport”.'
+    pt: 'Mais uma vez: diga “passaporte”.'
+  answer:
+    speaker: protagonist
+    text: 여권
+  items:
+  - yeogwon
+- type: prompt
+  ask:
+    en: 'Once more: say “ID photo”.'
+    pt: 'Mais uma vez: diga “foto 3x4”.'
+  answer:
+    speaker: protagonist
+    text: 증명사진
+  items:
+  - sajin2
+- type: prompt
+  ask:
+    en: 'Once more: say “please fill in”.'
+    pt: 'Mais uma vez: diga “preencha, por favor”.'
+  answer:
+    speaker: protagonist
+    text: 작성해 주세요
+  items:
+  - jakseong
+- type: prompt
+  ask:
+    en: 'Once more: say “I booked”.'
+    pt: 'Mais uma vez: diga “agendei”.'
+  answer:
+    speaker: protagonist
+    text: 예약했어요
+  items:
+  - yeyak
+- type: prompt
+  ask:
+    en: 'Once more: say “How long does it take?”.'
+    pt: 'Mais uma vez: diga “Quanto tempo demora?”.'
+  answer:
+    speaker: protagonist
+    text: 얼마나 걸려요?
+  items:
+  - eolmana
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “weekend — and “What did you do at the weekend? (casual) — and “try (doing) — and “I tried riding (it) — and “have ever done — and “the first time — and “it was fun (casual) — and “I''m tired
+      (casual) — and “next time — and “I rented / borrowed (casual)”.'
+    pt: 'Diga: “fim de semana — e “O que você fez no fim de semana? (informal) — e “experimentar (fazer) — e “andei (experimentei) — e “já ter feito — e “a primeira vez — e “foi divertido (informal) — e
+      “estou cansada (informal) — e “da próxima vez — e “aluguei / peguei emprestado (informal)”.'
+  answer:
+    speaker: protagonist
+    text: 주말 … 주말에 뭐 했어? … -아/어 보다 … 타 봤어 … -(으)ㄴ 적이 있다 … 처음 … 재미있었어 … 피곤해 … 다음에 … 빌렸어
+  items:
+  - jumal
+  - mwo-haesseo
+  - eo-boda
+  - ta-bwasseo
+  - eun-jeok
+  - cheoeum2
+  - jaemiisseosseo
+  - pigonhae
+  - daeume
+  - ppallie
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Seoul''s public bikes — and “let''s go together (casual) — and “I''m very sorry (formal) — and “I made a mistake — and “file — and “sent it wrongly — and “have to (in talk) — and “again —
+      and “after …-ing — and “client, customer”.'
+    pt: 'Diga: “bicicletas públicas de Seul — e “vamos juntos (informal) — e “Peço desculpas (formal) — e “cometi um erro — e “arquivo — e “enviei errado — e “tem que (na fala) — e “de novo — e “depois
+      de — e “cliente”.'
+  answer:
+    speaker: protagonist
+    text: 따릉이 … 같이 가자 … 죄송합니다 … 실수했어요 … 파일 … 잘못 보냈어요 … -아야/어야 돼요 … 다시 … -(으)ㄴ 후에 … 고객
+  items:
+  - ttarungi
+  - gachi-gaja
+  - joesonghamnida2
+  - sillsu
+  - pail
+  - jalmot
+  - eoya-dwaeyo
+  - dasi
+  - eun-hue
+  - gogaek
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “I will report (to you) — and “I''ll be careful — and “It''s OK, be careful next time — and “send — and “market — and “apple — and “for one, each — and “Give me a discount, please — and “if,
+      when — and “let''s (formal)”.'
+    pt: 'Diga: “vou informar (a senhora) — e “vou tomar cuidado — e “Tudo bem, cuidado da próxima vez — e “envia — e “mercado, feira — e “maçã — e “cada um — e “Faz um desconto, por favor — e “se, quando
+      — e “vamos (formal)”.'
+  answer:
+    speaker: protagonist
+    text: 보고드리겠습니다 … 주의하겠습니다 … 괜찮아요, 다음에는 조심해요 … 보내요 … 시장 … 사과 … 한 개에 … 깎아 주세요 … -(으)면 … -(으)ㅂ시다
+  items:
+  - boggo
+  - jusuihagesseumnida
+  - gwaenchanayo2
+  - bonaeyo
+  - sijang
+  - sagwa
+  - han-gae
+  - kkakka-juseyo
+  - eumyeon
+  - eupsida
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “is expensive — and “is cheap — and “a little extra (free) — and “is fresh — and “fruit — and “let''s go and see — and “idol (K-pop) — and “it is not, that''s not so — and “samba — and “dances”.'
+    pt: 'Diga: “é caro — e “é barato — e “um agrado (de graça) — e “está fresco — e “fruta — e “vamos ver — e “idol (K-pop) — e “não é, não é assim — e “samba — e “dança”.'
+  answer:
+    speaker: protagonist
+    text: 비싸요 … 싸요 … 덤 … 신선해요 … 과일 … 가 봐요 … 아이돌 … 아니에요 … 삼바 … 춰요
+  items:
+  - bissayo
+  - ssayo
+  - deom
+  - sinseonhaeyo
+  - gwail
+  - ga-bwayo
+  - aidol
+  - anieyo2
+  - samba
+  - chwoyo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “all — and “will (future, plan or guess) — and “because, so (cause) — and “PC bang (internet café for games) — and “game — and “with friends — and “actually — and “I don''t know (how) — and
+      “Hello — and “Nice to meet you (formal, first meeting)”.'
+    pt: 'Diga: “todos, tudo — e “vai (futuro, plano ou suposição) — e “porque, por isso (causa) — e “PC bang (lan house de jogos) — e “jogo — e “com os amigos — e “na verdade — e “não sei — e “Olá / bom
+      dia — e “Muito prazer (formal, primeiro encontro)”.'
+  answer:
+    speaker: protagonist
+    text: 다 … -(으)ㄹ 거예요 … -아서/어서 … PC방 … 게임 … 친구들하고 … 사실은 … 몰라요 … 안녕하세요 … 처음 뵙겠습니다
+  items:
+  - da
+  - eul-geoyeyo
+  - aseo
+  - pisibang
+  - geim
+  - chingudeul
+  - sasil
+  - mollayo
+  - annyeong
+  - cheoeum
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Yes — and “No — and “I''m Brazilian / (she) is Brazilian — and “I (polite, as the topic) — and “is / am / are (after a consonant) — and “is / am / are (after a vowel) — and “Glad to meet
+      you — and “Come in (polite) — and “Thank you (formal) — and “grandmother; how one addresses an older woman”.'
+    pt: 'Diga: “Sim — e “Não — e “Sou brasileira / é brasileiro — e “Eu (educado, como tópico) — e “é / sou (depois de consoante) — e “é / sou (depois de vogal) — e “Prazer em conhecer — e “Entre (educado)
+      — e “Obrigada / obrigado (formal) — e “avó; como se chama uma senhora idosa”.'
+  answer:
+    speaker: protagonist
+    text: 네 … 아니요 … 브라질 사람이에요 … 저는 … 이에요 … 예요 … 반가워요 … 들어오세요 … 감사합니다 … 할머니
+  items:
+  - ne
+  - aniyo
+  - beurajil-saram
+  - jeoneun
+  - ieyo
+  - yeyo
+  - bangawoyo
+  - deureooseyo
+  - gamsahamnida
+  - halmeoni
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

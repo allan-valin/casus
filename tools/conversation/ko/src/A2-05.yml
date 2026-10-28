@@ -1,0 +1,43 @@
+id: A2-05
+protagonist: f
+title: [At the doctor's, No médico]
+situation: ["A cold with fever. A short wait at the neighbourhood internal-medicine clinic, then the pharmacy downstairs.", "Um resfriado com febre. Uma espera curta na clínica do bairro, depois a farmácia no térreo."]
+learn: [ko-nikl-89, ko-nikl-47, ko-nikl-83]
+culture: A clinic on every block, short waits
+items:
+  - [gamgi, "감기", "a cold", "resfriado"]
+  - [yeol, "열", "fever", "febre"]
+  - [yakguk, "약국", "pharmacy", "farmácia"]
+  - [cheobangjeon, "처방전", "prescription", "receita"]
+  - [ji-maseyo, "-지 마세요", "don't (please)", "não (faça), por favor"]
+  - [mada, "마다", "every (each)", "cada"]
+  - [eul-ttae, "-(으)ㄹ 때", "when", "quando"]
+  - [gichim, "기침", "cough", "tosse"]
+  - [mogi, "목이 아파요", "my throat hurts", "minha garganta dói"]
+  - [siksahu, "식사 후에", "after meals", "depois das refeições"]
+  - [sul, "술", "alcohol", "bebida alcoólica"]
+  - [eotteoke-osyeosseoyo, "어떻게 오셨어요?", "What brings you here?", "O que a traz aqui?"]
+dialogue:
+  - [isa, "어떻게 오셨어요?", "What brings you here?", "O que a traz aqui?"]
+  - [protagonist, "감기에 걸렸어요. 열이 나고 목이 아파요.", "I've caught a cold. I have a fever and a sore throat.", "Peguei um resfriado. Estou com febre e dor de garganta."]
+  - [isa, "기침도 해요?", "Are you coughing too?", "Tem tosse também?"]
+  - [protagonist, "네, 밤에 잘 때 기침을 많이 해요.", "Yes, I cough a lot when I sleep at night.", "Sim, tusso muito quando durmo à noite."]
+  - [isa, "처방전 드릴게요. 약은 여덟 시간마다 드세요.", "I'll give you a prescription. Take the medicine every eight hours.", "Vou dar a receita. Tome o remédio a cada oito horas."]
+  - [protagonist, "식사 후에 먹어요?", "Do I take it after meals?", "Tomo depois das refeições?"]
+  - [isa, "네, 식사 후에 드세요. 그리고 술은 마시지 마세요.", "Yes, after meals. And don't drink alcohol.", "Sim, depois das refeições. E não beba álcool."]
+  - [protagonist, "알겠습니다. 약국은 어디에 있어요?", "Understood. Where's the pharmacy?", "Entendido. Onde fica a farmácia?"]
+  - [isa, "일 층에 있어요. 빨리 나으세요.", "On the ground floor. Get well soon.", "No térreo. Melhoras."]
+teach:
+  - ask: ["How does the doctor ask what brings you?", "Como o médico pergunta o que a traz?", "어떻게 오셨어요?", eotteoke-osyeosseoyo]
+  - ask: ["Say you've caught a cold.", "Diga que pegou um resfriado.", "감기에 걸렸어요.", gamgi]
+  - ask: ["Say you have a fever and a sore throat.", "Diga que está com febre e dor de garganta.", "열이 나고 목이 아파요.", yeol, mogi]
+  - note: ["-(으)ㄹ 때 is 'when': 자다 → 잘 때, when I sleep.", "-(으)ㄹ 때 é 'quando': 자다 → 잘 때, quando durmo."]
+  - ask: ["Say you cough a lot when you sleep.", "Diga que tosse muito quando dorme.", "잘 때 기침을 많이 해요.", eul-ttae, gichim]
+  - note: ["마다 is 'every': 여덟 시간마다, every eight hours; 날마다, every day.", "마다 é 'a cada': 여덟 시간마다, a cada oito horas; 날마다, todo dia."]
+  - ask: ["Say: every eight hours.", "Diga: a cada oito horas.", "여덟 시간마다", mada]
+  - ask: ["Ask if you take it after meals.", "Pergunte se toma depois das refeições.", "식사 후에 먹어요?", siksahu]
+  - note: ["-지 마세요 is 'please don't': 마시다 → 마시지 마세요.", "-지 마세요 é 'não faça, por favor': 마시다 → 마시지 마세요."]
+  - ask: ["The doctor says: don't drink alcohol. How?", "O médico diz: não beba álcool. Como?", "술은 마시지 마세요.", ji-maseyo, sul]
+  - ask: ["Ask where the pharmacy is.", "Pergunte onde fica a farmácia.", "약국은 어디에 있어요?", yakguk]
+  - ask: ["Hand in the prescription: here it is.", "Entregue a receita: aqui está.", "처방전 여기 있어요.", cheobangjeon]
+  - pt_only: "Em Seul há clínicas (내과, 이비인후과) em quase todo quarteirão, sem agendamento e com espera curta; a farmácia fica logo embaixo, e o remédio vem em saquinhos por dose."

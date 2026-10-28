@@ -1,0 +1,585 @@
+# UNIT ko A2-04 — written by AI (Claude) for Casus; expanded from src/A2-04.yml by tools/expand_unit.py. Edit the source.
+
+id: A2-04
+level: A2
+number: 4
+protagonist: m
+title:
+  en: The bank
+  pt: O banco
+situation:
+  en: With your residence card you open an account. Everything needs phone verification.
+  pt: Com o cartão de residente você abre uma conta. Tudo exige verificação pelo celular.
+learn_lessons:
+- ko-can
+- ko-nikl-90
+- ko-nikl-50
+culture: Phone verification for everything
+new_items:
+- id: tongjang
+  text: 통장
+  meaning:
+    en: bankbook, account
+    pt: conta (caderneta)
+- id: gyejwa
+  text: 계좌
+  meaning:
+    en: bank account
+    pt: conta bancária
+- id: chekeukadeu
+  text: 체크카드
+  meaning:
+    en: debit card
+    pt: cartão de débito
+- id: bonin
+  text: 본인인증
+  meaning:
+    en: identity verification (by phone)
+    pt: verificação de identidade (pelo celular)
+- id: eul-su-itda
+  text: -(으)ㄹ 수 있다 / 없다
+  meaning:
+    en: can / can't
+    pt: pode, consegue / não
+- id: eul-subakke
+  text: -(으)ㄹ 수밖에 없다
+  meaning:
+    en: have no choice but to
+    pt: não ter outra opção senão
+- id: eseobuteo
+  text: 에서부터
+  meaning:
+    en: starting from
+    pt: a partir de
+- id: haendeupon
+  text: 핸드폰
+  meaning:
+    en: mobile phone
+    pt: celular
+- id: bimilbeonho2
+  text: 비밀번호를 눌러 주세요
+  meaning:
+    en: please enter your PIN
+    pt: digite a senha, por favor
+- id: mandeul-su
+  text: 만들 수 있어요?
+  meaning:
+    en: Can I open (one)?
+    pt: Posso abrir?
+- id: sinbunjeung
+  text: 신분증
+  meaning:
+    en: ID document
+    pt: documento de identidade
+- id: sseuseyo
+  text: 서명해 주세요
+  meaning:
+    en: please sign
+    pt: assine, por favor
+reviews:
+- item: gwaenchaneuseyo
+  from: A1-03
+- item: heori
+  from: A1-03
+- item: meori
+  from: A1-03
+- item: son
+  from: A1-03
+- item: dari
+  from: A1-03
+- item: apayo
+  from: A1-03
+- item: eun-neun
+  from: A1-03
+- item: mugeowoyo
+  from: A1-03
+- item: jega-deulgeyo
+  from: A1-03
+- item: gomawoyo
+  from: A1-03
+- item: gwaenchanayo
+  from: A1-03
+- item: kkeseo
+  from: A1-03
+- item: apeuseyo
+  from: A1-03
+- item: sseuregi
+  from: A1-19
+- item: eumsingmul
+  from: A1-19
+- item: jongnyangje
+  from: A1-19
+- item: bullisugeo
+  from: A1-19
+- item: haeya-haeyo
+  from: A1-19
+- item: seumnida
+  from: A1-19
+- item: seumnikka
+  from: A1-19
+- item: peullaseutik
+  from: A1-19
+- item: jongi
+  from: A1-19
+- item: byeong
+  from: A1-19
+- item: eonje
+  from: A1-19
+- item: joesonghaeyo
+  from: A1-19
+- item: badak
+  from: A1-27
+- item: nanbang
+  from: A1-27
+- item: ttatteuthaeyo2
+  from: A1-27
+- item: kyeoyo
+  from: A1-27
+- item: kkeoyo
+  from: A1-27
+- item: ji-mothaeyo
+  from: A1-27
+- item: go3
+  from: A1-27
+- item: ibul
+  from: A1-27
+- item: jayo
+  from: A1-27
+- item: chuweoseo
+  from: A1-27
+- item: ondo
+  from: A1-27
+- item: jamkkanman
+  from: A1-27
+- item: jumal
+  from: A2-01
+- item: mwo-haesseo
+  from: A2-01
+- item: eo-boda
+  from: A2-01
+- item: ta-bwasseo
+  from: A2-01
+- item: eun-jeok
+  from: A2-01
+- item: cheoeum2
+  from: A2-01
+- item: jaemiisseosseo
+  from: A2-01
+- item: pigonhae
+  from: A2-01
+- item: daeume
+  from: A2-01
+- item: ppallie
+  from: A2-01
+- item: ttarungi
+  from: A2-01
+- item: gachi-gaja
+  from: A2-01
+- item: sudotmul
+  from: A2-03
+- item: jeongsugi
+  from: A2-03
+- item: kkaekkeuthaeyo
+  from: A2-03
+- item: gi-ttaemune
+  from: A2-03
+- item: eodo-dwaeyo
+  from: A2-03
+- item: masyeodo
+  from: A2-03
+- item: boricha
+  from: A2-03
+- item: mugeowoyo2
+  from: A2-03
+- item: naemsae
+  from: A2-03
+- item: gwaenchana
+  from: A2-03
+- item: saji-ma
+  from: A2-03
+- item: mul-gap
+  from: A2-03
+steps:
+- type: narrator
+  text:
+    en: With your residence card you open an account. Everything needs phone verification. Listen to the conversation; you don't need to understand it yet.
+    pt: Com o cartão de residente você abre uma conta. Tudo exige verificação pelo celular. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: 안녕하세요. 계좌를 만들 수 있어요?
+    meaning:
+      en: Hello. Can I open an account?
+      pt: Olá. Posso abrir uma conta?
+  - speaker: clerk
+    text: 네. 신분증 있으세요?
+    meaning:
+      en: Yes. Do you have ID?
+      pt: Sim. Tem documento?
+  - speaker: protagonist
+    text: 외국인등록증 여기 있어요.
+    meaning:
+      en: Here's my residence card.
+      pt: Aqui está o cartão de residente.
+  - speaker: clerk
+    text: 핸드폰도 있으세요? 본인인증을 해야 돼요.
+    meaning:
+      en: Do you have a phone too? We need to verify your identity.
+      pt: Tem celular? Precisamos verificar a identidade.
+  - speaker: protagonist
+    text: 아직 한국 번호가 없어요. 그럼 만들 수 없어요?
+    meaning:
+      en: I don't have a Korean number yet. Then I can't open one?
+      pt: Ainda não tenho número coreano. Então não posso abrir?
+  - speaker: clerk
+    text: 죄송하지만 오늘은 통장만 만들 수밖에 없어요. 체크카드는 다음에 돼요.
+    meaning:
+      en: Sorry, but today we can only do the bankbook. The debit card next time.
+      pt: Desculpe, mas hoje só dá para fazer a caderneta. O cartão de débito, na próxima.
+  - speaker: protagonist
+    text: 알겠어요. 체크카드는 언제부터 쓸 수 있어요?
+    meaning:
+      en: OK. From when can I use the debit card?
+      pt: Tá bom. A partir de quando posso usar o cartão?
+  - speaker: clerk
+    text: 번호 만드신 날부터 바로 돼요. 여기 서명해 주세요.
+    meaning:
+      en: Right from the day you get a number. Please sign here.
+      pt: A partir do dia em que tiver o número, na hora. Assine aqui, por favor.
+- type: narrator
+  text:
+    en: '-(으)ㄹ 수 있어요 / 없어요: can / can''t: 만들다 → 만들 수 있어요?'
+    pt: '-(으)ㄹ 수 있어요 / 없어요: pode / não pode: 만들다 → 만들 수 있어요?'
+- type: prompt
+  ask:
+    en: Ask if you can open an account.
+    pt: Pergunte se pode abrir uma conta.
+  answer:
+    speaker: protagonist
+    text: 계좌를 만들 수 있어요?
+  items:
+  - gyejwa
+  - mandeul-su
+  - eul-su-itda
+- type: prompt
+  ask:
+    en: She asks for ID. Hand it over.
+    pt: Ela pede documento. Entregue.
+  answer:
+    speaker: protagonist
+    text: 신분증 여기 있어요.
+  items:
+  - sinbunjeung
+- type: prompt
+  ask:
+    en: 'Say: we need to verify your identity by phone.'
+    pt: 'Diga: é preciso verificar a identidade pelo celular.'
+  answer:
+    speaker: protagonist
+    text: 핸드폰으로 본인인증을 해야 돼요.
+  items:
+  - bonin
+  - haendeupon
+- type: prompt
+  ask:
+    en: 'Ask: then I can''t open one?'
+    pt: 'Pergunte: então não posso abrir?'
+  answer:
+    speaker: protagonist
+    text: 그럼 만들 수 없어요?
+  items:
+  - eul-su-itda
+- type: narrator
+  text:
+    en: '-(으)ㄹ 수밖에 없다: have no choice but to: 통장만 만들 수밖에 없어요, all we can do is the bankbook.'
+    pt: '-(으)ㄹ 수밖에 없다: não ter outra opção: 통장만 만들 수밖에 없어요, só dá para fazer a caderneta.'
+- type: prompt
+  ask:
+    en: 'Say: today we can only make the bankbook.'
+    pt: 'Diga: hoje só dá para fazer a caderneta.'
+  answer:
+    speaker: protagonist
+    text: 오늘은 통장만 만들 수밖에 없어요.
+  items:
+  - eul-subakke
+  - tongjang
+- type: prompt
+  ask:
+    en: Ask from when you can use the debit card.
+    pt: Pergunte a partir de quando pode usar o cartão de débito.
+  answer:
+    speaker: protagonist
+    text: 체크카드는 언제부터 쓸 수 있어요?
+  items:
+  - chekeukadeu
+- type: narrator
+  text:
+    en: '에서부터 is ''starting from (a place or point)'': 그날에서부터, from that day on.'
+    pt: '에서부터 é ''a partir de (um lugar ou ponto)'': 그날에서부터, a partir daquele dia.'
+- type: prompt
+  ask:
+    en: 'Say: from Seoul station onwards.'
+    pt: 'Diga: a partir da estação de Seul.'
+  answer:
+    speaker: protagonist
+    text: 서울역에서부터요.
+  items:
+  - eseobuteo
+- type: prompt
+  ask:
+    en: The clerk asks you to enter your PIN. How?
+    pt: O atendente pede a senha. Como?
+  answer:
+    speaker: protagonist
+    text: 비밀번호를 눌러 주세요.
+  items:
+  - bimilbeonho2
+- type: prompt
+  ask:
+    en: How did she say 'please sign here'?
+    pt: Como ela disse 'assine aqui'?
+  answer:
+    speaker: protagonist
+    text: 여기 서명해 주세요.
+  items:
+  - sseuseyo
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: Na Coreia quase tudo — banco, compras, entregas — pede 본인인증, a verificação por um celular em seu nome. Sem número coreano, a vida trava; por isso o celular vem logo depois do cartão de residente.
+- type: prompt
+  ask:
+    en: 'Once more: say “bankbook, account”.'
+    pt: 'Mais uma vez: diga “conta (caderneta)”.'
+  answer:
+    speaker: protagonist
+    text: 통장
+  items:
+  - tongjang
+- type: prompt
+  ask:
+    en: 'Once more: say “bank account”.'
+    pt: 'Mais uma vez: diga “conta bancária”.'
+  answer:
+    speaker: protagonist
+    text: 계좌
+  items:
+  - gyejwa
+- type: prompt
+  ask:
+    en: 'Once more: say “debit card”.'
+    pt: 'Mais uma vez: diga “cartão de débito”.'
+  answer:
+    speaker: protagonist
+    text: 체크카드
+  items:
+  - chekeukadeu
+- type: prompt
+  ask:
+    en: 'Once more: say “identity verification (by phone)”.'
+    pt: 'Mais uma vez: diga “verificação de identidade (pelo celular)”.'
+  answer:
+    speaker: protagonist
+    text: 본인인증
+  items:
+  - bonin
+- type: prompt
+  ask:
+    en: 'Once more: say “have no choice but to”.'
+    pt: 'Mais uma vez: diga “não ter outra opção senão”.'
+  answer:
+    speaker: protagonist
+    text: -(으)ㄹ 수밖에 없다
+  items:
+  - eul-subakke
+- type: prompt
+  ask:
+    en: 'Once more: say “starting from”.'
+    pt: 'Mais uma vez: diga “a partir de”.'
+  answer:
+    speaker: protagonist
+    text: 에서부터
+  items:
+  - eseobuteo
+- type: prompt
+  ask:
+    en: 'Once more: say “mobile phone”.'
+    pt: 'Mais uma vez: diga “celular”.'
+  answer:
+    speaker: protagonist
+    text: 핸드폰
+  items:
+  - haendeupon
+- type: prompt
+  ask:
+    en: 'Once more: say “please enter your PIN”.'
+    pt: 'Mais uma vez: diga “digite a senha, por favor”.'
+  answer:
+    speaker: protagonist
+    text: 비밀번호를 눌러 주세요
+  items:
+  - bimilbeonho2
+- type: prompt
+  ask:
+    en: 'Once more: say “Can I open (one)?”.'
+    pt: 'Mais uma vez: diga “Posso abrir?”.'
+  answer:
+    speaker: protagonist
+    text: 만들 수 있어요?
+  items:
+  - mandeul-su
+- type: prompt
+  ask:
+    en: 'Once more: say “ID document”.'
+    pt: 'Mais uma vez: diga “documento de identidade”.'
+  answer:
+    speaker: protagonist
+    text: 신분증
+  items:
+  - sinbunjeung
+- type: prompt
+  ask:
+    en: 'Once more: say “please sign”.'
+    pt: 'Mais uma vez: diga “assine, por favor”.'
+  answer:
+    speaker: protagonist
+    text: 서명해 주세요
+  items:
+  - sseuseyo
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “tap water — and “water purifier — and “is clean — and “because (formal, written) — and “may, it''s OK to — and “Can I drink it? — and “barley tea — and “is heavy — and “smell — and “it''s
+      fine (casual) — and “don''t buy (casual)”.'
+    pt: 'Diga: “água da torneira — e “purificador de água — e “é limpo — e “porque (formal, escrito) — e “pode — e “Posso beber? — e “chá de cevada — e “é pesado — e “cheiro — e “tudo bem (informal) — e
+      “não compra (informal)”.'
+  answer:
+    speaker: protagonist
+    text: 수돗물 … 정수기 … 깨끗해요 … -기 때문에 … -아도/어도 돼요 … 마셔도 돼요? … 보리차 … 무거워요 … 냄새 … 괜찮아 … 사지 마
+  items:
+  - sudotmul
+  - jeongsugi
+  - kkaekkeuthaeyo
+  - gi-ttaemune
+  - eodo-dwaeyo
+  - masyeodo
+  - boricha
+  - mugeowoyo2
+  - naemsae
+  - gwaenchana
+  - saji-ma
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the cost of water — and “weekend — and “What did you do at the weekend? (casual) — and “try (doing) — and “I tried riding (it) — and “have ever done — and “the first time — and “it was fun
+      (casual) — and “I''m tired (casual) — and “next time — and “I rented / borrowed (casual)”.'
+    pt: 'Diga: “o gasto com água — e “fim de semana — e “O que você fez no fim de semana? (informal) — e “experimentar (fazer) — e “andei (experimentei) — e “já ter feito — e “a primeira vez — e “foi divertido
+      (informal) — e “estou cansada (informal) — e “da próxima vez — e “aluguei / peguei emprestado (informal)”.'
+  answer:
+    speaker: protagonist
+    text: 물값 … 주말 … 주말에 뭐 했어? … -아/어 보다 … 타 봤어 … -(으)ㄴ 적이 있다 … 처음 … 재미있었어 … 피곤해 … 다음에 … 빌렸어
+  items:
+  - mul-gap
+  - jumal
+  - mwo-haesseo
+  - eo-boda
+  - ta-bwasseo
+  - eun-jeok
+  - cheoeum2
+  - jaemiisseosseo
+  - pigonhae
+  - daeume
+  - ppallie
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Seoul''s public bikes — and “let''s go together (casual) — and “floor — and “heating — and “is warm — and “turn on — and “turn off — and “can''t (long form) — and “and (two facts) — and “quilt,
+      bedding — and “sleep”.'
+    pt: 'Diga: “bicicletas públicas de Seul — e “vamos juntos (informal) — e “chão, piso — e “aquecimento — e “está quente — e “liga — e “desliga — e “não consegue (forma longa) — e “e (dois fatos) — e
+      “edredom — e “dorme”.'
+  answer:
+    speaker: protagonist
+    text: 따릉이 … 같이 가자 … 바닥 … 난방 … 따뜻해요 … 켜요 … 꺼요 … -지 못해요 … -고 … 이불 … 자요
+  items:
+  - ttarungi
+  - gachi-gaja
+  - badak
+  - nanbang
+  - ttatteuthaeyo2
+  - kyeoyo
+  - kkeoyo
+  - ji-mothaeyo
+  - go3
+  - ibul
+  - jayo
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “because it''s cold — and “temperature — and “Just a moment — and “rubbish — and “food waste — and “paid rubbish bag — and “sorting for recycling — and “must do — and “formal statement (signs,
+      announcements) — and “formal question — and “plastic”.'
+    pt: 'Diga: “porque está frio — e “temperatura — e “Só um momento — e “lixo — e “lixo orgânico — e “saco de lixo pago — e “separação para reciclagem — e “tem que fazer — e “afirmação formal (placas,
+      avisos) — e “pergunta formal — e “plástico”.'
+  answer:
+    speaker: protagonist
+    text: 추워서 … 온도 … 잠깐만요 … 쓰레기 … 음식물 쓰레기 … 종량제 봉투 … 분리수거 … 해야 해요 … -습니다 / -ㅂ니다 … -습니까 / -ㅂ니까 … 플라스틱
+  items:
+  - chuweoseo
+  - ondo
+  - jamkkanman
+  - sseuregi
+  - eumsingmul
+  - jongnyangje
+  - bullisugeo
+  - haeya-haeyo
+  - seumnida
+  - seumnikka
+  - peullaseutik
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “paper — and “bottle — and “when — and “I''m sorry — and “Are you all right? (respectful) — and “lower back, waist — and “head — and “hand — and “leg — and “hurts / is ill — and “topic particle;
+      also contrast (은 after a consonant, 는 after a vowel)”.'
+    pt: 'Diga: “papel — e “garrafa — e “quando — e “desculpe — e “A senhora está bem? (respeitoso) — e “costas (lombar), cintura — e “cabeça — e “mão — e “perna — e “dói / está doente — e “partícula de
+      tópico; também contraste (은 depois de consoante, 는 depois de vogal)”.'
+  answer:
+    speaker: protagonist
+    text: 종이 … 병 … 언제 … 죄송해요 … 괜찮으세요? … 허리 … 머리 … 손 … 다리 … 아파요 … 은/는
+  items:
+  - jongi
+  - byeong
+  - eonje
+  - joesonghaeyo
+  - gwaenchaneuseyo
+  - heori
+  - meori
+  - son
+  - dari
+  - apayo
+  - eun-neun
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “is heavy — and “I''ll carry it — and “Thanks (polite, warm) — and “It''s fine / I''m fine — and “subject particle for an honoured person — and “is ill / hurts (said of an honoured person)”.'
+    pt: 'Diga: “é pesado — e “Eu carrego — e “Obrigada (educado, caloroso) — e “Tudo bem / estou bem — e “partícula de sujeito para pessoa respeitada — e “está doente / dói (dito de pessoa respeitada)”.'
+  answer:
+    speaker: protagonist
+    text: 무거워요 … 제가 들게요 … 고마워요 … 괜찮아요 … 께서 … 아프세요
+  items:
+  - mugeowoyo
+  - jega-deulgeyo
+  - gomawoyo
+  - gwaenchanayo
+  - kkeseo
+  - apeuseyo
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

@@ -1,0 +1,42 @@
+id: A2-04
+protagonist: m
+title: [The bank, O banco]
+situation: ["With your residence card you open an account. Everything needs phone verification.", "Com o cartão de residente você abre uma conta. Tudo exige verificação pelo celular."]
+learn: [ko-can, ko-nikl-90, ko-nikl-50]
+culture: Phone verification for everything
+items:
+  - [tongjang, "통장", "bankbook, account", "conta (caderneta)"]
+  - [gyejwa, "계좌", "bank account", "conta bancária"]
+  - [chekeukadeu, "체크카드", "debit card", "cartão de débito"]
+  - [bonin, "본인인증", "identity verification (by phone)", "verificação de identidade (pelo celular)"]
+  - [eul-su-itda, "-(으)ㄹ 수 있다 / 없다", "can / can't", "pode, consegue / não"]
+  - [eul-subakke, "-(으)ㄹ 수밖에 없다", "have no choice but to", "não ter outra opção senão"]
+  - [eseobuteo, "에서부터", "starting from", "a partir de"]
+  - [haendeupon, "핸드폰", "mobile phone", "celular"]
+  - [bimilbeonho2, "비밀번호를 눌러 주세요", "please enter your PIN", "digite a senha, por favor"]
+  - [mandeul-su, "만들 수 있어요?", "Can I open (one)?", "Posso abrir?"]
+  - [sinbunjeung, "신분증", "ID document", "documento de identidade"]
+  - [sseuseyo, "서명해 주세요", "please sign", "assine, por favor"]
+dialogue:
+  - [protagonist, "안녕하세요. 계좌를 만들 수 있어요?", "Hello. Can I open an account?", "Olá. Posso abrir uma conta?"]
+  - [clerk, "네. 신분증 있으세요?", "Yes. Do you have ID?", "Sim. Tem documento?"]
+  - [protagonist, "외국인등록증 여기 있어요.", "Here's my residence card.", "Aqui está o cartão de residente."]
+  - [clerk, "핸드폰도 있으세요? 본인인증을 해야 돼요.", "Do you have a phone too? We need to verify your identity.", "Tem celular? Precisamos verificar a identidade."]
+  - [protagonist, "아직 한국 번호가 없어요. 그럼 만들 수 없어요?", "I don't have a Korean number yet. Then I can't open one?", "Ainda não tenho número coreano. Então não posso abrir?"]
+  - [clerk, "죄송하지만 오늘은 통장만 만들 수밖에 없어요. 체크카드는 다음에 돼요.", "Sorry, but today we can only do the bankbook. The debit card next time.", "Desculpe, mas hoje só dá para fazer a caderneta. O cartão de débito, na próxima."]
+  - [protagonist, "알겠어요. 체크카드는 언제부터 쓸 수 있어요?", "OK. From when can I use the debit card?", "Tá bom. A partir de quando posso usar o cartão?"]
+  - [clerk, "번호 만드신 날부터 바로 돼요. 여기 서명해 주세요.", "Right from the day you get a number. Please sign here.", "A partir do dia em que tiver o número, na hora. Assine aqui, por favor."]
+teach:
+  - note: ["-(으)ㄹ 수 있어요 / 없어요: can / can't: 만들다 → 만들 수 있어요?", "-(으)ㄹ 수 있어요 / 없어요: pode / não pode: 만들다 → 만들 수 있어요?"]
+  - ask: ["Ask if you can open an account.", "Pergunte se pode abrir uma conta.", "계좌를 만들 수 있어요?", gyejwa, mandeul-su, eul-su-itda]
+  - ask: ["She asks for ID. Hand it over.", "Ela pede documento. Entregue.", "신분증 여기 있어요.", sinbunjeung]
+  - ask: ["Say: we need to verify your identity by phone.", "Diga: é preciso verificar a identidade pelo celular.", "핸드폰으로 본인인증을 해야 돼요.", bonin, haendeupon]
+  - ask: ["Ask: then I can't open one?", "Pergunte: então não posso abrir?", "그럼 만들 수 없어요?", eul-su-itda]
+  - note: ["-(으)ㄹ 수밖에 없다: have no choice but to: 통장만 만들 수밖에 없어요, all we can do is the bankbook.", "-(으)ㄹ 수밖에 없다: não ter outra opção: 통장만 만들 수밖에 없어요, só dá para fazer a caderneta."]
+  - ask: ["Say: today we can only make the bankbook.", "Diga: hoje só dá para fazer a caderneta.", "오늘은 통장만 만들 수밖에 없어요.", eul-subakke, tongjang]
+  - ask: ["Ask from when you can use the debit card.", "Pergunte a partir de quando pode usar o cartão de débito.", "체크카드는 언제부터 쓸 수 있어요?", chekeukadeu]
+  - note: ["에서부터 is 'starting from (a place or point)': 그날에서부터, from that day on.", "에서부터 é 'a partir de (um lugar ou ponto)': 그날에서부터, a partir daquele dia."]
+  - ask: ["Say: from Seoul station onwards.", "Diga: a partir da estação de Seul.", "서울역에서부터요.", eseobuteo]
+  - ask: ["The clerk asks you to enter your PIN. How?", "O atendente pede a senha. Como?", "비밀번호를 눌러 주세요.", bimilbeonho2]
+  - ask: ["How did she say 'please sign here'?", "Como ela disse 'assine aqui'?", "여기 서명해 주세요.", sseuseyo]
+  - pt_only: "Na Coreia quase tudo — banco, compras, entregas — pede 본인인증, a verificação por um celular em seu nome. Sem número coreano, a vida trava; por isso o celular vem logo depois do cartão de residente."
