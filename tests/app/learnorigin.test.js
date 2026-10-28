@@ -28,6 +28,14 @@ describe('Learn list sections by kind of source (Allan, 2026-10-20)', () => {
       { id: 'r', group: 'reader', lessons: [{ id: 5 }] },
     ];
     expect(learnSections(topics).map((s) => [s.id, s.topics.map((t) => t.id)])).toEqual([
-      ['course', ['c']], ['reader', ['r']], ['school', ['s']], ['university', ['u']], ['made', ['c']]]);
+      ['course', ['c']], ['reader', ['r']], ['school', ['s']], ['university', ['u']], ['ai', ['c']]]);
+  });
+});
+
+describe('generated and AI-written apart (Allan, 2026-10-28): generated above, AI-written last', () => {
+  it('two sections in that order', () => {
+    const topics = [{ id: 'x', lessons: [{ id: 1, ai: true }, { id: 2, generated: true }, { id: 3 }] }, { id: 'y', lessons: [{ id: 4, generated: true }] }];
+    expect(learnSections(topics).map((s) => [s.id, s.topics.map((t) => [t.id, t.lessons.map((l) => l.id)])])).toEqual([
+      ['course', [['x', [3]]]], ['generated', [['x', [2]], ['y', [4]]]], ['ai', [['x', [1]]]]]);
   });
 });

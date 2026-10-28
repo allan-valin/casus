@@ -348,8 +348,8 @@
       {@const parts = learnSections(level?.topics)}
       {#each parts as sec, i (sec.id)}
         {#if sec.topics.some((tp) => visible(tp).length)}
-          {#if parts.length > 1 || sec.id === 'made'}<h3 class="sec-head" class:made-head={sec.id === 'made'} data-section={sec.id}>{t(`learn.sec.${sec.id}`)}</h3>
-            {#if sec.id === 'made'}<p class="made-note">{t('learn.madeNote')}</p>{/if}{/if}
+          {#if parts.length > 1 || sec.id === 'generated' || sec.id === 'ai'}<h3 class="sec-head" class:made-head={sec.id === 'generated' || sec.id === 'ai'} data-section={sec.id}>{t(`learn.sec.${sec.id}`)}</h3>
+            {#if sec.id === 'generated'}<p class="made-note">{t('learn.genNote')}</p>{:else if sec.id === 'ai'}<p class="made-note">{t('learn.aiNote')}</p>{/if}{/if}
           {@render topicList(sec.topics, level)}
         {/if}
       {/each}

@@ -19,6 +19,9 @@ const GROUPS = ['course', 'reader', 'school', 'university'];
 export function learnSections(topics) {
   const { human, made: machine } = byOrigin(topics);
   const out = GROUPS.map((id) => ({ id, topics: human.filter((tp) => (GROUPS.includes(tp.group) ? tp.group : 'course') === id) }));
-  out.push({ id: 'made', topics: machine });
+  // generated from data above, AI-written last, each its own section (Allan, 2026-10-28)
+  const only = (keep, tag) => machine.map((tp) => ({ ...tp, lessons: tp.lessons.filter(keep), key: `${tp.id}:${tag}` })).filter((tp) => tp.lessons.length);
+  out.push({ id: 'generated', topics: only((e) => !e.ai, 'g') });
+  out.push({ id: 'ai', topics: only((e) => !!e.ai, 'a') });
   return out.filter((s) => s.topics.length);
 }
