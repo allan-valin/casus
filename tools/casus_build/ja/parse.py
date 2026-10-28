@@ -26,6 +26,7 @@ SKIP_TAGS = {"romanization", "canonical", "table-tags", "inflection-template", "
 RARE = {"uncommon", "archaic", "obsolete", "dialectal", "rare", "dated"}
 _KANA = re.compile(r"^[぀-ヿー]+$")
 _JA = re.compile(r"[぀-ヿ㐀-鿿豈-﫿ー々〆ヶ]")
+_HIRAGANA = re.compile(r"^[\u3040-\u309fー]+$")
 _SEG = re.compile(r"([぀-ヿー]*)([^぀-ヿー()\s]+)\(([^)]+)\)")
 
 
@@ -89,6 +90,10 @@ def parse_entries(lines: Iterable[str]) -> Iterator[dict]:
         d = json.loads(line)
         pos = POS.get(d.get("pos", ""))
         word = (d.get("word") or "").strip()
+        # names (日本, 東京, トム) are nouns to the reader; a one-character or hiragana-only name would match inside
+        # ordinary words, so those stay out (Allan 2026-10-27: 日本 read as "hi hon")
+        if d.get("pos") == "name" and len(word) >= 2 and not _HIRAGANA.match(word):
+            pos = "noun"
         if not pos or not word or " " in word or not _JA.search(word):
             continue
         heads = d.get("head_templates") or [{}]

@@ -85,3 +85,17 @@ def test_a_commoner_reading_goes_first():
     watashi = entry("私", "pron", "私(わたし) • (watashi)", gloss="I")
     index = build_index(list(parse_entries([atashi, watashi])), reading_rank={"私\tわたし": 10, "私\tあたし": 400})
     assert [a.get("reading") for a in index["私"]] == ["わたし", "あたし"]
+
+
+def test_proper_nouns_are_words():
+    # Allan 2026-10-27: 日本 read as 日 (ひ) + 本 (ほん) = "hi hon" — Wiktionary files place names under "name", which
+    # the build dropped. Names of two or more characters with kanji or katakana are kept as nouns; a one-character or
+    # hiragana-only name would match inside ordinary words.
+    lines = [
+        entry("日本", "name", "日(に)本(ほん) • (Nihon)", name="ja-noun"),
+        entry("トム", "name", "トム • (Tomu)", name="ja-noun"),
+        entry("さくら", "name", "さくら • (Sakura)", name="ja-noun"),
+        entry("森", "name", "森(もり) • (Mori)", name="ja-noun"),
+    ]
+    entries = list(parse_entries(lines))
+    assert [(e["headword"], e["pos"], e["reading"]) for e in entries] == [("日本", "noun", "にほん"), ("トム", "noun", "トム")]

@@ -1,5 +1,7 @@
 # Conversation practice ko · pt-BR — unit plan (DRAFT for Allan, 2026-10-21, after his review)
 
+Level names: TOPIK 1…6 (Allan 2026-10-28: never A1/B1 for Korean). Unit ids keep the old A1-…/B1-… form: they are file names and progress keys in readers' browsers.
+
 Story bible: `tools/conversation/ko/story-bible.yml` (Seoul, 마포구; landlady 박순자 할머니, neighbour 민준, team lead
 이지은 팀장님, the convenience-store 사장님). Same shape as the Macedonian and German plans: 30 units per level, L L T
 rhythm up to B2, C1–C2 daily life with grammar; 10–20 new items per unit; a **Reviewed** column; no yearly amounts.
@@ -13,7 +15,7 @@ the curious note. The protagonist stays the story's Brazilian character (changin
 **Before units:** the Korean voice (Piper kss, one female speaker; men pitched down — samples for your ear) and a
 hangul → sound converter for our browser engine.
 
-## A1 — arrival (해요체 present, 이에요/예요, 있어요/없어요, 주세요, -고 싶어요, particles, both number systems, 안)
+## TOPIK 1 (ids A1-…) — arrival (해요체 present, 이에요/예요, 있어요/없어요, 주세요, -고 싶어요, particles, both number systems, 안)
 
 | # | Kind | Title (pt) | Situation | New (examples) | Grammar | Reviewed | Clash |
 |---|---|---|---|---|---|---|---|
@@ -48,7 +50,7 @@ hangul → sound converter for our browser engine.
 | 29 | L | Sinto muito | a mistake at work | 죄송합니다, 괜찮아요 | 합쇼체 set phrases | 28 all; 27 온돌; 25 깎아 | apology register |
 | 30 | T | Esporte | a hike with 민준's father; review | 등산, 산, 힘들어요 (review mostly) | all A1 | 29 all; everything of A1 | hiking culture |
 
-## A2 — settling in (past, future, -고 있어요, -(으)ㄹ 수 있어요, -지만/-(으)면/-아서, honorific -(으)시-, irregulars)
+## TOPIK 2 (ids A2-…) — settling in (past, future, -고 있어요, -(으)ㄹ 수 있어요, -지만/-(으)면/-아서, honorific -(으)시-, irregulars)
 
 | # | Kind | Title (pt) | Situation | New (examples) | Grammar | Reviewed | Clash / culture |
 |---|---|---|---|---|---|---|---|
@@ -83,7 +85,7 @@ hangul → sound converter for our browser engine.
 | 29 | L | Saudade de casa | a video call to Brazil, twelve hours apart | 보고 싶어요, 그리워요, 시차, 영상통화 | 보고 싶다 | 28 all; 27 피부; 25 머리 | the time difference |
 | 30 | T | Piadas | dad jokes at a 회식; review | 아재개그, 웃겨요, 썰렁해요 (review mostly) | all A2 | 29 all; 28 기차; 26 고백 | 아재개그 |
 
-## B1 — friends (adnominals, -는 것 같아요, -잖아요, reported speech -대요/-냐고, passives, -(으)려고, -느라고)
+## TOPIK 3 (ids B1-…) — UNDER CONSTRUCTION, INCOMPLETE: units 01–10 written (tools/conversation/ko/src), not proofread, not built; 11–30 not written. Parked by Allan 2026-10-28 for another session — friends (adnominals, -는 것 같아요, -잖아요, reported speech -대요/-냐고, passives, -(으)려고, -느라고)
 
 | # | Kind | Title (pt) | Situation | New (examples) | Grammar | Reviewed | Clash / culture |
 |---|---|---|---|---|---|---|---|
@@ -118,7 +120,7 @@ hangul → sound converter for our browser engine.
 | 29 | L | A vizinha sozinha | 할머니's elderly friend lives alone | 혼자, 외로워요, 자주, 노인 | -도록 | 28 all; 27 퍽이나; 25 동거 | elderly poverty and loneliness — a social problem |
 | 30 | T | Sexta à noite | friends at a 포차; review | (review mostly) | all B1 | 29 all; 28 장마; 26 생일 | — |
 
-## B2 — work (합쇼체, titles, honorific verbs, -더라고요, -(으)ㄹ 텐데, -는 바람에, written register)
+## TOPIK 4 (ids B2-…) — work (합쇼체, titles, honorific verbs, -더라고요, -(으)ㄹ 텐데, -는 바람에, written register)
 
 | # | Kind | Title (pt) | Situation | New (examples) | Grammar | Reviewed | Clash / culture |
 |---|---|---|---|---|---|---|---|
@@ -153,7 +155,7 @@ hangul → sound converter for our browser engine.
 | 29 | L | O pedido | the proposal and the families' meeting | 프러포즈, 반지, 상견례, 예물 | -(으)ㄹ래요? | 28 all; 27 결혼; 25 재택근무 | 상견례, the families meet |
 | 30 | T | O futuro | stay or go; review | (review mostly) | all B2 | 29 all; 28 송년회; 26 러닝크루 | — |
 
-## C1 — life in depth (written -다체, -는 셈이다, -기 마련이다, -(으)ㄹ 뻔하다, official style); the evening course and the hiking club as threads
+## TOPIK 5 (ids C1-…) — life in depth (written -다체, -는 셈이다, -기 마련이다, -(으)ㄹ 뻔하다, official style); the evening course and the hiking club as threads
 
 | # | Title (pt) | Situation | New (examples) | Grammar | Reviewed | Clash / culture |
 |---|---|---|---|---|---|---|
@@ -188,7 +190,7 @@ hangul → sound converter for our browser engine.
 | 29 | O exame | the TOPIK level exam | TOPIK, 급, 합격, 시험장 | -(으)ㄴ 덕분에 | 28 all; 27 번아웃; 25 민원 | — |
 | 30 | Três anos | a birthday at the old 포차; review | (review mostly) | all C1 | 29 all; 28 통역; 26 은퇴 | — |
 
-## C2 — mastery (four-character idioms, dialect, register shifts, rhetoric)
+## TOPIK 6 (ids C2-…) — mastery (four-character idioms, dialect, register shifts, rhetoric)
 
 | # | Title (pt) | Situation | New (examples) | Grammar | Reviewed | Clash / culture |
 |---|---|---|---|---|---|---|
