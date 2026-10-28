@@ -1,0 +1,390 @@
+# UNIT en A1-07 — written by AI (Claude) for Casus; expanded from src/A1-07.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-07
+level: A1
+number: 7
+protagonist: f
+title:
+  de: Die Nachbarin
+situation:
+  de: 'Im Treppenhaus. Eine junge Frau mit Einkaufstüten: Megan, Ihre Nachbarin.'
+learn_lessons:
+- en-to-be
+- en-prepositions
+culture: Talking to neighbours
+new_items:
+- id: are-you-new
+  text: Are you new here?
+  meaning:
+    de: Sind Sie neu hier?
+- id: i-live
+  text: I live …
+  meaning:
+    de: ich wohne …
+- id: on-the-floor
+  text: on the second floor
+  meaning:
+    de: im ersten Stock
+- id: im-lena
+  text: I'm Lena.
+  meaning:
+    de: Ich bin Lena.
+- id: she-is
+  text: she's / she is
+  meaning:
+    de: sie ist
+- id: im-a-nurse
+  text: I'm a nurse.
+  meaning:
+    de: Ich bin Krankenschwester / Pflegerin.
+- id: at-the-hospital
+  text: at the hospital
+  meaning:
+    de: im Krankenhaus
+- id: can-i-help
+  text: Can I help you?
+  meaning:
+    de: Kann ich Ihnen helfen?
+- id: thats-nice
+  text: That's very nice.
+  meaning:
+    de: Das ist sehr nett.
+- id: see-you
+  text: See you!
+  meaning:
+    de: Bis dann!
+reviews:
+- item: good-morning
+  from: A1-04
+- item: what-can-i-get
+  from: A1-04
+- item: can-i-have
+  from: A1-04
+- item: a-coffee
+  from: A1-04
+- item: small-medium-large
+  from: A1-04
+- item: medium
+  from: A1-04
+- item: for-here
+  from: A1-04
+- item: to-go
+  from: A1-04
+- item: how-much
+  from: A1-04
+- item: three-fifty
+  from: A1-04
+- item: keep-the-change
+  from: A1-04
+- item: have-a-nice-day
+  from: A1-04
+- item: you-too
+  from: A1-04
+- item: do-you-speak
+  from: A1-06
+- item: a-little
+  from: A1-06
+- item: i-speak
+  from: A1-06
+- item: call-me
+  from: A1-06
+- item: ok-linda
+  from: A1-06
+- item: do-you-like
+  from: A1-06
+- item: i-like-it
+  from: A1-06
+- item: i-dont-know
+  from: A1-06
+- item: no-i-dont
+  from: A1-06
+- item: yet
+  from: A1-06
+- item: very-much
+  from: A1-06
+- item: yes-i-am
+  from: A1-02
+- item: i-work
+  from: A1-05
+- item: what-do-you-do
+  from: A1-05
+steps:
+- type: narrator
+  text:
+    de: 'Im Treppenhaus. Eine junge Frau mit Einkaufstüten: Megan, Ihre Nachbarin. Hören Sie sich das Gespräch an; Sie müssen es noch nicht verstehen.'
+- type: dialogue
+  lines:
+  - speaker: megan
+    text: Hi! Are you new here?
+    meaning:
+      de: Hallo! Bist du neu hier?
+  - speaker: protagonist
+    text: Yes, I am. I'm Lena. I live on the second floor.
+    meaning:
+      de: Ja. Ich bin Lena. Ich wohne im ersten Stock.
+  - speaker: megan
+    text: I'm Megan. I live on the third floor.
+    meaning:
+      de: Ich bin Megan. Ich wohne im zweiten Stock.
+  - speaker: protagonist
+    text: Nice to meet you, Megan. Can I help you?
+    meaning:
+      de: Freut mich, Megan. Kann ich dir helfen?
+  - speaker: megan
+    text: Oh, thanks! That's very nice.
+    meaning:
+      de: Oh, danke! Das ist sehr nett.
+  - speaker: protagonist
+    text: What do you do?
+    meaning:
+      de: Was machst du beruflich?
+  - speaker: megan
+    text: I'm a nurse. I work at the hospital.
+    meaning:
+      de: Ich bin Pflegerin. Ich arbeite im Krankenhaus.
+  - speaker: protagonist
+    text: Cool. See you, Megan!
+    meaning:
+      de: Cool. Bis dann, Megan!
+- type: prompt
+  ask:
+    de: 'Fragen Sie: Sind Sie neu hier?'
+  answer:
+    speaker: protagonist
+    text: Are you new here?
+  items:
+  - are-you-new
+- type: prompt
+  ask:
+    de: 'Antworten Sie: Ja. Ich bin Lena.'
+  answer:
+    speaker: protagonist
+    text: Yes, I am. I'm Lena.
+  items:
+  - yes-i-am
+  - im-lena
+- type: narrator
+  text:
+    de: 'Achtung, Stockwerke: In Amerika ist das Erdgeschoss der „first floor“. Der deutsche erste Stock ist der „second floor“.'
+- type: buildup
+  item: on-the-floor
+  parts:
+  - floor
+  - second floor
+  - on the second floor
+- type: prompt
+  ask:
+    de: Sagen Sie, dass Sie im ersten Stock wohnen — auf Amerikanisch.
+  answer:
+    speaker: protagonist
+    text: I live on the second floor.
+  items:
+  - i-live
+  - on-the-floor
+- type: prompt
+  ask:
+    de: Bieten Sie Hilfe an.
+  answer:
+    speaker: protagonist
+    text: Can I help you?
+  items:
+  - can-i-help
+- type: prompt
+  ask:
+    de: 'Jemand hilft Ihnen mit den Tüten. Sagen Sie: Das ist sehr nett.'
+  answer:
+    speaker: protagonist
+    text: That's very nice.
+  items:
+  - thats-nice
+- type: prompt
+  ask:
+    de: Fragen Sie, was sie beruflich macht.
+  answer:
+    speaker: protagonist
+    text: What do you do?
+  items:
+  - what-do-you-do
+- type: narrator
+  text:
+    de: „at the hospital“, „at work“, „at home“ — „at“ für Orte, an denen man etwas tut.
+- type: prompt
+  ask:
+    de: 'Sagen Sie für Megan: Ich bin Pflegerin. Ich arbeite im Krankenhaus.'
+  answer:
+    speaker: protagonist
+    text: I'm a nurse. I work at the hospital.
+  items:
+  - im-a-nurse
+  - i-work
+  - at-the-hospital
+- type: prompt
+  ask:
+    de: 'Erzählen Sie von ihr: Sie ist Pflegerin.'
+  answer:
+    speaker: protagonist
+    text: She's a nurse.
+  items:
+  - she-is
+  - im-a-nurse
+- type: prompt
+  ask:
+    de: Verabschieden Sie sich locker.
+  answer:
+    speaker: protagonist
+    text: See you!
+  items:
+  - see-you
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Sind Sie neu hier?“.'
+  answer:
+    speaker: protagonist
+    text: Are you new here?
+  items:
+  - are-you-new
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „ich wohne …“.'
+  answer:
+    speaker: protagonist
+    text: I live …
+  items:
+  - i-live
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „im ersten Stock“.'
+  answer:
+    speaker: protagonist
+    text: on the second floor
+  items:
+  - on-the-floor
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Ich bin Lena.“.'
+  answer:
+    speaker: protagonist
+    text: I'm Lena.
+  items:
+  - im-lena
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „sie ist“.'
+  answer:
+    speaker: protagonist
+    text: she's / she is
+  items:
+  - she-is
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „im Krankenhaus“.'
+  answer:
+    speaker: protagonist
+    text: at the hospital
+  items:
+  - at-the-hospital
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Kann ich Ihnen helfen?“.'
+  answer:
+    speaker: protagonist
+    text: Can I help you?
+  items:
+  - can-i-help
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Das ist sehr nett.“.'
+  answer:
+    speaker: protagonist
+    text: That's very nice.
+  items:
+  - thats-nice
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Bis dann!“.'
+  answer:
+    speaker: protagonist
+    text: See you!
+  items:
+  - see-you
+- type: narrator
+  text:
+    de: Jetzt einiges aus früheren Einheiten, in dieser neuen Situation.
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Sprechen Sie …?“ — und „ein bisschen“ — und „Ich spreche Deutsch und Englisch.“ — und „Nennen Sie mich Linda.“.'
+  answer:
+    speaker: protagonist
+    text: Do you speak …? … a little … I speak German and English. … Call me Linda.
+  items:
+  - do-you-speak
+  - a-little
+  - i-speak
+  - call-me
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Okay, Linda.“ — und „Mögen Sie …? / Gefällt Ihnen …?“ — und „Es gefällt mir.“ — und „Ich weiß nicht.“.'
+  answer:
+    speaker: protagonist
+    text: OK, Linda. … Do you like …? … I like it. … I don't know.
+  items:
+  - ok-linda
+  - do-you-like
+  - i-like-it
+  - i-dont-know
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Nein. (kurze Antwort auf eine do-Frage)“ — und „noch (in Fragen und Verneinungen)“ — und „sehr“ — und „Guten Morgen.“.'
+  answer:
+    speaker: protagonist
+    text: No, I don't. … yet … very much … Good morning.
+  items:
+  - no-i-dont
+  - yet
+  - very-much
+  - good-morning
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Was darf''s sein?“ — und „Kann ich … haben? / Ich hätte gern …“ — und „einen Kaffee“ — und „klein, mittel oder groß“.'
+  answer:
+    speaker: protagonist
+    text: What can I get you? … Can I have …? … a coffee … small, medium or large
+  items:
+  - what-can-i-get
+  - can-i-have
+  - a-coffee
+  - small-medium-large
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „einen mittleren“ — und „zum Hiertrinken“ — und „zum Mitnehmen“ — und „Was kostet das?“.'
+  answer:
+    speaker: protagonist
+    text: a medium … for here … to go … How much is it?
+  items:
+  - medium
+  - for-here
+  - to-go
+  - how-much
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „drei fünfzig“ — und „Stimmt so.“ — und „Schönen Tag noch!“ — und „Ihnen auch.“.'
+  answer:
+    speaker: protagonist
+    text: three fifty … Keep the change. … Have a nice day! … You too.
+  items:
+  - three-fifty
+  - keep-the-change
+  - have-a-nice-day
+  - you-too
+- type: narrator
+  text:
+    de: Hören Sie das Gespräch noch einmal. Jetzt verstehen Sie es.
+- type: dialogue
+  again: true
+- type: selfcheck

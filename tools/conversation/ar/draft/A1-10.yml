@@ -1,0 +1,483 @@
+# UNIT ar A1-10 — written by AI (Claude) for Casus; expanded from src/A1-10.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-10
+level: A1
+number: 10
+protagonist: m
+title:
+  en: At the corner shop
+  pt: Na mercearia
+situation:
+  en: Abu Ali's corner shop. You need water and a few things for your room.
+  pt: A mercearia do Abu Ali. Você precisa de água e de algumas coisas para o quarto.
+learn_lessons:
+- ar-a1-numbers
+- ar-a1-demonstratives
+culture: Prices and bargaining
+new_items:
+- id: bikam
+  text: بِكَمْ؟
+  meaning:
+    en: How much (does it cost)?
+    pt: Quanto custa?
+- id: bikam-hadha
+  text: بِكَمْ هٰذا؟
+  meaning:
+    en: How much is this?
+    pt: Quanto custa isto?
+- id: dinar
+  text: دينارْ
+  meaning:
+    en: a dinar
+    pt: um dinar
+- id: dinarayn
+  text: دينارَيْنْ
+  meaning:
+    en: two dinars
+    pt: dois dinares
+- id: ghali
+  text: غالٍ
+  meaning:
+    en: expensive
+    pt: caro
+- id: rakhis
+  text: رَخيصٌ
+  meaning:
+    en: cheap
+    pt: barato
+- id: maa
+  text: ماءْ
+  meaning:
+    en: water
+    pt: água
+- id: zujaja
+  text: زُجاجَةُ ماءٍ
+  meaning:
+    en: a bottle of water
+    pt: uma garrafa de água
+- id: hadha-ghali
+  text: هٰذا غالٍ
+  meaning:
+    en: that's expensive
+    pt: isso é caro
+- id: khudh
+  text: خُذْ
+  meaning:
+    en: take (it)
+    pt: pegue
+reviews:
+- item: hadhihi
+  from: A1-03
+- item: hadha
+  from: A1-03
+- item: ummi
+  from: A1-03
+- item: abi
+  from: A1-03
+- item: ismi
+  from: A1-03
+- item: tasharrafna
+  from: A1-03
+- item: tafaddali
+  from: A1-03
+- item: taliba
+  from: A1-03
+- item: talib
+  from: A1-03
+- item: wa
+  from: A1-03
+- item: huwa
+  from: A1-07
+- item: hiya
+  from: A1-07
+- item: barazili
+  from: A1-07
+- item: barazilia
+  from: A1-07
+- item: almani
+  from: A1-07
+- item: yabania
+  from: A1-07
+- item: turkia
+  from: A1-07
+- item: min-almania
+  from: A1-07
+- item: nahnu
+  from: A1-07
+- item: tullab
+  from: A1-07
+- item: shay
+  from: A1-09
+- item: qahwa
+  from: A1-09
+- item: khubz
+  from: A1-09
+- item: urid
+  from: A1-09
+- item: hal-turidin
+  from: A1-09
+- item: ladhidh
+  from: A1-09
+- item: al-khubz
+  from: A1-09
+- item: la-shukran
+  from: A1-09
+- item: qalilan
+  from: A1-09
+- item: bilhana
+  from: A1-09
+- item: shukran
+  from: A1-01
+- item: min-fadlika
+  from: A1-02
+steps:
+- type: narrator
+  text:
+    en: Abu Ali's corner shop. You need water and a few things for your room. Listen to the conversation; you don't need to understand it yet.
+    pt: A mercearia do Abu Ali. Você precisa de água e de algumas coisas para o quarto. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: grocer
+    text: أَهْلًا وَسَهْلًا! تَفَضَّلْ.
+    meaning:
+      en: Welcome! Go ahead.
+      pt: Bem-vindo! Pode falar.
+  - speaker: protagonist
+    text: أُريدُ زُجاجَةَ ماءٍ، مِنْ فَضْلِكَ.
+    meaning:
+      en: I'd like a bottle of water, please.
+      pt: Quero uma garrafa de água, por favor.
+  - speaker: grocer
+    text: تَفَضَّلْ.
+    meaning:
+      en: Here you are.
+      pt: Aqui está.
+  - speaker: protagonist
+    text: بِكَمْ هٰذا؟
+    meaning:
+      en: How much is this?
+      pt: Quanto custa?
+  - speaker: grocer
+    text: نِصْفُ دينارْ.
+    meaning:
+      en: Half a dinar.
+      pt: Meio dinar.
+  - speaker: protagonist
+    text: وَهٰذا الصّابونُ؟ بِكَمْ؟
+    meaning:
+      en: And this soap? How much?
+      pt: E este sabonete? Quanto custa?
+  - speaker: grocer
+    text: دينارَيْنْ.
+    meaning:
+      en: Two dinars.
+      pt: Dois dinares.
+  - speaker: protagonist
+    text: دينارَيْنْ؟ هٰذا غالٍ!
+    meaning:
+      en: Two dinars? That's expensive!
+      pt: Dois dinares? Isso é caro!
+  - speaker: grocer
+    text: خُذْهُ بِدينارٍ وَنِصْفْ.
+    meaning:
+      en: Take it for one and a half.
+      pt: Leve por um e meio.
+  - speaker: protagonist
+    text: شُكْرًا يا أَبا عَلي!
+    meaning:
+      en: Thank you, Abu Ali!
+      pt: Obrigado, Abu Ali!
+- type: narrator
+  text:
+    en: 'بِكَمْ؟ asks a price: ''for how much?''. كَمْ alone asks ''how many''.'
+    pt: 'بِكَمْ؟ pergunta o preço: ''por quanto?''. كَمْ sozinho pergunta ''quantos''.'
+- type: prompt
+  ask:
+    en: Ask how much this is.
+    pt: Pergunte quanto custa isto.
+  answer:
+    speaker: protagonist
+    text: بِكَمْ هٰذا؟
+  items:
+  - bikam-hadha
+- type: prompt
+  ask:
+    en: Ask for a bottle of water, please.
+    pt: Peça uma garrafa de água, por favor.
+  answer:
+    speaker: protagonist
+    text: أُريدُ زُجاجَةَ ماءٍ، مِنْ فَضْلِكَ.
+  items:
+  - urid
+  - zujaja
+  - min-fadlika
+- type: narrator
+  text:
+    en: 'Two of something has its own ending, -ayn: دينارْ, دينارَيْنْ ''two dinars'' — no need for the word ''two''.'
+    pt: 'Dois de alguma coisa tem terminação própria, -ayn: دينارْ, دينارَيْنْ ''dois dinares'' — sem precisar da palavra ''dois''.'
+- type: prompt
+  ask:
+    en: 'Repeat the price: two dinars.'
+    pt: 'Repita o preço: dois dinares.'
+  answer:
+    speaker: protagonist
+    text: دينارَيْنْ.
+  items:
+  - dinarayn
+- type: prompt
+  ask:
+    en: 'Say: that''s expensive!'
+    pt: 'Diga: isso é caro!'
+  answer:
+    speaker: protagonist
+    text: هٰذا غالٍ!
+  items:
+  - hadha-ghali
+- type: prompt
+  ask:
+    en: Say the water is cheap.
+    pt: Diga que a água é barata.
+  answer:
+    speaker: protagonist
+    text: الماءُ رَخيصٌ.
+  items:
+  - maa
+  - rakhis
+- type: prompt
+  ask:
+    en: 'Ask: how much?'
+    pt: 'Pergunte: quanto custa?'
+  answer:
+    speaker: protagonist
+    text: بِكَمْ؟
+  items:
+  - bikam
+- type: narrator
+  text:
+    en: In small shops a friendly 'that's expensive' often gets a better price; in supermarkets prices are fixed.
+    pt: Em lojinhas um 'isso é caro' simpático muitas vezes rende desconto; no supermercado o preço é fixo.
+- type: prompt
+  ask:
+    en: Thank Abu Ali.
+    pt: Agradeça ao Abu Ali.
+  answer:
+    speaker: protagonist
+    text: شُكْرًا يا أَبا عَلي!
+  items:
+  - shukran
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: Pechinchar com simpatia é parte da conversa, como numa feira no Brasil — mas sem exagero na mercearia do bairro, onde o dono vira conhecido.
+- type: prompt
+  ask:
+    en: 'Once more: say “How much (does it cost)?”.'
+    pt: 'Mais uma vez: diga “Quanto custa?”.'
+  answer:
+    speaker: protagonist
+    text: بِكَمْ؟
+  items:
+  - bikam
+- type: prompt
+  ask:
+    en: 'Once more: say “How much is this?”.'
+    pt: 'Mais uma vez: diga “Quanto custa isto?”.'
+  answer:
+    speaker: protagonist
+    text: بِكَمْ هٰذا؟
+  items:
+  - bikam-hadha
+- type: prompt
+  ask:
+    en: 'Once more: say “a dinar”.'
+    pt: 'Mais uma vez: diga “um dinar”.'
+  answer:
+    speaker: protagonist
+    text: دينارْ
+  items:
+  - dinar
+- type: prompt
+  ask:
+    en: 'Once more: say “a dinar”.'
+    pt: 'Mais uma vez: diga “um dinar”.'
+  answer:
+    speaker: protagonist
+    text: دينارْ
+  items:
+  - dinar
+- type: prompt
+  ask:
+    en: 'Once more: say “two dinars”.'
+    pt: 'Mais uma vez: diga “dois dinares”.'
+  answer:
+    speaker: protagonist
+    text: دينارَيْنْ
+  items:
+  - dinarayn
+- type: prompt
+  ask:
+    en: 'Once more: say “expensive”.'
+    pt: 'Mais uma vez: diga “caro”.'
+  answer:
+    speaker: protagonist
+    text: غالٍ
+  items:
+  - ghali
+- type: prompt
+  ask:
+    en: 'Once more: say “expensive”.'
+    pt: 'Mais uma vez: diga “caro”.'
+  answer:
+    speaker: protagonist
+    text: غالٍ
+  items:
+  - ghali
+- type: prompt
+  ask:
+    en: 'Once more: say “cheap”.'
+    pt: 'Mais uma vez: diga “barato”.'
+  answer:
+    speaker: protagonist
+    text: رَخيصٌ
+  items:
+  - rakhis
+- type: prompt
+  ask:
+    en: 'Once more: say “water”.'
+    pt: 'Mais uma vez: diga “água”.'
+  answer:
+    speaker: protagonist
+    text: ماءْ
+  items:
+  - maa
+- type: prompt
+  ask:
+    en: 'Once more: say “a bottle of water”.'
+    pt: 'Mais uma vez: diga “uma garrafa de água”.'
+  answer:
+    speaker: protagonist
+    text: زُجاجَةُ ماءٍ
+  items:
+  - zujaja
+- type: prompt
+  ask:
+    en: 'Once more: say “that''s expensive”.'
+    pt: 'Mais uma vez: diga “isso é caro”.'
+  answer:
+    speaker: protagonist
+    text: هٰذا غالٍ
+  items:
+  - hadha-ghali
+- type: prompt
+  ask:
+    en: 'Once more: say “take (it)”.'
+    pt: 'Mais uma vez: diga “pegue”.'
+  answer:
+    speaker: protagonist
+    text: خُذْ
+  items:
+  - khudh
+- type: prompt
+  ask:
+    en: 'Once more: say “take (it)”.'
+    pt: 'Mais uma vez: diga “pegue”.'
+  answer:
+    speaker: protagonist
+    text: خُذْ
+  items:
+  - khudh
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “tea — and “coffee — and “bread — and “Would you like…? (to a woman) — and “delicious”.'
+    pt: 'Diga: “chá — e “café — e “pão — e “Você quer…? (a uma mulher) — e “gostoso”.'
+  answer:
+    speaker: protagonist
+    text: شايْ … قَهْوَةْ … خُبْزْ … هَلْ تُريدينَ…؟ … لَذيذٌ
+  items:
+  - shay
+  - qahwa
+  - khubz
+  - hal-turidin
+  - ladhidh
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the bread — and “no, thank you — and “a little — and “enjoy your meal (with pleasure and health) — and “he”.'
+    pt: 'Diga: “o pão — e “não, obrigada — e “um pouco — e “bom apetite (com gosto e saúde) — e “ele”.'
+  answer:
+    speaker: protagonist
+    text: الخُبْزُ … لا، شُكْرًا … قَليلًا … بِالهَناءِ وَالشِّفاءْ … هُوَ
+  items:
+  - al-khubz
+  - la-shukran
+  - qalilan
+  - bilhana
+  - huwa
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “she — and “Brazilian (a man) — and “Brazilian (a woman) — and “German (a man) — and “Japanese (a woman)”.'
+    pt: 'Diga: “ela — e “brasileiro — e “brasileira — e “alemão — e “japonesa”.'
+  answer:
+    speaker: protagonist
+    text: هِيَ … بَرازيلِيٌّ … بَرازيلِيَّةٌ … أَلْمانِيٌّ … يابانِيَّةٌ
+  items:
+  - hiya
+  - barazili
+  - barazilia
+  - almani
+  - yabania
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Turkish (a woman) — and “from Germany — and “we — and “students — and “this (a woman, a feminine thing)”.'
+    pt: 'Diga: “turca — e “da Alemanha — e “nós — e “estudantes — e “esta (mulher, coisa feminina)”.'
+  answer:
+    speaker: protagonist
+    text: تُرْكِيَّةٌ … مِنْ أَلْمانْيا … نَحْنُ … طُلّابٌ … هٰذِهِ
+  items:
+  - turkia
+  - min-almania
+  - nahnu
+  - tullab
+  - hadhihi
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “this (a man, a masculine thing) — and “my mother — and “my father — and “my name is — and “pleased to meet you”.'
+    pt: 'Diga: “este (homem, coisa masculina) — e “minha mãe — e “meu pai — e “meu nome é — e “muito prazer”.'
+  answer:
+    speaker: protagonist
+    text: هٰذا … أُمّي … أَبي … اِسْمي … تَشَرَّفْنا
+  items:
+  - hadha
+  - ummi
+  - abi
+  - ismi
+  - tasharrafna
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “come in / please (to a woman) — and “a student (woman) — and “a student (man) — and “and”.'
+    pt: 'Diga: “entre / por favor (a uma mulher) — e “uma estudante — e “um estudante — e “e”.'
+  answer:
+    speaker: protagonist
+    text: تَفَضَّلي … طالِبَةٌ … طالِبٌ … وَ
+  items:
+  - tafaddali
+  - taliba
+  - talib
+  - wa
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

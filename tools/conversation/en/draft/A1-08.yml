@@ -1,0 +1,403 @@
+# UNIT en A1-08 — written by AI (Claude) for Casus; expanded from src/A1-08.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-08
+level: A1
+number: 8
+protagonist: m
+title:
+  de: Zahlen
+situation:
+  de: Im Handyladen. Sie brauchen eine amerikanische Nummer.
+learn_lessons:
+- en-to-be
+culture: Phone numbers digit by digit
+new_items:
+- id: phone-number
+  text: a phone number
+  meaning:
+    de: eine Telefonnummer
+- id: whats-your
+  text: What's your …?
+  meaning:
+    de: Was ist Ihr / Ihre …?
+- id: zip-code
+  text: zip code
+  meaning:
+    de: Postleitzahl
+- id: how-old
+  text: How old are you?
+  meaning:
+    de: Wie alt sind Sie?
+- id: im-thirty
+  text: I'm thirty.
+  meaning:
+    de: Ich bin dreißig.
+- id: oh
+  text: oh (0)
+  meaning:
+    de: null (in Nummern)
+- id: twenty
+  text: twenty
+  meaning:
+    de: zwanzig
+- id: thirty
+  text: thirty
+  meaning:
+    de: dreißig
+- id: forty-dollars
+  text: forty dollars a month
+  meaning:
+    de: vierzig Dollar im Monat
+- id: can-you-repeat
+  text: Can you repeat that?
+  meaning:
+    de: Können Sie das wiederholen?
+reviews:
+- item: hello
+  from: A1-01
+- item: passport
+  from: A1-01
+- item: please
+  from: A1-01
+- item: here-you-are
+  from: A1-01
+- item: where-from
+  from: A1-01
+- item: im-from
+  from: A1-01
+- item: i-am
+  from: A1-01
+- item: why-here
+  from: A1-01
+- item: for-work
+  from: A1-01
+- item: welcome
+  from: A1-01
+- item: thank-you
+  from: A1-01
+- item: how-are-you
+  from: A1-01
+- item: good-thanks
+  from: A1-01
+- item: hi
+  from: A1-05
+- item: im
+  from: A1-05
+- item: what-do-you-do
+  from: A1-05
+- item: i-work
+  from: A1-05
+- item: in-the-lab
+  from: A1-05
+- item: im-a-biologist
+  from: A1-05
+- item: he-works
+  from: A1-05
+- item: she-works
+  from: A1-05
+- item: we
+  from: A1-05
+- item: we-work
+  from: A1-05
+- item: your-desk
+  from: A1-05
+- item: great
+  from: A1-05
+- item: are-you-new
+  from: A1-07
+- item: i-live
+  from: A1-07
+- item: on-the-floor
+  from: A1-07
+- item: im-lena
+  from: A1-07
+- item: she-is
+  from: A1-07
+- item: im-a-nurse
+  from: A1-07
+- item: at-the-hospital
+  from: A1-07
+- item: can-i-help
+  from: A1-07
+- item: thats-nice
+  from: A1-07
+- item: see-you
+  from: A1-07
+steps:
+- type: narrator
+  text:
+    de: Im Handyladen. Sie brauchen eine amerikanische Nummer. Hören Sie sich das Gespräch an; Sie müssen es noch nicht verstehen.
+- type: dialogue
+  lines:
+  - speaker: clerk
+    text: OK, what's your name?
+    meaning:
+      de: Okay, wie heißen Sie?
+  - speaker: protagonist
+    text: Jonas Weber. W-E-B-E-R.
+    meaning:
+      de: Jonas Weber. W-E-B-E-R.
+  - speaker: clerk
+    text: And your zip code?
+    meaning:
+      de: Und Ihre Postleitzahl?
+  - speaker: protagonist
+    text: Oh-two-one-four-four.
+    meaning:
+      de: Null-zwei-eins-vier-vier.
+  - speaker: clerk
+    text: Great. How old are you? For the contract.
+    meaning:
+      de: Gut. Wie alt sind Sie? Für den Vertrag.
+  - speaker: protagonist
+    text: I'm thirty.
+    meaning:
+      de: Ich bin dreißig.
+  - speaker: clerk
+    text: Your new number is six-one-seven, five-five-five, oh-one-two-oh.
+    meaning:
+      de: Ihre neue Nummer ist 617 555 0120.
+  - speaker: protagonist
+    text: Sorry, can you repeat that?
+    meaning:
+      de: Entschuldigung, können Sie das wiederholen?
+  - speaker: clerk
+    text: Six-one-seven, five-five-five, oh-one-two-oh. It's forty dollars a month.
+    meaning:
+      de: 617 555 0120. Es kostet vierzig Dollar im Monat.
+  - speaker: protagonist
+    text: OK. Thank you.
+    meaning:
+      de: Okay. Danke.
+- type: narrator
+  text:
+    de: 'Nummern sagt man Ziffer für Ziffer, die Null meist „oh“: 0120 ist „oh-one-two-oh“.'
+- type: prompt
+  ask:
+    de: Sagen Sie die Postleitzahl 02144.
+  answer:
+    speaker: protagonist
+    text: Oh-two-one-four-four.
+  items:
+  - oh
+- type: prompt
+  ask:
+    de: Fragen Sie nach der Postleitzahl.
+  answer:
+    speaker: protagonist
+    text: What's your zip code?
+  items:
+  - whats-your
+  - zip-code
+- type: prompt
+  ask:
+    de: Fragen Sie nach der Telefonnummer.
+  answer:
+    speaker: protagonist
+    text: What's your phone number?
+  items:
+  - whats-your
+  - phone-number
+- type: narrator
+  text:
+    de: 'Alter mit „be“, nicht mit „have“: „I''m thirty“ — nie „I have thirty years“.'
+- type: prompt
+  ask:
+    de: 'Fragen Sie: Wie alt sind Sie?'
+  answer:
+    speaker: protagonist
+    text: How old are you?
+  items:
+  - how-old
+- type: prompt
+  ask:
+    de: 'Antworten Sie: Ich bin dreißig.'
+  answer:
+    speaker: protagonist
+    text: I'm thirty.
+  items:
+  - im-thirty
+- type: narrator
+  text:
+    de: 'Zehner enden auf „-ty“: twenty, thirty, forty — „forty“ ohne u. „Thirteen“ und „thirty“ unterscheidet die Betonung: thir-TEEN, THIR-ty.'
+- type: prompt
+  ask:
+    de: 'Zählen Sie: zwanzig, dreißig.'
+  answer:
+    speaker: protagonist
+    text: Twenty, thirty.
+  items:
+  - twenty
+  - thirty
+- type: prompt
+  ask:
+    de: 'Sagen Sie: vierzig Dollar im Monat.'
+  answer:
+    speaker: protagonist
+    text: Forty dollars a month.
+  items:
+  - forty-dollars
+- type: prompt
+  ask:
+    de: Sie haben die Nummer nicht verstanden. Bitten Sie um Wiederholung.
+  answer:
+    speaker: protagonist
+    text: Can you repeat that?
+  items:
+  - can-you-repeat
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „eine Telefonnummer“.'
+  answer:
+    speaker: protagonist
+    text: a phone number
+  items:
+  - phone-number
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Postleitzahl“.'
+  answer:
+    speaker: protagonist
+    text: zip code
+  items:
+  - zip-code
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Wie alt sind Sie?“.'
+  answer:
+    speaker: protagonist
+    text: How old are you?
+  items:
+  - how-old
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Ich bin dreißig.“.'
+  answer:
+    speaker: protagonist
+    text: I'm thirty.
+  items:
+  - im-thirty
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „null (in Nummern)“.'
+  answer:
+    speaker: protagonist
+    text: oh (0)
+  items:
+  - oh
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „zwanzig“.'
+  answer:
+    speaker: protagonist
+    text: twenty
+  items:
+  - twenty
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „dreißig“.'
+  answer:
+    speaker: protagonist
+    text: thirty
+  items:
+  - thirty
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „vierzig Dollar im Monat“.'
+  answer:
+    speaker: protagonist
+    text: forty dollars a month
+  items:
+  - forty-dollars
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Können Sie das wiederholen?“.'
+  answer:
+    speaker: protagonist
+    text: Can you repeat that?
+  items:
+  - can-you-repeat
+- type: narrator
+  text:
+    de: Jetzt einiges aus früheren Einheiten, in dieser neuen Situation.
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Sind Sie neu hier?“ — und „ich wohne …“ — und „im ersten Stock“ — und „Ich bin Lena.“ — und „sie ist“ — und „Ich bin Krankenschwester / Pflegerin.“ — und „im Krankenhaus“.'
+  answer:
+    speaker: protagonist
+    text: Are you new here? … I live … … on the second floor … I'm Lena. … she's / she is … I'm a nurse. … at the hospital
+  items:
+  - are-you-new
+  - i-live
+  - on-the-floor
+  - im-lena
+  - she-is
+  - im-a-nurse
+  - at-the-hospital
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Kann ich Ihnen helfen?“ — und „Das ist sehr nett.“ — und „Bis dann!“ — und „Hallo. (locker)“ — und „ich bin …“ — und „Was machen Sie beruflich?“ — und „ich arbeite …“.'
+  answer:
+    speaker: protagonist
+    text: Can I help you? … That's very nice. … See you! … Hi. … I'm … … What do you do? … I work …
+  items:
+  - can-i-help
+  - thats-nice
+  - see-you
+  - hi
+  - im
+  - what-do-you-do
+  - i-work
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „im Labor“ — und „Ich bin Biologin / Biologe.“ — und „er arbeitet“ — und „sie arbeitet“ — und „wir“ — und „wir arbeiten zusammen“ — und „Ihr Schreibtisch / Arbeitsplatz“.'
+  answer:
+    speaker: protagonist
+    text: in the lab … I'm a biologist. … he works … she works … we … we work together … your desk
+  items:
+  - in-the-lab
+  - im-a-biologist
+  - he-works
+  - she-works
+  - we
+  - we-work
+  - your-desk
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Super.“ — und „Hallo. / Guten Tag.“ — und „Ihr Reisepass“ — und „bitte“ — und „Bitte schön. (beim Geben)“ — und „Woher kommen Sie?“ — und „Ich komme aus Deutschland.“.'
+  answer:
+    speaker: protagonist
+    text: Great. … Hello. … your passport … please … Here you are. … Where are you from? … I'm from Germany.
+  items:
+  - great
+  - hello
+  - passport
+  - please
+  - here-you-are
+  - where-from
+  - im-from
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „ich bin“ — und „Warum sind Sie hier?“ — und „zum Arbeiten / beruflich“ — und „Willkommen in den Vereinigten Staaten.“ — und „Danke.“ — und „Wie geht''s? (als Gruß)“ — und „Gut, danke.“.'
+  answer:
+    speaker: protagonist
+    text: I am / I'm … Why are you here? … for work … Welcome to the United States. … Thank you. … How are you? … Good, thanks.
+  items:
+  - i-am
+  - why-here
+  - for-work
+  - welcome
+  - thank-you
+  - how-are-you
+  - good-thanks
+- type: narrator
+  text:
+    de: Hören Sie das Gespräch noch einmal. Jetzt verstehen Sie es.
+- type: dialogue
+  again: true
+- type: selfcheck

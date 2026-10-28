@@ -1,0 +1,402 @@
+# UNIT en A1-09 — written by AI (Claude) for Casus; expanded from src/A1-09.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-09
+level: A1
+number: 9
+protagonist: f
+title:
+  de: Im Supermarkt
+situation:
+  de: Ihr erster Einkauf im großen Supermarkt.
+learn_lessons:
+- en-articles
+- en-there-is
+culture: Paper or plastic
+new_items:
+- id: excuse-me
+  text: Excuse me.
+  meaning:
+    de: Entschuldigung. (um anzusprechen)
+- id: where-is
+  text: Where is …?
+  meaning:
+    de: Wo ist …?
+- id: where-are
+  text: Where are …?
+  meaning:
+    de: Wo sind …?
+- id: the-milk
+  text: the milk
+  meaning:
+    de: die Milch
+- id: some-bread
+  text: some bread
+  meaning:
+    de: etwas Brot / Brot
+- id: eggs
+  text: eggs
+  meaning:
+    de: Eier
+- id: aisle-five
+  text: in aisle five
+  meaning:
+    de: in Gang fünf
+- id: over-there
+  text: over there
+  meaning:
+    de: da drüben
+- id: i-need
+  text: I need …
+  meaning:
+    de: ich brauche …
+- id: bag
+  text: Do you need a bag?
+  meaning:
+    de: Brauchen Sie eine Tüte?
+reviews:
+- item: are-you
+  from: A1-02
+- item: yes-i-am
+  from: A1-02
+- item: nice-to-meet-you
+  from: A1-02
+- item: my-name-is
+  from: A1-02
+- item: this-is
+  from: A1-02
+- item: your-key
+  from: A1-02
+- item: my
+  from: A1-02
+- item: your
+  from: A1-02
+- item: mrs-rivera
+  from: A1-02
+- item: come-in
+  from: A1-02
+- item: thanks
+  from: A1-02
+- item: do-you-speak
+  from: A1-06
+- item: a-little
+  from: A1-06
+- item: i-speak
+  from: A1-06
+- item: call-me
+  from: A1-06
+- item: ok-linda
+  from: A1-06
+- item: do-you-like
+  from: A1-06
+- item: i-like-it
+  from: A1-06
+- item: i-dont-know
+  from: A1-06
+- item: no-i-dont
+  from: A1-06
+- item: yet
+  from: A1-06
+- item: very-much
+  from: A1-06
+- item: phone-number
+  from: A1-08
+- item: whats-your
+  from: A1-08
+- item: zip-code
+  from: A1-08
+- item: how-old
+  from: A1-08
+- item: im-thirty
+  from: A1-08
+- item: oh
+  from: A1-08
+- item: twenty
+  from: A1-08
+- item: thirty
+  from: A1-08
+- item: forty-dollars
+  from: A1-08
+- item: can-you-repeat
+  from: A1-08
+steps:
+- type: narrator
+  text:
+    de: Ihr erster Einkauf im großen Supermarkt. Hören Sie sich das Gespräch an; Sie müssen es noch nicht verstehen.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Excuse me. Where is the milk?
+    meaning:
+      de: Entschuldigung. Wo ist die Milch?
+  - speaker: clerk
+    text: The milk is in aisle five.
+    meaning:
+      de: Die Milch ist in Gang fünf.
+  - speaker: protagonist
+    text: Thanks. And where are the eggs?
+    meaning:
+      de: Danke. Und wo sind die Eier?
+  - speaker: clerk
+    text: The eggs are over there, next to the milk.
+    meaning:
+      de: Die Eier sind da drüben, neben der Milch.
+  - speaker: protagonist
+    text: I need some bread too.
+    meaning:
+      de: Ich brauche auch Brot.
+  - speaker: clerk
+    text: There's bread in aisle two.
+    meaning:
+      de: Brot gibt es in Gang zwei.
+  - speaker: clerk
+    text: Do you need a bag?
+    meaning:
+      de: Brauchen Sie eine Tüte?
+  - speaker: protagonist
+    text: No, thanks. I have a bag.
+    meaning:
+      de: Nein, danke. Ich habe eine Tasche.
+- type: prompt
+  ask:
+    de: Sprechen Sie einen Mitarbeiter an.
+  answer:
+    speaker: protagonist
+    text: Excuse me.
+  items:
+  - excuse-me
+- type: prompt
+  ask:
+    de: 'Fragen Sie: Wo ist die Milch?'
+  answer:
+    speaker: protagonist
+    text: Where is the milk?
+  items:
+  - where-is
+  - the-milk
+- type: narrator
+  text:
+    de: 'Eins: „Where is …?“, mehrere: „Where are …?“ — „eggs“ ist Plural.'
+- type: prompt
+  ask:
+    de: 'Fragen Sie: Wo sind die Eier?'
+  answer:
+    speaker: protagonist
+    text: Where are the eggs?
+  items:
+  - where-are
+  - eggs
+- type: prompt
+  ask:
+    de: 'Antworten Sie für ihn: in Gang fünf.'
+  answer:
+    speaker: protagonist
+    text: In aisle five.
+  items:
+  - aisle-five
+- type: prompt
+  ask:
+    de: 'Er zeigt: da drüben. Sagen Sie es nach.'
+  answer:
+    speaker: protagonist
+    text: Over there.
+  items:
+  - over-there
+- type: narrator
+  text:
+    de: '„Some“ für eine unbestimmte Menge: „some bread“, „some milk“ — Brot und Milch zählt man nicht, also kein „a“.'
+- type: prompt
+  ask:
+    de: 'Sagen Sie: Ich brauche Brot.'
+  answer:
+    speaker: protagonist
+    text: I need some bread.
+  items:
+  - i-need
+  - some-bread
+- type: prompt
+  ask:
+    de: 'An der Kasse: Brauchen Sie eine Tüte? Fragen Sie selbst.'
+  answer:
+    speaker: protagonist
+    text: Do you need a bag?
+  items:
+  - bag
+- type: prompt
+  ask:
+    de: 'Antworten Sie: Nein, danke.'
+  answer:
+    speaker: protagonist
+    text: No, thanks.
+  items:
+  - thanks
+- type: narrator
+  text:
+    de: „Excuse me“ spricht jemanden an oder bittet um Platz; „Sorry“ entschuldigt einen Fehler.
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Entschuldigung. (um anzusprechen)“.'
+  answer:
+    speaker: protagonist
+    text: Excuse me.
+  items:
+  - excuse-me
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Wo ist …?“.'
+  answer:
+    speaker: protagonist
+    text: Where is …?
+  items:
+  - where-is
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Wo sind …?“.'
+  answer:
+    speaker: protagonist
+    text: Where are …?
+  items:
+  - where-are
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „die Milch“.'
+  answer:
+    speaker: protagonist
+    text: the milk
+  items:
+  - the-milk
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „etwas Brot / Brot“.'
+  answer:
+    speaker: protagonist
+    text: some bread
+  items:
+  - some-bread
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Eier“.'
+  answer:
+    speaker: protagonist
+    text: eggs
+  items:
+  - eggs
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „in Gang fünf“.'
+  answer:
+    speaker: protagonist
+    text: in aisle five
+  items:
+  - aisle-five
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „da drüben“.'
+  answer:
+    speaker: protagonist
+    text: over there
+  items:
+  - over-there
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „ich brauche …“.'
+  answer:
+    speaker: protagonist
+    text: I need …
+  items:
+  - i-need
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Brauchen Sie eine Tüte?“.'
+  answer:
+    speaker: protagonist
+    text: Do you need a bag?
+  items:
+  - bag
+- type: narrator
+  text:
+    de: Jetzt einiges aus früheren Einheiten, in dieser neuen Situation.
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „eine Telefonnummer“ — und „Was ist Ihr / Ihre …?“ — und „Postleitzahl“ — und „Wie alt sind Sie?“ — und „Ich bin dreißig.“ — und „null (in Nummern)“.'
+  answer:
+    speaker: protagonist
+    text: a phone number … What's your …? … zip code … How old are you? … I'm thirty. … oh (0)
+  items:
+  - phone-number
+  - whats-your
+  - zip-code
+  - how-old
+  - im-thirty
+  - oh
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „zwanzig“ — und „dreißig“ — und „vierzig Dollar im Monat“ — und „Können Sie das wiederholen?“ — und „Sprechen Sie …?“ — und „ein bisschen“.'
+  answer:
+    speaker: protagonist
+    text: twenty … thirty … forty dollars a month … Can you repeat that? … Do you speak …? … a little
+  items:
+  - twenty
+  - thirty
+  - forty-dollars
+  - can-you-repeat
+  - do-you-speak
+  - a-little
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Ich spreche Deutsch und Englisch.“ — und „Nennen Sie mich Linda.“ — und „Okay, Linda.“ — und „Mögen Sie …? / Gefällt Ihnen …?“ — und „Es gefällt mir.“ — und „Ich weiß nicht.“.'
+  answer:
+    speaker: protagonist
+    text: I speak German and English. … Call me Linda. … OK, Linda. … Do you like …? … I like it. … I don't know.
+  items:
+  - i-speak
+  - call-me
+  - ok-linda
+  - do-you-like
+  - i-like-it
+  - i-dont-know
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Nein. (kurze Antwort auf eine do-Frage)“ — und „noch (in Fragen und Verneinungen)“ — und „sehr“ — und „Sind Sie …?“ — und „Ja (, bin ich).“ — und „Freut mich.“.'
+  answer:
+    speaker: protagonist
+    text: No, I don't. … yet … very much … Are you …? … Yes, I am. … Nice to meet you.
+  items:
+  - no-i-dont
+  - yet
+  - very-much
+  - are-you
+  - yes-i-am
+  - nice-to-meet-you
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Ich heiße …“ — und „Das ist …“ — und „Ihr Schlüssel“ — und „mein, meine“ — und „dein, Ihr“ — und „Frau Rivera“.'
+  answer:
+    speaker: protagonist
+    text: My name is … … This is … … your key … my … your … Mrs. Rivera
+  items:
+  - my-name-is
+  - this-is
+  - your-key
+  - my
+  - your
+  - mrs-rivera
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Kommen Sie herein.“.'
+  answer:
+    speaker: protagonist
+    text: Come in.
+  items:
+  - come-in
+- type: narrator
+  text:
+    de: Hören Sie das Gespräch noch einmal. Jetzt verstehen Sie es.
+- type: dialogue
+  again: true
+- type: selfcheck

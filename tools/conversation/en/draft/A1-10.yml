@@ -1,0 +1,420 @@
+# UNIT en A1-10 — written by AI (Claude) for Casus; expanded from src/A1-10.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-10
+level: A1
+number: 10
+protagonist: m
+title:
+  de: Die U-Bahn
+situation:
+  de: Die Station Davis, die Rote Linie. Sie wollen zur Park Street.
+learn_lessons:
+- en-prepositions
+- en-present-simple
+culture: The T
+new_items:
+- id: which-line
+  text: Which line …?
+  meaning:
+    de: Welche Linie …?
+- id: the-red-line
+  text: the Red Line
+  meaning:
+    de: die Rote Linie
+- id: to-park-street
+  text: to Park Street
+  meaning:
+    de: zur Park Street
+- id: a-ticket
+  text: a ticket
+  meaning:
+    de: eine Fahrkarte
+- id: get-off
+  text: get off at …
+  meaning:
+    de: aussteigen an …
+- id: how-many-stops
+  text: How many stops?
+  meaning:
+    de: Wie viele Haltestellen?
+- id: on-the-train
+  text: on the train
+  meaning:
+    de: im Zug
+- id: this-train-goes
+  text: Does this train go to …?
+  meaning:
+    de: Fährt dieser Zug nach …?
+- id: yes-it-does
+  text: Yes, it does.
+  meaning:
+    de: Ja (, tut er).
+- id: youre-welcome
+  text: You're welcome.
+  meaning:
+    de: Gern geschehen.
+reviews:
+- item: there-is
+  from: A1-03
+- item: there-are
+  from: A1-03
+- item: a-bedroom
+  from: A1-03
+- item: a-kitchen
+  from: A1-03
+- item: an
+  from: A1-03
+- item: an-oven
+  from: A1-03
+- item: two-windows
+  from: A1-03
+- item: big
+  from: A1-03
+- item: small
+  from: A1-03
+- item: the-bathroom
+  from: A1-03
+- item: is-there
+  from: A1-03
+- item: apartment
+  from: A1-03
+- item: are-you-new
+  from: A1-07
+- item: i-live
+  from: A1-07
+- item: on-the-floor
+  from: A1-07
+- item: im-lena
+  from: A1-07
+- item: she-is
+  from: A1-07
+- item: im-a-nurse
+  from: A1-07
+- item: at-the-hospital
+  from: A1-07
+- item: can-i-help
+  from: A1-07
+- item: thats-nice
+  from: A1-07
+- item: see-you
+  from: A1-07
+- item: excuse-me
+  from: A1-09
+- item: where-is
+  from: A1-09
+- item: where-are
+  from: A1-09
+- item: the-milk
+  from: A1-09
+- item: some-bread
+  from: A1-09
+- item: eggs
+  from: A1-09
+- item: aisle-five
+  from: A1-09
+- item: over-there
+  from: A1-09
+- item: i-need
+  from: A1-09
+- item: bag
+  from: A1-09
+- item: we
+  from: A1-05
+steps:
+- type: narrator
+  text:
+    de: Die Station Davis, die Rote Linie. Sie wollen zur Park Street. Hören Sie sich das Gespräch an; Sie müssen es noch nicht verstehen.
+- type: dialogue
+  lines:
+  - speaker: protagonist
+    text: Excuse me. Which line goes to Park Street?
+    meaning:
+      de: Entschuldigung. Welche Linie fährt zur Park Street?
+  - speaker: jamal
+    text: Jonas! Hey! The Red Line. I go there too.
+    meaning:
+      de: Jonas! Hey! Die Rote Linie. Da fahre ich auch hin.
+  - speaker: protagonist
+    text: Great! Do I need a ticket?
+    meaning:
+      de: Super! Brauche ich eine Fahrkarte?
+  - speaker: jamal
+    text: You need a CharlieCard. Over there.
+    meaning:
+      de: Du brauchst eine CharlieCard. Da drüben.
+  - speaker: protagonist
+    text: Does this train go to Park Street?
+    meaning:
+      de: Fährt dieser Zug zur Park Street?
+  - speaker: jamal
+    text: Yes, it does. Come on!
+    meaning:
+      de: Ja. Komm!
+  - speaker: protagonist
+    text: How many stops?
+    meaning:
+      de: Wie viele Haltestellen?
+  - speaker: jamal
+    text: Six. We get off at Park Street.
+    meaning:
+      de: Sechs. Wir steigen an der Park Street aus.
+  - speaker: protagonist
+    text: Thanks, Jamal.
+    meaning:
+      de: Danke, Jamal.
+  - speaker: jamal
+    text: You're welcome.
+    meaning:
+      de: Gern geschehen.
+- type: prompt
+  ask:
+    de: 'Fragen Sie: Welche Linie fährt zur Park Street?'
+  answer:
+    speaker: protagonist
+    text: Which line goes to Park Street?
+  items:
+  - which-line
+  - to-park-street
+- type: narrator
+  text:
+    de: '„goes“ — wieder das -s bei he, she, it: die Linie, der Zug = it.'
+- type: prompt
+  ask:
+    de: 'Antworten Sie: die Rote Linie.'
+  answer:
+    speaker: protagonist
+    text: The Red Line.
+  items:
+  - the-red-line
+- type: prompt
+  ask:
+    de: 'Fragen Sie: Fährt dieser Zug zur Park Street?'
+  answer:
+    speaker: protagonist
+    text: Does this train go to Park Street?
+  items:
+  - this-train-goes
+- type: narrator
+  text:
+    de: 'In der Frage trägt „does“ das -s: „Does this train go …?“ — nicht „goes“.'
+- type: prompt
+  ask:
+    de: 'Antworten Sie kurz: ja.'
+  answer:
+    speaker: protagonist
+    text: Yes, it does.
+  items:
+  - yes-it-does
+- type: prompt
+  ask:
+    de: Fragen Sie nach der Zahl der Haltestellen.
+  answer:
+    speaker: protagonist
+    text: How many stops?
+  items:
+  - how-many-stops
+- type: prompt
+  ask:
+    de: 'Sagen Sie: Wir steigen an der Park Street aus.'
+  answer:
+    speaker: protagonist
+    text: We get off at Park Street.
+  items:
+  - we
+  - get-off
+- type: prompt
+  ask:
+    de: 'Fragen Sie: Brauche ich eine Fahrkarte?'
+  answer:
+    speaker: protagonist
+    text: Do I need a ticket?
+  items:
+  - i-need
+  - a-ticket
+- type: prompt
+  ask:
+    de: 'Er bedankt sich. Antworten Sie: Gern geschehen.'
+  answer:
+    speaker: protagonist
+    text: You're welcome.
+  items:
+  - youre-welcome
+- type: narrator
+  text:
+    de: „on the train“, „on the bus“ — in Verkehrsmitteln steht „on“, nicht „in“.
+- type: prompt
+  ask:
+    de: 'Sagen Sie: Ich bin im Zug.'
+  answer:
+    speaker: protagonist
+    text: I'm on the train.
+  items:
+  - on-the-train
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Welche Linie …?“.'
+  answer:
+    speaker: protagonist
+    text: Which line …?
+  items:
+  - which-line
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „die Rote Linie“.'
+  answer:
+    speaker: protagonist
+    text: the Red Line
+  items:
+  - the-red-line
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „zur Park Street“.'
+  answer:
+    speaker: protagonist
+    text: to Park Street
+  items:
+  - to-park-street
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „eine Fahrkarte“.'
+  answer:
+    speaker: protagonist
+    text: a ticket
+  items:
+  - a-ticket
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „aussteigen an …“.'
+  answer:
+    speaker: protagonist
+    text: get off at …
+  items:
+  - get-off
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Wie viele Haltestellen?“.'
+  answer:
+    speaker: protagonist
+    text: How many stops?
+  items:
+  - how-many-stops
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „im Zug“.'
+  answer:
+    speaker: protagonist
+    text: on the train
+  items:
+  - on-the-train
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Fährt dieser Zug nach …?“.'
+  answer:
+    speaker: protagonist
+    text: Does this train go to …?
+  items:
+  - this-train-goes
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Ja (, tut er).“.'
+  answer:
+    speaker: protagonist
+    text: Yes, it does.
+  items:
+  - yes-it-does
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Gern geschehen.“.'
+  answer:
+    speaker: protagonist
+    text: You're welcome.
+  items:
+  - youre-welcome
+- type: narrator
+  text:
+    de: Jetzt einiges aus früheren Einheiten, in dieser neuen Situation.
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Entschuldigung. (um anzusprechen)“ — und „Wo ist …?“ — und „Wo sind …?“ — und „die Milch“ — und „etwas Brot / Brot“ — und „Eier“.'
+  answer:
+    speaker: protagonist
+    text: Excuse me. … Where is …? … Where are …? … the milk … some bread … eggs
+  items:
+  - excuse-me
+  - where-is
+  - where-are
+  - the-milk
+  - some-bread
+  - eggs
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „in Gang fünf“ — und „da drüben“ — und „Brauchen Sie eine Tüte?“ — und „Sind Sie neu hier?“ — und „ich wohne …“ — und „im ersten Stock“.'
+  answer:
+    speaker: protagonist
+    text: in aisle five … over there … Do you need a bag? … Are you new here? … I live … … on the second floor
+  items:
+  - aisle-five
+  - over-there
+  - bag
+  - are-you-new
+  - i-live
+  - on-the-floor
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Ich bin Lena.“ — und „sie ist“ — und „Ich bin Krankenschwester / Pflegerin.“ — und „im Krankenhaus“ — und „Kann ich Ihnen helfen?“ — und „Das ist sehr nett.“.'
+  answer:
+    speaker: protagonist
+    text: I'm Lena. … she's / she is … I'm a nurse. … at the hospital … Can I help you? … That's very nice.
+  items:
+  - im-lena
+  - she-is
+  - im-a-nurse
+  - at-the-hospital
+  - can-i-help
+  - thats-nice
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Bis dann!“ — und „Es gibt … / Da ist … (eins)“ — und „Es gibt … / Da sind … (mehrere)“ — und „ein Schlafzimmer“ — und „eine Küche“ — und „ein, eine (vor Vokal)“.'
+  answer:
+    speaker: protagonist
+    text: See you! … There is / There's … … There are … … a bedroom … a kitchen … an
+  items:
+  - see-you
+  - there-is
+  - there-are
+  - a-bedroom
+  - a-kitchen
+  - an
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „ein Backofen“ — und „zwei Fenster“ — und „groß“ — und „klein“ — und „das Bad“ — und „Gibt es …?“.'
+  answer:
+    speaker: protagonist
+    text: an oven … two windows … big … small … the bathroom … Is there …?
+  items:
+  - an-oven
+  - two-windows
+  - big
+  - small
+  - the-bathroom
+  - is-there
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „die Wohnung“.'
+  answer:
+    speaker: protagonist
+    text: the apartment
+  items:
+  - apartment
+- type: narrator
+  text:
+    de: Hören Sie das Gespräch noch einmal. Jetzt verstehen Sie es.
+- type: dialogue
+  again: true
+- type: selfcheck

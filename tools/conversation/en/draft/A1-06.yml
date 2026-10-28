@@ -1,0 +1,398 @@
+# UNIT en A1-06 — written by AI (Claude) for Casus; expanded from src/A1-06.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-06
+level: A1
+number: 6
+protagonist: m
+title:
+  de: Die Chefin
+situation:
+  de: Dr. Chen, die Leiterin des Labors, kommt an Ihren Platz.
+learn_lessons:
+- en-present-simple
+- en-to-be
+culture: First names with the boss
+new_items:
+- id: do-you-speak
+  text: Do you speak …?
+  meaning:
+    de: Sprechen Sie …?
+- id: a-little
+  text: a little
+  meaning:
+    de: ein bisschen
+- id: i-speak
+  text: I speak German and English.
+  meaning:
+    de: Ich spreche Deutsch und Englisch.
+- id: call-me
+  text: Call me Linda.
+  meaning:
+    de: Nennen Sie mich Linda.
+- id: ok-linda
+  text: OK, Linda.
+  meaning:
+    de: Okay, Linda.
+- id: do-you-like
+  text: Do you like …?
+  meaning:
+    de: Mögen Sie …? / Gefällt Ihnen …?
+- id: i-like-it
+  text: I like it.
+  meaning:
+    de: Es gefällt mir.
+- id: i-dont-know
+  text: I don't know.
+  meaning:
+    de: Ich weiß nicht.
+- id: no-i-dont
+  text: No, I don't.
+  meaning:
+    de: Nein. (kurze Antwort auf eine do-Frage)
+- id: yet
+  text: yet
+  meaning:
+    de: noch (in Fragen und Verneinungen)
+- id: very-much
+  text: very much
+  meaning:
+    de: sehr
+reviews:
+- item: there-is
+  from: A1-03
+- item: there-are
+  from: A1-03
+- item: a-bedroom
+  from: A1-03
+- item: a-kitchen
+  from: A1-03
+- item: an
+  from: A1-03
+- item: an-oven
+  from: A1-03
+- item: two-windows
+  from: A1-03
+- item: big
+  from: A1-03
+- item: small
+  from: A1-03
+- item: the-bathroom
+  from: A1-03
+- item: is-there
+  from: A1-03
+- item: apartment
+  from: A1-03
+- item: hi
+  from: A1-05
+- item: im
+  from: A1-05
+- item: what-do-you-do
+  from: A1-05
+- item: i-work
+  from: A1-05
+- item: in-the-lab
+  from: A1-05
+- item: im-a-biologist
+  from: A1-05
+- item: he-works
+  from: A1-05
+- item: she-works
+  from: A1-05
+- item: we
+  from: A1-05
+- item: we-work
+  from: A1-05
+- item: your-desk
+  from: A1-05
+- item: great
+  from: A1-05
+steps:
+- type: narrator
+  text:
+    de: Dr. Chen, die Leiterin des Labors, kommt an Ihren Platz. Hören Sie sich das Gespräch an; Sie müssen es noch nicht verstehen.
+- type: dialogue
+  lines:
+  - speaker: chen
+    text: Good morning. You're Jonas, right? I'm Dr. Chen.
+    meaning:
+      de: Guten Morgen. Sie sind Jonas, oder? Ich bin Dr. Chen.
+  - speaker: protagonist
+    text: Good morning, Dr. Chen. Nice to meet you.
+    meaning:
+      de: Guten Morgen, Dr. Chen. Freut mich.
+  - speaker: chen
+    text: Please, call me Linda. Do you speak Chinese?
+    meaning:
+      de: Bitte, nennen Sie mich Linda. Sprechen Sie Chinesisch?
+  - speaker: protagonist
+    text: No, I don't. I speak German and English. A little Spanish.
+    meaning:
+      de: Nein. Ich spreche Deutsch und Englisch. Ein bisschen Spanisch.
+  - speaker: chen
+    text: Great. Do you like Boston?
+    meaning:
+      de: Super. Gefällt Ihnen Boston?
+  - speaker: protagonist
+    text: I like it very much. But I don't know the city yet.
+    meaning:
+      de: Sehr. Aber ich kenne die Stadt noch nicht.
+  - speaker: chen
+    text: You'll learn. Welcome to the team.
+    meaning:
+      de: Das kommt noch. Willkommen im Team.
+  - speaker: protagonist
+    text: Thank you, Dr. … Linda.
+    meaning:
+      de: Danke, Dr. … Linda.
+- type: narrator
+  text:
+    de: 'Fragen mit „do“: „Do you speak English?“ Das Verb bleibt hinten; „do“ macht die Frage. Kurze Antwort: „Yes, I do.“ / „No, I don''t.“'
+- type: prompt
+  ask:
+    de: 'Fragen Sie: Sprechen Sie Deutsch?'
+  answer:
+    speaker: protagonist
+    text: Do you speak German?
+  items:
+  - do-you-speak
+- type: prompt
+  ask:
+    de: Antworten Sie kurz mit nein.
+  answer:
+    speaker: protagonist
+    text: No, I don't.
+  items:
+  - no-i-dont
+- type: prompt
+  ask:
+    de: 'Sagen Sie, welche Sprachen Sie sprechen: Deutsch und Englisch.'
+  answer:
+    speaker: protagonist
+    text: I speak German and English.
+  items:
+  - i-speak
+- type: prompt
+  ask:
+    de: 'Und Spanisch: ein bisschen.'
+  answer:
+    speaker: protagonist
+    text: A little Spanish.
+  items:
+  - a-little
+- type: prompt
+  ask:
+    de: 'Fragen Sie: Gefällt Ihnen Boston?'
+  answer:
+    speaker: protagonist
+    text: Do you like Boston?
+  items:
+  - do-you-like
+- type: prompt
+  ask:
+    de: 'Antworten Sie: Es gefällt mir sehr.'
+  answer:
+    speaker: protagonist
+    text: I like it very much.
+  items:
+  - i-like-it
+  - very-much
+- type: narrator
+  text:
+    de: 'Verneinung ebenso mit „do“: „I don''t know“ — nie „I know not“. „Yet“ am Satzende heißt hier „noch nicht“.'
+- type: prompt
+  ask:
+    de: 'Sagen Sie: Ich weiß nicht.'
+  answer:
+    speaker: protagonist
+    text: I don't know.
+  items:
+  - i-dont-know
+- type: prompt
+  ask:
+    de: 'Sagen Sie: Ich kenne die Stadt noch nicht.'
+  answer:
+    speaker: protagonist
+    text: I don't know the city yet.
+  items:
+  - i-dont-know
+  - yet
+- type: narrator
+  text:
+    de: '„Call me Linda“: Sie bietet den Vornamen an. Danach weiter „Dr. Chen“ zu sagen, wirkt in den USA steif, nicht höflich.'
+- type: prompt
+  ask:
+    de: 'Sie sagt „Call me Linda“. Antworten Sie: Okay, Linda.'
+  answer:
+    speaker: protagonist
+    text: OK, Linda.
+  items:
+  - ok-linda
+- type: prompt
+  ask:
+    de: 'Bieten Sie selbst den Vornamen an: Nennen Sie mich Jonas.'
+  answer:
+    speaker: protagonist
+    text: Call me Jonas.
+  items:
+  - call-me
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Sprechen Sie …?“.'
+  answer:
+    speaker: protagonist
+    text: Do you speak …?
+  items:
+  - do-you-speak
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „ein bisschen“.'
+  answer:
+    speaker: protagonist
+    text: a little
+  items:
+  - a-little
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Ich spreche Deutsch und Englisch.“.'
+  answer:
+    speaker: protagonist
+    text: I speak German and English.
+  items:
+  - i-speak
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Nennen Sie mich Linda.“.'
+  answer:
+    speaker: protagonist
+    text: Call me Linda.
+  items:
+  - call-me
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Okay, Linda.“.'
+  answer:
+    speaker: protagonist
+    text: OK, Linda.
+  items:
+  - ok-linda
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Mögen Sie …? / Gefällt Ihnen …?“.'
+  answer:
+    speaker: protagonist
+    text: Do you like …?
+  items:
+  - do-you-like
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Es gefällt mir.“.'
+  answer:
+    speaker: protagonist
+    text: I like it.
+  items:
+  - i-like-it
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Nein. (kurze Antwort auf eine do-Frage)“.'
+  answer:
+    speaker: protagonist
+    text: No, I don't.
+  items:
+  - no-i-dont
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „noch (in Fragen und Verneinungen)“.'
+  answer:
+    speaker: protagonist
+    text: yet
+  items:
+  - yet
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „sehr“.'
+  answer:
+    speaker: protagonist
+    text: very much
+  items:
+  - very-much
+- type: narrator
+  text:
+    de: Jetzt einiges aus früheren Einheiten, in dieser neuen Situation.
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Hallo. (locker)“ — und „ich bin …“ — und „Was machen Sie beruflich?“ — und „ich arbeite …“.'
+  answer:
+    speaker: protagonist
+    text: Hi. … I'm … … What do you do? … I work …
+  items:
+  - hi
+  - im
+  - what-do-you-do
+  - i-work
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „im Labor“ — und „Ich bin Biologin / Biologe.“ — und „er arbeitet“ — und „sie arbeitet“.'
+  answer:
+    speaker: protagonist
+    text: in the lab … I'm a biologist. … he works … she works
+  items:
+  - in-the-lab
+  - im-a-biologist
+  - he-works
+  - she-works
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „wir“ — und „wir arbeiten zusammen“ — und „Ihr Schreibtisch / Arbeitsplatz“ — und „Super.“.'
+  answer:
+    speaker: protagonist
+    text: we … we work together … your desk … Great.
+  items:
+  - we
+  - we-work
+  - your-desk
+  - great
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Es gibt … / Da ist … (eins)“ — und „Es gibt … / Da sind … (mehrere)“ — und „ein Schlafzimmer“ — und „eine Küche“.'
+  answer:
+    speaker: protagonist
+    text: There is / There's … … There are … … a bedroom … a kitchen
+  items:
+  - there-is
+  - there-are
+  - a-bedroom
+  - a-kitchen
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „ein, eine (vor Vokal)“ — und „ein Backofen“ — und „zwei Fenster“ — und „groß“.'
+  answer:
+    speaker: protagonist
+    text: an … an oven … two windows … big
+  items:
+  - an
+  - an-oven
+  - two-windows
+  - big
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „klein“ — und „das Bad“ — und „Gibt es …?“ — und „die Wohnung“.'
+  answer:
+    speaker: protagonist
+    text: small … the bathroom … Is there …? … the apartment
+  items:
+  - small
+  - the-bathroom
+  - is-there
+  - apartment
+- type: narrator
+  text:
+    de: Hören Sie das Gespräch noch einmal. Jetzt verstehen Sie es.
+- type: dialogue
+  again: true
+- type: selfcheck
