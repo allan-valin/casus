@@ -1,0 +1,463 @@
+# UNIT en A1-04 — written by AI (Claude) for Casus; expanded from src/A1-04.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-04
+level: A1
+number: 4
+protagonist: m
+title:
+  de: Der Coffeeshop
+situation:
+  de: Tonys Café an der Ecke, am ersten Morgen.
+learn_lessons:
+- en-can
+- en-articles
+culture: Tipping at the counter
+new_items:
+- id: good-morning
+  text: Good morning.
+  meaning:
+    de: Guten Morgen.
+- id: what-can-i-get
+  text: What can I get you?
+  meaning:
+    de: Was darf's sein?
+- id: can-i-have
+  text: Can I have …?
+  meaning:
+    de: Kann ich … haben? / Ich hätte gern …
+- id: a-coffee
+  text: a coffee
+  meaning:
+    de: einen Kaffee
+- id: small-medium-large
+  text: small, medium or large
+  meaning:
+    de: klein, mittel oder groß
+- id: medium
+  text: a medium
+  meaning:
+    de: einen mittleren
+- id: for-here
+  text: for here
+  meaning:
+    de: zum Hiertrinken
+- id: to-go
+  text: to go
+  meaning:
+    de: zum Mitnehmen
+- id: how-much
+  text: How much is it?
+  meaning:
+    de: Was kostet das?
+- id: three-fifty
+  text: three fifty
+  meaning:
+    de: drei fünfzig
+- id: keep-the-change
+  text: Keep the change.
+  meaning:
+    de: Stimmt so.
+- id: have-a-nice-day
+  text: Have a nice day!
+  meaning:
+    de: Schönen Tag noch!
+- id: you-too
+  text: You too.
+  meaning:
+    de: Ihnen auch.
+reviews:
+- item: hello
+  from: A1-01
+- item: passport
+  from: A1-01
+- item: please
+  from: A1-01
+- item: here-you-are
+  from: A1-01
+- item: where-from
+  from: A1-01
+- item: im-from
+  from: A1-01
+- item: i-am
+  from: A1-01
+- item: why-here
+  from: A1-01
+- item: for-work
+  from: A1-01
+- item: welcome
+  from: A1-01
+- item: thank-you
+  from: A1-01
+- item: how-are-you
+  from: A1-01
+- item: good-thanks
+  from: A1-01
+- item: there-is
+  from: A1-03
+- item: there-are
+  from: A1-03
+- item: a-bedroom
+  from: A1-03
+- item: a-kitchen
+  from: A1-03
+- item: an
+  from: A1-03
+- item: an-oven
+  from: A1-03
+- item: two-windows
+  from: A1-03
+- item: big
+  from: A1-03
+- item: small
+  from: A1-03
+- item: the-bathroom
+  from: A1-03
+- item: is-there
+  from: A1-03
+- item: apartment
+  from: A1-03
+steps:
+- type: narrator
+  text:
+    de: Tonys Café an der Ecke, am ersten Morgen. Hören Sie sich das Gespräch an; Sie müssen es noch nicht verstehen.
+- type: dialogue
+  lines:
+  - speaker: tony
+    text: Good morning! What can I get you?
+    meaning:
+      de: Guten Morgen! Was darf's sein?
+  - speaker: protagonist
+    text: Good morning. Can I have a coffee, please?
+    meaning:
+      de: Guten Morgen. Ich hätte gern einen Kaffee, bitte.
+  - speaker: tony
+    text: Sure. Small, medium or large?
+    meaning:
+      de: Klar. Klein, mittel oder groß?
+  - speaker: protagonist
+    text: A medium, please.
+    meaning:
+      de: Einen mittleren, bitte.
+  - speaker: tony
+    text: For here or to go?
+    meaning:
+      de: Zum Hiertrinken oder zum Mitnehmen?
+  - speaker: protagonist
+    text: To go. How much is it?
+    meaning:
+      de: Zum Mitnehmen. Was kostet das?
+  - speaker: tony
+    text: Three fifty.
+    meaning:
+      de: Drei fünfzig.
+  - speaker: protagonist
+    text: Here you are. Keep the change.
+    meaning:
+      de: Bitte. Stimmt so.
+  - speaker: tony
+    text: Thanks! Have a nice day!
+    meaning:
+      de: Danke! Schönen Tag noch!
+  - speaker: protagonist
+    text: You too.
+    meaning:
+      de: Ihnen auch.
+- type: prompt
+  ask:
+    de: Grüßen Sie Tony am Morgen.
+  answer:
+    speaker: protagonist
+    text: Good morning.
+  items:
+  - good-morning
+- type: narrator
+  text:
+    de: 'Höflich bestellen: „Can I have …, please?“ — wörtlich „Kann ich … haben?“. Das deutsche „Ich bekomme einen Kaffee“ klingt auf Englisch („I become a coffee“) falsch: „become“ heißt „werden“.'
+- type: prompt
+  ask:
+    de: Bestellen Sie einen Kaffee — mit „please“.
+  answer:
+    speaker: protagonist
+    text: Can I have a coffee, please?
+  items:
+  - can-i-have
+  - a-coffee
+  - please
+- type: prompt
+  ask:
+    de: 'Er fragt nach der Größe. Sagen Sie: einen mittleren, bitte.'
+  answer:
+    speaker: protagonist
+    text: A medium, please.
+  items:
+  - medium
+  - please
+- type: prompt
+  ask:
+    de: 'Fragen Sie selbst nach den Größen: klein, mittel oder groß?'
+  answer:
+    speaker: protagonist
+    text: Small, medium or large?
+  items:
+  - small-medium-large
+- type: prompt
+  ask:
+    de: 'Sagen Sie: zum Mitnehmen.'
+  answer:
+    speaker: protagonist
+    text: To go.
+  items:
+  - to-go
+- type: prompt
+  ask:
+    de: 'Fragen Sie: hier trinken oder mitnehmen?'
+  answer:
+    speaker: protagonist
+    text: For here or to go?
+  items:
+  - for-here
+  - to-go
+- type: prompt
+  ask:
+    de: Fragen Sie, was es kostet.
+  answer:
+    speaker: protagonist
+    text: How much is it?
+  items:
+  - how-much
+- type: narrator
+  text:
+    de: 'Preise sagt man ohne „Dollar“ und „Cent“: 3,50 $ ist „three fifty“.'
+- type: prompt
+  ask:
+    de: 'Sagen Sie den Preis: drei fünfzig.'
+  answer:
+    speaker: protagonist
+    text: Three fifty.
+  items:
+  - three-fifty
+- type: prompt
+  ask:
+    de: Zahlen Sie und sagen Sie „Stimmt so“.
+  answer:
+    speaker: protagonist
+    text: Keep the change.
+  items:
+  - keep-the-change
+- type: prompt
+  ask:
+    de: 'Er wünscht einen schönen Tag. Antworten Sie: Ihnen auch.'
+  answer:
+    speaker: protagonist
+    text: You too.
+  items:
+  - you-too
+- type: prompt
+  ask:
+    de: Wünschen Sie ihm einen schönen Tag.
+  answer:
+    speaker: protagonist
+    text: Have a nice day!
+  items:
+  - have-a-nice-day
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Guten Morgen.“.'
+  answer:
+    speaker: protagonist
+    text: Good morning.
+  items:
+  - good-morning
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Was darf''s sein?“.'
+  answer:
+    speaker: protagonist
+    text: What can I get you?
+  items:
+  - what-can-i-get
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Was darf''s sein?“.'
+  answer:
+    speaker: protagonist
+    text: What can I get you?
+  items:
+  - what-can-i-get
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Kann ich … haben? / Ich hätte gern …“.'
+  answer:
+    speaker: protagonist
+    text: Can I have …?
+  items:
+  - can-i-have
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „einen Kaffee“.'
+  answer:
+    speaker: protagonist
+    text: a coffee
+  items:
+  - a-coffee
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „klein, mittel oder groß“.'
+  answer:
+    speaker: protagonist
+    text: small, medium or large
+  items:
+  - small-medium-large
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „einen mittleren“.'
+  answer:
+    speaker: protagonist
+    text: a medium
+  items:
+  - medium
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „zum Hiertrinken“.'
+  answer:
+    speaker: protagonist
+    text: for here
+  items:
+  - for-here
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Was kostet das?“.'
+  answer:
+    speaker: protagonist
+    text: How much is it?
+  items:
+  - how-much
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „drei fünfzig“.'
+  answer:
+    speaker: protagonist
+    text: three fifty
+  items:
+  - three-fifty
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Stimmt so.“.'
+  answer:
+    speaker: protagonist
+    text: Keep the change.
+  items:
+  - keep-the-change
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Schönen Tag noch!“.'
+  answer:
+    speaker: protagonist
+    text: Have a nice day!
+  items:
+  - have-a-nice-day
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Ihnen auch.“.'
+  answer:
+    speaker: protagonist
+    text: You too.
+  items:
+  - you-too
+- type: narrator
+  text:
+    de: Jetzt einiges aus früheren Einheiten, in dieser neuen Situation.
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Es gibt … / Da ist … (eins)“ — und „Es gibt … / Da sind … (mehrere)“ — und „ein Schlafzimmer“.'
+  answer:
+    speaker: protagonist
+    text: There is / There's … … There are … … a bedroom
+  items:
+  - there-is
+  - there-are
+  - a-bedroom
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „eine Küche“ — und „ein, eine (vor Vokal)“ — und „ein Backofen“.'
+  answer:
+    speaker: protagonist
+    text: a kitchen … an … an oven
+  items:
+  - a-kitchen
+  - an
+  - an-oven
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „zwei Fenster“ — und „groß“ — und „klein“.'
+  answer:
+    speaker: protagonist
+    text: two windows … big … small
+  items:
+  - two-windows
+  - big
+  - small
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „das Bad“ — und „Gibt es …?“ — und „die Wohnung“.'
+  answer:
+    speaker: protagonist
+    text: the bathroom … Is there …? … the apartment
+  items:
+  - the-bathroom
+  - is-there
+  - apartment
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Hallo. / Guten Tag.“ — und „Ihr Reisepass“ — und „Bitte schön. (beim Geben)“.'
+  answer:
+    speaker: protagonist
+    text: Hello. … your passport … Here you are.
+  items:
+  - hello
+  - passport
+  - here-you-are
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Woher kommen Sie?“ — und „Ich komme aus Deutschland.“ — und „ich bin“.'
+  answer:
+    speaker: protagonist
+    text: Where are you from? … I'm from Germany. … I am / I'm
+  items:
+  - where-from
+  - im-from
+  - i-am
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Warum sind Sie hier?“ — und „zum Arbeiten / beruflich“ — und „Willkommen in den Vereinigten Staaten.“.'
+  answer:
+    speaker: protagonist
+    text: Why are you here? … for work … Welcome to the United States.
+  items:
+  - why-here
+  - for-work
+  - welcome
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Danke.“ — und „Wie geht''s? (als Gruß)“ — und „Gut, danke.“.'
+  answer:
+    speaker: protagonist
+    text: Thank you. … How are you? … Good, thanks.
+  items:
+  - thank-you
+  - how-are-you
+  - good-thanks
+- type: narrator
+  text:
+    de: Hören Sie das Gespräch noch einmal. Jetzt verstehen Sie es.
+- type: dialogue
+  again: true
+- type: selfcheck

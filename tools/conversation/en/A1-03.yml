@@ -1,0 +1,337 @@
+# UNIT en A1-03 — written by AI (Claude) for Casus; expanded from src/A1-03.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-03
+level: A1
+number: 3
+protagonist: f
+title:
+  de: Die Wohnung
+situation:
+  de: Mrs. Rivera zeigt Ihnen die Wohnung im ersten Stock.
+learn_lessons:
+- en-there-is
+- en-articles
+culture: Apartment, not flat
+new_items:
+- id: there-is
+  text: There is / There's …
+  meaning:
+    de: Es gibt … / Da ist … (eins)
+- id: there-are
+  text: There are …
+  meaning:
+    de: Es gibt … / Da sind … (mehrere)
+- id: a-bedroom
+  text: a bedroom
+  meaning:
+    de: ein Schlafzimmer
+- id: a-kitchen
+  text: a kitchen
+  meaning:
+    de: eine Küche
+- id: an
+  text: an
+  meaning:
+    de: ein, eine (vor Vokal)
+- id: an-oven
+  text: an oven
+  meaning:
+    de: ein Backofen
+- id: two-windows
+  text: two windows
+  meaning:
+    de: zwei Fenster
+- id: big
+  text: big
+  meaning:
+    de: groß
+- id: small
+  text: small
+  meaning:
+    de: klein
+- id: the-bathroom
+  text: the bathroom
+  meaning:
+    de: das Bad
+- id: is-there
+  text: Is there …?
+  meaning:
+    de: Gibt es …?
+- id: apartment
+  text: the apartment
+  meaning:
+    de: die Wohnung
+reviews:
+- item: are-you
+  from: A1-02
+- item: yes-i-am
+  from: A1-02
+- item: nice-to-meet-you
+  from: A1-02
+- item: my-name-is
+  from: A1-02
+- item: this-is
+  from: A1-02
+- item: your-key
+  from: A1-02
+- item: my
+  from: A1-02
+- item: your
+  from: A1-02
+- item: mrs-rivera
+  from: A1-02
+- item: come-in
+  from: A1-02
+- item: thanks
+  from: A1-02
+steps:
+- type: narrator
+  text:
+    de: Mrs. Rivera zeigt Ihnen die Wohnung im ersten Stock. Hören Sie sich das Gespräch an; Sie müssen es noch nicht verstehen.
+- type: dialogue
+  lines:
+  - speaker: rivera
+    text: So, this is the apartment.
+    meaning:
+      de: So, das ist die Wohnung.
+  - speaker: protagonist
+    text: Oh, it's big!
+    meaning:
+      de: Oh, sie ist groß!
+  - speaker: rivera
+    text: There's a bedroom and a kitchen. The kitchen is small.
+    meaning:
+      de: Es gibt ein Schlafzimmer und eine Küche. Die Küche ist klein.
+  - speaker: protagonist
+    text: Is there an oven?
+    meaning:
+      de: Gibt es einen Backofen?
+  - speaker: rivera
+    text: Yes, there is. And there are two windows in the bedroom.
+    meaning:
+      de: Ja. Und im Schlafzimmer sind zwei Fenster.
+  - speaker: protagonist
+    text: And the bathroom?
+    meaning:
+      de: Und das Bad?
+  - speaker: rivera
+    text: The bathroom is here, on the left.
+    meaning:
+      de: Das Bad ist hier, links.
+  - speaker: protagonist
+    text: It's very nice. Thank you, Mrs. Rivera.
+    meaning:
+      de: Sie ist sehr schön. Danke, Mrs. Rivera.
+- type: narrator
+  text:
+    de: '„There is“ (kurz „there''s“) sagt, was es irgendwo gibt — für eins. Für mehrere: „there are“. Deutsch sagt „es gibt“ für beides.'
+- type: prompt
+  ask:
+    de: 'Sagen Sie: Es gibt ein Schlafzimmer.'
+  answer:
+    speaker: protagonist
+    text: There's a bedroom.
+  items:
+  - there-is
+  - a-bedroom
+- type: prompt
+  ask:
+    de: 'Sagen Sie: Es gibt ein Schlafzimmer und eine Küche.'
+  answer:
+    speaker: protagonist
+    text: There's a bedroom and a kitchen.
+  items:
+  - there-is
+  - a-bedroom
+  - a-kitchen
+- type: prompt
+  ask:
+    de: 'Sagen Sie: Es gibt zwei Fenster.'
+  answer:
+    speaker: protagonist
+    text: There are two windows.
+  items:
+  - there-are
+  - two-windows
+- type: narrator
+  text:
+    de: '„a“ ist ein und eine; vor einem Vokal-Laut wird es „an“: „an oven“, „an apple“. Es zählt der Laut, nicht der Buchstabe: „an hour“, aber „a university“.'
+- type: buildup
+  item: an-oven
+  parts:
+  - oven
+  - an oven
+- type: prompt
+  ask:
+    de: 'Fragen Sie: Gibt es einen Backofen?'
+  answer:
+    speaker: protagonist
+    text: Is there an oven?
+  items:
+  - is-there
+  - an
+  - an-oven
+- type: prompt
+  ask:
+    de: 'Antworten Sie kurz: Ja, gibt es.'
+  answer:
+    speaker: protagonist
+    text: Yes, there is.
+  items:
+  - there-is
+- type: narrator
+  text:
+    de: '„the“ ist der, die, das — eins für alle. Das Adjektiv bleibt auch immer gleich: „big“, „small“.'
+- type: prompt
+  ask:
+    de: 'Sagen Sie: Die Küche ist klein.'
+  answer:
+    speaker: protagonist
+    text: The kitchen is small.
+  items:
+  - a-kitchen
+  - small
+- type: prompt
+  ask:
+    de: 'Sagen Sie: Die Wohnung ist groß.'
+  answer:
+    speaker: protagonist
+    text: The apartment is big.
+  items:
+  - apartment
+  - big
+- type: prompt
+  ask:
+    de: 'Fragen Sie nach dem Bad: Und das Bad?'
+  answer:
+    speaker: protagonist
+    text: And the bathroom?
+  items:
+  - the-bathroom
+- type: narrator
+  text:
+    de: Amerikanisch „apartment“, britisch „flat“. „Bathroom“ sagt man in Amerika auch für das WC, selbst wenn keine Wanne darin steht.
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Es gibt … / Da sind … (mehrere)“.'
+  answer:
+    speaker: protagonist
+    text: There are …
+  items:
+  - there-are
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „ein, eine (vor Vokal)“.'
+  answer:
+    speaker: protagonist
+    text: an
+  items:
+  - an
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „ein Backofen“.'
+  answer:
+    speaker: protagonist
+    text: an oven
+  items:
+  - an-oven
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „zwei Fenster“.'
+  answer:
+    speaker: protagonist
+    text: two windows
+  items:
+  - two-windows
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „groß“.'
+  answer:
+    speaker: protagonist
+    text: big
+  items:
+  - big
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „klein“.'
+  answer:
+    speaker: protagonist
+    text: small
+  items:
+  - small
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „das Bad“.'
+  answer:
+    speaker: protagonist
+    text: the bathroom
+  items:
+  - the-bathroom
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Gibt es …?“.'
+  answer:
+    speaker: protagonist
+    text: Is there …?
+  items:
+  - is-there
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „die Wohnung“.'
+  answer:
+    speaker: protagonist
+    text: the apartment
+  items:
+  - apartment
+- type: narrator
+  text:
+    de: Jetzt einiges aus früheren Einheiten, in dieser neuen Situation.
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Sind Sie …?“ — und „Ja (, bin ich).“ — und „Freut mich.“.'
+  answer:
+    speaker: protagonist
+    text: Are you …? … Yes, I am. … Nice to meet you.
+  items:
+  - are-you
+  - yes-i-am
+  - nice-to-meet-you
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Ich heiße …“ — und „Das ist …“ — und „Ihr Schlüssel“.'
+  answer:
+    speaker: protagonist
+    text: My name is … … This is … … your key
+  items:
+  - my-name-is
+  - this-is
+  - your-key
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „mein, meine“ — und „dein, Ihr“ — und „Frau Rivera“.'
+  answer:
+    speaker: protagonist
+    text: my … your … Mrs. Rivera
+  items:
+  - my
+  - your
+  - mrs-rivera
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Kommen Sie herein.“ — und „Danke. (locker)“.'
+  answer:
+    speaker: protagonist
+    text: Come in. … Thanks.
+  items:
+  - come-in
+  - thanks
+- type: narrator
+  text:
+    de: Hören Sie das Gespräch noch einmal. Jetzt verstehen Sie es.
+- type: dialogue
+  again: true
+- type: selfcheck

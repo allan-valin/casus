@@ -1,0 +1,384 @@
+# UNIT ar A1-02 — written by AI (Claude) for Casus; expanded from src/A1-02.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-02
+level: A1
+number: 2
+protagonist: m
+title:
+  en: The taxi
+  pt: O táxi
+situation:
+  en: Sami's car broke down; you take a taxi to the Haddads' house on University Street.
+  pt: O carro do Sami quebrou; você pega um táxi até a casa dos Haddad, na rua da Universidade.
+learn_lessons:
+- ar-a1-prepositions
+- ar-a1-questions
+culture: Fares and small talk in the taxi
+new_items:
+- id: ila-ayna
+  text: إِلى أَيْنَ؟
+  meaning:
+    en: Where to?
+    pt: Para onde?
+- id: ila
+  text: إِلى
+  meaning:
+    en: to (a place)
+    pt: para (um lugar)
+- id: sharii-aljamia
+  text: شارِعِ الجامِعَةْ
+  meaning:
+    en: University Street
+    pt: a rua da Universidade
+- id: min-fadlika
+  text: مِنْ فَضْلِكَ
+  meaning:
+    en: please (to a man)
+    pt: por favor (a um homem)
+- id: anta
+  text: أَنْتَ
+  meaning:
+    en: you (a man)
+    pt: você (homem)
+- id: la
+  text: لا
+  meaning:
+    en: 'no'
+    pt: não
+- id: huna
+  text: هُنا
+  meaning:
+    en: here
+    pt: aqui
+- id: kam
+  text: كَمْ؟
+  meaning:
+    en: How much?
+    pt: Quanto é?
+- id: khamsatu-dananir
+  text: خَمْسَةُ دَنانيرْ
+  meaning:
+    en: five dinars
+    pt: cinco dinares
+- id: afwan
+  text: عَفْوًا
+  meaning:
+    en: you're welcome
+    pt: de nada
+reviews:
+- item: assalamu-alaykum
+  from: A1-01
+- item: wa-alaykumu-ssalam
+  from: A1-01
+- item: jawaz
+  from: A1-01
+- item: min-fadlik
+  from: A1-01
+- item: tafaddal
+  from: A1-01
+- item: anti
+  from: A1-01
+- item: ana
+  from: A1-01
+- item: mina-lbrazil
+  from: A1-01
+- item: naam
+  from: A1-01
+- item: ahlan-wa-sahlan
+  from: A1-01
+- item: shukran
+  from: A1-01
+- item: marhaban
+  from: A1-01
+- item: hal
+  from: A1-01
+steps:
+- type: narrator
+  text:
+    en: Sami's car broke down; you take a taxi to the Haddads' house on University Street. Listen to the conversation; you don't need to understand it yet.
+    pt: O carro do Sami quebrou; você pega um táxi até a casa dos Haddad, na rua da Universidade. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: driver
+    text: مَرْحَبًا. إِلى أَيْنَ؟
+    meaning:
+      en: Hello. Where to?
+      pt: Olá. Para onde?
+  - speaker: protagonist
+    text: إِلى شارِعِ الجامِعَةِ، مِنْ فَضْلِكَ.
+    meaning:
+      en: To University Street, please.
+      pt: Para a rua da Universidade, por favor.
+  - speaker: driver
+    text: هَلْ أَنْتَ مِنْ أَمْريكا؟
+    meaning:
+      en: Are you from America?
+      pt: Você é dos Estados Unidos?
+  - speaker: protagonist
+    text: لا، أَنا مِنَ البَرازيلْ.
+    meaning:
+      en: No, I'm from Brazil.
+      pt: Não, sou do Brasil.
+  - speaker: driver
+    text: البَرازيلُ! أَهْلًا وَسَهْلًا.
+    meaning:
+      en: Brazil! Welcome.
+      pt: Brasil! Bem-vindo.
+  - speaker: protagonist
+    text: هُنا، مِنْ فَضْلِكَ. كَمْ؟
+    meaning:
+      en: Here, please. How much?
+      pt: Aqui, por favor. Quanto é?
+  - speaker: driver
+    text: خَمْسَةُ دَنانيرْ.
+    meaning:
+      en: Five dinars.
+      pt: Cinco dinares.
+  - speaker: protagonist
+    text: تَفَضَّلْ. شُكْرًا.
+    meaning:
+      en: Here you are. Thank you.
+      pt: Aqui está. Obrigado.
+  - speaker: driver
+    text: عَفْوًا.
+    meaning:
+      en: You're welcome.
+      pt: De nada.
+- type: prompt
+  ask:
+    en: The driver asks 'Where to?'. Ask him the same, to practise.
+    pt: O motorista pergunta 'Para onde?'. Pergunte o mesmo, para praticar.
+  answer:
+    speaker: protagonist
+    text: إِلى أَيْنَ؟
+  items:
+  - ila-ayna
+- type: narrator
+  text:
+    en: 'إِلى means ''to'', towards a place. Say it before the place: إِلى شارِعِ الجامِعَةْ, ''to University Street''.'
+    pt: 'إِلى quer dizer ''para'', em direção a um lugar. Vem antes do lugar: إِلى شارِعِ الجامِعَةْ, ''para a rua da Universidade''.'
+- type: buildup
+  item: sharii-aljamia
+  parts:
+  - الجامِعَةْ
+  - شارِعِ الجامِعَةْ
+- type: prompt
+  ask:
+    en: Tell him where you are going.
+    pt: Diga para onde você vai.
+  answer:
+    speaker: protagonist
+    text: إِلى شارِعِ الجامِعَةْ.
+  items:
+  - ila
+  - sharii-aljamia
+- type: narrator
+  text:
+    en: '''Please'' to a man is مِنْ فَضْلِكَ, with -ka at the end; to a woman it was مِنْ فَضْلِكِ, with -ki. The same -ka / -ki tells ''your'' for a man or a woman.'
+    pt: '''Por favor'' a um homem é مِنْ فَضْلِكَ, com -ka no fim; a uma mulher era مِنْ فَضْلِكِ, com -ki. O mesmo -ka / -ki diz ''seu'' de homem ou de mulher.'
+- type: prompt
+  ask:
+    en: Now add 'please'.
+    pt: Agora acrescente 'por favor'.
+  answer:
+    speaker: protagonist
+    text: إِلى شارِعِ الجامِعَةِ، مِنْ فَضْلِكَ.
+  items:
+  - ila
+  - sharii-aljamia
+  - min-fadlika
+- type: prompt
+  ask:
+    en: He asks if you are from America. Say no, you are from Brazil.
+    pt: Ele pergunta se você é dos Estados Unidos. Diga que não, que é do Brasil.
+  answer:
+    speaker: protagonist
+    text: لا، أَنا مِنَ البَرازيلْ.
+  items:
+  - la
+  - ana
+  - mina-lbrazil
+- type: narrator
+  text:
+    en: 'أَنْتَ is ''you'' to a man, أَنْتِ to a woman: only the last vowel changes.'
+    pt: 'أَنْتَ é ''você'' para um homem, أَنْتِ para uma mulher: só muda a última vogal.'
+- type: prompt
+  ask:
+    en: Ask the driver if he is from Amman.
+    pt: Pergunte ao motorista se ele é de Amã.
+  answer:
+    speaker: protagonist
+    text: هَلْ أَنْتَ مِنْ عَمّانْ؟
+  items:
+  - hal
+  - anta
+- type: prompt
+  ask:
+    en: 'You are there. Say: here, please.'
+    pt: 'Você chegou. Diga: aqui, por favor.'
+  answer:
+    speaker: protagonist
+    text: هُنا، مِنْ فَضْلِكَ.
+  items:
+  - huna
+  - min-fadlika
+- type: prompt
+  ask:
+    en: Ask how much it is.
+    pt: Pergunte quanto é.
+  answer:
+    speaker: protagonist
+    text: كَمْ؟
+  items:
+  - kam
+- type: prompt
+  ask:
+    en: He says five dinars. Repeat the price.
+    pt: Ele diz cinco dinares. Repita o preço.
+  answer:
+    speaker: protagonist
+    text: خَمْسَةُ دَنانيرْ.
+  items:
+  - khamsatu-dananir
+- type: prompt
+  ask:
+    en: Pay and thank him.
+    pt: Pague e agradeça.
+  answer:
+    speaker: protagonist
+    text: تَفَضَّلْ. شُكْرًا.
+  items:
+  - tafaddal
+  - shukran
+- type: prompt
+  ask:
+    en: 'He thanks you for the tip. Say: you''re welcome.'
+    pt: 'Ele agradece a gorjeta. Diga: de nada.'
+  answer:
+    speaker: protagonist
+    text: عَفْوًا.
+  items:
+  - afwan
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: Em Amã muitos táxis amarelos têm taxímetro; quando não têm, combine o preço antes de entrar — como em alguns aeroportos do Brasil.
+- type: prompt
+  ask:
+    en: 'Once more: say “Where to?”.'
+    pt: 'Mais uma vez: diga “Para onde?”.'
+  answer:
+    speaker: protagonist
+    text: إِلى أَيْنَ؟
+  items:
+  - ila-ayna
+- type: prompt
+  ask:
+    en: 'Once more: say “you (a man)”.'
+    pt: 'Mais uma vez: diga “você (homem)”.'
+  answer:
+    speaker: protagonist
+    text: أَنْتَ
+  items:
+  - anta
+- type: prompt
+  ask:
+    en: 'Once more: say “no”.'
+    pt: 'Mais uma vez: diga “não”.'
+  answer:
+    speaker: protagonist
+    text: لا
+  items:
+  - la
+- type: prompt
+  ask:
+    en: 'Once more: say “here”.'
+    pt: 'Mais uma vez: diga “aqui”.'
+  answer:
+    speaker: protagonist
+    text: هُنا
+  items:
+  - huna
+- type: prompt
+  ask:
+    en: 'Once more: say “How much?”.'
+    pt: 'Mais uma vez: diga “Quanto é?”.'
+  answer:
+    speaker: protagonist
+    text: كَمْ؟
+  items:
+  - kam
+- type: prompt
+  ask:
+    en: 'Once more: say “five dinars”.'
+    pt: 'Mais uma vez: diga “cinco dinares”.'
+  answer:
+    speaker: protagonist
+    text: خَمْسَةُ دَنانيرْ
+  items:
+  - khamsatu-dananir
+- type: prompt
+  ask:
+    en: 'Once more: say “you''re welcome”.'
+    pt: 'Mais uma vez: diga “de nada”.'
+  answer:
+    speaker: protagonist
+    text: عَفْوًا
+  items:
+  - afwan
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “hello (literally: peace be upon you) — and “hello (the answer: and upon you peace)”.'
+    pt: 'Diga: “olá (literalmente: a paz esteja com vocês) — e “olá (a resposta: e com vocês a paz)”.'
+  answer:
+    speaker: protagonist
+    text: السَّلامُ عَلَيْكُمْ … وَعَلَيْكُمُ السَّلامْ
+  items:
+  - assalamu-alaykum
+  - wa-alaykumu-ssalam
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “passport — and “please (to a woman)”.'
+    pt: 'Diga: “passaporte — e “por favor (a uma mulher)”.'
+  answer:
+    speaker: protagonist
+    text: جَوازُ السَّفَرْ … مِنْ فَضْلِكِ
+  items:
+  - jawaz
+  - min-fadlik
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “you (a woman) — and “yes”.'
+    pt: 'Diga: “você (mulher) — e “sim”.'
+  answer:
+    speaker: protagonist
+    text: أَنْتِ … نَعَمْ
+  items:
+  - anti
+  - naam
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “welcome — and “hi, hello”.'
+    pt: 'Diga: “bem-vindo, bem-vinda — e “oi, olá”.'
+  answer:
+    speaker: protagonist
+    text: أَهْلًا وَسَهْلًا … مَرْحَبًا
+  items:
+  - ahlan-wa-sahlan
+  - marhaban
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

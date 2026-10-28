@@ -1,0 +1,393 @@
+# UNIT ar A1-04 — written by AI (Claude) for Casus; expanded from src/A1-04.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-04
+level: A1
+number: 4
+protagonist: m
+title:
+  en: The room
+  pt: O quarto
+situation:
+  en: Huda shows you your room upstairs.
+  pt: Huda mostra o seu quarto, no andar de cima.
+learn_lessons:
+- ar-a1-noun-adj
+- ar-a1-possessive
+culture: The guest's room
+new_items:
+- id: ghurfatuka
+  text: غُرْفَتُكَ
+  meaning:
+    en: your room (to a man)
+    pt: o seu quarto (a um homem)
+- id: ghurfa
+  text: غُرْفَةٌ
+  meaning:
+    en: a room
+    pt: um quarto
+- id: kabira
+  text: كَبيرَةٌ
+  meaning:
+    en: big (feminine)
+    pt: grande (feminino)
+- id: kabir
+  text: كَبيرٌ
+  meaning:
+    en: big (masculine)
+    pt: grande (masculino)
+- id: jamila
+  text: جَميلَةٌ
+  meaning:
+    en: beautiful, nice (feminine)
+    pt: bonita (feminino)
+- id: sarir
+  text: السَّريرْ
+  meaning:
+    en: the bed
+    pt: a cama
+- id: nafidha
+  text: النّافِذَةْ
+  meaning:
+    en: the window
+    pt: a janela
+- id: wa-hadha
+  text: وَهٰذا
+  meaning:
+    en: and this
+    pt: e este
+- id: jiddan
+  text: جِدًّا
+  meaning:
+    en: very
+    pt: muito
+- id: aydan
+  text: أَيْضًا
+  meaning:
+    en: too, also
+    pt: também
+- id: umm-sami
+  text: أُمَّ سامي
+  meaning:
+    en: 'Umm Sami (Sami''s mother: how one calls a mother)'
+    pt: 'Umm Sami (mãe do Sami: assim se chama uma mãe)'
+reviews:
+- item: assalamu-alaykum
+  from: A1-01
+- item: wa-alaykumu-ssalam
+  from: A1-01
+- item: jawaz
+  from: A1-01
+- item: min-fadlik
+  from: A1-01
+- item: tafaddal
+  from: A1-01
+- item: anti
+  from: A1-01
+- item: ana
+  from: A1-01
+- item: mina-lbrazil
+  from: A1-01
+- item: naam
+  from: A1-01
+- item: ahlan-wa-sahlan
+  from: A1-01
+- item: shukran
+  from: A1-01
+- item: marhaban
+  from: A1-01
+- item: hal
+  from: A1-01
+- item: hadhihi
+  from: A1-03
+- item: hadha
+  from: A1-03
+- item: ummi
+  from: A1-03
+- item: abi
+  from: A1-03
+- item: ismi
+  from: A1-03
+- item: tasharrafna
+  from: A1-03
+- item: tafaddali
+  from: A1-03
+- item: taliba
+  from: A1-03
+- item: talib
+  from: A1-03
+- item: wa
+  from: A1-03
+steps:
+- type: narrator
+  text:
+    en: Huda shows you your room upstairs. Listen to the conversation; you don't need to understand it yet.
+    pt: Huda mostra o seu quarto, no andar de cima. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: huda
+    text: هٰذِهِ غُرْفَتُكَ.
+    meaning:
+      en: This is your room.
+      pt: Este é o seu quarto.
+  - speaker: protagonist
+    text: الغُرْفَةُ كَبيرَةٌ!
+    meaning:
+      en: The room is big!
+      pt: O quarto é grande!
+  - speaker: huda
+    text: وَهٰذا السَّريرُ، وَهٰذِهِ النّافِذَةْ.
+    meaning:
+      en: And this is the bed, and this is the window.
+      pt: E esta é a cama, e esta é a janela.
+  - speaker: protagonist
+    text: النّافِذَةُ كَبيرَةٌ وَجَميلَةْ.
+    meaning:
+      en: The window is big and nice.
+      pt: A janela é grande e bonita.
+  - speaker: huda
+    text: وَالسَّريرُ كَبيرٌ أَيْضًا.
+    meaning:
+      en: And the bed is big too.
+      pt: E a cama também é grande.
+  - speaker: protagonist
+    text: الغُرْفَةُ جَميلَةٌ جِدًّا. شُكْرًا.
+    meaning:
+      en: The room is very nice. Thank you.
+      pt: O quarto é muito bonito. Obrigado.
+  - speaker: huda
+    text: عَفْوًا. أَهْلًا وَسَهْلًا.
+    meaning:
+      en: You're welcome. Make yourself at home.
+      pt: De nada. Fique à vontade.
+  - speaker: protagonist
+    text: شُكْرًا يا أُمَّ سامي.
+    meaning:
+      en: Thank you, Umm Sami.
+      pt: Obrigado, Umm Sami.
+- type: narrator
+  text:
+    en: '''Your room'' is one word: غُرْفَةٌ ''a room'' + -ka ''your'' → غُرْفَتُكَ. The -a of the feminine turns into t before the ending.'
+    pt: '''O seu quarto'' é uma palavra só: غُرْفَةٌ ''um quarto'' + -ka ''seu'' → غُرْفَتُكَ. O -a do feminino vira t antes da terminação.'
+- type: prompt
+  ask:
+    en: 'Huda shows the room. Repeat: this is your room — as if you showed it to a man.'
+    pt: 'Huda mostra o quarto. Repita: este é o seu quarto — como se mostrasse a um homem.'
+  answer:
+    speaker: protagonist
+    text: هٰذِهِ غُرْفَتُكَ.
+  items:
+  - hadhihi
+  - ghurfatuka
+- type: narrator
+  text:
+    en: '''The room is big'' has no verb: الغُرْفَةُ كَبيرَةٌ, ''the room big''. The adjective follows the noun''s gender: غُرْفَةٌ is feminine, so كَبيرَةٌ.'
+    pt: '''O quarto é grande'' não tem verbo: الغُرْفَةُ كَبيرَةٌ, ''o quarto grande''. O adjetivo acompanha o gênero do substantivo: غُرْفَةٌ é feminino, então كَبيرَةٌ.'
+- type: prompt
+  ask:
+    en: 'Say: the room is big.'
+    pt: 'Diga: o quarto é grande.'
+  answer:
+    speaker: protagonist
+    text: الغُرْفَةُ كَبيرَةٌ.
+  items:
+  - ghurfa
+  - kabira
+- type: prompt
+  ask:
+    en: 'Say: the bed is big. السَّرير is masculine.'
+    pt: 'Diga: a cama é grande. السَّرير é masculino.'
+  answer:
+    speaker: protagonist
+    text: السَّريرُ كَبيرٌ.
+  items:
+  - sarir
+  - kabir
+- type: prompt
+  ask:
+    en: 'Point at the window: and this is the window.'
+    pt: 'Aponte para a janela: e esta é a janela.'
+  answer:
+    speaker: protagonist
+    text: وَهٰذِهِ النّافِذَةْ.
+  items:
+  - wa
+  - hadhihi
+  - nafidha
+- type: prompt
+  ask:
+    en: Say the window is big and nice.
+    pt: Diga que a janela é grande e bonita.
+  answer:
+    speaker: protagonist
+    text: النّافِذَةُ كَبيرَةٌ وَجَميلَةْ.
+  items:
+  - nafidha
+  - kabira
+  - jamila
+- type: narrator
+  text:
+    en: 'جِدًّا ''very'' comes after the adjective: جَميلَةٌ جِدًّا, ''very nice''.'
+    pt: 'جِدًّا ''muito'' vem depois do adjetivo: جَميلَةٌ جِدًّا, ''muito bonita''.'
+- type: prompt
+  ask:
+    en: Say the room is very nice, and thank her.
+    pt: Diga que o quarto é muito bonito e agradeça.
+  answer:
+    speaker: protagonist
+    text: الغُرْفَةُ جَميلَةٌ جِدًّا. شُكْرًا.
+  items:
+  - ghurfa
+  - jamila
+  - jiddan
+  - shukran
+- type: narrator
+  text:
+    en: 'Parents are called after their eldest son: أُمُّ سامي ''Sami''s mother'', أَبو سامي ''Sami''s father''. It is warm and respectful — use it for Huda and Khalid.'
+    pt: 'Os pais são chamados pelo nome do filho mais velho: أُمُّ سامي ''mãe do Sami'', أَبو سامي ''pai do Sami''. É carinhoso e respeitoso — use com a Huda e o Khalid.'
+- type: prompt
+  ask:
+    en: Thank Huda, calling her Umm Sami.
+    pt: Agradeça à Huda chamando-a de Umm Sami.
+  answer:
+    speaker: protagonist
+    text: شُكْرًا يا أُمَّ سامي.
+  items:
+  - shukran
+  - umm-sami
+- type: prompt
+  ask:
+    en: 'Say: the bed is big too.'
+    pt: 'Diga: a cama também é grande.'
+  answer:
+    speaker: protagonist
+    text: السَّريرُ كَبيرٌ أَيْضًا.
+  items:
+  - sarir
+  - kabir
+  - aydan
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: Em português 'quarto' é masculino; em árabe غُرْفَة é feminino. O gênero muda de língua para língua — vá pelo ة no fim.
+- type: prompt
+  ask:
+    en: 'Once more: say “your room (to a man)”.'
+    pt: 'Mais uma vez: diga “o seu quarto (a um homem)”.'
+  answer:
+    speaker: protagonist
+    text: غُرْفَتُكَ
+  items:
+  - ghurfatuka
+- type: prompt
+  ask:
+    en: 'Once more: say “and this”.'
+    pt: 'Mais uma vez: diga “e este”.'
+  answer:
+    speaker: protagonist
+    text: وَهٰذا
+  items:
+  - wa-hadha
+- type: prompt
+  ask:
+    en: 'Once more: say “and this”.'
+    pt: 'Mais uma vez: diga “e este”.'
+  answer:
+    speaker: protagonist
+    text: وَهٰذا
+  items:
+  - wa-hadha
+- type: prompt
+  ask:
+    en: 'Once more: say “very”.'
+    pt: 'Mais uma vez: diga “muito”.'
+  answer:
+    speaker: protagonist
+    text: جِدًّا
+  items:
+  - jiddan
+- type: prompt
+  ask:
+    en: 'Once more: say “too, also”.'
+    pt: 'Mais uma vez: diga “também”.'
+  answer:
+    speaker: protagonist
+    text: أَيْضًا
+  items:
+  - aydan
+- type: prompt
+  ask:
+    en: 'Once more: say “Umm Sami (Sami''s mother: how one calls a mother)”.'
+    pt: 'Mais uma vez: diga “Umm Sami (mãe do Sami: assim se chama uma mãe)”.'
+  answer:
+    speaker: protagonist
+    text: أُمَّ سامي
+  items:
+  - umm-sami
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “this (a man, a masculine thing) — and “my mother — and “my father — and “my name is — and “pleased to meet you”.'
+    pt: 'Diga: “este (homem, coisa masculina) — e “minha mãe — e “meu pai — e “meu nome é — e “muito prazer”.'
+  answer:
+    speaker: protagonist
+    text: هٰذا … أُمّي … أَبي … اِسْمي … تَشَرَّفْنا
+  items:
+  - hadha
+  - ummi
+  - abi
+  - ismi
+  - tasharrafna
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “come in / please (to a woman) — and “a student (woman) — and “a student (man) — and “hello (literally: peace be upon you) — and “hello (the answer: and upon you peace)”.'
+    pt: 'Diga: “entre / por favor (a uma mulher) — e “uma estudante — e “um estudante — e “olá (literalmente: a paz esteja com vocês) — e “olá (a resposta: e com vocês a paz)”.'
+  answer:
+    speaker: protagonist
+    text: تَفَضَّلي … طالِبَةٌ … طالِبٌ … السَّلامُ عَلَيْكُمْ … وَعَلَيْكُمُ السَّلامْ
+  items:
+  - tafaddali
+  - taliba
+  - talib
+  - assalamu-alaykum
+  - wa-alaykumu-ssalam
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “passport — and “please (to a woman) — and “here you are (to a man) — and “you (a woman) — and “I”.'
+    pt: 'Diga: “passaporte — e “por favor (a uma mulher) — e “aqui está (a um homem) — e “você (mulher) — e “eu”.'
+  answer:
+    speaker: protagonist
+    text: جَوازُ السَّفَرْ … مِنْ فَضْلِكِ … تَفَضَّلْ … أَنْتِ … أَنا
+  items:
+  - jawaz
+  - min-fadlik
+  - tafaddal
+  - anti
+  - ana
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “from Brazil — and “yes — and “welcome — and “hi, hello — and “(starts a yes/no question)”.'
+    pt: 'Diga: “do Brasil — e “sim — e “bem-vindo, bem-vinda — e “oi, olá — e “(abre uma pergunta de sim ou não)”.'
+  answer:
+    speaker: protagonist
+    text: مِنَ البَرازيلْ … نَعَمْ … أَهْلًا وَسَهْلًا … مَرْحَبًا … هَلْ
+  items:
+  - mina-lbrazil
+  - naam
+  - ahlan-wa-sahlan
+  - marhaban
+  - hal
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

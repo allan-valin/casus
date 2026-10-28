@@ -1,0 +1,354 @@
+# UNIT ar A1-03 — written by AI (Claude) for Casus; expanded from src/A1-03.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-03
+level: A1
+number: 3
+protagonist: f
+title:
+  en: The family
+  pt: A família
+situation:
+  en: Huda and Khalid Haddad open the door. Sami introduces everyone.
+  pt: Huda e Khalid Haddad abrem a porta. Sami apresenta todo mundo.
+learn_lessons:
+- ar-a1-demonstratives
+- ar-a1-gender
+culture: Greeting the host mother
+new_items:
+- id: hadhihi
+  text: هٰذِهِ
+  meaning:
+    en: this (a woman, a feminine thing)
+    pt: esta (mulher, coisa feminina)
+- id: hadha
+  text: هٰذا
+  meaning:
+    en: this (a man, a masculine thing)
+    pt: este (homem, coisa masculina)
+- id: ummi
+  text: أُمّي
+  meaning:
+    en: my mother
+    pt: minha mãe
+- id: abi
+  text: أَبي
+  meaning:
+    en: my father
+    pt: meu pai
+- id: ismi
+  text: اِسْمي
+  meaning:
+    en: my name is
+    pt: meu nome é
+- id: tasharrafna
+  text: تَشَرَّفْنا
+  meaning:
+    en: pleased to meet you
+    pt: muito prazer
+- id: tafaddali
+  text: تَفَضَّلي
+  meaning:
+    en: come in / please (to a woman)
+    pt: entre / por favor (a uma mulher)
+- id: taliba
+  text: طالِبَةٌ
+  meaning:
+    en: a student (woman)
+    pt: uma estudante
+- id: talib
+  text: طالِبٌ
+  meaning:
+    en: a student (man)
+    pt: um estudante
+- id: wa
+  text: وَ
+  meaning:
+    en: and
+    pt: e
+reviews:
+- item: ila-ayna
+  from: A1-02
+- item: ila
+  from: A1-02
+- item: sharii-aljamia
+  from: A1-02
+- item: min-fadlika
+  from: A1-02
+- item: anta
+  from: A1-02
+- item: la
+  from: A1-02
+- item: huna
+  from: A1-02
+- item: kam
+  from: A1-02
+- item: khamsatu-dananir
+  from: A1-02
+- item: afwan
+  from: A1-02
+- item: ana
+  from: A1-01
+- item: naam
+  from: A1-01
+- item: shukran
+  from: A1-01
+steps:
+- type: narrator
+  text:
+    en: Huda and Khalid Haddad open the door. Sami introduces everyone. Listen to the conversation; you don't need to understand it yet.
+    pt: Huda e Khalid Haddad abrem a porta. Sami apresenta todo mundo. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: sami
+    text: هٰذِهِ أُمّي، هُدى. وَهٰذا أَبي، خالِدْ.
+    meaning:
+      en: This is my mother, Huda. And this is my father, Khalid.
+      pt: Esta é a minha mãe, Huda. E este é o meu pai, Khalid.
+  - speaker: huda
+    text: أَهْلًا وَسَهْلًا! تَفَضَّلي.
+    meaning:
+      en: Welcome! Come in.
+      pt: Bem-vinda! Entre.
+  - speaker: protagonist
+    text: شُكْرًا. تَشَرَّفْنا.
+    meaning:
+      en: Thank you. Pleased to meet you.
+      pt: Obrigada. Muito prazer.
+  - speaker: khalid
+    text: تَشَرَّفْنا. هَلْ أَنْتِ طالِبَةٌ؟
+    meaning:
+      en: Pleased to meet you. Are you a student?
+      pt: Muito prazer. Você é estudante?
+  - speaker: protagonist
+    text: نَعَمْ، أَنا طالِبَةٌ.
+    meaning:
+      en: Yes, I'm a student.
+      pt: Sim, sou estudante.
+  - speaker: huda
+    text: وَسامي طالِبٌ أَيْضًا.
+    meaning:
+      en: And Sami is a student too.
+      pt: E o Sami também é estudante.
+  - speaker: protagonist
+    text: هٰذا لَكُمْ، مِنَ البَرازيلْ.
+    meaning:
+      en: This is for you, from Brazil.
+      pt: Isto é para vocês, do Brasil.
+  - speaker: huda
+    text: شُكْرًا يا حَبيبَتي!
+    meaning:
+      en: Thank you, my dear!
+      pt: Obrigada, querida!
+- type: narrator
+  text:
+    en: 'Arabic has two words for ''this'': هٰذا for a man or a masculine thing, هٰذِهِ for a woman or a feminine thing. Most feminine words end in -a, written ة.'
+    pt: 'O árabe tem duas palavras para ''este, esta'': هٰذا para homem ou coisa masculina, هٰذِهِ para mulher ou coisa feminina. A maioria das palavras femininas termina em -a, escrito ة.'
+- type: prompt
+  ask:
+    en: 'Sami points at his mother. Say: this is my mother.'
+    pt: 'Sami aponta para a mãe. Diga: esta é a minha mãe.'
+  answer:
+    speaker: protagonist
+    text: هٰذِهِ أُمّي.
+  items:
+  - hadhihi
+  - ummi
+- type: prompt
+  ask:
+    en: 'Now his father: this is my father.'
+    pt: 'Agora o pai: este é o meu pai.'
+  answer:
+    speaker: protagonist
+    text: هٰذا أَبي.
+  items:
+  - hadha
+  - abi
+- type: prompt
+  ask:
+    en: Say both, with 'and'.
+    pt: Diga os dois, com 'e'.
+  answer:
+    speaker: protagonist
+    text: هٰذِهِ أُمّي وَهٰذا أَبي.
+  items:
+  - hadhihi
+  - ummi
+  - wa
+  - hadha
+  - abi
+- type: narrator
+  text:
+    en: 'وَ ''and'' is written joined to the next word: وَهٰذا, وَسامي.'
+    pt: 'وَ ''e'' se escreve junto da palavra seguinte: وَهٰذا, وَسامي.'
+- type: prompt
+  ask:
+    en: 'Huda says welcome. Answer: thank you, pleased to meet you.'
+    pt: 'Huda dá as boas-vindas. Responda: obrigada, muito prazer.'
+  answer:
+    speaker: protagonist
+    text: شُكْرًا. تَشَرَّفْنا.
+  items:
+  - shukran
+  - tasharrafna
+- type: prompt
+  ask:
+    en: 'Say your name. Say: my name is Ana.'
+    pt: 'Diga o seu nome. Diga: meu nome é Ana.'
+  answer:
+    speaker: protagonist
+    text: اِسْمي آنا.
+  items:
+  - ismi
+- type: narrator
+  text:
+    en: 'A student: طالِبٌ for a man, طالِبَةٌ for a woman — the feminine adds -a. You are a woman in this unit: أَنا طالِبَةٌ.'
+    pt: 'Estudante: طالِبٌ para um homem, طالِبَةٌ para uma mulher — o feminino acrescenta -a. Nesta unidade você é mulher: أَنا طالِبَةٌ.'
+- type: prompt
+  ask:
+    en: Khalid asks if you are a student. Say yes.
+    pt: Khalid pergunta se você é estudante. Diga que sim.
+  answer:
+    speaker: protagonist
+    text: نَعَمْ، أَنا طالِبَةٌ.
+  items:
+  - naam
+  - ana
+  - taliba
+- type: prompt
+  ask:
+    en: Say that Sami is a student.
+    pt: Diga que o Sami é estudante.
+  answer:
+    speaker: protagonist
+    text: سامي طالِبٌ.
+  items:
+  - talib
+- type: prompt
+  ask:
+    en: 'Ask Huda: please, come in — you are holding the door for her.'
+    pt: 'Diga a Huda: por favor, entre — você segura a porta para ela.'
+  answer:
+    speaker: protagonist
+    text: تَفَضَّلي.
+  items:
+  - tafaddali
+- type: narrator
+  text:
+    en: At home the Haddads speak Jordanian Arabic; to you they speak fuṣḥā, the standard Arabic of school and the news. That is why everyone here understands you.
+    pt: Em casa os Haddad falam árabe jordaniano; com você falam fuṣḥā, o árabe padrão da escola e do noticiário. Por isso todos entendem você.
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: No Brasil se cumprimenta com beijo no rosto; aqui, entre homens e mulheres que não são da família, espere a mão do outro. Com a Huda, um sorriso e a mão no peito bastam.
+- type: prompt
+  ask:
+    en: 'Once more: say “my name is”.'
+    pt: 'Mais uma vez: diga “meu nome é”.'
+  answer:
+    speaker: protagonist
+    text: اِسْمي
+  items:
+  - ismi
+- type: prompt
+  ask:
+    en: 'Once more: say “pleased to meet you”.'
+    pt: 'Mais uma vez: diga “muito prazer”.'
+  answer:
+    speaker: protagonist
+    text: تَشَرَّفْنا
+  items:
+  - tasharrafna
+- type: prompt
+  ask:
+    en: 'Once more: say “come in / please (to a woman)”.'
+    pt: 'Mais uma vez: diga “entre / por favor (a uma mulher)”.'
+  answer:
+    speaker: protagonist
+    text: تَفَضَّلي
+  items:
+  - tafaddali
+- type: prompt
+  ask:
+    en: 'Once more: say “a student (woman)”.'
+    pt: 'Mais uma vez: diga “uma estudante”.'
+  answer:
+    speaker: protagonist
+    text: طالِبَةٌ
+  items:
+  - taliba
+- type: prompt
+  ask:
+    en: 'Once more: say “a student (man)”.'
+    pt: 'Mais uma vez: diga “um estudante”.'
+  answer:
+    speaker: protagonist
+    text: طالِبٌ
+  items:
+  - talib
+- type: prompt
+  ask:
+    en: 'Once more: say “and”.'
+    pt: 'Mais uma vez: diga “e”.'
+  answer:
+    speaker: protagonist
+    text: وَ
+  items:
+  - wa
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Where to? — and “to (a place) — and “University Street”.'
+    pt: 'Diga: “Para onde? — e “para (um lugar) — e “a rua da Universidade”.'
+  answer:
+    speaker: protagonist
+    text: إِلى أَيْنَ؟ … إِلى … شارِعِ الجامِعَةْ
+  items:
+  - ila-ayna
+  - ila
+  - sharii-aljamia
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “please (to a man) — and “you (a man) — and “no”.'
+    pt: 'Diga: “por favor (a um homem) — e “você (homem) — e “não”.'
+  answer:
+    speaker: protagonist
+    text: مِنْ فَضْلِكَ … أَنْتَ … لا
+  items:
+  - min-fadlika
+  - anta
+  - la
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “here — and “How much? — and “five dinars”.'
+    pt: 'Diga: “aqui — e “Quanto é? — e “cinco dinares”.'
+  answer:
+    speaker: protagonist
+    text: هُنا … كَمْ؟ … خَمْسَةُ دَنانيرْ
+  items:
+  - huna
+  - kam
+  - khamsatu-dananir
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “you''re welcome”.'
+    pt: 'Diga: “de nada”.'
+  answer:
+    speaker: protagonist
+    text: عَفْوًا
+  items:
+  - afwan
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

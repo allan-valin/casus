@@ -1,0 +1,348 @@
+# UNIT en A1-02 — written by AI (Claude) for Casus; expanded from src/A1-02.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-02
+level: A1
+number: 2
+protagonist: m
+title:
+  de: Die Vermieterin
+situation:
+  de: Sie stehen vor Ihrem neuen Haus in Somerville. Die Vermieterin, Mrs. Rivera, öffnet die Tür.
+learn_lessons:
+- en-possessives
+- en-to-be
+culture: Titles for older people
+new_items:
+- id: are-you
+  text: Are you …?
+  meaning:
+    de: Sind Sie …?
+- id: yes-i-am
+  text: Yes, I am.
+  meaning:
+    de: Ja (, bin ich).
+- id: nice-to-meet-you
+  text: Nice to meet you.
+  meaning:
+    de: Freut mich.
+- id: my-name-is
+  text: My name is …
+  meaning:
+    de: Ich heiße …
+- id: this-is
+  text: This is …
+  meaning:
+    de: Das ist …
+- id: your-key
+  text: your key
+  meaning:
+    de: Ihr Schlüssel
+- id: my
+  text: my
+  meaning:
+    de: mein, meine
+- id: your
+  text: your
+  meaning:
+    de: dein, Ihr
+- id: mrs-rivera
+  text: Mrs. Rivera
+  meaning:
+    de: Frau Rivera
+- id: come-in
+  text: Come in.
+  meaning:
+    de: Kommen Sie herein.
+- id: thanks
+  text: Thanks.
+  meaning:
+    de: Danke. (locker)
+reviews:
+- item: hello
+  from: A1-01
+- item: passport
+  from: A1-01
+- item: please
+  from: A1-01
+- item: here-you-are
+  from: A1-01
+- item: where-from
+  from: A1-01
+- item: im-from
+  from: A1-01
+- item: i-am
+  from: A1-01
+- item: why-here
+  from: A1-01
+- item: for-work
+  from: A1-01
+- item: welcome
+  from: A1-01
+- item: thank-you
+  from: A1-01
+- item: how-are-you
+  from: A1-01
+- item: good-thanks
+  from: A1-01
+steps:
+- type: narrator
+  text:
+    de: Sie stehen vor Ihrem neuen Haus in Somerville. Die Vermieterin, Mrs. Rivera, öffnet die Tür. Hören Sie sich das Gespräch an; Sie müssen es noch nicht verstehen.
+- type: dialogue
+  lines:
+  - speaker: rivera
+    text: Hello! Are you the new tenant?
+    meaning:
+      de: Hallo! Sind Sie der neue Mieter?
+  - speaker: protagonist
+    text: Yes, I am. My name is Jonas.
+    meaning:
+      de: Ja. Ich heiße Jonas.
+  - speaker: rivera
+    text: Nice to meet you, Jonas. I'm Mrs. Rivera.
+    meaning:
+      de: Freut mich, Jonas. Ich bin Mrs. Rivera.
+  - speaker: protagonist
+    text: Nice to meet you, Mrs. Rivera.
+    meaning:
+      de: Freut mich, Mrs. Rivera.
+  - speaker: rivera
+    text: Come in, come in. This is your key.
+    meaning:
+      de: Kommen Sie, kommen Sie herein. Das ist Ihr Schlüssel.
+  - speaker: protagonist
+    text: Thanks. And this is my bag.
+    meaning:
+      de: Danke. Und das ist meine Tasche.
+  - speaker: rivera
+    text: Is it heavy?
+    meaning:
+      de: Ist sie schwer?
+  - speaker: protagonist
+    text: No, it's OK. Thank you.
+    meaning:
+      de: Nein, es geht. Danke.
+- type: narrator
+  text:
+    de: '„Are you …?“ fragt nach „be“: Das Verb kommt nach vorn. „You are the tenant“ → „Are you the tenant?“ Kurz antwortet man mit dem Verb: „Yes, I am.“'
+- type: prompt
+  ask:
+    de: Mrs. Rivera fragt, ob Sie der neue Mieter sind. Sagen Sie kurz ja.
+  answer:
+    speaker: protagonist
+    text: Yes, I am.
+  items:
+  - yes-i-am
+- type: prompt
+  ask:
+    de: 'Fragen Sie sie: Sind Sie Mrs. Rivera?'
+  answer:
+    speaker: protagonist
+    text: Are you Mrs. Rivera?
+  items:
+  - are-you
+  - mrs-rivera
+- type: prompt
+  ask:
+    de: 'Sagen Sie Ihren Namen: Ich heiße Jonas.'
+  answer:
+    speaker: protagonist
+    text: My name is Jonas.
+  items:
+  - my-name-is
+- type: prompt
+  ask:
+    de: 'Sagen Sie: Freut mich, Mrs. Rivera.'
+  answer:
+    speaker: protagonist
+    text: Nice to meet you, Mrs. Rivera.
+  items:
+  - nice-to-meet-you
+  - mrs-rivera
+- type: narrator
+  text:
+    de: „my“ ist mein und meine; „your“ ist dein, deine, Ihr, Ihre — Englisch unterscheidet weder das Geschlecht des Dings noch du und Sie.
+- type: buildup
+  item: your-key
+  parts:
+  - key
+  - your key
+- type: prompt
+  ask:
+    de: 'Sie zeigt den Schlüssel. Sagen Sie: Das ist Ihr Schlüssel — zu einem Freund.'
+  answer:
+    speaker: protagonist
+    text: This is your key.
+  items:
+  - this-is
+  - your-key
+- type: prompt
+  ask:
+    de: 'Zeigen Sie Ihre Tasche: Das ist meine Tasche.'
+  answer:
+    speaker: protagonist
+    text: This is my bag.
+  items:
+  - this-is
+  - my
+- type: prompt
+  ask:
+    de: Bitten Sie jemanden herein.
+  answer:
+    speaker: protagonist
+    text: Come in.
+  items:
+  - come-in
+- type: prompt
+  ask:
+    de: Bedanken Sie sich locker.
+  answer:
+    speaker: protagonist
+    text: Thanks.
+  items:
+  - thanks
+- type: narrator
+  text:
+    de: „Mrs.“ spricht man „Missis“. Eine ältere Vermieterin nennt man so, bis sie ihren Vornamen anbietet.
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Sind Sie …?“.'
+  answer:
+    speaker: protagonist
+    text: Are you …?
+  items:
+  - are-you
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Ja (, bin ich).“.'
+  answer:
+    speaker: protagonist
+    text: Yes, I am.
+  items:
+  - yes-i-am
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Freut mich.“.'
+  answer:
+    speaker: protagonist
+    text: Nice to meet you.
+  items:
+  - nice-to-meet-you
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Ich heiße …“.'
+  answer:
+    speaker: protagonist
+    text: My name is …
+  items:
+  - my-name-is
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Ihr Schlüssel“.'
+  answer:
+    speaker: protagonist
+    text: your key
+  items:
+  - your-key
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „mein, meine“.'
+  answer:
+    speaker: protagonist
+    text: my
+  items:
+  - my
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „dein, Ihr“.'
+  answer:
+    speaker: protagonist
+    text: your
+  items:
+  - your
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „dein, Ihr“.'
+  answer:
+    speaker: protagonist
+    text: your
+  items:
+  - your
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Kommen Sie herein.“.'
+  answer:
+    speaker: protagonist
+    text: Come in.
+  items:
+  - come-in
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Danke. (locker)“.'
+  answer:
+    speaker: protagonist
+    text: Thanks.
+  items:
+  - thanks
+- type: narrator
+  text:
+    de: Jetzt einiges aus früheren Einheiten, in dieser neuen Situation.
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Hallo. / Guten Tag.“ — und „Ihr Reisepass“ — und „bitte“.'
+  answer:
+    speaker: protagonist
+    text: Hello. … your passport … please
+  items:
+  - hello
+  - passport
+  - please
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Bitte schön. (beim Geben)“ — und „Woher kommen Sie?“ — und „Ich komme aus Deutschland.“.'
+  answer:
+    speaker: protagonist
+    text: Here you are. … Where are you from? … I'm from Germany.
+  items:
+  - here-you-are
+  - where-from
+  - im-from
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „ich bin“ — und „Warum sind Sie hier?“ — und „zum Arbeiten / beruflich“.'
+  answer:
+    speaker: protagonist
+    text: I am / I'm … Why are you here? … for work
+  items:
+  - i-am
+  - why-here
+  - for-work
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Willkommen in den Vereinigten Staaten.“ — und „Danke.“ — und „Wie geht''s? (als Gruß)“.'
+  answer:
+    speaker: protagonist
+    text: Welcome to the United States. … Thank you. … How are you?
+  items:
+  - welcome
+  - thank-you
+  - how-are-you
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Gut, danke.“.'
+  answer:
+    speaker: protagonist
+    text: Good, thanks.
+  items:
+  - good-thanks
+- type: narrator
+  text:
+    de: Hören Sie das Gespräch noch einmal. Jetzt verstehen Sie es.
+- type: dialogue
+  again: true
+- type: selfcheck

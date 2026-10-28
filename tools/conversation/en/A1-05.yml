@@ -1,0 +1,417 @@
+# UNIT en A1-05 — written by AI (Claude) for Casus; expanded from src/A1-05.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-05
+level: A1
+number: 5
+protagonist: f
+title:
+  de: Erster Arbeitstag
+situation:
+  de: Das Labor, Montagmorgen. Ein Kollege, Jamal, zeigt Ihnen Ihren Platz.
+learn_lessons:
+- en-present-simple
+- en-pronouns
+culture: First names at work
+new_items:
+- id: hi
+  text: Hi.
+  meaning:
+    de: Hallo. (locker)
+- id: im
+  text: I'm …
+  meaning:
+    de: ich bin …
+- id: what-do-you-do
+  text: What do you do?
+  meaning:
+    de: Was machen Sie beruflich?
+- id: i-work
+  text: I work …
+  meaning:
+    de: ich arbeite …
+- id: in-the-lab
+  text: in the lab
+  meaning:
+    de: im Labor
+- id: im-a-biologist
+  text: I'm a biologist.
+  meaning:
+    de: Ich bin Biologin / Biologe.
+- id: he-works
+  text: he works
+  meaning:
+    de: er arbeitet
+- id: she-works
+  text: she works
+  meaning:
+    de: sie arbeitet
+- id: we
+  text: we
+  meaning:
+    de: wir
+- id: we-work
+  text: we work together
+  meaning:
+    de: wir arbeiten zusammen
+- id: your-desk
+  text: your desk
+  meaning:
+    de: Ihr Schreibtisch / Arbeitsplatz
+- id: great
+  text: Great.
+  meaning:
+    de: Super.
+reviews:
+- item: are-you
+  from: A1-02
+- item: yes-i-am
+  from: A1-02
+- item: nice-to-meet-you
+  from: A1-02
+- item: my-name-is
+  from: A1-02
+- item: this-is
+  from: A1-02
+- item: your-key
+  from: A1-02
+- item: my
+  from: A1-02
+- item: your
+  from: A1-02
+- item: mrs-rivera
+  from: A1-02
+- item: come-in
+  from: A1-02
+- item: thanks
+  from: A1-02
+- item: good-morning
+  from: A1-04
+- item: what-can-i-get
+  from: A1-04
+- item: can-i-have
+  from: A1-04
+- item: a-coffee
+  from: A1-04
+- item: small-medium-large
+  from: A1-04
+- item: medium
+  from: A1-04
+- item: for-here
+  from: A1-04
+- item: to-go
+  from: A1-04
+- item: how-much
+  from: A1-04
+- item: three-fifty
+  from: A1-04
+- item: keep-the-change
+  from: A1-04
+- item: have-a-nice-day
+  from: A1-04
+- item: you-too
+  from: A1-04
+steps:
+- type: narrator
+  text:
+    de: Das Labor, Montagmorgen. Ein Kollege, Jamal, zeigt Ihnen Ihren Platz. Hören Sie sich das Gespräch an; Sie müssen es noch nicht verstehen.
+- type: dialogue
+  lines:
+  - speaker: jamal
+    text: Hi, I'm Jamal. You're the new biologist, right?
+    meaning:
+      de: Hallo, ich bin Jamal. Du bist die neue Biologin, oder?
+  - speaker: protagonist
+    text: Hi, Jamal. Yes, I'm a biologist. I'm from Leipzig.
+    meaning:
+      de: Hallo, Jamal. Ja, ich bin Biologin. Ich komme aus Leipzig.
+  - speaker: jamal
+    text: Welcome! What do you do in Leipzig?
+    meaning:
+      de: Willkommen! Was machst du in Leipzig?
+  - speaker: protagonist
+    text: I work in a lab at the university.
+    meaning:
+      de: Ich arbeite in einem Labor an der Uni.
+  - speaker: jamal
+    text: Cool. I work in this lab. And Dr. Chen works here too.
+    meaning:
+      de: Cool. Ich arbeite in diesem Labor. Und Dr. Chen arbeitet auch hier.
+  - speaker: protagonist
+    text: So we work together!
+    meaning:
+      de: Dann arbeiten wir zusammen!
+  - speaker: jamal
+    text: Yes. This is your desk.
+    meaning:
+      de: Ja. Das ist dein Platz.
+  - speaker: protagonist
+    text: Great. Thanks, Jamal.
+    meaning:
+      de: Super. Danke, Jamal.
+- type: prompt
+  ask:
+    de: 'Grüßen Sie Jamal locker: Hallo.'
+  answer:
+    speaker: protagonist
+    text: Hi.
+  items:
+  - hi
+- type: prompt
+  ask:
+    de: Sagen Sie, dass Sie Biologin sind.
+  answer:
+    speaker: protagonist
+    text: I'm a biologist.
+  items:
+  - im-a-biologist
+- type: narrator
+  text:
+    de: 'Beim Beruf steht im Englischen „a“: „I''m a biologist“, „She''s a doctor“ — im Deutschen nicht.'
+- type: prompt
+  ask:
+    de: Fragen Sie Jamal, was er beruflich macht.
+  answer:
+    speaker: protagonist
+    text: What do you do?
+  items:
+  - what-do-you-do
+- type: narrator
+  text:
+    de: 'Die einfache Gegenwart: I work, you work, we work, they work — aber he, she, it: works, mit -s. Das -s vergisst man als Deutscher leicht.'
+- type: prompt
+  ask:
+    de: 'Sagen Sie: Ich arbeite im Labor.'
+  answer:
+    speaker: protagonist
+    text: I work in the lab.
+  items:
+  - i-work
+  - in-the-lab
+- type: buildup
+  item: he-works
+  parts:
+  - works
+  - he works
+- type: prompt
+  ask:
+    de: 'Sagen Sie: Er arbeitet im Labor.'
+  answer:
+    speaker: protagonist
+    text: He works in the lab.
+  items:
+  - he-works
+  - in-the-lab
+- type: prompt
+  ask:
+    de: 'Und Dr. Chen: Sie arbeitet im Labor.'
+  answer:
+    speaker: protagonist
+    text: She works in the lab.
+  items:
+  - she-works
+  - in-the-lab
+- type: prompt
+  ask:
+    de: 'Sagen Sie: Wir arbeiten zusammen.'
+  answer:
+    speaker: protagonist
+    text: We work together.
+  items:
+  - we
+  - we-work
+- type: prompt
+  ask:
+    de: 'Jamal zeigt Ihren Platz. Sagen Sie: Super. Danke.'
+  answer:
+    speaker: protagonist
+    text: Great. Thanks.
+  items:
+  - great
+  - thanks
+- type: narrator
+  text:
+    de: Im amerikanischen Büro sagt man vom ersten Tag an Vornamen — auch Jamal duzt Sie praktisch. Die Chefin bleibt „Dr. Chen“, bis sie es anders sagt.
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Hallo. (locker)“.'
+  answer:
+    speaker: protagonist
+    text: Hi.
+  items:
+  - hi
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „ich bin …“.'
+  answer:
+    speaker: protagonist
+    text: I'm …
+  items:
+  - im
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „ich bin …“.'
+  answer:
+    speaker: protagonist
+    text: I'm …
+  items:
+  - im
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Was machen Sie beruflich?“.'
+  answer:
+    speaker: protagonist
+    text: What do you do?
+  items:
+  - what-do-you-do
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „ich arbeite …“.'
+  answer:
+    speaker: protagonist
+    text: I work …
+  items:
+  - i-work
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Ich bin Biologin / Biologe.“.'
+  answer:
+    speaker: protagonist
+    text: I'm a biologist.
+  items:
+  - im-a-biologist
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „er arbeitet“.'
+  answer:
+    speaker: protagonist
+    text: he works
+  items:
+  - he-works
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „sie arbeitet“.'
+  answer:
+    speaker: protagonist
+    text: she works
+  items:
+  - she-works
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „wir“.'
+  answer:
+    speaker: protagonist
+    text: we
+  items:
+  - we
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „wir arbeiten zusammen“.'
+  answer:
+    speaker: protagonist
+    text: we work together
+  items:
+  - we-work
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Ihr Schreibtisch / Arbeitsplatz“.'
+  answer:
+    speaker: protagonist
+    text: your desk
+  items:
+  - your-desk
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Ihr Schreibtisch / Arbeitsplatz“.'
+  answer:
+    speaker: protagonist
+    text: your desk
+  items:
+  - your-desk
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Super.“.'
+  answer:
+    speaker: protagonist
+    text: Great.
+  items:
+  - great
+- type: narrator
+  text:
+    de: Jetzt einiges aus früheren Einheiten, in dieser neuen Situation.
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Guten Morgen.“ — und „Was darf''s sein?“ — und „Kann ich … haben? / Ich hätte gern …“ — und „einen Kaffee“.'
+  answer:
+    speaker: protagonist
+    text: Good morning. … What can I get you? … Can I have …? … a coffee
+  items:
+  - good-morning
+  - what-can-i-get
+  - can-i-have
+  - a-coffee
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „klein, mittel oder groß“ — und „einen mittleren“ — und „zum Hiertrinken“ — und „zum Mitnehmen“.'
+  answer:
+    speaker: protagonist
+    text: small, medium or large … a medium … for here … to go
+  items:
+  - small-medium-large
+  - medium
+  - for-here
+  - to-go
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Was kostet das?“ — und „drei fünfzig“ — und „Stimmt so.“ — und „Schönen Tag noch!“.'
+  answer:
+    speaker: protagonist
+    text: How much is it? … three fifty … Keep the change. … Have a nice day!
+  items:
+  - how-much
+  - three-fifty
+  - keep-the-change
+  - have-a-nice-day
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Ihnen auch.“ — und „Sind Sie …?“ — und „Ja (, bin ich).“ — und „Freut mich.“.'
+  answer:
+    speaker: protagonist
+    text: You too. … Are you …? … Yes, I am. … Nice to meet you.
+  items:
+  - you-too
+  - are-you
+  - yes-i-am
+  - nice-to-meet-you
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „Ich heiße …“ — und „Das ist …“ — und „Ihr Schlüssel“ — und „mein, meine“.'
+  answer:
+    speaker: protagonist
+    text: My name is … … This is … … your key … my
+  items:
+  - my-name-is
+  - this-is
+  - your-key
+  - my
+- type: prompt
+  review: true
+  ask:
+    de: 'Sagen Sie: „dein, Ihr“ — und „Frau Rivera“ — und „Kommen Sie herein.“.'
+  answer:
+    speaker: protagonist
+    text: your … Mrs. Rivera … Come in.
+  items:
+  - your
+  - mrs-rivera
+  - come-in
+- type: narrator
+  text:
+    de: Hören Sie das Gespräch noch einmal. Jetzt verstehen Sie es.
+- type: dialogue
+  again: true
+- type: selfcheck

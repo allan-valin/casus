@@ -1,0 +1,423 @@
+# UNIT ar A1-05 — written by AI (Claude) for Casus; expanded from src/A1-05.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-05
+level: A1
+number: 5
+protagonist: f
+title:
+  en: Registration
+  pt: A matrícula
+situation:
+  en: The office of the language centre. A clerk fills in your form.
+  pt: A secretaria do centro de línguas. Uma funcionária preenche a sua ficha.
+learn_lessons:
+- ar-a1-questions
+- ar-a1-numbers
+culture: Names in Arabic order
+new_items:
+- id: ma-ismuki
+  text: ما اسْمُكِ؟
+  meaning:
+    en: What is your name? (to a woman)
+    pt: Qual é o seu nome? (a uma mulher)
+- id: ma-ismuka
+  text: ما اسْمُكَ؟
+  meaning:
+    en: What is your name? (to a man)
+    pt: Qual é o seu nome? (a um homem)
+- id: min-ayna
+  text: مِنْ أَيْنَ أَنْتِ؟
+  meaning:
+    en: Where are you from? (to a woman)
+    pt: De onde você é? (a uma mulher)
+- id: raqm-alhatif
+  text: رَقْمُ الهاتِفْ
+  meaning:
+    en: phone number
+    pt: número de telefone
+- id: sifr
+  text: صِفْرْ
+  meaning:
+    en: zero
+    pt: zero
+- id: wahid
+  text: واحِدْ
+  meaning:
+    en: one
+    pt: um
+- id: ithnan
+  text: اِثْنانْ
+  meaning:
+    en: two
+    pt: dois
+- id: thalatha
+  text: ثَلاثَةْ
+  meaning:
+    en: three
+    pt: três
+- id: arbaa
+  text: أَرْبَعَةْ
+  meaning:
+    en: four
+    pt: quatro
+- id: khamsa
+  text: خَمْسَةْ
+  meaning:
+    en: five
+    pt: cinco
+- id: shukran-jazilan
+  text: شُكْرًا جَزيلًا
+  meaning:
+    en: thank you very much
+    pt: muito obrigada, muito obrigado
+- id: min-sao-paulo
+  text: مِنْ ساو باولو
+  meaning:
+    en: from São Paulo
+    pt: de São Paulo
+reviews:
+- item: ila-ayna
+  from: A1-02
+- item: ila
+  from: A1-02
+- item: sharii-aljamia
+  from: A1-02
+- item: min-fadlika
+  from: A1-02
+- item: anta
+  from: A1-02
+- item: la
+  from: A1-02
+- item: huna
+  from: A1-02
+- item: kam
+  from: A1-02
+- item: khamsatu-dananir
+  from: A1-02
+- item: afwan
+  from: A1-02
+- item: ghurfatuka
+  from: A1-04
+- item: ghurfa
+  from: A1-04
+- item: kabira
+  from: A1-04
+- item: kabir
+  from: A1-04
+- item: jamila
+  from: A1-04
+- item: sarir
+  from: A1-04
+- item: nafidha
+  from: A1-04
+- item: wa-hadha
+  from: A1-04
+- item: jiddan
+  from: A1-04
+- item: aydan
+  from: A1-04
+- item: umm-sami
+  from: A1-04
+- item: ana
+  from: A1-01
+- item: mina-lbrazil
+  from: A1-01
+- item: ismi
+  from: A1-03
+steps:
+- type: narrator
+  text:
+    en: The office of the language centre. A clerk fills in your form. Listen to the conversation; you don't need to understand it yet.
+    pt: A secretaria do centro de línguas. Uma funcionária preenche a sua ficha. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: clerk
+    text: مَرْحَبًا. ما اسْمُكِ؟
+    meaning:
+      en: Hello. What is your name?
+      pt: Olá. Qual é o seu nome?
+  - speaker: protagonist
+    text: اِسْمي آنا.
+    meaning:
+      en: My name is Ana.
+      pt: Meu nome é Ana.
+  - speaker: clerk
+    text: مِنْ أَيْنَ أَنْتِ يا آنا؟
+    meaning:
+      en: Where are you from, Ana?
+      pt: De onde você é, Ana?
+  - speaker: protagonist
+    text: أَنا مِنَ البَرازيلِ، مِنْ ساو باولو.
+    meaning:
+      en: I'm from Brazil, from São Paulo.
+      pt: Sou do Brasil, de São Paulo.
+  - speaker: clerk
+    text: ما رَقْمُ الهاتِفْ؟
+    meaning:
+      en: What is the phone number?
+      pt: Qual é o número de telefone?
+  - speaker: protagonist
+    text: صِفْرْ، سَبْعَةْ، واحِدْ، اِثْنانْ، ثَلاثَةْ، أَرْبَعَةْ، خَمْسَةْ.
+    meaning:
+      en: Zero, seven, one, two, three, four, five.
+      pt: Zero, sete, um, dois, três, quatro, cinco.
+  - speaker: clerk
+    text: شُكْرًا. أَهْلًا وَسَهْلًا في المَعْهَدْ.
+    meaning:
+      en: Thank you. Welcome to the institute.
+      pt: Obrigada. Bem-vinda ao instituto.
+  - speaker: protagonist
+    text: شُكْرًا جَزيلًا.
+    meaning:
+      en: Thank you very much.
+      pt: Muito obrigada.
+- type: narrator
+  text:
+    en: '''What is your name?'' — ما ''what'' + اسْم ''name'' + the ending for ''your'': -ki to a woman, -ka to a man. The clerk is a woman, so you ask her: ما اسْمُكِ؟'
+    pt: '''Qual é o seu nome?'' — ما ''o quê'' + اسْم ''nome'' + a terminação de ''seu'': -ki para mulher, -ka para homem. A funcionária é mulher: ما اسْمُكِ؟'
+- type: prompt
+  ask:
+    en: Ask the clerk her name.
+    pt: Pergunte o nome da funcionária.
+  answer:
+    speaker: protagonist
+    text: ما اسْمُكِ؟
+  items:
+  - ma-ismuki
+- type: prompt
+  ask:
+    en: Ask a man his name.
+    pt: Pergunte o nome de um homem.
+  answer:
+    speaker: protagonist
+    text: ما اسْمُكَ؟
+  items:
+  - ma-ismuka
+- type: prompt
+  ask:
+    en: 'Answer: my name is Ana.'
+    pt: 'Responda: meu nome é Ana.'
+  answer:
+    speaker: protagonist
+    text: اِسْمي آنا.
+  items:
+  - ismi
+- type: narrator
+  text:
+    en: 'مِنْ أَيْنَ؟ ''from where?'' The question word comes first, then the person: مِنْ أَيْنَ أَنْتِ؟'
+    pt: 'مِنْ أَيْنَ؟ ''de onde?'' A palavra interrogativa vem primeiro, depois a pessoa: مِنْ أَيْنَ أَنْتِ؟'
+- type: prompt
+  ask:
+    en: Ask Yuki, a classmate, where she is from.
+    pt: Pergunte a Yuki, uma colega, de onde ela é.
+  answer:
+    speaker: protagonist
+    text: مِنْ أَيْنَ أَنْتِ؟
+  items:
+  - min-ayna
+- type: prompt
+  ask:
+    en: Say you are from Brazil, from São Paulo.
+    pt: Diga que é do Brasil, de São Paulo.
+  answer:
+    speaker: protagonist
+    text: أَنا مِنَ البَرازيلِ، مِنْ ساو باولو.
+  items:
+  - ana
+  - mina-lbrazil
+  - min-sao-paulo
+- type: narrator
+  text:
+    en: 'Numbers one to five: واحِدْ، اِثْنانْ، ثَلاثَةْ، أَرْبَعَةْ، خَمْسَةْ; zero is صِفْرْ — the word that gave Portuguese ''cifra'' and ''zero''. Phone numbers are said digit by digit.'
+    pt: 'Os números de um a cinco: واحِدْ، اِثْنانْ، ثَلاثَةْ، أَرْبَعَةْ، خَمْسَةْ; zero é صِفْرْ — a palavra que deu ''cifra'' e ''zero'' em português. Telefones se dizem algarismo por algarismo.'
+- type: prompt
+  ask:
+    en: Count from one to three.
+    pt: Conte de um a três.
+  answer:
+    speaker: protagonist
+    text: واحِدْ، اِثْنانْ، ثَلاثَةْ.
+  items:
+  - wahid
+  - ithnan
+  - thalatha
+- type: prompt
+  ask:
+    en: Count from zero to five.
+    pt: Conte de zero a cinco.
+  answer:
+    speaker: protagonist
+    text: صِفْرْ، واحِدْ، اِثْنانْ، ثَلاثَةْ، أَرْبَعَةْ، خَمْسَةْ.
+  items:
+  - sifr
+  - wahid
+  - ithnan
+  - thalatha
+  - arbaa
+  - khamsa
+- type: prompt
+  ask:
+    en: Ask for the phone number.
+    pt: Pergunte o número de telefone.
+  answer:
+    speaker: protagonist
+    text: ما رَقْمُ الهاتِفْ؟
+  items:
+  - raqm-alhatif
+- type: prompt
+  ask:
+    en: 'Give a number: zero, five, four, two.'
+    pt: 'Dê um número: zero, cinco, quatro, dois.'
+  answer:
+    speaker: protagonist
+    text: صِفْرْ، خَمْسَةْ، أَرْبَعَةْ، اِثْنانْ.
+  items:
+  - sifr
+  - khamsa
+  - arbaa
+  - ithnan
+- type: prompt
+  ask:
+    en: Thank her very much.
+    pt: Agradeça muito.
+  answer:
+    speaker: protagonist
+    text: شُكْرًا جَزيلًا.
+  items:
+  - shukran-jazilan
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'Os ''algarismos arábicos'' que usamos no Brasil vieram dos árabes; na Jordânia, porém, muita placa usa os números do Oriente: ٠ ١ ٢ ٣ ٤ ٥. Os dois sistemas convivem.'
+- type: prompt
+  ask:
+    en: 'Once more: say “What is your name? (to a woman)”.'
+    pt: 'Mais uma vez: diga “Qual é o seu nome? (a uma mulher)”.'
+  answer:
+    speaker: protagonist
+    text: ما اسْمُكِ؟
+  items:
+  - ma-ismuki
+- type: prompt
+  ask:
+    en: 'Once more: say “What is your name? (to a man)”.'
+    pt: 'Mais uma vez: diga “Qual é o seu nome? (a um homem)”.'
+  answer:
+    speaker: protagonist
+    text: ما اسْمُكَ؟
+  items:
+  - ma-ismuka
+- type: prompt
+  ask:
+    en: 'Once more: say “Where are you from? (to a woman)”.'
+    pt: 'Mais uma vez: diga “De onde você é? (a uma mulher)”.'
+  answer:
+    speaker: protagonist
+    text: مِنْ أَيْنَ أَنْتِ؟
+  items:
+  - min-ayna
+- type: prompt
+  ask:
+    en: 'Once more: say “phone number”.'
+    pt: 'Mais uma vez: diga “número de telefone”.'
+  answer:
+    speaker: protagonist
+    text: رَقْمُ الهاتِفْ
+  items:
+  - raqm-alhatif
+- type: prompt
+  ask:
+    en: 'Once more: say “thank you very much”.'
+    pt: 'Mais uma vez: diga “muito obrigada, muito obrigado”.'
+  answer:
+    speaker: protagonist
+    text: شُكْرًا جَزيلًا
+  items:
+  - shukran-jazilan
+- type: prompt
+  ask:
+    en: 'Once more: say “from São Paulo”.'
+    pt: 'Mais uma vez: diga “de São Paulo”.'
+  answer:
+    speaker: protagonist
+    text: مِنْ ساو باولو
+  items:
+  - min-sao-paulo
+- type: narrator
+  text:
+    en: Now some things from earlier units, in this new situation.
+    pt: Agora, coisas de unidades anteriores, nesta situação nova.
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “your room (to a man) — and “a room — and “big (feminine) — and “big (masculine) — and “beautiful, nice (feminine)”.'
+    pt: 'Diga: “o seu quarto (a um homem) — e “um quarto — e “grande (feminino) — e “grande (masculino) — e “bonita (feminino)”.'
+  answer:
+    speaker: protagonist
+    text: غُرْفَتُكَ … غُرْفَةٌ … كَبيرَةٌ … كَبيرٌ … جَميلَةٌ
+  items:
+  - ghurfatuka
+  - ghurfa
+  - kabira
+  - kabir
+  - jamila
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “the bed — and “the window — and “and this — and “very — and “too, also”.'
+    pt: 'Diga: “a cama — e “a janela — e “e este — e “muito — e “também”.'
+  answer:
+    speaker: protagonist
+    text: السَّريرْ … النّافِذَةْ … وَهٰذا … جِدًّا … أَيْضًا
+  items:
+  - sarir
+  - nafidha
+  - wa-hadha
+  - jiddan
+  - aydan
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “Umm Sami (Sami''s mother: how one calls a mother) — and “Where to? — and “to (a place) — and “University Street — and “please (to a man)”.'
+    pt: 'Diga: “Umm Sami (mãe do Sami: assim se chama uma mãe) — e “Para onde? — e “para (um lugar) — e “a rua da Universidade — e “por favor (a um homem)”.'
+  answer:
+    speaker: protagonist
+    text: أُمَّ سامي … إِلى أَيْنَ؟ … إِلى … شارِعِ الجامِعَةْ … مِنْ فَضْلِكَ
+  items:
+  - umm-sami
+  - ila-ayna
+  - ila
+  - sharii-aljamia
+  - min-fadlika
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “you (a man) — and “no — and “here — and “How much? — and “five dinars”.'
+    pt: 'Diga: “você (homem) — e “não — e “aqui — e “Quanto é? — e “cinco dinares”.'
+  answer:
+    speaker: protagonist
+    text: أَنْتَ … لا … هُنا … كَمْ؟ … خَمْسَةُ دَنانيرْ
+  items:
+  - anta
+  - la
+  - huna
+  - kam
+  - khamsatu-dananir
+- type: prompt
+  review: true
+  ask:
+    en: 'Say: “you''re welcome”.'
+    pt: 'Diga: “de nada”.'
+  answer:
+    speaker: protagonist
+    text: عَفْوًا
+  items:
+  - afwan
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck
