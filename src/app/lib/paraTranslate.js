@@ -27,6 +27,50 @@ export function looksLike(text, from, to) {
   return a >= 2 && a > b;
 }
 
+// the script each explanation language is written in; text in any other script is the taught language
+const SCRIPT = { bg: 'Cyrillic', ru: 'Cyrillic', uk: 'Cyrillic', fa: 'Arabic' };
+const foreign = (src) => new RegExp(`[^\\p{Script=${SCRIPT[src] ?? 'Latin'}}\\p{Script=Common}\\p{Script=Inherited}]+`, 'gu');
+
+/** the taught language kept out of the engine's hands: every run in another script becomes an empty placeholder
+ * element (Bergamot keeps tags but drops text it cannot read); restore(html) puts the runs back */
+export function protect(html, src) {
+  const runs = [];
+  const tpl = document.createElement('template');
+  tpl.innerHTML = html;
+  const walker = document.createTreeWalker(tpl.content, NodeFilter.SHOW_TEXT);
+  const texts = [];
+  for (let n = walker.nextNode(); n; n = walker.nextNode()) texts.push(n);
+  for (const node of texts) {
+    const rx = foreign(src);
+    if (!rx.test(node.data)) continue;
+    const frag = document.createDocumentFragment();
+    let at = 0;
+    node.data.replace(foreign(src), (m, i) => {
+      if (i > at) frag.append(node.data.slice(at, i));
+      const ph = document.createElement('span');
+      ph.setAttribute('data-ph', String(runs.length));
+      runs.push(m); frag.append(ph); at = i + m.length; return m;
+    });
+    if (at < node.data.length) frag.append(node.data.slice(at));
+    node.replaceWith(frag);
+  }
+  return {
+    html: tpl.innerHTML,
+    restore(out) {
+      const t = document.createElement('template');
+      t.innerHTML = out;
+      for (const ph of t.content.querySelectorAll('span[data-ph]')) ph.replaceWith(runs[Number(ph.getAttribute('data-ph'))] ?? '');
+      // the engine drops the space after an empty element: a kept word followed straight by a letter gets it back
+      let html = t.innerHTML;
+      for (const r of new Set(runs)) {
+        const esc = r.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        html = html.replace(new RegExp(`${esc}((?:</[a-z]+>)*)(?=\\p{L})`, 'gu'), `${r}$1 `);
+      }
+      return html;
+    },
+  };
+}
+
 let translator = null;
 /** html in `from` → html in `to`, with Bergamot (tags kept); the engine is loaded once, from our own site */
 export async function translateHtml(html, from, to, { base = '/' } = {}) {
@@ -34,8 +78,9 @@ export async function translateHtml(html, from, to, { base = '/' } = {}) {
     const { LatencyOptimisedTranslator } = await import('@browsermt/bergamot-translator/translator.js');
     translator = new LatencyOptimisedTranslator({ workerUrl: `${base}bergamot/translator-worker.js`, pivotLanguage: 'en' });
   }
-  const res = await translator.translate({ from, to, text: html, html: true });
-  return res.target.text;
+  const kept = protect(html, from);
+  const res = await translator.translate({ from, to, text: kept.html, html: true });
+  return kept.restore(res.target.text);
 }
 
 /** Svelte action: a small button after each paragraph still in the source language; it swaps in a translation

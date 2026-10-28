@@ -35,3 +35,21 @@ describe('per-paragraph translation', () => {
     expect(node.querySelector('p').textContent).toContain('sont toujours');
   });
 });
+
+import { protect } from '../../src/app/lib/paraTranslate.js';
+describe('the taught language survives translation (2026-10-28: Bergamot dropped <b>먹다</b> to <b></b>)', () => {
+  it('runs in another script become empty placeholders and come back', () => {
+    const { html, restore } = protect('<p>Les verbes <b>먹다</b> et 가다 sont à la fin.</p>', 'fr');
+    expect(html).not.toMatch(/[가-힣]/);
+    const fake = html.replace('Les verbes', 'Os verbos').replace('et', 'e').replace('sont à la fin', 'ficam no fim');
+    expect(restore(fake)).toBe('<p>Os verbos <b>먹다</b> e 가다 ficam no fim.</p>');
+  });
+});
+
+describe('spaces around the kept words', () => {
+  it('puts back the space the engine drops after a placeholder (먹다</b>e → 먹다</b> e)', () => {
+    const { html, restore } = protect('<p>Les <b>먹다</b> et 감사합니다 pour.</p>', 'fr');
+    const fromEngine = html.replace('Les ', 'Verbos ').replace('</b> et ', '</b>e ').replace(/(<span data-ph="1"><\/span>) pour/, '$1to');
+    expect(restore(fromEngine)).toBe('<p>Verbos <b>먹다</b> e 감사합니다 to.</p>');
+  });
+});
