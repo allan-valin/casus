@@ -15,10 +15,12 @@
   import { lessonAnswer, completion } from '../lib/progression.js';
   import { speakLinks } from '../lib/pronounce.js';
   import { learnSections, learnOrder } from '../lib/learnorigin.js';
+  import { paraButtons, translateHtml } from '../lib/paraTranslate.js';
   import WordEntry from './WordEntry.svelte';
   import { wordAround, candidatesAt, firstKnown } from '../lib/wordat.js';
   import { searchIndex } from '../../lib/learn/search.js';
-  let { lang, loadLearn, loadLesson, loadQuestions, storage = null, random = Math.random, openInReader = null, speak = null, saveFile = downloadFile, award = null, progression = null, lookup = null, loadInfo = null, loadParadigm = null, startLesson = null, loadTalkLinks = null, talkHref = null, loadSearch = null } = $props();
+  let { lang, loadLearn, loadLesson, loadQuestions, storage = null, random = Math.random, openInReader = null, speak = null, saveFile = downloadFile, award = null, progression = null, lookup = null, loadInfo = null, loadParadigm = null, startLesson = null, loadTalkLinks = null, talkHref = null, loadSearch = null,
+    translatePara = (html, from, to) => translateHtml(html, from, to, { base: import.meta.env?.BASE_URL ?? '/' }) } = $props();
 
   let learn = $state(null);
   let failed = $state(false);
@@ -40,6 +42,9 @@
   // a word of the taught language in a lesson opens its dictionary entry below its section, as in the Reader
   // (Allan, 2026-10-20): examples (b, i, code, [lang], .ja) in any script, any word in a script other than Latin
   let entry = $state(null);
+  // a paragraph still in the book's language can be translated on the spot (Bergamot; Allan, 2026-10-28)
+  const paraOpts = $derived(lesson?.src ? { src: lesson.src, ui: ui.lang, translate: translatePara,
+    labels: { button: t('learn.tr.button'), busy: t('learn.tr.busy'), original: t('learn.tr.original'), failed: t('learn.tr.failed') } } : null);
   let orderMode = $state('order');
   try { orderMode = storage?.getItem('casus:learn:order') === 'source' ? 'source' : 'order'; } catch { /* no storage */ }
   function setOrder(m) { orderMode = m; try { storage?.setItem('casus:learn:order', m); } catch { /* full */ } }
@@ -284,13 +289,13 @@
       {:else}
         <nav class="toc">{#each tocOf(lesson) as [href, label], i}{#if i}<span class="sep" aria-hidden="true">|</span>{/if}<a {href}>{label}</a>{/each}</nav>
         {#if loc(lesson.intro)}<!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
-          <div class="prose words-clickable" use:speakLinks={{ html: body(lesson.intro), speak, title: t('learn.speak.title') }} onclick={(e) => onProseClick(e, 'intro')}>{@html body(lesson.intro)}</div>
+          <div class="prose words-clickable" use:speakLinks={{ html: body(lesson.intro), speak, title: t('learn.speak.title') }} use:paraButtons={paraOpts ? { ...paraOpts, html: body(lesson.intro) } : null} onclick={(e) => onProseClick(e, 'intro')}>{@html body(lesson.intro)}</div>
 {/if}
         {#each lesson.sections as s}
           <section class="l-sec" id={`sec-${s.id}`} data-sec={s.id}>
             <h4>{loc(s.title)}</h4>
             <!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
-            <div class="prose words-clickable" use:speakLinks={{ html: body(s.html), speak, title: t('learn.speak.title') }} onclick={(e) => onProseClick(e, s.id)}>{@html body(s.html)}</div>
+            <div class="prose words-clickable" use:speakLinks={{ html: body(s.html), speak, title: t('learn.speak.title') }} use:paraButtons={paraOpts ? { ...paraOpts, html: body(s.html) } : null} onclick={(e) => onProseClick(e, s.id)}>{@html body(s.html)}</div>
             {#if s.id === 'examples' && lesson.examples?.length}
               <details class="examples-romaji"><summary>{t('learn.romaji')}</summary>
                 <ol>{#each lesson.examples as ex}<li><span lang={lang.bcp47}>{ex.text}</span> — <i>{exampleRoman(ex)}</i>{#if openInReader} <button class="to-reader" onclick={() => openInReader(ex.text)}>{t('learn.read')}</button>{/if}{@render say(ex.text)}</li>{/each}</ol>
@@ -492,4 +497,5 @@
   .order-toggle { display: inline-flex; gap: 0; margin: 0.5em 0; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
   .order-toggle button { font: inherit; background: none; border: 0; padding: 0.3em 0.9em; cursor: pointer; color: inherit; }
   .order-toggle button.active { background: var(--accent, #555); color: var(--on-accent, #fff); }
+  :global(button.para-tr) { font: inherit; font-size: 0.8em; margin-left: 0.3em; padding: 0 0.5em; border: 1px solid var(--line); border-radius: 999px; background: none; color: var(--muted, inherit); cursor: pointer; }
 </style>

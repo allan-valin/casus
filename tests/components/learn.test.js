@@ -478,3 +478,21 @@ describe('learning order view (Allan, 2026-10-28)', () => {
     expect(container.querySelector('details.topic summary')?.textContent).toMatch(/Saying what something is/);
   });
 });
+
+describe('a paragraph left in the book’s language can be translated (Bergamot; Allan, 2026-10-28)', () => {
+  it('offers the button on the French paragraph only, and swaps in the translation', async () => {
+    const idx = { system: 'TOPIK', levels: [{ id: 'T2', topics: [{ id: 't', kind: 'grammar', title: 'Verbes', lessons: [{ id: 'v', title: 'Verbes', meaning: 'verbs' }] }] }] };
+    const lessons = { v: { id: 'v', title: 'Verbes', meaning: 'verbs', src: 'fr', intro: '', sections: [{ id: 's', title: 'S', html: '<p>Les verbes coréens sont toujours placés à la fin de la phrase.</p><p>The verb always comes last in the sentence.</p>' }] } };
+    const calls = [];
+    const { container } = render(Learn, props({ lang: getLanguage('ko'), loadLearn: async () => idx, loadLesson: async (id) => lessons[id], translatePara: async (h, f, t) => { calls.push([f, t]); return '<p>Korean verbs always come at the end of the sentence.</p>'.slice(3, -4); } }));
+    await flush();
+    await fireEvent.click(container.querySelector('.lesson-row[data-lesson="v"]'));
+    await flush();
+    const buttons = container.querySelectorAll('button.para-tr');
+    expect(buttons.length).toBe(1);
+    buttons[0].click();
+    await flush();
+    expect(container.querySelector('.l-sec p').textContent).toContain('Korean verbs always come at the end');
+    expect(calls).toEqual([['fr', 'en']]);
+  });
+});

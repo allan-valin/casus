@@ -327,3 +327,5 @@ apparatus and editorial choices, so each bundled passage records its source and 
   Greek sentences for the exercises.
 - **Generated lessons** (every spaced-script language): function words, verbs, vocabulary and phrases built by Casus
   from Wiktionary (CC BY-SA, via kaikki.org) and Tatoeba (CC BY 2.0 FR); marked "generated" on every page.
+- Translation of single Learn paragraphs in the browser: Bergamot (@browsermt/bergamot-translator, MPL-2.0) with
+  Mozilla's translation models (MPL-2.0 / CC BY-SA, firefox-translations-models), downloaded on first use.

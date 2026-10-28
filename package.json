@@ -6,7 +6,9 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "parse": "node tools/parse_cli.mjs",
+    "predev": "node tools/copy_bergamot.mjs",
     "dev": "vite",
+    "prebuild": "node tools/copy_bergamot.mjs",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -21,6 +23,7 @@
     "vitest": "^5.0.3"
   },
   "dependencies": {
+    "@browsermt/bergamot-translator": "^0.4.9",
     "@diffusionstudio/piper-wasm": "1.0.0",
     "@mintplex-labs/piper-tts-web": "1.0.5",
     "flag-icons": "^7.2.3",
