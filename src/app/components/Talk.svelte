@@ -116,8 +116,10 @@
   const linesOf = (s) => (s.again ? firstDialogue?.lines ?? [] : s.lines ?? []);
 
   const slot = (id) => String(id).replace(/^([ABC][12]-\d+)-[a-z]+$/, '$1');   // audience versions: A1-02-e → A1-02
-  function open(u) { unit = { ...u, steps: u.steps.filter((x) => forMe(x.for)) }; shown = {}; current = null; practising = null; say(t('talk.opened', { unit: nar(u.title) })); }
-  function back() { unit = null; }
+  // leaving or opening a unit stops its sound: steps are told apart by number only, so a paused step 2 would otherwise
+  // resume when the next unit's step 2 is clicked (Allan 2026-10-28)
+  function open(u) { if (playing !== null || chainWaiting || paused) stopAll(); unit = { ...u, steps: u.steps.filter((x) => forMe(x.for)) }; shown = {}; current = null; practising = null; say(t('talk.opened', { unit: nar(u.title) })); }
+  function back() { if (playing !== null || chainWaiting || paused) stopAll(); unit = null; }
   function toggle(key) { shown = { ...shown, [key]: !shown[key] }; }
 
   // the natural voice failing must show (Allan, 2026-10-21: "still the robot voice"): once per unit, with the reason

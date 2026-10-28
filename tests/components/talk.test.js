@@ -402,6 +402,32 @@ describe('Conversation practice tab (Allan, 2026-10-20/21: narrator in the inter
     expect(said).toEqual(['Guten Tag.', 'Danke']);   // the dialogue's second line never plays
   });
 
+  it('another unit\'s same step does not resume the paused one (Allan 2026-10-28 bug: A1-02 step 2 went on with A1-01)', async () => {
+    const said = [];
+    const calls = [];
+    const speakTaught = (text) => { said.push(text); return text === 'Guten Tag.' ? new Promise(() => {}) : Promise.resolve(); };
+    const two = { ...COURSE, units: [COURSE.units[0], { ...COURSE.units[0], id: 'A1-02', number: 2,
+      steps: [COURSE.units[0].steps[0], { type: 'dialogue', lines: [{ speaker: 'becker', text: 'Hallo.', meaning: { pt: 'Oi.', en: 'Hi.' } }] }] }] };
+    const { p } = props({ speakTaught, loadTalk: async () => two, control: { pause: () => calls.push('pause'), resume: () => calls.push('resume'), stop: () => calls.push('stop') } });
+    const { container } = render(Talk, p);
+    await flush();
+    await fireEvent.click(container.querySelector('.unit-row'));
+    await flush();
+    const dlg = () => container.querySelector('.step[data-type="dialogue"] .play');
+    await fireEvent.click(dlg());            // A1-01 step 2 plays 'Guten Tag.' (held)
+    await flush();
+    await fireEvent.click(dlg());            // pause
+    await fireEvent.click(container.querySelector('.back'));
+    await flush();
+    await fireEvent.click([...container.querySelectorAll('.unit-row')][1]);   // A1-02
+    await flush();
+    await fireEvent.click(dlg());            // A1-02 step 2
+    for (let i = 0; i < 5; i += 1) await flush();
+    expect(calls).not.toContain('resume');
+    expect(calls).toContain('stop');
+    expect(said).toContain('Hallo.');
+  });
+
   it('when the natural voice fails, the tab says so with the reason (Allan 2026-10-21: "still the robot voice")', async () => {
     const { p, said } = props({ speakTaught: async () => ({ tier: 'espeak', fellBack: true, error: 'onnx failed' }) });
     const { container } = render(Talk, p);
