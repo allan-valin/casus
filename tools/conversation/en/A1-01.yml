@@ -1,0 +1,332 @@
+# UNIT en A1-01 — written by AI (Claude) for Casus; expanded from src/A1-01.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-01
+level: A1
+number: 1
+protagonist: f
+title:
+  de: Am Flughafen
+situation:
+  de: Sie landen am Flughafen Logan in Boston. Passkontrolle.
+learn_lessons:
+- en-to-be
+- en-pronouns
+culture: How are you? is a greeting
+new_items:
+- id: hello
+  text: Hello.
+  meaning:
+    de: Hallo. / Guten Tag.
+- id: passport
+  text: your passport
+  meaning:
+    de: Ihr Reisepass
+- id: please
+  text: please
+  meaning:
+    de: bitte
+- id: here-you-are
+  text: Here you are.
+  meaning:
+    de: Bitte schön. (beim Geben)
+- id: where-from
+  text: Where are you from?
+  meaning:
+    de: Woher kommen Sie?
+- id: im-from
+  text: I'm from Germany.
+  meaning:
+    de: Ich komme aus Deutschland.
+- id: i-am
+  text: I am / I'm
+  meaning:
+    de: ich bin
+- id: why-here
+  text: Why are you here?
+  meaning:
+    de: Warum sind Sie hier?
+- id: for-work
+  text: for work
+  meaning:
+    de: zum Arbeiten / beruflich
+- id: welcome
+  text: Welcome to the United States.
+  meaning:
+    de: Willkommen in den Vereinigten Staaten.
+- id: thank-you
+  text: Thank you.
+  meaning:
+    de: Danke.
+- id: how-are-you
+  text: How are you?
+  meaning:
+    de: Wie geht's? (als Gruß)
+- id: good-thanks
+  text: Good, thanks.
+  meaning:
+    de: Gut, danke.
+reviews: []
+steps:
+- type: narrator
+  text:
+    de: Sie landen am Flughafen Logan in Boston. Passkontrolle. Hören Sie sich das Gespräch an; Sie müssen es noch nicht verstehen.
+- type: dialogue
+  lines:
+  - speaker: officer
+    text: Hello. How are you?
+    meaning:
+      de: Hallo. Wie geht's?
+  - speaker: protagonist
+    text: Good, thanks.
+    meaning:
+      de: Gut, danke.
+  - speaker: officer
+    text: Your passport, please.
+    meaning:
+      de: Ihren Pass, bitte.
+  - speaker: protagonist
+    text: Here you are.
+    meaning:
+      de: Bitte schön.
+  - speaker: officer
+    text: Where are you from?
+    meaning:
+      de: Woher kommen Sie?
+  - speaker: protagonist
+    text: I'm from Germany. I'm from Leipzig.
+    meaning:
+      de: Ich komme aus Deutschland. Aus Leipzig.
+  - speaker: officer
+    text: Why are you here?
+    meaning:
+      de: Warum sind Sie hier?
+  - speaker: protagonist
+    text: For work. I'm a biologist.
+    meaning:
+      de: Beruflich. Ich bin Biologin.
+  - speaker: officer
+    text: OK. Welcome to the United States.
+    meaning:
+      de: Gut. Willkommen in den Vereinigten Staaten.
+  - speaker: protagonist
+    text: Thank you.
+    meaning:
+      de: Danke.
+- type: narrator
+  text:
+    de: '„How are you?“ ist in Amerika ein Gruß, keine echte Frage. Man antwortet kurz: „Good, thanks.“'
+- type: prompt
+  ask:
+    de: Der Beamte sagt „Hello. How are you?“ Antworten Sie kurz.
+  answer:
+    speaker: protagonist
+    text: Good, thanks.
+  items:
+  - good-thanks
+- type: prompt
+  ask:
+    de: 'Grüßen Sie zurück: „Hallo“.'
+  answer:
+    speaker: protagonist
+    text: Hello.
+  items:
+  - hello
+- type: prompt
+  ask:
+    de: 'Geben Sie ihm den Pass: „Bitte schön“.'
+  answer:
+    speaker: protagonist
+    text: Here you are.
+  items:
+  - here-you-are
+- type: narrator
+  text:
+    de: '„Bitte“ hat im Englischen zwei Wörter: „please“, wenn man um etwas bittet, und „Here you are“, wenn man etwas gibt. Ein englisches „bitte“ beim Geben gibt es nicht.'
+- type: prompt
+  ask:
+    de: Bitten Sie jemanden um seinen Pass.
+  answer:
+    speaker: protagonist
+    text: Your passport, please.
+  items:
+  - passport
+  - please
+- type: narrator
+  text:
+    de: '„I am“ ist „ich bin“; gesprochen fast immer kurz: „I''m“. Woher man kommt: „I''m from …“ — ohne „come“.'
+- type: buildup
+  item: im-from
+  parts:
+  - Germany.
+  - from Germany.
+  - I'm from Germany.
+- type: prompt
+  ask:
+    de: Sagen Sie, dass Sie aus Deutschland kommen.
+  answer:
+    speaker: protagonist
+    text: I'm from Germany.
+  items:
+  - im-from
+  - i-am
+- type: prompt
+  ask:
+    de: Fragen Sie den Beamten, woher er kommt.
+  answer:
+    speaker: protagonist
+    text: Where are you from?
+  items:
+  - where-from
+- type: prompt
+  ask:
+    de: 'Er fragt, warum Sie hier sind. Sagen Sie: beruflich.'
+  answer:
+    speaker: protagonist
+    text: For work.
+  items:
+  - for-work
+- type: prompt
+  ask:
+    de: 'Fragen Sie: Warum sind Sie hier?'
+  answer:
+    speaker: protagonist
+    text: Why are you here?
+  items:
+  - why-here
+- type: prompt
+  ask:
+    de: Er heißt Sie willkommen. Bedanken Sie sich.
+  answer:
+    speaker: protagonist
+    text: Thank you.
+  items:
+  - thank-you
+- type: narrator
+  text:
+    de: 'Das „th“ in „thank you“: die Zungenspitze zwischen die Zähne, dann Luft — kein „s“, kein „f“.'
+- type: prompt
+  ask:
+    de: 'Noch einmal, mit dem „th“: danke.'
+  answer:
+    speaker: protagonist
+    text: Thank you.
+  items:
+  - thank-you
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Hallo. / Guten Tag.“.'
+  answer:
+    speaker: protagonist
+    text: Hello.
+  items:
+  - hello
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Ihr Reisepass“.'
+  answer:
+    speaker: protagonist
+    text: your passport
+  items:
+  - passport
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „bitte“.'
+  answer:
+    speaker: protagonist
+    text: please
+  items:
+  - please
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Bitte schön. (beim Geben)“.'
+  answer:
+    speaker: protagonist
+    text: Here you are.
+  items:
+  - here-you-are
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Woher kommen Sie?“.'
+  answer:
+    speaker: protagonist
+    text: Where are you from?
+  items:
+  - where-from
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Ich komme aus Deutschland.“.'
+  answer:
+    speaker: protagonist
+    text: I'm from Germany.
+  items:
+  - im-from
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „ich bin“.'
+  answer:
+    speaker: protagonist
+    text: I am / I'm
+  items:
+  - i-am
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Warum sind Sie hier?“.'
+  answer:
+    speaker: protagonist
+    text: Why are you here?
+  items:
+  - why-here
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „zum Arbeiten / beruflich“.'
+  answer:
+    speaker: protagonist
+    text: for work
+  items:
+  - for-work
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Willkommen in den Vereinigten Staaten.“.'
+  answer:
+    speaker: protagonist
+    text: Welcome to the United States.
+  items:
+  - welcome
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Willkommen in den Vereinigten Staaten.“.'
+  answer:
+    speaker: protagonist
+    text: Welcome to the United States.
+  items:
+  - welcome
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Wie geht''s? (als Gruß)“.'
+  answer:
+    speaker: protagonist
+    text: How are you?
+  items:
+  - how-are-you
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Wie geht''s? (als Gruß)“.'
+  answer:
+    speaker: protagonist
+    text: How are you?
+  items:
+  - how-are-you
+- type: prompt
+  ask:
+    de: 'Noch einmal: Sagen Sie „Gut, danke.“.'
+  answer:
+    speaker: protagonist
+    text: Good, thanks.
+  items:
+  - good-thanks
+- type: narrator
+  text:
+    de: Hören Sie das Gespräch noch einmal. Jetzt verstehen Sie es.
+- type: dialogue
+  again: true
+- type: selfcheck

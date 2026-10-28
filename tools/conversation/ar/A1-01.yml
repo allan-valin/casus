@@ -1,0 +1,366 @@
+# UNIT ar A1-01 — written by AI (Claude) for Casus; expanded from src/A1-01.yml by tools/expand_unit.py. Edit the source.
+
+id: A1-01
+level: A1
+number: 1
+protagonist: f
+title:
+  en: At the airport
+  pt: No aeroporto
+situation:
+  en: You land in Amman. A passport officer, then Sami, the son of your host family, waiting in the hall.
+  pt: Você chega a Amã. Um policial no controle de passaportes, depois Sami, o filho da família que vai receber você, esperando no saguão.
+learn_lessons:
+- ar-a1-pronouns
+- ar-a1-nominal
+culture: Peace as a greeting
+new_items:
+- id: assalamu-alaykum
+  text: السَّلامُ عَلَيْكُمْ
+  meaning:
+    en: 'hello (literally: peace be upon you)'
+    pt: 'olá (literalmente: a paz esteja com vocês)'
+- id: wa-alaykumu-ssalam
+  text: وَعَلَيْكُمُ السَّلامْ
+  meaning:
+    en: 'hello (the answer: and upon you peace)'
+    pt: 'olá (a resposta: e com vocês a paz)'
+- id: jawaz
+  text: جَوازُ السَّفَرْ
+  meaning:
+    en: passport
+    pt: passaporte
+- id: min-fadlik
+  text: مِنْ فَضْلِكِ
+  meaning:
+    en: please (to a woman)
+    pt: por favor (a uma mulher)
+- id: tafaddal
+  text: تَفَضَّلْ
+  meaning:
+    en: here you are (to a man)
+    pt: aqui está (a um homem)
+- id: anti
+  text: أَنْتِ
+  meaning:
+    en: you (a woman)
+    pt: você (mulher)
+- id: ana
+  text: أَنا
+  meaning:
+    en: I
+    pt: eu
+- id: mina-lbrazil
+  text: مِنَ البَرازيلْ
+  meaning:
+    en: from Brazil
+    pt: do Brasil
+- id: naam
+  text: نَعَمْ
+  meaning:
+    en: 'yes'
+    pt: sim
+- id: ahlan-wa-sahlan
+  text: أَهْلًا وَسَهْلًا
+  meaning:
+    en: welcome
+    pt: bem-vindo, bem-vinda
+- id: shukran
+  text: شُكْرًا
+  meaning:
+    en: thank you
+    pt: obrigado, obrigada
+- id: marhaban
+  text: مَرْحَبًا
+  meaning:
+    en: hi, hello
+    pt: oi, olá
+- id: hal
+  text: هَلْ
+  meaning:
+    en: (starts a yes/no question)
+    pt: (abre uma pergunta de sim ou não)
+reviews: []
+steps:
+- type: narrator
+  text:
+    en: You land in Amman. A passport officer, then Sami, the son of your host family, waiting in the hall. Listen to the conversation; you don't need to understand it yet.
+    pt: Você chega a Amã. Um policial no controle de passaportes, depois Sami, o filho da família que vai receber você, esperando no saguão. Escute a conversa; ainda não precisa entender.
+- type: dialogue
+  lines:
+  - speaker: officer
+    text: السَّلامُ عَلَيْكُمْ. جَوازُ السَّفَرِ، مِنْ فَضْلِكِ.
+    meaning:
+      en: Hello. Your passport, please.
+      pt: Olá. O passaporte, por favor.
+  - speaker: protagonist
+    text: وَعَلَيْكُمُ السَّلامُ. تَفَضَّلْ.
+    meaning:
+      en: Hello. Here you are.
+      pt: Olá. Aqui está.
+  - speaker: officer
+    text: أَنْتِ مِنَ البَرازيلِ؟
+    meaning:
+      en: You are from Brazil?
+      pt: Você é do Brasil?
+  - speaker: protagonist
+    text: نَعَمْ، أَنا مِنَ البَرازيلْ.
+    meaning:
+      en: Yes, I am from Brazil.
+      pt: Sim, eu sou do Brasil.
+  - speaker: officer
+    text: أَهْلًا وَسَهْلًا.
+    meaning:
+      en: Welcome.
+      pt: Bem-vinda.
+  - speaker: protagonist
+    text: شُكْرًا.
+    meaning:
+      en: Thank you.
+      pt: Obrigada.
+  - speaker: sami
+    text: مَرْحَبًا! هَلْ أَنْتِ مِنَ البَرازيلِ؟ أَنا سامي.
+    meaning:
+      en: Hi! Are you from Brazil? I'm Sami.
+      pt: Oi! Você é do Brasil? Eu sou o Sami.
+  - speaker: protagonist
+    text: مَرْحَبًا يا سامي! نَعَمْ، أَنا مِنَ البَرازيلْ.
+    meaning:
+      en: Hi, Sami! Yes, I'm from Brazil.
+      pt: Oi, Sami! Sim, sou do Brasil.
+- type: narrator
+  text:
+    en: 'The greeting of the whole Arab world is السَّلامُ عَلَيْكُمْ, ''peace be upon you''. The answer turns it round: وَعَلَيْكُمُ السَّلامْ.'
+    pt: 'A saudação de todo o mundo árabe é السَّلامُ عَلَيْكُمْ, ''a paz esteja com vocês''. A resposta inverte: وَعَلَيْكُمُ السَّلامْ.'
+- type: prompt
+  ask:
+    en: The officer greets you. Answer him.
+    pt: O policial cumprimenta você. Responda.
+  answer:
+    speaker: protagonist
+    text: وَعَلَيْكُمُ السَّلامْ.
+  items:
+  - wa-alaykumu-ssalam
+- type: prompt
+  ask:
+    en: Now you greet first.
+    pt: Agora cumprimente primeiro.
+  answer:
+    speaker: protagonist
+    text: السَّلامُ عَلَيْكُمْ.
+  items:
+  - assalamu-alaykum
+- type: narrator
+  text:
+    en: Arabic speaks to a man and to a woman differently. 'Here you are' to a man is تَفَضَّلْ; to a woman you will hear تَفَضَّلي.
+    pt: O árabe fala de um jeito com um homem e de outro com uma mulher. 'Aqui está' para um homem é تَفَضَّلْ; para uma mulher você vai ouvir تَفَضَّلي.
+- type: prompt
+  ask:
+    en: 'Hand the officer your passport: ''here you are''.'
+    pt: 'Entregue o passaporte ao policial: ''aqui está''.'
+  answer:
+    speaker: protagonist
+    text: تَفَضَّلْ.
+  items:
+  - tafaddal
+- type: narrator
+  text:
+    en: '''I am from Brazil'' has no verb ''to be'' in Arabic: أَنا مِنَ البَرازيلْ, literally ''I from Brazil''. مِنْ ''from'' becomes مِنَ before البَرازيل, which carries the article ال.'
+    pt: '''Eu sou do Brasil'' não tem verbo ''ser'' em árabe: أَنا مِنَ البَرازيلْ, literalmente ''eu do Brasil''. مِنْ ''de'' vira مِنَ antes de البَرازيل, que leva o artigo ال.'
+- type: buildup
+  item: mina-lbrazil
+  parts:
+  - البَرازيلْ
+  - مِنَ البَرازيلْ
+- type: prompt
+  ask:
+    en: Say that you are from Brazil.
+    pt: Diga que você é do Brasil.
+  answer:
+    speaker: protagonist
+    text: أَنا مِنَ البَرازيلْ.
+  items:
+  - ana
+  - mina-lbrazil
+- type: prompt
+  ask:
+    en: The officer asks if you are from Brazil. Say yes.
+    pt: O policial pergunta se você é do Brasil. Diga que sim.
+  answer:
+    speaker: protagonist
+    text: نَعَمْ، أَنا مِنَ البَرازيلْ.
+  items:
+  - naam
+  - ana
+  - mina-lbrazil
+- type: prompt
+  ask:
+    en: He welcomes you. Thank him.
+    pt: Ele dá as boas-vindas. Agradeça.
+  answer:
+    speaker: protagonist
+    text: شُكْرًا.
+  items:
+  - shukran
+- type: narrator
+  text:
+    en: A question with yes or no often starts with هَلْ — like a spoken question mark at the front. أَنْتِ is 'you' to a woman; to a man it is أَنْتَ.
+    pt: Uma pergunta de sim ou não muitas vezes começa com هَلْ — um ponto de interrogação falado, no começo. أَنْتِ é 'você' para uma mulher; para um homem é أَنْتَ.
+- type: prompt
+  ask:
+    en: Ask a woman in the queue if she is from Brazil.
+    pt: Pergunte a uma mulher na fila se ela é do Brasil.
+  answer:
+    speaker: protagonist
+    text: هَلْ أَنْتِ مِنَ البَرازيلْ؟
+  items:
+  - hal
+  - anti
+  - mina-lbrazil
+- type: prompt
+  ask:
+    en: Say hi to Sami.
+    pt: Diga oi ao Sami.
+  answer:
+    speaker: protagonist
+    text: مَرْحَبًا يا سامي!
+  items:
+  - marhaban
+- type: prompt
+  ask:
+    en: 'Say: welcome!'
+    pt: 'Diga: bem-vindo!'
+  answer:
+    speaker: protagonist
+    text: أَهْلًا وَسَهْلًا!
+  items:
+  - ahlan-wa-sahlan
+- type: narrator
+  for:
+  - pt
+  text:
+    pt: 'Talvez você já conheça palavras daqui: a esfiha e o quibe vieram com os libaneses e sírios que chegaram ao Brasil — e ''oxalá'' vem de ''in shā'' Allāh''.'
+- type: prompt
+  ask:
+    en: 'Once more: say “hello (literally: peace be upon you)”.'
+    pt: 'Mais uma vez: diga “olá (literalmente: a paz esteja com vocês)”.'
+  answer:
+    speaker: protagonist
+    text: السَّلامُ عَلَيْكُمْ
+  items:
+  - assalamu-alaykum
+- type: prompt
+  ask:
+    en: 'Once more: say “hello (the answer: and upon you peace)”.'
+    pt: 'Mais uma vez: diga “olá (a resposta: e com vocês a paz)”.'
+  answer:
+    speaker: protagonist
+    text: وَعَلَيْكُمُ السَّلامْ
+  items:
+  - wa-alaykumu-ssalam
+- type: prompt
+  ask:
+    en: 'Once more: say “passport”.'
+    pt: 'Mais uma vez: diga “passaporte”.'
+  answer:
+    speaker: protagonist
+    text: جَوازُ السَّفَرْ
+  items:
+  - jawaz
+- type: prompt
+  ask:
+    en: 'Once more: say “passport”.'
+    pt: 'Mais uma vez: diga “passaporte”.'
+  answer:
+    speaker: protagonist
+    text: جَوازُ السَّفَرْ
+  items:
+  - jawaz
+- type: prompt
+  ask:
+    en: 'Once more: say “please (to a woman)”.'
+    pt: 'Mais uma vez: diga “por favor (a uma mulher)”.'
+  answer:
+    speaker: protagonist
+    text: مِنْ فَضْلِكِ
+  items:
+  - min-fadlik
+- type: prompt
+  ask:
+    en: 'Once more: say “please (to a woman)”.'
+    pt: 'Mais uma vez: diga “por favor (a uma mulher)”.'
+  answer:
+    speaker: protagonist
+    text: مِنْ فَضْلِكِ
+  items:
+  - min-fadlik
+- type: prompt
+  ask:
+    en: 'Once more: say “here you are (to a man)”.'
+    pt: 'Mais uma vez: diga “aqui está (a um homem)”.'
+  answer:
+    speaker: protagonist
+    text: تَفَضَّلْ
+  items:
+  - tafaddal
+- type: prompt
+  ask:
+    en: 'Once more: say “you (a woman)”.'
+    pt: 'Mais uma vez: diga “você (mulher)”.'
+  answer:
+    speaker: protagonist
+    text: أَنْتِ
+  items:
+  - anti
+- type: prompt
+  ask:
+    en: 'Once more: say “yes”.'
+    pt: 'Mais uma vez: diga “sim”.'
+  answer:
+    speaker: protagonist
+    text: نَعَمْ
+  items:
+  - naam
+- type: prompt
+  ask:
+    en: 'Once more: say “welcome”.'
+    pt: 'Mais uma vez: diga “bem-vindo, bem-vinda”.'
+  answer:
+    speaker: protagonist
+    text: أَهْلًا وَسَهْلًا
+  items:
+  - ahlan-wa-sahlan
+- type: prompt
+  ask:
+    en: 'Once more: say “thank you”.'
+    pt: 'Mais uma vez: diga “obrigado, obrigada”.'
+  answer:
+    speaker: protagonist
+    text: شُكْرًا
+  items:
+  - shukran
+- type: prompt
+  ask:
+    en: 'Once more: say “hi, hello”.'
+    pt: 'Mais uma vez: diga “oi, olá”.'
+  answer:
+    speaker: protagonist
+    text: مَرْحَبًا
+  items:
+  - marhaban
+- type: prompt
+  ask:
+    en: 'Once more: say “(starts a yes/no question)”.'
+    pt: 'Mais uma vez: diga “(abre uma pergunta de sim ou não)”.'
+  answer:
+    speaker: protagonist
+    text: هَلْ
+  items:
+  - hal
+- type: narrator
+  text:
+    en: Listen to the conversation again. Now you understand it.
+    pt: Escute a conversa outra vez. Agora você entende.
+- type: dialogue
+  again: true
+- type: selfcheck

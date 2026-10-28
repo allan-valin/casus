@@ -1,0 +1,89 @@
+# STORY BIBLE — Modern Standard Arabic, narrator Brazilian Portuguese (+ neutral English). Written by AI (Claude)
+# 2026-10-28 after the guide (docs/conversation/GUIDE.pt-BR.md); plan docs/conversation/PLAN-ar-pt-BR.md.
+# UNDER CONSTRUCTION / INCOMPLETE: only the first level (A1) exists.
+
+language: ar
+in_development: true   # banner "under construction"; only A1 is written
+narrator_languages: [en, pt]
+country: Jordan
+standard: >-
+  Modern Standard Arabic (fuṣḥā), fully vowelled at A1 (Allan 2026-10-28: the standard, not a dialect — it matches
+  Learn, the voices and the narrator). The host family speaks Jordanian Arabic among themselves; to the guest they
+  speak fuṣḥā, which a culture note explains. No dialect lines in A1.
+
+voices:
+  # No open-licence natural Arabic voice yet: Piper ar_JO-kareem trains on a dataset with no licence (checked
+  # 2026-10-28) → not used. Characters use the browser's Arabic voice, else espeak-ng, told apart by pitch/speed.
+  - {id: nar-en, role: narrator, lang: en, tts: "piper:en_US-lessac-medium"}
+  - {id: nar-pt, role: narrator, lang: pt, tts: "piper:pt_BR-cadu-medium"}            # CC0
+  - {id: ar-f, role: character, lang: ar, gender: f, tts: "browser:ar, else espeak-ng:ar+f2", pitch: 1.15}
+  - {id: ar-m, role: character, lang: ar, gender: m, tts: "browser:ar, else espeak-ng:ar"}
+  - {id: ar-f2, role: character, lang: ar, gender: f, tts: "browser:ar, else espeak-ng:ar+f2", pitch: 1.3, speed: 0.95}
+  - {id: ar-m2, role: character, lang: ar, gender: m, tts: "browser:ar, else espeak-ng:ar", pitch: 0.85, speed: 0.95}
+  - {id: ar-m3, role: character, lang: ar, gender: m, tts: "browser:ar, else espeak-ng:ar", pitch: 0.92, speed: 1.1}
+  - {id: ar-f3, role: character, lang: ar, gender: f, tts: "browser:ar, else espeak-ng:ar+f2", pitch: 1.0, speed: 1.08}
+
+protagonist:
+  forms: {f: ar-f, m: ar-m}
+  name: null
+  background: >-
+    Brazilian from São Paulo, about 30, grandchild of Lebanese immigrants (the grandfather spoke Arabic at home; the
+    protagonist knows a few words: حبيبي، يلّا، الحمد لله). Six months at a university language centre in Amman,
+    lodging with the Haddad family.
+  alternation: >-
+    odd units f, even units m. Arabic marks the listener's sex (أنتَ / أنتِ, تفضّلْ / تفضّلي) and the speaker's in
+    nationality words (برازيليّ / برازيليّة) — both sets appear.
+
+cast:
+  - {id: officer, name: ضابط الجوازات, role: passport officer, voice: ar-m2, register: formal}
+  - {id: sami, name: سامي حدّاد, role: the Haddads' son, 20, engineering student, picks the protagonist up, voice: ar-m3, register: informal}
+  - {id: driver, name: سائق التاكسي, role: taxi driver, voice: ar-m2, register: neutral}
+  - {id: huda, name: هدى (أمّ سامي), role: host mother, 50s, teacher of Arabic at a school, voice: ar-f2, register: formal}
+  - {id: khalid, name: خالد (أبو سامي), role: host father, 55, pharmacist, voice: ar-m2, register: formal}
+  - {id: salma, name: الأستاذة سلمى, role: the class teacher, voice: ar-f3, register: formal}
+  - {id: marcus, name: ماركوس, role: classmate from Hamburg, voice: ar-m, register: informal}
+  - {id: yuki, name: يوكي, role: classmate from Osaka, voice: ar-f, register: informal}
+  - {id: elif, name: إليف, role: classmate from Istanbul, voice: ar-f3, register: informal}
+  - {id: clerk, name: الموظّفة, role: language-centre office, voice: ar-f2, register: formal}
+  - {id: grocer, name: أبو علي, role: corner-shop owner, voice: ar-m2, register: neutral}
+
+formality:
+  summary: >-
+    Fuṣḥā has no T/V pronoun pair: أنتَ / أنتِ for one person of any rank; politeness is in titles (أستاذ/أستاذة,
+    دكتور, السيّد/السيّدة), in kunya (أبو سامي، أمّ سامي — normal and warm for parents), and in set phrases
+    (تفضّلْ، من فضلك، لو سمحتَ). حضرتُك is a formal "you" heard in speech; not used in A1.
+  rules:
+    - The teacher is الأستاذة سلمى, never سلمى alone; the host parents are أبو سامي / أمّ سامي after A1-03.
+    - Classmates and Sami use first names.
+  sources:
+    - {title: "Wikipedia: Kunya (Arabic)", url: "https://en.wikipedia.org/wiki/Kunya_(Arabic)", licence: CC BY-SA}
+    - {title: "Wikipedia: Modern Standard Arabic", url: "https://en.wikipedia.org/wiki/Modern_Standard_Arabic", licence: CC BY-SA}
+
+culture:
+  taught:
+    - {topic: greetings, note: "السلام عليكم is answered وعليكم السلام; long greetings and questions about the family come before business."}
+    - {topic: fusha vs dialect, note: "Nobody speaks fuṣḥā at home; Jordanians speak Jordanian Arabic and switch to fuṣḥā for foreigners, the news and school."}
+    - {topic: hospitality, note: "A guest is offered tea or coffee at once; refusing once is polite, accepting the second offer normal."}
+    - {topic: right hand, note: "Eat and pass things with the right hand."}
+    - {topic: Friday, note: "The weekend is Friday and Saturday; Friday noon is prayer time."}
+    - {topic: Lebanese Brazil, note: "Brazil has one of the largest Lebanese diasporas: kibbeh and esfiha are Brazilian food too."}
+  narrator:
+    - {lang: en, topic: greetings, note: "Greetings are long: health, family, then business; the answer to السلام عليكم is fixed."}
+    - {lang: en, topic: hospitality, note: "Tea or coffee is offered at once; refuse once politely, accept the second offer."}
+    - {lang: en, topic: contact, note: "Between men and women who are not family a handshake may be declined; wait for the other's hand."}
+    - {lang: pt, topic: contact, note: "Brazilians kiss on the cheek on meeting; in Jordan not between men and women who are not family — wait for the other's hand."}
+    - {lang: pt, topic: hospitality, note: "Brazil also offers coffee at once; in Jordan saying no once is part of the ritual, and the host insists."}
+    - {lang: pt, topic: weekend, note: "The weekend is Friday and Saturday; Sunday is a working day."}
+    - {lang: pt, topic: roots, note: "Many Brazilians have Lebanese or Syrian grandparents; kibbeh and esfiha are known — the Arabic names are كبة and صفيحة."}
+  clashes:
+    - {situation: "Kissing the host mother on the cheek at the door", unit: A1-03}
+    - {situation: "Accepting tea at the first offer, or refusing it every time", unit: A1-09}
+    - {situation: "Passing the bread with the left hand", unit: A1-09}
+    - {situation: "Planning a class outing for a Friday noon", unit: A1-15}
+
+arc:
+  A1: >-
+    Arrival in Amman, the Haddads, the language centre, classmates who share only fuṣḥā; shopping, getting around,
+    being ill, the first monthly test, the end-of-month party.
+
+native_check: []

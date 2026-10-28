@@ -1,0 +1,75 @@
+# STORY BIBLE — American English, narrator German. Written by AI (Claude) 2026-10-28 after the guide
+# (docs/conversation/GUIDE.de.md); plan docs/conversation/PLAN-en-de.md.
+# UNDER CONSTRUCTION / INCOMPLETE: only the first level (A1) exists.
+
+language: en
+in_development: true   # banner "under construction"; only A1 is written
+narrator_languages: [de]
+country: United States
+standard: >-
+  General American English, US spelling. British forms only in a culture note when they differ (flat/apartment).
+
+voices:
+  # licences checked 2026-10-28: lessac (Blizzard licence, non-commercial — allowed, Casus is not sold), hfc_female /
+  # hfc_male (CC BY-NC-SA 4.0), joe (CC0), thorsten (CC0)
+  - {id: nar-de, role: narrator, lang: de, tts: "piper:de_DE-thorsten-medium"}
+  - {id: en-f, role: character, lang: en, gender: f, tts: "piper:en_US-hfc_female-medium"}
+  - {id: en-m, role: character, lang: en, gender: m, tts: "piper:en_US-hfc_male-medium"}
+  - {id: en-f2, role: character, lang: en, gender: f, tts: "piper:en_US-lessac-medium"}
+  - {id: en-m2, role: character, lang: en, gender: m, tts: "piper:en_US-joe-medium"}
+  - {id: en-f3, role: character, lang: en, gender: f, tts: "piper:en_US-lessac-medium", pitch: 0.9, speed: 1.08}
+  - {id: en-m3, role: character, lang: en, gender: m, tts: "piper:en_US-joe-medium", pitch: 0.88, speed: 0.95}
+
+protagonist:
+  forms: {f: en-f, m: en-m}
+  name: null
+  background: >-
+    German from Leipzig, about 30, biologist; two-year contract in a biotech lab in Boston. School English, rusty;
+    never lived abroad. Rents an apartment in Somerville from Mrs. Rivera.
+  alternation: odd units f, even units m.
+
+cast:
+  - {id: officer, name: CBP officer, role: passport control, voice: en-m3, register: formal}
+  - {id: rivera, name: Mrs. Rivera, role: landlady, 60s, lives downstairs, voice: en-f2, register: formal}
+  - {id: tony, name: Tony, role: owns the coffee shop on the corner, voice: en-m2, register: informal}
+  - {id: jamal, name: Jamal, role: lab colleague, 32, voice: en-m3, register: informal}
+  - {id: chen, name: Dr. Chen, role: the head of the lab, voice: en-f3, register: formal}
+  - {id: megan, name: Megan, role: neighbour, nurse, 28, voice: en-f2, register: informal}
+  - {id: clerk, name: the clerk, role: shops, bank, pharmacy, voice: en-f3, register: neutral}
+
+formality:
+  summary: >-
+    English has one "you"; politeness is in titles and phrasing. Americans move to first names fast — at work
+    usually from day one, even with the boss if she says so; an older landlady stays Mrs. Rivera until she offers
+    her first name. Polite requests use Can I…? / Could you…? / I'd like…, never the bare imperative.
+  rules:
+    - Mrs. Rivera and Dr. Chen by title in A1; Dr. Chen says "Call me Linda" in A1-06, the protagonist still hesitates.
+    - Jamal, Megan, Tony: first names from the start.
+  sources:
+    - {title: "Wikipedia: English honorifics", url: "https://en.wikipedia.org/wiki/English_honorifics", licence: CC BY-SA}
+
+culture:
+  taught:
+    - {topic: small talk, note: "How are you? is a greeting, not a question: answer Good, thanks — and you?"}
+    - {topic: tipping, note: "15–20 % in restaurants and bars, a dollar or two per coffee is common; it is part of the wage."}
+    - {topic: first names, note: "First names come fast, also at work; Mr./Mrs./Dr. + surname for older people until invited."}
+    - {topic: units, note: "Fahrenheit, miles, pounds, and the date written month/day/year."}
+    - {topic: false friends, note: "become ≠ bekommen (get), chef = cook, gift ≠ Gift, handy is an adjective — the phone is a cell phone."}
+  narrator:
+    - {lang: de, topic: small talk, note: "Amerikaner reden mit Fremden — an der Kasse, im Aufzug; kurz freundlich antworten ist höflich, nicht aufdringlich."}
+    - {lang: de, topic: how are you, note: "„How are you?“ will keine Auskunft; ehrliche lange Antworten wirken seltsam."}
+    - {lang: de, topic: tipping, note: "Trinkgeld 15–20 % ist Pflicht, nicht Lob; in Deutschland rundet man nur auf."}
+    - {lang: de, topic: directness, note: "Deutsche Direktheit („Das ist falsch“) wirkt in den USA schroff; man sagt „I'm not sure that works“."}
+    - {lang: de, topic: names, note: "Vornamen sofort, auch mit der Chefin; das deutsche Siezen hat keine Entsprechung."}
+  clashes:
+    - {situation: "Answering „How are you?“ with real news at passport control", unit: A1-01}
+    - {situation: "Calling the boss „Dr. Chen“ after she said „Call me Linda“", unit: A1-06}
+    - {situation: "Leaving no tip after dinner", unit: A1-15}
+    - {situation: "Telling Jamal directly that his method is wrong", unit: A1-25}
+
+arc:
+  A1: >-
+    Arrival in Boston, the apartment and Mrs. Rivera, Tony's coffee shop, the lab (Jamal, Dr. Chen), Megan next
+    door; shopping, the T, being ill, winter, the first month's party at the lab.
+
+native_check: []

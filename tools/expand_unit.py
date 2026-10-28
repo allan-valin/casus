@@ -52,6 +52,10 @@ TEMPLATES = {
            "m": {"open": "{s} استمع إلى المحادثة؛ لا داعي لأن تفهمها الآن.",
                  "again": "استمع إلى المحادثة مرة أخرى. الآن تفهمها.", "once": "مرة أخرى: قل “{m}”.",
                  "reviews": "والآن بعض ما تعلمتَه في الوحدات السابقة، في هذا الموقف الجديد.", "say": "قل: “{m}”.", "join": " — و“"}},
+    # German narrator (en·de, 2026-10-28) speaks with Sie, as the guide's examples do
+    "de": {"open": "{s} Hören Sie sich das Gespräch an; Sie müssen es noch nicht verstehen.",
+           "again": "Hören Sie das Gespräch noch einmal. Jetzt verstehen Sie es.", "once": "Noch einmal: Sagen Sie „{m}“.",
+           "reviews": "Jetzt einiges aus früheren Einheiten, in dieser neuen Situation.", "say": "Sagen Sie: „{m}“.", "join": "“ — und „"},
     "mk": {"open": "{s} Слушнете го разговорот; уште не мора да го разберете.",
            "again": "Слушнете го разговорот уште еднаш. Сега го разбирате.", "once": "Уште еднаш: кажете „{m}“.",
            "reviews": "Сега нешто од претходните лекции, во оваа нова ситуација.", "say": "Кажете: „{m}“.", "join": "“ — и „"},
