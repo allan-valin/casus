@@ -1,0 +1,41 @@
+id: A2-17
+protagonist: f
+title: ["The phone broke", "O celular quebrou"]
+situation: ["You dropped your phone on the subway stairs. A repair shop in Yongsan: the screen, the price, how many days.", "Você deixou o celular cair na escada do metrô. Uma assistência técnica em Yongsan: a tela, o preço, quantos dias."]
+learn: [ko-nikl-87]
+culture: Fast repairs, borrowed phones
+items:
+  - [gojang, "고장 났어요", "it broke, it's out of order", "quebrou, está com defeito"]
+  - [suri, "수리", "repair", "conserto"]
+  - [myeochil, "며칠", "how many days", "quantos dias"]
+  - [aekjeong, "액정", "screen (of a phone)", "tela (do celular)"]
+  - [eo-juda, "-아/어 주다", "do (something) for someone", "fazer (algo) para alguém"]
+  - [gochyeo-juseyo, "고쳐 주세요", "please fix it", "conserte, por favor"]
+  - [kkaejyeosseoyo, "깨졌어요", "it's cracked, broken", "trincou, quebrou"]
+  - [tteoreotteuryeosseoyo, "떨어뜨렸어요", "I dropped it", "deixei cair"]
+  - [biyong, "비용", "cost", "custo"]
+  - [bilyeo-juseyo, "빌려 주세요", "please lend (me)", "empreste, por favor"]
+  - [baekeop, "백업", "backup", "backup"]
+  - [jjeum, "쯤", "about, around", "mais ou menos"]
+dialogue:
+  - [protagonist, "안녕하세요. 핸드폰이 고장 났어요.", "Hello. My phone is broken.", "Olá. Meu celular quebrou."]
+  - [clerk, "어떻게 고장 났어요?", "How did it break?", "Como quebrou?"]
+  - [protagonist, "지하철 계단에서 떨어뜨렸어요. 액정이 깨졌어요.", "I dropped it on the subway stairs. The screen cracked.", "Deixei cair na escada do metrô. A tela trincou."]
+  - [clerk, "액정은 바꿔 드릴 수 있어요. 수리 비용은 십오만 원쯤이에요.", "We can replace the screen for you. The repair is about 150,000 won.", "A tela a gente troca. O conserto fica uns 150 mil wons."]
+  - [protagonist, "며칠 걸려요?", "How many days does it take?", "Quantos dias demora?"]
+  - [clerk, "오늘 오후에 돼요. 백업은 했어요?", "This afternoon. Did you back it up?", "Fica pronto hoje à tarde. Fez backup?"]
+  - [protagonist, "네. 빨리 고쳐 주세요. 그동안 전화 좀 빌려 주세요.", "Yes. Please fix it quickly. Meanwhile, please lend me a phone.", "Sim. Conserte rápido, por favor. Enquanto isso, me empresta um telefone."]
+  - [clerk, "여기 있어요. 두 시쯤 오세요.", "Here you are. Come back around two.", "Aqui está. Volte por volta das duas."]
+teach:
+  - ask: ["Say your phone is broken.", "Diga que seu celular quebrou.", "핸드폰이 고장 났어요.", gojang]
+  - ask: ["Say you dropped it.", "Diga que deixou cair.", "떨어뜨렸어요.", tteoreotteuryeosseoyo]
+  - ask: ["Say the screen cracked.", "Diga que a tela trincou.", "액정이 깨졌어요.", aekjeong, kkaejyeosseoyo]
+  - note: ["-아/어 주다: do something for someone: 고치다 → 고쳐 주세요, please fix it (for me); 빌리다 → 빌려 주세요, please lend (it to me). To honour the listener: -아/어 드리다.", "-아/어 주다: fazer algo para alguém: 고치다 → 고쳐 주세요, conserte (para mim); 빌리다 → 빌려 주세요, empreste. Para honrar quem ouve: -아/어 드리다."]
+  - build: [gochyeo-juseyo, ["주세요", "고쳐 주세요"]]
+  - ask: ["Ask them to fix it quickly.", "Peça para consertar rápido.", "빨리 고쳐 주세요.", gochyeo-juseyo, eo-juda]
+  - ask: ["Ask them to lend you a phone.", "Peça emprestado um telefone.", "전화 좀 빌려 주세요.", bilyeo-juseyo]
+  - ask: ["Ask how many days it takes.", "Pergunte quantos dias demora.", "며칠 걸려요?", myeochil]
+  - ask: ["Ask about the cost of the repair.", "Pergunte o custo do conserto.", "수리 비용이 얼마예요?", suri, biyong]
+  - ask: ["Say: about 150,000 won.", "Diga: uns 150 mil wons.", "십오만 원쯤이에요.", jjeum]
+  - ask: ["Say you made a backup.", "Diga que fez backup.", "백업했어요.", baekeop]
+  - pt_only: "Em Seul o conserto de celular costuma sair no mesmo dia — Yongsan é o bairro dos eletrônicos, como a Santa Ifigênia em São Paulo."
