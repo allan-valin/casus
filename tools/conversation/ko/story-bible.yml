@@ -26,6 +26,8 @@ voices:
   - {id: ko-f3, role: character, lang: ko, gender: f, tts: "piper:ko_KR-kss-medium", pitch: 1.08}
   - {id: ko-m3, role: character, lang: ko, gender: m, tts: "piper:ko_KR-kss-medium", pitch: 0.88, speed: 1.1}
   - {id: ko-m4, role: character, lang: ko, gender: m, tts: "piper:ko_KR-kss-medium", pitch: 0.7, speed: 0.92}
+  - {id: ko-m5, role: character, lang: ko, gender: m, tts: "piper:ko_KR-kss-medium", pitch: 0.78, speed: 1.08}
+  - {id: ko-f4, role: character, lang: ko, gender: f, tts: "piper:ko_KR-kss-medium", pitch: 0.9, speed: 0.95}
 
 protagonist:
   forms: {f: ko-f, m: ko-m}
@@ -117,6 +119,30 @@ cast:
     voice: ko-m3
     register: formal
     arc: 해요체 with honorifics (해 드릴까요?, 하실래요?)
+  - id: minji
+    name: 김민지
+    role: Minjun's younger sister, 19, biology student (B1-03)
+    voice: ko-f3
+    register: formal
+    arc: 해요체 with the protagonist (언니/오빠)
+  - id: junho
+    name: 박준호
+    role: the partner in units with the female protagonist (B1 on), 31, architect
+    voice: ko-m5
+    register: informal
+    arc: dating from B1; 반말 with the protagonist
+  - id: junhomom
+    name: 준호 어머니 (Junho's mother)
+    role: about 60, Suwon (B1-05)
+    voice: ko-f4
+    register: formal
+    arc: 해요체 with the protagonist
+  - id: cousin
+    name: 민준의 사촌 형 (Minjun's cousin)
+    role: 35, at Minjun's party (B1-07)
+    voice: ko-m4
+    register: formal
+    arc: 해요체 with the protagonist
 formality:
   summary: >-
     Korean grammar marks the listener: 합쇼체 (-습니다, formal), 해요체 (-아요/어요, polite, the everyday default with
@@ -142,6 +168,9 @@ formality:
     - {from: minjun, to: protagonist, style: 해요체, from_unit: A1-02}
     - {from: protagonist, to: minjun, style: 반말, from_unit: A1-23}
     - {from: minjun, to: protagonist, style: 반말, from_unit: A1-23, note: "still calls the protagonist 누나/형"}
+    - {from: protagonist, to: seoyeon, style: 반말, from_unit: B1-04, note: "the older partner; she keeps 해요체 until they agree"}
+    - {from: protagonist, to: junho, style: 반말, from_unit: B1-01}
+    - {from: junho, to: protagonist, style: 반말, from_unit: B1-01}
   sources:
     - {title: "국립국어원, 『표준 언어 예절』 (2011) — 경어법, 호칭어", url: "https://www.korean.go.kr", licence: cited}
     - {title: "언어 예절에 따른 높임법 교육 (성신여대)", url: "https://repository.sungshin.ac.kr/handle/2025.oak/4806", licence: cited}
