@@ -16,12 +16,14 @@ voices:
   # required, "use until someone complains". ONE male speaker: women pitched up, as Macedonian does.
   - {id: nar-en, role: narrator, lang: en, tts: "piper:en_US-lessac-medium"}
   - {id: nar-pt, role: narrator, lang: pt, tts: "piper:pt_BR-cadu-medium"}            # CC0
-  - {id: ar-f, role: character, lang: ar, gender: f, tts: "piper:ar_JO-kareem-medium", pitch: 1.3}
-  - {id: ar-m, role: character, lang: ar, gender: m, tts: "piper:ar_JO-kareem-medium"}
-  - {id: ar-f2, role: character, lang: ar, gender: f, tts: "piper:ar_JO-kareem-medium", pitch: 1.42, speed: 0.95}
-  - {id: ar-m2, role: character, lang: ar, gender: m, tts: "piper:ar_JO-kareem-medium", pitch: 0.85, speed: 0.95}
-  - {id: ar-m3, role: character, lang: ar, gender: m, tts: "piper:ar_JO-kareem-medium", pitch: 0.92, speed: 1.1}
-  - {id: ar-f3, role: character, lang: ar, gender: f, tts: "piper:ar_JO-kareem-medium", pitch: 1.2, speed: 1.08}
+  # pitches after the Macedonian ones (Allan 2026-10-28: "use the mk pitch changes as reference"); men near 1 — at 0.85
+  # Kareem sounded "very deep"; speed > 1 = slower (older people), < 1 = quicker
+  - {id: ar-f, role: character, lang: ar, gender: f, tts: "piper:ar_JO-kareem-medium", pitch: 1.32}
+  - {id: ar-m, role: character, lang: ar, gender: m, tts: "piper:ar_JO-kareem-medium", pitch: 1.0}
+  - {id: ar-f2, role: character, lang: ar, gender: f, tts: "piper:ar_JO-kareem-medium", pitch: 1.18, speed: 1.05}
+  - {id: ar-m2, role: character, lang: ar, gender: m, tts: "piper:ar_JO-kareem-medium", pitch: 0.94, speed: 1.05}
+  - {id: ar-m3, role: character, lang: ar, gender: m, tts: "piper:ar_JO-kareem-medium", pitch: 1.08, speed: 0.95}
+  - {id: ar-f3, role: character, lang: ar, gender: f, tts: "piper:ar_JO-kareem-medium", pitch: 1.26, speed: 0.95}
 
 protagonist:
   forms: {f: ar-f, m: ar-m}

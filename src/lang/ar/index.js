@@ -32,6 +32,7 @@ export const arabic = {
   samplesPath: '/samples/ar',
   // Piper ar_JO-kareem: its dataset states no licence; Allan 2026-10-28: a natural voice is required — use it until
   // someone objects. One male speaker; women's voices are pitched up in Conversation.
-  voice: { espeak: 'ar', natural: { voiceId: 'ar_JO-kareem-medium', name: 'Kareem', sizeMB: 63 } },
+  // phonemes 'espeak': our engine, so pitch changes keep the tempo; speed < 1 = a bit quicker (Allan: "speaks too slowly")
+  voice: { espeak: 'ar', natural: { voiceId: 'ar_JO-kareem-medium', name: 'Kareem', sizeMB: 63, phonemes: 'espeak', speed: 0.88 } },
   game: { ROWS, LETTERS, LABELS, createGame, createGrid },
 };

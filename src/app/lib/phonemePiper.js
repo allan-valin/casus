@@ -14,9 +14,24 @@ const PATHS = { 'bg_BG-dimitar-medium': 'bg/bg_BG/dimitar/medium/bg_BG-dimitar-m
   // Japanese, a female and a male speaker (CC BY-NC-SA 4.0; Allan 2026-10-21: NC is fine, nothing is sold)
   'ja_JP-hi_fi_captain-medium': 'ja/ja_JP/hi_fi_captain/medium/ja_JP-hi_fi_captain-medium.onnx',
   // Korean, one female speaker (KSS dataset; CC BY-NC-SA 4.0), reading the course's sounds (2026-10-28)
-  'ko_KR-kss-medium': 'ko/ko_KR/kss/medium/ko_KR-kss-medium.onnx' };
+  'ko_KR-kss-medium': 'ko/ko_KR/kss/medium/ko_KR-kss-medium.onnx',
+  // Arabic, one male speaker; dataset licence not stated, used by Allan's decision 2026-10-28. Read with espeak's own
+  // Arabic sounds, through our engine so that a woman's raised pitch is not also faster ("helium", Allan 2026-10-28)
+  'ar_JO-kareem-medium': 'ar/ar_JO/kareem/medium/ar_JO-kareem-medium.onnx' };
 import { ENGINE } from './voice.js';   // the same onnxruntime, on our own site, as the other natural voices
-const PHONEMES = { mk: mkIds, ja: jaIds, ko: koIds };
+// espeak: the voice's own language, through the phonemizer the library uses (its config names the espeak voice)
+let phonemizer = null;
+async function espeakIds(text, voice) {
+  phonemizer ??= import(/* @vite-ignore */ `${ENGINE}piper_phonemize.mjs`).then((m) => m.createPiperPhonemize);
+  const create = await phonemizer;
+  const at = (u) => (u.endsWith('.wasm') ? `${ENGINE}piper_phonemize.wasm` : u.endsWith('.data') ? `${ENGINE}piper_phonemize.data` : u);
+  return new Promise((resolve, reject) => {
+    create({ print: (d) => resolve(JSON.parse(d).phoneme_ids), printErr: (m) => reject(new Error(m)), locateFile: at })
+      .then((mod) => mod.callMain(['-l', voice, '--input', JSON.stringify([{ text: text.trim() }]), '--espeak_data', '/espeak-ng-data']))
+      .catch(reject);
+  });
+}
+const PHONEMES = { mk: mkIds, ja: jaIds, ko: koIds, espeak: espeakIds };
 
 export async function loadOrtEngine() {
   const ort = await import('onnxruntime-web/wasm');
@@ -86,7 +101,8 @@ export function createPhonemePiper({ phonemes, fetchImpl = (...a) => fetch(...a)
     // course carries them with pitch accent); speaker: a name in the voice's speaker map (female / male)
     async predict({ text, voiceId, lengthScale = 1, phonemes = null, speaker = null }) {
       const { cfg, ort, s } = await session(voiceId);
-      const ids = phonemes ? toIds(phonemes, cfg.phoneme_id_map, { ipa: true }) : toIds(text, cfg.phoneme_id_map);
+      const ids = toIds === espeakIds ? await espeakIds(text, cfg.espeak.voice)
+        : phonemes ? toIds(phonemes, cfg.phoneme_id_map, { ipa: true }) : toIds(text, cfg.phoneme_id_map);
       const big = BigInt64Array.from(ids.map(BigInt));
       const { noise_scale: ns, length_scale: ls, noise_w: nw } = cfg.inference;
       const out = await s.run({ input: new ort.Tensor('int64', big, [1, big.length]), input_lengths: new ort.Tensor('int64', BigInt64Array.from([BigInt(big.length)]), [1]),

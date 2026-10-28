@@ -25,6 +25,9 @@ const ENGINE_FILES = {
   'ort-wasm-simd-threaded.wasm': 'node_modules/onnxruntime-web/dist/ort-wasm-simd-threaded.wasm',
   'piper_phonemize.wasm': 'node_modules/@diffusionstudio/piper-wasm/build/piper_phonemize.wasm',
   'piper_phonemize.data': 'node_modules/@diffusionstudio/piper-wasm/build/piper_phonemize.data',
+  // the library's espeak phonemizer as its own module, so our engine (phonemePiper.js) can turn a voice's own language
+  // into its sound ids and stretch the speech (Arabic, 2026-10-28); the file name is the pinned 1.0.5 build's
+  'piper_phonemize.mjs': 'node_modules/@mintplex-labs/piper-tts-web/dist/piper-o91UDS6e.js',
 };
 const ENGINE_TYPES = { '.mjs': 'text/javascript', '.wasm': 'application/wasm', '.data': 'application/octet-stream' };
 function serveEngine() {
