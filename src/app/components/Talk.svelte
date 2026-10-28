@@ -125,7 +125,7 @@
   }
   async function sayTaught(text, who = null) {
     try { noteFallback(await speakTaught(readings[text]?.say ?? text, { pitch: who ? pitchOf(course, unit, who, pitches) : 1, speed: who ? speedOf(course, unit, who) : 1,
-      ...(readings[text]?.ph ? { phonemes: readings[text].ph } : {}), ...(who && speakerOf(course, unit, who) ? { speaker: speakerOf(course, unit, who) } : {}) })); } catch (e) { say(t('talk.speakFailed', { text, error: e?.message ?? '' }), 'err'); throw e; }
+      ...(soundsOf(text) ? { phonemes: soundsOf(text) } : {}), ...(who && speakerOf(course, unit, who) ? { speaker: speakerOf(course, unit, who) } : {}) })); } catch (e) { say(t('talk.speakFailed', { text, error: e?.message ?? '' }), 'err'); throw e; }
   }
   // ▶ starts the step; while it plays the same button pauses (⏸) and resumes (▶) it
   // every playback has a run number; starting another stops the sound and ends the old run (Allan, 2026-10-21: two at once)
@@ -251,6 +251,10 @@
   // Japanese lines carry their words with readings (tools/ja_text.py): furigana over kanji, romaji with the particles
   // read as particles, the voice given kana (Allan, 2026-10-22)
   const readings = $derived(course?.readings ?? {});
+  // the sounds a line is said with, computed by the build: Japanese in readings[text].ph, Korean in sounds[text]
+  const soundsOf = (text) => readings[text]?.ph ?? course?.sounds?.[text] ?? null;
+  // what the pronunciation compare expects: Korean in standard IPA (course.ipa), not espeak's symbols for the voice
+  const compareOf = (text) => readings[text]?.ph ?? course?.ipa?.[text] ?? course?.sounds?.[text] ?? null;
   const HAS_KANJI = /[\u3005\u4e00-\u9fff\u3400-\u4dbf]/u;
   const PARTICLE = { は: 'wa', へ: 'e', を: 'o' };
   const JPUNCT = { '。': '.', '、': ',', '！': '!', '？': '?', '「': '“', '」': '”', '・': ' ' };
@@ -418,7 +422,7 @@
               <button class="reveal" aria-expanded={!!shown[n]} onclick={() => toggle(n)}>{shown[n] ? t('talk.hide') : t('talk.show')}</button>
               {#if shown[n]}{@render words(n, s.parts.at(-1))}{/if}
               {#if Practice}<button class="practise" aria-expanded={practising === n} onclick={() => practise(n)}>🎤 {t('talk.practise')}</button>{/if}
-              {#if Practice && practising === n}<div class="practice"><Practice text={s.parts.at(-1)} ph={readings[s.parts.at(-1)]?.ph} {...practiceProps} /></div>{/if}
+              {#if Practice && practising === n}<div class="practice"><Practice text={s.parts.at(-1)} ph={compareOf(s.parts.at(-1))} {...practiceProps} /></div>{/if}
             {:else if s.type === 'prompt'}
               <span class="ask">{shownNarration(nar(s.ask))}</span>{#if s.review} <span class="review-tag">{t('talk.review')}</span>{/if}
               {#if s.review && n === firstReview && unit.review_kanji?.length}{@render kanjiList(unit.review_kanji, 'review-kanji', 'talk.kanji.review')}{/if}
@@ -426,7 +430,7 @@
               <button class="answer" onclick={() => answer(s, n)}>{t('talk.answer')}</button>
               {#if Practice}<button class="practise" aria-expanded={practising === n} onclick={() => practise(n)}>🎤 {t('talk.practise')}</button>{/if}
               {#if shown[n]}{@render words(n, s.answer.text)}{/if}
-              {#if Practice && practising === n}<div class="practice"><Practice text={s.answer.text} ph={readings[s.answer.text]?.ph} {...practiceProps} /></div>{/if}
+              {#if Practice && practising === n}<div class="practice"><Practice text={s.answer.text} ph={compareOf(s.answer.text)} {...practiceProps} /></div>{/if}
             {:else if s.type === 'selfcheck'}
               <strong class="selfcheck-q">{t('talk.selfcheck')}</strong>
               <button class="done-yes" onclick={() => markDone(true)}>{t('talk.selfcheck.yes')}</button>

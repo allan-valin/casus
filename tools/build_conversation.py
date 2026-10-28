@@ -23,6 +23,26 @@ def _load(p):
     return yaml.safe_load(p.read_text(encoding="utf-8"))
 
 
+def spoken_texts(units):
+    """every string the characters say: items, lines, answers, build-up parts — not the narration (a dict by language)"""
+    out = set()
+
+    def walk(x):
+        if isinstance(x, dict):
+            for k, v in x.items():
+                if k == "text" and isinstance(v, str):
+                    out.add(v)
+                elif k == "parts" and isinstance(v, list):
+                    out.update(p for p in v if isinstance(p, str))
+                elif k not in ("meaning", "ask", "situation", "title"):
+                    walk(v)
+        elif isinstance(x, list):
+            for v in x:
+                walk(v)
+    walk(units)
+    return out
+
+
 def build(src=ROOT / "tools" / "conversation", out=ROOT / "public" / "talk", learn=ROOT / "data"):
     courses = {}
     for folder in sorted(p for p in Path(src).iterdir() if (p / "story-bible.yml").exists()):
@@ -62,6 +82,10 @@ def build(src=ROOT / "tools" / "conversation", out=ROOT / "public" / "talk", lea
             "items": [i for u in c["units"] for i in u["new_items"]],
             "units": c["units"],
         }
+        if code == "ko":                         # each line as said, for the kss voice and the compare (2026-10-28)
+            from ko_sounds import phonemes as ko_phonemes, compare_ipa
+            data["sounds"] = {t: ko_phonemes(t) for t in sorted(spoken_texts(c["units"]))}
+            data["ipa"] = {t: compare_ipa(p) for t, p in data["sounds"].items()}   # standard IPA for the compare
         if code == "ja":                         # furigana, romaji and the kana the voice reads (Allan, 2026-10-22)
             try:
                 rich_course(data)

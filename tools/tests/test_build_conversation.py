@@ -48,3 +48,14 @@ def test_a_bible_without_units_builds_nothing(tmp_path):
     out = tmp_path / "talk"
     build(src, out)
     assert not out.exists() or not list(out.iterdir())
+
+
+def test_korean_lines_carry_their_sounds():
+    """2026-10-28: the kss voice and the pronunciation compare read the course's own sounds (tools/ko_sounds.py)"""
+    from build_conversation import spoken_texts
+    unit = {'new_items': [{'id': 'a', 'text': '같이'}], 'steps': [
+        {'type': 'narrator', 'text': {'en': "Say '같이'.", 'pt': "Diga '같이'."}},
+        {'type': 'dialogue', 'lines': [{'speaker': 'park', 'text': '먹어요?'}]},
+        {'type': 'prompt', 'answer': {'speaker': 'protagonist', 'text': '네, 먹어요.'}},
+        {'type': 'buildup', 'item': 'a', 'parts': ['-이', '같이']}]}
+    assert spoken_texts([unit]) == {'같이', '먹어요?', '네, 먹어요.', '-이'}

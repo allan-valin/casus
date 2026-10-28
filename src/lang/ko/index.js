@@ -64,7 +64,8 @@ export const korean = {
   eras: [{ id: 'modern', label: 'Present-day standard Korean', authors: '', ages: [], ipa: [] }],
   dataPath: '/data/ko',
   samplesPath: '/samples/ko',
-  voice: { espeak: 'ko', natural: null },
+  // natural voice: Piper kss (one female speaker), reading the sounds the Conversation course carries (2026-10-28)
+  voice: { espeak: 'ko', natural: { voiceId: 'ko_KR-kss-medium', name: 'KSS (Korean, female)', sizeMB: 63, phonemes: 'ko' } },
   game: { ROWS, LETTERS, LABELS, createGame, createGrid },
   drillNames: { letters: { en: 'Hangul', pt: 'Hangul' }, nouns: { en: 'Adjective forms', pt: 'Formas dos adjetivos' }, verbs: { en: 'Verb forms', pt: 'Formas verbais' } },
 };

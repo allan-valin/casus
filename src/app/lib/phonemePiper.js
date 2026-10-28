@@ -7,13 +7,16 @@
  */
 import { phonemeIds as mkIds } from '../../lang/mk/phonemes.js';
 import { phonemeIds as jaIds } from '../../lang/ja/phonemes.js';
+import { phonemeIds as koIds } from '../../lang/ko/phonemes.js';
 
 const HF = 'https://huggingface.co/rhasspy/piper-voices/resolve/main';
 const PATHS = { 'bg_BG-dimitar-medium': 'bg/bg_BG/dimitar/medium/bg_BG-dimitar-medium.onnx',
   // Japanese, a female and a male speaker (CC BY-NC-SA 4.0; Allan 2026-10-21: NC is fine, nothing is sold)
-  'ja_JP-hi_fi_captain-medium': 'ja/ja_JP/hi_fi_captain/medium/ja_JP-hi_fi_captain-medium.onnx' };
+  'ja_JP-hi_fi_captain-medium': 'ja/ja_JP/hi_fi_captain/medium/ja_JP-hi_fi_captain-medium.onnx',
+  // Korean, one female speaker (KSS dataset; CC BY-NC-SA 4.0), reading the course's sounds (2026-10-28)
+  'ko_KR-kss-medium': 'ko/ko_KR/kss/medium/ko_KR-kss-medium.onnx' };
 import { ENGINE } from './voice.js';   // the same onnxruntime, on our own site, as the other natural voices
-const PHONEMES = { mk: mkIds, ja: jaIds };
+const PHONEMES = { mk: mkIds, ja: jaIds, ko: koIds };
 
 export async function loadOrtEngine() {
   const ort = await import('onnxruntime-web/wasm');
