@@ -286,3 +286,17 @@ def test_an_english_note_after_a_ruby_heavy_example_is_still_translated():
     assert not [s for s in segments(f"<p>{chart}</p>", "en") if s.get("translate")]      # a romaji kana chart
     kanbun = "".join(f"<ruby>{c}<rt>x</rt></ruby>" for c in "項王軍壁垓下兵少食尽漢軍及諸侯")
     assert not [s for s in segments(f"<p>{kanbun}</p>", "ja") if s.get("translate")]
+
+
+# Allan, 2026-10-28: Korean Learn pages from French Wikibooks kept French words ("Os verbes coréens", "Syntaxe"):
+# bold and headings were protected as if they were Korean. With a taught script unlike the explanation's, a run with
+# no taught-script letter is explanation.
+def test_script_gloss_lets_explanation_through_and_keeps_the_taught_language():
+    from mt_html import segments, script_gloss
+    g = script_gloss('ko', 'fr')
+    segs = [s for s in segments('<h3>Syntaxe</h3><p>Les <b>verbes coréens</b> se terminent par <b>다</b> comme <b>먹다</b>.</p>', 'fr', g) if 'text' in s]
+    heading, para = segs[0], segs[1]
+    assert heading['translate']
+    assert 'verbes coréens' in para['text'] and para['translate']
+    assert any('먹다' in x for x in para['inline'])
+    assert script_gloss('de', 'en') is None

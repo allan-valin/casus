@@ -25,7 +25,7 @@ from html import unescape
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from mt_html import PH, SCRIPT, STOPS, classical, dedupe, is_prose, protect_terms, translate_html  # noqa: E402
+from mt_html import script_gloss, PH, SCRIPT, STOPS, classical, dedupe, is_prose, protect_terms, translate_html  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 MODEL = ROOT / "vendor" / "mt" / "madlad400-3b-ct2"
@@ -469,7 +469,7 @@ def _translate_language(code: str, tr, redo: bool, only: str | None, write: bool
                 if isinstance(s.get(key), str) and s[key].strip():
                     s[key] = {"en": s[key]}
         changed = False
-        gloss = gloss_test(code, src) if src != code else None
+        gloss = (gloss_test(code, src) or script_gloss(code, src)) if src != code else None
         for key in ("meaning", "topic"):
             if isinstance(page.get(key), dict):
                 changed |= text_field(page[key], tr, src)

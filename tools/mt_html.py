@@ -185,6 +185,26 @@ GLOSSABLE = {"b", "strong", "i", "em"}
 PLAIN_EXAMPLES = True     # unmarked words of the taught language are protected (off only to migrate older translations)
 
 
+# taught languages written in their own script (Cyrillic for ru/uk/mk, Greek for el, plus SCRIPT above)
+TAUGHT_SCRIPT = {**SCRIPT, "ru": r"[\u0400-\u04ff]", "uk": r"[\u0400-\u04ff]", "mk": r"[\u0400-\u04ff]", "el": r"[\u0370-\u03ff\u1f00-\u1fff]"}
+
+
+def script_gloss(code: str, src: str):
+    """gloss(text) -> True for a run with letters but none in the taught language's script, when that script is not
+    the explanation's: bold "verbes coréens" in a French page on Korean is French (Allan, 2026-10-28). None when the
+    two share a script (German explained in English) — then only the word lists can tell."""
+    taught = TAUGHT_SCRIPT.get(code)
+    if not taught or (code in ("ru", "uk", "mk") and src in ("ru", "uk", "mk")) or src == code:
+        return None
+    rx = re.compile(taught)
+
+    def gloss(text: str) -> bool:
+        return bool(re.search(r"[^\W\d_]", text)) and not rx.search(text)
+    gloss.script = True
+    gloss.taught = lambda text: bool(rx.search(text))
+    return gloss
+
+
 def segments(html: str, src: str = "en", gloss=None, label=None) -> list:
     """the page as a list of pieces: {"raw": html kept as is} or a prose run {"text": with placeholders, "inline":
     [html of each placeholder], "translate": bool}. gloss(text) -> bool, when given, tells a bold or italic word
@@ -218,7 +238,10 @@ def segments(html: str, src: str = "en", gloss=None, label=None) -> list:
         # a classical line is judged whole, its bolded key words put back (they carry the classical signs)
         whole = unescape(re.sub(r"<[^>]+>", "", PH.sub(lambda p: inline[int(p.group(1)) - 1] if 0 < int(p.group(1)) <= len(inline) else " ", text)))
         studied = src == "ja" and classical(whole)
-        out.append({"text": text, "inline": inline, "translate": known or not studied and is_prose(plain, src) and before and not crowded(text)})
+        # with a taught script unlike the explanation's, a run with no letter of it is explanation, however short
+        # ("Syntaxe" as a heading) — Allan, 2026-10-28
+        by_script = not in_table and bool(getattr(gloss, "script", False)) and gloss(unescape(re.sub(r"<[^>]+>", "", PH.sub(" ", text))).strip()) and not crowded(text)
+        out.append({"text": text, "inline": inline, "translate": known or by_script or not studied and is_prose(plain, src) and before and not crowded(text)})
         run, inline = [], []
 
     in_table = 0
