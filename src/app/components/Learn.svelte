@@ -269,7 +269,7 @@
     {#if quizItems.length}<p class="ex-count">{t('learn.exCount', { n: quizItems.length })}</p><ChoiceDrill items={quizItems} {random} {romanize} onresult={record} ordered />{/if}
   {:else}{#if lesson && lessonRef}
     <!-- one lesson, as a page -->
-    <article class="lesson-page" style={`--script-scale: ${lang.script?.fontScale ?? 1}`}>
+    <article class="lesson-page" class:rtl-taught={lang.script?.rtl} style={`--script-scale: ${lang.script?.fontScale ?? 1}`}>
       <nav class="crumbs"><button class="back" onclick={back}>← {lessonRef.level.title ? loc(lessonRef.level.title) : lessonRef.level.id}</button> <span class="crumb-topic">{loc(lessonRef.topic.title)}</span></nav>
       <h3 class="lesson-title"><span class="badge-level">{lessonRef.level.title ? loc(lessonRef.level.title) : lessonRef.level.id}</span> <span class="l-head" lang={lang.bcp47}>{lesson.title ?? lessonRef.entry.title}</span></h3>
       {#if lesson.meaning}<p class="l-sub">{loc(lesson.meaning)}</p>{/if}
@@ -297,7 +297,7 @@
             <!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_static_element_interactions -->
             <div class="prose words-clickable" use:speakLinks={{ html: body(s.html), speak, title: t('learn.speak.title') }} use:paraButtons={paraOpts ? { ...paraOpts, html: body(s.html) } : null} onclick={(e) => onProseClick(e, s.id)}>{@html body(s.html)}</div>
             {#if s.id === 'examples' && lesson.examples?.length}
-              <details class="examples-romaji"><summary>{t('learn.romaji')}</summary>
+              <details class="examples-romaji"><summary>{t(lang.code === 'ja' ? 'learn.romaji' : 'learn.translit')}</summary>
                 <ol>{#each lesson.examples as ex}<li><span lang={lang.bcp47}>{ex.text}</span> — <i>{exampleRoman(ex)}</i>{#if openInReader} <button class="to-reader" onclick={() => openInReader(ex.text)}>{t('learn.read')}</button>{/if}{@render say(ex.text)}</li>{/each}</ol>
               </details>
             {/if}
@@ -464,6 +464,10 @@
   .more-examples .ex { border-left: 3px solid var(--line); padding: 4px 12px; margin: 8px 0; background: var(--panel-hi); border-radius: 0 8px 8px 0; }
   .more-examples .ja { font-size: calc(1.15em * var(--script-scale, 1)); margin: 2px 0; } .more-examples .en, .more-examples .r { color: var(--ink-2); margin: 0; }
   .examples-romaji { margin-top: 6px; color: var(--ink-2); }
+  /* a right-to-left language: its translation and transcription line up under it, on the same side (Allan 2026-10-28:
+   * Arabic at the right edge and English at the left of one example were hard to read together) */
+  .rtl-taught :global(.ex p) { text-align: right; }
+  .rtl-taught :global(.ex p.en), .rtl-taught :global(.ex p.r) { direction: ltr; unicode-bidi: plaintext; text-align: right; }
   .your-turn .turn { border-top: 1px dashed var(--line-soft); padding: 6px 0; }
   .your-turn summary { cursor: pointer; color: var(--accent-text); }
   .words { border-collapse: collapse; } .words td { border-bottom: 1px solid var(--line); padding: 4px 10px; }
@@ -497,5 +501,7 @@
   .order-toggle { display: inline-flex; gap: 0; margin: 0.5em 0; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
   .order-toggle button { font: inherit; background: none; border: 0; padding: 0.3em 0.9em; cursor: pointer; color: inherit; }
   .order-toggle button.active { background: var(--accent, #555); color: var(--on-accent, #fff); }
-  :global(button.para-tr) { font: inherit; font-size: 0.8em; margin-left: 0.3em; padding: 0 0.5em; border: 1px solid var(--line); border-radius: 999px; background: none; color: var(--muted, inherit); cursor: pointer; }
+  /* same colours as the selected Lessons/Practice tab: it was nearly invisible on the page (Allan 2026-10-28) */
+  :global(button.para-tr) { font: inherit; font-size: 0.8em; margin-inline-start: 0.3em; padding: 1px 0.6em; border: 1px solid var(--accent); border-radius: 999px; background: var(--fill); color: var(--fill-ink); cursor: pointer; }
+  :global(button.para-tr:disabled) { opacity: 0.8; cursor: progress; }
 </style>

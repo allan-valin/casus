@@ -72,15 +72,70 @@ export function protect(html, src) {
 }
 
 let translator = null;
-/** html in `from` → html in `to`, with Bergamot (tags kept); the engine is loaded once, from our own site */
-export async function translateHtml(html, from, to, { base = '/' } = {}) {
-  if (!translator) {
-    const { LatencyOptimisedTranslator } = await import('@browsermt/bergamot-translator/translator.js');
-    translator = new LatencyOptimisedTranslator({ workerUrl: `${base}bergamot/translator-worker.js`, pivotLanguage: 'en' });
-  }
-  const kept = protect(html, from);
-  const res = await translator.translate({ from, to, text: kept.html, html: true });
-  return kept.restore(res.target.text);
+let queue = Promise.resolve();
+export const BERGAMOT_CACHE = 'casus-bergamot';
+const listeners = new Set();
+const flow = { done: 0, total: 0 };
+/** follow the model download: fn(doneBytes, totalBytes); returns the unsubscribe */
+export function onBergamotProgress(fn) { listeners.add(fn); return () => listeners.delete(fn); }
+const tell = () => listeners.forEach((fn) => fn(flow.done, flow.total));
+
+/* Allan 2026-10-28: minutes of "downloading" with no feedback; nothing kept between visits; not removable. The
+ * library's own download had a 60 s timeout (a ~25 MB model on a slow line never finished) and kept nothing. Our
+ * download: no timeout, bytes reported as they come, models kept in a named cache that Downloads lists and removes. */
+async function cachedBacking() {
+  const { TranslatorBacking } = await import('@browsermt/bergamot-translator/translator.js');
+  return class CachedBacking extends TranslatorBacking {
+    async fetch(url, checksum) {
+      const cache = await caches.open(BERGAMOT_CACHE).catch(() => null);
+      const hit = await cache?.match(url);
+      if (hit) return hit.arrayBuffer();
+      const res = await fetch(url, { credentials: 'omit', ...(checksum ? { integrity: `sha256-${this.hexToBase64(checksum)}` } : {}) });
+      if (!res.ok) throw new Error(`${url}: ${res.status}`);
+      const size = Number(res.headers.get('content-length')) || 0;
+      flow.total += size; tell();
+      const reader = res.body.getReader();
+      const chunks = [];
+      for (;;) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        chunks.push(value); flow.done += value.length; tell();
+      }
+      const body = await new Blob(chunks).arrayBuffer();
+      try { await navigator.storage?.persist?.(); await cache?.put(url, new Response(body)); } catch { /* not kept */ }
+      return body;
+    }
+  };
+}
+
+/** bytes of Bergamot models kept on this device (0 when none) */
+export async function bergamotStored() {
+  try {
+    const cache = await caches.open(BERGAMOT_CACHE);
+    let n = 0;
+    for (const req of await cache.keys()) n += (await (await cache.match(req.url)).arrayBuffer()).byteLength;
+    return n;
+  } catch { return 0; }
+}
+/** remove the kept models; the next translation downloads again */
+export async function removeBergamot() { translator = null; flow.done = 0; flow.total = 0; return caches.delete(BERGAMOT_CACHE); }
+
+/** html in `from` → html in `to`, with Bergamot (tags kept); the engine is loaded once, from our own site. One
+ * translation at a time: the library cancels a pending one when the next arrives (a second ⇄ click failed the first) */
+export function translateHtml(html, from, to, { base = '/' } = {}) {
+  const run = queue.then(async () => {
+    if (!translator) {
+      const { LatencyOptimisedTranslator } = await import('@browsermt/bergamot-translator/translator.js');
+      const Backing = await cachedBacking();
+      const opts = { workerUrl: `${base}bergamot/translator-worker.js`, pivotLanguage: 'en', downloadTimeout: 0 };
+      translator = new LatencyOptimisedTranslator(opts, new Backing(opts));
+    }
+    const kept = protect(html, from);
+    const res = await translator.translate({ from, to, text: kept.html, html: true });
+    return kept.restore(res.target.text);
+  });
+  queue = run.catch(() => {});
+  return run;
 }
 
 /** Svelte action: a small button after each paragraph still in the source language; it swaps in a translation
@@ -102,11 +157,15 @@ export function paraButtons(node, opts) {
           e.stopPropagation();
           if (showing === 'translated') { p.innerHTML = original; showing = 'original'; p.append(' ', button()); return; }
           b.disabled = true; b.textContent = `⇄ ${o.labels.busy}`;
+          const mb = (x) => (x / 1e6).toFixed(1);
+          const off = onBergamotProgress((done, total) => { if (total) b.textContent = `⇄ ${o.labels.busy} ${mb(done)} / ${mb(total)} MB`; });
           try {
             translated ??= await o.translate(original, o.src, o.ui);
+            off();
             p.innerHTML = translated; showing = 'translated'; p.append(' ', button());
             o.onSay?.('ok');
           } catch (err) {
+            off();
             b.disabled = false; b.textContent = `⇄ ${o.labels.failed}`; b.title = String(err?.message ?? err);
             o.onSay?.('err', String(err?.message ?? err));
           }

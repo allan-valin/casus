@@ -32,4 +32,20 @@ describe('Downloads panel', () => {
     expect(caches.stores.has('casus-data-cs')).toBe(false);
     expect(said).toContain('act.dl.done');
   });
+  it('shows the kept Bergamot models with their size and removes them (Allan 2026-10-28)', async () => {
+    const caches = fakeCaches();
+    (await caches.open('casus-bergamot')).put('https://x/model.bin', { arrayBuffer: async () => new ArrayBuffer(3_000_000) });
+    globalThis.caches = caches;
+    const said = [];
+    const { container } = render(Downloads, { fetchImpl, caches, storage: null, current: 'cs', onsay: (k) => said.push(k) });
+    await flush();
+    const row = container.querySelector('.bergamot');
+    expect(row.textContent).toMatch(/Bergamot/);
+    expect(row.textContent).toMatch(/3\.0/);
+    await fireEvent.click(row.querySelector('button'));
+    await flush();
+    expect(caches.stores.has('casus-bergamot')).toBe(false);
+    expect(container.querySelector('.bergamot')).toBeNull();
+    delete globalThis.caches;
+  });
 });
