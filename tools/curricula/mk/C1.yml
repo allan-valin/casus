@@ -120,3 +120,49 @@ topics:
     - ["По потпишувањето на договорот, министрите заминаа.", "After signing the agreement, the ministers left.", "Após a assinatura do acordo, os ministros partiram.", "потпишувањето"]
     - [Пушењето е забрането при влегувањето., Smoking is forbidden on entering., É proibido fumar ao entrar., влегувањето]
     match: {seq: [{word: [по, при, за, со, пред, после, без, на, во, од, до, кон, преку, поради]}, {re: "[аеи]ње(то)?$", pos: noun}], gap: 1}
+
+- title: {en: Word formation, pt: Formação de palavras}
+  lessons:
+  - id: c1-word-formation
+    title: -ач, -тел, -ост
+    meaning: {en: "making nouns: the doer (-ач, -тел) and the quality (-ост)", pt: "formar substantivos: quem faz (-ач, -тел) e a qualidade (-ост)"}
+    intro:
+      en: |
+        Three suffixes make a large part of everyday nouns. Knowing them, you can guess words you have never seen.
+
+        **-ач** — the person (or tool) that does the verb's action, from the verb's stem: **возам** "I drive" → **возач** "driver", **играм** → **играч** "player", **пливам** → **пливач** "swimmer", **продавам** → **продавач** "seller", **пушам** → **пушач** "smoker".
+
+        **-тел** — the same meaning, mostly older or more learned words: **учам** → **учител** "teacher", **пишувам** → **писател** "writer", **читам** → **читател** "reader", **слушам** → **слушател** "listener", **родител** "parent".
+
+        Both are masculine (**возачот**, **учителот**; plural **возачи**, **учители**). A woman takes **-ка**: **возачка**, **учителка**, **писателка**, **продавачка**. Careful: **играчка** is a female player, but above all "toy".
+
+        **-ост** — the quality named by an adjective: **млад** → **младост** "youth", **слаб** → **слабост** "weakness", **рад** → **радост** "joy". An adjective in **-ен** drops its **е**: **можен** → **можност** "possibility", **вреден** → **вредност** "value", **точен** → **точност** "precision".
+
+        Every **-ост** noun is **feminine**: **младоста**, **можноста**, plural **можности**.
+      pt: |
+        Três sufixos formam boa parte dos substantivos do dia a dia. Conhecendo-os, você adivinha palavras que nunca viu.
+
+        **-ач** — a pessoa (ou o instrumento) que faz a ação do verbo, a partir do radical: **возам** "dirijo" → **возач** "motorista", **играм** → **играч** "jogador", **пливам** → **пливач** "nadador", **продавам** → **продавач** "vendedor", **пушам** → **пушач** "fumante".
+
+        **-тел** — o mesmo sentido, em palavras mais antigas ou cultas: **учам** → **учител** "professor", **пишувам** → **писател** "escritor", **читам** → **читател** "leitor", **слушам** → **слушател** "ouvinte", **родител** "pai ou mãe".
+
+        Os dois são masculinos (**возачот**, **учителот**; plural **возачи**, **учители**). Para uma mulher se usa **-ка**: **возачка**, **учителка**, **писателка**, **продавачка**. Cuidado: **играчка** é jogadora, mas sobretudo "brinquedo".
+
+        **-ост** — a qualidade expressa por um adjetivo, como o "-dade" do português: **млад** → **младост** "juventude", **слаб** → **слабост** "fraqueza", **рад** → **радост** "alegria". Um adjetivo em **-ен** perde o **е**: **можен** → **можност** "possibilidade", **вреден** → **вредност** "valor", **точен** → **точност** "precisão".
+
+        Todo substantivo em **-ост** é **feminino**: **младоста**, **можноста**, plural **можности**.
+    mistakes:
+    - wrong: "Таа е добар учител."
+      right: "Таа е добра учителка."
+      why: {en: "A woman who teaches is an учителка: -тел and -ач take -ка for women.", pt: "Uma mulher que ensina é учителка: -тел e -ач recebem -ка no feminino."}
+    - wrong: "Младостот брзо поминува."
+      right: "Младоста брзо поминува."
+      why: {en: "Nouns in -ост are feminine, so the article is -та.", pt: "Substantivos em -ост são femininos; o artigo é -та."}
+    examples:
+    - ["Брат ми е возач на автобус.", "My brother is a bus driver.", "Meu irmão é motorista de ônibus.", "возач"]
+    - ["Таа е добра учителка.", "She is a good teacher.", "Ela é uma boa professora.", "учителка"]
+    - ["Младоста брзо поминува.", "Youth passes quickly.", "A juventude passa depressa.", "Младоста"]
+    - ["Имаме можност да одиме во Охрид.", "We have a chance to go to Ohrid.", "Temos a possibilidade de ir a Ohrid.", "можност"]
+    # a stem of 2+ letters before the suffix keeps out мост, гост, мачка; the rest are look-alikes, not derived nouns
+    match: {seq: [{re: "^.{2,}((ач|тел)(от|и|ите)?|(ачк|телк)(а|ата|и|ите)|ост(а|и|ите)?)$", pos: noun, not: {re: "^(пијач|трач|прост|колач|плач|радиј|хотел)"}}], gap: 0}
+    pool: [возач, учител, писател, младост, можност, учителка, вредност, играч]
